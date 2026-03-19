@@ -1,0 +1,14 @@
+title: buraksenyurt
+description: Personal blog and notes
+theme: minima
+
+minima:
+  skin: dark
+
+author:
+  name: Burak Selim Şenyurt
+
+social_links:
+  - { platform: github, user_url: "https://github.com/buraksenyurt" }
+
+show_excerpts: true
