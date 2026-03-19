@@ -1,9 +1,11 @@
-title: buraksenyurt
-description: Personal blog and notes
+title: Burak Selim Şenyurt
+description: Yazılım mühendisliği, sistem tasarımı ve programlama üzerine kişisel blog
 theme: minima
+lang: tr
 
 minima:
   skin: dark
+  date_format: "%-d %B %Y"
 
 author:
   name: Burak Selim Şenyurt
@@ -12,3 +14,4 @@ social_links:
   - { platform: github, user_url: "https://github.com/buraksenyurt" }
 
 show_excerpts: true
+permalink: /:year/:month/:day/:title/
