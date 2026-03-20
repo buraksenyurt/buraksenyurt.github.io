@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net 4.5–Asenkron HTTP Module Geliştirmek"
 date: 2013-10-13 11:00:00 +0300
@@ -17,9 +17,10 @@ tags:
   - delegates
   - visual-studio
 ---
-[![Pioneer Stereo Ad 1974](/assets/images/2013/Pioneer%20Stereo%20Ad%201974_thumb.jpg)](/assets/images/2013/Pioneer%20Stereo%20Ad%201974.jpg) Merhaba Arkadaşlar,
-
 Bir çoğunuz gibi ben de düzenli olarak bazı dergilerin abonesiyim ve her ay onları alıp biraz karıştırdıktan sonra arşive (yani çalışma odasındaki kütüphaneye) kaldırmaktayım.
+
+[![Pioneer Stereo Ad 1974](/assets/images/2013/Pioneer%20Stereo%20Ad%201974_thumb.jpg)](/assets/images/2013/Pioneer%20Stereo%20Ad%201974.jpg)
+
 
 Tabi gün oluyor pek çoğuna dönüp bakmıyorum bile. Hatta kimisinin rengi sararıp soluyor bir köşede mazlum mazlum kalıyor. Ama eminim ki geride kalanlar için bazıları güncel içeriklere sahip iken, bazıları da tam anlamıyla bir Retro havası veriyor. Ve hatta çoğu, yıllar geçtikçe daha fazla değer kazanıyor.
 

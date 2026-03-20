@@ -11,7 +11,10 @@ tags:
   - dotnet
   - http
 ---
-[![oldbook](/assets/images/2013/oldbook_thumb.jpg)](/assets/images/2013/oldbook.jpg)[Orjinal yazım tarihi 2012 Eylül’ dür]
+[Orjinal yazım tarihi 2012 Eylül’ dür]
+
+[![oldbook](/assets/images/2013/oldbook_thumb.jpg)](/assets/images/2013/oldbook.jpg)
+
 
 Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Derken gözüm WCF 4.0’ ın Beta zamanlarında yazdıklarıma takıldı. O zamanlar.Net Framework 4.0' ün Beta sürümü çıktığında, incelemeye çalıştığım önemli yeniliklerden birisi de yönlendirme servisleri (Routing Service) idi.
 

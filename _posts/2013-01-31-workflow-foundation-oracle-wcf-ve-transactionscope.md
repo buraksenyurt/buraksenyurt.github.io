@@ -22,7 +22,10 @@ tags:
   - visual-studio
   - atomic-operations
 ---
-[![Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This_thumb.jpg)](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This.jpg)[Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+[Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+
+[![Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This_thumb.jpg)](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This.jpg)
+
 
 Yandaki fotoğrafta görülen buluşa baktığınızda aslında gerçekten bu pilotun o koca pervaneler ile uçup uçamayacağına pek kanaat getiremiyoruz öyle değil mi?
 

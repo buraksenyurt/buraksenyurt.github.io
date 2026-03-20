@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft Teknoloji Günleri Akşam Sınıfı Gün 4 - WCF Eco System"
 date: 2010-08-18 21:45:00 +0300
@@ -18,11 +18,15 @@ tags:
   - parallel-programming
   - generics
 ---
-[![BizSpark](/assets/images/2010/BizSpark_thumb_1.jpg)](/assets/images/2010/BizSpark_1.jpg)
-
-[![GelisimAtolyesi](/assets/images/2010/GelisimAtolyesi_1.jpg)](file:///C:/Users/bsenyurt/AppData/Local/Temp/WindowsLiveWriter1286139640/supfiles2C7F2E/GelisimAtolyesi3.jpg)
 Tarih
 14 Eylül 2010 Salı - WCF Eco System
+
+[![BizSpark](/assets/images/2010/BizSpark_thumb_1.jpg)](/assets/images/2010/BizSpark_1.jpg)
+[![GelisimAtolyesi](/assets/images/2010/GelisimAtolyesi_1.jpg)](file:///C:/Users/bsenyurt/AppData/Local/Temp/WindowsLiveWriter1286139640/supfiles2C7F2E/GelisimAtolyesi3.jpg)
+
+
+[![BizSpark](/assets/images/2010/BizSpark_thumb_1.jpg)](/assets/images/2010/BizSpark_1.jpg)
+
 
 Saat
 19.00 - 21.30

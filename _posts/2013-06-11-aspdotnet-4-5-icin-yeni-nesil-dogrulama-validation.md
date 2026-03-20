@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net 4.5 için Yeni Nesil Doğrulama(Validation)"
 date: 2013-06-11 14:09:00 +0300
@@ -15,9 +15,10 @@ tags:
   - javascript
   - visual-studio
 ---
-[![300px-Opening_crawl](/assets/images/2013/300px-Opening_crawl_thumb.jpg)](/assets/images/2013/300px-Opening_crawl.jpg) Merhaba Arkadaşlar,
-
 Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredeyse tamamı bu efsane cümleyi bilir.
+
+[![300px-Opening_crawl](/assets/images/2013/300px-Opening_crawl_thumb.jpg)](/assets/images/2013/300px-Opening_crawl.jpg)
+
 
 > A long tim ago in a galaxy far, far away…
 

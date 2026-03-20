@@ -13,7 +13,10 @@ tags:
   - caching
   - serialization
 ---
-[![lego-block-tape](/assets/images/2013/lego-block-tape_thumb.jpg)](/assets/images/2013/lego-block-tape.jpg)[Orjinal Yazım Tarihi 10.09.2012]
+[Orjinal Yazım Tarihi 10.09.2012]
+
+[![lego-block-tape](/assets/images/2013/lego-block-tape_thumb.jpg)](/assets/images/2013/lego-block-tape.jpg)
+
 
 Enterprise Library ve içerisinde yer alan Application Block’ lar çoğunlukla projelerimizde ihtiyaç duyduğumuz ve Cross-Cutting olarak geçen parçaların hızlı ve kolay bir biçimde uygulanmasında kullanılmaktadır.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework 6 – Code First için Convention Nedir?"
 date: 2012-12-12 05:15:00 +0300
@@ -12,9 +12,10 @@ tags:
   - reflection
   - generics
 ---
-[![themask](/assets/images/2012/themask_thumb.jpg)](/assets/images/2012/themask.jpg) Merhaba Arkadaşlar,
-
 Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki
+
+[![themask](/assets/images/2012/themask_thumb.jpg)](/assets/images/2012/themask.jpg)
+
 
 ![Just kidding](/assets/images/2012/wlEmoticon-justkidding.png)
 

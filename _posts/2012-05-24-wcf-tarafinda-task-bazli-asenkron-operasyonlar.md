@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Tarafında Task Bazlı Asenkron Operasyonlar"
 date: 2012-05-24 14:50:00 +0300
@@ -17,9 +17,10 @@ tags:
   - delegates
   - generics
 ---
-[![delegating](/assets/images/2012/delegating_thumb.jpg)](/assets/images/2012/delegating.jpg) Merhaba Arkadaşlar,
-
 Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim
+
+[![delegating](/assets/images/2012/delegating_thumb.jpg)](/assets/images/2012/delegating.jpg)
+
 
 ![Laughing](/assets/images/2012/smiley-laughing.gif)
 

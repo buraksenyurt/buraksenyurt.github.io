@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Paralel Programlamada İstisna Yönetimi"
 date: 2011-01-13 13:30:00 +0300
@@ -13,9 +13,10 @@ tags:
   - delegates
   - visual-studio
 ---
-[![blg208_Giris](/assets/images/2011/blg208_Giris_thumb.jpg)](/assets/images/2011/blg208_Giris.jpg) Merhaba Arkadaşlar,
-
 Balık tutmak farklı bir hobidir. Özellikle olta ile balık yakalamaktan büyük keyif alanlar vardır. (Hatta laf aramızda, şirkette yanımda oturan çalışma arkadaşımın çekmecesinde, bir olta takımı var)
+
+[![blg208_Giris](/assets/images/2011/blg208_Giris_thumb.jpg)](/assets/images/2011/blg208_Giris.jpg)
+
 
 Çoğu zaman Haliç köprüsü gibi alanlarda yandaki resimde olduğu gibi bu işin sevdalılarını görebiliriz. Kimisi sabahın erken saatlerinde gelip, akşamın geç saatlerine kadar burada olta sallar ve “Rastgele” der.
 

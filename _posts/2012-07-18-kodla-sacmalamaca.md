@@ -16,6 +16,9 @@ tags:
 
 Programlamaya ister yeni başlamış olun ister yıllardır bu işin içerisinde bulunun, hızlı çözüm üretmek, analitik düşünmek ve olabildiğince işe yarar parçalar çıkartmak en büyük hedeflerimizden birisi olmalıdır. Elbette yıllar içerisinde elde edinilen, kazanılan tecrübe ve bilgi birikimine bağlı olarak kendinize ait bir geliştirme (Development) tarzı da ister istemez oluşacak ve hatta sonrasında değiştirilemez/değiştirilmesi zor bir alışkanlık haline gelecektir.
 
+[İzleyen yazı Level 100 altı bir deneyimi içermekte olup üstünde kalan geliştiricileri pekala sıkabilir][![Genius-Training](/assets/images/2012/Genius-Training_thumb.jpg)](/assets/images/2012/Genius-Training.jpg)
+
+
 Makbul olan pek çok geliştirici gibi ortak bazı kurallar veya standartlar üzerinde buluşabiliyor olmaktır tabiki. Şimdi diyeceksiniz ki “yazının başlığı ve içeriği arasında nasıl bir bağ kurdun be adam?”. Aslında ispatlamak istediğim basit bir teori var.
 
 > Her ne kadar saçma görünen bir fikrin icrası da söz konusu olsa, developer işini kafasında veya kağıt üstünde titizce planlar, araştırır, sırayla adımlar ve hatta satranç oynarmışçasına bir kaç hamle ilerisini düşünerek kodlama yapar. Sonrasında ise…Okuyalım ve görelim

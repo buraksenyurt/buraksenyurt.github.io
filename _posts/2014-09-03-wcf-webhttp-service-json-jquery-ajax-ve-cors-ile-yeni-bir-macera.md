@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF WebHttp Service, JSON, jQuery, Ajax ve CORS ile Yeni Bir Macera"
 date: 2014-09-03 08:27:00 +0300
@@ -22,9 +22,10 @@ tags:
   - javascript
   - generics
 ---
-[![browser_wars](/assets/images/2014/browser_wars_thumb.jpg)](/assets/images/2014/browser_wars.jpg) Merhaba Arkadaşlar,
-
 Bir süredir şirket içerisinde kullanılacak olan web tabanlı bir.Net uygulamasının geliştirilmesinde görev almaktayım. Uygulama, yürütülen süreç gereği her iterasyon sonunda yeni özellikler eklenmiş ve hataları giderilmiş biçimde Üretim (Production) ortamına taşınmakta.
+
+[![browser_wars](/assets/images/2014/browser_wars_thumb.jpg)](/assets/images/2014/browser_wars.jpg)
+
 
 Projede kaynak sıkıntısı nedeniyle uzun bir süre servis katmanı haricinde kalan arayüz tarafı ile de ilgilenmek zorunda kaldım. Arayüz tarafı ile uğraşırken iş biriminden gelen isteklere göre CSS (Cascading Style Sheets) ve bol miktarda Javascript kodlamak benim gibi acemiler için epeyce zorlayıcıydı. Lakin en çok zaman kaybettiğim vaka, şirket içinde kullanılmakta olan eski,yeni ve çeşitli tipteki tarayıcıların uyumlu çalışmasının sağlanabilmesiydi. Kimi lokasyonda Internet Explorer 8, kimi yerlede Google Chrome’ un en güncel sürümü bulunmakta. Hatta global çevrimde Firefox standart olarak her bilgisasyarda yüklü geliyor.
 

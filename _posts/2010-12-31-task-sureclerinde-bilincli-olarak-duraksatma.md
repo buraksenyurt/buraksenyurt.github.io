@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Task Süreçlerinde Bilinçli Olarak Duraksatma"
 date: 2010-12-31 13:20:00 +0300
@@ -13,9 +13,10 @@ tags:
   - generics
   - visual-studio
 ---
-[![blg206_Giris](/assets/images/2010/blg206_Giris_thumb.jpg)](/assets/images/2010/blg206_Giris.jpg) Merhaba Arkadaşlar,
-
 Pek çoğumuz hayatımızın çeşitli dönemlerinde ayakta veya oturarak bir şeyler için beklemek zorunda kalırız. Kimi zaman seyahat edeceğimiz yere gidecek aracı bekleriz. Özellikle uçak seyahatleri gibi gecikmelerin sıklıkla yaşanabileceği durumlardan tutunda, İstanbul trafiğinin akşam saatlerindeki yoğunluğu yüzünden yine belirsiz süre dolmuş beklenmesi gibi hallerle sıklıkla karşılaşılır.
+
+[![blg206_Giris](/assets/images/2010/blg206_Giris_thumb.jpg)](/assets/images/2010/blg206_Giris.jpg)
+
 
 Fakat bazı zamanlarda belirli süreli bekleyişler de söz konusu olabilir. Örneğin bir iş görüşmesinin saati bellidir ve gecikme durumları pek söz konusu olmamaktadır. Ya da bir metronun kalkış saati, hatta gideceği yere varış zamanı dahi sabittir. Dolayısıyla metroaya binmek için beklenen ve metro içindeyken gidilecek yere kadar geçen süreler genellikle standarttır. Ancak hangi durum olursa olsun, hayatımızda her zaman için beklemeler söz konusudur ve bunlar zaman zaman tekrar ederek bir yaşam döngüsünün oluşmasına neden olmaktadır.
 

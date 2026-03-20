@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "NoSQL Maceraları - RaptorDB ile Hello World"
 date: 2014-04-24 14:55:00 +0300
@@ -19,9 +19,10 @@ tags:
   - generics
   - visual-studio
 ---
-[![070401-F-6701P-005](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046_thumb.jpg)](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046.jpg) Merhaba Arkadaşlar,
-
 Yıllardır vaz geçemediğim bilgisayar oyunlarından birisidir [Command and Conquer Generals](http://tr.wikipedia.org/wiki/Command_%26_Conquer:_Generals). Özellikle Zero Hour setini çok ama çok severim. Bu set içerisinde en çok kullandığım GLA güçleridir ama zaman zaman China Tank General veya USA Air Force’ u da tercih ederim.
+
+[![070401-F-6701P-005](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046_thumb.jpg)](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046.jpg)
+
 
 USA Air Force’ un en belirgin özelliği King Raptor olarak adlandırılan ve aslında günümüzde de [F22 Raptor olarak bilinen savaş uçaklarını](http://tr.wikipedia.org/wiki/F-22_Raptor) içermesidir. Bu uçaklar kendilerine fırlatılan füzeleri lazer ile vurabilir, ayrıca normal Raptor’ lara göre daha fazla güdümlü füze taşıyabilir.
 

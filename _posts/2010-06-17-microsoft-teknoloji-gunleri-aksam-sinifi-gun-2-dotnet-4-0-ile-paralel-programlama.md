@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft Teknoloji Günleri Akşam Sınıfı – Gün 2 - .Net 4.0 ile Paralel Programlama"
 date: 2010-06-17 08:20:00 +0300
@@ -18,11 +18,15 @@ tags:
   - parallel-programming
   - generics
 ---
-[![BizSpark](/assets/images/2010/BizSpark_thumb.jpg)](/assets/images/2010/BizSpark.jpg)
-
-[![GelisimAtolyesi](/assets/images/2010/GelisimAtolyesi_thumb.jpg)](/assets/images/2010/GelisimAtolyesi.jpg)
 Tarih
 22 Haziran 2010 Salı
+
+[![BizSpark](/assets/images/2010/BizSpark_thumb.jpg)](/assets/images/2010/BizSpark.jpg)
+[![GelisimAtolyesi](/assets/images/2010/GelisimAtolyesi_thumb.jpg)](/assets/images/2010/GelisimAtolyesi.jpg)
+
+
+[![BizSpark](/assets/images/2010/BizSpark_thumb.jpg)](/assets/images/2010/BizSpark.jpg)
+
 
 Saat
 19.00 - 21.30

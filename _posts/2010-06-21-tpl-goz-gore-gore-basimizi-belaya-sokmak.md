@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TPL – Göz Göre Göre Başımızı Belaya Sokmak"
 date: 2010-06-21 06:08:00 +0300
@@ -13,9 +13,10 @@ tags:
   - threading
   - visual-studio
 ---
-[![blg209_Giris](/assets/images/2010/blg209_Giris_thumb.jpg)](/assets/images/2010/blg209_Giris.jpg) Merhaba Arkadaşlar,
-
 Bazen göz göre göre başımıza bi ton dert açarız. Kimi zaman başlayacağımız iş bize çok eğlenceli gelebilir (Yandaki resimde yüzü görünmeyen şahsın da bu heyacanla Hamburgere bindiğinden eminiz) Ama işin sonuçlarını biliyorsak eğer, bunu yapmamızın nedeni büyük olasılıkla adrenalindir.
+
+[![blg209_Giris](/assets/images/2010/blg209_Giris_thumb.jpg)](/assets/images/2010/blg209_Giris.jpg)
+
 
 Tabi ki bir yazılımcı için adrenalin genellikle üst yöneticisi tarafından salgılanan bir hormondur. Nitekim yazılımcıların, ilerideki felaketleri kestirerek hareket etmesi ve geliştirmeleri buna göre yapması her zaman kolay olmayabilir. Bir başka deyişle bazı vakalara hazırlıklı olmak için önceden bunları çalışmak gerekmektedir.
 

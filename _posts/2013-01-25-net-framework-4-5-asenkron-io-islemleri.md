@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net Framework 4.5 Asenkron IO İşlemleri"
 date: 2013-01-25 02:27:00 +0300
@@ -20,9 +20,10 @@ tags:
   - performance
   - generics
 ---
-[![WAR2](/assets/images/2013/WAR2_thumb.jpg)](/assets/images/2013/WAR2.jpg) Merhaba Arkadaşlar,
-
 Geçtiğimiz gün özlem duyduğum bilgisayar oyunlarından birisi olan Warcraft II'nin ses efektlerini arar halde buldum kendimi. Olay tabi ses efektlerinin mükemmelliğinden çıktı oyuncu karakterlerine kadar geldi. Gerek Orc'lar da gerek Human'lar da süper kahramanlar vardı. Büyücüler, okçular, işçiler ve daha niceleri. Pek çoğumuzun bu oyun başında saatler harcadığından ve sabah ezanına kadar kaldığından eminim.
+
+[![WAR2](/assets/images/2013/WAR2_thumb.jpg)](/assets/images/2013/WAR2.jpg)
+
 
 Nedense söz konusu karakterleri bir araştırma konusunda kullanma ihtiyacı da hissettim. Tesadüfe bakın ki aynı anda.Net tarafında da bir konuyu araştırmaktaydım. Sonuç olarak aşağıdaki konu için onları kendi bakış açımdan değerlendirmeye karar verdim. Bakalım bu günkü yazımızda nasıl bir maceraya dalıyor olacağız
 

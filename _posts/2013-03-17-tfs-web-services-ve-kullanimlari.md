@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TFS Web Services ve Kullanımları"
 date: 2013-03-17 12:30:00 +0300
@@ -17,9 +17,10 @@ tags:
   - generics
   - asmx
 ---
-[![cartoon-soldier-010](/assets/images/2013/cartoon-soldier-010_thumb.jpg)](/assets/images/2013/cartoon-soldier-010.jpg) Merhaba Arkadaşlar,
-
 Yedek Subay olarak askerlik hizmetimi yerine getirdiğim yıllarda (O zamanlar 16 ay idi) Jandarma Genel Komutanlığı Personel Şube’ de görev almıştım. Aslında temel işim Powerpoint ile sunum hazırlamaktı ama verilen emir her ne ise onu da yerine getirmek mesuliyetini taşımaktaydım.
+
+[![cartoon-soldier-010](/assets/images/2013/cartoon-soldier-010_thumb.jpg)](/assets/images/2013/cartoon-soldier-010.jpg)
+
 
 Bir gün komutanım ile birlikte yine sivil hayat için anlamsız olan ama Askeri disiplin kuralları çerçevesinde gayet de makul görünen bir işe adanmıştık. Neredeyse tüm komutanlık personelinin iğneli Printer’ dan çıkartılmış karınca yazısı ebatlarındaki bilgilerini, bir diğer koca liste ile karşılaştıracak ve bir filtreleme işlemi gerçekleştirecektik. (İşin yaklaşık olarak kesintisiz çalışma ile 48 saate varabileceğini biliyorduk)
 

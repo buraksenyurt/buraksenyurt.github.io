@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Simetrik Şifreleme(Symmetric Cryptography) Hızları"
 date: 2014-09-28 04:00:00 +0300
@@ -14,9 +14,10 @@ tags:
   - visual-studio
   - dependency-management
 ---
-[![62374](/assets/images/2014/62374_thumb.gif)](/assets/images/2014/62374.gif) Merhaba Arkadaşlar,
-
 Crptograpy…
+
+[![62374](/assets/images/2014/62374_thumb.gif)](/assets/images/2014/62374.gif)
+
 
 Hayır hayır şöyleydi.
 

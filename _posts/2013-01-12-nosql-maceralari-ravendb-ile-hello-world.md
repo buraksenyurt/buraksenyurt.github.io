@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "NoSQL Maceraları - RavenDB ile Hello World"
 date: 2013-01-12 12:05:00 +0300
@@ -21,9 +21,10 @@ tags:
   - java
   - javascript
 ---
-[![173110_P001_Raven](/assets/images/2013/173110_P001_Raven_thumb.png)](/assets/images/2013/173110_P001_Raven.png) Merhaba Arkadaşlar,
-
 Kuzgun’ lar Kargagiller ailesinden gelen bir kuş çeşididir. Diğer karga cinslerine göre daha iridirler ve özellikle çok daha zeki oldukları söylenir. Yapılan araştırma ve deneyler sonrasında bu cins kargaların, sorunları çözmek için çevresel materyalleri kullanabilme (kullanmak için de öğrenebilme) becerisine sahip oldukları öne sürülmüştür. Hatta parlak, beyaz ve mavi renkli metallere karşı özel bir ilgileri olduğundan, hırsız olarak da ifade edilmektedirler.
+
+[![173110_P001_Raven](/assets/images/2013/173110_P001_Raven_thumb.png)](/assets/images/2013/173110_P001_Raven.png)
+
 
 Kanat açıklığı 1.5 metreyi bulan bu kuşlar, aynı zamanda deli cesaretine sahiptir
 

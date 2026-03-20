@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Task İptal İşlemlerinin İzlenmesi(Monitoring Cancellation)"
 date: 2011-04-23 12:10:00 +0300
@@ -14,9 +14,10 @@ tags:
   - generics
   - visual-studio
 ---
-[![blg204_Giris](/assets/images/2011/blg204_Giris_thumb.jpg)](/assets/images/2011/blg204_Giris.jpg) Merhaba Arkadaşlar,
-
 Bu yazımızda daha önceden.Net Framework Beta 1 ve Beta 2 sürümlerinde incelediğimiz Task iptal işlemlerini son sürümde ele alıp toparlamaya çalışıyor olacağız. Task iptal işlemleri oldukça önemli ve üzerinde titizlikle durulması gereken bir konudur. Nitekim bazı hallerde çalıştırılmakta olan Task işlevlerinin iptal edilmesi gerekebilir. Bu iptal işlemi, sistem tarafından her hangibir koşulun gerçeklenmesi sonucu talep edilebileceği gibi, kullanıcı tarafından da uygulatılmak istenebilir.
+
+[![blg204_Giris](/assets/images/2011/blg204_Giris_thumb.jpg)](/assets/images/2011/blg204_Giris.jpg)
+
 
 Task örnekleri işaret ettikleri ve planladıkları fonksiyonellikleri çalıştırdıklarında ve herhangibir sebeple iptal işlemi gerçekleştirilmek istendiğinde CancellationTokenSource ve CancellationToken tiplerinden yararlanılması gerekmektedir.
 

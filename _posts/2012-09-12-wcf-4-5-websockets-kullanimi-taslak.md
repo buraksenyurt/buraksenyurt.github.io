@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.5 WebSockets Kullanımı [Taslak]"
 date: 2012-09-12 15:04:00 +0300
@@ -19,9 +19,10 @@ tags:
   - serialization
   - visual-studio
 ---
-[![yoresel1](/assets/images/2012/yoresel1_thumb.jpg)](/assets/images/2012/yoresel1.jpg) Merhaba Arkadaşlar,
-
 Bazen yemek yemek için dışarı çıkar ve daha önceden gitmediğimiz bir yere oturup hiç bakmadığımız tadlara yelken açarız. Bu, bazen çok başarılı sonuçlanır ve bize büyük bir keyif verir. Bazen de yapmış olduğumuz tercihlerimiz için pişmanlık duyarız. Hatta bazı zamanlarda yerken iyi gelen o tadlar, çıkışta büyük sıkıntılara yol açabilir
+
+[![yoresel1](/assets/images/2012/yoresel1_thumb.jpg)](/assets/images/2012/yoresel1.jpg)
+
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_53.png)
 

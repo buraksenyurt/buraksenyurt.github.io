@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework 6 Alpha 1 ve async, await Özellikleri"
 date: 2012-10-31 22:41:00 +0300
@@ -14,9 +14,10 @@ tags:
   - threading
   - visual-studio
 ---
-[![speed_limit](/assets/images/2012/speed_limit_thumb.jpg)](/assets/images/2012/speed_limit.jpg) Merhaba Arkadaşlar,
-
 Doğruyu söylemek gerekirse yazılım hayatım boyunca en çok kurduğum cümlelerden birisi de sanıyorum ki şu olmuştur: “Microsoft’ un hızına yetişemiyoruz”
+
+[![speed_limit](/assets/images/2012/speed_limit_thumb.jpg)](/assets/images/2012/speed_limit.jpg)
+
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_66.png)
 

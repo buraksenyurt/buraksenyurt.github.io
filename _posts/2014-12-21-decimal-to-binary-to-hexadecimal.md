@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Decimal to Binary to Hexadecimal"
 date: 2014-12-21 17:00:00 +0300
@@ -10,9 +10,10 @@ tags:
   - http
   - generics
 ---
-[![Pierre_de_Fermat_Pul](/assets/images/2014/Pierre_de_Fermat_Pul_thumb.jpg)](/assets/images/2014/Pierre_de_Fermat_Pul.jpg) Merhaba Arkadaşlar,
-
 [İlk Draft Tarihi: 2012-08-01]
+
+[![Pierre_de_Fermat_Pul](/assets/images/2014/Pierre_de_Fermat_Pul_thumb.jpg)](/assets/images/2014/Pierre_de_Fermat_Pul.jpg)
+
 
 Bundan bir kaç sene önce ünlü matematikçi Fermat’ nın son teoreminin nasıl ispat edildiğinin anlatıldığı bir kitabı okumuştum. 1670 yılında ortaya çıkan ve Fermat tarafından o zaman ispat edildiği öne sürülen ama bildiğim kadarı ile kanıt bulunamayan teorem ancak 1995 yılında Andrew Wiles tarafından kanıtlanabilmiştir.
 

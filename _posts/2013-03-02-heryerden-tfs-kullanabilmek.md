@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Heryerden TFS Kullanabilmek"
 date: 2013-03-02 08:50:00 +0300
@@ -13,9 +13,10 @@ tags:
   - java
   - visual-studio
 ---
-[![usb-prizi](/assets/images/2013/usb-prizi_thumb.png)](/assets/images/2013/usb-prizi.png) Merhaba Arkadaşlar,
-
 Yandaki fotoğrafta bir duvar prizi içinden USB bağlantısı yapıldığını ve cep telefonunun şarj edildiğini görmektesiniz. Bir süredir hayatımızda olan ilginç buluşlardan birisi de USB Priz’ ler. Bu aslında USB’ nin pek çok farklı ortama entegre edilebilmesi anlamına da geliyor. Söz gelimi bir süredir pek çok araç modelin USB çıkışları neredeyse standart. Telefonlarımızı yol boyunca şarj edebiliyoruz. Hatta USB olmayan araçlarda, çakmaktan gelen enerjiyi USB bağlantısı ile aktaran ara dönüştürücüler bile var.
+
+[![usb-prizi](/assets/images/2013/usb-prizi_thumb.png)](/assets/images/2013/usb-prizi.png)
+
 
 Dolayısıyla çeşitli ve pek çoğu standart hale gelen cihazlar ile USB çıkışları verebilmek mümkün. Nerden geldik şimdi bu USB Priz konusuna. Hem bir Plug-In gibi görülebildiği hem de entegrasyon anlamında sağladığı yetenekleri göz önüna alalım.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TFS 32Bit Uygulama Hatası (Bir Garip Geliştiricinin Haykırışı)"
 date: 2013-01-01 15:52:00 +0300
@@ -11,9 +11,10 @@ tags:
   - http
   - iis
 ---
-[![big-mistake](/assets/images/2013/big-mistake_thumb.jpg)](/assets/images/2013/big-mistake.jpg) Merhaba Arkadaşlar,
-
 Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu serisi altında paylaşım yapmaktayım. Ancak karşılaştığım ilginç bir durumu da sizinle paylaşmak istedim. Tabi olayın başrol oyuncusu olarak en büyük kabahat bende
+
+[![big-mistake](/assets/images/2013/big-mistake_thumb.jpg)](/assets/images/2013/big-mistake.jpg)
+
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_86.png)
 

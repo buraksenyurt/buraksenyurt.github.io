@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.5–Built-In UDP Desteği"
 date: 2015-01-17 23:00:00 +0300
@@ -16,9 +16,10 @@ tags:
   - transactions
   - generics
 ---
-[![70050](/assets/images/2015/70050_thumb.jpg)](/assets/images/2015/70050.jpg) Merhaba Arkadaşlar,
-
 > Hızzzzz!!! Ben Hızzımmm! Hızlıdan hızlı…
+
+[![70050](/assets/images/2015/70050_thumb.jpg)](/assets/images/2015/70050.jpg)
+
 
 Bu repliği bu aralar haftada en az 7 kere seyretmek zorunda kaldığım Cars filminden hatırlıyorum (Pixar’ ın efsane çizgi filmlerinden birisi olmakla birlikte serinin 2nci filmi de süperdir. 3ncü çekilir mi bilemem ama çekilse harika olur)
 

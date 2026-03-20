@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft Teknoloji Günleri Akşam Sınıfında Buluşalım"
 date: 2010-05-22 06:40:00 +0300
@@ -18,11 +18,15 @@ tags:
   - parallel-programming
   - generics
 ---
-![BizSpark.jpg](/assets/images/2010/BizSpark.jpg)
-
-![GelisimAtolyesi.jpg](/assets/images/2010/GelisimAtolyesi.jpg)
 Tarih
 25 Mayıs 2010 Salı
+
+![BizSpark.jpg](/assets/images/2010/BizSpark.jpg)
+![GelisimAtolyesi.jpg](/assets/images/2010/GelisimAtolyesi.jpg)
+
+
+![BizSpark.jpg](/assets/images/2010/BizSpark.jpg)
+
 
 Saat
 19.00 - 21.30

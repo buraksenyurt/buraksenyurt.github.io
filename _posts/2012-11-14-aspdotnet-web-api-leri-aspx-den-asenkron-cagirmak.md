@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net Web API’ leri ASPX’ den Asenkron Çağırmak"
 date: 2012-11-14 00:00:00 +0300
@@ -23,9 +23,10 @@ tags:
   - concurrency
   - generics
 ---
-[![baterist-290x290](/assets/images/2012/baterist-290x290_thumb.jpg)](/assets/images/2012/baterist-290x290.jpg) Merhaba Arkadaşlar,
-
 Bateri çalanları her zaman için büyük bir hayranlıkla izlerim/izlemişimdir. Özellikle 4 uzuvlarını da (iki kol iki ayak
+
+[![baterist-290x290](/assets/images/2012/baterist-290x290_thumb.jpg)](/assets/images/2012/baterist-290x290.jpg)
+
 
 ![Smile with tongue out](/assets/images/2012/wlEmoticon-smilewithtongueout_6.png)
 

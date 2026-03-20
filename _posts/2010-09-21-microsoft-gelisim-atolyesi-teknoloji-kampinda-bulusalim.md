@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft Gelişim Atölyesi Teknoloji Kampında Buluşalım"
 date: 2010-09-21 06:10:00 +0300
@@ -13,9 +13,10 @@ tags:
   - visual-studio
   - dependency-management
 ---
-[![teknoloji_kampi_ekim_2010](/assets/images/2010/teknoloji_kampi_ekim_2010.gif)](http://www.msgelisimatolyesi.com/teknoloji_kampi_ekim_2010.aspx) Merhaba Arkadaşlar,
-
 5,6 Ekim 2010 tarihlerinde Microsoft Gelişim Atölyesi Teknoloji Kampı düzenleniyor olacak. Bir aksilik olmassa bende Visual Studio 2010 ile Etkin Ürün Geliştirme konulu bir sunum yapıyor olacağım. Sunum için bana ayrılan 45 dakikalık zaman diliminde aşağıdaki konulardan bahsetmeyi ve ilgili örnekler yapmayı planlıyorum.
+
+[![teknoloji_kampi_ekim_2010](/assets/images/2010/teknoloji_kampi_ekim_2010.gif)](http://www.msgelisimatolyesi.com/teknoloji_kampi_ekim_2010.aspx)
+
 
 Arhitecture Features
 Dependency Graph (Assembly, Class...)

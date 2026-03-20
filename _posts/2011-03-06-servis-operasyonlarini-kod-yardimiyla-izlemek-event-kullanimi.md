@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Servis Operasyonlarını Kod Yardımıyla İzlemek – Event Kullanımı"
 date: 2011-03-06 18:00:00 +0300
@@ -12,9 +12,10 @@ tags:
   - iis
   - visual-studio
 ---
-[![blg223_Giris](/assets/images/2011/blg223_Giris_thumb.jpg)](/assets/images/2011/blg223_Giris.jpg) Merhaba Arkadaşlar,
-
 Suyun dibinden bir baloncuk yükselmeye başlar. Taze ve temiz hava ile temas etmek için can atmaktadır. Ancak kat etmesi gereken epey bir mesafe vardır. Daha da hızlanabilmek ister. Yükselirken karşısına bir baloncuk daha çıkar ve doğrudan ona koşar. Artık ikisi birlikte, daha hızlı yükselmektedirler.
+
+[![blg223_Giris](/assets/images/2011/blg223_Giris_thumb.jpg)](/assets/images/2011/blg223_Giris.jpg)
+
 
 “Birlikten kuvvet doğar” der, alttan gelen ötekine. Ama artık havasızlıktan boğulmak üzeredirler. Neyse ki yollarına başka bir baloncuk daha çıkar. Üç baloncuk birleşerek daha büyük bir tane oluşturur. Süratler artmıştır. Gün ışığına, taze havaya çok, çok az kalmıştır. Ve nihayettt…Hımmmm!!! Temiz hava…
 

@@ -12,7 +12,10 @@ tags:
   - javascript
   - visual-studio
 ---
-[![almworld](/assets/images/2013/almworld_thumb.jpg)](/assets/images/2013/almworld.jpg)[Orjinal Yazım Tarihi 3/20/2013]
+[Orjinal Yazım Tarihi 3/20/2013]
+
+[![almworld](/assets/images/2013/almworld_thumb.jpg)](/assets/images/2013/almworld.jpg)
+
 
 Çoğu zaman geliştirilen yazılım ürünleri ile farklı profilden insanları ortak bir payda da buluşturmayı hedefleriz. Farklı özelliklere sahip insanları, ürüne nasıl katabileceğimizi keşfetmeye çalışırız. Tabi geliştirilen ürünün hedef kitlesi de burada önemli bir rol oynar.
 

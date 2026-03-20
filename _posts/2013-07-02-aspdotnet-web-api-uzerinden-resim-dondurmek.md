@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net Web API Üzerinden Resim Döndürmek"
 date: 2013-07-02 13:08:00 +0300
@@ -17,9 +17,10 @@ tags:
   - generics
   - visual-studio
 ---
-[![Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768_thumb.jpg)](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768.jpg) Merhaba Arkadaşlar,
-
 Eminim çocukken çizgi filmlerle aranız vardı. Hatta çoğumuz yaşı kaç olursa olsun çizgi filmlere arada sırada da olsa zaman ayırmakta. (Ben Batman gördüm mü pür dikkat izlerim örneğin) Keza pek çok büyüğümüz de, eskiden izlediği çizgi filmler ile karşılaştığında taaaa çocukluk yıllarına kadar gidip aynı o zamanki gibi içten gülebiliyorlar da (Rahmetli babamdan bilirim)
+
+[![Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768_thumb.jpg)](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768.jpg)
+
 
 Aslına bakarsanız bazen teknoloji de bizi aynen bu mantıkta epeyce güldürebiliyor. Örneğin Microsoft’ un ürünlerini düşünelim. (Gerçi çok fazlalar ama gene de düşünmeye çalışalım) Sürekli yenilikler çıkartıyorlar, sürekli verisyon atlatıyorlar ve işin en acı tarafı da koşan [Road Runner](https://eksisozluk.com/road-runner--32627)’ a benziyorlar. Biz mi? Biz ise Road Runner’ ı her fırsatta yakalamaya çalışıp yakaladığını zanneden ama son anda hep elinden kaçıran [Coyote](https://eksisozluk.com/coyote--51208)’ ye
 

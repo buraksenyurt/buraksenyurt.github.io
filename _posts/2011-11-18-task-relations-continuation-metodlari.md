@@ -10,7 +10,10 @@ tags:
   - dotnet
   - threading
 ---
-[![1342533_gray_day_over_water](/assets/images/2011/1342533_gray_day_over_water_thumb.jpg)](/assets/images/2011/1342533_gray_day_over_water.jpg) Böylesine yağmurlu ve sabah trafiğinin tavan yaptığı bir günde size ne Radyo Eksen’ deki güzel melodiler, ne de okuduğunuz mizah dergisindeki karikatürler iyi gelmiyorsa, başka bir şeyle uğraşmanın yeridir diyebilirim. Ben bu sıkıntıyı aşmak ve kendimi daha iyi hissetmek adına bir makale daha yazmaya karar verdim ve hemen Windows Live Writer programını açtım
+Böylesine yağmurlu ve sabah trafiğinin tavan yaptığı bir günde size ne Radyo Eksen’ deki güzel melodiler, ne de okuduğunuz mizah dergisindeki karikatürler iyi gelmiyorsa, başka bir şeyle uğraşmanın yeridir diyebilirim. Ben bu sıkıntıyı aşmak ve kendimi daha iyi hissetmek adına bir makale daha yazmaya karar verdim ve hemen Windows Live Writer programını açtım
+
+[![1342533_gray_day_over_water](/assets/images/2011/1342533_gray_day_over_water_thumb.jpg)](/assets/images/2011/1342533_gray_day_over_water.jpg)
+
 
 ![Gülümseme](/assets/images/2011/wlEmoticon-smile_20.png)
 

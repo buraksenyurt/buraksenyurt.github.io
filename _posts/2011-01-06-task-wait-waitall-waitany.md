@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Task Wait,WaitAll,WaitAny"
 date: 2011-01-06 13:25:00 +0300
@@ -13,9 +13,10 @@ tags:
   - generics
   - visual-studio
 ---
-[![blg207_Giris](/assets/images/2011/blg207_Giris_thumb.jpg)](/assets/images/2011/blg207_Giris.jpg) Merhaba Arkadaşlar,
-
 [Task Süreçlerinde Bilinçli Olarak Duraksatma](../2010/Task Süreçlerinde Bilinçli Olarak Duraksatma.md) başlıklı bir önceki yazımızda CancellationToken.WaitHandle.WaitOne, Thread.Sleep ve Thread.SpinWait metodlarından yararlanarak bir Task çalışmasının bekletme işlemlerinin nasıl yapılabileceğini incelemeye çalışmıştık. Özellikle WaitOne metodunun, CancellationToken.WaitHandle özeliği üzerinden çalıştırıldığını unutmayalım. Diğer yandan tüm bu teknikleri Task gövdesi içerisinde gerçekleştirmiştik. Bunun doğal sonucu olarakta yürütülmekte olan Task işlevlerinin duraksatılmasını sağlamıştık.
+
+[![blg207_Giris](/assets/images/2011/blg207_Giris_thumb.jpg)](/assets/images/2011/blg207_Giris.jpg)
+
 
 Ancak incelediğimiz bu teknikler dışında, Task nesne örnekleri veya Task sınıfı üzerinden kullanılabilecek farklı bekletme teknikleri de söz konusudur.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "BING Maps WCF Rest Servislerini Kullanmak"
 date: 2012-04-02 04:00:00 +0300
@@ -18,9 +18,10 @@ tags:
   - serialization
   - generics
 ---
-[![Garfield-1](/assets/images/2012/Garfield-1_thumb.jpg)](/assets/images/2012/Garfield-1.jpg) Merhaba Arkadaşlar,
-
 Bazen öğrenmek istediklerimiz bize inanılmaz karşık gelir. Ne zaman kitabı açsak ya da bilgisayarın başına geçsek işe zaten demoralize olmuş bir şekilde başlarız. Özellikle tez hazırlıkları safhasındayken veya yazacağımız kitap için gerekli araştırmaları yaparken çok yoğun, ağır, sıkıcı ve uğraştırıcı unsurlarla karşı karşıya kalabiliriz.
+
+[![Garfield-1](/assets/images/2012/Garfield-1_thumb.jpg)](/assets/images/2012/Garfield-1.jpg)
+
 
 Yüksek Lisans yaptığım dönemlerdeki hocalarımdan birisi bu konuda şöyle bir tavsiye de bulunmuştu…
 

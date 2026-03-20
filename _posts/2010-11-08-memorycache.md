@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "MemoryCache"
 date: 2010-11-08 03:34:00 +0300
@@ -19,9 +19,10 @@ tags:
   - datatable
   - dependency-management
 ---
-[![blg238_Giris](/assets/images/2010/blg238_Giris_thumb.jpg)](/assets/images/2010/blg238_Giris.jpg) Merhaba Arkadaşlar,
-
 Deadline…Benim gibi yazılım geliştirici olan pek coğumuzun sevmediği kelimelerin başında geldiğinden eminim
+
+[![blg238_Giris](/assets/images/2010/blg238_Giris_thumb.jpg)](/assets/images/2010/blg238_Giris.jpg)
+
 
 ![Annoyed](/assets/images/2010/wlEmoticon-annoyed_2.png)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "T-SQL ile Dinlenmece Eğlenmece"
 date: 2011-12-14 16:25:00 +0300
@@ -13,9 +13,10 @@ tags:
   - transactions
   - visual-studio
 ---
-[![fun](/assets/images/2011/fun_thumb.jpg)](/assets/images/2011/fun.jpg) Merhaba Arkadaşlar,
-
 Hiç canınızın sıkıldığı ve böyle bir buhran anına girdiğinizde SQL Server Management Studio'yu açıp T-SQL ile eğlenceli bir şeyler yapmaya çalıştığınız oldu mu?
+
+[![fun](/assets/images/2011/fun_thumb.jpg)](/assets/images/2011/fun.jpg)
+
 
 ![Smile](/assets/images/2011/wlEmoticon-smile_25.png)
 

@@ -13,7 +13,10 @@ tags:
   - generics
   - visual-studio
 ---
-[![helpful_tips_image](/assets/images/2013/helpful_tips_image_thumb.jpg)](/assets/images/2013/helpful_tips_image.jpg)[İlk yazım tarihi 31 ekim 2012]
+[İlk yazım tarihi 31 ekim 2012]
+
+[![helpful_tips_image](/assets/images/2013/helpful_tips_image_thumb.jpg)](/assets/images/2013/helpful_tips_image.jpg)
+
 
 Yazılım sektöründe yer alan bizler, mutlak suretle en az bir programlama dilini çok iyi seviyede öğrenmeye çalışır ve bunun için epey yoğun çaba sarf ederiz (Hatta değerli bir büyüğümüzün sözüne göre, hayatımızın her hangibir noktasında C veya C++ gibi bir dili öğrenmeye çalışmış ama hiç bir zaman iyi bir C/C++ geliştiricisi olamamışızdır)
 

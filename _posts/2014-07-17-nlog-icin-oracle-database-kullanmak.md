@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "NLog için Oracle Database Kullanmak"
 date: 2014-07-17 07:45:00 +0300
@@ -15,9 +15,10 @@ tags:
   - threading
   - transactions
 ---
-[![marlin-dory](/assets/images/2014/marlin-dory_thumb.jpg)](/assets/images/2014/marlin-dory.jpg) Merhaba Arkadaşlar,
-
 Animasyon film meraklısı olupta [Pixar’ ın 2003 yapımı Nemo’ sunu](http://www.imdb.com/title/tt0266543/) izlemeyen sanırım yoktur. Kayıp oğlu Nemo’ yu bulmak isteyen Marlin, uzun ve zorlu yolculuğu sırasında oldukça unutkan olan ve aslında bu özelliği ile balık olduğunu adeta tüm izleyenlere ispat eden Dory ile seyahat etmektedir. Dory neredeyse bir saniye önce söylediğini hatırlamakta zorlanan bir balıktır.
+
+[![marlin-dory](/assets/images/2014/marlin-dory_thumb.jpg)](/assets/images/2014/marlin-dory.jpg)
+
 
 Aslında geliştirmekte olduğumuz uygulamaların da buna benzer handikapları vardır. Bir şeyler hatırlamak zorundadırlar ve bu yüzden çeşitli depolama ortamlarını kullanırlar. Bu depolar ile olan iletişimlerinde çeşitli stratejiler uygularlar. Özellikle web tabanlı uygulamalar söz konusu olduğunda istemciler ile olan iletişimde de unutkanlık halleri baş gösterir. Web, doğası gereği çoğu zaman State tutmakta zorlanan bir ortamdır.
 

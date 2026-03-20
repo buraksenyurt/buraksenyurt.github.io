@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Log4Net’ i Tanıyalım"
 date: 2012-03-01 07:22:00 +0300
@@ -18,9 +18,10 @@ tags:
   - dependency-injection
   - dependency-management
 ---
-[![910898_who_am_i_](/assets/images/2012/910898_who_am_i__thumb.jpg)](/assets/images/2012/910898_who_am_i_.jpg) Merhaba Arkadaşlar,
-
 Herkesin kendine has bir parmak izi vardır. DNA gibi benzersizdir. Her ne kadar bazı ajanlı filmelerinde bu izler silinebilse de (belki de silinebilyordur):) Krimonoloji labaratuvarlarından tutunda, şirketlerdeki giriş kapılarına kadar pek çok noktada parmak izlerimiz devreye girer. Hatta günümüzde kullandığımız bilgisayarların çoğunun açılması için parmak izi kullanılabilmektedir.
+
+[![910898_who_am_i_](/assets/images/2012/910898_who_am_i__thumb.jpg)](/assets/images/2012/910898_who_am_i_.jpg)
+
 
 Parmak izinin sahibi, sistem içerisinde yaptığı hareketliliklere ait pek çok bilgi bırakır geriye. Ne zaman gelmiş, nerede durmuş, hangi eşyayı tutmuş, kaç saat çalışmış, bilgisayarını ne zaman açmış vs…Bu tip bilgiler bazı senaryolarda çok kritiktir ve önemli anlamlar ifade etmektedir.
 

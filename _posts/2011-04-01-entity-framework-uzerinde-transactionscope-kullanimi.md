@@ -13,7 +13,10 @@ tags:
   - xml
   - transactions
 ---
-[![blg231_Giris](/assets/images/2011/blg231_Giris_thumb.gif)](/assets/images/2011/blg231_Giris.gif) Günlerden Salı, sonbahar. Neredeyse hiç uyumadan geçen bir gecenin ardından sabaha karşı yorgunluktan sızan Netspecter, CAD’ in baş ucunda dakikalarca miyavlaması sonucu ancak kendine gelebilir. Eksi ve köhne divanı, o doğrulurken olabildiğince haykırarak gıcırdamaktadır. Önce terliklerini arar. Oda darma dağınıktır. Tüm gece kütüphanedeki sayısız kitabı indirmiş ve bir sonuç bulmak için saatlerce araştırma yapmıştır. Sonuçta terliğin tekinin dahi bulunamadığı bir kalabalık kitap yığınıdır.
+Günlerden Salı, sonbahar. Neredeyse hiç uyumadan geçen bir gecenin ardından sabaha karşı yorgunluktan sızan Netspecter, CAD’ in baş ucunda dakikalarca miyavlaması sonucu ancak kendine gelebilir. Eksi ve köhne divanı, o doğrulurken olabildiğince haykırarak gıcırdamaktadır. Önce terliklerini arar. Oda darma dağınıktır. Tüm gece kütüphanedeki sayısız kitabı indirmiş ve bir sonuç bulmak için saatlerce araştırma yapmıştır. Sonuçta terliğin tekinin dahi bulunamadığı bir kalabalık kitap yığınıdır.
+
+[![blg231_Giris](/assets/images/2011/blg231_Giris_thumb.gif)](/assets/images/2011/blg231_Giris.gif)
+
 
 Kafada korkunç bir baş ağrısı, dışarıdan gelen metronun raylarda bıraktığı ses ve CAD’ in cılız miyavlamaları…Netspecter divandan kalkarken şöyle bir belinden geriye doğru esner. Derken tavan lambasının biraz üstüne vuran dikdörtgen biçimli gölgeyi fark eder. Nasıl olur? Bu kitap gözünden nasıl kaçmıştır. Gece karanlığında fark edemediği kaynağı gün ışığı açığa çıkarmıştır. İşte oradadır. Gölgenin kaynağına doğru gider. Ado.Net and System.Xml v2.0 The Beta Version
 

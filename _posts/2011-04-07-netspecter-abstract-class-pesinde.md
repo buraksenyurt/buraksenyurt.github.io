@@ -7,7 +7,10 @@ categories:
 tags:
   - csharp
 ---
-[![blg230_Giris](/assets/images/2011/blg230_Giris_thumb.jpg)](/assets/images/2011/blg230_Giris.jpg) Yağmur şiddetini giderek arttırıyordu. Karanlık ara sokakta gizemli bir pardesü ise ağır ağır ilerlemekteydi. Etraftaki pis kokunun hemen sokağın başındaki çöp konteynerlerinden geldiği ap açık ortadaydı. Ancak gizemli pardesü bu kokuyu umursamıyordu bile. Bir an durdu ve şüpheli bir şekilde arkasına baktı.
+Yağmur şiddetini giderek arttırıyordu. Karanlık ara sokakta gizemli bir pardesü ise ağır ağır ilerlemekteydi. Etraftaki pis kokunun hemen sokağın başındaki çöp konteynerlerinden geldiği ap açık ortadaydı. Ancak gizemli pardesü bu kokuyu umursamıyordu bile. Bir an durdu ve şüpheli bir şekilde arkasına baktı.
+
+[![blg230_Giris](/assets/images/2011/blg230_Giris_thumb.jpg)](/assets/images/2011/blg230_Giris.jpg)
+
 
 Karanlık içerisinde sadece gözleri belli oluyordu. Kaşlarını çattı ve bir anda irkilerek koşmaya başladı. O kadar paniklemişti ki, koşarken teneke çöp kutularını fark etmedi bile. Önce yere düştü, bir süre yuvarlandı. Çevredeki kediler sağ sola kaçışırken, kalkmaya çalıştı ama önündeki metal iskeleyi hesaplayamadı. Kafasını sert bir şekilde demire çarptı.
 

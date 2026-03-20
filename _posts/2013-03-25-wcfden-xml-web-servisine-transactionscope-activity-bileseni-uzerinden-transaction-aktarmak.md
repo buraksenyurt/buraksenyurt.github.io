@@ -24,7 +24,10 @@ tags:
   - visual-studio
   - atomic-operations
 ---
-[![1344349583_normalThumb](/assets/images/2013/1344349583_normalThumb_thumb.jpg)](/assets/images/2013/1344349583_normalThumb.jpg)[Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+[Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+
+[![1344349583_normalThumb](/assets/images/2013/1344349583_normalThumb_thumb.jpg)](/assets/images/2013/1344349583_normalThumb.jpg)
+
 
 Bir süre öncesine kadar Composition adı verilen bir katmanda yer alacak çeşitli servisler ile yoğun şekilde güreşmekteydim. Çok fazla faktör, çok fazla farklı sistem ve tabiri yerinde ise oyun ve oyuncu söz konusuydu.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net–Custom Configuration Section Geliştirmek"
 date: 2014-05-19 16:50:00 +0300
@@ -13,9 +13,10 @@ tags:
   - http
   - authentication
 ---
-[![Configuration](/assets/images/2014/Configuration_thumb.png)](/assets/images/2014/Configuration.png) Merhaba Arkadaşlar,
-
 Konfigurasyon tabanlı geliştirme modeli, uygulama kodlarına girilmeden çalışma zamanına yönelik değişiklikler yapabilmemizi sağlar. Bu sayede pek çok programın kodsal müdahale yapmadan davranışları değiştirilebilir..Net dünyasında baktığımızda da, App.Config, Web.config gibi dosyalar içerisinde Framework’ ün geneline yönelik pek çok konfigurasyon ayarı bulunduğu görülür. appSettings, connectionStrings, httpHandler vb…
+
+[![Configuration](/assets/images/2014/Configuration_thumb.png)](/assets/images/2014/Configuration.png)
+
 
 > Eskilerden: [Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)](https://www.buraksenyurt.com/post/Asp-Net-2-0-ile-Configuration-Management-(Konfigurasyon-Yonetimi)-bsenyurt-com-dan)
 

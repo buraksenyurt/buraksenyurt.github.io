@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Big Big Big Integer ve Faktöryel Hesaplarken Yüzümde Oluşan Tebessüm"
 date: 2011-04-20 15:05:00 +0300
@@ -13,9 +13,10 @@ tags:
   - http
   - visual-studio
 ---
-[![blg203_Giris](/assets/images/2011/blg203_Giris_thumb.jpg)](/assets/images/2011/blg203_Giris.jpg) Merhaba Arkadaşlar,
-
 [Monster Truck](http://en.wikipedia.org/wiki/Monster_truck) yarışlarını izleyen var mıdır bilemiyorum. Bir zamanlar Eurosport kanalında sık sık izler ve bu devasa, kocaman araçların, önlerinde ufacık kalan (ki o araçların çoğu avrupada kullanılan binek otoların çoğundan en ve boyca büyüktür) araçların üstünden atlarken onları nasıl ezdiklerine ağzım açık bakardım.
+
+[![blg203_Giris](/assets/images/2011/blg203_Giris_thumb.jpg)](/assets/images/2011/blg203_Giris.jpg)
+
 
 Amerikalıların gerçekten garip müsabaka anlayışları ve sportif aktiviteleri var. Monster Truck araçlarının kullanıldığı bu tip yarışmalarda bile binlerce seyirciyi toplayabiliyorlar. Üstelik bu seyirciler çılgınlar gibi bağırıp duruyor ve keyif alıyorlar. (Biz daha basketbol maçlarına seyirci toplayamazken üstelik:()
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TFS Client Object Model ile Word Entegrasyonu"
 date: 2013-04-11 13:15:00 +0300
@@ -10,9 +10,10 @@ tags:
   - http
   - visual-studio
 ---
-[![Dodge-Challenger-production-1024x566](/assets/images/2013/Dodge-Challenger-production-1024x566_thumb.jpg)](/assets/images/2013/Dodge-Challenger-production-1024x566.jpg) Merhaba Arkadaşlar,
-
 Geçtiğimiz gün National Geographic kanalında Mega Fabrikalar’ ı seyretme fırsatı buldum. Amerikalı Dodge firması efsane Challanger‘ ı yeniden üretmekteydi. Konu bu üretimin gerçekleştirildiği mega fabrikaydı.
+
+[![Dodge-Challenger-production-1024x566](/assets/images/2013/Dodge-Challenger-production-1024x566_thumb.jpg)](/assets/images/2013/Dodge-Challenger-production-1024x566.jpg)
+
 
 Robotların, gelişmiş endüstürinin ve insan gücünün bir araya geldiği fabrika, sadece 24 saat içerisinde üretim hattından mükemmel spor arabalar çıkmaktaydı. Üstelik motor bloğu da kıtanın bir diğer ucundan geliyordu.
 

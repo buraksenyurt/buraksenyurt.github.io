@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Visual Studio 2012 için Entity Framework Yenilikleri"
 date: 2013-02-13 01:18:00 +0300
@@ -14,9 +14,10 @@ tags:
   - http
   - visual-studio
 ---
-[![Delphi5_RTM](/assets/images/2013/Delphi5_RTM_thumb.jpg)](/assets/images/2013/Delphi5_RTM.jpg) Merhaba Arkadaşlar,
-
 Çok eskiden kullanılan programlama dilleri ve platformları düşünüldüğünde çok ilkel IDE’ ler ile çalışmış olduğumuzu görmekteyiz. Hatta bazı programlama dilleri ile yapılan geliştirmelerde değil IDE, komut satırına mahkum olmuşuzdur (Gerçi komut satırında script yazarak geliştirme yapmak özellikle fonksiyonel programlama dilleri göz önüne alınırsa oldukça popüler ve isabetlidir)
+
+[![Delphi5_RTM](/assets/images/2013/Delphi5_RTM_thumb.jpg)](/assets/images/2013/Delphi5_RTM.jpg)
+
 
 Gelişen sistemler, kullanıcı deneyimleri ve görselliklerin artması ile de yazılımcıların daha profesyonel olan IDE’ ler üzerinde çalışması şart olmuştur.
 

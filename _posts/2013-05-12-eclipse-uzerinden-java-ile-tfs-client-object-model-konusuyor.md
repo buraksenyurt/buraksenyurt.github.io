@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Eclipse Üzerinden Java ile TFS Client Object Model Konuşuyor"
 date: 2013-05-12 10:10:00 +0300
@@ -13,9 +13,10 @@ tags:
   - threading
   - visual-studio
 ---
-[![developers](/assets/images/2013/developers_thumb.jpg)](/assets/images/2013/developers.jpg) Merhaba Arkadaşlar,
-
 Çok değil daha bir kaç sene öncesine kadar (Özellikle.Net’ in duyurulduğu yıllarda ve izleyen bir kaç senede) yazılım dünyasında neredeyse yandaki resimdekine benzer bir kavga vardı (Benzetmeyi biraz abartmış olabilirim)
+
+[![developers](/assets/images/2013/developers_thumb.jpg)](/assets/images/2013/developers.jpg)
+
 
 Java’ cılar, C#’ çıları pek sevmez iken tam tersi durum da pekala geçerliydi. Ben hiç bir zaman birisinin fanatiği olmadım. Hatta Java ile ufak çaplı bir kaç deneyimim bile oldu.
 

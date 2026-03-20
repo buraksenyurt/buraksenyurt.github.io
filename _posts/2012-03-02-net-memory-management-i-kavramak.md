@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net Memory Management’ i Kavramak"
 date: 2012-03-02 06:54:00 +0300
@@ -14,9 +14,10 @@ tags:
   - performance
   - pointers
 ---
-[![Merovingian200px](/assets/images/2012/Merovingian200px_thumb.png)](/assets/images/2012/Merovingian200px.png) Merhaba Arkadaşlar,
-
 Matix! Ne filmdi ama değil mi? Özellikle yazılım tarafına hakim olan bizler için, filmin içerisindeki pek çok gönderi anlamlı birer mesaj haline gelmişti. İlk bölüm zaten efsanenin başlangıcı olma niteliğindeydi. İkinci bölümde işler daha da bir farklılaştı tabi. Örneğin, silinmeyen ve Matrix içerisinde kendini geliştirip küçük bir krallık yaratan Merovingian karakteri vardı. Bu sistem içerisinde yer alan ve süresi dolduktan sonra silinmesi gereken bir program iken, kaynağa (Source) geri dönmemişti.
+
+[![Merovingian200px](/assets/images/2012/Merovingian200px_thumb.png)](/assets/images/2012/Merovingian200px.png)
+
 
 Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutulmuş ve bellek üzerinde bir şekilde ayakta kalmış bir programcıktı
 

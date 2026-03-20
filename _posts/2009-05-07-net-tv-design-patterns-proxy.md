@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net Tv - Design Patterns : Proxy"
 date: 2009-05-07 15:25:00 +0300
@@ -9,8 +9,6 @@ tags:
   - dotnet
   - http
 ---
-Merhaba Arkadaşlar.
-
 [Youtube Link](https://www.youtube.com/watch?v=-YE1ZBCP6XE)
 
 Kısa bir aradan sonra.Net Tv görsel derslerimize devam ediyorum. [Bu görsel dersimizde](http://nedirtv.com/video/design-patterns-proxy), son derece basit ve oldukça kullanışlı tasarım desenlerinden birisi olan Proxy kalıbını incelemeye çalışıyoruz.

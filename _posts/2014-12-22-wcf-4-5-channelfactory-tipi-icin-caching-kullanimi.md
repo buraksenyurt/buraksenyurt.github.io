@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.5–ChannelFactory Tipi için Caching Kullanımı"
 date: 2014-12-22 19:00:00 +0300
@@ -14,9 +14,10 @@ tags:
   - caching
   - generics
 ---
-[![PerfectCircle](/assets/images/2014/PerfectCircle_thumb.jpg)](/assets/images/2014/PerfectCircle.jpg) Merhaba Arkadaşlar,
-
 Vaktiyle üniversitedeki diferansiyel denklemler dersi hocamızın anlattığı bir efsane vardı (Sene 94 bu arada). Ne kadar gerçektir bilinmez ama beni oldukça etkilemişti. Hikayeye göre üniversite hocaları arasında belirli aralıklarla düzenlenen bir yarışma varmış. Bu yarışmada hocaların tahtaya kalkıp seçtikleri teoremlere ait geometrik şekilleri çizmeleri istenirmiş. En güzel çizim ise mükafatlandırılırmış.
+
+[![PerfectCircle](/assets/images/2014/PerfectCircle_thumb.jpg)](/assets/images/2014/PerfectCircle.jpg)
+
 
 Bir gün hocalar ardı ardına kalkıp tahtada hünerlerini göstermeye başlamışlar. Hemen hepsi rengarenk tebeşirler kullanıyormuş. Sarmallar, hiperboller, spiraller, üç boyutlu grafikler vb…
 

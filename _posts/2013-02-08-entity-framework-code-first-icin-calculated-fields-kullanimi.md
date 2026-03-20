@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework Code-First için Calculated Fields Kullanımı"
 date: 2013-02-08 05:15:00 +0300
@@ -10,9 +10,10 @@ tags:
   - linq
   - t-sql
 ---
-[![hot-water-migration](/assets/images/2013/hot-water-migration_thumb.jpg)](/assets/images/2013/hot-water-migration.jpg) Merhaba Arkadaşlar,
-
 Genellikle göç etmek gibi anlamlarda kullanılan Migrate kelimesinin yazılım dünyasındaki karşılığını düşündüğümüzde, elbetteki yandaki fotoğrafta yer alan ve bir birlerinin akvaryumuna atlayan balıklar gelmeyecektir/gelmemelidir.
+
+[![hot-water-migration](/assets/images/2013/hot-water-migration_thumb.jpg)](/assets/images/2013/hot-water-migration.jpg)
+
 
 Ancak Entity Framework Code-First yaklaşımı ve Calculated Fields kavramını göz önüne getirdiğimizde, Migration kelimesini ciddi manada düşünmemiz gerekebilir. Nasıl mı? Haydi okumaya devam
 

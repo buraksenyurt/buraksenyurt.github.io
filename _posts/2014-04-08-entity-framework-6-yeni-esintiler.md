@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework 6 –Yeni Esintiler"
 date: 2014-04-08 11:09:00 +0300
@@ -13,9 +13,10 @@ tags:
   - http
   - visual-studio
 ---
-[![ef61_6](/assets/images/2014/ef61_6_thumb.png)](/assets/images/2014/ef61_6.png) Merhaba Arkadaşlar,
-
 Tam da bu gün İstanbul’ da hafif rüzgarlı, güneşli bir bahar havası var. Binaların kapalı mekanlarında çalışan bizler için iki dakikalığına da olsa dışarıya çıkmanın, rüzgarın hafif esintisini ve güneşin ılık sıcaklığını hissetmenin değeri paha biçilemez.
+
+[![ef61_6](/assets/images/2014/ef61_6_thumb.png)](/assets/images/2014/ef61_6.png)
+
 
 Bahara olan özlemimizin tavan yaptığı bu günlerde, başka diyarlarda da değişik esintiler söz konusu elbette. [Örneğin C# 6.0 da](https://www.buraksenyurt.com/post/C-60e28093Yeni-Esintiler), örneğin Entity Framework’ de. Bakalım bu günkü esintiler bizi nerelere götürecek?
 

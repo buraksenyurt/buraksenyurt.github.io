@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Interceptors"
 date: 2012-12-02 19:53:00 +0300
@@ -17,9 +17,10 @@ tags:
   - performance
   - visual-studio
 ---
-[![32484720231_large](/assets/images/2012/32484720231_large_thumb.jpg)](/assets/images/2012/32484720231_large.jpg) Merhaba Arkadaşlar,
-
 Hepimizin hafızasında yer eden ve defalarca seyretse de asla sıkılmayacağı kült filmler vardır. Hatta nesiller ilerledikçe, her neslin mutlaka en az bir kere uğradığı, uğraması gereken yapımlar vardır.
+
+[![32484720231_large](/assets/images/2012/32484720231_large_thumb.jpg)](/assets/images/2012/32484720231_large.jpg)
+
 
 The Godfather, Starwars, Matrix, The Good the bad and the ugly, Back to the future vb…Bunlardan birisi de benim için [Mad Max](http://www.imdb.com/title/tt0079501/)’ dir.
 

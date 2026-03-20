@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Fluent Interface Nedir?"
 date: 2011-03-27 05:15:00 +0300
@@ -9,9 +9,10 @@ tags:
   - http
   - generics
 ---
-[![blg236_Giris](/assets/images/2011/blg236_Giris_thumb.jpg)](/assets/images/2011/blg236_Giris.jpg) Merhaba Arkadaşlar,
-
 Yazılımcı olarak bizlerin zaman içerisindeki gelişimimiz/ilerleyişimiz açısından takip etmemiz gereken önemli kişiler olduğu aşikardır. Söz gelimi çevik süreç prensiplerine ait manifestoyu hazırlayanlar arasında yer alan Martin Fowler gibi. [Martin Fowler](http://martinfowler.com/) bana göre yazılım mühendisliğinin uç noktalarında yaşayan bir bilim insanıdır. Bilim insanı diyorum nitekim çalıştığı şirkette Chief Scientist pozisyonunda görev almaktadır
+
+[![blg236_Giris](/assets/images/2011/blg236_Giris_thumb.jpg)](/assets/images/2011/blg236_Giris.jpg)
+
 
 ![Smile](/assets/images/2011/wlEmoticon-smile.png)
 

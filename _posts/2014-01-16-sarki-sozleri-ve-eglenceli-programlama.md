@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Şarkı Sözleri ve Eğlenceli Programlama"
 date: 2014-01-16 16:36:00 +0300
@@ -23,9 +23,10 @@ tags:
   - async-await
   - generics
 ---
-[![scorpions-the-millenium-collection](/assets/images/2014/scorpions-the-millenium-collection_thumb.jpg)](/assets/images/2014/scorpions-the-millenium-collection.jpg) Merhaba Arkadaşlar,
-
 Geçtiğimiz gün standart olarak Youtube üzerinden gerek 80ler, gerek 90lara ait iz bırakan sanatçıları ve şarkılarını izlemekteydim. Çok sık yaptığım şeylerden birisi de bu şarkıları sosyal ağda paylaşmak aslında. Ama bazende şarkıların melodileri dışında sözlerini de mırıldanmaktayım kendi kendime, ki pek çoğumuzun bunu sıkça yaptığından eminim
+
+[![scorpions-the-millenium-collection](/assets/images/2014/scorpions-the-millenium-collection_thumb.jpg)](/assets/images/2014/scorpions-the-millenium-collection.jpg)
+
 
 ![Smile](/assets/images/2014/wlEmoticon-smile_43.png)
 

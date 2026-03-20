@@ -12,7 +12,10 @@ tags:
   - visual-studio
   - dependency-management
 ---
-[![blg227_CQL_Sample_1](/assets/images/2010/blg227_CQL_Sample_1_thumb.gif)](/assets/images/2010/blg227_CQL_Sample_1.gif) Yandaki resimde Visual Studio 2010 Ultimate ortamına ait bir ara pencere görmektesiniz. Dikkat edeceğiniz üzere
+Yandaki resimde Visual Studio 2010 Ultimate ortamına ait bir ara pencere görmektesiniz. Dikkat edeceğiniz üzere
+
+[![blg227_CQL_Sample_1](/assets/images/2010/blg227_CQL_Sample_1_thumb.gif)](/assets/images/2010/blg227_CQL_Sample_1.gif)
+
 
 Select Methods Where NbLinesOfCode>=5
 

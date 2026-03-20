@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Parallel Programming–Reduction"
 date: 2011-12-02 11:51:00 +0300
@@ -14,9 +14,10 @@ tags:
   - performance
   - generics
 ---
-[![wolfenstein](/assets/images/2011/wolfenstein_thumb.jpg)](/assets/images/2011/wolfenstein.jpg) Merhaba Arkadaşlar,
-
 Neredeyse son bir kaç saattir yoğun bir şekilde Wolfenstein isimli bilgisayar oyununu oynamaktaydım. Aslında çok fazla bilgisayar oyunu oynayan birisi değilimdir. Hatta bu oyunun ilk versiyonunu çok çok uzun zaman önce oynadığımı ve arada çok az oyunla haşır neşir olduğumu itiraf edebilirim
+
+[![wolfenstein](/assets/images/2011/wolfenstein_thumb.jpg)](/assets/images/2011/wolfenstein.jpg)
+
 
 ![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile_12.png)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework Code First için Doğrulama(Validation) Stratejileri"
 date: 2012-11-18 06:38:00 +0300
@@ -15,9 +15,10 @@ tags:
   - generics
   - webinar
 ---
-[![checklist1](/assets/images/2012/checklist1_thumb.gif)](/assets/images/2012/checklist1.gif) Merhaba Arkadaşlar,
-
 [[Bu yazıda ele alınan konuları içeren Webiner (Webcast) kayıtlarına Nedirtv?com sayfasından erişebilir, izleyebilir ve indirebilirsiniz]](http://nedirtv.com/video/entity-framework-code-first-validation)
+
+[![checklist1](/assets/images/2012/checklist1_thumb.gif)](/assets/images/2012/checklist1.gif)
+
 
 Bir verinin çeşitli kurallara göre doğrulanması, verinin işlenmek üzere gönderilmeden önce yapılması gereken önemli işlemlerden birisidir. Özellikle Entity Framework gibi veri merkezli (Data-Centric) uygulama geliştirme alt yapılarında bu durum daha da önem arz etmektedir.
 

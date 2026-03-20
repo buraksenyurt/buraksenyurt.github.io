@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Minicik Session İçeriği"
 date: 2010-11-02 15:10:00 +0300
@@ -15,9 +15,10 @@ tags:
   - visual-studio
   - dataset
 ---
-[![blg237_Giris](/assets/images/2010/blg237_Giris_thumb.jpg)](/assets/images/2010/blg237_Giris.jpg) Merhaba Arkadaşlar,
-
 Bildiğiniz üzere bir süredir Microsoft Teknoloji Günleri Akşam Sınıfı etkinliklerini gerçekleştirmekteyiz. Kasım ayının konusu ise hemen her sürümünde köklü ve önemli yenilikler ile birlikte gelen Asp.Net'in 4.0 sürümü
+
+[![blg237_Giris](/assets/images/2010/blg237_Giris_thumb.jpg)](/assets/images/2010/blg237_Giris.jpg)
+
 
 ![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_7.png)
 

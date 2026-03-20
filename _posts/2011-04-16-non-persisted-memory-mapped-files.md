@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Non-Persisted Memory Mapped Files"
 date: 2011-04-16 15:00:00 +0300
@@ -12,9 +12,10 @@ tags:
   - dotnet
   - visual-studio
 ---
-[![blg202_Giris](/assets/images/2011/blg202_Giris_thumb.jpg)](/assets/images/2011/blg202_Giris.jpg) Merhaba Arkadaşlar,
-
 Akşam saatleriydi. Sıcak ama güneşin fazla görünmediği bir yaz gününün sonları yaklaşmaktaydı. Gün boyu güneşi İstanbul’ dan saklayan bulutlar yavaş yavaş parçalanmaya başlamıştı. Aralardan güneşin ışınları hafif kızılımsı bir renk ile göğü süslemekteydi. Ancak yine de sert esen rüzgar ve hızla hareket eden bulutlar adeta fırtına öncesi sessizliğin bir habercisiydi. Aile efradı tatildeydi ve çalışma odamda tek başıma dışarıya doğru bakerken geceyi nasıl devam ettirmem gerektiğini planlıyordum.
+
+[![blg202_Giris](/assets/images/2011/blg202_Giris_thumb.jpg)](/assets/images/2011/blg202_Giris.jpg)
+
 
 Zaman ilerledi ve gecenin zifiri karanlığında güçlü bir gök gürültüsü duyuldu. Belli ki fırtınalı, zor bir gece olacaktı. Kimsenin açık denizde veya havada olmak istemeyeceği bir gece.
 

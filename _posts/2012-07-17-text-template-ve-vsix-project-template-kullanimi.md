@@ -19,7 +19,7 @@ tags:
 ---
 [Aşağıdaki örnek Visual Studio 2012 RC sürümü üzerinde ele alınmıştır]
 
-[![deadline](/assets/images/2012/deadline_thumb.jpg)](/assets/images/2012/deadline.jpg) Merhaba Arkadaşlar,
+[![deadline](/assets/images/2012/deadline_thumb.jpg)](/assets/images/2012/deadline.jpg)
 
 Çoğu zaman geliştiricilerin karşısına zaman kısıtı olan projelerde, sıklıkla tekrar eden çözümsel ihtiyaçlar çıkar. Örneğin, ürünün içerisinde n sayıda ekran kullanıldığını ve bunların aslında belirli bir noktaya kadar bir kaç parametre ile değişen ama standart kod içeriklerine sahip olduğunu düşünün. Hatta bu tip ekranları bir kaç proje için aynı şekilde ürettiğinizi.
 

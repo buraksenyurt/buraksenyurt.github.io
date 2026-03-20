@@ -19,7 +19,10 @@ tags:
   - java
   - visual-studio
 ---
-[![blg234_Giris](/assets/images/2011/blg234_Giris_thumb.jpg)](/assets/images/2011/blg234_Giris.jpg) Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır.
+Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır.
+
+[![blg234_Giris](/assets/images/2011/blg234_Giris_thumb.jpg)](/assets/images/2011/blg234_Giris.jpg)
+
 
 Güneş batmış ve hava çoktan kararmıştır. Müşterileri çoğunlukla buluşmalara geç kalır. Aslında çevrede oturanları gizlice gözlemlediğinde onlardan birisinin kalkıp yanına geleceğini ve kendisini müşterisi olarak tanıtacağını gayet iyi bilmektedir. Bir açıdan müşterilerinin aslında kendinden önce geldiğini ama tedrigin oldukları için yaklaşmakta zorlandıklarını bilmektedir. Daha önce bu çok sık başına gelmiştir.
 

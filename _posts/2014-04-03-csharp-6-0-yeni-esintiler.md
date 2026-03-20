@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 6.0–Yeni Esintiler"
 date: 2014-04-03 13:04:00 +0300
@@ -15,9 +15,10 @@ tags:
   - visual-studio
   - datatable
 ---
-[![LegoBuild](/assets/images/2014/LegoBuild_thumb.jpg)](/assets/images/2014/LegoBuild.jpg) Merhaba Arkadaşlar,
-
 Çok şanslı bir çocukluk geçirdim. 80li yıllarda daha minik bir çocukken Lego’ lar oyuncak dolabımdan eksik olmazdı. O zamanlar benim için çok kıymetliydiler. Tabi büyüdükçe başka başka şeyler önem kazanmaya başladı. Lego’ nun pabucu belki de dama atıldı. Ta ki bir oğlum olana kadar.
+
+[![LegoBuild](/assets/images/2014/LegoBuild_thumb.jpg)](/assets/images/2014/LegoBuild.jpg)
+
 
 Şimdiler de 4lü yaşlarını yaşayan S (h) arp Efe’ nin en sevdiği oyuncakların başında geliyor Lego. Ülkemizdeki fiyatları her ne hikmetse yüksek olan Lego’ lardan çok fazla alamıyoruz belki ama işin güzel bir tarafı var. 80li yıllarda oynadığım ve Annem tarafından saklanan Lego parçaları günümüzdekiler ile de uyumlu. Yani var olanları yeniler ile bir arada kullanıp hayal gücümüze göre farklı farklı yapılar inşa edebiliyoruz.
 
