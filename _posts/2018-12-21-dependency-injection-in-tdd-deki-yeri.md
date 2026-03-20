@@ -16,9 +16,9 @@ tags:
   - github
   - dependency-management
 ---
-![tdd_di_5.jpg](/assets/images/2018/tdd_di_5.jpg)
-
 Ne zamandır oturup da Lego yapmadığımı fark ettim. Her ne kadar fiyatları epeyce artmış olsa da geçenlerde dayanamayıp bir tane aldım. Bitirir bitirmez beni tatile götüreceğini düşündüğüm güzel bir karavan. Bloklardaki canlı renklerin tatlılığı, masmavi surf tahtası, uydu alıcısı, konforlu koltukları, panaromik tavanı, spor lastikleri ile bir saate kalmadan hazırdı bile.
+
+![tdd_di_5.jpg](/assets/images/2018/tdd_di_5.jpg)
 
 Onunla biraz oynayıp, wrom wrom yaptım. Lego City'nin caddelerinden yavaş ve sakince akarak Malaga kıyılarındaki plajlara indim. Güneş batana kadar yüzdüm, surf yaptım. Bazen sahilden iyice uzaklaştım. İnsanların nokta gibi gözüktüğü mesafelere geldim. Şehre akşamın sakinliği çöküp karanlık bastırdıktan sonra plaja tekrar gelen gençlerin gitar melodilerinden çıkan tınıları dinlemeye başladım. Yaktıkları ateş etrafında toplanmış enerji dolu gençler. Karavanın hemen yanıbaşına kurduğum şezlongumda uzanmış onları izliyordum. Tebessümle. Buzlu kahvemden bir yudum aldım ve açık duran bilgisayarımda yanıp sönen cursor'u izlemeye başladım. Yazılmayı bekleyen kuyrukta kalmış bir şeyler vardı...
 

@@ -13,9 +13,9 @@ tags:
   - caching
   - github
 ---
-![gorouting_6.gif](/assets/images/2017/gorouting_6.gif)
-
 Bir önceki yazımızda web programlamada önemli bir yere sahip olan yönlendiricileri (Router) tanımak adına github üzerinden sunulan httpRouter paketini kullanarak dinamik HTML içeriği ürettiğimiz bir örnek geliştirmiştik. Bu hafta içinde HttpRouter paketi hakkında öğrendiklerimi çeşitli örnekler ile pekiştirmeye çalıştım. Bu sefer hem static web içeriğinin hem de talebe göre JSON formatlı veri sunumu yapacak dinamiklerin yer alacağı konu üzerinde durdum. Web programlama konusunda acemi olduğum için örneği sonuca ulaştırırken takıldığım bir kaç nokta da oldu. Yazımızda bu konulara da değinmeye çalışacağım.
+
+![gorouting_6.gif](/assets/images/2017/gorouting_6.gif)
 
 Bu tip örneklerde işe yarar bir veri kümesi ile çalışmak her zaman için tercih ettiğim yöntemlerden birisi. Hatırlıyorum da Microsoft'un bu alanda oldukça başarılı veri kümeleri bulunuyordu. AdventureWorks ve Northwind veritabanları bize yıllarca yardımcı oldu. Eminim ki çoğumuzun kobay taboları vardır. Product ve Category gibi. Ben bu örneğimizde kendi hafif veri setimi bellekte konuşlandırdım. Pratik geldi:) Başrol oyuncusu olarak Star Wars dünyasından bir kaç modeli kullanmaya çalıştım. Kategori bazlı olacak şekilde bu evrendeki araçları basit nitelikleri ile ele aldım. Bu kez [şu adresten](http://www.blastr.com/2015-9-11/v-wing-millennium-falcon-50-best-star-wars-vehicles-ranked) yararlandım.
 

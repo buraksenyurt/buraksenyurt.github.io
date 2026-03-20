@@ -19,9 +19,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg146_Giris.jpg](/assets/images/2010/blg146_Giris.jpg)
-
 Bu yazımızda bizleri uzun, zorlu ve yorucu bir macera bekliyor. Şimdiden söylemek isterim ki yanınızda tatlı (Mesela kolalı jelibon olabilir), tuzlu yiyecek bir şeyler, boğaz kuruluğunuzu giderecek içecekler veya daha fazla oksijen çekmenizi sağlayacak sakızlar olsun. Unutmadan birde aspirin. Baş ağrısı için
+
+![blg146_Giris.jpg](/assets/images/2010/blg146_Giris.jpg)
 
 ![Laughing](/assets/images/2010/smiley-laughing.gif)
 

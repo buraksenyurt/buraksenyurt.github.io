@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Angular ile Basit Bir Görevler Listesi Uygulaması Yazmak"
 date: 2019-05-08 06:00:00 +0300
@@ -16,9 +16,9 @@ tags:
   - visual-studio
   - github
 ---
-![albertsword.png](/assets/images/2019/albertsword.png)
-
 Bazen ne kadar basit olursa olsun üşenmeden bir örneğin üstüne gitmek gerekiyor. Çünkü çok basit örneklerle çalışıyor olsak bile gözümüzden kaçan önemli detaylar olabilir. Günümüzde kullanmakta olduğumuz pek çok geliştirme çatısı, belli ürünlere yönelik hazır şablonları kolayca üretebileceğimiz komut setleri sunmakta.
+
+![albertsword.png](/assets/images/2019/albertsword.png)
 
 Boilerplate olarak da ifade edebileceğimiz bu enstrümanlar sayesinde bir anda işler halde karşımıza çıkan uygulamalarla karşılaşıyoruz. Ancak ürüne hakim olabilmek, rahatça sağını solunu bükebilmek için hazır gelen şablonları bile kurcalamak gerekiyor. Benim [Saturday-Night-Works birinci fazında](https://github.com/buraksenyurt/saturday-night-works) sıklıkla icra ettiğim bir eğitim süreci bu. Angular, Blazor, React ve benzeri konu başlıklarında hazır hello world şablonları ile sıklıkla karşılaştım. Onları eğip bükerek daha çok şey öğrenmeye çalıştım. Sonuçta tecrübe etmediğimiz sürece bilgi dağarcığımız genişleyemez, yanılıyor muyum? Öyleyse gelin 09 numaralı çalışmayı kayıt altına alalım.
 

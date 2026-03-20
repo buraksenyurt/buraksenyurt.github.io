@@ -14,9 +14,9 @@ tags:
   - visual-studio
   - datatable
 ---
-![blg178_Giris.jpg](/assets/images/2010/blg178_Giris.jpg)
-
 Malum "her yiğidin farklı bir yoğurt yiğiş tarzı vardır" derler. Genellikle programlama dilleri veya.Net Framework gibi yapılarda da bir sonuca ulaşmak için birden fazla ve farklı yol söz konusu olabilir. Böyle bir durumun oluşmasına neden olan etkenlerin başında, çevresel ortam parametrelerinin farklılaşmasının geldiğini ifade edebiliriz.
+
+![blg178_Giris.jpg](/assets/images/2010/blg178_Giris.jpg)
 
 Çok basit bir kaç örnek vererek olayı kafamızda daha net bir şekilde canlandırmaya çalışalım. Bir koleksiyon içerisindeki öğeleri for veya foreach döngüleri ile dolaşabiliriz. Ya da örneğin bir veri tablosundan veriyi çekmek için, DataTable bazlı bir tekniği veya DataReader bazlı bir yöntemi ele alabiliriz. Ancak öyle vakalar söz konusudur ki, aynı amaç için ele alınabilecek veya değerlendirilebilecek yolların sayısı çok fazladır. Bu fazlalık bir süre sonra karar vermeyi zorlaştırır ve işin içinden çıkılmaz bir duruma düşülebilir.
 
@@ -86,7 +86,7 @@ namespace AttachedToParentCases
         {
             Task parentTask = Task.Factory.StartNew(() =>
             {
-                Console.WriteLine("Parent Task...");                
+                Console.WriteLine("Parent Task...");
 
                 #region 2 - StartNew Kullanımı
 
@@ -147,7 +147,6 @@ namespace AttachedToParentCases
                     );
 
                 #endregion
-               
 
                 Thread.Sleep(30000); //Debug modda Parallel Task' leri izlemek için konulmuştur
             });

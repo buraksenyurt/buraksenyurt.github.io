@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Angular ile Yazılmış Bir Web Uygulamasını PWA Uyumlu Hale Getirmek"
 date: 2019-06-28 07:00:00 +0300
@@ -15,9 +15,9 @@ tags:
   - github
   - dependency-management
 ---
-![LesEclaireurs.png](/assets/images/2019/LesEclaireurs.png)
-
 Geminin neredeyse tüm seyrüsefer sistemi ve radarı arka arkaya gelen alarm sinyalleri sonrası bozulmuştu. Güney pasifiği terk etmek üzere olan koca tekne en son Arjantin kıyılarına yakın seyrediyordu. Gecenin zifiri karanlığında ilerlerken kaptanın en büyük yol bulma ümitlerinden olan kuzey yıldızı bulutlarla kaplı gökyüzünden saatlerdir görülmüyordu.
+
+![LesEclaireurs.png](/assets/images/2019/LesEclaireurs.png)
 
 Altı kişilik güverte mürettabı normal şartlarda geminin seyri için fazlasıyla yeterliydi. Yaklaşık yirmibin groston ağırlığındaki gemi son teknloji cihazlarla donatıldığı için az sayıda personel ile kıtalar arası seyahat edebiliyordu.
 

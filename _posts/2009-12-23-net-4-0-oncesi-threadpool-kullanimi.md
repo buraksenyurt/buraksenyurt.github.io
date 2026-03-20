@@ -13,9 +13,9 @@ tags:
   - visual-studio
   - dependency-management
 ---
-![blg122_Giris.jpg](/assets/images/2009/blg122_Giris.jpg)
-
 İlk okulda eminimki pek çok arkadaşımız havuz problemlerinden müzdarip olmuştur. Genellikle bu havuzlarda ikiden fazla musluk olması neredeyse garantidir ve genellikle bu musluklardan bazıları havuzu belirli sürelerde doldururken, bazılarıda belirli sürelerde boşaltır. Hatta zamanla bu muslukların ne kadar hızla su doldurduğu veya boşalttığıda işin içerisine girer ve aslında sadece yüzmek için kullanabileceğimiz güzelim havuz koca bir problem haline dönüşür.
+
+![blg122_Giris.jpg](/assets/images/2009/blg122_Giris.jpg)
 
 Ben açıkçası bu problemleri çözmekte hep yetersiz kalmışımdır. Hatta çoğunlukla atmasyon cevaplar ürettiğimi itiraf edebilirim. Nitekim havuz deyince aklıma genellikle yandaki resimde görülen manzara gelir. Peki havuz problemlerinden kurtulabildik mi? Ihhh
 

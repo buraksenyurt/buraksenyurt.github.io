@@ -12,9 +12,9 @@ tags:
   - http
   - generics
 ---
-![artcl_8_1.jpg](/assets/images/2012/artcl_8_1.jpg)
-
 Akademik yıllarımızda çoğumuz karmaşık matematik algoritmaları ile uğraşmak durumunda kalmışızdır (Sınav stresini hatırlamak bile istemiyorum) Özellikle veri yapıları ve algoritmalar (Data Structures and Alogirthms) veya Numeric Analiz gibi derslerde yoğun algoritma tasarımları üzerinde çalışılmaktadır. Doğruyu söylemek gerekirse ülkemizde bu dersleri layıkıyla veren kurum sayısı oldukça azdır. Konular genellikle sırlama algoritmalarının (özellikle Quick Sort'un) ötesine pek geçmemektedir. En fazla yüksek lisans öğreniminde farklı konulara girilmesi söz konusudur.
+
+![artcl_8_1.jpg](/assets/images/2012/artcl_8_1.jpg)
 
 Pek tabi yazılım dünyası söz konusu olduğunda var olan hemen her algoritmanın karşılığı olan kodlamaların geliştirilmesi de önemli bir mevzudur. Bilimsel uygulamalarda, finansal model çözümlerinde, endusturi alanındaki planlama tekniklerinde vb...Ben bu yazımda sizleri o karmaşık ve anlaşılması zor algoritmalar ile yormayacağım. Bunun yerine eğilenceli sayılabilecek ve özellikle oyun programlamada oyunculara keyifli dakikalar yaşatmanızı sağlayabilecek basit bir kaç algoritma üzerinde durmaya çalışacağım. Söz konusu algoritmaları birer Extension Method olarak geliştireceğiz. Dilerseniz hiç vakit kaybetmeden ilk algoritmamız ile işe başlayalım.
 

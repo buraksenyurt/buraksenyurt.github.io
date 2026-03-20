@@ -11,9 +11,9 @@ tags:
   - async-await
   - delegates
 ---
-![Bdpattern_4.gif](/assets/images/2016/Bdpattern_4.gif)
-
 Epey zamandır tasarım kalıpları tarafına bakmadığımı fark ettim. Hem kalıpları tekrar etmek hem de yeni bir şeyler var mı diye internette gezinirken JEE tarafında sıklıkla başvurulan Business Delegate isimli bir desene rastladım. Aslında delegate dediğimiz zaman bir işi başkasına devrettiğimizi düşünebiliriz (Delegasyon ile ilgili olarak internette resim ararken de işte yandaki gibi eğlenceli bir tanesine rastladım)
+
+![Bdpattern_4.gif](/assets/images/2016/Bdpattern_4.gif)
 
 Normal şartlarda standart olarak kabul gören Gangs of Four (Erich Gamma, Richard Helm, Ralph Johnson ve John Vlissides) desenlerinde yer almıyor ancak genel yazılım tasarım kalıpları içerisinde yer verilmiş. (Tüm deseneler ile ilişkili olarak [Wikipedia adresine](https://en.wikipedia.org/wiki/Design_Patterns) giderseniz diğer desenler kısmında yer aldığını görebilirsiniz)
 

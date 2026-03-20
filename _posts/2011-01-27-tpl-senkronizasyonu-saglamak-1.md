@@ -15,9 +15,9 @@ tags:
   - visual-studio
   - shared-state
 ---
-![blg212_Giris](/assets/images/2011/blg212_Giris.jpg)
-
 Pek çoğumuzun anahtarlığında sayısız anahtar bulunmaktadır. Özellike gerilim filmlerinde bu anahtarlardan doğru olanı bulmak ve anahtar deliğine sokmak, hep zaman alan başarısız kaçış girişimleri olarak sahnelenir. Genellikle bu başarız girişimlerin sonunda ne olduğu malumdur.
+
+![blg212_Giris](/assets/images/2011/blg212_Giris.jpg)
 
 Ancak ister gerilim filmi olsun ister olmasın sonuçta anahtar deliğine herhangibir zamanda takılabilecek sadece tek bir anahtar söz konusudur. Üstelik bu anahtar, aynı yere başka bir anahtarın takılmasına da izin vermez. Aslında izin verip vermemesi, anahtarı tutan veya kullanan kişinin elindedir.
 
@@ -338,4 +338,3 @@ Daha önceden de bahsettiğimiz üzere lock bloğu aslında Monitor tipinin ilgi
 IL (Intermediate Language) koduna baktığımızda Monitor.Enter ve Monitor.Exit metod çağrılarının gerçekleştirildiği görülmektedir. Üstelik lock ifadesi içerisine alınan kod kısmı için arka planda bir try…finally bloğu oluşturulmuştur. Finally bloğunda gerçekleştirilen Monitor.Exit çağrısı, tahmin edileceği üzere her ne olursa olsun devreye girecektir. Tabi ki Monitor tipinin bilinçli olarak kullanılması gerektiği durumlarda söz konusu olabilir. Bu ve diğer durumları ilerleyen yazılarımızda ele almaya çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SynchronizationPrimitives.rar (22,26 kb)](/assets/files/2011/SynchronizationPrimitives.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
-

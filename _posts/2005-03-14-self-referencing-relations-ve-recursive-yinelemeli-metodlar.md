@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Self Referencing Relations ve Recursive(Yinelemeli) Metodlar"
 date: 2005-03-14 12:00:00 +0300

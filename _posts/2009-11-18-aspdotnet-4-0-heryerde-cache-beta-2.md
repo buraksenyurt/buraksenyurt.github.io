@@ -17,9 +17,9 @@ tags:
   - visual-studio
   - dependency-management
 ---
-![blg103_Giris.jpg](/assets/images/2009/blg103_Giris.jpg)
-
 Kronometrelerinizi hazır edin! Bu yazımızda Absolute ve Sliding Expiration modelinde ön bellekleme işlemlerini Windows tabanlı bir uygulama üzerinde gerçekleştiriyor olacağız. Durun bir dakika...Windows mu? Evet evet yanlış duymadınız Windows. Aslında başlıktaki konu ile tamamen tezat bir durum. Gerçekten de öyle mi acaba? Gelin şu meseleyi açıklığa kavuşturalım.
+
+![blg103_Giris.jpg](/assets/images/2009/blg103_Giris.jpg)
 
 ![Smile](/assets/images/2009/smiley-smile.gif)
 

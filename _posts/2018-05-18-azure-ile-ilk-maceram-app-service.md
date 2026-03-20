@@ -19,9 +19,9 @@ tags:
   - concurrency
   - visual-studio
 ---
-![nonazure_0.gif](/assets/images/2018/nonazure_0.gif)
-
 Sinema tarihinin en araştırmacı en gözüpek en maceraperest arkeoloğu kimdir desek herhalde aklımıza tek bir isim gelir; Indiana Jones. Geçenlerde DVD arşivimden şöyle yanında patlamış mısırla izleyeceğim güzel bir macera filmi bakıyordum. Bu yaşıma kadar aslında bir çok ünlü seriyi arşivime eklemiştim. Baba, Matrix, Mad Max, Star Wars, Back to the Future, Terminator, Lord of the Rings ve diğerleri. Derken Indiana Jones çıktı karşıma ve gecenin izlencesi belli oldu. Mısırlar patlatıldı, naneli limonatalar hazırlandı, DVD takıldı, perdeler indirildi ve seyir başladı. Pek tabii Indiana Jones'un bir profesör olmasından çok atıldığı maceralardı seyirciyi ekrana bağlayan. Ona can veren Harrison Ford'un ince esprileri de cabasıydı. Filmi büyük bir keyifle tamamladıktan sonra geçtim West-World'ün başına. Bir Indiana Jones değildim ama benim de kendi çapımda minik maceralarım vardı. Sıradaki serüven yüksek tepelerin ardında, ihtişamlı bulutları ile göz kamaştıran Azure hanedanlığına doğru olacaktı.
+
+![nonazure_0.gif](/assets/images/2018/nonazure_0.gif)
 
 Bulut bilişim dünyasının başrol oyuncularını düşündüğümüzde karşımıza Amazon Web Services, Google Cloud Platform ve Microsoft Azure çıkıyor (İlk harflere göre sıralayarak yazdım:P) Neredeyse hepsinin benzer amaç, araç ve sunduğu hizmetler var (Düşünsenize hepsinde mutlaka tarayıcı üzerinde çalıştırabildiğimiz terminal konsolları bulunuyor) Bu nedenle herhangi birinde deneyimlediğimiz tecrübeleri diğerlerinde tatbik etmek de mümkün. Bu platformlarda hayatın nasıl işlediğini anlamak için sundukları dokümanlardan yararlanmaksa en mantıklısı.
 

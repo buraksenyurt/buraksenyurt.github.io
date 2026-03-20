@@ -14,9 +14,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg154_Giris.jpg](/assets/images/2010/blg154_Giris.jpg)
-
 Çalışmakta olduğum yazılım şirketinin çok yakınında kocaman bir alışveriş merkezi bulunmakta. Bazen öğle yemekleri için alışveriş merkezinin tahsis ettiği servisler ile oraya gidiyoruz. Alışveriş merkezi olduğu için tehlikeli bir yer olduğunu da söyleyebiliriz.
+
+![blg154_Giris.jpg](/assets/images/2010/blg154_Giris.jpg)
 
 ![Sealed](/assets/images/2010/smiley-sealed.gif)
 

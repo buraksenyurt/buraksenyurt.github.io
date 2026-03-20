@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tie Fighter Değil, Project Tye!"
 date: 2021-03-30 15:00:00 +0300
@@ -30,9 +30,9 @@ tags:
   - visual-studio
   - github
 ---
-![tie-fighter.png](/assets/images/2021/tie-fighter.png)
-
 Star Wars'ın figür kabul edilen gemilerinden birisi imparatorluk güçlerinin Tie Fighter'ıdır. Lord Vader ile özdeşlemiş olan bu figürün kulak tırmalayan ama rahatsız etmeyen sesinin Almanların İkinci Dünya savaşındaki hafif bombardıman uçaklarından birisi olan Junkers Ju-87 Stuka'dan (Sturzkampfflugzeug) geldiği bile söylenir.
+
+![tie-fighter.png](/assets/images/2021/tie-fighter.png)
 
 Aslında ses tasarımcısı Ben Burtt bu efekti oluşturmak için bir filin başka bir file seslenirken çıkardığı bağrış ile ıslak kaldırımda giden araba seslerini birleştirmiştir. Lakin Tie kelimesi okunurken genellikle Tay veya Taiy diye okunur. Belki de okunmaz:P Benzer sesdeşlik Tie ile Tye arasında da vardır. Ancak Tye esasında Microsoft'un deneysel bir çalışmasıdır.
 
@@ -1436,7 +1436,7 @@ namespace Einstein.Rabbit
 
         public void Send(string queueName, string message)
         {
-            if (string.IsNullOrWhiteSpace(queueName)) return; 
+            if (string.IsNullOrWhiteSpace(queueName)) return;
 
             if (string.IsNullOrWhiteSpace(_queueName)) 
             {

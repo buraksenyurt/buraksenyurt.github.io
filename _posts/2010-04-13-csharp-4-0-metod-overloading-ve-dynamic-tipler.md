@@ -11,9 +11,9 @@ tags:
   - http
   - visual-studio
 ---
-![blg150_Giris.jpg](/assets/images/2010/blg150_Giris.jpg)
-
 Eminim hepimiz çocukluğumuzda en az bir kere olmak üzere yediklerimizi, elimize yüzümüze bulaştırmış ve kirlenmişizdir. Her ne kadar bazı şirketler reklam kapmanyalarında kirlenmek güzeldir diyerek annelerin yüreğine su serpseler de, bu aslında pek gerçeği yansıtmamaktadır. Nitekim anneler, çocuklarının ellerini yüzlerini yediklerine bulayıp etraftaki eşyalara dokunmalarını pek hoş karşılamayabilirler.
+
+![blg150_Giris.jpg](/assets/images/2010/blg150_Giris.jpg)
 
 Ben şahsen bunu çocukken bir kaç kez tecrübe etmiş bir insanımdır. Yine de, yaşım hayatın yarısına merdiven dayamış olsa da, bazı zamanlarda o çok sevdiğim kayısı marmelatlı ve üstü pudralı olan Berliner tatlısını elime yüzüme (hatta burnuma) bulaştırarak yemeyi severim (Tabi evde ve en fazla eşimin yanında) Şimdi diyeceksiniz ki Burak Hoca gene başladı bir yiyecek ile...
 
@@ -40,7 +40,7 @@ namespace DynamicAndOverloading
     {
         static void Topla(int x) { }
         static void Topla(int x, dynamic y) { }
-        static void Topla(dynamic x, int y) { }   
+        static void Topla(dynamic x, int y) { }
 
         static void Main(string[] args)
         {
@@ -74,7 +74,7 @@ namespace DynamicAndOverloading
     {
         static void Topla(int x) { }
         static void Topla(int x, dynamic y) { }
-        //static void Topla(dynamic x, int y) { }  // Yorum satırı yaptık 
+        //static void Topla(dynamic x, int y) { }  // Yorum satırı yaptık
 
         static void Main(string[] args)
         {
@@ -112,7 +112,7 @@ namespace DynamicAndOverloading
     {
         static void Topla(int x) { }
         static void Topla(int x, double y) { }
-        static void Topla(double x, int y) { }   
+        static void Topla(double x, int y) { }
 
         static void Main(string[] args)
         {
@@ -132,7 +132,7 @@ namespace DynamicAndOverloading
     {
         static void Topla(int x) { }
         static void Topla(int x, dynamic y) { }
-        static void Topla(dynamic x, int y) { }   
+        static void Topla(dynamic x, int y) { }
 
         static void Main(string[] args)
         {

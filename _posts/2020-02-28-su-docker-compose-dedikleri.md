@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Şu Docker-Compose Dedikleri"
 date: 2020-02-28 20:23:00 +0300
@@ -24,9 +24,9 @@ tags:
   - generics
   - github
 ---
-![docker-compose.png](/assets/images/2020/docker-compose.png)
-
 Önceki çalışmalardan [birisinde](Yine Yeni Yeniden ELK(Bu sefer E ve K için docker-compose işin içinde).md) ELK kurgusunda ElasticSearch ve Kibana tarafı için docker compose'dan yararlanmıştım. Orada iş nispeten daha kolaydı. Var olan docker imajlarını bir kompozisyon çerçevesinde düşünerek ele almıştım. Ama kendi servislerimizden oluşan bir kompozisyon gerekirse nasıl bir yol izlenebilir merak da ediyordum. İşte yılın o vakitleri bunu öğrenmeye çalışmışım.
+
+![docker-compose.png](/assets/images/2020/docker-compose.png)
 
 Aslında birden fazla Container söz konusu olduğunda bunların yönetimi için kullanılan araçlardan birisi Docker-Compose. Senaryoda farklı dillerde yazılmış üç servisi kullanmak istiyorum. Birisi.Net Core, diğeri Python ve sonuncusu da NodeJs ile yazılabilir. Python tarafında Flask, NodeJs tarafında da Express paketlerini kullanabiliriz. Servislerin ne iş yaptığı çok önemli değil. Odaklanmamız gereken nokta Dockerfile içerikleri ile docker-compose.yml üstünde Container kompozisyonunun nasıl tasarlanacağı.
 
@@ -119,7 +119,7 @@ Flask kullandığımız BookApi'ye ait kodlarımız ve Dockerfile ise aşağıda
 from flask import Flask, jsonify
 from flask_restful import Resource, Api 
   
-app = Flask(__name__) 
+app = Flask(__name__)
 
 @app.route('/book')
 def todaysbook():

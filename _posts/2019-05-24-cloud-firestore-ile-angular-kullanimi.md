@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Cloud Firestore ile Angular Kullanımı"
 date: 2019-05-24 09:00:00 +0300
@@ -15,9 +15,9 @@ tags:
   - concurrency
   - github
 ---
-![magicjohson.png](/assets/images/2019/magicjohson.png)
-
 Earvin (Magic) Johnson. Michael Jordan'la geçen gençlik yıllarımın henüz başlarında rastladığım NBA'in ve Los Angles Lakers'ın 2.06lık unutulmaz oyun kurucusu. O dönemlerde yaptığı inanılmaz assistler ve oyun zekası hala aranır nitelikte. Aslında sadece oyun kurucu değil zaman zaman şutör gard ve uzun forvet pozisyonlarında da oynamıştır.
+
+![magicjohson.png](/assets/images/2019/magicjohson.png)
 
 Lakers tarafından 1979 yılında birinci sırada draft edilen Johnson toplamda 5 NBA şampiyonluğu yaşamış efsanelerden birisi. [NBA istatistiklerine göre](https://stats.nba.com/player/77142/career/) oynadığı 906 maçta 19.5 sayı ve 11.2 assist ortalamaları ile double double yapmıştır. Toplamda 10141 asist ile tüm zamanların en çok asist yapan 5nci oyuncusu durumunda. 32 numaralı formasıyla 12 sezon Lakers'da görev alan oyun kurucunun hayatını sevgili Murat Murathanoğlu'nun eşsiz anlatımıyla dinlemek isterseniz [şöyle buyrun](https://youtu.be/xyxIiLpNDu8). Onun [Saturday-Night-Works](https://github.com/buraksenyurt/saturday-night-works) çalıştayımla olan tek ilgisi ise [forma numarası](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2032%20-%20Angular%20with%20Firebase). Hoş bir giriş olsun istedim de:[]
 

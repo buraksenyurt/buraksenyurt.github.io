@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bir React Uygulamasında En Ala SQL Veritabanını Kullanmak"
 date: 2019-11-11 10:30:00 +0300
@@ -13,9 +13,9 @@ tags:
   - javascript
   - github
 ---
-![wcraft.jpg](/assets/images/2019/wcraft.jpg)
-
 İngilizcede bazen gemi kaptanlarına Captain yerine Skipper dendiğini biliyor muydunuz? Aslında Hollandalıların schipper, schip en nihayetinde de ship kelimelerinden türeyerek gelmiş bir ifade. Her ikisi de kaptanı ifade etmekte ama Skipper daha çok bir hitap şekli. Hatta yer yer takım kaptanları veya uçak pilotları için de kullanılıyor. Skipper kelimesinin kullanıldığı yerleri düşününce aklıma The Hunt For Red October filminde USS Dallas kaptanı Mancuso'nun CIA'den Jack Ryan'a "That's right? Skipper's Ramius?" demesi geliyor.
+
+![wcraft.jpg](/assets/images/2019/wcraft.jpg)
 
 Esasında bu hitap şeklinin bana anımsattığı daha güzel şeyler var. Blizzard geliştiricilerinin Warcraft II'sini oynadığım zamanlarda insan kuvvetlerindeki gemilere Skipper diye sesleniliyordu. Karakterlerin o müthiş ses efektleri hala aklımda. "Ay ay sör", "Ayy keptın", "Set seyıl", "Sıkipp?", "Andır veyy!":D Yazılı olarak seslendirmeye çalıştım ama dinleseniz çok daha iyi olabilir. Diğer pek çok karakterin sesi de harikaydı. Mesela köylülerin "Yeş mi lord" diyişindeki şirinlik ya da okçuların tonlamasındaki keskinlik. Youtube'dan silinene kadar [şu adresten dinleyebilir](https://www.youtube.com/watch?v=6wkc4uCaLpw) veya aratabilirsiniz. Bugünkü konumuza gündem olmasının sebebi ise skipper isimli bir nesne dizisini kullanacak olmamız. Öyleyse başlayalım.
 

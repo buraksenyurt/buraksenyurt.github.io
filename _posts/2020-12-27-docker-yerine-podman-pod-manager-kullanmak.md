@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Docker Yerine Podman (Pod Manager) Kullanmak"
 date: 2020-12-27 09:14:00 +0300
@@ -20,9 +20,9 @@ tags:
   - nodejs
   - github
 ---
-![anakinspod.png](/assets/images/2020/anakinspod.png)
-
 Heimdall üstünden birşeyler kurcalamak istediğimde yolum genellikle bir Docker imajı ile kesişiyor. Bakmak istediğim bir NoSQL veritabanı mı var, ELK üçlüsü mü gerekli, bir NGinx server ortamımı lazım ya da yeni bir servis için çalışma zamanımı hazırlamam gerekiyor... Hemen Docker kardeşimizin kapısını çalıyorum. Aslında bakarsanız Container teknolojileri denince çoğumuzun aklına Docker'dan başka bir şey gelmiyordur belki de. "Gerçekten de böyle mi?" diye düşündüğüm bir ara Docker'ın güçlü bir alternatifi olan Podman isimli ürünle karşılaştım ve onu biraz tanımaya karar verdim.
+
+![anakinspod.png](/assets/images/2020/anakinspod.png)
 
 Esasen Docker tek ve vazgeçilmez bir container aracı olarak düşünülmemeli. Sonuçta Open Container Initiative tarafından belirlenmiş standartlara uyan araçlar mevcut. [Open Container Initiative](https://opencontainers.org/), bu tip araçlarda üç temel özelliğin olmasını vurguluyor. Container çalışma zamanı (runtime), dağıtım stratejisi (distribution) ve baş aktör olarak da image. Podman bu standartlara uyan araçlardan birisi. Buna göre Podman ile hazırlanan imajlar Docker ile veya XYZ isimli başka bir Container ile de uyumlu oluyor (Zaten stadartların amacı da bu değil mi? Farklı ürünlerin birbirleri yerine tercih edilip kullanılabilmesi için ortak bir yöntemler kılavuzu sunmak)
 

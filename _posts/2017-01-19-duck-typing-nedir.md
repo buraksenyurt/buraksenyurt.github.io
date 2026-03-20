@@ -12,9 +12,9 @@ tags:
   - java
   - generics
 ---
-![duffy.gif](/assets/images/2017/duffy.gif)
-
 Son bir yıldır Ruby ve Python gibi script diller üzerinde araştırmalar yapıyorum. Daha çok bu dilleri öğrenme, anlama gayretindeyim. En azından orta seviye bilgi sahibi olmak benim için yeterli. Bu dilleri incelerken uzun yıllardır çalıştığım dinamik tip sistemli ve derleyici odaklı yaklaşımları da sorgulamak durumunda kalıyoum. Nitekim farklı programlama yaklaşımlarına sahipler.
+
+![duffy.gif](/assets/images/2017/duffy.gif)
 
 Ruby, Python vb script diller çoğunlukla dinamik tip sistemini (dynamic type system) kullanıyorlar. Yani C#, Java, C++ benzeri dillerde kullanılan statik tip sisteminden (static type system) farklı bir yaklaşım söz konusu. Ayrıca betik diller kodun çalışma zamanında yorumlanarak (Interpret) yürütülmesine odaklandıklarından, derleme (compiling) yaklaşımını benimseyen dillerden epeyce farklılaşıyorlar. Hal böyle olunca diller arası bazı farklı teknikler ve yazım stilleri ortaya çıkıyor. Bunlardan birisi de Duck Typing.
 

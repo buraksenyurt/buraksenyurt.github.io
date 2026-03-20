@@ -16,9 +16,9 @@ tags:
   - ruby
   - github
 ---
-![node_with_pug_3.jpg](/assets/images/2018/node_with_pug_3.jpg)
-
 Kısa bir süre önce çalışmakta olduğum şirkette epey eğlenceli bir mevzunun içerisinde kaldım. Daha önceden de bahsettiğim gibi kurumumuzun bize sunduğu güzel bir hizmet var...[Pluralsight](https://www.pluralsight.com/). Ne var ki benim gibi dikkatsiz kullanıcılar için enteresan şeyler olabiliyor. İzin verin hikayeyi size anlatayım; İlk hedefim oldukça hoşuma giden Node.js tarafında ilerlemekti.
+
+![node_with_pug_3.jpg](/assets/images/2018/node_with_pug_3.jpg)
 
 Bu amaçla kendime çizdiğim kariyer yolunda (aslında Pluralsight Path demek daha doğru olur) bir takım Node.js eğitimlerini izlemeye başladım. Hatam bu eğitimlerin tarihlerine pek dikkat etmiyor oluşumdu. Öyle ki eğitimde sözü geçen bir npm modülü pekala eskimiş olabilirdi.
 

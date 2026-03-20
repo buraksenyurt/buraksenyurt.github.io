@@ -15,9 +15,9 @@ tags:
   - visual-studio
   - shared-state
 ---
-![go_docker5.gif](/assets/images/2017/go_docker5.gif)
-
 Gondor'da bir şeyler araştırmak için harika bir zaman. Çünkü elimdeki işler bitti. Böyle vakitleri kendi araştırmalarıma ayırmak hoşuma gidiyor, kim ne derse desin. Yeni gözdem Linux makinem de (Gondor) önümde durduğuna göre kısa bir süre onun üzerinde çalışabileceğimi düşünüyorum.
+
+![go_docker5.gif](/assets/images/2017/go_docker5.gif)
 
 Aklıma gelen ilk şey ise, Go diliyle yazılmış ilkel bir web sunucusunu Docker üzerinden kullanabilmek. Önce web sunucusunu geliştirmek, başarılı bir şekilde çalıştığından emin olmak, sonrasında bir Docker imajı hazırlamak lazım. Ardından oluşturulan imajdan yararlanarak bir Container başlatıp web sunucusunun bu taşıyıcı örneği üzerinden çalışıp çalışmadığını test etmek senaryonun tamamlanması açısından yeterli. Tahminlerime göre 15 dakikayı aşmayacak bir iş gibi duruyor. Haydi başlayalım.
 

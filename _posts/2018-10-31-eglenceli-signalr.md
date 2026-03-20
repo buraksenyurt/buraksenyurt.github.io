@@ -17,9 +17,9 @@ tags:
   - generics
   - github
 ---
-![funnys_0.jpg](/assets/images/2018/funnys_0.jpg)
-
 Önce üç yumurtayı derin kabın içerisine kırıp el mikseri ile güzelce karıştırdım. Bir su bardağının 4te 3ü kadar şeker ilave edip karıştırmaya devam ettim. Şeker iyice eriyene kadar. Sonra bir su bardağı kadar zeytinyağı, iki su bardağı kadar esmer un katıp (unu önce el eleğine aldım oradan kaba boşalttım. Unu havalandırarak eklemek daha iyi sonuç veriyor çünkü) kulak memesi kıvamına gelinceye kadar çırpmaya devam ettim. Kıvamı ayarlamak için yer yer göz kararı bir miktar daha un eklemem de gerekti. Acemilik tabii...
+
+![funnys_0.jpg](/assets/images/2018/funnys_0.jpg)
 
 Bir süre sonra doktor ötker'in kabartma ve vanilya tozlarından birer paketi kaba boşalttım. Kıvam istediğim hale geldikten sonra rendeledeğim limon kabuklarını ve suyunu döküp çok az daha karıştırdım. Karışımı döktüğüm kabı yüksek ısıya dayanıklı eldivenlerimle tuttum ve 180 derece sıcaklığa ayarladığım fırının üst katına yerleştirdim. Yarım saat kadar bekledim ve soununda üstü kahverengileşmiş, hafiftçe de kabarmış limonlu kekim hazırdı. Onu büyük bir keyifle yapmıştım. Tarif önümde hazırdı ve bu nedenle yapması oldukça kolaydı. Ancak mutluluğumun asıl sebebi keki hazırlamaya başlamadan önce bitirdiğim örnek uygulamaydı.
 

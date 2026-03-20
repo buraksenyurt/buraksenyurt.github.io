@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net Core - Dependency Lifetimes"
 date: 2021-04-30 23:54:00 +0300
@@ -17,9 +17,9 @@ tags:
   - github
   - dependency-management
 ---
-![hellomvc_11.png](/assets/images/2021/hellomvc_11.png)
-
 Çalışmakta olduğum şirketin çok büyük bir ERP (Enterprise Resource Planning) uygulaması var. Microsoft.Net Framework 1.0 sürümünde düşünce olarak hayat geçirilip geliştirilmeye başlanmış. Milyonlarca satır koddan ve sayısız sınıftan oluşan, katmanlı monolitik mimari üstünde yürüyen, sahada on binden fazla personelin kullandığı çok etkili bir ürün. Geçtiğimiz yıl bu uygulamanın modernizasyonu kapsamında başlatılan IT4IT çalışmaları bünyesinde nesne bağımlılıklarının yönetimi için Dependency Injection mekanizmasının nimetlerinden de epeyce yararlanıldı. Doğruyu söylemek gerekirse koda yaptıkları dokunuşları hayranlıkla izledim.
+
+![hellomvc_11.png](/assets/images/2021/hellomvc_11.png)
 
 Elbette başa dert olan ve sahada fark edilmesi güç bazı konular da gündeme gelmedi değil. Bunlarda birisi de bağımlı nesnelerin yaşam ömürleri ile alakalıydı. Gerçekten böylesine büyük bir sistemde AddTransient ile mi gitmeli yoksa AddScoped olarak mı bırakmalı gibi sorulara cevap vermek kolay değil. Öncelikle şu nesne yaşam ömrü meselesini anlamak gerekiyor. Bende hazır evden çıkmamız yasak kitaplarıma gömülmüşken bu meseleyi iyice bir öğreneyim istiyorum. Kapak fotoğrafı mı? Her zaman ki gibi konumuzla bir alakası yok. Sadece yazıyı yazarken dinlemekte olduğum Bon Jovi'nin 1984 çıkışlı stüdyo albümüne ait:D
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "React Üzerinde Socket.IO Kullanımı"
 date: 2019-08-30 13:00:00 +0300
@@ -13,9 +13,9 @@ tags:
   - react
   - github
 ---
-![senna.png](/assets/images/2019/senna.png)
-
 Bir zamanlar sıkı bir Formula 1 izleyicisiydim. O dönemde dünyanın bir numaralı pilotu üç kez F1 dünya şampiyonu olan [Ayrton Senna](https://youtu.be/-pItzcHBHt0)'ydı. Yağmurlu havalardaki ustalığı nedeniyle Rainman lakabını almış bir yarışçı olmakla birlikte virajları hız kesmeden dönmeyi becerirdi. Monaco yarışından bir görüntüsü geldi şimdi gözümün önüne. Sağ eliyle kokpitin sağındaki vitesi sol eliylede direksiyonu tutuyordu.
+
+![senna.png](/assets/images/2019/senna.png)
 
 Kullandığı McLaren Honda MP4/4 marka aracın 1987'de 950 beygir güç üreten bir canavar olduğunu düşününce o hızlarda o yağmurlu havalardaki sürüş tekniği ile gelmiş geçmiş en iyi yarışçı olduğunu adeta ispat ediyordu. İlk başarılarını Lotus ile eden Senna'nın en büyük rakiplerinden birisi Williams takımından Alain Prost'tu (ki bir dönem McLaren'de takım arkadaşı da oldular) Lise yıllarıma denk gelen bu iki kahramanın özellikle kullandıkları canavarların dev posterleri oda duvarlarımı süslerdi. Yarışçı olmak gibi bir hayalim yoktu ama onların meydan okuyuşları, takımlarının otomobil dünyasındaki öncülükleri ilgimi çekiyordu.
 

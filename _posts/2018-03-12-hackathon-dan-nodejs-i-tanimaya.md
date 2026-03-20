@@ -20,9 +20,9 @@ tags:
   - visual-studio
   - github
 ---
-![nodejs_2.gif](/assets/images/2018/nodejs_2.gif)
-
 Javascript yüzyıllardır (abartmayı severim) front-end tarafında kullanılan en güçlü yazılım geliştirme dillerinden birisi. Bir web uygulamasını onsuz düşünmek neredeyse imkansız. Her ne kadar Typescript gibi oluşumlar söz konusu olsa da, Javascript'in yeri ayrı. Javascript dilini baz alan bir çok Framework (çatı) de uzun zamandır sektörümüzde yer almakta. Hatta bazıları tamamen sunucu bazlı çalışacak şekilde tasarlanmış durumdalar. Node.js bunlardan birisi.
+
+![nodejs_2.gif](/assets/images/2018/nodejs_2.gif)
 
 Onunla kesişmem çalışmakta olduğum firmadaki bir kaç sevgili dostumun katılacağı [hackathon](http://hackathon.getir.com/) yarışması sayesinde oldu. Yarışmaya katılımın ön koşulu olarak bir problemin çözülmesi gerekiyordu. Katılımcılar isterlerse Node.js, MongoDb ve Heroku kullanılarak bu görevi gerçekleştirebilirlerdi. Kıt kanaat bilgi birikimimle hemen şu Node.js nedir, neler yapılabiliyordur diye bakınmaya başladım. Derken Cumartesi günü kendimi onu tanımaya çalışırken buldum. Şu an için iş yerindeki projelerimizde Node.js ile yürüyeceğimiz bir yol haritamız olmasa da, sunucu taraflı çalışan Javascript temelli bir çatı neymiş öğrenmek istedim. Örnekleri karıştırırken de benim için hızlı bir giriş niteliğinde olan aşağıdaki kod parçası ile işe başladım.
 

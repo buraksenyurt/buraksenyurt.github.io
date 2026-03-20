@@ -14,9 +14,9 @@ tags:
   - generics
   - visual-studio
 ---
-![blg81_Giris.jpg](/assets/images/2009/blg81_Giris.jpg)
-
 Artık yazın bittiği, okulların açıldığı, şehrin kalabalığının arttığı bu günlerde birde sağnak yağışlar işin içerisine girince, insan ister istemez tatilde üzerinden denize atladığı bir iskelede olmak istiyor. Artık o iskelenin etrafında fazla insan yok ve yağmur yüzünden tahtaların üzerinde gizemli bir şekilde akan su birikintileri var; diyerek yaptığımız duygusal girişimizin aslında yazımızın ilerleyen kısmı ile bir alakası yok.
+
+![blg81_Giris.jpg](/assets/images/2009/blg81_Giris.jpg)
 
 ![Wink](/assets/images/2009/smiley-wink.gif)
 

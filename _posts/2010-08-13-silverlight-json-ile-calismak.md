@@ -29,9 +29,9 @@ tags:
   - generics
   - visual-studio
 ---
-![blg177_Giris.jpg](/assets/images/2010/blg177_Giris.jpg)
-
 Uzun süredir şöyle deliksiz uyuyamıyordum. Malum evde bir afacan var. Pek uyumayı sevmeyen, sürekli hareket halinde olmak isteyen S (h) arp Efe izin verdiğinde, eşim ve ben dinlenmek için çeşitli işlere dalıyoruz. Ben uzun süredir Bulmacalara takılmış durumdayım. Bir de şu eski dil karşılıklarını isteyen sorular olmasa. Geçtiğimiz günlerde yine böyle bir boşluk yakalamışken, kendimi bulmacalar arasında yüzerken buluverdim. Ancak bir süre sonra "...eski dildeki karşılığı..." sorularından sıkıldım ve televizyonda neler olduğuna bir akayım dedim.
+
+![blg177_Giris.jpg](/assets/images/2010/blg177_Giris.jpg)
 
 Televizyonda yandaki resimde görülen adam vardı ve ismi Jason'dı. Açıkçası Jason Statham'ın fanatiği bir sinemasever olarak bu isim benzerliğinin, böyle korkutucu bir karakter üzerinde olması beni üzmüştü. Nitekim Jason ismini düşününce aklıma gıcır gıcır parlayan Audi marka arabalar gelmekteydi. Her neyse...Filme fazla takılmadım ama Jason, Jason derken, bu isim JSON diye dudaklarımdan süzülmeye başladı. Pek tabi bunun doğal sonucu olarak bilgisayarımın başına oturdum ve JSON ile ilişkili bir şeyler yazmaya karar verdim. İşte başlıyoruz
 

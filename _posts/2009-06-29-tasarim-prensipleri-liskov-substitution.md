@@ -9,9 +9,9 @@ tags:
   - csharp
   - http
 ---
-![BarbaraLiskov.jpg](/assets/images/2009/BarbaraLiskov.jpg)
-
 Bu günkü blog yazımızın kahramanı Barbara Liskov ([http://en.wikipedia.org/wiki/Barbara_Liskov](http://en.wikipedia.org/wiki/Barbara_Liskov)). Ve tahmin edeceğiniz üzere konumuz tasarım prensipleri içerisinde uygulanan disiplinlerden birisi olan Liskov Substitution (LSP) ilkesi. Bu ilke üst sınıf (Base Class) ve alt sınıf (Sub Class) arasındaki ilişkinin rol aldığı bir prensip olarak göz önüne alınabilir aslında. İlkenin özet cümlesini söylemeden önce basit bir örnek üzerinden ilerlemenin daha iyi olacağı kanısındayım. Nitekim özet cümleyi okuduğunuzda kafanızın karışmamasını garanti edemeyeceğim.
+
+![BarbaraLiskov.jpg](/assets/images/2009/BarbaraLiskov.jpg)
 
 ![Undecided](/assets/images/2009/smiley-undecided.gif)
 

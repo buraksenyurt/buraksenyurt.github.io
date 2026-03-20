@@ -12,9 +12,9 @@ tags:
   - java
   - ruby
 ---
-![gofromruby_1.gif](/assets/images/2017/gofromruby_1.gif)
-
 Pek çok kaynak GO dilinin ileride C'nin yerini alabileceği yönünde görüşler belirtmekte. Özellikle IoT alanında bu dilin daha fazla ön plana çıkacağı vurgulanıyor. Bu düşüncenin haklı olabileceği yönünde bazı tespitlerim var.
+
+![gofromruby_1.gif](/assets/images/2017/gofromruby_1.gif)
 
 Söz gelimi GO ile yazılmış paketleri başka dillere ait ortamlarda kullanabilmemiz mümkün. Bir başka deyişle bir GO paketini C, Python, Java ve Ruby gibi dillerde kullanabiliriz. Sonuçta yazılan GO kodları C-Style API şeklinde ifade edebileceğimiz derlenmiş kütüphanelere dönüştürülebilmekte.
 

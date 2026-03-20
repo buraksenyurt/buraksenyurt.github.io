@@ -16,9 +16,9 @@ tags:
   - ruby
   - nodejs
 ---
-![ebpython_robin.gif](/assets/images/2018/ebpython_robin.gif)
-
 Geçenlerde sıkıldığım bir ara kendimi Google'da "How To Draw..." araması yaparken buldum. [Bir internet sitesinde](http://www.drawinghowtodraw.com/stepbystepdrawinglessons/2016/10/draw-cute-kawaii-chibi-robin-dc-comics-batman-robin-easy-steps-drawing-lesson-kids/) DC Comics'in Robin karakterini nasıl çizebileceğimizi anlatan içerik ilgimi çekmişti. Geometri bilgisini iyi kullandığı için anlaşılırdı. Tabii önemli bir eksiğim vardı...Yetenek. Sonuçları sizlerle paylaşmayı çok tercih etmiyorum ama yandaki Robin'in kafasının pek yakınlarından geçemediğimi gönül rahatlığıyla itiraf edebilirim. Dolayısıyla google aramasını ve internet sayfasını kapatıp tekrardan az buçuk anlamaya çalıştığım yazılım dünyasına döndüm.
+
+![ebpython_robin.gif](/assets/images/2018/ebpython_robin.gif)
 
 Aslında bazen öğrenmek istediğimiz konuyu adım adım ve her adımında da tane tane anlatan bir dokümanı takip ederiz. Ama çalıştığımız ortamlar her zaman için bir yerlerde sorunlarla karşılaşmamıza neden olabilirler. Geçtiğimiz cumartesi günü de benzer sorunlarla karşılaştım. Amacım Amazon'un [şu adreste](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html?refid=em_68105) yayınladığı dokümanı takip ederek Elastic Beanstalk üzerine Django ile oluşturulmuş bir web uygulamasını taşıyıp Doğu Amerika kıtasındaki herhangibir Elastic Compute Cloud (Amazon EC2) sistemi üzerinden canlı yayına almaktı. İlk başlarda kolay giden adımlar özellikle sonlara doğru çeşitli sürprizlerle karşılaşmama neden oldu.
 

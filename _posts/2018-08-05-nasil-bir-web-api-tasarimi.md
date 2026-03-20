@@ -11,9 +11,9 @@ tags:
   - http
   - serialization
 ---
-![restful_guid_1.gif](/assets/images/2018/restful_guid_1.gif)
-
 Web API'ler ya da RESTful API türünden servisler çok uzun zamandır hayatımızda. Benim de gerek blog yazılarımdaki örnekler olsun gerek iş yerinde kullandıklarımız olsun sürekli haşırneşir olduğum enstrümanlardan birisi. Ancak son zamanlarda okuduğum kaynaklardan sonra bir çok tasarım hatası yaptığımı ve uygulamadığım şeyler olduğunu fark ettim. Nedir bu işin doğru yolu diyerek ortak standartları araştırmaya başladım. Elde ettiğim bir takım sonuçlar oldu. Bu sonuçlardan basit bir çizelge de hazırladım. Aşağıda görebilirsiniz. Ama öncesinde bir kaç kısa bilgi verelim.
+
+![restful_guid_1.gif](/assets/images/2018/restful_guid_1.gif)
 
 Bu tip servisler çoğunlukla kaynaklarla (resources) ilgili temel işlemleri gerçekleştirmek için kullanılmakta. Kaynakların listelenmesi, eklenmesi, silinmesi veya güncellenmesi söz konusu temel operasyonlar olarak düşünülebilir. Servisler, kaynaklarla ilgili operasyonları belli adresler (endpoint diyebiliriz) üzerinden sunar. Servislerin, sundukları kaynakların ve endpoint'lerin sayısı arttıkça baştan düşünülmesi gereken standartlar olduğunu fark ederiz. Özellikle bu servisler farklı takımlarca geliştiriliyorsa. Bu noktada kaynakların isimlendirilmesinden servis adresinin nasıl olacağına, versiyon bilgisinden serileştirme formatının bildirimine, operasyon adlarından döndürülecek HTTP cevaplarından istemciden hangi metodlarla gelineceğine kadar bir çok farklı kavram karşımıza çıkıyor. Bu konulardan bir kısmı ile ilgili olarak şunları söyleyebiliriz.
 

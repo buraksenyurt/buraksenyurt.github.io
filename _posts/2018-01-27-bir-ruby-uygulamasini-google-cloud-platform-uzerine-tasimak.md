@@ -16,9 +16,9 @@ tags:
   - serialization
   - visual-studio
 ---
-![rubyongcp_10.gif](/assets/images/2018/rubyongcp_10.gif)
-
 "Futbol basit bir oyundur. 22 kişi 90 dakika boyunca bir topun peşinde koşar ve sonunda her zaman Almanlar kazanır." demiş bizim de ne yazık ki yakından tanıdığımız Gary Lineker. Konumuzla ne alakası var derseniz. Az sonra onun bu sözünü buluta alacağız.
+
+![rubyongcp_10.gif](/assets/images/2018/rubyongcp_10.gif)
 
 Ben bu bulut platformlarını çok tuttum. Gerek Microsoft Azure, gerek Amazon Web Services, gerek Google Cloud Platform...Hepsi çok çekici duruyor. Kurcaladığım ve üzerinde çalıştığım örneklerle, özellikle West-World dünyasında yazılmış bir programın ilgili platform üzerinde konuşlandırılması ve yürütülmesini öğrenmeye gayret ediyorum. Ağırlıklı olarak REST (Representational State Transfer) tipinden servis uygulamalarını taşımaya çalışıyorum ki bu sayede bir mikroservis bulut alanında nasıl kullanılıyor öğreneyim.
 

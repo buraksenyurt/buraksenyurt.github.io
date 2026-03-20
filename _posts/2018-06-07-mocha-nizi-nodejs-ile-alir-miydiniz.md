@@ -15,9 +15,9 @@ tags:
   - visual-studio
   - github
 ---
-![mocha_1.gif](/assets/images/2018/mocha_1.gif)
-
 Çalışmakta olduğum şirketin bizlere sunduğu güzel imkanlardan birisi de Pluralsight aboneliği. Hesabım açılır açılmaz ilk yol haritamı da çıkarıverdim. Kendime göre verimli olacağını düşündüğüm bir zaman planlaması yaptım. Sabah saat 07:15 sularında şirkete vardıktan sonra, kapıdaki görevliye sıcak bir tebessümle 'Günaydın'de, mutfaktan geçerken bir bardak kahve al, masana otur ve sonrasında kaldığın yerden devam et... Şu sıralar Node.js yol haritamın merkezinde yer alıyor. Mesai başlangıç saatimiz olan 07:45'e kadar izleyebildiğim ve uygulayabildiğim kadarıyla ilerliyorum. Yer yer videoyu durduruyor, örnek kod parçalarını satır satır yazıyor, gerektiği yerlerde notlar alıyorum. Amacım şu an için sadece ve sadece Node.js'i tanımak, biraz daha iyi anlamak. Sonuçta node.js konusunda uzman olabilmem için yüzlerce saat gerçek hayat projelerinde çalışmam gerekiyor.
+
+![mocha_1.gif](/assets/images/2018/mocha_1.gif)
 
 İşte bu tempoyu devam ettirdiğim sabahlardan birisinde işlediğim modülde test kodları yazılması üzerine faydalanılan iki paketten bahsedildi. Modülü çalışırken çok güzel şeyler öğrendiğimi fark ettim. Hafiften behavioral driven development (BDD) yaklaşımına yönlendiren, kullanımı kolay ve eğlenceli bir test ortamının nasıl oluşturulabileceği gözler önüne seriliyordu (Aslında şu güdümlü geliştirme konsepti bağlamında sevgili dostum Görkem Özdoğan'ın [şuradaki yazısını okumanızı](http://gorkemozdogan.net/dv/data-vinci-32-x-driven-development/) şiddetle tavsiye ederim) Modülde Mocha ve Should isimli iki çatıdan (framework) bahsediliyordu. Öğrendiklerimi pekiştirmek için bir yerlere yazmam gerektiğini gayet iyi biliyordum.
 

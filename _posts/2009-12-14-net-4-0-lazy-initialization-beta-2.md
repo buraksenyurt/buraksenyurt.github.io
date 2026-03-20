@@ -16,9 +16,9 @@ tags:
   - visual-studio
   - thread-safety
 ---
-![blg96_Giris.jpg](/assets/images/2009/blg96_Giris.jpg)
-
 Eminim hepimiz arada sırada tembellik yapıyor ve ilk bulduğumuz rahat köşeye kıvrılıp hiç bir şeyi düşünmeden rahatça uyuyabiliyoruz. Eğer bulunduğumuz yer uyumaya çok müsait değilse yandaki kedi gibi ortama ayak uydurup yinede uyuyoruz
+
+![blg96_Giris.jpg](/assets/images/2009/blg96_Giris.jpg)
 
 ![Smile](/assets/images/2009/smiley-smile.gif)
 
@@ -163,7 +163,7 @@ namespace BeLazy
 
             Console.WriteLine("Scene oluşturuldu mu? {0} ", scene.IsValueCreated);
             Console.WriteLine("Azman oluşturuldu mu= {0}", azman.IsValueCreated);
-            Console.WriteLine("Gazman oluşturuldu mu= {0}", gazman.IsValueCreated);     
+            Console.WriteLine("Gazman oluşturuldu mu= {0}", gazman.IsValueCreated);
 
             Console.WriteLine(currentScene.ToString());
 

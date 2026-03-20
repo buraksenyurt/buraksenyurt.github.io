@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Birisi Sana \\\"Blazor Nedir?\\\" Diye Sorarsa"
 date: 2021-05-07 22:04:00 +0300
@@ -38,9 +38,9 @@ tags:
   - visual-studio
   - github
 ---
-![whoisblazor_01.jpg](/assets/images/2021/whoisblazor_01.jpg)
-
 Yeni bir on yılın arifesini çoktan geçtik ve bu on yıla girmeden önce Microsoft, milenyumun başında da yaptığı üzere önemli ürünlerin altına imzasını attı. Açık kaynak dünyasına hızlı bir girişten sonra yıllardır süregelen Mono projesi daha da anlam kazandı. Artık Silverlight, Windows Phone, Web Forms,.Net Remoting gibi kavramlardan neredeyse hiç söz etmiyoruz. Üstelik bazıları yıllar önce rafa kalktı. Rafa kalkanların, eskiyenlerin bıraktığı tecrübe yeni nesil ürünlerin başarısını artırdı. Unity ile platform bağımsız oyunlar, Xamarin ile macOS ve linux ayırt etmeksizin çalışan kodlar vs derken.Net Core hayatımıza girerek büyük sükse yaptı.
+
+![whoisblazor_01.jpg](/assets/images/2021/whoisblazor_01.jpg)
 
 Dahası da var. 2017'de başlatılan ve standart haline gelen [WASM (Web Assembly)](https://webassembly.org/) Microsoft cephesinin gözünden kaçmadı. 2018 yılında deneysel bir çalışma olarak başlayan Blazor kısa sürede evrimleşti ve şu anda yatırım yapılması gereken bir konu haline geldi (Örneğin Asp.Net Web Forms tabanlı ürünlerinizi modernize etmek istiyorsanız) Ancak ortada önemli bir sorun var. Onu bir arkadaşına nasıl anlatırsın? (Photo by [Museums Victoria](https://unsplash.com/@museumsvictoria?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/history?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText))
 

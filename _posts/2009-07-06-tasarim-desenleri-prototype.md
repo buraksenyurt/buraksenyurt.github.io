@@ -9,9 +9,9 @@ tags:
   - csharp
   - dotnet
 ---
-![blg43_1.jpg](/assets/images/2009/blg43_1.jpg)
-
 Yandaki resimde 118 WallyPower isimli tekneyi (yada suda giden uzay mekiği) görmektesiniz. Bu tekneyi hangi filmde gördüğünüzü bir hatırlamaya çalışın. Seyredenler The Island filmi olduğunu hemen bulacaktır. The Island filminde, Ewan McGregor'un gece rüyasında görüpte ustaca çizdiği (sanki çöpten adam çiziyormuşçasına) bu teknenin senaryodaki adı ise Renovatio (Yeniden doğmak-latince) idi.
+
+![blg43_1.jpg](/assets/images/2009/blg43_1.jpg)
 
 Bu arada filmin ana fikri, ileride yarın öbür gün organ ihtiyacı olabilecek olan insanların birer klonunun üretildiği ve tutulduğu gizli bir yer altı şehri üstüne kuruluydu. Klon demişken var olan insanların birebir kopyasının üretildiği bir üs olduğunu belirteyim.
 

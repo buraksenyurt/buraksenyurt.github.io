@@ -22,9 +22,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg145_Giris.jpg](/assets/images/2010/blg145_Giris.jpg)
-
 Aşçılık zevkli ama bir o kadarda zor bir zanaattır. Hatta bazen o kadar zor bir zanaat olur ki, aşcının aldığı maaşı pek çok yazılımcı iki yılda kazanamaz. Tabi bu tip aşçılar işin ehli olan kişilerdir. Heleki tek bir mutfak değilde dünya mutfağının seçkin olanlarına ait becerileri bulunanlara paha biçilemez. Türk Mutfağından Japon mutfağına, Meksika yemeklerinden İtalyan spesiyallerine, Fransız tatlılarından Okyanus deniz ürünlerine ve daha nicelerine...
+
+![blg145_Giris.jpg](/assets/images/2010/blg145_Giris.jpg)
 
 Tabi bir aşçı için olmassa olmazlardan birisi de yemeği için gerekli olan malzemelerin kalitesidir. Kaliteli zeytinyağı, hamur ve baharat ile yapılan spagettinin, kalitesiz olanlar ile yapılanı arasında dağlar kadar fark olabilir. Spagetti demişken bu günkü yazımızda neler yapacağımıza da bir bakalım dilerseniz. Aşçı olarak bu gün elimizde zor bir tarif var. Malzemelerimiz belli ama pişecek olan yemeğin yapımı biraz zahmetli. Haydi gelin hiç vakit kaybetmeden önlüğümüzü takıp klavyenin başına geçelim.
 

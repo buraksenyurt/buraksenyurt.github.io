@@ -10,9 +10,9 @@ tags:
   - http
   - testing
 ---
-![rubygems_8.gif](/assets/images/2017/rubygems_8.gif)
-
 Bildiğiniz gibi günümüz popüler programlama dillerinin çoğunun internet üzerinden ulaşılabilen paket destekleri mevcut. Özellikle açık kaynak tabanlı ürünlerde önem verilen bir konu olduğu ortada. Yazılımcıların birbirlerinin kullanımına açtığı bu paketler Ruby tarafında da mevcut ve gem olarak adlandırılmakta. Hatta [şu adresten](https://rubygems.org/) bir çok değerli mücehvere ulaşabilir kendi paketlerinizi de yükleyebilirsiniz. Peki kendi gem paketlerimizi en basit haliyle nasıl yazabiliriz? Hatta yazdığımız bir gem'i herkesin kullanımına nasıl açabiliriz? Gelin bu konuyu kısaca incelemeye çalışalım.
+
+![rubygems_8.gif](/assets/images/2017/rubygems_8.gif)
 
 > Bazı firmalarda katı güvenlik kuralları olabilir. Örneğin bir bankanın geliştirme ortamlarından, NuGet, RubyGems gibi küresel paket sağlayıcılarına erişim izni verilmeyebilir. Bu gibi hallerde güvenlik denetimlerinden geçmiş olup geliştiricilerin kullanabileceği paketlerin sunulması için şirket ağı üzerinde paket depoları oluşturulabilir.
 

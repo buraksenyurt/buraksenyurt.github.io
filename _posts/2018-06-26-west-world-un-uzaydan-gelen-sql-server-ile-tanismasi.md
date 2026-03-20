@@ -23,9 +23,9 @@ tags:
   - microservices
   - visual-studio
 ---
-![sqlonlinux_0.jpg](/assets/images/2018/sqlonlinux_0.jpg)
-
 Renkler ve zevkler tartışılmaz. Hatta dünya öylesine renkli bir yerdir ki insanlar bazen neyi seçeceklerine karar veremeyebilir. Tabii ki işin içerisinde yazılım olunca bu renkler siyah ve beyaz gibi sadece iki seçeneğe de indirgenebilmişdir.
+
+![sqlonlinux_0.jpg](/assets/images/2018/sqlonlinux_0.jpg)
 
 Hatta bu sadece yazılım için değil donanım için de söz konusu olmuştur. Hep bir kıyaslama vardır. PC'mi Mac'mi, RISC tabanlı mı CISC olanı mı, Intel'mi AMD'mi... Diğer yandan hepinizin bildiği üzere ben yaşlanmakta olan bir yazılımcıyım. Eski kuşak bir programcı olarak (bir başka deyişle 70li yılların ürünü bir birey olarak) benim neslin uzun yıllar içinde yer aldığı çatışmaların canlı şahitlerindenim. Hala süregelir ya bu sonu gelmez tartışmalar. Sizde içinde yer almışsınızdır mutlaka. Java'mı,.Net mi, SQL'mi Oracle'mı, OOP'mi Functional'mı, SOA'mı Microservices'mı vb diye sürer gider.
 

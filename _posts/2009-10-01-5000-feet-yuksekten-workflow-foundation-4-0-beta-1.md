@@ -15,9 +15,9 @@ tags:
   - testing
   - visual-studio
 ---
-![blg86_Giris.jpg](/assets/images/2009/blg86_Giris.jpg)
-
 Paraşütle atlamak gerçekten zevkli olsa gerek. Yerden binlerce feet (1 feet=30,48 cm) yüksekten atlayıp özgür bir şekilde kendinizi yer çekimi gücüne bırakıp, saniyeler boyunca serbest düşüşü yaşamak...Size yandaki resimde atlayan kişinin ben olduğumu söylemek isterdim ama ne yazık ki değilim. Olmayı istermiydim bilemiyorum. Oldukça yüksek görünüyor.
+
+![blg86_Giris.jpg](/assets/images/2009/blg86_Giris.jpg)
 
 ![Sealed](/assets/images/2009/smiley-sealed.gif)
 

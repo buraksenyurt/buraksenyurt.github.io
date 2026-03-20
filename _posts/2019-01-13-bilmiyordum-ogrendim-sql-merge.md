@@ -8,9 +8,9 @@ tags:
   - t-sql
   - performance
 ---
-![sqlmerge_0.jpg](/assets/images/2019/sqlmerge_0.jpg)
-
 Gün geçmiyor ki çevremdeki insanlardan yeni bir şeyler daha öğrenmeyeyim. Bugün o günlerden biriydi...
+
+![sqlmerge_0.jpg](/assets/images/2019/sqlmerge_0.jpg)
 
 İş yerinde elimizin her an üzerinde olabileceği binlerce SQL nesnemiz var. Tablolar, fonksiyonlar, sp'ler... Bazen iş biriminden gelen istekler doğrultusunda onlara müdahale etmemiz veya yenilerini yazmamız gerekiyor. Sorun şu ki 2000li yılların başından kalan ve yorum satırlarına bakıldığında üzerinden bir çok geliştiricinin geçtiği spl'lerimiz var. Bazen buradaki kalabalık sorgular arasında samanlıkta iğne ararcasına sorun çözmeye çalıştığımız oluyor. Çok motive edici bir durum değil takdir ederseniz ki. Şükür ki alanlarında yetkin ekip arkadaşlarımız var ve yeri geldiği zaman söyledikleri ufak bir ipucu ile hayatımızı kolaylaştırıyorlar (ki bu etkili yardımlaşmada agile metodolojide koşan bir takım olmamızın da büyük etkisi var)
 

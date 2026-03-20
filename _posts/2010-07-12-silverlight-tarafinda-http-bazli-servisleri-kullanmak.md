@@ -26,9 +26,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg175_Giris.jpg](/assets/images/2010/blg175_Giris.jpg)
-
 Eğitmenlik yaptığım yıllarda Microsoft'un ders kitaplarında yer alan LAB çalışmalarını mümkün mertebe yapmaya ve yaptırmaya çalışırdım. Hatta çoğu zaman eğitimlere hazırlanırken sık sık bu lab çalışmalarını kendim yapar ve hatta ek ilaveler ile daha da eğlenceli hale getirmeye çalışırdım. Tabi bazen elimizde lab yapacağımız kitaplarımız olmazdı ki o ayrı bir hikaye.
+
+![blg175_Giris.jpg](/assets/images/2010/blg175_Giris.jpg)
 
 Lab çalışmaları öğrencinin adım adım yapması gerekenleri söylerek, konunun en yalın haliyle anlaşılmasını sağlamakta önemli rol oynamaktadır. Lab çalışmalarındakine benzer konu anlatımları benimde özümsediğim ve faydalı bulduğum öğrenme tekniklerinden birisidir. İşte bu yazımızda da bu kültüre uymaya çalışarak ilerlemeye çalışıyor olacağız. Hedefimiz Silverlight uygulamalarından, HTTP tabanlı taleplere göre operasyonel hizmetlerde bulunan servisleri nasıl kullanabileceğimizi, en yalın haliyle görmek. Haydi o zaman lab için gerekli materyalleri değerlendirerek yola koyulalım.
 

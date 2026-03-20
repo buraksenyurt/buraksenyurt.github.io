@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust Pratikleri - Değişkenleri Kopyalayarak veya Referans Olarak Taşımak"
 date: 2022-04-17 09:00:00 +0300
@@ -19,9 +19,9 @@ tags:
   - github
   - ownership
 ---
-![ownership.jpg](/assets/images/2022/ownership.jpg)
-
 Rust bellek yönetimi konusunda epey hassas olduğundan, fonksiyonlara aktarılan değerlerin nasıl taşınacağı da önemli bir konudur. Bir.net geliştiricisi olarak değişkenlerin fonksiyonların değer türü veya referans türü olarak aktarıldığını biliyorum. Söz gelimi Rust tarafında olmayan class türevli nesneler fonksiyonlara otomatik olarak referans adresleri ile aktarılıyorlar. Üstelik bunu açıkça belirtmemize gerek olmadığını söyleyebilirim. Peki Rust tarafında durum nasıl? Sonuçta ortada bir Garbage Collector yok. Değişkenler varsayılan olarak değiştirilemez (immutable). Class diye bir kavram yok ve kodlarda kullandığımız değişkenler katı bir biçimde ownership, borrowing gibi kural denetimlerine tabiler.
+
+![ownership.jpg](/assets/images/2022/ownership.jpg)
 
 İşte bu pratikte içinde başka bir enum sabiti kullanan bir başka enum sabitinin uzak diyarlardaki bir fonksiyon tarafından parametre olarak kullanılması sırasında oluşabilecek Value Moved Here sorununa bakmaya çalışacağız ki Rust dilini yeni yeni öğrenmeye başlayanların en sık karşılaştığı derleme zamanı hata mesajlarından birisi olduğunu ifade edebilirim. Cümle biraz karışık oldu:D Haydi gelin basit bir örnek üstünden konuyu detayları ile incelemeye çalışalım. Senaryomuz gereği ilk olarak sorunsuz bir program kodu yazacağız. Ardından problemi oluşturacak ve son olarak iki farklı kullanım şeklini ele alacağız.
 

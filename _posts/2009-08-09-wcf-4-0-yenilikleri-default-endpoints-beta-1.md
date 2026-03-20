@@ -15,9 +15,9 @@ tags:
   - http
   - visual-studio
 ---
-![blg59_Giris.jpg](/assets/images/2009/blg59_Giris.jpg)
-
 Çok eskinden.Net Remoting ile ilişkili uygulamalarda çalışırken, servis ve istemci taraflarının konfigurasyon dosyası bazlı ayarlamaları sırasında, Visual Studio.Net 2003 intelli-sense özelliğinin kaybolduğuna şahit olmuştum. Gerçektende config dosyası içerisindeki intelli-sense özelliği belirli bir elemente kadar destek veriyor ama sonrasında kayboluyordu. Böyle bir durumda pek çok ayarlamayı ezbere yapmak zorunda kaldığımı hatırlıyorum.
+
+![blg59_Giris.jpg](/assets/images/2009/blg59_Giris.jpg)
 
 Bu durum,.Net Remoting tabanlı dağıtık uygulamaların (Distributed Applications) TCP bazlı hızlı bir iletişim sağlama avantajını kimi zaman göz ardı ettirebilen bir zorluktur. Nitekim ezbere kod yazmak, hiç bir zaman iyi bir şey değildir. Özellikle işlerin arap saçına dönmesine neden olabilir.
 

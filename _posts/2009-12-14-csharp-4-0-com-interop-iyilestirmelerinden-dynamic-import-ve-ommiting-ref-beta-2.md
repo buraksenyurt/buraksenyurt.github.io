@@ -11,9 +11,9 @@ tags:
   - http
   - generics
 ---
-![blg117_Giris.jpg](/assets/images/2009/blg117_Giris.jpg)
-
 Hani bazen insanın canı şöyle çıtır çıtır kuruyemiş çeker ya...Hatta çoğunlukla bir film seyrederken, maç izlerken, arkadaşları ile sohhet ederken, internette surf yaparken iyi gider ya...Hatta birisinin blog yazısını okurken kuruyemişleri yerken daha bir heyecanlı, istekli olur ya...
+
+![blg117_Giris.jpg](/assets/images/2009/blg117_Giris.jpg)
 
 ![Laughing](/assets/images/2009/smiley-laughing.gif)
 

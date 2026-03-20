@@ -18,9 +18,9 @@ tags:
   - caching
   - visual-studio
 ---
-![blg95_Giris2.jpg](/assets/images/2009/blg95_Giris2.jpg)
-
 Bazen bir otomobilin çok hızlı gitmesi, yüksek süratlere çıktığında direksiyonunun titrememesi, yolda sağa sola savrulmaması, keskin virajlarda rahatlıkla tutunabilmesi, vitesler arasındaki geçişlerde torkunun mümkün olduğunca korunabilmesi, frenajlarda kontrolü sağlaması vb... istenir. Yarış otomobillerinde bu ve benzeri ihtiyaçlar için çok sık duyduğumuz tunning olarak isimlendirilen geliştirmeler yapılır. Bazen yarışın kategorisine göre neredeyse teknolojinin sınırlarını zorlayacak yeniliklere şahit olunur. Ama özetle aracın performansını arttıracak her yol, kuralları çerçevesinde mübahtır.
+
+![blg95_Giris2.jpg](/assets/images/2009/blg95_Giris2.jpg)
 
 Performansı arttırmak önemli bir kriterdir ve her zaman kolay bir şekilde sağlanamamaktadır. Bazen motor yağına konulan katkı maddeleri ile basit şekilde, bazen yarış pistindeki ıslak zemine göre takılan lastikler zor şekilde vb... Yine enteresan bir giriş olduğunun farkındayım ama bu günkü konumuz yazılımda performansı arttırmak adına kullanılan önemli tekniklerden birisi ile ilgilidir. Caching. Web uygulamalarında sıklıkla karşılaştığımız, Enterprise Library Caching Block sayesinde Web uygulaması sınırlarını aşarak diğer uygulamalarda daha kolay kullanılabilir hale gelmiş bu kavramın servis bazlı hale getirilebildiğini duysanız acaba ne düşünürdünüz
 

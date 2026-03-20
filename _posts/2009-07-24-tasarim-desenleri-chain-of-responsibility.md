@@ -9,9 +9,9 @@ tags:
   - csharp
   - http
 ---
-![blg49_2.jpg](/assets/images/2009/blg49_2.jpg)
-
 Dün gece çok garip bir rüya gördüm. Rüyamda denize açılmak için limanda duran tekneme doğru ilerliyordum. Derken kendimi kaptan köşkünde buldum. E tabi rüya bu. Hareket etmek istedim ama bir türlü beceremedim. Sonunda sorunun ne olduğunu bulmaya çalıştım ve yandaki manzaranın bir benzeri ile karşılaştım. Geminin demir halat zinciri (zincirleri) arap saçına dönmüştü. Sabah uyandığımda ilginç bir şekilde rüyayı hatırlayabildiğimi de farkettim.
+
+![blg49_2.jpg](/assets/images/2009/blg49_2.jpg)
 
 Acaba bu bir işaret miydi? Evet sanırım bu davranışsal tasarım desenlerinden olan Chain of Responsibility'yi anlatmam için bir işaretti.
 

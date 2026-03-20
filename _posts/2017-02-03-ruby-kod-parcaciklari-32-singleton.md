@@ -7,9 +7,9 @@ categories:
 tags:
   - ruby
 ---
-![rfun.gif](/assets/images/2017/rfun.gif)
-
 Ruby'nin oldukça geniş bir program kütüphanesi bulunuyor. Fırsat buldukça bazılarını incelemeye çalışıyorum. Geçtiğimiz günlerde Singleton isimli bir modüle rastladım. Kısaca tasarım kalıplarından (Design Patterns) olan Singleton deseninin kolayca uygulanmasını sağlıyor.
+
+![rfun.gif](/assets/images/2017/rfun.gif)
 
 Ancak dikkat çekici başka bir özelliği daha var. Nesne durumunun saklanması ve istenen anda saklanan duruma döndürülmesi vakasında da Marshal modülü ile birlikte güzel bir işbirliği içerisinde. Marshalling ile Singleton olan bir nesne örneğinin anlık durumunu (State) sonradan geri yükleme imkanıyla saklayabiliyoruz.
 

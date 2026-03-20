@@ -9,9 +9,9 @@ tags:
   - go
   - pointers
 ---
-![gobanana.gif](/assets/images/2017/gobanana.gif)
-
 Gopher olma çalışmalarım iş yoğunluğuna bağlı olarak zaman zaman hızlı ve zaman zaman da yavaş bir şekilde devam ediyor. Açıkçası Gopher karakterini ve internetteki örneklerini çok sevdim. Google oldukça sevimli bir logo yaratmış. Bu nedenle her bölüm mümkün mertebe farklı bir Gopher'ı ekranlarınıza taşımaya çalışıyorum.
+
+![gobanana.gif](/assets/images/2017/gobanana.gif)
 
 Efendim gelelim sadede. Go dilinde kullanılan türlerden olan Array tipini kısaca inceledikten sonra geçtiğimiz günlerde Slice ve Map kavramlarını da incelemeye başladım. Her ikisi de sağladıkları esneklikler açısından dil içerisinde oldukça önemli bir yere sahipler. Bu makalemizde ilgili veri tiplerini basit örnekler üzerinden tanıma gayretinde olacağız.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Google Cloud Fonksiyonlarını Firebase ile Birlikte Kullanmak"
 date: 2019-06-21 07:00:00 +0300
@@ -19,9 +19,9 @@ tags:
   - github
   - dependency-management
 ---
-![sabihagokcen.png](/assets/images/2019/sabihagokcen.png)
-
 Google'ın Doodle hizmetini takip ediyor musunuz bilemiyorum ancak ben zaman zaman orada hazırlanmış ikonik görsellerden harika hikayelere gidiyorum. Bu seferki yazının derlemesi sırasında da yolum bir şekilde onunla kesişti ve girişte kimden bahsedebilirim derken havacılılk tarihinin en önemli isimlerinden olan Türkiye'nin ilk kadın pilotu Sabiha Gökçen'i (22 Mart 1913 - 22 Mart 2001) anmaya karar verdim.
+
+![sabihagokcen.png](/assets/images/2019/sabihagokcen.png)
 
 Amerikan Hava Kurmay Koleji'nin 1996 yılında Maxwell Hava Üssünde yapılan töreninde Dünya tarihine adını yazdıran 20 havacıdan birisi olarak ödül alan Sabiha Gökçen'in tarihde iz bırakan başarıları saymakla bitmez elbette. Lakin diğer pek çok başarısının yanında bu en çok dikkatimi çekenlerden birisiydi. İçindeki uçma arzusu ve sevgisi öyle büyük olmalı ki Fransız pilot Daniel Acton ile son uçuşunu yaptığında 83 yaşındaydı. Türk Hava Kurumu Türkkuşu'nda Başöğretmen olarak görev aldı ve 1955 yılına kadar bir çok değerli pilotun yetişmesine ön ayak oldu.
 

@@ -13,9 +13,9 @@ tags:
   - web-api
   - http
 ---
-![apachecore_12.gif](/assets/images/2018/apachecore_12.gif)
-
 Küçük bir çocukken her pazar sabahı TRT ekranlarında kovboy (Western) filmleri olurdu. Rahmetli babam ile severek geçirdiğimiz nadide vakitlerdendi. Sanıyorum son yıllarda yine Pazar sabahları ekranlarımızı süslüyorlar (Bakamıyorum çünkü sabahlarımız basketbol antrenmanları ile geçiyor) Kızılderililer ile süvarilerin sıklıkla karşı karşıya geldiği, batının en hızlı silahşörlerinin yer aldığı filmlere ne hikmetse çok bağlanmıştım.
+
+![apachecore_12.gif](/assets/images/2018/apachecore_12.gif)
 
 Oysa ki okuduğumuz tarih kitapları o zamanlardaki olayların pek de filmlerde gördüğümüz gibi olmadığını yazıyor. Özellikle de kızılderili yerlilerin durumu düşünüldüğünde. O zamanların pek çok yerli kabilesi günümüzün pek çok teknolojisine de isim kaynağı oldu aslında. Bunlardan en popüler olanlarından birisi de sanıyorum ki Apache'dir (Şu isimler de eminim ki çağrışım yapacaktır;Siu, Cheyenn, Comanche...) Ünlü savaş helikopteri dışında hepimiz onun yazılım dünyasındaki ününü de duymuşuzdur. Gelelim bugün inceleyeceğimiz konuya.
 

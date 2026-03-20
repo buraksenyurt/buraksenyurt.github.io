@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust Pratikleri - OOP"
 date: 2022-04-24 09:00:00 +0300
@@ -19,9 +19,9 @@ tags:
   - borrow-checker
   - dependency-management
 ---
-![oop_cover.png](/assets/images/2022/oop_cover.png)
-
 Yılların.Net geliştiricisi olunca insan ki sanıyorum Java tarafından gelse de durum değişmeyecektir, ister istemez Rust, Go gibi dillerde nesne yönelimli dünyanın karşılıklarını arıyor. Ortak özellikleri toplayacağım üst tipler yok mu, peki ya bağımlılıkları soyutlamak için başvuracağım interface türevleri, bukalemun varlıklara ne demeli. Kısacası bir nesne yönelimli dilin öne çıkan en belirgin özellikleri encapsulation, Inheritance, Polymorphism gibi detaylara bakıyoruz.
+
+![oop_cover.png](/assets/images/2022/oop_cover.png)
 
 Nesne yönelimli dil yaklaşımlarının bu çekirdek özelliklerinin Rust tarafındaki olası karşılıklarını araştırırken birkaç şey öğrendim tabii ki ve C# ile yazdığım bazı şeyleri Rust tarafında nasıl yapabilirim öğrenmek istedim. Sonuçta ortaya şu an okumakta olduğunuz pratik çıktı. Ben daha çok kalıtım ve çok biçimli nesne davranışı konularına eğilmeye çalıştım. Dilerseniz hiç vakit kaybetmeden örneklerimize geçelim. İşe basit bir C# kurgusu ile başlamakta yarar var. Detayları sade bir şekilde görmek için Console uygulaması biçilmiş kaftan.
 

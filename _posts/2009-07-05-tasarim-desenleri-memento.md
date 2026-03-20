@@ -8,9 +8,9 @@ tags:
   - tasarim-kaliplari-design-patterns
   - csharp
 ---
-![memento-1-1024.jpg](/assets/images/2009/memento-1-1024.jpg)
-
 Sanıyorum yandaki resmi görenler Guy Pearce ve Carrie Anne Moss'un başrolde yer aldıkları bu filmi hatırlayacaklardır. Benimde favori klasiklerim arasında yer alan bu film, tersten ilerlemesi bir yana herşeyi unutan ve bazı kritik kuralları hatırlamak için dövemeler yaptırmak zorunda kalan bir adamın hikayesi ile ilgiliydi. Çok şükürki nesne yönelimli (Object Oriented) dillerde, önceki hallerinin hatırlanılması istenilen varlıklar için geliştiricilerin vücutlarına dövme yaptırmasına gerek yoktur.
+
+![memento-1-1024.jpg](/assets/images/2009/memento-1-1024.jpg)
 
 ![Sealed](/assets/images/2009/smiley-sealed.gif)
 

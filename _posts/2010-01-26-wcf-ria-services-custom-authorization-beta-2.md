@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF RIA Services - Custom Authorization [Beta 2]"
 date: 2010-01-26 01:52:00 +0300
@@ -16,9 +16,9 @@ tags:
   - xml
   - authorization
 ---
-![blg116_Giris.jpg](/assets/images/2010/blg116_Giris.jpg)
-
 Merhababa Arkadaşlar,
+
+![blg116_Giris.jpg](/assets/images/2010/blg116_Giris.jpg)
 
 Geçtiğimiz günlerde uzun süredir yemediğim şu meşhur Dunkin & Donuts'tan bir iki kurabiye almak istedim.
 

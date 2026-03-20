@@ -13,9 +13,9 @@ tags:
   - http
   - serialization
 ---
-![blg75_Giris.jpg](/assets/images/2009/blg75_Giris.jpg)
-
 Bundan önceki yazılarımızda WCF 4.0 için yönlendirme servislerinin (Router Service) nasıl yazılabileceğini incelemeye çalışmıştık. Fark edeceğiniz üzere yönlendirme servislerinin en önemli noktaları arasında filtreleme tablosu ve filtrelerin olduğunu gördük. Bununla birlikte sadece Action tipinde bir filtreleme kullanıp, istemciden gelen SOAP paketinin Action kısmından yararlanılarak bir yönlendirme yapılmasını inceledik.
+
+![blg75_Giris.jpg](/assets/images/2009/blg75_Giris.jpg)
 
 Oysaki filtreleme tipi olarak Action dışında, Address, AddressPrefix, StrictAnd, EndpointName, MatchAll, XPath gibi seçeneklerimiz de bulunmaktadır. İşte bu yazımızda MatchAll seçeneğini incelemeye çalışıyor olacağız. MatchAll seçeneğine göre, istemciden gelen mesajın içeriği ne olursa olsun, söz konusu talebin tanımlanan birden fazla DownStream servise yönlendirilmesi mümkündür. Ancak önemli bir kısıtlama vardır.
 

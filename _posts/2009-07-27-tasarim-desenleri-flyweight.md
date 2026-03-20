@@ -9,9 +9,9 @@ tags:
   - csharp
   - generics
 ---
-![blg51_2.jpg](/assets/images/2009/blg51_2.jpg)
-
 Yandaki resimde yer alan minik boksör aslında hafif siklette mücadele etmektedir ve biraz sonra işleyeceğimiz FlyWeight tasarım kalıbı ile uzaktan yakında hiç bir alakası bulunmamaktadır
+
+![blg51_2.jpg](/assets/images/2009/blg51_2.jpg)
 
 ![Sealed](/assets/images/2009/smiley-sealed.gif)
 

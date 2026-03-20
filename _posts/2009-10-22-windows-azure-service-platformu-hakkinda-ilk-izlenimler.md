@@ -15,9 +15,9 @@ tags:
   - ruby
   - visual-studio
 ---
-![blg91_Giris.jpg](/assets/images/2009/blg91_Giris.jpg)
-
 Güneşli açık bir hava ve sessiz bir gün yada gece...Deniz kenarında veya caddenin herhangibir köşesinde...Mutlaka zaman zaman gökyüzüne bakıp bulutları bazı nesnelere benzettiğimiz olmuştur. Yandaki resimde görüldüğü gibi gülen bir bulutla karşılaşma ihtimalimiz az olsada, arabaya, ördeğe veya başka bir şekle benzettiğimiz bulut sayısı oldukça fazladır. Bugünkü yazımızda bulutlar ile pek bir haşır neşir olacağımızı düşünebilirsiniz. Ancak tabiki yazılımsal anlamda
+
+![blg91_Giris.jpg](/assets/images/2009/blg91_Giris.jpg)
 
 ![Wink](/assets/images/2009/smiley-wink.gif)
 

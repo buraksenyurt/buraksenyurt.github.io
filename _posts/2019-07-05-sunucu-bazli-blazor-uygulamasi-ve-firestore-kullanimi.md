@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Sunucu Bazlı Blazor Uygulaması ve Firestore Kullanımı"
 date: 2019-07-05 10:20:00 +0300
@@ -25,9 +25,9 @@ tags:
   - visual-studio
   - github
 ---
-![simpscss.png](/assets/images/2019/simpscss.png)
-
 Mavi renkli teknoloji firmasına henüz yeni başlamıştım. Yaş ve önceki dönem tecrübeleri nedeniyle standart olarak uygulanan oryantasyon hızlıca atlanmış ve 2002 yılında geliştirilmeye başlanmış Web Forms kurugulu ERP uygulamasından ilk görevimi almıştım. Henüz çevik dönüşüme başlanmamıştı. Elimde tek sayfalık bir analiz dokümanı bulunuyordu. Otomotiv tarafındaki iş bilgim az olduğundan dokümanda yer almayan şeyler hakkında pek bir fikrim yoktu. Görevim kağıt üstünde oldukça basitti. Popup pencere açtırıp içerisinde bir araca ait veriler gösterecektim. Ne kadar zor olabilirdi ki:))
+
+![simpscss.png](/assets/images/2019/simpscss.png)
 
 İlk haftanın sonunda popup açılıyor ancak engin front-end bilgim nedeniyle ekranın üstündeki nesnelerin hiç biri olması gerektiği yerde durmuyordu. Back-end servisinin kodlanması, Data Access Layer tarafı, veri tabanı nesneleri...Hepsini kısa sürede halledebilmiştim ama işte o önyüz tarafı yok mu? O görselliği arttıran CSS ayarlamaları yok mu? (CSS demişken yandaki Simpson karakterlerinin Chris Pattle tarafından nasıl yazıldığına bir bakmak ister misiniz? [Şöyle buyrun öyleyse](https://pattle.github.io/simpsons-in-css/))
 

@@ -21,9 +21,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg128_Giris.jpg](/assets/images/2010/blg128_Giris.jpg)
-
 Sanırım pek çoğumuz piyangodan veya diğer şans oyunlarından kendilerine tonlarca para çıksa ne yapacağını düşünmüş veya hayal etmiştir. Açıkası kendi adıma hayat etmediğimi dile getirsem yalan söylemiş olurum. Ancak ben pek çoğumuz gibi yan yana bir kaç Ferrari'yi dizmektense bir kaç yere yatırım yapmayı hayal etmişimdir hep. Örneğin dünyanın sayılı bir kaç futbol kulübünün (Barcelona, Manchester United vb...) ve yazılım şirketinin (Microsoft, IBM vb...) hisselerinden satın alır ve şöyle güzel bir fon sepeti oluştururum. Neyse...Sözü niye piyangodan açtığımıza gelince...
+
+![blg128_Giris.jpg](/assets/images/2010/blg128_Giris.jpg)
 
 Hatırlayacağınız üzere bir önceki yazımızda WCF WebHttp Service'leri ile tanımaya çalışmış ve konuyu pekiştirmek amacıyla basit bir Merhaba Dünya uygulaması geliştirmiştik. Tabi bu örneğimizde HTTP protokolünün yanlızca Get metodunu kullanmıştık. Dolayısıyla operasyonlarımızda sadece WebGet niteliklerinin uygulandığına şahit olduk. Ancak HTTP protokolüne göre Get dışında Post, Put ve Delete metodlarını da kullanabileceğimizi biliyoruz. Dikkat çekici bir diğer noktada örneğimizde Get metoduna göre talepte bulunurken basit bir tarayıcı uygulamadan faydalanmış olmamızdı. Oysaki kendi istemci uygulamamızı yazmak isteyebiliriz. Bu durumda istemci tarafından HTTP protokolünün Get, Post, Put ve Delete metodlarına uygun talepleri nasıl gerçekleştirebiliriz? Aslında olay servis tarafının istediği mesaj paketlerini istemci tarafında oluşturup göndermekten başka bir şey değildir. Yani talebin (Request) içeriğini hazırlamak ve dönen cevabı (Response) değerlendirmek.
 

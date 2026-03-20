@@ -19,9 +19,9 @@ tags:
   - generics
   - github
 ---
-![mpack_0.jpg](/assets/images/2019/mpack_0.jpg)
-
 Süper salyangoz Turbo'nun hikayesini bilir misiniz? Hani şu sırtında roket takılı olan Turbo'nun. Peki ya oyununu oynadınız mı? Ben epey süre önce S (h) arp ile oynamış ve oldukça eğlenmiştim. Tabii cevaplar kişiden kişiye değişir lakin ondan esinlenilen bir logo'nun günümüz.Net uygulamalarında performans ölçümü için kullanılan meşhur [BenchmarkDotNet](https://benchmarkdotnet.org/index.html)'e ait olduğu kesin diyebilirim. Aslında ciddi anlamda düşünürsek yazdığımız uygulamaların bütün olarak veya parça halinde çalışma zamanı performanslarını metrik olarak ölçümlemek pek de kolay olmayan konulardan birisidir.
+
+![mpack_0.jpg](/assets/images/2019/mpack_0.jpg)
 
 Bazen fonksiyonelliklerin hızı öne çıkarken bazen de alansal büyüklükler değer kazanabilir. Ama başka kriterler de vardır. Eş zamanlı yüklenmelerin artması sonrası oluşan hatalı sonuçlanma değerleri, standart sapmalar bunlara örnek olarak verilebilir. Tabii ölçümlemeyi yaparken kullanılan teknikler de önemlidir. Çıktıların yorumlanması titizlikle yapılmalıdır. Çünkü hatalı yorumlamalar tercihleri olumsuz yönde etkileyebilir.
 

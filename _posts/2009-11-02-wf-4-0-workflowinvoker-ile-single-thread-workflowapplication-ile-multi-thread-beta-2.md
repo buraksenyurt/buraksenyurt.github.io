@@ -19,9 +19,9 @@ tags:
   - debugging
   - visual-studio
 ---
-![blg94_Giris.jpg](/assets/images/2009/blg94_Giris.jpg)
-
 Hiç müzik dinlerken bir yandan da kod yazmayı denediniz mi? Üstelik çevre ile olan etkileşiminiz devam ederken
+
+![blg94_Giris.jpg](/assets/images/2009/blg94_Giris.jpg)
 
 ![Wink](/assets/images/2009/smiley-wink.gif)
 

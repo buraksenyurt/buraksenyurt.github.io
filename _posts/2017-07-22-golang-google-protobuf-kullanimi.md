@@ -18,9 +18,9 @@ tags:
   - pointers
   - github
 ---
-![protogopher_1.gif](/assets/images/2017/protogopher_1.gif)
-
 Uygulama verilerini kullandığımız dile göre çeşitli şekillerde ifade edebiliriz. Eğer nesne yönelimli bir dil kullanıyorsak buradaki başrol oyuncumuz sınıflardır. Verinin nesnel olarak ifade edilişinde rol olan sınıf ve benzeri tipler, çalışma zamanında taşıdıkları içerikleri ile sürekli hareket halindedir. Bu hareket uygulamanın kendi alanında olabileceği gibi farklı programlar arasında da gerçekleşebilir. Veri, ağ üzerinde de hareket edebilir. Verinin bu şekilde dolaşımı sırasında belirli kriterlere göre serileştirilmesi de gerekebilir. Bu noktada karşımıza platform bağımsızlık, okunabilirlik, genişletilebilirlik, versiyonlama ve performans gibi kriterler çıkar.
+
+![protogopher_1.gif](/assets/images/2017/protogopher_1.gif)
 
 Bir fabrikanın üretim hattına ait bilgileri barındıran bir veri modelini tasarladığınızı ve çalışma zamanı nesne topluluklarının belirli amaçlar doğrultusunda serileştirme işlemlerine tabii tutulacağını düşünelim. Uygulama çalışma zamanı tek bir nesne bilgisi (örneğin envanterdeki kategoriler) ile çalışabileceği gibi n sayıda nesne bilgisini tutan listelere de sahip olabilir. Hatta iç içe geçen veri kümeleri de kullanılabilir. Bu tip bir nesnel oluşum aynı ortamda çalışılırken çok soru işaretine neden olmasa da, veriyi servis olarak sunduğumuzda ya da X platformunun kullanımına açtığımızda şartlara uygun bir serileştirme modeli gerekir.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft Custom Vision Servisini Python ile Kullanmak"
 date: 2019-08-23 13:00:00 +0300
@@ -12,9 +12,9 @@ tags:
   - python
   - github
 ---
-![asset_12.png](/assets/images/2019/asset_12.png)
-
 Yandaki resme baktığınızda aklınıza gelen ilk şey nedir? Bir surat? Belki de bir kurbağa. Kedi olabilir mi? Bu mürekkep baskısı gösterildiği kişide yarattığı algıyı anlamak için kullanılan Rorschach (Roşa olarak okunuyormuş) isimli psikolojik testten. Ünlü İsviçreli psikiyatrist Hermann Rorschach (1884-1922) tarafından geliştirilen test özellikle kişilik tahlili ve şizofreni vakalarında kullanılmakta. Sonuçların manipule edilmesinin zorluğu nedeniyle adli vakalarda ve hatta kariyerle ilgili kişilik testlerinde bile ele alınmakta. Hermann yandakine benzer kırk mürekkep baskısı tasarlamış. Kaynaklardan öğrendiğim kadarıyla doktorlar bu setteki kartların neredeyse yarısını kullanıp kişinin o anda nevrotik veya psikotik olup olmadığını anlayabiliyormuş. Tabi konunun uzmanı olmadığım için ancak giriş hikayemde kullanabilecek kadar bilgi aktarabiliyorum.
+
+![asset_12.png](/assets/images/2019/asset_12.png)
 
 Filmlerde ve internette sıklıkla gördüğümüz bu mürekkep baskılarına az çok aşinayızdır. Peki bu fotoğrafa baktığında bir yapay zeka ne düşünür? Onun tamamen rasyonel olan dünyasında duygulara yer olmadığını varsayarsak tüm yapay zekalar için sonuç aynı mı olacaktır? Duygusal zeka ile donatılmış bir yapay zekanın tepkimeleri çeşitlilik gösterir mi? Sanırım onu bu resimlerle ilgili yeterince iyi eğitirsek düşüncelerini kolayca öğrenebiliriz. Tabii [o cumartesi gecesi çalışması](https://github.com/buraksenyurt/saturday-night-works)nda ben Rorschach resimlerini sınıflandıracak bir yapa zeka servisi aramak yerine elimdeki Lego fotoğraflarını öğretebileceğim birisine bakıyordum. Sonunda Microsoft'un Custom Vision servisini incelemeye karar verdim. Öyleyse derlememize başlayalım.
 

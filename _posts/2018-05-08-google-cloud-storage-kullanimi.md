@@ -20,9 +20,9 @@ tags:
   - ruby
   - nodejs
 ---
-![gcpstorage_1.gif](/assets/images/2018/gcpstorage_1.gif)
-
 Vakti zamanında sıkı bir Instagram kullanıcısıydım. En güzel fotoğrafları yakalamaya çalışır, anı görüntüleyip tüm bağlantılarımla paylaşırdım. Derken bir gün "ne yapıyorum ben yahu?" oldum. Neden o anı ille de herkesle paylaşma ihtiyacı hissediyordum. Bazen o anın fotoğrafını çekmek gerekmiyordu. Hatta hiç çekmediğim zamanlarda aklıma nasıl kazıdığımı bile unutmuştum. Üstelik ona ayıracağım zamanı pekala başka değerli şeylere de ayırabilirdim. Örneğin yeni şeyler öğrenmeye, makale yazmaya vs...
+
+![gcpstorage_1.gif](/assets/images/2018/gcpstorage_1.gif)
 
 Görmekte olduğunuz fotoğraf Instagram arşivimden bir kare. O zamanlar denediğim aynasız fotoğraf makinem (Sony Alpha idi. Hafif ve kullanışlıydı) ile çekmiştim. Her zaman ki gibi büyük bir keyifle tamamladığım Ghostbusters'ın efsane arabası Ecto...Bugün işleyeceğimiz makaleye konu olacak olan fotoğraf. Haydi gelin başlayalım.
 

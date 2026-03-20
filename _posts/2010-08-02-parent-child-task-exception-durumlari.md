@@ -16,9 +16,9 @@ tags:
   - generics
   - visual-studio
 ---
-![blg174_Giris.jpg](/assets/images/2010/blg174_Giris.jpg)
-
 Daha orta okul sıralarındayken havacılığa karşı müthiş bir ilgim vardı. Hiç unutmuyorum o yıllarda Uçan Türk dergisinin sıkı bir fanatiğiydim. Pek çok savaş uçağının teknik özelliklerini ezbere bilirdim ve hatta onları arşivlediğim bir not defterim dahi vardı. Uçmaktan korkan birisi olmama rağmen bunu yeneceğimi düşünerekten Lise yıllarında Hava Harp Okuluna girebilmek için özel bir çalışma programı bile uygulamıştım. Düzenli olarak spor yapıyor, kondisyon arttırmaya çalışıyor, günde değil 3, 5 kere dişlerimi fırçalıyor, gözlerimi yormamak için uykuma özen gösteriyordum.
+
+![blg174_Giris.jpg](/assets/images/2010/blg174_Giris.jpg)
 
 Tabi öğrenciliğim çok parlak olmadığı için ÖSS sınavında aşmam gereken 150' lik puan barajı konusunda tereddütler yaşıyordum. Nitekim barajı da geçemedim. Hayallerim yıkılmış mıydı? Elbette hayır. Heleki o yıllardaki çalışma azmimim bana kazandırdığı önemli avantajlar olduğu düşünüldüğünde. Bunlardan birisi de derin detaylara inebilmek için gerekli eforu, gayreti gösterme isteğidir. Neden böyle bir giriş yaptığıma gelince...Bu seferki konumuz Paralel Programlamada, ilişkisel Task örneklerinin Exception yönetimi hakkındadır. Konu sıkıcı ve bir o kadarda detaylıdır. Ama neyseki araştırıp, sıkılmadan derinlerine inmek ve analiz etmek için gerekli gayret mevcut
 

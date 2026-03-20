@@ -11,9 +11,9 @@ tags:
   - linq
   - generics
 ---
-![blg53_Giris.jpg](/assets/images/2009/blg53_Giris.jpg)
-
 Küçüklüğümde pek çoğumuz gibi sahip olduğum bir pul koleksiyonum vardı. Halen daha sakladığım pullar bulunmaktadır. Hatta o zamanlarda, çocuklar posta aracılığıyla yurt dışından arkadaşlar edinir, birbirleriyle pul değiş tokuşu bile yaparlardı. Düşünsenize, hem yabancı dilinizi geliştiriyor hem pul koleksiyonunuzu genişletiyorsunuz.
+
+![blg53_Giris.jpg](/assets/images/2009/blg53_Giris.jpg)
 
 Tabiki posta mesajlaşması biraz zaman alan bir mevzuydu. Bu günkü gibi sosyal içerikli portallar veya mesajlaşma cihazları ve daha nice gelişmiş teknoloji yoktu. Acaba bu devirde yaşayan çocuklardan kaçı pul koleksiyonu yapıyor
 
@@ -172,7 +172,7 @@ namespace IteratorPattern
         }
 
         #endregion
-    }   
+    }
 
     class Program
     {

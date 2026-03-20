@@ -13,9 +13,9 @@ tags:
   - docker
   - visual-studio
 ---
-![cdcrgkapak1.jpg](/assets/images/2019/cdcrgkapak1.jpg)
-
 Basketbol en sevdiğim spor dalı. Takım ayırt etmeksizin izlemeyi çok seviyorum. 40lı yaşların ortalarına doğru geliyor olsam da hala büyük bir keyifle oynuyorum da. Bazen saatlerce. En büyük rakibimse beş yaşından beri basketbol eğitim alan S (h) arp Efe. Son beş yıldır düzenli olarak idman yaptığı için kendisini epey geliştirmiş durumda. Bire birlerde acımıyor ve doğru basketbol oynamaya çalışıyor. Doğru basketbol için temellerin de doğru atılması gerekiyor. İlk koçu dahil şu an oynadığı kulüpteki koçu da Ona ve diğer çocuklara doğru alışkanlıkları öğretmeye çalışıyorlar. Çok zaman potaya şut bile atmadan tamamladıkları idmanlar vardır. Bunun yanına disiplinli çalışmayı da ekleyince çocuklar ilerleyen yaşlarında temel hareketlerde güçlü birer basketbolcu adayı haline geliyorlar.
+
+![cdcrgkapak1.jpg](/assets/images/2019/cdcrgkapak1.jpg)
 
 Konumuz basketbol değil ama onun çocuklar için düşünülen felsefesine yakın bir konu. Şimdi biraz geriye gidelim. 80lerin sonlarına. Eğer yazılıma ilk başladığım o yıllarda her şeyi Test Driven Development (ki NASA hariç sanırım pek çoğumuz o zamanlar bundan bihaberdi) prensiplerine göre geliştiriyor olsaydım...Şimdi ne kadar da kaliteli kodlar çıkartırdım diye düşünmeden edemiyorum. Çocuk değildim belki ama programlamaya ilk başladığım yıllardı ve işte o yıllarda temelleri de iyi atmak gerekiyordu.
 

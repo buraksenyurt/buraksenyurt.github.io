@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust Pratikleri - Serde, Json ve Biraz Eğlence"
 date: 2022-03-13 09:00:00 +0300
@@ -14,9 +14,9 @@ tags:
   - serialization
   - github
 ---
-![tipstricks.png](/assets/images/2022/tipstricks.png)
-
 Sanıyorum JSON veriler ile çalışmayan programlama dili veya ortam yoktur. Sonuç itibariyle bir takım verileri düzenli, standart ve insan gözüyle okunabilir bir formatta tutmanın en iyi yollarından birisi şüphesiz ki JSON. Öncesinden gelen XML formatına göre daha az yer tutması da cazibesini artırmaktadır. Tabii günümüzde BSON gibi sıkıştırılabilir ve çok daha hızlı yol alabilen seçenekler de mevcut ama rust dilini öğrenirken bunun pratiğini yapmadan olmaz. Bu noktada işimizi epey kolaylaştıran bir kütüphane olduğunu ifade edebilirim. [Serde](https://docs.serde.rs/serde/index.html) isimli çatı (ki framework olduğu vurgulanıyor JSON ile çalışma konusunda epey popüler. Hiç vakit kaybetmeden örnek bir uygulama üstünden ilerleyelim.
+
+![tipstricks.png](/assets/images/2022/tipstricks.png)
 
 Senaryomuzda basit olması nedeniyle sıklıkla tercih ettiğim bir terminal uygulaması kullanacağız. Programı komut satırından argüman vererek çalıştırabileceğiz. Dolayısıyla yürütülebilir bir rust programına komut satırından argüman nasıl yollanır öğreneceğiz. JSON dosya içeriğinde türlü türlü ipuçları olacak. Uygulamamızdan rustgele veya belli bir konu başlığında ipucu isteyebileceğiz. İpuçlarını tutan JSON dosyasında ise örnek olarak aşağıdaki gibi bilgiler saklayacağız.
 

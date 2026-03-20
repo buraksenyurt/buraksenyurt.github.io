@@ -22,9 +22,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg127_Giris.jpg](/assets/images/2010/blg127_Giris.jpg)
-
 Nihayet taşlar yerli yerine oturmaya başladı. 2008 yılında düzenlenen Microsoft PDC'de tanıtılan sürüm ile başlayan macerada Beta 1, Beta 2 versiyonları derken yavaş yavaş RC, RTM sürümlerinin çıkacağı günlere gelmekteyiz. Elbette hepizimin beklentisi bir an önce stabil bir sürüme kavuşabilmek. Bu günlerde çok doğal olarak.Net Framework 4.0 ve Visual Studio 2010 ürünlerinin sınırlarının daha da netleştiğini görmeye başladık. Her ne kadar henüz yayınlanmış yeni bir sürüm olmasa da, pek çok güncel ve geçerli kaynaktan okuduğumuz kadarı ile bu böyle. Taşların yerli yerine oturmaya başladığı ve herşeyin biraz daha belirginleştiği alanlardan biriside Windows Communication Foundation 4.0
+
+![blg127_Giris.jpg](/assets/images/2010/blg127_Giris.jpg)
 
 Hatırlayacağınız üzere [WCF Eco System'i anlattığımız yazımızda](WCF Eco System.md), WCF alt yapısı üzerine geliştirilen ve amaca yönelik olarak farklılaştırılan servis geliştirme modellerine değinmiştik. Bunlardan biriside WebHttp Services idi. Bu yazımız ile birlikte WebHttp Service'lerini tanımaya çalışacağız. Aslında WCF 3.5 sürümüne kazandırılan Web programlama teknikleri sayesinde zaten uzun bir süredir farkında olduğumuz non-SOAP bazlı bir modelden bahsediyoruz. Bildiğiniz üzere WebGet ve WebInvoke isimli nitelikler (attribute) yardımıyla servis operasyonlarının HTTP Get,Post,Put ve Delete metodlarına cevap verebilecek şekilde tasarlanması mümkün. Ancak zaman ilerledikçe REST (REpresentational State Transfer) modeline göre WCF servislerinin daha kolay geliştirilmesini sağlayan ve WCF 4.0 içerisinde gömülecek yeni özelliklerin bir ön görünümünü bizlere sunan WCF REST Starter Kit ile karşılaştık.
 

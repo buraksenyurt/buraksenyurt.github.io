@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net 4.0 - Özelleştirilmiş Cache Sağlayıcısı(Custom Cache Provider) [Beta 2]"
 date: 2009-11-17 06:10:00 +0300
@@ -19,9 +19,9 @@ tags:
   - generics
   - dependency-management
 ---
-![blg102_Giris.jpg](/assets/images/2009/blg102_Giris.jpg)
-
 Merhaba Arkdaşlar,
+
+![blg102_Giris.jpg](/assets/images/2009/blg102_Giris.jpg)
 
 Çok çok uzun zamandır Asp.Net üzerine eğilmiyordum. Hem tasarım yönünden kabiliyetsiz olmam (iki rengi bir araya getir deseler kesin uyumsuz renkler çıkartırım) hemde servis yönelimli mimari dünyasına dalmış olmamın bunda büyük bir rol oynadığını itiraf etmek isterim. Yine de Asp.Net 4.0 ile birlikte gelen yenilikleri okuyunca biraz olsun araştırmak ve edindiğim tecrübeleri sizlere aktarmak istedim.
 

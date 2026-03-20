@@ -9,9 +9,9 @@ tags:
   - go
   - pointers
 ---
-![Pointer_DePaulo_head.gif](/assets/images/2017/Pointer_DePaulo_head.gif)
-
 1993 yılında girdiğim Matematik Mühendisliği bölümünün bilgisayar programlama ağırlıklı bir müfredatı vardı. GWBasic ile başlayan maceramızda Pascal, C, C++, Cobol gibi programlama dillerine uğradık. Sınavlarımız çoğunlukla kağıt üzerinde olurdu. Basit for döngülerini dahi kağıt üzerinde yazarak algoritma çözmeye çalışırdık. Haliyle C gibi case-sensitive kuralların katı olduğu dillerde sınavlar epey zorlu geçerdi.
+
+![Pointer_DePaulo_head.gif](/assets/images/2017/Pointer_DePaulo_head.gif)
 
 Hatırladığım kadarı ile en çok zorlandığım ve hatta sonrasında kaçınmaya çalıştığım konuların başında Pointer aritmetiği geliyordu. Pointer tipini öğrenmek kolay olsa da iş aritmetiğine gelince kafam karışmıyor değildi. Zamanla yeni çıkan ve özellikle yönetimli ortamlara sahip olan dillerde bu gibi konulara pek fazla rastlayamaz olduk. Hatta C# tarafında pointer kullanımı mümkün olsa da Unsafe kod konusuna girdiği için bilinçli bir şekilde çekinerek yaklaştık.
 

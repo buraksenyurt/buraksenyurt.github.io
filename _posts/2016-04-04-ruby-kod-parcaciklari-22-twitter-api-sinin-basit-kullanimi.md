@@ -13,9 +13,9 @@ tags:
   - http
   - github
 ---
-![rubytwt_7.gif](/assets/images/2016/rubytwt_7.gif)
-
 Bazı günler şirketten geç çıkıyorum. Özellikle el ayak çekildiğinde ofis ortamı bir şeylere çalışmak için son derece ideal oluyor. Tam da istediğim ortam. Kendi çalışmalarıma vakit ayırabildiğim hoşuma giden zamanlar. Hele de akşam güneşi camdan içeri giriyor ve en sevdiğim sarı rengi masamın üstüne bırakıyorsa.
+
+![rubytwt_7.gif](/assets/images/2016/rubytwt_7.gif)
 
 İşte bu huzur ve sakinlik içerisinde bu akşam mesaiden sonra şöyle oturayım da iki satır Ruby kodu çalışayım dedim. Aklıma bir kaç gem kütüphanesini araştırıp kullanmaya çalışmak geldi. İlk gözüme kestirdiğim ise [twitter gem](http://www.rubydoc.info/gems/twitter) oldu. Bu gem'i kullanarak tweet'lerimi okumak ve hatta bir tweet'i ruby kodundan paylaşmak amacındaydım.
 

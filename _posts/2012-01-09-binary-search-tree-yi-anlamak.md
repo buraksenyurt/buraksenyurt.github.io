@@ -14,9 +14,9 @@ tags:
   - java
   - generics
 ---
-![oldradio.jpg](/assets/images/2012/oldradio.jpg)
-
 İnsan hafızası gizemli çalışan ama çoğu zamanda bizleri şaşırtan bir mekaniğe sahiptir. Doğduğumuz andan itibaren 3 yaşına kadar geçen zaman dilimi içerisinde görsel olarak ne izlersek kaparız. Ancak neredeyse bunların hiç birini hatırlamayız.
+
+![oldradio.jpg](/assets/images/2012/oldradio.jpg)
 
 Çocukluğumuz, ergenliğimiz, yetişkinliğimiz, orta yaş halimiz ve yaşlılığımız. Tüm bu zaman dilimlerinde beynimiz sürekli olarak bir şeyleri hafıza da tutma ihtiyacı hisseder. Zaman zaman öğrendiğimiz pek çok bilgiyi kolayca unutur ve ihtiyacımız olduğunda hatırlamakta zorlanırız. Ama kimi bilgilerde bilinç altımıza neredeyse kazınır ve geçerli bir sağlık problemi oluşmadığı sürece hiç unutmayız (Çarpım tablosu, matematik dört işlemin nasıl yapıldığı veya hangi ışıkta durulması gerektiği gibi)
 

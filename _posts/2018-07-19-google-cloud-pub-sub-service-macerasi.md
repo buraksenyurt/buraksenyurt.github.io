@@ -24,9 +24,9 @@ tags:
   - generics
   - visual-studio
 ---
-![surfing.gif](/assets/images/2018/surfing.gif)
-
 Yeni yuvam ile evimin arası 40 km. Uzaklık nedeniyle mesailerimiz erken başlıyor. Sabah 05:50de çalan alarmla güne başlıyorum. Üst baş, kişisel bakım, seyahat boyu bana eşlik edecek filtre kahveyi hazırlama vs derken 06:35 sıralarında sevgili servis şoförümüz İhsan ağabey ile buluşup yola devam ediyorum. Yaklaşık 40-45 dakikalık bir seyahatten sonra iş yerine ulaşıyorum. Yol boyunca "o saatte kim ayakta olur?" sorusunu cevaplarcasına her sabah onlarca kez ezen insanla karşılaşıyorum. Mevsime göre evlerin sarı beyaz oda ışıkları, seyir halindeki arabalar, çalışanları işe götüren servisler, otobüsler, minibüsler, duraklarda bekleyen öğrenciler... O vakitlerde empati yapmak farklı bir deneyim.
+
+![surfing.gif](/assets/images/2018/surfing.gif)
 
 Ama bazı sabahlarda Feedly sayfama düşen yazıları okuyorum. Şirkete ulaştığımda mesainin başladığı 07:45e kadar da neredeyse yarım saatlik serbest zamanım oluyor. Genelde beğendiğim ve Feedly listemde favorilere eklediğim bir yazının devamını o zaman diliminde getiriyorum. Bazı yazıları da tekrar tekrar okuyorum. İşte tam da böyle bir sabahtı Google'ın iş ortaklarından olan [Incentro](https://www.incentro.com/en/) firmasının (Internet sayfaları çok hoş) direktörü Kees van Bemmel'ın kaleminde çıkan yazıyı okuduğumda. Makale, Cloud Platform temelli olarak geliştirilen bir çözüm hakkındaydı.
 

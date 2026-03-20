@@ -10,9 +10,9 @@ tags:
   - linq
   - generics
 ---
-![205735_getting_the_last_word.jpg](/assets/images/2013/205735_getting_the_last_word.jpg)
-
 Uzun zamandır makale yazmaya çalışmakta ve öğrendiklerimi, edindiğim tecrübeleri sizlere aktarmaktayım. Tabi zaman ilerledikçe yazacak konu bulmakta da bir hayli zorlanıyor insan. Bu noktada öğrenmeninin sınırının olmadığını hepimiz biliyoruz. Olaya bu açıdan baktığımızda yazılmaya ve araştırılmaya değer binlerce konu olduğunu gönül rahatlığıyla ifade edebilirim. Yazma hevesli bir birey olarak bu benim için gerçekten önemli
+
+![205735_getting_the_last_word.jpg](/assets/images/2013/205735_getting_the_last_word.jpg)
 
 ![Smile](/assets/images/2013/smiley-smile.gif)
 

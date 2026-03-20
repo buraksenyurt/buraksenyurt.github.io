@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Python Loglamada ELK Kullanımı"
 date: 2019-04-27 19:32:00 +0300
@@ -14,9 +14,9 @@ tags:
   - performance
   - github
 ---
-![elk.png](/assets/images/2019/elk.png)
-
 Laptop ekranına kitlenmiş error seviyesindeki logları inceliyordum. HTTP 400 en sevdiğim (yazar burada kendisiyle dalga geçiyor) ama çözmekte en çok zorlandıklarımdan birisiydi. Neyse ki monitör ettiğimiz araç bize güzel detaylar veriyordu. Pek tabii iş yoğunluğundan olsa gerek, üzerinde geliştirme yaptığımız ürünlerin bazı kurgularını inceleme fırsatı bulamıyordum. Lakin zaman zaman takım arkadaşlarımla veya mimari ekiptekilerle yaptığım konuşmalarda havada uçuşan, daha önceden duyduğum ama derinlemesine bilgi sahibi olmadığım kelimelere rastlıyordum.
+
+![elk.png](/assets/images/2019/elk.png)
 
 ELK kısaltmasını ilk telafüz ettiklerinde zihnimde hiçbir şey canlanmamıştı. Bilmediğim ve öğrenmem gereken bir konu daha ortaya çıkmıştı işte. 2019 yılına girerken aldığım karar doğrultusunda öncelikle sağdan soldan adını duyduğum enstrümanları anlamaya çalışacak ve bunları [saturday-night-works](https://github.com/buraksenyurt/saturday-night-works) altında kabataslak notlarla deneyimleyecektim. Sanırım bu yıl için aldığım en doğru karardı diyebilirim. Şimdi bunun nimetlerini toplamak üzere bazı çalışmaları bloğumda kendime not olarak düşüyorum. Sırada ELK kelimesinin derin anlamını öğrenmek var. Tabii onu Kanada'nın simgelerinden biri olan 800 kiloluk koca bir geyik türü olarak düşünmüyoruz. En azından şimdilik...
 

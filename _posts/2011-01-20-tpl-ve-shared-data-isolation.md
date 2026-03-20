@@ -14,9 +14,9 @@ tags:
   - visual-studio
   - shared-state
 ---
-![blg210_Giris](/assets/images/2011/blg210_Giris_thumb.jpg)
-
 Sanıyorum ki, “Bir elin nesi var, iki elin sesi var” deyimini bilmeyen yoktur. Bir matematikçi olarak tüme varım yaparsam, n tane elin çok daha sesli olduğunu ispat etmek isteyebilirim. Ne varki dünya kupasındaki n tane elin tuttuğu Vuvuzela’ ların çıkarttığı sesi düşününce, bu teoremden hemen vazgeçebilirim de. Neyseki konumuz bu değil. Konumuz paralel kütüphanede, paylaşımlı verileri nasıl ele alabileceğimiz.
+
+![blg210_Giris](/assets/images/2011/blg210_Giris_thumb.jpg)
 
 Task Parallel Library alt yapısını kullanarak geliştirdiğimiz paralel kodlarda önem arz eden konulardan birisi de, paylaşılan verilerin hesaplamalara katıldığı durumlardaki sonuç tutarlılıklarının nasıl sağlanacağıdır. Bunun bilinen bir kaç yolu vardır. Aslında bir tanesi ve en basiti kodu tamamen senkron olarak geliştirmektir. Yani paralel çalıştırmak gibi bir maceraya hiç girmemektir. Diğer bir yol ise Task örnekleri içerisinde ele alınan paylaşılmış verilerin izole edilerek kullanılmasıdır. Aslında durumu daha kolay bir şekilde analiz edebilmek için önce sorunu masaya yatıralım. Bu amaçla aşağıdaki kod parçasını göz önüne alarak ilerleyebiliriz.
 

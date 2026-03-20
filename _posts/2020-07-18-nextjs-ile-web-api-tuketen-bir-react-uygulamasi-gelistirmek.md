@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "NextJS ile Web API Tüketen bir React Uygulaması Geliştirmek"
 date: 2020-07-18 19:22:00 +0300
@@ -15,9 +15,9 @@ tags:
   - async-await
   - github
 ---
-![nextjs.png](/assets/images/2020/nextjs.png)
-
 Geçen sene React ile ilgili basit birkaç örnek denemiiş olmama rağmen öğrendiklerimi çok çabuk unuttuğumu fark ettim. Gerçek saha projelerinde sıklıkla kullanmayınca böyle bir şeyin olması kaçınılmazdı. Dolayısıyla [skynet çalışmaları](https://github.com/buraksenyurt/skynet) kapsamında tekrardan pratik yapmanın uygun olacağını düşündüm. Bu sefer amacımız Star Wars için [https://swapi.dev](https://swapi.dev/) adresinden sunulan REST servisini tüketen ve karakterlerin listesini gösteren bir web uygulaması geliştirmek. Bunu yaparken hafif siklet kategorisinde sayılan ancak bir çok işi kolaylaştırdığı söylenen Next.Js isimli web framework'ten faydalanacağız.
+
+![nextjs.png](/assets/images/2020/nextjs.png)
 
 Örneğin dikkat çekici noktalarından birisi servisin karakter listesini sayfalama yoluyla vermesi. Yani tüm karakterleri tek seferde veren bir REST servis yerine, diğer sayfaları da ayrı HTTP Get çağrıları ile alacağımız bir yaklaşım söz konusu. Servis çağrısı sonrası elde edilen her JSON içeriğinde previous, next gibi önceki ve ileriki servis noktalarını referans eden nitelikler bulunduracağız. İşleyiş olarak sayfanın altındaki "Daha fazlası..." yazan düğmeye bastıkça yeni içerik var olanın arkasına eklenecek ve liste aşağı doğru uzayıp gidecek. Bu durumu önyüz tarafında yönetmek için çekilen içeriği ve sonraki servis adresi bağlantı bilgilerini tutmamız gerekiyor. İşte bu noktada useState, useEffect gibi enstrümanlarla React Hooks'u tanımaya çalışacağız. Ben örneğimizi Heimdall (Ubuntu-20.04) üstünde geliştiriyorum ancak diğer plaformlarda da benzer şekilde yazabilirsiniz. Haydi gelin idmanımıza başlayalım.
 

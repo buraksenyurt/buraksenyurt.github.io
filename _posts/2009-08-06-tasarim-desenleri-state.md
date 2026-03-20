@@ -11,9 +11,9 @@ tags:
   - threading
   - generics
 ---
-![blg57_vendingMachine.gif](/assets/images/2009/blg57_vendingMachine.gif)
-
 Bir süre öncesine kadar özel bir bankada uzman yazılım geliştirici olarak görev almaktaydım. Bankada en çok hoşuma giden bazende en çok nefret ettiğim hususlardan biriside otomat makinesi idi.
+
+![blg57_vendingMachine.gif](/assets/images/2009/blg57_vendingMachine.gif)
 
 ![Smile](/assets/images/2009/smiley-smile.gif)
 
@@ -165,7 +165,7 @@ namespace StatePattern
                 // Burada durum değişimleri sonucu çalıştırılacak davranışların başlatılma noktasınıda merkezileştirmiş oluyoruz.
                 _state.HandleState(this);
             }
-        }       
+        }
 
         // Context nesnesi örneklenirken başlangıç durumu belirtilir.
         public VendingMachine()

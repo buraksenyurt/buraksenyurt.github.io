@@ -10,9 +10,9 @@ tags:
   - testing
   - github
 ---
-![gotesting_5.gif](/assets/images/2017/gotesting_5.gif)
-
 Aranızda hala birim test (Unit Test) yazmayan/yazmamış olan var mı? diyerek konuya giriş yapmak istiyorum. Yazdığımız atomik fonksiyonelliklerin taşınan ortamlarda başımızı ağrıtmasını istemiyorsak birim testlerini mutlaka yazmalıyız. Üstelik iyi yazmalıyız. Belki birim testler uygulama geliştirme süresini uzatabilirler ancak uzun vadede kalp krizi geçirme riskini de azaltırlar. Üstelik test senaryoları sayesinde gerçekten ne yapmak istediğimizin farkında olarak da hareket edebiliriz. Eğer test güdümlü yaklaşımla (Test Driven Development) ilerliyorsak bilinçli olarak yaptırılan hata sonrası kodun çalışır hale getirilmesi ve iyileştirilmesi (Refactoring) de önemli kazanımlarımızdır (Red-Green-Blue konusuna bir bakın) En önemlisi de beklenen testleri başarılı bir şekilde aşmış temiz bir kodun ortaya çıkmasıdır.
+
+![gotesting_5.gif](/assets/images/2017/gotesting_5.gif)
 
 Neredeyse her programlama dilinin Unit Test yazılmasına yönelik imkanları vardır. Geliştirme IDE'lerinde pek çok kolaylık bulunmaktadır. Çoğu ortam zaten standart kütüphaneler veya paketlerler ile bizleri olabildiğince Unit Test yazmaya yönlendirir. GO tarafında bu iş için dahili paketlerden olan testing kullanılmakta. Pek tabii github üzerinden bulabileceğiniz farklı test paketleri de mevcut. Bu kısa yazımızda basit bir Unit Test'in nasıl yazılabileceğini incelemeye çalışacağız.
 

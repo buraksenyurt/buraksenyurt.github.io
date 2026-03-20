@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Blazor ile Hello World Uygulaması Geliştirmek"
 date: 2019-06-07 11:00:00 +0300
@@ -23,9 +23,9 @@ tags:
   - github
   - dependency-management
 ---
-![gulelim.png](/assets/images/2019/gulelim.png)
-
 Oturduğunuz yerden göründüğü gibi çok karikatür okuyan biri değilimdir. Ama bazen kendimi sevgili Yiğit Özgür'ün kaleminden çıkan bir Huni Kafa karakteri gibi hissettiğim olur. Bir sebepten ne olduğunu tam olarak anlayamadığım konular üzerinde debelenir dururum. O kaynaktan bu kaynağa geçerken de kaybolurum. Lakin her zaman elle tutulur bir şeylere ulaşma şansı da bulurum.
+
+![gulelim.png](/assets/images/2019/gulelim.png)
 
 Blazor'da bu standart anlayamama sürecime takılan konulardan birisiydi. Ona olan merakım çevremde konuşulanlarla başlamıştı. Çok yakın dostum [Bora Kaşmer](http://www.borakasmer.com/)'in konu ile ilgili yazıları ve şirketteki deneyimli yazılımcıların tariflemelerine rağmen zihnimde onu tanımlayacak iyi bir cümleyi bir türlü kuramıyordum. Neden kullanacaktım ki onu? Hangi problemi çözüyordu? Ne gibi kolaylıklar getiriyordu? Bunları tam olarak niteleyemediğimi görünce 19ncu bölüm ortaya çıktı. Öyleyse notlarımı derlemeye başlayalım.
 

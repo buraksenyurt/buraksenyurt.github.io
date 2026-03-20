@@ -20,9 +20,9 @@ tags:
   - generics
   - visual-studio
 ---
-![rabonww_g.jpg](/assets/images/2018/rabonww_g.jpg)
-
 Küçük bir çocukken, soğuk bir kış gününde ablamın elini tutmuş Kadıköy'deki büyük postaneye doğru yol aldığımı hatırlarım. O yaz mektuplaşmak için adresini aldığım arkadaşıma yazdıklarımı göndermek istiyordum. Hayal mayal hatırladığım anlar. İlkokul zamanlarından kalma. Üzerinden onca yıl geçmiş durumda. Gönderen belli, alıcı belli, mektup ortada, pulları üstünde, yazılanlar içinde, taşıyıcı PTT her zaman ki gibi hizmetimizde. Tabii postaneye gelen bir çok mektup daha var. Hepsinin göndericisi ve gideceği adresler de belli.
+
+![rabonww_g.jpg](/assets/images/2018/rabonww_g.jpg)
 
 Bir postane uzun zamandır Message Broker sistemlerine benzetiliyor aslında. Mükemmel çalışan asenkron kuyruk sistemlerinin bir kısmının sırf bu işle uğraştığı söyleniyor. Apache Kafka, MSMQ ve başkaları. Ama tabii bir de pek çok platform tarafından desteklenen meşhur RabbitMQ var. RabbitMQ aslında bir posta ofisi olarak göz önüne alınıyor. Mektuplar yerine binary large objects (BLOB) gibi nesneleri taşıyabiliyor. Bu nesnelerin mutlaka göndericisi ve alıcısı (alıcıları) oluyor. Üstelik bu gönderim FIFO (First In First Out) mantığına göre yapılıyor. İlk giren mesaj ilk çıkar mantalitesinde.
 

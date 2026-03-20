@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bir .Net Core Web API Servisini Minikube Üzerinden Çalıştırmak"
 date: 2019-05-10 13:00:00 +0300
@@ -18,9 +18,9 @@ tags:
   - generics
   - github
 ---
-![dumen.png](/assets/images/2019/dumen.png)
-
 Soğuk bir Şubat akşamı mıydı, dışarıda kar var mıydı, günün tam olarak hangi vakitleriydi tam olarak hatırlamıyorum ama github'a göre 24 numaralı örneğin son check-in işlemi 20 şubat Çarşamba günüydü.
+
+![dumen.png](/assets/images/2019/dumen.png)
 
 [Saturday-Night-Works](https://github.com/buraksenyurt/saturday-night-works) çalışmalarına başladığımda hedefim sadece Cumartesi geceleri olmasına rağmen içten gelen bir motivasyon konulara haftanın herhangi bir gününde bakmamı sağlıyordu. Genelde ilgi çekici konular seçtiğimden başta belirlediğim standart çalışma takviminin dışına çıkmıştım. Bu hevesli motivasyon birinci fazın (41 bölümlük ilk faz olarak ifade edebilirim) tamamı boyunca süregeldi.
 

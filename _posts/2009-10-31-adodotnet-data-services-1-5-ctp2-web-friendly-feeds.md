@@ -13,9 +13,9 @@ tags:
   - entity-framework
   - linq
 ---
-![blg80_Giris.jpg](/assets/images/2009/blg80_Giris.jpg)
-
 Ado.Net Data Services v1.5 CTP1 ile gelen Web Friendly Feeds özelliği, CTP2 sürümünde eklenen iki yeni eşleştirme seçeneği ile genişletilmiştir. Durun bir dakika...Web Friendly Feeds nedir?
+
+![blg80_Giris.jpg](/assets/images/2009/blg80_Giris.jpg)
 
 ![Undecided](/assets/images/2009/smiley-undecided.gif)
 

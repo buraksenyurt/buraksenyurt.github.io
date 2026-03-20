@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "MongoDb,Express,Vue ve Node Birlikteliği"
 date: 2019-07-19 05:47:00 +0300
@@ -16,9 +16,9 @@ tags:
   - vue
   - github
 ---
-![cobolll.png](/assets/images/2019/cobolll.png)
-
 Aranızdan kaç kişi akıllı telefonundaki herhangi bir arkadaşının numarasını ezbere söyleyebilir? Eminim bazılarımız bizi dokuz ay karnında taşıyan annesinin telefonunu dahi hatırlamıyordur. Peki ya birlikte sıklıkla vakit geçirdiğiniz ama çok da yakın çevrenizden olmayan kankanızın doğum günü ne zaman? Teknolojik cihazlarınızdaki hatırlatıcılar olmadığında kaç arkadaşınızın doğum gününü unutacaksınız hiç düşündünüz mü?
+
+![cobolll.png](/assets/images/2019/cobolll.png)
 
 İletişim bilgisi ve doğum günleri bizi yakın çevremize bağlayan veya uzağı yakın eden unsurlar arasında yer alıyor. Hatırlanmak güzel olduğu kadar hatırlamak da gerekiyor. Ortaokul sıralarında kullandığım bir fihrist defterim vardı. İçinde yakın arkadaşlarımın ev telefonları ve doğum günü bilgileri yazardı. Pek tabii çok sık iletişimde olduğum sıra arkadaşım sevgili Burak Gürkan gibi dostlarımı aramak için o deftere ihtiyacım yoktu. Neredeyse her gün telefonla konuştuğumuz için numarayı ezberlemiştim.
 

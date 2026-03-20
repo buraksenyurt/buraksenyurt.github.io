@@ -18,9 +18,9 @@ tags:
   - performance
   - caching
 ---
-![blg77_Performance.jpg](/assets/images/2009/blg77_Performance.jpg)
-
 Performans pek çok uygulama geliştirme ortamında önem arz eden konuların başında gelmektedir. Özellikle Web tabanlı uygulamalarda performans arttırmak adına göz önüne alınan kriterlerden biriside farklı tipteki önbellekleme (Caching) işlemleridir.
+
+![blg77_Performance.jpg](/assets/images/2009/blg77_Performance.jpg)
 
 En basit ve popülerlerinden birisi olan Output Caching,REST tabanlı WCF servisleri içinde kullanılabilmektedir. WCF'in önceki sürümünde WebOperationContext tipinden yararlanılarak ekstra kod eforu ile ele alınabilen Output Cache özelliği, 4.0 sürümünde tamamen dekleratif olarak değerlendirilebilmektedir. Aslında bu yenilik bilindiği üzere WCF Rest Starter Kit Preview 2 ile birlikte.Net Framework 3.5 üzerinde de uygulanabilmektedir. Output Cache özelliği performans için önemli bir kriter olduğundan, WCF 4.0 versiyonunda doğrudan ele alınmaktadır.
 

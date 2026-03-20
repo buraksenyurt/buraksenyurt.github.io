@@ -22,9 +22,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg159_Giris.jpg](/assets/images/2010/blg159_Giris.jpg)
-
 WCF WebHttp Service'leri ile ilişkili yazılarımıza kaldığımız yerden devam ediyoruz. Bu yazımızda ETag (Entity Tag) kullanarak sunucu ile istemci arasındaki veri trafiğini nasıl azaltabileceğimizi incelemeye çalışacağız. Öncelikle istemci ile servis arasındaki iletişimi düşünerek ilerlemeye çalışalım. İstemci, sunucu üzerinde yer alan bir operasyon için talepte bulunduğunda bir cevap üretilecek ve buna bağlı bir içerik verisi istemci tarafına indirilecektir.
+
+![blg159_Giris.jpg](/assets/images/2010/blg159_Giris.jpg)
 
 Bu süreç tipik olarak Request-Response senaryosundan farklı bir işleyiş değildir. İstemci sonraki bir zaman diliminde aynı operasyona yeni bir talepte bulunduğunda ise, üretilecek olan sunucu cevabının (Response) bir öncekine göre hiç değişmemiş olma ihtimalide bulunmaktadır. Eğer istemci tarafı bir şekilde gönderdiği talebin karşılığı olan cevabın değişmediğini anlayabilirse ve kendisinde bu içerik zaten tampon alanda duruyorsa, aynı içeriğin sunucudan istemci tarafına bir kere daha indirilmesine gerek yoktur. İşte ETag takısının devreye girdiği nokta burasıdır.
 

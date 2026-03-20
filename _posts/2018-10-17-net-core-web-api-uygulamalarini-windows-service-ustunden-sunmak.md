@@ -18,9 +18,9 @@ tags:
   - iis
   - visual-studio
 ---
-![scrummy.jpg](/assets/images/2018/scrummy.jpg)
-
 Scrum'lı çevik günlerimiz tüm hızıyla devam ediyor. Artık takımın kapasitesi standart çizgiye oturmaya başladı. Daha verimli çalışıyor ve daha iyi değerler üretebiliyoruz. Bunun bana olan en büyük artılarından birisi de yeni bir şeyler araştıracak vakit bulabilmek. Nitekim takım üyelerinin değişime uygun olacak şekilde kendisini sürekli yeniliyor olması lazım. Bu açıdan motive edildiğimizi ifade edebilirim. Gündem maddemiz ise uzun zamandır pek yanına uğramadığımız ama mutlaka sistemlerimizin bir yerlerinde koşan Windows Service'ler.
+
+![scrummy.jpg](/assets/images/2018/scrummy.jpg)
 
 Micorosft, çıkarttığı 2.1 sürümü ile birlikte Asp.Net Core'a bazı yeni özellikler ekledi. Ben de geçtiğimiz zaman zarfında bunlardan bir kısmını inceleme fırsatım buldum. İlgimi çeken yeniliklerden birisi de artık Asp.Net Core uygulamalarını Windows Service üzerinden sunabiliyor olmamız. Bu bana eski WCF'li günlerimi anımsattı. Orada da servisleri self-host mekanizması dışında (Console gibi çalıştırmak), IIS'de veya Windows Service olarak yayınlama şansına sahiptik (hala sahibiz) Yeni gelen kabiliyet tahmin edeceğiniz üzere Windows tabanlı sistemler için geçerli.
 

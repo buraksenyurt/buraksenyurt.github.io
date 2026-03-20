@@ -15,9 +15,9 @@ tags:
   - http
   - webinar
 ---
-![nedirlogo.gif](/assets/images/2011/nedirlogo.gif)
-
 Uzun zamandır [NedirTv?com](http://www.nedirtv.com/) bünyesinde webiner gerçekleştirmiyordum
+
+![nedirlogo.gif](/assets/images/2011/nedirlogo.gif)
 
 ![Embarassed](/assets/images/2011/smiley-embarassed.gif)
 

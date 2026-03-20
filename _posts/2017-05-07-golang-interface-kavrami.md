@@ -13,9 +13,9 @@ tags:
   - pointers
   - github
 ---
-![margaret_hamilton.gif](/assets/images/2017/margaret_hamilton.gif)
-
 Geçenlerde bilgisayarımın başında oturmuş sıkılmakla meşguldüm. Her ne kadar bloğumu zinde tutmaya çalışsam da arada sırada böyle durağan dönemlere de denk geliyorum. Küçük tatiller diyelim. Derken enteresan bir Tweet yakaladım. Apollo 11'in Command ve Lunar modüllerine ait Assembler kodları github üzerinden yayına açılmış. [Şu adresten bakabilirsiniz](https://github.com/chrislgarry/Apollo-11).
+
+![margaret_hamilton.gif](/assets/images/2017/margaret_hamilton.gif)
 
 Yandaki fotoğrafta yer alan kadınsa Apollo 11 programının yazılım mühendisliği direktörü Margaret Hamilton. Yanında durduğu print çıktısınsa sözü geçen Assembler kodlarına ait olduğu ifade ediliyor. MIT talebeleri bu print çıktılarını üşenmeyip github'da bakılabilir hale getirmişler. Konu hakkında detaylı bir makaleye de [şu adresten ulaşabilirsiniz](https://qz.com/726338/the-code-that-took-america-to-the-moon-was-just-published-to-github-and-its-like-a-1960s-time-capsule/).
 

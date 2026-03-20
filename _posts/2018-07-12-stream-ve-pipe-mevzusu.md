@@ -11,9 +11,9 @@ tags:
   - http
   - performance
 ---
-![piping_g_1.gif](/assets/images/2018/piping_g_1.gif)
-
 West-World bu hafta neredeyse savaş alanı gibiydi. Node.js tarafında öğrenmeye çalştığım yeni konu sebebiyle makineyi bir çok kez restart etmek zorunda kaldım. Üstelik düğmeden:|
+
+![piping_g_1.gif](/assets/images/2018/piping_g_1.gif)
 
 Sebep çok büyük boyutlu bir dosya içeriğini basit bir web sunucusu üzerinden sunmaya çalışmaktı. Aslında kimse bu tip bir şey yapmaz. Hadi yapsa da koca dosyayı tek seferde istemciye göndermez. Kaldı ki istemci de bu web hizmetine herhangi bir tarayıcıdan talep göndermez.
 

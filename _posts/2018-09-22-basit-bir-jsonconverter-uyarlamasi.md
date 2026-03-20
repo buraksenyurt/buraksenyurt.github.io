@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Basit Bir JsonConverter Uyarlaması"
 date: 2018-09-22 11:28:00 +0300
@@ -15,9 +15,9 @@ tags:
   - reflection
   - generics
 ---
-![peter_1.jpg](/assets/images/2018/peter_1.jpg)
-
 Merhaba Burak,
+
+![peter_1.jpg](/assets/images/2018/peter_1.jpg)
 
 Nasılsın? Umarım iyisindir ve her şey yolundadır. Beni sorarsan her zaman ki gibi oldukça yoğun bir dönemden geçmekteyim. Özellikle halen devam etmekte olan mimari dönüşüm projesinden dolayı böyle bir yoğunluğumuz var. Gerçi çevikleşmeye başladığımızdan beri fazla mesai yapmıyor ve gerçekten değer içeren sürümlenebilir çıktılar üretiyoruz. Şu an altıncı sprint'i koşmaktayız ve takımın ivmesi rayına oturmuş durumda. Bu açılardan bakınca tatlı bir yoğunluktayım desem yeridir. Sana bunları anlatmama gerek yok nitekim duyduğuma göre siz de benzer bir sürece girmişssiniz.
 

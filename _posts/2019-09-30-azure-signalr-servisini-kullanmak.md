@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Azure SignalR Servisini Kullanmak"
 date: 2019-09-30 13:00:00 +0300
@@ -18,9 +18,9 @@ tags:
   - visual-studio
   - github
 ---
-![emcey.png](/assets/images/2019/emcey.png)
-
 Basketbolu neden bu kadar çok seviyorum diye düşündüm geçenlerde. Oturduğumuz sitenin basket sahasını futbol oynamak için kullanan onca çocuk ve genç gibi bir gerçek varken ben neden bu spora böylesine sevdalıydım. İnanılmaz enerjisi ve sürekli değiştirdiği NBA şapkaları ile rahmetli İsmet Badem mi sevdirmişti? Yoksa final serisi maçları sabahın kaçında olursa olsun uyanamayıp okula geç gitmeme neden olan majestelerinin maçları mı? Basketbolun tüm efsanelerini kendi kardeşiymiş gibi tanıyan ve maçları kendine has heyecanı ile anlatan Murat Murathanoğlu muydu yoksa?
+
+![emcey.png](/assets/images/2019/emcey.png)
 
 Belki de Koraç kupasını alarak Avrupa'da bir ilke imza atan Efes'in Abdi İpekçi salonundaki Stefanel Milano maçına girmek için kuyrukta beklerken arabasından bizi seyreden yaşıtım Mirsad Türkcan'ın onca seyirciyi coşkuyla selamlamasıydı. Kim bilir belki de hücum süresi henüz otuz saniyeyken Peter Naumovski'nin eliyle tshirt'ünün sağ yakasını ağzına götürerek verdiği setin adıydı. Belki de zamanında her gün büyük bir iç motivasyonla gittiğim turuncu bankanın CBL[(corporate basketball league)](http://www.cbl.com.tr/) seçmelerinde koçun bana gelip "abi kusura bakma" dedikten sonra yaşımı öğrenip "sen ciddi misin abi? Ben bu kadar büyük olduğunu bilmiyordum. Çok daha genç duruyorsun. Basketbol sevgine hayran kaldım" söylemine rağmen takıma almayışı ve Bill Murray'ın Space Jam'de Larry Bird ile olan konuşmasında ona "You can't play" demesini hatırlayışım mıydı? İnanın hiç bilmiyorum. Ama çok sevip de hiç bir zaman beceremediğim bu oyunu mesleki çalışmalarımda kullanmaya bayılıyorum. İşte öyle bir çalışmanın girizgahındasın şu anda sevgili okur:)
 

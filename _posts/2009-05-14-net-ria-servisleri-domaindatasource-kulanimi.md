@@ -19,9 +19,9 @@ tags:
   - http
   - visual-studio
 ---
-![blg17_4.jpg](/assets/images/2009/blg17_4.jpg)
-
 Her ne kadar şu günlerde güzel ülkemizin Ege kıyılarında kısa bir dinlenme molası vermiş olsamda, internetin sahil kıyılarındaki cafe'lere kadar girmiş olması, herşeyi değiştiriyor.
+
+![blg17_4.jpg](/assets/images/2009/blg17_4.jpg)
 
 ![Cool](/assets/images/2009/smiley-cool.gif)
 

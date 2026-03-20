@@ -9,9 +9,9 @@ tags:
   - bash
   - http
 ---
-![Ruby23_6n.gif](/assets/images/2016/Ruby23_6n.gif)
-
 Epey zamandır Ruby notlarımın (özellikle de Amazon'dan getirttiğim kitapların) yüzüne bakmadığımı gördüm de...Pişmanlık hissettim (İtiraf ediyorum bu aralar biraz tembellik yapıyordum) Sonra onunla uğraşmayı özlediğimi fark ettim. Onun sadeliğini, yalın yazımını, gücünü, pratikliğini. Pasımı atmak için bir şeyler araştırmam gerekiyordır. Derken kendimi her zaman ki gibi Google'da [Ruby standart kütüphanesi](http://ruby-doc.org/stdlib-2.3.1/) ile ilgili faydalı kod parçalarını ararken buldum.
+
+![Ruby23_6n.gif](/assets/images/2016/Ruby23_6n.gif)
 
 Malumunuz kodlama yaparken hayatımızı kolaylaştıran pek çok fonskiyonellik, kullandığımız dillere ait standart kütüphaneler içerisinde gelmektedir. Genel ve temel ihtiyaçları barındıran bu kütüphanalerin bir benzeri de doğal olarak Ruby programlama dili için söz konusu. Standart kütüphane içerisinde işlerimizi kolaylaştıracak yetenekli pek çok tip ve fonksiyon yer almakta. Ben makalenin ilerleyen bölümlerinde geçtiğimiz hafta fırsat buldukça incelediğim bir kaç tanesine yer veriyorum.
 

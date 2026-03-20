@@ -13,9 +13,9 @@ tags:
   - http
   - visual-studio
 ---
-![blg78_Giris.jpg](/assets/images/2009/blg78_Giris.jpg)
-
 WCF ve WF arasında ilişkiyi anlatan güzel bir cümle vardır..Net Framework 3.0' da arkadaş olan WCF ve WF,.Net Framework 3.5 sürümünde nişanlanmış,.Net Framework 4.0 sürümünde ise evlenmişlerdir.
+
+![blg78_Giris.jpg](/assets/images/2009/blg78_Giris.jpg)
 
 ![Wink](/assets/images/2009/smiley-wink.gif)
 

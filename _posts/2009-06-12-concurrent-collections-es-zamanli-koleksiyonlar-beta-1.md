@@ -16,9 +16,9 @@ tags:
   - generics
   - visual-studio
 ---
-![blg31_1.gif](/assets/images/2009/blg31_1.gif)
-
 .Net Framework 4.0 ve içerdiği paralel genişletmeler (Parallel Extensions) ile birlikte gelmekte olan yenilikler arasında, eş zamanlı (Concurrent) çalışabilen ve Thread Safe olan koleksiyonlarda bulunmaktadır. Bu koleksiyonlar aslında veri yapıları (Data Structures) ile birlikte gelen yeni tipler arasında yer almaktadır.
+
+![blg31_1.gif](/assets/images/2009/blg31_1.gif)
 
 Geçtiğimiz günlerde çok şanslı bir insan olarak hafta sonumu bir tatil beldesinde geçirirken, bu kez gecenin derin sessizliğinde araştırmaya başladığım konulardan biriside işte bu yeni koleksiyonlar oldu. Bu koleksiyon tipleri elbetteki relase sürümünde değişikliğe uğrayabilir.
 
@@ -161,7 +161,7 @@ namespace BlockingCollection
             }
             watch.Stop();
             Console.WriteLine("{0}", watch.Elapsed.TotalSeconds.ToString());
-        }      
+        }
 
         // ConcurrentDictionary<int,int> koleksiyonuna eleman ekleme ve okuma işlemlerini ele alır
         static void ConcurrentDictionaryTest()

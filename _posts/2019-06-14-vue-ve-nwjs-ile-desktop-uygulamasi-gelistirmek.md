@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Vue ve NW.js ile Desktop Uygulaması Geliştirmek"
 date: 2019-06-14 13:00:00 +0300
@@ -19,9 +19,9 @@ tags:
   - generics
   - github
 ---
-![perfectstr.png](/assets/images/2019/perfectstr.png)
-
 Geçen gün fark ettim ki yaş ilerleyince blogumdaki yazıların girişinde kullanabileceğim malzeme sayısı da artmış. Söz gelimi şu anda lise son yıllarıma yani seksenlerin sonu doksanların başına doğru gitmiş durumdayım. O dönemlerde kısa Amerikan dizileri popüler. Hatta Arjantin menşeeli diziler de çok yaygın. Sanıyorum Mariana isimli popüler bir dizi vardı. Kısa boylu, siyah kıvırcık saçlı, buğday tenli ve hayatı acılar içinde geçen bir Latin kadının hikayesiydi. Lakin ben hayatı toz pembe görmemize vesile olan komedileri tercih ediyordum. Hatta en çok sevdiğim komedi dizisi [Perfect Strangers](https://www.imdb.com/title/tt0090501/?ref_=nv_sr_2?ref_=nv_sr_2)'dı.
+
+![perfectstr.png](/assets/images/2019/perfectstr.png)
 
 Mipos isimli Yunan köyünden Chicago'daki kuzeni Larry Appleton'ın yanına yerleşip "Komik olma kuzen" repliği ile zihnime kazınan Balki Bartokomous bizleri epeyce güldürürdü. Aradan çeyrek asır geçmiş olsa da aptal kutunun bizleri ekrana bağlayan bazı alışkanlıkları değişmiyor. Platformlar belki ama yine komedi dizileri, yine Arjantin dizileri ve yine aklımıza kazınan Balki'ler var. [Saturday-Night-Works'ün 16 numaralı çalışması](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2016%20-%20Build%20Desktop%20App%20with%20Vue%20and%20NWjs)na konu olan Big Bang Theory'de işte bana bu çağrışımları yapmış durumda. Öyleyse gelin başlayalım.
 

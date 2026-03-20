@@ -19,9 +19,9 @@ tags:
   - http
   - authentication
 ---
-![blg114_First.jpg](/assets/images/2010/blg114_First.jpg)
-
 Yandaki resmin bir renk cümbüşü oluşturup sizlere çok güzel göründüğüne eminim. Hatta bu resmin biraz sonra anlatacağımız konu ile olan ilgisini merak ediyor olabilirsiniz. Ne yazıkki yok. Sadece renk cümbüşünün benide etkilediğini ve yazının hoş görünmesi için eklediğimi itiraf edebilirim. Gelelim asıl mevzumuza.
+
+![blg114_First.jpg](/assets/images/2010/blg114_First.jpg)
 
 [Bir önceki yazımızda](../2009/WCF RIA Services - Authentication Domain Service.md) Authentication Domain Service konusunu incelemeye başlamış ve RIA (Rich Internet Application) çeşitlerinden olan Silverlight uygulamalarında Form tabanlı doğrulamanın standart ASP.NET Membership kaynakları üzerinden nasıl sağlanabileceğini görmüştük. RIA uygulamaları ile ilişkili konulardan bir diğeride rol ve profil yönetimidir. WCF RIA Service'lerde kullanılan Authentication Domain Service'lerden yararlanarak Role ve Profile yönetimide yapılabilir. Çok doğal olarak WCF RIA Service'leri, Asp.Net mimarisinin rol ve profil alt yapısını kullanmaktadır.
 

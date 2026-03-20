@@ -10,9 +10,9 @@ tags:
   - threading
   - concurrency
 ---
-![rubyfiber_1.gif](/assets/images/2017/rubyfiber_1.gif)
-
 Eş zamanlı programlamanın (Concurrent Programming) dile veya çatıya göre farklı uygulanma şekilleri olabiliyor. Esas itibariyle genel amaç eş zamanlı olarak birden fazla işin gerçekleştirilmesini sağlayabilmek. Bu noktada en zorlayıcı noktalardan birisi işlemcinin ve işletim sisteminin bu çalışma taleplerine olan anlık tepkilerinin yönetilmesi. Neredeyse pek çok programlama ortamında Thread'ler ile karşılaşıyoruz (Bu arada yandaki fotoğrafın Ruby Fiber ile bir alakası yok. Fiber konulu imaj ararkan doğal olarak lifli yiyecekler ve sevimsiz diyet konusunu karşıma çıkmıştı)
+
+![rubyfiber_1.gif](/assets/images/2017/rubyfiber_1.gif)
 
 Ruby tarafında da böyle bir yapı mevcut ama bunun dışında Fiber adı verilen farklı bir kontrol yapısı daha var. Bu nesneler daha hafif iş parçacıkları için kullanılıyor ve çoğunlukla otomatik hesaplamalar yapan yardımcı rutinler için tercih ediliyor. Tercih edilmelerindeki önemli etkenlerden birisi planlamanın geliştirici tarafından yapılması gerekliliği. Yani sanal makinenin veya önceden tanımlı bir Thread yönetim mekanizmasının kontrolünde değiller. Bu kontrol yapısı resume ve yield isimli fonksiyonları kullanıyor. resume ile bir Fiber kod bloğunun çalıştırılması sağlanıyor ve ilgili iş parçacığına abone olan diğer iş parçacığına dönebilmek için yield işlevinden yararlanılıyor.
 

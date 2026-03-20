@@ -20,9 +20,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg93_Giris.jpg](/assets/images/2009/blg93_Giris.jpg)
-
 Hatırlıyorumda bundan bir kaç sene önce Visual Studio 2005 in henüz Build sürümleri CD olarak değerli bir Microsoft çalışanı tarafından bana hediye edilmişti. Whidbey kod adlı sürümde pek çok yenilik olduğu gibi IDE'nin zaman zaman istisnalar (Exception) vererek çöktüğüne de sıklıkla şahit olmuştum.
+
+![blg93_Giris.jpg](/assets/images/2009/blg93_Giris.jpg)
 
 Tabiki Microsoft cephesinden gelen yenilikleri takip etmek, nasıl ilerlenildiğini izlemek adına Alpha, Beta, RC gibi sürümlerle çalışmanın oldukça faydası oluyor. En azından getirilen yeniliklerin neden değiştirildiğini, neden kaldırıldığını veya yeni eklenen bileşenlerin hangi amaçla düşünüldüğünü görme ve araştırma şansını buluyoruz. Bazende anlayamıyor veya bulamıyoruz
 

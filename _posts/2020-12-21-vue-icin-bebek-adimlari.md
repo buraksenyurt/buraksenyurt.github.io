@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Vue için Bebek Adımları"
 date: 2020-12-21 08:46:00 +0300
@@ -19,9 +19,9 @@ tags:
   - caching
   - github
 ---
-![vue_manga.png](/assets/images/2020/vue_manga.png)
-
 Yazılım işine girdiğimden beri en çok zorlandığım konu Frontend tarafında kodlama yapmak. Ne yazık ki sadece Backend tarafta kalma lüksümüz de pek bulunmuyor. Örneğin hali hazırda çalışmakta olduğum firmada yeni nesil birçok uygulama önyüz tarafında çeşitli Javascript çatıları (Framework) kullanıyor.
+
+![vue_manga.png](/assets/images/2020/vue_manga.png)
 
 Pratikte bakınca oldukça iyi bir kurgu aslında. Önyüzü Vue, React, Angular vb yapılarla geliştirip, asıl iş kuralları için arka planda yer alan.Net Core Web API servislerine gelmek. C# ve.Net Core tarafına aşina olduğum için arka planı rahatça kodluyorum, önyüz tarafında ise önceden geliştirilmiş sayfalara bakarak bir şeyler yapabiliyorum. Yani işin özü Vue çatısının temellerinde sorunlarım var. Bu amaçla SkyNet'e uğradığım bir gün oturdum ekran başına en basit adımlarıyla bu işi nasıl öğrenirim bir kurcalayayım dedim.
 

@@ -22,9 +22,9 @@ tags:
   - performance
   - visual-studio
 ---
-![blg79_Giris.jpg](/assets/images/2009/blg79_Giris.jpg)
-
 Gün geçmiyorki yazılım teknolojilerinde bir yenilik, bir güncelleme, bir genişletme çıkmasın...Özellikle dünyanın dev yazılım şirketlerinin en büyüğü olarak görebileceğimiz Microsoft tarafında bu gelişme ve güncelleme hızı oldukça yüksek. Gerçektende heyecan verici yenilikler, özellikler ile karşılaşmıyor değiliz. Bu konuya nereden mi geldim?
+
+![blg79_Giris.jpg](/assets/images/2009/blg79_Giris.jpg)
 
 Çok zaman değil daha bir sene öncesine kadar Astoria kod adlı Ado.Net Data Services konusunu incelemeye başlamıştım. Entity Framework veya Custom LINQ Provider'ları ile sunulan veri kümelerine, REST bazlı olarak URL sorgular atılabilmesini sağlayan ve özellikle Silverlight gibi RIA içeriklerinde son derece kıymetli olan bir servis uygulaması olarak değerlendirebileceğimiz bu konu ile ilişkili ilk paylaşımlarımı yaptıktan sonra araya WCF 4.0, WF 4.0, Design Patterns, Design Principles,.Net RIA Services gibi konular girdi. Bu konulardaki incelemelerimi ve paylaşımlarımı devam ettirirken bir baktım ki Ado.Net Data Services konusuna çok uzun zaman ara vermişim. Ara vermeklede iyi yapmamışım
 

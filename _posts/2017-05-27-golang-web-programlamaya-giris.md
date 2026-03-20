@@ -14,9 +14,9 @@ tags:
   - performance
   - github
 ---
-![goweb_3.gif](/assets/images/2017/goweb_3.gif)
-
 Bir web uygulamasının temel malzemeleri nelerdir? Sunucu tarafında çalışan güçlü bir çatı (Framework), içeriklerin gösterildiği statik veya dinamik web sayfaları, iyi tasarım, görsel zenginlik katan materyaller (resimler,css'ler vb), veri depolama enstrümanları ve diğerleri. Aslında internet programcılığının ilk yılları düşünüldüğünde basit HTML sayfalarının neredeyse her tür ihtiyacı karşılayacağı düşünülüyordu belkide. Zaman geçtikçe programlama dillerinin dinamik web sayfaları ile olan etkileşimi, istemci taraflı çalışan betiklerin sunucu taraflı kullanılabilmesi de gündeme geldi. Modern programlama dillerinin neredeyse tamamı web uygulamaları geliştirebilmek için gerekli temel donanıma sahip. Asıl amacı back-end tarafındaki büyük ölçekli sistemlerde yüksek performans sunmak olan, eş zamanlı programlamada öne çıkan GO ile de web tabanlı uygulamalar geliştirebilmemiz mümkün. Go dilinin network haberleşme üzerine sunduğu basitlik ve yüksek performans da göz önüne alındığında web programlama oldukça ilgi çekici bir konu haline geliyor.
+
+![goweb_3.gif](/assets/images/2017/goweb_3.gif)
 
 Ruby tarafında Ruby on Rails, Python tarafında Django gibi çatılar profesyonel anlamda web uygulamalarının geliştirilmesini kolaylaştırıyor. Go tarafında da bu tip çatılar mevcut hatta Beego bunlar arasında en popülerlerinden birisi. Ne var ki basit düzeyde de dahili paketlerden yararlanarak web uygulamaları geliştirebiliriz. Çünkü teori her zaman basittir. tcp/ip üzerinden belli bir porta gelen çeşitli talepler ve bu taleplere karşılık istemcilerin yorumlayabileceği HTML içerikler. Bu düşünce yapısından yola çıkarak net/http ve html/template kütüphanelerini kullanarak iki sayfadan oluşan basit bir web sitesi yazacağız. İşe ilk olarak aşağıdaki klasör ve dosya yapısını tasarlayarak başlayabiliriz.
 

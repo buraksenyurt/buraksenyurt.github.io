@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Matematik ve Oyun Programlama - Missile Command - Final"
 date: 2022-11-29 11:32:00 +0300

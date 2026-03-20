@@ -141,7 +141,7 @@ namespace StrongCollections
             kitapCol.Ekle(1001,new Kitap(1001,"Thinking in C#",1));
             kitapCol.Ekle(1002,new Kitap(1002,"Truva",1));
             kitapCol.Ekle(1003,new Kitap(1003,"Java in a Nuthshell",1));
-        } 
+        }
 
         static void Main(string[] args)
         {

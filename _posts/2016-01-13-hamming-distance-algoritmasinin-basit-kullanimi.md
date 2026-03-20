@@ -13,9 +13,9 @@ tags:
   - http
   - generics
 ---
-![hamming_0.gif](/assets/images/2016/hamming_0.gif)
-
 Geçtiğimiz günlerde uzun süredir görüşmediğim bir arkadaşımdan mesaj aldım. Bir projesinde Levenshtein Distance algoritmasını kullanmaya karar verdiğini ve internette arama yaparken daha önceden yazdığım [şu](../2012/Levenshtein Distance Algoritması.md) makaleye rastladığını dile getirdi. Hem kafasına takılan bir konuyu dile getirmek hem de bir hal hatır sormak istediğini belirtti.
+
+![hamming_0.gif](/assets/images/2016/hamming_0.gif)
 
 Yazıyı yazalı epey zaman olduğundan konuyu tamamen unutmuştum. Şöyle arkama yaslandım ve bir güzel yazdıklarımı okudum. Tabii dolu imla hatası buldum ama neyseki algoritmanın kullanım amacını yeniden hatırlamayı başardım. Derken Levenshetin Distance gibi benzer fark bulma algoritmaları olup olmadığına bakmaya karar verdim. Bu iş için geliştirilmiş bir çok algoritma vardı. Derken kendimi Hamming Distance algoritmasını incelerken buldum.
 

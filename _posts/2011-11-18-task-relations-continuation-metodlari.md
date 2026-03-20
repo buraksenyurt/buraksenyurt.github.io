@@ -150,7 +150,7 @@ namespace TaskContinuation
                 succesorTask.Wait(); 
             }
 
-            #endregion           
+            #endregion
 
             Console.WriteLine("Program Sonu"); 
             Console.ReadLine();        

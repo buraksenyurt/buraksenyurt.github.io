@@ -23,9 +23,9 @@ tags:
   - performance
   - microservices
 ---
-![nginxcore_1.gif](/assets/images/2018/nginxcore_1.gif)
-
 Animasyon izlemek keyif aldığım hobilerden birisi. İzlediğimde bende derin izler ve duygular bırakmış uzun metrajlı bir çok anım var. Bazen filmde geçen bir söz bazen karakterin gülme krizine sokan bir davranışı ya da başına gelen dramatik bir olay. Geçenlerde bilmem kaçıncı kez izlediğim [Sing](http://www.imdb.com/title/tt3470600/) filmi de benim uzun metraj anı defterim arasında yer alanlardan. Maddi sorunlar nedeniyle banka ile başı dertten kurtulamayan Buster Moon, filmin bir yerinde tam bütün ümitlerin tükendiği noktada şöyle bir cümle sarf ediyor;
+
+![nginxcore_1.gif](/assets/images/2018/nginxcore_1.gif)
 
 "When you've reached rock bottom, there's only one way to go, and that's up!"
 

@@ -17,9 +17,9 @@ tags:
   - authentication
   - performance
 ---
-![blg119_Giris.jpg](/assets/images/2010/blg119_Giris.jpg)
-
 Hani bazen insanın aklına son derece zekice fikirler gelir ya...
+
+![blg119_Giris.jpg](/assets/images/2010/blg119_Giris.jpg)
 
 ![Wink](/assets/images/2010/smiley-wink.gif)
 

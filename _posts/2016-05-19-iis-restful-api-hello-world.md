@@ -20,9 +20,9 @@ tags:
   - microservices
   - asmx
 ---
-![iisrestful_3.gif](/assets/images/2016/iisrestful_3.gif)
-
 Bugün 20 Mayıs Cuma. Dün 19 Mayıs nedeniyle resmi tatil olan bankamız bugün de toplu olarak tatil. Ancak şirkette kalmak isteyenler durumlarını bildirip gelebiliyor.
+
+![iisrestful_3.gif](/assets/images/2016/iisrestful_3.gif)
 
 Çalıştığım şirkettlerde işlerin hafiflediği dönemler genellikle makale yazdığım dönemler oluyor. Hazır geçtiğimiz gün de IIS Restful API hakkında araştırmalara başlamışken bugün biraz daha üzerine eğileyim, şu Hello World uygulamasını yaparak nedir ne değildir anlayayım istedim. Malzemelerimi hazırladım. En önemlisi elbetteki kafeindi. Her ne kadar çalışma masamdaki kadim dostum [VULK](http://www.lego.com/en-us/mixels/products/series-1/41501-vulk) kahveme sulansa da...
 

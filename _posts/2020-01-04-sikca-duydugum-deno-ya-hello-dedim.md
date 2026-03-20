@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Sıkça Duyduğum Deno'ya Hello Dedim"
 date: 2020-01-04 21:00:00 +0300
@@ -18,12 +18,12 @@ tags:
   - visual-studio
   - github
 ---
-![denverdino.jpg](/assets/images/2020/denverdino.jpg)
-
 Denver, the last dinosaur
 He's my friend and a whole lot more
 Denver, the last dinosaur
 Shows me a world I never saw before...
+
+![denverdino.jpg](/assets/images/2020/denverdino.jpg)
 
 Ha ha haaa! Deno'nun logosunu gördüğüm zaman her nedense aklıma, orta lise çağlarımda izlediğim çizgi dizi Denver'ın bu sözleri gelmişti. Ve hatta melodisi! O sözler eşliğinde 2020'nin herhangi bir noktasında sonradan eskiyeceğinden emin olduğum bir çalışmaya girişeyim istedim. Deno ile basit bir REST servisi ile merhaba demek. Notlar Github'daki skynet reposunda birikti. Buraya da derlenmiş bir özetini yazmak düştü.
 

@@ -19,9 +19,9 @@ tags:
   - serialization
   - visual-studio
 ---
-![blg90_Giris.jpg](/assets/images/2009/blg90_Giris.jpg)
-
 Yükseklik korkum olmasına rağmen her zaman yandaki gibi tırmanışta olanlara imrenmişimdir. Bu fotoğrafa konu olan kişinin tek yaptığı yoğun bir mücadele ve efor ile yukarı doğru tırmanmaktır. Bana göre sonuçta elde edilebilecek tek şey zirveye ulaşmak ve oranın eşsiz manzarasını izlemekten ibarettir. Tabi bunun birde inişi olduğunu düşünmek gerekiyor
+
+![blg90_Giris.jpg](/assets/images/2009/blg90_Giris.jpg)
 
 ![Sealed](/assets/images/2009/smiley-sealed.gif)
 
@@ -78,7 +78,7 @@ namespace WithWCF
             #region Sequence Aktivitesi Oluşturulma İşlemleri
 
             // Sequence tipinden bir aktivite örneklenir
-            Sequence squareRootFlow = new Sequence();           
+            Sequence squareRootFlow = new Sequence();
 
             // Aktivitede kullanılacak olan Variable tanımlamaları yapılır
             Variable<double> number = new Variable<double>(); // Receive aktivitesi tarafından alınan değişken

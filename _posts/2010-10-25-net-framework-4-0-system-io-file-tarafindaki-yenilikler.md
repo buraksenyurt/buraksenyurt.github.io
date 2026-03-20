@@ -14,9 +14,9 @@ tags:
   - generics
   - visual-studio
 ---
-![blg199_Giris_.jpg](/assets/images/2010/blg199_Giris_.jpg)
-
 Bu yazımızda ele alacağımız konu ile ilişkili olarak kullanacağım giriş resmi için uzun bir süre araştırma yapmak zorunda kaldım. Sanırım yazıyı yazdığım bu sıcak yaz gününde devrelerim istediğim randımanı vermedi. Ancak en azından yandaki resim, anlatacağım ilk konu ile doğrudan alakalı olarak düşünülebilir. Bu resimde üst üste binmiş onlarca metre yüksekliğe varan dosya dolapları olduğu ifade edilemekte. Bunların hepsinin tek bir dosya içerisinde birleştirildiğini düşünün. Üstelik bu dosya text tabanlı olsun.
+
+![blg199_Giris_.jpg](/assets/images/2010/blg199_Giris_.jpg)
 
 Bu tip bir dosyanın bir bankadan gönderilme olasılığı aslında çok yüksektir. Geçmiş deneyimlerimi düşündüğümde son derece olağan bir durum. Örneğin bundan önce çalıştığım ve outsource olarak görev yaptığım bankada, boyutları 600 mb’ ın üzerinde olan text tabanlı dosyalar sistemler arasında dolaşıp durmaktaydı. Hatta bu dosyalardan bazıları SSIS paketlerine sokularak veritabanı ortamına aktarılmaktaydı. Hatta SSIS uzmanı olmamama rağmen Proje Yöneticisi tarafından bir dönem bana da böyle bir iş verildiğini ifade etmek isterim
 

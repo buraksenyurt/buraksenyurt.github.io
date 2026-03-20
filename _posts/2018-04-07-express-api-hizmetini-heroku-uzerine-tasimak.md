@@ -21,9 +21,9 @@ tags:
   - github
   - dependency-management
 ---
-![herokus_intro.gif](/assets/images/2018/herokus_intro.gif)
-
 Geçenlerde sevgili çalışma arkadaşlarımdan [Atahan Ceylan](https://www.linkedin.com/in/atahanceylan/) ile Node.js ve MongoDb üzerine konuşurken bana Heroku diye bir şeyden bahsetti. Daha önceden duymamış olmamın verdiği etkiyle hemen nedir ne değildir diyerek kendisinden bilgi istedim. Sonunda konuyu pekiştirmek için ninjaları bana sevimli bir şekilde hatırlatan bu ürünü incelemeye karar verdim.
+
+![herokus_intro.gif](/assets/images/2018/herokus_intro.gif)
 
 Heroku'unun başlangıç rehberlerinden yararlanarak bir senaryo seçtim. Amacım Node.js'de çok ilkel (amaç taşıma işlemini adımlamak olduğu için çok karmaşık olmamasında yarar var) bir REST servisi yazıp bunu Heroku üzerine taşımak. Söz konusu servisi geliştirirken express paketinden de yararlanacağız. Bu sayede bağımlı bir paketin taşınması durumunu da ele almış olacağız. Tabii öncesinde Heroku hakkında kısa bir bilgi vermekte fayda var.
 

@@ -21,9 +21,9 @@ tags:
   - visual-studio
   - rc
 ---
-![blg143_Giris.jpg](/assets/images/2010/blg143_Giris.jpg)
-
 Şirketimi çok seviyorum. Nazar değmesin ama araştırma yapmam, yeni bir şeyler öğrenmem ve bunları ekip arkadaşlarımla paylaşmam için beni özellikle teşvik eden bir şirkette bulunmaktayım. Çalıştığım şirketin en güzel özelliklerinden biriside, Cuma günleri yapılan minik ikramları.
+
+![blg143_Giris.jpg](/assets/images/2010/blg143_Giris.jpg)
 
 ![Wink](/assets/images/2010/smiley-wink.gif)
 

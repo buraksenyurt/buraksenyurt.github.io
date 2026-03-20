@@ -7,9 +7,9 @@ categories:
 tags:
   - csharp
 ---
-![blg149_MythBusters.jpg](/assets/images/2010/blg149_MythBusters.jpg)
-
 Yandaki resimde görülen kahramanları tanıyanınız var mı? Biraz düşünün isterseniz...Jamie Hyneman ve Adam Savage ikilisi tarafından sunulan ve Wikipedia'daki verilere göre Discovery Channel aracılığıyla ilk yayınını 23 Ocak 2003 tarihinde gerçekleştiren MythBusters isimli bu belgesel dizide, bilimsel metodlardan yararlanılarak bazı şehir efsanelerinin gerçeklikleri ispatlanmaya çalışılmaktadır.
+
+![blg149_MythBusters.jpg](/assets/images/2010/blg149_MythBusters.jpg)
 
 Aslında film sanayisinin ne kadar çok geliştiğini ispat eden bir dizidir. Nitekim dizinin sunucuları Hollywood'un tanınan film efekti teknisyenleridir (ki bu nedenle bilimsel anlamda gayet donanımlıdırlar) ve son derece ilginç efsaneleri araştırırlar. Örneğin "Yağmurda koşan mı yoksa yürüyen mi daha çok ıslanır?", "Benzin istasyonunda cep telefonu kullanmak patlmaya neden olur mu?", "Piercing yapan insanları yıldırım çarpar mı?", "Emprise State binasının tepesinden yere serbest düşüşle bırakılan metal bir para betona saplanır mı?" ve daha nice ilginç efsaneyi bilimsel taktikler ile çözmüşlerdir ve çözmeye devam etmektedirler. Açıkçası bende evdeki afacan müsade ettiği sürece bu tip belgeselleri kaçırmamaya çalışıyorum ve size de izlemenizi şiddetle tavsiye ediyorum.
 

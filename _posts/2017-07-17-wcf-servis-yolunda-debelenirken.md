@@ -17,9 +17,9 @@ tags:
   - generics
   - testing
 ---
-![wcf_message_8.gif](/assets/images/2017/wcf_message_8.gif)
-
 Geçtiğimiz günlerde çalıştığım turuncu bankadaki bölümüm değişti. İsmini halen ezberleyemediğim Yazılım Geliştirme Sistemleri ve Platform Uygulamaları bölümünde yaşamımı sürdürmeye devam ediyorum. Yeni bölümümdeki ilk görevim ise ServiceStack yerini alabilecek bir çatının oluşturulması konusunda bir takım POC çalışmalarının yapılması. Önemli hedeflerden birisi WCF (Windows Communication Foundation) servislerinin IIS (Internet Information Services) bağımsız olarak dinamik bir şekilde ayağa kaldırılması ve istemci ile sunucu arasındaki mesajların yakalanarak kayıt altına alınabildiğinin görülmesi.
+
+![wcf_message_8.gif](/assets/images/2017/wcf_message_8.gif)
 
 Epey zamandır WCF ile çalışmadığımdan baya pas tuttuğumu itiraf etmek isterim. Yazının konusu, devam etmekte olan POC (Proof of Concept) çalışmasının tamamını anlatmak değil ancak dinamik olarak host edilen servislere gelen ve servisten dönen mesajları nasıl yakalayabiliriz bunun bir yolunu bulmaya çalışmak. Hatta bu konuda çok yakın bir zamanda sevdiğim bir dostumun da sorusu olmuştu. Entegre olunan bir servise gelip giden mesajları nasıl yakalayabiliriz. Normal şartlarda WCF'in Trace ve Logging mekanizmalarını kullanarak bu mümkün ve oldukça kolay ama hedef buradaki takibi kontrol atlına almak. Yani mesajları yakaladığımız yerlerde araya girerek başlangıç için sadece loglamak (örneğin Console'a yazdırmak)
 

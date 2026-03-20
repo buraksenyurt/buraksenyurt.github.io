@@ -12,9 +12,9 @@ tags:
   - workflow-foundation
   - xml
 ---
-![blg126_Giris.jpg](/assets/images/2010/blg126_Giris.jpg)
-
 Bazen bir kavramı yada konuyu anlamakta inanılmaz zorlandığınızı hatırlayın. Ne yaparsınız? Kimisi kendisini yemeğe verir. Kimisi hayat küsermişçesine bir köşeye çekilir. Kimisi kendiyle baş başa kalır ve çığlık çığlık haykırır. Kimisi de daha akıllı davranıp bir süre tatile çıkar veya anlayamadığı kavramla ilişkili herhangibir dökümanı bir süreliğine araştırmamaya, okumamaya karar verir. Neredeyse unuturcasına bir zaman koyar araya. Sonrasında ise aynı konuyu tekrar araştırmaya karar verir. İnanın başarılı olma şansı bir önceki denemeye göre çok daha yüksek olacaktır. Önemli olan noktalardan birisi, yılmadan bu iterasyona devam edebilmektir. Okudunuz, hala anlamadınız...Kısa bir ara daha...Sonra tekrar aynı konu ama mümkünse farklı kaynaklarla...
+
+![blg126_Giris.jpg](/assets/images/2010/blg126_Giris.jpg)
 
 ![Wink](/assets/images/2010/smiley-wink.gif)
 

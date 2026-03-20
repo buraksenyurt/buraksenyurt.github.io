@@ -21,9 +21,9 @@ tags:
   - generics
   - microservices
 ---
-![custom_mw4.gif](/assets/images/2017/custom_mw4.gif)
-
 Uzun zamandır televizyon dizisi izlemiyorum. Aslında bir dönem düzenli olarak takip ettiğim diziler vardı. Bir tanesi de usta oyuncular Benedict Cumberbatch (Sherlock Holmes) ve Martin Freeman (Dr. John Watson) ın oynadığı Sherlock Holmes idi. Bu Cumartesi gecesi bir şekilde dizinin bir bölümüne rastladım. Keyifli bir bölüm tekrarı yaptım. Oyunculuklara yine hayran kaldım. Sherlock'un keskin zekasına, Watson'un her zamanki sorgulayıcı düşünce tarzının eklendiği bir bölümdü.
+
+![custom_mw4.gif](/assets/images/2017/custom_mw4.gif)
 
 Ardından kahvemi alıp West-World'e doğru yola çıktım. Bu kez Sergei Rachmaninof, Henry Auguste ve Dan Hawkins'in aralarında yer aldığı piyano tınıları eşliğindeydim. Saatler gece yarısını geçeli bir kaç dakika olmuştu. Çantamı açtım ve hafta içi.Net Core tarafındaki ara katmanın (Middleware) ne işe yaradığını anlamaya çalışırken karaladığım notlarımı buldum. Bilgilerimi toparlamanın ve güzel bir örnek yapıp tekrar unutmamak üzere bloğuma bir şeyler yazmanın tam vaktiydi.
 

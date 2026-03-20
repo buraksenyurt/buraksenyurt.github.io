@@ -12,9 +12,9 @@ tags:
   - http
   - go
 ---
-![sicak.jpg](/assets/images/2017/sicak.jpg)
-
 Yazıyı yazdığım şu yaz gününde hava epey sıcak. İstanbul'da öğle saatlerinde 39 dereceyi gördük. Güney tarafında yaşayan bir kaç yakın arkadaşımdan 48 dereceli rakamları duyduktan sonra ise halimize şükredelim dedim. Açtım Python kitabımı, çalışmaya devam ettim.
+
+![sicak.jpg](/assets/images/2017/sicak.jpg)
 
 Bir süre önce GoLang tarafında basit web uygulamalarının nasıl geliştirilebileceğini incelemeye çalışmıştım. Daha önceden de Python tarafında Flask paketinden yararlanarak [REST tabanlı bir servis](https://www.buraksenyurt.com/post/python-ile-rest-tabanli-servis-gelistirmek) geliştirmeyi denemiştim. Tabii servis bir yanaaaa web uygulamaları bir yana. Son kullanıcı çoğunlukla görsel bir şeyler bekliyor. Python camiasında Djiango Framework bu anlamda daha popüler tabii ama henüz onu inceleme fırsatım olmadı. Flask oldukça hafif bir framework olarak karşımıza çıkmakta. Bende ondan faydalanarak basit bir web uygulaması nasıl yapılabilir inceleyeyim dedim.
 

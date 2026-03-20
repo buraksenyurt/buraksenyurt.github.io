@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust Pratikleri - State Tasarım Kalıbı"
 date: 2022-05-15 09:00:00 +0300
@@ -10,9 +10,9 @@ tags:
   - pointers
   - github
 ---
-![state_pattern_2.png](/assets/images/2022/state_pattern_2.png)
-
 Belli bir akış içerisinde ele alınan nesneler belli durumlara sahiptirler. Bu durumlar arasındaki geçişler için fonksiyonlardan yararlanılırken bazı kuralların işletilmesi de istenebilir. Örneğin belli bir duruma sahipken diğer bir duruma geçilmesini engelleyen karar mekanizmaları ve koşullar söz konusudur. Hatta programın belli bir t anında içinde bulunabileceği durumlar bellidir. Nesne yönelimli dillerde bu gibi ihtiyaçlar için davranışsal (Behavioral) kalıplardan olan State tasarım deseni sıklıkla kullanılır. Hatta oyun programlamada State Machine türevli motorlarda nesne durumlarının yönetimi için bu desene ait pratikler söz konusudur.
+
+![state_pattern_2.png](/assets/images/2022/state_pattern_2.png)
 
 Pek tabii nesne yönelimli diller denince işin içerisine interface, class ve object gibi kavramlar da dahil olur. Rust açısından olaya baktığımızda ise elimizde struct ve ortak davranış modellemesi için kullanabileceğimiz trait'ler vardır. Her ne kadar bazı kaynaklarda ve tartışmalarda Rust'ın nesne yönelimli bir dil hedefi ile geliştirilmediği ifade edilse de (ki pek çok noktada haklılık payı var) eldeki enstrümanlar bu örnekte olduğu gibi birçok kalıbın uygulanabilmesine de imkan tanımaktadır. Biz bu örnekte State tasarım kalıbını Rust tarafında nasıl uygulayabiliriz öğrenmeye çalışacağız.
 

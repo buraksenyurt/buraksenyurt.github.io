@@ -19,9 +19,9 @@ tags:
   - javascript
   - serialization
 ---
-![RaspiCover.gif](/assets/images/2016/RaspiCover.gif)
-
 Bloğumu takip edenler bu yaz için Raspberry PI ve Python programlama diline merak saldığımı biliyordur. Bu merakımı boşa çıkarmamak için de vakit buldukça her iki konuya da çalışıyorum. İş yoğunluğu ve araya giren bayram tatili beni az da olsa geriye atmış durumda. Ama neyseki defterime aldığım renkli renkli notlarım var.
+
+![RaspiCover.gif](/assets/images/2016/RaspiCover.gif)
 
 Bu yüzden notlarımın üstünden geçmem öğrendiklerimi hatırlamamda epey yardımcı oldu. Notları renklendirmiş olmam da onları okurken sıkılmamamı ve hatta yer yer kendi kendime tebessüm etmemi sağladı. Yazdıklarımın üzerinden geçerken bunları bloğuma da koyayım ve benim gibi temel seviyede bu işe başlayan, elektronik'ten, Linux'den ve Python'dan bihaber olanlarla bir şeyler paylaşayım istedim.
 
@@ -171,7 +171,6 @@ players=["burki","tubi","sharpi","reco","tusubasa"]
 def writeAllPlayers():
 	for player in players:
 		print(player,"is online now")
-		
 
 def rangeSum(x,y):
 	numbers=range(x,y)
@@ -465,7 +464,6 @@ def encryptMessage(message,otp):
 			text+=letters[idx]
 	
 	return text
-			
 
 def decryptMessage(message,otp):
 	text=""

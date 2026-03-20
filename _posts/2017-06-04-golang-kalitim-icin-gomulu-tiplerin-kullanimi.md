@@ -11,9 +11,9 @@ tags:
   - pointers
   - github
 ---
-![zidane.gif](/assets/images/2017/zidane.gif)
-
 Bir süredir GO dili ile ilgili çalışmalarıma ara vermiştim. Yakın zamanda ise sevgili Murat Özalp'in "GO Programlama" isimli kitabını takip etmeye başladım. Gerçekten her bölüm son derece doyurucu. Kitabı düzenli olarak hergün çalışıyorum. Bazen çok az zaman ayırsam da her gece bir kaç sayfasını okuyor ve uygulamaya çalışıyorum. Burada yaptığım günlük çalışmaları aksatmamaya gayret ediyor ve kendime göre hazırladığım örnekleri [github üzerinde](https://github.com/buraksenyurt/golangsamples) topluyorum. Hatta artık kodları yeni bir IDE üzerinde deniyorum. Yeni gözdem [LiteIDE isimli kod editörü](https://sourceforge.net/projects/liteide/) (ki Murat Hoca'nın tavsiyesidir ve çok memnun kaldığım bir geliştirme aracıdır)
+
+![zidane.gif](/assets/images/2017/zidane.gif)
 
 Son olarak bugün gömülü tiplerin kullanımını öğrenmeye çalıştım. Bildiğiniz gibi GO dili tam anlamıyla nesne yönelimli (Object Oriented) bir dil değil. Her şeyden önce sınıf (class) gibi bir kavram olmayışı kafaları biraz da olsa karıştırıyor. Çalışmalarım sırasında struct ve interface tiplerini kullanarak GO dilinde kalıtımın nasıl ele alındığını bir ölçüde kavramıştım. Diğer yandan pek çok dilde karmaşıklığı arttırdığı için izin verilmeyen çoklu kalıtımı biraz daha güvenli bir şekilde sağlama şansımız var. Gömülü tipler (ya da struct içinde kullanılan struct tipinden değişkenler) bu noktada devreye giriyor. Aslında bir nevi Composition işlevselliğini sağlayarak bu özelliği kazanıyoruz. Nasıl mı? Kendi anladığım kadarı ile durum şöyle...
 

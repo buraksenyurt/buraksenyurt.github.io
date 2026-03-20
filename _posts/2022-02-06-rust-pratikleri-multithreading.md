@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust Pratikleri - Multithreading"
 date: 2022-02-06 09:00:00 +0300
@@ -12,9 +12,9 @@ tags:
   - github
   - ownership
 ---
-![housecleaning.gif](/assets/images/2022/housecleaning.gif)
-
 Uygulamalar işletim sistemlerince Process olarak ayağa kaldırılırlar. Bir process içerisindeki işleri birbirlerinden bağımsız olarak yapan thread'ler de söz konusu olabilir. Çoğu zaman çalıştırılabilir programın main fonksiyonu ile akan akış tek bir thread ile işleyişini sürdürür ama ihtiyaç dahillinde yeni thread'ler açmak gerekir. Rust için process içerisinde bir thread açmak oldukça kolaydır ve bellek tüketimi açısından maliyeti düşüktür. Ownership ve borrowing kuralları sayesinde bellek sahası güvende kalır ve özellikle data-race sorunları oluşmaz.
+
+![housecleaning.gif](/assets/images/2022/housecleaning.gif)
 
 Nitekim bir veri parçasının sadece tek bir sahibi olabilir ve bu kural thread'ler için de geçerlidir. Üstelik aynı Process içerisindeki thread'ler birbirleriyle kolayca haberleşebilirler (channels konusunda bakarız) Şu da bir gerçek ki çok uzun zamandır birden fazla çekirdeğe sahip işlemcilerin olduğu sistemlerde çalışıyoruz. Bu işlemcilerdeki her bir çekirdek (core) belli bir anda tek bir thread işletebilir. Dolayısıyla programlarımızdaki thread'leri bu işlemci çekirdeklerine verip bir takım işlerin eş zamanlı çalıştırılmasını da sağlayabiliriz ki bu Parallel Processing olarak da bilinir. Ancak oraya gelmeden önce Rust dilinde thread'leri nasıl kullanırız pratik anlamda bilmemiz gerekiyor. İzleyen örnek Rust dilinde bir thread nasıl oluşturulur ve kullanılır sorusuna en basit haliyle cevap vermeye çalışır.
 

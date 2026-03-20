@@ -11,9 +11,9 @@ tags:
   - http
   - generics
 ---
-![bob-ross.jpg](/assets/images/2009/bob-ross.jpg)
-
 Sanıyorum benim gibi eskiler, yandaki resimde yer alan değerli ressamı hatırlayacaklardır. Bob Ross. Küçüklüğümde (ve halen
+
+![bob-ross.jpg](/assets/images/2009/bob-ross.jpg)
 
 ![Smile](/assets/images/2009/smiley-smile.gif)
 

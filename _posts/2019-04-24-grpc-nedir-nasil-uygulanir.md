@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "gRPC Nedir, Nasıl Uygulanır?"
 date: 2019-04-24 07:06:00 +0300
@@ -20,9 +20,9 @@ tags:
   - microservices
   - github
 ---
-![grpc_zero.jpg](/assets/images/2019/grpc_zero.jpg)
-
 Oturduğum masanın hemen sağındaki pencerede ufak bir aralık kalmış olmalı ki "Vuuuu..." diye öten rüzgarın sesini fark ettim bir anda. Aslında işime konstantre olmuştum ama o sesle birlikte olduğum yerden uzaklaşmıştım. Dışarısı soğuktu. Havan kapalı ve biraz da kasvetliydi. Yağmur damlalarının cama vuruşunu fark ettim sonrasında. Gözlerim uzaklara daldı ve rüzgarın sesi ile birikte Lise yıllarında buldum kendimi. Doğal gaz İstanbul'a henüz gelmiş ve bizimki gibi kimi sobalı ev kalorifer petekleriyle tanışmıştı. Geçmiş yılların ardından bu yeni konfor sayesinde sabahları üşüyerek uyanmıyorduk artık. Benim en büyük keyiflerimden birisi olan öğle sonrası uykularım içinse yeni mekanımı bulmuştum bile. Okuldan her geldiğimde önce karnımı doyuruyor sonra o köşeye kuruluyordum. Minderler camın altındaki peteğin yanına seriliyor, üste hafif bir battaniye alınıyor, zaten sessiz olan sokağın sükunetini bozmak isteyen yağmur damlalarının cama vuruşu dinlenerek derin bir uykuya dalınıyor. Bazen de o sessizliğe eski sokak kapısının altındaki süngerden kaçan "Vuuuu" sesi ortak olurdu...
+
+![grpc_zero.jpg](/assets/images/2019/grpc_zero.jpg)
 
 Kısa süreli bu seyahatin ardından tekrar bilgisayarıma döndüm ve araştırdığım konu üzerinde ilerlemeye başladım. Son zamanlarda micro service mimarisinin uygulanması ile ilgili bir çok doküman okumaktayım. Şirket bünyesinde bu tip bir oluşuma gidilmesi de araştırmalarımda beni motive etmekte. Tabii uygulama pratiklerine, çeşitli desenlerin kullanılışına baktıkça bilmediğim bir çok şey görüyorum. Bugüne kadar özellikle microservisler seviyesinde uçlar arasındaki iletişimde hep REST/HTTP1 tabanlı haberleşildiğini düşünüyordum. Oysa ki HTTP/2 ile stream desteği veren, TCP soket haberleşmesini benimseyen, binary serileştirmeyi kullanan ve REST/HTTP1 e göre 2.5 kat daha hızlı olduğu söylenen gRPC isimli bir çatı da varmış (Gerçi.Net'in en başından beri var olan arkadaşlarım, TCP, Binary serileştirme denilince.Net Remoting konusunu ve onun WCF içerisindeki evrimini gayet iyi hatırlayacaklardır) Bende bunu görünce gRPC'nin ne olduğunu araştırmaya başladım.
 

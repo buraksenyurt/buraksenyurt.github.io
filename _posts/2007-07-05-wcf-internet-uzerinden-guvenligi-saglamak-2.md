@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF - Internet Üzerinden Güvenliği Sağlamak - 2"
 date: 2007-07-05 12:17:00 +0300

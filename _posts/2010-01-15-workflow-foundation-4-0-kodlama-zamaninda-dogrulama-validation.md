@@ -11,9 +11,9 @@ tags:
   - authentication
   - visual-studio
 ---
-![blg110_Giris.jpg](/assets/images/2010/blg110_Giris.jpg)
-
 Bazen nerede duracağımızı bilmemiz gerekir ve bazende, mümkün olduğunca erken durup bazı şeyleri değiştirerek ilerlememiz...Bu teori yazılım geliştirmeninde pek çok noktasında karşımıza çıkmaktadır. Durmamız gereken noktalardan birisi, uygulamaların ürettiği ve önceden fark edebileceğimiz hatalardır (Genellikle Exception'ları düşünebiliriz). Ancak bazı olası hataların uygulamaların çalışması sırasında değil, çalıştırılmaya başlamadan önce bilinmesinde hem zaman hemde maliyet kazancı açısından yarar vardır. Şimdi elimizdeki materyalleri bir düşünelim.
+
+![blg110_Giris.jpg](/assets/images/2010/blg110_Giris.jpg)
 
 Ürün geliştirmek için kullandığımız Visual Studio gibi gelişmiş bir araç,.Net Framework platformu vb...O halde bazı hataların çalışma zamanı yerine daha geliştirme aşamasındayken IDE üzerinde fark edilmesinin önemli olduğunu söyleyebiliriz. Peki geliştirme safhasında, örneğin bir Workflow aktivitesini kullanırken...Hımmmm...Sanırım nereye varmak istediğimi anladınız.
 

@@ -15,9 +15,9 @@ tags:
   - serialization
   - visual-studio
 ---
-![blg56_giris.gif](/assets/images/2009/blg56_giris.gif)
-
 Minik bir çocukken Televizyon bağımlılığı (Malesef bu aptal kutuda çok vakiy geçirebiliyor çocuklar ![Frown](/assets/images/2009/smiley-frown.gif)) nedeniyle pek çok çizgi filmi izlediğimi hatırlıyorum. Voltran, Transformers, Red Kit ve Daltonlar, Denver The Last Dinasour, Clementine filan derken arada sıradada "Bi kedi gördüm sanki" diyen Tweety
+
+![blg56_giris.gif](/assets/images/2009/blg56_giris.gif)
 
 ![Laughing](/assets/images/2009/smiley-laughing.gif)
 

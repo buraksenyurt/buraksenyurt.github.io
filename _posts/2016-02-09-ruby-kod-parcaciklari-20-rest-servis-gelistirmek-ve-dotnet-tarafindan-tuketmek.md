@@ -18,9 +18,9 @@ tags:
   - serialization
   - generics
 ---
-![logo.png](/assets/images/2016/logo.png)
-
 Artık belli bir platforma bağlı kalmadan farklı uygulamaları bir araya getirip konuşturabiliyor, büyük ölçekli sistemleri uçtan uca bağlayarak süreçler işletebiliyoruz. Burada programlama dillerinin üzerine oturduğu çatıların (Frameworks) büyük avantajlar sağladığı ve işleri belirli ölçüde kolaylaştırdığı aşikar.
+
+![logo.png](/assets/images/2016/logo.png)
 
 Elbette işin en önemli kısmı yine de servislere düşüyor. Çözümler için düşünülen mimariler mutlak suretle servisleri ele alıyor. Hali hazırda SOA (Service Oriented Architecture) üzerine kurulu sayısız çözüm mevcut. Yeni geliştirilen kurumsal çözümler için de SOA mutlaka göz önüne alınıyor. Son yıllarda Micro Service yaklaşımı ile hafif siklet servislerin süreçlere dahil edilmesi de oldukça popüler. Herhangi bir programlama dili ile Lightweight servisler geliştirmek, bunları ucuz sunucular üzerinde organize ederek kolayca dağıtılabilir ve ölçeklenebilir şekilde sunmak oldukça pratik.
 

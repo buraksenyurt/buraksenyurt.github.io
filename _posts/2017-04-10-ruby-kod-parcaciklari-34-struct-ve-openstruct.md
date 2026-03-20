@@ -9,9 +9,9 @@ tags:
   - mysql
   - http
 ---
-![ruby34_5.gif](/assets/images/2017/ruby34_5.gif)
-
 Bir süredir şirket içinde vereceğim Ruby eğitimine hazırlanmaktayım. İşlerden çok vakit kalmasa da önceki Ruby notlarımı ve farklı kaynakları takip ederek 101 seviyesinde bir içerik oluşturmaya çalışıyorum. Gün içinde C# evde geç vakitlerde ise Ruby. Biraz yorucu olsa da oldukça keyifli aslında. Hem yeni bir şeyler öğreniyorum hem de iç eğitim gibi bir gerçek olduğundan ciddi anlamda not çıkartıyorum. Bugün konular üzerinden geçerken struct ve openstruct kavramlarını atladığımı fark ettim (Ov yooo) Tabii hemen öğrenmeye başladım. Neymiş ne için kullanılırmış biraz fikir sahibi oldum. İşte notlarım.
+
+![ruby34_5.gif](/assets/images/2017/ruby34_5.gif)
 
 Struct aslında Ruby'nin built-in sınıflarından birisi. Temel olarak bir sınıf hazırlamadan nitelik ve değer barındıran tip tanımlanmasına olanak sağlıyor. Konuyu basit bir şekilde incelemeye başlamak için aşağıdaki kod parçasını göz önüne alarak ilerleyebiliriz.
 

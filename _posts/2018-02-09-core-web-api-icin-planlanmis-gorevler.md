@@ -21,9 +21,9 @@ tags:
   - microservices
   - dependency-management
 ---
-![hostedsrv_1.gif](/assets/images/2018/hostedsrv_1.gif)
-
 [Chuck Norris](https://chucknorris.com/). Sanıyorum hayatımın bir bölümü onun televizyonda arka arkaya yayınlanan filmleri ile geçmiştir. Asıl adı Carlo Ray Norris'tir ve Chuck ismi 1958de O, hava kuvvetlerindeyken takma ad olarak ortaya çıkmıştır. Dövüş sanatları ustası olan Chuck'ın harika bir web sitesi var. Hayran kitlesi oldukça geniş. 1940 doğumlu olan film yıldızını Google aramalarında daha çok "Chuck Norris Facts" ile biliyoruz.
+
+![hostedsrv_1.gif](/assets/images/2018/hostedsrv_1.gif)
 
 Hatta onun hayatına dair şakalar, olaylar, sözler o kadar popüler hale gelmiş ki, [International Chuck Norris Database](http://www.icndb.com/) isimli gönüllülük esasına göre geliştirilmiş bir hizmet bile var. Üstelik [http://api.icndb.com/jokes/random](http://api.icndb.com/jokes/random) adresine gittiğinizde rastgele bir fıkrasını veya şakasını çekebileceğiniz JSON formatlı bir REST servisi de bulunuyor. İşin aslı.Net Core tarafında Hosted Service kavramını araştırırken örnek olarak kullanılan ve günün özlü sözünü sunan örnek bir REST servisten Chuck Norris REST API hizmetine kadar geldiğimi belirtmek isterim. Üstelik onu basit bir örnekte kullanmayı da başardım. West-World'ün yeni konusu Hosted Service.
 
