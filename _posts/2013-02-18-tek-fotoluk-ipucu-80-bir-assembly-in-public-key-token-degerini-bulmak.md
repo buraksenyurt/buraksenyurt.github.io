@@ -8,11 +8,7 @@ tags:
   - tek-fotoluk-ipucu
   - dotnet
 ---
-Diyelim ki elinizde projeye referans ettiğiniz bir.Net assembly dosyası bulunmakta. Örneğin Log4Net
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_153.png)
-
-ve bununla birlikte konfigurasyon dosyası içerisinde de ilgili assembly’ ın versiyon numarasını ve daha da önemlisi Public Key Token değerini girmeniz gereken bir bölüm yer almakta. Söz konusu Assembly’ ın Public Key Token değerini öğrenmek için pratik olarak nasıl bir yol izlersiniz acaba?
+Diyelim ki elinizde projeye referans ettiğiniz bir.Net assembly dosyası bulunmakta. Örneğin Log4Net ve bununla birlikte konfigurasyon dosyası içerisinde de ilgili assembly’ ın versiyon numarasını ve daha da önemlisi Public Key Token değerini girmeniz gereken bir bölüm yer almakta. Söz konusu Assembly’ ın Public Key Token değerini öğrenmek için pratik olarak nasıl bir yol izlersiniz acaba?
 
 Kodla elde etmek veya ILDASM aracı ile Metadata kısmında yer alan hexadecimal içeriğe bakmak, bir çözüm olabilir mi? Belki de SN (Strong Name Utility) isimli komut satırı aracı sizin işinizi görecektir. Nasıl mı? Buyrun
 

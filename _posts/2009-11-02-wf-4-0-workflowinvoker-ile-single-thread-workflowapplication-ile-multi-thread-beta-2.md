@@ -19,13 +19,9 @@ tags:
   - debugging
   - visual-studio
 ---
-Hiç müzik dinlerken bir yandan da kod yazmayı denediniz mi? Üstelik çevre ile olan etkileşiminiz devam ederken
+Hiç müzik dinlerken bir yandan da kod yazmayı denediniz mi? Üstelik çevre ile olan etkileşiminiz devam ederken söz gelimi hareketli bir parçayı tempo tutarak dinleyip ondan tamamen bağımsız bir şekilde geliştirmeye devam ederken yan masadaki arkadaşınızdan gelen "Dün akşamki maçı seyrettin mi?...Ronaldo ne gol attı öyle..." sorusuna da rakip takımın orta sahasını kattığınız bir yorumda bulunup diğer taraftanda kahve içtiğinizi düşünebilirsiniz.
 
 ![blg94_Giris.jpg](/assets/images/2009/blg94_Giris.jpg)
-
-![Wink](/assets/images/2009/smiley-wink.gif)
-
-Söz gelimi hareketli bir parçayı tempo tutarak dinleyip ondan tamamen bağımsız bir şekilde geliştirmeye devam ederken yan masadaki arkadaşınızdan gelen "Dün akşamki maçı seyrettin mi?...Ronaldo ne gol attı öyle..." sorusuna da rakip takımın orta sahasını kattığınız bir yorumda bulunup diğer taraftanda kahve içtiğinizi düşünebilirsiniz.
 
 Tabiki insan beyninin büyülü dünyası ve eş zamanlı olarak çalışma yetenekleri zaman zaman geliştirdiğimiz uygulamalara da yansımaktadır. Böyle bir giriş yaptığımıza göre multi-thread bir takım işlemleri anlatacağımı düşünmüş olmalısınız. İşte bu gün konumuz Workflow Foundation 4.0 üzerindeki Single-Thread ve Multi-Thread çalıştırma modelleri.
 

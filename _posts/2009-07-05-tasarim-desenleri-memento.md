@@ -12,8 +12,6 @@ Sanıyorum yandaki resmi görenler Guy Pearce ve Carrie Anne Moss'un başrolde y
 
 ![memento-1-1024.jpg](/assets/images/2009/memento-1-1024.jpg)
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 İşte bu günkü konumuz Memento tasarım kalıbı...
 
 Çok sık kullanılmamakla birlikte (en azından dofactory.com istatistiklerine göre %20' ler seviyesinde) oluşturulması ve kullanılması kolay olan bu desen, davranışsal (Behavioral) kalıplar arasında yer almaktadır. Esas itibariyle bir nesnenin daha önceki halinin (hallerinin) saklanması ve istenildiğinde tekrardan elde edilmesi üzerine tasarlanmış bir kalıptır. Nesnelere, dahili durumları için (Initial State) geri alma işlemi (Undo) yeteneğininin kazandırılması olarak da düşünebiliriz. Bu kalıpta durumu korunmak istenen nesnenin birebir veya en azından saklanmak istenen alanlarını (özelliklerini) tutan kopyası yer alır (Memento).

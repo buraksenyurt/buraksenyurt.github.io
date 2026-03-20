@@ -19,11 +19,7 @@ Uzun uzun zaman önceydi. İlk bilgisayarımı daha dün gibi hatırlıyorum. Ef
 
 ![blg26_8.jpg](/assets/images/2009/blg26_8.jpg)
 
-Açıkçası onunla yaptığım tek şey oyun oynamaktı itiraf ediyorum. En çok sevdiğim oyunlar arasında Grean Beret, Barbarian, Karate Kid 2, 1942, Airwolf vardı. Gel zaman git zaman, Üniversite yıllarına girince, bilgisayar işini daha ciddi düşünmeye başlamıştım. Yanlış hatırlamıyorsam yaklaşık olarak 2400 dolar değerinde (
-
-![Money mouth](/assets/images/2009/smiley-money-mouth.gif)
-
-) 486DX işlemcili bir bilgisayarım daha olmuştu.
+Açıkçası onunla yaptığım tek şey oyun oynamaktı itiraf ediyorum. En çok sevdiğim oyunlar arasında Grean Beret, Barbarian, Karate Kid 2, 1942, Airwolf vardı. Gel zaman git zaman, Üniversite yıllarına girince, bilgisayar işini daha ciddi düşünmeye başlamıştım. Yanlış hatırlamıyorsam yaklaşık olarak 2400 dolar değerinde (![Money mouth](/assets/images/2009/smiley-money-mouth.gif)) 486DX işlemcili bir bilgisayarım daha olmuştu.
 
 ![blg26_3.jpg](/assets/images/2009/blg26_3.jpg)
 

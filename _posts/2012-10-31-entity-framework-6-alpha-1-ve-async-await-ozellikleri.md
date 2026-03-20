@@ -14,14 +14,9 @@ tags:
   - threading
   - visual-studio
 ---
-Doğruyu söylemek gerekirse yazılım hayatım boyunca en çok kurduğum cümlelerden birisi de sanıyorum ki şu olmuştur: “Microsoft’ un hızına yetişemiyoruz”
+Doğruyu söylemek gerekirse yazılım hayatım boyunca en çok kurduğum cümlelerden birisi de sanıyorum ki şu olmuştur: “Microsoft’ un hızına yetişemiyoruz” Bazı açılardan bakıldığında bu özellikle nihayi ürün ile geliştirme yapanlar için bir handikap olarak görülebilir. Çünkü yeni sürümler genellikle geliştiricilerin ve ürün yöneticilerinin arzu ettikleri, görmek istedikleri kabiliyetleri içermektedir.
 
 [![speed_limit](/assets/images/2012/speed_limit_thumb.jpg)](/assets/images/2012/speed_limit.jpg)
-
-
-![Smile](/assets/images/2012/wlEmoticon-smile_66.png)
-
-Bazı açılardan bakıldığında bu özellikle nihayi ürün ile geliştirme yapanlar için bir handikap olarak görülebilir. Çünkü yeni sürümler genellikle geliştiricilerin ve ürün yöneticilerinin arzu ettikleri, görmek istedikleri kabiliyetleri içermektedir.
 
 Diğer taraftan kişisel görüşüme göre, Microsoft yazılım ekiplerinin bu çalışkanlığı da takdir edilmesi gereken bir durumdur. Bu ekiplerin başında da Entity Framework geliştirilmesinden [sorumlu ekip](http://blogs.msdn.com/b/adonet/) gelmektedir.
 

@@ -12,14 +12,9 @@ tags:
   - reflection
   - generics
 ---
-Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki
+Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki... Aslında bakarsanız olaylar bana göre, Microsoft geliştirici takımlarının, diğer geliştiricilerin seslerini duymaya ve dikkate almaya başlamasından sonra epeyce gelişti.
 
 [![themask](/assets/images/2012/themask_thumb.jpg)](/assets/images/2012/themask.jpg)
-
-
-![Just kidding](/assets/images/2012/wlEmoticon-justkidding.png)
-
-Aslında bakarsanız olaylar bana göre, Microsoft geliştirici takımlarının, diğer geliştiricilerin seslerini duymaya ve dikkate almaya başlamasından sonra epeyce gelişti.
 
 Microsoft’ un çeşitli takımlarının açtığı anketler sayesinde, geliştiricilerin talepleri dinleniyor, değerlendiriliyor ve kayda değer olanlar planlanıp peyder pey yeni sürümlere ilave ediliyor. Hatta takımların ortaya koyduğu “şu da olsa nasıl olur?” ruh halindeki öğeler de geliştiriciler tarafından oylanıyor ve aynı sürece dahil edilebiliyor.(Bloğumdaki takip ettiklerim listesinde bir kaç survey adresini bulabilirsiniz)
 

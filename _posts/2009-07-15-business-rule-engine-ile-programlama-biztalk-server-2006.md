@@ -20,8 +20,6 @@ Yıllardır yazılım projelerinde görev almaktayım. Çeşitli projelerde pek 
 
 ![blg46_1.jpg](/assets/images/2009/blg46_1.jpg)
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Tabiki burada müşterinin kastettiği iş kurallarının nasıl tanımlandığından tutunda dile getiriliş şekli daha çok büyük öneme sahiptir. Nitekim öyle kurallar olabilir ki, yada bu kurallar öyle şekillerde dile getirilebilirki, yorumlayabilmek veya uygulatabilmek için yapay zeka stratejilerinin ele alınması zorunlu hale gelir. Ben tabiki konunun bu kısmına en azından şu an için girmemeyi tercih etmekteyim
 
 ![Smile](/assets/images/2009/smiley-smile.gif)

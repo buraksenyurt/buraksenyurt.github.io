@@ -9,11 +9,9 @@ tags:
   - dotnet
   - http
 ---
+Kısa bir aradan sonra.Net Tv görsel derslerimize devam ediyorum. [Bu görsel dersimizde](http://nedirtv.com/video/design-patterns-proxy), son derece basit ve oldukça kullanışlı tasarım desenlerinden birisi olan Proxy kalıbını incelemeye çalışıyoruz. Tasarım kalıpları (Design Patterns) ile ilişkili diğer görsel derslerimide, aşağıdaki adreslerden indirebilir ve izleyebilirsiniz.
+
 [Youtube Link](https://www.youtube.com/watch?v=-YE1ZBCP6XE)
-
-Kısa bir aradan sonra.Net Tv görsel derslerimize devam ediyorum. [Bu görsel dersimizde](http://nedirtv.com/video/design-patterns-proxy), son derece basit ve oldukça kullanışlı tasarım desenlerinden birisi olan Proxy kalıbını incelemeye çalışıyoruz.
-
-Tasarım kalıpları (Design Patterns) ile ilişkili diğer görsel derslerimide, aşağıdaki adreslerden indirebilir ve izleyebilirsiniz.
 
 [Adapter Tasarım Kalıbı](https://www.youtube.com/watch?v=jOjKeqJemuc)
 

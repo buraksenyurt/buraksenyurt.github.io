@@ -11,11 +11,9 @@ tags:
   - xml
   - generics
 ---
-Küçüklüğümde son derece şanslı bir çocuktum. Uzun yıllar Almanya'da çalışan rahmetli babam ve annemin pek çok arkadaşı bana Lego oyuncaklarından göndermiştir. Evde günümün büyük bir çoğunluğunu bu legolar ile oynarak geçirir ve okul zamanında derslerimden geri kalırdım.
+Küçüklüğümde son derece şanslı bir çocuktum. Uzun yıllar Almanya'da çalışan rahmetli babam ve annemin pek çok arkadaşı bana Lego oyuncaklarından göndermiştir. Evde günümün büyük bir çoğunluğunu bu legolar ile oynarak geçirir ve okul zamanında derslerimden geri kalırdım. Lego oyuncakları zaman içerisinde öylesine geliştiki, artık efsane haline gelen pek çok filmin (Starwars, Indiana Jones vb...) konseptini içerdiğini görmeye başladık. Şimdi bunun konumuz ile ne alakası var diye düşünüyorum. Hemen aralarında rütbe ilişkisi olan legolardan oluşan bir orduyu gözümde canlandırıyorum. Generalden en alt kademedeki ere kadar kadar pek çok rütbe yer alıyor.
 
 ![blg45_4.jpg](/assets/images/2009/blg45_4.jpg)
-
-Lego oyuncakları zaman içerisinde öylesine geliştiki, artık efsane haline gelen pek çok filmin (Starwars, Indiana Jones vb...) konseptini içerdiğini görmeye başladık. Şimdi bunun konumuz ile ne alakası var diye düşünüyorum. Hemen aralarında rütbe ilişkisi olan legolardan oluşan bir orduyu gözümde canlandırıyorum. Generalden en alt kademedeki ere kadar kadar pek çok rütbe yer alıyor.
 
 Aslında bu organizasyonda yer alan bireylerin hepsi birer asker. Rütbeleri farklı bile olsa. Önemli olan detaylardan birisi bunların aralarındaki organizasyonel ilişkinin aslında bir ağaç yapısı (Tree) şeklinde ifade edilebiliyor olması. Bu ağaç ilişkisinden yararlanarak alt ve üstler arasında bilgi dolaştırılmasıda mümkün. Peki ya bu askerler nesne yönelimli (Object Oriented) bir programlama ortamında ifade ediliyorlarsa, organizasyonun ağaç yapısını temsil edebilecek bir kalıp mümkün olabilir mi? Tabiki olabilir ve bu kalıbın adı Composite tasarım desenidir. Aslında bu desenin temel amacı, nesnelerin ağaç yapısına göre düzenelenebilmesidir. Desenin içerisinde yer alan kahramanlar ise aşağıdaki örnek UML diagramında görüldüğü gibidir.
 

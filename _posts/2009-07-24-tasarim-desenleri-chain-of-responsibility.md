@@ -13,11 +13,7 @@ Dün gece çok garip bir rüya gördüm. Rüyamda denize açılmak için limanda
 
 ![blg49_2.jpg](/assets/images/2009/blg49_2.jpg)
 
-Acaba bu bir işaret miydi? Evet sanırım bu davranışsal tasarım desenlerinden olan Chain of Responsibility'yi anlatmam için bir işaretti.
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
-İşte maceramız başlıyor.
+Acaba bu bir işaret miydi? Evet sanırım bu davranışsal tasarım desenlerinden olan Chain of Responsibility'yi anlatmam için bir işaretti. İşte maceramız başlıyor.
 
 Davranışsal (Behavioral) kalıplardan olan Chain of Responsibility deseni, ortak bir mesaj veya talebin (Request), birbirlerine zayıf bir şekilde bağlanmış (Loosly Coupled) nesneler arasında gezdirilmesi ve bu zincir içerisinde asıl sorumlu olanı tarafından ele alınması gerektiği vakalarda kullanılmaktadır. DoFactory.com güncel istatistiklerine baktığımızda kullanım oranı %40' lar seviyesinde görünsede, yazılışı son derece basit bir desendir.
 

@@ -16,12 +16,9 @@ tags:
   - http
   - performance
 ---
-[Orjinal Yazım Tarihi – 25/02/2013]
+Yıllar öncesinde bir kaç seneliğine de olsa saygın bir eğitim kurumunda eğitmen olarak görev alma şansını yakalamıştım. Özellikle C#’ ın öğretilmeye çalışıldığı başlangıç niteliğindeki seanslarda dilin temel özelliklerini anlatırken, tüm dış çevre ile olan bağlantıyı kesip, sadece anahtar kelime (keyword), ifade ve materyale odaklanmaya çalışırdık. Bu sebepten genellikle ilk örneklerimiz ve Hello World uygulamamız, Notepad gibi bir program ve komut satırındaki csc (C# Compiler) ile inşa edilirdi.
 
 [![msbuild_9](/assets/images/2013/msbuild_9_thumb.jpg)](/assets/images/2013/msbuild_9.jpg)
-
-
-Yıllar öncesinde bir kaç seneliğine de olsa saygın bir eğitim kurumunda eğitmen olarak görev alma şansını yakalamıştım. Özellikle C#’ ın öğretilmeye çalışıldığı başlangıç niteliğindeki seanslarda dilin temel özelliklerini anlatırken, tüm dış çevre ile olan bağlantıyı kesip, sadece anahtar kelime (keyword), ifade ve materyale odaklanmaya çalışırdık. Bu sebepten genellikle ilk örneklerimiz ve Hello World uygulamamız, Notepad gibi bir program ve komut satırındaki csc (C# Compiler) ile inşa edilirdi.
 
 O zamanlar bu bizim için yeterli görünüyordu ama tabi.Net Framework 2.0 ile birlikte hayatımıza yeni bir inşa süreci de girdi. Aslında bu günkü konumuzda da, Notepad (tam olarak Notepad 2) ve komut satırı aracını kullanarak ilerlemeye çalışıyor olacağız. Amacımız MSBuild platformunu çok kısaca tanımaya ve anlamaya çalışmak.
 

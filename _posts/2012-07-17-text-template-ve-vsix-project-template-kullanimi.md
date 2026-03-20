@@ -17,11 +17,9 @@ tags:
   - rc
   - dependency-management
 ---
-[Aşağıdaki örnek Visual Studio 2012 RC sürümü üzerinde ele alınmıştır]
+Çoğu zaman geliştiricilerin karşısına zaman kısıtı olan projelerde, sıklıkla tekrar eden çözümsel ihtiyaçlar çıkar. Örneğin, ürünün içerisinde n sayıda ekran kullanıldığını ve bunların aslında belirli bir noktaya kadar bir kaç parametre ile değişen ama standart kod içeriklerine sahip olduğunu düşünün. Hatta bu tip ekranları bir kaç proje için aynı şekilde ürettiğinizi.
 
 [![deadline](/assets/images/2012/deadline_thumb.jpg)](/assets/images/2012/deadline.jpg)
-
-Çoğu zaman geliştiricilerin karşısına zaman kısıtı olan projelerde, sıklıkla tekrar eden çözümsel ihtiyaçlar çıkar. Örneğin, ürünün içerisinde n sayıda ekran kullanıldığını ve bunların aslında belirli bir noktaya kadar bir kaç parametre ile değişen ama standart kod içeriklerine sahip olduğunu düşünün. Hatta bu tip ekranları bir kaç proje için aynı şekilde ürettiğinizi.
 
 Yazılımcılar bu gibi durumlarda yükü azaltmak ve özellikle Deadline sürelerini eritmek adına, parçaları otomatik olarak üreten kodlar ile çözümleme yoluna gitmeye gayret ederler. Bir başka deyişle otomatik kod üreticilerini (Auto Code Generator) yazmak için çaba gösterirler. Bu oldukça etkili ve önemli bir yaklaşımdır. Tekrarlı işleri azaltmakla kalmaz, aynı zamanda yeniden yapılması gereken üretimlerde veya toplu güncellemelerde işleri merkezi bir noktadan kolaylaştırır.
 

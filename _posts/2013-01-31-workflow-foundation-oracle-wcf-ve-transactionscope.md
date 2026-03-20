@@ -22,18 +22,9 @@ tags:
   - visual-studio
   - atomic-operations
 ---
-[Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+Yandaki fotoğrafta görülen buluşa baktığınızda aslında gerçekten bu pilotun o koca pervaneler ile uçup uçamayacağına pek kanaat getiremiyoruz öyle değil mi? Sonuçta en azından kağıt üstünde ve teorik olarak da bu tip bir uçuş aracının çalışacağının ispat edilmesi ve sonrasında pratikteki kullanımı için teste çıkılması beklenir (Tabi buna cesaret edecek de bir pilotun olması gerekir) Bir dostumuzun söylediği üzere "tasarlanan her uçak uçmuş ama her yazılım çalışmamıştır"
 
 [![Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This_thumb.jpg)](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This.jpg)
-
-
-Yandaki fotoğrafta görülen buluşa baktığınızda aslında gerçekten bu pilotun o koca pervaneler ile uçup uçamayacağına pek kanaat getiremiyoruz öyle değil mi?
-
-Sonuçta en azından kağıt üstünde ve teorik olarak da bu tip bir uçuş aracının çalışacağının ispat edilmesi ve sonrasında pratikteki kullanımı için teste çıkılması beklenir (Tabi buna cesaret edecek de bir pilotun olması gerekir)
-
-Bir dostumuzun söylediği üzere "tasarlanan her uçak uçmuş ama her yazılım çalışmamıştır"
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_109.png)
 
 Bir başka deyişle yazılım tarafında bir şeylerin ispatını yaparken bir uçağı uçuracakmış gibi düşünerek hareket etmeyiz genelde. İstesek de edemiyoruz sanırım. Yine de elimizden geldiğince titiz çalışmamız da yarar var. Öyleyse gelelim bu günün konusuna.
 

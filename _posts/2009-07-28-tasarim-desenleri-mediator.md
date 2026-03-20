@@ -12,13 +12,9 @@ tags:
   - performance
   - generics
 ---
-Yandaki resimde Zurich hava alanına ait bir görüntü yer almaktadır. Hava alanının ne kadar karmaşık olduğu aşikardır.
+Yandaki resimde Zurich hava alanına ait bir görüntü yer almaktadır. Hava alanının ne kadar karmaşık olduğu aşikardır. Aslında yazımıza konu olarak Londra'daki Heathrow hava alanını dahil edecektim. Nitekim uzun zaman önce Discovery Channel'da izlediğim bir belgeselde, bir iniş ve birde kalkış pistiyle bu kadar işlek bir havalimanının ne kadar ustalıkla yönetildiği anlatılıyordu. Ancak yaptığım araştırmalar sonrası dünyadaki en iyi hava alanları arasında olmadığını gördüm.([http://www.worldairportawards.com/](http://www.worldairportawards.com/)). Her neyse.
 
 ![blg52_2.jpg](/assets/images/2009/blg52_2.jpg)
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
-Aslında yazımıza konu olarak Londra'daki Heathrow hava alanını dahil edecektim. Nitekim uzun zaman önce Discovery Channel'da izlediğim bir belgeselde, bir iniş ve birde kalkış pistiyle bu kadar işlek bir havalimanının ne kadar ustalıkla yönetildiği anlatılıyordu. Ancak yaptığım araştırmalar sonrası dünyadaki en iyi hava alanları arasında olmadığını gördüm.([http://www.worldairportawards.com/](http://www.worldairportawards.com/)). Her neyse.
 
 Konumuz aslında kimin daha iyi olduğu değil ama tüm hava alanları için ortak olan bir sorun. İnip kalkan ve hatta aynı havasahasına giren uçakların koordine edilmesi. Hiç çok işlek hava alanlarında kontrol kulesi olmadığını hayal ettiniz mi?
 

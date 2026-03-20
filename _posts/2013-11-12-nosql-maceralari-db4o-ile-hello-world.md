@@ -18,12 +18,9 @@ tags:
   - generics
   - visual-studio
 ---
-Eğer bir ülke olsaydı, dünyanın 6ncı büyük ekonomisne sahip olurdu.
+Eğer bir ülke olsaydı, dünyanın 6ncı büyük ekonomisne sahip olurdu. Bu ifade Amerika’ nın en kalabalık nüfusuna sahip olan Kaliforniya eyaleti için [wikipedia](http://tr.wikipedia.org/wiki/Kaliforniya)’ da yazılmış. Birleşik Devletlerin batı kıyısının bir eyaleti olan Kaliforniya eyaletinde aslında pek çoğumuzun gıpta ederek baktığı şehirler var.
 
 [![GoldenGateBridge-001](/assets/images/2013/GoldenGateBridge-001_thumb.jpg)](/assets/images/2013/GoldenGateBridge-001.jpg)
-
-
-Bu ifade Amerika’ nın en kalabalık nüfusuna sahip olan Kaliforniya eyaleti için [wikipedia](http://tr.wikipedia.org/wiki/Kaliforniya)’ da yazılmış. Birleşik Devletlerin batı kıyısının bir eyaleti olan Kaliforniya eyaletinde aslında pek çoğumuzun gıpta ederek baktığı şehirler var.
 
 NBA’ in en ünlü takımlarından olan Lakers’ ın vatanı Los Angeles, uzun bir dönem Kings forması giyen Hido’ nun şehri Sacremento (ki aynı zamanda eyalet başkenti olarak geçiyor), küçüklüğümde sokakları ile bir dedektiflik dizisinin ([The Street of San Franciso](http://www.imdb.com/title/tt0068135/)) adeta başrolü haline gelen San Francisco.
 

@@ -18,8 +18,6 @@ Yaklaşık olarak 10 yılı aşkın bir süredir yazılım teknolojileri ile ilg
 
 Ve birde platform, dil, cihaz gözetmeksizin var olan oyunlar.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Bende her ne kadar yazılımı bir hayat biçimi olarak benimsemiş olsamda, zaman zaman eski günlerdeki gibi strateji oyunlarını oynamıyor da değilim. Warcraft 2 ve "Yeş mi Lord" ile başlayan bu serüvende, Starcraft'taki Protosları, Red Alert'taki Yuri'nin Mind Control makinelerini, Generals'taki Stealth Fighter'ları ve daha nicelerini kullanma fırsatım oldu. Geçen akşamda kafamda bir oyun canlandırmaya çalışırken, korumakta olduğum topraklara yapılan bir saldırıyı, filomdaki birimlere nasıl ileteceğimi düşünmeye başladım (Çok doğal olarak telsizle bildir olsun bitsin diyebilirsiniz)
 
 Bir saldırı anında tank, helikopter, yaya piyade veya deniz gücündeki operatörlere bu durumun iletilmesi gerekiyordu. Aslında birilerininde sürekli olarak dinlemede olması şarttı. Aslında bu birimlerin hepsi oyun sahası içerisinde yer alan birer nesne idi ve OOP tarafında tip olarak modellenebilirlerdi. Dolayısıyla aralarında bire-çok (one to many) ilişki olabilecek nesnelerin olması ve birisinde meydana gelecek değişikliklerin diğerlerine bildirilmesi gibi senaryo ortaya çıkmaktaydı.(Bir filonun komuta merkezinden, ona bağlı tüm birimlere haber gitmesi durumu)
