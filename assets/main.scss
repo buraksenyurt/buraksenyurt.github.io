@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   margin: 2rem 0 1rem;
   padding-top: 1rem;
@@ -37,7 +38,12 @@
 .pagination-numbers {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.pagination-numbers {
+  justify-content: center;
 }
 
 .pagination-link,
@@ -55,6 +61,11 @@
 .pagination-number {
   min-width: 2.25rem;
   padding-inline: 0.55rem;
+}
+
+.pagination-ellipsis {
+  color: $grey-color;
+  padding-inline: 0.15rem;
 }
 
 .pagination-link.is-disabled,

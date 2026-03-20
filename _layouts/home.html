@@ -47,17 +47,29 @@ layout: default
         {%- endif -%}
 
         <div class="pagination-numbers">
+          {%- assign lower_bound = paginator.page | minus: 2 -%}
+          {%- assign upper_bound = paginator.page | plus: 2 -%}
+          {%- assign previous_number = 0 -%}
           {%- for page_number in (1..paginator.total_pages) -%}
-            {%- if page_number == 1 -%}
-              {%- assign page_url = '/' -%}
-            {%- else -%}
-              {%- assign page_url = site.paginate_path | replace: ':num', page_number -%}
-            {%- endif -%}
+            {%- if page_number == 1 or page_number == paginator.total_pages or page_number >= lower_bound and page_number <= upper_bound -%}
+              {%- assign gap = page_number | minus: previous_number -%}
+              {%- if previous_number > 0 and gap > 1 -%}
+                <span class="pagination-ellipsis" aria-hidden="true">&hellip;</span>
+              {%- endif -%}
 
-            {%- if page_number == paginator.page -%}
-              <span class="pagination-number is-current">{{ page_number }}</span>
-            {%- else -%}
-              <a class="pagination-number" href="{{ page_url | relative_url }}">{{ page_number }}</a>
+              {%- if page_number == 1 -%}
+                {%- assign page_url = '/' -%}
+              {%- else -%}
+                {%- assign page_url = site.paginate_path | replace: ':num', page_number -%}
+              {%- endif -%}
+
+              {%- if page_number == paginator.page -%}
+                <span class="pagination-number is-current">{{ page_number }}</span>
+              {%- else -%}
+                <a class="pagination-number" href="{{ page_url | relative_url }}">{{ page_number }}</a>
+              {%- endif -%}
+
+              {%- assign previous_number = page_number -%}
             {%- endif -%}
           {%- endfor -%}
         </div>
