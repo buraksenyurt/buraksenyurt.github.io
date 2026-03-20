@@ -1,0 +1,9 @@
+Configuration file: C:/Users/burak/Development/buraksenyurt.github.io/_config.yml
+To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+            Source: C:/Users/burak/Development/buraksenyurt.github.io
+       Destination: C:/Users/burak/Development/buraksenyurt.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+                    done in 264.56 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.

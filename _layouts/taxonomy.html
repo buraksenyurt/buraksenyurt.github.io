@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{%- assign taxonomy_items = site[page.taxonomy] | sort -%}
+
+<div class="taxonomy-page">
+  <header class="page-header taxonomy-header">
+    <h1 class="page-heading">{{ page.title | escape }}</h1>
+    <p class="taxonomy-summary">
+      Toplam {{ taxonomy_items | size }} {{ page.taxonomy_title | downcase }} var. İlgili başlığa gidip o konudaki yazıları listeleyebilirsiniz.
+    </p>
+  </header>
+
+  <nav class="taxonomy-nav" aria-label="{{ page.title | escape }} gezintisi">
+    {%- for item in taxonomy_items -%}
+      {%- assign taxonomy_name = item[0] -%}
+      {%- assign posts = item[1] -%}
+      <a href="#{{ taxonomy_name | slugify }}">
+        {{ taxonomy_name }} <span>({{ posts | size }})</span>
+      </a>
+    {%- endfor -%}
+  </nav>
+
+  <div class="taxonomy-groups">
+    {%- for item in taxonomy_items -%}
+      {%- assign taxonomy_name = item[0] -%}
+      {%- assign posts = item[1] -%}
+      <section class="taxonomy-group" id="{{ taxonomy_name | slugify }}">
+        <div class="taxonomy-group-header">
+          <h2>{{ taxonomy_name }}</h2>
+          <span>{{ posts | size }} yazı</span>
+        </div>
+
+        <ul class="taxonomy-post-list">
+          {%- for post in posts -%}
+            <li>
+              <span class="taxonomy-post-date">{{ post.date | date: site.minima.date_format }}</span>
+              <a class="taxonomy-post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </section>
+    {%- endfor -%}
+  </div>
+</div>

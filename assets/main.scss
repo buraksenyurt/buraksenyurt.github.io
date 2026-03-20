@@ -3,6 +3,14 @@
 
 @import "minima";
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba($background-color, 0.92);
+  backdrop-filter: blur(12px);
+}
+
 .home-toolbar {
   display: flex;
   align-items: baseline;
@@ -114,6 +122,195 @@
   letter-spacing: 0.04em;
 }
 
+.post-taxonomy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.post-taxonomy-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.post-taxonomy-label {
+  color: $grey-color;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.post-taxonomy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.taxonomy-chip,
+.search-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid $grey-color-light;
+  background: rgba($brand-color, 0.08);
+  color: $text-color;
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.post-toc,
+.related-posts,
+.taxonomy-page,
+.search-page {
+  margin-top: 2rem;
+}
+
+.post-toc {
+  padding: 1rem 1.1rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 0.85rem;
+  background: rgba($brand-color, 0.06);
+}
+
+.post-toc h2,
+.related-posts h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.post-toc-list,
+.related-post-list,
+.taxonomy-post-list {
+  margin: 0;
+}
+
+.post-toc-list {
+  padding-left: 1.2rem;
+}
+
+.toc-item + .toc-item {
+  margin-top: 0.45rem;
+}
+
+.toc-item-sub {
+  margin-left: 1rem;
+}
+
+.related-post-list,
+.taxonomy-post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.related-post-list li,
+.taxonomy-post-list li {
+  display: grid;
+  grid-template-columns: minmax(130px, 160px) 1fr;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid rgba($grey-color-light, 0.6);
+}
+
+.related-post-date,
+.taxonomy-post-date,
+.search-result-meta,
+.taxonomy-group-header span,
+.taxonomy-summary,
+.search-summary,
+.search-status {
+  color: $grey-color;
+}
+
+.taxonomy-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+
+.taxonomy-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid $grey-color-light;
+  text-decoration: none;
+}
+
+.taxonomy-group {
+  scroll-margin-top: 6rem;
+}
+
+.taxonomy-group + .taxonomy-group {
+  margin-top: 1.75rem;
+}
+
+.taxonomy-group-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.taxonomy-group-header h2 {
+  margin-bottom: 0;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 46rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 0.85rem;
+  background: rgba($background-color, 0.92);
+  color: $text-color;
+  font: inherit;
+}
+
+.search-status {
+  margin-top: 0.85rem;
+}
+
+.search-results {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.search-result-card {
+  padding: 1rem 1.1rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 0.85rem;
+  background: rgba($brand-color, 0.04);
+}
+
+.search-result-title {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.search-result-excerpt {
+  margin-bottom: 0.75rem;
+}
+
+.search-result-taxonomy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
 .archive-page {
   display: flex;
   flex-direction: column;
@@ -191,6 +388,13 @@
     flex-wrap: wrap;
   }
 
+  .post-taxonomy-group,
+  .taxonomy-group-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .related-post-list li,
   .archive-post-list li {
     grid-template-columns: 1fr;
     gap: 0.25rem;

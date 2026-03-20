@@ -14,11 +14,61 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
     </p>
+
+    {%- include post-taxonomy.html -%}
   </header>
+
+  <section class="post-toc" id="post-toc-shell" hidden>
+    <h2>İçindekiler</h2>
+    <ol id="post-toc-list" class="post-toc-list"></ol>
+  </section>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+  {%- assign primary_category = page.categories | first -%}
+  {%- assign primary_tag = page.tags | first -%}
+  {%- assign related_count = 0 -%}
+  {%- capture related_posts_markup -%}{%- endcapture -%}
+  {%- for post in site.posts -%}
+    {%- if post.url != page.url -%}
+      {%- assign category_match = false -%}
+      {%- assign tag_match = false -%}
+
+      {%- if primary_category and post.categories contains primary_category -%}
+        {%- assign category_match = true -%}
+      {%- endif -%}
+
+      {%- if primary_tag and post.tags contains primary_tag -%}
+        {%- assign tag_match = true -%}
+      {%- endif -%}
+
+      {%- if category_match or tag_match -%}
+        {%- capture related_posts_markup -%}
+          {{ related_posts_markup }}
+          <li>
+            <span class="related-post-date">{{ post.date | date: site.minima.date_format }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </li>
+        {%- endcapture -%}
+        {%- assign related_count = related_count | plus: 1 -%}
+      {%- endif -%}
+
+      {%- if related_count >= 4 -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if related_count > 0 -%}
+    <section class="related-posts" aria-label="Benzer yazılar">
+      <h2>Benzer Yazılar</h2>
+      <ul class="related-post-list">
+        {{ related_posts_markup }}
+      </ul>
+    </section>
+  {%- endif -%}
 
   <nav class="post-navigation" aria-label="Yazılar arası gezinme">
     {%- if page.next -%}

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<section class="search-page">
+  <header class="page-header search-header">
+    <h1 class="page-heading">{{ page.title | escape }}</h1>
+    <p class="search-summary">Başlık, içerik, kategori ve etiketlerde arama yapabilirsiniz.</p>
+  </header>
+
+  <label class="search-label" for="site-search-input">Arama terimi</label>
+  <input id="site-search-input" class="search-input" type="search" placeholder="Örn: redis, WCF, algoritma, Docker" autocomplete="off" />
+
+  <p id="search-status" class="search-status">Aramaya başlamak için bir kelime yazın.</p>
+  <div id="search-results" class="search-results" aria-live="polite"></div>
+</section>

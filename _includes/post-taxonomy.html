@@ -1,0 +1,25 @@
+{%- if page.categories or page.tags -%}
+  <div class="post-taxonomy">
+    {%- if page.categories and page.categories.size > 0 -%}
+      <div class="post-taxonomy-group">
+        <span class="post-taxonomy-label">Kategoriler</span>
+        <div class="post-taxonomy-links">
+          {%- for category in page.categories -%}
+            <a class="taxonomy-chip" href="{{ '/kategoriler/#' | append: (category | slugify) | relative_url }}">{{ category }}</a>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if page.tags and page.tags.size > 0 -%}
+      <div class="post-taxonomy-group">
+        <span class="post-taxonomy-label">Etiketler</span>
+        <div class="post-taxonomy-links">
+          {%- for tag in page.tags -%}
+            <a class="taxonomy-chip" href="{{ '/etiketler/#' | append: (tag | slugify) | relative_url }}">#{{ tag }}</a>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

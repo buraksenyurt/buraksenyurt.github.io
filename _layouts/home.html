@@ -13,10 +13,13 @@ layout: default
 
   {%- if site.posts.size > 0 -%}
     <div class="home-toolbar">
-      <h2 class="post-list-heading">{{ page.list_title | default: "Son Yazılar" }}</h2>
+      <h2 class="post-list-heading">{{ page.list_title | default: "Maceralar" }}</h2>
       <div class="home-toolbar-meta">
         <span>Toplam {{ site.posts | size }} yazı</span>
         <a href="{{ '/arsiv/' | relative_url }}">Tüm arşiv</a>
+        <a href="{{ '/kategoriler/' | relative_url }}">Kategoriler</a>
+        <a href="{{ '/etiketler/' | relative_url }}">Etiketler</a>
+        <a href="{{ '/arama/' | relative_url }}">Arama</a>
         <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
       </div>
     </div>
@@ -51,7 +54,18 @@ layout: default
           {%- assign upper_bound = paginator.page | plus: 2 -%}
           {%- assign previous_number = 0 -%}
           {%- for page_number in (1..paginator.total_pages) -%}
-            {%- if page_number == 1 or page_number == paginator.total_pages or page_number >= lower_bound and page_number <= upper_bound -%}
+            {%- assign show_page_number = false -%}
+            {%- if page_number == 1 -%}
+              {%- assign show_page_number = true -%}
+            {%- elsif page_number == paginator.total_pages -%}
+              {%- assign show_page_number = true -%}
+            {%- elsif page_number >= lower_bound -%}
+              {%- if page_number <= upper_bound -%}
+                {%- assign show_page_number = true -%}
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- if show_page_number -%}
               {%- assign gap = page_number | minus: previous_number -%}
               {%- if previous_number > 0 and gap > 1 -%}
                 <span class="pagination-ellipsis" aria-hidden="true">&hellip;</span>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'tr' }}">
+  {%- include head.html -%}
+  <body class="layout-{{ page.layout | default: 'default' }}">
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="İçerik">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script src="{{ '/scripts/toc.js' | relative_url }}" defer></script>
+    {%- if page.search_page -%}
+      <script src="{{ '/scripts/search.js' | relative_url }}" defer></script>
+    {%- endif -%}
+  </body>
+</html>
