@@ -1,17 +1,7 @@
 name: Refresh Taxonomy
 
 on:
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - _posts/**
-      - scripts/build_taxonomy.rb
-      - _layouts/taxonomy.html
-      - _layouts/post.html
-      - _includes/post-taxonomy.html
-      - search.json
+  workflow_dispatch:
 
 permissions:
   contents: write

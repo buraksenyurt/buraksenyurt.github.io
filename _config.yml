@@ -6,8 +6,6 @@ paginate: 20
 paginate_path: "/sayfa:num/"
 header_pages:
   - arsiv.md
-  - kategoriler.md
-  - etiketler.md
   - arama.md
 
 minima:
