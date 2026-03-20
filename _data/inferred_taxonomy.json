@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T21:36:49Z",
+  "generated_at": "2026-03-20T21:47:08Z",
   "posts": {
     "/2003/11/08/stored-procedure-yardimiyla-yeni-bir-kayit-eklemek/": {
       "title": "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek",
@@ -5991,7 +5991,9 @@
     "/2009/07/30/service-orientation-vs-object-orientation/": {
       "title": "Service Orientation vs Object Orientation",
       "date": "2009-07-30T11:11:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "soa"
       ]
@@ -9075,7 +9077,9 @@
     "/2011/06/23/tek-fotoluk-ipucu-4-debuggerbrowsable-niteligi/": {
       "title": "Tek Fotoluk İpucu - 4 (DebuggerBrowsable Niteliği)",
       "date": "2011-06-23T12:40:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "dotnet-framework-4-0",
         "tek-fotoluk-ipucu"
@@ -9124,7 +9128,9 @@
     "/2011/06/27/tek-fotoluk-ipucu-8-parallel-concurrentbag/": {
       "title": "Tek Fotoluk İpucu - 8 (Parallel ConcurrentBag)",
       "date": "2011-06-27T23:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "concurrency",
         "dotnet-framework-4-0",
@@ -9150,7 +9156,9 @@
     "/2011/06/29/tek-fotoluk-ipucu-9-stopwatch-ile-sure-olcumu/": {
       "title": "Tek Fotoluk İpucu – 9 (Stopwatch ile süre ölçümü)",
       "date": "2011-06-29T00:58:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "csharp-4-0",
         "dotnet-framework-4-0",
@@ -9953,7 +9961,9 @@
     "/2012/02/14/tek-fotoluk-ipucu-47-mime-type/": {
       "title": "Tek Fotoluk İpucu–47 (Mime Type)",
       "date": "2012-02-14T23:11:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -10021,7 +10031,9 @@
     "/2012/03/06/tek-fotoluk-ipucu-49-daha-hizli-count/": {
       "title": "Tek Fotoluk İpucu 49–Daha Hızlı Count",
       "date": "2012-03-06T22:50:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "t-sql"
       ]
@@ -10029,7 +10041,9 @@
     "/2012/03/16/tek-fotoluk-ipucu-48-uri-extensions-for-rss/": {
       "title": "Tek Fotoluk İpucu-48(Uri Extensions for RSS)",
       "date": "2012-03-16T00:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -10136,7 +10150,9 @@
     "/2012/05/08/tek-fotoluk-ipucu-52-monitor-bilgileri/": {
       "title": "Tek Fotoluk İpucu 52 - Monitor Bilgileri",
       "date": "2012-05-08T09:10:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu",
         "visual-studio"
@@ -10145,7 +10161,9 @@
     "/2012/05/14/tek-fotoluk-ipucu-53-tarih-donusumunde-extract-kullanimi/": {
       "title": "Tek Fotoluk İpucu 53 - Tarih Dönüşümünde Extract Kullanımı",
       "date": "2012-05-14T23:48:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -10380,7 +10398,9 @@
     "/2012/07/12/tek-fotoluk-ipucu-59-nesneyi-json-string-olarak-serilestirmek/": {
       "title": "Tek Fotoluk İpucu 59–Nesneyi JSON String Olarak Serileştirmek",
       "date": "2012-07-12T00:52:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "json",
@@ -10414,7 +10434,9 @@
     "/2012/07/16/tek-fotoluk-ipucu-60-string-kokenli-json-icerigi-ters-serilestirmek/": {
       "title": "Tek Fotoluk İpucu 60 - string Kökenli JSON İçeriği Ters Serileştirmek",
       "date": "2012-07-16T21:03:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "json",
@@ -10522,7 +10544,9 @@
     "/2012/09/09/tek-fotoluk-ipucu-64-assembly-adresinden-object-uretmek/": {
       "title": "Tek Fotoluk İpucu 64 – Assembly Adresinden Object Üretmek",
       "date": "2012-09-09T23:32:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "reflection",
         "tek-fotoluk-ipucu"
@@ -10579,7 +10603,9 @@
     "/2012/09/19/tek-fotoluk-ipucu-65-bir-web-sayfasinin-external-link-lerini-yakalamak/": {
       "title": "Tek Fotoluk İpucu–65–Bir Web Sayfasının External Link’ lerini Yakalamak",
       "date": "2012-09-19T23:15:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -10587,7 +10613,9 @@
     "/2012/09/22/tek-fotoluk-ipucu-66-protokol-ve-port-numarasini-bulmak/": {
       "title": "Tek Fotoluk İpucu–66–Protokol ve Port Numarasını Bulmak",
       "date": "2012-09-22T21:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -10682,7 +10710,9 @@
     "/2012/10/11/tek-fotoluk-ipucu-68-reflection-ile-workflow-activity-yuklemek-calistirmak/": {
       "title": "Tek Fotoluk İpucu–68–Reflection ile Workflow Activity Yüklemek, Çalıştırmak",
       "date": "2012-10-11T22:20:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "reflection",
@@ -10881,7 +10911,9 @@
     "/2012/12/10/tek-fotoluk-ipucu-74-sequenceequal-t/": {
       "title": "Tek Fotoluk İpucu–74–SequenceEqual<T>",
       "date": "2012-12-10T20:40:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11048,7 +11080,9 @@
     "/2013/01/30/tek-fotoluk-ipucu-76-bir-listeyi-shuffle-lamak/": {
       "title": "Tek Fotoluk İpucu 76–Bir Listeyi Shuffle’ lamak",
       "date": "2013-01-30T21:50:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "tek-fotoluk-ipucu"
@@ -11216,7 +11250,9 @@
     "/2013/03/11/tek-fotoluk-ipucu-81-internete-bagli-miyiz/": {
       "title": "Tek Fotoluk İpucu 81–Internete Bağlı mıyız?",
       "date": "2013-03-11T08:38:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11284,7 +11320,9 @@
     "/2013/03/25/tek-fotolok-ipucu-88-task-waitall-out-parallel-invoke-in/": {
       "title": "Tek Fotolok İpucu 88–Task.WaitAll out, Parallel.Invoke in",
       "date": "2013-03-25T21:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "task-parallel-library",
         "tek-fotoluk-ipucu"
@@ -11293,7 +11331,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-82-internete-bagli-miyiz-round-ii/": {
       "title": "Tek Fotoluk İpucu 82–Internete Bağlı mıyız? (Round II)",
       "date": "2013-03-25T20:30:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "tek-fotoluk-ipucu"
@@ -11341,7 +11381,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-86-zahmetsizce-encryption-protectedmemory/": {
       "title": "Tek Fotoluk İpucu 86–Zahmetsizce Encryption (ProtectedMemory)",
       "date": "2013-03-25T20:50:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "tek-fotoluk-ipucu"
@@ -11350,7 +11392,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-87-enum-sabitleri-ile-attribute-kullanimi/": {
       "title": "Tek Fotoluk İpucu 87–Enum Sabitleri ile Attribute Kullanımı",
       "date": "2013-03-25T20:55:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11358,7 +11402,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-89-exif-bilgilerini-okumak/": {
       "title": "Tek Fotoluk İpucu 89–Exif Bilgilerini Okumak",
       "date": "2013-03-25T21:05:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11366,7 +11412,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-90-office-ailesinin-versiyonlarini-ogrenmek/": {
       "title": "Tek Fotoluk İpucu 90–Office Ailesinin Versiyonlarını Öğrenmek",
       "date": "2013-03-25T21:10:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11396,7 +11444,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-93-wmi-ile-processor-bilgisini-okumak/": {
       "title": "Tek Fotoluk İpucu 93–WMI ile Processor Bilgisini Okumak",
       "date": "2013-03-25T21:20:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "tek-fotoluk-ipucu"
@@ -11405,7 +11455,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-94-wmi-ile-disk-bilgilerini-okumak/": {
       "title": "Tek Fotoluk İpucu 94–WMI ile Disk Bilgilerini Okumak",
       "date": "2013-03-25T21:22:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "tek-fotoluk-ipucu"
@@ -11425,7 +11477,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-96-10mb-ustu-xml-dosyalari/": {
       "title": "Tek Fotoluk İpucu 96–10Mb Üstü XML Dosyaları",
       "date": "2013-03-25T19:28:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "tek-fotoluk-ipucu",
@@ -11436,7 +11490,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-97-google-shortener-url-hizmetini-csharp-ile-kullanmak/": {
       "title": "Tek Fotoluk İpucu 97–Google Shortener URL Hizmetini C# ile Kullanmak",
       "date": "2013-03-25T21:30:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "json",
@@ -11446,7 +11502,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-98-stopwatch-ile-performans-olcumu/": {
       "title": "Tek Fotoluk İpucu 98–Stopwatch ile Performans Ölçümü",
       "date": "2013-03-25T19:32:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "delegates",
         "performance",
@@ -11456,7 +11514,9 @@
     "/2013/03/25/tek-fotoluk-ipucu-99-tipler-arasi-property-eslestirme/": {
       "title": "Tek Fotoluk İpucu 99–Tipler Arası Property Eşleştirme",
       "date": "2013-03-25T17:35:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11572,7 +11632,9 @@
     "/2013/05/03/dependency-inversion-principle-kavramak/": {
       "title": "Dependency Inversion Principle - Kavramak",
       "date": "2013-05-03T00:10:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "dependency-management",
         "tasarim-prensipleri-design-principles"
@@ -11701,7 +11763,9 @@
     "/2013/06/16/tek-fotoluk-ipucu-100-automapper-kullanimi/": {
       "title": "Tek Fotoluk İpucu 100–AutoMapper Kullanımı",
       "date": "2013-06-16T09:45:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "tek-fotoluk-ipucu"
@@ -11710,7 +11774,9 @@
     "/2013/06/17/tek-fotoluk-ipucu-101-team-project-process-template/": {
       "title": "Tek Fotoluk İpucu 101–Team Project Process Template",
       "date": "2013-06-17T12:30:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -11741,7 +11807,9 @@
     "/2013/06/23/tek-fotoluk-ipucu-102-ne-zaman-xmlinclude-gerekir/": {
       "title": "Tek Fotoluk İpucu 102–Ne Zaman XmlInclude Gerekir?",
       "date": "2013-06-23T11:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu",
         "xml"
@@ -11930,7 +11998,9 @@
     "/2013/08/28/tek-fotoluk-ipucu-104-customreflectioncontext-ile-tipe-ozellike-kazandirmak/": {
       "title": "Tek Fotoluk İpucu 104 : CustomReflectionContext ile Tipe Özellike Kazandırmak",
       "date": "2013-08-28T19:18:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "reflection",
         "tek-fotoluk-ipucu"
@@ -12253,7 +12323,9 @@
     "/2014/03/10/solid-adim-adim-tanimak/": {
       "title": "SOLID–Adım Adım Tanımak",
       "date": "2014-03-10T00:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "dependency-management",
         "tasarim-prensipleri-design-principles"
@@ -12306,7 +12378,9 @@
     "/2014/03/20/tek-fotoluk-ipucu-108-property-value-dump/": {
       "title": "Tek Fotoluk İpucu 108–Property Value Dump",
       "date": "2014-03-20T21:30:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -12314,7 +12388,9 @@
     "/2014/03/23/visual-basic-6-0-ile-nostalji-ruzgari/": {
       "title": "Visual Basic 6.0 ile Nostalji Rüzgarı",
       "date": "2014-03-23T04:18:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "nedirtv"
       ]
@@ -12471,7 +12547,9 @@
     "/2014/06/20/meraklisina-nuget-ve-nlog-ile-5-dakikada-loglama/": {
       "title": "Meraklısına NuGet ve NLog ile 5 Dakikada Loglama",
       "date": "2014-06-20T20:12:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "dotnet-framework-4-5"
       ]
@@ -12638,7 +12716,9 @@
     "/2014/10/08/tfi-110-control-tipini-extend-edip-basit-bind-islemleri-gerceklestirmek/": {
       "title": "TFİ 110 - Control Tipini Extend Edip Basit Bind İşlemleri Gerçekleştirmek",
       "date": "2014-10-08T21:07:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "reflection",
@@ -12872,7 +12952,9 @@
     "/2015/04/29/tfi-111-dosya-adi-icinden-gecersiz-karakterleri-cikartmak/": {
       "title": "TFİ 111 - Dosya Adı İçinden Geçersiz Karakterleri Çıkartmak",
       "date": "2015-04-29T22:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "rc",
         "tek-fotoluk-ipucu"
@@ -12914,7 +12996,9 @@
     "/2015/06/09/tek-fotoluk-ipucu-114-csharp-6-0-pratikleri-expression-bodied-function-ve-string-interpolation/": {
       "title": "Tek Fotoluk İpucu 114 - C# 6.0 Pratikleri (Expression-Bodied Function ve String Interpolation)",
       "date": "2015-06-09T02:50:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "rc",
         "tek-fotoluk-ipucu"
@@ -12923,7 +13007,9 @@
     "/2015/06/11/tek-fotoluk-ipucu-115-csharp-6-0-pratikleri-dictionary-initializer/": {
       "title": "Tek Fotoluk İpucu 115 - C# 6.0 Pratikleri (Dictionary Initializer)",
       "date": "2015-06-11T12:09:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "tek-fotoluk-ipucu"
@@ -12932,7 +13018,9 @@
     "/2015/06/14/tek-fotoluk-ipucu-116-sayisal-mi/": {
       "title": "Tek Fotoluk İpucu 116 - Sayısal mı?",
       "date": "2015-06-14T15:32:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -12955,7 +13043,9 @@
     "/2015/06/22/tek-fotoluk-ipucu-118-fluent-command-line-parser-ile-hello-world/": {
       "title": "Tek Fotoluk İpucu 118 - Fluent Command Line Parser ile Hello World",
       "date": "2015-06-22T04:09:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "tek-fotoluk-ipucu"
       ]
@@ -13382,7 +13472,9 @@
     "/2015/12/10/tek-fotoluk-ipucu-123-ldap-uzerinden-kullanici-dogrulama/": {
       "title": "Tek Fotoluk İpucu 123 - LDAP Üzerinden Kullanıcı Doğrulama",
       "date": "2015-12-10T11:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "authentication",
         "jwt",
@@ -13407,7 +13499,9 @@
     "/2015/12/22/tek-fotoluk-ipucu-125-single-instance-application/": {
       "title": "Tek Fotoluk İpucu 125 - Single Instance Application",
       "date": "2015-12-22T15:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "mutex",
         "tek-fotoluk-ipucu"
@@ -13663,7 +13757,9 @@
     "/2016/04/03/tek-fotoluk-ipucu-129-override-edemedigimiz-tostring-metodunu-genisletmek/": {
       "title": "Tek Fotoluk İpucu 129 - Override Edemediğimiz ToString Metodunu Genişletmek",
       "date": "2016-04-03T06:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "reflection",
@@ -13845,7 +13941,9 @@
     "/2016/06/05/tek-fotoluk-ipucu-132-bir-tipin-ozelliklerine-varsayilan-degerlerini-set-etmek/": {
       "title": "Tek Fotoluk İpucu 132 - Bir Tipin Özelliklerine Varsayılan Değerlerini Set Etmek",
       "date": "2016-06-05T18:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "generics",
         "tek-fotoluk-ipucu"
@@ -14307,7 +14405,9 @@
     "/2017/01/12/tek-fotoluk-ipucu-150-sertifika-tabanli-rest-cagrisi-yapmak/": {
       "title": "Tek Fotoluk İpucu 150 - Sertifika Tabanlı REST Çağrısı Yapmak",
       "date": "2017-01-12T21:15:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "delegates",
         "http",
@@ -14409,7 +14509,9 @@
     "/2017/02/16/tek-fotoluk-ipucu-152-debuggerdisplay-niteligi-ile-debugging-daha-sevimli-olabilir/": {
       "title": "Tek Fotoluk İpucu 152 - DebuggerDisplay Niteliği ile Debugging Daha Sevimli Olabilir",
       "date": "2017-02-16T21:29:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "debugging",
         "tek-fotoluk-ipucu",
@@ -14460,7 +14562,9 @@
     "/2017/02/27/tek-fotolu-ipucu-153-config-sekmesini-harici-dosyadan-okumak/": {
       "title": "Tek Fotolu İpucu 153 - Config Sekmesini Harici Dosyadan Okumak",
       "date": "2017-02-27T02:00:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "dotnet-temelleri"
       ]
@@ -15959,7 +16063,9 @@
     "/2018/08/05/nasil-bir-web-api-tasarimi/": {
       "title": "Nasıl bir Web API Tasarımı?",
       "date": "2018-08-05T21:30:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "http",
         "json",
@@ -15983,7 +16089,9 @@
     "/2018/08/09/simple-stack-ile-bir-baska-tdd-pratigi/": {
       "title": "Simple Stack ile Bir Başka TDD Pratiği",
       "date": "2018-08-09T13:18:00+03:00",
-      "categories": [],
+      "categories": [
+
+      ],
       "tags": [
         "codekata"
       ]
