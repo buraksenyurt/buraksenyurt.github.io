@@ -97,6 +97,7 @@ Kullanıcılar örneğin http://localhost:8085 gibi bir adrese geldiklerinde bu 
 
 Oyuncuları gösteren Players.html sayfası
 
+{% raw %}
 ```text
 <html>
 <head>
@@ -125,6 +126,7 @@ Oyuncuları gösteren Players.html sayfası
 	<a href="/">Go Back</a>
 </body>
 ```
+{% endraw %}
 
 Hımmmm...Bir dakika...Burada oldukça enteresan ifadeler var. Bir back-end geliştiricisi de olsak az buçuk HTML'den çakmadığımızı kim söyleyebilir. Peki bu ikişer küme parantezleri de neyin nesi oluyor? range anahtar kelimesi bir yerlerden tanıdık geliyor aslında. Sözü fazla uzatmayalım. {{ ile }} arasında yazdığımız ifadeler Go diline ait kod satırlarını içeren kısımlar. Yani HTML sayfası içerisine GO kodlarını gömdüğümüzü ifade edebiliriz. Önemli olan kısımsa range ile başlayan satırlar. Burada nokta ile sayfaya gelen veri kaynağı üzerinde index ve nesne çiftleri olarak hareket ediyoruz ({{ }} arasında GO kodundan gelen bir değişkene ulaşmak istediğimizde adının başına nokta koymamız gerekiyor) Bir döngü söz konusu ama key:value çiftlerini dönüyor. Peki bu key:value çiftlerinin kaynağı kim? Döngü tarafından işlenecek olan veriyi server.go içerisinden göndereceğiz. Göndereceğimiz nesne topluluğundaki öğelerin de Id, Nickname ve Level isimli alanları olacak. Alanları HTML içerisine yedirmek için $index ve $player gibi ifadeler kullanıldığına dikkat edelim. Örneğin döngünün o anki nesnesine gelen Player içerisindeki Nickname alanına ulaşmak için $player.Nickname ifadesini, bu ifadenin sonucunu td takıları arasına yazmak için de {{ }} bloğunu kullanıyoruz. E öyleyse gelelim server.go içeriğine.
 

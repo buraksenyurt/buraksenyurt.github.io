@@ -35,6 +35,7 @@ Ancak yazılımcıların bu gibi ihtiyaçlarda yine de yaptıkları bazı temel 
 
 Öğemize DbClassTemplate ismini verebiliriz. TT (Text Template) uzantılı olan bu dosya aslında metinsel içerik ile C#/Vb.Net tabanlı kod parçalarını bir arada ele alıp üretimi gerçekleştirmek üzere kullanılmaktadır. Visual Studio ile entegre çalışmakta olup yaptığımız her Save işlemi sonrası bir üretim gerçekleşmektedir. Söz konusu dosyanın içeriğini ise aşağıdaki gibi oluşturduğumuzu düşünelim.
 
+{% raw %}
 ```csharp
 <#@ template debug="True" hostspecific="True" language="C#" #> 
 <#@ output extension=".cs" #> 
@@ -87,6 +88,7 @@ namespace <#= dbName #>
 <#= builder.ToString() #> 
 }
 ```
+{% endraw %}
 
 Şimdi bu kod parçasında ne yaptığımıza bir bakalım.
 

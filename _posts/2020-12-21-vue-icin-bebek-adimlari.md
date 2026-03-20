@@ -37,6 +37,7 @@ touch vue_is_reactive.html
 
 Kodlarımızı aşağıdaki gibi geliştirelim.
 
+{% raw %}
 ```text
 <html>
 
@@ -86,6 +87,7 @@ Kodlarımızı aşağıdaki gibi geliştirelim.
 
 </html>
 ```
+{% endraw %}
 
 Oluşturduğumuz HTML sayfasını bir tarayıcıda açtıktan sonra özellikle F12 ile Debug moduna geçip Vue uygulama nesnesi olan app değişkeninin data özelliğindeki bookName içeriğini Console üstünden değiştirmeyi deneyin. Bu değişiklik sayfada bookName'i kullanan tüm elementlere yansıyacaktır. Buradan Vue ana bileşeninin (Component) DOM ile etkileşim halinde olduğunu söyleyebiliriz. İşte bu reaktif olmanın bir sonucudur.
 

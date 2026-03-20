@@ -161,6 +161,7 @@ function getRandomValue(min, max) {
 
 Verileri grafiksel ortamda gösterecek olan dashboard isimli react uygulamasının app.js dosyası da şu şekilde tasarlanabilir.
 
+{% raw %}
 ```javascript
 import React, { Component } from 'react';
 import socketIOClient from "socket.io-client";
@@ -265,6 +266,7 @@ class App extends Component {
 
 export default App;
 ```
+{% endraw %}
 
 ## Çalışma Zamanı
 
