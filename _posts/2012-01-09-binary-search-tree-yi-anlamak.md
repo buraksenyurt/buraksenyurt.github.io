@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Binary Search Tree' yi Anlamak"
 date: 2012-01-09 11:01:00 +0300
@@ -15,8 +15,6 @@ tags:
   - generics
 ---
 ![oldradio.jpg](/assets/images/2012/oldradio.jpg)
-
-Merhaba Arkadaşlar,
 
 İnsan hafızası gizemli çalışan ama çoğu zamanda bizleri şaşırtan bir mekaniğe sahiptir. Doğduğumuz andan itibaren 3 yaşına kadar geçen zaman dilimi içerisinde görsel olarak ne izlersek kaparız. Ancak neredeyse bunların hiç birini hatırlamayız.
 

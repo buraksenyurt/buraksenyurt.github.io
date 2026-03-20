@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Klasik ASP Sayfasından REST Servis Çağırmak"
 date: 2016-02-24 12:00:00 +0300
@@ -16,8 +16,6 @@ tags:
   - serialization
 ---
 ![asprest_0.gif](/assets/images/2016/asprest_0.gif)
-
-Merhaba Arkadaşlar,
 
 Özellikle kurumsal çözümler üreten/kullanan firmalarda görev alanların sıklıkla dahil olduğu vakalardan birisi de, eski ve yeni teknolojilerin iç içe kullanıldığı senaryolardır. Bazen geliştirilen ürünler yıllara varan yaşam döngüleri boyunca çalışmaya devam eder. Yenileme maliyetlerinin yüksek olması nedeniyle de tekrardan yazılmak yerine var olan yeni teknolojiler ile entegre edilmeye çalışılırlar.
 

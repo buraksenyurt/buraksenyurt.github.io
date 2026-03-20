@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "EF Core ile MariaDb Kullanımı"
 date: 2018-02-19 17:18:00 +0300
@@ -26,8 +26,6 @@ tags:
   - github
 ---
 ![mariacore_5.gif](/assets/images/2018/mariacore_5.gif)
-
-Merhaba Arkadaşlar,
 
 Son bir kaç aydır Cumartesi gecelerimi bir şeyler yazmak veya araştırmak için değerlendirmekteyim. Bu tip çalışma disiplinlerini daha önceden de denemiş ve epeyce faydasını görmüştüm. Sonuçta üzerinde çalıştığımız yazılım platformları ve ürünler sürekli ve düzenli olarak değişim içerisindeler. Dolayısıyla yeniliklerin ucundan da olsa tutabilmek lazım. Bir anlamda şu meşhur Pomodoro çalışma tekniğini haftalık periyotlara böldüğümü ifade edebilirim.
 

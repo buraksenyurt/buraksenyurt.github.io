@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 135 - Ruby ile Tek Satırda Dosya içi Arama"
 date: 2016-10-18 21:30:00 +0300
@@ -12,8 +12,6 @@ tags:
   - performance
   - visual-studio
 ---
-Merhaba Arkadaşlar,
-
 Geçenlerde notpead++ ile oluşturduğum bir text dosya üzerinde düşünüyordum da...Dosya içerisinde House dizisinde çalan 75 adet şarkının bilgisi vardı. Söyleyenler ve şarkı adları.
 
 ![tfi135_1.gif](/assets/images/2016/tfi135_1.gif)

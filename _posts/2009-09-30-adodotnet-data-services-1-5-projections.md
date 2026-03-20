@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ado.Net Data Services 1.5 - Projections"
 date: 2009-09-30 00:00:00 +0300
@@ -23,8 +23,6 @@ tags:
   - visual-studio
 ---
 ![blg79_Giris.jpg](/assets/images/2009/blg79_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Gün geçmiyorki yazılım teknolojilerinde bir yenilik, bir güncelleme, bir genişletme çıkmasın...Özellikle dünyanın dev yazılım şirketlerinin en büyüğü olarak görebileceğimiz Microsoft tarafında bu gelişme ve güncelleme hızı oldukça yüksek. Gerçektende heyecan verici yenilikler, özellikler ile karşılaşmıyor değiliz. Bu konuya nereden mi geldim?
 

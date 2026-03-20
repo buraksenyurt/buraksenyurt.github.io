@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - Basitleştirilmiş Asp.Net Hosting [Beta 1]"
 date: 2009-08-18 03:10:00 +0300
@@ -17,8 +17,6 @@ tags:
   - serialization
   - visual-studio
 ---
-Merhaba Arkadaşlar,
-
 WCF 4.0 ile birlikte gelen yenilikler bitmek bilmiyor.
 
 ![Smile](/assets/images/2009/smiley-smile.gif)

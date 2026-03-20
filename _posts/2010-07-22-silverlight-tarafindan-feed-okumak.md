@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Silverlight Tarafından Feed Okumak"
 date: 2010-07-22 09:05:00 +0300
@@ -25,8 +25,6 @@ tags:
   - visual-studio
 ---
 ![blg176_Giris.jpg](/assets/images/2010/blg176_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Yeni bir maceraya hazır mısınız? Hureyyy dediğinizi duyar gibiyim. Bildiğiniz üzere Internet kaynaklarının takibinin kolay bir şekilde yapılabilmesi adına RSS veya Atom formatındaki Feed içeriklerinden sıklıkla yararlanmaktayız. Blog, Community, News Group ve benzeri pek çok internet kaynağı, güncel içeriklerini yayınlamak amacıyla global olarak standart hale getirilmiş olan bu formatları kullanmaktalar.
 

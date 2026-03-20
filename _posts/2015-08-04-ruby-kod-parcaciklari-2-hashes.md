@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları - 2 (Hashes)"
 date: 2015-08-04 21:30:00 +0300
@@ -10,8 +10,6 @@ tags:
   - linq
   - workflow-foundation
 ---
-Merhaba arkadaşlar,
-
 Ruby programlama dilinde de veri yapıları (Data Structures) oluşturmak için kullanılan tiper vardır. Dictionary benzeri koleksiyon olarak kabul edebileceğimiz Hash sınıfı bunlardan birisidir. Benzersiz anahtar (key) ve değer (value) çiftlerinden oluşan Hash nesne örneklerinin kullanımı oldukça kolaydır.
 
 Aşağıdaki Ruby Kod Parçacığı ile Hash tipinden koleksiyonları kısaca tanımaya çalışalım. [Bir önceki kod parçacığında](Ruby Kod Parçacıkları - 1.md) olduğu gibi bu betiği de rb uzantılı bir dosya (örneğin Hashes.rb) olarak kaydedip komut satırından Ruby aracı ile çalıştırabiliriz.

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Workflow Services - Custom Authorization"
 date: 2010-03-22 04:30:00 +0300
@@ -23,8 +23,6 @@ tags:
   - rc
 ---
 ![blg145_Giris.jpg](/assets/images/2010/blg145_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Aşçılık zevkli ama bir o kadarda zor bir zanaattır. Hatta bazen o kadar zor bir zanaat olur ki, aşcının aldığı maaşı pek çok yazılımcı iki yılda kazanamaz. Tabi bu tip aşçılar işin ehli olan kişilerdir. Heleki tek bir mutfak değilde dünya mutfağının seçkin olanlarına ait becerileri bulunanlara paha biçilemez. Türk Mutfağından Japon mutfağına, Meksika yemeklerinden İtalyan spesiyallerine, Fransız tatlılarından Okyanus deniz ürünlerine ve daha nicelerine...
 

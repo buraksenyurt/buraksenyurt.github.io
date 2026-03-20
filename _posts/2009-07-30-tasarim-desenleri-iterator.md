@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Desenleri - Iterator"
 date: 2009-07-30 12:52:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![blg53_Giris.jpg](/assets/images/2009/blg53_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Küçüklüğümde pek çoğumuz gibi sahip olduğum bir pul koleksiyonum vardı. Halen daha sakladığım pullar bulunmaktadır. Hatta o zamanlarda, çocuklar posta aracılığıyla yurt dışından arkadaşlar edinir, birbirleriyle pul değiş tokuşu bile yaparlardı. Düşünsenize, hem yabancı dilinizi geliştiriyor hem pul koleksiyonunuzu genişletiyorsunuz.
 

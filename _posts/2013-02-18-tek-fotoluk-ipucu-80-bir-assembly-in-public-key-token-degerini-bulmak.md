@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 80–Bir Assembly’ ın Public Key Token Değerini Bulmak"
 date: 2013-02-18 02:00:00 +0300
@@ -8,8 +8,6 @@ tags:
   - tek-fotoluk-ipucu
   - dotnet
 ---
-Merhaba Arkadaşlar,
-
 Diyelim ki elinizde projeye referans ettiğiniz bir.Net assembly dosyası bulunmakta. Örneğin Log4Net
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_153.png)

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bir Ruby Uygulamasını Google Cloud Platform Üzerine Taşımak"
 date: 2018-01-27 17:00:00 +0300
@@ -17,8 +17,6 @@ tags:
   - visual-studio
 ---
 ![rubyongcp_10.gif](/assets/images/2018/rubyongcp_10.gif)
-
-Merhaba Arkadaşlar,
 
 "Futbol basit bir oyundur. 22 kişi 90 dakika boyunca bir topun peşinde koşar ve sonunda her zaman Almanlar kazanır." demiş bizim de ne yazık ki yakından tanıdığımız Gary Lineker. Konumuzla ne alakası var derseniz. Az sonra onun bu sözünü buluta alacağız.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Basit HTTP Web Server Yapımı"
 date: 2017-02-20 23:48:00 +0300
@@ -22,8 +22,6 @@ tags:
   - microservices
 ---
 ![gorest_6.gif](/assets/images/2017/gorest_6.gif)
-
-Merhaba Arkadaşlar,
 
 Go dili ile ilgili maceralarım devam ediyor. Dilin temel özelliklerini anlamaya çalışmak bir yana, aralarda merak ettiğim farklı konuları da incelemeye çalışıyorum. Uygulamalı örnekler üzerinden gitmek de bir programlama dilini öğrenirken tercih ettiğim yollardan birisi. Size de tavsiye ederim.
 

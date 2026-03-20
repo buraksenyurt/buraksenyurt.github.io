@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 82–Internete Bağlı mıyız? (Round II)"
 date: 2013-03-25 20:30:00 +0300
@@ -8,8 +8,6 @@ tags:
   - tek-fotoluk-ipucu
   - http
 ---
-Merhaba Arkadaşlar,
-
 [Bir önceki ipucumuzda](http://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-82-Internete-Baglmiyiz) wininet.dll WinAPI kütüphanesinden yararlanarak, internet’ e bağlı olup olmadığımızı nasıl öğrenebileceğimizin fotoğrafını çekmiştik. Tahmin edeceğiniz üzere söz konusu senaryo için tek yol bu değil. Örneğin aşağıdaki gibi bir kullanımı da tercih edebilirsiniz.
 
 [![tfi_82](/assets/images/2013/tfi_82_thumb.png)](/assets/images/2013/tfi_82.png)

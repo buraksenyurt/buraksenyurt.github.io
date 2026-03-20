@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net Core'da Bir WebSocket Macerası"
 date: 2017-10-18 14:29:00 +0300
@@ -19,8 +19,6 @@ tags:
   - github
 ---
 ![websockets_5.gif](/assets/images/2017/websockets_5.gif)
-
-Merhaba Arkadaşlar,
 
 Meşhur ve özlenen telefon markası Nokia'nın o başarılı sloganını hatırlıyor musunuz?, "Nokia, connecting people":) İşte bugünkü konumuz da o jeneriği aratmayacak türden. "WebSockets, connecting applications."(Burayı o adamın ses tonu ile zihninizde canlandırın derim) Evet berbat bir giriş oldu ama olsun. Gelelim konumuza.
 

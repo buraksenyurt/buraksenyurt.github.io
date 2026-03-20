@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Silverlight Tarafında HTTP Bazli Servisleri Kullanmak"
 date: 2010-07-12 00:55:00 +0300
@@ -27,8 +27,6 @@ tags:
   - rc
 ---
 ![blg175_Giris.jpg](/assets/images/2010/blg175_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Eğitmenlik yaptığım yıllarda Microsoft'un ders kitaplarında yer alan LAB çalışmalarını mümkün mertebe yapmaya ve yaptırmaya çalışırdım. Hatta çoğu zaman eğitimlere hazırlanırken sık sık bu lab çalışmalarını kendim yapar ve hatta ek ilaveler ile daha da eğlenceli hale getirmeye çalışırdım. Tabi bazen elimizde lab yapacağımız kitaplarımız olmazdı ki o ayrı bir hikaye.
 

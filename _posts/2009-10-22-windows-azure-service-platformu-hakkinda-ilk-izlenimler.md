@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Windows Azure Service Platformu Hakkında İlk İzlenimler"
 date: 2009-10-22 07:15:00 +0300
@@ -16,8 +16,6 @@ tags:
   - visual-studio
 ---
 ![blg91_Giris.jpg](/assets/images/2009/blg91_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Güneşli açık bir hava ve sessiz bir gün yada gece...Deniz kenarında veya caddenin herhangibir köşesinde...Mutlaka zaman zaman gökyüzüne bakıp bulutları bazı nesnelere benzettiğimiz olmuştur. Yandaki resimde görüldüğü gibi gülen bir bulutla karşılaşma ihtimalimiz az olsada, arabaya, ördeğe veya başka bir şekle benzettiğimiz bulut sayısı oldukça fazladır. Bugünkü yazımızda bulutlar ile pek bir haşır neşir olacağımızı düşünebilirsiniz. Ancak tabiki yazılımsal anlamda
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Rest Starter Kit Preview 2 ile Twitter Reader"
 date: 2009-08-04 23:47:00 +0300
@@ -16,8 +16,6 @@ tags:
   - visual-studio
 ---
 ![blg56_giris.gif](/assets/images/2009/blg56_giris.gif)
-
-Merhaba Arkadaşlar,
 
 Minik bir çocukken Televizyon bağımlılığı (Malesef bu aptal kutuda çok vakiy geçirebiliyor çocuklar ![Frown](/assets/images/2009/smiley-frown.gif)) nedeniyle pek çok çizgi filmi izlediğimi hatırlıyorum. Voltran, Transformers, Red Kit ve Daltonlar, Denver The Last Dinasour, Clementine filan derken arada sıradada "Bi kedi gördüm sanki" diyen Tweety
 

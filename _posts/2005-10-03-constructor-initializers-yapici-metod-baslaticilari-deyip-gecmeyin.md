@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Constructor Initializers (Yapıcı Metod Başlatıcıları) Deyip Geçmeyin"
 date: 2005-10-03 09:00:00 +0300
@@ -8,8 +8,6 @@ tags:
   - csharp
   - performance
 ---
-Değerli Okurlarım Merhabalar,
-
 Yapıcı metodlar nesne yönelimli programlamada çok büyük öneme sahiptir. Uygulamada oluşturduğumuz her bir nesnenin en az bir yapıcı metodu (ki bu varsayılan yapıcı metodtur) vardır. Kuşkusuz ki yapıcı metodlar (constructors), bir nesne örneğinin kapsüllediği verilere başlangıç değerlerinin atanabileceği en elverişli elemanlardır.
 
 ![dikkat.gif](/assets/images/2005/dikkat.gif)

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Bir Go Paketini Ruby'den Çağırmak"
 date: 2017-06-09 12:33:00 +0300
@@ -13,8 +13,6 @@ tags:
   - ruby
 ---
 ![gofromruby_1.gif](/assets/images/2017/gofromruby_1.gif)
-
-Merhaba Arkadaşlar,
 
 Pek çok kaynak GO dilinin ileride C'nin yerini alabileceği yönünde görüşler belirtmekte. Özellikle IoT alanında bu dilin daha fazla ön plana çıkacağı vurgulanıyor. Bu düşüncenin haklı olabileceği yönünde bazı tespitlerim var.
 

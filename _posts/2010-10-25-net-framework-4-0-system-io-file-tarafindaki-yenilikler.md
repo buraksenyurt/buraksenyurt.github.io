@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net Framework 4.0 System.IO.File Tarafındaki Yenilikler"
 date: 2010-10-25 21:45:00 +0300
@@ -15,8 +15,6 @@ tags:
   - visual-studio
 ---
 ![blg199_Giris_.jpg](/assets/images/2010/blg199_Giris_.jpg)
-
-Merhaba Arkadaşlar,
 
 Bu yazımızda ele alacağımız konu ile ilişkili olarak kullanacağım giriş resmi için uzun bir süre araştırma yapmak zorunda kaldım. Sanırım yazıyı yazdığım bu sıcak yaz gününde devrelerim istediğim randımanı vermedi. Ancak en azından yandaki resim, anlatacağım ilk konu ile doğrudan alakalı olarak düşünülebilir. Bu resimde üst üste binmiş onlarca metre yüksekliğe varan dosya dolapları olduğu ifade edilemekte. Bunların hepsinin tek bir dosya içerisinde birleştirildiğini düşünün. Üstelik bu dosya text tabanlı olsun.
 

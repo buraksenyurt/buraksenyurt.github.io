@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Generic Mimaride Kısıtlamaların(Constraints) Kullanımı"
 date: 2005-12-31 08:00:00 +0300
@@ -9,8 +9,6 @@ tags:
   - dotnet
   - generics
 ---
-Değerli Okurlarım Merhabalar,
-
 Bu makalemizde.Net 2.0 ile birlikte gelen Generic mimarisinin uygulanışında, kısıtlamaların rolünü basit örnekler ile incelemeye çalışacağız. Generic mimari her ne kadar tür bağımsız algoritmaların geliştirilmesine izin versede, bazı durumlarda çeşitli zorlamaların uygulanmasınıda gerektirir. Örneğin generic olması planlanan tiplerin sadece referans tipleri ile çalışmasını isteyebiliriz. Generic bir tipe her hangibir zorunluluk kuralını uygulayabilmek için where anahtar sözcüğünü içeren bir ek ifade kullanılır. Bu ifadeler 5 adettir ve aşağıdaki tabloda gösterilmektedir.
 
 Koşul

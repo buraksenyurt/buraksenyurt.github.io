@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Custom Activity Designer Geliştirmek"
 date: 2012-06-12 07:00:00 +0300
@@ -19,8 +19,6 @@ tags:
   - datatable
 ---
 ![Challenge.jpg](/assets/images/2012/Challenge.jpg)
-
-Merhaba Arkadaşlar,
 
 İnsanın kendisini en çok geliştireceği yer gerçek çalışma sahaları/ortamlarıdır. Ortaya konan ihtiyaçlar ne zaman ki sizin kullanmakta olduğunuz araçların (Tools) sınırlarını zorlamaya başlar, bu noktadan itibaren içerisine gireceğiniz her çeşit mücadele size inanılmaz derece tecrübe ve bilgi katacaktır. Tabi bu know-how bilgisini saklayabilir, kendiniz için dökümante edebilir veya kuralları çerçevesinde paylaşabilirsiniz
 

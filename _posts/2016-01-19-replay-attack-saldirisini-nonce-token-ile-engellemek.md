@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Replay Attack Saldırısını Nonce Token ile Engellemek"
 date: 2016-01-19 00:00:00 +0300
@@ -16,8 +16,6 @@ tags:
   - visual-studio
 ---
 ![Viking_minion.gif](/assets/images/2016/Viking_minion.gif)
-
-Merhaba Arkadaşlar,
 
 Bir zamanlar WCF servisleri ile ilişkili epeyce çalışma yapmış ve öğrendiklerimi kaleme almaya çalışmıştım. En çok zorlandığım konulardan birisi ise servislerin güvenliğini sağlamaktı. (Mesaj içeriklerinin korunmasından tutun, uç noktalar arası haberleşmenin güvenilik olmasına kadar dikkat edilmesi gereken pek çok nokta var)
 

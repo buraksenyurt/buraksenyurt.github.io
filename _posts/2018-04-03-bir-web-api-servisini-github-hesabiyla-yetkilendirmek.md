@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bir Web API Servisini Github Hesabıyla Yetkilendirmek"
 date: 2018-04-03 22:49:00 +0300
@@ -23,8 +23,6 @@ tags:
   - github
 ---
 ![githuboauth_8.gif](/assets/images/2018/githuboauth_8.gif)
-
-Merhaba Arkadaşlar,
 
 Teknik konularda yazı yazmaya çalışmanın en zor yanlarından birisi de anlatımı basitleştirmek. Şüphesiz ki uğraştığımız konular bazen anlamakta güçlük çektiğimiz karmaşıklıkta olabiliyor. Böyle konuların bırakın anlatılması öğrenilmesi de güçleşebiliyor. Şahsen kendi adıma bazı konuları anlamak için epey çaba sarf ettiğimi söylesem yeridir. Üstelik bu konuları zaman içerisinde gerçek hayat senaryolarında kullanmaz veya üzerinde saatler geçirmessek unutuyoruz da. Oysaki bir konuyu basitçe anlatabiliyorsak hem iyi anlamışız demektir hem de verimli bir çalışma safhası geçirmişizdir. Ne demiş Austion Freeman;
 

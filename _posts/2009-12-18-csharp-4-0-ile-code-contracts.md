@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 4.0 ile Code Contracts"
 date: 2009-12-18 05:40:00 +0300
@@ -13,8 +13,6 @@ tags:
   - visual-studio
 ---
 ![blg120_Giris.jpg](/assets/images/2009/blg120_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Microsoft gibi dev yazılım firmalarının araştırma geliştirme ekipleri ve labarotuvar çalışmaları her zaman ilgimi çekmiştir. Herhalde pek çok yazılımcının hayalleri arasında bu tip firmalarda çalışmak ve yeni fikirleri ortaya atarak diğer yazılımcılara sunmak yer almaktadır.
 

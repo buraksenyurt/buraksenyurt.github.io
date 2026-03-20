@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Excel ve Entity Framework Konuşuyor"
 date: 2013-06-30 17:57:00 +0300
@@ -17,8 +17,6 @@ tags:
   - visual-studio
 ---
 [![handshake](/assets/images/2013/handshake_thumb.jpg)](/assets/images/2013/handshake.jpg)[Orjinal Yazım Tarihi 03-05-2013]
-
-Merhaba Arkadaşlar,
 
 Artık uygulamaların birbirleri ile konuşmaları çok ama çok kolay. Bu gerçekten önemli bir mesele. Özellikle farklı segmentlerden insanların bir araya geldiği bilişim toplumlarında. Kimi kullanıcı için Office Excel, Word veya Powerpoint çok şey ifade ederken, kimi kullanıcı içinde SQL Management Studio ortamında hazırlanan karmaşık bir sorguya bakmak daha anlamlı olabiliyor. Ya da bir Web sayfası üzerinden alınan raporlar şirketin Muhasebe Şefi için değerli iken, kimisi SSRS ile elde edilen raporları mobil cihazında görmeyi tercih edebiliyor.
 

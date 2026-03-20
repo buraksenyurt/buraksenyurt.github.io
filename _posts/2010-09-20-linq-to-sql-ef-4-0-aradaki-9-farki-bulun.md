@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "LINQ to SQL – EF 4.0 (Aradaki 9 Farkı Bulun)"
 date: 2010-09-20 15:07:00 +0300
@@ -13,8 +13,6 @@ tags:
   - sql-server
   - xml
 ---
-Merhaba arkadaşlar,
-
 Evet çok doğru. Hiç bu kadar kısa ve öz yazmamıştım daha önceden. Ama zaman zaman bu kadar kısa yazıp çok fazla şey ifade edilebileceğine de inanmaktayım
 
 ![Wink](/assets/images/2010/smiley-wink.gif)

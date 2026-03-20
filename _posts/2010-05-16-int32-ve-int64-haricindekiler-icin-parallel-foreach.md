@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Int32 ve Int64 Haricindekiler için Parallel.ForEach"
 date: 2010-05-16 21:46:00 +0300
@@ -12,8 +12,6 @@ tags:
   - visual-studio
 ---
 ![blg165_Giris.jpg](/assets/images/2010/blg165_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Bir kaç yıl öncesine kadar Bizitek firmasına Junior Developer olarak görev almaktaydım. Bu şirkette çalıştığım süre boyunca pek çok projede görev alma fırsatım oldu. Ancak genellikle şirketin iş akışları üzerine geliştirdiği bir ürünün kurulması ve ihtiyaçlara göre düzenlenmesi ile ilgilenmekteydim. Söz konusu uygulamanın belki de en önemli özelliklerinden birisi, kurulduğu firmanın organizasyon ağacını içermesi ve buna göre akış içi adımların kolayca tesis edilebilmesiydi. İşte zaten bazı sıkıntılar da burada başlıyordu. Nitekim bazı firmaların organizasyonel yapıları düzgün değildi. En sık rastlanan vakalardan birisi, herhangibir çalışanın aslında birden fazla görev üstlenmesi nedeniyle organizasyon ağacında birden fazla yerde var olabilmesiydi.
 

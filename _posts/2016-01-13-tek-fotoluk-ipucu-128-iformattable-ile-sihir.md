@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 128 - IFormattable ile Sihir"
 date: 2016-01-13 19:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - javascript
   - serialization
 ---
-Merhaba Arkadaşlar,
-
 Bildiğiniz üzere.Net Framework çatısı altında bir çok arayüz (Interface) vardır. Özellikle plug-in tabanlı geliştirmelerde sıklıkla başvurduğumuz bu arayüzleri zaman zaman inceliyor ve nerelerde kullanılabileceğine bakıyorum. Yine bu araştırmaları yaptığım bir gün IFormattable arayüzünün kullanımına ilişkin örnekler ile karşılaştım.
 
 Senaryomuz şu; bir nesne örneğini String sınıfının Format metodu ile kullanırken {0:JSON} gibi bir ifade kullanabilmek ve çalışma zamanı içeriğini JSON (JavaScript Object Notation) formatında elde etmek istiyoruz. Hatta {0:ALL}, {0:ID,Title} gibi ifadelere de yer vermek istiyoruz.

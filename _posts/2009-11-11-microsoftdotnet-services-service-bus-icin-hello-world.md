@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft.Net Services - Service Bus için Hello World"
 date: 2009-11-11 00:45:00 +0300
@@ -16,8 +16,6 @@ tags:
   - visual-studio
 ---
 ![blg97_Giris.jpg](/assets/images/2009/blg97_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Bu gün itibairyle İstanbul'da sağnak yağışlı bir hava hakim. Oysaki bir kaç güne kadar güneşli ve ılıman bir hava vardı. Hal böyle olunca Cloud Computing ile ilgili bir şeyler karıştırmanın tam vaktidir diye düşündüm. Daha önceki [Windows Azure Service Platformu Hakkında İlk İzlenimler](https://www.buraksenyurt.com/post/Windows-Azure-Service-Platform-What-Is)başlıklı yazımızda [Amazon'](http://www.amazon.com)dan Cloud Computing with Windows Azure Platform isimli bir kitabı sipariş ettiğimi ve önümüzdeki dönemlerde bu konu ile ilişkili yazılarımı sizlerle paylaşacağımı belirtmiştim.
 

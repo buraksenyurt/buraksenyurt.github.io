@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Caching Application Block Merakı"
 date: 2009-06-20 17:52:00 +0300
@@ -22,8 +22,6 @@ tags:
   - visual-studio
 ---
 ![blg34_1.jpg](/assets/images/2009/blg34_1.jpg)
-
-Merhaba Arkadaşlar,
 
 Az önce 1966 yılında çevrilmiş olan ve küçüklüğümde bol bol izlediğim nefis bir filmi belkide 179ncu kez tekrardan seyrettim. Eskiler aşağıdaki resimden hangi film olabileceğini tahmin edebilirler. Yeni nesilden seyretmeyen varsa eğer [The Good, The Bad and The Ugly](http://en.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly) filmini mutlaka tedarik edip izlesinler. Peki bunun anlatacağım konu ile bir ilgisi var mı? Hayır yok.
 

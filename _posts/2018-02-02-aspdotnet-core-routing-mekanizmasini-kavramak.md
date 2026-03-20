@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net Core Routing Mekanizmasını Kavramak"
 date: 2018-02-02 04:24:00 +0300
@@ -21,8 +21,6 @@ tags:
   - github
 ---
 ![corerouting_11.gif](/assets/images/2018/corerouting_11.gif)
-
-Merhaba Arkadaşlar,
 
 Güzel otomobilleri hepimiz severiz. Özellikle spor olanlarını. Benim favori araçlarımdan birisi ise Audi RS8. 2017 model Türkiye satış fiyatı 430 bin Avro civarındaydı. Gerçekten çok yüksek bir rakam. Ne oldu da birden onunla yollarımız kesişti diye düşünebilirsiniz. Bir deneme sürüşüne çıktım demek isterdim ama... Aslında olay West-World üzerinde Asp.Net Core routing mekanizmasını incelerken meydana geldi. Bir şekilde dile benden ne dilersen tadındaki URL path'in çalışma zamanına Audi RS8 yazmış bulundum. Web sunucusunun bana verdiği cevapsa oldukça hoştu. "Oldu bil!" Onunla aramızda nasıl böyle bir muhabbet gerçekleşti merak ediyor olmalısınız. Gelin Asp.Net Core routing mekanizmasını yakından incelemeye çalışalım.
 

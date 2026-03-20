@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net Core Web API için Custom MiddleWare Yazmak"
 date: 2017-12-18 06:01:00 +0300
@@ -22,8 +22,6 @@ tags:
   - microservices
 ---
 ![custom_mw4.gif](/assets/images/2017/custom_mw4.gif)
-
-Merhaba Arkadaşlar,
 
 Uzun zamandır televizyon dizisi izlemiyorum. Aslında bir dönem düzenli olarak takip ettiğim diziler vardı. Bir tanesi de usta oyuncular Benedict Cumberbatch (Sherlock Holmes) ve Martin Freeman (Dr. John Watson) ın oynadığı Sherlock Holmes idi. Bu Cumartesi gecesi bir şekilde dizinin bir bölümüne rastladım. Keyifli bir bölüm tekrarı yaptım. Oyunculuklara yine hayran kaldım. Sherlock'un keskin zekasına, Watson'un her zamanki sorgulayıcı düşünce tarzının eklendiği bir bölümdü.
 

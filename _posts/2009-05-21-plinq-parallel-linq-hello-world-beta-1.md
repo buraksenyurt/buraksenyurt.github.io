@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "PLINQ (Parallel LINQ) - Hello World [Beta 1]"
 date: 2009-05-21 19:11:00 +0300
@@ -18,8 +18,6 @@ tags:
   - generics
   - visual-studio
 ---
-Merhaba Arkadaşlar,
-
 Bildiğiniz gibi son yazımı deniz kenarında bir kafede tatildeyken yazmıştım
 
 ![Wink](/assets/images/2009/smiley-wink.gif)

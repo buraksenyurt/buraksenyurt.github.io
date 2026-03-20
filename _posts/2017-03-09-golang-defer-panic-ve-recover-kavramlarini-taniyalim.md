@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - defer, panic ve recover Kavramlarını Tanıyalım"
 date: 2017-03-09 21:32:00 +0300
@@ -9,8 +9,6 @@ tags:
   - go
 ---
 ![minionpanic.gif](/assets/images/2017/minionpanic.gif)
-
-Merhaba Arkadaşlar,
 
 Gopher'ın Go diline kattığı sevimlilik ortada. Sadece maskotu değil bazı kavramları da oldukça motive edici bu dilin. Bir.Netçi olarak ortama hata fırlatmak istediğim de kullandığımız throw new Exception gibi bir terminoloji yerine panic şeklinde bir anahtar kelimenin kullanılması aslında kasttettiğim. Hatta go dilinin resmi dokümanlarında "Panic is a built-in function that stops the ordinary flow of control and begins panicking." şeklinde bir cümle ile bu terim hoş bir şekilde ifade edilmiş. En azından beni tebessüm ettirdi fotoğraftaki minion'u ise biraz ürküttü.
 

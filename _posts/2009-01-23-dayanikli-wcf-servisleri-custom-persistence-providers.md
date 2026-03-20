@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Dayanıklı WCF Servisleri(Custom Persistence Providers)"
 date: 2009-01-23 12:00:00 +0300
@@ -19,8 +19,6 @@ tags:
   - generics
   - visual-studio
 ---
-Değerli Okurlarım Merhabalar,
-
 Hatırlayacağınız üzere bir önceki makalemizde, dayanıklı WCF servislerinin (Durable WCF Services) nasıl geliştirilebileceğini incelemeye başlamıştık. Kısaca hatırlatmak gerekirse dayanıklı WCF servislerini şu şekilde tanımlayabiliriz; belirli bir süre için durumlarını bir depolama alanında saklayarak koruyabilen ve t süre sonrasında istemci uygulama tarafından bırakıldığı haliyle kullanılabilen servisler. Konunun ilk aşamasında, varsayılan olarak SQL sunucusu üzerindeki bir depolama alanının kullanıldığı senaryo üzerinde durmuştuk. (Hatırlayaım, SQL sunucusu üzerinde veriyi saklamak yönetsel açıdan pek çok işi kolaylaştırmaktadır.) Bu makalemizde ise kaldığımız yerden devam edeceğiz ve aşağıdaki iki soruya yönelik çözümler geliştirmeye gayret edeceğiz.
 
 1- İstemci uygulama servis örneğini kullandıktan sonra kapatılır (İstemcinin kapatma işlemi sırasında servis örneğinin saklama alanından silinmesini sağlayacak metodu çağırmadığı varsayılır). Bu durumda t süre sonrasında istemci uygulama aynı servis örneğinin içeriğini kullanmak isterse nasıl bir süreç izlenmeli ve kodlama yapılmalıdır?

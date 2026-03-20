@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu–70–Yine Newtonsoft Json.net ve dynamic"
 date: 2012-11-12 02:30:00 +0300
@@ -9,8 +9,6 @@ tags:
   - json
   - dotnet
 ---
-Merhaba arkadaşlar,
-
 Diyelim ki elimizde aşağıdaki gibi bir JSON içeriği var.
 
 ```json

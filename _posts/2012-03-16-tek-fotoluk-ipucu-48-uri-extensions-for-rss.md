@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu-48(Uri Extensions for RSS)"
 date: 2012-03-16 00:00:00 +0300
@@ -7,8 +7,6 @@ categories:
 tags:
   - tek-fotoluk-ipucu
 ---
-Merhaba Arkadaşlar,
-
 Siz de benim gibi aklınıza geldikçe ve vaktiniz oldukça Extension Method (Genişletme Metodu) yazmaya çalışanlardan mısınız?
 
 ![Smile](/assets/images/2012/smiley-smile.gif)

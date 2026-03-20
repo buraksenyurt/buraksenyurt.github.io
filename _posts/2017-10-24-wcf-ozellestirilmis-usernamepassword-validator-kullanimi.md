@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF - Özelleştirilmiş UsernamePassword Validator Kullanımı"
 date: 2017-10-24 14:18:00 +0300
@@ -13,8 +13,6 @@ tags:
   - authentication
 ---
 ![custa_8.gif](/assets/images/2017/custa_8.gif)
-
-Merhaba Arkadaşlar,
 
 Yeni ekibimdeki çalışmalar doğrultusunda bir süredir servis tabanlı mimarimizde WCF üzerine oturan hafif bir çatı oluşturmaya çalışmaktayız. Önemli ölçüde ilerleme kaydettik. Tabii WCF'in en temel fonksiyonelliklerini kullanırken ne kadar geniş bir alan olduğunun da farkına varıyoruz. Bizi zorlayan pek çok nokta var. Bunlardan birisi de güvenlik. Neredeyse sayısız kombinasyon seçeneği ile WCF tarafındaki güvenlik yetenekleri çok geniş (Bazen ne istediğimizi bile bilemez duruma geldiğimizi itiraf etmek isterim) Hal böyle olunca benim de eski bilgilerimi tazeleyip bazı şeyleri yeniden araştırmam ve öğrenmeye çalışmam gerekti. En çok takıldığım noktalardan birisi de geliştirme ortamında sertifikalar üretip bunları WCF tarafında kullanmak. Not aldığım konular üzerinden adım adım giderken belki benim yolumdan geçen veya geçecek olan arkadaşlar da vardır diye vakalardan birisini bloğumda kaleme almak istedim.
 

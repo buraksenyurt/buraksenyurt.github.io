@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WF 4.0 - Bookmarks [RC]"
 date: 2010-02-19 05:04:00 +0300
@@ -15,8 +15,6 @@ tags:
   - rc
 ---
 ![blg154_Giris.jpg](/assets/images/2010/blg154_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Çalışmakta olduğum yazılım şirketinin çok yakınında kocaman bir alışveriş merkezi bulunmakta. Bazen öğle yemekleri için alışveriş merkezinin tahsis ettiği servisler ile oraya gidiyoruz. Alışveriş merkezi olduğu için tehlikeli bir yer olduğunu da söyleyebiliriz.
 

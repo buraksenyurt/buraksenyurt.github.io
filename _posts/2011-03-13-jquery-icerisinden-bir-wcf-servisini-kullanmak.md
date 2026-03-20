@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "jQuery İçerisinden Bir WCF Servisini Kullanmak"
 date: 2011-03-13 21:27:00 +0300
@@ -28,8 +28,6 @@ Masadaki metal peçetelikten arkasına doğru baktığında çok fazla dikkat ç
 “Bay Netspecter…Ben müşteriniz jQuery” der
 
 ![Smile with tongue out](/assets/images/2011/wlEmoticon-smilewithtongueout.png)
-
-Merhaba Arkadaşlar,
 
 Son yıllarda özellikle Web uygulamalarında jQuery’ nin oldukça fazla yaygınlaştığını görmekteyiz. Özellikle Asp.Net MVC (Model View Controller) disiplinin de…Ben her ne kadar Javascript vey jQuery tarafında uzman olmasam da sonuçta bu istemcilerin çağrıda bulunabileceği WCF (Windows Communication Foundation) servisleri olabileceğini biliyorum
 

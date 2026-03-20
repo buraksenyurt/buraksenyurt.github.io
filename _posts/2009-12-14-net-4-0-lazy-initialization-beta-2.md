@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net 4.0 - Lazy Initialization [Beta 2]"
 date: 2009-12-14 01:30:00 +0300
@@ -17,8 +17,6 @@ tags:
   - thread-safety
 ---
 ![blg96_Giris.jpg](/assets/images/2009/blg96_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Eminim hepimiz arada sırada tembellik yapıyor ve ilk bulduğumuz rahat köşeye kıvrılıp hiç bir şeyi düşünmeden rahatça uyuyabiliyoruz. Eğer bulunduğumuz yer uyumaya çok müsait değilse yandaki kedi gibi ortama ayak uydurup yinede uyuyoruz
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Numaralandırıcıları Kullanmak İçin Bir Sebep"
 date: 2005-08-28 12:00:00 +0300
@@ -9,8 +9,6 @@ tags:
   - sql-server
   - dataset
 ---
-Değerli Okurlarım Merhabalar,
-
 Bildiğiniz gibi numaralandırıcılar (enum sabitleride diyebiliriz) yardımıyla sayısal değerleri kod içerisinde daha anlamlı isimlendirmelerle ifade edebiliriz. Uygulama geliştirirken çoğunlukla framework'ün parçası olan pek çok enum sabitini kullanmaktayız. Örneğin veritabanı uygulamalarında sıkça kullandığımız CommandBehavior, DataRowState, DataRowVersion sabitleri gibi. Bu sistemin temel amacı, bu tiplerin sahip oldukları değerlerin sayısal karşılıklarına ihtiyacımızın olmasıdır.
 
 Öyle ki, uygulama içerisinde yer alan her hangi bir fonksiyonun davranışı için sayısal bir karşılaştırma yapmamız gereken yerlerde, bu sayısal değerin karşılığı olan bir ismi kullanmak çok daha mantıklıdır. Bu geliştirme açısından zaman kazandırıcı bir teknikten de ötedir. Çoğu zaman projelerimizde kendi numaralandırıcı tiplerimizi tanımlama ihtiyacı duyarız. İşte bu günkü makalemizde bizi numaralandırıcı kullanmaya itecek bir nedeni incelemeye çalışacağız.

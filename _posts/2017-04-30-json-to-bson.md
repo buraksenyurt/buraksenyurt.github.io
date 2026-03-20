@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "JSON to BSON"
 date: 2017-04-30 21:36:00 +0300
@@ -16,8 +16,6 @@ tags:
   - generics
 ---
 ![bson.gif](/assets/images/2017/bson.gif)
-
-Merhaba Arkadaşlar,
 
 Sanıyorum her.Net programcısının takım çantasında yer alan paketlerden birisi de Newtonsoft'un JSON serileştirme kütüphanesidir. JSON (JavaScriptObjectNotation) formatı, XML (eXtensibleMarkupLanguage) şemasından sonra hafif ve az yer kaplama özellikleri nedeniyle çokça tercih edilen standartlardan birisi haline gelmiştir. Diğer yandan JSON içeriklerin Binary formatta serileştirilmiş versiyonu olarak adlandırılan BSON formatı da sıklıkla kullanılmaktadır.
 

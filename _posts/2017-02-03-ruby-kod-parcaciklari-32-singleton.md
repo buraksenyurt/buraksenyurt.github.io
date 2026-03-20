@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 32 - Singleton"
 date: 2017-02-03 21:23:00 +0300
@@ -8,8 +8,6 @@ tags:
   - ruby
 ---
 ![rfun.gif](/assets/images/2017/rfun.gif)
-
-Merhaba Arkadaşlar,
 
 Ruby'nin oldukça geniş bir program kütüphanesi bulunuyor. Fırsat buldukça bazılarını incelemeye çalışıyorum. Geçtiğimiz günlerde Singleton isimli bir modüle rastladım. Kısaca tasarım kalıplarından (Design Patterns) olan Singleton deseninin kolayca uygulanmasını sağlıyor.
 

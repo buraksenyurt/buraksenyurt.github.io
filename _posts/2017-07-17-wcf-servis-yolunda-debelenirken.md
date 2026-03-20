@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Servis Yolunda Debelenirken"
 date: 2017-07-17 21:47:00 +0300
@@ -18,8 +18,6 @@ tags:
   - testing
 ---
 ![wcf_message_8.gif](/assets/images/2017/wcf_message_8.gif)
-
-Merhaba Arkadaşlar,
 
 Geçtiğimiz günlerde çalıştığım turuncu bankadaki bölümüm değişti. İsmini halen ezberleyemediğim Yazılım Geliştirme Sistemleri ve Platform Uygulamaları bölümünde yaşamımı sürdürmeye devam ediyorum. Yeni bölümümdeki ilk görevim ise ServiceStack yerini alabilecek bir çatının oluşturulması konusunda bir takım POC çalışmalarının yapılması. Önemli hedeflerden birisi WCF (Windows Communication Foundation) servislerinin IIS (Internet Information Services) bağımsız olarak dinamik bir şekilde ayağa kaldırılması ve istemci ile sunucu arasındaki mesajların yakalanarak kayıt altına alınabildiğinin görülmesi.
 

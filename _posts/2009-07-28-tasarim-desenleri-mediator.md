@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Desenleri - Mediator"
 date: 2009-07-28 09:04:00 +0300
@@ -13,8 +13,6 @@ tags:
   - generics
 ---
 ![blg52_2.jpg](/assets/images/2009/blg52_2.jpg)
-
-Merhaba Arkadaşlar,
 
 Yandaki resimde Zurich hava alanına ait bir görüntü yer almaktadır. Hava alanının ne kadar karmaşık olduğu aşikardır.
 

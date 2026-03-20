@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - Announcement Kullanımı [Beta 1]"
 date: 2009-08-21 04:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - wcf
   - delegates
 ---
-Merhaba Arkadaşlar,
-
 WCF 4.0 tarafında WS-Discovery tabanlı olarak gerçekleştirilen uygulamalarda önem arz eden noktalardan biriside, servislerin online veya offline olma durumlarını, bulundukları ağ üzerindeki dinleyicilere (Listeners) bildirmeleridir (Announce). Bildiri şeklinde yapılan yayınlamalar aslında istemcinin ağ üzerine yaydığı multicast mesajların yoğunluğunu azaltmak gibi olumlu bir etkiye de sahiptir. Şimdi bu bildirim işlemlerinin nasıl yapılacağını incelemeye çalışalım. Ad Hoc modelinin uygulanması ile ileişkili yazımızdaki örneğimizi bu amaçla devam ettirebiliriz. Servis tarafında konfigurasyon dosyasında sadece aşağıdaki eklemeleri yapmamız yeterli olacaktır.
 
 ```xml

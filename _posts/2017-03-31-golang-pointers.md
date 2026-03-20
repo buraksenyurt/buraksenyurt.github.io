@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Pointers"
 date: 2017-03-31 21:15:00 +0300
@@ -10,8 +10,6 @@ tags:
   - pointers
 ---
 ![Pointer_DePaulo_head.gif](/assets/images/2017/Pointer_DePaulo_head.gif)
-
-Merhaba Arkadaşlar,
 
 1993 yılında girdiğim Matematik Mühendisliği bölümünün bilgisayar programlama ağırlıklı bir müfredatı vardı. GWBasic ile başlayan maceramızda Pascal, C, C++, Cobol gibi programlama dillerine uğradık. Sınavlarımız çoğunlukla kağıt üzerinde olurdu. Basit for döngülerini dahi kağıt üzerinde yazarak algoritma çözmeye çalışırdık. Haliyle C gibi case-sensitive kuralların katı olduğu dillerde sınavlar epey zorlu geçerdi.
 

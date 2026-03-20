@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WPF - Sayfa(Page) Kavramı, Navigasyon İşlemleri ve XBAP"
 date: 2007-10-04 12:00:00 +0300
@@ -17,8 +17,6 @@ tags:
   - generics
   - visual-studio
 ---
-Değerli Okurlarım Merhabalar,
-
 Yıllardır ister büyük çaplı ister küçük çaplı olsun pek çok proje web tabanlı olarak geliştirilmektedir. Projelerde bu tip bir seçime gitmenin en büyük nedenlerinden biriside web uygulamalarındaki dağıtım modelinin (Deployment Model) Windows tabanlı olanlara göre çok daha kolay olmasıdır. Her ne kadar.Net 2.0 ile birlikte gelen ClickOnce veya daha öncesinden beri var olan ActiveX gibi dağıtımı kolaylaştırabilecek teknolojiler var olsada bunlar Web uygulamalarına olan yönelimi azaltamamıştır. Sonuç itibariyle web tabanlı uygulamalarda, yazılan parçaları yorumlayacak bir tarayıcı penceresinin (Browser) olması yeterlidir.
 
 Geriye kalan, söz konusu tarayıcı pencerelerinin yorumlayacağı HTML içeriklerinin oluşturulmasıdır. Bu amaçlada son derece gelişmiş sunucu (Server-Side) veya istemci taraflı (Client-Side) uygulama geliştirme modelleri mevcuttur. Asp.Net bu modellerden yanlızca birisidir. Ancak web tabanlı uygulamalarda tarayıcı tarafından bakıldığında dağıtım dışında sağlanan başka avantajlarda vardır. Örneğin, tarayıcı penceresi yardımıyla uygulama (Application) alanı içerisinde bir sayfadan diğerine geçmek bir başka deyişle navigasyon işlemleri ile dolaşmak çok kolaydır. Bu tip bir kullanım kolaylığını Windows uygulamalarına kazandırmak ekstra kodlamayı gerekirmektedir.

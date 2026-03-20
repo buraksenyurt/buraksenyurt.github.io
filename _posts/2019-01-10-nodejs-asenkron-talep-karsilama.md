@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Node.js - Asenkron Talep Karşılama"
 date: 2019-01-10 17:00:00 +0300
@@ -20,8 +20,6 @@ tags:
   - github
 ---
 ![async_viking.jpg](/assets/images/2019/async_viking.jpg)
-
-Merhaba Arkadaşlar,
 
 Adrenali oldukça yüksek (özellikle benim için) ve zorlayıcı bir Cumartesi gününü geride bıraktım. Yo yo sandığınız gibi Cape Town'da büyük beyazlar ile dalış yapmadım ya da Helikopter'den Bungee Jumping... Hatta deployment sırasında canlı ortam datalarını da silmedim. Tek yaptığım Vialand'e gitmek oldu. Daha ilk turda bindiğim Vikings beni yeterince heyecanlndırırken, "Nefes Kesen" neredeyse ses hızına yaklaştığımı hissettirdi:P
 

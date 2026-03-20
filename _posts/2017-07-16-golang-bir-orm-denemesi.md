@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Bir ORM Denemesi"
 date: 2017-07-16 21:40:00 +0300
@@ -19,8 +19,6 @@ tags:
   - github
 ---
 ![gogorm_buffon.jpg](/assets/images/2017/gogorm_buffon.jpg)
-
-Merhaba Arkadaşlar,
 
 Yakın zamanda bir şampiyonlar ligi finali vardı. Real Madrid ve Juventus arasında oynanan maçı eflatun beyazlılar 4-1 gibi farklı bir skorla kazandı. Aslında ilk yarı Juventus çok daha iyi paslaşıyordu lakin ikinci yarı Ronaldo faktörü ön plana çıktı. Modric'in de etkili orta saha oyunu ile İspanyol ekibi kupayı üstüste ikinci kez almayı başardı. Benim gönlüm Juventus'tan yanaydı çünkü kalede 39 yaşında olan Buffon yer alıyordu. Özellikle İtalyan kulüplerinden 40lı yaşlarına kadar oynayan çok başarılı sporcular çıkıyor (Francesco Totti, Andrea Pirlo, Roberto Baggio vb) Kendilerine iyi bakıyorlar ve özellikle de mesleklerine profesyonelce yaklaşıyorlar. Bu ilham verici bir şey. Hatta pek çok genç sporcuya da örnek olmalı diye düşünüyorum. Gerçi Buffon'a bir şekilde makalemde yer vermek istediğim için bu girişi yaptım. Gelin asıl konumuza geçelim.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Node.js ile Basit Cluster Kurguları"
 date: 2018-07-03 21:04:00 +0300
@@ -15,8 +15,6 @@ tags:
   - github
 ---
 ![clustering_5.gif](/assets/images/2018/clustering_5.gif)
-
-Merhaba Arkadaşlar,
 
 Programcılıkla uğraşan bizim gibi organizmalar sükunetle kod yazmaya bayılır. Hatta her şeyin sorunsuz işlediği, test'lerin prüzsüz ilerlediği, taşımaların tereyağından kıl çeker gibi kolay olduğu bir yaşam alanı düşler. Ne yazık ki gerçek hayat çoğu zaman böyle değildir. Bilirsiniz işte...Sıkışık proje süreleri, anlamakta güçlük çektiğimiz iş süreçleri, değişen ve öğrenmemiz gereken yeni nesil teknolojiler, aniden ortaya çıkan Murphy kanunları vs derken bir bakmışız ki barut fıçısına dönmüşüz. Kim bilir kaç kere içimizden bir Hulk fırlamak üzere düşe gelmiştir. Bazen benim de bu tip gıcık olduğum anlar olmuyor değil. Zaten çalışılması zor, huysuz ve aksi bir insanken bunlara birde ters giden işler eklenince, iyice çekilmez oluyorum.
 

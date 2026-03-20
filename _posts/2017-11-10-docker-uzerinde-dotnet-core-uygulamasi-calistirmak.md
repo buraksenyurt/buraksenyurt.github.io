@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Docker Üzerinde .Net Core Uygulaması Çalıştırmak"
 date: 2017-11-10 06:01:00 +0300
@@ -14,8 +14,6 @@ tags:
   - github
 ---
 ![core_docker_9.gif](/assets/images/2017/core_docker_9.gif)
-
-Merhaba Arkadaşlar,
 
 Biliyorum epeyce geriden geliyorum yeni nesil konularda ama işler güçler derken ancak zaman bulabiliyorum. Önceki yazılarımdan da hatırlayacağınız üzere evdeki emektar dizüstü bilgisayarıma Ubuntu'nun 64bitlik sürümünü yüklemiştim (Makineye West-World adını verdim) Üzerinde ilk.Net Core denemelerimi de gerçekleştirdim. Ancak merak ettiğim konulardan birisi de Docker üzerinde bir.Net Core uygulamasının nasıl çalıştırılabileceğiydi. Bu iş sandığımdan daha zor olacaktı. Yarım yamalak bilgimle Docker'ın ne olduğunu az çok biliyordum ama tam anlamıyla da hakim değildim. En azından biraz daha fikir sahibi olmalı, kurulumunu gerçekleştirmeli ve sonrasında örnek bir.Net Core uygulamasını Dockerize ederek taze bir imaj (image) üzerinde ayağa kaldırabilmeliydim.
 

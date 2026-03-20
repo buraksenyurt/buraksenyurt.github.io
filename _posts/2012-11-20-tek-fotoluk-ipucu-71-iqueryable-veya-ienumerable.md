@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu–71–IQueryable veya IEnumerable"
 date: 2012-11-20 03:01:00 +0300
@@ -9,8 +9,6 @@ tags:
   - sql-server
   - visual-studio
 ---
-Merhaba Arkadaşlar,
-
 Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğrafı bir inceleyin öncelikle ve nasıl bir fark olabileceğini düşünmeye çalışın. Yani kafanızda kod parçasını debug etmeye gayret edin.
 
 (Visual Studio ve benzeri herhangibir geliştirme aracı kullanmamanız şiddetle tavsiye edilir

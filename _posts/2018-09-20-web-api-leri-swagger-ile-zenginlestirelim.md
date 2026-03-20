@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Web API'leri Swagger ile Zenginleştirelim"
 date: 2018-09-20 21:22:00 +0300
@@ -19,8 +19,6 @@ tags:
   - visual-studio
 ---
 ![swagger_8.gif](/assets/images/2018/swagger_8.gif)
-
-Merhaba Arkadaşlar,
 
 Dokümantasyon sektörümüzün olmazsa olmazları arasında yer alan bir konu. Ancak güncelliğini korumak ve okunabilirliğini sağlamak da bir o kadar zor olabiliyor. Ayrıca dokümantasyon hazırlamak da çoğumuza bir işkence gibi geliyor. Yine de belirli alanlarda tüketicilerin iyiliği için bu dokümantasyonları hazırlamak boynumuzun borcu diye düşünüyorum. Devasa kütüphanalerden oluşan uygulamalarda gerçekten dokümantasyon başlı başına bir işken daha küçük alanlarda etkili kullanabileceğimiz yerleri de var.
 

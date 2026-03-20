@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 23 - set,prime,logger,pathname,benchmark,find,zlib Kullanımları"
 date: 2016-05-31 21:00:00 +0300
@@ -10,8 +10,6 @@ tags:
   - http
 ---
 ![Ruby23_6n.gif](/assets/images/2016/Ruby23_6n.gif)
-
-Merhaba Arkadaşlar,
 
 Epey zamandır Ruby notlarımın (özellikle de Amazon'dan getirttiğim kitapların) yüzüne bakmadığımı gördüm de...Pişmanlık hissettim (İtiraf ediyorum bu aralar biraz tembellik yapıyordum) Sonra onunla uğraşmayı özlediğimi fark ettim. Onun sadeliğini, yalın yazımını, gücünü, pratikliğini. Pasımı atmak için bir şeyler araştırmam gerekiyordır. Derken kendimi her zaman ki gibi Google'da [Ruby standart kütüphanesi](http://ruby-doc.org/stdlib-2.3.1/) ile ilgili faydalı kod parçalarını ararken buldum.
 

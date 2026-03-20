@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "NoSQL Maceraları - STSdb ile Hello World"
 date: 2013-07-24 12:24:00 +0300
@@ -17,8 +17,6 @@ tags:
   - rc
 ---
 [![Cadillac_STS](/assets/images/2013/Cadillac_STS_thumb_2.jpg)](/assets/images/2013/Cadillac_STS_2.jpg)[İlk Yazım Tarihi 2013-01-15]
-
-Merhaba Arkadaşlar,
 
 [Matrix Reloaded'](http://en.wikipedia.org/wiki/The_Matrix_Reloaded) ı seyrettiğim zamanları düşündüğümde, anımsadıklarım arasında heyecanlı aksiyon sahnelerinde yer alan ve eski Amerikan stilini de yansıtan kocaman otomobiller vardı. (Hatta bildiğim kadarı ile ikinci dünya savaşı sonrası çelik stoklarının fazlalığı nedeniyle Amerikan otoları hep kocaman olmuşlardı)
 

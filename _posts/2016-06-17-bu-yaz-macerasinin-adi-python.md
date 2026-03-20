@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bu Yaz Macerasının Adı Python"
 date: 2016-06-17 00:00:00 +0300
@@ -14,8 +14,6 @@ tags:
   - javascript
 ---
 ![Guido_van_Rossum.gif](/assets/images/2016/Guido_van_Rossum.gif)
-
-Merhaba Arkadaşlar,
 
 Kısa bir süre önce bu yaz dönemi için kendime yeni bir uğraşı buldum. Raspberry Pi. Çalıştığım turuncu bankadaki ekip arkadaşım sevgili [Recep Duman](http://www.recepduman.net/)'ın, Raspberry Pi ile epey zamandır uğraştığını da öğrenince planlar yapılmaya başlandı.Lego, IoT ve Raspberry Pi konularını bir araya getireceğimiz bir fikir üzerinde ilerlemeye karar verdik. Bunun için gerekli çalışmalarımıza devam ediyoruz. Hatta Recep Hocam ile gerçekleştirdiğimiz iki söyleşimize [buradan](https://youtu.be/LfTrBhXo8vk) ve [şuradan](https://youtu.be/h3xfi1-SmQc) ulaşabilirsiniz.
 

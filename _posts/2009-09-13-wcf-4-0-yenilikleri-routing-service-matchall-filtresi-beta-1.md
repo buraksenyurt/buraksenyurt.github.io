@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]"
 date: 2009-09-13 21:00:00 +0300
@@ -14,8 +14,6 @@ tags:
   - serialization
 ---
 ![blg75_Giris.jpg](/assets/images/2009/blg75_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Bundan önceki yazılarımızda WCF 4.0 için yönlendirme servislerinin (Router Service) nasıl yazılabileceğini incelemeye çalışmıştık. Fark edeceğiniz üzere yönlendirme servislerinin en önemli noktaları arasında filtreleme tablosu ve filtrelerin olduğunu gördük. Bununla birlikte sadece Action tipinde bir filtreleme kullanıp, istemciden gelen SOAP paketinin Action kısmından yararlanılarak bir yönlendirme yapılmasını inceledik.
 

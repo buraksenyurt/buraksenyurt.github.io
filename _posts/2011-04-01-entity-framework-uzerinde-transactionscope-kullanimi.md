@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework Üzerinde TransactionScope Kullanımı"
 date: 2011-04-01 08:52:00 +0300
@@ -20,8 +20,6 @@ Kafada korkunç bir baş ağrısı, dışarıdan gelen metronun raylarda bırakt
 ![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_1.png)
 
 Yaşasın diyerek haykırır.
-
-Merhaba Arkadaşlar,
 
 Yıllar yıllar önce.Net Framework 2.0 ile gelen yenilikleri takip etmeye çalıştığım dönemlerde, Amazon üzerinden getirttiğim kitaplardan birisi de yandaki resimde görülen Ado.Net and System.Xml v2.0 kitabı idi. Şu an halen kitaplığımda durmakta. O sıralar CSharpNedir? bünyesinde Ado.Net bölüm editörlüğü yaptığımdan, bu kitabı tedarik etmiş ve çalışmıştım..Net Framework 2.0 ile gelen yeni Xml alt yapısının beta hali ile alması bir yana Ado.Net’ in yeni 2.0 sürümü için planlanan bazı kabiliyetlerde anlatılmaktaydı ki bunlardan bekli de en önemlisi System.Transaction.dll assembly içerisinde yer alan ve özellikle Distributed Transaction yönetimini daha etkili ve kolay bir şekilde ele almamızı sağlayan TransactionScope tipiydi.
 

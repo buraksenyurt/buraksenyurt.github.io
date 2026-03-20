@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Değişken Atamalarında Bir Efsane"
 date: 2010-04-12 02:30:00 +0300
@@ -8,8 +8,6 @@ tags:
   - csharp
 ---
 ![blg149_MythBusters.jpg](/assets/images/2010/blg149_MythBusters.jpg)
-
-Merhaba Arkadaşlar,
 
 Yandaki resimde görülen kahramanları tanıyanınız var mı? Biraz düşünün isterseniz...Jamie Hyneman ve Adam Savage ikilisi tarafından sunulan ve Wikipedia'daki verilere göre Discovery Channel aracılığıyla ilk yayınını 23 Ocak 2003 tarihinde gerçekleştiren MythBusters isimli bu belgesel dizide, bilimsel metodlardan yararlanılarak bazı şehir efsanelerinin gerçeklikleri ispatlanmaya çalışılmaktadır.
 

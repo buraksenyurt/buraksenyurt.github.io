@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Electron ile Cross-Platform Uygulama Geliştirmek"
 date: 2018-11-30 05:06:00 +0300
@@ -14,8 +14,6 @@ tags:
   - github
 ---
 ![galvatron.jpg](/assets/images/2018/galvatron.jpg)
-
-Merhaba Arkadaşlar,
 
 Bu aralar işler doğruyu söylemek gerekirse biraz can sıkıcı. KVKK (Kişisel Verilerin Korunması Kanunu) olarak bilinen ve müşteri verilerinin anonimleştirilmesini gerektiren bir çalışma içerisindeyiz. Verinin dağınık olması, hacimsel büyüklüğü, kurum içi süreçlerin karmaşıklığı, monolitleşmiş ERP uygulamamız üzerindeki etkilerinin çıkartılmasındaki zorluklar, araya giren başla işler nedeniyle yavaş ilerliyoruz. Kurumun tamamını ilgilendiren bir regülasyon söz konusu olduğu için de biraz fazlasıyla statik elektrik yüklüyüz. Yani şöyle bir Galvatron çıksa içimizden ya da Megatron, Electron ortalığı kasıp kavura...Imm, şey...Ne diyorum ben yahu. Electron'da nereden çıktı:) Aslında tesadüfen karşıma çıktı ve bu karşılaşma sayesinde kendimi ilginç ve zevkli bir maceranın içerisinde buldum.
 

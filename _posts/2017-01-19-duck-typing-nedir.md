@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Duck Typing Nedir?"
 date: 2017-01-19 21:30:00 +0300
@@ -13,8 +13,6 @@ tags:
   - generics
 ---
 ![duffy.gif](/assets/images/2017/duffy.gif)
-
-Merhaba Arkadaşlar,
 
 Son bir yıldır Ruby ve Python gibi script diller üzerinde araştırmalar yapıyorum. Daha çok bu dilleri öğrenme, anlama gayretindeyim. En azından orta seviye bilgi sahibi olmak benim için yeterli. Bu dilleri incelerken uzun yıllardır çalıştığım dinamik tip sistemli ve derleyici odaklı yaklaşımları da sorgulamak durumunda kalıyoum. Nitekim farklı programlama yaklaşımlarına sahipler.
 

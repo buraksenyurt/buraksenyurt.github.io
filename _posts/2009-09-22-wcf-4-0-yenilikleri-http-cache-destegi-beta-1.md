@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - HTTP Cache Desteği [Beta 1]"
 date: 2009-09-22 13:07:00 +0300
@@ -19,8 +19,6 @@ tags:
   - caching
 ---
 ![blg77_Performance.jpg](/assets/images/2009/blg77_Performance.jpg)
-
-Merhaba arkadaşlar,
 
 Performans pek çok uygulama geliştirme ortamında önem arz eden konuların başında gelmektedir. Özellikle Web tabanlı uygulamalarda performans arttırmak adına göz önüne alınan kriterlerden biriside farklı tipteki önbellekleme (Caching) işlemleridir.
 

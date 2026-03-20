@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Kalıtımsız Bir Dünya"
 date: 2017-02-25 21:38:00 +0300
@@ -12,8 +12,6 @@ tags:
   - pointers
 ---
 ![gocomp_2.gif](/assets/images/2017/gocomp_2.gif)
-
-Merhaba Arkadaşlar,
 
 Go hızlı ve performanslı bir programlama dili olarak anılıyor. Diğer yandan nesne yönelimli dil özelliklerini büyük ölçüde içermediği gibi bir gerçek de var ortada. Tasarımı sırasında kalıtım (Inheritance) gibi yönetimin sonradan zorlaşabildiği ve bakım gerektiren çatıların performansı olumsuz yönde etkilediği düşüncesi hakim olmuş. Bu nedenle nesne yönelimli düşünce tarzını az da olsa kenara bırakarak ilerlemek gerekiyor. Kalıtım doğrudan desteklenmese de nesne kompozisyonu (Composition) mevcut. Hatta belli bir ölçüde çok biçimliliği (Polymorphism) de uygulayabiliriz gibi.
 

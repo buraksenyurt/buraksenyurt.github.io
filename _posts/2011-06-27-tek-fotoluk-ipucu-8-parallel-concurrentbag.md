@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu - 8 (Parallel ConcurrentBag)"
 date: 2011-06-27 23:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - concurrency
   - thread-safety
 ---
-Merhaba Arkadaşlar,
-
 Concurrent Collections deyince aklımıza Thread-Safe koleksiyon tipleri gelmelidir. Söz gelimi bir ConcurrentBag koleksiyonunun basit kullanımına bir örneği aşağıdaki gibi verebiliriz.
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_26.png)

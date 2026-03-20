@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 18 - Çeşitli Kırıntılar"
 date: 2015-11-08 13:00:00 +0300
@@ -10,8 +10,6 @@ tags:
   - wcf
   - reflection
 ---
-Merhaba Arkadaşlar,
-
 Takip edenlerin bildiği üzere bir süredir [Ruby](https://www.buraksenyurt.com/category/Ruby) programlama dili üzerinde çalışmaktayım. İlerledikçe öğrendiklerimi kod parçacıkları halinde paylaşmaya çalışıyorum. Ne kadar faydalı oluyor bilemiyorum ama arada sırada takip ettiğim kaynaklardan geriye dönerek acaba atladığım bir şeyler var mıdır diye de bakıyorum. İşte bu düşünceler ışığında çıktım yola ve gerçekten de atladığım bir çok şey fark ettim. Bu kod parçacığında kısaca bu konulara değinmeye çalışacağım. Önce kod parçamızı ele alalım.
 
 Dikkat edileceği üzere bu kez if __FILE__==$0 şeklinde bir kullanım tercih etmedim. Kod bu şekliyle de işliyor olacak. Uygulamanın çalışma zamanına ait ekran çıktısı aşağıdaki gibi.

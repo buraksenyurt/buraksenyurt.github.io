@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Prensipleri - Single Responsibility"
 date: 2009-06-26 16:04:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![bob-ross.jpg](/assets/images/2009/bob-ross.jpg)
-
-Merhaba Arkadaşlar,
 
 Sanıyorum benim gibi eskiler, yandaki resimde yer alan değerli ressamı hatırlayacaklardır. Bob Ross. Küçüklüğümde (ve halen
 

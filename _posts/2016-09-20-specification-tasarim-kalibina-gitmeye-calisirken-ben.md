@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Specification Tasarım Kalıbına Gitmeye Çalışırken Ben"
 date: 2016-09-20 21:30:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![istebeyle2.gif](/assets/images/2016/istebeyle2.gif)
-
-Merhaba Arkadaşlar,
 
 Şu sıralar üzerinde çalışmakta olduğumuz bir projede karşılaştığımız bir sorun var. Belli bir Domain içerisinde yer alan bazı varlıkların (Entity türleri diyelim) çeşitli kriterlere uyanlarının liste olarak çekilmesi gerekiyor. Senaryonun ilginçleştiği kısım ise farklı Entity tipleri için zaman içerisinde farklı kriterlerin de sisteme dahil edilmek istenebileceği. Bu sayede veri kümesi üzerinde çeşitli araştırma senaryolarını denemek de mümkün hale geliyor. Bir başka deyişle aklımıza geldikçe yeni bir kriteri (örneğin bir filtreleme ölçütünü) tanımlayıp istediğimiz Entity kümeleri üzerinde kullanmak istiyoruz.
 

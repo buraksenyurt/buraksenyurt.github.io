@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları - 15 (Mixins)"
 date: 2015-09-16 15:00:00 +0300
@@ -9,8 +9,6 @@ tags:
   - wcf
   - workflow-foundation
 ---
-Merhaba Arkadaşlar,
-
 Ruby tam anlamıyla nesne yönelimli (Object Oriented) bir dildir. Bunu her fırsatta vurguluyoruz. Bu nedenle bünyesinde temel OOP özelliklerini taşır. Kalıtım (Inheritance) bunlardan birisidir. Ancak Ruby dilinde bir sınıfın aynı seviyede birden fazla sınıftan türemesine izin verilmez (Single Inheritance söz konusudur).
 
 Bir başka deyişle çoklu kalıtım (Multi-Inheritance) desteği bulunmamaktadır. Bunu karşılamak için Module'lerden yararlanılır. Module seviyesindeki fonksiyonellikler Instance veya Class metodları olarak sınıflar içerisine dahil edilerek çoklu kalıtımın karşılanması sağlanır. Bu durum Mixin olarak adlandırılır. Mixin, sınıflara dışarıdan fonksiyonellikler katmanın bir yolu olarak da düşünülebilir.

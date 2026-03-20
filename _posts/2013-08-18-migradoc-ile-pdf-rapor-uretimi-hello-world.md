@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "MigraDoc ile PDF Rapor Üretimi - Hello World"
 date: 2013-08-18 11:48:00 +0300
@@ -29,8 +29,6 @@ Fransız, yazılım alanında çift doktora yapmış birisiydi. Şirketin en kil
 Gülümsedi Fransız Reno.
 
 "Neden olmasın? Bana mesai bitimine kadar müddet verin lütfen."
-
-Merhaba Arkadaşlar,
 
 Özellikle veri odaklı (Data-Centric) çalışan uygulamalar düşünüldüğünde çeşitleri ne olursa olsun raporlama, işin oldukça önemli bir parçasını oluşturmaktadır. Ağırlıklı olarak rapora ihtiyaç duyan pozisyonlar, söz konusu raporları çeşitli ortamlarda görmek isteyen elemanlardır. Örneğin bunları Web arayüzünde açabilmeyi, Excel veya Word formatındaki dosyalara çıktı olarak alabilmeyi ve mobil cihazlarından takip edebilmeyi isterler. Günümüzün pek çok modern uygulaması zaten bu tip çıktıların alınmasını standart olarak olanak sunmaktadır.
 

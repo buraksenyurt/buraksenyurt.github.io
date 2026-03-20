@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF WebHttp Services - JSON Formatlı Response Üretmek"
 date: 2010-02-18 22:50:00 +0300
@@ -21,8 +21,6 @@ tags:
   - rc
 ---
 ![blg133_Giris.gif](/assets/images/2010/blg133_Giris.gif)
-
-Merhaba Arkadaşlar,
 
 Yandaki Logo size neyi çağırıştırıyor? Aslında bakarsanız çok meşhur olan hafif siklette bir veri değiş tokuş formatının logosunu ifade etmekte. [JSON (JavaScript Object Notation).](http://www.json.org/)Hatırlayacağınız üzere bir süredir WCF Eco System içerisinde yer alan WCF WebHttp Service alt yapısını incelemeye çalışıyoruz. WCF WebHttp Service'leri eğer istemci tarafından aksi belirtilmezse varsayılan olarak XML formatında çıktı üretmektedir. Ancak istenirse JSON (JavaScript Object Notation) formatında çıktı üretmeside sağlanabilir.
 

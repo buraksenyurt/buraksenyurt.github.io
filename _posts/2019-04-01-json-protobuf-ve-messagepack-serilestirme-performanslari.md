@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Json, Protobuf ve MessagePack Serileştirme Performansları"
 date: 2019-04-01 06:00:00 +0300
@@ -20,8 +20,6 @@ tags:
   - github
 ---
 ![mpack_0.jpg](/assets/images/2019/mpack_0.jpg)
-
-Merhaba Arkadaşlar,
 
 Süper salyangoz Turbo'nun hikayesini bilir misiniz? Hani şu sırtında roket takılı olan Turbo'nun. Peki ya oyununu oynadınız mı? Ben epey süre önce S (h) arp ile oynamış ve oldukça eğlenmiştim. Tabii cevaplar kişiden kişiye değişir lakin ondan esinlenilen bir logo'nun günümüz.Net uygulamalarında performans ölçümü için kullanılan meşhur [BenchmarkDotNet](https://benchmarkdotnet.org/index.html)'e ait olduğu kesin diyebilirim. Aslında ciddi anlamda düşünürsek yazdığımız uygulamaların bütün olarak veya parça halinde çalışma zamanı performanslarını metrik olarak ölçümlemek pek de kolay olmayan konulardan birisidir.
 

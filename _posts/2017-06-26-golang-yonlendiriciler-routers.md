@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Yönlendiriciler (Routers)"
 date: 2017-06-26 10:30:00 +0300
@@ -16,8 +16,6 @@ tags:
   - github
 ---
 ![gorouting_1.gif](/assets/images/2017/gorouting_1.gif)
-
-Merhaba Arkadaşlar,
 
 Yönlendirme (Routers) mekanizmaları özellikle anlamlı HTTP taleplerinde önemli bir rol oynar. Bir tarayıcının adres satırından gelen ifadelerin sunucu tarafında ele alınması sırasında işleri kolaylaştırıcı kütüphaneler de bulunmaktadır. Sevgili Murat Özalp'ın kitabında ilerlerken GO'nun built-in yönlendirme mekanizmaları dışında github üzerinden sunulan pek çok basit ve kullanışlı çatının olduğunu öğrendim. Tabii burada bahsedilen kütüphaneler ağırlıklı olarak web taleplerinin bir eşleştirme koduna göre uygun fonksiyonlara yönlendirilmesi ve cevaplandırılması ile alakalıydı. Bazıları performans açısından öne çıkarken bazıları komple bir web çatısını sunma kabiliyetine sahipti. Güncel listeye [şu adresten bakabilirsiniz.](https://github.com/naoina/go-http-routing-benchmark) Yeni paketler geldikçe veya var olanlarda değişiklikler oldukça benchmark sonuçları da etkilenecektir. Bu nedenle ara ara uğramakta yarar olduğu kanısındayım.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Express API Hizmetini Heroku Üzerine Taşımak"
 date: 2018-04-07 19:00:00 +0300
@@ -22,8 +22,6 @@ tags:
   - dependency-management
 ---
 ![herokus_intro.gif](/assets/images/2018/herokus_intro.gif)
-
-Merhaba Arkadaşlar,
 
 Geçenlerde sevgili çalışma arkadaşlarımdan [Atahan Ceylan](https://www.linkedin.com/in/atahanceylan/) ile Node.js ve MongoDb üzerine konuşurken bana Heroku diye bir şeyden bahsetti. Daha önceden duymamış olmamın verdiği etkiyle hemen nedir ne değildir diyerek kendisinden bilgi istedim. Sonunda konuyu pekiştirmek için ninjaları bana sevimli bir şekilde hatırlatan bu ürünü incelemeye karar verdim.
 

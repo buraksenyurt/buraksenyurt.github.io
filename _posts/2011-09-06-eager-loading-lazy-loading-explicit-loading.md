@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Eager Loading, Lazy Loading, Explicit Loading"
 date: 2011-09-06 20:30:00 +0300
@@ -10,8 +10,6 @@ tags:
   - linq
   - http
 ---
-Merhaba Arkadaşlar,
-
 Şöyle basit tek bir Main metodu içerisinde, Entity Framework'teki Loading çeşitlerini görmek ister miydiniz?
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_64.png)

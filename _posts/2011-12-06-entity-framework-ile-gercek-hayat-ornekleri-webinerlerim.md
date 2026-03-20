@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework ile Gerçek Hayat Örnekleri Webinerlerim"
 date: 2011-12-06 08:51:00 +0300
@@ -16,8 +16,6 @@ tags:
   - webinar
 ---
 ![nedirlogo.gif](/assets/images/2011/nedirlogo.gif)
-
-Merhaba Arkadaşlar,
 
 Uzun zamandır [NedirTv?com](http://www.nedirtv.com/) bünyesinde webiner gerçekleştirmiyordum
 

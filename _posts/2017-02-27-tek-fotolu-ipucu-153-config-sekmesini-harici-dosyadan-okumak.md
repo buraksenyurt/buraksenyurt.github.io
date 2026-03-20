@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotolu İpucu 153 - Config Sekmesini Harici Dosyadan Okumak"
 date: 2017-02-27 02:00:00 +0300
@@ -7,8 +7,6 @@ categories:
 tags:
   - dotnet-temelleri
 ---
-Merhaba Arkadaşlar,
-
 Uygulamalarımıza ait pek çok parametrik bilgiyi zaman zaman config uzantılı dosyalar içerisinde tuttuğumuz çok olmuştur. Web tabanlı uygulamalar ve servislerde web.config, exe tipi uygulamalarda ise app.config dosyaları söz konusudur. Bu dosyalarda standard olarak kullanılan içerikler mevcuttur. appSettings, connectionStrings sanıyorum ki en popüler olanlarındandır. Peki bu tip konfigurasyon segmentlerinin harici dosyalardan da alınabileceğini biliyor muydunuz? Örneğin uygulamanın appSettings içeriğinin farklı bir dosyadan gelmesini sağlayabiliriz (appSettings içerisine alınacak olan key:value çiftlerinin çok kalabalık olduğu senaryolarda bu teknik oldukça işe yarayabilir) Nasıl mı? Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![tfi153.gif](/assets/images/2017/tfi153.gif)

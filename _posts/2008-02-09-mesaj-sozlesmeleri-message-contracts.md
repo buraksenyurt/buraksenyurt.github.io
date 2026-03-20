@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Mesaj Sözleşmeleri(Message Contracts)"
 date: 2008-02-09 12:00:00 +0300
@@ -17,8 +17,6 @@ tags:
   - generics
   - debugging
 ---
-Değerli Okurlarım Merhabalar,
-
 Servis tabanlı uygulamalarda en önemli
 noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde
 gerçekleştirildiğidir. Gerçek şuki, bu bilgi transferinin oluşma şekli

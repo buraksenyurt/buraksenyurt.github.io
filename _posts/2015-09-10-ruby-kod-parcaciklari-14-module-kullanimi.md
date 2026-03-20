@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları - 14 (Module Kullanımı)"
 date: 2015-09-10 08:00:00 +0300
@@ -10,8 +10,6 @@ tags:
   - http
   - serialization
 ---
-Merhaba arkadaşlar,
-
 Module’leri sınıf değişkenleri, sınıflar, metodlar ve sabitleri (Constant) içerisinde barındırabilen isim alanları (namespace) olarak düşünebiliriz. Özellikle projelerin büyüdüğü durumlarda kullanılan tip veya metodların çakışmasını engellemek, kod tekrarlarının önüne geçmek (DRY-Don'r Repeat Yourself), bakım maliyetlerini azaltmak ve özellikle aynı iş alanına (Domain) özgü operasyonları anlamlı isim alanlarında konuşlandırabilmek maksadıyla tercih edilirler.
 
 Bununla birlikte Ruby dilinde bir tipin n sayıda tipten aynı anda türemesine izin verilmemesi söz konusudur. Yani bir tip tek bir diğer tipten türeyebilir. Bu yüzden modüller aynı seviyede çoklu kalıtımı (Multi-Inheritance) desteklemek amacıyla Mixin olarak da değerlendirilirler.

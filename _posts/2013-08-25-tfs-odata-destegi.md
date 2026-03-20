@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TFS OData Desteği"
 date: 2013-08-25 10:35:00 +0300
@@ -13,8 +13,6 @@ tags:
   - visual-studio
 ---
 [![almworld](/assets/images/2013/almworld_thumb.jpg)](/assets/images/2013/almworld.jpg)[Orjinal Yazım Tarihi 3/20/2013]
-
-Merhaba Arkadaşlar,
 
 Çoğu zaman geliştirilen yazılım ürünleri ile farklı profilden insanları ortak bir payda da buluşturmayı hedefleriz. Farklı özelliklere sahip insanları, ürüne nasıl katabileceğimizi keşfetmeye çalışırız. Tabi geliştirilen ürünün hedef kitlesi de burada önemli bir rol oynar.
 

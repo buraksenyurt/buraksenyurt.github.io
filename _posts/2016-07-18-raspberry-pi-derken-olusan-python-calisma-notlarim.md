@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Raspberry PI Derken Oluşan Python Çalışma Notlarım"
 date: 2016-07-18 21:30:00 +0300
@@ -20,8 +20,6 @@ tags:
   - serialization
 ---
 ![RaspiCover.gif](/assets/images/2016/RaspiCover.gif)
-
-Merhaba Arkadaşlar,
 
 Bloğumu takip edenler bu yaz için Raspberry PI ve Python programlama diline merak saldığımı biliyordur. Bu merakımı boşa çıkarmamak için de vakit buldukça her iki konuya da çalışıyorum. İş yoğunluğu ve araya giren bayram tatili beni az da olsa geriye atmış durumda. Ama neyseki defterime aldığım renkli renkli notlarım var.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF ile WF Entegrasyonu - 1"
 date: 2008-04-17 12:00:00 +0300
@@ -24,8 +24,6 @@ tags:
   - visual-studio
   - asmx
 ---
-Değerli Okurlarım Merhabalar,
-
 Bilindiği üzere Window Communication Foundation ve Windows Workflow Foundation,.Net Framework 3.0 ile birlikte gelen önemli teknolojilerdendir. WCF servis yönelimli mimariye (Service Oriented Architecture) yeni bir yaklaşım getirip, dağıtık mimari uygulama geliştirme kavramlarını bir çatı altında toplayarak güçlü, daha platform bağımsız ve güvenilir bir ortamda geliştirme yapılabilmesini olanaklı kılan bir alt yapı sunmaktadır. WF ise, birden fazla adımdan oluşan kod süreçlerinin iş akışı (Workflow) tarzında olay güdümlü (Event-Driven) yada sırasal (Sequential) olacak şekilde tasarlanarak çeşitli.Net uygulamalarında kullanılabilmelerini mümkün kılan bir alt yapı tesit etmektedir.
 
 Workflow, süreçlere ait akışların hazırlanmasında ağırlıklı olarak aktivite tiplerini (Activity Types) kullanmaktadır. Bu aktivitelerin dallara ayrılması, çatallanması, birbirlerine katılması gibi pek çok işlem de, Workflow ortamı tarafından sunulmaktadır. WF ile geliştirilen iş akışları kısa süreceği gibi uzunda (Long-Running Workflows) sürebilir. Bu nedenle WF ortamı özellikle uzun süren akışların, sistem yeniden başlatmaları (reboot) gibi vakalara karşı ayakta durabilmesi için kalıcı olarak saklama işlemlerine destek de vermektedir. WF mimarisinin yetenekleri sadece bununlada sınırlı değildir. Örneğin Transaction desteği diğer yetenekleri arasında gösterilebilir.

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Merhaba Bing API 2.0"
 date: 2009-08-25 11:15:00 +0300
@@ -21,8 +21,6 @@ tags:
   - testing
 ---
 ![blg72_Giris.gif](/assets/images/2009/blg72_Giris.gif)
-
-Merhaba Arkadaşlar,
 
 Bir süredir WCF 4.0 ile birlikte gelen yenilikleri sizlere aktarmaya çalışıyorum. Son olarak Routing Service ile ilişkili bir giriş yazımız olmuştu. Bu konu ile ilişkili örnek en kısa sürede sizlerle olacak. Ne varki konu biraz zorlu.
 

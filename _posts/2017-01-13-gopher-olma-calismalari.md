@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Gopher Olma Çalışmaları"
 date: 2017-01-13 12:10:00 +0300
@@ -12,8 +12,6 @@ tags:
   - pointers
 ---
 ![gopher.gif](/assets/images/2017/gopher.gif)
-
-Merhaba Arkadaşlar,
 
 Geçtiğimiz sene [Ruby](https://www.buraksenyurt.com/category/Ruby.aspx) diliye uğraşmaya başlamıştım. Ruby dilini sevenler ve ona gönül verenlere Rubyist deniyor. Benzer bir yaklaşım meğer Go tarafında da varmış. Onlarda kendilerine logolarına esin kaynağı olan Gopher diyorlarmış. Aslında Go dilinin logosu gerçekten bir canlıdan esinlenilerek tasarlanmış. Yaklaşık 15 ila 20 cm boylarında olan gopher'lar oldukça sevimliler (Bana göre) Elbette logo çok daha sevimli. Bu arada Gopher aynı zamanda TCP/IP tabanlı HTTP öncesi bir internet protokolu olarak da geçiyor. Detaylara [Wikipedia adresinden](https://en.wikipedia.org/wiki/Gopher_(protocol)) bakabilirsiniz.
 

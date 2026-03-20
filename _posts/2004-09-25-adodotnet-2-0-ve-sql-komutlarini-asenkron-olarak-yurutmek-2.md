@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ado.Net 2.0 ve Sql Komutlarını Asenkron Olarak Yürütmek - 2"
 date: 2004-09-25 12:00:00 +0300
@@ -15,8 +15,6 @@ tags:
   - generics
   - visual-studio
 ---
-Değerli Okurlarım Merhabalar,
-
 Hatırlayacağınız gibi bir önceki makalemizde, sql komutlarının asenkron olarak yürütülmesi için kullanılan tekniklerden birisi olan polling modelini incelemiştik. Polling modeli basit olmakla birlikte, iş yükü fazla olan hacimli sql komutlarının asenkron olarak çalıştırılmasında çok fazla tercih edilmemelidir. Bu tip sorguların yer aldığı asenkron yürütmelerde, CallBack veya Wait modellerini kullanmak verimliği arttırıcı etkenlerdir. Bu makalemizde CallBack modelini kısaca incelemeye çalışacağız.
 
 CallBack modeli anafikir olarak, asenkron olarak çalışan sql komutlarının işleyişlerinin sona erdiği noktalarda yürürlüğe giren metodları bünyesinde barındıran bir tekniktir. Bu tekniğe göre, asenkron olarak yürütülecek sql komutlarını taşıyan SqlCommand nesneleri yine bilinen Begin... metodları ile çalıştırılırlar. Ancak bu kez, SqlCommand nesnesine ait Begin metodlarının aşağıdaki tabloda belirtilen aşırı yüklenmiş versiyonları kullanılır.

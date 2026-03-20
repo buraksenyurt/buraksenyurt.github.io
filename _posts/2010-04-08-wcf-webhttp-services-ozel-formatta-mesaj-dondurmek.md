@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF WebHttp Services - Özel Formatta Mesaj Döndürmek"
 date: 2010-04-08 07:39:00 +0300
@@ -20,8 +20,6 @@ tags:
   - rc
 ---
 ![blg146_Giris.jpg](/assets/images/2010/blg146_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Bu yazımızda bizleri uzun, zorlu ve yorucu bir macera bekliyor. Şimdiden söylemek isterim ki yanınızda tatlı (Mesela kolalı jelibon olabilir), tuzlu yiyecek bir şeyler, boğaz kuruluğunuzu giderecek içecekler veya daha fazla oksijen çekmenizi sağlayacak sakızlar olsun. Unutmadan birde aspirin. Baş ağrısı için
 

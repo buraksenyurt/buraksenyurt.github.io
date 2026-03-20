@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 30 - Programın Çalışma Zamanını İzlemek"
 date: 2017-01-03 21:43:00 +0300
@@ -8,8 +8,6 @@ tags:
   - ruby
   - http
 ---
-Merhaba Arkadaşlar,
-
 Diyelim ki geliştirdiğimiz kodların çalışma zamanındaki işleyişlerini izlemek istiyoruz. Sırasıyla hangi nesneler örnekleniyor, çağırılan metodlar ve varsa sonuçları hangi aşamada icra ediliyor, devreye giren C veya block çağrıları bulunuyor mu? Bu gibi sorular aslında bir uygulamayı Monitor etmek olarak da adlandırılmakta. Büyük kod parçalarında işleyiş sıralarını takip etmek ve olası istisna durumlarında kodun hangi aşamada kalmış olduğunu görmek açısından değerli bir konu. Peki Ruby kodlarının çalışma zamanı işleyişlerini nasıl izleyebiliriz. Konu ile ilgili bir çok gem veya API olsa da gömülü olarak gelen TracePoint sınıfı bize basit anlamda izleme kabiliyetleri sunmakta. Aşağıdaki örnek kod parçasını bu anlamda ele alabiliriz.
 
 ```text

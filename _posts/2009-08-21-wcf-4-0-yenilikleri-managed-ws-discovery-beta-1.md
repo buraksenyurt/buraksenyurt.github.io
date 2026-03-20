@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - Managed WS-Discovery [Beta 1]"
 date: 2009-08-21 23:13:00 +0300
@@ -15,8 +15,6 @@ tags:
   - generics
 ---
 ![blg70_Giris1.jpg](/assets/images/2009/blg70_Giris1.jpg)
-
-Merhaba Arkadaşlar,
 
 Yandaki resimdeki gibi çok çok uzun bir yolun başında ve ulaşmanız gereken yere yüzlerce kilometre mesafede olduğunuzu hayal edin. Sabırlı bir şekilde bu yolu gidebilmek için çok iyi bir disipline sahip olmanız gerekir. Yazılım geliştirme denilen büyük okyanusun içerisinde de bu tip yollar ile karşılaşmaz mıyız? Hemde sıklıkla karşılaşırız. Yılmadan yola devam edenler, nihayetinde mutlu sona ulaşırlar. Ama belkide ulaşmazlar. Bu tamamen zamanın o andaki çevresel koşullarına bağlı olarak değişir. İşte bu yazımızda hakikaten sadece geliştirme aşaması dahi insanı çileden çıkarabilen zahmetli bir yola baş koyuyor olacağız. Hedefimiz, WS-Discovery tabanlı WCF sistemlerinde Managed Discovery modelini uygulayabilmek.
 

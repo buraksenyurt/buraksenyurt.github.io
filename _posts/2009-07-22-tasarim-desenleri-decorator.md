@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Desenleri - Decorator"
 date: 2009-07-22 08:44:00 +0300
@@ -13,8 +13,6 @@ tags:
   - http
   - generics
 ---
-Merhaba Arkadaşlar,
-
 Görsel tasarım işinden pek anladığımı söyleyemem.
 
 ![Embarassed](/assets/images/2009/smiley-embarassed.gif)

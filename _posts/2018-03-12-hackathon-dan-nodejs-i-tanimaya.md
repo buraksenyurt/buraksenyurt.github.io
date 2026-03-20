@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Hackathon'dan Node.js'i Tanımaya"
 date: 2018-03-12 03:00:00 +0300
@@ -21,8 +21,6 @@ tags:
   - github
 ---
 ![nodejs_2.gif](/assets/images/2018/nodejs_2.gif)
-
-Merhaba Arkadaşlar,
 
 Javascript yüzyıllardır (abartmayı severim) front-end tarafında kullanılan en güçlü yazılım geliştirme dillerinden birisi. Bir web uygulamasını onsuz düşünmek neredeyse imkansız. Her ne kadar Typescript gibi oluşumlar söz konusu olsa da, Javascript'in yeri ayrı. Javascript dilini baz alan bir çok Framework (çatı) de uzun zamandır sektörümüzde yer almakta. Hatta bazıları tamamen sunucu bazlı çalışacak şekilde tasarlanmış durumdalar. Node.js bunlardan birisi.
 

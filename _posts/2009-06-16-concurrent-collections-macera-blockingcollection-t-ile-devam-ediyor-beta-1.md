@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Concurrent Collections : Macera BlockingCollection<T> ile Devam Ediyor [Beta 1]"
 date: 2009-06-16 06:54:00 +0300
@@ -12,8 +12,6 @@ tags:
   - concurrency
   - generics
 ---
-Merhaba Arkadaşlar,
-
 Bir önceki blog yazımda paralel programlama kabiliyetlerinden birisi olan Concurrent Collections (Eş Zamanlı Koleksiyonlar) kavramını incelemeye çalışmıştım. Ne varki kendimi bunlara olan gereklilikler konusunda bir süredir ikna edebilmiş değilim. Dolayısıyla ihtiyaçları ortaya koymak adına basit bir senaryo üzerinden ilerlemeye karar verdim. Aslında eş zamanlı koleksiyonların kullanılması için en büyük gereksinim, bir koleksiyonun elemanları üzerinde aynı anda işlemler yapılmak istenmesi halinde ortaya çıkmaktadır. Konuyu daha net kavrayabilmek adına şöyle bir senaryoyu geliştirmeye karar verdim; Bir metin dosyasında | işaretleri ile birbirlerinden ayrılmış text tabanlı verilerin, generic bir List koleksiyonu içerisine alınması ve sonrasında ise bu koleksiyon elemanlarının içeriklerinin değiştirilmesi.
 
 Tabiki burada iki ana iş var. Metin dosyasının ayrıştırılıp (parse) koleksiyon içerisinde toplanması ilk adım olarak düşünülebilir. İkinci adımda ise, bu koleksiyon üzerinde ileri yönlü bir iterasyon ile o anki nesne örneği üzerinde değişiklik yapılmaya çalışılması (örneğin maaş bilgisinin değiştirilmesi) durumu ele alınmalıdır. Ancak burada küçük ama önemli bir maddemiz var; bu iki adımdaki işlemleri paralel olarak gerçekleştirebilmek

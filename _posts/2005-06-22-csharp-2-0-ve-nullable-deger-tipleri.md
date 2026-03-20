@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 2.0 ve Nullable Değer Tipleri"
 date: 2005-06-22 12:00:00 +0300
@@ -8,8 +8,6 @@ tags:
   - csharp
   - generics
 ---
-Değerli Okurlarım Merhabalar,
-
 C# programlama dilinde bildiğiniz gibi veri türlerini Referans Türleri (Reference Types) ve Değer Türleri (Value Types) olmak üzere iki kısma ayırıyoruz. Bu iki tür arasında bellek üzerinde fiziki tutuluş şekillerinden tutunda birbirleri arasındaki atamalara kadar pek çok farklılık vardır. Bu farklılıklardan birisi de, referans türlerinin null değerleri alabilmelerine karşın, değer türlerinin aynı özelliğe sahip olmayışlarıdır.
 
 Bu durum özellikle veritabanı tablolarında null değer alabilen alanların, dil içerisindeki tip karşılığı değer türüne denk düştüğünde bazı zorluklar çıkartabilmektedir. İşte bu makalemizde, C# 2.0 diliyle gelen yeni özelliklerden birisi olan Nullable Value Types (Null değer alabilen değer türleri) ni incelemeye çalışacağız. Başlangıç olarak C# 1.1 versiyonundaki durumu analiz ederek işe başlayalım. Aşağıdaki kod parçasında bir referans türüne ve bir de değer türüne null değerler atanmaya çalışılmaktadır.

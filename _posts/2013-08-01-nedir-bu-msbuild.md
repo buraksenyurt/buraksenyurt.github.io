@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Nedir Bu MSBuild?"
 date: 2013-08-01 07:47:00 +0300
@@ -17,8 +17,6 @@ tags:
   - performance
 ---
 [![msbuild_9](/assets/images/2013/msbuild_9_thumb.jpg)](/assets/images/2013/msbuild_9.jpg)[Orjinal Yazım Tarihi – 25/02/2013]
-
-Merhaba Arkadaşlar,
 
 Yıllar öncesinde bir kaç seneliğine de olsa saygın bir eğitim kurumunda eğitmen olarak görev alma şansını yakalamıştım. Özellikle C#’ ın öğretilmeye çalışıldığı başlangıç niteliğindeki seanslarda dilin temel özelliklerini anlatırken, tüm dış çevre ile olan bağlantıyı kesip, sadece anahtar kelime (keyword), ifade ve materyale odaklanmaya çalışırdık. Bu sebepten genellikle ilk örneklerimiz ve Hello World uygulamamız, Notepad gibi bir program ve komut satırındaki csc (C# Compiler) ile inşa edilirdi.
 

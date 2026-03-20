@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bilmiyordum, Öğrendim : SQL Merge"
 date: 2019-01-13 13:03:00 +0300
@@ -9,8 +9,6 @@ tags:
   - performance
 ---
 ![sqlmerge_0.jpg](/assets/images/2019/sqlmerge_0.jpg)
-
-Merhaba Arkadaşlar,
 
 Gün geçmiyor ki çevremdeki insanlardan yeni bir şeyler daha öğrenmeyeyim. Bugün o günlerden biriydi...
 

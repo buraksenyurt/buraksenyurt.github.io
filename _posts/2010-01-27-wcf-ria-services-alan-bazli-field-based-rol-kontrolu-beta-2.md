@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF RIA Services - Alan Bazlı(Field Based) Rol Kontrolü [Beta 2]"
 date: 2010-01-27 02:33:00 +0300
@@ -18,8 +18,6 @@ tags:
   - performance
 ---
 ![blg119_Giris.jpg](/assets/images/2010/blg119_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Hani bazen insanın aklına son derece zekice fikirler gelir ya...
 

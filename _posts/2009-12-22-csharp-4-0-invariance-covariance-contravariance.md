@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 4.0 - Invariance, Covariance, Contravariance ???"
 date: 2009-12-22 07:15:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![blg118_Giris.jpg](/assets/images/2009/blg118_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Bundan yıllar önce (aslında 2005 yılında...Çok eski bir tarih gibi görünmese de yazılım dünyası için çok çok uzun zaman önce anlamına gelmekte.) daha genç bir makale yazarıyken C# 2.0 delegate tiplerinde [co-variance, contra-variance](https://www.buraksenyurt.com/post/C-2-0-Covariance-ve-Contravariance-Delegates-bsenyurt-com-dan) durumlarını incelemeye çalışmıştım. Kişisel görüşüme göre, anlaşılmasından ziyade iyi bir şekilde analiz edilerek anlatılması çok zor olan bir konu Co-Variance, Contra-Variance. Üstelik bu kavramların çıkış noktasında yer alan Variant, Invariant tip kavramları düşünüldüğünde konuyu anlamak için epey bir çaba sarf etmemiz gerekebiliyor.
 

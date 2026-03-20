@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net RIA Servisleri - DomainDataSource Kulanımı"
 date: 2009-05-14 12:30:00 +0300
@@ -20,8 +20,6 @@ tags:
   - visual-studio
 ---
 ![blg17_4.jpg](/assets/images/2009/blg17_4.jpg)
-
-Merhaba Arkadaşlar,
 
 Her ne kadar şu günlerde güzel ülkemizin Ege kıyılarında kısa bir dinlenme molası vermiş olsamda, internetin sahil kıyılarındaki cafe'lere kadar girmiş olması, herşeyi değiştiriyor.
 

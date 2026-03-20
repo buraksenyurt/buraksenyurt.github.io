@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 83–XML, XAML, XmlDataProvider ve Master Child Binding"
 date: 2013-03-25 20:35:00 +0300
@@ -10,8 +10,6 @@ tags:
   - wpf
   - xaml
 ---
-Merhaba Arkadaşlar,
-
 Diyelim ki elinizde aşağıdaki gibi Master-Child veri ilişkisi içeren (1 gruba bağlı birden fazla albüm) bir XML dosyası var.
 
 ```xml

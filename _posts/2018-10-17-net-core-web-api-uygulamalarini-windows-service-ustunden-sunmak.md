@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: ".Net Core Web API Uygulamalarını Windows Service Üstünden Sunmak"
 date: 2018-10-17 07:53:00 +0300
@@ -19,8 +19,6 @@ tags:
   - visual-studio
 ---
 ![scrummy.jpg](/assets/images/2018/scrummy.jpg)
-
-Merhaba Arkadaşlar,
 
 Scrum'lı çevik günlerimiz tüm hızıyla devam ediyor. Artık takımın kapasitesi standart çizgiye oturmaya başladı. Daha verimli çalışıyor ve daha iyi değerler üretebiliyoruz. Bunun bana olan en büyük artılarından birisi de yeni bir şeyler araştıracak vakit bulabilmek. Nitekim takım üyelerinin değişime uygun olacak şekilde kendisini sürekli yeniliyor olması lazım. Bu açıdan motive edildiğimizi ifade edebilirim. Gündem maddemiz ise uzun zamandır pek yanına uğramadığımız ama mutlaka sistemlerimizin bir yerlerinde koşan Windows Service'ler.
 

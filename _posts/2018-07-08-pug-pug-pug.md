@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Pug, Pug, Pug"
 date: 2018-07-08 21:30:00 +0300
@@ -17,8 +17,6 @@ tags:
   - github
 ---
 ![node_with_pug_3.jpg](/assets/images/2018/node_with_pug_3.jpg)
-
-Merhaba Arkadaşlar,
 
 Kısa bir süre önce çalışmakta olduğum şirkette epey eğlenceli bir mevzunun içerisinde kaldım. Daha önceden de bahsettiğim gibi kurumumuzun bize sunduğu güzel bir hizmet var...[Pluralsight](https://www.pluralsight.com/). Ne var ki benim gibi dikkatsiz kullanıcılar için enteresan şeyler olabiliyor. İzin verin hikayeyi size anlatayım; İlk hedefim oldukça hoşuma giden Node.js tarafında ilerlemekti.
 

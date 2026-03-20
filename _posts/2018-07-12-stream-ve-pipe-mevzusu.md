@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Stream ve Pipe Mevzusu"
 date: 2018-07-12 21:30:00 +0300
@@ -12,8 +12,6 @@ tags:
   - performance
 ---
 ![piping_g_1.gif](/assets/images/2018/piping_g_1.gif)
-
-Merhaba Arkadaşlar,
 
 West-World bu hafta neredeyse savaş alanı gibiydi. Node.js tarafında öğrenmeye çalştığım yeni konu sebebiyle makineyi bir çok kez restart etmek zorunda kaldım. Üstelik düğmeden:|
 

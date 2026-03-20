@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 89–Exif Bilgilerini Okumak"
 date: 2013-03-25 21:05:00 +0300
@@ -7,8 +7,6 @@ categories:
 tags:
   - tek-fotoluk-ipucu
 ---
-Merhaba Arkadaşlar,
-
 Takip edenler amatör düzeye yaklaşmaya çalışan/çabalayan fotoğrafçılık tutkunu birisi olduğumu bilirler. Hatta okullarda “Fotoğrafçı ve Hataları…” konulu bir ders konusu olabilecek kadar iddialı bir foto bloğumda da bulunmaktadır
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_79.png)

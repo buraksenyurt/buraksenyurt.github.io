@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Dependency Injection'ın TDD'deki Yeri"
 date: 2018-12-21 10:30:00 +0300
@@ -17,8 +17,6 @@ tags:
   - dependency-management
 ---
 ![tdd_di_5.jpg](/assets/images/2018/tdd_di_5.jpg)
-
-Merhaba Arkadaşlar,
 
 Ne zamandır oturup da Lego yapmadığımı fark ettim. Her ne kadar fiyatları epeyce artmış olsa da geçenlerde dayanamayıp bir tane aldım. Bitirir bitirmez beni tatile götüreceğini düşündüğüm güzel bir karavan. Bloklardaki canlı renklerin tatlılığı, masmavi surf tahtası, uydu alıcısı, konforlu koltukları, panaromik tavanı, spor lastikleri ile bir saate kalmadan hazırdı bile.
 

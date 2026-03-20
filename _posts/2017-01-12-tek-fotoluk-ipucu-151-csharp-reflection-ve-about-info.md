@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 151 - C#, Reflection ve About Info"
 date: 2017-01-12 22:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - reflection
   - generics
 ---
-Merhaba Arkadaşlar,
-
 Programlardaki About Info kısımlarını bilirsiniz. Yazdığımız uygulama hakkında bir takım bilgiler verir. Genellikle ürünün adı, bir iki cümle ile ne yaptığı, üreticisi ve hatta versyion numarası ve benzeri bilgiler yer alır. Micorosoft.Net tarafında aslında bu tip bilgileri Assembly'a ait niteliklerde (attribute) belirtiriz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![tfi_151_1.gif](/assets/images/2017/tfi_151_1.gif)

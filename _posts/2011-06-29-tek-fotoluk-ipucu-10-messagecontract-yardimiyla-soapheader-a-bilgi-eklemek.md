@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu – 10 (MessageContract yardımıyla SoapHeader' a Bilgi Eklemek)"
 date: 2011-06-29 18:39:00 +0300
@@ -12,8 +12,6 @@ tags:
   - wcf-4-0
   - soap
 ---
-Merhaba Arkadaşlar,
-
 Bu kez de WCF ile ilişkili bir fotoğraf paylaşalım istedim. Aslına bakarsanız iki fotoğrafçık oldu ama idare edin artık. Varsayalım ki SOAP paketlerinizin Header kısmında kendi tanımladığınız tip içeriklerinin yer almasını istiyorsunuz. İşte bunun için aşağıdaki fotoğrafta görülen yolu izleyebilirsiniz
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_28.png)

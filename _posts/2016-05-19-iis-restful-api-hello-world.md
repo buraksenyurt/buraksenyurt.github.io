@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "IIS RESTful API Hello World"
 date: 2016-05-19 17:00:00 +0300
@@ -21,8 +21,6 @@ tags:
   - asmx
 ---
 ![iisrestful_3.gif](/assets/images/2016/iisrestful_3.gif)
-
-Merhaba Arkadaşlar,
 
 Bugün 20 Mayıs Cuma. Dün 19 Mayıs nedeniyle resmi tatil olan bankamız bugün de toplu olarak tatil. Ancak şirkette kalmak isteyenler durumlarını bildirip gelebiliyor.
 

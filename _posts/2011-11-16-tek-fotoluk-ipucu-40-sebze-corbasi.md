@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu-40(Sebze Çorbası)"
 date: 2011-11-16 15:20:00 +0300
@@ -11,8 +11,6 @@ tags:
   - reflection
   - generics
 ---
-Merhaba Arkadaşlar,
-
 Hani böyle annemiz zamanında içinde yok yok dedirtecek türden çorbalar yapmıştır. Her çeşit sebzenin konulduğu
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_57.png)

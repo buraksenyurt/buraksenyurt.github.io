@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "DevelopersTube - Bankacılık ve Finans Uygulamaları"
 date: 2014-02-10 05:09:00 +0300
@@ -10,8 +10,6 @@ tags:
   - nedirtv
   - http
 ---
-Merhaba Arkadaşlar,
-
 Değerli dostum [Uğur Umutluoğlu](http://www.umutluoglu.com) hocamın davetlisi olarak gerçekleştirdiğimiz bu [DevelopersTube](http://www.youtube.com/user/nedirtvcom) söyleşisinde, genel hatları ve sorunları ile Bankacılık Uygulamaları üzerinde durmaya çalıştık. Sizler için de keyifli bir sohbet olduğunu ümit ediyoruz. Söyleşimizde temel olarak aşağıdaki sorulara cevap bulmaya çalıştık.
 
 - Bankalarda ne tip uygulamalar geliştirilir?

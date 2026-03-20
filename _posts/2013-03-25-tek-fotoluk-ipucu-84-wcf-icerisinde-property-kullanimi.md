@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 84–WCF içerisinde Property Kullanımı"
 date: 2013-03-25 20:40:00 +0300
@@ -8,8 +8,6 @@ tags:
   - tek-fotoluk-ipucu
   - wcf
 ---
-Merhaba Arkadaşlar,
-
 Malum bildiğiniz üzere get ve set bloklarından oluşan özellikler (Properties) aslına bakarsanız arka planda (IL-Intermediate Language) birer metod olarak ifade edilirler. Bu teoriden yola çıkarsak bir servis içerisine özellik (Property) yazıp get,set metoldarını operasyon olarak dış dünyaya sunabiliriz
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_156.png)

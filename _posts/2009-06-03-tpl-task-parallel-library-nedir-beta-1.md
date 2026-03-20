@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TPL(Task Parallel Library) Nedir? [Beta 1]"
 date: 2009-06-03 02:50:00 +0300
@@ -15,8 +15,6 @@ tags:
   - delegates
   - generics
 ---
-Merhaba Arkadaşlar,
-
 Uzun uzun zaman önceydi. İlk bilgisayarımı daha dün gibi hatırlıyorum. Efsane Commodore 64.
 
 ![blg26_8.jpg](/assets/images/2009/blg26_8.jpg)

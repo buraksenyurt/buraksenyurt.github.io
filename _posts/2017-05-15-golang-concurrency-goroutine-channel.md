@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Concurrency (goroutine, channel)"
 date: 2017-05-15 11:52:00 +0300
@@ -14,8 +14,6 @@ tags:
   - concurrency
 ---
 ![goconcurrency2.gif](/assets/images/2017/goconcurrency2.gif)
-
-Merhaba Arkadaşlar,
 
 Yazılım ürünlerinde eş zamanlı çalışma modeli oldukça önemli. Uygulamalarda yer alan süreçler çoğu zaman alt iş parçalarından oluşmakta ve bu parçalar uygun koşullarda eş zamanlı olarak yürütülebilmekte. Eş zamanlılık için bir çok dilde destek mevcut. Go dili için de öne çıkan kavramlarından birisi aslında. Concurrency denildiğinde aklımıza bir sürece ait n sayıda görevin (Task) aynı anda çalışması gelmeli. Okuduğum kaynakta buna güzel bir örnek veriliyor: Web Sunucusu.
 

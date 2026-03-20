@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF WebHttp Services - Tanışma"
 date: 2010-02-01 05:50:00 +0300
@@ -23,8 +23,6 @@ tags:
   - rc
 ---
 ![blg127_Giris.jpg](/assets/images/2010/blg127_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Nihayet taşlar yerli yerine oturmaya başladı. 2008 yılında düzenlenen Microsoft PDC'de tanıtılan sürüm ile başlayan macerada Beta 1, Beta 2 versiyonları derken yavaş yavaş RC, RTM sürümlerinin çıkacağı günlere gelmekteyiz. Elbette hepizimin beklentisi bir an önce stabil bir sürüme kavuşabilmek. Bu günlerde çok doğal olarak.Net Framework 4.0 ve Visual Studio 2010 ürünlerinin sınırlarının daha da netleştiğini görmeye başladık. Her ne kadar henüz yayınlanmış yeni bir sürüm olmasa da, pek çok güncel ve geçerli kaynaktan okuduğumuz kadarı ile bu böyle. Taşların yerli yerine oturmaya başladığı ve herşeyin biraz daha belirginleştiği alanlardan biriside Windows Communication Foundation 4.0
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 4.0 - COM Interop İyileştirmelerinden Dynamic Import ve Ommiting Ref [Beta 2]"
 date: 2009-12-14 20:30:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![blg117_Giris.jpg](/assets/images/2009/blg117_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Hani bazen insanın canı şöyle çıtır çıtır kuruyemiş çeker ya...Hatta çoğunlukla bir film seyrederken, maç izlerken, arkadaşları ile sohhet ederken, internette surf yaparken iyi gider ya...Hatta birisinin blog yazısını okurken kuruyemişleri yerken daha bir heyecanlı, istekli olur ya...
 

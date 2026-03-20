@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF–SOAP Servislerinde Custom Header Kullanmak"
 date: 2014-11-06 12:00:00 +0300
@@ -14,8 +14,6 @@ tags:
   - http
   - generics
 ---
-Merhaba Arkadaşlar,
-
 [![OldMail](/assets/images/2014/OldMail_thumb.jpg)](/assets/images/2014/OldMail.jpg) Çok uzun zamandır Sosyal ağlardan uzağım. Ne Facebook, ne Twitter ne de bir başkasını kullanmıyorum. Google+ üzerinde bile sırf Hangout söyleşileri nedeniyle mecburen açık tuttuğum bir hesap var. Sosyal ağları terk ettiğim ilk günlerde çevremdeki pek çok yakın dostumla olan iletişimimi de yeniden tesis etmem gerekmişti. Ne acıdır ki pek çoğunun iletişim bilgisi sadece Tweet ve Facebook mesaj kısmı ile sınırlı kalmıştı. Hani nerede telefon numaraları, nerede e-posta adresleri? Çoğunu tedarik etmek epeyce zor oldu.
 
 O vakitlerde yine yakın arkadaşlarımdan birisi ile işte bu sosyal ağ mevzularını ve insanlar üzerindeki olumsuz etkilerini konuşmaya başlamıştık. Bir arkadaşımla uzun zamandır e-posta üzerinden böylesine yoğun iletişim kurmamıştım. Heyecan verici ve sürükleyici bir deneyim idi. Şirkette uçuşan e-posta trafiğinden çok daha farklıydı. Duygusal anlamı vardı. Suni, bayağı değildi. İletişim kurmak isteyen iki arkadaşın yazışmalarıydı.

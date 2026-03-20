@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "REST Starter Kit Nedir?"
 date: 2009-05-05 12:41:00 +0300
@@ -23,8 +23,6 @@ tags:
   - visual-studio
 ---
 ![WCF-Rest-Starter-Kit.png](/assets/images/2009/WCF-Rest-Starter-Kit.png)
-
-Merhaba Arkadaşlar,
 
 Bildiğiniz üzere bir süredir [WCF REST Starter Kit](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24644)ile ilişkili yazılarımı ve görsel derslerimi sizlerle paylaşmaktayım. Ancak önemli bir noktayı kaçırdığımı düşünüyorum.
 

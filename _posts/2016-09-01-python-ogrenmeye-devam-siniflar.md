@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Python Öğrenmeye Devam - Sınıflar"
 date: 2016-09-01 01:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - ruby
 ---
 ![practice-makes-perfect.jpg](/assets/images/2016/practice-makes-perfect.jpg)
-
-Merhaba Arkadaşlar,
 
 Bir süredir izinde olduğum için yeni gözdem Python ile yeterince ilgilenemedim. Döndüğümde daha önceden çalıştığım konuları hatırlamakta da epeyce zorlandım. Pasımı atmak ve tekrardan verimliliğimi yükseltmek için ilk olarak defterime karaladığım notlarımın üstünden geçtim.
 

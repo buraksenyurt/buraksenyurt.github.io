@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "NDepend Tool ve CQL(Code Query Language)"
 date: 2010-09-22 20:16:00 +0300
@@ -12,8 +12,6 @@ tags:
   - visual-studio
   - dependency-management
 ---
-Merhaba Arkadaşlar,
-
 [![blg227_CQL_Sample_1](/assets/images/2010/blg227_CQL_Sample_1_thumb.gif)](/assets/images/2010/blg227_CQL_Sample_1.gif) Yandaki resimde Visual Studio 2010 Ultimate ortamına ait bir ara pencere görmektesiniz. Dikkat edeceğiniz üzere
 
 Select Methods Where NbLinesOfCode>=5

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Workflow Foundation 4.0 - Custom Activity Geliştirmek [Beta 2]"
 date: 2010-01-01 07:00:00 +0300
@@ -20,8 +20,6 @@ tags:
   - datatable
 ---
 ![blg108_Giris.jpg](/assets/images/2010/blg108_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Programlamaya profesyonel olarak adım attığım yıllarda henüz.Net mimarisi geliştirilmeden önce Delphi programlama dili ile ürünler yazmaya çalışırdım. Aslında.Net çıktığından beri uğraşmadığım Delphi programlama dilini düşündüğümde aklıma ilk gelen hızlı geliştirme (Rapid Development) için sunduğu zengin Component sekmeleridir. Sayısız bileşen sayesinde müşteri ihtiyaçlarına çok hızlı cevap verebilecek ürünler geliştirebildiğimi de gayet net hatırlayabiliyorum. Tabi.Net dünyasına geçiş yapıp Visual Studio.Net (2005,2008,2010) ortamı ile karşılaştırıldığında çok fazla bileşen olduğu göze çarpmaktaydı. Ancak.Net tarafında da kodlama yeteneklerinin daha ön plana çıktığı bir gerçekti.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu-17 (Query ile Daha Şık Kodlama)"
 date: 2011-07-11 21:54:00 +0300
@@ -14,8 +14,6 @@ tags:
   - tek-fotoluk-ipucu
   - linq
 ---
-Merhaba Arkadaşlar,
-
 LINQ sorgularını sadece sorgulamak için kullandığımızı da nereden çıkartıyorsunuz
 
 ![Smile](/assets/images/2011/wlEmoticon-smile_9.png)

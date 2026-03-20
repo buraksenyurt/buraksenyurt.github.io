@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WF Ado.Net Entity Pack - Hello World"
 date: 2010-05-03 01:00:00 +0300
@@ -18,8 +18,6 @@ tags:
   - rc
 ---
 ![blg191_Giris.gif](/assets/images/2010/blg191_Giris.gif)
-
-Merhaba Arkadaşlar,
 
 2008 yılının son çeyreğinde Microsoft tarafından düzenlenen Yazılım Geliştiriciler Zirvesinde, WCF & WF 4.0 konulu bir sunumum olmuştu. Derinlere Dalıyoruz mesajını içeren etkinliğin sunum dosyalarının arka plan resminde, dipteki bilgisayara ulaşmaya çalışan bir balık adam motifi yer almaktaydı. Sevgili Mehmet Emre'nin beni davet ettiği bu oturuma hazırlanırken, Microsoft PDC 2008' de dağıtılan VHD'ler üzerinde çalışmıştım. O zamanlarda WF Designer üzerinde dikkatimi çeken noktaların başında, WF aktivitelerindeki çeşitlilik yer almaktaydı. Özellike DbQuery, DbUpdate isimli SQL odaklı aktivite bileşenleri dikkatimi çekmişti.
 

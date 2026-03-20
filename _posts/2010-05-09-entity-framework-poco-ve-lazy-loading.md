@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework - POCO ve Lazy Loading"
 date: 2010-05-09 21:55:00 +0300
@@ -15,8 +15,6 @@ tags:
   - visual-studio
   - dependency-management
 ---
-Merhaba Arkadaşlar,
-
 Hatırlayacağınız üzere [bir önceki yazımızda](https://www.buraksenyurt.com/post/Entity-Framework-POCO%28Plain-Old-CLR-Objects%29) Ado.Net Entity Framework içerisinde POCO (Plain Old CLR Object) nesnelerinin kullanımını incelemeye çalışmıştık. Örneğimizde kullanmış olduğumuz LINQ sorgusu basit bir Join işlemini gerçekleştirmekteydi. Tabi Join sorgusu kullandığımız için gözden kaçırdığımız ufak ama bir o kadar da önemli bir vaka oluşmaktadır. Bu vakayı ele almak için program kodunu biraz daha değiştirdiğimizi ve aşağıdaki hale getirdiğimizi düşünelim.
 
 ```csharp

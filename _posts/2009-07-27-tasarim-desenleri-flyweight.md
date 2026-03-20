@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Desenleri - FlyWeight"
 date: 2009-07-27 09:30:00 +0300
@@ -10,8 +10,6 @@ tags:
   - generics
 ---
 ![blg51_2.jpg](/assets/images/2009/blg51_2.jpg)
-
-Merhaba Arkadaşlar,
 
 Yandaki resimde yer alan minik boksör aslında hafif siklette mücadele etmektedir ve biraz sonra işleyeceğimiz FlyWeight tasarım kalıbı ile uzaktan yakında hiç bir alakası bulunmamaktadır
 

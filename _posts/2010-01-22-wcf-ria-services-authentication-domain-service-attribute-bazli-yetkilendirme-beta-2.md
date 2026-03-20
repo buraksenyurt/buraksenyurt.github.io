@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF RIA Services - Authentication Domain Service - Attribute Bazlı Yetkilendirme [Beta 2]"
 date: 2010-01-22 00:45:00 +0300
@@ -23,8 +23,6 @@ tags:
   - authorization
 ---
 ![blg115_Giris.jpg](/assets/images/2010/blg115_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Bildiğiniz üzere bir süredir WCF RIA Service'lerinde doğrulama (Authentication), yetkilendirme (Authorization), Role ve Profile yönetimi konularına değinmekteyiz. WCF RIA Service'lerinin temel amaçlarından birisininde RIA tipindeki uygulamalar için Ado.Net Entity Framework gibi kaynaklar üzerinden CRUD (CreateReadUpdateDelete) operasyonlarını sağlanması olduğu düşünüldüğünde, servis fonksiyonelliklerinin yetkilendirilmeside güvenlik açısından önem arz eden konuların başında gelmektedir. Bu konu, WCF RIA Service'lerinde nitelikler (Attributes) yardımıyla ele alınabilmektedir.
 

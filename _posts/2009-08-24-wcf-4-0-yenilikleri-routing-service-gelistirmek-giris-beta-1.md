@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Giriş [Beta 1]"
 date: 2009-08-24 06:15:00 +0300
@@ -14,8 +14,6 @@ tags:
   - iis
 ---
 ![blg71_Giris.jpg](/assets/images/2009/blg71_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Servis Yönelimli Mimari (Service Oriented Architecture) çözümlerinde zaman zaman yönlendirme amaçlı servislerin yazılması gerekmektedir (Router Service). Bu servislerin genel kullanım amacı çoğunlukla, istemcilerden gelecek olan talepleri değerlendirip asıl işi yapacak olan servislere devretmek ile ilişkilidir.
 

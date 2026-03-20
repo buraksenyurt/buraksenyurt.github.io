@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Word Dosyası İçerisinden Entity Framework’ e"
 date: 2013-07-17 17:26:00 +0300
@@ -20,8 +20,6 @@ tags:
   - visual-studio
 ---
 [![275344](/assets/images/2013/275344_thumb.jpg)](/assets/images/2013/275344.jpg)[Orjinal Yazım Tarihi 03-15-2013]
-
-Merhaba Arkadaşlar,
 
 Geliştirdiğimiz veya kullanmakta olduğumuz yazılım ürünlerine dahil olan, farklı segmentlerden gelen pek çok kullanıcı profili vardır. Farklı profillerin olması, bazı hallerde geliştirilmekte olan ürünlerin başarısını doğrudan etkilemektedir.
 

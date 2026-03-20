@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 85–Zahmetsizce Encryption(ProtectedData)"
 date: 2013-03-25 20:46:00 +0300
@@ -8,8 +8,6 @@ tags:
   - tek-fotoluk-ipucu
   - dotnet
 ---
-Merhaba Arkadaşlar,
-
 Cryptography denilince.Net Framework tarafında epey bir çözüm bulunmakta. Bazıları oldukça karmaşıktır ve simetrik yada a-simetrik olmalarına bağlı olaraktan, ortak noktalarından birisi de, tekniğe göre kullanılan Vector-Key değerlerinin tutulması/bilinmesi gibi zorunluluklardır.
 
 Aslında Windows tarafında, XP işletim sisteminden beri var olan (hatta Windows 8 de bunun Cloud destekli bir versiyonu da vardır-> DPAPI-NG) bir API mevcut. DPAPI. Nam-ı diğer Data Protection API.

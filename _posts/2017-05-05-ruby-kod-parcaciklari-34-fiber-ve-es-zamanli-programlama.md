@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 34 - Fiber ve Eş Zamanlı Programlama"
 date: 2017-05-05 12:17:00 +0300
@@ -11,8 +11,6 @@ tags:
   - concurrency
 ---
 ![rubyfiber_1.gif](/assets/images/2017/rubyfiber_1.gif)
-
-Merhaba Arkadaşlar,
 
 Eş zamanlı programlamanın (Concurrent Programming) dile veya çatıya göre farklı uygulanma şekilleri olabiliyor. Esas itibariyle genel amaç eş zamanlı olarak birden fazla işin gerçekleştirilmesini sağlayabilmek. Bu noktada en zorlayıcı noktalardan birisi işlemcinin ve işletim sisteminin bu çalışma taleplerine olan anlık tepkilerinin yönetilmesi. Neredeyse pek çok programlama ortamında Thread'ler ile karşılaşıyoruz (Bu arada yandaki fotoğrafın Ruby Fiber ile bir alakası yok. Fiber konulu imaj ararkan doğal olarak lifli yiyecekler ve sevimsiz diyet konusunu karşıma çıkmıştı)
 

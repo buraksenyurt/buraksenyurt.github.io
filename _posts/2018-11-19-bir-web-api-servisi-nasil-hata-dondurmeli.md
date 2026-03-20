@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bir Web API Servisi Nasıl Hata Döndürmeli ?"
 date: 2018-11-19 06:28:00 +0300
@@ -15,8 +15,6 @@ tags:
   - github
 ---
 ![badrequest.jpg](/assets/images/2018/badrequest.jpg)
-
-Merhaba Arkadaşlar,
 
 Bir süre öncesine kadar şirkette yeni bir lakabım vardı. "Bad Request Burak":) Devraldığımız bir kaç projede teknik borçlanmadan ötürü oluşan kirli kodlarla boğuşurken çok fazla detay vermeyen HTTP 400 hataları ile karşılaşıyordum. Bazen bir tanesini çözerken bir başkasının doğmasına neden olacak değişikliklere de sebep olabiliyordum. Hatta hesapta olmayan bu hataların neden oluştuğunu tespit etmek için harcanan zaman kaybı nedeniyle diğer görevlerim de aksıyordu. Bir süre sonra "Bad Request" ünvanı ile hatırlanır oldum:) Hatta bulaşıcı hale gelen bu ünvan ekibimdeki başka arkadaşlara da yayılıverdi. Neyse ki işleri sonunda yoluna koyduk (Her ne kadar ünvanım " Burak 200" olarak değişmese de:D)
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Python - Flask ile Basit Bir Web Uygulaması Geliştirmek"
 date: 2017-08-09 21:02:00 +0300
@@ -13,8 +13,6 @@ tags:
   - go
 ---
 ![sicak.jpg](/assets/images/2017/sicak.jpg)
-
-Merhaba Arkadaşlar,
 
 Yazıyı yazdığım şu yaz gününde hava epey sıcak. İstanbul'da öğle saatlerinde 39 dereceyi gördük. Güney tarafında yaşayan bir kaç yakın arkadaşımdan 48 dereceli rakamları duyduktan sonra ise halimize şükredelim dedim. Açtım Python kitabımı, çalışmaya devam ettim.
 

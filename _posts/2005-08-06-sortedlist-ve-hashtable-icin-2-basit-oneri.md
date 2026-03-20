@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "SortedList ve Hashtable İçin 2 Basit Öneri"
 date: 2005-08-06 12:00:00 +0300
@@ -10,8 +10,6 @@ tags:
   - sql-server
   - generics
 ---
-Değerli Okurlarım Merhabalar,
-
 SortedList ve Hashtable koleksiyonları, anahtar-değer (key-value) çiftlerini esas alır. Hashtable koleksiyonu özellikle sahip olduğu elemanlar ile ilgili işlemlerde kullandığı hash algoritmalı teknik sayesinde en hızlı çalışan koleksiyon olma özelliğinide gösterir. Diğer yandan SortedList anahtar-değer çiftlerinin, anahtar değerine göre her zaman sıralandığı bir koleksiyon tipidir.
 
 Yani SortedList koleksiyonuna eklediğimiz elemanların sırasına bakılmaksızın, yeniden yapılan bir sıralama söz konusudur. Bu avantajlı bir durum olsa bile, özellikle SortedList'in çok daha yavaş çalışan bir koleksiyon olmasına neden olmaktadır. Her iki koleksiyon hakkında söylenebilecek pek çok konu vardır. Biz bu makalemizde özellikle dikkat etmemiz gereken 2 teori üzerinde duracağız. İlk teorimiz ile işe başlayalım.

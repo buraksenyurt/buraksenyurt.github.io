@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 4.0 - Dynamic Olmak"
 date: 2009-04-30 15:02:00 +0300
@@ -17,8 +17,6 @@ tags:
   - generics
   - visual-studio
 ---
-Merhaba Arkadaşlar,
-
 Uzun bir süredir (son bir senelik zaman dilimi içerisinde) C# 4.0 ile birlike gelen yeniliklerden haberdarız. Şöyle bir kaç sene öncesini hatırlıyorum da...
 
 ![Cool](/assets/images/2009/smiley-cool.gif)

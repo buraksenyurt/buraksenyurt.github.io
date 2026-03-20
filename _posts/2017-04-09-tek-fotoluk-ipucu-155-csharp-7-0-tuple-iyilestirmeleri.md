@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 155 - C# 7.0 Tuple İyileştirmeleri"
 date: 2017-04-09 21:42:00 +0300
@@ -11,8 +11,6 @@ tags:
   - ruby
   - generics
 ---
-Merhaba Arkadaşlar,
-
 C# 7.0 tarafında geliştiricileri mutlu eden iyileştirmelerden birisi de Tuple tipi ile ilgili. Klasik olarak bir tip tanımı yapmamıza ihtiyaç duymadan özellikle metodlardan dönüş yaptığımız noktalarda faydalanabildiğimiz generic Tuple tipinin en büyük handikapı, üye isilmendirmeleri. Aşağıdaki kod parçasında bu durumu açık bir şekilde görebiliriz.
 
 ```csharp

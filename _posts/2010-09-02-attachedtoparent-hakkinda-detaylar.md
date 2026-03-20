@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "AttachedToParent Hakkında Detaylar"
 date: 2010-09-02 08:30:00 +0300
@@ -15,8 +15,6 @@ tags:
   - datatable
 ---
 ![blg178_Giris.jpg](/assets/images/2010/blg178_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Malum "her yiğidin farklı bir yoğurt yiğiş tarzı vardır" derler. Genellikle programlama dilleri veya.Net Framework gibi yapılarda da bir sonuca ulaşmak için birden fazla ve farklı yol söz konusu olabilir. Böyle bir durumun oluşmasına neden olan etkenlerin başında, çevresel ortam parametrelerinin farklılaşmasının geldiğini ifade edebiliriz.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Desenleri - State"
 date: 2009-08-06 06:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![blg57_vendingMachine.gif](/assets/images/2009/blg57_vendingMachine.gif)
-
-Merhaba Arkadaşlar,
 
 Bir süre öncesine kadar özel bir bankada uzman yazılım geliştirici olarak görev almaktaydım. Bankada en çok hoşuma giden bazende en çok nefret ettiğim hususlardan biriside otomat makinesi idi.
 

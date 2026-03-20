@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Rest Servislerinde Önbellekleme(Caching)"
 date: 2009-04-27 12:28:00 +0300
@@ -18,8 +18,6 @@ tags:
   - visual-studio
   - dependency-management
 ---
-Merhaba Arkadaşlar,
-
 REST (REpresentational State Transfer) modelini uygulayan WCF servislerinin geliştirilmesinde, WCF Rest Starter Kit ile birlikte gelen kolaylıklardan biriside, önbellekleme (Caching) işlemlerinin dekleratif (Declarative) olarak yapılabilmesidir. Burada dekleratiflikten kastımız, önbellekleme bildirimlerinin çalışma zamanına nitelik (Attribute) yoluyla bildirilmesidir. Web programlama modeline göre geliştirilen servislerin çeşidi ne olursa olsun, performans kriterleri söz konusu olduğunda önemli olan noktalardan biriside verilerin istemciye gönderilmeden önce gerekiyorsa belirli süreler boyunca veya bazı koşullar sağlanıncaya kadar sunucu ön belleğinde (hatta bazen istemci tarafında tarayıcı uygulama için ayrılan özel bölgelerde) tutulmasıdır.
 
 Özellikle Asp.Net web uygulamalarını göz önüne alırsak, ön bellekleme ile ilişkili olarak kullanılan modüllerin pek çok farklı yapıyı desteklediğini görürüz. Söz gelimi, absolute caching (Kesin bir süre kadar önbellekte tutulması), sliding expiration caching (belirli süre içerisinde talep geldikçe önbellekte tutulma süresinin ileriye ötelenmesi), file dependency caching (önbellekteki verinin yenilenme koşulunun dosyadaki değişimlere bağlanması),sql dependency caching (ön bellekteki verinin yenilenme koşulunun bir tablodaki değişimlere bağlanması) vb... Hal böyle olunca, genellikle Asp.Net destekli sunucularda host edilen WCF servislerindende bu hazır Caching modüllerinden yararlanılması kaçınılmazdır. Startet Kit ise, Microsoft.ServiceModel.Web assembly'ı içerisinde sunduğu WebCache niteliği ile bu özelliğin REST bazlı WCF servislerinede uygulanabilmesini, olanaklı kılmaktadır.

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Interface Kavramı"
 date: 2017-05-07 10:57:00 +0300
@@ -14,8 +14,6 @@ tags:
   - github
 ---
 ![margaret_hamilton.gif](/assets/images/2017/margaret_hamilton.gif)
-
-Merhaba Arkadaşlar,
 
 Geçenlerde bilgisayarımın başında oturmuş sıkılmakla meşguldüm. Her ne kadar bloğumu zinde tutmaya çalışsam da arada sırada böyle durağan dönemlere de denk geliyorum. Küçük tatiller diyelim. Derken enteresan bir Tweet yakaladım. Apollo 11'in Command ve Lunar modüllerine ait Assembler kodları github üzerinden yayına açılmış. [Şu adresten bakabilirsiniz](https://github.com/chrislgarry/Apollo-11).
 

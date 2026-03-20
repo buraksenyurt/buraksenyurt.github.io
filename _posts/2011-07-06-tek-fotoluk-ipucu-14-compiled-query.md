@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu–14 (Compiled Query)"
 date: 2011-07-06 00:30:00 +0300
@@ -9,8 +9,6 @@ tags:
   - entity-framework
   - tek-fotoluk-ipucu
 ---
-Merhaba Arkadaşlar,
-
 Entity Framework ile Compiled Query'ler hazırlayabileceğinizi ve daha performanslı sorgulamalar yaptırabileceğinizi biliyor muydunuz? İşte basit bir örnek
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_32.png)

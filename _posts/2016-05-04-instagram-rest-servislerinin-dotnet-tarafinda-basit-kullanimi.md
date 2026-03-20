@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Instagram REST Servislerinin .Net Tarafında Basit Kullanımı"
 date: 2016-05-04 06:00:00 +0300
@@ -18,8 +18,6 @@ tags:
   - caching
 ---
 ![UsingInstagram_3.gif](/assets/images/2016/UsingInstagram_3.gif)
-
-Merhaba Arkadaşlar,
 
 Neredeyse hepimizin sosyal ağ üzerinde hesapları bulunuyor. Facebook, Twitter, Instagram, Youtube, Flickr ve benzerlerini bunlara örnek olarak verebiliriz. Bu ağlar pek tabii kendi hizmetlerini geliştiricilerin kullanımına da uzun zamandır açmış durumdalar. Geliştirici olarak bizleri bu kısım daha çok ilgilendiriyor.
 

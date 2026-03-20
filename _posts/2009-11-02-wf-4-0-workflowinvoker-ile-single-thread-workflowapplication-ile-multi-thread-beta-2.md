@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WF 4.0 : WorkflowInvoker ile Single Thread, WorkflowApplication ile Multi-Thread [Beta 2]"
 date: 2009-11-02 02:35:00 +0300
@@ -20,8 +20,6 @@ tags:
   - visual-studio
 ---
 ![blg94_Giris.jpg](/assets/images/2009/blg94_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Hiç müzik dinlerken bir yandan da kod yazmayı denediniz mi? Üstelik çevre ile olan etkileşiminiz devam ederken
 

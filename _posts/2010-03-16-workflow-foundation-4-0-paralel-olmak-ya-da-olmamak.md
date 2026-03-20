@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Workflow Foundation 4.0 - Paralel Olmak ya da Olmamak"
 date: 2010-03-16 02:15:00 +0300
@@ -16,8 +16,6 @@ tags:
   - rc
 ---
 ![blg155_Giris.jpg](/assets/images/2010/blg155_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Pek çoğumuz ünlü İngiliz şairi Shakespeare'in adını ve eserlerini bir şekilde duymuş, okumuş veya seyretmişizdir. Yaşadığı 1564-1616 yılları arasında yazdığı sayısız Komedi, Trajedi ve Romanesk bulunmaktadır. Bunlar yüz yıllar boyu Tiyatrolarda sergilenmiş ve edebi değeri yüksek eserlerdir. Shakespeare dendiğinde insanın aklına hemen Romeo ve Juliet, Hamlet, Othello, Machbeth gibi eserleri gelmektedir. Aslında Edebiyat'tan çok fazla anlamam. Büyük bir ihtimalle Matematikçi olduğum içindir.
 

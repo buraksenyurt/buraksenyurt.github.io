@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "C# 6.0 - Collection Initializers için Add Metodunu Yönlendirmek"
 date: 2017-03-18 22:50:00 +0300
@@ -12,8 +12,6 @@ tags:
   - visual-studio
 ---
 ![lego_collection_n.gif](/assets/images/2017/lego_collection_n.gif)
-
-Merhaba Arkadaşlar,
 
 Mesleki hayatımın bir döneminde yazılım eğitmeni olarak çalıştım. Ağırlıklı olarak.Net eğitimleri verdim. Tabii o zamanlar.Net nispeten daha kolaydı. Bu kadar fazla dallanan bir Framework değildi ama C# dil özellikleri de acımasızca genişlemiyordu. Aradan geçen onca yıldan sonra çalıştığım turuncu bankanın kendi akademisinden iç eğitim isteği geldi.
 

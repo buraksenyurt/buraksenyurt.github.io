@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 59–Nesneyi JSON String Olarak Serileştirmek"
 date: 2012-07-12 00:52:00 +0300
@@ -10,8 +10,6 @@ tags:
   - serialization
   - generics
 ---
-Merhaba Arkadaşlar,
-
 Diyelimki generic T tipine yazacağınız bir Extension metod ile, JSON formatında serileştirme işlemi yaptırmak ve serileştirme sonucunuda string olarak geriye döndürmek istiyorsunuz. Ne yaparsınız? Aşağıdaki fotoğraf bir ip ucu verebilir mi?
 
 ![Wink](/assets/images/2012/smiley-wink.gif)

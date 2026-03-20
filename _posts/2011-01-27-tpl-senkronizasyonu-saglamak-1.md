@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "TPL Senkronizasyonu Sağlamak - 1"
 date: 2011-01-27 13:40:00 +0300
@@ -16,8 +16,6 @@ tags:
   - shared-state
 ---
 ![blg212_Giris](/assets/images/2011/blg212_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Pek çoğumuzun anahtarlığında sayısız anahtar bulunmaktadır. Özellike gerilim filmlerinde bu anahtarlardan doğru olanı bulmak ve anahtar deliğine sokmak, hep zaman alan başarısız kaçış girişimleri olarak sahnelenir. Genellikle bu başarız girişimlerin sonunda ne olduğu malumdur.
 

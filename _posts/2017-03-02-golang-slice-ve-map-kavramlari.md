@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "GoLang - Slice ve Map Kavramları"
 date: 2017-03-02 21:23:00 +0300
@@ -10,8 +10,6 @@ tags:
   - pointers
 ---
 ![gobanana.gif](/assets/images/2017/gobanana.gif)
-
-Merhaba Arkadaşlar,
 
 Gopher olma çalışmalarım iş yoğunluğuna bağlı olarak zaman zaman hızlı ve zaman zaman da yavaş bir şekilde devam ediyor. Açıkçası Gopher karakterini ve internetteki örneklerini çok sevdim. Google oldukça sevimli bir logo yaratmış. Bu nedenle her bölüm mümkün mertebe farklı bir Gopher'ı ekranlarınıza taşımaya çalışıyorum.
 

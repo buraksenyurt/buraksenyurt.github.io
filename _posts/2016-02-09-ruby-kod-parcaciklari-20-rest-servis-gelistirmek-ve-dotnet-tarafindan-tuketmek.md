@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 20 - REST Servis Geliştirmek ve .Net Tarafından Tüketmek"
 date: 2016-02-09 01:44:00 +0300
@@ -19,8 +19,6 @@ tags:
   - generics
 ---
 ![logo.png](/assets/images/2016/logo.png)
-
-Merhaba Arkadaşlar,
 
 Artık belli bir platforma bağlı kalmadan farklı uygulamaları bir araya getirip konuşturabiliyor, büyük ölçekli sistemleri uçtan uca bağlayarak süreçler işletebiliyoruz. Burada programlama dillerinin üzerine oturduğu çatıların (Frameworks) büyük avantajlar sağladığı ve işleri belirli ölçüde kolaylaştırdığı aşikar.
 

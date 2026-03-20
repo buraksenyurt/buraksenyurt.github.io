@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 120 - Bir Listeden N Sayıda Benzersiz Nesne Çekmek"
 date: 2015-11-05 08:30:00 +0300
@@ -9,8 +9,6 @@ tags:
   - entity-framework
   - oracle
 ---
-Merhaba Arkadaşlar,
-
 Vaktiyle zamanında (bugün aslında) çalışmakta olduğumuz projede şöyle bir ihtiyacımız oldu; "Bir Oracle tablosundan Entity Framework aracılığı ile çektiğimiz nesne koleksiyonundan benzersiz olan n sayıdakini elde etmek" Elbette bu işi önce SQL tarafında halledip, sonrasında EF tarafına aktarmayı da tercih edebilirdik. Ancak değerli çalışma arkadaşım ile konuyu tartışırken fikir fikri doğurdu ve ortaya şöyle bir ihtiyaç daha çıktı. "Ya bunu T tipinde elemanlardan oluşan herhangi bir koleksiyon üzerinde, herhangi bir kritere göre yaptırmak istesek..."
 
 İşte bu noktada aklımıza aşağıdaki gibi bir çözüm geldi.

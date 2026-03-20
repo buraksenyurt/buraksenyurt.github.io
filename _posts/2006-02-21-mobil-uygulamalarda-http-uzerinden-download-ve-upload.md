@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Mobil Uygulamalarda Http Üzerinden Download ve Upload"
 date: 2006-02-21 10:00:00 +0300
@@ -11,8 +11,6 @@ tags:
   - http
   - iis
 ---
-Değerli Okurlarım Merhabalar,
-
 Http protolokü yardımıyla internet üzerinden sunuclar ve istemciler arasında veri alış verişinde bulunmak mobil uygulamalarda çok işe yarayan bir tekniktir. Özellikle binary (ikili) formatta veri transferi için, Http ektili ve verimli bir protokol hizmeti sunar. Bu makalemizde mobil uygulamalar ile web sunucuları arasında veri transferi işlemlerini Http protokolüne göre nasıl yapabileceğimizi incelemeye çalışacağız.
 
 Http protokolü gereği uygulamalarda istekte (request) bulunan ve cevap (response) veren tarafların olması söz konusudur. Bir kaynağa yönelik olarak gerekli isteklerde bulunmak ve bu isteklere karşılık gerekli cevapları üretmek için FCL (Framework Class Library) içerisinde yer alan HttpWebRequest ve HttpWebResponse sınıflarını kullanabiliriz. Bu sınıflar sadece Http protokolünü baz alarak çalışmaktadırlar. HttpWebRequest sınıfı yardımıyla bir kaynağa Http protokolü üzerinden istekte bulunabiliriz.

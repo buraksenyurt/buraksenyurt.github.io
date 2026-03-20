@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tasarım Desenleri - Composite"
 date: 2009-07-12 07:00:00 +0300
@@ -12,8 +12,6 @@ tags:
   - generics
 ---
 ![blg45_4.jpg](/assets/images/2009/blg45_4.jpg)
-
-Merhaba Arkadaşlar,
 
 Küçüklüğümde son derece şanslı bir çocuktum. Uzun yıllar Almanya'da çalışan rahmetli babam ve annemin pek çok arkadaşı bana Lego oyuncaklarından göndermiştir. Evde günümün büyük bir çoğunluğunu bu legolar ile oynarak geçirir ve okul zamanında derslerimden geri kalırdım.
 

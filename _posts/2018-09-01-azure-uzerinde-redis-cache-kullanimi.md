@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Azure Üzerinde Redis Cache Kullanımı"
 date: 2018-09-01 07:02:00 +0300
@@ -21,8 +21,6 @@ tags:
   - serialization
 ---
 ![aredisc_02.gif](/assets/images/2018/aredisc_02.gif)
-
-Merhaba Arkadaşlar,
 
 Bir süredir kişisel becerilerimizle alakalı olarak karşımıza çıkan T-Shaped Person isimli bir konu var (Aslında yıllardır var) Daha yakın zamanda katıldığım Scrum eğitiminde tekrardan karşıma çıkan ve [hatta şuradaki yazıyla](https://medium.com/@jchyip/why-t-shaped-people-e8706198e437) kısaca bilgilenebileceğiniz, özetle bir alanda gerçekten uzman ama bu alanla alakalı yan dallarda da bir şeyler yapabilen insan modelinden bahsediyorum.
 

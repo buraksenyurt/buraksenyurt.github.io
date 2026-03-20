@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Google Cloud Pub/Sub Service Macerası"
 date: 2018-07-19 21:10:00 +0300
@@ -25,8 +25,6 @@ tags:
   - visual-studio
 ---
 ![surfing.gif](/assets/images/2018/surfing.gif)
-
-Merhaba Arkadaşlar,
 
 Yeni yuvam ile evimin arası 40 km. Uzaklık nedeniyle mesailerimiz erken başlıyor. Sabah 05:50de çalan alarmla güne başlıyorum. Üst baş, kişisel bakım, seyahat boyu bana eşlik edecek filtre kahveyi hazırlama vs derken 06:35 sıralarında sevgili servis şoförümüz İhsan ağabey ile buluşup yola devam ediyorum. Yaklaşık 40-45 dakikalık bir seyahatten sonra iş yerine ulaşıyorum. Yol boyunca "o saatte kim ayakta olur?" sorusunu cevaplarcasına her sabah onlarca kez ezen insanla karşılaşıyorum. Mevsime göre evlerin sarı beyaz oda ışıkları, seyir halindeki arabalar, çalışanları işe götüren servisler, otobüsler, minibüsler, duraklarda bekleyen öğrenciler... O vakitlerde empati yapmak farklı bir deneyim.
 

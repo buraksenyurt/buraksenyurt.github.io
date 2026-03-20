@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Uygulamalarında Enterprise Library Validation Block Kullanımı"
 date: 2013-06-23 15:26:00 +0300
@@ -14,8 +14,6 @@ tags:
   - serialization
 ---
 [![lego-block-tape](/assets/images/2013/lego-block-tape_thumb.jpg)](/assets/images/2013/lego-block-tape.jpg)[Orjinal Yazım Tarihi 10.09.2012]
-
-Merhaba Arkadaşlar,
 
 Enterprise Library ve içerisinde yer alan Application Block’ lar çoğunlukla projelerimizde ihtiyaç duyduğumuz ve Cross-Cutting olarak geçen parçaların hızlı ve kolay bir biçimde uygulanmasında kullanılmaktadır.
 

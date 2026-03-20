@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "West-World'ün Uzaydan Gelen SQL Server ile Tanışması"
 date: 2018-06-26 03:00:00 +0300
@@ -24,8 +24,6 @@ tags:
   - visual-studio
 ---
 ![sqlonlinux_0.jpg](/assets/images/2018/sqlonlinux_0.jpg)
-
-Merhaba Arkadaşlar,
 
 Renkler ve zevkler tartışılmaz. Hatta dünya öylesine renkli bir yerdir ki insanlar bazen neyi seçeceklerine karar veremeyebilir. Tabii ki işin içerisinde yazılım olunca bu renkler siyah ve beyaz gibi sadece iki seçeneğe de indirgenebilmişdir.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Microsoft Distributed Cache(Velocity Project) - Hello World"
 date: 2009-12-11 00:25:00 +0300
@@ -19,8 +19,6 @@ tags:
   - visual-studio
 ---
 ![blg95_Giris2.jpg](/assets/images/2009/blg95_Giris2.jpg)
-
-Merhaba Arkadaşlar,
 
 Bazen bir otomobilin çok hızlı gitmesi, yüksek süratlere çıktığında direksiyonunun titrememesi, yolda sağa sola savrulmaması, keskin virajlarda rahatlıkla tutunabilmesi, vitesler arasındaki geçişlerde torkunun mümkün olduğunca korunabilmesi, frenajlarda kontrolü sağlaması vb... istenir. Yarış otomobillerinde bu ve benzeri ihtiyaçlar için çok sık duyduğumuz tunning olarak isimlendirilen geliştirmeler yapılır. Bazen yarışın kategorisine göre neredeyse teknolojinin sınırlarını zorlayacak yeniliklere şahit olunur. Ama özetle aracın performansını arttıracak her yol, kuralları çerçevesinde mübahtır.
 

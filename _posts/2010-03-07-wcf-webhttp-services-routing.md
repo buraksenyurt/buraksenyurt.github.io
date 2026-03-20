@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF WebHttp Services - Routing"
 date: 2010-03-07 21:45:00 +0300
@@ -21,8 +21,6 @@ tags:
   - rc
 ---
 ![blg138_Giris.jpg](/assets/images/2010/blg138_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Geçtiğimiz aylarda yurdumuzun en güzel şehirlerinden birisi olan İstanbul'da, oldukça soğuk ve kar yağışlı günler geçirdik. Yandaki resimde görülen manzara çalıştığım ARI 1 binasının yürüyüş yolu üzerinde çok da yeni olmayan, dokunmatik ekran, Windows Mobile gibi ileri özellikleri bulunmayan ancak Carl Zeiss mercekli Sony Ericsson K810i marka cep telefonum tarafından çekilmiştir.
 

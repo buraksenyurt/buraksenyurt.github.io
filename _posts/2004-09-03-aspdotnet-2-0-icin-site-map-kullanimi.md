@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net 2.0 için Site Map Kullanımı"
 date: 2004-09-03 06:00:00 +0300
@@ -11,8 +11,6 @@ tags:
   - xml
   - visual-studio
 ---
-Değerli Okurlarım Merhabalar,
-
 Bu makalemizde, web sitelerinde özellikle sayfalar arasındaki hareketlerde, kullanıcıların nerede olduklarını bilmelerine yardımcı olan site haritaları üzerinde duracağız. Bununla birlikte, site haritalarının Asp.Net 2.0' daki kullanım yollarından birisini sağlayan SiteMapPath sunucu kontrolünü kısaca incelemeye çalışacağız.
 
 Internet sitelerinin çoğu, pek çok web sayfasından oluşur. Bu sayfalar arasında her zaman için bir ilişki ve hiyerarşi söz konusudur. Dolayısıyla kullanıcılar, internet sitelerine ait sayfalarda gezinirken, onlara sitenin neresinde olduklarını göstermek ve bulundukları sayfaya nereden geldiklerini belirtmek, sitenin mantıksal ve anlamsam bütünlüğü açısından oldukça önemlidir.

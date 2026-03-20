@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları 22 - Twitter API'sinin Basit Kullanımı"
 date: 2016-04-04 15:00:00 +0300
@@ -14,8 +14,6 @@ tags:
   - github
 ---
 ![rubytwt_7.gif](/assets/images/2016/rubytwt_7.gif)
-
-Merhaba Arkadaşlar,
 
 Bazı günler şirketten geç çıkıyorum. Özellikle el ayak çekildiğinde ofis ortamı bir şeylere çalışmak için son derece ideal oluyor. Tam da istediğim ortam. Kendi çalışmalarıma vakit ayırabildiğim hoşuma giden zamanlar. Hele de akşam güneşi camdan içeri giriyor ve en sevdiğim sarı rengi masamın üstüne bırakıyorsa.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF 4.0 Yenilikleri - Default EndPoints [Beta 1]"
 date: 2009-08-09 16:51:00 +0300
@@ -16,8 +16,6 @@ tags:
   - visual-studio
 ---
 ![blg59_Giris.jpg](/assets/images/2009/blg59_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 Çok eskinden.Net Remoting ile ilişkili uygulamalarda çalışırken, servis ve istemci taraflarının konfigurasyon dosyası bazlı ayarlamaları sırasında, Visual Studio.Net 2003 intelli-sense özelliğinin kaybolduğuna şahit olmuştum. Gerçektende config dosyası içerisindeki intelli-sense özelliği belirli bir elemente kadar destek veriyor ama sonrasında kayboluyordu. Böyle bir durumda pek çok ayarlamayı ezbere yapmak zorunda kaldığımı hatırlıyorum.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Oracle View' ları için Otomatik DataTable' lar Üretmek"
 date: 2016-03-19 18:21:00 +0300
@@ -12,8 +12,6 @@ tags:
   - dataset
   - datatable
 ---
-Merhaba Arkadaşlar,
-
 Üzerinde çalıştığımız ve uzun süredir canlı ortamda yaşamakta olan eski bir ürünümüz geçtiğimiz günlerde kod kalite taramalarından birisine girdi. Vaktinde her zaman olduğu gibi alel acele yazılmak zorunda olan kodlar bir kaç ana kategori altında çeşitli tipte ihlallere yakalandı. Bunlardan birisi de Strongly Typed DataSet kullanımına ilişkindi.
 
 Ölçümleme yapan aracın metriklerinden birisi Untyped DataSet kullanımı kabul etmemekte. Bu yüzden uygulama içerisinde View'lar için kullandığımız ne kadar DataTable varsa ihlale girdi..Net tarafında kodlamaya yeni başlayanların sıklıkla düşebileceği bir hata olduğunu ifade edebilir aslında. Typed DataSet/DataTable'ler kod yazımı sırasında tip güvenliğini (Type Safety) de beraberinde getirdiğinden tercih edilmesi gereken sınıflar.

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Service' lerinde Routing ile Versiyonlama"
 date: 2013-03-04 00:50:00 +0300
@@ -12,8 +12,6 @@ tags:
   - http
 ---
 [![oldbook](/assets/images/2013/oldbook_thumb.jpg)](/assets/images/2013/oldbook.jpg)[Orjinal yazım tarihi 2012 Eylül’ dür]
-
-Merhaba Arkadaşlar,
 
 Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Derken gözüm WCF 4.0’ ın Beta zamanlarında yazdıklarıma takıldı. O zamanlar.Net Framework 4.0' ün Beta sürümü çıktığında, incelemeye çalıştığım önemli yeniliklerden birisi de yönlendirme servisleri (Routing Service) idi.
 

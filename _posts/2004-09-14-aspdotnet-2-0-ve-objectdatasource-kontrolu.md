@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Asp.Net 2.0 ve ObjectDataSource Kontrolü"
 date: 2004-09-14 12:00:00 +0300
@@ -11,8 +11,6 @@ tags:
   - aspnet
   - dataset
 ---
-Değerli Okurlarım Merhabalar,
-
 Bu makalemizde ObjectDataSource bileşenini incelemeye çalışacağız. ObjectDataSource bileşeni Asp.Net 2.0 ile gelen yeni bileşenlerden birisidir. Görevi, 3 katlı mimarinin uygulanması halinde, verikaynağı ile sunum katmanında yer alan veri bağlı kontroller arasındaki veri alışverişinin, iş katmanı üzerindeki herhangibir nesne yardımıyla gerçekleştirilebilmesini sağlamaktır. Başka bir deyişle, veri-bağlı kontroller ile, iş katmanında yer alan iş nesnesi arasındaki iletişimi sağlamaktadır.
 
 ![mk92_6.gif](/assets/images/2004/mk92_6.gif)

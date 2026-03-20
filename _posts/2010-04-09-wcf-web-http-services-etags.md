@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "WCF Web Http Services - ETags"
 date: 2010-04-09 05:05:00 +0300
@@ -23,8 +23,6 @@ tags:
   - rc
 ---
 ![blg159_Giris.jpg](/assets/images/2010/blg159_Giris.jpg)
-
-Merhaba Arkadaşlar,
 
 WCF WebHttp Service'leri ile ilişkili yazılarımıza kaldığımız yerden devam ediyoruz. Bu yazımızda ETag (Entity Tag) kullanarak sunucu ile istemci arasındaki veri trafiğini nasıl azaltabileceğimizi incelemeye çalışacağız. Öncelikle istemci ile servis arasındaki iletişimi düşünerek ilerlemeye çalışalım. İstemci, sunucu üzerinde yer alan bir operasyon için talepte bulunduğunda bir cevap üretilecek ve buna bağlı bir içerik verisi istemci tarafına indirilecektir.
 

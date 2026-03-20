@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Core Web API  için Planlanmış Görevler"
 date: 2018-02-09 04:27:00 +0300
@@ -22,8 +22,6 @@ tags:
   - dependency-management
 ---
 ![hostedsrv_1.gif](/assets/images/2018/hostedsrv_1.gif)
-
-Merhaba Arkadaşlar,
 
 [Chuck Norris](https://chucknorris.com/). Sanıyorum hayatımın bir bölümü onun televizyonda arka arkaya yayınlanan filmleri ile geçmiştir. Asıl adı Carlo Ray Norris'tir ve Chuck ismi 1958de O, hava kuvvetlerindeyken takma ad olarak ortaya çıkmıştır. Dövüş sanatları ustası olan Chuck'ın harika bir web sitesi var. Hayran kitlesi oldukça geniş. 1940 doğumlu olan film yıldızını Google aramalarında daha çok "Chuck Norris Facts" ile biliyoruz.
 

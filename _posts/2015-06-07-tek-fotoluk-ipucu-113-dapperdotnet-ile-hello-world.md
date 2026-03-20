@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Tek Fotoluk İpucu 113 - Dapper.Net ile Hello World"
 date: 2015-06-07 08:14:00 +0300
@@ -15,8 +15,6 @@ tags:
   - visual-studio
   - github
 ---
-Merhaba Arkadaşlar,
-
 Gecenin bir yarısı. Bilgisayarınızın başındasınız. Önünüzde Visual Studio. Yanınızda kahveniz/çayınız. Canınız da sıkılmış. Acaba ne yapsam da vaktimi iyi değerlendirebilsem diye düşünüyorsunuz. Böyle hallerde şöyle bir NuGet paketi bulup araştırmak bünyeye iyi gelebiliyor. Bunun için [Nuget Must Haves](http://nugetmusthaves.com/) isimli siteyi ziyaret edebilirsiniz.
 
 Diyelim ki öyle bir gece ve orada [Dapper.Net](https://github.com/StackExchange/dapper-dot-net) diye bir paket gördünüz. Hatta azcık Entity Framework, Oracel/SQL ve O-RM (Object Relational Mapping) bilginiz var. Hazır elinizin altında da Microsoft'un emektar Northwind veritabanı. O halde ne duruyorsunuz. Bir Hello World diyivirsiniz ya! Aynen aşağıdaki fotoğrafta görüldüğü gibi:)

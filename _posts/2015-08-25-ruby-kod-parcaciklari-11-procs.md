@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Ruby Kod Parçacıkları - 11 (Procs)"
 date: 2015-08-25 08:00:00 +0300
@@ -9,8 +9,6 @@ tags:
   - workflow-foundation
   - rc
 ---
-Merhaba Arkadaşlar,
-
 Bir [önceki kod parçacığımızda](Ruby Kod Parçacıkları - 10 (Yield ve Block Kullanımı).md) Ruby dilinin önemli özelliklerinden birisi olan Block kavramına değinmiştik. Bu kod parçacığında ise Proc kullanımını anlamaya çalışacağız. Kod parçalarını metodlara taşımanın yollarından sadece birisi Block'lardır. Ancak block'lar bir nesne olarak ifade edilemezler. Oysa ki Ruby dilinde her şeyin bir nesne olduğu öne sürülür. İşte bu noktada devreye Proc ve Lambda enstrümanları girer.
 
 Proc ile de bir kod bloğu işaret edilebilir. Block'dan farkı ise bu kod parçasının bir nesneye atanabiliyor olmasıdır (Yani bir kod bloğunu nesne olarak kaydedip kullanabiliriz). Bu da doğal olarak yeniden kullanılabilirliği (reusability) mümkün kılmaktadır. Bir başka deyişle bir proc nesnesi ile işaret edilen kod parçacığı program içinde farklı noktalarda tekrar tekrar kullanılabilir. Şimdi kısa bir kod parçacığı ile proc kullanımına yakından bakalım.
