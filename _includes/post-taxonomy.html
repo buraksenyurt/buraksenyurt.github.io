@@ -1,21 +1,25 @@
-{%- if page.categories or page.tags -%}
+{%- assign taxonomy_entry = site.data.inferred_taxonomy.posts[page.url] -%}
+{%- assign categories = taxonomy_entry.categories | default: page.categories -%}
+{%- assign tags = taxonomy_entry.tags | default: page.tags -%}
+
+{%- if categories or tags -%}
   <div class="post-taxonomy">
-    {%- if page.categories and page.categories.size > 0 -%}
+    {%- if categories and categories.size > 0 -%}
       <div class="post-taxonomy-group">
         <span class="post-taxonomy-label">Kategoriler</span>
         <div class="post-taxonomy-links">
-          {%- for category in page.categories -%}
+          {%- for category in categories -%}
             <a class="taxonomy-chip" href="{{ '/kategoriler/#' | append: (category | slugify) | relative_url }}">{{ category }}</a>
           {%- endfor -%}
         </div>
       </div>
     {%- endif -%}
 
-    {%- if page.tags and page.tags.size > 0 -%}
+    {%- if tags and tags.size > 0 -%}
       <div class="post-taxonomy-group">
         <span class="post-taxonomy-label">Etiketler</span>
         <div class="post-taxonomy-links">
-          {%- for tag in page.tags -%}
+          {%- for tag in tags -%}
             <a class="taxonomy-chip" href="{{ '/etiketler/#' | append: (tag | slugify) | relative_url }}">#{{ tag }}</a>
           {%- endfor -%}
         </div>

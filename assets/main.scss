@@ -232,6 +232,63 @@
   margin: 1.5rem 0;
 }
 
+.taxonomy-cloud {
+  margin-top: 1.5rem;
+}
+
+.taxonomy-cloud h2 {
+  margin-bottom: 0.85rem;
+  font-size: 1.1rem;
+}
+
+.taxonomy-cloud-summary {
+  margin-bottom: 0.85rem;
+  color: $grey-color;
+}
+
+.taxonomy-cloud-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.taxonomy-cloud-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 999px;
+  background: rgba($brand-color, 0.05);
+  color: $text-color;
+  text-decoration: none;
+}
+
+.taxonomy-cloud-chip strong {
+  color: $grey-color;
+  font-size: 0.82em;
+}
+
+.taxonomy-cloud-weight-1 {
+  font-size: 0.85rem;
+}
+
+.taxonomy-cloud-weight-2 {
+  font-size: 0.95rem;
+}
+
+.taxonomy-cloud-weight-3 {
+  font-size: 1.05rem;
+}
+
+.taxonomy-cloud-weight-4 {
+  font-size: 1.15rem;
+}
+
+.taxonomy-cloud-weight-5 {
+  font-size: 1.3rem;
+}
+
 .taxonomy-nav a {
   display: inline-flex;
   align-items: center;

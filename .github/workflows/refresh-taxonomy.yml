@@ -1,0 +1,52 @@
+name: Refresh Taxonomy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - _posts/**
+      - scripts/build_taxonomy.rb
+      - _layouts/taxonomy.html
+      - _layouts/post.html
+      - _includes/post-taxonomy.html
+      - search.json
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-taxonomy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: false
+
+      - name: Generate inferred taxonomy
+        run: ruby scripts/build_taxonomy.rb
+
+      - name: Detect taxonomy changes
+        id: taxonomy_changes
+        run: |
+          if git diff --quiet -- _data/inferred_taxonomy.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated taxonomy
+        if: steps.taxonomy_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/inferred_taxonomy.json
+          git commit -m "chore: refresh inferred taxonomy"
+          git push

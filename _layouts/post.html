@@ -27,24 +27,43 @@ layout: default
     {{ content }}
   </div>
 
-  {%- assign primary_category = page.categories | first -%}
-  {%- assign primary_tag = page.tags | first -%}
+  {%- assign taxonomy_entry = site.data.inferred_taxonomy.posts[page.url] -%}
+  {%- assign current_categories = taxonomy_entry.categories | default: page.categories -%}
+  {%- assign current_tags = taxonomy_entry.tags | default: page.tags -%}
   {%- assign related_count = 0 -%}
   {%- capture related_posts_markup -%}{%- endcapture -%}
   {%- for post in site.posts -%}
     {%- if post.url != page.url -%}
+      {%- assign candidate_taxonomy = site.data.inferred_taxonomy.posts[post.url] -%}
+      {%- assign candidate_categories = candidate_taxonomy.categories | default: post.categories -%}
+      {%- assign candidate_tags = candidate_taxonomy.tags | default: post.tags -%}
       {%- assign category_match = false -%}
       {%- assign tag_match = false -%}
 
-      {%- if primary_category and post.categories contains primary_category -%}
-        {%- assign category_match = true -%}
-      {%- endif -%}
+      {%- for category in current_categories -%}
+        {%- if candidate_categories contains category -%}
+          {%- assign category_match = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
 
-      {%- if primary_tag and post.tags contains primary_tag -%}
-        {%- assign tag_match = true -%}
-      {%- endif -%}
+      {%- for tag in current_tags -%}
+        {%- if candidate_tags contains tag -%}
+          {%- assign tag_match = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
 
-      {%- if category_match or tag_match -%}
+      {%- if category_match -%}
+        {%- capture related_posts_markup -%}
+          {{ related_posts_markup }}
+          <li>
+            <span class="related-post-date">{{ post.date | date: site.minima.date_format }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </li>
+        {%- endcapture -%}
+        {%- assign related_count = related_count | plus: 1 -%}
+      {%- elsif tag_match -%}
         {%- capture related_posts_markup -%}
           {{ related_posts_markup }}
           <li>

@@ -2,15 +2,30 @@
 layout: default
 ---
 
-{%- assign taxonomy_items = site[page.taxonomy] | sort -%}
+{%- assign taxonomy_items = site.data.inferred_taxonomy[page.taxonomy] | sort -%}
 
 <div class="taxonomy-page">
   <header class="page-header taxonomy-header">
     <h1 class="page-heading">{{ page.title | escape }}</h1>
     <p class="taxonomy-summary">
-      Toplam {{ taxonomy_items | size }} {{ page.taxonomy_title | downcase }} var. İlgili başlığa gidip o konudaki yazıları listeleyebilirsiniz.
+      Toplam {{ taxonomy_items | size }} {{ page.taxonomy_title | downcase }} var. Liste, yazilarin baslik ve iceriklerinden turetilen siniflandirma ile olusturuluyor.
     </p>
   </header>
+
+  {%- if page.taxonomy == 'tags' and site.data.inferred_taxonomy.tag_cloud and site.data.inferred_taxonomy.tag_cloud.size > 0 -%}
+    <section class="taxonomy-cloud" aria-label="Etiket bulutu">
+      <h2>Etiket Bulutu</h2>
+      <p class="taxonomy-cloud-summary">Bulutta en az 20 yazida gecen etiketler gosterilir.</p>
+      <div class="taxonomy-cloud-list">
+        {%- for item in site.data.inferred_taxonomy.tag_cloud -%}
+          <a class="taxonomy-cloud-chip taxonomy-cloud-weight-{{ item.weight }}" href="#{{ item.name | slugify }}">
+            <span>{{ item.name }}</span>
+            <strong>{{ item.count }}</strong>
+          </a>
+        {%- endfor -%}
+      </div>
+    </section>
+  {%- endif -%}
 
   <nav class="taxonomy-nav" aria-label="{{ page.title | escape }} gezintisi">
     {%- for item in taxonomy_items -%}
