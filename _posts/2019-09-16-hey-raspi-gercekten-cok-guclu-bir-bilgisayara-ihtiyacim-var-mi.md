@@ -23,13 +23,9 @@ tags:
 ---
 ## 1985 Yazı - Hikayenin Başladığı Yer
 
-![raspbian_cover.jpeg](/assets/images/2019/raspbian_cover.jpeg)
-
-
-![raspbian_cover.jpeg](/assets/images/2019/raspbian_cover.jpeg)
-
-
 Almanya’daki kuzenlerimden biri olan Haluk abi orta öğrenimi için dayımlar tarafından İstanbul’a gönderilmişti. Şu anda 94 yaşında olan anneannem ve rahmetli Hasan dedemin Barbaros mahallesindeki bahçeli evlerinin üst katında sokak tarafına bakan oturma odasında yaşıyordu. Benim ilkokul sıralarında olduğum zamanlardı. Rahmetli Ali dayım orta okul sınıf geçme hediyesi olarak Haluk abime üstünde Commodore 64 yazan bir bilgisayar almıştı. Vaktinin çoğunu resim yaparak ve 37 ekran renkli televizyona bağlanmış Commodore’unda oyun oynayarak geçiriyordu.
+
+![raspbian_cover.jpeg](/assets/images/2019/raspbian_cover.jpeg)
 
 Çılgın pilot Murdock’lı A takımının, John Jay Rambo’nun, He-Man’in, “bir alışveriş bir fiş” ile KDV’nin, siyah okul önlüklerinin, şeytan Rıdvan gol kralı Tanju’nun olduğu dönemlerdi. Mahallenin bir kaç sokak ötesindeki toprak futbol sahasının yanındaki pasajda müzik kasetleri, plaklar ve VHS’ler satan küçük bir dükkan vardı. Commodore’un popülerleşmesiyle birlikte oyun kasetleri doldurmaya da başlamıştı. Bir kaset içinde onlarca oyun olabiliyordu. Summer Games, Green Beret, River Raid, 1942, PaperBoy, Hawkeye, Emlyn Hughes Soccer ve aklıma gelmeyen niceleri…
 
