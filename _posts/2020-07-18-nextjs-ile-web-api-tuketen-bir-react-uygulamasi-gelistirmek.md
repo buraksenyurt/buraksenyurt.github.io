@@ -31,6 +31,7 @@ npm install react-bootstrap bootstrap
 
 Kodsal değişikliklerimiz pages altındaki index.js dosyasında yer alıyor. Burayı incelemeniz konuyu anlamak adına yeterli olacaktır. Pek tabii yorum satırları en büyük yardımcınız. Bootstrap içinse sadece _app.js düzenlenmiştir.
 
+{% raw %}
 ```javascript
 import { useState, useEffect } from 'react'; //useState ve useEffect kullanımı için eklendi
 import Head from 'next/head'
@@ -214,6 +215,7 @@ export default function Home({peoples}) { //props ile gelen peoples parametre ol
   )
 }
 ```
+{% endraw %}
 
 ## Çalışma Zamanı
 

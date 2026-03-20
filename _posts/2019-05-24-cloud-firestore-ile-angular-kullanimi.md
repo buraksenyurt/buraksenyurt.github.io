@@ -183,6 +183,7 @@ export class ProductListComponent implements OnInit {
 
 product-list.component.html
 
+{% raw %}
 ```text
 <table class="table">
   <thead class="thead-dark">
@@ -225,6 +226,7 @@ product-list.component.html
   servis tarafındaki versiyonunu çağırmış oluyoruz.
 -->
 ```
+{% endraw %}
 
 CRUD operasyonları her iki bileşen içinde ortaklaşa kullanılabilecek fonksiyonellikler. Bu nedenle Shared klasörü altında konuşlandırdığımız products.service.ts isimli bir tip mevcut.
 
