@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bir Sınıf Yazalım"
 date: 2003-12-23 12:00:00 +0300
@@ -9,8 +9,6 @@ tags:
   - dotnet
   - ado-net
 ---
-Değerli Okurlarım, Merhabalar.
-
 Bugünkü makalemizde ADO.NET kavramı içerisinde sınıfları nasıl kullanabileceğimizi incelemeye çalışacak ve sınıf kavramına kısa bir giriş yapıcağız. Nitekim C# dili tam anlamıyla nesne yönelimli bir dildir. Bu dil içerisinde sınıf kavramının önemli bir yeri vardır. Bu kavramı iyi anlamak, her türlü teknikte, sınıfların avantajlarından yararlanmanızı ve kendinize özgü nesnelere sahip olabilmenizi sağlar. Zaten.net teknolojisinde yer alan her nesne, mutlaka sınıflardan türetilmektedir.
 
 Çevremize baktığımız zaman, çok çeşitli canlılar görürüz. Örneğin çiçekler. Dünya üzerinde kaç tür (cins) çiçek olduğunu bileniniz var mı? Ama biz bir çiçek gördüğümüzde ona çoğunlukla “Çiçek” diye hitap ederiz özellikle adını bilmiyorsak. Sonra ise bu çiçeğin renginden, yapraklarının şeklinden, ait olduğu türden, adından bahsederiz. Çiçek tüm bu çiçekler için temel bir sınıf olarak kabul edilebilir. Dünya üzerindeki tüm çiçekler için ortak nitelikleri vardır.

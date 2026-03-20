@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "DataTable Sınıfını Kullanarak Programatik Olarak Tablolar Oluşturmak-1"
 date: 2003-12-04 12:00:00 +0300
@@ -9,8 +9,6 @@ tags:
   - csharp
   - datatable
 ---
-Değerli Okurlarım, Merhabalar.
-
 Bugünkü makalemizde bağlantısız katmanın önemli bir sınıfı olan DataTable nesnesini bir açıdan incelemeye çalışacağız. Bilindiği gibi DataTable sınıfından türetilen bir nesne, bir tabloyu ve elemanlarını bellekte temsil etmek için kullanılmaktadır. DataTable sınıfı bellekte temsil ettiği tablolara ait olan satırları Rows koleksiyonuna ait DataRow nesneleri ile temsil ederken, tabloun alanlarını ise, Columns koleksiyonuna ait DataColumn nesneleri ile temsil etmektedir.
 
 Örnek uygulamamızda bu sınıf nesnelerini detaylı olarak kullanacağız. Diğer yandan DataTable sınıfı bir tabloya ilişkin kıstasların yer aldığı Constraints koleksiyonuna ait Constraint nesnelerinedee sahiptir. DataTable sınıfının ve üye elemanlarını aşağıdaki şekilde daha kolayca canlandırabiliriz.

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "OleDbDataAdapter Sınıfı Olayları"
 date: 2004-03-18 12:00:00 +0300
@@ -11,8 +11,6 @@ tags:
   - visual-studio
   - datatable
 ---
-Değerli Okurlarım, Merhabalar.
-
 Bu makalemizde, OleDbDataAdapter sınıfının olaylarını incelemeye çalışacağız. OleDbDataAdapter sınıfı aşağıdaki tabloda belirtilen üç önemli olayı içermektedir.
 
 Olay
