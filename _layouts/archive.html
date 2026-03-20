@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{%- assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" | reverse -%}
+
+<div class="archive-page">
+  <header class="page-header">
+    <h1 class="page-heading">{{ page.title | escape }}</h1>
+    <p class="archive-summary">
+      Toplam {{ site.posts | size }} yazı var. Yıllara göre atlayabilir veya doğrudan başlıklardan ilerleyebilirsiniz.
+    </p>
+  </header>
+
+  <nav class="archive-year-nav" aria-label="Yıllara göre gezinme">
+    {%- for year in posts_by_year -%}
+      <a href="#y{{ year.name }}">{{ year.name }} <span>({{ year.items | size }})</span></a>
+    {%- endfor -%}
+  </nav>
+
+  {%- for year in posts_by_year -%}
+    <section class="archive-year-section" id="y{{ year.name }}">
+      <div class="archive-year-heading">
+        <h2>{{ year.name }}</h2>
+        <span>{{ year.items | size }} yazı</span>
+      </div>
+
+      <ul class="archive-post-list">
+        {%- for post in year.items -%}
+          <li>
+            <span class="archive-post-date">{{ post.date | date: site.minima.date_format }}</span>
+            <a class="archive-post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  {%- endfor -%}
+</div>

@@ -2,6 +2,10 @@ title: Burak Selim Şenyurt
 description: Yazılım mühendisliği, sistem tasarımı ve programlama üzerine kişisel blog
 theme: minima
 lang: tr
+paginate: 20
+paginate_path: "/sayfa:num/"
+header_pages:
+  - arsiv.md
 
 minima:
   skin: dark

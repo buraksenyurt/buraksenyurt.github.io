@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%-d %B %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <nav class="post-navigation" aria-label="Yazılar arası gezinme">
+    {%- if page.next -%}
+      <a class="post-navigation-card" href="{{ page.next.url | relative_url }}">
+        <span class="post-navigation-label">Daha yeni yazı</span>
+        <strong>{{ page.next.title | escape }}</strong>
+      </a>
+    {%- endif -%}
+
+    <a class="post-navigation-card post-navigation-card-archive" href="{{ '/arsiv/' | relative_url }}">
+      <span class="post-navigation-label">Genel gezinme</span>
+      <strong>Arşive dön</strong>
+    </a>
+
+    {%- if page.previous -%}
+      <a class="post-navigation-card" href="{{ page.previous.url | relative_url }}">
+        <span class="post-navigation-label">Daha eski yazı</span>
+        <strong>{{ page.previous.title | escape }}</strong>
+      </a>
+    {%- endif -%}
+  </nav>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+{%- assign posts = paginator.posts | default: site.posts -%}
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <div class="home-toolbar">
+      <h2 class="post-list-heading">{{ page.list_title | default: "Son Yazılar" }}</h2>
+      <div class="home-toolbar-meta">
+        <span>Toplam {{ site.posts | size }} yazı</span>
+        <a href="{{ '/arsiv/' | relative_url }}">Tüm arşiv</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+    </div>
+
+    <ul class="post-list">
+      {%- for post in posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%-d %B %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginator and paginator.total_pages > 1 -%}
+      <nav class="pagination" aria-label="Yazı sayfaları">
+        {%- if paginator.previous_page -%}
+          <a class="pagination-link" href="{{ paginator.previous_page_path | relative_url }}">&larr; Daha yeni</a>
+        {%- else -%}
+          <span class="pagination-link is-disabled">&larr; Daha yeni</span>
+        {%- endif -%}
+
+        <div class="pagination-numbers">
+          {%- for page_number in (1..paginator.total_pages) -%}
+            {%- if page_number == 1 -%}
+              {%- assign page_url = '/' -%}
+            {%- else -%}
+              {%- assign page_url = site.paginate_path | replace: ':num', page_number -%}
+            {%- endif -%}
+
+            {%- if page_number == paginator.page -%}
+              <span class="pagination-number is-current">{{ page_number }}</span>
+            {%- else -%}
+              <a class="pagination-number" href="{{ page_url | relative_url }}">{{ page_number }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if paginator.next_page -%}
+          <a class="pagination-link" href="{{ paginator.next_page_path | relative_url }}">Daha eski &rarr;</a>
+        {%- else -%}
+          <span class="pagination-link is-disabled">Daha eski &rarr;</span>
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
+  {%- endif -%}
+</div>
