@@ -19,7 +19,7 @@ Bir zamanlar WCF servisleri ile ilişkili epeyce çalışma yapmış ve öğrend
 
 ![Viking_minion.gif](/assets/images/2016/Viking_minion.gif)
 
-Ne yazık ki internet ortamında sürüsüne bereket saldırı biçimi var. Bunların önüne geçmek için WCF tarafında WS- standartlarına uygun kanal yapıları kullanmak tercih edilen yöntemlerden birisi. Örneğin popüler saldırı çeşitlerinden olan Replay Attack etkisini hafifletmek için Custom Binding'ler kullanılıp, Reliable oturumlar açılması ve iletişimin SSL üzerinden gerçekleştirilmesi uygulanan teknikler arasında. (Şu an okudukça sıkıldığım 2007 menşeeli o uzun makalede [bu konuya](https://www.buraksenyurt.com/post/WCF-Replay-Attack-Etkisini-Hafifletmek-bsenyurt-com-dan) değinmişim)
+Ne yazık ki internet ortamında sürüsüne bereket saldırı biçimi var. Bunların önüne geçmek için WCF tarafında WS- standartlarına uygun kanal yapıları kullanmak tercih edilen yöntemlerden birisi. Örneğin popüler saldırı çeşitlerinden olan Replay Attack etkisini hafifletmek için Custom Binding'ler kullanılıp, Reliable oturumlar açılması ve iletişimin SSL üzerinden gerçekleştirilmesi uygulanan teknikler arasında. (Şu an okudukça sıkıldığım 2007 menşeeli o uzun makalede [bu konuya](/2007/11/07/wcf-replay-attack-etkisini-hafifletmek/) değinmişim)
 
 Replay Attack vakalarını önlemek için daha basit bir yol da mevcut aslında. Nonce Token adı verilen yöntemde GUID ve Timestamp bilgilerini kullanarak saldırıların önüne geçebiliyoruz. Tabii tek yol bu değil. Secure Shell, IPSec, Random TCP Sequence Number gibi teknikler ile de bu saldırıların önüne geçmek mümkün. Biz bu yazımızda Nonce Token kullanımına bakmaya çalışacağız.
 

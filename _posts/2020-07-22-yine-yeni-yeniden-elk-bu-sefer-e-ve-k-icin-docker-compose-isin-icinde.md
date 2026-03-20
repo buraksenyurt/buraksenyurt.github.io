@@ -225,7 +225,7 @@ dotnet run
 
 ![skynet_08_Screenshot_2.png](/assets/images/2020/skynet_08_Screenshot_2.png)
 
-Sonrasında örneğin Kibana ortamında ([KQL - Kibana Query Language](https://www.elastic.co/guide/en/kibana/master/kuery-query.html)) ile Error seviyesinde olan veya mesaj içeriğinde "zamanı" kelimesi geçen logları aratabiliriz.
+Sonrasında örneğin Kibana ortamında ([KQL - Kibana Query Language](https://www.elastic.co/docs/explore-analyze/query-filter/languages/kql)) ile Error seviyesinde olan veya mesaj içeriğinde "zamanı" kelimesi geçen logları aratabiliriz.
 
 ```text
 level : "Error" or message : "zamanı"

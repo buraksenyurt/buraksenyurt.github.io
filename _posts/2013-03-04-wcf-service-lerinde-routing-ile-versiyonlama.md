@@ -17,13 +17,13 @@ Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Der
 
 İstemciden gelen talepleri analiz ederek, arka planda yer alan asıl servislere mesajların taşınması noktasında göz önüne alınabilecek önemli bir kabiliyet sunulmaktaydı. Aslında RoutingService, buradaki işi güçlü filtreleme özellikleri ile epeyce kolaylaştıran bir tip olarak karşımıza çıkmaktaydı. Hatta bu konuyu bir kaç makale ile de ele almaya çalışmıştım.
 
-[WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Giriş [Beta 1]](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service)
+[WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Giriş [Beta 1]](/2009/08/24/wcf-4-0-yenilikleri-routing-service-gelistirmek-giris-beta-1/)
 
-[WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Hello World [Beta 1]](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-Gelistirmek-Hello-World)
+[WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Hello World [Beta 1]](/2009/08/26/wcf-4-0-yenilikleri-routing-service-gelistirmek-hello-world-beta-1/)
 
-[WCF 4.0 Yenilikleri - Routing Service - Hata Yönetimi [Beta 1]](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-Hata-Yonetimi)
+[WCF 4.0 Yenilikleri - Routing Service - Hata Yönetimi [Beta 1]](/2009/09/09/wcf-4-0-yenilikleri-routing-service-hata-yonetimi-beta-1/)
 
-[WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-MatchAll-Filtresi)
+[WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]](/2009/09/13/wcf-4-0-yenilikleri-routing-service-matchall-filtresi-beta-1/)
 
 [WCF WebHttp Services - Routing](/2010/03/07/wcf-webhttp-services-routing/)
 

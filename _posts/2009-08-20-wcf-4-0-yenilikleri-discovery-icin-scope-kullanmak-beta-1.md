@@ -12,7 +12,7 @@ tags:
   - http
   - delegates
 ---
-Bir [önceki](https://www.buraksenyurt.com/post/wcf40-Yenilikleri-Ad-Hoc-WS-Discovery)yazımızda WCF 4.0 tabanlı servislerde WS-Discovery protokolünün, Ad Hoc modeline göre nasıl uygulanabileceğini görmüştük. Ad Hoc modelinde istemcinin, yerel ağ üzerine dahil olan bir servisi aramak için kullanabileceği kriterleri önceden belirlemesi ve bunları kullanması gerektiğinden bahsetmiştik. Bu amaçla kod tarafında FindCriteria tipinden yararlanılmaktadır. Bir önceki örneğimizde, arama kriterinde sadece servis sözleşmesini (Service Contract) kullanmıştık.
+Bir [önceki](/2009/08/18/wcf-4-0-yenilikleri-ad-hoc-ws-discovery-beta-1/)yazımızda WCF 4.0 tabanlı servislerde WS-Discovery protokolünün, Ad Hoc modeline göre nasıl uygulanabileceğini görmüştük. Ad Hoc modelinde istemcinin, yerel ağ üzerine dahil olan bir servisi aramak için kullanabileceği kriterleri önceden belirlemesi ve bunları kullanması gerektiğinden bahsetmiştik. Bu amaçla kod tarafında FindCriteria tipinden yararlanılmaktadır. Bir önceki örneğimizde, arama kriterinde sadece servis sözleşmesini (Service Contract) kullanmıştık.
 
 Ancak, arama alanını biraz daha dar tutmak amacıyla Scope bildirimlerinde de bulunabiliriz. Bir başka deyişle, ağ üzerinde birden fazla servisin arandığı durumlarda kapsama alanımızı, ekleyeceğimiz Scope kriterlerine göre azaltma şansımız bulunmaktadır. Bir şekilde istemcinin ilgi alanınıda daha kesin çizgilerle belirlemiş olmaktayız. Peki bunu nasıl uygulayabiliriz?
 

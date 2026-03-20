@@ -11,7 +11,7 @@ tags:
   - wcf
   - http
 ---
-Bir önceki [blog yazımızda](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-Gelistirmek-Hello-World)WCF 4.0 ile basit bir yönlendirme servisinin (Router Service) nasıl yazılabileceğini incelemeye çalışmıtık. Tabi bu tip bir sistemde dikkat edilmesi gereken vakalardan biriside, Downstream servislerde istisnaların (Exceptions) oluşması halinde nasıl davranılacağıdır. Peki ne gibi durumlardan bahsediyoruz? Örneğin, Router servisine gelen paketin yönlendirildiği bir alt servis çalışmıyor olabilir.
+Bir önceki [blog yazımızda](/2009/08/26/wcf-4-0-yenilikleri-routing-service-gelistirmek-hello-world-beta-1/)WCF 4.0 ile basit bir yönlendirme servisinin (Router Service) nasıl yazılabileceğini incelemeye çalışmıtık. Tabi bu tip bir sistemde dikkat edilmesi gereken vakalardan biriside, Downstream servislerde istisnaların (Exceptions) oluşması halinde nasıl davranılacağıdır. Peki ne gibi durumlardan bahsediyoruz? Örneğin, Router servisine gelen paketin yönlendirildiği bir alt servis çalışmıyor olabilir.
 
 ![blg74_Giris.jpg](/assets/images/2009/blg74_Giris.jpg)
 

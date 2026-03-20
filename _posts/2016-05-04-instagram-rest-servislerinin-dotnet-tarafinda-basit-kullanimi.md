@@ -35,7 +35,7 @@ Dilerseniz hiç vakit kaybetmeden işlemlerimize başlayalım.
 
 Bu kayıt işleminde önemli olan bir kaç nokta var. Client ID, Client Secret ve Redirect URI değerleri istemci uygulama tarafından kullanılacak değişkenler olacak. Geliştireceğimiz örnekte bu değerleri ele alarak Instagram'a erişim hakkı olan bir jeton (Access Token) elde edeceğiz. Bir başka deyişle uygulamanın REST Endoint'lerini kullanabilmesi için gerekli izni alacağız. Özellikle Redirect URI değeri önemli. Nitekim uygulamamız üzerinden bir Login işlemi de gerçekleştirilmekte. Bu Login işlemi sonrasında geriye dönülecek olan URL bilgisi, Instagram'a kayıt edilen adres ile eş olmalı. Aksi durumda bir Authentication hatası alırız.
 
-> Instagram API'sinin kullanımı ile ilişkili oldukça detaylı bir doküman da mevcut. Plaftorm bağımsız olarak yazılmış dokümanı inceleyerek kullanılabilecek [REST Endpoint'leri hakkında detaylı bilgiye](https://www.instagram.com/developer/endpoints/) ulaşabilirsiniz.
+> Instagram API'sinin kullanımı ile ilişkili oldukça detaylı bir doküman da mevcut. Plaftorm bağımsız olarak yazılmış dokümanı inceleyerek kullanılabilecek [REST Endpoint'leri hakkında detaylı bilgiye](https://developers.facebook.com/docs/instagram) ulaşabilirsiniz.
 
 ## Uygulama Kodlarının Geliştirilmesi
 

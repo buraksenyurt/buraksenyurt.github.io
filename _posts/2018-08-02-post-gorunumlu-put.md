@@ -124,7 +124,7 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 Middleware Sınıfının Geliştirilmesi
 
-Aslında senaryoyu gerçekleştirmek için yapılması gereken şey belli. Bir şekilde istemciden gelen mesajı yakalamalı, header içerisindeki bilgiye bakıp (X-HTTP-Method-Override anahtarının değerine bakacağız) asıl HTTP metodu yerine hangi işlemin uygulanması gerektiğini anlamalıyız. Bunu yaparken de bizim izin verdiğimiz HTTP metodları çerçevesinde gerçekleştirilir olmasına özen göstermeliyiz. Şimdi projeye middlewares isimli bir klasör ekleyelim ve içerisine aşağıdaki sınıfları koyalım (Asp.Net Core tarafında Middleware yazılması ile ilgili olarak [şu yazıya da](https://www.buraksenyurt.com/post/web-api-icin-custom-middleware-yazmak) göz atabilirsiniz)
+Aslında senaryoyu gerçekleştirmek için yapılması gereken şey belli. Bir şekilde istemciden gelen mesajı yakalamalı, header içerisindeki bilgiye bakıp (X-HTTP-Method-Override anahtarının değerine bakacağız) asıl HTTP metodu yerine hangi işlemin uygulanması gerektiğini anlamalıyız. Bunu yaparken de bizim izin verdiğimiz HTTP metodları çerçevesinde gerçekleştirilir olmasına özen göstermeliyiz. Şimdi projeye middlewares isimli bir klasör ekleyelim ve içerisine aşağıdaki sınıfları koyalım (Asp.Net Core tarafında Middleware yazılması ile ilgili olarak [şu yazıya da](/2017/12/18/aspdotnet-core-web-api-icin-custom-middleware-yazmak/) göz atabilirsiniz)
 
 HttpOverrider sınıfı
 

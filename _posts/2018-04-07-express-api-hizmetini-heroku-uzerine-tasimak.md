@@ -246,7 +246,7 @@ heroku ps:scale web=1
 heroku open
 ```
 
-> Heroku'da uygulamalar Dyno adı verilen Container'lara alınır. Dyno'lar birbirlerinden izole olacak şekilde çalışan Linux tabanlı sanal taşıyıclardır ve Heroku'nun kalbinde çok önemli bir yere sahiptir (Detaylı bir bilgi olduğu için yazının güncel konusu dışında kalıyor ama [şu adresten](https://www.heroku.com/dynos) daha fazlası öğrenilebilir)
+> Heroku'da uygulamalar Dyno adı verilen Container'lara alınır. Dyno'lar birbirlerinden izole olacak şekilde çalışan Linux tabanlı sanal taşıyıclardır ve Heroku'nun kalbinde çok önemli bir yere sahiptir (Detaylı bir bilgi olduğu için yazının güncel konusu dışında kalıyor ama [şu adresten](https://www.heroku.com/dynos/) daha fazlası öğrenilebilir)
 
 open komutu doğrudan tarayıcı penceresini açacak ve bizi projenin giriş url'ine yönlendirecektir.
 
@@ -282,4 +282,4 @@ Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepin
 
 [Node-js Getting Started](https://github.com/heroku/node-js-getting-started)
 [Getting started with node.js (Introduction)](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
-[Dynos](https://www.heroku.com/dynos)
+[Dynos](https://www.heroku.com/dynos/)
