@@ -84,7 +84,7 @@ end
 
 Gelelim kod parçacığımız ile ilişkili notlarımıza.
 
-- Module içerisinde tanımlanan fonksiyonlarda self anahtar kelimesinin kullanıldığına dikkat edilmelidir. Module seviyesindeki bu operasyonlar, [sınıf metodu](/2015-08-13-ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected/) olarak ele alınırlar.
+- Module içerisinde tanımlanan fonksiyonlarda self anahtar kelimesinin kullanıldığına dikkat edilmelidir. Module seviyesindeki bu operasyonlar, [sınıf metodu](/2015/08/13/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected/) olarak ele alınırlar.
 - Module içerisinde tanımlanan Constant'lara (DEFAULT_PROVIDER ve DEFAULT_TIMEOUT gibi) ve sınıf metodlarına MODULE_ADI::UYEADI notasyonu ile erişilir.
 - Bir Module içerisinde metod ve sabit tanımlamaları yapılabileceği gibi sınıf ve iç module bildirimleri de yer alabilir. Örnekte yer alan Grid modülü içerisinde Connection isimli bir sınıf ve Cloud isimli bir Module tanımı yer almaktadır. Bu alt modül veya sınıflara erişmek için yine MODULE_ADI::SINIF_ADI/MODULE_ADI notasyonundan yararlanılır.
 - Farklı bir dosyada konuşlandırılan Module'leri bir sınıf içerisinde ya da başka bir modülün tamamında kullanmak için include MODULE_ADI ifadesinden yararlanılır. UsingModules.rb kodunun ilk iki satırında ilgili modülün yer aldığı dosyanın aynı klasörde aranması gerektiği $LOAD_PATH ile belirtilmiştir. Bir sonraki satırda yer alan require ifadesi ile de Serializer dosyası işaret edilmiştir.

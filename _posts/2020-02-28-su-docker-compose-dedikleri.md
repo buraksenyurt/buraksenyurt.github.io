@@ -24,7 +24,7 @@ tags:
   - generics
   - github
 ---
-Önceki çalışmalardan [birisinde](/2020-07-22-yine-yeni-yeniden-elk-bu-sefer-e-ve-k-icin-docker-compose-isin-icinde/) ELK kurgusunda ElasticSearch ve Kibana tarafı için docker compose'dan yararlanmıştım. Orada iş nispeten daha kolaydı. Var olan docker imajlarını bir kompozisyon çerçevesinde düşünerek ele almıştım. Ama kendi servislerimizden oluşan bir kompozisyon gerekirse nasıl bir yol izlenebilir merak da ediyordum. İşte yılın o vakitleri bunu öğrenmeye çalışmışım.
+Önceki çalışmalardan [birisinde](/2020/07/22/yine-yeni-yeniden-elk-bu-sefer-e-ve-k-icin-docker-compose-isin-icinde/) ELK kurgusunda ElasticSearch ve Kibana tarafı için docker compose'dan yararlanmıştım. Orada iş nispeten daha kolaydı. Var olan docker imajlarını bir kompozisyon çerçevesinde düşünerek ele almıştım. Ama kendi servislerimizden oluşan bir kompozisyon gerekirse nasıl bir yol izlenebilir merak da ediyordum. İşte yılın o vakitleri bunu öğrenmeye çalışmışım.
 
 ![docker-compose.png](/assets/images/2020/docker-compose.png)
 

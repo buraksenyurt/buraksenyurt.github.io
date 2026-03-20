@@ -31,7 +31,7 @@ Bir süre öncesine kadar Composition adı verilen bir katmanda yer alacak çeş
 Sadece bunlar olsa iyi. Bir de bunlar içerisine Oracle üzerinde koşan Transactional veritabanı işlemleri de mevcut olunca, işler ister istemez karışıyor ve künde pozisyonuna geliyorsunuz. Nitekim bu servisler n sayıda kombinasyon ile birbirleriyle etkileşimde bulunabilirler ve bu tip senaryolarda bir şekilde Distributed Transaction terminolojisinin uygulanması ve servisler arasında başarılı bir şekilde akıtılarak, Two Phase Commit ilkesinin gerçekleştirilebiliyor olması gereklidir.
 
 > Daha önceden ele aldığımız bir yazıda, WCF servislerinin Workflow tarafındaki TransactionScope kontrolüne dahil edilme durumlarını incelemeye çalışmıştık hatırlayalım.
-> [Workflow Foundation, Oracle, WCF ve TransactionScope](/2013-01-31-workflow-foundation-oracle-wcf-ve-transactionscope/)
+> [Workflow Foundation, Oracle, WCF ve TransactionScope](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/)
 
 Senaryo
 
@@ -45,7 +45,7 @@ Ne varki bu servislerden birisi Windows Communication Foundation yapısında ike
 
 [![WP_000637](/assets/images/2013/WP_000637_thumb.jpg)](/assets/images/2013/WP_000637.jpg)
 
-WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların servis içerisine nasıl akıtılacağını [bu yazımızda](/2013-01-31-workflow-foundation-oracle-wcf-ve-transactionscope/) incelemiştik hatırlayacağınız üzere. Ancak işin içerisine eski stilde yazılmış bir XML Web Service girince, durum biraz farklılaşıyor
+WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların servis içerisine nasıl akıtılacağını [bu yazımızda](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/) incelemiştik hatırlayacağınız üzere. Ancak işin içerisine eski stilde yazılmış bir XML Web Service girince, durum biraz farklılaşıyor
 
 ![Who me?](/assets/images/2013/wlEmoticon-whome_7.png)
 

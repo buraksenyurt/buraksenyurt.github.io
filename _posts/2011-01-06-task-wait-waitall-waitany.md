@@ -13,7 +13,7 @@ tags:
   - generics
   - visual-studio
 ---
-[Task Süreçlerinde Bilinçli Olarak Duraksatma](/2010-12-31-task-sureclerinde-bilincli-olarak-duraksatma/) başlıklı bir önceki yazımızda CancellationToken.WaitHandle.WaitOne, Thread.Sleep ve Thread.SpinWait metodlarından yararlanarak bir Task çalışmasının bekletme işlemlerinin nasıl yapılabileceğini incelemeye çalışmıştık. Özellikle WaitOne metodunun, CancellationToken.WaitHandle özeliği üzerinden çalıştırıldığını unutmayalım. Diğer yandan tüm bu teknikleri Task gövdesi içerisinde gerçekleştirmiştik. Bunun doğal sonucu olarakta yürütülmekte olan Task işlevlerinin duraksatılmasını sağlamıştık.
+[Task Süreçlerinde Bilinçli Olarak Duraksatma](/2010/12/31/task-sureclerinde-bilincli-olarak-duraksatma/) başlıklı bir önceki yazımızda CancellationToken.WaitHandle.WaitOne, Thread.Sleep ve Thread.SpinWait metodlarından yararlanarak bir Task çalışmasının bekletme işlemlerinin nasıl yapılabileceğini incelemeye çalışmıştık. Özellikle WaitOne metodunun, CancellationToken.WaitHandle özeliği üzerinden çalıştırıldığını unutmayalım. Diğer yandan tüm bu teknikleri Task gövdesi içerisinde gerçekleştirmiştik. Bunun doğal sonucu olarakta yürütülmekte olan Task işlevlerinin duraksatılmasını sağlamıştık.
 
 [![blg207_Giris](/assets/images/2011/blg207_Giris_thumb.jpg)](/assets/images/2011/blg207_Giris.jpg)
 

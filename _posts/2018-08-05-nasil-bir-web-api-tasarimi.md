@@ -33,7 +33,7 @@ Content-Type: application/json
 Accept: application/json
 ```
 
-Diğer yandan sadece HTTP-Post ve Get desteği olan istemciler için mutlak suretle X-HTTP-Method-Override kullanılması bekleniyor. Bu konu ile ilgili [şu yazıma](/2018-08-02-post-gorunumlu-put/) bakabilirsiniz.
+Diğer yandan sadece HTTP-Post ve Get desteği olan istemciler için mutlak suretle X-HTTP-Method-Override kullanılması bekleniyor. Bu konu ile ilgili [şu yazıma](/2018/08/02/post-gorunumlu-put/) bakabilirsiniz.
 
 Resource isimlendirmelerinde de çoğul ifadelerin kullanılması öneriliyor. Yani category yerine categories şeklinde tanımlama yapmak lazım. Diğer kullanım önerilerini de şu şekilde özetleyebiliriz ([Excel dosyasını indirmek için tıklayın](https://www.buraksenyurt.com/file.axd?file=/2018/07/RESTfulAPI.xlsx))
 

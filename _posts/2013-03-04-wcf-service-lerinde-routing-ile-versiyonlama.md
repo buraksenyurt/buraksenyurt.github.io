@@ -25,7 +25,7 @@ Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Der
 
 [WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-MatchAll-Filtresi)
 
-[WCF WebHttp Services - Routing](/2010-03-07-wcf-webhttp-services-routing/)
+[WCF WebHttp Services - Routing](/2010/03/07/wcf-webhttp-services-routing/)
 
 Tabi bunların hepsi Beta sürümüne ait incelemelerdi. Zaman ilerledikçe yönlendirme servislerinin önemli senaryolarda göz önüne alınabileceğini de gördük. Örneğin Load Balancing gibi.
 

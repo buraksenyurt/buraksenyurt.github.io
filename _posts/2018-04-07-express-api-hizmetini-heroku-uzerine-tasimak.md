@@ -270,7 +270,7 @@ heroku logs --tail
 
 Çok doğal olarak bu tip test uygulamalarını işlerimizi bitirdikten sonra silmekte yarar var. Projenin ayarlar kısmında bir Delete düğmesi bulunuyor. Bu iş için kullanabiliriz.
 
-> Küçük bir ipucu verelim. Heroku üzerinde host edilen bir servisi farklı bir domain'den çağıracağımız zaman CORS-Cross Origin Resource Sharing sorunu ile karşılaşabiliriz. Firefox özellikle bu konuda çok katı. [Şu adreste](/2017-12-29-cors-cross-origin-resource-sharing/).Net Core tarafında CORS konusunun ele alınışı var. Faydası olabilir tabii sizin kendi ortamınız için gerekli aksiyonu almanız lazım.
+> Küçük bir ipucu verelim. Heroku üzerinde host edilen bir servisi farklı bir domain'den çağıracağımız zaman CORS-Cross Origin Resource Sharing sorunu ile karşılaşabiliriz. Firefox özellikle bu konuda çok katı. [Şu adreste](/2017/12/29/cors-cross-origin-resource-sharing/).Net Core tarafında CORS konusunun ele alınışı var. Faydası olabilir tabii sizin kendi ortamınız için gerekli aksiyonu almanız lazım.
 
 Sonuç itibariyle geliştireceğimiz çeşitli tipteki web uygulamalarını Heroku üzerine almak görüldüğü üzere oldukça kolay. Heroku, bizlere geliştirici dostu bir PaaS ortamı ve kullanımı sunuyor. Desteklediği diller ve platformlar düşünüldüğünde aslında startup'lar ve özellikle hackathon tarzı yarışmalar için tercih edilmesi ideal gibi görünüyor.
 
