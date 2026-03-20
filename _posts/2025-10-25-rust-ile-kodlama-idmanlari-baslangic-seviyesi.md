@@ -69,7 +69,7 @@ fn main() {
 }
 ```
 
-## ![rust_exc_00.png](/assets/images/2025/rust_exc_00.png)
+![rust_exc_00.png](/assets/images/2025/rust_exc_00.png)
 
 ## Gereksiz clone Çağrılarından Kaçınmak
 
