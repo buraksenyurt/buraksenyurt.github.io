@@ -12,7 +12,7 @@ tags:
 ---
 Ruby programlama dilinde de veri yapıları (Data Structures) oluşturmak için kullanılan tiper vardır. Dictionary benzeri koleksiyon olarak kabul edebileceğimiz Hash sınıfı bunlardan birisidir. Benzersiz anahtar (key) ve değer (value) çiftlerinden oluşan Hash nesne örneklerinin kullanımı oldukça kolaydır.
 
-Aşağıdaki Ruby Kod Parçacığı ile Hash tipinden koleksiyonları kısaca tanımaya çalışalım. [Bir önceki kod parçacığında](Ruby Kod Parçacıkları - 1.md) olduğu gibi bu betiği de rb uzantılı bir dosya (örneğin Hashes.rb) olarak kaydedip komut satırından Ruby aracı ile çalıştırabiliriz.
+Aşağıdaki Ruby Kod Parçacığı ile Hash tipinden koleksiyonları kısaca tanımaya çalışalım. [Bir önceki kod parçacığında](/2015-08-02-ruby-kod-parcaciklari-1/) olduğu gibi bu betiği de rb uzantılı bir dosya (örneğin Hashes.rb) olarak kaydedip komut satırından Ruby aracı ile çalıştırabiliriz.
 
 ```text
 class Person

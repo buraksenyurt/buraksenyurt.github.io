@@ -75,7 +75,7 @@ Kodun çalışma zamanı çıktısı aşağıdaki gibidir.
 
 Örnekte bir oyun sahnesindeki çeşitli aktörleri tanımlayan iki struct ve bir interface tipi yer almaktadır. Actor tipinde iki fonksiyon tanımına yer veriyoruz. Tank ve Player struct'larında kendilerine özgü bir kaç alan bulunuyor. Dikkat edilmesi gereken nokta bu iki struct için Actor interface'in de belirtilen metodların yazılmış olması. Sözdizimi olarak metodların ilk parametreleri uygulanacakları tipe ait. for döngüsü ile actors isimli slice elemanlarında dolaşıyor ve her biri için Move ile SaySomething metodlarını çağırıyoruz. Aslında kullanılan slice içerisindeki elemanlarda dolaşırken Go çalışma zamanı motoru interface{} değişkenine dönüştürme işlemini otomatik olarak gerçekleştirmekte. Fakat bu durum biraz sonra göreceğimiz vakka da biraz daha ilginçleşecek.
 
-> Aslında interface kullanımında Duck Typing söz konusudur. Nasıl bir şey olduğunu öğrenmek isterseniz [şu yazıya göz](Duck Typing Nedir-.md)atabilirsiniz.
+> Aslında interface kullanımında Duck Typing söz konusudur. Nasıl bir şey olduğunu öğrenmek isterseniz [şu yazıya göz](/2017-01-19-duck-typing-nedir/)atabilirsiniz.
 
 interface{} Tipi
 

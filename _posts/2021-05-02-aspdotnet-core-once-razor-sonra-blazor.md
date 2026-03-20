@@ -165,7 +165,7 @@ namespace FirstContact.Controllers
 }
 ```
 
-Index metodunda bir Star nesne örneği kullanarak yıldız listesini almaktayız. Sonrasında bu listeyi View metoduna parametre olarak geçerek Home isimli View'a göndermekteyiz. Sınıfın yapıcı metodunda görüleceği üzere Star bileşenini Dependency Injection Container'dan istiyoruz. Dolayısıyla Star bileşeninin DI servislerine eklenmesi gerekiyor. Daha önceki bir yazımızda bu konuya değinmiştik;) [Nasıl yaparım diyorsanız buradaki yazıya bakmanızı önerebilirim](Asp.Net Core'a Nasıl Merhaba Deriz-.md) ama "işimi uzatma" derseniz de yapmanız gereken tek şey Startup sınıfındaki ConfigureServices metoduna aşağıdaki satırı eklemekten ibaret.
+Index metodunda bir Star nesne örneği kullanarak yıldız listesini almaktayız. Sonrasında bu listeyi View metoduna parametre olarak geçerek Home isimli View'a göndermekteyiz. Sınıfın yapıcı metodunda görüleceği üzere Star bileşenini Dependency Injection Container'dan istiyoruz. Dolayısıyla Star bileşeninin DI servislerine eklenmesi gerekiyor. Daha önceki bir yazımızda bu konuya değinmiştik;) [Nasıl yaparım diyorsanız buradaki yazıya bakmanızı önerebilirim](/2021-04-25-aspdotnet-core-a-nasil-merhaba-deriz/) ama "işimi uzatma" derseniz de yapmanız gereken tek şey Startup sınıfındaki ConfigureServices metoduna aşağıdaki satırı eklemekten ibaret.
 
 ```csharp
 services.AddTransient<IStar, Star>();

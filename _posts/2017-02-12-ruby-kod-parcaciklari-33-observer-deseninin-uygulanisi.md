@@ -7,7 +7,7 @@ categories:
 tags:
   - ruby
 ---
-Bir önceki kod parçasında [Singleton kalıbının Ruby tarafında nasıl uygulandığını](Ruby Kod Parçacıkları 32 - Singleton.md) incelemeye çalışmıştık. Hatırlayacağınız gibi hazır singleton modülünü kullanarak bu işi gerçekleştirmek oldukça kolaydı. Benzer durum Observer tasarım kalıbı için de geçerli. Bu kalıp bir nesnenin durumunda meydana gelen değişiklikler sonrası ilgili diğer nesnelerin uyarılması amacıyla kullanılan popüler yazılım desenlerinden birisi. (.Net tarafındaki uygulanış şekli ile ilgili olarak [şu eski yazımdan](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Observer) yararlanabilirsiniz)
+Bir önceki kod parçasında [Singleton kalıbının Ruby tarafında nasıl uygulandığını](/2017-02-03-ruby-kod-parcaciklari-32-singleton/) incelemeye çalışmıştık. Hatırlayacağınız gibi hazır singleton modülünü kullanarak bu işi gerçekleştirmek oldukça kolaydı. Benzer durum Observer tasarım kalıbı için de geçerli. Bu kalıp bir nesnenin durumunda meydana gelen değişiklikler sonrası ilgili diğer nesnelerin uyarılması amacıyla kullanılan popüler yazılım desenlerinden birisi. (.Net tarafındaki uygulanış şekli ile ilgili olarak [şu eski yazımdan](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Observer) yararlanabilirsiniz)
 
 ![notifyg.gif](/assets/images/2017/notifyg.gif)
 

@@ -25,7 +25,7 @@ Aslında şu anda varmak istediğim nokta lock kelimesidir. lock, çok kanallı 
 
 Tüm bunlara ek olarak uzun zamandır bilinen Task Parallel Library ve doğal olarak yeni paralel programlama yapısı mevcuttur. Dolayısıyla aynı senkronizasyon vakaları TPL içerisinde de geçerlidir ve bu amaçla eklenmiş yeni özellikler bulunmaktadır. İşte bu yazımız ile birlikte TPL içerisinde senkronizasyon konusunu incelemeye çalışıyor olacağız.
 
-[TPL ve Shared Data Isolation](TPL ve Shared Data Isolation.md) başlıklı yazımızda, n sayıda Task örneğinin ortaklaşa kullandıkları bir veri alanı üzerindeki işlemlerinin, ne gibi sonuçlara yol açabileceğini incelemiş ve bunun önün geçmek için basit bir kaç yolu ele almıştık. Hatırlayacağınız üzere değerlendirdiğimiz senaryoda, Plane tipinden olan nesne örneğine ait Altitude özelliğinin değerinin, Task blokları içerisinde değiştirildiği nokta, sorunun oluşmasına neden olan kritik bölgeydi.
+[TPL ve Shared Data Isolation](/2011-01-20-tpl-ve-shared-data-isolation/) başlıklı yazımızda, n sayıda Task örneğinin ortaklaşa kullandıkları bir veri alanı üzerindeki işlemlerinin, ne gibi sonuçlara yol açabileceğini incelemiş ve bunun önün geçmek için basit bir kaç yolu ele almıştık. Hatırlayacağınız üzere değerlendirdiğimiz senaryoda, Plane tipinden olan nesne örneğine ait Altitude özelliğinin değerinin, Task blokları içerisinde değiştirildiği nokta, sorunun oluşmasına neden olan kritik bölgeydi.
 
 ```csharp
 for (int i = 0; i < 5; i++) 

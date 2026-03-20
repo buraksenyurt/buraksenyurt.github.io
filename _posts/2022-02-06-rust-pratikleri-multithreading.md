@@ -31,7 +31,7 @@ touch src/dursun.rs
 touch src/common.rs
 ```
 
-fellowship isimli çalıştırılabilir uygulamada Dursun, Yensen ve Gibsın için ayrı birer modül dosyası yer almakta. Çıktıları izlemek için [bir önceki pratik](Rust Pratikleri - Loglama.md)te olduğu üzere loglama modülünü kullanabiliriz. Thread'lerin uzun süren işleri simüle etmesi için yardımcı bir fonksiyonumuz da var, common.rs. Çok yaratıcı bir isim değil ama şimdilik idare eder.
+fellowship isimli çalıştırılabilir uygulamada Dursun, Yensen ve Gibsın için ayrı birer modül dosyası yer almakta. Çıktıları izlemek için [bir önceki pratik](/2022-01-30-rust-pratikleri-loglama/)te olduğu üzere loglama modülünü kullanabiliriz. Thread'lerin uzun süren işleri simüle etmesi için yardımcı bir fonksiyonumuz da var, common.rs. Çok yaratıcı bir isim değil ama şimdilik idare eder.
 
 common.rs
 
