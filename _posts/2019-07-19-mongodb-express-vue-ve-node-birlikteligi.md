@@ -382,6 +382,7 @@ export default {
 
 contacts.vue bileşenimiz
 
+{% raw %}
 ```text
 <template>
   <div>
@@ -401,6 +402,7 @@ contacts.vue bileşenimiz
     </div>
   </div>
 </template>
+{% endraw %}
 
 <script>
 import axios from "axios";

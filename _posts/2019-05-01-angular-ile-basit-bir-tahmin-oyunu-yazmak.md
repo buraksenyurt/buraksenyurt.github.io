@@ -41,6 +41,7 @@ Uygulama kodlarında değişiklik yaptığım çok az yer var. Malum boilerplate
 
 Bootstrap'i kullanabilmek için proje klasöründeki angular.json dosyasındaki styles elementine ilave bir bildirim yaptık. Buna ek olarak src/app klasöründeki app.component.html dosyasını aşağıdaki gibi değiştirdik (Size yardımcı olacak bilgiler kodların yorum satırlarında yer alıyor. Direkt copy-paste yapmadan önce okuyun)
 
+{% raw %}
 ```text
 <!--
   bootstrap css stilleri ile donattığımız basit bir arayüzümüz var.
@@ -152,6 +153,7 @@ export class AppComponent {
   }
 }
 ```
+{% endraw %}
 
 ## Çalışma Zamanı
 

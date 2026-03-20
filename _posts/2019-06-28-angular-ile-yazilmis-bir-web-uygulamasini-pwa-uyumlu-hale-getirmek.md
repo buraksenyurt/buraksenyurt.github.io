@@ -202,6 +202,7 @@ export class AppComponent implements OnInit {
 
 Önyüz bileşeni olarak src/app/app.component.html içeriği de tamamen değiştirildi. Material bileşenlerine yer verildi.
 
+{% raw %}
 ```text
 <mat-toolbar>
   <mat-toolbar-row>
@@ -219,8 +220,9 @@ export class AppComponent implements OnInit {
   </mat-card>
 </main>
 ```
+{% endraw %}
 
-Toolbar tipinde bir Navigation kontrolü, Post bilgilerini göstermek içinse Card kontrolünden yararlanıyoruz. UI, bağlı olduğu AppComponent içerisindeki posts dizisini kullanıyor. Tüm dizi elemanlarında gezmek içinse *ngFor komutundan yararlanılmakta. Bir özellik değerini arayüzde göstermek istediğimizde {{post.title}} benzeri notasyonlar kullandığımız da gözden kaçmamalı.
+Toolbar tipinde bir Navigation kontrolü, Post bilgilerini göstermek içinse Card kontrolünden yararlanıyoruz. UI, bağlı olduğu AppComponent içerisindeki posts dizisini kullanıyor. Tüm dizi elemanlarında gezmek içinse *ngFor komutundan yararlanılmakta. Bir özellik değerini arayüzde göstermek istediğimizde &#123;&#123;post.title&#125;&#125; benzeri notasyonlar kullandığımız da gözden kaçmamalı.
 
 ## PWA Uyumluluğu için Hazırlıklar
 

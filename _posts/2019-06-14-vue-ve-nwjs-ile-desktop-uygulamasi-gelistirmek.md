@@ -46,10 +46,11 @@ sudo npm install axios
 
 ## Kod Tarafı
 
-Gelelim kodlama tarafına. Uygulamanın masaüstü arayüzü olan App bileşeni app.vue dosyasında kodlanıyor. Bu dosyayı aşağıdaki gibi değiştirerek ilerleyebiliriz. Sonuçta HTML tabanlı bir ortam var. Elbette Vue'ya özgü bir sentaks da söz konusu. Söz gelimi bileşendeki bir kontrolü model tarafına bağlamak için v-model direktifinden yararlanılıyor. Bir section elementinin görünürlüğünü koşullandıracaksak v-if direktifini kullanabiliyoruz. Button kontrolündeki olayları betikteki bir fonksiyonla ilişkilendirirken @click şeklindeki element adı ele alınıyor. Modeldeki özellikleri kontrollerde gösterirkense {{propertyName}} notasyonuna başvuruyoruz.
+Gelelim kodlama tarafına. Uygulamanın masaüstü arayüzü olan App bileşeni app.vue dosyasında kodlanıyor. Bu dosyayı aşağıdaki gibi değiştirerek ilerleyebiliriz. Sonuçta HTML tabanlı bir ortam var. Elbette Vue'ya özgü bir sentaks da söz konusu. Söz gelimi bileşendeki bir kontrolü model tarafına bağlamak için v-model direktifinden yararlanılıyor. Bir section elementinin görünürlüğünü koşullandıracaksak v-if direktifini kullanabiliyoruz. Button kontrolündeki olayları betikteki bir fonksiyonla ilişkilendirirken @click şeklindeki element adı ele alınıyor. Modeldeki özellikleri kontrollerde gösterirkense &#123;&#123;propertyName&#125;&#125; notasyonuna başvuruyoruz.
 
 Örneğimizdeki bileşen, önyüz tasarımı ve kodu aynı dosya içerisinde barındırmakta. Ancak hazır olarak gelen şablonu incelerseniz Components klasöründe bir bileşen geldiğini de görebilirsiniz. Yani alt bileşenleri bu klasör altında da toplayabiliriz. Bu arada kodlarda yakaladığınız yorum satırlarını okumayı unutmayın. Destekleyici bilgiler görebilirsiniz.
 
+{% raw %}
 ```text
 <template>
   <div id="app">
@@ -152,6 +153,7 @@ button{
 
 </style>
 ```
+{% endraw %}
 
 App bileşeninde dikkat edileceği üzere $http ile yapılan bir servis çağrısı var. Bu axios tarafından sağlanacak bir hizmet. Bu nedenle main.js dosyasında gerekli hazırlıkların yapılması lazım. Dikkat edileceği üzere Vue çalışma zamanının axios'u $http özelliği üzerinden kullanabilmesini sağlayacak bir enjekte işlemi söz konusu.
 
@@ -321,7 +323,7 @@ Paket boyutu oldukça yüksek görüldüğü üzere! Zaten cross-platform masaü
 Elbette aptal kutunun başında saatlerimi geçirdiğim Perfect Strangers dizisinin bana alttan alttan verdiği mesajlar gibi bu örnek çalışma sonrasında öğrendiğim bazı şeyler de olmadı değil. Bunları aşağıdaki gibi özetlemeye çalışayım.
 
 - Vue tarafında ön yüz nasıl geliştirilir
-- v-model, v-if, {{ }}, @click gibi Vue ilişkili ifadeler ne işe yarar
+- v-model, v-if, &#123;&#123; &#125;&#125;, @click gibi Vue ilişkili ifadeler ne işe yarar
 - Bileşen ile model özellikleri nasıl kullanılır
 - axios ile node.js tarafından servis talepleri nasıl gönderilir
 - newtonsoft.json ile bir json dizisinde nasıl linq sorgusu çalıştırılır

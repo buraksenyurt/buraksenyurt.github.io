@@ -86,6 +86,7 @@ Yukarıdaki temel çalışmaların kısa bir özeti aşağıdaki ekran çıktıs
 
 Podman ile uzak depolardaki imajları kolayca arayabiliriz de. Mesela sevgili MariaDB imajlarını aradığımızı ve 20 yıldız üstünde olup automated özellikli olanları bulmak istediğimizi düşünelim...
 
+{% raw %}
 ```bash
 podman search mariadb --filter=stars=20 --filter=is-automated
 
@@ -102,6 +103,7 @@ podman search --format "table {{.Name}} {{.Stars}}" mariadb --filter=stars=20
 podman login quay.io
 podman search quay.io/
 ```
+{% endraw %}
 
 Uzak diyarlardaki imajları terminalden nasıl arayacağımızı gördük. Bazen belli bir imajın özelliklerini onu sisteme indirmeden detayda da öğrenmek isteyebiliriz. Bunun için Skopeo aracından yararlanıyoruz. Örneğin alpine imajının son sürümü ile ilgili bir takım temel özellikleri şu komutla öğrenebiliriz.
 

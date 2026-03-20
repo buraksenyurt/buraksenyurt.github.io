@@ -211,8 +211,9 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 
 Vue uygulaması tarafında yapacaklarımız kabaca şöyle (Kod dosyalarındaki yorum bloklarında daha detaylı bilgiler mevcut)
 
-Components klasörüne tek ürün için kullanılabilecek ProductItem isimli bir bileşen ekliyoruz. Anasayfa listelemesinde tekrarlanacak türden bir bileşen olacak bu. Bileşende product özelliği üzerinden içerideki elementlere veri bağlama işlemini gerçekleştirmekteyiz. {{nesne.özellik}} notasyonlarının nasıl kullanıldığına dikkat edelim.
+Components klasörüne tek ürün için kullanılabilecek ProductItem isimli bir bileşen ekliyoruz. Anasayfa listelemesinde tekrarlanacak türden bir bileşen olacak bu. Bileşende product özelliği üzerinden içerideki elementlere veri bağlama işlemini gerçekleştirmekteyiz. &#123;&#123;nesne.özellik&#125;&#125; notasyonlarının nasıl kullanıldığına dikkat edelim.
 
+{% raw %}
 ```text
 <template>
   <div :key="product.productId" class="card w-75">
@@ -229,6 +230,7 @@ Components klasörüne tek ürün için kullanılabilecek ProductItem isimli bir
       <hr/>
   </div>
 </template>
+{% endraw %}
 
 <script>
 export default {

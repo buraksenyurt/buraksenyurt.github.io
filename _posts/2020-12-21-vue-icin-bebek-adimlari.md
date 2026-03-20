@@ -99,6 +99,7 @@ ve F12 - Console sonrası.
 
 İkinci adımımızda Attribute Binding konusunu ele alacağız. HTML elementlerindeki nitelikleri (Örneğin img elementinin src niteliğini) direktifler (Örnekte v-bind) ile Vue verisine (data özelliğinin değerleri) nasıl bağlayacağımızı göreceğiz.
 
+{% raw %}
 ```bash
 touch vue_attribute_binding.html
 ```
@@ -255,6 +256,8 @@ touch vue_for_loop.html
 
 Kodlarımızı aşağıdaki gibi geliştirelim.
 
+{% endraw %}
+{% raw %}
 ```text
 <html>
 
@@ -316,6 +319,9 @@ Kodlarımızı aşağıdaki gibi geliştirelim.
 
 </html>
 ```
+{% endraw %}
+
+{% raw %}
 
 Bu adımdan sonraki çalışma zamanı çıktıları ise aşağıdaki gibi olacaktır.
 
@@ -874,3 +880,4 @@ Sekizinci örnekle birlikte Vue'nun en temel parçalarını bebek adımları ile
 - Vue_forms.html örneğinde summary için maksimum 250 karakter girilmesine izin veren bir doğrulama fonksiyonelliği geliştirin.
 
 Örnek kodlara [github reposu üzerinden](https://github.com/buraksenyurt/skynet/tree/master/No%2041%20-%20Vueeeee) erişebilirsiniz. Böylece geldik bir SkyNet derlememizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+{% endraw %}

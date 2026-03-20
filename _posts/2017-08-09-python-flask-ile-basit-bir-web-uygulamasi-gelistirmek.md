@@ -38,12 +38,13 @@ hello_flask isimli python sayfamızda http taleplerini yönledirme işlemlerini 
 
 Template Sayfaları
 
-Web uygulamamızda [Jinja2](http://jinja.pocoo.org/docs/2.9/) standartlarında içerik sunacak HTML sayfaları bulunuyor. Bu HTML sayfaları Flask tarafı ile iletişim halinde olacak. Aslında olay {{ ve }} arasındaki kısımlarda gerçekleşmekte. Burada kullanılan değişken adları python tarafında da değerlendirilebiliyor. Bir başka deyişe python kod tarafı ile statik HTML sayfaları arasındaki veri alışverişinde bu söz dizimi değer bulacak.
+Web uygulamamızda [Jinja2](http://jinja.pocoo.org/docs/2.9/) standartlarında içerik sunacak HTML sayfaları bulunuyor. Bu HTML sayfaları Flask tarafı ile iletişim halinde olacak. Aslında olay &#123;&#123; ve &#125;&#125; arasındaki kısımlarda gerçekleşmekte. Burada kullanılan değişken adları python tarafında da değerlendirilebiliyor. Bir başka deyişe python kod tarafı ile statik HTML sayfaları arasındaki veri alışverişinde bu söz dizimi değer bulacak.
 
 ## basepage.html
 
 BasePage.html.Net tarafında Web uygulaması geliştiren arkadaşlarımızca Master Page olarak düşünebilir. Kısaca diğer sayfalar için tepede yer alan bir ana şablon vazifesi görmekte.
 
+{% raw %}
 ```text
 <!doctype html>
 <html>
@@ -57,13 +58,15 @@ BasePage.html.Net tarafında Web uygulaması geliştiren arkadaşlarımızca Mas
     </body>
 </html>
 ```
+{% endraw %}
 
-Dikkat edileceği üzere title elementinde page_title, body kısmında ise block body ve endblock isimli tanımlamalar mevcut. Bu tanımlamaların {{ ve }} arasında olduklarına dikkat edelim. Alt sayfaların block body ve endblock isimli kısımlar içerisine yerleşeceğini de söyleyebiliriz.
+Dikkat edileceği üzere title elementinde page_title, body kısmında ise block body ve endblock isimli tanımlamalar mevcut. Bu tanımlamaların &#123;&#123; ve &#125;&#125; arasında olduklarına dikkat edelim. Alt sayfaların block body ve endblock isimli kısımlar içerisine yerleşeceğini de söyleyebiliriz.
 
 ## einstein.html
 
 Base Page'den türeyen Einstein.html temel bir toplama operasyonunu üstlenmekte. İlk olarak extends isimli bir tanımlama ile başladığını görebiliriz. Burada basepage.html'den türetildiğini belirtiyoruz. block body ve endblock kısımları arasında bir takım tanımlamalar mevcut. h2 boyutlarında bir başlık belirttikten sonra POST metodunu kullanan bir form yer alıyor.
 
+{% raw %}
 ```json
 {% extends 'basepage.html' %}
 {% block body %}
@@ -81,6 +84,7 @@ Base Page'den türeyen Einstein.html temel bir toplama operasyonunu üstlenmekte
 
 {% endblock %}
 ```
+{% endraw %}
 
 Pek tabii form elementinin method ve action niteliklerine atanan değerler oldukça kıymetli. Calculate isimli butona basıldığında gerçekleşecek Submit işlemi sonrası [http://localhost:5000/sum](http://localhost:5000/sum) adresine gidilecek. Bu işlem HTTP protokolünün POST metoduna göre gerçekleşecek. Form üzerinde iki tane text kontrolü var. Bunlar toplama işlemine dahil edilecek değişkenleri aldığımız kontroller.
 
@@ -88,6 +92,7 @@ Pek tabii form elementinin method ve action niteliklerine atanan değerler olduk
 
 Toplama işleminin sonucunu göstereceğimiz HTML şablonu ise aşağıdaki içeriğe sahip.
 
+{% raw %}
 ```json
 {% extends "basepage.html" %}
 {% block body %}
@@ -104,8 +109,9 @@ Toplama işleminin sonucunu göstereceğimiz HTML şablonu ise aşağıdaki içe
 
 {% endblock %}
 ```
+{% endraw %}
 
-Yine basepage sayfasından yapılan bir genişletme olduğunu ifade edebiliriz. Gövde bu kez sonuçları göstereceğimiz HTML elementlerini barındırıyor. table elementi içerisinde first_value, second_value ve sonrasında gelen sum_result isimli değişklenlerle toplama işlemine ait detayları ve sonucu gösteriyoruz. Tüm değişkenlerin Jinja'nın istediği şekilde {{ ve }} arasında yazıldığına dikkat edelim. Benzer yaklaşım GoLang tarafında da mevcuttu.
+Yine basepage sayfasından yapılan bir genişletme olduğunu ifade edebiliriz. Gövde bu kez sonuçları göstereceğimiz HTML elementlerini barındırıyor. table elementi içerisinde first_value, second_value ve sonrasında gelen sum_result isimli değişklenlerle toplama işlemine ait detayları ve sonucu gösteriyoruz. Tüm değişkenlerin Jinja'nın istediği şekilde &#123;&#123; ve &#125;&#125; arasında yazıldığına dikkat edelim. Benzer yaklaşım GoLang tarafında da mevcuttu.
 
 ## hello_plask.py
 
@@ -148,4 +154,4 @@ Yazdığımız uygulamayı IDLE üzerinden değil de komut satırından çalış
 
 ![flaskweb_2.gif](/assets/images/2017/flaskweb_2.gif)
 
-Görüldüğü üzere Flask paketini kullanarak Python tarafında bir web uygulaması geliştirmek ve şablon HTML sayfalarını kullanmak oldukça basit. Pek tabii şablon kullanımında {{ ile }} arasına alınabilecek çok farklı teknikler de söz konusudur. Bunları kitabın ilerleyen kısımlarında bulabileceğimi düşünüyorum. Öğrendikçe sizlerle paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Görüldüğü üzere Flask paketini kullanarak Python tarafında bir web uygulaması geliştirmek ve şablon HTML sayfalarını kullanmak oldukça basit. Pek tabii şablon kullanımında &#123;&#123; ile &#125;&#125; arasına alınabilecek çok farklı teknikler de söz konusudur. Bunları kitabın ilerleyen kısımlarında bulabileceğimi düşünüyorum. Öğrendikçe sizlerle paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

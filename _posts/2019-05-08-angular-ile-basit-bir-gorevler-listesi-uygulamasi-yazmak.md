@@ -54,6 +54,7 @@ ng new sonrası oluşan proje içerisinde çok fazla dosya bulunacaktır. Şu ha
 
 app.component.html
 
+{% raw %}
 ```text
 <div class="container">
   <form>
@@ -91,6 +92,7 @@ app.component.html
 </div>
 <!-- addJob, removeJob metodları ile jos dizisi app.component.ts dosyası içerisinde yer alıyor -->
 ```
+{% endraw %}
 
 component içerisinde basit bir form grubu var. İçinde iki adet bileşen gövdesi bulunuyor. Üst taraf yeni görev girmek için kullanılan kısım. Ekle başlıklı düğmeye basıldığındaysa Typescript tarafındaki addJob metodu çağırılıyor. Parametre olarak job isimli text kontrolünün içeriği gönderilmekte.
 

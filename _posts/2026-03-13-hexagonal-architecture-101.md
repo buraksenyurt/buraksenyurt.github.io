@@ -259,6 +259,7 @@ await app.RunAsync();
 
 Şu haliyle Web api projesini ayağa kaldırıp aşağıdaki örnek http talebi ile deneyebiliriz.
 
+{% raw %}
 ```text
 @HexagonalAdventure.Adapters.In.WebApi_HostAddress = http://localhost:5144
 
@@ -273,6 +274,7 @@ Accept: application/json
   "stock": 10
 }
 ```
+{% endraw %}
 
 En azından aşağıdaki ekran görüntüsünde olduğu gibi bir yanıt almamız gerekiyor.
 

@@ -27,6 +27,8 @@ Gopher olabilir miyim bilemiyorum ama bir dili çok iyi seviyede öğrenmeden o 
 
 Belli tipteki elemanaları (herhangibir Go veri tipi olabilir) bir arada tutan (sunan) koleksiyonlara dizi diyebiliriz. Pek çok programlama dilinde olduğu gibi Go'da da kullanılan çekirdek veri yapılarından (data structures) birisidir. Diziler sabit uzunlukta tanımlanırlar. Yani içereceği eleman sayısı baştan bildirilir (Ya da dizinin tanımlandığı satırda atama işlemi yapıldığında uzunluğu belirlenir). Tabii Go söz konusu olunca ileride de göreceğimiz gibi bellek adresleri de önem kazanacak. Diziler için de birbirini takip eden bellek adresleri söz konusu. İlk eleman (bu arada diziler 0ncı indisten başlamakta) dizinin başladığı son eleman da bittiği bellek adresinde konumlanmakta. Go çok boyutlu (Multi Dimensional) dizi yapısına da sahip ve fonksiyonlara dizileri parametre olarak geçirebiliyoruz. Aşağıdaki basit kod parçasında hem diziler ile ilgili temel işlemeler yer alıyor hem de basit for döngülerine yer veriliyor.
 
+{% raw %}
+
 ```cpp
 package main
 
@@ -75,7 +77,10 @@ func sum(nmbrs []float32) float32{
 	}
 	return toplam
 }
+
 ```
+
+{% endraw %}
 
 Çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 

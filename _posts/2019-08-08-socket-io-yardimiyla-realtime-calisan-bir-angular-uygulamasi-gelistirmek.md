@@ -324,6 +324,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
 article-list.component.html
 
+{% raw %}
 ```text
 <div>
   <button (click)='newArticle()'>Yeni makale başlat</button>
@@ -346,6 +347,7 @@ article-list.component.html
   newArticle metodu çağırılıyor.
 -->
 ```
+{% endraw %}
 
 artcile-list.component.ts
 
