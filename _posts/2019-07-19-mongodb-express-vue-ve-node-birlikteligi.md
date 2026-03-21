@@ -5,16 +5,24 @@ date: 2019-07-19 05:47:00 +0300
 categories:
   - vuejs
 tags:
-  - vuejs
-  - bash
-  - javascript
+  - vue.js
   - mongodb
-  - json
-  - web-api
+  - express
+  - node
+  - node.js
+  - javascript
+  - npm
+  - curl
+  - webpack
+  - rest
   - http
-  - nodejs
+  - crud
+  - mongoose
+  - nosql
+  - html
+  - bootstrap
+  - eventbus
   - vue
-  - github
 ---
 Aranızdan kaç kişi akıllı telefonundaki herhangi bir arkadaşının numarasını ezbere söyleyebilir? Eminim bazılarımız bizi dokuz ay karnında taşıyan annesinin telefonunu dahi hatırlamıyordur. Peki ya birlikte sıklıkla vakit geçirdiğiniz ama çok da yakın çevrenizden olmayan kankanızın doğum günü ne zaman? Teknolojik cihazlarınızdaki hatırlatıcılar olmadığında kaç arkadaşınızın doğum gününü unutacaksınız hiç düşündünüz mü?
 

@@ -6,8 +6,15 @@ categories:
   - ruby
 tags:
   - ruby
-  - bash
-  - http
+  - benchmark
+  - logger
+  - logging
+  - cross-cuttings
+  - set
+  - standard-library
+  - pathname
+  - prime
+  - mathematics
 ---
 Epey zamandır Ruby notlarımın (özellikle de Amazon'dan getirttiğim kitapların) yüzüne bakmadığımı gördüm de...Pişmanlık hissettim (İtiraf ediyorum bu aralar biraz tembellik yapıyordum) Sonra onunla uğraşmayı özlediğimi fark ettim. Onun sadeliğini, yalın yazımını, gücünü, pratikliğini. Pasımı atmak için bir şeyler araştırmam gerekiyordır. Derken kendimi her zaman ki gibi Google'da [Ruby standart kütüphanesi](http://ruby-doc.org/stdlib-2.3.1/) ile ilgili faydalı kod parçalarını ararken buldum.
 

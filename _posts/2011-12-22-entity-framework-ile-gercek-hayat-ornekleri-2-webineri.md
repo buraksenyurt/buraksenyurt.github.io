@@ -5,11 +5,11 @@ date: 2011-12-22 06:30:00 +0300
 categories:
   - nedirtv
 tags:
-  - nedirtv
   - entity-framework
+  - nedirtv?com
   - wcf
-  - http
-  - testing
+  - windows-communication-foundation
+  - ef-4.0
 ---
 Hatırlayacağınız üzere [bir önceki bölümümüzde](http://nedirtv.com/video/entity-framework-ile-gercek-hayat-ornekleri-webineri-1), Entity Framework tabanlı Data-Centric çözümümüzü (Solution) geliştirmeye başlamış ve çok basit olarak çatıyı kurduktan sonra, iş katmanına (Business Layer) ait bir operasyonu örneklemiştik. Ardından bu operasyonu bir Unit Test metodu ile denemeye tabi tutarak Webinerimizi sonlandırmıştık.
 

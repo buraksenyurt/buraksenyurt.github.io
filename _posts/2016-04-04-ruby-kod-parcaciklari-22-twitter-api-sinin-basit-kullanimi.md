@@ -6,12 +6,11 @@ categories:
   - ruby
 tags:
   - ruby
-  - dotnet
-  - xml
-  - rest
-  - json
-  - http
-  - github
+  - gem
+  - twitter-api
+  - ssl
+  - install-gem
+  - ruby-kod-parçacıkları
 ---
 Bazı günler şirketten geç çıkıyorum. Özellikle el ayak çekildiğinde ofis ortamı bir şeylere çalışmak için son derece ideal oluyor. Tam da istediğim ortam. Kendi çalışmalarıma vakit ayırabildiğim hoşuma giden zamanlar. Hele de akşam güneşi camdan içeri giriyor ve en sevdiğim sarı rengi masamın üstüne bırakıyorsa.
 

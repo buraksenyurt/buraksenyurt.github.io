@@ -6,9 +6,7 @@ categories:
   - ruby
 tags:
   - ruby
-  - bash
-  - wcf
-  - reflection
+  - ruby-kod-parçacıkları
 ---
 Takip edenlerin bildiği üzere bir süredir [Ruby](https://www.buraksenyurt.com/category/Ruby) programlama dili üzerinde çalışmaktayım. İlerledikçe öğrendiklerimi kod parçacıkları halinde paylaşmaya çalışıyorum. Ne kadar faydalı oluyor bilemiyorum ama arada sırada takip ettiğim kaynaklardan geriye dönerek acaba atladığım bir şeyler var mıdır diye de bakıyorum. İşte bu düşünceler ışığında çıktım yola ve gerçekten de atladığım bir çok şey fark ettim. Bu kod parçacığında kısaca bu konulara değinmeye çalışacağım. Önce kod parçamızı ele alalım.
 

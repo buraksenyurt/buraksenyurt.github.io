@@ -5,22 +5,16 @@ date: 2018-08-02 11:51:00 +0300
 categories:
   - dotnet-core
 tags:
-  - dotnet-core
-  - bash
-  - csharp
-  - dotnet
-  - aspnet
-  - asp-dotnet-core
-  - entity-framework
-  - linq
-  - wcf
-  - rest
-  - json
-  - web-api
   - http
-  - java
-  - generics
-  - visual-studio
+  - .net-core
+  - web-api
+  - http-tunneling
+  - X-HTTP-Method-Override
+  - c#
+  - post
+  - put
+  - delete
+  - middleware
 ---
 Dışarıda çok güzel bir hava var. Büyük ihtimalle tüm sahil şeritlerimiz hınca hınç dolu. Denize girip serinleyenler, çimlere serilip gölgelenenler, arkadaşlarıyla birlikte naneli limonata içip hararet giderenler vs...Kimbilir belki de az sonra ahşap üzerinde çıplak ayaklarınızla yürüyecek ve incecik kumlara basıp bütün senenin yorgunluğunu atmak üzere kendinizi serin okyanus sularına bırakacaksınız. Ama birilerinin de şu yazılım dünyası için içerik üretmesi gerekiyor öyle değil mi? Doğruyu söylemek gerekirse bu tip bir misyonu üstlendiğim için memnunum. Öyleyse gelin bugün ki konumuza başlayalım.
 

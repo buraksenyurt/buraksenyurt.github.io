@@ -5,11 +5,10 @@ date: 2005-11-21 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - performance
-  - delegates
+  - C#-2.0
   - generics
+  - delegate
+  - generic-delegate
 ---
 Bu makalemizde generic temsilcilerin (generic delegates) ne olduğunu ve nasıl kullanılabildiğini incelemeye çalışacağız..Net 2.0 ile gelen en önemli yenelik generic mimarisidir. Generic mimarisi, tür bağımsız algoritmalar kurmamıza imkan sağlayan gelişmiş bir yapıdır..Net 2.0' da sınıfları (class), yapıları (struct), arayüzleri (interface), metodları (method), koleksiyonları (collection) ve temsilcileri (delegate) generic olarak oluşturabilir ve kullanabiliriz. Bildiğiniz gibi generic mimarisinin sağlamış olduğu iki önemli özellik vardır. Bunlar tip güvenliği (type-safety) ve performans artışıdır. Özellikle performans ile kastedilen konu gereksiz boxing ve unboxing işlemlerinin ortadan kaldırılabilmesidir. Generic mimarinin getirdiği bu avantajları delegate (temsilci) tipi içinde kullanabilmekteyiz.
 

@@ -6,11 +6,10 @@ categories:
   - dotnet-framework-4-0
   - csharp-4-0
 tags:
-  - dotnet-framework-4-0
-  - csharp-4-0
-  - csharp
-  - dotnet
-  - visual-studio
+  - .net-framework-4.0
+  - c#-4.0
+  - memory-mapped-files
+  - visual-studio-2010-ultimate
 ---
 Akşam saatleriydi. Sıcak ama güneşin fazla görünmediği bir yaz gününün sonları yaklaşmaktaydı. Gün boyu güneşi İstanbul’ dan saklayan bulutlar yavaş yavaş parçalanmaya başlamıştı. Aralardan güneşin ışınları hafif kızılımsı bir renk ile göğü süslemekteydi. Ancak yine de sert esen rüzgar ve hızla hareket eden bulutlar adeta fırtına öncesi sessizliğin bir habercisiydi. Aile efradı tatildeydi ve çalışma odamda tek başıma dışarıya doğru bakerken geceyi nasıl devam ettirmem gerektiğini planlıyordum.
 

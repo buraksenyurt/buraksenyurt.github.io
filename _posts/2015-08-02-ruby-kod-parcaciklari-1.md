@@ -6,10 +6,9 @@ categories:
   - ruby
 tags:
   - ruby
-  - bash
-  - dotnet
-  - wcf
-  - jwt
+  - ruby-kod-parçacıkları
+  - array
+  - console
 ---
 Bir programlama dilini öğrenmenin en iyi yolu elbetteki bol bol kod yazmaktan geçer. En azından belirli bir seviyeye gelene kadar basit IDE'ler ile mümkünse Console ekranları üzerinden çalışarak ilerlemekte yarar vardır. Hazır bu aralar Ruby ile haşır neşir iken hem basit kod parçaları paylaşayım hem de bu eğlenceli dili birlikte öğrenelim istedim. İşte ilk kod parçacığımız. Konumuz, diziler (Arrays).
 

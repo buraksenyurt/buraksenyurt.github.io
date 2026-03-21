@@ -5,9 +5,10 @@ date: 2013-09-19 10:48:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - generics
+  - c#
+  - c#-temelleri
+  - enum-type
+  - constant
 ---
 C# konulu yeni bir bilmece ile karşı karşıyayız. Bu sefer kolay kolay fark edemeyebileceğimiz, basit ama irdelenmesi gereken bir vakayı göz önüne alacağız.
 

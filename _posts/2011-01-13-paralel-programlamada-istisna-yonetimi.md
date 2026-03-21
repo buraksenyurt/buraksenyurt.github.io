@@ -6,12 +6,11 @@ categories:
   - parallel-programming
 tags:
   - parallel-programming
-  - csharp
-  - linq
+  - tpl
   - task-parallel-library
-  - threading
-  - delegates
-  - visual-studio
+  - exception-handling
+  - c#-4.0
+  - visual-studio-2010-ultimate
 ---
 Balık tutmak farklı bir hobidir. Özellikle olta ile balık yakalamaktan büyük keyif alanlar vardır. (Hatta laf aramızda, şirkette yanımda oturan çalışma arkadaşımın çekmecesinde, bir olta takımı var)
 

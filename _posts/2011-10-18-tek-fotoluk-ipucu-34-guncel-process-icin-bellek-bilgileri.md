@@ -6,9 +6,11 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
-  - dotnet
+  - c#
+  - c#-temelleri
+  - .net-framework
+  - process
+  - xlinq
   - xml
 ---
 Çalıştırdığımız.Net tabanlı uygulamaların anlık bellek tüketimlerini kod içerisinden ölçümlemek ve hatta loglamak iyi bir fikir olabilir. Hatta bu çıktıyı XML formatında dış dünyaya da sunabiliriz. Basit anlamda aşağıdaki fotoğraf size ipucu verecektir kanaatindeyim.

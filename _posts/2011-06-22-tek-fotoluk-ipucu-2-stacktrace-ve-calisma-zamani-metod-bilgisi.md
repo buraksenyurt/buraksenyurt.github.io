@@ -8,10 +8,12 @@ categories:
   - csharp-4-0
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - csharp-3-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - c#
+  - system.diagnostics
+  - stacktrace
+  - run-time
+  - reflection
+  - .net-framework
 ---
 Hani olurda çalışma zamanında (Runtime) o anda yürütülmekte olan metodun bilgilerine kolayca ulaşmak istersiniz. Özellikle loglama sistemlerinde. İşte bu durumda StackTrace tipinden yararlanabilirsiniz. Nasıl mı? Aşağıdaki fotoğrafta (ya da Ercan Hocamızın belirttiği üzere Screen Capture'da) görüldüğü gibi
 

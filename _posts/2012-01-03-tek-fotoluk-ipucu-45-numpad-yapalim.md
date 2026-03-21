@@ -7,9 +7,11 @@ categories:
   - tek-fotoluk-ipucu
   - windows-forms
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - win-forms
   - windows-forms
+  - anonymous-methods
+  - extension-methods
+  - flowlayoutpanel
 ---
 Diyelim ki Windows Forms programlama ile ilgileniyorsunuz. Çalışma zamanında bileşen üretilmesini öğrendiniz. Form'lar arası geçişleri biliyorsunuz ve öğrendiklerinizi tatbik etmek niyetindesiniz. Hatta Extension Method kavramını da biliyorsunuz hatta Anonymous Method yazmayı da öğrendiniz. Öyleyse mesela bir NumPad formunun dinamik olarak üretilmesini ve üstündeki sayı düğmelerine basıldığında kaynak olarak gelen bir TextBox bileşeninin içinin doldurulmasını tecrübe etmeyi deneyebilirsiniz. Nasıl mı?
 

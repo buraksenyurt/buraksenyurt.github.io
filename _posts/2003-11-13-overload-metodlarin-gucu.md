@@ -5,8 +5,10 @@ date: 2003-11-13 13:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
+  - c#
+  - overloading
+  - method-overloading
+  - oop
 ---
 Bu makalemde sizlere overload kavramından bahsetmek istiyorum. Konunun daha iyi anlaşılabilmesi açısından, ilerliyen kısımlarda basit bir örnek üzerinde de çalışacağız.
 

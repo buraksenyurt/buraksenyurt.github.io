@@ -5,12 +5,28 @@ date: 2013-08-25 10:35:00 +0300
 categories:
   - team-foundation-server
 tags:
+  - tfs
   - team-foundation-server
+  - tfs-2012
+  - odata
+  - odata-services
+  - open-data-protocol
   - xml
+  - http-get
+  - tfs.visualstudio.com
+  - filter
+  - count
+  - select
+  - orderby
+  - top
+  - skip
+  - format
   - json
-  - http
-  - javascript
-  - visual-studio
+  - java-script-object-notation
+  - callback
+  - default-collection
+  - team-project
+  - team-project-collection
 ---
 Çoğu zaman geliştirilen yazılım ürünleri ile farklı profilden insanları ortak bir payda da buluşturmayı hedefleriz. Farklı özelliklere sahip insanları, ürüne nasıl katabileceğimizi keşfetmeye çalışırız. Tabi geliştirilen ürünün hedef kitlesi de burada önemli bir rol oynar. Bazı ürünlerin arayüzlerinin son derece basit tasarlanması yeterli iken bazılarında ise tam tersi bir durum söz konusudur.
 

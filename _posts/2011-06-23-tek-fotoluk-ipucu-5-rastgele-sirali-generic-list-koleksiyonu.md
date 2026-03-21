@@ -8,11 +8,14 @@ categories:
   - csharp-4-0
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - csharp-3-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
-  - generics
+  - c#
+  - c#-3.0
+  - c#-4.0
+  - c#-temelleri
+  - linq
+  - list
+  - generic-list
+  - collections
 ---
 Elinizde List tipinden bir koleksiyon var ve içerisindeki nesnelerden rastgele sırada yeni bir liste kullanmak istiyorsunuz. Ne yaparsınız? İşte cevabı
 

@@ -5,13 +5,11 @@ date: 2009-10-31 11:25:00 +0300
 categories:
   - ado-net-data-services
 tags:
-  - ado-net-data-services
-  - csharp
-  - dotnet
-  - aspnet
-  - ado-net
-  - entity-framework
+  - ado.net-data-services
+  - web-firendly-feeds
   - linq
+  - entity-framework
+  - odata
 ---
 Ado.Net Data Services v1.5 CTP1 ile gelen Web Friendly Feeds özelliği, CTP2 sürümünde eklenen iki yeni eşleştirme seçeneği ile genişletilmiştir. Durun bir dakika...Web Friendly Feeds nedir?
 

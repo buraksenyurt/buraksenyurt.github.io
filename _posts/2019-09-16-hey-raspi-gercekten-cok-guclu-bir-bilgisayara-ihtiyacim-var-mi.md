@@ -6,20 +6,17 @@ categories:
   - raspberry-pi
 tags:
   - raspberry-pi
-  - bash
-  - dotnet
-  - sql-server
-  - postgresql
-  - web-service
-  - authentication
-  - docker
-  - python
-  - java
+  - raspbian
+  - linux
+  - programming
+  - commodore-64
   - nodejs
-  - performance
-  - microservices
-  - visual-studio
-  - github
+  - python
+  - dotnetcore
+  - postgresql
+  - 80ler
+  - 90lar
+  - 2000ler
 ---
 ## 1985 Yazı - Hikayenin Başladığı Yer
 

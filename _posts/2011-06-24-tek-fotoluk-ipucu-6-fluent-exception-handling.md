@@ -6,8 +6,9 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - .net-framework
+  - exception-handling
 ---
 Bazen iç içe çağrılarda bulunan metod zincirlerinde herhangibir seviyede meydana gelen Exception durumunu, en üst noktada yakalamak isteriz. Bu durumda balon köpüğü misali bir aşağıdan yukarı yükselen bir mekanizmayı kullanabiliriz. Nasıl mı?
 

@@ -5,17 +5,11 @@ date: 2012-05-24 14:50:00 +0300
 categories:
   - wcf-4-0
 tags:
-  - wcf-4-0
-  - csharp
-  - dotnet
-  - ado-net
   - wcf
-  - async-await
+  - windows-communication-foundation
   - task-parallel-library
-  - threading
-  - concurrency
-  - delegates
-  - generics
+  - tpl
+  - iasyncresult
 ---
 Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim
 

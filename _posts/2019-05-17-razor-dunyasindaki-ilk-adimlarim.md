@@ -5,21 +5,22 @@ date: 2019-05-17 12:53:00 +0300
 categories:
   - asp-dotnet-core
 tags:
-  - asp-dotnet-core
-  - bash
-  - csharp
-  - json
-  - dotnet
-  - aspnet
+  - razor
+  - .net-core
+  - c#
+  - html
+  - cshtml
+  - mode-page
+  - razor-page
+  - routing
   - entity-framework
-  - ef-core
-  - linq
-  - http
-  - authentication
-  - async-await
-  - generics
-  - visual-studio
-  - github
+  - sqlite
+  - inmemory-database
+  - data-annotations
+  - property-binding
+  - bootstrap
+  - dotnet
+  - viewdata
 ---
 Bizim servisin dönüş yolculuğu bir başkadır. Her gün yaklaşık git gel neredeyse seksen kilometrelik yol teperiz (Daha ne kadar teperim bilemiyorum tabii) Dönüş yolculuğumuz trafiğin durumuna göre bazen çok uzun sürer. İşte böyle akşamların çok özel bir anı vardır.
 

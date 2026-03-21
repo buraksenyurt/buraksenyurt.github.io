@@ -5,11 +5,15 @@ date: 2013-01-01 15:52:00 +0300
 categories:
   - team-foundation-server
 tags:
+  - tfs
   - team-foundation-server
-  - oracle
-  - wcf
-  - http
+  - tfs-2012
+  - application-pool
   - iis
+  - internet-information-services
+  - saha-deneyimi
+  - tecrübe
+  - tecrübe-treni
 ---
 Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu serisi altında paylaşım yapmaktayım. Ancak karşılaştığım ilginç bir durumu da sizinle paylaşmak istedim. Tabi olayın başrol oyuncusu olarak en büyük kabahat bende
 

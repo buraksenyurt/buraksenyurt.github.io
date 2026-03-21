@@ -6,13 +6,9 @@ categories:
   - ruby
 tags:
   - ruby
-  - bash
-  - nosql
-  - xml
-  - json
-  - http
-  - performance
+  - yaml
   - serialization
+  - binary-serialization
 ---
 Bir önceki kod parçacığında geliştirici tanımlı bir sınıf koleksiyonunun JSON formatından nasıl serileştirilebileceğini incelemiştik. Ruby dilinde dahili (built-in) olarak gelen serileştirme kütüphaneleri de vardır (YAML ve Binary) Tahmin edeceğiniz üzere duruma göre bu serileştirme çeşitlerinden birisinin kullanılması tercih edilebilir. Aşağıdaki örnek kod parçacığında bu biçimdeki serileştirme ve ters-serileştirme işlemlerinin nasıl yapıldığı ele alınmaktadır.
 

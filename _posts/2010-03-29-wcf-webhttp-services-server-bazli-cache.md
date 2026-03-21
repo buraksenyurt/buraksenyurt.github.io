@@ -6,20 +6,12 @@ categories:
   - wcf-eco-system
   - wcf-webhttp-services
 tags:
-  - wcf-eco-system
-  - wcf-webhttp-services
-  - csharp
-  - xml
-  - dotnet
-  - aspnet
-  - linq
   - wcf
-  - rest
-  - performance
-  - caching
-  - generics
-  - visual-studio
-  - rc
+  - wcf-4.0
+  - webhttp-services
+  - restful
+  - non-soap
+  - wcf-webhttp-services
 ---
 Şirketimi çok seviyorum. Nazar değmesin ama araştırma yapmam, yeni bir şeyler öğrenmem ve bunları ekip arkadaşlarımla paylaşmam için beni özellikle teşvik eden bir şirkette bulunmaktayım. Çalıştığım şirketin en güzel özelliklerinden biriside, Cuma günleri yapılan minik ikramları.
 

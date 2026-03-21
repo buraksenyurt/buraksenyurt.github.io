@@ -5,16 +5,13 @@ date: 2013-10-06 12:02:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - linq
-  - sql-server
-  - windows-forms
-  - parallel-programming
-  - performance
+  - c#
+  - text-files
   - reflection
-  - pointers
-  - generics
-  - visual-studio
+  - notepad++
+  - line-codes
+  - file
+  - system.io
 ---
 Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalışmış ve yazılım geliştirmişseniz, eminimki hayatınızın bir döneminde büyük boyutlu Text dosyaları ile çalışmak zorunda kalmışsınızdır.
 

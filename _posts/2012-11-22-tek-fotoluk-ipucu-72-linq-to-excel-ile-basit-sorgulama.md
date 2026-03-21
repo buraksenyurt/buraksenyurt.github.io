@@ -7,7 +7,10 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - linq
-  - http
+  - linq-to-excel
+  - linq-providers
+  - excel
+  - c#
 ---
 Zaman zaman siz de benim gibi LINQ ile yazılmış çeşitli Provider'lara şöyle bir göz gezdirenlerden misiniz?
 

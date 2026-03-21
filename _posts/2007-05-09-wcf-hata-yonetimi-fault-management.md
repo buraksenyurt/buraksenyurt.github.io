@@ -6,20 +6,8 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - bash
-  - dotnet
-  - soap
-  - web-service
-  - xml-web-services
-  - http
-  - java
-  - serialization
-  - delegates
-  - generics
-  - visual-studio
-  - dataset
+  - windows-communication-foundation
+  - fault-management
 ---
 Hata yönetimi her programlama dili ve geliştirme ortamı içerisinde yer alan önemli konulardan birisidir. Özellikle kullanıcıların yapmış olduğu işlemler sonucunda oluşan veya sistem üzerinde beklenmeyen durumlardan doğan hataların önüne geçmek amacıyla çeşitli mekanizmalara başvurulmaktadır. Bunlardan birisi ve aynı zamanda etkili olanıda istisna yönetimidir (Exception Handling). Microsoft.Net ortamında istisna yönetimi CLR (Common Language Runtime - Ortak Dil ÇalışmaZamanı) tarafından gerçekleştirilen bir unsurdur.
 

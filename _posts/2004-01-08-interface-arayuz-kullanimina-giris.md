@@ -5,7 +5,10 @@ date: 2004-01-08 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
+  - C#
+  - interface
+  - oop
+  - inheritance
 ---
 Bugünkü makalemizde, nesneye dayalı programlamanın önemli kavramlarından birisi olan arayüzleri incelemeye çalışacağız. Öncelikle, arayüz'ün tanımını yapalım. Bir arayüz, başka sınıflar için bir rehberdir. Bu kısa tanımın arkasında, deryalar gibi bir kavram denizi olduğunu söylemekte yarar buluyorum.. Arayüzün ne olduğunu tam olarak anlayabilmek için belkide asıl kullanım amacına bakmamız gerekmektedir.
 

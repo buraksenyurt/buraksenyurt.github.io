@@ -7,6 +7,9 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - linq
+  - extension-methods
+  - random
+  - randomizer
 ---
 Pek çoğumuz Random tipini kullanır ve bir listeden rastgele elemenalar üretmeye veya elde etmeye çalışırız. Peki T tipinden bir listeden herhangibir anda rastgele eleman almak isteseniz ve bunu bir Extension metod olarak tasarlamayı planlasanız...Nasıl bir yol izlerdiniz?
 

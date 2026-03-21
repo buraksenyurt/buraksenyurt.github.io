@@ -5,7 +5,9 @@ date: 2004-01-27 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
+  - C#
+  - indexers
+  - interface
 ---
 Bugünkü makalemizde kısaca indeksleyicilerin C# programlama dilindeki kullanımını incelemeye çalışacağız. Bir indeksleyici, bir sınıfı dizi şeklinde kullanabilmek ve bu sınıftan türetilen nesneleri dizinleyebilmek amacıyla kullanılır. Başka bir deyişle bir indeksleyici, nesnelere dizi gibi davranılabilmesini sağlar.
 

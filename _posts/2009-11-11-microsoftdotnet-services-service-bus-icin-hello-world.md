@@ -6,14 +6,8 @@ categories:
   - windows-azure
 tags:
   - windows-azure
-  - csharp
-  - xml
-  - dotnet
+  - service-bus
   - wcf
-  - rest
-  - http
-  - authentication
-  - visual-studio
 ---
 Bu gün itibairyle İstanbul'da sağnak yağışlı bir hava hakim. Oysaki bir kaç güne kadar güneşli ve ılıman bir hava vardı. Hal böyle olunca Cloud Computing ile ilgili bir şeyler karıştırmanın tam vaktidir diye düşündüm. Daha önceki [Windows Azure Service Platformu Hakkında İlk İzlenimler](/2009/10/22/windows-azure-service-platformu-hakkinda-ilk-izlenimler/)başlıklı yazımızda [Amazon'](http://www.amazon.com)dan Cloud Computing with Windows Azure Platform isimli bir kitabı sipariş ettiğimi ve önümüzdeki dönemlerde bu konu ile ilişkili yazılarımı sizlerle paylaşacağımı belirtmiştim.
 

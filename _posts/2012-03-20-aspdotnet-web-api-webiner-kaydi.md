@@ -5,15 +5,19 @@ date: 2012-03-20 15:23:00 +0300
 categories:
   - nedirtv
 tags:
-  - nedirtv
-  - dotnet
-  - aspnet
-  - aspnet-mvc
+  - asp.net-web-api
+  - wcf-web-api
+  - rest-services
   - wcf
-  - rest
-  - web-api
-  - http
-  - webinar
+  - mvc
+  - odata
+  - json
+  - xml
+  - httpclient
+  - httpget
+  - httppost
+  - httpput
+  - httpdelete
 ---
 19 Mart 2012 Pazartesi günü gerçekleştirdiğimiz Asp.Net WEB API Webiner kayıtlarını Nedirtv?com topluluğuna yüklemiş bulunmaktayız. Bu webinerimizde daha önceden WCF (Windows Communication Foundation) takımınca geliştirilen ve son olarak WCF Web API kütüphanesi adı altında sunulan REST (Representational State Transfer) tabanlı servis geliştirme ve tüketme alt yapısının yeni verisyonu diyebileceğimiz, Asp.Net WEB API’ yi incelemeye çalıştık.
 

@@ -6,17 +6,7 @@ categories:
   - wpf
 tags:
   - wpf
-  - xml
-  - csharp
-  - dotnet
-  - linq
-  - sql-server
-  - xaml
-  - http
-  - generics
-  - visual-studio
-  - dataset
-  - datatable
+  - data-binding
 ---
 Bu gün geliştirdiğimiz programların çoğu veri (Data) ile ilişkili kaynakları kullanmaktadır. Özellikle büyük ölçekli pek çok proje tipi içerisinde mutlaka verilerin kullanılması söz konusudur. Veriler kimi zaman müşteri bilgilerini, kimiz zaman ürün bilgilerini, kimi zamanda uygulamaya ait konfigurasyon bilgilerini vb... tutar. Verilerin çoğu zaman veritabanı sistemlerinde, fiziki dosyalarda veya program içerisindeki özel tiplerde saklandıklarını görürüz. Çok doğal olarak bu veri depoları içerisinde tutulan bilgilerin son kullanıcılara gösterilmeside söz konusudur.
 

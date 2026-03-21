@@ -7,6 +7,15 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - task-parallel-library
+  - task
+  - task.waitall
+  - thread
+  - parallel-computing
+  - parallel.invoke
+  - invoke
+  - wait-all
+  - wait-any
+  - wait-one
 ---
 Bildiğiniz üzere paralel çalışmasını istediğimiz görevler olduğunda genellikle bunları birer Task halinde üretir ve bir dizi içerisinde toplarız (En azından TPL-Task Parallel Library geldikten sonra böyle yapmakta olduğumuzu ifade edebiliriz) Görevleri Task tipinden bir dizi içerisinde toplamamızın sebebi ise genellikle WaitAll gibi bir çağrıya ihtiyaç duyabilecek olmamızdır.
 

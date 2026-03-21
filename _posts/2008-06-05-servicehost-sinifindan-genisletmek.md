@@ -6,12 +6,7 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - http
-  - iis
-  - serialization
-  - visual-studio
+  - windows-communication-foundation
 ---
 WCF (Windows Communication Foundation) mimarisinde sunucu (Server) tarafındaki çalışma ortamınının (WCF Runtime) hazırlanması ile ilişkili olaraktan ServiceHost sınıfı kullanılmaktadır. Bir başka deyişle ServiceHost sınıfı uygulama sunucusu (Application Server) üzerindeki gerekli hazırlıkların yapılmasını sağlamaktadır. ServisHost sınıfı çoğunlukla, servis nesnesinin IIS (Internet Information Services) veya WAS (Windows Activation Services) üzerinden yayınlanmadığı durumlarda kullanılmaktadır.
 

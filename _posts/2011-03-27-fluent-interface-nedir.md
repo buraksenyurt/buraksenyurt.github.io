@@ -5,9 +5,10 @@ date: 2011-03-27 05:15:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - http
-  - generics
+  - .net-framework
+  - c#
+  - fluent-interface
+  - interface
 ---
 Yazılımcı olarak bizlerin zaman içerisindeki gelişimimiz/ilerleyişimiz açısından takip etmemiz gereken önemli kişiler olduğu aşikardır. Söz gelimi çevik süreç prensiplerine ait manifestoyu hazırlayanlar arasında yer alan Martin Fowler gibi. [Martin Fowler](http://martinfowler.com/) bana göre yazılım mühendisliğinin uç noktalarında yaşayan bir bilim insanıdır. Bilim insanı diyorum nitekim çalıştığı şirkette Chief Scientist pozisyonunda görev almaktadır
 

@@ -5,10 +5,14 @@ date: 2004-01-14 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - sql-server
-  - visual-studio
+  - C#
+  - class
+  - interface
+  - database
+  - sqlconnection
+  - table
+  - datatable
+  - ado.net
 ---
 Bugünkü makalemizde, bir arayüzü uygulayan sınıf nesnelerinden faydalanarak, bir Sql tablosundan nasıl veri okuyacağımızı ve değişiklikleri veritabanına nasıl göndereceğimizi incelemeye çalışacağız. Geliştireceğimiz örnek, arayüzlerin nasıl oluşturulduğu ve bir sınıfa nasıl uygulandığını incelemekle yetinmeyecek, Sql veritabanımızdaki bir tablodaki belli bir kayda ait verilerin bu sınıf nesnelerine nasıl aktarılacağını da işleyecek. Kısacası uygulamamız, hem arayüzlerin hem sınıfların hemde Sql nesnelerinin kısa bir tekrarı olucak.
 

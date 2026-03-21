@@ -6,20 +6,8 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - dotnet
-  - workflow-foundation
-  - wpf
-  - web-service
-  - xml-web-services
-  - http
-  - async-await
-  - threading
-  - delegates
-  - generics
-  - debugging
-  - visual-studio
+  - windows-communication-foundation
+  - visual-studio-2008
 ---
 Yazılım dünyası çeşitli ürün gruplarını ve bunların üretimini içeren materyaller içermektedir. Son kullanıcıya (End User) veya geliştiricilere (Developers) yönelik olarak tasarlanan ürünlerin yazılmasında çeşitli program geliştirme arabirimleri kullanılmaktadır. Belkide bunlardan en popüler olanları Microsoft tarafından üretilen Visual Studio ailesidir. Visual Studio.Net ile başlayan serüvende kısa bir süre öncede Visual Studio 2008 sürümü son haliyle yayınlanmıştır. Yeni sürüm özellikle.Net Framework 2.0, 3.0 ve 3.5 için ortak ve tek bir geliştirme ortamı sunmasıyla hemen dikkati çekmektedir. Bu ve benzer özelliklerin yanında Windows Communication Foundation çözümleri içinde ek bir takım yenilikleri gelmektedir.
 

@@ -6,15 +6,7 @@ categories:
   - wpf
 tags:
   - wpf
-  - xml
-  - csharp
-  - dotnet
-  - linq
-  - xaml
-  - http
-  - performance
-  - generics
-  - visual-studio
+  - brushes
 ---
 Windows uygulamalarında özellikle.Net tarafında vektörel grafik işlemleri için çoğunlukla GDI+ alt yapısı (infrastructure) kullanılmaktadır. Ancak Windows Presentation Foundation (WPF) mimarisinde öne çıkan özelliklerden biriside grafik anlamdaki yeteneklerin son derece geliştirilmiş olmasıdır. Kişisel görüşüm grafik yönündeki özelliklerin gelişmesi dışında bu tekniklerin element bazında uygulanabiliyor olması son derece önemli ve yerindedir.
 

@@ -5,8 +5,12 @@ date: 2004-01-20 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
+  - C#
+  - delegate
   - delegates
+  - attributes
+  - oop
+  - multicast-delegates
 ---
 Bugünkü makalemizde, C# programlama dilinde ileri seviye kavramlardan biri olan Temsilcileri (delegates) incelemeye başlayacağız. Temsilciler ileri seviye bir kavram olmasına rağmen, her seviyden C# programcısının bilmesi gereken unsurlardandır. Uygulamalarımızı temsilciler olmadan da geliştirebiliriz. Ancak bu durumda, yapamıyacaklarımız, yapabileceklerimizin önüne geçecektir. Diğer yandan temsilcilerin kullanımını gördükçe bize getireceği avantajları daha iyi anlayacağımız kanısındayım. Bu makalemizde temsilcileri en basit haliyle anlamaya çalışıcağız.
 

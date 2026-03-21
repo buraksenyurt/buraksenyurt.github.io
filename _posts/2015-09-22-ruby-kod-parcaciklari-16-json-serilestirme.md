@@ -6,12 +6,11 @@ categories:
   - ruby
 tags:
   - ruby
-  - bash
-  - nosql
-  - workflow-foundation
-  - json
-  - javascript
   - serialization
+  - binary
+  - binary-serialization
+  - json
+  - json-serialization
 ---
 Aslında bu kod parçasında temel dosya giriş çıkış işlemlerini (IO operasyonları diyelim) ele almayı planlamıştım. Ancak konuyu araştırırken dosya içerisine ne yazabilirim sorusuna denk geldiğimde, bir nesne koleksiyonunu aktarmanın uygun olacağını düşündüm. Hal böyle olunca ortaya "hangi fortmatta?" sorusu çıktı.
 

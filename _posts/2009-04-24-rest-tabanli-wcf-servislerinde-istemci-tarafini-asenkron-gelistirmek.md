@@ -6,20 +6,8 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - dotnet
-  - linq
-  - wpf
-  - windows-forms
-  - xml
   - rest
-  - web-service
-  - xml-web-services
-  - http
-  - async-await
-  - threading
-  - serialization
-  - delegates
+  - async
 ---
 Bir önceki [yazımızda](https://www.buraksenyurt.com/post/Rest-Tabanl%C4%B1-WCF-Servisleri-icin-Istemci-Yazmak)REST bazlı WCF servisleri için, WCF Rest Stater Kit yardımıyla istemci uygulamaların nasıl geliştirilebileceğini incelemeye çalışmıştık. İstemci açısından önemli olan konulardan biriside, uzun sürebilecek request/response operasyonları sırasında uygulamasını kullanmaya devam edebiliyor olmasıdır. Tahmin edeceğiniz üzere istemci tarafında bir request'in asenkron olarak gönderilip, işlenmesi konusunu değerlendiriyor olacağız. Aslında asenkron erişimden kastımız, istemcinin talebi gönderdikten sonra cevabın anında gelmesini beklemeden çalışmasına devam edebilmesidir. Servis tabanlı uygulamalar söz konusu olduğunda, asenkron işlemleri iki lokasyonda tasarlayabiliriz.
 

@@ -6,8 +6,12 @@ categories:
   - rust
 tags:
   - rust
-  - bash
-  - github
+  - rust-pratikleri
+  - rust-programming-language
+  - wordle
+  - game-programming
+  - terminal-games
+  - cargo
 ---
 Doğruyu söylemek gerekirse mobil oyunlarla çok fazla aram yok. Ancak platform ne olursa olsun oyun yazmaya çalışmak programlama dili öğrenenler için çok iyi bir egzersiz. Bu nedenle bazen var olan oyunların nasıl yazıldığını anlatan öğretileri uygulamaya çalışıyorum. Geçtiğimiz günlerde [The Pragmatic Programmers](https://medium.com/pragmatic-programmers) mecrasından Herbert Wolverson'un Wordle isimli popüler bir oyunun Rust ile nasıl yazılabileceğini anlattığı [şu yazısına](https://medium.com/pragmatic-programmers/rustle-5c15d1c153a1) denk geldim. Tamda başta belirttiğim tipte bir egzersiz karşıma çıkmıştı. E boş durur muyum? Adım adım tatbik etmeye karar verdim. Nitekim bu yolculuk Rust ile ilgili birçok şey öğretecekti bana. Her şeyden önce pratik yapacaktım. İşte bu yazıda izlediğim adımları ve kendi yorumlarımı bulabilirsiniz.
 

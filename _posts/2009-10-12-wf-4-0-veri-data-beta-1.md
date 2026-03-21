@@ -5,14 +5,8 @@ date: 2009-10-12 14:48:00 +0300
 categories:
   - wf-4-0-beta-1
 tags:
-  - wf-4-0-beta-1
-  - csharp
-  - dotnet
-  - workflow-foundation
-  - wpf
-  - generics
-  - visual-studio
-  - dependency-management
+  - wf
+  - wf-4.0
 ---
 Bir süredir Workflow Foundation 4.0 ile ilişkili blog yazılarını, makaleleri ve görsel dersleri takip etmekteyim. Bu araştırmalarım sırasında Workflow Foundation 4.0 modelinde veriye (Data) olan bakış açısının WF 3.X sürümüne göre oldukça farklılaştığını gördüm. WF 3.X tabanlı modelde, aktivite bazlı verileri temsil etmek için genellikle standart sınıf özelliklerinden (Property) veya WPF'ten esinlenilen bağımlı özelliklerden (Dependency Property) yararlanılmaktadır. WF 4.0 modelinde ise veriyi temsil etmek amacıyla Variable veya Argument türevli tiplerden yararlanıldığı görülmektedir.
 

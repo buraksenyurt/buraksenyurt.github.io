@@ -7,11 +7,10 @@ categories:
   - csharp
   - data-structures-algorithms
 tags:
+  - c#
+  - levenshtein-distance
   - algoritma
-  - csharp
-  - data-structures-algorithms
-  - rest
-  - http
+  - extension-methods
 ---
 Bir süredir yazılım dünyasında sıklıkla kullanılan basit algoritmalara merak salmış durumdayım. Bazıları kafayı yedirtecek cinsten olsalarda arada sırada bunları değerlendirmekte ve paslanan dimamızı açmaya çalışmakta yarar olduğu kanısındayım.
 

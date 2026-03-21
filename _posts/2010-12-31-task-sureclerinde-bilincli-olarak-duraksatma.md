@@ -5,13 +5,12 @@ date: 2010-12-31 13:20:00 +0300
 categories:
   - parallel-programming
 tags:
-  - parallel-programming
-  - csharp
-  - linq
   - task-parallel-library
-  - threading
-  - generics
-  - visual-studio
+  - c#-4.0
+  - .net-framework-4.0
+  - parallel-programming
+  - thread
+  - task-cancellation
 ---
 Pek çoğumuz hayatımızın çeşitli dönemlerinde ayakta veya oturarak bir şeyler için beklemek zorunda kalırız. Kimi zaman seyahat edeceğimiz yere gidecek aracı bekleriz. Özellikle uçak seyahatleri gibi gecikmelerin sıklıkla yaşanabileceği durumlardan tutunda, İstanbul trafiğinin akşam saatlerindeki yoğunluğu yüzünden yine belirsiz süre dolmuş beklenmesi gibi hallerle sıklıkla karşılaşılır.
 

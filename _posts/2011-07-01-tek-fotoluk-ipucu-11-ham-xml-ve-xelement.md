@@ -7,11 +7,10 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - tek-fotoluk-ipucu
   - wcf
-  - wcf-4-0
-  - dotnet
-  - xml
+  - xlinq
+  - xelement
+  - windows-communication-foundation
 ---
 Hani olurda yazdığınız WCF servislerini.Net istemcilerine açarken XML olarak döndürdüğünüz içeriklari RAW formatlarında sunmak istersiniz. Bu durumda yapacağınız iş çok basittir. İşte örnek
 

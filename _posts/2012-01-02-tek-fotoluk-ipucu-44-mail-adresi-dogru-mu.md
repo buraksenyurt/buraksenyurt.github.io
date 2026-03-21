@@ -6,8 +6,11 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - smtp
+  - mail
+  - .net
+  - extension-methods
 ---
 Aslında bu soruya cevap vermek özellikle web developer'lar için son derece kolay. RegularExpressionValidator kontrolünde uygun deseni seçip kontole hatalı mail adresi girilmesi engellenebilir. Ama yine de bazen tedbiri elden bırakmamakta yarar vardır. Söz gelimi bir mail adres listesine toplu mail atacağımız bir senaryoyu göz önüne alalım. Geliştirdiğimiz kodlarda mail adreslerinin doğru olup olmadığını çok basit bir hile ile kontrol edebiliriz. Nasıl mı?
 

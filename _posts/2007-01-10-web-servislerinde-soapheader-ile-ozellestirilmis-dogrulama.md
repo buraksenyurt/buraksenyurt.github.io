@@ -6,15 +6,10 @@ categories:
   - xml-web-services
 tags:
   - xml-web-services
-  - csharp
-  - dotnet
   - xml
-  - soap
   - web-service
-  - http
-  - authentication
-  - authorization
-  - caching
+  - soap
+  - simple-object-access-protocol
 ---
 Web servislerinde güvenlik söz konusu olduğunda, geliştiricileri en çok zorlayan noktalardan birisi görsel bir arabirimin olmayışıdır. Bu nedenle özellikle web tabanlı uygulamalarda tercih edilen form tabanlı (form-based) veya windows tabanlı (windows based) doğrulama (authentication) sistemlerini uygulamak biraz daha farklıdır. Biz bu makalemizde form tabanlı doğrulama ve yetkilendirme sistemininin iskeletini, web servisleri üzerinde nasıl geliştirebileceğimizi incelemeye çalışacağız.
 

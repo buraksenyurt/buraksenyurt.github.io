@@ -6,8 +6,9 @@ categories:
   - ruby
 tags:
   - ruby
-  - wcf
-  - workflow-foundation
+  - ruby-kod-parçacıkları
+  - yield
+  - block
 ---
 Ruby'nin güçlü olmasını sağlayan pek çok özellik vardır. block'lar bu güçlü özelliklerden birisidir. (Block'lar dışında Proc ve Lambda kavramları da mevcuttur ki bu konuları ve aralarındaki temel farklılıkları sonraki kod parçacıklarında ele alacağız)
 

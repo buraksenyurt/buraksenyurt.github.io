@@ -6,17 +6,7 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - dotnet
-  - aspnet
-  - ado-net
-  - xml
-  - soap
   - rest
-  - http
-  - iis
-  - serialization
-  - visual-studio
 ---
 .Net Framework 3.5 ile birlikte, [WCF (Windows Communication Foundation)](http://msdn.microsoft.com/en-us/netframework/aa663324.aspx) tarafına kazandırılan önemli yeteneklerden biriside Web programlama modelidir. Bu modelin getirileri arasında, WCF servislerinin REST ([Representational State Transfer](http://en.wikipedia.org/wiki/Representational_State_Transfer)) tekniğine göre yazılıp, kullanılabilmesi de vardır. Özellikle SOAP (Simple Object Access Procotol) bazlı WCF Servisleri ile REST modeline göre tasarlanmış servisler arasındaki en büyük fark, HTTP metodunun çeşididir.
 

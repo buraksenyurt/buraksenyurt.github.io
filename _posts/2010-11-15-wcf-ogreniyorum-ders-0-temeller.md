@@ -5,10 +5,10 @@ date: 2010-11-15 08:30:00 +0300
 categories:
   - wcf-ogreniyorum
 tags:
-  - wcf-ogreniyorum
   - wcf
-  - http
-  - webinar
+  - wcf-4.0
+  - nedirtv?com
+  - wcf-ogreniyorum
 ---
 Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü yapmakta olduğum [NedirTv?Com](http://www.nedirtv.com) bünyesindeki yeni Webinerlerimize (WebCasts) başlamış olduk
 

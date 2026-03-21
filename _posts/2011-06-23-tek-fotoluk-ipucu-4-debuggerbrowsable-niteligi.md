@@ -6,8 +6,10 @@ categories:
   - dotnet-framework-4-0
   - tek-fotoluk-ipucu
 tags:
-  - dotnet-framework-4-0
-  - tek-fotoluk-ipucu
+  - c#
+  - .net-framework
+  - visual-studio
+  - visual-studio-2010
 ---
 Attribute diyip geçmeyin. Bazıları çalışma zamanında o kadar çok işe yarıyor ki. Örneğin DebuggerBrowsable niteliği. İşte kullanım şekli. Farkı görebiliyor musunuz?
 

@@ -6,16 +6,7 @@ categories:
   - wcf
 tags:
   - wcf
-  - xml
-  - csharp
-  - dotnet
-  - aspnet
-  - ado-net
-  - soap
   - rest
-  - http
-  - iis
-  - generics
 ---
 SOAP (Simple Object Access Protocol) bazlı WCF servislerininin REST (REpresentational State Transfer) modeline taşınmasını ele aldığımız bir önceki [yazımızda](https://www.buraksenyurt.com/post/Soap-Bazl%C4%B1-WCF-Servislerini-REST-Modeline-Tas%C4%B1mak)varsayılan URL şablonu kullanılmıştır. Varsayılan URL şablonu, WebGet niteliğinde herhangibir başka desen belirtilmediğinde devreye girmektedir. Kabaca aşağıdaki dizime benzer bir yapıdadır.
 

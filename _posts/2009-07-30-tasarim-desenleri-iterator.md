@@ -5,11 +5,9 @@ date: 2009-07-30 12:52:00 +0300
 categories:
   - tasarim-kaliplari-design-patterns
 tags:
-  - tasarim-kaliplari-design-patterns
-  - csharp
-  - dotnet
-  - linq
-  - generics
+  - design-patterns
+  - oop
+  - c#
 ---
 Küçüklüğümde pek çoğumuz gibi sahip olduğum bir pul koleksiyonum vardı. Halen daha sakladığım pullar bulunmaktadır. Hatta o zamanlarda, çocuklar posta aracılığıyla yurt dışından arkadaşlar edinir, birbirleriyle pul değiş tokuşu bile yaparlardı. Düşünsenize, hem yabancı dilinizi geliştiriyor hem pul koleksiyonunuzu genişletiyorsunuz.
 

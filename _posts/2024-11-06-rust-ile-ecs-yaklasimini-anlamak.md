@@ -6,6 +6,14 @@ categories:
   - rust
 tags:
   - rust
+  - ecs
+  - bevy
+  - game-programming
+  - gameEngine
+  - composition
+  - oop
+  - compositionOverInheritance
+  - programming
 ---
 ECS, Entity Component System olarak adlandırılan ve birçok oyun motorunda kullanılan bir yaklaşımı ifade eder. Composition over Inheritance prensibini benimseyen Data Oriented bir geliştirme ortamı sağlar. Rust tarafında Bevy gibi bazı oyun motorları built-in olarak bu yapıyı kullanır. Oyun kodlarının daha okunabilir, yönetilebilir ve bakımı kolay şekilde tesis edilmesinde önemli imkanlar sağlar. Plug-In ve Bundle yaklaşımlarının uygulanmasını da kolaylaştırır.
 

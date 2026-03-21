@@ -5,7 +5,14 @@ date: 2012-12-10 20:40:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - tek-fotoluk-ipucu
+  - linq
+  - generics
+  - sequenceequal
+  - list<t>
+  - c#
+  - extension-methods
+  - iequalitycomparer
+  - comparer
 ---
 Diyelim ki uygulamanızda zaman zaman da olsa farklı referanslar da duran ve aynı tipte elemanlardan oluşan koleksiyonlarınız oluşuyor ve bunları yeri geldiğinde birbirleri ile kıyaslamak istiyorsunuz. Ne yaparsınız?
 

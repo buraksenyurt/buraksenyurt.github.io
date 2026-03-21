@@ -6,18 +6,12 @@ categories:
   - wcf-eco-system
   - wcf-webhttp-services
 tags:
-  - wcf-eco-system
-  - wcf-webhttp-services
-  - csharp
-  - xml
-  - linq
   - wcf
-  - rest
-  - json
-  - http
-  - generics
-  - visual-studio
-  - rc
+  - wcf-4.0
+  - webhttp-services
+  - restful
+  - non-soap
+  - wcf-webhttp-services
 ---
 Bu yazımızda bizleri uzun, zorlu ve yorucu bir macera bekliyor. Şimdiden söylemek isterim ki yanınızda tatlı (Mesela kolalı jelibon olabilir), tuzlu yiyecek bir şeyler, boğaz kuruluğunuzu giderecek içecekler veya daha fazla oksijen çekmenizi sağlayacak sakızlar olsun. Unutmadan birde aspirin. Baş ağrısı için
 

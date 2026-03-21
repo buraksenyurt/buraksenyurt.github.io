@@ -5,17 +5,14 @@ date: 2020-05-29 17:23:00 +0300
 categories:
   - dotnet-core
 tags:
-  - dotnet-core
-  - bash
-  - csharp
-  - dotnet
+  - cqrs
+  - c#
   - entity-framework
-  - linq
-  - web-api
-  - http
-  - async-await
-  - generics
-  - github
+  - rest
+  - rest-api
+  - rest-based-services
+  - mediatr
+  - mediator
 ---
 CQRS, nam-ı diğer Command Query Responsibility Segregation mimari deseni, veritabanına doğru yapılan yazma, güncelleme, silme gibi aksiyonlar ile veri çekme işlemlerini ayrıştırmayı önermektedir. Command tarafı ile ilişkilendirilen aksiyonlar sadece veri üzerinde işlem yapar ve geriye bir şey döndürmezler. Sorgulama (Query) tarafına ayrılan aksiyonlar da tam tersine sadece veri döndürmekten sorumludurlar (Listeleme veya tek bir öğe detayının döndürülmesi gibi) Bir Web API ve CQRS söz konusu olduğunda karşımıza birde Mediator tasarım kalıbının uygulanışı çıkar.
 

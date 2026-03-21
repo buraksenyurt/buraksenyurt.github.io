@@ -6,9 +6,14 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
-  - xml
+  - c#
+  - c#-temelleri
+  - xlinq
+  - xelement
+  - list
+  - generic-constraints
+  - extension-methods
+  - reflection
 ---
 Varsayalım ki elimizde kendi geliştirdiğimiz tipler ve kullandığımız List koleksiyonları var. Ve olduda bir yerde bu koleksiyonların içeriklerinin XML çıktılarına ihtiyaç duyduk. Basit bir Extension method geliştirebilir miyiz acaba?
 

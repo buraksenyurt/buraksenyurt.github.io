@@ -6,9 +6,12 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - dotnet
-  - xml
   - json
+  - json.net
+  - newtonsoft
+  - dynamic
+  - c#
+  - mvc
   - serialization
 ---
 Bildiğiniz üzere JSON (JavaScriptObjectNotation) oldukça kompakt bir veri formatı sunuyor. Çoğu durumda veriyi anlamlı şekilde saklarken, XML serileştirme yerine tercih ediyoruz. Nitekim daha az yer kaplamakla birlikte nesnel olarak anlaşılabilirliği daha yüksek. Özellikle MVC tarafında çok kıymetli. JSON ile.Net tarafında çalışırken ise işleri kolaylaştırmak adına Newtonsoft’ un NuGet ile indirebileceğimiz paketini kullanmaktayız.

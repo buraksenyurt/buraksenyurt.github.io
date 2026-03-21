@@ -6,18 +6,8 @@ categories:
   - xml-web-services
 tags:
   - xml-web-services
-  - csharp
-  - xml
-  - dotnet
-  - aspnet
   - soap
-  - web-service
-  - http
-  - serialization
-  - visual-studio
-  - asmx
-  - dataset
-  - web-proxy
+  - soap-based-web-service
 ---
 Bugünkü makalemizde web servislerinin nasıl kullanıldığını göreceğiz. Her zaman olduğu gibi konuyu açıklayıcı basit bir örnek üzerinde çalışacağız. Öncelikle web servisi nedir, ne işe yarar bunu açıklamaya çalışalım. Web servisi, internet üzerinden erişilebilen, her türlü platform ile bağlantı kurabileceğimiz, geriye sonuç döndüren (döndürmeye) fonksiyonelliklere ve hizmetlere sahip olan bir uygulama parçasıdır. Aşağıdaki şekil ile konuyu zihnimizde daha kolay canlandırabiliriz.
 

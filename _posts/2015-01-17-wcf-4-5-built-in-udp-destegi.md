@@ -5,16 +5,7 @@ date: 2015-01-17 23:00:00 +0300
 categories:
   - wcf-4-5
 tags:
-  - wcf-4-5
-  - csharp
-  - xml
-  - dotnet
-  - wcf
-  - soap
-  - http
-  - performance
-  - transactions
-  - generics
+  - wcf,soa,windows-communication-foundation,header,soap-envelope,message-contract,xsd,xml
 ---
 > Hızzzzz!!! Ben Hızzımmm! Hızlıdan hızlı…
 

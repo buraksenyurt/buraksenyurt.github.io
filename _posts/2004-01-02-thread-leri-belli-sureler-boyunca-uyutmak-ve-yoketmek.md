@@ -5,8 +5,9 @@ date: 2004-01-02 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - threading
+  - C#
+  - thread
+  - multi-thread
 ---
 Bugünkü makalemizde iş parçacıklarının belli süreler boyunca nasıl durgunlaştırılabileceğini yani etkisizleştirebilieceğimizi işlemey çalışıcaz. Ayrıca iş parçacıklarının henüz sonlanmadan önce nasıl yokedildiklerini göreceğiz.
 

@@ -5,8 +5,9 @@ date: 2011-05-09 08:01:00 +0300
 categories:
   - teknik-disi-konular
 tags:
-  - teknik-disi-konular
-  - http
+  - euroleague
+  - final-four
+  - basketball
 ---
 Geçtiğimiz günler basketbol adına oldukça hareketliydi. Özellikle benim için dün. Öncelikle Euroleague Final Four 2011 oynandı ve Barcelona’ da düzenlenen seride, Panathinaikos nefes kesen mücadelede Maccabi Electra’ yı 78-70 yenerek şampiyon oldu.
 

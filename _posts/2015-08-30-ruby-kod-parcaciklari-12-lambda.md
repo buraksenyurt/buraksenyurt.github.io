@@ -6,8 +6,10 @@ categories:
   - ruby
 tags:
   - ruby
-  - wcf
-  - workflow-foundation
+  - ruby-kod-parçacıkları
+  - block
+  - procs
+  - lambda-operator
 ---
 Daha önceki kod parçacıklarımızda [Block](/2015/08/20/ruby-kod-parcaciklari-10-yield-ve-block-kullanimi/) ve [Proc](/2015/08/25/ruby-kod-parcaciklari-11-procs/) kavramlarına değinmiştik. Benzer kavramlardan üçüncüsü de Lambda'dır. Hatırlayacağınız gibi kod parçalarını Block şeklinde tanımlayıp metodlara parametre olarak geçirebiliyorduk. Bununla birlikte tekrardan kullanılabilirliğin öne çıktığı ve kod parçasının bir değişken olarak kullanılmasının istendiği durumlarda Proc örneklerinden yararlanıyoruz.
 

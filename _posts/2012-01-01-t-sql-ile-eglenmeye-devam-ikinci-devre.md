@@ -6,6 +6,16 @@ categories:
   - t-sql
 tags:
   - t-sql
+  - transact-sql
+  - sql-server
+  - schema
+  - function
+  - temp-table
+  - output
+  - inserted
+  - sp_msforeachdb
+  - sp_executesql
+  - sql-functions
 ---
 Hatırlayacağınız üzere geçtiğimiz günlerde kafayı T-SQL ile bozmuş ve can sıkıntısından eğlenceli ifadeler yazmaya çalışmıştım. Sanırım söz konusu bu eğlence sonraki günlere de sirayet etti ve yine bir kaç eğlenceli T-SQL sorgusu ile karşınızdayım (İnsan ne oldum dememeli ne olacağım demeli belki de…Ben ki SQL’ den nefret eden bir birey olarak bu hale geldiysem… ![Smile](/assets/images/2012/wlEmoticon-smile_26.png))
 

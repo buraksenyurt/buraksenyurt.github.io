@@ -5,25 +5,16 @@ date: 2021-04-25 09:00:00 +0300
 categories:
   - dotnet-core
 tags:
-  - dotnet-core
-  - bash
-  - csharp
-  - dotnet
-  - aspnet
-  - aspnet-mvc
-  - asp-dotnet-core
-  - entity-framework
-  - ef-core
-  - linq
-  - wcf
-  - workflow-foundation
-  - web-api
-  - blazor
-  - generics
+  - .net-5
+  - .net-core
+  - asp.net-mvc
   - dependency-injection
+  - solid
+  - inversion-of-control
+  - dependency-inversion-principle
+  - mvc
+  - model-view-controller
   - visual-studio
-  - github
-  - dependency-management
 ---
 Yazılım geliştirme işine ciddi anlamda başladığım yeni milenyumun başlarında.Net Framework sahanın yükselen yıldızıydı. Delphi’den kopup gelen Anders’in yarattığı C# programlama dilinin gücü ve.Net Framework çatısının vadettikleri düşünülünce bu son derece doğaldı. Aradan geçen neredeyse 20 yıllık süre zarfında.Net Framework’te evrimleşti ve sürekli güncellendi. Versiyon 2.0 ile gelen generic tipler, 3.0'la birlikte SQL yazar gibi sorgulanabilir nesneler (LINQ-Language INtegrated Query), sonrasında karşımıza çıkan WCF (Windows Communication Foundation), WF (Workflow Foundation), Entity Framework vs derken Microsoft’un açık kaynak dünyasına girişi, benimsediği platform bağımsız stratejiler (Miguel De Icaza’nın Mono’suna da saygı duyalım), Linux, MacOS gibi bir zamanların ciddi rakipleri ile el sıkışarak hamle yapması sonrasında da son birkaç yıllık zaman diliminde karşımıza çıkan.Net Core. Yeni gelişmeler Microsoft’un sıklıkla yaptığı üzere bazı kavram karmaşalarını da beraberinde getirdi elbette. En nihayetinde tek ve birleşik bir.Net 5 ortamından bahsedilmeye başlandı. (Photo by [Element5 Digital](https://unsplash.com/@element5digital?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/education?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText))
 

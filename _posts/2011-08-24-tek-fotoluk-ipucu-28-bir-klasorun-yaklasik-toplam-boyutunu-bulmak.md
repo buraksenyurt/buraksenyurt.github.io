@@ -6,8 +6,11 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - c#-temelleri
+  - io
+  - directoryinfo
+  - extension-methods
 ---
 Bir klasörün tüm içeriğinin toplam boyutunu öğrenmek isteyebiliriz. Bunun için DirectoryInfo tipine bir ExtensionMethod eklersek de güzel olur. Hatta bu metodun alt klasörleri de gezebilmesi için Recursive olarak yazılması da gerekir. Nasıl mı?
 

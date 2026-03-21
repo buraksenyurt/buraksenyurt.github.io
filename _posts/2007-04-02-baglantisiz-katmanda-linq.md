@@ -5,14 +5,12 @@ date: 2007-04-02 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - ado-net
+  - C#-3.0
   - linq
-  - xml
-  - generics
-  - dataset
-  - datatable
+  - language-integrated-query
+  - dlinq
+  - disconnected-layer
+  - ado.net
 ---
 Language Integrated Query (Dil ile tümleştirilmiş sorgu) yardımıyla yapabileceklerimiz saymakla bitmiyor. Aslında LINQ projesinin en önemli çıkış nedeni, Anders Hejslberg'ın anlatımıyla veri ve nesne eşitsizliğidir. (data!=objects) Bu ifadeyi, TechEd 2006 sunumlarında kullanan Anders Hejslberg, özellikle veri yapılarının programlama ortamına alınması sonrasında, var olan basit sorgu tekniklerinin uygulanamayışından yakınmaktadır.
 

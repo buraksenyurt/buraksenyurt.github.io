@@ -6,19 +6,7 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - bash
-  - dotnet
-  - wpf
-  - xml
-  - web-service
-  - http
-  - iis
-  - performance
-  - transactions
-  - serialization
-  - generics
-  - visual-studio
+  - windows-communication-foundation
 ---
 Windows Communication Foundation ile ilişikili önceki makalelerimizde mimarinin temellerinden ve bir WCF sevisinin Internet Information Services (IIS) üzerinden nasıl yayımlanabileceğini incelemiştik. Bu makalemizde ise Host uygulama olarak windows uygulamalarını ve windows servislerini ele almaya çalışacağız. Geliştireceğimiz uygulamalarda öncekilerden farklı olarak konfigurasyon dosyalarını kullanmayıp, programatik kod parçalarından yararlanacağız. Ayrıca, HTTP yerine TCP protokolü üzerinden haberleşmeyi kullanıyor olacağız.
 

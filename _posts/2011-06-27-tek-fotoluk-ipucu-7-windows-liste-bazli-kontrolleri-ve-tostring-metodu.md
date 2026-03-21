@@ -6,9 +6,13 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
-  - windows-forms
+  - c#
+  - c#-temelleri
+  - window
+  - winforms
+  - list
+  - generic-list
+  - overriding
 ---
 WinForms programcılığında sık rastlanan sorunlardan birisi de, kendi özel tiplerimizi liste bazlı kontrollere bağladığımız durumlarda ortaya çıkmaktadır. Acaba liste bazlı kontrolün içeriğini kendimiz nasıl belirleyebiliriz?
 

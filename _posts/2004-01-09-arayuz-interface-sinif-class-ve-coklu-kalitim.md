@@ -5,7 +5,9 @@ date: 2004-01-09 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
+  - C#
+  - oop
+  - interface
 ---
 Bugünkü makalemizde, arayüzleri incelemeye devam ediceğiz. Bir önceki makalemizde, arayüzleri kullanmanın en büyük nedenlerinden birisinin sınıflara çoklu kalıtım desteği vermesi olduğunu söylemiştik. Önce basit bir uygulama ile bunu gösterelim.
 

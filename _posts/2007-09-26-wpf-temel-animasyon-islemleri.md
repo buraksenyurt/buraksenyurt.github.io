@@ -6,14 +6,7 @@ categories:
   - wpf
 tags:
   - wpf
-  - xml
-  - csharp
-  - dotnet
-  - xaml
-  - http
-  - threading
-  - delegates
-  - generics
+  - animation
 ---
 Windows uygulamalarında kullanıcılara görsel bir şölen sunmak için animasyon işlemlerinden yararlanılır. Ne varki söz konusu animasyonları gerçekleştirebilmek amacıyla zorlu olan bazı süreçlerin aşılması gerekmektedir. Burada aslında, GDI+(Graphics Device Interface) alt yapısını (Infrastructure) daha etkili kullanmak adına daha çok ve daha karmaşık kodların yazılması, form üzerinde animasyonun zaman çizelgesine göre Timer bileşenleri ile Interval özelliği ve Tick olayı (event) gibi üyelerlerle uğraşılması ve hatta yeri geldiğinde ana iş parçasının (Main Thread) bozabileceği durumların önüne geçmek için özel tedbirler alınması söz konusudur. Hele birde işin içerisine üç boyutlu (3D) nesneler girdiğinde ve bunların üzerinde kullanıcı etkileşimli olayların tetiklenebilmesi de istendiğinde programıcının geliştirme süreci hem zorlaşacak hemde uzayacaktır.
 

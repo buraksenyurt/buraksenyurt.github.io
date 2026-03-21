@@ -6,14 +6,15 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - dotnet
-  - aspnet
-  - json
-  - http
-  - javascript
-  - visual-studio
+  - ddos
+  - security
+  - wcf-service-security
+  - replay-attack
+  - jquery
+  - nonce-token
+  - rijndael
+  - encryption
+  - decryption
 ---
 Bir zamanlar WCF servisleri ile ilişkili epeyce çalışma yapmış ve öğrendiklerimi kaleme almaya çalışmıştım. En çok zorlandığım konulardan birisi ise servislerin güvenliğini sağlamaktı. (Mesaj içeriklerinin korunmasından tutun, uç noktalar arası haberleşmenin güvenilik olmasına kadar dikkat edilmesi gereken pek çok nokta var)
 

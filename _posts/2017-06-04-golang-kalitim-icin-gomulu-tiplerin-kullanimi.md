@@ -5,11 +5,13 @@ date: 2017-06-04 09:25:00 +0300
 categories:
   - golang
 tags:
+  - go-programming-language
   - golang
-  - dotnet
-  - go
-  - pointers
-  - github
+  - embedded-types
+  - struct
+  - inheritance
+  - oop
+  - object-oriented-programming
 ---
 Bir süredir GO dili ile ilgili çalışmalarıma ara vermiştim. Yakın zamanda ise sevgili Murat Özalp'in "GO Programlama" isimli kitabını takip etmeye başladım. Gerçekten her bölüm son derece doyurucu. Kitabı düzenli olarak hergün çalışıyorum. Bazen çok az zaman ayırsam da her gece bir kaç sayfasını okuyor ve uygulamaya çalışıyorum. Burada yaptığım günlük çalışmaları aksatmamaya gayret ediyor ve kendime göre hazırladığım örnekleri [github üzerinde](https://github.com/buraksenyurt/golangsamples) topluyorum. Hatta artık kodları yeni bir IDE üzerinde deniyorum. Yeni gözdem [LiteIDE isimli kod editörü](https://sourceforge.net/projects/liteide/) (ki Murat Hoca'nın tavsiyesidir ve çok memnun kaldığım bir geliştirme aracıdır)
 

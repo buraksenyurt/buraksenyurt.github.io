@@ -5,13 +5,11 @@ date: 2009-08-24 06:15:00 +0300
 categories:
   - wcf-4-0-beta-1
 tags:
-  - wcf-4-0-beta-1
-  - dotnet
   - wcf
-  - xml
-  - soap
-  - http
-  - iis
+  - wcf-4.0
+  - router
+  - soa
+  - service-oriented-architecture
 ---
 Servis Yönelimli Mimari (Service Oriented Architecture) çözümlerinde zaman zaman yönlendirme amaçlı servislerin yazılması gerekmektedir (Router Service). Bu servislerin genel kullanım amacı çoğunlukla, istemcilerden gelecek olan talepleri değerlendirip asıl işi yapacak olan servislere devretmek ile ilişkilidir.
 

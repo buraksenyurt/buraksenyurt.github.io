@@ -7,18 +7,11 @@ categories:
   - tasarim-prensipleri-design-principles
 tags:
   - entity-framework
-  - tasarim-prensipleri-design-principles
-  - csharp
-  - dotnet
-  - linq
-  - nosql
-  - http
-  - concurrency
-  - transactions
+  - generic-repository
   - generics
-  - testing
-  - dependency-injection
-  - dependency-management
+  - unit-of-work
+  - design-patterns
+  - software-design-principles
 ---
 Yazılım dünyasında var olan mimari prensipler veya tasarım kalıpları tek başlarına belirli sorunları çözseler de, bazı kurumsal projelerde mutlak suretle bir arada düşünülmeleri gerekir. Söz gelimi Repository ve Unit of Work kalıpları, özellikle Domain Driven Design odaklı yapılarda bir arada değerlendirilmesi gerekenlerdendir.
 

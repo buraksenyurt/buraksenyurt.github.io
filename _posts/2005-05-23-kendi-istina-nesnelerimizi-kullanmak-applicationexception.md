@@ -5,9 +5,9 @@ date: 2005-05-23 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - xml
+  - C#
+  - exception-handling
+  - exception
 ---
 İstisna yakalama mekanizması (Exception Handling) dotNet mimarisinde oldukça önemli bir yere sahiptir. Bu mekanizma sayesinde uygulamalarımızın kilitlenmesi ve istem dışı bir şekilde sonlandırılmaya zorlanmasının önüne geçmiş oluruz. Framework içerisinde önceden tanımlanmış pek çok istisna sınıfı mevcuttur. Bu sınıflar yardımıyla, çalışma zamanında oluşabilecek istisnai durumlar kolayca tespit edilebilmektedir.
 

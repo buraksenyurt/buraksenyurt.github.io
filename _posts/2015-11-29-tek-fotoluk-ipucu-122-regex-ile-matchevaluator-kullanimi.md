@@ -5,8 +5,10 @@ date: 2015-11-29 17:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - delegates
+  - regex
+  - MatchEvaluator
+  - anonymous-methods
+  - c#
 ---
 Geçtiğimiz günlerde üzerinde çalıştığımız bir projede, sıkıştırılmış metinsel içeriklerin açılması ile ilgili bir ihtiyaç doğdu. Cümle biraz karışık gelmiş olabilir. İfinim müsadenizle senaryoyu anlatayım öncelikle;
 

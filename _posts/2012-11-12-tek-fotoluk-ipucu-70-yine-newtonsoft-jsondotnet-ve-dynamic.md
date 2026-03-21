@@ -6,8 +6,14 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
+  - dynamic
+  - c#
   - json
-  - dotnet
+  - serialization
+  - json.net
+  - newtonsoft
+  - jobject
+  - jarray
 ---
 Diyelim ki elimizde aşağıdaki gibi bir JSON içeriği var.
 

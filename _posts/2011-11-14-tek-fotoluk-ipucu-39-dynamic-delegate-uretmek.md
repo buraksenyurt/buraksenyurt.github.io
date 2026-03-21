@@ -6,10 +6,11 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - c#-temelleri
+  - delegate
   - reflection
-  - delegates
+  - method-info
 ---
 Bazen çalışma zamanına ilişkin yapmamız gereken atraksiyonlar olur. Söz gelimi çalışma zamanında bir delegate tipinin dinamik olarak üretilmesini ve yürütülmesini isteyebiliriz? Peki bu nasıl olacak? İşin içerisine birazcık Reflection katarak tabiki de
 

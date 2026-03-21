@@ -5,22 +5,17 @@ date: 2013-01-31 22:36:00 +0300
 categories:
   - wf-4-0
 tags:
-  - wf-4-0
-  - csharp
-  - xml
-  - dotnet
-  - linq
-  - oracle
-  - wcf
   - workflow-foundation
-  - xaml
-  - http
-  - transactions
-  - generics
-  - debugging
-  - windows-phone
-  - visual-studio
-  - atomic-operations
+  - workflow-foundation-4.0
+  - workflow-foundation-öğreniyorum
+  - wcf
+  - wcf-4.0
+  - wcf-service
+  - transaction-management
+  - transaction-scope
+  - oracle
+  - odp.net
+  - oracle-data-provider-for-.net
 ---
 Yandaki fotoğrafta görülen buluşa baktığınızda aslında gerçekten bu pilotun o koca pervaneler ile uçup uçamayacağına pek kanaat getiremiyoruz öyle değil mi? Sonuçta en azından kağıt üstünde ve teorik olarak da bu tip bir uçuş aracının çalışacağının ispat edilmesi ve sonrasında pratikteki kullanımı için teste çıkılması beklenir (Tabi buna cesaret edecek de bir pilotun olması gerekir) Bir dostumuzun söylediği üzere "tasarlanan her uçak uçmuş ama her yazılım çalışmamıştır"
 

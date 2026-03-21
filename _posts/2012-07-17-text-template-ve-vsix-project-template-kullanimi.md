@@ -5,17 +5,10 @@ date: 2012-07-17 08:04:00 +0300
 categories:
   - visual-studio
 tags:
-  - visual-studio
-  - csharp
-  - xml
-  - dotnet
-  - aspnet
-  - linq
-  - windows-forms
-  - http
-  - generics
-  - rc
-  - dependency-management
+  - text-template
+  - visual-studio-sdk
+  - vsix-project-template
+  - visual-studio-2012
 ---
 Çoğu zaman geliştiricilerin karşısına zaman kısıtı olan projelerde, sıklıkla tekrar eden çözümsel ihtiyaçlar çıkar. Örneğin, ürünün içerisinde n sayıda ekran kullanıldığını ve bunların aslında belirli bir noktaya kadar bir kaç parametre ile değişen ama standart kod içeriklerine sahip olduğunu düşünün. Hatta bu tip ekranları bir kaç proje için aynı şekilde ürettiğinizi.
 

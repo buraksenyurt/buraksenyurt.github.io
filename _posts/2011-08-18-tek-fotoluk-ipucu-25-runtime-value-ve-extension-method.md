@@ -6,9 +6,11 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - c#-temelleri
+  - extension-methods
   - reflection
+  - linq
 ---
 Özellikle Reflection kullandığımız bazı çalışma zamanı senaryolarında, nesnelerin özellik değerlerini elde etmek istediğimiz durumlar da söz konusu olabilir. Çok basit bir senaryo göz önüne alındığında bunun için bir Extension method dahi geliştirebiliriz. Nasıl mı?
 

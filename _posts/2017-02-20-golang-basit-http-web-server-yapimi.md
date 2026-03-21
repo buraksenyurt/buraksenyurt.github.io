@@ -6,20 +6,17 @@ categories:
   - golang
 tags:
   - golang
-  - oracle
-  - mysql
-  - mongodb
-  - workflow-foundation
   - rest
-  - json
+  - rest-services
   - http
-  - go
-  - python
-  - java
-  - ruby
-  - javascript
-  - pointers
-  - microservices
+  - html
+  - http-get
+  - func
+  - fmt
+  - time
+  - net/http
+  - json
+  - strings
 ---
 Go dili ile ilgili maceralarım devam ediyor. Dilin temel özelliklerini anlamaya çalışmak bir yana, aralarda merak ettiğim farklı konuları da incelemeye çalışıyorum. Uygulamalı örnekler üzerinden gitmek de bir programlama dilini öğrenirken tercih ettiğim yollardan birisi. Size de tavsiye ederim.
 

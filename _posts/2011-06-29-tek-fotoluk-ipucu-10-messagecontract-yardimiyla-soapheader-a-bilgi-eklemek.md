@@ -7,10 +7,10 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - tek-fotoluk-ipucu
   - wcf
-  - wcf-4-0
+  - message-contract
   - soap
+  - windows-communication-foundation
 ---
 Bu kez de WCF ile ilişkili bir fotoğraf paylaşalım istedim. Aslına bakarsanız iki fotoğrafçık oldu ama idare edin artık. Varsayalım ki SOAP paketlerinizin Header kısmında kendi tanımladığınız tip içeriklerinin yer almasını istiyorsunuz. İşte bunun için aşağıdaki fotoğrafta görülen yolu izleyebilirsiniz
 

@@ -6,18 +6,15 @@ categories:
   - xml-web-services
 tags:
   - xml-web-services
-  - csharp
-  - dotnet
-  - aspnet
-  - xml
+  - soap-based-web-service
   - soap
-  - rest
-  - json
-  - web-service
-  - http
-  - oauth
-  - java
-  - asmx
+  - simple-object-access-protocol
+  - WebClient
+  - post
+  - http-post
+  - webmethod
+  - soapaction
+  - soap-headers
 ---
 Geçtiğimiz günlerde şirket dışı bir kurumun web servislerini çağırma ihtiyacımız oldu. Lakin Header bilgisinde bir OAuth Token değeri de göndermemiz gerekiyordu. Bu Header bilgisini SOAP bazlı Web servisine nasıl ekleyeceğimizi düşünürken WebClient sınıfı ile de bu işi yapabileceğimizi öğrendik. Üstelik çağrılacak servisin WSDL üretimi referansını projeye eklemeye gerek kalmadan. Bu kısa ipucunda WebClient sınıfının bu amaçla nasıl kullanıldığını incelemeye çalışacağız. Öncelikle eski nesil bir Asp.Net Web Service geliştirdiğimizi düşünelim. İçinde iki değerin toplamını hesap eden basit bir metod yer alacak. Servis kodunu aşağıdaki gibi geliştirebiliriz.
 

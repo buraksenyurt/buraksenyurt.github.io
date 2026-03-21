@@ -6,10 +6,6 @@ categories:
   - wpf
 tags:
   - wpf
-  - xml
-  - xaml
-  - http
-  - visual-studio
 ---
 Uzun süredir ara verdiğimiz makalelerimize kaldığımız yerden devam ediyoruz. Bu makalemizde çok basit seviyede Windows Presentation Foundation uygulamalarının temellerinden birisi olan Layout kavramını inceleme çalışıyor olacağız. WPF uygulamalarında kullanılan ekranlara ait element veya kontrollerin mutlaka bir Layout bileşeni içerisinde konuşlandırılmış olmaları gerekmektedir. Layout bileşenleri temelde birer Panel olarak düşünülmelidir.
 

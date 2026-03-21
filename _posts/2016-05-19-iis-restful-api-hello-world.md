@@ -5,20 +5,13 @@ date: 2016-05-19 17:00:00 +0300
 categories:
   - rest
 tags:
-  - rest
-  - csharp
-  - dotnet
-  - aspnet
-  - asp-dotnet-core
-  - wcf
-  - json
-  - http
   - iis
-  - authentication
-  - authorization
-  - java
-  - microservices
-  - asmx
+  - .net-core
+  - asp.net-core
+  - restful-api
+  - restful-services
+  - microservice
+  - c#
 ---
 Bugün 20 Mayıs Cuma. Dün 19 Mayıs nedeniyle resmi tatil olan bankamız bugün de toplu olarak tatil. Ancak şirkette kalmak isteyenler durumlarını bildirip gelebiliyor.
 

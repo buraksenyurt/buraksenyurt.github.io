@@ -7,6 +7,11 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - wcf
+  - operation-contract
+  - property
+  - get
+  - set
+  - service-contract
 ---
 Malum bildiğiniz üzere get ve set bloklarından oluşan özellikler (Properties) aslına bakarsanız arka planda (IL-Intermediate Language) birer metod olarak ifade edilirler. Bu teoriden yola çıkarsak bir servis içerisine özellik (Property) yazıp get,set metoldarını operasyon olarak dış dünyaya sunabiliriz
 

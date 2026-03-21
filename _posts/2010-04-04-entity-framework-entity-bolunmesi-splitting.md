@@ -5,15 +5,8 @@ date: 2010-04-04 20:15:00 +0300
 categories:
   - entity-framework
 tags:
-  - entity-framework
-  - csharp
-  - dotnet
-  - ado-net
-  - linq
-  - performance
-  - generics
-  - visual-studio
-  - rc
+  - ado.net-entity-framework
+  - entity
 ---
 Hız kesmeden Ado.Net Entity Framework ile ilişkili araştırmalarımızı paylaşmaya devam ediyoruz. Bu günkü yazımızda bir Entity tipinin, veritabanı tarafında birden fazla Tablo'yu işaret edebilmesi kabiliyetini incelemeye çalışacağız. Söz konusu duruma çok sık rastlanılmasa dahi, zaman zaman gereksinim duyulmaktadır. Konuyu daha kolay bir şekilde kavrayabilmek adına, yazıyı yazdığım tarih itibariyle sistemimde kurulu olan Adventure Works 2008 veritabanında yer alan ve aşağıdaki diagramda görülen tablolarımızın olduğunu varsayalım (Tabiki kendi sisteminizde yer alan örnek veritabanında benzer ilişikilere sahip başka tabloları da aynı teori içerisinde değerlendirebilirsiniz)
 

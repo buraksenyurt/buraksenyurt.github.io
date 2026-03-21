@@ -6,7 +6,13 @@ categories:
   - rust
 tags:
   - rust
-  - github
+  - rust-programming-language
+  - matematik
+  - oyun-matematiği
+  - oyun-programlama
+  - vektörler
+  - açılar
+  - macroquad
 ---
 Uzun bir süredir Rust programlama dili ile hobi amaçlı uğraşıyorum. Son birkaç aydırda Rust tarafında kullanılan oyun motorlarını kurcalamaktayım. Ancak birkaç haftadır amacım oyun programlamada kullanılan temel matematik enstrümanları öğrenmek. Bana göre bu alanda ilerleyebilmemin en iyi yolu bilinen oyunların birer klonunu yazmaya çalışmak. Onca vektör, açı, nokta çarpım problemini işledikten sonra ise ilk gözüme kestirdiğim zamanın efsane Atari oyunlarından olan[Missile Command](https://en.wikipedia.org/wiki/Missile_Command).
 

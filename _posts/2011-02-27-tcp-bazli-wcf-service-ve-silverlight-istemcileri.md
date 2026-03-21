@@ -6,16 +6,11 @@ categories:
   - silverlight-4-0
   - wcf-4-0
 tags:
-  - silverlight-4-0
-  - wcf-4-0
-  - csharp
-  - xml
+  - nettcpbinding
   - wcf
+  - wcf-services
+  - silverlight-4.0
   - silverlight
-  - xaml
-  - http
-  - iis
-  - visual-studio
 ---
 Bir yazar, hazırlayacağı hikaye için çoğu zaman çevrede dolaşıp malzeme toplar. Olayın kahramanlarını tasvir etmek için çevredeki insanları göz önüne alır. Hatta gezdiği yerleri inceler. Bu açıdan bakıldığında iyi yazarların aslında çok iyi birer gözlemci olduğu söylenebilir.
 

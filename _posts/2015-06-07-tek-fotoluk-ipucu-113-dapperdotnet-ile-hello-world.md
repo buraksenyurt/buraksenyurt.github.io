@@ -6,14 +6,14 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - dotnet
-  - ado-net
-  - entity-framework
+  - nuget
+  - dapper.net
+  - orm
+  - sql
   - linq
-  - oracle
-  - http
-  - visual-studio
-  - github
+  - query
+  - entity-framework
+  - dynamic
 ---
 Gecenin bir yarısı. Bilgisayarınızın başındasınız. Önünüzde Visual Studio. Yanınızda kahveniz/çayınız. Canınız da sıkılmış. Acaba ne yapsam da vaktimi iyi değerlendirebilsem diye düşünüyorsunuz. Böyle hallerde şöyle bir NuGet paketi bulup araştırmak bünyeye iyi gelebiliyor. Bunun için [Nuget Must Haves](http://nugetmusthaves.com/) isimli siteyi ziyaret edebilirsiniz.
 

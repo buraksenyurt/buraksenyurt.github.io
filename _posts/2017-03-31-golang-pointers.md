@@ -5,9 +5,11 @@ date: 2017-03-31 21:15:00 +0300
 categories:
   - golang
 tags:
-  - golang
   - go
-  - pointers
+  - go-programming-language
+  - golang
+  - pointer
+  - referance-types
 ---
 1993 yılında girdiğim Matematik Mühendisliği bölümünün bilgisayar programlama ağırlıklı bir müfredatı vardı. GWBasic ile başlayan maceramızda Pascal, C, C++, Cobol gibi programlama dillerine uğradık. Sınavlarımız çoğunlukla kağıt üzerinde olurdu. Basit for döngülerini dahi kağıt üzerinde yazarak algoritma çözmeye çalışırdık. Haliyle C gibi case-sensitive kuralların katı olduğu dillerde sınavlar epey zorlu geçerdi.
 

@@ -6,19 +6,10 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - dotnet
-  - linq
-  - windows-forms
-  - xml
-  - web-service
   - xml-web-services
-  - http
-  - iis
-  - authentication
-  - generics
-  - testing
   - asmx
+  - httpwebrequest
+  - httpwebresponse
 ---
 Banka gibi, pek çok farklı sistemin bir arada yer aldığı ve çalıştığı, çoğu zaman heterojen yapıda olan büyük çaplı çözümlerde, servislerin sıklıkla kullanıldığını görürüz. Çok basit bir operasyonel uygulama bile, çalışacağı veri kümesini sadece veritabanı kaynağı üzerinden değil, sistem içerisinde yer alan başka kanallardan da almak durumunda kalabilir. Tam tersi durumda söz konusudur. Gerçekleşen bir toplu işlemin içerisinde, akışın çeşitli noktalarında yine servisler devreye girerek diğer sistemlerin haberdar edilmesi de söz konusudur. İşte böyle durumlarda, sistem içerisindeki parçalar arasındaki entegrasyonun sağlanabilmesi amacıyla, servis bazlı çözümlere sıklıkla başvurulur.
 

@@ -5,9 +5,8 @@ date: 2003-11-30 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dataset
-  - datatable
+  - C#
+  - params
 ---
 Değerli Okurlarım Merhabalar.
 

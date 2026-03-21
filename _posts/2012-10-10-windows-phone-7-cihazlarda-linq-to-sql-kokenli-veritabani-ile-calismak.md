@@ -6,18 +6,11 @@ categories:
   - windows-phone-7
 tags:
   - windows-phone-7
-  - csharp
-  - xml
-  - dotnet
-  - entity-framework
+  - windows-phone-mango
+  - isolated-storage
+  - linq-to-sql
+  - c#
   - linq
-  - nosql
-  - silverlight
-  - xaml
-  - http
-  - java
-  - windows-phone
-  - visual-studio
 ---
 Uzun zamandır bilgisayar yazılım teknolojileri ile ilgileniyor olmama rağmen zaman içerisinde belirli konularda uzmanlaşmaya çalıştığımı fark ettim. Bana göre normalde olması gereken bu. Nitekim insanın kapasitesini bilmesi ve her şeyden çok fazla anlamamaktansa, belirli bir konuda çok iyi bilgiye sahip olması daha anlamlıdır diye düşünüyorum
 

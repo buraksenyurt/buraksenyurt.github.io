@@ -6,14 +6,10 @@ categories:
   - golang
 tags:
   - golang
-  - bash
-  - redis
-  - rest
-  - http
+  - go-programming-language
   - docker
-  - go
-  - visual-studio
-  - shared-state
+  - container
+  - web-hosting
 ---
 Gondor'da bir şeyler araştırmak için harika bir zaman. Çünkü elimdeki işler bitti. Böyle vakitleri kendi araştırmalarıma ayırmak hoşuma gidiyor, kim ne derse desin. Yeni gözdem Linux makinem de (Gondor) önümde durduğuna göre kısa bir süre onun üzerinde çalışabileceğimi düşünüyorum.
 

@@ -6,12 +6,10 @@ categories:
   - entity-framework
   - linq-to-sql
 tags:
-  - entity-framework
   - linq-to-sql
-  - dotnet
-  - linq
-  - sql-server
-  - xml
+  - ado.net-entity-framework-4.0
+  - ef-4.0
+  - entity-framework
 ---
 Evet çok doğru. Hiç bu kadar kısa ve öz yazmamıştım daha önceden. Ama zaman zaman bu kadar kısa yazıp çok fazla şey ifade edilebileceğine de inanmaktayım
 

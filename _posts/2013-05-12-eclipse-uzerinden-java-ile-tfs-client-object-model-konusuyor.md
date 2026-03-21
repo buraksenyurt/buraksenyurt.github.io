@@ -5,13 +5,17 @@ date: 2013-05-12 10:10:00 +0300
 categories:
   - team-foundation-server
 tags:
-  - team-foundation-server
-  - csharp
-  - dotnet
-  - http
   - java
-  - threading
-  - visual-studio
+  - eclipse
+  - team-foundation-server
+  - tfs
+  - tfs-2012
+  - entegrasyon
+  - tfs-client-object-model
+  - client-object-model
+  - work-item
+  - workitemstore
+  - tfs-services
 ---
 Çok değil daha bir kaç sene öncesine kadar (Özellikle.Net’ in duyurulduğu yıllarda ve izleyen bir kaç senede) yazılım dünyasında neredeyse yandaki resimdekine benzer bir kavga vardı (Benzetmeyi biraz abartmış olabilirim)
 

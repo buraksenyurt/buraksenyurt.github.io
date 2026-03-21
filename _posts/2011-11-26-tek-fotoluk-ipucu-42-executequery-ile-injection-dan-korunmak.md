@@ -7,10 +7,11 @@ categories:
   - linq-to-sql
   - tek-fotoluk-ipucu
 tags:
-  - csharp
+  - c#
   - linq-to-sql
-  - tek-fotoluk-ipucu
-  - linq
+  - executequery
+  - sql-injection
+  - sql
 ---
 LINQ to SQL kullandığımız durumlarda bildiğiniz gibi dışarıdan SQL sorgularını da icra ettirebilmekteyiz. Bu amaçla DataContext tipinin ExecuteQuery metodu kullanılmakta. Ancak özellikle SQL Injection saldırılarına karşı dikkatli olmamız gerekiyor. Bu nedenle söz konusu metodun placeholder kullanımına izin veren versiyonunu ele almamızda yarar olduğu kanısındayım. Nasıl mı?
 

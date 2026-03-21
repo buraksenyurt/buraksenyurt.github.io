@@ -5,14 +5,19 @@ date: 2013-08-18 11:48:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - xml
-  - dotnet
+  - c#
+  - .net-framework
+  - migradoc
+  - pdfsharp
   - windows-forms
-  - http
-  - async-await
-  - generics
-  - datatable
+  - gdi
+  - wpf
+  - codeplex
+  - open-source
+  - migra
+  - chart
+  - section
+  - paragraph
 ---
 "Mösyö Reno" dedi, oturduğu yerden Jimmy Carl. Uzun süredir bu dev şirketi yönetiyordu. Son zamanlarda teknolojiye büyük yatırım yapan firmanın, bundan en iyi şekilde yararlanabilmesini isteyenlerin başında geliyordu. Oldukça meraklı biri olan Carl, bilgisayarına bakarken içeriye orta boylarda, saçlarının bir kısmı ağırmış, numarası büyük olduğu belli olan kalın çerçeveli gözlüklü, hafif de göbekli ama güler yüzlü birisi girdi. Üstünde rengarenk bir hawai t-shirt, altında bermuda şort ve parmak arası terlikleri ile.
 

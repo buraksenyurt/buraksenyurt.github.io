@@ -5,12 +5,9 @@ date: 2011-02-20 16:05:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - aspnet
-  - http
-  - delegates
-  - generics
+  - c#
+  - c#-temelleri
+  - enum-type
 ---
 Aslında çok şanslı bir insanım. Çünkü çocukluğumdan beri tatile gidebiliyorum. Yazlığımızın olduğu [Avşa](http://www.avsa.com.tr/) adasına her sene iki günlüğüne dahi olsa gitmekteyim. İlk yıllarda adaya hareket eden nostaljik gemiler vardı. Bu gemiler yaklaşık olarak altı saat gibi bir sürede İstanbul’ dan adaya ulaşmaktaydı.
 

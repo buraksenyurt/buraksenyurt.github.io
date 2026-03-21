@@ -6,11 +6,8 @@ categories:
   - ruby
 tags:
   - ruby
-  - dotnet
-  - linq
-  - http
-  - performance
-  - visual-studio
+  - tek-fotoluk-ipucu
+  - find-in-files
 ---
 Geçenlerde notpead++ ile oluşturduğum bir text dosya üzerinde düşünüyordum da...Dosya içerisinde House dizisinde çalan 75 adet şarkının bilgisi vardı. Söyleyenler ve şarkı adları.
 

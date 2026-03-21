@@ -5,7 +5,10 @@ date: 2003-12-18 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
+  - C#
+  - hashtable
+  - .net
+  - collections
 ---
 Bugünkü makalemizde HashTable koleksiyon sınıfını incelemeye çalışacağız. Bildiğiniz gibi Koleksiyonlar System.Collections namespace'inde yer almakta olup, birbirlerinin aynı veya birbirlerinden farklı veri tiplerinin bir arada tutulmasını sağlayan diziler oluşturmamıza imkan sağlamaktadırlar. Pek çok koleksiyon sınıfı vardır. Bugün bu koleksiyon sınıflarından birisi olan HashTable koleksiyon sınıfını inceleyeceğiz.
 

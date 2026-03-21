@@ -6,13 +6,9 @@ categories:
   - windows-azure
 tags:
   - windows-azure
-  - csharp
-  - xml
-  - dotnet
+  - service-bus
   - wcf
   - rest
-  - http
-  - generics
 ---
 Bir önceki [yazımızda](https://www.buraksenyurt.com/post/Microsoft-DotNet-Services-Service-Bus-Hello-World)Microsoft.Net Services alt yapsının önemli parçalarından birisi olan Service Bus hizmetini incelemeye çalışmış ve basit bir Hello World uygulama koleksiyonu geliştirmiştik. Bu yazımızda ise REST bazlı geliştirilen bir WCF servisine herhangibir tarayıcı yardımıyla HTTP Get metoduna göre, Service Bus üzerinden nasıl ulaşabileceğimizi incelemeye çalışacağız.
 

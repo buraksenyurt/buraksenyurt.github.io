@@ -5,12 +5,10 @@ date: 2010-09-27 06:50:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - bash
-  - dotnet
-  - http
-  - reflection
-  - visual-studio
+  - c#
+  - c#-temelleri
+  - destructor
+  - constructor
 ---
 Sanıyorum 90 yıllarda en çok izlediğim dizilerden birisi The X Files (Gizli Dosyalar) idi. Her bölümde olağan dışı konuların ele alındığı ve birbirlerine tamamen zıt iki karekter olan ama bu sayede gizli dosyaların işlenmesinde birbirlerini sürekli olarak dengeleyen Ajan Dana Scully ve Fox Mulder'ın maceraları gerçeklikten uzak olsa da, benim gibi bilim kurgu severleri ekrana bağlamak için yeterliydi.
 

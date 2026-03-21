@@ -6,8 +6,12 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - c#-temelleri
+  - icomparer<t>
+  - list
+  - sorting
+  - interface
 ---
 .Net içerisinde pek çok faydalı Interface tipi bulunmaktadır. Örneğin kendi tiplerinizin sıralama işlemlerini öğrenebilmesi için kullanabileceğimiz IComparer. Nasıl kullanıldığını merak ediyor musunuz? İşte size basit bir fotoğraf ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_54.png)
 

@@ -6,14 +6,6 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - dotnet
-  - wpf
-  - xml
-  - rest
-  - http
-  - serialization
-  - visual-studio
 ---
 Minik bir çocukken Televizyon bağımlılığı (Malesef bu aptal kutuda çok vakiy geçirebiliyor çocuklar ![Frown](/assets/images/2009/smiley-frown.gif)) nedeniyle pek çok çizgi filmi izlediğimi hatırlıyorum. Voltran, Transformers, Red Kit ve Daltonlar, Denver The Last Dinasour, Clementine filan derken arada sıradada "Bi kedi gördüm sanki" diyen Tweety
 

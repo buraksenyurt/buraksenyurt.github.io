@@ -6,15 +6,6 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - dotnet
-  - http
-  - performance
-  - serialization
-  - reflection
-  - generics
-  - visual-studio
 ---
 Bilindiği üzere WCF aslında SOA (Service Oriented Architecture) mimarisinin uygulama modellerinden birisidir. İşin içerisinde servisler söz konusu olduğunda ağlar ve sistemler arası mesajlaşlamalar söz konusudur. Mesajlaşmalar söz konusu olduğundaysa, servis ve istemci arasında hareket eden verinin serileşebilir olması önem arz eden konuların başında gelmektedir.
 

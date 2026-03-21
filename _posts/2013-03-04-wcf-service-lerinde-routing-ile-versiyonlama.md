@@ -6,10 +6,10 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - dotnet
-  - http
+  - windows-communication-foundation
+  - wcf-4.5
+  - router
+  - routing-service
 ---
 Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Derken gözüm WCF 4.0’ ın Beta zamanlarında yazdıklarıma takıldı. O zamanlar.Net Framework 4.0' ün Beta sürümü çıktığında, incelemeye çalıştığım önemli yeniliklerden birisi de yönlendirme servisleri (Routing Service) idi.
 

@@ -7,6 +7,13 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - linq
+  - language-integrated-query
+  - oftype
+  - generic
+  - generic-types
+  - inheritance
+  - base-class
+  - derived-class
 ---
 LINQ (Language INtegrated Query) tarafını her ne kadar yoğun kullanıyor olsak da gözümüzden kaçırdığımız, dikkat etmediğimiz, yerine yeni geliştirmeler yaptığımız ama aslında bizim kullanmamızı bir köşede bekleyen fonksiyonlar vardır.
 

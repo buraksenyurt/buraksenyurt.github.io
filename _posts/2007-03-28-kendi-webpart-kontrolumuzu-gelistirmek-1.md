@@ -5,16 +5,7 @@ date: 2007-03-28 11:47:00 +0300
 categories:
   - aspnet-2-0
 tags:
-  - aspnet-2-0
-  - csharp
-  - dotnet
-  - aspnet
-  - xml
-  - http
-  - performance
-  - visual-studio
-  - dataset
-  - datatable
+  - asp.net-2.0
 ---
 Web uygulamalarında var olan bileşenlerin yetersiz kaldığı durumlarda kendi kontrollerimizi geliştirme yoluna gidebiliyoruz. Kendi kontrollerimizi geliştirirken seçebileceğimiz yollar bellidir. Var olan bir web bileşeninden türetme yolunu seçebiliriz (Inherited Controls). Bu durumda kontrolün Html çıktısının ne olacağını bir başka deyişle Render işlemlerini çok fazla düşünmemize gerek kalmaz. Tek yapmamız gereken var olan üyeleri ezmek (override) veya yeni üyeler katmaktır.
 

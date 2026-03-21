@@ -5,21 +5,20 @@ date: 2018-04-07 19:00:00 +0300
 categories:
   - nodejs
 tags:
-  - nodejs
-  - bash
-  - javascript
-  - json
-  - mongodb
-  - rest
-  - http
-  - docker
-  - python
-  - java
-  - ruby
-  - testing
-  - visual-studio
+  - heroku
+  - cloud-computing
+  - paas
+  - dyno
+  - platform-as-a-service
+  - node
+  - node.js
+  - npm
   - github
-  - dependency-management
+  - git
+  - cli
+  - command-line-interface
+  - linux
+  - ubuntu
 ---
 Geçenlerde sevgili çalışma arkadaşlarımdan [Atahan Ceylan](https://www.linkedin.com/in/atahanceylan/) ile Node.js ve MongoDb üzerine konuşurken bana Heroku diye bir şeyden bahsetti. Daha önceden duymamış olmamın verdiği etkiyle hemen nedir ne değildir diyerek kendisinden bilgi istedim. Sonunda konuyu pekiştirmek için ninjaları bana sevimli bir şekilde hatırlatan bu ürünü incelemeye karar verdim.
 

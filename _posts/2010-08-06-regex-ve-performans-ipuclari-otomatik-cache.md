@@ -5,15 +5,9 @@ date: 2010-08-06 07:05:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - aspnet
-  - http
-  - authentication
-  - javascript
-  - performance
-  - caching
-  - visual-studio
+  - c#
+  - c#-temelleri
+  - c#-4.0
 ---
 Şu an yazıyı hazırlamaya çalıştığım an İstanbul’ un tarihinde gördüğü en sıcak gecelerden birisine denk gelmekte sanırım. Gündüz yaklaşık olarak 53 derece olarak hissedilen sıcaklığı ofisteki kuvvetli klimalar sayesinde fazla hissetmedik belki ama eve dönüş yolunda, gerek otobüslerde gerekse minibüs veya diğer toplu taşıma araçlarında fazlasıyla hissettiğimize eminim
 

@@ -5,9 +5,9 @@ date: 2005-07-05 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - generics
-  - visual-studio
+  - C#-2
+  - yield
+  - iterations
 ---
 Bazen kendi yazmış olduğumuz tiplerin dizi bazlı elemanları olur. Uygulamalarımızda, bu elemanlar arasında, elamanların sahipi olan nesne örneği üzerinden ileri yönlü iterasyonlar kurmak isteyebiliriz. Foreach döngüleri belirtilen tip için bu iterasyonu sağlayan bir mekanizmaya sahiptir. Lakin kendi geliştirdiğimiz tiplerin sahip oldukları elemanlar üzerinde, bu tarz bir iterasyonu uygulayabilmek için bir numaratöre ve uygulayıcıya ihtiyacımız vardır. Kısacası, tipimizin elemanları arasında nasıl öteleme yapılabileceğini sisteme öğretmemiz gerekmektedir. Bu işlevselliği kazandırmak için IEnumerable ve IEnumerator arayüzlerini birlikte kullanırız.
 

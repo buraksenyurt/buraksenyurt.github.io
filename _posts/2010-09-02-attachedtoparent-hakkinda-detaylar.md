@@ -6,13 +6,10 @@ categories:
   - parallel-programming
   - tpl
 tags:
-  - parallel-programming
   - tpl
-  - csharp
-  - dotnet
-  - threading
-  - visual-studio
-  - datatable
+  - task-parallel-library
+  - parallel-programming
+  - parallel-computing
 ---
 Malum "her yiğidin farklı bir yoğurt yiğiş tarzı vardır" derler. Genellikle programlama dilleri veya.Net Framework gibi yapılarda da bir sonuca ulaşmak için birden fazla ve farklı yol söz konusu olabilir. Böyle bir durumun oluşmasına neden olan etkenlerin başında, çevresel ortam parametrelerinin farklılaşmasının geldiğini ifade edebiliriz.
 

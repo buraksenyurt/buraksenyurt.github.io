@@ -5,7 +5,9 @@ date: 2003-12-25 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
+  - C#
+  - oop
+  - .net
 ---
 Bir önceki makalemizde C# dilinde sınıf kavramına bir giriş yapmış ve OOP (Objcet Oriented Programming-Nesneye Dayalı Programlama) tekniğinin en önemli kavramlarından biri olan kalıtımdan bahsedeceğimizi söylemiştik. Bugünkü makalemizde bu kavramı incelemeye çalışacağız.
 

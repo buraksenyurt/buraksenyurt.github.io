@@ -5,11 +5,14 @@ date: 2004-03-18 12:00:00 +0300
 categories:
   - ado-net
 tags:
-  - ado-net
-  - csharp
-  - dotnet
-  - visual-studio
-  - datatable
+  - ado.net
+  - oledb
+  - oledbdataadapter
+  - dataadapter
+  - c#
+  - sql
+  - query
+  - aggregation
 ---
 Bu makalemizde, OleDbDataAdapter sınıfının olaylarını incelemeye çalışacağız. OleDbDataAdapter sınıfı aşağıdaki tabloda belirtilen üç önemli olayı içermektedir.
 

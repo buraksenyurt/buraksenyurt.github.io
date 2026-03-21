@@ -6,18 +6,6 @@ categories:
   - xml-web-services
 tags:
   - xml-web-services
-  - csharp
-  - bash
-  - xml
-  - dotnet
-  - soap
-  - web-service
-  - http
-  - iis
-  - java
-  - concurrency
-  - visual-studio
-  - asmx
 ---
 Bu makalemizde, kısaca bir XML Web Servisinin ne olduğuna, ne işe yaradığına değinecek ve basit bir Xml Web Servisinin notepad ile nasıl oluşturulabileceğini incelemeye çalışacağız.
 

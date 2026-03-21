@@ -5,13 +5,12 @@ date: 2011-01-06 13:25:00 +0300
 categories:
   - parallel-programming
 tags:
+  - c#-4.0
   - parallel-programming
-  - csharp
-  - linq
+  - .net-framework-4.0
+  - visual-studio-2010-ultimate
   - task-parallel-library
-  - threading
-  - generics
-  - visual-studio
+  - waiting-tasks
 ---
 [Task Süreçlerinde Bilinçli Olarak Duraksatma](/2010/12/31/task-sureclerinde-bilincli-olarak-duraksatma/) başlıklı bir önceki yazımızda CancellationToken.WaitHandle.WaitOne, Thread.Sleep ve Thread.SpinWait metodlarından yararlanarak bir Task çalışmasının bekletme işlemlerinin nasıl yapılabileceğini incelemeye çalışmıştık. Özellikle WaitOne metodunun, CancellationToken.WaitHandle özeliği üzerinden çalıştırıldığını unutmayalım. Diğer yandan tüm bu teknikleri Task gövdesi içerisinde gerçekleştirmiştik. Bunun doğal sonucu olarakta yürütülmekte olan Task işlevlerinin duraksatılmasını sağlamıştık.
 

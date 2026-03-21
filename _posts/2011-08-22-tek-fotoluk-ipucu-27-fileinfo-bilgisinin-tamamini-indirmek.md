@@ -6,8 +6,11 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
+  - c#
+  - c#-temelleri
+  - io
+  - fileinfo
+  - extension-methods
 ---
 FileInfo tipi yardımıyla bir dosyanın pek çok özelliğine erişebiliriz bildiğiniz üzere. Peki tüm bu bilgileri tek bir String içerisinde toplamak ister misiniz? Söz gelimi loglamalarda bu oldukça işe yarayabilir. Hatta bunu bir Extension method olarak da yazabiliriz. Nasıl mı?
 

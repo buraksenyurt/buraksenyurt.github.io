@@ -6,12 +6,15 @@ categories:
   - csharp
   - ruby
 tags:
-  - csharp
+  - c#
   - ruby
-  - bash
+  - algorithms
+  - levenshtein-distance
+  - hamming-distance
+  - extension-methods
   - linq
-  - http
-  - generics
+  - language-integrated-query
+  - richard-hamming
 ---
 Geçtiğimiz günlerde uzun süredir görüşmediğim bir arkadaşımdan mesaj aldım. Bir projesinde Levenshtein Distance algoritmasını kullanmaya karar verdiğini ve internette arama yaparken daha önceden yazdığım [şu](/2012/07/01/levenshtein-distance-algoritmasi/) makaleye rastladığını dile getirdi. Hem kafasına takılan bir konuyu dile getirmek hem de bir hal hatır sormak istediğini belirtti.
 

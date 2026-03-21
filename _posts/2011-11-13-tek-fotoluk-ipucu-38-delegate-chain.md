@@ -6,9 +6,10 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - csharp
-  - tek-fotoluk-ipucu
-  - delegates
+  - c#
+  - c#-temelleri
+  - delegate
+  - delegate-chain
 ---
 Arada sırada temelleri de hatırlamak gerekir değil mi? Söz gelimi bir delegate zincirini nasıl kurar ve aynı parametreler için nasıl çalıştırırsınız? İşte size örnek
 

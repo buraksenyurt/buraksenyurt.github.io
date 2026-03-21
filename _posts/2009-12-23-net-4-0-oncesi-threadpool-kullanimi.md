@@ -5,13 +5,8 @@ date: 2009-12-23 03:15:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - dotnet
-  - workflow-foundation
-  - threading
-  - delegates
-  - visual-studio
-  - dependency-management
+  - c#
+  - .net-framework
 ---
 İlk okulda eminimki pek çok arkadaşımız havuz problemlerinden müzdarip olmuştur. Genellikle bu havuzlarda ikiden fazla musluk olması neredeyse garantidir ve genellikle bu musluklardan bazıları havuzu belirli sürelerde doldururken, bazılarıda belirli sürelerde boşaltır. Hatta zamanla bu muslukların ne kadar hızla su doldurduğu veya boşalttığıda işin içerisine girer ve aslında sadece yüzmek için kullanabileceğimiz güzelim havuz koca bir problem haline dönüşür.
 

@@ -5,9 +5,10 @@ date: 2005-08-28 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - csharp
-  - sql-server
-  - dataset
+  - C#
+  - enum
+  - enumerations
+  - datarow
 ---
 Bildiğiniz gibi numaralandırıcılar (enum sabitleride diyebiliriz) yardımıyla sayısal değerleri kod içerisinde daha anlamlı isimlendirmelerle ifade edebiliriz. Uygulama geliştirirken çoğunlukla framework'ün parçası olan pek çok enum sabitini kullanmaktayız. Örneğin veritabanı uygulamalarında sıkça kullandığımız CommandBehavior, DataRowState, DataRowVersion sabitleri gibi. Bu sistemin temel amacı, bu tiplerin sahip oldukları değerlerin sayısal karşılıklarına ihtiyacımızın olmasıdır.
 

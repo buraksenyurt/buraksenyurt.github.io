@@ -6,8 +6,10 @@ categories:
   - ruby
 tags:
   - ruby
-  - workflow-foundation
-  - java
+  - ruby-kod-parçacıkları
+  - accessor
+  - setter
+  - attribute
 ---
 Nesne yönelimli dillerde sınıfların birer varlık (Entity) olarak düşünüldüğüne sıklıkla şahit oluruz. Bu sayede bir Domain'e özgü gerçek dünya varlıklarının tasarlanması ve örneklenerek kullanılması mümkün hale gelir. Üstelik Domain içinde dolaşımda olacak anlamlı nesneler ortaya çıkar. Çok doğal olarak her bir varlığın karakteristik özellikleri bulunur. Nitelik (attribute) olarak da düşünebileceğimiz bu özellikler ilgili varlığın çalışma zamanı (Runtime) durumu hakkında bilgiler taşır. Aslında.Netçi gözüyle bakıldığında sınıf ve özelliklerinden bahsettiğimizi anlamışsınızdır.
 

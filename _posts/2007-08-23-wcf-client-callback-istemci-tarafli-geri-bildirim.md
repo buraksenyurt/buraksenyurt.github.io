@@ -6,12 +6,8 @@ categories:
   - wcf
 tags:
   - wcf
-  - csharp
-  - xml
-  - http
-  - iis
-  - delegates
-  - generics
+  - windows-communication-foundation
+  - client-callback
 ---
 Servis yönelimi mimari (Service Oriented Architecture) üzerine geliştirilen sistemler istemci/sunucu (client/server) tabanlı bir iletişimi olanaklı kılarlar. Bu sistemlerde süreçler çoğunlukla istemciden sunucuya doğru yapılan operasyon talepleri (Request) ve servis tarafından istemciye geri dönen cevaplardan (Response) ibarettir. Oysaki bazı SOA vakkalarında rollerin tam tersine çevrilmesi gerekebilir. Bir başka deyişle servislerin yeri geldiğinde bir istemci gibi hareket etmesi istenebilir. Söz gelimi bir stok sisteminde yer alan bir servis parçasında, istemcilerin stok üzerinde servis yardımıyla yapacağı hareketleri göz önüne alalım.
 

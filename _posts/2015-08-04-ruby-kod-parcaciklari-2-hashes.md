@@ -6,9 +6,9 @@ categories:
   - ruby
 tags:
   - ruby
-  - dotnet
-  - linq
-  - workflow-foundation
+  - ruby-kod-parçacıkları
+  - hashes
+  - data-structures
 ---
 Ruby programlama dilinde de veri yapıları (Data Structures) oluşturmak için kullanılan tiper vardır. Dictionary benzeri koleksiyon olarak kabul edebileceğimiz Hash sınıfı bunlardan birisidir. Benzersiz anahtar (key) ve değer (value) çiftlerinden oluşan Hash nesne örneklerinin kullanımı oldukça kolaydır.
 
