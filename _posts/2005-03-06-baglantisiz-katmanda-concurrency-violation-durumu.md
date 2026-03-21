@@ -3,7 +3,7 @@ layout: post
 title: "Bağlantısız Katmanda Concurrency Violation Durumu"
 date: 2005-03-06 10:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - concurrency

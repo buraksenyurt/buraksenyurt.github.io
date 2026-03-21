@@ -3,7 +3,7 @@ layout: post
 title: "Word Dosyası İçerisinden Entity Framework’ e"
 date: 2013-07-17 17:26:00 +0300
 categories:
-  - office-development
+  - Windows Programlama
 tags:
   - office-development
   - word-projects

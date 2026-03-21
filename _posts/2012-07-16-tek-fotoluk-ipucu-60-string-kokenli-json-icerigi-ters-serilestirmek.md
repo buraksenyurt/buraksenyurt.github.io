@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 60 - string Kökenli JSON İçeriği Ters Serileştirmek"
 date: 2012-07-16 21:03:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - json

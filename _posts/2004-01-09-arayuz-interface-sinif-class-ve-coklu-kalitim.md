@@ -3,7 +3,7 @@ layout: post
 title: "Arayüz(Interface), Sınıf(Class) ve Çoklu Kalıtım"
 date: 2004-01-09 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - oop

@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-34(Güncel Process için Bellek Bilgileri)"
 date: 2011-10-18 15:11:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - .net-framework

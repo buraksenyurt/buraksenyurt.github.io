@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 2.0 ve Client Script Callback"
 date: 2006-12-17 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - client-script-callback

@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.5 WebSockets Kullanımı [Taslak]"
 date: 2012-09-12 15:04:00 +0300
 categories:
-  - wcf-4-5
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - asp.net

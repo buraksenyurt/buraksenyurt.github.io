@@ -3,7 +3,7 @@ layout: post
 title: "Bu Sefer Bir React Uygulamasını Heroku Üzerine Alalım"
 date: 2019-10-04 13:00:00 +0300
 categories:
-  - react
+  - Web Programlama
 tags:
   - react
   - node

@@ -3,7 +3,7 @@ layout: post
 title: "Thread'lerde Öncelik(Priority) Durumları"
 date: 2004-01-05 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - thread

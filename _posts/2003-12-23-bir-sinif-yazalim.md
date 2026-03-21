@@ -3,7 +3,7 @@ layout: post
 title: "Bir Sınıf Yazalım"
 date: 2003-12-23 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - oop

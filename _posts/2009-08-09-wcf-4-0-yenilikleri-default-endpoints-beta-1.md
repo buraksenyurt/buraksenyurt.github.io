@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.0 Yenilikleri - Default EndPoints [Beta 1]"
 date: 2009-08-09 16:51:00 +0300
 categories:
-  - wcf-4-0-beta-1
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

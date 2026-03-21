@@ -3,7 +3,7 @@ layout: post
 title: "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek"
 date: 2003-11-08 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - stored-procedures

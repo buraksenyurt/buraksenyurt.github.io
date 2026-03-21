@@ -3,7 +3,7 @@ layout: post
 title: "Distributed Transactions"
 date: 2003-11-19 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction

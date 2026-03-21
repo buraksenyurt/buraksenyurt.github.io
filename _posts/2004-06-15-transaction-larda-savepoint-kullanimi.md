@@ -3,7 +3,7 @@ layout: post
 title: "Transaction' larda SavePoint Kullanımı"
 date: 2004-06-15 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction

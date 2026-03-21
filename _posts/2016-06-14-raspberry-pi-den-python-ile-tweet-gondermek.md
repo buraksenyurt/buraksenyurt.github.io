@@ -3,8 +3,8 @@ layout: post
 title: "Raspberry Pi'den Python ile Tweet Göndermek"
 date: 2016-06-14 06:00:00 +0300
 categories:
-  - python
-  - raspberry-pi
+  - Programlama Dilleri
+  - IoT
 tags:
   - python
   - raspberry-pi

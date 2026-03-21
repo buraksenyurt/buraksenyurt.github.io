@@ -3,7 +3,7 @@ layout: post
 title: "WF 4.0 : WorkflowInvoker ile Single Thread, WorkflowApplication ile Multi-Thread [Beta 2]"
 date: 2009-11-02 02:35:00 +0300
 categories:
-  - wf-4-0-beta-2
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

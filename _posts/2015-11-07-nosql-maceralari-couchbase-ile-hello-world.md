@@ -3,7 +3,7 @@ layout: post
 title: "NoSQL Maceraları - Couchbase İle Hello World"
 date: 2015-11-07 20:00:00 +0300
 categories:
-  - nosql
+  - Veritabanı
 tags:
   - nosql
   - nancy-framework

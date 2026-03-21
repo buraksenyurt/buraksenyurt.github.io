@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Sayfa(Page) Kavramı, Navigasyon İşlemleri ve XBAP"
 date: 2007-10-04 12:00:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - page

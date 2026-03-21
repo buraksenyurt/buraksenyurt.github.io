@@ -3,7 +3,7 @@ layout: post
 title: "Compact Framework Üzerinde RDA ile Senkronizasyon"
 date: 2006-01-24 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - Mobile
 ---

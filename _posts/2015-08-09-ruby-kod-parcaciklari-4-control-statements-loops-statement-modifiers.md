@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 4 (Control Statements, Loops, Statement Modifiers)"
 date: 2015-08-09 10:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - control-statements

@@ -3,7 +3,7 @@ layout: post
 title: "Azure Üzerinde Redis Cache Kullanımı"
 date: 2018-09-01 07:02:00 +0300
 categories:
-  - azure
+  - Bulut Bilişim
 tags:
   - microsoft-azure
   - redis

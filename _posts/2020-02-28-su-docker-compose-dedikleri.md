@@ -3,7 +3,7 @@ layout: post
 title: "Şu Docker-Compose Dedikleri"
 date: 2020-02-28 20:23:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - docker
   - nodejs

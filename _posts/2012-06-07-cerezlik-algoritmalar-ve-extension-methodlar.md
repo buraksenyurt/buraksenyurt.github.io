@@ -3,8 +3,8 @@ layout: post
 title: "Çerezlik Algoritmalar ve Extension Methodlar"
 date: 2012-06-07 23:30:00 +0300
 categories:
-  - csharp
-  - data-structures-algorithms
+  - Programlama Dilleri
+  - Algoritma
 tags:
   - extension-methods
   - fisher-yates-shuffle

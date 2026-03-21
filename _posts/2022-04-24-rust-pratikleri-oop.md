@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - OOP"
 date: 2022-04-24 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

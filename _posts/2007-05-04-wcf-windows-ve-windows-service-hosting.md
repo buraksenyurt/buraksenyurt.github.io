@@ -3,7 +3,7 @@ layout: post
 title: "WCF-Windows ve Windows Service Hosting"
 date: 2007-05-04 09:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

@@ -3,8 +3,8 @@ layout: post
 title: "Asp.Net Core Web API için Custom MiddleWare Yazmak"
 date: 2017-12-18 06:01:00 +0300
 categories:
-  - dotnet-core
-  - asp-dotnet-core
+  - Framework Tabanlı Programlama
+  - Web Programlama
 tags:
   - .net-core
   - asp.net-core

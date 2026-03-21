@@ -3,7 +3,7 @@ layout: post
 title: "C# 4.0 ile Code Contracts"
 date: 2009-12-18 05:40:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - .net-framework

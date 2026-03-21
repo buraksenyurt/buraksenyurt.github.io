@@ -3,7 +3,7 @@ layout: post
 title: "Programcıdan Programcıya Rust"
 date: 2021-12-24 10:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust-lang
   - ownership

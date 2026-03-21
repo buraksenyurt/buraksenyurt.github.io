@@ -3,7 +3,7 @@ layout: post
 title: "WCF - One Way Ticket"
 date: 2007-05-31 09:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

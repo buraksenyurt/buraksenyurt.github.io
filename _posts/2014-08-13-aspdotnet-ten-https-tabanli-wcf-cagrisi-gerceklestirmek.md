@@ -3,8 +3,7 @@ layout: post
 title: "Asp.Net’ ten HTTPS Tabanlı WCF Çağrısı Gerçekleştirmek"
 date: 2014-08-13 12:00:00 +0300
 categories:
-  - wcf
-  - wcf-4-5
+  - Servis Tabanlı Geliştirme
 tags: []
 ---
 Özel Ajan Oso! Son yılımda Disney Channel’ de sıklıkla maruz kaldığım bir çizgi karakter. Aslında bu sakar ve bir o kadar da maharetli ve sevimli çizgi dizi kahramının görevi son derece basit. Sadece 3 adımda çocuklara yol gösterici nitelikte yardımcı olmaya çalışmak.

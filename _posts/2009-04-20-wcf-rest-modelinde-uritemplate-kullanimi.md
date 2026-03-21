@@ -3,7 +3,7 @@ layout: post
 title: "WCF Rest Modelinde UriTemplate Kullanımı"
 date: 2009-04-20 19:19:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

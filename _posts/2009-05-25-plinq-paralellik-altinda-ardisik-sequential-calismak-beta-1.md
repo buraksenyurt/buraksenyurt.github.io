@@ -3,8 +3,8 @@ layout: post
 title: "PLINQ - Paralellik Altında Ardışık(Sequential) Çalışmak [Beta 1]"
 date: 2009-05-25 11:34:00 +0300
 categories:
-  - linq
-  - plinq
+  - Veritabanı
+  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query

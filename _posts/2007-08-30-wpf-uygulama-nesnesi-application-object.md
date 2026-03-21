@@ -3,7 +3,7 @@ layout: post
 title: "WPF-Uygulama Nesnesi (Application Object)"
 date: 2007-08-30 09:00:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - application-object

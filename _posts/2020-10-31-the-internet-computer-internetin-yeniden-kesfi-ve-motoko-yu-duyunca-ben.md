@@ -3,7 +3,7 @@ layout: post
 title: "The Internet Computer (Internetin Yeniden Keşfi) ve Motoko'yu Duyunca Ben"
 date: 2020-10-31 22:31:00 +0300
 categories:
-  - motoko
+  - Programlama Dilleri
 tags:
   - the-internet-computer
   - motoko

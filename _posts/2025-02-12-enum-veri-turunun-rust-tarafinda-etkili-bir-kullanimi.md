@@ -3,7 +3,7 @@ layout: post
 title: "Enum Veri Türünün Rust Tarafında Etkili Bir Kullanımı"
 date: 2025-02-12 16:23:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

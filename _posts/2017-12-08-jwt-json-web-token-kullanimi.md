@@ -3,7 +3,7 @@ layout: post
 title: "JWT(JSON Web Token) Kullanımı"
 date: 2017-12-08 06:00:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - jwt
   - json

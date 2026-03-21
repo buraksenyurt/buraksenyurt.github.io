@@ -3,8 +3,7 @@ layout: post
 title: "WCF 4.5–Task Based Asynchronous Operasyonlar"
 date: 2013-01-01 13:51:00 +0300
 categories:
-  - wcf
-  - wcf-4-5
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - task-parallel-library

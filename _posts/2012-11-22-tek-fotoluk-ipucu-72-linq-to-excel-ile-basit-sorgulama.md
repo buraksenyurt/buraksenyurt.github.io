@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–72–LINQ to Excel ile Basit Sorgulama"
 date: 2012-11-22 22:10:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query

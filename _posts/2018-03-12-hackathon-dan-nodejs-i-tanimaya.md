@@ -3,7 +3,7 @@ layout: post
 title: "Hackathon'dan Node.js'i Tanımaya"
 date: 2018-03-12 03:00:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - node.js
   - javascript

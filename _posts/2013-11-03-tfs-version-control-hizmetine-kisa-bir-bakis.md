@@ -3,7 +3,7 @@ layout: post
 title: "TFS Version Control Hizmetine Kısa Bir Bakış"
 date: 2013-11-03 14:58:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - client-object-model

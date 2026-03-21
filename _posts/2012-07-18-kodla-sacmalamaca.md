@@ -3,7 +3,7 @@ layout: post
 title: "Kodla Saçmalamaca"
 date: 2012-07-18 05:05:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - xml

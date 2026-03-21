@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Hata Yönetimi (Fault Management)"
 date: 2007-05-09 06:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - fault-management

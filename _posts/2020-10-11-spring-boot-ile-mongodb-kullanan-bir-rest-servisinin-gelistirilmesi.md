@@ -3,7 +3,7 @@ layout: post
 title: "Spring Boot ile MongoDb Kullanan Bir Rest Servisinin Geliştirilmesi"
 date: 2020-10-11 19:01:00 +0300
 categories:
-  - spring-boot
+  - Framework Tabanlı Programlama
 tags:
   - java
   - mongodb

@@ -3,7 +3,7 @@ layout: post
 title: "Stored Procedure Yardımıyla Tablodan Kayıt Silmek"
 date: 2003-11-12 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - stored-procedures

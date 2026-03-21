@@ -3,8 +3,8 @@ layout: post
 title: "Biyütıful Kod - Ninject ile Bir Dependency Injection Macerası"
 date: 2015-01-04 20:00:00 +0300
 categories:
-  - csharp
-  - tasarim-prensipleri-design-principles
+  - Programlama Dilleri
+  - Yazılım Tasarımı
 tags:
   - dependency-injection
   - ninject

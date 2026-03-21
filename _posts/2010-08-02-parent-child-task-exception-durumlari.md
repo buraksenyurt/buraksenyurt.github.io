@@ -3,9 +3,8 @@ layout: post
 title: "Parent-Child Task Exception Durumları"
 date: 2010-08-02 21:10:00 +0300
 categories:
-  - csharp-4-0
-  - parallel-programming
-  - tpl
+  - Programlama Dilleri
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming

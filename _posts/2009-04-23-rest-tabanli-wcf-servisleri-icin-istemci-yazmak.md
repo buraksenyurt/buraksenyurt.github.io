@@ -3,7 +3,7 @@ layout: post
 title: "Rest Tabanlı WCF Servisleri için İstemci Yazmak"
 date: 2009-04-23 12:12:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

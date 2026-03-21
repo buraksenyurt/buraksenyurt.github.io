@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 129 - Override Edemediğimiz ToString Metodunu Genişletmek"
 date: 2016-04-03 06:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - extension-methods
   - reflection

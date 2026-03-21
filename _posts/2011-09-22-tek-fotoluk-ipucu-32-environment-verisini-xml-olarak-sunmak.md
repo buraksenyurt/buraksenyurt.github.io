@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-32(Environment Verisini XML Olarak Sunmak)"
 date: 2011-09-22 07:05:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - system.environment

@@ -3,8 +3,8 @@ layout: post
 title: ".Net Framework 4.0 System.IO.File Tarafındaki Yenilikler"
 date: 2010-10-25 21:45:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - bcl
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
 tags:
   - base-class-library
   - .net-framework

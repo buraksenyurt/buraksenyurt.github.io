@@ -3,7 +3,7 @@ layout: post
 title: "Bilmiyordum, Öğrendim : SQL Merge"
 date: 2019-01-13 13:03:00 +0300
 categories:
-  - t-sql
+  - Veritabanı
 tags:
   - sql
   - merge

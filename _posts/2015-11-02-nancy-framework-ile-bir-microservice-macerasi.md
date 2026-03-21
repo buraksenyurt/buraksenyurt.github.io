@@ -3,7 +3,7 @@ layout: post
 title: "Nancy Framework ile Bir MicroService Macerası"
 date: 2015-11-02 10:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - nancy-framework
   - microservice

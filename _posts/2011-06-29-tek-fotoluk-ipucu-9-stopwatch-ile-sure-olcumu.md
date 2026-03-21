@@ -3,9 +3,9 @@ layout: post
 title: "Tek Fotoluk İpucu – 9 (Stopwatch ile süre ölçümü)"
 date: 2011-06-29 00:58:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - .net-framework

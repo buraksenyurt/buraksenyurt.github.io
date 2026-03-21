@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk ipucu - 57 LINQ Tarafında Cross Join"
 date: 2012-07-11 07:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query

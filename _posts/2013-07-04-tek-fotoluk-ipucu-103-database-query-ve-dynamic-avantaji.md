@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 103–Database.Query ve dynamic Avantajı"
 date: 2013-07-04 21:31:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - web-matrix
   - webmatrix.data

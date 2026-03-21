@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Strategy"
 date: 2009-07-02 22:34:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

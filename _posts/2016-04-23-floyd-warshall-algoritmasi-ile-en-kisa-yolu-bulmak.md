@@ -3,7 +3,7 @@ layout: post
 title: "Floyd-Warshall Algoritması ile En Kısa Yolu Bulmak"
 date: 2016-04-23 12:00:00 +0300
 categories:
-  - algoritma
+  - Algoritma
 tags:
   - algoritma
   - csharp

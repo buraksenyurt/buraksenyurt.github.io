@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 156 - Sevimli Ruby Block'ları"
 date: 2017-04-16 15:38:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - block

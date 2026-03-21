@@ -3,8 +3,8 @@ layout: post
 title: "WCF Service' lerine Silverlight İstemcilerinden Channel Bazlı Erişim"
 date: 2010-06-02 01:55:00 +0300
 categories:
-  - silverlight-4-0
-  - wcf
+  - Web Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - silverlight
   - windows-communication-foundation

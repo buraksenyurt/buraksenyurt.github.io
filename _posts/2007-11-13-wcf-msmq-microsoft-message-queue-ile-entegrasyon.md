@@ -3,7 +3,7 @@ layout: post
 title: "WCF - MSMQ(MicroSoft Message Queue) ile Entegrasyon"
 date: 2007-11-13 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - msmq

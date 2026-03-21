@@ -3,7 +3,7 @@ layout: post
 title: "Params Anahtar Sözcüğünün Kullanımı"
 date: 2003-11-30 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - params

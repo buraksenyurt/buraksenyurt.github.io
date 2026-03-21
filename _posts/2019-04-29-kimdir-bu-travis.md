@@ -3,7 +3,7 @@ layout: post
 title: "Kimdir Bu Travis?"
 date: 2019-04-29 07:24:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - travis
   - ci/cd

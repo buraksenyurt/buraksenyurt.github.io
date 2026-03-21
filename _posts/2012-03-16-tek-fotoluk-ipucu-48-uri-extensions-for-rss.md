@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu-48(Uri Extensions for RSS)"
 date: 2012-03-16 00:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - uri
   - extension-methods

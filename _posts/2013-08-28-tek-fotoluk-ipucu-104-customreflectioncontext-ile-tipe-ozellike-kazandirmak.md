@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 104 : CustomReflectionContext ile Tipe Özellike Kazandırmak"
 date: 2013-08-28 19:18:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - reflection
   - runtime

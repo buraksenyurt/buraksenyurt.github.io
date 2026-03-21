@@ -3,7 +3,7 @@ layout: post
 title: "Sadece Tarayıcı Kullanarak Web API Servisini Google Cloud Platform Üzerinde Yayınlamak"
 date: 2018-01-14 00:44:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - web-api

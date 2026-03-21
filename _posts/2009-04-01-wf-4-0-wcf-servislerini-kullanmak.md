@@ -3,7 +3,7 @@ layout: post
 title: "WF 4.0 - WCF Servislerini Kullanmak"
 date: 2009-04-01 12:00:00 +0300
 categories:
-  - wf-4-0-beta-1
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 85–Zahmetsizce Encryption(ProtectedData)"
 date: 2013-03-25 20:46:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - cryptography

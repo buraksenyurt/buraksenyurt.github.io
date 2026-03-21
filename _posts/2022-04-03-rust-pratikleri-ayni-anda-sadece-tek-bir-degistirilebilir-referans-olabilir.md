@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - Aynı Anda Sadece Tek Bir Değiştirilebilir Referans Olabilir"
 date: 2022-04-03 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

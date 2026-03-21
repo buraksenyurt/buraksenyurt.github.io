@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Prototype"
 date: 2009-07-06 20:35:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

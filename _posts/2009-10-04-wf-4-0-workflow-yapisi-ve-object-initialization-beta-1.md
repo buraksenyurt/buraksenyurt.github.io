@@ -3,7 +3,7 @@ layout: post
 title: "WF 4.0 - Workflow Yapısı ve Object Initialization[Beta 1]"
 date: 2009-10-04 23:29:00 +0300
 categories:
-  - wf-4-0-beta-1
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

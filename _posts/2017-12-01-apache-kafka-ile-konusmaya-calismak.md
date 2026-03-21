@@ -3,7 +3,7 @@ layout: post
 title: "Apache Kafka ile Konuşmaya Çalışmak"
 date: 2017-12-01 06:01:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - apache-kafka
   - .net-core

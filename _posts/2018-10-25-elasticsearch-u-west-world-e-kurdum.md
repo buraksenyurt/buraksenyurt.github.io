@@ -3,7 +3,7 @@ layout: post
 title: "Elasticsearch'ü West-World'e Kurdum"
 date: 2018-10-25 07:06:00 +0300
 categories:
-  - elasticsearch
+  - Veritabanı
 tags:
   - elasticsearch
   - linux

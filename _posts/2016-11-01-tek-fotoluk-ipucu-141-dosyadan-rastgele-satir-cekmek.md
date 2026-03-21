@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 141 - Dosyadan Rastgele Satır Çekmek"
 date: 2016-11-01 21:36:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - enums

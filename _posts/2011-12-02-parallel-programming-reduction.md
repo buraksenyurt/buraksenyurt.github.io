@@ -3,7 +3,7 @@ layout: post
 title: "Parallel Programming–Reduction"
 date: 2011-12-02 11:51:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming

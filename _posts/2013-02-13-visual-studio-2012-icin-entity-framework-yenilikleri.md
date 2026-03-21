@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio 2012 için Entity Framework Yenilikleri"
 date: 2013-02-13 01:18:00 +0300
 categories:
-  - dotnet-framework-4-5
+  - Framework Tabanlı Programlama
 tags:
   - entity-framework
   - code-first-development

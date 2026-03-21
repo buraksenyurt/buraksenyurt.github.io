@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Iterator"
 date: 2009-07-30 12:52:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

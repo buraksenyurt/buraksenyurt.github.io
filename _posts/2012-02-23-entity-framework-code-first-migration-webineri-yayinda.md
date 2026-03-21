@@ -3,8 +3,8 @@ layout: post
 title: "Entity Framework - Code First Migration Webineri Yayında"
 date: 2012-02-23 03:22:00 +0300
 categories:
-  - entity-framework
-  - nedirtv
+  - Veritabanı
+  - Genel
 tags:
   - entity-framework
   - code-first

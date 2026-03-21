@@ -3,7 +3,7 @@ layout: post
 title: "Web API Tarafında Dapper Kullanımı"
 date: 2019-08-16 10:30:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - web-api

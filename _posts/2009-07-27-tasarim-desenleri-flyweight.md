@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - FlyWeight"
 date: 2009-07-27 09:30:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

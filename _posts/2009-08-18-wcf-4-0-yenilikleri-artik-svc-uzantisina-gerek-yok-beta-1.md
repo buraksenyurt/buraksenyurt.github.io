@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.0 Yenilikleri - Artık Svc Uzantısına Gerek Yok [Beta 1]"
 date: 2009-08-18 03:45:00 +0300
 categories:
-  - wcf-4-0-beta-1
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

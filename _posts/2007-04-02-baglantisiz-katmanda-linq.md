@@ -3,7 +3,7 @@ layout: post
 title: "Bağlantısız Katmanda LINQ"
 date: 2007-04-02 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - language-integrated-query

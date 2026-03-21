@@ -3,7 +3,7 @@ layout: post
 title: "Bir Web Uygulamasında Gantt Chart Kullanımı"
 date: 2019-07-26 13:00:00 +0300
 categories:
-  - asp-dotnet-core
+  - Web Programlama
 tags:
   - .net-core
   - asp.net-core

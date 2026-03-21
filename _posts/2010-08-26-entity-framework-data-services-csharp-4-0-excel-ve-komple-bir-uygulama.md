@@ -3,9 +3,9 @@ layout: post
 title: "Entity Framework, Data Services, C# 4.0, Excel ve Komple Bir Uygulama"
 date: 2010-08-26 04:50:00 +0300
 categories:
-  - csharp-4-0
-  - entity-framework
-  - wcf-data-services
+  - Programlama Dilleri
+  - Veritabanı
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-data-services
   - entity-framework

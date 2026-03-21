@@ -3,7 +3,7 @@ layout: post
 title: "NoSQL Maceraları–Redis ile Hello World"
 date: 2014-02-11 13:04:00 +0300
 categories:
-  - nosql
+  - Veritabanı
 tags: []
 ---
 Üniversite yıllarında en çok oynadığım oyunlar sanıyorum ki Warcraft II ve Starcraft idi. Sonrasında bunlara Diablo’ da eklendi. Bu üç güzide oyunun ortak özelliği ise Blizzard firması tarafından geliştirilmiş olmalarıydı. 1991 yılının bir Şubat ayında (soğuk muydu hava bilemiyorum) UCLA üniversitesi mezunu Michale Morhaime, Allen Adham ve Frank Pearce tarafından Kaliforniya’ da kurulan şirket, 2012 itibariyle tam olarak 4700 çalışana sahip. (Hani çalıştığım uluslararası bankanın yaptığı işleri ve IT departmanını düşünce gerçekten durup 8 kere düşünüyorum) Peki firmanın kendi ortamında kullandığı ürünlerden birisinin Redis isimli NoSQL sistemi olduğunu biliyor muydunuz?

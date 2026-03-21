@@ -3,7 +3,7 @@ layout: post
 title: ".Net RIA Servisleri - DomainDataSource Kulanımı"
 date: 2009-05-14 12:30:00 +0300
 categories:
-  - dotnet-ria-services
+  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight

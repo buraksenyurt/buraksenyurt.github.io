@@ -3,7 +3,7 @@ layout: post
 title: "Azure ile İlk Maceram (App Service)"
 date: 2018-05-18 18:15:00 +0300
 categories:
-  - azure
+  - Bulut Bilişim
 tags:
   - microsoft-azure
   - cloud-computing

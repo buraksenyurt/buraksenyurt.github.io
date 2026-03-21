@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Tarafından Redis(Docker Bazlı) Veritabanı ile Konuşmak"
 date: 2019-12-01 09:45:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - redis
   - nosql

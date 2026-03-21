@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 45 - Schema Adı ile birlikte Tablo Satır Sayılarını Elde Etmek"
 date: 2012-01-12 04:46:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - sql
   - table

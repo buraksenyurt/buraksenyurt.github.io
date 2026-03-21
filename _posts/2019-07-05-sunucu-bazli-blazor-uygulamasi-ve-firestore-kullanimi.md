@@ -3,7 +3,7 @@ layout: post
 title: "Sunucu Bazlı Blazor Uygulaması ve Firestore Kullanımı"
 date: 2019-07-05 10:20:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - blazor
   - asp.net

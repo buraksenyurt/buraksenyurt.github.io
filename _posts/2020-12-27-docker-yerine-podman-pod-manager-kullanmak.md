@@ -3,7 +3,7 @@ layout: post
 title: "Docker Yerine Podman (Pod Manager) Kullanmak"
 date: 2020-12-27 09:14:00 +0300
 categories:
-  - devops
+  - DevOps
 tags:
   - docker
   - podman

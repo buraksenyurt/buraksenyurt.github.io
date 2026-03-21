@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 23 - set,prime,logger,pathname,benchmark,find,zlib Kullanımları"
 date: 2016-05-31 21:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - benchmark

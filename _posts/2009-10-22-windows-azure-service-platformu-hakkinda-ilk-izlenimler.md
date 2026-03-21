@@ -3,7 +3,7 @@ layout: post
 title: "Windows Azure Service Platformu Hakkında İlk İzlenimler"
 date: 2009-10-22 07:15:00 +0300
 categories:
-  - windows-azure
+  - Bulut Bilişim
 tags:
   - cloud-computing
   - windows-azure

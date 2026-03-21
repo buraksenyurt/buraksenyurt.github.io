@@ -3,7 +3,7 @@ layout: post
 title: "WF Ado.Net Entity Pack - Hello World"
 date: 2010-05-03 01:00:00 +0300
 categories:
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - wf-ado.net-activity-pack

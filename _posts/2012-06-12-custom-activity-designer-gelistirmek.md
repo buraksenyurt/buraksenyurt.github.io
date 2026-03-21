@@ -3,8 +3,7 @@ layout: post
 title: "Custom Activity Designer Geliştirmek"
 date: 2012-06-12 07:00:00 +0300
 categories:
-  - wf
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - activity-designer

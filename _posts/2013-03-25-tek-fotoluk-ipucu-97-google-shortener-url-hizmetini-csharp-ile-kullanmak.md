@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 97–Google Shortener URL Hizmetini C# ile Kullanmak"
 date: 2013-03-25 21:30:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - google

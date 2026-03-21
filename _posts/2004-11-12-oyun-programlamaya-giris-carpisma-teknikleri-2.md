@@ -3,7 +3,7 @@ layout: post
 title: "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 2)"
 date: 2004-11-12 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - game-programming

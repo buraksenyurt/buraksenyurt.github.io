@@ -3,7 +3,7 @@ layout: post
 title: "Haydi Bir Captcha Kontrolü Yazalım"
 date: 2011-09-26 23:11:00 +0300
 categories:
-  - aspnet-4-0
+  - Web Programlama
 tags:
   - asp.net
   - captcha

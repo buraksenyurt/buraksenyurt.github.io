@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.5–Built-In UDP Desteği"
 date: 2015-01-17 23:00:00 +0300
 categories:
-  - wcf-4-5
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - soa

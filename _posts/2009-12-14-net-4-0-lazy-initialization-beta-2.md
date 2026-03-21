@@ -3,7 +3,7 @@ layout: post
 title: ".Net 4.0 - Lazy Initialization [Beta 2]"
 date: 2009-12-14 01:30:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - .net-framework

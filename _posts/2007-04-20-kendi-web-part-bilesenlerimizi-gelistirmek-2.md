@@ -3,7 +3,7 @@ layout: post
 title: "Kendi Web Part Bilesenlerimizi Gelistirmek - 2"
 date: 2007-04-20 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - web-parts

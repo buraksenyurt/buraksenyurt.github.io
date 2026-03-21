@@ -3,7 +3,7 @@ layout: post
 title: "Eager Loading, Lazy Loading, Explicit Loading"
 date: 2011-09-06 20:30:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - eager-loading

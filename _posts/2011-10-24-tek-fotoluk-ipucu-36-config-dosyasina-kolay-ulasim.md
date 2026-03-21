@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-36(Config Dosyasına Kolay Ulaşım)"
 date: 2011-10-24 14:30:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - configuration-manager

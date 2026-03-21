@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework Üzerinde TransactionScope Kullanımı"
 date: 2011-04-01 08:52:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - transaction

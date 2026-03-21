@@ -3,7 +3,7 @@ layout: post
 title: "Rust Programlama Dili için \\\"Hello World\\\""
 date: 2022-03-27 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

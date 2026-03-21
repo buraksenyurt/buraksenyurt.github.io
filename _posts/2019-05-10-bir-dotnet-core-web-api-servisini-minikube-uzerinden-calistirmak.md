@@ -3,7 +3,7 @@ layout: post
 title: "Bir .Net Core Web API Servisini Minikube Üzerinden Çalıştırmak"
 date: 2019-05-10 13:00:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - minikube

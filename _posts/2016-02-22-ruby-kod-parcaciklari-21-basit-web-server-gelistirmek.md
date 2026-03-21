@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 21 - Basit Web Server Geliştirmek"
 date: 2016-02-22 14:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - tcpserver
   - socket

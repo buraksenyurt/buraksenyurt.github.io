@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 158 - GoLang'de Constructor var mı?"
 date: 2017-05-16 18:17:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - tek-fotoluk-ipucu

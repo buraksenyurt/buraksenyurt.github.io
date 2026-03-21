@@ -3,8 +3,7 @@ layout: post
 title: "Parent-Child Tasks Kavramı"
 date: 2010-06-11 02:00:00 +0300
 categories:
-  - parallel-programming
-  - tpl
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming

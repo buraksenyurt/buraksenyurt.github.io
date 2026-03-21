@@ -3,7 +3,7 @@ layout: post
 title: "Bellek Yönetiminde Verimlilik için İpuçları (Rust Odaklı)"
 date: 2025-04-03 21:30:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - memory-management

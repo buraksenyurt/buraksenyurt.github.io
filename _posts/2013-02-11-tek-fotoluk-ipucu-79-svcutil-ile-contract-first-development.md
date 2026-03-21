@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 79– svcutil ile Contract-First Development"
 date: 2013-02-11 02:56:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - svcutil

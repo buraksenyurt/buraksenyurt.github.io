@@ -3,7 +3,7 @@ layout: post
 title: "Native Web Services"
 date: 2006-05-22 12:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - sql
   - native-web-service

@@ -3,7 +3,7 @@ layout: post
 title: "WF 4.0 - Bookmarks [RC]"
 date: 2010-02-19 05:04:00 +0300
 categories:
-  - wf-4-0-rc
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 67.75–Asp.Net 4.5 ControlAttribute"
 date: 2012-10-02 02:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - asp.net

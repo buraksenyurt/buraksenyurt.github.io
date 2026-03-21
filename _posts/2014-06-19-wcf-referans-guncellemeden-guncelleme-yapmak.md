@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Referans Güncellemeden Güncelleme Yapmak"
 date: 2014-06-19 17:20:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - proxy

@@ -3,7 +3,7 @@ layout: post
 title: "WCF–SOAP Servislerinde Custom Header Kullanmak"
 date: 2014-11-06 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - soa

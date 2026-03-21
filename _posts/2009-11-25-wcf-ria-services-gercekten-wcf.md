@@ -3,8 +3,7 @@ layout: post
 title: "WCF RIA Services - Gerçekten WCF"
 date: 2009-11-25 23:19:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-ria-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services

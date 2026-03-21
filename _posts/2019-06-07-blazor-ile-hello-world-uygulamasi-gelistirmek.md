@@ -3,7 +3,7 @@ layout: post
 title: "Blazor ile Hello World Uygulaması Geliştirmek"
 date: 2019-06-07 11:00:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - blazor
   - razor-page

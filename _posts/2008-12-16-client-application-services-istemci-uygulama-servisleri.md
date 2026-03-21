@@ -3,7 +3,7 @@ layout: post
 title: "Client Application Services (İstemci Uygulama Servisleri)"
 date: 2008-12-16 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - client-application-services

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 90–Office Ailesinin Versiyonlarını Öğrenmek"
 date: 2013-03-25 21:10:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - registery

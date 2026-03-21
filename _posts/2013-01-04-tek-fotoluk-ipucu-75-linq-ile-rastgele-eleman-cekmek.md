@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 75–LINQ ile Rastgele Eleman Çekmek"
 date: 2013-01-04 00:15:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query

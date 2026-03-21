@@ -3,7 +3,7 @@ layout: post
 title: "GetOleDbSchemaTable Metodu İle Veritabanımızda Ne Var Ne Yok"
 date: 2004-02-12 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb

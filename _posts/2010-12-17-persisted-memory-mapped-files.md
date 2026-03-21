@@ -3,8 +3,8 @@ layout: post
 title: "Persisted Memory-Mapped Files"
 date: 2010-12-17 10:30:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - csharp-4-0
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
 tags:
   - .net-framework
   - csharp

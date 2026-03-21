@@ -3,7 +3,7 @@ layout: post
 title: "Web Server Control Yazmak - 2"
 date: 2007-01-23 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - web-server-controls

@@ -3,7 +3,7 @@ layout: post
 title: "Python ve Flask ile REST Tabanlı Servis Geliştirmek"
 date: 2016-09-22 22:00:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - python
   - rest-api

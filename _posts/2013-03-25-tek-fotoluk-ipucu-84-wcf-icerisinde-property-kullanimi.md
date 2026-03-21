@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 84–WCF içerisinde Property Kullanımı"
 date: 2013-03-25 20:40:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - windows-communication-foundation

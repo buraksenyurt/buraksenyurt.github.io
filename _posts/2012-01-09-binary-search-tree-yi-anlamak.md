@@ -3,9 +3,8 @@ layout: post
 title: "Binary Search Tree' yi Anlamak"
 date: 2012-01-09 11:01:00 +0300
 categories:
-  - algoritma
-  - csharp
-  - data-structures-algorithms
+  - Algoritma
+  - Programlama Dilleri
 tags:
   - binary-tree
   - binary-search-tree

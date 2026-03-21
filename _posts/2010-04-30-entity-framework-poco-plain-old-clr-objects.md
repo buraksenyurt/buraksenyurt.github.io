@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework - POCO(Plain Old CLR Objects)"
 date: 2010-04-30 12:01:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
 ---

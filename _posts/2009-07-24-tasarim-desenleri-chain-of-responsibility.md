@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Chain of Responsibility"
 date: 2009-07-24 05:15:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

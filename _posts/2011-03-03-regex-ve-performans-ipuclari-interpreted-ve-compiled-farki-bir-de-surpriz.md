@@ -3,7 +3,7 @@ layout: post
 title: "Regex ve Performans İpuçları – Interpreted ve Compiled Farkı, Bir de Sürpriz"
 date: 2011-03-03 17:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - regex

@@ -3,8 +3,7 @@ layout: post
 title: "Hamming Distance Algoritmasının Basit Kullanımı"
 date: 2016-01-13 17:09:00 +0300
 categories:
-  - csharp
-  - ruby
+  - Programlama Dilleri
 tags:
   - csharp
   - ruby-lang

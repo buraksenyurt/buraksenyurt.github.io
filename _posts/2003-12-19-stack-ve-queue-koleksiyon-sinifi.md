@@ -3,7 +3,7 @@ layout: post
 title: "Stack ve Queue Koleksiyon Sınıfı"
 date: 2003-12-19 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - collections

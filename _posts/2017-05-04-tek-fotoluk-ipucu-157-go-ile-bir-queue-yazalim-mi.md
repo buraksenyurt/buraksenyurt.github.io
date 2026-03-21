@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 157 - GO ile Bir Queue Yazalım mı?"
 date: 2017-05-04 10:10:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - queue
   - golang

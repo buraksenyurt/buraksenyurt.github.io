@@ -3,7 +3,7 @@ layout: post
 title: "Node.js ile Basit Cluster Kurguları"
 date: 2018-07-03 21:04:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - nodejs
   - node.js

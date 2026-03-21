@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 2.0 ve Master Page Kavramı"
 date: 2004-09-10 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - master-page

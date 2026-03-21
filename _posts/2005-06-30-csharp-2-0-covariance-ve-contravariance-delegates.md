@@ -3,7 +3,7 @@ layout: post
 title: "C# 2.0 Covariance ve Contravariance Delegates"
 date: 2005-06-30 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - covariance-generic

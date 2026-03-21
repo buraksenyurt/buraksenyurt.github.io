@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Prensipleri - Loose Coupling"
 date: 2009-06-23 22:46:00 +0300
 categories:
-  - tasarim-prensipleri-design-principles
+  - Yazılım Tasarımı
 tags:
   - design-principles
   - loose-coupling

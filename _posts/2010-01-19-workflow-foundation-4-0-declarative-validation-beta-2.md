@@ -3,7 +3,7 @@ layout: post
 title: "Workflow Foundation 4.0 - Declarative Validation [Beta 2]"
 date: 2010-01-19 06:00:00 +0300
 categories:
-  - wf-4-0-beta-2
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

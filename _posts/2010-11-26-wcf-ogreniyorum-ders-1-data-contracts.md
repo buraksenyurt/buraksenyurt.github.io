@@ -3,7 +3,7 @@ layout: post
 title: "WCF Öğreniyorum Ders 1–Data Contracts"
 date: 2010-11-26 22:04:00 +0300
 categories:
-  - wcf-ogreniyorum
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - data-contracts

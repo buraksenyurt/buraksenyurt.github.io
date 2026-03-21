@@ -3,7 +3,7 @@ layout: post
 title: "Connection (Bağlantı) Kavramı ve OleDbConnection Sınıfı"
 date: 2004-02-13 06:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb

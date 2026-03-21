@@ -3,7 +3,7 @@ layout: post
 title: "Rust ile ECS Yaklaşımını Anlamak"
 date: 2024-11-06 11:05:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - entity-component-system

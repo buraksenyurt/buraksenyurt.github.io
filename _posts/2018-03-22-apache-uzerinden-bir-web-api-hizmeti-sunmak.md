@@ -3,7 +3,7 @@ layout: post
 title: "Apache Üzerinden Bir Web API Hizmeti Sunmak"
 date: 2018-03-22 03:13:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - apache
   - .net-core

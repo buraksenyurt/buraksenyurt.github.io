@@ -3,7 +3,7 @@ layout: post
 title: "CurrencyManager ile Navigasyon ve Temel Satır İşlemleri"
 date: 2004-07-27 06:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - windows-forms

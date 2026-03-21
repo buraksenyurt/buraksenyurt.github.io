@@ -3,7 +3,7 @@ layout: post
 title: "Büyük Nesneler(Large Objects) ile Çalışmak"
 date: 2006-07-11 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - Ado.Net-2
   - BLOB

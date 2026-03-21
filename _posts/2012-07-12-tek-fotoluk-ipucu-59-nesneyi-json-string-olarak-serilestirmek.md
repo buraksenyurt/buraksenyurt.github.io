@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 59–Nesneyi JSON String Olarak Serileştirmek"
 date: 2012-07-12 00:52:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - json

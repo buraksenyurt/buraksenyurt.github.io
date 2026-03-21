@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 102–Ne Zaman XmlInclude Gerekir?"
 date: 2013-06-23 11:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - xml-serialization
   - xml-serializer

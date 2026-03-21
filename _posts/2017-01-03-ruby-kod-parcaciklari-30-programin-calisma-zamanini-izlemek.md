@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 30 - Programın Çalışma Zamanını İzlemek"
 date: 2017-01-03 21:43:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - trace

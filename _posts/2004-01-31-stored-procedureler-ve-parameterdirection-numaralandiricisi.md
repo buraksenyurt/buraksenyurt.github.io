@@ -3,7 +3,7 @@ layout: post
 title: "Stored Procedureler ve ParameterDirection Numaralandırıcısı"
 date: 2004-01-31 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - ParameterDirection

@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-31(Hashing)"
 date: 2011-09-18 02:50:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - security

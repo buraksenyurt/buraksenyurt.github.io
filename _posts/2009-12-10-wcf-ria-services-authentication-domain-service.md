@@ -3,8 +3,7 @@ layout: post
 title: "WCF RIA Services - Authentication Domain Service"
 date: 2009-12-10 04:40:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-ria-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services

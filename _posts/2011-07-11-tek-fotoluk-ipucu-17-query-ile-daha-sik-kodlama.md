@@ -3,10 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-17 (Query ile Daha Şık Kodlama)"
 date: 2011-07-11 21:54:00 +0300
 categories:
-  - csharp
-  - csharp-3-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - language-integrated-query

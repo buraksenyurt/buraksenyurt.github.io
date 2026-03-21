@@ -3,8 +3,8 @@ layout: post
 title: "Raspberry Pi Maceramızda Bu Bölüm - Tekerleği Döndürdük"
 date: 2016-08-06 21:01:00 +0300
 categories:
-  - python
-  - raspberry-pi
+  - Programlama Dilleri
+  - IoT
 tags:
   - raspberry-pi
   - python

@@ -3,7 +3,7 @@ layout: post
 title: "Socket-IO Yardımıyla RealTime Çalışan Bir Angular Uygulaması Geliştirmek"
 date: 2019-08-08 15:17:00 +0300
 categories:
-  - angular
+  - Web Programlama
 tags:
   - .net
   - .net-core

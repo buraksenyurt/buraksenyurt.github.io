@@ -3,7 +3,7 @@ layout: post
 title: "C# 6.0 - Collection Initializers için Add Metodunu Yönlendirmek"
 date: 2017-03-18 22:50:00 +0300
 categories:
-  - csharp-6-0
+  - Programlama Dilleri
 tags:
   - csharp
   - extension-methods

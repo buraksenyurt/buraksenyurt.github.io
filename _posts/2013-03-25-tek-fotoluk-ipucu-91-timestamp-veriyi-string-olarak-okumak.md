@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 91–Timestamp Veriyi String Olarak Okumak"
 date: 2013-03-25 21:15:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - bitconverter

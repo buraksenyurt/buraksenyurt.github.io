@@ -3,7 +3,7 @@ layout: post
 title: "EF Core ile MariaDb Kullanımı"
 date: 2018-02-19 17:18:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - entity-framework
   - .net-core

@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Temelleri–Eğlenceli GridView"
 date: 2014-01-26 19:01:00 +0300
 categories:
-  - aspnet
+  - Web Programlama
 tags:
   - asp.net
   - asp.net-temelleri

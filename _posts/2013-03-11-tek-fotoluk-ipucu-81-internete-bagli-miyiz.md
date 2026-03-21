@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 81–Internete Bağlı mıyız?"
 date: 2013-03-11 08:38:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - dll-import

@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Static Web İçeriği ve JSON Üretimi"
 date: 2017-07-01 10:45:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - web-programming-model

@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-38(Delegate Chain)"
 date: 2011-11-13 08:45:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - delegate

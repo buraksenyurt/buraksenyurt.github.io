@@ -3,7 +3,7 @@ layout: post
 title: "Paralel Programlamada Performans, Hız, Verimlilik ve Ölçeklenebilirlik Ölçümleri"
 date: 2010-02-21 23:05:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
   - task-parallel-library

@@ -3,7 +3,7 @@ layout: post
 title: "Mobil Uygulamalarda Http Üzerinden Download ve Upload"
 date: 2006-02-21 10:00:00 +0300
 categories:
-  - windows-mobile
+  - Mobil Programlama
 tags:
   - windows-mobile
   - http

@@ -3,7 +3,7 @@ layout: post
 title: "StreamReader Sınıfı Yardımıyla Dosya Okumak"
 date: 2004-01-01 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - ado.net
   - csharp

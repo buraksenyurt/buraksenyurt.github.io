@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 2.0 DetailsView Kontrolü ile Insert,Update,Delete"
 date: 2004-09-08 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - detailsview

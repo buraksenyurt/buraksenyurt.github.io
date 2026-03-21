@@ -3,7 +3,7 @@ layout: post
 title: "Nasıl Yapılır : Özelleştirilmiş SiteMapProvider Yazmak"
 date: 2006-12-29 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - sitemapprovider

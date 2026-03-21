@@ -3,7 +3,7 @@ layout: post
 title: "Bu Yaz Macerasının Adı Python"
 date: 2016-06-17 00:00:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - python
   - IoT

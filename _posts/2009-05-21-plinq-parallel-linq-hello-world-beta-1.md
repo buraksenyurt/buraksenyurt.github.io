@@ -3,8 +3,8 @@ layout: post
 title: "PLINQ (Parallel LINQ) - Hello World [Beta 1]"
 date: 2009-05-21 19:11:00 +0300
 categories:
-  - linq
-  - plinq
+  - Veritabanı
+  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query

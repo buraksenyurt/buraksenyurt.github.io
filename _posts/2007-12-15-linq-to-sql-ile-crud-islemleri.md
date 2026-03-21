@@ -3,7 +3,7 @@ layout: post
 title: "LINQ to SQL ile CRUD İşlemleri"
 date: 2007-12-15 08:00:00 +0300
 categories:
-  - linq-to-sql
+  - Veritabanı
 tags:
   - language-integrated-query
   - crud

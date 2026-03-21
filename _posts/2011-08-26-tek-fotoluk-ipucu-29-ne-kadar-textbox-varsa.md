@@ -3,9 +3,9 @@ layout: post
 title: "Tek Fotoluk İpucu-29 (Ne Kadar TextBox Varsa)"
 date: 2011-08-26 03:17:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
-  - windows-forms
+  - Programlama Dilleri
+  - Genel
+  - Windows Programlama
 tags:
   - csharp
   - windows-forms

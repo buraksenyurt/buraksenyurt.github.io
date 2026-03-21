@@ -3,7 +3,7 @@ layout: post
 title: ".Net Remoting ve Event Mimarisi"
 date: 2006-03-26 12:00:00 +0300
 categories:
-  - dotnet-remoting
+  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
   - event

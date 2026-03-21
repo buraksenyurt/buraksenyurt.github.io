@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 152 - DebuggerDisplay Niteliği ile Debugging Daha Sevimli Olabilir"
 date: 2017-02-16 21:29:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - csharp
   - tek-fotoluk-ipucu

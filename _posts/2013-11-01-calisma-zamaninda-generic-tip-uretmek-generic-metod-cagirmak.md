@@ -3,7 +3,7 @@ layout: post
 title: "Çalışma Zamanında Generic Tip Üretmek, Generic Metod Çağırmak"
 date: 2013-11-01 03:45:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - generics
   - type

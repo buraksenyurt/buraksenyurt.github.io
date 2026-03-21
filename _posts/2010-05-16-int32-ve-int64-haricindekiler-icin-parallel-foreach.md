@@ -3,7 +3,7 @@ layout: post
 title: "Int32 ve Int64 Haricindekiler için Parallel.ForEach"
 date: 2010-05-16 21:46:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
   - csharp

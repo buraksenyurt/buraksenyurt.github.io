@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 32 - Singleton"
 date: 2017-02-03 21:23:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - design-patterns

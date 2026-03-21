@@ -3,7 +3,7 @@ layout: post
 title: "Using İfadesi ile Garanti Dispose"
 date: 2007-10-27 21:37:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - using

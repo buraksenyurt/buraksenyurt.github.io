@@ -3,7 +3,7 @@ layout: post
 title: "IIS RESTful API Hello World"
 date: 2016-05-19 17:00:00 +0300
 categories:
-  - rest
+  - Servis Tabanlı Geliştirme
 tags:
   - iis
   - .net-core

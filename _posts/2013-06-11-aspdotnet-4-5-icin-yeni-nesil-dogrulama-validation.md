@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 4.5 için Yeni Nesil Doğrulama(Validation)"
 date: 2013-06-11 14:09:00 +0300
 categories:
-  - aspnet-4-5
+  - Web Programlama
 tags:
   - asp.net-validation
   - web-forms

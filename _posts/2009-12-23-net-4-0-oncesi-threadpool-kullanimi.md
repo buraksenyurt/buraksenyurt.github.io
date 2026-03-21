@@ -3,7 +3,7 @@ layout: post
 title: ".Net 4.0 Öncesi ThreadPool Kullanımı"
 date: 2009-12-23 03:15:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - .net-framework

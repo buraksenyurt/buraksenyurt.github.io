@@ -3,7 +3,7 @@ layout: post
 title: "Localization (Yerelleştirme) 2 - Dil Desteği"
 date: 2004-08-07 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - localization

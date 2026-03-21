@@ -3,7 +3,7 @@ layout: post
 title: "TFS 32Bit Uygulama Hatası (Bir Garip Geliştiricinin Haykırışı)"
 date: 2013-01-01 15:52:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - application-pool

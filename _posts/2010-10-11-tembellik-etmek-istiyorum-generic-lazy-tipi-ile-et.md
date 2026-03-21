@@ -3,7 +3,7 @@ layout: post
 title: "Tembellik Etmek İstiyorum (Generic Lazy Tipi ile Et)"
 date: 2010-10-11 12:20:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - base-class-library

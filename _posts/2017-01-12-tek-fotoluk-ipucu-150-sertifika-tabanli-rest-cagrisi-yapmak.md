@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 150 - Sertifika Tabanlı REST Çağrısı Yapmak"
 date: 2017-01-12 21:15:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - rest-api
   - tek-fotoluk-ipucu

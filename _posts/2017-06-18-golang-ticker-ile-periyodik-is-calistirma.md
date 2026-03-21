@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Ticker ile Periyodik İş Çalıştırma"
 date: 2017-06-18 06:11:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - time

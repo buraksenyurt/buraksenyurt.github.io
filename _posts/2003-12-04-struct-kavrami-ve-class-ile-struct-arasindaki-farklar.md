@@ -3,7 +3,7 @@ layout: post
 title: "Struct Kavramı ve Class ile Struct Arasındaki Farklar"
 date: 2003-12-04 11:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - struct
   - class

@@ -3,7 +3,7 @@ layout: post
 title: "Express API Hizmetini Heroku Üzerine Taşımak"
 date: 2018-04-07 19:00:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - heroku
   - cloud-computing

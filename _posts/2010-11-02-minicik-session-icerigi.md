@@ -3,7 +3,7 @@ layout: post
 title: "Minicik Session İçeriği"
 date: 2010-11-02 15:10:00 +0300
 categories:
-  - aspnet-4-0
+  - Web Programlama
 tags:
   - asp.net
   - session

@@ -3,7 +3,7 @@ layout: post
 title: "Koleksiyon Bazlı WCF Rest Servisleri"
 date: 2009-04-22 08:07:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

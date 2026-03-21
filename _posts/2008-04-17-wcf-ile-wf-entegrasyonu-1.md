@@ -3,8 +3,8 @@ layout: post
 title: "WCF ile WF Entegrasyonu - 1"
 date: 2008-04-17 12:00:00 +0300
 categories:
-  - wcf
-  - wf
+  - Servis Tabanlı Geliştirme
+  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - workflow-foundation

@@ -3,8 +3,8 @@ layout: post
 title: "Big Big Big Integer ve Faktöryel Hesaplarken Yüzümde Oluşan Tebessüm"
 date: 2011-04-20 15:05:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - csharp-4-0
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
 tags:
   - biginteger
   - system.numerics

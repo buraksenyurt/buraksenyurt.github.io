@@ -3,7 +3,7 @@ layout: post
 title: "WCF Uygulamalarında Enterprise Library Validation Block Kullanımı"
 date: 2013-06-23 15:26:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - validation

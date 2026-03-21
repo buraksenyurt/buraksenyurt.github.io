@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 2.0 URL Rewriting Hakkında Gerçekler"
 date: 2007-08-07 12:00:00 +0300
 categories:
-  - aspnet
+  - Web Programlama
 tags:
   - asp.net
   - url-rewriting

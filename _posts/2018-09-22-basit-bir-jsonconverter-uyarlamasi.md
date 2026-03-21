@@ -3,7 +3,7 @@ layout: post
 title: "Basit Bir JsonConverter Uyarlaması"
 date: 2018-09-22 11:28:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - newtonsoft
   - json

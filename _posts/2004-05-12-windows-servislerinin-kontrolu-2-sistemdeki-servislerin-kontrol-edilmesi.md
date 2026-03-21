@@ -3,7 +3,7 @@ layout: post
 title: "Windows Servislerinin Kontrolü - 2 ( Sistemdeki Servislerin Kontrol Edilmesi )"
 date: 2004-05-12 06:00:00 +0300
 categories:
-  - windows-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
 ---

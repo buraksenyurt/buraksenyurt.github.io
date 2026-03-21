@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 6 (Fluent Exception Handling)"
 date: 2011-06-24 09:22:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - .net-framework

@@ -3,7 +3,7 @@ layout: post
 title: "Xml Web Servislerine Giriş - 1"
 date: 2004-09-29 09:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
 ---

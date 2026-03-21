@@ -3,8 +3,7 @@ layout: post
 title: "C# 6.0–Yeni Esintiler"
 date: 2014-04-03 13:04:00 +0300
 categories:
-  - csharp
-  - csharp-6-0
+  - Programlama Dilleri
 tags:
   - csharp
   - new-features

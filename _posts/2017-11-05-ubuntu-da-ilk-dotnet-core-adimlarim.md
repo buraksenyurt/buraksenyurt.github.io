@@ -3,7 +3,7 @@ layout: post
 title: "Ubuntu'da İlk .Net Core Adımlarım"
 date: 2017-11-05 10:17:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - ubuntu

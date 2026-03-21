@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Core Routing Mekanizmasını Kavramak"
 date: 2018-02-02 04:24:00 +0300
 categories:
-  - asp-dotnet-core
+  - Web Programlama
 tags:
   - asp.net-core
   - routing

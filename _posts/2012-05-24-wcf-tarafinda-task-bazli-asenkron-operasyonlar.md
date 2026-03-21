@@ -3,7 +3,7 @@ layout: post
 title: "WCF Tarafında Task Bazlı Asenkron Operasyonlar"
 date: 2012-05-24 14:50:00 +0300
 categories:
-  - wcf-4-0
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - task-parallel-library

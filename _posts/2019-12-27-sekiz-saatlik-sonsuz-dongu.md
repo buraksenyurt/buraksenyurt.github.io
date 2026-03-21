@@ -3,7 +3,7 @@ layout: post
 title: "Sekiz Saatlik Sonsuz Döngü"
 date: 2019-12-27 07:00:00 +0300
 categories:
-  - deneyimler
+  - Genel
 tags:
   - teknoloji
   - agile

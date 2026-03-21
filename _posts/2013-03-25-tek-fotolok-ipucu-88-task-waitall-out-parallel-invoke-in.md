@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotolok İpucu 88–Task.WaitAll out, Parallel.Invoke in"
 date: 2013-03-25 21:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - task-parallel-library

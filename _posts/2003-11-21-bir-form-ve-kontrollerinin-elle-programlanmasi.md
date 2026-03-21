@@ -3,7 +3,7 @@ layout: post
 title: "Bir Form ve Kontrollerinin Elle Programlanması"
 date: 2003-11-21 12:00:00 +0300
 categories:
-  - windows-forms
+  - Windows Programlama
 tags:
   - windows-forms
 ---

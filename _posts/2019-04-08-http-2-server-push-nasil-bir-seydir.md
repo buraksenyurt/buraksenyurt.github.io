@@ -3,7 +3,7 @@ layout: post
 title: "HTTP/2 Server Push Nasıl Bir Şeydir?"
 date: 2019-04-08 21:37:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - node
   - nodejs

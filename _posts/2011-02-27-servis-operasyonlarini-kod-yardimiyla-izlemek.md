@@ -3,8 +3,7 @@ layout: post
 title: "Servis Operasyonlarını Kod Yardımıyla İzlemek"
 date: 2011-02-27 16:20:00 +0300
 categories:
-  - wcf
-  - wcf-4-0
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - iparameterinspector

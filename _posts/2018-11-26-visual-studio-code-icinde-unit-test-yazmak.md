@@ -3,7 +3,7 @@ layout: post
 title: "Visual Studio Code İçinde Unit Test Yazmak"
 date: 2018-11-26 21:15:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - unit-test
   - mstest

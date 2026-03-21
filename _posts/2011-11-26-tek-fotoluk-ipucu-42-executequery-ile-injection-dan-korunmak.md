@@ -3,9 +3,9 @@ layout: post
 title: "Tek Fotoluk İpucu-42(ExecuteQuery ile Injection' dan Korunmak)"
 date: 2011-11-26 03:15:00 +0300
 categories:
-  - csharp
-  - linq-to-sql
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Veritabanı
+  - Genel
 tags:
   - csharp
   - language-integrated-query

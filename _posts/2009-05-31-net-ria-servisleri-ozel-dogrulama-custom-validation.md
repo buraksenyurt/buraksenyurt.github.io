@@ -3,7 +3,7 @@ layout: post
 title: ".Net RIA Servisleri - Özel Doğrulama(Custom Validation)"
 date: 2009-05-31 04:03:00 +0300
 categories:
-  - dotnet-ria-services
+  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight

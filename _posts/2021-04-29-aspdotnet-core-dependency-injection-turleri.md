@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Core - Dependency Injection Türleri"
 date: 2021-04-29 11:03:00 +0300
 categories:
-  - asp-dotnet-core
+  - Web Programlama
 tags:
   - dependency-injection
   - asp.net-core

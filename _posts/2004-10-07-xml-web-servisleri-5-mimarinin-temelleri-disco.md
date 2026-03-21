@@ -3,7 +3,7 @@ layout: post
 title: "Xml Web Servisleri - 5 (Mimarinin Temelleri - DISCO)"
 date: 2004-10-07 12:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - disco

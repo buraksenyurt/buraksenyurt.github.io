@@ -3,7 +3,7 @@ layout: post
 title: "Command Kavramı ve OleDbCommand Sınıfı"
 date: 2004-02-23 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb

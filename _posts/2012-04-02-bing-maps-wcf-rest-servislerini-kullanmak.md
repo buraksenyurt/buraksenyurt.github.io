@@ -3,7 +3,7 @@ layout: post
 title: "BING Maps WCF Rest Servislerini Kullanmak"
 date: 2012-04-02 04:00:00 +0300
 categories:
-  - bing
+  - Genel
 tags:
   - bing-maps
   - wcf-rest

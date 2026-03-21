@@ -3,7 +3,7 @@ layout: post
 title: "REST Starter Kit Nedir?"
 date: 2009-05-05 12:41:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

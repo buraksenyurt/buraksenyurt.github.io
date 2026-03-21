@@ -3,10 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 5 (Rastgele Sıralı Generic List Koleksiyonu)"
 date: 2011-06-23 21:15:00 +0300
 categories:
-  - csharp
-  - csharp-3-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - language-integrated-query

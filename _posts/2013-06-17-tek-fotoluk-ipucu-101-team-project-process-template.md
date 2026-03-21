@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 101–Team Project Process Template"
 date: 2013-06-17 12:30:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - team-foundation-server

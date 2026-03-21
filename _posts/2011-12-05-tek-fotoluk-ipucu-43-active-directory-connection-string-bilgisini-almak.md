@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-43(Active Directory Connection String Bilgisini Almak)"
 date: 2011-12-05 12:10:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - active-directory

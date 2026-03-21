@@ -3,7 +3,7 @@ layout: post
 title: "Dependency Inversion Principle - Kavramak"
 date: 2013-05-03 00:10:00 +0300
 categories:
-  - tasarim-prensipleri-design-principles
+  - Yazılım Tasarımı
 tags:
   - software-design-principle
   - dip

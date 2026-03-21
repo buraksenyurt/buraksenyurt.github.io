@@ -3,9 +3,8 @@ layout: post
 title: "Workflow Services - Custom Authorization"
 date: 2010-03-22 04:30:00 +0300
 categories:
-  - wcf-4-0
-  - wcf-4-0-rc
-  - wf-4-0-rc
+  - Servis Tabanlı Geliştirme
+  - Framework Tabanlı Programlama
 tags:
   - workflow-services
   - workflow-foundation

@@ -3,7 +3,7 @@ layout: post
 title: ".NET Core 2.0 ile Basit Bir Web API Geliştirmek"
 date: 2017-10-04 09:58:00 +0300
 categories:
-  - aspnet-web-api
+  - Servis Tabanlı Geliştirme
 tags:
   - .net-core
   - web-api

@@ -3,7 +3,7 @@ layout: post
 title: "WCF Known Types Analizi"
 date: 2009-10-20 13:36:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

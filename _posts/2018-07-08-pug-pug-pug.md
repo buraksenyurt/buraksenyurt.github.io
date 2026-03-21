@@ -3,7 +3,7 @@ layout: post
 title: "Pug, Pug, Pug"
 date: 2018-07-08 21:30:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - node.js
   - pug

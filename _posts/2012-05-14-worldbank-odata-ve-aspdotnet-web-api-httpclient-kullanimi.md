@@ -3,7 +3,7 @@ layout: post
 title: "WorldBank, OData ve ASP.Net Web API HttpClient Kullanımı"
 date: 2012-05-14 06:30:00 +0300
 categories:
-  - aspnet-web-api
+  - Servis Tabanlı Geliştirme
 tags:
   - asp.net-web-api
   - wcf-web-api

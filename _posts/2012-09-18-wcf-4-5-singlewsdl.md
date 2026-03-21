@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.5–SingleWSDL"
 date: 2012-09-18 05:50:00 +0300
 categories:
-  - wcf-4-5
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wsdl

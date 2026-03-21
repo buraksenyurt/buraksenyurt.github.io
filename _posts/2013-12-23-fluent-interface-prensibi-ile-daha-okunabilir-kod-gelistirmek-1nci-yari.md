@@ -3,10 +3,9 @@ layout: post
 title: "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek - 1nci Yarı"
 date: 2013-12-23 01:34:00 +0300
 categories:
-  - dotnet-temelleri
-  - csharp
-  - tasarim-kaliplari-design-patterns
-  - tasarim-prensipleri-design-principles
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
+  - Yazılım Tasarımı
 tags:
   - fluent-interface
   - fluent-api

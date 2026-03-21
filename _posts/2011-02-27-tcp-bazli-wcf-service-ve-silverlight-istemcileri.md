@@ -3,8 +3,8 @@ layout: post
 title: "TCP Bazlı WCF Service ve Silverlight İstemcileri"
 date: 2011-02-27 16:10:00 +0300
 categories:
-  - silverlight-4-0
-  - wcf-4-0
+  - Web Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - nettcpbinding
   - windows-communication-foundation

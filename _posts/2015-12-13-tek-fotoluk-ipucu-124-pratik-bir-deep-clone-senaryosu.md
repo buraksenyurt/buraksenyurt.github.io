@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 124 - Pratik Bir Deep Clone Senaryosu"
 date: 2015-12-13 17:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - csharp
   - deep-clone

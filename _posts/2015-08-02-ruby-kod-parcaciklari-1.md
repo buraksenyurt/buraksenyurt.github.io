@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 1"
 date: 2015-08-02 18:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - array

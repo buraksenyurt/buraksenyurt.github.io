@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Web Programlamaya Giriş"
 date: 2017-05-27 19:03:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - web-programming-model

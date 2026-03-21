@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-21(FileInfo,GZipStream ve Extension)"
 date: 2011-07-20 08:28:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - .net-framework

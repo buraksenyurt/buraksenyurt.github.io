@@ -3,7 +3,7 @@ layout: post
 title: "Duck Typing Nedir?"
 date: 2017-01-19 21:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - type-systems

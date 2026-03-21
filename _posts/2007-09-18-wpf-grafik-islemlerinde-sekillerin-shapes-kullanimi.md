@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Grafik İşlemlerinde Şekillerin(Shapes) Kullanımı"
 date: 2007-09-18 09:00:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - shapes

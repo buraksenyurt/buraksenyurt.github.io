@@ -3,7 +3,7 @@ layout: post
 title: "Serileştirme (Serialization) İçin Püf Noktalar"
 date: 2006-02-02 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - serialization

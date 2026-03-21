@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Web API Webiner Kaydı"
 date: 2012-03-20 15:23:00 +0300
 categories:
-  - nedirtv
+  - Genel
 tags:
   - asp.net-web-api
   - wcf-web-api

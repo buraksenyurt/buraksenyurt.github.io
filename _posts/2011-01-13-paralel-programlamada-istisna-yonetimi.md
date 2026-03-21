@@ -3,7 +3,7 @@ layout: post
 title: "Paralel Programlamada İstisna Yönetimi"
 date: 2011-01-13 13:30:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
   - task-parallel-library

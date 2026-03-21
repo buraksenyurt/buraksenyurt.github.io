@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-26 (Runtime Method Çağrımı)"
 date: 2011-08-19 06:30:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - extension-methods

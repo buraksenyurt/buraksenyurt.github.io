@@ -3,7 +3,7 @@ layout: post
 title: "Hasura GraphQL Engine ile geliştirilmiş bir API Servisini Vue.js ile Kullanmak"
 date: 2019-11-06 10:30:00 +0300
 categories:
-  - vuejs
+  - Web Programlama
 tags:
   - hasura
   - vue

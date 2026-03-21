@@ -3,7 +3,7 @@ layout: post
 title: "TFS Web Services ve Kullanımları"
 date: 2013-03-17 12:30:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - client-object-model

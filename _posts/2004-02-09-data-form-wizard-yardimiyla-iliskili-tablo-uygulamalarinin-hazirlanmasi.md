@@ -3,7 +3,7 @@ layout: post
 title: "Data Form Wizard Yardımıyla İlişkili Tablo Uygulamalarının Hazırlanması"
 date: 2004-02-09 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataform

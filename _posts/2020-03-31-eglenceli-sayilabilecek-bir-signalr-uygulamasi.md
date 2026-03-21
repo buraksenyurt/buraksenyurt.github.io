@@ -3,7 +3,7 @@ layout: post
 title: "Eğlenceli Sayılabilecek bir SignalR Uygulaması"
 date: 2020-03-31 21:44:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - signalr

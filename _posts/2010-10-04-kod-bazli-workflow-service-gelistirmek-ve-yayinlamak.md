@@ -3,8 +3,7 @@ layout: post
 title: "Kod Bazlı Workflow Service Geliştirmek ve Yayınlamak"
 date: 2010-10-04 16:20:00 +0300
 categories:
-  - wf
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - visual-studio

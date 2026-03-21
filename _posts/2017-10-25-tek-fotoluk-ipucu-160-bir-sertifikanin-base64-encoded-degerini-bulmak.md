@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 160 - Bir Sertifikanın Base64 Encoded Değerini Bulmak"
 date: 2017-10-25 09:04:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - x-509-certificate

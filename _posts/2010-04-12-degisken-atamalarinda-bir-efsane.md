@@ -3,7 +3,7 @@ layout: post
 title: "Değişken Atamalarında Bir Efsane"
 date: 2010-04-12 02:30:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
 ---

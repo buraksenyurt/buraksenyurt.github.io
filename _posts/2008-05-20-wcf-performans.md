@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Performans"
 date: 2008-05-20 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

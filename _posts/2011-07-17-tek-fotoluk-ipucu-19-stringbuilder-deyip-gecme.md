@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-19 (StringBuilder deyip geçme)"
 date: 2011-07-17 21:51:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - stringbuilder

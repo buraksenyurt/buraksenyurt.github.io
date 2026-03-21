@@ -3,7 +3,7 @@ layout: post
 title: "CORS(Cross-Origin Resource Sharing)"
 date: 2017-12-29 21:01:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - web-api

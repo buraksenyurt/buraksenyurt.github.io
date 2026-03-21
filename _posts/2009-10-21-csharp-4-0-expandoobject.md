@@ -3,7 +3,7 @@ layout: post
 title: "C# 4.0 - ExpandoObject"
 date: 2009-10-21 07:14:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - dynamic-language-runtime

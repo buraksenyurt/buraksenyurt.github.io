@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri – Template Method"
 date: 2015-02-03 19:00:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - tasarım-kalıpları

@@ -3,7 +3,7 @@ layout: post
 title: "Windows Servislerinin Kontrolü -1"
 date: 2004-05-05 09:00:00 +0300
 categories:
-  - windows-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
   - ServiceController

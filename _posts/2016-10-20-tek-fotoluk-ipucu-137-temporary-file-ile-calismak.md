@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 137 - Temporary File ile Çalışmak"
 date: 2016-10-20 21:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - io

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 61–Primitive Olmayan Property’ leri Bulmak"
 date: 2012-07-25 22:51:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - reflection
   - language-integrated-query

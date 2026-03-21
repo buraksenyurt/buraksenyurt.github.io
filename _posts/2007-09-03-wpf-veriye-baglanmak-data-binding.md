@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Veriye Bağlanmak (Data Binding)"
 date: 2007-09-03 12:00:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - data-binding

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–69–Newtonsoft JSON.Net ve dynamic Keyword"
 date: 2012-11-04 18:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - json

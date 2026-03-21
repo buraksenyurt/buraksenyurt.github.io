@@ -3,7 +3,7 @@ layout: post
 title: "Debug Edilebilir Windows Service Geliştirmek"
 date: 2011-04-10 10:34:00 +0300
 categories:
-  - windows-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
   - debug

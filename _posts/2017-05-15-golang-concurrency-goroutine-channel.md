@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Concurrency (goroutine, channel)"
 date: 2017-05-15 11:52:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - concurrency

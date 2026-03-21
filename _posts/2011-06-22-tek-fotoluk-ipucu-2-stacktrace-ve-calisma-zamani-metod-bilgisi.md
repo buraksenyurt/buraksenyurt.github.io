@@ -3,10 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 2 (StackTrace ve Çalışma Zamanı Metod Bilgisi)"
 date: 2011-06-22 01:48:00 +0300
 categories:
-  - csharp
-  - csharp-3-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - system.diagnostics

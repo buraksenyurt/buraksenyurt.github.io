@@ -3,7 +3,7 @@ layout: post
 title: "WWF : Çalışma Zamanı Motoru, Singleton ve Factory Desenleri"
 date: 2008-01-04 12:00:00 +0300
 categories:
-  - wf
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - singleton

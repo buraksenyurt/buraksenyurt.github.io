@@ -3,7 +3,7 @@ layout: post
 title: "C# 2.0 ve Nullable Değer Tipleri"
 date: 2005-06-22 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - value-types

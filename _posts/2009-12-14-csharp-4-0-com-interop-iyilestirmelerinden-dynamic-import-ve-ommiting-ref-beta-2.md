@@ -3,7 +3,7 @@ layout: post
 title: "C# 4.0 - COM Interop İyileştirmelerinden Dynamic Import ve Ommiting Ref [Beta 2]"
 date: 2009-12-14 20:30:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - .net-framework

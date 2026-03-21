@@ -3,7 +3,7 @@ layout: post
 title: "Hanoi Towers Probleminin Recursive Çözümü"
 date: 2013-06-13 10:12:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - alogirtma

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 112 - Acaba Bu Dosya Microsoft Office Open XML(OOXML) Formatında mı?"
 date: 2015-06-01 21:34:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - OOXML
   - io

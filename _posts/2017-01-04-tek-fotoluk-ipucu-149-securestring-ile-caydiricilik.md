@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 149 - SecureString ile Caydırıcılık"
 date: 2017-01-04 21:23:00 +0300
 categories:
-  - dotnet-temelleri
+  - Framework Tabanlı Programlama
 tags:
   - security
   - tek-fotoluk-ipucu

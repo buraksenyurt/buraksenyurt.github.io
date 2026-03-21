@@ -3,7 +3,7 @@ layout: post
 title: "Task Relations–Continuation Metodları"
 date: 2011-11-18 12:00:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming

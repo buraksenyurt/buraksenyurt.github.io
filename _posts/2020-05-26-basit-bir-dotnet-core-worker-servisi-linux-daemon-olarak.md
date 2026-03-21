@@ -3,7 +3,7 @@ layout: post
 title: "Basit Bir .Net Core Worker Servisi(Linux Daemon Olarak)"
 date: 2020-05-26 20:05:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - csharp
   - .net-core

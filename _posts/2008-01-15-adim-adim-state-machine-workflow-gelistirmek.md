@@ -3,7 +3,7 @@ layout: post
 title: "Adım Adım State Machine Workflow Geliştirmek"
 date: 2008-01-15 06:00:00 +0300
 categories:
-  - wf
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - windows-workflow-foundation

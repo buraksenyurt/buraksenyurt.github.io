@@ -3,7 +3,7 @@ layout: post
 title: "Rust ve Güvenli Bellek Yönetimi Hakkında"
 date: 2025-02-14 12:30:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - c++

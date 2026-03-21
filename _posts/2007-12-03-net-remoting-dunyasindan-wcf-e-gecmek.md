@@ -3,8 +3,8 @@ layout: post
 title: ".Net Remoting Dünyasından WCF'e Geçmek"
 date: 2007-12-03 12:00:00 +0300
 categories:
-  - dotnet-remoting
-  - wcf
+  - Framework Tabanlı Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - .net-remoting

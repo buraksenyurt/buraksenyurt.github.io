@@ -3,7 +3,7 @@ layout: post
 title: "Workflow Foundation 4.0 - Custom Async Activity Geliştirmek [Beta 2]"
 date: 2010-01-10 15:45:00 +0300
 categories:
-  - wf-4-0-beta-2
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

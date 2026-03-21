@@ -3,7 +3,7 @@ layout: post
 title: "XML Web Service Paketlerini Yakalamak"
 date: 2016-03-30 23:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - logging

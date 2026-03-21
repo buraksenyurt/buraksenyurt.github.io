@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Özelleştirilmiş UsernamePassword Validator Kullanımı"
 date: 2017-10-24 14:18:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wsHttpBinding

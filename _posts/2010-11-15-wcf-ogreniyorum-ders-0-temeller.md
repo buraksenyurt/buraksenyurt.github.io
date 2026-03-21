@@ -3,7 +3,7 @@ layout: post
 title: "WCF Öğreniyorum Ders 0–Temeller"
 date: 2010-11-15 08:30:00 +0300
 categories:
-  - wcf-ogreniyorum
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - nedir-tv

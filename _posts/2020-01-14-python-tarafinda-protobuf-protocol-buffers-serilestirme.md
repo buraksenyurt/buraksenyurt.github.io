@@ -3,7 +3,7 @@ layout: post
 title: "Python Tarafında ProtoBuf (Protocol Buffers) Serileştirme"
 date: 2020-01-14 21:00:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - python
   - protobuf

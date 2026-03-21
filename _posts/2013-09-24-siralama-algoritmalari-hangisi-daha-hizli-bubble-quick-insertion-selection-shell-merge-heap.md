@@ -3,8 +3,8 @@ layout: post
 title: "Sıralama Algoritmaları - Hangisi Daha Hızlı (Bubble, Quick, Insertion, Selection, Shell, Merge, Heap)"
 date: 2013-09-24 14:08:00 +0300
 categories:
-  - csharp
-  - data-structures-algorithms
+  - Programlama Dilleri
+  - Algoritma
 tags:
   - csharp
   - sıralama-algoritmaları

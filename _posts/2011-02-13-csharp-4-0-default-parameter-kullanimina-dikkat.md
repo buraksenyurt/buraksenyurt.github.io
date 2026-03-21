@@ -3,7 +3,7 @@ layout: post
 title: "C# 4.0 Default Parameter Kullanımına Dikkat"
 date: 2011-02-13 16:00:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - default-parameters

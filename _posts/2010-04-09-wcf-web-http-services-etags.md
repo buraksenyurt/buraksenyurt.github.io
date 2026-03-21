@@ -3,8 +3,7 @@ layout: post
 title: "WCF Web Http Services - ETags"
 date: 2010-04-09 05:05:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wcf-webhttp-services

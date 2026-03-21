@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Adım Adım IIS Hosting"
 date: 2007-04-28 03:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - iis

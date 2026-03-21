@@ -3,7 +3,7 @@ layout: post
 title: "Business Delegate Pattern"
 date: 2016-05-02 06:00:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - software-design-pattern

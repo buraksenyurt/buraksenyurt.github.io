@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 4.5- Strongly Typed Data Control"
 date: 2012-10-01 02:45:00 +0300
 categories:
-  - aspnet-4-5
+  - Web Programlama
 tags:
   - asp.net
   - strongly-typed-data-controls

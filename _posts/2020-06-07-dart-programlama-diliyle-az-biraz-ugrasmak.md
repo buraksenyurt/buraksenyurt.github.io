@@ -3,7 +3,7 @@ layout: post
 title: "DART Programlama Diliyle Az Biraz Uğraşmak"
 date: 2020-06-07 14:14:00 +0300
 categories:
-  - dart
+  - Programlama Dilleri
 tags:
   - dart
   - dartlang

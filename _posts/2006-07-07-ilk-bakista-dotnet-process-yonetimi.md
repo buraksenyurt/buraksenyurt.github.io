@@ -3,7 +3,7 @@ layout: post
 title: "İlk Bakışta .Net Process Yönetimi"
 date: 2006-07-07 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - Framework
   - process-management

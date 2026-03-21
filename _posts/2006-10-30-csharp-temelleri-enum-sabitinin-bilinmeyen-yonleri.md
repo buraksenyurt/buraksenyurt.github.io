@@ -3,7 +3,7 @@ layout: post
 title: "C# Temelleri : Enum Sabitinin Bilinmeyen Yönleri"
 date: 2006-10-30 02:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - enums

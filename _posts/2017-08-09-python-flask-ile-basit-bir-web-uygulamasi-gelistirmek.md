@@ -3,7 +3,7 @@ layout: post
 title: "Python - Flask ile Basit Bir Web Uygulaması Geliştirmek"
 date: 2017-08-09 21:02:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - python
   - flask

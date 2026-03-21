@@ -3,7 +3,7 @@ layout: post
 title: "TCP Bazlı Soket Haberleşmesinde Sertifika Kullanımı"
 date: 2015-11-09 21:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - tcp
   - soap

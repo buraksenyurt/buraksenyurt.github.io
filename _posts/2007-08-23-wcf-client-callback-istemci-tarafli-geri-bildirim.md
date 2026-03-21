@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Client Callback (İstemci Taraflı Geri Bildirim)"
 date: 2007-08-23 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - client-callback

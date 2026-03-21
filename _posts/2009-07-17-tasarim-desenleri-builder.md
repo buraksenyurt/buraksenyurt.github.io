@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Builder"
 date: 2009-07-17 10:44:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

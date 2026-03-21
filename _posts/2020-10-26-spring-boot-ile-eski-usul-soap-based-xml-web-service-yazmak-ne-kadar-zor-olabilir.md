@@ -3,7 +3,7 @@ layout: post
 title: "Spring Boot ile Eski Usül Soap Based XML Web Service Yazmak Ne Kadar Zor Olabilir?"
 date: 2020-10-26 17:51:00 +0300
 categories:
-  - spring-boot
+  - Framework Tabanlı Programlama
 tags:
   - java
   - spring-boot

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 131 - Servisim Yaşıyor mu?"
 date: 2016-05-08 02:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - web-request
   - web-response

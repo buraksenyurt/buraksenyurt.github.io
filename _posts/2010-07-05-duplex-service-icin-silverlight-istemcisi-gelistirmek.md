@@ -3,8 +3,8 @@ layout: post
 title: "Duplex Service için Silverlight İstemcisi Geliştirmek"
 date: 2010-07-05 01:00:00 +0300
 categories:
-  - silverlight-4-0
-  - wcf
+  - Web Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - silverlight

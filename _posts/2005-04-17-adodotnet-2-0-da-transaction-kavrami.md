@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net 2.0' da Transaction Kavramı"
 date: 2005-04-17 12:00:00 +0300
 categories:
-  - ado-net-2-0
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction

@@ -3,7 +3,7 @@ layout: post
 title: "Fluent Interface Nedir?"
 date: 2011-03-27 05:15:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - .net-framework
   - csharp

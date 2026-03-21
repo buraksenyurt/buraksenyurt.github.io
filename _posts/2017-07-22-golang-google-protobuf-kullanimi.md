@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Google ProtoBuf Kullanımı"
 date: 2017-07-22 21:03:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - google-proto-buffers

@@ -3,8 +3,7 @@ layout: post
 title: "WCF WebHttp Services - Client Tarafını Geliştirmek"
 date: 2010-02-05 00:45:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services

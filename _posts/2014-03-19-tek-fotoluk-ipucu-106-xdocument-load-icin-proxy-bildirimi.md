@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 106 - XDocument.Load için Proxy Bildirimi"
 date: 2014-03-19 15:45:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags: []
 ---
 Şirkette üzerinizdeki işler hafiflemiş durumda. Epeydir de yoğun çalışıyordunuz. Şöyle bir ara vermek istediniz. En azından bir on beş dakikanız serbest. Internette gezinebilirseniz de ama...Başka bir şeylere de bakılabilir. Öyleyse antrenman sorusu geliyor.

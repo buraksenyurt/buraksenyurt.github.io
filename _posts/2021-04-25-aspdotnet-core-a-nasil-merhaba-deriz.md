@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Core'a Nasıl Merhaba Deriz?"
 date: 2021-04-25 09:00:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net
   - .net-core

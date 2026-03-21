@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net 2.0(Beta 2) - Connection String Security (Bağlantı Katarı için Güvenlik)"
 date: 2005-10-17 09:00:00 +0300
 categories:
-  - ado-net-2-0
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - connection-string-security

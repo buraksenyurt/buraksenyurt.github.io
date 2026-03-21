@@ -3,9 +3,8 @@ layout: post
 title: "Silverlight Tarafından Feed Okumak"
 date: 2010-07-22 09:05:00 +0300
 categories:
-  - silverlight-4-0
-  - wcf-eco-system
-  - wcf-ria-services
+  - Web Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - silverlight
   - windows-communication-foundation

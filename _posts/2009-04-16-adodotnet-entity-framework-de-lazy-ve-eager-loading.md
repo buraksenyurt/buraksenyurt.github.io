@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net Entity Framework' de Lazy ve Eager Loading"
 date: 2009-04-16 03:41:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - language-integrated-query

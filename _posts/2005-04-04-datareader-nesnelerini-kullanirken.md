@@ -3,7 +3,7 @@ layout: post
 title: "DataReader Nesnelerini Kullanırken…"
 date: 2005-04-04 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sqldatareader

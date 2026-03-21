@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework Code-First için Calculated Fields Kullanımı"
 date: 2013-02-08 05:15:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - sql

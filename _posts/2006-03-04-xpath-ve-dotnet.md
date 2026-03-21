@@ -3,7 +3,7 @@ layout: post
 title: "XPath ve .Net"
 date: 2006-03-04 06:00:00 +0300
 categories:
-  - xml
+  - Web Programlama
 tags:
   - xml
   - x-path

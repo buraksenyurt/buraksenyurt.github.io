@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net Data Services Ders Notları - 6 (Optimistic Concurrency)"
 date: 2008-10-30 10:00:00 +0300
 categories:
-  - ado-net-data-services
+  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
   - wcf-data-services

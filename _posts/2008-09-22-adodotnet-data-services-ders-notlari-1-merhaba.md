@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net Data Services Ders Notları - 1 (Merhaba)"
 date: 2008-09-22 12:00:00 +0300
 categories:
-  - ado-net-data-services
+  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - ado.net-data-services

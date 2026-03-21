@@ -3,7 +3,7 @@ layout: post
 title: "C#’ ın Enteresan Yanları"
 date: 2013-06-09 02:44:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - static-fields

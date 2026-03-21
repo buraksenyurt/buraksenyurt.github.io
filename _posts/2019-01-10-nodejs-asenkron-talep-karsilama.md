@@ -3,7 +3,7 @@ layout: post
 title: "Node.js - Asenkron Talep Karşılama"
 date: 2019-01-10 17:00:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - node.js
   - async

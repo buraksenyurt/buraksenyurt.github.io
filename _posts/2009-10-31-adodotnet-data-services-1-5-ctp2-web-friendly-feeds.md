@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net Data Services 1.5 CTP2 - Web Friendly Feeds"
 date: 2009-10-31 11:25:00 +0300
 categories:
-  - ado-net-data-services
+  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
   - web-firendly-feeds

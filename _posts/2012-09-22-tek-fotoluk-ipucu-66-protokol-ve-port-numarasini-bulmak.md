@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–66–Protokol ve Port Numarasını Bulmak"
 date: 2012-09-22 21:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - extension-methods
   - regex

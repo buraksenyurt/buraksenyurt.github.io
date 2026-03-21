@@ -3,7 +3,7 @@ layout: post
 title: "NoSQL Maceraları - db4o ile Hello World"
 date: 2013-11-12 21:01:00 +0300
 categories:
-  - nosql
+  - Veritabanı
 tags:
   - db4o
   - object-database

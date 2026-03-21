@@ -3,7 +3,7 @@ layout: post
 title: "Overload Metodların Gücü"
 date: 2003-11-13 13:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - overloading

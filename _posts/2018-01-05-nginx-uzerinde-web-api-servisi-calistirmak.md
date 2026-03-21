@@ -3,7 +3,7 @@ layout: post
 title: "Nginx Üzerinde Web API Servisi Çalıştırmak"
 date: 2018-01-05 08:54:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - asp.net-core-web-api

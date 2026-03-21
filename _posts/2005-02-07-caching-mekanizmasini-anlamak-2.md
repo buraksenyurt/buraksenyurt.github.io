@@ -3,7 +3,7 @@ layout: post
 title: "Caching Mekanizmasını Anlamak - 2"
 date: 2005-02-07 12:00:00 +0300
 categories:
-  - aspnet
+  - Web Programlama
 tags:
   - asp.net
   - caching

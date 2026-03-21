@@ -3,7 +3,7 @@ layout: post
 title: "Task Süreçlerinde Bilinçli Olarak Duraksatma"
 date: 2010-12-31 13:20:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - csharp

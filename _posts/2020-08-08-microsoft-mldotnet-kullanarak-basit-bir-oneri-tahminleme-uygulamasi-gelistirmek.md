@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft ML.Net Kullanarak Basit Bir Öneri Tahminleme Uygulaması Geliştirmek"
 date: 2020-08-08 06:13:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - ml.net
   - .net-core

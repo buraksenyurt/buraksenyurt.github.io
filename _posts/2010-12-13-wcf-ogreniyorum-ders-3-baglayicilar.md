@@ -3,7 +3,7 @@ layout: post
 title: "WCF Öğreniyorum Ders 3–Bağlayıcılar"
 date: 2010-12-13 10:30:00 +0300
 categories:
-  - wcf-ogreniyorum
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - nedir-tv

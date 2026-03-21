@@ -3,8 +3,7 @@ layout: post
 title: "WCF WebHttp Services - Routing"
 date: 2010-03-07 21:45:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services

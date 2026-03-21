@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 2 (Hashes)"
 date: 2015-08-04 21:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - hashes

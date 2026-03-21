@@ -3,7 +3,7 @@ layout: post
 title: "Yıllar Sonra Yeniden Enum Sabitleri"
 date: 2011-02-20 16:05:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - enums

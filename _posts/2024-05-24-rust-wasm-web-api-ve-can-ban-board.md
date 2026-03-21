@@ -3,7 +3,7 @@ layout: post
 title: "Rust, WASM, Web Api ve Can-Ban Board !"
 date: 2024-05-24 08:49:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - web-api

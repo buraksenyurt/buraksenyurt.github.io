@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 128 - DataTable içeriğini Generic List'e İndirmek"
 date: 2016-03-21 11:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - oracle
   - sql

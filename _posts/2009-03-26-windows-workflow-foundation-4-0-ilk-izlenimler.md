@@ -3,7 +3,7 @@ layout: post
 title: "Windows Workflow Foundation 4.0 - İlk İzlenimler"
 date: 2009-03-26 12:00:00 +0300
 categories:
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

@@ -3,11 +3,9 @@ layout: post
 title: "Tek Fotoluk İpucu - 15(Self Hosted Workflow Service)"
 date: 2011-07-07 08:05:00 +0300
 categories:
-  - tek-fotoluk-ipucu
-  - wcf
-  - wcf-4-0
-  - wf
-  - wf-4-0
+  - Genel
+  - Servis Tabanlı Geliştirme
+  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - workflow-foundation

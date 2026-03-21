@@ -3,7 +3,7 @@ layout: post
 title: "TPL Senkronizasyonu Sağlamak – 2 (Interlocked)"
 date: 2011-01-31 13:45:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - synchronization-primitives

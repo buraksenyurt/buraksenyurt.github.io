@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework - Many To Many Relations - Link Tablosunu Okumak"
 date: 2010-02-15 22:30:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
 ---

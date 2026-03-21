@@ -3,7 +3,7 @@ layout: post
 title: "Parallel.For Metodu için Stop, Break Kullanımı [Beta 1]"
 date: 2009-06-18 06:32:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
 ---

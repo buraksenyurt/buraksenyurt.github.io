@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Yönlendiriciler (Routers)"
 date: 2017-06-26 10:30:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - web-programming-model

@@ -3,7 +3,7 @@ layout: post
 title: "Netspecter Abstract Class Peşinde"
 date: 2011-04-07 09:18:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - interface

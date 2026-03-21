@@ -3,7 +3,7 @@ layout: post
 title: ".Net Remoting - Lease Time (Kiralık Süre) Yönetimi"
 date: 2006-04-06 12:00:00 +0300
 categories:
-  - dotnet-remoting
+  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
   - lease-time-management

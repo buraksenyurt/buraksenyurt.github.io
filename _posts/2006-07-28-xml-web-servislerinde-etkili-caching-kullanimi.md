@@ -3,7 +3,7 @@ layout: post
 title: "Xml Web Servislerinde Etkili Caching Kullanımı"
 date: 2006-07-28 12:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - cache

@@ -3,8 +3,7 @@ layout: post
 title: "WCF RIA Services - Kendi Sorgularımızı Kullanmak"
 date: 2009-11-25 04:30:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-ria-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services

@@ -3,8 +3,7 @@ layout: post
 title: "WCF RIA Services - Authentication Domain Service - Attribute Bazlı Yetkilendirme [Beta 2]"
 date: 2010-01-22 00:45:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-ria-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services

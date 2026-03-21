@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 63–Uri Üzerinden Ping Sürelerine Bakmak"
 date: 2012-09-02 19:50:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - uri
   - extension-methods

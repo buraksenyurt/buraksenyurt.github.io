@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 54 - Control Nerede?"
 date: 2012-06-03 20:15:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - windows-forms

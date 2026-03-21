@@ -3,7 +3,7 @@ layout: post
 title: "Service Orientation vs Object Orientation"
 date: 2009-07-30 11:11:00 +0300
 categories:
-  - soa
+  - Servis Tabanlı Geliştirme
 tags:
   - soa
 ---

@@ -3,7 +3,7 @@ layout: post
 title: ".Net Uygulama Güvenliği–Hacking ve Tedbirleri"
 date: 2013-05-07 13:30:00 +0300
 categories:
-  - dotnet-temelleri
+  - Framework Tabanlı Programlama
 tags:
   - .net-security
   - ildasm

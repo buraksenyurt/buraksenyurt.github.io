@@ -3,7 +3,7 @@ layout: post
 title: "OleDbDataAdapter Sınıfı - 2"
 date: 2004-03-02 10:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb

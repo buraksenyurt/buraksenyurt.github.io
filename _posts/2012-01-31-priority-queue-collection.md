@@ -3,7 +3,7 @@ layout: post
 title: "Priority Queue Collection"
 date: 2012-01-31 15:01:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - collections
   - priortiy-queue

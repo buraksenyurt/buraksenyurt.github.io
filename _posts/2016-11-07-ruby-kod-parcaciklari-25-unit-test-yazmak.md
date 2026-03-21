@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 25 - Unit Test Yazmak"
 date: 2016-11-07 21:28:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - unit-test

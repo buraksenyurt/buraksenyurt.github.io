@@ -3,7 +3,7 @@ layout: post
 title: "WPF - Temel Animasyon İşlemleri"
 date: 2007-09-26 12:00:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - animation

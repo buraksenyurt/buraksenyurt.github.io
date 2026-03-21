@@ -3,7 +3,7 @@ layout: post
 title: "C# Temelleri : Static Olmak"
 date: 2006-09-13 18:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - static-type

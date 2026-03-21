@@ -3,7 +3,7 @@ layout: post
 title: "Specification Tasarım Kalıbına Gitmeye Çalışırken Ben"
 date: 2016-09-20 21:30:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - architecture-design-pattern

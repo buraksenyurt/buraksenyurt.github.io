@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework–İki Entity Bir Table ile Lazy ve Eager Loading"
 date: 2014-10-12 02:00:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - lazy-loading

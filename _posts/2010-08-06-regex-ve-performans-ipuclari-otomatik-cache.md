@@ -3,7 +3,7 @@ layout: post
 title: "Regex ve Performans İpuçları – Otomatik Cache"
 date: 2010-08-06 07:05:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 15 (Mixins)"
 date: 2015-09-16 15:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - mixin
   - ruby-lang

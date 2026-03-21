@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 67.5–Asp.Net 4.5 No More DataBind"
 date: 2012-09-25 05:45:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - asp.net

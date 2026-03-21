@@ -3,7 +3,7 @@ layout: post
 title: "Simetrik Şifreleme(Symmetric Cryptography) Hızları"
 date: 2014-09-28 04:00:00 +0300
 categories:
-  - dotnet-framework-4-5
+  - Framework Tabanlı Programlama
 tags:
   - cryptography
   - encryption

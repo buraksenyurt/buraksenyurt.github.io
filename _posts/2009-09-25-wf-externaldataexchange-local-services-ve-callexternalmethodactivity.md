@@ -3,7 +3,7 @@ layout: post
 title: "WF - ExternalDataExchange, Local Services ve CallExternalMethodActivity"
 date: 2009-09-25 07:23:00 +0300
 categories:
-  - wf
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

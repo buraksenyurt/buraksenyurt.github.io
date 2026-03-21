@@ -3,7 +3,7 @@ layout: post
 title: "Windows Phone 7 Cihazlarda LINQ to SQL Kökenli Veritabanı ile Çalışmak"
 date: 2012-10-10 21:00:00 +0300
 categories:
-  - windows-phone-7
+  - Mobil Programlama
 tags:
   - windows-phone-7
   - windows-phone-mango

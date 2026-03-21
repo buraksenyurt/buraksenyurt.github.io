@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-30 (Entity Sorgusundan Excel Dosyasına)"
 date: 2011-09-13 10:30:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - tek-fotoluk-ipucu
+  - Framework Tabanlı Programlama
+  - Genel
 tags:
   - .net-framework
   - csharp

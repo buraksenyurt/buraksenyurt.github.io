@@ -3,8 +3,8 @@ layout: post
 title: "LINQ Sorgusu mu? ForEach mi? Bir Türlü Karar Veremedim"
 date: 2010-05-27 20:40:00 +0300
 categories:
-  - csharp
-  - linq
+  - Programlama Dilleri
+  - Veritabanı
 tags:
   - csharp
   - language-integrated-query

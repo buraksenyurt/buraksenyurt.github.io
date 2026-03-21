@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 119 - En Keyifli Validation"
 date: 2015-06-28 10:40:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - validation

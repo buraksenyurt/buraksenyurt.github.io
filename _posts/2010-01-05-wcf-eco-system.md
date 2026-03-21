@@ -3,7 +3,7 @@ layout: post
 title: "WCF Eco System"
 date: 2010-01-05 01:30:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wcf-ria-services

@@ -3,7 +3,7 @@ layout: post
 title: "West-World'ün RabbitMQ ile Tanışmasının Zamanı Gelmişti"
 date: 2018-09-09 21:49:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - rabbitmq
   - message-queue

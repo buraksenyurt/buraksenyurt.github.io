@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Prensipleri - Open Closed"
 date: 2009-06-25 04:22:00 +0300
 categories:
-  - tasarim-prensipleri-design-principles
+  - Yazılım Tasarımı
 tags:
   - design-principles
 ---

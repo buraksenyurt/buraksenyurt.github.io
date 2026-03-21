@@ -3,7 +3,7 @@ layout: post
 title: "Workflow Foundation, Oracle, WCF ve TransactionScope"
 date: 2013-01-31 22:36:00 +0300
 categories:
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - windows-communication-foundation

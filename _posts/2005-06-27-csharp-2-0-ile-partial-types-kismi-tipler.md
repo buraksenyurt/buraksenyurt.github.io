@@ -3,7 +3,7 @@ layout: post
 title: "C# 2.0 ile Partial Types (Kısmi Tipler)"
 date: 2005-06-27 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - class

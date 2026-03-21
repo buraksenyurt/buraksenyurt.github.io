@@ -3,7 +3,7 @@ layout: post
 title: "Indeksleyiciler (Indexers)"
 date: 2004-01-27 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - indexers

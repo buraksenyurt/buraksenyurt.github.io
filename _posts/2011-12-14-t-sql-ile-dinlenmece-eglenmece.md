@@ -3,7 +3,7 @@ layout: post
 title: "T-SQL ile Dinlenmece Eğlenmece"
 date: 2011-12-14 16:25:00 +0300
 categories:
-  - t-sql
+  - Veritabanı
 tags:
   - sql
   - stored-procedures

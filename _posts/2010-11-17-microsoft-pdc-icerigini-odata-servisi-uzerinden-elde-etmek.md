@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft PDC İçeriğini OData Servisi Üzerinden Elde Etmek"
 date: 2010-11-17 22:18:00 +0300
 categories:
-  - wcf-data-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - odata

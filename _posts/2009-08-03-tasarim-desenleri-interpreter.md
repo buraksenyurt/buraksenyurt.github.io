@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Interpreter"
 date: 2009-08-03 06:30:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

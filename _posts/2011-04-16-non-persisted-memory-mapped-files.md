@@ -3,8 +3,8 @@ layout: post
 title: "Non-Persisted Memory Mapped Files"
 date: 2011-04-16 15:00:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - csharp-4-0
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
 tags:
   - .net-framework
   - csharp

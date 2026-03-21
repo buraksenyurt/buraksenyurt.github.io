@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Pointers"
 date: 2017-03-31 21:15:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - pointer

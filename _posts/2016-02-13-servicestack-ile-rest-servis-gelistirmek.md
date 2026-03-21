@@ -3,7 +3,7 @@ layout: post
 title: "ServiceStack ile REST Servis Geliştirmek"
 date: 2016-02-13 07:00:00 +0300
 categories:
-  - rest
+  - Servis Tabanlı Geliştirme
 tags:
   - rest-api
   - service

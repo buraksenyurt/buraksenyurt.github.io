@@ -3,7 +3,7 @@ layout: post
 title: "HTTPHandler ve HttpModule Kavramları"
 date: 2006-12-08 04:00:00 +0300
 categories:
-  - aspnet
+  - Web Programlama
 tags:
   - asp.net
   - http-handler

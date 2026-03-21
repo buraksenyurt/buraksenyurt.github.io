@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 98–Stopwatch ile Performans Ölçümü"
 date: 2013-03-25 19:32:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - stopwatch
   - system.diagnostics

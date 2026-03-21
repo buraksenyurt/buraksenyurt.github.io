@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–47 (Mime Type)"
 date: 2012-02-14 23:11:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - mime-type
   - response.contenttype

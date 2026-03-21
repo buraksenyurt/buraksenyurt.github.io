@@ -3,7 +3,7 @@ layout: post
 title: "Json, Protobuf ve MessagePack Serileştirme Performansları"
 date: 2019-04-01 06:00:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - protobuf
   - message-pack

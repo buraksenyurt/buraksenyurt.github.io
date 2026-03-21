@@ -3,7 +3,7 @@ layout: post
 title: "ObservableCollection’ ı Anlamak"
 date: 2014-05-01 13:59:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - design-patterns
   - observablecollection

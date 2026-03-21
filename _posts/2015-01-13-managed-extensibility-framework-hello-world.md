@@ -3,8 +3,7 @@ layout: post
 title: "Managed Extensibility Framework - Hello World"
 date: 2015-01-13 15:00:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - dotnet-framework-4-5
+  - Framework Tabanlı Programlama
 tags:
   - mef
   - managed-extensibility-framework

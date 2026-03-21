@@ -3,7 +3,7 @@ layout: post
 title: "Boxing (Kutulamak) ve Unboxing (Kutuyu Kaldırmak)"
 date: 2003-12-30 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - ado.net
   - boxing

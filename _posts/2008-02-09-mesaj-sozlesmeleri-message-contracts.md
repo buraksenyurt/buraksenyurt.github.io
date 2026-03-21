@@ -3,7 +3,7 @@ layout: post
 title: "Mesaj Sözleşmeleri(Message Contracts)"
 date: 2008-02-09 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - windows-communication-foundation
 ---

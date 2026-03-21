@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 17 - (YAML ve Binary Serileştirme)"
 date: 2015-10-11 04:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - yaml

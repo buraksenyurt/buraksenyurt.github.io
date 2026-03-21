@@ -3,7 +3,7 @@ layout: post
 title: "TFS OData Desteği"
 date: 2013-08-25 10:35:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - odata

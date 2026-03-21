@@ -3,8 +3,7 @@ layout: post
 title: "AttachedToParent Hakkında Detaylar"
 date: 2010-09-02 08:30:00 +0300
 categories:
-  - parallel-programming
-  - tpl
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming

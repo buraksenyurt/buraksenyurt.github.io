@@ -3,7 +3,7 @@ layout: post
 title: "Client Side SponshorShip"
 date: 2006-04-12 12:00:00 +0300
 categories:
-  - dotnet-remoting
+  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
 ---

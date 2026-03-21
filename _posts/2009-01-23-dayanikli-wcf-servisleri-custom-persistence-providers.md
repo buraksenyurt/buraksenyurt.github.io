@@ -3,7 +3,7 @@ layout: post
 title: "Dayanıklı WCF Servisleri(Custom Persistence Providers)"
 date: 2009-01-23 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

@@ -3,8 +3,8 @@ layout: post
 title: "Entity Framework - Generic Repository ve Unit of Work Uyarlaması"
 date: 2014-12-14 03:00:00 +0300
 categories:
-  - entity-framework
-  - tasarim-prensipleri-design-principles
+  - Veritabanı
+  - Yazılım Tasarımı
 tags:
   - entity-framework
   - generics

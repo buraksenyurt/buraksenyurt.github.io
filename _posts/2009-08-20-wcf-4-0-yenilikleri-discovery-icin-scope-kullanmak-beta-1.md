@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.0 Yenilikleri - Discovery için Scope Kullanmak [Beta 1]"
 date: 2009-08-20 16:57:00 +0300
 categories:
-  - wcf-4-0-beta-1
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

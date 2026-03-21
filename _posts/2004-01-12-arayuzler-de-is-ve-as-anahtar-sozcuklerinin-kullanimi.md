@@ -3,7 +3,7 @@ layout: post
 title: "Arayüzler'de is ve as Anahtar Sözcüklerinin Kullanımı"
 date: 2004-01-12 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - as

@@ -3,7 +3,7 @@ layout: post
 title: "Enumerators"
 date: 2003-12-01 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - enums

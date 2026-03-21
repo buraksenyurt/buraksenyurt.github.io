@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 89–Exif Bilgilerini Okumak"
 date: 2013-03-25 21:05:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - image

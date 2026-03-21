@@ -3,7 +3,7 @@ layout: post
 title: "C# 4.0 - Dynamic Olmak"
 date: 2009-04-30 15:02:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
 ---

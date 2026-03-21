@@ -3,7 +3,7 @@ layout: post
 title: ".Net Memory Management’ i Kavramak"
 date: 2012-03-02 06:54:00 +0300
 categories:
-  - dotnet-framework-4-0
+  - Framework Tabanlı Programlama
 tags:
   - garbage-collection
   - .net-memory-management

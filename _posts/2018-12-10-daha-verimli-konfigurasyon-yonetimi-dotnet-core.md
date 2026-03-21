@@ -3,7 +3,7 @@ layout: post
 title: "Daha Verimli Konfigürasyon Yönetimi (.Net Core)"
 date: 2018-12-10 06:36:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - configuration-management
   - .net-core

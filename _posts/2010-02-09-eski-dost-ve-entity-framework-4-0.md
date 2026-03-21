@@ -3,7 +3,7 @@ layout: post
 title: "Eski Dost ve Entity Framework 4.0"
 date: 2010-02-09 07:28:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
 ---

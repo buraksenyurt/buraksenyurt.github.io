@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Interface Kavramı"
 date: 2017-05-07 10:57:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - interface

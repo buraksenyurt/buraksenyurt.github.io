@@ -3,7 +3,7 @@ layout: post
 title: "Private Assembly ve Shared Assembly Kavramı"
 date: 2004-04-22 09:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - Framework
   - assembly

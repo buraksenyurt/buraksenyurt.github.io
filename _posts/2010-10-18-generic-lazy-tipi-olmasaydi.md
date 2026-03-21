@@ -3,7 +3,7 @@ layout: post
 title: "Generic Lazy Tipi Olmasaydı"
 date: 2010-10-18 02:05:00 +0300
 categories:
-  - csharp-4-0
+  - Programlama Dilleri
 tags:
   - csharp
   - base-class-library

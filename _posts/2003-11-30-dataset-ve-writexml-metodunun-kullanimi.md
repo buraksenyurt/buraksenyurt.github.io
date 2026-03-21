@@ -3,7 +3,7 @@ layout: post
 title: "DataSet ve WriteXml Metodunun Kullanımı"
 date: 2003-11-30 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataset

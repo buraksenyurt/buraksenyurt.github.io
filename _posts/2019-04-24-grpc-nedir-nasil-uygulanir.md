@@ -3,7 +3,7 @@ layout: post
 title: "gRPC Nedir, Nasıl Uygulanır?"
 date: 2019-04-24 07:06:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - node.js
   - rpc

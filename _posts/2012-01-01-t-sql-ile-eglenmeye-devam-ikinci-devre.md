@@ -3,7 +3,7 @@ layout: post
 title: "T-SQL ile Eğlenmeye Devam(İkinci Devre)"
 date: 2012-01-01 14:06:00 +0300
 categories:
-  - t-sql
+  - Veritabanı
 tags:
   - sql
   - transact-sql

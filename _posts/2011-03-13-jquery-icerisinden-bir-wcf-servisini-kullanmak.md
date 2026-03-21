@@ -3,8 +3,7 @@ layout: post
 title: "jQuery İçerisinden Bir WCF Servisini Kullanmak"
 date: 2011-03-13 21:27:00 +0300
 categories:
-  - wcf
-  - wcf-4-0
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - jquery

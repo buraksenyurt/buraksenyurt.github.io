@@ -3,7 +3,7 @@ layout: post
 title: "Sıkça Duyduğum Deno'ya Hello Dedim"
 date: 2020-01-04 21:00:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - deno
   - nodejs

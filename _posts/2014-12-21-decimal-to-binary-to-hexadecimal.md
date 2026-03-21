@@ -3,7 +3,7 @@ layout: post
 title: "Decimal to Binary to Hexadecimal"
 date: 2014-12-21 17:00:00 +0300
 categories:
-  - algoritma
+  - Algoritma
 tags:
   - csharp
   - sayı-sistemleri

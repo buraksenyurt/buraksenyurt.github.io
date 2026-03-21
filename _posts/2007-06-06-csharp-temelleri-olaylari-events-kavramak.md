@@ -3,7 +3,7 @@ layout: post
 title: "C# Temelleri - Olayları(Events) Kavramak"
 date: 2007-06-06 09:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - events

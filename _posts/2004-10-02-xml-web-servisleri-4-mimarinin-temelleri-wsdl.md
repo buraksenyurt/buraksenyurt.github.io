@@ -3,7 +3,7 @@ layout: post
 title: "Xml Web Servisleri - 4 ( Mimarinin Temelleri - WSDL)"
 date: 2004-10-02 12:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - xml

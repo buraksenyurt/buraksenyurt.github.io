@@ -3,7 +3,7 @@ layout: post
 title: "Electron ile Cross-Platform Uygulama Geliştirmek"
 date: 2018-11-30 05:06:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - electron
   - .net-core

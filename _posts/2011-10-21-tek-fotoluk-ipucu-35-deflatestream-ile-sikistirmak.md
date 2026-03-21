@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-35(DeflateStream ile Sıkıştırmak)"
 date: 2011-10-21 08:13:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - .net-framework

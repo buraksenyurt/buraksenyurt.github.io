@@ -3,7 +3,7 @@ layout: post
 title: "Web Servisleri İçin Dört Püf Nokta"
 date: 2006-03-14 10:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
 ---

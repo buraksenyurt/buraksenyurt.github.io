@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 55 - Distinct ve IEqualityComparer"
 date: 2012-07-03 21:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - distinct
   - extension-methods

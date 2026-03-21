@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework - Entity Bölünmesi (Splitting)"
 date: 2010-04-04 20:15:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - entity

@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu–14 (Compiled Query)"
 date: 2011-07-06 00:30:00 +0300
 categories:
-  - entity-framework
-  - tek-fotoluk-ipucu
+  - Veritabanı
+  - Genel
 tags:
   - entity-framework
   - language-integrated-query

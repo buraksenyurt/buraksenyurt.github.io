@@ -3,7 +3,7 @@ layout: post
 title: "Workflow Foundation 4.0 - Kodlama Zamanında Doğrulama(Validation)"
 date: 2010-01-15 01:08:00 +0300
 categories:
-  - wf-4-0-beta-2
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

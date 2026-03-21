@@ -3,7 +3,7 @@ layout: post
 title: "Dayanıklı WCF Servisleri (Durable WCF Services)"
 date: 2009-01-16 10:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

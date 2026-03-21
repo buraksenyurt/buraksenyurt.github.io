@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 4.5–Asenkron HTTP Module Geliştirmek"
 date: 2013-10-13 11:00:00 +0300
 categories:
-  - aspnet-4-5
+  - Web Programlama
 tags:
   - asp.net
   - http-handler

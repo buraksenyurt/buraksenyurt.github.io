@@ -3,7 +3,7 @@ layout: post
 title: "TFS–Client Object Model için Hello World"
 date: 2013-03-15 02:30:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - team-explorer-everywhere

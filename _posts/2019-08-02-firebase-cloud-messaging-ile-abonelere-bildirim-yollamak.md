@@ -3,7 +3,7 @@ layout: post
 title: "Firebase Cloud Messaging ile Abonelere Bildirim Yollamak"
 date: 2019-08-02 17:48:00 +0300
 categories:
-  - gcp
+  - Bulut Bilişim
 tags:
   - google-cloud-platform
   - progressive-web-app

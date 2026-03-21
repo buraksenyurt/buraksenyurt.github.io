@@ -3,7 +3,7 @@ layout: post
 title: "BeeWare ile Linux Platformunda Desktop Uygulaması Geliştirmek ve Android Sürümünü Oluşturmak"
 date: 2020-09-13 21:05:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - pyhton
   - cross-platform-development

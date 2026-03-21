@@ -3,7 +3,7 @@ layout: post
 title: "TFİ 110 - Control Tipini Extend Edip Basit Bind İşlemleri Gerçekleştirmek"
 date: 2014-10-08 21:07:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - tfi

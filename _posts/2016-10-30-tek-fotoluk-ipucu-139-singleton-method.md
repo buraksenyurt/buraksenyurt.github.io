@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 139 - Singleton Method"
 date: 2016-10-30 21:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - singleton-method

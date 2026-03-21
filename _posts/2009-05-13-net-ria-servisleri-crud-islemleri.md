@@ -3,7 +3,7 @@ layout: post
 title: ".Net RIA Servisleri - CRUD İşlemleri"
 date: 2009-05-13 22:50:00 +0300
 categories:
-  - dotnet-ria-services
+  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight

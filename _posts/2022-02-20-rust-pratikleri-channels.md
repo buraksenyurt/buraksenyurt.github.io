@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - Channels"
 date: 2022-02-20 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

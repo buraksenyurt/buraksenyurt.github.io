@@ -3,7 +3,7 @@ layout: post
 title: "İlişkili Tabloları DataSet İle Kullanmak - 1"
 date: 2003-12-09 10:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataset

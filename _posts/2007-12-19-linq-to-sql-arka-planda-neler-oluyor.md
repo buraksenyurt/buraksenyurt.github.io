@@ -3,7 +3,7 @@ layout: post
 title: "Linq To Sql : Arka Planda Neler Oluyor?"
 date: 2007-12-19 10:00:00 +0300
 categories:
-  - linq-to-sql
+  - Veritabanı
 tags:
   - language-integrated-query
 ---

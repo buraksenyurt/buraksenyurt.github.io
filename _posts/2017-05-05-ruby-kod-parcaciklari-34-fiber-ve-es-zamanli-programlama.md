@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 34 - Fiber ve Eş Zamanlı Programlama"
 date: 2017-05-05 12:17:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - concurrency
   - concurrent-programming

@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Maceralarım"
 date: 2015-07-31 16:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - programlama

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 62–Byte Array için Sıkıştırma"
 date: 2012-07-26 09:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - byte
   - compression

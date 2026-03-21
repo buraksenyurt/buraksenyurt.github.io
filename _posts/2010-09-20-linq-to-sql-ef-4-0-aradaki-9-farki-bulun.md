@@ -3,8 +3,7 @@ layout: post
 title: "LINQ to SQL – EF 4.0 (Aradaki 9 Farkı Bulun)"
 date: 2010-09-20 15:07:00 +0300
 categories:
-  - entity-framework
-  - linq-to-sql
+  - Veritabanı
 tags:
   - language-integrated-query
   - entity-framework

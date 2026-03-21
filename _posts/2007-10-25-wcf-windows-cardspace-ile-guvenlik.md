@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Windows CardSpace ile Güvenlik"
 date: 2007-10-25 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - windows-card-space

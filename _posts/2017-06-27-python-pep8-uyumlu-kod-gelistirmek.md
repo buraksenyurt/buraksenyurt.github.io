@@ -3,7 +3,7 @@ layout: post
 title: "Python - PEP8 Uyumlu Kod Geliştirmek"
 date: 2017-06-27 17:10:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - pep8
   - pytest

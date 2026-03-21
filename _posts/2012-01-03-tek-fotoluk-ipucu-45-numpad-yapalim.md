@@ -3,9 +3,9 @@ layout: post
 title: "Tek Fotoluk İpucu-45(NumPad Yapalım)"
 date: 2012-01-03 09:33:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
-  - windows-forms
+  - Programlama Dilleri
+  - Genel
+  - Windows Programlama
 tags:
   - windows-forms
   - anonymous-methods

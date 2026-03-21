@@ -3,7 +3,7 @@ layout: post
 title: "AJAX ve JSON Desteği"
 date: 2008-02-25 08:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - ajax

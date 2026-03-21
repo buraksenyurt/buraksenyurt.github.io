@@ -3,7 +3,7 @@ layout: post
 title: ".Net Remoting - SoapSuds"
 date: 2006-06-21 12:00:00 +0300
 categories:
-  - dotnet-remoting
+  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
   - soap

@@ -3,9 +3,7 @@ layout: post
 title: "Bunu Bir Dene 00 - Metot Argümanlarında Değişiklik (C#, Rust ve Zig)"
 date: 2026-01-15 20:27:00 +0300
 categories:
-  - C#
-  - Rust
-  - Zig
+  - Programlama Dilleri
 tags:
   - zig-lang
   - csharp

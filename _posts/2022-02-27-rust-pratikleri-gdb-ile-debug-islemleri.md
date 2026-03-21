@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - GDB ile Debug İşlemleri"
 date: 2022-02-27 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

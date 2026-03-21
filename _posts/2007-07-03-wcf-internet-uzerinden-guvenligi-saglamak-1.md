@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Internet Üzerinden Güvenliği Sağlamak - 1"
 date: 2007-07-03 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - security

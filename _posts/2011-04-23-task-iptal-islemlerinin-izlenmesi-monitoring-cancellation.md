@@ -3,7 +3,7 @@ layout: post
 title: "Task İptal İşlemlerinin İzlenmesi(Monitoring Cancellation)"
 date: 2011-04-23 12:10:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
   - task-parallel-library

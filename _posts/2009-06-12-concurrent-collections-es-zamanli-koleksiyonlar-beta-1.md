@@ -3,7 +3,7 @@ layout: post
 title: "Concurrent Collections (Eş Zamanlı Koleksiyonlar) [Beta 1]"
 date: 2009-06-12 10:20:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
 ---

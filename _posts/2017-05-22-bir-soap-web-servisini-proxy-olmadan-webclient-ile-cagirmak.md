@@ -3,7 +3,7 @@ layout: post
 title: "Bir SOAP Web Servisini Proxy Olmadan WebClient ile Çağırmak"
 date: 2017-05-22 13:13:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - soap-based-service

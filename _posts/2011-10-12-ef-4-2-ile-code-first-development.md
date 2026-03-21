@@ -3,7 +3,7 @@ layout: post
 title: "EF 4.2 ile Code–First Development"
 date: 2011-10-12 20:45:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - code-first-development

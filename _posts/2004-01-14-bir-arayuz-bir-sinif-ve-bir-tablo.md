@@ -3,7 +3,7 @@ layout: post
 title: "Bir Arayüz, Bir Sınıf ve Bir Tablo"
 date: 2004-01-14 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - class

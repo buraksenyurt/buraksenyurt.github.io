@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–54Buçuk"
 date: 2012-06-04 11:12:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - .net-framework
   - zipfile

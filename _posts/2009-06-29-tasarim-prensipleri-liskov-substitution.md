@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Prensipleri - Liskov Substitution"
 date: 2009-06-29 12:57:00 +0300
 categories:
-  - tasarim-prensipleri-design-principles
+  - Yazılım Tasarımı
 tags:
   - design-principles
 ---

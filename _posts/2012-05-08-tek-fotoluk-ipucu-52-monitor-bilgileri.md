@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 52 - Monitor Bilgileri"
 date: 2012-05-08 09:10:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - csharp
   - windows-forms

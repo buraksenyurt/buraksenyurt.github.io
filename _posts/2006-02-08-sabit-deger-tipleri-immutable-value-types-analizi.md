@@ -3,7 +3,7 @@ layout: post
 title: "Sabit Değer Tipleri (Immutable Value Types) Analizi"
 date: 2006-02-08 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - type-systems

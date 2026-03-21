@@ -3,7 +3,7 @@ layout: post
 title: "Merhaba Bing API 2.0"
 date: 2009-08-25 11:15:00 +0300
 categories:
-  - bing
+  - Genel
 tags:
   - xml-web-service
   - csharp

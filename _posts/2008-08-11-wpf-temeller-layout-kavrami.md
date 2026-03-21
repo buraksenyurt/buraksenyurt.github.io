@@ -3,7 +3,7 @@ layout: post
 title: "WPF Temeller : Layout Kavramı"
 date: 2008-08-11 03:00:00 +0300
 categories:
-  - wpf
+  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
 ---

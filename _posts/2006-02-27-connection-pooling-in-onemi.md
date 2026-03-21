@@ -3,7 +3,7 @@ layout: post
 title: "Connection Pooling' in Önemi"
 date: 2006-02-27 08:00:00 +0300
 categories:
-  - ado-net-2-0
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - connection-pooling

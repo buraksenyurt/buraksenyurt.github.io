@@ -3,7 +3,7 @@ layout: post
 title: "Docker SQL Server Kullanımı"
 date: 2018-11-09 06:25:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - docker
   - sql-server

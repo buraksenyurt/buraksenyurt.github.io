@@ -3,7 +3,7 @@ layout: post
 title: "Servis Çıktılarını Plotly.js ile Grafikleştirmek"
 date: 2019-03-18 21:51:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - node
   - node.js

@@ -3,7 +3,7 @@ layout: post
 title: "Transaction Kavramı"
 date: 2003-11-17 10:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction

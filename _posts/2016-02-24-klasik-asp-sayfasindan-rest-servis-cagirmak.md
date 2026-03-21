@@ -3,7 +3,7 @@ layout: post
 title: "Klasik ASP Sayfasından REST Servis Çağırmak"
 date: 2016-02-24 12:00:00 +0300
 categories:
-  - rest
+  - Servis Tabanlı Geliştirme
 tags:
   - http
   - rest-api

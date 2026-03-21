@@ -3,7 +3,7 @@ layout: post
 title: "LINQ: Daha Fazla Sorgu"
 date: 2007-02-21 10:00:00 +0300
 categories:
-  - linq
+  - Veritabanı
 tags:
   - csharp
   - language-integrated-query

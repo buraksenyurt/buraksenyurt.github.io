@@ -3,7 +3,7 @@ layout: post
 title: "Rust ile Kodlama İdmanları - İleri Seviye"
 date: 2025-12-01 19:51:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

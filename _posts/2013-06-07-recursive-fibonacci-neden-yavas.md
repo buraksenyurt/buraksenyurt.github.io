@@ -3,8 +3,8 @@ layout: post
 title: "Recursive Fibonacci Neden Yavaş?"
 date: 2013-06-07 00:40:00 +0300
 categories:
-  - algoritma
-  - csharp
+  - Algoritma
+  - Programlama Dilleri
 tags:
   - recursive-method
   - özyinelemeli-fonksiyonlar

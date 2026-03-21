@@ -3,7 +3,7 @@ layout: post
 title: "TPL ve Shared Data Isolation"
 date: 2011-01-20 13:35:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - shared-data-isolation

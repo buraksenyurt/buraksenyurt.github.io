@@ -3,7 +3,7 @@ layout: post
 title: "Web Sayfalarında Stored Procedure Kullanımı"
 date: 2003-11-12 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - asp.net
   - stored-procedures

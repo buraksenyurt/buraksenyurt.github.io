@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Hello World [Beta 1]"
 date: 2009-08-26 15:03:00 +0300
 categories:
-  - wcf-4-0-beta-1
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---

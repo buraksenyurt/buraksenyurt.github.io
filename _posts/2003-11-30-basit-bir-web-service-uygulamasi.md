@@ -3,7 +3,7 @@ layout: post
 title: "Basit Bir Web Service Uygulaması"
 date: 2003-11-30 14:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - soap

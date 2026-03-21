@@ -3,8 +3,8 @@ layout: post
 title: "Tuple Nedir? Anlamak, Bilmek İstiyorum."
 date: 2010-12-01 03:55:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - csharp-4-0
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
 tags:
   - csharp
   - tuple

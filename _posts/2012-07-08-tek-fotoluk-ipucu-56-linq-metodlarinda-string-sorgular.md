@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk Ipucu 56 – LINQ Metodlarında String Sorgular"
 date: 2012-07-08 19:45:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - language-integrated-query
   - extension-methods

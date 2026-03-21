@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 5 (Sınıf Kavramına Giriş)"
 date: 2015-08-10 19:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - class

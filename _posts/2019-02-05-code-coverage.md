@@ -3,7 +3,7 @@ layout: post
 title: "Code Coverage"
 date: 2019-02-05 21:01:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - tdd
   - test-driven-development

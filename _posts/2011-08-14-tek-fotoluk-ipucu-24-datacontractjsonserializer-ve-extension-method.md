@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-24(DataContractJsonSerializer ve Extension Method)"
 date: 2011-08-14 18:21:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - extension-methods

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 80–Bir Assembly’ ın Public Key Token Değerini Bulmak"
 date: 2013-02-18 02:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - assembly

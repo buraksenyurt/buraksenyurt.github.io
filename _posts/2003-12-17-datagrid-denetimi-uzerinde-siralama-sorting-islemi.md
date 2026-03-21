@@ -3,7 +3,7 @@ layout: post
 title: "DataGrid Denetimi Üzerinde Sıralama(Sorting) İşlemi"
 date: 2003-12-17 10:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - datagrid

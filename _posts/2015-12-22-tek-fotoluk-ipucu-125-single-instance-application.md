@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 125 - Single Instance Application"
 date: 2015-12-22 15:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - csharp
   - mutex

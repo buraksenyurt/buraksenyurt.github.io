@@ -3,8 +3,7 @@ layout: post
 title: "WCF RIA Services - Authentication Domain Service - Profile ve Role"
 date: 2010-01-20 16:10:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-ria-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services

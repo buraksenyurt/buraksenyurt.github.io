@@ -3,7 +3,7 @@ layout: post
 title: "MigraDoc ile PDF Rapor Üretimi - Hello World"
 date: 2013-08-18 11:48:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - .net-framework

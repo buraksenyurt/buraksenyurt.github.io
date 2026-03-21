@@ -3,7 +3,7 @@ layout: post
 title: "Struct, Class ve Default Constructors - İnanmak İstiyorum"
 date: 2010-09-27 06:50:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - destructor

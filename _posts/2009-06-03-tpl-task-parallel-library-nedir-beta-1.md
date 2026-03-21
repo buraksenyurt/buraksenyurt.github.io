@@ -3,7 +3,7 @@ layout: post
 title: "TPL(Task Parallel Library) Nedir? [Beta 1]"
 date: 2009-06-03 02:50:00 +0300
 categories:
-  - tpl
+  - Paralel Programlama
 tags:
   - task-parallel-library
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net 2.0 ve Toplu Güncelleme İşlemleri (Batch-Updates)"
 date: 2004-09-18 12:00:00 +0300
 categories:
-  - ado-net-2-0
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - mars

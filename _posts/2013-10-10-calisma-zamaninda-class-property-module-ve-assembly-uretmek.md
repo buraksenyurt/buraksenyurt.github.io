@@ -3,7 +3,7 @@ layout: post
 title: "Çalışma Zamanında Class,Property, Module ve Assembly Üretmek"
 date: 2013-10-10 07:50:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - reflection
   - ildasm

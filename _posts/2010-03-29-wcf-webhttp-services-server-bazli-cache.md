@@ -3,8 +3,7 @@ layout: post
 title: "WCF WebHttp Services - Server Bazlı Cache"
 date: 2010-03-29 15:05:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services

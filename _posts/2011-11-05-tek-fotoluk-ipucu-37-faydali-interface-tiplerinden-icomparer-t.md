@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-37(Faydalı Interface Tiplerinden IComparer<T>)"
 date: 2011-11-05 07:39:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - generics

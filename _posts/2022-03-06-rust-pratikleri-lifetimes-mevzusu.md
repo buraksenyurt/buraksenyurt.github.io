@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - Lifetimes Mevzusu"
 date: 2022-03-06 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

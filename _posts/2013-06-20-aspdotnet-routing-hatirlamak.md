@@ -3,9 +3,7 @@ layout: post
 title: "Asp.Net Routing – Hatırlamak"
 date: 2013-06-20 05:07:00 +0300
 categories:
-  - aspnet
-  - aspnet-4-0
-  - aspnet-4-5
+  - Web Programlama
 tags:
   - asp.net
   - routing

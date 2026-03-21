@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 133 - Yüklü OLEDB Provider Listesinin Bulunması"
 date: 2016-09-15 21:01:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - ado.net

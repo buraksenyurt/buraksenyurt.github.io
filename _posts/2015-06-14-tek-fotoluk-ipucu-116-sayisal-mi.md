@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 116 - Sayısal mı?"
 date: 2015-06-14 15:32:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - regex
   - extension-methods

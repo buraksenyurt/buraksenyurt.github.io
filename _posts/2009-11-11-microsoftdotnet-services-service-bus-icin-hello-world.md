@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft.Net Services - Service Bus için Hello World"
 date: 2009-11-11 00:45:00 +0300
 categories:
-  - windows-azure
+  - Bulut Bilişim
 tags:
   - windows-azure
   - service-bus

@@ -3,7 +3,7 @@ layout: post
 title: "WCF Rest Servislerinde Önbellekleme(Caching)"
 date: 2009-04-27 12:28:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

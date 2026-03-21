@@ -3,10 +3,9 @@ layout: post
 title: "Entity Framework ile Gerçek Hayat Örnekleri Webinerlerim"
 date: 2011-12-06 08:51:00 +0300
 categories:
-  - entity-framework
-  - nedirtv
-  - wcf
-  - wcf-4-0
+  - Veritabanı
+  - Genel
+  - Servis Tabanlı Geliştirme
 tags:
   - entity-framework
   - nedir-tv

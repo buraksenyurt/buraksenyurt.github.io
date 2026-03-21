@@ -3,7 +3,7 @@ layout: post
 title: "DataAdapter Kavramı ve OleDbDataAdapter Sınıfına Giriş"
 date: 2004-02-27 08:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb

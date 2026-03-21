@@ -3,7 +3,7 @@ layout: post
 title: "Barrier Class, Sıralama Algoritmaları ve At Yarışı"
 date: 2011-10-17 09:47:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - parallel-programming
   - barrier-class

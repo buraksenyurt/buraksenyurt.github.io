@@ -3,7 +3,7 @@ layout: post
 title: "SqlCommandBuilder için 4 Tavsiye"
 date: 2006-11-13 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sqlcommandbuilder

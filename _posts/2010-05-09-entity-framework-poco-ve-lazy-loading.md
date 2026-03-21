@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework - POCO ve Lazy Loading"
 date: 2010-05-09 21:55:00 +0300
 categories:
-  - entity-framework
+  - Veritabanı
 tags:
   - entity-framework
   - language-integrated-query

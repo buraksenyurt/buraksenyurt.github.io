@@ -3,7 +3,7 @@ layout: post
 title: "AntiPatterns Ders Notlarım"
 date: 2014-02-28 13:10:00 +0300
 categories:
-  - anti-patterns
+  - Yazılım Tasarımı
 tags: []
 ---
 Yazıyı yayınladığım şu andan sadece bir kaç saat sonra sekizinci [NedirTv](http://www.nedirtv.com) kuruluş yıl dönümü etkinliğinde konuşma fırsatı bulacağım. Konularım AntiPatterns ve NoSQL. AntiPatterns konusu ile ilişkili olarak daha önceden Y.T.Ü. tarafından düzenlenen [Finans ve Yazılım Günleri](https://www.buraksenyurt.com/post/YTU-Finans-ve-Yazc4b1lc4b1m-Gunleri)’ nde konuşma fırsatım olmuştu. Her iki etkinliğe de hazırlanırken, sektörde yer aldığım süre içerisinde gözlemlediğim bilgileri özellikle dikkate almaya çalıştım. Pek tabi konuyu doğru bir şekilde aktarabilmek için teknik destek ve referans kaynaklar da gerekiyordu. Şüphesiz ki böylesine önemli bir konu, teoride olduğu kadar pratikte de tecrübe edilmişse izah edilebilirdi.

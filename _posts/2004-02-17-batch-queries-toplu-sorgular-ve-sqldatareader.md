@@ -3,7 +3,7 @@ layout: post
 title: "Batch Queries (Toplu Sorgular) ve SqlDataReader"
 date: 2004-02-17 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - batch-queries

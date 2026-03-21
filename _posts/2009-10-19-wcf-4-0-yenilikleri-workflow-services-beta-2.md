@@ -3,7 +3,7 @@ layout: post
 title: "WCF 4.0 Yenilikleri - Workflow Services [Beta 2]"
 date: 2009-10-19 13:22:00 +0300
 categories:
-  - wcf-4-0-beta-2
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - workflow-foundation

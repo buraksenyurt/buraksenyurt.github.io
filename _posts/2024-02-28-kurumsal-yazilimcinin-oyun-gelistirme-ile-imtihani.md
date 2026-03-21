@@ -3,7 +3,7 @@ layout: post
 title: "Kurumsal Yazılımcının Oyun Geliştirme ile İmtihanı"
 date: 2024-02-28 16:03:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - game-programming
   - rust

@@ -3,7 +3,7 @@ layout: post
 title: "Ado.Net 2.0 ve SqlDependency Sınıfı Yardımıyla Query Notification"
 date: 2004-10-25 21:00:00 +0300
 categories:
-  - ado-net-2-0
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql

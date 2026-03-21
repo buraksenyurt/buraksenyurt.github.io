@@ -3,7 +3,7 @@ layout: post
 title: "Soap Bazlı WCF Servislerini REST Modeline Taşımak"
 date: 2009-04-17 17:19:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

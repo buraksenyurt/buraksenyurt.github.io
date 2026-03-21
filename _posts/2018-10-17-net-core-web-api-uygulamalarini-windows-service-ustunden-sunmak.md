@@ -3,7 +3,7 @@ layout: post
 title: ".Net Core Web API Uygulamalarını Windows Service Üstünden Sunmak"
 date: 2018-10-17 07:53:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - windows-services
   - .net-core

@@ -3,7 +3,7 @@ layout: post
 title: "Spring Boot ile PostgreSQL Kullanan Basit Bir Web Uygulaması Geliştirmek"
 date: 2020-10-19 07:20:00 +0300
 categories:
-  - spring-boot
+  - Framework Tabanlı Programlama
 tags:
   - spring-framework
   - spring-boot

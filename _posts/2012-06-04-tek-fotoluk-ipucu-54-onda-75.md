@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–54 Onda 75"
 date: 2012-06-04 15:16:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - collections
   - comparer

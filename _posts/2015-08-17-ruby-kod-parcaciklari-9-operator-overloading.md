@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 9 (Operator Overloading)"
 date: 2015-08-17 09:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - operator-overloading

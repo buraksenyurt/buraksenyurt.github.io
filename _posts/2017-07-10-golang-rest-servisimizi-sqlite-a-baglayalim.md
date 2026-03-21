@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - REST Servisimizi SQLite'a Bağlayalım"
 date: 2017-07-10 09:05:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - sqlite

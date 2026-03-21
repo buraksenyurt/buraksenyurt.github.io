@@ -3,7 +3,7 @@ layout: post
 title: "Bir Web API Servisini Github Hesabıyla Yetkilendirmek"
 date: 2018-04-03 22:49:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - asp.net-core-web-api
   - web-api

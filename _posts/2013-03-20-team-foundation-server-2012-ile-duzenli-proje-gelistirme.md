@@ -3,7 +3,7 @@ layout: post
 title: "Team Foundation Server 2012 ile Düzenli Proje Geliştirme"
 date: 2013-03-20 23:00:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - client-object-model

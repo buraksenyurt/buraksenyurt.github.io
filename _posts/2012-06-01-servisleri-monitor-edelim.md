@@ -3,7 +3,7 @@ layout: post
 title: "Servisleri Monitor Edelim"
 date: 2012-06-01 01:12:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - xml-web-service

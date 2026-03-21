@@ -3,7 +3,7 @@ layout: post
 title: "Heryerden TFS Kullanabilmek"
 date: 2013-03-02 08:50:00 +0300
 categories:
-  - team-foundation-server
+  - DevOps
 tags:
   - team-foundation-server
   - team-explorer-everywhere

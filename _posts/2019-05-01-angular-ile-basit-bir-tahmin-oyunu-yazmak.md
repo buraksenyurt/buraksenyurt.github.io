@@ -3,7 +3,7 @@ layout: post
 title: "Angular ile Basit Bir Tahmin Oyunu Yazmak"
 date: 2019-05-01 17:00:00 +0300
 categories:
-  - angular
+  - Web Programlama
 tags:
   - angular
   - typescript

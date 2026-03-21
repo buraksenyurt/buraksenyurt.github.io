@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Bir Go Paketini Ruby'den Çağırmak"
 date: 2017-06-09 12:33:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - c-programming-language

@@ -3,7 +3,7 @@ layout: post
 title: "Blockchain Eliptik Eğri Şifreleme Algoritması"
 date: 2018-07-24 07:00:00 +0300
 categories:
-  - algoritma
+  - Algoritma
 tags:
   - cryptography
   - blockchain

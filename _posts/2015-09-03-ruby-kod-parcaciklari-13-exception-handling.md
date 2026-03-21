@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 13 (Exception Handling)"
 date: 2015-09-03 05:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - exception-handling

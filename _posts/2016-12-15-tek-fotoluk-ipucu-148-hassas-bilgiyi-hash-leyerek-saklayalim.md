@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 148 - Hassas Bilgiyi Hash'leyerek Saklayalım"
 date: 2016-12-15 21:54:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - hashing

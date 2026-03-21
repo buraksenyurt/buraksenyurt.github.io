@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-25 (Runtime Value ve Extension Method)"
 date: 2011-08-18 06:08:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - extension-methods

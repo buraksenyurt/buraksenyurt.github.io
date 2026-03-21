@@ -3,7 +3,7 @@ layout: post
 title: "React Üzerinde Socket.IO Kullanımı"
 date: 2019-08-30 13:00:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - socket
   - socket.io

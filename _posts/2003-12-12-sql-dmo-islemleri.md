@@ -3,7 +3,7 @@ layout: post
 title: "SQL_DMO İşlemleri"
 date: 2003-12-12 12:00:00 +0300
 categories:
-  - t-sql
+  - Veritabanı
 tags:
   - ado.net
   - sql

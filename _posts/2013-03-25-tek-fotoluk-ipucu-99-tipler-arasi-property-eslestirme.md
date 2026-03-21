@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 99–Tipler Arası Property Eşleştirme"
 date: 2013-03-25 17:35:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - auto-mapper

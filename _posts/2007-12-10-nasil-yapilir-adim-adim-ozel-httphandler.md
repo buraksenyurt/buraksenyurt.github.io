@@ -3,7 +3,7 @@ layout: post
 title: "Nasıl Yapılır? Adım Adım Özel HttpHandler"
 date: 2007-12-10 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - http-handler

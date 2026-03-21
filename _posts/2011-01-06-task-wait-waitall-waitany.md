@@ -3,7 +3,7 @@ layout: post
 title: "Task Wait,WaitAll,WaitAny"
 date: 2011-01-06 13:25:00 +0300
 categories:
-  - parallel-programming
+  - Paralel Programlama
 tags:
   - csharp
   - parallel-programming

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 120 - Bir Listeden N Sayıda Benzersiz Nesne Çekmek"
 date: 2015-11-05 08:30:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - csharp
   - generic

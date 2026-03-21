@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-39(Dynamic Delegate Üretmek)"
 date: 2011-11-14 14:45:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - delegate

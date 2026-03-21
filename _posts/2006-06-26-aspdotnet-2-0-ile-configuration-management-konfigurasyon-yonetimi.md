@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)"
 date: 2006-06-26 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - configuration-api

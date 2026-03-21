@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - Value Moved Here"
 date: 2022-05-22 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

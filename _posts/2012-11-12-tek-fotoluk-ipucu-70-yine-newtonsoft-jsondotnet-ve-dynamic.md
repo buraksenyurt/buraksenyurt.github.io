@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu–70–Yine Newtonsoft Json.net ve dynamic"
 date: 2012-11-12 02:30:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - dynamic

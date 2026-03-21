@@ -3,7 +3,7 @@ layout: post
 title: "Dosya Satır Sayısını Bulmak"
 date: 2013-10-06 12:02:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - text-files

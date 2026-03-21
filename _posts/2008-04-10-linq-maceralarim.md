@@ -3,8 +3,8 @@ layout: post
 title: "LINQ Maceralarım"
 date: 2008-04-10 06:00:00 +0300
 categories:
-  - csharp-3-0
-  - linq
+  - Programlama Dilleri
+  - Veritabanı
 tags:
   - csharp
   - language-integrated-query

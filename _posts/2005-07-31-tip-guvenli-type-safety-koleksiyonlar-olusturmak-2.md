@@ -3,7 +3,7 @@ layout: post
 title: "Tip Güvenli (Type Safety ) Koleksiyonlar Oluşturmak - 2"
 date: 2005-07-31 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - strongly-typed-collections

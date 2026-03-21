@@ -3,7 +3,7 @@ layout: post
 title: "Server Side SponsorShip"
 date: 2006-04-19 12:00:00 +0300
 categories:
-  - dotnet-remoting
+  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
 ---

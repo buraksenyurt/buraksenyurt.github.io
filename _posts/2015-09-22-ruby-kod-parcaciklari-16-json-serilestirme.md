@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 16 - (JSON Serileştirme)"
 date: 2015-09-22 03:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - serialization

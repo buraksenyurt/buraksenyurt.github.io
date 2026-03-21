@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 138 - Bir Web Sayfa İçeriğini İndirmek"
 date: 2016-10-24 21:35:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - http-request

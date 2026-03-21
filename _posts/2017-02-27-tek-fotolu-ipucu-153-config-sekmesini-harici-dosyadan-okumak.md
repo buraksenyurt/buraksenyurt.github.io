@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotolu İpucu 153 - Config Sekmesini Harici Dosyadan Okumak"
 date: 2017-02-27 02:00:00 +0300
 categories:
-  - dotnet-temelleri
+  - Framework Tabanlı Programlama
 tags:
   - .net
   - csharp

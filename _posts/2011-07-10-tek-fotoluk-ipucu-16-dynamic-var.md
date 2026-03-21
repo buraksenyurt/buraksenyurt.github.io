@@ -3,10 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-16 (Dynamic Var)"
 date: 2011-07-10 21:41:00 +0300
 categories:
-  - csharp
-  - csharp-3-0
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - dynamic

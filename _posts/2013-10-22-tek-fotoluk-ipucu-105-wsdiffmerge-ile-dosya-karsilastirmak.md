@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 105–WsDiffMerge ile Dosya Karşılaştırmak"
 date: 2013-10-22 12:09:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - vsdiffmerge
   - file-io

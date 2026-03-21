@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 7 (Windows Liste Bazlı Kontrolleri ve ToString Metodu)"
 date: 2011-06-27 00:48:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - window

@@ -3,7 +3,7 @@ layout: post
 title: "Sıfır Sabit Değeri ve Enum Sorunu"
 date: 2013-09-19 10:48:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - enums

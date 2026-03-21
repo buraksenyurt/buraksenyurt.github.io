@@ -3,7 +3,7 @@ layout: post
 title: "NoSQL Maceraları - Apache Cassandra ve .Net"
 date: 2012-12-16 19:35:00 +0300
 categories:
-  - nosql
+  - Veritabanı
 tags:
   - nosql
   - apache-cassandra

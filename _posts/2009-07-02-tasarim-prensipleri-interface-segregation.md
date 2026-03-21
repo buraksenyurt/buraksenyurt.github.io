@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Prensipleri - Interface Segregation"
 date: 2009-07-02 01:16:00 +0300
 categories:
-  - tasarim-prensipleri-design-principles
+  - Yazılım Tasarımı
 tags:
   - design-principles
 ---

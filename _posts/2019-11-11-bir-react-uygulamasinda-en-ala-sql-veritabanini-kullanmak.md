@@ -3,7 +3,7 @@ layout: post
 title: "Bir React Uygulamasında En Ala SQL Veritabanını Kullanmak"
 date: 2019-11-11 10:30:00 +0300
 categories:
-  - react
+  - Web Programlama
 tags:
   - react
   - alasql

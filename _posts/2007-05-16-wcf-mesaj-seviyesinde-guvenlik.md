@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Mesaj Seviyesinde Güvenlik"
 date: 2007-05-16 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - security

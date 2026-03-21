@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 3 (Range Kullanımı)"
 date: 2015-08-06 09:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - range

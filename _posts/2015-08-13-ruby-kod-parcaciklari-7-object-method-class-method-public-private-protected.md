@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 7 (Object Method, Class Method, Public, Private, Protected)"
 date: 2015-08-13 11:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - object-method

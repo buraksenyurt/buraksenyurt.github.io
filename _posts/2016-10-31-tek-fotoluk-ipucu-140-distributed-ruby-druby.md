@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 140 - Distributed Ruby(dRuby)"
 date: 2016-10-31 21:16:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - distributed-programming

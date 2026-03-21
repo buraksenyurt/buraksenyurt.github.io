@@ -3,7 +3,7 @@ layout: post
 title: "Kullanıcı Web Kontrollerini Daha Etkin Kullanmak"
 date: 2006-11-21 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - asp.net
 ---

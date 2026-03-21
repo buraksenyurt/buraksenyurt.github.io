@@ -3,7 +3,7 @@ layout: post
 title: "Rest Tabanlı WCF Servislerinde İstemci Tarafını Asenkron Geliştirmek"
 date: 2009-04-24 09:26:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api

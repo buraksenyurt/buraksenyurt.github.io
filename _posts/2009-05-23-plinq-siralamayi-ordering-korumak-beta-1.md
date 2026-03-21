@@ -3,7 +3,7 @@ layout: post
 title: "PLINQ - Sıralamayı(Ordering) Korumak [Beta 1]"
 date: 2009-05-23 20:30:00 +0300
 categories:
-  - plinq
+  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query

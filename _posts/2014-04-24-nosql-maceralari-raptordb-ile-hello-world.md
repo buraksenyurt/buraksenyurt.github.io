@@ -3,7 +3,7 @@ layout: post
 title: "NoSQL Maceraları - RaptorDB ile Hello World"
 date: 2014-04-24 14:55:00 +0300
 categories:
-  - nosql
+  - Veritabanı
 tags:
   - nosql
 ---

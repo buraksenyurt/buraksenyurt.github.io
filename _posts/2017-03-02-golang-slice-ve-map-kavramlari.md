@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Slice ve Map Kavramları"
 date: 2017-03-02 21:23:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - slice

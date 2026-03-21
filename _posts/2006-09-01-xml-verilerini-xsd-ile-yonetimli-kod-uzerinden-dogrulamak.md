@@ -3,7 +3,7 @@ layout: post
 title: "XML Verilerini XSD ile Yönetimli Kod Üzerinden Doğrulamak"
 date: 2006-09-01 09:00:00 +0300
 categories:
-  - xml
+  - Web Programlama
 tags:
   - xml
   - xsd

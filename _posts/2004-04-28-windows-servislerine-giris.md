@@ -3,7 +3,7 @@ layout: post
 title: "Windows Servislerine Giriş"
 date: 2004-04-28 15:00:00 +0300
 categories:
-  - windows-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
   - hello-world

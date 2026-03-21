@@ -3,8 +3,8 @@ layout: post
 title: "Ado.Net Data Services 1.5 - Projections"
 date: 2009-09-30 00:00:00 +0300
 categories:
-  - ado-net-data-services
-  - wcf
+  - Framework Tabanlı Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - ado.net-data-services
   - windows-communication-foundation

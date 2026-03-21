@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-46(LINQ Aggregate Fonksiyonları)"
 date: 2012-02-05 10:30:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - language-integrated-query
   - csharp

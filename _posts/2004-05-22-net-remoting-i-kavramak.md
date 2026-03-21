@@ -3,7 +3,7 @@ layout: post
 title: ".NET Remoting'i Kavramak"
 date: 2004-05-22 09:00:00 +0300
 categories:
-  - dotnet-remoting
+  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
   - hello-world

@@ -3,9 +3,8 @@ layout: post
 title: "Nedir Bu MSBuild?"
 date: 2013-08-01 07:47:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - dotnet-framework-4-5
-  - visual-studio
+  - Framework Tabanlı Programlama
+  - DevOps
 tags:
   - microsoft-build-engine
   - build

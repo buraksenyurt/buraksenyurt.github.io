@@ -3,7 +3,7 @@ layout: post
 title: "C# 3.0 - İlk Bakışta DLINQ"
 date: 2006-09-25 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - language-integrated-query

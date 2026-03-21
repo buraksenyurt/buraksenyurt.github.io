@@ -3,8 +3,7 @@ layout: post
 title: "Composite Cancellations"
 date: 2011-04-26 12:15:00 +0300
 categories:
-  - parallel-programming
-  - tpl
+  - Paralel Programlama
 tags:
   - csharp
   - parallel-programming

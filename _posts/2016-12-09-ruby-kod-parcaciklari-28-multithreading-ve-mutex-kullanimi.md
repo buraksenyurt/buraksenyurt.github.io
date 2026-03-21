@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları 28 - Multithreading ve Mutex Kullanımı"
 date: 2016-12-09 21:30:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - mutex

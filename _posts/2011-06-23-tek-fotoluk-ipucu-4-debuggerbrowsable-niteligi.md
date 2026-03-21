@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 4 (DebuggerBrowsable Niteliği)"
 date: 2011-06-23 12:40:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - tek-fotoluk-ipucu
+  - Framework Tabanlı Programlama
+  - Genel
 tags:
   - csharp
   - .net-framework

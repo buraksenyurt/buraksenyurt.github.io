@@ -3,7 +3,7 @@ layout: post
 title: "GoLang - Bir ORM Denemesi"
 date: 2017-07-16 21:40:00 +0300
 categories:
-  - golang
+  - Programlama Dilleri
 tags:
   - golang
   - orm

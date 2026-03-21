@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 70.5–Asp.Net Multiple File Upload"
 date: 2012-11-13 08:57:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - asp.net

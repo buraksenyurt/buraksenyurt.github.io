@@ -3,7 +3,7 @@ layout: post
 title: "Diamond Problem, C# ve Multiple Inheritance"
 date: 2010-09-15 06:28:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - c++

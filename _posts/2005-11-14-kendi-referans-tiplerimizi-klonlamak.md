@@ -3,7 +3,7 @@ layout: post
 title: "Kendi Referans Tiplerimizi Klonlamak"
 date: 2005-11-14 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - IClonable

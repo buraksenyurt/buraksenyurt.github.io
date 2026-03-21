@@ -3,8 +3,7 @@ layout: post
 title: "WCF WebHttp Services - Tanışma"
 date: 2010-02-01 05:50:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services

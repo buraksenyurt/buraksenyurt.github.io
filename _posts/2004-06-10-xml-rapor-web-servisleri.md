@@ -3,7 +3,7 @@ layout: post
 title: "XML Rapor Web Servisleri"
 date: 2004-06-10 12:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - report-services

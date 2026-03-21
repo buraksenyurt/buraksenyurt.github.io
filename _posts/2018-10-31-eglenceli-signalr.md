@@ -3,7 +3,7 @@ layout: post
 title: "Eğlenceli SignalR"
 date: 2018-10-31 21:30:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - signalr
   - chart.js

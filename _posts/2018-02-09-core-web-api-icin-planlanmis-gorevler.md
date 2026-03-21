@@ -3,7 +3,7 @@ layout: post
 title: "Core Web API  için Planlanmış Görevler"
 date: 2018-02-09 04:27:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - asp.net-core
   - asp.net-core-web-api

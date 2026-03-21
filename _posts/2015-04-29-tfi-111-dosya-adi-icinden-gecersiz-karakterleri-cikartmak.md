@@ -3,7 +3,7 @@ layout: post
 title: "TFİ 111 - Dosya Adı İçinden Geçersiz Karakterleri Çıkartmak"
 date: 2015-04-29 22:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - extension-methods

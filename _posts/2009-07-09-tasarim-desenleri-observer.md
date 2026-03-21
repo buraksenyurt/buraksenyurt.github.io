@@ -3,7 +3,7 @@ layout: post
 title: "Tasarım Desenleri - Observer"
 date: 2009-07-09 07:35:00 +0300
 categories:
-  - tasarim-kaliplari-design-patterns
+  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop

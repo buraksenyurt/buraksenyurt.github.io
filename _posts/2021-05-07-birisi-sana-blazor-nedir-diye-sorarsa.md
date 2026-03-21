@@ -3,7 +3,7 @@ layout: post
 title: "Birisi Sana \\\"Blazor Nedir?\\\" Diye Sorarsa"
 date: 2021-05-07 22:04:00 +0300
 categories:
-  - blazor
+  - Web Programlama
 tags:
   - blazor
   - blazor-server

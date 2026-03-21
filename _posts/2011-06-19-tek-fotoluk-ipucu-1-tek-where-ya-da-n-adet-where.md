@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 1 (Tek Where ya da n adet Where)"
 date: 2011-06-19 17:47:00 +0300
 categories:
-  - linq
-  - tek-fotoluk-ipucu
+  - Veritabanı
+  - Genel
 tags:
   - csharp
   - language-integrated-query

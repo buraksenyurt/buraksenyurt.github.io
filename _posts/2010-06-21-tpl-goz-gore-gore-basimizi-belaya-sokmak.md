@@ -3,8 +3,7 @@ layout: post
 title: "TPL – Göz Göre Göre Başımızı Belaya Sokmak"
 date: 2010-06-21 06:08:00 +0300
 categories:
-  - parallel-programming
-  - tpl
+  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming

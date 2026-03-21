@@ -3,7 +3,7 @@ layout: post
 title: "Python Öğrenmeye Devam - Sınıflar"
 date: 2016-09-01 01:00:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - python
   - oop

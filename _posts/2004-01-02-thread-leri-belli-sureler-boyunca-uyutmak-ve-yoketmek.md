@@ -3,7 +3,7 @@ layout: post
 title: "Thread'leri Belli Süreler Boyunca Uyutmak ve Yoketmek"
 date: 2004-01-02 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - thread

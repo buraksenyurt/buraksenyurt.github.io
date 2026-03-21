@@ -3,7 +3,7 @@ layout: post
 title: "NoSQL Maceraları - STSdb ile Hello World"
 date: 2013-07-24 12:24:00 +0300
 categories:
-  - nosql
+  - Veritabanı
 tags:
   - nosql
   - sts-db

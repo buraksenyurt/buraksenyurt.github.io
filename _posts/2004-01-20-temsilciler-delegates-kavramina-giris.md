@@ -3,7 +3,7 @@ layout: post
 title: "Temsilciler (Delegates) Kavramına Giriş"
 date: 2004-01-20 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - delegate

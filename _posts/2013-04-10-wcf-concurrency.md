@@ -3,7 +3,7 @@ layout: post
 title: "WCF–Concurrency"
 date: 2013-04-10 10:41:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - instance-context-mode

@@ -3,7 +3,7 @@ layout: post
 title: "WCF Interceptors"
 date: 2012-12-02 19:53:00 +0300
 categories:
-  - wcf-4-5
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - interceptor

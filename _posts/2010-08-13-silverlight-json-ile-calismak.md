@@ -3,9 +3,8 @@ layout: post
 title: "Silverlight - JSON ile Çalışmak"
 date: 2010-08-13 01:15:00 +0300
 categories:
-  - silverlight-4-0
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Web Programlama
+  - Servis Tabanlı Geliştirme
 tags:
   - silverlight
   - windows-communication-foundation

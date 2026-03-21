@@ -3,7 +3,7 @@ layout: post
 title: ".Net Core Web Api Tarafında SqlKata ile Sevimli SQL İşlemleri"
 date: 2020-10-28 14:14:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - sqlkata

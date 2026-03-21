@@ -3,7 +3,7 @@ layout: post
 title: "Sql Tablolarındaki Binary Resimlere Bakmak ve Dosya Olarak Kaydetmek"
 date: 2004-01-24 10:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql

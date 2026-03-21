@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 11 (Procs)"
 date: 2015-08-25 08:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - procs

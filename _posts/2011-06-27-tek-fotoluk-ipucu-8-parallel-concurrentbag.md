@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 8 (Parallel ConcurrentBag)"
 date: 2011-06-27 23:00:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - tek-fotoluk-ipucu
+  - Framework Tabanlı Programlama
+  - Genel
 tags:
   - csharp
   - parallel-programming

@@ -3,7 +3,7 @@ layout: post
 title: "WCF - Istemci Taraflı Asenkron Çağırma (Client Side Asynchronous Invoking)"
 date: 2007-06-13 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - asynchronous-programming

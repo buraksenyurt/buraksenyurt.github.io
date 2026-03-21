@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 151 - C#, Reflection ve About Info"
 date: 2017-01-12 22:00:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - .net
   - csharp

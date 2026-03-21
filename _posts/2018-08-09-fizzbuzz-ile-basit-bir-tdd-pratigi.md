@@ -3,7 +3,7 @@ layout: post
 title: "FizzBuzz ile Basit Bir TDD Pratiği"
 date: 2018-08-09 07:52:00 +0300
 categories:
-  - codekata
+  - Algoritma
 tags:
   - tdd
   - test-driven-development

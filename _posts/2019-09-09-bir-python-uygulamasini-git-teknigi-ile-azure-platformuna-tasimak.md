@@ -3,7 +3,7 @@ layout: post
 title: "Bir Python Uygulamasını git Tekniği ile Azure Platformuna Taşımak"
 date: 2019-09-09 12:30:00 +0300
 categories:
-  - python
+  - Programlama Dilleri
 tags:
   - python
   - git

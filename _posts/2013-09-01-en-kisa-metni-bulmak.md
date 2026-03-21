@@ -3,7 +3,7 @@ layout: post
 title: "En Kısa Metni Bulmak"
 date: 2013-09-01 20:45:00 +0300
 categories:
-  - data-structures-algorithms
+  - Algoritma
 tags:
   - csharp
   - string

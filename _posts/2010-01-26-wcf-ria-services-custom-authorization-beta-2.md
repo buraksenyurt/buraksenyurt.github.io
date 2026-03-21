@@ -3,8 +3,7 @@ layout: post
 title: "WCF RIA Services - Custom Authorization [Beta 2]"
 date: 2010-01-26 01:52:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-ria-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services

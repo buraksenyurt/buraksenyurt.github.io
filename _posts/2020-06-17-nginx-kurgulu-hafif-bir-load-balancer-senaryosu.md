@@ -3,7 +3,7 @@ layout: post
 title: "Nginx Kurgulu Hafif Bir Load Balancer Senaryosu"
 date: 2020-06-17 09:20:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - nginx
   - load-balancing

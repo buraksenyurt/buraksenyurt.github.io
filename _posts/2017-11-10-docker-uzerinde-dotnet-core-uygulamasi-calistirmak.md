@@ -3,7 +3,7 @@ layout: post
 title: "Docker Üzerinde .Net Core Uygulaması Çalıştırmak"
 date: 2017-11-10 06:01:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - docker

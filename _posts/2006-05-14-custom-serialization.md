@@ -3,7 +3,7 @@ layout: post
 title: "Custom Serialization"
 date: 2006-05-14 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - serialization

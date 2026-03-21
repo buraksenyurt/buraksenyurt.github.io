@@ -3,7 +3,7 @@ layout: post
 title: "NDepend Tool ve CQL(Code Query Language)"
 date: 2010-09-22 20:16:00 +0300
 categories:
-  - teknik-disi-konular
+  - Genel
 tags:
   - visual-studio
   - ndepend

@@ -3,7 +3,7 @@ layout: post
 title: "Birlikte Rust Öğrenelim Serisi"
 date: 2024-10-31 06:28:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

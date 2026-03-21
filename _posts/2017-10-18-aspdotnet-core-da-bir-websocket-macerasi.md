@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Core'da Bir WebSocket Macerası"
 date: 2017-10-18 14:29:00 +0300
 categories:
-  - asp-dotnet-core
+  - Web Programlama
 tags:
   - asp.net-core
   - websockets

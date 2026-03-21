@@ -3,8 +3,8 @@ layout: post
 title: "Correlation Nedir? Yenir mi? İçilir mi?"
 date: 2010-02-01 00:25:00 +0300
 categories:
-  - wcf-4-0-beta-2
-  - wf-4-0-beta-2
+  - Servis Tabanlı Geliştirme
+  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - workflow-foundation

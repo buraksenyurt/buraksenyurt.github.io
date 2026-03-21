@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-22 (GetCommandLineArgs)"
 date: 2011-08-01 00:31:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - console

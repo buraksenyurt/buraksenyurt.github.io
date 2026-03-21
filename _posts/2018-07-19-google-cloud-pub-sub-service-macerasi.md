@@ -3,8 +3,8 @@ layout: post
 title: "Google Cloud Pub/Sub Service Macerası"
 date: 2018-07-19 21:10:00 +0300
 categories:
-  - dotnet-core
-  - gcp
+  - Framework Tabanlı Programlama
+  - Bulut Bilişim
 tags:
   - google
   - google-cloud-platform

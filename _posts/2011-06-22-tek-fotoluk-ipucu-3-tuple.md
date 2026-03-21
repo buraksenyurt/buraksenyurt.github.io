@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu - 3 (Tuple)"
 date: 2011-06-22 22:24:00 +0300
 categories:
-  - csharp-4-0
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - tuple

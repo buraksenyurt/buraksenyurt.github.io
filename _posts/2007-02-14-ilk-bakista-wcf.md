@@ -3,7 +3,7 @@ layout: post
 title: "İlk Bakışta WCF"
 date: 2007-02-14 06:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - hello-world

@@ -3,7 +3,7 @@ layout: post
 title: "Web Bazlı Programlama Modeli"
 date: 2008-02-14 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - web-programming-model

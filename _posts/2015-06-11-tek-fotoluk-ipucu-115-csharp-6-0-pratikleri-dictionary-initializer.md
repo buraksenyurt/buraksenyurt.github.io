@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 115 - C# 6.0 Pratikleri (Dictionary Initializer)"
 date: 2015-06-11 12:09:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - csharp
   - generics

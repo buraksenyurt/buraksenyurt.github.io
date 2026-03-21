@@ -3,7 +3,7 @@ layout: post
 title: "Stackoverflow Sevgi Anketinde Yıllardır Bir Numara Çıkan Programlama Dili Rust Kimdir?"
 date: 2020-12-31 20:59:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust-lang
   - rust

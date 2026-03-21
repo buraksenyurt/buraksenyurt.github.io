@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 94–WMI ile Disk Bilgilerini Okumak"
 date: 2013-03-25 21:22:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - tek-fotoluk-ipucu
   - tfi

@@ -3,7 +3,7 @@ layout: post
 title: "WF - XAML Bazlı Workflow Örnekleri Geliştirmek"
 date: 2009-05-06 11:23:00 +0300
 categories:
-  - wf
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - xaml

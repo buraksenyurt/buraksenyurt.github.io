@@ -3,7 +3,7 @@ layout: post
 title: "Rust Dilinde Warp, Tokio Küfelerini Kullanarak Asenkron Web Api Geliştirmek"
 date: 2020-11-13 08:57:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - tokio

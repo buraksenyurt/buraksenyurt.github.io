@@ -3,9 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu – 11 (Ham XML ve XElement)"
 date: 2011-07-01 11:30:00 +0300
 categories:
-  - tek-fotoluk-ipucu
-  - wcf
-  - wcf-4-0
+  - Genel
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - xlinq

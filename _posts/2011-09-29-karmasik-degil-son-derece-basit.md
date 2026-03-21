@@ -3,8 +3,8 @@ layout: post
 title: "Karmaşık Değil Son Derece Basit"
 date: 2011-09-29 06:50:00 +0300
 categories:
-  - dotnet-framework-4-0
-  - csharp-4-0
+  - Framework Tabanlı Programlama
+  - Programlama Dilleri
 tags:
   - generic
   - generics

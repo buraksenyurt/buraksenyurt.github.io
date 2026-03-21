@@ -3,7 +3,7 @@ layout: post
 title: ".Net RIA Servisleri Nedir?"
 date: 2009-05-08 13:41:00 +0300
 categories:
-  - dotnet-ria-services
+  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight

@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 155 - C# 7.0 Tuple İyileştirmeleri"
 date: 2017-04-09 21:42:00 +0300
 categories:
-  - csharp-7-0
+  - Programlama Dilleri
 tags:
   - csharp
   - tuple

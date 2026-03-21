@@ -3,7 +3,7 @@ layout: post
 title: "İlişkiler ve Hesaplanmış Alanların Bir Arada Kulllanılması"
 date: 2004-04-08 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql

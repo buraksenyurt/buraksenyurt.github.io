@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 87–Enum Sabitleri ile Attribute Kullanımı"
 date: 2013-03-25 20:55:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - enums
   - extension-methods

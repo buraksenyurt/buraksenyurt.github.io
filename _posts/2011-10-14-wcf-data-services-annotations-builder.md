@@ -3,7 +3,7 @@ layout: post
 title: "WCF Data Services– Annotations Builder"
 date: 2011-10-14 14:00:00 +0300
 categories:
-  - wcf-data-services
+  - Servis Tabanlı Geliştirme
 tags:
   - wcf-data-services
   - astoria

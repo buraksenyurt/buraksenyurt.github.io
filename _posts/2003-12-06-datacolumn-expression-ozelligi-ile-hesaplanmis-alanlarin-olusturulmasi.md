@@ -3,7 +3,7 @@ layout: post
 title: "DataColumn.Expression Özelliği İle Hesaplanmış Alanların Oluşturulması"
 date: 2003-12-06 12:00:00 +0300
 categories:
-  - ado-net
+  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - data-column

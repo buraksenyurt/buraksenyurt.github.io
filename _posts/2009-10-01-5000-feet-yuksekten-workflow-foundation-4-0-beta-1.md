@@ -3,7 +3,7 @@ layout: post
 title: "5000 Feet Yüksekten Workflow Foundation 4.0[Beta 1]"
 date: 2009-10-01 13:54:00 +0300
 categories:
-  - wf-4-0-beta-1
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
 ---

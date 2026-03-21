@@ -3,8 +3,7 @@ layout: post
 title: "WCF WebHttp Services - Error Handling"
 date: 2010-03-04 23:10:00 +0300
 categories:
-  - wcf-eco-system
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services

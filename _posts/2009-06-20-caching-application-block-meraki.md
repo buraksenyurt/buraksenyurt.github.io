@@ -3,7 +3,7 @@ layout: post
 title: "Caching Application Block Merakı"
 date: 2009-06-20 17:52:00 +0300
 categories:
-  - enterprise-library
+  - Framework Tabanlı Programlama
 tags:
   - enterprise-library
   - windows-communication-foundation

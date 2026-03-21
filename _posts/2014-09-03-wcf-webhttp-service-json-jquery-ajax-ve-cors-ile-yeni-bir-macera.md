@@ -3,9 +3,7 @@ layout: post
 title: "WCF WebHttp Service, JSON, jQuery, Ajax ve CORS ile Yeni Bir Macera"
 date: 2014-09-03 08:27:00 +0300
 categories:
-  - wcf
-  - wcf-4-5
-  - wcf-webhttp-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - web-http-services

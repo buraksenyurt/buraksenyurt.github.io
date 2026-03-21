@@ -3,8 +3,8 @@ layout: post
 title: "GoLang - Redis ile Anlaşmak"
 date: 2017-08-03 21:16:00 +0300
 categories:
-  - golang
-  - nosql
+  - Programlama Dilleri
+  - Veritabanı
 tags:
   - golang
   - redis

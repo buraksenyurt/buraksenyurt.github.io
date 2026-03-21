@@ -3,7 +3,7 @@ layout: post
 title: "Web Servislerinde SoapHeader ile Özelleştirilmiş Doğrulama"
 date: 2007-01-10 12:00:00 +0300
 categories:
-  - xml-web-services
+  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - xml

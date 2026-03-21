@@ -3,7 +3,7 @@ layout: post
 title: "WCFden, XML Web Servisine TransactionScope Activity Bileşeni Üzerinden Transaction Aktarmak"
 date: 2013-03-25 10:21:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - workflow-foundation

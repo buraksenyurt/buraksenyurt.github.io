@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 114 - C# 6.0 Pratikleri (Expression-Bodied Function ve String Interpolation)"
 date: 2015-06-09 02:50:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - poco
   - Expression-bodied

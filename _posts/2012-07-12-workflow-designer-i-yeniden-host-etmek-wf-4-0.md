@@ -3,7 +3,7 @@ layout: post
 title: "Workflow Designer’ ı Yeniden Host Etmek (WF 4.0)"
 date: 2012-07-12 23:05:00 +0300
 categories:
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - rehosted-workflow-designer

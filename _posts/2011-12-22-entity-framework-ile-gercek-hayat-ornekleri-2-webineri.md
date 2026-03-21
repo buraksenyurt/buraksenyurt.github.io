@@ -3,7 +3,7 @@ layout: post
 title: "Entity Framework ile Gerçek Hayat Örnekleri 2 Webineri"
 date: 2011-12-22 06:30:00 +0300
 categories:
-  - nedirtv
+  - Genel
 tags:
   - entity-framework
   - nedir-tv

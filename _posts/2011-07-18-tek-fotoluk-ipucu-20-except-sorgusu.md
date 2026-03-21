@@ -3,9 +3,9 @@ layout: post
 title: "Tek Fotoluk İpucu-20 (Except Sorgusu)"
 date: 2011-07-18 21:17:00 +0300
 categories:
-  - csharp
-  - linq
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Veritabanı
+  - Genel
 tags:
   - csharp
   - language-integrated-query

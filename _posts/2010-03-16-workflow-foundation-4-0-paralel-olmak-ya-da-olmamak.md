@@ -3,7 +3,7 @@ layout: post
 title: "Workflow Foundation 4.0 - Paralel Olmak ya da Olmamak"
 date: 2010-03-16 02:15:00 +0300
 categories:
-  - wf-4-0-rc
+  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - parallel-programming

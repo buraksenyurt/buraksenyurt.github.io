@@ -3,7 +3,7 @@ layout: post
 title: "Dependency Injection'ın TDD'deki Yeri"
 date: 2018-12-21 10:30:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - unit-test
   - tdd

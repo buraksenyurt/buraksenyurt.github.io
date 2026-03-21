@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-40(Sebze Çorbası)"
 date: 2011-11-16 15:20:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - generics

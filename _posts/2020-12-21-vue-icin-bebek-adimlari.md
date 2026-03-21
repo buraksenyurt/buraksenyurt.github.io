@@ -3,7 +3,7 @@ layout: post
 title: "Vue için Bebek Adımları"
 date: 2020-12-21 08:46:00 +0300
 categories:
-  - vuejs
+  - Web Programlama
 tags:
   - javascript
   - vue

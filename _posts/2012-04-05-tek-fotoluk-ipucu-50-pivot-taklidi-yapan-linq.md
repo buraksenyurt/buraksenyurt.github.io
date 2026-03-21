@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 50 - Pivot Taklidi Yapan LINQ"
 date: 2012-04-05 01:55:00 +0300
 categories:
-  - tek-fotoluk-ipucu
+  - Genel
 tags:
   - language-integrated-query
   - pivot

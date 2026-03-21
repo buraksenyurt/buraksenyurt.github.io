@@ -3,7 +3,7 @@ layout: post
 title: "Asp.Net Web API ile OData Kullanımı"
 date: 2016-04-21 09:00:00 +0300
 categories:
-  - aspnet-web-api
+  - Servis Tabanlı Geliştirme
 tags:
   - asp.net-web-api
   - windows-communication-foundation

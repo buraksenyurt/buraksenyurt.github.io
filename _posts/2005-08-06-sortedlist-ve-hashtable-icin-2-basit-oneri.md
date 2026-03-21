@@ -3,7 +3,7 @@ layout: post
 title: "SortedList ve Hashtable İçin 2 Basit Öneri"
 date: 2005-08-06 12:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - sorted-list

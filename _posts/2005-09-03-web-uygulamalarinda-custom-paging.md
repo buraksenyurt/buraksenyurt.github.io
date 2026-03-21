@@ -3,7 +3,7 @@ layout: post
 title: "Web Uygulamalarında Custom Paging"
 date: 2005-09-03 12:00:00 +0300
 categories:
-  - aspnet
+  - Web Programlama
 tags:
   - asp.net
   - paging

@@ -3,7 +3,7 @@ layout: post
 title: "Satranç ve ELO Puanlama Sistemi"
 date: 2018-10-01 09:08:00 +0300
 categories:
-  - general
+  - Genel
 tags:
   - matematik
   - elo-rating

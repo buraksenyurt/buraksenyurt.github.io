@@ -3,7 +3,7 @@ layout: post
 title: "Kendi WebPart Kontrolümüzü Geliştirmek - 1"
 date: 2007-03-28 11:47:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
 ---

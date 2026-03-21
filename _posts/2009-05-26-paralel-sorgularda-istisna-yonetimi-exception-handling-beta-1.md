@@ -3,8 +3,8 @@ layout: post
 title: "Paralel Sorgularda İstisna Yönetimi(Exception Handling) [Beta 1]"
 date: 2009-05-26 05:30:00 +0300
 categories:
-  - linq
-  - plinq
+  - Veritabanı
+  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query

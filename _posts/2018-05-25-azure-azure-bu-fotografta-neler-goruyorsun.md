@@ -3,7 +3,7 @@ layout: post
 title: "Azure, Azure! Bu Fotoğrafta Neler Görüyorsun?"
 date: 2018-05-25 04:46:00 +0300
 categories:
-  - azure
+  - Bulut Bilişim
 tags:
   - microsoft-azure
   - cloud-computing

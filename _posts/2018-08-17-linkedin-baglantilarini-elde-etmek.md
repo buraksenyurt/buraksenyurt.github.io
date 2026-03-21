@@ -3,7 +3,7 @@ layout: post
 title: "Linkedin Bağlantılarını Elde Etmek"
 date: 2018-08-17 21:30:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - linkedin
   - csharp

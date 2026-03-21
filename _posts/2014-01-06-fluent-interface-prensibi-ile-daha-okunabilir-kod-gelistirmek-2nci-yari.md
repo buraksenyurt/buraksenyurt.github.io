@@ -3,7 +3,7 @@ layout: post
 title: "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek -2nci Yarı"
 date: 2014-01-06 05:37:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - fluent-interface
   - generics

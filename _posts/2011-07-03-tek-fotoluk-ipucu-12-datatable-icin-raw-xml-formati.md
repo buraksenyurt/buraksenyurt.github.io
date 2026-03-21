@@ -3,9 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu–12 (DataTable için Raw XML Formatı)"
 date: 2011-07-03 21:45:00 +0300
 categories:
-  - tek-fotoluk-ipucu
-  - wcf
-  - wcf-4-0
+  - Genel
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - datatable

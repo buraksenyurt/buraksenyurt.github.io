@@ -3,7 +3,7 @@ layout: post
 title: "Nasıl Yapılır : Connected(Bağlı) Web Parts"
 date: 2006-12-26 12:00:00 +0300
 categories:
-  - aspnet-2-0
+  - Web Programlama
 tags:
   - asp.net
   - web-parts

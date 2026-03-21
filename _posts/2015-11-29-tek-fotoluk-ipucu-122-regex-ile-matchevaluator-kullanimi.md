@@ -3,7 +3,7 @@ layout: post
 title: "Tek Fotoluk İpucu 122 - Regex ile MatchEvaluator Kullanımı"
 date: 2015-11-29 17:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - regex
   - MatchEvaluator

@@ -3,7 +3,7 @@ layout: post
 title: "Sequelize Kullanılan Bir NodeJs Rest Servisi Geliştirmek"
 date: 2020-05-27 20:23:00 +0300
 categories:
-  - nodejs
+  - Web Programlama
 tags:
   - nodejs
   - docker

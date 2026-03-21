@@ -3,7 +3,7 @@ layout: post
 title: "WCF Data Services – Reflection Provider Kullanımı"
 date: 2012-05-01 01:25:00 +0300
 categories:
-  - wcf-data-services
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wcf-data-services

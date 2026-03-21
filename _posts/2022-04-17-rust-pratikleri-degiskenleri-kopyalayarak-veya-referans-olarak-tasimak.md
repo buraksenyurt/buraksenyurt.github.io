@@ -3,7 +3,7 @@ layout: post
 title: "Rust Pratikleri - Değişkenleri Kopyalayarak veya Referans Olarak Taşımak"
 date: 2022-04-17 09:00:00 +0300
 categories:
-  - rust
+  - Programlama Dilleri
 tags:
   - rust
   - rust-lang

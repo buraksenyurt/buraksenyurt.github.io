@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Kod Parçacıkları - 6 (Sınıflarda Accessor, Setter ve Attribute Kullanımları)"
 date: 2015-08-12 12:00:00 +0300
 categories:
-  - ruby
+  - Programlama Dilleri
 tags:
   - ruby-lang
   - accessor

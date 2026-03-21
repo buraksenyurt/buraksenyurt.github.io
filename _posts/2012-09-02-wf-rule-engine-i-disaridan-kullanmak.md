@@ -3,8 +3,7 @@ layout: post
 title: "WF Rule Engine’ i Dışarıdan Kullanmak"
 date: 2012-09-02 19:45:00 +0300
 categories:
-  - wf
-  - wf-4-0
+  - Framework Tabanlı Programlama
 tags:
   - rule-engine
   - workflow-foundation

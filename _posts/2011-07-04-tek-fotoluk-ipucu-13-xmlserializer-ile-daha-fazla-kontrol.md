@@ -3,9 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-13(XmlSerializer ile Daha Fazla Kontrol)"
 date: 2011-07-04 23:02:00 +0300
 categories:
-  - tek-fotoluk-ipucu
-  - wcf
-  - wcf-4-0
+  - Genel
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - xml

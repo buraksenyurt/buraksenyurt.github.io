@@ -3,7 +3,7 @@ layout: post
 title: "Tie Fighter Değil, Project Tye!"
 date: 2021-03-30 15:00:00 +0300
 categories:
-  - dotnet-core
+  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - .net

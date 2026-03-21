@@ -3,7 +3,7 @@ layout: post
 title: "Derinlemesine Session Kullanımı - 1"
 date: 2004-12-30 18:00:00 +0300
 categories:
-  - aspnet
+  - Web Programlama
 tags:
   - asp.net
   - session

@@ -3,8 +3,8 @@ layout: post
 title: "Tek Fotoluk İpucu-18 (5 Parametreden Fazlası için Struct)"
 date: 2011-07-13 03:48:00 +0300
 categories:
-  - csharp
-  - tek-fotoluk-ipucu
+  - Programlama Dilleri
+  - Genel
 tags:
   - csharp
   - struct

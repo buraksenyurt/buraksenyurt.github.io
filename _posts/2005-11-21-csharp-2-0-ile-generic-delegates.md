@@ -3,7 +3,7 @@ layout: post
 title: "C# 2.0 ile Generic Delegates"
 date: 2005-11-21 10:00:00 +0300
 categories:
-  - csharp
+  - Programlama Dilleri
 tags:
   - csharp
   - generics

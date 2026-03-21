@@ -3,7 +3,7 @@ layout: post
 title: "Serileştirme İşlemlerinde Versiyonlama(Versioning) Vakaları"
 date: 2008-06-22 12:00:00 +0300
 categories:
-  - wcf
+  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
 ---
