@@ -1,10 +1,12 @@
 {%- assign taxonomy_entry = site.data.inferred_taxonomy.posts[page.url] -%}
 {%- assign categories = taxonomy_entry.categories | default: page.categories -%}
 {%- assign tags = taxonomy_entry.tags | default: page.tags -%}
+{%- assign show_categories = include.show_categories | default: true -%}
+{%- assign show_tags = include.show_tags | default: true -%}
 
-{%- if categories or tags -%}
+{%- if (show_categories and categories and categories.size > 0) or (show_tags and tags and tags.size > 0) -%}
   <div class="post-taxonomy">
-    {%- if categories and categories.size > 0 -%}
+    {%- if show_categories and categories and categories.size > 0 -%}
       <div class="post-taxonomy-group">
         <span class="post-taxonomy-label">Kategoriler</span>
         <div class="post-taxonomy-links">
@@ -15,7 +17,7 @@
       </div>
     {%- endif -%}
 
-    {%- if tags and tags.size > 0 -%}
+    {%- if show_tags and tags and tags.size > 0 -%}
       <div class="post-taxonomy-group">
         <span class="post-taxonomy-label">Etiketler</span>
         <div class="post-taxonomy-links">

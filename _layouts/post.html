@@ -2,6 +2,9 @@
 layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  {%- assign taxonomy_entry = site.data.inferred_taxonomy.posts[page.url] -%}
+  {%- assign current_categories = taxonomy_entry.categories | default: page.categories -%}
+  {%- assign current_tags = taxonomy_entry.tags | default: page.tags -%}
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -12,6 +15,14 @@ layout: default
       </time>
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+      {%- if current_categories and current_categories.size > 0 -%}
+        • <span class="post-categories-inline">Kategoriler:
+          {%- for category in current_categories -%}
+            {%- assign category_anchor = category | slugify -%}
+            <a href="{{ '/kategoriler/#' | append: category_anchor | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+          {%- endfor -%}
+        </span>
       {%- endif -%}
     </p>
   </header>
@@ -25,9 +36,6 @@ layout: default
     {{ content }}
   </div>
 
-  {%- assign taxonomy_entry = site.data.inferred_taxonomy.posts[page.url] -%}
-  {%- assign current_categories = taxonomy_entry.categories | default: page.categories -%}
-  {%- assign current_tags = taxonomy_entry.tags | default: page.tags -%}
   {%- assign related_count = 0 -%}
   {%- capture related_posts_markup -%}{%- endcapture -%}
   {%- for post in site.posts -%}

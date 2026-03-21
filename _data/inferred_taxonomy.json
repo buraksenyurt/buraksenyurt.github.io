@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-21T20:07:27Z",
+  "generated_at": "2026-03-21T21:57:37Z",
   "posts": {
     "/2003/11/08/stored-procedure-yardimiyla-yeni-bir-kayit-eklemek/": {
       "title": "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek",
       "date": "2003-11-08T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -22,9 +22,9 @@
       "title": "Stored Procedure Yardımıyla Tablodan Kayıt Silmek",
       "date": "2003-11-12T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -40,9 +40,9 @@
       "title": "Web Sayfalarında Stored Procedure Kullanımı",
       "date": "2003-11-12T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "aspnet",
@@ -58,7 +58,6 @@
       "title": "Overload Metodların Gücü",
       "date": "2003-11-13T13:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "SQL"
       ],
@@ -75,9 +74,9 @@
       "title": "Transaction Kavramı",
       "date": "2003-11-17T10:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -96,9 +95,9 @@
       "title": "Distributed Transactions",
       "date": "2003-11-19T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Docker"
       ],
       "tags": [
         "ado-net",
@@ -148,9 +147,9 @@
       "title": "DataSet ve WriteXml Metodunun Kullanımı",
       "date": "2003-11-30T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -165,9 +164,9 @@
       "title": "Params Anahtar Sözcüğünün Kullanımı",
       "date": "2003-11-30T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -180,7 +179,6 @@
       "title": "Enumerators",
       "date": "2003-12-01T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -198,9 +196,9 @@
       "title": "DataTable Sınıfını Kullanarak Programatik Olarak Tablolar Oluşturmak-1",
       "date": "2003-12-04T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -212,7 +210,6 @@
       "title": "Struct Kavramı ve Class ile Struct Arasındaki Farklar",
       "date": "2003-12-04T11:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -226,8 +223,8 @@
       "title": "DataTable Sınıfını Kullanarak Programatik Olarak Tablolar Oluşturmak-2",
       "date": "2003-12-05T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
+        "Veri Erisimi",
         "SQL"
       ],
       "tags": [
@@ -241,9 +238,9 @@
       "title": "DataColumn.Expression Özelliği İle Hesaplanmış Alanların Oluşturulması",
       "date": "2003-12-06T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -257,9 +254,9 @@
       "title": "İlişkili Tabloları DataSet İle Kullanmak - 1",
       "date": "2003-12-09T10:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -273,9 +270,9 @@
       "title": "İlişkili Tabloları DataSet İle Kullanmak - 2",
       "date": "2003-12-10T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -307,9 +304,9 @@
       "title": "DataView Sınıfı ve Faydaları",
       "date": "2003-12-15T04:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -323,9 +320,9 @@
       "title": "DataGrid Denetimi Üzerinde Sayfalama(Paging) İşlemi",
       "date": "2003-12-16T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -341,9 +338,9 @@
       "title": "DataGrid Denetimi Üzerinde Sıralama(Sorting) İşlemi",
       "date": "2003-12-17T10:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -356,7 +353,6 @@
       "title": "HashTable Koleksiyon Sınıfı",
       "date": "2003-12-18T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -370,7 +366,6 @@
       "title": "Stack ve Queue Koleksiyon Sınıfı",
       "date": "2003-12-19T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -385,7 +380,6 @@
       "title": "Reflection Sınıfı İle Tiplerin Sırrı Ortaya Çıkıyor",
       "date": "2003-12-22T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Veri Erisimi"
       ],
@@ -400,9 +394,9 @@
       "title": "Bir Sınıf Yazalım",
       "date": "2003-12-23T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -416,7 +410,6 @@
       "title": "Kalıtım (Inheritance) Kavramına Kısa Bir Bakış",
       "date": "2003-12-25T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -429,7 +422,6 @@
       "title": "Virtual(Sanal) Metotlar",
       "date": "2003-12-25T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -442,9 +434,9 @@
       "title": "SqlDataReader Sınıfı 1",
       "date": "2003-12-28T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -461,9 +453,9 @@
       "title": "SqlDataReader Sınıfı 2",
       "date": "2003-12-29T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -476,9 +468,9 @@
       "title": "Boxing (Kutulamak) ve Unboxing (Kutuyu Kaldırmak)",
       "date": "2003-12-30T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -492,7 +484,6 @@
       "title": "Çok Kanallı(Multithread) Uygulamalar",
       "date": "2004-01-01T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -507,9 +498,9 @@
       "title": "StreamReader Sınıfı Yardımıyla Dosya Okumak",
       "date": "2004-01-01T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -522,7 +513,6 @@
       "title": "Thread'leri Belli Süreler Boyunca Uyutmak ve Yoketmek",
       "date": "2004-01-02T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -536,7 +526,6 @@
       "title": "Thread'lerde Öncelik(Priority) Durumları",
       "date": "2004-01-05T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -551,9 +540,9 @@
       "title": "İşe Yarar Bir MultiThreading(Çok Kanallı) Uygulama Örneği",
       "date": "2004-01-06T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -568,7 +557,6 @@
       "title": "ArrayList Koleksiyonu ve DataGrid",
       "date": "2004-01-07T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -581,7 +569,6 @@
       "title": "Interface (Arayüz) Kullanımına Giriş",
       "date": "2004-01-08T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -595,7 +582,6 @@
       "title": "Arayüz(Interface), Sınıf(Class) ve Çoklu Kalıtım",
       "date": "2004-01-09T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -608,7 +594,6 @@
       "title": "Arayüzler'de is ve as Anahtar Sözcüklerinin Kullanımı",
       "date": "2004-01-12T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -622,9 +607,9 @@
       "title": "Bir Arayüz, Bir Sınıf ve Bir Tablo",
       "date": "2004-01-14T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -644,7 +629,6 @@
       "title": "Checked, Unchecked Anahtar Kelimeleri ve OverFlow Hatası",
       "date": "2004-01-15T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -657,7 +641,6 @@
       "title": "Temsilciler (Delegates) Kavramına Giriş",
       "date": "2004-01-20T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -673,9 +656,9 @@
       "title": "Net Data Providers(Veri Sağlayıcıları)",
       "date": "2004-01-22T08:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -691,9 +674,9 @@
       "title": "Sql Tablolarına Resim Eklemek",
       "date": "2004-01-23T02:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -709,9 +692,9 @@
       "title": "Sql Tablolarındaki Binary Resimlere Bakmak ve Dosya Olarak Kaydetmek",
       "date": "2004-01-24T10:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -730,9 +713,9 @@
       "title": "Indeksleyiciler (Indexers)",
       "date": "2004-01-27T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -745,9 +728,9 @@
       "title": "Tablo Değişikliklerini GetChanges ile İzlemek",
       "date": "2004-01-29T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -761,9 +744,9 @@
       "title": "Stored Procedureler ve ParameterDirection Numaralandırıcısı",
       "date": "2004-01-31T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -781,9 +764,9 @@
       "title": "Strongly Typed DataSet - 1 (Kuvvetle Türlendirilmiş Veri Kümeleri)",
       "date": "2004-02-04T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -800,9 +783,9 @@
       "title": "Strongly Typed DataSet - 2 (Kuvvetle Türlendirilmiş Veri Kümeleri)",
       "date": "2004-02-05T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -818,9 +801,9 @@
       "title": "Data Form Wizard Yardımıyla İlişkili Tablo Uygulamalarının Hazırlanması",
       "date": "2004-02-09T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -839,9 +822,9 @@
       "title": "GetOleDbSchemaTable Metodu İle Veritabanımızda Ne Var Ne Yok",
       "date": "2004-02-12T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -858,9 +841,9 @@
       "title": "Connection (Bağlantı) Kavramı ve OleDbConnection Sınıfı",
       "date": "2004-02-13T06:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -880,9 +863,9 @@
       "title": "Batch Queries (Toplu Sorgular) ve SqlDataReader",
       "date": "2004-02-17T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -895,9 +878,9 @@
       "title": "Command Kavramı ve OleDbCommand Sınıfı",
       "date": "2004-02-23T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -917,9 +900,9 @@
       "title": "DataAdapter Kavramı ve OleDbDataAdapter Sınıfına Giriş",
       "date": "2004-02-27T08:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -934,9 +917,9 @@
       "title": "OleDbDataAdapter Sınıfı - 2",
       "date": "2004-03-02T10:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -957,9 +940,9 @@
       "title": "OleDbDataAdapter Sınıfı ve Update Metodu.",
       "date": "2004-03-14T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -978,9 +961,9 @@
       "title": "OleDbDataAdapter Sınıfı Olayları",
       "date": "2004-03-18T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -999,9 +982,9 @@
       "title": "DataTable.Compute Metodu",
       "date": "2004-03-29T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1018,9 +1001,9 @@
       "title": "DataRelation Sınıfı ve Çoğa-Çok (Many-to-many) İlişkiler",
       "date": "2004-04-01T09:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1037,9 +1020,9 @@
       "title": "İlişkiler ve Hesaplanmış Alanların Bir Arada Kulllanılması",
       "date": "2004-04-08T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1054,7 +1037,6 @@
       "title": "Private Assembly ve Shared Assembly Kavramı",
       "date": "2004-04-22T09:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -1069,7 +1051,6 @@
       "title": "Single File Assembly ve Multiple-File Assembly Kavramları",
       "date": "2004-04-27T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -1163,9 +1144,9 @@
       "title": "Transaction' larda SavePoint Kullanımı",
       "date": "2004-06-15T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1180,9 +1161,9 @@
       "title": "Transaction' larda Izolasyon Seviyeleri (Isolation Level) - 1",
       "date": "2004-06-19T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1197,9 +1178,9 @@
       "title": "Transaction' larda Izolasyon Seviyeleri -2 (IsolationLevel Numaralandırıcısı)",
       "date": "2004-06-28T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1234,9 +1215,9 @@
       "title": "Transaction' larda DeadLock Kavramı",
       "date": "2004-07-07T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1263,9 +1244,9 @@
       "title": "CurrencyManager ile Navigasyon ve Temel Satır İşlemleri",
       "date": "2004-07-27T06:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1279,9 +1260,9 @@
       "title": "Identity Değerlerinin Çalışma Zamanında Elde Edilmesi",
       "date": "2004-07-29T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1297,7 +1278,6 @@
       "title": "Localization (Yerelleştirme) - 1",
       "date": "2004-08-05T09:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -1313,7 +1293,6 @@
       "title": "Localization (Yerelleştirme) 2 - Dil Desteği",
       "date": "2004-08-07T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -1329,8 +1308,8 @@
       "title": "Asp.Net 2.0 ile Cross-Page Posting",
       "date": "2004-08-31T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -1344,8 +1323,8 @@
       "title": "Asp.Net 2.0 ile Veri Kümelerinde Sayfalama İşlemleri",
       "date": "2004-09-01T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1363,8 +1342,8 @@
       "title": "Asp.Net 2.0 ve Code Klasörü",
       "date": "2004-09-01T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "Veri Erisimi"
       ],
       "tags": [
@@ -1380,8 +1359,8 @@
       "title": "Asp.Net 2.0 için Site Map Kullanımı",
       "date": "2004-09-03T06:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -1394,8 +1373,8 @@
       "title": "Asp.Net 2.0 ve Temalar (Themes)",
       "date": "2004-09-03T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -1407,8 +1386,8 @@
       "title": "Asp.Net 2.0 ve TreeView Kontrolü",
       "date": "2004-09-06T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -1421,8 +1400,8 @@
       "title": "Asp.Net 2.0 GridView Kontrolünde Update,Delete İşlemleri",
       "date": "2004-09-07T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1438,8 +1417,8 @@
       "title": "Asp.Net 2.0 DetailsView Kontrolü ile Insert,Update,Delete",
       "date": "2004-09-08T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1457,8 +1436,8 @@
       "title": "Asp.Net 2.0 ve Master Page Kavramı",
       "date": "2004-09-10T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -1470,8 +1449,8 @@
       "title": "Asp.Net 2.0 ve ObjectDataSource Kontrolü",
       "date": "2004-09-14T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1695,9 +1674,9 @@
       "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 1)",
       "date": "2004-11-06T04:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Algoritmalar"
+        "Algoritmalar",
+        "Oyun Programlama"
       ],
       "tags": [
         "ai",
@@ -1715,9 +1694,9 @@
       "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 2)",
       "date": "2004-11-12T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Algoritmalar"
+        "Algoritmalar",
+        "Oyun Programlama"
       ],
       "tags": [
         "algorithms",
@@ -1732,9 +1711,9 @@
       "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 3)",
       "date": "2004-11-19T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Algoritmalar"
+        "Algoritmalar",
+        "Oyun Programlama"
       ],
       "tags": [
         "algorithms",
@@ -1749,7 +1728,6 @@
       "title": "Oyun Programlamaya Giriş (Matrisler Yardımıyla Çarpışma Kontrolü)",
       "date": "2004-12-04T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Oyun Programlama"
       ],
@@ -1766,9 +1744,9 @@
       "title": "Ado.Net ile Sql Server Full-Text Searching (Tüm Metinde Arama) Kullanımı",
       "date": "2004-12-18T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -1785,8 +1763,8 @@
       "title": "Derinlemesine Session Kullanımı - 1",
       "date": "2004-12-30T18:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1803,8 +1781,8 @@
       "title": "Derinlemesine Session Kullanımı - 2",
       "date": "2005-01-07T22:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1822,8 +1800,8 @@
       "title": "Caching Mekanizmasını Anlamak - 1",
       "date": "2005-01-21T08:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1837,8 +1815,8 @@
       "title": "Caching Mekanizmasını Anlamak - 2",
       "date": "2005-02-07T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -1855,9 +1833,9 @@
       "title": "RijndaelManaged Vasıtasıyla Encryption(Şifreleme) ve Decryption(Deşifre)",
       "date": "2005-02-23T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Algoritmalar"
       ],
       "tags": [
         "algorithms",
@@ -1874,9 +1852,9 @@
       "title": "Bağlantısız Katmanda Concurrency Violation Durumu",
       "date": "2005-03-06T10:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1894,8 +1872,8 @@
       "title": "Self Referencing Relations ve Recursive(Yinelemeli) Metodlar",
       "date": "2005-03-14T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
+        "Veri Erisimi",
         "Algoritmalar"
       ],
       "tags": [
@@ -1914,9 +1892,9 @@
       "title": "Command Nesnelerine Dikkat!",
       "date": "2005-03-27T09:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -1932,9 +1910,9 @@
       "title": "DataReader Nesnelerini Kullanırken…",
       "date": "2005-04-04T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -1987,7 +1965,6 @@
       "title": "Kendi İstina Nesnelerimizi Kullanmak (ApplicationException)",
       "date": "2005-05-23T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2000,7 +1977,6 @@
       "title": "Operator Overloading (Operatörlerin Aşırı Yüklenmesi)",
       "date": "2005-06-03T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2013,7 +1989,6 @@
       "title": "C# 2.0 ve Anonymous (İsimsiz) Metodlar",
       "date": "2005-06-16T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2026,7 +2001,6 @@
       "title": "C# 2.0 ve Static Sınıflar",
       "date": "2005-06-20T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2040,9 +2014,9 @@
       "title": "C# 2.0 ve Nullable Değer Tipleri",
       "date": "2005-06-22T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -2056,7 +2030,6 @@
       "title": "C# 2.0 ile Partial Types (Kısmi Tipler)",
       "date": "2005-06-27T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "ASP.NET"
       ],
@@ -2073,7 +2046,6 @@
       "title": "C# 2.0 Covariance ve Contravariance Delegates",
       "date": "2005-06-30T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2090,7 +2062,6 @@
       "title": "C# 2.0 İçin İterasyon Yenilikleri",
       "date": "2005-07-05T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2103,7 +2074,6 @@
       "title": "Dizilere(Arrays) İlişkin Üç Basit Öneri",
       "date": "2005-07-14T09:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2115,7 +2085,6 @@
       "title": "Tip Güvenli (Type Safety ) Koleksiyonlar Oluşturmak - 1",
       "date": "2005-07-23T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2129,7 +2098,6 @@
       "title": "Tip Güvenli (Type Safety ) Koleksiyonlar Oluşturmak - 2",
       "date": "2005-07-31T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2142,9 +2110,9 @@
       "title": "SortedList ve Hashtable İçin 2 Basit Öneri",
       "date": "2005-08-06T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "algorithms",
@@ -2159,9 +2127,9 @@
       "title": "Numaralandırıcıları Kullanmak İçin Bir Sebep",
       "date": "2005-08-28T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -2175,8 +2143,8 @@
       "title": "Web Uygulamalarında Custom Paging",
       "date": "2005-09-03T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -2194,9 +2162,9 @@
       "title": "CallBack Tekniği ile Asenkron Metod Yürütmek",
       "date": "2005-09-09T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "SQL"
       ],
       "tags": [
         "ado-net",
@@ -2213,7 +2181,6 @@
       "title": "Boxing ve Unboxing Performans Kritiği",
       "date": "2005-09-26T09:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2227,7 +2194,6 @@
       "title": "Constructor Initializers (Yapıcı Metod Başlatıcıları) Deyip Geçmeyin",
       "date": "2005-10-03T09:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2259,7 +2225,6 @@
       "title": "Kendi Referans Tiplerimizi Klonlamak",
       "date": "2005-11-14T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2271,7 +2236,6 @@
       "title": "C# 2.0 ile Generic Delegates",
       "date": "2005-11-21T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -2288,7 +2252,6 @@
       "title": "Generic Mimaride Kısıtlamaların(Constraints) Kullanımı",
       "date": "2005-12-31T08:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -2320,8 +2283,8 @@
       "title": "Web Uygulamalarında Özel Doğrulama İşlemleri",
       "date": "2006-01-14T10:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "JavaScript"
       ],
       "tags": [
@@ -2338,9 +2301,9 @@
       "title": "Compact Framework Üzerinde RDA ile Senkronizasyon",
       "date": "2006-01-24T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -2354,7 +2317,6 @@
       "title": "Serileştirme (Serialization) İçin Püf Noktalar",
       "date": "2006-02-02T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2369,7 +2331,6 @@
       "title": "Sabit Değer Tipleri (Immutable Value Types) Analizi",
       "date": "2006-02-08T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2591,7 +2552,6 @@
       "title": "Custom Serialization",
       "date": "2006-05-14T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -2629,8 +2589,8 @@
       "title": "Profile API ile Personalization",
       "date": "2006-06-02T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -2664,8 +2624,8 @@
       "title": "Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)",
       "date": "2006-06-26T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -2681,7 +2641,6 @@
       "title": "İlk Bakışta .Net Process Yönetimi",
       "date": "2006-07-07T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2699,9 +2658,9 @@
       "title": "Büyük Nesneler(Large Objects) ile Çalışmak",
       "date": "2006-07-11T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado.net-2",
@@ -2719,8 +2678,8 @@
       "title": "Asp.Net 2.0 Üzerinde Xslt Kullanımı",
       "date": "2006-07-20T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -2754,8 +2713,8 @@
       "title": "Cross-Page Postback Paradigması",
       "date": "2006-08-04T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "JavaScript"
       ],
       "tags": [
@@ -2787,7 +2746,6 @@
       "title": "C# Temelleri : Static Olmak",
       "date": "2006-09-13T18:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2802,9 +2760,9 @@
       "title": "C# 3.0 - İlk Bakışta DLINQ",
       "date": "2006-09-25T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "anonymous-types",
@@ -2820,7 +2778,6 @@
       "title": "C# Temelleri : Referans Tipi Olmak",
       "date": "2006-10-02T06:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -2838,7 +2795,6 @@
       "title": "C# Temelleri: 1!=1 Eşitsizliğinden GetHashCode' a Uzun İnce Bir Yol",
       "date": "2006-10-11T03:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -2854,7 +2810,6 @@
       "title": "C# 3.0 - İlk Bakışta XLINQ",
       "date": "2006-10-22T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "SQL"
       ],
@@ -2870,9 +2825,9 @@
       "title": "C# Temelleri : Enum Sabitinin Bilinmeyen Yönleri",
       "date": "2006-10-30T02:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "Algoritmalar"
       ],
       "tags": [
         "algorithms",
@@ -2885,9 +2840,9 @@
       "title": "SqlCommandBuilder için 4 Tavsiye",
       "date": "2006-11-13T12:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -2904,7 +2859,6 @@
       "title": "Kullanıcı Web Kontrollerini Daha Etkin Kullanmak",
       "date": "2006-11-21T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "ASP.NET"
       ],
@@ -2918,8 +2872,8 @@
       "title": "Asp.Net 2.0 Temelleri : Bir Web Sayfasının Anatomisi",
       "date": "2006-11-30T10:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "JavaScript"
       ],
       "tags": [
@@ -2934,8 +2888,8 @@
       "title": "HTTPHandler ve HttpModule Kavramları",
       "date": "2006-12-08T04:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -2953,8 +2907,8 @@
       "title": "Asp.Net 2.0 ve Client Script Callback",
       "date": "2006-12-17T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -2971,8 +2925,8 @@
       "title": "Nasıl Yapılır : Connected(Bağlı) Web Parts",
       "date": "2006-12-26T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -2988,8 +2942,8 @@
       "title": "Nasıl Yapılır : Özelleştirilmiş SiteMapProvider Yazmak",
       "date": "2006-12-29T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -3030,8 +2984,8 @@
       "title": "Web Server Control Yazmak - 1",
       "date": "2007-01-17T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -3045,8 +2999,8 @@
       "title": "Web Server Control Yazmak - 2",
       "date": "2007-01-23T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -3059,8 +3013,8 @@
       "title": "Web Server Control Yazmak - 3",
       "date": "2007-02-05T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -3073,8 +3027,8 @@
       "title": "İlk Bakışta WCF",
       "date": "2007-02-14T06:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -3111,7 +3065,6 @@
       "title": ".Net Tarafında Xml ile Oynamak-1",
       "date": "2007-02-28T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -3125,7 +3078,6 @@
       "title": ".Net Tarafında Xml ile Oynamak-2",
       "date": "2007-03-08T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -3141,8 +3093,8 @@
       "title": "Profesyonelce Master Pages",
       "date": "2007-03-13T08:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "Veri Erisimi"
       ],
       "tags": [
@@ -3159,9 +3111,9 @@
       "title": "WPF, Xaml, Baml ve Dahası",
       "date": "2007-03-21T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -3179,8 +3131,8 @@
       "title": "Kendi Web Part Bileşenlerimizi Geliştirmek",
       "date": "2007-03-28T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "Veri Erisimi"
       ],
       "tags": [
@@ -3198,8 +3150,8 @@
       "title": "Kendi WebPart Kontrolümüzü Geliştirmek - 1",
       "date": "2007-03-28T11:47:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "Veri Erisimi"
       ],
       "tags": [
@@ -3215,9 +3167,9 @@
       "title": "Bağlantısız Katmanda LINQ",
       "date": "2007-04-02T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "Docker"
       ],
       "tags": [
         "ado-net",
@@ -3234,9 +3186,9 @@
       "title": "C# Temelleri : Nitelikleri(Attributes) Kavramak",
       "date": "2007-04-11T03:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -3256,9 +3208,9 @@
       "title": "Kendi Web Part Bilesenlerimizi Gelistirmek - 2",
       "date": "2007-04-20T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
-        "Docker"
+        "Docker",
+        "Algoritmalar"
       ],
       "tags": [
         "algorithms",
@@ -3273,9 +3225,9 @@
       "title": "WCF - Adım Adım IIS Hosting",
       "date": "2007-04-28T03:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "ado-net",
@@ -3297,8 +3249,8 @@
       "title": "WCF-Windows ve Windows Service Hosting",
       "date": "2007-05-04T09:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -3316,8 +3268,8 @@
       "title": "WCF - Hata Yönetimi (Fault Management)",
       "date": "2007-05-09T06:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Veri Erisimi"
       ],
       "tags": [
@@ -3335,8 +3287,8 @@
       "title": "WCF - Mesaj Seviyesinde Güvenlik",
       "date": "2007-05-16T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Algoritmalar"
       ],
       "tags": [
@@ -3382,8 +3334,8 @@
       "title": "WCF - One Way Ticket",
       "date": "2007-05-31T09:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3400,7 +3352,6 @@
       "title": "C# Temelleri - Olayları(Events) Kavramak",
       "date": "2007-06-06T09:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -3417,8 +3368,8 @@
       "title": "WCF - Istemci Taraflı Asenkron Çağırma (Client Side Asynchronous Invoking)",
       "date": "2007-06-13T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3438,8 +3389,8 @@
       "title": "WCF - Transaction Yonetimi (Transaction Management) - 1",
       "date": "2007-06-19T09:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -3458,8 +3409,8 @@
       "title": "WCF - Transaction Yonetimi (Transaction Management) - 2",
       "date": "2007-06-28T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -3476,9 +3427,9 @@
       "title": "WCF - Internet Üzerinden Güvenliği Sağlamak - 1",
       "date": "2007-07-03T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -3496,9 +3447,9 @@
       "title": "WCF - Internet Üzerinden Güvenliği Sağlamak - 2",
       "date": "2007-07-05T12:17:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -3515,8 +3466,8 @@
       "title": "WCF - Windows Tabanlı Doğrulama ve Yetkilendirme",
       "date": "2007-07-12T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3533,8 +3484,8 @@
       "title": "Asp.Net Temelleri - Etkin Hata Yönetimi (Error Management)",
       "date": "2007-07-18T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "WCF"
       ],
       "tags": [
@@ -3550,8 +3501,8 @@
       "title": "Asp.Net Temelleri : Tablo Bazlı Resimleri Ele Almak",
       "date": "2007-07-26T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -3569,8 +3520,8 @@
       "title": "Asp.Net Temelleri : Etkili Trace Kullanımı",
       "date": "2007-08-02T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -3586,8 +3537,8 @@
       "title": "Asp.Net 2.0 URL Rewriting Hakkında Gerçekler",
       "date": "2007-08-07T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -3605,8 +3556,8 @@
       "title": "Asp.Net Temelleri : Derinlemesine Download/Upload İşlemleri",
       "date": "2007-08-15T06:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -3624,8 +3575,8 @@
       "title": "WCF - Client Callback (İstemci Taraflı Geri Bildirim)",
       "date": "2007-08-23T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3641,9 +3592,9 @@
       "title": "WPF-Uygulama Nesnesi (Application Object)",
       "date": "2007-08-30T09:00:00+03:00",
       "categories": [
-        "WPF",
         "Rust",
-        ".NET"
+        ".NET",
+        "WCF"
       ],
       "tags": [
         "algorithms",
@@ -3664,8 +3615,8 @@
       "title": "WPF - Veriye Bağlanmak (Data Binding)",
       "date": "2007-09-03T12:00:00+03:00",
       "categories": [
-        "WPF",
         ".NET",
+        "WPF",
         "SQL"
       ],
       "tags": [
@@ -3684,8 +3635,8 @@
       "title": "WPF - Grafik İşlemlerinde Fırçaların(Brushes) Kullanımı",
       "date": "2007-09-11T12:00:00+03:00",
       "categories": [
-        "WPF",
-        ".NET"
+        ".NET",
+        "WPF"
       ],
       "tags": [
         "brushes",
@@ -3700,8 +3651,8 @@
       "title": "WPF - Grafik İşlemlerinde Şekillerin(Shapes) Kullanımı",
       "date": "2007-09-18T09:00:00+03:00",
       "categories": [
-        "WPF",
         ".NET",
+        "WPF",
         "Algoritmalar"
       ],
       "tags": [
@@ -3718,8 +3669,8 @@
       "title": "WPF - Temel Animasyon İşlemleri",
       "date": "2007-09-26T12:00:00+03:00",
       "categories": [
-        "WPF",
-        ".NET"
+        ".NET",
+        "WPF"
       ],
       "tags": [
         "animation",
@@ -3735,8 +3686,8 @@
       "title": "WPF - Temel Animasyon İşlemleri - 2",
       "date": "2007-10-01T12:00:00+03:00",
       "categories": [
-        "WPF",
-        ".NET"
+        ".NET",
+        "WPF"
       ],
       "tags": [
         "animation",
@@ -3750,9 +3701,9 @@
       "title": "WPF - Sayfa(Page) Kavramı, Navigasyon İşlemleri ve XBAP",
       "date": "2007-10-04T12:00:00+03:00",
       "categories": [
-        "WPF",
         "Rust",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "aspnet",
@@ -3771,8 +3722,8 @@
       "title": "Daha Etkili Profil(Profile) Yönetimi",
       "date": "2007-10-17T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "JavaScript"
       ],
       "tags": [
@@ -3789,8 +3740,8 @@
       "title": "WCF - Windows CardSpace ile Güvenlik",
       "date": "2007-10-25T12:00:00+03:00",
       "categories": [
-        "WCF",
-        ".NET"
+        ".NET",
+        "WCF"
       ],
       "tags": [
         "csharp",
@@ -3805,7 +3756,6 @@
       "title": "Using İfadesi ile Garanti Dispose",
       "date": "2007-10-27T21:37:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -3823,8 +3773,8 @@
       "title": "WCF - Güvenilir Oturumlar(Reliable Sessions)",
       "date": "2007-11-01T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3840,8 +3790,8 @@
       "title": "WCF - Replay Attack Etkisini Hafifletmek",
       "date": "2007-11-07T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3857,8 +3807,8 @@
       "title": "WCF - MSMQ(MicroSoft Message Queue) ile Entegrasyon",
       "date": "2007-11-13T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -3876,8 +3826,8 @@
       "title": "WCF - MTOM ve Stream Kullanarak Veri Aktarımı",
       "date": "2007-11-26T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -3894,8 +3844,8 @@
       "title": ".Net Remoting Dünyasından WCF'e Geçmek",
       "date": "2007-12-03T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -3915,8 +3865,8 @@
       "title": "Nasıl Yapılır? Adım Adım Özel HttpHandler",
       "date": "2007-12-10T12:00:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -4023,8 +3973,8 @@
       "title": "Front-End Service Geliştirmek",
       "date": "2008-01-30T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Algoritmalar"
       ],
       "tags": [
@@ -4042,8 +3992,8 @@
       "title": "RSS, Atom Formatlı İçerik Paylaşımı(Syndication)",
       "date": "2008-02-08T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -4062,9 +4012,9 @@
       "title": "Mesaj Sözleşmeleri(Message Contracts)",
       "date": "2008-02-09T12:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "WCF"
+        "WCF",
+        "Tasarim Desenleri"
       ],
       "tags": [
         "design-patterns",
@@ -4078,8 +4028,8 @@
       "title": "Web Bazlı Programlama Modeli",
       "date": "2008-02-14T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -4102,9 +4052,9 @@
       "title": "AJAX ve JSON Desteği",
       "date": "2008-02-25T08:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "ajax",
@@ -4126,8 +4076,8 @@
       "title": "Kod Tarafından Yönetmek",
       "date": "2008-03-07T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "JavaScript"
       ],
       "tags": [
@@ -4145,8 +4095,8 @@
       "title": "WCF - Visual Studio 2008 ile Gelen Yenilikler",
       "date": "2008-03-14T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -4213,8 +4163,8 @@
       "title": "WCF ile WF Entegrasyonu - 1",
       "date": "2008-04-17T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -4233,8 +4183,8 @@
       "title": "WCF ile WF Entegrasyonu - 2",
       "date": "2008-04-23T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -4253,8 +4203,8 @@
       "title": "WCF - Performans",
       "date": "2008-05-20T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -4271,8 +4221,8 @@
       "title": "WCF - P2P(Peer-to-peer) Programlamaya Giriş",
       "date": "2008-05-25T09:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -4288,8 +4238,8 @@
       "title": "ServiceHost Sınıfından Genişletmek",
       "date": "2008-06-05T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -4305,9 +4255,9 @@
       "title": "WCF Serileştirme(Serialization)",
       "date": "2008-06-16T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -4324,8 +4274,8 @@
       "title": "Serileştirme İşlemlerinde Versiyonlama(Versioning) Vakaları",
       "date": "2008-06-22T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -4341,8 +4291,8 @@
       "title": "Serileştirme İşlemlerinde Vekil(Surrogate) Kullanmak",
       "date": "2008-07-03T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -4506,9 +4456,9 @@
       "title": "Client Application Services (İstemci Uygulama Servisleri)",
       "date": "2008-12-16T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -4552,8 +4502,8 @@
       "title": "Dayanıklı WCF Servisleri (Durable WCF Services)",
       "date": "2009-01-16T10:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -4571,8 +4521,8 @@
       "title": "Dayanıklı WCF Servisleri(Custom Persistence Providers)",
       "date": "2009-01-23T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -4616,8 +4566,8 @@
       "title": "Mesaj Sözleşmeleri(Message Contracts)",
       "date": "2009-02-09T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -4686,9 +4636,9 @@
       "title": "Ado.Net Entity Framework' de Lazy ve Eager Loading",
       "date": "2009-04-16T03:41:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -4702,9 +4652,9 @@
       "title": "Soap Bazlı WCF Servislerini REST Modeline Taşımak",
       "date": "2009-04-17T17:19:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "ado-net",
@@ -4724,8 +4674,8 @@
       "title": "WCF Servisleri için Unit Test",
       "date": "2009-04-17T07:28:00+03:00",
       "categories": [
-        "WCF",
-        ".NET"
+        ".NET",
+        "WCF"
       ],
       "tags": [
         "csharp",
@@ -4740,9 +4690,9 @@
       "title": "WCF Rest Modelinde UriTemplate Kullanımı",
       "date": "2009-04-20T19:19:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "ado-net",
@@ -4764,9 +4714,9 @@
       "title": "Koleksiyon Bazlı WCF Rest Servisleri",
       "date": "2009-04-22T08:07:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -4787,9 +4737,9 @@
       "title": "Rest Tabanlı WCF Servisleri için İstemci Yazmak",
       "date": "2009-04-23T12:12:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -4807,8 +4757,8 @@
       "title": "Rest Tabanlı WCF Servislerinde İstemci Tarafını Asenkron Geliştirmek",
       "date": "2009-04-24T09:26:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -4828,9 +4778,9 @@
       "title": "WCF Rest Servislerinde Önbellekleme(Caching)",
       "date": "2009-04-27T12:28:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -4849,8 +4799,8 @@
       "title": "REST Bazlı WCF Servislerinde AdapterStream Kullanımı",
       "date": "2009-04-29T16:03:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -4897,9 +4847,9 @@
       "title": "REST Starter Kit Nedir?",
       "date": "2009-05-05T12:41:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -5547,8 +5497,8 @@
       "title": "WCF Rest Starter Kit Preview 2 ile Twitter Reader",
       "date": "2009-08-04T23:47:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -5930,9 +5880,9 @@
       "title": "Ado.Net Data Services 1.5 - Projections",
       "date": "2009-09-30T00:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "ado-net",
@@ -6033,8 +5983,8 @@
       "title": "WCF Known Types Analizi",
       "date": "2009-10-20T13:36:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -6230,9 +6180,9 @@
       "title": "Ado.Net Entity Framework 4.0 - Stored Procedures ve Complex Types",
       "date": "2009-11-15T23:55:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -6386,9 +6336,9 @@
       "title": "Ado.Net Entity Framework 4.0 - Lazy Loading [Beta 2]",
       "date": "2009-12-07T02:27:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -6509,9 +6459,9 @@
       "title": ".Net 4.0 Öncesi ThreadPool Kullanımı",
       "date": "2009-12-23T03:15:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Algoritmalar"
+        "Algoritmalar",
+        "Yapay Zeka"
       ],
       "tags": [
         ".net-framework",
@@ -6544,8 +6494,8 @@
       "title": "WCF Eco System",
       "date": "2010-01-05T01:30:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -6774,9 +6724,9 @@
       "title": "Eski Dost ve Entity Framework 4.0",
       "date": "2010-02-09T07:28:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -6791,9 +6741,9 @@
       "title": "Entity Framework - Many To Many Relations",
       "date": "2010-02-12T01:05:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -6806,9 +6756,9 @@
       "title": "Entity Framework - Many To Many Relations - Link Tablosunu Okumak",
       "date": "2010-02-15T22:30:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -6951,9 +6901,9 @@
       "title": "Entity Framework - Many To Many Relations - Link Tablosunda Israrcı Olmak",
       "date": "2010-03-23T22:35:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -7006,7 +6956,6 @@
       "title": "Object vs Dynamic",
       "date": "2010-03-31T15:10:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7019,9 +6968,9 @@
       "title": "Entity Framework - Entity Bölünmesi (Splitting)",
       "date": "2010-04-04T20:15:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -7076,7 +7025,6 @@
       "title": "Değişken Atamalarında Bir Efsane",
       "date": "2010-04-12T02:30:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7102,8 +7050,8 @@
       "title": "Entity Framework - POCO(Plain Old CLR Objects)",
       "date": "2010-04-30T12:01:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
+        "Veri Erisimi",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -7143,9 +7091,9 @@
       "title": "Entity Framework - POCO ve Lazy Loading",
       "date": "2010-05-09T21:55:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -7174,7 +7122,6 @@
       "title": "LINQ Sorgusu mu? ForEach mi? Bir Türlü Karar Veremedim",
       "date": "2010-05-27T20:40:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7187,9 +7134,9 @@
       "title": "WCF Service' lerine Silverlight İstemcilerinden Channel Bazlı Erişim",
       "date": "2010-06-02T01:55:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -7225,9 +7172,9 @@
       "title": "Silverlight İstemcileri için Duplex Service Geliştirmek",
       "date": "2010-06-18T04:50:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -7268,9 +7215,9 @@
       "title": "Duplex Service için Silverlight İstemcisi Geliştirmek",
       "date": "2010-07-05T01:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -7359,9 +7306,9 @@
       "title": "Regex ve Performans İpuçları – Otomatik Cache",
       "date": "2010-08-06T07:05:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "JavaScript"
       ],
       "tags": [
         "aspnet",
@@ -7398,9 +7345,9 @@
       "title": "Entity Framework, Data Services, C# 4.0, Excel ve Komple Bir Uygulama",
       "date": "2010-08-26T04:50:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "WCF"
+        "WCF",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -7441,7 +7388,6 @@
       "title": "Diamond Problem, C# ve Multiple Inheritance",
       "date": "2010-09-15T06:28:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7455,9 +7401,9 @@
       "title": "LINQ to SQL – EF 4.0 (Aradaki 9 Farkı Bulun)",
       "date": "2010-09-20T15:07:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "dotnet",
@@ -7489,7 +7435,6 @@
       "title": "Struct, Class ve Default Constructors - İnanmak İstiyorum",
       "date": "2010-09-27T06:50:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7831,7 +7776,6 @@
       "title": "Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı)",
       "date": "2011-02-06T15:50:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7859,7 +7803,6 @@
       "title": "Yıllar Sonra Yeniden Enum Sabitleri",
       "date": "2011-02-20T16:05:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "ASP.NET"
       ],
@@ -7875,8 +7818,8 @@
       "title": "Servis Operasyonlarını Kod Yardımıyla İzlemek",
       "date": "2011-02-27T16:20:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -7914,7 +7857,6 @@
       "title": "Bana Bir Struct Yaz. Yok Yok Bana Bir Class Yaz.",
       "date": "2011-02-28T16:30:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7929,7 +7871,6 @@
       "title": "Regex ve Performans İpuçları – Interpreted ve Compiled Farkı, Bir de Sürpriz",
       "date": "2011-03-03T17:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Tasarim Desenleri"
       ],
@@ -7944,7 +7885,6 @@
       "title": "Servis Operasyonlarını Kod Yardımıyla İzlemek – Event Kullanımı",
       "date": "2011-03-06T18:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
         "WPF"
       ],
@@ -7958,9 +7898,9 @@
       "title": "jQuery İçerisinden Bir WCF Servisini Kullanmak",
       "date": "2011-03-13T21:27:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -7977,7 +7917,6 @@
       "title": "Daha iyi Kodlama için Basit Öneriler",
       "date": "2011-03-17T07:01:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -7991,7 +7930,6 @@
       "title": "Fluent Interface Nedir?",
       "date": "2011-03-27T05:15:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8006,9 +7944,9 @@
       "title": "Entity Framework Üzerinde TransactionScope Kullanımı",
       "date": "2011-04-01T08:52:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -8023,7 +7961,6 @@
       "title": "Netspecter Abstract Class Peşinde",
       "date": "2011-04-07T09:18:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8049,7 +7986,6 @@
       "title": "Netspecter Takipte - Object Initializer Deyip Geçmemek Lazım",
       "date": "2011-04-14T14:34:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "WCF"
       ],
@@ -8140,7 +8076,6 @@
       "title": "Tek Fotoluk İpucu - 2 (StackTrace ve Çalışma Zamanı Metod Bilgisi)",
       "date": "2011-06-22T01:48:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8182,7 +8117,6 @@
       "title": "Tek Fotoluk İpucu - 5 (Rastgele Sıralı Generic List Koleksiyonu)",
       "date": "2011-06-23T21:15:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8197,7 +8131,6 @@
       "title": "Tek Fotoluk İpucu - 6 (Fluent Exception Handling)",
       "date": "2011-06-24T09:22:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8210,7 +8143,6 @@
       "title": "Tek Fotoluk İpucu - 7 (Windows Liste Bazlı Kontrolleri ve ToString Metodu)",
       "date": "2011-06-27T00:48:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8266,8 +8198,8 @@
       "title": "Tek Fotoluk İpucu – 11 (Ham XML ve XElement)",
       "date": "2011-07-01T11:30:00+03:00",
       "categories": [
-        "WCF",
-        ".NET"
+        ".NET",
+        "WCF"
       ],
       "tags": [
         "dotnet",
@@ -8281,7 +8213,6 @@
       "title": "Tek Fotoluk İpucu–12 (DataTable için Raw XML Formatı)",
       "date": "2011-07-03T21:45:00+03:00",
       "categories": [
-        "WCF",
         "Veri Erisimi",
         "SQL"
       ],
@@ -8295,8 +8226,8 @@
       "title": "Tek Fotoluk İpucu-13(XmlSerializer ile Daha Fazla Kontrol)",
       "date": "2011-07-04T23:02:00+03:00",
       "categories": [
-        "WCF",
-        ".NET"
+        ".NET",
+        "WCF"
       ],
       "tags": [
         "dotnet",
@@ -8312,8 +8243,8 @@
       "title": "Tek Fotoluk İpucu–14 (Compiled Query)",
       "date": "2011-07-06T00:30:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
+        "Veri Erisimi",
         "SQL"
       ],
       "tags": [
@@ -8326,9 +8257,7 @@
     "/2011/07/07/tek-fotoluk-ipucu-15-self-hosted-workflow-service/": {
       "title": "Tek Fotoluk İpucu - 15(Self Hosted Workflow Service)",
       "date": "2011-07-07T08:05:00+03:00",
-      "categories": [
-        "WCF"
-      ],
+      "categories": [],
       "tags": [
         "windows-communication-foundation",
         "windows-workflow-foundation",
@@ -8340,7 +8269,6 @@
       "title": "Tek Fotoluk İpucu-16 (Dynamic Var)",
       "date": "2011-07-10T21:41:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8354,7 +8282,6 @@
       "title": "Tek Fotoluk İpucu-17 (Query ile Daha Şık Kodlama)",
       "date": "2011-07-11T21:54:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8367,7 +8294,6 @@
       "title": "Tek Fotoluk İpucu-18 (5 Parametreden Fazlası için Struct)",
       "date": "2011-07-13T03:48:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8382,7 +8308,6 @@
       "title": "Tek Fotoluk İpucu-19 (StringBuilder deyip geçme)",
       "date": "2011-07-17T21:51:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8395,7 +8320,6 @@
       "title": "Tek Fotoluk İpucu-20 (Except Sorgusu)",
       "date": "2011-07-18T21:17:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8408,7 +8332,6 @@
       "title": "Tek Fotoluk İpucu-21(FileInfo,GZipStream ve Extension)",
       "date": "2011-07-20T08:28:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8425,7 +8348,6 @@
       "title": "Tek Fotoluk İpucu-22 (GetCommandLineArgs)",
       "date": "2011-08-01T00:31:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8439,7 +8361,6 @@
       "title": "Tek Fotoluk İpucu-23 (BinaryFormatter, DataSet, Extension Methods)",
       "date": "2011-08-04T21:38:00+03:00",
       "categories": [
-        "C#",
         "Veri Erisimi",
         ".NET"
       ],
@@ -8455,7 +8376,6 @@
       "title": "Tek Fotoluk İpucu-24(DataContractJsonSerializer ve Extension Method)",
       "date": "2011-08-14T18:21:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8469,7 +8389,6 @@
       "title": "Tek Fotoluk İpucu-25 (Runtime Value ve Extension Method)",
       "date": "2011-08-18T06:08:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8483,7 +8402,6 @@
       "title": "Tek Fotoluk İpucu-26 (Runtime Method Çağrımı)",
       "date": "2011-08-19T06:30:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8497,7 +8415,6 @@
       "title": "Tek Fotoluk İpucu-27(FileInfo Bilgisinin Tamamını İndirmek)",
       "date": "2011-08-22T04:51:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8511,7 +8428,6 @@
       "title": "Tek Fotoluk İpucu-28(Bir Klasörün Yaklaşık Toplam Boyutunu Bulmak)",
       "date": "2011-08-24T00:09:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8525,7 +8441,6 @@
       "title": "Tek Fotoluk İpucu-29 (Ne Kadar TextBox Varsa)",
       "date": "2011-08-26T03:17:00+03:00",
       "categories": [
-        "C#",
         "Docker",
         ".NET"
       ],
@@ -8540,9 +8455,9 @@
       "title": "Eager Loading, Lazy Loading, Explicit Loading",
       "date": "2011-09-06T20:30:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -8575,7 +8490,6 @@
       "title": "Tek Fotoluk İpucu-31(Hashing)",
       "date": "2011-09-18T02:50:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -8596,7 +8510,6 @@
       "title": "Tek Fotoluk İpucu-32(Environment Verisini XML Olarak Sunmak)",
       "date": "2011-09-22T07:05:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8642,7 +8555,6 @@
       "title": "Tek Fotoluk İpucu-33(Xml Cast)",
       "date": "2011-10-10T07:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8659,9 +8571,9 @@
       "title": "EF 4.2 ile Code–First Development",
       "date": "2011-10-12T20:45:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -8718,7 +8630,6 @@
       "title": "Tek Fotoluk İpucu-34(Güncel Process için Bellek Bilgileri)",
       "date": "2011-10-18T15:11:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8734,7 +8645,6 @@
       "title": "Tek Fotoluk İpucu-35(DeflateStream ile Sıkıştırmak)",
       "date": "2011-10-21T08:13:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8751,7 +8661,6 @@
       "title": "Tek Fotoluk İpucu-36(Config Dosyasına Kolay Ulaşım)",
       "date": "2011-10-24T14:30:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8767,7 +8676,6 @@
       "title": "Tek Fotoluk İpucu-37(Faydalı Interface Tiplerinden IComparer<T>)",
       "date": "2011-11-05T07:39:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8783,9 +8691,9 @@
       "title": "SSIS - Programatik Olarak Variable Değeri Set Etmek",
       "date": "2011-11-11T14:59:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Oyun Programlama"
       ],
       "tags": [
         "csharp",
@@ -8802,7 +8710,6 @@
       "title": "Tek Fotoluk İpucu-38(Delegate Chain)",
       "date": "2011-11-13T08:45:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8815,7 +8722,6 @@
       "title": "Tek Fotoluk İpucu-39(Dynamic Delegate Üretmek)",
       "date": "2011-11-14T14:45:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8829,7 +8735,6 @@
       "title": "Tek Fotoluk İpucu-40(Sebze Çorbası)",
       "date": "2011-11-16T15:20:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8862,7 +8767,6 @@
       "title": "Tek Fotoluk İpucu-41(Let Keyword)",
       "date": "2011-11-21T09:35:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8876,7 +8780,6 @@
       "title": "Tek Fotoluk İpucu-42(ExecuteQuery ile Injection' dan Korunmak)",
       "date": "2011-11-26T03:15:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "SQL"
       ],
@@ -8910,7 +8813,6 @@
       "title": "Tek Fotoluk İpucu-43(Active Directory Connection String Bilgisini Almak)",
       "date": "2011-12-05T12:10:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -8927,9 +8829,9 @@
       "title": "Entity Framework ile Gerçek Hayat Örnekleri Webinerlerim",
       "date": "2011-12-06T08:51:00+03:00",
       "categories": [
-        "Veri Erisimi",
+        ".NET",
         "WCF",
-        ".NET"
+        "Veri Erisimi"
       ],
       "tags": [
         "business-logic-layer",
@@ -9005,7 +8907,6 @@
       "title": "Tek Fotoluk İpucu-44 (Mail Adresi Doğru mu?)",
       "date": "2012-01-02T10:40:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -9019,9 +8920,7 @@
     "/2012/01/03/tek-fotoluk-ipucu-45-numpad-yapalim/": {
       "title": "Tek Fotoluk İpucu-45(NumPad Yapalım)",
       "date": "2012-01-03T09:33:00+03:00",
-      "categories": [
-        "C#"
-      ],
+      "categories": [],
       "tags": [
         "anonymous-methods",
         "extension-methods",
@@ -9033,9 +8932,9 @@
       "title": "Binary Search Tree' yi Anlamak",
       "date": "2012-01-09T11:01:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Algoritmalar"
+        "Algoritmalar",
+        "Oyun Programlama"
       ],
       "tags": [
         "algorithms",
@@ -9067,7 +8966,6 @@
       "title": "Priority Queue Collection",
       "date": "2012-01-31T15:01:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -9103,7 +9001,6 @@
       "title": "Tek Fotoluk İpucu-46(LINQ Aggregate Fonksiyonları)",
       "date": "2012-02-05T10:30:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -9116,8 +9013,8 @@
       "title": "Bing Maps WCF Servisleri",
       "date": "2012-02-13T01:05:00+03:00",
       "categories": [
-        "WCF",
-        ".NET"
+        ".NET",
+        "WCF"
       ],
       "tags": [
         "bing-maps",
@@ -9150,9 +9047,9 @@
       "title": "Entity Framework - Code First Migration Webineri Yayında",
       "date": "2012-02-23T03:22:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -9412,8 +9309,8 @@
       "title": "Servisleri Monitor Edelim",
       "date": "2012-06-01T01:12:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "SQL"
       ],
       "tags": [
@@ -9475,9 +9372,9 @@
       "title": "Çerezlik Algoritmalar ve Extension Methodlar",
       "date": "2012-06-07T23:30:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Algoritmalar"
+        "Algoritmalar",
+        "Oyun Programlama"
       ],
       "tags": [
         "algorithms",
@@ -9520,7 +9417,6 @@
       "title": "Levenshtein Distance Algoritması",
       "date": "2012-07-01T23:05:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -9661,7 +9557,6 @@
       "title": "Kodla Saçmalamaca",
       "date": "2012-07-18T05:05:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -9943,9 +9838,9 @@
       "title": "Entity Framework 6 Alpha 1 ve async, await Özellikleri",
       "date": "2012-10-31T22:41:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "alpha",
@@ -10068,9 +9963,9 @@
       "title": "Entity Framework Code First için Doğrulama(Validation) Stratejileri",
       "date": "2012-11-18T06:38:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "SQL"
       ],
       "tags": [
         "aspnet",
@@ -10175,9 +10070,9 @@
       "title": "Entity Framework 6 – Code First için Convention Nedir?",
       "date": "2012-12-12T05:15:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "complex-type-convention",
@@ -10241,8 +10136,8 @@
       "title": "WCF 4.5–Task Based Asynchronous Operasyonlar",
       "date": "2013-01-01T13:51:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "WPF"
       ],
       "tags": [
@@ -10409,9 +10304,9 @@
       "title": "Entity Framework Code-First için Calculated Fields Kullanımı",
       "date": "2013-02-08T05:15:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "ado-net",
@@ -10534,8 +10429,8 @@
       "title": "WCF Service' lerinde Routing ile Versiyonlama",
       "date": "2013-03-04T00:50:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -10952,9 +10847,9 @@
       "title": "WCFden, XML Web Servisine TransactionScope Activity Bileşeni Üzerinden Transaction Aktarmak",
       "date": "2013-03-25T10:21:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -11186,7 +11081,6 @@
       "title": "Recursive Fibonacci Neden Yavaş?",
       "date": "2013-06-07T00:40:00+03:00",
       "categories": [
-        "C#",
         "Algoritmalar",
         ".NET"
       ],
@@ -11210,7 +11104,6 @@
       "title": "C#’ ın Enteresan Yanları",
       "date": "2013-06-09T02:44:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -11254,7 +11147,6 @@
       "title": "Hanoi Towers Probleminin Recursive Çözümü",
       "date": "2013-06-13T10:12:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -11298,8 +11190,8 @@
       "title": "Asp.Net Routing – Hatırlamak",
       "date": "2013-06-20T05:07:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "SQL"
       ],
       "tags": [
@@ -11335,8 +11227,8 @@
       "title": "WCF Uygulamalarında Enterprise Library Validation Block Kullanımı",
       "date": "2013-06-23T15:26:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -11493,9 +11385,9 @@
       "title": "MigraDoc ile PDF Rapor Üretimi - Hello World",
       "date": "2013-08-18T11:48:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         ".net-framework",
@@ -11579,7 +11471,6 @@
       "title": "Sıfır Sabit Değeri ve Enum Sorunu",
       "date": "2013-09-19T10:48:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -11593,7 +11484,6 @@
       "title": "Sıralama Algoritmaları - Hangisi Daha Hızlı (Bubble, Quick, Insertion, Selection, Shell, Merge, Heap)",
       "date": "2013-09-24T14:08:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Algoritmalar"
       ],
@@ -11617,9 +11507,9 @@
       "title": "Dosya Satır Sayısını Bulmak",
       "date": "2013-10-06T12:02:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -11636,7 +11526,6 @@
       "title": "Çalışma Zamanında Class,Property, Module ve Assembly Üretmek",
       "date": "2013-10-10T07:50:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -11700,9 +11589,7 @@
     "/2013/11/01/calisma-zamaninda-generic-tip-uretmek-generic-metod-cagirmak/": {
       "title": "Çalışma Zamanında Generic Tip Üretmek, Generic Metod Çağırmak",
       "date": "2013-11-01T03:45:00+03:00",
-      "categories": [
-        "C#"
-      ],
+      "categories": [],
       "tags": [
         "activator",
         "clr",
@@ -11789,7 +11676,6 @@
       "title": "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek - 1nci Yarı",
       "date": "2013-12-23T01:34:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Ruby"
       ],
@@ -11810,9 +11696,7 @@
     "/2014/01/06/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-2nci-yari/": {
       "title": "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek -2nci Yarı",
       "date": "2014-01-06T05:37:00+03:00",
-      "categories": [
-        "C#"
-      ],
+      "categories": [],
       "tags": [
         "domain-driven-design",
         "domain-specific-language",
@@ -11834,9 +11718,9 @@
       "title": "Şarkı Sözleri ve Eğlenceli Programlama",
       "date": "2014-01-16T16:36:00+03:00",
       "categories": [
-        "WPF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WPF"
       ],
       "tags": [
         "aspnet",
@@ -11861,8 +11745,8 @@
       "title": "Asp.Net Temelleri–Eğlenceli GridView",
       "date": "2014-01-26T19:01:00+03:00",
       "categories": [
-        "ASP.NET",
-        ".NET"
+        ".NET",
+        "ASP.NET"
       ],
       "tags": [
         "asp.net-temelleri",
@@ -11927,9 +11811,9 @@
       "title": "Excel İçeriğini DataSet Olarak Sisteme Katmak",
       "date": "2014-03-18T19:13:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -11975,9 +11859,9 @@
       "title": "C# 6.0–Yeni Esintiler",
       "date": "2014-04-03T13:04:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "SQL"
       ],
       "tags": [
         "csharp",
@@ -11990,9 +11874,9 @@
       "title": "Entity Framework 6 –Yeni Esintiler",
       "date": "2014-04-08T11:09:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "csharp",
@@ -12026,9 +11910,9 @@
       "title": "ObservableCollection’ ı Anlamak",
       "date": "2014-05-01T13:59:00+03:00",
       "categories": [
-        "WPF",
         ".NET",
-        "WCF"
+        "WCF",
+        "WPF"
       ],
       "tags": [
         "csharp",
@@ -12045,8 +11929,8 @@
       "title": "Asp.Net–Custom Configuration Section Geliştirmek",
       "date": "2014-05-19T16:50:00+03:00",
       "categories": [
-        "ASP.NET",
         ".NET",
+        "ASP.NET",
         "WCF"
       ],
       "tags": [
@@ -12064,8 +11948,8 @@
       "title": "WPF Üzerinde Data Binding– Retro Bakış Açısı",
       "date": "2014-06-18T16:55:00+03:00",
       "categories": [
-        "WPF",
         ".NET",
+        "WPF",
         "Docker"
       ],
       "tags": [
@@ -12082,9 +11966,9 @@
       "title": "WCF - Referans Güncellemeden Güncelleme Yapmak",
       "date": "2014-06-19T17:20:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -12139,9 +12023,9 @@
       "title": "NLog için Oracle Database Kullanmak",
       "date": "2014-07-17T07:45:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "SQL"
       ],
       "tags": [
         "algorithms",
@@ -12158,9 +12042,9 @@
       "title": "Asp.Net’ ten HTTPS Tabanlı WCF Çağrısı Gerçekleştirmek",
       "date": "2014-08-13T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -12176,8 +12060,8 @@
       "title": "Data Binding İşlemlerinde Converter Kullanımı",
       "date": "2014-08-24T06:40:00+03:00",
       "categories": [
-        "WPF",
-        ".NET"
+        ".NET",
+        "WPF"
       ],
       "tags": [
         "csharp",
@@ -12189,18 +12073,16 @@
     "/2014/08/27/tfi-109-iis-uzerindeki-uygulamalari-kod-yoluyla-ogrenmek/": {
       "title": "TFİ 109 - IIS Üzerindeki Uygulamaları Kod Yoluyla Öğrenmek",
       "date": "2014-08-27T13:52:00+03:00",
-      "categories": [
-        "ASP.NET"
-      ],
+      "categories": [],
       "tags": []
     },
     "/2014/09/03/wcf-webhttp-service-json-jquery-ajax-ve-cors-ile-yeni-bir-macera/": {
       "title": "WCF WebHttp Service, JSON, jQuery, Ajax ve CORS ile Yeni Bir Macera",
       "date": "2014-09-03T08:27:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "ajax",
@@ -12255,9 +12137,9 @@
       "title": "Entity Framework–İki Entity Bir Table ile Lazy ve Eager Loading",
       "date": "2014-10-12T02:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "code-first-development",
@@ -12275,8 +12157,8 @@
       "title": "WCF–SOAP Servislerinde Custom Header Kullanmak",
       "date": "2014-11-06T12:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -12299,9 +12181,9 @@
       "title": "WCF–Custom AuthenticationService",
       "date": "2014-11-30T23:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "algorithms",
@@ -12323,8 +12205,8 @@
       "title": "Entity Framework - Generic Repository ve Unit of Work Uyarlaması",
       "date": "2014-12-14T03:00:00+03:00",
       "categories": [
-        "Veri Erisimi",
         ".NET",
+        "Veri Erisimi",
         "SQL"
       ],
       "tags": [
@@ -12359,8 +12241,8 @@
       "title": "WCF 4.5–ChannelFactory Tipi için Caching Kullanımı",
       "date": "2014-12-22T19:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -12382,9 +12264,9 @@
       "title": "Biyütıful Kod - Ninject ile Bir Dependency Injection Macerası",
       "date": "2015-01-04T20:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Docker"
+        "Docker",
+        "Algoritmalar"
       ],
       "tags": [
         "algorithms",
@@ -12617,9 +12499,9 @@
       "title": "Ruby Maceralarım",
       "date": "2015-07-31T16:00:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -12637,9 +12519,9 @@
       "title": "Ruby Kod Parçacıkları - 1",
       "date": "2015-08-02T18:00:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "array",
@@ -12654,8 +12536,8 @@
       "title": "Ruby Kod Parçacıkları - 2 (Hashes)",
       "date": "2015-08-04T21:30:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "data-structures",
@@ -12681,8 +12563,8 @@
       "title": "Ruby Kod Parçacıkları - 4 (Control Statements, Loops, Statement Modifiers)",
       "date": "2015-08-09T10:00:00+03:00",
       "categories": [
-        "Ruby",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "control-statements",
@@ -12698,8 +12580,8 @@
       "title": "Ruby Kod Parçacıkları - 5 (Sınıf Kavramına Giriş)",
       "date": "2015-08-10T19:00:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "class",
@@ -12727,9 +12609,9 @@
       "title": "Ruby Kod Parçacıkları - 7 (Object Method, Class Method, Public, Private, Protected)",
       "date": "2015-08-13T11:00:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "accessor",
@@ -12748,8 +12630,8 @@
       "title": "Ruby Kod Parçacıkları - 8 (Kalıtım/Inheritance)",
       "date": "2015-08-16T09:00:00+03:00",
       "categories": [
-        "Ruby",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "inheritance",
@@ -12763,8 +12645,8 @@
       "title": "Ruby Kod Parçacıkları - 9 (Operator Overloading)",
       "date": "2015-08-17T09:00:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -12777,8 +12659,8 @@
       "title": "Ruby Kod Parçacıkları - 10 (Yield ve Block Kullanımı)",
       "date": "2015-08-20T15:00:00+03:00",
       "categories": [
-        "Ruby",
         "WCF",
+        "Ruby",
         "Bulut"
       ],
       "tags": [
@@ -12793,8 +12675,8 @@
       "title": "Ruby Kod Parçacıkları - 11 (Procs)",
       "date": "2015-08-25T08:00:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "procs",
@@ -12806,8 +12688,8 @@
       "title": "Ruby Kod Parçacıkları - 12 (Lambda)",
       "date": "2015-08-30T07:00:00+03:00",
       "categories": [
-        "Ruby",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "block",
@@ -12822,9 +12704,9 @@
       "title": "Ruby Kod Parçacıkları - 13 (Exception Handling)",
       "date": "2015-09-03T05:00:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -12852,8 +12734,8 @@
       "title": "Ruby Kod Parçacıkları - 15 (Mixins)",
       "date": "2015-09-16T15:00:00+03:00",
       "categories": [
-        "Ruby",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "mixin",
@@ -12867,8 +12749,8 @@
       "title": "Ruby Kod Parçacıkları 16 - (JSON Serileştirme)",
       "date": "2015-09-22T03:30:00+03:00",
       "categories": [
-        "Ruby",
-        "JavaScript"
+        "JavaScript",
+        "Ruby"
       ],
       "tags": [
         "binary",
@@ -12902,9 +12784,9 @@
       "title": "Nancy Framework ile Bir MicroService Macerası",
       "date": "2015-11-02T10:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "aspnet",
@@ -12974,9 +12856,9 @@
       "title": "Ruby Kod Parçacıkları 18 - Çeşitli Kırıntılar",
       "date": "2015-11-08T13:00:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -12989,9 +12871,9 @@
       "title": "TCP Bazlı Soket Haberleşmesinde Sertifika Kullanımı",
       "date": "2015-11-09T21:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "WCF"
+        "WCF",
+        "Mikroservisler"
       ],
       "tags": [
         "cryptography",
@@ -13031,7 +12913,6 @@
       "title": "Tek Fotoluk İpucu 122 - Regex ile MatchEvaluator Kullanımı",
       "date": "2015-11-29T17:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -13045,7 +12926,6 @@
       "title": "Bir Tip Ağacındaki Aynı İsimli Özelliklere Değer Atamak",
       "date": "2015-12-07T20:00:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -13136,9 +13016,9 @@
       "title": "Hamming Distance Algoritmasının Basit Kullanımı",
       "date": "2016-01-13T17:09:00+03:00",
       "categories": [
-        "C#",
+        ".NET",
         "Ruby",
-        ".NET"
+        "Algoritmalar"
       ],
       "tags": [
         "algorithms",
@@ -13159,7 +13039,6 @@
       "title": "Tek Fotoluk İpucu 128 - IFormattable ile Sihir",
       "date": "2016-01-13T19:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "JavaScript"
       ],
@@ -13178,9 +13057,9 @@
       "title": "Replay Attack Saldırısını Nonce Token ile Engellemek",
       "date": "2016-01-19T00:00:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "WCF"
       ],
       "tags": [
         "algorithms",
@@ -13206,8 +13085,8 @@
       "title": "Ruby Kod Parçacıkları 19 - SQLite ile Basit Veritabanı İşlemleri",
       "date": "2016-02-07T15:00:00+03:00",
       "categories": [
-        "Ruby",
         "SQL",
+        "Ruby",
         "Linux"
       ],
       "tags": [
@@ -13227,8 +13106,8 @@
       "title": "Ruby Kod Parçacıkları 20 - REST Servis Geliştirmek ve .Net Tarafından Tüketmek",
       "date": "2016-02-09T01:44:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "csharp",
@@ -13279,9 +13158,9 @@
       "title": "Ruby Kod Parçacıkları 21 - Basit Web Server Geliştirmek",
       "date": "2016-02-22T14:00:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "Ruby"
       ],
       "tags": [
         "aspnet",
@@ -13328,7 +13207,6 @@
       "title": "Oracle View' ları için Otomatik DataTable' lar Üretmek",
       "date": "2016-03-19T18:21:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Veri Erisimi"
       ],
@@ -13409,8 +13287,8 @@
       "title": "Ruby Kod Parçacıkları 22 - Twitter API'sinin Basit Kullanımı",
       "date": "2016-04-04T15:00:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -13628,8 +13506,8 @@
       "title": "Raspberry Pi'den Python ile Tweet Göndermek",
       "date": "2016-06-14T06:00:00+03:00",
       "categories": [
-        "Python",
         ".NET",
+        "Python",
         "Ruby"
       ],
       "tags": [
@@ -13647,8 +13525,8 @@
       "title": "Raspberry Pi Maceramız Kaldığı Yerden Devam Ediyor",
       "date": "2016-06-15T19:07:00+03:00",
       "categories": [
-        "Python",
         ".NET",
+        "Python",
         "Raspberry Pi"
       ],
       "tags": [
@@ -13664,9 +13542,9 @@
       "title": "Bu Yaz Macerasının Adı Python",
       "date": "2016-06-17T00:00:00+03:00",
       "categories": [
-        "Python",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Python"
       ],
       "tags": [
         "dictionary",
@@ -13689,9 +13567,9 @@
       "title": "Raspberry PI Derken Oluşan Python Çalışma Notlarım",
       "date": "2016-07-18T21:30:00+03:00",
       "categories": [
-        "Python",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Python"
       ],
       "tags": [
         "algorithms",
@@ -13714,7 +13592,6 @@
       "title": "Raspberry Pi Maceramızda Bu Bölüm - Tekerleği Döndürdük",
       "date": "2016-08-06T21:01:00+03:00",
       "categories": [
-        "Python",
         ".NET",
         "Raspberry Pi"
       ],
@@ -13732,9 +13609,9 @@
       "title": "Python Öğrenmeye Devam - Sınıflar",
       "date": "2016-09-01T01:00:00+03:00",
       "categories": [
-        "Python",
         ".NET",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        "Python"
       ],
       "tags": [
         "class",
@@ -13752,9 +13629,9 @@
       "title": "Tek Fotoluk İpucu 133 - Yüklü OLEDB Provider Listesinin Bulunması",
       "date": "2016-09-15T21:01:00+03:00",
       "categories": [
-        "C#",
         "SQL",
-        "Veri Erisimi"
+        "Veri Erisimi",
+        ".NET"
       ],
       "tags": [
         "ado",
@@ -13787,8 +13664,8 @@
       "title": "Python ve Flask ile REST Tabanlı Servis Geliştirmek",
       "date": "2016-09-22T22:00:00+03:00",
       "categories": [
-        "Python",
         ".NET",
+        "Python",
         "Ruby"
       ],
       "tags": [
@@ -13838,8 +13715,8 @@
       "title": "Tek Fotoluk İpucu 135 - Ruby ile Tek Satırda Dosya içi Arama",
       "date": "2016-10-18T21:30:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -13884,8 +13761,8 @@
       "title": "Tek Fotoluk İpucu 138 - Bir Web Sayfa İçeriğini İndirmek",
       "date": "2016-10-24T21:35:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
+        "Ruby",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -13919,9 +13796,9 @@
       "title": "Tek Fotoluk İpucu 140 - Distributed Ruby(dRuby)",
       "date": "2016-10-31T21:16:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "WCF"
+        "WCF",
+        "Ruby"
       ],
       "tags": [
         ".net-remoting",
@@ -14020,8 +13897,8 @@
       "title": "Tek Fotoluk İpucu 147 - Port Dinlemek",
       "date": "2016-12-07T21:51:00+03:00",
       "categories": [
-        "Ruby",
         "SQL",
+        "Ruby",
         "Veri Erisimi"
       ],
       "tags": [
@@ -14073,8 +13950,8 @@
       "title": "Ruby Kod Parçacıkları 29 - Kod Yazan Kodlar",
       "date": "2016-12-16T16:51:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "binding",
@@ -14137,9 +14014,9 @@
       "title": "Go Dilini Anlamaya Çalışırken",
       "date": "2017-01-06T03:56:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "Python"
+        "Python",
+        "Ruby"
       ],
       "tags": [
         "ai",
@@ -14195,9 +14072,9 @@
       "title": "Gopher Olma Çalışmaları",
       "date": "2017-01-13T12:10:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "Ruby"
+        "Ruby",
+        "Go"
       ],
       "tags": [
         "anonymous-function",
@@ -14220,9 +14097,9 @@
       "title": "Duck Typing Nedir?",
       "date": "2017-01-19T21:30:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "Python"
+        "Python",
+        "Ruby"
       ],
       "tags": [
         "csharp",
@@ -14270,8 +14147,8 @@
       "title": "Ruby Kod Parçacıkları 33 - Observer Deseninin Uygulanışı",
       "date": "2017-02-12T21:47:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
+        "Ruby",
         "Tasarim Desenleri"
       ],
       "tags": [
@@ -14306,9 +14183,9 @@
       "title": "GoLang - Basit HTTP Web Server Yapımı",
       "date": "2017-02-20T23:48:00+03:00",
       "categories": [
-        "Go",
         "SQL",
-        "JavaScript"
+        "JavaScript",
+        "Python"
       ],
       "tags": [
         "fmt",
@@ -14334,8 +14211,8 @@
       "title": "GoLang - Kalıtımsız Bir Dünya",
       "date": "2017-02-25T21:38:00+03:00",
       "categories": [
-        "Go",
-        ".NET"
+        ".NET",
+        "Go"
       ],
       "tags": [
         "composition",
@@ -14369,8 +14246,8 @@
       "title": "GoLang - Slice ve Map Kavramları",
       "date": "2017-03-02T21:23:00+03:00",
       "categories": [
-        "Go",
-        ".NET"
+        ".NET",
+        "Go"
       ],
       "tags": [
         "append",
@@ -14389,8 +14266,8 @@
       "title": "GoLang - defer, panic ve recover Kavramlarını Tanıyalım",
       "date": "2017-03-09T21:32:00+03:00",
       "categories": [
-        "Go",
-        ".NET"
+        ".NET",
+        "Go"
       ],
       "tags": [
         "defer",
@@ -14464,8 +14341,8 @@
       "title": "Ruby Kod Parçacıkları 34 - Struct ve OpenStruct",
       "date": "2017-04-10T15:00:00+03:00",
       "categories": [
-        "Ruby",
-        "SQL"
+        "SQL",
+        "Ruby"
       ],
       "tags": [
         "http",
@@ -14494,7 +14371,6 @@
       "title": "JSON to BSON",
       "date": "2017-04-30T21:36:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Bulut"
       ],
@@ -14531,8 +14407,8 @@
       "title": "Ruby Kod Parçacıkları 34 - Fiber ve Eş Zamanlı Programlama",
       "date": "2017-05-05T12:17:00+03:00",
       "categories": [
-        "Ruby",
-        ".NET"
+        ".NET",
+        "Ruby"
       ],
       "tags": [
         "concurrency",
@@ -14550,9 +14426,9 @@
       "title": "GoLang - Interface Kavramı",
       "date": "2017-05-07T10:57:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "Python"
+        "Python",
+        "Ruby"
       ],
       "tags": [
         "dotnet",
@@ -14572,9 +14448,9 @@
       "title": "GoLang - Concurrency (goroutine, channel)",
       "date": "2017-05-15T11:52:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "Ruby"
+        "Ruby",
+        "Go"
       ],
       "tags": [
         "buffered-channel",
@@ -14637,9 +14513,9 @@
       "title": "Tek Fotoluk İpucu 159 - GoLang ile Fonksiyonları Parametre Olarak Kullanmak",
       "date": "2017-05-22T14:30:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "Ruby"
+        "Ruby",
+        "Go"
       ],
       "tags": [
         "dotnet",
@@ -14654,9 +14530,9 @@
       "title": "GoLang - Web Programlamaya Giriş",
       "date": "2017-05-27T19:03:00+03:00",
       "categories": [
-        "Go",
         "Python",
-        "Ruby"
+        "Ruby",
+        "Go"
       ],
       "tags": [
         "css",
@@ -14674,8 +14550,8 @@
       "title": "GoLang - Kalıtım için Gömülü Tiplerin Kullanımı",
       "date": "2017-06-04T09:25:00+03:00",
       "categories": [
-        "Go",
-        ".NET"
+        ".NET",
+        "Go"
       ],
       "tags": [
         "dotnet",
@@ -14692,9 +14568,9 @@
       "title": "GoLang - Bir Go Paketini Ruby'den Çağırmak",
       "date": "2017-06-09T12:33:00+03:00",
       "categories": [
-        "Go",
         "Python",
-        "Ruby"
+        "Ruby",
+        "Go"
       ],
       "tags": [
         "c-header",
@@ -14746,8 +14622,8 @@
       "title": "GoLang - Ticker ile Periyodik İş Çalıştırma",
       "date": "2017-06-18T06:11:00+03:00",
       "categories": [
-        "Go",
-        ".NET"
+        ".NET",
+        "Go"
       ],
       "tags": [
         "dotnet",
@@ -14821,9 +14697,9 @@
       "title": "GoLang - REST Servisimizi SQLite'a Bağlayalım",
       "date": "2017-07-10T09:05:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "SQL"
+        "SQL",
+        "Go"
       ],
       "tags": [
         "dotnet",
@@ -14840,9 +14716,9 @@
       "title": "GoLang - Bir ORM Denemesi",
       "date": "2017-07-16T21:40:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "database",
@@ -14866,8 +14742,8 @@
       "title": "WCF Servis Yolunda Debelenirken",
       "date": "2017-07-17T21:47:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Go"
       ],
       "tags": [
@@ -14891,9 +14767,9 @@
       "title": "GoLang - Google ProtoBuf Kullanımı",
       "date": "2017-07-22T21:03:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Python"
       ],
       "tags": [
         "binary-serialization",
@@ -14929,9 +14805,9 @@
       "title": "GoLang - Redis ile Anlaşmak",
       "date": "2017-08-03T21:16:00+03:00",
       "categories": [
-        "Go",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Ruby"
       ],
       "tags": [
         "ai",
@@ -14951,8 +14827,8 @@
       "title": "Python - Flask ile Basit Bir Web Uygulaması Geliştirmek",
       "date": "2017-08-09T21:02:00+03:00",
       "categories": [
-        "Python",
         ".NET",
+        "Python",
         "Go"
       ],
       "tags": [
@@ -15029,8 +14905,8 @@
       "title": "WCF - Özelleştirilmiş UsernamePassword Validator Kullanımı",
       "date": "2017-10-24T14:18:00+03:00",
       "categories": [
-        "WCF",
         ".NET",
+        "WCF",
         "Algoritmalar"
       ],
       "tags": [
@@ -15172,8 +15048,8 @@
       "title": "JWT(JSON Web Token) Kullanımı",
       "date": "2017-12-08T06:00:00+03:00",
       "categories": [
-        ".NET",
         "Rust",
+        ".NET",
         "ASP.NET"
       ],
       "tags": [
@@ -15361,8 +15237,8 @@
       "title": "Bir Ruby Uygulamasını Google Cloud Platform Üzerine Taşımak",
       "date": "2018-01-27T17:00:00+03:00",
       "categories": [
-        "Ruby",
         "Python",
+        "Ruby",
         "Docker"
       ],
       "tags": [
@@ -15444,9 +15320,9 @@
       "title": "AWS Elastic Beanstalk Macerası",
       "date": "2018-02-16T05:00:00+03:00",
       "categories": [
-        "Python",
         ".NET",
-        "Node.js"
+        "Node.js",
+        "Python"
       ],
       "tags": [
         "aws",
@@ -15518,9 +15394,9 @@
       "title": "Hackathon'dan Node.js'i Tanımaya",
       "date": "2018-03-12T03:00:00+03:00",
       "categories": [
-        "Node.js",
         "JavaScript",
-        "TypeScript"
+        "TypeScript",
+        "Node.js"
       ],
       "tags": [
         "asynchronous-programming",
@@ -15602,9 +15478,9 @@
       "title": "Express API Hizmetini Heroku Üzerine Taşımak",
       "date": "2018-04-07T19:00:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "cli",
@@ -15658,9 +15534,9 @@
       "title": "Atlas ile Node.js Üzerinden Haberleşmek",
       "date": "2018-05-01T21:30:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "async",
@@ -15778,9 +15654,9 @@
       "title": "Mocha'nızı Node.js ile Alır mıydınız?",
       "date": "2018-06-07T21:03:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "assert",
@@ -15846,8 +15722,8 @@
       "title": "Node.js ile Basit Cluster Kurguları",
       "date": "2018-07-03T21:04:00+03:00",
       "categories": [
-        "Node.js",
         "JavaScript",
+        "Node.js",
         "Linux"
       ],
       "tags": [
@@ -15870,9 +15746,9 @@
       "title": "Pug, Pug, Pug",
       "date": "2018-07-08T21:30:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "dotnet",
@@ -15898,8 +15774,8 @@
       "title": "Stream ve Pipe Mevzusu",
       "date": "2018-07-12T21:30:00+03:00",
       "categories": [
-        "Node.js",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "event",
@@ -16386,9 +16262,9 @@
       "title": "Electron ile Cross-Platform Uygulama Geliştirmek",
       "date": "2018-11-30T05:06:00+03:00",
       "categories": [
-        ".NET",
         "JavaScript",
-        "Node.js"
+        "Node.js",
+        "Linux"
       ],
       "tags": [
         ".net-core",
@@ -16434,7 +16310,6 @@
       "title": "Dependency Injection'ın TDD'deki Yeri",
       "date": "2018-12-21T10:30:00+03:00",
       "categories": [
-        "C#",
         ".NET"
       ],
       "tags": [
@@ -16489,9 +16364,9 @@
       "title": "Node.js - Asenkron Talep Karşılama",
       "date": "2019-01-10T17:00:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "SQL"
+        "SQL",
+        "JavaScript"
       ],
       "tags": [
         "async",
@@ -16621,8 +16496,8 @@
       "title": "Servis Çıktılarını Plotly.js ile Grafikleştirmek",
       "date": "2019-03-18T21:51:00+03:00",
       "categories": [
-        "Node.js",
         "JavaScript",
+        "Node.js",
         "Python"
       ],
       "tags": [
@@ -16662,9 +16537,9 @@
       "title": "HTTP/2 Server Push Nasıl Bir Şeydir?",
       "date": "2019-04-08T21:37:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         ".net-core",
@@ -16688,9 +16563,9 @@
       "title": "gRPC Nedir, Nasıl Uygulanır?",
       "date": "2019-04-24T07:06:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "WCF"
+        "WCF",
+        "JavaScript"
       ],
       "tags": [
         "dotnet",
@@ -16715,9 +16590,9 @@
       "title": "Apollo Server ile Bir GraphQL Sunucusu Yazmak",
       "date": "2019-04-26T07:07:00+03:00",
       "categories": [
-        "Node.js",
         "SQL",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "apollo-server",
@@ -16740,8 +16615,8 @@
       "title": "Python Loglamada ELK Kullanımı",
       "date": "2019-04-27T19:32:00+03:00",
       "categories": [
-        "Python",
         "SQL",
+        "Python",
         "Docker"
       ],
       "tags": [
@@ -16900,9 +16775,9 @@
       "title": "Node.js, MongoDB, Fastify ve Swagger Kullanılan Web API Servisi Geliştirmek",
       "date": "2019-05-12T21:45:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "async",
@@ -16978,8 +16853,8 @@
       "title": "Blazor ile Hello World Uygulaması Geliştirmek",
       "date": "2019-06-07T11:00:00+03:00",
       "categories": [
-        ".NET",
         "Rust",
+        ".NET",
         "ASP.NET"
       ],
       "tags": [
@@ -17316,9 +17191,9 @@
       "title": "React Üzerinde Socket.IO Kullanımı",
       "date": "2019-08-30T13:00:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "csharp",
@@ -17338,9 +17213,9 @@
       "title": "Bir Python Uygulamasını git Tekniği ile Azure Platformuna Taşımak",
       "date": "2019-09-09T12:30:00+03:00",
       "categories": [
-        "Python",
         ".NET",
-        "Node.js"
+        "Node.js",
+        "Python"
       ],
       "tags": [
         "apple",
@@ -17511,9 +17386,9 @@
       "title": "Ruby Tarafından Redis(Docker Bazlı) Veritabanı ile Konuşmak",
       "date": "2019-12-01T09:45:00+03:00",
       "categories": [
-        "Ruby",
         ".NET",
-        "SQL"
+        "SQL",
+        "Veri Erisimi"
       ],
       "tags": [
         "dataset",
@@ -17555,7 +17430,6 @@
       "title": "Switch Case Kullanmadan Kod Yazılabilir mi?",
       "date": "2019-12-25T10:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
         "Tasarim Desenleri"
       ],
@@ -17657,9 +17531,9 @@
       "title": "Sıkça Duyduğum Deno'ya Hello Dedim",
       "date": "2020-01-04T21:00:00+03:00",
       "categories": [
-        "Node.js",
         "Rust",
-        "JavaScript"
+        "JavaScript",
+        "TypeScript"
       ],
       "tags": [
         "deno",
@@ -17679,8 +17553,8 @@
       "title": "Python Tarafında ProtoBuf (Protocol Buffers) Serileştirme",
       "date": "2020-01-14T21:00:00+03:00",
       "categories": [
-        "Python",
         "JavaScript",
+        "Python",
         "Mikroservisler"
       ],
       "tags": [
@@ -17743,8 +17617,8 @@
       "title": "MQTT Protokolünün Kullanıldığı Basit Bir Publisher/Subscriber Senaryosu",
       "date": "2020-05-05T13:48:00+03:00",
       "categories": [
-        "Node.js",
         "JavaScript",
+        "Node.js",
         "Docker"
       ],
       "tags": [
@@ -17784,9 +17658,9 @@
       "title": "Sequelize Kullanılan Bir NodeJs Rest Servisi Geliştirmek",
       "date": "2020-05-27T20:23:00+03:00",
       "categories": [
-        "Node.js",
         "SQL",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "docker",
@@ -17845,9 +17719,9 @@
       "title": "Nginx Kurgulu Hafif Bir Load Balancer Senaryosu",
       "date": "2020-06-17T09:20:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "algorithms",
@@ -17960,9 +17834,9 @@
       "title": "BeeWare ile Linux Platformunda Desktop Uygulaması Geliştirmek ve Android Sürümünü Oluşturmak",
       "date": "2020-09-13T21:05:00+03:00",
       "categories": [
-        "Python",
         ".NET",
-        "ASP.NET"
+        "ASP.NET",
+        "Python"
       ],
       "tags": [
         "android",
@@ -18160,9 +18034,9 @@
       "title": "Mountebank ile Mock Servis Desteği Sunmak",
       "date": "2020-12-07T14:00:00+03:00",
       "categories": [
-        "Node.js",
         ".NET",
-        "JavaScript"
+        "JavaScript",
+        "Node.js"
       ],
       "tags": [
         "axios",
@@ -18188,8 +18062,8 @@
       "title": "Ocelot - .Net Core Tarafında Bir API Gateway Denemesi",
       "date": "2020-12-16T11:51:00+03:00",
       "categories": [
-        ".NET",
         "Rust",
+        ".NET",
         "Node.js"
       ],
       "tags": [
@@ -18346,8 +18220,8 @@
       "title": "Asp.Net Core'a Nasıl Merhaba Deriz?",
       "date": "2021-04-25T09:00:00+03:00",
       "categories": [
-        ".NET",
         "Rust",
+        ".NET",
         "ASP.NET"
       ],
       "tags": [
@@ -19101,9 +18975,9 @@
       "title": "Ollama Yardımıyla Deepseek Dil Modelini .Net Platformunda Kullanmak",
       "date": "2025-02-10T14:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "Docker"
+        "Docker",
+        "Bulut"
       ],
       "tags": [
         "ai",
@@ -19199,9 +19073,9 @@
       "title": "Project Lighthouse Social",
       "date": "2025-08-12T08:00:00+03:00",
       "categories": [
-        "C#",
         ".NET",
-        "SQL"
+        "SQL",
+        "Docker"
       ],
       "tags": [
         "ai",
@@ -19269,8 +19143,8 @@
       "title": "Bunu Bir Dene 00 - Metot Argümanlarında Değişiklik (C#, Rust ve Zig)",
       "date": "2026-01-15T20:27:00+03:00",
       "categories": [
-        "C#",
         "Rust",
+        ".NET",
         "Zig"
       ],
       "tags": [
@@ -19286,9 +19160,9 @@
       "title": "Bunu Bir Dene 01 - Çoklu Thread Ortamlarında Ortak Veriyi Değiştirmek (C#, Rust ve Zig)",
       "date": "2026-02-15T19:31:00+03:00",
       "categories": [
-        "Zig",
         "Rust",
-        ".NET"
+        ".NET",
+        "Zig"
       ],
       "tags": [
         "borrowing",
@@ -19309,9 +19183,9 @@
       "title": "Copilot SDK ile İlk Deneyimler",
       "date": "2026-03-03T14:40:00+03:00",
       "categories": [
-        "C#",
         "Rust",
-        ".NET"
+        ".NET",
+        "Tasarim Desenleri"
       ],
       "tags": [
         "ai",
@@ -19332,9 +19206,9 @@
       "title": "Microsoft DotNet Platformunda Bir MCP Server Yazmak",
       "date": "2026-03-07T14:34:00+03:00",
       "categories": [
-        "C#",
         "Rust",
-        ".NET"
+        ".NET",
+        "SQL"
       ],
       "tags": [
         "agenticprogramming",
@@ -19357,9 +19231,9 @@
       "title": "Hexagonal Architecture 101",
       "date": "2026-03-13T19:31:00+03:00",
       "categories": [
-        "C#",
         "Rust",
-        ".NET"
+        ".NET",
+        "SQL"
       ],
       "tags": [
         "csharp",
@@ -19400,6 +19274,11 @@
         "url": "/2026/02/15/bunu-bir-dene-01-coklu-thread-ortamlarinda-ortak-veriyi-degistirmek-c-rust-ve-zig/",
         "title": "Bunu Bir Dene 01 - Çoklu Thread Ortamlarında Ortak Veriyi Değiştirmek (C#, Rust ve Zig)",
         "date": "2026-02-15T19:31:00+03:00"
+      },
+      {
+        "url": "/2026/01/15/bunu-bir-dene-00-metot-argumanlarinda-degisiklik-c-rust-ve-zig/",
+        "title": "Bunu Bir Dene 00 - Metot Argümanlarında Değişiklik (C#, Rust ve Zig)",
+        "date": "2026-01-15T20:27:00+03:00"
       },
       {
         "url": "/2025/10/25/rust-ile-kodlama-idmanlari-baslangic-seviyesi/",
@@ -19755,11 +19634,6 @@
         "url": "/2018/12/10/daha-verimli-konfigurasyon-yonetimi-dotnet-core/",
         "title": "Daha Verimli Konfigürasyon Yönetimi (.Net Core)",
         "date": "2018-12-10T06:36:00+03:00"
-      },
-      {
-        "url": "/2018/11/30/electron-ile-cross-platform-uygulama-gelistirmek/",
-        "title": "Electron ile Cross-Platform Uygulama Geliştirmek",
-        "date": "2018-11-30T05:06:00+03:00"
       },
       {
         "url": "/2018/11/26/visual-studio-code-icinde-unit-test-yazmak/",
@@ -20170,6 +20044,11 @@
         "url": "/2016/09/20/specification-tasarim-kalibina-gitmeye-calisirken-ben/",
         "title": "Specification Tasarım Kalıbına Gitmeye Çalışırken Ben",
         "date": "2016-09-20T21:30:00+03:00"
+      },
+      {
+        "url": "/2016/09/15/tek-fotoluk-ipucu-133-yuklu-oledb-provider-listesinin-bulunmasi/",
+        "title": "Tek Fotoluk İpucu 133 - Yüklü OLEDB Provider Listesinin Bulunması",
+        "date": "2016-09-15T21:01:00+03:00"
       },
       {
         "url": "/2016/09/01/python-ogrenmeye-devam-siniflar/",
@@ -23914,11 +23793,6 @@
         "date": "2014-09-03T08:27:00+03:00"
       },
       {
-        "url": "/2014/08/27/tfi-109-iis-uzerindeki-uygulamalari-kod-yoluyla-ogrenmek/",
-        "title": "TFİ 109 - IIS Üzerindeki Uygulamaları Kod Yoluyla Öğrenmek",
-        "date": "2014-08-27T13:52:00+03:00"
-      },
-      {
         "url": "/2014/08/13/aspdotnet-ten-https-tabanli-wcf-cagrisi-gerceklestirmek/",
         "title": "Asp.Net’ ten HTTPS Tabanlı WCF Çağrısı Gerçekleştirmek",
         "date": "2014-08-13T12:00:00+03:00"
@@ -24389,6 +24263,11 @@
         "date": "2007-10-17T12:00:00+03:00"
       },
       {
+        "url": "/2007/10/04/wpf-sayfa-page-kavrami-navigasyon-islemleri-ve-xbap/",
+        "title": "WPF - Sayfa(Page) Kavramı, Navigasyon İşlemleri ve XBAP",
+        "date": "2007-10-04T12:00:00+03:00"
+      },
+      {
         "url": "/2007/08/15/aspdotnet-temelleri-derinlemesine-download-upload-islemleri/",
         "title": "Asp.Net Temelleri : Derinlemesine Download/Upload İşlemleri",
         "date": "2007-08-15T06:00:00+03:00"
@@ -24427,11 +24306,6 @@
         "url": "/2007/04/28/wcf-adim-adim-iis-hosting/",
         "title": "WCF - Adım Adım IIS Hosting",
         "date": "2007-04-28T03:00:00+03:00"
-      },
-      {
-        "url": "/2007/04/20/kendi-web-part-bilesenlerimizi-gelistirmek-2/",
-        "title": "Kendi Web Part Bilesenlerimizi Gelistirmek - 2",
-        "date": "2007-04-20T12:00:00+03:00"
       },
       {
         "url": "/2007/04/11/csharp-temelleri-nitelikleri-attributes-kavramak/",
@@ -24711,9 +24585,19 @@
         "date": "2016-04-23T12:00:00+03:00"
       },
       {
+        "url": "/2016/01/13/hamming-distance-algoritmasinin-basit-kullanimi/",
+        "title": "Hamming Distance Algoritmasının Basit Kullanımı",
+        "date": "2016-01-13T17:09:00+03:00"
+      },
+      {
         "url": "/2015/02/03/tasarim-desenleri-template-method/",
         "title": "Tasarım Desenleri – Template Method",
         "date": "2015-02-03T19:00:00+03:00"
+      },
+      {
+        "url": "/2015/01/04/biyutiful-kod-ninject-ile-bir-dependency-injection-macerasi/",
+        "title": "Biyütıful Kod - Ninject ile Bir Dependency Injection Macerası",
+        "date": "2015-01-04T20:00:00+03:00"
       },
       {
         "url": "/2014/09/28/simetrik-sifreleme-symmetric-cryptography-hizlari/",
@@ -24831,6 +24715,16 @@
         "date": "2007-05-16T12:00:00+03:00"
       },
       {
+        "url": "/2007/04/20/kendi-web-part-bilesenlerimizi-gelistirmek-2/",
+        "title": "Kendi Web Part Bilesenlerimizi Gelistirmek - 2",
+        "date": "2007-04-20T12:00:00+03:00"
+      },
+      {
+        "url": "/2006/10/30/csharp-temelleri-enum-sabitinin-bilinmeyen-yonleri/",
+        "title": "C# Temelleri : Enum Sabitinin Bilinmeyen Yönleri",
+        "date": "2006-10-30T02:00:00+03:00"
+      },
+      {
         "url": "/2006/10/11/csharp-temelleri-1-1-esitsizliginden-gethashcode-a-uzun-ince-bir-yol/",
         "title": "C# Temelleri: 1!=1 Eşitsizliğinden GetHashCode' a Uzun İnce Bir Yol",
         "date": "2006-10-11T03:00:00+03:00"
@@ -24856,6 +24750,11 @@
         "date": "2005-03-14T12:00:00+03:00"
       },
       {
+        "url": "/2005/02/23/rijndaelmanaged-vasitasiyla-encryption-sifreleme-ve-decryption-desifre/",
+        "title": "RijndaelManaged Vasıtasıyla Encryption(Şifreleme) ve Decryption(Deşifre)",
+        "date": "2005-02-23T12:00:00+03:00"
+      },
+      {
         "url": "/2004/11/19/oyun-programlamaya-giris-carpisma-teknikleri-3/",
         "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 3)",
         "date": "2004-11-19T10:00:00+03:00"
@@ -24872,6 +24771,11 @@
       }
     ],
     "Bulut": [
+      {
+        "url": "/2025/02/10/ollama-yardimiyla-deepseek-dil-modelini-dotnet-platformunda-kullanmak/",
+        "title": "Ollama Yardımıyla Deepseek Dil Modelini .Net Platformunda Kullanmak",
+        "date": "2025-02-10T14:00:00+03:00"
+      },
       {
         "url": "/2019/08/23/microsoft-custom-vision-servisini-python-ile-kullanmak/",
         "title": "Microsoft Custom Vision Servisini Python ile Kullanmak",
@@ -24953,804 +24857,12 @@
         "date": "2012-12-16T19:35:00+03:00"
       }
     ],
-    "C#": [
-      {
-        "url": "/2026/03/13/hexagonal-architecture-101/",
-        "title": "Hexagonal Architecture 101",
-        "date": "2026-03-13T19:31:00+03:00"
-      },
-      {
-        "url": "/2026/03/07/microsoft-dotnet-platformunda-bir-mcp-server-yazmak/",
-        "title": "Microsoft DotNet Platformunda Bir MCP Server Yazmak",
-        "date": "2026-03-07T14:34:00+03:00"
-      },
-      {
-        "url": "/2026/03/03/copilot-sdk-ile-ilk-deneyimler/",
-        "title": "Copilot SDK ile İlk Deneyimler",
-        "date": "2026-03-03T14:40:00+03:00"
-      },
-      {
-        "url": "/2026/01/15/bunu-bir-dene-00-metot-argumanlarinda-degisiklik-c-rust-ve-zig/",
-        "title": "Bunu Bir Dene 00 - Metot Argümanlarında Değişiklik (C#, Rust ve Zig)",
-        "date": "2026-01-15T20:27:00+03:00"
-      },
+    "Docker": [
       {
         "url": "/2025/08/12/project-lighthouse-social/",
         "title": "Project Lighthouse Social",
         "date": "2025-08-12T08:00:00+03:00"
       },
-      {
-        "url": "/2025/02/10/ollama-yardimiyla-deepseek-dil-modelini-dotnet-platformunda-kullanmak/",
-        "title": "Ollama Yardımıyla Deepseek Dil Modelini .Net Platformunda Kullanmak",
-        "date": "2025-02-10T14:00:00+03:00"
-      },
-      {
-        "url": "/2019/12/25/switch-case-kullanmadan-kod-yazilabilir-mi/",
-        "title": "Switch Case Kullanmadan Kod Yazılabilir mi?",
-        "date": "2019-12-25T10:00:00+03:00"
-      },
-      {
-        "url": "/2018/12/21/dependency-injection-in-tdd-deki-yeri/",
-        "title": "Dependency Injection'ın TDD'deki Yeri",
-        "date": "2018-12-21T10:30:00+03:00"
-      },
-      {
-        "url": "/2017/04/30/json-to-bson/",
-        "title": "JSON to BSON",
-        "date": "2017-04-30T21:36:00+03:00"
-      },
-      {
-        "url": "/2016/09/15/tek-fotoluk-ipucu-133-yuklu-oledb-provider-listesinin-bulunmasi/",
-        "title": "Tek Fotoluk İpucu 133 - Yüklü OLEDB Provider Listesinin Bulunması",
-        "date": "2016-09-15T21:01:00+03:00"
-      },
-      {
-        "url": "/2016/03/19/oracle-view-lari-icin-otomatik-datatable-lar-uretmek/",
-        "title": "Oracle View' ları için Otomatik DataTable' lar Üretmek",
-        "date": "2016-03-19T18:21:00+03:00"
-      },
-      {
-        "url": "/2016/01/13/tek-fotoluk-ipucu-128-iformattable-ile-sihir/",
-        "title": "Tek Fotoluk İpucu 128 - IFormattable ile Sihir",
-        "date": "2016-01-13T19:00:00+03:00"
-      },
-      {
-        "url": "/2016/01/13/hamming-distance-algoritmasinin-basit-kullanimi/",
-        "title": "Hamming Distance Algoritmasının Basit Kullanımı",
-        "date": "2016-01-13T17:09:00+03:00"
-      },
-      {
-        "url": "/2015/12/07/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak/",
-        "title": "Bir Tip Ağacındaki Aynı İsimli Özelliklere Değer Atamak",
-        "date": "2015-12-07T20:00:00+03:00"
-      },
-      {
-        "url": "/2015/11/29/tek-fotoluk-ipucu-122-regex-ile-matchevaluator-kullanimi/",
-        "title": "Tek Fotoluk İpucu 122 - Regex ile MatchEvaluator Kullanımı",
-        "date": "2015-11-29T17:00:00+03:00"
-      },
-      {
-        "url": "/2015/11/09/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi/",
-        "title": "TCP Bazlı Soket Haberleşmesinde Sertifika Kullanımı",
-        "date": "2015-11-09T21:00:00+03:00"
-      },
-      {
-        "url": "/2015/01/04/biyutiful-kod-ninject-ile-bir-dependency-injection-macerasi/",
-        "title": "Biyütıful Kod - Ninject ile Bir Dependency Injection Macerası",
-        "date": "2015-01-04T20:00:00+03:00"
-      },
-      {
-        "url": "/2014/07/17/nlog-icin-oracle-database-kullanmak/",
-        "title": "NLog için Oracle Database Kullanmak",
-        "date": "2014-07-17T07:45:00+03:00"
-      },
-      {
-        "url": "/2014/04/03/csharp-6-0-yeni-esintiler/",
-        "title": "C# 6.0–Yeni Esintiler",
-        "date": "2014-04-03T13:04:00+03:00"
-      },
-      {
-        "url": "/2014/03/18/excel-icerigini-dataset-olarak-sisteme-katmak/",
-        "title": "Excel İçeriğini DataSet Olarak Sisteme Katmak",
-        "date": "2014-03-18T19:13:00+03:00"
-      },
-      {
-        "url": "/2014/01/06/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-2nci-yari/",
-        "title": "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek -2nci Yarı",
-        "date": "2014-01-06T05:37:00+03:00"
-      },
-      {
-        "url": "/2013/12/23/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-1nci-yari/",
-        "title": "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek - 1nci Yarı",
-        "date": "2013-12-23T01:34:00+03:00"
-      },
-      {
-        "url": "/2013/11/01/calisma-zamaninda-generic-tip-uretmek-generic-metod-cagirmak/",
-        "title": "Çalışma Zamanında Generic Tip Üretmek, Generic Metod Çağırmak",
-        "date": "2013-11-01T03:45:00+03:00"
-      },
-      {
-        "url": "/2013/10/10/calisma-zamaninda-class-property-module-ve-assembly-uretmek/",
-        "title": "Çalışma Zamanında Class,Property, Module ve Assembly Üretmek",
-        "date": "2013-10-10T07:50:00+03:00"
-      },
-      {
-        "url": "/2013/10/06/dosya-satir-sayisini-bulmak/",
-        "title": "Dosya Satır Sayısını Bulmak",
-        "date": "2013-10-06T12:02:00+03:00"
-      },
-      {
-        "url": "/2013/09/24/siralama-algoritmalari-hangisi-daha-hizli-bubble-quick-insertion-selection-shell-merge-heap/",
-        "title": "Sıralama Algoritmaları - Hangisi Daha Hızlı (Bubble, Quick, Insertion, Selection, Shell, Merge, Heap)",
-        "date": "2013-09-24T14:08:00+03:00"
-      },
-      {
-        "url": "/2013/09/19/sifir-sabit-degeri-ve-enum-sorunu/",
-        "title": "Sıfır Sabit Değeri ve Enum Sorunu",
-        "date": "2013-09-19T10:48:00+03:00"
-      },
-      {
-        "url": "/2013/08/18/migradoc-ile-pdf-rapor-uretimi-hello-world/",
-        "title": "MigraDoc ile PDF Rapor Üretimi - Hello World",
-        "date": "2013-08-18T11:48:00+03:00"
-      },
-      {
-        "url": "/2013/06/13/hanoi-towers-probleminin-recursive-cozumu/",
-        "title": "Hanoi Towers Probleminin Recursive Çözümü",
-        "date": "2013-06-13T10:12:00+03:00"
-      },
-      {
-        "url": "/2013/06/09/csharp-in-enteresan-yanlari/",
-        "title": "C#’ ın Enteresan Yanları",
-        "date": "2013-06-09T02:44:00+03:00"
-      },
-      {
-        "url": "/2013/06/07/recursive-fibonacci-neden-yavas/",
-        "title": "Recursive Fibonacci Neden Yavaş?",
-        "date": "2013-06-07T00:40:00+03:00"
-      },
-      {
-        "url": "/2012/07/18/kodla-sacmalamaca/",
-        "title": "Kodla Saçmalamaca",
-        "date": "2012-07-18T05:05:00+03:00"
-      },
-      {
-        "url": "/2012/07/01/levenshtein-distance-algoritmasi/",
-        "title": "Levenshtein Distance Algoritması",
-        "date": "2012-07-01T23:05:00+03:00"
-      },
-      {
-        "url": "/2012/06/07/cerezlik-algoritmalar-ve-extension-methodlar/",
-        "title": "Çerezlik Algoritmalar ve Extension Methodlar",
-        "date": "2012-06-07T23:30:00+03:00"
-      },
-      {
-        "url": "/2012/02/05/tek-fotoluk-ipucu-46-linq-aggregate-fonksiyonlari/",
-        "title": "Tek Fotoluk İpucu-46(LINQ Aggregate Fonksiyonları)",
-        "date": "2012-02-05T10:30:00+03:00"
-      },
-      {
-        "url": "/2012/01/31/priority-queue-collection/",
-        "title": "Priority Queue Collection",
-        "date": "2012-01-31T15:01:00+03:00"
-      },
-      {
-        "url": "/2012/01/09/binary-search-tree-yi-anlamak/",
-        "title": "Binary Search Tree' yi Anlamak",
-        "date": "2012-01-09T11:01:00+03:00"
-      },
-      {
-        "url": "/2012/01/03/tek-fotoluk-ipucu-45-numpad-yapalim/",
-        "title": "Tek Fotoluk İpucu-45(NumPad Yapalım)",
-        "date": "2012-01-03T09:33:00+03:00"
-      },
-      {
-        "url": "/2012/01/02/tek-fotoluk-ipucu-44-mail-adresi-dogru-mu/",
-        "title": "Tek Fotoluk İpucu-44 (Mail Adresi Doğru mu?)",
-        "date": "2012-01-02T10:40:00+03:00"
-      },
-      {
-        "url": "/2011/12/05/tek-fotoluk-ipucu-43-active-directory-connection-string-bilgisini-almak/",
-        "title": "Tek Fotoluk İpucu-43(Active Directory Connection String Bilgisini Almak)",
-        "date": "2011-12-05T12:10:00+03:00"
-      },
-      {
-        "url": "/2011/11/26/tek-fotoluk-ipucu-42-executequery-ile-injection-dan-korunmak/",
-        "title": "Tek Fotoluk İpucu-42(ExecuteQuery ile Injection' dan Korunmak)",
-        "date": "2011-11-26T03:15:00+03:00"
-      },
-      {
-        "url": "/2011/11/21/tek-fotoluk-ipucu-41-let-keyword/",
-        "title": "Tek Fotoluk İpucu-41(Let Keyword)",
-        "date": "2011-11-21T09:35:00+03:00"
-      },
-      {
-        "url": "/2011/11/16/tek-fotoluk-ipucu-40-sebze-corbasi/",
-        "title": "Tek Fotoluk İpucu-40(Sebze Çorbası)",
-        "date": "2011-11-16T15:20:00+03:00"
-      },
-      {
-        "url": "/2011/11/14/tek-fotoluk-ipucu-39-dynamic-delegate-uretmek/",
-        "title": "Tek Fotoluk İpucu-39(Dynamic Delegate Üretmek)",
-        "date": "2011-11-14T14:45:00+03:00"
-      },
-      {
-        "url": "/2011/11/13/tek-fotoluk-ipucu-38-delegate-chain/",
-        "title": "Tek Fotoluk İpucu-38(Delegate Chain)",
-        "date": "2011-11-13T08:45:00+03:00"
-      },
-      {
-        "url": "/2011/11/11/ssis-programatik-olarak-variable-degeri-set-etmek/",
-        "title": "SSIS - Programatik Olarak Variable Değeri Set Etmek",
-        "date": "2011-11-11T14:59:00+03:00"
-      },
-      {
-        "url": "/2011/11/05/tek-fotoluk-ipucu-37-faydali-interface-tiplerinden-icomparer-t/",
-        "title": "Tek Fotoluk İpucu-37(Faydalı Interface Tiplerinden IComparer<T>)",
-        "date": "2011-11-05T07:39:00+03:00"
-      },
-      {
-        "url": "/2011/10/24/tek-fotoluk-ipucu-36-config-dosyasina-kolay-ulasim/",
-        "title": "Tek Fotoluk İpucu-36(Config Dosyasına Kolay Ulaşım)",
-        "date": "2011-10-24T14:30:00+03:00"
-      },
-      {
-        "url": "/2011/10/21/tek-fotoluk-ipucu-35-deflatestream-ile-sikistirmak/",
-        "title": "Tek Fotoluk İpucu-35(DeflateStream ile Sıkıştırmak)",
-        "date": "2011-10-21T08:13:00+03:00"
-      },
-      {
-        "url": "/2011/10/18/tek-fotoluk-ipucu-34-guncel-process-icin-bellek-bilgileri/",
-        "title": "Tek Fotoluk İpucu-34(Güncel Process için Bellek Bilgileri)",
-        "date": "2011-10-18T15:11:00+03:00"
-      },
-      {
-        "url": "/2011/10/10/tek-fotoluk-ipucu-33-xml-cast/",
-        "title": "Tek Fotoluk İpucu-33(Xml Cast)",
-        "date": "2011-10-10T07:00:00+03:00"
-      },
-      {
-        "url": "/2011/09/22/tek-fotoluk-ipucu-32-environment-verisini-xml-olarak-sunmak/",
-        "title": "Tek Fotoluk İpucu-32(Environment Verisini XML Olarak Sunmak)",
-        "date": "2011-09-22T07:05:00+03:00"
-      },
-      {
-        "url": "/2011/09/18/tek-fotoluk-ipucu-31-hashing/",
-        "title": "Tek Fotoluk İpucu-31(Hashing)",
-        "date": "2011-09-18T02:50:00+03:00"
-      },
-      {
-        "url": "/2011/08/26/tek-fotoluk-ipucu-29-ne-kadar-textbox-varsa/",
-        "title": "Tek Fotoluk İpucu-29 (Ne Kadar TextBox Varsa)",
-        "date": "2011-08-26T03:17:00+03:00"
-      },
-      {
-        "url": "/2011/08/24/tek-fotoluk-ipucu-28-bir-klasorun-yaklasik-toplam-boyutunu-bulmak/",
-        "title": "Tek Fotoluk İpucu-28(Bir Klasörün Yaklaşık Toplam Boyutunu Bulmak)",
-        "date": "2011-08-24T00:09:00+03:00"
-      },
-      {
-        "url": "/2011/08/22/tek-fotoluk-ipucu-27-fileinfo-bilgisinin-tamamini-indirmek/",
-        "title": "Tek Fotoluk İpucu-27(FileInfo Bilgisinin Tamamını İndirmek)",
-        "date": "2011-08-22T04:51:00+03:00"
-      },
-      {
-        "url": "/2011/08/19/tek-fotoluk-ipucu-26-runtime-method-cagrimi/",
-        "title": "Tek Fotoluk İpucu-26 (Runtime Method Çağrımı)",
-        "date": "2011-08-19T06:30:00+03:00"
-      },
-      {
-        "url": "/2011/08/18/tek-fotoluk-ipucu-25-runtime-value-ve-extension-method/",
-        "title": "Tek Fotoluk İpucu-25 (Runtime Value ve Extension Method)",
-        "date": "2011-08-18T06:08:00+03:00"
-      },
-      {
-        "url": "/2011/08/14/tek-fotoluk-ipucu-24-datacontractjsonserializer-ve-extension-method/",
-        "title": "Tek Fotoluk İpucu-24(DataContractJsonSerializer ve Extension Method)",
-        "date": "2011-08-14T18:21:00+03:00"
-      },
-      {
-        "url": "/2011/08/04/tek-fotoluk-ipucu-23-binaryformatter-dataset-extension-methods/",
-        "title": "Tek Fotoluk İpucu-23 (BinaryFormatter, DataSet, Extension Methods)",
-        "date": "2011-08-04T21:38:00+03:00"
-      },
-      {
-        "url": "/2011/08/01/tek-fotoluk-ipucu-22-getcommandlineargs/",
-        "title": "Tek Fotoluk İpucu-22 (GetCommandLineArgs)",
-        "date": "2011-08-01T00:31:00+03:00"
-      },
-      {
-        "url": "/2011/07/20/tek-fotoluk-ipucu-21-fileinfo-gzipstream-ve-extension/",
-        "title": "Tek Fotoluk İpucu-21(FileInfo,GZipStream ve Extension)",
-        "date": "2011-07-20T08:28:00+03:00"
-      },
-      {
-        "url": "/2011/07/18/tek-fotoluk-ipucu-20-except-sorgusu/",
-        "title": "Tek Fotoluk İpucu-20 (Except Sorgusu)",
-        "date": "2011-07-18T21:17:00+03:00"
-      },
-      {
-        "url": "/2011/07/17/tek-fotoluk-ipucu-19-stringbuilder-deyip-gecme/",
-        "title": "Tek Fotoluk İpucu-19 (StringBuilder deyip geçme)",
-        "date": "2011-07-17T21:51:00+03:00"
-      },
-      {
-        "url": "/2011/07/13/tek-fotoluk-ipucu-18-5-parametreden-fazlasi-icin-struct/",
-        "title": "Tek Fotoluk İpucu-18 (5 Parametreden Fazlası için Struct)",
-        "date": "2011-07-13T03:48:00+03:00"
-      },
-      {
-        "url": "/2011/07/11/tek-fotoluk-ipucu-17-query-ile-daha-sik-kodlama/",
-        "title": "Tek Fotoluk İpucu-17 (Query ile Daha Şık Kodlama)",
-        "date": "2011-07-11T21:54:00+03:00"
-      },
-      {
-        "url": "/2011/07/10/tek-fotoluk-ipucu-16-dynamic-var/",
-        "title": "Tek Fotoluk İpucu-16 (Dynamic Var)",
-        "date": "2011-07-10T21:41:00+03:00"
-      },
-      {
-        "url": "/2011/06/27/tek-fotoluk-ipucu-7-windows-liste-bazli-kontrolleri-ve-tostring-metodu/",
-        "title": "Tek Fotoluk İpucu - 7 (Windows Liste Bazlı Kontrolleri ve ToString Metodu)",
-        "date": "2011-06-27T00:48:00+03:00"
-      },
-      {
-        "url": "/2011/06/24/tek-fotoluk-ipucu-6-fluent-exception-handling/",
-        "title": "Tek Fotoluk İpucu - 6 (Fluent Exception Handling)",
-        "date": "2011-06-24T09:22:00+03:00"
-      },
-      {
-        "url": "/2011/06/23/tek-fotoluk-ipucu-5-rastgele-sirali-generic-list-koleksiyonu/",
-        "title": "Tek Fotoluk İpucu - 5 (Rastgele Sıralı Generic List Koleksiyonu)",
-        "date": "2011-06-23T21:15:00+03:00"
-      },
-      {
-        "url": "/2011/06/22/tek-fotoluk-ipucu-2-stacktrace-ve-calisma-zamani-metod-bilgisi/",
-        "title": "Tek Fotoluk İpucu - 2 (StackTrace ve Çalışma Zamanı Metod Bilgisi)",
-        "date": "2011-06-22T01:48:00+03:00"
-      },
-      {
-        "url": "/2011/04/14/netspecter-takipte-object-initializer-deyip-gecmemek-lazim/",
-        "title": "Netspecter Takipte - Object Initializer Deyip Geçmemek Lazım",
-        "date": "2011-04-14T14:34:00+03:00"
-      },
-      {
-        "url": "/2011/04/07/netspecter-abstract-class-pesinde/",
-        "title": "Netspecter Abstract Class Peşinde",
-        "date": "2011-04-07T09:18:00+03:00"
-      },
-      {
-        "url": "/2011/03/27/fluent-interface-nedir/",
-        "title": "Fluent Interface Nedir?",
-        "date": "2011-03-27T05:15:00+03:00"
-      },
-      {
-        "url": "/2011/03/17/daha-iyi-kodlama-icin-basit-oneriler/",
-        "title": "Daha iyi Kodlama için Basit Öneriler",
-        "date": "2011-03-17T07:01:00+03:00"
-      },
-      {
-        "url": "/2011/03/03/regex-ve-performans-ipuclari-interpreted-ve-compiled-farki-bir-de-surpriz/",
-        "title": "Regex ve Performans İpuçları – Interpreted ve Compiled Farkı, Bir de Sürpriz",
-        "date": "2011-03-03T17:00:00+03:00"
-      },
-      {
-        "url": "/2011/02/28/bana-bir-struct-yaz-yok-yok-bana-bir-class-yaz/",
-        "title": "Bana Bir Struct Yaz. Yok Yok Bana Bir Class Yaz.",
-        "date": "2011-02-28T16:30:00+03:00"
-      },
-      {
-        "url": "/2011/02/20/yillar-sonra-yeniden-enum-sabitleri/",
-        "title": "Yıllar Sonra Yeniden Enum Sabitleri",
-        "date": "2011-02-20T16:05:00+03:00"
-      },
-      {
-        "url": "/2011/02/06/temeller-kolay-unutulur-csharp-implicitly-name-hiding-sorunsali/",
-        "title": "Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı)",
-        "date": "2011-02-06T15:50:00+03:00"
-      },
-      {
-        "url": "/2010/09/27/struct-class-ve-default-constructors-inanmak-istiyorum/",
-        "title": "Struct, Class ve Default Constructors - İnanmak İstiyorum",
-        "date": "2010-09-27T06:50:00+03:00"
-      },
-      {
-        "url": "/2010/09/15/diamond-problem-csharp-ve-multiple-inheritance/",
-        "title": "Diamond Problem, C# ve Multiple Inheritance",
-        "date": "2010-09-15T06:28:00+03:00"
-      },
-      {
-        "url": "/2010/08/06/regex-ve-performans-ipuclari-otomatik-cache/",
-        "title": "Regex ve Performans İpuçları – Otomatik Cache",
-        "date": "2010-08-06T07:05:00+03:00"
-      },
-      {
-        "url": "/2010/05/27/linq-sorgusu-mu-foreach-mi-bir-turlu-karar-veremedim/",
-        "title": "LINQ Sorgusu mu? ForEach mi? Bir Türlü Karar Veremedim",
-        "date": "2010-05-27T20:40:00+03:00"
-      },
-      {
-        "url": "/2010/04/12/degisken-atamalarinda-bir-efsane/",
-        "title": "Değişken Atamalarında Bir Efsane",
-        "date": "2010-04-12T02:30:00+03:00"
-      },
-      {
-        "url": "/2010/03/31/object-vs-dynamic/",
-        "title": "Object vs Dynamic",
-        "date": "2010-03-31T15:10:00+03:00"
-      },
-      {
-        "url": "/2009/12/23/net-4-0-oncesi-threadpool-kullanimi/",
-        "title": ".Net 4.0 Öncesi ThreadPool Kullanımı",
-        "date": "2009-12-23T03:15:00+03:00"
-      },
-      {
-        "url": "/2008/02/09/mesaj-sozlesmeleri-message-contracts/",
-        "title": "Mesaj Sözleşmeleri(Message Contracts)",
-        "date": "2008-02-09T12:00:00+03:00"
-      },
-      {
-        "url": "/2007/10/27/using-ifadesi-ile-garanti-dispose/",
-        "title": "Using İfadesi ile Garanti Dispose",
-        "date": "2007-10-27T21:37:00+03:00"
-      },
-      {
-        "url": "/2007/06/06/csharp-temelleri-olaylari-events-kavramak/",
-        "title": "C# Temelleri - Olayları(Events) Kavramak",
-        "date": "2007-06-06T09:00:00+03:00"
-      },
-      {
-        "url": "/2007/04/11/csharp-temelleri-nitelikleri-attributes-kavramak/",
-        "title": "C# Temelleri : Nitelikleri(Attributes) Kavramak",
-        "date": "2007-04-11T03:00:00+03:00"
-      },
-      {
-        "url": "/2007/04/02/baglantisiz-katmanda-linq/",
-        "title": "Bağlantısız Katmanda LINQ",
-        "date": "2007-04-02T12:00:00+03:00"
-      },
-      {
-        "url": "/2007/03/21/wpf-xaml-baml-ve-dahasi/",
-        "title": "WPF, Xaml, Baml ve Dahası",
-        "date": "2007-03-21T12:00:00+03:00"
-      },
-      {
-        "url": "/2007/03/08/net-tarafinda-xml-ile-oynamak-2/",
-        "title": ".Net Tarafında Xml ile Oynamak-2",
-        "date": "2007-03-08T12:00:00+03:00"
-      },
-      {
-        "url": "/2007/02/28/net-tarafinda-xml-ile-oynamak-1/",
-        "title": ".Net Tarafında Xml ile Oynamak-1",
-        "date": "2007-02-28T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/11/21/kullanici-web-kontrollerini-daha-etkin-kullanmak/",
-        "title": "Kullanıcı Web Kontrollerini Daha Etkin Kullanmak",
-        "date": "2006-11-21T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/10/30/csharp-temelleri-enum-sabitinin-bilinmeyen-yonleri/",
-        "title": "C# Temelleri : Enum Sabitinin Bilinmeyen Yönleri",
-        "date": "2006-10-30T02:00:00+03:00"
-      },
-      {
-        "url": "/2006/10/22/csharp-3-0-ilk-bakista-xlinq/",
-        "title": "C# 3.0 - İlk Bakışta XLINQ",
-        "date": "2006-10-22T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/10/11/csharp-temelleri-1-1-esitsizliginden-gethashcode-a-uzun-ince-bir-yol/",
-        "title": "C# Temelleri: 1!=1 Eşitsizliğinden GetHashCode' a Uzun İnce Bir Yol",
-        "date": "2006-10-11T03:00:00+03:00"
-      },
-      {
-        "url": "/2006/10/02/csharp-temelleri-referans-tipi-olmak/",
-        "title": "C# Temelleri : Referans Tipi Olmak",
-        "date": "2006-10-02T06:00:00+03:00"
-      },
-      {
-        "url": "/2006/09/25/csharp-3-0-ilk-bakista-dlinq/",
-        "title": "C# 3.0 - İlk Bakışta DLINQ",
-        "date": "2006-09-25T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/09/13/csharp-temelleri-static-olmak/",
-        "title": "C# Temelleri : Static Olmak",
-        "date": "2006-09-13T18:00:00+03:00"
-      },
-      {
-        "url": "/2006/07/11/buyuk-nesneler-large-objects-ile-calismak/",
-        "title": "Büyük Nesneler(Large Objects) ile Çalışmak",
-        "date": "2006-07-11T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/07/07/ilk-bakista-dotnet-process-yonetimi/",
-        "title": "İlk Bakışta .Net Process Yönetimi",
-        "date": "2006-07-07T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/05/14/custom-serialization/",
-        "title": "Custom Serialization",
-        "date": "2006-05-14T12:00:00+03:00"
-      },
-      {
-        "url": "/2006/02/08/sabit-deger-tipleri-immutable-value-types-analizi/",
-        "title": "Sabit Değer Tipleri (Immutable Value Types) Analizi",
-        "date": "2006-02-08T10:00:00+03:00"
-      },
-      {
-        "url": "/2006/02/02/serilestirme-serialization-icin-puf-noktalar/",
-        "title": "Serileştirme (Serialization) İçin Püf Noktalar",
-        "date": "2006-02-02T10:00:00+03:00"
-      },
-      {
-        "url": "/2006/01/24/compact-framework-uzerinde-rda-ile-senkronizasyon/",
-        "title": "Compact Framework Üzerinde RDA ile Senkronizasyon",
-        "date": "2006-01-24T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/12/31/generic-mimaride-kisitlamalarin-constraints-kullanimi/",
-        "title": "Generic Mimaride Kısıtlamaların(Constraints) Kullanımı",
-        "date": "2005-12-31T08:00:00+03:00"
-      },
-      {
-        "url": "/2005/11/21/csharp-2-0-ile-generic-delegates/",
-        "title": "C# 2.0 ile Generic Delegates",
-        "date": "2005-11-21T10:00:00+03:00"
-      },
-      {
-        "url": "/2005/11/14/kendi-referans-tiplerimizi-klonlamak/",
-        "title": "Kendi Referans Tiplerimizi Klonlamak",
-        "date": "2005-11-14T10:00:00+03:00"
-      },
-      {
-        "url": "/2005/10/03/constructor-initializers-yapici-metod-baslaticilari-deyip-gecmeyin/",
-        "title": "Constructor Initializers (Yapıcı Metod Başlatıcıları) Deyip Geçmeyin",
-        "date": "2005-10-03T09:00:00+03:00"
-      },
-      {
-        "url": "/2005/09/26/boxing-ve-unboxing-performans-kritigi/",
-        "title": "Boxing ve Unboxing Performans Kritiği",
-        "date": "2005-09-26T09:00:00+03:00"
-      },
-      {
-        "url": "/2005/09/09/callback-teknigi-ile-asenkron-metod-yurutmek/",
-        "title": "CallBack Tekniği ile Asenkron Metod Yürütmek",
-        "date": "2005-09-09T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/08/28/numaralandiricilari-kullanmak-icin-bir-sebep/",
-        "title": "Numaralandırıcıları Kullanmak İçin Bir Sebep",
-        "date": "2005-08-28T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/08/06/sortedlist-ve-hashtable-icin-2-basit-oneri/",
-        "title": "SortedList ve Hashtable İçin 2 Basit Öneri",
-        "date": "2005-08-06T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/07/31/tip-guvenli-type-safety-koleksiyonlar-olusturmak-2/",
-        "title": "Tip Güvenli (Type Safety ) Koleksiyonlar Oluşturmak - 2",
-        "date": "2005-07-31T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/07/23/tip-guvenli-type-safety-koleksiyonlar-olusturmak-1/",
-        "title": "Tip Güvenli (Type Safety ) Koleksiyonlar Oluşturmak - 1",
-        "date": "2005-07-23T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/07/14/dizilere-arrays-iliskin-uc-basit-oneri/",
-        "title": "Dizilere(Arrays) İlişkin Üç Basit Öneri",
-        "date": "2005-07-14T09:00:00+03:00"
-      },
-      {
-        "url": "/2005/07/05/csharp-2-0-icin-iterasyon-yenilikleri/",
-        "title": "C# 2.0 İçin İterasyon Yenilikleri",
-        "date": "2005-07-05T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/06/30/csharp-2-0-covariance-ve-contravariance-delegates/",
-        "title": "C# 2.0 Covariance ve Contravariance Delegates",
-        "date": "2005-06-30T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/06/27/csharp-2-0-ile-partial-types-kismi-tipler/",
-        "title": "C# 2.0 ile Partial Types (Kısmi Tipler)",
-        "date": "2005-06-27T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/06/22/csharp-2-0-ve-nullable-deger-tipleri/",
-        "title": "C# 2.0 ve Nullable Değer Tipleri",
-        "date": "2005-06-22T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/06/20/csharp-2-0-ve-static-siniflar/",
-        "title": "C# 2.0 ve Static Sınıflar",
-        "date": "2005-06-20T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/06/16/csharp-2-0-ve-anonymous-isimsiz-metodlar/",
-        "title": "C# 2.0 ve Anonymous (İsimsiz) Metodlar",
-        "date": "2005-06-16T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/06/03/operator-overloading-operatorlerin-asiri-yuklenmesi/",
-        "title": "Operator Overloading (Operatörlerin Aşırı Yüklenmesi)",
-        "date": "2005-06-03T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/05/23/kendi-istina-nesnelerimizi-kullanmak-applicationexception/",
-        "title": "Kendi İstina Nesnelerimizi Kullanmak (ApplicationException)",
-        "date": "2005-05-23T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/02/23/rijndaelmanaged-vasitasiyla-encryption-sifreleme-ve-decryption-desifre/",
-        "title": "RijndaelManaged Vasıtasıyla Encryption(Şifreleme) ve Decryption(Deşifre)",
-        "date": "2005-02-23T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/12/04/oyun-programlamaya-giris-matrisler-yardimiyla-carpisma-kontrolu/",
-        "title": "Oyun Programlamaya Giriş (Matrisler Yardımıyla Çarpışma Kontrolü)",
-        "date": "2004-12-04T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/11/19/oyun-programlamaya-giris-carpisma-teknikleri-3/",
-        "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 3)",
-        "date": "2004-11-19T10:00:00+03:00"
-      },
-      {
-        "url": "/2004/11/12/oyun-programlamaya-giris-carpisma-teknikleri-2/",
-        "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 2)",
-        "date": "2004-11-12T10:00:00+03:00"
-      },
-      {
-        "url": "/2004/11/06/oyun-programlamaya-giris-carpisma-teknikleri-1/",
-        "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 1)",
-        "date": "2004-11-06T04:00:00+03:00"
-      },
-      {
-        "url": "/2004/08/07/localization-yerellestirme-2-dil-destegi/",
-        "title": "Localization (Yerelleştirme) 2 - Dil Desteği",
-        "date": "2004-08-07T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/08/05/localization-yerellestirme-1/",
-        "title": "Localization (Yerelleştirme) - 1",
-        "date": "2004-08-05T09:00:00+03:00"
-      },
-      {
-        "url": "/2004/04/27/single-file-assembly-ve-multiple-file-assembly-kavramlari/",
-        "title": "Single File Assembly ve Multiple-File Assembly Kavramları",
-        "date": "2004-04-27T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/04/22/private-assembly-ve-shared-assembly-kavrami/",
-        "title": "Private Assembly ve Shared Assembly Kavramı",
-        "date": "2004-04-22T09:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/27/indeksleyiciler-indexers/",
-        "title": "Indeksleyiciler (Indexers)",
-        "date": "2004-01-27T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/20/temsilciler-delegates-kavramina-giris/",
-        "title": "Temsilciler (Delegates) Kavramına Giriş",
-        "date": "2004-01-20T10:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/15/checked-unchecked-anahtar-kelimeleri-ve-overflow-hatasi/",
-        "title": "Checked, Unchecked Anahtar Kelimeleri ve OverFlow Hatası",
-        "date": "2004-01-15T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/14/bir-arayuz-bir-sinif-ve-bir-tablo/",
-        "title": "Bir Arayüz, Bir Sınıf ve Bir Tablo",
-        "date": "2004-01-14T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/12/arayuzler-de-is-ve-as-anahtar-sozcuklerinin-kullanimi/",
-        "title": "Arayüzler'de is ve as Anahtar Sözcüklerinin Kullanımı",
-        "date": "2004-01-12T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/09/arayuz-interface-sinif-class-ve-coklu-kalitim/",
-        "title": "Arayüz(Interface), Sınıf(Class) ve Çoklu Kalıtım",
-        "date": "2004-01-09T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/08/interface-arayuz-kullanimina-giris/",
-        "title": "Interface (Arayüz) Kullanımına Giriş",
-        "date": "2004-01-08T10:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/07/arraylist-koleksiyonu-ve-datagrid/",
-        "title": "ArrayList Koleksiyonu ve DataGrid",
-        "date": "2004-01-07T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/06/ise-yarar-bir-multithreading-cok-kanalli-uygulama-ornegi/",
-        "title": "İşe Yarar Bir MultiThreading(Çok Kanallı) Uygulama Örneği",
-        "date": "2004-01-06T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/05/thread-lerde-oncelik-priority-durumlari/",
-        "title": "Thread'lerde Öncelik(Priority) Durumları",
-        "date": "2004-01-05T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/02/thread-leri-belli-sureler-boyunca-uyutmak-ve-yoketmek/",
-        "title": "Thread'leri Belli Süreler Boyunca Uyutmak ve Yoketmek",
-        "date": "2004-01-02T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/01/streamreader-sinifi-yardimiyla-dosya-okumak/",
-        "title": "StreamReader Sınıfı Yardımıyla Dosya Okumak",
-        "date": "2004-01-01T12:00:00+03:00"
-      },
-      {
-        "url": "/2004/01/01/cok-kanalli-multithread-uygulamalar/",
-        "title": "Çok Kanallı(Multithread) Uygulamalar",
-        "date": "2004-01-01T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/30/boxing-kutulamak-ve-unboxing-kutuyu-kaldirmak/",
-        "title": "Boxing (Kutulamak) ve Unboxing (Kutuyu Kaldırmak)",
-        "date": "2003-12-30T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/25/kalitim-inheritance-kavramina-kisa-bir-bakis/",
-        "title": "Kalıtım (Inheritance) Kavramına Kısa Bir Bakış",
-        "date": "2003-12-25T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/25/virtual-sanal-metotlar/",
-        "title": "Virtual(Sanal) Metotlar",
-        "date": "2003-12-25T10:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/23/bir-sinif-yazalim/",
-        "title": "Bir Sınıf Yazalım",
-        "date": "2003-12-23T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/22/reflection-sinifi-ile-tiplerin-sirri-ortaya-cikiyor/",
-        "title": "Reflection Sınıfı İle Tiplerin Sırrı Ortaya Çıkıyor",
-        "date": "2003-12-22T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/19/stack-ve-queue-koleksiyon-sinifi/",
-        "title": "Stack ve Queue Koleksiyon Sınıfı",
-        "date": "2003-12-19T10:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/18/hashtable-koleksiyon-sinifi/",
-        "title": "HashTable Koleksiyon Sınıfı",
-        "date": "2003-12-18T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/04/struct-kavrami-ve-class-ile-struct-arasindaki-farklar/",
-        "title": "Struct Kavramı ve Class ile Struct Arasındaki Farklar",
-        "date": "2003-12-04T11:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/01/enumerators/",
-        "title": "Enumerators",
-        "date": "2003-12-01T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/11/30/params-anahtar-sozcugunun-kullanimi/",
-        "title": "Params Anahtar Sözcüğünün Kullanımı",
-        "date": "2003-11-30T12:00:00+03:00"
-      },
-      {
-        "url": "/2003/11/13/overload-metodlarin-gucu/",
-        "title": "Overload Metodların Gücü",
-        "date": "2003-11-13T13:00:00+03:00"
-      }
-    ],
-    "Docker": [
       {
         "url": "/2025/02/10/ollama-yardimiyla-deepseek-dil-modelini-dotnet-platformunda-kullanmak/",
         "title": "Ollama Yardımıyla Deepseek Dil Modelini .Net Platformunda Kullanmak",
@@ -25957,9 +25069,19 @@
         "date": "2007-04-20T12:00:00+03:00"
       },
       {
+        "url": "/2007/04/02/baglantisiz-katmanda-linq/",
+        "title": "Bağlantısız Katmanda LINQ",
+        "date": "2007-04-02T12:00:00+03:00"
+      },
+      {
         "url": "/2004/04/28/windows-servislerine-giris/",
         "title": "Windows Servislerine Giriş",
         "date": "2004-04-28T15:00:00+03:00"
+      },
+      {
+        "url": "/2003/11/19/distributed-transactions/",
+        "title": "Distributed Transactions",
+        "date": "2003-11-19T12:00:00+03:00"
       }
     ],
     "Go": [
@@ -25994,29 +25116,14 @@
         "date": "2017-08-09T21:02:00+03:00"
       },
       {
-        "url": "/2017/08/03/golang-redis-ile-anlasmak/",
-        "title": "GoLang - Redis ile Anlaşmak",
-        "date": "2017-08-03T21:16:00+03:00"
-      },
-      {
         "url": "/2017/07/26/golang-unit-test-yazmak/",
         "title": "GoLang - Unit Test Yazmak",
         "date": "2017-07-26T21:31:00+03:00"
       },
       {
-        "url": "/2017/07/22/golang-google-protobuf-kullanimi/",
-        "title": "GoLang - Google ProtoBuf Kullanımı",
-        "date": "2017-07-22T21:03:00+03:00"
-      },
-      {
         "url": "/2017/07/17/wcf-servis-yolunda-debelenirken/",
         "title": "WCF Servis Yolunda Debelenirken",
         "date": "2017-07-17T21:47:00+03:00"
-      },
-      {
-        "url": "/2017/07/16/golang-bir-orm-denemesi/",
-        "title": "GoLang - Bir ORM Denemesi",
-        "date": "2017-07-16T21:40:00+03:00"
       },
       {
         "url": "/2017/07/10/golang-rest-servisimizi-sqlite-a-baglayalim/",
@@ -26079,11 +25186,6 @@
         "date": "2017-05-15T11:52:00+03:00"
       },
       {
-        "url": "/2017/05/07/golang-interface-kavrami/",
-        "title": "GoLang - Interface Kavramı",
-        "date": "2017-05-07T10:57:00+03:00"
-      },
-      {
         "url": "/2017/05/04/tek-fotoluk-ipucu-157-go-ile-bir-queue-yazalim-mi/",
         "title": "Tek Fotoluk İpucu 157 - GO ile Bir Queue Yazalım mı?",
         "date": "2017-05-04T10:10:00+03:00"
@@ -26109,11 +25211,6 @@
         "date": "2017-02-25T21:38:00+03:00"
       },
       {
-        "url": "/2017/02/20/golang-basit-http-web-server-yapimi/",
-        "title": "GoLang - Basit HTTP Web Server Yapımı",
-        "date": "2017-02-20T23:48:00+03:00"
-      },
-      {
         "url": "/2017/01/28/golang-harici-paket-package-yazip-kullanmak/",
         "title": "GoLang - Harici Paket(Package) Yazıp Kullanmak",
         "date": "2017-01-28T14:42:00+03:00"
@@ -26122,11 +25219,6 @@
         "url": "/2017/01/13/gopher-olma-calismalari/",
         "title": "Gopher Olma Çalışmaları",
         "date": "2017-01-13T12:10:00+03:00"
-      },
-      {
-        "url": "/2017/01/06/go-dilini-anlamaya-calisirken/",
-        "title": "Go Dilini Anlamaya Çalışırken",
-        "date": "2017-01-06T03:56:00+03:00"
       }
     ],
     "JavaScript": [
@@ -26296,6 +25388,11 @@
         "date": "2019-04-26T07:07:00+03:00"
       },
       {
+        "url": "/2019/04/24/grpc-nedir-nasil-uygulanir/",
+        "title": "gRPC Nedir, Nasıl Uygulanır?",
+        "date": "2019-04-24T07:06:00+03:00"
+      },
+      {
         "url": "/2019/04/08/http-2-server-push-nasil-bir-seydir/",
         "title": "HTTP/2 Server Push Nasıl Bir Şeydir?",
         "date": "2019-04-08T21:37:00+03:00"
@@ -26304,6 +25401,11 @@
         "url": "/2019/03/18/servis-ciktilarini-plotly-js-ile-grafiklestirmek/",
         "title": "Servis Çıktılarını Plotly.js ile Grafikleştirmek",
         "date": "2019-03-18T21:51:00+03:00"
+      },
+      {
+        "url": "/2019/01/10/nodejs-asenkron-talep-karsilama/",
+        "title": "Node.js - Asenkron Talep Karşılama",
+        "date": "2019-01-10T17:00:00+03:00"
       },
       {
         "url": "/2018/11/30/electron-ile-cross-platform-uygulama-gelistirmek/",
@@ -26436,6 +25538,11 @@
         "date": "2012-04-02T04:00:00+03:00"
       },
       {
+        "url": "/2010/08/06/regex-ve-performans-ipuclari-otomatik-cache/",
+        "title": "Regex ve Performans İpuçları – Otomatik Cache",
+        "date": "2010-08-06T07:05:00+03:00"
+      },
+      {
         "url": "/2010/02/18/wcf-webhttp-services-json-formatli-response-uretmek/",
         "title": "WCF WebHttp Services - JSON Formatlı Response Üretmek",
         "date": "2010-02-18T22:50:00+03:00"
@@ -26538,6 +25645,11 @@
         "date": "2019-02-05T21:01:00+03:00"
       },
       {
+        "url": "/2018/11/30/electron-ile-cross-platform-uygulama-gelistirmek/",
+        "title": "Electron ile Cross-Platform Uygulama Geliştirmek",
+        "date": "2018-11-30T05:06:00+03:00"
+      },
+      {
         "url": "/2018/07/03/nodejs-ile-basit-cluster-kurgulari/",
         "title": "Node.js ile Basit Cluster Kurguları",
         "date": "2018-07-03T21:04:00+03:00"
@@ -26598,6 +25710,11 @@
         "url": "/2017/12/18/aspdotnet-core-web-api-icin-custom-middleware-yazmak/",
         "title": "Asp.Net Core Web API için Custom MiddleWare Yazmak",
         "date": "2017-12-18T06:01:00+03:00"
+      },
+      {
+        "url": "/2015/11/09/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi/",
+        "title": "TCP Bazlı Soket Haberleşmesinde Sertifika Kullanımı",
+        "date": "2015-11-09T21:00:00+03:00"
       }
     ],
     "Node.js": [
@@ -26635,11 +25752,6 @@
         "url": "/2020/05/05/mqtt-protokolunun-kullanildigi-basit-bir-publisher-subscriber-senaryosu/",
         "title": "MQTT Protokolünün Kullanıldığı Basit Bir Publisher/Subscriber Senaryosu",
         "date": "2020-05-05T13:48:00+03:00"
-      },
-      {
-        "url": "/2020/01/04/sikca-duydugum-deno-ya-hello-dedim/",
-        "title": "Sıkça Duyduğum Deno'ya Hello Dedim",
-        "date": "2020-01-04T21:00:00+03:00"
       },
       {
         "url": "/2019/10/04/bu-sefer-bir-react-uygulamasini-heroku-uzerine-alalim/",
@@ -26697,11 +25809,6 @@
         "date": "2019-04-26T07:07:00+03:00"
       },
       {
-        "url": "/2019/04/24/grpc-nedir-nasil-uygulanir/",
-        "title": "gRPC Nedir, Nasıl Uygulanır?",
-        "date": "2019-04-24T07:06:00+03:00"
-      },
-      {
         "url": "/2019/04/08/http-2-server-push-nasil-bir-seydir/",
         "title": "HTTP/2 Server Push Nasıl Bir Şeydir?",
         "date": "2019-04-08T21:37:00+03:00"
@@ -26710,11 +25817,6 @@
         "url": "/2019/03/18/servis-ciktilarini-plotly-js-ile-grafiklestirmek/",
         "title": "Servis Çıktılarını Plotly.js ile Grafikleştirmek",
         "date": "2019-03-18T21:51:00+03:00"
-      },
-      {
-        "url": "/2019/01/10/nodejs-asenkron-talep-karsilama/",
-        "title": "Node.js - Asenkron Talep Karşılama",
-        "date": "2019-01-10T17:00:00+03:00"
       },
       {
         "url": "/2018/11/30/electron-ile-cross-platform-uygulama-gelistirmek/",
@@ -26874,9 +25976,24 @@
         "date": "2012-07-11T07:00:00+03:00"
       },
       {
+        "url": "/2012/06/07/cerezlik-algoritmalar-ve-extension-methodlar/",
+        "title": "Çerezlik Algoritmalar ve Extension Methodlar",
+        "date": "2012-06-07T23:30:00+03:00"
+      },
+      {
+        "url": "/2012/01/09/binary-search-tree-yi-anlamak/",
+        "title": "Binary Search Tree' yi Anlamak",
+        "date": "2012-01-09T11:01:00+03:00"
+      },
+      {
         "url": "/2011/12/02/parallel-programming-reduction/",
         "title": "Parallel Programming–Reduction",
         "date": "2011-12-02T11:51:00+03:00"
+      },
+      {
+        "url": "/2011/11/11/ssis-programatik-olarak-variable-degeri-set-etmek/",
+        "title": "SSIS - Programatik Olarak Variable Değeri Set Etmek",
+        "date": "2011-11-11T14:59:00+03:00"
       },
       {
         "url": "/2009/12/14/net-4-0-lazy-initialization-beta-2/",
@@ -26912,6 +26029,21 @@
         "url": "/2004/12/04/oyun-programlamaya-giris-matrisler-yardimiyla-carpisma-kontrolu/",
         "title": "Oyun Programlamaya Giriş (Matrisler Yardımıyla Çarpışma Kontrolü)",
         "date": "2004-12-04T12:00:00+03:00"
+      },
+      {
+        "url": "/2004/11/19/oyun-programlamaya-giris-carpisma-teknikleri-3/",
+        "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 3)",
+        "date": "2004-11-19T10:00:00+03:00"
+      },
+      {
+        "url": "/2004/11/12/oyun-programlamaya-giris-carpisma-teknikleri-2/",
+        "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 2)",
+        "date": "2004-11-12T10:00:00+03:00"
+      },
+      {
+        "url": "/2004/11/06/oyun-programlamaya-giris-carpisma-teknikleri-1/",
+        "title": "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 1)",
+        "date": "2004-11-06T04:00:00+03:00"
       }
     ],
     "Python": [
@@ -27001,6 +26133,11 @@
         "date": "2017-08-09T21:02:00+03:00"
       },
       {
+        "url": "/2017/07/22/golang-google-protobuf-kullanimi/",
+        "title": "GoLang - Google ProtoBuf Kullanımı",
+        "date": "2017-07-22T21:03:00+03:00"
+      },
+      {
         "url": "/2017/06/27/python-pep8-uyumlu-kod-gelistirmek/",
         "title": "Python - PEP8 Uyumlu Kod Geliştirmek",
         "date": "2017-06-27T17:10:00+03:00"
@@ -27026,6 +26163,11 @@
         "date": "2017-04-09T21:42:00+03:00"
       },
       {
+        "url": "/2017/02/20/golang-basit-http-web-server-yapimi/",
+        "title": "GoLang - Basit HTTP Web Server Yapımı",
+        "date": "2017-02-20T23:48:00+03:00"
+      },
+      {
         "url": "/2017/01/19/duck-typing-nedir/",
         "title": "Duck Typing Nedir?",
         "date": "2017-01-19T21:30:00+03:00"
@@ -27044,11 +26186,6 @@
         "url": "/2016/09/01/python-ogrenmeye-devam-siniflar/",
         "title": "Python Öğrenmeye Devam - Sınıflar",
         "date": "2016-09-01T01:00:00+03:00"
-      },
-      {
-        "url": "/2016/08/06/raspberry-pi-maceramizda-bu-bolum-tekerlegi-dondurduk/",
-        "title": "Raspberry Pi Maceramızda Bu Bölüm - Tekerleği Döndürdük",
-        "date": "2016-08-06T21:01:00+03:00"
       },
       {
         "url": "/2016/07/18/raspberry-pi-derken-olusan-python-calisma-notlarim/",
@@ -27100,11 +26237,6 @@
     ],
     "Ruby": [
       {
-        "url": "/2019/12/01/ruby-tarafindan-redis-docker-bazli-veritabani-ile-konusmak/",
-        "title": "Ruby Tarafından Redis(Docker Bazlı) Veritabanı ile Konuşmak",
-        "date": "2019-12-01T09:45:00+03:00"
-      },
-      {
         "url": "/2018/05/25/azure-azure-bu-fotografta-neler-goruyorsun/",
         "title": "Azure, Azure! Bu Fotoğrafta Neler Görüyorsun?",
         "date": "2018-05-25T04:46:00+03:00"
@@ -27118,6 +26250,11 @@
         "url": "/2017/11/05/ubuntu-da-ilk-dotnet-core-adimlarim/",
         "title": "Ubuntu'da İlk .Net Core Adımlarım",
         "date": "2017-11-05T10:17:00+03:00"
+      },
+      {
+        "url": "/2017/08/03/golang-redis-ile-anlasmak/",
+        "title": "GoLang - Redis ile Anlaşmak",
+        "date": "2017-08-03T21:16:00+03:00"
       },
       {
         "url": "/2017/06/27/python-pep8-uyumlu-kod-gelistirmek/",
@@ -27143,6 +26280,11 @@
         "url": "/2017/05/15/golang-concurrency-goroutine-channel/",
         "title": "GoLang - Concurrency (goroutine, channel)",
         "date": "2017-05-15T11:52:00+03:00"
+      },
+      {
+        "url": "/2017/05/07/golang-interface-kavrami/",
+        "title": "GoLang - Interface Kavramı",
+        "date": "2017-05-07T10:57:00+03:00"
       },
       {
         "url": "/2017/05/05/ruby-kod-parcaciklari-34-fiber-ve-es-zamanli-programlama/",
@@ -27183,6 +26325,11 @@
         "url": "/2017/01/13/gopher-olma-calismalari/",
         "title": "Gopher Olma Çalışmaları",
         "date": "2017-01-13T12:10:00+03:00"
+      },
+      {
+        "url": "/2017/01/06/go-dilini-anlamaya-calisirken/",
+        "title": "Go Dilini Anlamaya Çalışırken",
+        "date": "2017-01-06T03:56:00+03:00"
       },
       {
         "url": "/2017/01/03/ruby-kod-parcaciklari-31-kendi-gem-paketimizi-hazirlamak/",
@@ -27699,6 +26846,16 @@
     ],
     "SQL": [
       {
+        "url": "/2026/03/13/hexagonal-architecture-101/",
+        "title": "Hexagonal Architecture 101",
+        "date": "2026-03-13T19:31:00+03:00"
+      },
+      {
+        "url": "/2026/03/07/microsoft-dotnet-platformunda-bir-mcp-server-yazmak/",
+        "title": "Microsoft DotNet Platformunda Bir MCP Server Yazmak",
+        "date": "2026-03-07T14:34:00+03:00"
+      },
+      {
         "url": "/2025/08/12/project-lighthouse-social/",
         "title": "Project Lighthouse Social",
         "date": "2025-08-12T08:00:00+03:00"
@@ -27914,6 +27071,11 @@
         "date": "2014-10-12T02:00:00+03:00"
       },
       {
+        "url": "/2014/07/17/nlog-icin-oracle-database-kullanmak/",
+        "title": "NLog için Oracle Database Kullanmak",
+        "date": "2014-07-17T07:45:00+03:00"
+      },
+      {
         "url": "/2014/04/24/nosql-maceralari-raptordb-ile-hello-world/",
         "title": "NoSQL Maceraları - RaptorDB ile Hello World",
         "date": "2014-04-24T14:55:00+03:00"
@@ -27922,6 +27084,11 @@
         "url": "/2014/04/08/entity-framework-6-yeni-esintiler/",
         "title": "Entity Framework 6 –Yeni Esintiler",
         "date": "2014-04-08T11:09:00+03:00"
+      },
+      {
+        "url": "/2014/04/03/csharp-6-0-yeni-esintiler/",
+        "title": "C# 6.0–Yeni Esintiler",
+        "date": "2014-04-03T13:04:00+03:00"
       },
       {
         "url": "/2014/03/18/excel-icerigini-dataset-olarak-sisteme-katmak/",
@@ -28052,6 +27219,11 @@
         "url": "/2012/11/18/entity-framework-code-first-icin-dogrulama-validation-stratejileri-webiner-webcast-kayitlari/",
         "title": "Entity Framework Code First için Doğrulama(Validation) Stratejileri Webiner(Webcast) Kayıtları",
         "date": "2012-11-18T08:51:00+03:00"
+      },
+      {
+        "url": "/2012/11/18/entity-framework-code-first-icin-dogrulama-validation-stratejileri/",
+        "title": "Entity Framework Code First için Doğrulama(Validation) Stratejileri",
+        "date": "2012-11-18T06:38:00+03:00"
       },
       {
         "url": "/2012/10/31/entity-framework-6-alpha-1-ve-async-await-ozellikleri/",
@@ -28484,6 +27656,11 @@
         "date": "2005-10-17T09:00:00+03:00"
       },
       {
+        "url": "/2005/09/09/callback-teknigi-ile-asenkron-metod-yurutmek/",
+        "title": "CallBack Tekniği ile Asenkron Metod Yürütmek",
+        "date": "2005-09-09T12:00:00+03:00"
+      },
+      {
         "url": "/2005/09/03/web-uygulamalarinda-custom-paging/",
         "title": "Web Uygulamalarında Custom Paging",
         "date": "2005-09-03T12:00:00+03:00"
@@ -28512,6 +27689,11 @@
         "url": "/2005/04/17/adodotnet-2-0-da-transaction-kavrami/",
         "title": "Ado.Net 2.0' da Transaction Kavramı",
         "date": "2005-04-17T12:00:00+03:00"
+      },
+      {
+        "url": "/2005/04/04/datareader-nesnelerini-kullanirken/",
+        "title": "DataReader Nesnelerini Kullanırken…",
+        "date": "2005-04-04T12:00:00+03:00"
       },
       {
         "url": "/2005/03/27/command-nesnelerine-dikkat/",
@@ -28547,6 +27729,11 @@
         "url": "/2004/12/30/derinlemesine-session-kullanimi-1/",
         "title": "Derinlemesine Session Kullanımı - 1",
         "date": "2004-12-30T18:00:00+03:00"
+      },
+      {
+        "url": "/2004/12/18/adodotnet-ile-sql-server-full-text-searching-tum-metinde-arama-kullanimi/",
+        "title": "Ado.Net ile Sql Server Full-Text Searching (Tüm Metinde Arama) Kullanımı",
+        "date": "2004-12-18T12:00:00+03:00"
       },
       {
         "url": "/2004/10/25/adodotnet-2-0-ve-sqldependency-sinifi-yardimiyla-query-notification/",
@@ -28694,6 +27881,11 @@
         "date": "2004-02-17T12:00:00+03:00"
       },
       {
+        "url": "/2004/02/13/connection-baglanti-kavrami-ve-oledbconnection-sinifi/",
+        "title": "Connection (Bağlantı) Kavramı ve OleDbConnection Sınıfı",
+        "date": "2004-02-13T06:00:00+03:00"
+      },
+      {
         "url": "/2004/02/12/getoledbschematable-metodu-ile-veritabanimizda-ne-var-ne-yok/",
         "title": "GetOleDbSchemaTable Metodu İle Veritabanımızda Ne Var Ne Yok",
         "date": "2004-02-12T12:00:00+03:00"
@@ -28754,6 +27946,16 @@
         "date": "2004-01-06T12:00:00+03:00"
       },
       {
+        "url": "/2004/01/01/streamreader-sinifi-yardimiyla-dosya-okumak/",
+        "title": "StreamReader Sınıfı Yardımıyla Dosya Okumak",
+        "date": "2004-01-01T12:00:00+03:00"
+      },
+      {
+        "url": "/2003/12/30/boxing-kutulamak-ve-unboxing-kutuyu-kaldirmak/",
+        "title": "Boxing (Kutulamak) ve Unboxing (Kutuyu Kaldırmak)",
+        "date": "2003-12-30T12:00:00+03:00"
+      },
+      {
         "url": "/2003/12/29/sqldatareader-sinifi-2/",
         "title": "SqlDataReader Sınıfı 2",
         "date": "2003-12-29T12:00:00+03:00"
@@ -28772,6 +27974,11 @@
         "url": "/2003/12/17/datagrid-denetimi-uzerinde-siralama-sorting-islemi/",
         "title": "DataGrid Denetimi Üzerinde Sıralama(Sorting) İşlemi",
         "date": "2003-12-17T10:00:00+03:00"
+      },
+      {
+        "url": "/2003/12/16/datagrid-denetimi-uzerinde-sayfalama-paging-islemi/",
+        "title": "DataGrid Denetimi Üzerinde Sayfalama(Paging) İşlemi",
+        "date": "2003-12-16T12:00:00+03:00"
       },
       {
         "url": "/2003/12/15/dataview-sinifi-ve-faydalari/",
@@ -28855,6 +28062,11 @@
       }
     ],
     "Tasarim Desenleri": [
+      {
+        "url": "/2026/03/03/copilot-sdk-ile-ilk-deneyimler/",
+        "title": "Copilot SDK ile İlk Deneyimler",
+        "date": "2026-03-03T14:40:00+03:00"
+      },
       {
         "url": "/2025/12/01/rust-ile-kodlama-idmanlari-ileri-seviye/",
         "title": "Rust ile Kodlama İdmanları - İleri Seviye",
@@ -29301,6 +28513,11 @@
         "date": "2008-05-20T12:00:00+03:00"
       },
       {
+        "url": "/2008/02/09/mesaj-sozlesmeleri-message-contracts/",
+        "title": "Mesaj Sözleşmeleri(Message Contracts)",
+        "date": "2008-02-09T12:00:00+03:00"
+      },
+      {
         "url": "/2008/02/08/rss-atom-formatli-icerik-paylasimi-syndication/",
         "title": "RSS, Atom Formatlı İçerik Paylaşımı(Syndication)",
         "date": "2008-02-08T12:00:00+03:00"
@@ -29403,6 +28620,11 @@
     ],
     "TypeScript": [
       {
+        "url": "/2020/01/04/sikca-duydugum-deno-ya-hello-dedim/",
+        "title": "Sıkça Duyduğum Deno'ya Hello Dedim",
+        "date": "2020-01-04T21:00:00+03:00"
+      },
+      {
         "url": "/2019/08/08/socket-io-yardimiyla-realtime-calisan-bir-angular-uygulamasi-gelistirmek/",
         "title": "Socket-IO Yardımıyla RealTime Çalışan Bir Angular Uygulaması Geliştirmek",
         "date": "2019-08-08T15:17:00+03:00"
@@ -29443,6 +28665,11 @@
         "url": "/2020/05/29/bir-web-api-hizmetinde-talepler-ile-cq-arasinda-mediator-kullanmak/",
         "title": "Bir Web API Hizmetinde Talepler ile CQ Arasında Mediator Kullanmak",
         "date": "2020-05-29T17:23:00+03:00"
+      },
+      {
+        "url": "/2019/12/01/ruby-tarafindan-redis-docker-bazli-veritabani-ile-konusmak/",
+        "title": "Ruby Tarafından Redis(Docker Bazlı) Veritabanı ile Konuşmak",
+        "date": "2019-12-01T09:45:00+03:00"
       },
       {
         "url": "/2019/08/16/web-api-tarafinda-dapper-kullanimi/",
@@ -29488,6 +28715,11 @@
         "url": "/2017/10/04/net-core-2-0-ile-basit-bir-web-api-gelistirmek/",
         "title": ".NET Core 2.0 ile Basit Bir Web API Geliştirmek",
         "date": "2017-10-04T09:58:00+03:00"
+      },
+      {
+        "url": "/2017/07/16/golang-bir-orm-denemesi/",
+        "title": "GoLang - Bir ORM Denemesi",
+        "date": "2017-07-16T21:40:00+03:00"
       },
       {
         "url": "/2016/12/07/tek-fotoluk-ipucu-147-port-dinlemek/",
@@ -29550,6 +28782,21 @@
         "date": "2014-04-03T13:04:00+03:00"
       },
       {
+        "url": "/2014/03/18/excel-icerigini-dataset-olarak-sisteme-katmak/",
+        "title": "Excel İçeriğini DataSet Olarak Sisteme Katmak",
+        "date": "2014-03-18T19:13:00+03:00"
+      },
+      {
+        "url": "/2013/10/06/dosya-satir-sayisini-bulmak/",
+        "title": "Dosya Satır Sayısını Bulmak",
+        "date": "2013-10-06T12:02:00+03:00"
+      },
+      {
+        "url": "/2013/08/18/migradoc-ile-pdf-rapor-uretimi-hello-world/",
+        "title": "MigraDoc ile PDF Rapor Üretimi - Hello World",
+        "date": "2013-08-18T11:48:00+03:00"
+      },
+      {
         "url": "/2013/07/04/tek-fotoluk-ipucu-103-database-query-ve-dynamic-avantaji/",
         "title": "Tek Fotoluk İpucu 103–Database.Query ve dynamic Avantajı",
         "date": "2013-07-04T21:31:00+03:00"
@@ -29605,11 +28852,6 @@
         "date": "2012-11-18T08:51:00+03:00"
       },
       {
-        "url": "/2012/11/18/entity-framework-code-first-icin-dogrulama-validation-stratejileri/",
-        "title": "Entity Framework Code First için Doğrulama(Validation) Stratejileri",
-        "date": "2012-11-18T06:38:00+03:00"
-      },
-      {
         "url": "/2012/11/14/aspdotnet-web-api-leri-aspx-den-asenkron-cagirmak/",
         "title": "Asp.Net Web API’ leri ASPX’ den Asenkron Çağırmak",
         "date": "2012-11-14T00:00:00+03:00"
@@ -29638,11 +28880,6 @@
         "url": "/2012/03/06/tek-fotoluk-ipucu-49-daha-hizli-count/",
         "title": "Tek Fotoluk İpucu 49–Daha Hızlı Count",
         "date": "2012-03-06T22:50:00+03:00"
-      },
-      {
-        "url": "/2012/02/23/entity-framework-code-first-migration-webineri-yayinda/",
-        "title": "Entity Framework - Code First Migration Webineri Yayında",
-        "date": "2012-02-23T03:22:00+03:00"
       },
       {
         "url": "/2012/02/04/entity-framework-code-first-development-webiner-kayidi/",
@@ -29865,9 +29102,19 @@
         "date": "2006-10-30T02:00:00+03:00"
       },
       {
+        "url": "/2006/09/25/csharp-3-0-ilk-bakista-dlinq/",
+        "title": "C# 3.0 - İlk Bakışta DLINQ",
+        "date": "2006-09-25T12:00:00+03:00"
+      },
+      {
         "url": "/2006/07/28/xml-web-servislerinde-etkili-caching-kullanimi/",
         "title": "Xml Web Servislerinde Etkili Caching Kullanımı",
         "date": "2006-07-28T12:00:00+03:00"
+      },
+      {
+        "url": "/2006/07/11/buyuk-nesneler-large-objects-ile-calismak/",
+        "title": "Büyük Nesneler(Large Objects) ile Çalışmak",
+        "date": "2006-07-11T12:00:00+03:00"
       },
       {
         "url": "/2006/05/22/native-web-services/",
@@ -29900,6 +29147,11 @@
         "date": "2006-02-27T08:00:00+03:00"
       },
       {
+        "url": "/2006/01/24/compact-framework-uzerinde-rda-ile-senkronizasyon/",
+        "title": "Compact Framework Üzerinde RDA ile Senkronizasyon",
+        "date": "2006-01-24T12:00:00+03:00"
+      },
+      {
         "url": "/2005/10/17/adodotnet-2-0-beta-2-connection-string-security-baglanti-katari-icin-guvenlik/",
         "title": "Ado.Net 2.0(Beta 2) - Connection String Security (Bağlantı Katarı için Güvenlik)",
         "date": "2005-10-17T09:00:00+03:00"
@@ -29910,6 +29162,21 @@
         "date": "2005-09-09T12:00:00+03:00"
       },
       {
+        "url": "/2005/08/28/numaralandiricilari-kullanmak-icin-bir-sebep/",
+        "title": "Numaralandırıcıları Kullanmak İçin Bir Sebep",
+        "date": "2005-08-28T12:00:00+03:00"
+      },
+      {
+        "url": "/2005/08/06/sortedlist-ve-hashtable-icin-2-basit-oneri/",
+        "title": "SortedList ve Hashtable İçin 2 Basit Öneri",
+        "date": "2005-08-06T12:00:00+03:00"
+      },
+      {
+        "url": "/2005/06/22/csharp-2-0-ve-nullable-deger-tipleri/",
+        "title": "C# 2.0 ve Nullable Değer Tipleri",
+        "date": "2005-06-22T12:00:00+03:00"
+      },
+      {
         "url": "/2005/04/24/adodotnet-2-0-ve-data-provider-independent-mimari/",
         "title": "Ado.Net 2.0 ve Data Provider-Independent Mimari",
         "date": "2005-04-24T12:00:00+03:00"
@@ -29918,11 +29185,6 @@
         "url": "/2005/04/17/adodotnet-2-0-da-transaction-kavrami/",
         "title": "Ado.Net 2.0' da Transaction Kavramı",
         "date": "2005-04-17T12:00:00+03:00"
-      },
-      {
-        "url": "/2005/04/04/datareader-nesnelerini-kullanirken/",
-        "title": "DataReader Nesnelerini Kullanırken…",
-        "date": "2005-04-04T12:00:00+03:00"
       },
       {
         "url": "/2005/03/27/command-nesnelerine-dikkat/",
@@ -29938,11 +29200,6 @@
         "url": "/2005/03/06/baglantisiz-katmanda-concurrency-violation-durumu/",
         "title": "Bağlantısız Katmanda Concurrency Violation Durumu",
         "date": "2005-03-06T10:00:00+03:00"
-      },
-      {
-        "url": "/2004/12/18/adodotnet-ile-sql-server-full-text-searching-tum-metinde-arama-kullanimi/",
-        "title": "Ado.Net ile Sql Server Full-Text Searching (Tüm Metinde Arama) Kullanımı",
-        "date": "2004-12-18T12:00:00+03:00"
       },
       {
         "url": "/2004/10/25/adodotnet-2-0-ve-sqldependency-sinifi-yardimiyla-query-notification/",
@@ -30065,11 +29322,6 @@
         "date": "2004-02-17T12:00:00+03:00"
       },
       {
-        "url": "/2004/02/13/connection-baglanti-kavrami-ve-oledbconnection-sinifi/",
-        "title": "Connection (Bağlantı) Kavramı ve OleDbConnection Sınıfı",
-        "date": "2004-02-13T06:00:00+03:00"
-      },
-      {
         "url": "/2004/02/12/getoledbschematable-metodu-ile-veritabanimizda-ne-var-ne-yok/",
         "title": "GetOleDbSchemaTable Metodu İle Veritabanımızda Ne Var Ne Yok",
         "date": "2004-02-12T12:00:00+03:00"
@@ -30100,6 +29352,11 @@
         "date": "2004-01-29T12:00:00+03:00"
       },
       {
+        "url": "/2004/01/27/indeksleyiciler-indexers/",
+        "title": "Indeksleyiciler (Indexers)",
+        "date": "2004-01-27T12:00:00+03:00"
+      },
+      {
         "url": "/2004/01/24/sql-tablolarindaki-binary-resimlere-bakmak-ve-dosya-olarak-kaydetmek/",
         "title": "Sql Tablolarındaki Binary Resimlere Bakmak ve Dosya Olarak Kaydetmek",
         "date": "2004-01-24T10:00:00+03:00"
@@ -30113,6 +29370,16 @@
         "url": "/2004/01/22/net-data-providers-veri-saglayicilari/",
         "title": "Net Data Providers(Veri Sağlayıcıları)",
         "date": "2004-01-22T08:00:00+03:00"
+      },
+      {
+        "url": "/2004/01/14/bir-arayuz-bir-sinif-ve-bir-tablo/",
+        "title": "Bir Arayüz, Bir Sınıf ve Bir Tablo",
+        "date": "2004-01-14T12:00:00+03:00"
+      },
+      {
+        "url": "/2004/01/06/ise-yarar-bir-multithreading-cok-kanalli-uygulama-ornegi/",
+        "title": "İşe Yarar Bir MultiThreading(Çok Kanallı) Uygulama Örneği",
+        "date": "2004-01-06T12:00:00+03:00"
       },
       {
         "url": "/2004/01/01/streamreader-sinifi-yardimiyla-dosya-okumak/",
@@ -30135,6 +29402,11 @@
         "date": "2003-12-28T12:00:00+03:00"
       },
       {
+        "url": "/2003/12/23/bir-sinif-yazalim/",
+        "title": "Bir Sınıf Yazalım",
+        "date": "2003-12-23T12:00:00+03:00"
+      },
+      {
         "url": "/2003/12/22/reflection-sinifi-ile-tiplerin-sirri-ortaya-cikiyor/",
         "title": "Reflection Sınıfı İle Tiplerin Sırrı Ortaya Çıkıyor",
         "date": "2003-12-22T12:00:00+03:00"
@@ -30143,11 +29415,6 @@
         "url": "/2003/12/17/datagrid-denetimi-uzerinde-siralama-sorting-islemi/",
         "title": "DataGrid Denetimi Üzerinde Sıralama(Sorting) İşlemi",
         "date": "2003-12-17T10:00:00+03:00"
-      },
-      {
-        "url": "/2003/12/16/datagrid-denetimi-uzerinde-sayfalama-paging-islemi/",
-        "title": "DataGrid Denetimi Üzerinde Sayfalama(Paging) İşlemi",
-        "date": "2003-12-16T12:00:00+03:00"
       },
       {
         "url": "/2003/12/15/dataview-sinifi-ve-faydalari/",
@@ -30190,9 +29457,9 @@
         "date": "2003-11-30T12:00:00+03:00"
       },
       {
-        "url": "/2003/11/19/distributed-transactions/",
-        "title": "Distributed Transactions",
-        "date": "2003-11-19T12:00:00+03:00"
+        "url": "/2003/11/30/params-anahtar-sozcugunun-kullanimi/",
+        "title": "Params Anahtar Sözcüğünün Kullanımı",
+        "date": "2003-11-30T12:00:00+03:00"
       },
       {
         "url": "/2003/11/17/transaction-kavrami/",
@@ -30507,6 +29774,11 @@
         "date": "2012-03-20T15:23:00+03:00"
       },
       {
+        "url": "/2012/02/23/entity-framework-code-first-migration-webineri-yayinda/",
+        "title": "Entity Framework - Code First Migration Webineri Yayında",
+        "date": "2012-02-23T03:22:00+03:00"
+      },
+      {
         "url": "/2012/02/13/bing-maps-wcf-servisleri/",
         "title": "Bing Maps WCF Servisleri",
         "date": "2012-02-13T01:05:00+03:00"
@@ -30532,19 +29804,9 @@
         "date": "2011-10-14T14:00:00+03:00"
       },
       {
-        "url": "/2011/07/07/tek-fotoluk-ipucu-15-self-hosted-workflow-service/",
-        "title": "Tek Fotoluk İpucu - 15(Self Hosted Workflow Service)",
-        "date": "2011-07-07T08:05:00+03:00"
-      },
-      {
         "url": "/2011/07/04/tek-fotoluk-ipucu-13-xmlserializer-ile-daha-fazla-kontrol/",
         "title": "Tek Fotoluk İpucu-13(XmlSerializer ile Daha Fazla Kontrol)",
         "date": "2011-07-04T23:02:00+03:00"
-      },
-      {
-        "url": "/2011/07/03/tek-fotoluk-ipucu-12-datatable-icin-raw-xml-formati/",
-        "title": "Tek Fotoluk İpucu–12 (DataTable için Raw XML Formatı)",
-        "date": "2011-07-03T21:45:00+03:00"
       },
       {
         "url": "/2011/07/01/tek-fotoluk-ipucu-11-ham-xml-ve-xelement/",
@@ -30565,11 +29827,6 @@
         "url": "/2011/03/13/jquery-icerisinden-bir-wcf-servisini-kullanmak/",
         "title": "jQuery İçerisinden Bir WCF Servisini Kullanmak",
         "date": "2011-03-13T21:27:00+03:00"
-      },
-      {
-        "url": "/2011/03/06/servis-operasyonlarini-kod-yardimiyla-izlemek-event-kullanimi/",
-        "title": "Servis Operasyonlarını Kod Yardımıyla İzlemek – Event Kullanımı",
-        "date": "2011-03-06T18:00:00+03:00"
       },
       {
         "url": "/2011/02/27/servis-operasyonlarini-kod-yardimiyla-izlemek/",
@@ -31147,6 +30404,11 @@
         "date": "2007-10-25T12:00:00+03:00"
       },
       {
+        "url": "/2007/08/30/wpf-uygulama-nesnesi-application-object/",
+        "title": "WPF-Uygulama Nesnesi (Application Object)",
+        "date": "2007-08-30T09:00:00+03:00"
+      },
+      {
         "url": "/2007/08/23/wcf-client-callback-istemci-tarafli-geri-bildirim/",
         "title": "WCF - Client Callback (İstemci Taraflı Geri Bildirim)",
         "date": "2007-08-23T12:00:00+03:00"
@@ -31215,6 +30477,16 @@
         "url": "/2007/04/28/wcf-adim-adim-iis-hosting/",
         "title": "WCF - Adım Adım IIS Hosting",
         "date": "2007-04-28T03:00:00+03:00"
+      },
+      {
+        "url": "/2007/04/11/csharp-temelleri-nitelikleri-attributes-kavramak/",
+        "title": "C# Temelleri : Nitelikleri(Attributes) Kavramak",
+        "date": "2007-04-11T03:00:00+03:00"
+      },
+      {
+        "url": "/2007/03/21/wpf-xaml-baml-ve-dahasi/",
+        "title": "WPF, Xaml, Baml ve Dahası",
+        "date": "2007-03-21T12:00:00+03:00"
       },
       {
         "url": "/2007/02/21/linq-daha-fazla-sorgu/",
@@ -31529,11 +30801,6 @@
         "date": "2008-01-04T12:00:00+03:00"
       },
       {
-        "url": "/2007/10/04/wpf-sayfa-page-kavrami-navigasyon-islemleri-ve-xbap/",
-        "title": "WPF - Sayfa(Page) Kavramı, Navigasyon İşlemleri ve XBAP",
-        "date": "2007-10-04T12:00:00+03:00"
-      },
-      {
         "url": "/2007/10/01/wpf-temel-animasyon-islemleri-2/",
         "title": "WPF - Temel Animasyon İşlemleri - 2",
         "date": "2007-10-01T12:00:00+03:00"
@@ -31559,11 +30826,6 @@
         "date": "2007-09-03T12:00:00+03:00"
       },
       {
-        "url": "/2007/08/30/wpf-uygulama-nesnesi-application-object/",
-        "title": "WPF-Uygulama Nesnesi (Application Object)",
-        "date": "2007-08-30T09:00:00+03:00"
-      },
-      {
         "url": "/2007/05/04/wcf-windows-ve-windows-service-hosting/",
         "title": "WCF-Windows ve Windows Service Hosting",
         "date": "2007-05-04T09:00:00+03:00"
@@ -31584,6 +30846,11 @@
         "url": "/2022/11/29/matematik-ve-oyun-programlama-missile-command-final/",
         "title": "Matematik ve Oyun Programlama - Missile Command - Final",
         "date": "2022-11-29T11:32:00+03:00"
+      },
+      {
+        "url": "/2009/12/23/net-4-0-oncesi-threadpool-kullanimi/",
+        "title": ".Net 4.0 Öncesi ThreadPool Kullanımı",
+        "date": "2009-12-23T03:15:00+03:00"
       }
     ],
     "Zig": [
