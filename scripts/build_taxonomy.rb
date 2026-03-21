@@ -9,6 +9,8 @@ ROOT = File.expand_path('..', __dir__)
 POSTS_DIR = File.join(ROOT, '_posts')
 OUTPUT_DIR = File.join(ROOT, '_data')
 OUTPUT_PATH = File.join(OUTPUT_DIR, 'inferred_taxonomy.json')
+GENERATED_PAGES_DIR = File.join(ROOT, 'generated-pages')
+CATEGORY_PAGES_DIR = File.join(GENERATED_PAGES_DIR, 'kategoriler')
 
 CATEGORY_ALIASES = {
   '.net' => '.NET',
@@ -197,6 +199,10 @@ def merge_unique(*lists)
   end
 end
 
+def slugify_segment(value)
+  normalize_key(value).tr('.+', '  ').gsub(/[^a-z0-9\s-]/, ' ').gsub(/\s+/, '-').gsub(/-+/, '-').gsub(/^-|-$/, '')
+end
+
 def post_url_for(path)
   file_name = File.basename(path, File.extname(path))
   year, month, day, slug = file_name.match(/\A(\d{4})-(\d{2})-(\d{2})-(.+)\z/).captures
@@ -306,6 +312,44 @@ payload = {
   'tags' => tags_index.sort.to_h,
   'tag_cloud' => tag_cloud
 }
+
+FileUtils.rm_rf(CATEGORY_PAGES_DIR)
+
+categories_index.each do |category_name, category_posts|
+  per_page = 20
+  total_pages = [(category_posts.size.to_f / per_page).ceil, 1].max
+  category_slug = slugify_segment(category_name)
+  base_permalink = "/kategoriler/#{category_slug}/"
+
+  (1..total_pages).each do |page_number|
+    page_dir = if page_number == 1
+                 File.join(CATEGORY_PAGES_DIR, category_slug)
+               else
+                 File.join(CATEGORY_PAGES_DIR, category_slug, 'sayfa', page_number.to_s)
+               end
+    FileUtils.mkdir_p(page_dir)
+
+    front_matter = {
+      'layout' => 'category-archive',
+      'title' => category_name,
+      'permalink' => page_number == 1 ? base_permalink : "#{base_permalink}sayfa/#{page_number}/",
+      'category_name' => category_name,
+      'base_permalink' => base_permalink,
+      'page_number' => page_number,
+      'total_pages' => total_pages,
+      'published' => true
+    }
+
+    page_content = [
+      '---',
+      front_matter.to_yaml.sub(/\A---\s*\n?/, '').sub(/\n?\.\.\.\s*\n?\z/, '').strip,
+      '---',
+      ''
+    ].join("\n")
+
+    File.write(File.join(page_dir, 'index.md'), page_content)
+  end
+end
 
 FileUtils.mkdir_p(OUTPUT_DIR)
 File.write(OUTPUT_PATH, JSON.pretty_generate(payload))

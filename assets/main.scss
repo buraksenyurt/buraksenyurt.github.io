@@ -31,6 +31,78 @@
   font-weight: 600;
 }
 
+.taxonomy-detail-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.taxonomy-detail-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid $grey-color-light;
+  border-radius: 0.85rem;
+  background: rgba($brand-color, 0.06);
+}
+
+.taxonomy-detail-stat strong {
+  font-size: 1.05rem;
+  color: $text-color;
+}
+
+.taxonomy-detail-stat span,
+.category-post-card-taxonomy {
+  color: $grey-color;
+  font-size: 0.92rem;
+}
+
+.taxonomy-detail-toolbar {
+  margin-bottom: 1.25rem;
+}
+
+.category-post-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.category-post-card {
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba($grey-color-light, 0.7);
+}
+
+.category-post-card:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.category-post-card h3 {
+  margin: 0.35rem 0 0.45rem;
+  font-size: 1.2rem;
+}
+
+.category-post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.category-post-card-taxonomy a {
+  color: inherit;
+}
+
+.category-post-card-excerpt {
+  color: $text-color;
+}
+
+.category-post-card-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
 .pagination {
   display: flex;
   align-items: center;

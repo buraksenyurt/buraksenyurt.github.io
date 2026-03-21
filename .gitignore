@@ -1,6 +1,7 @@
 _site/
-jekyll-build.log
+jekyll-*.log
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
 Gemfile.lock
+generated-pages/
