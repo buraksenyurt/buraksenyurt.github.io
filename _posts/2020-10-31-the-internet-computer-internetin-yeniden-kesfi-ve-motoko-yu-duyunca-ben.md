@@ -5,7 +5,7 @@ date: 2020-10-31 22:31:00 +0300
 categories:
   - motoko
 tags:
-  - theInternetComputer
+  - the-internet-computer
   - motoko
   - canister
   - internet-computer-protocol

@@ -6,7 +6,15 @@ categories:
   - dotnet-framework-4-0
   - dotnet-framework-4-5
 tags:
-  - mef,managed-extensibility-framework,c#,.net-framework,IoC,Dependency-Injection,modul-based-development,windows-api,.net-runtime
+  - mef
+  - managed-extensibility-framework
+  - c#
+  - .net-framework
+  - IoC
+  - Dependency-Injection
+  - modul-based-development
+  - windows-api
+  - .net-runtime
 ---
 Günümüzde uygulamaların genişletilebilir olması önemli bir konu. Modüler olarak da nitelendirebileceğimiz bu felsefe ile bir uygulamanın kullanıcıları tarafından kolayca genişletilebilmesi amaçlanır. Hatta akıllı uygulamaların kendilerini bu şekilde genişletmesi de mümkündür.
 
