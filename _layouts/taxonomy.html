@@ -36,9 +36,16 @@ layout: default
     {%- for item in taxonomy_items -%}
       {%- assign taxonomy_name = item[0] -%}
       {%- assign posts = item[1] -%}
-      <a href="#{{ taxonomy_name | slugify }}">
-        {{ taxonomy_name }} <span>({{ posts | size }})</span>
-      </a>
+      {%- if page.taxonomy == 'categories' -%}
+        {%- assign taxonomy_slug = taxonomy_name | slugify -%}
+        <a href="{{ '/kategoriler/' | append: taxonomy_slug | append: '/' | relative_url }}">
+          {{ taxonomy_name }} <span>({{ posts | size }})</span>
+        </a>
+      {%- else -%}
+        <a href="#{{ taxonomy_name | slugify }}">
+          {{ taxonomy_name }} <span>({{ posts | size }})</span>
+        </a>
+      {%- endif -%}
     {%- endfor -%}
   </nav>
 
@@ -48,7 +55,14 @@ layout: default
       {%- assign posts = item[1] -%}
       <section class="taxonomy-group" id="{{ taxonomy_name | slugify }}">
         <div class="taxonomy-group-header">
-          <h2>{{ taxonomy_name }}</h2>
+          <h2>
+            {%- if page.taxonomy == 'categories' -%}
+              {%- assign taxonomy_slug = taxonomy_name | slugify -%}
+              <a href="{{ '/kategoriler/' | append: taxonomy_slug | append: '/' | relative_url }}">{{ taxonomy_name }}</a>
+            {%- else -%}
+              {{ taxonomy_name }}
+            {%- endif -%}
+          </h2>
           <span>{{ posts | size }} yazı</span>
         </div>
 

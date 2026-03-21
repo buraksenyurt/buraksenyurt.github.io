@@ -4,5 +4,5 @@ title: Kategoriler
 permalink: /kategoriler/
 taxonomy: categories
 taxonomy_title: Kategoriler
-published: false
+published: true
 ---

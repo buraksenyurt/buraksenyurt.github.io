@@ -11,7 +11,8 @@
         <span class="post-taxonomy-label">Kategoriler</span>
         <div class="post-taxonomy-links">
           {%- for category in categories -%}
-            <a class="taxonomy-chip" href="{{ '/kategoriler/#' | append: (category | slugify) | relative_url }}">{{ category }}</a>
+            {%- assign category_anchor = category | slugify -%}
+            <a class="taxonomy-chip" href="{{ '/kategoriler/' | append: category_anchor | append: '/' | relative_url }}">{{ category }}</a>
           {%- endfor -%}
         </div>
       </div>

@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+{%- assign taxonomy_posts = site.data.inferred_taxonomy.categories[page.category_name] | default: empty -%}
+{%- assign per_page = site.paginate | default: 20 -%}
+{%- assign current_page = page.page_number | default: 1 -%}
+{%- assign total_pages = page.total_pages | default: 1 -%}
+{%- assign offset = current_page | minus: 1 | times: per_page -%}
+
+<div class="archive-page taxonomy-detail-page">
+  <header class="page-header">
+    <h1 class="page-heading">{{ page.title | escape }}</h1>
+    <p class="archive-summary">
+      {{ page.category_name }} kategorisinde toplam {{ taxonomy_posts | size }} yazi var.
+      {%- if total_pages > 1 -%}
+        Sayfa {{ current_page }} / {{ total_pages }}.
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="home-toolbar-meta">
+    <a href="{{ '/kategoriler/' | relative_url }}">Tum kategoriler</a>
+    <a href="{{ '/arsiv/' | relative_url }}">Genel arsiv</a>
+  </div>
+
+  <ul class="archive-post-list">
+    {%- for post in taxonomy_posts limit: per_page offset: offset -%}
+      <li>
+        <span class="archive-post-date">{{ post.date | date: site.minima.date_format }}</span>
+        <a class="archive-post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  {%- if total_pages > 1 -%}
+    <nav class="pagination" aria-label="Kategori sayfalari">
+      {%- if current_page > 1 -%}
+        {%- if current_page == 2 -%}
+          {%- assign previous_url = page.base_permalink -%}
+        {%- else -%}
+          {%- assign previous_page = current_page | minus: 1 -%}
+          {%- assign previous_url = page.base_permalink | append: 'sayfa/' | append: previous_page | append: '/' -%}
+        {%- endif -%}
+        <a class="pagination-link" href="{{ previous_url | relative_url }}">&larr; Daha yeni</a>
+      {%- else -%}
+        <span class="pagination-link is-disabled">&larr; Daha yeni</span>
+      {%- endif -%}
+
+      <div class="pagination-numbers">
+        {%- assign lower_bound = current_page | minus: 2 -%}
+        {%- assign upper_bound = current_page | plus: 2 -%}
+        {%- assign previous_number = 0 -%}
+        {%- for page_number in (1..total_pages) -%}
+          {%- assign show_page_number = false -%}
+          {%- if page_number == 1 -%}
+            {%- assign show_page_number = true -%}
+          {%- elsif page_number == total_pages -%}
+            {%- assign show_page_number = true -%}
+          {%- elsif page_number >= lower_bound -%}
+            {%- if page_number <= upper_bound -%}
+              {%- assign show_page_number = true -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if show_page_number -%}
+            {%- assign gap = page_number | minus: previous_number -%}
+            {%- if previous_number > 0 and gap > 1 -%}
+              <span class="pagination-ellipsis" aria-hidden="true">&hellip;</span>
+            {%- endif -%}
+
+            {%- if page_number == 1 -%}
+              {%- assign page_url = page.base_permalink -%}
+            {%- else -%}
+              {%- assign page_url = page.base_permalink | append: 'sayfa/' | append: page_number | append: '/' -%}
+            {%- endif -%}
+
+            {%- if page_number == current_page -%}
+              <span class="pagination-number is-current">{{ page_number }}</span>
+            {%- else -%}
+              <a class="pagination-number" href="{{ page_url | relative_url }}">{{ page_number }}</a>
+            {%- endif -%}
+
+            {%- assign previous_number = page_number -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if current_page < total_pages -%}
+        {%- assign next_page = current_page | plus: 1 -%}
+        {%- assign next_url = page.base_permalink | append: 'sayfa/' | append: next_page | append: '/' -%}
+        <a class="pagination-link" href="{{ next_url | relative_url }}">Daha eski &rarr;</a>
+      {%- else -%}
+        <span class="pagination-link is-disabled">Daha eski &rarr;</span>
+      {%- endif -%}
+    </nav>
+  {%- endif -%}
+</div>
