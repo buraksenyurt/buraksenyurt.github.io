@@ -4,4 +4,3 @@ jekyll-*.log
 .jekyll-metadata
 .sass-cache/
 Gemfile.lock
-generated-pages/

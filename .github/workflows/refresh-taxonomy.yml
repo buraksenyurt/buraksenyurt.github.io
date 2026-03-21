@@ -1,6 +1,14 @@
 name: Refresh Taxonomy
 
 on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - _posts/**
+      - scripts/build_taxonomy.rb
+      - .github/workflows/refresh-taxonomy.yml
   workflow_dispatch:
 
 permissions:
@@ -8,6 +16,7 @@ permissions:
 
 jobs:
   refresh-taxonomy:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
     steps:
@@ -23,20 +32,20 @@ jobs:
       - name: Generate inferred taxonomy
         run: ruby scripts/build_taxonomy.rb
 
-      - name: Detect taxonomy changes
+      - name: Detect taxonomy and category page changes
         id: taxonomy_changes
         run: |
-          if git diff --quiet -- _data/inferred_taxonomy.json; then
+          if git diff --quiet -- _data/inferred_taxonomy.json generated-pages/kategoriler; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit updated taxonomy
+      - name: Commit updated taxonomy artifacts
         if: steps.taxonomy_changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/inferred_taxonomy.json
-          git commit -m "chore: refresh inferred taxonomy"
+          git add _data/inferred_taxonomy.json generated-pages/kategoriler
+          git commit -m "chore: refresh taxonomy artifacts"
           git push
