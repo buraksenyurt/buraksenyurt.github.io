@@ -162,7 +162,7 @@ def canonical_category(name)
   alias_hit = CATEGORY_ALIASES[normalize_key(value)]
   return alias_hit if alias_hit
 
-  CURATED_CATEGORIES.include?(value) ? value : nil
+  value
 end
 
 def canonical_tag(name)
@@ -245,7 +245,11 @@ Dir.glob(File.join(POSTS_DIR, '*.md')).sort.each do |path|
     inferred_categories << 'SQL' unless inferred_categories.include?('SQL')
   end
 
-  categories = merge_unique(explicit_categories, inferred_categories).first(3)
+  categories = if explicit_categories.any?
+                 explicit_categories
+               else
+                 inferred_categories.first(3)
+               end
   tags = merge_unique(explicit_tags, inferred_tags).sort
 
   posts[url] = {

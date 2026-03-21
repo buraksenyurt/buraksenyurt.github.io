@@ -8,7 +8,12 @@ layout: default
   <header class="page-header taxonomy-header">
     <h1 class="page-heading">{{ page.title | escape }}</h1>
     <p class="taxonomy-summary">
-      Toplam {{ taxonomy_items | size }} {{ page.taxonomy_title | downcase }} var. Liste, yazilarin baslik ve iceriklerinden turetilen siniflandirma ile olusturuluyor.
+      Toplam {{ taxonomy_items | size }} {{ page.taxonomy_title | downcase }} var.
+      {%- if page.taxonomy == 'categories' -%}
+        Liste, yazilarin front matter alanlarindaki kategori bilgilerine gore olusturuluyor.
+      {%- else -%}
+        Liste, yazilarin baslik ve iceriklerinden turetilen siniflandirma ile olusturuluyor.
+      {%- endif -%}
     </p>
   </header>
 
