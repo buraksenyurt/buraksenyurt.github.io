@@ -8,7 +8,7 @@ categories:
 tags:
   - wcf-ria-services
   - .net-ria-services
-  - wcf
+  - windows-communication-foundation
   - wcf-eco-system
 ---
 Yandaki resmin bir renk cümbüşü oluşturup sizlere çok güzel göründüğüne eminim. Hatta bu resmin biraz sonra anlatacağımız konu ile olan ilgisini merak ediyor olabilirsiniz. Ne yazıkki yok. Sadece renk cümbüşünün benide etkilediğini ve yazının hoş görünmesi için eklediğimi itiraf edebilirim. Gelelim asıl mevzumuza.

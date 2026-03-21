@@ -5,8 +5,7 @@ date: 2011-03-03 17:00:00 +0300
 categories:
   - csharp
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - regex
   - regular-expression
 ---

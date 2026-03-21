@@ -8,7 +8,7 @@ categories:
   - wcf-ria-services
 tags:
   - silverlight
-  - wcf
+  - windows-communication-foundation
   - syndication
   - wcf-eco-system
 ---

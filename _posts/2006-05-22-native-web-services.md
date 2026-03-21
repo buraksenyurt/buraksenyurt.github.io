@@ -5,7 +5,7 @@ date: 2006-05-22 12:00:00 +0300
 categories:
   - xml-web-services
 tags:
-  - sql-2005
+  - sql
   - native-web-service
   - xml-web-service
 ---

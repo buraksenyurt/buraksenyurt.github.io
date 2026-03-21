@@ -8,10 +8,7 @@ categories:
   - csharp-4-0
   - tek-fotoluk-ipucu
 tags:
-  - c#
-  - c#-3.0
-  - c#-4.0
-  - c#-temelleri
+  - csharp
   - dynamic
   - var
   - dynamic-language-runtime

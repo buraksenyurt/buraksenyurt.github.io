@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - .net
-  - c#
+  - csharp
   - tek-fotoluk-ipucu
   - assembly
   - reflection

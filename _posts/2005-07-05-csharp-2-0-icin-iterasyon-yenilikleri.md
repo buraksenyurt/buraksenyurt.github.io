@@ -5,7 +5,7 @@ date: 2005-07-05 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-2
+  - csharp
   - yield
   - iterations
 ---

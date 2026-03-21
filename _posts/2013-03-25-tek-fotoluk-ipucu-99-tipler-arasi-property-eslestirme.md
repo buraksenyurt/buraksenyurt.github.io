@@ -13,7 +13,6 @@ tags:
   - generic-methods
   - extension-methods
   - generic-types
-  - class
   - convertion
   - dto
   - business-object

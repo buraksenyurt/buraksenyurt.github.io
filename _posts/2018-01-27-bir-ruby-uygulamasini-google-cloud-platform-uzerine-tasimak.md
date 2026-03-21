@@ -5,10 +5,10 @@ date: 2018-01-27 17:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - google-cloud-platform
   - sinatra
-  - rest-services
+  - rest-api
   - cloud-computing
   - google-app-engine
 ---

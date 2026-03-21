@@ -9,11 +9,10 @@ categories:
   - wf
   - wf-4-0
 tags:
-  - wcf
-  - wf
+  - windows-communication-foundation
+  - workflow-foundation
   - workflow-services
   - windows-workflow-foundation
-  - windows-communication-foundation
 ---
 Elinizde bir Workflow Service kütüphanesi ve XAMLX uzantılı Workflow Service dosyaları var. Bu dosyalardan yararlanarak kendi Workflow Service Host uygulamanızı yazmak niyetindesiniz. Diyelim ki bu uygulama bir Console projesi olacak. Nasıl yaparsınız? İşte böyle
 

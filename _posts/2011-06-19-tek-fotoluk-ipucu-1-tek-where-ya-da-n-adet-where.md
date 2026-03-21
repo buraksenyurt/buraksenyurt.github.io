@@ -6,7 +6,7 @@ categories:
   - linq
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - linq
   - where
 ---

@@ -11,7 +11,7 @@ tags:
   - docker
   - redis
   - rabbitmq
-  - c#
+  - csharp
   - pods
   - container
   - yaml

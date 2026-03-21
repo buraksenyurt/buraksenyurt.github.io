@@ -6,11 +6,10 @@ categories:
   - rest
 tags:
   - http
-  - rest
-  - rest-services
+  - rest-api
   - asp.net
   - classic-asp
-  - wcf
+  - windows-communication-foundation
   - http-post
   - MSXML2
   - ServerXMLHTTP

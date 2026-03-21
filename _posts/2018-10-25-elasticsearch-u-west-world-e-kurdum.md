@@ -8,7 +8,7 @@ tags:
   - elasticsearch
   - linux
   - ubuntu
-  - restful
+  - rest-api
   - http
   - get
   - post
@@ -18,7 +18,7 @@ tags:
   - apache
   - full-text-search
   - search
-  - algorithms
+  - algoritma
   - kibana
   - serilog
   - docker

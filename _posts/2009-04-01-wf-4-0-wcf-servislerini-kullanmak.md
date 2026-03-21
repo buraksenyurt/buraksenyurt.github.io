@@ -5,7 +5,6 @@ date: 2009-04-01 12:00:00 +0300
 categories:
   - wf-4-0-beta-1
 tags:
-  - wf-4.0
   - workflow-foundation
 ---
 Bir [önceki](/2009/03/26/windows-workflow-foundation-4-0-ilk-izlenimler/) yazımızda Windows Workflow Foundation 4.0 (WF 4.0) ile birlikte gelmesi muhtemel (yüksek bir olasılıkla çok az değişikle gelecekler) kavramları incelemeye çalışmıştık ve pek çok yeni aktivite tipinin alt yapıya dahil edilmiş olduğunu gördük. WF örnekleri bilindiği üzere çoğu zaman servisler ile haberleşmek durumundadır. Bu özellikle gerçek hayat senaryolarında çok sık karşılaşına ve ihtiyaç duyulan bir durumdur. Nitekim WF içerisinde yer alan akışların dış ortamlara olan bir bağımlılığı söz konusu olabilir. Bir Bankacılık sisteminde yer alan akışlarda, servisler yardımıyla ulaşılabilen bazı operasyonlar bu bağımlılığa örnek gösterilebilir örneğin.

@@ -7,9 +7,9 @@ categories:
 tags:
   - ocelot
   - .net-core
-  - c#
+  - csharp
   - .net-core-web-api
-  - rest-services
+  - rest-api
   - discovery
   - routing
   - load-balancing

@@ -5,9 +5,8 @@ date: 2003-12-01 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - enums
-  - enumerator
   - type
   - class
   - delegate

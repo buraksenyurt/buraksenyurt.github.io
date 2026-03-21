@@ -5,7 +5,7 @@ date: 2010-11-17 22:18:00 +0300
 categories:
   - wcf-data-services
 tags:
-  - wcf
+  - windows-communication-foundation
   - odata
   - wcf-data-services
   - open-data-protocol

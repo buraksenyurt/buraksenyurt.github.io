@@ -6,7 +6,7 @@ categories:
   - csharp-4-0
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - tuple
   - tuple<>
   - out-parameters

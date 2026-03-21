@@ -5,7 +5,6 @@ date: 2009-11-18 04:20:00 +0300
 categories:
   - aspnet-4-0-beta-2
 tags:
-  - asp.net-4.0-beta-2
   - asp.net
 ---
 Kronometrelerinizi hazır edin! Bu yazımızda Absolute ve Sliding Expiration modelinde ön bellekleme işlemlerini Windows tabanlı bir uygulama üzerinde gerçekleştiriyor olacağız. Durun bir dakika...Windows mu? Evet evet yanlış duymadınız Windows. Aslında başlıktaki konu ile tamamen tezat bir durum. Gerçekten de öyle mi acaba? Gelin şu meseleyi açıklığa kavuşturalım.

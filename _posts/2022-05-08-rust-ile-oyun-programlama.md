@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust ile Oyun Programlama"
 date: 2022-05-08 09:00:00 +0300
@@ -6,8 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - rust-pratikleri
-  - rust-programming-language
+  - rust-lang
   - oyun-programlama
   - state-machine
   - builder-pattern

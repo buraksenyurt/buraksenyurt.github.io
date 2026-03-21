@@ -6,7 +6,7 @@ categories:
   - csharp
 tags:
   - .net-framework
-  - c#
+  - csharp
   - fluent-interface
   - interface
 ---

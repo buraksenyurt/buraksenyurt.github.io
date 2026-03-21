@@ -5,10 +5,8 @@ date: 2014-01-16 16:36:00 +0300
 categories:
   - wpf
 tags:
-  - c#
-  - c#-temelleri
-  - rest
-  - rest-services
+  - csharp
+  - rest-api
   - lyrics-wikia
   - wikia
   - webrequest

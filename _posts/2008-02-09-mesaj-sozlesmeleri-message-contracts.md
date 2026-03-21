@@ -5,7 +5,7 @@ date: 2008-02-09 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - WCF
+  - windows-communication-foundation
 ---
 Servis tabanlı uygulamalarda en önemli
 noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde

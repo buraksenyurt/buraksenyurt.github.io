@@ -5,7 +5,7 @@ date: 2009-10-21 07:14:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
+  - csharp
   - dynamic-language-runtime
   - .net-framework-4.0-beta-2
 ---

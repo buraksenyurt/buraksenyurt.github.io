@@ -8,7 +8,7 @@ tags:
   - raspberry-pi
   - raspbian
   - linux
-  - programming
+  - programlama
   - commodore-64
   - nodejs
   - python

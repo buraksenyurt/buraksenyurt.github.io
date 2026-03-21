@@ -13,8 +13,7 @@ tags:
   - dotnet
   - rust
   - webapi
-  - rest
-  - restful
+  - rest-api
   - ai
   - yapayzeka
   - agenticProgramming

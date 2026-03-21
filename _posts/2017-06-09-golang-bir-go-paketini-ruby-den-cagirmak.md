@@ -6,11 +6,10 @@ categories:
   - golang
 tags:
   - golang
-  - go-programming-language
   - c
   - c-programming-language
   - shared-c-library
-  - ruby
+  - ruby-lang
   - ubuntu
   - ffi
   - gem

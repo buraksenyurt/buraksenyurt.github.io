@@ -11,7 +11,7 @@ tags:
   - hosting
   - reverse-proxy
   - kestrel
-  - c#
+  - csharp
   - web-api
   - asp.net-web-api
   - systemctl

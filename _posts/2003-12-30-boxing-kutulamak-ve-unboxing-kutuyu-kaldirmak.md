@@ -5,9 +5,9 @@ date: 2003-12-30 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - Ado.Net
+  - ado.net
   - boxing
-  - c#
+  - csharp
   - oop
   - .net
 ---

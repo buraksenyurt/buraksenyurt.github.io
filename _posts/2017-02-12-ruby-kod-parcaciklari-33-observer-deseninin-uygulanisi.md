@@ -5,8 +5,8 @@ date: 2017-02-12 21:47:00 +0300
 categories:
   - ruby
 tags:
-  - ruby-kod-parçacıkları
-  - design-pattern
+  - ruby-lang
+  - design-patterns
   - observer-pattern
   - tasarım-kalıpları
   - observable-module

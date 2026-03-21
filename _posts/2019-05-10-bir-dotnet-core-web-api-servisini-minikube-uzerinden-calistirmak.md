@@ -16,7 +16,7 @@ tags:
   - container
   - virtual-box
   - kubectl
-  - c#
+  - csharp
   - deployment
   - pod
   - service

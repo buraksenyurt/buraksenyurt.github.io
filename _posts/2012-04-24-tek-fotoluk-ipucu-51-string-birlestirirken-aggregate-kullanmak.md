@@ -5,7 +5,7 @@ date: 2012-04-24 09:40:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - list
   - aggregate
   - extension-methods

@@ -5,12 +5,10 @@ date: 2017-01-03 22:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - gem
   - package
-  - rubygems
   - package-management
-  - rubyist
 ---
 Bildiğiniz gibi günümüz popüler programlama dillerinin çoğunun internet üzerinden ulaşılabilen paket destekleri mevcut. Özellikle açık kaynak tabanlı ürünlerde önem verilen bir konu olduğu ortada. Yazılımcıların birbirlerinin kullanımına açtığı bu paketler Ruby tarafında da mevcut ve gem olarak adlandırılmakta. Hatta [şu adresten](https://rubygems.org/) bir çok değerli mücehvere ulaşabilir kendi paketlerinizi de yükleyebilirsiniz. Peki kendi gem paketlerimizi en basit haliyle nasıl yazabiliriz? Hatta yazdığımız bir gem'i herkesin kullanımına nasıl açabiliriz? Gelin bu konuyu kısaca incelemeye çalışalım.
 

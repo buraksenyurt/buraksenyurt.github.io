@@ -5,12 +5,11 @@ date: 2012-09-12 15:04:00 +0300
 categories:
   - wcf-4-5
 tags:
-  - wcf-4.5
-  - asp.net-4.5
+  - windows-communication-foundation
+  - asp.net
   - windows-8
   - websockets
-  - windows-communication-foundation
-  - html-5
+  - html
   - http
   - polling
   - streaming

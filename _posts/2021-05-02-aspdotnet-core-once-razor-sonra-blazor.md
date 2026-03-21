@@ -5,10 +5,10 @@ date: 2021-05-02 21:30:00 +0300
 categories:
   - asp-dotnet-core
 tags:
-  - asp.net-5
+  - asp.net
   - asp.net-core
   - razor
-  - c#
+  - csharp
   - cshtml
   - tag-helper
   - razor-pages

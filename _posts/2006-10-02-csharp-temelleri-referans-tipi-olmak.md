@@ -5,7 +5,7 @@ date: 2006-10-02 06:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - stacktrace
   - heap
   - memory-management

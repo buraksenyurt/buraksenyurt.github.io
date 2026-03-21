@@ -10,7 +10,6 @@ tags:
   - channel
   - channel-factory
   - caching
-  - wcf-4.5
   - service-contract
   - iclientchannel
   - clientbase

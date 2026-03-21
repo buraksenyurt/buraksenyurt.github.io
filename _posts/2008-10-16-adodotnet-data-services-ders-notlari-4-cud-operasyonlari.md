@@ -7,7 +7,6 @@ categories:
 tags:
   - ado.net-data-services
   - wcf-data-services
-  - wcf
   - windows-communication-foundation
 ---
 Ders notlarımızı tutmaya devam ediyoruz. Bu gün Ado.Net Data Service'ler yardımıyla istemcilerden veri ekleme (Insert), silme (Delete) ve güncelleme (Update) işlemlerinin nasıl yapılabileceğini incelemeye karar verdim. Tabiki Ado.Net Data Services konusu halen daha Astoria kod adıyla anılmakta. Dolayısıyla zaman içerisinde uygulanan metod adlarında ve kullanılış biçimlerinde değişiklikler olması muhtemel. Yine şu an itibariyle neler yapabileceğimize bakmakta yarar var nitekim bir WCF fanatiği olarak Ado.Net Data Services açılımı beni son derece heyecanlandırıyor. Bu kadar laf salatasından sonra kısaca konuya girmeye ve basit bir örnek geliştirmeye ne dersiniz?

@@ -11,7 +11,7 @@ tags:
   - max-heap
   - min-heap
   - heap-data-structure
-  - c#
+  - csharp
 ---
 1996 yılıydı. Efes Pilsen (bu günkü adıyla Anadolu Efes) spor klübü altın dönemlerini yaşıyordu. Tamer Oyguç, Ufuk Sarıca, Peter Naumoski, Hidayet Türkoğlu, Mirsad Türkcan ve diğerleri. O yıl kulüp Avrupa Koraç kupasında finale yükselmiş ve İtalyan temsilcisi Stefanel Milano'nun rakibi olmuştu. İlk maç İstanbul Abdi İpekçi spor salonundaydı. Üniversitedeydim ve arkadaşlarımla günün erken saatlerinde stad kuyruğuna girmiştim. Biletlerimiz vardı ancak bulunduğumuz tribünde herkes karışık oturacağı için iyi bir yer bulmak adına sabahın köründe ve soğuk bir havada kendimizi orada buluvermiştik. Ne varki sabahın erken saatlerinde sıranın başlarında iken bu zamanla değişmeye başlamıştı. Çünkü alt yola bir basketçi geliyor, hayranları ona bakmak için bulunduğumuz kuyruğa hücum ediyor ve baktıkları yerden tekrar geriye çıkmıyorlarda. 8nci sıradan 148nci sıraya kadar gelmişimdir sanıyorum ki. Bu noktada çok doğal olarak sıranın en başındaki kişi de sıksık değişiyordu.
 

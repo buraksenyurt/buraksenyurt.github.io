@@ -1,11 +1,11 @@
-﻿---
+---
 layout: post
 title: "Monolitik Uygulamalarda Teknik Borçlanma ile Mücadele (Teori)"
 date: 2021-10-23 07:00:00 +0300
 categories:
   - deneyimler
 tags:
-  - teknik-borç
+  - tecnichal-debt
   - monolitik-mimari
   - yazılım-mimarileri
   - modernizasyon

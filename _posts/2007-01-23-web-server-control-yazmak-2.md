@@ -5,9 +5,8 @@ date: 2007-01-23 12:00:00 +0300
 categories:
   - aspnet-2-0
 tags:
-  - asp.net-2.0
-  - web-server-control
   - asp.net
+  - web-server-controls
 ---
 Bir önceki makalemizde web sunucu kontrollerini nasıl geliştireceğimizi incelemeye başlamıştık. Bu günkü makalemizde, ViewState'lerin web sunucu kontrollerinde nasıl ele alınabileceğinden ve kontrollerin tasarım zamanındaki (design time) yeteneklerinin nitelikler (attributes) yardımıyla nasıl arttırılabileceğinden bahsetmeye çalışacağız.
 

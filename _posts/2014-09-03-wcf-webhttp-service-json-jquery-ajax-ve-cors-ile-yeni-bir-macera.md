@@ -7,10 +7,9 @@ categories:
   - wcf-4-5
   - wcf-webhttp-services
 tags:
-  - wcf
+  - windows-communication-foundation
   - web-http-services
-  - rest
-  - rest-services
+  - rest-api
   - json
   - jquery
   - ajax

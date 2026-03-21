@@ -9,7 +9,7 @@ tags:
   - web-api
   - dapper.net
   - orm
-  - c#
+  - csharp
   - IActionResult
   - rest-api
   - sqlite

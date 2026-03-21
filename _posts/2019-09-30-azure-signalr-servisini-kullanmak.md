@@ -11,7 +11,7 @@ tags:
   - node
   - javascript
   - .net-core
-  - c#
+  - csharp
   - cors
   - azure-functions
   - cloud-computing

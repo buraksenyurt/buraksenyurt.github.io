@@ -7,7 +7,7 @@ categories:
 tags:
   - datetime
   - tryparseexact
-  - c#
+  - csharp
   - string
   - convert
 ---

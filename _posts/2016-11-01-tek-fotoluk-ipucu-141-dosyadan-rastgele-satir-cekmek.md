@@ -5,7 +5,7 @@ date: 2016-11-01 21:36:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - enumerable
   - mixin
   - IO

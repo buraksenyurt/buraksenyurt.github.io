@@ -16,7 +16,7 @@ tags:
   - cursor
   - database
   - adventure-works
-  - sql-server-2008-r2
+  - sql-server
   - temp-table
 ---
 Hiç canınızın sıkıldığı ve böyle bir buhran anına girdiğinizde SQL Server Management Studio'yu açıp T-SQL ile eğlenceli bir şeyler yapmaya çalıştığınız oldu mu?

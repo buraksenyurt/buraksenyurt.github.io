@@ -9,7 +9,7 @@ tags:
   - task-parallel-library
   - shared-data-isolation
   - parallel-programming
-  - c#-4.0
+  - csharp
   - visual-studio-2010-ultimate
 ---
 Sanıyorum ki, “Bir elin nesi var, iki elin sesi var” deyimini bilmeyen yoktur. Bir matematikçi olarak tüme varım yaparsam, n tane elin çok daha sesli olduğunu ispat etmek isteyebilirim. Ne varki dünya kupasındaki n tane elin tuttuğu Vuvuzela’ ların çıkarttığı sesi düşününce, bu teoremden hemen vazgeçebilirim de. Neyseki konumuz bu değil. Konumuz paralel kütüphanede, paylaşımlı verileri nasıl ele alabileceğimiz.

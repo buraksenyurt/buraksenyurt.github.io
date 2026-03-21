@@ -8,7 +8,7 @@ tags:
   - tfs
   - team-foundation-server
   - client-object-model
-  - tfs-services
+  - tfs-web-services
   - xml-web-service
   - version-control
 ---

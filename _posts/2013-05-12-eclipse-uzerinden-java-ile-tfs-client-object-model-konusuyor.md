@@ -9,13 +9,11 @@ tags:
   - eclipse
   - team-foundation-server
   - tfs
-  - tfs-2012
   - entegrasyon
-  - tfs-client-object-model
   - client-object-model
   - work-item
   - workitemstore
-  - tfs-services
+  - tfs-web-services
 ---
 Çok değil daha bir kaç sene öncesine kadar (Özellikle.Net’ in duyurulduğu yıllarda ve izleyen bir kaç senede) yazılım dünyasında neredeyse yandaki resimdekine benzer bir kavga vardı (Benzetmeyi biraz abartmış olabilirim)
 

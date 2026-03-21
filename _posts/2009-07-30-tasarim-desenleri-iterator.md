@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Küçüklüğümde pek çoğumuz gibi sahip olduğum bir pul koleksiyonum vardı. Halen daha sakladığım pullar bulunmaktadır. Hatta o zamanlarda, çocuklar posta aracılığıyla yurt dışından arkadaşlar edinir, birbirleriyle pul değiş tokuşu bile yaparlardı. Düşünsenize, hem yabancı dilinizi geliştiriyor hem pul koleksiyonunuzu genişletiyorsunuz.
 

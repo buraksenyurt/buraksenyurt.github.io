@@ -5,12 +5,12 @@ date: 2019-12-18 08:00:00 +0300
 categories:
   - golang
 tags:
-  - go-programming-language
+  - golang
   - mongodb
   - docker
   - gRPC
   - pomodoro
-  - rest
+  - rest-api
   - api
   - protobuf
   - container

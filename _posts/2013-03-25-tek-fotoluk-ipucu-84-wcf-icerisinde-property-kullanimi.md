@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - wcf
+  - windows-communication-foundation
   - operation-contract
   - property
   - get

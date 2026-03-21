@@ -5,9 +5,7 @@ date: 2017-03-09 21:32:00 +0300
 categories:
   - golang
 tags:
-  - go
   - golang
-  - go-programming-language
   - panic
   - defer
   - recover

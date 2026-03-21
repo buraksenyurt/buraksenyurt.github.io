@@ -5,7 +5,7 @@ date: 2006-09-13 18:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-2.0
+  - csharp
   - static-type
   - static-class
 ---

@@ -7,8 +7,7 @@ categories:
   - tek-fotoluk-ipucu
   - windows-forms
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - windows-forms
   - extension-methods
   - textbox

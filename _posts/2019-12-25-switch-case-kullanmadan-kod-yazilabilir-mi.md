@@ -7,9 +7,9 @@ categories:
 tags:
   - sonarqube
   - strategy-design-pattern
-  - design-pattern
+  - design-patterns
   - tasarım-kalıpları
-  - c#
+  - csharp
   - solid
   - open-closed-principle
   - software-design-principles

@@ -8,7 +8,7 @@ tags:
   - security
   - tek-fotoluk-ipucu
   - .net
-  - c#
+  - csharp
   - securestring
 ---
 Elimizde veritabanı bağlantı bilgisi, kullanıcı şifresi, uygulamamıza özel port numaraları, finansal oranlar gibi hassas olabilecek içerikleri tutan bir sınıf olduğunu düşünelim. Bu sınıfı kullanmak için doğal olarak bir şekilde örneklenmesi gerekir. Nesnenin kullanılabilir olması içeriği ile birlikte belleğe açılması anlamına da gelir. Uygulama,.Net'in çalışma zamanı ortamında kendisi için oluşturulan Application Domain içerisinde yaşar.

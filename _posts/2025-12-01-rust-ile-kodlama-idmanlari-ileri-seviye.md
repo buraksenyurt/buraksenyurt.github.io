@@ -6,8 +6,6 @@ categories:
   - rust
 tags:
   - rust
-  - rust-pratikleri
-  - rust-programming-language
   - rust-lang
 ---
 Rust programlama dili ile ilgili maceralarımıza devam ediyoruz. Gerçi geçtiğimiz günlerde sizin de bildiğiniz üzere unwrap metodunun hatalı bir kullanımı sebebiyle internet sitelerinin %20sini koruyan [Cloudfare](https://www.cloudflare.com/) çöktü ve birçok hizmet uzun süre kullanılamaz hale geldi. Konuyla ilgili detaylı bilgilere[şu adreste](https://blog.cloudflare.com/18-november-2025-outage/)ki yazıdan ulaşabilirsiniz. Ferris şaşkın, ferris üzgün!

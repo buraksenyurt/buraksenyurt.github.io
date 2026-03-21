@@ -5,7 +5,7 @@ date: 2007-08-30 09:00:00 +0300
 categories:
   - wpf
 tags:
-  - wpf
+  - windows-presentation-foundation
   - application-object
   - clr
   - common-language-runtime

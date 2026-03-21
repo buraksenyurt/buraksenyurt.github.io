@@ -6,9 +6,7 @@ categories:
   - csharp
   - csharp-3-0
 tags:
-  - c#
-  - c#-3.0
-  - c#-temelleri
+  - csharp
 ---
 Puslu bir sonbahar akşamında detektif Netspecter odasında sessiz sakin oturmaktadır. Loş bir ortama neden olan gece lambasının yeşil cam aksamı altından oda içerisindeki tozların sessiz ve sakin akışı bir yana, Netspecter’ ın kafasında masasına yeni gelen dosya ile ilişkili soru işaretleri koşup durmaktadır.
 

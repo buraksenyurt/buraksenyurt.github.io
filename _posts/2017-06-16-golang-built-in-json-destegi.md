@@ -5,7 +5,6 @@ date: 2017-06-16 06:18:00 +0300
 categories:
   - golang
 tags:
-  - go-programming-language
   - golang
   - json
   - json-serialization

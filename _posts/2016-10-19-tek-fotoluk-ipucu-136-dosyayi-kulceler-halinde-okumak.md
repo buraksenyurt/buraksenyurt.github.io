@@ -5,7 +5,7 @@ date: 2016-10-19 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - large-objects
   - file-operations
   - io

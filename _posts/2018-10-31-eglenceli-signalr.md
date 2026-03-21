@@ -8,7 +8,7 @@ tags:
   - signalr
   - chart.js
   - javascript
-  - c#
+  - csharp
   - chart
   - npm
   - signalr.client

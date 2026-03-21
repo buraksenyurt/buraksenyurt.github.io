@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Rust Pratikleri - Wordle Oyunu"
 date: 2022-04-10 09:00:00 +0300
@@ -6,8 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - rust-pratikleri
-  - rust-programming-language
+  - rust-lang
   - wordle
   - game-programming
   - terminal-games

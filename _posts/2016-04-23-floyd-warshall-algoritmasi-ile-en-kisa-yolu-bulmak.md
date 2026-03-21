@@ -5,8 +5,8 @@ date: 2016-04-23 12:00:00 +0300
 categories:
   - algoritma
 tags:
-  - algorithms
-  - c#
+  - algoritma
+  - csharp
   - regular-expression
   - network-routing
   - dynamic-programming

@@ -5,8 +5,7 @@ date: 2011-02-28 16:30:00 +0300
 categories:
   - csharp
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - class
   - struct
 ---

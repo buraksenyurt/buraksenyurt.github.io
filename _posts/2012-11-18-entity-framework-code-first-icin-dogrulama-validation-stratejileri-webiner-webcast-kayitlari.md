@@ -5,16 +5,15 @@ date: 2012-11-18 08:51:00 +0300
 categories:
   - nedirtv
 tags:
-  - entity-framework-5.0
+  - entity-framework
   - web-cast
   - webiner
-  - entity-framework
   - code-first
   - code-first-validation
   - ef
   - custom-attribute
   - attribute
-  - c#
+  - csharp
   - ado.net
 ---
 Geçtiğimiz günlerde [Nedirtv?com](http://www.nedirtv.com) topluluğu adına Entity Framework Code First modeli için kullanılabilen doğrulama (Validation) stratejilerini incelediğimiz bir Webiner (Webcast) gerçekleştirdik.

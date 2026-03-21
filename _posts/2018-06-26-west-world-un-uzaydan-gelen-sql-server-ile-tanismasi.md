@@ -11,9 +11,9 @@ tags:
   - sql-on-linux
   - web-api
   - service
-  - rest
+  - rest-api
   - entity-framework
-  - c#
+  - csharp
   - sql
   - systemctl
   - mssql-server
@@ -22,7 +22,6 @@ tags:
   - sqlcmd
   - dotnet
   - package
-  - EntityFrameworkCore
   - dbcontext
   - httpget
   - httppost

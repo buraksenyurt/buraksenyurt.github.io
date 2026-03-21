@@ -5,7 +5,7 @@ date: 2005-10-03 09:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - constructor
   - oop
   - class

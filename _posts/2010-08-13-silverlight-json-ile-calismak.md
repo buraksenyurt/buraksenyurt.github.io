@@ -8,7 +8,7 @@ categories:
   - wcf-webhttp-services
 tags:
   - silverlight
-  - wcf
+  - windows-communication-foundation
   - wcf-webhttp-services
   - json
 ---

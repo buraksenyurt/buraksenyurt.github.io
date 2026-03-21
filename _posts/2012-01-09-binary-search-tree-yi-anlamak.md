@@ -11,7 +11,7 @@ tags:
   - binary-search-tree
   - tree-node
   - data-structures
-  - algorithms
+  - algoritma
 ---
 İnsan hafızası gizemli çalışan ama çoğu zamanda bizleri şaşırtan bir mekaniğe sahiptir. Doğduğumuz andan itibaren 3 yaşına kadar geçen zaman dilimi içerisinde görsel olarak ne izlersek kaparız. Ancak neredeyse bunların hiç birini hatırlamayız.
 

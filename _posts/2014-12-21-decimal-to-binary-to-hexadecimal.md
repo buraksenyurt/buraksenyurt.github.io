@@ -5,7 +5,7 @@ date: 2014-12-21 17:00:00 +0300
 categories:
   - algoritma
 tags:
-  - c#
+  - csharp
   - sayı-sistemleri
   - binary
   - hexadecimal

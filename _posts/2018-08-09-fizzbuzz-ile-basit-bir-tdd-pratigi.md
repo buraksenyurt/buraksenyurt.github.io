@@ -12,7 +12,7 @@ tags:
   - dotnet
   - dotnet-core
   - .net-core
-  - c#
+  - csharp
   - code-kata
   - triangulation
   - testing

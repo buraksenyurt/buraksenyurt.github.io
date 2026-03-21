@@ -6,7 +6,6 @@ categories:
   - dotnet-remoting
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - .net-remoting
   - migration

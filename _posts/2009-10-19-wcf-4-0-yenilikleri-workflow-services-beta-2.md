@@ -5,10 +5,8 @@ date: 2009-10-19 13:22:00 +0300
 categories:
   - wcf-4-0-beta-2
 tags:
-  - wcf
-  - wcf-4.0
-  - wf
-  - wf-4.0
+  - windows-communication-foundation
+  - workflow-foundation
 ---
 WCF ve WF arasında ilişkiyi anlatan güzel bir cümle vardır..Net Framework 3.0' da arkadaş olan WCF ve WF,.Net Framework 3.5 sürümünde nişanlanmış,.Net Framework 4.0 sürümünde ise evlenmişlerdir.
 

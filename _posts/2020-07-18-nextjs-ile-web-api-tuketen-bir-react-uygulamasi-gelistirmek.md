@@ -7,9 +7,7 @@ categories:
 tags:
   - nextjs
   - react
-  - rest
   - rest-api
-  - rest-based-services
   - web-framework
   - react-hooks
 ---

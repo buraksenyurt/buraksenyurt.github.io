@@ -9,7 +9,7 @@ tags:
   - razor
   - .net-core
   - html
-  - c#
+  - csharp
   - wasm
   - dotnet
   - WebAssembly

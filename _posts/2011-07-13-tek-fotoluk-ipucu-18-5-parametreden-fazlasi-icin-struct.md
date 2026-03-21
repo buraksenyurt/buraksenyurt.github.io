@@ -6,7 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#-temelleri
+  - csharp
   - struct
   - parameters
   - juval-lowy

@@ -6,7 +6,7 @@ categories:
   - csharp-3-0
   - linq
 tags:
-  - c#-3.0
+  - csharp
   - linq
 ---
 Language INtegrated Query (LINQ) mimarisi sayesinde CLR nesneleri (Common Language Runtime Objects) üzerinden SQL tarzı sorgu ifadeleri yazılabilmektedir. Hatta LINQ mimarisi, SQL veritabanı (LINQ to SQL) ve XML (LINQ to XML) kaynakları üzerindede kullanılabilmektedir. Özellikle IEnumerable arayüzünü uyarlayan tiplere ait nesne örnekleri için, Select, Where, GroupBy, Sum, Avg, Distinct ve daha pek çok bilinen sorgulama metodu uygulanabilmektedir.

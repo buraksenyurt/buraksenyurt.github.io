@@ -5,7 +5,7 @@ date: 2006-02-08 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - type-systems
   - Immutable-Types
 ---

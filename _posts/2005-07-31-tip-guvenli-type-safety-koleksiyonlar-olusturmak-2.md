@@ -5,7 +5,7 @@ date: 2005-07-31 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - strongly-typed-collections
   - collections
 ---

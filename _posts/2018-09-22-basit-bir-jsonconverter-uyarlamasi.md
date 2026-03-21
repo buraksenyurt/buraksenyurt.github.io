@@ -8,7 +8,7 @@ tags:
   - newtonsoft
   - json
   - java-script-object-notation
-  - c#
+  - csharp
   - interface
   - implementation
   - nuget

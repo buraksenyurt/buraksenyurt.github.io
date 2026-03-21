@@ -5,7 +5,7 @@ date: 2015-12-22 15:00:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - mutex
   - single-instance-applications
   - multiple-instance-applications

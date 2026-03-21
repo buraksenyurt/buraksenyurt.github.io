@@ -6,7 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - extension-methods
   - json
   - serialization

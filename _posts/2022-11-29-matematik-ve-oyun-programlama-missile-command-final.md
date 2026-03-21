@@ -6,7 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - rust-programming-language
+  - rust-lang
   - oyun-matematiği
   - oyun-programlama
   - collasion

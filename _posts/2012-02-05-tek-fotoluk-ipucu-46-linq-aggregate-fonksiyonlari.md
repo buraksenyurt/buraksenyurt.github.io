@@ -7,7 +7,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - linq
-  - c#
+  - csharp
   - aggregate-functions
 ---
 LINQ tarafında Sum,Max,Min,Average gibi bazı hesaplama fonksiyonları vardır. Bunlara ait örnek bir kullanımı aşağıda bulabilirsiniz

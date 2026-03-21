@@ -10,7 +10,7 @@ tags:
   - ninject
   - design-principles
   - software-design-principles
-  - c#
+  - csharp
   - .net
   - inversion-of-control
   - dependency-injection-container

@@ -5,7 +5,7 @@ date: 2009-12-18 05:40:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
+  - csharp
   - .net-framework-4.0
 ---
 Microsoft gibi dev yazılım firmalarının araştırma geliştirme ekipleri ve labarotuvar çalışmaları her zaman ilgimi çekmiştir. Herhalde pek çok yazılımcının hayalleri arasında bu tip firmalarda çalışmak ve yeni fikirleri ortaya atarak diğer yazılımcılara sunmak yer almaktadır.

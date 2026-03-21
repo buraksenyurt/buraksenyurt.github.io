@@ -5,7 +5,7 @@ date: 2005-09-09 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - async
   - asynchronous-programming
   - delegate

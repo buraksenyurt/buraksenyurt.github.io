@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Bir süre öncesine kadar özel bir bankada uzman yazılım geliştirici olarak görev almaktaydım. Bankada en çok hoşuma giden bazende en çok nefret ettiğim hususlardan biriside otomat makinesi idi.
 

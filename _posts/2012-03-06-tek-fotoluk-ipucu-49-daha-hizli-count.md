@@ -6,7 +6,7 @@ categories:
   - t-sql
 tags:
   - sql
-  - sql-server-2008
+  - sql-server
   - t-sql
   - transact-sql
   - row-count

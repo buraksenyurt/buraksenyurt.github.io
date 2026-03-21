@@ -9,10 +9,10 @@ categories:
   - wcf-4-0
 tags:
   - entity-framework
-  - nedir?tv
+  - nedir-tv
   - surrogate-types
   - business-logic-layer
-  - wcf
+  - windows-communication-foundation
 ---
 Uzun zamandır [NedirTv?com](http://www.nedirtv.com/) bünyesinde webiner gerçekleştirmiyordum
 

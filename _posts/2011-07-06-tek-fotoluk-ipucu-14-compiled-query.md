@@ -9,7 +9,7 @@ tags:
   - entity-framework
   - linq
   - compiled-query
-  - c#
+  - csharp
 ---
 Entity Framework ile Compiled Query'ler hazırlayabileceğinizi ve daha performanslı sorgulamalar yaptırabileceğinizi biliyor muydunuz? İşte basit bir örnek
 

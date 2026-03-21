@@ -7,7 +7,7 @@ categories:
 tags:
   - poco
   - Expression-bodied
-  - C#-6.0
+  - csharp
   - override
   - string-interpolation
   - tostring

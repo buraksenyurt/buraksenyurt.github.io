@@ -5,7 +5,7 @@ date: 2021-12-24 10:00:00 +0300
 categories:
   - rust
 tags:
-  - rust-programming-language
+  - rust-lang
   - ownership
   - borrowing
   - borrow-checker

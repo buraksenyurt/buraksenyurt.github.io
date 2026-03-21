@@ -6,7 +6,6 @@ categories:
   - aspnet-2-0
 tags:
   - asp.net
-  - asp.net-2.0
   - sitemapprovider
   - site-map
   - provider

@@ -6,7 +6,6 @@ categories:
   - golang
 tags:
   - golang
-  - go-programming-language
   - functional-programming
   - user-defined-function-types
 ---

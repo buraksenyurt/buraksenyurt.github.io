@@ -8,8 +8,7 @@ tags:
   - test-driven-development
   - code-coverage
   - quality-assurance
-  - teknik-borç
-  - tecnichal-dept
+  - tecnichal-debt
   - bugs
   - vulerabilities
   - debt

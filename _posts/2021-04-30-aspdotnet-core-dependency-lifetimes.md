@@ -12,7 +12,7 @@ tags:
   - addscoped
   - addtransient
   - asp.net-core
-  - asp.net-5
+  - asp.net
   - mvc
   - controller
   - logging

@@ -8,7 +8,7 @@ tags:
   - asp.net-web-api
   - wcf-web-api
   - httpclient
-  - wcf
+  - windows-communication-foundation
   - odata
   - worldbank
   - xml

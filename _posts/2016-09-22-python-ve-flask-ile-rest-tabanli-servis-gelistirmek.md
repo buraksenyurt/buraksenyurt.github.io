@@ -6,8 +6,7 @@ categories:
   - python
 tags:
   - python
-  - rest
-  - rest-services
+  - rest-api
   - http
   - web-framework
   - api

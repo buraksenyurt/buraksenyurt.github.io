@@ -7,7 +7,7 @@ categories:
   - wcf-4-0
 tags:
   - nettcpbinding
-  - wcf
+  - windows-communication-foundation
   - wcf-services
   - silverlight-4.0
   - silverlight

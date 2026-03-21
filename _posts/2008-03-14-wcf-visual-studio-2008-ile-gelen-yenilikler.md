@@ -5,7 +5,6 @@ date: 2008-03-14 12:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - visual-studio-2008
 ---

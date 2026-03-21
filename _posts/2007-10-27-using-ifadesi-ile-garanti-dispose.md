@@ -5,7 +5,7 @@ date: 2007-10-27 21:37:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - using
   - garbage-collector
   - disposable-objects

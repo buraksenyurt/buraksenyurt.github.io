@@ -6,7 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - rust-pratikleri
+  - rust-lang
   - multi-thread
   - thread
   - spawn

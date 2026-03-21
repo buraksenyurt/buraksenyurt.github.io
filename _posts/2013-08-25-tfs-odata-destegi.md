@@ -7,13 +7,11 @@ categories:
 tags:
   - tfs
   - team-foundation-server
-  - tfs-2012
   - odata
   - odata-services
   - open-data-protocol
   - xml
   - http-get
-  - tfs.visualstudio.com
   - filter
   - count
   - select

@@ -5,7 +5,7 @@ date: 2007-10-04 12:00:00 +0300
 categories:
   - wpf
 tags:
-  - wpf
+  - windows-presentation-foundation
   - page
   - navigation
   - xbap

@@ -5,7 +5,6 @@ date: 2007-05-09 06:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - fault-management
 ---

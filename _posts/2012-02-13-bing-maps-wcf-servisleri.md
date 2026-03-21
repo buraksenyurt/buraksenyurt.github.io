@@ -7,8 +7,8 @@ categories:
 tags:
   - bings
   - bing-maps
-  - c#
-  - wcf
+  - csharp
+  - windows-communication-foundation
   - msdn
   - search
   - geolocation

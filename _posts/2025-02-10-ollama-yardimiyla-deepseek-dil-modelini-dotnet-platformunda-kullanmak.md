@@ -9,8 +9,8 @@ tags:
   - deepseek
   - chatgpt
   - genai
-  - c#
-  - programming
+  - csharp
+  - programlama
   - largeLanguageModels
   - llm
   - codeQuality

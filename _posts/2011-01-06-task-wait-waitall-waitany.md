@@ -5,7 +5,7 @@ date: 2011-01-06 13:25:00 +0300
 categories:
   - parallel-programming
 tags:
-  - c#-4.0
+  - csharp
   - parallel-programming
   - .net-framework-4.0
   - visual-studio-2010-ultimate

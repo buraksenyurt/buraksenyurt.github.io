@@ -7,8 +7,7 @@ categories:
 tags:
   - struct
   - class
-  - c#
-  - c#-temelleri
+  - csharp
 ---
 Bugünkü makalemizde struct kavramını incelemeye çalışacağız. Hatırlayacağınız gibi, kendi tanımladığımız veri türlerinden birisi olan Numaralandırıcıları (Enumerators) görmüştük. Benzer şekilde diğer bir veri tipide struct (yapı) lardır.Yapılar, sınıflar ile büyük benzerleklik gösterirler. Sınıf gibi tanımlanırlar. Hatta sınıflar gibi, özellikler,metodlar,veriler, yapıcılar vb... içerebilirler. Buna karşın sınıflar ile yapılar arasında çok önemli farklılıklar vardır.
 

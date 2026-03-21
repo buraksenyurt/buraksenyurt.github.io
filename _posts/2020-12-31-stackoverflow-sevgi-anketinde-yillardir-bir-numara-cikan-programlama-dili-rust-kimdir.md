@@ -5,7 +5,7 @@ date: 2020-12-31 20:59:00 +0300
 categories:
   - rust
 tags:
-  - rust-programming-language
+  - rust-lang
   - rust
   - cargo
   - Immutable-Types

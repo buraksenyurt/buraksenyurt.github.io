@@ -5,7 +5,6 @@ date: 2012-05-24 14:50:00 +0300
 categories:
   - wcf-4-0
 tags:
-  - wcf
   - windows-communication-foundation
   - task-parallel-library
   - tpl

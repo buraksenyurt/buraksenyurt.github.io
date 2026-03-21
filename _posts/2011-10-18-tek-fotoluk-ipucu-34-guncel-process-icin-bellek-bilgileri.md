@@ -6,8 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - .net-framework
   - process
   - xlinq

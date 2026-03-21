@@ -6,8 +6,6 @@ categories:
   - wf-4-0-rc
 tags:
   - workflow-foundation
-  - wf-4.0
-  - wf
 ---
 Çalışmakta olduğum yazılım şirketinin çok yakınında kocaman bir alışveriş merkezi bulunmakta. Bazen öğle yemekleri için alışveriş merkezinin tahsis ettiği servisler ile oraya gidiyoruz. Alışveriş merkezi olduğu için tehlikeli bir yer olduğunu da söyleyebiliriz.
 

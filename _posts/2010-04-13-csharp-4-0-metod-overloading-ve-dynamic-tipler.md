@@ -5,7 +5,7 @@ date: 2010-04-13 04:40:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
+  - csharp
   - dynamic
   - object
   - method-overloading

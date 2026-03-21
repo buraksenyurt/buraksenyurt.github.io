@@ -13,7 +13,7 @@ tags:
   - inheritance
   - bridge
   - adapter
-  - c#
+  - csharp
 ---
 Epey zamandır tasarım kalıpları tarafına bakmadığımı fark ettim. Hem kalıpları tekrar etmek hem de yeni bir şeyler var mı diye internette gezinirken JEE tarafında sıklıkla başvurulan Business Delegate isimli bir desene rastladım. Aslında delegate dediğimiz zaman bir işi başkasına devrettiğimizi düşünebiliriz (Delegasyon ile ilgili olarak internette resim ararken de işte yandaki gibi eğlenceli bir tanesine rastladım)
 

@@ -13,7 +13,7 @@ tags:
   - .net-core
   - express
   - dockerfile
-  - c#
+  - csharp
   - javascript
   - yaml
   - yml

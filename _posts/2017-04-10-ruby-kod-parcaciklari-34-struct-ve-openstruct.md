@@ -5,8 +5,7 @@ date: 2017-04-10 15:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby-kod-parçacıkları
-  - ruby
+  - ruby-lang
   - struct
   - openstruct
 ---

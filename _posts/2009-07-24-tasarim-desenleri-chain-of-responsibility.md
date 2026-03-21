@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Dün gece çok garip bir rüya gördüm. Rüyamda denize açılmak için limanda duran tekneme doğru ilerliyordum. Derken kendimi kaptan köşkünde buldum. E tabi rüya bu. Hareket etmek istedim ama bir türlü beceremedim. Sonunda sorunun ne olduğunu bulmaya çalıştım ve yandaki manzaranın bir benzeri ile karşılaştım. Geminin demir halat zinciri (zincirleri) arap saçına dönmüştü. Sabah uyandığımda ilginç bir şekilde rüyayı hatırlayabildiğimi de farkettim.
 

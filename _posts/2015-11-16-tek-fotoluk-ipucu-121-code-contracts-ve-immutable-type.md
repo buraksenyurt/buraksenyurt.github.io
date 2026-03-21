@@ -7,7 +7,7 @@ categories:
 tags:
   - Immutable-Types
   - code-contracts
-  - c#
+  - csharp
   - Static-Checking
   - Perform-Runtime-Contract-Checking
   - precondition

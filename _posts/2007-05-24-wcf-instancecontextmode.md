@@ -5,7 +5,6 @@ date: 2007-05-24 12:00:00 +0300
 categories:
   - wcf-webhttp-services
 tags:
-  - wcf
   - windows-communication-foundation
   - singleton
   - client-activated-object

@@ -10,7 +10,7 @@ tags:
   - cancellationtokensource
   - task-cancellation
   - cancellationtoken
-  - c#-4.0
+  - csharp
   - visual-studio-2010-ultimate
   - monitoring-cancellation
 ---

@@ -9,7 +9,7 @@ tags:
   - sql
   - dataset
   - calculated
-  - c#
+  - csharp
 ---
 Bu makalemizde aralarında bire-çok (one-to-many) ilişki olan tablolar için hesaplanmış alanların, (yani DataColumn sınıfının Expression özelliği ile oluşturduğumuz sütunların) tablolar arasındaki ilişkiler ile nasıl bir arada kullanılabileceğini incelemeye çalışacağız. Burada bir arada kullanımdan kastım, örnek olarak; ebevyn (parent) tabloda fiziki olarak var olmayan ancak uygulamanın çalışması sırasında oluşturulacak bir sütundan, detay tablosundaki ilişkili alanlar üzerinden toplam, ortalama, miktar gibi Aggregate ifadelerinin çalıştırılmasından ve sonuçların yine parent tabloya yansıtılmasından bahsediyorum.
 

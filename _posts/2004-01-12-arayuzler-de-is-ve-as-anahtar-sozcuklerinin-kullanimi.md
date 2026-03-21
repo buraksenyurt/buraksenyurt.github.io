@@ -5,7 +5,7 @@ date: 2004-01-12 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - as
   - is
   - interface

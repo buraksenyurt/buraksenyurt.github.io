@@ -5,13 +5,13 @@ date: 2013-08-18 11:48:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - .net-framework
   - migradoc
   - pdfsharp
   - windows-forms
   - gdi
-  - wpf
+  - windows-presentation-foundation
   - codeplex
   - open-source
   - migra

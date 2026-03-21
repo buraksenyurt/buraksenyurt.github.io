@@ -5,9 +5,8 @@ date: 2013-09-19 10:48:00 +0300
 categories:
   - csharp
 tags:
-  - c#
-  - c#-temelleri
-  - enum-type
+  - csharp
+  - enums
   - constant
 ---
 C# konulu yeni bir bilmece ile karşı karşıyayız. Bu sefer kolay kolay fark edemeyebileceğimiz, basit ama irdelenmesi gereken bir vakayı göz önüne alacağız.

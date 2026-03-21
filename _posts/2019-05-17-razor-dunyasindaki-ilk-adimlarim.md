@@ -7,7 +7,7 @@ categories:
 tags:
   - razor
   - .net-core
-  - c#
+  - csharp
   - html
   - cshtml
   - mode-page

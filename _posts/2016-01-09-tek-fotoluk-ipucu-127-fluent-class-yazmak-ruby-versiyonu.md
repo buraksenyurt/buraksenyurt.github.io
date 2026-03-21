@@ -7,7 +7,7 @@ categories:
 tags:
   - fluent-api
   - fluent-interface
-  - ruby
+  - ruby-lang
 ---
 Geçtiğimiz günlerde her zamanki gibi Google Chrome’ un RSS Feed Reader’ ındaki blog yazılarında geziniyordum. Derken Fatih Boy hocanın [bu adresteki](http://www.enterprisecoding.com/post/verbalexpressions-sozlu-duzenli-ifade-kutuphaneleri) yazısına denk geldim. Aslında buradaki gibi Fluent geliştirilen tipler kod tarafındaki işlerimizi oldukça kolaylaştırmakta. Felsefesi oldukça basit olan bu yaklaşımda anahtar nokta, tipin kendisine ait çalışma zamanı örneklerini döndüren fonksiyonelliklere başvurulması. Böylece bir metod zinciri ile bir tipe davranışlar yüklemek son derece kolaylaşıyor.
 

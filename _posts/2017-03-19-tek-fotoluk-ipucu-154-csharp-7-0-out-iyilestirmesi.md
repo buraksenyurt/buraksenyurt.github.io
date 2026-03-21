@@ -5,7 +5,7 @@ date: 2017-03-19 21:45:00 +0300
 categories:
   - csharp-7-0
 tags:
-  - c#-7.0
+  - csharp
   - out-variables
   - tryparse
   - out

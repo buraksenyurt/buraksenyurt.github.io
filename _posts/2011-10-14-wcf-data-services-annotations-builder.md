@@ -7,7 +7,7 @@ categories:
 tags:
   - wcf-data-services
   - astoria
-  - wcf
+  - windows-communication-foundation
   - annotations
   - wcf-data-services-october-2011-ctp
 ---

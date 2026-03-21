@@ -6,8 +6,7 @@ categories:
   - ruby
 tags:
   - mixins
-  - ruby-kod-parçacıkları
-  - ruby
+  - ruby-lang
   - object-oriented-programming
 ---
 Ruby tam anlamıyla nesne yönelimli (Object Oriented) bir dildir. Bunu her fırsatta vurguluyoruz. Bu nedenle bünyesinde temel OOP özelliklerini taşır. Kalıtım (Inheritance) bunlardan birisidir. Ancak Ruby dilinde bir sınıfın aynı seviyede birden fazla sınıftan türemesine izin verilmez (Single Inheritance söz konusudur).

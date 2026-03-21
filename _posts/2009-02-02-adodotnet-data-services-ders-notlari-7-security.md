@@ -7,7 +7,6 @@ categories:
 tags:
   - ado.net-data-services
   - wcf-data-services
-  - wcf
   - windows-communication-foundation
 ---
 Yazılım dünyasının en önemli zorluklarından biriside uygulamanın kapsamına göre güvenliğin etkili bir şekilde nasıl sağlanacağı ile ilişkilidir. Burada hassas bilgilerin korunması, kullanıcıların tanınması ve yetkilendirilmesi, kodun erişim ilkelerinin belirlenmesi, verinin şifrelenmesi gibi pek çok faktör söz konusudur. Genel anlamda günvelik farklı şekillerde göz önüne alınabilir.

@@ -7,7 +7,7 @@ categories:
 tags:
   - python
   - protobuf
-  - rest
+  - rest-api
   - websockets
   - protocol
 ---

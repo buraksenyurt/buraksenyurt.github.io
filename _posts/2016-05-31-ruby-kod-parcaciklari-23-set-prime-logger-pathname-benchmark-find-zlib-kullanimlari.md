@@ -5,7 +5,7 @@ date: 2016-05-31 21:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - benchmark
   - logger
   - logging

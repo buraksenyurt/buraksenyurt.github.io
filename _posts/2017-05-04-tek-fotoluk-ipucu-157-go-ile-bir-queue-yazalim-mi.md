@@ -7,11 +7,10 @@ categories:
 tags:
   - queue
   - golang
-  - go-programming-language
   - struct
   - pointer
   - data-structures
-  - algorithms
+  - algoritma
   - type
 ---
 Go programlama dilinde C#,Java veya benzer dillerden gelenler için söz konusu olan pek çok kolaylık bulunmayabilir. Söz gelimi Stack veya Queue gibi bir koleksiyon kullanmak istersek baştan tasarlamamız gerekebilir. Nitekim [bu adresteki](https://golang.org/pkg/) standart kütüphanelerde Queue ile ilgili bir şey bulamadığımı ifade edebilirim (aslında github üzerinde açık kaynak ek kütüphaneler var) Olsa da olmasa da bir queue veri yapısı tasarlayabiliriz. Hem basit ve temel bir antrenman yapmış oluruz. Aynen aşağıdaki fotoğrafta olduğu gibi (Sisteminizde benim şirket bilgisayarımda olduğu gibi GO ortamı var olmayabilir. [https://play.golang.org/](https://play.golang.org/) adresindeki online derleyiciyi bu anlamda kullanabilirsiniz)

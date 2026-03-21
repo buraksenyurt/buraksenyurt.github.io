@@ -5,8 +5,7 @@ date: 2015-08-04 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - hashes
   - data-structures
 ---

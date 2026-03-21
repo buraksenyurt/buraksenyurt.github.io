@@ -5,9 +5,7 @@ date: 2012-09-18 05:50:00 +0300
 categories:
   - wcf-4-5
 tags:
-  - wcf
   - windows-communication-foundation
-  - wcf-4.5
   - wsdl
   - singlewsdl
 ---

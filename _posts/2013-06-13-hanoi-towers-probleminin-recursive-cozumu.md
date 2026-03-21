@@ -5,12 +5,11 @@ date: 2013-06-13 10:12:00 +0300
 categories:
   - csharp
 tags:
-  - c#-temelleri
+  - csharp
   - alogirtma
-  - algorithms
+  - algoritma
   - hanoi-towers
   - hanoi-kuleleri
-  - matematik-mühendisliği
   - matematik
   - recursive
   - recursive-functions

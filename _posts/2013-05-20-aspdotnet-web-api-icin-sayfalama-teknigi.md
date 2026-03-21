@@ -7,13 +7,13 @@ categories:
 tags:
   - web-api
   - http
-  - restful-services
+  - rest-api
   - odata
   - open-data-protocol
   - data-centric-apps
   - paging
   - asp.net
-  - c#
+  - csharp
   - java-script
   - ajax-call
   - ajax

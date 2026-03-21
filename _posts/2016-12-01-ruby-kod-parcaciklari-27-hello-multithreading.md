@@ -5,7 +5,7 @@ date: 2016-12-01 21:15:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - thread
   - multithreading
   - thread-priority

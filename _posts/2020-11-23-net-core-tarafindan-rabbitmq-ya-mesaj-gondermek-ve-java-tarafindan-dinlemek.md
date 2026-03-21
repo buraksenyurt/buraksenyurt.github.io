@@ -7,7 +7,7 @@ categories:
 tags:
   - .net-core
   - java
-  - c#
+  - csharp
   - rabbitmq
   - docker
   - spring

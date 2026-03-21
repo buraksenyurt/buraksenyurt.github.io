@@ -7,8 +7,7 @@ categories:
 tags:
   - design-patterns
   - tasarım-kalıpları
-  - c#
-  - c#-temelleri
+  - csharp
   - object-oriented-programming
   - anti-pattern
   - template-method

@@ -5,8 +5,7 @@ date: 2011-04-07 09:18:00 +0300
 categories:
   - csharp
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - interface
   - abstract-class
 ---

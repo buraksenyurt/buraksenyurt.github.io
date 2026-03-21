@@ -5,9 +5,8 @@ date: 2014-11-06 12:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
-  - soa
   - windows-communication-foundation
+  - soa
   - header
   - soap-envelope
   - message-contract

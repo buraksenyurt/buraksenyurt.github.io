@@ -12,7 +12,6 @@ tags:
   - authorization
   - authorize-attribute
   - security
-  - asp.net-web-api-security
   - membership
   - pipeline
   - http-message-handler

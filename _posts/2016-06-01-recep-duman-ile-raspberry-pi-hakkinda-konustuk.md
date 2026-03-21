@@ -10,7 +10,7 @@ tags:
   - raspberry-pi
   - linux
   - söyleşiler
-  - nedir?tv
+  - nedir-tv
   - Internet-of-Things
 ---
 Bu yaz için kendime güzel bir hobi buldum. Raspberry PI. Biraz geç kalmış olabilirim bunun için ama merak ettiğim IoT (Internet of Things) konusunun önemli parçalarından birisiydi. Üstelik çocukların programlamayı öğrenmesi için de kullanılan vakıf destekli açık kaynak bir çalışmaydı. Hatta bu sene gerçekleştirebilyseydik eğer [NedirTv?com](http://www.nedirtv.com) etkinliğinde Raspberry Pi ile ilgili sunum yapacak olan [DevNot](http://devnot.com/) yazarlarımızdan [Recep Duman](http://www.recepduman.net/iot-dunyasinin-parlayan-yildizi-raspberry-pi.html) arkadaşımız ile aynı ekipte çalışıyor olmamız gibi bir gerçek de vardı. Kolları sıvadım ve işe koyuldum.

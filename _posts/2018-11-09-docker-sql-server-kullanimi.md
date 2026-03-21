@@ -10,7 +10,7 @@ tags:
   - ubuntu
   - linux
   - .net-core
-  - c#
+  - csharp
   - entity-framework
   - web-api
   - http-post

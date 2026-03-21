@@ -7,7 +7,7 @@ categories:
 tags:
   - regex
   - extension-methods
-  - c#
+  - csharp
 ---
 Oldu ya geliştirdiğiniz projenin bir yerinde, koda düşen metinsel bazı değişkenlerin sayısal olup olmadığını tespit etme ihtiyacı duydunuz. Söz gelimi bir Excel dokümanı içerisinden aldığınız hücre değerlerinin sayısallığını kontrol etmek ve buna göre program akışını yönlendirmek gerekiyor.
 

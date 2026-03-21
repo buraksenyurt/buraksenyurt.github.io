@@ -5,7 +5,6 @@ date: 2008-02-08 12:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - rss
   - feed

@@ -7,7 +7,7 @@ categories:
   - csharp-4-0
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - .net-framework
   - .net-framework-4.0
   - stopwatch

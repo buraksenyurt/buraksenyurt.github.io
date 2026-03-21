@@ -8,7 +8,7 @@ tags:
   - signalr
   - .net-core
   - asp.net-core
-  - c#
+  - csharp
   - websockets
   - real-time-messaging
   - hub

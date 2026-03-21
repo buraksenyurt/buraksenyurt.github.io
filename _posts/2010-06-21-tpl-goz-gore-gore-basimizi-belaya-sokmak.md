@@ -8,7 +8,7 @@ categories:
 tags:
   - task-parallel-library
   - parallel-programming
-  - c#-4.0
+  - csharp
   - .net-framework-4.0
   - visual-studio-2010-ultimate
   - deadlock

@@ -7,7 +7,6 @@ categories:
 tags:
   - windows-communication-foundation
   - wcf-ogreniyorum
-  - wcf
   - data-contracts
   - surrogate-types
   - wcf-service-application

@@ -6,7 +6,6 @@ categories:
   - entity-framework
 tags:
   - entity-framework
-  - ado.net-entity-framework-4.0
   - eager-loading
   - lazy-loading
   - explicit-loading

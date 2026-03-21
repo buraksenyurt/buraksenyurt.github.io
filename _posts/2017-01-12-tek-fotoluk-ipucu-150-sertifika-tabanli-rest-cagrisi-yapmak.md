@@ -5,10 +5,9 @@ date: 2017-01-12 21:15:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - rest
+  - rest-api
   - tek-fotoluk-ipucu
-  - X509Store
-  - X509Certificates
+  - x-509-certificate
   - webproxy
   - httpwebrequest
   - WebClient

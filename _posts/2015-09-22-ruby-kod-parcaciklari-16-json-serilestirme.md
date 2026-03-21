@@ -5,7 +5,7 @@ date: 2015-09-22 03:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - serialization
   - binary
   - binary-serialization

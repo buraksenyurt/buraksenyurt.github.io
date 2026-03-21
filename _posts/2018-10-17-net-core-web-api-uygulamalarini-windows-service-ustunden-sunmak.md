@@ -12,7 +12,7 @@ tags:
   - asp.net-core
   - service-controller
   - windows-7
-  - c#
+  - csharp
   - dotnet
   - code-activity
   - sc

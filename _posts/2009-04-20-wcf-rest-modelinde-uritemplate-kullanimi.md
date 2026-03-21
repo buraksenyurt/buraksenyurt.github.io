@@ -1,12 +1,12 @@
-﻿---
+---
 layout: post
 title: "WCF Rest Modelinde UriTemplate Kullanımı"
 date: 2009-04-20 19:19:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
-  - rest
+  - windows-communication-foundation
+  - rest-api
 ---
 SOAP (Simple Object Access Protocol) bazlı WCF servislerininin REST (REpresentational State Transfer) modeline taşınmasını ele aldığımız bir önceki [yazımızda](https://www.buraksenyurt.com/post/Soap-Bazl%C4%B1-WCF-Servislerini-REST-Modeline-Tas%C4%B1mak)varsayılan URL şablonu kullanılmıştır. Varsayılan URL şablonu, WebGet niteliğinde herhangibir başka desen belirtilmediğinde devreye girmektedir. Kabaca aşağıdaki dizime benzer bir yapıdadır.
 

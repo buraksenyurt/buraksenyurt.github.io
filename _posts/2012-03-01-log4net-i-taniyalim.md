@@ -6,7 +6,7 @@ categories:
   - dotnet-framework-4-0
 tags:
   - .net
-  - c#
+  - csharp
   - cross-cutting
   - logging
   - concern

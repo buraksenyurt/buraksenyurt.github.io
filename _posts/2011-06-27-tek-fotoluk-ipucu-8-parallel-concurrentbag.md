@@ -6,7 +6,7 @@ categories:
   - dotnet-framework-4-0
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - parallel-programming
   - concurrent-collections
   - concurrentbag

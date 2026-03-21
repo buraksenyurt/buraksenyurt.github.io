@@ -7,7 +7,6 @@ categories:
 tags:
   - tfs
   - team-foundation-server
-  - tfs-2012
   - application-pool
   - iis
   - internet-information-services

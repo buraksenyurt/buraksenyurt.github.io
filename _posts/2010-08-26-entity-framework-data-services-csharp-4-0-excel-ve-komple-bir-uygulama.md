@@ -8,9 +8,9 @@ categories:
   - wcf-data-services
 tags:
   - wcf-data-services
-  - ado.net-entity-framework-4.0
+  - entity-framework
   - chinook
-  - c#-4.0
+  - csharp
   - optional-and-named-parameters
   - dynamic
   - excel

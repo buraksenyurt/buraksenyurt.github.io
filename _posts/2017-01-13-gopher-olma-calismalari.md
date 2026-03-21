@@ -7,7 +7,7 @@ categories:
 tags:
   - golang
   - gopher
-  - programming
+  - programlama
   - arrays
   - loops
   - function

@@ -5,7 +5,7 @@ date: 2016-10-31 21:16:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - distributed-programming
   - .net-remoting
   - druby

@@ -7,7 +7,6 @@ categories:
   - wcf
 tags:
   - silverlight
-  - wcf
   - windows-communication-foundation
   - svcutil
 ---

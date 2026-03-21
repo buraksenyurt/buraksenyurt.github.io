@@ -5,7 +5,7 @@ date: 2016-10-30 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - singleton-method
   - override
   - overriding

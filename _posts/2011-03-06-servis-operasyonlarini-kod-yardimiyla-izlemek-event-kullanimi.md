@@ -5,7 +5,6 @@ date: 2011-03-06 18:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
 ---
 Suyun dibinden bir baloncuk yükselmeye başlar. Taze ve temiz hava ile temas etmek için can atmaktadır. Ancak kat etmesi gereken epey bir mesafe vardır. Daha da hızlanabilmek ister. Yükselirken karşısına bir baloncuk daha çıkar ve doğrudan ona koşar. Artık ikisi birlikte, daha hızlı yükselmektedirler.

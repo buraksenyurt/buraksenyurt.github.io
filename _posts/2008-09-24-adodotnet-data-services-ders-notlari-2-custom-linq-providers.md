@@ -7,7 +7,6 @@ categories:
 tags:
   - ado.net-data-services
   - wcf-data-services
-  - wcf
   - windows-communication-foundation
 ---
 Son bahar yada kış gibi mevsimler ile özellikle yağmurlu ve kasvetli günlerde her geliştiricinin araştırma ve öğrenme süreci ve verimliliğinde belirgin bir artış gözlemlenir. Bu herkes için böyle olmasada en azından benim için geçerli bir durumdur. İşte bu felsefe ve ruh haliyle çıktığımız yolda son makalemizde Ado.Net Data Services konusuna değinmeye başlamış ve ders notlarımızı kaleme almıştık. İkinci ders notlarımızın konusu ise LINQ Provider kullanarak özel bir bağlama işleminin nasıl yapılabileceğini görmek.

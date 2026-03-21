@@ -6,8 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - extension-methods
   - binary-serialize
   - binaryformatter

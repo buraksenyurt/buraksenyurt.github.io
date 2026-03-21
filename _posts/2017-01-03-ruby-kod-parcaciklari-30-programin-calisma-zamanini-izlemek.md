@@ -5,8 +5,7 @@ date: 2017-01-03 21:43:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - trace
   - monitoring-cancellation
 ---

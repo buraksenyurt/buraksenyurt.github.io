@@ -7,7 +7,7 @@ categories:
 tags:
   - ado.net
   - sqldatareader
-  - c#
+  - csharp
   - oop
   - .net
   - database

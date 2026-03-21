@@ -5,8 +5,7 @@ date: 2009-08-24 06:15:00 +0300
 categories:
   - wcf-4-0-beta-1
 tags:
-  - wcf
-  - wcf-4.0
+  - windows-communication-foundation
   - router
   - soa
   - service-oriented-architecture

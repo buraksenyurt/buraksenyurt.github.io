@@ -7,7 +7,7 @@ categories:
 tags:
   - ado.net
   - sync-services
-  - wcf
+  - windows-communication-foundation
 ---
 Birbirleri ile sürekli bağlantı halinde olamayan istemci/sunucu (Client/Server) mimarilerinde en büyük problemlerden biriside verilerin karşılıklı veya tek taraflı olaraktan senkronize edilmeleridir. Çoğu büyük çaplı saha uygulamasında, sunucu tarafındaki veri kaynaklarının istemcide kullanıldığı durumlar söz konusudur. Bu noktada istemcilerin sürekli bağlı kalamadıkları bir ortamın var olması olasıdır (Occasionally Connected Enivronments). Nitekim istemci ve sunucu arasında kablosuz bağlantı olma ihtimali oldukça yüksektir. Nitekim günümüz teknolojileri düşünüldüğünde istemci uygulamaların bir çoğu mobil cihazlar ile, diz üstü bilgisayarlar üzerinde koşmaktadır. Bu tabiki daha çok saha elemanlarının işin içerisine girdiği senaryolardır.
 

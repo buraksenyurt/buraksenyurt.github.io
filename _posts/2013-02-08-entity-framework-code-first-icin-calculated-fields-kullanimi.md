@@ -6,12 +6,11 @@ categories:
   - entity-framework
 tags:
   - entity-framework
-  - entity-framework-4.5
   - t-sql
   - migration
   - code-first
   - poco
-  - c#
+  - csharp
   - ado.net
   - alter
 ---

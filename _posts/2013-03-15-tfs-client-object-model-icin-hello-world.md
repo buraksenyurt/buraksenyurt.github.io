@@ -9,7 +9,6 @@ tags:
   - team-foundation-server
   - team-explorer-everywhere
   - client-object-model
-  - tfs-2012
   - source-control
   - work-item
   - task

@@ -12,7 +12,7 @@ tags:
   - http-post
   - soap-based-web-service
   - command-prompt
-  - c#
+  - csharp
 ---
 Olmaz olmaz demeyin, gün gelir ihtiyacınız olur:) Ortada bir XML Web Service olduğunu düşünelim ve onu çağırmak istediğimiz bir sunucunun başında oturduğumuzu. Sunucu üzerinde SOAP-UI gibi yardımcı araçların olmadığını ve bunları kurma yetkinizin de bulunmadığını düşünün. Öyle bir sunucu ki komut satırı en etkili araç. İşte böyle bir durumda Windows PowerShell gibi araçlar web servislerini çağırma noktasında işimize yarayabilir. Nasıl mı? Gelin bakalım.
 

@@ -9,8 +9,8 @@ tags:
   - asp.net-web-api
   - .net-5
   - swagger
-  - entity-framework-core
-  - c#
+  - entity-framework
+  - csharp
   - programlama
   - eğitimcinin-eğitimi
   - eğitim-teknolojileri

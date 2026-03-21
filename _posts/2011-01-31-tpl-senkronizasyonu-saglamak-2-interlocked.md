@@ -10,7 +10,7 @@ tags:
   - synchronization-primitives
   - parallel-programming
   - .net-framework-4.0
-  - c#-4.0
+  - csharp
   - interlocked
 ---
 “Seçimi zaten yaptın. Şimdi onu anlaman gerekli.” Sanırım Matrix filminde Neo ile Oracle’ ın felsefe içeren ve uzun uzun düşünüldüğünde akla son derece anlaşılır gelen bir kaç sohbetinde geçen repliklerden birisi de buydu. Aslında ben bunu kendi hayatımda zaman zaman “Çözümü uyguladın. Şimdi onun her parçasının ne anlama geldiğini öğrenmen gerekli” diye çeviriyorum.

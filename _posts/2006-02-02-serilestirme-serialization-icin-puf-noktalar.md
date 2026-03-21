@@ -5,7 +5,7 @@ date: 2006-02-02 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - serialization
   - tips-and-tricks
 ---

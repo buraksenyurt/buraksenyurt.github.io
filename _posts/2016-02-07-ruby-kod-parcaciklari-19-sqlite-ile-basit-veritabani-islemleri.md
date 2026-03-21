@@ -5,7 +5,7 @@ date: 2016-02-07 15:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - sqlite
   - gem
   - sql

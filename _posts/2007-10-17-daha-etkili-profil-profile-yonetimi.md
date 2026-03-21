@@ -5,7 +5,7 @@ date: 2007-10-17 12:00:00 +0300
 categories:
   - aspnet-2-0
 tags:
-  - asp.net-2.0
+  - asp.net
   - profile
   - management
 ---

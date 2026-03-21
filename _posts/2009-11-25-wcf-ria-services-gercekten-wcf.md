@@ -8,7 +8,7 @@ categories:
 tags:
   - wcf-ria-services
   - .net-ria-services
-  - wcf
+  - windows-communication-foundation
   - wcf-eco-system
 ---
 Uzun ve yorucu bir geceydi...Dün gece WCF RIA Service'leri ile ilişkili görsel bir dersin hazırlıklarını yaparken sevgili Mehmet Cengiz arkadaşımın hediyesi olan tablet üzerinde aşağıdaki şekli çizdiğimi farkettim. Bu şekilde WCF RIA Service'i kullanan basit bir Silverlight uygulamasının anlaşılır hali yer almaktadır. Web uygulamamız, içerisinde Silverlight nesnesi barındıran test sayfası ve Domain Service sınıfı, dışarıda veya aynı alanda duran Ado.Net Entity Data Model içeriği ve onun kullandığı veritabanı. Soru işareti içeren ok ve Winforms kutucuğunu ise sonradan eklemeye karar verdim ve araştırmam da işte bu şekilde başladı

@@ -5,10 +5,9 @@ date: 2012-07-12 23:05:00 +0300
 categories:
   - wf-4-0
 tags:
-  - workflow-foundation-4.0
+  - workflow-foundation
   - rehosted-workflow-designer
   - xaml
-  - workflowdesigner
   - activity
   - custom-activity-designer
   - code-activity

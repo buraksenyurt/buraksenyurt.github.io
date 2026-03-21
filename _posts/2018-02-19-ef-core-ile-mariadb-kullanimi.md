@@ -6,7 +6,6 @@ categories:
   - dotnet-core
 tags:
   - entity-framework
-  - entity-framework-core
   - .net-core
   - mariadb
   - mysql

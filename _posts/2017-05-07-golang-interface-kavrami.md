@@ -5,8 +5,7 @@ date: 2017-05-07 10:57:00 +0300
 categories:
   - golang
 tags:
-  - go
-  - go-programming-language
+  - golang
   - interface
   - type
   - interface{}

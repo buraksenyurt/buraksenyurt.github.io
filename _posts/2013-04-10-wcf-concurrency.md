@@ -5,7 +5,6 @@ date: 2013-04-10 10:41:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - instance-context-mode
   - concurrency

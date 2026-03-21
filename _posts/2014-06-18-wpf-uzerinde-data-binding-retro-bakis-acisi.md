@@ -5,7 +5,6 @@ date: 2014-06-18 16:55:00 +0300
 categories:
   - wpf
 tags:
-  - wpf
   - windows-presentation-foundation
   - data-binding
   - xaml

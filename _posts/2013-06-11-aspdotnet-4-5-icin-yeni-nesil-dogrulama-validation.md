@@ -9,10 +9,9 @@ tags:
   - web-forms
   - web-form-validation
   - jquery
-  - html-5
+  - html
   - data-*
   - data-attributes
-  - html-5-data-attributes
   - unobtrusive-validation
 ---
 Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredeyse tamamı bu efsane cümleyi bilir.

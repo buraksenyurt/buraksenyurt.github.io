@@ -6,8 +6,8 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - html-encode
-  - asp.net-4.5
+  - html
+  - asp.net
   - data-binding
   - expression
 ---

@@ -5,7 +5,7 @@ date: 2009-10-20 13:36:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
+  - windows-communication-foundation
 ---
 Bilindiği üzere WCF aslında SOA (Service Oriented Architecture) mimarisinin uygulama modellerinden birisidir. İşin içerisinde servisler söz konusu olduğunda ağlar ve sistemler arası mesajlaşlamalar söz konusudur. Mesajlaşmalar söz konusu olduğundaysa, servis ve istemci arasında hareket eden verinin serileşebilir olması önem arz eden konuların başında gelmektedir.
 

@@ -5,8 +5,7 @@ date: 2009-08-26 15:03:00 +0300
 categories:
   - wcf-4-0-beta-1
 tags:
-  - wcf
-  - wcf-4.0
+  - windows-communication-foundation
 ---
 Routing Service konusu ile ilişkili [bir önceki yazımızda](/2009/08/24/wcf-4-0-yenilikleri-routing-service-gelistirmek-giris-beta-1/)modelin sunduğu alt yapıya kısaca değinmeye çalışmış ancak bir örnek geliştirme girişiminde bulunmamıştık. Bu yazımızda ise bir Hello World örneğini geliştirmeye çalışacağız. (Örneğimizi.Net Framework Beta 1 ve Visual Studio 2010 Beta 1 ile geliştirdiğimizi bir kere daha hatırlatmak isterim.) İlk olarak sizlere, örnek senaryomuzdan bahsetmek isterim.
 

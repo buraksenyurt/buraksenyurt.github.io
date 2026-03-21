@@ -8,7 +8,7 @@ categories:
 tags:
   - mef
   - managed-extensibility-framework
-  - c#
+  - csharp
   - .net-framework
   - IoC
   - Dependency-Injection

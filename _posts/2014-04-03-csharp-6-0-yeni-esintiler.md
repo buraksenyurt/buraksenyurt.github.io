@@ -6,7 +6,7 @@ categories:
   - csharp
   - csharp-6-0
 tags:
-  - C#-6.0
+  - csharp
   - new-features
 ---
 Çok şanslı bir çocukluk geçirdim. 80li yıllarda daha minik bir çocukken Lego’ lar oyuncak dolabımdan eksik olmazdı. O zamanlar benim için çok kıymetliydiler. Tabi büyüdükçe başka başka şeyler önem kazanmaya başladı. Lego’ nun pabucu belki de dama atıldı. Ta ki bir oğlum olana kadar.

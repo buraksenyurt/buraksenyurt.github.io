@@ -10,7 +10,7 @@ tags:
   - linux
   - ubuntu
   - erlang
-  - c#
+  - csharp
   - .net-core
   - visual-studio-code
   - producer

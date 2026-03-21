@@ -5,7 +5,6 @@ date: 2007-02-14 06:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - hello-world
 ---

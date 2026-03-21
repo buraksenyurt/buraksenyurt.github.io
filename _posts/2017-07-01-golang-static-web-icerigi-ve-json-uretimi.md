@@ -6,10 +6,9 @@ categories:
   - golang
 tags:
   - golang
-  - go-programming-language
   - web-programming-model
   - json
-  - rest
+  - rest-api
   - data-services
   - http
   - httprouting

@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Yandaki resimde yer alan minik boksör aslında hafif siklette mücadele etmektedir ve biraz sonra işleyeceğimiz FlyWeight tasarım kalıbı ile uzaktan yakında hiç bir alakası bulunmamaktadır. Ancak işleyeceğimiz tasarım kalbına bu ismin verilmesininde bir sebebi vardır. Bakalım neymiş?
 

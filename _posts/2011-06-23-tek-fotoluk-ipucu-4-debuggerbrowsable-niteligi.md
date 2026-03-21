@@ -6,7 +6,7 @@ categories:
   - dotnet-framework-4-0
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - .net-framework
   - visual-studio
   - visual-studio-2010

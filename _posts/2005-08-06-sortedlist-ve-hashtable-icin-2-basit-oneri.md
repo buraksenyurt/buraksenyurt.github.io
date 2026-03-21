@@ -5,7 +5,7 @@ date: 2005-08-06 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - sorted-list
   - hashtable
 ---

@@ -11,7 +11,7 @@ tags:
   - fluent-interface
   - fluent-api
   - martin-fowler
-  - ruby
+  - ruby-lang
   - scala
   - mock-nesne
   - unit-test

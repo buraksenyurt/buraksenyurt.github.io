@@ -5,8 +5,7 @@ date: 2015-08-12 12:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - accessor
   - setter
   - attribute

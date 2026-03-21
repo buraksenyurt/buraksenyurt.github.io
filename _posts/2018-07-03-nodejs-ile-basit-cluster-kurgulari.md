@@ -15,7 +15,7 @@ tags:
   - inter-channel-communication
   - http
   - httpServer
-  - web-server-control
+  - web-server-controls
 ---
 Programcılıkla uğraşan bizim gibi organizmalar sükunetle kod yazmaya bayılır. Hatta her şeyin sorunsuz işlediği, test'lerin prüzsüz ilerlediği, taşımaların tereyağından kıl çeker gibi kolay olduğu bir yaşam alanı düşler. Ne yazık ki gerçek hayat çoğu zaman böyle değildir. Bilirsiniz işte...Sıkışık proje süreleri, anlamakta güçlük çektiğimiz iş süreçleri, değişen ve öğrenmemiz gereken yeni nesil teknolojiler, aniden ortaya çıkan Murphy kanunları vs derken bir bakmışız ki barut fıçısına dönmüşüz. Kim bilir kaç kere içimizden bir Hulk fırlamak üzere düşe gelmiştir. Bazen benim de bu tip gıcık olduğum anlar olmuyor değil. Zaten çalışılması zor, huysuz ve aksi bir insanken bunlara birde ters giden işler eklenince, iyice çekilmez oluyorum.
 

@@ -8,7 +8,7 @@ tags:
   - regex
   - MatchEvaluator
   - anonymous-methods
-  - c#
+  - csharp
 ---
 Geçtiğimiz günlerde üzerinde çalıştığımız bir projede, sıkıştırılmış metinsel içeriklerin açılması ile ilgili bir ihtiyaç doğdu. Cümle biraz karışık gelmiş olabilir. İfinim müsadenizle senaryoyu anlatayım öncelikle;
 

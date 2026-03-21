@@ -8,7 +8,7 @@ categories:
   - csharp-4-0
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - linq
   - enumerable
 ---

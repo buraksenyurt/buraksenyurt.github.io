@@ -7,10 +7,9 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - wcf
+  - windows-communication-foundation
   - xlinq
   - xelement
-  - windows-communication-foundation
 ---
 Hani olurda yazdığınız WCF servislerini.Net istemcilerine açarken XML olarak döndürdüğünüz içeriklari RAW formatlarında sunmak istersiniz. Bu durumda yapacağınız iş çok basittir. İşte örnek
 

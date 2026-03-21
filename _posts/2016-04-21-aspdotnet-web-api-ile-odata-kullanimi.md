@@ -6,15 +6,15 @@ categories:
   - aspnet-web-api
 tags:
   - asp.net-web-api
-  - wcf
+  - windows-communication-foundation
   - odata
   - open-data-protocol
   - http
   - service
   - asp.net
   - web-api
-  - rest
-  - c#
+  - rest-api
+  - csharp
 ---
 İşlerin epeyce hafiflediği bir haftaydı diyebilirim. Dolayısıyla kırda parkta bayırda oturup dinlenmek için epeyce vaktim vardı. Ya da bir şeyler araştırmayı da tercih edebilirdim ki ben de öyle yaptım. Uzun zamandır Asp.Net Web API tarafında bir şeyler yapmıyordum. Araştırmalarım sırasında OData'nın Web API tarafındaki kullanımına denk geldim. Her zaman ki gibi konuyu olabildiğince basit bir halde öğrenmenin iyi olacağını düşündüm. Sonunda konuyu kaleme almayı başardım. Haydi başlayalım.
 

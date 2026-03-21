@@ -9,7 +9,6 @@ tags:
   - xml
   - xaml
   - windows-presentation-foundation
-  - wpf
   - xmldataprovider
   - binding
   - xpath

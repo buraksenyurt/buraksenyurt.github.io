@@ -5,12 +5,11 @@ date: 2017-10-24 14:18:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - wsHttpBinding
   - WCF-Security
   - security
-  - X509Certificates
+  - x-509-certificate
   - makecert
   - UserNamePasswordValidator
   - certificate

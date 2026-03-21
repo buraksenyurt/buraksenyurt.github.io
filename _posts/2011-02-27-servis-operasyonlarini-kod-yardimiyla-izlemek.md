@@ -6,8 +6,6 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - wcf
-  - wcf-4.0
   - windows-communication-foundation
   - iparameterinspector
   - service-operation-behavior

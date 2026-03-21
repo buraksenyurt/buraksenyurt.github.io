@@ -5,12 +5,10 @@ date: 2011-11-11 14:59:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - sql-server-integration-services
-  - ssis
   - dts
   - dts-package
-  - ssis-variables
   - manageddts
 ---
 Beni tanıyanlar SQL ailesini pek sevmediğimi ve biraz uzak durmaya çalışmak istediğimi bilirler. Ne varki bazen iş hayatının gerçekleri ile karşı karşıya kalırız ve mecburen SQL ailesinin bazı fertleri ile yakın ilişkiler içerisine gireriz

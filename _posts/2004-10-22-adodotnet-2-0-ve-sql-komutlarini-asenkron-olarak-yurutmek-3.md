@@ -5,7 +5,7 @@ date: 2004-10-22 12:00:00 +0300
 categories:
   - ado-net-2-0
 tags:
-  - ado.net-2.0
+  - ado.net
   - asynchronous
   - async
 ---

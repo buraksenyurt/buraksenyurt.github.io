@@ -5,7 +5,7 @@ date: 2015-06-11 12:09:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - C#-6.0
+  - csharp
   - generic-collections
   - Dictionary,
   - initializer

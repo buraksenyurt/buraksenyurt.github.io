@@ -6,8 +6,7 @@ categories:
   - golang
 tags:
   - golang
-  - rest
-  - rest-services
+  - rest-api
   - http
   - html
   - http-get

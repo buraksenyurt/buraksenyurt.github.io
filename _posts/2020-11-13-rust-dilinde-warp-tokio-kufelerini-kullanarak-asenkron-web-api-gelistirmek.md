@@ -11,10 +11,8 @@ tags:
   - crate
   - asynchronous-programming
   - web-api
-  - rest
   - rest-api
-  - rest-services
-  - rust-programming-language
+  - rust-lang
   - visual-studio-code
   - ubuntu
   - linux

@@ -5,7 +5,7 @@ date: 2016-10-24 21:35:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - http-request
   - nethttp
 ---

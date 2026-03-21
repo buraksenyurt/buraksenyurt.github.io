@@ -6,7 +6,6 @@ categories:
   - aspnet-4-0
 tags:
   - asp.net
-  - asp.net-4.0
   - session
   - session-compression
 ---

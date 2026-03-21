@@ -5,11 +5,11 @@ date: 2010-10-18 02:05:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
+  - csharp
   - bcl
   - base-class-library
   - lazy-initialization
-  - lazy<t>
+  - generic-lazy
   - singleton-design-pattern
   - lock
   - thread-safe

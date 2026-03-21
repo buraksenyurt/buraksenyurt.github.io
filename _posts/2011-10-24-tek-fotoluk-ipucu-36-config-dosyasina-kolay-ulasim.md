@@ -6,8 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - configuration-manager
   - configuration-api
   - app.config

@@ -5,7 +5,7 @@ date: 2009-12-07 02:27:00 +0300
 categories:
   - entity-framework
 tags:
-  - ado.net-entity-framework
+  - entity-framework
 ---
 Ado.Net Entity Framework'ün en çok eleştirilen yönlerinden birisi, ORM (Object Relational Mapping) ihtiyacını karşılayacak bir alt yapı olarak tasarlanmasına rağmen ORM'in karakteristik özelliklerinden birisi olan Lazy Loading'in (Bir nesnenin ihtiyaç duyulduğu noktada veri kaynağından yüklenmesini-Load hedefleyen bir tasarım kalıbı olarak düşünülebilir) tam manada desteklemiyor olmasıdır. Zaman içerisinde Deferred Loading veya Explicity Lazy Loading gibi isimler ile Ado.Net Entity Framework içerisine bir takım özellikler eklenerek bu eksiklik ortadan kaldırılmaya çalışılsada gerçek manada 4.0 versiyonunun Beta 2 sürümünde, beklenildiği gibi bir iyileştirme olduğunu görmekteyiz.
 

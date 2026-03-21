@@ -5,11 +5,11 @@ date: 2010-10-11 12:20:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
+  - csharp
   - bcl
   - base-class-library
   - lazy-initialization
-  - lazy<t>
+  - generic-lazy
 ---
 Yaz günlerinde pek çok geliştirici tembellik yapmak ister. Hatta benim gibi kocaman bir Üniversite Kampüsü içerisinde yer alan çalışma ortamınız var ise ve kampüsünüzün çimleri üzerinde yatıp şöyle beş on dakika kestirmeye müsaitse. Tabi tembelliğin çeşitli türevleri vardır. Çimler üzerinde uzanmak bunlardan sadece birisi.
 

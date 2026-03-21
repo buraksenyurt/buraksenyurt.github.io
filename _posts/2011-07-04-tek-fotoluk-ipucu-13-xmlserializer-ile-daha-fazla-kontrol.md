@@ -7,13 +7,11 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - wcf
-  - wcf-4.0
+  - windows-communication-foundation
   - xml
   - soap
   - xml-serialization
   - xml-serializer
-  - windows-communication-foundation
 ---
 Bazen SOAP Bazlı WCF servisimizdeki veri türlerinin,.Net tabanlı olmayan platformlarda yer alan istemci veya servislerle daha kolay anlaşabilmesini sağlamak isteyebiliriz. Özellikle bu noktada XmlSerializer işimizi kolaylaştırabilir. Nasıl mı?
 

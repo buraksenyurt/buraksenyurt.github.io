@@ -7,7 +7,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - .net-framework-4.0
-  - c#
+  - csharp
   - office-interop
   - linq
   - entity-framework

@@ -6,10 +6,8 @@ categories:
   - golang
 tags:
   - golang
-  - go-programming-language
   - web-programming-model
   - net/http
-  - html/template
   - html
   - css
 ---

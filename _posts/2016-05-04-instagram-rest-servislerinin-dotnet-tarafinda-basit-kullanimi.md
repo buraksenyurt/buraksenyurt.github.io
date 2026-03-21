@@ -6,10 +6,10 @@ categories:
   - rest
 tags:
   - instagram
-  - rest-services
+  - rest-api
   - WebClient
   - json
-  - c#
+  - csharp
   - jquery
   - javascript
   - endpoint-behavior

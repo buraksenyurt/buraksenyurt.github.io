@@ -5,12 +5,11 @@ date: 2013-06-09 02:44:00 +0300
 categories:
   - csharp
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - static-fields
   - field-ordering
   - extension-methods
-  - enum-type
+  - enums
   - intern-pool
   - string-intern
   - indexers

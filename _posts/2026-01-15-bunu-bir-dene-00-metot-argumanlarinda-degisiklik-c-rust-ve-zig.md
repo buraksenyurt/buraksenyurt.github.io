@@ -7,8 +7,7 @@ categories:
   - Rust
   - Zig
 tags:
-  - zig
-  - zigLang
+  - zig-lang
   - cSharp
   - rust
 ---

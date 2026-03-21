@@ -6,7 +6,6 @@ categories:
   - team-foundation-server
 tags:
   - tfs
-  - tfs-2012
   - team-foundation-server
   - client-object-model
   - tfs-web-services

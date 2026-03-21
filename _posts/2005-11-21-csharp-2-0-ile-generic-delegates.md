@@ -5,7 +5,7 @@ date: 2005-11-21 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-2.0
+  - csharp
   - generics
   - delegate
   - generic-delegate

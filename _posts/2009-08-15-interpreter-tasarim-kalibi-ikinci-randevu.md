@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Bir süre önce tasarım kalıplarından [Interpreter](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Interpreter.aspx) desenini incelemiş ve konu ile ilişkili bir kural motorunun çok basit anlamda nasıl yazılabileceğini araştıracağımızdan bahsetmiştik. Interpreter tasarım kalıbında hatırlayacağınız gibi Terminal ve NonTerminal tipleri bulunmaktadır. NonTerminal tipler genellikle kural motoru gibi modellerde devreye girmektedir. Kural motorlarında (Rule Engine), işletilmek istenen ifadelerin içerisinde sıklıkla operatörlerin kullanılması söz konusudur.
 

@@ -5,7 +5,7 @@ date: 2007-03-21 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - WPF
+  - windows-presentation-foundation
   - xaml
   - baml
 ---

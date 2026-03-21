@@ -5,7 +5,7 @@ date: 2008-09-22 12:00:00 +0300
 categories:
   - ado-net-data-services
 tags:
-  - wcf
+  - windows-communication-foundation
   - ado.net-data-services
   - wcf-data-services
 ---

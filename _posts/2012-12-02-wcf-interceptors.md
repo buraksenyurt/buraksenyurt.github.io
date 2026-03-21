@@ -6,7 +6,6 @@ categories:
   - wcf-4-5
 tags:
   - windows-communication-foundation
-  - wcf
   - interceptor
   - parameter-inspector
   - message-inspector

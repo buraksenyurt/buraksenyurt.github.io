@@ -7,7 +7,7 @@ categories:
 tags:
   - blazor
   - asp.net
-  - c#
+  - csharp
   - firestore
   - google-cloud-platform
   - database
@@ -20,7 +20,7 @@ tags:
   - crud
   - webapi
   - api
-  - rest
+  - rest-api
   - backend
   - bootstrap
   - modalPopup

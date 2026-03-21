@@ -5,7 +5,7 @@ date: 2016-01-19 00:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
+  - windows-communication-foundation
   - ddos
   - security
   - wcf-service-security

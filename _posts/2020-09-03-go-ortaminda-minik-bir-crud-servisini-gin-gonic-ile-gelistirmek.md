@@ -5,14 +5,9 @@ date: 2020-09-03 13:00:00 +0300
 categories:
   - golang
 tags:
-  - go-programming-language
   - golang
-  - go
-  - gingonic
   - gin-gonic
-  - rest
   - rest-api
-  - rest-based-services
   - swagger
   - http
   - http-web-framework

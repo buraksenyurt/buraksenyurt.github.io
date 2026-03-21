@@ -13,7 +13,7 @@ tags:
   - addin
   - visual-studio-2012
   - .net
-  - c#
+  - csharp
   - entity-framework
   - document-level
   - application-level

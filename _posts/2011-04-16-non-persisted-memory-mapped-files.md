@@ -7,7 +7,7 @@ categories:
   - csharp-4-0
 tags:
   - .net-framework-4.0
-  - c#-4.0
+  - csharp
   - memory-mapped-files
   - visual-studio-2010-ultimate
 ---

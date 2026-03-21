@@ -5,7 +5,7 @@ date: 2013-10-06 12:02:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - text-files
   - reflection
   - notepad++

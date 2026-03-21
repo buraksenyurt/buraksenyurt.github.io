@@ -5,8 +5,7 @@ date: 2011-02-13 16:00:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
-  - c#-temelleri
+  - csharp
   - default-parameters
   - optional-parameters
   - named-parameters

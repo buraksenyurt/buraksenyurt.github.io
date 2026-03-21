@@ -5,7 +5,6 @@ date: 2017-05-16 18:17:00 +0300
 categories:
   - golang
 tags:
-  - go-programming-language
   - golang
   - tek-fotoluk-ipucu
   - struct

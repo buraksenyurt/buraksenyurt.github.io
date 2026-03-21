@@ -6,7 +6,7 @@ categories:
   - csharp
   - linq
 tags:
-  - c#
+  - csharp
   - linq
   - foreach
   - linq-vs-foreach

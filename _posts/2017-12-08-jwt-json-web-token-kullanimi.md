@@ -14,11 +14,9 @@ tags:
   - http-get
   - http-post
   - bearer
-  - rest
-  - rest-based-services
-  - restful
+  - rest-api
   - web-api
-  - asp.net-web-api-2.0
+  - asp.net-web-api
 ---
 Daha önce söylemiş miydim bilemiyorum ama servis odaklı yaklaşımlarda güvenlik hep korktuğum ve anlamakta güçlük çektiğim konuların başında gelir. Özellikle WCF tarafındaki güvenlik senaryolarının çeşitliliği ve zenginliği bazen kafa karıştırıcı boyutlarda olabiliyor. Bu aralar şirketteki REST tabanlı servislerin JSON Web Token ile kullanılmalarına dair bir vaka çalışması söz konusu. Bu durum REST modelinde çalışan WCF servisleri için önemli.
 

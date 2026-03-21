@@ -7,9 +7,7 @@ categories:
 tags:
   - team-foundation-server
   - client-object-model
-  - tfs-client-object-model
-  - tfs-integration
-  - tfs-entegrasyon
+  - tfs
   - work-item
   - task
   - product-backlog-item

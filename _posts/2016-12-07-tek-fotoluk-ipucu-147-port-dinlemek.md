@@ -5,7 +5,7 @@ date: 2016-12-07 21:51:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - tcpip
   - port
   - networking

@@ -7,7 +7,6 @@ categories:
   - wf-4-0
 tags:
   - workflow-foundation
-  - workflow-foundation-4.0
   - visual-studio-2010
   - workflow-service
 ---

@@ -11,7 +11,7 @@ tags:
   - testing
   - .net-core
   - dotnet
-  - c#
+  - csharp
   - testmethod
   - testclass
   - datatestmethod

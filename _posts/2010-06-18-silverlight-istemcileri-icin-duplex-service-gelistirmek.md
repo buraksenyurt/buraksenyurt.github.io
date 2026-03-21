@@ -6,7 +6,7 @@ categories:
   - silverlight-4-0
   - wcf
 tags:
-  - wcf
+  - windows-communication-foundation
   - silverlight
   - wcf-service
   - duplex-service

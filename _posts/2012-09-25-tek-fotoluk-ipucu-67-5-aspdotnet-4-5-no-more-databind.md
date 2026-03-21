@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - asp.net-4.5
+  - asp.net
   - model-binding
   - linq
   - entity-framework

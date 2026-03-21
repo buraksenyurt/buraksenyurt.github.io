@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - reflection
-  - c#
+  - csharp
   - generic-types
   - property
   - default-value

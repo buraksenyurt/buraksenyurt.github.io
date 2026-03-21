@@ -6,8 +6,7 @@ categories:
   - nedirtv
 tags:
   - entity-framework
-  - nedirtv?com
-  - wcf
+  - nedir-tv
   - windows-communication-foundation
   - ef-4.0
 ---

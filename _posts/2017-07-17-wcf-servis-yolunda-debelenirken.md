@@ -5,7 +5,6 @@ date: 2017-07-17 21:47:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - ServiceHost
   - IDispatchMessageInspector

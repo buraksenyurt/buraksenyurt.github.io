@@ -5,7 +5,7 @@ date: 2005-07-23 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - type-safety
   - type-safed-collections
   - collections

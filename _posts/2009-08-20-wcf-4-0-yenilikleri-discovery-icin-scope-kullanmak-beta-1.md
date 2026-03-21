@@ -5,8 +5,7 @@ date: 2009-08-20 16:57:00 +0300
 categories:
   - wcf-4-0-beta-1
 tags:
-  - wcf
-  - wcf-4.0
+  - windows-communication-foundation
 ---
 Bir [önceki](/2009/08/18/wcf-4-0-yenilikleri-ad-hoc-ws-discovery-beta-1/)yazımızda WCF 4.0 tabanlı servislerde WS-Discovery protokolünün, Ad Hoc modeline göre nasıl uygulanabileceğini görmüştük. Ad Hoc modelinde istemcinin, yerel ağ üzerine dahil olan bir servisi aramak için kullanabileceği kriterleri önceden belirlemesi ve bunları kullanması gerektiğinden bahsetmiştik. Bu amaçla kod tarafında FindCriteria tipinden yararlanılmaktadır. Bir önceki örneğimizde, arama kriterinde sadece servis sözleşmesini (Service Contract) kullanmıştık.
 

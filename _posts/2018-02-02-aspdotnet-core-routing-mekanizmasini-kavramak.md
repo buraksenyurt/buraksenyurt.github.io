@@ -8,13 +8,13 @@ tags:
   - asp.net-core
   - routing
   - .net-core
-  - c#
+  - csharp
   - template
   - http
   - html
   - json
   - web-api
-  - rest
+  - rest-api
   - webhostbuilder
   - RouteHandler
 ---

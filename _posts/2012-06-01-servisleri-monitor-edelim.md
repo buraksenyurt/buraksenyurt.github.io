@@ -5,7 +5,7 @@ date: 2012-06-01 01:12:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
+  - windows-communication-foundation
   - xml-web-services
   - asmx
   - httpwebrequest

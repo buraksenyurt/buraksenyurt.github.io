@@ -10,7 +10,7 @@ tags:
   - wcf-webhttp-services
   - silverlight-4.0
   - silverlight
-  - wcf
+  - windows-communication-foundation
   - http
   - get
   - post

@@ -7,7 +7,7 @@ categories:
   - csharp
   - data-structures-algorithms
 tags:
-  - c#
+  - csharp
   - levenshtein-distance
   - algoritma
   - extension-methods

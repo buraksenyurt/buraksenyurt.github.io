@@ -5,7 +5,7 @@ date: 2015-12-07 20:00:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - generic
   - reflection
   - IList

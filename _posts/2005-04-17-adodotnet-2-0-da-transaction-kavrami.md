@@ -5,7 +5,7 @@ date: 2005-04-17 12:00:00 +0300
 categories:
   - ado-net-2-0
 tags:
-  - ado.net-2.0
+  - ado.net
   - transaction
   - oletx-transaction
   - lightweight-transaction

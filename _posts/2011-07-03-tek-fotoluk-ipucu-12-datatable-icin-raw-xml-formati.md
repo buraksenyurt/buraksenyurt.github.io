@@ -7,10 +7,9 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - wcf
+  - windows-communication-foundation
   - datatable
   - ado.net
-  - windows-communication-foundation
 ---
 Peki elinizde bir DataTable var ve siz bunun Raw XML formatındaki çıktısını istemcilere vermek istiyorsunuz. Ne yaparsınız?
 

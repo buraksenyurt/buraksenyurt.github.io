@@ -7,8 +7,8 @@ categories:
 tags:
   - asp.net-web-api
   - wcf-web-api
-  - rest-services
-  - wcf
+  - rest-api
+  - windows-communication-foundation
   - mvc
   - odata
   - json

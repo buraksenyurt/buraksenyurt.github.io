@@ -7,14 +7,12 @@ categories:
 tags:
   - .net-core
   - web-api
-  - rest-services
+  - rest-api
   - http
   - entity-framework
-  - entity-framework-core
   - swagger
   - .net-core-2.0
   - core
-  - rest-api
   - middleware
   - mvc
   - model-view-controller

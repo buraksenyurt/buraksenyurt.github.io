@@ -5,8 +5,7 @@ date: 2015-09-03 05:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - exception-handling
   - error-handling
 ---

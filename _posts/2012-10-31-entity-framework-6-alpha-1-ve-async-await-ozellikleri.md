@@ -6,7 +6,6 @@ categories:
   - entity-framework
 tags:
   - entity-framework
-  - entity-framework-6.0
   - alpha
   - async
   - await

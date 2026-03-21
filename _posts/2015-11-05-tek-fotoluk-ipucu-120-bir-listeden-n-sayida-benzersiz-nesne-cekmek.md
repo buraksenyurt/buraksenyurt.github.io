@@ -5,7 +5,7 @@ date: 2015-11-05 08:30:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - generic
   - generic-list
 ---

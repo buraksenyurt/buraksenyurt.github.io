@@ -5,8 +5,7 @@ date: 2010-03-16 02:15:00 +0300
 categories:
   - wf-4-0-rc
 tags:
-  - wf
-  - wf-4.0
+  - workflow-foundation
   - parallel-programming
   - .net-framework-4.0
 ---

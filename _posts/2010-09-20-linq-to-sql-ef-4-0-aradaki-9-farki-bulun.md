@@ -7,9 +7,8 @@ categories:
   - linq-to-sql
 tags:
   - linq-to-sql
-  - ado.net-entity-framework-4.0
-  - ef-4.0
   - entity-framework
+  - ef-4.0
 ---
 Evet çok doğru. Hiç bu kadar kısa ve öz yazmamıştım daha önceden. Ama zaman zaman bu kadar kısa yazıp çok fazla şey ifade edilebileceğine de inanmaktayım
 

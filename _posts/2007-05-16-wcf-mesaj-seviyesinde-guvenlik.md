@@ -5,7 +5,6 @@ date: 2007-05-16 12:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - security
   - service-security

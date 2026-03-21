@@ -18,7 +18,7 @@ tags:
   - team-foundation-build
   - build-server
   - build-service
-  - c#
+  - csharp
   - c#-project
   - project-properties
 ---

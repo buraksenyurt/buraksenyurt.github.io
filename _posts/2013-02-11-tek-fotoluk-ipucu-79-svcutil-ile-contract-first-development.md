@@ -7,8 +7,7 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - svcutil
-  - wcf
-  - wcf-4.5
+  - windows-communication-foundation
   - contract-first-development
   - wsdl
   - xsd

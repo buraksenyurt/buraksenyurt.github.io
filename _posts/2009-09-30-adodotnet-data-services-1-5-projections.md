@@ -7,8 +7,8 @@ categories:
   - wcf
 tags:
   - ado.net-data-services
-  - wcf
-  - rest
+  - windows-communication-foundation
+  - rest-api
 ---
 Gün geçmiyorki yazılım teknolojilerinde bir yenilik, bir güncelleme, bir genişletme çıkmasın...Özellikle dünyanın dev yazılım şirketlerinin en büyüğü olarak görebileceğimiz Microsoft tarafında bu gelişme ve güncelleme hızı oldukça yüksek. Gerçektende heyecan verici yenilikler, özellikler ile karşılaşmıyor değiliz. Bu konuya nereden mi geldim?
 

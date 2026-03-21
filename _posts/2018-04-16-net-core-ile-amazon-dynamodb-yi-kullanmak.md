@@ -11,7 +11,7 @@ tags:
   - amazon-dynamodb
   - dynamodb
   - .net-core
-  - c#
+  - csharp
   - key-value-storage
   - DynamoDbV2
 ---

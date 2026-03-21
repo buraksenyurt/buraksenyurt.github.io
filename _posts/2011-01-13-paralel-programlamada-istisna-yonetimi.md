@@ -9,7 +9,7 @@ tags:
   - tpl
   - task-parallel-library
   - exception-handling
-  - c#-4.0
+  - csharp
   - visual-studio-2010-ultimate
 ---
 Balık tutmak farklı bir hobidir. Özellikle olta ile balık yakalamaktan büyük keyif alanlar vardır. (Hatta laf aramızda, şirkette yanımda oturan çalışma arkadaşımın çekmecesinde, bir olta takımı var)

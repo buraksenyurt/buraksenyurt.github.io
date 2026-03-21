@@ -6,9 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
-  - c#-3.0
-  - c#-temelleri
+  - csharp
   - system.environment
   - xlinq
   - xelement

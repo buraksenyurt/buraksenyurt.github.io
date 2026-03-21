@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Yandaki legoya baktığımızda sanıyorum ki hepimizin aklına Romalılar gelmektedir. Aslında benim aklıma Ben Hur filmi ve müthiş atlı araba yarışı sahneleri geliyor. Her neyse...
 

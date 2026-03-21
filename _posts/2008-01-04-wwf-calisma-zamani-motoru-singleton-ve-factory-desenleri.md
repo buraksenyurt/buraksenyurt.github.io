@@ -5,7 +5,6 @@ date: 2008-01-04 12:00:00 +0300
 categories:
   - wf
 tags:
-  - wf
   - workflow-foundation
   - singleton
   - factory

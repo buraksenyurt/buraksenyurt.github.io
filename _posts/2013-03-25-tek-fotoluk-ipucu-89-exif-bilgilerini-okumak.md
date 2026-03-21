@@ -13,7 +13,7 @@ tags:
   - exposure-value
   - shutter-speed
   - focal-length
-  - enum
+  - enums
   - static-class
   - overriding
   - tostring

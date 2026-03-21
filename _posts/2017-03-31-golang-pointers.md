@@ -5,8 +5,6 @@ date: 2017-03-31 21:15:00 +0300
 categories:
   - golang
 tags:
-  - go
-  - go-programming-language
   - golang
   - pointer
   - referance-types

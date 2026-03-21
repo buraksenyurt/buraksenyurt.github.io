@@ -5,7 +5,7 @@ date: 2016-11-06 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - binary-tree
   - morse-codes
 ---

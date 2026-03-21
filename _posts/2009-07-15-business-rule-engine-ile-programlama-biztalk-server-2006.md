@@ -7,7 +7,7 @@ categories:
 tags:
   - biztalk
   - business-rule-engine
-  - c#
+  - csharp
 ---
 Yıllardır yazılım projelerinde görev almaktayım. Çeşitli projelerde pek çok zorlukla karşılaştım. Özellikle enterprise seviyedeki projelerde karşılaştığım en büyük zorluklar arasında, müşterinin uygulama içerisinde tanımladığı iş kurallarını istediği gibi ve görsel arayüzler yardımıyla değiştirmek istemesi yer almaktaydı. Burada geliştirme açısından bakıldığında zafer, söz konusu iş kurallarını uygulama kodu üzerinde herhangibir güncelleme yapılmasına gerek bırakmadan entegre edebilen sistemleri geliştirmektir aslında.
 

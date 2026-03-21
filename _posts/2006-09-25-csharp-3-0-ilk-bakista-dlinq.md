@@ -5,7 +5,7 @@ date: 2006-09-25 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-3.0
+  - csharp
   - linq
   - language-integrated-query
   - lambda-operator

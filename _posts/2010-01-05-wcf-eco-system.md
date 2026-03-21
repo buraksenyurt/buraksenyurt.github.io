@@ -5,7 +5,7 @@ date: 2010-01-05 01:30:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
+  - windows-communication-foundation
   - wcf-ria-services
   - workflow-services
   - data-services

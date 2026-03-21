@@ -6,7 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - active-directory
   - ldap
   - .net-framework

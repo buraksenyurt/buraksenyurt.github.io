@@ -5,7 +5,7 @@ date: 2004-08-05 09:00:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - localization
   - globalization
   - multi-language

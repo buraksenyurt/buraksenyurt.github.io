@@ -5,10 +5,8 @@ date: 2009-10-16 00:00:00 +0300
 categories:
   - wf-4-0-beta-1
 tags:
-  - wf
-  - wf-4.0
-  - wcf
-  - wcf-4.0
+  - workflow-foundation
+  - windows-communication-foundation
 ---
 Yükseklik korkum olmasına rağmen her zaman yandaki gibi tırmanışta olanlara imrenmişimdir. Bu fotoğrafa konu olan kişinin tek yaptığı yoğun bir mücadele ve efor ile yukarı doğru tırmanmaktır. Bana göre sonuçta elde edilebilecek tek şey zirveye ulaşmak ve oranın eşsiz manzarasını izlemekten ibarettir. Tabi bunun birde inişi olduğunu düşünmek gerekiyor
 

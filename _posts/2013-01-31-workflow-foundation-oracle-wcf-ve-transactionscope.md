@@ -6,10 +6,7 @@ categories:
   - wf-4-0
 tags:
   - workflow-foundation
-  - workflow-foundation-4.0
-  - workflow-foundation-öğreniyorum
-  - wcf
-  - wcf-4.0
+  - windows-communication-foundation
   - wcf-service
   - transaction-management
   - transaction-scope

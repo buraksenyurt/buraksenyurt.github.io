@@ -7,7 +7,6 @@ categories:
   - nosql
 tags:
   - golang
-  - go-programming-language
   - redis
   - nosql
 ---

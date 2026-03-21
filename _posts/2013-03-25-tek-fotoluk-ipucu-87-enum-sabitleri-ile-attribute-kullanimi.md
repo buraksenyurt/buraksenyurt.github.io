@@ -5,7 +5,7 @@ date: 2013-03-25 20:55:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - enum-type
+  - enums
   - extension-methods
   - attribute
   - custom-attribute

@@ -12,7 +12,7 @@ tags:
   - attribute
   - datatable
   - odp.net
-  - c#
+  - csharp
   - generics
   - generic-list
   - reflection

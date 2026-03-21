@@ -10,7 +10,7 @@ tags:
   - blazor-web-assembly
   - web-assembly
   - wasm
-  - c#
+  - csharp
   - javascript-interoperability
   - client-server
   - client-side-blazor

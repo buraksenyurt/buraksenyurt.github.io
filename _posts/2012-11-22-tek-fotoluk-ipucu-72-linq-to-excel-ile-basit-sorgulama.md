@@ -10,7 +10,7 @@ tags:
   - linq-to-excel
   - linq-providers
   - excel
-  - c#
+  - csharp
 ---
 Zaman zaman siz de benim gibi LINQ ile yazılmış çeşitli Provider'lara şöyle bir göz gezdirenlerden misiniz?
 

@@ -8,10 +8,9 @@ tags:
   - iis
   - .net-core
   - asp.net-core
-  - restful-api
-  - restful-services
+  - rest-api
   - microservice
-  - c#
+  - csharp
 ---
 Bugün 20 Mayıs Cuma. Dün 19 Mayıs nedeniyle resmi tatil olan bankamız bugün de toplu olarak tatil. Ancak şirkette kalmak isteyenler durumlarını bildirip gelebiliyor.
 

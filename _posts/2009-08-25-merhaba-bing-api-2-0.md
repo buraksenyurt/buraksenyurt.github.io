@@ -6,7 +6,7 @@ categories:
   - bing
 tags:
   - xml-web-services
-  - c#
+  - csharp
 ---
 Bir süredir WCF 4.0 ile birlikte gelen yenilikleri sizlere aktarmaya çalışıyorum. Son olarak Routing Service ile ilişkili bir giriş yazımız olmuştu. Bu konu ile ilişkili örnek en kısa sürede sizlerle olacak. Ne varki konu biraz zorlu.
 

@@ -5,7 +5,7 @@ date: 2007-03-28 12:00:00 +0300
 categories:
   - aspnet-2-0
 tags:
-  - asp.net-2.0
+  - asp.net
   - web-parts
   - custom-web-parts
 ---

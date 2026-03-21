@@ -11,7 +11,7 @@ tags:
   - mock
   - stub
   - dependency-injection
-  - c#
+  - csharp
   - .net-core
   - visual-studio-code
   - moq

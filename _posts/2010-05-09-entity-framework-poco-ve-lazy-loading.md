@@ -5,7 +5,7 @@ date: 2010-05-09 21:55:00 +0300
 categories:
   - entity-framework
 tags:
-  - ado.net-entity-framework-4.0
+  - entity-framework
   - linq
   - language-integrated-query
 ---

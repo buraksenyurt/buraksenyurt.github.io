@@ -8,7 +8,7 @@ tags:
   - .net-core
   - sqlkata
   - postgresql
-  - c#
+  - csharp
   - sql
   - linq
   - .net

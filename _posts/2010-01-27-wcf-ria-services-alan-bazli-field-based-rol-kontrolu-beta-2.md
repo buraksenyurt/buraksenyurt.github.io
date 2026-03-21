@@ -8,7 +8,7 @@ categories:
 tags:
   - wcf-ria-services
   - .net-ria-services
-  - wcf
+  - windows-communication-foundation
   - wcf-eco-system
 ---
 Hani bazen insanın aklına son derece zekice fikirler gelir ya...Sene 1992. Lise öğrencisiyim. Bazı akşamlar yazlığımızdaki odamda üniversiteye hazırlanmaya çalışırdım. Güzel yaz gecelerinde, tertemiz ada ikliminde, mis gibi kokan iyotlu deniz suyunun çok yakınlarında konsantre olmak her ne kadar çok zor olsa da, buna mecburdum. Odamdaki flöresan ışığını çalışma ortamı için hiç uygun bulmazdım. Bunun yerine sarı ışığı tercih ederdim ve aynen yandaki şekilde görülene benzer bir gece lambam vardı.

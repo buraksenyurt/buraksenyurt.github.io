@@ -5,8 +5,8 @@ date: 2019-02-12 09:00:00 +0300
 categories:
   - dotnet-core
 tags:
-  - entity-framework-core
-  - c#
+  - entity-framework
+  - csharp
   - .net-core
   - inmemory-database
   - nuget

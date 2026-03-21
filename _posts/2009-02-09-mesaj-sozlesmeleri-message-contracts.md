@@ -6,7 +6,6 @@ categories:
   - wcf
 tags:
   - windows-communication-foundation
-  - wcf
 ---
 Servis tabanlı uygulamalarda en önemli noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde gerçekleştirildiğidir. Gerçek şuki, bu bilgi transferinin oluşma şekli çoğu zaman geliştiricinin gözünden kaçan yada çok fazla ilgilenmediği bir konu olmaktadır. Nitekim çoğu servis geliştirme aracı buradaki söz konusu içeriğin hazırlanmasını, gönderilmesini veya alınmasını otomatikleştirmektedir. Özellikle Windows Communication Foundation tarafında, bilginin istemci ve servis arasındaki dolaşımında bağlayıcı tiplerin (Binding Type) seçilmesi ile zaten arka tarafta ne şekilde bir haberleşme olacağı ve paketlerin nasıl hazırlanacağı belirlenmiş olur.
 

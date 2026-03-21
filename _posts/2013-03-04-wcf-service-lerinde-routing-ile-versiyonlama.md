@@ -5,9 +5,7 @@ date: 2013-03-04 00:50:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
-  - wcf-4.5
   - router
   - routing-service
 ---

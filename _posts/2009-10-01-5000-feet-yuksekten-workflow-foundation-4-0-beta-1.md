@@ -5,7 +5,7 @@ date: 2009-10-01 13:54:00 +0300
 categories:
   - wf-4-0-beta-1
 tags:
-  - wf-4.0
+  - workflow-foundation
 ---
 Paraşütle atlamak gerçekten zevkli olsa gerek. Yerden binlerce feet (1 feet=30,48 cm) yüksekten atlayıp özgür bir şekilde kendinizi yer çekimi gücüne bırakıp, saniyeler boyunca serbest düşüşü yaşamak...Size yandaki resimde atlayan kişinin ben olduğumu söylemek isterdim ama ne yazık ki değilim. Olmayı istermiydim bilemiyorum. Oldukça yüksek görünüyor.
 

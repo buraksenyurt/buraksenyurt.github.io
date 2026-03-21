@@ -24,8 +24,8 @@ tags:
   - nTier
   - soa
   - soap
-  - rest
-  - wcf
+  - rest-api
+  - windows-communication-foundation
   - sonarqube
   - codecoverage
   - technicalDepth
@@ -59,7 +59,7 @@ tags:
   - thoughtworks
   - hype-tech
   - techRadar
-  - ssis
+  - sql-server-integration-services
   - IoT
   - yapayzeka
   - robotik

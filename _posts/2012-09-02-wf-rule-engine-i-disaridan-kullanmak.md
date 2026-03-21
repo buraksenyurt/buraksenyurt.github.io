@@ -8,7 +8,6 @@ categories:
 tags:
   - rule-engine
   - workflow-foundation
-  - workflow-foundation-4.0
   - wf-rule-engine
   - rule-set
   - ruleset

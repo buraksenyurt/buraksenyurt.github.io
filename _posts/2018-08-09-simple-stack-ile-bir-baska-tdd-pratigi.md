@@ -10,7 +10,7 @@ tags:
   - code-kata
   - unit-test
   - mstest
-  - c#
+  - csharp
   - .net-core
   - visual-studio-code
   - testing

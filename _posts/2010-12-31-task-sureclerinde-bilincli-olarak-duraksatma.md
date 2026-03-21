@@ -6,7 +6,7 @@ categories:
   - parallel-programming
 tags:
   - task-parallel-library
-  - c#-4.0
+  - csharp
   - .net-framework-4.0
   - parallel-programming
   - thread

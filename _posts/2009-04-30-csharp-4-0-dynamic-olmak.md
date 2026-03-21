@@ -5,7 +5,7 @@ date: 2009-04-30 15:02:00 +0300
 categories:
   - csharp-4-0
 tags:
-  - c#-4.0
+  - csharp
 ---
 Uzun bir süredir (son bir senelik zaman dilimi içerisinde) C# 4.0 ile birlike gelen yeniliklerden haberdarız. Şöyle bir kaç sene öncesini hatırlıyorum da...
 

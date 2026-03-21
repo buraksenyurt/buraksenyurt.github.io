@@ -6,8 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - rust-programming-language
-  - rust-pratikleri
+  - rust-lang
   - memory-management
   - stack
   - heap

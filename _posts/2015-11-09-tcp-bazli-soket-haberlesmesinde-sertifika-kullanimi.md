@@ -8,13 +8,11 @@ tags:
   - tcp
   - soap
   - microservice
-  - rest
+  - rest-api
   - http
   - makecert
   - SampleSslSocketCertificate
-  - X509Certificates
-  - X509Certificate2
-  - X509Store
+  - x-509-certificate
   - extension-methods
   - sesecurity
   - cryptography

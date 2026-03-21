@@ -13,7 +13,7 @@ tags:
   - query
   - update
   - crud
-  - c#
+  - csharp
 ---
 Bu makalemizde, OleDbDataAdapter sınıfının, veriler üzerindeki güncelleme işlemlerinin, veri kaynağına yansıtılması sırasında nasıl bir rol oynadığını ve kullanıldığını incelemeye çalışacağız. Önceki makalelerimizde belirttiğimiz gibi, OleDbDataAdapter nesnesi yardımıyla veri kaynağından, uygulamalarımızdaki bağlantısız katman nesnelerine veri kümelerini aktarmak amacıyla Fill metodunu kullanıyorduk. Diğer yandan, bağlantısız katman nesnelerimizin temsil ettiği veriler üzerinde yapılan değişiklikleri veritabanına göndermek istersek, Update metodunu kullanırız.
 

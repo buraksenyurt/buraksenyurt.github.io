@@ -9,12 +9,12 @@ tags:
   - generic-type
   - generic-constraints
   - expression
-  - func<t
+  - generic-func
   - k>
   - reflection
   - fluent-api
   - martin-fowler
-  - ruby
+  - ruby-lang
   - scala
   - mock-nesne
   - unit-test

@@ -5,8 +5,7 @@ date: 2015-08-06 09:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - range
 ---
 Range sınıfı ile başlangıç ve bitiş değerleri belli olan aralıklar tanımlanabilir. Bu aralığa ait değerler sayısal veya metinsel olabileceği gibi kullanıcı tanımlı sınıf örnekleri de olabilir (Bu benim için de henüz ileri seviye bir konu olduğundan ilerleyen günlerde değinmeye çalışacağım) Gelin bu aralıkların Ruby programlama dilinde nasıl kullanıldığına kısaca bakalım.

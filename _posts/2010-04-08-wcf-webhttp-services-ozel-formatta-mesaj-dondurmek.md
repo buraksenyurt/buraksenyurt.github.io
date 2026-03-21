@@ -6,10 +6,9 @@ categories:
   - wcf-eco-system
   - wcf-webhttp-services
 tags:
-  - wcf
-  - wcf-4.0
+  - windows-communication-foundation
   - webhttp-services
-  - restful
+  - rest-api
   - non-soap
   - wcf-webhttp-services
 ---

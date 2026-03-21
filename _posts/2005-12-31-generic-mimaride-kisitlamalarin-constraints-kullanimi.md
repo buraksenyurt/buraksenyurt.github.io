@@ -5,7 +5,7 @@ date: 2005-12-31 08:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-2.0
+  - csharp
   - generics
   - constraints
 ---

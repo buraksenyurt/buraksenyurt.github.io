@@ -5,7 +5,7 @@ date: 2010-03-23 22:35:00 +0300
 categories:
   - entity-framework
 tags:
-  - ado.net-entity-framework
+  - entity-framework
 ---
 Bazen bebek adımları ile ilerlememiz gerekir. Özellikle yazılım alanında bazı konuları öğrenirken işin teorisinden önce pratik bir örneği adım adım geliştirmek son derece faydalıdır. Ado.Net Entity Framework ile ilişkili inclemelerimize devam edeceğimiz bu yazımızda bebek adımları ile ilerleyeceğiz.
 

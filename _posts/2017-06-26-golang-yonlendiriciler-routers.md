@@ -6,7 +6,6 @@ categories:
   - golang
 tags:
   - golang
-  - go-programming-language
   - web-programming-model
   - http
   - router

@@ -6,7 +6,7 @@ categories:
   - ado-net-data-services
 tags:
   - ado.net-data-services
-  - wpf
+  - windows-presentation-foundation
   - silverlight
   - databinding
   - odata

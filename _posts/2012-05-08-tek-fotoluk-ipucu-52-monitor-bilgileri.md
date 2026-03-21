@@ -5,7 +5,7 @@ date: 2012-05-08 09:10:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - windows-forms
   - monitor
   - screen

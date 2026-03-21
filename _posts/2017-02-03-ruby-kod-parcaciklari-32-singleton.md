@@ -5,8 +5,7 @@ date: 2017-02-03 21:23:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - ruby-kod-parçacıkları
+  - ruby-lang
   - design-patterns
   - tasarım-kalıpları
   - singleton-design-pattern

@@ -5,7 +5,7 @@ date: 2005-06-22 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-2
+  - csharp
   - value-types
   - nullable
 ---

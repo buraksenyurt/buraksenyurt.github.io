@@ -5,7 +5,7 @@ date: 2006-10-11 03:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - gethashcode
   - value-types
 ---

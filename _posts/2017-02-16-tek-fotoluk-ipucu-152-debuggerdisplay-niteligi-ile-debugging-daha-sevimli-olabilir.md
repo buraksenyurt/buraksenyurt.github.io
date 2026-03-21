@@ -5,7 +5,7 @@ date: 2017-02-16 21:29:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - tek-fotoluk-ipucu
   - attribute
   - debug

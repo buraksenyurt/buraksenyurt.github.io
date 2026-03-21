@@ -6,10 +6,9 @@ categories:
   - wcf-eco-system
   - wcf-webhttp-services
 tags:
-  - wcf-4.0
-  - wcf
+  - windows-communication-foundation
   - wcf-webhttp-services
-  - rest
+  - rest-api
 ---
 WCF WebHttp Service'leri ile ilişkili yazılarımıza kaldığımız yerden devam ediyoruz. Bu yazımızda ETag (Entity Tag) kullanarak sunucu ile istemci arasındaki veri trafiğini nasıl azaltabileceğimizi incelemeye çalışacağız. Öncelikle istemci ile servis arasındaki iletişimi düşünerek ilerlemeye çalışalım. İstemci, sunucu üzerinde yer alan bir operasyon için talepte bulunduğunda bir cevap üretilecek ve buna bağlı bir içerik verisi istemci tarafına indirilecektir.
 

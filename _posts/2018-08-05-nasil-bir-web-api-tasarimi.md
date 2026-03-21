@@ -7,8 +7,7 @@ categories:
 tags:
   - web-api
   - asp.net-web-api
-  - restful
-  - rest-based-services
+  - rest-api
   - http
   - post
   - put

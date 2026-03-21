@@ -6,11 +6,10 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - dllimport
+  - dll-import
   - win-api
   - internet-connection
   - wininet.dll
-  - dll-import
   - dll
   - interop-services
 ---

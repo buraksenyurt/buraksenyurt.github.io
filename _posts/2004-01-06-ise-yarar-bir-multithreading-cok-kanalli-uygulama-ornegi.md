@@ -5,7 +5,7 @@ date: 2004-01-06 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - thread
   - multi-thread
 ---

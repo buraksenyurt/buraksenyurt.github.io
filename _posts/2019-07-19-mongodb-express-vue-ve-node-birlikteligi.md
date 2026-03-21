@@ -14,7 +14,7 @@ tags:
   - npm
   - curl
   - webpack
-  - rest
+  - rest-api
   - http
   - crud
   - mongoose

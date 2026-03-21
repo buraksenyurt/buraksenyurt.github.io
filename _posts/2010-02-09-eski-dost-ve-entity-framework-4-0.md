@@ -5,7 +5,7 @@ date: 2010-02-09 07:28:00 +0300
 categories:
   - entity-framework
 tags:
-  - ado.net-entity-framework
+  - entity-framework
 ---
 Bildiğiniz üzere.Net Framework 4.0 ve Visual Studio 2010 sürümlerinin çıkmasına az bir zaman kaldı (Hatta yarın RC sürümü herkese açık olacak). Blog yazısını hazırladığım zaman itibariyle Microsoft'taki güvenilir kaynaklar ve MSDN yazarlarından edinilen bilgilere göre, sürümün Nisan 2010 içerisinde çıkması bekleniyor. Tabi yeni bir sürüm denilince eski sürüm ile aradaki farklılıkları bilmek, nereden nereye gelindiği ve nelerin düzeltildiğini öğrenmek, beklentilerin karşılanıp karşılanmadığına bakmak oldukça önemli. Bende buna istinaden yazımızın ilerleyen kısımlarında, Ado.Net Entity Framework 4.0 ile bir önceki versiyonu arasında, sorgu teknikleri açısından oluşan farkları aktarmaya çalışıyor olacağım.
 

@@ -8,7 +8,7 @@ tags:
   - ado.net
   - ParameterDirection
   - sql
-  - enum
+  - enums
   - stored-procedures
   - database
 ---

@@ -9,7 +9,7 @@ tags:
   - typescript
   - html
   - javascript
-  - c#
+  - csharp
   - component
   - vs-code
   - ubuntu

@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - extension-method
+  - extension-methods
   - xelement
   - reflection
 ---

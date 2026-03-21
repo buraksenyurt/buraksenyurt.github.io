@@ -5,7 +5,7 @@ date: 2016-10-18 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - tek-fotoluk-ipucu
   - find-in-files
 ---

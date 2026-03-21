@@ -5,8 +5,8 @@ date: 2015-07-31 16:00:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
-  - programming
+  - ruby-lang
+  - programlama
   - oop
   - newEra
 ---

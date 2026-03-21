@@ -7,7 +7,7 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - dynamic
-  - c#
+  - csharp
   - json
   - serialization
   - json.net

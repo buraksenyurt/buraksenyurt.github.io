@@ -5,7 +5,7 @@ date: 2009-04-16 03:41:00 +0300
 categories:
   - entity-framework
 tags:
-  - ado.net-entity-framework
+  - entity-framework
   - linq-to-sql
 ---
 Bildiğiniz üzere uzun bir süre önce Microsoft, LINQ to SQL yerine Ado.Net Entity Framework ile ilerleme kararı aldı. Bu konu ile ilişkili olaraktan okuduğum hemem hemen bütün kitaplarda Ado.Net'in geleceğinde önemli bir yere sahip olan Ado.Net Entity Framework alt yapısının geliştiriciler tarafından asla ihmal edilmemesi gerektiğide sıkça vurgulanmakta. Peki günlüğüme konu olan mesele nedir?

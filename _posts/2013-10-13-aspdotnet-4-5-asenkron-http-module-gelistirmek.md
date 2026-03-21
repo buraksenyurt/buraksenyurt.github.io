@@ -5,7 +5,6 @@ date: 2013-10-13 11:00:00 +0300
 categories:
   - aspnet-4-5
 tags:
-  - asp.net-4.5
   - asp.net
   - http-handler
   - async

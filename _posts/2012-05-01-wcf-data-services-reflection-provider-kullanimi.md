@@ -5,7 +5,7 @@ date: 2012-05-01 01:25:00 +0300
 categories:
   - wcf-data-services
 tags:
-  - wcf
+  - windows-communication-foundation
   - wcf-data-services
   - reflection-provider
 ---

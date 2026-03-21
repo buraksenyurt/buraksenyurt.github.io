@@ -5,7 +5,7 @@ date: 2008-03-21 04:00:00 +0300
 categories:
   - csharp-3-0
 tags:
-  - c#-3.0
+  - csharp
   - extension-methods
   - linq
 ---

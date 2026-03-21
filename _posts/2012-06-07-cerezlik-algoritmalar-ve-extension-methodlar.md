@@ -11,7 +11,7 @@ tags:
   - ceaser-chipper
   - palindromic-words
   - palindromic-numbers
-  - c#
+  - csharp
 ---
 Akademik yıllarımızda çoğumuz karmaşık matematik algoritmaları ile uğraşmak durumunda kalmışızdır (Sınav stresini hatırlamak bile istemiyorum) Özellikle veri yapıları ve algoritmalar (Data Structures and Alogirthms) veya Numeric Analiz gibi derslerde yoğun algoritma tasarımları üzerinde çalışılmaktadır. Doğruyu söylemek gerekirse ülkemizde bu dersleri layıkıyla veren kurum sayısı oldukça azdır. Konular genellikle sırlama algoritmalarının (özellikle Quick Sort'un) ötesine pek geçmemektedir. En fazla yüksek lisans öğreniminde farklı konulara girilmesi söz konusudur.
 

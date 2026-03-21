@@ -11,7 +11,7 @@ tags:
   - swagger-ui
   - OpenAPI
   - api
-  - xml-documentation
+  - xml
   - help-standards
 ---
 Dokümantasyon sektörümüzün olmazsa olmazları arasında yer alan bir konu. Ancak güncelliğini korumak ve okunabilirliğini sağlamak da bir o kadar zor olabiliyor. Ayrıca dokümantasyon hazırlamak da çoğumuza bir işkence gibi geliyor. Yine de belirli alanlarda tüketicilerin iyiliği için bu dokümantasyonları hazırlamak boynumuzun borcu diye düşünüyorum. Devasa kütüphanalerden oluşan uygulamalarda gerçekten dokümantasyon başlı başına bir işken daha küçük alanlarda etkili kullanabileceğimiz yerleri de var.

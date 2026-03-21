@@ -5,7 +5,6 @@ date: 2017-06-04 09:25:00 +0300
 categories:
   - golang
 tags:
-  - go-programming-language
   - golang
   - embedded-types
   - struct

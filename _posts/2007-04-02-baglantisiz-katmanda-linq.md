@@ -5,7 +5,7 @@ date: 2007-04-02 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#-3.0
+  - csharp
   - linq
   - language-integrated-query
   - dlinq

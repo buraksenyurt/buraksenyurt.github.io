@@ -6,8 +6,8 @@ categories:
   - rest
   - ruby
 tags:
-  - ruby
-  - rest-services
+  - ruby-lang
+  - rest-api
   - sinatra
   - sqlite
   - service
@@ -17,7 +17,7 @@ tags:
   - restsharp
   - nuget
   - .net
-  - c#
+  - csharp
 ---
 Artık belli bir platforma bağlı kalmadan farklı uygulamaları bir araya getirip konuşturabiliyor, büyük ölçekli sistemleri uçtan uca bağlayarak süreçler işletebiliyoruz. Burada programlama dillerinin üzerine oturduğu çatıların (Frameworks) büyük avantajlar sağladığı ve işleri belirli ölçüde kolaylaştırdığı aşikar.
 

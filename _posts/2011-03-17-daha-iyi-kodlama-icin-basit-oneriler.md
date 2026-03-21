@@ -5,8 +5,7 @@ date: 2011-03-17 07:01:00 +0300
 categories:
   - csharp
 tags:
-  - c#
-  - c#-temelleri
+  - csharp
   - .net-framework
 ---
 Bilenler bilir, uzun süredir.Net Framework 2.0 üzerinde yazılmış ve Visual Studio 2005 ortamında geliştirilmeye devam edilen bir bankacılık uygulamasında görevliyim. Buradaki işim müşterinin yeni isteklerini sisteme katmak/katmaya çalışmak olarak düşünülebilir

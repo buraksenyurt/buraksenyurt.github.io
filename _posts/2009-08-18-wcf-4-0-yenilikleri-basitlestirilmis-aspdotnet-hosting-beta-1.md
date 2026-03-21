@@ -5,8 +5,7 @@ date: 2009-08-18 03:10:00 +0300
 categories:
   - wcf-4-0-beta-1
 tags:
-  - wcf-4.0
-  - wcf
+  - windows-communication-foundation
 ---
 WCF 4.0 ile birlikte gelen yenilikler bitmek bilmiyor.
 

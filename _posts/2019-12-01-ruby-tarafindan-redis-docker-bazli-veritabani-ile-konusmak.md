@@ -7,7 +7,7 @@ categories:
 tags:
   - redis
   - nosql
-  - ruby
+  - ruby-lang
   - docker
   - gem
 ---

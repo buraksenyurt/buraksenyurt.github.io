@@ -8,7 +8,7 @@ tags:
   - ado.net
   - sqldatareader
   - .net
-  - c#
+  - csharp
 ---
 Bir önceki makalemizde SqlDataReader sınıfını incelemeye başlamıştık Listeleme amaçlı veri kümelerinin görüntülemesinde performans açısından etkin bir rol oynadığından bahsetmiştik. Bugünkü makalemizde, SqlDataReader sınıfının faydalı diğer özelliklerinden bahsedeceğiz. Öncelikle, bir SqlDataReader nesnesinin, geçerli ve açık bir SqlConnection nesnesi üzerinde çalışan bir SqlCommand nesnesi yardımıyla oluşturulduğunu hatırlayalım.
 

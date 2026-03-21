@@ -8,9 +8,7 @@ categories:
   - csharp-4-0
 tags:
   - dynamic-language-runtime
-  - c#-4.0
-  - c#-3.0
-  - c#
+  - csharp
 ---
 Ayrıntılar detaylarda saklıdır. Bu cümleyi çok severim. Sevdiğim özlü sözler arasındadır. Gerçel bir nesnenin ne kadar kaliteli olduğunu anlamak için detaylarına bakmak gerekir. İşçiliğine, kullanılan malzemeye, malzemelerin uyumuna vs...Hatta benzer diğerleri ile olan kalite farkını anlamak için bile. Çok doğal olarak yazılım dünyasında da bir takım konuların anlaşılabilmesi, kavranabilmesi, benzerleri ile olan farklarının irdelenebilmesi için mutlaka detaylara bakmak, ama sıkılmadan bakmak gerekir. Aynen bu günkü yazımızda yapacağımız gibi.
 

@@ -6,7 +6,7 @@ categories:
   - wcf
   - wcf-4-0
 tags:
-  - wcf
+  - windows-communication-foundation
   - jquery
 ---
 Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır.

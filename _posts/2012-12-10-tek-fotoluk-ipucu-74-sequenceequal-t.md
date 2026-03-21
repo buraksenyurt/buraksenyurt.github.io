@@ -8,8 +8,8 @@ tags:
   - linq
   - generics
   - sequenceequal
-  - list<t>
-  - c#
+  - generic-list
+  - csharp
   - extension-methods
   - iequalitycomparer
   - comparer

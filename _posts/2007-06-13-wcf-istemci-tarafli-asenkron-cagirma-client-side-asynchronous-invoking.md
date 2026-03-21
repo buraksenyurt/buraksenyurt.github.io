@@ -5,7 +5,7 @@ date: 2007-06-13 12:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
+  - windows-communication-foundation
   - asynchronous-programming
   - async
   - client-side-invoke

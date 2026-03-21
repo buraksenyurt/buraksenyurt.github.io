@@ -5,7 +5,7 @@ date: 2016-10-20 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - io
   - temp-file
   - tek-fotoluk-ipucu

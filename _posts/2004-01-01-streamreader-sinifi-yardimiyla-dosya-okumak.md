@@ -5,8 +5,8 @@ date: 2004-01-01 12:00:00 +0300
 categories:
   - csharp
 tags:
-  - Ado.Net
-  - c#
+  - ado.net
+  - csharp
   - .net
   - stream
 ---

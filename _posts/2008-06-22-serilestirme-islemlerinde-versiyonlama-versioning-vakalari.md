@@ -5,7 +5,6 @@ date: 2008-06-22 12:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
 ---
 Bir önceki makalemizde WCF (Windows Communication Foundation) mimarisinin kullandığı serileştirici tiplerden bahsetmiş ve son olarak versiyonlama (Versioning) vakalarına değinmiştik. Bu makalemizde ise versiyonlama vakalarının örnek uygulama üzerinden test ederek analiz etmeye çalışacağız. Versiyonlama vakalarının merkezinde veri sözleşmesi (Data Contract) farklılıkları yer almaktadır. Daha öncedende değinildiği üzere üç farklı versiyonlama vakası bulunmaktadır. New Members, Missing Members, Round-Trip.

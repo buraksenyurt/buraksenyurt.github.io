@@ -6,11 +6,9 @@ categories:
   - dotnet-core
 tags:
   - cqrs
-  - c#
+  - csharp
   - entity-framework
-  - rest
   - rest-api
-  - rest-based-services
   - mediatr
   - mediator
 ---

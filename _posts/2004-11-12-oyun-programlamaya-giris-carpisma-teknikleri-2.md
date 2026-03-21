@@ -5,7 +5,7 @@ date: 2004-11-12 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - game-programming
   - pisagor
   - matematik

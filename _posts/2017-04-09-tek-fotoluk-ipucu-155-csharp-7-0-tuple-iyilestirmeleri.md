@@ -5,7 +5,7 @@ date: 2017-04-09 21:42:00 +0300
 categories:
   - csharp-7-0
 tags:
-  - c#-7.0
+  - csharp
   - tuple
   - tuple<>
   - deconstruction

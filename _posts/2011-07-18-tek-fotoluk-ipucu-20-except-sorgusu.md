@@ -7,9 +7,8 @@ categories:
   - linq
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - linq
-  - c#-temelleri
 ---
 Hemen hepimiz LINQ sorgularını kullanıyoruz (Tabi aramızda halen.Net 2.0 ve altı ile çalışan zavallılar da yok değil
 

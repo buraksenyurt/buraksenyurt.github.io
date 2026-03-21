@@ -11,7 +11,7 @@ tags:
   - javascriptobjectnotation
   - .net
   - newtonsoft
-  - c#
+  - csharp
   - serialization
   - deserialization
   - JsonSerializationException

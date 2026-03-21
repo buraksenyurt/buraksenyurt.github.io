@@ -6,9 +6,9 @@ categories:
   - csharp
   - ruby
 tags:
-  - c#
-  - ruby
-  - algorithms
+  - csharp
+  - ruby-lang
+  - algoritma
   - levenshtein-distance
   - hamming-distance
   - extension-methods

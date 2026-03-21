@@ -8,7 +8,6 @@ tags:
   - node.js
   - async
   - asynchronous-programming
-  - rest
   - rest-api
   - web-service
   - mongodb

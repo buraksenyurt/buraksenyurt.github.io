@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Bir süredir tasarım prensiplerini (Design Principles) incelemeye çalışıyoruz. Tabiki prensipler iyi bir yazılım modeli ve geliştirilmesi için yeterli değildir. Çoğu prensip kendi içerisinde çeşitli tasarım desenlerini (Design Patterns) uygulamaktadır. Bu nedenle ara sıra tasarım deseneleride bakmakta, öğrenmekte, daha önceden bakmışsak bile sık sık tekrar etmekte yarar var. Ben bu günkü yazımda sizlere davranışsal (Behavioral) kalıplardan olan Strategy tasarım desenini aktarmaya çalışacağım.
 

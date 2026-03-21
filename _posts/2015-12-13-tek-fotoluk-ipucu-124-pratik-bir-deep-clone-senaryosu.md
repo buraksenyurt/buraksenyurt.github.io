@@ -5,7 +5,7 @@ date: 2015-12-13 17:00:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - c#
+  - csharp
   - deep-clone
   - deep-copy
   - shallow-copy

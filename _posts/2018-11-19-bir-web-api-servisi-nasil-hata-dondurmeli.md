@@ -10,7 +10,7 @@ tags:
   - ietf
   - problem-details
   - .net-core
-  - c#
+  - csharp
   - http-status-codes
   - nuget
   - mvc

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Kurumsal Yazılımcının Oyun Geliştirme ile İmtihanı"
 date: 2024-02-28 16:03:00 +0300
@@ -9,7 +9,7 @@ tags:
   - rust
   - unity-framework
   - unity
-  - c#
+  - csharp
   - matematik
   - oyun-matematiği
   - oyun-programlama

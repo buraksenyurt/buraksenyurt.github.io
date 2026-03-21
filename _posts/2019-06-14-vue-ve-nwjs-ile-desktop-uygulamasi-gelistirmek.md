@@ -14,7 +14,7 @@ tags:
   - node.js
   - .net-core
   - web-api
-  - rest
+  - rest-api
   - cors
   - dotnet
   - chromium

@@ -6,8 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - rust-pratikleri
-  - rust-programming-language
+  - rust-lang
   - state-design-pattern
   - oop
   - trait

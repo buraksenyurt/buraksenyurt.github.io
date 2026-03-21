@@ -5,7 +5,6 @@ date: 2014-06-19 17:20:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
   - proxy
   - http

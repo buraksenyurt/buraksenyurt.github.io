@@ -6,13 +6,12 @@ categories:
   - dotnet-core
 tags:
   - linkedin
-  - c#
+  - csharp
   - .net-core
   - oauth-2.0
   - access-token
   - postman
   - rest-api
-  - restful
   - web-api
   - http-get
   - http-post

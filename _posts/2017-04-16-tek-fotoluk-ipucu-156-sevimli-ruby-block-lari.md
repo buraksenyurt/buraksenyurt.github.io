@@ -5,8 +5,7 @@ date: 2017-04-16 15:38:00 +0300
 categories:
   - ruby
 tags:
-  - ruby-kod-parçacıkları
-  - ruby
+  - ruby-lang
   - block
   - block_given?
   - find_all

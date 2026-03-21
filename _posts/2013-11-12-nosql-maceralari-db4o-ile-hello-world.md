@@ -10,7 +10,7 @@ tags:
   - nosql
   - not-only-sql
   - .net
-  - c#
+  - csharp
   - java
   - linq
   - acid

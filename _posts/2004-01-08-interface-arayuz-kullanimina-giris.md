@@ -5,7 +5,7 @@ date: 2004-01-08 10:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - interface
   - oop
   - inheritance

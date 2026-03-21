@@ -5,7 +5,7 @@ date: 2016-11-07 21:28:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - unit-test
   - test-framework
   - assertion

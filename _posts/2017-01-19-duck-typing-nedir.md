@@ -5,7 +5,7 @@ date: 2017-01-19 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby
+  - ruby-lang
   - type-systems
   - duck-typing
   - static-languages

@@ -10,7 +10,7 @@ tags:
   - IoT
   - mvc
   - asp.net
-  - rest
+  - rest-api
   - NancyHost
   - http
   - get

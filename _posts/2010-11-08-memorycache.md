@@ -5,7 +5,7 @@ date: 2010-11-08 03:34:00 +0300
 categories:
   - aspnet-4-0
 tags:
-  - asp.net-4.0
+  - asp.net
   - caching
   - windows-forms
   - memorycache

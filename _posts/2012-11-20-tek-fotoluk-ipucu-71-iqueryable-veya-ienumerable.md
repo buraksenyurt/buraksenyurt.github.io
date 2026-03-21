@@ -7,7 +7,7 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - entity-framework
-  - iqueryable<t>
+  - generic-iqueryable
 ---
 Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğrafı bir inceleyin öncelikle ve nasıl bir fark olabileceğini düşünmeye çalışın. Yani kafanızda kod parçasını debug etmeye gayret edin.
 

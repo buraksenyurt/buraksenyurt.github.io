@@ -5,7 +5,7 @@ date: 2007-04-11 03:00:00 +0300
 categories:
   - csharp
 tags:
-  - C#
+  - csharp
   - attribute
   - object-oriented-programming
   - reflection

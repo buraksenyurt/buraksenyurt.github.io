@@ -5,7 +5,7 @@ date: 2009-05-07 15:25:00 +0300
 categories:
   - tasarim-kaliplari-design-patterns
 tags:
-  - c#
+  - csharp
   - design-patterns
 ---
 Kısa bir aradan sonra.Net Tv görsel derslerimize devam ediyorum. [Bu görsel dersimizde](http://nedirtv.com/video/design-patterns-proxy), son derece basit ve oldukça kullanışlı tasarım desenlerinden birisi olan Proxy kalıbını incelemeye çalışıyoruz. Tasarım kalıpları (Design Patterns) ile ilişkili diğer görsel derslerimide, aşağıdaki adreslerden indirebilir ve izleyebilirsiniz.

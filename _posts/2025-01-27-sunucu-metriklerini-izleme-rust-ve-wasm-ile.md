@@ -6,11 +6,9 @@ categories:
   - rust
 tags:
   - rust
-  - rust-programming-language
   - rust-lang
   - wasm
   - web-assembly
-  - rest
   - rest-api
   - WebAssembly
   - webpack

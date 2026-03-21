@@ -6,9 +6,8 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - c#
-  - c#-temelleri
-  - icomparer<t>
+  - csharp
+  - generic-comparer
   - list
   - sorting
   - interface

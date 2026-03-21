@@ -5,8 +5,7 @@ date: 2026-02-15 19:31:00 +0300
 categories:
   - Zig
 tags:
-  - zig
-  - zigLang
+  - zig-lang
   - cSharp
   - dotnet
   - rust

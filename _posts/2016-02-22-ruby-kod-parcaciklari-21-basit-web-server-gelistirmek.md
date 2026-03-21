@@ -7,7 +7,7 @@ categories:
 tags:
   - tcpserver
   - socket
-  - ruby
+  - ruby-lang
   - socket-programming
   - http
   - http-header

@@ -5,7 +5,6 @@ date: 2009-01-16 10:00:00 +0300
 categories:
   - wcf
 tags:
-  - wcf
   - windows-communication-foundation
 ---
 Uzun zamandır Windows Communication Foundation (WCF) konulu bir araştırma üzerinde durmamıştık. Aslında WCF 4.0 ve WF 4.0 ile ilgili yeniliklerin uzun süredir konuşulduğu şu günlerde, WCF tarafında oldukça önemli bir yere sahip olan ve hatta Workflow Foundation açısından da değer arz eden bir konuya değiniyor olacağız. Dayanıklı WCF Servisleri (Durable WCF Services).

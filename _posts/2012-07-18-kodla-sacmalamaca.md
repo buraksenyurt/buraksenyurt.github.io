@@ -5,10 +5,9 @@ date: 2012-07-18 05:05:00 +0300
 categories:
   - csharp
 tags:
-  - c#
+  - csharp
   - xml
-  - programming
-  - c#-temelleri
+  - programlama
 ---
 Programlamaya ister yeni başlamış olun ister yıllardır bu işin içerisinde bulunun, hızlı çözüm üretmek, analitik düşünmek ve olabildiğince işe yarar parçalar çıkartmak en büyük hedeflerimizden birisi olmalıdır. Elbette yıllar içerisinde elde edinilen, kazanılan tecrübe ve bilgi birikimine bağlı olarak kendinize ait bir geliştirme (Development) tarzı da ister istemez oluşacak ve hatta sonrasında değiştirilemez/değiştirilmesi zor bir alışkanlık haline gelecektir.
 

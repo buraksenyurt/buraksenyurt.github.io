@@ -5,7 +5,7 @@ date: 2013-09-01 20:45:00 +0300
 categories:
   - data-structures-algorithms
 tags:
-  - c#
+  - csharp
   - string
   - extension-methods
   - np-algorithms

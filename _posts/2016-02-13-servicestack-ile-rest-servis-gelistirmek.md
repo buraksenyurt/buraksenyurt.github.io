@@ -5,10 +5,10 @@ date: 2016-02-13 07:00:00 +0300
 categories:
   - rest
 tags:
-  - rest
+  - rest-api
   - service
   - service-oriented-architecture
-  - c#
+  - csharp
   - servicestack
   - oop
   - soapui

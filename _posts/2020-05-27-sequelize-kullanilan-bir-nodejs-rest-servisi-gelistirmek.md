@@ -8,7 +8,7 @@ tags:
   - nodejs
   - docker
   - javascript
-  - rest
+  - rest-api
   - sequelize
   - epxress
 ---

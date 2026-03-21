@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - oop
-  - c#
+  - csharp
 ---
 Görsel tasarım işinden pek anladığımı söyleyemem. Hatta ne zaman büyük bir hevesle Win Forms yada Asp.Net ön yüzü tasarlamaya kalksam renkleri bir türlü tutturamayak başladığım süreci hep yarım bırakmak zorunda kalırım. Bu sebepten genellikle arka plandaki iş mantıkları ile uğraşmayı tercih ederim. Sanırım WCF tarafında geliştirme yapmayı sevmemin en büyük nedenide bu olsa gerek. Anlaşılacağı üzere sanatsal yeteneğim pek yok. Hatta evimizin tüm dekorasyonu sevgili eşime aittir. Ama Decoration tasarım deseni deyince sanıyorumki anlatabilecek, paylaşabilecek bir kaç bilgim olabilir. İşte bu günkü konumuz Structural desenlerden olan Decorator Tasarım kalıbı.
 

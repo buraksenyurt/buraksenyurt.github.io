@@ -11,7 +11,7 @@ tags:
   - fastify
   - swagger
   - web-api
-  - rest
+  - rest-api
   - web-service
   - postman
   - nodemon

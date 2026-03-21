@@ -14,7 +14,6 @@ tags:
   - css
   - sqlite
   - entity-framework
-  - entity-framework-core
   - html
   - mvc
   - datacontext
@@ -22,7 +21,7 @@ tags:
   - dependency-injection
   - dto
   - data-transfer-object
-  - rest
+  - rest-api
   - project-management
   - waterfall
 ---

@@ -5,9 +5,7 @@ date: 2016-12-09 21:30:00 +0300
 categories:
   - ruby
 tags:
-  - ruby-kod-parçacıkları
-  - rubyist
-  - ruby
+  - ruby-lang
   - mutex
   - multi-thread
   - multithreading

@@ -9,7 +9,7 @@ tags:
   - biginteger
   - system.numerics
   - .net-framework-4.0
-  - c#-4.0
+  - csharp
   - visual-studio-2010-ultimate
 ---
 [Monster Truck](http://en.wikipedia.org/wiki/Monster_truck) yarışlarını izleyen var mıdır bilemiyorum. Bir zamanlar Eurosport kanalında sık sık izler ve bu devasa, kocaman araçların, önlerinde ufacık kalan (ki o araçların çoğu avrupada kullanılan binek otoların çoğundan en ve boyca büyüktür) araçların üstünden atlarken onları nasıl ezdiklerine ağzım açık bakardım.

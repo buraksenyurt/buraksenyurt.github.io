@@ -15,7 +15,6 @@ tags:
   - storage
   - cloud-computing
   - StorageClient
-  - restful
   - api
   - json
 ---

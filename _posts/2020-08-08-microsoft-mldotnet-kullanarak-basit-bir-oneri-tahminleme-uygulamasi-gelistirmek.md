@@ -7,7 +7,7 @@ categories:
 tags:
   - ml.net
   - .net-core
-  - c#
+  - csharp
   - machine-learning
   - entity-framework
   - classification
