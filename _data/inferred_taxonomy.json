@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T19:58:48Z",
+  "generated_at": "2026-03-21T20:07:27Z",
   "posts": {
     "/2003/11/08/stored-procedure-yardimiyla-yeni-bir-kayit-eklemek/": {
       "title": "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek",
@@ -6053,7 +6053,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0-beta-2",
+        ".net-framework",
         "csharp",
         "dotnet",
         "dynamic-language-runtime",
@@ -6447,7 +6447,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "http"
       ]
@@ -6460,7 +6460,7 @@
         "Oyun Programlama"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "game-dev",
@@ -6487,7 +6487,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "http"
@@ -6500,7 +6500,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet"
       ]
@@ -6856,7 +6856,7 @@
         "Algoritmalar"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "algorithms",
         "csharp",
         "dotnet",
@@ -6922,7 +6922,7 @@
         "WPF"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "multithreading",
         "parallel-programming",
@@ -7252,7 +7252,7 @@
         "Tasarim Desenleri"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "deadlock",
         "design-patterns",
@@ -7563,7 +7563,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "base-class-library",
         "csharp",
         "dotnet",
@@ -7722,7 +7722,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "memory-mapped-files",
@@ -7737,7 +7737,7 @@
         "Tasarim Desenleri"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "design-patterns",
         "multithreading",
@@ -7754,7 +7754,7 @@
         "Tasarim Desenleri"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "design-patterns",
         "multithreading",
@@ -7802,7 +7802,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "multithreading",
@@ -7818,7 +7818,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "http",
         "interlocked",
@@ -8065,7 +8065,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "memory-mapped-files",
@@ -8079,7 +8079,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "biginteger",
         "csharp",
         "dotnet",
@@ -8159,7 +8159,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "out-parameters",
@@ -8258,7 +8258,6 @@
       ],
       "tags": [
         ".net-framework",
-        ".net-framework-4.0",
         "csharp",
         "stopwatch"
       ]
@@ -8563,7 +8562,7 @@
         "SQL"
       ],
       "tags": [
-        ".net-framework-4.0",
+        ".net-framework",
         "csharp",
         "dotnet",
         "entity-framework",
@@ -9450,7 +9449,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.5",
+        ".net-framework",
         "collections",
         "comparer",
         "dotnet"
@@ -9463,7 +9462,7 @@
         ".NET"
       ],
       "tags": [
-        ".net-framework-4.5",
+        ".net-framework",
         "compression",
         "dotnet",
         "system.io.compression",
@@ -10025,7 +10024,7 @@
         "Veri Erisimi"
       ],
       "tags": [
-        ".net-framework-4.5",
+        ".net-framework",
         "asp.net-web-api",
         "aspnet",
         "async",
@@ -10247,8 +10246,7 @@
         "WPF"
       ],
       "tags": [
-        ".net-4.5",
-        ".net-framework-4.5",
+        ".net-framework",
         "async",
         "await",
         "csharp",
@@ -10333,7 +10331,7 @@
         "WPF"
       ],
       "tags": [
-        ".net-framework-4.5",
+        ".net-framework",
         "aspnet",
         "async",
         "asynchronous-programming",
@@ -18317,7 +18315,6 @@
         "Docker"
       ],
       "tags": [
-        ".net-5",
         ".net-core",
         "aspnet",
         "azure",
@@ -18354,7 +18351,6 @@
         "ASP.NET"
       ],
       "tags": [
-        ".net-5",
         ".net-core",
         "asp.net-mvc",
         "aspnet",
@@ -18386,7 +18382,6 @@
         "Docker"
       ],
       "tags": [
-        ".net-5",
         "asp.net-core",
         "asp.net-core-mvc",
         "aspnet",
@@ -18501,7 +18496,6 @@
         "SQL"
       ],
       "tags": [
-        ".net-5",
         "asp.net-web-api",
         "blazor",
         "csharp",
@@ -31611,35 +31605,6 @@
     ]
   },
   "tags": {
-    ".net-4.5": [
-      {
-        "url": "/2013/01/01/wcf-4-5-task-based-asynchronous-operasyonlar/",
-        "title": "WCF 4.5–Task Based Asynchronous Operasyonlar",
-        "date": "2013-01-01T13:51:00+03:00"
-      }
-    ],
-    ".net-5": [
-      {
-        "url": "/2021/05/14/effective-engine-bir-uzay-macerasi/",
-        "title": "Effective Engine — Bir Uzay Macerası",
-        "date": "2021-05-14T18:22:00+03:00"
-      },
-      {
-        "url": "/2021/04/29/aspdotnet-core-dependency-injection-turleri/",
-        "title": "Asp.Net Core - Dependency Injection Türleri",
-        "date": "2021-04-29T11:03:00+03:00"
-      },
-      {
-        "url": "/2021/04/25/aspdotnet-core-a-nasil-merhaba-deriz/",
-        "title": "Asp.Net Core'a Nasıl Merhaba Deriz?",
-        "date": "2021-04-25T09:00:00+03:00"
-      },
-      {
-        "url": "/2021/03/30/tie-fighter-degil-project-tye/",
-        "title": "Tie Fighter Değil, Project Tye!",
-        "date": "2021-03-30T15:00:00+03:00"
-      }
-    ],
     ".net-core": [
       {
         "url": "/2021/04/25/aspdotnet-core-a-nasil-merhaba-deriz/",
@@ -31966,6 +31931,31 @@
         "date": "2013-08-18T11:48:00+03:00"
       },
       {
+        "url": "/2013/01/25/net-framework-4-5-asenkron-io-islemleri/",
+        "title": ".Net Framework 4.5 Asenkron IO İşlemleri",
+        "date": "2013-01-25T02:27:00+03:00"
+      },
+      {
+        "url": "/2013/01/01/wcf-4-5-task-based-asynchronous-operasyonlar/",
+        "title": "WCF 4.5–Task Based Asynchronous Operasyonlar",
+        "date": "2013-01-01T13:51:00+03:00"
+      },
+      {
+        "url": "/2012/11/14/aspdotnet-web-api-leri-aspx-den-asenkron-cagirmak/",
+        "title": "Asp.Net Web API’ leri ASPX’ den Asenkron Çağırmak",
+        "date": "2012-11-14T00:00:00+03:00"
+      },
+      {
+        "url": "/2012/06/04/tek-fotoluk-ipucu-54-onda-75/",
+        "title": "Tek Fotoluk İpucu–54 Onda 75",
+        "date": "2012-06-04T15:16:00+03:00"
+      },
+      {
+        "url": "/2012/06/04/tek-fotoluk-ipucu-54bucuk/",
+        "title": "Tek Fotoluk İpucu–54Buçuk",
+        "date": "2012-06-04T11:12:00+03:00"
+      },
+      {
         "url": "/2011/12/05/tek-fotoluk-ipucu-43-active-directory-connection-string-bilgisini-almak/",
         "title": "Tek Fotoluk İpucu-43(Active Directory Connection String Bilgisini Almak)",
         "date": "2011-12-05T12:10:00+03:00"
@@ -31991,6 +31981,11 @@
         "date": "2011-10-18T15:11:00+03:00"
       },
       {
+        "url": "/2011/09/13/tek-fotoluk-ipucu-30-entity-sorgusundan-excel-dosyasina/",
+        "title": "Tek Fotoluk İpucu-30 (Entity Sorgusundan Excel Dosyasına)",
+        "date": "2011-09-13T10:30:00+03:00"
+      },
+      {
         "url": "/2011/07/20/tek-fotoluk-ipucu-21-fileinfo-gzipstream-ve-extension/",
         "title": "Tek Fotoluk İpucu-21(FileInfo,GZipStream ve Extension)",
         "date": "2011-07-20T08:28:00+03:00"
@@ -32011,41 +32006,14 @@
         "date": "2011-06-23T12:40:00+03:00"
       },
       {
-        "url": "/2011/06/22/tek-fotoluk-ipucu-2-stacktrace-ve-calisma-zamani-metod-bilgisi/",
-        "title": "Tek Fotoluk İpucu - 2 (StackTrace ve Çalışma Zamanı Metod Bilgisi)",
-        "date": "2011-06-22T01:48:00+03:00"
-      },
-      {
-        "url": "/2011/03/27/fluent-interface-nedir/",
-        "title": "Fluent Interface Nedir?",
-        "date": "2011-03-27T05:15:00+03:00"
-      },
-      {
-        "url": "/2011/03/17/daha-iyi-kodlama-icin-basit-oneriler/",
-        "title": "Daha iyi Kodlama için Basit Öneriler",
-        "date": "2011-03-17T07:01:00+03:00"
-      },
-      {
-        "url": "/2009/12/23/net-4-0-oncesi-threadpool-kullanimi/",
-        "title": ".Net 4.0 Öncesi ThreadPool Kullanımı",
-        "date": "2009-12-23T03:15:00+03:00"
-      }
-    ],
-    ".net-framework-4.0": [
-      {
-        "url": "/2011/09/13/tek-fotoluk-ipucu-30-entity-sorgusundan-excel-dosyasina/",
-        "title": "Tek Fotoluk İpucu-30 (Entity Sorgusundan Excel Dosyasına)",
-        "date": "2011-09-13T10:30:00+03:00"
-      },
-      {
-        "url": "/2011/06/29/tek-fotoluk-ipucu-9-stopwatch-ile-sure-olcumu/",
-        "title": "Tek Fotoluk İpucu – 9 (Stopwatch ile süre ölçümü)",
-        "date": "2011-06-29T00:58:00+03:00"
-      },
-      {
         "url": "/2011/06/22/tek-fotoluk-ipucu-3-tuple/",
         "title": "Tek Fotoluk İpucu - 3 (Tuple)",
         "date": "2011-06-22T22:24:00+03:00"
+      },
+      {
+        "url": "/2011/06/22/tek-fotoluk-ipucu-2-stacktrace-ve-calisma-zamani-metod-bilgisi/",
+        "title": "Tek Fotoluk İpucu - 2 (StackTrace ve Çalışma Zamanı Metod Bilgisi)",
+        "date": "2011-06-22T01:48:00+03:00"
       },
       {
         "url": "/2011/04/20/big-big-big-integer-ve-faktoryel-hesaplarken-yuzumde-olusan-tebessum/",
@@ -32056,6 +32024,16 @@
         "url": "/2011/04/16/non-persisted-memory-mapped-files/",
         "title": "Non-Persisted Memory Mapped Files",
         "date": "2011-04-16T15:00:00+03:00"
+      },
+      {
+        "url": "/2011/03/27/fluent-interface-nedir/",
+        "title": "Fluent Interface Nedir?",
+        "date": "2011-03-27T05:15:00+03:00"
+      },
+      {
+        "url": "/2011/03/17/daha-iyi-kodlama-icin-basit-oneriler/",
+        "title": "Daha iyi Kodlama için Basit Öneriler",
+        "date": "2011-03-17T07:01:00+03:00"
       },
       {
         "url": "/2011/01/31/tpl-senkronizasyonu-saglamak-2-interlocked/",
@@ -32103,6 +32081,11 @@
         "date": "2010-02-21T23:05:00+03:00"
       },
       {
+        "url": "/2009/12/23/net-4-0-oncesi-threadpool-kullanimi/",
+        "title": ".Net 4.0 Öncesi ThreadPool Kullanımı",
+        "date": "2009-12-23T03:15:00+03:00"
+      },
+      {
         "url": "/2009/12/22/csharp-4-0-invariance-covariance-contravariance/",
         "title": "C# 4.0 - Invariance, Covariance, Contravariance ???",
         "date": "2009-12-22T07:15:00+03:00"
@@ -32121,40 +32104,11 @@
         "url": "/2009/12/14/net-4-0-lazy-initialization-beta-2/",
         "title": ".Net 4.0 - Lazy Initialization [Beta 2]",
         "date": "2009-12-14T01:30:00+03:00"
-      }
-    ],
-    ".net-framework-4.0-beta-2": [
+      },
       {
         "url": "/2009/10/21/csharp-4-0-expandoobject/",
         "title": "C# 4.0 - ExpandoObject",
         "date": "2009-10-21T07:14:00+03:00"
-      }
-    ],
-    ".net-framework-4.5": [
-      {
-        "url": "/2013/01/25/net-framework-4-5-asenkron-io-islemleri/",
-        "title": ".Net Framework 4.5 Asenkron IO İşlemleri",
-        "date": "2013-01-25T02:27:00+03:00"
-      },
-      {
-        "url": "/2013/01/01/wcf-4-5-task-based-asynchronous-operasyonlar/",
-        "title": "WCF 4.5–Task Based Asynchronous Operasyonlar",
-        "date": "2013-01-01T13:51:00+03:00"
-      },
-      {
-        "url": "/2012/11/14/aspdotnet-web-api-leri-aspx-den-asenkron-cagirmak/",
-        "title": "Asp.Net Web API’ leri ASPX’ den Asenkron Çağırmak",
-        "date": "2012-11-14T00:00:00+03:00"
-      },
-      {
-        "url": "/2012/06/04/tek-fotoluk-ipucu-54-onda-75/",
-        "title": "Tek Fotoluk İpucu–54 Onda 75",
-        "date": "2012-06-04T15:16:00+03:00"
-      },
-      {
-        "url": "/2012/06/04/tek-fotoluk-ipucu-54bucuk/",
-        "title": "Tek Fotoluk İpucu–54Buçuk",
-        "date": "2012-06-04T11:12:00+03:00"
       }
     ],
     ".net-memory-management": [
@@ -79391,6 +79345,11 @@
     {
       "name": ".net-core",
       "count": 60,
+      "weight": 1
+    },
+    {
+      "name": ".net-framework",
+      "count": 39,
       "weight": 1
     },
     {
