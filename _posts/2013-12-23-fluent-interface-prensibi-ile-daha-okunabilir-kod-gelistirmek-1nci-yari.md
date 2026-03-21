@@ -13,7 +13,7 @@ tags:
   - martin-fowler
   - ruby-lang
   - scala
-  - mock-nesne
+  - mocking
   - unit-test
   - domain-driven-design
   - domain-specific-language

@@ -7,7 +7,7 @@ categories:
 tags:
   - ruby-lang
   - binary-read
-  - file-read-operations
+  - file-io
   - mp3
   - idtag-standarts
   - fun-with-code

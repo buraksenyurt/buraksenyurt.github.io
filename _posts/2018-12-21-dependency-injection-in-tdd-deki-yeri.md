@@ -8,21 +8,18 @@ tags:
   - unit-test
   - tdd
   - test-driven-development
-  - mock
+  - mocking
   - stub
   - dependency-injection
   - csharp
   - .net-core
   - visual-studio-code
   - moq
-  - mocking
-  - mocks
   - stubs
   - nuget
   - dotnet-test
   - mstest
-  - dotnet
-  - dotnet-core
+  - .net
   - interface
   - constructor
 ---

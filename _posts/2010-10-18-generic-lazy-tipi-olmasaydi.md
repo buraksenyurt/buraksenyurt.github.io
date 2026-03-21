@@ -6,10 +6,9 @@ categories:
   - csharp-4-0
 tags:
   - csharp
-  - bcl
   - base-class-library
   - lazy-initialization
-  - generic-lazy
+  - generics
   - singleton-design-pattern
   - lock
   - thread-safe

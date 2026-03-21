@@ -9,7 +9,6 @@ tags:
   - alogirtma
   - algoritma
   - hanoi-towers
-  - hanoi-kuleleri
   - matematik
   - recursive
   - recursive-functions

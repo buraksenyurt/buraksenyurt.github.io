@@ -11,7 +11,7 @@ tags:
   - assembly
   - reflection
   - generic
-  - generic-constraints
+  - generics
   - attribute
 ---
 Programlardaki About Info kısımlarını bilirsiniz. Yazdığımız uygulama hakkında bir takım bilgiler verir. Genellikle ürünün adı, bir iki cümle ile ne yaptığı, üreticisi ve hatta versyion numarası ve benzeri bilgiler yer alır. Micorosoft.Net tarafında aslında bu tip bilgileri Assembly'a ait niteliklerde (attribute) belirtiriz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.

@@ -12,7 +12,6 @@ tags:
   - docker
   - spring
   - spring-boot
-  - docker-compose
   - json
   - maven
 ---

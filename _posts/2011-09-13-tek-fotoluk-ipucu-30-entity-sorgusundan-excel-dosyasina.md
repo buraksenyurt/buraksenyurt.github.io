@@ -9,7 +9,7 @@ tags:
   - .net-framework-4.0
   - csharp
   - office-interop
-  - linq
+  - language-integrated-query
   - entity-framework
   - excel
 ---

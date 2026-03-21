@@ -6,7 +6,7 @@ categories:
   - asp-dotnet-core
 tags:
   - dependency-injection
-  - di-container
+  - dependency-injection-container
   - lifetimes
   - addsingleton
   - addscoped

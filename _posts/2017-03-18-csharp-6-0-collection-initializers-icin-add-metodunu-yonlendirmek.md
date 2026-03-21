@@ -7,7 +7,7 @@ categories:
 tags:
   - csharp
   - extension-methods
-  - collection-initializers
+  - collections
 ---
 Mesleki hayatımın bir döneminde yazılım eğitmeni olarak çalıştım. Ağırlıklı olarak.Net eğitimleri verdim. Tabii o zamanlar.Net nispeten daha kolaydı. Bu kadar fazla dallanan bir Framework değildi ama C# dil özellikleri de acımasızca genişlemiyordu. Aradan geçen onca yıldan sonra çalıştığım turuncu bankanın kendi akademisinden iç eğitim isteği geldi.
 

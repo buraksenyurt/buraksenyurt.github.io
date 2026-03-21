@@ -5,7 +5,7 @@ date: 2018-05-25 04:46:00 +0300
 categories:
   - azure
 tags:
-  - azure
+  - microsoft-azure
   - cloud-computing
   - ai
   - cognitive-services

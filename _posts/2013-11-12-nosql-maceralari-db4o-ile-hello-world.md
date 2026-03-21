@@ -12,7 +12,7 @@ tags:
   - .net
   - csharp
   - java
-  - linq
+  - language-integrated-query
   - acid
   - objectmanager-enterprise
   - eclipse

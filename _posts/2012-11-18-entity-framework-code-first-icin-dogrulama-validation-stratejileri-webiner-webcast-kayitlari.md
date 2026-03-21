@@ -10,7 +10,6 @@ tags:
   - webiner
   - code-first
   - code-first-validation
-  - ef
   - custom-attribute
   - attribute
   - csharp

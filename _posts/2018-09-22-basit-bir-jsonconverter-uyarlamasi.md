@@ -7,7 +7,6 @@ categories:
 tags:
   - newtonsoft
   - json
-  - java-script-object-notation
   - csharp
   - interface
   - implementation

@@ -16,7 +16,7 @@ tags:
   - middleware
   - mvc
   - model-view-controller
-  - dotnet
+  - .net
   - build
   - run
   - restore

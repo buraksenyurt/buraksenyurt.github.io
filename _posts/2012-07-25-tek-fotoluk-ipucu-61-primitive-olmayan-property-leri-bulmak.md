@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - reflection
-  - linq
+  - language-integrated-query
   - isprimitive
   - cts
   - common-type-system

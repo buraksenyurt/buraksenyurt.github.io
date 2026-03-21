@@ -12,7 +12,7 @@ tags:
   - commodore-64
   - nodejs
   - python
-  - dotnetcore
+  - .net-core
   - postgresql
   - 80ler
   - 90lar

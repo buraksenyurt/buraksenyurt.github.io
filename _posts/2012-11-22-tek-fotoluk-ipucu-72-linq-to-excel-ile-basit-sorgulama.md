@@ -6,9 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - linq
-  - linq-to-excel
-  - linq-providers
+  - language-integrated-query
   - excel
   - csharp
 ---

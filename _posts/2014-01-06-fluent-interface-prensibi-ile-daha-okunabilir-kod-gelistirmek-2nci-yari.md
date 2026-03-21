@@ -6,17 +6,15 @@ categories:
   - csharp
 tags:
   - fluent-interface
-  - generic-type
-  - generic-constraints
+  - generics
   - expression
-  - generic-func
   - k>
   - reflection
   - fluent-api
   - martin-fowler
   - ruby-lang
   - scala
-  - mock-nesne
+  - mocking
   - unit-test
   - domain-driven-design
   - domain-specific-language

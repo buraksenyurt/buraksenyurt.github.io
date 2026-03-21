@@ -6,7 +6,7 @@ categories:
   - csharp
   - tek-fotoluk-ipucu
 tags:
-  - linq
+  - language-integrated-query
   - csharp
   - aggregate-functions
 ---

@@ -7,7 +7,7 @@ categories:
   - csharp-4-0
 tags:
   - generic
-  - generic-methods
+  - generics
   - interface
   - domain
   - binary-serialization

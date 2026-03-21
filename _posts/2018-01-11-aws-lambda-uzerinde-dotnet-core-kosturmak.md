@@ -7,7 +7,6 @@ categories:
   - aws
 tags:
   - aws
-  - amazon-web-services
   - serverless
   - .net-core
   - asp.net-core

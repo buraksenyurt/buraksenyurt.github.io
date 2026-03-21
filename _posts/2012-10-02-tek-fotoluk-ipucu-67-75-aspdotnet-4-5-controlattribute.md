@@ -7,8 +7,8 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - asp.net
-  - linq
-  - generic-iqueryable
+  - language-integrated-query
+  - generics
   - controlattribute
   - system.web.modelbinding
   - attribute

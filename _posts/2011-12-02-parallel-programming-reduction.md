@@ -8,7 +8,6 @@ tags:
   - tpl
   - parallel-programming
   - reduction
-  - mapreduce-pattern
   - map-reduce
   - parallel.for
   - parallel.foreach

@@ -11,9 +11,8 @@ tags:
   - genai
   - csharp
   - programlama
-  - largeLanguageModels
-  - llm
-  - codeQuality
+  - large-language-model
+  - code-quality
 ---
 Geçtiğimiz günlerde Bursa Bilişim Topluluğu tarafından düzenlenen bir etkinliğe konuşmacı olarak katılma fırsatı buldum. Ben, yüksek kalite kodlama ve teknik borçlanma ile mücadele üzerine bazı tecrübelerimi paylaştım. Benden sonra sevgili dostum Bora Kaşmer (Coderbora) JWT token senaryolarında özellikle çok yüksek kullanıcı ve farklı cihazların kullanıldığı senaryolardaki olası güvenlik açıkları üzerine nasıl tedbirler uygulanabileceğini anlatan dikkat çekici bir sunum icra etti.
 

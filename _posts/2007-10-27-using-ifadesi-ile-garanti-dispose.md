@@ -7,7 +7,7 @@ categories:
 tags:
   - csharp
   - using
-  - garbage-collector
+  - garbage-collection
   - disposable-objects
   - idisposable
   - dispose

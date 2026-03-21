@@ -7,7 +7,7 @@ categories:
   - plinq
 tags:
   - plinq
-  - linq
+  - language-integrated-query
 ---
 Bir önceki blog yazımızda PLINQ ifadelerinde sıralama konusuna değinmeye çalışmıştık. Bu yazımızda ise, paralel olarak çalıştırılan LINQ sorguları içerisinde, ardışık (Sequential) olarak nasıl işlem yapılabileceğini incelemeye çalışacağız.
 

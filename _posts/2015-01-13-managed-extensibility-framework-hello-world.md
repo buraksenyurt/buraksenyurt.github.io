@@ -11,7 +11,7 @@ tags:
   - csharp
   - .net-framework
   - IoC
-  - Dependency-Injection
+  - dependency-injection
   - modul-based-development
   - windows-api
   - .net-runtime

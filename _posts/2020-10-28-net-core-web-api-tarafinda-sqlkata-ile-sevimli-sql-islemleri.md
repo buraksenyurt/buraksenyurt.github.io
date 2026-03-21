@@ -10,11 +10,10 @@ tags:
   - postgresql
   - csharp
   - sql
-  - linq
+  - language-integrated-query
   - .net
   - northwind
   - docker
-  - docker-compose
 ---
 Veri odaklı uygulamalarda sorgu komutlarını çalıştırmak için kullandığımız birçok hazır altyapı var. Örneğin.Net dünyasına baktığımızda en temel seviyede Ado.Net ve Object Relational Mapping tarafında Entity Framework sıklıkla karşılaştıklarımız arasında. [SqlKata](https://sqlkata.com/)'da bunlardan birisi olarak düşünülebilir. Bir süredir de sağda solda okuduğum makale ve github çalışmalarından dolayı merak edip kurcalamak istediğim bir kütüphane. Öncelikle ismi çok hoş (Code Kata'yı çağrıştırıyor bana)
 

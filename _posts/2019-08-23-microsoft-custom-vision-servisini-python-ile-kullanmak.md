@@ -6,7 +6,7 @@ categories:
   - azure
 tags:
   - python
-  - azure
+  - microsoft-azure
   - visionApi
   - ai
   - pip

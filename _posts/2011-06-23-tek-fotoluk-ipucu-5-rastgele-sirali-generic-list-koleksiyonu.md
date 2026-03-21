@@ -9,9 +9,9 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - csharp
-  - linq
+  - language-integrated-query
   - list
-  - generic-list
+  - generics
   - collections
 ---
 Elinizde List tipinden bir koleksiyon var ve içerisindeki nesnelerden rastgele sırada yeni bir liste kullanmak istiyorsunuz. Ne yaparsınız? İşte cevabı

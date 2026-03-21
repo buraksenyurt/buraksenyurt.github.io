@@ -7,7 +7,7 @@ categories:
 tags:
   - tdd
   - test-driven-development
-  - dotnet-core
+  - .net-core
   - code-coverage
   - devops
   - sonarqube

@@ -15,7 +15,7 @@ tags:
   - iteration
   - performance
   - math
-  - mathematics
+  - matematik
   - algoritma
   - hanoi-towers
   - csharp

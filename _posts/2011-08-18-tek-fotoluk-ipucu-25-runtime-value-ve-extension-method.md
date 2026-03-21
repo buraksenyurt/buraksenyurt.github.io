@@ -9,7 +9,7 @@ tags:
   - csharp
   - extension-methods
   - reflection
-  - linq
+  - language-integrated-query
 ---
 Özellikle Reflection kullandığımız bazı çalışma zamanı senaryolarında, nesnelerin özellik değerlerini elde etmek istediğimiz durumlar da söz konusu olabilir. Çok basit bir senaryo göz önüne alındığında bunun için bir Extension method dahi geliştirebiliriz. Nasıl mı?
 

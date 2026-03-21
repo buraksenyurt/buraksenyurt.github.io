@@ -7,7 +7,7 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - biginteger
-  - linq
+  - language-integrated-query
   - fibonacci
   - skip
   - take

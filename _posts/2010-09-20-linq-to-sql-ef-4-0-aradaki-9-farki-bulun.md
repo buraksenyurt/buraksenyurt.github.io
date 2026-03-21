@@ -6,9 +6,8 @@ categories:
   - entity-framework
   - linq-to-sql
 tags:
-  - linq-to-sql
+  - language-integrated-query
   - entity-framework
-  - ef-4.0
 ---
 Evet çok doğru. Hiç bu kadar kısa ve öz yazmamıştım daha önceden. Ama zaman zaman bu kadar kısa yazıp çok fazla şey ifade edilebileceğine de inanmaktayım
 

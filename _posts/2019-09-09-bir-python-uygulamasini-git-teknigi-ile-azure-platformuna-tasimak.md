@@ -7,16 +7,15 @@ categories:
 tags:
   - python
   - git
-  - azure
+  - microsoft-azure
   - continuous-integration
   - continuous-deployment
   - ci/cd
   - cli
-  - azure-cli
   - brew
   - macos
   - apple
-  - deployment-user
+  - deployment
   - resource-group
   - service-plan
   - docker

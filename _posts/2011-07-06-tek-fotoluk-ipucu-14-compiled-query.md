@@ -7,7 +7,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - entity-framework
-  - linq
+  - language-integrated-query
   - compiled-query
   - csharp
 ---

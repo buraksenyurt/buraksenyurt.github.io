@@ -12,7 +12,7 @@ tags:
   - func
   - delegate
   - generic
-  - generic-delegate
+  - generics
   - elapsed-milliseconds
   - total-hours
   - total-seconds

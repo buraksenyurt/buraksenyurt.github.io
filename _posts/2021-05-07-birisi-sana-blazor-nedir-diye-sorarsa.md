@@ -11,7 +11,7 @@ tags:
   - web-assembly
   - wasm
   - csharp
-  - javascript-interoperability
+  - javascript
   - client-server
   - client-side-blazor
   - server-side-blazor

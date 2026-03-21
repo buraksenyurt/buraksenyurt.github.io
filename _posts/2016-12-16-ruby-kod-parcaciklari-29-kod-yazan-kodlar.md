@@ -6,7 +6,7 @@ categories:
   - ruby
 tags:
   - metaprogramming
-  - dynamic-languages
+  - dynamic-programming
   - refactoring
   - eval
   - binding

@@ -6,8 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - vsdiffmerge
-  - file-diff
-  - file-merge
+  - file-io
   - visual-studio-tools
   - visual-studio-command-prompt
 ---

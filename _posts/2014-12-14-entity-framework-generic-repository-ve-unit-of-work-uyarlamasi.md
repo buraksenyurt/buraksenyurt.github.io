@@ -7,7 +7,6 @@ categories:
   - tasarim-prensipleri-design-principles
 tags:
   - entity-framework
-  - generic-repository
   - generics
   - unit-of-work
   - design-patterns

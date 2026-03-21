@@ -14,8 +14,7 @@ tags:
   - paging
   - asp.net
   - csharp
-  - java-script
-  - ajax-call
+  - javascript
   - ajax
 ---
 Bu aralar şirkette işler oldukça kesat. En azından benim bulunduğum departman itibariyle böyle bir durum söz konusu. Sanırım kurumsal kimlik kazanmış firmaların genel sorunu da bu olsa gerek. Kaynak planlaması ve dağıtımının bir türlü istenen şekilde yapılamayışı. Hal böyle olunca aynı firmada hatta aynı departman içerisinde, çok yoğun çalışan insanlara ve beraberinde her hangi bir işi olmayanlara (benim gibi) rastlamak mümkün.

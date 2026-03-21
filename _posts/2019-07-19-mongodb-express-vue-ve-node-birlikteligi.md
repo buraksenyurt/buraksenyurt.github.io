@@ -17,11 +17,10 @@ tags:
   - rest-api
   - http
   - crud
-  - mongoose
   - nosql
   - html
   - bootstrap
-  - eventbus
+  - event-bus
   - vue
 ---
 Aranızdan kaç kişi akıllı telefonundaki herhangi bir arkadaşının numarasını ezbere söyleyebilir? Eminim bazılarımız bizi dokuz ay karnında taşıyan annesinin telefonunu dahi hatırlamıyordur. Peki ya birlikte sıklıkla vakit geçirdiğiniz ama çok da yakın çevrenizden olmayan kankanızın doğum günü ne zaman? Teknolojik cihazlarınızdaki hatırlatıcılar olmadığında kaç arkadaşınızın doğum gününü unutacaksınız hiç düşündünüz mü?

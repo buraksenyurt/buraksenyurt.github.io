@@ -5,9 +5,6 @@ date: 2019-05-24 09:00:00 +0300
 categories:
   - angular
 tags:
-  - firebase
-  - firestore
-  - gcp
   - google-cloud-platform
   - angular
   - typescript

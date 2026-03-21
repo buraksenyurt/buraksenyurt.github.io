@@ -6,13 +6,11 @@ categories:
   - dotnet-core
 tags:
   - docker
-  - docker-compose
   - nodejs
   - python
   - flask
   - .net-core
   - express
-  - dockerfile
   - csharp
   - javascript
   - yaml

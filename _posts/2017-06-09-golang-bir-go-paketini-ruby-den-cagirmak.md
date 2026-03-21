@@ -6,7 +6,6 @@ categories:
   - golang
 tags:
   - golang
-  - c
   - c-programming-language
   - shared-c-library
   - ruby-lang

@@ -20,7 +20,6 @@ tags:
   - skip
   - format
   - json
-  - java-script-object-notation
   - callback
   - default-collection
   - team-project

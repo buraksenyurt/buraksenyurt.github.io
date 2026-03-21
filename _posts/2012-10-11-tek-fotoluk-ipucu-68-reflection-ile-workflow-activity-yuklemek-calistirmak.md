@@ -9,7 +9,7 @@ tags:
   - workflow-foundation
   - activity
   - reflection
-  - linq
+  - language-integrated-query
   - let-keyword
 ---
 Diyelim ki elinizde içerisinde bi dünya Workflow Activity’ si olan bir kütüphane var. Ancak bu kütüphane projenize referans edilmiş değil. Fiziki bir klasörde tutulmakta. Siz de istiyorsunuz ki, bu kütüphane içerisinde yer alan herhangibir Workflow Activity’ sini örnekleyebileyim ve hatta Workflow çalışma zamanı motoruna devredip yürütebileyim. Aşağı yukarı yapmanız gereken şeyin içerisinde Reflection olduğunu tahmin ediyorsunuzdur. Belki de aşağıdaki gibi bir yaklaşım hayal ediyorsunuzdur

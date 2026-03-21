@@ -6,7 +6,7 @@ categories:
   - rust
 tags:
   - rust
-  - ecs
+  - entity-component-system
   - bevy
   - game-programming
   - game-engine

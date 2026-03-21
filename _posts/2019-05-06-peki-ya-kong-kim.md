@@ -15,8 +15,6 @@ tags:
   - csharp
   - docker
   - container
-  - dockerize
-  - dockerfile
   - postgres
   - api
 ---

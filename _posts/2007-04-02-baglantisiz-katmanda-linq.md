@@ -6,7 +6,6 @@ categories:
   - csharp
 tags:
   - csharp
-  - linq
   - language-integrated-query
   - dlinq
   - disconnected-layer

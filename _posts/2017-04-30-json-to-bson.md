@@ -8,13 +8,11 @@ tags:
   - json
   - bson
   - binary-json
-  - javascriptobjectnotation
   - .net
   - newtonsoft
   - csharp
   - serialization
   - deserialization
-  - JsonSerializationException
 ---
 Sanıyorum her.Net programcısının takım çantasında yer alan paketlerden birisi de Newtonsoft'un JSON serileştirme kütüphanesidir. JSON (JavaScriptObjectNotation) formatı, XML (eXtensibleMarkupLanguage) şemasından sonra hafif ve az yer kaplama özellikleri nedeniyle çokça tercih edilen standartlardan birisi haline gelmiştir. Diğer yandan JSON içeriklerin Binary formatta serileştirilmiş versiyonu olarak adlandırılan BSON formatı da sıklıkla kullanılmaktadır.
 

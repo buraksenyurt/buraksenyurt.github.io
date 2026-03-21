@@ -12,7 +12,6 @@ tags:
   - database
   - node
   - node.js
-  - javascriptDatabase
   - json
   - nosql
   - indexedDb

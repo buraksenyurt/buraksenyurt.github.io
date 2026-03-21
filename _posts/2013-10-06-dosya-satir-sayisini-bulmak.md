@@ -10,7 +10,7 @@ tags:
   - reflection
   - notepad++
   - line-codes
-  - file
+  - file-io
   - system.io
 ---
 Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalışmış ve yazılım geliştirmişseniz, eminimki hayatınızın bir döneminde büyük boyutlu Text dosyaları ile çalışmak zorunda kalmışsınızdır.

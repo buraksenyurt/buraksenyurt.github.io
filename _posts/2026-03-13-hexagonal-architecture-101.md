@@ -7,8 +7,8 @@ categories:
 tags:
   - softwareArchitecture
   - onionArchitecture
-  - dotnet
-  - cSharp
+  - .net
+  - csharp
   - yazılım-mimarileri
   - hexagonalArchitecture
 ---

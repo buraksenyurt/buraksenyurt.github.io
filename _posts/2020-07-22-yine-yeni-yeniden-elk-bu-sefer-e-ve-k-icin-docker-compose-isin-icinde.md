@@ -6,13 +6,12 @@ categories:
   - dotnet-core
 tags:
   - docker
-  - docker-compose
   - .net
   - .net-core-3.1
   - elk
   - elasticsearch
   - kibana
-  - logstash
+  - logging
 ---
 Her ne kadar artık.Net 5.0 hayatımızın içinde olsa da bu yıl içinde bir yerlerde.Net Core 3.1 ile ELK kurgusunu yeniden değerlendirme ihtiyacı hissetmişim. Elasticsearch, Logstash ve Kibana kurgusu aslında günümüz uygulamalarında son derece popüler. Genellikle uygulama loglarının devasa şekilde biriktiği durumların çözümünde ideal bir kurgu olarak karşımıza çıkıyor. Bu kurguda uygulama loglarını standart bir formata uygun olacak şekilde Elasticsearch'e atar, Kibana arayüzünü kullanarak izleme yapar ve çeşitli durumların kontrolünü gerçekleştiririz. Ağırlıklı olarak üretim ortamında oluşacak hataların, performans kayıplarının ve dar boğazların yakalanması noktasında işimize yarayan bir düzenek olarak düşünebiliriz.
 

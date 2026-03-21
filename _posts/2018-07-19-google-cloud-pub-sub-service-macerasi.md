@@ -11,7 +11,6 @@ tags:
   - publisher-subscriber-model
   - machine-learning
   - image-processing
-  - gcloud
   - http
   - .net-core
   - golang

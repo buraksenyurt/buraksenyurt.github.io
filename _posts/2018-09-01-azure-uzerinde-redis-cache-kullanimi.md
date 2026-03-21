@@ -5,7 +5,7 @@ date: 2018-09-01 07:02:00 +0300
 categories:
   - azure
 tags:
-  - azure
+  - microsoft-azure
   - redis
   - redis-cache
   - .net-core
@@ -19,8 +19,7 @@ tags:
   - newtonsoft
   - monitoring-cancellation
   - resource-group
-  - azure-portal
-  - dotnet
+  - .net
   - console-application
   - hello-world
 ---

@@ -7,7 +7,7 @@ categories:
 tags:
   - extension-methods
   - reflection
-  - generic-types
+  - generics
   - override
   - tostring
   - base-object

@@ -7,13 +7,11 @@ categories:
   - aws
 tags:
   - nosql
-  - amazon
-  - amazon-dynamodb
+  - aws
   - dynamodb
   - .net-core
   - csharp
   - key-value-storage
-  - DynamoDbV2
 ---
 Epey zamandır NoSQL veritabanı sistemlerini kurcalamıyordum. Ağırlıklı olarak.Net Framework tarafında nasıl kullanılabildiklerini incelediğimi hatırlıyorum. 2017nin son çeyreği ve 2018in tamamı için kendime koyduğum hedeflerden birisi ise.Net Core dünyasını daha yakından tanımaktı. Zaten Ubuntu üzerinde koşan West-World'ün kurulum amacı da buydu. Sonuç olarak Amazon'un DynamoDb'sini.Net Core tarafında nasıl kullanabileceğimi incelemeye karar verdim. Bir süredir AWS Console üzerinden bir şeyler araştırıyor ve Amazon Web Service ürünleri hakkında giriş niteliğinde bilgiler edinmeye çalışıyorum.
 

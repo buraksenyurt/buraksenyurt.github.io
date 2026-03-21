@@ -9,7 +9,7 @@ tags:
   - .net-framework-4.5
   - mvc
   - newtonsoft
-  - json.net
+  - json
   - task-parallel-library
   - async
   - await

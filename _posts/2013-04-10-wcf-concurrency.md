@@ -15,7 +15,6 @@ tags:
   - per-call
   - per-session
   - single
-  - concurrencymode
   - instancecontextmode
 ---
 Windows Communication Foundation içerisinde önem arz eden konuların başında, istemciden gelen taleplerin eş zamanlı olarak değerlendirilme stratejilerine karar verilmesi de gelir. Aslında bir servis davranış biçimi olan ve Single, Multiple, Reentrant olmak üzere 3 farklı modda uygulanabilen Concurrency, tek başına değil, Instance Context Mode ile birlikte düşünülmelidir. Servislerin PerCall, PerSession ve Single gibi modlarda örneklenebildikleri düşünüldüğünde ortaya, 9 farklı kombinasyon çıkmaktadır. İşte bu görsel dersimizde WCF Concurrency konusuna değiniyor ve örnek bir uygulama üzerinden Instance Context Mode ile olan kullanımını kavramaya çalışıyoruz.

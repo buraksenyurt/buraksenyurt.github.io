@@ -8,7 +8,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - csharp
-  - linq
+  - language-integrated-query
 ---
 Hemen hepimiz LINQ sorgularını kullanıyoruz (Tabi aramızda halen.Net 2.0 ve altı ile çalışan zavallılar da yok değil
 

@@ -12,8 +12,8 @@ tags:
   - storyPoint
   - safe
   - workitemstore
-  - dotnet
-  - dotnetcore
+  - .net
+  - .net-core
   - nodejs
   - typescript
   - vue
@@ -27,7 +27,7 @@ tags:
   - rest-api
   - windows-communication-foundation
   - sonarqube
-  - codecoverage
+  - code-coverage
   - technicalDepth
   - quality-assurance
   - mssql-server
@@ -35,7 +35,7 @@ tags:
   - gitflow
   - vsts-2008
   - tfs
-  - azuredevops
+  - microsoft-azure
   - branch
   - fortify
   - owasp
@@ -44,7 +44,7 @@ tags:
   - continuous-integration
   - continuous-delivery
   - continuous-deployment
-  - dockerize
+  - docker
   - container
   - microservice
   - kong

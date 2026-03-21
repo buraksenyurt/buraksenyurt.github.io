@@ -8,7 +8,7 @@ categories:
 tags:
   - csharp
   - io
-  - fileinfo
+  - file-io
   - extension-methods
 ---
 FileInfo tipi yardımıyla bir dosyanın pek çok özelliğine erişebiliriz bildiğiniz üzere. Peki tüm bu bilgileri tek bir String içerisinde toplamak ister misiniz? Söz gelimi loglamalarda bu oldukça işe yarayabilir. Hatta bunu bir Extension method olarak da yazabiliriz. Nasıl mı?

@@ -5,7 +5,6 @@ date: 2019-08-02 17:48:00 +0300
 categories:
   - gcp
 tags:
-  - firebase
   - google-cloud-platform
   - progressive-web-app
   - pwa
@@ -17,7 +16,6 @@ tags:
   - fcm
   - fcm-node
   - service-worker
-  - google-cloud-functions
   - javascript
   - npm
 ---

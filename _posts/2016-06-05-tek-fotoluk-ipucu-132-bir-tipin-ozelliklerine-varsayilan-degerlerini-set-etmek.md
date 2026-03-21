@@ -7,7 +7,7 @@ categories:
 tags:
   - reflection
   - csharp
-  - generic-types
+  - generics
   - property
   - default-value
   - activator

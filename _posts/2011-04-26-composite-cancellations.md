@@ -8,13 +8,11 @@ categories:
 tags:
   - csharp
   - parallel-programming
-  - cancellationtokensource
-  - cancellationtoken
+  - cancellation-token
   - visual-studio-2010-ultimate
   - task-parallel-library
   - task-cancellation
   - monitoring-cancellation
-  - composite-cancellationtokensource
 ---
 Hatırlayacağınız üzere bir önceki yazımızda ([Task İptal İşlemlerinin İzlenmesi (Monitoring Cancellation)](https://www.buraksenyurt.com/post/Task-Iptal-Islemlerinin-Izlenmesi(Monitoring-Cancellation))) Task Cancellation işlemlerinin izlenmesi ile ilişkili teknikleri ve konuları irdelemeye başlamıştık. Bu yazımızda da iptal işlemleri ile ilgili farklı bir konuya değinmeye çalışıyor olacağız. Bu gün kü konumuz Composite Cancellation vakası.
 

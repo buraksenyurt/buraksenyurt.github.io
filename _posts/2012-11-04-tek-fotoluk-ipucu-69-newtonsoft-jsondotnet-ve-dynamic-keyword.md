@@ -7,7 +7,6 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - json
-  - json.net
   - newtonsoft
   - dynamic
   - csharp

@@ -20,7 +20,7 @@ tags:
   - command-line-interface
   - cli
   - sqlcmd
-  - dotnet
+  - .net
   - package
   - dbcontext
   - httpget

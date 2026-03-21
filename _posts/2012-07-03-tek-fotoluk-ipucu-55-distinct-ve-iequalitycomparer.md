@@ -7,7 +7,7 @@ categories:
 tags:
   - distinct
   - extension-methods
-  - linq
+  - language-integrated-query
   - iequalitycomparer
   - csharp
 ---

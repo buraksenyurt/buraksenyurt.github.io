@@ -7,9 +7,8 @@ categories:
 tags:
   - parallel-programming
   - task-parallel-library
-  - cancellationtokensource
+  - cancellation-token
   - task-cancellation
-  - cancellationtoken
   - csharp
   - visual-studio-2010-ultimate
   - monitoring-cancellation

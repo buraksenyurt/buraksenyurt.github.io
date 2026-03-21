@@ -5,7 +5,7 @@ date: 2015-09-16 15:00:00 +0300
 categories:
   - ruby
 tags:
-  - mixins
+  - mixin
   - ruby-lang
   - object-oriented-programming
 ---

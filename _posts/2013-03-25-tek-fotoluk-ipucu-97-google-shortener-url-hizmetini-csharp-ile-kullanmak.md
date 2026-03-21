@@ -13,8 +13,6 @@ tags:
   - httpwebresponse
   - newtonsoft
   - json
-  - javascriptobjectnotation
-  - java-script-object-notation
   - stream-reader
   - stream-writer
 ---

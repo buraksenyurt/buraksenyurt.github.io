@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - csharp
-  - generic-collections
+  - generics
   - Dictionary,
   - initializer
   - ilasm

@@ -8,7 +8,7 @@ tags:
   - ado.net
   - sql
   - streaming
-  - FileStream
+  - file-io
   - binarywriter
   - binaryreader
 ---

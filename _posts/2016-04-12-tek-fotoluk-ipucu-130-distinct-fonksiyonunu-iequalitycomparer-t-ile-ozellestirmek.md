@@ -5,7 +5,7 @@ date: 2016-04-12 12:15:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - linq
+  - language-integrated-query
   - extension-methods
   - interface
   - distinct

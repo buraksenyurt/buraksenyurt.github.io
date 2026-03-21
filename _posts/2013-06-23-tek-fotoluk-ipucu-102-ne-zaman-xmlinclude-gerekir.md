@@ -10,7 +10,6 @@ tags:
   - xmlserializer
   - serialization
   - xml
-  - extensible-markup-language
   - invalidoperationexception
   - attribute
   - xmlinclude

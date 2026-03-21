@@ -12,8 +12,7 @@ tags:
   - entity-framework
   - csharp
   - programlama
-  - eğitimcinin-eğitimi
-  - eğitim-teknolojileri
+  - eğitim
 ---
 Altunizade’nin bahar aylarında insanı epey dinlendiren yeşil yapraklı ağaçları ile çevrelenmiş caddesinin hemen sonunda, köprüye bağlanmadan iki yüz metre kadar öncesinde dört katlı bir bina vardır. Araba ile geçerken eğer kırmızı ışığa denk gelmediyseniz pek fark edilmez ama yürürken önündeki geniş kaldırımları ile dikkat çeker. Ana cadde tarafındaki yeşillikler binanın ilk katlarını gizemli bir şekilde saklar. Binanın bulunduğu adanın etrafı cadde ve ara sokaklarla çevrilidir. Bir sokağın karşısında yeni yapılmış hastane ile metro çıkışı, ana cadde tarafında ev yapımı tatlılarının kokusu ile insanı baştan çıkaran pastane, eczane, kuaför, camii ve minik bir park bulunur. Dört yola bakan diğer cadde tarafında ise eskiden karakol olan ama çok uzun zamandır kreş olarak işletilen bir komşu yer alır.
 

@@ -7,7 +7,7 @@ categories:
 tags:
   - ado.net
   - sql
-  - FileStream
+  - file-io
   - binarywriter
   - binaryreader
   - database

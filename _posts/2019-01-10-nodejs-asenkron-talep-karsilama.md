@@ -11,7 +11,6 @@ tags:
   - rest-api
   - web-service
   - mongodb
-  - mongoose
   - javascript
   - visual-studio-code
   - npm

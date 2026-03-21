@@ -10,9 +10,8 @@ tags:
   - entity
   - class
   - reflection
-  - generic-methods
+  - generics
   - extension-methods
-  - generic-types
   - convertion
   - dto
   - business-object

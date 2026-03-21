@@ -5,7 +5,7 @@ date: 2012-07-08 19:45:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - linq
+  - language-integrated-query
   - extension-methods
   - string-expressions
 ---

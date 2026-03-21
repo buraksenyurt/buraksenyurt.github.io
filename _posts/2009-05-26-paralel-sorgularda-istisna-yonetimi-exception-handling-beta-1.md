@@ -7,7 +7,7 @@ categories:
   - plinq
 tags:
   - plinq
-  - linq
+  - language-integrated-query
 ---
 Yönetimli kod (Managed Code) tarafında istisna yönetimi oldukça önemli konulardan birisidir. Uygulamaların veya kod süreçlerinin istem dışı sonlanmasının önüne geçilmek istendiği durumlarda, basit try...catch...finally bloklarından yararlanabilir yada Enterprise Library gibi kütüphanelerin sunduğu bloklardan faydalanarak istisna yönetimini üst seviyede sağlayabiliriz.
 

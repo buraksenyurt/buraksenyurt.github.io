@@ -9,8 +9,7 @@ tags:
   - test-driven-development
   - unit-test
   - mstest
-  - dotnet
-  - dotnet-core
+  - .net
   - .net-core
   - csharp
   - code-kata

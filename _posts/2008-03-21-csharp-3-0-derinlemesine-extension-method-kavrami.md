@@ -7,7 +7,7 @@ categories:
 tags:
   - csharp
   - extension-methods
-  - linq
+  - language-integrated-query
 ---
 Bilindiği üzere Language INtegrated Query (LINQ) mimarisinin uygulanışında C# 3.0 (Visual Basic 9.0) ile birlikte gelen yenilikler oldukça önemli bir yere sahiptir. Bu yeniliklerin çoğu var olan.Net Framework 2.0 yapısını bozmadan genişletebilmek amacıyla tasarlanmıştır. Genişletme Metodları (Extension Methods) bu yeniliklerden sadece bir tanesidir.(Object Initializers, Anonymous Types, Partial Methods, var anahtar kelimesi, auto-implemented property, => operatörü diğer C# 3.0 yenilikleri arasında sayılabilir) Söz konusu yeniliğin çıkış amacı genişletilemeyen tiplere yeni fonksiyonelliklerin eklenebilmesinin sağlanmasıdır. Öyleki bu sayede koleksiyonlar (Collections), DataTable, dizi (Array) gibi var olan CLR tipleri (Common Lanugage Runtime) üzerinde LINQ tarzı sorgu ifadelerinin yazılabilmesi olanaklı hale gelmiştir.
 

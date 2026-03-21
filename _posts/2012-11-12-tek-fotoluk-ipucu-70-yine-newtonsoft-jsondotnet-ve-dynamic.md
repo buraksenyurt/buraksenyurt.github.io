@@ -10,7 +10,6 @@ tags:
   - csharp
   - json
   - serialization
-  - json.net
   - newtonsoft
   - jobject
   - jarray

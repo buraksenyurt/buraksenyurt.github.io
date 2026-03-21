@@ -10,7 +10,7 @@ tags:
   - visual-studio-code
   - testing
   - .net-core
-  - dotnet
+  - .net
   - csharp
   - testmethod
   - testclass

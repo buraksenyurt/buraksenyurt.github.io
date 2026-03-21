@@ -6,7 +6,7 @@ categories:
   - dotnet-core
 tags:
   - jwt
-  - json-web-token
+  - json
   - security
   - bearer-authentication
   - authentication

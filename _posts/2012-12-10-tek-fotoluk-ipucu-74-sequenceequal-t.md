@@ -5,10 +5,9 @@ date: 2012-12-10 20:40:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - linq
+  - language-integrated-query
   - generics
   - sequenceequal
-  - generic-list
   - csharp
   - extension-methods
   - iequalitycomparer

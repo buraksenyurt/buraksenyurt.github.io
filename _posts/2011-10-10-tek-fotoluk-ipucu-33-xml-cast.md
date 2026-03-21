@@ -10,7 +10,7 @@ tags:
   - xlinq
   - xelement
   - list
-  - generic-constraints
+  - generics
   - extension-methods
   - reflection
 ---

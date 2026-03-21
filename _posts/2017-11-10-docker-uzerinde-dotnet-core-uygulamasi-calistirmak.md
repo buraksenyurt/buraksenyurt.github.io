@@ -9,14 +9,9 @@ tags:
   - .net-core-2.0
   - docker
   - container
-  - dockerize
   - linux
   - virtulization
   - sanallaştırma
-  - docker-hub
-  - docker-imaje
-  - docker-deamon
-  - docker-client
 ---
 Biliyorum epeyce geriden geliyorum yeni nesil konularda ama işler güçler derken ancak zaman bulabiliyorum. Önceki yazılarımdan da hatırlayacağınız üzere evdeki emektar dizüstü bilgisayarıma Ubuntu'nun 64bitlik sürümünü yüklemiştim (Makineye West-World adını verdim) Üzerinde ilk.Net Core denemelerimi de gerçekleştirdim. Ancak merak ettiğim konulardan birisi de Docker üzerinde bir.Net Core uygulamasının nasıl çalıştırılabileceğiydi. Bu iş sandığımdan daha zor olacaktı. Yarım yamalak bilgimle Docker'ın ne olduğunu az çok biliyordum ama tam anlamıyla da hakim değildim. En azından biraz daha fikir sahibi olmalı, kurulumunu gerçekleştirmeli ve sonrasında örnek bir.Net Core uygulamasını Dockerize ederek taze bir imaj (image) üzerinde ayağa kaldırabilmeliydim.
 

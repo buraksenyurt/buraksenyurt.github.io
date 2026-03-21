@@ -8,7 +8,7 @@ tags:
   - tek-fotoluk-ipucu
   - asp.net
   - model-binding
-  - linq
+  - language-integrated-query
   - entity-framework
 ---
 Asp.Net 4.5 Web Forms tarafında gelen yeniliklerden birisi de, veri bağlı kontrolleri IQueryable veya IEnumerable tipinden arayüz referanslarına bağlarken DataBind fonksiyon çağrısı yapılması zorunluluğu olmamasıdır. Bu sayede Markup tarafında sadece Select metodunun bildirilmesi yeterli olmaktadır. Aşağıdaki ekran görüntüsünde olduğu gibi

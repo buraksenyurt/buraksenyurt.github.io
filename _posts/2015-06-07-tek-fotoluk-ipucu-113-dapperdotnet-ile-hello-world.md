@@ -10,7 +10,7 @@ tags:
   - dapper.net
   - orm
   - sql
-  - linq
+  - language-integrated-query
   - query
   - entity-framework
   - dynamic

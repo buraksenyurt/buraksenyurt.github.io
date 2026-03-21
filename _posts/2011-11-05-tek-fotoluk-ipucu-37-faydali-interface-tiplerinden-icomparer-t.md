@@ -7,7 +7,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - csharp
-  - generic-comparer
+  - generics
   - list
   - sorting
   - interface

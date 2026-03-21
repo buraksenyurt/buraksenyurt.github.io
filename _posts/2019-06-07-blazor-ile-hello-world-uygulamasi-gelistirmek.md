@@ -11,7 +11,7 @@ tags:
   - html
   - csharp
   - wasm
-  - dotnet
+  - .net
   - WebAssembly
   - cshtml
   - SPA

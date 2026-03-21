@@ -19,7 +19,7 @@ tags:
   - data-annotations
   - property-binding
   - bootstrap
-  - dotnet
+  - .net
   - viewdata
 ---
 Bizim servisin dönüş yolculuğu bir başkadır. Her gün yaklaşık git gel neredeyse seksen kilometrelik yol teperiz (Daha ne kadar teperim bilemiyorum tabii) Dönüş yolculuğumuz trafiğin durumuna göre bazen çok uzun sürer. İşte böyle akşamların çok özel bir anı vardır.

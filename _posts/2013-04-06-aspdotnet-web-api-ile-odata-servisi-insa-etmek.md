@@ -9,7 +9,7 @@ tags:
   - odata
   - open-data-protocol
   - service
-  - excel-2013
+  - excel
   - odata-data-feed
   - http-get
 ---

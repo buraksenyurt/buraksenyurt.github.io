@@ -8,7 +8,7 @@ tags:
   - csharp
   - delegate
   - delegates
-  - attributes
+  - attribute
   - oop
   - multicast-delegates
 ---

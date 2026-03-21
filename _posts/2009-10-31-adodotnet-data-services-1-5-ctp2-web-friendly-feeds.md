@@ -7,7 +7,7 @@ categories:
 tags:
   - ado.net-data-services
   - web-firendly-feeds
-  - linq
+  - language-integrated-query
   - entity-framework
   - odata
 ---

@@ -7,7 +7,7 @@ categories:
 tags:
   - tek-fotoluk-ipucu
   - extension-methods
-  - linq
+  - language-integrated-query
   - orderby
   - random
   - randomizer

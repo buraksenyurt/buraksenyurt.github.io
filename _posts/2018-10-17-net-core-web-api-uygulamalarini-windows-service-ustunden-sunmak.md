@@ -13,7 +13,7 @@ tags:
   - service-controller
   - windows-7
   - csharp
-  - dotnet
+  - .net
   - code-activity
   - sc
   - Microsoft.AspNetCore.Hosting.WindowsServices

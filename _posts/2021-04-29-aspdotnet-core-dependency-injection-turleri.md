@@ -12,7 +12,7 @@ tags:
   - method-injection
   - property-injection
   - view-injection
-  - di-container
+  - dependency-injection-container
 ---
 Ayakta durmuş odanın camından dışarıyı izlerken yazıya nasıl bir giriş yapsam diye düşünüyordum. Baharın etkisi ile yapraklarını açmış meşenin yavaş yavaş gölgelediği caddeden İtalyan bayrağı kasklı bir motosikletli geçti aniden. Sadece birkaç metre gerisinden de onu neredeyse aynı süratle takip eden martıya binmiş bir genç. Kaldırımda bir elinde alışveriş poşeti ötekinde onu yola doğru çekiştiren haylazla birlikte yürümeye çalışan orta yaşlarında bir kadın. Hemen binanın önündeki basket sahasında da yaşları beş ile on beş arasında değişen on çocuk. Futbol oynuyorlar. Bağrışlar, çağrışlar. Çekişmeli de gidiyor ama herkesin yüzünde bir maske. Eve kapanmak zorunda kalmadan önce çocukların son bir bahar ziyafetini izliyorum diye iç geçiriyorum.
 

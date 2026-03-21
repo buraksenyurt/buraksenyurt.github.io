@@ -7,7 +7,6 @@ categories:
 tags:
   - rust
   - logging
-  - logger
   - env_logger
   - rust-lang
 ---

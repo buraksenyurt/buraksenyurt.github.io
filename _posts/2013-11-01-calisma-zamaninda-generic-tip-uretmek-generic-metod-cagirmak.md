@@ -5,7 +5,7 @@ date: 2013-11-01 03:45:00 +0300
 categories:
   - csharp
 tags:
-  - generic-types
+  - generics
   - type
   - makegenerictype
   - activator

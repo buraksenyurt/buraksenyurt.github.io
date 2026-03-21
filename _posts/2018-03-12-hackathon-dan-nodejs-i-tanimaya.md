@@ -13,7 +13,6 @@ tags:
   - callback
   - repl
   - asynchronous-programming
-  - asynchronous
   - functional-programming
   - module
   - built-in-module

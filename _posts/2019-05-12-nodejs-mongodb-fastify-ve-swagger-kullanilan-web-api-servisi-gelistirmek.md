@@ -7,7 +7,6 @@ categories:
 tags:
   - node.js
   - mongodb
-  - mongoose
   - fastify
   - swagger
   - web-api

@@ -6,8 +6,8 @@ categories:
   - Zig
 tags:
   - zig-lang
-  - cSharp
-  - dotnet
+  - csharp
+  - .net
   - rust
   - multi-thread
   - thread

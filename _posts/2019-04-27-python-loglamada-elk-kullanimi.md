@@ -8,9 +8,8 @@ tags:
   - elk
   - elasticsearch
   - kibana
-  - logstash
-  - python
   - logging
+  - python
   - docker
   - ubuntu
   - json

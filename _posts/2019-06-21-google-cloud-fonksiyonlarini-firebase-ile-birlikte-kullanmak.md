@@ -5,16 +5,13 @@ date: 2019-06-21 07:00:00 +0300
 categories:
   - gcp
 tags:
-  - firebase
+  - google-cloud-platform
   - real-time-database
   - google
-  - google-cloud-platform
-  - google-cloud-functions
   - node
   - npm
   - node.js
   - javascript
-  - firebase-tools
   - postman
   - express
   - cors

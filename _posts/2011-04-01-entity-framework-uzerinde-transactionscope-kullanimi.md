@@ -6,7 +6,6 @@ categories:
   - entity-framework
 tags:
   - entity-framework
-  - ef-4.0
   - transaction
   - transaction-scope
 ---

@@ -7,7 +7,7 @@ categories:
   - plinq
 tags:
   - plinq
-  - linq
+  - language-integrated-query
 ---
 Bildiğiniz gibi bir süredir LINQ sorgularının paralel çalıştırılması ile ilişkili çalışmalarıma ve araştırmalarıma devam etmekteyim. Bu yazımdaki konumuz ise System.Linq.ParallelEnumerable static sınıfı içerisinde tanımlanmış olan ForAll genişletme metodudur (extension methods).
 

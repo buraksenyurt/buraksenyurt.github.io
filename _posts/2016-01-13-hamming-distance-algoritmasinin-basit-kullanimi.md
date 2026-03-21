@@ -12,7 +12,6 @@ tags:
   - levenshtein-distance
   - hamming-distance
   - extension-methods
-  - linq
   - language-integrated-query
   - richard-hamming
 ---

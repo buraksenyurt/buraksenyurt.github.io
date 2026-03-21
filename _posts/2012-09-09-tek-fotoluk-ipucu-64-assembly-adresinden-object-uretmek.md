@@ -7,7 +7,7 @@ categories:
 tags:
   - reflection
   - extension-methods
-  - linq
+  - language-integrated-query
   - tek-fotoluk-ipucu
 ---
 Bazen reflection tekniklerini kullanarak harici assembly’ lar içerisinden bulduğumuz tiplerin örneklerini ürettirme ihtiyacı duyabiliriz. Bunun için kullanabileceğimiz pek çok yol vardır aslında. Örneğin tipin bulunduğu Assembly dosya adresini tutan bir string değişken üzerinden dahi istenilen nesne örneğinin üretilmesini sağlayabiliriz. Nasıl mı?
