@@ -12,7 +12,7 @@ tags:
   - web-service
   - mongodb
   - javascript
-  - visual-studio-code
+  - vs-code
   - npm
   - node
   - express

@@ -5,7 +5,7 @@ date: 2026-03-13 19:31:00 +0300
 categories:
   - C#
 tags:
-  - softwareArchitecture
+  - software-architecture
   - onionArchitecture
   - .net
   - csharp

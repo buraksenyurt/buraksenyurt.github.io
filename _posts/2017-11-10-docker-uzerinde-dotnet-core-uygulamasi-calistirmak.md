@@ -6,7 +6,6 @@ categories:
   - dotnet-core
 tags:
   - .net-core
-  - .net-core-2.0
   - docker
   - container
   - linux

@@ -6,7 +6,7 @@ categories:
   - ado-net
 tags:
   - ado.net
-  - transactions
+  - transaction
   - isolation-levels
 ---
 Bu makalemizde, Transaction'larda kullanılan izolasyon seviyelerini incelemeye başlayacağız. Izolasyon seviyeleri, eşzamanlı olarak çalışan Transaction'ların birbirlerini nasıl etkilemesi gerektiğini belirtmekte kullanılır. Yani bir başka deyişle, bir Transaction içinde meydana gelen değişikliklerin, başka eş zamanlı Transactionlar tarafından nasıl ele alınması gerektiğini belirlememize olanak sağlar. Izolasyon seviylerini anlamanın en iyi yolu, eş zamanlı olarak çalışan Transaction'larda meydana gelebilecek sorunları iyi anlamaktan geçer.

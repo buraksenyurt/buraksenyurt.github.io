@@ -5,13 +5,12 @@ date: 2019-05-17 12:53:00 +0300
 categories:
   - asp-dotnet-core
 tags:
-  - razor
+  - razor-page
   - .net-core
   - csharp
   - html
   - cshtml
   - mode-page
-  - razor-page
   - routing
   - entity-framework
   - sqlite

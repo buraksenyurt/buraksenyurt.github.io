@@ -8,8 +8,7 @@ tags:
   - workflow-foundation
   - windows-communication-foundation
   - wcf-service
-  - transaction-management
-  - transaction-scope
+  - transaction
   - oracle
   - odp.net
   - oracle-data-provider-for-.net

@@ -8,7 +8,7 @@ tags:
   - csharp
   - parallel-programming
   - .net-framework-4.0
-  - visual-studio-2010-ultimate
+  - visual-studio
   - task-parallel-library
   - waiting-tasks
 ---

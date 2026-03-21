@@ -6,7 +6,7 @@ categories:
   - tasarim-kaliplari-design-patterns
 tags:
   - design-patterns
-  - software-design-patterns
+  - software-design-pattern
   - gof
   - service-locator
   - interface

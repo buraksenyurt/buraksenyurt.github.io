@@ -13,7 +13,7 @@ tags:
   - dependency-injection
   - csharp
   - .net-core
-  - visual-studio-code
+  - vs-code
   - moq
   - stubs
   - nuget

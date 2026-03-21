@@ -11,7 +11,7 @@ tags:
   - office
   - word-addin
   - addin
-  - visual-studio-2012
+  - visual-studio
   - .net
   - csharp
   - entity-framework

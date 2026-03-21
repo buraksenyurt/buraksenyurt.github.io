@@ -12,7 +12,7 @@ tags:
   - erlang
   - csharp
   - .net-core
-  - visual-studio-code
+  - vs-code
   - producer
   - RabbitMQ.Client
   - consumer

@@ -7,7 +7,6 @@ categories:
   - parallel-programming
   - tpl
 tags:
-  - tpl
   - task-parallel-library
   - parallel-programming
   - parallel-computing

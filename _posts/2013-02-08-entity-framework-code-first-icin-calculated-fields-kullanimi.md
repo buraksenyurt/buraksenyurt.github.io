@@ -6,7 +6,7 @@ categories:
   - entity-framework
 tags:
   - entity-framework
-  - t-sql
+  - sql
   - migration
   - code-first
   - poco

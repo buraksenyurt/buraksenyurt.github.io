@@ -6,12 +6,8 @@ categories:
   - t-sql
 tags:
   - sql
-  - sys.objects
-  - sys.tables
-  - sys.columns
   - stored-procedures
   - newid
-  - sys.servers
   - transact-sql
   - cursor
   - database

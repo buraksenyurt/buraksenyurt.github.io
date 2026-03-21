@@ -11,7 +11,7 @@ tags:
   - windows-presentation-foundation
   - xmldataprovider
   - binding
-  - xpath
+  - x-path
   - master-detail
   - listbox
   - itemssource

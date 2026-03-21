@@ -6,7 +6,7 @@ categories:
   - dotnet-core
 tags:
   - blazor
-  - razor
+  - razor-page
   - .net-core
   - html
   - csharp
@@ -14,7 +14,6 @@ tags:
   - .net
   - WebAssembly
   - cshtml
-  - SPA
   - single-page-application
   - Framework
 ---

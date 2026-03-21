@@ -8,7 +8,7 @@ categories:
   - wcf-webhttp-services
 tags:
   - wcf-webhttp-services
-  - silverlight-4.0
+  - Silverlight
   - silverlight
   - windows-communication-foundation
   - http

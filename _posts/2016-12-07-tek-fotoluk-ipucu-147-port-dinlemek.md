@@ -6,13 +6,12 @@ categories:
   - ruby
 tags:
   - ruby-lang
-  - tcpip
+  - tcp
   - port
   - networking
   - network-programming
   - three-way-handshake
   - Internet-Assigned-Numbers-Authority
-  - TCPSocket
 ---
 Diyelim ki bir sunucu üzerinde tanımlı portların anlık durumları hakkında bilgi sahibi olmak istiyorsunuz (Örneğin sunucuda SQL Server yüklü ise varsayılan 1433 portu açık mı veya ftp portu cevap verir konumda mı vb) Ruby dilinde bu tip bir işlevselliği gerçekleştirmek son derece basit. Tek yapmamız gereken makine adı ve port bilgisini kullanmak. Nasıl mı? Aynen aşağıdaki fotoğrafta olduğu gibi.
 

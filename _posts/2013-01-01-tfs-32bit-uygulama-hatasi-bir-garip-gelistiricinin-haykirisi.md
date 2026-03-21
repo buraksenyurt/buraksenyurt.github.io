@@ -5,7 +5,6 @@ date: 2013-01-01 15:52:00 +0300
 categories:
   - team-foundation-server
 tags:
-  - tfs
   - team-foundation-server
   - application-pool
   - iis

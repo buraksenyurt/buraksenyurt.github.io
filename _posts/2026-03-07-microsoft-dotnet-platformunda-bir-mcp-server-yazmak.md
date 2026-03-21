@@ -15,7 +15,6 @@ tags:
   - webapi
   - rest-api
   - ai
-  - yapayzeka
   - agenticProgramming
   - claude-sonnet
 ---

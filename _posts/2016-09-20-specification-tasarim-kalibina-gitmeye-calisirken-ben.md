@@ -7,7 +7,7 @@ categories:
 tags:
   - design-patterns
   - architecture-design-pattern
-  - software-design-patterns
+  - software-design-pattern
   - martin-fowler
   - interface
   - abstract-class

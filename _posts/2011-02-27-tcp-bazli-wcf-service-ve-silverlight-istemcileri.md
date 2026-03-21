@@ -9,7 +9,7 @@ tags:
   - nettcpbinding
   - windows-communication-foundation
   - wcf-services
-  - silverlight-4.0
+  - Silverlight
   - silverlight
 ---
 Bir yazar, hazırlayacağı hikaye için çoğu zaman çevrede dolaşıp malzeme toplar. Olayın kahramanlarını tasvir etmek için çevredeki insanları göz önüne alır. Hatta gezdiği yerleri inceler. Bu açıdan bakıldığında iyi yazarların aslında çok iyi birer gözlemci olduğu söylenebilir.

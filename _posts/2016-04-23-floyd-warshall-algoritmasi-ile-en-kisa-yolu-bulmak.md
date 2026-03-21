@@ -7,7 +7,7 @@ categories:
 tags:
   - algoritma
   - csharp
-  - regular-expression
+  - regex
   - network-routing
   - dynamic-programming
   - floydWarshall

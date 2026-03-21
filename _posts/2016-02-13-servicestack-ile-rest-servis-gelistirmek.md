@@ -11,7 +11,7 @@ tags:
   - csharp
   - servicestack
   - oop
-  - soapui
+  - soap-based-service
   - dto
   - data-transfer-object
   - service-design-patterns

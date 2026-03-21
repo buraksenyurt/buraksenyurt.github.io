@@ -7,7 +7,6 @@ categories:
 tags:
   - microsoft-azure
   - redis
-  - redis-cache
   - .net-core
   - cloud-computing
   - nosql

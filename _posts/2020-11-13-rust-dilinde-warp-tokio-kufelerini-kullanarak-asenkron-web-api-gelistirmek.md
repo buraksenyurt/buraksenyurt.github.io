@@ -13,7 +13,7 @@ tags:
   - web-api
   - rest-api
   - rust-lang
-  - visual-studio-code
+  - vs-code
   - ubuntu
   - linux
 ---

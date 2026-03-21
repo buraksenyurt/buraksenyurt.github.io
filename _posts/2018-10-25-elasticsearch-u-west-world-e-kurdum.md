@@ -13,7 +13,7 @@ tags:
   - get
   - post
   - put
-  - ubuntu-16.04
+  - linux-ubuntu
   - lucene
   - apache
   - full-text-search

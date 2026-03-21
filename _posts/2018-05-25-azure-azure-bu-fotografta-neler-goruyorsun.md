@@ -13,7 +13,7 @@ tags:
   - .net
   - .net-core
   - csharp
-  - visual-studio-code
+  - vs-code
   - computer-vision
   - microsoft
   - rest-api

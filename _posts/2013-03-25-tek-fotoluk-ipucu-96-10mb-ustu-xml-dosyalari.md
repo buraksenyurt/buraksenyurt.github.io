@@ -6,7 +6,7 @@ categories:
   - tek-fotoluk-ipucu
 tags:
   - tek-fotoluk-ipucu
-  - visual-studio-2012
+  - visual-studio
   - xml
   - registery
 ---

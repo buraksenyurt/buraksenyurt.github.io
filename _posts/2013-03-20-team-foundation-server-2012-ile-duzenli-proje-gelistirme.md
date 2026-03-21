@@ -7,7 +7,6 @@ categories:
 tags:
   - team-foundation-server
   - client-object-model
-  - tfs
   - work-item
   - task
   - product-backlog-item

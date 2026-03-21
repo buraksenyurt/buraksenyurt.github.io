@@ -9,7 +9,7 @@ tags:
   - excel
   - office-interop
   - office-development
-  - visual-studio-2012
+  - visual-studio
   - cells
 ---
 Artık uygulamaların birbirleri ile konuşmaları çok ama çok kolay. Bu gerçekten önemli bir mesele. Özellikle farklı segmentlerden insanların bir araya geldiği bilişim toplumlarında. Kimi kullanıcı için Office Excel, Word veya Powerpoint çok şey ifade ederken, kimi kullanıcı içinde SQL Management Studio ortamında hazırlanan karmaşık bir sorguya bakmak daha anlamlı olabiliyor. Ya da bir Web sayfası üzerinden alınan raporlar şirketin Muhasebe Şefi için değerli iken, kimisi SSRS ile elde edilen raporları mobil cihazında görmeyi tercih edebiliyor.

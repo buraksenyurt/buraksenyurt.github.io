@@ -8,7 +8,7 @@ categories:
 tags:
   - csharp
   - window
-  - winforms
+  - windows-forms
   - list
   - generics
   - overriding

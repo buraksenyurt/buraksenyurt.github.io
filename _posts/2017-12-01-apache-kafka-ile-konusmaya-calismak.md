@@ -7,7 +7,6 @@ categories:
 tags:
   - apache-kafka
   - .net-core
-  - .net-core-2.0
   - message-queue
   - message-broker
   - distributed-messaging-system

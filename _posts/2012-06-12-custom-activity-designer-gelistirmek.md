@@ -14,7 +14,7 @@ tags:
   - xaml-data-binding
   - ivalueconverter
   - observablecollection
-  - visual-studio-2010-workflow-designer
+  - visual-studio
 ---
 İnsanın kendisini en çok geliştireceği yer gerçek çalışma sahaları/ortamlarıdır. Ortaya konan ihtiyaçlar ne zaman ki sizin kullanmakta olduğunuz araçların (Tools) sınırlarını zorlamaya başlar, bu noktadan itibaren içerisine gireceğiniz her çeşit mücadele size inanılmaz derece tecrübe ve bilgi katacaktır. Tabi bu know-how bilgisini saklayabilir, kendiniz için dökümante edebilir veya kuralları çerçevesinde paylaşabilirsiniz
 

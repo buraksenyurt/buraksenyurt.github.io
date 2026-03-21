@@ -6,7 +6,7 @@ categories:
   - ado-net
 tags:
   - ado.net
-  - tansactions
+  - transaction
   - distributed-transactions
   - com+
   - component-services

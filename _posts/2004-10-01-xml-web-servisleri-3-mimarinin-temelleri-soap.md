@@ -5,7 +5,7 @@ date: 2004-10-01 12:00:00 +0300
 categories:
   - xml-web-services
 tags:
-  - xml-web-services
+  - xml-web-service
   - soap
 ---
 Bu makalemizde, Xml Web Servislerinin mimarisine daha yakında bakmaya çalışacak ve SOAP (Simple Object Access Protocol) 'ı kısaca tanımaya çalışacağız. Bir web servisinin, istemci uygulamalar tarafından nasıl kullanılabildiğini anlamak, web servislerinin mimarisini iyi bilmekle mümkündür. Mimariyi kolay bir şekilde anlayabilmek için, daha önceki makalemizde geliştirdiğimiz web servisi ve istemci uygulamayı göz önüne alacağız. Herşeyden önce geliştirdiğimiz web servisi local olarak test edilebilen ve tarayıcı üzerinde çalışabilen bir asmx dosyasından ve buna bağlı Code-Behind dosyasından oluşmaktadır. Web servisini test etmek için, web servisinin bulunduğu adresteki asmx uzantılı dosyayı, tarayıcı penceresinden çalıştırmak yeterlidir. Bunun sonucunda, tarayıcı penceresinde bu web servisi hakkındaki bilgilere ulaşabilir ve içerdiği metodları görebiliriz.

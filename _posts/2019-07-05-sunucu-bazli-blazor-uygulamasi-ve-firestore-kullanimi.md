@@ -11,7 +11,7 @@ tags:
   - google-cloud-platform
   - database
   - entity-framework
-  - razor
+  - razor-page
   - dal
   - dataAccessLayer
   - crud

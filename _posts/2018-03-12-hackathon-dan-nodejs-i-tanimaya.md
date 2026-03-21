@@ -9,7 +9,7 @@ tags:
   - javascript
   - Framework
   - script-languages
-  - visual-studio-code
+  - vs-code
   - callback
   - repl
   - asynchronous-programming

@@ -7,7 +7,6 @@ categories:
 tags:
   - windows-communication-foundation
   - task-parallel-library
-  - tpl
   - iasyncresult
 ---
 Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim

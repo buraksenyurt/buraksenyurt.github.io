@@ -7,7 +7,6 @@ categories:
 tags:
   - sql
   - sql-server
-  - t-sql
   - transact-sql
   - row-count
   - count

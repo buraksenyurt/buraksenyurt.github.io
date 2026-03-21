@@ -11,7 +11,6 @@ tags:
   - http
   - entity-framework
   - swagger
-  - .net-core-2.0
   - core
   - middleware
   - mvc

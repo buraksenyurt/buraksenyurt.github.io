@@ -6,7 +6,6 @@ categories:
   - python
   - raspberry-pi
 tags:
-  - raspirobot
   - raspberry-pi
   - python
   - servo-motor

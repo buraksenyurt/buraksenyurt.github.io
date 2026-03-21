@@ -10,7 +10,7 @@ tags:
   - soap
   - proxy
   - http-post
-  - soap-based-web-service
+  - soap-based-service
   - command-prompt
   - csharp
 ---

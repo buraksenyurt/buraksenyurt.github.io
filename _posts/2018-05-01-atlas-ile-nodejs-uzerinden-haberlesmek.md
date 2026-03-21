@@ -14,7 +14,7 @@ tags:
   - promise
   - asynchronous-programming
   - paas
-  - visual-studio-code
+  - vs-code
   - json
   - reject
   - async

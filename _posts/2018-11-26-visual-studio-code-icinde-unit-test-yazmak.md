@@ -7,12 +7,11 @@ categories:
 tags:
   - unit-test
   - mstest
-  - visual-studio-code
+  - vs-code
   - testing
   - .net-core
   - .net
   - csharp
-  - testmethod
   - testclass
   - datatestmethod
   - datarow

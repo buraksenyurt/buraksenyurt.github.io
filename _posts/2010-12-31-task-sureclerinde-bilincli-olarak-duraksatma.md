@@ -10,7 +10,6 @@ tags:
   - .net-framework-4.0
   - parallel-programming
   - thread
-  - task-cancellation
 ---
 Pek çoğumuz hayatımızın çeşitli dönemlerinde ayakta veya oturarak bir şeyler için beklemek zorunda kalırız. Kimi zaman seyahat edeceğimiz yere gidecek aracı bekleriz. Özellikle uçak seyahatleri gibi gecikmelerin sıklıkla yaşanabileceği durumlardan tutunda, İstanbul trafiğinin akşam saatlerindeki yoğunluğu yüzünden yine belirsiz süre dolmuş beklenmesi gibi hallerle sıklıkla karşılaşılır.
 

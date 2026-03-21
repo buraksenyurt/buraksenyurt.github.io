@@ -5,10 +5,8 @@ date: 2013-11-03 14:58:00 +0300
 categories:
   - team-foundation-server
 tags:
-  - tfs
   - team-foundation-server
   - client-object-model
-  - tfs-web-services
   - xml-web-service
   - version-control
 ---

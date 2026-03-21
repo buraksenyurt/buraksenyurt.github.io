@@ -11,7 +11,6 @@ tags:
   - sdk
   - ai
   - claude-sonnet
-  - yapayzeka
 ---
 İçimiz dışımız, sağımız solumuz yapay zekadan geçilmiyor. Öyle bir dönemdeyiz ne ona burun kıvırabiliriz ne de her şeyimizle teslim. Halen daha işin özünde problemi anlamanın, parçalara bölebilmenin, doğru metodolojileri ve araçları kullanarak ideal çözüm yollarını geliştirebilmenin önemli olduğunu düşünüyorum. Bunun içinde kendimizi donatmaya devam etmemiz gerektiğini biliyorum. Ayrıca yapay zeka araçlarını tanımanın ve yazılımcılara ne gibi avantajlar ya da tam tersi dezavantajlar getireceğini de araştırmalıyız diyorum. Ne yazık ki yapay zeka denildiğinde onu sadece chat-gpt'den ibaret bir şey olduğunu düşünenler var. Bunun böyle olmadığını deneyimlediğim araçlar bana gösteriyor. Tanımak lazım. İşte bugünkü yazımızın konularından birisi de bu; Microsoft'un [Copilot SDK](https://github.com/github/copilot-sdk) paketini kullanarak neler yapabilirizin basit bir Hello World demosu.
 

@@ -15,7 +15,7 @@ tags:
   - command-prompt
   - visual-studio
   - platform
-  - team-foundation-build
+  - team-foundation-server
   - build-server
   - build-service
   - csharp

@@ -20,7 +20,6 @@ tags:
   - tye
   - kubectl
   - wsl
-  - redis-cli
   - worker-service
   - service-discovery
 ---

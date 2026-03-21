@@ -6,7 +6,6 @@ categories:
   - raspberry-pi
 tags:
   - raspberry-pi
-  - raspbian
   - linux
   - programlama
   - commodore-64

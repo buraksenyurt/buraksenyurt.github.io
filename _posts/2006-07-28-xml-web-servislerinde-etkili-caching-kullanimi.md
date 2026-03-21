@@ -5,7 +5,7 @@ date: 2006-07-28 12:00:00 +0300
 categories:
   - xml-web-services
 tags:
-  - xml-web-services
+  - xml-web-service
   - cache
   - caching
   - context.cache

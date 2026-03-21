@@ -6,7 +6,7 @@ categories:
   - ado-net
 tags:
   - ado.net
-  - transactions
+  - transaction
   - isolation-levels
 ---
 Bu makalemizde, Sql izolasyon seviyelerinin,.net uygulamalarında nasıl kullanıldığını incelemeye çalışacağız. Bir önceki makalemizde, izolasyon seviyeleri için söz konusu olabilecek 3 problemi ele almıştık. Bu olası problemler phantoms, non-repeatable read ve dirty read durumlarıdır. Eş zamanlı olarak çalışan Transaction'larda meydana gelebilecek bu problemleri, IsolationLevel numaralandırıcısı yardımıyla kontrol altına alabiliriz. Bu numaralandırıcının alabileceği değerler ve bu değerlerin izin verdiği (vermediği) durumlar aşağıdaki tabloda yer almaktadır.

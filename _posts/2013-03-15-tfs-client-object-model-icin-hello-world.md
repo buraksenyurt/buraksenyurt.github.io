@@ -5,7 +5,6 @@ date: 2013-03-15 02:30:00 +0300
 categories:
   - team-foundation-server
 tags:
-  - tfs
   - team-foundation-server
   - team-explorer-everywhere
   - client-object-model

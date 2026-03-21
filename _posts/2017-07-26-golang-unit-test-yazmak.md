@@ -6,9 +6,8 @@ categories:
   - golang
 tags:
   - golang
-  - test-case
+  - testing
   - unit-test
-  - test
   - birim-test
   - test-driven-development
 ---

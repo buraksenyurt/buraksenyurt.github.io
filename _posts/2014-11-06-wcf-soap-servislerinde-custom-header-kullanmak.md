@@ -8,7 +8,7 @@ tags:
   - windows-communication-foundation
   - soa
   - header
-  - soap-envelope
+  - soap-based-service
   - message-contract
   - xsd
   - xml

@@ -5,7 +5,7 @@ date: 2013-05-03 00:10:00 +0300
 categories:
   - tasarim-prensipleri-design-principles
 tags:
-  - software-design-principles
+  - software-design-principle
   - dip
   - dependency-injection
   - inversion-of-control

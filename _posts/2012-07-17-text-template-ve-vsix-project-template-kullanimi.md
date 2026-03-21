@@ -6,9 +6,8 @@ categories:
   - visual-studio
 tags:
   - text-template
-  - visual-studio-sdk
+  - visual-studio
   - vsix-project-template
-  - visual-studio-2012
 ---
 Çoğu zaman geliştiricilerin karşısına zaman kısıtı olan projelerde, sıklıkla tekrar eden çözümsel ihtiyaçlar çıkar. Örneğin, ürünün içerisinde n sayıda ekran kullanıldığını ve bunların aslında belirli bir noktaya kadar bir kaç parametre ile değişen ama standart kod içeriklerine sahip olduğunu düşünün. Hatta bu tip ekranları bir kaç proje için aynı şekilde ürettiğinizi.
 

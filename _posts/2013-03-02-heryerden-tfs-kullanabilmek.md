@@ -5,14 +5,13 @@ date: 2013-03-02 08:50:00 +0300
 categories:
   - team-foundation-server
 tags:
-  - tfs
+  - team-foundation-server
   - team-explorer-everywhere
   - msscci-provider
   - sql-navigator
   - oracle
   - java
   - eclipse
-  - team-foundation-server
   - branch
   - checkin
   - checkout

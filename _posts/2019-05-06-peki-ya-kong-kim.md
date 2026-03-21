@@ -15,7 +15,7 @@ tags:
   - csharp
   - docker
   - container
-  - postgres
+  - PostgreSQL
   - api
 ---
 Kurumsal mimari ekibinin önerdiği çatılardan birisi üzerine kurulmuş yeni ürünümüzü test ortamına almaya çalıştığımız bir gündü. Local makinelerimizde çok az sorunla ayağa kaldırdığımız proje, test ortamında ne yazık ki daha fazla problem üretmişti. Ağırlıklı olarak web önyüzünden iş kurallarının yürütüldüğü Web API servislerine gidişlerde sorunlar yaşıyorduk.

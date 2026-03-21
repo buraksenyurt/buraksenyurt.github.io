@@ -6,7 +6,7 @@ categories:
   - gcp
 tags:
   - google-cloud-platform
-  - real-time-database
+  - realtime-database
   - google
   - node
   - npm

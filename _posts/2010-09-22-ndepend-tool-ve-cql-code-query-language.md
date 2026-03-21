@@ -5,7 +5,7 @@ date: 2010-09-22 20:16:00 +0300
 categories:
   - teknik-disi-konular
 tags:
-  - visual-studio-2010
+  - visual-studio
   - ndepend
   - cql
   - code-query-language

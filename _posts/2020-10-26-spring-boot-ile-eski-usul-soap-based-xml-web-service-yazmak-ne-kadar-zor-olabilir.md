@@ -13,7 +13,7 @@ tags:
   - wsdl
   - dependency-injection
   - service-discovery
-  - soapui
+  - soap-based-service
 ---
 Kısa bir süre önce değerli bir çalışma arkadaşım kullanmaya çalıştığı Java tabanlı XML Web servis ile epeyce sorun yaşadı. Söz konusu servisi.Net tarafından tüketmeye çalışıyordu ancak XML şeması da epeyce karmaşık olan servis iletişim noktasında şema adlarına kızıyor, header içeriğini beğenmiyor sürekli naz yapıyordu. Arkadaşım allem etti kallem etti sorunun altından girip üstünden çıktı ve nihayetinde çözdü. Bu olaylara kısmen tanıklık ettikten sonra "yahu Java tarafında XML Web Service geliştirmek şimdilerde daha bir kolay değil midir!?" diye söylenmeye başladım. Yol doğal olarak beni Spring Boot'a ve resmi dokümantasyonuna götürdü.
 

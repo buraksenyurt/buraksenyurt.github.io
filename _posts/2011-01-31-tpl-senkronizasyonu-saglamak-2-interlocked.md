@@ -5,7 +5,6 @@ date: 2011-01-31 13:45:00 +0300
 categories:
   - parallel-programming
 tags:
-  - tpl
   - task-parallel-library
   - synchronization-primitives
   - parallel-programming

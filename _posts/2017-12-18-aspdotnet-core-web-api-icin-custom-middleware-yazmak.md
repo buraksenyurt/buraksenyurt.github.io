@@ -6,7 +6,7 @@ categories:
   - dotnet-core
   - asp-dotnet-core
 tags:
-  - .net-core-2.0
+  - .net-core
   - asp.net-core
   - asp.net-core-webapi
   - webapi

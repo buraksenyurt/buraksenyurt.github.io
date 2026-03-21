@@ -10,7 +10,7 @@ tags:
   - generics
   - unit-of-work
   - design-patterns
-  - software-design-principles
+  - software-design-principle
 ---
 Yazılım dünyasında var olan mimari prensipler veya tasarım kalıpları tek başlarına belirli sorunları çözseler de, bazı kurumsal projelerde mutlak suretle bir arada düşünülmeleri gerekir. Söz gelimi Repository ve Unit of Work kalıpları, özellikle Domain Driven Design odaklı yapılarda bir arada değerlendirilmesi gerekenlerdendir.
 

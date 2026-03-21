@@ -5,7 +5,7 @@ date: 2017-12-29 21:01:00 +0300
 categories:
   - dotnet-core
 tags:
-  - .net-core-2.0
+  - .net-core
   - web-api
   - cors
   - security

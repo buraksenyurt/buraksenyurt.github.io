@@ -6,7 +6,7 @@ categories:
   - wcf
 tags:
   - windows-communication-foundation
-  - xml-web-services
+  - xml-web-service
   - asmx
   - httpwebrequest
   - httpwebresponse

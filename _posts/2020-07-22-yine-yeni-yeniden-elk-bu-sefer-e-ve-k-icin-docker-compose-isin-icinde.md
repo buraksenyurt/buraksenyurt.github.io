@@ -7,7 +7,7 @@ categories:
 tags:
   - docker
   - .net
-  - .net-core-3.1
+  - .net-core
   - elk
   - elasticsearch
   - kibana

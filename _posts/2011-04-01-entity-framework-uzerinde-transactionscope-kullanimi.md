@@ -7,7 +7,6 @@ categories:
 tags:
   - entity-framework
   - transaction
-  - transaction-scope
 ---
 Günlerden Salı, sonbahar. Neredeyse hiç uyumadan geçen bir gecenin ardından sabaha karşı yorgunluktan sızan Netspecter, CAD’ in baş ucunda dakikalarca miyavlaması sonucu ancak kendine gelebilir. Eksi ve köhne divanı, o doğrulurken olabildiğince haykırarak gıcırdamaktadır. Önce terliklerini arar. Oda darma dağınıktır. Tüm gece kütüphanedeki sayısız kitabı indirmiş ve bir sonuç bulmak için saatlerce araştırma yapmıştır. Sonuçta terliğin tekinin dahi bulunamadığı bir kalabalık kitap yığınıdır.
 

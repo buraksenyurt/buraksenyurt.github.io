@@ -7,7 +7,7 @@ categories:
 tags:
   - entity-framework
   - code-first-development
-  - visual-studio-2012
+  - visual-studio
 ---
 Çok eskiden kullanılan programlama dilleri ve platformları düşünüldüğünde çok ilkel IDE’ ler ile çalışmış olduğumuzu görmekteyiz. Hatta bazı programlama dilleri ile yapılan geliştirmelerde değil IDE, komut satırına mahkum olmuşuzdur (Gerçi komut satırında script yazarak geliştirme yapmak özellikle fonksiyonel programlama dilleri göz önüne alınırsa oldukça popüler ve isabetlidir)
 

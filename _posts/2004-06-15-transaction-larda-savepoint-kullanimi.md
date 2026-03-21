@@ -6,7 +6,7 @@ categories:
   - ado-net
 tags:
   - ado.net
-  - transactions
+  - transaction
   - isolation-levels
   - save-point
 ---

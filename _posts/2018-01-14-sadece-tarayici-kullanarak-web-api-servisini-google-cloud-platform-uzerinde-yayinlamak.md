@@ -5,7 +5,7 @@ date: 2018-01-14 00:44:00 +0300
 categories:
   - dotnet-core
 tags:
-  - .net-core-2.0
+  - .net-core
   - web-api
   - google-app-engine
   - google-cloud-platform

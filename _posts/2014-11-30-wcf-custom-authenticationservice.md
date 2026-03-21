@@ -9,7 +9,7 @@ tags:
   - asp.net-authentication-service
   - authentication
   - authorization
-  - principlepermission
+  - principle-permission
 ---
 Bazen bir yola baş koyarız ama o kadar uzundur ki git git bitmek bilmez. Yolda bin bir türlü zorluğu aşmak zorunda kalırız. Hatta hangi zorluklarla karşılacağımızı da bilemeyebiliriz. Yolun uzunluğuna, karşılaşılan zorluklara bağlı olarak ya geri döneriz ya başka bir yola saparız ya da inat edip sonuna kadar gitmeye çalışırız. Mücadelinin sonunda yolun sonuna varmak da yeterli olmayabilir.
 

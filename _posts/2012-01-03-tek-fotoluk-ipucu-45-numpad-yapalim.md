@@ -7,7 +7,6 @@ categories:
   - tek-fotoluk-ipucu
   - windows-forms
 tags:
-  - win-forms
   - windows-forms
   - anonymous-methods
   - extension-methods

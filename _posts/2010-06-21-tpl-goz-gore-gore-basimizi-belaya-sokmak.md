@@ -10,7 +10,7 @@ tags:
   - parallel-programming
   - csharp
   - .net-framework-4.0
-  - visual-studio-2010-ultimate
+  - visual-studio
   - deadlock
   - local-variable-evaluation
   - excessive-spinning

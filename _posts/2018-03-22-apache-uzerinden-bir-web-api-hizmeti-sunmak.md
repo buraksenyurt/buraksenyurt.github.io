@@ -7,7 +7,6 @@ categories:
 tags:
   - apache
   - .net-core
-  - .net-core-2.0
   - hosting
   - reverse-proxy
   - kestrel
@@ -20,7 +19,7 @@ tags:
   - open-source
   - apache-foundation
   - ubuntu
-  - ubuntu-server
+  - linux-ubuntu
 ---
 Küçük bir çocukken her pazar sabahı TRT ekranlarında kovboy (Western) filmleri olurdu. Rahmetli babam ile severek geçirdiğimiz nadide vakitlerdendi. Sanıyorum son yıllarda yine Pazar sabahları ekranlarımızı süslüyorlar (Bakamıyorum çünkü sabahlarımız basketbol antrenmanları ile geçiyor) Kızılderililer ile süvarilerin sıklıkla karşı karşıya geldiği, batının en hızlı silahşörlerinin yer aldığı filmlere ne hikmetse çok bağlanmıştım.
 

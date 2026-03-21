@@ -7,7 +7,6 @@ categories:
 tags:
   - xml-serialization
   - xml-serializer
-  - xmlserializer
   - serialization
   - xml
   - invalidoperationexception

@@ -8,9 +8,8 @@ tags:
   - parallel-programming
   - task-parallel-library
   - cancellation-token
-  - task-cancellation
   - csharp
-  - visual-studio-2010-ultimate
+  - visual-studio
   - monitoring-cancellation
 ---
 Bu yazımızda daha önceden.Net Framework Beta 1 ve Beta 2 sürümlerinde incelediğimiz Task iptal işlemlerini son sürümde ele alıp toparlamaya çalışıyor olacağız. Task iptal işlemleri oldukça önemli ve üzerinde titizlikle durulması gereken bir konudur. Nitekim bazı hallerde çalıştırılmakta olan Task işlevlerinin iptal edilmesi gerekebilir. Bu iptal işlemi, sistem tarafından her hangibir koşulun gerçeklenmesi sonucu talep edilebileceği gibi, kullanıcı tarafından da uygulatılmak istenebilir.

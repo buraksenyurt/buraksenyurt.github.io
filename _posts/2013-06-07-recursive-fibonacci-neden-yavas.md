@@ -6,8 +6,7 @@ categories:
   - algoritma
   - csharp
 tags:
-  - recursive
-  - recursive-functions
+  - recursive-method
   - özyinelemeli-fonksiyonlar
   - fibonacci
   - factorial

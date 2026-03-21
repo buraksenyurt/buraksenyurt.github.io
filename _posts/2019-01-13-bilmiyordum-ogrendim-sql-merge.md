@@ -7,7 +7,6 @@ categories:
 tags:
   - sql
   - merge
-  - t-sql
   - docker
   - query
   - linux

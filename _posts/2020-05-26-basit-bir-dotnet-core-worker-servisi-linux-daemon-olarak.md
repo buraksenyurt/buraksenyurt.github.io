@@ -7,7 +7,6 @@ categories:
 tags:
   - csharp
   - .net-core
-  - .net-core-3.1
   - linux
   - daemon
   - redis
