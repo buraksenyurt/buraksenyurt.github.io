@@ -9,7 +9,7 @@ tags:
   - task-parallel-library
   - parallel-programming
   - csharp
-  - .net-framework-4.0
+  - .net-framework
   - visual-studio
   - deadlock
   - local-variable-evaluation

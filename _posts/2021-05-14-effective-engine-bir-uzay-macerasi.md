@@ -7,7 +7,7 @@ categories:
 tags:
   - web-api
   - asp.net-web-api
-  - .net-5
+  - .net
   - swagger
   - entity-framework
   - csharp

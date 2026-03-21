@@ -7,7 +7,7 @@ categories:
   - bcl
 tags:
   - base-class-library
-  - .net-framework-4.0
+  - .net-framework
   - file-io
   - system.io
 ---

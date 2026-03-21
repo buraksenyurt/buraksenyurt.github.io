@@ -7,7 +7,7 @@ categories:
 tags:
   - parallel-programming
   - task-parallel-library
-  - .net-framework-4.0
+  - .net-framework
   - csharp
 ---
 Ben Matematik Mühendisliği eğitimi almış bir bireyim. Öğrenim hayatım boyunca en çok yaptığım işlerden birisi, matematiksel teoremlerin bilimsel ispatlarını gerçekleştirmek olmuştur. Hemen hemen mühandisliğin her alanındaki farklı problemlerin modellenmesi ve ispatlarının yapılarak en uygun yol olduklarının gösterilmesi adına pek çok kağıt karalamış ve tüketmişimdir.

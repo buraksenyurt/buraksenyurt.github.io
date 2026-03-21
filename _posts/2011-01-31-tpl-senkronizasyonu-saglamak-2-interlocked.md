@@ -8,7 +8,7 @@ tags:
   - task-parallel-library
   - synchronization-primitives
   - parallel-programming
-  - .net-framework-4.0
+  - .net-framework
   - csharp
   - interlocked
 ---

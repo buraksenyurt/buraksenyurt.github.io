@@ -6,7 +6,7 @@ categories:
   - dotnet-framework-4-5
 tags:
   - asp.net-web-api
-  - .net-framework-4.5
+  - .net-framework
   - mvc
   - newtonsoft
   - json

@@ -6,7 +6,7 @@ categories:
   - csharp-4-0
 tags:
   - csharp
-  - .net-framework-4.0
+  - .net-framework
 ---
 Eminim hepimiz arada sırada tembellik yapıyor ve ilk bulduğumuz rahat köşeye kıvrılıp hiç bir şeyi düşünmeden rahatça uyuyabiliyoruz. Eğer bulunduğumuz yer uyumaya çok müsait değilse yandaki kedi gibi ortama ayak uydurup yinede uyuyoruz
 

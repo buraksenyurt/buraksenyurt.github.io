@@ -8,7 +8,7 @@ categories:
 tags:
   - biginteger
   - system.numerics
-  - .net-framework-4.0
+  - .net-framework
   - csharp
   - visual-studio
 ---

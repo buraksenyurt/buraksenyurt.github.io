@@ -9,7 +9,6 @@ categories:
 tags:
   - csharp
   - .net-framework
-  - .net-framework-4.0
   - stopwatch
 ---
 Bazen yazdığımız kod parçalarının işlem sürelerini hesaplama ihtiyacı duyarız. Bu anlamda en çok kullanılan yöntemlerden birisi DateTime ve TimeSpan tiplerini ele almakta iken gerçekte en efektif olanı Stopwatch sınıfını değerlendirmektir. Nasıl mı?

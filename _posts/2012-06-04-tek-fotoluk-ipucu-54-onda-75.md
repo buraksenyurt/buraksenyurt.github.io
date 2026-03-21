@@ -7,7 +7,7 @@ categories:
 tags:
   - collections
   - comparer
-  - .net-framework-4.5
+  - .net-framework
 ---
 Kendi tiplerimize ait koleksiyon nesnelerini kullanırken, Sort metodunu ele aldığımız durumlarda mutlaka neye göre karşılaştırma yapacağımızı belirtmemiz gerekmektedir. Bu amaçla IComparer veya IComparable gibi arayüzleri (Interface) ve bunların generic versiyonlarını kullanırız.
 

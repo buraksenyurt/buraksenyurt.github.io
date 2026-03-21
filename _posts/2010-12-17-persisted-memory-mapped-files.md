@@ -6,7 +6,7 @@ categories:
   - dotnet-framework-4-0
   - csharp-4-0
 tags:
-  - .net-framework-4.0
+  - .net-framework
   - csharp
   - memory-mapped-files
   - visual-studio

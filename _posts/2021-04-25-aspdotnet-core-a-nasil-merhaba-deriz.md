@@ -5,7 +5,7 @@ date: 2021-04-25 09:00:00 +0300
 categories:
   - dotnet-core
 tags:
-  - .net-5
+  - .net
   - .net-core
   - asp.net-mvc
   - dependency-injection

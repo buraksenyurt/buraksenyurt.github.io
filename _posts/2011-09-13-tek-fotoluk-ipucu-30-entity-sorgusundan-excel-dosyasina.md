@@ -6,7 +6,7 @@ categories:
   - dotnet-framework-4-0
   - tek-fotoluk-ipucu
 tags:
-  - .net-framework-4.0
+  - .net-framework
   - csharp
   - office-interop
   - language-integrated-query

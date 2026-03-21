@@ -6,7 +6,7 @@ categories:
   - csharp-4-0
 tags:
   - csharp
-  - .net-framework-4.0
+  - .net-framework
 ---
 Hani bazen insanın canı şöyle çıtır çıtır kuruyemiş çeker ya...Hatta çoğunlukla bir film seyrederken, maç izlerken, arkadaşları ile sohhet ederken, internette surf yaparken iyi gider ya...Hatta birisinin blog yazısını okurken kuruyemişleri yerken daha bir heyecanlı, istekli olur ya...
 

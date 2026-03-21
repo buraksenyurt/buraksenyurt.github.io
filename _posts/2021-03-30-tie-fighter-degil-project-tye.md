@@ -6,7 +6,7 @@ categories:
   - dotnet-core
 tags:
   - .net-core
-  - .net-5
+  - .net
   - kubernetes
   - docker
   - redis

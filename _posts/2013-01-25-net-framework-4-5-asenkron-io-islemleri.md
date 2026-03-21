@@ -5,7 +5,7 @@ date: 2013-01-25 02:27:00 +0300
 categories:
   - dotnet-framework-4-5
 tags:
-  - .net-framework-4.5
+  - .net-framework
   - async
   - asynchronous-programming
   - wait

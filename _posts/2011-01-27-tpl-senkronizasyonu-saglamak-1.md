@@ -7,7 +7,7 @@ categories:
   - tpl
 tags:
   - task-parallel-library
-  - .net-framework-4.0
+  - .net-framework
   - synchronization-primitives
   - parallel-programming
 ---

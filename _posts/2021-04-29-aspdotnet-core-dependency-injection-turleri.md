@@ -8,7 +8,7 @@ tags:
   - dependency-injection
   - asp.net-core
   - asp.net-core-mvc
-  - .net-5
+  - .net
   - method-injection
   - property-injection
   - view-injection

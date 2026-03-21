@@ -5,7 +5,7 @@ date: 2012-06-04 11:12:00 +0300
 categories:
   - tek-fotoluk-ipucu
 tags:
-  - .net-framework-4.5
+  - .net-framework
   - zipfile
   - compression
   - system.io.compression
