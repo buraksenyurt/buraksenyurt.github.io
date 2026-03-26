@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T23:12:39Z",
+  "generated_at": "2026-03-26T19:17:06Z",
   "posts": {
     "/2003/11/08/stored-procedure-yardimiyla-yeni-bir-kayit-eklemek/": {
       "title": "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek",
@@ -18120,6 +18120,25 @@
         "web-api",
         "yazilim-mimarileri"
       ]
+    },
+    "/2026/03/26/pİ-sayisini-hesaplama-yolunda/": {
+      "title": "Pi(π) Sayısını Hesaplama Yolunda",
+      "date": "2026-03-26T20:30:00+03:00",
+      "categories": [
+        "Programlama Dilleri"
+      ],
+      "tags": [
+        "algorithms",
+        "cargo",
+        "csharp",
+        "dotnet",
+        "mathematics",
+        "multithreading",
+        "parallelcomputing",
+        "rust",
+        "simd",
+        "zig"
+      ]
     }
   },
   "categories": {
@@ -20385,6 +20404,11 @@
       }
     ],
     "Programlama Dilleri": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
       {
         "url": "/2026/03/13/hexagonal-architecture-101/",
         "title": "Hexagonal Architecture 101",
@@ -25491,6 +25515,11 @@
     ],
     "algorithms": [
       {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
+      {
         "url": "/2025/04/03/bellek-yonetiminde-verimlilik-icin-ipuclari-rust-odakli/",
         "title": "Bellek Yönetiminde Verimlilik için İpuçları (Rust Odaklı)",
         "date": "2025-04-03T21:30:00+03:00"
@@ -29111,6 +29140,11 @@
     ],
     "cargo": [
       {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
+      {
         "url": "/2025/10/25/rust-ile-kodlama-idmanlari-baslangic-seviyesi/",
         "title": "Rust ile Kodlama İdmanları - Başlangıç Seviyesi",
         "date": "2025-10-25T20:04:00+03:00"
@@ -31155,6 +31189,11 @@
       }
     ],
     "csharp": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
       {
         "url": "/2026/03/13/hexagonal-architecture-101/",
         "title": "Hexagonal Architecture 101",
@@ -38311,6 +38350,11 @@
       }
     ],
     "dotnet": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
       {
         "url": "/2026/03/13/hexagonal-architecture-101/",
         "title": "Hexagonal Architecture 101",
@@ -51682,6 +51726,13 @@
         "date": "2013-06-07T00:40:00+03:00"
       }
     ],
+    "mathematics": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      }
+    ],
     "maven": [
       {
         "url": "/2020/11/23/net-core-tarafindan-rabbitmq-ya-mesaj-gondermek-ve-java-tarafindan-dinlemek/",
@@ -52844,6 +52895,11 @@
       }
     ],
     "multithreading": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
       {
         "url": "/2026/02/15/bunu-bir-dene-01-coklu-thread-ortamlarinda-ortak-veriyi-degistirmek-c-rust-ve-zig/",
         "title": "Bunu Bir Dene 01 - Çoklu Thread Ortamlarında Ortak Veriyi Değiştirmek (C#, Rust ve Zig)",
@@ -56031,6 +56087,13 @@
         "url": "/2009/06/12/concurrent-collections-es-zamanli-koleksiyonlar-beta-1/",
         "title": "Concurrent Collections (Eş Zamanlı Koleksiyonlar) [Beta 1]",
         "date": "2009-06-12T10:20:00+03:00"
+      }
+    ],
+    "parallelcomputing": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
       }
     ],
     "parameter-inspector": [
@@ -60069,6 +60132,11 @@
     ],
     "rust": [
       {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
+      {
         "url": "/2026/03/07/microsoft-dotnet-platformunda-bir-mcp-server-yazmak/",
         "title": "Microsoft DotNet Platformunda Bir MCP Server Yazmak",
         "date": "2026-03-07T14:34:00+03:00"
@@ -61355,6 +61423,13 @@
         "url": "/2009/05/08/net-ria-servisleri-nedir/",
         "title": ".Net RIA Servisleri Nedir?",
         "date": "2009-05-08T13:41:00+03:00"
+      }
+    ],
+    "simd": [
+      {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
       }
     ],
     "simple-object-access-protocol": [
@@ -71485,6 +71560,11 @@
     ],
     "zig": [
       {
+        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "title": "Pi(π) Sayısını Hesaplama Yolunda",
+        "date": "2026-03-26T20:30:00+03:00"
+      },
+      {
         "url": "/2026/02/15/bunu-bir-dene-01-coklu-thread-ortamlarinda-ortak-veriyi-degistirmek-c-rust-ve-zig/",
         "title": "Bunu Bir Dene 01 - Çoklu Thread Ortamlarında Ortak Veriyi Değiştirmek (C#, Rust ve Zig)",
         "date": "2026-02-15T19:31:00+03:00"
@@ -71552,7 +71632,7 @@
     },
     {
       "name": "algorithms",
-      "count": 65,
+      "count": 66,
       "weight": 1
     },
     {
@@ -71567,12 +71647,12 @@
     },
     {
       "name": "cargo",
-      "count": 22,
+      "count": 23,
       "weight": 1
     },
     {
       "name": "csharp",
-      "count": 732,
+      "count": 733,
       "weight": 5
     },
     {
@@ -71597,7 +71677,7 @@
     },
     {
       "name": "dotnet",
-      "count": 634,
+      "count": 635,
       "weight": 4
     },
     {
@@ -71667,7 +71747,7 @@
     },
     {
       "name": "multithreading",
-      "count": 135,
+      "count": 136,
       "weight": 2
     },
     {
@@ -71722,7 +71802,7 @@
     },
     {
       "name": "rust",
-      "count": 44,
+      "count": 45,
       "weight": 1
     },
     {
