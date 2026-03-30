@@ -8,13 +8,13 @@ tags:
   - ado.net
   - datatable
 ---
-Bugünkü makalemizde bağlantısız katmanın önemli bir sınıfı olan DataTable nesnesini bir açıdan incelemeye çalışacağız. Bilindiği gibi DataTable sınıfından türetilen bir nesne, bir tabloyu ve elemanlarını bellekte temsil etmek için kullanılmaktadır. DataTable sınıfı bellekte temsil ettiği tablolara ait olan satırları Rows koleksiyonuna ait DataRow nesneleri ile temsil ederken, tabloun alanlarını ise, Columns koleksiyonuna ait DataColumn nesneleri ile temsil etmektedir.
+Bugünkü makalemizde bağlantısız katmanın önemli bir sınıfı olan DataTable nesnesini bir açıdan incelemeye çalışacağız. Bilindiği gibi DataTable sınıfından türetilen bir nesne, bir tabloyu ve elemanlarını bellekte temsil etmek için kullanılmaktadır. DataTable sınıfı bellekte temsil ettiği tablolara ait olan satırları Rows koleksiyonuna ait DataRow nesneleri ile temsil ederken, tablonun alanlarını ise, Columns koleksiyonuna ait DataColumn nesneleri ile temsil etmektedir.
 
-Örnek uygulamamızda bu sınıf nesnelerini detaylı olarak kullanacağız. Diğer yandan DataTable sınıfı bir tabloya ilişkin kıstasların yer aldığı Constraints koleksiyonuna ait Constraint nesnelerinedee sahiptir. DataTable sınıfının ve üye elemanlarını aşağıdaki şekilde daha kolayca canlandırabiliriz.
+Örnek uygulamamızda bu sınıf nesnelerini detaylı olarak kullanacağız. Diğer yandan DataTable sınıfı bir tabloya ilişkin kıstasların yer aldığı Constraints koleksiyonuna ait Constraint nesnelerine de sahiptir. DataTable sınıfını ve üye elemanlarını aşağıdaki şekilde daha kolayca canlandırabiliriz.
 
 ![mk13_1.gif](/assets/images/2003/mk13_1.gif)
 
-Şekil 1 DataTable mimarisi
+Şekil 1. DataTable mimarisi
 
 Geliştireceğimiz uygulamada, bizim belirlediğimiz alanlardan oluşan bir tabloyu bellekte oluşturmaya çalışacağız. Öncelikle DataTable nesnesi ile bir tablo oluşturmak için aşağıdaki adımları takip etmeliyiz.
 
@@ -22,7 +22,7 @@ Bir DataTable nesnesi oluşturup DataTable’ın bellekte temsil edeceği tablo 
 Tablomuzun içereceği alanların isimleri, veri türleri belirlenerek birer DataRow nesnesi şeklinde, DataTable nesnesinin Columns koleksiyonuna eklenir.
 Tablomuz için bir primary key alanı belirlenir.
 
-Bu adımların ardından tablomuz bellekte oluşturulmuş olucaktır. Bu noktadan sonra bu tablo üzerinde dilediğimiz işlemleri yapabiliriz. Kayıt ekleyebilir, silebilir, sorgulayabiliriz. Ama tabiki programı kapattığımızda bellekteki tablonun yerinde yeller esiyor olucaktır. Ama üzülmeyin ilerliyen makalelerimizde SQL-DMO komutları yardımıyla programımız içinden bir sql sunucusu üzerinde veritabanı oluşturacak ve tablomuzu buraya ekleyeceğiz.Şimdi dilerseniz birinci adımdan itibaren bu işlerin nasıl yapıldığını minik örnekler ile inceleyelim ve daha sonrada asıl uygulamamaızı yazalım. Öncelikle işe tablomuzu bellekte temsil edicek datatable nesnesi oluşturarak başlayalım. Aşağıdaki küçük uygulamayı oluşturalım.
+Bu adımların ardından tablomuz bellekte oluşturulmuş olacaktır. Bu noktadan sonra bu tablo üzerinde dilediğimiz işlemleri yapabiliriz. Kayıt ekleyebilir, silebilir, sorgulayabiliriz. Ama tabii ki programı kapattığımızda bellekteki tablonun yerinde yeller esecektir. Ama üzülmeyin, ilerleyen makalelerimizde SQL-DMO komutları yardımıyla programımız içinden bir sql sunucusu üzerinde veritabanı oluşturacak ve tablomuzu buraya ekleyeceğiz. Şimdi dilerseniz birinci adımdan itibaren bu işlerin nasıl yapıldığını minik örnekler ile inceleyelim ve daha sonra da asıl uygulamamızı yazalım. Öncelikle işe tablomuzu bellekte temsil edecek datatable nesnesi oluşturarak başlayalım. Aşağıdaki küçük uygulamayı oluşturalım.
 
 ![mk13_2.gif](/assets/images/2003/mk13_2.gif)
 
@@ -45,7 +45,7 @@ private void btnTabloOlustur_Click(object sender, System.EventArgs e)
 
 Şekil 3. DataTable nesnesi oluşturuldu.
 
-Şimdi ise tablomuza nasıl field (alan) ekleyeceğimize bakalım. Önceden bahsettiğimiz gibi tablonun alanları aslında DataTable sınıfının Columns koleksiyonuna ait birer DataColumn nesnesidir. Dolayısıyla öncelikle bir DataRow nesnesi oluşturup bu nesneyi ilgili DataTable’ın Columns koleksiyonuna eklememiz gerekmektedir. Alanın ismi dışında tabiki veri türünüde belirtmeliyiz. Bu veri türlerini belirtirken Type.GetType syntaxı kullanılır. Formumuzu biraz değiştirelim. Kullanıcı belirlediği isimde ve türdeki alanı, tabloya ekleyebilecek olsun. Söylemek isterimki bu uygulamada hiç bir kontrol mekanizması uygulanmamış ve hataların önünce geçilmeye çalışılmamıştır. Nitekim amacımız DataTable ile bir tablonun nasıl oluşturulacağına dair basit bir örnek vermektir. Formumuzu aşağıdaki gibi değiştirelim. Kullanıcı bir tablo adı girip oluşturduktan sonra istediği alanları ekleyecek ve bu bilgiler listbox nesnemizde kullanıcıya ayrıca gösterilecek.
+Şimdi ise tablomuza nasıl field (alan) ekleyeceğimize bakalım. Önceden bahsettiğimiz gibi tablonun alanları aslında DataTable sınıfının Columns koleksiyonuna ait birer DataColumn nesnesidir. Dolayısıyla öncelikle bir DataRow nesnesi oluşturup bu nesneyi ilgili DataTable’ın Columns koleksiyonuna eklememiz gerekmektedir. Alanın ismi dışında tabii veri türünü de belirtmeliyiz. Bu veri türlerini belirtirken Type.GetType syntax'ı kullanılır. Formumuzu biraz değiştirelim. Kullanıcı belirlediği isimde ve türdeki alanı, tabloya ekleyebilecek olsun. Söylemek isterim ki bu uygulamada hiçbir kontrol mekanizması uygulanmamış ve hataların önüne geçilmeye çalışılmamıştır. Nitekim amacımız DataTable ile bir tablonun nasıl oluşturulacağına dair basit bir örnek vermektir. Formumuzu aşağıdaki gibi değiştirelim. Kullanıcı bir tablo adı girip oluşturduktan sonra istediği alanları ekleyecek ve bu bilgiler listbox nesnemizde kullanıcıya ayrıca gösterilecek.
 
 ![mk13_4.gif](/assets/images/2003/mk13_4.gif)
 
@@ -94,7 +94,7 @@ System.Decimal
 System.Double
 ```
 
-Gibi...
+gibi...
 
 Şimdi de seçtiğimiz bir alanı primary key olarak belirleyelim. Unique (benzersiz) integer değerler alıcak bir alan olsun bu ve 1000 den başlayarak 1’er 1’er otomatik olarak artsın. Bildiğini ID alanlarından bahsediyorum. Bunu kullanıcıya sormadan otomatik olarak biz yaratalım ve konudan fazlaca uzaklaşmayalım. Sadece btnTabloOlustur’un kodlarına ekleme yapıyoruz.
 

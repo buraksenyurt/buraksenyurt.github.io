@@ -58,13 +58,13 @@ ConsoleApplication1
 
 Bu örneği çalıştırmadan once satırlarımızı bir inceleyelim. Kodumuz Temel isimli bir base class ve Tureyen isimli bir Derived Class vardır. Her iki sınıf içinde Yazdir isimli iki metod tanımlanmıştır. Main metodu içinde Temel sınıftan türettiğimiz bir nesneye (bs nesnesi) Tureyen sınıf tipinden bir nesneyi (drv nesnesi) aktarıyoruz. Ardından bs nesnemizin Yazdir isimli metodunu çağırıyoruz. Sizce derleyici hangi sınıfın yazdır metodunu çağıracaktır.
 
-Drv nesnemiz Tureyen sınıf nesnesi olduğundan ve Temel sınıftan kalıtımsal olarak türetildiğinden bs isimli nesnemize aktarılabilmiştir. Şu durumda bs isimli Temel sınıf nesnemiz drv isimli Tureyen sınıf nesnemizi taşımaktadır. Bu tip bir atamam böyle base-derived ilişkide sınıflar için geçerli bir atamadır. Sorun bs isimli nesne için Yazdir metodunun çağırılmasındadır. Biz burada Tureyen sınıf nesnesini aktardığımız için bu sınıfa ait Yazdir metodunun çalıştırılmasını bekleriz. Oysaki sonuç aşağıdaki gibi olucaktır.
+Drv nesnemiz Tureyen sınıf nesnesi olduğundan ve Temel sınıftan kalıtımsal olarak türetildiğinden bs isimli nesnemize aktarılabilmiştir. Şu durumda bs isimli Temel sınıf nesnemiz drv isimli Tureyen sınıf nesnemizi taşımaktadır. Bu tip bir atama, base-derived ilişkide sınıflar için geçerli bir atamadır. Sorun bs isimli nesne için Yazdir metodunun çağrılmasındadır. Biz burada Tureyen sınıf nesnesini aktardığımız için bu sınıfa ait Yazdir metodunun çalıştırılmasını bekleriz. Oysaki sonuç aşağıdaki gibi olacaktır.
 
 ![mk27_1.gif](/assets/images/2003/mk27_1.gif)
 
 Şekil 1. Temel Sınıfın Yazdir metodu çağırıldı.
 
-Görüldüğü gibi Temel sınıfa ait Yazdir metodu çalıştırılmıştır. Bir çözüm olarak daha önceki kalıtım kavramını anlattığımız makalemizde inceledeğimiz new anahtar kelimesini Tureyen isimli derived class içinde kullanmayı düşünebilirsiniz. Birde böyle deneyelim, bakalım neler olucak.
+Görüldüğü gibi Temel sınıfa ait Yazdir metodu çalıştırılmıştır. Bir çözüm olarak daha önceki kalıtım kavramını anlattığımız makalemizde incelediğimiz new anahtar kelimesini Tureyen isimli derived class içinde kullanmayı düşünebilirsiniz. Bir de böyle deneyelim, bakalım neler olacak.
 
 ```csharp
 using System;
@@ -106,15 +106,15 @@ namespace ConsoleApplication1
 }
 ```
 
-Ancak new anahtar kelimesini kullanmış olsakta sonuç yine aynı olucaktır ve aşağıdaki görüntüyü alacağızdır.
+Ancak new anahtar kelimesini kullanmış olsak da sonuç yine aynı olacaktır ve aşağıdaki görüntüyü alacağız.
 
 ![mk27_1.gif](/assets/images/2003/mk27_1.gif)
 
 Şekil 2. Yine style='mso-spacerun:yes'> Temel Sınıfın Yazdir metodu çağırıldı.
 
-İşte bu noktada çözüm Temel sınıftaki metodumuzu Virtual (sanal) tanımlamak ve aynı metodu, Tureyen sınıf içersinde Override (Geçersiz Kılmak) etmektir. Sanal metodların kullanım amacı budur; Base sınıfta yer alan metod yerine base sınıfa aktarılan nesnenin üretildiği derived class’taki metodu çağırmaktır.
+İşte bu noktada çözüm, Temel sınıftaki metodumuzu Virtual (sanal) tanımlamak ve aynı metodu, Tureyen sınıf içerisinde Override (Geçersiz Kılmak) etmektir. Sanal metodların kullanım amacı budur; Base sınıfta yer alan metod yerine, base sınıfa aktarılan nesnenin üretildiği derived class’taki metodu çağırmaktır.
 
-Şimdi örneğimizi buna gore değiştirelim.
+Şimdi örneğimizi buna göre değiştirelim.
 
 ```csharp
 using System;
@@ -179,6 +179,6 @@ Metodların erişim haklarını aynı olmalıdır. Biri public tanımlanmış is
 Temel sınıftaki metodu türeyen sınıfta override (geçersiz) hale getimez isek metod geçersiz kılınamaz.
 
 6
-Sadece virtual olarak tanımlanmış metodları override edebiliriz. Herhangibir base class yöntemini tureyen sınıfta override edemeyiz.
+Sadece virtual olarak tanımlanmış metodları override edebiliriz. Herhangi bir base class yöntemini türeyen sınıfta override edemeyiz.
 
 Bu noktalara dikkat etmemiz gerekmektedir. Değerli Okurlarım, geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

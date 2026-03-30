@@ -8,11 +8,11 @@ tags:
   - ado.net
   - dataset
 ---
-Bugünkü makalemizde, aralarında relationship (ilişki) bulunan tabloların, bir DataSet nesnesinin bellekte temsil ettiği alanda nasıl saklandığını incelemeye çalışıcacağız. Bunu yaparken de, geliştireceğimiz uygulama ile parant-child (ebeveyn-çocuk) yada master-detail (efendi-detay) adı verilen ilişkileri taşıyan tablolarımızı bir windows application’da bir dataGrid nesnesi ile nasıl kolayca göstereceğimizi göreceğiz.
+Bugünkü makalemizde, aralarında relationship (ilişki) bulunan tabloların, bir DataSet nesnesinin bellekte temsil ettiği alanda nasıl saklandığını incelemeye çalışacağız. Bunu yaparken de, geliştireceğimiz uygulama ile parent-child (ebeveyn-çocuk) ya da master-detail (efendi-detay) adı verilen ilişkileri taşıyan tablolarımızı bir windows application’da bir dataGrid nesnesi ile nasıl kolayca göstereceğimizi göreceğiz.
 
 İşin sırrı Olin’de diye bir reklam vardı eskiden. Şimdi aklıma o reklam geldi. Burada da işin sırrı DataRelation adı verilen sınıftadır. DataRelation sınıfına ait nesneler, aralarında ilişkisel bağ olan tablolarının, aralarındaki ilişkiyi temsil ederler. Bir DataRelation nesnesi kullandığımızda, bu nesneyi mutlaka bir DataSet sınıfı nesnesine eklememiz gerekmektedir. Dolayısıyla DataSet sınıfımız, aralarında ilişki olan tabloları temsil eden DataTable nesnelerini ve bu tablolar arasındaki ilişkiyi temsil eden DataRelation nesnesini (lerini) taşımak durumundadır.
 
-Aşağıdaki şekil ile, bu konuyu zihnimizde daha kolay canlandırabiliriz. Söz konusu tablolar, yazacağımız uygulamayada da kullanacağımız tablolardır. Dikkat edilecek olursa buradaki iki tablo arasında Siparis isimli tablodan, Sepet isimli tabloya bire-çok (one to many) bir ilişki söz konusudur. DataRelation nesnemiz bu ilişkiyi DataSet içinde temsil etmektedir.
+Aşağıdaki şekil ile, bu konuyu zihnimizde daha kolay canlandırabiliriz. Söz konusu tablolar, yazacağımız uygulamada da kullanacağımız tablolardır. Dikkat edilecek olursa buradaki iki tablo arasında Siparis isimli tablodan, Sepet isimli tabloya bire-çok (one to many) bir ilişki söz konusudur. DataRelation nesnemiz bu ilişkiyi DataSet içinde temsil etmektedir.
 
 ![mk16_1.gif](/assets/images/2003/mk16_1.gif)
 
@@ -28,7 +28,7 @@ Bir DataRelation nesnesi oluşturmak için kullanabileceğimiz Constructor metod
 
 4 -public DataRelation (string, DataColumn[], DataColumn[], bool);
 
-Tüm yapıcı metodlar ilk parametre olarak DataRelation için string türde bir isim alırlar. İl yapıcı metodumuz, iki adet DataColumn tipinde parametre almaktadır. İlk parametre master tabloya ati primary key alanını, ikinci DataColumn parametresi ise detail tabloya ait secondary key alanını temsil etmektedir. İkinci yapıcı metodu ise aralarındaki ilişkiler birden fazla tablo alanına bağlı olan tablo ilişkilerini tanımlamak içindir. Dikkat edilicek olursa, DataColumn[] dizileri söz konusudur.Üçüncü ve dördüncü yapıcılarında kullanım tarzaları bir ve ikinci yapıcılar ile benzer olmasına karşın aldıkları bool tipinde dördüncü bir parametre daha vardır. Dördüncü parametre, tablolar arası kullanılacak veri bütünlüğü kuralları uygulanacak ise True değerini alır eğer bu kurallar uygulanmayacak ise false değeri verilir.
+Tüm yapıcı metodlar ilk parametre olarak DataRelation için string türde bir isim alırlar. İlk yapıcı metodumuz, iki adet DataColumn tipinde parametre almaktadır. İlk parametre master tabloya ait primary key alanını, ikinci DataColumn parametresi ise detail tabloya ait secondary key alanını temsil etmektedir. İkinci yapıcı metodu ise aralarındaki ilişkiler birden fazla tablo alanına bağlı olan tablo ilişkilerini tanımlamak içindir. Dikkat edilecek olursa, DataColumn[] dizileri söz konusudur. Üçüncü ve dördüncü yapıcıların kullanım tarzları bir ve ikinci yapıcılar ile benzer olmasına karşın aldıkları bool tipinde dördüncü bir parametre daha vardır. Dördüncü parametre, tablolar arası kullanılacak veri bütünlüğü kuralları uygulanacak ise True değerini alır; eğer bu kurallar uygulanmayacak ise false değeri verilir.
 
 Şimdi gelin kısa bir uygulama ile bu konuyu işleyelim. Uygulamamızda kullanılan tablolara ait alanlar ve özellikleri şöyledir. İlk tablomuz Siparis isimli tablomuz. Bu tabloda kullanıcının vermiş olduğu siparişin numarası ve tarihi ile ilgili bilgiler tutuluyor. Bu tablo bizim parent (master) tablomuzdur.
 
@@ -36,13 +36,13 @@ Tüm yapıcı metodlar ilk parametre olarak DataRelation için string türde bir
 
 Şekil 2. Siparis Tablosu
 
-Diğer tablomuzda ise, verilen siparişin hangi ürünlerden oluştuğuna dair bilgiler yer almakta.Bu tablomuz ise bizim child tablomuzdur.
+Diğer tablomuzda ise, verilen siparişin hangi ürünlerden oluştuğuna dair bilgiler yer almakta. Bu tablomuz ise bizim child tablomuzdur.
 
 ![mk16_3.gif](/assets/images/2003/mk16_3.gif)
 
 Şekil 3. Sepet Tablosu
 
-Uygulamamızı bir windows application olarak geliştireceğim. Bu nedenle vs.net ortamında, yeni bir windows application oluşturuyoruz. Sayfanın tasarımı son derece basit. Bir adet dataGrid nesnemiz var ve bu nesnemiz ilişkil tabloların kayıtlarını gösterecek. Dilerseniz kodlarımızı yazmaya başlayalım.
+Uygulamamızı bir windows application olarak geliştireceğim. Bu nedenle VS.NET ortamında, yeni bir windows application oluşturuyoruz. Sayfanın tasarımı son derece basit. Bir adet dataGrid nesnemiz var ve bu nesnemiz ilişkili tabloların kayıtlarını gösterecek. Dilerseniz kodlarımızı yazmaya başlayalım.
 
 ```csharp
 private void Form1_Load(object sender, System.EventArgs e)

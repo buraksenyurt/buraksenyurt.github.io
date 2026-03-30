@@ -15,13 +15,13 @@ Bugünkü makalemizde web servislerinin nasıl kullanıldığını göreceğiz. 
 
 Şekil 1. Web Servislerinin yapısı
 
-lŞekildende görüldüğü gibi SOAP isminde bir yapıdan bahsediyoruz. SOAP Simple Object Access Protocol anlamına gelen XML tabanlı bir haberleşme teknolojisidir. Web servisi ile bu web servisinin kullanan uygulamalar arasındaki iletişimi sağlar. Dolayısıyla, web servisleri ve bu servisleri kullanan uygulamaların birbirlerini anlayabilmesini sağlar. Web servislerinden uygulamalara giden veri paketleri ve uygulamalardan web servislerine giden veri paketleri bu standart protokolü kullanmaktadır. Web servislerinin yazıldığı dil ile bunlaru kullanan uygulamaların (bir windows application, bir web application vb...) yazıldığı diller farklı olabilir. SOAP aradaki iletişim standartlaştırdığından farklı diller sorun yaratmaz. Tabi bunu sağlayan en büyük etken SOAP’ın XML tabanlı teknolojisidir.
+Şekilden de görüldüğü gibi SOAP isminde bir yapıdan bahsediyoruz. SOAP Simple Object Access Protocol anlamına gelen XML tabanlı bir haberleşme teknolojisidir. Web servisi ile bu web servisini kullanan uygulamalar arasındaki iletişimi sağlar. Dolayısıyla, web servisleri ve bu servisleri kullanan uygulamaların birbirlerini anlayabilmesini sağlar. Web servislerinden uygulamalara giden veri paketleri ve uygulamalardan web servislerine giden veri paketleri bu standart protokolü kullanmaktadır. Web servislerinin yazıldığı dil ile bunları kullanan uygulamaların (bir windows application, bir web application vb...) yazıldığı diller farklı olabilir. SOAP aradaki iletişimi standartlaştırdığından farklı diller sorun yaratmaz. Tabii bunu sağlayan en büyük etken SOAP’ın XML tabanlı teknolojisidir.
 
-Bir web servis uygulaması yaratıldığında, bu web servisi kullanacak olan uygulamaların web servisinin nerede olduğunu öncelikle bilmesi gerekir. Bunu sağlayan ise web proxy’lerdir. Bir web proxy yazmak çoğunlukla kafa karıştırıcı kodlardan oluşmaktadır. Ancak VS.Net gibi bir ortamda bunu hazırlamakta oldukça kolaydır. Uygulamaya, web servisin yeri Web Proxy dosyası ile bildirildikten sonra, uygulamamızdan bu web servis üzerindeki metodlara kolayca erişebiliriz.
+Bir web servis uygulaması yaratıldığında, bu web servisi kullanacak olan uygulamaların web servisinin nerede olduğunu öncelikle bilmesi gerekir. Bunu sağlayan ise web proxy’lerdir. Bir web proxy yazmak çoğunlukla kafa karıştırıcı kodlardan oluşmaktadır. Ancak VS.Net gibi bir ortamda bunu hazırlamak oldukça kolaydır. Uygulamaya, web servisinin yeri Web Proxy dosyası ile bildirildikten sonra, uygulamamızdan bu web servis üzerindeki metodlara kolayca erişebiliriz.
 
-Şimdi, basit bir web servis uygulaması geliştireceğiz. Öncelikle web servis’imizi yazacağız. Daha sonra ise, bu web servisini kullanacağımız bir windows application geliştireceğiz. Normalde birde web proxy uygulaması geliştirmemiz gerekiyor. Ancak bu işi VS.NET’e bırakacağız.
+Şimdi, basit bir web servis uygulaması geliştireceğiz. Öncelikle web servis’imizi yazacağız. Daha sonra ise, bu web servisini kullanacağımız bir windows application geliştireceğiz. Normalde bir de web proxy uygulaması geliştirmemiz gerekiyor. Ancak bu işi VS.NET’e bırakacağız.
 
-Basit olması açısından web servis’imiz, bulunduğu sunucu üzerindeki bir sql sunucusunda yer alan bir veritabanından, bir tabloya ait veri kümesini DataSet nesnesi olarak, servisi çağıran uygulamaya geçirecek. Geliştirdiğim uygulamam aynı makine üzerindeki bir web servisini kullanıyor. Öncelikle web servisimizi oluşturalım. Bunun için New Project’ten ASP.NET Web Service’ı seçiyoruz. Görüldüğü gibi uygulama otomatik olarak internet information server’ın kurulu olduğu sanal web sunucusunda oluşturuluyor. Dolayısıyla oluşturulan bu web servis’e bir browser yardımıylada erişebiliriz.
+Basit olması açısından web servis’imiz, bulunduğu sunucu üzerindeki bir sql sunucusunda yer alan bir veritabanından, bir tabloya ait veri kümesini DataSet nesnesi olarak, servisi çağıran uygulamaya geçirecek. Geliştirdiğim uygulamam aynı makine üzerindeki bir web servisini kullanıyor. Öncelikle web servisimizi oluşturalım. Bunun için New Project’ten ASP.NET Web Service’ı seçiyoruz. Görüldüğü gibi uygulama otomatik olarak internet information server’ın kurulu olduğu sanal web sunucusunda oluşturuluyor. Dolayısıyla oluşturulan bu web servise bir browser yardımıyla da erişebiliriz.
 
 ![mk10_3.jpg](/assets/images/2003/mk10_3.jpg)
 
@@ -33,7 +33,7 @@ Bu işlemi yaptığımız takdirde Service1.asmx isimli bir dosya içeren bir we
 
 Şekil 3. Web servisleri asmx uzantısına sahiptir.
 
-lTo Switch Code Window ile kod penceresine geçtiğimizde aşağıdaki kodları görürüz. (Burada, Service1 ismi SrvKitap ile değiştirilmiş aynı zamanda Constructor’un adı ve Solution Explorer’da yer alan dosya adıda SrvKitap yapılmıştır.)
+To Switch Code Window ile kod penceresine geçtiğimizde aşağıdaki kodları görürüz. (Burada, Service1 ismi SrvKitap ile değiştirilmiş, aynı zamanda Constructor’un adı ve Solution Explorer’da yer alan dosya adı da SrvKitap yapılmıştır.)
 
 ```csharp
 using System;
@@ -96,7 +96,7 @@ namespace KitapServis
 }
 ```
 
-Kodları kısaca inceleyecek olursak, web servislere ait özellikleri kullanabilmek için System.Web.Services namespace’inin eklendiğini, SrvKitap isimli sınıfın bir web servisin niteliklerine sahip olması için, System.Web.Services sınıfından türetildiğini görürüz. Ayrıca yorum satırı olarak belirtilen yerde VS.NET bize hazır olarak HelloWorld isimli bir web metodu sunmaktadır. Bu metodun başındada dikkat edicek olursanız [WebMothod] satırı yer alıyor. Bu anahtar sözcük, izleyen metodun bir web servis metodu olduğunu belirtmektedir. Şimdi biz kendi web servis metodumuzu buraya ekleyelim.
+Kodları kısaca inceleyecek olursak, web servislere ait özellikleri kullanabilmek için System.Web.Services namespace’inin eklendiğini, SrvKitap isimli sınıfın bir web servisin niteliklerine sahip olması için, System.Web.Services sınıfından türetildiğini görürüz. Ayrıca yorum satırı olarak belirtilen yerde VS.NET bize hazır olarak HelloWorld isimli bir web metodu sunmaktadır. Bu metodun başında da dikkat edecek olursanız [WebMothod] satırı yer alıyor. Bu anahtar sözcük, izleyen metodun bir web servis metodu olduğunu belirtmektedir. Şimdi biz kendi web servis metodumuzu buraya ekleyelim.
 
 ```csharp
 [WebMethod]
@@ -112,7 +112,7 @@ public DataSet KitapListesi()
 
 Eklediğimiz bu web metod sadece Sql sunucusu üzerinde yer alan Friends isimli veritabanına bağlanmakta ve burada Kitaplar isimli tablodan Adi ve Fiyat bilgilerini alarak, sonuç kümesini bir DataSet içine aktarmaktadır. Sonra metod bu DataSet’I geri döndürmektedir.Şimdi uygulamamızı derleyelim ve Internet Explorer’ı açarak adres satırına şunu girelim
 
-http://localhost/kitapservis/SrvKitap.asmx
+`http://localhost/kitapservis/SrvKitap.asmx`
 
 bu durumda, aşağıdaki ekran görüntüsünü alırız.
 
@@ -270,7 +270,7 @@ namespace KitapFiyatlari.localhost
 }
 ```
 
-Karmaşık olduğu gözlenen bu kodların açıklamasını ilerleyen makalerimde işyeceğim. Artık web servisimizi uygulamamıza eklediğimize gore, bunu kullanmaya ne dersiniz. İşte button nesnemize tıklandığında çalıştırılacak kodlar.
+Karmaşık olduğu gözlenen bu kodların açıklamasını ilerleyen makalelerimde işleyeceğim. Artık web servisimizi uygulamamıza eklediğimize göre, bunu kullanmaya ne dersiniz? İşte button nesnemize tıklandığında çalıştırılacak kodlar.
 
 ```csharp
 private void button1_Click(object sender, System.EventArgs e)

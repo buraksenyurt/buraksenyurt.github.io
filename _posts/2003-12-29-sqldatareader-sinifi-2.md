@@ -10,9 +10,9 @@ tags:
   - .net
   - csharp
 ---
-Bir önceki makalemizde SqlDataReader sınıfını incelemeye başlamıştık Listeleme amaçlı veri kümelerinin görüntülemesinde performans açısından etkin bir rol oynadığından bahsetmiştik. Bugünkü makalemizde, SqlDataReader sınıfının faydalı diğer özelliklerinden bahsedeceğiz. Öncelikle, bir SqlDataReader nesnesinin, geçerli ve açık bir SqlConnection nesnesi üzerinde çalışan bir SqlCommand nesnesi yardımıyla oluşturulduğunu hatırlayalım.
+Bir önceki makalemizde SqlDataReader sınıfını incelemeye başlamıştık. Listeleme amaçlı veri kümelerinin görüntülenmesinde performans açısından etkin bir rol oynadığından bahsetmiştik. Bugünkü makalemizde, SqlDataReader sınıfının faydalı diğer özelliklerinden bahsedeceğiz. Öncelikle, bir SqlDataReader nesnesinin, geçerli ve açık bir SqlConnection nesnesi üzerinde çalışan bir SqlCommand nesnesi yardımıyla oluşturulduğunu hatırlayalım.
 
-Burada SqlCommand sınıfına ait ExecuteReader metodu kullanılmaktadır. ExecuteReader metoduna değişik parametreler geçirerek uygulamanın performansını dahada arttırabiliriz. Önceki makalemizde, CommandBehavior.CloseConnection parametre değerini kullanmıştık. CommandBehavior, çalıştırılacak olan sql sorgusu için bir davranış belirlememizi sağlar. SqlCommand nesnesinin ExecuteReader metodunun alabileceği parametre değerleri şekil1 de görülmektedir. Bunların ne işe yaradığı kısaca tablo 1 ‘de bahsedilmiştir.
+Burada SqlCommand sınıfına ait ExecuteReader metodu kullanılmaktadır. ExecuteReader metoduna değişik parametreler geçirerek uygulamanın performansını daha da arttırabiliriz. Önceki makalemizde, CommandBehavior.CloseConnection parametre değerini kullanmıştık. CommandBehavior, çalıştırılacak olan sql sorgusu için bir davranış belirlememizi sağlar. SqlCommand nesnesinin ExecuteReader metodunun alabileceği parametre değerleri Şekil 1'de görülmektedir. Bunların ne işe yaradığı kısaca Tablo 1’de bahsedilmiştir.
 
 ![mk29_1.gif](/assets/images/2003/mk29_1.gif)
 
@@ -80,7 +80,7 @@ namespace SqlDataReader2
 
 Şekil 2. SingleRow davranışı.
 
-Şimdi SingleResult davranışını inceleyelim. Bu kez Northwind veritabanında yer alan Products tablosundaki UnitPrice alanlarının ortalamasını hesaplayan bir sql sorgumuz var. Burada tek bir değer dönmektedir. İşte SingleResult bu duruma en uygun davranış olucaktır.
+Şimdi SingleResult davranışını inceleyelim. Bu kez Northwind veritabanında yer alan Products tablosundaki UnitPrice alanlarının ortalamasını hesaplayan bir sql sorgumuz var. Burada tek bir değer dönmektedir. İşte SingleResult bu duruma en uygun davranış olacaktır.
 
 ```csharp
 using System;
@@ -206,7 +206,7 @@ namespace SqlDataReader5
 }
 ```
 
-Sonuç olarak ekran görüntümüz aşağıdaki gibi olucaktır.
+Sonuç olarak ekran görüntümüz aşağıdaki gibi olacaktır.
 
 ![mk29_6.gif](/assets/images/2003/mk29_6.gif)
 

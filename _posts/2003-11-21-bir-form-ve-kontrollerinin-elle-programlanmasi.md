@@ -9,9 +9,9 @@ tags:
 ---
 Bugünkü makalemizde, bir Formu kodla nasıl oluşturacağımızı, bu form üstüne nasıl kontroller ekleyeciğimizi, bu kontoller için nasıl olaylar yazacağımızı vb. konuları işlemeye çalışacağız. Bildiğiniz gibi Visual Studio.NET gibi grafiksel ortamlar ile Form ve Form nesnelerini görsel olarak, kolay ve hızlı bir şekilde oluşturabilmekteyiz. Bu bizim programlama için ayıracağımız sürede, ekran tasarımlarının daha hızlı yapılabilmesine olanak sağlamaktadır.
 
-Ancak bazen elimizde sadece csc gibi bir C# derleyicisi ve.Net Framework vardır. İşte böyle bir durumda, Windows Form’larını tasarlamak için manuel olarak kodlama yapmamız gerekmektedir. Ayrıca, iyi ve uzman bir programcı olabilmek için özellikle Visual ortamlarda Windows Form, Button, TextBox gibi kontrollerin nasıl oluşturulduğunu, nasıl kodlandığını olaylara nasıl ve ne şekilde bağlandığını bilmek, oldukça faydalıdır. Bu aynı zamanda kontrolün bizde olmasını da sağlayan bir unsur olarak karşııza çıkmar ve kendimize olan güvenimizi dahada arttırır.
+Ancak bazen elimizde sadece csc gibi bir C# derleyicisi ve .NET Framework vardır. İşte böyle bir durumda, Windows Form’larını tasarlamak için manuel olarak kodlama yapmamız gerekmektedir. Ayrıca, iyi ve uzman bir programcı olabilmek için özellikle Visual ortamlarda Windows Form, Button, TextBox gibi kontrollerin nasıl oluşturulduğunu, nasıl kodlandığını, olaylara nasıl ve ne şekilde bağlandığını bilmek oldukça faydalıdır. Bu aynı zamanda kontrolün bizde olmasını da sağlayan bir unsur olarak karşımıza çıkar ve kendimize olan güvenimizi daha da arttırır.
 
-Dilerseniz konuyu anlamak için basit ama etkili bir örnekle başlayalım. Bu örneğimizde basit olarak boş bir Form oluşturacağız ve bunu csc.exe (C# Compiler) ile derleyeceğiz. Bir Windows Formu aslında System.Windows.Forms sınıfından türeyen bir nesnedir. Bu nedenle oluşturacağımız C# sınıfı içersinde bu bildirimi gerçekleştirmeliyiz. Ayrıca sınıfımızın Form nesnesine ait elemanlarıda kullanabilmesi için, Form sınıfından türetmeliyiz (Inherting). Bunlara ek olarak Formumuzu ekranda gösterebilmek için Application nesnesini ve buna bağlı Run metodunu kullanacağız. Hemen bir text editor açalım ve burada aşağıdaki kodları girelim.
+Dilerseniz konuyu anlamak için basit ama etkili bir örnekle başlayalım. Bu örneğimizde basit olarak boş bir Form oluşturacağız ve bunu csc.exe (C# Compiler) ile derleyeceğiz. Bir Windows Formu aslında System.Windows.Forms sınıfından türeyen bir nesnedir. Bu nedenle oluşturacağımız C# sınıfı içerisinde bu bildirimi gerçekleştirmeliyiz. Ayrıca sınıfımızın Form nesnesine ait elemanları da kullanabilmesi için, Form sınıfından türetmeliyiz (Inherting). Bunlara ek olarak Formumuzu ekranda gösterebilmek için Application nesnesini ve buna bağlı Run metodunu kullanacağız. Hemen bir text editor açalım ve burada aşağıdaki kodları girelim.
 
 ```csharp
 using System.Windows.Forms; 
@@ -33,13 +33,13 @@ Yazdığımız bu dosyayı cs uzantısı ile kaydetmeyi unutmayalım. Şimdi bu 
 
 Şekil 1. İlk Derleme
 
-Görüldüğü gibi, csc dosyamızı derlemiş ve CreateForm.exe dosyasını olşturmuştur. Burada /t:winexe programı Windows işletim sistemine, " Ben bir WinForm’um " olarak tanıtmaktadır. Şimdi bu dosyayı komut satırından çalıştıracak olursak aşağıdaki şekilde görülen sonucu elde ederiz.
+Görüldüğü gibi, csc dosyamızı derlemiş ve CreateForm.exe dosyasını oluşturmuştur. Burada /t:winexe programı Windows işletim sistemine, " Ben bir WinForm’um " olarak tanıtmaktadır. Şimdi bu dosyayı komut satırından çalıştıracak olursak aşağıdaki şekilde görülen sonucu elde ederiz.
 
 ![mk6_2.gif](/assets/images/2003/mk6_2.gif)
 
 Şekil 2. Oluşturulan Form Nesnemiz.
 
-Şekil 2.'de oluşturulumuş olduğumuz Form nesnesini görebilirsiniz. Yazmış olduğumuz kodlarda bu Form nesnesine ait özellikleri değiştirerek farklı Form görünümleride elde edebiliriz. Bu noktada size Form oluşturma olaylarının kodlama tekniğinin aslen nasıl yapılması gerektiğini göstermek isterim. Bu bir tarzdır yada uygulanan bir formattır ancak en uygun şekildir. Nitekim Visual Studio.NET ortamında bir Windows Application geliştirdiğinizde, uygulama kodlarına bakıcak olursanız bahsetmiş olduğumuz formasyonun uygulanmış olduğunu göreceksiniz.
+Şekil 2.'de oluşturulmuş olduğumuz Form nesnesini görebilirsiniz. Yazmış olduğumuz kodlarda bu Form nesnesine ait özellikleri değiştirerek farklı Form görünümleri de elde edebiliriz. Bu noktada size Form oluşturma olaylarının kodlama tekniğinin aslen nasıl yapılması gerektiğini göstermek isterim. Bu bir tarzdır ya da uygulanan bir formattır ancak en uygun şekildir. Nitekim Visual Studio.NET ortamında bir Windows Application geliştirdiğinizde, uygulama kodlarına bakacak olursanız bahsetmiş olduğumuz formasyonun uygulanmış olduğunu göreceksiniz.
 
 ```csharp
 using System.Windows.Forms; 
@@ -168,13 +168,13 @@ Yukarıdaki örneğimizde klasik örnek olarak, Button nesnemize tıklandığın
 
 Şimdi
 
-/ * Buraya btnOK nesnesi için olay procedure tanımı eklenecek * / yazan yere, aşağıdaki kod satırını ekliyoruz.
+`/* Buraya btnOK nesnesi için olay procedure tanımı eklenecek */` yazan yere, aşağıdaki kod satırını ekliyoruz.
 
 ```csharp
 btnOK.Click+=new System.EventHandler(this.btnOK_Tiklandi);
 ```
 
-Bu satır ile btnOK nesnesine tıklandığında btnOK_Tiklandi isimli procedure’ün çalıştırılacağını belirtiyoruz. / * Buraya btnOK için Click olay procedure kodları eklenecek * / yazan yere ise olay procedure’ümüzün ve kodlarını ekliyoruz.
+Bu satır ile btnOK nesnesine tıklandığında btnOK_Tiklandi isimli procedure’ün çalıştırılacağını belirtiyoruz. `/*Buraya btnOK için Click olay procedure kodları eklenecek */` yazan yere ise olay procedure’ümüzün ve kodlarını ekliyoruz.
 
 ```csharp
 protected void btnOK_Tiklandi(object sender,System.EventArgs e)

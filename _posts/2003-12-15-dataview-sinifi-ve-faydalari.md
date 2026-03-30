@@ -8,49 +8,31 @@ tags:
   - ado.net
   - dataview
 ---
-Bugünkü makalemizde getirileri ve performansı ile ADO.NET içerisinde önemli bir yere sahip olan DataView nesnesini incelemeye çalışacağız. Özellikle bu sınıfa ait, RowFilter özelliğinin ne gibi faydalar sağlıyacağına da değineceğiz.
+Bugünkü makalemizde getirileri ve performansı ile ADO.NET içerisinde önemli bir yere sahip olan DataView nesnesini incelemeye çalışacağız. Özellikle bu sınıfa ait RowFilter özelliğinin ne gibi faydalar sağlayacağına da değineceğiz.
 
 DataView sınıfı, veritabanı yönetim sistemlerindeki view nesneleri göz önüne alınarak oluşturulmuş bir sınıftır. Bilindiği gibi veritabanı yönetim sistemlerinde (DBMS-DataBase Management System), bir veya birden fazla tablo için gerçekleştireceğimiz çeşitli tipteki birleştirici veya ayrı ayrı sorgulamalar sonucu elde edilen veri kümelerini view nesnelerine aktarabilmekteyiz. View nesneleri sahip oldukları veri alt kümelerini temsil eden birer veritabanı nesnesi olarak, önceden derlendiklerinden, süratli ve performansı yüksek yapılardır.
 
-Söz gelimi her hangibi tabloya ait bir filtreleme işini bir view nesnesinde barındırabiliriz. Bunun sonucu olarak, aynı sorguyu yazıp çalıştırmak, view nesnesinin içeriğine (yani sahip olduğu verilere) bakmaktan çok daha yavaştır. Bununla birlikte bu sorgulamanın birden fazla tabloyu içerdiğini düşünürsek, bu durumda da çalıştırılan sorgu sonucu elde edilecek veri alt kümelerini bir (birkaç) view nesnesinde barındırmak bize performans, hız olarak geri dönecektir.
+Söz gelimi herhangi bir tabloya ait bir filtreleme işini bir view nesnesinde barındırabiliriz. Bunun sonucu olarak, aynı sorguyu yazıp çalıştırmak, view nesnesinin içeriğine (yani sahip olduğu verilere) bakmaktan çok daha yavaştır. Bununla birlikte bu sorgulamanın birden fazla tabloyu içerdiğini düşünürsek, bu durumda da çalıştırılan sorgu sonucu elde edilecek veri alt kümelerini bir (birkaç) view nesnesinde barındırmak bize performans, hız olarak geri dönecektir.
 
-Gelelim ADO.NET’ e. ADO.NET içersinde de, view lara benzer bir özellik olarak DataView nesneleri yer almaktadır. DataView nesneleri, veritabanı yönetim sistemlerinde yer alan view’lar ile benzerdir. Yine performans ve hız açısından avantajlıdır. Bunların yanında bir DataView nesnesi kullanılabilmek, mutlaka bir DataTable nesnesini gerektirmektedir. Nitekim DataView nesnesinin sahip olacağı veri alt kümeleri bu dataTable nesnesinin bellekte işaret ettiği tablo verileri üzerinden alınacaktır. DataView nesnesinin kullanımının belkide en güzel yeri şudur; bir DataTable nesnesinin bellekte işaret ettiği tablodan, bir den fazla görünüm elde ederekten, bu farklı görünümleri birden fazla kontrole bağlayarak, ekranda aynı anda tek bir tablonun verilerine ait birden fazla veri kümesini izlememiz mümkün olabilmektedir. İşte bu, bence DataView nesnesi (lerini) kullanmanın ne kadar faydalı olduğunu göstermektedir.
+Gelelim ADO.NET’e. ADO.NET içerisinde de, view'lara benzer bir özellik olarak DataView nesneleri yer almaktadır. DataView nesneleri, veritabanı yönetim sistemlerinde yer alan view’lar ile benzerdir. Yine performans ve hız açısından avantajlıdır. Bunların yanında bir DataView nesnesi kullanılabilmek, mutlaka bir DataTable nesnesini gerektirmektedir. Nitekim DataView nesnesinin sahip olacağı veri alt kümeleri bu dataTable nesnesinin bellekte işaret ettiği tablo verileri üzerinden alınacaktır. DataView nesnesinin kullanımının belki de en güzel yeri şudur; bir DataTable nesnesinin bellekte işaret ettiği tablodan, birden fazla görünüm elde ederek, bu farklı görünümleri birden fazla kontrole bağlayarak, ekranda aynı anda tek bir tablonun verilerine ait birden fazla veri kümesini izlememiz mümkün olabilmektedir. İşte bu, bence DataView nesnesi(lerini) kullanmanın ne kadar faydalı olduğunu göstermektedir.
 
-Bilindiği gibi DataTable nesnesine ait Select özelliğine ifadeler atayarakta var olan bir tablodan veri alt kümeleri elde edebiliyorduk. Fakat bu select özelliğine atanan ifade sonucu elde edilen veriler bir DataRows dizisine aktarılıyor ve kontollere bağlanamıyordu. Oysaki DataView sonuçlarını istediğiniz kontrole bağlamanız mümkündür.DataTable ile DataView arasında yer alan bir farkta, DataTable’ın sahip olduğu satırlar DataRow sınıfı ile temsil edilirken DataView nesnesinin sahip olduğu satırlar DataRowView sınıfı ile temsil edilirler. Bir DataTable nesnesine nasıl ki yeni satırlar ekleyebiliyor, silebiliyor ve primary key üzerinden arama yapabiliyorsak aynı işlemleri DataView nesnesi içinde yapabiliriz. Bunları AddNew, Delete ve Find yöntemleri ile yapabiliriz. Bir sonraki makalemizde bu metodlar ile ilgili geniş bir örnek daha yapacağız.
+Bilindiği gibi DataTable nesnesine ait Select özelliğine ifadeler atayarak da var olan bir tablodan veri alt kümeleri elde edebiliyorduk. Fakat bu select özelliğine atanan ifade sonucu elde edilen veriler bir DataRows dizisine aktarılıyor ve kontrollere bağlanamıyordu. Oysaki DataView sonuçlarını istediğiniz kontrole bağlamanız mümkündür. DataTable ile DataView arasında yer alan bir fark da, DataTable’ın sahip olduğu satırlar DataRow sınıfı ile temsil edilirken DataView nesnesinin sahip olduğu satırlar DataRowView sınıfı ile temsil edilirler. Bir DataTable nesnesine nasıl ki yeni satırlar ekleyebiliyor, silebiliyor ve primary key üzerinden arama yapabiliyorsak aynı işlemleri DataView nesnesi içinde yapabiliriz. Bunları AddNew, Delete ve Find yöntemleri ile yapabiliriz. Bir sonraki makalemizde bu metodlar ile ilgili geniş bir örnek daha yapacağız.
 
-Bugünkü makalemizde konuya açıklık getirmesi açısından iki adet örnek yapacağız. Her iki örneğimizde ağırlıklı olarak DataView nesnesinin RowFilter özelliği üzerinde duracak. RowFilter özelliği DataTable sınıfının Select özelliğine çok benzer. Bir süzme ifadesi alır. Oluşturulan ifade içinde, kullanılacak alan (alanların) veri tiplerine göre bazı semboller kullanmamız gerekmektedir. Bunu açıklayan tablo aşağıda belirtilmiştir.
-
-Veri Tipi
-Kullanılan Karakter
-Örnek
-
-Tüm Metin Değerleri
-' (Tek tırnak)
-" Adi='Burak' "
-
-Tarihsel Değerler
-#
-" DogumTarihi=#04.12.1976# "
-
-Sayısal Değerler
-Hiçbirşey
-" SatisTutari>150000000"
+Bugünkü makalemizde konuya açıklık getirmesi açısından iki adet örnek yapacağız. Her iki örneğimiz de ağırlıklı olarak DataView nesnesinin RowFilter özelliği üzerinde duracak. RowFilter özelliği DataTable sınıfının Select özelliğine çok benzer. Bir süzme ifadesi alır. Oluşturulan ifade içinde, kullanılacak alan(ların) veri tiplerine göre bazı semboller kullanmamız gerekmektedir. Bunu açıklayan tablo aşağıda belirtilmiştir.
+| Veri Tipi | Kullanılan Karakter | Örnek |
+| --- | --- | --- |
+| Tüm Metin Değerleri | ' (Tek tırnak) | " Adi='Burak'"" |
+| Tarihsel Değerler | # | " DogumTarihi=#04.12.1976#"" |
+| Sayısal Değerler | Hiçbir şey | " SatisTutari>150000000" |
 
 Tablo 1. Veritipine göre kullanılacak özel karakterler
 
 Diğer yandan RowFilter özelliğinde IN, Like gibi işleçler kullanarak çeşitli değişik sorgular elde edebiliriz.Mantıksal birleştiriciler yardımıyla (and,or...) birleşik ifadeler oluşturabiliriz. Aslında RowFilter özelliği sql’de kullandığımız ifadeler ile aynıdır. Örnekler verelim;
 
-Kullanılan İşleç
-Örnek
-Ne Yapar?
-
-IN
-" PUAN IN (10,20,25) "
-PUAN isimli alan 10, 20 veya 25 olan satırlar.
-
-LIKE
-" ADI LIKE 'A *' "
-ADI A ile başlayanlar (* burada asteriks karakterimizdir.)
+| Kullanılan İşleç | Örnek | Ne Yapar? |
+| --- | --- | --- |
+| IN | " PUAN IN (10,20,25) " | PUAN isimli alan 10, 20 veya 25 olan satırlar. |
+| LIKE | " ADI LIKE 'A *' " | ADI A ile başlayanlar (* burada asteriks karakterimizdir.) |
 
 Tablo 2. İşleçler.
 

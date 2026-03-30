@@ -13,7 +13,7 @@ tags:
   - interface
   - cts
 ---
-Bugünkü makalemizde, kendi değer türlerimizi oluşturmanın yollarından birisi olan Enumerator’ları inceleyeceğiz. C# dilinde veri depolamak için kullanabileceğim temel veri türleri yanında kendi tanımlayabileceğimiz türlerde vardır. Bunlar Structs (Yapılar), Arrays (Diziler) ve Enumerators (Numaralandırıcılar) dır. Numaralandırıcılar, sınırlı sayıda değer içeren değişkenler yaratmamıza olanak sağlarlar. Burada bahsi geçen değişken değerleri bir grup oluştururlar ve sembolik bir adla temsil edilirler. Numaralandırıcıları kullanma nedenlerimizden birisi verilere anlamlar yüklekleyerek, program içerisinde kolay okunabilmelerini ve anlaşılabilmelerini sağlamaktır. Örneklerimizde bu konuyu çok daha iyi anlıyacaksınız. Bir Numaralandırıcı tanımlamak için aşağıdaki syntax kullanılır.
+Bugünkü makalemizde, kendi değer türlerimizi oluşturmanın yollarından birisi olan Enumerator’ları inceleyeceğiz. C# dilinde veri depolamak için kullanabileceğimiz temel veri türleri yanında kendi tanımlayabileceğimiz türler de vardır. Bunlar Structs (Yapılar), Arrays (Diziler) ve Enumerators (Numaralandırıcılar)'dır. Numaralandırıcılar, sınırlı sayıda değer içeren değişkenler yaratmamıza olanak sağlarlar. Burada bahsi geçen değişken değerleri bir grup oluştururlar ve sembolik bir adla temsil edilirler. Numaralandırıcıları kullanma nedenlerimizden birisi, verilere anlamlar yükleyerek program içerisinde kolay okunabilmelerini ve anlaşılabilmelerini sağlamaktır. Örneklerimizde bu konuyu çok daha iyi anlayacaksınız. Bir Numaralandırıcı tanımlamak için aşağıdaki syntax kullanılır.
 
 ```csharp
 Kapsam belirteçleri
@@ -30,7 +30,7 @@ enum numaralandırıcıAdi
 } 
 ```
 
-Kapsam belirteçleri protected,public,private,internal yada new değerini alır ve numaralandırıcının yaşayacağı kapsamı belirtir. Dikkat edilecek olursa, elemanlara herhangibi değer ataması yapılmamıştır. Nitekim Numaralandırıcıların özelliğidir bu. İlk eleman 0 değerine sahip olmak üzere diğer elemanlar 1 ve 2 değerlerini sahip olucak şekilde belirlenirler. Dolayısıyla programın herhangibir yerinde bu numaralandırıcıya ait elemana ulaştığımızda, bu elemanın index değerine erişmiş oluruz. Gördüğünüz gibi numaralandırıcı kullanmak okunurluğu arttırmaktadır.Dilersek numaralandırıc elemanlarının 0 indexinden değil de her hangibir değerden başlamasını sağlayabilir ve hatta diğer elemanlarada farklı index değerleri atayabiliriz. Basit bir Numaralandırıcı örneği ile konuyu daha iyi anlamaya çalışalım.
+Kapsam belirteçleri protected, public, private, internal ya da new değerini alır ve numaralandırıcının yaşayacağı kapsamı belirtir. Dikkat edilecek olursa, elemanlara herhangi bir değer ataması yapılmamıştır. Nitekim Numaralandırıcıların özelliği budur. İlk eleman 0 değerine sahip olmak üzere diğer elemanlar 1 ve 2 değerlerine sahip olacak şekilde belirlenirler. Dolayısıyla programın herhangi bir yerinde bu numaralandırıcıya ait elemana ulaştığımızda, bu elemanın index değerine erişmiş oluruz. Gördüğünüz gibi numaralandırıcı kullanmak okunurluğu arttırmaktadır. Dilersek numaralandırıcı elemanlarının 0 indexinden değil de herhangi bir değerden başlamasını sağlayabilir ve hatta diğer elemanlara da farklı index değerleri atayabiliriz. Basit bir Numaralandırıcı örneği ile konuyu daha iyi anlamaya çalışalım.
 
 ```csharp
 using System;
@@ -60,7 +60,7 @@ namespace enumSample1
 }
 ```
 
-Burada Gunler. Yazdıktan sonar VS.NET ‘in intellisense özelliği sayesinde, numaralandırıcının sahip olduğu değerler kolayca ulaşabiliriz.
+Burada Gunler yazdıktan sonra VS.NET’in intellisense özelliği sayesinde, numaralandırıcının sahip olduğu değerlere kolayca ulaşabiliriz.
 
 ![mk11_1.jpg](/assets/images/2003/mk11_1.jpg)
 
@@ -70,7 +70,7 @@ Programı çalıştıracak olursak aşağıdaki ekran görüntüsünü elde eder
 
 ![mk11_2.jpg](/assets/images/2003/mk11_2.jpg)
 
-Şekil 2. Ilk Ornek
+Şekil 2. İlk Örnek
 
 Şimdi başka bir örnek geliştirelim. Bu kez numaralandırıcının değerleri farklı olsun.
 
@@ -95,7 +95,7 @@ static void Main(string[] args)
 
 Şekil 3. İkinci Örneğin Sonucu
 
-Dikkat edicek olursak, numaralandırıcıları program içinde kullanırken, açık olarak (explicit) bir dönüşüm yapmaktayız. Şu ana kadar numaralandırıcı elemanlarınıa integer değerler atadık. Ama dilersek Long tipinden değerde atayabiliriz. Fakat bu durumda enum ‘ ın değer türünüde belirtmemiz gerekmektedir.Örneğin,
+Dikkat edecek olursak, numaralandırıcıları program içinde kullanırken, açık olarak (explicit) bir dönüşüm yapmaktayız. Şu ana kadar numaralandırıcı elemanlarına integer değerler atadık. Ama dilersek Long tipinden değer de atayabiliriz. Fakat bu durumda enum’ın değer türünü de belirtmemiz gerekmektedir. Örneğin,
 
 ```csharp
 enum Sinirlar:long
@@ -111,7 +111,7 @@ static void Main(string[] args)
 } 
 ```
 
-Görüldüğü gibi Sinirlar isimli numaralandırıcı long tipinde belirtilmiştir. Bu sayede numaralandırıcı elemanlarına long veri tipinde değerler atanabilmiştir. Dikkat edilecek bir diğer noktada, bu elemanlara ait değerleri kullanırken, long tipine dönüştürme yapılmasıdır. Bir numaralandırıcı varsayılan olarak integer tiptedir. Bu nedenle integer değerleri olan bir numaralandırıcı tanımlanırken int olarak belirtilmesine gerek yoktur. Şimdi daha çok işe yarar bir örnek geliştirmeye çalışalım. Uygulamamız son derece basit bir forma sahp ve bir kaç satır koddan oluşuyor. Amacımız numaralandırıcı kullanmanın programcı açısından işleri daha da kolaylaştırıyor olması. Uygulamamız bir Windows Application. Form tasarımımız aşağıdaki gibi olucak.
+Görüldüğü gibi Sinirlar isimli numaralandırıcı long tipinde belirtilmiştir. Bu sayede numaralandırıcı elemanlarına long veri tipinde değerler atanabilmiştir. Dikkat edilecek bir diğer nokta da, bu elemanlara ait değerleri kullanırken long tipine dönüştürme yapılmasıdır. Bir numaralandırıcı varsayılan olarak integer tiptedir. Bu nedenle integer değerleri olan bir numaralandırıcı tanımlanırken int olarak belirtilmesine gerek yoktur. Şimdi daha çok işe yarar bir örnek geliştirmeye çalışalım. Uygulamamız son derece basit bir forma sahip ve birkaç satır koddan oluşuyor. Amacımız numaralandırıcı kullanmanın programcı açısından işleri daha da kolaylaştırıyor olması. Uygulamamız bir Windows Application. Form tasarımımız aşağıdaki gibi olacak.
 
 ![mk11_4.jpg](/assets/images/2003/mk11_4.jpg)
 

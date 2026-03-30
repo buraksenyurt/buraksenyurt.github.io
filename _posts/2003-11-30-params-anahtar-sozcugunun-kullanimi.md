@@ -10,7 +10,7 @@ tags:
 ---
 Değerli Okurlarım Merhabalar.
 
-Bugünkü makalemizde, C# metodlarında önemli bir yere sahip olduğunu düşündüğüm params anahtar kelimesinin nasıl kullanıldığını incelemeye çalışacağız. Bildiğiniz gibi metodlara verileri parametre olarak aktarabiliyor ve bunları metod içersinde işleyebiliyoruz. Ancak parametre olarak geçirilen veriler belli sayıda oluyor. Diyelimki sayısını bilmediğimiz bir eleman kümesini parametre olarak geçirmek istiyoruz. Bunu nasıl başarabiliriz? İşte params anahtar sözcüğü bu noktada devreye girmektedir. Hemen çok basit bir örnek ile konuya hızlı bir giriş yapalım.
+Bugünkü makalemizde, C# metodlarında önemli bir yere sahip olduğunu düşündüğüm params anahtar kelimesinin nasıl kullanıldığını incelemeye çalışacağız. Bildiğiniz gibi metodlara verileri parametre olarak aktarabiliyor ve bunları metod içerisinde işleyebiliyoruz. Ancak parametre olarak geçirilen veriler belli sayıda oluyor. Diyelim ki sayısını bilmediğimiz bir eleman kümesini parametre olarak geçirmek istiyoruz. Bunu nasıl başarabiliriz? İşte params anahtar sözcüğü bu noktada devreye girmektedir. Hemen çok basit bir örnek ile konuya hızlı bir giriş yapalım.
 
 ```csharp
 using System; 
@@ -48,7 +48,7 @@ Bu örneği çalıştıracak olursak, aşağıdaki sonucu elde ederiz.
 
 Şekil 1. Ilk Params Örneğinin Sonucu
 
-Peki derleyici bu işlemi nasıl yapıyor birazda ondan bahsedelim. Carpim isimli metoda değişik sayılarda parametre gönderdiğimizde, derleyici gönderilen paramtetre sayısı kadar boyuta sahip bir integer dizi oluşturur ve du dizinin elemanlarına sırası ile (0 indexinden başlayacak şekilde) gönderilen elemanları atar. Daha sonra aynı metodu bu eleman sayısı belli olan diziyi aktararak çağırır. cl.Carpim (8,5) satırını düşünelim; derleyici,
+Peki derleyici bu işlemi nasıl yapıyor, biraz da ondan bahsedelim. Carpim isimli metoda değişik sayılarda parametre gönderdiğimizde, derleyici gönderilen parametre sayısı kadar boyuta sahip bir integer dizi oluşturur ve bu dizinin elemanlarına sırası ile (0 indexinden başlayacak şekilde) gönderilen elemanları atar. Daha sonra aynı metodu bu eleman sayısı belli olan diziyi aktararak çağırır. cl.Carpim (8,5) satırını düşünelim; derleyici,
 
 İlk adımda,
 
@@ -88,7 +88,7 @@ Görüldüğü gibi Goster isimli metodumuza değişik tiplerde (int,Float,Decim
 
 Şekil 2. params object[] kullanımı.
 
-Şimdi dilerseniz daha işe yarar bir örnek üzerinde konuyu pekiştirmeye çalışalım. Örneğin değişik sayıda tabloyu bir dataset nesnesine yüklemek istiyoruz. Bunu yapıcak bir metod yazalım ve kullanalım. Programımız, bir sql sunucusu üzerinde yer alan her hangibir database’e bağlanıp istenilen sayıdaki tabloyu ekranda programatik olarak oluşturulan dataGrid nesnelerine yükleyecek. Kodları inceledikçe örneğimizi daha iyi anlıyacaksınız.
+Şimdi dilerseniz daha işe yarar bir örnek üzerinde konuyu pekiştirmeye çalışalım. Örneğin değişik sayıda tabloyu bir dataset nesnesine yüklemek istiyoruz. Bunu yapacak bir metod yazalım ve kullanalım. Programımız, bir sql sunucusu üzerinde yer alan herhangi bir database’e bağlanıp istenilen sayıdaki tabloyu ekranda programatik olarak oluşturulan dataGrid nesnelerine yükleyecek. Kodları inceledikçe örneğimizi daha iyi anlayacaksınız.
 
 ![mk9_3.jpg](/assets/images/2003/mk9_3.jpg)
 

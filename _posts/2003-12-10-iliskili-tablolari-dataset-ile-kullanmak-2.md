@@ -9,35 +9,30 @@ tags:
   - dataset
   - relations
 ---
-Bugünkü makalemizde ilişkili tablolar arasında kısıtlamaların (constraints) nasıl kullanıldığını işlemey çalışacağız. Hatırlayacağınız gibi bu yazı dizisinin ilk bölümünde DataRelation sınıfını kullanarak ilişkil tabloların bellekte nasıl ifade edilebileceğini görmüştük.Bir diğer önemli konu, bu ilişkili tablolar arasındaki parent-child ilişkisinin kayıt güncelleme, kayıt silme gibi durumlarda nasıl hareket edeceğini belirlemektir.
+Bugünkü makalemizde ilişkili tablolar arasında kısıtlamaların (constraints) nasıl kullanıldığını işlemeye çalışacağız. Hatırlayacağınız gibi bu yazı dizisinin ilk bölümünde DataRelation sınıfını kullanarak ilişkili tabloların bellekte nasıl ifade edilebileceğini görmüştük. Bir diğer önemli konu, bu ilişkili tablolar arasındaki parent-child ilişkisinin kayıt güncelleme, kayıt silme gibi durumlarda nasıl hareket edeceğini belirlemektir.
 
-Buna verilecek en güzel örnek müşterilere ait sipariş detaylarının ve buna benzer ilişkilerin yer aldığı veritabanı tasarımlarıdır. Söz gelimi parent tablodan bir kayıdın silinmesi ile bu kayda bağlı child tablodaki kayıtların da silinmesi gerekebilir yada silinmemesi istenebilir. İşte bu noktada DataSet ile belleğer yüklenen tablolar arasındaki bu zorlamaları bir şekilde tanımlamamız gerekmektedir. Bu zorlamalar Constraints olarak tanımlanır. Bizim için en öneli iki kısıtlama Foreign Key Constraints ve Unique Constraints dir.
+Buna verilecek en güzel örnek müşterilere ait sipariş detaylarının ve buna benzer ilişkilerin yer aldığı veritabanı tasarımlarıdır. Söz gelimi parent tablodan bir kaydın silinmesi ile bu kayda bağlı child tablodaki kayıtların da silinmesi gerekebilir ya da silinmemesi istenebilir. İşte bu noktada DataSet ile belleğe yüklenen tablolar arasındaki bu zorlamaları bir şekilde tanımlamamız gerekmektedir. Bu zorlamalar Constraints olarak tanımlanır. Bizim için en önemli iki kısıtlama Foreign Key Constraints ve Unique Constraints'tir.
 
-Foreign Key Constraints (Yabancı anahtar kısıtlaması), parent-child ilişkisine sahip tablolarda kayıtların güncelleme ve silme olaylarında nasıl hareket edeceğini belirleriz. Unique Constraints tanımlası ilede bir alanın değerlerinin asla tekrar edilemiyeceği şartını bildirmiş oluruz.Bir yababcı anahtar kısıtlaması için ForeignKeyConstraint sınıfı kullanılır. Aynı şekilde bir tekillik kısıtlaması için de UniqueConstraints sınıfı kullanılmaktadır. Her iki sınıfa ait örnek nesnelerin kullanılabilmesi için, ilgili tablonun Constraints koleksiyonuna eklenmesi gerekmektedir.
+Foreign Key Constraints (Yabancı anahtar kısıtlaması), parent-child ilişkisine sahip tablolarda kayıtların güncelleme ve silme olaylarında nasıl hareket edeceğini belirler. Unique Constraints tanımlanması ile de bir alanın değerlerinin asla tekrar edilemeyeceği şartını bildirmiş oluruz. Bir yabancı anahtar kısıtlaması için ForeignKeyConstraint sınıfı kullanılır. Aynı şekilde bir tekillik kısıtlaması için de UniqueConstraints sınıfı kullanılmaktadır. Her iki sınıfa ait örnek nesnelerin kullanılabilmesi için, ilgili tablonun Constraints koleksiyonuna eklenmesi gerekmektedir.
 
-Şöyleki, diyelimki siparişlerin tutulduğu tablodaki veriler ile sipariş içinde yer alan ürünlerin tutulduğu tablolar arasında bire-çok bir ilişki var. Bu durumda, siparişlerin tutulduğu tablodan bir kayıt silindiğinde buradaki siparişi belirleyici alan (çoğunlukla ID olarak kullanırız) ile child tabloda yer alan ve yabancı anahtar ile parent tabloya bağlı olan alanları silmek isteyebiliriz. Burada zorlama unsurumuz parent tabloyu ilgilendirmektedir. Dolayısıyla, oluşturulacak ForeignKeyConstraints nesnesini parent tablonun Constraints koleksiyonuna ekleriz. Elbette, kısıtlamanın silme ve güncelleme gibi işlemlerde nasıl davranış göstermesi gerektiğini belirlemek için, ForeignKeyConstraints’e ati bir takım özelliklerinde ayarlanması gerekir. Bunlar,
+Şöyle ki, diyelim ki siparişlerin tutulduğu tablodaki veriler ile sipariş içinde yer alan ürünlerin tutulduğu tablolar arasında bire-çok bir ilişki var. Bu durumda, siparişlerin tutulduğu tablodan bir kayıt silindiğinde buradaki siparişi belirleyici alan (çoğunlukla ID olarak kullanırız) ile child tabloda yer alan ve yabancı anahtar ile parent tabloya bağlı olan alanları silmek isteyebiliriz. Burada zorlama unsurumuz parent tabloyu ilgilendirmektedir. Dolayısıyla, oluşturulacak ForeignKeyConstraints nesnesini parent tablonun Constraints koleksiyonuna ekleriz. Elbette, kısıtlamanın silme ve güncelleme gibi işlemlerde nasıl davranış göstermesi gerektiğini belirlemek için, ForeignKeyConstraints’e ait birtakım özelliklerin de ayarlanması gerekir. Bunlar,
 
-DeleteRule
-
-UpdateRule
-
-AcceptRejectRule
+- DeleteRule
+- UpdateRule
+- AcceptRejectRule
 
 özellikleridir. Bu özelliklere atayabileceğimiz değerler ise,
 
-Rule.Cascade
+- Rule.Cascade
+- Rule.None
+- Rule.SetDefault
+- Rule.SetNull
 
-Rule.None
+Cascade değeri verildiğinde güncelleme ve silme işlemlerinden, child tablodaki kayıtların da etkilenmesi sağlanmış olur. Söz gelimi parent tabloda bir satırın silinmesi ile ilişkili tablodaki ilişkili satırların tümü silinir. None değeri verildiğinde tahmin edeceğiniz gibi bu değişiklikler sonunda child tabloda hiçbir değişiklik olmaz. SetDefault değeri, silme veya güncelleme işlemleri sonucunda child tablodaki ilişkili satırların alanlarının değerlerini varsayılan değerlerine (çoğunlukla veritabanında belirlenen) ayarlar. SetNull verildiğinde ise bu kez, child tablodaki ilişkili satırlardaki alanların değerleri DbNull olarak ayarlanır.
 
-Rule.SetDefault
+Burada AcceptRejectRule isimli bir özellik de dikkatinizi çekmiş olmalı. Bu özellik bir DataSet, DataTable veya DataRow nesnesine ait AcceptChanges (değişiklikleri onayla) veya RejectChanges (değişiklikleri iptal et) durumunda nasıl bir kısıtlama olacağını belirlemek için kullanılır. Bu özellik Cascade veya Null değerlerinden birini alır. Bir dataSet’in kısıtlamaları uygulaması için EnforceConstraints özelliğine true değeri atanması gerektiğini de söyleyelim.
 
-Rule.SetNull
-
-Cascade değeri verildiğinde güncelleme ve silme işlemlerinden, child tablodaki kayıtlarında etkilenmesi sağlanmış olunur. Sözgelimi parent tabloda bir satırın silinmesi ile ilişkili tablodaki ilişkili satırlarında tümü silinir. None değeri verildiğinde tahmin edeceğiniz gibi bu değişiklikler sonunda child tabloda hiç bir değişiklik olmaz. SetDefault değeri, silme veya güncelleme işlemleri sonucunda child tablodaki ilişkili satırların alanlarının değerlerini varsayılan değerlerine (çoğunlukla veritabanında belirlenen) ayarlar. SetNull verildiğinde ise bu kez, child tablodaki ilişkili satırlardaki alanların değerleri, DbNull olarak ayarlanır.
-
-Burada AcceptRejectRule isimli bir özellikde dikkatinizi çekmiş olmalı. Bu özellik bir DataSet, DataTable veya DataRow nesnesine ait AcceptChanges (değişiklikleri onayla) veya RejectChanges (değişiklikleri iptal et) durumunda nasıl bir kıstılama olacağını belirlemek için kullanılır. Bu özelik Cascade veya Null değerlerinden birini alır.Bir dataSet’in kısıtlamaları uygulaması için EnforceConstraints özelliğine true değeri atanması gerektiğinide söyleyelim.
-
-Şimdi önceki makalemizde yazdığımız örnek uygulama üzerinden hareket ederek, ForeignKeyConstraint tekniğini inceleyelim. Konuyu uzatmamak amacıyla aynı örnek kodları üzerinden devam edeceğim. Uygulamamızda kullanıcı silemk istediği Siparis’in SiparisID bilgisini elle girecek ve silme işlemini başlatıcak. İşte bu noktada, DataSet’e eklemiş olduğumuz kısıtlama devreye girerek, Sepet tablosunda yer alan ilişkili satırlarında silinmesi gerçekleştirilecek. Haydi gelin kodlarımızı yazalım.
+Şimdi önceki makalemizde yazdığımız örnek uygulama üzerinden hareket ederek, ForeignKeyConstraint tekniğini inceleyelim. Konuyu uzatmamak amacıyla aynı örnek kodları üzerinden devam edeceğim. Uygulamamızda kullanıcı silmek istediği Siparis’in SiparisID bilgisini elle girecek ve silme işlemini başlatacak. İşte bu noktada, DataSet’e eklemiş olduğumuz kısıtlama devreye girerek, Sepet tablosunda yer alan ilişkili satırların da silinmesi gerçekleştirilecek. Haydi gelin kodlarımızı yazalım.
 
 ```csharp
 SqlConnection conFriends;
@@ -96,7 +91,7 @@ Siparis Detaylarının tutulduğu Sepet tablosunda ise görünüm şöyledir.
 
 Şekil 2. Sipariş Detayları
 
-Şimdi 10002 nolu sipariş satırını silelim. Görüldüğü gibi Sepet tablosundan 10002 ile ilgili tüm ilişkil kayıtlarda silinecektir. Aynı zamanda Siparis tablosundan da bu siparis numarasına ait satır silinecektir. Elbette dataSet nesnemize ait Update metodunu kullanmadığımız için bu değişiklikler sql sunucumuzdaki orjinal tablolara yansımayacaktır.
+Şimdi 10002 nolu sipariş satırını silelim. Görüldüğü gibi Sepet tablosundan 10002 ile ilgili tüm ilişkili kayıtlar da silinecektir. Aynı zamanda Siparis tablosundan da bu sipariş numarasına ait satır silinecektir. Elbette dataSet nesnemize ait Update metodunu kullanmadığımız için bu değişiklikler sql sunucumuzdaki orijinal tablolara yansımayacaktır.
 
 ![mk17_3.gif](/assets/images/2003/mk17_3.gif)
 
@@ -106,7 +101,7 @@ Siparis Detaylarının tutulduğu Sepet tablosunda ise görünüm şöyledir.
 
 Şekil 4. 10002 Siparis tablosundan silindi.
 
-Şimdi oluşturmuş olduğumuz bu kısıtlamada Delete kuralını None yapalım ve bakalım bu kez neler olucak. Bu durumda aşağıdaki hata mesajını alacağız.
+Şimdi oluşturmuş olduğumuz bu kısıtlamada Delete kuralını None yapalım ve bakalım bu kez neler olacak. Bu durumda aşağıdaki hata mesajını alacağız.
 
 ![mk17_5.gif](/assets/images/2003/mk17_5.gif)
 

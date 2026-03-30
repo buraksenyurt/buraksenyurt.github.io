@@ -9,13 +9,13 @@ tags:
   - datagrid
   - paging
 ---
-Bugünkü makalemizde, bir ASP.NET sayfasında yer alan DataGrid kontrolümüzde nasıl sayfalama işlemlerini gerçekleştireceğimizi göreceğiz. Uygulamamız, sql sunucusundaki veritabanımızdan bir tablo ile ile ilgili bilgileri ekranda gösterecek. Ancak çok sayıda kayıt olduğu için biz bunları, dataGrid kontrolümüzde 10’ar 10’ar göstereceğiz. Olayı anlayabilmek için doğrudan kodlama ile işe başlayalım diyorum. Öncelikle VS.NET ile bir ASP.NET Web Application oluşturalım ve WebForm1.aspx sayfamızın adını default.aspx olarak değiştirelim. Şimdi öncelikle bir DataGrid nesnesini sayfamıza yerleştirelim ve hiç bir özelliğini ayarlamayalım. Bunları default.aspx sayfasının html görünümünde elle kodlayacağız. Şu an için DataGrid kontrolümüze ait aspx dataGrid tag'ımızın hali şöyledir.
+Bugünkü makalemizde, bir ASP.NET sayfasında yer alan DataGrid kontrolümüzde nasıl sayfalama işlemlerini gerçekleştireceğimizi göreceğiz. Uygulamamız, sql sunucusundaki veritabanımızdan bir tablo ile ilgili bilgileri ekranda gösterecek. Ancak çok sayıda kayıt olduğu için biz bunları, dataGrid kontrolümüzde 10’ar 10’ar göstereceğiz. Olayı anlayabilmek için doğrudan kodlama ile işe başlayalım diyorum. Öncelikle VS.NET ile bir ASP.NET Web Application oluşturalım ve WebForm1.aspx sayfamızın adını default.aspx olarak değiştirelim. Şimdi öncelikle bir DataGrid nesnesini sayfamıza yerleştirelim ve hiçbir özelliğini ayarlamayalım. Bunları default.aspx sayfasının html görünümünde elle kodlayacağız. Şu an için DataGrid kontrolümüze ait aspx dataGrid tag'ımızın hâli şöyledir.
 
 ```text
 <asp:DataGrid id="dgKitap" style="Z-INDEX: 101; LEFT: 56px; POSITION: absolute; TOP: 56px" runat="server"></asp:DataGrid>
 ```
 
-Şimdi, code-behind kısmında yer alıcak kodları yazalım. Sql sunucumuza bir bağlantı oluşturacağız, Friends veritabanımızda yer alan Kitaplar tablosundaki satırları bir DataTable nesnesine yükleyip daha sonra dataGrid kontrolümüze bağlayacağız. Bunu sağlayacak olan code-behind kodlarımız ise şu şekilde olucaktır;
+Şimdi, code-behind kısmında yer alacak kodları yazalım. Sql sunucumuza bir bağlantı oluşturacağız, Friends veritabanımızda yer alan Kitaplar tablosundaki satırları bir DataTable nesnesine yükleyip daha sonra dataGrid kontrolümüze bağlayacağız. Bunu sağlayacak olan code-behind kodlarımız ise şu şekilde olacaktır;
 
 ```csharp
 SqlConnection conFriends;
@@ -38,15 +38,15 @@ private void Page_Load(object sender, System.EventArgs e)
 } 
 ```
 
-Şimdi sayfamızda yer alan DataGrid tag'ındaki düzenlemelerimizi yapalım. Burada Columns isimli taglar arasında, dataGrid kontrolümüzde görünmesini istediğimiz BoundColumn tipindeki sütunları belirleyeceğimiz tagları yazacağız. Bu sayede DataGrid kontrolüne ait DataBind metodu çağırıldığında, bizim bu taglarda belirttiğimiz alanlar DataGrid kontrolümüzün kolonları olacak şekilde ilgili veri alanlarına bağlanacak. Gelin şimdi buradaki düzenlemeleri gerçekleştirelim. Unutmadan, kendi DataGrid kolonlarınızı ayarlayabilmeniz için AutoGenerateColumns özelliğine false değerini aktarmanız gerekmektedir. Aksi takdirde ayarladğınız kolonların hemen arkasından, otomatik olarak DataTable'da yer alan tüm kolonlar tekrardan gelir. Yaptığımız son güncellemeleri ile DataGrid tag'ımızın yeni hali şu şekildedir.
+Şimdi sayfamızda yer alan DataGrid tag'ındaki düzenlemelerimizi yapalım. Burada Columns isimli taglar arasında, dataGrid kontrolümüzde görünmesini istediğimiz BoundColumn tipindeki sütunları belirleyeceğimiz tagları yazacağız. Bu sayede DataGrid kontrolüne ait DataBind metodu çağırıldığında, bizim bu taglarda belirttiğimiz alanlar DataGrid kontrolümüzün kolonları olacak şekilde ilgili veri alanlarına bağlanacak. Gelin şimdi buradaki düzenlemeleri gerçekleştirelim. Unutmadan, kendi DataGrid kolonlarınızı ayarlayabilmeniz için AutoGenerateColumns özelliğine false değerini aktarmanız gerekmektedir. Aksi takdirde ayarladığınız kolonların hemen arkasından, otomatik olarak DataTable'da yer alan tüm kolonlar tekrardan gelir. Yaptığımız son güncellemeler ile DataGrid tag'ımızın yeni hâli şu şekildedir.
 
 ![mk20_3.gif](/assets/images/2003/mk20_3.gif)
 
-Burada görüldüğü gibi, DataGird kontrolümüzde görnümesini istediğim tablo alanlarını birer BoundColumn olarak, DataGrid tagları arasına ekledik. Kısaca bahsetmek gerekirse hepsi için, DataField özelliği ile tablodaki hangi alana ait verileri göstereceklerini, HeaderText özelliği ile sütun başlıklarında ne yazacağını, ReadOnly özelliği ile sadece okunabilir alanlar olduklarını belirliyoruz.Bu haliyle uygulamamızı çalıştırırsak aşağıdakine benzer bir ekran görüntüsü ile karşılaşırız.
+Burada görüldüğü gibi, DataGrid kontrolümüzde görünmesini istediğim tablo alanlarını birer BoundColumn olarak, DataGrid tagları arasına ekledik. Kısaca bahsetmek gerekirse hepsi için, DataField özelliği ile tablodaki hangi alana ait verileri göstereceklerini, HeaderText özelliği ile sütun başlıklarında ne yazacağını, ReadOnly özelliği ile sadece okunabilir alanlar olduklarını belirliyoruz. Bu hâliyle uygulamamızı çalıştırırsak aşağıdakine benzer bir ekran görüntüsü ile karşılaşırız.
 
 ![mk20_1.gif](/assets/images/2003/mk20_1.gif)
 
-Şekil 1.Programın İlk Hali.
+Şekil 1. Programın İlk Hali.
 
 Görüldüğü gibi kitap listesi uzayıp gitmektedir. Bizim amacımız bu listeyi 10’arlı gruplar halinde göstermek. Bunun için yapılacak hareket gayet basit gözüksede ince bir teknik kullanmamızı gerektiriyor. Öncelikle dataGrid kontrolümüzün, bir takım özelliklerini belirlemeliyiz. Bu amaçla code-behind kısmında yer alan Page_Load procedure’unde bir takım değişiklikler yaptık.
 
@@ -74,7 +74,7 @@ private void Page_Load(object sender, System.EventArgs e)
 
 Şekil 2. Sayfa Linkleri
 
-Ancak bu linklerden herhangibirine bastığımızda ilgili sayfaya gidemediğimizi aynı sayfanın gerisin geriye geldiğini görürüz. İşte pek çoğumuzun zorlandığı ve gözden kaçırdığı teknik burada kendini gösterir. Aslında her şey yolunda gözükmektedir ve sistem çalışmalıdır. Ama çalışmamaktadır. Yapacağımız bu sayfalama işlemini gerçekleştirecek bir metod yazmak ve son olarakta bu metodu DataGrid tag'ına yazacağımız OnPageIndexChanges olay procedure'ü ile ilişkilendirmektir. OnPageIndexChanges olayı DataGrid kontolünde yer alan sayfalama linklerinden birine basıldığında çalışacak kodları içerir. Bu durumda DataGrid tag'ımızın son hali aşağıdaki gibi olur.
+Ancak bu linklerden herhangi birine bastığımızda ilgili sayfaya gidemediğimizi, aynı sayfanın gerisin geriye geldiğini görürüz. İşte pek çoğumuzun zorlandığı ve gözden kaçırdığı teknik burada kendini gösterir. Aslında her şey yolunda gözükmektedir ve sistem çalışmalıdır. Ama çalışmamaktadır. Yapacağımız bu sayfalama işlemini gerçekleştirecek bir metod yazmak ve son olarak da bu metodu DataGrid tag'ına yazacağımız OnPageIndexChanges olay procedure'ü ile ilişkilendirmektir. OnPageIndexChanges olayı DataGrid kontrolünde yer alan sayfalama linklerinden birine basıldığında çalışacak kodları içerir. Bu durumda DataGrid tag'ımızın son hâli aşağıdaki gibi olur.
 
 ![mk20_4.gif](/assets/images/2003/mk20_4.gif)
 

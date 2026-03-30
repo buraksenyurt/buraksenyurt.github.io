@@ -18,25 +18,25 @@ Bugünkü makalemde sizlere bir Web Sayfası üzerinde, bir tablonun belli bir s
 
 Şekil 2. Kitaplar tablosunun örnek verileri.
 
-Şimdi projemizin en önemli unsuru olan Stored Procedure nesnemizi Sql Server üzerinde oluşturalım. Bu Stored Procedure ile kullanıcının, web sayfasında listbox nesnesi içinden seçtiği kitaba ait tüm verileri döndürecek olan bir Sql cümleciği yazıcağız. Burada aranan satırı belirleyecek olan değerimiz ID isimli aynı zamanda Primary Key olan alanın değeri olucaktır. Kullanıcı listBox nesnesinde yer alan bir kitabı seçtiğinde (yani listBox nesnesine ait lstKitaplar_SelectedIndexChanged olay procedure’ü çalışıtırıldığında) seçili olan öğeye ait id numarası Stored Procedure’ümüze parametre olarak gönderilicek. Elde edilen sonuç kümesine ait alanlar dataGrid nesnemizde gösterilerek kitabımıza ait detaylı bilgilerin görüntülenmesi sağlanmış olucak. Dilerseniz “Kitap Bul” isimli Stored Procedure’ümüzü oluşturarak devam edelim. Şekil 3 yazdığımız Stored Procedure nesnesini göstermekte.
+Şimdi projemizin en önemli unsuru olan Stored Procedure nesnemizi Sql Server üzerinde oluşturalım. Bu Stored Procedure ile kullanıcının, web sayfasında listBox nesnesi içinden seçtiği kitaba ait tüm verileri döndürecek olan bir Sql cümleciği yazacağız. Burada aranan satırı belirleyecek olan değerimiz ID isimli aynı zamanda Primary Key olan alanın değeri olacaktır. Kullanıcı listBox nesnesinde yer alan bir kitabı seçtiğinde (yani listBox nesnesine ait lstKitaplar_SelectedIndexChanged olay procedure’ü çalıştırıldığında) seçili olan öğeye ait id numarası Stored Procedure’ümüze parametre olarak gönderilecek. Elde edilen sonuç kümesine ait alanlar dataGrid nesnemizde gösterilerek kitabımıza ait detaylı bilgilerin görüntülenmesi sağlanmış olacak. Dilerseniz “Kitap Bul” isimli Stored Procedure’ümüzü oluşturarak devam edelim. Şekil 3, yazdığımız Stored Procedure nesnesini göstermekte.
 
 ![mk3_3.gif](/assets/images/2003/mk3_3.gif)
 
 Şekil 3. Stored Procedure nesnemiz ve Sql ifadesi.
 
-Sıra geldi uygulamamızda yer alan WebForm’umuzu oluşturmaya. Uygulamamızı C# dili ile oluşturmayı tercih ettiğimden New Project kısmında Visual C# Proejct bölümünü seçtim. Dikkat edicek olursanız, uygulmamız bir Web Application dır. Oluşturulduğu yer http://localhost/kitap adlı adrestir.
+Sıra geldi uygulamamızda yer alan WebForm’umuzu oluşturmaya. Uygulamamızı C# dili ile oluşturmayı tercih ettiğimden New Project kısmında Visual C# Project bölümünü seçtim. Dikkat edecek olursanız, uygulamamız bir Web Application'dır. Oluşturulduğu yer http://localhost/kitap adlı adrestir.
 
 ![mk3_4.gif](/assets/images/2003/mk3_4.gif)
 
 Şekil 4. Web Application
 
-Evet gelelim WebFormun tasrımına. Ben aşağıdaki gibi bir tasarım oluşturdum. Sizlerde buna yakın bir tasarım oluşturabilirsiniz veya aynısını kullanamayı tercih edebilirsiniz.
+Evet gelelim WebFormun tasarımına. Ben aşağıdaki gibi bir tasarım oluşturdum. Sizler de buna yakın bir tasarım oluşturabilirsiniz veya aynısını kullanmayı tercih edebilirsiniz.
 
 ![mk3_6.gif](/assets/images/2003/mk3_6.gif)
 
 Şekil 5. Web Form tasarımı.
 
-Sıra geldi kodlarımızı yazmaya. Önce sayfa yüklenirken neler olucağını belirleyeceğimiz kodlarımızı yazmaya başlayalım. Özet olarak Page_Load olay procedure’ünde Sql Server ‘ a bağlanıp, Kitaplar tablosundan yanlızca ID ve Adi alanına ait değerleri alıyoruz ve bunları bir SqlDataReader nesnesi vasıtasıyla, lstKitaplar isimli listBox nesnemize yüklüyoruz. Gelin kodumuzu yazalım, hem de inceleyelim.
+Sıra geldi kodlarımızı yazmaya. Önce sayfa yüklenirken neler olacağını belirleyeceğimiz kodlarımızı yazmaya başlayalım. Özet olarak `Page_Load` olay procedure’ünde Sql Server'a bağlanıp, Kitaplar tablosundan yalnızca ID ve Adi alanına ait değerleri alıyoruz ve bunları bir SqlDataReader nesnesi vasıtasıyla, lstKitaplar isimli listBox nesnemize yüklüyoruz. Gelin kodumuzu yazalım, hem de inceleyelim.
 
 ```csharp
 /* Önce gerekli SqlConnection nesnemizi oluşturuyor ve gerekli ayarlarımızı yapıyoruz.*/
@@ -81,9 +81,9 @@ private void Page_Load(object sender, System.EventArgs e)
 
 Şekil 6. PageLoad sonrası.
 
-Şimdi ise listBox’ta bir öğeyi seçtiğimizde neler olucağına bakalım. Temel olarak, seçilen öğeye ait ID değeri “Kitap Bul” isimli Stored Procedure’e gidicek ve dönen sonuçları dataGrid nesnesinde gösterceğiz.
+Şimdi ise listBox’ta bir öğeyi seçtiğimizde neler olacağına bakalım. Temel olarak, seçilen öğeye ait ID değeri “Kitap Bul” isimli Stored Procedure’e gidecek ve dönen sonuçları dataGrid nesnesinde göstereceğiz.
 
-ListBox nesnesine tıklandığı zaman, çalışıcak olan lstKitaplar_ SelectedIndexChanged olay procedure’ünde gerekli kodları yazmadan once ListBox nesnesinin AutoPostBack özelliğine True değerini atamamız gerekiyor. Böylece kullanıcı sayfa üzerinde listbox içindeki bir nesneye tıkladığında lstKitaplar_SelectedIndexChanged olay procedure’ünün çalışmasını sağlamış oluyoruz. Nevarki böyle bir durumda sayfanın Page_Load olay procedürünün de tekrar çalışmasını engellemek yada başka bir deyişle bir kere çalışmasını garantilemek için if (Page.IsPostBack==false) kontrolünü Page_Load olay procedure’üne ekliyoruz.
+ListBox nesnesine tıklandığı zaman, çalışacak olan `lstKitaplar_SelectedIndexChanged` olay procedure’ünde gerekli kodları yazmadan önce ListBox nesnesinin AutoPostBack özelliğine True değerini atamamız gerekiyor. Böylece kullanıcı sayfa üzerinde listBox içindeki bir nesneye tıkladığında `lstKitaplar_SelectedIndexChanged` olay procedure’ünün çalışmasını sağlamış oluyoruz. Ne var ki böyle bir durumda sayfanın Page_Load olay procedürünün de tekrar çalışmasını engellemek ya da başka bir deyişle bir kere çalışmasını garantilemek için if (Page.IsPostBack==false) kontrolünü Page_Load olay procedure’üne ekliyoruz.
 
 ![mk3_9.gif](/assets/images/2003/mk3_9.gif)
 

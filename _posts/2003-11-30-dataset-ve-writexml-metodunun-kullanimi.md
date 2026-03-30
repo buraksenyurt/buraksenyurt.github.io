@@ -10,11 +10,11 @@ tags:
   - xml
   - writexml
 ---
-Bugünkü makalemizde, bir dataset nesnesinin içerdiği tabloların ve bu tablolardaki alanlara ait bilgilerin xml formatında nasıl yazdırıldığını göreceğiz. Örneğimiz son derece basit. Örnek uygulamamızda, Sql sunucusu üzerinde yer alan, Friends isimli database’den Kitaplar isimli tabloya ait verileri taşıyan bir dataset nesnesini kullanacağız. DataSet sınıfına ait WriteXml metodu dataset içerisinde yer alan bilgilerin bir xml dokumanına Schema bilgisi ile birlikte aktarılmasına imkan sağlmakatadır. Bu metoda ait 8 adet yapıcı (Constructor) metod bulunmakta olup biz örneğimizde,
+Bugünkü makalemizde, bir dataset nesnesinin içerdiği tabloların ve bu tablolardaki alanlara ait bilgilerin XML formatında nasıl yazdırıldığını göreceğiz. Örneğimiz son derece basit. Örnek uygulamamızda, Sql sunucusu üzerinde yer alan, Friends isimli database’den Kitaplar isimli tabloya ait verileri taşıyan bir dataset nesnesini kullanacağız. DataSet sınıfına ait WriteXml metodu dataset içerisinde yer alan bilgilerin bir XML dokümanına Schema bilgisi ile birlikte aktarılmasına imkan sağlamaktadır. Bu metoda ait 8 adet yapıcı (Constructor) metod bulunmakta olup biz örneğimizde,
 
 Public void WriteXml (string dosyaadi, XmlWriteMode mod);
 
-Yapıcısını kullanacağız. Burada yer alan ilk parametre xml içeriğini kaydedeciğimiz dosyanın tam yol adını taşımaktadır. İkinci parametre ise;
+Yapıcısını kullanacağız. Burada yer alan ilk parametre XML içeriğini kaydedeceğimiz dosyanın tam yol adını taşımaktadır. İkinci parametre ise;
 
 XmlWriteMode.IgnoreSchema
 
@@ -22,7 +22,7 @@ XmlWriteMode.WriteSchema
 
 XmlWriteMode.DiffGram
 
-Değerlerinden birini alır. IgnoreSchema olarak belirtildiğinde, DataSet nesnesinin içerdiği veriler, Schema bilgileri olmadan (örneğin alan adları, veri tipleri, uzunlukları vb...) xml dokumanı haline getirilir. WriteSchema olması halinde ise, Schema bilgileri aynı xml dosyasının üst kısmına ile tagları arasında yazılır. DiffGram durumunda ise, veriler üzerinde yapılan değişikliklerin takip edilebilmesi amaçlanmıştır. Dilerseniz vakit kaybetmeden örnek uygulamamıza geçelim. Basit bir Console uygulaması oluşturacağız.
+Değerlerinden birini alır. IgnoreSchema olarak belirtildiğinde, DataSet nesnesinin içerdiği veriler, Schema bilgileri olmadan (örneğin alan adları, veri tipleri, uzunlukları vb...) XML dokümanı haline getirilir. WriteSchema olması halinde ise, Schema bilgileri aynı XML dosyasının üst kısmına ile tagları arasında yazılır. DiffGram durumunda ise, veriler üzerinde yapılan değişikliklerin takip edilebilmesi amaçlanmıştır. Dilerseniz vakit kaybetmeden örnek uygulamamıza geçelim. Basit bir Console uygulaması oluşturacağız.
 
 ```csharp
 using System;

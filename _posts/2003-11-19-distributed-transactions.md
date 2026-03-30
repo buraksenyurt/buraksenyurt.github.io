@@ -12,21 +12,21 @@ tags:
   - component-services
   - oltp
 ---
-Bildiğiniz gibi bir önceki makalemizde Transaction kavramından bahsetmiş, ancak birden fazla veritabanı için geçerli olucak Transaction işlemlerinin Dağıtık Transaction’lar olarak adlandırıldığından sözetmiştik. Bu makalemizde Dağıtık Transaction’ları inceleyecek ve her zaman olduğu gibi konuyu açıklayıcı basit bir örnek geliştireceğiz.
+Bildiğiniz gibi bir önceki makalemizde Transaction kavramından bahsetmiş, ancak birden fazla veritabanı için geçerli olacak Transaction işlemlerinin Dağıtık Transaction’lar olarak adlandırıldığından söz etmiştik. Bu makalemizde Dağıtık Transaction’ları inceleyecek ve her zaman olduğu gibi konuyu açıklayıcı basit bir örnek geliştireceğiz.
 
-İş uygulamalarında, Online Transaction Processing (OLTP) dediğimiz olay çok sık kullanılmaktadır. Buna verilecek en güzel örnek bankaların ATM uygulamalarıdır. Veriler eş zamanlı olarak aynı anda bir bütün halinde işlenmekte ve güncellenmektedir. Bu tarz projelerin uygulanmasında OLTP tekniği yaygın bir biçimde kullanılmaktadır. Bu tekniğin uygulanabilmesi Dağıtık Transaction’ların kullanılmasını gerektirir..NET ile Dağıtık Transaction’lar yazmak için Component Services’ı kullanmamız gerekmektedir. Özellikle,çok katlı mimari dediğimiz iş uygulamalarında Dağıtık Transaction’ları çok sık kullanırız. Burada Dağıtık Transaction’lar başka componentler tarafından üstlenilir ve Sunu Katmanı ile Veritabanları arasındaki işlemlerin gerçekleştirilmesinde rol oynarlar. Bu component’lerin bulunduğu katman İş Katmanı olarakda adlandırılmaktadır.
+İş uygulamalarında, Online Transaction Processing (OLTP) dediğimiz olay çok sık kullanılmaktadır. Buna verilecek en güzel örnek bankaların ATM uygulamalarıdır. Veriler eş zamanlı olarak aynı anda bir bütün halinde işlenmekte ve güncellenmektedir. Bu tarz projelerin uygulanmasında OLTP tekniği yaygın bir biçimde kullanılmaktadır. Bu tekniğin uygulanabilmesi Dağıtık Transaction’ların kullanılmasını gerektirir. .NET ile Dağıtık Transaction’lar yazmak için Component Services’ı kullanmamız gerekmektedir. Özellikle, çok katlı mimari dediğimiz iş uygulamalarında Dağıtık Transaction’ları çok sık kullanırız. Burada Dağıtık Transaction’lar başka componentler tarafından üstlenilir ve Sunu Katmanı ile Veritabanları arasındaki işlemlerin gerçekleştirilmesinde rol oynarlar. Bu component’lerin bulunduğu katman İş Katmanı olarak da adlandırılmaktadır.
 
-Nitekim Componentler aslında Transaction başlatıp gerekli metodları çalıştırarak veriler üzerindeki bütünsel işlevleri yerine getirir ve transaction’ı sonlandırırlar. Yani Sunum Katmanı’ nda yer alan uygulamalar sadece gerekli verileri parametre olarak iş katmanında yer alan componentlere gönderirler. Dolayısıyla üzerlerinde ilgili veritabanı verileri için herhangibir fonksiyon veya metodun çalıştırılmasına gerek yoktur. Bütün sorumluluk Component Services ‘ da yer alan COM+ componentindedir. Burada veirtabanlarına bağlanılır, gerekli düzenlemeler bir Transaction içersinde gerçekleştirilir ve sorunsuz bir transaction tüm iş parçacıkları ile teyid edilerek gerekli düzenlemeler veritabanlarına yansıtılır.
+Nitekim Componentler aslında Transaction başlatıp gerekli metodları çalıştırarak veriler üzerindeki bütünsel işlevleri yerine getirir ve transaction’ı sonlandırırlar. Yani Sunum Katmanı’nda yer alan uygulamalar sadece gerekli verileri parametre olarak iş katmanında yer alan componentlere gönderirler. Dolayısıyla üzerlerinde ilgili veritabanı verileri için herhangi bir fonksiyon veya metodun çalıştırılmasına gerek yoktur. Bütün sorumluluk Component Services’ta yer alan COM+ componentindedir. Burada veritabanlarına bağlanılır, gerekli düzenlemeler bir Transaction içerisinde gerçekleştirilir ve sorunsuz bir transaction tüm iş parçacıkları ile teyit edilerek gerekli düzenlemeler veritabanlarına yansıtılır.
 
-En basit haliyle 3 katlı mimaride, Sunum Katmanı ile Veritabanları arasındaki transaction işlemlerini COM+ Component’leri ile gerçekleştirebiliriz. Bu component’ler Windows 2000’ den itibaren Component Service olarak adlandırılan bir servis altında yer almaktadırlar. Elbetteki bu component’i biz geliştireceğiz. Component’in görevi, transaction işlemlerinin otomatik yada manuel olarak gerçekleştirilmesini sağlamaktır. Bir dll dosyası haline getirilen bu component’leri istenilen Sunum Katmanı uygulamasına ekleyerek kullanabiliriz.
+En basit haliyle 3 katlı mimaride, Sunum Katmanı ile Veritabanları arasındaki transaction işlemlerini COM+ Component’leri ile gerçekleştirebiliriz. Bu component’ler Windows 2000’den itibaren Component Service olarak adlandırılan bir servis altında yer almaktadırlar. Elbette ki bu component’i biz geliştireceğiz. Component’in görevi, transaction işlemlerinin otomatik ya da manuel olarak gerçekleştirilmesini sağlamaktır. Bir dll dosyası haline getirilen bu component’leri istenilen Sunum Katmanı uygulamasına ekleyerek kullanabiliriz.
 
-Yazacağımız component içinde Transaction işlemlerini kullanabilmek amacıyla.NET içerisinde yer alan System.EnterpriseServices sınıfının metodlarını kullanırız. Oluşturulan component’i örneklerimizde de göreceğiniz gibi bir Strong Name haline getirmemizde gerekmektedir. Örneğimizi yazarken bunları daha iyi anlıyacaksınız.Üç katlı mimaride, Dağıtık Transaction uygulamalarının aşağıdaki şekil ile zihnimizde daha berrak canlanacağı kanısındayım.
+Yazacağımız component içinde Transaction işlemlerini kullanabilmek amacıyla .NET içerisinde yer alan System.EnterpriseServices sınıfının metodlarını kullanırız. Oluşturulan component’i örneklerimizde de göreceğiniz gibi bir Strong Name haline getirmemiz de gerekmektedir. Örneğimizi yazarken bunları daha iyi anlayacaksınız. Üç katlı mimaride, Dağıtık Transaction uygulamalarının aşağıdaki şekil ile zihnimizde daha berrak canlanacağı kanısındayım.
 
 ![mk7_1.gif](/assets/images/2003/mk7_1.gif)
 
 Şekil 1. 3 Katlı Mimari için COM+ Kullanımı
 
-Özetlemek gerekirse, Dağıtık Transaction’ ların kullanıldığı uygulamalarda Component Services kullanılması gerekmektedir. Bir Dağıtık Transaction Component’i yazdığımızda, transaction işlemlerini otomotik olarak Component Service’a yaptırabiliriz. Bunun yanında ContexrUtil adı verilen nesneyi ve bu nesneye ait SetComplete (), SetAbort () gibi metodları kullanarak Transaction işlmelerini elle de yapılandırabiliriz. Bu makalemizde otomatik olanı seçtim. Bir sonraki makalede işlemleri manuel olarak yapıcağız.Dilerseniz örneğimize geçelim. Bu uygulamızda 2 veritabanı üzerindeki 2 farklı tablo için, bir Transaction içerisinde basit veri giriş işlemleri gerçekleştireceğiz. Öncelikle tablolarımın yapısını ve databaselerimizi belirtelim. Firends isimli bir Veritabanı’ nda kullanacağımız basit bir tablo var. Satislar isimli bu tabloda Ad,Soyad ve SatisTutari alanları yer almakta.
+Özetlemek gerekirse, Dağıtık Transaction’ların kullanıldığı uygulamalarda Component Services kullanılması gerekmektedir. Bir Dağıtık Transaction Component’i yazdığımızda, transaction işlemlerini otomatik olarak Component Service’e yaptırabiliriz. Bunun yanında ContexrUtil adı verilen nesneyi ve bu nesneye ait SetComplete (), SetAbort () gibi metodları kullanarak Transaction işlemlerini elle de yapılandırabiliriz. Bu makalemizde otomatik olanı seçtim. Bir sonraki makalede işlemleri manuel olarak yapacağız. Dilerseniz örneğimize geçelim. Bu uygulamamızda 2 veritabanı üzerindeki 2 farklı tablo için, bir Transaction içerisinde basit veri giriş işlemleri gerçekleştireceğiz. Öncelikle tablolarımın yapısını ve databaselerimizi belirtelim. Friends isimli bir Veritabanı’nda kullanacağımız basit bir tablo var. Satislar isimli bu tabloda Ad, Soyad ve SatisTutari alanları yer almakta.
 
 ![mk7_2.gif](/assets/images/2003/mk7_2.gif)
 
@@ -38,25 +38,25 @@ Yazacağımız component içinde Transaction işlemlerini kullanabilmek amacıyl
 
 Şekil 3. Primler tablosunun yapısı.
 
-Uygulamamızda Satislar isimli tabloya bilgi girildikten sonra SatisTutari’nin %10’ u üzerinden prim hesaplanıcak ve aynı anda Primler tablosuna bu bilgiler eklenecek. Tabiki bu iki basit veritabanı işlemi bir Transaction içinde gerçekleştirilecek. Uygulamamızı tasarlamaya başlayalım. Önce yeni bir C# ile yeni bir Windows Application oluşturalım. Bu uygulamanın içerdiği Form Sunum Katmanı’ nda yer alan veri giriş ekranımız olucaktır. Formu aşağıdakine benzer veya aynı şekilde tasarlayalım.
+Uygulamamızda Satislar isimli tabloya bilgi girildikten sonra SatisTutari’nin %10’u üzerinden prim hesaplanacak ve aynı anda Primler tablosuna bu bilgiler eklenecek. Tabii ki bu iki basit veritabanı işlemi bir Transaction içinde gerçekleştirilecek. Uygulamamızı tasarlamaya başlayalım. Önce C# ile yeni bir Windows Application oluşturalım. Bu uygulamanın içerdiği Form, Sunum Katmanı’nda yer alan veri giriş ekranımız olacaktır. Formu aşağıdakine benzer veya aynı şekilde tasarlayalım.
 
 ![mk7_4.gif](/assets/images/2003/mk7_4.gif)
 
 Şekil 4. Formun yapısı.
 
-Kullanıcı bu ekrandan Ad,Soyad ve Satış Tutarı bilgilerini girecek. Girilen bu bilgiler, yazacağımız COM+ Componentindeki metoda parametre olarak gidicek ve bu metod içinde işlenerek veritabanlarındaki tablolarda gerekli düzenlemeler yapılıcak. Eğer tüm işlmeler başarılı olursa ve metod tam olarak çalışırsa geriyede işlemlerin dolayısıyla Transaction’ın başarıl olduğuna dair bir string bilgi gönderecek. Evet şimdi uygulamanın en önemli kısmına sıra geldi. Componentin tasarlanmasına. İlk önce, Project menüsünden Add Component komutunu vererek component’ imizi uygulamamıza ekliyoruz.
+Kullanıcı bu ekrandan Ad, Soyad ve Satış Tutarı bilgilerini girecek. Girilen bu bilgiler, yazacağımız COM+ Componentindeki metoda parametre olarak gidecek ve bu metod içinde işlenerek veritabanlarındaki tablolarda gerekli düzenlemeler yapılacak. Eğer tüm işlemler başarılı olursa ve metod tam olarak çalışırsa geriye de işlemlerin dolayısıyla Transaction’ın başarılı olduğuna dair bir string bilgi gönderecek. Evet şimdi uygulamanın en önemli kısmına sıra geldi: componentin tasarlanmasına. İlk önce, Project menüsünden Add Component komutunu vererek component'imizi uygulamamıza ekliyoruz.
 
 ![mk7_5.gif](/assets/images/2003/mk7_5.gif)
 
 Şekil 5. Component Eklemek.
 
-Ben componentimize SatisPrimEkle adini verdim. Bu durumda Solution’ımıza SatisPrimEkle.cs isimli dosya eklenir ve Visual Studio.NET IDE’de aşağıdaki gibi görünür.
+Ben componentimize SatisPrimEkle adını verdim. Bu durumda Solution’ımıza SatisPrimEkle.cs isimli dosya eklenir ve Visual Studio.NET IDE’de aşağıdaki gibi görünür.
 
 ![mk7_6.gif](/assets/images/2003/mk7_6.gif)
 
 Şekil 6. Componentin ilk eklendiğinde IDE’ de durum.
 
-Şimdi ise bu component içersinde yer alıcak dağıtık transaction işlemleri için gerekli olan referansımızın projemize eklememize gerekiyor. Daha öncede System.EnterpriseServices olarak bahsettiğimiz bu sınıfı eklemek için yine, Project menüsünden, Add Reference komutunu veriyoruz. Burada ise.NET sekmesinden System.EnterpriseServices sınıfını ekliyoruz.
+Şimdi ise bu component içerisinde yer alacak dağıtık transaction işlemleri için gerekli olan referansı projemize eklememiz gerekiyor. Daha önce de System.EnterpriseServices olarak bahsettiğimiz bu sınıfı eklemek için yine, Project menüsünden, Add Reference komutunu veriyoruz. Burada ise .NET sekmesinden System.EnterpriseServices sınıfını ekliyoruz.
 
 ![mk7_7.gif](/assets/images/2003/mk7_7.gif)
 
@@ -136,7 +136,7 @@ using System.Data.SqlClient;
 using System.EnterpriseServices;
 ```
 
-sınıflarını eklememiz gerekiyor. Çünkü Transaction işlemleri için EnterpriseServices sınıfını ve veritabanı işlemlerimiz içinde SqlClient sınıfında yer alan nesnelerimizi kullanacağız. İkinci köklü değişimiz ise SatisPrimEkle isimli sınıfımızın ServicedComponent sınfından türetilmiş olması. Bu değişikliği ve diğer fazlalıkları çıkarttığımız takdirde, kodlarımızın son hali aşağıdaki gibi olucaktır.
+sınıflarını eklememiz gerekiyor. Çünkü Transaction işlemleri için EnterpriseServices sınıfını ve veritabanı işlemlerimiz içinde SqlClient sınıfında yer alan nesnelerimizi kullanacağız. İkinci köklü değişimiz ise SatisPrimEkle isimli sınıfımızın ServicedComponent sınıfından türetilmiş olması. Bu değişikliği ve diğer fazlalıkları çıkarttığımız takdirde, kodlarımızın son hâli aşağıdaki gibi olacaktır.
 
 ```csharp
 using System;

@@ -10,7 +10,7 @@ tags:
 ---
 Hatırlayacağınız gibi yazı dizimizin ilk bölümünde, DataTable sınıfını kullanarak bellekte bir tablonun ve bu tabloya ait alanların nasıl yaratıldığını işlemiştik. Bugünkü makalemizde oluşturmuş olduğumuz bu tabloya kayıtlar ekleyeceğiz ve sonra bu DataTable nesnesini bir DataSet’e aktarıp içerisindeki verileri bir DataGrid kontrolünde göstereceğiz.
 
-Bir dataTable nesnesinin bellekte temsil ettiği tabloya yeni satırlar başka bir deyişle kayıtlar eklemek için, DataRow sınıfından nesneleri kullanacağız. Dilerseniz hiç vakit kaybetmeden uygulamamıza başlayalım. İlk örneğimizin devamı niteliğinde olucak bu çalışmamızda kullanıcının oluşturduğu tablodaki alan sayısı kadar textBox nesnesinide label nesneleri ile birlikte programatik olarak oluşturacağız. İşte programımızın kodları,
+Bir dataTable nesnesinin bellekte temsil ettiği tabloya yeni satırlar başka bir deyişle kayıtlar eklemek için, DataRow sınıfından nesneleri kullanacağız. Dilerseniz hiç vakit kaybetmeden uygulamamıza başlayalım. İlk örneğimizin devamı niteliğinde olacak bu çalışmamızda kullanıcının oluşturduğu tablodaki alan sayısı kadar textBox nesnesini de label nesneleri ile birlikte programatik olarak oluşturacağız. İşte programımızın kodları,
 
 ```csharp
 DataTable dt; /* DataTable nesnemizi uygulama boyunca kullanabilmek için tüm metodlarin disinda tanimladik. */ 

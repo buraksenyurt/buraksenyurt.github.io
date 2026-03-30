@@ -73,9 +73,9 @@ Yapıcı metodlarıda overload edebiliriz. Bu da oldukça önemli bir noktadır.
 
 Şekil 2. Örnek bir Overload Constructor (Aşırı Yüklenmiş Yapıcı) metod.
 
-Dolayısıyla bizde yazdığımız sınıflara ait constructorları overload edebiliriz. Şimdi dilerseniz overload ile ilgili olaraktan kısa bir uygulama geliştirelim. Bu uygulamada yazdığımız bir sınıfa ait constructor metodları overload ederek değişik tipte fonksiyonellikler edinmeye çalışacağız.
+Dolayısıyla biz de yazdığımız sınıflara ait constructorları overload edebiliriz. Şimdi dilerseniz overload ile ilgili olarak kısa bir uygulama geliştirelim. Bu uygulamada yazdığımız bir sınıfa ait constructor metodları overload ederek değişik tipte fonksiyonellikler edinmeye çalışacağız.
 
-Bu uygulamada KolayVeri isminde bir sınıfımız olucak. Bu sınıfın üç adet yapıcısı olucak. Yani iki adet overload constructor yazıcaz. İki tane diyorum çünkü C# zaten default constructoru biz yazmasak bile uygulamaya ekliyor. Bu default constructorlar parametre almayan constructorlardır. Overload ettiğimiz constructor metodlardan birisi ile, seçtiğimiz bir veritabanına bağlanıyoruz. Diğer overload metod ise, parametre olarak veritabanı adından başka, veritabanına bağlanmak için kullanıcı adı ve parola parametrelerinide alıyor. Nitekim çoğu zaman veritabanlarımızda yer alan bazı tablolara erişim yetkisi sınırlamaları ile karşılaşabiliriz. Bu durumda bu tablolara bağlantı açabilmek için yetkili kullanıcı adı ve parolayı kullanmamız gerekir. Böyle bir olayı canlandırmaya çalıştım. Elbetteki asıl amacımız overload constructor metodların nasıl yazıldığını, nasıl kullanıldığını göstermek. Örnek gelişmeye çok, hemde çok açık. Şimdi uygulamamızın bu ilk kısmına bir gözatalım. Aşğıdakine benzer bir form tasarım yapalım.
+Bu uygulamada KolayVeri isminde bir sınıfımız olacak. Bu sınıfın üç adet yapıcısı olacak. Yani iki adet overload constructor yazacağız. İki tane diyorum çünkü C# zaten default constructoru biz yazmasak bile uygulamaya ekliyor. Bu default constructorlar parametre almayan constructorlardır. Overload ettiğimiz constructor metodlardan birisi ile, seçtiğimiz bir veritabanına bağlanıyoruz. Diğer overload metod ise, parametre olarak veritabanı adından başka, veritabanına bağlanmak için kullanıcı adı ve parola parametrelerini de alıyor. Nitekim çoğu zaman veritabanlarımızda yer alan bazı tablolara erişim yetkisi sınırlamaları ile karşılaşabiliriz. Bu durumda bu tablolara bağlantı açabilmek için yetkili kullanıcı adı ve parolayı kullanmamız gerekir. Böyle bir olayı canlandırmaya çalıştım. Elbette ki asıl amacımız overload constructor metodların nasıl yazıldığını, nasıl kullanıldığını göstermek. Örnek gelişmeye çok, hem de çok açık. Şimdi uygulamamızın bu ilk kısmına bir göz atalım. Aşağıdakine benzer bir form tasarımı yapalım.
 
 ![mk4_4.gif](/assets/images/2003/mk4_4.gif)
 
@@ -183,7 +183,7 @@ Evet şimdide programın nasıl çalıştığına bir bakalım. Listbox nesnesi 
 
 Şekil 6. Listboxta tıklanan veritabanına bağlandıktan sonra.
 
-Ve birde kullanıcı adı ile parola verilerek nasıl bağlanacağımızı görelim.
+Ve bir de kullanıcı adı ile parola verilerek nasıl bağlanacağımızı görelim.
 
 ![mk4_8.gif](/assets/images/2003/mk4_8.gif)
 

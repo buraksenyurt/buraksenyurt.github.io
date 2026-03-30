@@ -9,9 +9,9 @@ tags:
   - reflection
   - .net
 ---
-Hiç.NET ‘te yer alan bir tipinin üyelerini öğrenebilmek istediniz mi? Örneğin var olan bir.NET sınıfının veya sizin kendi yazmış olduğunuz yada bir başkasının yazdığı sınıfa ait tüm üyelerin neler olduğuna programatik olarak bakmak istediniz mi? İşte bugünkü makalemizin konusu bu. Herhangi bir tipe (type) ait üyelerin neler olduğunu anlayabilmek. Bu amaçla, Reflection isim uzayını ve bu uzaya ait sınıfları kullanacağız.
+Hiç .NET’te yer alan bir tipin üyelerini öğrenebilmek istediniz mi? Örneğin var olan bir .NET sınıfının veya sizin kendi yazmış olduğunuz ya da bir başkasının yazdığı sınıfa ait tüm üyelerin neler olduğuna programatik olarak bakmak istediniz mi? İşte bugünkü makalemizin konusu bu: herhangi bir tipe (type) ait üyelerin neler olduğunu anlayabilmek. Bu amaçla, Reflection isim uzayını ve bu uzaya ait sınıfları kullanacağız.
 
-Bildiğiniz gibi.NET ‘te kullanılan her şey bir tipe aittir. Yani herşeyin bir tipi vardır. Üyelerini öğrenmek isteğimiz bir tipi öncelikle bir Type değişkeni olarak alırız. (Yani tipin tipini alırız. Bu nedenle ben bu tekniğe Tip-i-Tip adını verdim). Bu noktadan sonra Reflection uzayına ait sınıfları ve metodlarını kullanarak ilgili tipe ait tüm bilgileri edinebiliriz. Küçük bir Console uygulaması ile konuyu daha iyi anlamaya çalışalım. Bu örneğimizde, System.Int32 sınıfına ait üyelerin bir listesini alacağız. İşte kodlarımız;
+Bildiğiniz gibi .NET’te kullanılan her şey bir tipe aittir. Yani her şeyin bir tipi vardır. Üyelerini öğrenmek istediğimiz bir tipi öncelikle bir Type değişkeni olarak alırız. (Yani tipin tipini alırız. Bu nedenle ben bu tekniğe Tip-i-Tip adını verdim.) Bu noktadan sonra Reflection uzayına ait sınıfları ve metodlarını kullanarak ilgili tipe ait tüm bilgileri edinebiliriz. Küçük bir Console uygulaması ile konuyu daha iyi anlamaya çalışalım. Bu örneğimizde, System.Int32 sınıfına ait üyelerin bir listesini alacağız. İşte kodlarımız;
 
 ```csharp
 using System;
@@ -175,9 +175,9 @@ namespace ReflectionSample3
 
 ![mk24_3.gif](/assets/images/2003/mk24_3.gif)
 
-Şekil 3. Kendi yazdığımı sınıf üyelerinede bakabiliriz.
+Şekil 3. Kendi yazdığımız sınıf üyelerine de bakabiliriz.
 
-Peki kendi sınıfımıza ait bilgileri edinmenin bize ne gibi bir faydası olabilir. İşte şimdi tam dişimize gore bir örnek yazacağız. Örneğimizde, bir tablodaki verileri bir sınıf içersinden tanımladığımız özelliklere alacağız. Bu uygulamamız sayesinde sadece tek satırlık bir kod ile, herhangibir kontrolü veriler ile doldurabileceğiz. Bu uygulamada esas olarak, veriler veritabanındaki tablodan alınıcak ve oluşturduğumuz bir koleksiyon sınıfından bir diziye aktarılacak. Oluşturulan bu koleksiyon dizisi, bir DataGrid kontrolü ile ilişkilendirilecek. Teknik olarak kodumuzda, Reflection uzayının PropertyInfo sınıfını kullanarak, oluşturduğumuz sınıfa ait özellikler ile tablodaki alanları karşılaştıracak ve uygun iseler bu özelliklere tabloda karşılık gelen alanlar içindeki değerleri aktaracağız. Dilerseniz kodumuz yazmaya başlayalım.
+Peki kendi sınıfımıza ait bilgileri edinmenin bize ne gibi bir faydası olabilir? İşte şimdi tam dişimize göre bir örnek yazacağız. Örneğimizde, bir tablodaki verileri bir sınıf içerisinden tanımladığımız özelliklere alacağız. Bu uygulamamız sayesinde sadece tek satırlık bir kod ile, herhangi bir kontrolü veriler ile doldurabileceğiz. Bu uygulamada esas olarak, veriler veritabanındaki tablodan alınacak ve oluşturduğumuz bir koleksiyon sınıfından bir diziye aktarılacak. Oluşturulan bu koleksiyon dizisi, bir DataGrid kontrolü ile ilişkilendirilecek. Teknik olarak kodumuzda, Reflection uzayının PropertyInfo sınıfını kullanarak, oluşturduğumuz sınıfa ait özellikler ile tablodaki alanları karşılaştıracak ve uygun iseler bu özelliklere tabloda karşılık gelen alanlar içindeki değerleri aktaracağız. Dilerseniz kodumuzu yazmaya başlayalım.
 
 ```csharp
 using System;
@@ -290,4 +290,4 @@ private void btnDoldur_Click(object sender, System.EventArgs e)
 
 Şekil 4. Programın Çalışmasının Sonucu
 
-Görüldüğü gibi tablomuzdaki iki Alana ait veriler yazdığımız KitapKoleksiyonu sınıfı yardımıyla, her biri Kitap tipinde bir nesne alan koleksyionumuza eklenmiş ve bu sonuçlarda dataGrid kontrolümüze bağlanmıştır. Siz bu örneği dahada iyi bir şekilde geliştirebilirisiniz. Umuyorumki bu örnekte yapmak istediğimizi anlamışsınızdır. Yansıma tekniğini bu kod içinde kısa bir yerde kullandık. Sınıfın özelliklerinin isminin, tablodaki alanların ismi ile aynı olup olmadığını ve aynı iseler yazılabilir olup olmadıklarını öğrenmekte kullandık. Değerli Okurlarım. Geldik bir makalemizin daha sonuna. Hepinize mutlu günler dilerim.
+Görüldüğü gibi tablomuzdaki iki alana ait veriler yazdığımız KitapKoleksiyonu sınıfı yardımıyla, her biri Kitap tipinde bir nesne alan koleksiyonumuza eklenmiş ve bu sonuçlar da dataGrid kontrolümüze bağlanmıştır. Siz bu örneği daha da iyi bir şekilde geliştirebilirsiniz. Umuyorum ki bu örnekte yapmak istediğimizi anlamışsınızdır. Yansıma tekniğini bu kod içinde kısa bir yerde kullandık. Sınıfın özelliklerinin isminin, tablodaki alanların ismi ile aynı olup olmadığını ve aynı iseler yazılabilir olup olmadıklarını öğrenmekte kullandık. Değerli Okurlarım, geldik bir makalemizin daha sonuna. Hepinize mutlu günler dilerim.

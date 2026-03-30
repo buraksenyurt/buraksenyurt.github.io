@@ -10,15 +10,15 @@ tags:
 ---
 Bu yazımızda Sql Server üzerinde, kendi yazdığımız bir Saklı Yordam (Saklı Yordam) ile, veritabanındaki ilgili tabloya nasıl kayıt ekleyeceğimizi incelemeye çalışacağız.
 
-Öncelikle, Saklı Yordamlar hakkında kısa bir bilgi vererek hızlı bir giriş yapalım. Saklı yordamlar derlenmiş sql cümlecikleridir. Bunlar birer veritabanı nesnesi oldukları için, doğrudan veritabanı yöneticisi olan programda (örneğin Sql Server) yer alırlar. Bu nedenle veritabanınızı bir yere taşıdığınızda otomatik olarak, saklı yordamlarınızıda taşımış olursunuz. Bu Saklı Yordam'lerin tercih edilme nedenlerinden sadece birisidir.
+Öncelikle, Saklı Yordamlar hakkında kısa bir bilgi vererek hızlı bir giriş yapalım. Saklı yordamlar derlenmiş sql cümlecikleridir. Bunlar birer veritabanı nesnesi oldukları için, doğrudan veritabanı yöneticisi olan programda (örneğin Sql Server) yer alırlar. Bu nedenle veritabanınızı bir yere taşıdığınızda otomatik olarak, saklı yordamlarınızı da taşımış olursunuz. Bu Saklı Yordamların tercih edilme nedenlerinden sadece birisidir.
 
-Diğer yandan, derlenmiş olmaları aslında bu sql cümleciklerinin doğrudan makine diline dönüştürüldüğü anlamına gelmez. Aslında, çalıştırmak istediğimiz sql cümleciklerini bir Saklı Yordam içine yerleştirerek, bunun bir veritabanı nesnesi haline gelmesini ve çalışıtırıldığında doğrudan, veritabanı yöneticisini üzerinde barındıran sunucu makinede işlemesini sağlarız. Bu doğal olarak, istemci makinelerdeki iş yükünü azaltır ve performansı arttırır. Nitekim bir program içinde çalışıtırılan sql cümleleri, Saklı Yordam’ lardan çok daha yavaş sonuç döndürür. Dolayısıyla Saklı Yordamlar özellikle çok katlı mimariyi uygulamak isteğimiz projelerde faydalıdır. Saklı Yordamların faydalarını genel hatları ile özetlemek gerekirse;
+Diğer yandan, derlenmiş olmaları aslında bu sql cümleciklerinin doğrudan makine diline dönüştürüldüğü anlamına gelmez. Aslında, çalıştırmak istediğimiz sql cümleciklerini bir Saklı Yordam içine yerleştirerek, bunun bir veritabanı nesnesi haline gelmesini ve çalıştırıldığında doğrudan, veritabanı yöneticisini üzerinde barındıran sunucu makinede işlemesini sağlarız. Bu doğal olarak, istemci makinelerdeki iş yükünü azaltır ve performansı artırır. Nitekim bir program içinde çalıştırılan sql cümleleri, Saklı Yordam’lardan çok daha yavaş sonuç döndürür. Dolayısıyla Saklı Yordamlar özellikle çok katlı mimariyi uygulamak isteğimiz projelerde faydalıdır. Saklı Yordamların faydalarını genel hatları ile özetlemek gerekirse;
 
 ![mk1_1.gif](/assets/images/2003/mk1_1.gif)
 
 Şekil 1. Saklı Yordam Kullanmanın Avantajları.
 
-İşte bizim bugünkü uygulamamızda yapacağımız işlemde budur. Bu uygulamamızda basit bir Saklı Yordam yaratacak, SqlCommand nesnesinin CommandType özelliğini, SqlParameters koleksiyonunu vb. kullanarak geniş bir bilgi sahibi olucağız. Öncelikle üzerinde çalışacağımız tablodan bahsetmek istiyorum. Basit ve konuyu hızlı öğrenebilmemiz açısından çok detaylı bir kodlama tekniği uygulamıyacağım. Amacımız Saklı Yordamımıza parametreler göndererek doğrudan veritabanına kaydetmek olucak. Dilerseniz tablomuzu inceleyelim ve oluşturalım.
+İşte bizim bugünkü uygulamamızda yapacağımız işlem de budur. Bu uygulamamızda basit bir Saklı Yordam yaratacak, SqlCommand nesnesinin CommandType özelliğini, SqlParameters koleksiyonunu vb. kullanarak geniş bir bilgi sahibi olacağız. Öncelikle üzerinde çalışacağımız tablodan bahsetmek istiyorum. Basit ve konuyu hızlı öğrenebilmemiz açısından çok detaylı bir kodlama tekniği uygulamayacağım. Amacımız Saklı Yordamımıza parametreler göndererek doğrudan veritabanına kaydetmek olacak. Dilerseniz tablomuzu inceleyelim ve oluşturalım.
 
 ![mk1_2.gif](/assets/images/2003/mk1_2.gif)
 
@@ -32,30 +32,12 @@ Diğer yandan, derlenmiş olmaları aslında bu sql cümleciklerinin doğrudan m
 
 Şekil 3 kullanacağımız Saklı Yordamın T-SQL (Transact SQL) deyimlerini gösteriyor. Burada görüldüğü gibi Sql ifademizin 4 parametresi var. Bu parametrelerimiz;
 
-Parametre Adı
-Veri Tipi
-Veri Uzunluğu
-Açıklama
-
-@fn
-Nvarchar
-50
-First Name alanı için kullanılacak.
-
-@ln
-Nvarchar
-50
-Last Name alanı için kullanılacak.
-
-@bd
-Datetime
--
-BirthDay alanı için kullanılacak.
-
-@j
-Nvarchar
-50
-Job alanı için kullanılacak.
+| Parametre Adı | Veri Tipi | Veri Uzunluğu | Açıklama |
+| --- | --- | --- | --- |
+| @fn | Nvarchar | 50 | First Name alanı için kullanılacak. |
+| @ln | Nvarchar | 50 | Last Name alanı için kullanılacak. |
+| @bd | Datetime | - | BirthDay alanı için kullanılacak. |
+| @j | Nvarchar | 50 | Job alanı için kullanılacak. |
 
 Tablo 1. Saklı Yordamımızda Kullanılan Giriş Parametreleri.
 
@@ -63,9 +45,9 @@ Tablo 1. Saklı Yordamımızda Kullanılan Giriş Parametreleri.
 Insert Into Base (FirstName,LastName,BirthDay,Job) values (@fn,@ln,@bd,@j)
 ```
 
-cümleciği ile standart bir kayıt ekleme işlemi yapıyoruz. Tek önemli nokta values (değerler) olarak, parametre değerlerini gönderiyor olmamız. Böylece, Saklı Yordamımız,.net uygulamamızdan alacağı parametre değerlerini bu sql cümleciğine alarak, tablomuz üzerinde yeni bir satır oluşturulmasını sağlıyor. Peki bu parametre değerlerini.net uygumlamamızdan nasıl vereceğiz? Bunun için uygulamamızda bu Saklı Yordamı kullanan bir SqlCommand nesnesi oluşturacağız. Daha sonra, Saklı Yordamımızda yer alan parametreleri, bu SqlCommand nesnesi için oluşturacak ve Parameters koleksiyonuna ekleyeceğiz. Bu işlemin tamamlanamasının ardından tek yapacağımız Saklı Yordama geçicek parametre değerlerinin, SqlCommand nesnesindeki uygun SqlParameter nesnelerine aktarılması ve Saklı Yordamın çalıştırılması olucak.
+cümleciği ile standart bir kayıt ekleme işlemi yapıyoruz. Tek önemli nokta values (değerler) olarak, parametre değerlerini gönderiyor olmamız. Böylece, Saklı Yordamımız, .NET uygulamamızdan alacağı parametre değerlerini bu sql cümleciğine alarak, tablomuz üzerinde yeni bir satır oluşturulmasını sağlıyor. Peki bu parametre değerlerini .NET uygulamamızdan nasıl vereceğiz? Bunun için uygulamamızda bu Saklı Yordamı kullanan bir SqlCommand nesnesi oluşturacağız. Daha sonra, Saklı Yordamımızda yer alan parametreleri, bu SqlCommand nesnesi için oluşturacak ve Parameters koleksiyonuna ekleyeceğiz. Bu işlemin tamamlanmasının ardından tek yapacağımız, Saklı Yordama geçecek parametre değerlerinin, SqlCommand nesnesindeki uygun SqlParameter nesnelerine aktarılması ve Saklı Yordamın çalıştırılması olacak.
 
-Öncelikle C# için yeni bir Windows Application oluşturalım ve formumuzu aşağıdaki şekilde düzenleyelim. Burada 3 adet textBox nesnemiz ve tarih bilgisini girmek içinde bir adet DateTimePicker nesnemiz yer alıyor. Elbette insert işlemi içinde bir Button kontrolü koymayı ihmal etmedik. Kısaca formun işleyişinden bahsetmek istiyorum. Kullanıcı olarak biz gerekli bilgileri girdikten sonra insert başlıklı Button kontrolüne bastığımızda, girdiğimiz bilgiler Saklı Yordam’ daki parametre değerleri olucak. Ardından Saklı Yordamımız çalıştırılıacak ve girdiğimiz bu parametre değerleri ile, sql sunucumuzda yer alan veritabanımızdaki Base isimli tablomuzda yeni bir satır oluşturulacak.
+Öncelikle C# için yeni bir Windows Application oluşturalım ve formumuzu aşağıdaki şekilde düzenleyelim. Burada 3 adet textBox nesnemiz ve tarih bilgisini girmek için de bir adet DateTimePicker nesnemiz yer alıyor. Elbette insert işlemi için de bir Button kontrolü koymayı ihmal etmedik. Kısaca formun işleyişinden bahsetmek istiyorum. Kullanıcı olarak biz gerekli bilgileri girdikten sonra insert başlıklı Button kontrolüne bastığımızda, girdiğimiz bilgiler Saklı Yordam’daki parametre değerleri olacak. Ardından Saklı Yordamımız çalıştırılacak ve girdiğimiz bu parametre değerleri ile, sql sunucumuzda yer alan veritabanımızdaki Base isimli tablomuzda yeni bir satır oluşturulacak.
 
 ![mk1_4.gif](/assets/images/2003/mk1_4.gif)
 
@@ -83,13 +65,13 @@ using System.Data;
 using System.Data.SqlClient;
 ```
 
-Sırada veritabanına olan bağlantımızı referans edicek olan SQLConnection nesnemiz var.
+Sırada veritabanına olan bağlantımızı referans edecek olan SQLConnection nesnemiz var.
 
 ```csharp
 SqlConnection conFriends = new SqlConnection("initial catalog=Friends;data source=localhost;integrated security=sspi;packet size=4096");
 ```
 
-Kısaca anlatmak gerekirse, SQL Sunucumuz'daki Friends isimli Database’ e bağlantı sağlıyacak bir SqlConnection nesnesi tanımladık. Burada SqlConnection sınıfının prototipi aşağıda verilen Constructor (yapıcı metodunu) metodunu kullandık. Bildiğiniz gibi SqlConnection nesnesi, Sql Sunucusu ile ado.net nesneleri arasında iletişimin sağlanabilmesi için bir bağlantı hattı tesis etmektedir.
+Kısaca anlatmak gerekirse, SQL Sunucumuzdaki Friends isimli Database’e bağlantı sağlayacak bir SqlConnection nesnesi tanımladık. Burada SqlConnection sınıfının prototipi aşağıda verilen Constructor (yapıcı metodunu) kullandık. Bildiğiniz gibi SqlConnection nesnesi, Sql Sunucusu ile ado.net nesneleri arasında iletişimin sağlanabilmesi için bir bağlantı hattı tesis etmektedir.
 
 ```csharp
 public SqlConnection(string connectionString);

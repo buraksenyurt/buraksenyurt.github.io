@@ -109,7 +109,7 @@ Kodumuzun çalışmasını inceleyelim. Db isimli double değişkenimiz bir değ
 
 Şekil 3 Boxing İşlemi
 
-Görüldüğü gibi db değişkenine yapılan arttırım object türünden obj nesnemize yansımamıştır. Çünkü boxing işlemi sonucu, obj nesnesi, db değerinin öbekteki kopyasına başvurmaktadır. Oysaki artım db değişkeninin yığında yer alan orjinal değeri üzerinde gerçekleşmektedir. Bu işlemi açıklayan şekil aşağıda yer almaktadır.
+Görüldüğü gibi db değişkenine yapılan arttırım object türünden obj nesnemize yansımamıştır. Çünkü boxing işlemi sonucu, obj nesnesi, db değerinin öbekteki kopyasına başvurmaktadır. Oysaki artım db değişkeninin yığında yer alan orijinal değeri üzerinde gerçekleşmektedir. Bu işlemi açıklayan şekil aşağıda yer almaktadır.
 
 ![mk30_4.gif](/assets/images/2003/mk30_4.gif)
 
@@ -142,7 +142,7 @@ namespace boxunbox
 }
 ```
 
-Bu kodu çalıştırdığımızda InvalidCastException istisnasının fırlatılacağını görüceksiniz. Çünü referenas tipimizin öbekte başvurduğu veri tipi integer bir değer için fazla büyüktür. Bu noktada (int) ile açıkça dönüşümü bildirmiş olsak dahi bu hatayı alırız.
+Bu kodu çalıştırdığımızda InvalidCastException istisnasının fırlatılacağını göreceksiniz. Çünkü referans tipimizin öbekte başvurduğu veri tipi integer bir değer için fazla büyüktür. Bu noktada (int) ile açıkça dönüşümü bildirmiş olsak dahi bu hatayı alırız.
 
 ![mk30_5.gif](/assets/images/2003/mk30_5.gif)
 

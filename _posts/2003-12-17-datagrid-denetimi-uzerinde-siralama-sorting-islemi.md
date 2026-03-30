@@ -8,9 +8,9 @@ tags:
   - ado.net
   - datagrid
 ---
-Bugünkü makalemizde, bir Web Sayfası üzerinde yer alan DataGrid kontrolü üzerinde tıklanan kolon başlığına gore sıralama işleminin manuel olarak nasıl yapılacağını işleyeceğiz. Konu teknik ağırlığa sahip olduğu için hemen kodlara geçmek istiyorum.
+Bugünkü makalemizde, bir Web Sayfası üzerinde yer alan DataGrid kontrolü üzerinde tıklanan kolon başlığına göre sıralama işleminin manuel olarak nasıl yapılacağını işleyeceğiz. Konu teknik ağırlığa sahip olduğu için hemen kodlara geçmek istiyorum.
 
-Uygulamamız, C# ile yazılmış bir Web Application. Bir adet herhangibir özelliği belirlenmemiş DataGrid kontrolü içermekte. Aspx sayfamızın kodlarına göz atıcak olursak, DataBound tagları içerisinde yer alan SortExpression ifadeleri ve DataGrid tagında yer alan, OnSortCommand ifadesi bizim anahtar terimlerimizdir. SortExpression ifadesi, kolon başlığına tıklandığında ilgili veri kümesinin hangi alan adını göz önüne alacağını belirlemek için kullanılır. OnSortCommand değeri ise, SortExpression ifadesinin işlenerek sıralamanın yapılacağı kodları içeren procedure adına işaret etmektedir. Bu bilgiler ışığında izleyeceğimiz yol şudur;
+Uygulamamız, C# ile yazılmış bir Web Application. Bir adet herhangi bir özelliği belirlenmemiş DataGrid kontrolü içermekte. Aspx sayfamızın kodlarına göz atacak olursak, DataBound tagları içerisinde yer alan SortExpression ifadeleri ve DataGrid tagında yer alan OnSortCommand ifadesi bizim anahtar terimlerimizdir. SortExpression ifadesi, kolon başlığına tıklandığında ilgili veri kümesinin hangi alan adını göz önüne alacağını belirlemek için kullanılır. OnSortCommand değeri ise, SortExpression ifadesinin işlenerek sıralamanın yapılacağı kodları içeren procedure adına işaret etmektedir. Bu bilgiler ışığında izleyeceğimiz yol şudur;
 
 1- DataBound tagları içinde SortExpression değerlerini belirlemek.
 
@@ -62,14 +62,14 @@ private void Page_Load(object sender, System.EventArgs e)
 
 ![mk21_1.gif](/assets/images/2003/mk21_1.gif)
 
-Şekil 1. Kitap Adına gore sıralanmış hali.
+Şekil 1. Kitap adına göre sıralanmış hâli.
 
 ![mk21_2.gif](/assets/images/2003/mk21_2.gif)
 
-Şekil 2. ID alanına gore sıralanmış hali.
+Şekil 2. ID alanına göre sıralanmış hâli.
 
 ![mk21_3.gif](/assets/images/2003/mk21_3.gif)
 
-Şekil 3. Yazar adına gore sıralanmış hali.
+Şekil 3. Yazar adına göre sıralanmış hâli.
 
 Geldik bir makalemizin daha sonuna, bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

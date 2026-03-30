@@ -227,7 +227,7 @@ Bu sefer işlemcideki çekirdek sayısına göre iterasyonları bölüyor ve her
 
 ![CalculatePi_06](/assets/images/2026/CalculatePi_06.png)
 
-Tabii burada **"attığımız taş ürküttüğümüz kurbaya değdi mi?"** özlü sözünü hatırlamakta fayda var. En başta senkron olarak çalışan versiyonu bu son iterasyon sayısı ile tekrar denediğimde aşağıdaki sonuçlara ulaştım. Evet paralel çalışmada sonuçlar daha iyi ama bu sanki yüksek iterasyon sayıları için geçerli bir durum. Düşük aralıklarda bu maliyete girmeyebiliriz de ve hatta daha kısa sürmesi gerekirken daha uzun çalışma süreleri de ortaya çıkabilir.
+Tabii burada **"attığımız taş ürküttüğümüz kurbaya değdi mi?"** özlü sözünü hatırlamakta fayda var. En başta senkron olarak çalışan versiyonu bu son iterasyon sayısı ile tekrar denediğimde aşağıdaki sonuçlara ulaştım. Evet paralel çalışmada sonuçlar daha iyi ama bu sanki yüksek iterasyon sayıları için geçerli bir durum. Düşük aralıklarda bu maliyete girmeyebilirizde ve hatta daha kısa sürmesi gerekirken daha uzun çalışma süreleride ortaya çıkabilir.
 
 ![CalculatePi_07](/assets/images/2026/CalculatePi_07.png)
 

@@ -8,11 +8,11 @@ tags:
   - ado.net
   - stored-procedures
 ---
-Bugün ki makalemde Stored Procedure yardımıyla bir veritabanı tablosundan, bizim seçtiğimiz herhangi bir satırı nasıl sileceğimizi sizlere anlatmaya çalışacağım.Her zaman olduğu gibi örneğimizi geliştirmek için, SQL Server üzerinde yer alan Northwind veritabanını kullanmak istiyorum. SQL Server üzerinde çalışan örnekler geliştirmek istememin en büyük nedeni, bir veritabanı yönetim sistemi (Database Management System;DBMS) üzerinde.NET ile projeler geliştirmenin gerçekçiliğidir. Güncel yaşantımızda ağ üzerinde çalışan uygulamalar çoğunlukla, iyi bir veritabanı yönetim sistemi üzerinde yazılmış programlar ile gerçekleştirilmektedir.
+Bugünkü makalemde Stored Procedure yardımıyla bir veritabanı tablosundan, bizim seçtiğimiz herhangi bir satırı nasıl sileceğimizi sizlere anlatmaya çalışacağım. Her zaman olduğu gibi örneğimizi geliştirmek için, SQL Server üzerinde yer alan Northwind veritabanını kullanmak istiyorum. SQL Server üzerinde çalışan örnekler geliştirmek istememin en büyük nedeni, bir veritabanı yönetim sistemi (Database Management System;DBMS) üzerinde .NET ile projeler geliştirmenin gerçekçiliğidir. Güncel yaşantımızda ağ üzerinde çalışan uygulamalar çoğunlukla, iyi bir veritabanı yönetim sistemi üzerinde yazılmış programlar ile gerçekleştirilmektedir.
 
 Çok katlı mimari olarak hepimizin kulağına bir şekilde gelmiş olan bu sistemde, aslında yazmış olduğumuz programlar, birer arayüz niteliği taşımakta olup kullanıcı ile veritabanı arasındaki iletişimi görsel anlamda kolaylaştıran birer araç haline gelmiştir. İşte bu sunum katmanı (presantation layer) denen yerdir. Burada veri tablolarını ve veritabanlarını üzerinde barındıran yer olarak veritabanı katmanı (Database Layer) büyük önem kazanmaktadır.
 
-İşte bir önceki makalemde belirttiğim gibi Stored Procedure'leri kulanmamın en büyük amacı performans, hız ve güvenlik kriterlerinin önemidir. Dolayısıyla, örneklerimizi bu şekilde gerçek uygulamalara yakın tutarak, çalışırsak daha başarılı olucağımız inancındayım.Evet bu kadar laf kalabalığından sonra dilerseniz uygulamamıza geçelim.Uygulamamızın kolay ve anlaşılır olması amacıyla az satırlı bir tablo üzerinde işlemlerimizi yapmak istiyorum. Bu amaçla Categories tablosunu kullanacağım.
+İşte bir önceki makalemde belirttiğim gibi Stored Procedure'leri kullanmamın en büyük amacı performans, hız ve güvenlik kriterlerinin önemidir. Dolayısıyla, örneklerimizi bu şekilde gerçek uygulamalara yakın tutarak çalışırsak daha başarılı olacağımız inancındayım. Evet, bu kadar laf kalabalığından sonra dilerseniz uygulamamıza geçelim. Uygulamamızın kolay ve anlaşılır olması amacıyla az satırlı bir tablo üzerinde işlemlerimizi yapmak istiyorum. Bu amaçla Categories tablosunu kullanacağım.
 
 ![mk2_1.gif](/assets/images/2003/mk2_1.gif)
 
@@ -40,13 +40,13 @@ GO
 
 Görüldüğü gibi burada son derece kolay bir T-SQL (Transact SQL) cümleciği var. Burada yapılan işlem aslında @kid parametresine geçilen değeri CategoryID alanı ile eşleştirmek. Eğer bu parametre değerine karşılık gelen bir CategoryID değeri varsa; bu değeri taşıyan satır Categories isimli tablodan silinecektir.
 
-Evet şimdi de.NET ortamında formumuzu tasarlayalım. New Project ile yeni bir C# projesi açarak işe başlıyoruz. Formumuzun tasarımını ben aşağıdaki şekilde yaptım. Sizde buna uygun bir form tasarlayabilir yada aynı tasarımı kullanabilirsiniz. Visual Studio.NET ile program geliştirmenin belkide en zevkli ve güzel yanı form tasarımları. Burada gerçekten de içimizdeki sanatçı ruhunu ortaya çıkartma imkanına sahibiz. Ve doğruyu söylemek gerekirse Microsoft firmasıda artık içimizdeki sanatçı çocuğu özellikle bu tarz uygulamalarda, daha kolay açığa çıkartabilmemiz için elinden geleni yapıyor. Doğal olarakta çok da güzel sonuçlar ortaya çıkıyor. Birde o eski bankalardaki (halen daha varya) siyah ekranlarda, incecik, kargacık, burgacık tasarımları ve arayüzleri düşünün. F12 ye bas geri dön. Tab yap. Şimdi F4 kodu gir.
+Evet şimdi de .NET ortamında formumuzu tasarlayalım. New Project ile yeni bir C# projesi açarak işe başlıyoruz. Formumuzun tasarımını ben aşağıdaki şekilde yaptım. Siz de buna uygun bir form tasarlayabilir ya da aynı tasarımı kullanabilirsiniz. Visual Studio.NET ile program geliştirmenin belki de en zevkli ve güzel yanı form tasarımları. Burada gerçekten de içimizdeki sanatçı ruhunu ortaya çıkarma imkanına sahibiz. Ve doğruyu söylemek gerekirse Microsoft firması da artık içimizdeki sanatçı çocuğu özellikle bu tarz uygulamalarda, daha kolay açığa çıkarabilmemiz için elinden geleni yapıyor. Doğal olarak da çok da güzel sonuçlar ortaya çıkıyor. Bir de o eski bankalardaki (halen daha var ya) siyah ekranlarda, incecik, kargacık, burgacık tasarımları ve arayüzleri düşünün. F12'ye bas geri dön. Tab yap. Şimdi F4 kodu gir.
 
 ![mk2_4.gif](/assets/images/2003/mk2_4.gif)
 
-Şekil 4. Formun Ilk Yapisi
+Şekil 4. Formun İlk Yapısı
 
-Formumuzda bir adet dataGrid nesnesi ve bir adetde button nesnesi yer alıyor. DataGrid nesnesini Categories tablosu içersinde yer alan bilgileri göstermek için kullanacağız. Datagrid verileri gösterirken kullanıcının kayıt eklmek, düzenlemek, ve seçtiği satırı buradan silmesini egellemek istediğimden ReadOnly özelliğine True değerini aktardım. Örneğimizin amacı gereği silme işlemini Sil textine sahip btnSil button nesnesinin Click olay procedure’ünden yapıcağız. Elbette burada database’deki bilgileri dataGrid içersinde göstermek amacıyla bir SqlDataAdapter nesnesi kullanacağım. Bu sadece Categories isimli tablo içerisindeki tüm satırları seçicek bir Select sorgusuna sahip olucak ve bunları dataGrid ile ilişkili olan bir DataTable nesnesine aktarıcak.
+Formumuzda bir adet dataGrid nesnesi ve bir adet de button nesnesi yer alıyor. DataGrid nesnesini Categories tablosu içerisinde yer alan bilgileri göstermek için kullanacağız. Datagrid verileri gösterirken kullanıcının kayıt eklemek, düzenlemek ve seçtiği satırı buradan silmesini engellemek istediğimden ReadOnly özelliğine True değerini aktardım. Örneğimizin amacı gereği silme işlemini Sil textine sahip btnSil button nesnesinin Click olay procedure’ünden yapacağız. Elbette burada database’deki bilgileri dataGrid içerisinde göstermek amacıyla bir SqlDataAdapter nesnesi kullanacağım. Bu sadece Categories isimli tablo içerisindeki tüm satırları seçecek bir Select sorgusuna sahip olacak ve bunları dataGrid ile ilişkili olan bir DataTable nesnesine aktaracak.
 
 Dilerseniz kodlarımızı yazmaya başlayalım. Önceliklie SqlConnection nesnemiz yardımıyla, Northwind veritabanına bir bağlantı açıyoruz. Daha sonra SqlDataAdapter nesnemizi oluşturuyoruz. SqlDataAdapter nesnesini yaratmak için new anahtar sözcüğü ile kullanabileceğimiz 4 adet overload constructor var. Overload constructor, aynı isme sahip yapıcı metodlar anlamına geliyor. Yani bir SqlDataAdapter nesnesini yaratabileceğimiz 4 kurucu (constructor) metod var ve bunların hepside aynı isme sahip (Overload;aşırı yüklenmiş) metodlar. Yeri gelmişken bunlardan da bahsederek bilgilerimizi hem tazeleyelim hem de arttırmış olalım. İşte bu yapıcı metodların prototipleri.
 
@@ -143,7 +143,7 @@ private void btnDelete_Click(object sender, System.EventArgs e)
 
 Şekil 5. Categories tablosuna 3 yeni kayıt ekledik.
 
-Şimdi uygulamamızı çalıştıralım. Bu durumda ekran görüntüsü aşağıdaki gibi olucaktır. Şu anda dataGrid içindeki bilgiler veritabanından alınıp, bellekteki dataTable nesnesinin referans ettiği bölgedeki verilerden oluşmaktadır. Dolayısıyla Sql Server’a olan bağlantımız açık olmadığı halde verileri izleyebilmekteyiz. Hatta bunların üzerinde değişiklilkler yapıp normal tablo işlemlerinide (silme,kayıt ekleme,güncelleme vb... gibi) gerçekleştirebiliriz. Bu bağlantısız katman olarak adlandırdığımız olaydır. Bu konuya ilerliyen makalelerimizide daha detaylı olarak inceleyeceğiz.
+Şimdi uygulamamızı çalıştıralım. Bu durumda ekran görüntüsü aşağıdaki gibi olacaktır. Şu anda dataGrid içindeki bilgiler veritabanından alınıp, bellekteki dataTable nesnesinin referans ettiği bölgedeki verilerden oluşmaktadır. Dolayısıyla Sql Server’a olan bağlantımız açık olmadığı hâlde verileri izleyebilmekteyiz. Hatta bunların üzerinde değişiklikler yapıp normal tablo işlemlerini de (silme, kayıt ekleme, güncelleme vb... gibi) gerçekleştirebiliriz. Bu, bağlantısız katman olarak adlandırdığımız olaydır. Bu konuyu ilerleyen makalelerimizde daha detaylı olarak inceleyeceğiz.
 
 ![mk2_6.gif](/assets/images/2003/mk2_6.gif)
 
@@ -161,7 +161,7 @@ private void btnDelete_Click(object sender, System.EventArgs e)
 
 Şekil 8. Silme işlemi sonrası.
 
-Şimdi SQL Server’a geri dönüp tablonun içeriğini kontrol edicek olursak aşağıdaki sonucu elde ederiz.
+Şimdi SQL Server’a geri dönüp tablonun içeriğini kontrol edecek olursak aşağıdaki sonucu elde ederiz.
 
 ![mk2_9.gif](/assets/images/2003/mk2_9.gif)
 

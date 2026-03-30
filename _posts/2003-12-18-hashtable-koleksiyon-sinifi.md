@@ -12,15 +12,15 @@ tags:
 ---
 Bugünkü makalemizde HashTable koleksiyon sınıfını incelemeye çalışacağız. Bildiğiniz gibi Koleksiyonlar System.Collections namespace'inde yer almakta olup, birbirlerinin aynı veya birbirlerinden farklı veri tiplerinin bir arada tutulmasını sağlayan diziler oluşturmamıza imkan sağlamaktadırlar. Pek çok koleksiyon sınıfı vardır. Bugün bu koleksiyon sınıflarından birisi olan HashTable koleksiyon sınıfını inceleyeceğiz.
 
-HashTable koleksiyon sınıfında veriler key-value dediğimiz anahtar-değer çiftleri şeklinde tutulmaktadırlar. Tüm koleksiyon sınıflarının ortak özelliği barındırdıkları verileri object tipinde olmalarıdır. Bu nedenle, HashTable'lardada key ve value değerleri herhangibir veri tipinde olabilirler. Temel olarak bunların her biri birer DictionaryEntry nesnesidir. Bahsetmiş olduğumuz key-value çiftleri hash tablosu adı verilen bir tabloda saklanırlar. Bu değer çiftlerine erişmek için kullanılan bir takım karmaşık kodlar vardır.
+HashTable koleksiyon sınıfında veriler key-value dediğimiz anahtar-değer çiftleri şeklinde tutulmaktadırlar. Tüm koleksiyon sınıflarının ortak özelliği, barındırdıkları verilerin object tipinde olmasıdır. Bu nedenle, HashTable'larda da key ve value değerleri herhangi bir veri tipinde olabilirler. Temel olarak bunların her biri birer DictionaryEntry nesnesidir. Bahsetmiş olduğumuz key-value çiftleri hash tablosu adı verilen bir tabloda saklanırlar. Bu değer çiftlerine erişmek için kullanılan birtakım karmaşık kodlar vardır.
 
-Key değerleri tektir ve değiştirilemezler. Yani bir key-value çiftini koleksiyonumuza eklediğimizde, bu değer çiftinin value değerini değiştirebilirken, key değerini değiştiremeyiz. Ayrıca key değerleri benzersiz olduklarında tam anlamıyla birer anahtar alan vazifesi görürler. Diğer yandan value değerline null değerler atayabilirken, anahtar alan niteliğindeki Key değerlerine null değerler atayamayız. Şayet uygulamamızda varolan bir Key değerini eklemek istersek ArgumentException istisnası ile karşılaşırız. HashTable koleksiyonu verilere hızı bir biçimde ulaşmamızı sağlayan bir kodlama yapısına sahiptir. Bu nedenle özellikle arama maliyetlerini düşürdüğü için tercih edilmektedir. Şimdi konuyu daha iyi pekiştirebilmek amacıyla, hemen basit bir uygulama geliştirelim.
+Key değerleri tektir ve değiştirilemezler. Yani bir key-value çiftini koleksiyonumuza eklediğimizde, bu değer çiftinin value değerini değiştirebilirken, key değerini değiştiremeyiz. Ayrıca key değerleri benzersiz olduklarında tam anlamıyla birer anahtar alan vazifesi görürler. Diğer yandan value değerlerine null değerler atayabilirken, anahtar alan niteliğindeki key değerlerine null değerler atayamayız. Şayet uygulamamızda var olan bir key değerini eklemek istersek ArgumentException istisnası ile karşılaşırız. HashTable koleksiyonu verilere hızlı bir biçimde ulaşmamızı sağlayan bir kodlama yapısına sahiptir. Bu nedenle özellikle arama maliyetlerini düşürdüğü için tercih edilmektedir. Şimdi konuyu daha iyi pekiştirebilmek amacıyla, hemen basit bir uygulama geliştirelim.
 
-Uygulamamızda, bir HastTable koleksiyonuna key-value çiftleri ekliyecek, belirtilen key'in sahip olduğu değere bakılacak, tüm HashTable'ın içerdiği key-value çiftleri listelenecek, eleman çiftlerini HashTable'dan çıkartacak vb... işlemler gerçekleştireceğiz. Form tasarımını ben aşağıdaki şekildeki gibi yaptım. Temel olarak teknik terimlerin türkçe karşılığına dair minik bir sözüğü bir HashTable olarak tasarlayacağız.
+Uygulamamızda, bir HashTable koleksiyonuna key-value çiftleri ekleyecek, belirtilen key'in sahip olduğu değere bakılacak, tüm HashTable'ın içerdiği key-value çiftleri listelenecek, eleman çiftlerini HashTable'dan çıkartacak vb... işlemler gerçekleştireceğiz. Form tasarımını ben aşağıdaki şekildeki gibi yaptım. Temel olarak teknik terimlerin Türkçe karşılığına dair minik bir sözlüğü bir HashTable olarak tasarlayacağız.
 
 ![mk22_1.gif](/assets/images/2003/mk22_1.gif)
 
-1. Form Tasarımımız.
+## Form Tasarımımız
 
 Şimdi kodlarımıza bir göz atalım.
 
@@ -96,6 +96,6 @@ private void btnTumu_Click(object sender, System.EventArgs e)
 
 ![mk22_2.gif](/assets/images/2003/mk22_2.gif)
 
-2. Programın Çalışmasnının sonucu.
+## Programın Çalışmasının Sonucu
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
