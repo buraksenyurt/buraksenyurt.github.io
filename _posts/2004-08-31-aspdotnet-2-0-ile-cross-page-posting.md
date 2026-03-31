@@ -8,29 +8,29 @@ tags:
   - asp.net
   - cross-page-posting
 ---
-Bu makalemizde, Asp.Net 2.0 (Asp.Net Whidbey) ile, başka sayfalara veri postalama işlemlerinin nasıl ele alındığını ve uygulandığını incelemeye çalışacağız. Bildiğiniz gibi, Asp.Net 1.0 / 1.1 ile gelen yeniliklerden en önemlisi, sayfaların kendi kendilerine form verilerini postalayabilme kabiliyetleridir. Öyleki, Asp.Net ile geliştirilen web sayfaları aslında birer sınıf nesnesi olduklarından, sayfa üzerindeki form kontrollerine ve değerlerine kolayca erişilebilmektedir. Ancak bazı zamanlarda, sayfalarımızda yer alan form verilerini başka sayfalara göndermek isteyedebiliriz. İşte Cross-Page Posting olarak adlandırılan bu işlemlerin, Asp.Net 2.0 ile gerçekleştirilmesi hem daha kolay hemde daha etkili hale getirilmiştir.
+Bu makalemizde, ASP.NET 2.0 (ASP.NET Whidbey) ile, başka sayfalara veri postalama işlemlerinin nasıl ele alındığını ve uygulandığını incelemeye çalışacağız. Bildiğiniz gibi, ASP.NET 1.0 / 1.1 ile gelen yeniliklerden en önemlisi, sayfaların kendi kendilerine form verilerini postalayabilme kabiliyetleridir. Öyle ki, ASP.NET ile geliştirilen web sayfaları aslında birer sınıf nesnesi olduklarından, sayfa üzerindeki form kontrollerine ve değerlerine kolayca erişilebilmektedir. Ancak bazı zamanlarda, sayfalarımızda yer alan form verilerini başka sayfalara göndermek isteyebiliriz. İşte Cross-Page Posting olarak adlandırılan bu işlemlerin, ASP.NET 2.0 ile gerçekleştirilmesi hem daha kolay hem de daha etkili hâle getirilmiştir.
 
-Örneklerimizi geliştirdiğimizde bu konuyu çok daha iyi anlayabileceğinize inanıyorum. Hiç vakit kaybetmeden örneğimizi geliştirmeye başlayalım. Bu örnek uygulamamızı, Visual Studio.Net'in 2005 sürümünün Beta versiyonu ile geliştireceğiz. Örneğimizde, basit olarak iki web sayfası kullanacağız. Öncelikle yerel sunucumuzda bir web sitesi oluşturalım. Bunun için, File menüsünden, New alt menüsünü ve buradan da Web Site kısmını seçiyoruz.
+Örneklerimizi geliştirdiğimizde bu konuyu çok daha iyi anlayabileceğinize inanıyorum. Hiç vakit kaybetmeden örneğimizi geliştirmeye başlayalım. Bu örnek uygulamamızı, Visual Studio.NET'in 2005 sürümünün Beta versiyonu ile geliştireceğiz. Örneğimizde, basit olarak iki web sayfası kullanacağız. Öncelikle yerel sunucumuzda bir web sitesi oluşturalım. Bunun için, File menüsünden, New alt menüsünü ve buradan da Web Site kısmını seçiyoruz.
 
 ![mk83_1.gif](/assets/images/2004/mk83_1.gif)
 
 Şekil 1. Yeni bir Web Site açıyoruz.
 
-Ardından, karşımıza çıkacak dialog penceresinden, Asp.Net Web Site'ı seçelim ve localhost altında CrossPosting isimli sanal klasörümüzün adını girelim.
+Ardından, karşımıza çıkacak dialog penceresinden, ASP.NET Web Site'ı seçelim ve localhost altında CrossPosting isimli sanal klasörümüzün adını girelim.
 
 ![mk83_2.gif](/assets/images/2004/mk83_2.gif)
 
 Şekil 2. Web Site'ımızı oluşturuyoruz.
 
-Bu işlemin ardından, Visual Studio.Net standart olarak default.aspx isimli sayfamızı oluşturur. Bu sayfamızı aşağıdaki şekilde olduğu gibi oluşturalım.
+Bu işlemin ardından, Visual Studio.NET standart olarak default.aspx isimli sayfamızı oluşturur. Bu sayfamızı aşağıdaki şekilde olduğu gibi oluşturalım.
 
 ![mk83_3.gif](/assets/images/2004/mk83_3.gif)
 
-Şekil 3. Form tasarmımız.
+Şekil 3. Form tasarımımız.
 
-Sayfamızın kodlanmasına geçmeden önce, aspx sayfamızın içeriğine bir göz atalım. Nitekim burada önemli olan btnDiger ID değerine sahip button kontrolümüzün takıları arasındaki içeriktir. Biz burada ufak bir değişiklik yapacağız. Önce kodlarımızın başlangıç haline bakalım.
+Sayfamızın kodlanmasına geçmeden önce, aspx sayfamızın içeriğine bir göz atalım. Nitekim burada önemli olan, btnDiger ID değerine sahip button kontrolümüzün tag'leri arasındaki içeriktir. Biz burada ufak bir değişiklik yapacağız. Önce kodlarımızın başlangıç hâline bakalım.
 
-```text
+```xml
 <%@ Page Language="C#" CompileWith="Default.aspx.cs" ClassName="Default_aspx" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -74,11 +74,11 @@ BorderWidth="1px" Font-Bold="True"></asp:Label><span style="font-size: 10pt; fon
 
 Burada btnDiger, ID değerine sahip button kontrolümüzün olduğu satırı aşağıdaki gibi değiştirelim.
 
-```text
+```xml
 <asp:Button ID="btnDiger" PostBackUrl="Diger.aspx" Runat="server" Text="Diger" Width="58px" Height="24px" />
 ```
 
-İşte Asp.Net 2.0 ile gelen ilk yeniliklerden birisi. PostBackUrl özelliği. Bu Url, button kontrolüne basıldığında, Form üzerindeki verilerin belirtilen url'deki sayfaya gönderilmesini sağlamaktadır. İşleyiş şekli son derece etkilidir. Şimdi Solution Explorer'dan Add New Item ile, Diger.aspx isimli sayfamızıda uygulamamıza ekleyelim. Ardından, default.aspx sayfamızın Code-Behind kodlarını da aşağıdaki gibi geliştirelim.
+İşte ASP.NET 2.0 ile gelen ilk yeniliklerden birisi: PostBackUrl özelliği. Bu URL, button kontrolüne basıldığında, Form üzerindeki verilerin belirtilen URL'deki sayfaya gönderilmesini sağlamaktadır. İşleyiş şekli son derece etkilidir. Şimdi Solution Explorer'dan Add New Item ile, Diger.aspx isimli sayfamızı da uygulamamıza ekleyelim. Ardından, default.aspx sayfamızın Code-Behind kodlarını da aşağıdaki gibi geliştirelim.
 
 ```csharp
 using System;
@@ -100,7 +100,7 @@ public partial class Default_aspx
 }
 ```
 
-Burada yaptığımız değişik bir olay yok. Sadece, TextBox1 kontrolüne girilen ve DropDownList1 kontrolünde seçilen değerleri, Label kontrolüne yazdırdık. İşte bu, Asp.Net 1.0/1.1 sürümünden bildiğimiz, sayfanın kendi kendine verileri postalaması işlemidir. Asp.Net 2.0 ile gelen yeni teknikleri ise, Diger.aspx sayfasında kullanacağız. Bunun için Diger.aspx sayfamıza bir Label kontrolü yerleştirelim ve ardından, sayfamıza ait kodları aşağıdaki gibi düzenleyelim.
+Burada yaptığımız değişik bir olay yok. Sadece, TextBox1 kontrolüne girilen ve DropDownList1 kontrolünde seçilen değerleri, Label kontrolüne yazdırdık. İşte bu, ASP.NET 1.0/1.1 sürümünden bildiğimiz, sayfanın kendi kendine verileri postalaması işlemidir. ASP.NET 2.0 ile gelen yeni teknikleri ise, Diger.aspx sayfasında kullanacağız. Bunun için Diger.aspx sayfamıza bir Label kontrolü yerleştirelim ve ardından, sayfamıza ait kodları aşağıdaki gibi düzenleyelim.
 
 ```csharp
 using System;
@@ -125,21 +125,21 @@ public partial class Diger_aspx
 }
 ```
 
-Dikkat edecek olursanız burada son derece güçlü bir teknik kullanılmaktadır. Bir adet TextBox ve bir adette DropDownList kontrolü tanımlanmış ve oluşturulmuştur. TextBox kontrolümüzü oluştururken, PreviousPage sınıfının FindControl metodu ile, bu sayfaya Post işlemi ile form verisi gönderen sayfadaki TextBox1 kontrolü bulunmaktadır. Bu işlem, bulunan kontrolün TextBox kontrolü olarak cast edilmesi ile tamamlanır. Dolayısıyla, Diger.aspx sayfamızın Page_Load olay metodunda, elimizde bir adet TextBox kontrolü olacaktır. Bu TextBox kontrolü aslında, default.aspx sayfasından gelen kontroldür. Böylece, default.aspx sayfasındaki TextBox1 kontrolünün değerine ve özelliklerine bu sınıf içerisinden (Diger.aspx sayfasından) kolayca erişebiliriz. Aynı teknik, DropDownList kontrolümüz içinde geçerlidir. İşte Asp.Net 2.0, başka sayfalara form verisi gönderme işlemlerinde böylesine güçlü bir teknik ile gelmektedir.
+Dikkat edecek olursanız burada son derece güçlü bir teknik kullanılmaktadır. Bir adet TextBox ve bir adet de DropDownList kontrolü tanımlanmış ve oluşturulmuştur. TextBox kontrolümüzü oluştururken, PreviousPage sınıfının FindControl metodu ile, bu sayfaya Post işlemi ile form verisi gönderen sayfadaki TextBox1 kontrolü bulunmaktadır. Bu işlem, bulunan kontrolün TextBox kontrolü olarak cast edilmesi ile tamamlanır. Dolayısıyla, Diger.aspx sayfamızın Page_Load olay metodunda, elimizde bir adet TextBox kontrolü olacaktır. Bu TextBox kontrolü aslında, default.aspx sayfasından gelen kontroldür. Böylece, default.aspx sayfasındaki TextBox1 kontrolünün değerine ve özelliklerine bu sınıf içerisinden, yani Diger.aspx sayfasından, kolayca erişebiliriz. Aynı teknik, DropDownList kontrolümüz için de geçerlidir. İşte ASP.NET 2.0, başka sayfalara form verisi gönderme işlemlerinde böylesine güçlü bir teknik ile gelmektedir.
 
-Uygulamamızı çalıştırdığımızda ve Burası başlıklı butona tıkladığımızda basitçe sayfa kendi kendisine postalama işlemini uygular. (Postback).
+Uygulamamızı çalıştırdığımızda ve Burası başlıklı butona tıkladığımızda basitçe sayfa kendi kendisine postalama işlemini uygular (Postback).
 
 ![mk83_4.gif](/assets/images/2004/mk83_4.gif)
 
 Şekil 4. Postback.
 
-Diger başlıklı button kontrolüne bastığımızda ise, Diger.aspx isimli sayfaya gidilir. Bu sayfanın Page_Load olay metodu çalışır ve burada ilgili TextBox ve DropDownList kontrolleri, default.aspx'ten gelen kontroller baz alınarak oluşturulur. Sonuç olarak, default.aspx sayfasındaki kontroller üzerinde yer alan veriler kolayca elde edilir ve bu sayadaki Label kontrolüne içerikleri yazdırılır.
+Diger başlıklı button kontrolüne bastığımızda ise, Diger.aspx isimli sayfaya gidilir. Bu sayfanın Page_Load olay metodu çalışır ve burada ilgili TextBox ve DropDownList kontrolleri, default.aspx'ten gelen kontroller baz alınarak oluşturulur. Sonuç olarak, default.aspx sayfasındaki kontroller üzerinde yer alan veriler kolayca elde edilir ve bu sayfadaki Label kontrolüne içerikleri yazdırılır.
 
 ![mk83_5.gif](/assets/images/2004/mk83_5.gif)
 
 Şekil 5. Cross-Page Posting
 
-Cross-Page Posting işleminde elbette sorun yaratabilecek durumlarda söz konusudur. Bunların en önemlisi, bir kullanıcının, default.aspx çalıştırılmadan önce diger.aspx sayfasına ulaşmaya çalışmasıdır. Böyle bir durumda, default.aspx daha önceden çalıştırılmadığı için, buradaki kontroller oluşturulmamış olacaktır. Dolayısıyla, diger.aspx sayfasında, PreviousPage sınıfına ait metodlar, var olmayan kontrolleri bulmaya çalışacak ve referanslar oluşturulamayacaktır. Kullanıcıların böyle bir girişimde bulunması sonucunda aşağıdaki gibi bir hata mesajı ile karşılaşılır.
+Cross-Page Posting işleminde elbette sorun yaratabilecek durumlar da söz konusudur. Bunların en önemlisi, bir kullanıcının, default.aspx çalıştırılmadan önce Diger.aspx sayfasına ulaşmaya çalışmasıdır. Böyle bir durumda, default.aspx daha önceden çalıştırılmadığı için, buradaki kontroller oluşturulmamış olacaktır. Dolayısıyla, Diger.aspx sayfasında, PreviousPage sınıfına ait metodlar, var olmayan kontrolleri bulmaya çalışacak ve referanslar oluşturulamayacaktır. Kullanıcıların böyle bir girişimde bulunması sonucunda aşağıdaki gibi bir hata mesajı ile karşılaşılır.
 
 ![mk83_6.gif](/assets/images/2004/mk83_6.gif)
 
@@ -151,7 +151,7 @@ Cross-Page Posting işleminde elbette sorun yaratabilecek durumlarda söz konusu
 public bool IsCrossPagePostBack {get;}
 ```
 
-Dolayısıyla, diger.aspx sayfamızın arka kodlarını aşağıdaki gibi değiştirmemiz sorunun giderilmesini sağlayacaktır.
+Dolayısıyla, Diger.aspx sayfamızın arka kodlarını aşağıdaki gibi değiştirmemiz sorunun giderilmesini sağlayacaktır.
 
 ```csharp
 public partial class Diger_aspx
@@ -173,6 +173,6 @@ public partial class Diger_aspx
 }
 ```
 
-Böylece, eğer kullanıcılar direkt olarak diger.aspx sayfasını çalıştırırlarsa, önceden gelen bir Cross-Page Posting işlemi olmadığından, else bloğundaki kod satırı çalışacak ve default.aspx sayfasına gidilecektir.
+Böylece, eğer kullanıcılar direkt olarak Diger.aspx sayfasını çalıştırırlarsa, önceden gelen bir Cross-Page Posting işlemi olmadığından, else bloğundaki kod satırı çalışacak ve default.aspx sayfasına gidilecektir.
 
-Bu makalemizde, Asp.Net 2.0 ile gelen yeniliklerden birisine değinmeye çalıştık. Elbette şu an için, Asp.Net 2.0 henüz beta aşamasında. Yani yazılan kodlar ve kullanılan teknikler değişebilir hatta bazen kaynakların aksine çalışmayabilir. Bunlardan da haberdar oldukça sizleri bilgilendirmeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+Bu makalemizde, ASP.NET 2.0 ile gelen yeniliklerden birisine değinmeye çalıştık. Elbette şu an için, ASP.NET 2.0 henüz beta aşamasında. Yani yazılan kodlar ve kullanılan teknikler değişebilir, hatta bazen kaynakların aksine çalışmayabilir. Bunlardan da haberdar oldukça sizleri bilgilendirmeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.

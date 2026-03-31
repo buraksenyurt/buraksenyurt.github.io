@@ -8,11 +8,11 @@ tags:
   - xml-web-service
   - soap
 ---
-Bu makalemizde, Xml Web Servislerinin mimarisine daha yakında bakmaya çalışacak ve SOAP (Simple Object Access Protocol) 'ı kısaca tanımaya çalışacağız. Bir web servisinin, istemci uygulamalar tarafından nasıl kullanılabildiğini anlamak, web servislerinin mimarisini iyi bilmekle mümkündür. Mimariyi kolay bir şekilde anlayabilmek için, daha önceki makalemizde geliştirdiğimiz web servisi ve istemci uygulamayı göz önüne alacağız. Herşeyden önce geliştirdiğimiz web servisi local olarak test edilebilen ve tarayıcı üzerinde çalışabilen bir asmx dosyasından ve buna bağlı Code-Behind dosyasından oluşmaktadır. Web servisini test etmek için, web servisinin bulunduğu adresteki asmx uzantılı dosyayı, tarayıcı penceresinden çalıştırmak yeterlidir. Bunun sonucunda, tarayıcı penceresinde bu web servisi hakkındaki bilgilere ulaşabilir ve içerdiği metodları görebiliriz.
+Bu makalemizde, XML Web Servislerinin mimarisine daha yakından bakmaya çalışacak ve SOAP (Simple Object Access Protocol)'ı kısaca tanımaya çalışacağız. Bir web servisinin, istemci uygulamalar tarafından nasıl kullanılabildiğini anlamak, web servislerinin mimarisini iyi bilmekle mümkündür. Mimariyi kolay bir şekilde anlayabilmek için, daha önceki makalemizde geliştirdiğimiz web servisi ve istemci uygulamayı göz önüne alacağız. Her şeyden önce geliştirdiğimiz web servisi local olarak test edilebilen ve tarayıcı üzerinde çalışabilen bir asmx dosyasından ve buna bağlı Code-Behind dosyasından oluşmaktadır. Web servisini test etmek için, web servisinin bulunduğu adresteki asmx uzantılı dosyayı, tarayıcı penceresinden çalıştırmak yeterlidir. Bunun sonucunda, tarayıcı penceresinde bu web servisi hakkındaki bilgilere ulaşabilir ve içerdiği metotları görebiliriz.
 
-Ancak burada yer alan Service Description bağlantısı bize başka bir olanak daha sağlamaktadır. Bu bağlantı yardımıyla web servisimizin tüm içeriğini anlatan bir WSDL dökümanına erişebiliriz. WSDL dökümanının en önemli yanı, XML tabanlı bir içeriğe sahip olmasıdır. Diğer yandan bu döküman, web servisinde kullanılabilecek tüm metodlara, parametrelere ve dönüş değerlerine ilişkin bilgileri içermektedir.
+Ancak burada yer alan Service Description bağlantısı bize başka bir olanak daha sağlamaktadır. Bu bağlantı yardımıyla web servisimizin tüm içeriğini anlatan bir WSDL dokümanına erişebiliriz. WSDL dokümanının en önemli yanı, XML tabanlı bir içeriğe sahip olmasıdır. Diğer yandan bu doküman, web servisinde kullanılabilecek tüm metotlara, parametrelere ve dönüş değerlerine ilişkin bilgileri içermektedir.
 
-Peki bu WSDL dökümanı ne için oluşturulur? İşte bu noktada istemci uygulamaya bir göz atmakta fayda vardır. İstemci uygulamanın web servisini kullanabilmesi için, ilk önce web servisinin bulunduğu adrese başvurması gerekir. Bu başvurunun ardından web servisine ait referansı istemci uygulamaya eklediğimizde, bir takım yeni dosyalarında uygulamaya eklendiğini görürüz. Bu dosyalardan belkide en önemli olanı Reference.cs isimli dosyadır. Geliştirdiğimiz uygulama ele alındığında Reference.cs dosyasının içeriği aşağıdaki gibi olacaktır.
+Peki bu WSDL dokümanı ne için oluşturulur? İşte bu noktada istemci uygulamaya bir göz atmakta fayda vardır. İstemci uygulamanın web servisini kullanabilmesi için, ilk önce web servisinin bulunduğu adrese başvurması gerekir. Bu başvurunun ardından web servisine ait referansı istemci uygulamaya eklediğimizde, birtakım yeni dosyaların da uygulamaya eklendiğini görürüz. Bu dosyalardan belki de en önemlisi Reference.cs isimli dosyadır. Geliştirdiğimiz uygulama ele alındığında Reference.cs dosyasının içeriği aşağıdaki gibi olacaktır.
 
 ```csharp
 using System.Diagnostics;
@@ -70,30 +70,30 @@ public class GeometrikHesaplamalar : System.Web.Services.Protocols.SoapHttpClien
 }
 ```
 
-Visual Studio.NET tarafından otomatik olarak oluşturulan bu dosyada dikkat çekici noktalar vardır. Herşeyden önce, karşımızda, web servisimizin bir görüntüsü yer almaktadır. Web servisimizde yazdığımız metodlar kullandıkları parametreler ve daha başka bilgiler. Ancak önemli olan bu dosya sayesinde, istemci uygulamanın artık web servisine ait bir nesne örneğini oluşturup kullanabilecek olmasıdır. Dolayısıyla, istemci uygulamamıza web servisimize ait referansı eklediğimizde, istemci uygulamda bu servise ait bir nesne yapısı oluşturulabilmiştir. Bu sayede aşağıdaki gibi bir bildirim geçerli hale gelir.
+Visual Studio.NET tarafından otomatik olarak oluşturulan bu dosyada dikkat çekici noktalar vardır. Her şeyden önce, karşımızda, web servisimizin bir görüntüsü yer almaktadır. Web servisimizde yazdığımız metotlar, kullandıkları parametreler ve daha başka bilgiler. Ancak önemli olan, bu dosya sayesinde istemci uygulamanın artık web servisine ait bir nesne örneğini oluşturup kullanabilecek olmasıdır. Dolayısıyla, istemci uygulamamıza web servisimize ait referansı eklediğimizde, istemci uygulamada bu servise ait bir nesne yapısı oluşturulabilmiştir. Bu sayede aşağıdaki gibi bir bildirim geçerli hâle gelir.
 
 ```csharp
 localhost.GeometrikHesaplamalar gh=new Istemci.localhost.GeometrikHesaplamalar();
 ```
 
-Dahası, bu nesne üzerinden, web servisindeki metodları aynı isimler ile kullanabiliriz.
+Dahası, bu nesne üzerinden, web servisindeki metotları aynı isimler ile kullanabiliriz.
 
 ```csharp
 lblAlan.Text=gh.DaireAlan(r).ToString();
 lblCevre.Text=gh.DaireCevre(r).ToString();
 ```
 
-Olaya daha detaylı bakıldığında, Reference.cs’ nin aslında, istemci ve web servisi arasındaki haberleşmeyi sağlayacak bir Proxy nesnesini oluşturmak amacıyla kullanıldığını söyleyebiliriz. Dolayısıyla, istemci uygulama bu servisi kullanmak istediğinde, yani bu servis üzerinden bir metodu çağırmak istediğinde, bu talebi proxy nesnesinden ister. Proxy nesnesi ise bu talebi, web servisine iletir. Web servisi gelen talebi değerlendirir ve ürettiği cevabı yine istemci uygulamadaki proxy nesnesine gönderir. Proxy nesneside sonuçları, uygulama ortamına iletir.
+Olaya daha detaylı bakıldığında, Reference.cs'nin aslında, istemci ve web servisi arasındaki haberleşmeyi sağlayacak bir proxy nesnesini oluşturmak amacıyla kullanıldığını söyleyebiliriz. Dolayısıyla, istemci uygulama bu servisi kullanmak istediğinde, yani bu servis üzerinden bir metodu çağırmak istediğinde, bu talebi proxy nesnesinden ister. Proxy nesnesi ise bu talebi, web servisine iletir. Web servisi gelen talebi değerlendirir ve ürettiği cevabı yine istemci uygulamadaki proxy nesnesine gönderir. Proxy nesnesi de sonuçları, uygulama ortamına iletir.
 
 ![mk100_1.gif](/assets/images/2004/mk100_1.gif)
 
-Şekil 1. Proxy Nesnesini ve SOAP'ın Xml Web Servisi Mimarisindeki yeri.
+Şekil 1. Proxy nesnesini ve SOAP'ın XML Web Servisi mimarisindeki yeri.
 
-Diğer bir sorun, proxy nesnesine gelen taleplerin, web servisine giderken hiç bir engel ile karşılaşmadan nasıl hareket edeceği ve geri geleceğidir. İstemci uygulama, proxy nesnesinde normal olarak talepte bulunur ve cevapları alır. Buradaki ilişki normal olarak bir nesne.metod ilişkisidir. Ancak proxy nesnesi bu mesajları, esnek, kolay okunabilir, herhangibir engele takılmayacak bir hale getirmek durumundadır. Bu iş için XML tabanlı bir bilgi akışı biçilmiş kaftandır. Yinede hareket edecek mesajların uygun bir formasyonda taşınmaları ve web servisinin anlayabileceği bir dilde ifade edilebilmeleri daha doğrudur. Bu noktada SOAP (Simple Object Access Protocol – Basit Nesne Erişim Antlaşması) devreye girer.
+Diğer bir sorun, proxy nesnesine gelen taleplerin, web servisine giderken hiçbir engel ile karşılaşmadan nasıl hareket edeceği ve geri geleceğidir. İstemci uygulama, proxy nesnesinde normal olarak talepte bulunur ve cevapları alır. Buradaki ilişki normal olarak bir nesne-metot ilişkisidir. Ancak proxy nesnesi bu mesajları, esnek, kolay okunabilir, herhangi bir engele takılmayacak bir hâle getirmek durumundadır. Bu iş için XML tabanlı bir bilgi akışı biçilmiş kaftandır. Yine de hareket edecek mesajların uygun bir formasyonda taşınmaları ve web servisinin anlayabileceği bir dilde ifade edilebilmeleri daha doğrudur. Bu noktada SOAP (Simple Object Access Protocol - Basit Nesne Erişim Antlaşması) devreye girer.
 
-Web servislerinin kullanılmasında, web servisleri ve istemciler arasındaki haberleşmenin belirli standartlar çerçevesinde geliştirilmesi çok önemlidir. SOAP (Simple Access Object Protocol) işte bu noktada devreye giren ve web servisi-istemci sisteminin en önemli kısmını oluşturan bir yapı taşıdır. SOAP, web servisleri ve istemciler arasında gidip gelecek mesajların, XML tabanlı olarak belirlendiği standartlara uygun formatta taşınmasını sağlayan bir protokoldür. Çoğunlukla HTTP üzerinde çalışan SOAP, FTP ve SMTP gidi diğer iletişim protokolleri üzerinden de kullanılabilir.
+Web servislerinin kullanılmasında, web servisleri ve istemciler arasındaki haberleşmenin belirli standartlar çerçevesinde geliştirilmesi çok önemlidir. SOAP (Simple Access Object Protocol) işte bu noktada devreye giren ve web servisi-istemci sisteminin en önemli kısmını oluşturan bir yapı taşıdır. SOAP, web servisleri ve istemciler arasında gidip gelecek mesajların, XML tabanlı olarak belirlendiği standartlara uygun formatta taşınmasını sağlayan bir protokoldür. Çoğunlukla HTTP üzerinde çalışan SOAP, FTP ve SMTP gibi diğer iletişim protokolleri üzerinden de kullanılabilir.
 
-SOAP protokolü, web servisleri ile istemciler arasında gerçekleştirilen veri alışverişinde, karşılıklı olarak akıcak mesajların nasıl ve ne şekilde paketleneceğini yada başka bir deyişle bilgilerin nasıl kapsülleneceğini belirtir. SOAP, özünde XML tabanlı mesajların oluşturulmasını belirtir. Bu nedenle SOAP protokolünü uygulayan mesajlar (ki bunlar SOAP Mesajı olarak adlandırılır), herhangibir ağ ortamında hiç bir sorunla karşılaşmadan uzak makineler arasında iletilebilirler. SOAP protokolü, 4 temel üzerine inşa edilmiştir.
+SOAP protokolü, web servisleri ile istemciler arasında gerçekleştirilen veri alışverişinde, karşılıklı olarak akacak mesajların nasıl ve ne şekilde paketleneceğini ya da başka bir deyişle bilgilerin nasıl kapsülleneceğini belirtir. SOAP, özünde XML tabanlı mesajların oluşturulmasını belirtir. Bu nedenle SOAP protokolünü uygulayan mesajlar (ki bunlar SOAP Mesajı olarak adlandırılır), herhangi bir ağ ortamında hiçbir sorunla karşılaşmadan uzak makineler arasında iletilebilirler. SOAP protokolü, 4 temel üzerine inşa edilmiştir.
 
 ![mk100_2.gif](/assets/images/2004/mk100_2.gif)
 
@@ -139,7 +139,7 @@ Ardından istemci uygulamamızı çalıştıralım ve web servisimizi kullanalı
 
 Şekil 6. SOAP Mesajları.
 
-Örneğin Message #1 sekmesini inceleyelim. Üsteki XML bilgisi, istemcinin web servisine gönderdiği talebi (Request) göstermektedir. Alttaki mesaj ise, web servisinden istemciye gelen cevabı (Response) gösterir. İstemcinin talebini incelediğimizde aşağıdaki XML dökümanını elde ederiz.
+Örneğin Message #1 sekmesini inceleyelim. Üstteki XML bilgisi, istemcinin web servisine gönderdiği talebi (Request) göstermektedir. Alttaki mesaj ise, web servisinden istemciye gelen cevabı (Response) gösterir. İstemcinin talebini incelediğimizde aşağıdaki XML dokümanını elde ederiz.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 

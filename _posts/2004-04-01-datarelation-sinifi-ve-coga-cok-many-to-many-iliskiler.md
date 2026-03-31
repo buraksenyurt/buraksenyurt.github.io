@@ -10,7 +10,7 @@ tags:
   - many-to-many
   - sql
 ---
-Bugünkü makalemizde, DataRelation sınıfı yardımıyla, veritabanlarındaki many-to-many (Çoğa-çok) ilişkilerin, bağlantısız katmanda nasıl kullanılabildiğini incelemeye çalışacağız. İlişkisel veri tabanı modelinde, tablolar arası ilişkilerde çoğunlukla bire-çok (one-to-many) ilişkilere rastlarız. Ancak azda olsa, çoğa-çok ilişkilerin kullanıldığı durumlarda söz konusudur. Bu ilişkiye örnek olarak çoğunlukla, Sql sunucusunda yer alan Pubs veritabanındaki Authors ve Titles tabloları gösterilir. Bu iki tablo arasındaki ilişki şöyledir; bir yazara ait birden fazla kitap titles tablosunda yer alabilir. Aynı şekilde, bir kitap birden fazla yazar tarafından kaleme alınmış olabilir. Bu bahsedilen iki ilişkide ayrı ayrı bire-çok ilişkilerdir. Yani bir yazarın birden fazla kitabı yazmış olması bire çok ilişki olarak düşünülebilirken, bir kitabın birden fazla yazara ait olmasıda bire-çok ilişki olarak gözlemlenebilir.
+Bugünkü makalemizde, DataRelation sınıfı yardımıyla, veritabanlarındaki many-to-many (çoğa-çok) ilişkilerin, bağlantısız katmanda nasıl kullanılabildiğini incelemeye çalışacağız. İlişkisel veri tabanı modelinde, tablolar arası ilişkilerde çoğunlukla bire-çok (one-to-many) ilişkilere rastlarız. Ancak az da olsa, çoğa-çok ilişkilerin kullanıldığı durumlar da söz konusudur. Bu ilişkiye örnek olarak çoğunlukla, SQL sunucusunda yer alan Pubs veritabanındaki Authors ve Titles tabloları gösterilir. Bu iki tablo arasındaki ilişki şöyledir: bir yazara ait birden fazla kitap Titles tablosunda yer alabilir. Aynı şekilde, bir kitap birden fazla yazar tarafından kaleme alınmış olabilir. Bu bahsedilen iki ilişki de ayrı ayrı bire-çok ilişkilerdir. Yani bir yazarın birden fazla kitabı yazmış olması bire-çok ilişki olarak düşünülebilirken, bir kitabın birden fazla yazara ait olması da bire-çok ilişki olarak gözlemlenebilir.
 
 Ancak, bu iki tablo arasında ilişkiyi bu şekilde yansıtmamız mümkün değildir. Nitekim, bire-çok ilişkilerde, çok ilişkiyi temsil eden tablodaki yabancı anahtar (foreign key), ebeveyn (parent) tabloda unique özellikte bir alana ihtiyaç duyar. Dolayısıyla iki yönlü ilişkinin olduğu authors ve titles gibi tablolar için bu tarz bir ilişkiyi oluşturmak biraz daha farklıdır. Bunun için üçüncü bir tablo kullanılır ve bu tabloda, her iki tablonun primary key alanlarına yer verilir. Aşağıdaki şekil, pubs veritabanında yer alan authors ve titles tabloları için çoğa-çok ilişkiyi sağlayacak bu tarz bir tablonun yapısını ve aralarındaki ilişkiyi göstermektedir.
 
@@ -42,17 +42,17 @@ MuhendisProje tablosunu oluşturduğumuzda, Muhendisler tablosundan bu tabloya b
 
 Şekil 5. MuhendisProje tablosu üzerinden gerçekleştirilen çoka-çok ilişki.
 
-Gelelim işin.net kısmına. Tasarladığımız bu yapıyı uygulamalarımızda kullanabilmek için, özellikle bağlantısız katman nesneleri üzerinde kullanabilmek için DataRelation sınıfını kullanmamız gerekiyor. Yukarıdaki işlemler ile sql sunucumuzda oluşturduğumuz düzenin aynısını, sistemimizdeki bağlantısız katman uygulamasında gerçekleştirmek istediğimiz senaryoyu göz önüne alalım.
+Gelelim işin .NET kısmına. Tasarladığımız bu yapıyı uygulamalarımızda kullanabilmek için, özellikle bağlantısız katman nesneleri üzerinde kullanabilmek için DataRelation sınıfını kullanmamız gerekiyor. Yukarıdaki işlemler ile SQL sunucumuzda oluşturduğumuz düzenin aynısını, sistemimizdeki bağlantısız katman uygulamasında gerçekleştirmek istediğimiz senaryoyu göz önüne alalım.
 
-Öncelikle, sahip olduğumuz üç tabloyuda bir DataSet nesnesine aktarmamız gerekiyor. Daha sonra, sql sunucusundaki bu tablolar arasındaki ilişkileri, DataSet içerisindeki tablolarımız arasındada gerçekleştirmemiz gerekli. İşte bu noktada DataRelation sınıfı devreye giriyor. Önce, Muhendisler tablosundan, MuhendisProje tablosuna olan bire-çok ilişkiyi oluşturuyoruz. Ardından ise, Projeler tablosundan, MuhendisProje tablosuna olan bire-çok ilişkiyi tasarlıyoruz. Bu ilişkilerin DataRelation nesneleri olarak tanımlanmasının ardından, DataSet sınıfının DataRelation nesnelerini taşıyan Relations koleksiyonunada eklenmeleri gerekiyor. İşte bu son adım ile birlikte, veritabanı sunucusundaki çoğa-çok ilişkinin aynısını bağlantısız katman nesnemiz olan DataSet üzerinde de gerçekleştirmiş oluyoruz.
+Öncelikle, sahip olduğumuz üç tabloyu da bir DataSet nesnesine aktarmamız gerekiyor. Daha sonra, SQL sunucusundaki bu tablolar arasındaki ilişkileri, DataSet içerisindeki tablolarımız arasında da gerçekleştirmemiz gerekli. İşte bu noktada DataRelation sınıfı devreye giriyor. Önce, Muhendisler tablosundan, MuhendisProje tablosuna olan bire-çok ilişkiyi oluşturuyoruz. Ardından ise, Projeler tablosundan, MuhendisProje tablosuna olan bire-çok ilişkiyi tasarlıyoruz. Bu ilişkilerin DataRelation nesneleri olarak tanımlanmasının ardından, DataSet sınıfının DataRelation nesnelerini taşıyan Relations koleksiyonuna da eklenmeleri gerekiyor. İşte bu son adım ile birlikte, veritabanı sunucusundaki çoğa-çok ilişkinin aynısını bağlantısız katman nesnemiz olan DataSet üzerinde de gerçekleştirmiş oluyoruz.
 
-Dilerseniz, yukarıda özetlediğimiz işin uygulamada nasıl gerçekleştirilebileceğini incelemeye çalışalım. Bunu için bir windows uygulaması geliştirebiliriz. Bu uygulamada bir proje mühendisi seçildiğinde, bu mühendisin yer aldığı projeleri ve bu projelerdeki ekip arkadaşlarını gösterecek olan bir uygulama geliştirelim. Bu amaçla aşağıdakine benzer tarzda bir form hazırlayalım.
+Dilerseniz, yukarıda özetlediğimiz işin uygulamada nasıl gerçekleştirilebileceğini incelemeye çalışalım. Bunun için bir Windows uygulaması geliştirebiliriz. Bu uygulamada bir proje mühendisi seçildiğinde, bu mühendisin yer aldığı projeleri ve bu projelerdeki ekip arkadaşlarını gösterecek olan bir uygulama geliştirelim. Bu amaçla aşağıdakine benzer tarzda bir form hazırlayalım.
 
 ![mk62_6.gif](/assets/images/2004/mk62_6.gif)
 
 Şekil 6. Form Tasarımımız.
 
-Sıra geldi uygulamamızın kodlarını yazmaya. Uygulamayı iki kısımda yazarsak daha kolay anlaşılır olucaktır. Öncelikle, bir mühendisi seçtiğimizde bu mühendisin görev aldığı projeleri elde edebileceğimiz kodu uygulamamıza ekleyelim. Bu aşamada uygulamamızın kodları aşağıdaki gibi olacaktır.
+Sıra geldi uygulamamızın kodlarını yazmaya. Uygulamayı iki kısımda yazarsak daha kolay anlaşılır olacaktır. Öncelikle, bir mühendisi seçtiğimizde bu mühendisin görev aldığı projeleri elde edebileceğimiz kodu uygulamamıza ekleyelim. Bu aşamada uygulamamızın kodları aşağıdaki gibi olacaktır.
 
 ```csharp
 SqlConnection con;
@@ -121,13 +121,13 @@ private void btnGetir_Click(object sender, System.EventArgs e)
 }
 ```
 
-Kodumuzda neler olduğunu anlayabilmek için aşağıdaki şekil bize daha fazla yardımcı olucaktır. Burada, foreach döngüsü içerisinde meydana gelen olaylar tasvir edilmeye çalışılmıştır.
+Kodumuzda neler olduğunu anlayabilmek için aşağıdaki şekil bize daha fazla yardımcı olacaktır. Burada, foreach döngüsü içerisinde meydana gelen olaylar tasvir edilmeye çalışılmıştır.
 
 ![mk62_7.gif](/assets/images/2004/mk62_7.gif)
 
 Şekil 7. Bir Mühendisin üzerinde çalıştığı projelerin elde edilmesi.
 
-Uygulamayı çalıştırıp herhangibir Mühendis için Getir başlıklı butona tıkladığımızda, bu mühendisin çalıştığı projelerin elde edildiğini görürüz.
+Uygulamayı çalıştırıp herhangi bir mühendis için Getir başlıklı butona tıkladığımızda, bu mühendisin çalıştığı projelerin elde edildiğini görürüz.
 
 ![mk62_8.gif](/assets/images/2004/mk62_8.gif)
 
@@ -164,4 +164,4 @@ Yeni düzenlemeler ile uygulamamızı çalıştırdığımızda aşağıdaki ekr
 
 Şekil 9. Bir Mühendisin çalıştığı projeler ve projelerdeki takım arkadaşlarının elde edilmesi.
 
-Burada yaptıklarımız değerlendirirsek kafa karıştırıcı tek unsurun foreach döngüsü içerisindeki yaklaşımlar olduğunu görürüz. Bunun yanında, ara tablomuz olan MuhendisProje tablosunun nasıl oluşturulduğu, verileri nasıl tuttuğu ve diğer tablolar arasındaki ilişkilerin.net ortamında bağlantısız katman üzerinde nasıl simüle edildiği önemlidir. Bu olgulara dikkat etmenizi ve iyice incelemenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde buluşmak dileğiyle hepinize mutlu günler dilerim.
+Burada yaptıklarımızı değerlendirirsek kafa karıştırıcı tek unsurun foreach döngüsü içerisindeki yaklaşımlar olduğunu görürüz. Bunun yanında, ara tablomuz olan MuhendisProje tablosunun nasıl oluşturulduğu, verileri nasıl tuttuğu ve diğer tablolar arasındaki ilişkilerin .NET ortamında bağlantısız katman üzerinde nasıl simüle edildiği önemlidir. Bu olgulara dikkat etmenizi ve iyice incelemenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde buluşmak dileğiyle hepinize mutlu günler dilerim.

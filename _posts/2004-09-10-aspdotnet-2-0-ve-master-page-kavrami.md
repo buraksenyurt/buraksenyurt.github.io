@@ -8,23 +8,23 @@ tags:
   - asp.net
   - master-page
 ---
-Bu makalemizde, Master Pages kavramına giriş yapacak ve web uygulamalarının geliştirmesinde yaşamımıza getirdiği kolaylıkları incelemeye çalışacağız. Internet sitelerini göz önüne aldığımızda, siteye ait sayfaların sıklıkla aynı şablonları kullandığını görürüz. Özellike, header, footer, navigasyon ve advertisement alanları, çoğunlukla siteye ait tüm sayfalarda aynı yerlerde kullanılır. Bu, siteye ait sayfaların standart olarak aynı görünümde olmasını sağlamakla kalmaz, değişen içeriğinde ortak bir şablon üzerinde durmasına imkan tanır. Peki Asp.Net 2.0' ın bu kullanım için getirdiği yaklaşıma gelene kadar, sayfalarda ortak olarak kullanılan ve tasarımsal olarak sayfa koordinatlarında aynı yerlerde yer alan bu unsurlar hangi teknikler ile oluşturulmuştur?
+Bu makalemizde, Master Pages kavramına giriş yapacak ve web uygulamalarının geliştirilmesinde yaşamımıza getirdiği kolaylıkları incelemeye çalışacağız. İnternet sitelerini göz önüne aldığımızda, siteye ait sayfaların sıklıkla aynı şablonları kullandığını görürüz. Özellikle, header, footer, navigasyon ve advertisement alanları, çoğunlukla siteye ait tüm sayfalarda aynı yerlerde kullanılır. Bu, siteye ait sayfaların standart olarak aynı görünümde olmasını sağlamakla kalmaz, değişen içeriğin de ortak bir şablon üzerinde durmasına imkân tanır. Peki ASP.NET 2.0'ın bu kullanım için getirdiği yaklaşıma gelene kadar, sayfalarda ortak olarak kullanılan ve tasarımsal olarak sayfa koordinatlarında aynı yerlerde bulunan bu unsurlar hangi teknikler ile oluşturulmuştur?
 
-Html'in ilk zamanlarında, bu tarz işlemleri gerçekleştirmek için, ortak olan alanlar kopyalanarak diğer sayfalara yapıştırılırdı. Yada, ana şablonu ihtiva eden bir sayfadan diğer sayfalar "save as" metodu ile oluşturulur ve içerikleri değiştirilirdi. Bu tekniğin en büyük handikapı, şablondaki herhangibir değişikliğin diğer sayfalara yansıtılması sırasında ortaya çıkmaktadır. Nitekim 100' lerce alt sayfaya aynı şablonu uygulamışsak bu gerçekten büyük bir problemdir.
+HTML'in ilk zamanlarında, bu tarz işlemleri gerçekleştirmek için, ortak olan alanlar kopyalanarak diğer sayfalara yapıştırılırdı. Ya da, ana şablonu ihtiva eden bir sayfadan diğer sayfalar "save as" metodu ile oluşturulur ve içerikleri değiştirilirdi. Bu tekniğin en büyük handikapı, şablondaki herhangi bir değişikliğin diğer sayfalara yansıtılması sırasında ortaya çıkmaktadır. Nitekim 100'lerce alt sayfaya aynı şablonu uygulamışsak bu gerçekten büyük bir problemdir.
 
-Çözüm Asp ile gelmiştir. Asp, include takılarını kullanarak, sayfalarda tekrar eden içeriklerin kolayca kullanılabilmesini ve değişikliklerin tüm sayfalarda görünebilmesini sağlamıştır. Ancak elbetteki include takısınında bir takım sorunları vardır. Bunlardan birisi, tasarım zamanında include takısının işaret ettiği içeriğin görünememesidir. Dolayısıyla sayfanın bütünün nasıl göründüğünü inceleyebilmek için mutlaka çalıştırmak gerekmektedir. Diğer yandan, include tekniği takılar üzerine kurulu olduğundan, özellikle açık unutulan takılar sayfalarda istenmeyen Html çıktılarının oluşmasına yol açmaktadır.
+Çözüm ASP ile gelmiştir. ASP, include takılarını kullanarak, sayfalarda tekrar eden içeriklerin kolayca kullanılabilmesini ve değişikliklerin tüm sayfalarda görünebilmesini sağlamıştır. Ancak elbette include takısının da birtakım sorunları vardır. Bunlardan birisi, tasarım zamanında include takısının işaret ettiği içeriğin görünememesidir. Dolayısıyla sayfanın bütününün nasıl göründüğünü inceleyebilmek için mutlaka çalıştırmak gerekmektedir. Diğer yandan, include tekniği takılar üzerine kurulu olduğundan, özellikle açık unutulan takılar sayfalarda istenmeyen HTML çıktılarının oluşmasına yol açmaktadır.
 
-Asp.Net, bu tip ortak içeriklerin kullanılmasına daha güçlü ve etkin bir yaklaşımı getirmiştir. User Controls. Kullanıcı tanımlı kontroller, normal aspx içeriğine sahip olabilmekte ve.net mimarisinin güçlü özelliklerini kullanabilmektedir. Her ne kadar etkili bir teknik olsada, user control'ler içinde tek bir sorun öne çıkmaktadır. Tasarım zamanında, user control içeriğinin görülememesi.
+ASP.NET, bu tip ortak içeriklerin kullanılmasına daha güçlü ve etkin bir yaklaşım getirmiştir: User Controls. Kullanıcı tanımlı kontroller, normal aspx içeriğine sahip olabilmekte ve .NET mimarisinin güçlü özelliklerini kullanabilmektedir. Her ne kadar etkili bir teknik olsa da, user control'ler için tek bir sorun öne çıkmaktadır: Tasarım zamanında, user control içeriğinin görülememesi.
 
-Asp.Net 2.0, Master Page yaklaşımı ile, yukarıda bahsedilen dezavantajları ortadan kaldırmayı başarmıştır. Bir Master Page, uygulandığı diğer aspx sayfalarının nasıl görünmesi gerektiğine karar veren bir şablona gibidir. Ancak, sağladığı ContentPlaceHolder bileşeni sayesinde, Master Page'leri uygulayan diğer aspx sayfalarının, istenilen içeriğe sahip olmasınıda sağlamaktadır. En güzel yanı ise, normal bir aspx sayfası gibi tasarlanabilmesi, yani html, image, server control gibi üyeleri içerebilmesidir. Bunlara ek olarak, olay güdümlü programlama modelinide destekler. Dolayısıyla bir Master Page aslında bir aspx sayfasından farksızdır.
+ASP.NET 2.0, Master Page yaklaşımı ile, yukarıda bahsedilen dezavantajları ortadan kaldırmayı başarmıştır. Bir Master Page, uygulandığı diğer aspx sayfalarının nasıl görünmesi gerektiğine karar veren bir şablon gibidir. Ancak, sağladığı ContentPlaceHolder bileşeni sayesinde, Master Page'leri uygulayan diğer aspx sayfalarının, istenilen içeriğe sahip olmasını da sağlamaktadır. En güzel yanı ise, normal bir aspx sayfası gibi tasarlanabilmesi, yani HTML, image, server control gibi üyeleri içerebilmesidir. Bunlara ek olarak, olay güdümlü programlama modelini de destekler. Dolayısıyla bir Master Page aslında bir aspx sayfasından farksızdır.
 
-Ancak asıl fark, bir Master Page bir aspx sayfasına uygulandığında ortaya çıkar. Master Page'i uygulayan bir aspx sayfası tarayıcıda açıldığında tarayıcıya gelen sayfa, Master Page ile aspx sayfasının birleştirilmesi sonucu ortaya çıkan başka bir aspx sayfasıdır. Bu,.net framework'ün getirdiği partial class tekniği sayesinde gerçekleşebilmektedir. Bunun, Master Page'i uygulayan aspx sayfalarına getirdiği değişik kodlama etkileride vardır.
+Ancak asıl fark, bir Master Page bir aspx sayfasına uygulandığında ortaya çıkar. Master Page'i uygulayan bir aspx sayfası tarayıcıda açıldığında tarayıcıya gelen sayfa, Master Page ile aspx sayfasının birleştirilmesi sonucu ortaya çıkan başka bir aspx sayfasıdır. Bu, .NET Framework'ün getirdiği partial class tekniği sayesinde gerçekleşebilmektedir. Bunun, Master Page'i uygulayan aspx sayfalarına getirdiği değişik kodlama etkileri de vardır.
 
 ![mk91_1.gif](/assets/images/2004/mk91_1.gif)
 
 Şekil 1. Master Page ve aspx sayfalarının ortak çalışma mimarisi.
 
-Bu kısa açıklamalardan sonra, Master Page'lerin ne olduğunu ve nasıl kullanıldıklarını anlamak amacıyla basit bir örnek geliştirelim. İlk olarak, Visual Studio.Net 2005' te bir web sitesi açalım. Sitemize Master Page eklemek için tek yapmamız gereken, Solution'ımıza sağ tıklamak ve Add New Item'den gelen pencerede, Master Page tipini seçmektir. Master Page'ler master uzantılı dosyalardır.
+Bu kısa açıklamalardan sonra, Master Page'lerin ne olduğunu ve nasıl kullanıldıklarını anlamak amacıyla basit bir örnek geliştirelim. İlk olarak, Visual Studio.NET 2005'te bir web sitesi açalım. Sitemize Master Page eklemek için tek yapmamız gereken, solution'ımıza sağ tıklamak ve Add New Item'den gelen pencerede, Master Page tipini seçmektir. Master Page'ler master uzantılı dosyalardır.
 
 ![mk91_2.gif](/assets/images/2004/mk91_2.gif)
 
@@ -36,25 +36,25 @@ Bu işlemin ardından Master Page'in standart olarak aşağıdaki gibi oluşturu
 
 Şekil 3. Varsayılan Master Page.
 
-İşte burada ContentPlaceHolder1 bileşenimiz, bu Master Page'i uygulayacak olan sayfaların serbestçe erişebilecekleri ve içerik oluşturabilecekleri alanları tanımlamaktadır. Elbetteki bir Master Page'in bu şekilde olması beklenemez. Bu nedenle Master Page'imizi aşağıdaki ekran görüntüsünde olduğu gibi tasarlayabiliriz. Dikkat edecek olursanız, Master Page'lerde, normal aspx sayfaları gibi tasarlanabilirler. Bir başka deyişle, Html kodları, aspx bileşenleri vb. içerebilirler.
+İşte burada ContentPlaceHolder1 bileşenimiz, bu Master Page'i uygulayacak olan sayfaların serbestçe erişebilecekleri ve içerik oluşturabilecekleri alanları tanımlamaktadır. Elbette ki bir Master Page'in bu şekilde olması beklenemez. Bu nedenle Master Page'imizi aşağıdaki ekran görüntüsünde olduğu gibi tasarlayabiliriz. Dikkat edecek olursanız, Master Page'ler normal aspx sayfaları gibi tasarlanabilirler. Bir başka deyişle, HTML kodları, aspx bileşenleri vb. içerebilirler.
 
 ![mk91_6.gif](/assets/images/2004/mk91_6.gif)
 
 Şekil 4. Master Page sayfamızının tasarımı.
 
-Burada standart olarak bir web sayfasının tasarlanmasından farklı bir işlem yapılmamıştır. En önemli nokta Master Page'i uygulayacak sayfaların içeriklerini yazabilecekleri ContentPlaceHolder bileşeninin kullanılmasıdır. Dilersek bir Master Page içinde, birden fazla ContentPlaceHolder bileşeninede yer verebiliriz. Master Page'in aspx kodlarına baktığımızda normal aspx sayfalarına göre en önemli değişik page direktifi yerine master direktifinin kullanılmasıdır. Master direktifi sayfanın bir Master Page olduğunu belirtmektedir.
+Burada standart olarak bir web sayfasının tasarlanmasından farklı bir işlem yapılmamıştır. En önemli nokta, Master Page'i uygulayacak sayfaların içeriklerini yazabilecekleri ContentPlaceHolder bileşeninin kullanılmasıdır. Dilersek bir Master Page içinde, birden fazla ContentPlaceHolder bileşenine de yer verebiliriz. Master Page'in aspx kodlarına baktığımızda normal aspx sayfalarına göre en önemli değişiklik, page direktifi yerine master direktifinin kullanılmasıdır. Master direktifi sayfanın bir Master Page olduğunu belirtmektedir.
 
-```text
+```xml
 <%@ Master Language="C#" CompileWith="AnaSablon.master.cs" ClassName="AnaSablon_master" %>
 ```
 
 ContentPlaceHolder bileşeni ise,
 
-```text
+```xml
 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" Runat="server"></asp:ContentPlaceHolder>
 ```
 
-aspx kodları ile tanımlanır. Sayfanın dikkate değer bir özelliğide, form takılarını içermesidir. Nitekim biraz sonra göreceğimiz gibi bunun, Master Page'i uygulayan aspx sayfalarına etkisi vardır. Şimdi dilerseniz, yeni bir aspx sayfasına oluşturduğumuz Master Page'i nasıl uygulayacağımıza bir bakalım. Öncelikle, Add New Item iletişim kutusunu açalım ve dosya tipi olarak Web Form'u seçelim. Ardından, sayfamıza uygulamak istediğimiz Master Page'i seçebilmek amacıyla, Select Master Page kutucuğunu işaretleyelim.
+aspx kodları ile tanımlanır. Sayfanın dikkate değer bir özelliği de, form takılarını içermesidir. Nitekim biraz sonra göreceğimiz gibi bunun, Master Page'i uygulayan aspx sayfalarına etkisi vardır. Şimdi dilerseniz, yeni bir aspx sayfasına oluşturduğumuz Master Page'i nasıl uygulayacağımıza bir bakalım. Öncelikle, Add New Item iletişim kutusunu açalım ve dosya tipi olarak Web Form'u seçelim. Ardından, sayfamıza uygulamak istediğimiz Master Page'i seçebilmek amacıyla, Select Master Page kutucuğunu işaretleyelim.
 
 ![mk91_7.gif](/assets/images/2004/mk91_7.gif)
 
@@ -66,23 +66,23 @@ Bu durumda Add buttonuna bastığımızda, sayfamıza uygulamak istediğimiz Mas
 
 Şekil 6. Master Page'in seçilmesi.
 
-Bu adımıda tamamladığımızda, default.aspx sayfamız aşağıdaki gibi oluşturulacaktır. Dikkat edecek olursanız, sadece Master Page'deki ContentPlaceHolder bileşeninin bulunduğu alan düzenlenebilir yapıdadır. Diğer kısımlar için düzenleme ve değişitirme gibi işlemleri gerçekleştirme imkanımız yoktur. Bu sayede web formunun, Master Page'in izin verdiği görünümde olması ve kendisine ayrılan alanda istediği içeriği oluşturmasına izni verilmiş olunur.
+Bu adımı da tamamladığımızda, default.aspx sayfamız aşağıdaki gibi oluşturulacaktır. Dikkat edecek olursanız, sadece Master Page'deki ContentPlaceHolder bileşeninin bulunduğu alan düzenlenebilir yapıdadır. Diğer kısımlar için düzenleme ve değiştirme gibi işlemleri gerçekleştirme imkânımız yoktur. Bu sayede web formunun, Master Page'in izin verdiği görünümde olması ve kendisine ayrılan alanda istediği içeriği oluşturmasına izin verilmiş olunur.
 
 ![mk91_9.gif](/assets/images/2004/mk91_9.gif)
 
 Şekil 7. Master Page'in bir web formuna uygulanması sonucu.
 
-Bu noktada, web formumuzun aspx kodlarına bakcak olursak sadece tek bir satırın olduğunu görürüz.
+Bu noktada, web formumuzun aspx kodlarına bakacak olursak sadece tek bir satırın olduğunu görürüz.
 
-```text
+```xml
 <%@ Page Language="C#" MasterPageFile="~/AnaSablon.master" CompileWith="Default.aspx.cs" ClassName="Default_aspx" Title="Untitled Page" %>
 ```
 
-Bu tek satır aslında çok şey ifade etmektedir. Herşeyden önce, MasterPageFile özelliği, sayfaya uygulanan Master Page'in yolunu belirtir. Bu, formun bir Master Page'i uyguladığını başka bir deyişle master page'den türetilerek üretildiğini gösterir. Kendi sınıfı ve code-behind dosyası vardır.
+Bu tek satır aslında çok şey ifade etmektedir. Her şeyden önce, MasterPageFile özelliği, sayfaya uygulanan Master Page'in yolunu belirtir. Bu, formun bir Master Page'i uyguladığını, başka bir deyişle master page'den türetilerek üretildiğini gösterir. Kendi sınıfı ve code-behind dosyası vardır.
 
-Eğer sayfadaki Content alanı içerisinde düzenleme yapmak istersek bunu şu an için gerçekleştiremediğimizi görürüz. Bunu sağlayabilmek için, Master Page'de yer alan ContentPlaceHolder bileşeninin, bu sayfada bir Content bileşeni ile eşleştirilmesi gerekmektedir. Bunun için, web formumuza aşağıdaki aspx kodlarını yazmamız yeterli olacaktır. Content bileşeninin, ContentPlaceHolderID özelliği, uygulanan Master Page'deki hangi ContentPlaceHolder bileşenini eşleştireceğini belirtmektedir. Bu özelliğin değeri, birden falza ContentPlaceHolder'ın, Master Page'i uygulayan sayfalarda eşleştirilmesinde önem kazanır.
+Eğer sayfadaki Content alanı içerisinde düzenleme yapmak istersek bunu şu an için gerçekleştiremediğimizi görürüz. Bunu sağlayabilmek için, Master Page'de yer alan ContentPlaceHolder bileşeninin, bu sayfada bir Content bileşeni ile eşleştirilmesi gerekmektedir. Bunun için, web formumuza aşağıdaki aspx kodlarını yazmamız yeterli olacaktır. Content bileşeninin ContentPlaceHolderID özelliği, uygulanan Master Page'deki hangi ContentPlaceHolder bileşenini eşleştireceğini belirtmektedir. Bu özelliğin değeri, birden fazla ContentPlaceHolder'ın, Master Page'i uygulayan sayfalarda eşleştirilmesinde önem kazanır.
 
-```text
+```xml
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="server">
 </asp:Content>
 ```
@@ -95,7 +95,7 @@ Artık, içeriği istediğimiz gibi değiştirebiliriz. Sunucu elemanları, html
 
 Sayfamızın kodlarına bakacak olursak.
 
-```text
+```xml
 <%@ Page Language="C#" MasterPageFile="~/AnaSablon.master" CompileWith="Default.aspx.cs" ClassName="Default_aspx" Title="Untitled Page" %>
     <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="server">
         <b>Mail Listemize Son Üye Olan Okurlar </b>
@@ -121,7 +121,7 @@ SortExpression="ID"></asp:BoundField>
     </asp:Content>
 ```
 
-Dikkat edecek olursanız, eklemiş olduğumu tüm kontroller ve diğer içerik, Content bileşenimize ait takılar içerisinde yer almaktadır. Diğer taraftan Content takıları dışında herhangibir içerik oluşturmamızı sağlayacak bileşenleri kullanma imkanımız yoktur. Bir diğer önemli özellikte, içeriğin herhangibir form takısı içerisinde yer almıyor oluşudur. Bunun sebebi, form takısının zaten Master Page'de uygulanmış olmasıdır. Dolayısıyla web formumuz, Master Page'den kalıtımsal olarak türetildiği için form takılarının burada kullanılmasına gerek yoktur.
+Dikkat edecek olursanız, eklemiş olduğumuz tüm kontroller ve diğer içerik, Content bileşenimize ait takılar içerisinde yer almaktadır. Diğer taraftan Content takıları dışında herhangi bir içerik oluşturmamızı sağlayacak bileşenleri kullanma imkânımız yoktur. Bir diğer önemli özellik de, içeriğin herhangi bir form takısı içerisinde yer almıyor oluşudur. Bunun sebebi, form takısının zaten Master Page'de uygulanmış olmasıdır. Dolayısıyla web formumuz, Master Page'den kalıtımsal olarak türetildiği için form takılarının burada kullanılmasına gerek yoktur.
 
 Oluşan default.aspx sayfası aslında, Master Page'deki ContentPlaceHolder alanının içerik eklenmiş halidir. Bunun anlamı, çalışma zamanında içeriğin yer aldığı default.aspx sayfası ile AnaSablon.Master sayfasının birleştirilerek yeni bir default.aspx sayfasının oluşturulması ve son kullanıcıya sunulmasıdır. Eğer uygulamamızı çalıştıracak olursak tarayıcımızda aşağıdaki ekran görüntüsünü elde ederiz.
 

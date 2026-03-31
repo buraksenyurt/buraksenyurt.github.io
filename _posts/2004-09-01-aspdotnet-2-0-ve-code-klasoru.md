@@ -8,23 +8,23 @@ tags:
   - asp.net
   - app_code
 ---
-Bu makalemizde, Asp.Net 2.0 ile gelen tanımlanmış klasörlerden (defined folders), Code klasörünün nasıl kullanıldığını incelemeye çalışacağız. Asp.Net 1.0/1.1 ile uygulama geliştirirken, solution içindeki herşey bir dll içinde (assembly) toplanır. Asp.Net 2.0 ise, dosya tabanlı (file-based) yaklaşım adı verilen yeni bir teknik kullanır. Bu tekniğe göre, solution, dosyalar ve klasörler sisteminden oluşmaktadır. Bu sistemin faydası, otomatik derleme özelliğine sahip olmasıdır.
+Bu makalemizde, ASP.NET 2.0 ile gelen tanımlanmış klasörlerden (defined folders), Code klasörünün nasıl kullanıldığını incelemeye çalışacağız. ASP.NET 1.0/1.1 ile uygulama geliştirirken, solution içindeki her şey bir dll içinde (assembly) toplanır. ASP.NET 2.0 ise, dosya tabanlı (file-based) yaklaşım adı verilen yeni bir teknik kullanır. Bu tekniğe göre, solution, dosyalar ve klasörler sisteminden oluşmaktadır. Bu sistemin faydası, otomatik derleme özelliğine sahip olmasıdır.
 
-Yani, solution içerisine herhangibir dosya eklenmesi halinde (örneğin bir sınıf), Visual Studio.Net 2005 bu dosyayı otomatik olarak derler ve solution'ın her zaman dinamik olarak güncel kalmasını sağlar. Bir başka deyişle yeni eklenen dosya için, solution'ın baştan derlenmesi gerekmez. Bu yüzden, Asp.Net 2.0 ile uygulama geliştirirken ilk dikkati çeken unsur, oluşturulan sanal klasör altında eskiden olduğu gibi bin klasörünün ve bir dll dosyasının olmayışıdır.
+Yani, solution içerisine herhangi bir dosya eklenmesi hâlinde (örneğin bir sınıf), Visual Studio.NET 2005 bu dosyayı otomatik olarak derler ve solution'ın her zaman dinamik olarak güncel kalmasını sağlar. Bir başka deyişle yeni eklenen dosya için, solution'ın baştan derlenmesi gerekmez. Bu yüzden, ASP.NET 2.0 ile uygulama geliştirirken ilk dikkati çeken unsur, oluşturulan sanal klasör altında eskiden olduğu gibi bin klasörünün ve bir dll dosyasının olmayışıdır.
 
-Asp.Net 2.0 ile geliştirilen bu yeni teknikte, çeşitli önceden tanımlanmış (predefined folders) özel klasör seçenekleri mevcuttur. Bunlardan biriside Code klasörüdür. Code klasörü, sınıf dosyalarımız, web servisleri için kullanılan wsdl dosyalarımız, türlendirilmiş dataset'ler (typed datasets) için kullanılan xml şemaları ve Data Component'ler tipindeki dosyaları barındırılabilir. Code klasörü içerisine konulan bu dosyalar, Visual Studio.Net 2005 ortamında otomatik olarak tanınır. Ayrıca, Visual Studio.Net 2005, bu dosyaları kullanarak, sınıflara derler, proxy sınıflarını veya türlendirilmiş veri sınıflarını oluşturur. Bu yapıyı aşağıdaki şekil ile daha kolay anlayabiliriz.
+ASP.NET 2.0 ile geliştirilen bu yeni teknikte, çeşitli önceden tanımlanmış (predefined folders) özel klasör seçenekleri mevcuttur. Bunlardan birisi de Code klasörüdür. Code klasörü; sınıf dosyalarımızı, web servisleri için kullanılan wsdl dosyalarımızı, türlendirilmiş dataset'ler (typed datasets) için kullanılan XML şemalarını ve Data Component tipindeki dosyaları barındırabilir. Code klasörü içerisine konulan bu dosyalar, Visual Studio.NET 2005 ortamında otomatik olarak tanınır. Ayrıca, Visual Studio.NET 2005 bu dosyaları kullanarak sınıfları derler, proxy sınıflarını veya türlendirilmiş veri sınıflarını oluşturur. Bu yapıyı aşağıdaki şekil ile daha kolay anlayabiliriz.
 
 ![mk85_10.gif](/assets/images/2004/mk85_10.gif)
 
 Şekil 1. Genel yapı.
 
-Dilerseniz konuyu daha iyi anlayabilmek amacıyla basit bir örnek geliştirelim. Bunun için Visual Studio.Net 2005' de yeni bir Web Site açıyoruz. Daha sonra Solution Explorer'da solution'ımız üzerine sağ tıklıyor ve New Folder seçeneğine basarak, yeni bir klasör oluşturuyoruz. Klasörümüze Code ismini verdiğimizde, şeklinin normal klasörlerden biraz daha farklı olduğunu hemen farkedebiliriz. Nitekim Code klasörünün Solution için özel bir anlamı vardır.
+Dilerseniz konuyu daha iyi anlayabilmek amacıyla basit bir örnek geliştirelim. Bunun için Visual Studio.NET 2005'te yeni bir Web Site açıyoruz. Daha sonra Solution Explorer'da solution'ımız üzerine sağ tıklıyor ve New Folder seçeneğine basarak yeni bir klasör oluşturuyoruz. Klasörümüze Code ismini verdiğimizde, şeklinin normal klasörlerden biraz daha farklı olduğunu hemen fark edebiliriz. Nitekim Code klasörünün solution için özel bir anlamı vardır.
 
 ![mk85_1.gif](/assets/images/2004/mk85_1.gif)
 
 Şekil 2. Code klasörünün eklenmesi.
 
-Şimdi default.aspx form'unuda aşağıdaki gibi oluşturalım. Bu web sayfasında basit olarak, yarıçapı verilen bir dairenin alanı hesap edilecek. Bu hesaplama işlemini yapan metodumuzu barındıracak bir sınıfımız olacak ve bu sınıfımız, Code klasörü içerisinde yer alacak.
+Şimdi default.aspx formunu da aşağıdaki gibi oluşturalım. Bu web sayfasında basit olarak, yarıçapı verilen bir dairenin alanı hesap edilecek. Bu hesaplama işlemini yapan metodumuzu barındıracak bir sınıfımız olacak ve bu sınıfımız Code klasörü içerisinde yer alacak.
 
 ![mk85_2.gif](/assets/images/2004/mk85_2.gif)
 
@@ -36,7 +36,7 @@ Dilerseniz konuyu daha iyi anlayabilmek amacıyla basit bir örnek geliştirelim
 
 Şekil 4. Code klasörü için yeni bir öğe eklemek.
 
-Bu dialog pencersinde, Code klasörüne ekleyebileceğimiz dosya tipleri yer almaktadır. Biz class tipini seçeceğiz. AlanHesap.cs dosyamızın kodları aşağıda görüldüğü gibidir.
+Bu dialog penceresinde, Code klasörüne ekleyebileceğimiz dosya tipleri yer almaktadır. Biz class tipini seçeceğiz. AlanHesap.cs dosyamızın kodları aşağıda görüldüğü gibidir.
 
 ```csharp
 using System;
@@ -54,13 +54,13 @@ public class AlanHesap
 }
 ```
 
-Bu noktadan sonra, solution'ımızı hiç derlemeden, AlanHesap sınıfımızı kullanabilir, bu sınıftan nesne örnekleri yaratabilir daha da önemlisi intelli-sense özelliğinden derhal faydalanabiliriz.
+Bu noktadan sonra, solution'ımızı hiç derlemeden, AlanHesap sınıfımızı kullanabilir, bu sınıftan nesne örnekleri yaratabilir ve daha da önemlisi IntelliSense özelliğinden derhal faydalanabiliriz.
 
 ![mk85_4.gif](/assets/images/2004/mk85_4.gif)
 
 Şekil 5. Intelli-Sense Özelliği.
 
-Bu noktadan sonra, uygulamamızı oluşturduğumuz klasöre bakarsak aşağıdaki yapıda olduğunu farkederiz. Dikkat edecek olursanız Asp.Net 1.0/1.1' deki gibi kalabalık bir topluluk yoktur. En önemlisi Bin klasörünü veya tüm uygulamanın tiplerine ait manifesto bilgilerini ve kodları barındıran bir dll görememekteyiz.
+Bu noktadan sonra, uygulamamızı oluşturduğumuz klasöre bakarsak aşağıdaki yapıda olduğunu fark ederiz. Dikkat edecek olursanız ASP.NET 1.0/1.1'deki gibi kalabalık bir topluluk yoktur. En önemlisi Bin klasörünü veya tüm uygulamanın tiplerine ait manifesto bilgilerini ve kodları barındıran bir dll görememekteyiz.
 
 ![mk85_5.gif](/assets/images/2004/mk85_5.gif)
 
@@ -86,13 +86,13 @@ Bu durumda solution'ı derlediğimizde aşağıdaki derleme zamanı hata mesajı
 
 Şekil 7. Hata Mesajı.
 
-Peki çözüm nedir? Büyük çaplı projelerde, farklı.net dilleri kullanılarak geliştirilen sınıfların aynı solution içerisinde kullanılması için ne yapabiliriz? Bunun için, öncelikle Code klasörü içinde her bir dile yönelik olarak ayrı klasörler açmamız gerekir. Aşağıdaki şekilde olduğu gibi.
+Peki çözüm nedir? Büyük çaplı projelerde, farklı .NET dilleri kullanılarak geliştirilen sınıfların aynı solution içerisinde kullanılması için ne yapabiliriz? Bunun için, öncelikle Code klasörü içinde her bir dile yönelik olarak ayrı klasörler açmamız gerekir. Aşağıdaki şekilde olduğu gibi.
 
 ![mk85_7.gif](/assets/images/2004/mk85_7.gif)
 
 Şekil 8. Farklı diller için farklı klasörler.
 
-Buradaki alt klasörleri isimlendirmek için belirli bir kural yoktur. Ancak buradaki isimlendirmelerin aynısını Web.Config dosyasındaki node'unda kullanmamız gerekmektedir. Nitekim, otomatik olarak yapılan önceden derleme işlemlerinde, hangi alt klasörlerin kullanılacağının sitenin konfigurasyon ayarlarına yansıtılması gereklidir. Bunun için Web.Config dosyasındaki,
+Buradaki alt klasörleri isimlendirmek için belirli bir kural yoktur. Ancak buradaki isimlendirmelerin aynısını Web.config dosyasındaki node'da kullanmamız gerekmektedir. Nitekim, otomatik olarak yapılan önceden derleme işlemlerinde, hangi alt klasörlerin kullanılacağının sitenin konfigürasyon ayarlarına yansıtılması gereklidir. Bunun için Web.config dosyasındaki,
 
 ```text
 <compilation debug="true">
@@ -111,7 +111,7 @@ kısmını aşağıdaki ile değiştirmemiz yeterli olacaktır.
 </compilation>
 ```
 
-Şimdi bu işlemlerin ardından default.aspx sayfasına geçtiğimizde, vb.net ile yazdığımız sınıfa erişebildiğimizi ve kullanabildiğimizi görürüz.
+Şimdi bu işlemlerin ardından default.aspx sayfasına geçtiğimizde, VB.NET ile yazdığımız sınıfa erişebildiğimizi ve kullanabildiğimizi görürüz.
 
 ![mk85_8.gif](/assets/images/2004/mk85_8.gif)
 

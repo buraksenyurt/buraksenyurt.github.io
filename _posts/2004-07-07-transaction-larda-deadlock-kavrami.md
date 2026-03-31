@@ -9,7 +9,7 @@ tags:
   - transaction
   - deadlock
 ---
-Bu makalemizde, eş zamanlı olarak çalışan Transaction'larda meydana gelebilecek DeadLock durumunu incelemeye çalışacağız. Öncelikle DeadLock teriminin ne olduğunu anlamaya çalışalım. DeadLock, aynı zamanlı çalışan Transaction'ların, belirlir satır (ları) kilitlemeleri sonucunda ortaya çıkabilecek bir durumdur. DeadLock terimini kavrayabilmenin en iyi yolu aşağıdaki gibi gelişebilecek bir senaryoyu zihnimizde canlandırmakla mümkündür. Bu senaryoda söz konusu olan iki tablomuz mevcuttur. Bu tablolar Sql sunucusunda Northwind veritabanı altında oluşturulmuş olup Field (alan) yapıları aşağıdaki gibidir.
+Bu makalemizde, eşzamanlı olarak çalışan Transaction'larda meydana gelebilecek DeadLock durumunu incelemeye çalışacağız. Öncelikle DeadLock teriminin ne olduğunu anlamaya çalışalım. DeadLock, aynı zamanlı çalışan Transaction'ların, belirli satırları kilitlemeleri sonucunda ortaya çıkabilecek bir durumdur. DeadLock terimini kavrayabilmenin en iyi yolu aşağıdaki gibi gelişebilecek bir senaryoyu zihnimizde canlandırmakla mümkündür. Bu senaryoda söz konusu olan iki tablomuz mevcuttur. Bu tablolar SQL sunucusunda Northwind veritabanı altında oluşturulmuş olup field (alan) yapıları aşağıdaki gibidir.
 
 ![mk77_1.gif](/assets/images/2004/mk77_1.gif)
 
@@ -19,29 +19,18 @@ Bu makalemizde, eş zamanlı olarak çalışan Transaction'larda meydana gelebil
 
 Şekil 2. Personel Tablosu.
 
-Şimdi senaryomuzu tasarlayalarak DeadLock kavramını anlamaya çalışalım. Her iki tabloyu ayrı ayrı kullanan ve eş zamanlı olarak çalışan iki Transaction'ımız olduğunu düşünelim. Burada önemli olan bu iki Transaction'ın aynı anda çalışıyor olmalarıdır.
+Şimdi senaryomuzu tasarlayarak DeadLock kavramını anlamaya çalışalım. Her iki tabloyu ayrı ayrı kullanan ve eşzamanlı olarak çalışan iki Transaction'ımız olduğunu düşünelim. Burada önemli olan bu iki Transaction'ın aynı anda çalışıyor olmalarıdır. DeadLock senaryomuzu aşağıdaki gibi adım adım inceleyelim.
 
-DeadLock Senaryosu
+| Adım | İşlem |
+| --- | --- |
+| 1nci Adım | Transaction 1 başlatılır. |
+| 2nci Adım | Transaction 2 başlatılır. |
+| 3üncü Adım | Transaction 1 Personel tablosunda PersonelID değeri 78 olan satırı kitler ve günceller. |
+| 4üncü Adım | Transaction 2 Musteriler tablosunda MusteriID değeri 1000 olan satırı kitler ve günceller. |
+| 5inci Adım | Transaction 1 Musteriler tablosundaki MusteriID değeri 1000 olan satırı güncellemek ister. Ancak, Transaction 2 bu satırı kitlediğinden, varsayılan Lock TimeOut süresi kadar bu kilidin açılmasını bekler. Bu süre sonuna kadar Transaction 2' nin işlemlerini onaylaması veya geri alması beklenir. |
+| 6ncı Adım | Transaction 2 Personel tablosundaki PersonelID değeri 78 olan satırı güncellemek ister. Ancak bu durumda, Transaction 1 bu satırı kitlediğinden yine varsayılan Lock TimeOut süresi kadar bu kilidin açılmasını bekler. Bu süre sonuna kadar Transaction 1' in işlemlerini onaylaması veya geri alması beklenir. |
 
-1nci Adım
-Transaction 1 başlatılır.
-
-2nci Adım
-Transaction 2 başlatılır.
-
-3üncü Adım
-Transaction 1 Personel tablosunda PersonelID değeri 78 olan satırı kitler ve günceller.
-
-4üncü Adım
-Transaction 2 Musterilre tablosunda MusteriID değeri 1000 olan satırı kitler ve günceller.
-
-5inci Adım
-Transaction 1 Musteriler tablosundaki MusteriID değeri 1000 olan satırı güncellemek ister. Ancak, Transaction 2 bu satırı kitlediğinden, varsayılan Lock TimeOut süresi kadar bu kilidin açılmasını bekler. Bu süre sonuna kadar Transaction 2' nin işlemlerini onaylaması veya geri alması beklenir.
-
-6ncı Adım
-Transaction 2 Personel tablosundaki PersonelID değeri 78 olan satırı güncellemek ister. Ancak bu durumda, Transaction 1 bu satırı kitlediğinden yine varsayılan Lock TimeOut süresi kadar bu kilidin açılmasını bekler. Bu süre sonuna kadar Transaction 1' in işlemlerini onaylaması veya geri alması beklenir.
-
-Bizim için önemli olan adımlar, 5inci ve 6ncı adımlardır. Nitekim bu adımlar eş zamanlı olarak gerçekleştirildiklerinden, iki Transaction da birbirinin kilitlerinin açılmasını beklemek durumundadır. İşte bu noktada DeadLock oluşur. Nitekim süreler sona erinceye kadar herhangibir Transaciton sahip olduğu işlemleri ne onaylamış (Commit) nede geri almıştır (RollBack).Dolayısıyla Transaction'lardan birisi, varsayılan olarakta Sql sunucusuna göre en maliyetli olanı otomatik olarak RollBack edilecektir. Bu durumda bu Transaction'a ait kilitler ortadan kalktığından kalan Transaction'a ait güncelleme işlemi tamamlanır. Ancak.net ile yazılan uygulamalarda DeadLock oluştuğunda, Transaction'lardan birisi geri alınmakla kalmaz aynı zamanda ortama bir istisna fırlatılır. Dolayısıyla DeadLock durumunda bu istisnanında ele alınması gerekirki, DeadLock sonucu çalışmaya devam eden Transaction işlemleri onaylanabilsin.
+Bizim için önemli olan adımlar, 5inci ve 6ncı adımlardır. Nitekim bu adımlar eşzamanlı olarak gerçekleştirildiklerinden, iki Transaction da birbirinin kilitlerinin açılmasını beklemek durumundadır. İşte bu noktada DeadLock oluşur. Nitekim süreler sona erinceye kadar herhangi bir Transaction sahip olduğu işlemleri ne onaylamış (Commit) ne de geri almıştır (RollBack). Dolayısıyla Transaction'lardan birisi, varsayılan olarak da SQL sunucusuna göre en maliyetli olanı otomatik olarak RollBack edilecektir. Bu durumda bu Transaction'a ait kilitler ortadan kalktığından kalan Transaction'a ait güncelleme işlemi tamamlanır. Ancak .NET ile yazılan uygulamalarda DeadLock oluştuğunda, Transaction'lardan birisi geri alınmakla kalmaz, aynı zamanda ortama bir istisna fırlatılır. Dolayısıyla DeadLock durumunda bu istisnanın da ele alınması gerekir ki, DeadLock sonucu çalışmaya devam eden Transaction işlemleri onaylanabilsin.
 
 DeadLock oluşması durumunda, birbirlerini bekleyen Transaction'larda, bekleme sürelerini ayarlayabilir ve hangi Transaction'ın daha önce RollBack edilmesi gerektiğine karar verebiliriz. Bunun için, T-Sql'in LOCK_TIMEOUT ve DEADLOCK_PRIORITY anahtar sözcükleri kullanılır. Bir Transaction'ın başka bir Transaction'da oluşan kilidi ne kadar süre ile beklemesi gerektiğini belirtmek için aşağıdaki gibi bir sql cümleciği kullanılır.
 
@@ -55,7 +44,7 @@ Burada LOCK_TIMEOUT değeri 3 saniye (3000 milisaniye) olarak belirtilmiştir. D
 SET DEADLOCK_PRIORITY LOW
 ```
 
-Bu sql cümleciğini kullanan komutun çalıştığı Transaction, DeadLock oluşması durumunda, ilk olarak RollBack edilecek Transaction olacaktır. DEADLOCK_PRIORITY anahtar sözcüğünün alabileceği diğer değerde NORMAL dir. Bu durumda, Transaction'lardan en maliyetli olanı RollBack edilir. DEADLOCK_PRIORITY için varsayılan değer NORMAL olarak belirlenmiştir. Şimdi dilerseniz DeadLock oluşmasını daha iyi izleyebileceğimiz bir örnek geliştirmeye çalışalım. Bu durumu simule edebilmek için, aynı anda çalışan Transaction iş parçalarına ihtiyacımız olacak. Yani DeadLock senaryosunda belirtmiş olduğumuz güncelleme işlemlerinin aynı zamanda çalışıyor olması gerekli. Bunu sağlayabilmek için bu güncelleme işlemlerini birer Thread içinde çalıştıracağız. Uygulamamız basit bir Console Application olacak. Şimdi aşağıdaki uygulama kodlarını oluşturalım.
+Bu SQL cümleciğini kullanan komutun çalıştığı Transaction, DeadLock oluşması durumunda, ilk olarak RollBack edilecek Transaction olacaktır. DEADLOCK_PRIORITY anahtar sözcüğünün alabileceği diğer değer de NORMAL'dir. Bu durumda, Transaction'lardan en maliyetli olanı RollBack edilir. DEADLOCK_PRIORITY için varsayılan değer NORMAL olarak belirlenmiştir. Şimdi dilerseniz DeadLock oluşmasını daha iyi izleyebileceğimiz bir örnek geliştirmeye çalışalım. Bu durumu simüle edebilmek için, aynı anda çalışan Transaction iş parçalarına ihtiyacımız olacak. Yani DeadLock senaryosunda belirtmiş olduğumuz güncelleme işlemlerinin aynı zamanda çalışıyor olması gerekli. Bunu sağlayabilmek için bu güncelleme işlemlerini birer Thread içinde çalıştıracağız. Uygulamamız basit bir Console Application olacak. Şimdi aşağıdaki uygulama kodlarını oluşturalım.
 
 ```csharp
 using System;
@@ -154,4 +143,4 @@ namespace DeadLockTest
 
 Şekil 3. Programın Çalışmasının Sonucu.
 
-Uygulamayı çalıştırdığımızda, ilk Thread ve ikinci Thread'ler içinde yürütülen update işlemlerinin gerçekleştirildiğini görürüz. Daha sonra üçüncü Thread için güncelleme işlemi yapılırken, bu Thread'in çalıştığı Transaction 3 saniye süreyle diğer Transaction'daki kilidin açılmasını bekleyecektir. Süre sonunda kilit halen daha açılmamış olacağından (ki kilidin açılması Commit veya RollBack işlemini gerektirir.) DEADLOCK_PRIORITY değeri LOW olarak belirlenen ikinci Transaction RollBack edilecektir. Bununla birlikte SqlException türünden bir istisna da ortama fırlatılır. Bu istisnada bir DeadLock oluştuğu ve prosesler içinde çalışan Transaction'lardan birisininde kurban edileceği belirtilir. Elbette burada istisnayı kontrol etmediğimiz için her iki Transaction içindeki işlemler RollBack edilecektir. Ana amacımız, DeadLock senaryosunun ne zaman gerçekleşeceği ve neler olacağıdır. Böylece DeadLock durumunun nasıl oluştuğunu ve nelere yol açtığını çok kısa ve basit olarak incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+Uygulamayı çalıştırdığımızda, ilk Thread ve ikinci Thread'ler içinde yürütülen update işlemlerinin gerçekleştirildiğini görürüz. Daha sonra üçüncü Thread için güncelleme işlemi yapılırken, bu Thread'in çalıştığı Transaction 3 saniye süreyle diğer Transaction'daki kilidin açılmasını bekleyecektir. Süre sonunda kilit hâlâ açılmamış olacağından, ki kilidin açılması Commit veya RollBack işlemini gerektirir, DEADLOCK_PRIORITY değeri LOW olarak belirlenen ikinci Transaction RollBack edilecektir. Bununla birlikte SqlException türünden bir istisna da ortama fırlatılır. Bu istisnada bir DeadLock oluştuğu ve prosesler içinde çalışan Transaction'lardan birisinin de kurban edileceği belirtilir. Elbette burada istisnayı kontrol etmediğimiz için her iki Transaction içindeki işlemler RollBack edilecektir. Ana amacımız, DeadLock senaryosunun ne zaman gerçekleşeceği ve neler olacağıdır. Böylece DeadLock durumunun nasıl oluştuğunu ve nelere yol açtığını çok kısa ve basit olarak incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

@@ -9,7 +9,7 @@ tags:
   - assembly
   - common-language-runtime
 ---
-Bu makalemizde,.NET'in temellerinden olan Assembly kavramının önemli bir bölümü olan Global Assembly Cache'i incelemeye çalışacağız. Net dilinde, assembly'ları private (özel) ve shared (paylaşımlı) olmak üzere iki kategoriye ayırabiliriz. Private assembly'lar oluşturulduklarında, çalıştırılabilmeleri için, uygulama ile aynı klasör altında yer almalıdırlar. Söz gelimi aşağıdaki gibi bir assembly'a sahip olduğumuzu düşünelim.
+Bu makalemizde, .NET'in temellerinden olan Assembly kavramının önemli bir bölümü olan Global Assembly Cache'i incelemeye çalışacağız. .NET dilinde, assembly'ları private (özel) ve shared (paylaşımlı) olmak üzere iki kategoriye ayırabiliriz. Private assembly'lar oluşturulduklarında, çalıştırılabilmeleri için, uygulama ile aynı klasör altında yer almalıdırlar. Söz gelimi aşağıdaki gibi bir assembly'a sahip olduğumuzu düşünelim.
 
 ```csharp
 using System;
@@ -26,13 +26,13 @@ namespace PriAsm
 }
 ```
 
-Visual Studio.Net ortamında bir class library olarak oluşturduğumuz bu assembly derlendiğinde, PriAsm.dll dosyasının oluşturulduğunu görürüz.
+Visual Studio.NET ortamında bir class library olarak oluşturduğumuz bu assembly derlendiğinde, PriAsm.dll dosyasının oluşturulduğunu görürüz.
 
 ![mk64_1.gif](/assets/images/2004/mk64_1.gif)
 
 Şekil 1. Assembly dosyamız.
 
-Şimdi, oluşturulan bu assembly içindeki Hesap isimli sınıfımızı, başka bir klasörde yer alan bir uygulama içerisinde kullanmak istediğimizi düşünelim. Bu durumda, PriAsm.dll dosyamızı, kullanmak istediğimiz uygulamanın klasörüne kopyalamamız yeterli olucaktır. Örneğin aşağıdaki uygulamayı göz önüne alalım.
+Şimdi, oluşturulan bu assembly içindeki Hesap isimli sınıfımızı, başka bir klasörde yer alan bir uygulama içerisinde kullanmak istediğimizi düşünelim. Bu durumda, PriAsm.dll dosyamızı, kullanmak istediğimiz uygulamanın klasörüne kopyalamamız yeterli olacaktır. Örneğin aşağıdaki uygulamayı göz önüne alalım.
 
 ```csharp
 using System;
@@ -50,7 +50,7 @@ namespace Ornek
 }
 ```
 
-Bu Console uygulamasını derlemeye çalıştığımızda, "The type or namespace name 'PriAsm'could not be found (are you missing a using directive or an assembly reference?)" hatasını alırız. Bu hatayı almamız son derece doğaldır. Çünkü PriAsm.dll assembly'ımız private bir assembly'dır. Bunun doğal sonucu uygulamamızın bu assembly hakkında hiç bir bilgiye sahip olmamasıdır. Uygulamamıza, PriAsm.dll assembly'ının referans edilmesi gerekmektedir. Öncelikle, PriAsm.dll dosyasını, uygulamamızın assembly'ının bulunduğu klasöre kopylamamız gerekir.
+Bu Console uygulamasını derlemeye çalıştığımızda, "The type or namespace name 'PriAsm'could not be found (are you missing a using directive or an assembly reference?)" hatasını alırız. Bu hatayı almamız son derece doğaldır. Çünkü PriAsm.dll assembly'ımız private bir assembly'dir. Bunun doğal sonucu, uygulamamızın bu assembly hakkında hiçbir bilgiye sahip olmamasıdır. Uygulamamıza, PriAsm.dll assembly'ının referans edilmesi gerekmektedir. Öncelikle, PriAsm.dll dosyasını, uygulamamızın assembly'ının bulunduğu klasöre kopyalamamız gerekir.
 
 ![mk64_2.gif](/assets/images/2004/mk64_2.gif)
 
@@ -99,13 +99,13 @@ namespace Ornek
 }
 ```
 
-Private assembly'ları bu şekilde kullanmak her zaman tercih edilen bir yol değildir. Nitekim, PriAsm.dll assembly'ının erişebilmek bu dll'in, uygulamanın assembly'ı ile aynı klasörde olması gerekmektedir. (Nitekim, PriAsm.dll assembly'ının uygulamanın debug klasöründen başka bir yere taşınması, uygulamanın derleme zamanında hata vermesine yol açar. Çünkü belirtilen adresteki referans dosyası yerinde değildir.) Buna karşılık olarak bazen, oluşturduğumuz assembly'a birden fazla uygulamanın aynı yerden erişmesini isteyebiliriz. İşte bu durumda devreye Global Assembly Cahce girmektedir. GAC.NET uygulamaları tarafından paylaşılan bileşenlerin yer aldığı bir veri deposudur. Birden fazla uygulamanın ortak olarak kullanacağı assembly'lar sistemdeki Global Assembly Cache 'e yüklenerek paylaşılmış (shared) assembly'lar oluşturabiliriz. GAC 'da tutulan assembly'ların görüntüsüne, bir Win XP sisteminde C:\WINDOWS\assembly klasöründen ulaşabiliriz. Burada yer alan assembly'lar, C# kodu ilk olarak yürütüldüğünde anında derlenir ve GAC önbelleğinde tutulurlar.
+Private assembly'ları bu şekilde kullanmak her zaman tercih edilen bir yol değildir. Nitekim, PriAsm.dll assembly'ına erişebilmek için bu dll'in, uygulamanın assembly'ı ile aynı klasörde olması gerekmektedir. Nitekim, PriAsm.dll assembly'ının uygulamanın debug klasöründen başka bir yere taşınması, uygulamanın derleme zamanında hata vermesine yol açar. Çünkü belirtilen adresteki referans dosyası yerinde değildir. Buna karşılık olarak bazen, oluşturduğumuz assembly'a birden fazla uygulamanın aynı yerden erişmesini isteyebiliriz. İşte bu durumda devreye Global Assembly Cache girmektedir. GAC, .NET uygulamaları tarafından paylaşılan bileşenlerin yer aldığı bir veri deposudur. Birden fazla uygulamanın ortak olarak kullanacağı assembly'ları sistemdeki Global Assembly Cache'e yükleyerek paylaşılmış (shared) assembly'lar oluşturabiliriz. GAC'da tutulan assembly'ların görüntüsüne, bir Win XP sisteminde C:\WINDOWS\assembly klasöründen ulaşabiliriz.
 
 ![mk64_7.gif](/assets/images/2004/mk64_7.gif)
 
 Şekil 7. GAC Assembly'ları.
 
-Burada dikkat edicek olursanız örneğin, System.Data Assembly'ından iki adet bulunmaktadır. Bu iki assembly'ın sistemde sorunsuz bir şekilde çalışması, assembly'ların kimliklerinin farklılığı sayesinde mümkün olmaktadır. Bu farklılığı yaratan GAC içine kurulan her bir assembly'ın farklı strong name'lere sahip olmasıdır. Bir strong name, bir assembly'ın adı, versiyon numarası, dil bilgileri, dijital imzaları ve public anahtar değeri bilgilerinden oluşur. Örneğin System.Data assembly'ının iki versiyonu arasındaki farklar aşağıdaki şekilde görüldüğü gibidir.
+Burada dikkat edecek olursanız örneğin, System.Data Assembly'ından iki adet bulunmaktadır. Bu iki assembly'ın sistemde sorunsuz bir şekilde çalışması, assembly'ların kimliklerinin farklılığı sayesinde mümkün olmaktadır. Bu farklılığı yaratan GAC içine kurulan her bir assembly'ın farklı strong name'lere sahip olmasıdır. Bir strong name, bir assembly'ın adı, versiyon numarası, dil bilgileri, dijital imzaları ve public anahtar değeri bilgilerinden oluşur. Örneğin System.Data assembly'ının iki versiyonu arasındaki farklar aşağıdaki şekilde görüldüğü gibidir.
 
 ![mk64_8.gif](/assets/images/2004/mk64_8.gif)
 
@@ -113,19 +113,19 @@ Burada dikkat edicek olursanız örneğin, System.Data Assembly'ından iki adet 
 
 Şekil 8. Farklılıklar.
 
-Bir assembly'ın yukarıda bahsedilen bilgileri AssemblyInfo isimli dosyada tutulmaktadır.Şimdi dilerseniz geliştirmiş olduğumuz PriAsm.dll assembly'ını GAC'e nasıl kayıt edeceğimizi incelemeye çalışalım. İlk olarak bize bu assembly'ı sistem için benzersiz (unique) yapacak bir strong name gerekli. Bir strong name üretmek için,.Net FrameWork'un sn.exe tool'unu kullanabiliriz.
+Bir assembly'ın yukarıda bahsedilen bilgileri AssemblyInfo isimli dosyada tutulmaktadır. Şimdi dilerseniz geliştirmiş olduğumuz PriAsm.dll assembly'ını GAC'e nasıl kayıt edeceğimizi incelemeye çalışalım. İlk olarak bize bu assembly'ı sistem için benzersiz (unique) yapacak bir strong name gerekli. Bir strong name üretmek için, .NET Framework'ün sn.exe tool'unu kullanabiliriz.
 
 ![mk64_10.gif](/assets/images/2004/mk64_10.gif)
 
 Şekil 9. Strong Name'in oluşturulması.
 
-Bu işlemin ardından oluşan Anahtar.sif isimli dosyayı, assembly'ımıza bildirmemiz gerekiyor. Bunun için AssemblyInfo dosyasındaki AssemblyKeyFile niteliğini kullanacağız. (Burada dosya uzantısının sif olmasının özel bir nedeni yok. Ben sifre'nin sif'ini kullandım. Sonuç olarak dosya binary yazılacağı için herhangibir format verilebilir.)
+Bu işlemin ardından oluşan Anahtar.sif isimli dosyayı, assembly'ımıza bildirmemiz gerekiyor. Bunun için AssemblyInfo dosyasındaki AssemblyKeyFile niteliğini kullanacağız. Burada dosya uzantısının sif olmasının özel bir nedeni yok. Ben sifre'nin sif'ini kullandım. Sonuç olarak dosya binary yazılacağı için herhangi bir format verilebilir.
 
 ```csharp
 [assembly: AssemblyKeyFile("D:\\vssamples\\PriAsm\\bin\\debug\\Anahtar.sif")]
 ```
 
-Artık assembly'ımız bir strong name'e sahip. Dolayısıyla GAC içindeki assembly'lardan ve sonradan gelibilecek olan assembly'lardan tamamıyle farklı bir yapıya büründü. Artık oluşturduğumuz bu assembly'ı GAC'e alabiliriz. Bunu iki yolla gerçekleştirebiliriz. İlk olarak,.Net Framework'ün GACUtil.exe tool'unu bu iş için kullanabiliriz.
+Artık assembly'ımız bir strong name'e sahip. Dolayısıyla GAC içindeki assembly'lardan ve sonradan gelebilecek olan assembly'lardan tamamıyla farklı bir yapıya büründü. Artık oluşturduğumuz bu assembly'ı GAC'e alabiliriz. Bunu iki yolla gerçekleştirebiliriz. İlk olarak, .NET Framework'ün GACUtil.exe tool'unu bu iş için kullanabiliriz.
 
 ![mk64_11.gif](/assets/images/2004/mk64_11.gif)
 
@@ -137,7 +137,7 @@ Bu işlemin ardından GAC klasörüne baktığımızda, PriAsm assembly'ımızı
 
 Şekil 11. Assembly'ın GAC'e eklenmesi.
 
-Diğer yandan aynı işlemi, PriAsm.dll dosyasını bu klasöre sürükleyerekte gerçekleştirebiliriz. Artık bu noktadan itibaren, PriAsm assembly'ına ve içindeki sınıflara, herhangibir.net uygulamasından kolayca erişebiliriz. Örneğin, herhangibir.net uygulamasından PriAsm assembly'ına ulaşmak için tek yapmamız gereken assembly'ı uygulamamıza aynı private assembly'larda olduğu gibi referans etmektir. Fakat bu sefer, PriAsm.dll assembly'ını uygulamamızın PE (Portable Executable) dosyasının bulunduğu debug klasörüne almak gibi bir zorunluluğumuz yoktur. Çünkü, programın ilk derlenişinde, PriAsm.dll, GAC'e alınır ve burada tutulur. Dolayısıyla aşağıdaki örnek kodların yer aldığı Console Uygulamasının bulunduğu debug klasörüne PriAsm.dll dosyasının yüklenmesi gerekmez.
+Diğer yandan aynı işlemi, PriAsm.dll dosyasını bu klasöre sürükleyerek de gerçekleştirebiliriz. Artık bu noktadan itibaren, PriAsm assembly'ına ve içindeki sınıflara, herhangi bir .NET uygulamasından kolayca erişebiliriz. Örneğin, herhangi bir .NET uygulamasından PriAsm assembly'ına ulaşmak için tek yapmamız gereken assembly'ı uygulamamıza aynı private assembly'lerde olduğu gibi referans etmektir. Fakat bu sefer, PriAsm.dll assembly'ını uygulamamızın PE (Portable Executable) dosyasının bulunduğu debug klasörüne almak gibi bir zorunluluğumuz yoktur. Çünkü, programın ilk derlenişinde, PriAsm.dll, GAC'e alınır ve burada tutulur. Dolayısıyla aşağıdaki örnek kodların yer aldığı Console uygulamasının bulunduğu debug klasörüne PriAsm.dll dosyasının yüklenmesi gerekmez.
 
 ```csharp
 using System;

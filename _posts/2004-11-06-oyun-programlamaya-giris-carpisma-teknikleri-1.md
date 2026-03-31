@@ -11,47 +11,26 @@ tags:
   - oyun-programlama
   - çarpışma-teorileri
 ---
-Yaklaşık bir ay kadar önce evde dinlenirken, şu ana kadar yaptığım işleri ve projeleri düşündüm. Kesin olarak şunu söyliyebilirim ki, profesyonel anlamda ilgilendiğim ve kullandığım tek dil C# idi. C# dilini kullanarak,.Net platformu altında veritabanı ağırılıklı olmak üzere çeşitli çalışmalar yaptım. Ancak bir süre sonra farkettim ki, bir Matematik Mühendisi olarak lisans eğitimim sırasında gördüğüm o devasa cebir problemleri, teorem ispatları hiç bir zaman işin içine girmemişti. Matematiğin belkide çok az olmakla birlikte dört işleminin ve bir takım algoritmalar için gerekli iteratif ifadelerinin yer aldığı uygulamalar dışında, onu çok yoğun şekilde kullanmamıştım.
+Yaklaşık bir ay kadar önce evde dinlenirken, şu ana kadar yaptığım işleri ve projeleri düşündüm. Kesin olarak şunu söyleyebilirim ki, profesyonel anlamda ilgilendiğim ve kullandığım tek dil C# idi. C# dilini kullanarak, .NET platformu altında veritabanı ağırlıklı olmak üzere çeşitli çalışmalar yaptım. Ancak bir süre sonra fark ettim ki, bir Matematik Mühendisi olarak lisans eğitimim sırasında gördüğüm o devasa cebir problemleri, teorem ispatları hiçbir zaman işin içine girmemişti. Matematiğin belki de çok az olmakla birlikte dört işleminin ve birtakım algoritmalar için gerekli iteratif ifadelerinin yer aldığı uygulamalar dışında, onu çok yoğun şekilde kullanmamıştım.
 
-Belki finansal veya istatistiki bir projede yoğun olarak ekonomi teoremlerini ve bunlara bağlı olarak matematiksel denklemleri kullanmak gerekmekteydi ancak çok yoğun bir şekilde bunları kurcalamamıştım. Düşündükçe, günümüz dünyasında artık algoritmalar ile, matematik ile uğraşan yazılımcıların azaldığı kanısına vardım. Hepimizde matematik temeli var. Hepimiz bu konuda çeşitli sınavlardan geçtik. Ama sonuç itibariyle çok az projede, daha önceden gördüğümüz eşsiz teoremleri kullandık. O dakikalarda neden bu yöne eğilmiyorum, biraz eğlenceli hatta matematik yüklü çalışmalara el atmıyorum diye düşünmeye başladım. Derken çözümü son derece eğlenceli ama bir o kadarda önemli bir sahada buldum. Oyun Programcılığı.
+Belki finansal veya istatistiki bir projede yoğun olarak ekonomi teoremlerini ve bunlara bağlı olarak matematiksel denklemleri kullanmak gerekmekteydi ancak çok yoğun bir şekilde bunları kurcalamamıştım. Düşündükçe, günümüz dünyasında artık algoritmalar ile, matematik ile uğraşan yazılımcıların azaldığı kanısına vardım. Hepimizde matematik temeli var. Hepimiz bu konuda çeşitli sınavlardan geçtik. Ama sonuç itibariyle çok az projede, daha önceden gördüğümüz eşsiz teoremleri kullandık. O dakikalarda neden bu yöne eğilmiyorum, biraz eğlenceli hatta matematik yüklü çalışmalara el atmıyorum diye düşünmeye başladım. Derken çözümü son derece eğlenceli ama bir o kadar da önemli bir sahada buldum: Oyun Programcılığı.
 
-Çoğumuz, yazılım geliştirirken bir gün büyük bir oyunu yazan ekibin içinde olmayı, onun geliştiricilerinden birisi olarak anılmayı hayal etmişizdir. Bu çok çalışmayı ve birazda zeki olmayı gerektiren bir kişilik ister. Kendi kendime düşünürken, elbette günümüzün popüler oyunlarından birisini yazan herhangibir ekipte olabilmek için çok erken olduğunu zaten biliyordum. Ama en azından bir oyun için gerekli en temel bileşene biraz da olsa aşinalığım vardı. Matematik. Oyun programlama içerisinde, oyun motorlarının geliştirilmesinden aksiyonların uygulanışına, yapay zeka taktiklerinden stratejik karar mekanizmalarına kadar her aşamada Matematiksel algoritmaların yer aldığını gayet iyi biliyordum. Benim için bunları öğrenmeye çalışmak, uygulamak ve denemek, benim için heyecan verici olacaktı. Diğer taraftan eski Matematik günlerimi hatırlamış bir başka deyişle saksıyı biraz daha çalıştırmış olacaktım.
+Çoğumuz, yazılım geliştirirken bir gün büyük bir oyunu yazan ekibin içinde olmayı, onun geliştiricilerinden birisi olarak anılmayı hayal etmişizdir. Bu, çok çalışmayı ve biraz da zeki olmayı gerektiren bir kişilik ister. Kendi kendime düşünürken, elbette günümüzün popüler oyunlarından birisini yazan herhangi bir ekipte olabilmek için çok erken olduğunu zaten biliyordum. Ama en azından bir oyun için gerekli en temel bileşene biraz da olsa aşinalığım vardı: Matematik. Oyun programlama içerisinde, oyun motorlarının geliştirilmesinden aksiyonların uygulanışına, yapay zekâ taktiklerinden stratejik karar mekanizmalarına kadar her aşamada matematiksel algoritmaların yer aldığını gayet iyi biliyordum. Benim için bunları öğrenmeye çalışmak, uygulamak ve denemek heyecan verici olacaktı. Diğer taraftan eski matematik günlerimi hatırlamış, bir başka deyişle saksıyı biraz daha çalıştırmış olacaktım.
 
 Büyük bir hevesle bir taslak plan hazırladım ve işe koyuldum. Bana öncelikle oyun programlamadaki temel teknikleri başlangıç seviyesinden itibaren anlatacak ve yeri geldiğinde de uzmanlık seviyesine kadar çıkartacak kitaplar gerekliydi. Hemen Amazon.com'da kısa bir araştırmadan sonra aşağıdaki kitapların siparişlerini verdim.
 
 Oyun Programlama İle İlgili Kaynak Kitaplar
 
-![mk106_6.gif](/assets/images/2004/mk106_6.gif)
-Beginning.Net Game Programming in C#
-APress
-David Weller, Alexandre Santos Lobao, Elen Hatton
-414 Sayfa
-Amazon Fiyatı: 30.59$
+| Kapak | Kitap Adı | Yayınevi | Yazarlar | Sayfa Sayısı | Amazon Fiyatı |
+| --- | --- | --- | --- | --- | --- |
+| ![mk106_6.gif](/assets/images/2004/mk106_6.gif) | Beginning.Net Game Programming in C# | APress | David Weller, Alexandre Santos Lobao, Elen Hatton | 414 | 30.59$ |
+| ![mk106_7.gif](/assets/images/2004/mk106_7.gif) | C# and Game Programming: A Beginner's Guide | AK Peters Ltd. | Salvatore A. Buono | 592 | 39$ |
+| ![mk106_8.gif](/assets/images/2004/mk106_8.gif) | Beginning C# Game Programming (Game Development) | Muska & Lipman/Premier-Trade | Ron Penten | 344 | 20.39$ |
+| ![mk106_9.gif](/assets/images/2004/mk106_9.gif) | Managed DirectX 9 Kick Start: Graphics and Game Programming | Sams | Tom Miller | 432 | 23.79 $ |
 
-![mk106_7.gif](/assets/images/2004/mk106_7.gif)
-C# and Game Programming: A Beginner's Guide
-AK Peters Ltd.
-Salvatore A. Buono
-592 Sayfa
-Amazon Fiyatı: 39$
+Bu anlattığım olaylar yaklaşık bir ay kadar önce gerçekleşti. Şu anda bu kitaplarda az da olsa ilerlemiş durumdayım. İnanın sevgili okurlarım, bu işe giriştiğim için çok ama çok memnunum. Biraz matematik, biraz teori, biraz pratik derken bir şeyler kapmaya başladım bile. Her şeyden önce ilk konularda, eski dostumuz Hipotenüs'ü görmek bile son derece güzeldi. Konuları anlamaya başladığıma göre şimdi tek yapmam gereken öğrendiklerimi uygulayarak pekiştirmek ve sizler ile paylaşmak. Artık bu kadar laf kalabalığından sonra, bu makalemizin konusuna da değinme zamanı geldi.
 
-![mk106_8.gif](/assets/images/2004/mk106_8.gif)
-Beginning C# Game Programming (Game Development)
-Muska & Lipman/Premier-Trade
-Ron Penten
-344 Sayfa
-Amazon Fiyatı: 20.39$
-
-![mk106_9.gif](/assets/images/2004/mk106_9.gif)
-Managed DirectX 9 Kick Start: Graphics and Game Programming
-Sams
-Tom Miller
-432 Sayfa
-Amazon Fiyatı: 23.79 $
-
-Bu anlattığım olaylar yaklaşık bir ay kadar önce gerçekleşti. Şu anda bu kitaplarda az da olsa ilerlemiş durumdayım. İnanın sevgili okurlarım bu işe giriştiğim için çok ama çok memnunum. Biraz matematik, biraz teori biraz pratik derken bir şeyler kapmaya başladım bile. Herşeyden önce ilk konularda, eski dostumuz Hipotenüs'ü görmek bile son derece güzeldi. Konuları anlamaya başladığıma göre şimdi tek yapmam gereken öğrendiklerimi uygulayarak pekiştirmek ve sizler ile paylaşmak. Artık bu kadar laf kalabalığından sonra, bu makalemizin konusunada değinme zamanı geldi.
-
-Bu gün, oyun programlamanın önemli temellerden birisi olan Çarpışma (Collision) tekniklerine giriş yapacağız. Bir oyunda, bir birinden bağımsız öğelerin bir birleriyle çarpışmaları üzerinde duracağımız asıl konu olacak. Bir savaş oyununda tarafların bir birlerine karşı yaptıkları hamleler sonucu kimin kime vurduğunu tespit etmek, vuruşların yönüne veya şiddetine göre, darbeyi alan nesnelerin ne tür hareketlerde bulunacağına karar vermek açısıdından Çarpışma teknikleri gerçekten önemlidir. Bu teknikler bir kaç tanedir. Bu gün ben sizlere, 2 boyutlu koordinat sisteminde dörtgensel şekillerin çarpışmalarının nasıl tespit edilebileceğini anlatmaya çalışacağım.
+Bugün, oyun programlamanın önemli temellerden birisi olan Çarpışma (Collision) tekniklerine giriş yapacağız. Bir oyunda, birbirinden bağımsız öğelerin birbirleriyle çarpışmaları üzerinde duracağımız asıl konu olacak. Bir savaş oyununda tarafların birbirlerine karşı yaptıkları hamleler sonucu kimin kime vurduğunu tespit etmek, vuruşların yönüne veya şiddetine göre, darbeyi alan nesnelerin ne tür hareketlerde bulunacağına karar vermek açısından Çarpışma teknikleri gerçekten önemlidir. Bu teknikler birkaç tanedir. Bugün ben sizlere, 2 boyutlu koordinat sisteminde dörtgensel şekillerin çarpışmalarının nasıl tespit edilebileceğini anlatmaya çalışacağım.
 
 ![dikkat.gif](/assets/images/2004/dikkat.gif)
 Dortgenlerin baz alındığı bu teknikte amaç, objeleri içine alan ve sınırlayan dörtgensel alanların birbirleri üstüne gelip gelmediklerinin tespit edilebilmesidir.

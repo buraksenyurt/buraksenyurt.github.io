@@ -10,7 +10,7 @@ tags:
   - pisagor
   - matematik
 ---
-Hatırlayacağınız gibi bir önceki makalemizde, Oyun Programcılığına girmek adına çarpışma tekniklerini incelemeye başlamış ve dörtgenlerin çarpışmalarını ele almıştık. Bugünkü makalemizde ise, dairesel şekillerin birbirleri ile olan çarpışmalarını incelemeye çalışacağız. Dairesel şekillerin çarpışmasına verilebilecek en güzel örnek, kaynaklardan edindiğim bilgiye göre Bilardo oyunlarıdır. Burada gerçekten de mükemmel dairelerin birbirleriyle olan çarpışmaları söz konusudur. Şunuda hatırlatmakta fayda var. Şu an için teorilerimizi iki boyutlu uzayda inceliyoruz. Elbetteki işin için üç boyutlu cisimler girdiğinde kullanacağımız algoritmalar ve teknikler birazda olsa farklılık gösterecektir. Çünkü uzay boyutunda X ve Y koordinatlarına ek olarak Z koordinatlarıda işin içine girecektir. Bu da iki boyutlu bir sistemde Bilardo oyunun tasarlanmasının 3 boyutlu sistemdekine göre daha kolay olduğunu göstermektedir.
+Hatırlayacağınız gibi bir önceki makalemizde, Oyun Programcılığına girmek adına çarpışma tekniklerini incelemeye başlamış ve dörtgenlerin çarpışmalarını ele almıştık. Bugünkü makalemizde ise, dairesel şekillerin birbirleri ile olan çarpışmalarını incelemeye çalışacağız. Dairesel şekillerin çarpışmasına verilebilecek en güzel örnek, kaynaklardan edindiğim bilgiye göre bilardo oyunlarıdır. Burada gerçekten de mükemmel dairelerin birbirleriyle olan çarpışmaları söz konusudur. Şunu da hatırlatmakta fayda var: Şu an için teorilerimizi iki boyutlu uzayda inceliyoruz. Elbette ki işin içine üç boyutlu cisimler girdiğinde kullanacağımız algoritmalar ve teknikler biraz da olsa farklılık gösterecektir. Çünkü uzay boyutunda X ve Y koordinatlarına ek olarak Z koordinatları da işin içine girecektir. Bu da iki boyutlu bir sistemde bilardo oyununun tasarlanmasının 3 boyutlu sistemdekine göre daha kolay olduğunu göstermektedir.
 
 Dairesel nesnelerin çarpışmalarını belirlemek için eski dostumuz Pisagor Teoreminden faydalanacağız. Burada ana fikir, dairelerin merkezlerinin birbirlerine olan doğrusal uzaklıkları ile yarıçaplarının toplamlarının karşılaştırılmasıdır. Eğer, dairelerin merkezleri arası doğrusal uzaklık, dairelerin yarıçapları toplamından küçük ise, dairelerin üst üste geldiklerinden dolayısıyla çarpıştıklarından söz edebiliriz. Olayı aşağıdaki şekil ile ele almaya çalışalım.
 
@@ -24,7 +24,7 @@ Burada bizim için anahtar şekil, dairelerin merkezleri arasında oluşan BMA d
 
 Şekil 2. Çarpışma Teorimiz.
 
-Görüldüğü gibi yapmamız gereken, X ve Y koordinatları arasındaki mesafelerden yararlanarak, üçgenin hiptoneüsünü (yani iki daire merkezi arasındaki doğrusal uzaklığı) bulmak ve bulduğumuz değeri, yarıçapların toplamı ile karşılaştırmaktır. Şimdi dilerseniz, bu teoriyi C# ile geliştirilmiş bir windows uygulamasında nasıl simule edeceğimize bakalım. Geliştireceğimiz uygulama her zamanki gibi basit ve anlamsız olacak. Ancak amacımız, yukarıdaki teoremi uygulamak ve sonuçlarını görmek. Bu amaçla aşağıdaki ekran görüntüsüne ait bir windows uygulaması geliştirdim.
+Görüldüğü gibi yapmamız gereken, X ve Y koordinatları arasındaki mesafelerden yararlanarak, üçgenin hipotenüsünü (yani iki daire merkezi arasındaki doğrusal uzaklığı) bulmak ve bulduğumuz değeri, yarıçapların toplamı ile karşılaştırmaktır. Şimdi dilerseniz, bu teoriyi C# ile geliştirilmiş bir Windows uygulamasında nasıl simüle edeceğimize bakalım. Geliştireceğimiz uygulama her zamanki gibi basit ve anlamsız olacak. Ancak amacımız, yukarıdaki teoremi uygulamak ve sonuçlarını görmek. Bu amaçla aşağıdaki ekran görüntüsüne ait bir Windows uygulaması geliştirdim.
 
 ![mk107_3.gif](/assets/images/2004/mk107_3.gif)
 
@@ -130,13 +130,13 @@ Top2_X=Top2.Left+Top2_R;
 Top2_Y=Top2.Top+Top2_R;
 ```
 
-Bunun dışında Hipotenüs hesaplamasında elbetteki karekök almak için Math sınıfının Sqrt fonksiyonundan yaralanmaktayız.
+Bunun dışında hipotenüs hesaplamasında elbette ki karekök almak için Math sınıfının Sqrt fonksiyonundan yararlanmaktayız.
 
 ```csharp
 Hipotenus=Math.Sqrt((Fark_X*Fark_X)+(Fark_Y*Fark_Y));
 ```
 
-Uygulamamızı çalıştırdığımızda, Top2 isimli nesneyi herhangibir yönden Top1 isimli nesne üstüne getirirsek çarpışmanın meydana geldiğini kolayca tespit edebiliriz.
+Uygulamamızı çalıştırdığımızda, Top2 isimli nesneyi herhangi bir yönden Top1 isimli nesnenin üstüne getirirsek çarpışmanın meydana geldiğini kolayca tespit edebiliriz.
 
 ![mk107_4.gif](/assets/images/2004/mk107_4.gif)
 

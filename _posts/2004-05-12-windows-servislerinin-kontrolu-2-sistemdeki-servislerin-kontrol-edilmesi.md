@@ -7,7 +7,7 @@ categories:
 tags:
   - windows-services
 ---
-Bu makalemizde, sistemde yer alan windows servislerini bir windows uygulamasından nasıl elde edebileceğimizi ve nasıl kontrol edebileceğimizi incelemeye çalışacağız. Önceki makalelerimizden hatırlayacağınız gibi, sistemde yer alan servislerimiz, System.ServiceProcess isim alanında yer alan ServiceController sınıf nesneleri ile temsil edilmektedir. Eğer sistemde yer alan servisleri elde etmek istersek, aşağıda aşırı yüklenmiş iki prototipi olan, GetServices metodunu kullanabiliriz.
+Bu makalemizde, sistemde yer alan Windows servislerini bir Windows uygulamasından nasıl elde edebileceğimizi ve nasıl kontrol edebileceğimizi incelemeye çalışacağız. Önceki makalelerimizden hatırlayacağınız gibi, sistemde yer alan servislerimiz, System.ServiceProcess isim alanında yer alan ServiceController sınıf nesneleri ile temsil edilmektedir. Eğer sistemde yer alan servisleri elde etmek istersek, aşağıda aşırı yüklenmiş iki prototipi olan, GetServices metodunu kullanabiliriz.
 
 GetServices Metodu Prototipleri
 Açıklaması
@@ -18,14 +18,14 @@ Bu prototip ile, local makinede yer alan servisler elde edilir.
 public static ServiceController[] GetServices (string);
 Bu prototipte, parametre olarak verilen makine bilgisine ait servisler elde edilir.
 
-Burada görüldüğü gibi, GetServices metodu ServiceController sınıfı türünden bir diziyi geri döndürür. Ayrıca bu metod static bir metod oluduğundan, doğrudan ServiceController sınıfı üzerinden herhangibir nesne örneğine gerek duymadan çağırılabilir. Aşağıda örnek olarak sistemdeki servislerin elde ediliş tekniği gösterilmektedir.
+Burada görüldüğü gibi, GetServices metodu ServiceController sınıfı türünden bir diziyi geri döndürür. Ayrıca bu metod static bir metod olduğundan, doğrudan ServiceController sınıfı üzerinden herhangi bir nesne örneğine gerek duymadan çağrılabilir. Aşağıda örnek olarak sistemdeki servislerin elde ediliş tekniği gösterilmektedir.
 
 ```csharp
 ServiceController[] svc;
 svc=ServiceController.GetServices();
 ```
 
-Elde edilen servislerin herbiri birer ServiceController nesnesi olarak, ele alınır. Elde ettiğimiz servislerin üzerinde bildiğiniz gibi, bir servisin temel davranışları olan Start,Stop,Pause,Contiune,ExecuteCommand vb.larını aşağıda prototipi verilen metodlar yardımıyla gerçekleştirebilmekteyiz.
+Elde edilen servislerin her biri birer ServiceController nesnesi olarak ele alınır. Elde ettiğimiz servislerin üzerinde bildiğiniz gibi, bir servisin temel davranışları olan Start, Stop, Pause, Continue, ExecuteCommand vb. işlemlerini aşağıda prototipi verilen metodlar yardımıyla gerçekleştirebilmekteyiz.
 
 Metod
 Prototip
@@ -58,7 +58,7 @@ Birazdan geliştireceğimiz örnek uygulamada, sistedemki servisler üzerinde yu
 public ServiceControllerStatus Status {get;}
 ```
 
-Burada görüldüğü gibi Status özelliği ServiceControllerStatus numaralandırıcısı türünden değerler alabilmektedir. Bu numaralandırıcının alacağı değerler servisin o anki durumu hakkında bilgi vermektedir. Status özelliği sadece get bloğuna sahip olduğundan, yanlızca servisin o anki durumu hakkında bilgi vermektedir. ServiceControllerStatus numaralandırıcısının alabileceği değerler aşağıdaki tabloda belirtilmektedir.
+Burada görüldüğü gibi Status özelliği ServiceControllerStatus numaralandırıcısı türünden değerler alabilmektedir. Bu numaralandırıcının alacağı değerler servisin o anki durumu hakkında bilgi vermektedir. Status özelliği sadece get bloğuna sahip olduğundan, yalnızca servisin o anki durumu hakkında bilgi vermektedir. ServiceControllerStatus numaralandırıcısının alabileceği değerler aşağıdaki tabloda belirtilmektedir.
 
 ServiceControllerStatus Değeri
 Açıklama
@@ -108,9 +108,9 @@ Biz uygulamamızda WaitForStatus metodunu, bir servise Start,Stop,Pause ve Conti
 
 Şekil 2. Servisin çalıştırılması sırasındaki bekleme işlemi.
 
-SCM yardımıyla bir servisi çalıştırdığımızda (Start) yukarıdaki gibi bir pencere ile karşılaşırız. Burada servis, StartPending konumundadır. Servis çalışmaya başladığında yani Running konumuna geldiğinde, artık StartPending konumundan çıkar. Lakin bu süre zarfında SCM uygulamasının bir süre duraksadığını görürüz. Bu duraksama servis Running halini alıncaya kadar sürer. İşte bunu sağlayan aslında WaitForStatus mekanizmasından başka bir şey değildir. Bu sayede servis Running moduna geçtiğinde, güncelenen listede servisin durumu Running olarak yazacaktır. Eğer WaitForStatus tekniği kullanılmamış olsaydı, bu durumda servis Start edildiğinde ve liste güncellendiğinde ilk aşamada Servisin durumu StartPending olucak ve ancak sonraki liste güncellemesinde Running yazacaktı. Bizde uygulamamızda WaitForStatus metodunu bu amaçla kullanacağız. Yani servis kesin olarak istediğimiz duruma ulaştığında, listemizi güncelliyeceğiz.
+SCM yardımıyla bir servisi çalıştırdığımızda (Start) yukarıdaki gibi bir pencere ile karşılaşırız. Burada servis, StartPending konumundadır. Servis çalışmaya başladığında yani Running konumuna geldiğinde, artık StartPending konumundan çıkar. Lakin bu süre zarfında SCM uygulamasının bir süre duraksadığını görürüz. Bu duraksama servis Running hâlini alıncaya kadar sürer. İşte bunu sağlayan aslında WaitForStatus mekanizmasından başka bir şey değildir. Bu sayede servis Running moduna geçtiğinde, güncellenen listede servisin durumu Running olarak yazacaktır. Eğer WaitForStatus tekniği kullanılmamış olsaydı, bu durumda servis Start edildiğinde ve liste güncellendiğinde ilk aşamada servisin durumu StartPending olacak ve ancak sonraki liste güncellemesinde Running yazacaktı. Biz de uygulamamızda WaitForStatus metodunu bu amaçla kullanacağız. Yani servis kesin olarak istediğimiz duruma ulaştığında, listemizi güncelleyeceğiz.
 
-ServiceController sınıfı için kullanılacak diğer önemli bir özellikte CanPauseAndContinue özelliğidir. Bazı servislerin bu özellik değeri false olduğu için, bu servislerin Pause ve Continue emirlerine cevap vermesi olanaksızdır. İşte uygulamamızda bizde bir servisin bu durumunu kontrol edicek ve ona göre Pause ve Continue emirlerine izin vereceğiz. CanPauseAndContinue özelliğinin prototipi aşağıdaki gibidir.
+ServiceController sınıfı için kullanılacak diğer önemli bir özellik de CanPauseAndContinue özelliğidir. Bazı servislerin bu özellik değeri false olduğu için, bu servislerin Pause ve Continue emirlerine cevap vermesi olanaksızdır. İşte uygulamamızda biz de bir servisin bu durumunu kontrol edecek ve ona göre Pause ve Continue emirlerine izin vereceğiz. CanPauseAndContinue özelliğinin prototipi aşağıdaki gibidir.
 
 ```csharp
 public bool CanPauseAndContinue {get;}
@@ -124,7 +124,7 @@ public ServiceController[] ServicesDependedOn {get;}
 
 Prototipten de görüldüğü gibi bu özellik, ServiceController sınıfı türünden bir dizi geriye döndürmektedir. Dolayısıyla bu özellik yardımıyla sistemdeki servislerin bağlı oldukları servisleride elde etme imkanına sahibiz.
 
-Şimdi dilerseniz buraya kadar işlediğimiz yanları ile, ServiceController sınıfını kullandığımız bir örnek geliştirmeye çalışalım. Bu örneğimizde, sistemimizdeki servislerin listesini elde edeceğiz. Seçtiğimiz bir servis üzerinde Start, Stop, Pause, Continue gibi emirleri yerine getireceğiz ve bir servise bağlı olan servislerin listesine bakabileceğiz. Bu amaçla öncelikle aşağıdakine benzer bir windows uygulama formu oluşturarak işe başlayalım.
+Şimdi dilerseniz buraya kadar işlediğimiz yanları ile, ServiceController sınıfını kullandığımız bir örnek geliştirmeye çalışalım. Bu örneğimizde, sistemimizdeki servislerin listesini elde edeceğiz. Seçtiğimiz bir servis üzerinde Start, Stop, Pause, Continue gibi emirleri yerine getireceğiz ve bir servise bağlı olan servislerin listesine bakabileceğiz. Bu amaçla öncelikle aşağıdakine benzer bir Windows uygulama formu oluşturarak işe başlayalım.
 
 ![mk69_3.gif](/assets/images/2004/mk69_3.gif)
 
@@ -276,4 +276,4 @@ Uygulamamızı çalıştıralım, sistemdeki servisleri elde edelim ve örneğin
 
 Şekil 5. Alerter servisi çalıştırıldı ve bağlı olan servis elde edildi.
 
-Geliştirmiş olduğumuz uygulamada olaşabilecek pek çok hata var. Örneğin listede hiç bir servis seçili değilken oluşabilecek istisnalar gibi. Bu tarz istisnaların ele alınmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+Geliştirmiş olduğumuz uygulamada oluşabilecek pek çok hata var. Örneğin listede hiçbir servis seçili değilken oluşabilecek istisnalar gibi. Bu tarz istisnaların ele alınmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.

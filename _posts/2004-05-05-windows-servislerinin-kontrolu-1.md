@@ -9,25 +9,25 @@ tags:
   - ServiceController
   - eventlog
 ---
-Bu makalemizde, windows servislerinin, bir windows uygulamasından nasıl kontrol edilebileceğini incelemeye çalışacağız. Bir önceki makalemizde, windows servislerinin nasıl oluşturulduğunu ve sisteme nasıl yüklendiklerini incelemiştik. Oluşturduğumuz windows servislerini (sistemdeki windows servislerini), SCM yardımıyla yönetibilmekteyiz. Ancak dilersek, bu yönetimi programlarımız içindende gerçekleştirebiliriz. Bunu sağlayabilmek için, System.ServiceProcess isim alanında yer alan ServiceController sınıfını ve üyelerini kullanmaktayız.
+Bu makalemizde, Windows servislerinin, bir Windows uygulamasından nasıl kontrol edilebileceğini incelemeye çalışacağız. Bir önceki makalemizde, Windows servislerinin nasıl oluşturulduğunu ve sisteme nasıl yüklendiklerini incelemiştik. Oluşturduğumuz Windows servislerini yani sistemdeki Windows servislerini SCM yardımıyla yönetebilmekteyiz. Ancak dilersek, bu yönetimi programlarımız içinden de gerçekleştirebiliriz. Bunu sağlayabilmek için, System.ServiceProcess isim alanında yer alan ServiceController sınıfını ve üyelerini kullanmaktayız.
 
-ServiceController sınıfı ile windows servislerine bağlanabilir ve onları kontrol edebiliriz. Örneğin servisleri başlatabilir, durdurabilir veya sistemdeki servisleri elde edebiliriz. Bu ve benzeri olanaklar dışında SCM ile yapamıyacağımız bir olayıda gerçekleştirebiliriz. Bu olay windows servislerinin OnCustomCommand metodu üzerinde işlemektedir. Bir windows servisinin OnCustomCommand metodu sayesinde servisimize standart işlevselliklerinin haricinde yeni işlevsellikler kazandırabiliriz. Prototipi aşağıdaki gibi olan OnCustomCommand metodu integer tipinden bir parametre almaktadır.
+ServiceController sınıfı ile Windows servislerine bağlanabilir ve onları kontrol edebiliriz. Örneğin servisleri başlatabilir, durdurabilir veya sistemdeki servisleri elde edebiliriz. Bu ve benzeri olanaklar dışında SCM ile yapamayacağımız bir olayı da gerçekleştirebiliriz. Bu olay Windows servislerinin OnCustomCommand metodu üzerinde işlemektedir. Bir Windows servisinin OnCustomCommand metodu sayesinde servisimize standart işlevselliklerinin haricinde yeni işlevsellikler kazandırabiliriz. Prototipi aşağıdaki gibi olan OnCustomCommand metodu integer tipinden bir parametre almaktadır.
 
 ```csharp
 protected virtual void OnCustomCommand(int command);
 ```
 
-OnCustomCommand metodunu herhangibir windows uygulamasından çağırabilmek için, ServiceController sınıfının ExecuteMethod metodu kullanılır. Integer tipindeki parametre 128 ile 256 arasında sayısal değerler alır. Metoda gönderilen parametre değerine göre, OnCustomCommand metodunun farklı işlevsellikleri yerine getirmesini sağlayabiliriz. ServiceController sınıfı ile yapabileceklerimiz aşağıdaki şekilde kısaca özetlenmiştir.
+OnCustomCommand metodunu herhangi bir Windows uygulamasından çağırabilmek için, ServiceController sınıfının ExecuteMethod metodu kullanılır. Integer tipindeki parametre 128 ile 256 arasında sayısal değerler alır. Metoda gönderilen parametre değerine göre, OnCustomCommand metodunun farklı işlevsellikleri yerine getirmesini sağlayabiliriz. ServiceController sınıfı ile yapabileceklerimiz aşağıdaki şekilde kısaca özetlenmiştir.
 
 ![mk68_1.gif](/assets/images/2004/mk68_1.gif)
 
 Şekil 1. ServiceController Sınıfı İle Yapabileceklerimiz.
 
-Servislerimizi programatik olarak nasıl kontrol edebileceğimize geçmeden önce, konumuz ile ilgili basit bir windows servisi yazarak işe başlayalım. Bu servisimizde, kendi oluşturacağımız bir Event Log içerisinde, sistemdeki sürücülerinin boş alan kapasitelerine ait bilgileri tutacağız. Bu amaçlada, servisimize bir Performance Counter ekleyeceğiz. Ayrıca servisimize bir timer kontrolü koyacak ve bu kontrol ile belirli periyotlarda servisin, boş alan bilgilerini kontrol etmesini ve belli bir serviyenin altına inilirse Event Log'umuza bunu bir uyarı simgesi ile birlikte yazmasını sağlayacağız.
+Servislerimizi programatik olarak nasıl kontrol edebileceğimize geçmeden önce, konumuz ile ilgili basit bir Windows servisi yazarak işe başlayalım. Bu servisimizde, kendi oluşturacağımız bir Event Log içerisinde, sistemdeki sürücülerin boş alan kapasitelerine ait bilgileri tutacağız. Bu amaçla da, servisimize bir Performance Counter ekleyeceğiz. Ayrıca servisimize bir timer kontrolü koyacak ve bu kontrol ile belirli periyotlarda servisin, boş alan bilgilerini kontrol etmesini ve belli bir seviyenin altına inilirse Event Log'umuza bunu bir uyarı simgesi ile birlikte yazmasını sağlayacağız.
 
-Bununla birlikte, OnCustomCommand metodunu uygulamamızdan çalıştıracak ve gönderdiğimiz parametre değerine göre servisin değişik işlevleri yerine getirmesini sağayacağız. Örneğin kullanıcının boş alan kontrol süresini ve alt sınır değerlerini programatik olarak belirleyebilmesini ve servisteki ilgili değerleri buna göre değiştirebilmesini sağlayacağız. Elbette bu değişiklikler servisin çalışma süresi boyunca geçerli olucaktır.
+Bununla birlikte, OnCustomCommand metodunu uygulamamızdan çalıştıracak ve gönderdiğimiz parametre değerine göre servisin değişik işlevleri yerine getirmesini sağlayacağız. Örneğin kullanıcının boş alan kontrol süresini ve alt sınır değerlerini programatik olarak belirleyebilmesini ve servisteki ilgili değerleri buna göre değiştirebilmesini sağlayacağız. Elbette bu değişiklikler servisin çalışma süresi boyunca geçerli olacaktır.
 
-Şimdi dilerseniz servisimi oluşturalım. Öncelikle vs.net ortamında, yeni bir windows service projesi açıyoruz. Projemizin adı, BosAlanTakip olsun. Ardından servisimizin özelliklerinden adını ve servise ait kodlarda yer alan Service1'i, BosAlanTakipServis olarak değiştirelim. Bununla birlikte Soluiton Explorer'da Service1.cs kod dosyamızın adınıda BosAlanTakipServis.cs olarak değiştirelim. Sonraki adımımız ise, servisin özelliklerinden AutoLog özelliğine false değerini atamak. Nitekim biz bu servisimizde kendi yazacağımız Event Log'u kullanmak istiyoruz.
+Şimdi dilerseniz servisimizi oluşturalım. Öncelikle VS.NET ortamında, yeni bir Windows service projesi açıyoruz. Projemizin adı, BosAlanTakip olsun. Ardından servisimizin özelliklerinden adını ve servise ait kodlarda yer alan Service1'i, BosAlanTakipServis olarak değiştirelim. Bununla birlikte Solution Explorer'da Service1.cs kod dosyamızın adını da BosAlanTakipServis.cs olarak değiştirelim. Sonraki adımımız ise, servisin özelliklerinden AutoLog özelliğine false değerini atamak. Nitekim biz bu servisimizde kendi yazacağımız Event Log'u kullanmak istiyoruz.
 
 ![mk68_2.gif](/assets/images/2004/mk68_2.gif)
 
@@ -45,19 +45,19 @@ Servisimizin kodlarını yazmadan önce, Custom Event Log'umuzu ekleyeceğiz. Bu
 
 Şekil 4. EventLog nesnemizin özellikleri.
 
-Artık log bilgilerini, servisimize eklediğimiz eventLog1 nesnesini kullanararak oluşturacağız. Sırada servisimize bir Performance Counter nesnesi eklemek var. Servislerimizde kullanabileceğimiz Performance Counter öğelerini, Solution Explorer pencersinde yer alan Performance Counter sekmesinden izleyebiliriz. Sistemde yüklü olan pek çok Performance Counter vardır.
+Artık log bilgilerini, servisimize eklediğimiz eventLog1 nesnesini kullanarak oluşturacağız. Sırada servisimize bir Performance Counter nesnesi eklemek var. Servislerimizde kullanabileceğimiz Performance Counter öğelerini, Solution Explorer penceresinde yer alan Performance Counter sekmesinden izleyebiliriz. Sistemde yüklü olan pek çok Performance Counter vardır.
 
 ![mk68_5.gif](/assets/images/2004/mk68_5.gif)
 
 Şekil 5. Sistemdeki Performance Counter'lardan bazıları.
 
-Biz bu örneğimizde, LogicalDisk sekmesinde yer alan Free MegaBytes öğesini kullancağız. Bu sayaç yardımıyla, servisimizden, sistemdeki bir hardisk'in boş alan bilgilerini elde edebileceğiz. Bu amaçla buradaki C: sürücüsünü servisimiz üzerine sürüklüyoruz.
+Biz bu örneğimizde, LogicalDisk sekmesinde yer alan Free MegaBytes öğesini kullanacağız. Bu sayaç yardımıyla, servisimizden, sistemdeki bir hard disk'in boş alan bilgilerini elde edebileceğiz. Bu amaçla buradaki C: sürücüsünü servisimiz üzerine sürüklüyoruz.
 
 ![mk68_6.gif](/assets/images/2004/mk68_6.gif)
 
-Şekil 6. Kullancağımız Performance Counter öğesi.
+Şekil 6. Kullanacağımız Performance Counter öğesi.
 
-Diğer ihtiyacımız olan nesne bir Timer. Bunun için yine Components sekmesinden Timer nesnesini, servisimizin tasarım ekranına sürüklememiz yeterli. Daha sonra Timer nesnesinin interval özelliğinin değerini 600000 olarak değiştirelim. Bu yaklaşık olarak 10 dakikada (1000 milisaniye * 10 dakika * 60 saniye) bir, Timer nesnesinin Elapsed olayının çalıştırılılacağını belirtmektedir. Biz bu olay içerisinden C sürücüsündeki boş alan miktarını kontrol etmeyi planlıyoruz. Elbette süreyi başlangıçta 10 dakika olarak belirlememize rağmen geliştireceğimiz windows uygulamasında bu sürenin kullanıcı tarafından değiştirilebilmesini sağlıyacağız. Bu ayarlamaların ardından servisimiz için gerekli kodları yazmaya geçebiliriz.
+Diğer ihtiyacımız olan nesne bir Timer. Bunun için yine Components sekmesinden Timer nesnesini, servisimizin tasarım ekranına sürüklememiz yeterli. Daha sonra Timer nesnesinin interval özelliğinin değerini 600000 olarak değiştirelim. Bu yaklaşık olarak 10 dakikada (`1000 milisaniye * 10 dakika * 60 saniye`) bir, Timer nesnesinin Elapsed olayının çalıştırılacağını belirtmektedir. Biz bu olay içerisinden C sürücüsündeki boş alan miktarını kontrol etmeyi planlıyoruz. Elbette süreyi başlangıçta 10 dakika olarak belirlememize rağmen geliştireceğimiz Windows uygulamasında bu sürenin kullanıcı tarafından değiştirilebilmesini sağlayacağız. Bu ayarlamaların ardından servisimiz için gerekli kodları yazmaya geçebiliriz.
 
 ```csharp
 using System;
@@ -151,9 +151,9 @@ namespace BosAlanTakip
 }
 ```
 
-Servisimizin kodlarınıda böylece hazırlamış olduk. Şimdi servisimiz için gerekli olan installer'larımızı servisimizin tasarım ekranında sağ tuşla açtığımız menüden, Add Installer öğesini seçerek ekleyelim. Önce ServiceInstaller1'in özelliklerinden Display Name özelliğinin değerini, Bos Alan Takip olarak değiştirelim. Böylece servisimizin, services sekmesinde görünen ismini belirlemiş oluruz. Ardından ServiceProcessInstaller1 nesnemizin, Account özelliğinin değerini, LocalSystem olarak değiştirelim. Böylece sistemi açan herkes bu servisi kullanabilecek.
+Servisimizin kodlarını da böylece hazırlamış olduk. Şimdi servisimiz için gerekli olan installer'larımızı servisimizin tasarım ekranında sağ tuşla açtığımız menüden, Add Installer öğesini seçerek ekleyelim. Önce ServiceInstaller1'in özelliklerinden Display Name özelliğinin değerini, Bos Alan Takip olarak değiştirelim. Böylece servisimizin, Services sekmesinde görünen ismini belirlemiş oluruz. Ardından ServiceProcessInstaller1 nesnemizin, Account özelliğinin değerini, LocalSystem olarak değiştirelim. Böylece sistemi açan herkes bu servisi kullanabilecek.
 
-Diğer yandan oluşturduğumuz Custom Event Log içinde bir installer oluşturmamız gerekiyor ki installUtil tool'u ile servisimizi sisteme kurduğumuzda, sistedeki Event Log'lar içerisine, oluşturduğumuz Custom Event Log'da kurulabilsin. Bu amaçla, eventLog1 nesnemiz üzerinde sağ tuşa basıp çıkan menüden Add Installer'ı seçiyoruz. Bu sayede, Event Log'umuz için, bir adet eventLogInstaller'ın oluşturulduğunu görürüz. Bu işemlerin ardından windows servis uygulamamızı derleyelim ve servisimizi sisteme yükleyebilmek için installUtil, vs.net tool'unu aşağıdaki gibi kullanalım.
+Diğer yandan oluşturduğumuz Custom Event Log içinde bir installer oluşturmamız gerekiyor ki installUtil tool'u ile servisimizi sisteme kurduğumuzda, sistemdeki Event Log'lar içerisine, oluşturduğumuz Custom Event Log da kurulabilsin. Bu amaçla, eventLog1 nesnemiz üzerinde sağ tuşa basıp çıkan menüden Add Installer'ı seçiyoruz. Bu sayede, Event Log'umuz için, bir adet eventLogInstaller'ın oluşturulduğunu görürüz. Bu işlemlerin ardından Windows servis uygulamamızı derleyelim ve servisimizi sisteme yükleyebilmek için installUtil, VS.NET tool'unu aşağıdaki gibi kullanalım.
 
 ```csharp
 installUtil BosAlanTakip.exe
@@ -179,13 +179,13 @@ Ben servisi test etmek için, C sürücüsündeki boş alanı biraz daha düşü
 
 Şekil 9. System.ServiceProcess isim alanının uygulamaya eklenmesi.
 
-Öncelikle servisimizi temsil edicek ServiceController sınıfı türünden bir nesne oluşturacağız. ServiceController sınıfından nesnemizi oluştururken aşağıda prototipi verilen yapıcı metodu kullanıyoruz. Bu yapıcı, servisin tam adını parametre olarak string türünden almaktadır.
+Öncelikle servisimizi temsil edecek ServiceController sınıfı türünden bir nesne oluşturacağız. ServiceController sınıfından nesnemizi oluştururken aşağıda prototipi verilen yapıcı metodu kullanıyoruz. Bu yapıcı, servisin tam adını parametre olarak string türünden almaktadır.
 
 ```csharp
 public ServiceController(string serviceName);
 ```
 
-ServiceController sınıfına ait nesne örneğini kullanarak servisimize ilişkin pek çok bilgiyi elde edebiliriz. Örneğin, servisin görünen adını DisplayName özelliği ile, servisin çalıştığı makine adını MachineName özelliği ile elde edebiliriz. ServiceController sınıfının üyeleri yardımıyla sistemimizde kurulu olan servislere ait pek çok bilgiyi temin edebiliriz. Bu konuyu bir sonraki makalemizde incelemeye çalışacağız. Şimdi dilerseniz servisimizi kontrol ediceğimiz kısa windows uygulamamızın kodlarını yazalım.
+ServiceController sınıfına ait nesne örneğini kullanarak servisimize ilişkin pek çok bilgiyi elde edebiliriz. Örneğin, servisin görünen adını DisplayName özelliği ile, servisin çalıştığı makine adını MachineName özelliği ile elde edebiliriz. ServiceController sınıfının üyeleri yardımıyla sistemimizde kurulu olan servislere ait pek çok bilgiyi temin edebiliriz. Bu konuyu bir sonraki makalemizde incelemeye çalışacağız. Şimdi dilerseniz servisimizi kontrol edeceğimiz kısa Windows uygulamamızın kodlarını yazalım.
 
 ```csharp
 ServiceController sc; /* Servisimizi kontrol edicek olan ServiceController sınıf nesnemiz tanımlanıyor.*/

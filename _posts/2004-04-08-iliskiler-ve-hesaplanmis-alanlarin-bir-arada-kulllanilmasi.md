@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "İlişkiler ve Hesaplanmış Alanların Bir Arada Kulllanılması"
+title: "İlişkiler ve Hesaplanmış Alanların Bir Arada Kullanılması"
 date: 2004-04-08 12:00:00 +0300
 categories:
   - Framework Tabanlı Programlama
@@ -11,7 +11,7 @@ tags:
   - calculated
   - csharp
 ---
-Bu makalemizde aralarında bire-çok (one-to-many) ilişki olan tablolar için hesaplanmış alanların, (yani DataColumn sınıfının Expression özelliği ile oluşturduğumuz sütunların) tablolar arasındaki ilişkiler ile nasıl bir arada kullanılabileceğini incelemeye çalışacağız. Burada bir arada kullanımdan kastım, örnek olarak; ebevyn (parent) tabloda fiziki olarak var olmayan ancak uygulamanın çalışması sırasında oluşturulacak bir sütundan, detay tablosundaki ilişkili alanlar üzerinden toplam, ortalama, miktar gibi Aggregate ifadelerinin çalıştırılmasından ve sonuçların yine parent tabloya yansıtılmasından bahsediyorum.
+Bu makalemizde aralarında bire-çok (one-to-many) ilişki olan tablolar için hesaplanmış alanların, yani DataColumn sınıfının Expression özelliği ile oluşturduğumuz sütunların, tablolar arasındaki ilişkiler ile nasıl bir arada kullanılabileceğini incelemeye çalışacağız. Burada bir arada kullanımdan kastım, örnek olarak; ebeveyn (parent) tabloda fiziki olarak var olmayan ancak uygulamanın çalışması sırasında oluşturulacak bir sütundan, detay tablosundaki ilişkili alanlar üzerinden toplam, ortalama, miktar gibi Aggregate ifadelerinin çalıştırılmasından ve sonuçların yine parent tabloya yansıtılmasından bahsediyorum.
 
 Konumuzun ana problemini daha iyi anlamak için şu örneği göz önünde bulunduralım. Internet üzerinden ticaret yapan sitemizde kullanıcıların temel bilgileri ile, vermiş oldukları sipariş bilgilerinin ayrı iki tabloda tutulduğunu ve bu tablolar arasında bire-çok ilişki olduğunu varsayalım. Kendimize ait yönetici ekranlarında, her bir üye için, bu güne kadar vermiş olduğu siparişlerin toplam sayısını ve bu siparişlerin hepsine ödemiş olduğu toplam tutarları anlık olarak görmek istediğimizi varsayalım. Burada bize, ebevyn tabloda bir hesaplanmış alan gerekmektedir. Ancak hesaplanmış alan değerleri, detay tablosundaki veriler üzerinden gerçekleştirilmek zorundadır. İşte bu noktada devreye iki tablo arasında tanımlamış olduğumuz bire-çok ilişki girer.
 
@@ -21,7 +21,7 @@ Problemi ve ne yapmak istediğimizi kısaca anlattıktan sonra dilerseniz bunu g
 
 Şekil 1. Tablolarımızın Yapısı ve Aralarındaki Bire-Çok İlişki.
 
-Bu iki tabloyu göz önüne aldığımızda, bir üyeye ait birden fazla siparişin olabileceğini görürüz. Uygulamamız bittiğinde, DataGrid nesnemizde, her bir üyenin bu güne kadar vermiş olduğu siparişlerin toplam sayısını ve ödemiş olduğu toplam miktarları gösterecek iki yeni sütunumuz olucak. Hiç vakit kaybetmeden uygulamamızın kodlarını yazmaya başlayalım. Önce, aşağıdaki gibi bir Form tasarlayalım.
+Bu iki tabloyu göz önüne aldığımızda, bir üyeye ait birden fazla siparişin olabileceğini görürüz. Uygulamamız bittiğinde, DataGrid nesnemizde, her bir üyenin bugüne kadar vermiş olduğu siparişlerin toplam sayısını ve ödemiş olduğu toplam miktarları gösterecek iki yeni sütunumuz olacak. Hiç vakit kaybetmeden uygulamamızın kodlarını yazmaya başlayalım. Önce, aşağıdaki gibi bir form tasarlayalım.
 
 ![mk63_2.gif](/assets/images/2004/mk63_2.gif)
 

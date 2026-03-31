@@ -8,17 +8,17 @@ tags:
   - ado.net
   - sql
 ---
-Çoğu zaman istemci uygulamalarda, kullanıcıya sunduğumuz verilerin yer aldığı tablolarda başka kullanıcılar tarafından gerçekleştirilen değişikliklerin anında görünmesini isteriz. SqlDependency sınıfı sayesinde artık, bir veritabanında meydana gelen değişiklikleri (şu an için Sql Server ve Yukon) anında yakalayabilme şansına sahibiz. İşte bugünkü makalemizde aslında son derece derin ve geniş bir konu olan Sql Server Notification meselesini çok basit bir örnek ve Ado.Net 2.0 ile gelen yeni sınıflardan birisi olan SqlDependency yardımıyla incelemeye çalışacağız. İlk olarak şu soruyu düşünelim.
+Çoğu zaman istemci uygulamalarda, kullanıcıya sunduğumuz verilerin yer aldığı tablolarda başka kullanıcılar tarafından gerçekleştirilen değişikliklerin anında görünmesini isteriz. SqlDependency sınıfı sayesinde artık, bir veritabanında meydana gelen değişiklikleri (şu an için SQL Server ve Yukon) anında yakalayabilme şansına sahibiz. İşte bugünkü makalemizde aslında son derece derin ve geniş bir konu olan SQL Server Notification meselesini çok basit bir örnek ve ADO.NET 2.0 ile gelen yeni sınıflardan birisi olan SqlDependency yardımıyla incelemeye çalışacağız. İlk olarak şu soruyu düşünelim.
 
 Sunucu üzerinde ne gibi gelişmeler olduğunda anında haberdar olmak isteyebiliriz?
 
-Verilerde meydana gelebilecek değişikler; bir başka deyişle yeni satırların eklenmesi, satırların silinmesi veya güncellenmesi.
+- Verilerde meydana gelebilecek değişikler; bir başka deyişle yeni satırların eklenmesi, satırların silinmesi veya güncellenmesi.
 
-Tablo üzerinde Drop, Alter veya Delete işlemlerinin uygulanması.
+- Tablo üzerinde Drop, Alter veya Delete işlemlerinin uygulanması.
 
-Sql sunucusunun yeniden başlatılması.
+- SQL sunucusunun yeniden başlatılması.
 
-Sql sunucusu üzerinde hatalar oluşması nedeniyle sunucunun işleyişinin durması.
+- SQL sunucusu üzerinde hatalar oluşması nedeniyle sunucunun işleyişinin durması.
 
 İşte bu gibi durumlarda, istemci uygulamaların meydana gelecek olan değişikliklerden anında haberdar olmasını isteyebiliriz. Bu durum özellikle, bağlantısız katman nesnelerinin kullanıldığı uygulamalarda büyük önem kazanmaktadır. Peki bu anında haber bildirilmesini nasıl sağlayabiliriz? Bunun için kullanılan mimari kabaca aşağıdaki şekilde olduğu gibidir.
 
@@ -26,23 +26,23 @@ Sql sunucusu üzerinde hatalar oluşması nedeniyle sunucunun işleyişinin durm
 
 Şekil 1. Mimari.
 
-Dilerseniz kısaca mimarinin işleyişinden ve bileşenlerinden bahsedelim. SqlDependency sınıfı, bir SqlCommand ile ilişkilendirilerek kullanılır ve içsel olarak bir SqlNotificationRequest nesnesinide barındırır. (Bu sınıfi ilerleyen makalelerimizde incelemeye çalışacağız.) SqlCommand sınıfının Notification işlemine uyan bir Select sorgusu içermesi gerekir. Öyleki bu Select sorgusu şu anki versiyonlar itibariyle aşağıdaki gibi olamaz.
+Dilerseniz kısaca mimarinin işleyişinden ve bileşenlerinden bahsedelim. SqlDependency sınıfı, bir SqlCommand ile ilişkilendirilerek kullanılır ve içsel olarak bir SqlNotificationRequest nesnesini de barındırır. (Bu sınıfı ilerleyen makalelerimizde incelemeye çalışacağız.) SqlCommand sınıfının Notification işlemine uyan bir Select sorgusu içermesi gerekir. Öyle ki bu Select sorgusu şu anki versiyonlar itibarıyla aşağıdaki gibi olamaz.
 
 ```csharp
 Select * From Tablo
 ```
 
-Select sorgusunda talep edilen alan isimleri açıkça belirtilmelidir. Bununla birlikte, Tablo'nun sahibide yani yaratıcısıda açıkça belirtilmelidir. Yani ancak aşağıdaki gibi bir sql ifadesi Notification desteğini sağlayabilir.
+Select sorgusunda talep edilen alan isimleri açıkça belirtilmelidir. Bununla birlikte, tablonun sahibi de yani yaratıcısı da açıkça belirtilmelidir. Yani ancak aşağıdaki gibi bir SQL ifadesi Notification desteğini sağlayabilir.
 
 ```csharp
 Select Ad,Soyad From dbo.Tablo
 ```
 
-Belirtilen Sql ifadesi çalıştırıldığında, SqlDependency nesnesi ilgili SqlCommand nesnesi için sunucuda bir Notification açılacağını sql sunucusuna bildirir. Sql sunucusu bu mesaj üzerine ilgili sql komutunu çalıştırır ve Notification nesnesini sunucuya register eder. Bu bize, çalıştırılan sql sorgusunun sunucaya ekstradan bir takım bilgiler daha gönderdiğini göstermektedir. Bu bilgiler çoğunlukla, kaydı tutulacak Notification ile ilgilidir ve SqlDependency sınıfının ilgili yapıcı metodları yardımıyla ayarlanabilir.
+Belirtilen SQL ifadesi çalıştırıldığında, SqlDependency nesnesi ilgili SqlCommand nesnesi için sunucuda bir Notification açılacağını SQL sunucusuna bildirir. SQL sunucusu bu mesaj üzerine ilgili SQL komutunu çalıştırır ve Notification nesnesini sunucuya register eder. Bu bize, çalıştırılan SQL sorgusunun sunucuya ekstradan birtakım bilgiler daha gönderdiğini göstermektedir. Bu bilgiler çoğunlukla, kaydı tutulacak Notification ile ilgilidir ve SqlDependency sınıfının ilgili yapıcı metotları yardımıyla ayarlanabilir.
 
-Notification nesnesi, sunucuya kayıt edildikten sonra, komutun çalışması ile elde edilen sonuçlar ön belleğe alınır ve ilgili Notification nesneside Server Service Broker Queue tarafından kuyruğa atılır. Buradaki ön bellekleme işlemi aslında bir temp tablosunun oluşturulmasından başka bir şey değildir. Bu noktadan itibaren Sql sunucusu, ilgili satır kümesini izlemeye başlar. Eğer satır kümesi üzerinde yukarıda bahsettiğimiz durumlardan birisi nedeni ile değişiklikler olursa, sp_DispatcherProc sistem prosedürü yardımıyla istemci uygulamanın SqlDependency sınıfına ait olan OnChange olayına bilgi mesajı gider.
+Notification nesnesi, sunucuya kaydedildikten sonra, komutun çalışması ile elde edilen sonuçlar ön belleğe alınır ve ilgili Notification nesnesi de Server Service Broker Queue tarafından kuyruğa atılır. Buradaki ön bellekleme işlemi aslında bir temp tablosunun oluşturulmasından başka bir şey değildir. Bu noktadan itibaren SQL sunucusu, ilgili satır kümesini izlemeye başlar. Eğer satır kümesi üzerinde yukarıda bahsettiğimiz durumlardan birisi nedeniyle değişiklikler olursa, sp_DispatcherProc sistem prosedürü yardımıyla istemci uygulamanın SqlDependency sınıfına ait olan OnChange olayına bilgi mesajı gider.
 
-Mimari her ne kadar karışık gibi görünsede, uygulanabilirliği son derece kolay ve basittir. Bu amaçla olayı daha iyi irdeleyebilmek için aşağıdaki Windows uygulamasını göz önüne alalım.
+Mimari her ne kadar karışık gibi görünse de, uygulanabilirliği son derece kolay ve basittir. Bu amaçla olayı daha iyi irdeleyebilmek için aşağıdaki Windows uygulamasını göz önüne alalım.
 
 ![mk105_2.gif](/assets/images/2004/mk105_2.gif)
 
@@ -109,7 +109,7 @@ Bu arada Select sorgumuzun kurallara uygun bir yapıda olduğuna dikkat edelim. 
 dep.OnChange+=new OnChangeEventHandler(dep_OnChange);
 ```
 
-Bu olayın bizim için büyük bir önemi var. Nitekim, sunucu üzerinde ön belleklenen veri kümesinde değişiklikler olduğunda, sql sunucusu tarafından uygulmaya bir Notification mesajı gönderilecektir. İşte bu mesajın ele alınacağı olay SqlDependency sınıfına ait OnChange'dır. Bu olayın prototipi aşağıdaki gibidir.
+Bu olayın bizim için büyük bir önemi var. Nitekim, sunucu üzerinde ön belleklenen veri kümesinde değişiklikler olduğunda, SQL sunucusu tarafından uygulamaya bir Notification mesajı gönderilecektir. İşte bu mesajın ele alınacağı olay SqlDependency sınıfına ait OnChange'dır. Bu olayın prototipi aşağıdaki gibidir.
 
 ```csharp
 public event OnChangeEventHandler OnChange;
@@ -121,7 +121,7 @@ Gördüğünüz gibi bu olay OnChangeEventHandler temsilcisinin tanımladığı 
 public sealed delegate void OnChangeEventHandler( object sender, SqlNotificationEventArgs e );
 ```
 
-Bu temsilcinin işaret edeceği metodlara ait ikinci parametre SqlNotificationEventArgs sınıfı tipinden olup oldukça önemlidir. Nitekim bu parametre yardımıyla, gelen bildirinin hangi olaya istinaden oluştuğunu ayırt edebilir ve işlemlerimize yön verebiliriz. Bu sınıfıda detaylı bir şekilde ilerleyen makalelerimizde inceleyeceğiz. Olay metodumuzda ise basit olarak herhangibir Notification mesajı alındığında bir MessageBox'ın çıkmasını sağlıyoruz.
+Bu temsilcinin işaret edeceği metotlara ait ikinci parametre SqlNotificationEventArgs sınıfı tipinden olup oldukça önemlidir. Nitekim bu parametre yardımıyla, gelen bildirinin hangi olaya istinaden oluştuğunu ayırt edebilir ve işlemlerimize yön verebiliriz. Bu sınıfı da detaylı bir şekilde ilerleyen makalelerimizde inceleyeceğiz. Olay metodumuzda ise basit olarak herhangi bir Notification mesajı alındığında bir MessageBox'ın çıkmasını sağlıyoruz.
 
 ```csharp
 void dep_OnChange(object sender, SqlNotificationEventArgs e)
@@ -130,13 +130,13 @@ void dep_OnChange(object sender, SqlNotificationEventArgs e)
 } 
 ```
 
-Şimdi uygulamamızı çalıştıralım ve verileri çekelim. Yazdığımız kodlar gereği, Sql suncusu üzerinde Select sorgumuza istinaden bir Notification nesnesi register edilecektir. Şimdi biz bu noktada doğrudan Yukon üzerinden yeni bir satır gireceğiz. (Aslında aynı uygulamanın başka bir örneğinden veya başka bir uygulamadanda bu tablo üzerinde değişiklikler yapabiliriz) Bunu uygulamamız çalışıyorken yapacağız.
+Şimdi uygulamamızı çalıştıralım ve verileri çekelim. Yazdığımız kodlar gereği, SQL sunucusu üzerinde Select sorgumuza istinaden bir Notification nesnesi register edilecektir. Şimdi biz bu noktada doğrudan Yukon üzerinden yeni bir satır gireceğiz. (Aslında aynı uygulamanın başka bir örneğinden veya başka bir uygulamadan da bu tablo üzerinde değişiklikler yapabiliriz.) Bunu uygulamamız çalışıyorken yapacağız.
 
 ![mk105_3.gif](/assets/images/2004/mk105_3.gif)
 
 Şekil 3. Yukon üzerinden tablomuza yeni bir satır ekliyoruz.
 
-Bu işlemi gerçekleştirdiğimiz anda, uygulamamıza bir bildiri mesajı iletilir ve tabloda değişiklik olduğu söylenir. Bunun sonucu olarakta, SqlDependency nesnemiz ile ilişkilendirdiğimiz OnChange olayı aktif hale gelecektir. Sonuç aşağıdaki gibi olacaktır. Yeni satır eklenir eklenmez uygulama OnChange olayını çalıştıracaktır.
+Bu işlemi gerçekleştirdiğimiz anda, uygulamamıza bir bildiri mesajı iletilir ve tabloda değişiklik olduğu söylenir. Bunun sonucu olarak da, SqlDependency nesnemiz ile ilişkilendirdiğimiz OnChange olayı aktif hâle gelecektir. Sonuç aşağıdaki gibi olacaktır. Yeni satır eklenir eklenmez uygulama OnChange olayını çalıştıracaktır.
 
 ![mk105_4.gif](/assets/images/2004/mk105_4.gif)
 

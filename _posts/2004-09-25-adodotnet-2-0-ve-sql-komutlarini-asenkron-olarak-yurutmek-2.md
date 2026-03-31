@@ -9,23 +9,23 @@ tags:
   - asynchronous-programming
   - async
 ---
-Hatırlayacağınız gibi bir önceki makalemizde, sql komutlarının asenkron olarak yürütülmesi için kullanılan tekniklerden birisi olan polling modelini incelemiştik. Polling modeli basit olmakla birlikte, iş yükü fazla olan hacimli sql komutlarının asenkron olarak çalıştırılmasında çok fazla tercih edilmemelidir. Bu tip sorguların yer aldığı asenkron yürütmelerde, CallBack veya Wait modellerini kullanmak verimliği arttırıcı etkenlerdir. Bu makalemizde CallBack modelini kısaca incelemeye çalışacağız.
+Hatırlayacağınız gibi bir önceki makalemizde, SQL komutlarının asenkron olarak yürütülmesi için kullanılan tekniklerden birisi olan polling modelini incelemiştik. Polling modeli basit olmakla birlikte, iş yükü fazla olan hacimli SQL komutlarının asenkron olarak çalıştırılmasında çok fazla tercih edilmemelidir. Bu tip sorguların yer aldığı asenkron yürütmelerde, CallBack veya Wait modellerini kullanmak verimliliği artırıcı etkenlerdir. Bu makalemizde CallBack modelini kısaca incelemeye çalışacağız.
 
-CallBack modeli anafikir olarak, asenkron olarak çalışan sql komutlarının işleyişlerinin sona erdiği noktalarda yürürlüğe giren metodları bünyesinde barındıran bir tekniktir. Bu tekniğe göre, asenkron olarak yürütülecek sql komutlarını taşıyan SqlCommand nesneleri yine bilinen Begin... metodları ile çalıştırılırlar. Ancak bu kez, SqlCommand nesnesine ait Begin metodlarının aşağıdaki tabloda belirtilen aşırı yüklenmiş versiyonları kullanılır.
+CallBack modeli, ana fikir olarak, asenkron olarak çalışan SQL komutlarının işleyişlerinin sona erdiği noktalarda yürürlüğe giren metotları bünyesinde barındıran bir tekniktir. Bu tekniğe göre, asenkron olarak yürütülecek SQL komutlarını taşıyan SqlCommand nesneleri yine bilinen Begin... metotları ile çalıştırılırlar. Ancak bu kez, SqlCommand nesnesine ait Begin metotlarının aşağıdaki tabloda belirtilen aşırı yüklenmiş versiyonları kullanılır.
 
 CallBack modelinde kullanılan SqlCommand.Begin... metodları
 
-public IAsyncResult BeginExecuteNonQuery (AsyncCallback callback, object stateObjcet);
+- public IAsyncResult BeginExecuteNonQuery (AsyncCallback callback, object stateObjcet);
 
-public IAsyncResult BeginExecuteReader (AsyncCallback callback, object stateObjcet);
+- public IAsyncResult BeginExecuteReader (AsyncCallback callback, object stateObjcet);
 
-public IAsyncResult BeginExecuteXmlReader (AsyncCallback callback, object stateObjcet);
+- public IAsyncResult BeginExecuteXmlReader (AsyncCallback callback, object stateObjcet);
 
-Burada görüldüğü gibi her üç metod da, iki parametre almaktadır. İlk parametre AsyncCallback temsilcisi tipindendir. Bu parametre yardımıyla, yürütülecek olan sql komutları tamamlandığında çalıştırılacak olan metod işaret edilir. Bu, static olan, void geri dönüş değerine sahip ve yanlızca IAsyncResult tipinde bir nesne örneğini parametre olarak alan bir metod olmalıdır. Bir başka deyişle Begin metodu ile çalıştırılan sql sorguları sonlandığında hangi metodun çalıştırılacağı buradaki temsilci (delegate) yardımıyla belirlenmiş olunur.
+Burada görüldüğü gibi her üç metot da, iki parametre almaktadır. İlk parametre AsyncCallback temsilcisi tipindendir. Bu parametre yardımıyla, yürütülecek olan SQL komutları tamamlandığında çalıştırılacak olan metot işaret edilir. Bu, static olan, void geri dönüş değerine sahip ve yalnızca IAsyncResult tipinde bir nesne örneğini parametre olarak alan bir metot olmalıdır. Bir başka deyişle Begin metodu ile çalıştırılan SQL sorguları sonlandığında hangi metodun çalıştırılacağı buradaki temsilci (delegate) yardımıyla belirlenmiş olunur.
 
-İkinci parametre ise kullanıcı tarafından belirtilebilen object tipinden bir nesnedir. Çoğunlukla, CallBack metodu içine, asenkron olarak çalışan sql komutunun sahibi olan SqlCommand nesnelerini aktarmak amacıyla kullanılmaktadır. Polling modelinde olduğu gibi burada da Begin metodlarının geriye dönüş değerleri, çalışan asenkron sorgudan sorumlu olan IAsyncResult arayüzü tipinden nesne örnekleridir.
+İkinci parametre ise kullanıcı tarafından belirtilebilen object tipinden bir nesnedir. Çoğunlukla, CallBack metodu içine, asenkron olarak çalışan SQL komutunun sahibi olan SqlCommand nesnelerini aktarmak amacıyla kullanılmaktadır. Polling modelinde olduğu gibi burada da Begin metotlarının geriye dönüş değerleri, çalışan asenkron sorgudan sorumlu olan IAsyncResult arayüzü tipinden nesne örnekleridir.
 
-Bu kısa açıklamalardan sonra dilerseniz, CallBack modelinin nasıl uygulandığını gösteren basit bir örnek geliştirelim. Bu amaçla Visual Studio.Net 2005' te aşağıdaki kodlara sahip olan bir Console uygulaması oluşturalım.
+Bu kısa açıklamalardan sonra dilerseniz, CallBack modelinin nasıl uygulandığını gösteren basit bir örnek geliştirelim. Bu amaçla Visual Studio.NET 2005'te aşağıdaki kodlara sahip olan bir Console uygulaması oluşturalım.
 
 ```bash
 #region Using directives

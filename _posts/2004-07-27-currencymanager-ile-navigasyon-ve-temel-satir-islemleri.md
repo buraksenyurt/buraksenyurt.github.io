@@ -11,15 +11,15 @@ tags:
 ---
 Bu makalemizde, CurrencyManager sınıfı yardımıyla, bağlantısız katman nesnelerinin işaret ettiği bellek bölgelerindeki veri satırları arasında navigasyon, satır ekleme, satır silme ve satır güncelleme işlemlerinin nasıl gerçekleştirildiğini incelemeye çalışacağız.
 
-Genellikle bir veritabanı uygulamasını göz önüne aldığımızda, var olan satırlar arasında ileri ve geri yönlü hareketler sıklıkla kullanılan işlemler arasında yer almaktadır. Bir windows uygulamasında, bağlantısız katman nesnelerinin sahip olduğu veri kümelerini, form üzerinde yer alan çeşitli kontroller yardımıyla kullanıcıya sunarız. Ancak zaman zaman, bu veri kümesi içinde hareket ederken, veriye bağlı kontrollerinde güncel satıra ait alan bilgilerini göstermesini isteriz. Form üzerine yerleştirilen kontrollerin her biri, bu çeşit navigasyon işlemlerine izin veren CurrencyManager isimli nesne örneklerine sahiptir. Dolayısıyla navigasyon işlemlerinin bağlı kontrollere yansıması için, bağlı kontrollere ait CurrencyManager nesnelerinin ilgili özelliklerinin kullanılması yeterlidir.
+Genellikle bir veritabanı uygulamasını göz önüne aldığımızda, var olan satırlar arasında ileri ve geri yönlü hareketler sıklıkla kullanılan işlemler arasında yer almaktadır. Bir Windows uygulamasında, bağlantısız katman nesnelerinin sahip olduğu veri kümelerini, form üzerinde yer alan çeşitli kontroller yardımıyla kullanıcıya sunarız. Ancak zaman zaman, bu veri kümesi içinde hareket ederken, veriye bağlı kontrollerin de güncel satıra ait alan bilgilerini göstermesini isteriz. Form üzerine yerleştirilen kontrollerin her biri, bu çeşit navigasyon işlemlerine izin veren CurrencyManager isimli nesne örneklerine sahiptir. Dolayısıyla navigasyon işlemlerinin bağlı kontrollere yansıması için, bağlı kontrollere ait CurrencyManager nesnelerinin ilgili özelliklerinin kullanılması yeterlidir.
 
-Bir windows uygulamasını düşündüğümüzde, Form üzerinde yer alan bağlı kontrollerinin tümünün aynı navigasyon hareketlerine izin vermesini istememiz son derece doğaldır. Bu zaten arzu edilen durumdur. Windows Form'larının BindingContext özelliği sayesinde, bağlı kontrollerin sahip olduğu CurrencyManager nesne örneklerini yönetebiliriz. Bu yönetim imkanı, satırlar arasında navigasyon, yeni kayıt ekleme, silme veya güncelleştirme gibi işlemleri yapabilme imkanına sahip olmamızı sağlamaktadır. Konuyu çok yüzeysel olarak anlattığımız bu kısa açıklamalardan sonra, olayı daha iyi ve net bir şekilde simüle edebilmek amacıyla aşağıdaki Form görüntüsüne sahip Windows Uygulamasını tasarlayarak işlemlerimize başlayalım.
+Bir Windows uygulamasını düşündüğümüzde, Form üzerinde yer alan bağlı kontrollerin tümünün aynı navigasyon hareketlerine izin vermesini istememiz son derece doğaldır. Bu zaten arzu edilen durumdur. Windows Form'larının BindingContext özelliği sayesinde, bağlı kontrollerin sahip olduğu CurrencyManager nesne örneklerini yönetebiliriz. Bu yönetim imkânı, satırlar arasında navigasyon, yeni kayıt ekleme, silme veya güncelleştirme gibi işlemleri yapabilme imkânına sahip olmamızı sağlamaktadır. Konuyu çok yüzeysel olarak anlattığımız bu kısa açıklamalardan sonra, olayı daha iyi ve net bir şekilde simüle edebilmek amacıyla aşağıdaki form görüntüsüne sahip Windows uygulamasını tasarlayarak işlemlerimize başlayalım.
 
 ![mk79_1.gif](/assets/images/2004/mk79_1.gif)
 
 Şekil 1. Form tasarımımız.
 
-Bu windows uygulamasında, Sql sunucusunda yer alan Northwind veritabanında yer alan Personel tablosuna ait veriler gösterilecektir. Başlangıç olarak, uygulama kodlarımız aşağıdaki gibidir.
+Bu Windows uygulamasında, SQL sunucusunda yer alan Northwind veritabanındaki Personel tablosuna ait veriler gösterilecektir. Başlangıç olarak, uygulama kodlarımız aşağıdaki gibidir.
 
 ```csharp
 SqlConnection con;
@@ -53,7 +53,7 @@ Add metodu ilk parametre olarak, veri kaynağındaki ilgili verinin, kontrolün 
 
 Şekil 2. Uygulamanın Çalışması.
 
-Şimdi ilk yapmak istediğimiz, veri kümesindeki satırlar arasında hareket edebilme imakanına sahip olmaktır. Şu aşamda 4 temel hareketimiz olabilir. Sonraki satıra geçiş, önceki satıra geçiş, son satıra geçiş ve ilk satıra geçiş. Bu işlemleri gerçekleştirebilmek için, Form'umuza ait BindingContext özelliğini kullanacağız. Şimdi formumuza 4 adet button kontrolü ekleyelim ve uygulama kodlarımızı aşağıdaki şekilde geliştirelim.
+Şimdi ilk yapmak istediğimiz, veri kümesindeki satırlar arasında hareket edebilme imkânına sahip olmaktır. Şu aşamada 4 temel hareketimiz olabilir. Sonraki satıra geçiş, önceki satıra geçiş, son satıra geçiş ve ilk satıra geçiş. Bu işlemleri gerçekleştirebilmek için, Form'umuza ait BindingContext özelliğini kullanacağız. Şimdi formumuza 4 adet button kontrolü ekleyelim ve uygulama kodlarımızı aşağıdaki şekilde geliştirelim.
 
 ```csharp
 SqlConnection con;
@@ -112,7 +112,7 @@ Uygulama kodlarımızda en önemli nokta, Form üzerindeki kontrollerin sahip ol
 cm=(CurrencyManager)this.BindingContext[dt];
 ```
 
-Bu satır ile, DataTable veri kaynağına için bir CurrencyManager nesnesi oluşturulur. Artık navigasyon işlemi için tek yapmamız gereken, CurrencyManager sınıfına ait Position özelliğinin kullanılmasıdır. Bu özelliğin değişmesi durumunda, Form üzerinde yer alan ve DataTable'a ait veri kaynağına bağlı olan tüm kontrollerin içeriği güncel satıra ait verileri gösterecek şekilde değişecektir. Örneğin, bir satır ileri gitmek için Position özelliğinin değerini 1 arttırmamız yeterli olurken, son satıra gitmek için, veri kaynağının sahip olduğu toplam satır sayısını 1 eksiltiriz.
+Bu satır ile, DataTable veri kaynağı için bir CurrencyManager nesnesi oluşturulur. Artık navigasyon işlemi için tek yapmamız gereken, CurrencyManager sınıfına ait Position özelliğinin kullanılmasıdır. Bu özelliğin değişmesi durumunda, Form üzerinde yer alan ve DataTable'a ait veri kaynağına bağlı olan tüm kontrollerin içeriği güncel satıra ait verileri gösterecek şekilde değişecektir. Örneğin, bir satır ileri gitmek için Position özelliğinin değerini 1 artırmamız yeterli olurken, son satıra gitmek için, veri kaynağının sahip olduğu toplam satır sayısını 1 eksiltiriz.
 
 ```csharp
 cm.Position++;
@@ -128,7 +128,7 @@ Uygulamamızı çalıştırdığımızda, satırlar arasında istediğimiz şeki
 
 Şekil 3. Navigasyon.
 
-CurrencyManager sınıfı yardımıyla yapabileceklerimiz sadece Navigasyon işlemleri ile sınırlı değildir. Ayrıca, satır ekleme, satır silme veya satır güncelleştirme gibi temel tablo işlemlerinide gerçekleştirebiliriz. Yeni bir satır eklemek için CurrencyManager sınıfına ait, aşağıda prototipi verilen AddNew metodunu kullanırız.
+CurrencyManager sınıfı yardımıyla yapabileceklerimiz sadece navigasyon işlemleri ile sınırlı değildir. Ayrıca, satır ekleme, satır silme veya satır güncelleştirme gibi temel tablo işlemlerini de gerçekleştirebiliriz. Yeni bir satır eklemek için CurrencyManager sınıfına ait, aşağıda prototipi verilen AddNew metodunu kullanırız.
 
 ```csharp
 public override void AddNew();
@@ -163,13 +163,13 @@ private void btnVeritabaninaYaz_Click(object sender, System.EventArgs e)
 }
 ```
 
-Burada, önemli olan AddNew metodunun kullanılışından sonra, açılan yeni satırın o anki veri kümesinde yerini alması için ileri veya geri yönlü bir hareket yapılmasının yeterli olduğudur. Elbette, CurrencyManager yardımıyla, güncel veri kümesine eklenen satırların veritabanınada yansıtılabilmesi için, SqlDataAdapter nesnemize ait Update metodunun çalıştırılması gerekmektedir. Güncel satırlar üzerinde değişiklik yapıldığında bu değişikliklerin onaylanabilmesi ve veri kümesine yansıyabilmesi için ya satırlar arasında hareket edilmesi yada aşağıda prototipi verilen EndCurrentEdit metodunun uygulanması gerekir.
+Burada, önemli olan AddNew metodunun kullanılışından sonra, açılan yeni satırın o anki veri kümesinde yerini alması için ileri veya geri yönlü bir hareket yapılmasının yeterli olduğudur. Elbette, CurrencyManager yardımıyla, güncel veri kümesine eklenen satırların veritabanına da yansıtılabilmesi için, SqlDataAdapter nesnemize ait Update metodunun çalıştırılması gerekmektedir. Güncel satırlar üzerinde değişiklik yapıldığında bu değişikliklerin onaylanabilmesi ve veri kümesine yansıyabilmesi için ya satırlar arasında hareket edilmesi ya da aşağıda prototipi verilen EndCurrentEdit metodunun uygulanması gerekir.
 
 ```csharp
 public override void EndCurrentEdit();
 ```
 
-Veri kümesinden herhangibir satırı silmek istediğimizde ise, aşağıdaki prototipe sahip olan RemoveAt metodunu kullanabiliriz.
+Veri kümesinden herhangi bir satırı silmek istediğimizde ise, aşağıdaki prototipe sahip olan RemoveAt metodunu kullanabiliriz.
 
 ```csharp
 public override void RemoveAt( int index);
@@ -202,7 +202,7 @@ Elbette yaptığımız satır ekleme, güncelleme işlemlerini iptal etmek ister
 public override void CancelCurrentEdit();
 ```
 
-CurrencyManager sınıfının işimize yarayacak bir kaç olayıda vardır. Bunlardan birisi PositionChanged olayıdır. Bu olay güncel satır pozisyonu değiştiğinde çalışmaktadır. Uygulamamızdaki pozisyon bilgisini lblPozisyon kontrolünde göstermek için kullandığımız kod satırını bu olay içine yerleştirebiliriz. Elbette öncelikle, CurrencyManager nesnemiz için aşağıdaki kod satırı ile, PositionChanged olayını eklememiz gerekmektedir.
+CurrencyManager sınıfının işimize yarayacak birkaç olayı da vardır. Bunlardan birisi PositionChanged olayıdır. Bu olay güncel satır pozisyonu değiştiğinde çalışmaktadır. Uygulamamızdaki pozisyon bilgisini lblPozisyon kontrolünde göstermek için kullandığımız kod satırını bu olay içine yerleştirebiliriz. Elbette öncelikle, CurrencyManager nesnemiz için aşağıdaki kod satırı ile, PositionChanged olayını eklememiz gerekmektedir.
 
 ```csharp
 cm.PositionChanged+=new EventHandler(cm_PositionChanged);

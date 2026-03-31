@@ -9,31 +9,29 @@ tags:
   - asynchronous-programming
   - async
 ---
-Bir önceki makalemizde MARS etkisini incelemiş ve aynı bağlantı üzerinden birden fazla sayıda sonuç kümesine nasıl erişebileceğimizi görmüştük. Her ne kadar, aynı anda birden fazla sonuç kümesine erişebilsekte, halen daha MARS modeli, sql komutları ile eş zamanlı çalışan kodlar ve asenkron yürütülebilen diğer sql komutları için yeterli değildir. Ado.Net 2.0 ile, sql komutlarını asenkron olarak yürütebileceğimiz bir takım yeni üyeler gelmektedir. Bu üyeler sayesinde, sql komutlarını asenkron olarakçalıştırabilir ve hatta, diğer kod satırlarınında eş zamanlı olarak işleyebilmesini sağlayabiliriz. Bu işleri gerçekleştirebilecek üyeler şu an için sadece SqlClient sınıfında yer almaktadır. Ancak.Net Framework 2.0' ın final sürümünde bu üyelerin, diğer Ado.Net isim alanlarınada yerleştirileceklerini düşünüyorum.
+Bir önceki makalemizde MARS etkisini incelemiş ve aynı bağlantı üzerinden birden fazla sayıda sonuç kümesine nasıl erişebileceğimizi görmüştük. Her ne kadar, aynı anda birden fazla sonuç kümesine erişebilsek de, hâlen MARS modeli, SQL komutları ile eşzamanlı çalışan kodlar ve asenkron yürütülebilen diğer SQL komutları için yeterli değildir. ADO.NET 2.0 ile, SQL komutlarını asenkron olarak yürütebileceğimiz birtakım yeni üyeler gelmektedir. Bu üyeler sayesinde, SQL komutlarını asenkron olarak çalıştırabilir ve hatta, diğer kod satırlarının da eşzamanlı olarak işleyebilmesini sağlayabiliriz. Bu işleri gerçekleştirebilecek üyeler şu an için sadece SqlClient sınıfında yer almaktadır. Ancak .NET Framework 2.0'ın final sürümünde bu üyelerin, diğer ADO.NET isim alanlarına da yerleştirileceklerini düşünüyorum.
 
-Asenkron komut yürütümenin mantığı, asenkron metodların çalıştırılmasına çok benzer. Nitekim burada da, başlatılan bir prosesi kontrol etmemize imkan sağlayan IAsyncResult arayüzününe ait bir nesne örneği anahtar görevini oynamaktadır. Asenkron sql komutlarını yürütmek için, SqlCommand sınıfına aşağıdaki tabloda yer alan altı adet yeni metod ilave edilmiştir.
+Asenkron komut yürütmenin mantığı, asenkron metotların çalıştırılmasına çok benzer. Nitekim burada da, başlatılan bir prosesi kontrol etmemize imkân sağlayan IAsyncResult arayüzüne ait bir nesne örneği anahtar görevini oynamaktadır. Asenkron SQL komutlarını yürütmek için, SqlCommand sınıfına aşağıdaki tabloda yer alan altı adet yeni metot ilave edilmiştir.
 
 SqlCommand sınıfı için Asenkron komut yürütme metodları
 
-BeginExecuteNonQuery
+- BeginExecuteNonQuery
+- BeginExecuteReader
+- BeginExecuteXmlReader
 
-BeginExecuteReader
+- EndExecuteNonQuery
 
-BeginExecuteXmlReader
+- EndExecuteReader
 
-EndExecuteNonQuery
+- EndExecuteXmlReader
 
-EndExecuteReader
-
-EndExecuteXmlReader
-
-Begin ile başlayan tüm metodlar, geriye IAsyncResult arayüzü tipinden bir nesne örneği döndürürler. Programın çalışması esnasında, bu tipe ait özellikler kullanılarak çalışan sql komutlarına ait proseslerin durumları kontrol edilebilir ve tamamlanıp tamamlanmadıkları öğrenilir. Elbetteki, çalışması tamamlanan bir sql komut metodunun geriye sonuçları döndürebilmesi için, End ile başlayan uygun metodun çalıştırılması ve bu metoda ilgili prosese ait IAsyncResult nesne örneğinin parametre olarak gönderilmesi gerekmektedir. Temel olarak bu, Asenkron Sql Komutlarının çalıştırılmasının ana mantığıdır. Bununla birlikte Ado.Net 2.0, asenkron sql komutlarının yürütülebilmesi için 3 değişik model sunmaktadır.
+Begin ile başlayan tüm metotlar, geriye IAsyncResult arayüzü tipinden bir nesne örneği döndürürler. Programın çalışması esnasında, bu tipe ait özellikler kullanılarak çalışan SQL komutlarına ait proseslerin durumları kontrol edilebilir ve tamamlanıp tamamlanmadıkları öğrenilir. Elbette ki, çalışması tamamlanan bir SQL komut metodunun geriye sonuçları döndürebilmesi için, End ile başlayan uygun metodun çalıştırılması ve bu metoda ilgili prosese ait IAsyncResult nesne örneğinin parametre olarak gönderilmesi gerekmektedir. Temel olarak bu, asenkron SQL komutlarının çalıştırılmasının ana mantığıdır. Bununla birlikte ADO.NET 2.0, asenkron SQL komutlarının yürütülebilmesi için 3 değişik model sunmaktadır.
 
 ![mk96_1.gif](/assets/images/2004/mk96_1.gif)
 
 Şekil 1. Asenkron Yürütme Modelleri.
 
-Biz bugünkü makalemizde, Pooling Modelini incelemeye çalışacağız. Bu modelde genellikle, IAsyncResult tipinden nesne örneği ile sahip olunan prosesin tamamlanıp tamamlanmadığı sürekli olarak kontrol edilir. Yani, Begin ile başlayan herhangibir metoddan sonra bu metodun içerdiği Sql komutu yürütülürken, elde edilen IAsyncResult tipi nesne örneğine ait IsCompleted özelliğine bakılarak prosesin tamamlanıp tamamlanmadığı araştırılır. Bu araştırma işlemi sürekli tekrar ettiğinden çalıştırılan sql komutları tamamlanıncaya kadar, bu aralıklarda başka işlemler gerçekleştirilebilir veya başka sql komutları yürütülebilir. Diğer taraftan bu kontrol işlemi zorunlu değildir. Nitekim biz bu kontrolü yapmasakta, Begin ve End komutları arasındaki blokların çalıştırılması sağlanabilir. Ancak burada ana fikir, uzun sürebilecek sql komutlarının asenkron olarak çalışmaları halinde zaman kaybının önüne geçebilmek, uygulamanın işleyişinin kesilmesini önlemek ve bu zaman aralığında başka kodları ve başka kullanıcı aktivitelerini başarılı bir şekilde icra edebilmektir. Şimdi dilerseniz Pooling modelinin en basit haliyle uygulanışını incelemek amacıyla, Visual Studio.Net 2005 ortamında aşağıdaki kodlara sahip basit bir Console uygulaması geliştirelim.
+Biz bugünkü makalemizde, Pooling Modelini incelemeye çalışacağız. Bu modelde genellikle, IAsyncResult tipinden nesne örneği ile sahip olunan prosesin tamamlanıp tamamlanmadığı sürekli olarak kontrol edilir. Yani, Begin ile başlayan herhangi bir metottan sonra bu metodun içerdiği SQL komutu yürütülürken, elde edilen IAsyncResult tipi nesne örneğine ait IsCompleted özelliğine bakılarak prosesin tamamlanıp tamamlanmadığı araştırılır. Bu araştırma işlemi sürekli tekrar ettiğinden çalıştırılan SQL komutları tamamlanıncaya kadar, bu aralıklarda başka işlemler gerçekleştirilebilir veya başka SQL komutları yürütülebilir. Diğer taraftan bu kontrol işlemi zorunlu değildir. Nitekim biz bu kontrolü yapmasak da, Begin ve End komutları arasındaki blokların çalıştırılması sağlanabilir. Ancak burada ana fikir, uzun sürebilecek SQL komutlarının asenkron olarak çalışmaları hâlinde zaman kaybının önüne geçebilmek, uygulamanın işleyişinin kesilmesini önlemek ve bu zaman aralığında başka kodları ve başka kullanıcı aktivitelerini başarılı bir şekilde icra edebilmektir. Şimdi dilerseniz Pooling modelinin en basit hâliyle uygulanışını incelemek amacıyla, Visual Studio.NET 2005 ortamında aşağıdaki kodlara sahip basit bir Console uygulaması geliştirelim.
 
 ```bash
 #region Using directives

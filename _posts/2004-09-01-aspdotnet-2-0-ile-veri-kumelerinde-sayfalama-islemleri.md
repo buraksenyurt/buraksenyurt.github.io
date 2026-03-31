@@ -8,11 +8,11 @@ tags:
   - asp.net
   - data-paging
 ---
-Bu makalemizde, Asp.Net 2.0 ile geliştirilen sayfalarda, veri kümeleri üzerinde sayfalama işlemlerinin nasıl yapıldığını incelemeye çalışacağız. Sayfalama işlemleri, özellikle internet (intranet) uygulamalarında yaygın şekilde kullanılan bir tekniktir. Burada, veri kümesine ati olan satırlar, DataGrid gibi bir kontrolde gösterilirken, sayfalara ayrılırlar. Böylece veri kümesine ait satırlar arasında toplu geçiş yapmamıza imkan sağlayan, navigasyon seçeneklerine sahip olmuş oluruz.
+Bu makalemizde, ASP.NET 2.0 ile geliştirilen sayfalarda, veri kümeleri üzerinde sayfalama işlemlerinin nasıl yapıldığını incelemeye çalışacağız. Sayfalama işlemleri, özellikle internet (intranet) uygulamalarında yaygın şekilde kullanılan bir tekniktir. Burada, veri kümesine ait olan satırlar, DataGrid gibi bir kontrolde gösterilirken sayfalara ayrılırlar. Böylece veri kümesine ait satırlar arasında toplu geçiş yapmamıza imkân sağlayan navigasyon seçeneklerine sahip olmuş oluruz.
 
-Asp.Net 2.0 içinde aynı imkanlar ve kabiliyetler söz konusudur. Ancak uygulanış şekli ve kullanılan bileşenler çok daha farklıdır. Herşeyden önce, Asp.Net 1.0/1.1 de izlenen yollara nazaran, daha kısa ve etkili bir teknik geliştirilmiştir. Asp.Net'in ilk sürümleri ile geliştirilen uygulamalarda, sayfalama işlemlerinin gerçekleştirilmesi için DataGrid kontrollerinde ekstradan olay prosedürü kodlamamız gerekmektedir. Bu bizim için fazla maliyettir. Nitekim zaman kaybettirici bir işlemdir. Ne demek istediğimi ve Asp.Net 2.0' da hangi noktaya geldiğimizi görmek için Visual Studio.Net 2003 ile geliştirilen aşağıdaki internet sayfasına bir göz atalım.
+ASP.NET 2.0 içinde aynı imkânlar ve kabiliyetler söz konusudur. Ancak uygulanış şekli ve kullanılan bileşenler çok daha farklıdır. Her şeyden önce, ASP.NET 1.0/1.1'de izlenen yollara nazaran daha kısa ve etkili bir teknik geliştirilmiştir. ASP.NET'in ilk sürümleri ile geliştirilen uygulamalarda, sayfalama işlemlerinin gerçekleştirilmesi için DataGrid kontrollerinde ekstradan olay prosedürü kodlamamız gerekmektedir. Bu bizim için fazla maliyettir. Nitekim zaman kaybettirici bir işlemdir. Ne demek istediğimi ve ASP.NET 2.0'da hangi noktaya geldiğimizi görmek için Visual Studio.NET 2003 ile geliştirilen aşağıdaki internet sayfasına bir göz atalım.
 
-```text
+```xml
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -64,17 +64,17 @@ Sayfamızı bu haliyle çalıştırdığımızda, veri kümesi içerisinde sayfa
 
 SqlCommand nesnesini kullanacak olan bir SqlDataAdapter ise, bağlantısız katmandaki DataTable nesnesini veri kümesi ile doldurmaktadır. Ardından elde edilen DataTable bileşeni DataGrid kontrolüne bağlanır ve DataGrid kontrolü için DataBind metod çalıştırılır. Tüm bu işlemlerin yanında sayfanın PostBack olması durumunda kaybolacak paging özelliğinin önüne geçmek için, Load olayında, IsPostBack kontrolü yapılır.
 
-Ayrıca, DataGrid kontrolünde, sayfalama işlemi sonrası oluşan sayfa numarası linklerine basıldığında, veri kümesinin ilgili parseline gidebilmek için, DataGrid1_PageIndexChanged olay metoduda kodlanmıştır. Bu yol her nekadar bir süre Asp.Net ilee uygulama geliştiren biris için anlaşılır ve kolay gözüksede, takdir edersinizki uzun ve aynı zamanda verimsiz bir yapıdadır. Herşeyden önce, çok fazla kaynak tüketimi söz konusudur.
+Ayrıca, DataGrid kontrolünde, sayfalama işlemi sonrası oluşan sayfa numarası linklerine basıldığında, veri kümesinin ilgili parseline gidebilmek için, DataGrid1_PageIndexChanged olay metodu da kodlanmıştır. Bu yol her ne kadar bir süre ASP.NET ile uygulama geliştiren birisi için anlaşılır ve kolay gözükse de, takdir edersiniz ki uzun ve aynı zamanda verimsiz bir yapıdadır. Her şeyden önce, çok fazla kaynak tüketimi söz konusudur.
 
 ![mk84_1.gif](/assets/images/2004/mk84_1.gif)
 
-Şekil 1. Asp.Net 1.1 Sayfalam işlemi.
+Şekil 1. ASP.NET 1.1 sayfalama işlemi.
 
-Burada takip ettiğimiz yolu düşüncek olursak, aslında gereksiz yere bir kaç adım işlem yaptığımızı ve bir kaç nesne kaynağını gereksiz yere harcadığımızı düşünebiliriz. Bu teknik dışında, SqlDataReader nesnesini kullanacağımız başka bir yol daha geliştirebilirdik. Ancak hangi yol seçilirse seçilsin, her ikiside uygulama geliştiricinin bir kaç satırda olsa fazladan kod yazmasını ve bazı püf noktalara (DataGrid1_PageIndexChanged olay metodu gibi) dikkat etmesini gerektirecektir. Bu elbetteki uygulama geliştiricinin artan tecrübesi ile önemsiz hale gelebilir.
+Burada takip ettiğimiz yolu düşünecek olursak, aslında gereksiz yere birkaç adım işlem yaptığımızı ve birkaç nesne kaynağını gereksiz yere harcadığımızı düşünebiliriz. Bu teknik dışında, SqlDataReader nesnesini kullanacağımız başka bir yol daha geliştirebilirdik. Ancak hangi yol seçilirse seçilsin, her ikisi de uygulama geliştiricinin birkaç satır da olsa fazladan kod yazmasını ve bazı püf noktalara (DataGrid1_PageIndexChanged olay metodu gibi) dikkat etmesini gerektirecektir. Bu elbette ki uygulama geliştiricinin artan tecrübesi ile önemsiz hâle gelebilir.
 
-Ancak işlerin dahada kısaltılarak yapılabileceğide gerçektir. İşte Microsoft mimarları, bu eksikliğin farkına varmış olacaklarki, Asp.Net 2.0' da, sayfalama işlemine farklı bir yakaşım ve uygulama tekniği getirmişler. Herşeyden önce, DataSource kavramını kullanan Framework 2.0 için, sayfalama işlemlerini gerçekleştirmek, Asp.Net 1.0/1.1 sürümlerine göre hem daha kolay hemde daha profesyonel bir anlayışa sahip. Bu yeni teknik sayesinde, uygulama geliştiricinin verimliliğinin daha da artacağı kanısındayım. Şimdi dilerseniz, Asp.Net 2.0' daki duruma bir göz atalım. Bu kez aspx sayfamızın kodlarını aşağıdaki gibi oluşturacağız.
+Ancak işlerin daha da kısaltılarak yapılabileceği de gerçektir. İşte Microsoft mimarları, bu eksikliğin farkına varmış olacaklar ki, ASP.NET 2.0'da sayfalama işlemine farklı bir yaklaşım ve uygulama tekniği getirmişler. Her şeyden önce, DataSource kavramını kullanan Framework 2.0 için sayfalama işlemlerini gerçekleştirmek, ASP.NET 1.0/1.1 sürümlerine göre hem daha kolay hem de daha profesyonel bir anlayışa sahip. Bu yeni teknik sayesinde, uygulama geliştiricinin verimliliğinin daha da artacağı kanısındayım. Şimdi dilerseniz, ASP.NET 2.0'daki duruma bir göz atalım. Bu kez aspx sayfamızın kodlarını aşağıdaki gibi oluşturacağız.
 
-```text
+```xml
 <%@ Page Language="C#" CompileWith="Sayfalama.aspx.cs" ClassName="Sayfalama_aspx" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -97,25 +97,25 @@ Ancak işlerin dahada kısaltılarak yapılabileceğide gerçektir. İşte Micro
 </html>
 ```
 
-Bu kodlara sahip Asp.Net 2.0 sayfamızı çalıştırdığımızda aşağıdaki gibi bir ekran görüntüsü elde ederiz.
+Bu kodlara sahip ASP.NET 2.0 sayfamızı çalıştırdığımızda aşağıdaki gibi bir ekran görüntüsü elde ederiz.
 
 ![mk84_2.gif](/assets/images/2004/mk84_2.gif)
 
-Şekil 2. Asp.Net 2.0 için sayfalama işlemi.
+Şekil 2. ASP.NET 2.0 için sayfalama işlemi.
 
-Burada dikkat edecek olursanız tek satır uygulama kodu yazılmamıştır. Bunun yerine tüm işlemler, GridView ve SqlDataSource Asp.Net kontrolleri ile gerçekleştirilmiştir. Bu kontroller, Asp.Net 2.0 ile gelen sayısız yeni bileşenden sadece ikisidir. GridView kontrolümüzün en önemli özelliği, kendisine veri kaynağı olarak bir SqlDataSource nesnesini bildiren DataSourceID özelliğidir. Bu özellik ile, veri kümesini ala belirttiği veri kaynağından çekecek olan SqlDataSource kontrolünün ID değeri belirtilir.
+Burada dikkat edecek olursanız tek satır uygulama kodu yazılmamıştır. Bunun yerine tüm işlemler, GridView ve SqlDataSource ASP.NET kontrolleri ile gerçekleştirilmiştir. Bu kontroller, ASP.NET 2.0 ile gelen sayısız yeni bileşenden sadece ikisidir. GridView kontrolümüzün en önemli özelliği, kendisine veri kaynağı olarak bir SqlDataSource nesnesini bildiren DataSourceID özelliğidir. Bu özellik ile, veri kümesini alacağı veri kaynağından çekecek olan SqlDataSource kontrolünün ID değeri belirtilir.
 
 ```text
 <asp:GridView ID="GridView1" Runat="server" AllowPaging="True" DataSourceID="sqlKaynak">
     </asp:GridView>
 ```
 
-SqlDataSource bileşenimiz, uygulama geliştiricisinin verimliliğini arttıran yenilikler içeririr. Asp.Net 1.1 ile yazdığımız bir önceki örneğin aksine, burada veri kaynağına bağlanma, veri kümesini çekme ve bunları ilgili kontrol ile ilişkilendirme işlemleri tek bir bileşen içerisindeki özellikle yardımıyla gerçekleştirilebilmektedir. Bu noktada kontrol her nekadar DataAdapter'ı andırsada çok daha farklı olduğunu ProviderName özelliğine bakarak bile anlayabiliriz.
+SqlDataSource bileşenimiz, uygulama geliştiricisinin verimliliğini artıran yenilikler içerir. ASP.NET 1.1 ile yazdığımız bir önceki örneğin aksine, burada veri kaynağına bağlanma, veri kümesini çekme ve bunları ilgili kontrol ile ilişkilendirme işlemleri tek bir bileşen içerisindeki özellikler yardımıyla gerçekleştirilebilmektedir. Bu noktada kontrol, her ne kadar DataAdapter'ı andırsa da çok daha farklı olduğunu ProviderName özelliğine bakarak bile anlayabiliriz.
 
-```text
+```xml
 <asp:SqlDataSource runat="Server" ProviderName="System.Data.SqlClient" ConnectionString="data source=.;initial catalog=AdventureWorks;integrated security=true" SelectCommand="SELECT [EmployeeID],[Gender],[HireDate] FROM [AdventureWorks].[HumanResources].[Employee]" ID="sqlKaynak"></asp:SqlDataSource>
 ```
 
-SqlDataSource kontrolü ile, burada örnek olarak, Yukon (Sql Server 2005) üzerinde yer alan AdventureWorks veritabanındaki Employee tablosuna bağlanılmıştır. ProviderName özelliği, hangi veri sağlayıcının kullanılacağını belirtir. Biz burada doğal sql motorunu kullanmak istediğimizden, System.Data.SqlClient sınıfını kullandık. ConnectionString ile tahmin edeceğiniz gibi, veri kaynağına bir bağlantı hattı tahsis etmekteyiz. SelectCommand özelliği ilede, çalıştırmak istediğimiz Select sorgusunu tanımlıyoruz. SqlDataSource kontrolü burada GridView kontrolü ile beraber çalışmaktadır. Dolayısıyla, sayfalama işlemini gerçekleştirmek için, GridView kontrolünün AllowPaging özelliğine true değerini atamamız ve kullanılcak DataSource bileşenini belirtmemiz yeterlidir.
+SqlDataSource kontrolü ile, burada örnek olarak, Yukon (SQL Server 2005) üzerinde yer alan AdventureWorks veritabanındaki Employee tablosuna bağlanılmıştır. ProviderName özelliği, hangi veri sağlayıcının kullanılacağını belirtir. Biz burada doğal SQL motorunu kullanmak istediğimizden, System.Data.SqlClient sınıfını kullandık. ConnectionString ile tahmin edeceğiniz gibi, veri kaynağına bir bağlantı hattı tahsis etmekteyiz. SelectCommand özelliği ile de, çalıştırmak istediğimiz Select sorgusunu tanımlıyoruz. SqlDataSource kontrolü burada GridView kontrolü ile beraber çalışmaktadır. Dolayısıyla, sayfalama işlemini gerçekleştirmek için, GridView kontrolünün AllowPaging özelliğine true değerini atamamız ve kullanılacak DataSource bileşenini belirtmemiz yeterlidir.
 
-Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca Asp.Net 2.0 için sayfalama işlemlerinin nasıl gerçekleştirilebildiğini incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca ASP.NET 2.0 için sayfalama işlemlerinin nasıl gerçekleştirilebildiğini incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

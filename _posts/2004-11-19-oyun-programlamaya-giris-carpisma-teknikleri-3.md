@@ -10,9 +10,9 @@ tags:
   - .net
   - collasion
 ---
-Geçtiğimiz hafta boyunca, Oyun Programcılığı ile ilgili olaraktan aldığım kitapları fırsat buldukça okumaya ve çalışmaya devam ettim. Konular o kadar heyecanlı ve sürükleyici ki araştırmak için zaman kavramı anlmasız hale geliyor. Öyleki, dün gece sabaha karşı saat 03:00 sularında kağıt kalem ile boğuşuyor ve Çarpışma Tekniklerinden birisinin daha matematiksel modelinin C# ile nasıl uygulanabileceğini araştırıyordum. Sonuç olarak işe bir kaç saatlik uykuyla gitmek zorunda kaldım. Ancak buna rağmen tüm gün dinçtim. Çünkü, çarpışma tekniklerinden birisini daha öğrenmiştim. Sıra anlatmaya gelmişti. İşte bugünkü makalemizde 3ncü çarpışma tekniğini incelemeye çalışacağız.
+Geçtiğimiz hafta boyunca, Oyun Programcılığı ile ilgili olarak aldığım kitapları fırsat buldukça okumaya ve çalışmaya devam ettim. Konular o kadar heyecanlı ve sürükleyici ki araştırmak için zaman kavramı anlamsız hâle geliyor. Öyle ki, dün gece sabaha karşı saat 03:00 sularında kâğıt kalem ile boğuşuyor ve Çarpışma Tekniklerinden birisinin daha matematiksel modelinin C# ile nasıl uygulanabileceğini araştırıyordum. Sonuç olarak işe birkaç saatlik uykuyla gitmek zorunda kaldım. Ancak buna rağmen tüm gün dinçtim. Çünkü, çarpışma tekniklerinden birisini daha öğrenmiştim. Sıra anlatmaya gelmişti. İşte bugünkü makalemizde 3'üncü çarpışma tekniğini incelemeye çalışacağız.
 
-Oyun programcılığında önemli bir yere sahip olan çarpışma tekniklerinde, bu makaleye gelinceye kadar iki ana konuyu inceleme fırsatı bulduk. İlk olarak iki dörtgensel nesnenin bir birleriyle olan çarpışmalarını inceledik. Daha sonraki makalemizde ise, eski dostumuz Pisagor'u anıp, iki dairesel nesnenin birbirleriyle olan çarpışmalarını araştırdık. Sırada bu iki durumun kombinasyonu var. Yani, bir dörtgen ile dairesel bir nesnenin birbirleriyle olan çarpışmalarının tespit edilmesi. Bu teknikte yine Pisagor teroeminden yararlanacağız. Ancak dikkat etmemiz gereken önemli koordinat noktaları var. Bu durumu daha iyi analiz etmek için aşağıdaki şekli göz önüne alalım.
+Oyun programcılığında önemli bir yere sahip olan çarpışma tekniklerinde, bu makaleye gelinceye kadar iki ana konuyu inceleme fırsatı bulduk. İlk olarak iki dörtgensel nesnenin birbirleriyle olan çarpışmalarını inceledik. Daha sonraki makalemizde ise, eski dostumuz Pisagor'u anıp, iki dairesel nesnenin birbirleriyle olan çarpışmalarını araştırdık. Sırada bu iki durumun kombinasyonu var. Yani, bir dörtgen ile dairesel bir nesnenin birbirleriyle olan çarpışmalarının tespit edilmesi. Bu teknikte yine Pisagor teoreminden yararlanacağız. Ancak dikkat etmemiz gereken önemli koordinat noktaları var. Bu durumu daha iyi analiz etmek için aşağıdaki şekli göz önüne alalım.
 
 ![mk108_1.gif](/assets/images/2004/mk108_1.gif)
 
@@ -29,7 +29,7 @@ Dörtgenin dairesel nesneye en yakın olan köşe noktalarından yola çıkılar
 
 Şekil 2. Dördüncü bölge için durum.
 
-Bu anlattıklarım size biraz karmaşık geldiyse sıkı durun. Diğer bölgelerin grafiksel ifadeleride aşağıda yer almaktadır. Dikkat edecek olursanız, R noktasının koordinatları her bölge için farklıdır. Buda üçgene ait dik kenarlar hesaplanırken uygun R noktası koordinatlarını kullanmamız gerektiğini, başka bir deyişle programlama algoritmasınıda, söz konusu bölgeleri if koşulları ile tespit ederek geliştirmemiz gerektiğini gösterir.
+Bu anlattıklarım size biraz karmaşık geldiyse sıkı durun. Diğer bölgelerin grafiksel ifadeleri de aşağıda yer almaktadır. Dikkat edecek olursanız, R noktasının koordinatları her bölge için farklıdır. Bu da üçgene ait dik kenarlar hesaplanırken uygun R noktası koordinatlarını kullanmamız gerektiğini, başka bir deyişle programlama algoritmasını da, söz konusu bölgeleri if koşulları ile tespit ederek geliştirmemiz gerektiğini gösterir.
 
 ![mk108_3.gif](/assets/images/2004/mk108_3.gif)
 
@@ -43,7 +43,7 @@ Bu anlattıklarım size biraz karmaşık geldiyse sıkı durun. Diğer bölgeler
 
 Şekil 5. İkinci bölge için durum.
 
-Şimdi sıra geldi bu teoremi C# kodları ile gerçekleştirmeye. Bu amaçla aşağıdaki ekran görüntüsüne sahip basit bir windows uygulaması geliştirdim. Her zamanki gibi işlemleri kolaylaştırmak amacıyla, dairesel nesneyi sabit tutup, dörtgensel nesneyi A,S,D,W tuşları ile hareket ettiriyorum. Bizim için önemli olan kısımlar, 4 durumdada geçerli olan üçgene ait dik kenarların FarkX ve FarkY şeklinde hesap edilmeleri ve buradan yola çıkılarak hipotenüs değerlerinin bulunması. Son olarak bu hipotenüs değerini, dairenin yarıçapı ile karşılaştırıp çarpışma olup olmadığını inceliyoruz.
+Şimdi sıra geldi bu teoremi C# kodları ile gerçekleştirmeye. Bu amaçla aşağıdaki ekran görüntüsüne sahip basit bir Windows uygulaması geliştirdim. Her zamanki gibi işlemleri kolaylaştırmak amacıyla, dairesel nesneyi sabit tutup, dörtgensel nesneyi A,S,D,W tuşları ile hareket ettiriyorum. Bizim için önemli olan kısımlar, 4 durumda da geçerli olan üçgene ait dik kenarların FarkX ve FarkY şeklinde hesap edilmeleri ve buradan yola çıkılarak hipotenüs değerlerinin bulunması. Son olarak bu hipotenüs değerini, dairenin yarıçapı ile karşılaştırıp çarpışma olup olmadığını inceliyoruz.
 
 ![mk108_6.gif](/assets/images/2004/mk108_6.gif)
 

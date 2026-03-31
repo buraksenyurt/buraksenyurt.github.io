@@ -9,57 +9,20 @@ tags:
   - transaction
   - isolation-levels
 ---
-Bu makalemizde, Sql izolasyon seviyelerinin,.net uygulamalarında nasıl kullanıldığını incelemeye çalışacağız. Bir önceki makalemizde, izolasyon seviyeleri için söz konusu olabilecek 3 problemi ele almıştık. Bu olası problemler phantoms, non-repeatable read ve dirty read durumlarıdır. Eş zamanlı olarak çalışan Transaction'larda meydana gelebilecek bu problemleri, IsolationLevel numaralandırıcısı yardımıyla kontrol altına alabiliriz. Bu numaralandırıcının alabileceği değerler ve bu değerlerin izin verdiği (vermediği) durumlar aşağıdaki tabloda yer almaktadır.
+Bu makalemizde, SQL izolasyon seviyelerinin, .NET uygulamalarında nasıl kullanıldığını incelemeye çalışacağız. Bir önceki makalemizde, izolasyon seviyeleri için söz konusu olabilecek 3 problemi ele almıştık. Bu olası problemler phantoms, non-repeatable read ve dirty read durumlarıdır. Eşzamanlı olarak çalışan Transaction'larda meydana gelebilecek bu problemleri, IsolationLevel numaralandırıcısı yardımıyla kontrol altına alabiliriz. Bu numaralandırıcının alabileceği değerler ve bu değerlerin izin verdiği, izin vermediği durumlar aşağıdaki tabloda yer almaktadır.
 
-IsolationLevel Numaralandırıcı Değeri
-Olası Problemler
+| IsolationLevel | Phantoms | Non-Repeatable Read | Dirty Read |
+| --------------------------------------- | ---------- | ------------ | ------------ |
+| Chaos *(SqlServer tarafından desteklenmez)* | | | |
+| ReadCommitted | Var | Var | Yok |
+| ReadUncommitted | Var | Var | Var |
+| RepeatableRead | Var | Yok | Yok |
+| Serializable | Yok | Yok | Yok |
+| Unspecified *(SqlServer tarafından desteklenmez)* | | | |
 
-Phantoms
-Non-Repeatable Read
+Görüldüğü gibi IsolationLevel numaralandırıcısının alabileceği değerler altı adettir. Chaos ve Unspecified numaralandırıcı değerleri SQL Server tarafından desteklenmemektedir. Bununla birlikte, bir Transaction sınıfının IsolationLevel özelliğinin varsayılan değeri ReadCommitted olarak belirtilmiştir. Bu tablonun okunuşuna gelince. Örneğin, RepeatableRead değerini ele alalım. Bir uygulamada, Transaction nesnesine izolasyon seviyesi olarak bu değer atandığı takdirde, eşzamanlı olarak çalışan Transaction'lar arasında sadece Phantoms durumuna izin verilir. Dolayısıyla, Non-Repeatable Read ve Dirty Read durumlarına izin verilmez. Burada tüm olası problemlere izin veren IsolationLevel numaralandırıcı değeri ReadUncommitted değeridir. Aksine, Serializable değeri Transaction'lar arasında doğabilecek bu problemlerin hiçbirinin olmasına izin vermez.
 
-Dirty-Read
-
-Chaos
-SqlServer tarafından desteklenmez.
-
-ReadCommitted
-
-![mk75_1.gif](/assets/images/2004/mk75_1.gif)
-
-![mk75_1.gif](/assets/images/2004/mk75_1.gif)
-
-![mk75_2.gif](/assets/images/2004/mk75_2.gif)
-
-ReadUncommitted
-
-![mk75_1.gif](/assets/images/2004/mk75_1.gif)
-
-![mk75_1.gif](/assets/images/2004/mk75_1.gif)
-
-![mk75_1.gif](/assets/images/2004/mk75_1.gif)
-
-RepeatableRead
-
-![mk75_1.gif](/assets/images/2004/mk75_1.gif)
-
-![mk75_2.gif](/assets/images/2004/mk75_2.gif)
-
-![mk75_2.gif](/assets/images/2004/mk75_2.gif)
-
-Serializable
-
-![mk75_2.gif](/assets/images/2004/mk75_2.gif)
-
-![mk75_2.gif](/assets/images/2004/mk75_2.gif)
-
-![mk75_2.gif](/assets/images/2004/mk75_2.gif)
-
-Unspecified
-SqlServer tarafından desteklenmez.
-
-Görüldüğü gibi IsolationLevel numaralandırıcısının alabileceği değerler altı adettir. Chaos ve Unspecified numaralandırıcı değerleri sql server tarafından desteklenmemektedir. Bununla birlikte, bir Transaction sınıfının IsolationLevel özelliğinin varsayılan değeri ReadCommitted olarak belirtilmiştir. Bu tablonun okunuşuna gelince. Örneğin, RepeatableRead değerini ele alalım. Bir uygulamada, Transaction nesnesine izolasyon seviyesi olarak bu değer atandığı takdirde, eş zamanlı olarak çalışan Transaction'lar arasında sadece Phantoms durumuna izin verilir. Dolayısıyla, Non-repeatable Read ve Dirty-Read durumlarına izin verilmez. Burada tüm olası problemlere izin veren IsolationLevel numaralandırıcı değeri ReadUncommitted değeridir. Aksine, Serializable değeri Transaction'lar arasında doğabilecek bu problemlerin hiç birisinin olmasına izin vermez.
-
-Şimdi dilerseniz, bu değerlerin aynı zamanda çalışan Transaction'lar üzerindeki etkilerini örnek uygulamamız üzerinde incelemeye çalışalım. Bu makalemizde yine bir önceki makalemizde geliştirdiğimiz uygulamayı örnek olarak kullanabiliriz. Bu kez formumuza izolasyon seviyelerini çalışma zamanında belirlememize yarayacak 4 adet RadioButton kontrolü yerleştirdik. Formumuzun görüntüsü aşağıdaki gibi olacaktır.
+Şimdi dilerseniz, bu değerlerin aynı anda çalışan Transaction'lar üzerindeki etkilerini örnek uygulamamız üzerinde incelemeye çalışalım. Bu makalemizde yine bir önceki makalemizde geliştirdiğimiz uygulamayı örnek olarak kullanabiliriz. Bu kez formumuza izolasyon seviyelerini çalışma zamanında belirlememize yarayacak 4 adet RadioButton kontrolü yerleştirdik. Formumuzun görüntüsü aşağıdaki gibi olacaktır.
 
 ![mk75_3.gif](/assets/images/2004/mk75_3.gif)
 
@@ -162,13 +125,13 @@ private void btnBakID_Click(object sender, System.EventArgs e)
 }
 ```
 
-Kodumuzdaki en önemli nokta, başlatılacak Transaction'lar için IsolationLevel değerlerinin belirlenmesidir. Bu amaçla, SqlConnection sınıfının, BeginTransaction metodunun aşağıdaki prototipi kullanılmaktadır. Bu prototipte BeginTransaction metodu, parametre olarak IsolationLevel numaralandırıcısı türünden bir değer alır. Böylece belirtilen bağlantı için açılacak Transaction, bu parametrede belirtilen izolasyon seviyesini kullanarak çalışacaktır.
+Kodumuzdaki en önemli nokta, başlatılacak Transaction'lar için IsolationLevel değerlerinin belirlenmesidir. Bu amaçla, SqlConnection sınıfının BeginTransaction metodunun aşağıdaki prototipi kullanılmaktadır. Bu prototipte BeginTransaction metodu, parametre olarak IsolationLevel numaralandırıcısı türünden bir değer alır. Böylece belirtilen bağlantı için açılacak Transaction, bu parametrede belirtilen izolasyon seviyesini kullanarak çalışacaktır.
 
 ```csharp
 public SqlTransaction BeginTransaction(IsolationLevel iso);
 ```
 
-Şimdi ilk olarak IsolationLevel özelliğinin varsayılan değeri olan ReadCommitted değerinden işe başlayalım. ReadCommitted değeri, Phantoms ve Non-Repeatable Read durumlarına izin verirken, Dirty-Read durumuna izin vermez. Şimdi örnek uygumamamızdan iki adet çalıştıralım ve aşağıdaki tabloda yer alan hareketleri sırasıyla uygulayalım. Elbette tüm örneklerimizde ilk olarak Başlat başlıklı butona basarak Transaction'ların başlamasını sağlamalıyız.
+Şimdi ilk olarak IsolationLevel özelliğinin varsayılan değeri olan ReadCommitted değerinden işe başlayalım. ReadCommitted değeri, Phantoms ve Non-Repeatable Read durumlarına izin verirken, Dirty Read durumuna izin vermez. Şimdi örnek uygulamamızdan iki adet çalıştıralım ve aşağıdaki tabloda yer alan hareketleri sırasıyla uygulayalım. Elbette tüm örneklerimizde ilk olarak Başlat başlıklı butona basarak Transaction'ların başlamasını sağlamalıyız.
 
 IsolationLevel.ReadCommitted
 
@@ -188,7 +151,7 @@ Tekrardan Veri Çeker. Phantoms durumu oluşur.
 
 ![mk75_4.gif](/assets/images/2004/mk75_4.gif)
 
-Şimdide, Non-Repeatable Read durumunu inceleyelim. Bunun içinde, yine aynı uygulamadan iki tane başlatabilir yada halen çalışan uygulamalarda açık kalan Transaction'ları onaylayarak yeni baştan oluşturabilirsiniz. Bu kez aşağıdaki tabloda izleyen adımları gerçekleştireceğiz.
+Şimdi de, Non-Repeatable Read durumunu inceleyelim. Bunun için de, yine aynı uygulamadan iki tane başlatabilir ya da hâlen çalışan uygulamalarda açık kalan Transaction'ları onaylayarak yeni baştan oluşturabilirsiniz. Bu kez aşağıdaki tabloda izleyen adımları gerçekleştireceğiz.
 
 IsolationLevel.ReadCommitted
 
@@ -208,7 +171,7 @@ Aynı satıra tekrar bakılır. Non-Repeatable Read durumu oluşur.
 
 ![mk75_5.gif](/assets/images/2004/mk75_5.gif)
 
-ReadCommitted seviyesi ile ilgili olarak son durum ise Dirty Read durumudur. Bu izolasyon seviyesi, Dirty Read durumlarının oluşmasına izin vermez. Hatırlayacağınız gibi bu durumda, eş zamanlı olarak çalışan Transaction'larda herhangibir Commit işlemi olmadan söz konusu olan problemler yer almaktadır. Şimdi bu durumu incelemek için aşağıdaki tabloda yer alan işlemleri gerçekleştirelim.
+ReadCommitted seviyesi ile ilgili olarak son durum ise Dirty Read durumudur. Bu izolasyon seviyesi, Dirty Read durumlarının oluşmasına izin vermez. Hatırlayacağınız gibi bu durumda, eşzamanlı olarak çalışan Transaction'larda herhangi bir Commit işlemi olmadan söz konusu olan problemler yer almaktadır. Şimdi bu durumu incelemek için aşağıdaki tabloda yer alan işlemleri gerçekleştirelim.
 
 IsolationLevel.ReadCommitted
 
@@ -228,9 +191,9 @@ Görüldüğü gibi, aşağıdaki hata bildirisi çalışma zamanında oluşur.
 
 ![mk75_6.gif](/assets/images/2004/mk75_6.gif)
 
-Dolayısıyla şunu söyleyebiliriz. ReadCommitted değerine sahip Transaction'lardan herhangibiri içerisinde yapılan güncelleme, silme veya ekleme gibi işlemlerin, diğer Transaction tarafından görülebilmesi için, bu değişiklikleri içeren Transaction'ın Commit edilmesi veya RollBack edilmesi gerekmektedir. Bu nedenle, ReadCommitted değeri, Dirty Read durumuna izin vermez.
+Dolayısıyla şunu söyleyebiliriz. ReadCommitted değerine sahip Transaction'lardan herhangi biri içerisinde yapılan güncelleme, silme veya ekleme gibi işlemlerin, diğer Transaction tarafından görülebilmesi için, bu değişiklikleri içeren Transaction'ın Commit edilmesi veya RollBack edilmesi gerekmektedir. Bu nedenle, ReadCommitted değeri, Dirty Read durumuna izin vermez.
 
-Gelelim, ReadUncommitted değerine. Bu değerin ReadCommitted değerinden tek farkı Dirty Read durumuna izin vermesidir. Bu durumu analiz etmek için, aşağıdaki tablodaki işlemleri sırasıyla uygulayalım. (Transaction'ları Başlat başlıklı Button ile başlatmadan önce, ReadUncommitted RadioButton kontrolünün seçili olmasına dikkat edelim.)
+Gelelim, ReadUncommitted değerine. Bu değerin ReadCommitted değerinden tek farkı Dirty Read durumuna izin vermesidir. Bu durumu analiz etmek için, aşağıdaki tablodaki işlemleri sırasıyla uygulayalım. Transaction'ları Başlat başlıklı button ile başlatmadan önce, ReadUncommitted RadioButton kontrolünün seçili olmasına dikkat edelim.
 
 IsolationLevel.ReadUncommitted
 
@@ -250,9 +213,9 @@ Yapılan işlemler geri alınır. RollBack.
 
 Bu Transaction'da gerçekleşmemiş değişiklikler görünmeye devam eder. Dirty Read durumu.
 
-Dolayısıyla ReadUncommitted değerinin en önemli özelliği, Dirty Read durumuna neden olacak işlemlere izin vermesidir. Başka bir deyişle, çalışan iki Transaction'dan herhangibirinde yapılan değişikliklerin diğer Transaction tarafından görülmesi için, işlemlerin mutlaka Commit edilmesi veya RollBack edilmesi gerekmez.
+Dolayısıyla ReadUncommitted değerinin en önemli özelliği, Dirty Read durumuna neden olacak işlemlere izin vermesidir. Başka bir deyişle, çalışan iki Transaction'dan herhangi birinde yapılan değişikliklerin diğer Transaction tarafından görülmesi için, işlemlerin mutlaka Commit edilmesi veya RollBack edilmesi gerekmez.
 
-Sırada, RepeatableRead değeri var. Bu değeride ReadCommitted ile kıyaslayarak anlamaya çalışmak daha mantıklıdır. RepeatableRead değeri, sadece phantoms durumlarına izin verir. Diğer durumların oluşması halinde, yine zaman aşımı nedeniyle bir SqlException istisnası firlatılır. IsolationLevel'ların belirlenmesi ile ilgili önemli olan bir diğer değerde Serializable değeridir. Bu değer, Phantoms, Non-Repeatable Read ve Dirty Read durumlarından herhangibirisinin oluşmasına izin vermez. Örneğin aşağıdaki tabloda yer alan işlemleri yapmaya çalıştığımızı düşünelim.
+Sırada, RepeatableRead değeri var. Bu değeri de ReadCommitted ile kıyaslayarak anlamaya çalışmak daha mantıklıdır. RepeatableRead değeri, sadece phantoms durumlarına izin verir. Diğer durumların oluşması hâlinde, yine zaman aşımı nedeniyle bir SqlException istisnası fırlatılır. IsolationLevel'ların belirlenmesi ile ilgili önemli olan bir diğer değer de Serializable değeridir. Bu değer, Phantoms, Non-Repeatable Read ve Dirty Read durumlarından herhangi birisinin oluşmasına izin vermez. Örneğin aşağıdaki tabloda yer alan işlemleri yapmaya çalıştığımızı düşünelim.
 
 IsolationLevel.Serializable
 
@@ -266,4 +229,4 @@ Tablodan veriler çekilir.
 
 Yeni bir satır eklenmeye çalışılır. Ancak buna izin verilmez. Çünkü satırlar, Serializable değeri nedeniyle diğer Transaction tarafından kilitlenmiştir.
 
-Dolayısıyla Serializable değerinin eş zamanlı Transaction'lar için sadece veri bakmaya izin verdiğini söyleyebiliriz. Başka bir deyişle, aynı anda çalışan iki Transaction'dan herhangibiri, Transaction'lardan diğeri açık olduğu sürece veri girişi, düzenlemesi veya silme işlemlerini yapamaz. Böylece Sql Server üzerinde çalışan eş zamanlı Transaction'lar için var olabilecek sorunları değerlendiren izolasyon seviyelerini kısaca görmüş olduk. İlerleyen makalelerimizde, Sql Server kilitlerinin Ado.Net içindeki yerini incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+Dolayısıyla Serializable değerinin eşzamanlı Transaction'lar için sadece veri bakmaya izin verdiğini söyleyebiliriz. Başka bir deyişle, aynı anda çalışan iki Transaction'dan herhangi biri, Transaction'lardan diğeri açık olduğu sürece veri girişi, düzenlemesi veya silme işlemlerini yapamaz. Böylece SQL Server üzerinde çalışan eşzamanlı Transaction'lar için var olabilecek sorunları değerlendiren izolasyon seviyelerini kısaca görmüş olduk. İlerleyen makalelerimizde, SQL Server kilitlerinin ADO.NET içindeki yerini incelemeye çalışacağız. Hepinize mutlu günler dilerim.

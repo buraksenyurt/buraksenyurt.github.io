@@ -8,17 +8,17 @@ tags:
   - asp.net
   - sitemap
 ---
-Bu makalemizde, web sitelerinde özellikle sayfalar arasındaki hareketlerde, kullanıcıların nerede olduklarını bilmelerine yardımcı olan site haritaları üzerinde duracağız. Bununla birlikte, site haritalarının Asp.Net 2.0' daki kullanım yollarından birisini sağlayan SiteMapPath sunucu kontrolünü kısaca incelemeye çalışacağız.
+Bu makalemizde, web sitelerinde özellikle sayfalar arasındaki hareketlerde kullanıcıların nerede olduklarını bilmelerine yardımcı olan site haritaları üzerinde duracağız. Bununla birlikte, site haritalarının ASP.NET 2.0'daki kullanım yollarından birisini sağlayan SiteMapPath sunucu kontrolünü kısaca incelemeye çalışacağız.
 
-Internet sitelerinin çoğu, pek çok web sayfasından oluşur. Bu sayfalar arasında her zaman için bir ilişki ve hiyerarşi söz konusudur. Dolayısıyla kullanıcılar, internet sitelerine ait sayfalarda gezinirken, onlara sitenin neresinde olduklarını göstermek ve bulundukları sayfaya nereden geldiklerini belirtmek, sitenin mantıksal ve anlamsam bütünlüğü açısından oldukça önemlidir.
+İnternet sitelerinin çoğu, pek çok web sayfasından oluşur. Bu sayfalar arasında her zaman için bir ilişki ve hiyerarşi söz konusudur. Dolayısıyla kullanıcılar, internet sitelerine ait sayfalarda gezinirken, onlara sitenin neresinde olduklarını göstermek ve bulundukları sayfaya nereden geldiklerini belirtmek, sitenin mantıksal ve anlamsal bütünlüğü açısından oldukça önemlidir.
 
-Bu tarz bir kolaylığı kullanıcılara sağlayabilmek amacıyla çeşitli yollar kullanabiliriz. Kullanıcı tanımlı kontroller geliştirebilir, programatik olarak geliştirimiş teknikler uygulayabiliriz. Ancak Asp.net 2.0, bu tip navigasyon izleme işlemleri için, Xml tabanlı, esnek ve daha pratik bir yol sunmaktadır. Bu teknikteki anahtar noktalar, Site Map dosyası ile, SiteMapPath sunucu kontrolüdür. Olayı daha iyi anlayabilmek amacıyla aşağıdaki hiyerarşik düzene sahip bir internet sitemizin olduğunu varsayalım.
+Bu tarz bir kolaylığı kullanıcılara sağlayabilmek amacıyla çeşitli yollar kullanabiliriz. Kullanıcı tanımlı kontroller geliştirebilir, programatik olarak geliştirilmiş teknikler uygulayabiliriz. Ancak ASP.NET 2.0, bu tip navigasyon izleme işlemleri için XML tabanlı, esnek ve daha pratik bir yol sunmaktadır. Bu teknikteki anahtar noktalar Site Map dosyası ile SiteMapPath sunucu kontrolüdür. Olayı daha iyi anlayabilmek amacıyla aşağıdaki hiyerarşik düzene sahip bir internet sitemizin olduğunu varsayalım.
 
 ![mk87_1.gif](/assets/images/2004/mk87_1.gif)
 
 Şekil 1. Site Haritamız.
 
-Burada görüldüğü gibi ana sayfamız dallanarak çeşitli alt sayfalara doğru ilerlenmektedir. Şimdi, Film Dvdsi sayfamızda olduğumuzu düşünelim. Burada kullanıcıya, nerede olduğu göstermek, son kullanıcı açısından oldukça değerli bir bilgidir. Heleki web sitemiz yüzlerce sayfa içeriyoru ve sayfaların çoğu 3 yada daha fazla alt sayfaya mantıki olarak bağlanıyorsa çok daha önemlidir. Ayrıca, kullanıcının bu sayfaya geldiği sayfalarada gitmesini kolayca sağlayacak linklerin olmasıda tercih nedenidir. İşte bu tip işlemleri gerçekleştirmek için, şekilsel olarak ifade ettiğimiz bu haritayı, Xml ortamına taşımamız gerekmektedir. Bu iş için kullanılan Site Map tipindeki dosyalar, Asp.Net 2.0 için geliştirilmiş özel nitelikli dosyalar olup tamamıyla, site haritalama işlemlerine hizmet etmektedir. Şimdi öncelikli olarak yukarıdaki hiyerarşiye sahip sitemizi Visual Studio.Net 2005 ortamında oluşturalım. Her sayfamızı aşağıdaki isimler ile Solution'ımıza ekleyelim.
+Burada görüldüğü gibi ana sayfamız dallanarak çeşitli alt sayfalara doğru ilerlenmektedir. Şimdi, Film DVD'si sayfamızda olduğumuzu düşünelim. Burada kullanıcıya nerede olduğunu göstermek, son kullanıcı açısından oldukça değerli bir bilgidir. Hele ki web sitemiz yüzlerce sayfa içeriyor ve sayfaların çoğu 3 ya da daha fazla alt sayfaya mantıki olarak bağlanıyorsa çok daha önemlidir. Ayrıca, kullanıcının bu sayfaya geldiği sayfalara da gitmesini kolayca sağlayacak linklerin olması da tercih nedenidir. İşte bu tip işlemleri gerçekleştirmek için, şekilsel olarak ifade ettiğimiz bu haritayı XML ortamına taşımamız gerekmektedir. Bu iş için kullanılan Site Map tipindeki dosyalar, ASP.NET 2.0 için geliştirilmiş özel nitelikli dosyalar olup tamamıyla site haritalama işlemlerine hizmet etmektedir. Şimdi öncelikli olarak yukarıdaki hiyerarşiye sahip sitemizi Visual Studio.NET 2005 ortamında oluşturalım. Her sayfamızı aşağıdaki isimler ile solution'ımıza ekleyelim.
 
 ![mk87_2.gif](/assets/images/2004/mk87_2.gif)
 
@@ -30,9 +30,9 @@ Sıradaki işlemimiz web.sitemap dosyasını oluşturmak olacaktır. Bunun için
 
 Şekil 3. Site Map dosyamızı oluşturuyoruz.
 
-Gelelim dosyamızın içeriğine. Bu dosya Xml tabanlı bir dosya olup, siteMapNode takılarından oluşmaktadır. SiteMap takısı altında yer alan, siteMapNode takıları, site haritasındaki sayfaları çeşitli özellikleri ile birlikte belirtmektedir. Harita hiyerarşisine göre derinlerdeki sayfalara inilmek istendiğinde iç içe geçen siteMapNode takıları kullanılmalıdır. siteMapNode takıları temel olarak, url, description, title olmak üzere 3 önemli özellik içerir. Title ile sayfanın başlığı, description ile sayfaya ait açıklama ve url özelliği ilede sayfanın adresi belirtilmektedir. Şimdi, oluşturduğumuz web.sitemap dosyasına aşağıdaki Xml içeriğini yazalım.
+Gelelim dosyamızın içeriğine. Bu dosya XML tabanlı bir dosya olup, siteMapNode takılarından oluşmaktadır. SiteMap takısı altında yer alan siteMapNode takıları, site haritasındaki sayfaları çeşitli özellikleri ile birlikte belirtmektedir. Harita hiyerarşisine göre derinlerdeki sayfalara inilmek istendiğinde iç içe geçen siteMapNode takıları kullanılmalıdır. siteMapNode takıları temel olarak url, description, title olmak üzere 3 önemli özellik içerir. Title ile sayfanın başlığı, description ile sayfaya ait açıklama ve url özelliği ile de sayfanın adresi belirtilmektedir. Şimdi, oluşturduğumuz web.sitemap dosyasına aşağıdaki XML içeriğini yazalım.
 
-```text
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <siteMap>
 
@@ -61,19 +61,19 @@ Gelelim dosyamızın içeriğine. Bu dosya Xml tabanlı bir dosya olup, siteMapN
 </siteMap>
 ```
 
-Artık elimizde site haritamızın xml içeriği mevcuttur. Şimdi bu Xml içeriğini kullanacak olan sunucu kontrolümüze bakalım. SiteMapPath sunucu kontrolü, bu xml içeriğine bakarak site haritasını değerlendirir ve son kullanıcıya akıllı navigasyon izleme yeteneğini sağlar.
+Artık elimizde site haritamızın XML içeriği mevcuttur. Şimdi bu XML içeriğini kullanacak olan sunucu kontrolümüze bakalım. SiteMapPath sunucu kontrolü, bu XML içeriğine bakarak site haritasını değerlendirir ve son kullanıcıya akıllı navigasyon izleme yeteneğini sağlar.
 
 ![mk87_4.gif](/assets/images/2004/mk87_4.gif)
 
 Şekil 4. SiteMapPath sunucu kontrolü.
 
-Şimdi, toolbox'taki navigation sekmesinde yer alan SiteMapPath sunucu kontrollerini örnek olarak TürkceBilgisayar.aspx sayfasına bırakalım.
+Şimdi, toolbox'taki Navigation sekmesinde yer alan SiteMapPath sunucu kontrolünü örnek olarak TurkceBilgisayar.aspx sayfasına bırakalım.
 
 ![mk87_5.gif](/assets/images/2004/mk87_5.gif)
 
 Şekil 5. Sunucu kontrolünün sayfaya eklenmesi sonrası.
 
-Görüldüğü gibi, site haritamızdaki hiyarerşik düzene göre bu sayfaya hangi sayfalardan gelindiği açıkça görülmektedir. Eğer bu noktada, TurkceBilgisayar.aspx sayfasını çalıştıracak olursak, "Kitaplar" ve "Azon Kitap Cd Dvd" linkleri ile, site haritasındaki üst sayfalara çıkılabileceğimizide görürüz. Dilersek, SiteMapPath sunucu kontrolüne hazır görsel formatlardan birisinide uygulayarak makyajlayabiliriz. Bunun için kontrolün sağında çıkan ok işaretinden sonra yer alan Auto Format seçeneğine basmamız ve herhangibir formatı (örneğin Colorful) seçmemiz yeterlidir.
+Görüldüğü gibi, site haritamızdaki hiyerarşik düzene göre bu sayfaya hangi sayfalardan gelindiği açıkça görülmektedir. Eğer bu noktada, TurkceBilgisayar.aspx sayfasını çalıştıracak olursak, "Kitaplar" ve "Azon Kitap Cd Dvd" linkleri ile site haritasındaki üst sayfalara çıkılabileceğini de görürüz. Dilersek, SiteMapPath sunucu kontrolüne hazır görsel formatlardan birisini de uygulayarak makyajlayabiliriz. Bunun için kontrolün sağında çıkan ok işaretinden sonra yer alan Auto Format seçeneğine basmamız ve herhangi bir formatı (örneğin Colorful) seçmemiz yeterlidir.
 
 ![mk87_6.gif](/assets/images/2004/mk87_6.gif)
 
@@ -95,21 +95,21 @@ PathSeparator=" : ">
 </asp:SiteMapPath>
 ```
 
-Burada önemli olan özelliklerden birisi, SiteMapPath sunucu kontrolüne ait, PathSeperator'dür. Bu özellik ile, sayfalar arasındaki ayraç işareti belirtilmektedir. Burada üst üste iki nokta kullanılmıştır. PathSeparatorStyle takısı ise, ayraç işaretinin font ve renk özelliklerini belirlemekte kullanılır. CurrentNodeStyle, kullanıcının o an bulunduğu sayfayı belirten node'un font ve renk özelliklerini belirlerken, NodeStyle üst nodelara ait ve RootNodeStyle ana sayfaya ait font ve renk özelliklerini belirler.
+Burada önemli olan özelliklerden birisi, SiteMapPath sunucu kontrolüne ait PathSeparator'dır. Bu özellik ile, sayfalar arasındaki ayraç işareti belirtilmektedir. Burada üst üste iki nokta kullanılmıştır. PathSeparatorStyle takısı ise, ayraç işaretinin font ve renk özelliklerini belirlemekte kullanılır. CurrentNodeStyle, kullanıcının o an bulunduğu sayfayı belirten node'un font ve renk özelliklerini belirlerken, NodeStyle üst node'lara ait ve RootNodeStyle ana sayfaya ait font ve renk özelliklerini belirler.
 
-Şimdi, bu sayfaya uyguladığımız SiteMapPath sunucu kontrollünü kopyalayalım ve diğer sayfalarımıza yapıştıralım. Örnek olarak bu kezde, MuzikDvd.aspx sayfamızı çalıştıralım. Bu sayfayı çalıştırdığımızda ekran görüntüsü aşağıdaki gibi olacaktır.
+Şimdi, bu sayfaya uyguladığımız SiteMapPath sunucu kontrolünü kopyalayalım ve diğer sayfalarımıza yapıştıralım. Örnek olarak bu kez de, MuzikDvd.aspx sayfamızı çalıştıralım. Bu sayfayı çalıştırdığımızda ekran görüntüsü aşağıdaki gibi olacaktır.
 
 ![mk87_8.gif](/assets/images/2004/mk87_8.gif)
 
 Şekil 8. MuzikDvd sayfamız.
 
-Görüldüğü gibi, Xml içeriğinde belirttiğimiz description değeri burada ilgili sayfa için bir ipucu kutucuğu olarak ekrana çıkmıştır. Diğer taraftan, altı çizili linklere tıklayarak üst sayfalara hareket edebiliriz. Örneğin, Dvd ler linkine tıkladığımızda, Dvd.aspx sayfasına gideriz.
+Görüldüğü gibi, XML içeriğinde belirttiğimiz description değeri burada ilgili sayfa için bir ipucu kutucuğu olarak ekrana çıkmıştır. Diğer taraftan, altı çizili linklere tıklayarak üst sayfalara hareket edebiliriz. Örneğin, DVD'ler linkine tıkladığımızda, Dvd.aspx sayfasına gideriz.
 
 ![mk87_9.gif](/assets/images/2004/mk87_9.gif)
 
 Şekil 9. Dvd.aspx sayfasına geçtik.
 
-SiteMapPath sunucu kontrolü için öenmli olan özelliklerden biriside, PathDirection'dır. Bu özellik, kontrol üzerindeki hiyerarşinin root'tan current'a yada tam tersi istikamette olup olmayacağını belirtlir. Varsayılan olarak bir SiteMapPath kontrolünün yönü, root'tan current'a doğrudur. Eğer yönü ters çevirmek istersek, sunucu kontrolüne ait kodu aşağıdaki gibi değiştirmemiz gerekir.
+SiteMapPath sunucu kontrolü için önemli olan özelliklerden birisi de PathDirection'dır. Bu özellik, kontrol üzerindeki hiyerarşinin root'tan current'a ya da tam tersi istikamette olup olmayacağını belirtir. Varsayılan olarak bir SiteMapPath kontrolünün yönü, root'tan current'a doğrudur. Eğer yönü ters çevirmek istersek, sunucu kontrolüne ait kodu aşağıdaki gibi değiştirmemiz gerekir.
 
 ```csharp
 <asp:SiteMapPath ID="SiteMapPath1" Runat="server" Font-Size="0.8em" Font-Names="Verdana"

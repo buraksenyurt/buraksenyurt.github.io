@@ -11,7 +11,7 @@ tags:
   - .net
   - arrays
 ---
-Hafta sonu evde bilgisayarım başında internette gezinirken, tarihi oyunların anlatıldığı bir site ile karşılaştım. Aslında zaten eski oyunları araştırıyordum. Amacım bu oyunlara, oyun oynamak isteyen bir çocuk gözü ile değil, onların yapılarını ve çekirdeklerini anlamaya çalışacak bir yazılımcı gözüyle bakabilmekti. Sonuçta, içimdeki çocuk ağır basıp bir kaç tanesini saatlerce oynadım. Aralarında en çok hoşuma gidenlerden birisi PackMan'di. Packman, doğrusal düzlemde 4 yöne hareket edebilen bir kahramandı. Yolda kendisini rastgele konumlardan gelerek yakalamaya çalışan böceklerden kaçıyor ve bulduğu meyveleri yiyerekte puanlar topluyordu. Tam oyunu bitirmeme az kalmıştıki hiç beklenmedik bir şekilde böceklerden birisi tarafından yendim. Aslında ekrana bir süre donuk gözler ile bakmıştım. Nitekim, oyunu oynarken aklıma geçen gün okuduğum Oyun Programlama kitabı gelmişti.
+Hafta sonu evde bilgisayarım başında internette gezinirken, tarihi oyunların anlatıldığı bir site ile karşılaştım. Aslında zaten eski oyunları araştırıyordum. Amacım bu oyunlara, oyun oynamak isteyen bir çocuk gözü ile değil, onların yapılarını ve çekirdeklerini anlamaya çalışacak bir yazılımcı gözüyle bakabilmekti. Sonuçta, içimdeki çocuk ağır basıp birkaç tanesini saatlerce oynadım. Aralarında en çok hoşuma gidenlerden birisi PackMan'di. Packman, doğrusal düzlemde 4 yöne hareket edebilen bir kahramandı. Yolda kendisini rastgele konumlardan gelerek yakalamaya çalışan böceklerden kaçıyor ve bulduğu meyveleri yiyerek de puanlar topluyordu. Tam oyunu bitirmeme az kalmıştı ki hiç beklenmedik bir şekilde böceklerden birisi tarafından yendim. Aslında ekrana bir süre donuk gözlerle bakmıştım. Nitekim, oyunu oynarken aklıma geçen gün okuduğum Oyun Programlama kitabı gelmişti.
 
 Kitabın bir bölümünde, ekranda yer alan aynı boyutlu nesnelerin çarpışmalarının kontrolünde iki boyutlu bir matris dizisinden faydalanılıyordu. O anda, çarpışma tekniklerinin farklı bir teoremini Packman'a benzeyecek bir oyun ile inceleyebileceğimi düşündüm. Her ne kadar amacım tümüyle bir oyunu yazmak olmasada en azından Packman'imi ekrandaki duvarların içinden geçirmeyecek şekilde hareket ettirmek istiyordum.
 
@@ -26,11 +26,11 @@ Teoremin kilit noktası, oyun alanındaki karelerde bulunan elemanları, iki boy
 
 Şekil 1. Oyun Sahası.
 
-Öncelikle, Duvar, Muz ve kahramanımız Packo'ya ait imajları tasvir ettim. Bunların her birisi 20 piksel X 20 Piksel boyutlarındaki bir karenin iç kenarlarına teğer olacak büyüklükteydiler. Daha sonra, oyun sahamı 20 Piksel X 20 Piksel'lik kareler ile doldurdum. Dolayısıyla artık elimde, 20' ye 20' lik bir Matris vardı. Bu Matris yardımıyla ekrandaki her bir elemanın konumunu bilebilirdim. Tek yapmam gerken Matrisin ilgili elemanına, orada duran nesneyi temsil edecek sayısal bir değer vermekti. Örneğin şu anki haliyle, Packo'nun Matris'deki konumunu aşağıdaki gibi ifade edebilirdim.
+Öncelikle, Duvar, Muz ve kahramanımız Packo'ya ait imajları tasvir ettim. Bunların her birisi 20 piksel x 20 piksel boyutlarındaki bir karenin iç kenarlarına teğet olacak büyüklükteydiler. Daha sonra, oyun sahamı 20 piksel x 20 piksellik kareler ile doldurdum. Dolayısıyla artık elimde 20'ye 20'lik bir matris vardı. Bu matris yardımıyla ekrandaki her bir elemanın konumunu bilebilirdim. Tek yapmam gereken, matrisin ilgili elemanına orada duran nesneyi temsil edecek sayısal bir değer vermekti. Örneğin şu anki haliyle, Packo'nun matristеki konumunu aşağıdaki gibi ifade edebilirdim.
 
 Matris[5,8]=1;
 
-Bu durumda, Packo'nun sağa doğru olan hareketinde herhangibir duvara çarpıp çarpmadığını kontrol etmek için, Y değerinin 1 fazlasına bakmak yeterli olacaktı.
+Bu durumda, Packo'nun sağa doğru olan hareketinde herhangi bir duvara çarpıp çarpmadığını kontrol etmek için Y değerinin 1 fazlasına bakmak yeterli olacaktı.
 
 Yani;
 
@@ -48,7 +48,7 @@ Bu kontrolü Packo'nun yapacağı doğrusal her hareket için uygulayabilirdim. 
 ![dikkat.gif](/assets/images/2004/dikkat.gif)
 Hareket yönüne göre bir sonraki adımda yer alan elemanları Matris dizisi içinde bularak çarpışma kontrolünü gerçekleştirebilirdim.
 
-Teoremi kafamda pekiştirdikten sonra, sıra bunu uygulamaya dökmeye gelmişti. Elbetteki bir Windows uygulaması için böyle bir teoremi araştırmaya çalışırken bir takım zorluklar ile karşılaşabilirdim. Örneğin, oyun başladığında Duvarların, Muzların ve Packonun rastgele ekrana konumlandırılması. Ekranda piksel bazında tutulan karesel alanların, Matris dizisi içerisinde nasıl indislendirilebileceği. Öyle ya, 400 piksel'e 400 piksel'lik bir Form alanını, 400*400 elemanlı bir Matris dizisinde aynen uygulamak gereksiz yere hafıza tüketimine neden olurdu. Ya da, ekrandaki bir Muz'un üstünden geçildiğinde o resmin nasıl kaldırılacağı. Bu gibi pek çok sorunu önceden düşünmek ve uygulamayı ona göre planlamak gerekiyordu. Bu amaçla önce düşündüm ve sonra aşağıdaki kodları geliştirdim.
+Teoremi kafamda pekiştirdikten sonra, sıra bunu uygulamaya dökmeye gelmişti. Elbette ki bir Windows uygulaması için böyle bir teoremi araştırmaya çalışırken birtakım zorluklar ile karşılaşabilirdim. Örneğin, oyun başladığında Duvarların, Muzların ve Packo'nun rastgele ekrana konumlandırılması. Ekranda piksel bazında tutulan karesel alanların, matris dizisi içerisinde nasıl indislenebileceği. Öyle ya, 400 piksel'e 400 piksellik bir Form alanını 400*400 elemanlı bir matris dizisinde aynen uygulamak gereksiz yere hafıza tüketimine neden olurdu. Ya da, ekrandaki bir Muz'un üstünden geçildiğinde o resmin nasıl kaldırılacağı. Bu gibi pek çok sorunu önceden düşünmek ve uygulamayı ona göre planlamak gerekiyordu. Bu amaçla önce düşündüm ve sonra aşağıdaki kodları geliştirdim.
 
 Konumlandırma işlemleri için kullandığım sınıf,
 
@@ -321,7 +321,7 @@ private void menuItem4_Click(object sender, System.EventArgs e)
 }
 ```
 
-Kodlar her ne kadar uzun görünsede programın tek yaptığı, Packo'yu duvarların içinden geçirmeden hareket ettirmek ve yolda gördüğü Muz'ları toplamasını sağlamak. Örneğin, uygulamayı çalıştırdığımızda bir duvara hangi yönden gelirsek gelelim, Matris dizimiz içinde Packo'dan sonraki elemanlar kontrol edilecek ve duvara çarpılıp çarpılmadığına bakılacaktır.
+Kodlar her ne kadar uzun görünse de programın tek yaptığı, Packo'yu duvarların içinden geçirmeden hareket ettirmek ve yolda gördüğü Muz'ları toplamasını sağlamak. Örneğin, uygulamayı çalıştırdığımızda bir duvara hangi yönden gelirsek gelelim, matris dizimiz içinde Packo'dan sonraki elemanlar kontrol edilecek ve duvara çarpılıp çarpılmadığına bakılacaktır.
 
 ![mk109_2.gif](/assets/images/2004/mk109_2.gif)
 
@@ -333,4 +333,4 @@ Diğer yandan, eğer Packo bir Muz üzerinden geçerse, bu Muz nesnesini temsil 
 
 Şekil 3. Packo Muzları Yiyebiliyor.
 
-Görüldüğü gibi, Matris tekniği ile eşit karelere bölünmüş sahalardaki nesnelerin birbirleri ile olan çarpışmalarını kontrol edebilmek son derece basit. Bu minik program elbetteki başlangıç aşamasında. Örneğin, her muz yiyişinden sonra puanlama sistemi olması, duvarların seri olacak şekilde ekrana dizilmesi, Packo dışında hareket eden ve Packo'yu yemeye çalışan böceklerin farklı hareketleri vs... Bu kısımların geliştirilmesinide siz değerli okurlarıma bırakıyorum. Uygulamaya kaldığı yerden devam edebilirsiniz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+Görüldüğü gibi, matris tekniği ile eşit karelere bölünmüş sahalardaki nesnelerin birbirleri ile olan çarpışmalarını kontrol edebilmek son derece basit. Bu minik program elbette ki başlangıç aşamasında. Örneğin, her muz yiyişinden sonra puanlama sistemi olması, duvarların seri olacak şekilde ekrana dizilmesi, Packo dışında hareket eden ve Packo'yu yemeye çalışan böceklerin farklı hareketleri vs... Bu kısımların geliştirilmesini de siz değerli okurlarıma bırakıyorum. Uygulamaya kaldığı yerden devam edebilirsiniz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

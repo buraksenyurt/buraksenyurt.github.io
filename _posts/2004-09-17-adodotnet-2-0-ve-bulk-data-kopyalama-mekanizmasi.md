@@ -10,13 +10,13 @@ tags:
   - data
   - copy
 ---
-Sql Server'da bir veritabanı tablosundan, başka bir hedef tabloya veri taşıma işlemi bulk-data kopyalama olarak adlandırılır. Veritabanı yöneticileri çoğunlukla bu operasyonu gerçekleştirmek amacıyla, BCP adı verilen komut satırı aracını kullanırlar. Burada amaç, kaynak tablodaki satırların veya bir satır kümesinin farklı konumda olabilecek bir tabloya taşınmasıdır. Hedef tablo aynı veritabanında olabileceği gibi, diğer bir sql sunucusu üzerindeki başka bir veritabanında da yer alabilir. Ado.Net 2.0' da SqlClient isim alanına eklenen yeni sınıflar yardımıyla bu işlemleri yönetimli kodda (managed-code) gerçekleştirme imkanına da artık sahibiz. Bu makalemizde, bu işlemleri gerçekleştirmek için kullanabileceğimiz yeni Ado.Net 2.0 sınıflarını incelemeye çalışacağız.
+SQL Server'da bir veritabanı tablosundan, başka bir hedef tabloya veri taşıma işlemi bulk-data kopyalama olarak adlandırılır. Veritabanı yöneticileri çoğunlukla bu operasyonu gerçekleştirmek amacıyla, BCP adı verilen komut satırı aracını kullanırlar. Burada amaç, kaynak tablodaki satırların veya bir satır kümesinin farklı konumda olabilecek bir tabloya taşınmasıdır. Hedef tablo aynı veritabanında olabileceği gibi, diğer bir SQL sunucusu üzerindeki başka bir veritabanında da yer alabilir. ADO.NET 2.0'da SqlClient isim alanına eklenen yeni sınıflar yardımıyla bu işlemleri yönetimli kodda (managed-code) gerçekleştirme imkânına da artık sahibiz. Bu makalemizde, bu işlemleri gerçekleştirmek için kullanabileceğimiz yeni ADO.NET 2.0 sınıflarını incelemeye çalışacağız.
 
-Bulk-Data kopyalama işlemi için Ado.Net 2.0 ile gelen en önemli sınıf, SqlClient isim alanında yer alan SqlBulkCopy sınıfıdır. Bu sınıfa ait nesne örnekleri yardımıyla, kaynak tablodan hedef tabloya veri transferi işlemleri kolayca gerçekleştirilebilir. Bu işlemler sırasında SqlBulkCopy nesne örnekleri, taşıma işlemini varsayılan olarak açtığı bir transaction içerisinde gerçekleştirmektedir. Yani, hedef tabloya yapılan taşıma işlemleri sırasında oluşabilecek olan hatalar sonrasında, transaction işlemi iptal edilerek roll-back operasyonu gerçekleşir ve hedef tabloya o ana kadar girilen satırlar geri alınır.
+Bulk-Data kopyalama işlemi için ADO.NET 2.0 ile gelen en önemli sınıf, SqlClient isim alanında yer alan SqlBulkCopy sınıfıdır. Bu sınıfa ait nesne örnekleri yardımıyla, kaynak tablodan hedef tabloya veri transferi işlemleri kolayca gerçekleştirilebilir. Bu işlemler sırasında SqlBulkCopy nesne örnekleri, taşıma işlemini varsayılan olarak açtığı bir transaction içerisinde gerçekleştirmektedir. Yani, hedef tabloya yapılan taşıma işlemleri sırasında oluşabilecek olan hatalar sonrasında, transaction işlemi iptal edilerek roll-back operasyonu gerçekleşir ve hedef tabloya o ana kadar girilen satırlar geri alınır.
 
-Burada önemli olan noktalardan birisi, kaynak ve hedef tabloların aynı şema yapısına sahip olmalarının önemli olmayışıdır. Yani, aynı alan adları, eşit alan sayıları ve aynı alan sıraları olmak zorunda değildir. Nitekim, hedef tablo ile kaynak tablo arasında alan eşleşmelerinde uyumsuzluk olabilir. Örneğin, alan adları ve sayılar birbirinden farklı olabilir. İşte bu durumda, kaynak ve hedef tablodaki alanları birbirleriyle eşleştirmekte kullanılan SqlBulkCopyColumnMapping sınıfına ait nesne örnekleri kullanılır. Bu sınıf yardımıyla kaynak ve hedef alanların kolayca eşleştirilmesi sağlanmış olur. Bulk-Data kopylama işlemi için önemli olan bir diğer sınıf ise, SqlBulkCopyColumnMappingCollection'dır. Bu sınıf ise, tahmin edeceğiniz gibi SqlBulkCopyColumnMapping sınıfı türünden nesne örneklerinin bir koleksiyonunu ifade etmektedir.
+Burada önemli olan noktalardan birisi, kaynak ve hedef tabloların aynı şema yapısına sahip olmalarının önemli olmayışıdır. Yani, aynı alan adları, eşit alan sayıları ve aynı alan sıraları olmak zorunda değildir. Nitekim, hedef tablo ile kaynak tablo arasında alan eşleşmelerinde uyumsuzluk olabilir. Örneğin, alan adları ve sayılar birbirinden farklı olabilir. İşte bu durumda, kaynak ve hedef tablodaki alanları birbirleriyle eşleştirmekte kullanılan SqlBulkCopyColumnMapping sınıfına ait nesne örnekleri kullanılır. Bu sınıf yardımıyla kaynak ve hedef alanların kolayca eşleştirilmesi sağlanmış olur. Bulk-Data kopyalama işlemi için önemli olan bir diğer sınıf ise, SqlBulkCopyColumnMappingCollection'dır. Bu sınıf ise, tahmin edeceğiniz gibi SqlBulkCopyColumnMapping sınıfı türünden nesne örneklerinin bir koleksiyonunu ifade etmektedir.
 
-Bulk-Data kopyalama operasyonunda, kaynak veriler için yine SqlClient isim alanındaki standart nesneler kullanılabilir. Esasen bu tip bir operasyonda, kaynak verileri herhangibir SqlDataReader nesnesinden, bir DataTable'dan veya bir DataRow dizisinden alabiliriz. Hatta bir Xml dökümanınıda kaynak olarak kullanabiliriz. Böylece yönetimsel koda kazandırılan bu imkanlar ile veri taşıma işlemi için büyük esneklik kazanmış olmaktayız.
+Bulk-Data kopyalama operasyonunda, kaynak veriler için yine SqlClient isim alanındaki standart nesneler kullanılabilir. Esasen bu tip bir operasyonda, kaynak verileri herhangi bir SqlDataReader nesnesinden, bir DataTable'dan veya bir DataRow dizisinden alabiliriz. Hatta bir XML dokümanını da kaynak olarak kullanabiliriz. Böylece yönetimsel koda kazandırılan bu imkânlar ile veri taşıma işlemi için büyük esneklik kazanmış olmaktayız.
 
 ![mk93_10.gif](/assets/images/2004/mk93_10.gif)
 
@@ -105,24 +105,13 @@ public SqlBulkCopy(connectionString, SqlBulkCopyOptions copyOptions);
 
 Bu yapıcı metod SqlBulkCopyOptions numaralandırıcısı türünden bir parametre daha alır. Bu numaralandırıcının alabileceği değerler şunlardır.
 
-SqlBulkCopyOptions Numaralandırıcı Değeri
-
-Açıklaması
-
-CheckConstraints
-Hedef tablodaki kısıtlamalar var ise bunlar göz önüne alınarak veri girişi gerçekleşir.
-
-Default
-Varsayılan değerler kullanılır.
-
-KeepIdentity
-Kaynak tablodaki identity değerleri hedef tablodada korunur. Yani değiştirilmeden eklenir.
-
-KeepNulls
-Null değerlerin hedef tabloya korunarak geçirilmesini sağlar.
-
-TableLock
-Bulk-Data kopylama işlemi sırasında tabloya kilit koyar.
+| SqlBulkCopyOptions Değeri | Açıklaması |
+| ------------------------- | ------------ |
+| CheckConstraints | Hedef tablodaki kısıtlamalar var ise bunlar göz önüne alınarak veri girişi gerçekleşir. |
+| Default | Varsayılan değerler kullanılır. |
+| KeepIdentity | Kaynak tablodaki identity değerleri hedef tablodada korunur. Yani değiştirilmeden eklenir. |
+| KeepNulls | Null değerlerin hedef tabloya korunarak geçirilmesini sağlar. |
+| TableLock | Bulk-Data kopyalama işlemi sırasında tabloya kilit koyar. |
 
 Bizim örneğimizde kullanmamız gereken değer, KeepIdentity'dir. Şimdi kodumuzdaki SqlBulkCopy nesnemizin yapıcı metodunu aşağıdaki parametreleri ile çağıralım.
 
@@ -152,37 +141,21 @@ SqlBulkCopy bc = new SqlBulkCopy("data source=localhost;initial catalog=Adventur
 
 Şimdiye kadar ki kodlarımızda, SqlBulkCopy nesnesi için iki yapıcı metod kullandık. SqlBulkCopy nesnelerini oluşturabileceğimiz yapıcı metodların tamamı aşağıdaki tabloda yer almaktadır.
 
-Name
-Description
-
-SqlBulkCopy (SqlConnection)
-Hedef bağlantıyı bir SqlConnection nesnesi belirtir.
-
-SqlBulkCopy (String)
-Hedef bağlantı için SqlConnection String kullanılır.
-
-SqlBulkCopy (String, SqlBulkCopyOptions)
-Hedef bağlantıyı string bilgisi olarak alır ve SqlBulkCopy nesnesini, SqlBulkCopyOptions numaralandırıcısı ile bertilen şartlara göre oluşturulur.
-
-SqlBulkCopy (SqlConnection, SqlBulkCopyOptions, SqlTransaction)
-SqlBulkCopy nesnesini hedef bağlantıda, SqlBulkCopyOptions ile belirtilen şartlarda, SqlTransaction nesnesi ile belirtilen Transaction içinde oluşturur.
+| Name | Description |
+| ---- | ----------- |
+| SqlBulkCopy (SqlConnection) | Hedef bağlantıyı bir SqlConnection nesnesi belirtir. |
+| SqlBulkCopy (String) | Hedef bağlantı için SqlConnection String kullanılır. |
+| SqlBulkCopy (String, SqlBulkCopyOptions) | Hedef bağlantıyı string bilgisi olarak alır ve SqlBulkCopy nesnesini, SqlBulkCopyOptions numaralandırıcısı ile bertilen şartlara göre oluşturulur. |
+| SqlBulkCopy (SqlConnection, SqlBulkCopyOptions, SqlTransaction) | SqlBulkCopy nesnesini hedef bağlantıda, SqlBulkCopyOptions ile belirtilen şartlarda, SqlTransaction nesnesi ile belirtilen Transaction içinde oluşturur. |
 
 Bulk-Data kopyalama işlemini asıl gerçekleştiren WriteToServer metodununda çeşitli aşırı yüklenmiş (overload) verisyonları vardır. Bu versiyonlar aşağıdaki tabloda olduğu gibidir.
 
-Overload Versiyonu
-Açıklaması
-
-SqlBulkCopy.WriteToServer (DataRow[])
-Bir DataRow dizisini hedef tabloya taşır.
-
-SqlBulkCopy.WriteToServer (DataTable)
-Bir DataTable'ı hedef tabloya taşır.
-
-SqlBulkCopy.WriteToServer (IDataReader)
-Bir SqlDataReader'dan okuduğu veri kümesini hedef tabloya taşır.
-
-SqlBulkCopy.WriteToServer (DataTable, DataRowState)
-Bir DataTable'dan DataRowState numaralandırıcısını belirttiği kriterlere uyan satırlarını, hedef tabloya taşır.
+| Overload Versiyonu | Açıklaması |
+| ------------------- | ----------- |
+| SqlBulkCopy.WriteToServer (IDataReader) | Bir IDataReader'dan okudu  ğu veri kümesini hedef tabloya taşır. |
+| SqlBulkCopy.WriteToServer (DataTable) | Bir DataTable'ı hedef tabloya taşır. |
+| SqlBulkCopy.WriteToServer (DataTable, DataRowState) | Bir DataTable'dan DataRowState numaralandırıcısını belirttiği kriterlere uyan satırlarını, hedef tabloya taşır. |
+| SqlBulkCopy.WriteToServer (DataRow[]) | Bir DataRow dizisini hedef tabloya taşır. |
 
 Gördüğünüz gibi, WriteToServer metodunu etkili versiyonları vardır. Örneğin, bir DataTable üzerinde sadece değiştirilmiş olan satırların hedef tabloya yazılmasını sağlayabiliriz. Bunun için tek yapmamız gereken, DataRowState numaralandırıcısının Modified değerini kullanmak olacaktır. Bildiğiniz gibi DataRowState numaralandırıcısı, Modified, Unchanged, Inserted ve Deleted değerlerinden birisini alabilir. Bu durumu dilerseniz bir örnek üzerinde inceleyelim.
 
@@ -313,19 +286,12 @@ public SqlBulkCopyColumnMapping(string sourceColumn, string destinationColumn);
 
 Bu yapıcı haricinde kullanabileceğimiz diğer yapıcılarda aşağıdaki tabloda yer almaktadır.
 
-Yapıcı Metod
-Açıklama
-
-SqlBulkCopyColumnMapping ()
-
-SqlBulkCopyColumnMapping (Int32, Int32)
-Kaynak ve Hedef alanların indeksini alır.
-
-SqlBulkCopyColumnMapping (Int32, String)
-Kaynak alanın indeksini, hedef alanın ismini alır.
-
-SqlBulkCopyColumnMapping (String, Int32)
-Kaynak alanın ismini, hedef alanın indeksini alır.
+| Yapıcı Metod | Açıklaması |
+| ------------ | ----------- |
+| SqlBulkCopyColumnMapping (String, String) | Kaynak ve Hedef alanların isimlerini alır. |
+| SqlBulkCopyColumnMapping (Int32, Int32) | Kaynak ve Hedef alanların indeksini alır. |
+| SqlBulkCopyColumnMapping (Int32, String) | Kaynak alanın indeksini, hedef alanın ismini alır. |
+| SqlBulkCopyColumnMapping (String, Int32) | Kaynak alanın ismini, hedef alanın indeksini alır. |
 
 SqlBulkCopyColumnMapping nesnelerimizi yarattıktan sonra bu nesnelerin, SqlBulkCopy nesnemizin ilgili ColumnMappings koleksiyonuna eklenmesi gerekmektedir. Bunun için Add metodunu kullandık. Böylece SqlBulkCopy nesnemiz, kaynak tablodaki hangi alanın, hedef tablodaki hangi alana denk geleceğini bilmektedir. Aynı örneği, aşağıdaki kodlar ilede gerçekleştirebiliriz.
 
