@@ -11,9 +11,9 @@ tags:
   - covariance
   - delegate
 ---
-Bildiğiniz gibi temsilciler (delegates) çalışma zamanında metodların başlangıç adreslerini işaret eden tiplerdir. Bu tipleri uygulamalarımızda tanımlarken çalışma zamanında işaret edebilecekleri metodların geri dönüş tipi ve parametrik yapılarını bildirecek şekilde oluştururuz. Ancak özellikle, C# 1.1 ortamında temsilcilerin kullanımında parametre ve dönüş tipileri açısından iki önemli sıkıntımız vardır. Bu sıkıntıların kaynağında birbirlerinden türeyen yani aralarında kalıtımsal (inheritance) ilişkiler olan tipler yer alır.
+Bildiğiniz gibi temsilciler (delegates) çalışma zamanında metotların başlangıç adreslerini işaret eden tiplerdir. Bu tipleri uygulamalarımızda tanımlarken çalışma zamanında işaret edebilecekleri metotların geri dönüş tipi ve parametrik yapılarını bildirecek şekilde oluştururuz. Ancak özellikle, C# 1.1 ortamında temsilcilerin kullanımında parametre ve dönüş tipleri açısından iki önemli sıkıntımız vardır. Bu sıkıntıların kaynağında birbirlerinden türeyen yani aralarında kalıtımsal (inheritance) ilişkiler olan tipler yer alır.
 
-Nitekim temsilciler C# 1.1 versiyonunda oluşturulacakları zaman, işaret edecekleri metodlar için kesin dönüş ve parametre tipi uyumluluğunu ararlar. Dolayısıla bu tiplerde kalıtımsal ilişkiler söz konusu olduğunda ortaya çıkan iki temel problem vardır. Bu iki temel sorunumuza bakmadan önce, konunun odağında aralarında kalıtım ilişkisi olan iki sınıf olduğunu göz önüne almalıyız. Örneğin Sekil ve Dortgen isimli iki sınıfımız olduğunu ve Dortgen sınıfının Sekil sınıfından türediğini varsayalım. Bu sınıfların sahip olduğu içeriğin bizim için şu aşamada çok fazla önemi yoktur. İlk olarak covariance'lığa neden olan sorunu ele alalım. Aşağıdaki uygulamamızı dikkatle inceleyelim.
+Nitekim temsilciler C# 1.1 versiyonunda oluşturulacakları zaman, işaret edecekleri metotlar için kesin dönüş ve parametre tipi uyumluluğunu ararlar. Dolayısıyla bu tiplerde kalıtımsal ilişkiler söz konusu olduğunda ortaya çıkan iki temel problem vardır. Bu iki temel sorunumuza bakmadan önce, konunun odağında aralarında kalıtım ilişkisi olan iki sınıf olduğunu göz önüne almalıyız. Örneğin Sekil ve Dortgen isimli iki sınıfımız olduğunu ve Dortgen sınıfının Sekil sınıfından türediğini varsayalım. Bu sınıfların sahip olduğu içeriğin bizim için şu aşamada çok fazla önemi yoktur. İlk olarak covariance'a neden olan sorunu ele alalım. Aşağıdaki uygulamamızı dikkatle inceleyelim.
 
 ```csharp
 using System;
@@ -107,7 +107,7 @@ Bu tamamen.net çekirdeğinde delegate tipi üzerinde yapılan bir düzenlemenin
 ![dikkat.gif](/assets/images/2005/dikkat.gif)
 Covariance, temsilcilerin çalışma zamanında işaret etmek istediği metodların, aralarında kalıtımsal ilişki olan dönüş tipleri arasındaki poliformik uyum sorununu ortadan kaldıran bir özellik olarak nitelendirilebilir.
 
-Temsilci nesnelerimizin işaret edeceği metodların dönüş tiplerinin kalıtımsal ilişkilere izin verecek şekilde düzenlenmiş olması elbetteki çalışma zamanında bize büyük bir esneklik getirmektedir. Nitekim bu sayede birbirlerinden türemiş n sayıda sınıfa ait nesne örneklerinin dönüş tipi olarak kullanıldığı metodları tek bir delegate nesnesi vasıtasıyla çalışma zamanında işaret edebiliriz.
+Temsilci nesnelerimizin işaret edeceği metotların dönüş tiplerinin kalıtımsal ilişkilere izin verecek şekilde düzenlenmiş olması elbette ki çalışma zamanında bize büyük bir esneklik getirmektedir. Nitekim bu sayede birbirlerinden türemiş n sayıda sınıfa ait nesne örneklerinin dönüş tipi olarak kullanıldığı metotları tek bir delegate nesnesi vasıtasıyla çalışma zamanında işaret edebiliriz.
 
 Gelelim contravariance durumuna. Bu kez kalıtım ilişkisine sahip olan sınıf örnekleri, temsilcilerin işaret edeceği metodların parametrik yapıları içerisinde kullanılmaktadır. Aşağıdaki örnek kod parçası C# 1.1 için bu durumu örneklemektedir.
 
@@ -185,8 +185,7 @@ class Class1
 
 bu sefer Metod_1 için oluşturulan temsilci isimli nesnemiz üzerinden aynı hata mesajını alırız. Doğal olarak, metod parametlerinin üst sınıftan veya türeyen sınıftan olması durumu değiştirmeyecektir.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Contravariance, temsilcilerin çalışma zamanında işaret etmek istediği metodların parametreleri arasında kalıtımsal ilişkiye sahip tiplerin neden olduğu polimorfik uyum sorununu ortadan kaldıran bir özellik olarak nitelendirilebilir.
+> Contravariance, temsilcilerin çalışma zamanında işaret etmek istediği metodların parametreleri arasında kalıtımsal ilişkiye sahip tiplerin neden olduğu polimorfik uyum sorununu ortadan kaldıran bir özellik olarak nitelendirilebilir.
 
 Parametrelerin uyumsuzluğunun neden olduğu bu sorunu C# 1.1 ile çözmek için, covariance tekniğinde olduğu gibi her bir metod için ayrı temsilci nesnelerini aşağıdaki kod parçasında olduğu gibi tanımlamamız gerekecektir.
 
@@ -218,4 +217,4 @@ Yukarıdaki örneğimizi C# 2.0 ile derlediğimizde ise her hangi bir sorun olma
 
 ![mk127_2.gif](/assets/images/2005/mk127_2.gif)
 
-Parametrelerin arasındaki kalıtımsal ilişki, çalışma zamanında temsilciler oluşturulurken de değerlendirilecek ve nesneler arasındaki tür dönüşümü başarılı bir şekilde parametrelerede yansıyacaktır. Bu covarince probleminde olduğu gibi bize yine büyük bir esneklik sağlar. Aralarında kalıtımsal ilişki olan n sayıda sınıf nesne örneğini kullanan metodları tek bir temsilci nesnesi ile çalışma zamanında işaret edebilme yeteneği. Böylece geldik bir makalemizin daha sonuna, bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+Parametrelerin arasındaki kalıtımsal ilişki, çalışma zamanında temsilciler oluşturulurken de değerlendirilecek ve nesneler arasındaki tür dönüşümü başarılı bir şekilde parametrelere de yansıyacaktır. Bu, covariance probleminde olduğu gibi bize yine büyük bir esneklik sağlar: Aralarında kalıtımsal ilişki olan n sayıda sınıf nesne örneğini kullanan metotları tek bir temsilci nesnesi ile çalışma zamanında işaret edebilme yeteneği. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

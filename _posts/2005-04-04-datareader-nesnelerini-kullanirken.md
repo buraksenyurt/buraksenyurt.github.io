@@ -10,29 +10,23 @@ tags:
 ---
 Bir önceki makalemizde Command nesnelerini kullanırken dikkat etmemiz gereken noktalara değinmiştik. Bu makalemizde ise DataReader nesnelerini kullanırken bizlere avantaj sağlayacak tekniklere değinmeye çalışacağız. Önceki makalemizde olduğu gibi ağırlık olarak SqlDataReader nesnesini ve Sql veritanını kullanacağız. DataReader nesneleri bildiğiniz gibi, bağlantılı katman (connected-layer) üzerinde çalışmaktadır. Görevleri veri kaynağından, uygulama ortamına doğru belli bir akım üzerinden hareket edecek veri parçalarının taşınmasını sağlamaktır.
 
-DataReader nesneleri ile veri almak bağlantısız katman (disconnected-layer) nesnelerine veri çekmekten çok daha hızlıdır. Çoğunlukla DataReader nesnelerinin kullanılmasının tercih edileceği durumlar vardır. Uygulamalarımız geliştirirken çoğu zaman bağlantılı katman ile bağlantısız katman nesneleri arasında seçim yapmakta zorlanırız. Aşağıdaki tablo "Ne zaman DataReader kullanırız?" sorusuna ışık tutan noktalara değinmektedir.
+DataReader nesneleri ile veri almak bağlantısız katman (disconnected-layer) nesnelerine veri çekmekten çok daha hızlıdır. Çoğunlukla DataReader nesnelerinin kullanılmasının tercih edileceği durumlar vardır. Uygulamalarımız geliştirirken çoğu zaman bağlantılı katman ile bağlantısız katman nesneleri arasında seçim yapmakta zorlanırız. Aşağıda "Ne zaman DataReader kullanırız?" sorusuna ışık tutan noktalara değinmektedir.
 
-Eğer Windows veya Asp.Net uygulaması geliştiriyor ve birden fazla form (page) için veri bağlama (data-binding) gerçekleştirmiyorsanız,
-
-Veriyi ara belleğe alma (caching) ihtiyacınız yok ise.
-
-Eğer tablolarınız arasındaki ilişkileri (relations) uygulamalarınızda kullanmıyorsanız.
-
-DataReader Kullanmayı Tercih Edin.
+- Eğer Windows veya Asp.Net uygulaması geliştiriyor ve birden fazla form (page) için veri bağlama (data-binding) gerçekleştirmiyorsanız,
+- Veriyi ara belleğe alma (caching) ihtiyacınız yok ise.
+- Eğer tablolarınız arasındaki ilişkileri (relations) uygulamalarınızda kullanmıyorsanız.
+*DataReader Kullanmayı Tercih Edin.*
 
 Gelelim DataReader nesnelerini kullanırken dikkat edeceğimiz altın noktalara. Bu teknikler uygulamalarımızın performansını arttıracak nitelikte olup aşağıdaki tabloda belirtilmektedir.
 
-DataReader nesnelerini kullanırken açık Connection'ların kapatılmasını unutmayın.
-
-Sorgu sonucu sadece tek bir satır döneceği kesin ise SingleRow tekniğini kullanın.
-
-Toplu sorgular (Batch Queries) için Next Result tekniğini kullanın.
-
-Binary veya Text bazlı alan verilerini okurken SequentialAccess tekniğini kullanın.
+- DataReader nesnelerini kullanırken açık Connection'ların kapatılmasını unutmayın.
+- Sorgu sonucu sadece tek bir satır döneceği kesin ise SingleRow tekniğini kullanın.
+- Toplu sorgular (Batch Queries) için Next Result tekniğini kullanın.
+- Binary veya Text bazlı alan verilerini okurken SequentialAccess tekniğini kullanın.
 
 Şimdi bu teknikleri birer birer inceleyelim.
 
-Açık Connection'ları Kapatmayı Unutmamak İçin
+## Açık Connection'ları Kapatmayı Unutmamak İçin
 
 DataReader nesneleri açık ve geçerli bir Connection nesnesine ihtiyaç duyarlar. Lakin aynı Connection'ı kullanan DataReader nesneleri söz konusu ise, her bir DataReader'ın kullanılabilmesi için bir önceki DataReader'ın kullandığı Connection nesnesinin kapatılmış olması gerekir. (Bu aynı Connection nesnesini kullanan DataReader'lar var ise geçerlidir.) Örneğin aşağıdaki uygulama kodunu ele alalım;
 
@@ -104,7 +98,7 @@ Uygulamamızı bu haliyle çalıştırdığımızda aşağıdaki istisnayı alı
 
 ![mk119_2.gif](/assets/images/2005/mk119_2.gif)
 
-Sebep ilk drOrders SqlDataReader nesnesinin kullandığı SqlConnection nesnesinin kapatılmamış olması ve bağlantının halen daha açık olarak kalmasıdır. Özellikle yukarıdaki gibi iş nesneleri üzerinden yürütülen sorgularda Connection nesnelerinin otomatik olarak kapatılmasını sağlamak için CommandBehavior numaralandırıcısının CloseConnection değerini kullanmayı unutmamak gerekir. Dolayısıyla DbWork sınıfımızdaki Results metodunu aşağıdaki gibi düzenlersek istediğimiz sonucu elde eder ve istisnanın üstesinden geliriz.
+Sebep ilk drOrders SqlDataReader nesnesinin kullandığı SqlConnection nesnesinin kapatılmamış olması ve bağlantının hâlâ açık olarak kalmasıdır. Özellikle yukarıdaki gibi iş nesneleri üzerinden yürütülen sorgularda Connection nesnelerinin otomatik olarak kapatılmasını sağlamak için CommandBehavior numaralandırıcısının CloseConnection değerini kullanmayı unutmamak gerekir. Dolayısıyla DbWork sınıfımızdaki Results metodunu aşağıdaki gibi düzenlersek istediğimiz sonucu elde eder ve istisnanın üstesinden geliriz.
 
 ```csharp
 public SqlDataReader Results(string selectQuery)
@@ -119,7 +113,7 @@ public SqlDataReader Results(string selectQuery)
 
 ![mk119_3.gif](/assets/images/2005/mk119_3.gif)
 
-Sorgu Sonucu Tek Bir Satır Döndüğü Kesin İse
+## Sorgu Sonucu Tek Bir Satır Döndüğü Kesin İse
 
 Bazı durumlarda tablolardan dönen satır sayısının 1 olacağı kesindir. Bu satırlar çoğunlukla belirli key alanı üzerinden elde edilen parametrik sorguların sonucudur. Örneğin, benzersiz değer alan (unique), ve otomatik olarak artan alanların parametre olarak kullanıldığı sorgular göz önüne alabiliriz. Bu tarz sorgularda, bağlantısız katman nesnelerini kullanmak gereksiz yere kaynak tüketimine neden olacaktır. Böyle bir durumda DataReader nesneleri bağlantısız katman nesnelerine oranla çok daha performanslı ve hızlı çalışacaktır. Burada önemli olan DataReader ile dönen satırı okumak için ilgili Command nesnesinin ExecuteReader metoduna verilecek CommandBehavior numaralandırıcısının değeridir. Aşağıda bu tekniğin kullanımına bir örnek verilmiştir. Veritabanı işlemlerimizi topladığımız DbWork sınıfı basit olarak constructor metodu ile bir SqlConnection nesnesi örneklendirir. GetRow metodumuz ise gelen sorguya ve parametre değerine göre bulunan satırı okuyacak bir SqlDataReader nesnesini geriye döndürür.
 
@@ -188,7 +182,7 @@ namespace DataReaderDikkat
 
 ![mk119_1.gif](/assets/images/2005/mk119_1.gif)
 
-Toplu Sorgula İçin DataReader Kullanın
+## Toplu Sorgula İçin DataReader Kullanın
 
 Özellikle birden fazla sonuç kümesini (result set) almak istiyorsanız ve DataReader kullanmaya karar verdiyseniz en uygun yöntem NextResult metodunun uygulanmasıdır. Gerçek şu ki, böyle bir durumda birden fazla DataReader nesnesi peş peşe çalıştırılabilir. Aynı bu makalemizdeki ilk örneğimizde olduğu gibi. Eğer bu tarz sonuç kümelerini gerçekten arka arkaya alıyorsak ve aynı Connection'ı kullanıyorsak, birden fazla DataReader nesnesi kullandığımız için aynı Connection'ı kullanıyor olsakta veritabanına doğru birden fazla sayıda tur atmış oluruz. Çünkü her bir DataReader nesnesinden sonradan gelen DataReader nesnelerinin aynı Connection'ı kullanmalarına imkan sağlamamız için ilgili Connection'ları kapatmak gibi bir zorunluluğumuz vardır.
 
@@ -265,7 +259,7 @@ namespace DataReaderDikkat
 
 ![mk119_4.gif](/assets/images/2005/mk119_4.gif)
 
-Binary ve Text Tipindeki Alanları Okurken
+## Binary ve Text Tipindeki Alanları Okurken
 
 Bazı tablolar içerisinde text veya binary tabanlı alanlar tutarız. Örneğin resim dosyalarının tablolarda binary olarak saklanması veya makalelerin html verisinin text tipli alanlar olarak saklanması gibi. Özellikle bu tarz alanları okurken DataReader nesnelerini kullanıyorsak, SequentialAccess tekniğini kullanmak bize avantaj sağlayabilir. Öyle ki bu tekniği uyguladığımızda ilgili satırın tamamı okunacağına bunun yerine bir stream oluşturulur. Siz bu stream'i kullanarak ilgili alana ait binary yada text veriyi okursunuz. Örneğin aşağıdaki kodlar ile Northwind database'inde yer alan Categories tablosundaki Text tipindeki Description alanının ilk 150 karakteri okunmaktadır.
 

@@ -10,18 +10,17 @@ tags:
   - partial-class
   - partial-type
 ---
-Visual Studio.Net ile windows veya web uygulamaları geliştirirken, kod yazılması sırasında karşılaştığımız güçlüklerden birisi, tasarım kodları ile kendi yazmış olduklarımızın iç içe geçmeleridir. Bu zamanla kodun okunabilirliğini zorlaştıran bir etmendir. Bunun windows uygulamalarını veya asp.net uygulamalarını geliştirirken sıkça yaşamaktayız. Bununla birlikte, özellike soruce safe gibi ortamlarda farklı geliştiricilerin aynı sınıf kodları üzerinde eş zamanlı olarak çalışması pek mümkün değildir.
+Visual Studio .NET ile Windows veya web uygulamaları geliştirirken, kod yazılması sırasında karşılaştığımız güçlüklerden birisi, tasarım kodları ile kendi yazmış olduklarımızın iç içe geçmesidir. Bu durum zamanla kodun okunabilirliğini zorlaştıran bir etmendir. Bunu Windows uygulamalarını veya ASP.NET uygulamalarını geliştirirken sıkça yaşamaktayız. Bununla birlikte, özellikle source safe gibi ortamlarda farklı geliştiricilerin aynı sınıf kodları üzerinde eş zamanlı olarak çalışması pek mümkün değildir.
 
 Visual Studio.2005 ile birlikte, sınıf (class), arayüz (interface) ve yapı (struct) gibi tipleri mantıksal olarak ayrıştırabileceğimiz ve farklı fiziki dosyalarda (veya aynı fiziki dosya üzerinde) tutabileceğimiz yeni bir yapı getirilmiştir. Bu yapının kilit noktası tiplerin partial anahtar sözcüğü ile imzalanmasıdır. Partial olarak tanımladığımız tipleri farklı fiziki dosyalarda (veya aynı fiziki dosya içerisinde) tutabiliriz. Burada önemli olan, çalışma zamanında yazmış olduğumuz tipin mutlaka tek bir bütün olarak ele alınıyor olmasıdır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Partial tipler, bir tipin bütününü oluşturan soyutsal parçalardır.
+> Partial tipler, bir tipin bütününü oluşturan soyutsal parçalardır.
 
 İşte bu makalemizde kısaca partial tiplerin nasıl kullanıldığını incelemeye çalışacağız. Şimdi Visual Studio.2005 ile geliştirdiğimiz aşağıdaki örneği göz önüne alalım. Yeni açtığımız bir Console uygulamasında projemize şekilden de göreceğiniz gibi VeriYonetim.Ozellik ve VeriYonetim.Metod adlı iki kaynak kod dosyası ekledik.
 
 ![mk126_1.gif](/assets/images/2005/mk126_1.gif)
 
-Öncelikle buradaki amacımızdan bahsedelim. Veritabanı ile ilgili yönetim işlerini üstlenecek bir sınıf geliştirmek istiyoruz. Ancak bu sınıfın özelliklerini ve metodlarını ayrı fiziki kaynak kod dosyalarında tutacağız. Bu mantıksal ayrımı yapmamızın çeşitli nedenleri olabilir. Geliştiricilerin aynı sınıfın çeşitli mantıksal parçaları üzerinde bağımsız ama eş zamanlı olarak çalışmalarını isteyebiliriz. Çoğunlukla en temel nedemiz sınıf bütününü mantıksal olarak ayrıştırarak kodlamayı kolaylaştırmaktır. İşte bu amaçla VeriYonetim isimli sınıfımızın bu ayrı parçalarını tutacak iki fiziki sınıfı dosyasını projemize ekledik. Böylece sınıfımızı aslında iki mantıksal parçaya bölmüş olduk. İlk parçada sadece gerekli özellik tanımalamalarını ikinci parçada ise işlevsel metodları barındıracağız. Böylece kod geliştirme safhasında bu mantıksal parçaların iki farklı dosyada tutulmasını sağlamış oluyoruz.
+Öncelikle buradaki amacımızdan bahsedelim. Veritabanı ile ilgili yönetim işlerini üstlenecek bir sınıf geliştirmek istiyoruz. Ancak bu sınıfın özelliklerini ve metotlarını ayrı fiziki kaynak kod dosyalarında tutacağız. Bu mantıksal ayrımı yapmamızın çeşitli nedenleri olabilir. Geliştiricilerin aynı sınıfın çeşitli mantıksal parçaları üzerinde bağımsız ama eşzamanlı olarak çalışmalarını isteyebiliriz. Çoğunlukla en temel nedenimiz sınıf bütününü mantıksal olarak ayrıştırarak kodlamayı kolaylaştırmaktır. İşte bu amaçla VeriYonetim isimli sınıfımızın bu ayrı parçalarını tutacak iki fiziki sınıf dosyasını projemize ekledik. Böylece sınıfımızı aslında iki mantıksal parçaya bölmüş olduk. İlk parçada sadece gerekli özellik tanımlamalarını, ikinci parçada ise işlevsel metotları barındıracağız. Böylece kod geliştirme safhasında bu mantıksal parçaların iki farklı dosyada tutulmasını sağlamış oluyoruz.
 
 ![mk126_2.gif](/assets/images/2005/mk126_2.gif)
 
@@ -104,7 +103,7 @@ VeriYonetim isimli sınıfımızı her iki kaynak kod dosyası içerisinde parti
 
 ![mk126_3.gif](/assets/images/2005/mk126_3.gif)
 
-Bizim partial sınıflar içerisine böldüğümüz özellik, alan ve metodlar burada tek bir çatı altında toplanmıştır. Partial sınıfları kullanırken elbetteki dikkat etmemiz gereken noktalar vardır. Örneğin partial sınıflar içerisinde aynı elemanları tanımlayamayız. Yukarıdaki örneğimizde özellikleri tuttuğumuz sınıf parçamıza metodları tuttuğumuz sınıf parçasında olan constructor (yapıcı metod) dan bir tane daha ekleyelim. Özellikle aynı metod imzalarına sahip olmalarına dikkat edelim. Bu durumda uygulamayı derlemeye çalıştığımızda aşağıdaki hata mesajını alırız.
+Bizim partial sınıflar içerisine böldüğümüz özellik, alan ve metotlar burada tek bir çatı altında toplanmıştır. Partial sınıfları kullanırken elbette dikkat etmemiz gereken noktalar vardır. Örneğin partial sınıflar içerisinde aynı elemanları tanımlayamayız. Yukarıdaki örneğimizde özellikleri tuttuğumuz sınıf parçamıza, metotları tuttuğumuz sınıf parçasında olan constructor'dan (yapıcı metot) bir tane daha ekleyelim. Özellikle aynı metot imzalarına sahip olmalarına dikkat edelim. Bu durumda uygulamayı derlemeye çalıştığımızda aşağıdaki hata mesajını alırız.
 
 ![mk126_5.gif](/assets/images/2005/mk126_5.gif)
 
@@ -126,7 +125,7 @@ Bu durumda uygulamamız sorunsuz şekilde derlenecek ve çalışacaktır.
 ![dikkat.gif](/assets/images/2005/dikkat.gif)
 Partial sınıflar (classes) tanımlayabildiğimiz gibi partial arayüzler (interfaces) veya yapılarda (structs) tanımlayabiliriz.
 
-Örneğin, parçaları aşağıdaki şekilden de görüldüğü gibi iki farklı fiziki kaynak dosyada tutulacak IVeriYonetim isimli bir arayüz oluşturmak istediğimizi düşünelim. IVeriYonetim.Metodlar.cs kaynak kod dosyası içerisinde arayüzü uygulayacak olan tiplerin içermesi gereken metodları bildireceğimizi farzedelim. IVeriYonetim.Ozellikler.cs kaynak kod dosyasında ise, bu arayüzü uygulayacak tiplerin içermesi gereken özellik bildirimlerini yapacağımızı varsayalım.
+Örneğin, parçaları aşağıdaki şekilden de görüldüğü gibi iki farklı fiziki kaynak dosyada tutulacak IVeriYonetim isimli bir arayüz oluşturmak istediğimizi düşünelim. IVeriYonetim.Metodlar.cs kaynak kod dosyası içerisinde arayüzü uygulayacak olan tiplerin içermesi gereken metotları bildireceğimizi varsayalım. IVeriYonetim.Ozellikler.cs kaynak kod dosyasında ise, bu arayüzü uygulayacak tiplerin içermesi gereken özellik bildirimlerini yapacağımızı varsayalım.
 
 ![mk126_6.gif](/assets/images/2005/mk126_6.gif)
 
@@ -243,4 +242,4 @@ Burada ki gibi bir kullanım tamamen geçerlidir. Derleme zamanında her hangi b
 
 ![mk126_9.gif](/assets/images/2005/mk126_9.gif)
 
-Görüldüğü gibi sınıflarımızı, arayüzlerimizi veya yapılarımızı partial olarak tanımlamak son derece kolaydır. Tek yapmanız gereken partial anahtar sözcüğünü kullanmaktır. Asıl zor olan, bu tipleri bölme ihtiyacını tespit edebilmek ve ne şekilde parçalara ayırabileceğimize karar vermektir. Yani bir sınıfı gelişi güzel parçalara bölmektense bunun için geçerli bir sebep aramak son derece önemlidir. Ayrıca mantıksal bölümlemeyi çok iyi analiz etmemiz gerekir. Bu analizin en iyi çözümü sunabilmesi ise sizlerin proje tecrübenize, planlama ve öngörü yeteneklerinize bağlıdır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+Görüldüğü gibi sınıflarımızı, arayüzlerimizi veya yapılarımızı partial olarak tanımlamak son derece kolaydır. Tek yapmanız gereken partial anahtar sözcüğünü kullanmaktır. Asıl zor olan, bu tipleri bölme ihtiyacını tespit edebilmek ve ne şekilde parçalara ayırabileceğimize karar vermektir. Yani bir sınıfı gelişigüzel parçalara bölmektense bunun için geçerli bir sebep aramak son derece önemlidir. Ayrıca mantıksal bölümlemeyi çok iyi analiz etmemiz gerekir. Bu analizin en iyi çözümü sunabilmesi ise sizlerin proje tecrübesine, planlama ve öngörü yeteneklerine bağlıdır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

@@ -9,25 +9,15 @@ tags:
   - generics
   - constraints
 ---
-Bu makalemizde.Net 2.0 ile birlikte gelen Generic mimarisinin uygulanışında, kısıtlamaların rolünü basit örnekler ile incelemeye çalışacağız. Generic mimari her ne kadar tür bağımsız algoritmaların geliştirilmesine izin versede, bazı durumlarda çeşitli zorlamaların uygulanmasınıda gerektirir. Örneğin generic olması planlanan tiplerin sadece referans tipleri ile çalışmasını isteyebiliriz. Generic bir tipe her hangibir zorunluluk kuralını uygulayabilmek için where anahtar sözcüğünü içeren bir ek ifade kullanılır. Bu ifadeler 5 adettir ve aşağıdaki tabloda gösterilmektedir.
+Bu makalemizde .NET 2.0 ile birlikte gelen Generic mimarisinin uygulanışında, kısıtlamaların rolünü basit örnekler ile incelemeye çalışacağız. Generic mimari her ne kadar tür bağımsız algoritmaların geliştirilmesine izin verse de, bazı durumlarda çeşitli zorlamaların uygulanmasını da gerektirir. Örneğin generic olması planlanan tiplerin sadece referans tipleri ile çalışmasını isteyebiliriz. Generic bir tipe herhangi bir zorunluluk kuralını uygulayabilmek için where anahtar sözcüğünü içeren bir ek ifade kullanılır. Bu ifadeler 5 adettir ve aşağıdaki tabloda gösterilmektedir.
 
-Koşul
-Syntax
-
-Değer tipi olma zorunluluğu
-where Tip: struct
-
-Referans tipi olma zorunluluğu
-where Tip: class
-
-Constructor zorunluluğu
-where Tip: new ()
-
-Türeme zorunluluğu
-where Tip:
-
-Interface zorunluluğu
-where Tip:
+| **Koşul** | **Sentaks** |
+| -------------- | ----------- |
+| Değer tipi olma zorunluluğu | where Tip: struct |
+| Referans tipi olma zorunluluğu | where Tip: class |
+| Constructor zorunluluğu | where Tip: new () |
+| Türeme zorunluluğu | where Tip: |
+| Interface zorunluluğu | where Tip: |
 
 İlk olarak struct ve class zorunluluklarını incelemeye çalışacağız. Bu kısıtlamaları, Generic bir tip içerisinde yer alan tiplerin değer türü veya referans türlerinden mutlaka ve sadece birisi olmasını istediğimiz durumlarda kullanırız. Generic'lik, uygulandığı tip için tür bağımsızlığını ortaya koyan bir yapıdır. Generic mimari sayesinde bir tipin çalışma zamanında kullanacağı üyelerin türünü belirleyebiliriz. Ancak, hangi tür olursa olsun, ya değer türü ya da referans türü söz konusu olacaktır. İşte kısıtlamaları kullanarak, generic mimari üzerinde referans türümü yoksa değer türümü olacağını belirleyebiliriz.
 
@@ -119,7 +109,7 @@ Nasıl ki generic tipi değer türünden olmaya yukarıdaki söz dizimde olduğu
 public class BenimKoleksiyonum<T> :IEnumerable<T> where T:class
 ```
 
-Struct zorlamasını kullandığımız takdirde eğer ki, BenimKoleksiyonum sınıfını kod içerisinde herhangibir referans türü ile kullanmaya çalışırsak (örneğin string referans türü ile) derleme zamanında aşağıdaki hata mesajlarını alırız.
+Struct zorlamasını kullandığımız takdirde, BenimKoleksiyonum sınıfını kod içerisinde herhangi bir referans türü ile kullanmaya çalışırsak (örneğin string referans türü ile) derleme zamanında aşağıdaki hata mesajlarını alırız.
 
 ![mk142_6.gif](/assets/images/2005/mk142_6.gif)
 
@@ -302,11 +292,11 @@ urunler.Ekle(24);
 urunler.Listele();
 ```
 
-Uygulamamızı bu haliyle çalıştırdığımızda her hangibir sorun ile karşılaşmayız. Urunler isimli sınıfımız Generic bir yapıda olduğundan Short veri türünden değişkenleri işleyecek şekilde tasarlayabiliriz. Fakat bu istediğimiz bir kullanım şekli değildir. Nitekim biz Urunler isimli sınıfımızın generic olmasını ama sadece Urun grubu ile ilgili türleri işlemesini istemekteyiz. Bu sebepten yorumsal olarak yazdığımız kısıtlama satırını kaldırmamız ve bu sayede Urunler sınıfını sadece UrunTemel soyundan gelecek tiplerin kullanımına açmamız gerekiyor. Uygulamamızı yukarıdaki kodları ile bırakıp, kısıtlamamızı devreye soktuğumuzda, build işleminden sonra aşağıdaki hata mesajları alırız.
+Uygulamamızı bu haliyle çalıştırdığımızda herhangi bir sorun ile karşılaşmayız. Urunler isimli sınıfımız Generic bir yapıda olduğundan Short veri türünden değişkenleri işleyecek şekilde tasarlayabiliriz. Fakat bu istediğimiz bir kullanım şekli değildir. Nitekim biz Urunler isimli sınıfımızın generic olmasını ama sadece Urun grubu ile ilgili türleri işlemesini istemekteyiz. Bu sebepten yorumsal olarak yazdığımız kısıtlama satırını kaldırmamız ve bu sayede Urunler sınıfını sadece UrunTemel soyundan gelecek tiplerin kullanımına açmamız gerekiyor. Uygulamamızı yukarıdaki kodları ile bırakıp, kısıtlamamızı devreye soktuğumuzda, build işleminden sonra aşağıdaki hata mesajları alırız.
 
 ![mk142_3.gif](/assets/images/2005/mk142_3.gif)
 
-Urunler isimli işlevsel sınıfımız, generic tip olarak sadece TemelUrun ve soyundan gelen sınıf nesne örnekleri ile çalışabilecek şekilde kısıtlandırıldığı için bu hata mesajları alınmıştır. Ancak uygulama kodlarımızı aşağıdaki gibi değiştirdiğimizde herhangibir problem ile karşılaşmayız.
+Urunler isimli işlevsel sınıfımız, generic tip olarak sadece TemelUrun ve soyundan gelen sınıf nesne örnekleri ile çalışabilecek şekilde kısıtlandırıldığı için bu hata mesajları alınmıştır. Ancak uygulama kodlarımızı aşağıdaki gibi değiştirdiğimizde herhangi bir problem ile karşılaşmayız.
 
 ```csharp
 Urunler<UrunTemel> urunler = new Urunler<UrunTemel>();
@@ -375,7 +365,6 @@ Uygulamada CDKoleksiyon sınıfına ait bir nesne örneğini Cd tipini kullanaca
 
 ![mk142_9.gif](/assets/images/2005/mk142_9.gif)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Dilersek generic kısıtlamaların bir kaçını bir arada kullanabiliriz. Örneğin bir generic türün hem belli bir tipten gelmesini hemde struct olmasını sağlayabiliriz. Bu kombinasyonları arttırmamız mümkündür. Buradaki tek şart, eğer varsayılan yapıcı kısıtlamasıda var ise new anahtarının her zaman için en sonda belirtilmesi gerekliliğidir.
+> Dilersek generic kısıtlamaların birkaçını bir arada kullanabiliriz. Örneğin bir generic türün hem belli bir tipten gelmesini hem de struct olmasını sağlayabiliriz. Bu kombinasyonları artırmamız mümkündür. Buradaki tek şart, eğer varsayılan yapıcı kısıtlaması da var ise new anahtarının her zaman için en sonda belirtilmesi gerekliliğidir.
 
 Bu sayede, zorlamaları kullanarak tip güvenliğini daha belirleyici şekilde sağlamış oluyoruz. Bu makalemizde generic mimarinin önemli özelliklerinden birisi olan kısıtlamaları incelemeye çalıştık. Kısıtlamalar yardımıyla tür bağımsızlığını kullanırken belirli şartların sağlanmasını zorunlu hale getirebileceğimizi gördük. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

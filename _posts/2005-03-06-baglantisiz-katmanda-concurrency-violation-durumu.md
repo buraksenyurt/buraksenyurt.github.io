@@ -23,17 +23,17 @@ UPDATE MAILS SET AD=@AD,SOYAD=@SOYAD,EMAIL=@EMAIL WHERE ID=@ORGID AND AD=@ORGAD 
 Sorgumuz basitçe, MAILS isimli veritabanındaki AD, SOYAD ve EMAIL alanlarının değerlerini güncellemektedir. Bunu yaparkende optimistic (iyimser) yaklaşımını kullanır. Bu nedenle, Where koşulunda tabloya ait primary key alanı (ID) dahil olmak üzere tüm alanlar kullanılmaktadır. Böylece tüm alanların eşleştirme için kullanıldığı bir sorgu ortaya çıkar.
 
 ![dikkat.gif](/assets/images/2005/dikkat.gif)
-Optimistic yaklaşımda ele alınan yukarıdaki sorgu modeli için Sql Server ve benzeri veritabanı sistemlerinde daha etkili yöntemlerde vardır. Örneğin Sql üzerinde timestamp tipinden (yada uniqueIdentifier tipinden) alanlar kullanılabilir. Timestamp türünden olan alanlar satır üzerinde yapılacak herhangibir güncelleme işleme sonrasında sistem tarafından otomatik olarak benzersiz bir karakter dizisi ile değiştirilen alanlardır. Böylece yukarıdaki sorgunun yaptığı işin aynısını aşağıdaki gibide yapabiliriz. (Buradaki Kontrol alanı tipi timestamp tipindendir.
+Optimistic yaklaşımda ele alınan yukarıdaki sorgu modeli için SQL Server ve benzeri veritabanı sistemlerinde daha etkili yöntemler de vardır. Örneğin SQL üzerinde timestamp tipinden (ya da uniqueIdentifier tipinden) alanlar kullanılabilir. Timestamp türünden olan alanlar, satır üzerinde yapılacak herhangi bir güncelleme işlemi sonrasında sistem tarafından otomatik olarak benzersiz bir karakter dizisi ile değiştirilen alanlardır. Böylece yukarıdaki sorgunun yaptığı işin aynısını aşağıdaki gibi de yapabiliriz. (Buradaki Kontrol alanı tipi timestamp tipindendir.)
 Update Mails Set Ad=@Ad,Soyad=@Soyad,Email=@Email Where Id=@OrgId And Kontrol=@Kontrol
-Bu ifadenin bize sağladığı en büyük avantaj elbetteki n sayıda alan içeren bir tabloda where ifadesinden sonra sadece iki alan kontrolü ile (primary key ve timestamp alanı) Concurrency Violation durumunu irdeleyebilecek olmamızdır. Biz makalemizde daha uzun olan yolu incelemeye çalışacağız. Lakin gerçek hayat modellerinde timestamp veya uniqueidentifier ve benzeri tipten alanların karşılaştırma işlemi için ele alınması daha doğru ve güçlü bir yaklaşım olacaktır.
+Bu ifadenin bize sağladığı en büyük avantaj elbette n sayıda alan içeren bir tabloda where ifadesinden sonra sadece iki alan kontrolü ile (primary key ve timestamp alanı) Concurrency Violation durumunu irdeleyebilecek olmamızdır. Biz makalemizde daha uzun olan yolu incelemeye çalışacağız. Lakin gerçek hayat modellerinde timestamp veya uniqueidentifier ve benzeri tipten alanların karşılaştırma işlemi için ele alınması daha doğru ve güçlü bir yaklaşım olacaktır.
 
 Böyle bir sorgunun neden olacağı istisnai durumu anlayabilmek için aşağıdaki senaryoyu göz önüne almakta fayda olacağı inancındayım. Senaryomuzda en az iki kullanıcı rol almaktadır. Bu kullanıcılarımıza A ve B takma isimlerini verdiğimizi düşünelim. Her iki kullanıcıda database'den MAILS tablosundaki verileri bağlantısız katmana DataAdapter sınıfına ait nesne örneği vasıtasıyla almaktadır.
 
 ![mk116_2.gif](/assets/images/2005/mk116_2.gif)
 
-A ve B verileri çektikten sonra, A kullanıcısı herhangibir satır üzerinde güncelleme işlemini uygular. Bu durumda DataAdapter nesnesinin UpdateCommand özelliğine karşılık gelen SqlCommand nesnesi, yukarıda yazdığımız sorguyu çalıştıracaktır. Bu sorguda, satırların orjinal değerleri ile veritabanındaki halleri aynı olacağından güncelleme işlemi başarılı bir şekilde gerçekleştirilecektir. Lakin B kullanıcısı şu anda, A'nın güncellemiş olduğu veri kümesinin eski haline bakmaktadır. Eğer B kullanıcısı, A kullanıcısının biraz önce güncellemiş olduğu satırı tekrar güncellemek isterse ne olacaktır?
+A ve B verileri çektikten sonra, A kullanıcısı herhangi bir satır üzerinde güncelleme işlemini uygular. Bu durumda DataAdapter nesnesinin UpdateCommand özelliğine karşılık gelen SqlCommand nesnesi, yukarıda yazdığımız sorguyu çalıştıracaktır. Bu sorguda, satırların orijinal değerleri ile veritabanındaki halleri aynı olacağından güncelleme işlemi başarılı bir şekilde gerçekleştirilecektir. Lakin B kullanıcısı şu anda, A'nın güncellemiş olduğu veri kümesinin eski haline bakmaktadır. Eğer B kullanıcısı, A kullanıcısının biraz önce güncellemiş olduğu satırı tekrar güncellemek isterse ne olacaktır?
 
-İşte bu durumda, sorgu içindeki where koşuluna giren alan değerlerinin bağlantısız katmandaki orjinal halleri (yani DataRowVersion numaralandırıcısı tipinden Original olan değerleri), veritabanındaki tabloda az önce güncelleştirilmiş olan alanlara ait yeni değerler ile eşleşmeyeceğinden ilgili satır bulunamayacaktır. Bu da B kullanıcısının satırı update edememesine neden olur. Bu noktada CLR, DbConcurrencyException türünden bir istisnayı process içine fırlatacaktır. Dilerseniz bu hatayı basit bir uygulama yardımıyla elde etmeye çalışalım. Uygulamamız şimdilik sadece Update işlevini ele alacaktır. İlk olarak basit bir windows uygulaması açarak aşağıdakine benzer bir form ekranı oluşturalım.
+İşte bu durumda, sorgu içindeki where koşuluna giren alan değerlerinin bağlantısız katmandaki orijinal halleri (yani DataRowVersion numaralandırıcısı tipinden Original olan değerleri), veritabanındaki tabloda az önce güncelleştirilmiş olan alanlara ait yeni değerler ile eşleşmeyeceğinden ilgili satır bulunamayacaktır. Bu da B kullanıcısının satırı update edememesine neden olur. Bu noktada CLR, DbConcurrencyException türünden bir istisnayı process içine fırlatacaktır. Dilerseniz bu hatayı basit bir uygulama yardımıyla elde etmeye çalışalım. Uygulamamız şimdilik sadece Update işlevini ele alacaktır. İlk olarak basit bir Windows uygulaması açarak aşağıdakine benzer bir form ekranı oluşturalım.
 
 ![mk116_3.gif](/assets/images/2005/mk116_3.gif)
 
@@ -153,21 +153,21 @@ private void btnGuncelle_Click(object sender, System.EventArgs e)
 }
 ```
 
-Şimdi, yine Concurrency olayına neden olacak şekilde değişiklikler yapalım. Yani her iki kullanıcımızda verileri çektikten sonra, birinci kullanıcımız belli bir satırı güncellesin. Ardından ikinci kullanıcımız aynı satırı tekrar güncellemeye çalışsın. Bu durumda her hangibir istisna fırlatılmaz ve uygulama istem dışı bir şekilde sonlanmaz. Dahası, ikinci kullanıcının yaptığı başka değişiklikler eğer var ise veritabanına başarılı bir şekilde yansıtılır.
+Şimdi, yine Concurrency olayına neden olacak şekilde değişiklikler yapalım. Yani her iki kullanıcımız da verileri çektikten sonra, birinci kullanıcımız belli bir satırı güncellesin. Ardından ikinci kullanıcımız aynı satırı tekrar güncellemeye çalışsın. Bu durumda herhangi bir istisna fırlatılmaz ve uygulama istem dışı bir şekilde sonlanmaz. Dahası, ikinci kullanıcının yaptığı başka değişiklikler eğer var ise veritabanına başarılı bir şekilde yansıtılır.
 
-Ancak halen daha sorunlu olan satıra ait kullanıcı yeterli bilgiye sahip değildir. (Her ne kadar DataGrid bunu ünlem işaretleriyle belirtsede başka kontroller için bu özelliği sağlayamayabiliriz.) Örneğin kullanıcıyı hangi satırların Concurrency Violation (eş zamanlı uyumsuzluk) istisnasına neden olduğu konusunda daha detaylı bir şekilde uyarabiliriz. Burada DBConcurrencyException sınıfının prototipi aşağıdaki gibi olan Row özelliği işimize yarayabilir.
+Ancak hâlâ sorunlu olan satıra ait kullanıcı yeterli bilgiye sahip değildir. (Her ne kadar DataGrid bunu ünlem işaretleriyle belirtse de başka kontroller için bu özelliği sağlayamayabiliriz.) Örneğin kullanıcıyı hangi satırların Concurrency Violation (eş zamanlı uyumsuzluk) istisnasına neden olduğu konusunda daha detaylı bir şekilde uyarabiliriz. Burada DBConcurrencyException sınıfının prototipi aşağıdaki gibi olan Row özelliği işimize yarayabilir.
 
 ```csharp
 public DataRow Row {get; set;}
 ```
 
-Bu özellik geriye hataya neden olan satırı işaret edebilecek bir DataRow nesne örneği döndürür. Böylece ilgili satıra ait detaylı bilgilere ulaşabiliriz. Ancak, istisnai durum Concurrency'e neden olan ilk satır görüldüğünde devreye girmektedir. Dolayısıyla ikinci kullanıcının elinde Concurrency istisnasına neden olacak birden fazla satır varsa tüm bu satırları yakalamak için alternatif bir yol uygulamamız gerekmektedir. Ado.Net mimarisinde yer alan DataSet, DataTable ve DataRow sınıflarının HasErrors özellikleri bu noktada bizim işimize yarayabilir.
+Bu özellik geriye hataya neden olan satırı işaret edebilecek bir DataRow nesne örneği döndürür. Böylece ilgili satıra ait detaylı bilgilere ulaşabiliriz. Ancak, istisnai durum Concurrency'e neden olan ilk satır görüldüğünde devreye girmektedir. Dolayısıyla ikinci kullanıcının elinde Concurrency istisnasına neden olacak birden fazla satır varsa tüm bu satırları yakalamak için alternatif bir yol uygulamamız gerekmektedir. ADO.NET mimarisinde yer alan DataSet, DataTable ve DataRow sınıflarının HasErrors özellikleri bu noktada bizim işimize yarayabilir.
 
 ```csharp
 public bool HasErrors {get;}
 ```
 
-Bu özellik bool tipinden olup, herhangibir hata var ise geriye true değerini döndürecektir. Concurrency durumunu bu hatalar arasında sayabiliriz. Şimdi uygulama kodlarımıza aşağıdaki metodu ekleyelim.
+Bu özellik bool tipinden olup, herhangi bir hata var ise geriye true değerini döndürecektir. Concurrency durumunu bu hatalar arasında sayabiliriz. Şimdi uygulama kodlarımıza aşağıdaki metodu ekleyelim.
 
 ```csharp
 private void SonHaliAl()

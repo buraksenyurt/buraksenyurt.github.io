@@ -9,7 +9,7 @@ tags:
   - paging
   - custom-paging
 ---
-Geliştirdiğimiz web uygulamalarında özellikle DataGrid kontrollerini kullandığımızda sayfalama işlemini sıkça kullanırız. Genellikle sayfalama işlemlerini var sayılan hali ile kullanırız. Bu modele göre grid üzerinde sayfalama yapabilmek için PageIndexChanged olayını ele almamız gerekir. Burada grid kontrolüne yeni sayfa numarasını DataGridPageChangedEventArgs parametresinin NewPageIndex değeri ile verir ve bilgilerin tekrardan yüklenmesini sağlayacak uygulama kodlarımızı yürütürüz. Tipik olarak bu tarz bir kullanım aşağıdaki kod parçasında olduğu gibi yapılmaktadır.
+Geliştirdiğimiz web uygulamalarında özellikle DataGrid kontrollerini kullandığımızda sayfalama işlemini sıkça kullanırız. Genellikle sayfalama işlemlerini varsayılan hali ile kullanırız. Bu modele göre grid üzerinde sayfalama yapabilmek için PageIndexChanged olayını ele almamız gerekir. Burada grid kontrolüne yeni sayfa numarasını DataGridPageChangedEventArgs parametresinin NewPageIndex değeri ile verir ve bilgilerin tekrardan yüklenmesini sağlayacak uygulama kodlarımızı yürütürüz. Tipik olarak bu tarz bir kullanım aşağıdaki kod parçasında olduğu gibi yapılmaktadır.
 
 ```csharp
 private void Doldur()
@@ -24,10 +24,9 @@ private void DataGrid1_PageIndexChanged(object source, DataGridPageChangedEventA
 }
 ```
 
-Buradaki yaklaşım gerçekten işe yaramaktadır. Ancak aslında performans açısından bazı kayıplar söz konusudur. Çünkü bu tip sayfalama tekniğini kullanırken, sayfa linklerine her basışımızda ilgili veri kaynağındaki tüm veriler çekilmekte ve çekilen veri kümesi üzerinde ilgili sayfaya gidilmektedir. Bu elbetteki büyük boyutlu veri kümeleri ile çalışırken dikkate alınması gereken bir durumdur. Nitekim performansı olumsuz yönde etkileyecektir. Her ne kadar caching (tampon belleğe almak) teknikleri ile sorunun biraz olsun üstesinden gelinebilecek olsa da daha etkili çözümler üretebiliriz.
+Buradaki yaklaşım gerçekten işe yaramaktadır. Ancak aslında performans açısından bazı kayıplar söz konusudur. Çünkü bu tip sayfalama tekniğini kullanırken, sayfa linklerine her basışımızda ilgili veri kaynağındaki tüm veriler çekilmekte ve çekilen veri kümesi üzerinde ilgili sayfaya gidilmektedir. Bu elbette büyük boyutlu veri kümeleri ile çalışırken dikkate alınması gereken bir durumdur. Nitekim performansı olumsuz yönde etkileyecektir. Her ne kadar caching (tampon belleğe almak) teknikleri ile sorunun biraz olsun üstesinden gelinebilecek olsa da daha etkili çözümler üretebiliriz.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Büyük boyutlu veri kümeleri ile çalışırken uygulanan varsayılan sayfalama tekniği hız kaybına neden olarak performansı olumsuz yönde etkileyebilir.
+> Büyük boyutlu veri kümeleri ile çalışırken uygulanan varsayılan sayfalama tekniği hız kaybına neden olarak performansı olumsuz yönde etkileyebilir.
 
 İşte bu makalemizde özel sayfalama tekniklerinden bir tanesini incelemeye çalışacağız. Bu teknikte yer alan parçalardan en önemlisi şablon bir tablonun (temporary) kullanılmasıdır. İlk olarak asıl veri kümesini ele alacağımız bir stored procedure (saklı yordam) geliştireceğiz. Bu saklı yordamımız içerisinde asıl veri kümesinin satırlarını alıp temprary bir tabloya aktaracağız. Temporary tablomuzun en büyük özelliği identity tipinde 1 den başlayan ve 1' er artan bir alana sahip olmasıdır. Biz bu alanın değerinden faydalanarak temp tablosu üzerinde sayfalama işlemini uygulayacağız. Buradaki ana fikiri daha iyi anlamak için aşağıdaki şekile bir göz atalım.
 
@@ -41,9 +40,9 @@ SELECT EmployeeID,FirstName,LastName,NationalIDNumber,Title,BirthDate,EmailAddre
 
 Teorimizi şekil üzerinden açıklamaya çalışalım. Önce bir temp tablosu oluşturacağız. Temp tablomuzun alanları yukarıdaki select sorgusundaki alanları karşılayacak şekilde olacak. Bir de ekstradan identity alanımız olacak. Sonra select sorgumuzdaki verileri, temp tablomuz içerisine insert edeceğiz. Ardından temp tablomuz üzerinden yeni bir select sorgusu çalıştıracağız. Ancak bu sefer, Where koşulumuz olacak ve burada identity alanımız için bir aralık belirleyeceğiz. İşte bu aralık sayfanın başlangıç ve bitiş satırlarını belirleyerek istediğimiz sayfaya ait verileri elde etmemizi sağlayacak.
 
-Örneğin, verilerimizi 5' er satırlık sayfalara bölmek istediğimizi düşünelim. Bu durumda 2nci sayfadaki ilk satırın id değerini Baslangic isimli formülümüzden 6 olarak bulabiliriz. Yine 2nci sayfanın bitis satırının değerinide Bitis isimli formülü kullanarak 10 olarak bulabiliriz. Gördüğünüz gibi teori son derece basit. Sayfalamayı gerçekleştirebilmek için aslında temp tablodaki identity alanlarını kullanıyoruz. Son olarak bu işlemlerin hepsini bir stored procedure (saklı yordam) içerisinde barındırarak işlemlerin doğrudan sql sunucusu üzerinde ne hızlı şekilde gerçekleştirilmesini sağlıyoruz. İşte sp kodlarımız.
+Örneğin, verilerimizi 5'er satırlık sayfalara bölmek istediğimizi düşünelim. Bu durumda 2'nci sayfadaki ilk satırın id değerini Baslangic isimli formülümüzden 6 olarak bulabiliriz. Yine 2'nci sayfanın bitiş satırının değerini de Bitis isimli formülü kullanarak 10 olarak bulabiliriz. Gördüğünüz gibi teori son derece basit. Sayfalamayı gerçekleştirebilmek için aslında temp tablodaki identity alanlarını kullanıyoruz. Son olarak bu işlemlerin hepsini bir stored procedure (saklı yordam) içerisinde barındırarak işlemlerin doğrudan SQL sunucusu üzerinde ne hızlı şekilde gerçekleştirilmesini sağlıyoruz. İşte SP kodlarımız.
 
-```text
+```sql
 CREATE PROCEDURE WorkSp_Paging 
 
 @SayfaNo INT,
@@ -169,6 +168,6 @@ private void Page_Load(object sender, System.EventArgs e)
 
 Uygulamamızı çalıştıracak olursak sayfalar arasında başarılı bir şekilde dolaşabildiğimizi görürüz. Görüldüğü gibi özel sayfalama işlemi biraz meşakkatli bir yol gerektirse de performans açısından oldukça iyi verim sunacaktır. Buradaki performans farkını iyi anlayabilmek için normal sayfalama ve özel sayfalama tekniklerini iyice kavramak gerekir. Bir kere daha özetleyecek olursak, normal sayfalama tekniğinde her bir sayfada tüm veri seti tekrardan ilgili bağlantsız katman kontrolüne doldurulmaktadır.
 
-Bizim kullandığımız tekniktede dikkat ederseniz buna benzer bir yaklaşım söz konusudur. Çünkü bizde sp'miz içerisinde tüm veri setini çekip bir temp tablo içerisine alıyoruz. Yanlız biz bu işlemi sql sunucusu üzerinde gerçekleştiriyoruz. Oysaki normal sayfalamada hakikaten tüm veri kümesi bağlantısız katman nesnesine doldurulmaktadır. Bizim tekniğimizde ise sadece ilgili sayfadaki belirtilen satır sayısı kadarlık bir veri seti bağlantısız katman nesnesine doldurulmaktadır. İşte aradaki en büyük fark budur. Ki bu fark bize performans sağlamaktadır. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+Bizim kullandığımız teknikte de dikkat ederseniz buna benzer bir yaklaşım söz konusudur. Çünkü biz de SP'miz içerisinde tüm veri setini çekip bir temp tablo içerisine alıyoruz. Yalnız biz bu işlemi SQL sunucusu üzerinde gerçekleştiriyoruz. Oysaki normal sayfalamada hakikaten tüm veri kümesi bağlantısız katman nesnesine doldurulmaktadır. Bizim tekniğimizde ise sadece ilgili sayfadaki belirtilen satır sayısı kadarlık bir veri seti bağlantısız katman nesnesine doldurulmaktadır. İşte aradaki en büyük fark budur. Ki bu fark bize performans sağlamaktadır. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Kodlar İçin Tıklayınız.](/assets/files/2005/UsingCustomPaging.rar)

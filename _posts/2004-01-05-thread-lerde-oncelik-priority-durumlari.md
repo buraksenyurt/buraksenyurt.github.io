@@ -11,23 +11,11 @@ tags:
 ---
 İş parçacıklarını işlediğimiz yazı dizimizin bu üçüncü makalesinde, iş parçacıklarının birbirlerine karşı öncelik durumlarını incelemeye çalışacağız. İş parçacıkları olarak tanımladığımız metodların çalışma sıralarını, sahip oldukları öneme göre değiştirmek durumunda kalabiliriz. Normal şartlar altında, oluşturduğumuz her bir iş parçacığı nesnesi aynı ve eşit önceliğe sahiptir. Bu öncelik değeri Normal olarak tanımlanmıştır. Bir iş parçacığının önceliğini değiştirmek istediğimizde, Priority özelliğinin değerini değiştiririz. Priority özelliğinin .NET Framework'teki tanımı aşağıdaki gibidir.
 
+```csharp
 public ThreadPriority Priority {get; set;}
+```
 
-Özelliğimiz ThreadPriority numaralandırıcısı (enumerator) tipinden değerler almaktadır. Bu değerler aşağıdaki tabloda verilmiştir.
-
-Öncelik Değeri
-
-Highest
-
-AboveNormal
-
-Normal
-
-BelowNormal
-
-Lowest
-
-Tablo 1. Öncelik (Priority) Değerleri
+Özelliğimiz ThreadPriority numaralandırıcısı (enumerator) tipinden değerler almaktadır. Bu değerler şöyledir: **Highest**, **AboveNormal**, **Normal**, **BelowNormal**, **Lowest**.
 
 Programlarımızı yazarken, iş parçacıklarının çalışma şekli verilen öncelik değerlerine göre değişecektir. Elbette tahmin edeceğiniz gibi yüksek öncelik değerlerine sahip olan iş parçacıklarının işaret ettikleri metodlar diğerlerine göre daha sık aralıklarda çağrılacak, dolayısıyla düşük öncelikli iş parçacıklarının referans ettiği metodlar daha geç sonlanacaktır. Şimdi olayı daha iyi canlandırabilmek için aşağıdaki örneğimizi geliştirelim. Daha önceden söylediğimiz gibi, bir iş parçacığının Priority özelliğine herhangi bir değer vermez isek, standart olarak Normal kabul edilir. Bu da tüm iş parçacıklarının varsayılan olarak eşit önceliklere sahip olacakları anlamına gelmektedir. Şimdi aşağıdaki formumuzu oluşturalım. Uygulamamız iki iş parçacığına sahip. Bu parçacıkların işaret ettiği metodlardan birisi 1'den 1000'e kadar sayıp bu değerleri bir label kontrolüne yazıyor. Diğeri ise 1000'den 1'e kadar sayıp bu değerleri başka bir label kontrolüne yazıyor. Formumuzun görüntüsü aşağıdakine benzer olmalıdır.
 

@@ -10,11 +10,11 @@ tags:
   - asynchronous-programming
   - delegate
 ---
-Çoğu zaman projelerimizde, çalışmakta olan uygulamaları uzun süreli olarak duraksatacak işlevlere yer veririz. Özellikle görsel tabanlı uygulamalarda veritabanlarına ait kapsamlı sorguların yer aldığı işlemlerde bu sorunla sıkça karşılaşılmaktadır. En büyük problem var sayılan olarak kod satırlarının senkron hareket etmesidir. Yani kodlar sırası geldikçe işleyen parçalar bütününden oluşmaktadır. Bu elbetteki uzun sürecek bir sorgunun cevapları alınmadan izleyen kod satırlarının işlememesi anlamına gelmektedir. Oysaki kodları asenkron olarak çalıştırma şansımızda mevcuttur. Eminim ki Ado.Net 2.0' da asenkron metod yürütme tekniklerini veya asenkron web servisi uygulamalarınının nasıl yazılacağını duymuşsunuzdur. Temel prensib hepsi için aynıdır. Merkezde IAsyncResult arayüzü tipinden bir nesnenin kullanıldığı temsilci (delegate) tabanlı modeller söz konusudur.
+Çoğu zaman projelerimizde, çalışmakta olan uygulamaları uzun süreli olarak duraksatacak işlevlere yer veririz. Özellikle görsel tabanlı uygulamalarda veritabanlarına ait kapsamlı sorguların yer aldığı işlemlerde bu sorunla sıkça karşılaşılmaktadır. En büyük problem varsayılan olarak kod satırlarının senkron hareket etmesidir. Yani kodlar sırası geldikçe işleyen parçalar bütününden oluşmaktadır. Bu elbette ki uzun sürecek bir sorgunun cevapları alınmadan izleyen kod satırlarının işlememesi anlamına gelmektedir. Oysaki kodları asenkron olarak çalıştırma şansımız da mevcuttur. Eminim ki ADO.NET 2.0'da asenkron metot yürütme tekniklerini veya asenkron web servisi uygulamalarının nasıl yazılacağını duymuşsunuzdur. Temel prensip hepsi için aynıdır. Merkezde IAsyncResult arayüzü tipinden bir nesnenin kullanıldığı temsilci (delegate) tabanlı modeller söz konusudur.
 
-Bir temsilci her hangi bir metodun başlanıç adresini işaret eden bir tip (type) tir. Metodların başlangıç adreslerini işaret eden bir temsilci çalışma zamanında polimorfik bir yapıya sahiptir. Bu sayede yeri geldiği zaman kendi desenine uygun her hangi bir metodun yürütülmesini sağlayabilir. İşte bu felsefeden yola çıkarak çalışma zamanında asenkron olarak yürütülecek metodlarda oluşturulabilir. Bu noktada devreye IAsyncResult arayüzü (interface) girer. Temel olarak asenkron olarak çalıştırılmak istenen metod bir temsilci vasıtasıyla yürürlüğe sokulur. Bu anda ortama IAsyncResult tipinden bir arayüz nesnesi döner. Anlık olan bu işlem nedeni ile uygulamanın geri kalan kod satırları duraksamadan işlemeye devam eder. Ancak bu sırada ilgili temsilcinin başlattığı işlemler ayrı bir thread (iş parçacığı) içerisinde yürütülmeye devam etmektedir. Peki yürütülen thread sonlandığında, üretilen sonuçlar ortama nasıl alınacaktır? İşte burada çeşitli teknikler kullanılabilir. Bizim bu makalede işleyeceğimiz olan teknik Callback modelidir.
+Bir temsilci herhangi bir metodun başlangıç adresini işaret eden bir tiptir. Metotların başlangıç adreslerini işaret eden bir temsilci çalışma zamanında polimorfik bir yapıya sahiptir. Bu sayede yeri geldiği zaman kendi desenine uygun herhangi bir metodun yürütülmesini sağlayabilir. İşte bu felsefeden yola çıkarak çalışma zamanında asenkron olarak yürütülecek metotlar da oluşturulabilir. Bu noktada devreye IAsyncResult arayüzü (interface) girer. Temel olarak asenkron olarak çalıştırılmak istenen metot bir temsilci vasıtasıyla yürürlüğe sokulur. Bu anda ortama IAsyncResult tipinden bir arayüz nesnesi döner. Anlık olan bu işlem nedeni ile uygulamanın geri kalan kod satırları duraksamadan işlemeye devam eder. Ancak bu sırada ilgili temsilcinin başlattığı işlemler ayrı bir thread (iş parçacığı) içerisinde yürütülmeye devam etmektedir. Peki yürütülen thread sonlandığında, üretilen sonuçlar ortama nasıl alınacaktır? İşte burada çeşitli teknikler kullanılabilir. Bizim bu makalede işleyeceğimiz teknik Callback modelidir.
 
-Herşeyden önce asenkron yürütme tekniğinin kalbi olan temsilcilerin MSIL (Microsoft Intermediate Language) koduna bakmak ve anlamak gerekir. Söz gelimi aşağıdaki gibi bir temsilci tipi tanımladığımızı düşünelim. Bu son derece yalın bir delegate tanımlamasıdır.
+Her şeyden önce asenkron yürütme tekniğinin kalbi olan temsilcilerin MSIL (Microsoft Intermediate Language) koduna bakmak ve anlamak gerekir. Söz gelimi aşağıdaki gibi bir temsilci tipi tanımladığımızı düşünelim. Bu son derece yalın bir delegate tanımlamasıdır.
 
 ```csharp
 public delegate void Temsilci();
@@ -28,8 +28,7 @@ BeginInvoke ve EndInvoke metodları tamamıyla asenkron işlemler için gelişti
 
 Callback modelinde BeginInvoke metodunun AsnycCallback temsilci tipinden olan parametresi kullanılır. Bu nesne asenkron olarak çalıştırılan metoda ait işlemler sonlandığında otomatik olarak devreye girecek metodu işaret eden temsilci tipinden başka bir şey değildir. En genel kullanımda bu AsyncCallback temsilcisi EndInvoke metodunu içeren başka bir metodu temsil eder.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Asenkron Callback modelinde, işlemlerin sonuçlanmasının hemen ardından devreye girecek olan metod Callback metodu olarak adlandırılır. Bu metodu çalışma zamanında işaret edebilmek için özel AsyncCallback temsilci (delegate) tipinden faydalanılır.
+> Asenkron Callback modelinde, işlemlerin sonuçlanmasının hemen ardından devreye girecek olan metod Callback metodu olarak adlandırılır. Bu metodu çalışma zamanında işaret edebilmek için özel AsyncCallback temsilci (delegate) tipinden faydalanılır.
 
 Şimdi en basit haliyle Callback modelini masaya yatıralım. Basit olarak aşağıdaki Console uygulamasını geliştireceğiz.
 
@@ -87,7 +86,7 @@ namespace UsingAsyncCallback
 }
 ```
 
-İlk olarak Temsilci isimli bir delegate tipi tanımladık. Bu tip çalışma zamanında her hangi bir parametre almayan ve geri dönüş tipi bulunmayan (void) metodları işaret edebilecek cinstedir. Asenkron işlemlerin toplu olarak yer aldığı Yurutucu isimli bir sınıfımız var. Bu sınıf içerisinde hem asenkron metodun başlatılmasını sağlayacağız, hem de işlmelerin sonlanmasının ardından devreye girecek Callback metodumuzu işleteceğiz.
+İlk olarak Temsilci isimli bir delegate tipi tanımladık. Bu tip çalışma zamanında herhangi bir parametre almayan ve geri dönüş tipi bulunmayan (void) metotları işaret edebilecek cinstedir. Asenkron işlemlerin toplu olarak yer aldığı Yurutucu isimli bir sınıfımız var. Bu sınıf içerisinde hem asenkron metodun başlatılmasını sağlayacağız, hem de işlemlerin sonlanmasının ardından devreye girecek Callback metodumuzu işleteceğiz.
 
 Temsilcimizin BeginInvoke ve EndInvoke metodlarını çalıştıracak iki metodumuz var. Islemler isimli metodumuz asenkron olarak yürütmeyi düşündüğümüz metod olacak. Calistir isimli metodumuz Temsilci tipinden bir parametre almakta ve içeride bu nesne üzerinden BeginInvoke metodunu çağırmaktadır. BeginInvoke metodumuzun AsyncCallback temsilcisi tipinden olan parametresi Islemler isimli metodumuzu işaret edecek şekilde tanımlanmıştır. Bu şu anlama gelmektedir. Calistir isimli metod uygulandığında BeginInvoke, temsilcinin işaret ettiğim metodu asenkron olarak yürürlüğe sokacaktır. Asenkron olarak çalışan metod sonlandığında ise AsyncCallback nesnesinin işaret ettiği SonuclariAl isimli metod otomatik olarak devreye girecektir.
 
@@ -128,7 +127,7 @@ Gördüğünüz gibi önce Islemler isimli metodumuz çalıştı. Bu metodun ça
 
 Callback modeli özellikle veri çekme işlemi uzun süren sorguların yer aldığı uygulamalarda oldukça işe yaramaktadır. Örneğin AdventureWorks2000 veritabanı üzerinde aşağıdaki gibi bir sorgunun kullanıldığı bir uygulama geliştirdiğimizi düşünelim.
 
-```text
+```sql
 SELECT * FROM Customer 
     INNER JOIN CustomerAddress ON Customer.CustomerID = CustomerAddress.CustomerID 
     INNER JOIN Address ON CustomerAddress.AddressID = Address.AddressID 
@@ -148,8 +147,7 @@ Eğer ILDASM aracı ile bu temsilinin MSIL koduna bakacak olursak BeginInvoke ve
 
 Dikkat ederseniz temsilcimizin string parametresi BeginInvoke metodunun ilk parametresidir. Ayrıca temsilcimizin dönüş tipide EndInvoke metodunun dönüş tipi olmuştur (DataSet).
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Asenkron yürütülecek olan metodlarımız geri dönüş tipine ve parametrelere sahip ise, BeginInvoke ve EndInvoke metodlarıda bu yapıya göre şekillenecektir. EndInvoke asenkron metodun dönüş tipinden değer döndürürken, BeginInvoke asenkron metodda tanımlanan parametre sayısı kadar parametreyi ek olarak alacaktır.
+> Asenkron yürütülecek olan metodlarımız geri dönüş tipine ve parametrelere sahip ise, BeginInvoke ve EndInvoke metodlarıda bu yapıya göre şekillenecektir. EndInvoke asenkron metodun dönüş tipinden değer döndürürken, BeginInvoke asenkron metodda tanımlanan parametre sayısı kadar parametreyi ek olarak alacaktır.
 
 Dolayısıyla hem çalıştırıcı metodumuzu hem de Callback metodumuzu bu yapıya uygun olarak tasarlamalıyız. İşte örnek kodlarımız.
 
@@ -212,7 +210,7 @@ Uygulamamızı çalıştırdığımızda yaklaşık olarak aşağıdakine benzer
 
 ![mk135_2.gif](/assets/images/2005/mk135_2.gif)
 
-Dikkat ederseniz for döngüsü başlamadan önce asenkron olarak yürütmek istediğimiz metodumuz olan SonuclarıAl temsilci nesnemiz yardımıyla çalıştırılımıştır. Bu işlemin ardından BeginInvoke metodumuz asenkron olarak çalışan SonuclariAl metodunu ayrı bir iş parçasına bir IAsyncResult arayüzü nesnesi sorumluluğunda devretmiştir. BeginInvoke metodunu çalıştırdığımızda Callback metodumuzuda bildirdiğimizden sorgu sonuçlandığı anda EndInvoke metodunun yer aldığı Bitir isimli metod devreye girecektir. Bu metod içerisinde tamamlanan asenkron process'ten sorumlu IAsyncResult nesne örneği kullanılarak Temsilci nesnemiz elde edilmiş ve bu nesne üzerinden EndInvoke çağırılarak sorgu sonucu elde edilen DataSet alınmıştır. Dikkat edin BeginInvoke metodu geriye bir DataSet nesne örneği döndürmektedir. Son olarak örnek olması açısından veri kümesinin ilk satırına ait bir kaç alan bilgisi ekrana yazdırılır.
+Dikkat ederseniz for döngüsü başlamadan önce asenkron olarak yürütmek istediğimiz metodumuz olan SonuclariAl temsilci nesnemiz yardımıyla çalıştırılmıştır. Bu işlemin ardından BeginInvoke metodumuz asenkron olarak çalışan SonuclariAl metodunu ayrı bir iş parçasına, bir IAsyncResult arayüzü nesnesi sorumluluğunda devretmiştir. BeginInvoke metodunu çalıştırdığımızda Callback metodumuzu da bildirdiğimizden sorgu sonuçlandığı anda EndInvoke metodunun yer aldığı Bitir isimli metot devreye girecektir. Bu metot içerisinde tamamlanan asenkron process'ten sorumlu IAsyncResult nesne örneği kullanılarak temsilci nesnemiz elde edilmiş ve bu nesne üzerinden EndInvoke çağırılarak sorgu sonucu elde edilen DataSet alınmıştır. Dikkat edin, BeginInvoke metodu geriye bir DataSet nesne örneği döndürmektedir. Son olarak örnek olması açısından veri kümesinin ilk satırına ait birkaç alan bilgisi ekrana yazdırılır.
 
 Burada önemli olan nokta, metod çalışmaya başladıktan sonra, metodun içerdiği sorgunun sonlanması beklenmeden for döngüsünün devreye girmesidir. For döngüsü işleyişini sürdürürken, asenkron metodumuz tamamlandığında sonuçlar ekrana yazdırılmış ve for döngüsü kaldığı yerden işleyişine devam etmiştir. İşte asenkron Callback modeli.
 

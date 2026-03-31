@@ -18,7 +18,7 @@ C# 2.0 versiyonunda koleksiyon nesnelerine ilişkin olarak tip güvenliği gener
 
 ![mk130_1.gif](/assets/images/2005/mk130_1.gif)
 
-CollectionBase sınıfı kendi içerisinde IList tipinden bir tip döndüren protected yapıda List isimli bir özelliğe de sahiptir; ki bu özellik sayesinde CollectionBase sınıfından türeteceğimiz sınıflar içerisinden IList tipindeki koleksiyona erişebilir ve doğal olarak ekleme, çıkarma gibi temel koleksiyon işlevselliklerini sağlayabiliriz. List özelliğinin yanı sıra InnerList isimli özellik doğrudan bir ArrayList nesne referansına erişilmesini sağlar. Her iki özellikten de faydalanabilirsiniz. Biz bu makalemizde List özelliği yardımıyla koleksiyon aktivitelerini sağlayacağız. Şimdi gelin kendi strongly-typed koleksiyon sınıfımızı yazalım. Örneğimizde bir Dvd'ye ait bilgileri barındıran nesneler dizisini tutacak şekilde bir koleksiyon tasarlayacağız. İlk olarak bu koleksiyon içerisinde tutmak istediğinmiz Dvd nesnelerini temsil edecek sınıfımızı geliştirelim. Dvd sınıfının prototipi aşağıdaki şekilde olduğu gibidir.
+CollectionBase sınıfı kendi içerisinde IList tipinden bir tip döndüren protected yapıda List isimli bir özelliğe de sahiptir; ki bu özellik sayesinde CollectionBase sınıfından türeteceğimiz sınıflar içerisinden IList tipindeki koleksiyona erişebilir ve doğal olarak ekleme, çıkarma gibi temel koleksiyon işlevselliklerini sağlayabiliriz. List özelliğinin yanı sıra InnerList isimli özellik doğrudan bir ArrayList nesne referansına erişilmesini sağlar. Her iki özellikten de faydalanabilirsiniz. Biz bu makalemizde List özelliği yardımıyla koleksiyon aktivitelerini sağlayacağız. Şimdi gelin kendi strongly-typed koleksiyon sınıfımızı yazalım. Örneğimizde bir DVD'ye ait bilgileri barındıran nesneler dizisini tutacak şekilde bir koleksiyon tasarlayacağız. İlk olarak bu koleksiyon içerisinde tutmak istediğimiz DVD nesnelerini temsil edecek sınıfımızı geliştirelim. DVD sınıfının prototipi aşağıdaki şekilde olduğu gibidir.
 
 ![mk130_8.gif](/assets/images/2005/mk130_8.gif)
 
@@ -200,8 +200,7 @@ Burada var olan bir tipe ve bizim yazdığımız tipe atamalar yapılmaya çalı
 
 Oysaki, bir ArrayList göz önüne alındığında geriye dönen değer her zaman object tipinden olacaktır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-CollectionBase tipinden türettiğimiz nesnelerde, koleksiyonda işlenecek olan nesne tipi ne ise onu kullanmalıyız. Bu tip güvenliğini (type - safety) sağlayabilmemizi olanaklı kılar.
+> CollectionBase tipinden türettiğimiz nesnelerde, koleksiyonda işlenecek olan nesne tipi ne ise onu kullanmalıyız. Bu tip güvenliğini (type - safety) sağlayabilmemizi olanaklı kılar.
 
 CollectionBase'den türettiğimiz sınıfların sağladığı tip güvenliği daha iyi anlayabilmek için Dvd nesnelerini taşıyacak bir ArrayList koleksiyonunun kullanıldığı aşağıdaki örneği göz önüne almakta fayda var.
 
@@ -232,7 +231,7 @@ for(int i=0;i<alDvd.Count;i++)
 }
 ```
 
-Kodda herhangibir derleme zamanı hatası alınmaz. Çalışma zamanında da bir hata alınmaz. Uygulama başarılı bir şekilde çalışır. Ancak bu kez de programın mantıksal bütünlüğü bozulmuştur.
+Kodda herhangi bir derleme zamanı hatası alınmaz. Çalışma zamanında da bir hata alınmaz. Uygulama başarılı bir şekilde çalışır. Ancak bu kez de programın mantıksal bütünlüğü bozulmuştur.
 
 ![mk130_7.gif](/assets/images/2005/mk130_7.gif)
 

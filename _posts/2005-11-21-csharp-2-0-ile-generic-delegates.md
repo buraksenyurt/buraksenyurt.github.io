@@ -82,7 +82,7 @@ Bu uygulama sorunsuz şekilde çalışmaktadır. Ancak benzer işlevlere sahip o
 public delegate void TemsilciX<T>(T deger);
 ```
 
-Bu ifadede, TemsilciX isimli delegate tipinin çalışma zamanında geri dönüş tipi olmayan (void) ve her hangibir tipte tek bir parametre alan metodları işaret edebileceğini söylemiş oluyoruz. Örneğimizde bu metod desenine uyan aşağıdaki Yaricap fonksiyonumuzun olduğunu düşünelim.
+Bu ifadede, TemsilciX isimli delegate tipinin çalışma zamanında geri dönüş tipi olmayan (void) ve herhangi bir tipte tek bir parametre alan metotları işaret edebileceğini söylemiş oluyoruz. Örneğimizde bu metot desenine uyan aşağıdaki Yaricap fonksiyonumuzun olduğunu düşünelim.
 
 ```csharp
 public void Yaricap(double r)
@@ -143,8 +143,7 @@ Her ne kadar t1 ve t2 olmak üzere TemelAritmetik sınıfı içerisindeki Toplam
 
 ![mk141_2.gif](/assets/images/2005/mk141_2.gif)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Tek bir generic temsilci tipi ile, çalışma zamanında değişik dönüş tipi ve parametrelere sahip metodları işaret edebiliriz.
+> Tek bir generic temsilci tipi ile, çalışma zamanında değişik dönüş tipi ve parametrelere sahip metodları işaret edebiliriz.
 
 Temsilcilerin sağlamış olduğu tip güvenliği (type-safety) ve performans artışı gibi faydalar dışında özellikle kendi tiplerimizi kullandığımız takdirde devreye giren kısıtlamalar (constraints), delegate tipleri içinde geçerlidir. Bildiğiniz gibi generic yapılarda Where anahtar sözcüğü yardımıyla, parametre tiplerine ilişkin kesin bazı kurallar koyabiliyoruz. Örneğin TemelAritmetik isimli sınıfımızda aşağıdaki gibi iki string tipte parametre alan bir metodumuz olduğunu düşünelim.
 

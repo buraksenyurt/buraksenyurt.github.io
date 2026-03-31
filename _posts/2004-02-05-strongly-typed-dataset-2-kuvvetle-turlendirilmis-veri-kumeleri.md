@@ -43,10 +43,10 @@ ds.Tables[0].Rows.Add(drKlasik);
 
 Gördüğünüz gibi teknik olarak iki yaklaşımda aynıdır. Ancak, aralarındaki farkı anlamak için kullanılan ifadelere yakından bakmamız yeterlidir. Herşeyden önce Kuvvetle Türlendirilmiş Veri Kümelerini kullanmak, kod yazarken programcıya daha anlaşılır gelmektedir. Dilerseniz, bu iki tekniği aşağıdaki tablo ile karşılaştıralım.
 
-| Teknik | UnTyped Dataset Tekniği | Typed Dataset Tekniği |
+| **Teknik** | **UnTyped Dataset Tekniği** | **Typed Dataset Tekniği** |
 | ---- | ------------------------------- | ------------------------------- |
 | Yeni Bir Satır Tanımlamak | DataRow drKlasik; | dsMakale.MakaleRow dr; ![mk51_2.gif](/assets/images/2004/mk51_2.gif) Görüldüğü gibi intelliSense özelliği sayesinde, dsMakale dataSet'inden sonra yeni bir DataRow nesnesi oluşturmak için gerekli söz dizimini bulmak ve anlamak son derece kolay. |
-| Tanımlanan Yeni Satırı Oluşturmak | drKlasik=ds.Tables[0].NewRow (); ![mk51_4.gif](/assets/images/2004/mk51_4.gif | dr=mk.Makale.NewMakaleRow (); ![mk51_3.gif](/assets/images/2004/mk51_3.gif) Görüldüğü gibi, Typed DataSet sınıfımız yardımıyla tanımlanan yeni satırı oluşturmak için kullanacağımız söz dizimi çok daha okunaklı ve anlamlı. |
+| Tanımlanan Yeni Satırı Oluşturmak | drKlasik=ds.Tables[0].NewRow (); ![mk51_4.gif](/assets/images/2004/mk51_4.gif) | dr=mk.Makale.NewMakaleRow (); ![mk51_3.gif](/assets/images/2004/mk51_3.gif) Görüldüğü gibi, Typed DataSet sınıfımız yardımıyla tanımlanan yeni satırı oluşturmak için kullanacağımız söz dizimi çok daha okunaklı ve anlamlı. |
 | Alanlara Verileri Aktarmak | drKlasik[1]=txtKonu.Text; drKlasik[2]=Convert.ToDateTime (txtTarih.Text); drKlasik[3]=txtAdres.Text; ![mk51_6.gif](/assets/images/2004/mk51_6.gif) | dr.Konu=txtKonu.Text; dr.Tarih=Convert.ToDateTime (txtTarih.Text); dr.Adres=txtAdres.Text;![mk51_5.gif](/assets/images/2004/mk51_5.gif) Bir Type DataSet üzerinden oluşturduğumuz DataRow nesnesinin alanlarına veri aktarırken hangi alanların olduğunu kolayca gözlemleyebiliriz. Üstelik bu biçim, kodumuza daha kolay okunurluk ve anlam kazandırır. |
 | Oluşturulan Satırın Tabloya Eklenmesi | ds.Tables[0].Rows.Add (drKlasik);![mk51_8.gif](/assets/images/2004/mk51_8.gif) | mk.Makale.AddMakaleRow (dr);![mk51_7.gif](/assets/images/2004/mk51_7.gif) NewMakaleRow metoduna ulaşmak gördüğünüz gibi daha kolaydır. |
 

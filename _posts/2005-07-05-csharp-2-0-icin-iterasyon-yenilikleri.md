@@ -9,11 +9,11 @@ tags:
   - yield
   - iteration
 ---
-Bazen kendi yazmış olduğumuz tiplerin dizi bazlı elemanları olur. Uygulamalarımızda, bu elemanlar arasında, elamanların sahipi olan nesne örneği üzerinden ileri yönlü iterasyonlar kurmak isteyebiliriz. Foreach döngüleri belirtilen tip için bu iterasyonu sağlayan bir mekanizmaya sahiptir. Lakin kendi geliştirdiğimiz tiplerin sahip oldukları elemanlar üzerinde, bu tarz bir iterasyonu uygulayabilmek için bir numaratöre ve uygulayıcıya ihtiyacımız vardır. Kısacası, tipimizin elemanları arasında nasıl öteleme yapılabileceğini sisteme öğretmemiz gerekmektedir. Bu işlevselliği kazandırmak için IEnumerable ve IEnumerator arayüzlerini birlikte kullanırız.
+Bazen kendi yazmış olduğumuz tiplerin dizi bazlı elemanları olur. Uygulamalarımızda, bu elemanlar arasında, elemanların sahibi olan nesne örneği üzerinden ileri yönlü iterasyonlar kurmak isteyebiliriz. Foreach döngüleri belirtilen tip için bu iterasyonu sağlayan bir mekanizmaya sahiptir. Lakin kendi geliştirdiğimiz tiplerin sahip oldukları elemanlar üzerinde, bu tarz bir iterasyonu uygulayabilmek için bir numaratöre ve uygulayıcıya ihtiyacımız vardır. Kısacası, tipimizin elemanları arasında nasıl öteleme yapılabileceğini sisteme öğretmemiz gerekmektedir. Bu işlevselliği kazandırmak için IEnumerable ve IEnumerator arayüzlerini birlikte kullanırız.
 
-Uygulamalarımızda klasik olarak kullandığımız bir iterasyon tekniği vardır. Bu tekniğe göre iterasyon içerisinde kullanılacak olan elemanlar için bir numaratör sağlanır. IEnumerable arayüzünün sağladığı GetEnumerator metodu geriye IEnumerator arayüzü tipinden bir nesne örneği döndürmektedir ve bizim için gerekli olan numaratörün kendisidir. IEnumerator ise çoğunlukla dahili bir sınıfa (inner class) uygulanır ve iterasyon için gerekli asıl metodları sağlar. Bu metodlardan MoveNext bir sonraki elemanın olup olmadığını bool tipinden döndüren bir işleve sahip iken, Current metodu o anki elemanı iterasyona devreder. Bu iki arayüzü kullanarak bir sınıf içindeki elemanlar üzerinde iterasyona izin verecek yapıyı kurmak biraz karmaşıktır. Aslında teknik son derece kolaydır sadece uygulanabilirliği ilk zamanlarda biraz kafa karıştırıcıdır. İlk olarak C# 1.1 için bahsetmiş olduğumuz iterasyon tekniğinin nasıl gerçekleştirildiğini inceleyeceğimiz bir örnek geliştirelim.
+Uygulamalarımızda klasik olarak kullandığımız bir iterasyon tekniği vardır. Bu tekniğe göre iterasyon içerisinde kullanılacak olan elemanlar için bir numaratör sağlanır. IEnumerable arayüzünün sağladığı GetEnumerator metodu geriye IEnumerator arayüzü tipinden bir nesne örneği döndürmektedir ve bizim için gerekli olan numaratörün kendisidir. IEnumerator ise çoğunlukla dahili bir sınıfa (inner class) uygulanır ve iterasyon için gerekli asıl metotları sağlar. Bu metotlardan MoveNext bir sonraki elemanın olup olmadığını bool tipinden döndüren bir işleve sahip iken, Current metodu o anki elemanı iterasyona devreder. Bu iki arayüzü kullanarak bir sınıf içindeki elemanlar üzerinde iterasyona izin verecek yapıyı kurmak biraz karmaşıktır. Aslında teknik son derece kolaydır; sadece uygulanabilirliği ilk zamanlarda biraz kafa karıştırıcıdır. İlk olarak C# 1.1 için bahsetmiş olduğumuz iterasyon tekniğinin nasıl gerçekleştirildiğini inceleyeceğimiz bir örnek geliştirelim.
 
-Örneğimizde her hangi bir işi simgeleyen bir sınıfımız olacak. Bu sınıfımızın modeli basit olarak aşağıdaki kod parçasında olduğu gibidir. IsBilgisi isimli sınıfımız basit olarak bir işin adını ve sorumlusuna ait bilgileri tutacak şekilde tasarlanmıştır. İşe ait bilgileri tutan iki özelliği ve aşırı yüklenmiş (overload) bir yapıcı metodu (constructor) mevcuttur.
+Örneğimizde herhangi bir işi simgeleyen bir sınıfımız olacak. Bu sınıfımızın modeli basit olarak aşağıdaki kod parçasında olduğu gibidir. IsBilgisi isimli sınıfımız basit olarak bir işin adını ve sorumlusuna ait bilgileri tutacak şekilde tasarlanmıştır. İşe ait bilgileri tutan iki özelliği ve aşırı yüklenmiş (overload) bir yapıcı metodu (constructor) mevcuttur.
 
 ```csharp
 public class IsBilgisi 
@@ -86,8 +86,7 @@ public class IsListesi
 
 derleme zamanında aşağıdaki hata mesajını alırız.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-foreach statement cannot operate on variables of type 'UsingIteratorsCSharp1.IsListesi'because 'UsingIteratorsCSharp1.IsListesi'does not contain a definition for 'GetEnumerator', or it is inaccessible
+> foreach statement cannot operate on variables of type 'UsingIteratorsCSharp1.IsListesi'because 'UsingIteratorsCSharp1.IsListesi'does not contain a definition for 'GetEnumerator', or it is inaccessible
 
 Çünkü foreach döngüsünün IsListesi sınıfı içindeki IsBilgisi nesnelerine nasıl erişeceği ve onlar üzerinde ileri yönlü nasıl hareket edeceği bilinmemektedir. Bu nedenle IsListesi sınıfımız aşağıdaki gibi oluşturulmalıdır. Buradaki amacımız C# 1.1 için iterasyon tekniğini incelemek olduğundan ana fikirde IsBilgisi sınıfı tipinden 3 elemanlı bir dizi kullanılmaktadır.
 
@@ -160,11 +159,11 @@ public class IsListesi:IEnumerable
 }
 ```
 
-Şimdi bu elemanları kullanan basit bir console uygulmasını çalıştırdığımızda aşağıdakine benzer bir ekran görüntüsü elde ederiz.
+Şimdi bu elemanları kullanan basit bir console uygulamasını çalıştırdığımızda aşağıdakine benzer bir ekran görüntüsü elde ederiz.
 
 ![mk128_1.gif](/assets/images/2005/mk128_1.gif)
 
-Her ne kadar uygulamamız istediğimiz biçimde çalışsada bizim için bir takım zorluklar vardır. İlki kod yazımının bir desen dahilinde de olsa uzun oluşudur. İkinci zorluk foreach döngüsü içinde kullanılan elemanlar için tip güvenliğinin (type-safety) olmayışıdır. Dikkat ederseniz IEnumerator arayüzünün sağladığı Current isimli metodumuz object tipinden elemanları geriye döndürmektedir. Oysaki biz sadece IsBilgisi nesnesi tipinden elemanları geriye döndürecek bir Current metodunu pekala isteyebiliriz. Hatta bu bize tip güvenliğinide sağlayacaktır.
+Her ne kadar uygulamamız istediğimiz biçimde çalışsa da bizim için birtakım zorluklar vardır. İlki kod yazımının bir desen dâhilinde de olsa uzun oluşudur. İkinci zorluk foreach döngüsü içinde kullanılan elemanlar için tip güvenliğinin (type-safety) olmayışıdır. Dikkat ederseniz IEnumerator arayüzünün sağladığı Current isimli metodumuz object tipinden elemanları geriye döndürmektedir. Oysaki biz sadece IsBilgisi nesnesi tipinden elemanları geriye döndürecek bir Current metodunu pekâlâ isteyebiliriz. Hatta bu bize tip güvenliğini de sağlayacaktır.
 
 İşte C# 2.0 hem uzun kod satırlarının önüne geçen hem de tip güvenliğini sağlayan yeni bir yapı getirmiştir. Yapının temelinde yine IEnumerable arayüzü yer almaktadır. Yeni generic tipleri sayesinde, iterasyonun bizim belirttiğimiz tiplere yönelik olarak gerçekleştirilebilecek olmasıda garanti altına alınmaktadır. Bu da aradığımız tip güvenliğini bize sağlar. Yukarıda geliştirmiş olduğumu yapıyı C# 2.0' da aşağıdaki şekilde düzenleriz.
 
@@ -267,8 +266,7 @@ Uygulamadaki gelişimi bir de IL kodu açısından düşünmek lazım. Aslında 
 
 Dikkat ederseniz burada Numarator isimli dahili sınıfımız (inner class) ve ona IEnumerator arayüzü vasıtasıyla uyguladığımız üyeler görülmektedir. Birde C# 2.0 için geliştirdiğimiz örneğin IL koduna bir bakalım.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Şu anki beta versiyonuna göre IlDasm aracının fiziki adresi \Program Files\Microsoft Visual Studio 8\SDK\v2.0\Bin\ildasm.exe dır.
+> Şu anki beta versiyonuna göre IlDasm aracının fiziki adresi \Program Files\Microsoft Visual Studio 8\SDK\v2.0\Bin\ildasm.exe dır.
 
 Dikkat ederseniz biz IEnumerator arayüzünü kullanarak bir dahili sınıfı yazmamış olsakta, IL kodunun detaylarında böyle bir yapının kullanıldığı görülmektedir. Tabi burada bir önceki versiyondan farklı olarak, generic tip uyarlamasıda mevcuttur.
 

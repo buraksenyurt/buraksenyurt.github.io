@@ -13,10 +13,9 @@ Bildiğiniz gibi numaralandırıcılar (enum sabitleride diyebiliriz) yardımıy
 
 Öyle ki, uygulama içerisinde yer alan her hangi bir fonksiyonun davranışı için sayısal bir karşılaştırma yapmamız gereken yerlerde, bu sayısal değerin karşılığı olan bir ismi kullanmak çok daha mantıklıdır. Bu geliştirme açısından zaman kazandırıcı bir teknikten de ötedir. Çoğu zaman projelerimizde kendi numaralandırıcı tiplerimizi tanımlama ihtiyacı duyarız. İşte bu günkü makalemizde bizi numaralandırıcı kullanmaya itecek bir nedeni incelemeye çalışacağız.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Numaralandırıcılar sayısal değerleri anlamlı isimler ile ifade etmemize yardımcı olurken, gerek kodlama zamanında gerekse geliştirme aşamasında programcıya büyük kolaylık ve esneklik sağlarlar.
+> Numaralandırıcılar sayısal değerleri anlamlı isimler ile ifade etmemize yardımcı olurken, gerek kodlama zamanında gerekse geliştirme aşamasında programcıya büyük kolaylık ve esneklik sağlarlar.
 
-İlk olarak numaralandırıcıları kullanmamız için gerekli senaryomuzdan kısaca bahsedelim. Örneğimizi bir web uygulaması olarak geliştireceğiz. Bu web uygulmasında AdventureWorks2000 (Sql Server 2000 Reporting Service ile birlikte gelen) isimli veritabanında yer alan Products ve ProductSubCategory tablolarından faydalanacağız. Temel olarak bir dataGrid kontrolü üzerinde veri gösterme ve güncelleme işlemlerini ele alacağız. Uygulamamızı en başından itibaren tasarlayacağız. İlerleyen kısımlarında ise numaralandırıcı ihtiyacımızı keşfedecek ve uygun çözüm yollarını geliştirmeye çalışacağız. İlk olarak uygulamamızın tablolar ile ilgili temel işlemlerini yapacak yonetici sınıfını yazalım. DBYonetici sınıfımız şu an için sadece veri çekme işlemlerini üstlenecek. İlerleyen kısımlarda diğer bazı işlevsellikleri de ekleyeceğiz.
+İlk olarak numaralandırıcıları kullanmamız için gerekli senaryomuzdan kısaca bahsedelim. Örneğimizi bir web uygulaması olarak geliştireceğiz. Bu web uygulamasında AdventureWorks2000 (Sql Server 2000 Reporting Service ile birlikte gelen) isimli veritabanında yer alan Products ve ProductSubCategory tablolarından faydalanacağız. Temel olarak bir dataGrid kontrolü üzerinde veri gösterme ve güncelleme işlemlerini ele alacağız. Uygulamamızı en başından itibaren tasarlayacağız. İlerleyen kısımlarında ise numaralandırıcı ihtiyacımızı keşfedecek ve uygun çözüm yollarını geliştirmeye çalışacağız. İlk olarak uygulamamızın tablolar ile ilgili temel işlemlerini yapacak yönetici sınıfını yazalım. DBYonetici sınıfımız şu an için sadece veri çekme işlemlerini üstlenecek. İlerleyen kısımlarda diğer bazı işlevsellikleri de ekleyeceğiz.
 
 DBYonetici.cs
 
@@ -58,11 +57,11 @@ namespace UsingEnumerators
 }
 ```
 
-DBYonetici isimli sınıfımızdaki metodlardan kısaca bahsetmekte yarar var. Uygulamamızda AdventureWorks2000 veritabanında yer alan Products isimli tabloyu kullanıyoruz. Bu tablodaki bir kaç alanı ele alacağız. Products tablosuna ilişkin sorgumuza dikkat ederseniz, standart maliyet ile liste fiyatı arasındaki oranı ifade eden ek bir alan olduğunu farkedebilirsiniz. Biz bu alandaki değere bakarak dataGrid'imiz üzerinde renklendirme işlmelerini yapmaya çalışacağız.
+DBYonetici isimli sınıfımızdaki metotlardan kısaca bahsetmekte yarar var. Uygulamamızda AdventureWorks2000 veritabanında yer alan Products isimli tabloyu kullanıyoruz. Bu tablodaki birkaç alanı ele alacağız. Products tablosuna ilişkin sorgumuza dikkat ederseniz, standart maliyet ile liste fiyatı arasındaki oranı ifade eden ek bir alan olduğunu fark edebilirsiniz. Biz bu alandaki değere bakarak dataGrid'imiz üzerinde renklendirme işlemlerini yapmaya çalışacağız.
 
-SelectCategories isimli metodumuz ise ürünlerimizin ait olabileceği kategorileri elde etmemizi sağlıyor. Aslında bu metodu, dataGrid üzerinde her hangibir satır için güncelleme işlemi yapacağımız zaman, bir ListBox kontrolünü dinamik olarak doldurmak amacıyla kullanacağız. Şimdi DBYonetici sınıfımızı web uygulamamızda kullanalım. İlk olarak WebForm'umuz üzerinde yer alacak dataGrid kontrolümüzün içeriğini oluşturacağız.
+SelectCategories isimli metodumuz ise ürünlerimizin ait olabileceği kategorileri elde etmemizi sağlıyor. Aslında bu metodu, dataGrid üzerinde herhangi bir satır için güncelleme işlemi yapacağımız zaman, bir ListBox kontrolünü dinamik olarak doldurmak amacıyla kullanacağız. Şimdi DBYonetici sınıfımızı web uygulamamızda kullanalım. İlk olarak WebForm'umuz üzerinde yer alacak dataGrid kontrolümüzün içeriğini oluşturacağız.
 
-```text
+```html
 <asp:datagrid id="dgProducts" runat="server" Font-Size="Smaller" Font-Names="Verdana" AutoGenerateColumns="False" DataKeyField="ProductID" AllowPaging="True">
     <AlternatingItemStyle BackColor="LightSteelBlue"></AlternatingItemStyle>
     <ItemStyle BackColor="White"></ItemStyle>
@@ -230,7 +229,7 @@ private void dgProducts_ItemCommand(object source, DataGridCommandEventArgs e)
 
 Dilerseniz kodlarımızda neler yaptığımıza kısaca değinelim. Sayfamız yüklenirken dataGrid kontrolü, Products tablosu için çalıştırdığımız sorgudan dönen sonuç kümesi ile dolduruluyor. Bu sırada dataGrid kontrolünün ItemDataBound olayında her bir satır için IncRate isimli alanın değerini kontrol ediyoruz. Bunun sonucuna göre eğer artış oranı 100' den büyük ise o hücreinin arka plan rengini ve font rengini değiştirerek kullanıcıyı uyarıyoruz.
 
-Kullanıcı dataGrid kontrolünde sayfalama işlemi yapabilir. Sayfalama işlemini sağlamak için her zamanki gibi PageIndexChanged isimli olay metodumuzu kullanıyoruz. Her hangibir satır için güncelleme işlemi ve silme işlemi de yapabilir. Güncelleme ve Silme işlmeleri için yine DataGrid kontrolümüzün ItemCommand metodunu kullanıyoruz. Eğer düzenleme modu seçilirse bu durumda ürünlerin dahil olduğu kategorileri listelemek için DropDownList kontrolümüzü dolduran SelectProducts metodumuzu çağırıyoruz. Böylece sistemde kayıtlı olan ürünlerin kullanıcı tarafından bir combo kontrolü içerisinden seçilebilmesini sağlamış oluyoruz. Bu hızlı açıklamalardan sonra geldiğimiz noktayı aşağıdaki şekilden görebilirisiniz.
+Kullanıcı dataGrid kontrolünde sayfalama işlemi yapabilir. Sayfalama işlemini sağlamak için her zamanki gibi PageIndexChanged isimli olay metodumuzu kullanıyoruz. Herhangi bir satır için güncelleme işlemi ve silme işlemi de yapabilir. Güncelleme ve silme işlemleri için yine DataGrid kontrolümüzün ItemCommand metodunu kullanıyoruz. Eğer düzenleme modu seçilirse bu durumda ürünlerin dahil olduğu kategorileri listelemek için DropDownList kontrolümüzü dolduran SelectProducts metodumuzu çağırıyoruz. Böylece sistemde kayıtlı olan ürünlerin kullanıcı tarafından bir combo kontrolü içerisinden seçilebilmesini sağlamış oluyoruz. Bu hızlı açıklamalardan sonra geldiğimiz noktayı aşağıdaki şekilden görebilirsiniz.
 
 ![mk133_1.gif](/assets/images/2005/mk133_1.gif)
 
@@ -313,8 +312,7 @@ namespace UsingEnumerators
 
 İşte altın yumruğu vurduğumuz an. Artık tek yapmamız gereken, enum sabitimizi DataGrid nesnemizin ItemDataBound olay metodunda aşağıdaki gibi kullanmak.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Numaralandırıc içindeki elemanları isimlendirirken gerçekten anlamlı, bir şeyleri kulağımıza çağrıştıran isimler vermeye özen göstermeliyiz.
+> Numaralandırıc içindeki elemanları isimlendirirken gerçekten anlamlı, bir şeyleri kulağımıza çağrıştıran isimler vermeye özen göstermeliyiz.
 
 ![mk133_3.gif](/assets/images/2005/mk133_3.gif)
 
@@ -335,9 +333,9 @@ private void dgProducts_ItemDataBound(object sender, DataGridItemEventArgs e)
 }
 ```
 
-Artık uygulamamız sorunsuz şekilde çalışacaktır ve istediğimiz yeni satırı dataGrid kontrolümüze ekleyebiliriz. Unutmamamız gereken tek şek, yeni bir satır eklendiğinde bunu ilgili enum sabitinede yansıtmaktır. Üstelik kodun okunurluğuda inanılmaz derecede kolaylaşmıştır. Ancak elbette ki kodumuzda enum sabitlerini kullanacağımız tek yer burası değil.
+Artık uygulamamız sorunsuz şekilde çalışacaktır ve istediğimiz yeni satırı dataGrid kontrolümüze ekleyebiliriz. Unutmamamız gereken tek şey, yeni bir satır eklendiğinde bunu ilgili enum sabitine de yansıtmaktır. Üstelik kodun okunurluğu da inanılmaz derecede kolaylaşmıştır. Ancak elbette ki kodumuzda enum sabitlerini kullanacağımız tek yer burası değil.
 
-Örneğin DropDownList kontrolümüz doldurulduğunda o an aktif olan satıra ait ürün kategori adınında seçili olarak gelmesi gerekmektedir. Şu anki kodlarımıza göre DropDownList kontrolümüz herhangibir satır edit modunda açıldığında ürünleri başarılı bir şekilde listeliyor ama her zaman için ilk elemana konumlanıyor. Bu problemi aşmak için düzenleme moduna geçildiğinde DropDownList kontrolününün SelectedValue özelliğini uygun değere (ki bu değer ProductSubCategoryId olacaktır) atamamız yeterli olacaktır. Dolayısıla dataGrid kontrolümüzün ItemDataBound olay metodunda aşağıdaki düzenlemeyi yapmamız bu ihtiyacımızı karşılayacaktır. Artık kodu yazarken, hangi indisli hücreyi düşünmemize gerekte yoktur. Çünkü numaralandırıcımız anlamlı isimleri ile bunu bize söylemektedir.
+Örneğin DropDownList kontrolümüz doldurulduğunda o an aktif olan satıra ait ürün kategori adının da seçili olarak gelmesi gerekmektedir. Şu anki kodlarımıza göre DropDownList kontrolümüz herhangi bir satır edit modunda açıldığında ürünleri başarılı bir şekilde listeliyor ama her zaman için ilk elemana konumlanıyor. Bu problemi aşmak için düzenleme moduna geçildiğinde DropDownList kontrolünün SelectedValue özelliğini uygun değere (ki bu değer ProductSubCategoryId olacaktır) atamamız yeterli olacaktır. Dolayısıyla dataGrid kontrolümüzün ItemDataBound olay metodunda aşağıdaki düzenlemeyi yapmamız bu ihtiyacımızı karşılayacaktır. Artık kodu yazarken, hangi indisli hücreyi düşünmemize gerek de yoktur. Çünkü numaralandırıcımız anlamlı isimleri ile bunu bize söylemektedir.
 
 ```csharp
 if(e.Item.ItemType==ListItemType.EditItem)

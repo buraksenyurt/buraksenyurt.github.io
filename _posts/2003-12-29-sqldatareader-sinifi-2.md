@@ -18,30 +18,18 @@ Burada SqlCommand sınıfına ait ExecuteReader metodu kullanılmaktadır. Execu
 
 Şekil 1. CommandBehavior Davranışları
 
-CommandBehavior Değeri
-İşlevi
-
-CommandBehavior.CloseConnection
-SqlDataReader nesnesi Close metodu ile kapatıldığında,,ilişkili SqlConnection nesneside otomatik olarak kapatılır. Nitekim, işimiz bittiğinde SqlConnection nesnesinin açık unutulması sistem kaynaklarının gereksiz yere harcanmasına neden olur.
-
-CommandBehavior.SingleRow
-En çok kullanılan parametrelerden birisidir. Eğer sql sorgumuz tek bir satır döndürecek tipte ise bu davranışı kullanmak performansı olumlu yönde etkiler. Örneğin PrimaryKey üzerinden yapılan sorgular. (“Select * From Tablo Where ID=3” tarzında.)
-
-CommandBehavior.SingleResult
-Tek bir değer döndürecek tipteki sorgular için kullanılır. Örneğin belli bir alandaki sayısal değerlerin toplamı veya tablodaki kayıt sayısını veren sorgular gibi. Bu tekniğe alternatif olan ve daha çok tercih edilen bir diğer yöntem, SqlCommand nesnesinin ExecuteScalar metodudur
-
-CommandBehavior.SchemaOnly
-Çalıştırılan sorgu sonucu elde edilen satır (satırların) sadece alan bilgisini döndürür.
-
-CommandBehavior.SequentialAccess
-Bazı durumlarda tablo alanları çok büyük boyutlu binary tipte veriler içerebilirler. Bu tarz büyük verilerinin okunması için en kolay yol bunları birer akım (stream) halinde belleğe okumak ve oradan ilgili nesnelere taşımaktır. SequnetialAccess davranışı bu tarz akımların işlenmesine imkan tanırken performansıda arttırmaktadır.
-
-CommandBehavior.KeyInfo
-Bu durumda sql sorgusu sonucunda SqlDataReader nesnesi, tabloya ait anahtar alan bilgisini içerir.
+| **CommandBehavior Değeri** | **İşlevi** |
+| --- | --- |
+| CommandBehavior.CloseConnection | SqlDataReader nesnesi Close metodu ile kapatıldığında, ilişkili SqlConnection nesnesi de otomatik olarak kapatılır. Nitekim, işimiz bittiğinde SqlConnection nesnesinin açık unutulması sistem kaynaklarının gereksiz yere harcanmasına neden olur. |
+| CommandBehavior.SingleRow | En çok kullanılan parametrelerden birisidir. Eğer sql sorgumuz tek bir satır döndürecek tipte ise bu davranışı kullanmak performansı olumlu yönde etkiler. Örneğin PrimaryKey üzerinden yapılan sorgular. (“Select * From Tablo Where ID=3” tarzında.) |
+| CommandBehavior.SingleResult | Tek bir değer döndürecek tipteki sorgular için kullanılır. Örneğin belli bir alandaki sayısal değerlerin toplamı veya tablodaki kayıt sayısını veren sorgular gibi. Bu tekniğe alternatif olan ve daha çok tercih edilen bir diğer yöntem, SqlCommand nesnesinin ExecuteScalar metodudur. |
+| CommandBehavior.SchemaOnly | Çalıştırılan sorgu sonucu elde edilen satır (satırların) sadece alan bilgisini döndürür. |
+| CommandBehavior.SequentialAccess | Bazı durumlarda tablo alanları çok büyük boyutlu binary tipte veriler içerebilirler. Bu tarz büyük verilerinin okunması için en kolay yol bunları birer akım (stream) halinde belleğe okumak ve oradan ilgili nesnelere taşımaktır. SequnetialAccess davranışı bu tarz akımların işlenmesine imkan tanırken performansıda arttırmaktadır. |
+| CommandBehavior.KeyInfo | Bu durumda sql sorgusu sonucunda SqlDataReader nesnesi, tabloya ait anahtar alan bilgisini içerir. |
 
 Tablo 1. CommandBehavior Davranışları
 
-Şimdi dilerseniz basit Console uygulamaları ile, yukarıdaki davranışların işleyişlerini inceleyelim. CommandBehavior. CloseConnection durumunu önceki makalemizde işlediğimiz için tekrar işleme gereği duymuyorum. Şimdi en çok kullanacağımız davranışlardan birisi olan SingleRow davranışına bakalım. Uygulamamız ID isimli PrimaryKey alanı üzerinden bir sorgu çalışıtırıyor. Dönen veri kümesinin tek bir satırdan oluşacağı kesindir. Bu durum, SingelRow davranışını kullanmak için en ideal durumdur.
+Şimdi dilerseniz basit Console uygulamaları ile, yukarıdaki davranışların işleyişlerini inceleyelim. CommandBehavior. CloseConnection durumunu önceki makalemizde işlediğimiz için tekrar işleme gereği duymuyorum. Şimdi en çok kullanacağımız davranışlardan birisi olan SingleRow davranışına bakalım. Uygulamamız ID isimli PrimaryKey alanı üzerinden bir sorgu çalışıtırıyor. Dönen veri kümesinin tek bir satırdan oluşacağı kesindir. Bu durum, SingleRow davranışını kullanmak için en ideal durumdur.
 
 ```csharp
 using System;

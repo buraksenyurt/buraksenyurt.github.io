@@ -90,13 +90,13 @@ class Class1
 }
 ```
 
-Bu uygulamada basit olarak tablomuzdaki verileri çekiyor ve organizasyonel yapıyı hiyerarşik olarak elde ediyoruz. Ağacımızı oluşturduğumuz AgacOlustur metodu, DataTable içerisindeki tüm satırları gezen bir foreach döngüsünü kullanıyor. Herşeyden önce bizim en tepedeki satırı bir başka deyişle en üstteki pozisyonu bulmamız gerekiyor.
+Bu uygulamada basit olarak tablomuzdaki verileri çekiyor ve organizasyonel yapıyı hiyerarşik olarak elde ediyoruz. Ağacımızı oluşturduğumuz AgacOlustur metodu, DataTable içerisindeki tüm satırları gezen bir foreach döngüsünü kullanıyor. Her şeyden önce bizim en tepedeki satırı, bir başka deyişle en üstteki pozisyonu bulmamız gerekiyor.
 
 Tablo yapımızdan Amiri alanının değeri Null olan satırın hiyerarşinin tepesinde olması gerektiğini biliyoruz. Bu nedenle if koşulu ile bu alanı buluyoruz. Ardından bulduğumuz satırı DetayiniAl isimli Recursive (Yinelemeli) metodumuza gönderiyoruz. Yinelemeli metodumuz gelen DataRow nesnesinin Child satırlarını gezen başka bir foreach döngüsü kullanıyor. Eğer Child satırlar var ise yinelemeli metodumuz tekrardan çağırılıyor. Bu işlem tüm satırların okunması bitene kadar devam edecektir. Sonuç itibariyle Console uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsünü elde ederiz.
 
 ![mk117_4.gif](/assets/images/2005/mk117_4.gif)
 
-Gelelim, Windows uygulamamızda bu hiyerarşiyi nasıl şekillendirebileceğimize. İzleyeceğimiz yol Console uygulamamızdaki ile tamamen aynıdır. Tek fark bu kez bir DataRow’ a bağlı alt satırları alırken yinelemeli metodumuza parent node’ un (ki burada bir TreeNode nesnesidir) geçirilişidir. Örnek uygulamayı aşağıda bulabilirsiniz. (Uygulamanın çalışmasını daha iyi anlayabilmek için Trace etmenizi öneririm.) Burada özellike, child satırların hangi TreeNode’ nesnesine eklenmesi gerektiğinin tespiti son derece önemlidir. Dikkat ederseniz AgacOlustur metodumuzda ilk olarak Amiri alanının değeri Null olan satırı temsil edecek bir TreeNode nesnesi oluşturulmuş ve TreeView kontrolüne eklenmiştir. Daha sonra yinelemeli metodumuza bu TreeNode ve o anki DataRow nesneleri gönderilmiştir. Böylece DetayiniAl metodu içerisinde child satırların hangi TreeNode içerisine alınacağı tespit edilebilir.
+Gelelim, Windows uygulamamızda bu hiyerarşiyi nasıl şekillendirebileceğimize. İzleyeceğimiz yol Console uygulamamızdaki ile tamamen aynıdır. Tek fark bu kez bir DataRow'a bağlı alt satırları alırken yinelemeli metodumuza parent node'un (ki burada bir TreeNode nesnesidir) geçirilişidir. Örnek uygulamayı aşağıda bulabilirsiniz. (Uygulamanın çalışmasını daha iyi anlayabilmek için Trace etmenizi öneririm.) Burada özellikle, child satırların hangi TreeNode nesnesine eklenmesi gerektiğinin tespiti son derece önemlidir. Dikkat ederseniz AgacOlustur metodumuzda ilk olarak Amiri alanının değeri Null olan satırı temsil edecek bir TreeNode nesnesi oluşturulmuş ve TreeView kontrolüne eklenmiştir. Daha sonra yinelemeli metodumuza bu TreeNode ve o anki DataRow nesneleri gönderilmiştir. Böylece DetayiniAl metodu içerisinde child satırların hangi TreeNode içerisine alınacağı tespit edilebilir.
 
 TreeView kullanımı;
 

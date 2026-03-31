@@ -9,12 +9,11 @@ tags:
   - boxing
   - unboxing
 ---
-Bundan yaklaşık olarak iki sene önce boxing ve unboxing kavramları ile ilgili bir [makale](http://www.buraksenyurt.com/post/Boxing-(Kutulamak)-ve-Unboxing-(Kutuyu-Kald%C4%B1rmak)-bsenyurt-com-dan) (30.12.2003) yazmıştım. Aradan uzun süre geçti. Ancak boxing ve unboxing kavramları ile ilgili olarak halen daha dikkat edilmesi gereken hususlar var. Bunlardan bizim için en önemlisi elbetteki performans üzerine etkileri. Uygulamalarımızda çok sık olarak farkında olmadan veya farkında olaraktan boxing ve unboxing işlemlerinin yer aldığı kod parçalarını kullanıyoruz.
+Bundan yaklaşık olarak iki sene önce boxing ve unboxing kavramları ile ilgili bir [makale](http://www.buraksenyurt.com/post/Boxing-(Kutulamak)-ve-Unboxing-(Kutuyu-Kald%C4%B1rmak)-bsenyurt-com-dan) (30.12.2003) yazmıştım. Aradan uzun süre geçti. Ancak boxing ve unboxing kavramları ile ilgili olarak hâlâ dikkat edilmesi gereken hususlar var. Bunlardan bizim için en önemlisi elbette ki performans üzerine etkileri. Uygulamalarımızda çok sık olarak farkında olmadan veya farkında olarak boxing ve unboxing işlemlerinin yer aldığı kod parçalarını kullanıyoruz.
 
 Bildiğiniz gibi boxing, bir değer türünün, referans türünü atanması sırasında gerçekleşen işleme verilen isimdir. Unboxing ise bunun tam tersi olmakta ve referans türünün tekrar değer türüne dönüştürülmesini kapsamaktadır. Hangisi olursa olsun, değer türlerinin tutulduğu stack bellek bölgesi ile, referans türlerinin tutulduğu heap bellek bölgesi arasında yer değiştirme ve kopyalama işlemleri söz konusudur.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-İster boxing ister unboxing işlemi söz konusu olsun, bellek üzerinde stack ve heap bölgeleri arasında yeniden adresleme ve kopyalama işlemi söz konusudur.
+> İster boxing ister unboxing işlemi söz konusu olsun, bellek üzerinde stack ve heap bölgeleri arasında yeniden adresleme ve kopyalama işlemi söz konusudur.
 
 İşte bu adresleme ve kopylama işlemlerinin uygulama içerisinde sayısız defa tekrar ediyor olması performansı olumsuz yönde etkileyen en önemli nedenlerden birisidir. Bunu daha iyi anlamadan önce, boxing ve unboxing işlemlerini biraz daha alt seviyede incelemek gerekir. Çok basit olarak aşağıdaki console uygulamasının MSIL (Microsoft Intermediate Language) koduna bir göz atalım.
 
@@ -59,7 +58,7 @@ namespace InvestigateOfBoxingUnBoxing
 } // end of method Class1::Main
 ```
 
-Gördüğünüz gibi, IL_0004 ve IL_000b segmentlerinde box ve unbox komutları çalıştırılarak referans ve değer türleri arası bellek konumlandırma ve kopyalama işlemleri yapılmıştır. Bunun zaten böyle olacağını kodlarımızdan da biliyoruz. Peki IL kodunun bu çıktısının bizim için önemi nedir? Herşeyden önce bunu aşağıdaki masumane kod parçasını ele alaraktan anlamaya çalışmakta fayda var.
+Gördüğünüz gibi, IL_0004 ve IL_000b segmentlerinde box ve unbox komutları çalıştırılarak referans ve değer türleri arası bellek konumlandırma ve kopyalama işlemleri yapılmıştır. Bunun zaten böyle olacağını kodlarımızdan da biliyoruz. Peki IL kodunun bu çıktısının bizim için önemi nedir? Her şeyden önce bunu aşağıdaki masum görünen kod parçasını ele alarak anlamaya çalışmakta fayda var.
 
 ```csharp
 using System;
@@ -114,7 +113,7 @@ IL_0015: call instance string [mscorlib]System.Double::ToString()
 IL_001a: call void [mscorlib]System.Console::WriteLine(string, object, object)
 ```
 
-Gördüğünüz gibi her hangibir box komutu çağırılmamıştır. İyi herşey hoşta, aynı sonuçları elde ettiğimiz her iki kod örneğinden hangisini tercih etmeliyiz. Bu durumu analiz edebilmek için aşağıdaki örnek uygulamayı göz önüne almakta fayda var. Amacımız boxing uygulandığı ve uygulanmadığı durumlarda süresel farkları tespit ederek performans değerlendirmesi yapabilmek.
+Gördüğünüz gibi herhangi bir box komutu çağırılmamıştır. İyi, her şey hoş da, aynı sonuçları elde ettiğimiz her iki kod örneğinden hangisini tercih etmeliyiz? Bu durumu analiz edebilmek için aşağıdaki örnek uygulamayı göz önüne almakta fayda var. Amacımız boxing uygulandığı ve uygulanmadığı durumlarda süresel farkları tespit ederek performans değerlendirmesi yapabilmek.
 
 ```csharp
 static void Main(string[] args)
@@ -145,7 +144,7 @@ static void Main(string[] args)
 }
 ```
 
-Uygulama kodumuz her ne kadar anlamsız görünse de sonuç gerçekten çok ilginçtir. Uygulamanın tespit ettiği süreler aslında ortalama değerlerdir. Bu genellikle kullandığınız makinenin donanımsal yeteneklerine göre değişiklik gösterebilir. Ancak tabiki önemli olan hangisinin daha hızlı olduğudur.
+Uygulama kodumuz her ne kadar anlamsız görünse de sonuç gerçekten çok ilginçtir. Uygulamanın tespit ettiği süreler aslında ortalama değerlerdir. Bu genellikle kullandığınız makinenin donanımsal yeteneklerine göre değişiklik gösterebilir. Ancak tabii ki önemli olan hangisinin daha hızlı olduğudur.
 
 ![mk137_1.gif](/assets/images/2005/mk137_1.gif)
 

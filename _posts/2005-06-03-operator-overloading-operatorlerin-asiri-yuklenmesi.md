@@ -11,19 +11,19 @@ tags:
 ---
 Hepimiz uygulamalarımızda sıklıkla operatörleri kullanmaktayız. Matematiksel işlemlerde, koşullu ifadelerde,tip dönüştürme işlemlerinde vb...Ancak onların kendi yazdığımız sınıflar için özel anlamlar ifade edecek şekilde yüklenmesi ile pek az uğraşmaktayız. Basit bir toplama operatörünün bile, yeri geldiğinde kendi sınıflarımıza ait nesne örnekleri üzerinde daha farklı davranışlar gösterecek şekilde yeniden yapılandırılması son derece önemlidir. Bu aynı zamanda dilin sağladığı esnekliği ve genişletilebilirliğini de gözler önüne sergilemektedir. İşte bu makalemizde, basit olarak operatörlerin aşırı yüklenmelerinin nasıl gerçekleştirilebileceğini örnek bir uygulama üzerinden incelemeye çalışacağız.
 
-İlk olarak senaryomuzdan kısaca bahsedelim. Uygulamamızda System.Drawing isim alanını kullanarak dörtgen ve eliptik şekilleri çizmemizi sağlayacak iki adet sınıfımız olacak. Bu sınıfların çizim metodlarına baktığımızda ortak parametreler içerdiklerini görürüz. Bu nedenle bu ortak parametreleri bir arada toplayacağımız bir üst sınıfıda işin içine katarak ilgili şekil sınıflarını buradan türeteceğiz. Amacımız kalıtım kavramı üzerinde durmak değil. Bunu sadece kod okunabilirliğini ve nesnelerinin kullanılabilirliğini kolaylaştırmak amacıyla gerçekleştiriyoruz. Peki bu sınıfların yer aldığı bir uygulamada hangi operatörleri ne amaçla aşırı yükleyebiliriz?
+İlk olarak senaryomuzdan kısaca bahsedelim. Uygulamamızda System.Drawing isim alanını kullanarak dörtgen ve eliptik şekilleri çizmemizi sağlayacak iki adet sınıfımız olacak. Bu sınıfların çizim metotlarına baktığımızda ortak parametreler içerdiklerini görürüz. Bu nedenle bu ortak parametreleri bir arada toplayacağımız bir üst sınıfı da işin içine katarak ilgili şekil sınıflarını buradan türeteceğiz. Amacımız kalıtım kavramı üzerinde durmak değil. Bunu sadece kod okunabilirliğini ve nesnelerin kullanılabilirliğini kolaylaştırmak amacıyla gerçekleştiriyoruz. Peki bu sınıfların yer aldığı bir uygulamada hangi operatörleri ne amaçla aşırı yükleyebiliriz?
 
 İlk başta akla gelen eliptik bir şeklin içerdiği koordinat, boyut, renk gibi değerleri ile birlikte bir dörtgene çevrilmesi olabilir. Burada dörtgen tipinden bir nesne örneğinin, bilinçli (explicit) veya bilinçsiz (implicit) olarak eliptik bir nesne örneğine dönüştürülmesi söz konusudur. Bunun için cast operatörünü aşırı yükleyebiliriz. Diğer taraftan, var olan dörtgen veya eliptik nesnelerinin kendi aralarında toplama operatörleri ile toplanması sonucu çeşitli kriterlere uyum sağlayacak yeni bir dörtgen veya elips nesnesini elde etmeyi düşünebiliriz. Örneğin, iki kareyi toplayıp, yeni boyutları bu iki karenin toplamı kadar olan başka bir kare nesnesini çizdirebiliriz. Bu işlevsellikte ancak ve ancak toplama operatörünün burada söz konusu olan sınıflar için aşırı yüklenmesi ile mümkün olabilir. Şimdi gelin uygulamamızı geliştirmeye başlayalım. Operatörlerin aşırı yüklenmesini aşağıdaki görünüme sahip bir windows uygulamasında inceleyeceğiz.
 
 ![mk123_1.gif](/assets/images/2005/mk123_1.gif)
 
-Uygulamayı mümkün olduğu kadar basit tasarlamaya çalıştım. Amacımız operatörlerin aşırı yüklenmesini incelemek. Bu nedenle Macromedia Fireworks gibi bir grafik tasarım programını icat etmeye çalışmıyoruz. Programımız temel olarak belirli renkte çizgilere sahip olan dörtgensel ve eliptik şekilleri çiziyor. Bir şekli çizmek için genişlik ve yüksekliğini ilgili textBox kontrollerine atadıktan sonra mouse ile ekranın herhangibir yerine tıklamanız yeterli olacaktır. Bununla birlikte işe biraz renk katmak amacı ile çizgi renklerini seçebiliyorsunuz. Menüde bizim asıl ilgilendiğimiz iki seçenek var. Bunlardan birisi bir Elips nesnesini, Dörtgen tipinden bir nesneye dönüştürerek ekrana çiziyor. Diğer menü seçeneği ilede iki Dörtgen nesnesini toplayıp sonucunu ekrana çizdiriyoruz. Makalenin ilerleyen safhalarında iki şeklin boyutsal bazda birbirlerine eşit olup olmadığını bildirecek şekilde koşul operatörlerini de aşırı yükleyeceğiz. Nesneleri tutmak amacıyla iki ArrayList koleksiyonu kullanmayı tercih ettim. Elbetteki siz bu programı dahada geliştirmeli ve nesnelerin daha esnek olarak tutulabileceği bir yapıyı kurgulamalısınız.
+Uygulamayı mümkün olduğu kadar basit tasarlamaya çalıştım. Amacımız operatörlerin aşırı yüklenmesini incelemek. Bu nedenle Macromedia Fireworks gibi bir grafik tasarım programını icat etmeye çalışmıyoruz. Programımız temel olarak belirli renkte çizgilere sahip olan dörtgensel ve eliptik şekilleri çiziyor. Bir şekli çizmek için genişlik ve yüksekliğini ilgili TextBox kontrollerine atadıktan sonra mouse ile ekranın herhangi bir yerine tıklamanız yeterli olacaktır. Bununla birlikte işe biraz renk katmak amacı ile çizgi renklerini seçebiliyorsunuz. Menüde bizim asıl ilgilendiğimiz iki seçenek var. Bunlardan birisi bir Elips nesnesini, Dörtgen tipinden bir nesneye dönüştürerek ekrana çiziyor. Diğer menü seçeneği ile de iki Dörtgen nesnesini toplayıp sonucunu ekrana çizdiriyoruz. Makalenin ilerleyen safhalarında iki şeklin boyutsal bazda birbirlerine eşit olup olmadığını bildirecek şekilde koşul operatörlerini de aşırı yükleyeceğiz. Nesneleri tutmak amacıyla iki ArrayList koleksiyonu kullanmayı tercih ettim. Elbette ki siz bu programı daha da geliştirmeli ve nesnelerin daha esnek olarak tutulabileceği bir yapıyı kurgulamalısınız.
 
 Gelelim uygulamamızdaki kritik sınıflara. Bu sınıflar, Dortgen, Elips ve TemelSekil sınıflarıdır.
 
 ![mk123_5.gif](/assets/images/2005/mk123_5.gif)
 
-Dortgen ve Elips sınıfları TemelSekil sınıfından türetilmiştir. Sebebi, Dortgen ve Elips sınıflarının çizimi için kullanılan metodların aynı tipte ve sayıda parametre alıyor olmalarıdır. Dolayısıyla çizim için gerekli materyalleri bir üst sınıfta tutmak ve bunlara tek bir yerden erişebilmek amacıya bu tarz bir yapı tercih edilmiştir. Sınıflarımıza ilişkin başlangıç kodları aşağıdaki gibidir.
+Dortgen ve Elips sınıfları TemelSekil sınıfından türetilmiştir. Sebebi, Dortgen ve Elips sınıflarının çizimi için kullanılan metotların aynı tipte ve sayıda parametre alıyor olmalarıdır. Dolayısıyla çizim için gerekli materyalleri bir üst sınıfta tutmak ve bunlara tek bir yerden erişebilmek amacıyla bu tarz bir yapı tercih edilmiştir. Sınıflarımıza ilişkin başlangıç kodları aşağıdaki gibidir.
 
 Dörtgen.cs
 
@@ -61,7 +61,7 @@ namespace UsingGDIWithOperatorOverloading
 }
 ```
 
-Dortgen sınıfında şu an için sadece Ciz isimli bir metodumuz var. Constructor metodumuz aldığı parametreleri direkt olarak TemelSekil sınıfına göndermekte. Ciz metodu, Dortgen sınıfına ait nesne örneğini parametre olarak gelen alan üzerinde çizen işlevlere sahiptir. Dikkat ederseniz, dörtgenin çizileceği yer, çizgi kalınlığı, X ve Y koordinatları, çizgi rengi, şeklin genişliği ve yüksekliği gibi bilgiler parametrik olarak kullanılmaktadır. Elips sınıfıda Dortgen sınıfına çok benzer bir yapıdadır.
+Dortgen sınıfında şu an için sadece Ciz isimli bir metodumuz var. Constructor metodumuz aldığı parametreleri direkt olarak TemelSekil sınıfına göndermekte. Ciz metodu, Dortgen sınıfına ait nesne örneğini parametre olarak gelen alan üzerinde çizen işlevlere sahiptir. Dikkat ederseniz, dörtgenin çizileceği yer, çizgi kalınlığı, X ve Y koordinatları, çizgi rengi, şeklin genişliği ve yüksekliği gibi bilgiler parametrik olarak kullanılmaktadır. Elips sınıfı da Dortgen sınıfına çok benzer bir yapıdadır.
 
 Elips.cs
 
@@ -209,17 +209,15 @@ d.Ciz();
 
 Bu haliyle uygulamamızı derlediğimizde aşağıdaki hata mesajını alırız;
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Operator '+' cannot be applied to operands of type 'UsingGDIWithOperatorOverloading.Dortgen'and 'UsingGDIWithOperatorOverloading.Dortgen'
+> Operator '+' cannot be applied to operands of type 'UsingGDIWithOperatorOverloading.Dortgen'and 'UsingGDIWithOperatorOverloading.Dortgen'
 
 Sebep gayet açıktır. Dortgen sınıfı toplam işleminin nasıl yapılacağını bilemez. Bunu geliştirici olarak bizim ona öğretmemiz gerekmektedir. O halde gelin toplama işlemini bu sınıfa nasıl öğreteceğimize bakalım. Herşeyden önce operatörlerin aşırı yüklenmesi ile ilgili olaraktan bir takım kurallar vardır. Aslında bu kuralları bizde tahmin edebiliriz.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Kural 1; operatörler, operatör metodları yardımıyla aşırı yüklenirler. Bu sebepten bir metod gövdeleri, parametreleri ve dönüş değerleri vardır.
-Kural 2; operatör metodları static olmalıdır. Bunun sebebi operatör işlevselliği için nesne örneğine ihtiyaç duyulmamasıdır.
-Kural 3; operatör metodları operator anahtar kelimesini içermelidir. Örneğin: operator + gibi.
-Kural 4; elbette heryerden erişilebilmeleri gerektiğinden public olmalıdır.
-Kural 5; operatörler doğaları gereği en az bir operand ile çalışır. Dolayısıyla aşırı yükleyeceğimiz operator metodların en az bir parametre alması şarttır.
+- **Kural 1;** operatörler, operatör metodları yardımıyla aşırı yüklenirler. Bu sebepten bir metod gövdeleri, parametreleri ve dönüş değerleri vardır.
+- **Kural 2;** operatör metodları static olmalıdır. Bunun sebebi operatör işlevselliği için nesne örneğine ihtiyaç duyulmamasıdır.
+- **Kural 3;** operatör metodları operator anahtar kelimesini içermelidir. Örneğin: operator + gibi.
+- **Kural 4;** elbette her yerden erişilebilmeleri gerektiğinden public olmalıdır.
+- **Kural 5;** operatörler doğaları gereği en az bir operand ile çalışır. Dolayısıyla aşırı yükleyeceğimiz operator metodların en az bir parametre alması şarttır.
 
 Bu kuralları dikkate aldığımızda Dortgen sınıfı için toplama operatörünü aşağıdaki haliyle aşırı yükleyebiliriz.
 
@@ -239,13 +237,13 @@ Dikkat ederseniz + operatörümüze ilişkin metodumuz, Dortgen tipinde iki nesn
 
 ![mk123_2.gif](/assets/images/2005/mk123_2.gif)
 
-Toplama operatörüne yaptığımız yüklemeyi diğer operatörlere de yapabiliriz. Ancak aşırı yüklenecek operatörler arasında özel öneme sahip olanlar ve hatta aşırı yükleme yapılamıyacak olanlar da vardır. Sözgelimi ekrandaki bir elips şeklini dörtgen tipine çevirmek istediğimizi varsayalım. Burada bilinçsiz olarak aşağıdaki gibi bir atama yapmak isteyebiliriz.
+Toplama operatörüne yaptığımız yüklemeyi diğer operatörlere de yapabiliriz. Ancak aşırı yüklenecek operatörler arasında özel öneme sahip olanlar ve hatta aşırı yükleme yapılamayacak olanlar da vardır. Sözgelimi ekrandaki bir elips şeklini dörtgen tipine çevirmek istediğimizi varsayalım. Burada bilinçsiz olarak aşağıdaki gibi bir atama yapmak isteyebiliriz.
 
 ```csharp
 Dortgen d=elipsOrnegi;
 ```
 
-Diğer yandan bilinçli olarakta aşağıdaki tarzda bir dönüşüm de yapmak isteyebiliriz.
+Diğer yandan bilinçli olarak da aşağıdaki tarzda bir dönüşüm yapmak isteyebiliriz.
 
 ```csharp
 Dortgen d=(Dortgen)elipsOrnegi;
@@ -275,8 +273,7 @@ public static implicit operator Dortgen(Elips elips)
 
 Elbette dönüştürme operatörlerinin aşırı yüklenmesi ile ilgili olaraktan dikkat etmemiz gereken önemli bir ayrıntı vardır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Hem implicit hem de explicit operatörlerini aynı anda aşırı yükleyemeyiz.
+> Hem implicit hem de explicit operatörlerini aynı anda aşırı yükleyemeyiz.
 
 Ancak, sadece implicit operatörünün yüklemesi ile, çalışma zamanında hem explicit hem de implicit dönüşümlere izin vermiş oluruz. Yani aşağıdaki iki kod satırıda başarılı bir şekilde çalışacaktır.
 
@@ -383,8 +380,7 @@ private void menuKapat_Click(object sender, System.EventArgs e)
 
 Dortgen sınıfı içerisinde aritmetik operatörlerin ve dönüştürme operatörlerinin nasıl yükleneceğini kısaca inceledik. Dilersek koşullu ifadelerde kullanılan operatörleride aşırı yükleyebiliriz. Örneğin == operatörünü yeniden yükleyerek dörtgen sınıfımız için özel olarak kullanabiliriz.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-== gibi karşılaştırma operatörlerinin aşırı yüklenmesinde tek şart, zıt operatörlerinde yüklenme zorunluluğunun olmasıdır. Örneğin, == için!=, < için > operatörünün aşırı yüklenmesi gibi...
+> == gibi karşılaştırma operatörlerinin aşırı yüklenmesinde tek şart, zıt operatörlerinde yüklenme zorunluluğunun olmasıdır. Örneğin, == için!=, < için > operatörünün aşırı yüklenmesi gibi...
 
 Örneğimiz çok basit olduğundan genellikle koleksiyonlarda tuttuğumuz ilk iki nesne üzerinde işlem yapıyoruz. Yine bu tarz bir işlem yaptığımızı düşünelim ve iki Dortgen nesnesinin boyutlarının aynı olması halinde eşit olduklarını gösterelim. Bunun için Dortgen sınıfında == ve!= operatörlerini aynı anda aşırı yüklemeliyiz. Aşağıdaki kodlarda Dortgen sınıfına bu işlevselliği nasıl kazandırdığımızı görebilirsiniz.
 
@@ -431,9 +427,8 @@ Eşit değildir kontrolünün sonucu;
 
 ![mk123_4.gif](/assets/images/2005/mk123_4.gif)
 
-Elbetteki aşırı yükleme yapamayacağımız operatörlerde vardır.
+Elbette aşırı yükleme yapamayacağımız operatörler de vardır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-=,.,?:, ->, new, is, as, sizeof,&&, ||, () operatörlerini aşırı yüklememiz yasaklanmıştır.
+> =,.,?:, ->, new, is, as, sizeof,&&, ||, () operatörlerini aşırı yüklememiz yasaklanmıştır.
 
 Görüldüğü gibi nesnelerimiz için, C# dilinde var olan operatörleri aşırı yüklemek son derece kolaydır. Dikkat etmemiz gereken bir takım kurallar vardır ki bunlar zamanla öğrenilebilir. Operatörlerin özellikle aşırı yüklenmesine ihtiyaç duyulacağı durumları göz önüne aldığımızda, grafik ve matematik uygulamalarının üst sıralarda yer aldığını görürüz. Örneğin sevgili Sefer ALGAN, Her Yönüyle C# Kitabında operatörlerin aşırı yüklenmesi ile ilgili olaraktan Kompleks sayıları incelemiştir. Özetle operatörleri aşırı yüklemek özellikle kendi oluşturduğumuz nesnelerin esnekliği açısından önemlidir. Bu makalemizde işlediğimiz [örnekte](/assets/files/2005/OperOver.rar) bahsedilen aşırı yükleme işlemleri sadece Dortgen sınıfı için yapılmıştır. Size tavsiyem Elips sınıfı içinde benzer yüklemeleri yapmaya çalışmanızdır.

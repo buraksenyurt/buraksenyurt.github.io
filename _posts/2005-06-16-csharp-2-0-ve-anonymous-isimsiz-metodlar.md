@@ -7,12 +7,11 @@ categories:
 tags:
   - csharp
 ---
-İsimsiz metodlar bildiğiniz gibi C# 2.0' a eklenmiş olan yeni özelliklerden birisidir. Temeli C# dilinin temsilci tipine dayanan bu yeni teknikte amaç, temsilcileri işaret edecekleri metodların sahip oldukları kod blokları ile bir seferde tanımlayabilmektir. İsimsiz metodları anlayabilmek için herşeyden önce temsilcilerin (delegates) iyi kavranmış olması gerekmektedir (Ön bilgi veya hatırlatma açısından Örnek [makale](http://www.bsenyurt.com/MakaleGoster.aspx?ID=43) ve [video](http://www.bsenyurt.com/video/Delegates.zip) larımızı incelemenizi öneririm)
+İsimsiz metotlar bildiğiniz gibi C# 2.0'a eklenmiş olan yeni özelliklerden birisidir. Temeli C# dilinin temsilci tipine dayanan bu yeni teknikte amaç, temsilcileri işaret edecekleri metotların sahip oldukları kod blokları ile bir seferde tanımlayabilmektir. İsimsiz metotları anlayabilmek için her şeyden önce temsilcilerin (delegates) iyi kavranmış olması gerekmektedir. (Ön bilgi veya hatırlatma açısından örnek [makale](http://www.bsenyurt.com/MakaleGoster.aspx?ID=43) ve [video](http://www.bsenyurt.com/video/Delegates.zip)larımızı incelemenizi öneririm.)
 
-Kısaca temsilciler, çalışma zamanında metodların başlangıç adreslerini işaret eden tip (type) lerdir. Temsilcilerin herhangibir metodu çalışma zamanında işaret edebilmesinin yanı sıra bu metodu (metodları) çağırlabilmesi ve hatta parametreler göndererek dönüş değerleri vermesi gibi yetenekleride vardır. Ama tüm bu özellikleri arasında en önemlisi, çalışma zamanında hangi metodu çalıştıracağına karar vermesidir.
+Kısaca temsilciler, çalışma zamanında metotların başlangıç adreslerini işaret eden tiplerdir. Temsilcilerin herhangi bir metodu çalışma zamanında işaret edebilmesinin yanı sıra bu metodu (metotları) çağırabilmesi ve hatta parametreler göndererek dönüş değerleri vermesi gibi yetenekleri de vardır. Ama tüm bu özellikleri arasında en önemlisi, çalışma zamanında hangi metodu çalıştıracağına karar vermesidir.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Temsilciler (delegates), multithreading (çok kanallı programlama) modelinde, event-driven (olay güdümlü) programlamada, CallBack Modeli ile Asenkron erişim tekniklerinde etkin olarak kullanılmaktadır.
+> Temsilciler (delegates), multithreading (çok kanallı programlama) modelinde, event-driven (olay güdümlü) programlamada, CallBack Modeli ile Asenkron erişim tekniklerinde etkin olarak kullanılmaktadır.
 
 C# 2.0 ile gelen isimsiz (anonymous) metodları anlamak için öncelikle C# dilinde bir temsilciyi nasıl kullandığımıza bakmamızda fayda var. Aşağıdaki örnekte basit olarak bir temsilci tanımlanmış ve kullanılmıştır. Bu temsilci iki adet double tipte parametre alan ve geriye double tipinden değerler döndüren metodları işaret edebilecek şekilde tanımlanmıştır. Dikkat ederseniz temsilci nesnemize ait nesne örneğimiz oluşturulurken işaret edeceği metod parametre olarak verilmektedir. Daha sonra bu temsilci nesne örneği üzerinden işaret edilen metod çağırılabilmektedir.
 
@@ -47,8 +46,7 @@ namespace DefiningDelegate
 
 C# 2.0 için anonymous metodları kullanarak yukarıdaki uygulamayı aşağıdaki kod parçasında görüldüğü gibi yazabiliriz. Yeni versiyonda temsilci kullanımındaki tek fark temsilcinin işaret edeceği metod bloğunun, çalışma zamanında bu metodu çağıracak olan temsilci nesnesine eklenmiş oluşudur. Buradan temsilcilerin inline (satır içi) kodlama yeteneği kazanmış olduklarını söyleyebiliriz.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-İsimsiz (Anonymous) metodlar dışarıdan parametre alabilirler ve geriye değer döndürebiliriler.
+> İsimsiz (Anonymous) metodlar dışarıdan parametre alabilirler ve geriye değer döndürebiliriler.
 
 C# 2.0 versiyonu
 
@@ -212,10 +210,9 @@ public class Form1 : System.Windows.Forms.Form
 
 Şimdi aynı örneğin C# 2.0' da isimsiz metodlar yardımıyla nasıl yazılabileceğine bakalım. Görüldüğü gibi System.EventHandler temsilcisi burada görülmemektedir. Aslında tüm isimsiz metod modellerinde, temsilcilerden hangisi kullanılırsa kullanılsın (örneğin System.EventHandler veya ThreadStart gibi) bizim tek kullandığımız delegate anahtar sözcüğü ile bir metod bloğunun kombinasyonudur. Bu isimsiz metodların kullanımının bir faydası olarakta görülebilir.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-İsimsiz (Anonymous) metodlarda, kullanılan temsilcinin bilinmesine gerek yoktur. delegate anahtar sözcüğü bu işi üstlenir.
+> İsimsiz (Anonymous) metodlarda, kullanılan temsilcinin bilinmesine gerek yoktur. delegate anahtar sözcüğü bu işi üstlenir.
 
-C# 2.0 Versiyonu
+C# 2.0 Delegate Versiyonu
 
 ```csharp
 private void InitializeComponent()

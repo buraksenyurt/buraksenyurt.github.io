@@ -13,9 +13,10 @@ Bugünkü makalemizde iş parçacıklarının belli süreler boyunca nasıl durg
 
 Bir önceki makalemizde hatırlayacak olursanız, iş parçacıkları haline getirdiğimiz metodlarımızda işlemeleri yavaşlatmak amacı ile bazı döngüler kullanmıştık. Gerçek hayatta çoğu zaman, iş parçacıklarının belirli süreler boyunca beklemesini ve süre sona erdiğinde tekrardan işlemelerine kaldığı yerden devam etmesini istediğimiz durumlar olabilir. Önceki makalemizde kullandığımız Suspend metodu ile ilgili iş parçacığını durdurabiliyorduk. Bu, ilgili iş parçacıklarını geçici süre ile bekletmenin yollarından birisidir. Ancak böyle bir durumda bekletilen iş parçacığını tekrar hareketlendirmek kullanıcının Resume metodunu çalıştırması ile olabilir. Oysaki biz, iş parçacığımızın belli bir süre boyunca beklemesini isteyebiliriz. İşte böyle bir durumda Sleep metodunu kullanırız. Bu metodun iki adet overload edilmiş versiyonu vardır.
 
+```csharp
 public static void Sleep (int);
-
 public static void Sleep (TimeSpan);
+```
 
 Biz bugünkü uygulamamızda ilk versiyonu kullanacağız. Bu versiyonda metodumuz parametre olarak int tipinde bir değer almaktadır. Bu değer milisaniye cinsinden süreyi bildirir. Metodun static bir metod olduğu dikkatinizi çekmiş olmalıdır. Static bir metod olması nedeni ile, sınıf adı ile birlikte çağırılmak zorundadır. Yani herhangi bir thread nesnesinin ardından Sleep metodunu yazamazsınız. Peki o hâlde bekleme süresinin hangi iş parçacığı için geçerli olacağını nereden bileceğiz? Bu nedenle, bu metod iş parçacığı olarak tanımlanan metod blokları içerisinde kullanılır. Konuyu örnek üzerinden inceleyince daha iyi anlayacağız. Metod çalıştırıldığında parametresinde belirtilen süre boyunca geçerli iş parçacığını bekletir. Bu bekleme diğer parçacıkların çalışmasını engellemez. Süre sona erince, iş parçacığımız çalışmasına devam edecektir. Şimdi dilerseniz örnek bir uygulama geliştirelim ve konuya açıklık getirmeye çalışalım.
 

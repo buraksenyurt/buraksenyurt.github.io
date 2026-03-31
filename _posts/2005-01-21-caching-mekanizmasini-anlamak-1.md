@@ -8,9 +8,9 @@ tags:
   - asp.net
   - caching
 ---
-Bu makalemiz ile birlikte, web sayfalarının istemcilere daha hızlı bir şekilde ulaştırılmasında kullanılan tekniklerden birisi olan Caching (Ara Belleğe Alma) mekanizmasını incelemeye başlıyacağız. Akıllıca kullanıldığı takdirde web uygulamalarında istemcilere nazaran göreceli olarak performans artışına neden olan Caching (Ara Belleğe Alma) mekanizması, teorik olarak bir web sayfasının tamamının ya da bir parçasının ara belleğe alınarak belli bir süre boyunca burada tutulması prensibini temel alarak çalışır. Asp.Net uygulamaları söz konusu olduğunda bir sayfanın tamamını, belli bir veri kümesini veya sayfa üzerindeki herhangibir kontrolü ara belleğe alabiliriz. Buna göre Asp.Net uygulamalarındaki Caching (Ara Belleğe Alma) mekanizması aşağıdaki üç farklı tekniği destekler.
+Bu makalemiz ile birlikte, web sayfalarının istemcilere daha hızlı bir şekilde ulaştırılmasında kullanılan tekniklerden birisi olan Caching (Ara Belleğe Alma) mekanizmasını incelemeye başlayacağız. Akıllıca kullanıldığı takdirde web uygulamalarında istemcilere nazaran göreceli olarak performans artışına neden olan Caching (Ara Belleğe Alma) mekanizması, teorik olarak bir web sayfasının tamamının ya da bir parçasının ara belleğe alınarak belli bir süre boyunca burada tutulması prensibini temel alarak çalışır. ASP.NET uygulamaları söz konusu olduğunda bir sayfanın tamamını, belli bir veri kümesini veya sayfa üzerindeki herhangi bir kontrolü ara belleğe alabiliriz. Buna göre ASP.NET uygulamalarındaki Caching (Ara Belleğe Alma) mekanizması aşağıdaki üç farklı tekniği destekler.
 
-Asp.Net Uygulamaları İçin Caching (Ara Belleğe Alma) Teknikleri
+ASP.NET Uygulamaları İçin Caching (Ara Belleğe Alma) Teknikleri
 
 1 - Output Caching (Çıktının Ara Belleğe Alınması)
 
@@ -24,7 +24,7 @@ Output Caching tekniğinde, bir aspx sayfasının tüm içeriği ara belleğe al
 
 İlk olarak, birinci istemci web sunucusundan bir aspx sayfasını talep eder. Web sunucusu sayfanın ilişkili kodlarını çalıştırarak bir çıktı üretir ve bu sayfa için Output Caching (Çıktının Ara Belleğe Alınması) aktif ise üretilen HTML sonuçlarını istemciye gönderir. Hemen ardından gönderilen HTML içeriğini belirtilen süre boyunca (duration) tutmak üzere sunucu üzerindeki ara belleğe alır.
 
-Şimdi ikinci bir istemcinin devamlılık süresi (Duration) içerisindeyken aynı sayfayı sunucudan talep ettiğini düşünelim. Bu durumda web sunucusu, talep edilen sayfanın Cache (Ara Bellek) üzerinde olup olmadığına bakar. Eğer ikinci kullanıcı talebini, Devamlılık Süresi (Duration) içerisindeki bir zaman diliminde iletmiş ise, web sunucusu istemciye sayfanın ara bellekteki hazır halini gönderir. Dolayısıyla sayfanın üretilmesinde çalıştırılan arka plan kodlarının hiç biri tekrardan yürütülmez. Bu elbetteki ikinci kullanıcının talep ettiği sayfa için daha kısa sürede cevap almasını sağlar.
+Şimdi ikinci bir istemcinin devamlılık süresi (Duration) içerisindeyken aynı sayfayı sunucudan talep ettiğini düşünelim. Bu durumda web sunucusu, talep edilen sayfanın Cache (Ara Bellek) üzerinde olup olmadığına bakar. Eğer ikinci kullanıcı talebini, Devamlılık Süresi (Duration) içerisindeki bir zaman diliminde iletmiş ise, web sunucusu istemciye sayfanın ara bellekteki hazır halini gönderir. Dolayısıyla sayfanın üretilmesinde çalıştırılan arka plan kodlarının hiçbiri tekrardan yürütülmez. Bu elbette ikinci kullanıcının talep ettiği sayfa için daha kısa sürede cevap almasını sağlar.
 
 Output Caching mekanizmasını bir aspx sayfasına uygulayabilmek için tek yapılması gereken OutputCache direktifinin sayfanın aspx kodlarının olduğu kısıma eklemek yeterlidir.
 
@@ -60,7 +60,7 @@ private void Page_Load(object sender, System.EventArgs e)
 }
 ```
 
-Uygulama çalıştığında ve default.aspx sayfasının çıktısı üretildiğinde bu sayfanın son halinin bir kopyasıda ara belleğe alınır. Yeni koypa ara bellekte 300 saniye (5 dakika) boyunca kalacaktır. Aynı sayfayı başka bir tarayıcı'da açtığımızda ya da aynı tarayıcı penceresinde iken ileri geri gittiğimizde sayfanın ara bellekte bulunan halini elde ederiz. Ancak bu örnekte dikkat edilmesi gereken bir nokta vardır. Bu durumu simule etmek için sayfayı refresh edelim. Bu durumda sayfanın içeriği aşağıdakine benzer olacaktır.
+Uygulama çalıştığında ve default.aspx sayfasının çıktısı üretildiğinde bu sayfanın son hali de ara belleğe alınır. Yeni kopya ara bellekte 300 saniye (5 dakika) boyunca kalacaktır. Aynı sayfayı başka bir tarayıcıda açtığımızda ya da aynı tarayıcı penceresindeyken ileri geri gittiğimizde sayfanın ara bellekte bulunan halini elde ederiz. Ancak bu örnekte dikkat edilmesi gereken bir nokta vardır. Bu durumu simüle etmek için sayfayı refresh edelim. Bu durumda sayfanın içeriği aşağıdakine benzer olacaktır.
 
 ![mk113_2.gif](/assets/images/2005/mk113_2.gif)
 
@@ -78,7 +78,7 @@ Bu işleyiş bazen büyük bir risk olabilir. Örneğin, sayfanın daha dinamik 
 
 Bir sayfanın tamamını ara belleğe aldığımızda, sayfanın arabellekte yer alacak birden fazla kopyasına ihtiyaç duyduğumuz durumlar söz konusu olabilir. Çoğunlukla QueryString kullanımı sırasında başka sayfalara çeşitli parametreleri ve değerlerini göndeririz. İşte VaryByParam özelliği sayesinde sayfanın, gönderdiğimiz her parametre için ayrı ayrı veya sadece belirli parametreler için ayrı ayrı kopyalarını ara bellekte tutabiliriz.
 
-Bu durumu daha yakından inceleyebilmek için pubs veritabanındaki titles tablosunu kullancağımız bir önrek geliştirelim. Uygulamanın default.aspx sayfasında bu kez titles tablosunda yer alan her bir satır için title alanının değerlerini göstereceğiz. Kullanıcı her hangibir başlığa tıkladığında bu kitap ile ilgili detaylı bilgilerin olduğu başka bir sayfaya (detay.aspx) gidecek. Detay sayfası kitabın Primary Key değerini (title_id) QueryString parametresi olarak alacak. Bu durumda, detay sayfası için ara belleğe alma işlemini gerçekleştirebiliriz. Konuyu daha iyi anlayabilmek için örnek üzerinden adım adım gidelim. İlk olarak ana sayfamızın (default.aspx) aspx içeriğini aşağıdaki gibi değiştirmeliyiz.
+Bu durumu daha yakından inceleyebilmek için pubs veritabanındaki titles tablosunu kullanacağımız bir örnek geliştirelim. Uygulamanın default.aspx sayfasında bu kez titles tablosunda yer alan her bir satır için title alanının değerlerini göstereceğiz. Kullanıcı herhangi bir başlığa tıkladığında bu kitap ile ilgili detaylı bilgilerin olduğu başka bir sayfaya (detay.aspx) gidecek. Detay sayfası kitabın Primary Key değerini (title_id) QueryString parametresi olarak alacak. Bu durumda, detay sayfası için ara belleğe alma işlemini gerçekleştirebiliriz. Konuyu daha iyi anlayabilmek için örnek üzerinden adım adım gidelim. İlk olarak ana sayfamızın (default.aspx) aspx içeriğini aşağıdaki gibi değiştirmeliyiz.
 
 ```text
 <asp:DataGrid id="dgVeriler" style="Z-INDEX: 101; LEFT: 56px; POSITION: absolute; TOP: 88px" runat="server" AutoGenerateColumns="False" Height="160px" Width="264px" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" BackColor="#DEBA84" CellPadding="3">
@@ -148,6 +148,6 @@ Görüldüğü gibi VaryByParam özelliği ile, bir sayfanın kendisine QeuryStr
 <%@ OutputCache Duration="300" VaryByParam="*" %>
 ```
 
-Her ne kadar bir sayfanın Output Cache tekniği ile ara belleğe alınması avantajlı görünsede, özellikle olay kodlamalı sayfaların işleyişinde bu kullanım sorunlara yol açabilir. Her şeyden önce sayfa içinde postback'e neden olan kodlamalar var ise, sayfa ilk çağrıldıktan sonra ara belleğe alınacağından bu kod satırları duration süresi sonlanana kadar yürütülmeyecektir. Diğer yandan zaman zaman, sayfalarımızın içeriği dinamik olarak değişmek zorunda kalabilir. Bu gibi durumlarda da sayfanın tamamının ara belleğe alınması iyi bir yöntem değildir. Çözüm, sayfanın belirli parçalarının veya sayfadaki herhangibir veri kümesinin (kümelerinin) ara belleğe alınmasıdır. Data Caching ve Fragment Caching tekniklerini bir sonraki makalemizde inceleyeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Her ne kadar bir sayfanın Output Cache tekniği ile ara belleğe alınması avantajlı görünse de, özellikle olay kodlamalı sayfaların işleyişinde bu kullanım sorunlara yol açabilir. Her şeyden önce sayfa içinde postback'e neden olan kodlamalar var ise, sayfa ilk çağrıldıktan sonra ara belleğe alınacağından bu kod satırları duration süresi sonlanana kadar yürütülmeyecektir. Diğer yandan zaman zaman, sayfalarımızın içeriği dinamik olarak değişmek zorunda kalabilir. Bu gibi durumlarda da sayfanın tamamının ara belleğe alınması iyi bir yöntem değildir. Çözüm, sayfanın belirli parçalarının veya sayfadaki herhangi bir veri kümesinin ara belleğe alınmasıdır. Data Caching ve Fragment Caching tekniklerini bir sonraki makalemizde inceleyeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2005/Caching1.rar)

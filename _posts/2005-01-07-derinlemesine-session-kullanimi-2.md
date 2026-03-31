@@ -8,9 +8,9 @@ tags:
   - asp.net
   - session
 ---
-Bir önceki makalemizde hatırlayacağınız gibi, Session nesnelerinin kullanımını incelemeye başlamıştık. Bu makalemizde ise, Session nesnelerinin nerelerde saklanabildiğine değinmeye çalışacağız. Varsayılan olarak Session nesneleri In-Proc (işlem içi) modunda saklanırlar. Yani web sayfasının çalıştığı asp.net work process'in içinde, dolayısıyla bu işlerin çalıştığı web sunucularındaki bellek alanlarında tutulurlar. Bu özellikle Session nesnelerine bilgi yazma ve okumada önemli bir avantajdır.
+Bir önceki makalemizde hatırlayacağınız gibi, Session nesnelerinin kullanımını incelemeye başlamıştık. Bu makalemizde ise, Session nesnelerinin nerelerde saklanabildiğine değinmeye çalışacağız. Varsayılan olarak Session nesneleri In-Proc (işlem içi) modunda saklanırlar. Yani web sayfasının çalıştığı ASP.NET work process'in içinde, dolayısıyla bu işlerin çalıştığı web sunucularındaki bellek alanlarında tutulurlar. Bu özellikle Session nesnelerine bilgi yazma ve okumada önemli bir avantajdır.
 
-Nitekim, erişim doğrudan ram üzerindeki bölgelere doğru olduğu için diğer bahsedeceğimiz modlara nazaran göreceli olarak oldukça hızlı bir erişim söz konusudur. Lakin, web sunucusunun başına bir şey gelmesi halinde (örneğin sunucunun bir anda restart olması gibi) bellekte tutulan tüm Session nesneleri bir anda kaybedilir. Bu da çok sayıda kullanıcının açtığı oturumlara ait bilgilerin tamamının kaybolması anlamına gelmektedir. Bunu basit bir örnek ile gösterebiliriz. Aşağıdaki web uygulmasında, Session nesnesine bir değer atanmaktadır. Session'ın time-out süresi varsayılan halinde (Yani 20 dakika olarak) bırakılmıştır.
+Nitekim, erişim doğrudan RAM üzerindeki bölgelere doğru olduğu için diğer bahsedeceğimiz modlara nazaran göreceli olarak oldukça hızlı bir erişim söz konusudur. Lakin, web sunucusunun başına bir şey gelmesi halinde (örneğin sunucunun bir anda restart olması gibi) bellekte tutulan tüm Session nesneleri bir anda kaybedilir. Bu da çok sayıda kullanıcının açtığı oturumlara ait bilgilerin tamamının kaybolması anlamına gelmektedir. Bunu basit bir örnek ile gösterebiliriz. Aşağıdaki web uygulamasında, Session nesnesine bir değer atanmaktadır. Session'ın time-out süresi varsayılan hâlinde (yani 20 dakika olarak) bırakılmıştır.
 
 default.aspx kodları ve Form'un ekran görüntüsü;
 
@@ -47,7 +47,7 @@ Bu örneği çalıştırdığımızda, default.aspx sayfasında Ekle butonuna ba
 
 ![mk112_3.gif](/assets/images/2005/mk112_3.gif)
 
-Şimdi web uygulamamıza ait Global.asax dosyasında herhangibir değişiklik yapıp uygulamamızı yeniden derleyelim. Ben örnek olarak pek bir anlam ifade etmeyen bir yorum satırı girdim ve uygulamayı yeniden derledim. Tabi bunu yaparken, web tarayıcımızda sayfalarımız açık halde bulunmalıdır.
+Şimdi web uygulamamıza ait Global.asax dosyasında herhangi bir değişiklik yapıp uygulamamızı yeniden derleyelim. Ben örnek olarak pek bir anlam ifade etmeyen bir yorum satırı girdim ve uygulamayı yeniden derledim. Tabii bunu yaparken, web tarayıcımızda sayfalarımız açık hâlde bulunmalıdır.
 
 ```csharp
 protected void Application_Start(Object sender, EventArgs e)
@@ -56,16 +56,16 @@ protected void Application_Start(Object sender, EventArgs e)
 }
 ```
 
-Şimdi linklerimize tıklayarak sayfalar arasında tekrar gezindiğimizde, henüz time-out süresi dolmamış olan Session nesnelerinin kaybedildiğini ve Label kontrollerinde Session nesnesine ait içeriğin yazmadığını görürüz. Kısacası, In-Proc modunda olan (Yani işlem içi - In Process) Session nesneleri kaybedilmiştir. Elbetteki Session nesnelerinin bu şekilde kaybolması dışında da oluşabilecek istisnalar vardır. Örneğin sunucunun istem dışı bir şekilde kapanması gibi.
+Şimdi linklerimize tıklayarak sayfalar arasında tekrar gezindiğimizde, henüz time-out süresi dolmamış olan Session nesnelerinin kaybedildiğini ve Label kontrollerinde Session nesnesine ait içeriğin yazmadığını görürüz. Kısacası, In-Proc modunda olan (yani işlem içi - In Process) Session nesneleri kaybedilmiştir. Elbette ki Session nesnelerinin bu şekilde kaybolması dışında da oluşabilecek istisnalar vardır. Örneğin sunucunun istem dışı bir şekilde kapanması gibi.
 
-Asp.Net ile birlikte durum yönetiminde (state management), Session nesnelerinin saklanabilmesi için iki teknik daha geliştirilmiştir. Bu teknikler yardımıyla, durum nesnelerinin yukarıdaki gibi nedenlerden ötürü kaybolmalarının önüne geçilebilmektedir. Bu tekniklerden bir tanesi Session nesnelerinin bir Sql Veritabanında tutulduğu SQLServer modu, diğeri ise Session nesnelerinin ASP.NET State Service Windows Servisinde tutulduğu StateServer modudur. İlk olarak SQLServer modunu inceleyeceğiz.
+ASP.NET ile birlikte durum yönetiminde (state management), Session nesnelerinin saklanabilmesi için iki teknik daha geliştirilmiştir. Bu teknikler yardımıyla, durum nesnelerinin yukarıdaki gibi nedenlerden ötürü kaybolmalarının önüne geçilebilmektedir. Bu tekniklerden bir tanesi Session nesnelerinin bir SQL veritabanında tutulduğu SQLServer modu, diğeri ise Session nesnelerinin ASP.NET State Service Windows Servisinde tutulduğu StateServer modudur. İlk olarak SQLServer modunu inceleyeceğiz.
 
-SQLServer modunda, Session nesnesine ait tüm bilgiler bir Sql Sunucusunda bu iş için özel olarak hazırlanmış bir veritabanında tutulmaktadırlar. Böylece, Session nesnelerine ait içerik, istenen süre kadar (aylarca bile olabilir) fiziki bir disk bölgesinde saklanabilmektedir. Bu ayrıca, veritabanının başka bir sunucuda konuşlandırılmasıyla, Web Çiftliklerinin (Web Farms) yapısına uygun bir oluşumada imkan tanır. Böylece, Web Sunucusunda oluşabilecek aksaklıklardan doğacak sorunlar Sql Sunucusunu etkilemeyecek, dolayısıyla Session'lar korunmuş olacaktır. Elbette bu sistemin de dezavantajı vardır.
+SQLServer modunda, Session nesnesine ait tüm bilgiler bir SQL sunucusunda bu iş için özel olarak hazırlanmış bir veritabanında tutulmaktadır. Böylece, Session nesnelerine ait içerik, istenen süre kadar (aylarca bile olabilir) fiziki bir disk bölgesinde saklanabilmektedir. Bu ayrıca, veritabanının başka bir sunucuda konuşlandırılmasıyla, Web Çiftliklerinin (Web Farms) yapısına uygun bir oluşuma da imkân tanır. Böylece, Web Sunucusunda oluşabilecek aksaklıklardan doğacak sorunlar SQL sunucusunu etkilemeyecek, dolayısıyla Session'lar korunmuş olacaktır. Elbette bu sistemin de dezavantajı vardır.
 
 ![dikkat.gif](/assets/images/2005/dikkat.gif)
-Session nesnelerini ayrı bir sunucudaki veri tabanında tutmak her ne kadar güvenlik ve tutarlılık açısından yüksek performans sağlasada, bilgilere erişimin In-Proc moda göre daha yavaş olmasınada neden olur. Bu elbetteki verinin okunması veya yazılması için sürekli veritabanına doğru atılan turların bir sonucudur.
+Session nesnelerini ayrı bir sunucudaki veritabanında tutmak her ne kadar güvenlik ve tutarlılık açısından önemli avantajlar sağlasa da, bilgilere erişimin In-Proc moda göre daha yavaş olmasına da neden olur. Bu elbette ki verinin okunması veya yazılması için sürekli veritabanına doğru atılan turların bir sonucudur.
 
-SQLServer modunda kullanılan ASPState isimli veritabanında Session nesnelerinin yazılma, silinme gibi işlemleri için kullanılan stored procedure'ler yer alır. Session nesnelerine ait asıl içerik ise tempdb isimli veritabanında yer alan tablolarda tutulmaktadır. Microsoft.NET Framework bu veritabanını ve içeriğini kurmak için gerekli Sql kodlarını içeren script dosyalarını içerir. Windows XP sistemlerinde bu dosyaya (InstallSqlState.sql) D:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\ adresinden ulaşabilirsiniz. Bu sql script dosyasını Sql Query Analyzer ile çalıştırdığımızda, Sql Sunucusunda ASPState isimli bir veritabanı oluşturulduğunu görürüz. Ayrıca Session nesnelerini tutacak olan tablolarda tempdb veritabanı içerisine eklenirler.
+SQLServer modunda kullanılan ASPState isimli veritabanında Session nesnelerinin yazılma, silinme gibi işlemleri için kullanılan stored procedure'ler yer alır. Session nesnelerine ait asıl içerik ise tempdb isimli veritabanında yer alan tablolarda tutulmaktadır. Microsoft .NET Framework bu veritabanını ve içeriğini kurmak için gerekli SQL kodlarını içeren script dosyalarını içerir. Windows XP sistemlerinde bu dosyaya (InstallSqlState.sql) D:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\ adresinden ulaşabilirsiniz. Bu SQL script dosyasını Sql Query Analyzer ile çalıştırdığımızda, SQL sunucusunda ASPState isimli bir veritabanı oluşturulduğunu görürüz. Ayrıca Session nesnelerini tutacak olan tablolar da tempdb veritabanı içerisine eklenir.
 
 ![mk112_4.gif](/assets/images/2005/mk112_4.gif)
 
@@ -78,7 +78,7 @@ Dikkat edecek olursanız, SessionId isimli alan tablonun Primary Key alanıdır.
 ![soru.gif](/assets/images/2005/soru.gif)
 Bir DataSet içeriğini Session nesnesine aktardığımızda, SessionItemShort veya SessionItemLong alanlarından hangisi kullanılırsa kullanılsın, Session nesnesinin içerdiği veri nasıl olurda tek bir alan içerisine sığdırılabilir?
 
-İşte burada bir önceki makalemizde bahsettiğimiz gibi Session nesnesinin taşıyacağı verinin serileştirilebilir olması gerekliliği ortaya çıkmaktadır. Böylece ister binary olarak ister XML olarak DataSet nesnesinin içeriği serileştirilebilir ve tek bir alan içerisine yazılıp okunabilir. Bu elbetteki Session ile taşımak istediğimiz her nesne örneği için geçerli bir durumdur. (Örneğin kendi yazdığımız bir sınıf için.)
+İşte burada bir önceki makalemizde bahsettiğimiz gibi Session nesnesinin taşıyacağı verinin serileştirilebilir olması gerekliliği ortaya çıkmaktadır. Böylece ister binary olarak ister XML olarak DataSet nesnesinin içeriği serileştirilebilir ve tek bir alan içerisine yazılıp okunabilir. Bu elbette Session ile taşımak istediğimiz her nesne örneği için geçerli bir durumdur. (Örneğin kendi yazdığımız bir sınıf için.)
 
 ![dikkat.gif](/assets/images/2005/dikkat.gif)
 Out-of-Proc (İşlem dışı) modlarda, Session nesnesine atanan nesnelerin mutlaka serileştirilebilir (Serializable) olmaları gerekmektedir.
@@ -107,17 +107,17 @@ Mode özelliğinin değeri varsayılan olarak InProc'tur. Yani, Session nesneler
 />
 ```
 
-Burada dikkat etmemiz gereken en önemli nokta, sqlConnectionString özelliğinin aldığı bağlantı cümleciğidir. Bu özellikte, sql sunucusunun bulunduğu lokasyon data source ile belirtilmektedir. Varsayılan olarak Sql sunucusunun localhost üzerinde bulunduğu düşünüldüğünden bu değer 127.0.0.1 ip değerini alır. Ancak Web Çiftliği (Web-Farm) gibi sistemlerde eğer Sql Sunucusunun bulunduğu adres farklı ise data source değerini bu adrese göre ayarlamamız gerekecektir. Diğer taraftan, Ado.Net'te olduğu gibi bağlantının yapılacağı veritabanı adının burada belirtilmesine gerek yoktur. Bunun sebebi SQLServer modunda Session nesnelerinin nereye yazılacaklarının zaten belli olmasıdır. Bir diğer husus ise, mutlaka ve mutlaka bağlantıyı belli bir kullanıcı adı ve şifresi üzerinden yapmamızın güvenlik açısından daha sağlıklı olacağıdır.
+Burada dikkat etmemiz gereken en önemli nokta, sqlConnectionString özelliğinin aldığı bağlantı cümleciğidir. Bu özellikte, SQL sunucusunun bulunduğu lokasyon data source ile belirtilmektedir. Varsayılan olarak SQL sunucusunun localhost üzerinde bulunduğu düşünüldüğünden bu değer 127.0.0.1 IP değerini alır. Ancak Web Çiftliği (Web-Farm) gibi sistemlerde eğer SQL sunucusunun bulunduğu adres farklı ise data source değerini bu adrese göre ayarlamamız gerekecektir. Diğer taraftan, ADO.NET'te olduğu gibi bağlantının yapılacağı veritabanı adının burada belirtilmesine gerek yoktur. Bunun sebebi SQLServer modunda Session nesnelerinin nereye yazılacaklarının zaten belli olmasıdır. Bir diğer husus ise, mutlaka ve mutlaka bağlantıyı belli bir kullanıcı adı ve şifresi üzerinden yapmamızın güvenlik açısından daha sağlıklı olacağıdır.
 
-Şunu da hatırlatmakta fayda var. InstallSqlState script'i her ne kadar session yönetimi için gerekli veritabanı düzenlemelerini yapsada, ASPNET kullanıcısına ASPState veritabanındaki stored procedure'leri çalıştırma ve tempdb içindeki ASPStateTempSessions ile ASPStateTempApplications tabloları için gerekli Select, Insert, Update, Delete komutlarını yürütebilme izinlerini vermemiz gerekiyor.
+Şunu da hatırlatmakta fayda var. InstallSqlState script'i her ne kadar session yönetimi için gerekli veritabanı düzenlemelerini yapsa da, ASPNET kullanıcısına ASPState veritabanındaki stored procedure'leri çalıştırma ve tempdb içindeki ASPStateTempSessions ile ASPStateTempApplications tabloları için gerekli Select, Insert, Update, Delete komutlarını yürütebilme izinlerini vermemiz gerekiyor.
 
 ![mk112_6.gif](/assets/images/2005/mk112_6.gif)
 
-Aksi takdirde ASPNET kullancısının bu sp ve sql komutlarını çalıştırma yetkisi olmayacağından web uygulamamızda aşağıdakine benzer türden hata sayfaları ile karşılaşabiliriz.
+Aksi takdirde ASPNET kullanıcısının bu SP ve SQL komutlarını çalıştırma yetkisi olmayacağından web uygulamamızda aşağıdakine benzer türden hata sayfaları ile karşılaşabiliriz.
 
 ![mk112_7.gif](/assets/images/2005/mk112_7.gif)
 
-Gerekli izinleride verdikten sonra artık uygulamamızı çalıştırabiliriz. Uygulamamızı çalıştırdığımız sırada eğer Sql Profiler ile arka planda olanları izlersek hemen bir sp'nin çalıştırıldığını ve sp'ye parametre olarak bir GUID'in aktarıldığını görürüz. Buradaki GUID, web sunucusu tarafından üretilen ASP.NETSessionId'den başka bir şey değildir. Session nesnesi ilk kez yaratıldığından ilgili tabloya INSERT işlemini uygulayan bir sp çalışmaktadır.
+Gerekli izinleri de verdikten sonra artık uygulamamızı çalıştırabiliriz. Uygulamamızı çalıştırdığımız sırada eğer Sql Profiler ile arka planda olanları izlersek hemen bir SP'nin çalıştırıldığını ve SP'ye parametre olarak bir GUID'in aktarıldığını görürüz. Buradaki GUID, web sunucusu tarafından üretilen ASP.NETSessionId'den başka bir şey değildir. Session nesnesi ilk kez yaratıldığından ilgili tabloya INSERT işlemini uygulayan bir SP çalışmaktadır.
 
 ![mk112_8.gif](/assets/images/2005/mk112_8.gif)
 
@@ -125,11 +125,11 @@ Tam bu noktada ASPStateTempSessions tablomuza bakacak olursak, yukarıdaki sp'ye
 
 ![mk112_9.gif](/assets/images/2005/mk112_9.gif)
 
-Elbetteki bu noktada, Session'ımıza henüz bir bilgi aktarmadığımız için tabloda yer alan ilgili alanlara herhangibir bilgi yazılmamıştır. default.aspx sayfasında ekle butonuna basarsak, başka bir sp'nin bu kez var olan SessionId'li satırı güncellemek üzere çalıştırıldığını ve parametre olarakta encrypt edilmiş Session içeriğinin gönderildiğini görürüz.
+Elbette ki bu noktada, Session'ımıza henüz bir bilgi aktarmadığımız için tabloda yer alan ilgili alanlara herhangi bir bilgi yazılmamıştır. default.aspx sayfasında ekle butonuna basarsak, başka bir sp'nin bu kez var olan SessionId'li satırı güncellemek üzere çalıştırıldığını ve parametre olarak da encrypt edilmiş Session içeriğinin gönderildiğini görürüz.
 
 ![mk112_10.gif](/assets/images/2005/mk112_10.gif)
 
-Dolayısıyla Session içeriği tabloda yer alan ilgili satıra (ASP.NET_SessionId değerine sahip olan satır) yazılmış olacaktır. Eğer makalemizin başındaki örneğimizde yaptığımız gibi, Global.asax dosyasında bir değişiklik yapıp uygulamayı yeniden derleyip time-out süresinden önce Session'ları okumak istersek, Session'lara ait değerlerin kaybolmadığını kolayca tespit edebiliriz. Session'ların yaşam süreleri dolduğunda otomatik olarak silindiklerini biliyoruz. InstallSqlState script'i ayrıca zaman aşımına uğramış Session'ların otomatik olarak kaldırılması için gerekli bir job nesnesinide sql sunucusuna yükler. (Job nesnesinin çalışabilmesi için Sql Server Agent servisinin çalışıyor olması gerekmektedir.)
+Dolayısıyla Session içeriği tabloda yer alan ilgili satıra (ASP.NET_SessionId değerine sahip olan satır) yazılmış olacaktır. Eğer makalemizin başındaki örneğimizde yaptığımız gibi, Global.asax dosyasında bir değişiklik yapıp uygulamayı yeniden derleyip time-out süresinden önce Session'ları okumak istersek, Session'lara ait değerlerin kaybolmadığını kolayca tespit edebiliriz. Session'ların yaşam süreleri dolduğunda otomatik olarak silindiklerini biliyoruz. InstallSqlState script'i ayrıca zaman aşımına uğramış Session'ların otomatik olarak kaldırılması için gerekli bir job nesnesini de SQL sunucusuna yükler. (Job nesnesinin çalışabilmesi için SQL Server Agent servisinin çalışıyor olması gerekmektedir.)
 
 ![mk112_11.gif](/assets/images/2005/mk112_11.gif)
 
@@ -236,7 +236,7 @@ public class Personel
 
 Şimdi Ekle butonuna tekrardan basarsak ve sayfalar arasında gezersek, Personel sınıfına ait nesne örneğinin başarılı bir şekilde taşındığını görürüz.
 
-Session nesnelerini işlem dışından saklayabileceğimiz bir diğer seçenekte ASP.NET State Service isimli windows servisinin kullanılmasıdır. Bu kullanımda çoğunlukla, State Service başka bir sunucu üzerinde çalıştırılır ve diğer web sunucuları tarafından ortaklaşa kullanılır. Dolayısıyla, çalışan Asp.Net work processor'dan ayrı process'ler söz konusudur. Bu ayrı process'ler State Server üzerinde konuşlandırılır.
+Session nesnelerini işlem dışından saklayabileceğimiz bir diğer seçenek de ASP.NET State Service isimli Windows servisinin kullanılmasıdır. Bu kullanımda çoğunlukla State Service başka bir sunucu üzerinde çalıştırılır ve diğer web sunucuları tarafından ortaklaşa kullanılır. Dolayısıyla, çalışan ASP.NET work processor'dan ayrı process'ler söz konusudur. Bu ayrı process'ler State Server üzerinde konuşlandırılır.
 
 ![mk112_13.gif](/assets/images/2005/mk112_13.gif)
 
@@ -256,10 +256,10 @@ Servisin çalıştırılmasının ardından Web.config dosyasında da sessionSta
 />
 ```
 
-StateServer modunda, State Server olarak kullanılacak sunucunun tcpip adresi ve ilgili port numarası stateConnectionString özelliğinde belirleniz. Biz burada local makineyi kullanıyoruz. Buradaki 42424 port numarası, ASP.NET State Service servisinin kullandığı varsayılan port numarasıdır. Dilersek bu numarayı değiştirmemiz mümkün. Bunun için,sistemdeki registery ayarlarına inmemiz gerekiyor. Hot Key Local Machine sekmesinde \System\CurrentControlSet\Services\aspnetstate\Parameters\ altındaki Port elemanının değerini değiştirmemiz yeterlidir.
+StateServer modunda, State Server olarak kullanılacak sunucunun tcpip adresi ve ilgili port numarası stateConnectionString özelliğinde belirlenir. Biz burada local makineyi kullanıyoruz. Buradaki 42424 port numarası, ASP.NET State Service servisinin kullandığı varsayılan port numarasıdır. Dilersek bu numarayı değiştirmemiz mümkün. Bunun için sistemdeki registry ayarlarına inmemiz gerekiyor. HKEY_LOCAL_MACHINE sekmesinde \System\CurrentControlSet\Services\aspnetstate\Parameters\ altındaki Port elemanının değerini değiştirmemiz yeterlidir.
 
 ![mk112_15.gif](/assets/images/2005/mk112_15.gif)
 
-Bu değişikliklerden sonra Session nesnelerini ASP.NET State Service'ın kontrolü altında tutulmak üzere kullanabiliriz. Bu servis yardımıyla tuttuğumuz Session nesneleri için de serileştirilebilme şartı aranmaktadır, bunuda hatırlatalım.
+Bu değişikliklerden sonra Session nesnelerini ASP.NET State Service'ın kontrolü altında tutulmak üzere kullanabiliriz. Bu servis yardımıyla tuttuğumuz Session nesneleri için de serileştirilebilme şartı aranmaktadır, bunu da hatırlatalım.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

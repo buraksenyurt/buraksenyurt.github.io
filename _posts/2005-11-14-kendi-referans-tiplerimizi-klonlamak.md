@@ -8,9 +8,9 @@ tags:
   - csharp
   - IClonable
 ---
-Bu makalemizde kendi yazmış olduğumuz referans tipleri arasında yapılan atama işlemleri sırasında üyeden üyeye (Member by member) kopyalamanın nasıl yapılabileceğini incelemeye çalışacağız. Bildiğiniz gibi referans tipleri belleğin heap bellek bölgesinde tutulurlar. Bu tutuluş yapısının özellikle referans tipleri arasında yapılan atama işlemlerinde önemli bir etkisi vardır. İki referans tipi arasında bir atama işlemi söz konusu olduğunda, aslında bu referans tiplerinin heap bellek bölgesinde yer alan adresleri eşitlenmektedir. Bu eşlemenin doğal bir sonucu olaraktan da referans tiplerinin her hangibirisinde yapılan değişiklik diğerinide otomatikman etkileyecektir.
+Bu makalemizde kendi yazmış olduğumuz referans tipleri arasında yapılan atama işlemleri sırasında üyeden üyeye (member by member) kopyalamanın nasıl yapılabileceğini incelemeye çalışacağız. Bildiğiniz gibi referans tipleri belleğin heap bellek bölgesinde tutulurlar. Bu tutuluş yapısının özellikle referans tipleri arasında yapılan atama işlemlerinde önemli bir etkisi vardır. İki referans tipi arasında bir atama işlemi söz konusu olduğunda, aslında bu referans tiplerinin heap bellek bölgesinde yer alan adresleri eşitlenmektedir. Bu eşlemenin doğal bir sonucu olarak da referans tiplerinin herhangi birisinde yapılan değişiklik diğerini de otomatikman etkileyecektir.
 
-Ancak bazı durumlarda, özellikle kendi yazdığımız referans tiplerini kullanırken bu durumun tam tersini isteyebiliriz. Yani kendi yazmış olduğumuz bir sınıfın iki nesne örneği arasında yaptığımız atama işlemi sonrası, bu referansların birbirini etkilemelerini istemeyebiliriz. Bu durumda yazmış olduğumuz sınıfa IClonable arayüzünü uygulayarak referans tipinin klonlanmasını sağlayabiliriz. Bu durumu analiz etmeden önce, referans tipleri arasında yapılam atamanın doğal sonucunu aşağıdaki örnek ile incelemeye çalışalım. Örneğimizde bir dörtgene ait kenar uzunluklarını tutacak olan Dortgen isimli bir sınıf kullanacağız. Dortgen sınıfımızın UML şeması ve kodları aşağıdaki gibidir.
+Ancak bazı durumlarda, özellikle kendi yazdığımız referans tiplerini kullanırken bu durumun tam tersini isteyebiliriz. Yani kendi yazmış olduğumuz bir sınıfın iki nesne örneği arasında yaptığımız atama işlemi sonrası, bu referansların birbirini etkilemelerini istemeyebiliriz. Bu durumda yazmış olduğumuz sınıfa ICloneable arayüzünü uygulayarak referans tipinin klonlanmasını sağlayabiliriz. Bu durumu analiz etmeden önce, referans tipleri arasında yapılan atamanın doğal sonucunu aşağıdaki örnek ile incelemeye çalışalım. Örneğimizde bir dörtgene ait kenar uzunluklarını tutacak olan Dortgen isimli bir sınıf kullanacağız. Dortgen sınıfımızın UML şeması ve kodları aşağıdaki gibidir.
 
 ![mk140_3.gif](/assets/images/2005/mk140_3.gif)
 
@@ -89,12 +89,11 @@ Burada ilk olarak Dortgen sınıfına ait bir nesne örneğini (drtgX) oluşturu
 
 ![mk140_6.gif](/assets/images/2005/mk140_6.gif)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Referans tiplerinin bir birlerine atanması işlemi sonrası, bu tiplerin heap bellek bölgesindeki başlangıç adresleri eşitleneceğinden, birisi içerisindeki varlıklarda yapılacak değişiklikler diğerinede yansıyacaktır.
+> Referans tiplerinin bir birlerine atanması işlemi sonrası, bu tiplerin heap bellek bölgesindeki başlangıç adresleri eşitleneceğinden, birisi içerisindeki varlıklarda yapılacak değişiklikler diğerinede yansıyacaktır.
 
 Yukarıdaki örnek referans tipleri arasında yapılan atamaların bir eksiklik olduğunu göstermez. Bu, bellek sisteminin doğal bir sonucudur. Dahası, referans tiplerinin bu şekilde tutulmasının ve atama işlemleri sonrası adreslerin eşitlenmesinin avantajlı olduğu durumlar da vardır. Örneğin n elemanlı bir diziyi, bir metoda parametre olarak geçirmek istediğinizde, dizinin metod bloğu içinde değer türlerinde olduğu gibi tekrardan örneklenmemesi, referans adreslerinin taşınması sayesinde gerçekleşir. Böylece bellekte gereksiz yere ikinci bir dizi örneği yaratılmamış olunur.
 
-Elbetteki bazı hallerde referans tiplerinin üyeden-üyeye (member by member) kopyalanmasını yani ikinci bir adresleme ile yeni bir örneğin oluşturulmasını isteyebiliriz. İşte bunu gerçekleştirmek için var olan nesneyi atama işlemini yaparken klonlarız. Klonlama işleminin gerçekleştirilebilmesi için, yazmış olduğumuz sınıfa IClonable arayüzünü uygulamamız gerekir. Bu arayüz sadece Clone isimli tek bir metod içermektedir. Yukarıdaki örneğimizde kullandığımız Dortgen sınıfına IClonable arayüzünü aşağıdaki gibi uygulayabiliriz.
+Elbette ki bazı hallerde referans tiplerinin üyeden üyeye (member by member) kopyalanmasını yani ikinci bir adresleme ile yeni bir örneğin oluşturulmasını isteyebiliriz. İşte bunu gerçekleştirmek için var olan nesneyi atama işlemini yaparken klonlarız. Klonlama işleminin gerçekleştirilebilmesi için, yazmış olduğumuz sınıfa ICloneable arayüzünü uygulamamız gerekir. Bu arayüz sadece Clone isimli tek bir metot içermektedir. Yukarıdaki örneğimizde kullandığımız Dortgen sınıfına ICloneable arayüzünü aşağıdaki gibi uygulayabiliriz.
 
 ![mk140_1.gif](/assets/images/2005/mk140_1.gif)
 
@@ -137,14 +136,13 @@ public object Clone()
 }
 ```
 
-MemberwiseClone metodu Object sınıfına ait bir metoddur. Protected erişim belirleyicisine sahiptir bu yüzden türetme işlemi söz konusu olduğunuda kullanılabilir. Ayrıca override edilebilir bir metod da değildir. MemberwiseClone metodu, kullanıldığı sınıfın nesne örneğinden bir kopya daha oluşturmaktır. Yukarıdaki örneğimizi bu haliyle çalıştırdığımızda, atama sonrası klonlama işleminin başarılı bir şekilde yapıldığını ve drtgY nesnesi üzerinde yapılan değişikliklerin drtgX nesnesini etkilemediğini görürüz.
+MemberwiseClone metodu Object sınıfına ait bir metottur. Protected erişim belirleyicisine sahiptir; bu yüzden türetme işlemi söz konusu olduğunda da kullanılabilir. Ayrıca override edilebilir bir metot da değildir. MemberwiseClone metodu, kullanıldığı sınıfın nesne örneğinden bir kopya daha oluşturmaktır. Yukarıdaki örneğimizi bu hâliyle çalıştırdığımızda, atama sonrası klonlama işleminin başarılı bir şekilde yapıldığını ve drtgY nesnesi üzerinde yapılan değişikliklerin drtgX nesnesini etkilemediğini görürüz.
 
 ![mk140_4.gif](/assets/images/2005/mk140_4.gif)
 
 Ancak MemberwiseClone metodunu kullanırken dikkat etmemiz gereken bir durum vardır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-MemberwiseClone metodu, klonlama işlemi sırasında nesnenin static olmayan tüm değer türlerini (value types) bit-bit kopyalar. Ancak içeride kullanılan referans tipi nesne örnekleri varsa bunların adreslerini aynen yeni örneğe geçirir. Dolayısıyla referans tipleri arası yapılan atama işlemi sonrası oluşan aynı adresi gösterme çatışması, dahili referans tipi nesne örnekleri içinde geçerli olur.
+> MemberwiseClone metodu, klonlama işlemi sırasında nesnenin static olmayan tüm değer türlerini (value types) bit-bit kopyalar. Ancak içeride kullanılan referans tipi nesne örnekleri varsa bunların adreslerini aynen yeni örneğe geçirir. Dolayısıyla referans tipleri arası yapılan atama işlemi sonrası oluşan aynı adresi gösterme çatışması, dahili referans tipi nesne örnekleri içinde geçerli olur.
 
 Bu durumda yeni nesne örneğimiz içerisinde var olan bir referans tipi üzerinde yapılacak bir değişiklik, yine ilk nesne içindeki referans nesne örneği içinde geçerli olacaktır. Bu dikkat edilmesi gereken önemli bir durumdur. Örneğin Dortgen sınıfımız içerisinde kullanılacak yeni bir sınıfımız olduğunu varsayalım.
 
@@ -221,9 +219,8 @@ Console.WriteLine("drtgX.Hesaplama & drtgY.Hesaplama referans adresleri eşit mi
 
 ![mk140_5.gif](/assets/images/2005/mk140_5.gif)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-ReferenceEquals parametre olarak aldığı nesne örneklerinin bellek referanslarının aynı olup olmadığını kontrol ederek sonucu bool tipinden geriye döndüren Object sınıfına ait static bir metoddur.
+> ReferenceEquals parametre olarak aldığı nesne örneklerinin bellek referanslarının aynı olup olmadığını kontrol ederek sonucu bool tipinden geriye döndüren Object sınıfına ait static bir metoddur.
 
-Görüldüğü gibi drtgX ve drtgY nesnelerini Object sınıfının ReferenceEquals metodu ile karşılaştırdığımızda, false değerini alıyoruz. Çünkü biz Dortgen sınıfımıza IClonable arayüzünü ve Clone metodu içerisinde MemberwiseClone fonksiyonunu uygulayarak, drtgX nesne örneğini klonluyoruz. Bu sebeple heap bellek bölgesinde ayrı bir Dortgen nesne örneği oluşturuluyor. Dolayısıla adresler artık farklı olacağından ReferenceEquals metodu geriye false değer döndürecektir.
+Görüldüğü gibi drtgX ve drtgY nesnelerini Object sınıfının ReferenceEquals metodu ile karşılaştırdığımızda, false değerini alıyoruz. Çünkü biz Dortgen sınıfımıza ICloneable arayüzünü ve Clone metodu içerisinde MemberwiseClone fonksiyonunu uygulayarak, drtgX nesne örneğini klonluyoruz. Bu sebeple heap bellek bölgesinde ayrı bir Dortgen nesne örneği oluşturuluyor. Dolayısıyla adresler artık farklı olacağından ReferenceEquals metodu geriye false değer döndürecektir.
 
 Ancak drtgX ve drtgY nesne örnekleri içerisinde yer alan DortgenHesaplama sınıfına ait nesne örneklerinin referanslarını karşılaştırdığımızda true değerinin döndüğünü görmekteyiz. Yani DortgenHesaplama sınıfına ait nesne örnekleri için klonlama işlemi gerçekleşmemiş bunun yerine nesnelerin heap bellek bölgesindeki adresleri eşitlenmiştir. Bu dikkat edilmesi gereken bir durumdur ve sınıflarımızı programlarken gerekli tedbirlerin alınmasını gerektirebilecek kadar önemlidir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

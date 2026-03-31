@@ -13,10 +13,9 @@ SortedList ve Hashtable koleksiyonları, anahtar-değer (key-value) çiftlerini 
 
 Yani SortedList koleksiyonuna eklediğimiz elemanların sırasına bakılmaksızın, yeniden yapılan bir sıralama söz konusudur. Bu avantajlı bir durum olsa bile, özellikle SortedList'in çok daha yavaş çalışan bir koleksiyon olmasına neden olmaktadır. Her iki koleksiyon hakkında söylenebilecek pek çok konu vardır. Biz bu makalemizde özellikle dikkat etmemiz gereken 2 teori üzerinde duracağız. İlk teorimiz ile işe başlayalım.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Bir SortedList oluştururken doğrudan eleman eklemek yerine, elemanları önce bir Hashtable koleksiyonuna ekleyip, SortedList'i bu Hashtable üzerinden oluşturmak daha hızlıdır.
+> Bir SortedList oluştururken doğrudan eleman eklemek yerine, elemanları önce bir Hashtable koleksiyonuna ekleyip, SortedList'i bu Hashtable üzerinden oluşturmak daha hızlıdır.
 
-Kulağa biraz galip geliyor değil mi? Bir SortedList koleksiyonunu anahtar-değer çiftleri ile doldururken doğrudan SortedList'i kullanmak yerine bir Hashtable'ın kullanılması... Her ne kadar ilginç gibi görünsede aşağıdaki basit örnek ile bu durumu analiz edebiliriz.
+Kulağa biraz garip geliyor değil mi? Bir SortedList koleksiyonunu anahtar-değer çiftleri ile doldururken doğrudan SortedList'i kullanmak yerine bir Hashtable'ın kullanılması... Her ne kadar ilginç gibi görünse de aşağıdaki basit örnek ile bu durumu analiz edebiliriz.
 
 ```csharp
 using System;
@@ -108,7 +107,7 @@ namespace UsingSortedList
 
 ![mk132_1.gif](/assets/images/2005/mk132_1.gif)
 
-Elbetteki burada basit bir Order By ile NationalIDNumber alanına göre sıralama yaptırabiliriz. Ancak SortedList ile ilgili teorimize bakmak için bize sırasız (unsorted) ve benzersiz (unique) anahtar (key) değerleri gerekiyor. Hazır elimizde var iken kullanmakta fayda var. İlk metodumuz (Olustur () metodu) anahtar-değer çiftlerini SortedList'e doğrudan ekliyor. İkinci metodumuz (Olusturht () metodu) ise anahtar-değer çiftlerini önce bir Hashtable koleksiyonuna ekliyor ve daha sonra SortedList koleksiyonunu aşağıdaki yapıcı metod prototipi ile oluşturuyor.
+Elbette ki burada basit bir Order By ile NationalIDNumber alanına göre sıralama yaptırabiliriz. Ancak SortedList ile ilgili teorimize bakmak için bize sırasız (unsorted) ve benzersiz (unique) anahtar (key) değerleri gerekiyor. Hazır elimizde var iken kullanmakta fayda var. İlk metodumuz (Olustur() metodu) anahtar-değer çiftlerini SortedList'e doğrudan ekliyor. İkinci metodumuz (Olusturht() metodu) ise anahtar-değer çiftlerini önce bir Hashtable koleksiyonuna ekliyor ve daha sonra SortedList koleksiyonunu aşağıdaki yapıcı metot prototipi ile oluşturuyor.
 
 ```csharp
 public SortedList(IDictionary d);
@@ -118,12 +117,11 @@ Hashtable koleksiyonu IDictionary arayüzünü implemente ettiği için, SortedL
 
 ![mk132_2.gif](/assets/images/2005/mk132_2.gif)
 
-Aslında sonuçlar milisaniye cinsinden olduğu için çok önemsiz görünebilir. Kaldı ki uygulamanın kısa süreli sonraki çalıştırılışlarında veritabanı kaynaklarının yeniden kullanımınında etkisiyle bu süre dahada aşağılara inecektir. Ancak gerçek hayat problemlerinde çok daha fazla satıra sahip (çoğunlukla buradaki gibi 290 satırlık bir veri seti değil) tablolarda benzer işlemleri kullanabiliriz. Sonuç itibariyle teorik olarak bir SortedList koleksiyonunu oluştururken bir Hashtable koleksiyonundan yararlanmak performansı olumlu yönde etkilemektedir. Gelelim ikinci dikkate değer teoriye.
+Aslında sonuçlar milisaniye cinsinden olduğu için çok önemsiz görünebilir. Kaldı ki uygulamanın kısa süreli sonraki çalıştırılışlarında veritabanı kaynaklarının yeniden kullanımının da etkisiyle bu süre daha da aşağılara inecektir. Ancak gerçek hayat problemlerinde çok daha fazla satıra sahip (çoğunlukla buradaki gibi 290 satırlık bir veri seti değil) tablolarda benzer işlemleri kullanabiliriz. Sonuç itibarıyla teorik olarak bir SortedList koleksiyonunu oluştururken bir Hashtable koleksiyonundan yararlanmak performansı olumlu yönde etkilemektedir. Gelelim ikinci dikkate değer teoriye.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-İster SortedList ister Hashtable olsun, anahtar-değer çiftine sahip koleksiyonların elemanları arasında ileri yönlü iterasyon kullanırken DictionaryEntry nesneleri üzerinden hareket etmek, anahtarlar üzerinden hareket etmekten daha hızlıdır.
+> İster SortedList ister Hashtable olsun, anahtar-değer çiftine sahip koleksiyonların elemanları arasında ileri yönlü iterasyon kullanırken DictionaryEntry nesneleri üzerinden hareket etmek, anahtarlar üzerinden hareket etmekten daha hızlıdır.
 
-Dictionary bazlı bir koleksiyonda (çoğunlukla Hashtable ve SortedList) foreach döngüsünü kullanarak yaptığımız iterasyonlarda genellike kullandığımız iki desen vardır. Bu desenlerden birisinde Keys özelliği kullanılır. Keys özelliği ile koleksiyon içerisindeki her bir anahtar üzerinde ileri yönlü hareket sağlanır. Bir anahtara karşılık gelen değeri koleksiyon içerisinden almak için, güncel anahtar koleksiyonun indeksleyicisine parametre olarak verilir.
+Dictionary bazlı bir koleksiyonda (çoğunlukla Hashtable ve SortedList) foreach döngüsünü kullanarak yaptığımız iterasyonlarda genellikle kullandığımız iki desen vardır. Bu desenlerden birisinde Keys özelliği kullanılır. Keys özelliği ile koleksiyon içerisindeki her bir anahtar üzerinde ileri yönlü hareket sağlanır. Bir anahtara karşılık gelen değeri koleksiyon içerisinden almak için, güncel anahtar koleksiyonun indeksleyicisine parametre olarak verilir.
 
 ```csharp
 foreach (object anahtar in sl.Keys)
@@ -131,7 +129,7 @@ foreach (object anahtar in sl.Keys)
 }
 ```
 
-Diğer yöntemde ise DictionaryEntry nesneleri kullanılmaktadır ve deseni aşağıdaki gibidir. DictionaryEntry nesneleri o anki anahtar-değer çiflerine erişebilmemizi sağlayan Key ve Value özelliklerine sahiptir.
+Diğer yöntemde ise DictionaryEntry nesneleri kullanılmaktadır ve deseni aşağıdaki gibidir. DictionaryEntry nesneleri o anki anahtar-değer çiftlerine erişebilmemizi sağlayan Key ve Value özelliklerine sahiptir.
 
 ```csharp
 foreach (DictionaryEntry dicEnt in sl)
@@ -189,6 +187,6 @@ Uygulamamızı çalıştırdığımızda aşağıdakine benzer bir sonuç elde e
 
 ![mk132_3.gif](/assets/images/2005/mk132_3.gif)
 
-Bu teori Hashtable koleksiyonları içinde geçerlidir. Her iki teoriyide incelediğimiz örneklerin doğurduğu sonuçlar kullandığınız sisteme nazaran görecelidir. Farklı sonuçar oluşabilir. Özellikle milisaniye cinsinden değerler söz konusu olduğundan çalışma zamanında bu farklar çok önemsizdir. Ancak yinede profesyonel stilde kod yazarken kullanabileceğimiz tekniklerdir.
+Bu teori Hashtable koleksiyonları içinde geçerlidir. Her iki teoriyi de incelediğimiz örneklerin doğurduğu sonuçlar kullandığınız sisteme nazaran görecelidir. Farklı sonuçlar oluşabilir. Özellikle milisaniye cinsinden değerler söz konusu olduğundan çalışma zamanında bu farklar çok önemsizdir. Ancak yine de profesyonel stilde kod yazarken kullanabileceğimiz tekniklerdir.
 
 Özetle SortedList koleksiyonunun kullanım amacı elemanlarının her zaman anahtarlarına göre sıralı tutuluyor oluşudur. Hashtable koleksiyonu ise elemanlarını içeride hash algoritması ile oluşturduğu indekslere göre tutar ve bulur. Hash algoritmasının doğası gereği Hashtable koleksiyonları son derece hızlıdır. Her iki koleksiyonunda ortak noktası IDictionary arayüzlerini uygulamış olmaları ve bu sebepten DictionaryEntry tipinden nesneleri taşımalarıdır. Bu yüzden her iki koleksiyonda bünyesinde key-value çiftlerini barındırır. İşte bu ortak özelliklerden yola çıkaraktan yukarıdaki iki teori ortaya atılmıştır. Biz de bu makalemizde bunları incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

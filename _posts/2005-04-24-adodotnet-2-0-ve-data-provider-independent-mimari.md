@@ -66,7 +66,7 @@ grdProviders.DataSource=dtProviders;
 
 ![mk121_2.gif](/assets/images/2005/mk121_2.gif)
 
-Peki sistemdeki veri sağlayıcılarının elde edilmesinin bize sağlayacağı avantajlar neler olabilir? Herşeyden önce ürünümüzün yüklendiği sistemlerdeki veri sağlayıcılarını görmek ve bunlardan seçişi olan ile uygulamayı çalıştırmak steyebiliriz. Böyle bir durumda GetFactoryClasses metodu işimizi oldukça kolaylaştıracaktır. Diğer yandan, ürünümüzü sisteme yüklerken kurulan herhangi bir konfigurasyon ayarı ile de bir veri sağlayıcıyı seçebiliriz. Çoğunlukla bunu xml içerikli konfigürasyon dosyalarında belirtiriz. (Örneğin app.config dosyası içinde). Uygulamanın hangi veri sağlayıcısını baz alarak devam edeceğine bu dosyadaki ilgili konfigürasyon ayarından karar verebiliriz.
+Peki sistemdeki veri sağlayıcılarının elde edilmesinin bize sağlayacağı avantajlar neler olabilir? Her şeyden önce ürünümüzün yüklendiği sistemlerdeki veri sağlayıcılarını görmek ve bunlardan seçili olan ile uygulamayı çalıştırmak isteyebiliriz. Böyle bir durumda GetFactoryClasses metodu işimizi oldukça kolaylaştıracaktır. Diğer yandan, ürünümüzü sisteme yüklerken kurulan herhangi bir konfigürasyon ayarı ile de bir veri sağlayıcıyı seçebiliriz. Çoğunlukla bunu XML içerikli konfigürasyon dosyalarında belirtiriz. (Örneğin app.config dosyası içinde.) Uygulamanın hangi veri sağlayıcısını baz alarak devam edeceğine bu dosyadaki ilgili konfigürasyon ayarından karar verebiliriz.
 
 Elbette böyle bir durumda uygulamanın yüklendiği sistemde seçilen veri sağlayıcısının olup olmadığına bakmak için yine yukarıdaki teknik ile elde edilen DataTable nesnesinden faydalanabiliriz. Bu sayede sistemde yüklü olmayan bir veri sağlayıcısı ile devam edilmesini de henüz kurulum aşamasında engellemiş oluruz. Bunun sonrasında kullanıcıya kullanabileceği veri sağlayıcıları alternatif olarak sunabiliriz ve uygun olanı ile devam etmesini sağlayabiliriz. Gelelim, DbProviderFactory sınıfına. Bu sınıf, veritabanına bağlantı açma, sql komutu çalıştırmak gibi işlemleri yürütmemizi sağlayacak DbConnection, DbCommand gibi sınıfların üretilmesini sağlar. Bu sınıfın prototipi aşağıdaki gibidir.
 
@@ -106,7 +106,7 @@ Console.Read();
 
 Bu kod parçasında SqlClient veri sağlayıcısını kullanacak şekilde bir DbConnection nesnesi elde edilmektedir. DbConnection nesnesini elde edebilmek için DbProviderFactory sınıfına ait CreateConnection metodu kullanılmaktadır. Ne yazık ki veri sağlayıcı bağımsız mimarinin de içinden şu an için çıkamayacağı sorunlar var. Bunlardan birisi ConnectionString'in bir veri sağlayıcıdan ötekine farklılık göstermesidir.
 
-Yani Sql sunucularına SqlConnection nesnesi ile bağlantı kurarken kullandığımız Connection String ifadesi, OleDbConnection için olandan farklıdır. Bu sorunu çözmek için DbConnectionStringBuilder sınıfı kullanılmaktadır. Bu sınıf bir connection string içine yazılan özellikleri anahtar-değer (key-value) çiftleri şeklinde temsil eder. Böylece uygun Connection String elde edilebilir. Ancak tabiki öncesinde seçilen veri sağlayıcısının her durumda kontrol edilmesi gerekecektir. Aşağıdaki kod parçası hem SqlClient hem de OleDb için gerekli DbConnection nesnesinin doğru bir şekilde elde edilebilmesini sağlamaktadır. (Burada veri sağlayıcısının seçimi için app.config dosyasını kullandığımıza dikkat edin.)
+Yani SQL sunucularına SqlConnection nesnesi ile bağlantı kurarken kullandığımız Connection String ifadesi, OleDbConnection için olandan farklıdır. Bu sorunu çözmek için DbConnectionStringBuilder sınıfı kullanılmaktadır. Bu sınıf bir connection string içine yazılan özellikleri anahtar-değer (key-value) çiftleri şeklinde temsil eder. Böylece uygun Connection String elde edilebilir. Ancak tabii ki öncesinde seçilen veri sağlayıcısının her durumda kontrol edilmesi gerekecektir. Aşağıdaki kod parçası hem SqlClient hem de OleDb için gerekli DbConnection nesnesinin doğru bir şekilde elde edilebilmesini sağlamaktadır. (Burada veri sağlayıcısının seçimi için app.config dosyasını kullandığımıza dikkat edin.)
 
 ![mk121_4.gif](/assets/images/2005/mk121_4.gif)
 
@@ -172,8 +172,7 @@ namespace UsingDbProviderFactory
 
 Uygulamamızda başlangıç olarak veri sağlayıcısını Sql sunucusuna direkt erişim sağlayan SqlClient olarak belirledik. If koşullarında app.config dosyasına eklediğimiz ProviderTipi anahtarının değerine bakarak uygun Connection String ifadesinin oluşturulmasını sağlıyoruz. Eğer OleDb kaynağını kullanarak erişim sağlamak istersek tek yapmamız gereken app.config dosyasında ProviderTipi anahtarının değerini System.Data.OleDb olarak değiştirmek olacaktır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Seçilen veri sağlayıcısının (Data-Provider) ismi sistem de yüklü olan sabit ismidir. (Invariant Name)
+> Seçilen veri sağlayıcısının (Data-Provider) ismi sistem de yüklü olan sabit ismidir. (Invariant Name)
 
 Buradaki anahtarların değerlerinin sistemde tanımlı olan invariant-name değerleri olduğunu hatırlatalım. Aslında sistemde yüklü olan veri sağlayıcılarının özellikleri elde edilirken machine.config dosyasındaki ayarlara bakılır. Eğer D:\WINDOWS\Microsoft.NET\Framework\v2.0.40607\CONFIG (Windows 2003 için) adresinden machine.config dosyasına bakılırsa sistemde yüklü olan veri sağlayıcılarının listesinin DbProviderFactories takısında yer aldığını görebiliriz. İşte veri sağlayıcılarının sabit isimleri buradan alınmaktadır.
 

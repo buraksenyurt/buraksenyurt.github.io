@@ -53,9 +53,9 @@ namespace ConsoleApplication2
 }
 ```
 
-Bu kod parçasındada aynı hatayı alırız. Çünkü struct'lar değer türüdür ve bu sebeple null değerler alamazlar. Oysaki aynı istisnai durum class gibi kendi tanımlamış olduğumuz referans türleri için geçerli değildir. Peki değer türlerinin null değer içerme ihtiyacı ne zaman doğabilir? Bir veritabanı uygulamasını göz önüne alalım. Bu tabloda int, double gibi değer türlerine karşılık gelecek alanların var olduğunu düşünelim. Veri girişi sırasında bu int ve double değişkenleri null olarak tabloya aktarmak isteyebiliriz.
+Bu kod parçasında da aynı hatayı alırız. Çünkü struct'lar değer türüdür ve bu sebeple null değerler alamazlar. Oysaki aynı istisnai durum class gibi kendi tanımlamış olduğumuz referans türleri için geçerli değildir. Peki değer türlerinin null değer içerme ihtiyacı ne zaman doğabilir? Bir veritabanı uygulamasını göz önüne alalım. Bu tabloda int, double gibi değer türlerine karşılık gelecek alanların var olduğunu düşünelim. Veri girişi sırasında bu int ve double değişkenleri null olarak tabloya aktarmak isteyebiliriz.
 
-Ya da tablodan veri çekerken, değer türü karşılığı alanların null değer içerip içermediğini anlamak isteyebiliriz. İşte bu gibi durumlarda değer türlerinin null veriler içerebilecek yapıda olması, kodumuzun ölçeklenebilirliğini arttıracak bir yetkinlik olarak düşünülebilir. Veritabanları için geçerli olan bu senaryoyu göz önüne almadan önce C# 2.0 için değer türlerinin nasıl null veriler taşıyabileceğini incelemeye çalışalım. Değer türlerinin C# 2.0 için iki versiyonu vardır. Nullable değer türleri ve Non-Nullable değer türleri. Bir değer türünün null değerler içerecek tipte olacağını belirtmek için? tip belirleyicisi kullanılır.
+Ya da tablodan veri çekerken, değer türü karşılığı alanların null değer içerip içermediğini anlamak isteyebiliriz. İşte bu gibi durumlarda değer türlerinin null veriler içerebilecek yapıda olması, kodumuzun ölçeklenebilirliğini artıracak bir yetkinlik olarak düşünülebilir. Veritabanları için geçerli olan bu senaryoyu göz önüne almadan önce C# 2.0 için değer türlerinin nasıl null veriler taşıyabileceğini incelemeye çalışalım. Değer türlerinin C# 2.0 için iki versiyonu vardır: Nullable değer türleri ve Non-Nullable değer türleri. Bir değer türünün null değerler içerecek tipte olacağını belirtmek için `?` tip belirleyicisi kullanılır.
 
 ```csharp
 using System;
@@ -99,8 +99,7 @@ Elbette referans türlerinde bu tarz bir kullanım geçerli olmayacaktır. Örne
 
 Oysaki referans türleri zaten null değerler alabilmektedir.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Referans türlerine? tip belirleyicisi uygulayarak null değer ataması yapılamaz.
+> Referans türlerine ? tip belirleyicisi uygulayarak null değer ataması yapılamaz.
 
 ? tip belirleyicisi aslında tanımlanan değer türünün null veri taşıyabilecek başka bir versiyonunu kullanılacağını belirtmektedir. Bu yeni değer türü versiyonları ise null verileri taşıyabilecek bir yapıda tasarlanmışlardır.? belirleyicisinin uygulandığı bir değer türünün null değerler içerip içermediğine HasValue özelliği ilede bakılabilmektedir. Bu özellik, ilgili değer türü null veri içerdiği sürece false döndürecektir. Örneğin,
 
@@ -141,8 +140,7 @@ m_Pi = pi;
 
 Bu örnek derlenmeyecektir. Bunun sebebi ise null değer alabilen bir değer türünü, normal bir değer türüne bilinçsiz olarak atamaya çalışmamızdır. Dolayısıyla,
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Nullable Değer türleri bilinçsiz olarak normal değer türlerine dönüştürülemez.
+> Nullable Değer türleri bilinçsiz olarak normal değer türlerine dönüştürülemez.
 
 Ancak aşağıdaki kod parçasında görülen tür dönüşüm işlemi geçerlidir.
 
@@ -167,8 +165,7 @@ E = e; // Bilinçsiz tür dönüşümü
 
 Yukarıdaki kod parçasında E null değerler taşıyabilen bir değer türüdür. e ise normal değer türüdür.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Normal değer türleri, nullable değer türlerine hem bilinçli hem de bilinçsiz olarak dönüştürülebilir.
+> Normal değer türleri, nullable değer türlerine hem bilinçli hem de bilinçsiz olarak dönüştürülebilir.
 
 Makalemizin sonunda bir veritabanı uygulamasında null değerler alabilen değer türlerinin nasıl kullanılabildiğini incelemeye çalışacağız. İlk olarak C# 1.1 versiyonunda aşağıdaki yapıda bir uygulama geliştirelim. Bu örneğimizde, Sporculara ait bir takım temel bilgileri tutan bir tabloyu kullanacağız. Tablomuzda tanımlı olan Sporcu, Boy ve Yaş alanları null değerler içerebilecek şekilde yapılandırılmıştır.
 

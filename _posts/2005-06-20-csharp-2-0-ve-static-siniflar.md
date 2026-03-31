@@ -42,7 +42,7 @@ TemelAritmetik temelAritmetik=new TemelAritmetik();
 double toplamSonuc=temelAritmetik.Toplam(4,5);
 ```
 
-Ancak yinede dikkat ederseniz TemelAritmetik sınıfına ait nesne örneğini oluşturabilmekteyiz. Bu durumda,ilk olarak static üyelerle dolu bir sınıfın kesin olarak örneklendirilmesini önlemek isteyeceğizdir. Bu nedenle varsayılan yapıcı metodu (default constructor) private olarak tanımlayarak bu durumun önüne geçebiliriz.
+Ancak yine de dikkat ederseniz TemelAritmetik sınıfına ait nesne örneğini oluşturabilmekteyiz. Bu durumda, ilk olarak static üyelerle dolu bir sınıfın kesin olarak örneklendirilmesini önlemek isteyeceğizdir. Bu nedenle varsayılan yapıcı metodu (default constructor) private olarak tanımlayarak bu durumun önüne geçebiliriz.
 
 ```csharp
 public class TemelAritmetik
@@ -164,8 +164,7 @@ Diğer yandan kodu derlediğimizde aşağıdaki hataları alırız. Toplam 3 hat
 
 Buradan şu sonuçlara varabiliriz;
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Static olarak tanımlanmış sınıflara ait nesne örneklerini üretemeyiz. Ayrıca static sınıflara ait nesne tanımlamalarını da yapamayız.
+> Static olarak tanımlanmış sınıflara ait nesne örneklerini üretemeyiz. Ayrıca static sınıflara ait nesne tanımlamalarını da yapamayız.
 
 Static sınıfların sınırlamaları sadece bunlarla sınırlı değildir. Şimdi yukarıdaki static sınıfımıza aşağıda olduğu gibi static olmayan bir kaç yeni üye daha ekleyelim.
 
@@ -206,12 +205,12 @@ Kaynak kodumuzu derlediğimizde 4 adet derleme zamanı hatası alırız.
 
 İlk hatamız static sınıf içerisinde varsayılan yapıcı (default construcor) metod tanımlamaya çalışmaktır. Dilerseniz varsayılan yapıcı metodu aşırı yükleyerek başka versiyonları ile de aynı uygulamayı derlemeyi deneyebilirsiniz. Sonuç hep aynı olacaktır. Elbette doğal olarak yapıcı metodları static olarak tanımlamaya çalışabiliriz ki bu zaten izin verilmeyen bir durumdur.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Static olarak tanımlanmış sınıflar yapıcı metodları (varsayılan yapıcı ve aşırı yüklenmiş versiyonları) içeremez.
+> Static olarak tanımlanmış sınıflar yapıcı metodları (varsayılan yapıcı ve aşırı yüklenmiş versiyonları) içeremez.
 
 Diğer hatalarımız ise, static sınıf içerisinde static olmayan üyeler tanımlamaya çalışmamızdır. Buradan da şu sonuca varabiliriz.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
+> Static olarak tanımlanmış sınıflar sadece static üyeler içerebilir.
+
 Static olarak tanımlanmış sınıflar sadece static üyeler içerebilir.
 
 İncelememiz gereken bir diğer durum static sınıfların türetilip türetilemiyeceğidir. Aşağıdaki kod parçasını göz önüne alalım.
@@ -233,8 +232,7 @@ Visual Studio.2005 her zamanki gibi bu tarz bir yazıma zaten izin vermeyecektir
 
 Buradan varacağımız sonuç ise,
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Static olarak tanımlanmış sınıflardan başka sınıflar türetilemez.
+> Static olarak tanımlanmış sınıflardan başka sınıflar türetilemez.
 
 Burada dikkate değer başka bir durum daha vardır. Static bir sınıftan başka bir sınıfı türetemeyiz. Peki static sınıfı başka bir sınıftan türetebilir miyiz? Cevap basit;
 
@@ -246,8 +244,7 @@ Ancak bu durum static sınıflarında mutlaka object sınıfından türediği ge
 
 Buna göre şu sonuca varabiliriz;
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Static olarak tanımlanmış sınıflardan başka static sınıflar da türetilemez.
+> Static olarak tanımlanmış sınıflardan başka static sınıflar da türetilemez.
 
 Static olarak tanımlanmış sınıfların sadece static üyeler içereceği kesin olmasına rağmen, üyelerinin static anahtar sözcüğü ile tanımlanıyor olması biraz tuhaf bir durum olarak görülebilir. Öyleki izlediğim bir iki blog sitesinde bu durum biraz alaycı ifadeler ile komik olarak ele alınmış. Tabi şu anda test ettiğimiz static class'ların beta 2 sürümüne ait olduğu düşünülecek olursa piyasaya çıkacak olan sürümde bu durum üzerinde iyileştirmeler yapılabilir.
 
