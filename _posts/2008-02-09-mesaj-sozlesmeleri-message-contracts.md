@@ -69,16 +69,14 @@ belirlenebildiği gibi (hangi kısımları Header'da olacak vb...)
 verinin şifrelenmeside (Encryption) özelleştirilebilir. Böylece vakaya göre bir mesaj
 deseninin oluşturulması ve kullanılması mümkün olabilmektedir.
 
-![dikkat.gif](/assets/images/2008/dikkat.gif)
-
-Çoğu durumda Mesaj Sözleşmeleri
-yerine Veri Sözleşmelerininde aynı işi yapıyor olduğu görülür.
-Ancak genel kanıya göre, eğer bir tip n sayıda mesaj içerisinde
-kullanılacaksa (yani reusable type olarak düşünülebilirse)
-Veri
-Sözleşmesi olarak tanımlanması önerilmektedir. Ancak tip (type)
-sadece istek/cevap (Request/Respone) modeline göre bir kereliğine
-kullanılıyorsa, Mesaj Sözleşmesi olacak şekilde tanımlanır.
+> Çoğu durumda Mesaj Sözleşmeleri
+> yerine Veri Sözleşmelerininde aynı işi yapıyor olduğu görülür.
+> Ancak genel kanıya göre, eğer bir tip n sayıda mesaj içerisinde
+> kullanılacaksa (yani reusable type olarak düşünülebilirse)
+> Veri
+> Sözleşmesi olarak tanımlanması önerilmektedir. Ancak tip (type)
+> sadece istek/cevap (Request/Respone) modeline göre bir kereliğine
+> kullanılıyorsa, Mesaj Sözleşmesi olacak şekilde tanımlanır.
 
 Mesaj sözleşmelerinin uygulanması son
 derece kolaydır. Ancak dikkat edilmesi gereken noktalar vardır.
@@ -424,12 +422,10 @@ Sözleşmelerine yer verilmektedir. Özellikle Receiver tipinden bir
 Array
 kullanıldığınada dikkat edilmelidir.
 
-![dikkat.gif](/assets/images/2008/dikkat.gif)
-
-Header veya Body kısımlarında
-Array'ler kullanılıyorsa MessageHeader ve MessageBodyMember
-nitelikleri bu dizilerin elemanlarını bir elementin alt
-elementleri (Child Element) olacak şekilde konumlandırır. Örneğin;
+> Header veya Body kısımlarında
+> Array'ler kullanılıyorsa MessageHeader ve MessageBodyMember
+> nitelikleri bu dizilerin elemanlarını bir elementin alt
+> elementleri (Child Element) olacak şekilde konumlandırır. Örneğin;
 
 içeriği
 
@@ -475,16 +471,14 @@ Sign değerleri
 belirlenmişse, tüm mesaj gövdesi için EncrptyAndSign seçeneği göz önüne
 alınmaktadır.
 
-![dikkat.gif](/assets/images/2008/dikkat.gif)
-
-SOAP ile ilişkili web servisi
-standartlarında 1.1 versiyonu için Actor ve 1.2 için
-Role adı
-verilen bir özellik yer almaktadır. Bu özelliğin değerini WCF
-tarafında ele almak için MessageHeader niteliğinin Actor
-özelliği kullanılır. Bunun dışında MustUnderstand ve Relay
-özelliklerindende yararlanılarak, SOAP standarlarına göre bazı
-niteliklerin mesajlaşma süreçlerine kazandırılması da sağlanabilir.
+> SOAP ile ilişkili web servisi
+> standartlarında 1.1 versiyonu için Actor ve 1.2 için
+> Role adı
+> verilen bir özellik yer almaktadır. Bu özelliğin değerini WCF
+> tarafında ele almak için MessageHeader niteliğinin Actor
+> özelliği kullanılır. Bunun dışında MustUnderstand ve Relay
+> özelliklerindende yararlanılarak, SOAP standarlarına göre bazı
+> niteliklerin mesajlaşma süreçlerine kazandırılması da sağlanabilir.
 
 İstemciye gönderilecek cevap mesajının
 içeriği ise ProductOrderResponse isimli Mesaj Sözleşmesi ile tanımlanmaktadır.
@@ -543,13 +537,11 @@ sabiti, DateTime ve byte[] dizisi tipinden bir içerik yer almaktadır. Diğer
 taraftan Header kısmında ise örnek olarak int veri tipinden bir değer
 döndürülmektedir.
 
-![dikkat.gif](/assets/images/2008/dikkat.gif)
-
-Bir tipin hem MessageContract
-hemde DataContract olacak şekilde tanımlanması da
-mümkündür. Böyle bir vakada, WCF çalışma zamanında servis
-operasyonları uygulanırken, söz konusu tip için Mesaj Sözleşmesi
-kriterleri göz önüne alınmaktadır.
+> Bir tipin hem MessageContract
+> hemde DataContract olacak şekilde tanımlanması da
+> mümkündür. Böyle bir vakada, WCF çalışma zamanında servis
+> operasyonları uygulanırken, söz konusu tip için Mesaj Sözleşmesi
+> kriterleri göz önüne alınmaktadır.
 
 Artık istemci ve servis arasında
 dolaşacak olan SOAP mesajlarına ait içerikler tanımlanmıştır.
@@ -675,16 +667,14 @@ durumu, sipariş ile ilişkili resim ve toplam sipariş sayısı bilgileri
 kullanılaraktanda bir cevap mesajı oluşturulmakta ve istemci tarafına
 gönderilmektedir.
 
-![dikkat.gif](/assets/images/2008/dikkat.gif)
-
-SOAP mesajlarının
-içerikleri aslında XML tabanlıdır. Bu içeriği yönetirken
-Mesaj Sözleşmeleri, nesne tabanlı bir modeli ele
-alabilmemizi sağlamaktadır. Bir başka deyişle, kod tarafında
-XML yapısı ile uğraşmak yerine, nesne tabanlı bir modeli
-kullanarak mesaj içeriğini kolayca oluşturabilmemiz olanaklı
-hale gelmektedir ki bu geliştirme süreci için önemli bir
-avantajdır.
+> SOAP mesajlarının
+> içerikleri aslında XML tabanlıdır. Bu içeriği yönetirken
+> Mesaj Sözleşmeleri, nesne tabanlı bir modeli ele
+> alabilmemizi sağlamaktadır. Bir başka deyişle, kod tarafında
+> XML yapısı ile uğraşmak yerine, nesne tabanlı bir modeli
+> kullanarak mesaj içeriğini kolayca oluşturabilmemiz olanaklı
+> hale gelmektedir ki bu geliştirme süreci için önemli bir
+> avantajdır.
 
 Bu işlemlerin tamamlanmasının ardından
 servis kütüphanesini Host edecek basit bir uygulama geliştirilebilir.
@@ -1278,17 +1268,15 @@ içeriklerini QuickWatch ile izlemenizdir.)
 
 ![mk269_7.gif](/assets/images/2008/mk269_7.gif)
 
-![dikkat.gif](/assets/images/2008/dikkat.gif)
-
-Eğer istemciden talep
-gönderildikten sonra varsayılan olarak 1 dakikalık zaman
-dilimi içerisinde servis tarafından cevap gelmezse aşağıdaki
-ekran görüntüsünde yer alan TimeoutException istisnası
-ile karşılaşılır.![mk269_9.gif](/assets/images/2008/mk269_9.gif)
-Bu sorun SendTimeout
-değeri arttırılarak çözümlenebilir. Bu sorun, uzun süren
-operasyonların söz konusu olduğu durumda dikkate alınması
-gereken istisnaların başında gelmektedir.
+> Eğer istemciden talep
+> gönderildikten sonra varsayılan olarak 1 dakikalık zaman
+> dilimi içerisinde servis tarafından cevap gelmezse aşağıdaki
+> ekran görüntüsünde yer alan TimeoutException istisnası
+> ile karşılaşılır.![mk269_9.gif](/assets/images/2008/mk269_9.gif)
+> Bu sorun SendTimeout
+> değeri arttırılarak çözümlenebilir. Bu sorun, uzun süren
+> operasyonların söz konusu olduğu durumda dikkate alınması
+> gereken istisnaların başında gelmektedir.
 
 Buraya kadar yaptıklarımıza
 baktığımızda, istemci ve sunucu arasındaki Mesaj içeriklerinin

@@ -115,21 +115,21 @@ Sanıyorumki metodların başlangıç zamanları ve aralarındaki farklar dikkat
 ```csharp
 static void Main(string[] args)
 {
-	Task[] tasks =
-	{
-		Task<long>.Factory.StartNew(GetTotalSize),
-		Task<int>.Factory.StartNew(GetBmpCount),
-		Task.Factory.StartNew(CopyBmp)
-	};
+    Task[] tasks =
+    {
+        Task<long>.Factory.StartNew(GetTotalSize),
+        Task<int>.Factory.StartNew(GetBmpCount),
+        Task.Factory.StartNew(CopyBmp)
+    };
 
-	/* tasks isimli dizi içerisindeki Task<T> tipleri aynı generic tip ile kullanılmadıklarında Task<T>[] gibi bir dizi üretilememiş bu nedenle 0 ve 1nci indislerdeki Task tiplerinin Result özelliklerine ulaşabilmek için bilinçli olarak Task<T> tiplerine dönüşüm yapılmıştır. */
-	Console.WriteLine("Toplam boyut {0} byte\nBmp sayısı {1}"
-		, ((Task<long>)tasks[0]).Result.ToString()
-		, ((Task<int>)tasks[1]).Result.ToString()
-		);
+    /* tasks isimli dizi içerisindeki Task<T> tipleri aynı generic tip ile kullanılmadıklarında Task<T>[] gibi bir dizi üretilememiş bu nedenle 0 ve 1nci indislerdeki Task tiplerinin Result özelliklerine ulaşabilmek için bilinçli olarak Task<T> tiplerine dönüşüm yapılmıştır. */
+    Console.WriteLine("Toplam boyut {0} byte\nBmp sayısı {1}"
+        , ((Task<long>)tasks[0]).Result.ToString()
+        , ((Task<int>)tasks[1]).Result.ToString()
+        );
 
-	Console.WriteLine("Devam etmek için bir tuşa basınız");
-	Console.Read();
+    Console.WriteLine("Devam etmek için bir tuşa basınız");
+    Console.Read();
 }
 ```
 

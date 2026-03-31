@@ -44,21 +44,21 @@ Aslında her iki Entity sınıfı içinde dikkat edilmesi gereken nokta, EntityO
 [DataMemberAttribute()]
 public global::System.Int32 CustomerId
 {
-	get
-	{
-		return _CustomerId;
-	}
-	set
-	{
-		if (_CustomerId != value)
-		{
-			OnCustomerIdChanging(value);
-			ReportPropertyChanging("CustomerId");
-			_CustomerId = StructuralObject.SetValidValue(value);
-			ReportPropertyChanged("CustomerId");
-			OnCustomerIdChanged();
-		}
-	}
+    get
+    {
+        return _CustomerId;
+    }
+    set
+    {
+        if (_CustomerId != value)
+        {
+            OnCustomerIdChanging(value);
+            ReportPropertyChanging("CustomerId");
+            _CustomerId = StructuralObject.SetValidValue(value);
+            ReportPropertyChanged("CustomerId");
+            OnCustomerIdChanged();
+        }
+    }
 }
 private global::System.Int32 _CustomerId;
 ```

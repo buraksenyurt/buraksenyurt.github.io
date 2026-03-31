@@ -266,7 +266,7 @@ private void btnIptal_Click(object sender, System.EventArgs e)
 
 private void btnKapat_Click(object sender, System.EventArgs e)
 {
-	 /* Uygulamayı kapatmak istediğimizde, çalışan iş parçacığı olup olmadığını kontrol ediyoruz. Bunun için iş parçacıklarının IsAlive özelliğinin değerlerine bakıyoruz. Nitekim kullanıcının, herhangibir iş parçacığı sonlanmadan uygulamayı kapatmasını istemiyoruz. Ya iptal etmeli yada sonlanmalarını beklemeli. İptal ettiğimizde yani Abort metodları çalıştırıldığında hatırlayacağınız gibi, iş parçacıklarının IsAlive değerleri false durumuna düşüyordu, yani iptal olmuş oluyorlardı.*/
+     /* Uygulamayı kapatmak istediğimizde, çalışan iş parçacığı olup olmadığını kontrol ediyoruz. Bunun için iş parçacıklarının IsAlive özelliğinin değerlerine bakıyoruz. Nitekim kullanıcının, herhangibir iş parçacığı sonlanmadan uygulamayı kapatmasını istemiyoruz. Ya iptal etmeli yada sonlanmalarını beklemeli. İptal ettiğimizde yani Abort metodları çalıştırıldığında hatırlayacağınız gibi, iş parçacıklarının IsAlive değerleri false durumuna düşüyordu, yani iptal olmuş oluyorlardı.*/
 
      if((!t1.IsAlive) && (!t2.IsAlive))
      {

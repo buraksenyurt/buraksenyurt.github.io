@@ -119,14 +119,14 @@ Görüldüğü üzere Information elementi içerisinde, DataContractResolver tü
 ```csharp
 static void Main(string[] args)
 {
-	FileStream fs=new FileStream("Product.xml",FileMode.Create,FileAccess.Write);
-	serializer.WriteObject(fs
-		, new Product { Information = new ProductInformation { Id = 1000, Summary = "Özet bilgi" } });
-	fs.Close();
+    FileStream fs=new FileStream("Product.xml",FileMode.Create,FileAccess.Write);
+    serializer.WriteObject(fs
+        , new Product { Information = new ProductInformation { Id = 1000, Summary = "Özet bilgi" } });
+    fs.Close();
 
-	Product product=(Product)serializer.ReadObject(new FileStream("Product.xml",FileMode.Open,FileAccess.Read));
-	ProductInformation information=(ProductInformation)product.Information;
-	Console.WriteLine("{0} {1}",information.Id,information.Summary);
+    Product product=(Product)serializer.ReadObject(new FileStream("Product.xml",FileMode.Open,FileAccess.Read));
+    ProductInformation information=(ProductInformation)product.Information;
+    Console.WriteLine("{0} {1}",information.Id,information.Summary);
 }
 ```
 

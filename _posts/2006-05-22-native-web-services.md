@@ -63,8 +63,7 @@ GO
 
 Böylece sistemde http üzerinden ListeFiyatinaGoreUrunler saklı yordamına (stored procedure) gelecek talepleri karşılayacak bir EndPoint nesnesi oluşturmuş oluyoruz. Artık istemciler bu EndPoint'i http veya tcp üzerinden çağırıp sonuçlarını alabilirler.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Windows XP Service Pack 2 yüklü bir sistemde çalışıyorsanız eğer, EndPoint nesnesini oluşturbilmek için World Wide Web Publishing servisini bu işlem sırasında durdurmamız gerekebilir. Windows 2003 sistemlerinde ise buna gerek yoktur.
+> Windows XP Service Pack 2 yüklü bir sistemde çalışıyorsanız eğer, EndPoint nesnesini oluşturbilmek için World Wide Web Publishing servisini bu işlem sırasında durdurmamız gerekebilir. Windows 2003 sistemlerinde ise buna gerek yoktur.
 
 Geliştirdiğimiz ListeFiyatinaGoreUrunlerEndPoint adlı nesneyi ve Sql Server 2005 üzerinde kayıtlı diğer EndPoint'leri görmek için http_endpoints tablosundan yararlanabiliriz. Bu sistem tablosu EndPoint'lere ait tüm bilgileri taşımaktadır.
 

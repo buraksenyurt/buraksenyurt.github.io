@@ -16,8 +16,7 @@ Başlangıçta bir uzak nesnenin InitialLeaseTime süresi 300 saniyedir. Yani 5 
 
 Uzak nesnelere ait referansların yaşam sürelerini istersek değiştirebiliriz. Bunu gerçekleştirebilmek için uzak nesneye ait kalıtım yolu ile gelen InitializeLifeTimeService isimli metodu override (ezmek) etmemiz gerekecektir. Bu metod temel olarak uygulandığı tipe ait kiralama sürelerinin yönetiminin sağlanmasından sorumludur. Buradaki ayarlamalar yardımıyla bir uzak nesne referansının InitialLeaseTime ve RenewOnCallTime sürelerini ayarlayabiliriz. Hatta referansın sonsuza dek (elbetteki çevre koşulları uygun olduğu sürece) yaşamasınıda sağlayabiliriz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Kiralama sürelerinin (Lease Time) yönetimi sadece Client Activated Object'ler için ve Server Activated Object'lerdede sadece Singleton modeli için geçerlidir. Yani SingleCall için kiralama süreleri uygulanamaz. Nitekim SingleCall modelinde uzak nesne referansları metod çağırımlarından sonra zaten yok edilirler.
+> Kiralama sürelerinin (Lease Time) yönetimi sadece Client Activated Object'ler için ve Server Activated Object'lerdede sadece Singleton modeli için geçerlidir. Yani SingleCall için kiralama süreleri uygulanamaz. Nitekim SingleCall modelinde uzak nesne referansları metod çağırımlarından sonra zaten yok edilirler.
 
 Şimdi kiralama sürelerini yönetebileceğimiz basit bir örnek ile konumuzun derinlerine inmeye çalışalım. İlk olarak RenewOnCallTime süresinin sağladığı etkiyi incelemeye çalışacağız. Sunucu tarafımızda yer alacak uzak nesne modelinde, kiralama sürelerini yöneteceğiz ve ardından istemci tarafında bu nesneye ait örneklemelerin ve üye çağırımlarının etkilerini incelemeye çalışacağız. Model olarak işimizi kolaylaştırması açısından Client Activated Object tipinden uzak nesneler kullanacağız. İlk olarak uzak nesnemizi aşağıdaki gibi oluşturalım.
 

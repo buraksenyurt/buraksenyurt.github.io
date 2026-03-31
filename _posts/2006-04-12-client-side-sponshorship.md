@@ -71,8 +71,7 @@ Sunucu uygulamamıza ait remoting ayarlarını bir konfigurasyon dosyasında tut
 
 Bu konfigurasyon dosyasında standart ayarların yanında özellikle channel boğumu içerisinde yer alan serverProviders ve clientProviders isimli alt boğumlar hemen göze çarpmaktadır. Bu alt boğumlar aynen istemci tarafındada kullanılmak zorundadır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Konfigurasyon dosyasında serverProviders ve clientProviders boğumlarını kullanmassak (ki istemci destek modelinde bunları hem istemci hem sunucu konfigurasyon dosyalarında kullanmalıyız) güvenlik ile ilgili bir çalışma zamanı hatasını aşağıdaki gibi alırız.
+> Konfigurasyon dosyasında serverProviders ve clientProviders boğumlarını kullanmassak (ki istemci destek modelinde bunları hem istemci hem sunucu konfigurasyon dosyalarında kullanmalıyız) güvenlik ile ilgili bir çalışma zamanı hatasını aşağıdaki gibi alırız.
 
 ![mk156_4.gif](/assets/images/2006/mk156_4.gif)
 

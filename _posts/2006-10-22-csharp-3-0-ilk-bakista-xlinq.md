@@ -13,8 +13,7 @@ XLINQ (Xml Language Integrated Query) temel olarak LINQ modelinin Xml üzerine u
 
 XLINQ ise, yine dil tabanlı sorgulama özelliklerini alıp bunların XML verileri üzerinden gerçkeştirilebilmesini sağlmayayı amaçlamaktadır. Xml verilerinde dil tabanlı sorgular yapılabilmesinin dışında, var olan döküman nesne modeline (Document Object Model -DOM), XPath ve Xslt kavramlarına ek olacak şekilde yeni fonksiyonelliklerde gelmektedir. Örneğin bir Xml verisini bellek üzerinde oluşturmak için XDocument isimli yeni bir tipin yapıcı metodlarından faydalanabiliriz. Dahada ileri gidersek, XLINQ ' yu DLINQ ile tümleşik olacak şekilde kullanabiliriz. Bunun anlamı, veritabanı objelerinin nesnel olarak ifade edildiği varlıkları LINQ ile sorgulayıp, Xml formatında sonuç kümelerini çalışma zamanında (runtime) elde edebileceğimizdir. DLINQ'da olduğu gibi, XLINQ'da kendi içerisinde C# 3.0' ın yeniliklerini barındırmakta ve kullanmaktadır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-XLINQ ile ilgili denemeleri [LINQ Preview](http://msdn.microsoft.com/data/ref/linq/) ekini kullanarak Vs.Net 2005 üzerinden deneyebilirsiniz.
+> XLINQ ile ilgili denemeleri [LINQ Preview](http://msdn.microsoft.com/data/ref/linq/) ekini kullanarak Vs.Net 2005 üzerinden deneyebilirsiniz.
 
 XLINQ için gerekli tipler, System.Xml.XLinq isim alanı altında yer almaktadır. Bir Xml dökümanı ve içerisinde yer alabilecek elemanlar göz önüne alındığında bunların karşılıklarının yönetimli kod (managed code) tarafında X harfi ile başlayan tiplerle ifade edildiğini görebiliriz. Örneğin Xml elementlerini XElement tipi, nitelikleri (Attribute) XAttribute tipi karşılamaktadır. System.Xml.XLinq isim alanında (namespace) bu iki tipin dışında aşağıdaki tabloda bir kısmı verilen diğer yönetimli tiplerde yer almaktadır.
 

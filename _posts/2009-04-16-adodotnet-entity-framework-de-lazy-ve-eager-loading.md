@@ -146,10 +146,10 @@ Bakalım o tararfa Lazy Loading, Eager Loading durumları nasıl ele alınabilir
 ```csharp
 using (NorthwindEntities entity = new NorthwindEntities())
 {
-	foreach (var category in entity.Categories)
-	{
-		Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
-	}
+    foreach (var category in entity.Categories)
+    {
+        Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
+    }
 }
 ```
 
@@ -166,12 +166,12 @@ Aslında bu son derece doğaldır nitekim Ado.Net Entity Framework modelinde Laz
 ```csharp
 using (NorthwindEntities entity = new NorthwindEntities())
 {
-	foreach (var category in entity.Categories)
-	{
-		if(!category.Products.IsLoaded)
-			category.Products.Load();
-		Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
-	}
+    foreach (var category in entity.Categories)
+    {
+        if(!category.Products.IsLoaded)
+            category.Products.Load();
+        Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
+    }
 }
 ```
 
@@ -185,12 +185,12 @@ Buradaki kod parçasında her bir kategori için buna bağlı ürünlerinde Prod
 
 ```csharp
 using (NorthwindEntities entity = new NorthwindEntities())
-	{
-		foreach (var category in entity.Categories.Include("Products"))
-		{                    
-			Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
-		}
-	}}               
+    {
+        foreach (var category in entity.Categories.Include("Products"))
+        {                    
+            Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
+        }
+    }}               
 }
 ```
 
@@ -203,16 +203,16 @@ Elbette yine istediğimizi alamadık. Nitekim sadece kategori adı ve ürün say
 ```csharp
 using (NorthwindEntities entity = new NorthwindEntities())
 {
-	var resultSet = from c in entity.Categories.Include("Products")
-					select new
-					{
-						c.CategoryName,
-						c.Products.Count
-					};
-	foreach (var result in resultSet)
-	{
-		Console.WriteLine("Category Name :{0}({1})", result.CategoryName, result.Count);
-	
+    var resultSet = from c in entity.Categories.Include("Products")
+                    select new
+                    {
+                        c.CategoryName,
+                        c.Products.Count
+                    };
+    foreach (var result in resultSet)
+    {
+        Console.WriteLine("Category Name :{0}({1})", result.CategoryName, result.Count);
+    
 ```
 
 Sonuç olarak SQL tarafına aşağıdaki sorgu cümlesi gönderilecektir.

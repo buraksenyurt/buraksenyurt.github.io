@@ -140,10 +140,10 @@ string veritabaniAdi;
 
 private void lstDatabase_SelectedIndexChanged(object sender, System.EventArgs e)
 {
-	veritabaniAdi=lstDatabase.SelectedItem.ToString();
-	/* Burada kv adında bir KolayVeri sınıfından nesne örneği (object instance) yaratılıyor. Dikkat edicek olursanız burada yazdığımı ikinci overload constructor'u kullandık.*/
+    veritabaniAdi=lstDatabase.SelectedItem.ToString();
+    /* Burada kv adında bir KolayVeri sınıfından nesne örneği (object instance) yaratılıyor. Dikkat edicek olursanız burada yazdığımı ikinci overload constructor'u kullandık.*/
 
-	KolayVeri kv= new KolayVeri(veritabaniAdi); /* Burada KolayVeri( dediğimizde .NET bize kullanabileceğimiz aşırı yüklenmiş constructorları aşağıdaki şekilde olduğu gibi hatırlatacaktır. IntelliSence’in gözünü seveyim.*/
+    KolayVeri kv= new KolayVeri(veritabaniAdi); /* Burada KolayVeri( dediğimizde .NET bize kullanabileceğimiz aşırı yüklenmiş constructorları aşağıdaki şekilde olduğu gibi hatırlatacaktır. IntelliSence’in gözünü seveyim.*/
 ```
 
 ![mk4_5.gif](/assets/images/2003/mk4_5.gif)
@@ -153,20 +153,20 @@ stbDurumBilgisi.Text=lstDatabase.SelectedItem.ToString()+" "+kv.BaglantiDurumu;
 
 private void btnOzelBaglan_Click(object sender, System.EventArgs e)
 {
-	string kullanici,sifre;
-	kullanici=txtKullaniciAdi.Text;
+    string kullanici,sifre;
+    kullanici=txtKullaniciAdi.Text;
 
-	sifre=txtParola.Text;
-	veritabaniAdi=lstDatabase.SelectedItem.ToString();
+    sifre=txtParola.Text;
+    veritabaniAdi=lstDatabase.SelectedItem.ToString();
 
-	KolayVeri kvOzel= new KolayVeri(veritabaniAdi,kullanici,sifre); /* Burada ise diğer aşırı yüklenmiş yapıcımızı kullanarak bir KolayVeri nesne örneği oluşturuyoruz.*/
+    KolayVeri kvOzel= new KolayVeri(veritabaniAdi,kullanici,sifre); /* Burada ise diğer aşırı yüklenmiş yapıcımızı kullanarak bir KolayVeri nesne örneği oluşturuyoruz.*/
 ```
 
 ![mk4_6.gif](/assets/images/2003/mk4_6.gif)
 
 ```csharp
-	stbDurumBilgisi.Text=lstDatabase.SelectedItem.ToString()+" "+kvOzel.BaglantiDurumu+" User:"+kullanici;
-	}
+    stbDurumBilgisi.Text=lstDatabase.SelectedItem.ToString()+" "+kvOzel.BaglantiDurumu+" User:"+kullanici;
+    }
 }
 ```
 

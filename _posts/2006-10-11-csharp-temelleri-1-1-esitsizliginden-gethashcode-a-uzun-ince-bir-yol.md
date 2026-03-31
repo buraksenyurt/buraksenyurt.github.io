@@ -21,10 +21,7 @@ Referans tabanlı eşitlik modelinde, nesnelerin birbirlerine eşit olması içi
 
 Örneğin string sınıfı referans tipi olmasına rağmen değer tabanlı eşitlik modelini (value semantics equality) tercih ederken, DataRowView sınıfı referans tabanlı eşitlik modelini (reference semantics equality) tercih etmektedir. Dolayısıyla iki string değişken birbiriyle karşılaştırılırken sadece nesne kimlikleri (object identity) değil, nesne içerikleride (contents) değerlendirilmektedir. DataRowView sınıfına ait iki nesne örneğinde ise söz konusu olan bu nesnelerin bellekte gösterdikleri adreslerin eşit olup olmadığıdır. Bu iki farklı eşitlik modeli, kendi yazdığımız tipler içinde bir takım ön hazırlıkları gerektirebilir. Örneğin bazı durumlarda yazdığımız referans tipleri için değer tabanlı eşitlik modelini kullanmak isteyebiliriz. Yada bunun tam tersi bir durum söz konusu olabilir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Yaygın Kurallar:
-1 - İki referans tipi değişken aynı veriyi işaret ediyorlarsa eşittirler.
-2 - İki değer türü değişken aynı tipteyseler ve içerikleri aynı ise eşittirler.
+> Yaygın Kurallar: **1 -** İki referans tipi değişken aynı veriyi işaret ediyorlarsa eşittirler. **2 -** İki değer türü değişken aynı tipteyseler ve içerikleri aynı ise eşittirler.
 
 Bu yaygın kurallar elbetteki geliştirici tarafından bozulabilir.
 
@@ -56,8 +53,7 @@ else
 
 Equals metodunun bu sonucu vermesinin en büyük nedeni içeride yaptığı karşılaştırma işlemleridir. Equals metodu ilk olarak parametre olarak aldığı nesne örneklerinden herhangibirinin null olup olmadığına bakar. Böyle bir durum varsa zaten eşitlikten söz edilemez. (Tabiki her iki örnekte null içeriğine sahipse bu durumda nesne örneklerinin eşit olduğu kabul edilir.) Sonrasında ise == operatörü ile bu nesne örneklerinin kimliklerinin bir başka deyişle bellekte işaret ettikleri veri adreslerinin aynı olup olmadığına bakar. Buda geçerli değilse son olarak gelen nesne örneklerinden ilkinin ezilmiş olan Equals metodunu kullanarak içerik (content) kontrolü yapar. İçerik aynı ise gelen nesne örnekleri eşittir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Object sınıfının static ReferenceEquals metodu aynı içeriğe sahip farklı değer türü değişkenleri için her zaman false döndürecektir.
+> Object sınıfının static ReferenceEquals metodu aynı içeriğe sahip farklı değer türü değişkenleri için her zaman false döndürecektir.
 
 Bu teoriyi yukarıdaki double tipi kısmen karşılamaktadır. Peki kendi değer türlerimiz söz konusu olduğunda da ReferenceEquals aynı davranışımı sergileyecektir? Hatta, Object sınıfının static Equals metodu nasıl bir davranış sergileyecektir? Aşağıdaki kod parçasında bu durum irdelenmeye çalışılmaktadır.
 
@@ -176,8 +172,7 @@ else
 
 Dikkat ederseniz string tipinden değişkenler söz konusu olduğunda ReferenceEquals metoduda, Equals metoduda true değerini döndürmektedir. Hatta ilginç olan nokta str1 ve str2 değişkenlerinin birbirlerine atanmamış dolayısıyla referansları eşitlenmemiş olmalarına rağmen static ReferenceEquals metodu true değeri döndürmüştür. Oysaki bizim yazdığımız Urun referans tipi için her ikiside false olarak dönmektedir. String değişkenlerimiz için Equals metodunun true değer döndürmesinin en büyük nedenlerinden birisi String sınıfının kendi içerisinde Equals metodunu yazmış olması ve kullanmasıdır. Bu örneklerden şu sonuca varabiliriz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Kendi sınıflarımızı yazdığımız takdirde içeriklere göre eşitlikleri kontrol etmek istiyorsak (yani değer tabanlı eşitlik modelini uygulamak istiyorsak) Object sınıfının sanal olan Equals metodunu ezmemiz (override) gerekecektir.
+> Kendi sınıflarımızı yazdığımız takdirde içeriklere göre eşitlikleri kontrol etmek istiyorsak (yani değer tabanlı eşitlik modelini uygulamak istiyorsak) Object sınıfının sanal olan Equals metodunu ezmemiz (override) gerekecektir.
 
 Gelin, kendi yazdığımız Urun sınıfı içerisinde Equals metodunu ezelim ve Object sınıfının static Equals metodunun nasıl bir davranış sergileyeceğine bakalım. Bu amaçla, Urun sınıfımız içerisinde Equals metodunu aşağıdaki gibi ezelim.
 
@@ -209,8 +204,7 @@ Urun sınıfımız içerisinde Equals metodunu override ettiğimiz için true de
 
 Peki bu uyarı niçin verilmektedir? Neden Object sınıfının GetHashCode metodunun ezilmediğine dair bir uyarı alıyoruz? Bunu anlayabilmek için öncelikli olarak Object sınıfının GetHashCode metodunun görevinden bahsetmemiz gerekmektedir. GetHashCode metodu geriye hash algoritmasına göre üretilmiş sayısal bir değer döndürür. Bu sayısal değer aslında Hashtable ve Dictionary<> gibi koleksiyonlarda önemli bir yere sahiptir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Hashtable ve Dictionary<> gibi koleksiyonlar kendi içlerinde tuttukları satırları hash değerlerine göre sıralamaktadırlar. Hash algoritmasının gücü sayesinde bu koleksiyonlar diğerlerine göre daha hızlı çalışabilmektedir.
+> Hashtable ve Dictionary<> gibi koleksiyonlar kendi içlerinde tuttukları satırları hash değerlerine göre sıralamaktadırlar. Hash algoritmasının gücü sayesinde bu koleksiyonlar diğerlerine göre daha hızlı çalışabilmektedir.
 
 Dilerseniz ilk olarak GetHashCode metodu tarafından üretilen hash değerlerini mercek altına almaya çalışalım. Aşağıdaki kod parçasında içerikleri aynı olan tipler için hash değerleri çekilmektedir.
 
@@ -240,9 +234,7 @@ Kodu çalıştırdığımızda aşağıdaki sonucu alırız.
 
 Ekran görüntüsündende dikkat edeceğiniz üzere, string, ve Personel Yapısı nesne örnekleri için üretilen hash değerleri aynıdır. İlginç olan Urun sınıfına ait nesne örneklerinin içerikleri aynı olmasına rağmen üretilen hash değerlerinin farklı oluşudur. Oysaki iki nesne örneği eğer değer tipi modeline göre eşit iseler aynı hash değerlerinden bahsediyor olmamız gerekmektedir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-
-İki nesnenin içeriği değer tipi modeli gereğince eşitse, aynı hash değerlerinin üretiliyor olması gerekmektedir. Buda özellikle değer tipinden eşitlik modelini uygulayan tipler için GetHashCode metodunun ezilmesini gerektirir.
+> İki nesnenin içeriği değer tipi modeli gereğince eşitse, aynı hash değerlerinin üretiliyor olması gerekmektedir. Buda özellikle değer tipinden eşitlik modelini uygulayan tipler için GetHashCode metodunun ezilmesini gerektirir.
 
 Nitekim String referans türü bu teoriyi doğrulamaktadır. Öyleki string tipi kendi içeriğinde değer tipli eşitlik modelini kullanmaktadır. Dolayısıyla yukarıdaki örnekte yer alan str1 ve str2 değişkenlerinin aynı hash kodlarını üretmesi beklediğimiz bir durumdur. Şimdilik, kendi yazmış olduğumuz sınıflardaki bu durumu incelemeden önce yapılarda (structs) farklı içerikler olması halinde farklı hash değerleri alıp alamayacağımızı kontrol etmemizde fayda var.
 
@@ -279,9 +271,7 @@ Personel prs2 = new Personel(1900, "Burak", 21);
 
 Gördüğünüz gibi farklı bir hash değeri elde ettik. Buna göre özellikle kendi değer türlerimiz için şu sonuca varabiliriz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-
-GetHashCode metodu kendi değer türlerimiz için bir hash değeri üretirken varsayılan olarak sadece yapı içerisindeki ilk alanın değerini göz önüne alır.
+> GetHashCode metodu kendi değer türlerimiz için bir hash değeri üretirken varsayılan olarak sadece yapı içerisindeki ilk alanın değerini göz önüne alır.
 
 İlk alanın değil ama yapı içerisindeki benzersiz alanlardan birisinin kesin olarak Hash üretiminde kullanılmasını sağlamak için GetHashCode metodu ezilebilir. Örneğimizde Tc Kimlik Numarasının benzersiz olduğu düşünelecek olursa GetHashCode metodu ezilip içeride m_TcNo alanı üzerinden bir Hash değeri ürettirilebilir. Bu durumda yapımız içerisinde GetHashCode metodunu aşağıdaki şekilde ezme yoluna gidebiliriz.
 

@@ -41,64 +41,64 @@ SqlConnection conFriends;
 
 public void baglantiAc()
 {
-	/* Sql Sunucumuza bağlanmak için SqlConnection nesnemizi oluşturuyoruz ve bağlantıyı açıyoruz. */
-	conFriends=new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Friends");
-	conFriends.Open();
+    /* Sql Sunucumuza bağlanmak için SqlConnection nesnemizi oluşturuyoruz ve bağlantıyı açıyoruz. */
+    conFriends=new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Friends");
+    conFriends.Open();
 } 
 private void Page_Load(object sender, System.EventArgs e)
 {
-	if(!Page.IsPostBack) /* Eğer sayfa daha önce yüklenmediyse bu if bloğu içindeki kodlar çalıştırılıyor. */
-	{
-		baglantiAc(); /* Sql sunucumuza olan SqlConnection nesnesini tanımlayan ve bağlantıyı açan metodumuzu çağırıyoruz. */ 
-		/* SqlCommand nesnemize çalıştıracağımız sql sorgusunu bildiriyoruz. Bu sorgu Kitaplar tablosundan Kategori alanına ait verileri Distinct komutu sayesinde, benzersiz şekilde alır. Nitekim aynı Kategori isimleri tabloda birden fazla sayıda. Biz Distinct sasyesinde birbirinden farklı kategorileri tek tek elde ediyoruz. Böylece veri kümemizizde mümkün olduğunca küçültmüş ve bir SqlDataReader nesnesinin tam dişine göre hazırlamış oluyoruz. */
-		SqlCommand cmdKategori=new SqlCommand("Select distinct Kategori From Kitaplar Order By Kategori",conFriends);
-		SqlDataReader drKategori; /* SqlDataReader nesnemizi tanımlıyoruz. Lütfen tanımlama şeklimize dikkat edin. Sanki bir değişken tanımlıyoruz gibi. Herhangibir new yapıcı metodu yok. */ 
-		drKategori=cmdKategori.ExecuteReader(CommandBehavior.CloseConnection); /* SqlCommand nesnemizin ExecuteReader yardımıyla sorgumuzu çalıştırıyor ve sonuç kümesini temsil edicek SqlDataReader nesnemizi atıyoruz. Bu aşamada SqlDataReader nesnemiz sorgu sonucu oluşan veri kümesinin ilk satırının öncesine konumlanıyor. */
-		/* Bahsetmiş olduğumuz while döngüsü ile satırları teker teker ileri doğru olucak şekilde belleğe alıyoruz. Her bir t zamanında bir satır belleğe geliyor ve oradanda ListBox kontrolüne iligli satırın, 0 indexli alanına ait değer GetString metodu ile alınıyor. */
-		while(drKategori.Read())
-		{
-		   lstKategori.Items.Add(drKategori.GetString(0));
-		}
-		drKategori.Close(); /* SqlDataReader nesnemiz kapatılıyor. Biz ExecuteReader metodunu çalıştırırken parametre olarak, CommandBehavior.CloseConnection değerini verdik. Bu bir SqlDataReader nesnesi kapatıldığında, açık olan bağlantının otomatik olarak kapatılmasını, yani SqlConnection bağlantısının otomatik olarak kapatılmasını sağlar. Buda system kaynaklarının serbest bırakılmasını sağlar.*/
-	}
+    if(!Page.IsPostBack) /* Eğer sayfa daha önce yüklenmediyse bu if bloğu içindeki kodlar çalıştırılıyor. */
+    {
+        baglantiAc(); /* Sql sunucumuza olan SqlConnection nesnesini tanımlayan ve bağlantıyı açan metodumuzu çağırıyoruz. */ 
+        /* SqlCommand nesnemize çalıştıracağımız sql sorgusunu bildiriyoruz. Bu sorgu Kitaplar tablosundan Kategori alanına ait verileri Distinct komutu sayesinde, benzersiz şekilde alır. Nitekim aynı Kategori isimleri tabloda birden fazla sayıda. Biz Distinct sasyesinde birbirinden farklı kategorileri tek tek elde ediyoruz. Böylece veri kümemizizde mümkün olduğunca küçültmüş ve bir SqlDataReader nesnesinin tam dişine göre hazırlamış oluyoruz. */
+        SqlCommand cmdKategori=new SqlCommand("Select distinct Kategori From Kitaplar Order By Kategori",conFriends);
+        SqlDataReader drKategori; /* SqlDataReader nesnemizi tanımlıyoruz. Lütfen tanımlama şeklimize dikkat edin. Sanki bir değişken tanımlıyoruz gibi. Herhangibir new yapıcı metodu yok. */ 
+        drKategori=cmdKategori.ExecuteReader(CommandBehavior.CloseConnection); /* SqlCommand nesnemizin ExecuteReader yardımıyla sorgumuzu çalıştırıyor ve sonuç kümesini temsil edicek SqlDataReader nesnemizi atıyoruz. Bu aşamada SqlDataReader nesnemiz sorgu sonucu oluşan veri kümesinin ilk satırının öncesine konumlanıyor. */
+        /* Bahsetmiş olduğumuz while döngüsü ile satırları teker teker ileri doğru olucak şekilde belleğe alıyoruz. Her bir t zamanında bir satır belleğe geliyor ve oradanda ListBox kontrolüne iligli satırın, 0 indexli alanına ait değer GetString metodu ile alınıyor. */
+        while(drKategori.Read())
+        {
+           lstKategori.Items.Add(drKategori.GetString(0));
+        }
+        drKategori.Close(); /* SqlDataReader nesnemiz kapatılıyor. Biz ExecuteReader metodunu çalıştırırken parametre olarak, CommandBehavior.CloseConnection değerini verdik. Bu bir SqlDataReader nesnesi kapatıldığında, açık olan bağlantının otomatik olarak kapatılmasını, yani SqlConnection bağlantısının otomatik olarak kapatılmasını sağlar. Buda system kaynaklarının serbest bırakılmasını sağlar.*/
+    }
 } 
 
 private void btnKitaplar_Click(object sender, System.EventArgs e)
 {
-	string kategori=lstKategori.SelectedItem.ToString(); 
-	baglantiAc(); 
-	SqlCommand cmdKitaplar=new SqlCommand("Select distinct Adi,ID From Kitaplar Where Kategori='"+kategori+"' order by Adi",conFriends);
-	SqlDataReader drKitaplar;
-	drKitaplar=cmdKitaplar.ExecuteReader(CommandBehavior.CloseConnection); 
-	int KitapSayisi=0; 
-	lstKitaplar.Items.Clear(); 
-	while(drKitaplar.Read())
-	{
-		lstKitaplar.Items.Add(drKitaplar.GetString(0));
-		KitapSayisi+=1;
-	}
-	drKitaplar.Close();
-	lblKitapSayisi.Text=KitapSayisi.ToString();
-	/* Yukarıdaki döngüde elde edilen kayıt sayısını öğrenmek için KitapSayisi isimli bir sayacı döngü içine koyduğumuzu farketmişsinizdir. SqlDataReader nesnesi herhangibir t zamanında bellekte sadece bir satırı temsil eder. Asıl veri kümesinin tamamını içermez, yani belleğe almaz. Bu nedenle veri kümesindeki satır sayısını temsil edicek, Count gibi bir metodu yoktur. İşte bu nedenle kayıt sayısını bu teknik ile öğrenmek durumundayız. */
+    string kategori=lstKategori.SelectedItem.ToString(); 
+    baglantiAc(); 
+    SqlCommand cmdKitaplar=new SqlCommand("Select distinct Adi,ID From Kitaplar Where Kategori='"+kategori+"' order by Adi",conFriends);
+    SqlDataReader drKitaplar;
+    drKitaplar=cmdKitaplar.ExecuteReader(CommandBehavior.CloseConnection); 
+    int KitapSayisi=0; 
+    lstKitaplar.Items.Clear(); 
+    while(drKitaplar.Read())
+    {
+        lstKitaplar.Items.Add(drKitaplar.GetString(0));
+        KitapSayisi+=1;
+    }
+    drKitaplar.Close();
+    lblKitapSayisi.Text=KitapSayisi.ToString();
+    /* Yukarıdaki döngüde elde edilen kayıt sayısını öğrenmek için KitapSayisi isimli bir sayacı döngü içine koyduğumuzu farketmişsinizdir. SqlDataReader nesnesi herhangibir t zamanında bellekte sadece bir satırı temsil eder. Asıl veri kümesinin tamamını içermez, yani belleğe almaz. Bu nedenle veri kümesindeki satır sayısını temsil edicek, Count gibi bir metodu yoktur. İşte bu nedenle kayıt sayısını bu teknik ile öğrenmek durumundayız. */
 } 
 private void lstKitaplar_SelectedIndexChanged(object sender, System.EventArgs e)
 {
-	string adi=lstKitaplar.SelectedItem.ToString();
-	baglantiAc(); 
-	SqlCommand cmdKitapBilgisi=new SqlCommand("Select * From Kitaplar Where Adi='"+adi+"'",conFriends);
-	SqlDataReader drKitapBilgisi;
-	drKitapBilgisi=cmdKitapBilgisi.ExecuteReader(CommandBehavior.CloseConnection); 
-	lstKitapBilgisi.Items.Clear(); 
-	while(drKitapBilgisi.Read())
-	{
-		/* FieldCount özelliği SqlDataReader nesnesinin t zamanında bellekte temsil etmiş olduğu satırın kolon sayısını vermektedir. Biz burada tüm kolonlardaki verileri okuyacak dolayısıyla t zamanında bellekte yer alan satırın verilerini elde edebileceğimiz bir For döngüsü oluşturduk. Herhangibir alanın değerine, drKitapBilgisi[i].ToString() ifadesi ile ulaşıyoruz. */
-		for(int i=0;i<drKitapBilgisi.FieldCount;++i)
-		{
-		   lstKitapBilgisi.Items.Add(drKitapBilgisi[i].ToString());
-		}
-		lstKitapBilgisi.Items.Add("------------------");
-	}
-	drKitapBilgisi.Close();
+    string adi=lstKitaplar.SelectedItem.ToString();
+    baglantiAc(); 
+    SqlCommand cmdKitapBilgisi=new SqlCommand("Select * From Kitaplar Where Adi='"+adi+"'",conFriends);
+    SqlDataReader drKitapBilgisi;
+    drKitapBilgisi=cmdKitapBilgisi.ExecuteReader(CommandBehavior.CloseConnection); 
+    lstKitapBilgisi.Items.Clear(); 
+    while(drKitapBilgisi.Read())
+    {
+        /* FieldCount özelliği SqlDataReader nesnesinin t zamanında bellekte temsil etmiş olduğu satırın kolon sayısını vermektedir. Biz burada tüm kolonlardaki verileri okuyacak dolayısıyla t zamanında bellekte yer alan satırın verilerini elde edebileceğimiz bir For döngüsü oluşturduk. Herhangibir alanın değerine, drKitapBilgisi[i].ToString() ifadesi ile ulaşıyoruz. */
+        for(int i=0;i<drKitapBilgisi.FieldCount;++i)
+        {
+           lstKitapBilgisi.Items.Add(drKitapBilgisi[i].ToString());
+        }
+        lstKitapBilgisi.Items.Add("------------------");
+    }
+    drKitapBilgisi.Close();
 }
 ```
 

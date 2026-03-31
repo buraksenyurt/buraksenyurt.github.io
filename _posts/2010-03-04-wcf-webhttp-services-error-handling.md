@@ -77,14 +77,14 @@ System.ServiceModel.Web isim alanı altında yer alan WebFaultException tipinin 
 [WebGet(UriTemplate = "/{firstLetter}")]
 public List<Book> GetBooks(string firstLetter)
 {
-	var result=(from book in books
-		   where book.Name.StartsWith(firstLetter)
-		   select book).ToList();
+    var result=(from book in books
+           where book.Name.StartsWith(firstLetter)
+           select book).ToList();
 
-	if (result.Count == 0)
-		throw new WebFaultException<string>("Talep edilen kelime ile başlayan kitaplar sistemde mevcut değiller.", System.Net.HttpStatusCode.NotFound);
+    if (result.Count == 0)
+        throw new WebFaultException<string>("Talep edilen kelime ile başlayan kitaplar sistemde mevcut değiller.", System.Net.HttpStatusCode.NotFound);
 
-	return result;
+    return result;
 }
 ```
 

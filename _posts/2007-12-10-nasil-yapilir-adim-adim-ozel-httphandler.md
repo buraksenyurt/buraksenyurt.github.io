@@ -24,8 +24,7 @@ Gelelim örnek senaryomuza. Sunucu üzerinde barındırılan XML (eXtensible Mar
 
 Bu ihtiyaçlar dahada arttırılabilir. Bir anlamda geliştiricinin hayal gücü burada önem kazanmaktadır. Yukarıdaki maddelerde sözü geçen ihtiyaçların tamamı XML'in temel kavramları ile karşılanabilir. Bir başka deyişle eleman (element) ve nitelikler (attributes) sayesinde yukarıdaki istekler standartlara uygun olacak şekilde tasarlanabilir.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-Söz konusu XML içeriğinin çalışma zamanında (run time) uygun bir standartta olduğunun garanti altına alınması için şema (Xml Schema) kullanılması yararlı olacaktır. Bu şema ile Xml içeriğinin çarpıştırılması Handler tipi içerisinde yapılabilir. Şemaya uymayan XML içerikleri için Handler, istekleri özel olarak tasarlanmış bir hata sayfasına doğru yönlendirebilir.
+> Söz konusu XML içeriğinin çalışma zamanında (run time) uygun bir standartta olduğunun garanti altına alınması için şema (Xml Schema) kullanılması yararlı olacaktır. Bu şema ile Xml içeriğinin çarpıştırılması Handler tipi içerisinde yapılabilir. Şemaya uymayan XML içerikleri için Handler, istekleri özel olarak tasarlanmış bir hata sayfasına doğru yönlendirebilir.
 
 Yukarıdaki maddeler ışığında aşağıdaki gibi örnek bir XML içeriği göz önüne alınabilir.
 
@@ -372,8 +371,7 @@ Gelelim Handler tipinin sunucu üzerinde nasıl ele alınabileceğine. Bunun iç
 
 Bu işlemin ardından ReportHandlerLibrary'in gacutil.exe aracı yardımıyla yada sürükle bırak tekniği ile Windows\Assembly klasörüne atılarak GAC'a eklenmesi yeterlidir.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-Burada ReportHandlerLibrary projesinin Relase modda üretiminin yapılarak, Output Path olarak çıktının [C:\Windows\Microsoft.NET\Framework\v2.0.50727\](file:///C:/Windows/Microsoft.NET/Framework/v2.0.50727/) klasörünü işaret edecek şekilde düzenlenmesi ve daha sonra buradan GAC'a atılmasıda tercih edilebilir.
+> Burada ReportHandlerLibrary projesinin Relase modda üretiminin yapılarak, Output Path olarak çıktının [C:\Windows\Microsoft.NET\Framework\v2.0.50727\](file:///C:/Windows/Microsoft.NET/Framework/v2.0.50727/) klasörünü işaret edecek şekilde düzenlenmesi ve daha sonra buradan GAC'a atılmasıda tercih edilebilir.
 
 Sonuç olarak Windows\Assembly klasörü altına ReportHandlerLibrary'si aşağıdaki ekran görüntüsünde olduğu gibi eklenmiş olacaktır.
 

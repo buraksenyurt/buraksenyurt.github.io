@@ -147,28 +147,28 @@ Bu noktada bir de static constructor kullanımı düşünülebilir. Nitekim stat
 ```csharp
 static class ProductCreater
 {
-	private static readonly List<Product> products = new List<Product>
-	{
-		new Product{ProductId=1,Name="Product X",ListPrice=1},
-		new Product{ProductId=2,Name="Product Y",ListPrice=3},
-	};
+    private static readonly List<Product> products = new List<Product>
+    {
+        new Product{ProductId=1,Name="Product X",ListPrice=1},
+        new Product{ProductId=2,Name="Product Y",ListPrice=3},
+    };
 
-	static ProductCreater()
-	{
-	}
+    static ProductCreater()
+    {
+    }
 
-	public static List<Product> Products
-	{
-		get
-		{
-			return products;
-		}
-	}
+    public static List<Product> Products
+    {
+        get
+        {
+            return products;
+        }
+    }
 
-	public static void DoSomething()
-	{
-		System.Console.WriteLine("Do Something");
-	}
+    public static void DoSomething()
+    {
+        System.Console.WriteLine("Do Something");
+    }
 }
 ```
 

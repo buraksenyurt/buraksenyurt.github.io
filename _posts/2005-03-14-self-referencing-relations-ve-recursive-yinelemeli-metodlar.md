@@ -22,8 +22,7 @@ Tabloda, X şirketinin çalışan personelleri arasındaki pozisyonel hiyerarşi
 
 ![mk117_3.gif](/assets/images/2005/mk117_3.gif)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Self Referencing Relation özelliğini sağlayan tablolarda bir satır (satırların) bağlı olduğu satırın yine bu tabloda var olmasını sağlamak veri tutarlılığı (consistency) açısından önemlidir.
+> Self Referencing Relation özelliğini sağlayan tablolarda bir satır (satırların) bağlı olduğu satırın yine bu tabloda var olmasını sağlamak veri tutarlılığı (consistency) açısından önemlidir.
 
 Buradaki ilişkiyi uygulamalarımızda tanımlamak için DataRelation nesnelerini kullanabiliriz. Örneğin;
 

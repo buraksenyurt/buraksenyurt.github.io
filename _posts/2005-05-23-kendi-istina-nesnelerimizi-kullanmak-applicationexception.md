@@ -202,58 +202,7 @@ namespace KitapDukkani
 
 Görüldüğü gibi kendi yazdığımız istisna sınıflarının normal bir sınıfı yazmaktan hiç bir farkı yoktur. Kendi üyelerimizi ekleyebilir ve Exception sınıfından devralınan Message, TargetSite, InnerException gibi virtual özellikleri override edebiliriz. Sınıf tasarımını yaparken bu sınıfa ait nesne örneklerinin ne amaçla kullanılacağını belirlemeliyiz. FiyatException sınıfına ait bir nesne örneği, herhangi bir Kitap nesnesinin fiyatının bazı kriterlere uymaması durumunda fırlatılacaktır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif).Net içinde önceden tanımlanmış olan istisna sınıfları Exception kelimesi ile biterler. Kendi istisna sınıflarımızın isimlerinin de aynı şekilde yazılması kod standardizasyonu açısından önemlidir. Örneğin FiyatException gibi...
-
-Dolayısıyla kritere uymayacak Fiyat değerini taşıması önemlidir. Ayrıca kriterin çeşitliliğine göre kullanıcıya verilmesi istenen mesaj içeriğide bir field olarak saklanmalıdır. Bu iki field'ın alacağı değerleri ise constructor metodumuz içerisinde sağlayabiliriz. Oluşturduğumuz istisna nesnesinin tipik bir Exception nesnesi gibi davranabilmesini sağlamak amacıyla örnek olarak Message özelliği override edilmiştir. FiyatException sınıfı artık uygulama içerisinde yakalanabilecek tipik bir istisna halini almıştır. Ancak henüz uygulanmamıştır. Herşeyden önce istisnanın fırlatılmasını istediğimiz yerlerde bunları kodlamamız gerekecektir. Kitap nesnemizi göz önüne aldığımızda Fiyat özelliğinin değerinin verildiği set bloğu bu iş için biçilmiş kaftandır. Buradaki kodları aşağıdaki gibi düzenleyebiliriz.
-
-```csharp
-public double Fiyat
-{
-    get
-    {
-        return m_Kitap_Fiyat;
-    }
-    set
-    {
-        if(value>150)
-            throw new FiyatException(value,"Fiyat 150 YTL' den yüksek olamaz");
-        if(value<0)
-            throw new FiyatException(value,"Fiyat negatif değer olamaz");
-        m_Kitap_Fiyat=value;
-    }
-}
-```
-
-Fiyat özelliğine değer atanırken eğer girilen değer 0' dan küçük ise buna uygun mesaja sahip bir istisna nesnesi, Fiyat 150 YTL'den büyük ise buna uygun mesaja sahip bir istisna nesnesi ortama fırlatılmaktadır. Böylece catch bloğunda FiyatException nesne örneklerini yakalayabiliriz. Kitap sınıfının yapıcı metodunda parametre üzerinden, sınıf içindeki alanlara değer ataması yapılmaktadır. Ancak burada da parametre değerlerini direkt olarak özelliklere atadığımızda set blokları devreye girmektedir. Bu, Fiyat özelliğinin değeri için gerekli istisna kontrolünü yapıcı metod içerisinde de gerçekleştirebilmemizi sağlar. Kısacası bir taşla iki kuş vurmuş oluruz. Artık windows uygulamamızdaki kodları aşağıdaki gibi düzenleyebiliriz.
-
-```csharp
-private void btnOlustur_Click(object sender, System.EventArgs e)
-{
-    try
-    {
-        kitap=new Kitap();
-        kitap.Baslik=txtBaslik.Text;
-        kitap.Yazar=txtYazar.Text;
-        kitap.Basim=dtpBasim.Value;
-        kitap.Fiyat=Convert.ToDouble(txtFiyat.Text);
-        kitap.Kategori=cmbKategori.SelectedText; 
-    }
-    catch(FiyatException err)
-    {
-        MessageBox.Show(err.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
-    }
-    catch(System.Exception err)
-    {
-        MessageBox.Show(err.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
-    }
-}
-```
-
-Örneğin Kitap sınıfına ait nesne örneğini oluştururken Fiyat alanının değerini 175 olarak girelim.
-
-![mk122_3.gif](/assets/images/2005/mk122_3.gif)
-
-Görüldüğü gibi oluşturduğumuz istisna sınıfına ait nesne örneği, Kitap nesnesi oluşturulmaya çalışıldığında ortama fırlatılmıştır. Bir de Fiyat değerini 10' ar birim azalttığımızda eksi değere geçtiğimiz bir metodumuz vardı. Kitap nesnesinin istisnasız oluşturup fiyatını negatif değere çektiğimizde uygulamanın FiyatException istisnası nedeni ile kesilerek sonlandırıldığını görürüz.
+> Görüldüğü gibi oluşturduğumuz istisna sınıfına ait nesne örneği, Kitap nesnesi oluşturulmaya çalışıldığında ortama fırlatılmıştır. Bir de Fiyat değerini 10' ar birim azalttığımızda eksi değere geçtiğimiz bir metodumuz vardı. Kitap nesnesinin istisnasız oluşturup fiyatını negatif değere çektiğimizde uygulamanın FiyatException istisnası nedeni ile kesilerek sonlandırıldığını görürüz.
 
 ![mk122_4.gif](/assets/images/2005/mk122_4.gif)
 

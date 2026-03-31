@@ -62,8 +62,7 @@ ASP.NET ile birlikte durum yönetiminde (state management), Session nesnelerinin
 
 SQLServer modunda, Session nesnesine ait tüm bilgiler bir SQL sunucusunda bu iş için özel olarak hazırlanmış bir veritabanında tutulmaktadır. Böylece, Session nesnelerine ait içerik, istenen süre kadar (aylarca bile olabilir) fiziki bir disk bölgesinde saklanabilmektedir. Bu ayrıca, veritabanının başka bir sunucuda konuşlandırılmasıyla, Web Çiftliklerinin (Web Farms) yapısına uygun bir oluşuma da imkân tanır. Böylece, Web Sunucusunda oluşabilecek aksaklıklardan doğacak sorunlar SQL sunucusunu etkilemeyecek, dolayısıyla Session'lar korunmuş olacaktır. Elbette bu sistemin de dezavantajı vardır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Session nesnelerini ayrı bir sunucudaki veritabanında tutmak her ne kadar güvenlik ve tutarlılık açısından önemli avantajlar sağlasa da, bilgilere erişimin In-Proc moda göre daha yavaş olmasına da neden olur. Bu elbette ki verinin okunması veya yazılması için sürekli veritabanına doğru atılan turların bir sonucudur.
+> Session nesnelerini ayrı bir sunucudaki veritabanında tutmak her ne kadar güvenlik ve tutarlılık açısından önemli avantajlar sağlasa da, bilgilere erişimin In-Proc moda göre daha yavaş olmasına da neden olur. Bu elbette ki verinin okunması veya yazılması için sürekli veritabanına doğru atılan turların bir sonucudur.
 
 SQLServer modunda kullanılan ASPState isimli veritabanında Session nesnelerinin yazılma, silinme gibi işlemleri için kullanılan stored procedure'ler yer alır. Session nesnelerine ait asıl içerik ise tempdb isimli veritabanında yer alan tablolarda tutulmaktadır. Microsoft .NET Framework bu veritabanını ve içeriğini kurmak için gerekli SQL kodlarını içeren script dosyalarını içerir. Windows XP sistemlerinde bu dosyaya (InstallSqlState.sql) D:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\ adresinden ulaşabilirsiniz. Bu SQL script dosyasını Sql Query Analyzer ile çalıştırdığımızda, SQL sunucusunda ASPState isimli bir veritabanı oluşturulduğunu görürüz. Ayrıca Session nesnelerini tutacak olan tablolar da tempdb veritabanı içerisine eklenir.
 
@@ -80,8 +79,7 @@ Bir DataSet içeriğini Session nesnesine aktardığımızda, SessionItemShort v
 
 İşte burada bir önceki makalemizde bahsettiğimiz gibi Session nesnesinin taşıyacağı verinin serileştirilebilir olması gerekliliği ortaya çıkmaktadır. Böylece ister binary olarak ister XML olarak DataSet nesnesinin içeriği serileştirilebilir ve tek bir alan içerisine yazılıp okunabilir. Bu elbette Session ile taşımak istediğimiz her nesne örneği için geçerli bir durumdur. (Örneğin kendi yazdığımız bir sınıf için.)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Out-of-Proc (İşlem dışı) modlarda, Session nesnesine atanan nesnelerin mutlaka serileştirilebilir (Serializable) olmaları gerekmektedir.
+> Out-of-Proc (İşlem dışı) modlarda, Session nesnesine atanan nesnelerin mutlaka serileştirilebilir (Serializable) olmaları gerekmektedir.
 
 Şimdi basit olarak yukarıda işlediğimiz örneğimizde kullandığımız Session nesnesini, SQLServer modunda saklayalım. Varsayılan olarak, Session nesneleri In-Proc modda tutulduklarından web.config dosyasında yer alan sessionState boğumunun standart içeriği aşağıdaki gibidir.
 

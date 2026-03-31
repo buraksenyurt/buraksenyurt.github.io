@@ -148,8 +148,8 @@ Aslında Tuple nesne örnekleri oluşturulurken daha kısa kod notasyonları da 
 ```csharp
 static Tuple<int, int, int, int> CalculateV2(int x, int y) 
 { 
-	//return Tuple.Create<int, int, int, int>(x + y, x - y, x * y, x / y); 
-	return Tuple.Create(x + y, x - y, x * y, x / y); 
+    //return Tuple.Create<int, int, int, int>(x + y, x - y, x * y, x / y); 
+    return Tuple.Create(x + y, x - y, x * y, x / y); 
 }
 ```
 

@@ -14,8 +14,7 @@ Remoting gibi mimarilerde bazen istemcilerin (clients) çağırdıkları uzak ne
 
 Aşağıdaki kod parçasında yer alan remoting uygulaması senkron yapıya bir örnektir. Uzak nesnemize ait sınıf modelinde çok basit bir metod yer almaktadır. Bu metodun geri dönüş süresini arttırmak ve istemcinin durumunu analiz edebilmek için Thread tipinin Sleep metodu ile uzak nesne metodu içerisinde güncel iş parçacığı bir süre uyutulmuştur.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-İstemci tarafında asenkron (Asynchronous) veya tek yön (OneWay) için bir özelleştirme yapılmamışsa, uygulama Senkron (Synchronous) kuralları çerçevesinde işler.
+> İstemci tarafında asenkron (Asynchronous) veya tek yön (OneWay) için bir özelleştirme yapılmamışsa, uygulama Senkron (Synchronous) kuralları çerçevesinde işler.
 
 Uzak nesneye ait interface modelimiz,
 
@@ -102,8 +101,7 @@ Sunucu ve istemcinin çalışmasına bakalım. (Aşağıdaki video görüntüsü
 
 Açıkça görüldüğü gibi, istemci uzak nesneye ait GetTotal isimli metodu çağırdıktan sonra, izleyen kod satırına geçebilmek için, uzak nesne metodunun tamamlanmasını beklemek zorunda kalmıştır. Yaklaşık 4 saniyelik gecikmenin ardından, istemci tarafında izleyen kod satırları işletilebilmiştir. İşte bu senkron erişim modelidir. Elbette bu modelin dezavantajlı bir model olduğu konusunda kesin yargıya varmak yanlıştır. Nitekim zaman zaman, istemci tarafının izleyen kod satırlarının işleyişi, uzak nesneden dönecek değerlere bağlı olabilir. Bu gibi durumlarda senkron model dışına çıkmamakta fayda vardır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Senkron modelde, istemcinin uzak nesneden (remote object) dönecek olan sonuçları beklemesi her zaman bir dezavantaj olarak görülmemelidir. Çoğu zaman, uzak nesnenin döndürdüğü değerler, istemcinin izleyen kod satırlarında kullanılacak tipte olabilir.
+> Senkron modelde, istemcinin uzak nesneden (remote object) dönecek olan sonuçları beklemesi her zaman bir dezavantaj olarak görülmemelidir. Çoğu zaman, uzak nesnenin döndürdüğü değerler, istemcinin izleyen kod satırlarında kullanılacak tipte olabilir.
 
 Gelelim asenkron (asynchronous) metod çağırım modeline. Eğer Xml Web Servislerindeki asenkron erişim modelini hatırlarsanız, proxy sınıfı içerisinde Begin ve End kelimeleri ile başlayan metodlar yer aldığını bilirsiniz. Bu metodlar yardımıyla Web Metodlarına (Web Method) asenkron olarak erişmek mümkündür. Oysaki Remoting mimarisinde, yukarıdaki örneği göz önüne aldığımızda fiziki bir proxy sınıfı yer almamaktadır. Dolayısıyla bizim istemci tarafında, asenkron yürütme için gereken işlevleri bir temsilci (delegate) yardımıyla başarmamız gerekecektir.
 
@@ -190,8 +188,7 @@ AsyncCallback temsilci tipi, IAsyncResult arayüzü tipinden nesne örnekleri al
 
 Gelelim OneWay tekniğine. OneWay tekniğinde sadece geri dönüş tipi olmayan uzak nesne metodları söz konusu olabilir. Dahası OneWay niteliği (attribute) ile imzalanan bir metod, istemci tarafından çalıştırıldıktan sonra unutulur.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-OneWay niteliğine sahip metodlar, at-unut füzeleri gibidir. İstemci tarafında çağırıldıktan sonra istemci kodları işleyişini sürdürürken, OneWay metodu geriye hiç bir bilgi vermez ve sunucu tarafında kendi başına işleyişini tamamlar.
+> OneWay niteliğine sahip metodlar, at-unut füzeleri gibidir. İstemci tarafında çağırıldıktan sonra istemci kodları işleyişini sürdürürken, OneWay metodu geriye hiç bir bilgi vermez ve sunucu tarafında kendi başına işleyişini tamamlar.
 
 Yani istemci tarafında metod çağırımı sonrası kodlar işlerken, metodun başına ne geldiğinden istemcinin herhangibir şekilde haberi olmaz. Bu metod içerisinde meydana gelebilecek bir istisnanın, istemci tarafından algılanmaması anlamına gelir. Bu nedenle OneWay metodlar çoğunlukla sunucu tarafında log tutma gibi istemci açısından önem arz etmeyen durumlarda, asenkron işleyişi gerçekleştirmek için tercih edilebilir. Uzak nesnede yer alan bir metodun OneWay davranışını gösterebilmesi için, OneWay niteliği (attribute) ile işaretlenmesi gerekir. Bizim örneğimizde bunu interface tarafında yapmamız gerekecektir. OneWay niteliği, System.Runtime.Remoting.Messaging isim alanı altında yer almaktadır. Bu nedenle interface'imizin bulunduğu class library uygulamasına System.Runtime.Remoting referansınıda açıkça eklememiz gerekiyor.
 

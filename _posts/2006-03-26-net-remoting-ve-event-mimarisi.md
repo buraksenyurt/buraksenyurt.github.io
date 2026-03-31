@@ -12,9 +12,7 @@ Remoting mimarisinde temel amaç, istemcilerin uzak nesnelere (remote objects) e
 
 Teorik olarak bu yaklaşımda, istemciler uzak nesne için geçerli olan bir event'ı yükleyebilir ve uzak nesneleri kullanan sunucuda tetiklenen olay sonrası, istemci tarafında yer alan olay metodlarını çalıştırabilir. Bu olayın gerçekleşebilmesi için, uzak nesnenin istemci tarafından yüklenebilecek bir event'a sahip olması, ayrıca olayın tetiklenmesi sonucu istemcideki uygun metodu işaret edebilecek bir temsilci (delegate) tipininde var olması gerekir. Dolayısıyla sunucu tarafında ve istemci tarafında olması gerekenler belirlidir. Sunucu tarafında, uzak nesne tipimiz, istemcideki olay metodunu işaret edebilecek bir delegate tipimiz ve istemci tarafından erişilebilecek bir event tipimiz var olmalıdır. İstenirse, olay metodu için bilgi taşıyacak başka bir tip daha sunucu tarafında yer alabilir. Bilgi taşıyacak bu tipi örneğin bir windows uygulamasındaki button nesnesine tıklandığında devreye giren click olay metodunun EventArgs parametre tipine benzetebiliriz. İstemci tarafında ise, uzak sunucunun herhangibir olay sonucu çalıştıracağı olay metodunu içeren bir tip yer almalıdır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-
-Hem sunucunun hemde istemcinin karşılıklı olarak ilgili nesnelerini kullanabilmeleri için, bu nesnelerin MarshallByReference tipinden türetilmeleri şarttır. Bu zaten Referans tabanlı remoting işlemlerin temel prensibidir.
+> Hem sunucunun hemde istemcinin karşılıklı olarak ilgili nesnelerini kullanabilmeleri için, bu nesnelerin MarshallByReference tipinden türetilmeleri şarttır. Bu zaten Referans tabanlı remoting işlemlerin temel prensibidir.
 
 Aşağıdaki şekil sunucu ve istemci tarafında yazmamız gereken tipleri özetlemektedir.
 
@@ -22,8 +20,7 @@ Aşağıdaki şekil sunucu ve istemci tarafında yazmamız gereken tipleri özet
 
 Gelelim mimarinin işleyiş şekline. Uzak sunucu aktif olarak hizmet vermeye başladıktan sonra, istemciler uzak nesne referansını elde etmelidir. Burada uzak nesne referansının elde ediliş şekli önemlidir. Client Activated Object yada Server Activated Object mimarisine dayalı bir yaklaşım kullanılabilir ancak SAO mimarisinde yer alan SingleCall modelini stateless olduğu için kullanmak çalışma zamanında istisnalara yol açar. Nitekim SingleCall modelinde istemcilerin çalıştırdığı uzak nesnelere ait referanslar sunucuda oluşturulduktan sonra hemen kullanılır ve yok edilirler. O yüzden SAO modelinde ısrarcı olunacaksa Singleton aktivasyon tipi kullanılmalıdır. Biz örneğimizde Client Activated Object mimarisini kullanacağız.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Client Activated Object (CAO) mimarisinde, istemci uzak nesneye ait bir nesne örneğini oluşturduğu zaman, sunucu üzerinde bu uzak nesneye ait bir referans hemen oluşturulur. Server Activated Object (SAO) modelinde ise sunucu üzerindeki uzak nesneye ait referansın oluşturulması için istemci tarafında uzak nesneye ait bir metodun çağırılması gerekir.
+> Client Activated Object (CAO) mimarisinde, istemci uzak nesneye ait bir nesne örneğini oluşturduğu zaman, sunucu üzerinde bu uzak nesneye ait bir referans hemen oluşturulur. Server Activated Object (SAO) modelinde ise sunucu üzerindeki uzak nesneye ait referansın oluşturulması için istemci tarafında uzak nesneye ait bir metodun çağırılması gerekir.
 
 Uzak nesne referansının sunucu tarafında oluşturulmasının ardından istemci, uzak nesne için bir olay (event) kaydeder ve hemen ardından uzak nesne üzerinde kaydettiği olayı ele alan bir metodu tetikler. Uzak sunucuda yer alan bu metod içerisinde, o anki referans için bir olayın yüklenip yüklenmediği kontrol edilir. Eğer olay yüklenmişse sunucu, istemci üzerindeki ilgili olay metodunu çalıştırır ve varsa gerekli olay bilgilerini bu istemciye aktarır. Şimdi gelin bu bahsettiklerimizi uygulama koduna dökelim. Öncelikle uzak sunucu nesnemizin yer aldığı sınıf kütüphanesini tasarlamak ile işe başlamalıyız.
 
@@ -209,8 +206,7 @@ Bu ifade ile, uzak nesne üzerinde Click olayı tetiklendiğinde (ki biz bunu uz
 
 İstemci tarafındada channel bilgisi olarak sunucu tarafında olduğu gibi Tcp kanalını seçtik. Böyle bir seçim yapmamızın nedeni hem sunucun hemde istemcinin birbirleri üzerindeki nesnelerinin referanslarını kullanacak uygun kanallara ihtiyaç olunmasıdır. Normal şartlar altında sunucu tarafında Tcp Server (veya Http Server), istemci tarafında ise Tcp Client (veya Http Client) kanalları seçilerek remoting işlemleri gerçekleştirilir. Ancak burada sunucu uygulama yeri geldiği zaman istemci gibi davranacaktır ve uzak metodu çağıracaktır ki sunucu açısından önemli olan uzak metod bizim olay metodumuzdur.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Delegate tipinin serileştirilebilir olması için (remoting'i destekelemesi için) xml konfigurasyonunda serviceProvider kısmı yer almaktadır.
+> Delegate tipinin serileştirilebilir olması için (remoting'i destekelemesi için) xml konfigurasyonunda serviceProvider kısmı yer almaktadır.
 
 Artık tek yapmamız gereken uygulamamızı bu haliyle test etmek olacaktır. Öncelikle istemci tarafını çalıştıralım. Bunu yapmamızdaki amaç çalışma zamanında aşağıdaki ekranda görülen istisnayı almak.
 

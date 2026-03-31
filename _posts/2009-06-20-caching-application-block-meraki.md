@@ -219,29 +219,29 @@ Tabiki özellikler penceresindende pek çok ayarlama yapılabilir. Söz gelimi P
 ```csharp
 public byte[] GetPhoto(int productId)
 {
-	XDocument doc=XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
+    XDocument doc=XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
-	string imageFileName = (from p in doc.Element("Products").Elements("Product")
-						   where p.Element("Id").Value == productId.ToString()
-						   select p.Element("ImageFileName").Value).Single();
+    string imageFileName = (from p in doc.Element("Products").Elements("Product")
+                           where p.Element("Id").Value == productId.ToString()
+                           select p.Element("ImageFileName").Value).Single();
 
-	string imagePath = Path.Combine(ConfigurationManager.AppSettings["ImagesPath"], imageFileName);
+    string imagePath = Path.Combine(ConfigurationManager.AppSettings["ImagesPath"], imageFileName);
 
-	byte[] imageBytes = null;
+    byte[] imageBytes = null;
 
-	// İlk olarak çalışma zamanında, CacheManager referansı çekilir. Bu noktada fabrika tipinden yararlanılmaktadır.
-	ICacheManager cacheManager = CacheFactory.GetCacheManager();
+    // İlk olarak çalışma zamanında, CacheManager referansı çekilir. Bu noktada fabrika tipinden yararlanılmaktadır.
+    ICacheManager cacheManager = CacheFactory.GetCacheManager();
 
-	// Eğer Cache koleksiyonunda, productId ile belirtilen bir referans tutulmuyorsa
-	if (cacheManager[productId.ToString()] == null)
-	{
-		imageBytes = File.ReadAllBytes(imagePath);
-		cacheManager.Add(productId.ToString(), imageBytes);
-	}
-	else // Eğer Cache koleksiyonunda productId anahtarına sahip bir referans var ise getir
-		imageBytes = (byte[])cacheManager[productId.ToString()];
+    // Eğer Cache koleksiyonunda, productId ile belirtilen bir referans tutulmuyorsa
+    if (cacheManager[productId.ToString()] == null)
+    {
+        imageBytes = File.ReadAllBytes(imagePath);
+        cacheManager.Add(productId.ToString(), imageBytes);
+    }
+    else // Eğer Cache koleksiyonunda productId anahtarına sahip bir referans var ise getir
+        imageBytes = (byte[])cacheManager[productId.ToString()];
 
-	return imageBytes;
+    return imageBytes;
 }
 ```
 

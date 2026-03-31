@@ -22,8 +22,7 @@ WCF (Windows Communication Foundation) mimarisinde servis tarafındaki metodlar 
 
 Şekilde dikkat edileceği üzere, binary formattaki içerik bozulmadan bir MIME (Multipurpose Internet Mail Extension) paketi içerisine alınmaktadır. Kalan içerik yine bozulmadan text tabanlı olacak şekilde SOAP Zarfı (Envelope) halinde MIME Mesajı içerisine aktarılır. SOAP gövdesinde (Body) artık MIME mesajına ilave edilen binary içeriğin referansı tutulmaktadır. Böylece servis veya istemi tarafında, binary içeriğin text formatına kodlanması (ve tam tersinin yapılması) işlemleri ortadan kalkmaktadır. Buda çok doğal olarak mesajların hazırlanma, gönderme ve işlenme sürelerinin inanılmaz derecede azalması anlamına gelmektedir.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-MTOM (Message Transmision Optimization Mechanism) tabanlı mesajların güvenliğinde imzalar (signature) kullanılır. WCF bu imzaları kontrol ederek alınan veya gönderilen MIME içeriğindeki eklerin (attachments) bozulup bozulmadığını anlayabilir ve buna göre uygun çalışma zamanı istisnalarını fırlatabilir.
+> MTOM (Message Transmision Optimization Mechanism) tabanlı mesajların güvenliğinde imzalar (signature) kullanılır. WCF bu imzaları kontrol ederek alınan veya gönderilen MIME içeriğindeki eklerin (attachments) bozulup bozulmadığını anlayabilir ve buna göre uygun çalışma zamanı istisnalarını fırlatabilir.
 
 Windows Communication Foundation mimarisinde HTTP bazlı olan bağlayıcı tiplerin tamamı MTOM tipinde mesajlaşmayı desteklemektedir. Ne varki TCP, MSMQ gibi protokoller üzerinde çalışan bağlayıcı tiplerin (Binding Type) bu tip bir desteği yoktur. Bunun en büyük sebebi ise, bu protokollerin ikili (binary) formattaki veriler için kendi standartlarını kullanıyor olmalarıdır. Ancak daha öncedende değinildiği gibi, özel bağlayıcı tipler (Custom Binding Types) geliştirilerek TCP gibi bir protokol üzerinde MTOM kullanımı teorik olarak sağlanabilmektedir. Aşağıdaki tabloda MTOM tipinde mesajlaşmaya destek veren (vermeyen) bağlayıcı tipler işaret edilmektedir.
 
@@ -194,8 +193,7 @@ namespace ProductPhotoServiceLibrary
 
 PhotoService isimli sınıf şu an için iki adet metoda sahiptir. GetProducts isimli metod basit olarak geriye ProductInfo tipinden nesne örneklerinden oluşan generic bir List<> koleksiyonu döndürmektedir. GetPhotoByProductId metodu geriye byte[] tipinden bir dizi döndürmektedir. Bu dizi tahmin edileceği üzere tabloda varbinary (MAX) tipinden olan LargePhoto isimli alanın içeriğini taşımaktadır.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-Binary dosyanın boyutunun çok büyük olması halinde parçalı olacak şekilde veri içeriğinin toplanması göz önüne alınabilir. Yapılması gereken servis tarafındaki fonksiyonellik içerisinde resim içeriğini veritabanı tablosunda parçalı olacak şekilde okuyup toparlamaktır.
+> Binary dosyanın boyutunun çok büyük olması halinde parçalı olacak şekilde veri içeriğinin toplanması göz önüne alınabilir. Yapılması gereken servis tarafındaki fonksiyonellik içerisinde resim içeriğini veritabanı tablosunda parçalı olacak şekilde okuyup toparlamaktır.
 
 Şimdilik servis tarafı MTOM (Message Transmision Optimization Mechanism) formatı yerine Text formatında mesaj kodlaması yapmaktadır. Olayın daha net analiz edilmesi amacıylada gerekli Diagnostics seçenekleri aktif hale getirilmektedir. Servis tarafının içeriği basit olarak aşağıdaki gibidir. (Servis IIS üzerinde host edilecek şekilde tasarlanmaktadır.)
 
@@ -361,8 +359,7 @@ Bu aslında istemciye döndürülen byte[] dizisinin text tabanlı olacak şekil
 
 Sonrasında bağlayıcı tipin (Binding Type) bu konfigurasyon ile eşleştirilmesi yeterli olacaktır. Bunun için ProductPhotoHttpEndPoint özelliklerinden BindingConfiguration elementinin değerinin aşağıdaki ekran görüntüsünde olduğu gibi Microsoft Service Configuration Editor üzerinden ProductPhotoBindingConfiguration olarak set edilmesi yeterlidir.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-Elbetteki servis tarafında yer alan konfigurasyon dosyasında da MessageEncoding özelliğinin değerinin true olarak set edilmesi gerekir. Bu yapılmadığı takdirde çalışma zamanında (Run Time) ProtocolException tipinden bir istisna (Exception) alınabilir.
+> Elbetteki servis tarafında yer alan konfigurasyon dosyasında da MessageEncoding özelliğinin değerinin true olarak set edilmesi gerekir. Bu yapılmadığı takdirde çalışma zamanında (Run Time) ProtocolException tipinden bir istisna (Exception) alınabilir.
 
 ![mk232_14.gif](/assets/images/2007/mk232_14.gif)
 

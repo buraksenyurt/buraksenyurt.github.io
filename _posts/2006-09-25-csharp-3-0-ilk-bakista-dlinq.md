@@ -76,8 +76,7 @@ class Calisan
 
 DLINQ bir sınıfın, nesne örneği olduğunda veritabanındaki hangi tabloya karşılık geldiğini, alanlarının (fields) tablo üzerindeki hangi kolonlara (columns) denk düştüğünü ve temel özelliklerinin neler olacağını belirtmemize yarayan nitelikler (attributes) içermektedir. Örneğin yazmış olduğumuz Calisan isimli sınıfın, veritabanındaki hangi tabloya karşılık geldiğini Table isimli attribute yardımıyla belirleyebiliriz. Buna göre Calisan isimli sınıfımız Calisanlar isimli tabloya ait olacaktır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Column, Table gibi nitelikler (attributes) ve biraz sonra göreceğimiz DataContext sınıfı, System.Data.DLinq isim alanı (namespace) altında yer almaktadır.
+> Column, Table gibi nitelikler (attributes) ve biraz sonra göreceğimiz DataContext sınıfı, System.Data.DLinq isim alanı (namespace) altında yer almaktadır.
 
 Benzer şekilde sınıf içerisinde tanımlı alanların, Calisanlar tablosu üzerinde karşılık geldikleri kolonları Column isimli nitelik (attribute) yardımıyla belirlemekteyiz. Column niteliği yardımıyla eşleştirilecek kolon adının ne olacağını belirlemek dışında başka özellikleride ayarlayabiliriz. Örneğin Id isimli alanın aynı zamanda identity olacağını Id özelliğine true değeri atayarak belirlemekteyiz. Benzer şekilde bir alanın veri türünüde DBType özelliği ile Column niteliği içerisinde ayarlayabiliriz. Aşağıdaki şekilde Column niteliği içerisinde kullanabileceğimiz diğer özellikler görülmektedir.
 
@@ -147,8 +146,7 @@ var calisanListesi=from clsn in adw.SirketCalisanlari where clsn.Departmani=="Ya
 
 Bu durumda uygulamamızı çalıştırdığımızda sadece yazılım departmanına ait çalışanları elde edebiliriz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Sorgu ifadelerinin doğru çalışabilmesi için (örneğin where anahtar sözcüğünü kullanabilmek için) System.Query isim alanını uygulamamıza dahil etmemiz gerekmektedir.
+> Sorgu ifadelerinin doğru çalışabilmesi için (örneğin where anahtar sözcüğünü kullanabilmek için) System.Query isim alanını uygulamamıza dahil etmemiz gerekmektedir.
 
 ![mk175_5.gif](/assets/images/2006/mk175_5.gif)
 

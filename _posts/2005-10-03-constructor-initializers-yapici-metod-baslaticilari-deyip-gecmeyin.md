@@ -12,8 +12,7 @@ tags:
 ---
 Yapıcı metodlar nesne yönelimli programlamada çok büyük öneme sahiptir. Uygulamada oluşturduğumuz her bir nesnenin en az bir yapıcı metodu (ki bu varsayılan yapıcı metodtur) vardır. Kuşkusuz ki yapıcı metodlar (constructors), bir nesne örneğinin kapsüllediği verilere başlangıç değerlerinin atanabileceği en elverişli elemanlardır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Yapıcıları, nesneleri başlangıç konumlarına getirmek, bir başka deyişle nesne ilk oluşturulduğunda sahip olması gereken değerleri belirlemek amacıyla kullanırız.
+> Yapıcıları, nesneleri başlangıç konumlarına getirmek, bir başka deyişle nesne ilk oluşturulduğunda sahip olması gereken değerleri belirlemek amacıyla kullanırız.
 
 Uygulamalarımızda çoğunlukla yapıcı metotların aşırı yüklenmiş versiyonlarına ihtiyaç duyarız. Bu gereksinim genellikle, bir nesnenin verilerinin parametrik olarak birden fazla şekilde başlatılabileceği durumlarda oluşmaktadır. Örneğin veri işlemlerini üstlenen bir sınıfın yapıcı metodunda bu işlemler için temel teşkil edecek bir bağlantı (connection) nesnesini oluşturmaya çalıştığımızı düşünelim. En az iki versiyon kullanabiliriz. Bağlantı cümleciğinin (connection string) parametrik olarak yapıcı metoda geçirildiği bir versiyon ve varsayılan bağlantı cümleciğinin kullanılacağı başka bir versiyon. Elbette aşırı yüklenmiş yapıcı metot versiyonlarını daha da çoğaltabiliriz. Lakin burada dikkate değer bir durum vardır. O da aşırı yüklenmiş yapıcı metotların içerideki değerlere atamaları nasıl yapacağıdır. Genellikle burada iki tip versiyon kullanılır. Acemi programcıların ilk zamanlarda en çok kullandığı teknik, başlangıç değer atamalarının her bir yapıcı metot içerisinde ayrı ayrı yapıldığı durumu kapsar. Diğer teknik ise this anahtar sözcüğü kullanılarak uygulanır ve değer atamaları merkezi bir yapıcı metot içerisine yönlendirilir.
 

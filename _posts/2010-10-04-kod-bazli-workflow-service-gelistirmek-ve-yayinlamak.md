@@ -27,8 +27,8 @@ Ne yapmak istediğimizi sanıyorum ki biraz daha net anlayabildik. En basit hali
 [ServiceContract]
 public interface IHelloService
 {
-	[OperationContract]
-	double Sum(double x, double y);
+    [OperationContract]
+    double Sum(double x, double y);
 }
 ```
 
@@ -66,34 +66,34 @@ Receive aktivite bileşeni içerisinde set edilmiş özellikler önemlidir. Oper
 ```csharp
 WorkflowService wfService = new WorkflowService
 {
-	Name = "HelloService",
-	Endpoints = {
-		new Endpoint
-	{
-		 ServiceContractName="IHelloService",
-		  Binding=new BasicHttpBinding(),
-		   AddressUri=new Uri("http://localhost:5001/HelloService")
-		   , Name="HelloServiceEndpoint"                       
-	}
-	},
-	ConfigurationName="HelloServiceConfig",
-	Body = new Sequence
-	{
-		Variables={x,y,__handle,result},
-		Activities =
-		{
-			receive,
-			new SumActivity{
-				 X=x,
-				 Y=y,
-				Result=result
-			},
-			new SendReply{
-				 Request=receive,
-				  Content=SendContent.Create(new InArgument<double>(result))
-			}
-		}
-	
+    Name = "HelloService",
+    Endpoints = {
+        new Endpoint
+    {
+         ServiceContractName="IHelloService",
+          Binding=new BasicHttpBinding(),
+           AddressUri=new Uri("http://localhost:5001/HelloService")
+           , Name="HelloServiceEndpoint"                       
+    }
+    },
+    ConfigurationName="HelloServiceConfig",
+    Body = new Sequence
+    {
+        Variables={x,y,__handle,result},
+        Activities =
+        {
+            receive,
+            new SumActivity{
+                 X=x,
+                 Y=y,
+                Result=result
+            },
+            new SendReply{
+                 Request=receive,
+                  Content=SendContent.Create(new InArgument<double>(result))
+            }
+        }
+    
 ```
 
 WorkflowService örneği içerisinde yer alan en önemli özelliklerden birisi Endpoints'dir. Bu özelliğe göre birden fazla Endpoint bildirimi yapılabilmektedir. Örneğimizde BasicHttpBinding tabanlı, IHelloService isimli servis sözleşmesini kullanan ve http://localhost:5001/HelloService adresi üzerinden yayın yapan bir Endpoint bildirimi söz konusudur. WorkflowService örneği oluşturulurken kullanılan ConfigurationName özelliği, konfigurasyon dosyası (Örneğimizde app.config) içerisindeki bir servis bloğunu işaret etmektedir. Aslında bu blokta servisin dış dünyaya Metadata paylaşımını yapacağını bildirebiliriz. Bildiğiniz üzere Metadata Publishing sayesinde istemcilerin WSDL içeriğine ulaşması mümkündür ve bu sayede gerekli Proxy tiplerini kolayca üretebilirler. (Ancak tabiki bazı hallerde özellikle güvenlik sebebi ile Metadata bilgisini istemci tarafına indirilebiliyor olması arzu edilmeyebilir) İşte app.config dosyasının içeriği.

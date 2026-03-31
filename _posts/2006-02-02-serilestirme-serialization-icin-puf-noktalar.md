@@ -13,8 +13,7 @@ Uygulamalarımızda kullandığımız tipler (types) pek çok amaçla serileşti
 
 Kendi yazmış olduğumuz bir tipi serileştirmek için tek yapmamız gereken Serializable niteliğini (Attribute) kullanmaktır. Bu zaten bir tipin serileştirilebilmesi için gerekli kuraldır. Serileştirme doğası gereği, tipin içerisinde yer alan alanları (fields) ele alır ve bu alanların değerlerini isimleri ile birlikte herhangibir stream'e yazabilir. Bu durumda, tip içerisinde var olan alanların da serileştirilebilir olmaları gerekir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Serileştirilen bir tipin var olan alanlarının serileştirilebilir özelliğe sahip olması, başka bir deyişle Serializable niteliğini uygulamış olması gerekir.
+> Serileştirilen bir tipin var olan alanlarının serileştirilebilir özelliğe sahip olması, başka bir deyişle Serializable niteliğini uygulamış olması gerekir.
 
 Konuyu daha iyi anlayabilmek için örnekler üzerinden gitmeye çalışacağız..Net Framework 2.0 üzerinde bir Console uygulamasını ele alacağız. Örneğin RadyoKanal ve RadyoSahip isimli iki sınıfımızın olduğu bir örneği göz önüne alalım. Bu örneğimizde temel amacımız RadyoKanal sınıfına ait bir nesne örneğini SOAP formatında seriliştirmek ve DeSerialize işlemine tabi tutmak.
 
@@ -152,13 +151,11 @@ Bu haliyle uygulamamızı çalıştırdığımızda her hangibir problem ile kar
 
 ![mk146_4.gif](/assets/images/2006/mk146_4.gif)
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Kendi yazmış olduğumuz bir tipi serileştirilebilir olarak tanımlamassak, bu tipi kullanan başka tiplerinde serileştirilmesini engellemiş oluruz. Ancak bu sonuç, yazdığımız her tipin serileştirilebilir olması gerektiği zorunluluğunu doğurmaz.
+> Kendi yazmış olduğumuz bir tipi serileştirilebilir olarak tanımlamassak, bu tipi kullanan başka tiplerinde serileştirilmesini engellemiş oluruz. Ancak bu sonuç, yazdığımız her tipin serileştirilebilir olması gerektiği zorunluluğunu doğurmaz.
 
 Gelelim bir diğer önemli noktaya. Bazen tipimiz içerisinde yer alan filed (alan)' lardan bazılarının serileştirilme işlemine dahil edilmemesini isteriz. Bunun çeşitli sebepleri olabilir. İlk akla gelen, bir nesnenin gizli olan bazı alansal bilgilerinin serileştirilmesinin önüne geçmektir. Örneğin serileştirilen bir paketin network üzerinde dolaştığını düşünecek olursak, gereksiz bilgilerin bu pakette yer almamasını isteyebiliriz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Serileştirilen bir tip içerisinde, serileştirilme işlemine dahil edilmesini istemediğimiz alanlar için NonSerialized niteliğini kullanırız.
+> Serileştirilen bir tip içerisinde, serileştirilme işlemine dahil edilmesini istemediğimiz alanlar için NonSerialized niteliğini kullanırız.
 
 Örneğin, RadyoSahip isimli sınıfımız içerisinde yer alan _VergiNo isimli alanımızın serileştirme işlemine dahil edilmemesini istediğimizi düşünelim. Tek yapmamız gereken NonSerialized niteliğini bu alana uygulamak olacaktır.
 
@@ -221,8 +218,7 @@ private RadyoKanal(SerializationInfo info, StreamingContext ctx)
 
 Burada dikkat edecek olursanız SerializationInfo tipine ait Get metodlarını kullanarak stream içerisinde gelen anahtar-değer çiftlerinin, RadyoKanal sınıfı içerisinde denk geldiği üyeleri belirlemekteyiz. Bu haliyle uygulamamızı çalıştırdığımızda her hangibir problem ile karşılaşmayız.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Serileştirilebilir bir sınıfa ISerializable arayüzünü (interface) uyguladığımızda, deserialize işlemininde başarılı olması için tipe ait bir private constructor'ın yazılması ve içeride serileştirilmiş üyelere değer atamasının açıkça yapılması gerekmektedir. Bu yapıcı metoda DeSerialize Constructor ismini verebiliriz.
+> Serileştirilebilir bir sınıfa ISerializable arayüzünü (interface) uyguladığımızda, deserialize işlemininde başarılı olması için tipe ait bir private constructor'ın yazılması ve içeride serileştirilmiş üyelere değer atamasının açıkça yapılması gerekmektedir. Bu yapıcı metoda DeSerialize Constructor ismini verebiliriz.
 
 Elbetteki bir sınıfa ISerializable arayüzünü uyguladığımızda, bu sınıftan türeyecek sınıfları yazarkende dikkat etmemiz gereken hususlar vardır. Eğer taban sınıfı (base class) serileştirilebilir olarak tanımlarsak ve ISerializable arayüzünü uygularsak, ilk olarak türeyen sınıfların (derived class) taban sınıf içindeki DeSerialize Constructor metoduna erişebilmelerini sağlamamız gerekir. Bu nedenle temel sınıf içerisindeki DeSerialize Constructor metodunu protected erişim belirleyicisi ile işaretleriz. Bu konuyu daha iyi anlayabilmek için örneğimize RadyoKanal sınıfından türeyen RadyoPersonel isimli yeni bir sınıf ekleyelim.
 
@@ -298,8 +294,7 @@ Bu hata mesajını ele almadan önce Xml dosyamıza bakarsak, taban sınıfa ait
 
 Burada problem şudur. Taban sınıfımız olan RadyoKanal, ISerializable arayüzünü uygulamış ve serileştirme işlemi sırasında GetObjectData metodunu kullanarak üyeleri stream içerisine aktarmıştır. Oysaki, aynı işlemin türeyen sınıf tarafındanda yapılması gerekmektedir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-ISerializable arayüzünü uygulamış serileştirilebilir bir taban sınıftan türetme işlemi yapıldığında, türeyen sınıfa ait nesne örneklerinin sahip olduğu alanların başarılı bir şekilde serileştirilebilmesi için, Temel sınıftaki GetObjectData prensibinin, türeyen sınıf içerisindede açıkça uygulanması gerekir.
+> ISerializable arayüzünü uygulamış serileştirilebilir bir taban sınıftan türetme işlemi yapıldığında, türeyen sınıfa ait nesne örneklerinin sahip olduğu alanların başarılı bir şekilde serileştirilebilmesi için, Temel sınıftaki GetObjectData prensibinin, türeyen sınıf içerisindede açıkça uygulanması gerekir.
 
 Bunu gerçekleştirmek için taban sınıfa sanal bir metod (virtual method) ekleyebilir ve bunun türeyen sınıf içerisinde ezdirilmesini (override) sağlayabiliriz. İlk olarak taban sınıfımıza sanal metodumuzu eklemeli ve bu metodu ISerializable arayüzünün uyguladığı GetObjectData metodu içerisinde çağırmalıyız. Bu amaçla RadyoKanal sınıfımızda aşağıdaki değişiklikleri yapmamız gerekmektedir.
 
@@ -334,8 +329,7 @@ Bu haliyle uygulamamızı çalıştırdığımızda yine yukarıdaki istisnayı 
 
 Tahmin edeceğiniz gibi DeSerialize işlemi sırasındaki problem, türeyen sınıfın kendisine ait bir DeSerialize Constructor metodu olmayışından kaynaklanmaktadır. Bu metod olmadığı için DeSerialize işlemi sırasında, hangi üyeye hangi değerin hangi stream'den aktarılacağı bilinememektedir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-ISerializable arayüzünü uygulamış serileştirilebilir bir taban sınıftan türetme işlemi yapıldığında, türeyen sınıf için DeSerialization işleminin başarılı bir şekilde yapılabilmesi için, türeyen sınıf içerisindede DeSerialize Constructor metodunun uygulanması gerekir.
+> ISerializable arayüzünü uygulamış serileştirilebilir bir taban sınıftan türetme işlemi yapıldığında, türeyen sınıf için DeSerialization işleminin başarılı bir şekilde yapılabilmesi için, türeyen sınıf içerisindede DeSerialize Constructor metodunun uygulanması gerekir.
 
 Bu problemi çözmek için, türeyen sınıfımıza aşağıdaki constructor metodu eklememiz yeterli olacaktır.
 

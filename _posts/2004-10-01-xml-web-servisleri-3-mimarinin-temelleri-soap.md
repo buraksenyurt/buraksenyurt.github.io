@@ -182,12 +182,12 @@ Burada görüldüğü gibi SOAP mesajlarımız tek parametre alan metodlar ve te
 ```csharp
 [WebMethod(Description="Daire Cevre Hesabini Dizi Elamanlarina Uygular.")] public double[] DaireCevreDizi( double[] r)
 {
-	int eleman_Sayisi=r.Length;      double[] dizi=new double[eleman_Sayisi];
-	for(int i=0;i<eleman_Sayisi;i++)
-	{
-		dizi[i]=r[i]*pi*2;
-	}
-	return dizi;
+    int eleman_Sayisi=r.Length;      double[] dizi=new double[eleman_Sayisi];
+    for(int i=0;i<eleman_Sayisi;i++)
+    {
+        dizi[i]=r[i]*pi*2;
+    }
+    return dizi;
 }
 ```
 

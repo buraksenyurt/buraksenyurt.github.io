@@ -136,8 +136,7 @@ Dikkat ederseniz spprocedureparamsmanaged isimli bir saklı yordam, parametreler
 
 Sistem sp'lerinden olan spprocedureparamsmanaged aslında PersonelEkle isimli saklı yordam içerisindeki tüm parametreleri ve bu parametrelere ait detaylı bilgileri bir tablo olarak geriye döndürmektedir. Bu tabloda parametrelerin adlarından tutunda veri tiplerine kadar, null değer içerip içermekyeceklerinden taşıyacakları veri uzunluğuna kadar tüm bilgiler yer almaktadır. Bu tabloyu değerlendiren elbette SqlCommandBuilder nesnesinin kendisidir. Tablo içerisindeki bilgilere göre ilgili SqlCommand nesnesinin parameters koleksiyonuna gerekli eklemeler yapılır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-OleDbCommandBuilder, OracleCommandBuilder, ODBCCommandBuilder sınıflarıda DeriveParameters metodunu destekler. Tek şart, ilgili veri tabanı sisteminin saklı yordama ait parametre yapısını getirebiliyor olmasıdır. Unutmayalım; DeriveParameters sadece saklı yordamlar için geçerlidir. Düz Sql sorgu cümlelerini ele alan komutlar için (parametrik bile olsalar) InvalidOperationException istisnası döndürmektedir.
+> OleDbCommandBuilder, OracleCommandBuilder, ODBCCommandBuilder sınıflarıda DeriveParameters metodunu destekler. Tek şart, ilgili veri tabanı sisteminin saklı yordama ait parametre yapısını getirebiliyor olmasıdır. Unutmayalım; DeriveParameters sadece saklı yordamlar için geçerlidir. Düz Sql sorgu cümlelerini ele alan komutlar için (parametrik bile olsalar) InvalidOperationException istisnası döndürmektedir.
 
 2. Çakışma durumları için uygun olan yöntemi ConflictOption özelliği ile belirleyebilme
 
@@ -227,8 +226,7 @@ CompareRowVersion için;
 
 Dikkat ederseniz Update ve Delete sorgularında Where koşuluna sadece Primary Key olan PersonelId alanı ve TimeStamp tipinden olan Durum alanı katılmıştır. Bu çeşit bir sorgu özellikle DBConcurrency Violation durum için idealdir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-CompareRowVersion özellikle DBConcurrencyViolation durumu için biçilmiş kaftan gibi gözüksede, diğer veri sağlayıcıları için geliştirilmiş CommandBuilder nesnelerinde aynı geçerlilik olmayabilir. Nitekim, Timestamp veri türü her veritabanı sisteminde var olan bir tür değildir. Bu tip veri türlerine sahip olmayan sistemlerde mecburen DBConcurrencyViolation durumlarının ele alınmasında, where cümleciğinden sonra mümkün olan tüm alanların hesaba katılması gerekecektir. Bir başka deyişle CompareAllSearchableValues seçeneği seçilecektir.
+> CompareRowVersion özellikle DBConcurrencyViolation durumu için biçilmiş kaftan gibi gözüksede, diğer veri sağlayıcıları için geliştirilmiş CommandBuilder nesnelerinde aynı geçerlilik olmayabilir. Nitekim, Timestamp veri türü her veritabanı sisteminde var olan bir tür değildir. Bu tip veri türlerine sahip olmayan sistemlerde mecburen DBConcurrencyViolation durumlarının ele alınmasında, where cümleciğinden sonra mümkün olan tüm alanların hesaba katılması gerekecektir. Bir başka deyişle CompareAllSearchableValues seçeneği seçilecektir.
 
 OverwriteChanges için;
 

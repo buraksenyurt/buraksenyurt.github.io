@@ -94,13 +94,13 @@ Tabi bu sonuçlara göre "her yerde dynamic tip kullanalım mı?" sorusu da gün
 
 ```csharp
 dynamic R = "on iki";
-	Calculate(R);
-	#endregion
-	#endregion
+    Calculate(R);
+    #endregion
+    #endregion
 }
 static double Calculate(double r)
 {
-	return Math.PI * r * r;
+    return Math.PI * r * r;
 }
 ```
 

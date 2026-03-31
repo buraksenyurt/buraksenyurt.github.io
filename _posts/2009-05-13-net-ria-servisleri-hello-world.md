@@ -121,10 +121,10 @@ Tabiki bu değişiklikler ile sınırlı değiliz. İstersek, DomainService sın
 ```csharp
 public IQueryable<Products> GetProductsByCategory(int categoryId)
 {
-	return (from p in this.Context.Products
-			where p.Categories.CategoryID == categoryId
-			orderby p.ProductName
-			select p);
+    return (from p in this.Context.Products
+            where p.Categories.CategoryID == categoryId
+            orderby p.ProductName
+            select p);
 }
 ```
 

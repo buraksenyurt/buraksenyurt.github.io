@@ -15,8 +15,7 @@ Factory Design Pattern (Fabrika Tasarım Deseni), istemcilerin ihtiyaç duyduğu
 
 İstemcilerin (Clients) amacı Product tipinden nesne örneklerini kullanmaktır. Bunun için mutlaka ve mutlaka Product tipinden nesne örneklerinin oluşturumasına ihtiyaç vardır. İstemci bu üretim işlemini doğrudan değil, Factory nesne örnekleri üzerinden yapar. Dolayısıyla her hangibir Product tipinin üretilmesi aşamasında oluşabilecek değişikliklerden sorumlu olan tip Factory nesnesi olacaktır. Bu bir anlamda istemcilerin, ilgilendikleri Product nesnesinin nasıl örneklendirildiklerini bilmemesi anlamına gelir. Bunu soyutlama (abstraction) olarakta tanımlayabiliriz. Bu sebepten dolayı Factory tasarım deseni özellikle remoting uygulamalarında sıkça kullanılmaktadır. Çünkü uzak nesnelerin (ki burada product nesnelerimiz olacak) oluşturulması (Creation) kısmında zaman içerisinde güncellemeler ve değişiklikler olabilir. İşte bu değişiklikleri ele alacak ve bu sorumluluğu taşıyacak olan kısım istemci değil Factory ' nin kendisi olacaktır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Factory tasarım deseni, nesnelerin oluşturulması ile ilgilendiğinden constructor metodları aktif şekilde kullanır. Bu nedenlerden dolayı Creational Pattern'ler kategorisinde yer almaktadır.
+> Factory tasarım deseni, nesnelerin oluşturulması ile ilgilendiğinden constructor metodları aktif şekilde kullanır. Bu nedenlerden dolayı Creational Pattern'ler kategorisinde yer almaktadır.
 
 Şimdi dilerseniz konuyu daha fazla karmaşıklaştırmadan teoriden uzaklaşalım ve factory tasarım desenini ele alabileceğimiz bir örnek geliştirelim. Bu örneğimizde istemciler, ürün olarak kullanacakları nesne örnekleri üzerinden uzak sunucuda yer alan bir veritabanına bağlanacaklar ve kendileri için gerekli bilgileri tedarik edecekler. Elbetteki, ürünlerin oluşturulması işlevini tamamen Factory nesnemize devredeceğiz. İlk olarak izleyeceğimiz yoldan bahsedelim.
 
@@ -36,8 +35,7 @@ Server tarafında gerekli remoting kodlarını yazarız.
 
 İlk olarak abstract sınıflarımızı yazmamız gerekiyor. Bunları bir class library içerisinde tutmamızın en önemli nedeni, hem server tarafında hemde istemci tarafında ihtiyacımızın olması ve referans olarak eklememiz gerektiği. Bu nedenle önce bir class library projesi açalım ve aşağıdaki abstract sınıflarımızı oluşturalım.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Abstract sınıflar, normal sınıflar gibi üyeler içerebilen, örneklendirilemeyen (instance create edilemez) ve kendisinden türeyen tiplerin mutlaka override etmesi gereken metod, özellik gibi üyelerin tanımlamalarını içeren (kod bloksuz halleri) tiplerdir.
+> Abstract sınıflar, normal sınıflar gibi üyeler içerebilen, örneklendirilemeyen (instance create edilemez) ve kendisinden türeyen tiplerin mutlaka override etmesi gereken metod, özellik gibi üyelerin tanımlamalarını içeren (kod bloksuz halleri) tiplerdir.
 
 ![mk152_2.gif](/assets/images/2006/mk152_2.gif)
 
@@ -60,8 +58,7 @@ namespace FactoryProductBase
 
 Üretimden sorumlu olan FactoryBase isimli abstract sınıfımız ise, kendisini uygulayacak olan herhangibir Factory tipinin, Product üretme işini nasıl yapması gerektiğini bildiren bir abstract metod içeriyor. Dikkat ederseniz bu abstract metodumuzun dönüş tipi ProductBase'dir. Buda FactoryBase'den türemiş bir sınıfın override edilecek olan CreateProduct isimli metodunun, ProductBase tipinden türetilmiş olan bir sınıfa ait nesne örneğini döndürebileceği anlamına gelmektedir. Bu ilişkiyi sunucu tarafımızda çalışacak olan asıl sınıflarımızı yazarken kullanacağız.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Her iki abstract sınıfında, remoting içerisinde kullanılabilmesini sağlamak için MarshalByRefObject'dan türetildiğine dikkat edin. MarshalByRefObject bildiğiniz gibi, istemcinin remote nesnenin referansı ile çalışabilmesini sağlar.
+> Her iki abstract sınıfında, remoting içerisinde kullanılabilmesini sağlamak için MarshalByRefObject'dan türetildiğine dikkat edin. MarshalByRefObject bildiğiniz gibi, istemcinin remote nesnenin referansı ile çalışabilmesini sağlar.
 
 Abstract sınıflarımızı hazırladıktan sonra sıra geldi sunucu tarafını programlamaya. Sunucu tarafında, FactoryBase ve ProductBase sınıflarından türeyen tiplerimizi yazarak işe başlayacağız. Ama öncesinde, sunucu uygulamamızı bir console application olarak açalım. Daha sonra ise, System.Runtime.Remoting ve abstract sınıflarımızı barındırdan Class Library'imizi bu uygulamaya referans olarak ekleyelim.
 
@@ -151,8 +148,7 @@ static void Main(string[] args)
 
 Sonrasında ise, Product tipinden nesne örneğimizin ilgili metodunu çalıştırabilmek için, elde ettiğimiz FactoryBase referansının CretaeProduct isimli metodunu kullandık. Böylece sunucu tarafındaki Product tipine erişip, 1 numaralı Contact bilgisini istemci tarafına taşıyabiliyoruz. Burada önemli olan nokta, Product tipine ait bir referansı istemcinin doğrudan create etmeyişi. Bu işlemi FactoryBase'in CreateProduct isimli metodu bizzat yapmakta. Dolayısıyla Product tipine ait bir referansın nasıl oluşturulduğu, istemci tarafından tamamen soyutlaştırılmış olmaktadır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-İstemci tarafında FactoryBase ve ProductBase abstract sınıflarını kullanmamıza rağmen, sunucu tarafındaki Factory ve Product tiplerinin bazı üyelerini ele alabilmekteyiz. İşte bu polimorfizm'in bir etkisidir. Çünkü abstract tipler, kendilerinden türeyen tiplere ait referansları taşıdıklarında, türemiş tiplerin override edilmiş üyelerine erişebilirler.
+> İstemci tarafında FactoryBase ve ProductBase abstract sınıflarını kullanmamıza rağmen, sunucu tarafındaki Factory ve Product tiplerinin bazı üyelerini ele alabilmekteyiz. İşte bu polimorfizm'in bir etkisidir. Çünkü abstract tipler, kendilerinden türeyen tiplere ait referansları taşıdıklarında, türemiş tiplerin override edilmiş üyelerine erişebilirler.
 
 Uygulamamızı test etmek için öncelikle server tarafını çalıştırmalı ve sunucuyu dinlemeye hazır hale getirmeliyiz. Eğer sisteminizde yükü bir firewall var ise bu isteğinizi onaylayıp onaylamadığınızı sorabilir. (Örneğin Xp işletim sisteminin Firewall programı devreye gittiğinde Unblock seçeneğini işaretlemeniz lazım.) Burada işlemi onaylayıp portumuzu remote iletişim için açmamız gerekiyor. Sonrasında ise istemci uygulamamızı çalıştırıp sonuçları görebiliriz.
 

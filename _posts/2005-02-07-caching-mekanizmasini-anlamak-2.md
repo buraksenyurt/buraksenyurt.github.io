@@ -10,8 +10,7 @@ tags:
 ---
 Hatırlayacağınız gibi bir önceki makalemizde, web uygulamalarında caching mekanizmasını incelemeye başlamış ve ara belleğe alma tekniklerinden Output Cache yapısını incelemiştik. Output Cache tekniğinde bir sayfanın tamamının HTML içeriği ara belleğe alınmaktaydı. Oysa çoğu zaman sayfamızda yer alan belirli veri kümelerinin ara bellekte tutulmasını isteyebiliriz. Örneğin, bir alışveriş sitesinin pek çok kısmı dinamik olarak değişebilirken satışı yapılan ürünlerin yer aldığı kategori listeleri çok sık değişmez. Hatta uzun süreler boyunca aynı kalabilirler. İşte böyle bir durumda sayfanın tamamını ara belleğe almak yerine sadece kategori listesini sunan veri kümesini ara belleğe almak daha mantıklıdır. Data Caching olarak adlandırılan bu teknikte çoğunlukla veri kümeleri ara belleğe alınır. Data Caching tekniğinde verileri ara belleğe almak için System.Web.Caching isim alanında yer alan Cache sınıfı ve üyeleri kullanılmaktadır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Cache sınıfı sealed tipinde olup kendisinden türetme yapılmasına izin vermez. Bununla birlikte, her bir Application Domain için yalnız bir Cache nesne örneği oluşturulur ve kullanılır.
+> Cache sınıfı sealed tipinde olup kendisinden türetme yapılmasına izin vermez. Bununla birlikte, her bir Application Domain için yalnız bir Cache nesne örneği oluşturulur ve kullanılır.
 
 Cache sınıfına bir veri kümesini eklemek bu veriyi ara belleğe almak demektir. Bunun için aşağıdaki 4 aşırı yüklenmiş prototipe sahip olan ve bize pek çok imkan sağlayan Insert metodunu kullanabiliriz.
 
@@ -71,8 +70,7 @@ Daha sonra sayfayı tekrar çağıralım.
 
 Görüldüğü gibi Beverages değerini değiştirmemize rağmen yapılan değişiklikler uygulamamıza yansımamıştır. Bu, verinin ara bellekten Cache nesnesi vasıtasıyla çekildiğinin bir ispatıdır. Veri ara belleğe alındıktan 5 dakika sonra aynı sayfa tekrar talep edilir ise bu kez verinin güncel hali ekrana gelecektir. Burada veriyi Cache nesnesine alırken kullandığımız Insert metodunda Absolute Expiration (Tam Süre Sonu) zamanı belirlenmiştir. Bu süre, verinin ara bellekten kesin olarak ne zaman atılacağını söylemektedir. Bununla birlikte dilersek ara bellekte bulunan veri kümesine olan erişim sıklığına göre bir Sliding Expiration (Kayan Süre Sonu) süreside belirleyebiliriz. Buna göre,
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Ara bellekteki verilere belirtilen Sliding Expiration ile belirtilen süre zarfında erişilmez ise bu süre sonunda bellekten atılırlar. Eğer süre zarfı içinde ara bellekteki verilere sürekli erişiliyorsa Sliding Expiration süresi geçse dahi veriler ara bellekten atılmaz ve durumlarını korurlar.
+> Ara bellekteki verilere belirtilen Sliding Expiration ile belirtilen süre zarfında erişilmez ise bu süre sonunda bellekten atılırlar. Eğer süre zarfı içinde ara bellekteki verilere sürekli erişiliyorsa Sliding Expiration süresi geçse dahi veriler ara bellekten atılmaz ve durumlarını korurlar.
 
 Sürekli bellekte kalmak deyimi tabii ki sistem kaynakları azalıp ara bellek verileri otomatik olarak atılınca veya web sunucusu herhangi bir nedenle restart olunca geçerli değildir. Şimdi dilerseniz Sliding Expiration durumunu incelemeye çalışalım. Bunun için tek yapmamız gereken örneğimizdeki Insert metodunu aşağıdaki ile değiştirmek olacaktır.
 
@@ -153,8 +151,7 @@ Bu değişikliklerden sonra sayfayı tekrardan talep edersek, Cache nesnesinin i
 
 ![mk114_7.gif](/assets/images/2005/mk114_7.gif)
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-ASP.NET 2.0'da bir Cache nesnesinin doğrudan SQL Server üzerindeki bir tabloya bağımlı hâle getirilebilmesi ve dolayısıyla veritabanı içindeki bir tabloda meydana gelecek değişikliklerin Cache nesnesine anında yansıtılabilmesi için de SqlCacheDependency sınıfına ait nesne örneklerinin kullanılabileceği öngörülmektedir. (Bu durumu gelecek görsel derslerimizden birisinde incelemeye çalışacağız.)
+> ASP.NET 2.0'da bir Cache nesnesinin doğrudan SQL Server üzerindeki bir tabloya bağımlı hâle getirilebilmesi ve dolayısıyla veritabanı içindeki bir tabloda meydana gelecek değişikliklerin Cache nesnesine anında yansıtılabilmesi için de SqlCacheDependency sınıfına ait nesne örneklerinin kullanılabileceği öngörülmektedir. (Bu durumu gelecek görsel derslerimizden birisinde incelemeye çalışacağız.)
 
 Cache nesnelerinin bellekten atılması zamana, dosyaya bağlanabileceği gibi, sistem kaynaklarının azalması durumunda da gerçekleşen bir olaydır. Sistem kaynaklarının azalması ve ara bellekteki nesnelerin atılması gerektiği durumlarda Cache nesnelerinin sahip olduğu öncelikler göz önüne alınır. Her ne sebep ile olursa olsun bir Cache nesnesinin içeriği ara bellekten atıldığında otomatik olarak çalışmasını istediğimiz metodlar bildirebiliriz. Yani CallBack metod tekniğini Cache nesneleri içinde kullanabiliriz. Örneğin ara bellekte tutulan bir nesnenin zaman aşımına uğraması nedeni ile silindiğinde otomatik olarak callback metodu devreye girerek güncel halinin tekrardan ara belleğe alınması sağlanabilir. Ya da Cache nesnesi Remove metodu ile açıkça ara bellekten atıldığı durumlarda CallBack metodlarını çalıştırabiliriz. Burada bir CallBack metodunun çağırılabilmesi için, CacheItemRemovedReason temsilcisi (delegate) tipinden bir nesne örneğinden faydalanılır. CacheItemRemovedReason temsilcisi aşağıdaki prototipe uyan metodlar işaret edebilir.
 

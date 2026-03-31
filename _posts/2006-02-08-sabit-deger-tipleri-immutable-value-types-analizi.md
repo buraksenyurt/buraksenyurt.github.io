@@ -13,13 +13,11 @@ Immutable (sabit) tipler basit olarak tanımlandıktan sonra varlıkları asla d
 
 Atomik yapıyı anlamak için, bir tipin içerisinde yer alan alanların aralarındaki ilişkiyi kavramamız çok önemlidir. Örneğin, Muhendis isimli bir tipimiz olduğunu düşünelim. Tipimizin ID, Ad, Soyad, Pozisyon gibi bilgileri bardındırdığını göz önüne alalım. Bir mühendisin şirket için geçerli olan ID bilgisi değişebilir. Ancak bu değişikliğin Ad,Soyad veya Pozisyon alanları üzerinde herhangibir etkisi yoktur. Benzer şekilde, bir mühendisin pozisyonuda değişebilir. Ancak bu değişikliğin Id,Ad,Soyad alanları üzerinde bir etkisi yoktur. Kısacası, Muhendis tipinin veri içeriğini oluşturan alanların birbirleri üzerinde her hangibir bağlayıcı etkisi yoktur. Bu nedenle Muhendis tipinin atomik olmayan bir veri içeriği sunduğunu söyleyebiliriz. Bu da ilgili tipin verileri arasında tutarlılık olmasını gerektirmeyecek bir olgudur.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Bir tipin verisel içeriğini oluşturan alanarının birbirleri üzerinde herhangibir etkisi yok ise, atomik olmayan bir yapı söz konusudur.
+> Bir tipin verisel içeriğini oluşturan alanarının birbirleri üzerinde herhangibir etkisi yok ise, atomik olmayan bir yapı söz konusudur.
 
 Şimdi bir de Saat, Dakika ve Saniye bilgilerini barındırdan Zaman isimli başka bir nesne modelini ele almaya çalışalım. Zaman tipi içerisinde yer alan Saat, Dakika ve Saniye alanlarının herhangibirinde yapılacak olan değişiklik, diğerlerinide etkileyebilecek cinstendir. Örneğin saniyenin 60' dan büyük olması halinde, dakika alanı üzerindede güncelleştirme yapılması gerekir. Aynı durum dakika alanı üzerinde yapılan değişiklikler içinde geçerlidir. Dakikanın 60' tan büyük olması halinde bu kez saat alanının güncelleştirilmesi gerekir. Dolayısıyla, Zaman tipi içerisinde yer alan alanların bir birlerini doğrudan etkilediğini söyleyebiliriz. İşte bu etkileşim nedeni ile Zaman tipinin Atomik bir veri içeriği sunduğunu söyleyebiliriz. Öyleki, verilerin tutarlı olması gerekmektedir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Bir tipin verisel içeriğini oluşturan alanlarının birbirleri üzerinde etkisi var ise, atomik bir yapı söz konusudur.
+> Bir tipin verisel içeriğini oluşturan alanlarının birbirleri üzerinde etkisi var ise, atomik bir yapı söz konusudur.
 
 ![mk147_1.gif](/assets/images/2006/mk147_1.gif)
 

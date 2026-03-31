@@ -60,8 +60,7 @@ Burada sebep son derece açıktır. var anahtar kelimesinden (keyword) sonra for
 
 Dolayısıyla eklenmek (Insert) üzere ilave edilen ProductCategory nesne örneği henüz veritabanına doğru gönderilmemiştir. Bu işlemin nasıl yapıldığını görmeden önce koleksiyona eklenen ve insert işlemi için sırada bekleyen nesne örneklerini nasıl elde edebileceğimize bakalım. Burada DataContext sınıfına ait GetChangeSet metodundan yararlanılmaktadır. Bu metod ile elde edilen ChangedSet nesne örneği üzerinden Inserts,Deletes veya Updates özellikleri (Properties) kullanılarak eklenen, silinen veya güncellenen örnekler yakalanabilir.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-Inserts, Deletes ve Updates özellikleri geriye IList tipinden bir referans döndürmektedir. Bu referans bilgisinden yararlanılarak eklenen, silinen veya güncellenen tüm nesnelerin yakalanması mümkündür. IList arayüzü (Interface).Net 2.0 versiyonundan beri mevcuttur. Ayrıca IEnumerable arayüzünden türemiş olduğundan, elde edilen referans üzerinde LINQ sorgularıda yazılabilir. Bu sayede eklenen, silinen veya güncellenen nesnelerin veritabanına yazılmadan önce sorgulanmalarıda mümkün olmaktadır.
+> Inserts, Deletes ve Updates özellikleri geriye IList tipinden bir referans döndürmektedir. Bu referans bilgisinden yararlanılarak eklenen, silinen veya güncellenen tüm nesnelerin yakalanması mümkündür. IList arayüzü (Interface).Net 2.0 versiyonundan beri mevcuttur. Ayrıca IEnumerable arayüzünden türemiş olduğundan, elde edilen referans üzerinde LINQ sorgularıda yazılabilir. Bu sayede eklenen, silinen veya güncellenen nesnelerin veritabanına yazılmadan önce sorgulanmalarıda mümkün olmaktadır.
 
 ![mk235_7.gif](/assets/images/2007/mk235_7.gif)
 
@@ -231,9 +230,8 @@ Burada görüldüğü gibi prdNew nesne örneğinin ListPrice değeri 3419.99 ik
 
 Ancak bu teknik yardımıyla güncellenmiş olan tüm satırların geri alınması oldukça zordur. Nitekim Table tipinin yapıcı metodunun (Constructor) kullanılamadığı, bu yüzden new ile üretilemediği ortadadır. Ayrıca var olan DataContext nesnesinin Table tipinden özellikleri ReadOnly'dir. Bir başka deyişle bu özelliklere doğrudan atama da yapılamamaktadır. Sonuç olarak DataContext tipinin yeniden örneklenmesi sorunu çözmek için yeterli olacaktır.
 
-![dikkat.gif](/assets/images/2007/dikkat.gif)
-Table generic tipi üzerinden kullanılan GetModifiedMembers metodu ile, parametre olarak verilen varlık (entity) nesne örneğinin değişikliğe uğrayan değerlerinin orjinal (OriginalValue) ve anlık (CurrentValue) hallerinin elde edilmesi sağlanabilmektedir. GetModifiedMembers metodu geriye ModifiedMemberInfo tipinden bir dizi döndürmektedir. Aşağıdaki şekilde örnek olarak güncellenen satırlardan ilki için orjinal ve güncel ListPrice değerlerinin elde edilişi gösterilmektedir.
-![mk235_17.gif](/assets/images/2007/mk235_17.gif)
+> Table generic tipi üzerinden kullanılan GetModifiedMembers metodu ile, parametre olarak verilen varlık (entity) nesne örneğinin değişikliğe uğrayan değerlerinin orjinal (OriginalValue) ve anlık (CurrentValue) hallerinin elde edilmesi sağlanabilmektedir. GetModifiedMembers metodu geriye ModifiedMemberInfo tipinden bir dizi döndürmektedir. Aşağıdaki şekilde örnek olarak güncellenen satırlardan ilki için orjinal ve güncel ListPrice değerlerinin elde edilişi gösterilmektedir.
+> ![mk235_17.gif](/assets/images/2007/mk235_17.gif)
 
 Normal şartlarda SubmitChanges metodunun çağırılmasından sonra güncelleme, ekleme ve silme işlemleri otomatik olarak transaction içerisinde çalıştırılırlar. Bir başka deyişle SubmitChanges metodu, veritabanı üzerinde yapılacak işlemlerin, biz söylemeden otomatik olarak bir transaction içerisinde olmasını sağlamaktadır. Söz gelimi aşağıdaki kod parçasını ele alalım. Bu kod parçasında güncelleme (Update) ve yeni ürün ekleme (Insert) işlemleri söz konusudur.
 

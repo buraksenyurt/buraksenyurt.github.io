@@ -104,8 +104,7 @@ class Class1
 
 Bu tamamen.net çekirdeğinde delegate tipi üzerinde yapılan bir düzenlemenin sonucudur.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Covariance, temsilcilerin çalışma zamanında işaret etmek istediği metodların, aralarında kalıtımsal ilişki olan dönüş tipleri arasındaki poliformik uyum sorununu ortadan kaldıran bir özellik olarak nitelendirilebilir.
+> Covariance, temsilcilerin çalışma zamanında işaret etmek istediği metodların, aralarında kalıtımsal ilişki olan dönüş tipleri arasındaki poliformik uyum sorununu ortadan kaldıran bir özellik olarak nitelendirilebilir.
 
 Temsilci nesnelerimizin işaret edeceği metotların dönüş tiplerinin kalıtımsal ilişkilere izin verecek şekilde düzenlenmiş olması elbette ki çalışma zamanında bize büyük bir esneklik getirmektedir. Nitekim bu sayede birbirlerinden türemiş n sayıda sınıfa ait nesne örneklerinin dönüş tipi olarak kullanıldığı metotları tek bir delegate nesnesi vasıtasıyla çalışma zamanında işaret edebiliriz.
 

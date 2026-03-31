@@ -122,8 +122,7 @@ partial class VeriYonetim
 
 Bu durumda uygulamamız sorunsuz şekilde derlenecek ve çalışacaktır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-Partial sınıflar (classes) tanımlayabildiğimiz gibi partial arayüzler (interfaces) veya yapılarda (structs) tanımlayabiliriz.
+> Partial sınıflar (classes) tanımlayabildiğimiz gibi partial arayüzler (interfaces) veya yapılarda (structs) tanımlayabiliriz.
 
 Örneğin, parçaları aşağıdaki şekilden de görüldüğü gibi iki farklı fiziki kaynak dosyada tutulacak IVeriYonetim isimli bir arayüz oluşturmak istediğimizi düşünelim. IVeriYonetim.Metodlar.cs kaynak kod dosyası içerisinde arayüzü uygulayacak olan tiplerin içermesi gereken metotları bildireceğimizi varsayalım. IVeriYonetim.Ozellikler.cs kaynak kod dosyasında ise, bu arayüzü uygulayacak tiplerin içermesi gereken özellik bildirimlerini yapacağımızı varsayalım.
 

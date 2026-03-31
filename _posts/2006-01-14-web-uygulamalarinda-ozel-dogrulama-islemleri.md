@@ -35,8 +35,7 @@ Burada 1234 5678 9876 5432 sayı dizisinin geçerli bir kredi kartı numarası o
 
 Gelelim bu algoritmayı kullanacağımız uygulama kodlarımıza. CustomValidator kontrolümüz sıradan bir Validator kontrolünden farksızdır. Sadece kontrol işleminin yapılacağı olay metodlarını hem client (istemci) tarafında hem de sunucu (server) tarafında kendimiz yazmamız gerekmektedir. Elbette istemci tarafında bir kontrol kodu yazmak zorunda değiliz. Ancak sunucu tarafında mutlaka yazmalıyız. Aksi takdirde doğrulama işlemlerini gerçekleştiremeyiz. Server tarafında yazılan kodlar, ServerValidate olay metodunda ele alınır. Client tarafında yazılacak olan script kodların yer alacağı fonksiyon ise, ClientValidationFunciton özelliğinde belirtiriz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Normalde, diğer Validator kontrolleri, client script özellikleri kapatılmadığı takdirde, istemci tarafında çalışacak script kodlarını otomatik olarak üretmektedir. Ancak CustomValidator kontrolü söz konusu olduğunda, istemci tarafında çalışacak script kodlarınıda manuel olarak yazmamız gerekmektedir.
+> Normalde, diğer Validator kontrolleri, client script özellikleri kapatılmadığı takdirde, istemci tarafında çalışacak script kodlarını otomatik olarak üretmektedir. Ancak CustomValidator kontrolü söz konusu olduğunda, istemci tarafında çalışacak script kodlarınıda manuel olarak yazmamız gerekmektedir.
 
 ServerValidate metodunun ServerValidateEventArgs parametresi, kontrol edilecek bileşene ait özelliğin değerini temsil eder. Örneğin kredi kartı numarasının girileceği TextBox bileşeninin, Text özelliğinin değerini bu parametrenin Value özelliği ile metod içerisinde alabiliriz. Bu parametrik yapı client tarafında çalışacak script metodu içinde geçerlidir. Bizim örnek kodumuzda yapacağımız kontroller sırasıyla, girilen sayı dizisinin 16 haneli olduğu, sadece sayılardan oluştuğu ve Lhun algoritmasını sağlayıp sağlamadığıdır. Default.aspx sayfamızın tasarımı aşağıdaki gibi olacaktır. (Örneğimiz Asp.Net 2.0 platformunda geliştirilmiştir.)
 
@@ -134,9 +133,8 @@ ServerValidate metodu geri dönüş değeri olmayan bir metoddur. ServerValidate
 
 Dikkat ederseniz, sayfa sunucuya geri gönderildikten sonra doğrulama işlemi devreye girmektedir. Şu anda client (istemci) tarafı için bir script kodu yazmadığımızdan, normal doğrulama sürecine ait olan istemci kontrolü kısmı otomatik olarak devre dışıdır. Oysaki çoğu zaman sunucuya geri dönülmeden istemci tarafında kontroller yapmak isteyebiliriz. Ancak.Net doğrulama sistemi göz önüne alındığında istemci tarafında herşey doğru olsa bile, sunucu tarafında yinede doğrulama işlemi gerçekleştirilmektedir. O halde client (istemci) tarafında yapılan doğrulamanın ne gibi bir avantajı olabilir? İstemci tarafında yapılan doğrulama ile, sunucuya gereksiz yere gidip gelme işleminin önüne geçmiş oluruz.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-Hatırlatma; Doğrulama süreci şu şekilde işler.
-![mk144_3.gif](/assets/images/2006/mk144_3.gif)
+> Hatırlatma; Doğrulama süreci şu şekilde işler.
+> ![mk144_3.gif](/assets/images/2006/mk144_3.gif)
 
 Şimdi CustomValidator kontrolümüz için bir de client (istemci) script kodunu ekleyelim. Bu amaçla javascript kullanmayı seçtiğimizi düşünecek olursak tek yapmamız gereken aspx sayfamıza aşağıdaki script kodlarını eklemek olacaktır.
 

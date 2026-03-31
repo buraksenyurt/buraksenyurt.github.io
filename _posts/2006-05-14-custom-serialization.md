@@ -20,8 +20,7 @@ Hangi nedenle olursa olsun özel serileştirme, kod tarafında bir takım özel 
 
 Şekilden de görebileceğiniz gibi serileştirme süreci gerçekleşirken meydana gelen iki olay vardır. Bunlardan ilki serileştirme işleminin gerçekleştiği sırada çalışan OnSerializing olayıdır. Serileştirme işlemi gerçekleştirildikten hemen sonra devreye giren olay ise OnSerialized'dir. Ters serileştirme (Deserialization) işleminde de benzer bir durum söz konusudur. Ters serileştirmenin gerçekleştiği sırada OnDeserializing olayı ele alınabilir. Bu işlem bittikten hemen sonrasında ise, eğer sınıf IDeserializationCallback arayüzünü uygulamış ise OnDeserialization olayı öncelikli olarak devreye girecektir. Son olarakta OnDeserialized olayı gerçekleşecektir. İşte Framework 2.0 bahsetmiş olduğumuz serileştirme olaylarını daha iyi ele alabileceğimiz yeni nitelikler sunmaktadır.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-OnSerializing, OnSerialized, OnDeserializing, OnDeserialized olayları sadece Binary serileştirmede gerçekleşir. Soap formatında yapılan serileştirmede sadece Serialization olayları meydana gelir.
+> OnSerializing, OnSerialized, OnDeserializing, OnDeserialized olayları sadece Binary serileştirmede gerçekleşir. Soap formatında yapılan serileştirmede sadece Serialization olayları meydana gelir.
 
 Peki bahsetmiş olduğumuz bu olayları nasıl ele alacağız? Bunun için Framework 2.0 ile birlikte gelen yeni attribute (nitelik) larımız mevcuttur. Bu attribute'ların listesini ve kısa açıklamalarını aşağıdaki tabloda bulabilirsiniz.
 

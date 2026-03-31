@@ -69,16 +69,16 @@ Aşağıdaki kod parçasını göz önüne alalım.
 ```csharp
 public IQueryable<SalesOrderDetail> GetSalesOrderDetails()
 {
-	var resultSet = (from sod in ObjectContext.SalesOrderDetails
-					 select sod).Take(50);
+    var resultSet = (from sod in ObjectContext.SalesOrderDetails
+                     select sod).Take(50);
 
-	foreach (var result in resultSet)
-	{
-		if (ServiceContext.User.IsInRole("JuniorSalesPerson"))
-			result.UnitPriceDiscount = -1;
-	}
+    foreach (var result in resultSet)
+    {
+        if (ServiceContext.User.IsInRole("JuniorSalesPerson"))
+            result.UnitPriceDiscount = -1;
+    }
 
-	return resultSet;
+    return resultSet;
 }
 ```
 

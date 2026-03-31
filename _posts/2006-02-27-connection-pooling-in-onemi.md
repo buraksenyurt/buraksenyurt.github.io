@@ -77,9 +77,8 @@ Burada button kontrolüne basıldığında çalışan kodlarda, Person.Contat is
 
 Bu görüntüde yer alan NumberOfReclaimedConnections sayacı (Counter),.Net 2.0 ile birlikte gelen yeni performans ölçüm değerlerinden birisidir ve havuzda yer alıpta kapatılamayan bağlantı sayılarına ilişkin bilgileri vermektedir. Grafiktende görüleceği üzere açık bağlantılar sürekli artmıştır. Uygulama bunun sonucunda SqlException'dan çıkarak zaman aşımı (Timeout) nedeni ile InvalidOperationException'a sürüklenmiştir.
 
-![dikkat.gif](/assets/images/2006/dikkat.gif)
-NumberOfReclaimedConnections,.Net 2.0 ile birlikte gelen Performans sayaçlarından (Performance Counter) birisidir. Bu sayaç.Net Data Provider For Sql Server performans nesnesi (Performance Object) altında yer almaktadır.
-![mk149_5.gif](/assets/images/2006/mk149_5.gif)
+> NumberOfReclaimedConnections,.Net 2.0 ile birlikte gelen Performans sayaçlarından (Performance Counter) birisidir. Bu sayaç.Net Data Provider For Sql Server performans nesnesi (Performance Object) altında yer almaktadır.
+> ![mk149_5.gif](/assets/images/2006/mk149_5.gif)
 
 Aslında hatanın nedeni son derece basittir. Connection sınıfına ait nesne örneğinin kapatılması garanti altına alınmamıştır. Bu gerçekten önemli bir hatadır. Bu durumu düzeltmek için ya finally bloğu eklenmeli ya da işlemler aşağıdaki kod parçasında olduğu gibi using blokları içerisinde gerçekleştirilmelidir. Nitekim using bloğu doğal olaraktan kullandığı nesnenin dispose edilmesini garanti altına alır.
 

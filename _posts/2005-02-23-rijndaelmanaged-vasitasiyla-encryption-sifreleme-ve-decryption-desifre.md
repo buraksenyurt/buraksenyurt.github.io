@@ -16,13 +16,11 @@ Bu makalemizde, Rijndael algoritmasını kullanan managed tiplerden RijndaelMana
 
 SymmetricAlgorithm sınıfını kullanan şifreleme mekanizmalarında herhangi bir anahtar ile şifrelenen veriler, deşifre edilmek istendiklerinde yine aynı anahtarı kullanırlar. Bu özellikle internet gibi herkesin kullanımına açık olan ortamlarda güvenlik açısından tehlike yaratabilir. Nitekim anahtarın herhangi bir şekilde ele geçirilmesi, şifrelenen verinin çözülmesi için yeterli olacaktır. Diğer yandan bu tekniğe göre geliştirilen algoritmalar hızlı ve performanslı çalışırlar.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-SymmetricAlgorithm katmanından türeyen Encryption sınıfları ile uygulanan şifreleme algoritmalarında veriyi şifrelerken kullandığımız key (anahtar) ve IV (vektör) değerleri, aynı veriyi deşifre ederken de gereklidir.
+> SymmetricAlgorithm katmanından türeyen Encryption sınıfları ile uygulanan şifreleme algoritmalarında veriyi şifrelerken kullandığımız key (anahtar) ve IV (vektör) değerleri, aynı veriyi deşifre ederken de gereklidir.
 
 SymmetricAlgorithm yapısını kullanan şifreleme mimarilerinin neden olduğu güvenlik sorununun çözümü için AsymmetrciAlgorithm taban sınıfı (base class) geliştirilmiştir. Bu mekanizmada veri şifreleneceği zaman public bir anahtar kullanılır. Bu anahtarın herhangi bir şekilde ele geçirilmesi, verinin deşifre edilebilmesi için yeterli değildir. Nitekim verinin deşifre (decryption) edilebilmesi için karşı tarafın private bir anahtara gereksinimi vardır. Bu avantajının yanında AsymmetricAlgroithm mekanizması SymmetricAlgorithm mekanizmasına göre daha yavaş çalışmaktadır.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-AsymmetricAlgorithm katmanından türeyen Encryption sınıfları ile uygulanan şifreleme (encryption) algoritmalarında veriyi şifrelerken public bir key kullanırken, deşifre (decryption) işlemi sırasında farklı olan private key kullanılır.
+> AsymmetricAlgorithm katmanından türeyen Encryption sınıfları ile uygulanan şifreleme (encryption) algoritmalarında veriyi şifrelerken public bir key kullanırken, deşifre (decryption) işlemi sırasında farklı olan private key kullanılır.
 
 Birinci katmanda yer alan taban sınıflar, abstract niteliktedir. Dolayısıyla kendisinden türeyen şifreleme sınıflarının içermesi ve uygulaması zorunlu olan üyeler içerirler. Bildiğiniz gibi abstract sınıflardan nesne örnekleri üretilemez. Ancak taban sınıfların static Create metotları yardımıyla bu sınıfları da şifreleme mekanizmalarında kullanabiliriz. İkinci katmanda yer alan sınıflar ise, özellikle belirli şifrelme algoritmalarını işaret ederler. Örneğin bu gün işleyeceğimiz Rijndael algoritması 256 bitlik bir anahtar (key) ile şifreleme (deşifre etme) sağlar. Buradaki sınıflar, taban sınıflardan (base classes) türemiştir ve abstract sınıflardır.
 

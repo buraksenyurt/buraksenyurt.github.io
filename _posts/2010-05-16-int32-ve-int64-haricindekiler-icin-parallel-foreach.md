@@ -19,10 +19,10 @@ Dolayısıyla bazı durumlarda en tepeden aşağıya doğru inen ve bağlı list
 ```csharp
 class Employee
 {
-	public string Profession { get; set; }
-	public string Name { get; set; }
-	public Employee Parent { get; set; }
-	public Employee Child { get; set; }        
+    public string Profession { get; set; }
+    public string Name { get; set; }
+    public Employee Parent { get; set; }
+    public Employee Child { get; set; }        
 }
 ```
 

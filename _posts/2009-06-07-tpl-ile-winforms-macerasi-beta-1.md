@@ -85,33 +85,33 @@ Dikkat çekici nokta işlemlerin tamamlanma süresidir. Neredeyse 20 saniye.
 ```csharp
 private void btnStart2_Click(object sender, EventArgs e)
 {
-	flowLayoutPanel1.Controls.Clear();
+    flowLayoutPanel1.Controls.Clear();
 
-	#region Parallel.ForEach kullanımı
+    #region Parallel.ForEach kullanımı
 
-	Stopwatch watch = Stopwatch.StartNew();
+    Stopwatch watch = Stopwatch.StartNew();
 
-	Parallel.ForEach(Directory.GetFiles(imagesPath), f =>
-	{
-		FileInfo fInfo = new FileInfo(f);
-		if (fInfo.Length <= 1024 * 100
-			&& fInfo.Extension == ".jpg")
-		{
-			Button btn = new Button();
-			btn.Width = 64;
-			btn.Height = 48;
-			btn.BackgroundImageLayout = ImageLayout.Stretch;
-			btn.BackgroundImage = Image.FromFile(f);
-			
-			flowLayoutPanel1.Controls.Add(btn); // Exception: Cross-thread operation not valid: Control 'flowLayoutPanel1' accessed from a thread other than the thread it was created on.
-		}
-	}
-	);
+    Parallel.ForEach(Directory.GetFiles(imagesPath), f =>
+    {
+        FileInfo fInfo = new FileInfo(f);
+        if (fInfo.Length <= 1024 * 100
+            && fInfo.Extension == ".jpg")
+        {
+            Button btn = new Button();
+            btn.Width = 64;
+            btn.Height = 48;
+            btn.BackgroundImageLayout = ImageLayout.Stretch;
+            btn.BackgroundImage = Image.FromFile(f);
+            
+            flowLayoutPanel1.Controls.Add(btn); // Exception: Cross-thread operation not valid: Control 'flowLayoutPanel1' accessed from a thread other than the thread it was created on.
+        }
+    }
+    );
 
-	watch.Stop();
-	lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
+    watch.Stop();
+    lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
 
-	#endregion
+    #endregion
 }
 ```
 
@@ -128,33 +128,33 @@ Durumu şu şekilde açıklayabiliriz. Windows uygulaması çalıştırıldığ�
 ```csharp
 private void btnStart2_Click(object sender, EventArgs e)
 {
-	flowLayoutPanel1.Controls.Clear();
+    flowLayoutPanel1.Controls.Clear();
 
-	#region Parallel.ForEach kullanımı
+    #region Parallel.ForEach kullanımı
 
-	Stopwatch watch = Stopwatch.StartNew();
+    Stopwatch watch = Stopwatch.StartNew();
 
-	Parallel.ForEach(Directory.GetFiles(imagesPath), f =>
-	{
-		FileInfo fInfo = new FileInfo(f);
-		if (fInfo.Length <= 1024 * 100
-			&& fInfo.Extension == ".jpg")
-		{
-			Button btn = new Button();
-			btn.Width = 64;
-			btn.Height = 48;
-			btn.BackgroundImageLayout = ImageLayout.Stretch;
-			btn.BackgroundImage = Image.FromFile(f);
-			AddToPanel(btn);
-			// flowLayoutPanel1.Controls.Add(btn); // Exception: Cross-thread operation not valid: Control 'flowLayoutPanel1' accessed from a thread other than the thread it was created on.
-		}
-	}
-	);
+    Parallel.ForEach(Directory.GetFiles(imagesPath), f =>
+    {
+        FileInfo fInfo = new FileInfo(f);
+        if (fInfo.Length <= 1024 * 100
+            && fInfo.Extension == ".jpg")
+        {
+            Button btn = new Button();
+            btn.Width = 64;
+            btn.Height = 48;
+            btn.BackgroundImageLayout = ImageLayout.Stretch;
+            btn.BackgroundImage = Image.FromFile(f);
+            AddToPanel(btn);
+            // flowLayoutPanel1.Controls.Add(btn); // Exception: Cross-thread operation not valid: Control 'flowLayoutPanel1' accessed from a thread other than the thread it was created on.
+        }
+    }
+    );
 
-	watch.Stop();
-	lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
+    watch.Stop();
+    lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
 
-	#endregion
+    #endregion
 }
 
 #region  Cross-thread operation not valid hatasına karşı mücadele
@@ -162,14 +162,14 @@ private void btnStart2_Click(object sender, EventArgs e)
 private delegate void AddControlHandler(Button pb);
 private void AddToPanel(Button pb)
 {
-	if (flowLayoutPanel1.InvokeRequired)
-		flowLayoutPanel1.BeginInvoke(new AddControlHandler(RealAddToPanel), new object[] { pb });
-	else
-		RealAddToPanel(pb);
+    if (flowLayoutPanel1.InvokeRequired)
+        flowLayoutPanel1.BeginInvoke(new AddControlHandler(RealAddToPanel), new object[] { pb });
+    else
+        RealAddToPanel(pb);
 }
 private void RealAddToPanel(Button pb)
 {
-	flowLayoutPanel1.Controls.Add(pb);
+    flowLayoutPanel1.Controls.Add(pb);
 }
 
 #endregion
@@ -243,13 +243,13 @@ Ancak zaman ilerlemiştir ve artık Task sınıfı ve üyeleri ile aynı işlemi
 ```csharp
 private void btnStart4_Click(object sender, EventArgs e)
 {
-	flowLayoutPanel1.Controls.Clear();
-	Stopwatch watch = Stopwatch.StartNew();
+    flowLayoutPanel1.Controls.Clear();
+    Stopwatch watch = Stopwatch.StartNew();
 
-	Task.Factory.StartNew(() => FillImages(null));
+    Task.Factory.StartNew(() => FillImages(null));
 
-	watch.Stop();
-	lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
+    watch.Stop();
+    lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
 }
 ```
 

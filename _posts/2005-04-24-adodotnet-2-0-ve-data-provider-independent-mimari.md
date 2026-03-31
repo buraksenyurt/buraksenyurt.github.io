@@ -89,8 +89,7 @@ DbProviderFactory fakto = DbProviderFactories.GetFactory("System.Data.SqlClient"
 
 Elde ettiğimiz DbProviderFactory nesnesi vasıtasıyla artık veritabanı uygulamamız için gerekli nesneleri örnekleyebiliriz. Örneğin aşağıdaki kod parçası ile bir DbConnection nesnesi elde edilmektedir. DbConnection nesnesi tahmin edeceğiniz gibi ilgili veri kaynağına doğru bağlantı hattı tesis etmemizi sağlar.
 
-![dikkat.gif](/assets/images/2005/dikkat.gif)
-DbConnection, DbCommand, DbDataAdapter vb. abstract sınıflardır. Yani aslında bu sınıflara ait nesne örneklerini new operatörü yardımıyla oluşturamayız. Bu sınıflardan faydalanabilmek için DbProviderFactories sınıfının ilgili Create metodlarını kullanırız.
+> DbConnection, DbCommand, DbDataAdapter vb. abstract sınıflardır. Yani aslında bu sınıflara ait nesne örneklerini new operatörü yardımıyla oluşturamayız. Bu sınıflardan faydalanabilmek için DbProviderFactories sınıfının ilgili Create metodlarını kullanırız.
 
 Kod parçamız;
 
