@@ -59,7 +59,7 @@ layout: default
           {%- if source_post and source_post.categories and source_post.categories.size > 0 -%}
             <span class="category-post-card-taxonomy">
               {%- for category in source_post.categories -%}
-                {%- assign category_slug = category | slugify -%}
+                {%- assign category_slug = category | slugify: 'latin' -%}
                 <a href="{{ '/kategoriler/' | append: category_slug | append: '/' | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
               {%- endfor -%}
             </span>

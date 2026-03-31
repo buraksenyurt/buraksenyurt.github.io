@@ -19,7 +19,7 @@ layout: default
       {%- if current_categories and current_categories.size > 0 -%}
         • <span class="post-categories-inline">Kategoriler:
           {%- for category in current_categories -%}
-            {%- assign category_anchor = category | slugify -%}
+            {%- assign category_anchor = category | slugify: 'latin' -%}
             <a href="{{ '/kategoriler/' | append: category_anchor | append: '/' | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
           {%- endfor -%}
         </span>

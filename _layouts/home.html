@@ -4,12 +4,83 @@ layout: default
 
 {%- assign posts = paginator.posts | default: site.posts -%}
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<style>
+@media screen and (min-width: 800px) {
+  .home-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .home-sidebar {
+    flex: 0 0 250px;
+    position: sticky;
+    top: 20px;
+  }
+  .home-main {
+    flex: 1;
+    min-width: 0;
+  }
+}
+@media screen and (max-width: 799px) {
+  .home-sidebar {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+}
+.home-sidebar h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+.home-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.home-category-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.home-category-list a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.home-category-list a:hover {
+  text-decoration: underline;
+}
+.home-category-count {
+  color: #828282;
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+</style>
 
-  {{ content }}
+<div class="home-layout">
+  <aside class="home-sidebar">
+    <h3>Kategoriler</h3>
+    <ul class="home-category-list">
+      {%- assign sorted_categories = site.data.inferred_taxonomy.categories | sort -%}
+      {%- for category in sorted_categories -%}
+        {%- assign category_name = category[0] -%}
+        {%- assign category_posts = category[1] -%}
+        {%- assign cat_slug = category_name | slugify: 'latin' -%}
+        <li>
+          <a href="{{ '/kategoriler/' | append: cat_slug | append: '/' | relative_url }}">
+            {{ category_name }} <span class="home-category-count">({{ category_posts.size }})</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </aside>
+
+  <div class="home-main">
+    <div class="home">
+      {%- if page.title -%}
+        <h1 class="page-heading">{{ page.title }}</h1>
+      {%- endif -%}
+
+      {{ content }}
 
   {%- if site.posts.size > 0 -%}
     <div class="home-toolbar">
@@ -94,4 +165,6 @@ layout: default
       </nav>
     {%- endif -%}
   {%- endif -%}
+    </div>
+  </div>
 </div>

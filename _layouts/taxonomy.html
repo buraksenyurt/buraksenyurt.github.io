@@ -23,7 +23,7 @@ layout: default
       <p class="taxonomy-cloud-summary">Bulutta en az 20 yazida gecen etiketler gosterilir.</p>
       <div class="taxonomy-cloud-list">
         {%- for item in site.data.inferred_taxonomy.tag_cloud -%}
-          <a class="taxonomy-cloud-chip taxonomy-cloud-weight-{{ item.weight }}" href="#{{ item.name | slugify }}">
+          <a class="taxonomy-cloud-chip taxonomy-cloud-weight-{{ item.weight }}" href="#{{ item.name | slugify: 'latin' }}">
             <span>{{ item.name }}</span>
             <strong>{{ item.count }}</strong>
           </a>
@@ -37,12 +37,12 @@ layout: default
       {%- assign taxonomy_name = item[0] -%}
       {%- assign posts = item[1] -%}
       {%- if page.taxonomy == 'categories' -%}
-        {%- assign taxonomy_slug = taxonomy_name | slugify -%}
+        {%- assign taxonomy_slug = taxonomy_name | slugify: 'latin' -%}
         <a href="{{ '/kategoriler/' | append: taxonomy_slug | append: '/' | relative_url }}">
           {{ taxonomy_name }} <span>({{ posts | size }})</span>
         </a>
       {%- else -%}
-        <a href="#{{ taxonomy_name | slugify }}">
+        <a href="#{{ taxonomy_name | slugify: 'latin' }}">
           {{ taxonomy_name }} <span>({{ posts | size }})</span>
         </a>
       {%- endif -%}
@@ -53,11 +53,11 @@ layout: default
     {%- for item in taxonomy_items -%}
       {%- assign taxonomy_name = item[0] -%}
       {%- assign posts = item[1] -%}
-      <section class="taxonomy-group" id="{{ taxonomy_name | slugify }}">
+      <section class="taxonomy-group" id="{{ taxonomy_name | slugify: 'latin' }}">
         <div class="taxonomy-group-header">
           <h2>
             {%- if page.taxonomy == 'categories' -%}
-              {%- assign taxonomy_slug = taxonomy_name | slugify -%}
+              {%- assign taxonomy_slug = taxonomy_name | slugify: 'latin' -%}
               <a href="{{ '/kategoriler/' | append: taxonomy_slug | append: '/' | relative_url }}">{{ taxonomy_name }}</a>
             {%- else -%}
               {{ taxonomy_name }}
