@@ -21,8 +21,7 @@ Bir kullanıcı, bir web sunucusundan herhangi bir sayfa talep ettiğinde, web s
 
 Gelelim Session nesnelerinin sunucu tarafından doğru istemciler ile nasıl eşleştirilebildiğine. Web sunucusundan bir sayfa talep edildiğinde (1) ASP.NET Work Processor bu istemci için otomatik olarak benzersiz bir tanımlama (Unique Identity) değeri üretir (2). Bu 120 bitlik bir sayıdır ve özel bir algoritma yardımıyla sunucu üzerinde oluşturulur. Daha sonra bu talep karşılığında sunucu, oluşturduğu ASP.NET_SessionId değerini istemci bilgisayara gönderir (3). Bu ASP.NET_SessionId değerinin istemci üzerinde tutuluşu varsayılan olarak bir çerez (Cookie) vasıtasıyla sağlanır (4). Aynı değer sunucu üzerinde de yer almaktadır (4). Bu noktadan itibaren istemci, kendisine ait oturumu sunucu üzerinde bir şekilde sonlanıncaya kadar, site içerisinde bu ASP.NET_SessionId değeri ile tanınır. Dolayısıyla artık sunucu, oturum sahibinin kim olduğunu bilmektedir.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Tanıma; Sunucular oturum sahiplerini tanıyabilmek için, özel bir algoritma ile oluşturdukları 120 bitlik benzersiz bir tanımlayıcı değer kullanırlar. ASP.NETSessionId.
+> Tanıma: Sunucular oturum sahiplerini tanıyabilmek için, özel bir algoritma ile oluşturdukları 120 bitlik benzersiz bir tanımlayıcı değer kullanırlar: ASP.NETSessionId.
 
 Ancak burada istisnai bir durum vardır. Her istemci cookie'leri desteklemez. Bu durumda yapılacak ufak bir ayarlama ile ASP.NET_SessionId değerinin url'ye eklenmesi sağlanır. Bunu ilerleyen safhalarda inceleyeceğiz. Aşağıdaki şekil basit olarak bir SessionId değerinin nasıl oluşturulduğunu betimlemektedir. Bu varsayılan, yani Cookie desteği veren tarayıcılar için geçerli olan senaryodur.
 
@@ -30,13 +29,11 @@ Ancak burada istisnai bir durum vardır. Her istemci cookie'leri desteklemez. Bu
 
 Session nesnesine atanan veriler web sunucusu üzerindeki bellekte tutulmaktadır. Bu bilgiler asla istemci bilgisayara gönderilmezler. Bu da güvenlik açısından önemli bir avantajdır.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Güvenlik; Session nesnelerine ait veriler Sunucu üzerindeki bellek alanlarında tutulur ve asla istemcilere gönderilmez.
+> Güvenlik: Session nesnelerine ait veriler sunucu üzerindeki bellek alanlarında tutulur ve asla istemcilere gönderilmez.
 
 Burada dikkat etmemiz gereken önemli bir husus vardır: Session bilgilerinin sunucu belleğinde (varsayılan olarak budur) tutulması. Bir Session nesnesinin en büyük özelliklerinden birisi, serileştirilebilir (Serializable) nesneleri taşıyabilme özelliğine sahip olmasıdır. Yani, bir Session nesnesi yardımıyla kullanıcının oturumu boyunca bir DataSet nesnesini sayfalar arasında dolaştırabiliriz. Peki burada dikkat etmemiz gereken nokta nedir? Sorun, DataSet gibi bir nesnenin tek başına çalıştığı bir bilgisayar için bile fazla bellek alanı harcamasıdır. Yani, sunucuya bağlanan her bir kullanıcı için oturum süresi boyunca DataSet nesne örneklerinin taşınması sunucu kaynaklarını ciddi ölçüde azaltır. Bellekte meydana gelen bu azalma elbette ki web sunucusunun performansını olumsuz yönde etkileyecektir.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Performans; Bir web uygulamasında Session nesnelerinin DataSet nesne örnekleri taşıdığını varsayarsak, N sayıda kullanıcının bağlanması, sunucu belleğinde N sayıda DataSet nesne örneğinin oluşturulması anlamına gelmektedir.
+> Performans: Bir web uygulamasında Session nesnelerinin DataSet nesne örnekleri taşıdığını varsayarsak, N sayıda kullanıcının bağlanması, sunucu belleğinde N sayıda DataSet nesne örneğinin oluşturulması anlamına gelmektedir.
 
 Peki çözüm olarak ne üretebiliriz? İlk olarak önbellekleme tekniklerini kullanabiliriz. Ya da serileştirilebilir nesneleri örneklendiren sınıfları kendimiz yazarız. Tabii böyle bir durumda yazacağımız sınıfların da serileştirilebilir olması, bir başka deyişle serileştirmeye izin veren nitelikleri (Attribute) kullanması gerekecektir. Bu konuyu ilerleyen makalelerimizde incelemeye çalışacağız. Elbette ki bir Session sadece serileştirilebilir nesneleri değil, her tipte .NET nesne örneğini saklayabilir.
 

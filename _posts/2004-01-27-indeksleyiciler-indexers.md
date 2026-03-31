@@ -29,19 +29,14 @@ public int this[int indis]
 
 Görüldüğü gibi bir indeksleyici tanımlanması, özellik tanımlanması ile neredeyse aynıdır. Ancak bir indeksleyici tanımlarken uymamız gereken bir takım kurallarda vardır. Bu kurallar aşağıdaki tabloda belirtilmiştir.
 
-Indeksleyici Kuralları
-
-Bir indeksleyici mutlaka bir geri dönüş tipine sahip olmalıdır. Yani bir indeksleyiciyi void olarak tanımlayamayız.
-
-Bir indeksleyiciyi static olarakta tanımlayamayız.
-
-Bir indeksleyici en az bir parametre almalıdır. Bununla birlikte, bir indeksleyici birden fazla ve çeşitte parametrede alabilmektedir.
-
-Indeksleyicileri aşırı yükleyebiliriz (Overload). Ancak bir indeksleyiciyi aşırı yüklediğimizde, bu indeksleyicileri birbirlerinden ayırırken ele aldığımız imzalar sadece parametreler ile belirlenir. Indeksleyicinin geri dönüş değeri bu imzada ele alınmaz.
-
-Indeksleyici parametrelerine, normal değişkenlermiş gibi davranamayız. Bu nedenle bu parametreleri ref ve out anahtar sözcükleri ile yönlendiremeyiz.
-
-Bir indeksleyici her zaman this anahtar sözcüğü ile tanımlamalıyız. Nitekim this anahtar sözcüğü, indeksleyicinin kullanıldığı sınıf nesnelerini temsil etmektedir. Böylece sınıfın kendisi bir dizi olarak kullanılabilir.
+| Indeksleyici Kuralları |
+| --- |
+| Bir indeksleyici mutlaka bir geri dönüş tipine sahip olmalıdır. Yani bir indeksleyiciyi void olarak tanımlayamayız. |
+| Bir indeksleyiciyi static olarakta tanımlayamayız. |
+| Bir indeksleyici en az bir parametre almalıdır. Bununla birlikte, bir indeksleyici birden fazla ve çeşitte parametrede alabilmektedir. |
+| Indeksleyicileri aşırı yükleyebiliriz (Overload). Ancak bir indeksleyiciyi aşırı yüklediğimizde, bu indeksleyicileri birbirlerinden ayırırken ele aldığımız imzalar sadece parametreler ile belirlenir. Indeksleyicinin geri dönüş değeri bu imzada ele alınmaz. |
+| Indeksleyici parametrelerine, normal değişkenlermiş gibi davranamayız. Bu nedenle bu parametreleri ref ve out anahtar sözcükleri ile yönlendiremeyiz. |
+| Bir indeksleyici her zaman this anahtar sözcüğü ile tanımlamalıyız. Nitekim this anahtar sözcüğü, indeksleyicinin kullanıldığı sınıf nesnelerini temsil etmektedir. Böylece sınıfın kendisi bir dizi olarak kullanılabilir. |
 
 Tablo 1. Indeksleyici tanımlama kuralları.
 

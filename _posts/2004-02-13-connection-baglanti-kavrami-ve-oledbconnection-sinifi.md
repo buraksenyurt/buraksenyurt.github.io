@@ -228,6 +228,7 @@ Bu olay StateChangeEventArgs tipinden bir argüman almaktadır. Bu argüman iki 
 | ConnectionState.Fetching | Bağlantı hattı üzerinden veriler alınırken bur değer geçerlidir. |
 
 Tablo 1. ConnectionState numaralandırıcısının değerleri.
+
 ConnectionState numaralandırıcısı aynı zamanda, State özelliği içinde kullanılabilir. State özelliği, OleDbConnection nesnesinin o anki durumunu, ConnectionState numaralandırıcısı tipinde saklar. State özelliğini uygulamalarımızda, var olan bağlantının durumun kontrol ederek hareket etmek için kullanabiliriz. Örneğin bir bağlantı nesnesini uygulamamızın bir yerinde tekrardan açmak istediğimizi varsayalım. Bu bağlantı nesnesinin durumu zaten Open ise yani açık ise, tekrardan açma işlemi uygulamamız gerekmez. Dilerseniz makalemizin sonunda StateChange olayına ilişkin bir örnek geliştirelim.
 
 ```csharp

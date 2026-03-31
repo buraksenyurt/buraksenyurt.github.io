@@ -27,27 +27,22 @@ public interface IArayuz
 
 Tanımlama görüldüğü gibi son derece basit. Şimdi arayüzlerin üyelerine bir göz atalım. Arayüzler, sadece aşağıdaki üyelere sahip olabilirler.
 
-Arayüz Üyeleri
-
-özellikler (properties)
-
-metodlar (methods)
-
-olaylar (events)
-
-indeksleyiciler (indexers)
+| Arayüz Üyeleri |
+| --- |
+| özellikler (properties) |
+| metodlar (methods) |
+| olaylar (events) |
+| indeksleyiciler (indexers) |
 
 Tablo 1. Arayüzlerin sahip olabileceği üyeler
 
 Diğer yandan, arayüzler içerisinde aşağıdaki üyeler kesinlikle kullanılamazlar.
 
-Arayüzlerde Kullanılamayan Üyeler
-
-yapıcılar (constructors)
-
-yokediciler (destructors)
-
-alanlar (fields)
+| Arayüzlerde Kullanılamayan Üyeler |
+| --- |
+| yapıcılar (constructors) |
+| yokediciler (destructors) |
+| alanlar (fields) |
 
 Tablo 2. Arayüzlerde kullanılamayan üyeler.
 
@@ -87,22 +82,13 @@ public interface IArayuz
 
 Görüldüğü gibi sadece tanımlamalar mevcut. Herhangibir kod satırı mevcut değil. Bir arayüz tasarlarken uymamız gereken bir takım önemli kurallar vardır. Bu kurallar aşağıdaki tabloda kısaca listelenmiştir.
 
-1
-Bir arayüz'ün tüm üyeleri public kabul edilir. Private, Protected gibi belirtiçler kullanamayız. Bunu yaptığımız takdirde örneğin bir elemanı private tanımladığımız takdirde, derleme zamanında aşağıdaki hatayı alırız.
-"The modifier 'private'is not valid for this item"
-
-2
-Diğer yandan bir metodu public olarakta tanımlayamayız. Çünkü zaten varsayılan olarak bütün üyeler public tanımlanmış kabul edilir. Bir metodu public tanımladığımızda yine derleme zamanında aşağıdaki hatayı alırız.
-"The modifier 'public'is not valid for this item"
-
-3
-Bir arayüz, bir yapı (struct)'dan veya bir sınıf (class)'tan kalıtımla türetilemez. Ancak, bir arayüzü başka bir arayüzden veya arayüzlerden kalıtımsal olarak türetebiliriz.
-
-4
-Arayüz elemanlarını static olarak tanımlayamayız.
-
-5
-Arayüzlerin uygulandığı sınıflar, arayüzde tanımlanan bütün üyeleri kullanmak zorundadır.
+| Kural | Açıklama |
+| --- | --- |
+| 1 | Bir arayüz'ün tüm üyeleri public kabul edilir. Private, Protected gibi belirtiçler kullanamayız. Bunu yaptığımız takdirde örneğin bir elemanı private tanımladığımız takdirde, derleme zamanında aşağıdaki hatayı alırız. "The modifier 'private'is not valid for this item" |
+| 2 | Diğer yandan bir metodu public olarakta tanımlayamayız. Çünkü zaten varsayılan olarak bütün üyeler public tanımlanmış kabul edilir. Bir metodu public tanımladığımızda yine derleme zamanında aşağıdaki hatayı alırız. "The modifier 'public'is not valid for this item" |
+| 3 | Bir arayüz, bir yapı (struct)'dan veya bir sınıf (class)'tan kalıtımla türetilemez. Ancak, bir arayüzü başka bir arayüzden veya arayüzlerden kalıtımsal olarak türetebiliriz. |
+| 4 | Arayüz elemanlarını static olarak tanımlayamayız. |
+| 5 | Arayüzlerin uygulandığı sınıflar, arayüzde tanımlanan bütün üyeleri kullanmak zorundadır. |
 
 Tablo 3. Uyulması gereken kurallar.
 

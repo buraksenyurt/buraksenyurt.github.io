@@ -30,7 +30,7 @@ TableMappings DataTableMappingCollection türünden bir koleksiyondur. Görevi i
 
 DataAdapter sınıflarının genel özelliklerine değindikten sonra dilerseniz OleDbDataAdapter sınıfımızı incelemeye başlayalım. OleDbDataAdapter sınıfı System.Data.OleDb isim uzayı içinde yer almaktadır. Bir OleDbDataAdapter nesnesi yaratmak için kullanabileceğimiz 4 adet aşırı yüklenmiş yapıcı metod bulunmaktadır. Bunlar aşağıdaki tabloda belirtilmiştir.
 
-| Yapıcı Metod Prototipi | Açıklaması |
+| **Yapıcı Metod Prototipi** | **Açıklaması** |
 | --- | --- |
 | public OleDbDataAdapter (string, string); | Select sorgusunu ve bağlantı için gerekli söz dizimini metin şeklinde parametre olarak alır. |
 | public OleDbDataAdapter (string, OleDbConnection); | Sorguyu metin bazında alırken, bağlantı için önceden oluşturulmuş bir OleDbConnection nesnesini parametre olarak alır. |

@@ -19,6 +19,7 @@ Gelelim ADO.NET’e. ADO.NET içerisinde de, view'lara benzer bir özellik olara
 Bilindiği gibi DataTable nesnesine ait Select özelliğine ifadeler atayarak da var olan bir tablodan veri alt kümeleri elde edebiliyorduk. Fakat bu select özelliğine atanan ifade sonucu elde edilen veriler bir DataRows dizisine aktarılıyor ve kontrollere bağlanamıyordu. Oysaki DataView sonuçlarını istediğiniz kontrole bağlamanız mümkündür. DataTable ile DataView arasında yer alan bir fark da, DataTable’ın sahip olduğu satırlar DataRow sınıfı ile temsil edilirken DataView nesnesinin sahip olduğu satırlar DataRowView sınıfı ile temsil edilirler. Bir DataTable nesnesine nasıl ki yeni satırlar ekleyebiliyor, silebiliyor ve primary key üzerinden arama yapabiliyorsak aynı işlemleri DataView nesnesi içinde yapabiliriz. Bunları AddNew, Delete ve Find yöntemleri ile yapabiliriz. Bir sonraki makalemizde bu metodlar ile ilgili geniş bir örnek daha yapacağız.
 
 Bugünkü makalemizde konuya açıklık getirmesi açısından iki adet örnek yapacağız. Her iki örneğimiz de ağırlıklı olarak DataView nesnesinin RowFilter özelliği üzerinde duracak. RowFilter özelliği DataTable sınıfının Select özelliğine çok benzer. Bir süzme ifadesi alır. Oluşturulan ifade içinde, kullanılacak alan(ların) veri tiplerine göre bazı semboller kullanmamız gerekmektedir. Bunu açıklayan tablo aşağıda belirtilmiştir.
+
 | Veri Tipi | Kullanılan Karakter | Örnek |
 | --- | --- | --- |
 | Tüm Metin Değerleri | ' (Tek tırnak) | " Adi='Burak'"" |

@@ -32,8 +32,7 @@ Bu anlattığım olaylar yaklaşık bir ay kadar önce gerçekleşti. Şu anda b
 
 Bugün, oyun programlamanın önemli temellerden birisi olan Çarpışma (Collision) tekniklerine giriş yapacağız. Bir oyunda, birbirinden bağımsız öğelerin birbirleriyle çarpışmaları üzerinde duracağımız asıl konu olacak. Bir savaş oyununda tarafların birbirlerine karşı yaptıkları hamleler sonucu kimin kime vurduğunu tespit etmek, vuruşların yönüne veya şiddetine göre, darbeyi alan nesnelerin ne tür hareketlerde bulunacağına karar vermek açısından Çarpışma teknikleri gerçekten önemlidir. Bu teknikler birkaç tanedir. Bugün ben sizlere, 2 boyutlu koordinat sisteminde dörtgensel şekillerin çarpışmalarının nasıl tespit edilebileceğini anlatmaya çalışacağım.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Dortgenlerin baz alındığı bu teknikte amaç, objeleri içine alan ve sınırlayan dörtgensel alanların birbirleri üstüne gelip gelmediklerinin tespit edilebilmesidir.
+> Not: Dörtgenlerin baz alındığı bu teknikte amaç, objeleri içine alan ve sınırlayan dörtgensel alanların birbirleri üstüne gelip gelmediklerinin tespit edilebilmesidir.
 
 Öncelikle durumu analiz edebilmek amacıyla aşağıdaki şekli göz önüne alalım.
 
@@ -43,8 +42,7 @@ Dortgenlerin baz alındığı bu teknikte amaç, objeleri içine alan ve sınır
 
 Senaryo gereği, köpek balığı ve yarış arabası nesnelerimizin hareketli olduklarını düşünelim. Burada, yarış arabası ve köpek balığı aslında ekranda piksel olarak yer kaplamaktadır. Bu iki piksel topluluğunun çarpışıp çarpışmadıklarını test edebilmek için kullanılabilecek en basit teknik, nesnelerin çevresini saran dörtgenlerin bir birleri üstüne gelip gelmediklerini tespit etmektir. Bu nedenle, senaryomuzda yarış arabımızı A isimli, köpek balığımızı ise B isimli dörtgenler ile çevrelediğimizi düşünelim. İşte bu noktadan sonra işin içine biraz matematik girecek.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Eğer bu iki nesnenin X koordinatları arasındaki fark, genişliklerinin yarılarının toplamından küçük ise ve iki nesnenin Y koordinatları arasındaki fark, yüksekliklerinin yarılarının toplamından küçük ise, bu iki dörtgen üst üste gelmiş dolayısıyla çarpışma (Collision) gerçekleşmiş demektir.
+> Not: Eğer bu iki nesnenin X koordinatları arasındaki fark, genişliklerinin yarılarının toplamından küçük ise ve iki nesnenin Y koordinatları arasındaki fark, yüksekliklerinin yarılarının toplamından küçük ise, bu iki dörtgen üst üste gelmiş dolayısıyla çarpışma (Collision) gerçekleşmiş demektir.
 
 Bunun matematiksel olarak aşağıdaki şekil ile daha iyi anlayabiliriz.
 

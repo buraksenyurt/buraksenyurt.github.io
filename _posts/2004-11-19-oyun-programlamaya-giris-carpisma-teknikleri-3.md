@@ -20,8 +20,7 @@ Oyun programcılığında önemli bir yere sahip olan çarpışma tekniklerinde,
 
 Bu teoride, dörtgenin dairesel nesneye göre olan konumlarını ele almamız gerekiyor. Bu da bizim, dörtgen nesnesine ait olan maksimum ve minimum sınır noktalarını bilmemiz gerektiğini göstermektedir. Buna göre, dörtgensel nesnenin köşe noktalarının x ve y koordinatları ele alınır. Kısaca, oluşturacağımız pisagor üçgeni için bu maksimum ve minimum x, y koordinatlarını bilmemiz gerekiyor. Çarpışma teoremine gelince;
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Dörtgenin dairesel nesneye en yakın olan köşe noktalarından yola çıkılarak oluşturulan dik üçgene ait hipotenüs değeri, dairesel nesnenin yarıçapından küçük ise çarpışma vardır.
+> Not: Dörtgenin dairesel nesneye en yakın olan köşe noktalarından yola çıkılarak oluşturulan dik üçgene ait hipotenüs değeri, dairesel nesnenin yarıçapından küçük ise çarpışma vardır.
 
 Şimdi buradaki dört bölgeyi kısaca inceleyelim. Örnek olarak 4üncü bölgeyi aşağıdaki şekilde olduğu gibi ele alabiliriz. Esasen tüm bölgelerde, dörtgensel nesneye ait minX,maxX,minY ve maxY koordinatları büyük öneme sahiptir. Örneğin PRO üçgenini göz önüne aldığımızda, kenarların uzunluklarını bulabilmek için R noktasının koordinatlarından yararlanılmaktadır. R noktasına dikkat edecek olursanız, dörtgenin en uzak X ve en uzak Y değerlerine sahip olduğunu görürsünüz. Dolayısıyla biz, PO uzaklığını bulmak istiyorsak, Ox değerinden RmaxX değerini çıkartmamız gerekecektir. Aynı durum RP kenarının boyunu bulurken de geçerlidir. Bu durumda, Oy değerinden RmaxY değerini çıkartırız. Burada dörtgenin dördüncü bölgeye düştüğünü anlamak için dairenin x,y koordinatları ile R noktasının koordinatları karşılaştırılır. Burada dikkat etmemiz gereken husus, R noktasının koordiantlarını dörtenin daireye olan konumuna göre değişeceğidir.
 

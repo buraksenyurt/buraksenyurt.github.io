@@ -67,20 +67,12 @@ namespace GetOleDbSchemaTables1
 
 Şimdi kodlarımızdaki blTabloListesi=con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null); satırını daha yakından incelemeye çalışalım. İlk parametremiz OleDbSchemaGuid.Tables, con isimli OleDbConnection nesnemizin bağlandığı SQL sunucusundaki Friends veritabanından sadece tablo bilgilerini elde etmek istediğimizi göstermektedir. Sınırlandırıcı özelliğe sahip olan ikinci parametremize null değerini vererek tüm tabloların şemaya dâhil edilmesini ve DataTable nesnesine aktarılmasını sağlamış olduk. Bu noktada bu iki parametrenin birbirleri ile ilişkili olduklarını söyleyebiliriz. Çünkü, OleDbSchemaGuid parametresinin vereceği tabloların şema yapısı, ikinci parametreye bağlıdır. Şöyle ki;
 
-Sınırlama Alanı
-Açıklaması
-
-TABLE_CATALOG
-Katalog adı. Eğer provider'ımız katalogları desteklemiyorsa null değeri verilir.
-
-TABLE_SCHEMA
-Şema adı. Yine provider'ımız şemaları desteklemiyorsa null değeri verilir.
-
-TABLE_NAME
-Belirli bir tabloya ait şema bilgileri kullanılacaksa, örneğin bu tabloya ait sütun bilgileri alınıcaksa kullanılır.
-
-TABLE_TYPE
-Veritabanından hangi tipteki tabloları alacağımızı belirtmek için kullanılır.
+| **Sıralama Alanı** | **Açıklaması** |
+| --- | --- |
+| TABLE_CATALOG | Katalog adı. Eğer provider'ımız katalogları desteklemiyorsa null değeri verilir. |
+| TABLE_SCHEMA | Şema adı. Yine provider'ımız şemaları desteklemiyorsa null değeri verilir. |
+| TABLE_NAME | Belirli bir tabloya ait şema bilgileri kullanılacaksa, örneğin bu tabloya ait sütun bilgileri alınıcaksa kullanılır. |
+| TABLE_TYPE | Veritabanından hangi tipteki tabloları alacağımızı belirtmek için kullanılır. |
 
 Tablo 2. OleDbSchemaGuid.Tables İçin Sınırlama Parametresi Elemanları
 

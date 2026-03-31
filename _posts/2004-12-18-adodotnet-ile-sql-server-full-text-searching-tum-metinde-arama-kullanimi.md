@@ -47,8 +47,7 @@ FREETEXTTABLE ( Tablo Adi , Arama Yapılacak Alan , 'Aranacak Kelime' )
 
 Her iki anahtar sözcük de belli bir alan üzerinde Full-Text Searching (Tüm Metinde Arama) işlemini gerçekleştirmemizi sağlar. Ancak FreeTextTable sonuçları farklı bir tablo ile geri döndürür. Bu tabloda Rank ve Key isimli iki alan vardır. Key alanı, arama işleminin yapıldığı catalog oluşturulurken kullanılan primary key değerlerini alır. Rank alanı ise, aranan kelimelerin bulunduğu satırlar arasında bir derecelendirme yapılmasına imkân tanır.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Bu derecelendirme sayesinde aranan kelimenin daha çok geçtiği satırlardan az geçtiği satırlara doğru (ya da aranan kelimenin en uygun olarak eşleştirilebildiği alanlardan en az eşleştirildiği alanlara doğru) sıralanmış bir tablo görüntüsü elde etmemiz mümkündür.
+> Not: Bu derecelendirme sayesinde aranan kelimenin daha çok geçtiği satırlardan az geçtiği satırlara doğru (ya da aranan kelimenin en uygun olarak eşleştirilebildiği alanlardan en az eşleştirildiği alanlara doğru) sıralanmış bir tablo görüntüsü elde etmemiz mümkündür.
 
 İlk olarak Query Analyzer yardımıyla bu sorguların çalıştırılmasını inceleyelim.
 

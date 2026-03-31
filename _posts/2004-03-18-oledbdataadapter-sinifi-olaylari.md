@@ -16,55 +16,24 @@ tags:
 ---
 Bu makalemizde, OleDbDataAdapter sınıfının olaylarını incelemeye çalışacağız. OleDbDataAdapter sınıfı aşağıdaki tabloda belirtilen üç önemli olayı içermektedir.
 
-Olay
-Prototipi
-Açıklama
-
-FillError
-public event FillErrorEventHandler FillError;
-OleDbDataAdapter'ın fill metodu kullanıldığında oluşabilecek bir hata durumunda bu olay çalışır.
-
-RowUpdating
-public event OleDbRowUpdatingEventHandler RowUpdating;
-Update metodu çalıştırılarak, veritabanındaki tabloya yapılan değişiklikler (satır ekleme, satır silme, satır güncelleme gibi) gerçekleştirilemden önce bu olay çalışır.
-
-RowUpdated
-public event OleDbRowUpdatedEventHandler RowUpdated;
-Veritabanında yapılacak olan değişiklikler, Update metodu ile gerçekleştirildikten sonra bu olay çalışır.
+| **Olay Adı** | **Prototipi** | **Açıklama** |
+| --- | --- | --- |
+| FillError | public event FillErrorEventHandler FillError; | OleDbDataAdapter'ın fill metodu kullanıldığında oluşabilecek bir hata durumunda bu olay çalışır. |
+| RowUpdating | public event OleDbRowUpdatingEventHandler RowUpdating; | Update metodu çalıştırılarak, veritabanındaki tabloya yapılan değişiklikler (satır ekleme, satır silme, satır güncelleme gibi) gerçekleştirilemden önce bu olay çalışır. |
+| RowUpdated | public event OleDbRowUpdatedEventHandler RowUpdated; | Veritabanında yapılacak olan değişiklikler, Update metodu ile gerçekleştirildikten sonra bu olay çalışır. |
 
 Tablo 1. OleDbDataAdapter olayları.
 
-Şimdi dilerseniz bu olayları kısaca incelemeye çalışalım. RowUpdating olayından başlayalım. Bu olay, OleDbRowUpdatingEventArgs sınıfı türünden bir parametre almaktadır. Bu paramterenin sahip olduğu özellikleri kullanarak, bağlantısız katmandaki veriler, veritabanına yazılmadan önce değişik işlevleri yerine getirme imkanına sahip olmuş oluruz. OleDbRowUpdatingEventArgs sınıfının özellikleri aşağıdaki tabloda yer almaktadır.
+Şimdi dilerseniz bu olayları kısaca incelemeye çalışalım. RowUpdating olayından başlayalım. Bu olay, OleDbRowUpdatingEventArgs sınıfı türünden bir parametre almaktadır. Bu paramterenin sahip olduğu özellikleri kullanarak, bağlantısız katmandaki veriler, veritabanına yazılmadan önce değişik işlevleri yerine getirme imkanına sahip olmuş oluruz. OleDbRowUpdatingEventArgs sınıfının özellikleri aşağıdaki tabloda yer almaktadır. OleDbRowUpdatingEventArgs Sınıfı özellikleri aşağıdaki tabloda yer almaktadır.
 
-OleDbRowUpdatingEventArgs Sınıfı Özellikleri
-
-Özellik
-Görevi
-Prototipi
-
-Command
-Update metodu çalıştırılıdığında çalışacak olan OleDbCommand tipindeki komutu işaret eder. Bu nedenle özelliğin değerinin tipi OleDbCommand'dır.
-public new OleDbCommand Command {get; set;}
-
-Row
-Update metodu çağırıldığında, veritabanına gönderilecek olan satırı işaret eder. Bu satır DataRow tipindedir ve bu nedenle özelliğin veri tipi DataRow'dur.
-public DataRow Row {get;}
-
-Status
-Bu özellik ile çalışacak olan komut nesnesinin durumu elde edilir veya değiştirilir. Özellik UpdateStatus numaralandırıcısı türünden bir değeri belirtir. Bu numaralandırıcı Continue, ErrorsOccurred, SkipAllRemainingRows, SkipCurrentRow değerlerinden birisini alır.
-public UpdateStatus Status {get; set;}
-
-StatementType
-Bu özellik Update metodu ile çalıştırılacak olan sql ifadesini işaret etmektedir. StatementType numaralandırıcısı tipinden bir değeri belirtir. Bu numaralandırıcı sql ifadesinin tipini belirten select, insert, delete ve update değerlerinden birisini alır.
-public StatementType StatementType {get;}
-
-TableMapping
-Bu özellik, update metodu çalıştırıldığında, bağlantısız katman nesnesindeki tablo haritası ile, veritabanındaki tablo arasındaki eşleştirme ilişkisini DataTableMapping sınıfı örneği olan bir nesne ile ifade eder.
-public DataTableMapping TableMapping {get;}
-
-Errors
-Update metodu çalıştırılıdığında işletilen sql komutunun çalışmasında bir hata oluşması durumunda, oluşan hatayı temsil eden bir özelliktir. Bu sebepler özelliğin tipi Exception'dır.
-public Exception Errors {get; set;}
+| **Özellik Adı** | **Veri Tipi** | **Açıklama** | **Prototipi** |
+| --- | --- | --- | --- |
+| Command | OleDbCommand | Update metodu çalıştırılıdığında çalışacak olan OleDbCommand tipindeki komutu işaret eder. | public new OleDbCommand Command {get; set;} |
+| Row | DataRow | Update metodu çağırıldığında, veritabanına gönderilecek olan satırı işaret eder. | public DataRow Row {get;} |
+| Status | UpdateStatus | Bu özellik ile çalışacak olan komut nesnesinin durumu elde edilir veya değiştirilir. | public UpdateStatus Status {get; set;} |
+| StatementType | StatementType | Bu özellik Update metodu ile çalıştırılacak olan sql ifadesini işaret etmektedir. | public StatementType StatementType {get;} |
+| TableMapping | DataTableMapping | Bu özellik, update metodu çalıştırıldığında, bağlantısız katman nesnesindeki tablo haritası ile, veritabanındaki tablo arasındaki eşleştirme ilişkisini ifade eder. | public DataTableMapping TableMapping {get;} |
+| Errors | Exception | Update metodu çalıştırılıdığında işletilen sql komutunun çalışmasında bir hata oluşması durumunda, oluşan hatayı temsil eder. | public Exception Errors {get;} |
 
 Tablo 2. OleDbRowUpdatingEventArgs Sınıfı Özellikleri
 
@@ -216,20 +185,12 @@ Burada yaptığımız son derece basit. RowUpdated olayı, veritabanına girilec
 
 Makalemizde son olarak FillError olayını ele almaya çalışacağım. Bu olay bahsettiğimiz gibi Fill metodu uygulandığında oluşabilecek hatalarda devreye girmektedir.FillError olayı FillErrorEventArgs sınıfı türünden bir parametre alır. FillErrorEventArgs sınıfının, FillError olayı için kullanabileceğimiz özellikleri aşağıdaki tabloda yer almaktadır.
 
-FillErrorEventArgs Özelliği
-Açıklama
-
-Continue
-Fill metodu ile karşılaşıldığında bir hata oluşduğu takdirde Continue özelliği kullanılırsa, bu hatalar görmezden gelinerek işleme devam edilir.
-
-Values
-Bir hata oluştuğunda bu hata ile ilgili alanların değerlerini belirtir.
-
-DataTable
-Hatanın oluştuğu DataTable nesnesine işaret eder.
-
-Errors
-Meydana gelen hatayı exception türünden belirtir.
+| **Özellik Adı** | **Veri Tipi** | **Açıklama** |
+| --- | --- | --- |
+| Continue | bool | Fill metodu ile karşılaşıldığında bir hata oluşduğu takdirde Continue özelliği kullanılırsa, bu hatalar görmezden gelinerek işleme devam edilir. |
+| Values | DataRow | Bir hata oluştuğunda bu hata ile ilgili alanların değerlerini belirtir. |
+| DataTable | DataTable | Hatanın oluştuğu DataTable nesnesine işaret eder. |
+| Errors | Exception | Meydana gelen hatayı exception türünden belirtir. |
 
 Tablo 3. FillErrorEventArgs Sınıfının Özellikleri
 

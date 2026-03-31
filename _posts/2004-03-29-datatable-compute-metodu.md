@@ -15,60 +15,15 @@ tags:
 
 Öncelikle, T-Sql'de yer alan Aggregate fonksiyonlarından kısaca bahsetmekta yarar olduğunu düşünüyorum. Bu fonksiyonların en önemlileri ve kullanışlıları aşağıdaki tabloda yer almaktadır.
 
-Fonksiyon
-Prototipi
-Açıklama
-Dönüş Tipi
-Örnek
-
-AVG (Ortalama)
-AVG ([ ALL | DISTINCT ] ifade)
-Sql sorgusunda belirtilen kritere uyan alanların ortalamasını alır.
-int, decimal, money, float
-SELECT AVG (Prim)
-FROM Primler
-WHERE PerID = 1002124
-
-SUM (Toplam)
-SUM ([ ALL | DISTINCT ] ifade)
-Sql sorgusunda belirtilen kritere uyan alanların toplam değerini alır.
-int, decimal, money, float
-SELECT SUM (Prim)
-FROM Primler
-
-COUNT (Toplam Sayı)
-COUNT ({ [ ALL | DISTINCT ] ifade ] | })
-Satır sayısını verir.
-int
-SELECT COUNT (*)
-FROM Primler
-
-MAX (En büyük değer)
-MAX ([ ALL | DISTINCT ] ifade)
-Belirtilen alana ait sütundaki en büyük değeri verir.
-ifade olarak belirtilen tip ile aynıdır.
-SELECT MAX (Prim)
-FROM Primler
-
-MIN (En küçük değer)
-MIN ([ ALL | DISTINCT ] ifade)
-Belirtilen alana ait sütunlardaki en küçük değeri verir.
-ifade olarak belirtilen tip ile aynıdır.
-SELECT MIN (Prim) FROM Primler
-
-COUNT_BIG (Toplam Sayı)
-COUNT Fonksiyonu gibi satır sayısını verir. Tek fark dönüş değeridir.
-bigint
-
-SELECT COUNT_BIG (*)
-FROM Primler
-
-STDEV (Standart Sapma)
-STDEV (expression)
-Belirtilen kritere uyan alanlar için Standart Sapma değerini hesaplar.
-float
-SELECT STDEV (Alan)
-FROM Tablo
+| **Fonksiyon** | **Prototipi** | **Açıklama** | **Dönüş Tipi** | **Örnek** |
+| --- | --- | --- | --- | --- |
+| AVG (Ortalama) | AVG ([ ALL &#124; DISTINCT ] ifade) | Sql sorgusunda belirtilen kritere uyan alanların ortalamasını alır. | int, decimal, money, float | SELECT AVG (Prim) FROM Primler WHERE PerID = 1002124 |
+| SUM (Toplam) | SUM ([ ALL &#124; DISTINCT ] ifade) | Sql sorgusunda belirtilen kritere uyan alanların toplam değerini alır. | int, decimal, money, float | SELECT SUM (Prim) FROM Primler |
+| COUNT (Toplam Sayı) | COUNT ({ [ ALL &#124; DISTINCT ] ifade } &#124; *) | Satır sayısını verir. | int | SELECT COUNT (*) FROM Primler |
+| MAX (En büyük değer) | MAX ([ ALL &#124; DISTINCT ] ifade) | Belirtilen alana ait sütundaki en büyük değeri verir. | ifade olarak belirtilen tip ile aynıdır. | SELECT MAX (Prim) FROM Primler |
+| MIN (En küçük değer) | MIN ([ ALL &#124; DISTINCT ] ifade) | Belirtilen alana ait sütunlardaki en küçük değeri verir. | ifade olarak belirtilen tip ile aynıdır. | SELECT MIN (Prim) FROM Primler |
+| COUNT_BIG (Toplam Sayı) | COUNT_BIG ({ [ ALL &#124; DISTINCT ] ifade } &#124; *) | COUNT Fonksiyonu gibi satır sayısını verir. Tek fark dönüş değeridir. | bigint | SELECT COUNT_BIG (*) FROM Primler |
+| STDEV (Standart Sapma) | STDEV (expression) | Belirtilen kritere uyan alanlar için Standart Sapma değerini hesaplar. | float | SELECT STDEV (Alan) FROM Tablo |
 
 Tablo 1. Aggregate Fonksiyonları
 

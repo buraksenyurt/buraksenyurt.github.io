@@ -17,8 +17,7 @@ Kitabın bir bölümünde, ekranda yer alan aynı boyutlu nesnelerin çarpışma
 
 Teori gayet basitti. İlk olarak oyun sahasını, eşit boyutlu karelere bölecektim. Bu karelerin boyutları oyundaki nesnelerin çevresini saran hayali karelerinki ile aynı olacaktı. Böylece bir kare içinde her zaman tek bir oyun elemanı tam olarak sığmış bulunacaktı. Daha sonra ekrandaki elemanları iki boyutlu bir matris dizisi içinde bir şekilde konumlandıracaktım. Son olarak, kahramanın her hareketinde yöne bağlı olaraktan önceki veya sonraki kare alanlarını kontrol edecek ve orada bir Duvar nesnesi var ise çarpışma olduğunu belirterek o yöne olan hareketi kesecektim.
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Teoremin kilit noktası, oyun alanındaki karelerde bulunan elemanları, iki boyutlu bir Matris dizisi içerisinde temsil edebilmekti.
+> Not: Teoremin kilit noktası, oyun alanındaki karelerde bulunan elemanları, iki boyutlu bir matris dizisi içerisinde temsil edebilmekti.
 
 İlk olarak aşağıdaki gibi bir oyun alanını düşündüm.
 
@@ -45,8 +44,7 @@ eğer Matris[5,8+1]=0 ise (ne duvar ne de Muz var ise.)
 
 Bu kontrolü Packo'nun yapacağı doğrusal her hareket için uygulayabilirdim. Böylece,
 
-![dikkat.gif](/assets/images/2004/dikkat.gif)
-Hareket yönüne göre bir sonraki adımda yer alan elemanları Matris dizisi içinde bularak çarpışma kontrolünü gerçekleştirebilirdim.
+> Not: Hareket yönüne göre bir sonraki adımda yer alan elemanları matris dizisi içinde bularak çarpışma kontrolünü gerçekleştirebilirdim.
 
 Teoremi kafamda pekiştirdikten sonra, sıra bunu uygulamaya dökmeye gelmişti. Elbette ki bir Windows uygulaması için böyle bir teoremi araştırmaya çalışırken birtakım zorluklar ile karşılaşabilirdim. Örneğin, oyun başladığında Duvarların, Muzların ve Packo'nun rastgele ekrana konumlandırılması. Ekranda piksel bazında tutulan karesel alanların, matris dizisi içerisinde nasıl indislenebileceği. Öyle ya, 400 piksel'e 400 piksellik bir Form alanını 400*400 elemanlı bir matris dizisinde aynen uygulamak gereksiz yere hafıza tüketimine neden olurdu. Ya da, ekrandaki bir Muz'un üstünden geçildiğinde o resmin nasıl kaldırılacağı. Bu gibi pek çok sorunu önceden düşünmek ve uygulamayı ona göre planlamak gerekiyordu. Bu amaçla önce düşündüm ve sonra aşağıdaki kodları geliştirdim.
 

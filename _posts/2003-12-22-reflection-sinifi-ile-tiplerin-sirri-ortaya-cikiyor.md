@@ -44,31 +44,16 @@ Uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsünü elde e
 
 Şekil 1. System.Int32 sınıfının üyeleri.
 
-Üye listesini incelediğimizde 15 üyenin olduğunu görürüz. Metodlar, alanlar vardır. Ayrıca dikkat ederseniz, Parse, ToString metodları birden fazla defa geçmektedir. Bunun nedeni bu metodların overload (aşırı yüklenmiş) versiyonlara sahip olmasıdır. Kodları incelediğimizde, System.Int32 sınıfına ait tipleri GetMembers metodu ile, System.Reflection uzayında yer alan MemberInfo sınıfı tipinden bir diziye aldığımızı görürüz. İşte olayın önemli kodları bunlardan oluşmaktadır. MemberInfo dışında kullanabaileceğimiz başka Reflection sınıflarıda vardır. Bunlar;
+Üye listesini incelediğimizde 15 üyenin olduğunu görürüz. Metodlar, alanlar vardır. Ayrıca dikkat ederseniz, Parse, ToString metodları birden fazla defa geçmektedir. Bunun nedeni bu metodların overload (aşırı yüklenmiş) versiyonlara sahip olmasıdır. Kodları incelediğimizde, System.Int32 sınıfına ait tipleri GetMembers metodu ile, System.Reflection uzayında yer alan MemberInfo sınıfı tipinden bir diziye aldığımızı görürüz. İşte olayın önemli kodları bunlardan oluşmaktadır. MemberInfo dışında kullanabileceğimiz başka Reflection sınıfları da vardır. Bunlar;
 
-ConstructorInfo
-
-Tipe ait yapıcı metod üyelerini ve bu üyelere ait bilgilerini içerir.
-
-EventInfo
-
-Tipe ait olayları ve bu olaylara ait bilgileri içerir.
-
-MethodInfo
-
-Tipe ait metodları ve bu metodlara ait bilgileri içerir.
-
-FieldInfo
-
-Tip içinde kullanılan alanları ve bu alanlara ilişkin bilgileri içerir.
-
-ParameterInfo
-
-Tip içinde kullanılan parametreleri ve bu parametrelere ait bilgileri içerir.
-
-PropertyInfo
-
-Tip içinde kullanılan özellikleri ve bu özelliklere ait bilgileri içerir.
+| Sınıf Adı | Açıklama |
+| --- | --- |
+| ConstructorInfo | Tipe ait yapıcı metod üyelerini ve bu üyelere ait bilgilerini içerir. |
+| EventInfo | Tipe ait olayları ve bu olaylara ait bilgileri içerir. |
+| MethodInfo | Tipe ait metodları ve bu metodlara ait bilgileri içerir. |
+| FieldInfo | Tip içinde kullanılan alanları ve bu alanlara ilişkin bilgileri içerir. |
+| ParameterInfo | Tip içinde kullanılan parametreleri ve bu parametrelere ait bilgileri içerir. |
+| PropertyInfo | Tip içinde kullanılan özellikleri ve bu özelliklere ait bilgileri içerir. |
 
 Tablo 1. Reflection Uzayının Diğer Kullanışlı Sınıfları
 

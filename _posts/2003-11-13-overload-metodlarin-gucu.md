@@ -22,13 +22,9 @@ Bu makalemde sizlere overload kavramından bahsetmek istiyorum. Konunun daha iyi
 
 Şekil 1 de MetodA isminde 3 adet metod tanımı görüyoruz. Bu metodlar aynı isime sahip olmasına rağmen imzaları nedeni ile birbirlerinden tamamıyla farklı metodlar olarak algılanırlar. Bize sağladığı avantaj ise, bu metodları barındıran bir sınıf nesnesi yarattığımızda aynı isme sahip metodları farklı parametreler ile çağırabilmemizdir. Bu bir anlamda her metoda farklı isim vermek gibi bir karışıklığında bir nebze önüne geçer. Peki imza dediğimiz olay nedir? Bir metodun imzası şu unsurlardan oluşur.
 
-Metod İmzası Kabul Edilen Unsurlar
-Metod İmzası Kabul Edilmeyen Unsurlar
-
-Parametre Sayısı
-Parametrenin Tipleri
-
-Metodun Geri Dönüş Tipi
+| Metod İmzası Kabul Edilen Unsurlar | Metod İmzası Kabul Edilmeyen Unsurlar |
+| --- | --- |
+| Parametre Sayısı, Parametrenin Tipleri | Metodun Geri Dönüş Tipi |
 
 Tablo 1. Kullanım Kuralları
 

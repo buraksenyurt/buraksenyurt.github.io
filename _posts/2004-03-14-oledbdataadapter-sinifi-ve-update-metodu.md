@@ -86,7 +86,7 @@ Güncelle başlıklı butona tıkladığımızda, OleDbCommandBuilder nesnemiz, 
 
 Dilerseniz CommandBuilder nesnemizin bizim için oluşturmuş olduğu komutların nasıl sql ifadeleri içerdiğini inceleyelim. Bu amaçla, OleDbCommandBuilder sınıfına ait aşağıda prototipleri belirtilen metodları kullanacağız.
 
-| Metod Adı | Prototipi |
+| **Metot Adı** | **Prototipi** |
 | --- | --- |
 | GetInsertCommand | public OleDbCommand GetInsertCommand (); |
 | GetDeleteCommand | public OleDbCommand GetDeleteCommand (); |
