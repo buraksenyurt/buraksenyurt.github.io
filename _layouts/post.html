@@ -36,61 +36,30 @@ layout: default
     {{ content }}
   </div>
 
-  {%- assign related_count = 0 -%}
-  {%- capture related_posts_markup -%}{%- endcapture -%}
+  {%- assign current_timestamp = site.time | date: '%s' | plus: 0 -%}
+  {%- assign one_year_ago_timestamp = current_timestamp | minus: 31536000 -%}
+  {%- assign related_pool = "" | split: "" -%}
   {%- for post in site.posts -%}
     {%- if post.url != page.url -%}
-      {%- assign candidate_taxonomy = site.data.inferred_taxonomy.posts[post.url] -%}
-      {%- assign candidate_categories = candidate_taxonomy.categories | default: post.categories -%}
-      {%- assign candidate_tags = candidate_taxonomy.tags | default: post.tags -%}
-      {%- assign category_match = false -%}
-      {%- assign tag_match = false -%}
-
-      {%- for category in current_categories -%}
-        {%- if candidate_categories contains category -%}
-          {%- assign category_match = true -%}
-          {%- break -%}
-        {%- endif -%}
-      {%- endfor -%}
-
-      {%- for tag in current_tags -%}
-        {%- if candidate_tags contains tag -%}
-          {%- assign tag_match = true -%}
-          {%- break -%}
-        {%- endif -%}
-      {%- endfor -%}
-
-      {%- if category_match -%}
-        {%- capture related_posts_markup -%}
-          {{ related_posts_markup }}
-          <li>
-            <span class="related-post-date">{{ post.date | date: site.minima.date_format }}</span>
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </li>
-        {%- endcapture -%}
-        {%- assign related_count = related_count | plus: 1 -%}
-      {%- elsif tag_match -%}
-        {%- capture related_posts_markup -%}
-          {{ related_posts_markup }}
-          <li>
-            <span class="related-post-date">{{ post.date | date: site.minima.date_format }}</span>
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </li>
-        {%- endcapture -%}
-        {%- assign related_count = related_count | plus: 1 -%}
-      {%- endif -%}
-
-      {%- if related_count >= 4 -%}
-        {%- break -%}
+      {%- assign post_timestamp = post.date | date: '%s' | plus: 0 -%}
+      {%- if post_timestamp >= one_year_ago_timestamp -%}
+        {%- assign related_pool = related_pool | push: post -%}
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
 
-  {%- if related_count > 0 -%}
-    <section class="related-posts" aria-label="İlgini çekebilecek diğer yazılar">
-      <h2>İlgini çekebilecek diğer yazılar</h2>
+  {%- assign random_related_posts = related_pool | sample: 5 -%}
+
+  {%- if random_related_posts.size > 0 -%}
+    <section class="related-posts" aria-label="İlginizi Çekebilir">
+      <h2>Bunlar da ilginizi çekebilir...</h2>
       <ul class="related-post-list">
-        {{ related_posts_markup }}
+        {%- for post in random_related_posts -%}
+          <li>
+            <span class="related-post-date">{{ post.date | date: site.minima.date_format }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </li>
+        {%- endfor -%}
       </ul>
     </section>
   {%- endif -%}
