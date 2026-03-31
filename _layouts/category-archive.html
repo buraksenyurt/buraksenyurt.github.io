@@ -15,37 +15,37 @@ layout: default
   <header class="page-header">
     <h1 class="page-heading">{{ page.title | escape }}</h1>
     <p class="archive-summary">
-      {{ page.category_name }} kategorisinde toplam {{ taxonomy_posts | size }} yazi var.
+      {{ page.category_name }} kategorisinde toplam {{ taxonomy_posts | size }} yazı var.
       {%- if total_pages > 1 -%}
         Sayfa {{ current_page }} / {{ total_pages }}.
       {%- endif -%}
     </p>
   </header>
 
-  <section class="taxonomy-detail-summary" aria-label="Kategori ozeti">
+  <section class="taxonomy-detail-summary" aria-label="Kategori özeti">
     <div class="taxonomy-detail-stat">
       <strong>{{ taxonomy_posts | size }}</strong>
-      <span>toplam yazi</span>
+      <span>toplam yazı</span>
     </div>
     <div class="taxonomy-detail-stat">
       <strong>{{ newest_post.date | date: site.minima.date_format }}</strong>
-      <span>en yeni yazi</span>
+      <span>en yeni yazı</span>
     </div>
     <div class="taxonomy-detail-stat">
       <strong>{{ oldest_post.date | date: site.minima.date_format }}</strong>
-      <span>ilk yazi</span>
+      <span>ilk yazı</span>
     </div>
     <div class="taxonomy-detail-stat">
       <strong>{{ current_posts | size }}</strong>
-      <span>bu sayfadaki yazi</span>
+      <span>Bu sayfadaki yazılar</span>
     </div>
   </section>
 
   <div class="home-toolbar taxonomy-detail-toolbar">
-    <h2 class="post-list-heading">Bu kategorideki yazilar</h2>
+    <h2 class="post-list-heading">Bu kategorideki yazılar</h2>
     <div class="home-toolbar-meta">
-      <a href="{{ '/kategoriler/' | relative_url }}">Tum kategoriler</a>
-      <a href="{{ '/arsiv/' | relative_url }}">Genel arsiv</a>
+      <a href="{{ '/kategoriler/' | relative_url }}">Tüm kategoriler</a>
+      <a href="{{ '/arsiv/' | relative_url }}">Genel arşiv</a>
       <a href="{{ '/arama/' | relative_url }}">Arama</a>
     </div>
   </div>

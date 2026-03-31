@@ -4,6 +4,7 @@ require 'json'
 require 'yaml'
 require 'time'
 require 'fileutils'
+require 'cgi'
 
 ROOT = File.expand_path('..', __dir__)
 POSTS_DIR = File.join(ROOT, '_posts')
@@ -203,17 +204,34 @@ def slugify_segment(value)
   normalize_key(value).tr('.+', '  ').gsub(/[^a-z0-9\s-]/, ' ').gsub(/\s+/, '-').gsub(/-+/, '-').gsub(/^-|-$/, '')
 end
 
-def post_url_for(path)
+def parse_post_filename(path)
   file_name = File.basename(path, File.extname(path))
-  year, month, day, slug = file_name.match(/\A(\d{4})-(\d{2})-(\d{2})-(.+)\z/).captures
-  "/#{year}/#{month}/#{day}/#{slug}/"
+  match = file_name.match(/\A(\d{4})-(\d{2})-(\d{2})-(.+)\z/)
+  raise "Invalid post filename format: #{file_name}. Expected YYYY-MM-DD-kebab-case.md" unless match
+
+  year, month, day, slug = match.captures
+
+  unless slug.match?(/\A[a-z0-9-]+\z/)
+    raise <<~ERROR.strip
+      Invalid post slug in #{file_name}. Use only lowercase ASCII letters, digits, and hyphens in _posts filenames.
+      Example: #{year}-#{month}-#{day}-ornek-makale-basligi.md
+    ERROR
+  end
+
+  [year, month, day, slug]
+end
+
+def post_url_for(path)
+  year, month, day, slug = parse_post_filename(path)
+  encoded_slug = CGI.escape(slug).gsub('+', '%20')
+  "/#{year}/#{month}/#{day}/#{encoded_slug}/"
 end
 
 def parsed_date(value, path)
   return value.iso8601 if value.respond_to?(:iso8601)
 
-  match = File.basename(path).match(/\A(\d{4})-(\d{2})-(\d{2})-/)
-  Time.utc(match[1].to_i, match[2].to_i, match[3].to_i).iso8601
+  year, month, day, = parse_post_filename(path)
+  Time.utc(year.to_i, month.to_i, day.to_i).iso8601
 end
 
 posts = {}

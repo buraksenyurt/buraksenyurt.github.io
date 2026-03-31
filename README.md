@@ -45,7 +45,7 @@ Tarayıcınızı açın ve **[http://localhost:4000](http://localhost:4000)** ad
 
 Proje, hem standart bir Jekyll dizin yapısına sahip olup hem de yılların birikimini organize etmek için ekstra özel betiklerle (script) zenginleştirilmiştir:
 
-- **`_posts/`:** Sitenin kalbidir. Tüm blog yazıları *(2003 yılından günümüze dek)* Markdown (`.md`) formatında burada bulunur. Yeni eklenecek bir yazının dosya adı muhakkak `YYYY-MM-DD-yazi-basligi.md` formatında olmalıdır.
+- **`_posts/`:** Sitenin kalbidir. Tüm blog yazıları *(2003 yılından günümüze dek)* Markdown (`.md`) formatında burada bulunur. Yeni eklenecek bir yazının dosya adı muhakkak `YYYY-MM-DD-yazi-basligi.md` formatında olmalıdır. Slug kısmında sadece küçük harf, rakam ve `-` kullanılmalıdır; Türkçe karakterler ve boşluklar başlıkta kalabilir ama dosya adında yer almamalıdır.
 - **`_layouts/` ve `_includes/`:** Sayfaların dış görünümünü *(iskeletini)* tanımlayan HTML dosyalarıdır. `post.html`, `home.html` gibi kalıplar burada tasarlanır ve verileri harmanlamak için Liquid template dili *(ör: `{% if %}`) kullanılır.*
 - **`assets/`:** CSS/SCSS (stil dosyaları) `main.scss` başta olmak üzere görsel assets *(`images/`)* ve sayfa için gereken diğer statik dosyaların olduğu ana klastördür.
 - **Taxonomy *(Kategori ve Etiketler)* Sistemi:** Orijinal kurguya ek olarak; blog yazılarının kategori ve etiketleri, `scripts/build_taxonomy.rb` adındaki Ruby betiği üzerinden bir ağaç yapısında derlenerek `_data/inferred_taxonomy.json` dosyasına yazılır. GitHub Actions (`.github/workflows/refresh-taxonomy.yml`), siz repository'ye yeni bir push yaptığınızda bu ruby kodunu sunucuda arka planda çalıştırır, istatistikleri çıkarır ve JSON dosyasını kendi kendine günceller.
@@ -53,7 +53,7 @@ Proje, hem standart bir Jekyll dizin yapısına sahip olup hem de yılların bir
 
 ## Yeni Yazı Ekleme
 
-Yeni bir makale eklemek için, `_posts/` klasörü içerisinde `2026-03-31-ornek-makale-basligi.md` adında bir dosya oluşturmanız yeterlidir. Dosyanın en başında **Front Matter** dediğimiz verilerin olduğu bir **YAML** bloğu bulunmalıdır. Aşağıdaki gibi bir şablon kullanabilirsiniz:
+Yeni bir makale eklemek için, `_posts/` klasörü içerisinde `2026-03-31-ornek-makale-basligi.md` adında bir dosya oluşturmanız yeterlidir. Dosya adındaki slug bölümünü ASCII/lowercase kebab-case olarak tutun. Örneğin `pi-sayisini-hesaplama-yolunda` doğru, `pİ-sayisini-hesaplama-yolunda` veya `Pi Sayisini Hesaplama` yanlış olur. Dosyanın en başında **Front Matter** dediğimiz verilerin olduğu bir **YAML** bloğu bulunmalıdır. Aşağıdaki gibi bir şablon kullanabilirsiniz:
 
 ```yaml
 ---
@@ -65,4 +65,4 @@ tags: [csharp, python, ipucu]
 ---
 ```
 
-Bu bloğu kapatan `---` çizgisinden sonrasında ise bildiğiniz standart Markdown işaret diliyle makalenizi yazmaya koyulabilirsiniz. Dosyayı kaydettiğinizde `jekyll serve` aracı sayfanızı saniyeler içinde anında HTML formatına çevirecektir.
+Bu bloğu kapatan `---` çizgisinden sonrasında ise bildiğiniz standart Markdown işaret diliyle makalenizi yazmaya koyulabilirsiniz. Dosyayı kaydettiğinizde `jekyll serve` aracı sayfanızı saniyeler içinde anında HTML formatına çevirecektir. Ayrıca `ruby scripts/build_taxonomy.rb` betiği dosya adını doğrular; standart dışı slug kullanılırsa hata vererek sizi durdurur.

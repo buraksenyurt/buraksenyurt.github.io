@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T16:38:43Z",
+  "generated_at": "2026-03-31T18:36:07Z",
   "posts": {
     "/2003/11/08/stored-procedure-yardimiyla-yeni-bir-kayit-eklemek/": {
       "title": "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek",
@@ -11113,9 +11113,7 @@
       "categories": [
         "Yazılım Tasarımı"
       ],
-      "tags": [
-
-      ]
+      "tags": []
     },
     "/2014/03/18/excel-icerigini-dataset-olarak-sisteme-katmak/": {
       "title": "Excel İçeriğini DataSet Olarak Sisteme Katmak",
@@ -11149,9 +11147,7 @@
       "categories": [
         "Genel"
       ],
-      "tags": [
-
-      ]
+      "tags": []
     },
     "/2014/03/20/tek-fotoluk-ipucu-108-property-value-dump/": {
       "title": "Tek Fotoluk İpucu 108–Property Value Dump",
@@ -11159,9 +11155,7 @@
       "categories": [
         "Genel"
       ],
-      "tags": [
-
-      ]
+      "tags": []
     },
     "/2014/03/23/visual-basic-6-0-ile-nostalji-ruzgari/": {
       "title": "Visual Basic 6.0 ile Nostalji Rüzgarı",
@@ -11169,9 +11163,7 @@
       "categories": [
         "Genel"
       ],
-      "tags": [
-
-      ]
+      "tags": []
     },
     "/2014/04/03/csharp-6-0-yeni-esintiler/": {
       "title": "C# 6.0–Yeni Esintiler",
@@ -11295,9 +11287,7 @@
       "categories": [
         "Framework Tabanlı Programlama"
       ],
-      "tags": [
-
-      ]
+      "tags": []
     },
     "/2014/06/27/aspdotnet-dogru-async-await-kullanimi/": {
       "title": "Asp.Net–Doğru async, await Kullanımı",
@@ -11377,9 +11367,7 @@
         "Web Programlama",
         "Servis Tabanlı Geliştirme"
       ],
-      "tags": [
-
-      ]
+      "tags": []
     },
     "/2014/09/03/wcf-webhttp-service-json-jquery-ajax-ve-cors-ile-yeni-bir-macera/": {
       "title": "WCF WebHttp Service, JSON, jQuery, Ajax ve CORS ile Yeni Bir Macera",
@@ -18120,7 +18108,7 @@
         "yazilim-mimarileri"
       ]
     },
-    "/2026/03/26/pİ-sayisini-hesaplama-yolunda/": {
+    "/2026/03/26/pi-sayisini-hesaplama-yolunda/": {
       "title": "Pi(π) Sayısını Hesaplama Yolunda",
       "date": "2026-03-26T20:30:00+03:00",
       "categories": [
@@ -20404,7 +20392,7 @@
     ],
     "Programlama Dilleri": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -25509,7 +25497,7 @@
     ],
     "algorithms": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -29134,7 +29122,7 @@
     ],
     "cargo": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -31184,7 +31172,7 @@
     ],
     "csharp": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -38345,7 +38333,7 @@
     ],
     "dotnet": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -51722,7 +51710,7 @@
     ],
     "mathematics": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       }
@@ -52890,7 +52878,7 @@
     ],
     "multithreading": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -56085,7 +56073,7 @@
     ],
     "parallelcomputing": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       }
@@ -60126,7 +60114,7 @@
     ],
     "rust": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
@@ -61421,7 +61409,7 @@
     ],
     "simd": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       }
@@ -71554,7 +71542,7 @@
     ],
     "zig": [
       {
-        "url": "/2026/03/26/pİ-sayisini-hesaplama-yolunda/",
+        "url": "/2026/03/26/pi-sayisini-hesaplama-yolunda/",
         "title": "Pi(π) Sayısını Hesaplama Yolunda",
         "date": "2026-03-26T20:30:00+03:00"
       },
