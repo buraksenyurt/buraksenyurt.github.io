@@ -17,23 +17,14 @@ public DataTable GetOleDbSchemaTable(Guid schema,object[] restrictions);
 
 Dikkat edecek olursanız metodun geri dönüş değeri DataTable tipindedir. Metodun isminde Table kullanılmasının nedenide zaten budur. Yani dönen şema bilgileri bir DataTable nesnesine aktarılacaktır. Metod iki önemli parametreye sahiptir. İlk parametremiz, OleDbSchemaGuid sınıfı türünden bir numaralandırıcı değeri almaktadır. Bu parametreye vereceğimiz değer ile, veritabanından elde etmek istediğimiz şema tipini belirleriz. Örneğin veritabanında yer alan tabloları elde etmek için, OleDbSchemaGuid.Tables değerini veririz. Bunun yanında bu parametreye verebileceğimiz başka önemli değerlerde şunlardır.
 
-OleDbSchemaGuid Özelliği
-Açıklaması
-
-OleDbSchemaGuid.Columns
-Tablo veya tablolara ait sütun yapısını sağlar.
-
-OleDbSchemaGuid.Procedures
-OleDbConnection nesnesinin bağlı olduğu veritabanında yer alan saklı yordamların listesini sağlar.
-
-OleDbSchemaGuid.Views
-OleDbConnection nesnesinin bağlı olduğu veritabanında yer alan görünümlerin listesini sağlar.
-
-OleDbSchemaGuid.Indexes
-Belirtilen Catalog'da yer alan indexlerin listesini sağlar.
-
-OleDbSchemaGuid.Primary_Keys
-Belirtilen tablo veya tablolardaki birincil anahtarların listesini verir.
+| **OleDbSchemaGuid Değeri** | **Açıklaması** |
+| --- | --- |
+| OleDbSchemaGuid.Tables | Veritabanında yer alan tabloların listesini sağlar. |
+| OleDbSchemaGuid.Views | Veritabanında yer alan görünümlerin listesini sağlar. |
+| OleDbSchemaGuid.Procedures | Veritabanında yer alan saklı yordamların listesini sağlar. |
+| OleDbSchemaGuid.Columns | Veritabanında yer alan sütunların listesini sağlar. |
+| OleDbSchemaGuid.Indexes | Veritabanında yer alan indexlerin listesini sağlar. |
+| OleDbSchemaGuid.Primary_Keys | Veritabanında yer alan birincil anahtarların listesini sağlar. |
 
 Tablo 1. OleDbSchemaGuid Üyelerinin Bir Kısmı
 
@@ -74,7 +65,7 @@ namespace GetOleDbSchemaTables1
 
 Şekil 1. Friends veritabanındaki tabloların listesi.
 
-Şimdi kodlarımızdaki blTabloListesi=con.GetOleDbSchemaTable (OleDbSchemaGuid.Tables,null); satırını daha yakından incelemeye çalışalım. İlk parametremiz OleDbSchemaGuid.Tables, con isimli OleDbConnection nesnemizin bağlandığı Sql sunucusundaki Friends veritabanından sadece tablo bilgilerini elde etmek istediğimizi göstermektedir. Sınırlandırıcı özelliğe sahip olan ikinci parametremize null değerini vererek tüm tabloların şemaya dahil edilmesini ve DataTable nesnesine aktarılmasını sağlamış olduk. Bu noktada bu iki parametrenin birbirleri ile ilişkil olduklarını söyleyebiliriz. Çünkü, OleDbSchemaGuid parametresinin vereceği tabloların şema yapısı, ikinci parametreye bağlıdır. Şöyleki;
+Şimdi kodlarımızdaki blTabloListesi=con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null); satırını daha yakından incelemeye çalışalım. İlk parametremiz OleDbSchemaGuid.Tables, con isimli OleDbConnection nesnemizin bağlandığı SQL sunucusundaki Friends veritabanından sadece tablo bilgilerini elde etmek istediğimizi göstermektedir. Sınırlandırıcı özelliğe sahip olan ikinci parametremize null değerini vererek tüm tabloların şemaya dâhil edilmesini ve DataTable nesnesine aktarılmasını sağlamış olduk. Bu noktada bu iki parametrenin birbirleri ile ilişkili olduklarını söyleyebiliriz. Çünkü, OleDbSchemaGuid parametresinin vereceği tabloların şema yapısı, ikinci parametreye bağlıdır. Şöyle ki;
 
 Sınırlama Alanı
 Açıklaması

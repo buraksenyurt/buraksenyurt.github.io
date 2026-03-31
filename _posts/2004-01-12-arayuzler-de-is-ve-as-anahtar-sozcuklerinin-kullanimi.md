@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Arayüzler'de is ve as Anahtar Sözcüklerinin Kullanımı"
+title: "Arayüzlerde is ve as Anahtar Sözcüklerinin Kullanımı"
 date: 2004-01-12 12:00:00 +0300
 categories:
   - Programlama Dilleri
@@ -10,9 +10,9 @@ tags:
   - is
   - interface
 ---
-Bugünkü makalemizde, arayüzlerde is ve as anahtar kelimelerinin kullanımını inceleyeceğiz. Bir sınıfa arayüz (ler) uyguladığımızda, bu arayüzlerde tanımlanmış metodları çağırmak için çoğunlukla tercih edilen bir teknik vardır. O da, bu sınıfa ait nesne örneğini, çalıştırılacak metodun tanımlandığı arayüz tipine dönüştürmek ve bu şekilde çağırmaktadır. Bu teknik, her şeyden önce, program kodlarının okunabilirliğini ve anlaşılabilirliğini arttırmaktadır. Öyleki, bir isim uzayında yer alan çok sayıda arayüzün ve sınıfın yer aldığı uygulamalarda be tekniği uygulayarak, hangi arayüze ait metodun çalıştırıldığı daha kolay bir şekilde gözlemlenebilmektedir. Diğer yandan bu teknik, aynı metod tanımlamalarına sahip arayüzler için de kullanılır ki bunu bir önceki makalemizde işlemiştik.
+Bugünkü makalemizde, arayüzlerde is ve as anahtar kelimelerinin kullanımını inceleyeceğiz. Bir sınıfa arayüz(ler) uyguladığımızda, bu arayüzlerde tanımlanmış metodları çağırmak için çoğunlukla tercih edilen bir teknik vardır. O da, bu sınıfa ait nesne örneğini, çalıştırılacak metodun tanımlandığı arayüz tipine dönüştürmek ve bu şekilde çağırmaktır. Bu teknik, her şeyden önce, program kodlarının okunabilirliğini ve anlaşılabilirliğini arttırmaktadır. Öyle ki, bir isim uzayında yer alan çok sayıda arayüzün ve sınıfın yer aldığı uygulamalarda bu tekniği uygulayarak, hangi arayüze ait metodun çalıştırıldığı daha kolay bir şekilde gözlemlenebilmektedir. Diğer yandan bu teknik, aynı metod tanımlamalarına sahip arayüzler için de kullanılır ki bunu bir önceki makalemizde işlemiştik.
 
-Bu teknik ile ilgili olarak, dikkat edilmesi gereken bir noktada vardır. Bir sınıfa ait nesne örneğini, bu sınıfa uygulamadığımız bir arayüze ait herhangibir metodu çalıştırmak için, ilgili arayüz tipine dönüştürdüğümüzde InvalidCastException istisnasını alırız. Bu noktayı daha iyi vurgulayabilmek için aşağıdaki örneğimizi göz önüne alalım. Bu örnekte iki arayüz yer almakta olup, tanımladığımız sınıf, bu arayüzlerden sadece bir tanesini uygulamıştır. Ana sınıfımızda, bu sınıfa ait nesne örneği, uygulanmamış arayüz tipine dönüştürülmüş ve bu arayüzdeki bir metod çağırılmak istenmiştir.
+Bu teknik ile ilgili olarak, dikkat edilmesi gereken bir nokta da vardır. Bir sınıfa ait nesne örneğini, bu sınıfa uygulamadığımız bir arayüze ait herhangi bir metodu çalıştırmak için, ilgili arayüz tipine dönüştürdüğümüzde InvalidCastException istisnasını alırız. Bu noktayı daha iyi vurgulayabilmek için aşağıdaki örneğimizi göz önüne alalım. Bu örnekte iki arayüz yer almakta olup, tanımladığımız sınıf, bu arayüzlerden sadece bir tanesini uygulamıştır. Ana sınıfımızda, bu sınıfa ait nesne örneği, uygulanmamış arayüz tipine dönüştürülmüş ve bu arayüzdeki bir metod çağrılmak istenmiştir.
 
 ```csharp
 using System;

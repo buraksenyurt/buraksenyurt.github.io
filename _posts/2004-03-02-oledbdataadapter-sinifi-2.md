@@ -15,7 +15,7 @@ tags:
   - constraints
   - primaryKey
 ---
-Önceki makalemizde, OleDbDataAdapter sınıfının ne işe yaradığından bahsetmiş ve kısa bir giriş yapmıştık. Bu makalemizde, OleDbDataAdapter sınıfının diğer önemli unsurlarını incelemeye devam edeceğiz. İncelemek istediğim ilk konu, OleDbDataAdapter nesnesi yardımıyla, ilişkisel veritabanı modellerinden bağlantısız katmana aktarılan tabloların, sahip olduğu birincil anahtar (Primary Key) ve kısıtlamaların (Constraints) ne şekilde irdelendiği olucak. Konuyu iyice kavrayabilmek amacıyla aşağıdaki basit örnek ile incelememize başlayalım. Bu örneğimizde, sql sunucumuzda yer alan bir tabloya ait verileri DataSet üzerine alıyor ve alınan alanların bir takım bilgilerini okuyoruz. Örneğin, alanların veri tipi, boyutu, null değerler içerip içermediği ve alan adları bilgilerini ekrana yazdırıyoruz.
+Önceki makalemizde, OleDbDataAdapter sınıfının ne işe yaradığından bahsetmiş ve kısa bir giriş yapmıştık. Bu makalemizde, OleDbDataAdapter sınıfının diğer önemli unsurlarını incelemeye devam edeceğiz. İncelemek istediğim ilk konu, OleDbDataAdapter nesnesi yardımıyla, ilişkisel veritabanı modellerinden bağlantısız katmana aktarılan tabloların, sahip olduğu birincil anahtar (Primary Key) ve kısıtlamaların (Constraints) ne şekilde irdelendiği olacak. Konuyu iyice kavrayabilmek amacıyla aşağıdaki basit örnek ile incelememize başlayalım. Bu örneğimizde, SQL sunucumuzda yer alan bir tabloya ait verileri DataSet üzerine alıyor ve alınan alanların birtakım bilgilerini okuyoruz. Örneğin, alanların veri tipi, boyutu, null değerler içerip içermediği ve alan adları bilgilerini ekrana yazdırıyoruz.
 
 ```csharp
 using System;

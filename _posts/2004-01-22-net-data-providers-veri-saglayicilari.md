@@ -15,21 +15,18 @@ Bugünkü makalemiz ile, ADO.NET ' te yer alan veri sağlayıcılarını inceley
 
 ADO.NET ile veritabanı uygulamaları geliştirirken, bu sürücüler üzerinden veritabanlarına erişim sağlarız. Bu sebeple.Net Framework 'te her bir veri sürücüsü için geliştirilmiş veri sağlayıcıları (data providers) vardır. Bu veri sağlayıcılarının görevi, uygulamalarımız ile veri sürücülerini bağlamak ve veri sürücülerindeki ilgili kütüphane fonksiyonlarını çalıştırarak veriler üzerinde işlem yapabilmemizi sağlamaktır..Net Framework'ün 1.1 sürümü aşağıdaki listede yer alan veri sağlayıcıları ile birlikte gelmektedir..Net Framework'ün ilk sürümlerinde sadece Sql ve Ole Db veri sağlayıcıları varsayılan olarak yer almaktadır. Ancak 1.1 sürümü ile birlikte bu veri sağlayıcılarına, Oracle ve ODBC veri sağlayıcılarıda eklenmiştir.
 
-.Net Framework Veri Sağlayıcıları
-
-Data Provider For SQL Server
-
-Data Provider For OLE DB
-
-Data Provider For ODBC
-
-Data Provider For Oracle
+| **Veri Sağlayıcıları** |
+| ------------------- |
+| Data Provider For SQL Server |
+| Data Provider For OLE DB |
+| Data Provider For ODBC |
+| Data Provider For Oracle |
 
 Tablo 1:.NET Veri Sağlayıcıları
 
 Şimdi dilerseniz, bu veri sağlayıcıları kısaca incelemeye çalışalım.
 
-SQL veri sağlayıcısına ait tüm üyeler, System.Data.SQLClient isim uzayında yer almaktadır. SQL veri sağlayıcısının en önemli özelliği, sql motoruna direkt sql api'si üzerinden erişim sağlayabilmesidir. Bu özellik ona diğer veri sağlayıcılarına göre daha yüksek performans kazandırır. Nitekim sql veri sağlayıcısı, sql server'a doğrudan ulaşmak için kendi iletişim protokolü olan TDS (Tabular Data Stream)'yi kullanmaktadır. Elbette bu özelliği ile, örneğin SqlDataReader nesnesinin kullanıldığı veri okuma yöntemlerinde, ole db veri kaynağına göre çok daha hızlı ve verimlidir. Nitekim aynı sql veri kaynaklarına ole db veri sağlayıcısı ilede erişmemiz mümkündür. Ama belirttiğimiz gibi performans ve verimlilik bu iki veri kaynağı için oldukça farklıdır.
+SQL veri sağlayıcısına ait tüm üyeler, System.Data.SQLClient isim uzayında yer almaktadır. SQL veri sağlayıcısının en önemli özelliği, SQL motoruna direkt SQL API'si üzerinden erişim sağlayabilmesidir. Bu özellik ona diğer veri sağlayıcılarına göre daha yüksek performans kazandırır. Nitekim SQL veri sağlayıcısı, SQL Server'a doğrudan ulaşmak için kendi iletişim protokolü olan TDS (Tabular Data Stream)'yi kullanmaktadır. Elbette bu özelliği ile, örneğin SqlDataReader nesnesinin kullanıldığı veri okuma yöntemlerinde, OLE DB veri kaynağına göre çok daha hızlı ve verimlidir. Nitekim aynı SQL veri kaynaklarına OLE DB veri sağlayıcısı ile de erişmemiz mümkündür. Ama belirttiğimiz gibi performans ve verimlilik bu iki veri kaynağı için oldukça farklıdır.
 
 ![mk44_1.gif](/assets/images/2004/mk44_1.gif)
 

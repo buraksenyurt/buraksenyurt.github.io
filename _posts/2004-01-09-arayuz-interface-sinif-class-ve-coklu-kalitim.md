@@ -9,7 +9,7 @@ tags:
   - oop
   - interface
 ---
-Bugünkü makalemizde, arayüzleri incelemeye devam ediceğiz. Bir önceki makalemizde, arayüzleri kullanmanın en büyük nedenlerinden birisinin sınıflara çoklu kalıtım desteği vermesi olduğunu söylemiştik. Önce basit bir uygulama ile bunu gösterelim.
+Bugünkü makalemizde, arayüzleri incelemeye devam edeceğiz. Bir önceki makalemizde, arayüzleri kullanmanın en büyük nedenlerinden birisinin sınıflara çoklu kalıtım desteği vermesi olduğunu söylemiştik. Önce basit bir uygulama ile bunu gösterelim.
 
 ```csharp
 using System;
@@ -109,7 +109,7 @@ namespace Interfaces2
 
 Şekil 1. Programın Çalışmasının Sonucu.
 
-Yukarıdaki kodlarda aslında değişik olarak yaptığımız bir şey yok. Sadece oluşturduğumuz arayüzleri bir sınıfa uyguladık ve çok kalıtımlılığı gerçekleştirmiş olduk. Ancak bu noktada dikkat etmemiz gereken bir unsur vardır. Eğer arayüzler aynı isimli metodlara sahip olurlarsa ne olur? Bu durumda arayüzlerin uygulandığı sınıfta, ilgili metodu bir kez yazmamız yeterli olucaktır. Söz gelimi, yukarıdaki örneğimizde, Baslat isimli ortak bir metodun arayüzlerin ikisi içinde tanımlanmış olduğunu varsayalım.
+Yukarıdaki kodlarda aslında değişik olarak yaptığımız bir şey yok. Sadece oluşturduğumuz arayüzleri bir sınıfa uyguladık ve çok kalıtımlılığı gerçekleştirmiş olduk. Ancak bu noktada dikkat etmemiz gereken bir unsur vardır. Eğer arayüzler aynı isimli metodlara sahip olurlarsa ne olur? Bu durumda arayüzlerin uygulandığı sınıfta, ilgili metodu bir kez yazmamız yeterli olacaktır. Söz gelimi, yukarıdaki örneğimizde, Baslat isimli ortak bir metodun arayüzlerin ikisi için de tanımlanmış olduğunu varsayalım.
 
 ```csharp
 public interface IMusteri
@@ -133,11 +133,11 @@ public interface ISiparis
 }
 ```
 
-Şimdi bu iki arayüzde aynı metod tanımına sahip. Sınıfımızda bu metodları iki kez yazmak anlamsız olucaktır. O nedenle sınıfımza aşağıdaki gibi tek bir Baslat metodu ekleriz. Sınıf nesnemizi oluşturduğumuzda, Baslat isimli metodu aşağıdaki gibi çalıştırabiliriz.
+Şimdi bu iki arayüz de aynı metod tanımına sahip. Sınıfımızda bu metodları iki kez yazmak anlamsız olacaktır. O nedenle sınıfımıza aşağıdaki gibi tek bir Baslat metodu ekleriz. Sınıf nesnemizi oluşturduğumuzda, Baslat isimli metodu aşağıdaki gibi çalıştırabiliriz.
 
 spt1.Baslat ();
 
-Fakat bazı durumlarda, arayüzlerdeki metodlar aynı isimlide olsalar, arayüzlerin uygulandığı sınıf içerisinde söz konusu metod, arayüzlerin her biri için ayrı ayrıda yazılmak istenebilir. Böyle bir durumda ise sınıf içerisindeki metod yazımlarında arayüz isimlerini de belirtiriz.Örneğin;
+Fakat bazı durumlarda, arayüzlerdeki metodlar aynı isimli de olsalar, arayüzlerin uygulandığı sınıf içerisinde söz konusu metod, arayüzlerin her biri için ayrı ayrı da yazılmak istenebilir. Böyle bir durumda ise sınıf içerisindeki metod yazımlarında arayüz isimlerini de belirtiriz. Örneğin;
 
 ```csharp
 void IMusteri.Baslat()

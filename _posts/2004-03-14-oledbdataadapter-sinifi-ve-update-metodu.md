@@ -15,27 +15,17 @@ tags:
   - crud
   - csharp
 ---
-Bu makalemizde, OleDbDataAdapter sınıfının, veriler üzerindeki güncelleme işlemlerinin, veri kaynağına yansıtılması sırasında nasıl bir rol oynadığını ve kullanıldığını incelemeye çalışacağız. Önceki makalelerimizde belirttiğimiz gibi, OleDbDataAdapter nesnesi yardımıyla veri kaynağından, uygulamalarımızdaki bağlantısız katman nesnelerine veri kümelerini aktarmak amacıyla Fill metodunu kullanıyorduk. Diğer yandan, bağlantısız katman nesnelerimizin temsil ettiği veriler üzerinde yapılan değişiklikleri veritabanına göndermek istersek, Update metodunu kullanırız.
+Bu makalemizde, OleDbDataAdapter sınıfının, veriler üzerindeki güncelleme işlemlerinin veri kaynağına yansıtılması sırasında nasıl bir rol oynadığını ve kullanıldığını incelemeye çalışacağız. Önceki makalelerimizde belirttiğimiz gibi, OleDbDataAdapter nesnesi yardımıyla veri kaynağından, uygulamalarımızdaki bağlantısız katman nesnelerine veri kümelerini aktarmak amacıyla Fill metodunu kullanıyorduk. Diğer yandan, bağlantısız katman nesnelerimizin temsil ettiği veriler üzerinde yapılan değişiklikleri veritabanına göndermek istersek, Update metodunu kullanırız.
 
-Update metodu çalışma sistemi açısından oldukça ilgi çekici bir metoddur. Bildiğiniz gibi, DataAdapter nesnelerinin, verilerin güncellenmesi için UpdateCommand, verileri eklemek için InsertCommand, veri silmek için DeleteCommand özellikleri vardır. Uygulamamız çalışırken, bağlantısız katman nesnelerimiz verilerin satırsal bazda durumlarını gösteren bir değer içeririr. RowState olarak bilinen bu özellik DataRow sınıfına ait bir özellik olup aşağıdaki tabloda yer alan DataRowState numaralandırıcısı türünden değerlerden birisini almaktadır.
+Update metodu çalışma sistemi açısından oldukça ilgi çekici bir metoddur. Bildiğiniz gibi, DataAdapter nesnelerinin, verilerin güncellenmesi için UpdateCommand, verileri eklemek için InsertCommand, veri silmek için DeleteCommand özellikleri vardır. Uygulamamız çalışırken, bağlantısız katman nesnelerimiz verilerin satırsal bazda durumlarını gösteren bir değer içerir. RowState olarak bilinen bu özellik DataRow sınıfına ait bir özellik olup aşağıdaki tabloda yer alan DataRowState numaralandırıcısı türünden değerlerden birisini almaktadır.
 
-DataRowState Değeri
-Açıklama
-
-Added
-Yeni bir satır eklendiğini belirtir.
-
-Deleted
-Bir satırın silindiğini belirtir.
-
-Modified
-Bir satırın düzenlendiğini belirtir.
-
-Detached
-Yeni bir satır oluşturulduğunu ama henüz ilgili bağlantısız katman nesnesinin DataRow koleksiyonuna eklenmediğini belirtir.
-
-Unchanged
-Satırda herhangibir değişiklik olmadığını belirtir.
+| DataRowState Değeri | Açıklama |
+| --- | --- |
+| Added | Yeni bir satır eklendiğini belirtir. |
+| Deleted | Bir satırın silindiğini belirtir. |
+| Modified | Bir satırın düzenlendiğini belirtir. |
+| Detached | Yeni bir satır oluşturulduğunu ama henüz ilgili bağlantısız katman nesnesinin DataRow koleksiyonuna eklenmediğini belirtir. |
+| Unchanged | Satırda herhangibir değişiklik olmadığını belirtir. |
 
 Tablo1. RowState özelliğinin DataRowState numaralandırıcısı tipinden alabileceği değerler.
 
@@ -96,17 +86,11 @@ Güncelle başlıklı butona tıkladığımızda, OleDbCommandBuilder nesnemiz, 
 
 Dilerseniz CommandBuilder nesnemizin bizim için oluşturmuş olduğu komutların nasıl sql ifadeleri içerdiğini inceleyelim. Bu amaçla, OleDbCommandBuilder sınıfına ait aşağıda prototipleri belirtilen metodları kullanacağız.
 
-Metod
-Prototipi
-
-GetInsertCommand
-public OleDbCommand GetInsertCommand ();
-
-GetDeleteCommand
-public OleDbCommand GetDeleteCommand ();
-
-GetUpdateCommand
-public OleDbCommand GetUpdateCommand ();
+| Metod Adı | Prototipi |
+| --- | --- |
+| GetInsertCommand | public OleDbCommand GetInsertCommand (); |
+| GetDeleteCommand | public OleDbCommand GetDeleteCommand (); |
+| GetUpdateCommand | public OleDbCommand GetUpdateCommand (); |
 
 Tablo 2. OleDbCommandBuilder için Get metodlar.
 

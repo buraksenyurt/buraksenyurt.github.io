@@ -10,7 +10,7 @@ tags:
   - .net
   - stream
 ---
-Bugünkü makalemizde, sistemimizde yer alan text tabanlı dosyaları nasıl okuyabileceğimizi incelemeye çalışacağız..NET ortamında, dosyaların okunması için streamler (akımlar) kullanılır. Bugün işleyeceğimi StreamReader sınıfıda bunlardanbir tanesidir. StreamReader sınıfı dosyaların okunmasını, dosyalara yazılmasını vb.. sağlar. StreamReader sınıfını bir FileStream nesnesi ile kullanabileceğimiz gibi, tek başınada kullanabiliriz. Kullanabileceğimiz yapıcı metodlardan birisi;
+Bugünkü makalemizde, sistemimizde yer alan text tabanlı dosyaları nasıl okuyabileceğimizi incelemeye çalışacağız. .NET ortamında, dosyaların okunması için stream'ler (akımlar) kullanılır. Bugün işleyeceğimiz StreamReader sınıfı da bunlardan bir tanesidir. StreamReader sınıfı dosyaların okunmasını, dosyalara yazılmasını vb. sağlar. StreamReader sınıfını bir FileStream nesnesi ile kullanabileceğimiz gibi, tek başına da kullanabiliriz. Kullanabileceğimiz yapıcı metodlardan birisi;
 
 ```csharp
 public StreamReader( Stream stream );
@@ -22,21 +22,21 @@ dir. Bu yapıcı metod Stream tipinden bir nesne alır. Bu stream nesnesi çoğu
 public StreamReader( string path );
 ```
 
-yapıcısı ilede oluşturabiliriz. Burada string tipindeki path değişkenimiz, okumak amacıyla açacağımız dosyanın tam adresini temsil etmektedir. StreamReader nesnesi ile dosyamızı açtıktan sonra dosya içindeki verileri ReadLine metodu ile okuyabiliriz. ReadLine metodu, dosyadan her defasında bir satır okur ve bunun string olarak geriye döndürür. Metodun prototipi aşağıdaki gibidir.
+yapıcısı ile de oluşturabiliriz. Burada string tipindeki path değişkenimiz, okumak amacıyla açacağımız dosyanın tam adresini temsil etmektedir. StreamReader nesnesi ile dosyamızı açtıktan sonra dosya içindeki verileri ReadLine metodu ile okuyabiliriz. ReadLine metodu, dosyadan her defasında bir satır okur ve bunu string olarak geriye döndürür. Metodun prototipi aşağıdaki gibidir.
 
 ```csharp
 public override string ReadLine();
 ```
 
-Genellikle bu metod bir while döngüsü ile kullanılır. Bu sayade dosyanın tüm içeriğinin okunması sağlanmış olur. ReadLine metodu geriye null değerini döndürdüğü zaman dosyanın sonuna gelindiği anlaşılır. Bu nedenle While döngüsünde kontrol ifadesi okunan her bir satırın null olup olmadığına bakar.
+Genellikle bu metod bir while döngüsü ile kullanılır. Bu sayede dosyanın tüm içeriğinin okunması sağlanmış olur. ReadLine metodu geriye null değerini döndürdüğü zaman dosyanın sonuna gelindiği anlaşılır. Bu nedenle while döngüsünde kontrol ifadesi, okunan her bir satırın null olup olmadığına bakar.
 
-Şimdi bu kısa açıklamaların ardırdan dilerseniz uygulamamızı yazalım. Bu küçük uygulamamızda kullanıcının seçmiş olduğu bir dosyayı bir listBox kontrolüne satır bazında açıcağız.Öncelikle aşağıdaki örnek formu oluşturalım. OpenFileDialog kontrolümüzün Filter özelliğinede ekranda görülen değerleri aktarıyoruz. Böylece OpenFileDialog kontrolümüz açıldığında cs,vb uzantılı dosyaları ve tüm dosyaları görebileceğiz.
+Şimdi bu kısa açıklamaların ardından dilerseniz uygulamamızı yazalım. Bu küçük uygulamamızda kullanıcının seçmiş olduğu bir dosyayı bir listBox kontrolüne satır bazında açacağız. Öncelikle aşağıdaki örnek formu oluşturalım. OpenFileDialog kontrolümüzün Filter özelliğine de ekranda görülen değerleri aktarıyoruz. Böylece OpenFileDialog kontrolümüz açıldığında cs, vb uzantılı dosyaları ve tüm dosyaları görebileceğiz.
 
 ![mk32_1.gif](/assets/images/2004/mk32_1.gif)
 
 Şekil 1. Form Tasarımımız.
 
-Şimdi dilersenin projemizin kodlarını yazalım.
+Şimdi dilerseniz projemizin kodlarını yazalım.
 
 ```csharp
 private void btnDosyaAc_Click(object sender, System.EventArgs e)

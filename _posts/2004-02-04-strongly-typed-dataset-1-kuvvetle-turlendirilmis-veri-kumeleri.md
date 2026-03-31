@@ -23,7 +23,7 @@ Bu satır ile, dsMakale isimli dataSet nesnemizin bellekte işaret ettiği veri 
 textBox1.Text=rsMakale.Fields("Konu").Value
 ```
 
-Bu ifade eski dostumuz ADO daki rsMakale isimli recordSet'i kullanarak, Konu isimli alanın değerine ulaşmıştır. Dikkat edicek olursanız bu iki ifade arasında uzunluk açısından belirgin bir fark vardır. İkinci yazım daha kolaydır. Zaten bu nedenle, ADO.NET'i öğrenen programcıların ilk başta en çok karşılaştıkları zorluk, bu kod yazımının uzunluğu olmuştur. Bununla birlikte, ADO.NET'in XML tabanlı bir mimariye sahip olması, karşımıza Kuvvetle Türlendirilmiş Veri Kümelerini çıkarmaktadır. Microsfot.NET mimarları, programlarımızda aşağıdakine benzer daha kısa ifadelerin kullanılabilmesi amacıyla, Kuvvetle Güçlendirilmiş Veri Kümeleri kavramını ADO.NET'e yerleştirmiştir.
+Bu ifade eski dostumuz ADO'daki rsMakale isimli recordSet'i kullanarak, Konu isimli alanın değerine ulaşmıştır. Dikkat edecek olursanız bu iki ifade arasında uzunluk açısından belirgin bir fark vardır. İkinci yazım daha kolaydır. Zaten bu nedenle, ADO.NET'i öğrenen programcıların ilk başta en çok karşılaştıkları zorluk, bu kod yazımının uzunluğu olmuştur. Bununla birlikte, ADO.NET'in XML tabanlı bir mimariye sahip olması, karşımıza Kuvvetle Türlendirilmiş Veri Kümelerini çıkarmaktadır. Microsoft .NET mimarları, programlarımızda aşağıdakine benzer daha kısa ifadelerin kullanılabilmesi amacıyla, Kuvvetle Güçlendirilmiş Veri Kümeleri kavramını ADO.NET'e yerleştirmiştir.
 
 ```csharp
 textBox1.Text=dsTypedMakale.Makale[3].Konu.ToString();
@@ -33,7 +33,7 @@ Bu ifade ilk yazdığımız ifadeye göre çok daha kısadır. Peki bu nasıl sa
 
 Bir Strongly Typed DataSet (Kuvvetle Türlendirilmiş Veri Kümesi), DataSet sınıfından türetilmiş, programcı tarafından belirtilen bir xml schema sınıfını baz alan, veri bağlantılarının özelleştirilip yukarıdaki gibi kısa yazımlar ile erişimlere imkan sağlayan, özelleştirilmiş bir DataSet sınıfıdır.
 
-Bu geniş kavramı anlamak için elbette en kolay yol örneklendirmek olucak. Ancak bundan önce Kuvvetle Türlendirilmiş Veri Kümemizin nasıl oluşturacağımızı görelim. Bunun için elimizde iki yol var. Yollardan birisi, komut satırından XSD.exe XML Schema Defination Tool'unu kullanmak. Bu yol biraz daha zahmetli olmakla birlikte Visual Studio.NET'e olan gereksinimi kaldırdığı için zaman zaman tercih edilir. Diğer yolumuz ise Kuvvetle Türlendirilmiş Veri Kümemizi Visual Studio.NET ortamında oluşturmak. Yollardan hangisini seçersek seçelim, Kuvvetle Türlendirilmiş Veri Kümemizin oluşturulması için bize mutlaka bir xml schema dosyası (xsd uzantılı) gerekiyor. Çünkü Kuvvetle Türlendirilmiş Veri Kümemiz, bir xml schema dosyası baz alınarak oluşturulmaktadır. Şimdi dilerseniz komut satırı yardımıyla bir Kuvvetle Türlendirilmiş Veri Kümesinin nasıl oluşturulacağını inceleyelim. Bunun için öncelikle biraz kod yazmamız gerekecek. İzleyen kodlar ile, bir DataSet'i gerekli tablo bilgileri ile yükleyecek ve daha sonra bu DataSet'e ait xml schema bilgilerini, DataSet sınıfına ait WriteXmlSchema metodu ile bir xsd dosyasına aktaracağız. Örneğin basit olması amacıyla bir console uygulaması oluşturalım.
+Bu geniş kavramı anlamak için elbette en kolay yol örneklendirmek olacak. Ancak bundan önce Kuvvetle Türlendirilmiş Veri Kümemizi nasıl oluşturacağımızı görelim. Bunun için elimizde iki yol var. Yollardan birisi, komut satırından XSD.exe XML Schema Definition Tool'unu kullanmak. Bu yol biraz daha zahmetli olmakla birlikte Visual Studio.NET'e olan gereksinimi kaldırdığı için zaman zaman tercih edilir. Diğer yolumuz ise Kuvvetle Türlendirilmiş Veri Kümemizi Visual Studio.NET ortamında oluşturmak. Yollardan hangisini seçersek seçelim, Kuvvetle Türlendirilmiş Veri Kümemizin oluşturulması için bize mutlaka bir XML schema dosyası (xsd uzantılı) gerekiyor. Çünkü Kuvvetle Türlendirilmiş Veri Kümemiz, bir XML schema dosyası baz alınarak oluşturulmaktadır. Şimdi dilerseniz komut satırı yardımıyla bir Kuvvetle Türlendirilmiş Veri Kümesinin nasıl oluşturulacağını inceleyelim. Bunun için öncelikle biraz kod yazmamız gerekecek. İzleyen kodlar ile, bir DataSet'i gerekli tablo bilgileri ile yükleyecek ve daha sonra bu DataSet'e ait XML schema bilgilerini, DataSet sınıfına ait WriteXmlSchema metodu ile bir xsd dosyasına aktaracağız. Örneğin basit olması amacıyla bir console uygulaması oluşturalım.
 
 ```csharp
 using System;
@@ -64,7 +64,7 @@ Yukarıdaki kodları kısaca açıklayalım. Burada Sql sunucumuzda yer alan Fri
 
 Şekil 1. XML Schema Dosyamız.
 
-Şimdi.NET Framework'ün XSD.exe aracını kullanarak, bu schema dosyasından Kuvvetle Türlendirilmiş Veri Kümemizi temsil edicek sınıfı oluşturalım. Bunun için, komut satırında aşağıdaki satırı yazarız.
+Şimdi .NET Framework'ün XSD.exe aracını kullanarak, bu schema dosyasından Kuvvetle Türlendirilmiş Veri Kümemizi temsil edecek sınıfı oluşturalım. Bunun için, komut satırında aşağıdaki satırı yazarız.
 
 ![mk50_2.gif](/assets/images/2004/mk50_2.gif)
 
@@ -201,7 +201,7 @@ public class MakaleDataTable : DataTable, System.Collections.IEnumerable
 }
 ```
 
-Buraya kadar, komut satırı yardımıyla ve kod yazarak bir Kuvvetle Türlendirilmiş Veri Kümesinin nasıl oluşturulacağını gördük. Bu teknikteki adımları gözden geçirmek gerekirse izlememiz gereken yol şöyle olucaktır.
+Buraya kadar, komut satırı yardımıyla ve kod yazarak bir Kuvvetle Türlendirilmiş Veri Kümesinin nasıl oluşturulacağını gördük. Bu teknikteki adımları gözden geçirmek gerekirse izlememiz gereken yol şöyle olacaktır.
 
 ![mk50_5.gif](/assets/images/2004/mk50_5.gif)
 
@@ -248,4 +248,4 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
 
 Şekil 10. Uygulamanın Sonucu.
 
-Bu makalemizde, Kuvvetle Türlendirilmiş Veri Kümelerinin ne olduğunu, nasıl oluşturulacağını ve nasıl kullanılacağını gördük. İzleyen makalemizde bu konuya devam edicek ve Satır Ekleme, Satır Düzenleme, Satır Silme gibi işlemlerin nasıl yapılacağını inceleyeceğiz. Hepinize mutlu günler dilerim.
+Bu makalemizde, Kuvvetle Türlendirilmiş Veri Kümelerinin ne olduğunu, nasıl oluşturulacağını ve nasıl kullanılacağını gördük. İzleyen makalemizde bu konuya devam edecek ve Satır Ekleme, Satır Düzenleme, Satır Silme gibi işlemlerin nasıl yapılacağını inceleyeceğiz. Hepinize mutlu günler dilerim.

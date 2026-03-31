@@ -16,28 +16,18 @@ Bugünkü makalemizde, Sql sunucularında yazdığımız Stored Procedure'lere i
 
 Bugünkü makalemizde ise, bir Stored Procedure'den programımıza nasıl değer (ler) döndürebileceğimizi inceleyeceğiz. Dikkat ederseniz, bir Stored Procedure'e program içinden parametre aktarabileceğimiz gibi, Stored Procedure'dende programımıza değerler aktarbildiğimizden bahsediyoruz. Dolayısıyla parametrelerin bir takım farklı davranışlar sergiliyebilmesi söz konusu. SqlParameters sınıfı, parametrelerin davranışlarını yada başka bir deyişle hangi yöne doğru hareket edeceklerini belirten bir özellik içermektedir. Bu özellik Direction özelliğidir ve C# prototipi aşağıdaki gibidir.
 
+```csharp
 public virtual ParameterDirection Direction {get; set;}
+```
 
 Direction özelliği, ParameterDirection numaralandırıcısı tipinden değerler almaktadır. Bu değerlerin açıklaması aşağıdaki tabloda yer almaktadır.
 
-Direction Değeri
-Açıklama
-
-Input
-
-Bir SqlParametre'sinin varsayılan değeri budur. Program içinden Stored Procedure'e değerler gönderileceği zaman, SqlParameter nesnesinin Direction özelliği Input olarak kullanılır. Yani parametre değerinin yönü Stored Procedure'e doğrudur.
-
-Output
-
-Stored Procedure'den programımıza doğru değer aktarımı söz konusu ise SqlParameter nesnesinin Direction değeri Output yapılır. Bu, parametre yönünün, Stored Procedure'den programımıza doğru olduğunu göstermektedir.
-
-ReturnValue
-
-Bazen bir Stored Procedure'ün çalışması sonucunu değerlendirmek iseyebiliriz. Bu durumda özellikle Stored Procedure'den Return anahtar sözcüğü ile döndürülen değerler için kullanılan parametrelerin Direction değeri ReturnValue olarak belirlenir. Bu tip bir parametreyi, bir fonksiyonun geri döndürdüğü değeri işaret eden bir parametre olarak düşünebiliriz.
-
-InputOutput
-
-Bu durumda parametremiz hem Input hemde Output yetenklerine sahip olucaktır.
+| Direction Değeri | Açıklama |
+| --- | --- |
+| Input | Bir SqlParametre'sinin varsayılan değeri budur. Program içinden Stored Procedure'e değerler gönderileceği zaman, SqlParameter nesnesinin Direction özelliği Input olarak kullanılır. Yani parametre değerinin yönü Stored Procedure'e doğrudur. |
+| Output | Stored Procedure'den programımıza doğru değer aktarımı söz konusu ise SqlParameter nesnesinin Direction değeri Output yapılır. Bu, parametre yönünün, Stored Procedure'den programımıza doğru olduğunu göstermektedir. |
+| ReturnValue | Bazen bir Stored Procedure'ün çalışması sonucunu değerlendirmek isteyebiliriz. Bu durumda özellikle Stored Procedure'den Return anahtar sözcüğü ile döndürülen değerler için kullanılan parametrelerin Direction değeri ReturnValue olarak belirlenir. Bu tip bir parametreyi, bir fonksiyonun geri döndürdüğü değeri işaret eden bir parametre olarak düşünebiliriz. |
+| InputOutput | Bu durumda parametremiz hem Input hem de Output yeteneklerine sahip olacaktır. |
 
 Tablo 1.ParameterDirection Numaralandırıcısının Değerleri.
 

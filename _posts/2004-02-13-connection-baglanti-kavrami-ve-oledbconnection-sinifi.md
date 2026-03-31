@@ -28,9 +28,9 @@ Görüldüğü gibi bir OleDbConnection nesnesi öncelikle bir Ole Db Data Provi
 public virtual string ConnectionString {get; set;}
 ```
 
-ConnectionString özelliği belirlenmiş bir OleDbConnection sınıfı nesne örneğini açtığımızda, yani veri kaynağına olan hattı kullanılabilir hale getirdiğimizde, bu özellik yanlız-okunabilir (read-only) hale gelir. Dolayısıyla açık bir OleDbConnection nesnesinin ConnectionString özelliğini değiştiremezsiniz. Bunun için bu bağlantıyı tekrardan kapatmanız gerekecektir. ConnectionString özelliği, bir takım anahtar-değer çiftlerinin noktalı virgül ile ayırlmasından oluşturulan string bir bilgi topluluğudur. ConnectionString özelliği içinde kullanabileceğimiz bu anahtar-değer çiftlerinin en önemlisi Provider anahtarıdır. Bu anahtara vereceğimiz değer, hangi tip ole db veri sağlayıcısını kullanmak istediğimizi belirtmektedir.
+ConnectionString özelliği belirlenmiş bir OleDbConnection sınıfı nesne örneğini açtığımızda, yani veri kaynağına olan hattı kullanılabilir hâle getirdiğimizde, bu özellik yalnız-okunabilir (read-only) hâle gelir. Dolayısıyla açık bir OleDbConnection nesnesinin ConnectionString özelliğini değiştiremezsiniz. Bunun için bu bağlantıyı tekrardan kapatmanız gerekecektir. ConnectionString özelliği, birtakım anahtar-değer çiftlerinin noktalı virgül ile ayrılmasından oluşturulan string bir bilgi topluluğudur. ConnectionString özelliği içinde kullanabileceğimiz bu anahtar-değer çiftlerinin en önemlisi Provider anahtarıdır. Bu anahtara vereceğimiz değer, hangi tip OLE DB veri sağlayıcısını kullanmak istediğimizi belirtmektedir.
 
-Örneğin Sql sunucusuna, Sql Ole Db Provider ile bağlanmak istersek, Provider anahtarına, SQLOLEDB değerini atarız. Provider anahtarı mutlaka belirtilir. Daha sonraki anahtar-değer çiftleri ise bu Provider seçimine bağlı olarak değişiklik gösterecektir. Veri kaynağına hangi tip Ole Db Veri Sağlayıcısından bağlandığımızı seçtikten sonra, bağlanmak istediğimiz veri kaynağıda belli olmuş olucaktır. Sırada bu veri kaynağının adını veya adresine belirteceğimiz anahtar-değer çiftlerinin belirlenmesi vardır. Örneğin bir Sql Sunucusuna bağlanıyorsak, sunucu adınıda Ole Db Data Provider (Veri Sağlyacısı) 'na bildirmemiz gerekir. Bunun için Data Source anahtarını kullanırız. Bununla birlikte bağlandığımız veri kaynağı, sql yada oracle gibi bir veritabanı yönetim sistemi değilde, Access gibi bir tablolama sistemi ise, Data Source anahtarı, tablonun fiziki adresini alır. Sql ve Oracle gibi sunuculara yapılacak bağlantılarda Provider ve Data Source seçiminin yanında hangi veritabanına bağlanılacağınıda Initial Catalog anahtarı yada Database anahtarı ile belirleriz. Bunların dışında veri kaynağına yapılacak olan bağlantının güvenlik ayarlarınıda belirtiriz. Çoğunlukla Integrated Security gibi bir anahtara True değerinin atandığını görürüz. Bu anahtar, veri kaynağına bağlanmak istenen uygulama için, makinenin windows authentication ayarlarına bakıldığını belirtir. Dolayısıyla sql sunucusuna bağlanma yetkisi olan her windows kullanıcısı bu bağlantıyı sağlayabilir. Ancak istersek belli bir kullanıcı adı veya şifresi ilede bir veritabanına bağlantı açılmasını sağlayabiliriz. Bunun için ise, User ID ve Password anahtarlarını kullanırız.
+Örneğin SQL sunucusuna, SQL OLE DB Provider ile bağlanmak istersek, Provider anahtarına, SQLOLEDB değerini atarız. Provider anahtarı mutlaka belirtilir. Daha sonraki anahtar-değer çiftleri ise bu Provider seçimine bağlı olarak değişiklik gösterecektir. Veri kaynağına hangi tip OLE DB veri sağlayıcısından bağlandığımızı seçtikten sonra, bağlanmak istediğimiz veri kaynağı da belli olmuş olacaktır. Sırada bu veri kaynağının adını veya adresini belirteceğimiz anahtar-değer çiftlerinin belirlenmesi vardır. Örneğin bir SQL sunucusuna bağlanıyorsak, sunucu adını da OLE DB Data Provider'a (Veri Sağlayıcısı) bildirmemiz gerekir. Bunun için Data Source anahtarını kullanırız. Bununla birlikte bağlandığımız veri kaynağı, SQL ya da Oracle gibi bir veritabanı yönetim sistemi değil de Access gibi bir tablolama sistemi ise, Data Source anahtarı tablonun fiziki adresini alır. SQL ve Oracle gibi sunuculara yapılacak bağlantılarda Provider ve Data Source seçiminin yanında hangi veritabanına bağlanılacağını da Initial Catalog anahtarı ya da Database anahtarı ile belirleriz. Bunların dışında veri kaynağına yapılacak olan bağlantının güvenlik ayarlarını da belirtiriz. Çoğunlukla Integrated Security gibi bir anahtara True değerinin atandığını görürüz. Bu anahtar, veri kaynağına bağlanmak istenen uygulama için, makinenin Windows Authentication ayarlarına bakıldığını belirtir. Dolayısıyla SQL sunucusuna bağlanma yetkisi olan her Windows kullanıcısı bu bağlantıyı sağlayabilir. Ancak istersek belli bir kullanıcı adı veya şifresi ile de bir veritabanına bağlantı açılmasını sağlayabiliriz. Bunun için ise, User ID ve Password anahtarlarını kullanırız.
 
 Buraya kadar bahsettiklerimiz kavramsal açıklamalardır. Dilerseniz basit örnekler ile konuyu daha iyi açıklamaya çalışalım. Örneklerimizi Console uygulamaları şeklinde gerçekleştireceğiz. İlk örneğimizde, Sql Sunucusundaki veritabanı için, bir bağlantı hattı oluşturup açacağız.
 
@@ -218,29 +218,16 @@ public event StateChangeEventHandler StateChange;
 
 Bu olay StateChangeEventArgs tipinden bir argüman almaktadır. Bu argüman iki özelliğe sahiptir. Bunlar CurrentState ve OriginalState özellikleridir. CurrentState bağlantının o anki drumunu belirtir. OriginalState ise son değişiklikten önceki halini gösterir. Her iki özellikde ConnectionState numaralandırıcısı türünden değerlere işaret ederler. Bu değerler şunlardır.
 
-ConnectionState Değeri
-Açıklaması
-
-ConnectionState.Open
-Bağlantı açık ise bu değer geçerlidir.
-
-ConnectionState.Closed
-Bağlantı kapandığında bu değer geçerlidir.
-
-ConnectionState.Connecting
-Bağlantı hattı iletişime açılırken bu değer geçerlidir.
-
-ConnectionState.Broken
-Bağlantı hattı açıkken herhangibir nedenle bir kopma meydana gelmesi ve hattın işlevselliğini kaybetmesi durumunda oluşur.
-
-ConnectionState.Executing
-Bağlantı nesnemiz bir komut çalıştırırken oluşur.
-
-ConnectionState.Fetching
-Bağlantı hattı üzerinden veriler alınırken bur değer geçerlidir.
+| ConnectionState Değeri | Açıklaması |
+| ------------------- | ----------- |
+| ConnectionState.Open | Bağlantı açık ise bu değer geçerlidir. |
+| ConnectionState.Closed | Bağlantı kapandığında bu değer geçerlidir. |
+| ConnectionState.Connecting | Bağlantı hattı iletişime açılırken bu değer geçerlidir. |
+| ConnectionState.Broken | Bağlantı hattı açıkken herhangibir nedenle bir kopma meydana gelmesi ve hattın işlevselliğini kaybetmesi durumunda oluşur. |
+| ConnectionState.Executing | Bağlantı nesnemiz bir komut çalıştırırken oluşur. |
+| ConnectionState.Fetching | Bağlantı hattı üzerinden veriler alınırken bur değer geçerlidir. |
 
 Tablo 1. ConnectionState numaralandırıcısının değerleri.
-
 ConnectionState numaralandırıcısı aynı zamanda, State özelliği içinde kullanılabilir. State özelliği, OleDbConnection nesnesinin o anki durumunu, ConnectionState numaralandırıcısı tipinde saklar. State özelliğini uygulamalarımızda, var olan bağlantının durumun kontrol ederek hareket etmek için kullanabiliriz. Örneğin bir bağlantı nesnesini uygulamamızın bir yerinde tekrardan açmak istediğimizi varsayalım. Bu bağlantı nesnesinin durumu zaten Open ise yani açık ise, tekrardan açma işlemi uygulamamız gerekmez. Dilerseniz makalemizin sonunda StateChange olayına ilişkin bir örnek geliştirelim.
 
 ```csharp

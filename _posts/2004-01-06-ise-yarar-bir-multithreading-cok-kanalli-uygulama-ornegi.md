@@ -9,21 +9,21 @@ tags:
   - thread
   - multi-thread
 ---
-Bundan önceki üç makalemizde iş parçacıkları hakkında bilgiler vermeye çalıştım. Bu makalemde ise işimize yarayacak tarzda bir uygulama geliştirecek ve bilgilerimizi pekiştireceğiz. Bir iş parçacığının belkide en çok işe yarayacağı yerlerden birisi veritabanı uygulamalarıdır. Bazen programımız çok uzun bir sonuç kümesi döndürecek sorgulara veya uzun sürecek güncelleme ifadeleri içeren sql cümlelerine sahip olabilir. Böyle bir durumda programın diğer öğeleri ile olan aktivitemizi devam ettirebilmek isteyebiliriz. Ya da aynı anda bir den fazla iş parçacığında, birden fazla veritabanı işlemini yaptırarak bu işlemlerin tamamının daha kısa sürelerde bitmesini sağlıyabiliriz. İşte bu gibi nedenleri göz önüne alarak bu gün birlikte basit ama faydalı olacağına inandığım bir uygulama geliştireceğiz.
+Bundan önceki üç makalemizde iş parçacıkları hakkında bilgiler vermeye çalıştım. Bu makalemde ise işimize yarayacak tarzda bir uygulama geliştirecek ve bilgilerimizi pekiştireceğiz. Bir iş parçacığının belki de en çok işe yarayacağı yerlerden birisi veritabanı uygulamalarıdır. Bazen programımız çok uzun bir sonuç kümesi döndürecek sorgulara veya uzun sürecek güncelleme ifadeleri içeren sql cümlelerine sahip olabilir. Böyle bir durumda programın diğer öğeleri ile olan aktivitemizi devam ettirebilmek isteyebiliriz. Ya da aynı anda birden fazla iş parçacığında, birden fazla veritabanı işlemini yaptırarak bu işlemlerin tamamının daha kısa sürelerde bitmesini sağlayabiliriz. İşte bu gibi nedenleri göz önüne alarak bugün birlikte basit ama faydalı olacağına inandığım bir uygulama geliştireceğiz.
 
-Olayı iyi anlayabilmek için öncelikle bir milat koymamız gerekli. İş parçacığından önceki durum ve sonraki durum şeklinde. Bu nedenle uygulamamızı önce iş parçacığı kullanmadan oluşturacağız. Sonrada iş parçacığı ile. Şimdi programımızdan kısaca bahsedelim. Uygulamamız aşağıdaki sql sorgusunu çalıştırıp, bellekteki bir DataSet nesnesinin referans ettiği bölgeyi, sorgu sonucu dönen veri kümesi ile dolduracak.
+Olayı iyi anlayabilmek için öncelikle bir milat koymamız gerekli: iş parçacığından önceki durum ve sonraki durum şeklinde. Bu nedenle uygulamamızı önce iş parçacığı kullanmadan oluşturacağız. Sonra da iş parçacığı ile. Şimdi programımızdan kısaca bahsedelim. Uygulamamız aşağıdaki sql sorgusunu çalıştırıp, bellekteki bir DataSet nesnesinin referans ettiği bölgeyi, sorgu sonucu dönen veri kümesi ile dolduracak.
 
 ```text
 SELECT Products.* From [Order Details] Cross Join Products
 ```
 
-Bu sorgu çalıştırıldığında, Sql sunucusunda yer alan Northwind veritabanı üzerinden, 165936 satırlık veri kümesi döndürür. Elbette normalde böyle bir işlemi istemci makinenin belleğine yığmamız anlamsız. Ancak sunucu üzerinde çalışan ve özellikle raporlama amacı ile kullanılan sorguların bu tip sonuçlar döndürmeside olasıdır. Şimdi bu sorguyu çalıştırıp sonuçları bir DataSet'e alan ve bu veri kümesini bir DataGrid kontrolü içinde gösteren bir uygulama geliştirelim. Öncelikle aşağıdaki formumuzu tasarlayalım.
+Bu sorgu çalıştırıldığında, SQL sunucusunda yer alan Northwind veritabanı üzerinden, 165936 satırlık veri kümesi döndürür. Elbette normalde böyle bir işlemi istemci makinenin belleğine yığmamız anlamsız. Ancak sunucu üzerinde çalışan ve özellikle raporlama amacı ile kullanılan sorguların bu tip sonuçlar döndürmesi de olasıdır. Şimdi bu sorguyu çalıştırıp sonuçları bir DataSet'e alan ve bu veri kümesini bir DataGrid kontrolü içinde gösteren bir uygulama geliştirelim. Öncelikle aşağıdaki formumuzu tasarlayalım.
 
 ![mk36_1.gif](/assets/images/2004/mk36_1.gif)
 
 Şekil 1. Form Tasarımımız.
 
-Şimdide kodlarımızı yazalım.
+Şimdi de kodlarımızı yazalım.
 
 ```csharp
 DataSet ds;

@@ -22,7 +22,7 @@ Bu makalemizde, Command sınıflarından OleDbCommand sınıfını incelemeye ç
 public OdbcCommand();
 ```
 
-Bu teknik ile oluşturulan bir komut nesnesi için bir takım özellikleri sonradan belirleyebiliriz. Öncelikle geçerli bir bağlantı nesnesine yani bir OleDbConnection nesnesine ihtiyacımız vardır. Diğer gereklilik ise, OleDbCommand sınıfı nesne örneğinin, çalıştıracağı sql ifadesidir. Bu amaçlar için OleDbCommand sınıfının Connection ve CommandText özelliklerini kullanırız. Yukarıdaki teknik ile oluşturduğumuz bir OleDbCommand nesnesi için Connection özelliği null, CommandText özelliği ise boş bir string'e işaret etmektedir. Bu tekniği daha iyi anlamak için basit bir örnek geliştirelim. Örneğin, Sql Sunucumuzda yer alan Friends isimli veri tabanındaki taboya bir satır veri gireceğimiz aşağıdaki sql ifadesini çalıştıracak bir komut tasarlamak istediğimizi varsayalım.
+Bu teknik ile oluşturulan bir komut nesnesi için birtakım özellikleri sonradan belirleyebiliriz. Öncelikle geçerli bir bağlantı nesnesine yani bir OleDbConnection nesnesine ihtiyacımız vardır. Diğer gereklilik ise, OleDbCommand sınıfı nesne örneğinin çalıştıracağı SQL ifadesidir. Bu amaçlar için OleDbCommand sınıfının Connection ve CommandText özelliklerini kullanırız. Yukarıdaki teknik ile oluşturduğumuz bir OleDbCommand nesnesi için Connection özelliği null, CommandText özelliği ise boş bir string'e işaret etmektedir. Bu tekniği daha iyi anlamak için basit bir örnek geliştirelim. Örneğin, SQL sunucumuzda yer alan Friends isimli veri tabanındaki tabloya bir satır veri gireceğimiz aşağıdaki SQL ifadesini çalıştıracak bir komut tasarlamak istediğimizi varsayalım.
 
 ```csharp
 Insert Into Siteler (Baslik,Adres,Resim,Icerik) Values('C#','www.csharpnedir.com','images/resim1.jpg','C# üzerine her türlü makale.')
@@ -58,13 +58,13 @@ namespace OleDbCmd1
 }
 ```
 
-Görüldüğü gibi OleDbCommand sınıfını oluşturduktan sonra Connection ve CommandText özellikleri belirleniyor. Diğer yandan, bir OleDbCommand nesnesini aşağıda prototipi olan diğer yapıcı metodu ilede oluşturabiliriz.
+Görüldüğü gibi OleDbCommand sınıfını oluşturduktan sonra Connection ve CommandText özellikleri belirleniyor. Diğer yandan, bir OleDbCommand nesnesini aşağıda prototipi olan diğer yapıcı metodu ile de oluşturabiliriz.
 
 ```csharp
 public OleDbCommand(string cmdText, OleDbConnection connection);
 ```
 
-Bu yapıcı metodumuz parametre olarak sql ifadesini string veri tipinde ve bağlantı nesnesinide OleDbConnection sınıfı tipinde almaktadır. Bu haliyle yukarıda yazdığımız kodları dahada kısaltabiliriz.
+Bu yapıcı metodumuz parametre olarak SQL ifadesini string veri tipinde ve bağlantı nesnesini de OleDbConnection sınıfı tipinde almaktadır. Bu hâliyle yukarıda yazdığımız kodları daha da kısaltabiliriz.
 
 ```csharp
 using System;
@@ -296,17 +296,11 @@ public virtual CommandType CommandType {get; set;}
 
 Prototipi yukarıdaki gibi olan bu özellik, CommandType numaralandırıcısı türünden 3 değer alabilir. Bu değerler ve ne işe yaradıkları aşağıdaki tabloda belirtilmiştir.
 
-CommandType Değeri
-Açıklaması
-
-Text
-Sql ifadelerini çalıştırmak için kullanılır. Bu aynı zamanda OleDbCommand sınıfına ait nesne örnekleri için varsayılan değerdir.
-
-StoredProcedure
-Veri kaynağında yer alan bir Saklı Yordam çalıştırılmak istendiğinde, CommandType değerine StoredProcedure verilir.
-
-TableDirect
-CommandType özelliğine bu değer atandığında, CommandText özelliği tablo adını alır. Komut çalıştırıldığında çalışan sql ifadesi "Select * From tabloadi" ifadesidir. Böylece belirtilen tablodaki tüm kayıtlar döndürülmüş olur.
+| CommandType Değeri | Açıklaması |
+| --- | --- |
+| Text | Sql ifadelerini çalıştırmak için kullanılır. Bu aynı zamanda OleDbCommand sınıfına ait nesne örnekleri için varsayılan değerdir. |
+| StoredProcedure | Veri kaynağında yer alan bir Saklı Yordam çalıştırılmak istendiğinde, CommandType değerine StoredProcedure verilir. |
+| TableDirect | CommandType özelliğine bu değer atandığında, CommandText özelliği tablo adını alır. Komut çalıştırıldığında çalışan sql ifadesi "Select * From tabloadi" ifadesidir. Böylece belirtilen tablodaki tüm kayıtlar döndürülmüş olur. |
 
 Tablo 1. CommandType numaralandırıcısının değerleri.
 

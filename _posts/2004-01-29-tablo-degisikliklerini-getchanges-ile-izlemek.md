@@ -15,16 +15,11 @@ Hepimizin bildiği gibi, bağlantısız veriler ile çalışırken, bir veri kay
 
 Ancak, network trafiğinin önemli ve yoğun olduğu uygulamalarda, veri kaynağından aldığımız bir veri kümesinin üzerindeki değişiklikleri, asıl veri kaynağına güncellerken karşımıza iki durum çıkar. İlk olarak, makinemizin belleğinde bulunan tüm veriler asıl veri kaynağına gönderilir ki bu veriler içinde hiç bir değişikliğe uğramamış olanlarda vardır. Diğer yandan istersek, sadece yeni eklenen satırları veya düzenlenen satırları vb., veri kaynağına gönderek daha akılcı bir iş yapmış oluruz. İşte makalemizin ana konusunu teşkil eden bu ikinci durumu gerçekleştirebilmek için GetChanges metodunu kullanırız. GetChanges metodu, DataSet ve DataTable sınıfları içinde kullanılabilmektedir. DataTable ve DataSet sınıfları için, GetChanges metodunun ikişer aşırı yüklenmiş şekli vardır.
 
-DataTable İçin
-DataSet İçin
+| DataTable İçin | DataSet İçin |
+| --- | --- |
+| public DataTable GetChanges (); | public DataSet GetChanges (); |
+| public DataTable GetChanges (DataRowState rowStates); | public DataSet GetChanges (DataRowState rowStates); |
 
-public DataTable GetChanges ();
-
-public DataSet GetChanges ();
-
-public DataTable GetChanges (DataRowState rowStates);
-
-public DataSet GetChanges (DataRowState rowStates);
 
 Görüldüğü gibi her iki sınıf içinde metodlar aynı şekilde işlemektedir. Sadece metodların geri dönüş tipleri farklıdır. DataSet için, GetChanges metodu başka bir DataSet geri döndürürken, DataTable'ın GetChanges metodu ise geriye DataTable türünden bir nesne referansını döndürür. Peki GetChanges metodunun görevi nedir? GetChanges metodunun parametresiz kullanılan hali, DataTable veya DataSet için, AcceptChanges metodu çağırılana kadar meydana gelen tüm değişiklikleri alır. Örneğin bir DataTable nesnesinin referans ettiği bellek bölgesinde yer alan bir veri kümesi üzerinde, satır ekleme, satır silme ve satır düzenleme işlemlerini yaptığımızı farzedelim. Bu durumda, bu DataTable nesnesi için AcceptChanges metodunu çağırıp tüm değişiklikleri onaylamadan önce, GetChanges metodunu kullanırsak, tablo üzerindeki tüm değişiklikleri izleyebiliriz. Bunu daha iyi görmek için aşağıdaki örneği inceleyelim. Bu örnekte Sql sunucumuz üzerinde yer alan bir tablo verilerini DataTable nesnemizin bellekte referans ettiği bölgeye yüklüyor ve verilerin görüntüsünü DataGrid kontrolümüze bağlıyoruz. Programdaki önemli nokta, GetChanges metodu ile meydana gelen değişiklikleri başka bir DataTable nesnemize almamızdır. Bu DataTable nesnesinin verileride ikinci DataGrid kontrolümüzde görüntülenecektir. Ancak kullanıcı, DataTable'da meydana gelen bu değişiklikleri DataTable nesnesinin AcceptChanges metodunu kullanarak onayladığında, GetChanges geriye boş bir DataTable nesne referansı döndürecektir. Yani değişiklikleri, AcceptChanges metodu çağırılıncaya kadar elde edebiliriz. Öncelikle aşağıdaki Formu tasarlayalım.
 
@@ -82,30 +77,15 @@ private void btnDegisiklikler_Click(object sender, System.EventArgs e)
 
 Şekil 3. Yapılan Değişikliklerin Görüntüsü.
 
-Şimdi bu noktadan sonra, dtDegisiklikler isimli DataTable nesnesi üzerinden, SqlDataAdapter nesnesini Update metodunu kullanmak daha akıllıca bir yaklaşım olucaktır. Diğer yandan, GetChanges metodunun bu kullanımı, DataTable (DataSet) de meydana gelen her tür değişikliği almaktadır. Ancak dilersek, sadece yeni eklenen kayıtları ya da sadece değişiklik yapılan kayıtlarıda elde edebiliriz. Bunu gerçekleştirmek için, GetChanges metodunun DataRowState numaralandırıcısı türünden parametre aldığı versiyonunu kullanırız. Bu parametre her bir satırın yani DataRow nesnesinin durumunu belirtmektedir ve alabileceği değerler aşağıdaki tabloda verilmiştir.
+Şimdi bu noktadan sonra, dtDegisiklikler isimli DataTable nesnesi üzerinden, SqlDataAdapter nesnesinin Update metodunu kullanmak daha akıllıca bir yaklaşım olacaktır. Diğer yandan, GetChanges metodunun bu kullanımı, DataTable (DataSet)'te meydana gelen her tür değişikliği almaktadır. Ancak dilersek, sadece yeni eklenen kayıtları ya da sadece değişiklik yapılan kayıtları da elde edebiliriz. Bunu gerçekleştirmek için, GetChanges metodunun DataRowState numaralandırıcısı türünden parametre aldığı versiyonunu kullanırız. Bu parametre her bir satırın yani DataRow nesnesinin durumunu belirtmektedir ve alabileceği değerler aşağıdaki tabloda verilmiştir.
 
-DataRowState Değeri
-Açıklama
-
-Added
-
-DataRowCollection koleksiyonuna yeni bir satır yani DataRow eklenmiş ve AcceptChanges metodu henüz çağırılmamıştır.
-
-Deleted
-
-Delete metodu ile bir satır silinmiştir.
-
-Detached
-
-Yeni bir satır, DataRowCollection için oluşturulmuş ancak henüz Add metodu ile bu koleksiyona dolayısıyla DataTable'a eklenmemiştir.
-
-Modified
-
-Satırda değişiklikler yapılmış ve henüz AcceptChanges metodu çağırılmamıştır.
-
-Unchanged
-
-Son AcceptChanges çağrısından bu yana, satırda herhangibir değişiklik olmamıştır.
+| **DataRowState Değeri** | **Açıklama** |
+| --- | --- |
+| Added | DataRowCollection koleksiyonuna yeni bir satır yani DataRow eklenmiş ve AcceptChanges metodu henüz çağırılmamıştır. |
+| Deleted | Delete metodu ile bir satır silinmiştir. |
+| Detached | Yeni bir satır, DataRowCollection için oluşturulmuş ancak henüz Add metodu ile bu koleksiyona dolayısıyla DataTable'a eklenmemiştir. |
+| Modified | Satırda değişiklikler yapılmış ve henüz AcceptChanges metodu çağırılmamıştır. |
+| Unchanged | Son AcceptChanges çağrısından bu yana, satırda herhangibir değişiklik olmamıştır. |
 
 Tablo 1. DataRowState Numaralandırıcısının Değerleri
 
@@ -115,7 +95,7 @@ Tablo 1. DataRowState Numaralandırıcısının Değerleri
 
 Şekil 4. Yeni Formumuz.
 
-Formumuza bir ComboBox ekledik. Kullanıcı bu ComboBox'tan DataRowState değerini seçicek ve GetChanges metodumuz buna göre çalışacak. ComboBox'ımızın öğeleri ise şunlar olucak;
+Formumuza bir ComboBox ekledik. Kullanıcı bu ComboBox'tan DataRowState değerini seçecek ve GetChanges metodumuz buna göre çalışacak. ComboBox'ımızın öğeleri ise şunlar olacak;
 
 ![mk48_5.gif](/assets/images/2004/mk48_5.gif)
 

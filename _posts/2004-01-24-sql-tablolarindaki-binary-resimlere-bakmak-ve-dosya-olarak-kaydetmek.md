@@ -151,11 +151,11 @@ private void btnBak_Click(object sender, System.EventArgs e)
 }
 ```
 
-![mk46_2.gif](/assets/images/2004/mk46_2.gif)Şimdi uygulamamızı çalıştıralım ve herhangibir resme bakalım. Sonrada bunu kaydedelim.
+![mk46_2.gif](/assets/images/2004/mk46_2.gif)Şimdi uygulamamızı çalıştıralım ve herhangi bir resme bakalım. Sonra da bunu kaydedelim.
 
 Şekil 2: WallID değeri 1003 olan satırdaki Resim.
 
-Şimdi Yaz başlıklı butona basıp bu resmi sisteme fiziki bir dosya olarak kaydedelim. Şekildende görüldüğü gibi dosyamız sistemde oluşturulmuştur. Bu dosyaya tıkladığımızda resmimizi görebiliriz.
+Şimdi Yaz başlıklı butona basıp bu resmi sisteme fiziki bir dosya olarak kaydedelim. Şekilden de görüldüğü gibi dosyamız sistemde oluşturulmuştur. Bu dosyaya tıkladığımızda resmimizi görebiliriz.
 
 ![mk46_3.gif](/assets/images/2004/mk46_3.gif)
 

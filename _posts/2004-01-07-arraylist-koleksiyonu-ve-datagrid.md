@@ -15,7 +15,7 @@ En büyük tercih nedeni, normal dizilerin boyutlarının çalışma esnasında 
 
 public ArrayList ();
 
-Bu şekilde tanımlanan bir ArrayList koleksiyonu varsayılan olarak 16 elemalı bir koleksiyon dizisi olur. Eğer kapasite aşılırsa, koleksiyonun boyutu otomatik olarak artacaktır. Bu elbette karşımıza 17 elemanlı bir koleksiyonumuz varsa fazladan yer harcadığımız anlamınada gelmektedir. Ancak sorunu TrimToSize metodu ile halledebiliriz. Dilerseniz bu konuyu aşağıdaki basit console uygulaması ile açıklayalım.
+Bu şekilde tanımlanan bir ArrayList koleksiyonu varsayılan olarak 16 elemanlı bir koleksiyon dizisi olur. Eğer kapasite aşılırsa, koleksiyonun boyutu otomatik olarak artacaktır. Bu elbette karşımıza 17 elemanlı bir koleksiyonumuz varsa fazladan yer harcadığımız anlamına da gelmektedir. Ancak sorunu TrimToSize metodu ile halledebiliriz. Dilerseniz bu konuyu aşağıdaki basit console uygulaması ile açıklayalım.
 
 ```csharp
 using System;

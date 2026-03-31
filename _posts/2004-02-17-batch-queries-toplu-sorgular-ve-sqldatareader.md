@@ -43,9 +43,11 @@ Bu kodları çalıştırdığımızda karşımızıza aşağıdakine benzer bir 
 
 Şekil 1. Programın Çalışmasının Sonucu.
 
-SqlDataReader nesnesinin kullanımına kısaca değindikten sonra makelemizin asıl konusu olan toplu sorgulara değinelim. Toplu sorgular birbirlerinden noktalı virgül ile ayrılmış sorgulardır. Birden fazla sorguyu bu şekilde bir araya getirerek işlemlerin tek bir hamlede başlatılmasını ve gerçekleştirilmesini sağlamış oluruz. Bu sorgu topluluklarını, eski dostumuz Ms-Dos işletim sistemindeki bat uzantılı Batch dosyalarına benzetebilirsiniz. Sorun şu ki, yukarıdaki tarzda bir SqlDataReader kullanımını bir toplu sorguya uyguladığımızda, sadece ilk sorgunun çalışıtırılacak olmasıdır. Örneğin aşağıdaki biri bir toplu sorgumuz olduğunu düşünelim;
+SqlDataReader nesnesinin kullanımına kısaca değindikten sonra makalemizin asıl konusu olan toplu sorgulara değinelim. Toplu sorgular birbirlerinden noktalı virgül ile ayrılmış sorgulardır. Birden fazla sorguyu bu şekilde bir araya getirerek işlemlerin tek bir hamlede başlatılmasını ve gerçekleştirilmesini sağlamış oluruz. Bu sorgu topluluklarını, eski dostumuz MS-DOS işletim sistemindeki bat uzantılı batch dosyalarına benzetebilirsiniz. Sorun şu ki, yukarıdaki tarzda bir SqlDataReader kullanımını bir toplu sorguya uyguladığımızda, sadece ilk sorgunun çalıştırılacak olmasıdır. Örneğin aşağıdaki gibi bir toplu sorgumuz olduğunu düşünelim;
 
+```sql
 Select * From Makale;Select * From Kitap;Select * From Siteler
+```
 
 Bu toplu sorguda arka arkaya üç select sorgusu yer almaktadır. Makale, Kitap ve Siteler tablolarının tüm sütunları talep edilmektedir. Yukarıdaki kod tekniğini böyle bir toplu sorguya uyguladığımızı düşünelim.
 

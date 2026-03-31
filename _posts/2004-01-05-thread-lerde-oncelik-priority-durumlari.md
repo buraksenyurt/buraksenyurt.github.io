@@ -9,7 +9,7 @@ tags:
   - thread
   - threadPriority
 ---
-İş parçacıklarını işlediğimiz yazı dizimizin bu üçüncü makalesinde, iş parçacıklarının birbirlerine karşı öncelik durumlarını incelemeye çalışacağız. İş parçacıkları olarak tanımladığımız metodların çalışma şıralarını, sahip oldukları öneme göre değiştirmek durumunda kalabiliriz. Normal şartlar altında, oluşturduğumuz her bir iş parçacığı nesnesi aynı ve eşit önceliğe sahiptir. Bu öncelik değeri Normal olarak tanımlanmıştır. Bir iş parçacığının önceliğini değiştirmek istediğimizde, Priority özelliğinin değerini değiştiririz. Priority özelliğinin.NET Framework'teki tanımı aşağıdaki gibidir.
+İş parçacıklarını işlediğimiz yazı dizimizin bu üçüncü makalesinde, iş parçacıklarının birbirlerine karşı öncelik durumlarını incelemeye çalışacağız. İş parçacıkları olarak tanımladığımız metodların çalışma sıralarını, sahip oldukları öneme göre değiştirmek durumunda kalabiliriz. Normal şartlar altında, oluşturduğumuz her bir iş parçacığı nesnesi aynı ve eşit önceliğe sahiptir. Bu öncelik değeri Normal olarak tanımlanmıştır. Bir iş parçacığının önceliğini değiştirmek istediğimizde, Priority özelliğinin değerini değiştiririz. Priority özelliğinin .NET Framework'teki tanımı aşağıdaki gibidir.
 
 public ThreadPriority Priority {get; set;}
 
@@ -29,7 +29,7 @@ Lowest
 
 Tablo 1. Öncelik (Priority) Değerleri
 
-Programlarımızı yazarken, iş parçacıklarının çalışma şekli verilen öncelik değerlerine göre değişecektir. Elbette tahmin edeceğiniz gibi yüksek öncelik değerlerine sahip olan iş parçacıklarının işaret ettikleri metodlar diğerlerine göre daha sık aralıklarda çağırılacak, dolayısıyla düşük öncelikli iş parçacıklarının referans ettiği metodlar daha geç sonlanacaktır. Şimdi olayı daha iyi canlandırabilmek için aşağıdaki örneğimizi geliştirelim. Daha önceden söylediğimiz gibi, bir iş parçacığının Priority özelliğine her hangibir değer vermez isek, standart olarak Normal kabul edilir. Buda tüm iş parçacıklarının varsayılan olarak eşit önceliklere sahip olacakları anlamına gelmektedir. Şimdi aşağıdaki formumuzu oluşturalım. Uygulamamız iki iş parçacığına sahip. Bu parçacıkların işaret ettiği metodlardan birisi 1' den 1000' e kadar sayıp bu değerleri bir label kontrolüne yazıyor. Diğeri ise 1000' den 1' e kadar sayıp bu değerleri başka bir label kontrolüne yazıyor. Formumuzun görüntüsü aşağıdakine benzer olmalıdır.
+Programlarımızı yazarken, iş parçacıklarının çalışma şekli verilen öncelik değerlerine göre değişecektir. Elbette tahmin edeceğiniz gibi yüksek öncelik değerlerine sahip olan iş parçacıklarının işaret ettikleri metodlar diğerlerine göre daha sık aralıklarda çağrılacak, dolayısıyla düşük öncelikli iş parçacıklarının referans ettiği metodlar daha geç sonlanacaktır. Şimdi olayı daha iyi canlandırabilmek için aşağıdaki örneğimizi geliştirelim. Daha önceden söylediğimiz gibi, bir iş parçacığının Priority özelliğine herhangi bir değer vermez isek, standart olarak Normal kabul edilir. Bu da tüm iş parçacıklarının varsayılan olarak eşit önceliklere sahip olacakları anlamına gelmektedir. Şimdi aşağıdaki formumuzu oluşturalım. Uygulamamız iki iş parçacığına sahip. Bu parçacıkların işaret ettiği metodlardan birisi 1'den 1000'e kadar sayıp bu değerleri bir label kontrolüne yazıyor. Diğeri ise 1000'den 1'e kadar sayıp bu değerleri başka bir label kontrolüne yazıyor. Formumuzun görüntüsü aşağıdakine benzer olmalıdır.
 
 ![mk35_1.gif](/assets/images/2004/mk35_1.gif)
 
@@ -290,7 +290,7 @@ private void btnKapat_Click(object sender, System.EventArgs e)
 }
 ```
 
-Şimdi örneğimizi çalıştıralım ve birinci iş parçacığımız için en yüksek öncelik değerini (Highest) ikinci iş parçacığımız içinde en düşük öncelik değerini (Lowest) seçelim. Sonuçlar aşağıdakine benzer olucaktır.
+Şimdi örneğimizi çalıştıralım ve birinci iş parçacığımız için en yüksek öncelik değerini (Highest), ikinci iş parçacığımız için de en düşük öncelik değerini (Lowest) seçelim. Sonuçlar aşağıdakine benzer olacaktır.
 
 ![mk35_4.gif](/assets/images/2004/mk35_4.gif)
 

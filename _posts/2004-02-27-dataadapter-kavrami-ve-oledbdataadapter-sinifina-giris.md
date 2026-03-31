@@ -10,13 +10,13 @@ tags:
 ---
 Bu makalemizde, Ado.Net'in en çok kullanılan kavramlarından birisi olan DataAdapter kavramını incelemeye çalışacak ve OleDbDataAdapter sınıfına kısa bir giriş yapacağız. Pek çok programcı, veritabanı uygulamaları geliştirirken, kontrol ve performansa büyük önem verir. Ancak aynı zamanda bu kazanımlara kolay yollar ile ulaşmak isterler. Ado.Net modelinde, bağlantısız katman ile bağlantılı katman arasındaki iletişim ve veri alışverişinin, kontrol edilebilir, performanslı ve aynı zamanda kolay geliştirilir olmasında DataAdapter kavramının yeri yadırganamıyacak kadar fazladır. Temel tanım olarak, DataAdapter sınıfları, sahip oldukları veri sağlayıcılarının izin verdiği veri kaynakları ile, sistem belleği üzerinde yer alan bağlantısız katman nesneleri arasındaki veri alışverişinin kolay, güçlü ve verimli bir şekilde sağlanmasından sorumludurlar. Bu tanımdan yola çıkarak, DataAdapter sınıflarının, veri kaynağından verilerin alınıp, bağlantısız katman nesneleri olan DataSet ve DataTable nesnelerine doldurulmasından sorumlu olduğunu; ayrıca, bağlantısız katman nesnelerinin taşıdığı verilerdeki değişikliklerinde veri kaynağına yansıtılmasından sorumlu olduğunu söyleyebiliriz. İşte bu, DataAdapter sınıfının rolünü tam olarak açıklayan bir tanımlamadır.
 
-Veritabanı uygulamalarında en önemli unsurların, verinin taşınması, izlenebilmesi, üzerinde değişikliklerin yapılması ve tekrar veri kaynağına yansıtılması olduğunu söyleyebiliriz. DataAdapter sınıflarının bu unsurların gerçekleştirilmesinde çok önemli rol oynadıkları bir gerçektir. Aşağıdaki şekil DataAdapter sınıflarının işleyişini daha iyi anlamamıza yardımcı olucaktır.
+Veritabanı uygulamalarında en önemli unsurların, verinin taşınması, izlenebilmesi, üzerinde değişikliklerin yapılması ve tekrar veri kaynağına yansıtılması olduğunu söyleyebiliriz. DataAdapter sınıflarının bu unsurların gerçekleştirilmesinde çok önemli rol oynadıkları bir gerçektir. Aşağıdaki şekil DataAdapter sınıflarının işleyişini daha iyi anlamamıza yardımcı olacaktır.
 
 ![mk57_1.gif](/assets/images/2004/mk57_1.gif)
 
 Şekil 1. DataAdapter Sınıfının Rolü.
 
-Ado.net modeli,.net Framework'ün en son sürümünde, OleDb veri kaynakları için OleDbDataAdapter, Sql veri kaynakları için SqlDataAdapter, Oracle veri kaynakları için OracleDataAdapter ve Odbc veri kaynakları içinde OdbcDataAdapter sınıflarına sahiptir. DataAdapter sınıflarının yapısı aşağıdaki gibidir.
+ADO.NET modeli, .NET Framework'ün en son sürümünde, OleDb veri kaynakları için OleDbDataAdapter, SQL veri kaynakları için SqlDataAdapter, Oracle veri kaynakları için OracleDataAdapter ve Odbc veri kaynakları için de OdbcDataAdapter sınıflarına sahiptir. DataAdapter sınıflarının yapısı aşağıdaki gibidir.
 
 ![mk57_2.gif](/assets/images/2004/mk57_2.gif)
 
@@ -30,20 +30,12 @@ TableMappings DataTableMappingCollection türünden bir koleksiyondur. Görevi i
 
 DataAdapter sınıflarının genel özelliklerine değindikten sonra dilerseniz OleDbDataAdapter sınıfımızı incelemeye başlayalım. OleDbDataAdapter sınıfı System.Data.OleDb isim uzayı içinde yer almaktadır. Bir OleDbDataAdapter nesnesi yaratmak için kullanabileceğimiz 4 adet aşırı yüklenmiş yapıcı metod bulunmaktadır. Bunlar aşağıdaki tabloda belirtilmiştir.
 
-Yapıcı Metod Prototipi
-Açıklaması
-
-public OleDbDataAdapter (string, string);
-Select sorgusunu ve bağlantı için gerekli söz dizimini metin şeklinde parametre olarak alır.
-
-public OleDbDataAdapter (string, OleDbConnection);
-Sorguyu metin bazında alırken, bağlantı için önceden oluşturulmuş bir OleDbConnection nesnesini parametre olarak alır.
-
-public OleDbDataAdapter (OleDbCommand);
-Select sorgusunu ve geçerli bir bağlantıyı işaret eden bir OleDbCommand nesnesini parametre olarak alır.
-
-public OleDbDataAdapter ();
-Böyle oluşturulan bir OleDbDataAdapter'ı kullanabilmek için, ilgili özellikler (SelectCommand gibi.) sonradan ayarlanır.
+| Yapıcı Metod Prototipi | Açıklaması |
+| --- | --- |
+| public OleDbDataAdapter (string, string); | Select sorgusunu ve bağlantı için gerekli söz dizimini metin şeklinde parametre olarak alır. |
+| public OleDbDataAdapter (string, OleDbConnection); | Sorguyu metin bazında alırken, bağlantı için önceden oluşturulmuş bir OleDbConnection nesnesini parametre olarak alır. |
+| public OleDbDataAdapter (OleDbCommand); | Select sorgusunu ve geçerli bir bağlantıyı işaret eden bir OleDbCommand nesnesini parametre olarak alır. |
+| public OleDbDataAdapter (); | Böyle oluşturulan bir OleDbDataAdapter'ı kullanabilmek için, ilgili özellikler (SelectCommand gibi.) sonradan ayarlanır. |
 
 Tablo 1. OleDbDataAdapter sınıfının yapıcı metodları.
 

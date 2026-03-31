@@ -9,77 +9,23 @@ tags:
   - checked
   - unchecked
 ---
-Bugünkü makalemizde, değişkenlerin içerdikleri verilerin birbirleri arasında atanması sırasında oluşabilecek durumları incelemeye çalışacağız. Bildiğiniz gibi, değişkenler bellekte tutulurken, tanımlandıkları veri tipine göre belirli bir bit boyutuna sahip olurlar. Ayrıca her değişkenimizin belli bir değer aralığı vardır. Programlarımızı yazarken, çoğu zaman değişkenleri birbirlerine atarız. Küçük boyutlu bir değişkeni, kendisinden daha büyük boyutlu bir değişkene atarken bir problem yoktur. Ancak, boyutu büyük olan bir değişkeni, daha küçük boyuta sahip bir değişkene atamak istediğimizde durum değişir. Elbette böyle bir durumda, derleyicimiz bizi uyaracaktır. Ancak bilinçli olarak yani tür dönüştürme anahtar kelimelerini kullandığımız durumlarda herhangibir derleyici hatasını almayız. Bu konuyu daha iyi anlayabilmek, değişkenleri tanımladığımız türlere ait boyut bilgilerinin iyi bilinmesini gerektirir. Bu amaçla aşağıdaki tabloda, C# programlama dilinde kullanılan değişken türlerini bulabilirsiniz.
+Bugünkü makalemizde, değişkenlerin içerdikleri verilerin birbirleri arasında atanması sırasında oluşabilecek durumları incelemeye çalışacağız. Bildiğiniz gibi, değişkenler bellekte tutulurken, tanımlandıkları veri tipine göre belirli bir bit boyutuna sahip olurlar. Ayrıca her değişkenimizin belli bir değer aralığı vardır. Programlarımızı yazarken, çoğu zaman değişkenleri birbirlerine atarız. Küçük boyutlu bir değişkeni, kendisinden daha büyük boyutlu bir değişkene atarken bir problem yoktur. Ancak, boyutu büyük olan bir değişkeni, daha küçük boyuta sahip bir değişkene atamak istediğimizde durum değişir. Elbette böyle bir durumda, derleyicimiz bizi uyaracaktır. Ancak bilinçli olarak yani tür dönüştürme anahtar kelimelerini kullandığımız durumlarda herhangi bir derleyici hatasını almayız. Bu konuyu daha iyi anlayabilmek, değişkenleri tanımladığımız türlere ait boyut bilgilerinin iyi bilinmesini gerektirir. Bu amaçla aşağıdaki tabloda, C# programlama dilinde kullanılan değişken türlerini bulabilirsiniz.
 
-Değişken Türü
-Boyut (Bit)
-Alt Aralık
-Üst Aralık
-
-Byte
-8
-0
-255
-
-SByte
-8
--128
-127
-
-Short
-16
--32768
-32767
-
-UShort
-16
-0
-65535
-
-Int
-32
--2,147,483,648
-2,147,483,647
-
-UInt
-32
-0
-4,294,967,295
-
-Long
-64
--9,223,372,036,854,775,808
-9,223,372,036,854,775,807
-
-ULong
-64
-0
-18,446,744,073,709,551,615
-
-Float
-32
-+/- 1.5 X 10^-45
-+/- 3.4 X 10^38
-
-Double
-64
-+/- 5 X 10^-324
-+/- 1.7 X 10^308
-
-Decimal
-128
-1 X 10^-28
-7.9 X 10^1028
-
-Char
-16
--
--
-
-Bool
--
--
--
+| Değişken Türü | Boyut (Bit) | Alt Aralık | Üst Aralık |
+| --- | --- | --- | --- |
+| Byte | 8 | 0 | 255 |
+| SByte | 8 | -128 | 127 |
+| Short | 16 | -32768 | 32767 |
+| UShort | 16 | 0 | 65535 |
+| Int | 32 | -2,147,483,648 | 2,147,483,647 |
+| UInt | 32 | 0 | 4,294,967,295 |
+| Long | 64 | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |
+| ULong | 64 | 0 | 18,446,744,073,709,551,615 |
+| Float | 32 | +/- 1.5 X 10^-45 | +/- 3.4 X 10^38 |
+| Double | 64 | +/- 5 X 10^-324 | +/- 1.7 X 10^308 |
+| Decimal | 128 | 1 X 10^-28 | 7.9 X 10^1028 |
+| Char | 16 | - | - |
+| Bool | - | - | - |
 
 Tablo 1. C# Değişken Türlerini Hatırlayalım.
 
