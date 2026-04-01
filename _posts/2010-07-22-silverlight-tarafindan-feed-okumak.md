@@ -138,8 +138,6 @@ Biliyoruz ki, Silverlight uygulamaları Asp.Net gibi Web uygulamaları içerisin
 
 Ben örneğimizde hız kesemeden devam edebilmek adına, aynı uygulamaya Silverlight destekli bir WCF servisini ekleyerek ilerlemeyi tercih ettim. İşte FeedReaderService isimli Silverlight servisinin kod içeriği.
 
-> Silverlight destekli WCF Servicelerinin nasıl geliştirileceğini [Screencast - Silverlight Enabled WCF Services](https://www.buraksenyurt.com/post/Screencast-Silverlight-Enabled-WCF-Services) isimli görsel dersten takip edebilirsiniz.
-
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -290,4 +288,6 @@ Görüldüğü üzere RSS içerikleri başarılı bir şekilde getirilebilmekted
 
 Benden buraya kadar. Bir süre dinlenmeye çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-[RSSReaderim_RTM.rar (1,48 mb)](/assets/files/2010/RSSReaderim_RTM.rar)[Örnek Visual Studio 2010 Ultimate RTM sürümünde geliştirilmiş ve test edilmiştir]
+[RSSReaderim_RTM.rar (1,48 mb)](/assets/files/2010/RSSReaderim_RTM.rar)
+
+> Örnek Visual Studio 2010 Ultimate RTM sürümünde geliştirilmiş ve test edilmiştir.
