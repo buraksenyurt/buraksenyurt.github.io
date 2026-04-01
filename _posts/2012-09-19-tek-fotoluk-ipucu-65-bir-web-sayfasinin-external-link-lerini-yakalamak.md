@@ -18,7 +18,7 @@ Diyelim ki her hangibir Uri tipinin işaret ettiği Web içeriğinde yer alan a 
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_107.png)
 
-[![tfi_65last](/assets/images/2012/tfi_65last_thumb.png)](/assets/images/2012/tfi_65last.png)
+![tfi_65last](/assets/images/2012/tfi_65last.png)
 
 Sanırım Regex ifadesini farklı desenler (Pattern) ile denediğiniz de çok daha fazla bilgiye sahip olabildiğinizi görebilirsiniz
 

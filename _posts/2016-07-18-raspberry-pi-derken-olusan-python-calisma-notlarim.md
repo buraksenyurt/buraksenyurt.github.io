@@ -20,7 +20,9 @@ Bu yüzden notlarımın üstünden geçmem öğrendiklerimi hatırlamamda epey y
 
 Raspberry PI ve Python maceramda sevgili [Recep Duman](http://www.recepduman.net/) hocamın da yardımları var. Onun yol göstericiliğinde ilerlemeye çalışıyorum. Örneğin birlikte Karaköy'deki elektronikçilere gidip gerekli malzemeleri aldık. Ayrıca takip ettiğim iki kitap var.
 
-[![book1a.gif](/assets/images/2016/book1a.gif)](http://www.idefix.com/Kitap/Raspberry-Pi/Guray-Yildirim/Egitim-Basvuru/Bilgisayar/urunno=0000000681261) [![book2a.gif](/assets/images/2016/book2a.gif)](http://www.idefix.com/Kitap/Yeni-Baslayanlar-Icin-Python/Ahmet-Aksoy/Egitim-Basvuru/Ders-Kitaplari/Teknik-Ders-Kitaplari/urunno=0000000694609)
+![book1a.gif](/assets/images/2016/book1a.gif)
+
+![book2a.gif](/assets/images/2016/book2a.gif)
 
 Bu kitapları da şiddetle tavsiye ederim. Orta seviyeye kadar Raspberry PI ve Python ile donanmamızı sağlayacak değerli kaynaklar. Öyleyse vakit kaybetmeden notlarımızın üzerinden bir geçelim.
 

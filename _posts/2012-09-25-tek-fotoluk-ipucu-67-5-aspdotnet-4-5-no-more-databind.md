@@ -17,7 +17,7 @@ Asp.Net 4.5 Web Forms tarafında gelen yeniliklerden birisi de, veri bağlı kon
 
 [Örnekte kullanılan Chinook isim alanı, meşhur Chinook veritabanının Entity Framework tabanlı modelinin oluşturulduğu yerdir]
 
-[![tfi_67_5](/assets/images/2012/tfi_67_5_thumb.png)](/assets/images/2012/tfi_67_5.png)
+![tfi_67_5](/assets/images/2012/tfi_67_5.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

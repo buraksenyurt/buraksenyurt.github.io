@@ -14,6 +14,6 @@ tags:
 ---
 Çalıştırdığımız.Net tabanlı uygulamaların anlık bellek tüketimlerini kod içerisinden ölçümlemek ve hatta loglamak iyi bir fikir olabilir. Hatta bu çıktıyı XML formatında dış dünyaya da sunabiliriz. Basit anlamda aşağıdaki fotoğraf size ipucu verecektir kanaatindeyim.
 
-[![PhotoTrick34](/assets/images/2011/PhotoTrick34_thumb.png)](/assets/images/2011/PhotoTrick34.png)
+![PhotoTrick34](/assets/images/2011/PhotoTrick34.png)
 
 [MemoryMeasurement.rar (22,15 kb)](/assets/files/2011/MemoryMeasurement.rar)

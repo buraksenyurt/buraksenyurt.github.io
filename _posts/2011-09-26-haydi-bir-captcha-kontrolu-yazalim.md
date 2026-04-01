@@ -11,7 +11,7 @@ tags:
 ---
 Şu sıralarda kurumsal bir Asp.Net eğitimi vermekteyim. Eğitim içeriği oldukça geniş ve güzel konuları içermekte. Bunlardan bir tanesi de Asp.Net uygulamalarında Captcha doğrulamasının kullanımı. Bildiğiniz üzere web ortamı üzerinde özellikle Form veri girişlerinin yapıldığı senaryolarda akıllı robotların gereksiz yere post atma işlemlerini engellemek çok önemlidir.
 
-[![terzi](/assets/images/2011/terzi_thumb.gif)](/assets/images/2011/terzi.gif)
+![terzi](/assets/images/2011/terzi.gif)
 
 
 Örneğin şu an kullanmakta olduğum BlogEngine sürümünde, sisteme monte edilmiş bir Captcha kontrolü veya modülü bulunmamakta (Biliyorum son sürüme geçmeliydim ![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_6.png)). Bu nedenle özellikle yorum kısımlarında dünyanın çeşitli bölgelerindeki robot programlarının tacizlerine fazlasıyla maruz kalmaktayım. Anlamsız pek çok bilgiden oluşan spam yorumlar söz konusu.
@@ -153,7 +153,7 @@ Oldukça basit bir içeriğe sahip olan bu kontrol aslında strArray isimli stri
 
 Artık örnek bir web sayfasında söz konusu kontrolümüzü test edecek içeriği ve kod parçasını geliştirebiliriz. Dilerseniz aspx sayfamızın ön yüz içeriğini aşağıdaki gibi geliştirelim.
 
-[![bei_1](/assets/images/2011/bei_1_thumb.gif)](/assets/images/2011/bei_1.gif)
+![bei_1](/assets/images/2011/bei_1.gif)
 
 ```xml
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
@@ -213,7 +213,7 @@ Artık uygulamamızı test edebiliriz ne dersiniz. Hatta edebilirsiniz
 
 ![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_65.png)
 
-[![bei_2](/assets/images/2011/bei_2_thumb.gif)](/assets/images/2011/bei_2.gif)
+![bei_2](/assets/images/2011/bei_2.gif)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

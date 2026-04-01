@@ -15,7 +15,7 @@ tags:
 ---
 > Hızzzzz!!! Ben Hızzımmm! Hızlıdan hızlı…
 
-[![70050](/assets/images/2015/70050_thumb.jpg)](/assets/images/2015/70050.jpg)
+![70050](/assets/images/2015/70050.jpg)
 
 Bu repliği bu aralar haftada en az 7 kere seyretmek zorunda kaldığım Cars filminden hatırlıyorum (Pixar’ ın efsane çizgi filmlerinden birisi olmakla birlikte serinin 2nci filmi de süperdir. 3ncü çekilir mi bilemem ama çekilse harika olur)
 
@@ -44,13 +44,13 @@ Gelelim.Net Framework tarafına. Windows Communication Foundation 4.5 sürümü 
 
 Konuyu daha iyi anlayabilmek için basit bir çözüm üzerinden ilerlemeye çalışabiliriz. Solution içeriğimizde 3 farklı proje bulunacaktır. Bunlardan birisi WCF Servis kütüphanesi, diğeri bu servis kütüphanesini kullanan Host uygulaması ve 3ncüsü de istemci program. Servis ile istemci tarafındaki haberleşme de UDP, TCP ve HTTP bazlı iletişimi tercih ediyor olacağız. Amacımız UDP kullanımı ve performans testi olduğundan tek yönlü (OneWay) çalışan ve sadece basit bir string içeriği sunucuya gönderebilmemizi sağlayan bir servis sözleşmesi (Service Contract) tasarlıyor olacağız. Kabaca gerçekleştirmeyi planladığımız senaryo aşağıdaki şekilde görüldüğü gibidir.
 
-[![udpwcf_2](/assets/images/2015/udpwcf_2_thumb.png)](/assets/images/2015/udpwcf_2.png)
+![udpwcf_2](/assets/images/2015/udpwcf_2.png)
 
 Servis Kütüphanesinin Geliştirilmesi
 
 Dilerseniz ilk olarak WCF servis kütüphanesini (WCF Service Library) tasarlayalım.
 
-[![udpwcf_5](/assets/images/2015/udpwcf_5_thumb.png)](/assets/images/2015/udpwcf_5.png)
+![udpwcf_5](/assets/images/2015/udpwcf_5.png)
 
 IEchoService sözleşmesi aşağıdaki kod içeriğine sahiptir.
 
@@ -270,17 +270,17 @@ Ne Yapıyoruz?
 Aslında yaptığımız işlem gayet basit. 4096 byte boyutu olan ve içerisinde S yazan metin katarlarımızı paketler halinde defalarca servis tarafına göndermekteyiz. Örnekte bu tekrar sayısı i10000 kadardır. Bu da bize test için gerekli veri aktarım yükünü getirecektir.
 
 > Gönderimde bulunulacak olan UDP paketlerindeki Datagram içeriğinin belirli bir boyut sınırı vardır. En azından WCF tarafında bunun bir limiti bulunmaktadır. Eğer çok büyük boyutlu bir paket gönderilmeye çalışılırsa aşağıdakine benzer bir çalışma zamanı hatasının istemci tarafına çıkması muhtemeldir. Dikkat edileceği üzere 65507 byte’ ın aşılmaması gerektiği ifade edilmektedir.
-> [![udpwcf_6](/assets/images/2015/udpwcf_6_thumb.png)](/assets/images/2015/udpwcf_6.png)
+> ![udpwcf_6](/assets/images/2015/udpwcf_6.png)
 
 Testler
 
 Artık uygulamamızı test edebiliriz. Ben kullanmakta olduğum sistemde yaptığım testler sonucu aşağıdaki ekran görüntüsündekine benzer çalışma zamanı süreleri ile karşılaştım.
 
-[![udpwcf_3](/assets/images/2015/udpwcf_3_thumb.png)](/assets/images/2015/udpwcf_3.png)
+![udpwcf_3](/assets/images/2015/udpwcf_3.png)
 
 Dikkat edileceği üzere UDP ile yapılan haberleşme diğerlerine göre çok daha hızlı. WS tabanlı yapılan iletişim ise yerlerde sürünüyor diyebiliriz bu sonuçlara göre. Nitekim WS iletişiminde paket sayısının belirgin ölçüde arttığını da belirtelim. Sonuçları Excel Chart ile yorumlarsak farkları daha net anlayabiliriz.
 
-[![udpwcf_4](/assets/images/2015/udpwcf_4_thumb.png)](/assets/images/2015/udpwcf_4.png)
+![udpwcf_4](/assets/images/2015/udpwcf_4.png)
 
 UDP’ ye özellikle OneWay erişimde en çok yaklaşan TCP protokolü üzerinden yapılan iletişimdir. Diğer yandan en uzun süreler WS HTTP tabanlı iletişimde gerçekleşmiştir. Bu son derece doğaldır nitekim söz konusu iletişim protokolünde WS standartları gereği Security’ yi sağlamak için yapılan bir dizi zaman kaybettirici işlem söz konusudur.
 
@@ -330,11 +330,11 @@ static void Executer(EchoServiceClient proxy,string title,int tryCount,string te
 
 Çalışma zamanında aşağıdaki ekran görüntüsündekine benzer sonuçlar alınmıştır.
 
-[![udpwcf_7](/assets/images/2015/udpwcf_7_thumb.png)](/assets/images/2015/udpwcf_7.png)
+![udpwcf_7](/assets/images/2015/udpwcf_7.png)
 
 Her zamanki gibi sonuçları Excel Chart üzerinden değerlendirirsek çok daha iyi analiz edebiliriz.
 
-[![udpwcf_8](/assets/images/2015/udpwcf_8_thumb.png)](/assets/images/2015/udpwcf_8.png)
+![udpwcf_8](/assets/images/2015/udpwcf_8.png)
 
 Liderlik dikkat edileceği üzere TCP bazlı iletişime geçti. İşte başta belirttiğimiz sürpriz durumlardan birisi. Aradaki farklar çok da az olsa UDP iletişiminden daha hızlı sonuçlar elde edildiğini görmekteyiz. Bu sonuçlara göre özellikle tek yönlü (OneWay) olarak tasarlanabilen, ses ile video gibi veri aktarımlarının söz konusu olduğu, güvenli olması gerekmeyen ve hatta içeriğin Streaming şeklinde değil de paketler halinde gönderilip n sayıda istemciye ulaştırılacağı düşünülen senaryolarda UDP tabanlı iletişimi tercih edebiliriz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

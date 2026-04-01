@@ -15,7 +15,7 @@ tags:
 ---
 Bir süre öncesine kadar Composition adı verilen bir katmanda yer alacak çeşitli servisler ile yoğun şekilde güreşmekteydim. Çok fazla faktör, çok fazla farklı sistem ve tabiri yerinde ise oyun ve oyuncu söz konusuydu. WCF servisleri, XML Web Servisleri, Java tabanlı olanları ve belki de yarın gelecek olan çeşitli COM bileşenleri, 3ncü parti uygulamalar, koduna müdahale edemeyeceğimiz programlar vs.
 
-[![1344349583_normalThumb](/assets/images/2013/1344349583_normalThumb_thumb.jpg)](/assets/images/2013/1344349583_normalThumb.jpg)
+![1344349583_normalThumb](/assets/images/2013/1344349583_normalThumb.jpg)
 
 Sadece bunlar olsa iyi. Bir de bunlar içerisine Oracle üzerinde koşan Transactional veritabanı işlemleri de mevcut olunca, işler ister istemez karışıyor ve künde pozisyonuna geliyorsunuz. Nitekim bu servisler n sayıda kombinasyon ile birbirleriyle etkileşimde bulunabilirler ve bu tip senaryolarda bir şekilde Distributed Transaction terminolojisinin uygulanması ve servisler arasında başarılı bir şekilde akıtılarak, Two Phase Commit ilkesinin gerçekleştirilebiliyor olması gereklidir.
 
@@ -32,7 +32,7 @@ Elimizde iki adet servis bulunmakta. Her ikisi de kendi içerisindeki operasyonl
 
 Ne varki bu servislerden birisi Windows Communication Foundation yapısında iken diğeri eski XML Web Service formatında tasarlanmış durumdalar. Senaryomuzda bu iki servisi kendi bünyesinde birleştiren bir de Workflow Activity bulunuyor. Çok doğal olarak bu bileşenin içerisinde ele alacağımız bir TransactionScope kontrolü de yer almakta. Hal böyle olunca TransactionScope içerisinde üretilen Transaction’ ın servisler arasında nasıl akacağı, büyük soru işareti olarak karşımıza çıkıyor. Aslında senaryoyu aşağıdaki şekle bakarak kafamızda daha iyi canlandırabileceğimizi düşünüyorum.
 
-[![WP_000637](/assets/images/2013/WP_000637_thumb.jpg)](/assets/images/2013/WP_000637.jpg)
+![WP_000637](/assets/images/2013/WP_000637.jpg)
 
 WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların servis içerisine nasıl akıtılacağını [bu yazımızda](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/) incelemiştik hatırlayacağınız üzere. Ancak işin içerisine eski stilde yazılmış bir XML Web Service girince, durum biraz farklılaşıyor
 
@@ -44,7 +44,7 @@ Ne yazık ki, istemci tarafında başlatılan Transaction’ ın kod yardımıyl
 
 Öyleyse gelin yola koyulalım ve adım adım Solution içeriğimizi inşa ederek teste çıkalım. Çözümümüz içerisinde bir ortak fonksiyonellik kütüphanesi, bir WCF Servis uygulaması, bir XML Web Servis içeren Asp.Net Web uygulaması ve son olarak da bir adet Workflow Console projesi bulunmakta.
 
-[![htt_4](/assets/images/2013/htt_4_thumb.png)](/assets/images/2013/htt_4.png)
+![htt_4](/assets/images/2013/htt_4.png)
 
 İlk olarak WCF servis tarafını geliştiriyor olacağız.
 
@@ -242,7 +242,7 @@ Branch tablosuna insert işlemini icra eden InsertBranch web metodu içerisindek
 
 Workflow uygulamamızda aşağıdaki TransactionScope bileşenini içeren bir Flow Chart söz konusudur.
 
-[![htt_1](/assets/images/2013/htt_1_thumb.png)](/assets/images/2013/htt_1.png)
+![htt_1](/assets/images/2013/htt_1.png)
 
 Akışa ait XAML içeriğinde özellikle bold olan alanara dikkat edin. Örneği yazarken işinize yarayacaktır.
 
@@ -328,7 +328,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 Ne yazık ki XML Web Service’ ler referans olarak bir Workflow projesine eklendiklerinde, Toolbox üzerinde aynı WCF Servislerinde olduğu gibi bir component olarak görülmemektedir. Tabi bunu Visual Studio 2012 için konuştuğumuzu tekrardan hatırlatalım. (Eskiye olan support’ un kalktığını bu noktada bariz bir şekilde görebiliriz aslında ![Sad smile](/assets/images/2013/wlEmoticon-sadsmile_14.png))
 
-[![htt_5](/assets/images/2013/htt_5_thumb.png)](/assets/images/2013/htt_5.png)
+![htt_5](/assets/images/2013/htt_5.png)
 
 Dolayısıyla ilgili XML Web Servis’ ini çağırmak için belki bir InvokeMethod bileşeninden yararlanabiliriz ki o da içeride static bir tip metodu kullanacaktır. Bu metod Executer isimli sınıf içerisinde aşağıdaki gibi tanımlanmıştır.
 
@@ -391,11 +391,11 @@ Time:09.08.2012 09:28:45,Isolation Level:Serializable,Distributed ID:2cef4851-a7
 
 Bu çıktılardan ilki WCF servis metodu, ikincisi ise XML Web Servis metodu içerisinde gelmektedir. Dikkat edileceği üzere her iki çağrı içinde aynı Distributed Transaction ID değeri üretilmiştir. Eğer veritabanına gidilirse, icra edilen insert işlemlerinin her iki tablo içinde başarılı bir şekilde yapıldığı görülebilir.
 
-[![htt_2](/assets/images/2013/htt_2_thumb.png)](/assets/images/2013/htt_2.png)
+![htt_2](/assets/images/2013/htt_2.png)
 
 Şimdi XML Web servis metodu içerisindeki sihirli yorum satırımızı açalım ve testimizi tekrardan yapalım. Çalışma ortamına düşen exception mesajı aşağıdaki gibi olacaktır. TransactionScope kontrolünün AbortInstanceOnTransactionFlow özelliğinin değeri varsayılan olarak true olduğundan, Web Servis içerisinden gelen Fault Exception nedeni ile, akışa ait nesne örneğinin çalışması otomatikman durdurulmuştur.
 
-[![htt_3](/assets/images/2013/htt_3_thumb.png)](/assets/images/2013/htt_3.png)
+![htt_3](/assets/images/2013/htt_3.png)
 
 Log içeriğine bakıldığında ise Distribute Transaction’ ın yine başarılı bir şekilde oluşturulduğu ve her iki servis çağrısında da, aynı ID değerlerini kullanıldığı görülebilir.
 

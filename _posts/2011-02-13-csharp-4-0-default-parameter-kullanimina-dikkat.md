@@ -12,7 +12,7 @@ tags:
 ---
 2004 ve 2005 yıllarında uzun bir süre editörlüğünü yaptığım [C#Nedir?](http://www.csharpnedir.com/) topluluğunun düzenlediği C# Akademi eğitimlerinde, yarı zamanlı eğitmen olarak görev yapmıştım. Genellikle C# programlama dilinin basit ve temel konularını, ayrıca Object Oriented özelliklerini aktarmaya çalışırdım. Elbette sınıfımdaki öğrencilerim yanda görüldüğü gibi her zaman pür neşe olmazlardı.
 
-[![blg215_Giris](/assets/images/2011/blg215_Giris_thumb.jpg)](/assets/images/2011/blg215_Giris.jpg)
+![blg215_Giris](/assets/images/2011/blg215_Giris.jpg)
 
 
 Ancak insan zaman içerisinde profesyonelleşme yolunda ilerledikçe konuları çok daha farklı açılardan ele alması gerektiğini de öğreniyor. Profesyonel bir eğitmenin en iyi yaptığı işlerin başında, en zor konuları çöp adam kullanarak anlatmak gelmektedir. Tabi eğitmenin gerçek hayat tecrübelerini ve ip uçlarını da aktarıyor olması, profesyonelliğinin diğer bir göstergesidir. Böyle bir eğitmenin vereceği önerileri pür dikkat dinlemekte yarar vardır.
@@ -74,17 +74,17 @@ namespace DefaultAndOptionalParametersCase
 }
 ```
 
-[![blg215_Runtime1](/assets/images/2011/blg215_Runtime1_thumb.gif)](/assets/images/2011/blg215_Runtime1.gif)
+![blg215_Runtime1](/assets/images/2011/blg215_Runtime1.gif)
 
 Bu kod parçasında dikkat etmemiz gereken nokta Constructor metodlarıdır. Görüldüğü üzere en fazla sayıda parametre alan yapıcı metod, diğer yapıcı metodlar tarafından kullanılmaktadır. Burada this anahtar kelimesini takip eden ifadeler içerisinde gerekli aktarma işlemlerinin yapıldığı görülebilir.
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_5.gif)](/assets/images/2011/Exclamation_5.gif)
+![Exclamation](/assets/images/2011/Exclamation_5.gif)
 
 Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda (Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
 
 Tabi burada C# 4.0 ile gelen Default Parameters yeteneğinin devreye girmesi ile n sayıda metod yerine tek bir metodun kullanılması söz konusu olabilir. Nitekim ele aldığımız örnek senaryoda yapıcı metodların tek yaptığı, uygun olan versiyona parametre değerlerini taşımaktır. Dikkat edileceği üzere sadece tek bir yapıcı metod içerisinde özellik değer atama işlemleri yapılmaktadır. Diğer yapıcı metodlar sadece parametre değerlerini taşımak için kullanılmaktadır. Aşağıdaki şekilde bu durum ifade edilmeye çalışılmaktadır.
 
-[![blg215_CopyConstructors](/assets/images/2011/blg215_CopyConstructors_thumb.gif)](/assets/images/2011/blg215_CopyConstructors.gif)
+![blg215_CopyConstructors](/assets/images/2011/blg215_CopyConstructors.gif)
 
 Aslında Constructor kullanımının buradaki amacı, Connection tipine ait nesne örneklerinin oluşturulması sırasında alternatif versiyonları varsayılan parametre değerlerine göre sunabilmektir. Bu amaç düşünüldüğünde Default Parameters yeteneği önemli bir avantaj sağlamaktadır. Gelin kodumuzu Default Parameters kabiliyetini kullanarak aşağıdaki hale getirelim.
 
@@ -131,7 +131,7 @@ namespace DefaultAndOptionalParametersCase
 
 Dikkat edileceği üzere tek bir yapıcı metod kullanımı söz konusudur. Bir başka deyişle kod kısalmıştır. Yapıcı metodun parametrelerinde verilen varsayılan değerler sayesinde, Connection tipine ait nesne örneklerinin oluşturulması şekillendirilmiştir. Örneğin, çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
-[![blg215_Runtime2](/assets/images/2011/blg215_Runtime2_thumb.gif)](/assets/images/2011/blg215_Runtime2.gif)
+![blg215_Runtime2](/assets/images/2011/blg215_Runtime2.gif)
 
 Aslında işin içerisine Named Parameters kullanımını da katmamız yerinde olacaktır. Neden? Main metodu içerisindeki aşağıdaki kod satırını göz önüne alalım.
 
@@ -194,13 +194,13 @@ namespace DefaultAndOptionalParametersCase
 
 Kodda sadece processId isimli bir metod parametresi eklendiğini görmekteyiz. Bu aslında sonradan yapılan bir değişiklik olarak düşünülmelidir. Bir başka deyişle geliştirdiğimiz projelerde sonradan varsayılan parametre eklenmesi söz konusu olabilir. Buna göre çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
-[![blg215_Runtime3](/assets/images/2011/blg215_Runtime3_thumb.gif)](/assets/images/2011/blg215_Runtime3.gif)
+![blg215_Runtime3](/assets/images/2011/blg215_Runtime3.gif)
 
 Dikkatinizi çeken bir nokta var mı?
 
 Son çıktıya göre ProcessId değerinin 512 olduğu görülmektedir. Oysaki 512 değeri daha önceki kodlamaya göre PacketSize özelliği için atanan bir değerdir. Bir başka deyişle yanlış bir değer ataması söz konusudur. İşin kötü yanı bu senaryoda derleme zamanında bir hata veya uyarı mesajı alınmamaktadır. Dolayısıyla kodun hatalı çalışması olasıdır.
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_6.gif)](/assets/images/2011/Exclamation_6.gif) Öyleyse varsayılan parametre kullanımı gibi senaryolarda, metodlara yeni parametrelerin eklenmesi söz konusu ise, bu parametrelerin en sona eklenmesi daha doğru olacaktır. Named Parameters aslında köklü çözüm olsa da, ilgili tip metodlarını kullanan diğer geliştiricilerin bu kullanımı göz ardı etmesi ihtimali vardır.
+![Exclamation](/assets/images/2011/Exclamation_6.gif) Öyleyse varsayılan parametre kullanımı gibi senaryolarda, metodlara yeni parametrelerin eklenmesi söz konusu ise, bu parametrelerin en sona eklenmesi daha doğru olacaktır. Named Parameters aslında köklü çözüm olsa da, ilgili tip metodlarını kullanan diğer geliştiricilerin bu kullanımı göz ardı etmesi ihtimali vardır.
 
 Yani metod yapısını aşağıdaki gibi değiştirmemiz doğru bir çalışma zamanı çıktısı elde etmemizi sağlayacaktır.
 
@@ -210,13 +210,13 @@ public Connection(string server = ".", string databaseName = "master", int timeo
 
 ,sonucu çalışma zamanı çıktısı aşağıdaki gibidir.
 
-[![blg215_Runtime4](/assets/images/2011/blg215_Runtime4_thumb.gif)](/assets/images/2011/blg215_Runtime4.gif)
+![blg215_Runtime4](/assets/images/2011/blg215_Runtime4.gif)
 
 ## Türetme (Inheritance) ve Varsayılan Parametreler
 
 Gelelim diğer bir vakaya. Bu vaka çok daha kritik ve önemlidir. Nitekim işin içerisinde türetme (Inheritance) kavramı vardır. Konuyu netleştirmek için aşağıdaki sınıf şemasına sahip örnek kod parçasını göz önüne alarak ilerleyelim.
 
-[![blg215_ClassDiagram](/assets/images/2011/blg215_ClassDiagram_thumb.gif)](/assets/images/2011/blg215_ClassDiagram.gif)
+![blg215_ClassDiagram](/assets/images/2011/blg215_ClassDiagram.gif)
 
 ```csharp
 using System;
@@ -270,17 +270,17 @@ Sınıf şemasından da görüleceği üzere ICommand arayüzünü (Interface) u
 
 Kritik olan yer Main metodu içerisindeki değişken atamalardır. Dikkat edileceği üzere ICommand ve Command tipinden olan değişkenlere aynı MyCommand nesne örneği atanmıştır. Eğer çok biçimlilik ilkesini biliyorsak, iCmd ve cmd isimli nesne örnekleri üzerinden yapılan PrepareSelectTop çağrılarının aslında MyCommand tipindeki metod içeriğine doğru yapılması gerektiğini biliriz. Buna göre de tüm Select sorgularında Top 50 değerinin kullanılıyor olması gerekmektedir. Oysaki çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
-[![blg215_Runtime5](/assets/images/2011/blg215_Runtime5_thumb.gif)](/assets/images/2011/blg215_Runtime5.gif)
+![blg215_Runtime5](/assets/images/2011/blg215_Runtime5.gif)
 
 Görüldüğü gibi son iki çağrıda topNumber için Default Parameter değerleri tanımlandıkları yerdekiler olmuştur. ICommand için 3 iken Command için 10 olarak ele alınmıştır. Tam bu noktada “Amanın! Yoksa ICommand ve Command tipleri çok biçimlilik göstermiyorlarmış!” diye haykırabilirsiniz. Ama dereyi görmeden paçaları sıvamamak lazım. Nitekim uygulamayı debug modda değerlendirdiğimizde, aslında tüm PrepareSelectTop çağrılarının, MyCommand içinden yapıldığı görülecektir.
 
 Sorun tamamen Default Parameter’ lar ile alakalıdır. Söz gelimi ICommand üzerinden yapılan çağrı sonucu topNumber değeri aşağıdaki gibi olacaktır.
 
-[![blg215_Debug1](/assets/images/2011/blg215_Debug1_thumb.gif)](/assets/images/2011/blg215_Debug1.gif)
+![blg215_Debug1](/assets/images/2011/blg215_Debug1.gif)
 
 veya Command tipi için şu şekilde olacaktır.
 
-[![blg215_Debug2](/assets/images/2011/blg215_Debug2_thumb.gif)](/assets/images/2011/blg215_Debug2.gif)
+![blg215_Debug2](/assets/images/2011/blg215_Debug2.gif)
 
 Böyle bir vakanın oluşmasının sebebi Defaul Parameter’ ların çalışma zamanı (Runtime) yerine derleme zamanında (Compile Time) çözümleniyor olmalarıdır. Bu durum IL (Intermediate Language) kodunda açık bir şekilde görülebilir ve ispatlanabilir.
 

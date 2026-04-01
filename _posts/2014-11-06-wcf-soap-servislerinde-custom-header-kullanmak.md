@@ -15,7 +15,7 @@ tags:
 ---
 Çok uzun zamandır Sosyal ağlardan uzağım. Ne Facebook, ne Twitter ne de bir başkasını kullanmıyorum. Google+ üzerinde bile sırf Hangout söyleşileri nedeniyle mecburen açık tuttuğum bir hesap var. Sosyal ağları terk ettiğim ilk günlerde çevremdeki pek çok yakın dostumla olan iletişimimi de yeniden tesis etmem gerekmişti. Ne acıdır ki pek çoğunun iletişim bilgisi sadece Tweet ve Facebook mesaj kısmı ile sınırlı kalmıştı. Hani nerede telefon numaraları, nerede e-posta adresleri? Çoğunu tedarik etmek epeyce zor oldu.
 
-[![OldMail](/assets/images/2014/OldMail_thumb.jpg)](/assets/images/2014/OldMail.jpg)
+![OldMail](/assets/images/2014/OldMail.jpg)
 
 
 O vakitlerde yine yakın arkadaşlarımdan birisi ile işte bu sosyal ağ mevzularını ve insanlar üzerindeki olumsuz etkilerini konuşmaya başlamıştık. Bir arkadaşımla uzun zamandır e-posta üzerinden böylesine yoğun iletişim kurmamıştım. Heyecan verici ve sürükleyici bir deneyim idi. Şirkette uçuşan e-posta trafiğinden çok daha farklıydı. Duygusal anlamı vardı. Suni, bayağı değildi. İletişim kurmak isteyen iki arkadaşın yazışmalarıydı.
@@ -30,7 +30,7 @@ SOAP Hakkında Kısa Bilgi
 
 SOAP, uygulamalar arası mesajlaşmayı tanımlayan iletişim protokollerinden birisidir. W3C tarafından tavsiye edilen, XML tabanlı olan, genişletilebilen bir yapıya sahiptir. Dilden ve platformdan bağımsız olması onu servis dünyasında popüler hale getiren etkenler arasında yer alır. HTTP üzerinde koşan bu standart yıllarca internet/intranet tabanlı uygulamaların birbirleriyle haberleşmesi noktasında ön plana çıkmıştır. Kurumsal çözümler, miras sistemler ile olan iletişim biçimlerinde halen daha popülerliğini korumaktadır. SOAP standardının tanımladığı mesaj içeriği temel olarak aşağıdaki şekilde yer alan şema yapısına sahiptir.
 
-[![wcfch_5](/assets/images/2014/wcfch_5_thumb.png)](/assets/images/2014/wcfch_5.png)
+![wcfch_5](/assets/images/2014/wcfch_5.png)
 
 SOAP Header içeriklerinin istemci tarafında oluşturulması ve servis tarafında ele alınması son derece basittir. Kod yoluyla veya konfigurasyon dosyası içerisinden doğrudan bildirilerek kullanılabilir. Nasıl mı? Haydi gelin birlikte inceleyelim.
 
@@ -42,7 +42,7 @@ Servis Tarafı
 
 Geliştireceğimiz WCF Service Application içerisinde, aşağıdaki sınıf diagramında görülen tiplerin olduğunu varsayalım. (Bunlar bir anlamda senaryomuzu zevkli ve eğlenceli hale getirmek için yaptığımız çabalar aslında)
 
-[![wcfch_4](/assets/images/2014/wcfch_4_thumb.png)](/assets/images/2014/wcfch_4.png)
+![wcfch_4](/assets/images/2014/wcfch_4.png)
 
 Sadece örnek senaryomuza hizmet etmek üzere tasarlanmış olan bu Dummy tiplerin içerikleri ise aşağıdaki gibidir.
 
@@ -242,17 +242,17 @@ Hazırlanan bu yeni bilgiler ışığında EndPoint bilgisinin yeniden üretilme
 
 Uygulama test edildiğinde istemci tarafının aşağıdaki çalışma zamanı görüntüsüne sahip olması beklenmektedir.
 
-[![wcfch_3](/assets/images/2014/wcfch_3_thumb.png)](/assets/images/2014/wcfch_3.png)
+![wcfch_3](/assets/images/2014/wcfch_3.png)
 
 Tahmin edileceği üzere bsenyurt bilgisine ait Rol tanımlamaları elde edilmiştir. Diğer yandan oluşan svclog dosyaları incelenirse aşağıdaki ekran görüntülerinde olduğu gibi Header bilgilerinin sunucu tarafına ulaştığı anlaşılabilir.
 
 Formatlanmış görünüm;
 
-[![wcfch_1](/assets/images/2014/wcfch_1_thumb.png)](/assets/images/2014/wcfch_1.png)
+![wcfch_1](/assets/images/2014/wcfch_1.png)
 
 XML içeriği;
 
-[![wcfch_2](/assets/images/2014/wcfch_2_thumb.png)](/assets/images/2014/wcfch_2.png)
+![wcfch_2](/assets/images/2014/wcfch_2.png)
 
 Pek tabi bir Header bilgisinin gönderilmemesi veya yanlış olması halinde istemci tarafına bir Role listesi gönderilmeyecektir (Belki bu durumda varsayılan bir listenin gönderilmesi düşünülebilir)
 
@@ -330,7 +330,7 @@ Servis Tarafına Gelen Mesaj
 
 Eğer uygulama test edilir ve servis tarafına inen mesaj içeriğine bakılırsa, CustomeMessageHeader sınıfının özelliklerine ait değerlerin eklendiği gözlemlenebilir. Trace log’ ların da bu içerik aşağıda görüldüğü gibidir.
 
-[![wcfch_7](/assets/images/2014/wcfch_7_thumb.png)](/assets/images/2014/wcfch_7.png)
+![wcfch_7](/assets/images/2014/wcfch_7.png)
 
 SOAP zarf içeriğine bakıldığında durum daha net fark edilebilir.
 
@@ -375,7 +375,7 @@ var text = root
 
 Aslında tek yaptığımız gelen Request mesajının XML içeriği üzerinde Text ve Date isimli elementleri aramaktır. Eğer çalışma zamanı görünümüne bakarsak değişken değerlerini başarılı bir şekilde elde edebildiğimizi görürüz.
 
-[![wcfch_8](/assets/images/2014/wcfch_8_thumb.png)](/assets/images/2014/wcfch_8.png)
+![wcfch_8](/assets/images/2014/wcfch_8.png)
 
 Tabi ki söz konusu içeriği servis tarafında bir nesne olarak ele almak çok daha mantıklıdır. Fakat bu senaryoda servis tarafında bir tip bildirimi söz konusu değildir. Yani istemci tarafında Header bilgisini oluşturmak için kullanılan ve XML serileştirmeye tabi tutulan CustomMessageHeader sınıfı servis tarafında oluşturulmamıştır.
 

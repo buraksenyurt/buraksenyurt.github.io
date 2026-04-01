@@ -10,7 +10,7 @@ tags:
 ---
 Günlerden Salı, sonbahar. Neredeyse hiç uyumadan geçen bir gecenin ardından sabaha karşı yorgunluktan sızan Netspecter, CAD’ in baş ucunda dakikalarca miyavlaması sonucu ancak kendine gelebilir. Eksi ve köhne divanı, o doğrulurken olabildiğince haykırarak gıcırdamaktadır. Önce terliklerini arar. Oda darma dağınıktır. Tüm gece kütüphanedeki sayısız kitabı indirmiş ve bir sonuç bulmak için saatlerce araştırma yapmıştır. Sonuçta terliğin tekinin dahi bulunamadığı bir kalabalık kitap yığınıdır.
 
-[![blg231_Giris](/assets/images/2011/blg231_Giris_thumb.gif)](/assets/images/2011/blg231_Giris.gif)
+![blg231_Giris](/assets/images/2011/blg231_Giris.gif)
 
 
 Kafada korkunç bir baş ağrısı, dışarıdan gelen metronun raylarda bıraktığı ses ve CAD’ in cılız miyavlamaları…Netspecter divandan kalkarken şöyle bir belinden geriye doğru esner. Derken tavan lambasının biraz üstüne vuran dikdörtgen biçimli gölgeyi fark eder. Nasıl olur? Bu kitap gözünden nasıl kaçmıştır. Gece karanlığında fark edemediği kaynağı gün ışığı açığa çıkarmıştır. İşte oradadır. Gölgenin kaynağına doğru gider. Ado.Net and System.Xml v2.0 The Beta Version
@@ -60,11 +60,11 @@ namespace EFTransactionManagement
 
 Chinook model veritabanını kullanan bu örnekte Context nesnesine ait SaveChanges metodunun çağırılmasından önce iki Insert işlemi gerçekleştirildiği görülmektedir. Öncelikli olarak Artist tipinden bir örnek oluşturulmuş ve Context tipine ait koleksiyona eklenmiştir. Hemen arından da bir Album örneği oluşturulmuş ve yine ilgili koleksiyona ilave edilmiştir. Tabi bu örnekte Album ile Artist örnekleri arasında bir ilişki de söz konusudur. Yani üretilen yeni Album nesne örneği, üretilen yeni Artist örneğinin Albums özelliği ile işaret edilen koleksiyonuna da eklenmiştir. Eğer SaveChanges metodunun çağırılması sonrasındaki SQL Server Profiler görüntüsüne bakarsak aşağıdaki çıktı ile karşılaştığımızı görebiliriz.
 
-[![blg231_ImplicitlyTransaction](/assets/images/2011/blg231_ImplicitlyTransaction_thumb.gif)](/assets/images/2011/blg231_ImplicitlyTransaction.gif)
+![blg231_ImplicitlyTransaction](/assets/images/2011/blg231_ImplicitlyTransaction.gif)
 
 Dikkat edileceği üzere iki insert işleminden önce bir Transaction başlatılmış ve sonrasında ise Commit işlemi ile bu girişler onaylanmıştır. Bir başka deyişle Entity Framework tarafında, SaveChanges metodunun çağırılması sonrasında bilinçsiz olarak (Implicitly) bir Transaction oluşturulduğu görülmektedir. Elbette bu davranış şekli değiştirilebilir. Bir başka deyişle developer bazlı bir Transaction kullanımı da söz konusu olabilir. Bunun için ilk akla gelen bilinçli olarak TransactionScope örneğinin kullanılması ve SaveChanges çağrısının burada kullanılmasıdır. Şimdi örnek uygulamamıza System.Transaction.dll assembly’ ını referans ederek vakamızı incelemeye devam edelim.
 
-[![blg231_TransactionReference](/assets/images/2011/blg231_TransactionReference_thumb.gif)](/assets/images/2011/blg231_TransactionReference.gif)
+![blg231_TransactionReference](/assets/images/2011/blg231_TransactionReference.gif)
 
 Örnek kod içeriğini ise aşağıdaki gibi geliştirebiliriz.
 
@@ -119,7 +119,7 @@ namespace EFTransactionManagement
 
 Dikkat edileceği üzere Album ve Artist nesne örneklerinin giriş işlemlerinin onaylandığı SaveChanges metod çağrısı bir try…catch bloğu içerisinde kontrol altına alınmıştır. Dahası söz konusu try…catch bloğu da TransactionScope bloğu içerisinde konuşlandırılmıştır. Eğer kod try bloğunun son satırına kadar başarılı bir şekilde gelebilirse TransactionScope nesne örneğine ait Complete metodunun çağırılması ile, yapılan tüm işlemlerin onaylanması sağlanmaktadır. (Elbette catch bloğuna girilmesi halinde ilgili Transaction içeriğinin Rollback edilmesi süreci de otomatik olarak işletilecektir) Burada bilinçli olarak bir transaction bloğu açılması söz konusudur. Uygulama kodunu çalıştırdığımızda ve SQL Server Profiler aracının çıktısına baktığımızda aşağıdaki ekran görüntüsünde yer alan sonuçların üretildiği görülebilir.
 
-[![blg231_ExplicitlyTransaction](/assets/images/2011/blg231_ExplicitlyTransaction_thumb.gif)](/assets/images/2011/blg231_ExplicitlyTransaction.gif)
+![blg231_ExplicitlyTransaction](/assets/images/2011/blg231_ExplicitlyTransaction.gif)
 
 Dikkat edileceği üzere ilk örneğimizde olduğu gibi bir transaction (Begin Transaction) başlatılmış ve insert işlemleri sonrasında commit (Commint Transaction) edilmiştir.
 
@@ -131,11 +131,11 @@ Peki ya İki farklı Context nesnesi üzeriden bilinçli TransactionScope kullan
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_1.png)
 
-[![blg231_AzonStoreProductTable](/assets/images/2011/blg231_AzonStoreProductTable_thumb.gif)](/assets/images/2011/blg231_AzonStoreProductTable.gif)
+![blg231_AzonStoreProductTable](/assets/images/2011/blg231_AzonStoreProductTable.gif)
 
 Tabi bu durumda uygulamamızda iki adet Entity Data Model olması gerektiğini de ifade etmeliyiz.
 
-[![blg231_DoubleEDM](/assets/images/2011/blg231_DoubleEDM_thumb.gif)](/assets/images/2011/blg231_DoubleEDM.gif)
+![blg231_DoubleEDM](/assets/images/2011/blg231_DoubleEDM.gif)
 
 Örnek kod parçamızı da aşağıdaki gibi geliştirdiğimizi düşünelim.
 
@@ -205,7 +205,7 @@ namespace EFTransactionManagement
 
 Bu kez işin içerisine ikinci bir Context örneği daha girmektedir. Chinook üzerinde yapılan Album ekleme işleminden sonra bu albüme ait bilgilerden bazıları AzonStore Context’ I içerisindeki Product nesnesine de eklenmektedir. Dolayısıyla iki farklı veritabanı üzerinde gerçekleşecek bir işlem söz konusudur. Burada söz konusu Context’ lerin işaret ettiği/kullandığı veritabanları farklı sunucular üzerinde de olabilir ki bu durumda TransactionScope, Distirbuted Transaction Coordinator (DTC) aracını otomatik olarak devreye alarak bir dağıtık transaction alanı başlatacaktır. Dilerseniz bir de SQL Server Profiler aracının ürettiği çıktıya bakalım.
 
-[![blg231_MultiContextTrx](/assets/images/2011/blg231_MultiContextTrx_thumb.gif)](/assets/images/2011/blg231_MultiContextTrx.gif)
+![blg231_MultiContextTrx](/assets/images/2011/blg231_MultiContextTrx.gif)
 
 Görüldüğü üzere Chinook ve AzonStore veritabanları üzerindeki tüm Insert işlemleri aynı Transaction alanı içerisine dahil edilmişlerdir (Begin Transaction <–> Commit Transaction)
 
@@ -259,7 +259,7 @@ namespace EFTransactionManagement
 
 Bu kez sadece ilgili Context nesne örneklerine ait SaveChanges metodlarının ardışıl olarak çağırılması söz konusudur ki bunun SQL Server Profiler aracına baktığımızda üreteceği sonuç aşağıdaki ekran görüntüsünde olduğu gibidir.
 
-[![blg231_NoneTransactionScope](/assets/images/2011/blg231_NoneTransactionScope_thumb.gif)](/assets/images/2011/blg231_NoneTransactionScope.gif)
+![blg231_NoneTransactionScope](/assets/images/2011/blg231_NoneTransactionScope.gif)
 
 Görüldüğü üzere her SaveChanges çağrısı için ayrı bir Transaction işlemi başlatılmıştır. Burada AzonStore için kullanılan Context örneğinin, Chinook için üretilen Context nesnesine ait using bloğu içerisinde olmasının dahi bir önemi yoktur. Olay sadece SaveChanges metod çağrılarına aittir.
 

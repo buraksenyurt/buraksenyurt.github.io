@@ -18,9 +18,9 @@ Malum Visual Studio 2012 sürümünün RC sürümü geçtiğimiz hafta içerisin
 
 İşte buyrun.
 
-[![TPI_54Nokta5](/assets/images/2012/TPI_54Nokta5_thumb.png)](/assets/images/2012/TPI_54Nokta5.png)
+![TPI_54Nokta5](/assets/images/2012/TPI_54Nokta5.png)
 
-[![TPI_54Nokta5_2](/assets/images/2012/TPI_54Nokta5_2_thumb.png)](/assets/images/2012/TPI_54Nokta5_2.png)
+![TPI_54Nokta5_2](/assets/images/2012/TPI_54Nokta5_2.png)
 
 > Not: System.IO.Compression.dll ile System.IO.Compression.FileSystem.dll referanslarını eklemek gerekiyor. Ayrıca örnek RC (Release Candidate) sürümüdür. Yani Release sürümde değişiklikler olabilir unutmayın
 >

@@ -15,7 +15,7 @@ tags:
 ---
 Herkesin kendine has bir parmak izi vardır. DNA gibi benzersizdir. Her ne kadar bazı ajanlı filmelerinde bu izler silinebilse de (belki de silinebilyordur):) Krimonoloji labaratuvarlarından tutunda, şirketlerdeki giriş kapılarına kadar pek çok noktada parmak izlerimiz devreye girer. Hatta günümüzde kullandığımız bilgisayarların çoğunun açılması için parmak izi kullanılabilmektedir.
 
-[![910898_who_am_i_](/assets/images/2012/910898_who_am_i__thumb.jpg)](/assets/images/2012/910898_who_am_i_.jpg)
+![910898_who_am_i_](/assets/images/2012/910898_who_am_i_.jpg)
 
 
 Parmak izinin sahibi, sistem içerisinde yaptığı hareketliliklere ait pek çok bilgi bırakır geriye. Ne zaman gelmiş, nerede durmuş, hangi eşyayı tutmuş, kaç saat çalışmış, bilgisayarını ne zaman açmış vs…Bu tip bilgiler bazı senaryolarda çok kritiktir ve önemli anlamlar ifade etmektedir.
@@ -28,7 +28,7 @@ Benzer şekilde sistem içerisine dahil olan kullanıcıların veya sistemin par
 
 Dolayısıyla loglama uygulamalar için hayati bir anlama sahiptir. Üstelik mimari açıdan baktığımızda, katmanlar arasında bir kıstas (Concern) olarak da göz çarpmaktadır. Söz gelimi çok basit anlamda SOA (Service Oriented Architecture) tabanlı bir mimari modeli düşündüğümüzde, pek çok katman arasında dikine ilişki taşıyan kıstaslardan birisi de Loglama parçasıdır ve Cross-Cutting düzleminde yer alan enstrümanlardan birisidir. Aşağıdaki şekilde bu durum özetlenmektedir.
 
-[![l4n_1](/assets/images/2012/l4n_1_thumb.png)](/assets/images/2012/l4n_1.png)
+![l4n_1](/assets/images/2012/l4n_1.png)
 
 Dikkat edileceği üzere Sunum (Presentation), servis (Service), iş (Business) ve veri (Data) katmanlarının tamamı, Cross-Cutting içerisinde yer alan bloklara erişebilmektedir. Logging bloğu dışında diğer Concern’ lerde söz konusudur elbette. Örneğin güvenlik, performans odaklı Caching, hata yönetimi vb…
 
@@ -50,7 +50,7 @@ Tabi unutulmaması gereken bir husus da, her yerde her şeyi ve her zaman için 
 
 Şimdi lafı fazla uzatmadan makalemizin asıl konusuna gelelim. Bu yazımızda ücretsiz olarak indirip kullanabileceğimiz loglama araçlarından birisi olan log4Net’ e değiniyor olacağız. [Bu adresten ücretsiz](http://logging.apache.org/log4net/download_log4net.cgi) olarak indirebileceğiniz ürün basit bir dll kütüphanesidir ve 3 önemli unsurun yerine getirilmesini beklemektedir. (Ben makaleyi yazdığım tarih itibariyle ürünün 1.2.11.0 versiyonunu değerlendiriyor olacağım)
 
-[![l4n_2](/assets/images/2012/l4n_2_thumb.png)](/assets/images/2012/l4n_2.png)
+![l4n_2](/assets/images/2012/l4n_2.png)
 
 Log4Net ürününü indirdiğimizde beraberinde oldukça büyük bir XML konfigurasyon dosyası da gelmektedir. Bu dosya içerisinde, yapılacak konfigurasyon ayarlarına ait tüm detaylı bilgiler yer alır. Log4Net’ de diğer pek çok loglama aracında olduğu gibi, loglanacak bilgilnin seviyelendirilmesini önerir. Bu anlamda Fatal, Error, Warn, Info, Debug, All ve Off gibi çeşitli seviyeler sunar. Konfigurasyon dosyasını oluşturmak son derece kolaydır. Örneğin aşağıdaki konfigurasyon içeriğinde veritabanına log mesajı yazacak şekilde yapılmış ayarlamalar vardır.
 
@@ -124,13 +124,13 @@ Sorgu cümlesine dikkat edilecek olarak @ harfi ile başlayan parametrelerinin d
 
 Yukarıdaki config dosyasında Appender isimli bir kavramdan bahsettik. Veritabanı odaklı çalışan dışında dosyaya yazma amacıyla kullanılabilen FileAppender veya özellikle Console tabanlı test projelerinde ekrana log bilgisi vermek için kullanılan ConsoleAppender gibi versiyonlar da mevcuttur.
 
-[![l4n_3](/assets/images/2012/l4n_3_thumb.png)](/assets/images/2012/l4n_3.png)
+![l4n_3](/assets/images/2012/l4n_3.png)
 
 Object Browser yardımıyla Log4Net kütüphanesine baktığımızda pek çok Appender tipinin tanımlanmış olduğunu görürüz. Udp, SMTP, ASP.Net Trace bazlı vb gibi pek çok Appender bulunmaktadır.
 
 Peki bu tipleri nasıl devreye alacağız? Gelin basit bir Console uygulaması üzerinden ilerleyelim ve Log4Net için alışılageldiği üzere bir HelloWorld örneği geliştirelim. İlk olarak projemize Log4Net Assembly’ ının referans edilmesi gerekmektedir.
 
-[![l4n_4](/assets/images/2012/l4n_4_thumb.png)](/assets/images/2012/l4n_4.png)
+![l4n_4](/assets/images/2012/l4n_4.png)
 
 İkinci olarak uygun bir loglama stratejisi belirlemeli ve App.config dosyasında buna ait ayarlamalar yapılabilmelidir. Bu örneğimizde loglarımızı dosya bazlı olarak tutuyor olacağız. Bu sebepten dolayı FileAppender tipini ele alacağız. Dolayısıyla app.config dosyasının içeriğini aşağıdaki gibi geliştirebiliriz.
 
@@ -223,11 +223,11 @@ Dikkat edileceği üzere loglama nesne örneği üretilirken LogManager tipinin 
 
 Uygulamayı çalıştırdığımızda aynı zamanda bir ekran çıktısı aldığımızı da görürüz. Varsayılan olarak ConsoleAppender’ da devrededir. Tabiki bunu kapatabilirsiniz.
 
-[![l4n_5](/assets/images/2012/l4n_5_thumb.png)](/assets/images/2012/l4n_5.png)
+![l4n_5](/assets/images/2012/l4n_5.png)
 
 Test dosyasının içeriği de aşağıdaki gibi olacaktır.
 
-[![l4n_6](/assets/images/2012/l4n_6_thumb.png)](/assets/images/2012/l4n_6.png)
+![l4n_6](/assets/images/2012/l4n_6.png)
 
 Görüldüğü üzere log4Net kullanılarak çok basit bir şekilde loglama işlemleri yapılabilmekte ve uygulamanın herhangibir noktasından feedback’ ler verilebilmektedir. Siz siz olun uygulamalarınızda loglama konusunu ihmal etmeyin. Nitekim hataları ayıklama, kullanıcı ve sistem gibi genel aktörlerin hareketliliklerini izleme ve backlog oluşturma noktasında hayati öneme sahip bir mevzudur. İlerleyen makalelerimizde Log4Net’ in farklı kullanımlarına da değinmeye çalışıyor olacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 

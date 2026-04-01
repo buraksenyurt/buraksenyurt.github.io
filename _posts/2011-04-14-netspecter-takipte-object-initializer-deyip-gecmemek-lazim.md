@@ -9,7 +9,7 @@ tags:
 ---
 Puslu bir sonbahar akşamında detektif Netspecter odasında sessiz sakin oturmaktadır. Loş bir ortama neden olan gece lambasının yeşil cam aksamı altından oda içerisindeki tozların sessiz ve sakin akışı bir yana, Netspecter’ ın kafasında masasına yeni gelen dosya ile ilişkili soru işaretleri koşup durmaktadır.
 
-[![blg229_Giris](/assets/images/2011/blg229_Giris_thumb.gif)](/assets/images/2011/blg229_Giris.gif)
+![blg229_Giris](/assets/images/2011/blg229_Giris.gif)
 
 
 Sıkıntılı geçen bir kaç saat sonrasında aniden telefon çalar. Ölüm sessizliği içerisinde olan odanın neredeyse canlanmasına neden olan bir çalıştır bu. Ahizeyi ancak bir kaç seferden sonra fark edip kulağına götüren Netspecter, karşısında acı çektiği belli olan bir inleme ile irkilir.
@@ -40,7 +40,7 @@ C# 3.0 ile birlikte gelen önemli yeniliklerden birisi de Object Initializers ku
 
 Tabi o zamandan beri Object Initializers kavramı üzerinde çok fazla yazıp çizdim ama yine de pek fazla derinlerine girmediğimi ya da olaya farklı gözeler ile bakmadığımı farkettim. Bu nedenle konuyu farklı bir yaklaşım ile ele almanın daha doğru olacağına karar verdim. Dilerseniz kavramın derinliklerine inerken örnek bir kod parçası ile küçük bir başlangıç yapmaya çalışalım. Bu amaçla Visual Studio 2010 ortamında aşağıdaki Converter isimli sınıfı kullanan bir Console uygulamasını göz önüne alıyor olacağız.
 
-[![blg229_ConverterClassDiagram](/assets/images/2011/blg229_ConverterClassDiagram_thumb.gif)](/assets/images/2011/blg229_ConverterClassDiagram.gif)
+![blg229_ConverterClassDiagram](/assets/images/2011/blg229_ConverterClassDiagram.gif)
 
 Örnek program kodunu ise aşağıdaki gibi geliştirebiliriz.
 
@@ -233,7 +233,7 @@ beforefieldinit
 
 Örneğimize aşağıdaki sınıf örneğini eklediğimi düşünelim.
 
-[![blg229_FileManagerClassDiagram](/assets/images/2011/blg229_FileManagerClassDiagram_thumb.gif)](/assets/images/2011/blg229_FileManagerClassDiagram.gif)
+![blg229_FileManagerClassDiagram](/assets/images/2011/blg229_FileManagerClassDiagram.gif)
 
 ```csharp
 static class FileManager 
@@ -257,7 +257,7 @@ static class FileManager
 
 FileManager static tipli bir sınıf olmakla birlikte converters isimli List koleksiyonu türünden bir alan içermekedir. Söz konusu alan tanımlandığı yerde new operatörü ile örneklenmiş ve ilk değerlerinin atanması için FileManager static yapıcı metodu kullanılmıştır. Söz konusu sınıfın IL çıktısına baktığımızda özellikle sınıf tanımının aşağıdaki şekilde olduğu gibi yapıldığı görülecektir.
 
-[![blg229_FileManagerIL1](/assets/images/2011/blg229_FileManagerIL1_thumb.gif)](/assets/images/2011/blg229_FileManagerIL1.gif)
+![blg229_FileManagerIL1](/assets/images/2011/blg229_FileManagerIL1.gif)
 
 Şimdi sınıf kodunu biraz daha değiştirelim.
 
@@ -274,7 +274,7 @@ static class FileManager
 
 FileManager tipinin yeni versiyonunda converters isimli koleksiyon örneğini oluşturmak için static yapıcı metod yerine object initializer kullandığımızı görmekteyiz. Bu durumda uygulamanın IL çıktısına baktığımızda FileManager tipi için aşağıdaki tanımlamanın yapıldığına şahit oluruz.
 
-[![blg229_FileManagerIL2](/assets/images/2011/blg229_FileManagerIL2_thumb.gif)](/assets/images/2011/blg229_FileManagerIL2.gif)
+![blg229_FileManagerIL2](/assets/images/2011/blg229_FileManagerIL2.gif)
 
 İki örneğe ait tanımlamalara baktığımızda beforefieldinit isimli bir değerin kullanıldığı fark edilmektedir. Aslında bu değerin uygulama performansını arttırıcı bir etkisi olduğunu ifade edebiliriz. Normalde static yapıcı metod kullandığımızda, tip içerisinde yer alan tüm static değişkenlerin ilk erişimlerinden önce örneklenip örneklenmediklerine dair bir kontrol işlemi uygulanmaktadır. Ancak son kod parçamızda olduğu gibi Object Initializer kullanır ve static yapıcı metodu dışarıda bırakırsak, bu durumda sınıf söz konusu beforrefiledinit özelliği ile işaretlenerek ilgili kontrol işleminin atlanması sağlanır. Bu da azıcık bile olsa performans kazanımı anlamına gelmektedir
 

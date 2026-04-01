@@ -15,6 +15,6 @@ LINQ sorgularını pek çoğumuz etkin bir şekilde kullanıyoruzdur. Ama belki 
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_58.png)
 
-[![PhotoTrick41](/assets/images/2011/PhotoTrick41_thumb.png)](/assets/images/2011/PhotoTrick41.png)
+![PhotoTrick41](/assets/images/2011/PhotoTrick41.png)
 
 [LetKeyword.rar (194,69 kb)](/assets/files/2011/LetKeyword.rar)

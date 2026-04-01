@@ -22,6 +22,6 @@ Kod içerisinde bir yerlerde öyle ya da böyle elde ettiğiniz ama boyutu azcı
 
 Aşağıdaki gibi bir Extension Method eminim ki işinize yarayacaktır.
 
-[![spt_62](/assets/images/2012/spt_62_thumb.png)](/assets/images/2012/spt_62.png)
+![spt_62](/assets/images/2012/spt_62.png)
 
 Bir başka ipucunda görüşmek dileğiyle.

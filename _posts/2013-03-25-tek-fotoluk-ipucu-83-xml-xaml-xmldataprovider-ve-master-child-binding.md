@@ -44,7 +44,7 @@ ve sizde örneğin WPF-XAML tarafında buradaki Master-Detail ilişkiyi kullanma
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_155.png)
 
-[![tfi_83](/assets/images/2013/tfi_83_thumb.png)](/assets/images/2013/tfi_83.png)
+![tfi_83](/assets/images/2013/tfi_83.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

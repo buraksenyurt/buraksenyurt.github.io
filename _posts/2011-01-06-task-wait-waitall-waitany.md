@@ -14,7 +14,7 @@ tags:
 ---
 [Task Süreçlerinde Bilinçli Olarak Duraksatma](/2010/12/31/task-sureclerinde-bilincli-olarak-duraksatma/) başlıklı bir önceki yazımızda CancellationToken.WaitHandle.WaitOne, Thread.Sleep ve Thread.SpinWait metodlarından yararlanarak bir Task çalışmasının bekletme işlemlerinin nasıl yapılabileceğini incelemeye çalışmıştık. Özellikle WaitOne metodunun, CancellationToken.WaitHandle özeliği üzerinden çalıştırıldığını unutmayalım. Diğer yandan tüm bu teknikleri Task gövdesi içerisinde gerçekleştirmiştik. Bunun doğal sonucu olarakta yürütülmekte olan Task işlevlerinin duraksatılmasını sağlamıştık.
 
-[![blg207_Giris](/assets/images/2011/blg207_Giris_thumb.jpg)](/assets/images/2011/blg207_Giris.jpg)
+![blg207_Giris](/assets/images/2011/blg207_Giris.jpg)
 
 
 Ancak incelediğimiz bu teknikler dışında, Task nesne örnekleri veya Task sınıfı üzerinden kullanılabilecek farklı bekletme teknikleri de söz konusudur.
@@ -86,7 +86,7 @@ namespace WaitingScenarios2
 
 Tedbiri elden bırakmadık ve yine bir iptal işlemini işin içerisine kattık. Ancak odaklanacağımız nokta tabiki bu değil. Kodun iki farklı satırında Wait metodunun kullanıldığını görmekteyiz. İlk kullanımda o anki andan itibaren 5 saniyelik bir duraksatma gerçekleştiriyoruz. Diğer metod kullanımından ise 10000 mili saniyelik süre bildirimi yaparak 10 saniyelik bir duraksatma icra ettirmekteyiz. Wait metodu bool tipinden değer döndürmektedir. False değer dönmesi, ilgili Task bloğunun herhangibir sebepten işyelişini tamamlamamış olması veya iptal edilmesi anlamına gelmektedir. Tahmin edileceği üzere Task’ in başarılı bir şekilde tamamlanması sonucu bu değer True olacaktır. Örneğimizi çalıştırdığımızda, aşağıdaki ekran görüntüsündekine benzer sonuçlar ile karşılaşabiliriz.
 
-[![blg207_WaitOneTest1](/assets/images/2011/blg207_WaitOneTest1_thumb.gif)](/assets/images/2011/blg207_WaitOneTest1.gif)
+![blg207_WaitOneTest1](/assets/images/2011/blg207_WaitOneTest1.gif)
 
 Dikkat edileceği üzere duraksatmalar da bekleyen aslında Console uygulamasının kendisidir. Yani Main Thread’ dir. Ana uygulama, belirtilen süreler boyunca duraksamıştır. Lakin, Task gövdesi içerisinden başlatılan for döngüsü, bu duraksatmalar sırasında işleyişine devam etmiştir.
 
@@ -114,7 +114,7 @@ Console.WriteLine("\nTask 1 Status = {0}", startedTask.Status);
 
 Değer aralığı bilinçli olarak küçültülmüştür. Çok fazla beklememek için. Burada dikkat edilmesi gereken noktalardan birisi de, parametre almayan Wait metodunun geriye bool bir değer döndürmeyişidir. Task örneğinin işlettiği kod parçasında herhangibir istisna oluşmadığı varsayıldığında, ana uygulmanın, işleyiş tamamlanıncaya kadar beklemesi söz konusudur.
 
-[![blg207_WaitOneTest2](/assets/images/2011/blg207_WaitOneTest2_thumb.gif)](/assets/images/2011/blg207_WaitOneTest2.gif)
+![blg207_WaitOneTest2](/assets/images/2011/blg207_WaitOneTest2.gif)
 
 WaitAll Kullanımı
 
@@ -171,7 +171,7 @@ namespace WaitingScenarios2
 
 Örnekte iki Task örneği üretilmiş ve başlatılmıştır. Sonrasında ise Task sınıfı üzerinden static WaitAll metoduna parametre olarak aktarılmışlardır. Bunun sonucu olarak ana uyglamaya ait iş parçası (Main Thread), ilgili Task işleyişleri tamamlanıncaya kadar duraksatılmaktadır. Örnek kod parçasında Cancel işlemi ele alınmamıştır. Ancak görsel bir uygulama söz konusu olduğunda, kullanıcının Task örneklerinin işleyişleri devam ederken iptal isteğinin gönderilebileceği de göz önüne alınmalıdır. Örnek kod parçasının çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
-[![blg207_WaitAllTest1](/assets/images/2011/blg207_WaitAllTest1_thumb.gif)](/assets/images/2011/blg207_WaitAllTest1.gif)
+![blg207_WaitAllTest1](/assets/images/2011/blg207_WaitAllTest1.gif)
 
 WaitAll metodunda istenirse sürede belirtilebilir. Bir başka deyişle parametre olarak gelen bir Task kümesinin çalışması sonucu, yürütücü uygulamanın belirli süre duraksatılması sağlanabilir. Bu durumu analiz etmek için aşağıdaki kod parçasını göz önüne alabiliriz.
 
@@ -244,7 +244,7 @@ namespace WaitingScenarios2
 
 Örnekte WaitAll metoduna tasks isimli Task[] dizisi aktarılmış ve 5000 milisaniyelik duraksatma değeri verilmiştir. Ayrıca iptal işlemi de yapılabilmektedir. Örnek bir çalışma zamanı çıktısı aşağıdaki gibidir.
 
-[![blg207_WaitAllTest2](/assets/images/2011/blg207_WaitAllTest2_thumb.gif)](/assets/images/2011/blg207_WaitAllTest2.gif)
+![blg207_WaitAllTest2](/assets/images/2011/blg207_WaitAllTest2.gif)
 
 Dikkat edileceği üzere WaitAll çağrısı sonrasındaki satıra geçiş süresi, 5 saniyelik bir duraksamaya neden olmuştur. Tabi ki bu aralıkta Task örneklerinin gövdeleri işleyişlerini sürdürmektedir. WaitAll çağrısı aşıldıktan sonraysa, Task örnekleri henüz çalışmalarını tamamlamadıklarından Running durumunda kalmışlardır. Ki işleyişleri de devam etmektedir. Burada kullanıcı isterse iptal işlemini gerçekleştirebilir ki örneğimizde bu senaryo icra edilmiştir. Dolayısıyla Task örneklerinin her ikisi içinde Status değerleri Canceled olmuştur.
 
@@ -318,11 +318,11 @@ namespace WaitingScenarios2
 
 Kod içerisinde 3 farklı Task örneğinin çalıştırıldığı görülmektedir. Bu işlemler sonrasında WaitAny metodu çağırılmış ve ana uygulama Thread’ inin duraksatılması sağlanmıştır. Örneği çalıştırdığımızda aşağıdaki ekran çıktısındakine benzer bir sonuç ile karşılaşmamız olasıdır.
 
-[![blg207_WaitAnyTest1](/assets/images/2011/blg207_WaitAnyTest1_thumb.gif)](/assets/images/2011/blg207_WaitAnyTest1.gif)
+![blg207_WaitAnyTest1](/assets/images/2011/blg207_WaitAnyTest1.gif)
 
 Burada dikkat edilmesi gereken nokta, üç Task nesne örneğinden ilk olarak hangisi bitmişse, WaitAny metodunun ona ait indis değerini döndürmesidir. Örneğimizde dizi içerisinde ikinci sırada yer alan, bir başka deyişle 1 numaralı index değerine sahip olan Task gövdesi ilk tamamlanan içeriktir. Dolayısıyla WaitAny metodu geriye 1 değerini döndürmektedir. Geri dönüşten sonra fark edileceği üzere henüz tamamlanmayan Task örnekleri çalışmalarına devam edecektir.
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_1.gif)](/assets/images/2011/Exclamation_1.gif) Örnekleri daha iyi kavrayabilmek adına mutlaka çalıştırıp test etmenizi, debug zamanında durarak anlık durumları incelemenizi öneririm.
+![Exclamation](/assets/images/2011/Exclamation_1.gif) Örnekleri daha iyi kavrayabilmek adına mutlaka çalıştırıp test etmenizi, debug zamanında durarak anlık durumları incelemenizi öneririm.
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda Task örneklerinin sahibi olan çalıştırıcıların (Ana uygulama Thread’ i gibi) nasıl bekletilebileceklerini inclemeye çalıştık. Tabi bu örneklerde istisna fırlatılmasına yönelik vakaları değerlendirmedik. Ancak bu tip durumlarında incelenmesi gerekmektedir. İşte size güzel bir araştırma konusu. Task Parallel Library ile ilişkili kavramları incelemeye devam ediyor olacağız. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 

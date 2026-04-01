@@ -8,7 +8,7 @@ tags: []
 ---
 Bazen geliştirme ortamımız ile yazılan uygulamanın taşınacağı ortamlar arasında ciddi ve keskin farklılıklar bulunur. İki resim arasındaki 9 farkı bulunuzdan öte, geliştirici ekiplerinin bu farkları bilerek kodlama yapmasında yarar vardır. Tabi bazı yazılım ekiplerinde Development sunucularının sanallaştırılmış versiyonları üzerinde geliştirme yapabilme imkanı da vardır.
 
-[![production-bug](/assets/images/2014/production-bug_thumb.jpg)](/assets/images/2014/production-bug.jpg)
+![production-bug](/assets/images/2014/production-bug.jpg)
 
 
 Bu tip bir yaklaşım ortak ortam standartlarının geliştirme de kullanılmasına olanak tanımaktadır. Ancak geliştiriciler uygulamanın host edileceği ortamlar hakkında fazla düşünceli davranmazsa (aynen benim gibi), özellikle kendi ortamında elinde yer alan her aracın orada sorunsuz çalışabileceğini düşünürse büyük hata yapar. İşte benim içine düştüğüm durum ve uyguladığım basit çözüm.
@@ -36,7 +36,7 @@ Uygun Çözümü Keşfetmek
 İşte bu yüzden farklı bir yol bulmam gerekiyordu. En pratik olan eski stilde Excel içeriğine ulaşmaya çalışmaktı. Yani OleDbConnection sınıfını uygun provider bilgisini içeren bir bağlantı ifadesi ile tesis ederek işe başlamam gerekiyordu.
 
 > Aslında bir Excel dosyasını okumak için kullanılabilecek bir kaç yol bulunmaktadır. Aşağıdaki şekilde görüldüğü gibi pek çok Provider söz konusudur.
-> [![exltods_5](/assets/images/2014/exltods_5_thumb.png)](/assets/images/2014/exltods_5.png)
+> ![exltods_5](/assets/images/2014/exltods_5.png)
 
 Bu noktada epeyce şanslı olduğumu ifade edebilirim. Nitekim sunucular üzerinde ücretsiz olarak dağıtılabilen Microsoft Access Database Engine 2010 Redistributable paketi kuruluydu. Hatta bunun 4.0 versiyonu da yer alıyordu. [Bu adresten](http://www.microsoft.com/en-us/download/details.aspx?id=13255) indirebileceğiniz paket ile Excel'in var olan tüm sürümlerine bağlantı kurulabilmekte.
 
@@ -117,7 +117,7 @@ Pek tabi genişletme metodları (Extension Methods) static olup ilk parametresin
 
 Metodun ilk parametresi aynı zamanda LoadFromExcel fonksiyonunu çalışma zamanında çağıracak olan nesne örneğini işaret eder. İkinci parametre ile gelen dosya adını doğru bağlantı bilgisini oluşturmak için kullanmaktayız. İlk yapılması gereken Excel içerisindeki Sheet'leri yakalamak. Bunun için OleDbConnection tipinin GetOleDbSchemaTable metodu kullanılmaktadır. OleDbSchemaGuid.Tables enum sabiti nedeniyle Sheet adlarını da barındıran bir DataTable elde edilir. Aynen aşağıdaki çalışma zamanı görüntüsünde yer aldığı gibi.
 
-[![exltods_1](/assets/images/2014/exltods_1_thumb.png)](/assets/images/2014/exltods_1.png)
+![exltods_1](/assets/images/2014/exltods_1.png)
 
 Kod bu Sheet'leri tek tek sorgulamak için OldDbCommand nesnesinin CommandText özelliğini değiştirmektedir. Aslında burada tipik bir SQL Select ifadesi çalıştırılır.
 
@@ -135,13 +135,13 @@ Testler
 
 Uygulamayı test etmek için ben aşağıdaki içeriklere sahip basit bir Excel dosyasından yararlandım. GameBook isimli dosya Excel 2013 formatında ama diğer formatları da deneyebiliriz.
 
-[![exltods_2](/assets/images/2014/exltods_2_thumb.png)](/assets/images/2014/exltods_2.png)
+![exltods_2](/assets/images/2014/exltods_2.png)
 
-[![exltods_3](/assets/images/2014/exltods_3_thumb.png)](/assets/images/2014/exltods_3.png)
+![exltods_3](/assets/images/2014/exltods_3.png)
 
 Çalışma zamanında DataSet içeriğini Visualizer ile incelediğimizde aşağıdaki gibi Excel Sheet içeriklerinin yüklendiğini görebiliriz.
 
-[![exltods_4](/assets/images/2014/exltods_4_thumb.png)](/assets/images/2014/exltods_4.png)
+![exltods_4](/assets/images/2014/exltods_4.png)
 
 Peki Ya Yapmadıklarımız
 

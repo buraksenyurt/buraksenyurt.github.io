@@ -14,7 +14,7 @@ tags:
 ---
 Bildiğiniz üzere bir servis yazıldığında genellikle bunu tüketen (Consume) en az bir taraf bulunur. İstemci olarak düşündüğümüz bu taraflar her hangi bir uygulama olabilir. WCF (Windows Communication Foundation) ile geliştirdiğimiz bu servislerin, söz konusu istemciler tarafından kullanılması noktasında ise izlenebilecek bir kaç yol bulunmaktadır. Bunlardan en yaygını, servislerin projeye referans olarak eklenmesi ve üretilen Proxy sınıfının kullanılmasıdır (Add Service Reference). Visual Studio gibi gelişmiş IDE’ lerin ilgili arabirimleri, bu noktada büyük kolaylık sağlamaktadır.
 
-[![wcfrf_8](/assets/images/2014/wcfrf_8_thumb.png)](/assets/images/2014/wcfrf_8.png)
+![wcfrf_8](/assets/images/2014/wcfrf_8.png)
 
 
 İkinci bir yol ise Proxy üretimi zorunluluğu olmadan servislerin kullanılmasıdır. Ancak söz konusu servislerin Web programlama modeline uygun olacak şekilde, HTTP protokolünün ilgili metodlarına (GET,POST,PUT,DELETE…) destek vermek üzere geliştirilmesi gerekir. Daha çok veri odaklı (Data-Centric) servisler için geçerli olan bu senaryoda, içerik de çoğunlukla JSON (JavaScriptObjectNotation), BSON (Binary Javascript Object Notation) ve XML (eXensibleMarkupLanguage) gibi veri formatlarında sunulmaktadır. Bu tip servislerin tüketilmesinde istemcinin her hangi bir Proxy üretimine gereksinimi bulunmamaktadır. Yine de işleri kolaylaştırıcı tiplerden yararlanıldığı da görülmektedir.
@@ -31,7 +31,7 @@ Solution İçeriği
 
 İlk olarak Solution içerisinde aşağıdaki proje iskeletinin söz konusu olduğunu düşünelim.
 
-[![wcfrf_1](/assets/images/2014/wcfrf_1_thumb.png)](/assets/images/2014/wcfrf_1.png)
+![wcfrf_1](/assets/images/2014/wcfrf_1.png)
 
 Dikkat edileceği üzere Client ve servisi Host eden uygulamalar aslında birer Asp.Net Web Site olarak yer almaktadır. Bununla birlikte servis sözleşmesi (Service Contract) ile sözleşme implementasyonu ayrı projeler olarak düşünülmüş ve birer WCF Service Library şeklinde tasarlanmışlardır.
 
@@ -39,7 +39,7 @@ Projelerin Oluşturulması
 
 Pek tabi servisi host eden uygulama her iki kütüphaneyi de referans etmek durumundadır. İstemci tarafından olaya baktığımızda ise sadece sözleşmeyi (Contract) barındıran kütüphaneye bir referans içerdiği gözden kaçmamalıdır. Bu yaklaşıma göre Solution’ ımızı yavaş yavaş oluşturmaya çalışalım. Bunun için aşağıdaki şekilde görülen ağaç yapısını inşa etmemiz yeterlidir.
 
-[![wcfrf_2](/assets/images/2014/wcfrf_2_thumb.png)](/assets/images/2014/wcfrf_2.png)
+![wcfrf_2](/assets/images/2014/wcfrf_2.png)
 
 Karma.HostApp, WCF Service tipinden bir Asp.Net Web Site’ dır (Add New Web Site ile eklerken WCF Service tipi seçilmelidir). Karma.ClientApp, Empty tipinden bir Asp.Net Web Site’ dır (Add New Web Site ile eklerken Asp.Net Empty Web Site seçilmelidir). Her iki Web Site’ de IIS üzerinde host edilecek şekilde üretilmişlerdir (Eklerken HTTP tipini seçip IIS altında Application klasörü oluşturulması yeterlidir) Karma.Contract ve Karma.Implementation’ da birer WCF Service Library’ dir.
 
@@ -49,7 +49,7 @@ Servis Tarafının Kodlanması
 
 Şimdi örnek senaryo içerisinde ele alacağımız diğer tipleri de ilave etmeye başlayalım. Karma.Contract kütüphanesinde aşağıdaki servis sözleşmesinin yazıldığını düşünelim.
 
-[![wcfrf_3](/assets/images/2014/wcfrf_3_thumb.png)](/assets/images/2014/wcfrf_3.png)
+![wcfrf_3](/assets/images/2014/wcfrf_3.png)
 
 ```csharp
 using System.ServiceModel;
@@ -67,7 +67,7 @@ namespace Karma.Contract
 
 Şu aşamada servis sözleşmesinin içeriği çok da önemli değil. Sadece bir sözleşme olması yeterli senaryo gereği. Bu sözleşmeyi implemente edecek sınıfın konuşlandırılacağı yer ise, Karma.Implementation isimli WCF kütüphanesidir. Bu kütüphane içeriğini de aşağıdaki gibi geliştirdiğimizi düşünelim.
 
-[![wcfrf_4](/assets/images/2014/wcfrf_4_thumb.png)](/assets/images/2014/wcfrf_4.png)
+![wcfrf_4](/assets/images/2014/wcfrf_4.png)
 
 ```csharp
 using Karma.Contract;
@@ -95,7 +95,7 @@ Dikkat edileceği üzere ServiceHost elementindeki Service niteliğinin değeri,
 
 Buraya kadar ki işlemleri tamamladıktan sonra servisin çalışıp çalışmadığının kontrol edilmesinde yarar vardır. Eğer aşağıdaki çıktıyı alabiliyorsak ve WSDL çıktılarına da sorunsuz ulaşabiliyorsa süper!
 
-[![wcfrf_5](/assets/images/2014/wcfrf_5_thumb.png)](/assets/images/2014/wcfrf_5.png)
+![wcfrf_5](/assets/images/2014/wcfrf_5.png)
 
 İstemci Tarafının Kodlanması
 
@@ -263,7 +263,7 @@ namespace Karma.Implementation
 
 Güzelll! Peki ya şimdi ne olacak? Normal şartlarda Add Service Reference tekniğine göre bir Proxy üretmiş olsaydık, istemci tarafında bu yeniliklerin görülebilmesi/kullanılabilmesi için söz konusu Proxy üzerinde bir güncelleme işlemi yapmamız gerekirdi. Oysa ki bu senaryoda durum biraz daha farklıdır. Bir Build işlemi yaptığımızda, istemci tarafındaki kodlarda, intellisense’ in devreye girdiği yerlerde yeni operasyonun da ele alınabildiğini görürüz.
 
-[![wcfrf_6](/assets/images/2014/wcfrf_6_thumb.png)](/assets/images/2014/wcfrf_6.png)
+![wcfrf_6](/assets/images/2014/wcfrf_6.png)
 
 Görüldüğü üzere yapılan yeni güncelleme build işlemi sonrasında istemci tarafında da görülmekte ve etkin olarak kullanılabilmektedir.
 
@@ -273,7 +273,7 @@ Son Test
 
 Çalışma zamanında ki sonuçlara bakarak testimizi tamamlayalım ve senaryonun çalıştığından emin olalım.
 
-[![wcfrf_7](/assets/images/2014/wcfrf_7_thumb.png)](/assets/images/2014/wcfrf_7.png)
+![wcfrf_7](/assets/images/2014/wcfrf_7.png)
 
 Bu senaryoda dikkat edilmesi gereken nokta, Add Service Reference veya Update Service Reference gibi seçeneklerin kullanılmamış olmasıdır. Diğer yandan size düşen görev neden bu senaryo için Asp.Net Web Site şablonunun tercih edildiğinin bulunmasıdır? Aynı durum Asp.Net Web Application tipleri için söz konusu olamaz mı? Söz konusu olamazsa, iki uygulama şekli arasındaki farklılıklar nelerdir? Yani Web Site’ ın Web Application’ dan farkı nedir? Peki ya bu senaryo Visual Studio 2013 ile gelen yeni nesil web projesi şablonlarında nasıl ele alınabilir? Elbette bu soruları da araştırmak gerekmektedir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

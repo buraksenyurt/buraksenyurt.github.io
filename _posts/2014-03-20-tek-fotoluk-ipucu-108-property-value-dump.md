@@ -10,7 +10,7 @@ Projelerinizde, temel tiplerden (Primitive Types) özellikler içeren yalın nes
 
 Acaba her hangibir tipin çalışma zamanı nesne örneğinin, istediğimiz tiplerden oluşan özelliklerine ait değerlerini toplu olarak nasıl elde edebiliriz? Aşağıdaki gibi bir yol tercih edilebilir mi?
 
-[![tfi_108](/assets/images/2014/tfi_108_thumb.png)](/assets/images/2014/tfi_108.png)
+![tfi_108](/assets/images/2014/tfi_108.png)
 
 Tabi bu ip ucunda da geliştirilebilecek noktalar var.
 

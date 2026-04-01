@@ -21,7 +21,7 @@ Bildiğiniz üzere JSON (JavaScriptObjectNotation) oldukça kompakt bir veri for
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_112.png)
 
-[![tfi_69](/assets/images/2012/tfi_69_thumb.png)](/assets/images/2012/tfi_69.png)
+![tfi_69](/assets/images/2012/tfi_69.png)
 
 İşte bu kadar
 

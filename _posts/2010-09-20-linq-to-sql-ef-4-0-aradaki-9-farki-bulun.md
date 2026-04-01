@@ -66,11 +66,11 @@ Tabi bazı noktalarda çok keskin ayrımlar olduğunu ifade edebiliriz. Söz gel
 
 Örnek olarak Northwind veritabanını kullandığımız bir LINQ to SQL sınıf yapsında üretilen NorthwindDataContext tipinin içeriğinde aşağıdaki yapıcı metodlar (Constructors) hemen göze çarpacaktır.
 
-[![blg228_DataContext](/assets/images/2010/blg228_DataContext_thumb.gif)](/assets/images/2010/blg228_DataContext.gif)
+![blg228_DataContext](/assets/images/2010/blg228_DataContext.gif)
 
 Dikkat edileceği üzere IDbConnection interface tipini kullanan iki yapıcı metod versiyonu söz konusudur. Eğer IDBConnection’ dan türeyen.Net tiplerine bakarsak aşağıdaki sonuçlar ile karşılaşırız.
 
-[![blg228_IDbConnection](/assets/images/2010/blg228_IDbConnection_thumb.gif)](/assets/images/2010/blg228_IDbConnection.gif)
+![blg228_IDbConnection](/assets/images/2010/blg228_IDbConnection.gif)
 
 Dikkat edeceğiniz üzere OdbcConnection, OleDbConnection ve SqlConnection tipleri söz konusudur. Buradan DataContext türevli olan NorthwindDataContext tipinin üretimi sırasında mutlaka SQL tarafına bir bağımlılığın olduğunu en azından.Net içerisinde var olan provider yapısının ele alındığını görebiliriz.
 

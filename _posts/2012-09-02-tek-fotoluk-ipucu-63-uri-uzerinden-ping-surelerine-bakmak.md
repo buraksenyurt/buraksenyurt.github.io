@@ -18,7 +18,7 @@ Hani bazen komut satırından bir URL adresine talep gönderip cevap sürelerine
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_102.png)
 
-[![spt_63](/assets/images/2012/spt_63_thumb.png)](/assets/images/2012/spt_63.png)
+![spt_63](/assets/images/2012/spt_63.png)
 
 > NetworkCredential parametreleri sırasıya Username, Password ve Domain olarak set edilir. Eğer proxy kullanılıyorsa.
 

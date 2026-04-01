@@ -43,7 +43,7 @@ Program, sistemde yüklü olan Yeni Ozellikler.docx isimli bir Word dosyasını 
 
 1- Open metoduna ait 16 adet parametrenin tamamının girilmesi zorunludur. Aşağıdaki şekilde durumun sıkıcılığı gözler önündedir.
 
-[![blg12_1Mini.gif](/assets/images/2009/blg12_1Mini.gif)](/assets/images/2009/blg12_1Big.gif)
+![blg12_1Mini.gif](/assets/images/2009/blg12_1Big.gif)
 
 NOT: Burada Juval Lowy'nin [IDesign](http://www.idesign.net/idesign/DesktopDefault.aspx)şirketinde kullandığı ve pek çok şirket tarafından benimsenen [C# kodlama standartları](http://www.idesign.net/idesign/download/IDesign%20CSharp%20Coding%20Standard.zip)aklıma geliyor. Buradaki belirttiği bir maddeyi hatırlıyorum. "Metodların argüman sayılarının 5 i geçmesinden kaçının. Eğer öyleyse struct tipini kullanın". ![Wink](/assets/images/2009/smiley-wink.gif) Burada bir COM API'sinin Wrap edilmiş kütüphanesi içerisindeki bir fonksiyonun parametre yapısının değiştirilemeyeceği fikri belleğimizi tamamıyla kaplayabilir. Tabi C# 3.0 sonrasında bir fırsat olabileceği de akıllara gelebilir. "Bir Extension metod yardımıyla Open metodu yerine bir alternatif geliştirebilir miyim? En azından parametre sayısını düşürmemizi kolaylaştıracak..." Bunu denemenizi öneririm.
 

@@ -12,6 +12,6 @@ tags:
 ---
 LINQ sorgularını sadece sorgulamak için kullandığımızı da nereden çıkartıyorsunuz. Aslında onları kodlarımızı daha şık hale getirmek için de kullanabiliriz? Nasıl mı? İşte küçük bir örnek
 
-[![PhotoTrick17](/assets/images/2011/PhotoTrick17_thumb.png)](/assets/images/2011/PhotoTrick17.png)
+![PhotoTrick17](/assets/images/2011/PhotoTrick17.png)
 
 [ShortCodes.rar (22,69 kb)](/assets/files/2011/ShortCodes.rar)

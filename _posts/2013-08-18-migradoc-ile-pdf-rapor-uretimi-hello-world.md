@@ -21,7 +21,7 @@ tags:
 ---
 "Mösyö Reno" dedi, oturduğu yerden Jimmy Carl. Uzun süredir bu dev şirketi yönetiyordu. Son zamanlarda teknolojiye büyük yatırım yapan firmanın, bundan en iyi şekilde yararlanabilmesini isteyenlerin başında geliyordu. Oldukça meraklı biri olan Carl, bilgisayarına bakarken içeriye orta boylarda, saçlarının bir kısmı ağırmış, numarası büyük olduğu belli olan kalın çerçeveli gözlüklü, hafif de göbekli ama güler yüzlü birisi girdi. Üstünde rengarenk bir hawai t-shirt, altında bermuda şort ve parmak arası terlikleri ile.
 
-[![cpdf_10](/assets/images/2013/cpdf_10_thumb.png)](/assets/images/2013/cpdf_10.png)
+![cpdf_10](/assets/images/2013/cpdf_10.png)
 
 "Buyrun" dedi Reno, nefes nefese kalmış bir halde.
 
@@ -45,13 +45,13 @@ Senaryo
 
 İlk olarak örnek senaryomuzu ele alalım. Bilindiği üzere Northwind veritabanında aşağıdaki ekran görüntüsünde yer alan standart View nesneleri varsayılan olarak yer almaktadır.
 
-[![cpdf_7](/assets/images/2013/cpdf_7_thumb.png)](/assets/images/2013/cpdf_7.png)
+![cpdf_7](/assets/images/2013/cpdf_7.png)
 
 Bu View nesnelerinde örnek pek çok rapor içeriği bulunmaktadır. Söz gelimi 1997 yılına ait kategori bazlı satışları veya yıldan yıla satış rakamlarının özetini görebilir, listede yer alan tüm ürünlerimizi kategori bazlı olarak elde edebiliriz. Dolayısıyla bu veriler raporlanabilir nitelikte olup çıktı şeklinde değerlendirilebilirler.
 
 Senaryomuza göre basit bir Windows Forms uygulamasında, Northwind veritabanı içerisinde yer alan View nesnelerini kullanıcıya seçilebilir halde sunuyor olacağız. Bu View nesnelerinden her hangi biri seçildiğinde ise, veri içeriğini barındıran bir PDF dokümanının üretilmesini sağlayacağız. Örneğimizde ulaşmak istediğimiz hedef aşağıdaki ekran görüntüsündekine benzer olacaktır.
 
-[![cpdf_2](/assets/images/2013/cpdf_2_thumb.png)](/assets/images/2013/cpdf_2.png)
+![cpdf_2](/assets/images/2013/cpdf_2.png)
 
 Sol üst köşede şirkete ait bir logo, Footer ve Header kısımlarında açık gri formatta bir bilgi, raporun alındığı View nesnesinin adı, üretildiği tarih, detay için URL adresine gönderme yapan bir link ve çok doğal olarak verinin kendisini içeren bir tablo. Peki bu içeriği nasıl üretiyor olacağız?
 
@@ -59,11 +59,11 @@ Kodlama Zamanı
 
 Örneğimiz basit bir Windows Forms uygulaması şeklinde geliştirilecektir. İlk etapta uygulamaya aşağıdaki görselde yer alan MigraDoc.DocumentObjectModel, MigraDoc.Rendering ve MigraDoc.RtfRendering isim Assembly'ları referans etmemiz gerekiyor.
 
-[![cpdf_1](/assets/images/2013/cpdf_1_thumb.png)](/assets/images/2013/cpdf_1.png)
+![cpdf_1](/assets/images/2013/cpdf_1.png)
 
 İlgili referansların eklenmesini takiben, aşağıdaki ekran görüntüsünde yer alan Form içeriğini tasarlayarak devam edebiliriz.
 
-[![cpdf_4](/assets/images/2013/cpdf_4_thumb.png)](/assets/images/2013/cpdf_4.png)
+![cpdf_4](/assets/images/2013/cpdf_4.png)
 
 Pek tabi uygulamamız Northwind veritabanına bağlanacağından bazı SQL işlemlerini de icra ediyor olacak. Söz gelimi View adlarını, sys.Views metadata içeriğini kullanarak çekeceğiz. Diğer yandan bir View nesnesinin sunduğu veriyi almak için de SQL sorgusuna da ihtiyacımız olacak. Uzun lafın kısası temelde bir Connection String bilgisi gerekiyor
 
@@ -85,7 +85,7 @@ Pek tabi uygulamamız Northwind veritabanına bağlanacağından bazı SQL işle
 
 Genel fonksiyonelliklerimizi Utility isimli yardımcı bir static sınıf içerisinde tutabiliriz. Sınıf içeriği biraz uzun olduğundan adım adım ilerlemeye çalışmanızı öneririm. İşte Utility içeriği;
 
-[![cpdf_8](/assets/images/2013/cpdf_8_thumb.png)](/assets/images/2013/cpdf_8.png)
+![cpdf_8](/assets/images/2013/cpdf_8.png)
 
 ```csharp
 using MigraDoc.DocumentObjectModel; 
@@ -334,7 +334,7 @@ Document tipi aslında sayfa içerisinde kullanılacak global Style'leri ve Sect
 
 Örneğimizin daha kolay anlaşılması açısından aşağıdaki görseli dikkate alabilirsiniz.
 
-[![cpdf_11](/assets/images/2013/cpdf_11_thumb.png)](/assets/images/2013/cpdf_11.png)
+![cpdf_11](/assets/images/2013/cpdf_11.png)
 
 Kodlama sırasında keşfetmemiz gereken veya bizleri zorlayabilecek olan noktalar genellikle ilgili içeriğin (paragraf, tablo, resim vb) sayfa içerisindeki yerleşimlerinin ayarlanmasıdır. Aslında bir kaç deneme yanılma ile düzgün bir şablon oturtabiliriz. Ancak yine de dikkate alınması gereken bazı hususlar vardır. Söz gelimi View'un döndürdüğü sonuç kümesinde yer alan kolon sayısının çok fazla olması halinde sayfaya sığmayacak ve yatay olarak görüntü kayıpları yaşanacaktır ki bu Jimmy Carl'ın pek de hoşuna gitmeyecektir. Bu gibi ileri seviye sayılabilecek hususlar örneğimizde ele alınmamıştır. Dolayısıyla siz kendi örneklerinizi icra ederken daha dikkatli davranmalısınız.
 
@@ -390,7 +390,7 @@ Dikkat edilmesi gereken noktalardan birisi de PDF dosyasının kayıt edilmesind
 
 Örneğimizi çalıştırdığımızda Select name from sys.views order by name sorgusunun bir sonucu olarak tüm View nesnelerinin elde edilebildiği görülecektir. Bu şekilde bir kullanım nedeni ile, Northwind veritabanına eklenecek olan yeni View'ları da PDF üretimi sürecine katabiliriz.
 
-[![cpdf_3](/assets/images/2013/cpdf_3_thumb.png)](/assets/images/2013/cpdf_3.png)
+![cpdf_3](/assets/images/2013/cpdf_3.png)
 
 ve bir kaç rapor örneğine ait ekran çıktısına yer vererek devam edelim.
 
@@ -398,21 +398,21 @@ ve bir kaç rapor örneğine ait ekran çıktısına yer vererek devam edelim.
 
 Products by Category View'u için örnek ekran çıktısı
 
-[![cpdf_5](/assets/images/2013/cpdf_5_thumb.png)](/assets/images/2013/cpdf_5.png)
+![cpdf_5](/assets/images/2013/cpdf_5.png)
 
 Summary of Sales By Year View'u için örnek ekran çıktısı
 
-[![cpdf_6](/assets/images/2013/cpdf_6_thumb.png)](/assets/images/2013/cpdf_6.png)
+![cpdf_6](/assets/images/2013/cpdf_6.png)
 
 Order Subtotals View'u için örnek ekran çıktısı
 
-[![cpdf_9](/assets/images/2013/cpdf_9_thumb.png)](/assets/images/2013/cpdf_9.png)
+![cpdf_9](/assets/images/2013/cpdf_9.png)
 
 PDF içinde Chart Üretimi
 
 Elbette PDF dosyasına çıktı olarak verilen bu raporlar arasında en etkileyici olanlarından birisi de Chart tipindekilerdir. Şimdi örnek senaryomuzda aşağıdaki görsel de yer alan ve kategori bazlı toplam satış rakamlarını gösteren View nesnesini kullanarak Line tipinde bir raporu üretmeye çalışalım.
 
-[![pdfchart_1](/assets/images/2013/pdfchart_1_thumb.png)](/assets/images/2013/pdfchart_1.png)
+![pdfchart_1](/assets/images/2013/pdfchart_1.png)
 
 İşte kodlarımız
 
@@ -485,7 +485,7 @@ private void btnCreateChart_Click(object sender, EventArgs e)
 
 Uygulamayı çalıştırdığımızda aşağıdakine benzer bir sonuç ile karşılaşırız.
 
-[![pdfchart_2](/assets/images/2013/pdfchart_2_thumb.png)](/assets/images/2013/pdfchart_2.png)
+![pdfchart_2](/assets/images/2013/pdfchart_2.png)
 
 Sonuç
 

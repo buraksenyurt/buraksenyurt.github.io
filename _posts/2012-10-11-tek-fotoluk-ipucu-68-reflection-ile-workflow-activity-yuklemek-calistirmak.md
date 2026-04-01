@@ -16,7 +16,7 @@ Diyelim ki elinizde içerisinde bi dünya Workflow Activity’ si olan bir küt�
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_110.png)
 
-[![tfi_68](/assets/images/2012/tfi_68_thumb.png)](/assets/images/2012/tfi_68.png)
+![tfi_68](/assets/images/2012/tfi_68.png)
 
 [http://www.buraksenyurt.com/pics/tfi_68.png](/assets/images/2012/tfi_68.png)SumActivity int tipinde, dışarıdan gelen iki argümanı toplayıp, sonucu yine bir argüman ile geriye döndüren akışı içermektedir.
 

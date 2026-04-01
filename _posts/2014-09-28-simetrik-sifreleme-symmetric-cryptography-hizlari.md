@@ -14,7 +14,7 @@ tags:
 ---
 Crptograpy… Hayır hayır şöyleydi.Crpytograyph… Yok yok böyle değil. Belki de… Cyrptograhy… Offf! Bir türlü beceremiyorum şunu yazmayı. Hah sanırım buydu. Cryptography. Nihayet! Şifreleme teknikleri sizlerin de bildiği üzere karmaşık matematiksel algoritmaları baz alacak şekilde tesis edilmeye çalışılırlar. Algoritma ne kadar karmaşık veya basit olursa olsun önemli olan çıkan sonuçların zor kırılacak cinsten olmalarıdır. Bu noktada kullanılan anahtarların ve bit değerlerinin de büyük önemi vardır. E tabi doğal olarak zaman içerisinde pek çok şifreleme algoritması ortaya çıkmıştır. Bunları temel de simetrik ve asimetrik olanlar gibi iki ana kategoriye ayırabiliriz. Ama diğer yandan hash algoritmaları veya veri bütünlüğünü korumaya yönelik algoritmalar da mevcuttur.(Ve belki de bizim bilmediğimiz ama üst düzey veri güvenliğinde kullanılan çok gizli olanları)
 
-[![62374](/assets/images/2014/62374_thumb.gif)](/assets/images/2014/62374.gif)
+![62374](/assets/images/2014/62374.gif)
 
 .Net Framework gibi pek çok programlama geliştirme ortamı, bu tip şifreleme algoritmalarının kod içerisinde kolayca ele alınmasını sağlayacak cinsten tipler/sınıflar içermektedirler. Genellikle hangisinin kullanılacağını tercih ederken simetrik veya asimetrik şifreleme yapılıp yapılmayacağına ya da ne kadar zor kırılacağına bakılır (AES’ in bu konuda bazı yarışmaları var. İnceleyin derim). Bunlardan herhangibiri seçilirse bu durumda farklı faktörleri de göz önüna almamız gerekebilir. Örneğin algoritmanın şifreleme ve çözümleme işlemlerini ne kadar sürede yaptığı da önemli bir kriter olabilir.
 
@@ -26,7 +26,7 @@ Temel Cryptography Tipleri
 
 Başlamadan önce Visual Studio – Object Browser yardımıyla söz konusu şifreleme algoritmalarının tip hiyerarşisine bakmamızda yarar olduğu kanısındayım. Temel olarak simetrik şifreleme işlemlerini üstlenen sağlayıcılar (Providers) SymmetricAlgorithm tipinden türeyen alt tiplerden üretilirler.
 
-[![scs_4](/assets/images/2014/scs_4_thumb.png)](/assets/images/2014/scs_4.png)
+![scs_4](/assets/images/2014/scs_4.png)
 
 Aslında şifreleme için kullanılacak tipler Provider veya Managed son eki ile biten sınıflardır. Tüm bu sınıflar tepede yer alan SymmetricAlgorithm isimli abstract sınıftan türemektedir.
 
@@ -38,13 +38,13 @@ Test Senaryosu
 
 Artık söz fazla uzatmayalım ve kodlarımızı yazarak testimizi gerçekleştirmeye çalışalım. Test senaryomuzdaki amacımız, 5 şifreleme algoritmasının aynı veri üzerindeki şifreleme ve çözümleme sürelerini ölçmek olacaktır. Bunun için yaklaşık olarak 50 mb büyüklüğünde bir text dosyasını kullandığımı ifade etmek isterim. Text dosyası içeriği ise bildiğimiz Lorem Ipsum paragraflarından oluşmaktadır. [(Lorem Ipsum üretimleri için bu adresten yararlanabilirsiniz)](http://tr.lipsum.com/)
 
-[![scs_6](/assets/images/2014/scs_6_thumb.png)](/assets/images/2014/scs_6.png)
+![scs_6](/assets/images/2014/scs_6.png)
 
 Uygulama Kodları
 
 Gelelim kod tarafına. Console uygulaması olarak geliştireceğimiz projemizde aşağıdaki sınıf diagramında yer alan kod içeriğini kullanıyor olacağız.
 
-[![scs_3](/assets/images/2014/scs_3_thumb.png)](/assets/images/2014/scs_3.png)
+![scs_3](/assets/images/2014/scs_3.png)
 
 ```csharp
 using System; 
@@ -259,7 +259,7 @@ namespace HowTo_Cryptography
 
 Aslında kod içeriği her ne kadar karmaşık görünse de region’ ları kapatıp büyük resme baktığımızda iskelet daha rahat anlaşılabilir. (Hafiften bir BLOB veya GOD Object AntiPattern’ ine kaymış gibiyiz ama bunu önemsemesekte olur)
 
-[![scs_5](/assets/images/2014/scs_5_thumb.png)](/assets/images/2014/scs_5.png)
+![scs_5](/assets/images/2014/scs_5.png)
 
 Kodun Çalışma Şekli
 
@@ -362,13 +362,13 @@ Test olması açısından 5 simetrik algoritmanın şifreleme ve çözümleme me
 
 > Testler, 4 çekirdekli ve 4Gb Ram kullanan intel İ5 chipset’ li bir desktop PC üzerinden, Windows 7 işletim sistemi ortamında Visual Studio 2012 ve.Net Framework 4.5 kullanılarak geliştirilmiş bir uygulama tarafından yapılmıştır.
 
-[![scs_1](/assets/images/2014/scs_1_thumb.png)](/assets/images/2014/scs_1.png)
+![scs_1](/assets/images/2014/scs_1.png)
 
 Sonuçları daha iyi irdelemek adına süreleri bir Excel grafiğinde birleştirebiliriz. Aynen aşağıda görüldüğü gibi
 
 ![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_143.png)
 
-[![scs_2](/assets/images/2014/scs_2_thumb.png)](/assets/images/2014/scs_2.png)
+![scs_2](/assets/images/2014/scs_2.png)
 
 Elde edilen sonuçlara göre en hızlı şifreleme ve çözümleme AES sağlayıcısı tarafından gerçekleştirilmiştir. En yavaş olan algoritma ise Triple DES’ tir. Genel olarak tüm algoritmaların şifreleme süreleri çözümleme sürelerine oranla daha düşüktür. Ancak RC2 algoritması tabanlı sağlaycının verdiği sonuçlar ilginçtir. Yapılan 5 test göz önüne alındığında, RC2 için çözümleme hızı, şifreleme hızına göre daha yüksek çıkmıştır.
 

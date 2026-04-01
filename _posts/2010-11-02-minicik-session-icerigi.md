@@ -11,7 +11,7 @@ tags:
 ---
 Bildiğiniz üzere bir süredir Microsoft Teknoloji Günleri Akşam Sınıfı etkinliklerini gerçekleştirmekteyiz. Kasım ayının konusu ise hemen her sürümünde köklü ve önemli yenilikler ile birlikte gelen Asp.Net'in 4.0 sürümü
 
-[![blg237_Giris](/assets/images/2010/blg237_Giris_thumb.jpg)](/assets/images/2010/blg237_Giris.jpg)
+![blg237_Giris](/assets/images/2010/blg237_Giris.jpg)
 
 
 ![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_7.png)
@@ -46,7 +46,7 @@ To use this custom session state database in your web application, please specif
 
 Bu kurulum işlemi sonrasında SessionDB içerisinde oluşturulan ASPStateTempSessions tablosunun yapısı da aşağıdaki gibi olacaktır. İki alan; SessionItemShort ve SessionItemLong şu an ki vakamız için önem arz etmektedir. Bu alanlarda serileştirilen Session içerikleri tutulmaktadır. Bununla birlikte serileşen içeriğin büyüklüğüne göre iki alandan bir tanesine veri eklenmesi de söz konusu olacaktır.
 
-[![blg237_Table](/assets/images/2010/blg237_Table_thumb.gif)](/assets/images/2010/blg237_Table.gif)
+![blg237_Table](/assets/images/2010/blg237_Table.gif)
 
 Şimdi basit bir Asp.Net Web Application üzerinden ilerleyelim. Söz konusu web uygulamasında en önemli nokta Session kullanımına ait konfigurasyon ayarlarıdır. Default.aspx sayfamız son derece basit bir fonksiyonelliğe sahiptir. Button kontrolüne basıldığında Logo isimli bir sınıf örneğinin Session nesnesi olarak atılması söz konusudur. İşte örnek uygulama kodlarımız.
 
@@ -127,7 +127,7 @@ Sql tarafında Compression kullanılmadığı haldeki durum;
 
 İlk olarak sıkıştırma işlemini kullanmadığımız durumu ele alalım. Add Session işleminden sonra, üretilen SessionID değerini web sayfamız üzerinde kullanırsak aşağıdaki sonuçlar ile karşılaşırız.
 
-[![blg237_FirstCase](/assets/images/2010/blg237_FirstCase_thumb.gif)](/assets/images/2010/blg237_FirstCase.gif)
+![blg237_FirstCase](/assets/images/2010/blg237_FirstCase.gif)
 
 Dikkat edileceği üzere 335141 uzunluğunda bir byte içeriği söz konusudur.
 
@@ -146,7 +146,7 @@ Gelelim sıkıştırılma durumuna. Bu sefer compressionEnabled özelliğine tru
 
 Sql tarafında Compression kullanılması haldeki durum ise aşağıdaki gibi olacaktır;
 
-[![blg237_SecondCase](/assets/images/2010/blg237_SecondCase_thumb.gif)](/assets/images/2010/blg237_SecondCase.gif)
+![blg237_SecondCase](/assets/images/2010/blg237_SecondCase.gif)
 
 Görüldüğü üzere bir önceki vakanın tersine serileştirilebilir içerik SessionItemLong alanı yerine SessionItemShort içerisine eklenmiştir. Bununla birlikte söz konusu sıkıştırılmış verinin içeriği 3686 dır
 
@@ -174,11 +174,11 @@ Bu kez ProductPhoto isimli tablonun tüm içeriğini çektiğimiz bir DataSet ö
 
 Sıkıştırılma kapalı iken;
 
-[![blg237_ThirdCase](/assets/images/2010/blg237_ThirdCase_thumb.gif)](/assets/images/2010/blg237_ThirdCase.gif)
+![blg237_ThirdCase](/assets/images/2010/blg237_ThirdCase.gif)
 
 Sıkıştırılma açık iken;
 
-[![blg237_FourthCase](/assets/images/2010/blg237_FourthCase_thumb.gif)](/assets/images/2010/blg237_FourthCase.gif)
+![blg237_FourthCase](/assets/images/2010/blg237_FourthCase.gif)
 
 Sıkıştırılmama durumunda 2712191 iken sıkıştırılma durumunda 2711426. Yani sadece % 1,000282139361355 oradanın bir sıkıştırma söz konusu olmakta.
 
@@ -219,7 +219,7 @@ using (SqlConnection conn = new SqlConnection("data source=.;database=AdventureW
 
 Kod parçasından görüldüğü üzere ilk olarak Binary formatta bir DataSet içeriğini serlişetirmekteyiz. Bu zaten Session tarafında SessionItemLong veya SessionItemShort alanına atılan serileştirilebilir içeriktir. Kodun ilerleyen kısımlarında ise serileştirilen içeriği GZipStream sınıfından yararlanarak sıkıştırmaya çalışıyoruz. Bunun sonucu olarak üretilen dosya içeriklerinin boyutlarına baktığımızda ise aşağıdaki ekran görüntüsünde yer alan sonuçları elde ederiz.
 
-[![blg237_Last](/assets/images/2010/blg237_Last_thumb.gif)](/assets/images/2010/blg237_Last.gif)
+![blg237_Last](/assets/images/2010/blg237_Last.gif)
 
 Dikkat edileceği üzere serileştirilmiş içerik ile serileştirilmiş içeriğin sıkıştırılmış versiyonları arasında boyut olarak pek bir fark yoktur. Bu da DataSet tipinin ve özellikle ProductionPhoto içerisindeki binary alanlarının iyi bir şekilde sıkıştırılamıyor olmalarından kaynaklanmaktadır. Son geliştirdiğimiz örnek tamamen ve tamamen GZipStream ile sıkıştırma tekniğinin her zaman işe yaramayacağını ve veri boyutunda daima önemli ölçüde bir değişikliğe neden olmayacağını göstermek üzere ele alınmıştır bunu unutmayalım. Sanıyorum ki iyi kullanıldığı takdirde Session sıkıştırması özellikle çok fazla oturumun açıldığı web uygulamalarında, SQL Server veya State Server mod kullanılması halinde önemli yer kazancı sağlayacak şekilde fayda getirmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

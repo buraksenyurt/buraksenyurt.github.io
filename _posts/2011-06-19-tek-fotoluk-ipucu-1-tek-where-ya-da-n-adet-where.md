@@ -14,4 +14,4 @@ Bazen bir fotoğraf bin kelimeye bedeldir derler. Bin kelime konusunda şüpheli
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_21.png)
 
-[![photoTrick_1](/assets/images/2011/photoTrick_1_thumb.jpg)](/assets/images/2011/photoTrick_1.jpg)
+![photoTrick_1](/assets/images/2011/photoTrick_1.jpg)

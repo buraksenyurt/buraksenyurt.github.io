@@ -17,7 +17,7 @@ tags:
 ---
 Bateri çalanları her zaman için büyük bir hayranlıkla izlerim/izlemişimdir. Özellikle 4 uzuvlarını da (iki kol iki ayak) kullanırlar ama daha da önemlisi tüm bu unsurları eş zamanlı olarak çalıştırabilirler. Sadece iki kolu çalıştırmak nispeten bir dereceye kadar kolay olabilir biz normal insan oğulları için ama bir de ayakları devreye sokmak. Hele de tüm bu hareketli parçalardan anlamlı bir melodi çıkartmak gerçekten çok ama çok zor bir iştir.
 
-[![baterist-290x290](/assets/images/2012/baterist-290x290_thumb.jpg)](/assets/images/2012/baterist-290x290.jpg)
+![baterist-290x290](/assets/images/2012/baterist-290x290.jpg)
 
 Tabi eğitimler ile belirli seviyede bateri çalabilmek pek çok insan için mümkün olabilir ama tabi ritim tutturmak, ataklarda bulunmak veya çok uzun süre boyunca aynı tempoyu hiç bozulmadan devam ettirebilmek inanılmaz bir konsantrasyon veya yetenek gerektirmektedir. Peki bu eş zamanlı çalışabilme bir yazılımcı için ne ifade edebilir? Tabi ki de asenkron çalışan kod parçalarını
 
@@ -53,7 +53,7 @@ Malum.Net Framework 4.5 ile birlikte, asenkron programlamayı biraz daha kolayla
 
 İşe bir adet Empty Asp.Net Web Application, bir adet Asp.Net MVC 4.0 Application (ama Web API şablonunu kullanan) ve bir adet te Class Library oluşturarak başlayalım. Web API uygulamamız içerisinde Entity Framework tabanlı bir Web API servisini de kullanıyor olacağız. Temel olarak solution içeriğimizin aşağıdaki şekilde tesis edileceğini ifade edebiliriz.
 
-[![asynwa_3](/assets/images/2012/asynwa_3_thumb.png)](/assets/images/2012/asynwa_3.png)
+![asynwa_3](/assets/images/2012/asynwa_3.png)
 
 > Her iki uygulamada da aynı Entity tipleri kullanılacağından basit olarak Class Library’ nin her iki projeye de referans edilmesi yolunu tercih ettik.
 
@@ -105,7 +105,7 @@ EmployeeController tipi içerisinde yer alan Get metodu klasik olarak Chinook En
 
 Bu arada örneği test etmemizde ve servis çağrısı sonucu geçerli bir veri içeriğini elde edebildiğimizi görmemiz de yarar var. Eğer sıkıntı yoksa aşağıdakine benzer bir ekran görüntüsü almamız gerekecektir.
 
-[![asynwa_1](/assets/images/2012/asynwa_1_thumb.png)](/assets/images/2012/asynwa_1.png)
+![asynwa_1](/assets/images/2012/asynwa_1.png)
 
 Şimdi elimizde HTTP tabanlı çalışan bir REST servisi bulunmakta. Bu servisi konuşlandırdığımız adresi kullanarak, diğer Web uygulamasındaki Web Form üzerinden bir Request gönderiyor olacağız. Ancak bu Request'in asenkron şekilde gerçekleştirilmesi de önemli. Bunu sağlamak için öncelikli olarak istemci Web Form'u içerisine aşağıdaki metodları yazdığımızı göz önüne alalım.
 
@@ -197,7 +197,7 @@ Son olarak sayfanın Page direktifi içerisindeki Async niteliğine true değeri
 
 Artık Web sayfamızı çalıştırabiliriz. İlk çağrı sırasında servisin ayağa kalkması veya sayfanın ilk kez yürütülmesinden kaynaklanan bir gecikme sorunu yaşanabilir ve beklemediğimiz kadar uzun bir süre ile karşılaşabiliriz. Ancak sonraki çağrılarda aşağıdakine benzer bir çıktı alırız. Yaklaşık olarak 5 saniye civarında bir çalışma zamanı söz konusudur ki bu son derece normaldir.
 
-[![asynwa_2](/assets/images/2012/asynwa_2_thumb.png)](/assets/images/2012/asynwa_2.png)
+![asynwa_2](/assets/images/2012/asynwa_2.png)
 
 Yine de bu sayfanın tam anlamıyla asenkron çalıştığına dair bir kanıt değildir (Unutmayın ki sayfanın sunucu tarafındaki yaşam döngüsü içerisinde bir asenkron çalışma senaryosu göz önüne alınmaktadır) Bu kanıt için kodu biraz daha ilginçleştirelim ve sayfa içeriğini aşağıdaki hale getirelim.
 
@@ -247,7 +247,7 @@ namespace ClientApp
 
 Dikkat edileceği üzere RegisterAsyncTask metoduna yapılan çağrının hemen ardından içerisinde sayfaya ait Thread'i 5 saniye kadar geciktiren bir fonksiyon çağrısı daha yapılmıştır. Buna göre çalışma zamanında aşağıdakine benzer bir sonucun alındığı görülebilir.
 
-[![asynwa_4](/assets/images/2012/asynwa_4_thumb.png)](/assets/images/2012/asynwa_4.png)
+![asynwa_4](/assets/images/2012/asynwa_4.png)
 
 Normal şartlarda sayfanın yaşam döngüsünü düşündüğümüzde, senkron yapılan bir işleyiş de servis tarafındaki 5 saniyelik gecikme ve içerideki DoSomething üzerinden gelen 5 saniyelik gecikme sonrası en az 10 saniyelik bir işlem süresi olması gerekmektedir. Aslında böyledir de
 
@@ -255,7 +255,7 @@ Normal şartlarda sayfanın yaşam döngüsünü düşündüğümüzde, senkron 
 
 Eğer sayfanın Trace modunu açarsak aşağıdaki Trace Information sonuçları ile karşılaşırız.
 
-[![asynwa_5](/assets/images/2012/asynwa_5_thumb.png)](/assets/images/2012/asynwa_5.png)
+![asynwa_5](/assets/images/2012/asynwa_5.png)
 
 Görüldüğü üzere sayfanın render edilme süresi yine 11 saniyeler civarındadır. Yaklaşık 5 saniyelik servis çağrı süresi + 5 saniyelik DoSomething süresi. Peki biz neyi başarmış olduk?
 

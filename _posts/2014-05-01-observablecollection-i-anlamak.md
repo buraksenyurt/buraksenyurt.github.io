@@ -11,7 +11,7 @@ tags:
 ---
 31 Mart 2013 deki kapanma kararına kadar Formspring ‘in sadık kullanıcılarından birisiydim. Her ne kadar anlık bir soru-cevap ortamı olmasa da, takip edenler açısından faydalı bir sosyal ağ idi. Özellikle Facebook, Twitter gibi eklentileri de, cevapların farklı sosyal ağlara bağlanmasında önemli rol oynuyordu. Bu sayede verilen cevapların daha fazla kitleye ulaşması mümkündü. Ama maya bir şekilde tutmadı, kullanıcı sayısı git gide azaldı ve sonunda kapatılma kararı verildi.(Şu anda o adrese girmek isterseniz aslında [şu adrese yönleniyor](http://new.spring.me/) ve yeni bir oluşumla karşılaşıyorsunuz)
 
-[![Formspring.me](/assets/images/2014/Formspring.me_thumb.jpg)](/assets/images/2014/Formspring.me.jpg)
+![Formspring.me](/assets/images/2014/Formspring.me.jpg)
 
 
 İşte o dönemlerde WCF tarafında Interceptor'ların nasıl kullanıldığına dair bir makale talebi almıştım Formspring üzerinden. [Onu geçtiğimiz zamanlarda cevaplamayı başardım](/2012/12/02/wcf-interceptors/). Derken bunun ardından benzer bir soru daha gelmişti. Someone'dan gelen soru şöyleydi ve henüz cevaplamayı başaramamıştım…
@@ -36,7 +36,7 @@ Peki bu desenin konumuzla ilgisi nedir? Sadece kök kelime isim benzerliği olab
 
 ObservableCollection sınıfı ve çevresinde etkileşimde olduğu tiplerin genel bir fotoğrafı şekilde görüldüğü gibidir.
 
-[![htoc_1](/assets/images/2014/htoc_1_thumb.png)](/assets/images/2014/htoc_1.png)
+![htoc_1](/assets/images/2014/htoc_1.png)
 
 System.Collections.ObjectModel isim alanı (namespace) içerisinde yer alan generic ObservableCollection sınıf, iki arayüzü (Interface) implemente etmektedir. Bunlardan birisi özellik bazlı (Property Based) değişiklikler sonrası tetiklenecek olayı (Event) uygulatan INotifyPropertyChanged iken, diğeri de koleksiyon değişimleri sonrası tetiklenmesi gereken olayı uygulatan INotifyCollectionChanged arayüzüdür (Interface) Zaten bu iki arayüzün belirttiği olaylar ObservableCollection içerisinde uygulanırken, bağlandıkları kontrolleri uyaracak şekilde tasarlanmışlardır.
 
@@ -46,7 +46,7 @@ System.Collections.ObjectModel isim alanı (namespace) içerisinde yer alan gene
 
 Konuyu daha net anlamak adına basit bir örnek üzerinden ilerlemeye çalışalım. Öncelikli olarak aşağıdaki sınıf çizelgesinde (Class Diagram) görünen tipleri içeren bir WPF uygulaması oluşturduğumuzu düşünelim.
 
-[![htoc_2](/assets/images/2014/htoc_2_thumb.png)](/assets/images/2014/htoc_2.png)
+![htoc_2](/assets/images/2014/htoc_2.png)
 
 ```csharp
 namespace HowTo_ObservableCollection 
@@ -97,7 +97,7 @@ BookList, ObservableCollection türevli olacak şekilde tanımlanmış olup içe
 
 BookList bir ObservableCollection örneğidir. Bu nedenle veri bağlı kontroller ile ilişkilendirildiğinde ekleme, silme gibi operasyonlar sonrasında bildirimlerde bulunabilir. Bu durumu test etmek ve hangi hallerde koleksiyonun nasıl çalıştığını görmek adına geliştirmekte olduğumuz WPF uygulamasının arayüzünü aşağıdaki gibi tasarlayarak devam edelim.
 
-[![htoc_3](/assets/images/2014/htoc_3_thumb.png)](/assets/images/2014/htoc_3.png)
+![htoc_3](/assets/images/2014/htoc_3.png)
 
 Window seviyesinde bir Resource tanımlanmış ve BookList koleksiyonu işaret edilmiştir. BookList koleksiyonunun kendisi, ListBox kontrolüne bu static resource yardımıyla ItemsSource özelliği üzerinden bağlanmaktadır.
 
@@ -109,7 +109,7 @@ Neden ObservableCollection Kullanırız ki?
 
 Gelin örneğimizi biraz daha değiştirelim ve aşağıdaki hale getirelim.
 
-[![htoc_4](/assets/images/2014/htoc_4_thumb.png)](/assets/images/2014/htoc_4.png)
+![htoc_4](/assets/images/2014/htoc_4.png)
 
 ```csharp
 using System.Windows;
@@ -159,23 +159,23 @@ namespace HowTo_ObservableCollection
 
 İlk olarak Add işlemine bakalım. BookList'e yeni bir Book nesne örneği eklendiğinde veriye bağlanmış olan kontrollerde otomatik olarak bu değişim için haberdar edilecek ve aşağıdaki çalışma zamanı durumu söz konusu olacaktır.
 
-[![htoc_5](/assets/images/2014/htoc_5_thumb.png)](/assets/images/2014/htoc_5.png)
+![htoc_5](/assets/images/2014/htoc_5.png)
 
 Görüldüğü gibi 94 numaralı Book nesne örneği koleksiyona eklendikten sonra yeni içerik ListBox kontrolüne de anında yansımıştır. Eğer Remove işlemini gerçekleştirirsek de benzer bir durum ortaya çıkacak ve ListBox kontrolü güncellendiği gibi, kaynak koleksiyondan da söz konusu kitap çıkartılacaktır.
 
-[![htoc_6](/assets/images/2014/htoc_6_thumb.png)](/assets/images/2014/htoc_6.png)
+![htoc_6](/assets/images/2014/htoc_6.png)
 
 Add sonrası Remove işlemi icra edildiğinde ise koleksiyondaki eleman sayısının 1 eksildiği görülecektir. Ayrıca ListBox kontrolünden de ilgili Book örneği kaldırılacaktır.
 
-[![htoc_7](/assets/images/2014/htoc_7_thumb.png)](/assets/images/2014/htoc_7.png)
+![htoc_7](/assets/images/2014/htoc_7.png)
 
 Peki Change işlemine gelirsek. Aslında Change vakasında, koleksiyondaki bir Book nesne örneğinin Title özelliğinde yapılan değişiklik söz konusudur. Bu durumda aşağıdaki sonuçlar ile karşılaşılır.
 
-[![htoc_8](/assets/images/2014/htoc_8_thumb.png)](/assets/images/2014/htoc_8.png)
+![htoc_8](/assets/images/2014/htoc_8.png)
 
 Dikkat edileceği üzere koleksiyondaki Book örneğinin Title özelliğinin içeriği Changed olarak değişmiştir. Ne varki kullanıcı arayüzüne baktığımızda aynı etkinin oluşmadığı görülür. Title ilk ve orjinal hali ile kalmıştır.
 
-[![htoc_9](/assets/images/2014/htoc_9_thumb.png)](/assets/images/2014/htoc_9.png)
+![htoc_9](/assets/images/2014/htoc_9.png)
 
 Bu davranış doğaldır. Nitekim INotifyPropertyChanged aslında ObservableCollection tipi için (ki örneğimizde bundan türeyen BookList) için geçerlidir. Ancak yaptığımız değişiklik, aslında bir Book nesne örneğinin özelliği üzerinde meydana gelmektedir. Bir başka deyişle Book sınıfına INotifyPropertyChanged arayüzü implemente edilmediği takdirde, User Interface'in de durum değişikliğinden haberdar olması pek mümkün değildir.
 

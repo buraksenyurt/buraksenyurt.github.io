@@ -11,7 +11,7 @@ tags:
 ---
 Daha dün gibi hatırlıyorum. Windows Communication Foundation 4.0 ile gelen yenilikleri inceliyor, öğrendiklerimi derhal bloğumda paylaşıyordum. Zaman ya çok hızlı akıyor ya da Microsoft zamanın önünde koşuyor
 
-[![what-wsdl-defines](/assets/images/2012/what-wsdl-defines_thumb.jpg)](/assets/images/2012/what-wsdl-defines.jpg)
+![what-wsdl-defines](/assets/images/2012/what-wsdl-defines.jpg)
 
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_56.png)
@@ -28,7 +28,7 @@ Windows Communication Foundation 4.5 sürümü ile birlikte gelen yeniliklerden 
 
 Bunun ne anlama geldiğini anlamak için dilerseniz basit bir örnek üzerinden ilerlemeye çalışalım. Bu amaçla Visual Studio 2012 ortamında bir WCF Service Application projesi oluşturalım. Proje içerisinde yer alan sözleşme ve diğer tipler aşağıdaki sınıf diagramında görüldüğü gibidir.
 
-[![wcfnf_1](/assets/images/2012/wcfnf_1_thumb.png)](/assets/images/2012/wcfnf_1.png)
+![wcfnf_1](/assets/images/2012/wcfnf_1.png)
 
 ICommonService isimli servis sözleşmesi (Service Contract) içerisinde yer alan GetRegion isimli fonksiyon, Country tipinden elemanlardan oluşan bir listeyi döndürmekte olan servis operasyonunu tanımlamaktadır. Country tipi ise basit bir POCO olup aşağıdaki içeriğe sahiptir.
 
@@ -88,27 +88,27 @@ namespace ContosoService
 > WCF 4.5 konfigurasyon içeriklerinde doğrulama (Validation) artık daha etkili ve kabiliyetli. Aşağıdaki şekilde yer alan Warning mesajlarına dikkat
 >
 > ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_124.png)
-> [![wcfnf_8](/assets/images/2012/wcfnf_8_thumb.png)](/assets/images/2012/wcfnf_8.png)
+> ![wcfnf_8](/assets/images/2012/wcfnf_8.png)
 
 Amacımız WSDL çıktılarına bakmak olduğundan sadece POCO (Plain Old CLR Object) tip kullanan bir Dummy servis geliştirdiğimizi düşünebiliriz. Şu noktada servisi tarayıcı uygulamadan çağırdığımızda aşağıda görülen ekran çıktısı ile karşılaşırız.
 
-[![wcfnf_2](/assets/images/2012/wcfnf_2_thumb.png)](/assets/images/2012/wcfnf_2.png)
+![wcfnf_2](/assets/images/2012/wcfnf_2.png)
 
 Dikkat edileceği üzere WSDL içeriklerine iki farklı adres ile talepte bulunabiliriz. Üstte yer alan http://localhost:51938/CommonService.svc?wsdl adresinden yapılan standart sorgu, bildiğimiz WSDL çıktısını döndürecektir ki söz konusu içerik aşağıdaki gibidir.
 
-[![wcfnf_3](/assets/images/2012/wcfnf_3_thumb.png)](/assets/images/2012/wcfnf_3.png)
+![wcfnf_3](/assets/images/2012/wcfnf_3.png)
 
 Şimdi burada duralım. Servisimiz bilindiği üzere Country tipi ile çalışacak şekilde tasarlanmıştır. Dolayısıyla istemci tarafı için gerekli proxy üretimi sırasında bu tipinde karşı tarafta oluşturulması gerekir. Bunun içinse ilgili tip tanımlamalarının WSDL dökümanında bulunması şarttır ki, svcutil aracı veya Add Service Reference seçeneği hangi şemaya bakarak nasıl bir sınıf üreteceğini bilsin.
 
 Yukarıdaki ekran görüntüsüne bakıldığında XSD (Xml Schema Definition) tanımlamaları için harici referanslar verildiği de görülmektedir. Söz gelimi http://localhost:51938/CommonService.svc?xsd=xsd2 talebi gerçekleştirildiğinde aşağıdaki ekran görüntüsünde yer alan çıktıya ulaşılır.
 
-[![wcfnf_4](/assets/images/2012/wcfnf_4_thumb.png)](/assets/images/2012/wcfnf_4.png)
+![wcfnf_4](/assets/images/2012/wcfnf_4.png)
 
 Fark edileceği üzere bu XSD içeriğinde Country tipi ve Country tipinden oluşan dizi tanımı (ArrayOfCountry) söz konusudur. Bu şema da Country tipinin içerdiği özellikler (Properties) ve bu özelliklerin tipleri yer almaktadır.
 
 Şimdi de http://localhost:51938/CommonService.svc?singleWsdl adresi için yapılan talebin sonuçlarına bakalım.
 
-[![wcfnf_5](/assets/images/2012/wcfnf_5_thumb.png)](/assets/images/2012/wcfnf_5.png)
+![wcfnf_5](/assets/images/2012/wcfnf_5.png)
 
 Görüldüğü gibi servis tarafının kullandığı veri sözleşmesi (Data Contract) ve gerekli diğer tip tanımlamaları aynı WSDL dökümanı içerisine bir element ağacı olarak entegre edilmiştir. Bir başka deyişle XSD kaynaklarının harici URL adresleri üzerinden referans edilmediği, bunun yerine aynı döküman içerisine enjekte edildikleri görülmektedir.
 
@@ -119,6 +119,6 @@ WCF 4.5 tarafında gelmiş olan bir kaç yenilik daha bulunmaktadır. Genelde ç
 > Ancak WCF 4.5 ile bu konuda önemli avantajlarımız var. Örneğin hatırlayamadığımız veya içeride hangi sözleşme var bilmediğimiz durumlarda intelli-sense yardımımıza yetişiyor. Aşağıdaki ekran görüntüsünde olduğu gibi
 >
 > ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_124.png)
-> [![wcfnf_7](/assets/images/2012/wcfnf_7_thumb.png)](/assets/images/2012/wcfnf_7.png)
+> ![wcfnf_7](/assets/images/2012/wcfnf_7.png)
 
 [ContosoService.zip (23,61 kb)](/assets/files/2012/ContosoService.zip)

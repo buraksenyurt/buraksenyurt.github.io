@@ -12,7 +12,7 @@ tags:
 ---
 Bildiğiniz üzere bir süre önce Microsoft PDC 2010 etkinlikleri gerçekleştirildi. Online olaraktan da canlı izleyebildiğimiz sunumlarda Microsoft’ un çok değerli sunumlarına ve anlatımlarına şahit olduk. Her PDC konferansında olduğu gibi bu sene yapılan etkinliklere ait görüntü kayıtları, Download edilmeye açıldıkları andan itibaren de ilgi odağı oldular
 
-[![blg240_Giris](/assets/images/2010/blg240_Giris_thumb.gif)](/assets/images/2010/blg240_Giris.gif)
+![blg240_Giris](/assets/images/2010/blg240_Giris.gif)
 
 
 ![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_10.png)
@@ -27,7 +27,7 @@ Aslına bakarsanız bu tip bir veri paylaşımı benim gibi servis tarafı ile i
 
 İlk olarak PDC 2010’ a ait bilgilerin nereden yayınlandığına bakarak başlamamızda yarar olacağı kanısındayım. Şu an itibariyle [http://odata.microsoftpdc.com/ODataSchedule.svc/](http://odata.microsoftpdc.com/ODataSchedule.svc/) adresinden bir paylaşım yapılmaktadır. Hatta her hangibir tarayıcı uygulaması ile baktığımızda aşağıdaki Atom veri içeriğinin üretildiğini görebiliriz.
 
-[![blg240_Browser](/assets/images/2010/blg240_Browser_thumb.gif)](/assets/images/2010/blg240_Browser.gif)
+![blg240_Browser](/assets/images/2010/blg240_Browser.gif)
 
 Servis tarafından çekilen bu içerik sanıyorum ki WCF Data Service geliştiren veya kullananlara tanıdık gelecektir. Aslında bir anlamda tarayıcı üzerinden sorgulanabilir veri içeriğinin söz konusu olduğunu ifade edebiliriz. Söz gelimi
 
@@ -35,7 +35,7 @@ Servis tarafından çekilen bu içerik sanıyorum ki WCF Data Service geliştire
 
 şeklinde bir URL sorgulamasının sonucu olarak ShortTitle, ShortUrl, FullDescription ve Tags bilgilerinden oluşan, ayrıca ShortTitle içeriğine göre A’ dan Z’ ye sıralı olarak gelen bir listeyi elde ederiz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
-[![blg240_SampleQuery](/assets/images/2010/blg240_SampleQuery_thumb.gif)](/assets/images/2010/blg240_SampleQuery.gif)
+![blg240_SampleQuery](/assets/images/2010/blg240_SampleQuery.gif)
 
 Dikkat edileceği üzere gerçekleştirilen oturumlara ait detaylı bilgileri bu servis üzerinden tedarik edebiliriz. Söz gelimi Download edilebilir materyallere ait bağlantı adreslerini (Powerpoint Sunumlar, WMV ve MP4 dosyaları), konuşmacılara ait kısa öz geçmişleri, oturumlar ile ilişkili başlık, açıklama, kategori ve daha pek çok bilgiyi elde etme şansına sahibiz. Yazıyı hazırlarkenki ilk amacımız Download edilebilir içeriklere ulaşmaktır. Bunun için Sessions koleksiyonundan yararlanmamız yeterli olacaktır. Ancak tabiki de diğer Entity Set içeriklerini de değerlendirip çok daha detaylı bir arayüz uygulaması geliştirebilirsiniz
 
@@ -45,11 +45,11 @@ Dikkat edileceği üzere gerçekleştirilen oturumlara ait detaylı bilgileri bu
 
 Örneği bir Web uygulaması olarak geliştirebiliriz. (Web uygulamasını tercih etmemin en büyük sebeplerinden birisi de, Download Link’ lerine doğal destek verecek olmasıdır) İlk etapta PDC için geliştirilmiş WCF Data Service’ inin projeye referans edilmesi gerekmektedir. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
-[![blg240_AddSrvRef](/assets/images/2010/blg240_AddSrvRef_thumb.gif)](/assets/images/2010/blg240_AddSrvRef.gif)
+![blg240_AddSrvRef](/assets/images/2010/blg240_AddSrvRef.gif)
 
 Dikkat edileceği üzere servis tarafından ScheduleModel isimli bir Context tipi getirilmektedir. PDC isimli namespace altında yer alacak Proxy bileşeninin üretimi sonucu Solution içerisine açılan tiplerin sınıf diagramı görüntüsü de aşağıdaki gibi olacaktır.
 
-[![blg240_ClassDiagram](/assets/images/2010/blg240_ClassDiagram_thumb.gif)](/assets/images/2010/blg240_ClassDiagram.gif)
+![blg240_ClassDiagram](/assets/images/2010/blg240_ClassDiagram.gif)
 
 DataServiceContext türevli olan ScheduleModel içerisinden standart LINQ (Language INtegrated Query) sorgularını kullanarak ilerleyebilir ve özellikle Sessions özelliği ile ifade edilen koleksiyon içeriğini ele alabiliriz. Bu andan itibaren kodlama tarafında farklı şekillerde ilerlememiz de mümkündür. Söz gelimi istediğimiz veri içeriklerini bir Web User Control üzerinde toplayabilir veya GridView gibi veri-bağlı kontrollerden birisine servis yardımıyla çekebiliriz.
 
@@ -288,7 +288,7 @@ Her bir Sessions nesne örneği üzerinden DownloadableContent özelliğine gide
 
 Çok doğal olarak sayfaya ait Load metodunda yaptığımız bu işlemler bir kaç saniyelik zaman kaybına neden olacaktır. Burada servisten verinin alınıp indirilmesi ve işlenmesi, süre kaybına neden olan etkenlerin başında gelmektedir. Dolayısıyla asenkron olarak verinin yüklenmesi ve hatta AJAX tabanlı bir Web Control içerisinde bu yükleme işleminin yapılması çok daha doğru bir yaklaşımdır. Bu kritik noktayı bir kenara bırakıp uygulamamızı çalıştırdığımızda ise aşağıdaki ekran görüntüsündekine benzer sonuçlar ile karşılaştığımızı görürüz.
 
-[![blg240_Result](/assets/images/2010/blg240_Result_thumb.gif)](/assets/images/2010/blg240_Result.gif)
+![blg240_Result](/assets/images/2010/blg240_Result.gif)
 
 Bu noktada dilerseniz Windows veya WPF tabanlı bir Desktop uygulaması ya da Silverlight tabanlı bir Rich Internet Application’ da geliştirebilirsiniz. Servis dünyasını seviyorum
 

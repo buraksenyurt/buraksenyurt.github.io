@@ -21,7 +21,7 @@ Daha şık olmaz mıydı?
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_52.png)
 
-[![tfi_73](/assets/images/2012/tfi_73_thumb.png)](/assets/images/2012/tfi_73.png)
+![tfi_73](/assets/images/2012/tfi_73.png)
 
 Bir başka ip ucunda görüşünceye dek hepinize mutlu günler dilerim.
 

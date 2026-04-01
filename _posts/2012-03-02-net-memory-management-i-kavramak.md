@@ -10,7 +10,7 @@ tags:
 ---
 Matix! Ne filmdi ama değil mi? Özellikle yazılım tarafına hakim olan bizler için, filmin içerisindeki pek çok gönderi anlamlı birer mesaj haline gelmişti. İlk bölüm zaten efsanenin başlangıcı olma niteliğindeydi. İkinci bölümde işler daha da bir farklılaştı tabi. Örneğin, silinmeyen ve Matrix içerisinde kendini geliştirip küçük bir krallık yaratan Merovingian karakteri vardı. Bu sistem içerisinde yer alan ve süresi dolduktan sonra silinmesi gereken bir program iken, kaynağa (Source) geri dönmemişti.
 
-[![Merovingian200px](/assets/images/2012/Merovingian200px_thumb.png)](/assets/images/2012/Merovingian200px.png)
+![Merovingian200px](/assets/images/2012/Merovingian200px.png)
 
 
 Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutulmuş ve bellek üzerinde bir şekilde ayakta kalmış bir programcıktı
@@ -25,7 +25,7 @@ Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutul
 
 .Net ile geliştirme yapmaya veya onu öğrenmeye başlayan hemen her programcı aşağıdakine benzer bir şekil ile de mutlaka karşılaşır.
 
-[![memmng_1](/assets/images/2012/memmng_1_thumb.png)](/assets/images/2012/memmng_1.png)
+![memmng_1](/assets/images/2012/memmng_1.png)
 
 Bize öğretilen, bizim öğrendiğimiz ve hatta öğrettiğimiz haliyle,.Net Framework içerisinde veri türleri iki ana dala ayrılır. Belleğin Stack bölgesinde tutulan değer türleri (Value Types) ve belleğin Heap bölgesinde tutulan referans türleri (Reference Types). int, double, Point, DateTime gibi aslında Common Type System içerisinde birer struct ile ifade edilebilen tüm tipler değer türü iken, class gibi tipler de referans türleridir. Özellikle bunların kendi aralarındaki atamalarında bellek üzerindeki işleyiş şekilleri de çouğunlukla farklıdır. Aksi belirtilmediği ve müdahale edilmediği sürece referans türleri arası yapılan atamalar, aslında stack bölgesindeki adres işaretçilerinin çoğullanması ama heap üzerindeki aynı adres bölgesinin ifade edilmesidir. Değer türlerinde ise bu durum tam tersidir. Değerler stack bölgesinde atamalar sonrası kopyalanırlar.
 
@@ -35,7 +35,7 @@ Aslında bu bilgiler bizim için temel niteliği taşımaktadır. Dedik ya, CLR 
 
 Uygulamalarımızın çalışma zamanında ürettiği referans tiplerinin Garbage Collector tarafından ele alındığını biliyoruz aslında. Hatta GC, GCSettings gibi tipler yardımıyla ona bir ölçüde müdahale etme şansımız da bulunmakta. Teorik olarak Heap bellek bölgesindeki nesne örneklerinin yaşam döngüsünden, onların bellek üzerindeki fragmantasyonlarından ve elbetteki serbest bırakılmalarından sorumlu olduğunu özetleyebiliriz. Garbage Collector ilke olarak iki tip nesne ile ilgilenir.
 
-[![memmng_2](/assets/images/2012/memmng_2_thumb.png)](/assets/images/2012/memmng_2.png)
+![memmng_2](/assets/images/2012/memmng_2.png)
 
 Aslında bir.Net uygulaması process olarak belleğe açıldığında, Managed Heap üzerinde o process’e ait olacak şekilde iki farklı alan göz önüna alınır. Bunlardan birisi uygulamanın 83Kilobyte ve daha az büyüklükteki nesneleri içindir ki Small Object Heap (SOH) olarak adlandırılır. Boyutu 83Kb üzerinde olan nesneler içinse Large Object Heap (LOH) olarak adlandırılan başka bir heap bloğu göz önüne alınır.
 
@@ -53,7 +53,7 @@ Durumu kabaca bu şekilde düşünecek olursak aşağıdaki gibi bir zaman diagr
 
 ![Wink](/assets/images/2012/smiley-wink.gif)
 
-[![memmng_3](/assets/images/2012/memmng_3_thumb.png)](/assets/images/2012/memmng_3.png)
+![memmng_3](/assets/images/2012/memmng_3.png)
 
 Ancak, olay bu kadar da basit değildir. Aslında GC mekanizması ana uygulama Thread’ inden bağımsız olarak çalışan farklı bir Thread olarak düşünüldüğünde, söz konusu işlemleri concurrent olarak gerçekleştirmektedir. Özellikle Generation 0,1 ve 2 bölgeleri üzerinde her zaman şekilde olduğu gibi sıralı ve düzgün bir dizilim söz konusu olmayacaktır. Dolayısıyla kopyalama metoduna göre yapılan taşıma işlemleri sırasında, nesneler boş bulunan bellek bölgelerine atılırlar.
 
@@ -75,7 +75,7 @@ Generation 2 bölgesi aslında performans ölçümlerinde de ip ucu veren bir al
 
 Gelelim LOH (Large Object Heap) bölgesine. 83KB üzeri olarak belirtilen Large Object’ lerin taşıma/kopylama maliyetleri tahmin edileceği üzere yüksektir. Bu sebepten dolayı SOH için uygulanan Generations tekniği yerine farklı bir yaklaşım kullanılır. Generation 2 parçasında Large Object nesnelerinin, ölen nesnelerden boşalan yerlere iliştirilmesi söz konusudur. Aslında aşağıdaki şekil ile durumu biraz olsun ifade edebiliriz.
 
-[![memmng_4](/assets/images/2012/memmng_4_thumb.png)](/assets/images/2012/memmng_4.png)
+![memmng_4](/assets/images/2012/memmng_4.png)
 
 Bir LO eklenmek istendiğinde Generation 2 kısmındaki ilk boş bölgeye açılması söz konusudur. Sonrasında sisteme dahil olacak diğer LO’ ler de Generation 2’ de boş olan yerlere serpiştirilirler. Tabi Generation 1 den gelen nesne örnekleri 83Kb’ den küçük olduklarından, yeni gelen 83Kb’ den büyük nesnelerin sığabilecekleri uygun yerlerinde Generation 2 üzerinde var olması gerekir.
 
@@ -132,6 +132,6 @@ GCLatencyMode özelliği Batch, Interactive ve LowLatency olmak üzere 3 sabit d
 
 Devam eden yazımızda LOH ve SOH kullanımları sırasında uygulamalarımıza ait bellek değerlerini nasıl ölçümlendirebileceğimizi aktarmaya çalışıyor olacağım. Şimdilik teoriyi pekiştirmemizde ve neyin ne olduğunu ayrıştırmamızda yarar var. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-[![memmng_5](/assets/images/2012/memmng_5.png)](http://www.amazon.com/CLR-via-C-Jeffrey-Richter/dp/0735627045/ref=sr_1_1?ie=UTF8&qid=1330694365&sr=8-1) Bu arada CLR’ ın çalışma şeklini daha iyi ve derinlemesine öğrenmek isterseniz sizlere tavsiyem MS Press’ in Jeffrey Ritcher imzalı CLR via C# isimli kitabı olacaktır.
+![memmng_5](/assets/images/2012/memmng_5.png) Bu arada CLR’ ın çalışma şeklini daha iyi ve derinlemesine öğrenmek isterseniz sizlere tavsiyem MS Press’ in Jeffrey Ritcher imzalı CLR via C# isimli kitabı olacaktır.
 
 896 sayfalık bu kitap içerisinde elbetteki bulacağınız tek şek bellek yönetimi (Memory Managemet) değil. Ama yazdığımız temel C# kod parçalarının CLR (Common Language Runtime) tarafından nasıl ele alındığını görmek, CIL (Common Intermediate Language) seviyesine kadar inebilmek mümkün. Fiyatı biraz yüksek görünebilir ama bence elinizin altında olması gereken bir kaynaktır diye düşünüyor ve hatta bu konuda ısrar ediyorum.

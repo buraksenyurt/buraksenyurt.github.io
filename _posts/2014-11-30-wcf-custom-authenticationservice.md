@@ -13,7 +13,7 @@ tags:
 ---
 Bazen bir yola baş koyarız ama o kadar uzundur ki git git bitmek bilmez. Yolda bin bir türlü zorluğu aşmak zorunda kalırız. Hatta hangi zorluklarla karşılacağımızı da bilemeyebiliriz. Yolun uzunluğuna, karşılaşılan zorluklara bağlı olarak ya geri döneriz ya başka bir yola saparız ya da inat edip sonuna kadar gitmeye çalışırız. Mücadelinin sonunda yolun sonuna varmak da yeterli olmayabilir.
 
-[![high_ropes_challenge](/assets/images/2014/high_ropes_challenge_thumb.jpg)](/assets/images/2014/high_ropes_challenge.jpg)
+![high_ropes_challenge](/assets/images/2014/high_ropes_challenge.jpg)
 
 
 Bazen varacağımız noktaya ulaşırken edindiğimiz tecrübelerin son noktada doğru sonuçların üretilmesine neden olması gerektiğine inanırız. Bu yüzden tüm zorlukları aşıp yanlış sonuçları elde ettiğimizi görürsek harcadığımız tüm emeğin boşa gittiğini düşünebiliriz. Yine de edindiğimiz tecrübleri kar sayıp “hiç olmassa…” diyebilmeliyiz.
@@ -34,7 +34,7 @@ Servis Uygulamasının Geliştirilmesi
 
 Bu amaçla ilk olarak bir WCF Service Application projesi oluşturarak yola koyulalım. Projemiz içerisinde SpecialAuthenticationService isimli bir WCF Servis öğesi yer alıyor olacak. Lakin söz konusu öğeye ait Code Behind ve sözleşmeyi (Service Contract) içeren cs dosyalarını sileceğiz. Nitekim servis dosyamızın aslında System.Web.ApplicationServices isim alanındaki ApplicationService tipini kullanmasını istiyoruz.
 
-[![sas_1](/assets/images/2014/sas_1_thumb.png)](/assets/images/2014/sas_1.png)
+![sas_1](/assets/images/2014/sas_1.png)
 
 SpecialAuthenticationService.svc dosyasına ait Markup içeriğini ise aşağıdaki şekilde güncellememiz gerekmektedir.
 
@@ -148,17 +148,17 @@ Bu noktadan sonra servis uygulamasını çalıştırıp ilk testlerimizi yapabil
 
 Örneğin yanlış bir kullanıcı adı ve şifre ile servisimize ait Login metodunu çağırdığımızı düşünelim.
 
-[![sas_3](/assets/images/2014/sas_3_thumb.png)](/assets/images/2014/sas_3.png)
+![sas_3](/assets/images/2014/sas_3.png)
 
 Dikkat edileceği üzere Login metodunun dönüşü false olmuştur. Ancak, doğru kullanıcı adı ve şifre ile bir deneme yaparsak operasyondan true değerinin döndüğünü, bir başka deyişle kullanıcının doğrulandığını görebiliriz.
 
-[![sas_2](/assets/images/2014/sas_2_thumb.png)](/assets/images/2014/sas_2.png)
+![sas_2](/assets/images/2014/sas_2.png)
 
 Authorization Kabiliyetlerinin Eklenmesi
 
 Artık AuthenticationService hizmetini nasıl customize edebileceğimizi öğrendik. Öyleyse bu servisi yetkilendirme (Authorization) yeteneklerini de işin içerisine katarak örnek bir WCF Servisinde kullanmaya çalışalım. Bu amaçla aynı uygulamaya AlgebraService isimli bir WCF Service öğesi ekleyelim ve içeriğini aşağıdaki gibi düzenleyelim.
 
-[![sas_4](/assets/images/2014/sas_4_thumb.png)](/assets/images/2014/sas_4.png)
+![sas_4](/assets/images/2014/sas_4.png)
 
 Servis Sözleşmesi;
 
@@ -370,11 +370,11 @@ namespace ClientApp
 
 Örneğimizi test edersek aşağıdaki sonuçları alıyor olmamız gerekir.
 
-[![sas_5](/assets/images/2014/sas_5_thumb.png)](/assets/images/2014/sas_5.png)
+![sas_5](/assets/images/2014/sas_5.png)
 
 Eğer hatalı bir kullanıcı bilgisi girilirse (örneğin kullanıcı adı burak yerine burk olsun) pek tabi doğrulama işlemi false değer döneceğinden herhangibir servis çağrısı yapılamayacaktır.
 
-[![sas_6](/assets/images/2014/sas_6_thumb.png)](/assets/images/2014/sas_6.png)
+![sas_6](/assets/images/2014/sas_6.png)
 
 Eğer kullanıcı doğrulanabilir olmasına karşın yetki verilen kullanıcılar arasında yer almıyorsa, bu durumda istemci tarafına yetkilendirme ile ilişkili bir istisna (Exception) mesajı dönecektir. Söz gelimi servis tarafındaki Sum metodunun niteliğini aşağıdaki gibi değiştirdiğimizi düşünelim.
 
@@ -388,7 +388,7 @@ public double Sum(double x, double y)
 
 Bu durumda istemci tarafında aşağıdaki çıktı elde edilecektir.
 
-[![sas_7](/assets/images/2014/sas_7_thumb.png)](/assets/images/2014/sas_7.png)
+![sas_7](/assets/images/2014/sas_7.png)
 
 Access is denied almak istediğimiz bir hatadır.
 
@@ -521,11 +521,11 @@ Role Bazlı Yetkinlik Testleri
 
 Eğer uygulamayı bu şekilde test edersek aşağıdaki çıktıları alırız.
 
-[![sas_8](/assets/images/2014/sas_8_thumb.png)](/assets/images/2014/sas_8.png)
+![sas_8](/assets/images/2014/sas_8.png)
 
 .ASPXAUTH cookie içeriğine dikkat edin. KullanıcıAdı|Role1|Role2 formatındadır. Şimdi tam tersi durumu da test edelim. Örneğin burak kullanıcısını Contributor rolünden çıkartıp Administrator rolünde bırakalım. (Ben Hard Coded yaptım rol ve kullanıcı bilgilerini ama siz öyle yapmayın tabi) Bu durumda aşağıdaki çalışma zamanı çıktısını alırız.
 
-[![sas_9](/assets/images/2014/sas_9_thumb.png)](/assets/images/2014/sas_9.png)
+![sas_9](/assets/images/2014/sas_9.png)
 
 Görüldüğü gibi burak kullanıcısı Administrator rolündedir ama Sum operasyonu sadece Contributor rolündekilere yetkilendirilmiştir. Dolayısıyla istemci tarafı bir Access is denied istisnası alacaktır.
 
@@ -650,7 +650,7 @@ Dilerseniz bu kısımda şifreleme için kullanılan metodu ve gerekli diğer pa
 
 Örneğimizi bu haliyle çalıştırdığımızda aşağıdaki sonuçları alırız.
 
-[![sas_10](/assets/images/2014/sas_10_thumb.png)](/assets/images/2014/sas_10.png)
+![sas_10](/assets/images/2014/sas_10.png)
 
 Dikkat edileceği üzere çerez içeriği şifrelelidir diyerek yazıyı kestirmeden sonlandırayım.Piuvvvvv!!!
 

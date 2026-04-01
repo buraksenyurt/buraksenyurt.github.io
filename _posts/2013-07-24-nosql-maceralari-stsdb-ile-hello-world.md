@@ -12,7 +12,7 @@ tags:
 ---
 [Matrix Reloaded'](http://en.wikipedia.org/wiki/The_Matrix_Reloaded) ı seyrettiğim zamanları düşündüğümde, anımsadıklarım arasında heyecanlı aksiyon sahnelerinde yer alan ve eski Amerikan stilini de yansıtan kocaman otomobiller vardı. (Hatta bildiğim kadarı ile ikinci dünya savaşı sonrası çelik stoklarının fazlalığı nedeniyle Amerikan otoları hep kocaman olmuşlardı)
 
-[![Cadillac_STS](/assets/images/2013/Cadillac_STS_thumb_2.jpg)](/assets/images/2013/Cadillac_STS_2.jpg)
+![Cadillac_STS](/assets/images/2013/Cadillac_STS_2.jpg)
 
 General Motors firmasına ait olan otomobillerden birisi de, Cadillac STS'in farklı bir versiyonu olan CTS idi. Tabi ben konuyu bir şekilde bu günkü yazının konusu olan STSdb'ye getirmek istediğimden [Cadillac STS](http://en.wikipedia.org/wiki/Cadillac_STS)'e ait bir fotoğrafa yer vermek istedim
 
@@ -57,15 +57,15 @@ Genel özelliklerini ise aşağıdaki maddeler halinde ifade edebiliriz.
 
 Bunun için [şu adresi](http://stsdb.com/products/stsdb-w4.0/downloads/embedded-server/) kullanabiliriz. İndirilen içerik aşağıdaki gibidir. (Yazının yayınlandığı tarihi itibariyle 4.0 RC sürümüde mevcut)
 
-[![sts_2](/assets/images/2013/sts_2_thumb.png)](/assets/images/2013/sts_2.png)
+![sts_2](/assets/images/2013/sts_2.png)
 
 Tahmin edileceği üzere STSdb.dll assembly’ ının, projeye referans edilmesi kullanılması için yeterlidir.
 
-[![sts_1](/assets/images/2013/sts_1_thumb.png)](/assets/images/2013/sts_1.png)
+![sts_1](/assets/images/2013/sts_1.png)
 
 Console uygulaması olarak geliştireceğimiz programımızda Hello World demek maksadıyla aşağıdaki kod içeriğini yazdığımızı düşünelim. Table Record olarak AutoMobile isimli bir sınıftan yararlanıyor olacağız.
 
-[![sts_3](/assets/images/2013/sts_3_thumb.png)](/assets/images/2013/sts_3.png)
+![sts_3](/assets/images/2013/sts_3.png)
 
 Veri Ekleme Operasyonu
 
@@ -161,7 +161,7 @@ Dikkat edilmesi gereken noktalardan birisi de Key olarak Primitive tip kullanmad
 
 Veri ekleme işlemi aslında son derece basittir. XTable tipinin indeksleyici operatörüne tanımlanan Key örnekleri atanır. Eşitlikten sonra ise yine bildirimi yapılmış olan tipten (ki örneğimizde AutoMobile sınıfına ait nesnelerdir) örnekler atanır. Tüm işlemlerin tamamlanmasının ardından bir Close ve Commit çağrısının yapılması, verilerin kalıcı olarak yazılması açısından kritiktir. Console uygulamasını bu şekilde çalıştırdığımızda dosya sistemi üzerinde gm.stsdb isimli bir dosya oluşturulduğu gözlemlenir.
 
-[![sts_4](/assets/images/2013/sts_4_thumb.png)](/assets/images/2013/sts_4.png)
+![sts_4](/assets/images/2013/sts_4.png)
 
 Veri Okuma
 
@@ -206,7 +206,7 @@ Okuma işleminde başrol oyuncusu olarak yine, StorageEngine sınıfı devreye g
 
 table nesne örneği elde edildikten sonra basit bir foreach iterasyonu ile kayıtlar arasından dolaşılabilinir. Hatta örnekte görüldüğü gibi Where genişletme metodundan yararlanılarak bir LINQ sorgusunun icra edilmesi de sağlanabilir. lambda (=>) operatörü etrafında kullanılan r değişkeni, AutoMobile sınıfından bir nesne örneğidir. Dolayısıyla özellikleri sorgulamada filtre kriteri olarak kullanılabilir. Uygulamanın çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
-[![sts_5](/assets/images/2013/sts_5_thumb_1.png)](/assets/images/2013/sts_5_1.png)
+![sts_5](/assets/images/2013/sts_5_1.png)
 
 Temel olarak key-value teorisini baz alarak çalışan STSdb sisteminde, tablo anahtar (Table Key) ve kayıtlarının (Table Record) hangi türlerden oluşabileceği belirlidir. Burada oldukça geniş bir nesne yelpazesinin olduğunu ifade edebiliriz.
 

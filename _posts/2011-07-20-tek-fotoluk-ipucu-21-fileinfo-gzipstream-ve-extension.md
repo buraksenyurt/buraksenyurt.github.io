@@ -22,6 +22,6 @@ Ben Compress'I yazdım. Kalanı da size ait olsun
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_39.png)
 
-[![PhotoTrick21](/assets/images/2011/PhotoTrick21_thumb.png)](/assets/images/2011/PhotoTrick21.png)
+![PhotoTrick21](/assets/images/2011/PhotoTrick21.png)
 
 [GZipExtension.rar (24,43 kb)](/assets/files/2011/GZipExtension.rar)

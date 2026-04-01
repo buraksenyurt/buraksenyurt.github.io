@@ -19,7 +19,7 @@ Asp.Net 4.5 tarafında gelen yeniliklerden birisi de System.Web.ModelBinding isi
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_131.png)
 
-[![tfi_77](/assets/images/2013/tfi_77_thumb.png)](/assets/images/2013/tfi_77.png)
+![tfi_77](/assets/images/2013/tfi_77.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

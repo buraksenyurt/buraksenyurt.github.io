@@ -14,7 +14,7 @@ tags:
 ---
 Düzenli olarak teknik paylaşımlarda bulunan internet yazarlarının karşılaştığı en büyük sorunlardan birisi, hızla gelişen teknoloji nedeniyle ele alınan konuların kolayca eskimesidir. Hangi firma olursa olsun bu kural geçerlidir. Bu eskitme işinde elbette başı çeken bir kaç firma var. Zaman zaman yazarların serzenişte bulunup kızdığı Microsoft, Oracle, Google ve diğerleri.
 
-[![eskiici](/assets/images/2015/eskiici_thumb.jpg)](/assets/images/2015/eskiici.jpg)
+![eskiici](/assets/images/2015/eskiici.jpg)
 
 
 Dolayısıyla yazdığımız yazılar bir süre sonra eskiyen gaz lambaları misali duvarın bir köşesine asılıp yavaş yavaş çürüyorlar. Elbette istisnai durumlar da söz konusu. Nitekim pek çok firma (örneğin finans kurumları) teknolojiyi bazen geriden takip etmekte. O nedenle yazılan içeriğin hala bir yerlerde birilerinin işine yarayacağını ümit edebiliriz.
@@ -35,7 +35,7 @@ Sınıf Çizelgesi
 
 Tasarım kalıbının sınıf çizelgesi aşağıdaki gibi düşünülebilir.
 
-[![tmdp_1](/assets/images/2015/tmdp_1_thumb.png)](/assets/images/2015/tmdp_1.png)
+![tmdp_1](/assets/images/2015/tmdp_1.png)
 
 Dikkat edilmesi gereken operasyon TemplateMethod isimli fonksiyondur. Bu fonksiyon içerisinde sırasıyla çalıştırılan başka alt fonksiyonlar bulunmaktadır. Bunlar sırasıyla OperationZ, OperationA, OperationY, OperationF ve OperationB dir. OperationA ve OperationB isimli fonksiyonlar ise abstract olarak tanımlanmışlardır ve uygulanışları Concrete sınıflar da gerçekleştirilmektedir. Bir başka deyişle OperationA ve OperationB için davranışsal bir genişletme imkanı söz konusudur.
 
@@ -51,7 +51,7 @@ Sınıf Çizelgesi
 
 Çok basit olarak aşağıdaki sınıf çizelgesinde yer alan örneği tasarlamamız yeterli olacaktır.
 
-[![tmdp_2](/assets/images/2015/tmdp_2_thumb.png)](/assets/images/2015/tmdp_2.png)
+![tmdp_2](/assets/images/2015/tmdp_2.png)
 
 GameReporter abstract sınıfı içerisinde yer alan WriteSummary metodunu Template Method olarak düşünebiliriz. Bu metod kendi içinde sırasıyla GetResults, ParseResults ve WriteResults isimli fonksiyonellikleri çağıracaktır. Dikkat edileceği üzere WriteResults bir abstract metod olarak tanımlanmıştır ve GameReporter tipinden türeyen TextReporter, ConsoleReporter ve XmlReporter sınıflarınca ezilmektedir. Bu tasarıma göre GameReporter sınıfının tüketicisine özet bilgiyi yazdırabileceği 3 farklı alternatif sunulmaktadır. Kullanıcı bilgileri isterse Text ya da XML dosyasına yazabilir veya doğrudan Console penceresine bastırabilir. Eğer yeni bir seçenek eklenmesi gerekirse (örneğin sonuçları PDF olarak bastırmak gibi) bu durumda yeni bir GameReporter türetmesi yapılması yeterli olacaktır.
 
@@ -144,7 +144,7 @@ O yüzden çalışma zamanında, türeyen tip içerisinde ezilmiş (override) ol
 
 Uygulamanın çalışma zamanı çıktısı ise aşağıdaki gibidir.
 
-[![tmdp_3](/assets/images/2015/tmdp_3_thumb.png)](/assets/images/2015/tmdp_3.png)
+![tmdp_3](/assets/images/2015/tmdp_3.png)
 
 Uygulamasaydık
 
@@ -219,7 +219,7 @@ GameReporter sınıfı içerisinde yer alan WriteSummary metoduna bilgileri yazd
 
 Ancak Template Method desenini uyguladığımız örnekte GameReporter ve diğer alt sınıfların farklı kütüphanelerde durduğunu düşünecek olursak, GameReporter tipine bir müdahale de bulunmadan ve daha da önemlisi WriteSummary içerisindeki akışı bozmadan, yeni hedefleri ilave etme şansına sahip olduğumuzu fark edebiliriz. Aşağıdaki şekildeki uygulanış biçimi iyi bir çözüm olacaktır.
 
-[![tmdp_4](/assets/images/2015/tmdp_4_thumb.png)](/assets/images/2015/tmdp_4.png)
+![tmdp_4](/assets/images/2015/tmdp_4.png)
 
 Buna göre PDFReporter şeklinde yeni bir seçenek dahil edilmek istendiğinde LibraryC isimli kütüphaneye ilgili sınıfın eklenmesi yeterli olacaktır. LibraryA kütüphanesinde yer alan WriteResults içerisine müdahale edilmesine gerek yoktur. Consumer sınıf ise, sadece yeni eklenen sınıfı örnekleyip kullanmakla yükümlüdür.
 

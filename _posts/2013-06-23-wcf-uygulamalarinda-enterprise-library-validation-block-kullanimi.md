@@ -14,7 +14,7 @@ tags:
 ---
 Enterprise Library ve içerisinde yer alan Application Block’ lar çoğunlukla projelerimizde ihtiyaç duyduğumuz ve Cross-Cutting olarak geçen parçaların hızlı ve kolay bir biçimde uygulanmasında kullanılmaktadır. Cross-Cutting’ ler özellikle birden fazla katmandan oluşan proje bazlı çözümlerde, katmanların pek çok noktasında sıklıkla kullanılabilen (ihtiyaç duyulabilen) fonksiyonelliklerdir.
 
-[![lego-block-tape](/assets/images/2013/lego-block-tape_thumb.jpg)](/assets/images/2013/lego-block-tape.jpg)
+![lego-block-tape](/assets/images/2013/lego-block-tape.jpg)
 
 Örneğin Exception Handling, Security, Cryptography, Configuration, Logging, Validation, Caching vb…Bu tip modüler yapılar çok sık kullanıldıklarından her çözüm için ayrı ayrı geliştirilmemektedir/geliştirilmemelidir. Bunun yerine yeniden kullanılabilen modüler yapılar olarak ele alınmaları daha doğru bir yaklaşımdır. Örneğin Enterprise Library
 
@@ -28,7 +28,7 @@ Biz bu makalemizde WCF (Windows Communication Foundation) servislerinde, Validat
 
 İlk olarak servis tarafını geliştireceğiz. WCF Service Application şablonundan üretilen uygulamamızda, aşağıdaki ekran görüntüsünde yer alan referansların bulundurulması gerekmektedir.
 
-[![wcfvbe_1](/assets/images/2013/wcfvbe_1_thumb.png)](/assets/images/2013/wcfvbe_1.png)
+![wcfvbe_1](/assets/images/2013/wcfvbe_1.png)
 
 Enterprise Library’ sisteme yüklendikten sonra kurulduğu yerdeki bin klasöründen
 
@@ -41,7 +41,7 @@ assembly’ larının yüklenmesi gerekmektedir. Bunlara ek olarak System.Compon
 
 İlgili Assembly’ ların referans edilmesinin ardından servis tarafındaki uygulamanın geliştirilmesine başlanabilir. Örnek senaryomuza göre doğrulama denetimi, servis operasyonundaki metod parametreleri seviyesinde yapılacaktır. Şimdi aşağıdaki sınıf diagramında görülen tipleri geliştirmeye başlayalım.
 
-[![wcfvbe_8](/assets/images/2013/wcfvbe_8_thumb.png)](/assets/images/2013/wcfvbe_8.png)
+![wcfvbe_8](/assets/images/2013/wcfvbe_8.png)
 
 Player tipinin içeriği aşağıdaki gibidir.
 
@@ -169,27 +169,27 @@ Buraya kadar yapılan hazırlıklar ne yazık ki yeterli değildir. WCF çalış
 
 Adım 1
 
-[![wcfvbe_2](/assets/images/2013/wcfvbe_2_thumb.png)](/assets/images/2013/wcfvbe_2.png)
+![wcfvbe_2](/assets/images/2013/wcfvbe_2.png)
 
 İlk olarak Advanced->Extensions->behavior element extensions kısmına gidilir ve buradan New düğmesine basıldıktan sonra çıkan iletişim pencersine geçilir. Name özelliğine bir değer verdikten sonra ise Type özelliğinin karşısında bulunan 3 nokta düğmesine basılır.
 
 Adım 2
 
-[![wcfvbe_3](/assets/images/2013/wcfvbe_3_thumb.png)](/assets/images/2013/wcfvbe_3.png)
+![wcfvbe_3](/assets/images/2013/wcfvbe_3.png)
 
 Üç nokta düğmesine basıldıktan sonra ise, projenin bin klasörüne eklenmiş olan Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF.dll assembly’ ı seçilir.
 
 Adım 3
 
-[![wcfvbe_4](/assets/images/2013/wcfvbe_4_thumb.png)](/assets/images/2013/wcfvbe_4.png)
+![wcfvbe_4](/assets/images/2013/wcfvbe_4.png)
 
 Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF.dll assembly’ nın seçilmesini takiben gelen ekrandaki tek tip olan ValidationElement işaretleniz. Bu durumda aşağıdaki ekran görüntüsünde yer aldığı gibi ilgili elementin, behavior element extensions kısmına eklenmiş olduğu görülür.
 
-[![wcfvbe_5](/assets/images/2013/wcfvbe_5_thumb.png)](/assets/images/2013/wcfvbe_5.png)
+![wcfvbe_5](/assets/images/2013/wcfvbe_5.png)
 
 Adım 4
 
-[![wcfvbe_6](/assets/images/2013/wcfvbe_6_thumb.png)](/assets/images/2013/wcfvbe_6.png)
+![wcfvbe_6](/assets/images/2013/wcfvbe_6.png)
 
 Sıradaki adımda ilgili ValidationExtension elementinin bir EndPoint davranışı haline getirilmesi yer almaktadır. Bunun için Advanced->Endpoint Behaviors kısmına yeni bir davranış ilave edilmelidir. Davranışa örnek bir isim verildikten sonra ise Add düğmesi yardımıyla biraz önce sisteme dahil edilmiş olan ValidationExtension tipinin eklenmesi sağlanır.
 
@@ -197,7 +197,7 @@ Adım 5
 
 Son olarak yeni Endpoint davranışının, servise ait Endpoint ile ilişkilendirilmesi yeterli olacaktır. Bunun için Services->[Service Adı]->Endpoints->[Endpoint Adı] kısmından gelen özelliklerden BehaviorConfiguration’ a ValidationBehavior değerinin atanması yeterlidir.
 
-[![wcfvbe_7](/assets/images/2013/wcfvbe_7_thumb.png)](/assets/images/2013/wcfvbe_7.png)
+![wcfvbe_7](/assets/images/2013/wcfvbe_7.png)
 
 Sonuç olarak servis tarafına ait konfigurasyon dosyası içeriği aşağıdaki gibi olacaktır.
 
@@ -302,7 +302,7 @@ Dikkat edileceği üzere doğrulama kurallarına takılacak şekilde test verile
 
 Uygulamanın çalışma zamanı çıktısı aşağıdaki ekran görüntüsündeki gibi olacaktır.
 
-[![wcfvbe_9](/assets/images/2013/wcfvbe_9_thumb.png)](/assets/images/2013/wcfvbe_9.png)
+![wcfvbe_9](/assets/images/2013/wcfvbe_9.png)
 
 nickname, country, email, score ve notes metod parametrelerinde tanımlanan doğrulama ihlalleri istemci tarafına bu şekilde yansımıştır. Tabi yorum satırları altına alınmış Player’ ın oluşturulmasını denersek, bu durumda herhangibir doğrulama kriterine takılmadan ekleme işleminin yapılabildiğine şahit oluruz.
 

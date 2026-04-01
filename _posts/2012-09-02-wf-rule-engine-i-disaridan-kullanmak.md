@@ -14,7 +14,7 @@ tags:
 ---
 Kurallar, kurallar, kurallar!Hayatın hemen her noktasında karşımıza tonlarca kural çıkar. Tabi mevzumuz kuralların zorlayıcılığı ve saire değil, kuralların ihlal edilmesi veya uyulması halinde gerçekleşen aksiyonların neler olduğu ile ilgilidir. Ki bu düşünce tarzı aslına bakarsanız iş dünyasının çekirdek süreçlerinden tutun, en ince ve hatta uç noktalarına kadar yayılır.
 
-[![mfln2687l](/assets/images/2012/mfln2687l_thumb.jpg)](/assets/images/2012/mfln2687l.jpg)
+![mfln2687l](/assets/images/2012/mfln2687l.jpg)
 
 
 Hangi sektörde olunursa olunsun, işler ister kağıt üstünde, ister elektronik ortamda yürüsün, iş süreçleri kendi içerisinde tanımlı bir çok kural kümesi içerir. İş bu kural kümeleri, gerekli durumlarda doğal yollarla sistemin bir parçası olarak ya da yürütme usulü ile manuel olarak devreye girerek, sürecin şekillenmesi ve bir takım aksiyonların alınması noktasında önemli rol üstlenirler.
@@ -27,17 +27,17 @@ Ancak nasıl ki Biztalk tarafında dışarıdan kullanabileceğimiz bir Rule Eng
 
 Örnek senaryomuzda Product isimli bir POCO (Plain Old CLR Object) tip üzerinden kural tanımlanması, kuralların kayıt edilmesi, yeniden yüklenmesi ve istenildiği zaman canlı bir Product örneği üzerinde işletilmesi gibi fonksiyonellikleri sağlıyor olacağız. İşe ilk olarak aşağıdaki basit görünüme sahip olan bir Windows Forms uygulaması geliştirerek başlayabiliriz.
 
-[![wfrule_Form](/assets/images/2012/wfrule_Form_thumb.png)](/assets/images/2012/wfrule_Form.png)
+![wfrule_Form](/assets/images/2012/wfrule_Form.png)
 
 Test amaçlı olarak kullanacağımız bu Windows Form uygulamasında Product tipine ait basit kuralları tanımlayabileceğimiz, kayıt altına alabileceğimiz, tekrardan yükleyebileceğimiz ve çalıştırıp sonuçlarını görebileceğimiz işlevsellikler söz konusudur.
 
-> Pek tabi Workflow Foundation Rule Set Engine kullanılmak istendiğinden, projeye aşağıdaki.Net Assembly’ larının da referans edilmesi gerekmektedir.[![wfrule_References](/assets/images/2012/wfrule_References_thumb.png)](/assets/images/2012/wfrule_References.png)
+> Pek tabi Workflow Foundation Rule Set Engine kullanılmak istendiğinden, projeye aşağıdaki.Net Assembly’ larının da referans edilmesi gerekmektedir.![wfrule_References](/assets/images/2012/wfrule_References.png)
 
 Şimdi arka planda gerekli olan kod üretimlerini gerçekleştirerek işlemlerimize devam edelim. Kural motoru için kullanacağımız Product tipi ve bir kuralın XAML (eXtensible Application Markup Language) olarak serileştirilmesi (Serialization) ile tekrardan geri yüklenmesi (DeSerialization) için gerekli fonksiyonellikleri içeren Utility sınıfının kod içerikleri aşağıdaki gibidir.
 
 Sınıf diyagramı;
 
-[![wfrule_Model](/assets/images/2012/wfrule_Model_thumb.png)](/assets/images/2012/wfrule_Model.png)
+![wfrule_Model](/assets/images/2012/wfrule_Model.png)
 
 Product.cs;
 
@@ -213,7 +213,7 @@ RuleSet nesne örneğine ait Execute metodu parametre olarak gelen RuleExecution
 
 RuleSetDialog tipi ile aşağıdakine benzer bir iletişim kutucuğunun (Rule Set Editor) çalışma zamanında açılması ve yine resimde görüldüğü gibi örnek bir kuralın tanımlanması mümkündür.
 
-[![wfrule_dialog](/assets/images/2012/wfrule_dialog_thumb.png)](/assets/images/2012/wfrule_dialog.png)
+![wfrule_dialog](/assets/images/2012/wfrule_dialog.png)
 
 Örnekte tanımlanan StockLevelRule ile, herhangibir Product nesne örneğinin StockLevel değerinin 250’ nin altında olması hali ele alınmış ve durumun true veya false olmasına göre yine o anki canlı Product nesne örneğinin ErrorInformation özelliğine bazı bilgilendirme mesajları atanmıştır. (Çok doğal olarak burada başka atamaların yapılması da söz konusu olabilir) Tanımlanan bu kural seti serileştirilerek kayıt altına alındığında ise aşağıdaki XAML içeriğinin üretildiği görülür.
 
@@ -300,11 +300,11 @@ Pek tabi kayıt altına serileştirerek almış olduğumuz bu XAML içeriğini u
 
 Stok seviyesinin kuralda tanımlanan 250 birimin altında olması halinde,
 
-[![wfrule_Run1](/assets/images/2012/wfrule_Run1_thumb.png)](/assets/images/2012/wfrule_Run1.png)
+![wfrule_Run1](/assets/images/2012/wfrule_Run1.png)
 
 Stok seviyesinin kuralda tanımlanan 250 birimin üstünde olması halinde,
 
-[![wfrule_Run2](/assets/images/2012/wfrule_Run2_thumb.png)](/assets/images/2012/wfrule_Run2.png)
+![wfrule_Run2](/assets/images/2012/wfrule_Run2.png)
 
 Görüldüğü gibi Workflow Foundation ile birlikte gelen kural motorunun herhangibir.Net uygulaması üzerinden kullanılabilmesi son derece kolaydır. Hatta bu tip bir arabirim yardımıyla, iş analistlerinin çeşitli kurallar tanımlayıp kayıt altına alabilecekleri ve aslında süreç yönetim araçlarında önemli yere sahip olan bir takım depolama programlarının geliştirilmesi de kolaylaşmaktadır. Çok doğal olarak bu kurallar bir servis arkasında işletilebilirler de.
 

@@ -19,7 +19,7 @@ Son zamanlarda popüler olan (en azından benim dikkatimi yeni çeken) kütüpha
 
 Söz gelimi Northwind veritabanındaki ürünlerin kategori bazlı sayılarını öğrenmek istediniz. Aşağıdaki gibi bir kod parçası pekala işinize yarar.
 
-[![tfi_103](/assets/images/2013/tfi_103_thumb.png)](/assets/images/2013/tfi_103.png)
+![tfi_103](/assets/images/2013/tfi_103.png)
 
 dynamic türü nedeniyle sorgu sonucu elde edilen liste elemanları üzerinden doğrudan CategoryName ve ProductCount alanlarına gidilmesi mümkün olmuştur
 

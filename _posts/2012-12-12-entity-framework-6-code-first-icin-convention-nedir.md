@@ -24,7 +24,7 @@ tags:
 ---
 Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki... Aslında bakarsanız olaylar bana göre, Microsoft geliştirici takımlarının, diğer geliştiricilerin seslerini duymaya ve dikkate almaya başlamasından sonra epeyce gelişti.
 
-[![themask](/assets/images/2012/themask_thumb.jpg)](/assets/images/2012/themask.jpg)
+![themask](/assets/images/2012/themask.jpg)
 
 Microsoft’ un çeşitli takımlarının açtığı anketler sayesinde, geliştiricilerin talepleri dinleniyor, değerlendiriliyor ve kayda değer olanlar planlanıp peyder pey yeni sürümlere ilave ediliyor. Hatta takımların ortaya koyduğu “şu da olsa nasıl olur?” ruh halindeki öğeler de geliştiriciler tarafından oylanıyor ve aynı sürece dahil edilebiliyor.(Bloğumdaki takip ettiklerim listesinde bir kaç survey adresini bulabilirsiniz)
 
@@ -46,7 +46,7 @@ Code First yaklaşımında, veritabanı tarafının üretilmesi aşamasında dev
 
 Burada pek çok Convention tipi yer almaktadır. İlk olarak bu basit Convention tiplerinden bazılarını kavramsal olarak incelemeye çalışalım. Bu amaçla aşağıdaki basit içeriğe sahip olduğumuz bir örnek üzerinden ilerleyebiliriz.
 
-[![efcon_2](/assets/images/2012/efcon_2_thumb.png)](/assets/images/2012/efcon_2.png)
+![efcon_2](/assets/images/2012/efcon_2.png)
 
 ```csharp
 using System; 
@@ -89,7 +89,7 @@ namespace HowTo_EFCodeFirstConvetions
 
 Şimdi bu modele göre üretilen veritabanı şemasını şöyle kısaca bir inceleyelim dilerseniz.
 
-[![efcon_1](/assets/images/2012/efcon_1_thumb.png)](/assets/images/2012/efcon_1.png)
+![efcon_1](/assets/images/2012/efcon_1.png)
 
 Dikkat edileceği üzere Categories ve Books isimli iki tablo üretilmiştir. Her iki tabloda birer Primary Key alan bulunmaktadır. İşte burada Primary Key Convention kural kümesi devreye girmektedir. Bu kural setine göre, Guid veya int tipinden olup adı ID veya [SınıfAdı][Id] notasyonunda olan özellikler, veritabanı şemasında birer Identity alan olarak üretilecek ve hatta Primary Key şeklinde işaretleneceklerdir.
 
@@ -97,7 +97,7 @@ Senaryomuza Class seviyesinde baktığımızda, bir kategorinin altında birden 
 
 Örnekte kasıtlı olarak Book sınıfı içerisidne CategoryId isimli ayrı bir özellik daha tanımlanmıştır. Mantıksal olarak bu özellik bir kitabın bağlı olduğu Category tipini işaret etmek üzere planlanmıştır. Ancak Relation Convention kurallarına göre isimlendirme de bir sorun vardır. Category tablosunun Identity şeklindeki Primary Key alanı ID olarak belirlenmiştir. Bu sebepten tablo şemasına bakıldığında CategoryID isimli bir alanın daha eklendiği ve iki tablo arasındaki bire çok ilişkinin, bu alan üzerinden sağlandığı görülmektedir.
 
-[![efcon_3](/assets/images/2012/efcon_3_thumb.png)](/assets/images/2012/efcon_3.png)
+![efcon_3](/assets/images/2012/efcon_3.png)
 
 ```text
 USE [AzonBookShop] 
@@ -115,7 +115,7 @@ Relation ile ilişkili SQL script’ i içinde de görüldüğü üzere Books ta
 
 Şimdi dilerseniz örneğimizi biraz daha genişletelim ve Context için aşağıdaki sınıf çizelgesinde yer alan POCO tipini eklediğimizi düşünelim.
 
-[![efcon_5](/assets/images/2012/efcon_5_thumb.png)](/assets/images/2012/efcon_5.png)
+![efcon_5](/assets/images/2012/efcon_5.png)
 
 ```csharp
 public class Book 
@@ -139,7 +139,7 @@ public class Detail
 
 Book sınıfına Detail tipinden BookDetail isimli bir özellik eklenmiştir. Detail sınıfının dikkat çekici özelliği ise Primary Key Convention kuralına uygun bir özellik içermiyor olmasıdır. Bu durumuda Complex Type Convention kural seti devreye girecektir ve veritabanı tarafında aşağıdaki sonuçların oluşmasına neden olacaktır.
 
-[![efcon_4](/assets/images/2012/efcon_4_thumb.png)](/assets/images/2012/efcon_4.png)
+![efcon_4](/assets/images/2012/efcon_4.png)
 
 Görüldüğü üzere Detail sınıfının özellikleri, Book tablosu içerisinde birer alan (Field) haline getirilmiştir.
 
@@ -186,7 +186,7 @@ namespace HowTo_EFCodeFirstConvetions
 
 modelBuilder tipi üzerinden Conventions özelliği ile Remove metoduna erişilmekte ve PluralizingTableNameConvention sınıfı generic parametre olarak belirtilmektedir. Örneğimizin önceki kısımlarında veritabanı tarafında üretilen tablo adları mutlaka dikkatinizi çekmiştir. Çoğul isimlendirme kuralına göre üretilmişlerdir. Ancak OnModelCreating içerisinden bu kural setini kaldırmamız, tablo adlarının sınıf adları olarak tanımlanmasını sağlamaktadır.
 
-[![efcon_6](/assets/images/2012/efcon_6_thumb.png)](/assets/images/2012/efcon_6.png)
+![efcon_6](/assets/images/2012/efcon_6.png)
 
 Peki, Convention kuralları ile ilişkili olarak daha başka neler yapabiliriz? Özellikle bunları manuel olarak ele abilir miyiz? Var olan Convention kurallarını geçersiz kılarak kendi istediğimiz ayarların devreye girmesini nasıl sağlarız?
 
@@ -203,7 +203,7 @@ public class Category
 
 Burada ID isimli özelliğin Signature olarak değiştirildiği görülmektedir. Bu değişiklik nedeniyle pek tabi Primary Key Convention kural seti uygulanamayacaktır. Daha da kötüsü, senaryomuz gereği Category ile Book arasında bir relation tesis edilebilmesi için gerekli Foreign Key bulunamayacak ve çalışma zamanında aşağıdaki Exception ile karşılaşılacaktır.
 
-[![efcon_7](/assets/images/2012/efcon_7_thumb.png)](/assets/images/2012/efcon_7.png)
+![efcon_7](/assets/images/2012/efcon_7.png)
 
 İşte bu noktada Lightweight Convention tekniği ile durum çözümlenebilir. Bunun için yine OnModelCreating içerisinde bazı işlemler yapılması gerekmektedir. Aynen aşağıda görüldüğü gibi.
 
@@ -222,11 +222,11 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder)
 
 modelBuilder üzerinden Properties metodu kullanılarak, Entity'deki özellikler arasında Signature kelimesini içeren bir tane olup olmadığına bakılmakta ve eğer var ise IsKey metodu çağrısı ile bunun bir Identity alan olması gerektiği (bir başka deyişle Primary Key Convention kurallarının uygulanması gerektiği) vurgulanmaktadır. Buna göre çalışma zamanı sonucunda veritabanı tarafında aşağıdaki şemanın üretildiği gözlemlenecektir.
 
-[![efcon_8](/assets/images/2012/efcon_8_thumb.png)](/assets/images/2012/efcon_8.png)
+![efcon_8](/assets/images/2012/efcon_8.png)
 
 Convention çeşitlerinden bir diğeri de Model-Based olan versiyondur. Bu teknikte doğrudan model ile çalışma ve ayarlama şansına sahip oluruz. İlgili tekniği uygulayabilmek için IEdmConvention, IDbConvention ve IDbMappingConvention arayüzlerini (interface) implemente eden sınıflardan yararlanırız. Aşağıdaki basit örneği göz önüne alalım.
 
-[![efcon_10](/assets/images/2012/efcon_10_thumb.png)](/assets/images/2012/efcon_10.png)
+![efcon_10](/assets/images/2012/efcon_10.png)
 
 ```csharp
 using System.Data.Entity.Core.Metadata.Edm; 
@@ -266,11 +266,11 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder)
 
 Bu işlem sonucunda veritabanı şemasında aşağıdaki sonuçların oluştuğu gözlemlenecektir.
 
-[![efcon_9](/assets/images/2012/efcon_9_thumb.png)](/assets/images/2012/efcon_9.png)
+![efcon_9](/assets/images/2012/efcon_9.png)
 
 Bir başka Convention modeli ise Configuration tabanlı olanıdır. Bu teknikte IConfigurationConvention arayüzünün (intercace) implenente edildiği bir sınıfın devreye girerek Convention kurallarına müdahale etmesi söz konusudur. Aşağıdaki örnek sınıfı göz önüne alalım.
 
-[![efcon_11](/assets/images/2012/efcon_11_thumb.png)](/assets/images/2012/efcon_11.png)
+![efcon_11](/assets/images/2012/efcon_11.png)
 
 ```csharp
 using System; 
@@ -314,7 +314,7 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder)
 
 Bu işlem sonrasında veri tabanı şemasının aşağıdaki gibi üretildiği görülecektir.
 
-[![efcon_12](/assets/images/2012/efcon_12_thumb.png)](/assets/images/2012/efcon_12.png)
+![efcon_12](/assets/images/2012/efcon_12.png)
 
 Dikkat edileceği üzere String özelliklerin karşılığı olarak nvarchar tipinde olan, null değer içeremeyen ve maksimum 50 karakter uzunluğunda içerik tutabilen alanlar üretilmiştir.
 

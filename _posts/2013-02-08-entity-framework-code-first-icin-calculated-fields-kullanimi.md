@@ -16,7 +16,7 @@ tags:
 ---
 Genellikle göç etmek gibi anlamlarda kullanılan Migrate kelimesinin yazılım dünyasındaki karşılığını düşündüğümüzde, elbetteki yandaki fotoğrafta yer alan ve bir birlerinin akvaryumuna atlayan balıklar gelmeyecektir/gelmemelidir.
 
-[![hot-water-migration](/assets/images/2013/hot-water-migration_thumb.jpg)](/assets/images/2013/hot-water-migration.jpg)
+![hot-water-migration](/assets/images/2013/hot-water-migration.jpg)
 
 
 Ancak Entity Framework Code-First yaklaşımı ve Calculated Fields kavramını göz önüne getirdiğimizde, Migration kelimesini ciddi manada düşünmemiz gerekebilir. Nasıl mı? Haydi okumaya devam
@@ -31,7 +31,7 @@ Bildiğiniz üzere Entity Framework Code-First yaklaşımında, veritabanı nesn
 
 Dilerseniz basit bir örnek üzerinden hareket ederek konuyu incelemeye çalışalım. İlk etapta aşağıdaki sınıf çizelgesinde (Class Diagram) yer alan tipleri geliştirdiğimizi düşünelim. Senaryomuzdaki başrol oyuncuları, Shop isimli Context tipi ve Product sınıfının TotalPrice özelliğidir.
 
-[![efcf_3](/assets/images/2013/efcf_3_thumb.png)](/assets/images/2013/efcf_3.png)
+![efcf_3](/assets/images/2013/efcf_3.png)
 
 Product isimli örnek POCO (Plain Old CLR Object) tipi;
 
@@ -114,11 +114,11 @@ namespace HowTo_CalculatedFields
 }
 ```
 
-Shop context tipinin örneklenmesinin ardından bir Product nesnesi üretilmektedir. Dikkat edileceği üzere identity alan olarak set edilen ProductId ve Calculated Field olması planlanan TotalPrice için bir atama işlemi söz konusu değildir. Beklentimiz yeni Product, context üzerine eklendiğinde TotalPrice alanınında otomatik olarak hesaplanmış olmasıdır. Lakin bu aşamaya kadar ilerleyemeyiz bile. [![efcf_1](/assets/images/2013/efcf_1_thumb.png)](/assets/images/2013/efcf_1.png)
+Shop context tipinin örneklenmesinin ardından bir Product nesnesi üretilmektedir. Dikkat edileceği üzere identity alan olarak set edilen ProductId ve Calculated Field olması planlanan TotalPrice için bir atama işlemi söz konusu değildir. Beklentimiz yeni Product, context üzerine eklendiğinde TotalPrice alanınında otomatik olarak hesaplanmış olmasıdır. Lakin bu aşamaya kadar ilerleyemeyiz bile. ![efcf_1](/assets/images/2013/efcf_1.png)
 
 Dikkat edileceğiz üzere SaveChanges metoduna yapılan çağrı sonrasında bir çalışma zamanı istisnası (Runtime Exception) oluşmuştur. Söylenene göre TotalPrice alanı null değer içeremez. Aslında bu mesajı doğrudan Calculated Field ile ilişkili değildir. Yine de veritabanı tarafına baktığımızda şöyle bir durum oluştuğunu gözlemleyebiliriz; Shop isimli veritabanı üretilmiş, Products isimli tablo oluşturulmuş ve hatta içerisine TotalPrice isimli alan da dahil edilmiştir. Hımmm...Ne var ki TotalPrice kolonu Calculate Field haline gelmemiştir.
 
-[![efcf_4](/assets/images/2013/efcf_4_thumb.png)](/assets/images/2013/efcf_4.png)
+![efcf_4](/assets/images/2013/efcf_4.png)
 
 Peki ya çözüm?
 
@@ -128,7 +128,7 @@ Neyseki elimizin altında migration diye bir kabiliyet bulunmakta. Şu anda var 
 
 Şimdi Migration özelliğini etkinleştirip yeni bir Migration setini projeye dahil ediyor olacağız. Bunun için Package Manager Console penceresinden sırasıyla Enable-Migrations ve Add-Migration komutlarını çağıralım. Aşağıdaki gibi.
 
-[![efcf_2](/assets/images/2013/efcf_2_thumb.png)](/assets/images/2013/efcf_2.png)
+![efcf_2](/assets/images/2013/efcf_2.png)
 
 AddTotalPriceCalculateFields olarak adlandırdığımız Migration sınıfının içeriğinde yer alan Up ve Down metodlarını ise şu şekilde düzenleyebiliriz.
 
@@ -175,15 +175,15 @@ Artık veritabanını manuel olarak güncelletebiliriz. Bu güncelleme işlemi i
 
 > Verbose anahtarını kullanmamızın tek sebebi, veritabanına doğru giden T-SQL ifadelerini görmektir.
 
-[![efcf_5](/assets/images/2013/efcf_5_thumb.png)](/assets/images/2013/efcf_5.png)
+![efcf_5](/assets/images/2013/efcf_5.png)
 
 Bu adımdan sonra veritabanına gidip Products tablosuna baktığımızda, gerçektende TotalPrice için bir Calculated T-SQL ifadesinin yazılmış olduğunu görebiliriz.
 
-[![efcf_6](/assets/images/2013/efcf_6_thumb.png)](/assets/images/2013/efcf_6.png)
+![efcf_6](/assets/images/2013/efcf_6.png)
 
 Üstelik çalışma zamanında bir ürünü çektiğimizde, miktar ve birim fiyata göre TotalPrice özelliğinin de veritabanından hesaplanarak getirildiğini görebiliriz.
 
-[![efcf_7](/assets/images/2013/efcf_7_thumb.png)](/assets/images/2013/efcf_7.png)
+![efcf_7](/assets/images/2013/efcf_7.png)
 
 Herşey buraya kadar iyi gitti diyebiliriz. Lakin ufak bir sorunumuz daha var.
 
@@ -191,7 +191,7 @@ Herşey buraya kadar iyi gitti diyebiliriz. Lakin ufak bir sorunumuz daha var.
 
 Eğer Quantity veya ListPrice değerlerinde, nesne örneği üzerinden değişiklik yaparsak, bu durumda Calculated Field beklediğimiz gibi bir davranış göstermeyecektir. Aşağıdaki ekran görüntüsünde yer alan kod parçasını dikkate alalım.
 
-[![efcf_8](/assets/images/2013/efcf_8_thumb.png)](/assets/images/2013/efcf_8.png)
+![efcf_8](/assets/images/2013/efcf_8.png)
 
 Senaryoda ürün eklendikten sonraki durumda Calculated Field alanının hesaplanarak geldiği görülmektedir. Yani ilk eklemeden sonra gerçekleştirilen LINQ ifadesine göre TotalPrice için SQL tarafındaki hesaplama devreye girmiştir. Ancak bellek üzerinde kalan Product nesne örneğinin Quantity veya ListPrice alanlarında bir değişiklik yapıldığında, bu çok doğal olarak TotalPrice'a yansımayacaktır.
 
@@ -229,7 +229,7 @@ namespace HowTo_CalculatedFields
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_134.png)
 
-[![efcf_9](/assets/images/2013/efcf_9_thumb.png)](/assets/images/2013/efcf_9.png)
+![efcf_9](/assets/images/2013/efcf_9.png)
 
 Böylece geldik bir yazımızın daha sonuna. Bu makalemizde Code-First yaklaşımının kullanıldığı senaryolarda, biraz da veritabanı tarafına özgü olan Calculated Field’ ların nasıl etkin hale getirilebileceğini bir kaç küçük hile ile incelemeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

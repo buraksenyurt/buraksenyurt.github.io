@@ -29,7 +29,7 @@ Oldukça kolay bir biçimde; herhangibir algoritmaya bağımlı kalmadan, vector
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_159.png)
 
-[![tfi_85](/assets/images/2013/tfi_85_thumb.png)](/assets/images/2013/tfi_85.png)
+![tfi_85](/assets/images/2013/tfi_85.png)
 
 Burada ki ipucundan Data Protection kullanımı söz konusudur. Aslında aynı API’ yi kullanarak bir de Memory Protection yapabiliriz. Buna da bir sonraki ipucumuzda bakalım
 

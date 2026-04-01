@@ -17,11 +17,10 @@ tags:
   - writable-stream
   - readable-stream
 ---
-West-World bu hafta neredeyse savaş alanı gibiydi. Node.js tarafında öğrenmeye çalştığım yeni konu sebebiyle makineyi bir çok kez restart etmek zorunda kaldım. Üstelik düğmeden:|
+West-World bu hafta neredeyse savaş alanı gibiydi. Node.js tarafında öğrenmeye çalştığım yeni konu sebebiyle makineyi bir çok kez restart etmek zorunda kaldım. Üstelik düğmeden...
+Sebep çok büyük boyutlu bir dosya içeriğini basit bir web sunucusu üzerinden sunmaya çalışmaktı. Aslında kimse bu tip bir şey yapmaz. Hadi yapsa da koca dosyayı tek seferde istemciye göndermez. Kaldı ki istemci de bu web hizmetine herhangi bir tarayıcıdan talep göndermez.
 
 ![piping_g_1.gif](/assets/images/2018/piping_g_1.gif)
-
-Sebep çok büyük boyutlu bir dosya içeriğini basit bir web sunucusu üzerinden sunmaya çalışmaktı. Aslında kimse bu tip bir şey yapmaz. Hadi yapsa da koca dosyayı tek seferde istemciye göndermez. Kaldı ki istemci de bu web hizmetine herhangi bir tarayıcıdan talep göndermez.
 
 Neyse ki sonunda doğru yolu buldum ve bu tip bir araştırma senaryosunda terminalden curl komutunu kullanarak ilerlemenin daha mantıklı olduğunu öğrendim. Tabii tüm bunlar için geçerli bir sebebim vardı. Akımların sıklıkla bahsedilen pipe fonksiyonunu denemek ve bunun performansa olan olumlu etkilerini görebilmek.
 

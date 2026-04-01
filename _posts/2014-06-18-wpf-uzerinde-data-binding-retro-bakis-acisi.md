@@ -11,7 +11,7 @@ tags:
 ---
 Bizim dünyamızda zaman hızla akar ve eskiler eskide kalıp, yerini yeniler almaya başlar. Her ne kadar uzun ömürlü kavramlar söz konusu olsa da genel itibariyle yazılım dünyası böyledir. Bazen durup geriye bakar, eskiden nasıl yaptığımızı hatırlar, sonra yenisine dönerek bir kıyaslama yaparız. İşte bu yazımızda yıllarca eski stilde geliştirme yapmış klasik bir.Net yazılımcısının gözünden, yenilikçi bir konuya (ki çıkalı da çok çok çoook zaman olmuştur) bakmaya çalışacağız. Buyrun bakalım.
 
-[![retro_car-1590](/assets/images/2014/retro_car-1590_thumb.jpg)](/assets/images/2014/retro_car-1590.jpg)
+![retro_car-1590](/assets/images/2014/retro_car-1590.jpg)
 
 
 XAML doğduğundan beri gerek WPF (Windows Presentation Foundation), gerek Silverlight, gerek Windows Phone tarafı olsun pek çok yeniliği ve farklı geliştirme bakış açılarını da beraberinde getirmiş oldu. Bu alanlardan birisi de özellikle kontrol odaklı veri bağlama (Data Binding) stratejileri üzerinedir. Bu anlamda pek çok ve farklı veri bağlama tekniğini bulmak mümkün.
@@ -56,7 +56,7 @@ WPF tabanlı uygulamamızda yer alan MainWindow nesnesinin ilk hali aşağıdaki
 </Window>
 ```
 
-[![ub_1](/assets/images/2014/ub_1_thumb.png)](/assets/images/2014/ub_1.png)
+![ub_1](/assets/images/2014/ub_1.png)
 
 Tasarıma göre pencere üzerinde yer alan kontroller görsel olarak konumlandırılmış ve özellikle kod tarafında erişilebilirlikleri için x:Name nitelikleri (attribute) ile zenginleştirilmişlerdir.
 
@@ -208,13 +208,13 @@ namespace HowTo_FundementalsOfBinding
 
 Görüldüğü üzere kontrollerin Text gibi alanlarına, computer isimli örneğe ait özellikler doğrudan kod yardımıyla bağlanılmamıştır. Sadece nesne örneğinin oluşturulması ve this ile Window'un DataContext özelliğine set edilmesi yeterli olmuştur.
 
-[![ub_3](/assets/images/2014/ub_3_thumb.png)](/assets/images/2014/ub_3.png)
+![ub_3](/assets/images/2014/ub_3.png)
 
 Özellik Değeri Değiştiğinde?
 
 Bir önceki ekran görüntüsüne bakıldığında XAML tabanlı yapılan veri bağlama işleminin sorunsuz çalıştığı düşünülebilir. Ancak küçük bir problem vardır. Düğmeye basarak computer isimli değişkene ait ListPrice değerini arttırdığımızda TextBox kontrolü içerisindeki verinin güncellenmediğine şait oluruz.
 
-[![ub_4](/assets/images/2014/ub_4_thumb.png)](/assets/images/2014/ub_4.png)
+![ub_4](/assets/images/2014/ub_4.png)
 
 Demek ki TextBox bileşenini gerçek anlamda Product tipinden nesne örneğine bağlayabilmiş değiliz. Çözümsel yaklaşım olarak, Product nesne örneğinin ilgili özelliklerinde olabilecek değişiklikler sonucunda, ilgili görsel kontrollerin bir şekilde uyarılması ve içeriklerinin güncellenmesi gerektiği düşünülebilir. Yine klasik stilde olaya yaklaşırsak Product tipini şu hale getirmemiz işe yarayabilir.
 
@@ -250,7 +250,7 @@ x:Name niteliklerini kaldırmıştık hatırlayacağınız gibi. Hadi bunu geçt
 
 Demek ki özelliklerde olan değişiklikleri, görsel ortama bildirirken kontrolden, adından, tipinden vs tamamen bağımsız olabilmeliyiz. İşte bu, INotifyPropertyChanged isimli arayüzün (Interface) neden var olduğunun açık bir ifadesidir. Dolayısıyla Product tipinin içeriğini şu hale getirdiğimizi düşünebiliriz.
 
-[![ub_5](/assets/images/2014/ub_5_thumb.png)](/assets/images/2014/ub_5.png)
+![ub_5](/assets/images/2014/ub_5.png)
 
 ```csharp
 using System.ComponentModel;
@@ -317,7 +317,7 @@ namespace HowTo_FundementalsOfBinding
 
 Buna göre kod tarafında computer örneğine ait özelliklerde bir değişiklik olduğunda, Window üzerinde veriye bağlanmış olan kontrollerin ilgili içeriklerinin de değiştiği gözlemlenecektir. Diğer yandan tam tersi durumda söz konusudur. Yani kontrol üzerindeki değerlerde bir değişiklik yapıp, odağı farklı bir bileşene kaydırırsak (tab tuşuna basmamız dahi bunun için yeterli olacaktır), bu durumda kontrollere bağlanan nesne örneğinin özellikleri de otomatik olarak güncellenir. Aşağıdaki ekran görüntüsünde bu durum irdelenmiştir.
 
-[![ub_6](/assets/images/2014/ub_6_thumb.png)](/assets/images/2014/ub_6.png)
+![ub_6](/assets/images/2014/ub_6.png)
 
 Biraz Revizyon
 

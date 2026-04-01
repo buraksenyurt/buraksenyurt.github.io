@@ -16,7 +16,7 @@ Bazı komut satırı araçları oldukça işlevseldir ve çoğunlukla tercih edi
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_199.png)
 
-[![tfi_101](/assets/images/2013/tfi_101_thumb.png)](/assets/images/2013/tfi_101.png)
+![tfi_101](/assets/images/2013/tfi_101.png)
 
 Bu örnek farklı fikirlerinde doğmasına yol açabilir. Örneğin TFS sunucusunda ne kadar Team Project varsa, her birinin Process Template bilgisini gösteren bir Windows uygulaması (hatta Web’ de olur) geliştirmeyi deneyebilirsiniz
 

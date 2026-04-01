@@ -13,7 +13,7 @@ tags:
 ---
 Bir süredir yazılım dünyasında sıklıkla kullanılan basit algoritmalara merak salmış durumdayım. Bazıları kafayı yedirtecek cinsten olsalarda arada sırada bunları değerlendirmekte ve paslanan dimamızı açmaya çalışmakta yarar olduğu kanısındayım.
 
-[![artcl_11_4](/assets/images/2012/artcl_11_4_thumb.jpg)](/assets/images/2012/artcl_11_4.jpg)
+![artcl_11_4](/assets/images/2012/artcl_11_4.jpg)
 
 
 Aslına bakarsanız bilgisayar bilimlerinde uygulanabilen, gerçekten çok işe yarayan ve onları keşfedenleri saygıyla hatırlamamız gereken algoritmalar mevcut. Örneğin bunlardan birisi olan [Levenshtein Distance](http://en.wikipedia.org/wiki/Vladimir_Levenshtein) algoritması ve mucidi Vladimir Levenshtein
@@ -22,7 +22,7 @@ Aslına bakarsanız bilgisayar bilimlerinde uygulanabilen, gerçekten çok işe 
 
 Bu algoritma bizlere, özellikle arama motorlarında da kullanılabilen bir model sunmaktadır. Son kullanıcıların aradıkları kelimeleri tam olarak belirleyemedikleri veya kestiremedikleri durumlarda, öneri olarak sunulan kelimelerin tespit edilmesi sırasında ele alınan bir algoritmadır. Örneğin ben Google sitesindeki arama kutucuğunda kendi ismimi eksik karakterler ile yazdığımda, google daha önceden yapmış olduğu indekslenmiş içeriklere göre bir öneri de bulunmuştur (Bunu mu demek istediniz kısmı) Aşağıdaki şekilde bu durum açık bir şekilde görülmektedir.
 
-[![artcl_11_1](/assets/images/2012/artcl_11_1_thumb.png)](/assets/images/2012/artcl_11_1.png)
+![artcl_11_1](/assets/images/2012/artcl_11_1.png)
 
 Arama motorları dışında, özellikle imla kontrolü yapan uygulamalarda da (Söz gelimi Microsoft Outlook veya Microsoft Word’ ün Spell Checking mekanizmalarında) bu algoritmanın kullanımına sıklıkla şahit olmaktayız.
 
@@ -36,7 +36,7 @@ Peki bu yakınlık değeri nasıl hesaplanmaktadır?
 
 Bunun için kelimeler arası iki boyutlu bir matris dizisi kullanılır. Lakin söz konusu matrisin içereceği değerlerin tespiti çok da kolay değildir. Dilerseniz aşağıdaki Excel görüntüsünde yer alan örneklemelere bir bakalım ve algoritmayı daha yakından tanımaya çalışalım.
 
-[![artcl_11_3](/assets/images/2012/artcl_11_3_thumb.png)](/assets/images/2012/artcl_11_3.png)
+![artcl_11_3](/assets/images/2012/artcl_11_3.png)
 
 Bu grafikte, 5 farklı örnek ile 10 kelimenin birbirleri ile yakınlıklarının Levensthein Distance algoritmasına göre nasıl hesap edildiği gösterilmektedir. İlk olarak rest kelimesinin test kelimesi ile olan yakınlığı bulunmaya çalışılmıştır. Aslına bakarsanız bu iki kelime arasında sadece 1 işlem yaparak sonuca ulaşılabilir. Bu işleme göre rest kelimesindeki r harfi yerine, t harfinin gelmesi yeterlidir. Matris içerisinde yer alan sayılar o andaki sütuna veya satıra kadar olan harf topluluklarının birbirleri ile eş düşmeleri için gerekli işlem sayılarını içermektedir.
 
@@ -134,7 +134,7 @@ namespace UsingLevenshtein
 
 Uygulamamız içerisinde dikkat edeceğiniz üzere Excel tablosunda yer alan kelimelere ait bir test işlemi gerçekleştirilmektedir.FindLevenshteinDistance isimli metodumuz bir genişletme fonksiyonu olarak herhangibir string tipine uygulanabilecek şekilde tasarlanmıştır. Bununla birlikte söz konusu metod hem Levenshtein Distance matrisini, hemde yakınlık derecesini döndürmektedir. Uygulama içerisinde kelimeler arası testi kolaylaştırmak adına TestMethod isimli bir fonksiyon da ele alınmıştır. Programın çalışma zamanındaki çıktısı ise aşağıdaki gibi olacaktır.
 
-[![artcl_11_2](/assets/images/2012/artcl_11_2_thumb.png)](/assets/images/2012/artcl_11_2.png)
+![artcl_11_2](/assets/images/2012/artcl_11_2.png)
 
 Artık bundan sonrasında yapılması gereken, bir text kutucuğuna girilen metni, bir metin kümesi içerisinde söz konusu algoritmaya göre aramak ve yakınlık derecesi, bir başka deyişle operasyon işlem maliyeti en düşük olan kelime veya kelimeleri kullanıcıya sunmaya çalışmaktan ibarettir. Dilerseniz bu konuyu bir düşünün ve uygulamaya çalışın
 

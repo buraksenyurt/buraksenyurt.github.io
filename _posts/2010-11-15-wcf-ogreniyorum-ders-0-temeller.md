@@ -11,7 +11,7 @@ tags:
 ---
 Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü yapmakta olduğum [NedirTv?Com](http://www.nedirtv.com) bünyesindeki yeni Webinerlerimize (WebCasts) başlamış olduk
 
-[![blg239_Giris](/assets/images/2010/blg239_Giris_thumb.gif)](/assets/images/2010/blg239_Giris.gif)
+![blg239_Giris](/assets/images/2010/blg239_Giris.gif)
 
 
 ![Open-mouthed smile](/assets/images/2010/wlEmoticon-openmouthedsmile_7.png)

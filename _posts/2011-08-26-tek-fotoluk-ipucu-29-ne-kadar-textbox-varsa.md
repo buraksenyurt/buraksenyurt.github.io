@@ -16,6 +16,6 @@ Kaliteli kod yazmak için aslında biraz titiz düşünmek gerekir. Söz gelimi 
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_47.png)
 
-[![PhotoTrick29](/assets/images/2011/PhotoTrick29_thumb.png)](/assets/images/2011/PhotoTrick29.png)
+![PhotoTrick29](/assets/images/2011/PhotoTrick29.png)
 
 [WindowsFormsApplication1.rar (40,37 kb)](/assets/files/2011/WindowsFormsApplication1.rar)

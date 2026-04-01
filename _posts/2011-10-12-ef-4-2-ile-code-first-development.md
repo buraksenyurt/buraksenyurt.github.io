@@ -10,7 +10,7 @@ tags:
 ---
 Teknolojinin hızına inanın ki yetişilemiyor. Her gün yeni bir bilim ve teknoloji haberi var dünyada. Ancak bir geçek daha var ki o da Microsoft, Google, Apple gibi devlerin de hızına yetişilememsi. Örneğin daha henüz 2011 Mix’ te RTM olarak duyurulan Entity Framework 4.1 sürümü üzerine geçtiğimiz günlerde 4.2 RC (Release Candidate) duyuruldu. Ben de bunun üzerine yeni sürümde Code-First Development’ ın nasıl uygulandığını anlamak ve görmek istedim. Haydi gelin keşfetmeye başlayalım.
 
-[![speed](/assets/images/2011/speed_thumb.jpg)](/assets/images/2011/speed.jpg)
+![speed](/assets/images/2011/speed.jpg)
 
 
 İlk olarak Entity Framework 4.2 sürümü ile ilişkili detaylı bilgilere [Ado.Net Team Blog’](http://blogs.msdn.com/b/adonet/) un ilgili adresi üzerinden ulaşabileceğinizi belirtmek isterim. Peki herşey güzel de nedir bu Code-First Development? Ado.Net Entity Framework tarafında en başından beri var olduğunu bildiğimiz Model-First ve Database-First Development yaklaşımları mevcut. Ancak Code-First development ne ola ki
@@ -21,7 +21,7 @@ Doğruyu söylemek gerekirse bu tanımı en sonda yapmanın ve aradan geçen zam
 
 Bu amaçla ilk olarak basit bir Console Application projesi açtığımızı ve içerisine aşağıdaki sınıf diagramında görülen tipleri eklediğimizi var sayalım.
 
-[![bei_19](/assets/images/2011/bei_19_thumb.gif)](/assets/images/2011/bei_19.gif)
+![bei_19](/assets/images/2011/bei_19.gif)
 
 Department.cs
 
@@ -60,7 +60,7 @@ Code-First Development senaryosunda bu tipin yazılması da geliştiriciye ait. 
 
 ![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_68.png)
 
-[![bei_18](/assets/images/2011/bei_18_thumb.gif)](/assets/images/2011/bei_18.gif)
+![bei_18](/assets/images/2011/bei_18.gif)
 
 Teşekkürler NuGet
 
@@ -68,11 +68,11 @@ Teşekkürler NuGet
 
 Güncel proje üzerinden kısa sürede gerçekleştirilen install işlemi sonrasında bazı ek library dosyalarının referans edildiğini görürüz. Aşağıdaki şekilde bu kütüphaneler işaretlenmiştir.
 
-[![bei_20](/assets/images/2011/bei_20_thumb.gif)](/assets/images/2011/bei_20.gif)
+![bei_20](/assets/images/2011/bei_20.gif)
 
 Şimdi projemize yeni bir sınıf daha ekliyor olacağız. Aslında Context diye tabir edilen bu sınıfın görevi temel olarak Model içerisindeki POCO tiplerine ait koleksiyon bazlı nesneleri sunmak olacaktır. Tabi EF kabiliyetlerinin kendisine kazandırılması gerektiğinden indirilen paket içerisinde yer alan bir tipten de türetilmesi (Inheritance) söz konusudur. İşte Context tipimiz;
 
-[![bei_21](/assets/images/2011/bei_21_thumb.gif)](/assets/images/2011/bei_21.gif)
+![bei_21](/assets/images/2011/bei_21.gif)
 
 ve kod içeriğimiz;
 
@@ -158,7 +158,7 @@ Dolayısıyla ilk çalışma esnasında söz konusu veritabanı ve içeriği ür
 
 Haydi gelin uygulamamızı debug modda çalıştıralım. Eğer çalışma zamanında Context nesne örneği üzerinde biraz dolaşırsak aşağıdaki gibi bir Connection String bilgisinin uygulanmaya çalışıldığını görürüz.
 
-[![bei_22](/assets/images/2011/bei_22_thumb.gif)](/assets/images/2011/bei_22.gif)
+![bei_22](/assets/images/2011/bei_22.gif)
 
 Burada,
 
@@ -166,7 +166,7 @@ Data Source=.\SQLEXPRESS;Initial Catalog=CodeFirstDevelopment.CompanyContext;Int
 
 şeklinde bir bağlantı bilgisi üretilmiştir. SaveChanges metodunu atladığımızda ise ilk yapmamız gereken aslında yerel sunucuya bakmak olmalıdır. Ve sonuç;
 
-[![bei_23](/assets/images/2011/bei_23_thumb.gif)](/assets/images/2011/bei_23.gif)
+![bei_23](/assets/images/2011/bei_23.gif)
 
 Volaaa!!! Sizce de süper değil mi?
 
@@ -174,7 +174,7 @@ Volaaa!!! Sizce de süper değil mi?
 
 Çok basit tipler tanımladık ve code modelimize bakılarak ilgili tablolar ve aralarındaki ilişkiler otomatik olarak oluşturuldu. Hatta verilerin yüklendiğini de SQL sorgularımızı atarak görebiliriz.
 
-[![bei_24](/assets/images/2011/bei_24_thumb.gif)](/assets/images/2011/bei_24.gif)
+![bei_24](/assets/images/2011/bei_24.gif)
 
 Bu durumda geldiğimiz aşamaya baktığımızda, basit POCO nesnelerini ve DbContext tipini kullanaraktan veritabanı modelimizi, önce kodu düşünerek geliştirmiş olduğumuzu ifade edebiliriz. Elbette yapılabilecek daha pek çok işlem var. Code-First Development ile ilişkili diğer özellikleri ben de zaman içerisinde incelemeyi düşünüyorum. Şimdilik bu giriş niteliğindeki Hello World yazısı ile idare etmeye çalışacağım. Eğer Entity Framework konusunda geçerli ve güncel bir kaynaktan yararlanmak isterseniz Julie Lerman’ ın [Programming Entity Framework: Building Data Centric Apps with the ADO.NET Entity Framework](http://www.amazon.com/Programming-Entity-Framework-Building-Centric/dp/0596807260/ref=sr_1_1?s=books&ie=UTF8&qid=1318495364&sr=1-1) adlı kitabını tavsiye edebilirim. Her ne kadar 2010 Ağustos baskısı olsada kalan kısımları Offical Ado.Net Team Blog ile eksik kısımları ve yenilikleri tamamlayabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

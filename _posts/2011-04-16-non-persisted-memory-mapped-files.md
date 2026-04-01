@@ -13,7 +13,7 @@ tags:
 ---
 Akşam saatleriydi. Sıcak ama güneşin fazla görünmediği bir yaz gününün sonları yaklaşmaktaydı. Gün boyu güneşi İstanbul’ dan saklayan bulutlar yavaş yavaş parçalanmaya başlamıştı. Aralardan güneşin ışınları hafif kızılımsı bir renk ile göğü süslemekteydi. Ancak yine de sert esen rüzgar ve hızla hareket eden bulutlar adeta fırtına öncesi sessizliğin bir habercisiydi. Aile efradı tatildeydi ve çalışma odamda tek başıma dışarıya doğru bakerken geceyi nasıl devam ettirmem gerektiğini planlıyordum.
 
-[![blg202_Giris](/assets/images/2011/blg202_Giris_thumb.jpg)](/assets/images/2011/blg202_Giris.jpg)
+![blg202_Giris](/assets/images/2011/blg202_Giris.jpg)
 
 
 Zaman ilerledi ve gecenin zifiri karanlığında güçlü bir gök gürültüsü duyuldu. Belli ki fırtınalı, zor bir gece olacaktı. Kimsenin açık denizde veya havada olmak istemeyeceği bir gece.
@@ -153,11 +153,11 @@ namespace Application3
 
 Üçüncü uygulamanın tek bir amacı vardır. O da mappedImage ismi ile eşleşen Mapped-File içeriğinin ilk 100 byte’ lık kısmını okumak. Bu kod içeriklerini geliştirdikten sonra sırasıyla 1nci, 2nci ve 3ncü uygulamaları çalıştırdığımızda, aşağıdaki ekran görüntüsündekine benzer sonuçları elde ettiğimizi görebiliriz.
 
-[![blg202_Runtime](/assets/images/2011/blg202_Runtime_thumb.gif)](/assets/images/2011/blg202_Runtime.gif)
+![blg202_Runtime](/assets/images/2011/blg202_Runtime.gif)
 
 Görüldüğü üzere ilk iki uygulama söz konusu Memory-Mapped File üzerine bir takım byte içeriklerini yazmaktadır. 3ncü program ise ilk iki programın yazdığı verileri başarılı bir şekilde okumaktadır. Çözümümüzde yer alan uygulamaların ne yaptığı aşağıdaki grafik ile temsil edilmeye çalışılmaktadır.
 
-[![blg202_What](/assets/images/2011/blg202_What_thumb.gif)](/assets/images/2011/blg202_What.gif)
+![blg202_What](/assets/images/2011/blg202_What.gif)
 
 Non-Persisted dosyalar fiziki disk üzerinde bir dosyayı işaret etmediklerinden, örnekte üretilen Memory Mapped-File içerikleri, programların kapanması sonrasında doğal olarak yok olacaktır. Bu yok olma işleminde Garbage Collector devreye girmekte ve gerekli çok toplaması işlemlerini üstlenmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

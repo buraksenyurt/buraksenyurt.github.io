@@ -16,7 +16,7 @@ tags:
 ---
 Eminim çocukken çizgi filmlerle aranız vardı. Hatta çoğumuz yaşı kaç olursa olsun çizgi filmlere arada sırada da olsa zaman ayırmakta. (Ben Batman gördüm mü pür dikkat izlerim örneğin) Keza pek çok büyüğümüz de, eskiden izlediği çizgi filmler ile karşılaştığında taaaa çocukluk yıllarına kadar gidip aynı o zamanki gibi içten gülebiliyorlar da (Rahmetli babamdan bilirim)
 
-[![Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768_thumb.jpg)](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768.jpg)
+![Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768.jpg)
 
 
 Aslına bakarsanız bazen teknoloji de bizi aynen bu mantıkta epeyce güldürebiliyor. Örneğin Microsoft’ un ürünlerini düşünelim. (Gerçi çok fazlalar ama gene de düşünmeye çalışalım) Sürekli yenilikler çıkartıyorlar, sürekli verisyon atlatıyorlar ve işin en acı tarafı da koşan [Road Runner](https://eksisozluk.com/road-runner--32627)’ a benziyorlar. Biz mi? Biz ise Road Runner’ ı her fırsatta yakalamaya çalışıp yakaladığını zanneden ama son anda hep elinden kaçıran [Coyote](https://eksisozluk.com/coyote--51208)’ ye
@@ -41,39 +41,39 @@ Bu veritabanında yayıncılara ait bazı bilgiler yer almaktadır. Örneğin pu
 
 Hedefimiz bu binary içerikleri (yani logoları) bir Web API fonksiyonu üzerinden geriye döndürebilmek ve hatta en azından tarayıcı pencresinde resim formatında gösterebilmek olacaktır. O halde projeyi açarak ilk adımımız atalım.
 
-[![wapigi_1](/assets/images/2013/wapigi_1_thumb.png)](/assets/images/2013/wapigi_1.png)
+![wapigi_1](/assets/images/2013/wapigi_1.png)
 
 Projenin Oluşturulması
 
 İlk olarak yeni bir Web uygulaması oluşturarak işe başlayabiliriz. Pek tabi Visual Studio 2013 preview içerisinde görünen önemli özelliklerden birisi de One Asp.Net yeteneğidir. Buna göre tek bir Web uygulaması şablonu üzerinden hareket edilerek istenen kabiliyetlere göre seçimler yapılması sağlanmaktadır.
 
-[![wapigi_2](/assets/images/2013/wapigi_2_thumb.png)](/assets/images/2013/wapigi_2.png)
+![wapigi_2](/assets/images/2013/wapigi_2.png)
 
 > Doğruyu söylemek gerekirse Asp.Net tarafındaki proje şablonlarının artması kafa karışıklıkları yanında bir arada kullanmak istediğimiz kabiliyetler olduğunda da sıkıntı yaratmaktaydı. Umarız bu özellik baki olur ve daha da iyileştirilir.
 
 Asp.Net Web Application seçimi sonrasında karşımıza gelen pencereden Empty template tipini seçip Web API özelliğini etkineleştirebiliriz. Ya da Web API özelliğini işaretleyip ilerleyebiliriz. Ben mümkün mertebe sade bir ortam arzu ettiğimden Empty template seçip Web API kutusunu işaretledim.
 
-[![wapigi_3](/assets/images/2013/wapigi_3_thumb.png)](/assets/images/2013/wapigi_3.png)
+![wapigi_3](/assets/images/2013/wapigi_3.png)
 
 Bu işlemler sonucunda solution ve proje içeriği aşağıdaki gibi oluşacaktır.
 
-[![wapigi_4](/assets/images/2013/wapigi_4_thumb.png)](/assets/images/2013/wapigi_4.png)
+![wapigi_4](/assets/images/2013/wapigi_4.png)
 
 Modelin Eklenmesi
 
 İzleyen adımda modelimizi ilave etmemiz gerekiyor. Tahmin edeceğiniz gibi Entity Framework den yararlanıyor olacağız. Projeye yeni bir öğe olarak Ado.Net Entity Data Model nesnesi ekledikten sonra klasik adımlarımızla ilerliyoruz (Model klasörü altına ekleyebilirsiniz) Lakin Visual Studio 2013 Preview’ a has bir özellik olarak Entity Framework versiyonunu seçebileceğimiz bir ekranla karşılaşacağız (Sanırım Entity Framework tarafı kadar hızlı versiyon atlatan ürün sayısı nadirdir) Ben 6.0 sürümünü seçtim ve bunun sonucu olarak Beta 1’ in kütüphane olarak ilave edildiğini fark ettim.
 
-[![wapigi_5](/assets/images/2013/wapigi_5_thumb.png)](/assets/images/2013/wapigi_5.png)
+![wapigi_5](/assets/images/2013/wapigi_5.png)
 
 İzleyen kısımda sadece pubinfo tablosunun eşleniği olan entity üretimini yaptırmamız yeterlidir. (Diğer tablolaraı dilersenize ekleyebilirsiniz ancak şu anki senaryomuz için çok da gerekli değiller)
 
-[![wapigi_6](/assets/images/2013/wapigi_6_thumb.png)](/assets/images/2013/wapigi_6.png)
+![wapigi_6](/assets/images/2013/wapigi_6.png)
 
 Controller Tipinin Yazılması
 
 Web API’ nin temel yapı taşı olan Controller tipini ekleyerek örneğimize devam edelim.
 
-[![wapigi_7](/assets/images/2013/wapigi_7_thumb.png)](/assets/images/2013/wapigi_7.png)
+![wapigi_7](/assets/images/2013/wapigi_7.png)
 
 Web API controller sınıfı için iki farklı versiyon bulunmaktadır. (Ben v1’i seçerek ilerledim ama bunu yaparken iki versiyon arasındaki farkı tam olarak bilmediğimi itiraf etmek isterim ![Embarrassed smile](/assets/images/2013/wlEmoticon-embarrassedsmile_7.png))
 

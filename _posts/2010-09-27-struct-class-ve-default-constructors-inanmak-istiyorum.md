@@ -242,7 +242,7 @@ Fark edileceği üzere burada ctor gibi bir metod tanımı bulunmamaktadır. Dem
 
 new Person () çağrısı için IL tarafında newobj çağrısını gerçekleştirilirken, new Product () satırına karşılık olarak initobj isimli bir çağrının gerçekleştirildiği görülmektedir. initobj için MSDN kaynaklarında yapılan açıklama şu şekildedir.
 
-[![blg192_InitobjDefinition.gif](/assets/images/2010/blg192_InitobjDefinition.gif)](http://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.initobj%28VS.100%29.aspx)
+![blg192_InitobjDefinition.gif](/assets/images/2010/blg192_InitobjDefinition.gif)
 
 Bir başka deyişle initobj çağrısının uygulandığı Struct içerisindeki Primitive tipler için, varsayılan ilk değer atamaları gerçekleştirilmektedir. Buna göre sayısal değerler için 0 veya 0.0, bool için false ve referans türleri için de null değerlerin atanması söz konusudur. Açıkça ifade etmek gerekirse Struct'lar için varsayılan bir yapıcı metod söz konusu olmasa dahi, IL tarafında bu fonksiyonelliği üstelenen bir çağrı yapılmaktadır (Base Class Library Team tarafından bu durum implicit default constructor) olarak adlandırılmaktadır.
 

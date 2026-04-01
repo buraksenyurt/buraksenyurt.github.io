@@ -16,6 +16,6 @@ tags:
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_36.png)
 
-[![PhotoTrick18](/assets/images/2011/PhotoTrick18_thumb.png)](/assets/images/2011/PhotoTrick18.png)
+![PhotoTrick18](/assets/images/2011/PhotoTrick18.png)
 
 [StructForParameters.rar (22,91 kb)](/assets/files/2011/StructForParameters.rar)

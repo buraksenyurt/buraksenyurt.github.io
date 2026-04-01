@@ -18,7 +18,7 @@ tags:
 ---
 Hatırlayacağınız üzere geçtiğimiz günlerde kafayı T-SQL ile bozmuş ve can sıkıntısından eğlenceli ifadeler yazmaya çalışmıştım. Sanırım söz konusu bu eğlence sonraki günlere de sirayet etti ve yine bir kaç eğlenceli T-SQL sorgusu ile karşınızdayım (İnsan ne oldum dememeli ne olacağım demeli belki de…Ben ki SQL’ den nefret eden bir birey olarak bu hale geldiysem… ![Smile](/assets/images/2012/wlEmoticon-smile_26.png))
 
-[![fun2](/assets/images/2012/fun2_thumb.jpg)](/assets/images/2012/fun2.jpg)
+![fun2](/assets/images/2012/fun2.jpg)
 
 
 Aslında hiç vakit kaybetmeden sorgularımızı incelemeye başlayalım dilerseniz. Elbetteki yine merak ettiğim ve aklıma gelen bazı ihtiyaçlar dahilinde bu sorgular ortaya çıkmakta. Örneğin sakin sakin otururken ilk aklıma gelen T-SQL tarafında bizim söyleyeceğimiz bazı kriterlere göre rastgele şifre üretecek bir fonksiyon yazmak oldu
@@ -81,7 +81,7 @@ Set @Password3= dbo.ufnGeneratePassword(10,30,150,'0?*/&^#>é!')
 Select @Password3 [Password]
 ```
 
-[![artcl_4_1](/assets/images/2012/artcl_4_1_thumb.gif)](/assets/images/2012/artcl_4_1.gif)
+![artcl_4_1](/assets/images/2012/artcl_4_1.gif)
 
 Bu ilginç ama bana göre oldukça işe yarayacak T-SQL ifadesinden sonra bir başkası ile devam edelim. Söz gelimi veritabanınızda yer alan belirli bir Şemaya (schema) ait tablolarınızı yeni bir schema adına taşımak istiyorsunuz (İstemem demeyin ![Smile](/assets/images/2012/wlEmoticon-smile_26.png)) Bu durumda ne yaparsınız?
 
@@ -127,7 +127,7 @@ deallocate crsr
 
 bu T-SQL ifadesini yürüttüğümüzde HumanResources şemasındaki kullanıcı tanımlı tabloların, HumanResourcesNew şemasına taşındığını görürüz.
 
-[![artcl_4_2](/assets/images/2012/artcl_4_2_thumb.gif)](/assets/images/2012/artcl_4_2.gif)
+![artcl_4_2](/assets/images/2012/artcl_4_2.gif)
 
 Sizi bilmem ama ben çok eğleniyorum. Hız kesmeden farklı bir T-SQL ifadesi ve ihtiyacı ile devam edelim. Bu kez merak ettiğim şuydu. Acaba sistemimde ki veritabanlarında yer alan toplam kullanıcı tanımlı tablo sayıları ne kadardı?
 
@@ -165,7 +165,7 @@ ve işte sonuçlar
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
-[![artcl_4_3](/assets/images/2012/artcl_4_3_thumb.gif)](/assets/images/2012/artcl_4_3.gif)
+![artcl_4_3](/assets/images/2012/artcl_4_3.gif)
 
 Merak ettiğim bir diğer konu ise Insert işlemlerine ilişkindi. Bazı hallerde bir Insert işlemi gerçekleştirildiğinde, insert edilen verilerin başka bir tabloya da aktarılması istenebilir. Söz gelimi bir tablo için gerçekleştirilen Insert işlemi sırasında, History bilgisini tutan başka bir tabloya da veri aktarımı yapılması sırasında... Burada aslında output anahtar kelimesi ve Inserted elemanının kullanıldığı bir ifade dizimi söz konusudur. Çoğumuz Insert işlemini bu tip bir şekilde çok fazla kullanmamışızdır eminim ki
 
@@ -221,7 +221,7 @@ Select * from SiparisTarihce
 
 Görüldüğü üzere Insert ifadesi yazılırken output anahtar kelimesinden itibaren SiparisTarihce içerisine de veri aktarımının yapılacağı belirtilmektedir. Sonrasında values anahtar kelimesini takip eden kısımda, asıl Siparis tablosu için eklenecek içerik set edilmektedir. Sonuçlar aşağıdaki gibi olacaktır.
 
-[![artcl_4_4](/assets/images/2012/artcl_4_4_thumb.gif)](/assets/images/2012/artcl_4_4.gif)
+![artcl_4_4](/assets/images/2012/artcl_4_4.gif)
 
 Hazır Insert işlemlerinden konu açılmışken acaba içeriğini rastgele test verisi ile dolduracağımız devasa boyutlu tabloları nasıl oluşturabiliriz sorusu aklıma geldi
 
@@ -296,7 +296,7 @@ Select * From PersonelTestTable
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
-[![artcl_4_5](/assets/images/2012/artcl_4_5_thumb.gif)](/assets/images/2012/artcl_4_5.gif)
+![artcl_4_5](/assets/images/2012/artcl_4_5.gif)
 
 Eğer kombinasyon sayısını arttırırsanız kısa sürede milyonlarca satırdan oluşabilecek devasa test verileri üretebilirsiniz. Örneği geliştirmek sizin elinizde
 

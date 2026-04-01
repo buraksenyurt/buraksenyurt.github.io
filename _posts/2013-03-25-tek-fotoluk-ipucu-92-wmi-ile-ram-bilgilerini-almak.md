@@ -18,7 +18,7 @@ Bu amaçla kullanabileceğiniz etkili yöntemlerden birisi de bildiğiniz üzere
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_180.png)
 
-[![tfi_92](/assets/images/2013/tfi_92_thumb.png)](/assets/images/2013/tfi_92.png)
+![tfi_92](/assets/images/2013/tfi_92.png)
 
 Örneğin benim sistemimde 2 adet Samsung marka 2Gb RAM varmış. Tipleri Unknown gelse de biraz fikir sahibi oldum diyebilirim. Bir başka ipucundan görüşmek dileğiyle
 

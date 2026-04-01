@@ -15,7 +15,7 @@ tags:
 ---
 Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu serisi altında paylaşım yapmaktayım. Ancak karşılaştığım ilginç bir durumu da sizinle paylaşmak istedim. Tabi olayın başrol oyuncusu olarak en büyük kabahat bende
 
-[![big-mistake](/assets/images/2013/big-mistake_thumb.jpg)](/assets/images/2013/big-mistake.jpg)
+![big-mistake](/assets/images/2013/big-mistake.jpg)
 
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_86.png)
@@ -34,13 +34,13 @@ Hemen bir deploy paketi oluşturdum ve servis uygulamasını IIS üzerinde bir W
 
 Ancak servise erişmek istediğimde Oracle.DataAcesss.dll ile ilişkili bir hata aldım.
 
-[![tfserror_3](/assets/images/2013/tfserror_3_thumb.png)](/assets/images/2013/tfserror_3.png)
+![tfserror_3](/assets/images/2013/tfserror_3.png)
 
 Hatanın sebebi belirgindi. Makine üzerindeki işletim sistemi 64bit olarak yüklenmişti ve IIS’ de bu şekilde yürütülmekteydi (Zaten TFS 2012’ de 64bit işletim sistemi üzerine kurulmaktadır. [Detaylar için bu adresteki yazıya bakabilirsiniz](http://msdn.microsoft.com/en-us/library/vstudio/dd578592.aspx)) Dolayısıyla Microsoft Team Foundation Server Application Pool’ un 32bit yazılmış assembly’ ları yükleyebilmesi bu senaryo için gerekiyordu. Ben de ilgili Pool’ un Advanced Settings kısmına giderek Enable 32-Bit Applications değerini true olarak değiştirdim. Bu masumane davranışın nasıl kötü bir sonucu olabilirdi ki
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_86.png)
 
-[![tfserror_2](/assets/images/2013/tfserror_2_thumb.png)](/assets/images/2013/tfserror_2.png)
+![tfserror_2](/assets/images/2013/tfserror_2.png)
 
 Hay değiştirmez olaydım
 
@@ -50,7 +50,7 @@ Artık servis çalışıyordu bunu görebiliyordum ama…Kendi kendimi bir sonra
 
 ![Disappointed smile](/assets/images/2013/wlEmoticon-disappointedsmile_3.png)
 
-[![tfserror](/assets/images/2013/tfserror_thumb.png)](/assets/images/2013/tfserror.png)
+![tfserror](/assets/images/2013/tfserror.png)
 
 Bir anda ortalık karıştı tabi. Telefonlar ardı ardına geliyor, ter damlaları heryerden boşalıyordu. TFS ile çalışan çok fazla ekip vardı. Ürün lisanslıydı. Bunu biliyorduk. Emin olmak için IT departmanımız ile görüştük. Doğruladılar. Lisans numaralarını kontrol ettik vs…
 

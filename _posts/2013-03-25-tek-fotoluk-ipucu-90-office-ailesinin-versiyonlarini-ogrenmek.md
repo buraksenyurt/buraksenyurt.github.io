@@ -18,7 +18,7 @@ Diyelim ki yazmış olduğunuz ürünü kuracağınız/kurduğunuz Windows platf
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_171.png)
 
-[![tfi_90](/assets/images/2013/tfi_90_thumb.png)](/assets/images/2013/tfi_90.png)
+![tfi_90](/assets/images/2013/tfi_90.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

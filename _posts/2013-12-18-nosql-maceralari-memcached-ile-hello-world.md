@@ -14,7 +14,7 @@ tags:
 ---
 Belki de açık kaynak olarak geliştirilen projelerin bu kadar popüler olma nedenlerinden bir tanesi de, logolarındaki orjinalliktir. Küçük bir ihtimal olsa da böyle bir algı olduğuna inanıyorum. Söz gelimi Linux’ un pengueni, Mono projesinin maymunu (Biliyorsunuz Mono İspanyolca’ da maymun demek), Android’ in yeşil robotu, Joomla’ nın birbirlerine kenetlenmiş insanları vb.
 
-[![memcached_hero_thumb4](/assets/images/2013/memcached_hero_thumb4_thumb.jpg)](/assets/images/2013/memcached_hero_thumb4.jpg)
+![memcached_hero_thumb4](/assets/images/2013/memcached_hero_thumb4.jpg)
 
 
 Bu gün inceleyeceğimiz açık kaynak NoSQL ürünlerinden birisi olan MemCached için de benzer bir durum söz konusu bana kalırsa. Logo’ da yer alan bu sevimli yaratıklar (belki de soğuk bir kış günü yürüyüş yapan atkı takmış kediler) ilk dikkatimi çeken yanı olmuştur.
@@ -33,7 +33,7 @@ Aslında bu tip bellek tabanlı çalışan nesne tutma sistemleri, çok uzun zam
 
 Veriyi bellek üzerinde tutma konusunda NoSQL (Not-only SQL) tabanlı sistemlerin bulunduğunu da ifade etmemiz gerekir. Bunlardan birisi de, 2003 yılında Cprogramlama dili ile geliştirilmiş olan MemCached isimli üründür. MemCached aslında Key-Value Object Store tipinden olan ama bu nesne çiftlerini bellek üzerinde tutan bir NoSQL ürünüdür. Dağıtık yapıda çalışabilmektedir. Yani n sayıda sunucu üzerinde n sayıda servis formasyonunda bir ortam (Environment) hazırlanması mümkündür. Bu açıdan bakıldığında, Client/Server mimari üzerinde oturduğunu ifade edebiliriz. Aşağıda bu durumu izah eden basit bir vaka çizimi vardır.
 
-[![memcached_0_thumb4](/assets/images/2013/memcached_0_thumb4_thumb.jpg)](/assets/images/2013/memcached_0_thumb4.jpg)
+![memcached_0_thumb4](/assets/images/2013/memcached_0_thumb4.jpg)
 
 Bu çizimde MemCached için söz konusu olan tipik senaryo ifade edilmektedir. n sayıda, MemCached servisi barındıran sunucu ve n sayıda istemci. İstemciler, TCPgibi bir protokol üzerinden bir porta mesaj göndermek suretiyle MemCached servislerine bağlı kalır ve bellek üzerine nesne bırakıp, okuyabilirler.
 
@@ -78,11 +78,11 @@ Bu kadar hikayeden sonra dilerseniz basit bir örnek geliştirerek ilerlemeye ç
 
 MemCached hizmetini çalıştırmak için exe uzantılı dosyanın yürütülmesi yeterlidir. Sunucudaki komut satırından bile bu işlem yapılabilir. Tabi tercih edilmesi gereken yol Windows Server tarafı için Windows Service'lerinden yararlanmak olmalıdır. Windows Service otomatik başlatılabilir moda ayarlanırsa, makine her ayağa kalktığında (ki sunucular genelde çok nadir resetlense de bu tedbirler alınmalıdır ve yazılımcının sorumluluğundadır) ilgili servis çalıştırılıp hizmet vermeye başlayacaktır.
 
-[![memcached_1_thumb2](/assets/images/2013/memcached_1_thumb2_thumb.png)](/assets/images/2013/memcached_1_thumb2.png)
+![memcached_1_thumb2](/assets/images/2013/memcached_1_thumb2.png)
 
 Uygulamayı -help komutu ile çalıştırdığımızda pek çok ek parametresi daha olduğunu görebiliriz. Aşağıdaki komut satırı ekranında bu durum özetlenmektedir.
 
-[![memcached_2_thumb2](/assets/images/2013/memcached_2_thumb2_thumb.png)](/assets/images/2013/memcached_2_thumb2.png)
+![memcached_2_thumb2](/assets/images/2013/memcached_2_thumb2.png)
 
 Çok doğal olarak bu bir servis uygulaması olduğundan, istemcilerin kullanabilmesi için çalışır durumda olması şarttır. Peki ya istemci tarafı?
 
@@ -90,11 +90,11 @@ Uygulamayı -help komutu ile çalıştırdığımızda pek çok ek parametresi d
 
 Yazımızın başlarında da belirttiğimiz gibi bunun için kullanılabilecek, ortama göre değişen pek çok API mevcuttur. Ancak NuGet üzerine yüklenmiş olanlar da var. Dolayısıyla NuGet Package Manager aracını kullanarak, istemci için gerekli Library'nin indirilmesini kolayca sağlayabiliriz. Ben örnek proje de Emyim’ in bir ürününü kullanmayı tercih ettim. Yazının hazırlandığı tarih itibariyle 2012 yılından güncel bir sürümü de mevcuttu.
 
-[![memcached_3_thumb4](/assets/images/2013/memcached_3_thumb4_thumb.png)](/assets/images/2013/memcached_3_thumb4.png)
+![memcached_3_thumb4](/assets/images/2013/memcached_3_thumb4.png)
 
 Install işlemi sonrası Enyim.Caching.dll assembly'ının projeye referans edildiği görülebilir.
 
-[![memcached_4_thumb2](/assets/images/2013/memcached_4_thumb2_thumb.png)](/assets/images/2013/memcached_4_thumb2.png)
+![memcached_4_thumb2](/assets/images/2013/memcached_4_thumb2.png)
 
 Örnek Uygulama
 
@@ -181,7 +181,7 @@ namespace HowTo_Memcached
 
 Store fonksiyonu ile belleğe nesne atabilir veya güncelleyebiliriz. Get, Get, TryGet gibi metodlar yardımıyla da bir Key değerini okuyabiliriz. Örnekte TryGet ile nesneyi varsa almaya çalıştık. Tabi başka yararlı fonksiyonlarda vardır. Örneğin bellekteki tüm nesneleri FlushAll metodu ile atabilirsiniz veya n sayıda nesneyi elde etmek için ExecuteGet metodundan yararlanabilirsiniz. Dikkat edilmesi gereken önemli noktalardan birisi ise, kullandığımız Player sınıfının Binary formatta serileştirilebilir (Binary Serialization) olmasıdır. Bu, protokolü Binary olarak seçtiğimiz için şarttır. Örneği çalıştırdığımızda aşağıdaki ekran çıktısını elde ederiz.
 
-[![memcached_5_thumb2](/assets/images/2013/memcached_5_thumb2_thumb.png)](/assets/images/2013/memcached_5_thumb2.png)
+![memcached_5_thumb2](/assets/images/2013/memcached_5_thumb2.png)
 
 > Eğer MemCached servisi çalışmıyorsa, istemci tarafına bir Exception mesajı düşmemektedir. Doğal olarak belleğe atılmış nesneler varsa da erişilemez. Bu durumu istemci tarafının kontrol altına alması gerekir. Nitekim servis tarafı, kendisine bağlı olan istemcilere bir Notification’ da bulunmamaktadır.(Güncel sürümde ki durumu kontrol ediniz)
 

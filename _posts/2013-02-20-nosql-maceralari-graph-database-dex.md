@@ -19,7 +19,7 @@ tags:
 ---
 Eminim pek çoğunuzun hastası/fanatiği olduğu yerli veya yabancı diziler vardır. Küçük bir çocukken çizgi filmlere olan düşkünlüğümüz kadar olmasa da, hemen her bölümünü heyecanla beklediklerimiz mutlaka vardır (Hatta ülkemizde geç yayınlanıyor diye ilgili dizileri internetten indirenlerimizde vardır)
 
-[![dex_7](/assets/images/2013/dex_7_thumb.png)](/assets/images/2013/dex_7.png)
+![dex_7](/assets/images/2013/dex_7.png)
 
 
 Bilişim alanında görev alanların ağırlıkla CNBC-E gibi kanallarda yer alan dizilere olan bağımlılığı da aslında su götürmez bir gerçektir. Örneğin benim fanatiği olduğum dizilerden birisi Dexter ve ne tesadüftür ki bu gün yazımızda ele alacağımız ürünün adı da onun lakabı ile eş: DEX ![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_4.png)
@@ -34,7 +34,7 @@ DEX veritabanı C++ ile yazılmıştır. Java,.Net, C++, Blueprints Interface AP
 
 Şimdi dilerseniz fazla vakit kaybetmeden basit bir Hello World uygulaması geliştirmeye çalışalım. Tabi ilk olarak bir senaryoyu göz önüne almamız gerekiyor. Senaryomuza ait basit Graph çizimimiz aşağıdaki gibidir.
 
-[![dex_1](/assets/images/2013/dex_1_thumb.png)](/assets/images/2013/dex_1.png)
+![dex_1](/assets/images/2013/dex_1.png)
 
 Bu şekli biraz inceleyelim
 
@@ -55,19 +55,19 @@ Peki bu cümleleri, bir başka deyişle şekilde görülen Graph unsurlarını b
 
 Bu amaçla indirdiğimiz DEX ürününü kullanıyor olacağız. Ağız alışkanlığı nedeniyle bir veritabanı olarak tanımladığımız DEX aslında aşağıda şekilde görülen bir kaç DLL ile birlikte gelmektedir. Yani daha önceden incelediğimiz RavenDb gibi bir Server uygulamasına veya arayüze sahip değildir. Yine de kavramsal olarak tuttuğu içerik bir veri kümesini ifade etmektedir. Daha çok bir API olduğunu ifade edebiliriz. Veriyi disk üzerinde bir dosya şeklinde tutmaktadır.
 
-[![dex_2](/assets/images/2013/dex_2_thumb.png)](/assets/images/2013/dex_2.png)
+![dex_2](/assets/images/2013/dex_2.png)
 
 Dexnet.dll bizim kullanacağımız Wrapper’ dır. Yani projeye referans etmemiz gereken Assembly’ dır.
 
-[![dex_3](/assets/images/2013/dex_3_thumb.png)](/assets/images/2013/dex_3.png)
+![dex_3](/assets/images/2013/dex_3.png)
 
 Ancak bu yeterli değildir. Diğer dll dosyalarının, Dexnet.dll ve uygulamaya ait exe dosyası ile aynı klasör altında bulundurulmaları gerekmektedir. Yani dex.dll, dexnetwrap.dll ve stlport.dll dosyalarının da exe çıktısının olduğu klasöre kopyalanması gerekmektedir.
 
-[![dex_4](/assets/images/2013/dex_4_thumb.png)](/assets/images/2013/dex_4.png)
+![dex_4](/assets/images/2013/dex_4.png)
 
 Bu işlem yapılmadığı takdirde çalışma zamanında Platform Invoke ile ilişkili bir istisna (Exception) alınacaktır.
 
-[![dex_5](/assets/images/2013/dex_5_thumb.png)](/assets/images/2013/dex_5.png)
+![dex_5](/assets/images/2013/dex_5.png)
 
 Bu hazırlıkların ardından örnek kodlarımızı yazmaya başlayabiliriz. Ben uygulamayı bir Console projesi olarak geliştireceğim ve sadece ilk kullanımlarını göstermeye çalışacağım. Bir gerçek hayat senaryosunda şema (Schema) oluşturulması gibi adımların tek seferde yapılmasını garanti etmeye çalışmalısınız. Hatta şemaların kolayca yapılmasını sağlamak amacıyla ayrı bir arabirim dahi geliştirilebilir (SQL Server Management Studio tarzı bir şey olmasa da işe yarar bir arayüz pekala çok isabetli bir tercih olabilir)
 
@@ -305,7 +305,7 @@ database.Close();
 
 Uygulamanın çalışma zamanı çıktısına baktığımızda aşağıdaki ekran görüntüsünde yer alan sonuçlar ile karşılaşırız.
 
-[![dex_6](/assets/images/2013/dex_6_thumb.png)](/assets/images/2013/dex_6.png)
+![dex_6](/assets/images/2013/dex_6.png)
 
 Görüldüğü üzere Graph teorisine bağlı kalaraktan, DEX API’ sinden de yararlanarak tüm Euroelague takımları ve oyuncuları için (hatta bunların içerisine başka nesneleri de katabiliriz) kocaman bir veri içeriğini oluşturmamız mümkündür. Tabi böyle bir içerik kuvvetle muhtemel 1milyon nesneyi aşabilir ve dolayısıyla lisans satın alınması gerekebilir. DEX gibi başka pek çok Graph veritabanı mevcuttur. Örneğin Trinity, BigData vb…Bunları da fırsatım olursa incelemeye çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 

@@ -17,7 +17,7 @@ Bazı durumlarda Asp.Net sayfasının çıktısına basacağımız içeriğin HT
 
 Örneğin,
 
-[![tfi_78](/assets/images/2013/tfi_78_thumb.png)](/assets/images/2013/tfi_78.png)
+![tfi_78](/assets/images/2013/tfi_78.png)
 
 Bir başka ip ucunda görüşmek dileğiyle
 

@@ -69,7 +69,7 @@ namespace SharedDataScenarios
 
 Örnek kod parçasında Altitude isimli int tipinden özelliği (Property) olan Plane isimli bir sınıf yer almaktadır. TestMethod içerisinde ise bu sınıfa ait f16 isimli bir nesne örneği kullanılmaktadır. TestMethod içerisinde 5 adet Task nesnesi örneklenmektedir. Bu örneklere ait lambda ifadelerinde ise, f16 örneği üzerinden ulaşılan Altitude özelliğinin değeri 1000 kere 5 birim arttırılmaktadır. Bu işlemi 5 farklı Task örneğinin yaptığı unutulmamalıdır. Main metodu içerisinde ise TestMethod isimli fonksiyonun arka arkaya 10 defa çalıştırıldığı görülmektedir. Buradaki amaç, 10 farklı denemenin sonuçlarını irdelemektir. Nitekim her çalıştırılışta farklı sonuçlar alma ihtimalimiz çok yüksektir. Aşağıdaki ekran görüntüsünde olduğu gibi.
 
-[![blg210_Test1](/assets/images/2011/blg210_Test1_thumb.gif)](/assets/images/2011/blg210_Test1.gif)
+![blg210_Test1](/assets/images/2011/blg210_Test1.gif)
 
 Aslında aynı süreç 10 kere çalıştırılmış ve hemen her seferinde Plane nesne örneğinin Altitude değeri farklı hesap edilmiştir. Oysaki başlangıçta 0 olan bu değer bir Task örneği içerisinde 1000 defa 5 birim arttırılmaktadır. Bununda 5 farklı Task örneği ile yapıldığı düşünüldüğünde toplamda elde edilen sonuçların aslında her deneme için aynı olması beklenmektedir. Örnek çıktıda ise sadece 2472500 için iki hesaplamanın aynı olduğu görülmektedir. Sorun ne olabilir?
 
@@ -140,7 +140,7 @@ Kodda, Task örnekleri oluşturulurken, her birinin kendi Altitude değişkeni i
 
 Tabiki yerel olarak ele alına bu değişkenlerin kodun dışarısında tekrardan bütünleştirilmesi gerekeceğinden Task örneklerinden birer sonuç döndürülmesi gerekmiştir. Söz konusu dönüş değerleri daha sonradan toplanmış ve aşağıdaki çalışma zamanı çıktısının oluşması sağlanmıştır.
 
-[![blg210_Test2](/assets/images/2011/blg210_Test2_thumb.gif)](/assets/images/2011/blg210_Test2.gif)
+![blg210_Test2](/assets/images/2011/blg210_Test2.gif)
 
 Görüldüğü üzere 10 denemenin her birisinde aynı sonuç elde edilmiştir.
 
@@ -210,13 +210,13 @@ namespace SharedDataScenarios
 
 Bu kez System.Threading isim alanı (Namespace) altında yer alan ThreadLocal tipinden bir örnek oluşturulmuş ve lambda ifadesi içerisindeki Object State atamasında kullanılmıştır. İşlemlerin tamamı bu örneğe ait Value özelliği üzerinden yapılmaktadır. Sonuçlar bir önceki ile aynı olacaktır.
 
-[![blg210_Test3](/assets/images/2011/blg210_Test3_thumb.gif)](/assets/images/2011/blg210_Test3.gif)
+![blg210_Test3](/assets/images/2011/blg210_Test3.gif)
 
 ## ThreadLocal Lazy Initialization Kullanımı ve Tuzak
 
 ThreadLocal tipinin kullanımında değerlendirilebilecek bir versiyon daha bulunmaktadır. Aşırı yüklenmiş olan yapıcı metod, Func tipinden bir tesmilci (Delegate) almaktadır.
 
-[![blg210_OverloadVersion](/assets/images/2011/blg210_OverloadVersion_thumb.gif)](/assets/images/2011/blg210_OverloadVersion.gif)
+![blg210_OverloadVersion](/assets/images/2011/blg210_OverloadVersion.gif)
 
 Bu versiyonda Lazy Initialization söz konusudur. Bu sebepten çok dikkatli olunması gerekmektedir. Func temsilcisi, izole edilmiş veri değişkeninin oluşturulması aşamasında devreye girecek bloğu işaret etmektedir. Lakin bu blok, ThreadLocal örneğinin Value özelliği çağırılıncaya kadar devreye girmeyecektir. İşte bu sebepten yazımızda ele aldığımız senaryo için yine farklı sonuçların elde edilmesi söz konusu olabilir. Kodumuzu buna göre aşağıdaki gibi geliştirdiğimizi düşünelim.
 
@@ -286,7 +286,7 @@ namespace SharedDataScenarios
 
 Dikkat edileceği üzere Task örneklerinin kullanacağı Altitude değerinin, izole edilmiş yerel değişkene set edilmesi işlemi, ThreadLocal örneklemesi yapılırken Func temsilcisinin işaret ettiği blok içerisinde yapılmaktadır. Bu nedenle Object State kullanımına gerek kalınmamıştır. Ne varki çalışma zamanı sonuçları beklediğimiz gibi olmayacaktır.
 
-[![blg210_Test4](/assets/images/2011/blg210_Test4_thumb.gif)](/assets/images/2011/blg210_Test4.gif)
+![blg210_Test4](/assets/images/2011/blg210_Test4.gif)
 
 Herşeyden önce 10 denemenin çoğu kendi aralarında farklı sonuçlar vermiş ve hatta bir önceki örnekteki ile alakası olmayan çıktılar üretilmiştir. Diğer yandan ThreadLocal örneklemelerinin hemen her bir deneme için (nitekim sonlarda bire düşmüştür ve her çalışmada bu değişebilir) 2 kez çağırıldığı görülmektedir. Bunun sebebi ise, örneğin geliştirildiği makinenin çift çekirdekli olmasıdır. Öyleki TLS tekniğinde Task örnekleri değil Thread’ ler söz konusudur ve makine çift çekirdekli olduğundan aslında çalışma zamanında iki Thread yürümektedir ki bunlarda her 5 Task örneğini paylaşır. Piuvvvvvv!!!
 

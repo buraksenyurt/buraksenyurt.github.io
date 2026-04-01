@@ -15,7 +15,7 @@ Bazen uygulamalarımızda kullandığımız Enum sabitlerinin içerikleri anlaş
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_166.png)
 
-[![tfii_87](/assets/images/2013/tfii_87_thumb.png)](/assets/images/2013/tfii_87.png)
+![tfii_87](/assets/images/2013/tfii_87.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

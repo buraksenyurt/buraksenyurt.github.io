@@ -12,7 +12,7 @@ tags:
 ---
 Sizde benim gibi basketol tutkunu musunuz? Aslında ülkemizde hemen herkesin birincil olarak futbol merakı olması beklenir. Oysaki bende diğer pek çok arkadaşım gibi birincil olarak basketbol’ a meraklıyımdır. Aslında lise yıllarında sevgili Michael Jordan ve Chicago Bulls ile başlayan bu merakım sonrasında Efes Pilsen, Ülker, Tofaş gibi takımlarla daha da artmıştır. Üniversite yıllarından beri bu takımların pek çok maçına gitmişimdir ve halen daha gitmeye çalışmaktayım (Tabi bir dönem Tofaş profesyonel basketbol şubesini kapatmıştı…) Tabi şu anda 11 aylık S (h) arp Efe buna pek müsade etmiyor. Ama yine de takım ayırt etmeksizin özellikle avrupa arenasındaki pek çok maça gitmeye çalışıyorum.
 
-[![blg214_Giris](/assets/images/2011/blg214_Giris_thumb.jpg)](/assets/images/2011/blg214_Giris.jpg)
+![blg214_Giris](/assets/images/2011/blg214_Giris.jpg)
 
 
 Basketbol denilince aklıma gelen en önemli şahsiyetler arasında ise değerli spiker Murat Murathanoğlu ve değerli yorumcu İsmet Badem ikilisi gelmektedir. Her ne kadar uzun bir süre önce yollarını ayırmış olsalar da, özellikle İsmet Badem’ in hemen her maçta gençlere verdiği basketbol ip uçları halen kullaklarımdadır. Özellikle basketbolun temellerinin (Fundamentals) çok önemli olduğunu genç basketbolcu adaylara sürekli ifade etmiştir, etmektedir.
@@ -23,7 +23,7 @@ Aslında bakarsanız temeller bir programlama dili için de son derece önemlidi
 
 Dilerseniz hiç vakit kaybetmeden sorunu örnek uygulama üzerinden masaya yatırarak ilereleyelim. Bu amaçla aşağıdaki sınıf çizelgesindeki (Class Diagram) tiplerin kullanıldığı bir Console uygulamasını geliştirdiğimizi düşünelim.
 
-[![blg214_Case1ClassDiagram](/assets/images/2011/blg214_Case1ClassDiagram_thumb.gif)](/assets/images/2011/blg214_Case1ClassDiagram.gif)
+![blg214_Case1ClassDiagram](/assets/images/2011/blg214_Case1ClassDiagram.gif)
 
 ```csharp
 using System;
@@ -95,7 +95,7 @@ Main metodu içerisindeki kod bloğuna bakıldığında FileManager tipinin örn
 
 Bunlara ek olarak IDisposable ve StreamManager’ ın çok biçimli tipler oldukları da ortadadır. Dolayısıyla sm ve dm değişkenleri üzerinden çağırılan Dispose metodlarının, polimorfizim (Çok biçimlilik) nedeni ile aslında taşınmakta olan fm nesne örneğinin Dispose fonksiyonuna doğru olması düşünülebilir. Öyleyse uygulamanın çalışma zamanındaki çıktısına bir bakalım.
 
-[![blg214_Case1Runtime](/assets/images/2011/blg214_Case1Runtime_thumb.gif)](/assets/images/2011/blg214_Case1Runtime.gif)
+![blg214_Case1Runtime](/assets/images/2011/blg214_Case1Runtime.gif)
 
 Dikkat edileceği üzere fm nesne örneği üzerinden yapılan çağrıda FileManager tipine ait Dispose metodu yürütülmüştür. Ancak base class ve uygulanan IDisposable arayüzleri üzerinden yapılan Dispose çağrılarında bu böyle olmamıştır. Her iki çağrıda da sub class olan FileManager tipine ait Dispose metodu yerine StreamManager tipinin Dispose metodunun icra edildiği görülmektedir. Acaba gerçekten böyle midir? Debug noktalarını koyarak ilerlediğimizde böyle olduğu ispat edilebilir.
 
@@ -105,7 +105,7 @@ IDisposable üzerinden Dispose çağrısında (dm.Dispose ();) kod IDisposable d
 
 Peki bu durumların oluşmasının sebebi nedir? Aslında sorun bilinçsiz olarak yapılan üye gizleme (Implicitly Name Hiding) operasyonundan kaynaklanmaktadır. Nitekim şu anda FileManager içerisinde, üst tipteki ile aynı isimde olan bir metod tanımı söz konusudur ve çalışma zamanı bu kullanımı gördüğünde varsayılan olarak üst tipe ait üyeleri çağırmaktadır. Bir başka deyişle üst tip üyesi alt tipi gizlemektedir. Gerçi bilinçsiz bir şekilde üye gizleme yapıldığı pek doğru değildir. Nitekim Visual Studio IDE’ si geliştiriciyi bu noktada aşağıdaki gibi uyarmaktadır.
 
-[![blg214_IDE](/assets/images/2011/blg214_IDE_thumb.gif)](/assets/images/2011/blg214_IDE.gif)
+![blg214_IDE](/assets/images/2011/blg214_IDE.gif)
 
 Ancak dikkatsiz bir geliştirici çok kalabalık bir projede bu tip bir warning mesajını kolayca gözden kaçırabilir. Aslında çoğu zaman geliştirici için projenin başarılı bir şekilde derlenmesi yeterli olmaktadır. Tabi ReSharper gibi araçları kullanmıyorsak ya da TFS (Team Foundation Server) altında geliştirme yapıp Policy’ ler uygulayarak Warning’ ler aşılmadan kodun derlenmesini engellemiyorsak bu tip gözden kaçırmaların sayısı artacaktır.
 
@@ -130,11 +130,11 @@ abstract class StreamManager
 
 Ancak virtual olarak yapılan tanımlama da yeterli değildir. Halen daha base class'ta yer alan aynı isimli Dispose metodunun alt tiptekini gizlemesi durumu devam etmektedir. Dolayısıyla çalışma zamanındaki durum değişmeyecek ve aşağıdaki çıktı alınmaya devam edecektir.
 
-[![blg214_VirtualRuntime](/assets/images/2011/blg214_VirtualRuntime_thumb.gif)](/assets/images/2011/blg214_VirtualRuntime.gif)
+![blg214_VirtualRuntime](/assets/images/2011/blg214_VirtualRuntime.gif)
 
 Abstract bir üye olarak Dispose metodunun tanımlanması da düşünülebilir ancak üzerinde çalıştığımız senaryo da geçerli bir kullanım değildir.
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_4.gif)](/assets/images/2011/Exclamation_4.gif) Bilindiği üzere abstract üyeler herhangibir şekilde kod bloğu içermezler ve türeyen tipler içerisinde mutlaka ezilmek (override) zorundadırlar.
+![Exclamation](/assets/images/2011/Exclamation_4.gif) Bilindiği üzere abstract üyeler herhangibir şekilde kod bloğu içermezler ve türeyen tipler içerisinde mutlaka ezilmek (override) zorundadırlar.
 
 Aslında üst sınıfın üye gizleme işlemini yapması istenmiyorsa yapılması gereken yol alt tip içerisindeki ezme (override) işleminin açık bir şekilde gerçekleştirilmesidir. Söz gelimi virtual kullanımı söz konusu ise kodun aşağıdaki şekilde düzenlenmesi yeterli olacaktır.
 
@@ -165,7 +165,7 @@ sealed class FileManager
 
 Dikkat edileceği üzere FileManager tipi içerisinde yer alan Dispose metodu override bildirimi ile tanımlanmıştır. Yani açık bir şekilde üst tipten gelen Dispose metodunun ezilmesi ve yerine bu fonksiyon gövdesinin çağırılması gerektiği belirtilmiştir. Bu durumda çalışma zamanı çıktısı tam da istediğimiz gibi olacaktır.
 
-[![blg214_OverrideRuntime](/assets/images/2011/blg214_OverrideRuntime_thumb.gif)](/assets/images/2011/blg214_OverrideRuntime.gif)
+![blg214_OverrideRuntime](/assets/images/2011/blg214_OverrideRuntime.gif)
 
 Tabi şu durumda unutulmamalıdır. Gerçekten bilinçli bir şekilde üye gizleme (Name Hiding) işleminin yapılması gerekiyorsa, new operatörünün kullanılması gerekmektedir. Aşağıdaki kod parçasında olduğu gibi.
 

@@ -15,7 +15,7 @@ tags:
 ---
 Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalışmış ve yazılım geliştirmişseniz, eminimki hayatınızın bir döneminde büyük boyutlu Text dosyaları ile çalışmak zorunda kalmışsınızdır.
 
-[![1370555_lots_of_files_2](/assets/images/2013/1370555_lots_of_files_2_thumb.jpg)](/assets/images/2013/1370555_lots_of_files_2.jpg)
+![1370555_lots_of_files_2](/assets/images/2013/1370555_lots_of_files_2.jpg)
 
 
 Malum Bankaların sistemleri halen daha eski olabildiğinden, bölümler arası veya uygulamalar arası veri aktarmanın en popüler yollarından birisi olarak Text tabanlı dosya formatları göz önüne alınmaktadır. Bazen onlarca megabyte'ı aşan ve milyonlarca satırdan oluşabilen düzenli text dosyaları söz konusu olur ve bunların bir şekilde uygulamaların konuştuğu veritabanı ortamlarına işlenerek, ilişkisel veri bütünlüğü içerisinde yerlerini alması beklenir.
@@ -30,7 +30,7 @@ Hazırlıklar
 
 İlk olarak operasyonel işlemleri üstlenen tipimizi ve test kodumuzu geliştirip üzerinde kısaca konuşalım. Uygulamamıza ait sınıf diagramı ve kod içeriği aşağıdaki gibidir.
 
-[![diagram](/assets/images/2013/diagram_thumb.png)](/assets/images/2013/diagram.png)
+![diagram](/assets/images/2013/diagram.png)
 
 ```csharp
 using System; 
@@ -206,17 +206,17 @@ Testler
 
 Teste tabi tutacağımız text dosyası içerisinde Lorem Ipsum metinlerinden bolca yer almaktadır. İlk testler için dosyamızda 10891 satır yer alıyor. Buna göre ilk sonuçlar aşağıdaki gibidir.
 
-[![runtime2](/assets/images/2013/runtime2_thumb.png)](/assets/images/2013/runtime2.png)
+![runtime2](/assets/images/2013/runtime2.png)
 
 Şu hemen dikkatinizi çekmiş olmalıdır. Compute2 metodu inanılmaz derecede yavaştır. En hızlı metod ise Compute1 olmuştur ki içerisinde File tipinin static ReadAllLines metodunu kullandığımızı belirtmek isterim. Bu sonuçlara göre Compute2 metodunu doğrudan elemeliyiz. İkinci testimizde bu metodu göz ardı edeceğiz. Şimdi dosyanın satır sayısını belirgin ölçüde arttırdığımızı düşünelim. Örneğin 152487 satır olsun.
 
 Çok mu sizce? Ben milyonları gördüğüm için bana normal geliyor aslında. Gerçi bu durumu Visual Studio bile yadırgadı. 50 Mb’ a yaklaşan boyutuyla Text dosyasını sadece Notepad++ ile açabildim. Neyse tekrar konumuza dönelim. Amacımız boyutun artması halinde, hesaplama metodlarının aynı performans istikrarını sağlayıp sağlamadığını görebilmek. İşte sonuçlar;
 
-[![runtime3](/assets/images/2013/runtime3_thumb.png)](/assets/images/2013/runtime3.png)
+![runtime3](/assets/images/2013/runtime3.png)
 
 Compute2 metodunu hariç tuttuğumuzda 1nci ve 2nci testlerin sonuçlarını aşağıdaki tablo grafiğinde görüldüğü gibi yorumlayabiliriz.
 
-[![report](/assets/images/2013/report_thumb.png)](/assets/images/2013/report.png)
+![report](/assets/images/2013/report.png)
 
 Sonuçlar
 

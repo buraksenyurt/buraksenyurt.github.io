@@ -20,7 +20,7 @@ tags:
 ---
 Kuzgun’ lar Kargagiller ailesinden gelen bir kuş çeşididir. Diğer karga cinslerine göre daha iridirler ve özellikle çok daha zeki oldukları söylenir. Yapılan araştırma ve deneyler sonrasında bu cins kargaların, sorunları çözmek için çevresel materyalleri kullanabilme (kullanmak için de öğrenebilme) becerisine sahip oldukları öne sürülmüştür. Hatta parlak, beyaz ve mavi renkli metallere karşı özel bir ilgileri olduğundan, hırsız olarak da ifade edilmektedirler.
 
-[![173110_P001_Raven](/assets/images/2013/173110_P001_Raven_thumb.png)](/assets/images/2013/173110_P001_Raven.png)
+![173110_P001_Raven](/assets/images/2013/173110_P001_Raven.png)
 
 
 Kanat açıklığı 1.5 metreyi bulan bu kuşlar, aynı zamanda deli cesaretine sahiptir
@@ -62,13 +62,13 @@ Başlatma
 
 RavenDB içeriğini indirdikten sonra, Server klasörü altında yer alan Raven.Server.exe isimli uygulamanın çalıştırılması yeterlidir. Komut satırından yürütülen uygulama, sunucunun çalışmasını sağlayacaktır. Tahmin edileceği üzere ürün, client/server modeline göre çalışmaktadır. Sunucu açık olduğu sürece, istemcilerin RavenDB sistemini kullanması mümkündür.
 
-[![rvndb_1](/assets/images/2013/rvndb_1_thumb.png)](/assets/images/2013/rvndb_1.png)
+![rvndb_1](/assets/images/2013/rvndb_1.png)
 
 İşin güzel yanı, ürünün bir de web arayüzünün bulunmasıdır. Eğer makinenizde 8080 port’ u üzerinden yayın yapan bir başka uygulama var ise (ki benim sistemimde vardı) RavenDB, 8081 numaralı port üzerinden hizmet vermeye çalışacaktır (Eğer 8081 de doluysa tahminlerime göre bir sonraki boş portu bulana kadar deneyecektir)
 
 Buna göre http://localhost:8081/ adresine gidildiğinde http://localhost:8081/raven/studio.html adresine yönlendirilip, web arayüzüne ulaşıldığı gözlemlenecektir.
 
-[![rvndb_2](/assets/images/2013/rvndb_2_thumb.png)](/assets/images/2013/rvndb_2.png)
+![rvndb_2](/assets/images/2013/rvndb_2.png)
 
 Bu arayüzden yararlanılarak verilerin eklenmesi, silinmesi, değiştirilmesi veya sorgulanması sağlanabilir. Elbette biz bunu kod üzerinden nasıl yapabileceğimizi incelemeye çalışacağız. Bu amaçla basit bir Console uygulaması oluşturarak işe başlayabiliriz.
 
@@ -78,11 +78,11 @@ RavenDB’ yi istemci tarafında ele alırken yardımcı kütüphane olan RavenD
 
 RavenDB istemci kütüphanesi, NuGet paket yönetim aracı ile de uygulamaya eklenebilir. Hatta bu şekilde ilerlenmesi, en güncel sürümün alınması ve yardımcı kütüphanelerin de indirilmesi açısından kolaylık sağlayan bir fonksiyonellik olarak görülmelidir.
 
-[![rvndb_3](/assets/images/2013/rvndb_3_thumb.png)](/assets/images/2013/rvndb_3.png)
+![rvndb_3](/assets/images/2013/rvndb_3.png)
 
 Ben örnekte NuGet aracından yararlanarak ilgili kurulum işlemini gerçekleştirdim. Bunun sonucunda uygulamaya aşağıdaki.Net kütüphanelerinin eklendiğine şahit oldum.
 
-[![rvndb_4](/assets/images/2013/rvndb_4_thumb.png)](/assets/images/2013/rvndb_4.png)
+![rvndb_4](/assets/images/2013/rvndb_4.png)
 
 Dikkat edileceği üzere 3ncü parti kütüphanelerden NLog ve Newtonsoft.Json assembly’ ları da, referans edilmiş durumdadır.
 
@@ -254,29 +254,29 @@ Veri çekme işlemlerinden de dikkat edileceği üzere LINQ metodlarından yarar
 
 Uygulamayı çalıştırdığımzda, 3 adet Product örneğinin eklendiğini, bir tanesinin güncelleştirildiğini ve bir diğerinin de silindiğini analiz edebiliriz. Ayrıca tüm bu işlemler Web arayüzü üzerinden de anlık olarak takip edilebilirler. Örneği çalıştırdıktan sonra http://localhost:8081/raven/studio.html adresine gidersek aşağıdaki ekran görüntüsü ile karşılaşırız.
 
-[![rvndb_5](/assets/images/2013/rvndb_5_thumb.png)](/assets/images/2013/rvndb_5.png)
+![rvndb_5](/assets/images/2013/rvndb_5.png)
 
 1 numaralı ürün üzerinde durulduğunda ise verinin JSON formatındaki karşılığı da rahat bir şekilde gözlemlenebilir. Ayrıca herhangibir ürün açıldığında aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
 
-[![rvndb_6](/assets/images/2013/rvndb_6_thumb.png)](/assets/images/2013/rvndb_6.png)
+![rvndb_6](/assets/images/2013/rvndb_6.png)
 
 Mutlaka sağ tarafta yer alan ETag değeri de dikkatinizi çekmiştir. Dilerseniz verilerinizi etag ile ilişkilendirebilirsiniz. Store metodunun aşırı yüklenmiş versiyonlarında GUID tipinden etag değerlerinin girilebilmesine de izin verilmektedir.
 
-[![rvndb_7](/assets/images/2013/rvndb_7_thumb.png)](/assets/images/2013/rvndb_7.png)
+![rvndb_7](/assets/images/2013/rvndb_7.png)
 
 veya
 
-[![rvndb_8](/assets/images/2013/rvndb_8_thumb.png)](/assets/images/2013/rvndb_8.png)
+![rvndb_8](/assets/images/2013/rvndb_8.png)
 
 Eklenen bütün ürünler Product isimlidir ve RavenDb tarafından isim çoğullama yapılarak Products adındaki koleksiyon içerisine dahil edilmişlerdir. Bu ve varsa diğer koleksiyonlara, Web arayüzündeki Collections kısmından ulaşılabilir.
 
-[![rvndb_11](/assets/images/2013/rvndb_11_thumb.png)](/assets/images/2013/rvndb_11.png)
+![rvndb_11](/assets/images/2013/rvndb_11.png)
 
-> Çok doğal olarak server etkin değilse istemci tarafı, çalışma zamanına bir WebException istisnası fırlatıyor olacaktır.[![rvndb_10](/assets/images/2013/rvndb_10_thumb.png)](/assets/images/2013/rvndb_10.png)
+> Çok doğal olarak server etkin değilse istemci tarafı, çalışma zamanına bir WebException istisnası fırlatıyor olacaktır.![rvndb_10](/assets/images/2013/rvndb_10.png)
 
 Diğer yandan uygulama çalıştırılmadan önce, çalıştığı süre zarfı içinde ve sonrasında, RavenDb.Server.exe programının komut satırına bazı loglar attığına şahit oluruz. Aynen aşağıdaki ekran görüntüsünde yer aldığı gibi.
 
-[![rvndb_9](/assets/images/2013/rvndb_9_thumb.png)](/assets/images/2013/rvndb_9.png)
+![rvndb_9](/assets/images/2013/rvndb_9.png)
 
 Dikkat edileceği üzere çeşitli HTTP metodları söz konusu olmuştur. Veri çekme işlemlerinde GET, ekleme işlemlerinde POST ve silme işlemlerinde de DELETE metodlarına ilişkin talepler (Request) oluşmuştur.
 

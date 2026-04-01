@@ -18,6 +18,6 @@ Diyelim ki bir değişkenin tipinin içerisinde yer aldığı Assembly’ daki d
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_100.png)
 
-[![spt_61New2](/assets/images/2012/spt_61New2_thumb.png)](/assets/images/2012/spt_61New2.png)
+![spt_61New2](/assets/images/2012/spt_61New2.png)
 
 [http://www.buraksenyurt.com/pics/spt_61New2.png](/assets/images/2012/spt_61New2.png)Hazır primitive tip demişken. String ve Decimal’ in primitive olmadıklarını biliyor muydunuz?

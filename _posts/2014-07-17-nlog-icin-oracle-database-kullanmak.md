@@ -8,7 +8,7 @@ tags: []
 ---
 Animasyon film meraklısı olupta [Pixar’ ın 2003 yapımı Nemo’ sunu](http://www.imdb.com/title/tt0266543/) izlemeyen sanırım yoktur. Kayıp oğlu Nemo’ yu bulmak isteyen Marlin, uzun ve zorlu yolculuğu sırasında oldukça unutkan olan ve aslında bu özelliği ile balık olduğunu adeta tüm izleyenlere ispat eden Dory ile seyahat etmektedir. Dory neredeyse bir saniye önce söylediğini hatırlamakta zorlanan bir balıktır.
 
-[![marlin-dory](/assets/images/2014/marlin-dory_thumb.jpg)](/assets/images/2014/marlin-dory.jpg)
+![marlin-dory](/assets/images/2014/marlin-dory.jpg)
 
 
 Aslında geliştirmekte olduğumuz uygulamaların da buna benzer handikapları vardır. Bir şeyler hatırlamak zorundadırlar ve bu yüzden çeşitli depolama ortamlarını kullanırlar. Bu depolar ile olan iletişimlerinde çeşitli stratejiler uygularlar. Özellikle web tabanlı uygulamalar söz konusu olduğunda istemciler ile olan iletişimde de unutkanlık halleri baş gösterir. Web, doğası gereği çoğu zaman State tutmakta zorlanan bir ortamdır.
@@ -36,7 +36,7 @@ Senaryoya göre NLog ile ilişkili kütüphanelerin ve gerekli konfigurasyon dos
 
 NLog ve NLog.Extended kütüphaneleri, NuGet paket yönetim aracı üzerinden uygulamaya kolayca yüklenebilirler.
 
-[![lto_1](/assets/images/2014/lto_1_thumb.png)](/assets/images/2014/lto_1.png) [![lto_2](/assets/images/2014/lto_2_thumb.png)](/assets/images/2014/lto_2.png)
+![lto_1](/assets/images/2014/lto_1.png) ![lto_2](/assets/images/2014/lto_2.png)
 
 Oracle Database Hazırlıkları
 
@@ -117,7 +117,7 @@ Konfigurasyon içeriğinde dikkat edilmesi gereken bir kaç nokta bulunmaktadır
 - connectionStringName özelliğine atanan değer, web.config dosyası içerisindeki connectionString elementini işaret etmektedir. Uygulamada kullanılan web.config içeriği aşağıdaki gibidir.
 
 Dikkat edilmesi gereken en önemli ayrıntı providerName bildirimidir. Bu bildirim yapılmadığı takdirde log atma işlemi gerçekleşmeyecektir. Durumu daha net kavramak adına providerName niteliğini kaldırıp InternalLog dosyasında oluşan içeriğe bakılabilir. Bu durumda aşağıdaki ekran görüntüsünde yer aldığı gibi Provider üretimi sırasında bir exception fırlatıldığı fark edilecektir. Bunun doğal sonucu uygulamanın log atamayacak olmasıdır.
-[![lto_4](/assets/images/2014/lto_4_thumb.png)](/assets/images/2014/lto_4.png)
+![lto_4](/assets/images/2014/lto_4.png)
 - commandText niteliğine atanan ifade de Insert parametreleri kullanılmıştır. Parametre bildirimleri için parameter elementinden yararlanılmaktadır. Her elementin layout özelliğinde $ ile başlayan birer NLog anahtar kelimesi ele alınmaktadır.
 - loglama mekanizması için hedef hizmet rules elementi içerisinde bildirilmektedir. Burada writeTo niteliğine atanan değerin target elementinde bir karşılığı vardır.
 
@@ -235,7 +235,7 @@ Log yazma operasyonunu nemo isimli Logger nesne örneği üstlenmektedir. Oluşt
 
 Uygulamanın çalışmasından ve butona basılarak bir takım işlemlerin icra edilmesinden ziyade Oracle tarafındaki ApplicationLogs içeriğinin dolması daha önemlidir. Eğer konfigurasyon ayarları sorunsuz yapıldıysa, Oracle ile uygulamanın konuşması ve Insert işlemlerini icra etmesi noktasında bir yetki problemi yoksa, çalışma zamanı için aşağıdakine benzer sonuçların elde edilmesi gerekmektedir.
 
-[![lto_3](/assets/images/2014/lto_3_thumb.png)](/assets/images/2014/lto_3.png)
+![lto_3](/assets/images/2014/lto_3.png)
 
 Sonuçlar
 

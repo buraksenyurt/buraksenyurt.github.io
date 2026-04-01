@@ -14,7 +14,7 @@ Bazen iç içe çağrılarda bulunan metod zincirlerinde herhangibir seviyede me
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_24.png)
 
-[![PhotoTrick6](/assets/images/2011/PhotoTrick6_thumb.png)](/assets/images/2011/PhotoTrick6.png)
+![PhotoTrick6](/assets/images/2011/PhotoTrick6.png)
 
 (Büyük hali için fotoğrafa tıklayın)
 

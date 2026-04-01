@@ -18,22 +18,22 @@ TFS Web Services kullanımlarını incelediğimiz [bu](https://www.buraksenyurt.
 
 Örneğimizi bir Windows Forms uygulaması olarak geliştirebiliriz. Dilerseniz hiç vakit kaybetmeden ilgili TFS Assembly dosyalarını referans ederek işe başlayalım.(Tabi kaynak kodun versiyon kontrolü denilince aklımıza aşağıdakinden daha iyi bir çözüm geliyordur diye var sayıyorum)
 
-[![versioncontrolfunny](/assets/images/2013/versioncontrolfunny_thumb.png)](/assets/images/2013/versioncontrolfunny.png)
+![versioncontrolfunny](/assets/images/2013/versioncontrolfunny.png)
 
 Başlangıç
 
 İlk olarak uygulamaya Microsoft.TeamFoundation.Client, Microsoft.TeamFoundation. Common ve Microsoft.TeamFoundation.VersionControl.Client assembly kütüphanelerini referans ederek işe başlayabiliriz. Örneğimize konu olan VersionControlServer tahmin edileceği üzere Microsoft.TeamFoundation.VersionControl.Client assembly’ ının bir parçasıdır.
 
-[![tfsvc_1](/assets/images/2013/tfsvc_1_thumb.png)](/assets/images/2013/tfsvc_1.png)
+![tfsvc_1](/assets/images/2013/tfsvc_1.png)
 
 Uygulamamıza ait Form ise aşağıdaki gibi tasarlanabilir.
 
-[![tfsvc_2](/assets/images/2013/tfsvc_2_thumb.png)](/assets/images/2013/tfsvc_2.png)
+![tfsvc_2](/assets/images/2013/tfsvc_2.png)
 
 Kullanıcılar app.config dosyasında belirtilen TFS sunucusuna bağlanabilecektir. Bu TFS sunucusu çok doğal olarak kendi içerisinde n sayıda Team Project Collection barındırabilir. İlgili Team Project Collection’ a ait bazı bilgilerin Collections bileşeni yanındaki ComboBox kontrolüne doldurulması sağlanmalıdır. Kullanıcı, bir Team Project Collection seçimi yaptığında ise, buna bağlı Team Project listesinin de ilgili ComboBox kontrolüne eklenmesi gerekmektedir. En azından bağlı olan Team Project adlarının listelenmesi gerekir. Kullanıcının yapacağı bir diğer seçim de, source control üzerinden çekilmek istenen dosyaların tipleridir. Örneğin C#, VB gibi kod dosyaları olabileceği gibi, XAML içerikli dosyalara da bakılmak istenebilir. Örnekte kısıtlı bir küme kullanılmıştır ancak bu genişletilebilir.
 
 > Kendi çalışmalarınızı yaparken Team Foundation Server’ ın tfs.visualstudio.com adresinden sunulan hizmetini göz önüne almanızı ve o ortamda sunulan Code penceresini incelemenizi öneriririm. Code penceresine gelindiğinde aslında bu, bir Team Project Collection’ daki bir Team Project içerisindeyiz anlamına gelir. Dolayısıyla bu Team Project içerisindeyken source control üzerine atılan ne kadar içerik varsa görülebilir. Biz çok daha kısıtlı bir örneğini yapıyoruz. Aslında kapıyı azcık aralamak niyetindeyiz.
-> [![tfsvc_5](/assets/images/2013/tfsvc_5_thumb.png)](/assets/images/2013/tfsvc_5.png)
+> ![tfsvc_5](/assets/images/2013/tfsvc_5.png)
 
 Dosya tipi seçimi de belli olduğunda liste kontrolüne, söz konusu uzantıya sahip dosyaların bazı bilgileri gelecektir. Eğer herhangibir dosya seçilirse de, bu dosyanın içeriği gösterilecektir.
 
@@ -41,7 +41,7 @@ Yardımcı Sınıflar
 
 Örnekte işleri biraz olsun kolaylaştırmak adına iki yardımcı POCO (PlainOldClrObject) tipi kullanılmıştır. Bu tipler içerisinde bir Team Project Collection’ ın ve Change Set’ in temel bilgileri tutulmaktadır.
 
-[![tfsvc_3](/assets/images/2013/tfsvc_3_thumb.png)](/assets/images/2013/tfsvc_3.png)
+![tfsvc_3](/assets/images/2013/tfsvc_3.png)
 
 TeamCollection sınıfı içeriği;
 
@@ -238,7 +238,7 @@ Elde edilen Item öğesinin DownloadFile isimli bir fonksiyonu da bulunmaktadır
 
 Örneği çalıştırdığımızda ve sırasıyla Team Project Collection, File Type ve Team Project seçimlerine yaptığımızda, aşağıdakine benzer sonuçlar ile karşılaşabiliriz.
 
-[![tfsvc_4](/assets/images/2013/tfsvc_4_thumb.png)](/assets/images/2013/tfsvc_4.png)
+![tfsvc_4](/assets/images/2013/tfsvc_4.png)
 
 Dikkat edileceği üzere Default Collection altındaki bir Team Project’ in içerisinde yer alan C# kod dosyalarının temel bilgileri çekilebilmiştir. Bu bilgiler arasında, Item ve Change Set numarası ile Server üzerinde tutulan Full Path bilgisi yer almaktadır. Hatta istenirse son Check-In bilgisi bile alınabilir (Belki de alınamaz. Neden araştırmıyorsunuz ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_197.png)) İşin güzel yanı söz konusu öğelerden herhangibirisine tıklandığında, içeriğinin de görüldüğüdür.
 

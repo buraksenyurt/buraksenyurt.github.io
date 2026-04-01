@@ -8,7 +8,7 @@ tags: []
 ---
 Daha [önceki yazılarımızdan birisinde](/2014/06/18/wpf-uzerinde-data-binding-retro-bakis-acisi/) (Data-Binding Retro Bakış Açısı) özellikle WPF (Windows Presentation Foundation), Windows Phone, WF (Workflow Foundation) gibi XAML tabanlı ara birimlerin sıklıkla kullanıldığı noktalarda veri bağlama (Data Binding) işlemlerinin temellerini kavramaya çalışmış ve çok basit bir örnek ile konuyu irdelemiştik.
 
-[![Fuel level](/assets/images/2014/Fuel%20level_thumb.jpg)](/assets/images/2014/Fuel%20level.jpg)
+![Fuel level](/assets/images/2014/Fuel%20level.jpg)
 
 
 Bu yazımızda ise, veri bağlama işlemleri sırasında dönüştürücü tiplerden (Converters) nasıl yararlanabileceğimizi incelemeye çalışacağız. Bu güzel kabiliyet sayesinde aslında var olan çalışma zamanı veri bağlama işlemlerine müdahale edebilmekteyiz ki bu, geliştirici açısından oldukça önem arz eden bir konudur. Öyleki, geliştiricinin standart basma kalıpların dışına çıkarak hareket edebilmesine olanak sağlamakta.
@@ -19,7 +19,7 @@ Ancak bazı senaryolarda (ki edindiğim tecrübelere göre özellikle WF tarafı
 
 Dilerseniz konuyu biraz daha iyi kavrayabilmek adına basit bir senaryo üzerinden ilerlemeye çalışalım. WPF tabanlı olarak geliştireceğimiz örnek uygulamamızda ilk etapta aşağıdaki gibi bir POCO (Plain Old CLR Objects) tipinin söz konusu olduğunu düşünelim.
 
-[![dbcvrtr_1](/assets/images/2014/dbcvrtr_1_thumb.png)](/assets/images/2014/dbcvrtr_1.png)
+![dbcvrtr_1](/assets/images/2014/dbcvrtr_1.png)
 
 ```csharp
 namespace UsingConverters 
@@ -110,7 +110,7 @@ namespace UsingConverters
 
 vehicles isimli List koleksiyonu bir kaç Vehicle nesne örneğine sahiptir ve WindowLoaded olay metodu içerisinde bu koleksiyon içeriği DataContext özelliğine set edilmektedir. Uygulamayı bu haliyle çalıştırdığımızda aşağıdak ekran görüntüsündekine benzer bir sonuç ile karşılaşırız.
 
-[![dbcvrtr_2](/assets/images/2014/dbcvrtr_2_thumb.png)](/assets/images/2014/dbcvrtr_2.png)
+![dbcvrtr_2](/assets/images/2014/dbcvrtr_2.png)
 
 Aslında pek de fena bir görüntü değil? En azından benim açımdam. Yine de daha iyisi yapılabilir. Örneğin benzin seviylerini göz önüne alalım. Kutuların uzunluklarına bakıldığında araçların benzin oranlarını görsel olarak daha iyi anlayabiliyoruz. Üstelik içerisinde yazan sayısal değerlerde bize iyi bir istatistik sunmakta.
 
@@ -122,7 +122,7 @@ lbl.Background = new SolidColorBrush (Colors.Red);
 
 Bu kod ifadesinde görüldüğü üzere Background niteliği bir SolidColorBrush ile zenginleştirilmiş ve kırmızı renkte belirlenmiştir. Converter tipi bu tarz bir yaklaşımı uygulamak durumundadır. Yani sayısal tipin aslında arka planın istediği bir Brush türevine dönüştürülmesi gerekmektedir. Şimdi aşağıdaki Converter tipini projeye ekleyereki işlemlerimize devam edelim.
 
-[![dbcvrtr_3](/assets/images/2014/dbcvrtr_3_thumb.png)](/assets/images/2014/dbcvrtr_3.png)
+![dbcvrtr_3](/assets/images/2014/dbcvrtr_3.png)
 
 ve kod içeriği,
 
@@ -228,14 +228,14 @@ kullanılan ifadede yer alan Converter özelliğine atanan değer ile, ilgili La
 
 Buraya kadar anlatıklarımızdan yola çıkarsak Converter tipinin ve ilgili fonksiyonlarının çalışma şekli aşağıdaki şekilde görüldüğü gibidir.
 
-[![dbcvrtr_5](/assets/images/2014/dbcvrtr_5_thumb_1.png)](/assets/images/2014/dbcvrtr_5_1.png)
+![dbcvrtr_5](/assets/images/2014/dbcvrtr_5_1.png)
 
 > .Net Framework tarafında IValueConverter arayüzünü uygulayan Built-In converter tipler de bulunmaktadır. Visual Studio arabirimindeki Object Browser yardımıyla bu tipler incelenebilir.
-> [![dbcvrtr_6](/assets/images/2014/dbcvrtr_6_thumb.png)](/assets/images/2014/dbcvrtr_6.png)
+> ![dbcvrtr_6](/assets/images/2014/dbcvrtr_6.png)
 
 Yapılan son değişikliklere göre uygulamanın yeni çalışma zamanı çıktısına ait sonuçlar şu şekilde olacaktır.
 
-[![dbcvrtr_4](/assets/images/2014/dbcvrtr_4_thumb.png)](/assets/images/2014/dbcvrtr_4.png)
+![dbcvrtr_4](/assets/images/2014/dbcvrtr_4.png)
 
 Sanırım Şimşeğin en kısa sürede pit alanına girmesi ve benzin alması grerekiyor. Gaza fena yüklenmiş belli ki.
 

@@ -15,14 +15,14 @@ tags:
 ---
 Doğruyu söylemek gerekirse yazılım hayatım boyunca en çok kurduğum cümlelerden birisi de sanıyorum ki şu olmuştur: “Microsoft’ un hızına yetişemiyoruz” Bazı açılardan bakıldığında bu özellikle nihayi ürün ile geliştirme yapanlar için bir handikap olarak görülebilir. Çünkü yeni sürümler genellikle geliştiricilerin ve ürün yöneticilerinin arzu ettikleri, görmek istedikleri kabiliyetleri içermektedir.
 
-[![speed_limit](/assets/images/2012/speed_limit_thumb.jpg)](/assets/images/2012/speed_limit.jpg)
+![speed_limit](/assets/images/2012/speed_limit.jpg)
 
 Diğer taraftan kişisel görüşüme göre, Microsoft yazılım ekiplerinin bu çalışkanlığı da takdir edilmesi gereken bir durumdur. Bu ekiplerin başında da Entity Framework geliştirilmesinden [sorumlu ekip](http://blogs.msdn.com/b/adonet/) gelmektedir.
 
 Sözü fazla uzatmıyayım ama daha bu ayki Entity Framework 5.0 tabanlı [Nedirtv?com](HTTP://www.nedirtv.com) Webinerime hazırlanırken bir kaç gün önce EF 6.0’ nın alpha sürümünün yayınlandığını ve NuGet paket yönetim aracı ile indirilebileceğini öğrendim.
 
 > Paketi arayıp bulabilmek için, Manage Nuget Packages dialog penceresindeki Include Prerelease seçeneğini işaretlemeyi unutmayın. Aksi durumda Release sürümleri öncesindeki ürünler listelenmeyeceklerdir.
-> [![ef6async_1](/assets/images/2012/ef6async_1_thumb.png)](/assets/images/2012/ef6async_1.png)
+> ![ef6async_1](/assets/images/2012/ef6async_1.png)
 
 Entity Framework geliştirilmesinden sorumlu takım bildiğiniz gibi [codeplex](http://entityframework.codeplex.com/) üzerinden kaynak kodları da açmış durumdadır. Dolayısıyla alpha sürümüne ait kodları açık kaynak olarak inceleyebilir ve hatta Microsoft’ un beklediği gibi, ürünle ilişkili geri bildirimlerinizi (Feedbacks) ekibe iletebilirsiniz. Bizi dinliyorlar ve gerçekten bazı gerekli özellikleri yeni sürümlere dahil ediyor veya en azından yol haritasına (Roadmap) alıyorlar. (Bu arada [Ef tarafındaki Roadmap ile ilişkili olarak bu adresi takip edebilirsiniz](http://entityframework.codeplex.com/wikipage?title=Roadmap))
 
@@ -32,7 +32,7 @@ Başlangıç
 
 İlk etapta Visual Studio 2012 üzerinde basit bir Console uygulaması oluşturup gerekli Entity Framework kütüphanesini Nuget yardımıyla dahil ederek işe başlayabiliriz. Konuyu basit ve kolay bir şekilde anlayabilmek adına Code-First yaklaşımını tercih ediyor olacağız. Başlangıçta ki tip hiyerarşisini aşağıki gibi oluşturabiliriz.
 
-[![ef6async_2](/assets/images/2012/ef6async_2_thumb.png)](/assets/images/2012/ef6async_2.png)
+![ef6async_2](/assets/images/2012/ef6async_2.png)
 
 ```csharp
 class Category 

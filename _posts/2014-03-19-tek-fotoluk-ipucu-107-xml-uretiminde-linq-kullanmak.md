@@ -8,7 +8,7 @@ tags: []
 ---
 Diyelim ki elinizde bir biri ile ilişkili tiplere ait nesne örneklerini içeren bir koleksiyon var. Söz gelimi bu koleksiyon, kütüphanenizde yer alan kitaplar ve yazarlarını tuttuğunuz generic bir List örneği olsun. Bu listenin XML formatında bir çıktısını sunmak istediğinizi düşünelim. Elinizin altında XElement, XAttribute gibi tipler ve LINQ gibi harika bir sorgulama dili olduğunun da farkındasınız. Nasıl bir ifade yazarsınız? Aşağıdakine benzer olabilir mi?
 
-[![tfi_107](/assets/images/2014/tfi_107_thumb.png)](/assets/images/2014/tfi_107.png)
+![tfi_107](/assets/images/2014/tfi_107.png)
 
 Bir başka ip ucunda görüşmek dileğiyle
 

@@ -11,7 +11,7 @@ tags:
 ---
 Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim
 
-[![delegating](/assets/images/2012/delegating_thumb.jpg)](/assets/images/2012/delegating.jpg)
+![delegating](/assets/images/2012/delegating.jpg)
 
 
 ![Laughing](/assets/images/2012/smiley-laughing.gif)
@@ -80,7 +80,7 @@ Delegate tiplerinin kullanımı göz önüne alındığında, Polling, Callback,
 
 Dolayısıyla benzer bir yaklaşımı WCF servislerinde, asenkron hale getirilmek istenen operasyonlar için de düşünebiliriz. Gelin öncelikle senkron olarak uzun süren işlem içeren örnek bir WCF servisini geliştirelim. Bu amaçla aşağıdaki servis sözleşmesini (Service Contract) içeren bir servis uygulamasını göz önüne alabiliriz.
 
-[![awcf_1](/assets/images/2012/awcf_1_thumb.png)](/assets/images/2012/awcf_1.png)
+![awcf_1](/assets/images/2012/awcf_1.png)
 
 IProductService arayüz tipi (Interface);
 
@@ -156,11 +156,11 @@ CreateProducts metodu istemciden aldığı toplam miktara göre bir Product list
 
 > İstemci tarafında servis çağırımlarına ait asenkron operasyon desteğini etkinleştirmek için, Generate asynchronous operations özelliğinin işaretlenmiş olması gerekmektedir.
 
-[![awcf_2](/assets/images/2012/awcf_2_thumb.png)](/assets/images/2012/awcf_2.png)
+![awcf_2](/assets/images/2012/awcf_2.png)
 
 Sonuç olarak üretilen Async uzantılı asenkron çağırım metodu ve servis operasyon işleminin tamamlanması sonrası devreye girecek fonksiyonu işaret edecek olan olay (Event), kod tarafında değerlendirilebilir olacaktır.
 
-[![awcf_3](/assets/images/2012/awcf_3_thumb.png)](/assets/images/2012/awcf_3.png)
+![awcf_3](/assets/images/2012/awcf_3.png)
 
 Gayet güzel
 
@@ -176,7 +176,7 @@ Başlarda da belirttiğimiz gibi servis tarafında IAsyncResult arayüzü ve Tas
 
 Önce Class Diagram üzerinden ilgili değişikliklere bir bakalım.
 
-[![awcf_4](/assets/images/2012/awcf_4_thumb.png)](/assets/images/2012/awcf_4.png)
+![awcf_4](/assets/images/2012/awcf_4.png)
 
 IProductService arayüzünün yeni versiyonu;
 

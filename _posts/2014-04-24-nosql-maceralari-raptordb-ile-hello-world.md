@@ -9,7 +9,7 @@ tags:
 ---
 Yıllardır vaz geçemediğim bilgisayar oyunlarından birisidir [Command and Conquer Generals](http://tr.wikipedia.org/wiki/Command_%26_Conquer:_Generals). Özellikle Zero Hour setini çok ama çok severim. Bu set içerisinde en çok kullandığım GLA güçleridir ama zaman zaman China Tank General veya USA Air Force’ u da tercih ederim.
 
-[![070401-F-6701P-005](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046_thumb.jpg)](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046.jpg)
+![070401-F-6701P-005](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046.jpg)
 
 
 USA Air Force’ un en belirgin özelliği King Raptor olarak adlandırılan ve aslında günümüzde de [F22 Raptor olarak bilinen savaş uçaklarını](http://tr.wikipedia.org/wiki/F-22_Raptor) içermesidir. Bu uçaklar kendilerine fırlatılan füzeleri lazer ile vurabilir, ayrıca normal Raptor’ lara göre daha fazla güdümlü füze taşıyabilir.
@@ -34,7 +34,7 @@ Ama tabiki diğer NoSQL sistemlerinde olduğu gibi, Microsoft SQL Server, Oracle
 
 RaptorDB projesinin sahibi ve geliştiricisi olan Mehdi Gholam,.Net tabanlı olarak geliştirdiği Library içerisinde pek çok yardımcı açık kaynak koda da başvurmuş. Hatta bunların neredeyse tamamı ile ilgili CodeProject üzerinde kaynağa rastlamak mümkün. Esas itibariyle RaptorDB’ nin yaşam alanına giren kütüphaneleri aşağıdaki grafik ile özetleyebiliriz.
 
-[![raptor_5](/assets/images/2014/raptor_5_thumb_1.png)](/assets/images/2014/raptor_5_1.png)
+![raptor_5](/assets/images/2014/raptor_5_1.png)
 
 İçeriğin JSON (JavaScriptObjectNotation) formatında ele alındığını görmekteyiz ama bunun dışında Binary serileştirme noktasında devreye giren yardımcı bir kütüphanede söz konusu. Özellikle verinin sıkıştırılması noktasında b-tree algoritmasını baz alan WAHBitArray’ den yararlanılmış. Full Text Search işlemlerinde h00t isimli ürün devreye girerken Log tutmada ise Enterprise çözümlerde dahi sıklıkla kullandığımız Log4Net’ in daha sade bir sürümü değerlendirilmiş. Pek tabi başrol oyuncusu RaptorDB kütüphanesi.
 
@@ -60,7 +60,7 @@ RaptorDB’ yi bir ürün olarak göz önüne aldığımızda ise aşağıdaki m
 
 Bu genel özellikler dışında, RaptorDB’ yi kullanarak veri oluşturma noktasında izlenen yolu da aşağıdaki şekilde görüldüğü gibi ifade edebiliriz.
 
-[![raptor_6](/assets/images/2014/raptor_6_thumb_1.png)](/assets/images/2014/raptor_6_1.png)
+![raptor_6](/assets/images/2014/raptor_6_1.png)
 
 Çok doğal olarak bir.Net geliştiricisinin veriyi tanımlamadaki en güçlü kozu POCO (Plaint Old CLR Objects) tipleridir. Burada da Entity’ ler aslında birer POCO tipidir. Herhangibir Attribute içermezler ve genellikle sadece basit özellikler (Property) lerden oluşurlar. Bir Entity tanımlandıktan sonra genellikle tepede yer alanlar için (örneğin Category ve Product senaryosunda Category tipi için) Primary View’ lar oluşturulur. Bu View’ lar aynı zamanda verinin sorgulanması sırasında da rol oynamakta olduğundan iyi tasarlanmalıdır. View’ lar kendi içlerinde bir index yapısını da belirlemektedirler.
 
@@ -79,11 +79,11 @@ Dilerseniz bu kadar laf kalabalığı ve Key Note’ dan sonra basit bir örnek 
 
 Bu arada makaleyi yazdığım zaman diliminde ilgili kodlar Visual Studio 2010 tabanlıydılar. Ancak Visual Studio 2012 ile sorunsuz açılıp,.Net Framework 4.5’e taşınabildiler ve problemsiz derlendiler.
 
-[![raptor_1](/assets/images/2014/raptor_1_thumb_1.png)](/assets/images/2014/raptor_1_1.png)
+![raptor_1](/assets/images/2014/raptor_1_1.png)
 
 Gelelim uygulamada inşa ettiğimiz tip yapısına ve kodlara.
 
-[![raptor_10](/assets/images/2014/raptor_10_thumb_1.png)](/assets/images/2014/raptor_10_1.png)
+![raptor_10](/assets/images/2014/raptor_10_1.png)
 
 ```csharp
 using RaptorDB; 
@@ -274,29 +274,29 @@ Debug Anında
 
 RaptorDB nesnesi örneklenirken parametre olarak bir klasör belirtilir. Eğer bu klasör yoksa uygulamanın çalışması sırasında oluşturulur. Ben örneği test ederken RaptorDB’ nin örneklendiği noktada durdum ve aşağıdaki klasör yapısının otomatik olarak üretildiğine şahit oldum.
 
-[![raptor_2](/assets/images/2014/raptor_2_thumb.png)](/assets/images/2014/raptor_2.png)
+![raptor_2](/assets/images/2014/raptor_2.png)
 
 Hatta Data klasörü içerisine baktığımda farklı uzantılarda pek çok dosyanın üretildiğini ancak içerisine bir veri atılmadığını fark ettim.
 
-[![raptor_3](/assets/images/2014/raptor_3_thumb.png)](/assets/images/2014/raptor_3.png)
+![raptor_3](/assets/images/2014/raptor_3.png)
 
 Her ne zaman Entity örnekleri birer Doküman olarak kayıt edilmeye başladılar işte o zaman mgdat ve mgidx uzantılı dosyaların içerikleri değişmeye başladı. Örnek olarak her bir kategori için 100bin Dummy Product nesne örneği ürettiğimde yaklaşık olarak 188 megabyte’ lık veri kümesinin 4 saniyeye yakın bir sürede üretildiğine tanık oldum. Diğer ürünler ile kıyaslanmasına bakmadım tabi ama bu süre oldukça etkileyici gibi geldi bana
 
 ![Sarcastic smile](/assets/images/2014/wlEmoticon-sarcasticsmile_15.png)
 
-[![raptor_4](/assets/images/2014/raptor_4_thumb.png)](/assets/images/2014/raptor_4.png)
+![raptor_4](/assets/images/2014/raptor_4.png)
 
 ve tabi data.mgdat dosyasının içerisine bakıldığında verinin buraya serileştiğine şahit oldum.
 
-[![raptor_7](/assets/images/2014/raptor_7_thumb.png)](/assets/images/2014/raptor_7.png)
+![raptor_7](/assets/images/2014/raptor_7.png)
 
 Örneğin Primary View’ un kullanıldığı sorgulama senaryosunda, CategoryView içerisinde belirtilen şema yapısına uygun bir sonuç kümesinin çekildiği görülmektedir. Aşağıdaki Breakpoint görselinde bu durum ifade edilmektedir.
 
-[![raptor_8](/assets/images/2014/raptor_8_thumb.png)](/assets/images/2014/raptor_8.png)
+![raptor_8](/assets/images/2014/raptor_8.png)
 
 Dikkat edileceği üzere sadece kategori adı ve açıklaması ile benzersiz bir Guid söz konusudur. Hiç bir Product yoktur. Zaten buradan o kategoriye bağlı ürünlere de gidilemeyecektir. Nitekim View’ un index yapısından kategorinin ürünleri belirtilmemiştir. Lakin ikinci View’ da farklı bir şema kullanılmıştır. Bu nedenle Kategori ve buna bağlı ürünler elde edilebilir. Aşağıdaki Breakpoint görseline dikkat edelim (100binlik örnek senaryo yerine 20 adet Dummy Product tipi ele alınmıştır)
 
-[![raptor_9](/assets/images/2014/raptor_9_thumb.png)](/assets/images/2014/raptor_9.png)
+![raptor_9](/assets/images/2014/raptor_9.png)
 
 Görüldüğü üzere 20 satırlık bir sonuç kümesi söz konusudur ve her bir satır içerisinde CategoryWithProductsView’ da belirtilen şemaya uygun alanlar yer almaktadır. Ürün başlığı (Title), stok miktarı (StockSize), kategori adı (CategoryName) ve kategori açıklaması (Description). Bu son derece doğaldır çünkü ilgili View içerisindeki şema yapısı buna uygun olacak şekildedir. Pek tabi bu şema yapısı indekside ifade ettiğinden, LINQ sorgusunda belirtilen alanlardan biri veya bir kaçının kullanılabilirliği söz konusudur.
 

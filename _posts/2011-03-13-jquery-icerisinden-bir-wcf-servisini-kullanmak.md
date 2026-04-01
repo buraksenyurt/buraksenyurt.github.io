@@ -10,7 +10,7 @@ tags:
 ---
 Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır.
 
-[![blg234_Giris](/assets/images/2011/blg234_Giris_thumb.jpg)](/assets/images/2011/blg234_Giris.jpg)
+![blg234_Giris](/assets/images/2011/blg234_Giris.jpg)
 
 
 Güneş batmış ve hava çoktan kararmıştır. Müşterileri çoğunlukla buluşmalara geç kalır. Aslında çevrede oturanları gizlice gözlemlediğinde onlardan birisinin kalkıp yanına geleceğini ve kendisini müşterisi olarak tanıtacağını gayet iyi bilmektedir. Bir açıdan müşterilerinin aslında kendinden önce geldiğini ama tedrigin oldukları için yaklaşmakta zorlandıklarını bilmektedir. Daha önce bu çok sık başına gelmiştir.
@@ -29,7 +29,7 @@ Dolayısıyla bu günkü yazımızda jQuery içerisinden JSON (JavaScript Object
 
 İlk olarak örneğimizde jQuery’ nin güncel 1.4.3 sürümlü versiyonunu kullandığımızı belirtmek isterim. Söz konusu javascript kütüphanesinin en son sürümüne [http://jquery.com/](http://jquery.com/) adresinden ulaşabilirsiniz. Bu kütüphaneyi çok doğal olarak bir Asp.Net Web Application projesi içerisinde kullanıyor olacağız. Aşağıdaki Solution görüntüsünde projenin içerisinde yer alan önemli enstrümanları görebilirsiniz.
 
-[![blg234_Solution](/assets/images/2011/blg234_Solution_thumb.gif)](/assets/images/2011/blg234_Solution.gif)
+![blg234_Solution](/assets/images/2011/blg234_Solution.gif)
 
 Solution içeriğinden de anlaşılacağı üzere Scripts klasörü altında jQuery kütüphanemiz yer almakta olup bir de WCF Servis örneği kullanılmaktadır. Dilerseniz yola WCF servisimizi geliştirerek devam edelim.Bu amaçla uygulamamıza AJAX-enabled WCF Service tipinden bir öğe ekliyoruz.
 
@@ -80,7 +80,7 @@ JSON formatında veri çıktısı üretmek için, dikkat edileceği üzere WebGe
 
 Dilerseniz Default.aspx sayfamızı geliştirerek ilerlemeye çalışalım. İlk etapta amacımız jQuery içerisinde JSON ve XML formatlı çıktıları çekebilmek olacaktır. Sonraki aşamada ise gelen veri içeriğini istemci tarafında değerlendirmeye gayret edeceğiz. Asp.Net sayfasını aşağıdaki şekilde görüldüğü gibi tasarlayabiliriz.
 
-[![blg234_DefaultAspx](/assets/images/2011/blg234_DefaultAspx_thumb.gif)](/assets/images/2011/blg234_DefaultAspx.gif)
+![blg234_DefaultAspx](/assets/images/2011/blg234_DefaultAspx.gif)
 
 ```text
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="JQueryAndWCF.Default" %>
@@ -176,11 +176,11 @@ Diğer yandan yapılan bu servis çağrılarının sonuçlarını iki şekilde d
 
 İlk olarak uygulamamızı debug modda çalıştırıp OnSuccessJson ve OnSuccessXml fonksiyonlarına gelen data parametrelerinin ne şekilde oluşturulduğunu gözlemlemeye çalışalım. İşte JSON çıktısı.
 
-[![blg234_JsonDebug](/assets/images/2011/blg234_JsonDebug_thumb.gif)](/assets/images/2011/blg234_JsonDebug.gif)
+![blg234_JsonDebug](/assets/images/2011/blg234_JsonDebug.gif)
 
 Dikkat edileceği üzere Category tipinden 4 adet nesne örneği bir dizi olarak data değişkeni içerisine doldurulmaktadır. Eğer XML formatlı talepte bulunan Button bileşenini kullanırsak bu durumda OnSuccessXml javascript fonksiyonuna gelen data değişkeninin içeriğinin aşağıdaki şekildeki gibi oluşturulduğunu görebiliriz.
 
-[![blg234_XmlDebug](/assets/images/2011/blg234_XmlDebug_thumb.gif)](/assets/images/2011/blg234_XmlDebug.gif)
+![blg234_XmlDebug](/assets/images/2011/blg234_XmlDebug.gif)
 
 Dikkat edileceği üzere Category tipinden olan dizinin içeriği XML formatında elde edilmektedir. Tabi JSON ve XML çıktıları farklı şekillerde ele alınmalıdır. JSON tarafında nesne bazlı bir yaklaşım daha kolay bir şekilde ele alınabilirken XML çıktısı için biraz Node, Element, Attribute seviyesinde düşünmek ve Parse işlemlerini buna göre yapmak gerekmektedir.
 
@@ -269,7 +269,7 @@ Bu amaçla servis çağrılarının başarılı olması sonucu devreye giren Suc
 
 Tabi JSON ve XML formatındaki veri dönüşleri birbirlerinden farklı şekilde ele alınmak zorundadır. Özellikle JSON tarafında nesne bazlı bir yaklaşım söz konusu olduğundan data içeriğinden Category tipi için tanımlanmış olan Name veya CategoryId gibi çalışma zamanı özelliklerine ulaşmak oldukça kolaydır. Ne varki XML veri okuması sırasında Node’ lar içerisinde (Özellikle childNodes attribute ile gelen listelerde) dolaşmak gerekir. Her iki fonksiyonda basit anlamda sayfa üzerinde yer alan liste kontrollerini bulmakta ve option tipinden elementler ilave etmektedir. Bu elementlerin innerHTML niteliklerine Name, value niteliklerine ise CategoryId değerleri atanmaktadır. Uygulamamızı bu haliyle çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan sonuçları elde ederiz.
 
-[![blg234_RuntimeResult](/assets/images/2011/blg234_RuntimeResult_thumb.gif)](/assets/images/2011/blg234_RuntimeResult.gif)
+![blg234_RuntimeResult](/assets/images/2011/blg234_RuntimeResult.gif)
 
 Görüldüğü gibi jQuery kütüphanesi içerisinden bir WCF servis çağrısını gerçekleştirmek ve operasyon çağrısı sonucu üretilen veriyi javascript tarafında ele almak son derece kolaydır. Tabi bu noktada akla gelen sorulardan biriside bu tip bir işlevselliğin ASP.NET MVC tarafında nasıl ele alınabileceğidir
 

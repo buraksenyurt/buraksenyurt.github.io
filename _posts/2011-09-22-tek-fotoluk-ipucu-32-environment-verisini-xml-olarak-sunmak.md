@@ -15,6 +15,6 @@ System.Environment tipi içerisinde son derece yararlı ortam bilgileri bulunmak
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_50.png)
 
-[![PhotoTrick32](/assets/images/2011/PhotoTrick32_thumb.png)](/assets/images/2011/PhotoTrick32.png)
+![PhotoTrick32](/assets/images/2011/PhotoTrick32.png)
 
 [EnvironmentExtensions.rar (22,66 kb)](/assets/files/2011/EnvironmentExtensions.rar)

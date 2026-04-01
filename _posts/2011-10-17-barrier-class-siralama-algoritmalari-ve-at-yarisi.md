@@ -12,7 +12,7 @@ tags:
 ---
 At yarışlarına pek ilgim yoktur aslında ama tam da bu günlerde okuduğum kitap nedeniyle, paralel programlama ile aralarında sıkı bir ilişki olduğunu ifade edebilirim
 
-[![The starting gate](/assets/images/2011/The%20starting%20gate_thumb.jpg)](/assets/images/2011/The%20starting%20gate.jpg)
+![The starting gate](/assets/images/2011/The%20starting%20gate.jpg)
 
 
 ![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_70.png)
@@ -41,7 +41,7 @@ Bunu gerçekleştirirken aslında paralel programlama tekniklerinden yararlanma 
 
 Hedefimiz bu algoritmaları içeren metodları birer Task olarak tanımlamak ve start düzlüğünde aynı kapı içerisine yerleştirerek aynı anda çalıştırılmalarını sağlamaktır. Kabaca Barrier sınıfını kullanarak gerçekleştireceğimiz örneğimizin çalışma zamanındaki akışı belkide aşağıdaki grafik ile ifade edilebilir.
 
-[![bei_30](/assets/images/2011/bei_30_thumb.gif)](/assets/images/2011/bei_30.gif)
+![bei_30](/assets/images/2011/bei_30.gif)
 
 Barrier sınıfı öncellikli olarak bir kapasite bildirimi ile çalışmaktadır. Bu kapasite aslında kutu içerisine dahil edilecek olan Task sayısını bildirmektedir. Söz konusu Task sayısına ulaşıldığında ilgili metodların aynı anda başlatılması söz konusu olacaktır (Tabi arkadan gelen başka bir Task daha olursa, kapıdaki örnekler bir anda çıkana kadar beklemek zorunda kalacaktır) Durumu elbetteki örnek kod parçası üzerinden anlamamız daha uygundur. Bu amaçla basit bir Console uygulaması açıp aşağıdaki kod içeriğini yazarak ilerleyebiliriz.
 
@@ -252,7 +252,7 @@ Barrier sınıfına ait nesne örneği üretildikten sonra, ilgili Task örnekle
 
 Sonrasında Task nesne örneklerinin Start metodları çağırılıyor. Ne var ki Barrier bloğunun kapasitesi dolana kadar ilgili metodlar yürütülmeyecektir. Zaten söz konusu Task örneklerinin Barrier bloğuna dahil edilme sebebi de kapasite dolumundan sonra aynı anda çalışmaya başlamalarının istenmesidir. Uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsündekine benzer sonuçlar aldığımızı görebiliriz.
 
-[![bei_31](/assets/images/2011/bei_31_thumb.gif)](/assets/images/2011/bei_31.gif)
+![bei_31](/assets/images/2011/bei_31.gif)
 
 Görüldüğü üzere Barrier kullanımı nedeni ile ilk üç Task örneğinin tam olarak aynı anda başlatılmaları söz konusudur (Aslında bakarsanız milisaniye cinsinden de kontrol edilmeleri gerekmektedir) Diğer yandan Sequential çalışma da elbetteki metodlar başlatıldıkları sıra ile yürütülmektedirler. Burada Quick Sort algoritmasının gerçekten çok hızlı olması nedeni ile işini çok kısa sürede bitirdiğini ve hemen Insertion Sort metoduna geçilebildiğini vurgulamak isterim.
 
@@ -262,9 +262,9 @@ Sanırım Barrier tipinin kullanımını biraz olsun kavrayabilmişizdir. Konuyu
 
 Bakın ben çalışma zamanında durumu analiz ettiğimde Barrier bölgesine son eklenen Insertion Sort algoritma metodundan sonra, bu son eklenen ilk olmak üzere işleyişin başlayabildiğin gördüm. Bir başka deyişle Barrier için belirtilen 3 kapasite değeri InsertionSort metodu eklenene kadar dolmadığından hiç bir metod başlatılmamıştır.
 
-[![bei_32](/assets/images/2011/bei_32_thumb.gif)](/assets/images/2011/bei_32.gif)
+![bei_32](/assets/images/2011/bei_32.gif)
 
-[![240496b](/assets/images/2011/240496b_thumb.jpg)](/assets/images/2011/240496b.jpg) Parallel programlama ile ilişkili olarak bir kaç yazı yazmayı daha planlamaktayım. İçeride gözden kaçan oldukça önemli ve hayati pek çok konu var. Özellikle de gelecek nesil.Net platformunda bu konunun ne kadar önemli olduğunu düşünürsek geliştirici olarak iyi hazırlanmamız gerektiği kanısındayım.
+![240496b](/assets/images/2011/240496b.jpg) Parallel programlama ile ilişkili olarak bir kaç yazı yazmayı daha planlamaktayım. İçeride gözden kaçan oldukça önemli ve hayati pek çok konu var. Özellikle de gelecek nesil.Net platformunda bu konunun ne kadar önemli olduğunu düşünürsek geliştirici olarak iyi hazırlanmamız gerektiği kanısındayım.
 
 Aslında ben şu sıralarda [Parallel Programming Step by Step](http://amzn.com/0735640602) isimli kitabı takip ediyorum. İnce bir kitap ve sizlere de şiddetle tavsiye ederim. Gerçi ince olduğuna aldanmayın lütfen. Yeteri kadar doyurucu bilgi ve kod örneğini barındırmakta. Eğer paralel programlamaya ilgi duyuyorsanız tabi
 

@@ -13,7 +13,7 @@ tags:
 ---
 Sene 1997. Üniversite 3ncü sınıf öğrencisiyim. Eskiden lisanslı bir basketbolcu olan uzun boylu arkadaşım Serkan ve Babası ile birlikte Tepebaşındaki bilgisayar fuarındayız. Serkan, kendisine bir bilgisayar almak istiyor. Tabi Baba’ sının gelmesinin nedeni işlemci mimarilerini, ram teknolojilerini çok iyi bilmesi değil. Tamamen duygusal:$ Ben de Serkan arkadaşıma teknik olarak destek verip önerilerde bulunuyorum. Derken 3müz arasında şöyle bir konuşma geçiyor;
 
-[![blg201_Giris](/assets/images/2010/blg201_Giris_thumb.jpg)](/assets/images/2010/blg201_Giris.jpg)
+![blg201_Giris](/assets/images/2010/blg201_Giris.jpg)
 
 
 Burak: Serkan bak Pentium 200 MMX var. Creative CD sürücü. Üstelik uzaktan kumandalı. Diamond Stealth ekran kartı 2 mb. İyidir. Seagate Hard Disk. Süper.
@@ -45,7 +45,7 @@ Memory-Mapped dosyalar iki şekilde değerlendirilmektedir. Persisted ve Non-Per
 İkinci modele göre bellek üzerine açılan içerik ile fiziki kaynak arasında herhangibir bağ yoktur. Bir başka deyişle fiziki disk üzerindeki bir dosya işaret edilmemektedir. Dolayısıyla bellek üzerinde Process’ ler tarafından yapılan değişiklikler fiziki bir kaynağa yansıtılmamaktadır. Daha çok IPC (Inter Process Communication) tipindeki iletişimlerim söz konusu olduğu durumlarda tercih edilen bir modeldir.
 
 Aslında Memory-Mapped File kavramını aşağıdaki şekil ile biraz daha anlaşılır hale getirebiliriz.
-[![blg201_Schema](/assets/images/2010/blg201_Schema_thumb.gif)](/assets/images/2010/blg201_Schema.gif)
+![blg201_Schema](/assets/images/2010/blg201_Schema.gif)
 
 Bu şekilde, Memory-Mapped File içerisindeki farklı blokların, farklı Process’ ler tarafından nasıl ele alınabildiği temsil edilmektedir. Buna göre örneğin Block 2, Process 1 ve 2 içerisindeki farklı View’ lar ile ifade edilebilmektedir. Aslında Memory-Mapped dosyaları ile çalışabilmek için mutlaka View oluşturmak gerekmektedir. View nesneleri, ilgili bellek alanında açılan dosya içeriğinin tamamını işaret edebileceği gibi bir kısmını da içerebilir. Bir dosya bloğunun farklı View nesneleri de oluşturulabilmektedir (Multiple Views). Zaten dosya boyutunun, uygulamanının mantıksal bellek alanının (Logical Memory Space) dışına taştığı durumlarda Multi-View nesnelerinin oluşturulması şarttır. Özellikle Gb boyutuna varan dosyalar ile çalışan uygulamalar düşünüldüğünde Multi-View kullanımı kaçınılmazdır.
 
@@ -133,11 +133,11 @@ Bir önceki koda benzer olaraktan yine bir MemoryMappedFile ve View üretimi sö
 
 Nesne örneklemesini takiben yine bir MemoryMappedViewAccessor oluşturulmaktadır. Bu kez farklı bir blok ele alınmakta ve yine içeriğinin ilk 10 byte’ lık bölümü ekrana yazdırılmaktadır. Önce ProgramB ardından ProgramA çalıştırılacak şekilde Solution ayarlanırsa aşağıdaki çalışma zamanı görüntüsü elde edilecektir
 
-[![blg201_Runtime](/assets/images/2010/blg201_Runtime_thumb.gif)](/assets/images/2010/blg201_Runtime.gif)
+![blg201_Runtime](/assets/images/2010/blg201_Runtime.gif)
 
 Bu örnekte iki farklı Process’ in aynı Memory-Mapped File üzerinde farklı bloklarını işaret eden View’ lar oluşturarak çalıştığı gösterilmektedir. Ancak tabiki dikkat edilmesi gereken bazı durumlar söz konusudur. Örneğin Memory-Mapped File içeriğini ilk üreten Process diğeri çalışmadan önce kapatılır ve diğer Process Mapped1 isimli bellek alanına erişmeye çalışırsa, aşağıdaki istisna mesajı ile karşılaşılır.
 
-[![blg201_Exception](/assets/images/2010/blg201_Exception_thumb.gif)](/assets/images/2010/blg201_Exception.gif)
+![blg201_Exception](/assets/images/2010/blg201_Exception.gif)
 
 Bu son derece doğaldır. Nitekim ProcessB başlatılmamış, using blokları dışına çıkılmış veya uygulama sonlandırılmıştır. Ancak tüm bunlar gerçekleşirken ProcessA henüz çalıştırılmamış olabilir.
 

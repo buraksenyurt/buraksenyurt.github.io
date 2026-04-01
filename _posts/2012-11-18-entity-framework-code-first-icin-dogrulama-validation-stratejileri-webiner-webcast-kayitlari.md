@@ -17,7 +17,7 @@ tags:
 ---
 Geçtiğimiz günlerde [Nedirtv?com](http://www.nedirtv.com) topluluğu adına Entity Framework Code First modeli için kullanılabilen doğrulama (Validation) stratejilerini incelediğimiz bir Webiner (Webcast) gerçekleştirdik.
 
-[![EFCFV](/assets/images/2012/EFCFV_thumb.png)](/assets/images/2012/EFCFV.png)
+![EFCFV](/assets/images/2012/EFCFV.png)
 
 
 Katılımcılara ve özellikle ekran kayıtlarını alıp bizlerle paylaşan Bahtiyar Dilek arkadaşımıza çok çok teşekkür ediyorum.

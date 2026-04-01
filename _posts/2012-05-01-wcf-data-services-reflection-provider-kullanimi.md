@@ -25,7 +25,7 @@ Geyiği bir kenara bırakıp konumuza dönelim.
 
 Windows Communication Foundation (WCF) yıllardır Microsoft mimarisinde önemli bir yere sahip. Özellikle servis bazlı uygulama geliştirme modeline kazandırdığı pek çok yeni yaklaşım sayesinde, var olan ve gelecek Microsoft ürünlerinin de pek çok noktasında kullanılmaya başlandı. Bana göre WCF modeli özellikle 3.5 sürümü ile başlayan gelişmeler ile birlikte programlama modelini önemli derece de geliştirdi. Bu gün mimari programlama modeline kuşbakışı baktığımızda aşağıdaki çizelge de görülen servis çeşitlerinin kullanımda olduğunu biliyoruz.
 
-[![dsrp_1](/assets/images/2012/dsrp_1_thumb.png)](/assets/images/2012/dsrp_1.png)
+![dsrp_1](/assets/images/2012/dsrp_1.png)
 
 Standart SOAP (Simple Object Access Protocol) servisleri (klasik XML Web Service yaklaşımı olarak da düşünebiliriz), bügünlerde ASP.NET takımınca ele alınan ve Asp.Net Web API olarak adlandırılan HTTP bazlı REST (Representational State Transfer) modeli, özellikle veri odaklı (Data-Centric) çalışmak üzere tasarlanmış Entity Framework odaklı Data Service’ ler, Silverlight tarafında kullanılan RIA (Rich Internet Application) çeşidi ve tabiki Workflow Foundation içerisinde yerini almış Workflow Service’ ler.
 
@@ -45,7 +45,7 @@ Acaba var olan Data Service çalışma modeli esnetilip Entity Framework yerine 
 
 Olayı kolay ve hızlı bir şekilde kavrayabilmek adına İşe basit bir Console uygulaması açıp, çözüme aşağıdaki şekilde görülen.Net assembly’ larını referans ederek başlamalıyız.
 
-[![dsrp_3](/assets/images/2012/dsrp_3_thumb.png)](/assets/images/2012/dsrp_3.png)
+![dsrp_3](/assets/images/2012/dsrp_3.png)
 
 Burada görüldüğü üzere uygulamamızda DataService tipini kullanarak bir Self-Host işlemi gerçekleştiriyor olacağız. Diğer yandan kendi provider’ ımızı yazacağımız için de bazı assembly’ lara ihtiyacımız var
 
@@ -60,11 +60,11 @@ Burada görüldüğü üzere uygulamamızda DataService tipini kullanarak bir Se
 >
 > ![Wink](/assets/images/2012/smiley-wink.gif)
 
-[![dsrp_4](/assets/images/2012/dsrp_4_thumb.png)](/assets/images/2012/dsrp_4.png)
+![dsrp_4](/assets/images/2012/dsrp_4.png)
 
 Gelelim uygulamamız içerisindeki asıl kodlara. Önce Class Diagram’ a bir bakalım.
 
-[![dsrp_2](/assets/images/2012/dsrp_2_thumb.png)](/assets/images/2012/dsrp_2.png)
+![dsrp_2](/assets/images/2012/dsrp_2.png)
 
 Person sınıfı aslında bizim için POCO (Plain Old CLR Object) niteliği gösteren bir tip olarak düşünülebilir. Bu tipi, text dosya içerisindeki satırların nesnel karşılıklarını ifade etmek için kullanacağız.
 

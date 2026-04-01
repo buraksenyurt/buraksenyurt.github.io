@@ -11,7 +11,7 @@ tags:
 ---
 Savaş meydanlarında ezelden beri uygulanan istihbarat ve haber alma teknikleri, avantaj sağlamak açısından en önemli unsurların başında gelmektedir. Karşı tarafın nerede olduğunu izlemek, ne yaptığını bilmek, istenen bir anda ne kadar ateş gücüne sahip olduğunu tespit etmek çok önemlidir. Örneğin karşı tarafın şu anda denizde hareket etmekte olan veya karasal alanda saklanmakta olan kuvvetlerini görmek istediğimiz durumlarda keşif yapılması ve istihbarat toplanması stratejik anlamda önemli avantajlar sağlayacaktır.
 
-[![blg219_Giris](/assets/images/2011/blg219_Giris_thumb.jpg)](/assets/images/2011/blg219_Giris.jpg)
+![blg219_Giris](/assets/images/2011/blg219_Giris.jpg)
 
 
 Yakın zamana kadar bu işler için yüksek irtifalardan, ses hızının bir kaç kat üstünde uçan uçaklar görev alırdı ki halen daha pek çok hava kuvvetlerince kullanılmaktadır. Örneğin bir zamanlar Birleşik Devletler ile Sovyetler Birliği arasında krize neden olan U2’ ler, şekli ve harcadığı yakıt ile ün salıp emekli olan SR71 Blackbird’ ler vs…
@@ -22,7 +22,7 @@ Aslında bu günkü yazımızda bir WCF (Windows Communication Foundation) servi
 
 Lakin bizim amacımız geliştirme safhasında Self-Hosted tekniğine göre yayınlanan servis operasyonlarına gelen çağrıları yakalamak ve basit bilgiler almaktır. Geliştireceğimiz bu senaryonun bize sağlayacağı önemli artılar da vardır. İlk etapta kod yardımıyla özelleştirilmiş bir servis davranışının çalışma zamanındaki ServiceHost örneğine nasıl entegre edilebileceği öğrenilecektir. Diğer yandan operasyonlara olan taleplerin ve dönüşlerin çok basit mana da izlenmesi sağlanacak ve karmaşık Trace çıktıları arasında kaybolunmayacaktır. Dilerseniz hiç vakit kaybetmeden işlemlerimize başlayalım. Başlangıçta aşağıdaki sınıf diagramında (Class Diagram) görülen yapıya sahip bir servis kütüphanemiz olduğunu düşünelim.
 
-[![blg219_ServiceClassDiagram](/assets/images/2011/blg219_ServiceClassDiagram_thumb.gif)](/assets/images/2011/blg219_ServiceClassDiagram.gif)
+![blg219_ServiceClassDiagram](/assets/images/2011/blg219_ServiceClassDiagram.gif)
 
 Buna göre IAccountService isimli Servis Sözleşmemizin (Service Contract) içeriği aşağıdaki gibidir.
 
@@ -68,7 +68,7 @@ namespace AdventureWorksFinance
 
 Bu servis içeriğine sahip olan kütüphanemiz (WCF Service Library), bir WinForms uygulamasına referans edilmiş durumdadır. WinForms uygulaması Host program olarak düşünülebilir. Yani ServiceHost tipi yardımıyla AccountService hizmetini dış dünyaya sunmak üzere tasarlanmaktadır. Bu amaçla arayüzümüzü aşağıdaki gibi tasarladığımızı düşünebiliriz.
 
-[![blg219_WinForm](/assets/images/2011/blg219_WinForm_thumb.gif)](/assets/images/2011/blg219_WinForm.gif)
+![blg219_WinForm](/assets/images/2011/blg219_WinForm.gif)
 
 Buna göre kullanıcı Open başlıklı düğmeye basarak servisi yayına sunacak ve Close düğmesi ile de kapatacaktır. WinForms uygulaması aşağıdaki app.config içeriğine sahiptir.
 
@@ -160,7 +160,7 @@ Kahveleriniz yanınızda değil mi?
 
 Artık asıl işlemlerimize başlayabiliriz. İlk olarak içeriği aşağıda görülen ve IParameterInspector arayüzünü (Interface) uygulayan bir sınıf geliştirerek yola çıkalım.
 
-[![blg219_TextFileInspector](/assets/images/2011/blg219_TextFileInspector_thumb.gif)](/assets/images/2011/blg219_TextFileInspector.gif)
+![blg219_TextFileInspector](/assets/images/2011/blg219_TextFileInspector.gif)
 
 ```csharp
 using System; 
@@ -223,7 +223,7 @@ TextFileInspector sınıfı, IParameterInspector arayüzünü (Interface) uygula
 
 Dolayısıyla ilk olarak servis operasyonları için TextFileInspector tipinin bir davranış olarak bildirilmesi gerekmektedir. Bu amaçla aşağıdaki sınıfı tasarlamamız yeterli olacaktır.
 
-[![blg219_TextFileInspectorOperationBehavior](/assets/images/2011/blg219_TextFileInspectorOperationBehavior_thumb.gif)](/assets/images/2011/blg219_TextFileInspectorOperationBehavior.gif)
+![blg219_TextFileInspectorOperationBehavior](/assets/images/2011/blg219_TextFileInspectorOperationBehavior.gif)
 
 ```csharp
 using System; 
@@ -264,7 +264,7 @@ TextFileInspectorOperationBehavior sınıfı, metodlara uygulanabilen bir operas
 
 Aslında bu nitelik bildirimi yeterlidir. Nitekim servis operasyonlarına söz konusu niteliğin uygulaması ile zaten çalışma zamanı bilgilendirilmiş olacaktır. Ancak bir servisin tüm operasyonlarının izlenmesi istendiği bir durum söz konusu ise tüm operasyonların başında TextFileInspectorOperationBehavior uygulamak yerine, sınıfın başında bir nitelik ile servis davranışının bildirilmesi daha doğrudur. Bu nedenle servis sınıfına uygulanabilen bir davranışın bildirilmesi önemlidir. İşte bu amaçla aşağıdaki sınıfı yazmamız yeterli olacaktır.
 
-[![blg219_TextFileInspectorServiceBehavior](/assets/images/2011/blg219_TextFileInspectorServiceBehavior_thumb.gif)](/assets/images/2011/blg219_TextFileInspectorServiceBehavior.gif)
+![blg219_TextFileInspectorServiceBehavior](/assets/images/2011/blg219_TextFileInspectorServiceBehavior.gif)
 
 ```csharp
 using System; 
@@ -300,7 +300,7 @@ namespace InspectorLib
 
 Attribute olarak sınıflara uygulanabilen bir tip söz konusudur. Buna göre örneğimizde yer alan AccountService sınıfına uygulanabilecek bir tiptir. Ayrıca IServiceBehavior arayüzünün bir implementasyonu söz konusudur ki buna göre yazılması gereken en önemli metod ApplyDispatchBehavior fonksiyonudur. Bu fonksiyon içerisinde servis içerisindeki tüm Endpoint’ ler dolaşılmaktadır. Bu Endpoint’ lerin her birinin de sözleşmelerinde tanımlanmış olan operasyonlarına gidilmektedir. Yani OperationContract niteliği uygulanan metodlarına ulaşılır. Bulunan her bir operasyon için de, az önce tanımlanan TextFileInspectorOperationBehavior davranış örneği bildirimi yapılmaktadır.
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_8.gif)](/assets/images/2011/Exclamation_8.gif) Bu arada TextFileInspector, TextFileInspectorOperationBehavior ve TextFileInspectorServiceBehavior sınıflarını ayrı bir kütüphane altında toplamamızda yarar vardır. Nitekim söz konusu tipleri Host uygulama da ve servis kütüphanesinde kullanmamız gerekmektedir.
+![Exclamation](/assets/images/2011/Exclamation_8.gif) Bu arada TextFileInspector, TextFileInspectorOperationBehavior ve TextFileInspectorServiceBehavior sınıflarını ayrı bir kütüphane altında toplamamızda yarar vardır. Nitekim söz konusu tipleri Host uygulama da ve servis kütüphanesinde kullanmamız gerekmektedir.
 
 Peki ne servis sınıfında ne de operasyon metodlarında yukarıda tanımlanmış olan nitelikler kullanılmazsa ve biz yine de TextFileInspector tipini kullandırtmak istersek. Bu durumda örneğin Host uygulama tarafında aşağıdaki kodlamaları yapmamız yeterli olacaktır.
 
@@ -351,7 +351,7 @@ Bu örnek kullanımda operasyon metodlarının başında TextFileInspectorOperat
 
 Şimdi senaryomuzu test etmeye başlayabiliriz. Tabi bu amaçla basit bir istemci uygulama yazmamız ve servisimizi referans etmemiz gerekmektedir. Burada Self-Hosted bir servis çalışma zamanı söz konusu olduğundan, proxy üretimi için host uygulamanın öncelikli olarak çalışıtırlması ve servisin açılması gerektiği unutulmamalıdır. Bu işlemin ardından Mex talebi yapılabilir.
 
-[![blg219_AddServiceReference](/assets/images/2011/blg219_AddServiceReference_thumb.gif)](/assets/images/2011/blg219_AddServiceReference.gif)
+![blg219_AddServiceReference](/assets/images/2011/blg219_AddServiceReference.gif)
 
 Test amacıyla aşağıdaki kodları yazabiliriz.
 
@@ -381,11 +381,11 @@ namespace ClientApp
 
 Öncelikli olarak host ve sonrasında istemci uygulamayı çalıştırdığımızı düşünecek olursak aşağıdaki ekran görüntüsündekine benzer sonuçlarla karşılaşırız.
 
-[![blg219_Runtime](/assets/images/2011/blg219_Runtime_thumb.gif)](/assets/images/2011/blg219_Runtime.gif)
+![blg219_Runtime](/assets/images/2011/blg219_Runtime.gif)
 
 Ancak bizim için önemli olan ve ulaşmak istediğimiz nokta text dosyası içerisine atılan bilgilerdir. İşte sonuçlar.
 
-[![blg219_RuntimeResult](/assets/images/2011/blg219_RuntimeResult_thumb.gif)](/assets/images/2011/blg219_RuntimeResult.gif)
+![blg219_RuntimeResult](/assets/images/2011/blg219_RuntimeResult.gif)
 
 Görüldüğü üzere GetTotalSalaryByDepartment ve GetTotalGains metodlarına yapılan çağrıların öncesi ve sonrasına ait bilgiler için OperationCallLog.txt isimli dosya oluşturulmuş ve içeriği üretilmiştir.
 

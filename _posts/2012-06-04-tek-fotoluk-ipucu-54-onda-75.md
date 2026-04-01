@@ -17,7 +17,7 @@ Comparer tipinin Create isimli metodu, Sort fonksiyonu için gerekli olan karş�
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_96.png)
 
-[![TPI_54Nokta75_thumb2](/assets/images/2012/TPI_54Nokta75_thumb2_thumb.png)](/assets/images/2012/TPI_54Nokta75_thumb2.png)
+![TPI_54Nokta75_thumb2](/assets/images/2012/TPI_54Nokta75_thumb2.png)
 
 Başka bir ip ucunda görüşmek dileğiyle
 

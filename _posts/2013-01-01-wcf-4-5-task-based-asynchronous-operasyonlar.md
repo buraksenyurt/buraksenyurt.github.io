@@ -14,7 +14,7 @@ tags:
 ---
 Yaklaşık olarak 4 dakika 38 saniye…İzleyen yazıyı benim okuma hızım bu oldu. Aslında bu süre şu demek; Öğle arasına çıkmadan bir 4 dakika 38 saniye demek bu...Ya da geldikten sonra bir 4 dakika 38 saniye demek…Ya da sabah işe erken geldiğimizde ayırabileceğimiz bir 4 dakika 38 saniye demek...Ya da servisi/otobüsü/minibüsü beklerken ayırabileceğimiz 4 dakika 38 saniye demek. Hatta Facebook’ a, Twitter’ a, Linkedin’ e, Youtube’a bakmadan geçireceğimiz bir 4 dakika 38 saniye demek… E o halde ne duruyorsunuz?Ayırın işte o zamanı
 
-[![kronometrei](/assets/images/2013/kronometrei_thumb.jpg)](/assets/images/2013/kronometrei.jpg)
+![kronometrei](/assets/images/2013/kronometrei.jpg)
 
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_165.png)
@@ -23,7 +23,7 @@ Bilindiği üzere.Net Framework 4.5 ile birlikte altyapıya entegre olan async v
 
 Servislerin asenkron çağrılar ile yürütülmesi, özellikle User Experience’ ın önemli olduğu uygulamalarda, ön planda yer alan konular arasındadır. Gelin bu konuyu oldukça basit bir örnek üzerinden ele almaya çalışalım. İlk olarak.Net Framework 4.5 versiyonunda bir WCF Service Application oluşturup içerisine aşağıdaki sınıf diagramında (Class Diagram) görülen tipleri ilave edelim.
 
-[![tbawcf_1](/assets/images/2013/tbawcf_1_thumb.png)](/assets/images/2013/tbawcf_1.png)
+![tbawcf_1](/assets/images/2013/tbawcf_1.png)
 
 OptimizationService sembolik olarak uzun süren bir optimizasyon işlemini üstelenecek şekilde planlanmıştır. Senaryo gereği istemciden bir lokasyon bilgisi almakta olan servis, bu lokasyon için en ideal yolu çıkartmaktadır. Sadece hayal ediyoruz tabi
 
@@ -126,19 +126,19 @@ namespace AzonServiceApp
 
 Eğer servis uygulamasını bu haliyle çalıştırıp test edersek, WCF Test Client uygulamasında yaklaşık olarak 10 saniyelik bir gecikme ile Root listesini alabildiğimizi görürüz (Nitekim GetBestRoot servis operasyonu içerisinde çağırılan FindBestRoot metodunda, Thread.Sleep ile 10 saniyelik bir gecikme uygulanmıştır)
 
-[![tbawcf_6](/assets/images/2013/tbawcf_6_thumb.png)](/assets/images/2013/tbawcf_6.png)
+![tbawcf_6](/assets/images/2013/tbawcf_6.png)
 
 Tabi asıl konumuz bizim geliştireceğimiz istemci uygulamalardaki task bazlı operasyon desteğidir. İstemci tarafını bir WPF Application olarak geliştirdiğimizi düşünebiliriz. Uygulamaya Add Service Reference seçeneği ile servisimizi eklemek istediğimizde, Advanced sekmesinden ulaşacağımız arabirimde yer alan Generate Task-Based Operations kutucuğunun varsayılan olarak işaretli olduğunu fark edebiliriz.
 
-[![tbawcf_2](/assets/images/2013/tbawcf_2_thumb.png)](/assets/images/2013/tbawcf_2.png)
+![tbawcf_2](/assets/images/2013/tbawcf_2.png)
 
 Bu duruma göre referansı eklediğimizde, istemci uygulama tarafında aşağıdaki sınıf diagramında yer alan tiplerin üretildiğini görürüz.
 
-[![tbawcf_3](/assets/images/2013/tbawcf_3_thumb.png)](/assets/images/2013/tbawcf_3.png)
+![tbawcf_3](/assets/images/2013/tbawcf_3.png)
 
 Dikkat edileceği üzere OptimizationServiceClient sınıfı içerisinde, geriye Task tipinden referans döndüren bir operasyon yer almaktadır; GetBestRootAsync. Bu dönüş tipi nedeniyle ilgili metod çağrısı awaitable’ dır. Dolayısıyla async ile işaretlenmiş bir metod içerisindeyken await ile çağırılabilir. Dilerseniz bu durumu test etmeye çalışacak şekilde arayüzümüzü geliştirmeye devam edelim. Bu amaçla, WPF (Windows Presentation Foundation) uygulamamızda yer alan MainWindow öğesinin XAML (eXtensible Application Markup Language) içeriğini aşağıdaki gibi düzenleyelim.
 
-[![tbawcf_4](/assets/images/2013/tbawcf_4_thumb.png)](/assets/images/2013/tbawcf_4.png)
+![tbawcf_4](/assets/images/2013/tbawcf_4.png)
 
 ```xml
 <Window x:Class="WpfClientApp.MainWindow" 
@@ -216,7 +216,7 @@ namespace WpfClientApp
 
 Oysaki eskiden, Dispatcher’ lardan ve hatta daha eskiden de Method Invoker’ lardan yararlanarak ekran arayüzünün cevap verebilir olmasını sağlamaya çalışırdık. Kafa karıştırıcı kodlar ile uğraşmak zorunda kalırdık. Bir kontrol için “hadi neyse…” derken, aynı anda yapılması gereken asenkron çağrı sayısının arttığı durumlarda kod kalabalığı ve karmaşıklığını daha da fazlalaştırıdık. Aslında uygulanan yeni model ile basitleşen bu durumu kendi gözlerinizle görmeniz daha iyi olacaktır. Ben sadece bir ekran görüntüsünü koyabilebileceğim. Siz mutlaka örnek kodu indirim test etmeye çalışın.
 
-[![tbawcf_5](/assets/images/2013/tbawcf_5_thumb.png)](/assets/images/2013/tbawcf_5.png)
+![tbawcf_5](/assets/images/2013/tbawcf_5.png)
 
 Görüldüğü üzere async ve await anahtar kelimelerinden de yararlandığımız bu senaryoda, kod daha az karmaşık olmakla beraber, istemci arayüzünün de asenkron işleyiş sırasında cevap verebilir olması sağlanmıştır. WCF operasyonlarının Windows Phone 8 ([Şu adresteki](http://stackoverflow.com/questions/13173614/async-await-in-windows-phone-web-access-apis) tartışmaya da bir kulak verin) gibi cevap verebilir arayüz ihtiyaçları yüksek olan uygulama çeşitlerinde de kullanıldığı düşünüldüğünde, kazanılan kabiliyetin önemli olduğu aşikardır. Böylece geldik kısa bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

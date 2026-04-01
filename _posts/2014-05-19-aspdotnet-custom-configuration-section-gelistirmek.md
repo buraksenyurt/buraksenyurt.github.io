@@ -12,7 +12,7 @@ tags:
 ---
 Konfigurasyon tabanlı geliştirme modeli, uygulama kodlarına girilmeden çalışma zamanına yönelik değişiklikler yapabilmemizi sağlar. Bu sayede pek çok programın kodsal müdahale yapmadan davranışları değiştirilebilir..Net dünyasında baktığımızda da, App.Config, Web.config gibi dosyalar içerisinde Framework’ ün geneline yönelik pek çok konfigurasyon ayarı bulunduğu görülür. appSettings, connectionStrings, httpHandler vb…
 
-[![Configuration](/assets/images/2014/Configuration_thumb.png)](/assets/images/2014/Configuration.png)
+![Configuration](/assets/images/2014/Configuration.png)
 
 
 > Eskilerden: [Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)](https://www.buraksenyurt.com/post/Asp-Net-2-0-ile-Configuration-Management-(Konfigurasyon-Yonetimi)-bsenyurt-com-dan)
@@ -27,7 +27,7 @@ Konfigurasyon Yapısı
 
 Aklımıza ilk gelen belirli tip türetmeleri veya arayüz (interface) uyarlamaları ile bu işin halledilebilecek olmasıdır. Aslında olayı çözümlemek için var olan konfigurasyon parçalarının örnek tip yapısını incelemek yerinde bir hareket olacaktır. Söz gelimi system.web kısımı içerisindeki compilation ve pages elementlerini incelediğimizi düşünelim.
 
-[![ccs_1](/assets/images/2014/ccs_1_thumb.png)](/assets/images/2014/ccs_1.png)
+![ccs_1](/assets/images/2014/ccs_1.png)
 
 Eğer object browser üzerinden ilgili elementlerin karşılık geldiği sınıfları incelersek şu sonuçlara varırız.
 
@@ -44,7 +44,7 @@ Dolayısıyla kendi geliştireceğimiz özel Section elementleri için de bu tip
 
 Basit bir senaryo üzerinden ilerleyebiliriz. Örneğin bir web uygulamasının web.config dosyası içerisinde aşağıdaki gibi bir konfigurasyon kısmı oluşturmak istediğimizi düşünelim.
 
-[![ccs_3](/assets/images/2014/ccs_3_thumb.png)](/assets/images/2014/ccs_3.png)
+![ccs_3](/assets/images/2014/ccs_3.png)
 
 serviceConnection ve altında yer alan definition elementlerinin işlevselliği çok önemli değildir aslında. Sadece bir kaç nitelik ve alt element içeren bir XML yapısı söz konusu. Bizim yapacağımız basit olarak bu konfigurasyon içeriğini türlendirmek ve çalışma zamanında yönetebilir hale getirmek. Öyleyse işe koyulalım ne duruyoruz.
 
@@ -52,7 +52,7 @@ Sınıfların İnşa Edilmesi
 
 Boş bir Web uygulamasında aşağıdaki sınıf çizelgesinde yer alan tipleri ürettiğimizi düşünelim.
 
-[![ccs_2](/assets/images/2014/ccs_2_thumb.png)](/assets/images/2014/ccs_2.png)
+![ccs_2](/assets/images/2014/ccs_2.png)
 
 ServiceConnectionSection tipi dikkat edileceği üzere ConfigurationSection türevlidir ve içerisinde Type isimli ServiceType enum sabiti tipinden bir özellik ile ConfigurationElement türevli olan DefinitionSection tipinden başka bir özellik yer almaktadır.
 
@@ -109,7 +109,7 @@ Dikkat edileceği üzere Definition ve Type isimli özelliklere ConfigurationPro
 Özelliklerin get ve set bloklarında fark edileceği gibi this anahtar kelimesinden yararlanılmakta ve üst tipin indeksleyicisine (Indexer) gidilerek değer ataması veya okunması işlemi gerçekleştirilmektedir.
 
 > F12 ile ConfigurationSection elementine gidiliğinde bu indexleyici görülebilir.
-> [![ccs_6](/assets/images/2014/ccs_6_thumb.png)](/assets/images/2014/ccs_6.png)
+> ![ccs_6](/assets/images/2014/ccs_6.png)
 
 DefinitionSection sınıfı;
 
@@ -198,7 +198,7 @@ Test Uygulaması
 
 Şimdi dilerseniz basit bir aspx sayfası hazırlayıp section içeriğini ekrana bastıralım ve hatta üzerinde değişiklik yapıp web.config dosyasına kayıt edelim. Senaryonun bu kısmını gerçekleştirmek için aşağıdaki basit aspx sayfasını tasarlayabiliriz.
 
-[![ccs_4](/assets/images/2014/ccs_4_thumb.png)](/assets/images/2014/ccs_4.png)
+![ccs_4](/assets/images/2014/ccs_4.png)
 
 ```text
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HowTo_WritingCustomConfigSection.Default" %>
@@ -305,7 +305,7 @@ serviceSection elementinin managed karşılığını elde edebilmek için Config
 
 Artık çalışma zamanına geçebilir ve sonuçları irdeleyebiliriz. Uygulamayı ilk olarak başlattığımızda PageLaod içerisindeki kodlar devreye girecektir.
 
-[![ccs_5](/assets/images/2014/ccs_5_thumb.png)](/assets/images/2014/ccs_5.png)
+![ccs_5](/assets/images/2014/ccs_5.png)
 
 Görüldüğü gibi varsayılan olarak belirtilen değerler çekilebilmiştir. Eğer bu noktada tip, ad ve adres bilgilerinde değişiklik yapıp Save düğmesine basılırsa, kod web.config dosyasında da gerekli etkiyi yapacaktır.
 

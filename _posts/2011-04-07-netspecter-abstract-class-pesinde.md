@@ -11,7 +11,7 @@ tags:
 ---
 Yağmur şiddetini giderek arttırıyordu. Karanlık ara sokakta gizemli bir pardesü ise ağır ağır ilerlemekteydi. Etraftaki pis kokunun hemen sokağın başındaki çöp konteynerlerinden geldiği ap açık ortadaydı. Ancak gizemli pardesü bu kokuyu umursamıyordu bile. Bir an durdu ve şüpheli bir şekilde arkasına baktı.
 
-[![blg230_Giris](/assets/images/2011/blg230_Giris_thumb.jpg)](/assets/images/2011/blg230_Giris.jpg)
+![blg230_Giris](/assets/images/2011/blg230_Giris.jpg)
 
 
 Karanlık içerisinde sadece gözleri belli oluyordu. Kaşlarını çattı ve bir anda irkilerek koşmaya başladı. O kadar paniklemişti ki, koşarken teneke çöp kutularını fark etmedi bile. Önce yere düştü, bir süre yuvarlandı. Çevredeki kediler sağ sola kaçışırken, kalkmaya çalıştı ama önündeki metal iskeleyi hesaplayamadı. Kafasını sert bir şekilde demire çarptı.
@@ -26,7 +26,7 @@ Bir kaç saniye sonra gökyüzünden düşen yağmur damlalarını görebiliyor 
 
 Netspecter bu kez bir abstract sınıfın peşinde. Sizin içinde eğlenceli bir deneyim olacağına inandığım enteresan bir vakayı analiz etmeye çalışıyor olacağız. Çoğunlukla kod geliştirirken pek fark etmediğimiz bir hata ama hemen çözüm üretebiliyorz. Lakin bu çözümü üretirken istediğimizin dışında bir sonuca da neden olabiliyoruz. Dilerseniz hiç vakit kaybetmeden konumuza geçelim. İlk olarak aşağıdaki kod içeriğini göz önüne alarak başlamamızda yarar olacağı kanısındayım.
 
-[![blg230_BeginingDiagram](/assets/images/2011/blg230_BeginingDiagram_thumb.gif)](/assets/images/2011/blg230_BeginingDiagram.gif)
+![blg230_BeginingDiagram](/assets/images/2011/blg230_BeginingDiagram.gif)
 
 ```csharp
 internal class Composer 
@@ -45,7 +45,7 @@ public interface IWriter
 
 Örneğimizde yer alan IWriter arayüzü ise özel bir duruma neden olmaktadır. Dikkat edileceği üzere CreateComposer metodu geriye Composer tipinden bir nesne örneği döndürmektedir. Söz konusu nesne tipinin erişim belirleyici Internal’ dır. Bu koşullar altında kodu derlediğimizde aşağıdaki ekran görüntüsünde yer alan hatanın oluştuğunu görebiliriz.
 
-[![blg230_FirstError](/assets/images/2011/blg230_FirstError_thumb.gif)](/assets/images/2011/blg230_FirstError.gif)
+![blg230_FirstError](/assets/images/2011/blg230_FirstError.gif)
 
 Dikkat edileceği üzere IWriter arayüzünün internal olan Composer tipini kullanan bir üyeye sahip olması mümkün değildir. Sorunun çözümü aslında basittir. Hatta her developer hemen bunu yapacaktır. IWriter arayüzünün internal olarak tanımlanması halinde herhangibir derleme hatası ile karşılaşılmayacaktır.
 
@@ -86,7 +86,7 @@ public class SpaceWriter
 
 Görüldüğü üzere SpaceWriter isimli sınıf, IWriter interface tipini implemente etmektedir. Buna göre de CreateComposer metodunu override etmiştir. Herşey yolunda görünmesine rağmen kodu derlediğimizde aşağıdaki hata mesajını almamız kaçınılmazdır.
 
-[![blg230_SecondError](/assets/images/2011/blg230_SecondError_thumb.gif)](/assets/images/2011/blg230_SecondError.gif)
+![blg230_SecondError](/assets/images/2011/blg230_SecondError.gif)
 
 Yine yine yine…Inconsistent Accessibility hatası
 
@@ -98,7 +98,7 @@ Burada arayüz tipinin bilinçsiz (Implicitly) olarak uygulandığı görülmekt
 
 İşte o açık bildirim burada bir çözüm olmaktadır.
 
-[![blg230_ExplicitImplementation](/assets/images/2011/blg230_ExplicitImplementation_thumb.gif)](/assets/images/2011/blg230_ExplicitImplementation.gif)
+![blg230_ExplicitImplementation](/assets/images/2011/blg230_ExplicitImplementation.gif)
 
 Yani arayüz implementasyonunu aşağıdaki hale getirirsek kod sorunsuz bir şekilde derleniyor olacaktır.
 
@@ -123,7 +123,7 @@ Dikkat edileceği üzere metod adının bildirimi sırasında IWriter.CreateComp
 
 Mecburen IWriter arayüzü internal erişim belirleyicisini kullanmak zorunda kalmıştır. İşte sevgili kahramanımız Netspecter’ ın peşinden koştuğu abstract class bize bu tip bir vaka için çözüm getirebilir. Nasıl mı? İşte sınıf çizelgemiz (Class Diagramı) ve örnek kod parçamız.
 
-[![blg230_FinalDiagram](/assets/images/2011/blg230_FinalDiagram_thumb.gif)](/assets/images/2011/blg230_FinalDiagram.gif)
+![blg230_FinalDiagram](/assets/images/2011/blg230_FinalDiagram.gif)
 
 ```csharp
 internal class Composer 

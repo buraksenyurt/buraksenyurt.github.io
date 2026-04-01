@@ -19,6 +19,6 @@ Hiç bir zaman kullanıcılarımıza ait şifreleri açık formatta saklamamamı
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_49.png)
 
-[![PhotoTrick31](/assets/images/2011/PhotoTrick31_thumb.png)](/assets/images/2011/PhotoTrick31.png)
+![PhotoTrick31](/assets/images/2011/PhotoTrick31.png)
 
 [Hashing.rar (21,76 kb)](/assets/files/2011/Hashing.rar)

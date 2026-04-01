@@ -18,7 +18,7 @@ Aslında bu soruya cevap vermek özellikle web developer'lar için son derece ko
 
 (Tabi bir yol da RegEx kullanmaktır bildiğiniz üzere. O yolun uygulanış biçimini de size bırakıyorum)
 
-[![PhotoIpucu44](/assets/images/2012/PhotoIpucu44_thumb.png)](/assets/images/2012/PhotoIpucu44.png)
+![PhotoIpucu44](/assets/images/2012/PhotoIpucu44.png)
 
 [PerfectEmailing.rar (21,55 kb)](/assets/files/2012/PerfectEmailing.rar)
 

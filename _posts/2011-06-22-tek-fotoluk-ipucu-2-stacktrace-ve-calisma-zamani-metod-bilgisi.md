@@ -17,6 +17,6 @@ Hani olurda çalışma zamanında (Runtime) o anda yürütülmekte olan metodun 
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_22.png)
 
-### [![PhotoTrick2](/assets/images/2011/PhotoTrick2_thumb.png)](/assets/images/2011/PhotoTrick2.png)
+### ![PhotoTrick2](/assets/images/2011/PhotoTrick2.png)
 
 ### [SmartLogger.rar (21,41 kb)](/assets/files/2011/SmartLogger.rar)

@@ -22,6 +22,6 @@ Peki elinizde Actor tipinden bir liste varsa ve bir an gelipte içinden sadece S
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_187.png)
 
-[![tfi95](/assets/images/2013/tfi95_thumb.png)](/assets/images/2013/tfi95.png)
+![tfi95](/assets/images/2013/tfi95.png)
 
 Bir başka ipucunda görüşmek dileğiyle.

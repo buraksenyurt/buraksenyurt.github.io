@@ -21,6 +21,6 @@ tags:
 
 Diyelim ki buna benzer bir senaryo da bir A tipini, nispeten daha az sayıda özelliği olan Business Object karşılığına çevrimek istiyorsunuz. Hatta bu senaryo birden fazla tip için de söz konusu olabilir. Bİr sürü Entity tipiniz ve karşılığı olan Business Object sınıfınız olduğunu düşünün. Ne yaparsınız? Aşağıdaki ip ucu bir fikir verebilir mi?
 
-[![tfi_99](/assets/images/2013/tfi_99_thumb.png)](/assets/images/2013/tfi_99.png)
+![tfi_99](/assets/images/2013/tfi_99.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.

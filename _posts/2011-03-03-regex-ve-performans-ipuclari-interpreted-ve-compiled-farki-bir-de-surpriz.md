@@ -10,7 +10,7 @@ tags:
 ---
 Formula 1 merakı olanlar, yarışan araçların mühendislik olarak birbirlerine çok yakın teknolojiler ile üretildikleri ve benzer olduklarını bilirler. Gerçi bazı zamanlarda ön plana çıkan araçlar da söz konusudur. Frenaj veya hızlanma sistemlerine getirilen iyileştirmeler sonucu, diğer yarış araçlarının pilotları kim olursa olsun belirgin bir şekilde öne fırlarlar.
 
-[![blg222_Giris](/assets/images/2011/blg222_Giris_thumb.jpg)](/assets/images/2011/blg222_Giris.jpg)
+![blg222_Giris](/assets/images/2011/blg222_Giris.jpg)
 
 
 Ancak bazen de araçlar bir birlerine o kadar denktir ki, yarışın kaderini ve sonuçlarını sürücüler ile Pit-Stop’ lar sırasında yapılan kritik değişiklikler belirler. Örneğin lastik seçimlerİ, ön veya arka kanatların açısal değerleri, rüzgarın hızına göre yapılan ayarlamalar, yakıt tankının ne kadar doldurulacağı vb…
@@ -25,7 +25,7 @@ Bu notkada Regex tipine ait nesne örneklerinin oluşturulması sırasında devr
 
 Örnek senaryomuzda bu kez 150 paragraflık [Lorem Ipsum](http://tr.lipsum.com/) içeriğinin defalarca arttırılmış ve aşağıdaki şekilden de görüleceği üzere aralara bir kaç URL adresi serpiştirilmiş bir versiyonu kullanılmaktadır. Söz konusu içerik LoremIpsum.txt isimli Text tabanlı bir dosyada toplanmış olup 9567 satırlık bir test içeriği üretilmiştir.
 
-[![blg222_LoremIpsumText](/assets/images/2011/blg222_LoremIpsumText_thumb.gif)](/assets/images/2011/blg222_LoremIpsumText.gif)
+![blg222_LoremIpsumText](/assets/images/2011/blg222_LoremIpsumText.gif)
 
 Gelelim test için ele alacağımız örnek kodlarımıza.
 
@@ -130,7 +130,7 @@ Bu örnek Console uygulamasının Main metoduna ait kodlarda iki test metodu old
 
 Örneğimizde bir önceki yazımızda olduğu gibi bir URL deseni ele alınmaktadır. Bir başka deyişle LoremIpsum.txt içerisinde URL formatına uygun olan cümlelerin bulunması hedeflenmektedir. Matches metodu, MatchCollection tipinden bir koleksiyon döndürmektedir ve bu koleksiyon içerisinde, URL desenine uygun olan cümleler Match tipinden nesne örnekleri halinde yer almaktadır. Aşağıdaki Debug zamanı resminde URL desenin uygun olan cümlelere ait bir görüntü yer almaktadır.
 
-[![blg222_DebugTime](/assets/images/2011/blg222_DebugTime_thumb.gif)](/assets/images/2011/blg222_DebugTime.gif)
+![blg222_DebugTime](/assets/images/2011/blg222_DebugTime.gif)
 
 Tabi Debug görüntüsünden de anlaşılacağı üzere içeriğe ulaşmak için kod tarafında foreach gibi bir döngüden yararlanılması gerekmektedir.
 
@@ -138,11 +138,11 @@ NextMatchTest metodu ise daha farklı bir yaklaşım kullanmaktadır. Bu metodda
 
 Her iki test metodu içerisinde Regex nesne örneği oluşturulurken RegexOptions enum sabitinin ilgili değerleri kullanılmakta ve metodların Compiled modda mı yoksa Interperted modda mı çalışacakları belirlenmektedir. Buna göre çalışma zamanı sonuçlarına baktığımızda aşağıdaki örnek çıktı ile karşılaştığımızı görürüz (Tabi ki bu sonuçlar uygulamanın çalıştırıldığı sistemin çevresel özelliklerine göre farklılık gösterecek ancak kimin daha hızlı olduğu konusu pek fazla değişmeyecektir ![Wink](/assets/images/2011/smiley-wink.gif))
 
-[![blg222_LoremIpsumRuntime](/assets/images/2011/blg222_LoremIpsumRuntime_thumb.gif)](/assets/images/2011/blg222_LoremIpsumRuntime.gif)
+![blg222_LoremIpsumRuntime](/assets/images/2011/blg222_LoremIpsumRuntime.gif)
 
 Interpeted ve Compiled moda göre Matches ve NextMatch metodlarının kullanımının arka arkaya 10 kere tekrar ediliği bu testin sonuçları aşağıdaki Excel grafiğinden daha net bir şekilde anlaşılabilir.
 
-[![blg222_LoremIpsumReport](/assets/images/2011/blg222_LoremIpsumReport_thumb.gif)](/assets/images/2011/blg222_LoremIpsumReport.gif)
+![blg222_LoremIpsumReport](/assets/images/2011/blg222_LoremIpsumReport.gif)
 
 Burada en çok dikkat çeken nokta Interpreted mod ile, Compiled moda göre çok daha hızlı sürelerde sonuç alınabilmesidir. Bunun en büyük nedenlerinden birisi, Compiled modda, desenin ilk kullanıldığı sırada oluşan başlatma işlemleri için yapılan zaman kaybıdır. Ancak durum her zaman bu şekilde de gelişmeyebilir
 
@@ -150,11 +150,11 @@ Burada en çok dikkat çeken nokta Interpreted mod ile, Compiled moda göre çok
 
 Ne demek istiyorum acaba? Gelin daha önceki yazımızda ele aldığımız 160bin satırdan oluşan ve sadece doğru ve yanlış URL bilgileri içeren text dosyasını göz önüne alalım. Bu kez dosyanın satır sayısını 80bin olarak tutacağız. İşte yakaladığım çalışma zamanı sonuçlarından bir tanesi.
 
-[![blg222_UrlsTextRuntime](/assets/images/2011/blg222_UrlsTextRuntime_thumb.gif)](/assets/images/2011/blg222_UrlsTextRuntime.gif)
+![blg222_UrlsTextRuntime](/assets/images/2011/blg222_UrlsTextRuntime.gif)
 
 Ve bu sonuçlara göre oluşan Excel grafiğinin yeni hali.
 
-[![blg222_UrlsTextReport](/assets/images/2011/blg222_UrlsTextReport_thumb.gif)](/assets/images/2011/blg222_UrlsTextReport.gif)
+![blg222_UrlsTextReport](/assets/images/2011/blg222_UrlsTextReport.gif)
 
 Dikkat edileceği üzere Compiled çalışma zamanı sonuçlarında yer yer Interpreted moda göre daha hızlı süreler elde edilebildiği görülmektedir. Hatta NextMatch metodunun kullanıldığı senaryo ile en hızlı erişim süreleri elde edilmiştir (İlk denemedeki hariç
 
@@ -162,7 +162,7 @@ Dikkat edileceği üzere Compiled çalışma zamanı sonuçlarında yer yer Inte
 
 )
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_10.gif)](/assets/images/2011/Exclamation_10.gif) Şu da unutulmamalıdır ki burada Instance üzerinden çağırdığımız Matches veya Match gibi metodların, Regex tipi üzerinden çağrılabilen ve otomatik ön belleklemeyi kullanan Static versiyonları da mevcuttur. Bu versiyonların kullanımının daha hızlı olabileceğini düşünebiliriz. Ancak ben örneklerimdeki testler sırasında ve Base Class Library takımının konu ile ilgili araştırma yazılarında Instance üzerinden çağırılan Interpreted metodların, static olan versiyonlarına göre daha hızlı olabileceğini de gördüm. Bu konunun araştırılmasını da siz değerli okurlarıma bırakmak istiyorum
+![Exclamation](/assets/images/2011/Exclamation_10.gif) Şu da unutulmamalıdır ki burada Instance üzerinden çağırdığımız Matches veya Match gibi metodların, Regex tipi üzerinden çağrılabilen ve otomatik ön belleklemeyi kullanan Static versiyonları da mevcuttur. Bu versiyonların kullanımının daha hızlı olabileceğini düşünebiliriz. Ancak ben örneklerimdeki testler sırasında ve Base Class Library takımının konu ile ilgili araştırma yazılarında Instance üzerinden çağırılan Interpreted metodların, static olan versiyonlarına göre daha hızlı olabileceğini de gördüm. Bu konunun araştırılmasını da siz değerli okurlarıma bırakmak istiyorum
 
 ![Laughing](/assets/images/2011/smiley-laughing.gif)
 
@@ -200,11 +200,11 @@ namespace CompiledRegexAssembly
 
 Kodun çalıştırılması sonucu AzonRegexLib.dll isimli bir Assembly’ ın uygulamaya ait Exe ile aynı yere çıkartıldığı görülecektir.
 
-[![blg222_CompiledDll](/assets/images/2011/blg222_CompiledDll_thumb.gif)](/assets/images/2011/blg222_CompiledDll.gif)
+![blg222_CompiledDll](/assets/images/2011/blg222_CompiledDll.gif)
 
 Eğer söz konusu Assembly içeriğine kendimize işkence yaparak ILDASM (Intermediate Language Disassembler Tool) aracı yardımıyla bakarsak, aşağıdaki ekran görüntüsünde yer alan içeriğe ulaşabiliriz.
 
-[![blg222_Il1](/assets/images/2011/blg222_Il1_thumb.gif)](/assets/images/2011/blg222_Il1.gif)
+![blg222_Il1](/assets/images/2011/blg222_Il1.gif)
 
 UrlPattern isimli sınıf Regex tipinden türetilmiştir. Yapıcı metoda (Constructor) baktığımızda ise aşağıdaki IL içeriğinin üretildiğini görebiliriz.
 
@@ -287,7 +287,7 @@ Aslında mümkün değildir derken biraz kolay kaçtığımızı ifade edebiliri
 
 Yani Assembly'ın yeniden üretilmesi ve referans edilmesi gerekmektedir. Açıkçası tek bir desen değil ama n sayıda desenin kullanıldığı ve başlangıçtaki konfigurasyon seçeneklerinin belli olduğu senaryolarda kullanılması daha doğru olabilir. foreach döngüsünün çalışmasına göre LoremIpsum dosyasında geçerli URL formatında olan tüm cümleler elde edilebilecektir.
 
-[![blg222_RuntimeLast](/assets/images/2011/blg222_RuntimeLast_thumb.gif)](/assets/images/2011/blg222_RuntimeLast.gif)
+![blg222_RuntimeLast](/assets/images/2011/blg222_RuntimeLast.gif)
 
 Tabi buraya kadar bahsettiklerimizi göz önüne aldığımızda Regular Expression kontrollerinde hangi tekniği kullanacağımız yönünde kafamızda bir sürü soru oluşmuş olabilir. Aslında aynı Regular Expression nesnesinin defalarca kullanıldığı senaryolarda static üyelerin kullanılması daha cazip görünmektedir. Diğer yandan desenlerin başlangıçtaki opsiyonel seçeneklerinin belli olduğu durumlarda ise, derlenmiş versiyonlarını kullanmak daha mantıklı olabilir. İşin gerçeği son sözü söylemek için test sonuçlarına bakmak bence en doğrusudur
 

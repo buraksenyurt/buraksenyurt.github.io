@@ -10,7 +10,7 @@ tags:
 ---
 Yedek Subay olarak askerlik hizmetimi yerine getirdiğim yıllarda (O zamanlar 16 ay idi) Jandarma Genel Komutanlığı Personel Şube’ de görev almıştım. Aslında temel işim Powerpoint ile sunum hazırlamaktı ama verilen emir her ne ise onu da yerine getirmek mesuliyetini taşımaktaydım.
 
-[![cartoon-soldier-010](/assets/images/2013/cartoon-soldier-010_thumb.jpg)](/assets/images/2013/cartoon-soldier-010.jpg)
+![cartoon-soldier-010](/assets/images/2013/cartoon-soldier-010.jpg)
 
 
 Bir gün komutanım ile birlikte yine sivil hayat için anlamsız olan ama Askeri disiplin kuralları çerçevesinde gayet de makul görünen bir işe adanmıştık. Neredeyse tüm komutanlık personelinin iğneli Printer’ dan çıkartılmış karınca yazısı ebatlarındaki bilgilerini, bir diğer koca liste ile karşılaştıracak ve bir filtreleme işlemi gerçekleştirecektik. (İşin yaklaşık olarak kesintisiz çalışma ile 48 saate varabileceğini biliyorduk)
@@ -31,13 +31,13 @@ TFS mimari alt yapısı ve çevre etkileşimini incelediğimiz [şu yazımızda]
 
 Aşağıdaki şekilde bu servisler genel isimlendirmeler halinde ifade edilmektedir.
 
-[![tfsservices_1](/assets/images/2013/tfsservices_1_thumb.png)](/assets/images/2013/tfsservices_1.png)
+![tfsservices_1](/assets/images/2013/tfsservices_1.png)
 
 Dikkat edilmesi gereken notkalardan birisi de bazı servislerin her iki seviyede de yer alıyor olmasıdır. Ne varki bu servislerin alanları farklıdır. Sadece bir koleksiyon ve içeriği için kullanılabilecek olan hizmetler Collection Level grubunda yer almaktadır. Diğer taraftan tüm TFS sunucusunu ilgilendiren servisler de Server Level grubuna dahildir.
 
 Yine dikkat edileceği üzere koleksiyon seviyesinde farklılaşan (Team Project Collection örneklerine özel olan) hizmetler bulunmaktadır. Örneğin Version Control veya Lab Management gibi. Normal şartlarda bu servislere, kurulu olan TFS ortamına erişim yetkisi olan istemcilerden ulaşılabilinmektedir. Örneğin koleksiyon seviyesinde kullanılabilen ve proje listesinin çekilmesi, proje oluşturması, silinmesi, branch silinmesi vb operasyonları ele alabildiğimiz Common Structure Service hizmetinin 4ncü versiyonuna aşağıdaki şekilde görüldüğü gibi ulaşabiliriz.
 
-[![tfsservices_3](/assets/images/2013/tfsservices_3_thumb.png)](/assets/images/2013/tfsservices_3.png)
+![tfsservices_3](/assets/images/2013/tfsservices_3.png)
 
 Çok doğal olarak diğer servislere de ulaşmamız, hatta WSDL (Web Service Description Language) çıktılarına bakmamız mümkündür. Ben çalışmakta olduğum Team Foundation Server 2012 için, uygulama sunucusunun yüklü olduğu IIS (Internet Information Services) altında yaptığım araştırmalarda, aşağıdaki uzun listeye ulaştığımı rahatlıkla ifade edebilirim.
 
@@ -231,7 +231,7 @@ ve işte çalışma zamanına ait örnek ekran çıktısı
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_185.png)
 
-[![tfsservices_4](/assets/images/2013/tfsservices_4_thumb.png)](/assets/images/2013/tfsservices_4.png)
+![tfsservices_4](/assets/images/2013/tfsservices_4.png)
 
 Bir servis adına tıklayın ve içeriğine ulaşın
 
@@ -243,11 +243,11 @@ Referans Etmek
 
 Team Foundation Server üzerinden sunulan XML Web Service örneklerini herhangibir.Net istemcisi tarafından tüketmek istediğimizde, Client Object Model üzerinden erişimde bulunmamız gerekmektedir. Normal şartlarda ilgili Web Service’ leri, Add Service Reference sekmesinden hareket edilerek projeye ilave edilebilir ve üretilen Proxy tipinin metodlarına ulaşılabilir.
 
-[![tfsservices_6](/assets/images/2013/tfsservices_6_thumb.png)](/assets/images/2013/tfsservices_6.png)
+![tfsservices_6](/assets/images/2013/tfsservices_6.png)
 
 Ancak çalışma zamanında servis tarafında kuvvetle muhtemel aşağıdaki şekilde görülen 504 Unknown Host hatası alınacaktır.
 
-[![TfsError2](/assets/images/2013/TfsError2_thumb.png)](/assets/images/2013/TfsError2.png)
+![TfsError2](/assets/images/2013/TfsError2.png)
 
 Bunun nedeni aslında ilgili servislerin, Client Object Model (veya Server Object Model) tafaından ele alınış ve üretiliş şekilleridir. Ancak unutulmaması gereken bir nokta da şudur. Bu servislerin çoğu, TFS'in kurulu makine üzerinden erişilmeye çalışıldığında (en azından bir tarayıcı ile) bildiğimiz XML Web Service'leri gibi tüketilebilirler. Örneğin TFS'in kurulu olduğu makinede http://tfsserver:8080/tfs/TeamFoundation/Administration/ v3.0/WarehouseControlService.asmx'e ulaşmayı deneyin. (Yani ilgili servislere kurulu olduğu makineden yerel olarak ulaşmayı) Bu durumda aşağıdaki gibi bir operasyonu deneyebileceğinizi görebilirsiniz.
 
@@ -346,11 +346,11 @@ ICommonStructureService4 commonStructureService = (ICommonStructureService4)coll
 
 kod satırı ile Common Structure Service örneği üretilmektedir. Bu adımdan sonra söz konusu servise ait referansın fonksiyonları kullanılabilir. Söz gelimi bir proje adı verilerek özelliklerinin elde edilmesi sağlanabilir. Bu özellikler arasında bir Team Project’ in uyguladığı Process Template bilgisi ve hatta XML tabanlı şablon içeriği de yer almaktadır. Aşağıdaki örnek ekran çıktısında ARGE isimli projenin ulaşılan bilgileri gösterilmektedir.
 
-[![tfsservices_7](/assets/images/2013/tfsservices_7_thumb.png)](/assets/images/2013/tfsservices_7.png)
+![tfsservices_7](/assets/images/2013/tfsservices_7.png)
 
 Diğer yandan IProcessTemplate arayüzüne atanan servis referansının elde edilmesi için, GetService metodunun generic sürümünden yararlanılmıştır. Sonrasında ise TFS sunucusunda yüklü olan Process Template listesine gidilerek Name, State, Metadata, Id, Description gibi bilgileri elde edilmiştir. Aşağıdaki ekran çıktısına bakıldığında Scrum 2.0, CMMI ve MSF şablonlarının yüklenmiş olduğu bilgisine ulaşılabilinir.
 
-[![tfsservices_8](/assets/images/2013/tfsservices_8_thumb.png)](/assets/images/2013/tfsservices_8.png)
+![tfsservices_8](/assets/images/2013/tfsservices_8.png)
 
 Tabi burada akla takılan en önemli sorunlardan birisi kullanabileceğimiz TFS Web Service’ lerinin kod tarafındaki GetService metodu tarafından kullanılabilecek karşılıklarının neler olduğudur?
 

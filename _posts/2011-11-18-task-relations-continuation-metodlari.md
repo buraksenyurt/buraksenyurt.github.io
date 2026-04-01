@@ -10,7 +10,7 @@ tags:
 ---
 Böylesine yağmurlu ve sabah trafiğinin tavan yaptığı bir günde size ne Radyo Eksen’ deki güzel melodiler, ne de okuduğunuz mizah dergisindeki karikatürler iyi gelmiyorsa, başka bir şeyle uğraşmanın yeridir diyebilirim. Ben bu sıkıntıyı aşmak ve kendimi daha iyi hissetmek adına bir makale daha yazmaya karar verdim ve hemen Windows Live Writer programını açtım
 
-[![1342533_gray_day_over_water](/assets/images/2011/1342533_gray_day_over_water_thumb.jpg)](/assets/images/2011/1342533_gray_day_over_water.jpg)
+![1342533_gray_day_over_water](/assets/images/2011/1342533_gray_day_over_water.jpg)
 
 
 ![Gülümseme](/assets/images/2011/wlEmoticon-smile_20.png)
@@ -90,11 +90,11 @@ namespace TaskContinuation
 
 Bir başka deyişle Succesor Task devreye girmeyecektir. Bu durumu uygulamayı çalışma zamanında Debug ederken daha net bir şekilde görebiliriz.
 
-[![bei_33](/assets/images/2011/bei_33_thumb.gif)](/assets/images/2011/bei_33.gif)
+![bei_33](/assets/images/2011/bei_33.gif)
 
 Şekilden de görüleceği üzere Task örneklerinin her üçü de Start edilmiş ancak succesorTask’ ın o anki Status durumu WaitingForActivation olarak kalmıştır. Bunun sebebi, önceki Task örneklerinin tamamının işleyişini henüz bitirmemiş olmasıdır. Örnek uygulamamızın çalışma zamanındaki görüntüsü ise aşağıdaki gibi olacaktır.
 
-[![bei_34](/assets/images/2011/bei_34_thumb.gif)](/assets/images/2011/bei_34.gif)
+![bei_34](/assets/images/2011/bei_34.gif)
 
 Görüldüğü üzere bir Task örneğinin, kendisinden önceki başka Task örneklerinin tamamının işleyişini bitirmesinden sonra devreye girmesi bekleniyorsa, ContinueWhenAll metodu kullanılabilir. Aslında bakarsanız daha gerçekçi senaryolara gitmek için Continue… metodlarının aldığı TaskContinuationOptions enum sabitinin değerlerine bakmakta yarar vardır. Çünkü bu Enum sabitinin değerleri, Succesor Task örneğinin hangi durumlarda devreye girmesi konusunda daha farklı bakış açılarının değerlendirilebilmesini sağlamaktadır. Enum sabitinin alabileceği değerler ise şunlardır.
 
@@ -162,11 +162,11 @@ namespace TaskContinuation
 
 Şimdi bu senaryoda daha farklı bir durum söz konusudur. TaskA içerisinde bilinçli olarak bir Exception üretildiği görülmektedir. Tabiki gerçek hayat senaryosunda böyle bir olasık olma ihtimali olduğu göz önüne alınmalıdır. Diğer yandan TaskA üzerinden ContinueWith metodunu kullanarak succesorTask örneği oluşturulmakta ve OnlyOnFaulted enum sabiti değeri verilmektedir. Buna göre, succesorTask nesne örneğinin devreye girme durumu, bir önceki Antecedent Task örneği içerisinde bir Exception oluşması ve Faulted durumuna düşmesi halidir. Dolayısıyla örneğimizi çalıştırdığımızda aşağıdaki ekran görüntüsüne benzer bir sonuç ile karşılaşmamız son derece doğaldır.
 
-[![bei_35](/assets/images/2011/bei_35_thumb.gif)](/assets/images/2011/bei_35.gif)
+![bei_35](/assets/images/2011/bei_35.gif)
 
 Diğer yandan throw Exception satırı yorum haline getirilir veya kaldırılırsa bu kez çalışma zamanı görüntüsü aşağıdaki gibi olacaktır.
 
-[![bei_36](/assets/images/2011/bei_36_thumb.gif)](/assets/images/2011/bei_36.gif)
+![bei_36](/assets/images/2011/bei_36.gif)
 
 Görüldüğü üzere bir önceki Task örneğinde herhangibir Exception durumu söz konusu olmadığından, succesorTask örneğine ait metod icra edilmemiştir. Tabi burada akıllı bir geliştirici hemen şunu soracaktır; Birden fazla Task örneğinden herhangibirinde bir hata meydana geldiğinde ilgili Succesor Task devreye girse olmaz mı?
 
@@ -233,7 +233,7 @@ Ne yazık ki uygulamayı çalıştırdığımızda aşağıdaki ekran görüntü
 
 ![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_8.png)
 
-[![bei_37](/assets/images/2011/bei_37_thumb.gif)](/assets/images/2011/bei_37.gif)
+![bei_37](/assets/images/2011/bei_37.gif)
 
 Bu aslında TaskContinuationOptions enum sabitine verdiğimiz OnlyOnFaulted değeri için söz konusu bir durumdur. (Aslına bakarsanız ben bu senaryonun çalışmasını beklerdim ![Kafası karışmış gülümseme](/assets/images/2011/wlEmoticon-confusedsmile_11.png)) Diğer enum sabiti değerlerinde bu tip bir sorun ile karşılaşmasanız da OnlyOnFaulted hakkatten bir Fault vermektedir
 
@@ -300,7 +300,7 @@ namespace TaskContinuation
 
 Uygulama kodunda yer alan TaskA ve TaskB nesne örneklerine ait kod bloklarından ilk olarak TaskB tamamlanacaktır (Verilen Thread durdurma süreleri gereği) Buna göre de çalışma zamanında TaskB tamamlanır tamamlanmaz Succesor Task bloğu yürütülecektir. Aşağıda görüldüğü gibi.
 
-[![bei_38](/assets/images/2011/bei_38_thumb.gif)](/assets/images/2011/bei_38.gif)
+![bei_38](/assets/images/2011/bei_38.gif)
 
 Böylece geldik bir yazımızın daha sonra
 

@@ -12,7 +12,7 @@ tags:
 ---
 Yandaki görüntü 1988 yılında Mevlüt Dinç (nam-ı diğer Mev Dinc) tarafından kurulan [Vivid Image](http://en.wikipedia.org/wiki/Vivid_Image) firmasının geliştirdiği oyunlardan birisine ait. [The First Samurai](http://en.wikipedia.org/wiki/First_Samurai_(video_game)). Mev Dinc ülkemizin yetiştirdiği en önemli değerlerden birisidir. Kendisi ile NedirTv topluluğunda yapılmış güzel bir röportaj da bulunmaktadır. Pek çoğumuz onu, [SOBEE](http://www.sobee.com.tr) firması ile de tanımıştır. Ben ise uzun zaman önce Microsoft’ un Darphane’ deki binasında katıldığım bir söyleşiden…
 
-[![eftsplit_0](/assets/images/2014/eftsplit_0_thumb.png)](/assets/images/2014/eftsplit_0.png)
+![eftsplit_0](/assets/images/2014/eftsplit_0.png)
 
 
 MVP olduğum o dönemlerde Microsoft Türkiye düzenlediği bir etkinlik ile onu karşımıza çıkartmıştı. Kendisini büyük bir keyifle dinlemiştik. Nasıl bu günlere geldiğinden, geliştirdiği oyunlardan, kurduğu SOBEE firması'nın projelerinden bahsetmişti. Hatta akılda kalan önemli ifadelerden birisi de, yeni geliştirmekte oldukları oyunlarda C++ yerine C# programlama dilini tercih etmeleriydi. (Sene 2007 olabilir) Ancak benim daha çok aklımda kalan tam olarak hatırlayamasam da aşağıda yazan ifadeleriydi.
@@ -82,7 +82,7 @@ namespace HowTo_EFTable
 
 Pek tabi dikkat edilmesi gereken önemli noktalar bulunmaktadır. Söz gelimi Document ve aslında büyük boyutlu içerikleri barındıran DocumentContent sınıfları arasında bir ilişki vardır. Öyleki her ikisi de aslında aynı tabloyu işaret etmelidir. Bunun için her iki sınıfın DocumentID isimli özellikleri Key nitelikleri (attribute) ile işaretlenmiştir.
 
-> Entity tiplerinde Key niteliği kullanılmazsa kuvvetle muhtemel aşağıdaki gibi bir çalışma zamanı hatası alınacaktır.[![eftsplit_1](/assets/images/2014/eftsplit_1_thumb.png)](/assets/images/2014/eftsplit_1.png)
+> Entity tiplerinde Key niteliği kullanılmazsa kuvvetle muhtemel aşağıdaki gibi bir çalışma zamanı hatası alınacaktır.![eftsplit_1](/assets/images/2014/eftsplit_1.png)
 
 Document tipi içerisinde yer alan Content isimli özellik aslında DocumentContent tipindedir ve bir Navigation Property şeklinde düşünülebilinir.(Sanki iki farklı tablo arasında one-to-one Relation kuruyoruz gibi düşünebiliriz)
 
@@ -201,7 +201,7 @@ Eager Loading tekniğinin uygulandığı durumda ise DocumentContent tipinin iş
 
 Aslında durumu daha iyi analiz etmek adına çalışma zamanı çıktılarına bakabiliriz. Log içeriğini Console penceresine yansıttığımızdan, arka planda çalıştırılan SQL Script'lerini kolayca görebiliriz.
 
-[![eftsplit_5](/assets/images/2014/eftsplit_5_thumb.png)](/assets/images/2014/eftsplit_5.png)
+![eftsplit_5](/assets/images/2014/eftsplit_5.png)
 
 Şimdi ilk LINQ ifadesini ele alalım (Lazy Loading region’ lı kısım)
 
@@ -258,7 +258,7 @@ Tabi program çalıştırıldığında modelin inşasının sonuçlarına da bak
 
 Ayrıca kod tarafında gerçekleştirilen Insert işlemi sonrasında, iki farklı Entity örneğindeki özellik değerlerinin tek bir satır içerisine yerleştirildiği fark edilebilir.
 
-[![eftsplit_4](/assets/images/2014/eftsplit_4_thumb.png)](/assets/images/2014/eftsplit_4.png)
+![eftsplit_4](/assets/images/2014/eftsplit_4.png)
 
 Sonuç
 

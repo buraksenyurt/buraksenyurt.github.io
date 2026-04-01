@@ -16,7 +16,7 @@ tags:
 ---
 Geçtiğimiz gün National Geographic kanalında Mega Fabrikalar’ ı seyretme fırsatı buldum. Amerikalı Dodge firması efsane Challanger‘ ı yeniden üretmekteydi. Konu bu üretimin gerçekleştirildiği mega fabrikaydı.
 
-[![Dodge-Challenger-production-1024x566](/assets/images/2013/Dodge-Challenger-production-1024x566_thumb.jpg)](/assets/images/2013/Dodge-Challenger-production-1024x566.jpg)
+![Dodge-Challenger-production-1024x566](/assets/images/2013/Dodge-Challenger-production-1024x566.jpg)
 
 
 Robotların, gelişmiş endüstürinin ve insan gücünün bir araya geldiği fabrika, sadece 24 saat içerisinde üretim hattından mükemmel spor arabalar çıkmaktaydı. Üstelik motor bloğu da kıtanın bir diğer ucundan geliyordu.
@@ -46,15 +46,15 @@ Elimizde Scrum 2.0 formatında oluşturulmuş bir Team Project var. Amacımız W
 
 İşe ilk olarak Visual Studio 2012 ortamında bir Word 2010 Document projesi oluşturarak başlamalıyız.
 
-[![tfsword_1](/assets/images/2013/tfsword_1_thumb.png)](/assets/images/2013/tfsword_1.png)
+![tfsword_1](/assets/images/2013/tfsword_1.png)
 
 Bunun için yukarıdaki ekran görüntüsünde olduğu gibi Office/Sharepoint sekmesinde yer alan Word 2010 Document şablonunun seçilmesi yeterlidir. Word uygulaması içerisinde Team Foundation Server Client Object Model kullanılacağından ilgili Assembly referanslarının projeye eklenmesi de gerekmektedir. (Bu örnek için Microsoft.TeamFoundation.Client ve Microsoft.TeamFoundation.WorkItemTracking.Client dll’ lerini eklemeliyiz)
 
-[![tfsword_3](/assets/images/2013/tfsword_3_thumb.png)](/assets/images/2013/tfsword_3.png)
+![tfsword_3](/assets/images/2013/tfsword_3.png)
 
 Word dokümanının tasarımını ise aşağıdaki ekran görüntüsünde yer aldığı gibi yapabiliriz.
 
-[![tfsword_4](/assets/images/2013/tfsword_4_thumb.png)](/assets/images/2013/tfsword_4.png)
+![tfsword_4](/assets/images/2013/tfsword_4.png)
 
 Oldukça sade bir tasarımımız var. Örneği mümkün olduğunca basit seviyede tutmamız önemli. Product Backlog Item ile Task öğelerine ait Title ve Description girişleri için PlainTextContentControl bileşeninden yararlanılmaktadır. Ve,
 
@@ -157,25 +157,25 @@ Testler
 
 Artık uygulamayı test edebiliriz. Örnek olarak ben aşağıdaki ekran görüntüsünde yer alan içeriği oluşturdum.
 
-[![tfsword_5](/assets/images/2013/tfsword_5_thumb.png)](/assets/images/2013/tfsword_5.png)
+![tfsword_5](/assets/images/2013/tfsword_5.png)
 
 Şu aşamda Save işlemini icra ettiğimizde TFS tarafında aşağıdaki içeriklerin oluştuğuna şahit olabiliriz. Dikkat edileceği üzere “Müşteri karakteristiği oluşturma” isimli bir Product Backlog Item oluşturulmuş ve varsayılan olarak o anki güncel Sprint’ e ilave edilmiştir.
 
-[![tfsword_6](/assets/images/2013/tfsword_6_thumb.png)](/assets/images/2013/tfsword_6.png)
+![tfsword_6](/assets/images/2013/tfsword_6.png)
 
 Product Backlog Item açıldığında bir Id değeri aldığını ve Word dosyasında belirttiğimiz Description içeriğine sahip olduğunu da görebiliriz.
 
-[![tfsword_7](/assets/images/2013/tfsword_7_thumb.png)](/assets/images/2013/tfsword_7.png)
+![tfsword_7](/assets/images/2013/tfsword_7.png)
 
 Hatta Tasks kısmına geçtiğimizde, Child olarak bağladığımız Work Item öğelerini de görebiliriz. Dikkat edileceği üzere 6539 ve 6540 numaralı Task öğeleri Child olarak 6538 numaralı Product Backlog’ a eklenmiştir.
 
-[![tfsword_8](/assets/images/2013/tfsword_8_thumb.png)](/assets/images/2013/tfsword_8.png)
+![tfsword_8](/assets/images/2013/tfsword_8.png)
 
 Pek tabi ki bu Task örneklerine çift tıklandığında, Word dosyasında belirttiğimiz Title ve Description bilgilerine sahip olduklarını görebiliriz.
 
-[![tfsword_9](/assets/images/2013/tfsword_9_thumb.png)](/assets/images/2013/tfsword_9.png)
+![tfsword_9](/assets/images/2013/tfsword_9.png)
 
-[![tfsword_10](/assets/images/2013/tfsword_10_thumb.png)](/assets/images/2013/tfsword_10.png)
+![tfsword_10](/assets/images/2013/tfsword_10.png)
 
 Her şey çok kolay görünüyor değil mi? Ama pek çok eksik ve tamamlanması gereken iş var. Bu işlerin tamamlanması da önemli bir development eforunu gerektirmekte.
 

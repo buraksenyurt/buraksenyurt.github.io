@@ -19,7 +19,7 @@ Asp.Net 4.5 ile gelen önemli tiplerden birisi de, System.Web.ModelBinding isim 
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_132.png)
 
-[![tfi_67_75](/assets/images/2012/tfi_67_75_thumb.png)](/assets/images/2012/tfi_67_75.png)
+![tfi_67_75](/assets/images/2012/tfi_67_75.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

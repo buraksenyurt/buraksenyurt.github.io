@@ -15,7 +15,7 @@ tags:
 ---
 Bir süredir şirket içerisinde kullanılacak olan web tabanlı bir.Net uygulamasının geliştirilmesinde görev almaktayım. Uygulama, yürütülen süreç gereği her iterasyon sonunda yeni özellikler eklenmiş ve hataları giderilmiş biçimde Üretim (Production) ortamına taşınmakta.
 
-[![browser_wars](/assets/images/2014/browser_wars_thumb.jpg)](/assets/images/2014/browser_wars.jpg)
+![browser_wars](/assets/images/2014/browser_wars.jpg)
 
 
 Projede kaynak sıkıntısı nedeniyle uzun bir süre servis katmanı haricinde kalan arayüz tarafı ile de ilgilenmek zorunda kaldım. Arayüz tarafı ile uğraşırken iş biriminden gelen isteklere göre CSS (Cascading Style Sheets) ve bol miktarda Javascript kodlamak benim gibi acemiler için epeyce zorlayıcıydı. Lakin en çok zaman kaybettiğim vaka, şirket içinde kullanılmakta olan eski,yeni ve çeşitli tipteki tarayıcıların uyumlu çalışmasının sağlanabilmesiydi. Kimi lokasyonda Internet Explorer 8, kimi yerlede Google Chrome’ un en güncel sürümü bulunmakta. Hatta global çevrimde Firefox standart olarak her bilgisasyarda yüklü geliyor.
@@ -34,7 +34,7 @@ Senaryo
 
 Bu yazımızda bir kavram ve terim cümbüşü içerisinde yer alacağımızı söyleyebilirim. Yazacağımız basit bir WCF servisini öncelikle REST tabanlı çalışır hale getireceğiz. Ardından söz konusu servise jQuery kütüphanesinden yararlanarak bir Ajax çağrısı gerçekleştireceğiz. Temel hedefimiz ise HTTP Post metoduna göre bir içeriği tarayıcı üzerinden servise göndermek olacak. Lakin JSON (JavaScript Object Notation) tipinden bir nesne kullanacağız. Kabaca aşağıdaki çizelge de görülen durumun söz konusu olduğunu söyleyebiliriz.
 
-[![restJquery_7](/assets/images/2014/restJquery_7_thumb_1.png)](/assets/images/2014/restJquery_7_1.png)
+![restJquery_7](/assets/images/2014/restJquery_7_1.png)
 
 Bu toplu senaryo aslına bakılırsa günümüzün popüler pek çok web tabanlı uygulamasında kullanılabilecek türden. Haydi gelin parmaklarımızı sıvayalım...
 
@@ -132,7 +132,7 @@ Servis tarafı için önem arz eden konulardan birisi de EndPoint tanımlamasıd
 
 endpoint elementi içerisinde yer alan binding niteliğine webHttpBinding atanması haricinde bir de HTTP davranışının verilmesi söz konusudur. Bunun için dikkat edileceği üzere bir endPoint Behavior tanımlaması yapılmış ve webHttp değeri eklenmiştir. Eğer bir problem yoksa ProductService.svc dosyasının tarayıcı üzerinde aşağıdaki gibi açılması gerekir.
 
-[![restJquery_1](/assets/images/2014/restJquery_1_thumb_1.png)](/assets/images/2014/restJquery_1_1.png)
+![restJquery_1](/assets/images/2014/restJquery_1_1.png)
 
 > Servisin Metadata Publishing özelliği kapalıdır. Bilindiği üzere REST tabanlı servislere HTTP protokolü ve metodları ile erişilmektedir. Bu yüzden istemci tarafında bir Proxy nesnesi kullanılmasına gerek yoktur.
 
@@ -203,7 +203,7 @@ Web sayfasında dikkat edilmesi gereken noktalardan birisi de title elementinin 
 
 Bunu şöyle ifade etmeye çalışalım. Örneği gerçekleştirdiğimiz sistemde Internet Explorer'ın 10 sürümü bulunmakta ve web sayfasının aslında IE Compatibility Mode'da çalıştığı görülmektedir. Nitekim bu bildirimin meta tag olarak bildirilmemesi halinde istemci tarafında bir script hatası ile karşılaşılmaktadır.
 
-[![restJquery_2](/assets/images/2014/restJquery_2_thumb_1.png)](/assets/images/2014/restJquery_2_1.png)
+![restJquery_2](/assets/images/2014/restJquery_2_1.png)
 
 > Bu sorun IE 11' de kendini göstermeyebilir. Ya da jQuery kütüphanesinin daha eski bir sürümü böyle bir hatayı oluşturmayabilir. Hatta bu meta tag açık olduğunda Document Mode'un IE 9, 8 ve 7 olduğu durumlarda kütüphanenin aynı hatayı vermeye devam ettiği de tespit edilmiştir. Bu tarayıcıları anlamak hakikaten zor
 >
@@ -213,7 +213,7 @@ Uyumluluk Sonrası Chrome Öncesi ve CORS
 
 Örneğimizi Internet Explorer ile (en azından sistemde var olan sürümü ile) uyumlu hale getirdik diyebiliriz. Default.aspx sayfasında Add New Product başlıklı butona bastığımızda aşağıdakine benzer bir mesaj kutusu ile karşılaşmamız gerekmektedir.
 
-[![restJquery_3](/assets/images/2014/restJquery_3_thumb_1.png)](/assets/images/2014/restJquery_3_1.png)
+![restJquery_3](/assets/images/2014/restJquery_3_1.png)
 
 Görüldüğü üzere başarılı bir şekilde servis çağrısı yapılmıştır. JSON içeriği üretilmiş ve servisden benzersiz bir GUID değeri elde edilmiştir. Ne var ki örnek Chrome'da çalışmamaktadır
 
@@ -221,7 +221,7 @@ Görüldüğü üzere başarılı bir şekilde servis çağrısı yapılmıştı
 
 (Yine örneğin geliştirildiği makinedeki tarayıcı sürüm için böyle bir durum oluştuğunu ifade edelim)
 
-[![restJquery_4](/assets/images/2014/restJquery_4_thumb_1.png)](/assets/images/2014/restJquery_4_1.png)
+![restJquery_4](/assets/images/2014/restJquery_4_1.png)
 
 Pek de sevimli olmayan bir hata mesajı
 
@@ -229,7 +229,7 @@ Pek de sevimli olmayan bir hata mesajı
 
 Eğer Chrome tarafında debug işlemi uygulanırsa aşağıdaki gibi bazı hataların oluştuğuna şahit olunur. İşte buton tıklandıktan sonraki durum.
 
-[![restJquery_5](/assets/images/2014/restJquery_5_thumb_1.png)](/assets/images/2014/restJquery_5_1.png)
+![restJquery_5](/assets/images/2014/restJquery_5_1.png)
 
 3 hata mesajı söz konusudur. Hata mesajlarının ikisi jQuery kütüphanesinden gelmektedir ama ana fikir söz konusu metod çağrısına izin verilmemiş olmasıdır. Aslında dikkatli gözler şunu hemen fark edecektir. Web uygulamasının host ediliği port ile WCF Service uygulamasının host edildiği port birbirinden farklıdır. Bu Cross Domain çağrı Chorme tarafından işlenmemiştir. Çözüm olarak (ki burada istediğimiz sadece servisin Chrome üzerinden IE'de olduğu gibi çağırılabildiğini görmektir) ilgili servisin ve web uygulamasının aynı domain'de host edilmesi sağlanabilir. Yani IIS altına atılmaları halinde her hangibir sorun olmadan çağırılabildikleri görülecektir.
 
@@ -254,7 +254,7 @@ protected void Application_BeginRequest(object sender, EventArgs e)
 
 BeginRequest metodu tahmin edileceği üzere WCF servisini host ettiğimiz uygulamaya gelecek her talep için devreye girecektir. jQuery ile gerçekleştirdiğimiz ajax çağrısında ContentType Header bilgisi kullanılmış ve POST metoduna göre talep de bulunulmuştur. BeginRequest metodunun yaptığı pratikte bu şekilde gelen istekleri geri çevirmemek ve istemci tarafına da uygun olan Header bilgisini göndermektir. Söz konusu değişiklik sonrası uygulamanın Chrome üzerinde de sorunsuz bir şekilde çalışabildiği görülecektir.
 
-[![restJquery_6](/assets/images/2014/restJquery_6_thumb_1.png)](/assets/images/2014/restJquery_6_1.png)
+![restJquery_6](/assets/images/2014/restJquery_6_1.png)
 
 Eksikler
 

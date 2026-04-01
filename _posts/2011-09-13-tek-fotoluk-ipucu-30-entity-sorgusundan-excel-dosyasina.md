@@ -17,6 +17,6 @@ tags:
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_48.png)
 
-[![PhotoTrick30](/assets/images/2011/PhotoTrick30_thumb.png)](/assets/images/2011/PhotoTrick30.png)
+![PhotoTrick30](/assets/images/2011/PhotoTrick30.png)
 
 [EntityToExcel.rar (57,44 kb)](/assets/files/2011/EntityToExcel.rar)

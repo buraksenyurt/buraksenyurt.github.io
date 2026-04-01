@@ -19,7 +19,7 @@ Malum bildiğiniz üzere get ve set bloklarından oluşan özellikler (Propertie
 
 Nasıl mı? Aynen aşağıdaki fotoğrafta görüldüğü gibi.
 
-[![tfi_84](/assets/images/2013/tfi_84_thumb.png)](/assets/images/2013/tfi_84.png)
+![tfi_84](/assets/images/2013/tfi_84.png)
 
 Gördüğünüz gibi ReadOnly olarak tanımlanmış bir Property, OperationContract niteliği ile işaretlenen get metodunu dışarıya operasyon olarak sunabilmekte. Bir başka ipucundan görüşmek dileğiyle
 

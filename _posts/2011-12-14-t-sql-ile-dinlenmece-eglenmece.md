@@ -17,7 +17,7 @@ tags:
 ---
 Hiç canınızın sıkıldığı ve böyle bir buhran anına girdiğinizde SQL Server Management Studio'yu açıp T-SQL ile eğlenceli bir şeyler yapmaya çalıştığınız oldu mu?
 
-[![fun](/assets/images/2011/fun_thumb.jpg)](/assets/images/2011/fun.jpg)
+![fun](/assets/images/2011/fun.jpg)
 
 Açıkçası geçtiğimiz günlerde böyle sıkkın ve bıkkın bir ruh halindeyken ve konuşmak istediğim tüm arkadaşlarım yoğunken, ekranımda duran Management Studio'daki bembeyaz ve bomboş Query penceresi ile muhabbet etmeye karar verdim. Aslında amacım basitti. Daha önceki tecrübelerime dayanarak ihtiyaçlar dahilinde kullandığım T-SQL ifadelerini şöyle bir tekrar etmeye çalışacak ve siz değerli okurlarıma bir blog girdisi olarak sunacaktım. Aklıma geldikçe ihtiyaçlarımın T-SQL karşılıklarını yazmaya başladım. Düşündüğüm ilk gereksinim, sistemimde yüklü olan kaç veritabanı olduğunu ve bunlara ait bazı temel bilgileri edinmekti...İşte serüvenimiz bu ilk sorgumuz ile başlıyor.
 
@@ -57,7 +57,7 @@ order by [Database Name]
 
 Yukarıdaki SQL sorgusunu kullanarak sistemde var olan veritabanlarına ait bazı temel bilgileri elde edebiliriz. Söz konusu ifadenin çalışma zamanındaki çıktısı aşağıdakine benzer olabilir. Bu sonuçlada pek tabi benim sistemimde yer alan veritabanları ve onlara ait bilgileri bulunmaktadır. (Ekran çıktısının orjinal halini görmek içim fotoğrafa tıklayın)
 
-[![artcl_3_1](/assets/images/2011/artcl_3_1_thumb.gif)](/assets/images/2011/artcl_3_1.gif)
+![artcl_3_1](/assets/images/2011/artcl_3_1.gif)
 
 Görüldüğü üzere sistemimde var olan veritabanlarının adlarını, oluşturulma zamanlarını, SQL Server uyumluluk sürümlerini, hangi Collation’ ı kullandıklarını ve bunlara benzer bilgilerini elde etmiş bulunuyoruz (Doğruyu söylemek gerekirse SQL tarafında sys ön eki ile başlayan View’ lar içerisinde inanılmaz sürprizler bulumaktadır. İncelemediyseniz bile araştırmanızı şiddetle öneririm![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_76.png))
 
@@ -79,7 +79,7 @@ order by [Object]
 
 Dikkat edileceği üzere sys.schema ve sys.allobjects isimli sistem görünümlerinden yararlanmaktayız. sys.allobjects tüm veritabanı nesnelerini tutan bir görünüm sunmaktadır. Aslında sadece belirli bir veritabanı bağlantısı ile ilişkili olan nesnelere gitmek istersek sys.objects görünümünden de yararlanabiliriz. Söz konusu T-SQL ifademizin benim sistemimde ürettiği sonuçlar ise aşağıdaki gibidir.
 
-[![artcl_3_2](/assets/images/2011/artcl_3_2_thumb.gif)](/assets/images/2011/artcl_3_2.gif)
+![artcl_3_2](/assets/images/2011/artcl_3_2.gif)
 
 Eğlenceli değil mi?
 
@@ -100,7 +100,7 @@ order by Count(C.Column_id) desc
 
 Bu kez sys.tables ve sys.columns view nesnelerini ele alıp ve kullanıcı tanımlı tabloları adlarına göre gruplandırarak sonuca ulaşmaya çalıştım. Tabi kendi sistemimde bu tabloyu yürüttüğümde aşağıdaki ekran çıktısında yer alan sonuçları elde ettim.
 
-[![artcl_3_3](/assets/images/2011/artcl_3_3_thumb.gif)](/assets/images/2011/artcl_3_3.gif)
+![artcl_3_3](/assets/images/2011/artcl_3_3.gif)
 
 Tabi kendi sistemimde gayet makul seviyelerde rakamlara ulaştığımı ifade edebilirim. Nasıl ki kod yazarken bazı metrikleri uyguluyor ve örneğin satır sayısı 25i geçen metodları tespit edip kod standartları açısından denetlemeler yapıyoruz, benzer şekilde SQL tarafında da bu tip metrikleri uygulayabiliriz. Bu sorgu söz konusu metriklerden birisi olarak düşünülebilir. Tabi çalışmakta olduğum bankada aynı sorguyu denediğim de piuvvvvv
 
@@ -127,7 +127,7 @@ where ROUTINE_TYPE='PROCEDURE' and ROUTINE_DEFINITION like '%UPDATE%'
 
 Görüldüğü üzere farklı bir View içerisinde Stored Procedure’ lerin T-SQL içerikleri de tutulmaktadır. Sorgunun sonucu olarak aşağıdaki ekran görüntüsünde yer alan çıktıları elde ettim. (Size bir antrenman önerebilirim. Eğer çok sayıda veritabanı ve çok sayıda SP ile karmaşık iş süreçlerini barındıran bir sistemde görev alıyorsanız, örneğin içerisinde @@IDENTITY, BEGIN TRANSACTION gibi kritik terimleri içeren SP’ leri araştırmayı deneyebilirisiniz ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_76.png))
 
-[![artcl_3_4](/assets/images/2011/artcl_3_4_thumb.gif)](/assets/images/2011/artcl_3_4.gif)
+![artcl_3_4](/assets/images/2011/artcl_3_4.gif)
 
 Aklıma sorgu geldikçe geliyordu. Karşımdaki SQL Query pencersi iyi bir arkadaştım. Ne sorsam cevap veriyordu (Yani sayılır). Gerçi bazen ırım kırım ediyor naz yapıyordu ama olsun
 
@@ -143,7 +143,7 @@ sp_spaceused 'Production.Product'
 
 Sonuç ise şöyleydi.
 
-[![artcl_3_5](/assets/images/2011/artcl_3_5_thumb.gif)](/assets/images/2011/artcl_3_5.gif)
+![artcl_3_5](/assets/images/2011/artcl_3_5.gif)
 
 Şimdi işi bir adım daha ileri götürmeliydim. Çünkü asıl amacım sistemde ne kadar tablo varsa her birinin boyutsal özelliklerini öğrenmekti (Yani ne kadar alanı reserve ettikleri, bu alanın ne kadarını kullandıkları vb) Bunun içinde aslında bir for each ifadesini çalıştırmam gerekiyordu. Yani her bir tabloyu gezmeli ve her biri için spspaceused SP’ sini çalıştırmalıydım. Bu foreach içinde aslında sistem de yer alan güzel bir SP bulunmaktadır.
 
@@ -155,7 +155,7 @@ EXEC sp_MSforeachtable @command1="EXEC sp_spaceused '?'"
 
 ve işte sonuç;
 
-[![artcl_3_6](/assets/images/2011/artcl_3_6_thumb.gif)](/assets/images/2011/artcl_3_6.gif)
+![artcl_3_6](/assets/images/2011/artcl_3_6.gif)
 
 Aslına bakarsanız istediğim bilgileri elde etmiştim. Ancak görüntü pek hoş değildi. Keşke tablo bazlı bir ızgara çıktısı (Grid View) elde edebilseydim
 
@@ -203,7 +203,7 @@ drop table #TempTable
 
 Aslında teori basitti. Tablo ve Şema adlarını elde ettikten sonra her birisi için spspaceused SP’ ini çalıştıracak ama sonuçlarını bir Temp tabloya ekleyecektim. Şimdi sonuçlar ve elde edilen görüntü çok daha güzeldi.
 
-[![artcl_3_7](/assets/images/2011/artcl_3_7_thumb.gif)](/assets/images/2011/artcl_3_7.gif)
+![artcl_3_7](/assets/images/2011/artcl_3_7.gif)
 
 Tam bu sorguyu bitirmiştim ki aklıma başka bir ihtiyaç geldi. Acaba sistemde yer alan tablo adlarının tamamını, aralarına virgül koyarak tek bir hücreye indirgiyebilir miydim? Hımm…Eğer kod tarafında olsaydık bu benim çocuk oyuncağı sayılırdı. Ama SQL özürlü birisi olarak biraz araştırma yapmam gerekecekti. Sonuçta COALESCE fonksiyonundan yararlanarak bu isteği karşılayabileceğimi gördüm. Nasıl mı?
 
@@ -217,7 +217,7 @@ select @Names
 
 ve sonuç
 
-[![artcl_3_8](/assets/images/2011/artcl_3_8_thumb.gif)](/assets/images/2011/artcl_3_8.gif)
+![artcl_3_8](/assets/images/2011/artcl_3_8.gif)
 
 Query Explorer ile olan sohbetim harika ilerliyordu. Bu kez ondan bana sistem de yer alan veritabanlarının ne zaman yedeklendiğini (ve hatta yedeklenmediğini) söylemesini istiyordum. Aslına bakarsanız bu önemli bir sorguydu. Çünkü ilk çalıştırdığımda AdventureWorks için hiç bir zaman Backup almadığımı fark etmiştim
 
@@ -239,7 +239,7 @@ ORDER BY [Database Name] DESC
 
 Tabi burada anahtar nokta backupset içeriğinden yararlanılmasıydı. İlk sonuçlarda hiç backup almamış olduğumu görünce, hemen bir tane ürettirdim ve yeni sonuçlara baktığımda aşağıdaki ekran görüntüsünde yer alan çıktıyı elde ettim.
 
-[![artcl_3_9](/assets/images/2011/artcl_3_9_thumb.gif)](/assets/images/2011/artcl_3_9.gif)
+![artcl_3_9](/assets/images/2011/artcl_3_9.gif)
 
 Derken aklıma biraz daha eğlenceli bir sorgu geldi. Söz gelimi çalışanlarımızdan (Hani o anda koca bir fabrikanın sahibi olduğunu düşündüm de) rastgele 5 farklı kişiyi getirip onlara hediye dağıtmak istediğimi düşündüm. (Bu o gün indirimli olarak satılacak rastgele 10 ürün de olabilirdi). Eğlenceli bir sorguydu. NewId () fonksiyonu burada işi eğlenceli hale getiren kişiydi. Örnek olarak Employee tablosu için şanslı 5 kişiyi bulmaya çalıştım.
 
@@ -257,7 +257,7 @@ order by 1
 
 ve aşağıdaki ekran görüntüsünde yer alan sonuçları elde ettim. Tabi ki her çalıştırılmada farklı sonuçlar elde edilmesi garantiydi.
 
-[![artcl_3_10](/assets/images/2011/artcl_3_10_thumb.gif)](/assets/images/2011/artcl_3_10.gif)
+![artcl_3_10](/assets/images/2011/artcl_3_10.gif)
 
 Gerçi şimdi fark ettim ki 114 numaralı çalışan oldukça şanslıymış. Çünkü ilk iki sorguda tesadüfen çıkmış
 
@@ -281,7 +281,7 @@ Bir de ne göreyim
 
 ![Smile](/assets/images/2011/wlEmoticon-smile_25.png)
 
-[![artcl_3_11](/assets/images/2011/artcl_3_11_thumb.gif)](/assets/images/2011/artcl_3_11.gif)
+![artcl_3_11](/assets/images/2011/artcl_3_11.gif)
 
 AdventureWorks veritabanındaki ProductProductPhoto tablosunda ClusteredIndex yok…Bak bak baaakk
 
@@ -308,7 +308,7 @@ from sys.servers
 
 İşte sonuçlar,
 
-[![artcl_3_12](/assets/images/2011/artcl_3_12_thumb.gif)](/assets/images/2011/artcl_3_12.gif)
+![artcl_3_12](/assets/images/2011/artcl_3_12.gif)
 
 Elbette ben yerel makinemden sadece tek bir veri sunucusuna bağlandığımdan cılız bir sonuç çıkmıştı. Ancak aynı sorguyu arka planda çalışmakta olduğum test makinesinde yürüttüğümde piuvvvvv!!!
 

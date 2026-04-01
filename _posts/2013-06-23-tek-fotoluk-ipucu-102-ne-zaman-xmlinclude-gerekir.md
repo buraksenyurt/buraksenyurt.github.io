@@ -21,7 +21,7 @@ Nasıl çözersiniz? Aşağıdaki gibi olabilir mi?
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_208.png)
 
-[![tfi_102](/assets/images/2013/tfi_102_thumb.png)](/assets/images/2013/tfi_102.png)
+![tfi_102](/assets/images/2013/tfi_102.png)
 
 Aslında yapılan işlem gayet basittir. Role tipinin Manager ve Worker isimli sınıflara ait nesne örneklerini içerebileceği XmlInclude niteliği (Attribute) yardımıyla ifade edilmiştir. Hepsi bu. Bir başka ipucunda görüşmek dileğiyle
 

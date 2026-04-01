@@ -17,7 +17,7 @@ WMI (Windows Management Instrumentation) maceralarımıza devam etmeye ne dersin
 
 Dilerseniz önce WMI tarafında önceki ipuçlarımızdan da yararlanarak senaryoyu gerçekleştirmeye çalışın. Sonrasında fotoğrafımıza bakarsınız.
 
-[![tfi_94](/assets/images/2013/tfi_94_thumb.png)](/assets/images/2013/tfi_94.png)
+![tfi_94](/assets/images/2013/tfi_94.png)
 
 Tabi Win32LogicalDisk tipinin kullanılabilecek farklı özellikleri de mevcut. Bu özelliklere de [şu adresten](http://msdn.microsoft.com/en-us/library/windows/desktop/aa394173(v=vs.85).aspx) bakabilirsiniz. Bir başka ipucundan görüşmek dileğiyle
 

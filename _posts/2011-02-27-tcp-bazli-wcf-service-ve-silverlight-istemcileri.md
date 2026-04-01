@@ -14,7 +14,7 @@ tags:
 ---
 Bir yazar, hazırlayacağı hikaye için çoğu zaman çevrede dolaşıp malzeme toplar. Olayın kahramanlarını tasvir etmek için çevredeki insanları göz önüne alır. Hatta gezdiği yerleri inceler. Bu açıdan bakıldığında iyi yazarların aslında çok iyi birer gözlemci olduğu söylenebilir.
 
-[![blg218_Giris](/assets/images/2011/blg218_Giris_thumb_1.jpg)](/assets/images/2011/blg218_Giris_1.jpg)
+![blg218_Giris](/assets/images/2011/blg218_Giris_1.jpg)
 
 
 Sonuç olarak yazarın elinde bir senaryo taslağı oluşur. Artık tek yapması gereken sakin bir köşe bulmak ve daktilosunun başına geçerek (ki günümüde büyük bir olasılıkla bu diz üstü bir bilgisayar olacaktır) yazmaya başlamaktır. Çözülmesi en zor olan parçaların başında kitaba bir isim bulmak ve ilk giriş cümlesini yazmak gelmektedir. Her ne kadar bu güne kadar yazılmış bir kitabım olmasa da böyle olduğunu tahmin etmekteyim.
@@ -27,7 +27,7 @@ Bugün yazımız içinde elimizde bir takım malzemelerimiz bulunmakta. Bir adet
 
 Normal şartlar altında Silverlight istemcilerinin genellikle HTTP bazlı çalışan WCF servislerini kullanması söz konusudur. Hatta WCF RIA Services’ ler en sık kullanılanıdır. Ancak Intranet tabanlı bir sistemde TCP bazlı WCF Servisleri de söz konusu olabilir. Dilerseniz olayı örnekleyerek canlandırmaya çalışalım. İlk olarak elimizin altında aşağıdaki gibi bir WCF Service Library içeriğinin olduğunu düşünelim.
 
-[![blg218_ServiceClassDiagram](/assets/images/2011/blg218_ServiceClassDiagram_thumb_1.gif)](/assets/images/2011/blg218_ServiceClassDiagram_1.gif)
+![blg218_ServiceClassDiagram](/assets/images/2011/blg218_ServiceClassDiagram_1.gif)
 
 Servis sözleşmemiz oldukça basit bir içeriğe sahip.
 
@@ -130,7 +130,7 @@ Buna göre servisimiz TCP bazlı olaraktan net.tcp://localhost:8342/MeetingRoom/
 
 Buna göre basit bir Console istemcisinin söz konusu servisi kullanması için tek yapması gereken, Servis uygulaması çalışırken Add Service Reference seçeneğinde aşağıdaki şekilde görülen adres tanımlamasını kullanmak olacaktır.
 
-[![blg218_AddServiceReference](/assets/images/2011/blg218_AddServiceReference_thumb_1.gif)](/assets/images/2011/blg218_AddServiceReference_1.gif)
+![blg218_AddServiceReference](/assets/images/2011/blg218_AddServiceReference_1.gif)
 
 Buna göre sıradan bir istemcinin söz konusu servisi kullanması mümkün ve kolaydır.
 
@@ -140,11 +140,11 @@ Ancak söz konusu istemci bir Silverlight uygulaması ise biraz daha sıkıntıl
 
 Sunucu uygulama çalışıyor ve servis iletişime açık iken, Silverlight uygulamasına referans ekleme işlemi başarılı olacaktır. Ancak aşağıdaki şekildeki gibi iki adet Warning’ in de oluştuğu görülecektir.
 
-[![blg218_Warnings](/assets/images/2011/blg218_Warnings_thumb_1.gif)](/assets/images/2011/blg218_Warnings_1.gif)
+![blg218_Warnings](/assets/images/2011/blg218_Warnings_1.gif)
 
 Üstelik üretilen config dosyası içeriğine bakıldığında aşağıdaki görüntü ile karşılaşılır.
 
-[![blg218_Config](/assets/images/2011/blg218_Config_thumb_1.gif)](/assets/images/2011/blg218_Config_1.gif)
+![blg218_Config](/assets/images/2011/blg218_Config_1.gif)
 
 Uppsss!!! İlginç bir durum. Nitekim Endpoint üretimlerinin yapılmaması bir yana, WCF servisi ile olan iletişim için gerekli hiç bir ayar da bulunmamaktadır. Buna göre Abla’ nın, iletişimi engellediğini ifade edebiliriz.
 
@@ -206,7 +206,7 @@ namespace YourMeetingServices
 
 Yapılan bu değişiklikler sonucuda servis kütüphanesinin içeriğinin özetle aşağıdaki şekile görüldüğü gibi olduğunu ifade edebiliriz.
 
-[![blg218_ClassDiagram2](/assets/images/2011/blg218_ClassDiagram2_thumb_1.gif)](/assets/images/2011/blg218_ClassDiagram2_1.gif)
+![blg218_ClassDiagram2](/assets/images/2011/blg218_ClassDiagram2_1.gif)
 
 GetPolicy metodunun uygulanışı içerisindeki en önemli nokta sır gibi duran content değişkeninin değeridir. Bu değer içeriği aşağıdaki gibi olan PolicyContent.xml dosyasından getirilmektedir. Söz konusu dosyanın output klasörü sunucu uygulamaya ait exe çıktısının olduğu yer olarak belirtilmiştir.
 
@@ -297,7 +297,7 @@ Diğer yandan TCP Bazlı iletişim sağlayan Endpoint için security mode değer
 
 Artık Silverlight istemcisi üzerinden bir test gerçekleştirebiliriz. Bu amaçla MainPage içeriğini aşağıdaki gibi oluşturduğumuzu düşünelim.
 
-[![blg218_DesignTime](/assets/images/2011/blg218_DesignTime_thumb_1.gif)](/assets/images/2011/blg218_DesignTime_1.gif)
+![blg218_DesignTime](/assets/images/2011/blg218_DesignTime_1.gif)
 
 MainPage.xaml.cs
 
@@ -342,11 +342,11 @@ Görüldüğü üzere, config dosyasında TcpEndpoint için tanımlanmış olan 
 
 Şimdi ilk testimizi yapalım. Önce sunucu uygulamayı ardından da Silverlight Web uygulamamızı çalıştıralım. İlk etapta her şey güllük gülistanlıktır. Aynen aşağıdaki şekilde görüldüğü gibi.
 
-[![blg218_FirstRuntime](/assets/images/2011/blg218_FirstRuntime_thumb_1.gif)](/assets/images/2011/blg218_FirstRuntime_1.gif)
+![blg218_FirstRuntime](/assets/images/2011/blg218_FirstRuntime_1.gif)
 
 Ancak Call başlıklı Button kontrolüne bastığımızda aşağıda görülen çalışma zamanı istisnasını (Runtime Exception) aldığımızı görürüz.
 
-[![blg218_FirstRuntimeException](/assets/images/2011/blg218_FirstRuntimeException_thumb_1.gif)](/assets/images/2011/blg218_FirstRuntimeException_1.gif)
+![blg218_FirstRuntimeException](/assets/images/2011/blg218_FirstRuntimeException_1.gif)
 
 Aslında buradaki hata mesajının tam içeriği şöyledir;
 
@@ -360,11 +360,11 @@ Aslında Servisin geliştirilme mantığına göre IIS’ in olmadığı bir dur
 
 Diğer yandan çalışma zamanındaki hata mesajı 4502 ile 4534 numaralı portlar arasında bir değerin kullanılmasını beklemektedir. Bu sebepten servis tarafındanki TCP based address değerinin de örnek olarak net.tcp://localhost:4505/MeetingRoom/MeetingService şeklinde değiştirilmesi düşünülebilir. Yani 4502 ile 4534 arasında bir port değeri atanmalıdır. Ancak bu da yeterli olmayacaktır. Nitekim policy içeriğini teşkil eden XML dosyasında yer alan port numarası da 4505 olarak ayarlanmalıdır. Tüm bu değişiklikler Silverlight istemcisine servis referansının yeniden eklenmesini gerektirecektir.
 
-[![blg218_AddServiceReferenceLast](/assets/images/2011/blg218_AddServiceReferenceLast_thumb.gif)](/assets/images/2011/blg218_AddServiceReferenceLast.gif)
+![blg218_AddServiceReferenceLast](/assets/images/2011/blg218_AddServiceReferenceLast.gif)
 
 Artık tanışmak için son bir deneme yapılabilir. İşte sonuç.
 
-[![blg218_Final](/assets/images/2011/blg218_Final_thumb.gif)](/assets/images/2011/blg218_Final.gif)
+![blg218_Final](/assets/images/2011/blg218_Final.gif)
 
 Görüldüğü üzere servis tarafındaki metod başarılı bir şekilde çalışmıştır. Peki bu kadar zahmete girmeye gerek var mıdır? Aslında olmadığını söylersem şu anda bana çok kızabileceğinizi düşünüyorum. Ancak var. Nitekim IIS (Internet Information Services) üzerinde WAS (Windows Process Activation Service) kullanımı sayesinde host edebileceğimiz TCP bazlı bir servisin, doğru ClientAccessPolicy.xml içeriği ile bir Silverlight istemcisi tarafından kullanılabilmesi mümkündür. Şu anda umuyorum ki içinizde @#$½!:=|<> gibi bir şey demiyorsunuzdur
 

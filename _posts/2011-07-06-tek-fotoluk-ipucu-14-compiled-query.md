@@ -15,6 +15,6 @@ Entity Framework ile Compiled Query'ler hazırlayabileceğinizi ve daha performa
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_32.png)
 
-[![PhotoTrick14](/assets/images/2011/PhotoTrick14_thumb.png)](/assets/images/2011/PhotoTrick14.png)
+![PhotoTrick14](/assets/images/2011/PhotoTrick14.png)
 
 [QueryPerformance.rar (75,31 kb)](/assets/files/2011/QueryPerformance.rar)

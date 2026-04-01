@@ -16,7 +16,7 @@ tags:
 ---
 Geçtiğimiz gün standart olarak Youtube üzerinden gerek 80ler, gerek 90lara ait iz bırakan sanatçıları ve şarkılarını izlemekteydim. Çok sık yaptığım şeylerden birisi de bu şarkıları sosyal ağda paylaşmak aslında. Ama bazende şarkıların melodileri dışında sözlerini de mırıldanmaktayım kendi kendime, ki pek çoğumuzun bunu sıkça yaptığından eminim
 
-[![scorpions-the-millenium-collection](/assets/images/2014/scorpions-the-millenium-collection_thumb.jpg)](/assets/images/2014/scorpions-the-millenium-collection.jpg)
+![scorpions-the-millenium-collection](/assets/images/2014/scorpions-the-millenium-collection.jpg)
 
 
 ![Smile](/assets/images/2014/wlEmoticon-smile_43.png)
@@ -35,7 +35,7 @@ LyricWiki
 
 [http://lyrics.wikia.com/api.php?func=getArtist&artist=Linkin_Park](http://lyrics.wikia.com/api.php?func=getArtist&artist=Linkin_Park)
 
-[![lyricapi_1](/assets/images/2014/lyricapi_1_thumb.png)](/assets/images/2014/lyricapi_1.png)
+![lyricapi_1](/assets/images/2014/lyricapi_1.png)
 
 Peki bir şarkının sözlerini nasıl alabiliriz?
 
@@ -45,7 +45,7 @@ HTML (Hyper Text Markup Language)
 
 [http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=html](http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=html) için
 
-[![lyricapi_2](/assets/images/2014/lyricapi_2_thumb.png)](/assets/images/2014/lyricapi_2.png)
+![lyricapi_2](/assets/images/2014/lyricapi_2.png)
 
 Text
 
@@ -95,7 +95,7 @@ Peki bu tip bir kullanım söz konusu ise.Net tarafında ilgili içerikleri kull
 
 Söz gelimi bir WPF uygulaması yazsak ve aradığımız bir şarkı sözünü bulmak için gerekli işlevsellikleri burada sağlamaya çalışsak. Öncelikle aşağıdaki gibi bir arayüz tasarımı ile işe başlayabiliriz diye düşünüyorum.
 
-[![lyricapi_3](/assets/images/2014/lyricapi_3_thumb.png)](/assets/images/2014/lyricapi_3.png)
+![lyricapi_3](/assets/images/2014/lyricapi_3.png)
 
 WPF tabanlı uygulamamızın ana formuna ait XAML içeriği ise aşağıdaki gibi geliştirilebilir.
 
@@ -247,7 +247,7 @@ Neden bu şekilde bir servis üretimi gerçekleştirildiğini pek bilemiyorum (e
 
 Uygulamamızda görüldüğü üzere Album isimli bir POCO (Plain Old Clr Objects) tipi kullanılmaktadır.
 
-[![lyricapi_4](/assets/images/2014/lyricapi_4_thumb.png)](/assets/images/2014/lyricapi_4.png)
+![lyricapi_4](/assets/images/2014/lyricapi_4.png)
 
 ```csharp
 using System.Collections.Generic;
@@ -271,7 +271,7 @@ Aslında şarkılara XML, JSON gibi içerikler ile ulaşılmak istenirse bir Son
 
 Album tipi içerisinde oldukça yararlı bilgiler bulunmaktadır. Söz gelimi albümün çıkış tarihi ve Amazon sitesinden doğrudan arama sorgusu gibi. Dolayısıyla istenirse hemen Amazon sepetinize ekleyebilirsiniz de. Amazon Web Servisler ile konuşan bir ara katman bile olabilir.
 
-[![lyricapi_5](/assets/images/2014/lyricapi_5_thumb.png)](/assets/images/2014/lyricapi_5.png)
+![lyricapi_5](/assets/images/2014/lyricapi_5.png)
 
 Örneğin Debug modda yakadlığımız bir albüm için gelen amazon arama sorgusu aşağıdaki gibidir.
 
@@ -281,7 +281,7 @@ Album tipi içerisinde oldukça yararlı bilgiler bulunmaktadır. Söz gelimi al
 
 ![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)
 
-[![lyricapi_6](/assets/images/2014/lyricapi_6_thumb.png)](/assets/images/2014/lyricapi_6.png)
+![lyricapi_6](/assets/images/2014/lyricapi_6.png)
 
 Tabi restriction nedeni ile sadece bir bölümünü görebildik ama sonuçta geliştirdiğimiz örnekte amacımız Developer profili açısından bakıldığında REST tabanlı bir servisi basit yöntemler ile nasıl kullanabileceğimiz ve bir WPF uygulaması içerisinde ilgili kontrollere nasıl bağlayabileceğimiz idi. Dolayısıyla istediğimiz ürün faydasını tam olarak sağlayamamış olsakta geliştirme (development) adına bir kaç fikir sahibi olduğumuzu düşünebiliriz.
 
@@ -292,7 +292,7 @@ Peki bundan sonrası için neler yapılabilir?
 - Uygulama bir ASP.NET Web User Control olarak da sunulabilir.
 - Bu kısımları ciddi anlamda düşünmenizi ve yapmaya çalışmanızı öneririm.
 - Var olan uygulamadaki çağrılar async ve await anahtar kelimeleri ile birlikte değerlendirilip asenkron hale de getirilebilir.
-  - Uygulama içerisinde bir WebBrowser kontrolü de kullanılarak şarkı içeriğinin tarayıcıda açılması da sağlanabilir. Aşağıdaki gibi ![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)[![lyric_last](/assets/images/2014/lyric_last_thumb.png)](/assets/images/2014/lyric_last.png)
+  - Uygulama içerisinde bir WebBrowser kontrolü de kullanılarak şarkı içeriğinin tarayıcıda açılması da sağlanabilir. Aşağıdaki gibi ![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)![lyric_last](/assets/images/2014/lyric_last.png)
 
 Hoşunuza gitti mi? Öyleyse…
 
@@ -459,7 +459,7 @@ namespace IMBDGadget
 
 ve işte sonuç
 
-[![lyric_imdb](/assets/images/2014/lyric_imdb_thumb.png)](/assets/images/2014/lyric_imdb.png)
+![lyric_imdb](/assets/images/2014/lyric_imdb.png)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 

@@ -17,6 +17,6 @@ Elimizde bir Uri nesne örneği olduğunu varsayalım. Bu Uri adres bilgisinden 
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_42.png)
 
-[![tfi_66](/assets/images/2012/tfi_66_thumb.png)](/assets/images/2012/tfi_66.png)
+![tfi_66](/assets/images/2012/tfi_66.png)
 
 Bir başka tek fotoluk ip ucunda görüşmek dileğiyle.

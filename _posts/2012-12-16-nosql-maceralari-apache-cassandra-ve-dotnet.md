@@ -13,7 +13,7 @@ tags:
 ---
 Size bu günkü makale konumuzun yanda fotoğrafı görülen model (youtube modeli de diyebiliriz) Cassandra Bankson ile alakalı olduğunu söylemek isterdim ama yakınlarından bile geçmeyeceğiz. (Zaten araştırırsanız aslında makyaj bidonu ile bu hale geldiğini keşfedeceksiniz) Başlıktan da anlayacağınız üzere bu günkü yazımızın konusu.Net plaftormunda Apache Cassandra’ yı kullanmak.
 
-[![cassandra](/assets/images/2012/cassandra_thumb.jpg)](/assets/images/2012/cassandra.jpg)
+![cassandra](/assets/images/2012/cassandra.jpg)
 
 
 Uzun zamandır gündemimde olan konulardan birisi de NoSQL veritabanı sistemleri. Internet şirketlerinin pek çoğu (Facebook, Twitter, Youtube, Netflix vb) NotOnly SQL veritabanlarını kullanmakta ve hatta bir kısmının kendi geliştirdikleri NoSQL sistemleri bile var. Amazon, Google bu noktada öncüler diyebiliriz.
@@ -37,8 +37,8 @@ Aslında ortalıkta pek çok NoSQL sistemi var. Hatta çoooook uzun zaman önce 
 
 > Apache Cassandra'yı [http://cassandra.apache.org/download/](http://cassandra.apache.org/download/) adresinden indirebilirsiniz. Cassandra yı indirdiğinizde büyük ihtimalle tar.gz uzantılı bir dosya gelecektir. Dolayısıyla Windows tabanlı bir sistemde bunu açacak uygulamaya ihtiyacınız var. 7Zip bu konuda bana yardımcı oldu diyebilirim.
 > Cassandra'yı bir klasöre açtıktan sonra sisteme bazı çevresel değişkenlerin de ilave edilmesi gerekmektedir (Environment Variables). Bunlardan birisi JAVA_HOME dur ve sistem de kurulmuş olan Java klasörünü göstermektedir. Diğeri ise CASSANDRA_HOME olarak adlandırılmaktadır ve Cassandra'nın açıldığı klasörü işaret etmektedir. Kendi sistemimde bu değerleri şu şekilde ayarladım.
-> [![uc_1](/assets/images/2012/uc_1_thumb.png)](/assets/images/2012/uc_1.png)
-> [![uc_2](/assets/images/2012/uc_2_thumb.png)](/assets/images/2012/uc_2.png)
+> ![uc_1](/assets/images/2012/uc_1.png)
+> ![uc_2](/assets/images/2012/uc_2.png)
 
 Kurulum işlemi için gerekli ayarları yaptıktan sonra bin klasörü altında yer alan cassandra.bat dosyasını çalıştırabiliriz. Bu batch dosyası sunucuyu etkinleştirecektir. Cassandra verilerin loglarını tutmak için root klasördeki var isimli alt klasörü kullanır (Bu kuruluma göre d:\var altındadır ama istendiği takdirde conf klasörü içindeki cassandra.yaml'den konum değiştirilebilir)
 
@@ -63,7 +63,7 @@ Veri modeline üstten bakıldığında yapısı RDMS şemalarına benzetilebilir
 
 Cassandra'yı kurup çalıştırdıktan sonra (cassandra.bat ile yapıyoruz) komut satırından hemen veri girişi işlemleri yaptırılabilir. Bunun için yine bin dizinindeki cassandracli.bat dosyasının çalıştırılması yeterlidir. Bu bir komut satırı istemcisidir ve cassandra sunucusuna bağlanacaktır. Aşağıdaki ekran görüntüsünde örnek bir kullanıma yer verilmiştir.
 
-[![uc_3](/assets/images/2012/uc_3_thumb.png)](/assets/images/2012/uc_3.png)
+![uc_3](/assets/images/2012/uc_3.png)
 
 Buradaki komutlardan da anlaşılacağı üzere veritabanı aslında bir keyspace'dir. Bu keyspace içerisinde bir tablo oluşturmak aslında bir Column Family yaratmak anlamına gelmektedir. Column Family içerisine set edilen Row Key’ ler aslında bildiğimiz tablo satırlarına benzetilebilir. Row Key’ ler içerisinde ise key-value şeklinde kolonlar ve verileri bulunmaktadır. Her key-value column aslında bir Row Key ile ilintilidir.
 
@@ -78,7 +78,7 @@ Dikkat edileceği gibi kolonlarda key-value şeklinde bir tutuluş söz konusudu
 
 Yapılan bu üretim sonrasında klasör yapısıda aşağıdaki şekilde görüldüğü gibi oluşacaktır.
 
-[![uc_4](/assets/images/2012/uc_4_thumb.png)](/assets/images/2012/uc_4.png)
+![uc_4](/assets/images/2012/uc_4.png)
 
 Veri binary formatta tutulmaktadır.
 
@@ -86,7 +86,7 @@ Veri binary formatta tutulmaktadır.
 
 .Net tarafında Cassandra ile çalışabilmek için NuGet paketlerinden birisi olan FluentCassandra ile çalışabiliriz. İlk olarak basit bir Console uygulaması açalım ve NuGet paket yöneticisini kullanarak internetten Fluent Cassandra paketini indirelim (Dilerseniz komut satırından da install edebilirsiniz. Install-Package FluentCassandra ifadesini çalıştırmanız yeterli olacaktır)
 
-[![uc_5](/assets/images/2012/uc_5_thumb.png)](/assets/images/2012/uc_5.png)
+![uc_5](/assets/images/2012/uc_5.png)
 
 ## İlk Kodlar
 
@@ -177,10 +177,10 @@ namespace HowTo_HelloApacheCassandra
 
 ve çalışma zamanı çıktısı.
 
-[![uc_6](/assets/images/2012/uc_6_thumb.png)](/assets/images/2012/uc_6.png)
+![uc_6](/assets/images/2012/uc_6.png)
 
 > Uygulamanın başarılı bir şekilde çalışabilmesi için tahmin edeceğiniz üzere Cassandra sunucusunun da açık olması gerekir. Aksi durumda çalışma zamanında aşağıdakine benzer bir istisna (Exception) fırlatılacaktır.
-> [![uc_7](/assets/images/2012/uc_7_thumb.png)](/assets/images/2012/uc_7.png)
+> ![uc_7](/assets/images/2012/uc_7.png)
 
 Bu ilk örnekte BiGFootCompany key space’ ine bağlanıp ModelDesigner isimli yeni bir Column Family oluşturmaktayız. Bu Column Family içerisinde de, Title, Nickname, Level ve Outsource gibi kolonlar bulunmakta. Örnek olarak iki adet satır oluşturulmakta ve veritabanına ilave edilerek bir sonuç listesinin ekrana bastırılması sağlanmaktadır. Dikkat edileceği üzere SQL ifadelerine çok benzeyen bazı sorgular da kullandık. Bunlar CQL (Cassandra Query Language) olarak adlandırılmaktadır. Ayrıca işlerimizi biraz daha kolaylaştırmak adına dynamic anahtar kelimesinden faydalanmaya çalıştık. Bu sayede Row Key’ lerin kolonlarına, birer özellikmiş gibi erişebilmemiz mümkün oldu. Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim
 

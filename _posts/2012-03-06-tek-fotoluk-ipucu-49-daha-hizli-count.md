@@ -16,4 +16,4 @@ tags:
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_78.png)
 
-[![artcl_10_1](/assets/images/2012/artcl_10_1_thumb.gif)](/assets/images/2012/artcl_10_1.gif)
+![artcl_10_1](/assets/images/2012/artcl_10_1.gif)

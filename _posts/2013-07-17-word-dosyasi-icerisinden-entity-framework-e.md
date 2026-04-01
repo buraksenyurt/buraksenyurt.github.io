@@ -21,7 +21,7 @@ tags:
 ---
 Geliştirdiğimiz veya kullanmakta olduğumuz yazılım ürünlerine dahil olan, farklı segmentlerden gelen pek çok kullanıcı profili vardır. Farklı profillerin olması, bazı hallerde geliştirilmekte olan ürünlerin başarısını doğrudan etkilemektedir. Bir fotoğraf işleme programını geliştirirken çoğu zaman annemizin olası kullanıcı profilleri arasına gireceğini pek düşünmeyiz. Genellikle fotoğraf işleme programını kullanacak olanların, en azından temek düzeyde fotoğrafçılık bilgisine sahip olduğunu kabul eder, menü komutlarını buna göre belirler, arayüzü buna göre hazırlarız. Ama bazı uygulamalarda annemizi hedef alır ve çektiği fotoğraflara kolayca efekt uygulamasına bir kaç basit adımda olanak tanır. Örneğin instagram’ ın iPhone uygulamasında olduğu gibi.
 
-[![275344](/assets/images/2013/275344_thumb.jpg)](/assets/images/2013/275344.jpg)
+![275344](/assets/images/2013/275344.jpg)
 
 Bir yazılım geliştirme ürününü tasarlarken ise, son kullanıcının programcılar olduğunu varsayar ve arabirimin karmaşık olmasının herhangibir sorun oluşturmayacağını düşünürüz. Oysaki Team Foundation Server gibi geniş ürün yelpazesine sahip aileler düşünüldüğünde, işe dahil olan farklı profildeki kullanıcılar için işleri kolaylaştırıcı şekilde düşünüldüğüne şahit oluruz.
 
@@ -45,17 +45,17 @@ Word Document Projesini Oluşturmak
 
 Visual Studio 2012 ortamımızda yeni bir Solution açarak işe başlayabiliriz. İlk projemiz Visual C#->Office/SharePoint/Office Add-ins sekmesinde yer alan Word 2010 Document tipinden olacak.
 
-[![wrp_1](/assets/images/2013/wrp_1_thumb.png)](/assets/images/2013/wrp_1.png)
+![wrp_1](/assets/images/2013/wrp_1.png)
 
 ProductDocument olarak projeyi isimlendirdikten sonra küçük bir soru ile karşılacağız.
 
-[![wrp_2](/assets/images/2013/wrp_2_thumb.png)](/assets/images/2013/wrp_2.png)
+![wrp_2](/assets/images/2013/wrp_2.png)
 
 Yeni bir doküman oluşturarak ilerlemeyi tercih edelim. Ama var olan bir dokümanı da kullanabiliriz. Bu işlemlerin sonucunda Visual Studio ortamımız aşağıdaki şekle bürünecektir
 
 ![Surprised smile](/assets/images/2013/wlEmoticon-surprisedsmile_5.png)
 
-[![wrp_3](/assets/images/2013/wrp_3_thumb.png)](/assets/images/2013/wrp_3.png)
+![wrp_3](/assets/images/2013/wrp_3.png)
 
 Dikkat edileceği üzere IDE’ nin göbeğinde docx uzantılı bir Word belgesi yer almaktadır. Hatta Solution Explorer penceresine baktığımızda, ThisDocument.cs isimli bir sınıf dosyası olduğunu, Toolbox içerisinde ise pek çok Form kontrolünün yer aldığını görürüz
 
@@ -67,7 +67,7 @@ Word Tasarımını Yapalım
 
 Word belgesini Ribon tarafında yer alan bileşenler ile donatabileceğimiz gibi Toolbox üzerinde yer alan Component’ leri içermesini de sağlayabiliriz. Bu anlamda melez bir arayüz geliştirme ortamı oluştuğunu ifade edebiliriz. Hem Word hem de Windows Forms kontrollerini bir arada ele alabilmekteyiz. Bu düşünceler ışığında Selim Usta için aşağıdaki formu oluşturduğumuzu düşünelim.
 
-[![wrp_4](/assets/images/2013/wrp_4_thumb.png)](/assets/images/2013/wrp_4.png)
+![wrp_4](/assets/images/2013/wrp_4.png)
 
 Dikkat edileceği üzere Word içeriğine TextBox, DateTimePicker, NumericUpDown, Button kontrolleri eklenmiştir. Kontrollere kod tarafı için anlamlı isimler vererek ilerleyelim. Ben örnekte [KontrolTipi][TabloKolonAdı] şeklinde bir notasyon kullandım. Yani Name alanı için TextBoxName, açıklama alanı için TextBoxDescription vb…
 
@@ -75,7 +75,7 @@ Entity Framework Çözümünün Eklenmesi
 
 Solution içerisinde Entity Framework tabanlı bir Class Library projesi de yer almaktadır. Söz konusu proje bir Ado.Net Entity Model öğesi bulundurmakta olup aşağıdaki diagramda görülen içeriğe sahiptir.
 
-[![wrp_5](/assets/images/2013/wrp_5_thumb.png)](/assets/images/2013/wrp_5.png)
+![wrp_5](/assets/images/2013/wrp_5.png)
 
 Product Entity tipi, Depomuz isimli SQL 2008 veritabanında yer alan Product tablosunu işaret etmektedir. Otomatik artan ve Primary Key olan ProductId alanı dışında, Name (nvarchar (50)), Description (nvarchar (250)), ListPrice (decimal (18,0)), RealPrice (decimal (18,0)), InsertDate (Date), Quantity (int) ve Notes (nvarchar (250)) gibi kolonları da içermektedir.
 
@@ -187,23 +187,23 @@ Kaba Testler
 
 Uygulamayı F5 ile çalıştırdığımızda ve örnek bazı veriler girdiğimizde kayıt işleminin başarılı bir şekilde gerçekleştirildiğine dair bir mesaj kutusu ile karşılaşırız. Aynen aşağıdaki ekran görüntüsündeki gibi.
 
-[![wrp_6](/assets/images/2013/wrp_6_thumb.png)](/assets/images/2013/wrp_6.png)
+![wrp_6](/assets/images/2013/wrp_6.png)
 
 Ki eklenme işleminin başarılı olup olmadığını hemen veritabanına bakarak öğrenebiliriz.
 
-[![wrp_8](/assets/images/2013/wrp_8_thumb.png)](/assets/images/2013/wrp_8.png)
+![wrp_8](/assets/images/2013/wrp_8.png)
 
 Eğer ters bir durum oluşursa (örneğin form boş iken Save etmeye çalışmak gibi), bu durumda bir çalışma zamanı hatası alınacak ama durum Selim Usta’ ya yumuşatılarak iletilecektir
 
 ![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_8.png)
 
-[![wrp_7](/assets/images/2013/wrp_7_thumb.png)](/assets/images/2013/wrp_7.png)
+![wrp_7](/assets/images/2013/wrp_7.png)
 
 Build Sonrası
 
 Aslında uygulamanın Build sonrası durumuna baktığımızda aşağıdaki şekilde görülen içeriğin üretildiğini fark edebiliriz.
 
-[![wrp_9](/assets/images/2013/wrp_9_thumb.png)](/assets/images/2013/wrp_9.png)
+![wrp_9](/assets/images/2013/wrp_9.png)
 
 Word Document projesi, ProductDocument.docx haricinde, Solution da kullanılan başka dosyaları da doğal olarak içerecektir. Tabi burada akla gelen ilk soru bu içeriği nasıl dağıtılabileceğidir? Development yapılan makinede herhangibir sorun olmayacaktır. Debug veya Release klasöründeki ProductDocument.dox dosyasının çalıştırılması yeterlidir. Ancak bu çözümü Selim Usta’ nın bilgisayarına yüklemek için en azından bir Setup paketine sahip olmak dağıtım işini kolaylaştıracaktır.
 
@@ -215,7 +215,7 @@ Bunun için Publish işlemi Word Document projesi için uygulanabilir. Burada Cl
 
 Publish işlemi sonrası aşağıdaki ekran görüntüsündekine benzer bir içerik oluşacaktır. Setup dosyasını kullanarak tipik bir install işlemi gerçekleştirebilirsiniz. Ayrıca bu klasörde yer alan ProductDocument çalıştırıldığında doğrudan tasarlamış olduğumuz Form’ un açıldığını görebiliriz.
 
-[![wrp_10](/assets/images/2013/wrp_10_thumb.png)](/assets/images/2013/wrp_10.png)
+![wrp_10](/assets/images/2013/wrp_10.png)
 
 Sonuç
 
@@ -228,7 +228,7 @@ Geliştirdiğimiz örnek aslında Document Level tipinden kabul edilen bir proje
 
 Bu ve benzeri eksiklikleri siz değerli okurlarıma bırakıyorum. Diğer yandan senaryoyu biraz daha farklılaştırabilirsiniz. Söz gelimi TFS Client Object Model’ i de işin içerisine katabilir ve bir Word Template’ i üzerinden Product Backlog Item ve Task girişlerini yaptırabilirsiniz. Bu ödev için aşağıdaki grafiği göz önüne alabilirsiniz.
 
-[![wrp_11](/assets/images/2013/wrp_11_thumb.png)](/assets/images/2013/wrp_11.png)
+![wrp_11](/assets/images/2013/wrp_11.png)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 

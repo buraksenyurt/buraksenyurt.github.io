@@ -15,6 +15,6 @@ Bazen yazdığımız kod parçalarının işlem sürelerini hesaplama ihtiyacı 
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_27.png)
 
-[![PhotoTrick9](/assets/images/2011/PhotoTrick9_thumb.png)](/assets/images/2011/PhotoTrick9.png)
+![PhotoTrick9](/assets/images/2011/PhotoTrick9.png)
 
 [ProcessDuration.rar (22,01 kb)](/assets/files/2011/ProcessDuration.rar)

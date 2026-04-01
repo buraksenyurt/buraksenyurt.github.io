@@ -51,7 +51,7 @@ O halde bu doküman içeriğini okumamız ne kadar zor olabilir ki?
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_113.png)
 
-[![tfi_70](/assets/images/2012/tfi_70_thumb.png)](/assets/images/2012/tfi_70.png)
+![tfi_70](/assets/images/2012/tfi_70.png)
 
 Başka bir ipucunda görüşmek dileğiyle
 

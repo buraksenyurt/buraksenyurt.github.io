@@ -16,6 +16,6 @@ Diyelim ki Windows Forms programlama ile ilgileniyorsunuz. Çalışma zamanında
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_62.png)
 
-[![PhotoIpucu45](/assets/images/2012/PhotoIpucu45_thumb.png)](/assets/images/2012/PhotoIpucu45.png)
+![PhotoIpucu45](/assets/images/2012/PhotoIpucu45.png)
 
 [Numpad.rar (38,02 kb)](/assets/files/2012/Numpad.rar)

@@ -15,7 +15,7 @@ tags:
 ---
 Yandaki fotoğrafta görülen buluşa baktığınızda aslında gerçekten bu pilotun o koca pervaneler ile uçup uçamayacağına pek kanaat getiremiyoruz öyle değil mi? Sonuçta en azından kağıt üstünde ve teorik olarak da bu tip bir uçuş aracının çalışacağının ispat edilmesi ve sonrasında pratikteki kullanımı için teste çıkılması beklenir (Tabi buna cesaret edecek de bir pilotun olması gerekir) Bir dostumuzun söylediği üzere "tasarlanan her uçak uçmuş ama her yazılım çalışmamıştır"
 
-[![Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This_thumb.jpg)](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This.jpg)
+![Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This](/assets/images/2013/Proof-of-Concept-Prototypes-Dont-Have-to-Be-as-Complicated-as-This.jpg)
 
 Bir başka deyişle yazılım tarafında bir şeylerin ispatını yaparken bir uçağı uçuracakmış gibi düşünerek hareket etmeyiz genelde. İstesek de edemiyoruz sanırım. Yine de elimizden geldiğince titiz çalışmamız da yarar var. Öyleyse gelelim bu günün konusuna.
 
@@ -251,16 +251,16 @@ Burada yorum satırı olarak bırakılmış kısım daha sonradan yapılacak tes
 
 Gelelim test amaçlı kullanacağımız Workflow Activity içeriğine.
 
-[![wfts_1](/assets/images/2013/wfts_1_thumb.png)](/assets/images/2013/wfts_1.png)
+![wfts_1](/assets/images/2013/wfts_1.png)
 
 FlowChart şeklinde tasarladığımız akışın içerisindeki en kritik yer TryCatch bileşenin içerisidir.
 
-[![wfts_2](/assets/images/2013/wfts_2_thumb.png)](/assets/images/2013/wfts_2.png)
+![wfts_2](/assets/images/2013/wfts_2.png)
 
 Try bloğundan TransactionScope bileşeni altında sırasıyla Account Insert işlemi, DoWork ile WCF servis çağrısı ve tekrar Branch Insert işlemi gerçekleştirilmektedir.
 
 > WCF servisinin Workflow uygulamasına Add Service Reference ile eklenmesi sonrası Component sekmesine çıkan aktivite bileşeni kullanılmaktadır (DoWork bileşeni)
-> [![wfts_3](/assets/images/2013/wfts_3_thumb.png)](/assets/images/2013/wfts_3.png)
+> ![wfts_3](/assets/images/2013/wfts_3.png)
 
 Workflow un XAML (eXtensibleApplicationMarkupLanguage) içeriği aşağıdaki gibidir. Burada, kullanılan variable’ lar daha net bir şekilde görülebilmektedir.
 
@@ -476,21 +476,21 @@ WorkflowApplication tipinden yararlanılarak Workflow1 örneğinin başlatılmas
 
 Örneği bu hali ile çalıştırdığımda aşağıdaki sonuçları elde ettiğimi gördüm.
 
-[![wfts_4](/assets/images/2013/wfts_4_thumb.png)](/assets/images/2013/wfts_4.png)
+![wfts_4](/assets/images/2013/wfts_4.png)
 
-[![wfts_5](/assets/images/2013/wfts_5_thumb.png)](/assets/images/2013/wfts_5.png)
+![wfts_5](/assets/images/2013/wfts_5.png)
 
-[![wfts_6](/assets/images/2013/wfts_6_thumb.png)](/assets/images/2013/wfts_6.png)
+![wfts_6](/assets/images/2013/wfts_6.png)
 
-[![wfts_7](/assets/images/2013/wfts_7_thumb.png)](/assets/images/2013/wfts_7.png)
+![wfts_7](/assets/images/2013/wfts_7.png)
 
 Ekran çıktısını okumak biraz zahmetli olabilir (Özellikle WCF servis çağrısının yapıldığı aktivite mesajlaşma içeriğini de bastığından…) ama işlemlerin başarılı bir şekilde yapıldığı görülmektedir ve doğal olarak veritabanı tarafındaki insert işlemleri de başarılı olmuştur. Özellikle activity tipleri için yapılan State bildirimlerine dikkatinizi çekerim.
 
-[![wfts_8](/assets/images/2013/wfts_8_thumb.png)](/assets/images/2013/wfts_8.png)
+![wfts_8](/assets/images/2013/wfts_8.png)
 
 Hatta Debug işlemi yapıldığında servis tarafındaki operasyon içerisinde, istemci tarafından gelen Transaction bilgileri de açık bir şekilde görülebilmektedir.
 
-[![wfts_9](/assets/images/2013/wfts_9_thumb.png)](/assets/images/2013/wfts_9.png)
+![wfts_9](/assets/images/2013/wfts_9.png)
 
 Dikkat edileceği üzere DistributedIdentifier özelliğinin GUID tipinden bir değeri mevcuttur. Bir başka deyişle DTC devreye girmiş ve şu andaki servis operasyonu içerisinde yapılacak işlemler, Workflow Application tarafında açılan TransactionScope’ a dahil edilmiştir.
 

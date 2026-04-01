@@ -10,7 +10,7 @@ tags:
 ---
 Uzun süre önce dış kaynak (Outsource) olarak görev aldığım bir bankacılık uygulamasında Windows Service tabanlı entegrasyon işlemleri için görevlendirilmiştim. Herşeyden önce bu servislerin bankacılık uygulaması olması nedeniyle, farklı ve yabancı sistemleri de ilgilendiren iş adımları bulunmaktaydı. Bu sebepten söz konusu Windows Service uygulamalarının hem kod içerikleri hem de iş kuralları oldukça karışık olabiliyordu. İlgili Windows Service örneklerinin geliştirilmesi bir yana, bunların test ortamına atılması ve sonuçlarının takip edilmesi ise başlı başına bir dertti
 
-[![blg232_Giris](/assets/images/2011/blg232_Giris_thumb.jpg)](/assets/images/2011/blg232_Giris.jpg)
+![blg232_Giris](/assets/images/2011/blg232_Giris.jpg)
 
 
 ![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile_1.png)
@@ -107,7 +107,7 @@ Aslında bir geliştirici için kodun yazılması ve test ortamına alınması e
 
 Durumu anlamanın en kolay yolu bitmiş olan örneğin sınıf diagramına bakmak olacaktır (Yani çözüme biraz tersten bakmamız gerekmektedir) İşte çözümsel yaklaşıma ait sınıf diagramı görüntüsü.
 
-[![blg232_ClassDiagram](/assets/images/2011/blg232_ClassDiagram_thumb.gif)](/assets/images/2011/blg232_ClassDiagram.gif)
+![blg232_ClassDiagram](/assets/images/2011/blg232_ClassDiagram.gif)
 
 Şimdi bu sınıf diagramını adım adım üretmeye başlayalım. İlk olarak bir arayüz sözleşmesi (Interface Contract) oluşturarak işe başlayacağız. Buradaki en büyük amacımız birden fazla Windows Service tipinin Debug edilebilir versiyonları için ortak bir sözleşme sunmaktır.
 
@@ -273,11 +273,11 @@ Debug edilmek istenen kod içeriğini taşıyan DebugableControllerService örne
 
 Hatta örneğin olmayan bir klasör içeriğinin Directory tipinin GetFiles metodu yardımıyla okunmaya çalışılması sırasında oluşan Exception mesajları da, Visual Studio arabiriminin Output ekranına düşmektedir. Aynen aşağıdaki ekran çıktısında görüldüğü gibi.
 
-[![blg231_DebugWindow](/assets/images/2011/blg231_DebugWindow_thumb.gif)](/assets/images/2011/blg231_DebugWindow.gif)
+![blg231_DebugWindow](/assets/images/2011/blg231_DebugWindow.gif)
 
 Ancak istenirse işlemlerin daha kolay takip edilmesi adına Console penceresine bilgi yazdırılması da mümkün olabilir. Bunun için Windows Service projesinin Output tipinin Console Application olarak değiştirilmesi yeterlidir.
 
-[![blg232_ConsoleOutput](/assets/images/2011/blg232_ConsoleOutput_thumb.gif)](/assets/images/2011/blg232_ConsoleOutput.gif)
+![blg232_ConsoleOutput](/assets/images/2011/blg232_ConsoleOutput.gif)
 
 Buna göre Exception bloğunu aşağıdaki gibi değişitirsek debug işlemleri sırasında Console ekranına çıktı üretebilmeyi de sağlayabiliriz.
 
@@ -299,7 +299,7 @@ void timer_Elapsed(object sender, ElapsedEventArgs e)
 }
 ```
 
-[![blg232_WriteToConsole](/assets/images/2011/blg232_WriteToConsole_thumb.gif)](/assets/images/2011/blg232_WriteToConsole.gif)
+![blg232_WriteToConsole](/assets/images/2011/blg232_WriteToConsole.gif)
 
 Elbette Debug işlemleri sonrasında hataları bertaraf edilen servis kodunun son hali asıl Windows Service kodu ile değiştirilmeli ve bu şekilde install edilmelidir. Örneğimiz bu haliyle artık Console penceresine bilgilendirme de bulunabilir. Ne Text dosyaya, ne işletim sistemindeki Event Log’ lara ne veritabanı üzerindeki ilgili tablolara loglama işlemleri yapmak için gerekli atraksiyonlar ile uğraşmamıza gerek kalmamaktadır. Uygulamanın dışına çıkmadan, olduğumuz Visual Studio ortamı (Environment) içerisinden gerekli izleme ve Debug işlemleri yapılabilir. Doğrudan Console penceresinden gerekli izlemeler de yapılabilecektir. Bunu da unutmayalım
 

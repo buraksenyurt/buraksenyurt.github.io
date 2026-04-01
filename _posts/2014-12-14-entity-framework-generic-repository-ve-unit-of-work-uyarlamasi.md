@@ -14,7 +14,7 @@ tags:
 ---
 Yazılım dünyasında var olan mimari prensipler veya tasarım kalıpları tek başlarına belirli sorunları çözseler de, bazı kurumsal projelerde mutlak suretle bir arada düşünülmeleri gerekir. Söz gelimi Repository ve Unit of Work kalıpları, özellikle Domain Driven Design odaklı yapılarda bir arada değerlendirilmesi gerekenlerdendir.
 
-[![thinking](/assets/images/2014/thinking_thumb.jpg)](/assets/images/2014/thinking.jpg)
+![thinking](/assets/images/2014/thinking.jpg)
 
 
 DDD denilince aklımıza daha çok veri odaklı uygulamalar gelir ve bu tip ürünlerde RDBMS (Relational Database Management System) lerin yeri hatırı sayılır ölçüde fazladır (Her ne kadar son yıllarda NoSQL cephesinde önemli gelişmeler ve kullanımda ciddi artışlar olsa da…)
@@ -29,7 +29,7 @@ Benim gibi.Net üzerinde geliştirme yapanlar için O/RM araçları da az çok b
 
 Gerçek hayatta Entity Framework veya başka bir O/RM aracının kullanıldığı hallerde aşağıdaki grafikteki iki durumdan birisi söz konusu olur (Genellikle de en soldaki). Klasik olarak DbContext doğrudan iş katmanında değerlendirilir. Ancak Test Driven Development veya Domain Driven Design gibi yaklaşımların kullanıldığı geliştirme süreçlerinde, Repository ve Unit of Work desenelerinin icra edilmesi önemlidir. Nitekim bu sayede uygulamanın iş mantığının tutulduğu katman ile veri erişim katmanının izole edilmesi kolaylaşır. t anında farklı bir Repository ile çalışılabilmesi veya yenilerinin yazılarak sisteme dahil edilmesinin yolu açılır. Aynı kolaylık Unit of Work yapıları için de geçerlidir.
 
-[![ruof_1](/assets/images/2014/ruof_1_thumb.png)](/assets/images/2014/ruof_1.png)
+![ruof_1](/assets/images/2014/ruof_1.png)
 
 İlk senaryoya göre iş mantığı, veri erişimi ve EF arasında kuvvetli bağlar oluşur. Bu sebepten, üründe kullanılan veri tabanını değiştirmek (farklı bir Repository’ yi tercih etmek) ve özellikle Unit Test gibi yapılarda Mock nesneleri değerledirmek zorlaşır. Bir Unit Test metodu içerisindeki işlemler bütününde her zaman CRUD (CreateReadUpdateDelete) operasyonları icra edilmek istenmeyebilir. Nitekim iş bütününün Repository odaklı olmayan kısımlarının test edilmesi de söz konusudur.
 
@@ -41,11 +41,11 @@ Code First ile Entity Modelin İnşası
 
 Örnek uygulama her zaman ki gibi gösterişsiz bir Console projesidir. Amaç ilgili desenlerin sade bir uyarlamasını görebilmektir. Ama öncesinde NuGet üzerinden güncel Entity Framework’ ün son sürümü projeye indirilerek işe başlanabilir.
 
-[![rpuow_1](/assets/images/2014/rpuow_1_thumb.png)](/assets/images/2014/rpuow_1.png)
+![rpuow_1](/assets/images/2014/rpuow_1.png)
 
 Ardından kobay olarak aşağıdaki Entity sınıfları ve DbContext türevini yazabiliriz.
 
-[![ruof_2](/assets/images/2014/ruof_2_thumb.png)](/assets/images/2014/ruof_2.png)
+![ruof_2](/assets/images/2014/ruof_2.png)
 
 ```csharp
 using System.Collections.Generic; 
@@ -83,7 +83,7 @@ Repository Yapısının İnşası
 
 Öyle bir yapı kurgulamalıyız ki, hem bir Repository için gerekli minimum fonksiyonelliklerin bir sözleşmesi hem de Context içerisinde yer alan her T tipi için çalışabilecek generic bir sınıf olsun. Ve pek tabi varsayılan kuralları istediği gibi işleyecek yeni Repository’ leri yazmanın da yolu açılabilsin. İlk olarak aşağıdaki sınıf diagramında görülen tiplerin tasarlanmasıyla işe başlanabilir.
 
-[![rpuow_2](/assets/images/2014/rpuow_2_thumb.png)](/assets/images/2014/rpuow_2.png)
+![rpuow_2](/assets/images/2014/rpuow_2.png)
 
 ve kodlar;
 
@@ -167,7 +167,7 @@ Unit of Work Yapısının İnşası
 
 Entity Framework açısından bir birimlik işi; içerisinde konuya dahil olması gereken Repository örneklerinin oluşturulması ve Save işleminin icra edilmesi olarak düşünebiliriz (Hatta bu yapı içerisine Transaction açılıp kapatılması da dahil edilebilir) Pek tabi Unit of Work yapısınında bir sözleşme üzerinden değerlendirilmesi, farklı Unit of Work’ lerin de değerlendirilebilmesi açısından önemlidir. Bu düşünceler ışığında aşağıdaki yapıyı kurgulayabiliriz.
 
-[![rpuow_3](/assets/images/2014/rpuow_3_thumb.png)](/assets/images/2014/rpuow_3.png)
+![rpuow_3](/assets/images/2014/rpuow_3.png)
 
 ve kodlar;
 
@@ -293,7 +293,7 @@ namespace RPandUOW
 }
 ```
 
-[![rpuow_4](/assets/images/2014/rpuow_4_thumb.png)](/assets/images/2014/rpuow_4.png)
+![rpuow_4](/assets/images/2014/rpuow_4.png)
 
 IDisposable arayüzü implementasyonu nedeniyle ShopUnitOfWork sınıfı using bloğun içerisinde kullanılabilir. Zaten dipose işlemi sınıfın içerisinde override edilmiştir. Blok içerisinde bir dizi örnek işlem icra edilmektedir. Buna göre bir kaç kategorinin ve bu kategorilere bağlı ürünlerin eklenmesi işlemi ele alınmaktadır. Save işlemi, Unit of Work uyarlamasının bir fonksiyonu olduğundan, dahil edilen tüm Repository örnekleri için ortak bir kullanım noktasıdır. Öyle ki, örnekte asıl Context nesnesi üzerinden yapılan kaydetme işleminin bir TransactionScope içerisinde gerçekleştirilmesi sağlanmaktadır.
 

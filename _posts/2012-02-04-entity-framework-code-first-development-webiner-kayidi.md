@@ -13,7 +13,7 @@ tags:
 ---
 Hatırlayacağınız üzere Ocak ayı içerisinde [Nedirtv?com](http://www.nedirtv.com) bünyesinde düzenlenen Webinerler arasında ben de Entity Framework-Code First Development ile kendime bir yer edinmiştim. İlk gerçekleştirdiğimiz Webinerimizde ne yazıkki Internet bağlantısında yaşadığımız şanssız sorunlar nedeni ile sağlıklı olarak ilerleyememiştik
 
-[![efcodefirst](/assets/images/2012/efcodefirst_thumb.png)](/assets/images/2012/efcodefirst.png)
+![efcodefirst](/assets/images/2012/efcodefirst.png)
 
 
 ![Sad smile](/assets/images/2012/wlEmoticon-sadsmile_11.png)

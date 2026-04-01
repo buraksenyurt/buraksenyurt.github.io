@@ -23,7 +23,7 @@ tags:
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_160.png)
 
-[![tfi_86](/assets/images/2013/tfi_86_thumb.png)](/assets/images/2013/tfi_86.png)
+![tfi_86](/assets/images/2013/tfi_86.png)
 
 Bir başka ipucunda görüşmek dileğiyle
 

@@ -30,7 +30,7 @@ Microsoft.Net Services şu anda 2 temel fonksiyonelliği karşılamaktadır. Uyg
 
 Aslında Microsoft.Net Service'leri, bütünüyle servis bazlı geliştirme fabrikası olarak düşünülebilir. Microsoft.Net Service'lerini geliştirirken kullanılan SDK, WCF ile entegrasyon da sağlamaktadır. Bu sayede var olan.Net geliştirme teknikleri ile tasarlanan WCF uygulamalarının Cloud servisi haline getirilmesi mümkündür. Önemli olan noktalardan bir diğeride, Microsoft.Net Service'in sadece.Net geliştiriciler için tasarlanmış olmayışıdır. Desteklenen REST, SOAP, WS gibi protokoller sayesinde Java ve Ruby gibi diller için geliştirilmiş olan SDK'lardan yararlanarak da Cloud servisleri geliştirilebilir.
 
-[![blg91_Book2.jpg](/assets/images/2009/blg91_Book2.jpg)](http://www.amazon.com/gp/product/0470506385/ref=ox_ya_oh_product)
+![blg91_Book2.jpg](/assets/images/2009/blg91_Book2.jpg)
 
 Windows Azure platformu ile ilişkili olarak başlangıç noktamız [http://www.microsoft.com/windowsazure/](http://www.microsoft.com/windowsazure/) adresi olmalıdır. Bu adresten gerekli SDK ve Visual Studio 2008/2010 Beta X araçlarının indirilierek kurulması geliştirilmeye başlanması için yeterlidir. Ek olarak örneğin.Net Services geliştirilmesi yapılacaksa bu konu ile ilişkili SDK'nın [http://www.microsoft.com/windowsazure/developers/dotnetservices/](http://www.microsoft.com/windowsazure/developers/dotnetservices/) adresinden tedarik edilmesi gerekmektedir.
 

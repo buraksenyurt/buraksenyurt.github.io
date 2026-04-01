@@ -17,4 +17,4 @@ Hani olurda web tarafında istemciden gelen talebe göre, döndürmek istediğin
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_74.png)
 
-[![TekFotolukIpucu47](/assets/images/2012/TekFotolukIpucu47_thumb.png)](/assets/images/2012/TekFotolukIpucu47.png)
+![TekFotolukIpucu47](/assets/images/2012/TekFotolukIpucu47.png)

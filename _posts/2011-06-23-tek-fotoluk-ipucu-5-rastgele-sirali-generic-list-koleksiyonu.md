@@ -16,6 +16,6 @@ Elinizde List tipinden bir koleksiyon var ve içerisindeki nesnelerden rastgele 
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_23.png)
 
-[![PhotoTip5](/assets/images/2011/PhotoTip5_thumb.png)](/assets/images/2011/PhotoTip5.png)
+![PhotoTip5](/assets/images/2011/PhotoTip5.png)
 
 [RandomList.rar (22,53 kb)](/assets/files/2011/RandomList.rar)

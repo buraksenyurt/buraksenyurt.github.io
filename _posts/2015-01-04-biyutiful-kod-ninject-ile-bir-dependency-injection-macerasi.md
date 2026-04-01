@@ -17,7 +17,7 @@ tags:
 ---
 Her yazılım geliştirici özellikle büyük bir projeye girdiğinde kodlarının kaliteli olması için uğraşır. Bu yönde adımlar atar. Çoğu zaman bu bir sanata dahi dönüşebilir. Okunabilir kodlar oluşturmanın dışında, mimari açıdan büyüleyici olan, yeniden kullanılabilirliğin üst seviyede olduğu, fazla uğraşılmadan genişleyebilen ürünler ortaya çıkartmak en büyük gayelerden birisi haline gelir. Martin Fowler'ın ilkeleri sıkı sıkıya takip edilir. Kurumsal çözüm içerisinde Fluent API'ler kullanılmaya, "Dependency Injection Container" gibi kavramlar konuşulmaya başlanır. Ne kadar başarılabilir bilinmez ama amaçlardan birisi de Biyütıful Kodu ortaya çıkartmaktır.
 
-[![OLYMPUS DIGITAL CAMERA](/assets/images/2015/legoninjas_thumb.jpg)](/assets/images/2015/legoninjas.jpg)
+![OLYMPUS DIGITAL CAMERA](/assets/images/2015/legoninjas.jpg)
 
 
 Dependency Injection Container Hakkında
@@ -45,7 +45,7 @@ Başlangıç
 
 İşte bu yazımızdaki amacımız temel anlamda bu tip Container'ların nasıl kullanılabildiğini anlamaktır. Neredeyse tüm Conatiner araçları aynı temeller üzerine oturmaktadır. Ninject kütüphanesini göz önüne alarak ilerlemeye çalışalım. Konuyu basitçe değerlendirmek için ele alacağımız Console uygulamasına Ninject kütüphanesini NuGet paket yönetim aracı ile yükleyerek devam edebiliriz.
 
-[![htn_1](/assets/images/2015/htn_1_thumb.png)](/assets/images/2015/htn_1.png)
+![htn_1](/assets/images/2015/htn_1.png)
 
 > Ninject açık kaynak kodlu bir projedir. [GitHub](https://github.com/ninject/ninject) üzerinden bakılabilir.
 
@@ -53,7 +53,7 @@ Başlangıç
 
 Ninject ile bağımlılıkları enjekte etmeden önce aşağıdaki gibi bir kod içeriğine sahip olduğumuzu düşünelim.
 
-[![htn_2](/assets/images/2015/htn_2_thumb.png)](/assets/images/2015/htn_2.png)
+![htn_2](/assets/images/2015/htn_2.png)
 
 ```csharp
 namespace HowTo_UsingNinject 
@@ -138,7 +138,7 @@ Ninject ile Bağımlılıkların Enjekte Edilmesi
 
 Peki bu manuel olarak bağımlılıkları enjekte etme yöntemi yerine Ninject aracını kullanmak istesek nasıl bir yol izleriz? Dahası Ninject bize bu bağımlılıkların enjekte edilmesi noktasında nasıl bir avantaj sağlamaktadır? Kod içeriğini aşağıdaki şekilde değiştirerek devam edelim bu soruların cevabını bulmaya çalışalım.
 
-[![htn_3](/assets/images/2015/htn_3_thumb.png)](/assets/images/2015/htn_3.png)
+![htn_3](/assets/images/2015/htn_3.png)
 
 ```csharp
 using System; 

@@ -13,7 +13,7 @@ tags:
 ---
 Banka gibi, pek çok farklı sistemin bir arada yer aldığı ve çalıştığı, çoğu zaman heterojen yapıda olan büyük çaplı çözümlerde, servislerin sıklıkla kullanıldığını görürüz. Çok basit bir operasyonel uygulama bile, çalışacağı veri kümesini sadece veritabanı kaynağı üzerinden değil, sistem içerisinde yer alan başka kanallardan da almak durumunda kalabilir. Tam tersi durumda söz konusudur. Gerçekleşen bir toplu işlemin içerisinde, akışın çeşitli noktalarında yine servisler devreye girerek diğer sistemlerin haberdar edilmesi de söz konusudur. İşte böyle durumlarda, sistem içerisindeki parçalar arasındaki entegrasyonun sağlanabilmesi amacıyla, servis bazlı çözümlere sıklıkla başvurulur.
 
-[![504349_tft_screen_close-up_1](/assets/images/2012/504349_tft_screen_close-up_1_thumb.jpg)](/assets/images/2012/504349_tft_screen_close-up_1.jpg)
+![504349_tft_screen_close-up_1](/assets/images/2012/504349_tft_screen_close-up_1.jpg)
 
 
 İşin içerisine servisler girdiğinde, bunların anlık durumunlarını izlemek, ayakta olup olmadıklarını görmek veya zaman içerisindeki hareketliliklerine bakarak istikrarlı yapılarının nasıl olduğunu analiz etmek isteyebiliriz. Pek tabi bunun için birden çok 3ncü parti tool olduğunu biliyoruz. Söz gelimi IIS tarafında Windows Server AppFabric aracından yararlanılarak son derece etkili ve gelişmiş izleme ve kontrol mekanizmaları gerçekleştirilebilmektedir. Lakin bazı bankacılık sistemlerinde teknoloji adaptasyonu beklendiği kadar hızlı değildir. Windows Server AppFabric gibi bir tool’ un geçişi, yıllarca XP üzerinde çalışan bankanın Windows 7’ ye geçişindeki gecikme kadar sancılı ve sıkıntılı olabilir. Hatta bankanın bir sonraki teknolojik yenilenme sürecinde ortada Windows Server AppFabric’ ten tamamen farklı bir ürün de bulunabilir
@@ -28,7 +28,7 @@ Elbette kendi başımızın çaresine bakmamız gerekecektir. Bir başka deyişl
 
 Bazı servisler kendi durumlarını belirli periyotlarda çeşitli monitoring araçlarına bildirmek üzere genişletilmiştir. Hatta bazılarının çalışma zamanı motoru bunu default olarak sunmaktadır. Bazı monitoring araçlarıda, listelerinde yer alan servisleri belirli periyotlarda veya yöneticinin karar verdiği zaman aralıklarında kontrol ederek hayatta olup olmadıklarını anlamaya çalışır. Biz bu yolu tercih ediyor olacağız. Teorimiz ise oldukça basit. Servis URL adresine bir talepte bulunacağız. Eğer bir Exception/Error dönmüyorsa bir başka deyişle bir response alabiliyorsak servisimizin ayakta olduğunu düşünebiliriz. Öyleyse ilk etapta bir URL adresi ile gelen sayfaya nasıl request atabiliriz buna bir bakalım. Bu amaçla Kernel isimli bir kütüphane (Class Library) projesi oluşturalım ve içerisine Analyst isimli bir sınıf ekleyelim.
 
-[![analyst](/assets/images/2012/analyst_thumb.png)](/assets/images/2012/analyst.png)
+![analyst](/assets/images/2012/analyst.png)
 
 ```csharp
 using System; 
@@ -105,17 +105,17 @@ public void PokeTestOk()
 
 İlk test metodumuzda servis adresi olarak olmayan bir URL bilgisi giriyoruz. Bu teste göre Poke metodundan bir Exception nesne örneğinin dönmesini beklemekteyiz. Diğer taraftan ikinci test metodu içerisinde [http://www.w3schools.com/webservices/tempconvert.asmx](http://www.w3schools.com/webservices/tempconvert.asmx) adresine bir talepte bulunuyoruz. Burada beklediğimiz ise herhangibir Exception’ ın dönmemesi. Bir başka deyişle Poke metodunun null değer döndürmesini bekliyoruz. Testlerimizi çalıştırdığımızda aşağıdaki sonuçları almış olmalıyız.
 
-[![testreport](/assets/images/2012/testreport_thumb.png)](/assets/images/2012/testreport.png)
+![testreport](/assets/images/2012/testreport.png)
 
 Sonuç itibariyle iki test de başarılı bir şekilde tamamlandı. Dolayısıyla bu çekirdek fonksiyonelliğimizin işe yarayacağını düşünebiliriz. Öyleyse artık uygulamamızın kalan kısmını geliştirmeye devam edelim.
 
 Sistemsel olarak takip etmek istediğimiz servisler ve bu servislerin tarih içerisindeki yaşam durumlarını öğrenmek istiyoruz. Buna göre servislerimizin bilgisini ve her servisin tarih içerisindeki durum raporlarını tutacağımız bir yapı tasarlamamız gerekiyor. Aslında aşağıdaki tip modeli düşünüldüğünde söz konusu ilişkiyi bir ölçüde kurduğumuzu ifade edebiliriz.
 
-[![modeldiagram](/assets/images/2012/modeldiagram_thumb.png)](/assets/images/2012/modeldiagram.png)
+![modeldiagram](/assets/images/2012/modeldiagram.png)
 
 Source tipi içerisinde servise ait adres bilgisini, tipini saklıyor olacağız. Bununla birlikte bir servisin tarih içerisindeki hareketliliklerini de saklamak istediğimizden arada bire çok ilişkiyi kuracağımız ikinci bir tipimiz daha yer alıyor. SourceHistory tipi içerisinde ise, yapılan Poke işlemine ait bilgiler tutulmaktadır. Bu işlemin ne zaman yapıldığı, Exception var ise buna ait bilgi, hangi servisin kontrol ediliği ve servisin o anki durumu gibi bilgiler tutulmaktadır. Dikkat edileceği üzere iki tip arasında bir Association ilişkisi de kurulmuş durumdadır. Şimdi dilerseniz Analyst tipimizin geri kalan metodlarını yazmaya çalışalım. İlk olarak toplu bir servis listesi üzerinde işlem yapacak olan ana fonksiyonelliğimizi geliştirerek ilerleyebiliriz.
 
-[![analyst2](/assets/images/2012/analyst2_thumb.png)](/assets/images/2012/analyst2.png)
+![analyst2](/assets/images/2012/analyst2.png)
 
 ```csharp
 using System; 
@@ -194,7 +194,7 @@ public void GetReportTestOk()
 
 Test metodumuzun çalışması sonrasında beklentimiz koleksiyon içerisinde yer alan her bir Source örneğine karşılık metoddan geriye bir karşılığının dönmesi. Bir başka deyişle GetReport metodunun dönüş referansına ait Count değeri ile Sources özelliğine atanan koleksiyonun Count değerlerinin eşit olmasını bekliyoruz. Testimizi çalıştırdığımızda geçiyor olmalıyız.
 
-[![testreport2](/assets/images/2012/testreport2_thumb.png)](/assets/images/2012/testreport2.png)
+![testreport2](/assets/images/2012/testreport2.png)
 
 Elimizde temel fonksiyonellikler mevcut gibi. Ama halen daha eksiklikler var. Söz gelimi Analyst tipimizin tutarlı veriler ile çalışması gerekiyor. Yazımızın başında belirttiğimiz üzere biz XML Web Servislerini ve HTTP tabanlı WCF servislerini kontrol etmeyi planlıyoruz. Bu durumda Http veya https ile başlamayan ve bunlara ek olarak svc veya asmx ile bitmeyen adresleri işleme katmamalıyız. Bunu koleksiyonu oluşturacağımız yerde yapacağımız bir kontrolle engelleyebileceğimiz gibi Analyst sınıfı içerisinde de ele alabiliriz. Dilerseniz ikinci seçeneği göz önüne alarak sınıf yapımızı biraz daha değiştirelim.
 
@@ -262,7 +262,7 @@ public void GetReportTestOk()
 
 Dikkat edileceği üzere iki adreste istediğimiz normlara uygun değil. İlk adres sv ile biterken ikinci adresimiz ftp ile başlıyor. Buna göre test metodumuzun Fail etmesi gerekmektedir. Çünkü geçer şartımız Keys.Count değerinin 0 dan farklı olmasıdır. Buradaki senaryoda iki adreste geçersiz olduğundan koleksiyona eklenmeyecek ve eleman sayısı 0 olarak dönecektir.
 
-[![testreport3](/assets/images/2012/testreport3_thumb.png)](/assets/images/2012/testreport3.png)
+![testreport3](/assets/images/2012/testreport3.png)
 
 Artık Analyst sınıfımızı terk edip arayüz tarafına geçebiliriz. Windows Forms şablonu olarak tasarlayacağımız Monitor uygulaması farklı bir proje de olabilir. Nitekim Kernel isimli çekirdek kütüphanemiz herhangibir projeye referans edilerek kullanılabilir.
 
@@ -362,7 +362,7 @@ namespace Monitor
 
 Windows uygulamamızda bir Timer nesnesinden yararlanılmaktadır. Form ilk yüklenirken takip edilecek olan servis listesi yüklenir. Ardından config dosyasında belirtilen Interval değerine göre Timer nesne örneğinin Tick metodu belirli periyotlarda devreye girerek servislerin durum bilgisini çeker. Sonuçlar bir anonymous type içerisine örneklenip liste haline getirilerek DataGridView kontrolünde gösterilmektedir. Örneği çalıştırdığımızda 10 saniye de bir yapılan tetiklemeler sonucu, ilgili servislerin anlık bilgileri görüntülenecektir.
 
-[![monitoring](/assets/images/2012/monitoring_thumb.png)](/assets/images/2012/monitoring.png)
+![monitoring](/assets/images/2012/monitoring.png)
 
 Buraya kadar yaptıklarımızı düşündüğümüzde uygulamamızın eksik kalan pek çok kısmı olduğu fark edilmektedir. Söz gelim;
 

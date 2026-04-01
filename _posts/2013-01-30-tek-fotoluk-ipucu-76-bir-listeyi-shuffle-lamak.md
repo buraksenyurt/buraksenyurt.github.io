@@ -17,6 +17,6 @@ Malum hepimizin devasaaa/kocaman boyutlarda MP3 arşivleri var ve genelde müzik
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_128.png)
 
-[![tfi_76](/assets/images/2013/tfi_76_thumb.png)](/assets/images/2013/tfi_76.png)
+![tfi_76](/assets/images/2013/tfi_76.png)
 
 Bir başka ipucunda görüşmek dileğiyle.

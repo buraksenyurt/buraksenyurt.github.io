@@ -19,6 +19,6 @@ LINQ tarafında isimsiz tipleri (Anonymous Types) oldukça sık kullanmaktayız.
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_34.png)
 
-[![PhotoTrick16New](/assets/images/2011/PhotoTrick16New_thumb.png)](/assets/images/2011/PhotoTrick16New.png)
+![PhotoTrick16New](/assets/images/2011/PhotoTrick16New.png)
 
 [DynamicVar.rar (26,49 kb)](/assets/files/2011/DynamicVar.rar)

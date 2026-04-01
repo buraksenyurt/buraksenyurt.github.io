@@ -12,7 +12,7 @@ tags:
 ---
 Aşağıdaki resimde Visual Studio 2010 Ultimate ortamına ait bir ara pencere görmektesiniz. Dikkat edeceğiniz üzere Select Methods Where NbLinesOfCode>=5 şeklinde bir sorgu cümlesi var. Oppsss!!! Bu nasıl bir sorgu cümlesi? Tahmin etmeye çalışalım. Sanki uygulamadaki kod satır sayısı 5’ ten fazla olan metodların adlarını döndüren bir sorgu cümlesi gibi.
 
-[![blg227_CQL_Sample_1](/assets/images/2010/blg227_CQL_Sample_1_thumb.gif)](/assets/images/2010/blg227_CQL_Sample_1.gif)
+![blg227_CQL_Sample_1](/assets/images/2010/blg227_CQL_Sample_1.gif)
 
 Şu anda bir Code Query Language örneğinin Visual Studio 2010 IDE’ si içerisindeki raporlama sonucunu görmektesiniz.
 
@@ -24,7 +24,7 @@ Bildiğiniz üzere Visual Studio 2010 IDE’ si içerisinde Architecture sekmesi
 
 NDepend aracı hem kod kalitesini arttırmak için gerekli metric’ lerin kontrolünü sağlıyor hem de az önceki erkan görüntüsünde olduğu gibi CQL ile bazı kriterleri sorgulayabilmemize olanak tanıyor. Tabi bu sadece şu ana kadar öğrenebildiğim iki güzel özelliği. Daha da fazlası var. Ancak basit bir test sürüşü ile yolumuza devam edebiliriz. Bu amaçla örnek olarak aşağıdaki ekran görüntüsünde yer alan Solution içeriğini göz önüne alabiliriz.
 
-[![blg227_SolutionTree](/assets/images/2010/blg227_SolutionTree_thumb.gif)](/assets/images/2010/blg227_SolutionTree.gif)
+![blg227_SolutionTree](/assets/images/2010/blg227_SolutionTree.gif)
 
 Sağ alt köşede sarı renkli olan daire mutlaka dikkatinizi çekmiştir. Aslında bu NDepend aracı ile gelen ve Popup Menu açan sihirli bir dairedir
 
@@ -32,7 +32,7 @@ Sağ alt köşede sarı renkli olan daire mutlaka dikkatinizi çekmiştir. Aslı
 
 Ki bastığınızda aşağıdaki ekran görüntüsüne benzer sonuçlar ile karşılaşabilirsiniz.
 
-[![blg227_YellowCircle](/assets/images/2010/blg227_YellowCircle_thumb.gif)](/assets/images/2010/blg227_YellowCircle.gif)
+![blg227_YellowCircle](/assets/images/2010/blg227_YellowCircle.gif)
 
 Dikkat edileceği üzere 18 kural ihlali (18 Rules Violated) olduğu hemen göze çarpmaktadır
 
@@ -40,11 +40,11 @@ Dikkat edileceği üzere 18 kural ihlali (18 Rules Violated) olduğu hemen göze
 
 Rules Violated kısmına tıkladığımızda ise aşağıdaki ara birim ile karşılaştığımızı görürüz.
 
-[![blg227_SampleViolation](/assets/images/2010/blg227_SampleViolation_thumb.gif)](/assets/images/2010/blg227_SampleViolation.gif)
+![blg227_SampleViolation](/assets/images/2010/blg227_SampleViolation.gif)
 
 Bu ekran görüntüsünden de anlaşılacağı üzere bazı kalite kriterlerine ait analiz sonuçları üretilmiştir. Örneğin kodun kalitesi açısından Code Quality grubu ve altındaki Type Metrics kısmına bir bakalım. Type Metrics sonuçları içerisinde örneğin çok fazla sayıda metod içeren 10 öğe olduğu belirtilmektedir. Eğer bu satıra çift tıkarsak aşağıdaki CQL sorgusunu ve sonuçlarını elde ederiz.
 
-[![blg227_TooManyMethods](/assets/images/2010/blg227_TooManyMethods_thumb.gif)](/assets/images/2010/blg227_TooManyMethods.gif)
+![blg227_TooManyMethods](/assets/images/2010/blg227_TooManyMethods.gif)
 
 Volaaa!!!
 
@@ -64,7 +64,7 @@ NDepend aracının bu yazıya sığmayacak kadar fazla sayıda özelliği var. S
 
 ![Laughing](/assets/images/2010/smiley-laughing.gif)
 
-[![blg227_NDependView](/assets/images/2010/blg227_NDependView_thumb.png)](/assets/images/2010/blg227_NDependView.png)
+![blg227_NDependView](/assets/images/2010/blg227_NDependView.png)
 
 Hani projeyi analiz etmeye, dökümantasyon çıkartmaya üşenenlerin yardımına koşan araçlardan birisi olduğunu açıkça ifade etmek isterim. Mesajım umuyorum ki gerekli yerlere gider
 

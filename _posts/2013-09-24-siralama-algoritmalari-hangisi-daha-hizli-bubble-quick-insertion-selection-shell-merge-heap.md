@@ -20,7 +20,7 @@ tags:
 ---
 Evimdeki çalışma odasında yer alan kütüphanemi zaman zaman gelen yeni kitaplar ve afacan S (h) arp Efe'nin haylazlıkları nedeni ile darma duman halde bulabiliyorum. Hal böyle olunca çoğu zaman kitaplıkta yer alan onlarca kitabı tekrardan düzenlemem ve uygun bir sırada dizmem gerekebiliyor. Hatta bunu kitapların tozunu almak için hepsini yerlere indirdikten sonra da yaşayabiliyorum. Aslına bakarsanız her seferinde farklı bir kategorilendirme yapıyor ve buna göre bir sıralama işlemi icra etmeye çalışıyorum. Tabi el çabukluğu dışında akıllı düşününce sıralamak ve yerleştirmek kısa sürede bitebiliyor. Ama bazen de kafa bulanık olunca bu işlem sandığımdan da uzun sürüp bir işkence haline gelebiliyor.
 
-[![Sorting_1](/assets/images/2013/Sorting_1_thumb.jpg)](/assets/images/2013/Sorting_1.jpg)
+![Sorting_1](/assets/images/2013/Sorting_1.jpg)
 
 
 Üniversite yıllarında özellikle programlama derslerinde buna benzer şekilde sıralama algoritmaları ile haşır neşir olmayanımız yoktur eminim ki. Hatta çoğu sınavın korkulu rüyası sorularının kaynağını teşkil etmektedir ki hocalarımız genellikle bunları kağıt kalem kullanarak çözmemizi isterler (En azından benim zamanında böyleydi)
@@ -535,7 +535,7 @@ namespace SortingAlgorithm
 
 GenerateRandomNumbers metodu testler için gerekli n boyutlu int tipinden dizi üretimini üstlenmektedir. Söz konusu kobay diziler rastgele int sayılarından oluşmaktadır. Diğer yandan WriteLog metodu'da int tipinden herhangibir dizinin içeriğini (Sıralı veya değil) ExecutionLog isimli text tabanlı dosyaya yazmaktadır.Buraya kadar yazmış olduğumuz tipleri aşağıdaki sınıf diagramında daha net bir şekilde görebilirsiniz.
 
-[![Sorting_2](/assets/images/2013/Sorting_2_thumb.gif)](/assets/images/2013/Sorting_2.gif)
+![Sorting_2](/assets/images/2013/Sorting_2.gif)
 
 Artık yazmış olduğumuz tipleri kullanarak ilgili test işlemlerini gerçekleştirecek olan uygulama kodunu geliştirmeye başlayabiliriz.
 
@@ -633,7 +633,7 @@ Sonuçlar
 
 Artık uygulamamızı çalıştırabilir ve sonuçları irdeleyebiliriz. Dizilerimize ait değer aralıkları 100, 500, 1000, 5000, 10000, 50000 ve 100000' dir. Çok doğal olarak son değer aralıklarının büyüklüğü nedeni ile uygulama ilgili sıralama algoritmalarını oldukça zorlayacaktır ki bu istediklerimizden birisidir. Ben şahsen uygulamayı denediğimde bir kaç saat çalıştığına şahit oldum. Tabi burada işi yavaşlatan farklı faktörler ve etkenlerde var. Ancak sonuç olarak aşağıdaki test değerlerini elde ettim.
 
-[![Sorting_3](/assets/images/2013/Sorting_3_thumb.gif)](/assets/images/2013/Sorting_3.gif)
+![Sorting_3](/assets/images/2013/Sorting_3.gif)
 
 Görüldüğü üzere değer aralığı büyüdükçe en hızlı sonuçlar Quick Sort algoritmasından gelmektedir. Diğer yandan Bubble Sort algoritmasının çok fazla maliyet getirdiği ve uzun sürdüğü ortadadır. Heap ve Merge algoritmaları birbirlerine yakın süreler vermiştir. Insertion, Selection ve Shell algoritmaları tatmin edici hızlarda değildir. Tabi buradaki süreler Milisaniye cinsinden olup alsında çok fazla önemli görünmeyebilir. Ancak matematiksel hesaplamaların yoğun yapıldığı bilimsel uygulamalarda sıklıkla kullanıldıkları ve ihtiyaç duyuldukları da bilinmektedir.
 

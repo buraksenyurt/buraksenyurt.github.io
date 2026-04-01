@@ -16,6 +16,6 @@ LINQ to SQL kullandığımız durumlarda bildiğiniz gibi dışarıdan SQL sorgu
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_59.png)
 
-[![PhotoTrick42](/assets/images/2011/PhotoTrick42_thumb.png)](/assets/images/2011/PhotoTrick42.png)
+![PhotoTrick42](/assets/images/2011/PhotoTrick42.png)
 
 [ExecuteQueryAndInjection.rar (52,04 kb)](/assets/files/2011/ExecuteQueryAndInjection.rar)

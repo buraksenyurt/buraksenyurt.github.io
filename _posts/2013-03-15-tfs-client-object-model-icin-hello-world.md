@@ -20,7 +20,7 @@ tags:
 ---
 Çok eskidendi diyemeyeceğimiz kadar yakın bir zamanda, bilgisayar programcılarının ilah olduğu devirlerde, evimizin 37 ekran TV’ lerine girmiş Commodore 64K, Amiga oyunlarına sabaha kadar vakit ayırdığımız yıllarda; ne Source Code Control denen bir kavram vardı, ne de 9 kişilik askeri manga misali çalışan Scrum ekipleri. Ancak teknoloji ve yazılım dünyası öylesine hızla ilerledi ki…Koşar adımlarla geldiğimiz günümüzde, özellikle Enterprise çapta yürütülen projelerde, ekip olmadan hareket etmek neredeyse imkansız hale geldi.
 
-[![commodore](/assets/images/2013/commodore_thumb.jpg)](/assets/images/2013/commodore.jpg)
+![commodore](/assets/images/2013/commodore.jpg)
 
 
 Yazılıma başladığım yıllarda Microsoft Visual SourceSafe kullanan birisi olarak olayın uzun bir süre önce kod kontrolü ve saklanmasının ötesine geçtiğini söylesem sanırım hepimiz bu noktada hem fikir oluruz
@@ -41,7 +41,7 @@ Client Object Model
 
 Peki, [Microsoft adresinden download edebileceğiniz](http://visualstudiogallery.msdn.microsoft.com/f30e5cc7-036e-449c-a541-d522299445aa) bu nesne modeli bize ne sunuyor? Olaya aşağıdaki grafik ile başlayalım.
 
-[![comhello_1](/assets/images/2013/comhello_1_thumb.png)](/assets/images/2013/comhello_1.png)
+![comhello_1](/assets/images/2013/comhello_1.png)
 
 Yukarıdaki grafik anlatımında TFS’ in uygulama modeline ait örnek bir dağılıma yer verilmektedir. Hepimiz esas itibariyle Team Foundation Server’ ın, n sayıda makine üzerine fiziki olarak dağıtılabilen bir uygulama sunucusu ve çevre programlar bütünü olduğunu biliyoruz. Bu anlamda TFS uygulama sunucusuna bağlanan pek çok istemci çeşidi de mevcut. Örneğin Continous Integration gibi modelleri destekleyen Build planlarının yönetildiği Build Server veya bir geliştirici makinesi üzerinde koşan Visual Studio gibi.
 
@@ -69,7 +69,7 @@ Hello Client Object Model
 
 Client Object Model’ i yüklendikten sonra.Net projesine aşağıdaki ekran görüntüsünde yer alan Microsoft.TeamFoundation.Client ve Microsoft.TeamFoundation.Common assembly referanslarının eklenmesi yeterli olacaktır.
 
-[![comhello_2](/assets/images/2013/comhello_2_thumb.png)](/assets/images/2013/comhello_2.png)
+![comhello_2](/assets/images/2013/comhello_2.png)
 
 > Olur da Reference penceresinde Extensions kısmında çıkmazlar, bu durumda C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\ adresine bir uğrayın derim
 >
@@ -141,13 +141,13 @@ Sonraki adımlarda sırasıyla bir bağlantı işlemi ve sonrasında da TFS sunu
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_84.png)
 
-[![comhello_4](/assets/images/2013/comhello_4_thumb.png)](/assets/images/2013/comhello_4.png)
+![comhello_4](/assets/images/2013/comhello_4.png)
 
 Dolayısıyla TFS üzerinde oldukça fazla nesneyi sorgulayabiliriz. Örneğimizde sadece Team Project Collection ve içerisinde yer alan Team Project örnekleri değerlendirilmiştir. Oysaki test ortamından raporlara, Sharepoint Proje portallerinden SQL veri tabanı örneklerine kadar pek çok içerik sorgulanabilmektedir.
 
 Örnek uygulamayı çalıştırdığımızda ben aşağıdaki ekran görüntüsünde yer alan sonuçları aldım.
 
-[![comhello_7](/assets/images/2013/comhello_7_thumb_1.png)](/assets/images/2013/comhello_7_1.png)
+![comhello_7](/assets/images/2013/comhello_7_1.png)
 
 Bu örnek tfs.visualstudio.com üzerinde oluşturduğum bir koleksiyona aittir. seddulbahir.visualstudio.com adresinden ulaşabildiğim koleksiyon içerisinde bir kaç deneme projesi oluşturdum. Tahmin edeceğiniz üzere Windows Live ID ile burada yer almanız ve eğer bir değişiklik olmadıysa 5 kişiye kadar ücretsiz olarak yararlanmanız mümkün. Yani 5 kişilik bir ekibiniz var ise hemen bir TFS hesabı açıp çalışmaya başlayabilirsiniz
 
@@ -159,13 +159,13 @@ TFS Proje İskeleti
 
 Aslında bu tip bir örneği işletmeden önce TFS’ in genel olarak proje iskelet yapısını bilmekte de yarar vardır. Aşağıdaki şekilde bu durum kısaca özetlenmeye çalışılmaktadır.
 
-[![comhello_3](/assets/images/2013/comhello_3_thumb.png)](/assets/images/2013/comhello_3.png)
+![comhello_3](/assets/images/2013/comhello_3.png)
 
 Normal şartlarda TFS i kurduğumuzda (ki install işlemi eğer farm üzerine kurulum yapıyorsanız biraz sıkıntılı olabilir ![Confused smile](/assets/images/2013/wlEmoticon-confusedsmile_29.png)) hep Default Collection üzerinden çalışırız. Default Collection aslında SQL tarafında da bir veri tabanına karşılık gelmektedir. Oysaki 100lerce projeye sahip olup, bunların çoğunu Enterprise seviyede inşa eden firmalarda birden fazla Team Project Collection kullanıldığı da görülmektedir. Her Team Project Collection aslında bir Team Project ailesini işaret etmektedir. Bir başka deyişle bir Team Project Collection içerisinde n sayıda Team Project barındırabilirsiniz. Çok doğal olarak her bir Team Project de kendi içerisinde birden fazla proje barındırabilir.
 
 Ne yazık ki Team Project ile Project kavramları zaman zaman birbirlerine karışabilmektedir. Aslında bu ayırım uygulanmak istenen süreç noktasında kendisini daha belirgin gösterir. Nitekim bir Team Project oluştururken Scrum, MSF, CMMI veya özelleştirilmiş bir Process Template seçilmelidir.
 
-> Var olan bir Process Template’ i indirip, XML içerikleri ile oynayabilir ve şirket kültürünüze uygun farklı bir süreç şablonu oluşturabilirsiniz. Bu anlamda [Microsoft’ un Power Tools](http://visualstudiogallery.msdn.microsoft.com/b1ef7eb2-e084-4cb8-9bc7-06c3bad9148f) ürününü kullanmanızı öneririm. Visual Studio 2012’ ye bir eklenti şeklinde gelip şablonları görsel olarak yönetebilmenize olanak tanımaktadır.[![comhello_6](/assets/images/2013/comhello_6_thumb.png)](/assets/images/2013/comhello_6.png)
+> Var olan bir Process Template’ i indirip, XML içerikleri ile oynayabilir ve şirket kültürünüze uygun farklı bir süreç şablonu oluşturabilirsiniz. Bu anlamda [Microsoft’ un Power Tools](http://visualstudiogallery.msdn.microsoft.com/b1ef7eb2-e084-4cb8-9bc7-06c3bad9148f) ürününü kullanmanızı öneririm. Visual Studio 2012’ ye bir eklenti şeklinde gelip şablonları görsel olarak yönetebilmenize olanak tanımaktadır.![comhello_6](/assets/images/2013/comhello_6.png)
 
 Yani ALM yoğurt yiyiş şekli belirlenmelidir. Sonrasında ise bu Team Project içerisine dahil olan ve aynı şekilde yoğurt yiyecek olan ekip elemanları, n sayıda ve n çeşitte proje üzerinde çalışabilir. Bu projeler.Net uygulamaları olabileceği gibi.Net dışı ortamlar da olabilir. Önemli olan tüm bu projelerin aynı Team Project içerisinde dahil olmalarıdır.
 
@@ -181,7 +181,7 @@ Ey o adresteki DefaultCollection. Bana, tuttuğun Work Item örneklerini sorgula
 
 Bu işlemin ardından artık Work Item’ ların sorgulanmasına başlanıyor. Aslında tipik bir SQL sorgusu diyebileceğimiz ama literatürde WIQL (WorkItem Query Language) olarak geçen ifademizi Query metoduna parametre olarak veriyoruz. Sorgumuz son derece basit. ARGE isimli Team Project içerisinde yer alan WorkItem’ lardan Task tipinden olanları, önce State’ e göre A…Z sırasında, sonrasında da son değişiklik zamanına (Changed Date) göre Z…A sırasında talep ediyoruz. Sonuç olarak benim deneme amaçlı olarak kullandığım ARGE isimli Team Project için aşağıdaki ekran görüntüsünde yer alan sonuçları elde ettiğimi ifade edebilirim.
 
-[![comhello_5](/assets/images/2013/comhello_5_thumb.png)](/assets/images/2013/comhello_5.png)
+![comhello_5](/assets/images/2013/comhello_5.png)
 
 Görüldüğü üzere ARGE projesine ait Task tipinden Work Item öğelerinin başlıkları (Title), güncel durumları (State) ve son değişiklik zamanları (Changed Date) elde edilebilmiştir. Bu noktada neler yapabileceğinizi ifade etmek istediğimizde sadece Team Explorer ile veya TFS’ in Web arayüzü ile yapabildiklerinizi düşünmeniz kafi olacaktır.(WIQL’ in örnek kullanımları ve 5 parçadan oluşan iskelet yapısının teknik detayı için [MSDN adresini ziyaret](http://msdn.microsoft.com/en-us/library/vstudio/bb130306.aspx) edebilirsiniz)
 

@@ -19,6 +19,6 @@ Environment tipinde neler var neler zaten
 
 ![Smile](/assets/images/2011/wlEmoticon-smile_11.png)
 
-[![PhotoTrick22](/assets/images/2011/PhotoTrick22_thumb.png)](/assets/images/2011/PhotoTrick22.png)
+![PhotoTrick22](/assets/images/2011/PhotoTrick22.png)
 
 [UsingEnvironment.rar (20,82 kb)](/assets/files/2011/UsingEnvironment.rar)

@@ -22,6 +22,6 @@ Takip edenler amatör düzeye yaklaşmaya çalışan/çabalayan fotoğrafçılı
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_169.png)
 
-[![tfii_89](/assets/images/2013/tfii_89_thumb.png)](/assets/images/2013/tfii_89.png)
+![tfii_89](/assets/images/2013/tfii_89.png)
 
 Bir başka ipucunda görüşmek dileğiyle.

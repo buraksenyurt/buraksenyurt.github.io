@@ -10,7 +10,7 @@ tags:
 ---
 Çok şanslı bir çocukluk geçirdim. 80li yıllarda daha minik bir çocukken Lego’ lar oyuncak dolabımdan eksik olmazdı. O zamanlar benim için çok kıymetliydiler. Tabi büyüdükçe başka başka şeyler önem kazanmaya başladı. Lego’ nun pabucu belki de dama atıldı. Ta ki bir oğlum olana kadar.
 
-[![LegoBuild](/assets/images/2014/LegoBuild_thumb.jpg)](/assets/images/2014/LegoBuild.jpg)
+![LegoBuild](/assets/images/2014/LegoBuild.jpg)
 
 
 Şimdiler de 4lü yaşlarını yaşayan S (h) arp Efe’ nin en sevdiği oyuncakların başında geliyor Lego. Ülkemizdeki fiyatları her ne hikmetse yüksek olan Lego’ lardan çok fazla alamıyoruz belki ama işin güzel bir tarafı var. 80li yıllarda oynadığım ve Annem tarafından saklanan Lego parçaları günümüzdekiler ile de uyumlu. Yani var olanları yeniler ile bir arada kullanıp hayal gücümüze göre farklı farklı yapılar inşa edebiliyoruz.
@@ -57,11 +57,11 @@ namespace NewFeatures
 
 Bu kod parçasında görüldüğü üzere ConnectionString ve ClientID isimli özellikler tanımlandıkları satırda ilk değerlerine sahip olmaktalar. İfade noktalı virgül ile tamamlandığında hem özellik tanımını hem de bu özelliklere ait arka plan alanları (Backing Field) için ilk değerleri vermiş oluyoruz. Bu arada ConnectionString'in sadece okunabilir (Readonly) bir özellik olarak tanımlandığına dikkat edelim. Çalışma zamanı sonuçlar aşağıdaki gibidir.
 
-[![cs6_2](/assets/images/2014/cs6_2_thumb.png)](/assets/images/2014/cs6_2.png)
+![cs6_2](/assets/images/2014/cs6_2.png)
 
 Tabi arka planda yer alan IL (Intermediate Language) görüntüsüne bakmakta da yarar var ki o da şu şekildedir.
 
-[![cs6_1](/assets/images/2014/cs6_1_thumb.png)](/assets/images/2014/cs6_1.png)
+![cs6_1](/assets/images/2014/cs6_1.png)
 
 Dikkat edilmesi gereken nokta özellik değerlerinin ConnectionManager sınıfının yapıcı metodu (Constructor) içerisinde atanmış olmasıdır.
 
@@ -96,11 +96,11 @@ namespace NewFeatures
 
 Segment isimli sınıf inşa edilirken parantezler içerisinde iki değişken tanımlaması yapıldığı görülmektedir. Bu, aslında code ve length isimli parametreleri kullanan bir yapıcı metod (Constructor) tanımlamasıdır. Örnekte yapıcı metodun daha anlamlı hale gelmesi adına, ilgili metod parametrelerinin Read Only olarak ifade edilmiş Auto Property'ler de ilk değerler olarak kullanılması sağlanmıştır. Dolayısıyla Segment tipinden bir nesne örneği oluşturulurken, yapıcı metod içerisinde verilen değerler aynı zaman da Code ve Length özelliklerinin set edilmesinde kullanılmaktadır. Çalışma zamanı görüntüsü aşağıdaki gibidir.
 
-[![cs6_3](/assets/images/2014/cs6_3_thumb.png)](/assets/images/2014/cs6_3.png)
+![cs6_3](/assets/images/2014/cs6_3.png)
 
 Ama bizi asıl ilgilendiren kodun IL tarafına nasıl yansıdığıdır. İşte o görüntüler.
 
-[![cs6_4](/assets/images/2014/cs6_4_thumb.png)](/assets/images/2014/cs6_4.png)
+![cs6_4](/assets/images/2014/cs6_4.png)
 
 Dikkat edileceği üzere yapıcı metod için code ve length isimli argumanlar tanımlanmış ve bu argumanlara ait değerler Segment ve Code özelliklerine ait alanlara ldarg.1 ve ldarg.2 üzerinden atanmıştır.
 
@@ -138,11 +138,11 @@ class Segment(string code,int length)
 }
 ```
 
-[![cs6_5](/assets/images/2014/cs6_5_thumb.png)](/assets/images/2014/cs6_5.png)
+![cs6_5](/assets/images/2014/cs6_5.png)
 
 Bu son derece doğaldır nitekim Primary Constructor sınıfı başlatmak için gerekli olan minimum argüman desenine sahip yapıcıyı tanımlamaktadır. Dolayısıyla aşağıdaki gibi bir kullanıma gidilmesi gerekecektir.
 
-[![cs6_6](/assets/images/2014/cs6_6_thumb.png)](/assets/images/2014/cs6_6.png)
+![cs6_6](/assets/images/2014/cs6_6.png)
 
 ```csharp
 using System;
@@ -177,7 +177,7 @@ namespace NewFeatures
 
 IL koduna baktığımızda varsayılan yapıcı metodun beklendiği gibi Primary Constructor'un işaret ettiği fonksiyonu çağırdığı görülmektedir.
 
-[![cs6_7](/assets/images/2014/cs6_7_thumb.png)](/assets/images/2014/cs6_7.png)
+![cs6_7](/assets/images/2014/cs6_7.png)
 
 Static Metodlar için using Bildirimi
 
@@ -204,7 +204,7 @@ namespace NewFeatures
 }
 ```
 
-[![cs6_8](/assets/images/2014/cs6_8_thumb.png)](/assets/images/2014/cs6_8.png)
+![cs6_8](/assets/images/2014/cs6_8.png)
 
 Dikkat edileceği üzere using System.IO.Path şeklinde bir bildirim yapılmıştır. Bu bildirim nedeniyle Path sınıfının static metodlarından Combine, tanımlandığı sınıf adı belirtilmeksizin kullanılabilmiştir. (Normal şartlarda Path.Combine şeklinde bir kullanım olduğunu hatırlayalım)
 
@@ -301,7 +301,7 @@ namespace NewFeatures
 
 Dikkat edilmesi gereken nokta tahmin edileceği üzere TryParse metodunun ikinci parametresinde bir değişken tanımının yapılmasıdır. result2 parametre olarak kullanılacağı yerde aynı zamanda değişken olarak tanımlanmıştır. IL içeriğine baktığımızda beklediğimiz gibi result2’ nin dışarıda bir local değişken olarak yerleştirildiği gözlemlenecektir.
 
-[![cs6_9](/assets/images/2014/cs6_9_thumb.png)](/assets/images/2014/cs6_9.png)
+![cs6_9](/assets/images/2014/cs6_9.png)
 
 Bu yetenek özellikle out gibi parametrelerin kullanıldığı yerde ön plana çıkmaktadır.
 
@@ -368,7 +368,7 @@ namespace NewFeatures
 
 Sanırım bu yazım şekli biraz daha dikkatinizi çekmiştir. values isimli generic Dictionary koleksiyonunun içeriği belirlenirken $keyName şeklinde bir kullanım söz konusudur. Bu kullanımın faydası, values değişkeninin key değerlerine erişirken kendisini göstermektedir. Her ne kadar şu anda intellisense bir yardımda bulunmasa da JSON vari bu yazım şekli oldukça kullanışlıdır. İşte çalışma zamanı sonuçları.
 
-[![cs6_10](/assets/images/2014/cs6_10_thumb.png)](/assets/images/2014/cs6_10.png)
+![cs6_10](/assets/images/2014/cs6_10.png)
 
 Başka Neler Var?
 

@@ -15,7 +15,7 @@ tags:
 ---
 Geçtiğimiz günlerde şirkette çok küçük bir web uygulamasına ihtiyaç duyuldu. Neredeyse bir günlük geliştirme maliyeti olan, küçük bir departmanın önemli bir gereksinimi karşılayacaktı. Tabi insan uzun zaman kodlama yapmayınca veya kodlamaya ara verince bazı temel bilgileri de unutabiliyor.
 
-[![oblivious](/assets/images/2013/oblivious_thumb.jpg)](/assets/images/2013/oblivious.jpg)
+![oblivious](/assets/images/2013/oblivious.jpg)
 
 
 Ben de kafayı Team Foundation Server entegrasyonu, SOA mimarisi ve Scrum gibi metodolojiler ile bozunca, zihinsel diskimdeki ana partition’ a yeni bilgilerin yazıldığına ve eskilerinin yerinde yeller estiğine şahit oldum. Ama malum, günümüz teknolojilerinde bilginin tamamını ezberlemeye çalışmak yerine, en doğrusuna en hızlı şekilde nasıl ulaşabileceğimizi bilmek daha önemli. İşte bu felsefeden yola çıkıp dedim ki, şu Asp.Net Routing konusunu bir hatırlayayım ve hatta kayıt altına alayım. İşte hikayemiz böyle başladı
@@ -30,7 +30,7 @@ Senaryo
 
 Senaryomuzda veri kaynağı olarak emektar Northwind veritabanını kullanacağız. Örneklerimizde hem Entity Framework kullanacağımız hem de doğrudan SQL sorgusu çalıştıracağımız bir vakamız yer alacak. Temel olarak amacımız aşağıdaki ekran görüntüsünde yer alan URL eşleştirmelerini web uygulaması üzerinden işlettirmek.
 
-[![route_2](/assets/images/2013/route_2_thumb.png)](/assets/images/2013/route_2.png)
+![route_2](/assets/images/2013/route_2.png)
 
 Dikkat edileceği üzere URL satırından girilecek olan anlamlı ifadeler, aslında arka planda bir eşleştirme tablosuna uygun olacak şekilde ilgili kaynaklara yönlendirilmekteler. Örneğin beverages isimli kategoride yer alan ürünlerin listelenmesi için yazılan urunler/beverages sorgusu, sisteme daha önceden öğretilen Urunler/{CategoryName} üzerinden geçerek urun.aspx sayfasına yönlendiriliyor. Çok doğal olarak ilgili sayfa içerisinde, CategoryName değerine bakılarak bir sonuç kümesinin sunulması gerekiyor.
 
@@ -142,7 +142,7 @@ GetRouteUrl metodu dikkat edileceği üzere iki parametre alır. İlk parametre 
 
 İlk durumda herhangibir sayfa talep edilmediğinde veya kök web adresi ardından /kategoriler şeklinde bir URL ifadesi kullanıldığında, aşağıdaki ekran görüntüsünde yer alan sonuçlar ile karşılaşırız.
 
-[![route_3](/assets/images/2013/route_3_thumb.png)](/assets/images/2013/route_3.png)
+![route_3](/assets/images/2013/route_3.png)
 
 Dikkat edilmesi gereken en önemli nokta, her hangi bir bağlantı üstüne gelindiğinde oluşan sorgu adresidir. Örneğin Condiments için http://localhost:54605/urunler/condiments şeklinde bir URL tanımı oluşmuştur. Peki bu bağlantıya tıklanırsak ne olur?
 
@@ -216,7 +216,7 @@ namespace HowTo_EasyRouting
 
 Tabi bu sayfaya gelindiğinde aslında Route tanımlaması içerisinde yer alan parametre değerinin okunması gerekmektedir. Bu sebepten sayfanın RouteData özelliğinden hareket edilerek RouteValueDictionary tipinden olan Values özelliğine gidilir ve indeksleyiciye verilen CategoryName alanının var olup olmadığına bakılır. Malum urun.aspx sayfasına farklı bir şekilde erişilmek istenebilir ve CategoryName değeri null olarak gelebilir. Bu nedenle bir null değer kontrolü ardından Entity sorgulama işlemi yapılmıştır. RouteData.Values[“CategoryName”] ile URL satırındaki kategori adı bilgisi alındıktan sonra standart olarak bir Entity sorgusu icra edilmektedir. Eğer kategori adı null olarak gelirse bu durumda varsayılan URL eşleştirilmesi nedeniyle kategorilerin gösterildiği sayfaya gidilir.
 
-[![route_4](/assets/images/2013/route_4_thumb.png)](/assets/images/2013/route_4.png)
+![route_4](/assets/images/2013/route_4.png)
 
 Üçüncü Durum
 
@@ -299,11 +299,11 @@ RouteData.Values özelliğinden yararlanılarak CityName ve FieldName değerleri
 
 Londra’ daki müşterilerin CustomerId bilgilerini göre sıralı olarak çekilmesi
 
-[![route_5](/assets/images/2013/route_5_thumb.png)](/assets/images/2013/route_5.png)
+![route_5](/assets/images/2013/route_5.png)
 
 Londra’ daki müşterilerin ContactName bilgisine göre sıralı olarak çekilmesi
 
-[![route_6](/assets/images/2013/route_6_thumb.png)](/assets/images/2013/route_6.png)
+![route_6](/assets/images/2013/route_6.png)
 
 Dördüncü Durum
 
@@ -348,11 +348,11 @@ Son vakada bir Route parametrenin her hangi bir veri bağlı kontrol ile nasıl 
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_198.png)
 
-[![route_1](/assets/images/2013/route_1_thumb.png)](/assets/images/2013/route_1.png)
+![route_1](/assets/images/2013/route_1.png)
 
 Buna göre örneğin Stuttgart’ a yapılan sevkiyatları aşağıdaki gibi elde edebiliriz.
 
-[![route_7](/assets/images/2013/route_7_thumb.png)](/assets/images/2013/route_7.png)
+![route_7](/assets/images/2013/route_7.png)
 
 Sonuç
 

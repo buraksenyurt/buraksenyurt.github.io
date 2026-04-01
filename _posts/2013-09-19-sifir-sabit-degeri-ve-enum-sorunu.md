@@ -11,7 +11,7 @@ tags:
 ---
 C# konulu yeni bir bilmece ile karşı karşıyayız. Bu sefer kolay kolay fark edemeyebileceğimiz, basit ama irdelenmesi gereken bir vakayı göz önüne alacağız.
 
-[![1186819_puzzle_time_1](/assets/images/2013/1186819_puzzle_time_1_thumb.jpg)](/assets/images/2013/1186819_puzzle_time_1.jpg)
+![1186819_puzzle_time_1](/assets/images/2013/1186819_puzzle_time_1.jpg)
 
 
 Bir uygulamayı geliştirirken, Developer olarak son derece dikkatli olmalı ve testlerimizi gerçekleştirirken de tüm senaryoları göz önüne almalıyız. Bu anlamda gerek dilin gerek.Net Framework alt yapısının tüm unsurlarına hakim olmak da son derece önemli.
@@ -22,7 +22,7 @@ Nitekim bazı noktalarda profesyonel bir geliştiricinin dahi kestiremeyeceği s
 
 İlk olarak C# dili ile geliştireceğimiz aşağıdaki basit kod parçasını göz önüne alalım.
 
-[![ze_0](/assets/images/2013/ze_0_thumb.png)](/assets/images/2013/ze_0.png)
+![ze_0](/assets/images/2013/ze_0.png)
 
 ```csharp
 using System; 
@@ -115,11 +115,11 @@ Sistem bilgisi
 
 Ancak, yapıcı metoda gönderilen 0 değerinden pis kokular gelmektedir. Ne demek istediğimi daha net bir şekilde ifade edebilmek için uygulamanın çalışma zamanı (Runtime) ekran çıktısına bir bakalım dilerseniz.
 
-[![ze_1](/assets/images/2013/ze_1_thumb.png)](/assets/images/2013/ze_1.png)
+![ze_1](/assets/images/2013/ze_1.png)
 
 Uppsss! Bir fark görebildiniz mi? Biz yapıcı metodumuza 0 değişkenini göndermemize rağmen, ekrana InformationSystem enum sabitindeki ilk değere karşılık gelen string mesajı döndürülmüştür. Gerçekten de uygulamayı debug ettiğimizde, 0 değerini yapıcı metoda gönderdikten sonra Enum sabitini parametre olarak kullanan versiyonuna gittiğimizi görürüz. Kodu biraz değiştirip Debug işlemimizi icra edelim ve bu durumu çalışma zamanında görelim.
 
-[![ze_2](/assets/images/2013/ze_2_thumb.png)](/assets/images/2013/ze_2.png)
+![ze_2](/assets/images/2013/ze_2.png)
 
 infoZero isimli Information tipinden olan değişken örneklenirken, yapıcı metoda 0 integer değeri gönderilmiştir. Ancak kod bu satırdan sonra object tipinden parametre alan versiyon yerine InformationType tipinden referans kullanan yapıcı metoda sıçramıştır. Üstelik 0 integer değer, bilinçsiz bir şekilde (Implicitly) InfortmationType.System sabit değerine dönüştürülmüştür.
 
@@ -177,7 +177,7 @@ List<Information> infos = new List<Information>()
 
 Burada farklı şekillerde 0 değerinin gönderilmesi söz konusu olmuştur. İlk olarak cast operatörü göz önüne alınarak 0 değerinin int tipinden ele alınması denenmiştir. İkinci olarak 0 değişkenini taşıyan bir var tanımlaması yapılmaktadır. Devam eden kısımda sırasıyla Object tipine atanarak yapıcı metoda gönderilme, Convert tipinin static Int32 metodundan yararlanma, double bir değişken atama, yapıcı metoda parametre olarak 0 gönderirken var kullanarak ilerleme seçenekleri de denenmiştir. Bu durumda uygulamanın ekran çıktısı aşağıdaki gibi olacaktır.
 
-[![ze_3](/assets/images/2013/ze_3_thumb.png)](/assets/images/2013/ze_3.png)
+![ze_3](/assets/images/2013/ze_3.png)
 
 Dikkat edileceği üzere yapıcı metoda 0 değeri atama işlemini, dışarıda tanımlanan bir değişken üzerinden gerçekleştirdiğimizde object tipini kullanan yapıcı metoda gidilmiştir. Tabi bu durumda Information tipini kullanan geliştiricinin bu durumu göz önüne alması ve öncesinde gerekli dönüşüm işlemlerini yapması gibi bir sorumluluk ortaya çıkmaktadır. Oysaki geliştirici veya Object User çok kolayca durumu gözden kaçırabilir. Daha kalıcı bir çözüm ile ilerlemek gerekmektedir. Bunun için Information tipinin yapıcı metodlarının sayısını arttırıp tipe göre bir aksiyon alınması sağlanabilir. Aşağıdaki kod parçasın görüldüğü gibi.
 
@@ -222,7 +222,7 @@ class Information
 
 Dikkat edileceği üzere int ve double tiplerini parametre olarak alan iki ek yapıcı metod daha ilave edilmiştir. Bu durumda 0 ve 0.0 değerleri için uygun olan yapıcı metodlar devreye girecek, bir başka deyişle InformationType enum sabitin kullanan yapıcı metod göz ardı edilecektir. Tabi yine de çok şık bir çözüm olmadığını ifade etmemiz gerekiyor. Nitekim 0 değerini taşıyabilecek pek çok sayısal tip mevcuttur. Byte, short, float vb…Dolayısıyla bunların her biri için bir aşırı yüklenmiş yapıcı metod yazmak çok da yerinde olmayabilir. Yine de Information tipini kullanacak olan geliştirici için hata riski bu şekilde azaltılabilir. Uygulamayı bu haliyle çalıştırdığımızda aşağıdaki ekran çıktısını elde ederiz.
 
-[![ze_4](/assets/images/2013/ze_4_thumb.png)](/assets/images/2013/ze_4.png)
+![ze_4](/assets/images/2013/ze_4.png)
 
 İstediğimiz sonuca ulaştık. Görüldüğü üzere Enum sabitlerini yapıcı metodlara parametre olarak geçirdiğimizde, göndereceğimiz 0 sabit değeri otomatik olarak bir enum sabiti tipine dönüştürülmektedir. Dolayısıyla söz konusu sınıf içerisinde object tipini kullanan başka bir yapıcı metod varsa, tedbir almadığımız durumda fark etmeyeceğimiz bir çalışma zamanı sonucu üretilebilir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

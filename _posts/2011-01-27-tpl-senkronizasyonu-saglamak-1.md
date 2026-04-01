@@ -39,7 +39,7 @@ for (int i = 0; i < 5; i++)
 
 Aslında ezelden beri Multi-Thread programlamada, Thread’ lerin senkronizasyonu konusu öyle ya da böyle bir şekilde kulağımıza gelmiştir. Çok doğal olarak benzer ihtiyaçlar.Net Framework 4.0 Paralel Programlama alt yapısı içinde geçerlidir. Ancak.Net Framework 4.0 tarafında Lightweight Primitives adında yeni ve daha basit senkronizasyon tipleri de söz konusudur. Bu tipler klasik senkronizasyon tiplerine göre daha kola uygulanabilir. Tabi klasik senkronizasyon Primitive’ lerinin uygulanması her ne kadar zor olsa da, birden fazla Application Domain üzerinde kontrole izin vermektedirler. Oysa ki LightWeight Primitive’ ler sadece tek bir Application Domain için uygulanabilir. Olayı daha fazla karmaşıklaştırmadan önce senkronizasyon ile neyi ifade ettiğimizi ortaya koymamızda yarar vardır.
 
-[![Exclamation](/assets/images/2011/Exclamation_thumb_3.gif)](/assets/images/2011/Exclamation_3.gif) “Herhangibir t anında kritik olan bölgeyde sadece tek bir Task örneğinin işlem yapmasını sağlamak”
+![Exclamation](/assets/images/2011/Exclamation_3.gif) “Herhangibir t anında kritik olan bölgeyde sadece tek bir Task örneğinin işlem yapmasını sağlamak”
 
 Senkronizasyonu sağlamak için.Net Framework üzerinde önceden tanımlı çeşitli Primitive’ lerden yararlanılmaktadır. Aslında özel veri tipleri olarak düşünebileceğimiz Primitive’ ler, kritik bölgelere doğru yapılan Task erişimlerini kontrol altına alan varlıklar olarak düşünülebilirler.
 
@@ -108,7 +108,7 @@ namespace SynchronizationPrimitives
 
 İlk olarak tüm Task örneklerinin, kritik bölgede işlem yapılırken lock bloğuna girdiklerini ifade edebiliriz. Bu lock bloğu içerisindeki çalışma süresi boyunca, yürütücü Task dışında başka bir Task örneğinin Altitude değerini değiştirmesine izin verilmemektedir. lock keyword’ ü kullanılırken object tipinden bir nesneyi parametre olarak alır. Bu nesne de aslında tüm Task örnekleri için ortaktır. Uygulamayı kaç kere çalıştırırsanız çalıştırın beklediğimiz aynı sonuçları elde ettiğimizi görebiliriz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
-[![blg212_Runtime1](/assets/images/2011/blg212_Runtime1_thumb.gif)](/assets/images/2011/blg212_Runtime1.gif)
+![blg212_Runtime1](/assets/images/2011/blg212_Runtime1.gif)
 
 Şimdi senaryomuzu biraz daha ilginçleştirelim. Bu sefer iki ayrı Task kümesinin, Altitude özelliği üzerinden farklı hesaplamalar yaptığını varsayacağız. Bu amaçla vaka kodumuzu aşağıdaki gibi geliştirdiğimizi düşünelim.
 
@@ -179,7 +179,7 @@ namespace SynchronizationPrimitives
 
 Bu sefer taskSet1 ve taskSet2 isimli iki farklı Task dizisinin Altitude özelliği üzerinde gerçekleştirdiği farklı işlemler söz konusudur. Çok doğal olarak ortaklaşa kullanılan değişken söz konusu olduğundan çalışma zamanında aynı sonuçların elde edilmesi nadir bir durumdur. Uygulamanın aşağıdaki örnek çıktısında bu durum açık bir şekilde görülebilir.
 
-[![blg212_Case](/assets/images/2011/blg212_Case_thumb.gif)](/assets/images/2011/blg212_Case.gif)
+![blg212_Case](/assets/images/2011/blg212_Case.gif)
 
 Bildiğiniz üzere her denemenin aynı sonucu üretiyor olmasını beklemekteyiz. Peki lock mekanizmasını bu tip senaryoda nasıl kullanabiliriz? Aşağıdaki kod parçasında bu çözümleme işlemi değerlendirilmektedir.
 

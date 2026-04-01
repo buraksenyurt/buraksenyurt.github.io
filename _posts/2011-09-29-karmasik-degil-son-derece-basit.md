@@ -14,7 +14,7 @@ tags:
 ---
 Kurumsal eğitim vermenin en güzel yanlarından birisi de, gelenlerin istekleri ve talepleri doğrultusunda gerçek hayat örneklerini daha kolay bir şekilde kodlayabilmeniz ve gösterebilmenizdir.
 
-[![experience](/assets/images/2011/experience_thumb.jpg)](/assets/images/2011/experience.jpg)
+![experience](/assets/images/2011/experience.jpg)
 
 
 Söz gelimi geçtiğimiz hafta içerisinde vermeye başladığım ve makaleyi yazdığım tarih itibariyle devam etmekte olan bir eğitim sırasında, Binary ve XML Serileştirme konularını anlatırken, sahip olduğumuz dil ve framework materyallerinden bazılarını iç içe ve ne kadar etkili kullanabildiğimizi gördük
@@ -25,11 +25,11 @@ Bu durumdan esinlenerek sizlere de bir gerçek hayat örneği aktarmaya çalış
 
 İlk önce ne yapacağımızı belirtmem gerekiyor ama bunu en sona bırakmak ve ne yapmış olduğumuzu o zaman göstermek (aslında sizin anladığınızı görmek) arzusundayım. Öncelikli olarak aşağıdaki şekilde görülen Solution yapısını oluşturarak işe başlayabiliriz. Tabi ki bu yapı bizim test çözümümüz olarak tasarlanmıştır.
 
-[![bei_3](/assets/images/2011/bei_3_thumb.gif)](/assets/images/2011/bei_3.gif)
+![bei_3](/assets/images/2011/bei_3.gif)
 
 Common ve DomainLibrary isimli projelerimiz birer Class Library iken TestApp tahmin edileceği üzere bir Console uygulamasıdır. Şimdi de DomainLibrary içeriğini aşağıdaki Class Diagram’ da olduğu gibi yapılandıralım.
 
-[![bei_4](/assets/images/2011/bei_4_thumb.gif)](/assets/images/2011/bei_4.gif)
+![bei_4](/assets/images/2011/bei_4.gif)
 
 ISerializationRule.cs;
 
@@ -83,7 +83,7 @@ ISerializationRule interface tipini uygulamakta olan Category ve Product isimli 
 
 Şimdi de Common isimli sınıf kütüphanemiz içerisine aşağıdaki Operations sınıfını ve içeriğini eklediğimizi düşünelim.
 
-[![bei_5](/assets/images/2011/bei_5_thumb.gif)](/assets/images/2011/bei_5.gif)
+![bei_5](/assets/images/2011/bei_5.gif)
 
 ```csharp
 using System; 
@@ -178,7 +178,7 @@ namespace TestApp
 
 ![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)
 
-[![bei_6](/assets/images/2011/bei_6_thumb.gif)](/assets/images/2011/bei_6.gif)
+![bei_6](/assets/images/2011/bei_6.gif)
 
 Tabi çıktı olarak üretilen Binary dosyaların içeriği de aşağıdaki gibi oluşturulacaktır.
 
@@ -196,7 +196,7 @@ Kitap 3 3 Muzik 2 9 Kitap 4 8
 
 Aslında bu geliştirdiğimiz örnek ile kazandığımız bir takım avantajlar olduğunu vurgulamalıyız. Öncelikli olarak development safhasındayken Binary serileştirme işini üstlenen metoda atayabileceğimiz tipler için Business anlamda bir Domain kuralı getirmiş bulunmaktayız. Bunu metodu çağırdığımız sırada da zaten net bir şekilde görebiliriz.
 
-[![bei_7](/assets/images/2011/bei_7_thumb.gif)](/assets/images/2011/bei_7.gif)
+![bei_7](/assets/images/2011/bei_7.gif)
 
 Dikkat edileceği üzere kırmızı kutucuk içerisinde almış olduğumuz kısım ile T tipinin ISerializationRule arayüzü tarafından taşınabilecek bir tip olması zorunluluğu geliştiriciye bildirilmiş oluyor
 
@@ -206,7 +206,7 @@ Sanırım şu anda ne demek istediğimi daha net anlatabilmişimdir.
 
 Geliştirdiğimiz örnek Solution içerisinde yer alan Assembly’ lar arası bağları ele alarak makalemizi yavaş yavaş sonlandırmaya başlayalım. Tam olarak Assembly’ larımız arası ilişki aşağıdaki şekilde görüldüğü gibidir.
 
-[![bei_8](/assets/images/2011/bei_8_thumb.gif)](/assets/images/2011/bei_8.gif)
+![bei_8](/assets/images/2011/bei_8.gif)
 
 Generate Dependency Graph’ ı seviyorummm
 

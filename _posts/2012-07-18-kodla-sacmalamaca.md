@@ -11,7 +11,7 @@ tags:
 ---
 Programlamaya ister yeni başlamış olun ister yıllardır bu işin içerisinde bulunun, hızlı çözüm üretmek, analitik düşünmek ve olabildiğince işe yarar parçalar çıkartmak en büyük hedeflerimizden birisi olmalıdır. Elbette yıllar içerisinde elde edinilen, kazanılan tecrübe ve bilgi birikimine bağlı olarak kendinize ait bir geliştirme (Development) tarzı da ister istemez oluşacak ve hatta sonrasında değiştirilemez/değiştirilmesi zor bir alışkanlık haline gelecektir.
 
-[İzleyen yazı Level 100 altı bir deneyimi içermekte olup üstünde kalan geliştiricileri pekala sıkabilir][![Genius-Training](/assets/images/2012/Genius-Training_thumb.jpg)](/assets/images/2012/Genius-Training.jpg)
+İzleyen yazı Level 100 altı bir deneyimi içermekte olup üstünde kalan geliştiricileri pekala sıkabilir. ![Genius-Training](/assets/images/2012/Genius-Training.jpg)
 
 Makbul olan pek çok geliştirici gibi ortak bazı kurallar veya standartlar üzerinde buluşabiliyor olmaktır tabiki. Şimdi diyeceksiniz ki “yazının başlığı ve içeriği arasında nasıl bir bağ kurdun be adam?”. Aslında ispatlamak istediğim basit bir teori var.
 
@@ -204,7 +204,7 @@ namespace Common
 }
 ```
 
-> Sınıf kütüphanesinin tip modelinin aşağıdaki şekilde görüldüğü gibi tesis edildiği doğrulanır.[![UtilityAppResult_2](/assets/images/2012/UtilityAppResult_2_thumb.png)](/assets/images/2012/UtilityAppResult_2.png)
+> Sınıf kütüphanesinin tip modelinin aşağıdaki şekilde görüldüğü gibi tesis edildiği doğrulanır.![UtilityAppResult_2](/assets/images/2012/UtilityAppResult_2.png)
 
 5 – Araçları kullanacak olan basit bir Console uygulaması açılır, sınıf kütüphanesi referans edilir ve içeriği aşağıdaki gibi geliştirilir. (3 Dakika)
 
@@ -245,13 +245,13 @@ namespace ConsoleApplication3
 
 6 – Program çalıştırılır ve aşağıdaki çıktıların üretilip üretilmediği gözlemlenir. (1 Dakika)
 
-[![UtilityAppResult_1](/assets/images/2012/UtilityAppResult_1_thumb.png)](/assets/images/2012/UtilityAppResult_1.png)
+![UtilityAppResult_1](/assets/images/2012/UtilityAppResult_1.png)
 
 ve elbetteki XML dosya içeriği kontrol edilip istenilen şekilde olup olmadığına bakılır.
 
-[![UtilityAppResult_3](/assets/images/2012/UtilityAppResult_3_thumb.png)](/assets/images/2012/UtilityAppResult_3.png)
+![UtilityAppResult_3](/assets/images/2012/UtilityAppResult_3.png)
 
-[![bugfrapanyone](/assets/images/2012/bugfrapanyone_thumb.jpg)](/assets/images/2012/bugfrapanyone.jpg) 7 – İlk 6 adım başarılı bir şekilde aşıldıktan sonra ise mutfağa gidilir, havanın durumuna göre soğuk veya sıcak bir içecek alınır
+![bugfrapanyone](/assets/images/2012/bugfrapanyone.jpg) 7 – İlk 6 adım başarılı bir şekilde aşıldıktan sonra ise mutfağa gidilir, havanın durumuna göre soğuk veya sıcak bir içecek alınır
 
 ![Open-mouthed smile](/assets/images/2012/wlEmoticon-openmouthedsmile_29.png)
 

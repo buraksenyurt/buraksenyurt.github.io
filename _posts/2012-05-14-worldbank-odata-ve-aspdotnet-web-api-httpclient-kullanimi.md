@@ -16,7 +16,7 @@ tags:
 ---
 1999 yılında girdiğim yüksek lisans (MBA-Master of Business Administrator) programını tamamlarken, bitirme projemde “Türkiye’ nin Dünya Bankası borçlanmalarını” ele almaya çalışmıştım. Haliyle o dönemlerde ve geçmişte, ülkemizin Worldbank üzerinden yaptığı borçlanmalara ait istatistiki bilgilere oldukça fazla ihtiyacım vardı. O kütüphane bu kütüphane gezmek dışında, dünya bankası internet sitesinden yayınlanan istatistik bazlı raporları da değerlendirmeye alıyordum. Yaklaşık olarak 60 sayfalık bir döküman oluşturmayı başarmıştım. Sunumumu yaptım, vardığım sonuçları değerli hocalarım ile paylaştım
 
-[![World_Bank](/assets/images/2012/World_Bank_thumb.jpg)](/assets/images/2012/World_Bank.jpg)
+![World_Bank](/assets/images/2012/World_Bank.jpg)
 
 
 ![Wink](/assets/images/2012/smiley-wink.gif)
@@ -47,7 +47,7 @@ Gelin bir kaç dünya bankası verisini.Net kodlarımız ile sorgulayalım.
 
 işte sonuç,
 
-[![worldb_8](/assets/images/2012/worldb_8_thumb.png)](/assets/images/2012/worldb_8.png)
+![worldb_8](/assets/images/2012/worldb_8.png)
 
 Görüldüğü üzere XML tabanlı olarak ilk 50 ülkenin bilgilerine ulaşmış durumdayız. page, perpage gibi nitelikleri de sorgulara parametre olarak katarak sayfalar arasında gezinebiliriz de (Örneğin 2nci sayfaya gitmeyi ve her sayfada 25 ülke göstermeyi bir deneyin ![Wink](/assets/images/2012/smiley-wink.gif))
 
@@ -57,17 +57,17 @@ Tabi istersek bu sorguyu JSON (JavaScript Object Notation) formatında da ele al
 
 Bu durumda daha küçük boyutlu bir içeriğe ulaşmış oluruz.
 
-[![worldb_7](/assets/images/2012/worldb_7_thumb.png)](/assets/images/2012/worldb_7.png)
+![worldb_7](/assets/images/2012/worldb_7.png)
 
 Teori gördüğünüz gibi oldukça basit. HTTP Get metoduna göre gönderdiğimiz sorgular sonucunda XML veya JSON formatında içeriklere ulaşabiliyoruz. Peki bunu kod tarafında nasıl kullanabiliriz?
 
 Bu amaçla örnek bir Solution üzerinden hareket edeceğiz. Solution içerisinde temel sorgu fonksiyonellikleri ile POCO (Plain Old CLR Object) tiplerini barındıran bir kütüphane ile bunu kullanan bir Windows Forms uygulaması olması yeterli olacaktır. Sınıf kütüphanesine NuGet aracı ile veya dışarıdan harici olarak ilgili referansları da eklememiz gerekmektedir. Bu referanslar aşağıdaki şekilde görüldüğü gibidir.
 
-[![worldb_9](/assets/images/2012/worldb_9_thumb.png)](/assets/images/2012/worldb_9.png)
+![worldb_9](/assets/images/2012/worldb_9.png)
 
 WorldbankLib isimli sınıf kütüphanemizin içeriğini aşağıdaki sınıf diagramı (Class Diagram) ve kod parçalarında olduğu gibi geliştirebiliriz.
 
-[![worldb_1](/assets/images/2012/worldb_1_thumb.png)](/assets/images/2012/worldb_1.png)
+![worldb_1](/assets/images/2012/worldb_1.png)
 
 Country sınıf;
 
@@ -335,7 +335,7 @@ CommonQueries sınıfı içerisinde HttpClient tipinin kullanıldığı çeşitl
 
 Bir Windows Forms uygulaması söz konusu olacağından, client’ ı uyarmak adına Wait metodundan yararlanılmış ve buradaki metodlardan ancak sonuçlar alındığında çıkılması garanti edilmiştir. Tabi Windows Forms tarafında bu duraksatmaların ekranı dondurması da engellenmeli ve kullanıcının eş zamanlı başka işlemler yapabilmesine de izin verilmelidir. Bunun için Forms tarafında BackgroundWorker kontrolünden yararlanıyor olacağız. Örnek Windows Forms tasarımımızı ve kod içeriğini aşağıdaki gibi geliştirebiliriz.
 
-[![worldb_2](/assets/images/2012/worldb_2_thumb.png)](/assets/images/2012/worldb_2.png)
+![worldb_2](/assets/images/2012/worldb_2.png)
 
 ve kod içeriğimiz
 
@@ -437,19 +437,19 @@ Dikkat edileceği üzere test düğmelerine basıldıkça ilgli BackgroundWorker
 
 İlk 50 ülke bilgisinin çekilmesi;
 
-[![worldb_3](/assets/images/2012/worldb_3_thumb.png)](/assets/images/2012/worldb_3.png)
+![worldb_3](/assets/images/2012/worldb_3.png)
 
 Brezilyaya ait bilginin çekilmesi sonucu;
 
-[![worldb_6](/assets/images/2012/worldb_6_thumb.png)](/assets/images/2012/worldb_6.png)
+![worldb_6](/assets/images/2012/worldb_6.png)
 
 Gelir düzeyi bilgilerinin elde edilmesi;
 
-[![worldb_4](/assets/images/2012/worldb_4_thumb.png)](/assets/images/2012/worldb_4.png)
+![worldb_4](/assets/images/2012/worldb_4.png)
 
 Eğitim odaklı verilerin elde edilmesi;
 
-[![worldb_5](/assets/images/2012/worldb_5_thumb.png)](/assets/images/2012/worldb_5.png)
+![worldb_5](/assets/images/2012/worldb_5.png)
 
 Gördüğünüz gibi gayet kolay
 

@@ -17,7 +17,7 @@ tags:
 ---
 [Bir önceki ipucumuzda](http://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-82-Internete-Baglmiyiz) wininet.dll WinAPI kütüphanesinden yararlanarak, internet’ e bağlı olup olmadığımızı nasıl öğrenebileceğimizin fotoğrafını çekmiştik. Tahmin edeceğiniz üzere söz konusu senaryo için tek yol bu değil. Örneğin aşağıdaki gibi bir kullanımı da tercih edebilirsiniz.
 
-[![tfi_82](/assets/images/2013/tfi_82_thumb.png)](/assets/images/2013/tfi_82.png)
+![tfi_82](/assets/images/2013/tfi_82.png)
 
 Aslında bu yol belki de ilk akla gelen yoldur. Eğer bir internet sitesine ulaşabiliyorsak zaten internete bağlıyız diye düşünebiliriz
 

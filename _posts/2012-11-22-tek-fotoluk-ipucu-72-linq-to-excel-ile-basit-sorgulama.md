@@ -16,7 +16,7 @@ Zaman zaman siz de benim gibi LINQ ile yazılmış çeşitli Provider'lara şöy
 
 Belki siz de LINQtoEXCEL provider'ını duymuşsunuzdur. NuGet paket yönetim aracı yardımıyla indirip kullanabileceğiniz bu sağlayıcıyı duymadıysanız eğer işte size basit bir örnek. Excel kaynaklarını LINQ ile kolay bir şekilde sorgulamanıza olanak sağlayan bu sağlayıcının [bu adreste](http://code.google.com/p/linqtoexcel/wiki/UsingLinqToExcel) daha detaylı kullanımı ile ilişkili güzel örnekler var. WorkSheet’ ler içerisindeki Row’ lara karşılık gelecek property’ ler içeren Strongly Typed sınıfların kullanımı vb.
 
-[![tfi_72](/assets/images/2012/tfi_72_thumb.png)](/assets/images/2012/tfi_72.png)
+![tfi_72](/assets/images/2012/tfi_72.png)
 
 Başka bir ipucunda görüşmek dileğiyle
 

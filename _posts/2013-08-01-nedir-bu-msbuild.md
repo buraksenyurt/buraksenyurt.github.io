@@ -22,7 +22,7 @@ tags:
 ---
 Yıllar öncesinde bir kaç seneliğine de olsa saygın bir eğitim kurumunda eğitmen olarak görev alma şansını yakalamıştım. Özellikle C#’ ın öğretilmeye çalışıldığı başlangıç niteliğindeki seanslarda dilin temel özelliklerini anlatırken, tüm dış çevre ile olan bağlantıyı kesip, sadece anahtar kelime (keyword), ifade ve materyale odaklanmaya çalışırdık. Bu sebepten genellikle ilk örneklerimiz ve Hello World uygulamamız, Notepad gibi bir program ve komut satırındaki csc (C# Compiler) ile inşa edilirdi.
 
-[![msbuild_9](/assets/images/2013/msbuild_9_thumb.jpg)](/assets/images/2013/msbuild_9.jpg)
+![msbuild_9](/assets/images/2013/msbuild_9.jpg)
 
 O zamanlar bu bizim için yeterli görünüyordu ama tabi.Net Framework 2.0 ile birlikte hayatımıza yeni bir inşa süreci de girdi. Aslında bu günkü konumuzda da, Notepad (tam olarak Notepad 2) ve komut satırı aracını kullanarak ilerlemeye çalışıyor olacağız. Amacımız MSBuild platformunu çok kısaca tanımaya ve anlamaya çalışmak.
 
@@ -118,7 +118,7 @@ Hızlı bir şekilde uygulama geliştirme işine giren pek çok yazılımcı ço
 
 Bu XML içeriğinin şema yapısına bakıldığında aşağıdaki grafikte görülen iskeletin söz konusu olduğu görülecektir.
 
-[![msbuild_2](/assets/images/2013/msbuild_2_thumb.png)](/assets/images/2013/msbuild_2.png)
+![msbuild_2](/assets/images/2013/msbuild_2.png)
 
 Aslında içerik okunduğunda, Visual Studio Proje Özelliklerinden de ayarladığımız pek çok öğenin buraya yazıldığı görülebilir. Örneğin PropertyGroup elementlerinde Debug, Debug-Any CPU ve Release-Any CPU için bazı atamalar söz konusudur.
 
@@ -138,7 +138,7 @@ Klavye Başına
 
 Yazımızın bu bölümünde basit bir örnek geliştirmeye çalışıyor olacağız. Amacımız temel seviyede MSBuild aracını kullanmak ve konsepti anlamaya çalışmak olacaktır. İlk olarak basit bir C# koduna ihtiyacımız var. Bu amaçla örneğin C:\Samples\HowToMSBuild\ isimli klasör altında, aşağıdaki içeriğe sahip bir C# dosyası oluşturduğumuzu düşünelim.
 
-[![msbuild_3](/assets/images/2013/msbuild_3_thumb.png)](/assets/images/2013/msbuild_3.png)
+![msbuild_3](/assets/images/2013/msbuild_3.png)
 
 Bu adımdan sonra yine Notepad2 aracını kullanarak aşağıdaki içeriğe sahip bir csproj dosyası üreterek devam edelim.
 
@@ -159,12 +159,12 @@ Bu içeriği Builder.csproj adı ile kaydettikten sonra ise sıradaki operasyon,
 
 msbuild Builder.csproj /t: Build /verbosity: detailed
 
-[![msbuild_5](/assets/images/2013/msbuild_5_thumb.png)](/assets/images/2013/msbuild_5.png)
+![msbuild_5](/assets/images/2013/msbuild_5.png)
 
 Görüldüğü gibi çalışma sonrasında MSBuildHowTo isimli bir exe dosyası oluşmuştur. Söz konusu exe dosyasını doğrudan çalıştırdığımızda ise, pre-precessor direktifi dışında kalan kod parçasının yürütüldüğü gözlemlenecektir.
 
 > MSBuild özellikle kurulu olan.Net Framework versiyonuna bağlı olaraktan Microsoft.Net\Framework\vX.X.XXXXX altında yer almaktadır. Örneğin ben kendi sistemimde aşağıdaki klasörde yer alan sürümü kullandım.
-> [![msbuild_4](/assets/images/2013/msbuild_4_thumb.png)](/assets/images/2013/msbuild_4.png)
+> ![msbuild_4](/assets/images/2013/msbuild_4.png)
 > Bunu sistem’ de Path olarak belirtebiliriz ama dilerseniz doğrudan Visual Studio Command Prompt’ tan da yararlanabiliriz.
 
 CSPROJ İçeriğini Genişletelim
@@ -193,7 +193,7 @@ Csc elementinde ise derleme işlemi için kullanılacak olan kaynak Sources elem
 
 msbuild Builder.csproj /t: Build /verbosity: detailed
 
-[![msbuild_6](/assets/images/2013/msbuild_6_thumb.png)](/assets/images/2013/msbuild_6.png)
+![msbuild_6](/assets/images/2013/msbuild_6.png)
 
 Oldukça zevkli öyle değil mi?
 
@@ -229,7 +229,7 @@ msbuild Builder.csproj /t: Clean /verbosity: detailed
 
 şeklinde yapılan çağrı sonucunda, proje dosyasındaki Target elementlerinden Clean isimli olanı çalıştırılacaktır. Bu elementte ise Delete isimli bir alt element yer almakta olup Files niteliğinde belirtilen kritere göre, Bin klasöre altında assembly adı ile duran exe dosyasının silinmesi gerektiği ifade edilmektedir.
 
-[![msbuild_7](/assets/images/2013/msbuild_7_thumb.png)](/assets/images/2013/msbuild_7.png)
+![msbuild_7](/assets/images/2013/msbuild_7.png)
 
 Eğer Rebuild takısını kullanırsak bu durumda Target->Name niteliği Rebuild olan bölüm devreye girecektir. Bu vakada dikkat edilmesi gereken ise DependsOnTargets niteliği içerisinde yazılan Clean;Build ifadesidir. Yani şunu ifade etmiş oluruz;
 
@@ -239,7 +239,7 @@ ki bu durumda Bin klasörü içeriği silinecek ve tekrardan bir derleme işlemi
 
 msbuild Builder.csproj /t: Rebuild /verbosity: detailed
 
-[![msbuild_8](/assets/images/2013/msbuild_8_thumb.png)](/assets/images/2013/msbuild_8.png)
+![msbuild_8](/assets/images/2013/msbuild_8.png)
 
 Örnekler daha da çoğaltılabilir. Yapılabilecek pek çok şey var
 
@@ -260,7 +260,7 @@ MSBuild ürününe Framework 4.5 sürümü ile birlikte bazı geliştirmeler ve 
 
 Öneri Kitap
 
-[![msbuild_1](/assets/images/2013/msbuild_1_thumb.jpg)](/assets/images/2013/msbuild_1.jpg) Microsoft’ un Visual Studio ailesi ve geliştirme platformu oldukça geniş bir alana yayılmakta olup, pek çok notkasında uzmanlık gerektiren yapılar içermektedir. Bu sebepten söz konusu yapılara yönelik pek çok yayın da (kitap, official site, blog vb) mevcuttur.
+![msbuild_1](/assets/images/2013/msbuild_1.jpg) Microsoft’ un Visual Studio ailesi ve geliştirme platformu oldukça geniş bir alana yayılmakta olup, pek çok notkasında uzmanlık gerektiren yapılar içermektedir. Bu sebepten söz konusu yapılara yönelik pek çok yayın da (kitap, official site, blog vb) mevcuttur.
 
 Örneğin MSBuild tarafında daha önceden yayınlanmış olan Inside The Microsoft Build Engine isimli kitabın Nisan ayı içerisinde yayınlanan yeni bir tamamlayıcı baskısı mevcuttur. Yaklaşık olarak 120 sayfalık bir kitap olmasına rağmen odaklandığı konu özünde MSBuild ürünüdür. Kitaba [Amazon üzerinden bu adres yardımıyla](http://www.amazon.com/Supplement-Inside-Microsoft%C2%AE-Build-Engine/dp/0735678162/ref=sr_1_1?s=books&ie=UTF8&qid=1361775657&sr=1-1&keywords=msbuild) erişebilirsiniz.
 

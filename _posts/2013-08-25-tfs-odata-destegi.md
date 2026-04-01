@@ -24,7 +24,7 @@ tags:
 ---
 Çoğu zaman geliştirilen yazılım ürünleri ile farklı profilden insanları ortak bir payda da buluşturmayı hedefleriz. Farklı özelliklere sahip insanları, ürüne nasıl katabileceğimizi keşfetmeye çalışırız. Tabi geliştirilen ürünün hedef kitlesi de burada önemli bir rol oynar. Bazı ürünlerin arayüzlerinin son derece basit tasarlanması yeterli iken bazılarında ise tam tersi bir durum söz konusudur.
 
-[![almworld](/assets/images/2013/almworld_thumb.jpg)](/assets/images/2013/almworld.jpg)
+![almworld](/assets/images/2013/almworld.jpg)
 
 Hangisi olursa olsun kullanıcı bir insan olarak düşünüldüğünde çok da fazla zorlanmamalı veya kolayca adapte olabilmelidir. Ne kadar kolay kullanılırsa, hedef kitle içerisinde o kadar fazla sayıda farklı profile de ulaşılabilinir. Ancak bazı hallerde ürünün hedef kitlesi o kadar dağınıktır ki, hepsini çekebilmek ya da bir başka deyişle kazanabilmek için yapılan genişletmeler yeterli gelmeyebilir. Böyle bir durumda çevreye şu mesajı vermeniz gerekebilir;
 
@@ -40,7 +40,7 @@ Hangisi olursa olsun kullanıcı bir insan olarak düşünüldüğünde çok da 
 
 Bu felsefeden baktığımızda bence Microsoft’ un Team Foundation Server ürünü epey önemli bir noktada yer alıyor. Hatta Gartner’ ın Application Lifecycle Management konusundaki bi raprunda yer alan Magic Quadrant grafiği de, bunu doğrular nitelikte. Kabiliyet ve sunulan vizyon açısından Microsoft liderler arasında en iyi noktada yer alıyor diyebiliriz (Rapor hakkında detaylı bilgiye [bu adresten](http://www.gartner.com/technology/reprints.do?id=1-1ASCXON&ct=120606&st=sb) ulaşabilirsiniz)
 
-[![odatatfs_15](/assets/images/2013/odatatfs_15_thumb.png)](/assets/images/2013/odatatfs_15.png)
+![odatatfs_15](/assets/images/2013/odatatfs_15.png)
 
 Peki TFS takımı bunu nasıl başarıyor?
 
@@ -79,13 +79,13 @@ Tabi OData servisleri ile bir Team Project’ in sorgulanması denince dikkatler
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_95.png)
 
-[![odatatfs_2](/assets/images/2013/odatatfs_2_thumb.png)](/assets/images/2013/odatatfs_2.png)
+![odatatfs_2](/assets/images/2013/odatatfs_2.png)
 
-[![odatatfs_4](/assets/images/2013/odatatfs_4_thumb.png)](/assets/images/2013/odatatfs_4.png)
+![odatatfs_4](/assets/images/2013/odatatfs_4.png)
 
 Sorgulama işlemine başlamadan önce yapılması gereken küçük bir hazırlık daha var. OData servislerini etkinleştirmek için TFS hesabımızın profil özelliklerinden Enable Aternate Credentials seçeneğini aktif hale getirmemiz ve bir kullanıcı adı ile şifre belirlememiz gerekiyor.
 
-[![odatatfs_1](/assets/images/2013/odatatfs_1_thumb.png)](/assets/images/2013/odatatfs_1.png)
+![odatatfs_1](/assets/images/2013/odatatfs_1.png)
 
 Bu işlemin ardından [https://tfsodata.visualstudio.com/defaultcollection](https://tfsodata.visualstudio.com/defaultcollection) adresine girerek başlama vuruşunu yapabiliriz
 
@@ -93,7 +93,7 @@ Bu işlemin ardından [https://tfsodata.visualstudio.com/defaultcollection](http
 
 domainAdı\kullanıcıAdı ve şifre ile giriş yapabiliriz. Örneğin benim TFS projem seddulbahir.visualstudio.com olduğundan, seddulbahir\AlternatifKullanıcıAdı ve şifre ile giriş yapmam gerekiyor. defaultcollection adresini sorguladığımızda standart bir OData servisinden beklediğimiz sonuçlar ile karşılaşırız. Bize TFS hizmeti için sorgulanabilir olan Entity adlarının adreslerini içeren bir sayfa üretilecektir. Aşağıdaki ekran görüntüsündeki gibi.
 
-[![odatatfs_3](/assets/images/2013/odatatfs_3_thumb.png)](/assets/images/2013/odatatfs_3.png)
+![odatatfs_3](/assets/images/2013/odatatfs_3.png)
 
 Dikkat edileceği üzere kullanıcılardan Area’ lara, Work Item’ lardan, Team Project Collection içerisindeki Team Project'lere, Build tanımlamalarından, Iteration’ lara kadar sorgulanabilecek oldukça geniş bir yelpaze söz konusudur. Şimdi dilerseniz örnek projemiz için bir kaç OData sorgusu icra edelim ve sonuçları görmeye çalışalım.
 
@@ -107,7 +107,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/Projects
 
 Yukarıdaki sorgu hesabımıza ait Team Project Collection içerisinde ne kadar Team project var ise döndürür. Dikkat çekici entry özelliklerinden birisi, belirli bir projeye erişebilmek için id elementi ile gelen URL değeridir.
 
-[![odatatfs_5](/assets/images/2013/odatatfs_5_thumb.png)](/assets/images/2013/odatatfs_5.png)
+![odatatfs_5](/assets/images/2013/odatatfs_5.png)
 
 Belirli bir Team Project içerisinde tanımlanmış olan Area bilgilerinin çekilmesi
 
@@ -115,16 +115,16 @@ https://tfsodata.visualstudio.com/DefaultCollection/Projects ('Sonik')/AreaPaths
 
 Bir proje içerisinde pek çok Area tanımlanmış olabilir. Genellikle aynı projede birden fazla takımın kendilerine ait Area’ lar üzerinde yetkilendirilerek çalışması gibi ihtiyaçlarda ideal bir çözümdür. Sorguda önce Projects üzerinden SoniK’ e gidilmiş ve AreaPaths alt entity içeriği talep edilmiştir.
 
-[![odatatfs_6](/assets/images/2013/odatatfs_6_thumb.png)](/assets/images/2013/odatatfs_6.png)
+![odatatfs_6](/assets/images/2013/odatatfs_6.png)
 
 Bir Area’ nın altında yer alan alt Area’ ların çekilmesi
 
 https://tfsodata.visualstudio.com/DefaultCollection/AreaPaths ('SoniK%3CDevelopment')/SubAreas
 
 Bazı durumlarda bir Area altında birden fazla Child Area açılmış olabilir. Hatta bu, bir kaç seviyelendirme şeklinde yapılmış da olabilir. Örnek projede aşağıdaki gibi bir Area yapısı söz konusudur ve yukardaki OData sorgusu ile bu içerik XML formatında elde edilebilir.
-[![odatatfs_7](/assets/images/2013/odatatfs_7_thumb.png)](/assets/images/2013/odatatfs_7.png)
+![odatatfs_7](/assets/images/2013/odatatfs_7.png)
 
-[![odatatfs_8](/assets/images/2013/odatatfs_8_thumb.png)](/assets/images/2013/odatatfs_8.png)
+![odatatfs_8](/assets/images/2013/odatatfs_8.png)
 
 Bir Team Project için söz konusu olan Work Item Öğelerinin toplam sayısını bulmak
 
@@ -132,7 +132,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/Projects ('Sonik')/WorkItems
 
 Örneğin Sonik isimli Team Project içerisinde yer alan toplam work item sayısını count OData fonksiyonundan yararlanarak bulabiliriz.
 
-[![odatatfs_9](/assets/images/2013/odatatfs_9_thumb.png)](/assets/images/2013/odatatfs_9.png)
+![odatatfs_9](/assets/images/2013/odatatfs_9.png)
 
 Belirli bir Id değerine sahip Work Item’ ın elde edilmesi
 
@@ -140,7 +140,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/Projects ('Sonik')/WorkItems
 
 Bu sorgu ile 3 numaralı ID değerine sahip Work Item bilgisi elde edilmektedir. Tabi çok fazla özellik olduğundan element sayısı da epeyce fazladır. Azaltmak için bir sonraki örnekte olduğu gibi projection type kullanımı tercih edilebilir.
 
-[![odatatfs_10](/assets/images/2013/odatatfs_10_thumb.png)](/assets/images/2013/odatatfs_10.png)
+![odatatfs_10](/assets/images/2013/odatatfs_10.png)
 
 Work Item’ lardan ilk 2sinin sadece Title ve Type bilgilerini çekmek
 
@@ -148,7 +148,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/Projects ('Sonik')/WorkItems
 
 Burada aslında bir projection kullanımı söz konusudur. select anahtar kelimesini takiben, çekilmek istenen özelliklerin adları verilmiştir. top anahtar kelimesi ile de kaç tane element çekileceği ifade edilir.
 
-[![odatatfs_11](/assets/images/2013/odatatfs_11_thumb.png)](/assets/images/2013/odatatfs_11.png)
+![odatatfs_11](/assets/images/2013/odatatfs_11.png)
 
 Sorgu çıktısını JSON (JavaScript Object Notation) formatında elde etmek
 
@@ -156,7 +156,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/Projects ('Sonik')/WorkItems
 
 Çıktının sadece XML formatında elde edilmesi şart değildir. Örneğin daha az yer tutan JSON tipinde bir çıktı üretilmesi için format anahtar kelimesinden yararlanılabilir. Yukarıdaki sorguda Sonik projesindeki ilk 3 Work Item’ ın Title ve Type değerlerini içeren JSON çıktısı talep edilmektedir. Sonuç aşağıdaki gibidir.
 
-[![odatatfs_12](/assets/images/2013/odatatfs_12_thumb.png)](/assets/images/2013/odatatfs_12.png)
+![odatatfs_12](/assets/images/2013/odatatfs_12.png)
 
 Bir projedeki belirli bir Work Item tipine ait öğeleri çekmek
 
@@ -164,7 +164,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/WorkItems?$filter=Project eq
 
 Örnek sorguda filter ve select anahtar kelimelerinden yararlanılmış olup, Sonik isimli projede yer alan Test Case tipindeki Work Item’ ların Project, Type, Title ve AreaPath bilgileri talep edilmiştir.
 
-[![odatatfs_13](/assets/images/2013/odatatfs_13_thumb.png)](/assets/images/2013/odatatfs_13.png)
+![odatatfs_13](/assets/images/2013/odatatfs_13.png)
 
 Belirli bir Sprint içindeki Work Item bilgilerinin çekilmesi
 
@@ -172,7 +172,7 @@ https://tfsodata.visualstudio.com/DefaultCollection/WorkItems?$filter=Project eq
 
 Örnekte Sprint 1 içerisine alınmış olan Product Backlog Item öğelerinin Project, Type, Title, AreaPath, IterationPath değerleri sorgulanmaktadır. filter anahtar kelimesi ile birden fazla kriterin hesaba katılması noktasında and ve or operatörlerinden yararlanılır.
 
-[![odatatfs_14](/assets/images/2013/odatatfs_14_thumb.png)](/assets/images/2013/odatatfs_14.png)
+![odatatfs_14](/assets/images/2013/odatatfs_14.png)
 
 Şu an için TFS Odata servis sorgularında filter, count, select, orderby, top, skip, format ve callback anahtar kelimeleri kullanılabilmektedir. Ancak bu anahtar kelime seti artabilir. Sorgular sırasında? ve $ harflerine de dikkat edilmelidir. Tüm OData komutlarının önünde dikkat edileceği üzere $ harfi yer almaktadır. Her ne kadar örneklerde ağırlıklı olarak Work Item’ lar üzerinde durulmuş olsa da DefaultCollection altında sunulan Entity’ lerin çoğu üzerinde sorgulamalar yapılabilir. Bunu denemenizi öneririm
 

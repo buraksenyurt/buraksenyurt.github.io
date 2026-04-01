@@ -19,7 +19,7 @@ tags:
 ---
 Geçtiğimiz gün özlem duyduğum bilgisayar oyunlarından birisi olan Warcraft II'nin ses efektlerini arar halde buldum kendimi. Olay tabi ses efektlerinin mükemmelliğinden çıktı oyuncu karakterlerine kadar geldi. Gerek Orc'lar da gerek Human'lar da süper kahramanlar vardı. Büyücüler, okçular, işçiler ve daha niceleri. Pek çoğumuzun bu oyun başında saatler harcadığından ve sabah ezanına kadar kaldığından eminim.
 
-[![WAR2](/assets/images/2013/WAR2_thumb.jpg)](/assets/images/2013/WAR2.jpg)
+![WAR2](/assets/images/2013/WAR2.jpg)
 
 
 Nedense söz konusu karakterleri bir araştırma konusunda kullanma ihtiyacı da hissettim. Tesadüfe bakın ki aynı anda.Net tarafında da bir konuyu araştırmaktaydım. Sonuç olarak aşağıdaki konu için onları kendi bakış açımdan değerlendirmeye karar verdim. Bakalım bu günkü yazımızda nasıl bir maceraya dalıyor olacağız
@@ -63,7 +63,7 @@ Bu amaçla basit ama işi zevkli hale getirecek de bir ön hazırlık yapacağı
 
 E tabi bu karakterlerden oluşan kümeyi üretecek bir de yardımcı tipimizin söz konusu olduğunu düşünebiliriz. Lafı fazla uzatmadan ön hazırlık için kullanacağımız kod parçalarına bir göz atalım dilerseniz.
 
-[![aio_1](/assets/images/2013/aio_1_thumb.png)](/assets/images/2013/aio_1.png)
+![aio_1](/assets/images/2013/aio_1.png)
 
 GameElement.cs;
 
@@ -190,7 +190,7 @@ namespace NewIOFunctions
 
 Örneğimizi çalıştırdığımızda aşağıdakine benzer bir sonuç ile karşılaşırız.
 
-[![aio_2](/assets/images/2013/aio_2_thumb.png)](/assets/images/2013/aio_2.png)
+![aio_2](/assets/images/2013/aio_2.png)
 
 Üretilen dosya içeriğinin bir kısmı da aşağıdaki gibidir.
 
@@ -200,7 +200,7 @@ namespace NewIOFunctions
 >
 > Yine de siz kendi sistemlerinizde zorlanmamak adına, Notepad2' yi veya Notepad++' ı kullanmayı düşünebilirsiniz.
 
-[![aio_3](/assets/images/2013/aio_3_thumb.png)](/assets/images/2013/aio_3.png)
+![aio_3](/assets/images/2013/aio_3.png)
 
 Dikkat edileceği üzere WriteFileAsync'e yapılan çağrı içerisinde StreamWriter tipinin await edilebilir WriteLineAsync metodu kullanılmaktadır. WriteFileAsync metodu aslında geriye bir Task tipi döndürmek zorunda değildir. Bunu daha çok, Wait metodu kullanılarak başlatılan Task'ın işlemlerini bitirene kadar uygulamanın beklemesi ve işlenen satır sayısının bir değerinin ana Thread tarafından elde edilebilmesi için kullandık. Nitekim uygulamayı akışına bırakıp Wait çağrısını gerçekleştirmessek, tüm içerik yerine program sonlanana kadar yazılabilen kısım fiziki olarak aktarılacaktır.
 
@@ -271,7 +271,7 @@ Okuma işleminin tamamlanmasını takiben,üretilen GameElement içerikli generi
 
 Örneğimizin çalışması tabiki biraz uzun sürebilir. Kolay değil yaklaşık 450 megabyte'lık bir içeriğin okunması söz konusu. İşte örnek ekran çıktımız.
 
-[![aio_6](/assets/images/2013/aio_6_thumb.png)](/assets/images/2013/aio_6.png)
+![aio_6](/assets/images/2013/aio_6.png)
 
 Her iki örnekte de önemli olan, dosyadan satır bazında okuma ve dosyaya satır bazında yazma işlemlerini içeren fonksiyonelliklerin ana uygulamadan bağımsız olarak asenkron çalışabiliyor olmalarıdır. Bir başka deyişle eş zamanlı (Concurrent) olarak bir dosya içerisine yazma veya okuma işlemi söz konusu değildir.
 
@@ -344,11 +344,11 @@ Hem WriteTo10File hem de WriteFileAsyncV2 metodları async olarak işaretlenmiş
 
 Dosyaya satır bazlı yazma işlemi için yine WriteLineAsync fonksiyonunundan yararlanılmaktadır. WriteTo10File metoduda kendi içerisinde 1milyonluk kümelere ayırdığı element listelerini ayrı dosyalara yazmak için WriteFileAsyncV2 metodunu await anahtar kelimesi ile çağırmaktadır ki bu da gözden kaçırılmaması gereken bir noktadır. Kodun çalışma zamanı çıktısı aşağıda görüldüğü gibidir.
 
-[![aio_7](/assets/images/2013/aio_7_thumb.png)](/assets/images/2013/aio_7.png)
+![aio_7](/assets/images/2013/aio_7.png)
 
 Tabi klasör yapısına bakıldığında GameZone_1’ den GameZone_10’ a kadar 10 farklı dosyanın üretildiği ve içerisine de 10milyon kümenin 1milyon parçalarının yazıldığı görülebilir.
 
-[![aio_8](/assets/images/2013/aio_8_thumb.png)](/assets/images/2013/aio_8.png)
+![aio_8](/assets/images/2013/aio_8.png)
 
 Senaryolarımız ile Console üzerinden basit pratiklerimizi yapmış olduk. Şimdi bu pratikleri gerçek hayat senaryoları ile değerlendirmeye çalışmalıyız. Dolayısıyla işlemlerimizi artık görsel arabirimi olan ve gerçekten de cevap verilebilirliğe ihtiyaç duyan Windows Forms, WPF (Windows Presentation Foundation) ve belki de Asp.Net gibi uygulama çeşitlerinde ele almalıyız. Her zaman olduğu gibi bu kutsal görevi siz değerli meslektaşlarıma bırakıyorum
 

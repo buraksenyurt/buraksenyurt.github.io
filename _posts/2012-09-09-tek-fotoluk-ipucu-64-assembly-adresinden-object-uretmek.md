@@ -14,6 +14,6 @@ Bazen reflection tekniklerini kullanarak harici assembly’ lar içerisinden bul
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_103.png)
 
-[![spt_64](/assets/images/2012/spt_64_thumb.png)](/assets/images/2012/spt_64.png)
+![spt_64](/assets/images/2012/spt_64.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.

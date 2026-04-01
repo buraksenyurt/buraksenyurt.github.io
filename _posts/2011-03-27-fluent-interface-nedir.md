@@ -12,7 +12,7 @@ tags:
 ---
 Yazılımcı olarak bizlerin zaman içerisindeki gelişimimiz/ilerleyişimiz açısından takip etmemiz gereken önemli kişiler olduğu aşikardır. Söz gelimi çevik süreç prensiplerine ait manifestoyu hazırlayanlar arasında yer alan Martin Fowler gibi. [Martin Fowler](http://martinfowler.com/) bana göre yazılım mühendisliğinin uç noktalarında yaşayan bir bilim insanıdır. Bilim insanı diyorum nitekim çalıştığı şirkette Chief Scientist pozisyonunda görev almaktadır
 
-[![blg236_Giris](/assets/images/2011/blg236_Giris_thumb.jpg)](/assets/images/2011/blg236_Giris.jpg)
+![blg236_Giris](/assets/images/2011/blg236_Giris.jpg)
 
 
 ![Smile](/assets/images/2011/wlEmoticon-smile.png)
@@ -31,7 +31,7 @@ Bu günkü yazımızda ilk olarak Martin Fowler ve Eric Evans tarafından tanım
 
 Gelin basit bir örnek ile konuyu didiklemeye başlayalım.Bu amaçla aşağıdaki kod içeriğini göz önüne alabiliriz.
 
-[![blg236_ClassDiagram1](/assets/images/2011/blg236_ClassDiagram1_thumb.gif)](/assets/images/2011/blg236_ClassDiagram1.gif)
+![blg236_ClassDiagram1](/assets/images/2011/blg236_ClassDiagram1.gif)
 
 ```csharp
 namespace UsingFluentInterface 
@@ -119,7 +119,7 @@ namespace UsingFluentInterface
 
 Aslında buraya kadar ki kod parçasında olağan dışı bir durum yer almadığını ifade edebiliriz. Standart olarak interface tanımlaması ve bunu uygulayan bir sınıf tasarımı söz konusudur. Main metodu içerisinde ise dikkat edileceği üzere interface tipinin çok biçimli yapısı göz önüne alınarak marti isimli değişkene, Player tipinden bir nesne örneğinin oluşturulup atandığı görülmektedir. Güzel…Şimdi örneğimizi biraz daha değiştiriyor olacağız. İşte yeni kod içeriğimiz.
 
-[![blg236_ClassDiagram2](/assets/images/2011/blg236_ClassDiagram2_thumb.gif)](/assets/images/2011/blg236_ClassDiagram2.gif)
+![blg236_ClassDiagram2](/assets/images/2011/blg236_ClassDiagram2.gif)
 
 ```csharp
 namespace UsingFluentInterface 
@@ -218,7 +218,7 @@ Bu sefer çok daha ilginç bir kod parçası ile karşı karşıyayız. İlk ola
 
 Nitekim Interface implementasyonu sonucu dikkat edileceği üzere Set ön eki ile başlayan her metod, iç değer atamalarında this anahtar kelimesini kullanmaktadır. Buna göre çalışma zamanında o anki PlayerV2 nesne örneğinin kullanılması söz konusudur. Ayrıca her Set… metodunun sonunda return this; ifadesinin kullanıldığına da dikkat edilmelidir. Peki tüm bunlar ne anlama geliyor? Aslında tüm bunların ne anlama geldiğini anlamak için Main metodu içerisinde yer alan kod parçasını göz önüne almamız yeterli olacaktır.
 
-[![blg236_CodeView](/assets/images/2011/blg236_CodeView_thumb.gif)](/assets/images/2011/blg236_CodeView.gif)
+![blg236_CodeView](/assets/images/2011/blg236_CodeView.gif)
 
 Mutlaka dikkatinizi çekmiştir. Set… ön eki ile başlayan metodlardan hangisini kullanırsak kullanalım arkasından yine IPlayerSpecV2 üzerinden tanımlanmış olan metodlardan birisine erişilebilmektedir
 
@@ -230,7 +230,7 @@ Mutlaka dikkatinizi çekmiştir. Set… ön eki ile başlayan metodlardan hangis
 
 Şimdi dilerseniz başka bir örnek daha ele alalım. İşte kodlarımız.
 
-[![blg236_RealExample](/assets/images/2011/blg236_RealExample_thumb.gif)](/assets/images/2011/blg236_RealExample.gif)
+![blg236_RealExample](/assets/images/2011/blg236_RealExample.gif)
 
 ```csharp
 using System.Collections.Generic; 
@@ -317,7 +317,7 @@ Bu sefer IPlayerSpecV3 arayüzü içerisinde SetAbility ve ApplyAbility isimli i
 
 Bu noktada PlayerV3 nesne örneğini üretirken yapılan metod çağrılarına dikkat etmenizi öneririm. SetAbility ve ApplyAbility metodlarının aynı ifade içerisinde, karmaşık sırada çağırılabildiği görülmektedir. Bu tipik olarak bir metod zinciridir ve aynı çalışma zamanı Context’ ini kullanarak tankımza farklı kabiliyetlerin eklenmesi ve yürütülmesi işlemlerinin gerçekleştirilebilmesini sağlamaktadır. Örneğimize ait çalışma zamanı görüntüsü aşağıdakine benzer olacaktır.
 
-[![blg236_Runtime](/assets/images/2011/blg236_Runtime_thumb.gif)](/assets/images/2011/blg236_Runtime.gif)
+![blg236_Runtime](/assets/images/2011/blg236_Runtime.gif)
 
 Sanıyorum ki bu son örnek Fluent Interface kullanımı konusunda bizlere daha fazla fikir verebilmiştir. Ancak son olarak işin içerisine bir de Extension metodları katarak işin kaymağını da hazırlayabiliriz
 
@@ -325,7 +325,7 @@ Sanıyorum ki bu son örnek Fluent Interface kullanımı konusunda bizlere daha 
 
 Son örneğimizde PlayerV3 tipinden tek bir nesne örneği için metod zincirini oluşturduğumuzu görüyoruz. Oysaki n sayıda tank için de birlikte hareket etmelerini sağlayacak biçimde metod zincirleri kurmak ve kullanmak isteyebiliriz. Bu noktada elimizde bir koleksiyon yapısı olduğu düşünülebilir (IEnumerable gibi) Söz konusu koleksiyon yapısı için eklenecek olan bir Extension ile de istediğimiz fonksiyonelliği kazanma şansına sahip olabiliriz. Gelin bu amaçla aşağıdaki gibi bir kod parçası geliştirelim.
 
-[![blg236_ClassDiagram4](/assets/images/2011/blg236_ClassDiagram4_thumb.gif)](/assets/images/2011/blg236_ClassDiagram4.gif)
+![blg236_ClassDiagram4](/assets/images/2011/blg236_ClassDiagram4.gif)
 
 ```csharp
 using System; 
@@ -443,7 +443,7 @@ Bu örnekte IEnumerable arayüzü (Interface) için geliştirilmiş iki Extensio
 
 Söz gelimi Main metodu içerisindeki kod parçalarına dikkat edildiğinde aTeam isimli nesne örneği üzerinden SetAbility ve ApplyAbility çağrıları gerçekleştirilmiş ve sonuç olarak Red Leader, Orange 1 ve Victor Echo 2 isimli tanklar için ortak yürütme işlemleri icra ettirilmiştir. Aşağıdaki örnek ekran çıktısında bu durum daha net bir şekilde görülebilmektedir.
 
-[![blg236_Runtime2](/assets/images/2011/blg236_Runtime2_thumb.gif)](/assets/images/2011/blg236_Runtime2.gif)
+![blg236_Runtime2](/assets/images/2011/blg236_Runtime2.gif)
 
 Sanıyorum ki Fluent Interface kullanımı şimdi daha da bir anlam kazanmış oldu
 

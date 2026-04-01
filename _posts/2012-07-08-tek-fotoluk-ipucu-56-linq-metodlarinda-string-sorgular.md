@@ -15,7 +15,7 @@ Bazı durumlarda Entity Framework tabanlı nesne koleksiyonlarını sorgularken,
 
 Buyrun öyleyse.
 
-[![tfi_57](/assets/images/2012/tfi_57_thumb.png)](/assets/images/2012/tfi_57.png)
+![tfi_57](/assets/images/2012/tfi_57.png)
 
 Bu koda göre arka planda hareket eden SQL sorgusu da şöyledir.
 

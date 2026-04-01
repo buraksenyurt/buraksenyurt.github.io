@@ -16,7 +16,7 @@ Diyelim ki elimizde içeriklerini karşılaştırmak istediiğimiz iki dosya var
 
 Aşağıdaki fotoğrafta iki Text dosyanın karşılaştırılması yer almaktadır.
 
-[![tfi_105](/assets/images/2013/tfi_105_thumb.png)](/assets/images/2013/tfi_105.png)
+![tfi_105](/assets/images/2013/tfi_105.png)
 
 Bu işin bir de Merge kısmı var. Haydi durmayın araştırıp deneyin.
 

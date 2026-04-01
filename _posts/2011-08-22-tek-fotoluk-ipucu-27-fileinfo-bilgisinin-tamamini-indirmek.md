@@ -15,7 +15,7 @@ FileInfo tipi yardımıyla bir dosyanın pek çok özelliğine erişebiliriz bil
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_45.png)
 
-[![PhotoTrick27](/assets/images/2011/PhotoTrick27_thumb.png)](/assets/images/2011/PhotoTrick27.png)
+![PhotoTrick27](/assets/images/2011/PhotoTrick27.png)
 
 [ConsoleApplication1.rar (23,97 kb)](/assets/files/2011/ConsoleApplication1.rar)
 

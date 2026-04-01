@@ -157,7 +157,7 @@ Windows SDK ile birlikte gelen makecert aracını kullanarak X509 tabanlı test 
 
 > makecert –r –pe –n “CN=makineadı" –b 01/01/2000 –e 01/01/2100 –eku 1.3.6.1.5.5.7.3.1 –ss my –sr localmachine –sky exchange –sp “Microsoft RSA SChannel Cryptographic Provider” –sy 12
 
-[![wcfhttps_1](/assets/images/2014/wcfhttps_1_thumb.png)](/assets/images/2014/wcfhttps_1.png)
+![wcfhttps_1](/assets/images/2014/wcfhttps_1.png)
 
 Adım 3: IIS Tarafında SSL Kullanımını Etkinleştirmek
 
@@ -183,13 +183,13 @@ Adım 5: WCF Servis Uygulamasında HTTPS Adres Bilgisinin Kullanılması
 
 Önceden de belirttiğimiz üzere eğer IIS tarafında SSL tabanlı bir sertifikasyon söz konusu değilse WCF uygulamasının da https tabanlı bir proje adresini kullanabilmesi söz konusu değildir. Ancak önceki adımlar ile bu sorunu aşmış bulunuyoruz. Dolayısıyla aşağıdaki ekran görüntüsündeki gibi Project Url kısmında https protokolünü kullanacağımızı belirtebiliriz.
 
-[![wcfhttps_2](/assets/images/2014/wcfhttps_2_thumb.png)](/assets/images/2014/wcfhttps_2.png)
+![wcfhttps_2](/assets/images/2014/wcfhttps_2.png)
 
 Adım 5.5: Test
 
 Ara adımda EntryService.svc sayfasını bir tarayıcı üzerinden açmayı deneyebiliriz. Bu durumda aşağıdaki ekran görüntüsüne ulaşmamız gerekmektedir. Dikkat edileceği üzere https tabanlı bir açılış söz konusu olmuştur.
 
-[![wcfhttps_6](/assets/images/2014/wcfhttps_6_thumb.png)](/assets/images/2014/wcfhttps_6.png)
+![wcfhttps_6](/assets/images/2014/wcfhttps_6.png)
 
 Ayrıca WSDL (Web Service Description Language) erişim adreslerinin de https tabanlı olduğu rahatlıkla gözlemlenebilir
 
@@ -199,7 +199,7 @@ Adım 6: İstemci Uygulamaya Servis Referanasının Eklenmesi
 
 Senaryomuza göre istemci uygulamamız ASP.Net tabanlı bir web uygulamasıdır. Visual Studio ile bir Asp.Net Empty Web Application oluşturarak bu adıma başlayabiliriz. Bundan sonraki en önemli kısım ise servis referansının projeye dahil edilmesidir. Add Service Reference kısmında https tabanlı WSDL adresine talepte bulunursak, aşağıdaki ekran görüntüsünde yer alan uyarı mesajı ile karşılaşırız.
 
-[![wcfhttps_7](/assets/images/2014/wcfhttps_7_thumb.png)](/assets/images/2014/wcfhttps_7.png)
+![wcfhttps_7](/assets/images/2014/wcfhttps_7.png)
 
 Bu iletişim penceresinde Yes seçeneğini işaretleyerek ilerleyelim. Sonuç olarak servis tarafına ait proxy tipinin istemci tarafında üretildiğini görürüz. Client için söz konusu olan konfigurasyon içeriği ise aşağıdaki gibi olacaktır.
 
@@ -363,13 +363,13 @@ namespace ClientApp
 
 Kodun belki de en önemli kısmı ServerCertificateValidationCallback tipinin kullanılması ve IgnoreCertificationError isimli metod içerisinden daima true değeri döndürülmesidir. Bunun sebebi aslında bir test sertifikası kullanmamız ve söz konusu sertifikanın validasyona tabi tutulması halinde çalışma zamanı hatası alacak olmamızdır.
 
-[![wcfhttps_11](/assets/images/2014/wcfhttps_11_thumb.png)](/assets/images/2014/wcfhttps_11.png)
+![wcfhttps_11](/assets/images/2014/wcfhttps_11.png)
 
 Bir başka deyişle oluşacak olan hata sürkülase edilmiştir. Malum development ortamında geliştirme yaptığımızdan bu tip görmezden gelmeleri çözümümüze katabiliriz. Birazcık hile yaptık anlayacağınız.
 
 Artık uygulamayı çalıştırıp test edebiliriz. Eğer adımlarımızda bir sorun yoksa aşağıdaki ekran görüntüsünde olduğu gibi 1903 sonucunu alıyor olmamız gerekmektedir.
 
-[![wcfhttps_9](/assets/images/2014/wcfhttps_9_thumb.png)](/assets/images/2014/wcfhttps_9.png)
+![wcfhttps_9](/assets/images/2014/wcfhttps_9.png)
 
 WCF tarafında HTTPS tabanlı geliştirme ortamının hazırlanması daha önceki yıllarda biraz daha zorluydu. Ancak yeni nesil ortamlarımızda bu işlemleri gerçekleştirmek, adımlarımızda da görüldüğü üzere daha kolay. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -13,7 +13,7 @@ tags:
 ---
 Bir verinin çeşitli kurallara göre doğrulanması, verinin işlenmek üzere gönderilmeden önce yapılması gereken önemli işlemlerden birisidir. Özellikle Entity Framework gibi veri merkezli (Data-Centric) uygulama geliştirme alt yapılarında bu durum daha da önem arz etmektedir. Burada söz konusu olan, görsel bir kontrolün içerik denetiminden ziyade, çalışma zamanı Entity örneklerine ait özelliklerin (Property) değerlerinin denetlenmesidir. Çok doğal olarak verilerde tutarsızlıklara neden olabilecek çeşitli ihlallerin tespit edilmesi, toplanması, gerektiğinde son kullanıcıya bildirilmesi ya da farklı bir yere raporlanması/loglanması gerekmektedir.
 
-[![checklist1](/assets/images/2012/checklist1_thumb.gif)](/assets/images/2012/checklist1.gif)
+![checklist1](/assets/images/2012/checklist1.gif)
 
 Peki verinin doğrulanmasından tam olarak beklentilerimiz neler olabilir? Bunu bir kaç gerçek hayat ihtiyacı ile cevaplayabiliriz.
 
@@ -42,7 +42,7 @@ Entity Framework bu noktada bize yardımcı olacak bir Exception tipi içerir; D
 
 İlk olarak aşağıdaki sınıf çizelgesinde yer alan Layer POCO tipini geliştirdiğimizi düşünelim.
 
-[![efv_1](/assets/images/2012/efv_1_thumb.png)](/assets/images/2012/efv_1.png)
+![efv_1](/assets/images/2012/efv_1.png)
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -75,7 +75,7 @@ Entity'lere ait özellikler seviyesinde yapılabilen bu doğrulama işlemleri ö
 
 Diğer yandan nitelikler seviyesinde gerçekleştirilmesi pek kolay olmayan bazı doğrulama kuralları da söz konusu olabilir ve bunlar farklı yerlerde fonksiyonel hale gelmiş kütüphaneler içerisinde yer alabilirler. Bu durumda sanki Entity seviyesinde söz konusu olabilecek bir metod daha ideal olabilir. Bu tip bir vakayı karşılamak için Entity tipine yine System.ComponentModel.DataAnnotations içerisinde yer alan IValidatableObject arayüzünü uyarlamak ve beraberinde gelen Validate metodunu ezmek yeterlidir. Şimdi örneğimize aşağıdaki sınıf çizelgesinde görülen Player POCO (Plain Old CLR Object) tipini eklediğimizi düşünelim.
 
-[![efv_2](/assets/images/2012/efv_2_thumb.png)](/assets/images/2012/efv_2.png)
+![efv_2](/assets/images/2012/efv_2.png)
 
 ```csharp
 using System; 
@@ -129,7 +129,7 @@ Belki de bu sıra duruma göre değişiklik arz, eder kim bilir
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_55.png)
 
-[![efv_3](/assets/images/2012/efv_3_thumb.png)](/assets/images/2012/efv_3.png)
+![efv_3](/assets/images/2012/efv_3.png)
 
 ```csharp
 using System;
@@ -283,7 +283,7 @@ Main metodu içerisinde üretilen GameContext örneği için örnek bir Player, 
 
 Dikkat edileceği üzere bu metod içerisinde ihlale neden olan Entity örneği DbEntityValidationResult örneklerine ait Entry.Entity özelliğinden yakalanmaktadır. Entity'den hemen bir alt seviye olan özelliklerdeki ihlallere inmek için de ValidationErros koleksiyonunda dolaşılmakta ve PropertyName ile ErrorMessage değerlerine bakılmaktadır. Örneği çalıştırdığımızda aşağıdaki ekran görüntüsündeki benzer bir hata mesajı ile karşılaşırız.
 
-[![efv_4](/assets/images/2012/efv_4_thumb.png)](/assets/images/2012/efv_4.png)
+![efv_4](/assets/images/2012/efv_4.png)
 
 Görüldüğü gibi tüm seviyelerdeki kural ihlalleri toplu olarak yakalanabilmiştir.
 
@@ -306,7 +306,7 @@ Peki özellikle attribute seviyesinde yapılan doğrulama kontrollerini göz ön
 
 Nitekim System.ComponentModel.DataAnnotations isim alanı altında yer alan doğrulama kriterlerinin ortak özelliği, ValidationAttribute niteliğinden türemiş olmalarıdır.
 
-[![efv_5](/assets/images/2012/efv_5_thumb.png)](/assets/images/2012/efv_5.png)
+![efv_5](/assets/images/2012/efv_5.png)
 
 ValidationAttribute niteliği de doğal olarak Attribute tipinden türemektedir. Öyleyse kendi doğrulama niteliklerimizi yazmanın bir yolunu bulduğumuzu ifade edebiliriz
 
@@ -314,7 +314,7 @@ ValidationAttribute niteliği de doğal olarak Attribute tipinden türemektedir.
 
 Söz gelimi Author tipimize SocialSecurityNumber isimli string bir özellik eklediğimizi ve buraya girilen değerlerin geçerli bir numara olup olmadığını denetleyecek bir doğrulama niteliği geliştirmek istediğimizi farz edelim. Aşağıdaki şekilde ilerleyebiliriz.
 
-[![efv_6](/assets/images/2012/efv_6_thumb.png)](/assets/images/2012/efv_6.png)
+![efv_6](/assets/images/2012/efv_6.png)
 
 ```csharp
 using System; 
@@ -343,7 +343,7 @@ namespace HowTo_Validation
 
 Tabi duruma göre söz konusu niteliğin ezmesi gereken üye sayısı daha fazla olabilir. Biz örneğimizde sadece IsValid metodunu ezdik. Çalışma zamanında bu metoda girildiğinde object tipinden olan value parametresinin değeri, niteliğin uygulandığı özelliğin çalışma zamanındaki içeriği olacaktır. (Burada sembolik olarak kontrol işlemini üstlenen ayrı bir metod private olarak tanımlanmıştır. Gerçek hayatta bu metod gerçekten de harici bir servisi çağırarak denetleme işlemini yapabilir)
 
-[![efv_7](/assets/images/2012/efv_7_thumb.png)](/assets/images/2012/efv_7.png)
+![efv_7](/assets/images/2012/efv_7.png)
 
 Bunu kontrol ederek duruma göre geriye true veya false değer döndürmemiz yeterlidir. Niteliği Author Entity tipi için aşağıdaki kod parçasında görüldüğü şekilde uygulayabiliriz.
 
@@ -367,7 +367,7 @@ namespace HowTo_Validation
 
 Şu andaki test kodumuz her vaziyette SSN doğrulamasında false değer üretecektir. Sonuçta ekran çıktısını bu işlem de aşağıdakine benzer bir şekilde yansıtılacaktır.
 
-[![efv_8](/assets/images/2012/efv_8_thumb.png)](/assets/images/2012/efv_8.png)
+![efv_8](/assets/images/2012/efv_8.png)
 
 Özetle Entity Framework tarafındaki doğrulama işlemlerini Entity seviyesinde nitelikler (Attribute) ve IValidatableObject arayüzü sayesinde gerçekleştirebilirken, Context tipi seviyesinde de ezilebilen (overridable) ValidateEntity metodu içerisinde yapabiliriz. Bu makalemizde çok basit seviyede de olsa, Code-First Entity Framework tabanlı doğrulama işlemlerini ele almaya çalıştık. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

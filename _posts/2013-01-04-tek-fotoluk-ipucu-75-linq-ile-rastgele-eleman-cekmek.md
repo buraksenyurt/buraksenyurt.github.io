@@ -17,6 +17,6 @@ Pek çoğumuz Random tipini kullanır ve bir listeden rastgele elemenalar üretm
 
 Aşağıdaki gibi olabilir mi mesela?
 
-[![tfi_75](/assets/images/2013/tfi_75_thumb.png)](/assets/images/2013/tfi_75.png)
+![tfi_75](/assets/images/2013/tfi_75.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.

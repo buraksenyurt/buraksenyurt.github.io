@@ -11,7 +11,7 @@ tags:
 ---
 Tam da bu gün İstanbul’ da hafif rüzgarlı, güneşli bir bahar havası var. Binaların kapalı mekanlarında çalışan bizler için iki dakikalığına da olsa dışarıya çıkmanın, rüzgarın hafif esintisini ve güneşin ılık sıcaklığını hissetmenin değeri paha biçilemez.
 
-[![ef61_6](/assets/images/2014/ef61_6_thumb.png)](/assets/images/2014/ef61_6.png)
+![ef61_6](/assets/images/2014/ef61_6.png)
 
 
 Bahara olan özlemimizin tavan yaptığı bu günlerde, başka diyarlarda da değişik esintiler söz konusu elbette. [Örneğin C# 6.0 da](https://www.buraksenyurt.com/post/C-60e28093Yeni-Esintiler), örneğin Entity Framework’ de. Bakalım bu günkü esintiler bizi nerelere götürecek?
@@ -38,11 +38,11 @@ Senaryomuzda iki önemli NuGet paketine yer veriyor olacağız. Entity Framework
 
 EF 6.1 Paketinin eklenmesi;
 
-[![ef61_1](/assets/images/2014/ef61_1_thumb_1.png)](/assets/images/2014/ef61_1_1.png)
+![ef61_1](/assets/images/2014/ef61_1_1.png)
 
 NLog Paketlerinin eklenmesi;
 
-[![ef61_2](/assets/images/2014/ef61_2_thumb_1.png)](/assets/images/2014/ef61_2_1.png)
+![ef61_2](/assets/images/2014/ef61_2_1.png)
 
 NLog paketlerinden NLog Configuration’ ı eklemeyi unutmayalım. Bu sayede NLog.config dosyası içerisinde intellisense özelliğinden yararlanabileceğiz.
 
@@ -99,7 +99,7 @@ Kod
 
 Artık kod tarafının inşasına başlanabilir. Temel olarak aşağıdaki sınıf çizelgesinde (Class Diagram) yer alan şema kodlanmıştır.
 
-[![ef61_5](/assets/images/2014/ef61_5_thumb.png)](/assets/images/2014/ef61_5.png)
+![ef61_5](/assets/images/2014/ef61_5.png)
 
 Tipik olark Code-First yaklaşımına uygun olacak şekilde bir POCO tipi (Product) ve buna ait DbSet içeriğinin konuşlandırıldığı (Products özelliği) bir DbContext türevi söz konusudur. Dikkate değer kısımlar ise, EF için konfigurasyon ayarlarının kod tarafında da ele alınmasını sağlayan, DbConfiguration türevli ShopContextConfig ve IDbCommandInterceptor arayüzünü uygulamış olan StoredProcedureInterceptor sınıflarıdır.
 
@@ -239,7 +239,7 @@ ShopContextConfig sınıfı, DbConfiguration sınıfından türetilmiştir. Bu t
 
 Uygulama çalıştırıldığında aşağıdaki ekran görüntüsünde yer alan sonuçların elde edildiği görülebilir. Aslında 3 adet Product örneği eklenmekte ve birim fiyatı 2 birimin altında olanlar için bir güncelleme yapılmaktadır. Tabi örnekteki amaç bu CUD işlemlerinin oluştuğu anlarda parametre değerlerinin yakalanmasıdır.
 
-[![ef61_3](/assets/images/2014/ef61_3_thumb.png)](/assets/images/2014/ef61_3.png)
+![ef61_3](/assets/images/2014/ef61_3.png)
 
 Görüldüğü üzere Main metodu içerisinde gerçekleştirilen yeni ürün ekleme ve güncelleme işlemlerine karşılık yürütülen Stored Procedure çağrıları yakalanmış ve o andaki parametre değerleri Console ekranına yazdırılmıştır.
 
@@ -247,7 +247,7 @@ Peki ya Veritabanı Durumu?
 
 Veritabanına bakılırsa Products isimli bir tablonun ve CUD operasyonlarına karşılık ilgili stored procedure’ lerin oluşturulduğu gözlemlenir.
 
-[![ef61_4](/assets/images/2014/ef61_4_thumb.png)](/assets/images/2014/ef61_4.png)
+![ef61_4](/assets/images/2014/ef61_4.png)
 
 Yordamlara ait Script’ ler ise aşağıdaki gibidir.
 

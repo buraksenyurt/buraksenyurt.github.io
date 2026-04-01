@@ -12,7 +12,7 @@ tags:
 ---
 Neredeyse son bir kaç saattir yoğun bir şekilde Wolfenstein isimli bilgisayar oyununu oynamaktaydım. Aslında çok fazla bilgisayar oyunu oynayan birisi değilimdir. Hatta bu oyunun ilk versiyonunu çok çok uzun zaman önce oynadığımı ve arada çok az oyunla haşır neşir olduğumu itiraf edebilirim
 
-[![wolfenstein](/assets/images/2011/wolfenstein_thumb.jpg)](/assets/images/2011/wolfenstein.jpg)
+![wolfenstein](/assets/images/2011/wolfenstein.jpg)
 
 
 ![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile_12.png)
@@ -98,7 +98,7 @@ Aslında sayı aralığı ne kadar yüksek olursa standart for döngüsünün he
 
 Birinci çalıştırmanın sonuçları;
 
-[![artcl_1_1](/assets/images/2011/artcl_1_1_thumb.gif)](/assets/images/2011/artcl_1_1.gif)
+![artcl_1_1](/assets/images/2011/artcl_1_1.gif)
 
 O oooo!!!
 
@@ -106,7 +106,7 @@ O oooo!!!
 
 İkinci çalıştırmanın sonuçları;
 
-[![artcl_1_2](/assets/images/2011/artcl_1_2_thumb.gif)](/assets/images/2011/artcl_1_2.gif)
+![artcl_1_2](/assets/images/2011/artcl_1_2.gif)
 
 O ooooo too!!!
 
@@ -114,7 +114,7 @@ O ooooo too!!!
 
 Üçüncü çalıştırmanın sonuçları;
 
-[![artcl_1_3](/assets/images/2011/artcl_1_3_thumb.gif)](/assets/images/2011/artcl_1_3.gif)
+![artcl_1_3](/assets/images/2011/artcl_1_3.gif)
 
 Şaka mı bu?
 
@@ -190,15 +190,15 @@ kodu devreye girmekte ve Thread’ ler için hesaplanan currentTotal değerlerin
 
 İlk çalışma sonucu;
 
-[![artcl_1_4](/assets/images/2011/artcl_1_4_thumb.gif)](/assets/images/2011/artcl_1_4.gif)
+![artcl_1_4](/assets/images/2011/artcl_1_4.gif)
 
 ikinci çalışma sonucu;
 
-[![artcl_1_5](/assets/images/2011/artcl_1_5_thumb.gif)](/assets/images/2011/artcl_1_5.gif)
+![artcl_1_5](/assets/images/2011/artcl_1_5.gif)
 
 üçüncü çalışma sonucu
 
-[![artcl_1_6](/assets/images/2011/artcl_1_6_thumb.gif)](/assets/images/2011/artcl_1_6.gif)
+![artcl_1_6](/assets/images/2011/artcl_1_6.gif)
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_72.png)
 

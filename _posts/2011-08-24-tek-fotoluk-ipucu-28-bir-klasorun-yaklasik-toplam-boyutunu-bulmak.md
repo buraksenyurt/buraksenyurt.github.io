@@ -17,6 +17,6 @@ Bir klasörün tüm içeriğinin toplam boyutunu öğrenmek isteyebiliriz. Bunun
 
 Not: Yanlız erişim yetkisi olmayan klasörler söz konusu olduğunda boyut bilgisi eksik çıkacaktır. Bunun çözümünü de size bırakıyorum. Biraz araştırın bakalım ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_46.png)
 
-[![PhotoTrick28](/assets/images/2011/PhotoTrick28_thumb.png)](/assets/images/2011/PhotoTrick28.png)
+![PhotoTrick28](/assets/images/2011/PhotoTrick28.png)
 
 [DirectoryExtensions.rar (23,28 kb)](/assets/files/2011/DirectoryExtensions.rar)

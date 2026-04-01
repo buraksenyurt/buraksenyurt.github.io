@@ -16,7 +16,7 @@ tags:
 ---
 Bazen yemek yemek için dışarı çıkar ve daha önceden gitmediğimiz bir yere oturup hiç bakmadığımız tadlara yelken açarız. Bu, bazen çok başarılı sonuçlanır ve bize büyük bir keyif verir. Bazen de yapmış olduğumuz tercihlerimiz için pişmanlık duyarız. Hatta bazı zamanlarda yerken iyi gelen o tadlar, çıkışta büyük sıkıntılara yol açabilir
 
-[![yoresel1](/assets/images/2012/yoresel1_thumb.jpg)](/assets/images/2012/yoresel1.jpg)
+![yoresel1](/assets/images/2012/yoresel1.jpg)
 
 
 ![Smile](/assets/images/2012/wlEmoticon-smile_53.png)
@@ -62,7 +62,7 @@ Peki bu güçlü özellikleri hangi hallerde ele almalıyız? Başlarda da belir
 
 Dilerseniz HTTP ve WebSockets üzerinden yapılan iletişimler arasındaki farkı şekilsel olarak da ifade edelim.
 
-[![ws_1](/assets/images/2012/ws_1_thumb.png)](/assets/images/2012/ws_1.png)
+![ws_1](/assets/images/2012/ws_1.png)
 
 Sanırım şimdi biraz daha netleşmiştir. En azından benim kafamda şöyle bir imajı var. Bir Request ile kanalı açarım ve ben tekrardan bir talepte bulunana kadar, sunucu bana mesaj yollamaya ve beni bilgilendirmeye devam eder
 
@@ -76,7 +76,7 @@ WCF 4.5 ile gelen Binding Type'larından birisi de, NetHttpBinding sınıfıdır
 
 Sınıf diagramı;
 
-[![ws_3](/assets/images/2012/ws_3_thumb.png)](/assets/images/2012/ws_3.png)
+![ws_3](/assets/images/2012/ws_3.png)
 
 ```csharp
 using System.ServiceModel; 
@@ -201,7 +201,7 @@ Görüldüğü üzere ServiceHost nesne örneğine eklenen ServiceEndpoint tipi,
 >
 > ![Sad smile](/assets/images/2012/wlEmoticon-sadsmile_15.png)
 
-[![ws_2](/assets/images/2012/ws_2_thumb.png)](/assets/images/2012/ws_2.png)
+![ws_2](/assets/images/2012/ws_2.png)
 
 İstemci tarafını geliştirmek için öncelikli olarak proxy sınıfının üretilmiş olması da gerekmektedir. Örneğimizde Metadata Publishing özelliğini bilinçli olarak etkinleştirmedik. Bu nedenle komut satırından svcutil aracını kullanarak gerekli üretimi gerçekleştirebiliriz. Visual Studio Command Prompt üzerinden bunu aşağıdaki ifadeler ile sağlayabiliriz.
 

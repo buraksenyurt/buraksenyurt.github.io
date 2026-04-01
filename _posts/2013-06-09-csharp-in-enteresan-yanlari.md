@@ -16,7 +16,7 @@ tags:
 ---
 Yazılım sektöründe yer alan bizler, mutlak suretle en az bir programlama dilini çok iyi seviyede öğrenmeye çalışır ve bunun için epey yoğun çaba sarf ederiz (Hatta değerli bir büyüğümüzün sözüne göre, hayatımızın her hangibir noktasında C veya C++ gibi bir dili öğrenmeye çalışmış ama hiç bir zaman iyi bir C/C++ geliştiricisi olamamışızdır) Ne varki bazen dilin kullanılmayan pek çok özelliğini, zamanında öğrenmiş olsak dahi unutabiliriz. Hatta bazı ilginç olan yanlarını bugüne kadar hiç görmemiş, denememiş ya da duymamış olabiliriz.
 
-[![helpful_tips_image](/assets/images/2013/helpful_tips_image_thumb.jpg)](/assets/images/2013/helpful_tips_image.jpg)
+![helpful_tips_image](/assets/images/2013/helpful_tips_image.jpg)
 
 İşte size C# dili ile ilişkili olarak pek çoğumuzun hatırından giden bir kaç enteresan vaka…
 
@@ -32,7 +32,7 @@ Bu yazımızda örnek 5 vaka çalışması üzerinde duruyor olacağız.
 
 Hep bu şekilde öğrendik. Genel olarak cümle kalıbı böyleydi. C# tarafından baktığımızda temel olarak 5 erişim belirleyicisi (Access Modifier) olduğunu biliyoruz. private, public, internal, protected ve son olarak da protected internal. private olarak tanımlanış üyelerin de (members), tanımlı oldukları yer dışından erişilemez olduklarını biliyoruz. Tabi istisnai durumlarda yok değil. Söz gelimi aşağıdaki kod parçasını göz önüne alalım.
 
-[![csmyth_1](/assets/images/2013/csmyth_1_thumb.png)](/assets/images/2013/csmyth_1.png)
+![csmyth_1](/assets/images/2013/csmyth_1.png)
 
 ```csharp
 class Vehicle 
@@ -72,7 +72,7 @@ static void Main(string[] args)
 
 Sonuç false dönecektir elbette.
 
-[![csmyth_2](/assets/images/2013/csmyth_2_thumb.png)](/assets/images/2013/csmyth_2.png)
+![csmyth_2](/assets/images/2013/csmyth_2.png)
 
 Dikkat edileceği üzere parametre olarak gelen vehicle değişkeni üzerinden, private olarak tanımlanmış _vehicleId alanına erişilebilmiştir. Tabi _vehicleId’ nin değeri, v2 isimli değişkene ait olarak üretilen Guid değeridir.
 
@@ -82,7 +82,7 @@ Dikkat edileceği üzere parametre olarak gelen vehicle değişkeni üzerinden, 
 
 Genişletme metodları (Extension Methods) özellikle elimize kodları kapalı olarak gelen assembly dosyaları düşünüldüğünde, bunları ek fonksiyonellikler ile genişletmede kullanılan önemli kavramlardan birisidir. Çoğunlukla türetilemeyen veya az önce de bahsettiğimiz gibi kodları kapalı gelen sınıflar için kullanıldığına sıklıkla şahit oluru. ([Extension Method’ lar ile ilişkili bir internet sitesi dahi vardır](http://www.extensionmethod.net/csharp) ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_145.png)) Ancak bu özelliğin Enum sabitleri için de kullanılabildiğini fark etmiş miydiniz? Örneğin,
 
-[![csmyth_3](/assets/images/2013/csmyth_3_thumb.png)](/assets/images/2013/csmyth_3.png)
+![csmyth_3](/assets/images/2013/csmyth_3.png)
 
 ```csharp
 enum VehicleType 
@@ -136,7 +136,7 @@ VehicleType enum sabiti için EnumExtensions sınıfı içerisinde GetDescriptio
 
 Enum sabitinin kodlarının kapalı bir Assembly içerisinde olduğunu farz edeceğimiz bir senaryoda, bu tip bir yaklaşım önemli esneklikler sağlayacaktır. Örneğin uygulanmasında da, bildiğimiz sınıf bazlı extension metodların kullanımından farklı bir yaklaşım söz konusu değildir.
 
-[![csmyth_4](/assets/images/2013/csmyth_4_thumb.png)](/assets/images/2013/csmyth_4.png)
+![csmyth_4](/assets/images/2013/csmyth_4.png)
 
 ## Vaka 3 – static alanların tanımlanma sıraları önemli midir?
 
@@ -176,7 +176,7 @@ namespace HowTo_CSharp_Myths
 
 Program sınıfı içerisinde tanımlanmış olan r1 ve r2 static alanlarının şu an pek dikkati çekmeyen sıraları aslında önemlidir. Yukarıdaki kod çalıştırıldığında, tahmin edileceği üzere ekrana pi değeri yazılacaktır. Nitekim r2 tanımlanırken, r1’ in kendisine atandığı görülmektedir. r1’ de zaten Pi değerini taşımaktadır. İşte çalışma zamanı çıktısı.
 
-[![csmyth_5](/assets/images/2013/csmyth_5_thumb.png)](/assets/images/2013/csmyth_5.png)
+![csmyth_5](/assets/images/2013/csmyth_5.png)
 
 Peki static alanların sırasını değiştirirsek?
 
@@ -216,21 +216,21 @@ namespace HowTo_CSharp_Myths
 
 Yine ekrana Pi değerinin yazılmasını bekleyebiliriz öyle değil mi? Ama,
 
-[![csmyth_6](/assets/images/2013/csmyth_6_thumb.png)](/assets/images/2013/csmyth_6.png)
+![csmyth_6](/assets/images/2013/csmyth_6.png)
 
 sıfır yazmıştır.
 
 Görüldüğü gibi sıralama static alanların kullanıldığı durumda önemlidir. Nitekim r2 ilk tanımlandığında r1 değerini alırken, r1’ in o anki değeri varsayılan int için 0’ dır. Dolayısıyla, sonraki sırada yapılan r1 tanımlanması ve atamasında verilen Pi değeri sadece r1 için söz konusudur.
 
 > Peki bu durum static olmayan alanlar için de geçerli midir acaba? Bunu denediğimizde sizce ne olur?
-> [![csmyth_7](/assets/images/2013/csmyth_7_thumb.png)](/assets/images/2013/csmyth_7.png)
+> ![csmyth_7](/assets/images/2013/csmyth_7.png)
 > Böyle bir atamaya zaten bu Console uygulaması açısından bakıldığında, derleme zamanı izin vermeyecektir. Sıralamayı değiştirip double r2=r1; ifadesini bir alt satıra geçirseniz dahi durum değişmez.
 
 ## Vaka 4 – Indeksleyicilerde params anahtar kelimesi de kullanılabilir
 
 Indeksleyiciler (Indexers) bildiğiniz üzere sınıf örnekleri üzerinden köşeli parantez operatörünü kullanarak iç üyelere erişimde yardımcı olmaktadırlar. Özelliklere (Properties) benzer şekilde get ve set blokları vardır ve çoğunlukla içsel dizi bazlı sınıf üyelerini ele alırlar. Fakat istenirse indeksleyicilerde params anahtar sözcüğü de kullanılabilir. Aşağıdaki örneği göz önüne alalım.
 
-[![csmyth_8](/assets/images/2013/csmyth_8_thumb.png)](/assets/images/2013/csmyth_8.png)
+![csmyth_8](/assets/images/2013/csmyth_8.png)
 
 ve kod parçamız
 
@@ -312,7 +312,7 @@ Dikkat edileceği üzere 0, 1, 2, 3 ve 4 numaralı indislere farklı Person nesn
 
 singlePerson değişkeninin elde edilmesi sırasında ise, params anahtar kelimesinin kullanılmadığı indeksleyici versiyonu çalışacaktır. İşte uygulamanın çalışma zamanı sonuçları.
 
-[![csmyth_9](/assets/images/2013/csmyth_9_thumb.png)](/assets/images/2013/csmyth_9.png)
+![csmyth_9](/assets/images/2013/csmyth_9.png)
 
 ## Vaka 5 – Hiç String sınıfının Intern veya IsInterned metodlarını kullandınız mı/duydunuz mu? (.Net odaklı bir fark ama olsun)
 
@@ -347,7 +347,7 @@ String.Intern(name4);
 Console.WriteLine("Intern çağrısı sonrası. selim pool {0}", String.IsInterned(name4) == null ? "da değil" : "da");
 ```
 
-[![csmyth_10](/assets/images/2013/csmyth_10_thumb.png)](/assets/images/2013/csmyth_10.png)
+![csmyth_10](/assets/images/2013/csmyth_10.png)
 
 Bu yazımızda şöyle kıyıda köşede kalmış olabilecek bir kaç dil kabiliyetine yer vermeye çalıştık. Kimbilir gözümüzden kaçan, dikkat etmediğimiz veya kullanmadığımız için zamanla unuttuğumuz neler var. Biraz ilham vermiş olabilirim. Siz de araştırın bakalım. Bir başka yazımızda görüşmek dileğiyle hepinize mutlu günler dilerim
 

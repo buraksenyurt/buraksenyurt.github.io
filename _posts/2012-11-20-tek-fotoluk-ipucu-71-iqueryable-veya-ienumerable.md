@@ -17,7 +17,7 @@ Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğra
 
 )
 
-[![tfi_71](/assets/images/2012/tfi_71_thumb.png)](/assets/images/2012/tfi_71.png)
+![tfi_71](/assets/images/2012/tfi_71.png)
 
 Tabi fotoğrafa bakınca durumu görmek zor olabilir. Ama fotoğrafın arkasında yatan gerçeklere bakarsak (örneğin SQL Server Profiler yardımıyla) customerList1 üzerinden uygulanan Take (10) çağrısı için aşağıdaki SQL sorgusunun çalıştırıldığını görürüz.
 

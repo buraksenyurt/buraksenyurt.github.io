@@ -10,7 +10,7 @@ tags:
 ---
 Bilenler bilir, uzun süredir.Net Framework 2.0 üzerinde yazılmış ve Visual Studio 2005 ortamında geliştirilmeye devam edilen bir bankacılık uygulamasında görevliyim. Buradaki işim müşterinin yeni isteklerini sisteme katmak/katmaya çalışmak olarak düşünülebilir
 
-[![blg225_Giris](/assets/images/2011/blg225_Giris_thumb.jpg)](/assets/images/2011/blg225_Giris.jpg)
+![blg225_Giris](/assets/images/2011/blg225_Giris.jpg)
 
 
 ![Sealed](/assets/images/2011/smiley-sealed.gif)
@@ -35,7 +35,7 @@ Gelin bu bir kaç küçük püf noktadan bir kaçına hep birlikte bakalım.
 
 İlk olarak özellikle POCO (Plain Old CLR Objects) gibi tip tanımlamalarında yaygın olarak kullandığımız ve özellikle LINQ (Language Integrated Query) tarafında da çok işimize yarayan Auto Property kavramına bir bakalım. Bazı durumlarda özelliklerin sadece okunabilir (Read Only) ya da yazılabilir (Write Only) olmalarını isteyebiliriz. Auto Property kullanmadığımız durumlarda get veya set bloklarını yazmayarak bu kolayca sağlanabilir. Ancak Auto Property’ lerde get veya set bloklarının her ikisinin de yazılması zorunludur. Buna rağmen normal Property yazımındaki felsefe ile hareket ettiğimizde derleme zamanında aşağıdaki ekran görüntüsünde yer alan hata mesajı ile karşılaşırız.
 
-[![blg225_AutoPropertyError](/assets/images/2011/blg225_AutoPropertyError_thumb.gif)](/assets/images/2011/blg225_AutoPropertyError.gif)
+![blg225_AutoPropertyError](/assets/images/2011/blg225_AutoPropertyError.gif)
 
 Görüldüğü üzere sadece get veya sadece set bloğu yazarak readonly veya writeonly özellik tanımlanamaz. Ancak private gibi bir erişim belirleyicisini (Access Modifier) devreye alırsak amacımıza ulaşabiliriz. İşte örnek bir kod parçası.
 
@@ -80,7 +80,7 @@ namespace OldTimes
 
 Dikkat edileceği üzere PersonId ve Birth özelliklerinde get ve set bloklarının başında private bildirimi yapılmıştır. Bu durumda PersonId sadece okunabilir, Birth ise sadece yazılabilir özellikler olarak değerlendirilmektedir. Hatta kodun bu halini derlediğimizde aşağıdaki hata mesajlarını aldığımızı görürüz.
 
-[![blg225_AutoProperty](/assets/images/2011/blg225_AutoProperty_thumb.gif)](/assets/images/2011/blg225_AutoProperty.gif)
+![blg225_AutoProperty](/assets/images/2011/blg225_AutoProperty.gif)
 
 Peki üretilen IL (Intermediate Language) çıktısına baktığımızda
 
@@ -88,7 +88,7 @@ Peki üretilen IL (Intermediate Language) çıktısına baktığımızda
 
 Bu durumda aşağıdaki sonuçlar ile karşılaşırız.
 
-[![blg225_AutoPropertyIL](/assets/images/2011/blg225_AutoPropertyIL_thumb.gif)](/assets/images/2011/blg225_AutoPropertyIL.gif)
+![blg225_AutoPropertyIL](/assets/images/2011/blg225_AutoPropertyIL.gif)
 
 Dikkat edilmesi gereken nokta private olarak işaretlenmiş get ve set metodlarının varlığıdır. Üstelik bu metodların içerisinde iş yapan kod parçaları da mevcuttur. Ancak bu ip ucunda dikkat edilmesi gereken bir husus daha vardır. Bu farkı görmek için eski stilde ReadOnly bir özelliğin nasıl tanımlandığına bakalım.
 
@@ -109,7 +109,7 @@ namespace OldTimes
 
 Product tipi içerisinde yer alan ProductId özelliği Readonly olarak tanımlanmıştır. Nitekim bir set bloğu yoktur. Bunun doğal olarak IL çıktısı ise aşağıdaki gibi olacaktır.
 
-[![blg225_Readonly](/assets/images/2011/blg225_Readonly_thumb.gif)](/assets/images/2011/blg225_Readonly.gif)
+![blg225_Readonly](/assets/images/2011/blg225_Readonly.gif)
 
 Farkı görebildiniz mi?
 
@@ -387,7 +387,7 @@ static double Calculate(int x,int y,TimeSpan duration)
 
 İşte sonuçlar;
 
-[![blg225_Runtime1](/assets/images/2011/blg225_Runtime1_thumb.gif)](/assets/images/2011/blg225_Runtime1.gif)
+![blg225_Runtime1](/assets/images/2011/blg225_Runtime1.gif)
 
 Görüldüğü gibi DateTime tipine ait iki nesne örneğinden yararlanılmış ve aradaki farka bakılarak işlemin ne kadar zaman aldığı hesap edilmiştir. Peki daha şık bir kodlama söz konusu olabilir mi? Evet olur
 
@@ -414,7 +414,7 @@ Bu kez başlangıç noktasında static StartNew metodu ile bir StopWatch nesnesi
 
 Görüldüğü üzere başlangıç ve bitiş zamanlarını tespit etmek için iki farklı DateTime değişkeni tanımlamak yerine, zaten bu tip kronometre işlemleri için tasarlanmış StopWatch tipini kullanmak kodun anlamsal bütünlüğü açısından daha verimli görülmektedir. Hatta çalışma zamanı sonuçlarına baktığımızda StopWatch tipinin aslında daha tutarlı değerler döndürdüğünü de görebiliriz.
 
-[![blg225_Runtime2](/assets/images/2011/blg225_Runtime2_thumb.gif)](/assets/images/2011/blg225_Runtime2.gif)
+![blg225_Runtime2](/assets/images/2011/blg225_Runtime2.gif)
 
 Anlattıklarımızdan yola çıkacak olursak eğer şu tip sonuçlara da varabiliriz;
 

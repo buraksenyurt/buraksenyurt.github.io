@@ -18,6 +18,6 @@ Hemen hepimiz LINQ sorgularını kullanıyoruz (Tabi aramızda halen.Net 2.0 ve 
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_38.png)
 
-[![PhotoTrick20](/assets/images/2011/PhotoTrick20_thumb.png)](/assets/images/2011/PhotoTrick20.png)
+![PhotoTrick20](/assets/images/2011/PhotoTrick20.png)
 
 [LINQThink.rar (38,50 kb)](/assets/files/2011/LINQThink.rar)

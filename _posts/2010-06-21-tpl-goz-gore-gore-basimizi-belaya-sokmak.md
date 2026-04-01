@@ -16,7 +16,7 @@ tags:
 ---
 Bazen göz göre göre başımıza bi ton dert açarız. Kimi zaman başlayacağımız iş bize çok eğlenceli gelebilir (Yandaki resimde yüzü görünmeyen şahsın da bu heyacanla Hamburgere bindiğinden eminiz) Ama işin sonuçlarını biliyorsak eğer, bunu yapmamızın nedeni büyük olasılıkla adrenalindir.
 
-[![blg209_Giris](/assets/images/2010/blg209_Giris_thumb.jpg)](/assets/images/2010/blg209_Giris.jpg)
+![blg209_Giris](/assets/images/2010/blg209_Giris.jpg)
 
 
 Tabi ki bir yazılımcı için adrenalin genellikle üst yöneticisi tarafından salgılanan bir hormondur. Nitekim yazılımcıların, ilerideki felaketleri kestirerek hareket etmesi ve geliştirmeleri buna göre yapması her zaman kolay olmayabilir. Bir başka deyişle bazı vakalara hazırlıklı olmak için önceden bunları çalışmak gerekmektedir.
@@ -75,11 +75,11 @@ namespace Disasters
 
 Aslında kod çok fazla değerlendirilebilir veya anlamlı değildir. Ancak Deadlock oluşumunu görmemiz açısından yeterlidir. Örnekte task1 ve task2 isimli Task nesne örneklerinin, birbirlerinin dönüş değerlerini kullanmaya çalıştığı ifade edilmektedir. İşte Task örneklerinin çalışma zamanında birbirlerini beklemeleri, kendi durumlarının Deadlock olarak set edilmesine neden olacaktır. Bu durum Debug modda aşağıdaki ekran görüntüsünde olduğu gibi görülebilir.
 
-[![blg209_Debug1](/assets/images/2010/blg209_Debug1_thumb.gif)](/assets/images/2010/blg209_Debug1.gif)
+![blg209_Debug1](/assets/images/2010/blg209_Debug1.gif)
 
 Görüldüğü üzere her iki Task birbirini bekler şekilde kalmıştır. Çok doğal olarak çalışma zamanı çıktısı kapkara bir ekran olacaktır.
 
-[![blg209_FirstRuntime](/assets/images/2010/blg209_FirstRuntime_thumb.gif)](/assets/images/2010/blg209_FirstRuntime.gif)
+![blg209_FirstRuntime](/assets/images/2010/blg209_FirstRuntime.gif)
 
 Gelelim diğer bir senaryoya.
 
@@ -121,7 +121,7 @@ namespace Disasters
 
 Örnek kod ile çalışma zamanında 10 Task örneği başlatılmakta ve bunların lambda ifadeleri (=> Expressions) içerisinden o anki i değerleri ekrana yazdırılmaktadır. Normal şartlarda i değerlerinin her bir Task örneği için farklı olması beklenir. Ancak çalışma zamanına baktığımızda aşağıdaki enteresan sonuçlar ile karşılaştığımızı görebiliriz.
 
-[![blg209_Runtime2](/assets/images/2010/blg209_Runtime2_thumb.gif)](/assets/images/2010/blg209_Runtime2.gif)
+![blg209_Runtime2](/assets/images/2010/blg209_Runtime2.gif)
 
 Görüldüğü üzere bütün Task örnekleri for döngüsü sayacının son değerini ekrana yazdırmaktadır. Çok kolay bir şekilde gözden kaçabilecek bu vaka nedeniyle uzun süre ekrana baka kalabilir ve arkadaşlarımızın bize “Kal Gelmiş” demelerine neden olabiliriz. Oysa ki çözüm son derece basittir.
 
@@ -161,7 +161,7 @@ namespace Disasters
 
 Bu sefer StartNew metodunun farklı bir versiyonu kullanılmıştır. Dikkat edileceği üzere metodun ikinci parametresi olarak i değişkeni kullanılmıştır. Bu aslında State Object olarak düşünülebilir. Dolayısıyla başlatılan her Task örneğine parametre olarak o anki döngü değeri (i değişkeninin değeri) geçirilmektedir. s isimli değişken, for döngüsünden gelen i değişkenini object tipinden temsil ettiği için de, basit bir Cast işlemi yapılması yeterlidir. İşte çalışma zamanı sonuçları.
 
-[![blg209_Runtime3](/assets/images/2010/blg209_Runtime3_thumb.gif)](/assets/images/2010/blg209_Runtime3.gif)
+![blg209_Runtime3](/assets/images/2010/blg209_Runtime3.gif)
 
 Görüldüğü gibi Task örnekleri kendilerine atanan i değerlerini ekrana basmıştır.
 

@@ -11,7 +11,7 @@ tags:
 ---
 Aralık…2003 yılı. Dışarısı oldukça soğuk ve ben evdeyim. Camdan dışarıya baktığımda dışarıda pek kimseyi göremiyorum. Soğuktan dolayı sakin olan sokağımız daha da bir yanlız. Bu arada askerden döndükten sonra iş aramakla geçirdiğim 8nci ayın içerisindeydim. Neyseki mesleki kariyerimde ilerlemek için yeni bir heyecanım var. [C#Nedir?](http://www.csharpnedir.com/) ile daha ilk günlerimi yaşıyorum.
 
-[![blg220_Giris](/assets/images/2011/blg220_Giris_thumb.jpg)](/assets/images/2011/blg220_Giris.jpg)
+![blg220_Giris](/assets/images/2011/blg220_Giris.jpg)
 
 
 O zamanlar en çok yaptığım iş, öğrendiklerimi Türkçe yazım dili ile olabildiğince doğru bir şekilde paylaşmaktı. Nitekim öğrenmenin en iyi yolunun öğrenilenleri anlatmakla mümkün olduğuna inanmaktayım. Halen daha bu düşüncemin arkasındayım.
@@ -26,7 +26,7 @@ Aslında her iki tip arasındaki farklılıklar, uygulama geliştirirken hangi t
 
 Bu temel farklılıklardan bazılarını örnek kodlar yardımıyla irdelemeye çalışmaya ne dersiniz? Başlamadan önce örnek bir Struct tipini göz önüne alalım.
 
-[![blg220_StructDiagram](/assets/images/2011/blg220_StructDiagram_thumb.gif)](/assets/images/2011/blg220_StructDiagram.gif)
+![blg220_StructDiagram](/assets/images/2011/blg220_StructDiagram.gif)
 
 ```csharp
 using System;
@@ -88,11 +88,11 @@ namespace StructvsClass
 
 IncreaseLocation isimli metod Location türünden bir parametre almaktada ve X,Y,Z özelliklerinin değerlerini onar birim arttırmaktadır. Programın giriş noktası olan Main metodu içerisinde ise planeLocation isimli bir Location nesne örneği üretilip bu metoda parametre olarak geçirilmektedir. Örneğin çalışma zamanı çıktısına baktığımızda aşağıdaki sonuç ile karşılaşırız.
 
-[![blg220_Case1_Runtime1](/assets/images/2011/blg220_Case1_Runtime1_thumb.gif)](/assets/images/2011/blg220_Case1_Runtime1.gif)
+![blg220_Case1_Runtime1](/assets/images/2011/blg220_Case1_Runtime1.gif)
 
 İşte bir Struct’ ın metod parametresi olarak kullanılmasındaki tipik davranış şekli. Değer türü olarak tüm içeriği ile birlikte metod içinde kopyalanan bir nesne söz konusu olduğundan, IncreaseLocation çağrısından önce ve sonrasındaki planeLocation içeriği değişmemiştir. Bu içerik sadece IncreaseLocation içerisinde değişime uğramıştır. Kısacası, metoda aktarılan değişkenin orjinal veri yapısında bir bozulma söz konusu değildir. Durumu biraz daha dramatize etmek ve özellikle sınıf ile yapı arasındaki farkı ortaya çıkartmak adına, Location tipini class haline getirip örneği tekrardan çalıştırabiliriz. Bu durumda sonuçlar aşağıdaki gibi olacaktır.
 
-[![blg220_Case1_Runtime2](/assets/images/2011/blg220_Case1_Runtime2_thumb.gif)](/assets/images/2011/blg220_Case1_Runtime2.gif)
+![blg220_Case1_Runtime2](/assets/images/2011/blg220_Case1_Runtime2.gif)
 
 Görüldüğü üzere planeLocation değişkeninin X,Y ve Z değerlerinin orjinal halleri, metod çağrısından sonra bozulmuştur. Bunun tipik nedeni referans türü olan sınıfların, metod parametrelerine değer türü olarak geçirilmeleri sırasında, adreslerinin taşınmasıdır. Dolayısıyla metod içerisine kullanılan loc isimli değişken ile, planeLocation isimli değişken bellek üzerindeki aynı adres alanlarını işaret etmektedir.
 
@@ -128,7 +128,7 @@ namespace StructvsClass
 
 Bu durumda planeLocation değişkeni, Decrease isimli metoda referans olarak geçirilecektir. Dolayısıyla metod içerisinde loc değişkeninin veri içeriğinde yapılan değişiklikler, planeLocation değişkeninin içeriğini de bozacaktır. Aşağıdaki çalışma zamanı görüntüsünde bu durum açık bir şekilde görülmektedir.
 
-[![blg220_Case1_Runtime3](/assets/images/2011/blg220_Case1_Runtime3_thumb.gif)](/assets/images/2011/blg220_Case1_Runtime3.gif)
+![blg220_Case1_Runtime3](/assets/images/2011/blg220_Case1_Runtime3.gif)
 
 Vaka 2: Atama İşlemlerindeki Davranışlar
 
@@ -149,7 +149,7 @@ Console.WriteLine("Marry Burada {0}", marryLocation.ToString());
 
 Kodun ilk kritik noktası jhonLocation değişkeninin marryLocation değişkenine atandığı yerdir. Bu atama sonrasında marryLocation değişkenin veri içeriği ile jhonLocation’ ın veri içeriği eş olacaktır. Yani tipik bir değişken kopyalama işlemi söz konusudur. Diğer yandan jhonLocation’ ın X alanının değerinin arttırılması sonrasında marryLocation’ ın X değerinde bir değişim olmadığı görülecektir. Nitekim her ikisi de bellek üzerinde ayrı lokasyonlarda duran değişkenlerdir. Örneğin çalışma zamanı çıktısı aşağıdaki gibidir.
 
-[![blg220_Case2_Runtime1](/assets/images/2011/blg220_Case2_Runtime1_thumb.gif)](/assets/images/2011/blg220_Case2_Runtime1.gif)
+![blg220_Case2_Runtime1](/assets/images/2011/blg220_Case2_Runtime1.gif)
 
 Peki ya Location bir sınıf olsaydı?
 
@@ -157,7 +157,7 @@ Peki ya Location bir sınıf olsaydı?
 
 Bu durumda çalışma zamanı çıktısı aşağıdaki gibi olacaktı.
 
-[![blg220_Case2_Runtime2](/assets/images/2011/blg220_Case2_Runtime2_thumb.gif)](/assets/images/2011/blg220_Case2_Runtime2.gif)
+![blg220_Case2_Runtime2](/assets/images/2011/blg220_Case2_Runtime2.gif)
 
 Görüldüğü üzere X alanının değerinin arttımı, marryLocation değişkeninin X değeri için de geçerli olmuştur. Bu son derece doğaldır nitekim atama sonrası kopyalanan içerik değil referans adresleridir. Bu sebepten atama sonrası jhonLocation değişkeninin veri içeriğinde yapılan değişiklikler çok doğal olarak marryLocation içinde geçerli olacaktır. Bu durumda geliştiricinin karar vermesi gereken soru şudur: Marry ile Jhon birlikte hareket etmeli midir? Yoksa istedikleri noktada birbirlerinde ayrı olarak hareket edebilirler mi?
 
@@ -167,7 +167,7 @@ Görüldüğü üzere X alanının değerinin arttımı, marryLocation değişke
 
 Bu vakayı canlandırmak için ikinci bir Struct tipine daha ihtiyacımız olacak. Plane isimli yapımızı aşağıdaki gibi tasarladığımızı düşünelim.
 
-[![blg220_PlaneStructDiagram](/assets/images/2011/blg220_PlaneStructDiagram_thumb.gif)](/assets/images/2011/blg220_PlaneStructDiagram.gif)
+![blg220_PlaneStructDiagram](/assets/images/2011/blg220_PlaneStructDiagram.gif)
 
 ```csharp
 struct Plane 
@@ -199,7 +199,7 @@ Console.WriteLine(redBaron.ToString());
 
 İlk olarak Plane tipinden bir nesne örneği üretilmektedir ve CurrentLocation isimli özellik initialize edilirken X,Y ve Z özelliklerine ilk değerleri verilmektedir. Kodun ilerleyen kısımlarında CurrentLocation özelliği üzerinden X alanına gidilerek değerinin 14 birim arttırıldığı görülmektedir. Herhangiri sorun olabilir mi? Evet olabilir…Nitekim kod derlendiğinde, aşağıdaki hata mesajının üretildiği görülecektir.
 
-[![blg220_Case3_Error](/assets/images/2011/blg220_Case3_Error_thumb.gif)](/assets/images/2011/blg220_Case3_Error.gif)
+![blg220_Case3_Error](/assets/images/2011/blg220_Case3_Error.gif)
 
 Dikkat edileceği üzere CurrentLocation özelliğinin üzerinden X değeri değiştirilememektedir. Aslında değişim söz konusudur fakat özellik kullanılması nedeniyle yeniden bir initialize işlemi yapılmasını gerektirmektedir. Kod aşağıdaki hale getirildiğinde bir sorun kalmayacaktır.
 
@@ -222,7 +222,7 @@ Console.WriteLine(redBaron.ToString());
 
 Bu durumda çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
-[![blg220_Case3_Runtime1](/assets/images/2011/blg220_Case3_Runtime1_thumb.gif)](/assets/images/2011/blg220_Case3_Runtime1.gif)
+![blg220_Case3_Runtime1](/assets/images/2011/blg220_Case3_Runtime1.gif)
 
 Elbette Location yapısı class olarak tanımlanmış olsaydı bu tip bir hata ile karşılaşılmayacaktı.
 
@@ -239,7 +239,7 @@ Console.WriteLine(tankLocation.ToString());
 
 Aslında bu son derece mantıklı bir kod parçasıdır. Nitekim Struct bir değer türü olduğundan int, double, bool gibi tanımlanıp kullanılabilmelidir. Yani varsayılan yapıcı metod veya başka bir versiyon ile örneklenmeden kolayca kullanılabilmelidir. Ancak kodumuzu bu haliyle derlediğimizde aşağıdaki derleme zamanı hatasını aldığımızı görürüz.
 
-[![blg220_Case4_Runtime1](/assets/images/2011/blg220_Case4_Runtime1_thumb.gif)](/assets/images/2011/blg220_Case4_Runtime1.gif)
+![blg220_Case4_Runtime1](/assets/images/2011/blg220_Case4_Runtime1.gif)
 
 Hımmm! İlginç
 
@@ -268,7 +268,7 @@ namespace StructvsClass
 
 Bu sefer de aşağıdaki hata mesajı ile karşılaşırız.
 
-[![blg220_Case4_Runtime2](/assets/images/2011/blg220_Case4_Runtime2_thumb.gif)](/assets/images/2011/blg220_Case4_Runtime2.gif)
+![blg220_Case4_Runtime2](/assets/images/2011/blg220_Case4_Runtime2.gif)
 
 Aslında bir önceki hata mesajı ile aynı görünmesine rağmen arada bir fark vardır. İlk hata mesajının verildiği yer ile ikincisi farklıdır. Son hata mesajının sebebi tüm alanlara ilk değer atanmayışıdır. Dolayısıyla kodun en azından aşağıdaki gibi olmasında yarar vardır.
 
@@ -315,7 +315,7 @@ namespace StructvsClass
 
 Location yapısına TimeZone isimli string tipinden ve InGame isimli bool tipinden birer alan eklenmiştir. Geliştiricinin amacı, bu iki değişkenin başlangıçta varsayılan değerlere sahip olmasıdır. Ancak kod bu şekliyle derlendiğinde aşağıdaki derleme zamanı hatalarının alındığı görülür.
 
-[![blg220_Case5_Runtime1](/assets/images/2011/blg220_Case5_Runtime1_thumb.gif)](/assets/images/2011/blg220_Case5_Runtime1.gif)
+![blg220_Case5_Runtime1](/assets/images/2011/blg220_Case5_Runtime1.gif)
 
 Dikkat edileceği üzere TimeZone değişkenine varsayılan değer atanamamaktadır. Ayrıca varsayılan yapıcı metodun var olamayacağı ifade edilmektedir. Buna göre InGame değişkenin ilk değer atanması için varsayılan yapıcı metodun kullanılması planları da suya düşmüştür. Halbu ki Location tipi bir sınıf olarak tasarlanmış olsaydı!
 
@@ -341,7 +341,7 @@ Sınıfları nesne yönelimli özellikleri tamamıyla destekleyen bir tip olarak
 
 Aslında karar vermek için Struct ve Class arasındaki farklılıklar dışında, benzerlikleri de bilmenin yararı vardır. Bu sebepten aşağıdaki tablodan da yararlanabiliriz.
 
-[![blg220_DiscussionSheet](/assets/images/2011/blg220_DiscussionSheet_thumb.gif)](/assets/images/2011/blg220_DiscussionSheet.gif)
+![blg220_DiscussionSheet](/assets/images/2011/blg220_DiscussionSheet.gif)
 
 Aradan geçen 7 yıldan sonra bir önceki yazıya bakıyorum da
 

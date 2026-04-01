@@ -17,7 +17,7 @@ tags:
 ---
 Bir çoğunuz gibi ben de düzenli olarak bazı dergilerin abonesiyim ve her ay onları alıp biraz karıştırdıktan sonra arşive (yani çalışma odasındaki kütüphaneye) kaldırmaktayım.
 
-[![Pioneer Stereo Ad 1974](/assets/images/2013/Pioneer%20Stereo%20Ad%201974_thumb.jpg)](/assets/images/2013/Pioneer%20Stereo%20Ad%201974.jpg)
+![Pioneer Stereo Ad 1974](/assets/images/2013/Pioneer%20Stereo%20Ad%201974.jpg)
 
 
 Tabi gün oluyor pek çoğuna dönüp bakmıyorum bile. Hatta kimisinin rengi sararıp soluyor bir köşede mazlum mazlum kalıyor. Ama eminim ki geride kalanlar için bazıları güncel içeriklere sahip iken, bazıları da tam anlamıyla bir Retro havası veriyor. Ve hatta çoğu, yıllar geçtikçe daha fazla değer kazanıyor.
@@ -38,7 +38,7 @@ Bu işten nasibini alan kısımlardan ikisi de Asp.Net uygulamalarının yaşam 
 
 Klasik Senkron Çalışma Modeli
 
-[![ahm_1](/assets/images/2013/ahm_1_thumb.png)](/assets/images/2013/ahm_1.png)
+![ahm_1](/assets/images/2013/ahm_1.png)
 
 Görüldüğü gibi gelen talep, Built-In bazı Http Module’ lerinden geçmekte ve Handler seviyesinde de değerlendirildikten sonra geriye döndürülmektedir. (Bu çizelgede talep edilen içeriğe ait sayfa veya user control’ un iç çalışma şekli göz ardı edilmiştir) Dikkat edilmesi gereken husus, Module ve Handler’ lardan oluşan bu kanal yapısının Thread havuzundan çekilen tek bir Thread içerisinde uçtan uca çalışıyor olmasıdır. Dolayısıyla bir module’ den diğerine olan geçiş sırasında, işlemekte olan module’ ün işini tamamlamış olması gerekmektedir. Aynı durum doğal olarak Handler’ lar için de geçerlidir.
 
@@ -46,7 +46,7 @@ Asenkron Çalışma Modeli
 
 Asenkron çalışma modeline göre ise, bir Module veya Handler’ ın kendi çalışmasını farklı bir Thread’ e yıkması ve daha sonra ana Thread’ e sonuç dönerek işleyişi uzun süre duraksatmaması hedeflenmektedir. Bu, özellikle geliştirici tarafından yazılan Module veya Handler tipleri için kullanılabilecek bir stratejidir. Aşağıdaki grafikte bu yaklaşım modeli özetlenmeye çalışılmıştır.
 
-[![ahm_2](/assets/images/2013/ahm_2_thumb.png)](/assets/images/2013/ahm_2.png)
+![ahm_2](/assets/images/2013/ahm_2.png)
 
 Dikkat edileceği üzere X Module tipi kendi işleyişini farklı bir Thread altında yapmaktadır. Dolayısıyla işlenmekte olan talebin akışı sırasında X modülüne gelindikten sonra, sıradaki Module veya takip eden Handler’ lara geçilmesi için bir duraksama söz konusu değildir. İlgili Module çalışmasını tamamladığında, kanal içerisindeki işleyişe otomatikman dahil olacaktır.
 
@@ -56,7 +56,7 @@ Peki bu modeli Asp.Net 4.5 içerisinde nasıl gerçekleştirebiliriz? Gelin basi
 
 IHttpModule kendi içerisinde Asenkron kullanım için doğal bir metod içermemektedir. Bunun yerine ezilmesi gereken Init ve Dispose metodlarını sunmaktadır. Init fonksiyonu tahmin edileceği üzere Module devreye girdiğinde yapılacak işlemleri içermekte ve icra ettirmektedir. Biz burada asenkron işleyişlere yer verebiliriz. Nasıl mı? İşte uygulama içerisindeki sınıf çizelgesi ve kod yapısı.
 
-[![ahm_3](/assets/images/2013/ahm_3_thumb.png)](/assets/images/2013/ahm_3.png)
+![ahm_3](/assets/images/2013/ahm_3.png)
 
 RequestLogInfo POCO tipinin içeriği;
 
@@ -198,7 +198,7 @@ Test için dilerseniz çok basit bir de aspx sayfası hazırlayalım. Böylece b
 
 WebForm içerisinde bir TextBox ve Button kontrolü bulunmaktadır. Kullanıcı sayfayı ilk kez talep ettiğinde HTTP Get ve Button’ a her bastığında da HTTP Post tipinden talepler üretilmesine neden olmaktadır. Çalışma zamanında yapılan çeşitli aksiyonlar sonrası oluşan örnek bir log içeriği ise aşağıda görüldüğü gibidir.
 
-[![ahm_4](/assets/images/2013/ahm_4_thumb.png)](/assets/images/2013/ahm_4.png)
+![ahm_4](/assets/images/2013/ahm_4.png)
 
 Dikkat edileceği üzere geliştirici tanımlı bir HttpModule tipinin işleyişinin asenkron hale getirilmesi mümkündür. Aynı prensiplerden yola çıkarak bir HttpHandler tipinin de asenkron çalışacak hale getirilmesi söz konusu olabilir elbette. Lakin Asp.Net 4.5, HttpHandler tiplerinin asenkron yazılabilmesi için daha güçlü bir yol sunmaktadır. Bu yolun başında HttpTaskAsyncHandler isimli soyut sınıf (Abstract Class) yer almaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

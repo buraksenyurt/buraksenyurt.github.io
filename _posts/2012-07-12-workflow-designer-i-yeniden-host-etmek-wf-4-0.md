@@ -16,7 +16,7 @@ tags:
 ---
 Çoğu zaman sinemada daha önceden vizyona girmiş olan bir filmin yeniden çekilmiş bir versiyonuna rastlarız. Örneğin Batman Begins veya vizyona bu yaz girecek Total Recall gibi. Hatta bazen Cover olarak adlandırdığımız bir durum söz konusu olur ve çeşitli müzik guruplarının önemli parçalarının tekrardan, aynı ekipçe veya başkalarınca yorumlandığını görür, duyarız.
 
-[![total-recall-2012-official-trailer-teaser-00 (1)](/assets/images/2012/total-recall-2012-official-trailer-teaser-00%20%281%29_thumb.jpg)](/assets/images/2012/total-recall-2012-official-trailer-teaser-00%20%281%29.jpg)
+![total-recall-2012-official-trailer-teaser-00 (1)](/assets/images/2012/total-recall-2012-official-trailer-teaser-00%20%281%29.jpg)
 
 
 Sonuç itibariyle insanlar zaman zaman yapılmış olan bazı çalışmaları hem teknolojinin yeni nimetleri, hem de farklı şekilde yorumlayabilme isteği nedeni ile tekrardan ele alabilirler.
@@ -57,7 +57,7 @@ Biz şu an için sadece giriş noktasını tasarladığımızı ve aslında Work
 
 WPF uygulaması olarak geliştireceğimiz projemizde, aşağıdaki şekilde görülen ve sarı kutucuk içerisine alınmış referansların bulunması gerekmektedir.
 
-[![rwd_1](/assets/images/2012/rwd_1_thumb.png)](/assets/images/2012/rwd_1.png)
+![rwd_1](/assets/images/2012/rwd_1.png)
 
 Dikkat edileceği üzere
 
@@ -104,7 +104,7 @@ Aslında tasarım olarak Visual Studio IDE’ sini sadece ucundan andıran bir g
 
 Uygulamanın sol tarafında Toolbox’ ımız, ortasında Workflow tasarımının yapılacağı alanımız ve en sağda bileşenlere ait Properties penceremiz bulunmaktadır. Şimdilik basit bir POC (Proof of Concept) çalışması olarak öngördüğümüzden temel fonksiyonelliklerimiz (Load,Save,Run,New) birer Button halinde pencerenin alt kısmında yer alacaktır. Olayı kafamızda daha iyi canlandırmak için uygulamamızın bitmiş halinin çalışma zamanındaki bir görüntüsüne bakalım arzu ederseniz.
 
-[![rwd_2](/assets/images/2012/rwd_2_thumb.png)](/assets/images/2012/rwd_2.png)
+![rwd_2](/assets/images/2012/rwd_2.png)
 
 Sanırım bu ekran görüntüsüne bakınca biraz daha heyecanlanmış ve iştahlanmış olabilirsiniz yanılıyor muyum?
 

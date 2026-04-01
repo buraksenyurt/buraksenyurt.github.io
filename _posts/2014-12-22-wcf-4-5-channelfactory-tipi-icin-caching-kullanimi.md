@@ -16,7 +16,7 @@ tags:
 ---
 Vaktiyle üniversitedeki diferansiyel denklemler dersi hocamızın anlattığı bir efsane vardı (Sene 94 bu arada). Ne kadar gerçektir bilinmez ama beni oldukça etkilemişti. Hikayeye göre üniversite hocaları arasında belirli aralıklarla düzenlenen bir yarışma varmış. Bu yarışmada hocaların tahtaya kalkıp seçtikleri teoremlere ait geometrik şekilleri çizmeleri istenirmiş. En güzel çizim ise mükafatlandırılırmış.
 
-[![PerfectCircle](/assets/images/2014/PerfectCircle_thumb.jpg)](/assets/images/2014/PerfectCircle.jpg)
+![PerfectCircle](/assets/images/2014/PerfectCircle.jpg)
 
 
 Bir gün hocalar ardı ardına kalkıp tahtada hünerlerini göstermeye başlamışlar. Hemen hepsi rengarenk tebeşirler kullanıyormuş. Sarmallar, hiperboller, spiraller, üç boyutlu grafikler vb…
@@ -37,7 +37,7 @@ Tabi kanal üretimi sırasında devreye giren bir süreç de söz konusudur. Bun
 
 Elbette konuyu incelemek için basit bir WCF servisine ihtiyacımız olacak. Konumuz ChannelFactory ve bazı ön hazırlıkların ön belleklenmesi olduğundan servis tarafı oldukça sade ve basit şekilde inşa edilmiştir. Aşağıda servis sözleşmesi (Service Contract) ve uygulayıcı tipini içeren bir WCF Service Application kod içeriği bulunmaktadır.
 
-[![cfcache_1](/assets/images/2014/cfcache_1_thumb.png)](/assets/images/2014/cfcache_1.png)
+![cfcache_1](/assets/images/2014/cfcache_1.png)
 
 Servis sözleşmesi;
 
@@ -200,7 +200,7 @@ Kodun bundan sonraki kısımlarında ise MathServiceClient sınıfının örnekl
 
 Aslında proxy tipi olarak üretilen MathServiceClient sınıfı, generic ClientBase abstract sınıfından türemektedir. svcutil aracı proxy tipini bu şekilde üretmektedir (Doğal olarak Add Service Reference için de aynı durum söz konusudur)
 
-[![cfcache_2](/assets/images/2014/cfcache_2_thumb.png)](/assets/images/2014/cfcache_2.png)
+![cfcache_2](/assets/images/2014/cfcache_2.png)
 
 Bu sınıf açılımı nedeniyle CacheSetting özelliği proxy tipi üzerinden de doğrudan uygulanabilir.
 

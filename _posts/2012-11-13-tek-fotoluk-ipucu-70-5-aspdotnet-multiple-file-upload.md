@@ -16,7 +16,7 @@ Asp.Net 4.5 ile FileUpload kontrolüne gelen iki önemli özellik (Property) mev
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_151.png)
 
-[![tfi_70dot5](/assets/images/2012/tfi_70dot5_thumb.png)](/assets/images/2012/tfi_70dot5.png)
+![tfi_70dot5](/assets/images/2012/tfi_70dot5.png)
 
 İşin özünde AllowMultiple özelliğine atanan true değeri (ki varsayılan olarak false dur) yatmaktadır. Bu sayede, istemci tarafında açılan pencerede birden fazla dosyasnın seçilmesine izin verilmektedir. Dolayısıyla PostedFiles özelliği HttpPostedFile tipinden birden fazla örnek ile dolar ve sunucu tarafında istenilen şekilde değerlendirilebilir.
 

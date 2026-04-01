@@ -15,6 +15,6 @@ Extension metodlar çok ama çok işimize yarayabiliyor. Örneğin serileştiril
 
 ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_42.png)
 
-[![PhotoTrick24](/assets/images/2011/PhotoTrick24_thumb.png)](/assets/images/2011/PhotoTrick24.png)
+![PhotoTrick24](/assets/images/2011/PhotoTrick24.png)
 
 [JsonExtensions.rar (23,64 kb)](/assets/files/2011/JsonExtensions.rar)

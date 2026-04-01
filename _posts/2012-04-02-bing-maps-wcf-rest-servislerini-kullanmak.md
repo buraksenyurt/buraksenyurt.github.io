@@ -11,7 +11,7 @@ tags:
 ---
 Bazen öğrenmek istediklerimiz bize inanılmaz karşık gelir. Ne zaman kitabı açsak ya da bilgisayarın başına geçsek işe zaten demoralize olmuş bir şekilde başlarız. Özellikle tez hazırlıkları safhasındayken veya yazacağımız kitap için gerekli araştırmaları yaparken çok yoğun, ağır, sıkıcı ve uğraştırıcı unsurlarla karşı karşıya kalabiliriz.
 
-[![Garfield-1](/assets/images/2012/Garfield-1_thumb.jpg)](/assets/images/2012/Garfield-1.jpg)
+![Garfield-1](/assets/images/2012/Garfield-1.jpg)
 
 
 Yüksek Lisans yaptığım dönemlerdeki hocalarımdan birisi bu konuda şöyle bir tavsiye de bulunmuştu…
@@ -90,7 +90,7 @@ http://dev.virtualearth.net/Branding/logo_powered_by.png
 
 Görüldüğü üzere söz konusu çıktı içerisinde Manchester mevkisinin coğrafik lokasyon bilgileri yer almaktadır. İlgili XML içeriğinin şemasını çıkarttığımızda ağaç yapısını daha kolay bir şekilde görebiliriz ve anlayabiliriz.
 
-[![bngrest1](/assets/images/2012/bngrest1_thumb.png)](/assets/images/2012/bngrest1.png)
+![bngrest1](/assets/images/2012/bngrest1.png)
 
 Aslında lokasyon ile ilişkili olarak asıl önemli bilgiler Resources/Location elementi altındaki boğumlarda yer almaktadır. Söz gelimi Name elementinde aranan kritere uygun olarak gelen lokasyonun adı, BoundingBox içerisinde kuzey, güney, doğu ve batı koordinatları, Point elementinde enlem ve boylam bilgileri vb yer almaktadır. Aranan içeriğin eşleşme oranı ise (yani bulunan sonucun aranan ile ne kadar yakın olduğu bilgisi de) MatchCode elementi içerisinde belirtilmektedir.
 
@@ -100,7 +100,7 @@ http://dev.virtualearth.net/REST/v1/Locations/manchester/?o=xml&key={developer k
 
 şeklinde bir URL talebinde bulunduğumuzda bize an itibariyle 5 adet sonuç dönecektir. Nitekim burada ülke veya lokasyonu tam onikiden vurmak için gerekli ekstra bilgiler verilmemiştir. Sadece BING serverlarında kayıtlı olan manchester mevkisine ait veriler getirilmiş ve makalenin yazıldığı tarih itibariyle de 5 yakın sonuç bulunmuştur. (Örnek erkan görüntüsünün bir kısmı aşağıdaki gibidir)
 
-[![bngrest4](/assets/images/2012/bngrest4_thumb.png)](/assets/images/2012/bngrest4.png)
+![bngrest4](/assets/images/2012/bngrest4.png)
 
 Bir kaç farklı örnek daha ilave ederek REST arayüz içeriklerini incelemeye devam edelim.
 
@@ -108,7 +108,7 @@ http://dev.virtualearth.net/REST/v1/Locations/turkey/kadiköy/?output=xml&key={D
 
 Yukarıdaki sorgu ile Türkiye’ deki Kadıköy ilçesinin lokasyon bilgisi elde edilebilir.
 
-[![bngrest3](/assets/images/2012/bngrest3_thumb.png)](/assets/images/2012/bngrest3.png)
+![bngrest3](/assets/images/2012/bngrest3.png)
 
 http://dev.virtualearth.net/REST/v1/Locations?output=xml&countryRegion=DE&key={Developer Key}
 
@@ -144,7 +144,7 @@ http://dev.virtualearth.net/REST/V1/Routes/Driving?o=xml&wp.0=istanbul&wp.1=anka
 
 Sorgu sonucu elde edilen uzun XML çıktısına ait küçük bir ekran görüntüsü
 
-[![bngrest2](/assets/images/2012/bngrest2_thumb.png)](/assets/images/2012/bngrest2.png)
+![bngrest2](/assets/images/2012/bngrest2.png)
 
 Bu URL sorgusunda önemli olan bazı key’ ler vardır. wp.0 ve wp.1 ile tanımlanan anahtar kelimelere atanan değerler, sırasıyla WayPoint 1 ve WayPoint 2 anlamına gelmektedir. Bir başka deyişle, rota için gerekli başlangıç ve bitiş noktaları bilgileridir. avoid kelimesi seçimliktir ve burada atanan minimizeTolls değeri ile paralı yolların mümkün mertebe rota tanımından çıkartılması talep edilmektedir. distanceUnit=km anahtar değer çifti ile mesafelerin km cinsinden bildirilmesi sağlanmaktadır ki diğer seçenekte mil anlamına gelen mi’ dir.
 
@@ -156,7 +156,7 @@ http://dev.virtualearth.net/REST/v1/Imagery/Map/AerialWithLabels/istanbul?mapSiz
 
 URL sorgusu sonucunda aşağıdaki çıktıyı elde ederiz.
 
-[![bngrest5](/assets/images/2012/bngrest5_thumb.png)](/assets/images/2012/bngrest5.png)
+![bngrest5](/assets/images/2012/bngrest5.png)
 
 Bu sorguda Imagery/Map/AerialWithLabels ile şehrin coğrafik haritasının başlık bilgileri kullanılarak gösterileceği belirtilmektedir. istanbul kelimesini takip eden kısımlarda ise mapSize anahtar kelimesi kullanılmış ve üretilecek olan haritanın 400,300 boyutlarında olması sağlanmıştır.
 
@@ -164,7 +164,7 @@ http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0=istanbul&wp.1=k
 
 Yukarıdaki sorguda ise, yol haritası istenmektedir. Map/Road adresine gidilmesinin sebebi budur. Diğer taraftan Routes anahtar kelimesine atanan iki Way Point değeri ile İstanbul ile Kocaeli arası yol haritasının gösterilmesi talep edilmiştir. Söz konusu harita 800X600 pixel boyutlarında olacaktır ve png formatında üretilecektir. İşte sonuç,
 
-[![bngrest6](/assets/images/2012/bngrest6_thumb.png)](/assets/images/2012/bngrest6.png)
+![bngrest6](/assets/images/2012/bngrest6.png)
 
 Imagery servisindeki diğer anahtar kelimeler için yine BING developer center’ daki [web sayfasını](http://msdn.microsoft.com/en-us/library/ff701724.aspx) ziyaret etmenizi öneririm.
 

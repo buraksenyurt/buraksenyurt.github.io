@@ -18,7 +18,7 @@ tags:
 ---
 Hepimizin hafızasında yer eden ve defalarca seyretse de asla sıkılmayacağı kült filmler vardır. Hatta nesiller ilerledikçe, her neslin mutlaka en az bir kere uğradığı, uğraması gereken yapımlar vardır.
 
-[![32484720231_large](/assets/images/2012/32484720231_large_thumb.jpg)](/assets/images/2012/32484720231_large.jpg)
+![32484720231_large](/assets/images/2012/32484720231_large.jpg)
 
 
 The Godfather, Starwars, Matrix, The Good the bad and the ugly, Back to the future vb…Bunlardan birisi de benim için [Mad Max](http://www.imdb.com/title/tt0079501/)’ dir.
@@ -47,7 +47,7 @@ Interceptor’ ler bir servis operasyonu öncesinde veya sonrasında devreye gir
 
 Biz bu yazımızda mesaj ve parametre seviyesinde kesme işlemlerinin nasıl uygulanabileceğini incelemeye çalışıyor olacağız. Bu amaçla ilk olarak Visual Studio (2010 veya 2012 olabilir) ortamında basit bir WCF Service Application projesi oluşturalım. Başlangıç için aşağıdaki sınıf diyagramında yer alan tipleri yazabiliriz.
 
-[![wcfi_1](/assets/images/2012/wcfi_1_thumb.png)](/assets/images/2012/wcfi_1.png)
+![wcfi_1](/assets/images/2012/wcfi_1.png)
 
 Servis sözleşmesi olan IShipService aşağıdaki gibi yazılabilir.
 
@@ -245,7 +245,7 @@ public bool ProcessCadImage(byte[] sourceData)
 
 Özetle servis tarafında Parametre bazlı kesici için aşağıdaki sınıf diagramında görülen tiplerin geliştirildiğini ifade edebiliriz.
 
-[![wcfi_2](/assets/images/2012/wcfi_2_thumb.png)](/assets/images/2012/wcfi_2.png)
+![wcfi_2](/assets/images/2012/wcfi_2.png)
 
 Artık istemci tarafı için örnek bir uygulama geliştirebilir ve sonuçları irdeleyebiliriz. Basit bir Console uygulaması işimizi görecektir. Servis referansını istemci tarafına ilave ettikten sonra aşağıdaki örnek kod satırlarını yazabiliriz.
 
@@ -296,7 +296,7 @@ namespace ClientApp
 
 İstemci tarafı sırasıyla SaveWorkItem ve ProcessCadImage isimli servis operasyonlarını çağırmaktadır. Söz konusu işlemler bir try…catch…finally bloğu içerisinde icra edilmektedir. İlk önce Fault durumunu kontrol etmek istediğimizden, ProcessCadImage metodu için byte[] tipinden olan dizinin parametresi kasıtlı olarak 1024’ ün üstünde tutulmuştur. Buna göre çalışma zamanında aşağıdakine benzer bir sonuçla karşılaşırız.
 
-[![wcfi_3](/assets/images/2012/wcfi_3_thumb.png)](/assets/images/2012/wcfi_3.png)
+![wcfi_3](/assets/images/2012/wcfi_3.png)
 
 Görüldüğü gibi Parametre bazlı çalışan kesici tip devreye girmiş ve servis tarafında üretilen Fault mesajı istemci tarafında da ele alınabilmiştir. (Bu noktada AfterCall metoduna hiç uğranılmayacağını da ifade edebiliriz) Tabi tam tersi durumu da test etmemiz yerinde olacaktır. Yani uygun bir boyut gönderdiğimizde true değerini aldığımızı da görmeliyiz
 
@@ -410,7 +410,7 @@ namespace SomeServiceApp
 
 Buraya kadar geliştirdiğimiz tiplerin özeti aşağıdaki sınıf çizelgesinde (Class Diagram) olduğu gibidir.
 
-[![wcfi_4](/assets/images/2012/wcfi_4_thumb.png)](/assets/images/2012/wcfi_4.png)
+![wcfi_4](/assets/images/2012/wcfi_4.png)
 
 Artık servis uygulamamızı geliştirdiğimiz WCF Serice Application projesindeki web.config dosyasında aşağıdaki gibi özel bir Endpoint davranışı belirleyebiliriz.
 

@@ -8,7 +8,7 @@ tags: []
 ---
 Üniversite yıllarında en çok oynadığım oyunlar sanıyorum ki Warcraft II ve Starcraft idi. Sonrasında bunlara Diablo’ da eklendi. Bu üç güzide oyunun ortak özelliği ise Blizzard firması tarafından geliştirilmiş olmalarıydı. 1991 yılının bir Şubat ayında (soğuk muydu hava bilemiyorum) UCLA üniversitesi mezunu Michale Morhaime, Allen Adham ve Frank Pearce tarafından Kaliforniya’ da kurulan şirket, 2012 itibariyle tam olarak 4700 çalışana sahip. (Hani çalıştığım uluslararası bankanın yaptığı işleri ve IT departmanını düşünce gerçekten durup 8 kere düşünüyorum) Peki firmanın kendi ortamında kullandığı ürünlerden birisinin Redis isimli NoSQL sistemi olduğunu biliyor muydunuz?
 
-[![Blizzard_Entertainment_Logo.svg](/assets/images/2014/Blizzard_Entertainment_Logo.svg_thumb.png)](/assets/images/2014/Blizzard_Entertainment_Logo.svg.png)
+![Blizzard_Entertainment_Logo.svg](/assets/images/2014/Blizzard_Entertainment_Logo.svg.png)
 
 
 ![Smile](/assets/images/2014/wlEmoticon-smile_90.png)
@@ -39,7 +39,7 @@ Makalenin yazıldığı ve yayınlandığı tarihlere göre kullanılan araçlar
 
 Solution içeriğine msvs klaösöründen ulaşılabilinir. Bu içerik Visual Studio 2010 ile yazılmış C++ projelerinden oluşmaktadır. İstenirse Visual Studio 2012 ortamında açılabilir fakat dönüşüm işlemi sırasında C++ çalışma zamanının güncellenmemesi gerekir. Aksi durumda derleme zamanı hataları alınacaktır.
 
-[![redis_1](/assets/images/2014/redis_1_thumb.png)](/assets/images/2014/redis_1.png)
+![redis_1](/assets/images/2014/redis_1.png)
 
 bin/release klasöründe, bir kaç zip arşivi yer almakta olup bunların içerisinde hemen çalıştırılabilir dosyalar yer almaktadır (32/64 bit sürümler dahildir) Örneğin redistbin arşivinde, redis-benchmark, redis-check-aof, redis-check-dump, redis-cli ve redis-server isimli çalıştırılabilir komut satırı programları yer almaktadır. Bu programlardan redis-server tahmin edileceği üzere sunucudur. Diğer yandan redis-cli, çalışmakta olan sunucuya bağlanıp hemen komut gönderebileceğimiz (Veri eklemek, silmek, okumak vb) bir programcıktır.
 
@@ -51,7 +51,7 @@ Dilerseniz hemen sunucuyu çalıştıralım ve hatta client uygulamasını kulla
 
 Aşağıdaki örnek ekran çıktısında Redis üzerinden person.Name ve person.Salary isimli iki key (anahtar) üretilmiş ve örnek değerleri (Value) verilerek okunmuştur. Bunun için basit olarak set ve get metodlarından yararlanılmaktadır.
 
-[![redis_3](/assets/images/2014/redis_3_thumb.png)](/assets/images/2014/redis_3.png)
+![redis_3](/assets/images/2014/redis_3.png)
 
 Elbette komut satırı üzerinden hareket etmek her zaman için mantıklı değildir. Görsel arayüze sahip uygulamaların veya diğer katmanların, bu fonksiyonellikleri daha basit bir şekilde ele alabiliyor olmaları gerekir. İşte bu noktada yine [Git üzerinden erişebileceğimiz ServiceStack.Redis](https://github.com/ServiceStack/ServiceStack.Redis) kütüphanesini kullanabiliriz.
 
@@ -59,15 +59,15 @@ Elbette komut satırı üzerinden hareket etmek her zaman için mantıklı deği
 
 Aslında ServiceStack, Mono projesi lideri olan Miguel De Icaza’ nın geliştirdiği ve yine [Git üzerinden elde edebilecek olan](https://github.com/migueldeicaza/redis-sharp) Redis-Sharp isimli ürünün bir açılımıdır. Kaynak kodları ile birlikte gelen ServiceStack arşivi içerisinde ServiceStack.Common, ServiceStack.Interfaces, ServiceStack.Redis ve ServiceStack.Text isimli Assembly’ lar bulunmaktadır. Bu assembly’ ların, Redis ile iletişimde olacak istemci uygulamaya referans edilmeleri suretiyle ilerlenebileceği gibi, ilgili ürün NuGet Paket Yönetim aracı ile de projeye alınabilir.
 
-[![redis_4](/assets/images/2014/redis_4_thumb.png)](/assets/images/2014/redis_4.png)
+![redis_4](/assets/images/2014/redis_4.png)
 
 Ben örnek uygulamada NuGet aracını kullanmayı tercih ettim. Paket ekleme işlemi sonrasında Solution içeriği de aşağıdaki ekran görüntüsündeki gibi olacaktır.
 
-[![redis_5](/assets/images/2014/redis_5_thumb.png)](/assets/images/2014/redis_5.png)
+![redis_5](/assets/images/2014/redis_5.png)
 
 İlgili referanslar da eklendiğine göre artık bir parça kod yazarak Redis ile konuşmaya başlayabiliriz. Console olarak geliştireceğimiz örnek uygulamamızda aşağıdaki sınıf diagramında yer alan ve Object Oriented dünyada asla vazgeçemediğimiz POCO (Plain Old CLR Objects) tiplerini ele alıyor olacağız.
 
-[![redis_6](/assets/images/2014/redis_6_thumb.png)](/assets/images/2014/redis_6.png)
+![redis_6](/assets/images/2014/redis_6.png)
 
 ve örnek kodlarımız;
 
@@ -233,17 +233,17 @@ Uygulamamızda ilk olarak bir kaç Deparment ve bunlara bağlı Person nesne ör
 
 Örneğin bir Person listesini depolamak için StoreAll fonksiyonu kullanılmaktadır. Person tipinden tutulan tüm listeyi çekmek için GetAll, var olan listeyi silmek için DeleteAll, tüm Key değerlerini okumak içinse GetAllKeys isimli metodlardan yararlanılmıştır. GetAll gibi metodlar aslında geriye sorgulanabilir referanslar döndürmektedir. Bu sebepten ilgili listeler üzerinde LINQ sorguları da çalıştırılabilir. GetRandomKey fonksiyonu sayesinde var olan liste içerisinden rastgele bir Key değerinin alınması sağlanabilir ve bu Key ile ilişkili Value’ ya da gidilebilir. Uygulamayı çalıştırdığımızda aşağıdakine benzer bir ekran görüntüsü ile karşılaşırız.
 
-[![redis_7](/assets/images/2014/redis_7_thumb.png)](/assets/images/2014/redis_7.png)
+![redis_7](/assets/images/2014/redis_7.png)
 
 Örnek kodlarda yaptığımız önemli işlemlerden birisi de SaveAsync metoduna yapılan çağrıdır. Aslında bu çağrının yapılması şart değildir. Yapılmadığı durumda bildiğiniz üzere sunucu açık kaldığı veya nesneler için tanımlanabilen Expire süreleri dolmadığı müddetçe, verilere bellek üzerinden erişilebilinir. Ancak, Save ve SaveAsync gibi metodlar söz konusu Store nesnelerinin kalıcı olarak fiziki disk indirilmesine neden olur. Bu durumda sunucu kapansa da kayıt edilen bilgiler fiziki disk üzerinde yaşamaya devam ederler. Örneğimizin çalışması sonrası dosya sisteminde aşağıdakine benzer bir içerik oluşacaktır.
 
-[![redis_8](/assets/images/2014/redis_8_thumb.png)](/assets/images/2014/redis_8.png)
+![redis_8](/assets/images/2014/redis_8.png)
 
 Dikkat edileceği üzere dump.rdb isimli fiziki dosya içerisinde, personStore örneğinin tuttuğu ne kadar nesne örneği var ise, JSON (JavaScript Object Notation) formatında serileştirilmiştir.
 
 Redis ürününü ServiceStack ile kullanmamız oldukça kolaydır. Nevar ki, ürünün kullanımı çok daha geniştir ve öğrenilmesi gereken epeyce özelliği de bulunmaktadır. Söz gelimi fiziki olarak kayıt edilen içeriği nasıl okuyabileceğimizi araştırarak işe başlayalabilirsiniz. Diğer yandan Amazon.com’ dan da görebileceğiniz aşağıdaki kitapları ve bu adresteki [The Redis Cookbook isimli online içeriği](http://rediscookbook.org/index.html) de incelemenizi öneririm.
 
-[![redisbook_1](/assets/images/2014/redisbook_1.gif)](http://www.amazon.com/Redis-Cookbook-Tiago-Macedo/dp/1449305040/ref=sr_1_1?s=books&ie=UTF8&qid=1361338144&sr=1-1&keywords=redis) [![redisbook_2](/assets/images/2014/redisbook_2.gif)](http://www.amazon.com/Redis-Definitive-modeling-caching-messaging/dp/1449396097/ref=sr_1_2?s=books&ie=UTF8&qid=1361338144&sr=1-2&keywords=redis) [![redisbook_3](/assets/images/2014/redisbook_3.gif)](http://www.amazon.com/Redis-Action-Josiah-L-Carlson/dp/1617290858/ref=sr_1_4?s=books&ie=UTF8&qid=1361338144&sr=1-4&keywords=redis)
+![redisbook_1](/assets/images/2014/redisbook_1.gif) ![redisbook_2](/assets/images/2014/redisbook_2.gif) ![redisbook_3](/assets/images/2014/redisbook_3.gif)
 
 Örneği zenginleştirmek ve daha da ileriye götürmek tabiki sizin elinizde. Bu yazımızda.Net Framework tarafından basitçe Redis’ e Merhaba demeye çalıştık. Böylece geldik bir yazımızın daha sonuna. Bir başka makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 

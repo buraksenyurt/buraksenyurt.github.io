@@ -14,7 +14,7 @@ tags:
 ---
 Deadline…Benim gibi yazılım geliştirici olan pek coğumuzun sevmediği kelimelerin başında geldiğinden eminim. Ancak kaçınılmaz bir gerçek olduğunu da biliyoruz. Her şeye rağmen onunla yaşamak veya yaşamasını öğrenmek zorundayız.
 
-[![blg238_Giris](/assets/images/2010/blg238_Giris_thumb.jpg)](/assets/images/2010/blg238_Giris.jpg)
+![blg238_Giris](/assets/images/2010/blg238_Giris.jpg)
 
 Tabi Deadline’ lar her zaman için bir proje için söz konusu olmayabiliyorlar. Söz gelimi şu sıralar hazırlanmakta olduğum Microsoft Teknoloji Günler Akşam Sınıfı Asp.Net 4.0 eğitiminin 3 gün öncesi de benim için bir Deadline (Aslında ilke olarak her seminerin 3 gün öncesinden tam olarak hazır olmayı benimsemişimdir) Bu deadline zamanına hızla yaklaştığım şu günlerde uykusuz geceler ile hazırlanmaya devam ediyorum. Ne varki oldukça yoğun ve zorlu bir projenin de içerisinde yer almaktayım. Ama ne demişler “No Sacrifice No Victory” Bakalım bu gece ki konumuz neymiş.
 
@@ -32,11 +32,11 @@ Cümlenin sonundaki Confused Simle Emoticon’ u mutlaka dikkatinizi çekmiştir
 
 Yeni alt yapı (Infrastructure) System.Runtime.Caching.dll assembly’ ı içerisinde yer almaktadır. Dilerseniz bu Cache tipinin kullanımını örnek bir uygulama üzerinden değerlendirmeye çalışalım. Bu amaçla basit bir Windows Forms uygulaması geliştiriyor olacağız. İlk olarak söz konusu uygulamaya aşağıdaki ekran görüntüsünde yer aldığı üzere System.Runtime.Caching assembly’ ını referans ederek işe başlayabiliriz.
 
-[![blg238_Reference](/assets/images/2010/blg238_Reference_thumb.gif)](/assets/images/2010/blg238_Reference.gif)
+![blg238_Reference](/assets/images/2010/blg238_Reference.gif)
 
 Örnek uygulamamıza ait Windows Form tasarımı ise aşağıdaki gibi olabilir. Burada Add Cache Items isimli düğmeye basıldığında bazı nesne örneklerinin ön belleğe atılması işlemleri gerçekleştiriliyor olacaktır. Diğer taraftan Get Cache Items başlıklı düğmeye basıldığında ise, ön bellek üzerinde o anda durmakta olan nesne örneklerinin elde edilmesi işlemi gerçekleştirilecektir.
 
-[![blg238_FormDesign](/assets/images/2010/blg238_FormDesign_thumb.gif)](/assets/images/2010/blg238_FormDesign.gif)
+![blg238_FormDesign](/assets/images/2010/blg238_FormDesign.gif)
 
 Windows Forms uygulamasına ait kod içeriğini ise aşağıdaki gibi geliştirebiliriz.
 
@@ -152,17 +152,17 @@ Person ve DataTable tipinden olan nesne örneklerinin ön bellekte tutulması is
 
 Şimdi örneğimizi çalıştırarak ilk testimizi yapalım.
 
-[![blg238_Runtime1](/assets/images/2010/blg238_Runtime1_thumb.gif)](/assets/images/2010/blg238_Runtime1.gif)
+![blg238_Runtime1](/assets/images/2010/blg238_Runtime1.gif)
 
 Dikkat edileceği üzere ön belleğe atılan 3 nesne örneği söz konusudur ve bunlara ait bir takım bilgilerde elde edilebilmektedir. Söz gelimi PDF dosyasının boyutu, Person nesne örneğinin Name değeri ve DataTable içerisinde duran toplam satır sayısı gibi. Diğer yandan önem arz eden konulardan biriside Absolute Expiration sürelerinin dolması halinde ne olacağıdır. Söz gelimi Person nesne örneği ön belleğe atıldıktan sonra 30 saniye boyunca yaşayabilir. Eğer süre dolduktan sonra bellek üzerinde kalan nesnelere bakılırsa Person nesne örneğinin artık olmadığı rahatlıkla görülebilir.(Diğer yandan uygulama kapatıldığı takdirde ön belleğe atılan tüm nesnelerin geçerliliği ortadan kalkacaktır. Bir başka deyişle süreleri veya bağımlılıkları bozulmasa dahi, uygulama açık iken eklenen ön bellek nesnelerine, uygulama tekrar açıldığında erişilemeyecektir)
 
-[![blg238_Runtime2](/assets/images/2010/blg238_Runtime2_thumb.gif)](/assets/images/2010/blg238_Runtime2.gif)
+![blg238_Runtime2](/assets/images/2010/blg238_Runtime2.gif)
 
 Şu an itibariyle ön bellekte 2 nesne örneği yer almaktadır ve Person tipine ait örnek bunların arasında değildir. Nitekim kendisi için belirlenen ön bellekte yaşama süresi aşılmıştır.
 
 Aslında ön bellekte duran n sayıda nesne olduğunda bunlardan sadece belirli Key adlarına sahip olanlarının elde edilmesi de bazı senaryolarda işimize yarayabilir. Bu noktada MemoryCache nesne örneği üzerinden çağırılabilen GetValues metodu oldukça işe yaramaktadır. Aşağıdaki Debug zamanı ekran görüntüsünde bu nesne örneği içerisinde Person ve Products adları ile işaret edilen nesne örneklerine erişilebildiği işaret edilmektedir.
 
-[![blg238_DebugView](/assets/images/2010/blg238_DebugView_thumb.gif)](/assets/images/2010/blg238_DebugView.gif)
+![blg238_DebugView](/assets/images/2010/blg238_DebugView.gif)
 
 Görüldüğü üzere MemoryCache nesne örneğinden yararlanarak Asp.Net tarafında sık kullanılan in-memory Caching tekniğini, System.Web.dll assembly’ ına bağımlı olmadan web harici herhangibir uygulamada ele alabilmekteyiz. MemoryCache nesnesinin kullanımı ile ilişkili olarak detaylı referans bilgisine [MSDN](http://msdn.microsoft.com/en-us/library/system.runtime.caching.memorycache.aspx) üzerinden ulaşabilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
