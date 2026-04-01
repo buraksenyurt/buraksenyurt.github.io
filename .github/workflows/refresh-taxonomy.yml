@@ -1,23 +1,27 @@
-name: Refresh Taxonomy
+name: Build and Deploy Pages
 
 on:
   push:
     branches:
       - master
       - main
-    paths:
-      - _posts/**
-      - scripts/build_taxonomy.rb
-      - .github/workflows/refresh-taxonomy.yml
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  refresh-taxonomy:
-    if: github.actor != 'github-actions[bot]'
+  build:
     runs-on: ubuntu-latest
+
+    env:
+      JEKYLL_ENV: production
 
     steps:
       - name: Check out repository
@@ -27,25 +31,30 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: false
+          bundler-cache: true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
       - name: Generate inferred taxonomy
-        run: ruby scripts/build_taxonomy.rb
+        run: bundle exec ruby scripts/build_taxonomy.rb
 
-      - name: Detect taxonomy and category page changes
-        id: taxonomy_changes
-        run: |
-          if git diff --quiet -- _data/inferred_taxonomy.json generated-pages/kategoriler; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+      - name: Build site
+        run: bundle exec jekyll build
 
-      - name: Commit updated taxonomy artifacts
-        if: steps.taxonomy_changes.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/inferred_taxonomy.json generated-pages/kategoriler
-          git commit -m "chore: refresh taxonomy artifacts"
-          git push
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
