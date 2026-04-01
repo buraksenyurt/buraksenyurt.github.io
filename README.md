@@ -29,6 +29,8 @@ cd buraksenyurt.github.io
 bundle install
 ```
 
+Windows üzerinde çalışıyorsanız, zaman dilimi verisi için `tzinfo-data` gem'i de bu kurulumla birlikte alınır. Bu, tarih bazlı permalink'lerin GitHub Pages ile yerel ortamda aynı üretilmesini sağlar.
+
 - **Lokal Sunucuyu Başlatın:** Jekyll'in geliştirme sunucusunu başlatmak için şu komutu çalıştırın:
 
 ```bash
