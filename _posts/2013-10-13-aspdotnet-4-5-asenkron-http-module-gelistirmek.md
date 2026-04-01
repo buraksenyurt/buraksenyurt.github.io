@@ -26,7 +26,7 @@ Söz gelimi yandaki basılı medya görselinde 1974 model bir Pioneer ses sistem
 
 Ben bazen geçmişte yazmış olduğum yazılara bakıyorum ve ne kadar da çabuk eskidiklerini görüyorum. Ancak bir yandan da, “acaba yeni sürümde bu konuda neler yapılmış?” sorusunun cevabını da kurcalamaya çalışıyorum.
 
-> Nostalji: [2006 dan](https://www.buraksenyurt.com/post/HTTPHandler-ve-HttpModule-Kavramlarc4b1-bsenyurt-com-dan) bir makale. O zamanlar Asp.Net Pipeline’ ın önemli parçaları olan HttpModule ve HttpHandler kavramlarını incelemeye çalışmıştım.
+> Nostalji: [2006 dan](/2006/12/08/httphandler-ve-httpmodule-kavramlari/) bir makale. O zamanlar Asp.Net Pipeline’ ın önemli parçaları olan HttpModule ve HttpHandler kavramlarını incelemeye çalışmıştım.
 
 İşte bu günkü konumuzda HttpModule tipleri içerisindeki işlemleri asenkron olarak nasıl yaptırabileceğimizi incelemeye çalışıyor olacağız. Bildiğiniz üzere.Net Framework 4.0 ile hayatımıza giren Task ve doğal olarak Task Parallel Library kavramı, 4.5 sürümünde gelen async ve await anahtar kelimeleri ile birlikte alt yapının pek çok noktasında daha sık görülmeye başladı. Bu açıdan bakıldığında Asp.Net 4.5 tarafında da ilgili anahtar kelime ve Task tiplerini kullanarak bazı senkronize edilmiş işlemlerin asenkron hale getirilmesi sağlanabilmekte.
 

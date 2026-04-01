@@ -12,7 +12,7 @@ tags:
   - task-parallel-library
   - monitoring-cancellation
 ---
-Hatırlayacağınız üzere bir önceki yazımızda ([Task İptal İşlemlerinin İzlenmesi (Monitoring Cancellation)](https://www.buraksenyurt.com/post/Task-Iptal-Islemlerinin-Izlenmesi(Monitoring-Cancellation))) Task Cancellation işlemlerinin izlenmesi ile ilişkili teknikleri ve konuları irdelemeye başlamıştık. Bu yazımızda da iptal işlemleri ile ilgili farklı bir konuya değinmeye çalışıyor olacağız. Bu gün kü konumuz Composite Cancellation vakası.
+Hatırlayacağınız üzere bir önceki yazımızda ([Task İptal İşlemlerinin İzlenmesi (Monitoring Cancellation)](/2011/04/23/task-iptal-islemlerinin-izlenmesi-monitoring-cancellation/)) Task Cancellation işlemlerinin izlenmesi ile ilişkili teknikleri ve konuları irdelemeye başlamıştık. Bu yazımızda da iptal işlemleri ile ilgili farklı bir konuya değinmeye çalışıyor olacağız. Bu gün kü konumuz Composite Cancellation vakası.
 
 ![blg205_Giris](/assets/images/2011/blg205_Giris.jpg)
 

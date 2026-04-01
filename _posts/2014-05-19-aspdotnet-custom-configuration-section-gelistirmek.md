@@ -15,7 +15,7 @@ Konfigurasyon tabanlı geliştirme modeli, uygulama kodlarına girilmeden çalı
 ![Configuration](/assets/images/2014/Configuration.png)
 
 
-> Eskilerden: [Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)](https://www.buraksenyurt.com/post/Asp-Net-2-0-ile-Configuration-Management-(Konfigurasyon-Yonetimi)-bsenyurt-com-dan)
+> Eskilerden: [Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)](/2006/06/26/aspdotnet-2-0-ile-configuration-management-konfigurasyon-yonetimi/)
 
 Söz konusu konfigurasyon içerikleri aslında XML tabanlı bir dosya şemasının parçalarıdır ve doğal olarak element ile attribute’ lardan oluşmaktadır. Konfigurasyon dosyalarının daha iyi yönetilebilmesi için Asp.Net 2.0 ile birlikte Configuration API alt yapısı geliştirilmiştir. Bu kütüphane sayesinde konfigurasyon içerisindeki elementlere sınıf bazında erişmek ve yönetebilmek mümkündür. Pek tabi XML elementlerinin sahip oldukları nitelikler, sınıfların özellikleri (Property) olarak ele alınmaktadır.
 

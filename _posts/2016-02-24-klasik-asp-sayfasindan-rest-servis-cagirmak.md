@@ -24,7 +24,7 @@ tags:
 
 ## REST Servisin Geliştirilmesi
 
-Şimdi bu problemi nasıl çözebileceğimize bir bakalım. İlk olarak basit bir WCF REST servis geliştireceğiz. Burada Web API, Service Stack veya diğer özel bir çözüm kullanabiliriz ([İlgili servisi Ruby ile yazabiliriz örneğin](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-20-rest-servis-gelistirmek)) Sonuç itibariyle REST tabanlı çalışan bir servise ihtiyacımız var. Ben basit olması açısından boş bir web uygulaması açıp içerisine aşağıdaki servis içeriğini eklemeyi tercih ettim.
+Şimdi bu problemi nasıl çözebileceğimize bir bakalım. İlk olarak basit bir WCF REST servis geliştireceğiz. Burada Web API, Service Stack veya diğer özel bir çözüm kullanabiliriz ([İlgili servisi Ruby ile yazabiliriz örneğin](/2016/02/09/ruby-kod-parcaciklari-20-rest-servis-gelistirmek-ve-dotnet-tarafindan-tuketmek/)) Sonuç itibariyle REST tabanlı çalışan bir servise ihtiyacımız var. Ben basit olması açısından boş bir web uygulaması açıp içerisine aşağıdaki servis içeriğini eklemeyi tercih ettim.
 
 ICommonService isimli servis sözleşmemiz
 

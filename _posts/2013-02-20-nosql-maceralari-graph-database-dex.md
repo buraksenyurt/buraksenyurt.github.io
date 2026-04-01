@@ -24,7 +24,7 @@ Eminim pek çoğunuzun hastası/fanatiği olduğu yerli veya yabancı diziler va
 
 Bilişim alanında görev alanların ağırlıkla CNBC-E gibi kanallarda yer alan dizilere olan bağımlılığı da aslında su götürmez bir gerçektir. Örneğin benim fanatiği olduğum dizilerden birisi Dexter ve ne tesadüftür ki bu gün yazımızda ele alacağımız ürünün adı da onun lakabı ile eş: DEX ![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_4.png)
 
-Daha önceden hatırlayacağınız üzere şuradaki makalede [Apache Cassandra](https://www.buraksenyurt.com/post/Apache-Cassandra-ve-Net)’ yı, oradaki makalede ise [RavedDB](https://www.buraksenyurt.com/post/RavenDB-ile-Hello-World)’ yi incelemeye çalışmıştık. Bu yazımızda ise yine NoSQL veritabanı çeşitlerinden birisi olup Graph teorisini baz alan DEX isimli ürünü incelemeye çalışıyor olacağız.
+Daha önceden hatırlayacağınız üzere şuradaki makalede [Apache Cassandra](/2012/12/16/nosql-maceralari-apache-cassandra-ve-dotnet/)’ yı, oradaki makalede ise [RavedDB](/2013/01/12/nosql-maceralari-ravendb-ile-hello-world/)’ yi incelemeye çalışmıştık. Bu yazımızda ise yine NoSQL veritabanı çeşitlerinden birisi olup Graph teorisini baz alan DEX isimli ürünü incelemeye çalışıyor olacağız.
 
 [Sparsity firmasının bir ürünü olan DEX](http://www.sparsity-technologies.com/dex), Community kullanımında 1milyon nesneye (Objects) kadar ücretsiz olarak yararlanılabilen bir veritabanı sunmaktadır. Veritabanının en önemli özelliği ise içeriği nesnel olarak Graph teorisine göre tutuyor olmasıdır. ([Graph teorisi hakkında Wikipedia](http://en.wikipedia.org/wiki/Graph_theory) bağlantısından özet bir bilgi alabilirsiniz)
 

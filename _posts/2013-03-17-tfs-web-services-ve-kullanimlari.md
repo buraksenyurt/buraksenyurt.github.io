@@ -27,7 +27,7 @@ Yol derken elimizde cetvel, kalem vesaire vardı. Ne bilgisayar ne de başka bir
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_185.png)
 
-TFS mimari alt yapısı ve çevre etkileşimini incelediğimiz [şu yazımızda](https://www.buraksenyurt.com/post/TFS-2012-Client-Object-Model-icin-Hello-World) Client Object Model’ i kısaca anlamaya çalışmıştık. O makalede yer alan mimari çizime dikkatlice bakarsak eğer, Client Object Model’ in aslında TFS Web Service’ ler ile haberleştiğini görebiliriz. Aslına bakarsanız Team Foundation Server tarafında epeyce fazla sayıda XML Web Service yer almaktadır. Bu servisleri ana hatları ile değerlendirdiğimizde ise sunucu ve koleksiyon seviyesinde olmak üzere iki ana dala bölündüklerini görürüz.
+TFS mimari alt yapısı ve çevre etkileşimini incelediğimiz [şu yazımızda](/2013/03/15/tfs-client-object-model-icin-hello-world/) Client Object Model’ i kısaca anlamaya çalışmıştık. O makalede yer alan mimari çizime dikkatlice bakarsak eğer, Client Object Model’ in aslında TFS Web Service’ ler ile haberleştiğini görebiliriz. Aslına bakarsanız Team Foundation Server tarafında epeyce fazla sayıda XML Web Service yer almaktadır. Bu servisleri ana hatları ile değerlendirdiğimizde ise sunucu ve koleksiyon seviyesinde olmak üzere iki ana dala bölündüklerini görürüz.
 
 Aşağıdaki şekilde bu servisler genel isimlendirmeler halinde ifade edilmektedir.
 

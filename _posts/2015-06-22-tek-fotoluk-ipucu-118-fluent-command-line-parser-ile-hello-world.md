@@ -10,7 +10,7 @@ tags:
   - csharp
   - command-prompt
 ---
-Nesne Yönelimli Programlama Dillerinin (Object Oriented Programming Languages) kullanıcılarını büyülediği pek çok nokta var. Örneğin Fluent API'ler bunlardan sadece birisi ve getirdiği güzellikleri pek çok bağımsız üründe de görebiliyoruz (Bu arada Fluent API geliştirilmesi ile ilgili olarak [şu eski anlatıma](https://www.buraksenyurt.com/post/Fluent-Interface-Prensibi-ile-Daha-Okunabilir-Kod-Gelistirmek) bakabilirsiniz)
+Nesne Yönelimli Programlama Dillerinin (Object Oriented Programming Languages) kullanıcılarını büyülediği pek çok nokta var. Örneğin Fluent API'ler bunlardan sadece birisi ve getirdiği güzellikleri pek çok bağımsız üründe de görebiliyoruz (Bu arada Fluent API geliştirilmesi ile ilgili olarak [şu eski anlatıma](/2013/12/23/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-1nci-yari/) bakabilirsiniz)
 
 Şahsen bu yaklaşımı kullanan NuGet paketleri gördüğümüde hayranlık duymuyor değilim. İşte onlardan birisi, Fluent Command Line Parser ([NuGet detayına](https://www.nuget.org/packages/FluentCommandLineParser/) buradan bakabilirsiniz) Ne kadar sık komut satırından çalışan uygulama yazıyorsunuz bilemiyorum. Eğer yazıyorsanız mutlaka komut satırı parametrelerine başvuruyorsunuzdur. Peki bu parametreleri gayet sık bir şekilde almak ve uygulama akışına katmak istemez misiniz? İşte size örnek bir kullanım şekli.
 

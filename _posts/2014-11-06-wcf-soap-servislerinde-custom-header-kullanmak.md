@@ -383,6 +383,6 @@ Message Contracts
 
 Bu senaryo haricinde Header kullanımları için WCF tarafında farklı bir kavramı da değerlendirmeyi düşünebiliriz. O da MessageContract kullanımıdır. Mesaj sözleşmeleri sayesinde SOAP zarflarının Header ve Body kısımlarının servis tarafında tanımlanması mümkündür. Bir başka deyişle SOAP mesaj içeriklerinin nesnel olarak kod tarafında tanımlanabilmesi söz konusudur. Bu durumda Header içeriklerinin birer POCO gibi ele alınması daha kolay olmaktadır.
 
-> Aslında SOAP zarflarının içeriklerinin kesinleştirilmek istendiği, mesajların interoperability noktasında XSD yerine farklı kurallara göre oluşması gerektiği durumlarda Message Contract kullanımı tercih edilebilir. Mesaj sözleşmeleri ile ilişkili olarak eski bir yazıya [bu adresten ulaşabilirsiniz](https://www.buraksenyurt.com/post/Mesaj-Sozlesmeleri(Message-Contracts)-bsenyurt-com-dan).
+> Aslında SOAP zarflarının içeriklerinin kesinleştirilmek istendiği, mesajların interoperability noktasında XSD yerine farklı kurallara göre oluşması gerektiği durumlarda Message Contract kullanımı tercih edilebilir. Mesaj sözleşmeleri ile ilişkili olarak eski bir yazıya [bu adresten ulaşabilirsiniz](/2008/02/09/mesaj-sozlesmeleri-message-contracts/).
 
 Görüldüğü üzere istemciler Header kısımlarını kullanarak da kendilerini servis tarafına tanıtabilir ve operasyonların istemci bazında özelleştirilmesi sağlanabilir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

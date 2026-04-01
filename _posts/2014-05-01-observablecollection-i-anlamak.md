@@ -28,7 +28,7 @@ Günümüz yazılım ürünlerinin pek çoğu ister web tabanlı olsunlar, ister
 
 Bu açıdan bakıldığında veri odaklı uygulamaların ön yüzlerinin (User Interface) veri ile olan iletişiminde karşılıklı olarak bir bilgi transferi söz konusudur. Yani arayüzler, veride meydana gelecek en ufak bir değişiklikten haberdar olmak isterlerken, arayüzde meydana gelen değişikliklerin de veri tarafına yansıtılması gibi bir ihtiyaç ortaya çıkmış durumdadır.
 
-> Şimdi burada durup biraz daha derin düşünmemiz gerekiyor. Tarafların birisinde meydana gelen değişiklikler sonucu başka bir tarafın/tarafların uyarılması (Notify edilmesi diyelim) yazılım dünyasında çok sık rastlanan bir durum olsa gerek. İşte bu sebepten zaten bir tasarım kalıbı bile ortaya çıkmış. Observer Design Pattern. Bu konuda daha önceden [yazdığım bir makaleye şu adresten ulaşabilirsiniz](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Observer.aspx)
+> Şimdi burada durup biraz daha derin düşünmemiz gerekiyor. Tarafların birisinde meydana gelen değişiklikler sonucu başka bir tarafın/tarafların uyarılması (Notify edilmesi diyelim) yazılım dünyasında çok sık rastlanan bir durum olsa gerek. İşte bu sebepten zaten bir tasarım kalıbı bile ortaya çıkmış. Observer Design Pattern. Bu konuda daha önceden [yazdığım bir makaleye şu adresten ulaşabilirsiniz](/2009/07/09/tasarim-desenleri-observer/)
 
 Observer Tasarım Kalıbı ile Olan İlişki
 

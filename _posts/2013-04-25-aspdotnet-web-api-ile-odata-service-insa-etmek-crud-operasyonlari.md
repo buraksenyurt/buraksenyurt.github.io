@@ -25,7 +25,7 @@ tags:
   - mvc
   - web-api-template
 ---
-Bilindiği üzere Asp.Net Web API’ den yararlanılarak Open Data Protocol destekli servisler geliştirmek mümkündür. Bu konu ile ile ilişkili olarak [daha önceden bir Hello World uygulaması yazmış](http://www.buraksenyurt.com/post/AspNet-Web-API-ile-OData-Servisi-Insa-Etmek) ve HTTP Get taleplerinin yürütülmesini incelemiştik. Bu görsel dersimizde ise, CRUD (CreateReadUpdateDelete) operasyonlarının nasıl yapılabileceğini görmeye çalışıyoruz. Bu anlamda Insert, Update ve Delete gibi temel operasyonlara bakıyoruz. Veri kaynağı olarak, Code First yaklaşımını tercih ettiğimiz bir Entity Framework içeriğini değerlendiriyoruz.
+Bilindiği üzere Asp.Net Web API’ den yararlanılarak Open Data Protocol destekli servisler geliştirmek mümkündür. Bu konu ile ile ilişkili olarak [daha önceden bir Hello World uygulaması yazmış](/2013/04/06/aspdotnet-web-api-ile-odata-servisi-insa-etmek/) ve HTTP Get taleplerinin yürütülmesini incelemiştik. Bu görsel dersimizde ise, CRUD (CreateReadUpdateDelete) operasyonlarının nasıl yapılabileceğini görmeye çalışıyoruz. Bu anlamda Insert, Update ve Delete gibi temel operasyonlara bakıyoruz. Veri kaynağı olarak, Code First yaklaşımını tercih ettiğimiz bir Entity Framework içeriğini değerlendiriyoruz.
 
 [Youtube Link](https://www.youtube.com/watch?v=EbyKro23GQk)
 

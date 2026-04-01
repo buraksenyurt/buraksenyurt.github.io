@@ -43,7 +43,7 @@ Variable<double> y=new Variable<double>("Y");
 Variable<double> result=new Variable<double>("Result");
 ```
 
-x, y ve result isimli Variable tanımlamaları tahmin edeceğiniz üzere toplama işlemi için gereklidir. Ancak burada birde handle isimli CorrelationHandle tipinden Variable tanımlaması yer almaktadır. Workflow Service örnekleri oluşturulduğunda bildiğiniz üzere istemci ile arada bir oturum (Session) oluşmaktadır. Bu noktada özellikle istemciden gelen mesajın sunucu tarafındaki hangi servis örneğine ait olduğunun anlaşılması noktasında Correlation çeşitlerinden yararlanılmaktadır. Burada tanımlanan Variable, Receive aktivite bileşeni tarafından kullanılacaktır (Detaylar için [Correlation Nedir? Yenir mi? İçilir mi?](https://www.buraksenyurt.com/admin/post/Correlation-Nedir-Beta-2.aspx))
+x, y ve result isimli Variable tanımlamaları tahmin edeceğiniz üzere toplama işlemi için gereklidir. Ancak burada birde handle isimli CorrelationHandle tipinden Variable tanımlaması yer almaktadır. Workflow Service örnekleri oluşturulduğunda bildiğiniz üzere istemci ile arada bir oturum (Session) oluşmaktadır. Bu noktada özellikle istemciden gelen mesajın sunucu tarafındaki hangi servis örneğine ait olduğunun anlaşılması noktasında Correlation çeşitlerinden yararlanılmaktadır. Burada tanımlanan Variable, Receive aktivite bileşeni tarafından kullanılacaktır (Detaylar için [Correlation Nedir? Yenir mi? İçilir mi?](/2010/02/01/correlation-nedir-yenir-mi-icilir-mi/))
 
 Aslında tam bu noktada Receive aktivitesini de tanımlayabiliriz. Aşağıdaki gibi.
 

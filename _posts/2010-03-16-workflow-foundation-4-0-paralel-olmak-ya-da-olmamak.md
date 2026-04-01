@@ -159,7 +159,7 @@ namespace ErrorHandlingForNativeActivities
 
 Kod parçasına göre, temsilcilerin (Delegates) BeginInvoke ve EndInvoke metodlarından yararlanılarak aktivite içerisinde asenkron bir işin yürütülmesinin sağlandığını özetleyebiliriz.
 
-> AsyncCodeActivity türevli bileşenlerin nasıl geliştirileceğini daha önceden [Workflow Foundation 4.0 - Custom Async Activity Geliştirmek [Beta 2]](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Custom-Async-Activity) isimli yazımızda değerlendirmiştik.
+> AsyncCodeActivity türevli bileşenlerin nasıl geliştirileceğini daha önceden [Workflow Foundation 4.0 - Custom Async Activity Geliştirmek [Beta 2]](/2010/01/10/workflow-foundation-4-0-custom-async-activity-gelistirmek-beta-2/) isimli yazımızda değerlendirmiştik.
 
 Buna göre program kodumuzu yeniden test edersek, çalışma zamanında aşağıdakine benzer sonuçlar ile karşılaştığımızı görebiliriz.
 

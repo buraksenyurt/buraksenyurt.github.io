@@ -33,7 +33,7 @@ Gelelim Raven ile ne işimiz olduğuna
 
 ![Smile](/assets/images/2013/wlEmoticon-smile_77.png)
 
-Açık kaynaklı NoSQL veritabanlarını incelemeye çalıştığımız ilk yazımızda, hatırlayacağınız üzere [Apache Cassandra](https://www.buraksenyurt.com/post/Apache-Cassandra-ve-Net)’ ya kısaca bir göz atmış ve basit bir Hello World uygulaması geliştirmiştik. Tabi NoSQL veritabanı sistemleri denilince pek çok ürün olduğunu görmekteyiz. İşte bu yazımızda bu ürünlerden dikkate değer bir tanesini daha inceleyeceğiz; RavenDB.
+Açık kaynaklı NoSQL veritabanlarını incelemeye çalıştığımız ilk yazımızda, hatırlayacağınız üzere [Apache Cassandra](/2012/12/16/nosql-maceralari-apache-cassandra-ve-dotnet/)’ ya kısaca bir göz atmış ve basit bir Hello World uygulaması geliştirmiştik. Tabi NoSQL veritabanı sistemleri denilince pek çok ürün olduğunu görmekteyiz. İşte bu yazımızda bu ürünlerden dikkate değer bir tanesini daha inceleyeceğiz; RavenDB.
 
 RavenDb, açık kaynak NoSQL veritabanlarındandır..Net ile yazılmıştır ve şemasız (Schema-less) JSON (Java Script Object Notation) veri tipini kullanmaktadır. Doküman tabanlı (Document Based) çalışmaktadır. JSON formatınının kullanılması ve.Net ile yazılmış olması, erişilebilirlik ve ölçeklenebilirlik anlamında da bazı avantajlar sunmaktadır. Bunların arasında LINQ (Language INtegrated Query) ile sorgulanabilme ve RESTful API ile ulaşılabilme sayılabilir. Bu veritabanı ayrıca Transactional’ dır. Bir başka deyişle ACID (Atomicity, Consistency, Isolation, Durability) prensiplerine destek vermektedir.
 
@@ -74,7 +74,7 @@ Bu arayüzden yararlanılarak verilerin eklenmesi, silinmesi, değiştirilmesi v
 
 İstemci için Hazırlık
 
-RavenDB’ yi istemci tarafında ele alırken yardımcı kütüphane olan RavenDB.Client assembly’ ından yararlanılmaktadır. RavenDB’ yi indirdiğimiz zaman Client klasörü içerisinden bu kütüphanenin farklı versiyonlarına da erişilebilinir. (Hatta burada yakından tanıdığımız bir dost da vardır. Newtonsoft.json.dll ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_167.png) Kendisi ile [buradaki](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-69-Newtonsoft-JSONNet-ve-dynamic-Keyword.aspx) ve [şuradaki](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-70-Newtonsoft-Jsonnet-and-dynamic-and-parsing.aspx) tek fotoluk ipuçlarında haşırneşir olmuştuk)
+RavenDB’ yi istemci tarafında ele alırken yardımcı kütüphane olan RavenDB.Client assembly’ ından yararlanılmaktadır. RavenDB’ yi indirdiğimiz zaman Client klasörü içerisinden bu kütüphanenin farklı versiyonlarına da erişilebilinir. (Hatta burada yakından tanıdığımız bir dost da vardır. Newtonsoft.json.dll ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_167.png) Kendisi ile [buradaki](/2012/11/04/tek-fotoluk-ipucu-69-newtonsoft-jsondotnet-ve-dynamic-keyword/) ve [şuradaki](/2012/11/12/tek-fotoluk-ipucu-70-yine-newtonsoft-jsondotnet-ve-dynamic/) tek fotoluk ipuçlarında haşırneşir olmuştuk)
 
 RavenDB istemci kütüphanesi, NuGet paket yönetim aracı ile de uygulamaya eklenebilir. Hatta bu şekilde ilerlenmesi, en güncel sürümün alınması ve yardımcı kütüphanelerin de indirilmesi açısından kolaylık sağlayan bir fonksiyonellik olarak görülmelidir.
 

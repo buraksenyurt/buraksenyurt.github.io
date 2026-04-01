@@ -14,7 +14,7 @@ Tam da bu gün İstanbul’ da hafif rüzgarlı, güneşli bir bahar havası var
 ![ef61_6](/assets/images/2014/ef61_6.png)
 
 
-Bahara olan özlemimizin tavan yaptığı bu günlerde, başka diyarlarda da değişik esintiler söz konusu elbette. [Örneğin C# 6.0 da](https://www.buraksenyurt.com/post/C-60e28093Yeni-Esintiler), örneğin Entity Framework’ de. Bakalım bu günkü esintiler bizi nerelere götürecek?
+Bahara olan özlemimizin tavan yaptığı bu günlerde, başka diyarlarda da değişik esintiler söz konusu elbette. [Örneğin C# 6.0 da](/2014/04/03/csharp-6-0-yeni-esintiler/), örneğin Entity Framework’ de. Bakalım bu günkü esintiler bizi nerelere götürecek?
 
 Entity Framework geliştirilmeye ve bünyesine yeni özellikler dahil edilmeye devam etmekte. Ancak son gelişmelerden bir tanesi oldukça önemli sanırım. O da artık Entity Framework’ ün tamamen harici bir NuGet paketi olarak kullanılacağı. Bir başka deyişle.Net Framework’ ün bir parçası olmaktan çıkartılmış ve Codeplex üzerinden yürür duruma gelmiş. Son bilgileri göre EF 6x verisyonları.Net 4.0 ve üstü için kullanılabiliyor. Ayrıca Visual Studio 2010 ve sonrası IDE’ ler de ele alındığını da belirtelim. (Standalone bir kütüphane olarak değerlendirebileceğimiz Entity Framework ile ilişkili son gelişmeleri [Codeplex üzerindeki adreslerinden](http://entityframework.codeplex.com/) takip etmekte yarar var. Hatta yanılmıyorsam projeye Contributor olarak katılmanız bile mümkün olabilir)
 

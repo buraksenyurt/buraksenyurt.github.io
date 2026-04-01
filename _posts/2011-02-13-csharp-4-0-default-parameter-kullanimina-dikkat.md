@@ -264,7 +264,7 @@ namespace DefaultAndOptionalParametersCase
 }
 ```
 
-Aslında bu senaryo [Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı)](https://www.buraksenyurt.com/post/Temeller-Kolay-Unutulur-(CSharp-Implicitly-Name-Hiding-Sorunsali)) başlıklı yazımızdan size tanıdık gelecektir.
+Aslında bu senaryo [Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı)](/2011/02/06/temeller-kolay-unutulur-csharp-implicitly-name-hiding-sorunsali/) başlıklı yazımızdan size tanıdık gelecektir.
 
 Sınıf şemasından da görüleceği üzere ICommand arayüzünü (Interface) uygulayan Command isimli bir tip ve bundan türeyen MyCommand sınıfı söz konusudur. MyCommand sınıfı, Command tipinde virtual olarak tanımlanmış ve aslında ICommand arayüzü tarafından zorunlu hale getirilmiş PrepareSelectTop metodunu ezmektedir (Overriding).
 

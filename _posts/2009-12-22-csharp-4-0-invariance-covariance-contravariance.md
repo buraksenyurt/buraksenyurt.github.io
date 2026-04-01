@@ -8,7 +8,7 @@ tags:
   - csharp
   - .net-framework
 ---
-Bundan yıllar önce (aslında 2005 yılında...Çok eski bir tarih gibi görünmese de yazılım dünyası için çok çok uzun zaman önce anlamına gelmekte.) daha genç bir makale yazarıyken C# 2.0 delegate tiplerinde [co-variance, contra-variance](https://www.buraksenyurt.com/post/C-2-0-Covariance-ve-Contravariance-Delegates-bsenyurt-com-dan) durumlarını incelemeye çalışmıştım. Kişisel görüşüme göre, anlaşılmasından ziyade iyi bir şekilde analiz edilerek anlatılması çok zor olan bir konu Co-Variance, Contra-Variance. Üstelik bu kavramların çıkış noktasında yer alan Variant, Invariant tip kavramları düşünüldüğünde konuyu anlamak için epey bir çaba sarf etmemiz gerekebiliyor.
+Bundan yıllar önce (aslında 2005 yılında...Çok eski bir tarih gibi görünmese de yazılım dünyası için çok çok uzun zaman önce anlamına gelmekte.) daha genç bir makale yazarıyken C# 2.0 delegate tiplerinde [co-variance, contra-variance](/2005/06/30/csharp-2-0-covariance-ve-contravariance-delegates/) durumlarını incelemeye çalışmıştım. Kişisel görüşüme göre, anlaşılmasından ziyade iyi bir şekilde analiz edilerek anlatılması çok zor olan bir konu Co-Variance, Contra-Variance. Üstelik bu kavramların çıkış noktasında yer alan Variant, Invariant tip kavramları düşünüldüğünde konuyu anlamak için epey bir çaba sarf etmemiz gerekebiliyor.
 
 ![blg118_Giris.jpg](/assets/images/2009/blg118_Giris.jpg)
 

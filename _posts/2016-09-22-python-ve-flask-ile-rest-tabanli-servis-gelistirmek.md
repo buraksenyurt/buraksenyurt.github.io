@@ -49,7 +49,7 @@ DELETE
 Bir kaynağı silmek için kullanılır. Kaynak yine tanımlayıcı bir değer ile ayırt edilir. Ürünün benzersiz IDsi gibi.
 http (s)://hostname/api/products/100456
 
-> Vakti zamanında banka içinde kullanılan yaklaşık 15 yaşındaki klasik asp ile yazılmış bir uygulamanın ihtiyaç duyduğu iş fonksiyonelliğini içeren bir Endpoint için, REST tabanlı servis geliştirmiştik. Bu konu ile ilişkili olarak ["Klasik ASP sayfasından REST Servis Çağırmak"](https://www.buraksenyurt.com/post/klasik-asp-sayfasindan-rest-servis-cagirmak.aspx) isimli makaleyi incleyebilirsiniz. Zaten servis dünyasının en güzel özelliklerinden birisi de bu; platformlar arası sınırları ortadan kaldırması.
+> Vakti zamanında banka içinde kullanılan yaklaşık 15 yaşındaki klasik asp ile yazılmış bir uygulamanın ihtiyaç duyduğu iş fonksiyonelliğini içeren bir Endpoint için, REST tabanlı servis geliştirmiştik. Bu konu ile ilişkili olarak ["Klasik ASP sayfasından REST Servis Çağırmak"](/2016/02/24/klasik-asp-sayfasindan-rest-servis-cagirmak/) isimli makaleyi incleyebilirsiniz. Zaten servis dünyasının en güzel özelliklerinden birisi de bu; platformlar arası sınırları ortadan kaldırması.
 
 Bu yazımızda ise Python programlama dilini kullanarak basit bir REST servisinin nasıl geliştirilebileceğini incelemeye çalışacağız. REST tipinden servisleri Python tarafında daha kolay ele almak için Flask isimli Web Framework'ünden yararlanacağız. Uygulamamızı Linux Ubuntu işletim sistemi üzerinde geliştireceğimizi baştan belirteyim (.Net platformunda geliştirme yapıyoruz diye Linux'ü bir kenara bırakacak değiliz) Öncelikle sistemin güncellenmesinde yarar var. Bunun için terminalden
 

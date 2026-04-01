@@ -18,7 +18,7 @@ Tabi öğrenciliğim çok parlak olmadığı için ÖSS sınavında aşmam gerek
 
 ![Wink](/assets/images/2010/smiley-wink.gif)
 
-Hatırlayacağınız üzere [Parent-Child Tasks Kavramı](https://www.buraksenyurt.com/admin/app/editor/post/Parent-Child-Tasks-Kavrami) başlıklı yazımızda.Net Framework 4.0 tarafında paralel programlamada önemli bir yere sahip olan Task örnekleri arasındaki Parent, Child ilişkiyi incelemeye çalışmıştık. Parent-Task nesne örnekleri arasındaki ilişkilerde bilinmesi gereken konulardan birisi de, istisnaların nasıl ele alındığıdır (Exception Handling). Aslında konuya hızlı bir giriş yaparak ilerlememiz şu aşamada avantajımız olacaktır. Bu nedenle Visual Studio 2010 Ultimate ortamında geliştireceğimiz Console uygulamasında aşağıdaki kod içeriğinin yer aldığını göz önüne alalım.
+Hatırlayacağınız üzere [Parent-Child Tasks Kavramı](/2010/06/11/parent-child-tasks-kavrami/) başlıklı yazımızda.Net Framework 4.0 tarafında paralel programlamada önemli bir yere sahip olan Task örnekleri arasındaki Parent, Child ilişkiyi incelemeye çalışmıştık. Parent-Task nesne örnekleri arasındaki ilişkilerde bilinmesi gereken konulardan birisi de, istisnaların nasıl ele alındığıdır (Exception Handling). Aslında konuya hızlı bir giriş yaparak ilerlememiz şu aşamada avantajımız olacaktır. Bu nedenle Visual Studio 2010 Ultimate ortamında geliştireceğimiz Console uygulamasında aşağıdaki kod içeriğinin yer aldığını göz önüne alalım.
 
 ```csharp
 using System;

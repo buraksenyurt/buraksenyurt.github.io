@@ -8,7 +8,7 @@ tags:
   - plinq
   - language-integrated-query
 ---
-Hatırlayacağınız gibi, PLINQ (Parallel LINQ) ile ilişkili ilk [yazımda](https://www.buraksenyurt.com/post/PLINQ-(Parallel-LINQ)-Hello-World), LINQ sorgularının eş zamanlı olarak nasıl çalıştırılabileceğini incelemeye çalışmıştık. Hello World örneğimizde ağırlıklı olarak aşağıdaki sorgu üzerinde durmuştuk.
+Hatırlayacağınız gibi, PLINQ (Parallel LINQ) ile ilişkili ilk [yazımda](/2009/05/21/plinq-parallel-linq-hello-world-beta-1/), LINQ sorgularının eş zamanlı olarak nasıl çalıştırılabileceğini incelemeye çalışmıştık. Hello World örneğimizde ağırlıklı olarak aşağıdaki sorgu üzerinde durmuştuk.
 
 ```csharp
 var result2 = from p in products.AsParallel()

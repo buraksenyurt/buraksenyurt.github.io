@@ -557,7 +557,7 @@ print("Klara'nın notu",studentNotes["klara"])
 
 ## Metodlara Bir Bakıp Çıkmışım [23 Haziran 2016]
 
-O gün metodlar ile ilgili bir şeyler yapmışım. Aslında 17 Hazirandaki ["Bu Yaz Macerasının Adı Python"](https://www.buraksenyurt.com/post/bu-yaz-macerasinin-adi-python.aspx) isimli yazımda metodlara biraz da olsa değinmişim. Ancak kitabı takip etmeye devam ettiğim için tekrar mahiyetinde de olsa bazı notlar da almışım. Hatta yeni bilgiler de edinmişim. Örneğin değişken uzunluk parametre alan bir metod üzerinde çalışmışım (Yani C# tarafındaki params kullanımını işlemişim) pass kullanımı ile NotImplementedException deneyimi yaşamış, Default Method Arguments ile metod parametrelerinde varsayılan değer kullanımına bakmışım. Kısaca aşağıdaki kodları çalışmışım.
+O gün metodlar ile ilgili bir şeyler yapmışım. Aslında 17 Hazirandaki ["Bu Yaz Macerasının Adı Python"](/2016/06/17/bu-yaz-macerasinin-adi-python/) isimli yazımda metodlara biraz da olsa değinmişim. Ancak kitabı takip etmeye devam ettiğim için tekrar mahiyetinde de olsa bazı notlar da almışım. Hatta yeni bilgiler de edinmişim. Örneğin değişken uzunluk parametre alan bir metod üzerinde çalışmışım (Yani C# tarafındaki params kullanımını işlemişim) pass kullanımı ile NotImplementedException deneyimi yaşamış, Default Method Arguments ile metod parametrelerinde varsayılan değer kullanımına bakmışım. Kısaca aşağıdaki kodları çalışmışım.
 
 ```text
 '''

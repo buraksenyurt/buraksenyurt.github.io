@@ -30,8 +30,8 @@ Derken bilgisayarımın başına döndüm ve kendi kendime şöyle dedim “E il
 Bu yazımız ile birlikte Team Foundation Server maceralarımıza devam etmeye çalışıyor olacağız. Yeni bölümüzde Client Object Model’ i bir Word uygulaması içerisinde kullanmaya çalışacağız ve çok basit olarak Work Item öğelerini nasıl kayıt edebileceğimizi göreceğiz.
 
 > Team Foundation Server dünyası ile ilişkili önceki yazılarıma aşağıdaki adreslerden ulaşabilirsiniz.
-> - [TFS Client Object Model için Hello World](https://www.buraksenyurt.com/post/TFS-2012-Client-Object-Model-icin-Hello-World)
-> - [TFS Web Services ve Kullanımları](https://www.buraksenyurt.com/post/TFS-Web-Services-ve-Kullanimi)
+> - [TFS Client Object Model için Hello World](/2013/03/15/tfs-client-object-model-icin-hello-world/)
+> - [TFS Web Services ve Kullanımları](/2013/03/17/tfs-web-services-ve-kullanimlari/)
 > - [Heryerden TFS Kullanabilmek](/2013/03/02/heryerden-tfs-kullanabilmek/)
 
 Çalışmakta olduğumuz Team Project’ in süreç şablonu (Process Template) ne olursa olsun (Scrum, MSF, CMMI) giriş yapılan öğeler Work Item olarak düşünülmektedir. Örneğin Scrum felsefesi göz önüne alındığında Product Backlog Item, Task, Bug, Test Case ve Impediment birer Work Item’ dır. CMMI şablonuna bakıldığında ise Requirement, Task, Bug, Change Request, Issue, Review, Risk ve Test Case birer Work Item olarak düşünülmektedir.

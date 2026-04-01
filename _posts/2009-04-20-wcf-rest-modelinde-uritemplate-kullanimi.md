@@ -8,7 +8,7 @@ tags:
   - windows-communication-foundation
   - rest-api
 ---
-SOAP (Simple Object Access Protocol) bazlı WCF servislerininin REST (REpresentational State Transfer) modeline taşınmasını ele aldığımız bir önceki [yazımızda](https://www.buraksenyurt.com/post/Soap-Bazl%C4%B1-WCF-Servislerini-REST-Modeline-Tas%C4%B1mak)varsayılan URL şablonu kullanılmıştır. Varsayılan URL şablonu, WebGet niteliğinde herhangibir başka desen belirtilmediğinde devreye girmektedir. Kabaca aşağıdaki dizime benzer bir yapıdadır.
+SOAP (Simple Object Access Protocol) bazlı WCF servislerininin REST (REpresentational State Transfer) modeline taşınmasını ele aldığımız bir önceki [yazımızda](/2009/04/17/soap-bazli-wcf-servislerini-rest-modeline-tasimak/)varsayılan URL şablonu kullanılmıştır. Varsayılan URL şablonu, WebGet niteliğinde herhangibir başka desen belirtilmediğinde devreye girmektedir. Kabaca aşağıdaki dizime benzer bir yapıdadır.
 
 ```text
 http://servisAdresi/servisAdi.svc/OperasyonAdi?parametre1=parametreDegeri¶metre2=parametreDegeri

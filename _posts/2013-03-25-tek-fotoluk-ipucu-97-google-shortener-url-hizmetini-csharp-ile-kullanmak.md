@@ -20,7 +20,7 @@ Malumunuz bazen Web adreslerine ait URL satırları epeyce uzun olabiliyorlar ve
 
 ![tfi97](/assets/images/2013/tfi97.png)
 
-Örnekten de görüleceği üzere [https://www.googleapis.com/urlshortener/v1/url](https://www.googleapis.com/urlshortener/v1/url) adresine JSON formatında bir talep gönderilmekte olup, gelen cevap içerisinden id niteliğinin değeri yakalanmaktadır. Üstelik bu işlem sırasında NewtonSoft’ un ilgili NuGet paketinden yararlanılmış olup söz konusu fonksiyonellik, Uri sınıfı için bir Extension Method olarak tanımlanmıştır. (NewtonSoft ile ilişkili olarak [şuradaki](http://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-69-Newtonsoft-JSONNet-ve-dynamic-Keyword) ve [buradaki](http://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-70-Newtonsoft-Jsonnet-and-dynamic-and-parsing.aspx) ipuçlarına bakabilirsiniz) Bir başka ip ucunda görüşmek dileğiyle
+Örnekten de görüleceği üzere [https://www.googleapis.com/urlshortener/v1/url](https://www.googleapis.com/urlshortener/v1/url) adresine JSON formatında bir talep gönderilmekte olup, gelen cevap içerisinden id niteliğinin değeri yakalanmaktadır. Üstelik bu işlem sırasında NewtonSoft’ un ilgili NuGet paketinden yararlanılmış olup söz konusu fonksiyonellik, Uri sınıfı için bir Extension Method olarak tanımlanmıştır. (NewtonSoft ile ilişkili olarak [şuradaki](/2012/11/04/tek-fotoluk-ipucu-69-newtonsoft-jsondotnet-ve-dynamic-keyword/) ve [buradaki](/2012/11/12/tek-fotoluk-ipucu-70-yine-newtonsoft-jsondotnet-ve-dynamic/) ipuçlarına bakabilirsiniz) Bir başka ip ucunda görüşmek dileğiyle
 
 ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_191.png)
 

@@ -11,7 +11,7 @@ tags:
   - csharp
   - query
 ---
-[Bir önceki ip ucunda](http://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-LINQ-to-Excel-ile-Basit-Sorgulama) LINQ to Excel Provider’ dan yararlanmış ve bir Excel dosyasını kolayca nasıl sorgulayabileceğimizi görmüştük. Peki ya Excel tablosunda yer alan satırları, kod tarafında oluşturacağımız Strongly Typed sınıflar içerisindeki özelliklere karşılık gelecek şekilde ifade edebiliyor olsaydık
+[Bir önceki ip ucunda](/2012/11/22/tek-fotoluk-ipucu-72-linq-to-excel-ile-basit-sorgulama/) LINQ to Excel Provider’ dan yararlanmış ve bir Excel dosyasını kolayca nasıl sorgulayabileceğimizi görmüştük. Peki ya Excel tablosunda yer alan satırları, kod tarafında oluşturacağımız Strongly Typed sınıflar içerisindeki özelliklere karşılık gelecek şekilde ifade edebiliyor olsaydık
 
 ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_120.png)
 

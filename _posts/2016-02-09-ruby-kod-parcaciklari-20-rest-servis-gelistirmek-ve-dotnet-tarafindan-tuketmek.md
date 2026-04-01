@@ -37,7 +37,7 @@ Elbette işin en önemli kısmı yine de servislere düşüyor. Çözümler içi
 
 ## Bize Gerekenler
 
-Veriyi tutmak için SQLite veritabanından yararlanacağız. Bu veritabanının basit kullanımı için [bir önceki yazımıza](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-19-sqlite-ile-basit-veritabani-islemleri.aspx) bakabilirsiniz. Ruby tarafında REST servislerini kolayca geliştirmek için Sinatra çatısından yararlanacağız. Kullanımı son derece kolay olan Sinatra için
+Veriyi tutmak için SQLite veritabanından yararlanacağız. Bu veritabanının basit kullanımı için [bir önceki yazımıza](/2016/02/07/ruby-kod-parcaciklari-19-sqlite-ile-basit-veritabani-islemleri/) bakabilirsiniz. Ruby tarafında REST servislerini kolayca geliştirmek için Sinatra çatısından yararlanacağız. Kullanımı son derece kolay olan Sinatra için
 
 gem install sinatra
 
@@ -131,7 +131,7 @@ end
 
 metodları ile http://adres/products ve http://adres/products/id adreslerine gelen talepleri karşılayabiliriz. İlk metod ile Product tablosundaki tüm ürün listesinin JSON formatında sunulması söz konusudur. Diğer metod:id ile gelen değere göre (ki Product tablosundaki productid alanının içeriği oluyor) yapılan arama sonucunu yine JSON formatında döndürmektedir.
 
-SQLite üzerinden gerçekleştirilen select sorguları sonucu elde edilen içerikleri Product sınıfına ait nesne örneklerine aldığımıza dikkat edelim. Product sınıfında JSON serileştirme işlerini gerçekleştirmek adına bazı düzenlemeler olduğu da gözden kaçmamalıdır (JSON serileştirme ile ilgili olarak [buradaki yazıyı](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-16-json-serilestirme.aspx) referans alabilirsiniz)
+SQLite üzerinden gerçekleştirilen select sorguları sonucu elde edilen içerikleri Product sınıfına ait nesne örneklerine aldığımıza dikkat edelim. Product sınıfında JSON serileştirme işlerini gerçekleştirmek adına bazı düzenlemeler olduğu da gözden kaçmamalıdır (JSON serileştirme ile ilgili olarak [buradaki yazıyı](/2015/09/22/ruby-kod-parcaciklari-16-json-serilestirme/) referans alabilirsiniz)
 
 ## Çalıştırma ve İlk Testler
 

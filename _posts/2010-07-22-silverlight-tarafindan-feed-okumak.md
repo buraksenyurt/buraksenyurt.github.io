@@ -19,7 +19,7 @@ Pek tabi yayınlanan bu içeriklerin takip edilebilmesi içinde çeşitli istemc
 
 ![Sealed](/assets/images/2010/smiley-sealed.gif)
 
-Doğruyu söylemek gerekirse sıkıldığım bir ara ne yapayım diye düşünürken Silverlight 4.0 tabanlı olarak geliştirilen bir uygulamadan RSS içeriklerini nasıl okuyabileceğimi düşünmeye başladım. Daha önceden HTTP bazlı Get,Post,Put, Delete metodlarınaa cevap veren WCF tabanlı servislerin tüketilmesi için WebClient tipinden nasıl yararlanıldığını incelemiştim ([Silverlight Tarafında HTTP Bazli Servisleri Kullanmak](https://www.buraksenyurt.com/admin/app/editor/post/Silverlight-Tarafinda-HTTP-Bazli-Servisleri-Kullanmak) isimli yazıyı incelemenizi öneririm) Yine aynı şekilde devam ederek herhangibir RSS içeriğini örnek Silverlight uygulamama taşıyabileceğimi düşünerek kolları sıvadım ve heyecanlı bir şekilde aşağıdaki ekran görüntüsü ve XAML içeriğine sahip kontrolü oluşturdum.
+Doğruyu söylemek gerekirse sıkıldığım bir ara ne yapayım diye düşünürken Silverlight 4.0 tabanlı olarak geliştirilen bir uygulamadan RSS içeriklerini nasıl okuyabileceğimi düşünmeye başladım. Daha önceden HTTP bazlı Get,Post,Put, Delete metodlarınaa cevap veren WCF tabanlı servislerin tüketilmesi için WebClient tipinden nasıl yararlanıldığını incelemiştim ([Silverlight Tarafında HTTP Bazli Servisleri Kullanmak](/2010/07/12/silverlight-tarafinda-http-bazli-servisleri-kullanmak/) isimli yazıyı incelemenizi öneririm) Yine aynı şekilde devam ederek herhangibir RSS içeriğini örnek Silverlight uygulamama taşıyabileceğimi düşünerek kolları sıvadım ve heyecanlı bir şekilde aşağıdaki ekran görüntüsü ve XAML içeriğine sahip kontrolü oluşturdum.
 
 ![blg176_Design.gif](/assets/images/2010/blg176_Design.gif)
 

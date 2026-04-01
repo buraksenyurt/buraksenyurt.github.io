@@ -26,7 +26,7 @@ Hepimiz onu ünlü İngiliz şair ve yazar olarak bilir Romeo Juliet, Macbeth, O
 
 Sekiz numaralı örnekteki amacım node.js ile çalıştırılan basit bir React uygulamasını Heroku üzerine taşımaktı. React ile node haberleşmesinde express paketini kullanmıştım. Bu paket deneyimlediğim kadarıyla HTTP yönlendiricisi olarak kullanılmaktaydı. React tarafına gelen HTTP taleplerini karşılarken kullanılabilmekte. Diğer yandan React tarafında çok fazla tecrübem olmadığından benim için hala kapalı kutu olma özelliğini taşıyor. Bir nevi ona da merhaba demek istediğim bir çalışma olduğunu ifade edebilirim.
 
-[Heroku](https://www.heroku.com/) 2007 yılında işe başladığında sadece Ruby on Rails bazlı web uygulamalarına destek veren bir bulut bilişim sistemiydi ancak Platform as a Service (PaaS) olarak olgunlaştıktan sonra Java, Node.js, Scala, Python, Go, Closure ve benzeri bir çok dil ile geliştirilen uygulmalar için de hizmet vermeye başladı. Aslında heroku üzerindeki ilk denememi 2018 yılında yapmış ve [şöyle bir yazı](https://buraksenyurt.com/post/express-api-hizmetini-heroku-uzerine-tasimak) yazmıştım. Teknolojinin gelişimi düşünüldüğünde aradan yadsınamayacak kadar çok zaman geçmiş diyebilirim. O yüzden bu tip platformlara ara ara dönüş yaparak farklı enstrümanlarla kullanmayı denemek güncel kalmamız açısından önemli. Öyleyse vakit kaybetmeden [sekiz numaralı Cumartesi gecesi çalışması](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2008%20-%20Express%20with%20React%20to%20Heroku)nı derlemeye başlayalım.
+[Heroku](https://www.heroku.com/) 2007 yılında işe başladığında sadece Ruby on Rails bazlı web uygulamalarına destek veren bir bulut bilişim sistemiydi ancak Platform as a Service (PaaS) olarak olgunlaştıktan sonra Java, Node.js, Scala, Python, Go, Closure ve benzeri bir çok dil ile geliştirilen uygulmalar için de hizmet vermeye başladı. Aslında heroku üzerindeki ilk denememi 2018 yılında yapmış ve [şöyle bir yazı](/2018/04/07/express-api-hizmetini-heroku-uzerine-tasimak/) yazmıştım. Teknolojinin gelişimi düşünüldüğünde aradan yadsınamayacak kadar çok zaman geçmiş diyebilirim. O yüzden bu tip platformlara ara ara dönüş yaparak farklı enstrümanlarla kullanmayı denemek güncel kalmamız açısından önemli. Öyleyse vakit kaybetmeden [sekiz numaralı Cumartesi gecesi çalışması](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2008%20-%20Express%20with%20React%20to%20Heroku)nı derlemeye başlayalım.
 
 ## Gerekli Hazırlıklar
 
@@ -198,7 +198,7 @@ Bana proje adı olarak Heroku'nun otomatik olarak ürettiği frozen-hamlet-75426
 
 ![06_08_credit_3.png](/assets/images/2019/06_08_credit_3.png)
 
-Uygulamanın web adresi https://frozen-hamlet-75426.herokuapp.com/ şeklinde. github adresi ise https://git.heroku.com/frozen-hamlet-75426.git. Hatta sonuçları Heroku Dashboard üzerinden de görebiliriz (Tabii siz örneği denerken güncel hali Heroku üzerinde olmayabilir. Kendiniz için bir tane yapsanız daha iyi olur)
+Uygulamanın web adresi `https://frozen-hamlet-75426.herokuapp.com/` şeklinde. github adresi ise `https://git.heroku.com/frozen-hamlet-75426.git`. Hatta sonuçları Heroku Dashboard üzerinden de görebiliriz (Tabii siz örneği denerken güncel hali Heroku üzerinde olmayabilir. Kendiniz için bir tane yapsanız daha iyi olur)
 
 ![06_08_credit_4.png](/assets/images/2019/06_08_credit_4.png)
 
@@ -224,7 +224,7 @@ Tüm değişiklikleri stage'e al
 Değişiklikleri onayla (commit)
 ve kodun son halini master branch'e push'la
 
-Kodun github'a alınması aynı zamanda heroku'nun da ilgili uygulamayı gerekli build betiklerini çalıştırarak devreye alması anlamına gelmekte. Dolayısıyla bir süre sonra https://frozen-hamlet-75426.herokuapp.com/ adresine gitmek sonuçları görmemiz açısından yeterli olacaktır.
+Kodun github'a alınması aynı zamanda heroku'nun da ilgili uygulamayı gerekli build betiklerini çalıştırarak devreye alması anlamına gelmekte. Dolayısıyla bir süre sonra `https://frozen-hamlet-75426.herokuapp.com/` adresine gitmek sonuçları görmemiz açısından yeterli olacaktır.
 
 ![06_08_credit_5.png](/assets/images/2019/06_08_credit_5.png)
 

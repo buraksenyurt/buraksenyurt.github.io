@@ -9,7 +9,7 @@ tags:
   - boxing
   - unboxing
 ---
-Bundan yaklaşık olarak iki sene önce boxing ve unboxing kavramları ile ilgili bir [makale](http://www.buraksenyurt.com/post/Boxing-(Kutulamak)-ve-Unboxing-(Kutuyu-Kald%C4%B1rmak)-bsenyurt-com-dan) (30.12.2003) yazmıştım. Aradan uzun süre geçti. Ancak boxing ve unboxing kavramları ile ilgili olarak hâlâ dikkat edilmesi gereken hususlar var. Bunlardan bizim için en önemlisi elbette ki performans üzerine etkileri. Uygulamalarımızda çok sık olarak farkında olmadan veya farkında olarak boxing ve unboxing işlemlerinin yer aldığı kod parçalarını kullanıyoruz.
+Bundan yaklaşık olarak iki sene önce boxing ve unboxing kavramları ile ilgili bir [makale](/2003/12/30/boxing-kutulamak-ve-unboxing-kutuyu-kaldirmak/) (30.12.2003) yazmıştım. Aradan uzun süre geçti. Ancak boxing ve unboxing kavramları ile ilgili olarak hâlâ dikkat edilmesi gereken hususlar var. Bunlardan bizim için en önemlisi elbette ki performans üzerine etkileri. Uygulamalarımızda çok sık olarak farkında olmadan veya farkında olarak boxing ve unboxing işlemlerinin yer aldığı kod parçalarını kullanıyoruz.
 
 Bildiğiniz gibi boxing, bir değer türünün, referans türünü atanması sırasında gerçekleşen işleme verilen isimdir. Unboxing ise bunun tam tersi olmakta ve referans türünün tekrar değer türüne dönüştürülmesini kapsamaktadır. Hangisi olursa olsun, değer türlerinin tutulduğu stack bellek bölgesi ile, referans türlerinin tutulduğu heap bellek bölgesi arasında yer değiştirme ve kopyalama işlemleri söz konusudur.
 

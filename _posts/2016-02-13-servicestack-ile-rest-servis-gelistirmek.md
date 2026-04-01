@@ -169,7 +169,7 @@ namespace HowToServiceStack
 
 ## Kodda Neler Yaptık?
 
-İlk olarak AppHost sınıfına bir bakalım. AppSelfHostBase'den türetilmiş olan bu sınıf temel olarak Host uygulama görevini üstleniyor. Ayrıca ProductService isimli servisin hizmete alınması işlemlerini gerçekleştiriyor. Uygulama http://localhost:4568 adresi üzerinden yayın yapacak. Buna göre Main metodu içerisinde Init ().Start (hostAddress) formasyonunu kullanıyoruz (Burada Fluent stilde bir tasarım olduğu gözden kaçmamalıdır. Fleunt kod tasarımı için [bu yazıya](https://www.buraksenyurt.com/post/Fluent-Interface-Prensibi-ile-Daha-Okunabilir-Kod-Gelistirmek.aspx) bakabilirsiniz)
+İlk olarak AppHost sınıfına bir bakalım. AppSelfHostBase'den türetilmiş olan bu sınıf temel olarak Host uygulama görevini üstleniyor. Ayrıca ProductService isimli servisin hizmete alınması işlemlerini gerçekleştiriyor. Uygulama http://localhost:4568 adresi üzerinden yayın yapacak. Buna göre Main metodu içerisinde Init ().Start (hostAddress) formasyonunu kullanıyoruz (Burada Fluent stilde bir tasarım olduğu gözden kaçmamalıdır. Fleunt kod tasarımı için [bu yazıya](/2013/12/23/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-1nci-yari/) bakabilirsiniz)
 
 Yukarıda da bahsettiğimiz üzere ServiceStack DTO servis tasarım desenini kullanmaktadır. /products/ ve /products/{NameLike} şeklinde yapılacak HTTP Get talepleri için ProductSelectRequest isimli bir DTO tipi tanımlanmıştır. ProductSelectRequest sınıfı IReturn arayüzünü (Interface) uygulamaktadır. Buna göre çalışma zamanı /Products veya /Products/{NameLike} talepleri karşısında nasıl bir tip döndüreceğini de öğrenmektedir.
 
