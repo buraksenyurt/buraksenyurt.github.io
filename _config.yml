@@ -15,6 +15,8 @@ minima:
 author:
   name: Burak Selim Şenyurt
 
+repository: buraksenyurt/buraksenyurt.github.io
+
 social_links:
   - { platform: github, user_url: "https://github.com/buraksenyurt" }
 
