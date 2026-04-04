@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 139 - Singleton Method"
-date: 2016-10-30 21:30:00
+date: 2016-10-30 18:00:00
 categories:
   - Programlama Dilleri
 tags:

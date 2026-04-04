@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 33 - Observer Deseninin Uygulanışı"
-date: 2017-02-12 21:47:00
+date: 2017-02-12 18:00:00
 categories:
   - Programlama Dilleri
 tags:

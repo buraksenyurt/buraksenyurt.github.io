@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 2 (Hashes)"
-date: 2015-08-04 21:30:00
+date: 2015-08-04 18:00:00
 categories:
   - Programlama Dilleri
 tags:
@@ -13,7 +13,7 @@ Ruby programlama dilinde de veri yapıları (Data Structures) oluşturmak için 
 
 Aşağıdaki Ruby Kod Parçacığı ile Hash tipinden koleksiyonları kısaca tanımaya çalışalım. [Bir önceki kod parçacığında](/2015/08/02/ruby-kod-parcaciklari-1/) olduğu gibi bu betiği de rb uzantılı bir dosya (örneğin Hashes.rb) olarak kaydedip komut satırından Ruby aracı ile çalıştırabiliriz.
 
-```text
+```ruby
 class Person
 
         attr_reader :name,:age

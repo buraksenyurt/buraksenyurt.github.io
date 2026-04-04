@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 25 - Unit Test Yazmak"
-date: 2016-11-07 21:28:00
+date: 2016-11-07 18:00:00
 categories:
   - Programlama Dilleri
 tags:

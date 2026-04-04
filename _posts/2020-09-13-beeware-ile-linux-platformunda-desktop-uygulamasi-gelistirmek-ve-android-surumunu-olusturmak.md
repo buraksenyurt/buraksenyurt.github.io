@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BeeWare ile Linux Platformunda Desktop Uygulaması Geliştirmek ve Android Sürümünü Oluşturmak"
-date: 2020-09-13 21:05:00
+date: 2020-09-13 18:00:00
 categories:
   - Programlama Dilleri
 tags:

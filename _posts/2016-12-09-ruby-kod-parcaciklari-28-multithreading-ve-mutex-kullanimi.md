@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 28 - Multithreading ve Mutex Kullanımı"
-date: 2016-12-09 21:30:00
+date: 2016-12-09 18:00:00
 categories:
   - Programlama Dilleri
 tags:

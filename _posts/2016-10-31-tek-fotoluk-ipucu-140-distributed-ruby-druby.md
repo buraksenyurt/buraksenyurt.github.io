@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 140 - Distributed Ruby(dRuby)"
-date: 2016-10-31 21:16:00
+date: 2016-10-31 18:00:00
 categories:
   - Programlama Dilleri
 tags:

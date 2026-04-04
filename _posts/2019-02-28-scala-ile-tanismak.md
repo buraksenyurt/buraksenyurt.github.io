@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scala ile Tanışmak"
-date: 2019-02-28 21:30:00
+date: 2019-02-28 18:00:00
 categories:
   - Programlama Dilleri
 tags:

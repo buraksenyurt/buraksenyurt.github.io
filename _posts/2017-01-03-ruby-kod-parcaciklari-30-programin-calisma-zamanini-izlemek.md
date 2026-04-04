@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 30 - Programın Çalışma Zamanını İzlemek"
-date: 2017-01-03 21:43:00
+date: 2017-01-03 18:00:00
 categories:
   - Programlama Dilleri
 tags:

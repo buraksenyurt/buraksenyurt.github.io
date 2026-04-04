@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 136 - Dosyayı Külçeler Halinde Okumak"
-date: 2016-10-19 21:30:00
+date: 2016-10-19 18:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Basit HTTP Web Server Yapımı"
-date: 2017-02-20 23:48:00
+date: 2017-02-20 18:00:00
 categories:
   - Programlama Dilleri
 tags:

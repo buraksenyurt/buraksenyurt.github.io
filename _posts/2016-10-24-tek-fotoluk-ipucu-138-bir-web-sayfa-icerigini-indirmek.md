@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 138 - Bir Web Sayfa İçeriğini İndirmek"
-date: 2016-10-24 21:35:00
+date: 2016-10-24 18:00:00
 categories:
   - Programlama Dilleri
 tags:

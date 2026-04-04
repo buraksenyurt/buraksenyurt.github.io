@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 32 - Singleton"
-date: 2017-02-03 21:23:00
+date: 2017-02-03 18:00:00
 categories:
   - Programlama Dilleri
 tags:

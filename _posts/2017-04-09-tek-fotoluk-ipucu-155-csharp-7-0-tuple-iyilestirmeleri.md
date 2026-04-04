@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 155 - C# 7.0 Tuple İyileştirmeleri"
-date: 2017-04-09 21:42:00
+date: 2017-04-09 18:00:00
 categories:
   - Programlama Dilleri
 tags:
