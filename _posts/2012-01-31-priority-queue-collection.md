@@ -215,11 +215,10 @@ namespace PQueue
 
 Örneğimizde kullandığımız PriorityQueue nesne örneği, seviyelendirme için int tipini kullanmakta ve buna göre Person tipinden olan nesne örneklerini Min-Heap mantığında değerlendirmektedir. İlk olarak Bill, Jenni, Samantha, Richard ve Steve isimli çalışanlar kuyruğa eklenmiştir. Bu personelin öncelik dereceleri sırasıyla 9,10,8,17 ve 12' dir. Geliştirdiğimiz tip Min-Heap yapısını ele aldığından yani aslında düşük değer yüksek öncelik anlamına geldiğinden ilk dizilime göre kuyruktan ilk çıkacak kişi Samantha'dır. Bu andan itibaren Dequeue metodunu kullandığımız noktalarda öncelik seviyesi yüksek olan (yani en küçük int değerine sahip olan) çalışan elde edilecek ve aynı zamanda koleksiyondan çıkartılacaktır. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
-![image.axd](/assets/images/2012/image.axd)
+![artcl_7_3.jpg](/assets/images/2012/artcl_7_3.jpg)
 
 Burada dikkat edilmesi gereken nokta Dequeue metodunun her zaman için öncelik seviyesi yüksek olan (örneğimizde int değeri en düşün olan) elemanı ilk olarak listeden getiriyor olmasıdır. Yani klasik Queue koleksiyonunda olduğu gibi FIFO ilkesi değerlendirilirken, öncelik seviyesi (Priority Level) baz alınmaktadır. Kodu Debug ederek incelediğinizde ancak var olan elemanlardan daha yüksek öncelik seviyesine sahip bir eleman eklendiğinde listenin başına alındığını görürüz. Bu işleyişte koleksiyon üzerinde her hangibir sıralama operasyonunun söz konusu olmadığına özellikle dikkat etmenizi isterim.
 
 Görüldüğü gibi biraz uğraşarak öncelikli derecelendirmeli bir kuyruk koleksiyonu tipini yazabildik. Sizde denemelerinizde IComparer implementasyonu yapan bir kritere göre söz konusu koleksiyonu Max-Heap mantığında çalıştırmay deneyebilirisiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [PQueue.rar (31,33 kb)](/assets/files/2012/PQueue.rar)
-

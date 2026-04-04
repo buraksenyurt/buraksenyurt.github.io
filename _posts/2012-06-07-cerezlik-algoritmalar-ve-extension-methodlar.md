@@ -18,7 +18,7 @@ Akademik yıllarımızda çoğumuz karmaşık matematik algoritmaları ile uğra
 
 Pek tabi yazılım dünyası söz konusu olduğunda var olan hemen her algoritmanın karşılığı olan kodlamaların geliştirilmesi de önemli bir mevzudur. Bilimsel uygulamalarda, finansal model çözümlerinde, endusturi alanındaki planlama tekniklerinde vb...Ben bu yazımda sizleri o karmaşık ve anlaşılması zor algoritmalar ile yormayacağım. Bunun yerine eğilenceli sayılabilecek ve özellikle oyun programlamada oyunculara keyifli dakikalar yaşatmanızı sağlayabilecek basit bir kaç algoritma üzerinde durmaya çalışacağım. Söz konusu algoritmaları birer Extension Method olarak geliştireceğiz. Dilerseniz hiç vakit kaybetmeden ilk algoritmamız ile işe başlayalım.
 
-![image.axd](/assets/images/2012/image.axd)
+![artcl_8_5.jpg](/assets/images/2012/artcl_8_5.jpg)
 
 Biraz eskilere gidiyor olacağız. Hatta Roma imparatoru Ceaser zamanına
 
@@ -91,7 +91,7 @@ namespace TestApp
 
 Dikkat edileceği üzere eğlenceli görünen karmaşık veri içerikleri üretilmiş durumda. Tabi bunu çözümlemeye çalışmak oyuncunun işi olacak. Oldukça fazla zorlanacağından emin olabilirsiniz.
 
-![image.axd](/assets/images/2012/image.axd)
+![artcl_8_7.jpg](/assets/images/2012/artcl_8_7.jpg)
 
 Ceaser'ın hakkına Ceaser'a verip ve Ceaser'a elveda diyerek yolumuza devam edelim. Sırada yer alan algoritmamız ise Fisher-Yates Shuffle olarak literatürde yer almaktadır. Bu algoritma yardımıyla bir sayı veya kelime dizisinin ya da farklı bir veri kümesinin her defasında farklı olacak şekilde karıştırılarak elde edilmesi söz konusudur. Bir başka deyişle farklı permütasyonların hesap edilerek bir karma veri içeriği üretilmesi gibi bir durum mevcuttur. (1938 yılında keşfedilmiş olan bu algoritma hakkında ki detaylı bilgileri yine [wikipedia](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) adresi üzerinden elde edebilirsiniz.) Biz hiç vakit kaybetmeden bu algoritma için bir extension metod geliştirerek ilerleyelim.
 
@@ -176,7 +176,7 @@ Test kodunda string tipte isimlerden oluşan bir List koleksiyonu ve benzer şek
 
 Size tavsiyem basit bir fotoğrafı n sayıda kareye böldükten sonra, bu parçaları işaret eden sınıfa ait nesne örneklerinden oluşan bir List koleksiyonunu, Fisher-Yates Shuffle algoritmasını kullanarak, oyuncuyu her seferinde farklı bir karmaşa ile baş başa bırakmayı denemeniz olacaktır
 
-![image.axd](/assets/images/2012/image.axd)
+![artcl_8_6.jpg](/assets/images/2012/artcl_8_6.jpg)
 
 Geldik bu yazımızda size aktarmak istediğim son algoritmaya. Bu kez Palindromik veri tespiti yapmak için kullanılan bir algoritma üzerinde duracağız. Palindromic sayılar 181, 191, 55 gibi tersten okunduklarında da aynı sayı değerini veren kavramlar olarak düşünülebilirler. Aslında Palindromic sayılar olarak düşünebileceğimiz bu modeli kelimeler için de ele alabiliriz. ANA, KAÇAK gibi örnekler bu anlamda düşünülebilir. Senaryo olarak baktığımızda ise, söz gelimi metin içerikli bir döküman içerisinde yer alan Palindromic kelimeleri veya cümleleri oyuncuya buldurabilir ve süre bazında başarısını ölçümlemeye çalışabiliriz. (Bu algoritma ile ilişkili detaylı bilgileri yine [Wikipedia](http://tr.wikipedia.org/wiki/Palindrom) üzerinden okuyabilirsiniz.) Ancak öncesinde algoritma için gerekli olan genişletme metodumuzu yazalım.
 
