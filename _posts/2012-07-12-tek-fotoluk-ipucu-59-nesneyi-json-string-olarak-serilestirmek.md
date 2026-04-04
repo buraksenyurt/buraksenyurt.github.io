@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 59–Nesneyi JSON String Olarak Serileştirmek"
-date: 2012-07-12 00:52:00 +0300
+date: 2012-07-12 00:52:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Pointers"
-date: 2017-03-31 21:15:00 +0300
+date: 2017-03-31 21:15:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.5–ChannelFactory Tipi için Caching Kullanımı"
-date: 2014-12-22 19:00:00 +0300
+date: 2014-12-22 19:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

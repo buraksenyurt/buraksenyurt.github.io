@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Bir ORM Denemesi"
-date: 2017-07-16 21:40:00 +0300
+date: 2017-07-16 21:40:00
 categories:
   - Programlama Dilleri
 tags:

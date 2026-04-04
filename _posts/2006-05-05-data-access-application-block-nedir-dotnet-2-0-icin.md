@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Access Application Block Nedir? (.Net 2.0 için)"
-date: 2006-05-05 12:00:00 +0300
+date: 2006-05-05 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 99–Tipler Arası Property Eşleştirme"
-date: 2013-03-25 17:35:00 +0300
+date: 2013-03-25 17:35:00
 categories:
   - Genel
 tags:

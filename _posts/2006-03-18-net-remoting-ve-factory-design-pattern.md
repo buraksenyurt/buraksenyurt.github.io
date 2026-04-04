@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Remoting ve Factory Design Pattern"
-date: 2006-03-18 12:00:00 +0300
+date: 2006-03-18 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NextJS ile Web API Tüketen bir React Uygulaması Geliştirmek"
-date: 2020-07-18 19:22:00 +0300
+date: 2020-07-18 19:22:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 3.0 - İlk Bakışta XLINQ"
-date: 2006-10-22 12:00:00 +0300
+date: 2006-10-22 12:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Prototype"
-date: 2009-07-06 20:35:00 +0300
+date: 2009-07-06 20:35:00
 categories:
   - Yazılım Tasarımı
 tags:

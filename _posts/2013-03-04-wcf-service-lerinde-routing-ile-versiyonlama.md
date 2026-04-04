@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Service' lerinde Routing ile Versiyonlama"
-date: 2013-03-04 00:50:00 +0300
+date: 2013-03-04 00:50:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Derinlemesine Session Kullanımı - 2"
-date: 2005-01-07 22:00:00 +0300
+date: 2005-01-07 22:00:00
 categories:
   - Web Programlama
 tags:

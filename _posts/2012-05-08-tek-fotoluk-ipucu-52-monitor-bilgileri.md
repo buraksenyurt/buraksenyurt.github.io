@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 52 - Monitor Bilgileri"
-date: 2012-05-08 09:10:00 +0300
+date: 2012-05-08 09:10:00
 categories:
   - Genel
 tags:

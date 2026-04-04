@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 108–Property Value Dump"
-date: 2014-03-20 21:30:00 +0300
+date: 2014-03-20 21:30:00
 categories:
   - Genel
 tags: []

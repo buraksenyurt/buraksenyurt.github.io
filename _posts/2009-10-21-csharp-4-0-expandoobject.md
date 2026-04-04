@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 4.0 - ExpandoObject"
-date: 2009-10-21 07:14:00 +0300
+date: 2009-10-21 07:14:00
 categories:
   - Programlama Dilleri
 tags:

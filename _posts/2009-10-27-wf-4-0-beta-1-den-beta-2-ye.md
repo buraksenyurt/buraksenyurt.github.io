@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WF 4.0 Beta 1' den Beta 2' ye"
-date: 2009-10-27 06:25:00 +0300
+date: 2009-10-27 06:25:00
 categories:
   - Framework Tabanlı Programlama
 tags:

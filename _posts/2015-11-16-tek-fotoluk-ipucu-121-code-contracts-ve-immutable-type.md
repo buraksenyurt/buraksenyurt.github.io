@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 121 - Code Contracts ve Immutable Type"
-date: 2015-11-16 06:00:00 +0300
+date: 2015-11-16 06:00:00
 categories:
   - Genel
 tags:

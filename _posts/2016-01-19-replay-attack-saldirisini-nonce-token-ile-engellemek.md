@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Replay Attack Saldırısını Nonce Token ile Engellemek"
-date: 2016-01-19 00:00:00 +0300
+date: 2016-01-19 00:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

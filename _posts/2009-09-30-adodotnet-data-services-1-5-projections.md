@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services 1.5 - Projections"
-date: 2009-09-30 00:00:00 +0300
+date: 2009-09-30 00:00:00
 categories:
   - Framework Tabanlı Programlama
   - Servis Tabanlı Geliştirme

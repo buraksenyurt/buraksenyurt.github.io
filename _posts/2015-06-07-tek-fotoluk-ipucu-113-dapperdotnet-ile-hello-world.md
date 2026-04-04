@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 113 - Dapper.Net ile Hello World"
-date: 2015-06-07 08:14:00 +0300
+date: 2015-06-07 08:14:00
 categories:
   - Genel
 tags:

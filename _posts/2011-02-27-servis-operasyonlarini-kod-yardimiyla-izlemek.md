@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Servis Operasyonlarını Kod Yardımıyla İzlemek"
-date: 2011-02-27 16:20:00 +0300
+date: 2011-02-27 16:20:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

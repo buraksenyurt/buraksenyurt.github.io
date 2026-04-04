@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Levenshtein Distance Algoritması"
-date: 2012-07-01 23:05:00 +0300
+date: 2012-07-01 23:05:00
 categories:
   - Algoritma
   - Programlama Dilleri

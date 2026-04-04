@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cloud Firestore ile Angular Kullanımı"
-date: 2019-05-24 09:00:00 +0300
+date: 2019-05-24 09:00:00
 categories:
   - Web Programlama
 tags:

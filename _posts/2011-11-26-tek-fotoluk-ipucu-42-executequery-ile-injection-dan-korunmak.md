@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-42(ExecuteQuery ile Injection' dan Korunmak)"
-date: 2011-11-26 03:15:00 +0300
+date: 2011-11-26 03:15:00
 categories:
   - Programlama Dilleri
   - Veritabanı

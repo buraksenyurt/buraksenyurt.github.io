@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net 4.0 Öncesi ThreadPool Kullanımı"
-date: 2009-12-23 03:15:00 +0300
+date: 2009-12-23 03:15:00
 categories:
   - Programlama Dilleri
 tags:

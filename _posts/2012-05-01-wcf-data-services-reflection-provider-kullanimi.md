@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Data Services – Reflection Provider Kullanımı"
-date: 2012-05-01 01:25:00 +0300
+date: 2012-05-01 01:25:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

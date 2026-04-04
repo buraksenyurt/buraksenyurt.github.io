@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Profile API ile Personalization"
-date: 2006-06-02 12:00:00 +0300
+date: 2006-06-02 12:00:00
 categories:
   - Web Programlama
 tags:

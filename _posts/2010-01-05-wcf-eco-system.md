@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Eco System"
-date: 2010-01-05 01:30:00 +0300
+date: 2010-01-05 01:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

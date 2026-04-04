@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-13(XmlSerializer ile Daha Fazla Kontrol)"
-date: 2011-07-04 23:02:00 +0300
+date: 2011-07-04 23:02:00
 categories:
   - Genel
   - Servis Tabanlı Geliştirme

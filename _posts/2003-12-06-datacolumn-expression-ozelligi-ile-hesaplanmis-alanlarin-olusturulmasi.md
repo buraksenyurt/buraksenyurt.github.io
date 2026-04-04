@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DataColumn.Expression Özelliği İle Hesaplanmış Alanların Oluşturulması"
-date: 2003-12-06 12:00:00 +0300
+date: 2003-12-06 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk ipucu - 57 LINQ Tarafında Cross Join"
-date: 2012-07-11 07:00:00 +0300
+date: 2012-07-11 07:00:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AttachedToParent Hakkında Detaylar"
-date: 2010-09-02 08:30:00 +0300
+date: 2010-09-02 08:30:00
 categories:
   - Paralel Programlama
 tags:

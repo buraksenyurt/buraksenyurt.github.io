@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NLog için Oracle Database Kullanmak"
-date: 2014-07-17 07:45:00 +0300
+date: 2014-07-17 07:45:00
 categories:
   - Programlama Dilleri
 tags: []

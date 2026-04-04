@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 2.0 GridView Kontrolünde Update,Delete İşlemleri"
-date: 2004-09-07 12:00:00 +0300
+date: 2004-09-07 12:00:00
 categories:
   - Web Programlama
 tags:

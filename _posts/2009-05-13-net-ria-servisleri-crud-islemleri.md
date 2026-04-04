@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net RIA Servisleri - CRUD İşlemleri"
-date: 2009-05-13 22:50:00 +0300
+date: 2009-05-13 22:50:00
 categories:
   - Framework Tabanlı Programlama
 tags:

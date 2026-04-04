@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ArrayList Koleksiyonu ve DataGrid"
-date: 2004-01-07 12:00:00 +0300
+date: 2004-01-07 12:00:00
 categories:
   - Programlama Dilleri
 tags:

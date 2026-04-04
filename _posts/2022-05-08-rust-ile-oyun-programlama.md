@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust ile Oyun Programlama"
-date: 2022-05-08 09:00:00 +0300
+date: 2022-05-08 09:00:00
 categories:
   - Programlama Dilleri
 tags:

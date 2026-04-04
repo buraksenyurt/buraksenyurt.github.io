@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Switch Case Kullanmadan Kod Yazılabilir mi?"
-date: 2019-12-25 10:00:00 +0300
+date: 2019-12-25 10:00:00
 categories:
   - Programlama Dilleri
 tags:

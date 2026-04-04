@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API ile OData Servisi İnşa Etmek"
-date: 2013-04-06 10:33:00 +0300
+date: 2013-04-06 10:33:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

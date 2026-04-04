@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kendi İstina Nesnelerimizi Kullanmak (ApplicationException)"
-date: 2005-05-23 12:00:00 +0300
+date: 2005-05-23 12:00:00
 categories:
   - Programlama Dilleri
 tags:

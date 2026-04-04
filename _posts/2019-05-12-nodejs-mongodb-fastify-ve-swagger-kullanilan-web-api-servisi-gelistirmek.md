@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Node.js, MongoDB, Fastify ve Swagger Kullanılan Web API Servisi Geliştirmek"
-date: 2019-05-12 21:45:00 +0300
+date: 2019-05-12 21:45:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TPL Senkronizasyonu Sağlamak – 2 (Interlocked)"
-date: 2011-01-31 13:45:00 +0300
+date: 2011-01-31 13:45:00
 categories:
   - Paralel Programlama
 tags:

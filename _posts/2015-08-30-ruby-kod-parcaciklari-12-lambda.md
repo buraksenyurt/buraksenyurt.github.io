@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 12 (Lambda)"
-date: 2015-08-30 07:00:00 +0300
+date: 2015-08-30 07:00:00
 categories:
   - Programlama Dilleri
 tags:

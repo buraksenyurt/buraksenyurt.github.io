@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Servislerine Giriş"
-date: 2004-04-28 15:00:00 +0300
+date: 2004-04-28 15:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

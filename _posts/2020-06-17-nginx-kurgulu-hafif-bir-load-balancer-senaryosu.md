@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Nginx Kurgulu Hafif Bir Load Balancer Senaryosu"
-date: 2020-06-17 09:20:00 +0300
+date: 2020-06-17 09:20:00
 categories:
   - Web Programlama
 tags:

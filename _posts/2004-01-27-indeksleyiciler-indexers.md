@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Indeksleyiciler (Indexers)"
-date: 2004-01-27 12:00:00 +0300
+date: 2004-01-27 12:00:00
 categories:
   - Programlama Dilleri
 tags:

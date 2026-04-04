@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "EF Core : Testlerde InMemory Context Kullanımı"
-date: 2019-02-12 09:00:00 +0300
+date: 2019-02-12 09:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

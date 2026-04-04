@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sekiz Saatlik Sonsuz Döngü"
-date: 2019-12-27 07:00:00 +0300
+date: 2019-12-27 07:00:00
 categories:
   - Genel
 tags:

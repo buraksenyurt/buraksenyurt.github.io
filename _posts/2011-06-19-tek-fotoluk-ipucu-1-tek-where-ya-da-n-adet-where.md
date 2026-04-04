@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 1 (Tek Where ya da n adet Where)"
-date: 2011-06-19 17:47:00 +0300
+date: 2011-06-19 17:47:00
 categories:
   - Veritabanı
   - Genel

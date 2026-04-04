@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "İşe Yarar Bir MultiThreading(Çok Kanallı) Uygulama Örneği"
-date: 2004-01-06 12:00:00 +0300
+date: 2004-01-06 12:00:00
 categories:
   - Programlama Dilleri
 tags:

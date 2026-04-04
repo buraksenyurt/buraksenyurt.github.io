@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Correlation Nedir? Yenir mi? İçilir mi?"
-date: 2010-02-01 00:25:00 +0300
+date: 2010-02-01 06:45:00
 categories:
   - Servis Tabanlı Geliştirme
   - Framework Tabanlı Programlama

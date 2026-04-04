@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Composite"
-date: 2009-07-12 07:00:00 +0300
+date: 2009-07-12 07:00:00
 categories:
   - Yazılım Tasarımı
 tags:

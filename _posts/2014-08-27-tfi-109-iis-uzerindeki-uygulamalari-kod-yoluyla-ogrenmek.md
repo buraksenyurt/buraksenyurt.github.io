@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFİ 109 - IIS Üzerindeki Uygulamaları Kod Yoluyla Öğrenmek"
-date: 2014-08-27 13:52:00 +0300
+date: 2014-08-27 13:52:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

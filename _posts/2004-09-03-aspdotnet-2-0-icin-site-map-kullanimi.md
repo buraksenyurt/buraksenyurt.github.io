@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 2.0 için Site Map Kullanımı"
-date: 2004-09-03 06:00:00 +0300
+date: 2004-09-03 06:00:00
 categories:
   - Web Programlama
 tags:

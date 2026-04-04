@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Windows Tabanlı Doğrulama ve Yetkilendirme"
-date: 2007-07-12 12:00:00 +0300
+date: 2007-07-12 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

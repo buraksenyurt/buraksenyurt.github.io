@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–67–Fibonacci, LINQ, Skip ve Take"
-date: 2012-09-22 18:23:00 +0300
+date: 2012-09-22 18:23:00
 categories:
   - Genel
 tags:

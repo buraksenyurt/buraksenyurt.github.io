@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 8 (Parallel ConcurrentBag)"
-date: 2011-06-27 23:00:00 +0300
+date: 2011-06-27 23:00:00
 categories:
   - Framework Tabanlı Programlama
   - Genel

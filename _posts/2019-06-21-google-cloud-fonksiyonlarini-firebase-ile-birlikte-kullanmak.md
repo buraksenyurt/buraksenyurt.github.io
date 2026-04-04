@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google Cloud Fonksiyonlarını Firebase ile Birlikte Kullanmak"
-date: 2019-06-21 07:00:00 +0300
+date: 2019-06-21 07:00:00
 categories:
   - Bulut Bilişim
 tags:

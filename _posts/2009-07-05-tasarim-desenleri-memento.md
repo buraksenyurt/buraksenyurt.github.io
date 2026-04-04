@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Memento"
-date: 2009-07-05 20:45:00 +0300
+date: 2009-07-05 20:45:00
 categories:
   - Yazılım Tasarımı
 tags:

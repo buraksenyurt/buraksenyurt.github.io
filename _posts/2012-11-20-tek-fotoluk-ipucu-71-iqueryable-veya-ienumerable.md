@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–71–IQueryable veya IEnumerable"
-date: 2012-11-20 03:01:00 +0300
+date: 2012-11-20 03:01:00
 categories:
   - Genel
 tags:

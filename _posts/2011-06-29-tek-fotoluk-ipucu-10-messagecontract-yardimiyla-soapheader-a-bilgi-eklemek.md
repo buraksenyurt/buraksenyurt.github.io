@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu – 10 (MessageContract yardımıyla SoapHeader' a Bilgi Eklemek)"
-date: 2011-06-29 18:39:00 +0300
+date: 2011-06-29 18:39:00
 categories:
   - Genel
   - Servis Tabanlı Geliştirme

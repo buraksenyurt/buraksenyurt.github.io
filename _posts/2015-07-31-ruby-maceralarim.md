@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Maceralarım"
-date: 2015-07-31 16:00:00 +0300
+date: 2015-07-31 16:00:00
 categories:
   - Programlama Dilleri
 tags:

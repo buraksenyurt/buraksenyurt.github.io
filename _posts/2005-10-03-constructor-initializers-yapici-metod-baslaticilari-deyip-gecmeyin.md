@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Constructor Initializers (Yapıcı Metod Başlatıcıları) Deyip Geçmeyin"
-date: 2005-10-03 09:00:00 +0300
+date: 2005-10-03 09:00:00
 categories:
   - Programlama Dilleri
 tags:

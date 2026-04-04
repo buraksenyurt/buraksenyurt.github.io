@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - Multithreading"
-date: 2022-02-06 09:00:00 +0300
+date: 2022-02-06 09:00:00
 categories:
   - Programlama Dilleri
 tags:

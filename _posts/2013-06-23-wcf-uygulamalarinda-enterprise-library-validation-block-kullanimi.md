@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Uygulamalarında Enterprise Library Validation Block Kullanımı"
-date: 2013-06-23 15:26:00 +0300
+date: 2013-06-23 15:26:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

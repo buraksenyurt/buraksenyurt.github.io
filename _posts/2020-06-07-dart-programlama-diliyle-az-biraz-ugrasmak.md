@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DART Programlama Diliyle Az Biraz Uğraşmak"
-date: 2020-06-07 14:14:00 +0300
+date: 2020-06-07 14:14:00
 categories:
   - Programlama Dilleri
 tags:

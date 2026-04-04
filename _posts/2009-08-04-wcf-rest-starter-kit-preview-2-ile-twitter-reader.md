@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Rest Starter Kit Preview 2 ile Twitter Reader"
-date: 2009-08-04 23:47:00 +0300
+date: 2009-08-04 23:47:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

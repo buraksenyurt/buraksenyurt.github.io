@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 54 - Control Nerede?"
-date: 2012-06-03 20:15:00 +0300
+date: 2012-06-03 20:15:00
 categories:
   - Genel
 tags:

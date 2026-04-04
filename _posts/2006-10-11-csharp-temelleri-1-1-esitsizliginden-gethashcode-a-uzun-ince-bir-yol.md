@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# Temelleri: 1!=1 Eşitsizliğinden GetHashCode' a Uzun İnce Bir Yol"
-date: 2006-10-11 03:00:00 +0300
+date: 2006-10-11 03:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Netspecter Takipte - Object Initializer Deyip Geçmemek Lazım"
-date: 2011-04-14 14:34:00 +0300
+date: 2011-04-14 14:34:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Service' lerine Silverlight İstemcilerinden Channel Bazlı Erişim"
-date: 2010-06-02 01:55:00 +0300
+date: 2010-06-02 01:55:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

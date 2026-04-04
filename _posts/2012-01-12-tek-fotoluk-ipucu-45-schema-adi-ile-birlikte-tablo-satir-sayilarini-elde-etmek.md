@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 45 - Schema Adı ile birlikte Tablo Satır Sayılarını Elde Etmek"
-date: 2012-01-12 04:46:00 +0300
+date: 2012-01-12 04:46:00
 categories:
   - Genel
 tags:

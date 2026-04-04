@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 4 (DebuggerBrowsable Niteliği)"
-date: 2011-06-23 12:40:00 +0300
+date: 2011-06-23 12:40:00
 categories:
   - Framework Tabanlı Programlama
   - Genel

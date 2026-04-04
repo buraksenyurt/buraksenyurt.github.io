@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task İptal İşlemlerinin İzlenmesi(Monitoring Cancellation)"
-date: 2011-04-23 12:10:00 +0300
+date: 2011-04-23 12:10:00
 categories:
   - Paralel Programlama
 tags:

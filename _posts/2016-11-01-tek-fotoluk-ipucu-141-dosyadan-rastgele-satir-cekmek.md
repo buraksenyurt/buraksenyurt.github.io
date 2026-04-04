@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 141 - Dosyadan Rastgele Satır Çekmek"
-date: 2016-11-01 21:36:00 +0300
+date: 2016-11-01 21:36:00
 categories:
   - Programlama Dilleri
 tags:

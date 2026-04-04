@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Server Side SponsorShip"
-date: 2006-04-19 12:00:00 +0300
+date: 2006-04-19 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - Özel Formatta Mesaj Döndürmek"
-date: 2010-04-08 07:39:00 +0300
+date: 2010-04-08 07:39:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

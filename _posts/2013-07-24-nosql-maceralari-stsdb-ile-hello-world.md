@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NoSQL Maceraları - STSdb ile Hello World"
-date: 2013-07-24 12:24:00 +0300
+date: 2013-07-24 12:24:00
 categories:
   - Veritabanı
 tags:

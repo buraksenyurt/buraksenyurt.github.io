@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web Uygulamalarında Custom Paging"
-date: 2005-09-03 12:00:00 +0300
+date: 2005-09-03 12:00:00
 categories:
   - Web Programlama
 tags:

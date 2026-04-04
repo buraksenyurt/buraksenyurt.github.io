@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 19 - SQLite ile Basit Veritabanı İşlemleri"
-date: 2016-02-07 15:00:00 +0300
+date: 2016-02-07 15:00:00
 categories:
   - Programlama Dilleri
 tags:

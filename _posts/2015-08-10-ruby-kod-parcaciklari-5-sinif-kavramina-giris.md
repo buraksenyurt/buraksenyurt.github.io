@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 5 (Sınıf Kavramına Giriş)"
-date: 2015-08-10 19:00:00 +0300
+date: 2015-08-10 19:00:00
 categories:
   - Programlama Dilleri
 tags:

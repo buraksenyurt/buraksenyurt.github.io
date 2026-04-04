@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - Tanışma"
-date: 2010-02-01 05:50:00 +0300
+date: 2010-02-01 05:50:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task Wait,WaitAll,WaitAny"
-date: 2011-01-06 13:25:00 +0300
+date: 2011-01-06 13:25:00
 categories:
   - Paralel Programlama
 tags:

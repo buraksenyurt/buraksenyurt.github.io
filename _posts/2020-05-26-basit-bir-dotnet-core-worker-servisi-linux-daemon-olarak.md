@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Basit Bir .Net Core Worker Servisi(Linux Daemon Olarak)"
-date: 2020-05-26 20:05:00 +0300
+date: 2020-05-26 20:05:00
 categories:
   - Framework Tabanlı Programlama
 tags:

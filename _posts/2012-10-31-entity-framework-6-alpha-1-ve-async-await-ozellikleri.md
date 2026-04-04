@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework 6 Alpha 1 ve async, await Özellikleri"
-date: 2012-10-31 22:41:00 +0300
+date: 2012-10-31 22:41:00
 categories:
   - Veritabanı
 tags:

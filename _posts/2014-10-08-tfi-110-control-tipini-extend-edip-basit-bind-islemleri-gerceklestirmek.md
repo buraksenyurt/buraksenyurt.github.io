@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFİ 110 - Control Tipini Extend Edip Basit Bind İşlemleri Gerçekleştirmek"
-date: 2014-10-08 21:07:00 +0300
+date: 2014-10-08 21:07:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stack ve Queue Koleksiyon Sınıfı"
-date: 2003-12-19 10:00:00 +0300
+date: 2003-12-19 10:00:00
 categories:
   - Programlama Dilleri
 tags:

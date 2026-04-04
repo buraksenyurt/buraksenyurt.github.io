@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-27(FileInfo Bilgisinin Tamamını İndirmek)"
-date: 2011-08-22 04:51:00 +0300
+date: 2011-08-22 04:51:00
 categories:
   - Programlama Dilleri
   - Genel

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Parent-Child Task Exception Durumları"
-date: 2010-08-02 21:10:00 +0300
+date: 2010-08-02 21:10:00
 categories:
   - Programlama Dilleri
   - Paralel Programlama

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Post Görünümlü Put"
-date: 2018-08-02 11:51:00 +0300
+date: 2018-08-02 11:51:00
 categories:
   - Framework Tabanlı Programlama
 tags:

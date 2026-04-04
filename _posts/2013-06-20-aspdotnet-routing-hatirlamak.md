@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Routing – Hatırlamak"
-date: 2013-06-20 05:07:00 +0300
+date: 2013-06-20 05:07:00
 categories:
   - Web Programlama
 tags:

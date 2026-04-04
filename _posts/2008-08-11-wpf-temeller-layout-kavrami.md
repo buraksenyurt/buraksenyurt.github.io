@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF Temeller : Layout Kavramı"
-date: 2008-08-11 03:00:00 +0300
+date: 2008-08-11 03:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

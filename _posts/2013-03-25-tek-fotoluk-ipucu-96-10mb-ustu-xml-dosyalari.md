@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 96–10Mb Üstü XML Dosyaları"
-date: 2013-03-25 19:28:00 +0300
+date: 2013-03-25 19:28:00
 categories:
   - Genel
 tags:

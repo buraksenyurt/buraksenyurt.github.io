@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eğlenceli SignalR"
-date: 2018-10-31 21:30:00 +0300
+date: 2018-10-31 21:30:00
 categories:
   - Framework Tabanlı Programlama
 tags:

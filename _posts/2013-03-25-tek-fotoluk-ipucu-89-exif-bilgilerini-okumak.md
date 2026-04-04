@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 89–Exif Bilgilerini Okumak"
-date: 2013-03-25 21:05:00 +0300
+date: 2013-03-25 21:05:00
 categories:
   - Genel
 tags:

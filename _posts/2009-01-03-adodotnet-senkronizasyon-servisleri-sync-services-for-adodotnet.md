@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Senkronizasyon Servisleri(Sync Services for Ado.Net)"
-date: 2009-01-03 10:00:00 +0300
+date: 2009-01-03 10:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Binding İşlemlerinde Converter Kullanımı"
-date: 2014-08-24 06:40:00 +0300
+date: 2014-08-24 06:40:00
 categories:
   - Framework Tabanlı Programlama
 tags: []

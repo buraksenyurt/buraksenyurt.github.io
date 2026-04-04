@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Duck Typing Nedir?"
-date: 2017-01-19 21:30:00 +0300
+date: 2017-01-19 21:30:00
 categories:
   - Programlama Dilleri
 tags:

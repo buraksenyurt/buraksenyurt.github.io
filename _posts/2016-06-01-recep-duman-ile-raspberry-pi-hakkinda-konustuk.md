@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Recep Duman ile Raspberry Pi Hakkında Konuştuk"
-date: 2016-06-01 13:59:00 +0300
+date: 2016-06-01 13:59:00
 categories:
   - Genel
   - IoT

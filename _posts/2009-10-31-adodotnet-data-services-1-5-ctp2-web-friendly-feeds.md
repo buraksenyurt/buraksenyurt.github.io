@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services 1.5 CTP2 - Web Friendly Feeds"
-date: 2009-10-31 11:25:00 +0300
+date: 2009-10-31 11:25:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DataSet ve WriteXml Metodunun Kullanımı"
-date: 2003-11-30 12:00:00 +0300
+date: 2003-11-30 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

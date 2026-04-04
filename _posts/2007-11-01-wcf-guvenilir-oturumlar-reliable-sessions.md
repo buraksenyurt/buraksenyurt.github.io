@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Güvenilir Oturumlar(Reliable Sessions)"
-date: 2007-11-01 12:00:00 +0300
+date: 2007-11-01 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

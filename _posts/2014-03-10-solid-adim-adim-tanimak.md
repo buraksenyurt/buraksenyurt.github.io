@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SOLID–Adım Adım Tanımak"
-date: 2014-03-10 00:00:00 +0300
+date: 2014-03-10 00:00:00
 categories:
   - Yazılım Tasarımı
 tags: []

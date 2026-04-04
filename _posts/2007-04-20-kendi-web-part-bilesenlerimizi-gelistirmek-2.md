@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kendi Web Part Bilesenlerimizi Gelistirmek - 2"
-date: 2007-04-20 12:00:00 +0300
+date: 2007-04-20 12:00:00
 categories:
   - Web Programlama
 tags:

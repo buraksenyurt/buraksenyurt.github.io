@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotolok İpucu 88–Task.WaitAll out, Parallel.Invoke in"
-date: 2013-03-25 21:00:00 +0300
+date: 2013-03-25 21:00:00
 categories:
   - Genel
 tags:

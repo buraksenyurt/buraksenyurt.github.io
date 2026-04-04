@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Şarkı Sözleri ve Eğlenceli Programlama"
-date: 2014-01-16 16:36:00 +0300
+date: 2014-01-16 16:36:00
 categories:
   - Framework Tabanlı Programlama
 tags:

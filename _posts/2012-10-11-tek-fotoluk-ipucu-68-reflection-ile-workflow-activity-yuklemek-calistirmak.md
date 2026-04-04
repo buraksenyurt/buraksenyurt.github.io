@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–68–Reflection ile Workflow Activity Yüklemek, Çalıştırmak"
-date: 2012-10-11 22:20:00 +0300
+date: 2012-10-11 22:20:00
 categories:
   - Genel
 tags:

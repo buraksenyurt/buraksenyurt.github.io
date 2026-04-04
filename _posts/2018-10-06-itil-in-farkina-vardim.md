@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ITIL'ın Farkına Vardım"
-date: 2018-10-06 18:05:00 +0300
+date: 2018-10-06 18:05:00
 categories:
   - Genel
 tags:

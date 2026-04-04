@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "İlk Bakışta Windows Workflow Foundation"
-date: 2008-01-01 12:00:00 +0300
+date: 2008-01-01 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

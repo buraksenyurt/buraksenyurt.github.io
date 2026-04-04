@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google Cloud Storage Kullanımı"
-date: 2018-05-08 07:23:00 +0300
+date: 2018-05-08 07:23:00
 categories:
   - Framework Tabanlı Programlama
   - Bulut Bilişim

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework Code First için Doğrulama(Validation) Stratejileri"
-date: 2012-11-18 06:38:00 +0300
+date: 2012-11-18 06:38:00
 categories:
   - Veritabanı
 tags:

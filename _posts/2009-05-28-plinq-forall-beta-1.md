@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PLINQ - ForAll [Beta 1]"
-date: 2009-05-28 08:43:00 +0300
+date: 2009-05-28 08:43:00
 categories:
   - Veritabanı
   - Paralel Programlama

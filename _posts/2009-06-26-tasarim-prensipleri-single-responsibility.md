@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Prensipleri - Single Responsibility"
-date: 2009-06-26 16:04:00 +0300
+date: 2009-06-26 16:04:00
 categories:
   - Yazılım Tasarımı
 tags:

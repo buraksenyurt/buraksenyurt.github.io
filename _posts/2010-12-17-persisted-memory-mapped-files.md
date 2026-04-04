@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Persisted Memory-Mapped Files"
-date: 2010-12-17 10:30:00 +0300
+date: 2010-12-17 10:30:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFS OData Desteği"
-date: 2013-08-25 10:35:00 +0300
+date: 2013-08-25 10:35:00
 categories:
   - DevOps
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Data Services– Annotations Builder"
-date: 2011-10-14 14:00:00 +0300
+date: 2011-10-14 14:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

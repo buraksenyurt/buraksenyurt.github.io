@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TPL ile WinForms Macerası [Beta 1]"
-date: 2009-06-07 11:53:00 +0300
+date: 2009-06-07 11:53:00
 categories:
   - Paralel Programlama
 tags:

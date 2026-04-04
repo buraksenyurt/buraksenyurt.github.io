@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fluent Interface Prensibi ile Daha Okunabilir Kod Geliştirmek - 1nci Yarı"
-date: 2013-12-23 01:34:00 +0300
+date: 2013-12-23 01:34:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

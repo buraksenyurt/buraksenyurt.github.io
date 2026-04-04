@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net 2.0 ve Sql Komutlarını Asenkron Olarak Yürütmek - 3"
-date: 2004-10-22 12:00:00 +0300
+date: 2004-10-22 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

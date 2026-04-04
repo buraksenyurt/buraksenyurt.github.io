@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Istemci Taraflı Asenkron Çağırma (Client Side Asynchronous Invoking)"
-date: 2007-06-13 12:00:00 +0300
+date: 2007-06-13 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

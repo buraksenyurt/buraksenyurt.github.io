@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 124 - Pratik Bir Deep Clone Senaryosu"
-date: 2015-12-13 17:00:00 +0300
+date: 2015-12-13 17:00:00
 categories:
   - Genel
 tags:

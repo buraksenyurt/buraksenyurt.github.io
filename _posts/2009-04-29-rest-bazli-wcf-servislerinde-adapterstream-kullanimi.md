@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "REST Bazlı WCF Servislerinde AdapterStream Kullanımı"
-date: 2009-04-29 16:03:00 +0300
+date: 2009-04-29 16:03:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

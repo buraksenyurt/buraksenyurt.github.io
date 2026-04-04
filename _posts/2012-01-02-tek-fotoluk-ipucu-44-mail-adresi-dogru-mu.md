@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-44 (Mail Adresi Doğru mu?)"
-date: 2012-01-02 10:40:00 +0300
+date: 2012-01-02 10:40:00
 categories:
   - Programlama Dilleri
   - Genel

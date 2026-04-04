@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 2.0 Temelleri : Bir Web Sayfasının Anatomisi"
-date: 2006-11-30 10:00:00 +0300
+date: 2006-11-30 10:00:00
 categories:
   - Web Programlama
 tags:

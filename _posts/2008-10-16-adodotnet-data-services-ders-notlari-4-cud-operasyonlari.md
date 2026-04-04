@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 4 (CUD Operasyonları)"
-date: 2008-10-16 12:00:00 +0300
+date: 2008-10-16 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

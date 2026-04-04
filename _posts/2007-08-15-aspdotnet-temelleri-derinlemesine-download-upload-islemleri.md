@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Temelleri : Derinlemesine Download/Upload İşlemleri"
-date: 2007-08-15 06:00:00 +0300
+date: 2007-08-15 06:00:00
 categories:
   - Web Programlama
 tags:

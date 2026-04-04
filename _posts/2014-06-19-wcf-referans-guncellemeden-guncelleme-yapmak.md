@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Referans Güncellemeden Güncelleme Yapmak"
-date: 2014-06-19 17:20:00 +0300
+date: 2014-06-19 17:20:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Identity Değerlerinin Çalışma Zamanında Elde Edilmesi"
-date: 2004-07-29 12:00:00 +0300
+date: 2004-07-29 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir Web API Hizmetinde Talepler ile CQ Arasında Mediator Kullanmak"
-date: 2020-05-29 17:23:00 +0300
+date: 2020-05-29 17:23:00
 categories:
   - Framework Tabanlı Programlama
 tags:

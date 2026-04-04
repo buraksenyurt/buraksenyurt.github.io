@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Managed Extensibility Framework - Hello World"
-date: 2015-01-13 15:00:00 +0300
+date: 2015-01-13 15:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

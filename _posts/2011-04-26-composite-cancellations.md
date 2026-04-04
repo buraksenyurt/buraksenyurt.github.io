@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Composite Cancellations"
-date: 2011-04-26 12:15:00 +0300
+date: 2011-04-26 12:15:00
 categories:
   - Paralel Programlama
 tags:

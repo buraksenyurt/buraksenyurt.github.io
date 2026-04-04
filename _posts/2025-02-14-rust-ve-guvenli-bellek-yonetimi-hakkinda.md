@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Rust ve Güvenli Bellek Yönetimi Hakkında"
-date: 2025-02-14 12:30:00 +0300
+date: 2025-02-14 12:30:00
 categories:
   - Programlama Dilleri
 tags:

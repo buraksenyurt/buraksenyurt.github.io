@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net 2.0 ve Bulk-Data Kopyalama Mekanizması"
-date: 2004-09-17 12:00:00 +0300
+date: 2004-09-17 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

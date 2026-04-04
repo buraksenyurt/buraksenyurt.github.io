@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Artık Svc Uzantısına Gerek Yok [Beta 1]"
-date: 2009-08-18 03:45:00 +0300
+date: 2009-08-18 03:45:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

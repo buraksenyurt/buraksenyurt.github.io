@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 15 (Mixins)"
-date: 2015-09-16 15:00:00 +0300
+date: 2015-09-16 15:00:00
 categories:
   - Programlama Dilleri
 tags:

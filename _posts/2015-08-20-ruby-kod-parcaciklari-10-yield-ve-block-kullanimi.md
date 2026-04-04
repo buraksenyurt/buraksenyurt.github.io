@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 10 (Yield ve Block Kullanımı)"
-date: 2015-08-20 15:00:00 +0300
+date: 2015-08-20 15:00:00
 categories:
   - Programlama Dilleri
 tags:

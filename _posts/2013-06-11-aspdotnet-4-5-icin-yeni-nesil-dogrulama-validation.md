@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 4.5 için Yeni Nesil Doğrulama(Validation)"
-date: 2013-06-11 14:09:00 +0300
+date: 2013-06-11 14:09:00
 categories:
   - Web Programlama
 tags:

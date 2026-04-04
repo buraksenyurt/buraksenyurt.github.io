@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Transaction' larda SavePoint Kullanımı"
-date: 2004-06-15 12:00:00 +0300
+date: 2004-06-15 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

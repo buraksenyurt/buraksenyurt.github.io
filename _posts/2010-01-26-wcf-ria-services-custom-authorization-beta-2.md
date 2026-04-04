@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Custom Authorization [Beta 2]"
-date: 2010-01-26 01:52:00 +0300
+date: 2010-01-26 01:52:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

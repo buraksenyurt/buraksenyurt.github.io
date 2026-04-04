@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - MSMQ(MicroSoft Message Queue) ile Entegrasyon"
-date: 2007-11-13 12:00:00 +0300
+date: 2007-11-13 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

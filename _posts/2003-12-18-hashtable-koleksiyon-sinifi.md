@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HashTable Koleksiyon Sınıfı"
-date: 2003-12-18 12:00:00 +0300
+date: 2003-12-18 12:00:00
 categories:
   - Programlama Dilleri
 tags:

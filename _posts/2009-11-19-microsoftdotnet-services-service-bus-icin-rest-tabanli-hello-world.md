@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft.Net Services - Service Bus için REST Tabanlı Hello World"
-date: 2009-11-19 23:45:00 +0300
+date: 2009-11-19 23:45:00
 categories:
   - Bulut Bilişim
 tags:

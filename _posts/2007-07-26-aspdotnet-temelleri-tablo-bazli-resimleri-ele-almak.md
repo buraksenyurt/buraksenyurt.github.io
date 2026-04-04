@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Temelleri : Tablo Bazlı Resimleri Ele Almak"
-date: 2007-07-26 12:00:00 +0300
+date: 2007-07-26 12:00:00
 categories:
   - Web Programlama
 tags:

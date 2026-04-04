@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reflection Sınıfı İle Tiplerin Sırrı Ortaya Çıkıyor"
-date: 2003-12-22 12:00:00 +0300
+date: 2003-12-22 12:00:00
 categories:
   - Programlama Dilleri
 tags:

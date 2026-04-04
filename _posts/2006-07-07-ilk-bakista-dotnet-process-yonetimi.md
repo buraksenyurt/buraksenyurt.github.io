@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "İlk Bakışta .Net Process Yönetimi"
-date: 2006-07-07 12:00:00 +0300
+date: 2006-07-07 12:00:00
 categories:
   - Programlama Dilleri
 tags:

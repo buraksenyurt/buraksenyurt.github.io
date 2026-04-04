@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Satranç ve ELO Puanlama Sistemi"
-date: 2018-10-01 09:08:00 +0300
+date: 2018-10-01 09:08:00
 categories:
   - Genel
 tags:

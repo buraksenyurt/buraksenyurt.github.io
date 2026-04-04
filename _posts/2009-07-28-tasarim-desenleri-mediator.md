@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Mediator"
-date: 2009-07-28 09:04:00 +0300
+date: 2009-07-28 09:04:00
 categories:
   - Yazılım Tasarımı
 tags:

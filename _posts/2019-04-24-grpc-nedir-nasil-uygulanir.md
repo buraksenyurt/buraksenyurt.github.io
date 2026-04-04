@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "gRPC Nedir, Nasıl Uygulanır?"
-date: 2019-04-24 07:06:00 +0300
+date: 2019-04-24 07:06:00
 categories:
   - Web Programlama
 tags:

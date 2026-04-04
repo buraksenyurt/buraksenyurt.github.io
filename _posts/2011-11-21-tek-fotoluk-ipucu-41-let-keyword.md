@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-41(Let Keyword)"
-date: 2011-11-21 09:35:00 +0300
+date: 2011-11-21 09:35:00
 categories:
   - Programlama Dilleri
   - Genel

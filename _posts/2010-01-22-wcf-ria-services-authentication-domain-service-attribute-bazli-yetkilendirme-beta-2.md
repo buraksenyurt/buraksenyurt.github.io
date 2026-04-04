@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Authentication Domain Service - Attribute Bazlı Yetkilendirme [Beta 2]"
-date: 2010-01-22 00:45:00 +0300
+date: 2010-01-22 00:45:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

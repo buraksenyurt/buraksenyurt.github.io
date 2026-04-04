@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net 4.0 - Lazy Initialization [Beta 2]"
-date: 2009-12-14 01:30:00 +0300
+date: 2009-12-14 01:30:00
 categories:
   - Programlama Dilleri
 tags:

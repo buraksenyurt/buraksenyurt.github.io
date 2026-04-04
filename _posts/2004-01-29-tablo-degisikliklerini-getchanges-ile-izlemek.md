@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tablo Değişikliklerini GetChanges ile İzlemek"
-date: 2004-01-29 12:00:00 +0300
+date: 2004-01-29 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir React Uygulamasında En Ala SQL Veritabanını Kullanmak"
-date: 2019-11-11 10:30:00 +0300
+date: 2019-11-11 10:30:00
 categories:
   - Web Programlama
 tags:

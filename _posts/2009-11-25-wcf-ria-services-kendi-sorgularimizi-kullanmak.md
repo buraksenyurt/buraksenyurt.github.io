@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Kendi Sorgularımızı Kullanmak"
-date: 2009-11-25 04:30:00 +0300
+date: 2009-11-25 04:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 154 - C# 7.0 out İyileştirmesi"
-date: 2017-03-19 21:45:00 +0300
+date: 2017-03-19 21:45:00
 categories:
   - Programlama Dilleri
 tags:

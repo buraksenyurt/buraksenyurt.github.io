@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-18 (5 Parametreden Fazlası için Struct)"
-date: 2011-07-13 03:48:00 +0300
+date: 2011-07-13 03:48:00
 categories:
   - Programlama Dilleri
   - Genel

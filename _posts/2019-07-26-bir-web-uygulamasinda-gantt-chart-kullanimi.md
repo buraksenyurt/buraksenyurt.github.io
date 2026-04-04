@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir Web Uygulamasında Gantt Chart Kullanımı"
-date: 2019-07-26 13:00:00 +0300
+date: 2019-07-26 13:00:00
 categories:
   - Web Programlama
 tags:

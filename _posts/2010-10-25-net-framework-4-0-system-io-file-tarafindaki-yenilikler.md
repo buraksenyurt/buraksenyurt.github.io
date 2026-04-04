@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Framework 4.0 System.IO.File Tarafındaki Yenilikler"
-date: 2010-10-25 21:45:00 +0300
+date: 2010-10-25 21:45:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

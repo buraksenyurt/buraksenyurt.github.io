@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Teknik Borçları(Technical Debt) Azaltmak"
-date: 2019-01-04 05:03:00 +0300
+date: 2019-01-04 05:03:00
 categories:
   - DevOps
 tags:

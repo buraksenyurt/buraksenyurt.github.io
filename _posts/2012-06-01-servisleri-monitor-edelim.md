@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Servisleri Monitor Edelim"
-date: 2012-06-01 01:12:00 +0300
+date: 2012-06-01 01:12:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ubuntu'da İlk .Net Core Adımlarım"
-date: 2017-11-05 10:17:00 +0300
+date: 2017-11-05 10:17:00
 categories:
   - Framework Tabanlı Programlama
 tags:

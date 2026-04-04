@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 102–Ne Zaman XmlInclude Gerekir?"
-date: 2013-06-23 11:00:00 +0300
+date: 2013-06-23 11:00:00
 categories:
   - Genel
 tags:

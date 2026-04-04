@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Klasik ASP Sayfasından REST Servis Çağırmak"
-date: 2016-02-24 12:00:00 +0300
+date: 2016-02-24 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

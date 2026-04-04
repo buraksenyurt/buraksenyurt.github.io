@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AntiPatterns Ders Notlarım"
-date: 2014-02-28 13:10:00 +0300
+date: 2014-02-28 13:10:00
 categories:
   - Yazılım Tasarımı
 tags: []

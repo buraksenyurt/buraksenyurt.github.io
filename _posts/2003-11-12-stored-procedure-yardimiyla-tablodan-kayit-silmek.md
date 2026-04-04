@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Stored Procedure Yardımıyla Tablodan Kayıt Silmek"
-date: 2003-11-12 12:00:00 +0300
+date: 2003-11-12 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

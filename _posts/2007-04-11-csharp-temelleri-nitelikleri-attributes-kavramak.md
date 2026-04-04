@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# Temelleri : Nitelikleri(Attributes) Kavramak"
-date: 2007-04-11 03:00:00 +0300
+date: 2007-04-11 03:00:00
 categories:
   - Programlama Dilleri
 tags:

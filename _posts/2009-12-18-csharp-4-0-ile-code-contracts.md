@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 4.0 ile Code Contracts"
-date: 2009-12-18 05:40:00 +0300
+date: 2009-12-18 05:40:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 94–WMI ile Disk Bilgilerini Okumak"
-date: 2013-03-25 21:22:00 +0300
+date: 2013-03-25 21:22:00
 categories:
   - Genel
 tags:

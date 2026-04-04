@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "5000 Feet Yüksekten Workflow Foundation 4.0[Beta 1]"
-date: 2009-10-01 13:54:00 +0300
+date: 2009-10-01 13:54:00
 categories:
   - Framework Tabanlı Programlama
 tags:

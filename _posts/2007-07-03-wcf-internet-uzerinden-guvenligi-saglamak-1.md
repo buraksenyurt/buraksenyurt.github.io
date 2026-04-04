@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Internet Üzerinden Güvenliği Sağlamak - 1"
-date: 2007-07-03 12:00:00 +0300
+date: 2007-07-03 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

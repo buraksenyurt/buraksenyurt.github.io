@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Paralel Programlamada İstisna Yönetimi"
-date: 2011-01-13 13:30:00 +0300
+date: 2011-01-13 13:30:00
 categories:
   - Paralel Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework - Code First Migration Webineri Yayında"
-date: 2012-02-23 03:22:00 +0300
+date: 2012-02-23 03:22:00
 categories:
   - Veritabanı
   - Genel

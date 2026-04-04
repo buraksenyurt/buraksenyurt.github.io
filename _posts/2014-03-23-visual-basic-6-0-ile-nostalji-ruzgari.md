@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Visual Basic 6.0 ile Nostalji Rüzgarı"
-date: 2014-03-23 04:18:00 +0300
+date: 2014-03-23 04:18:00
 categories:
   - Genel
 tags: []

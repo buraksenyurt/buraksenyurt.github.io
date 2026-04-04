@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir Web API Servisi Nasıl Hata Döndürmeli ?"
-date: 2018-11-19 06:28:00 +0300
+date: 2018-11-19 06:28:00
 categories:
   - Framework Tabanlı Programlama
 tags:

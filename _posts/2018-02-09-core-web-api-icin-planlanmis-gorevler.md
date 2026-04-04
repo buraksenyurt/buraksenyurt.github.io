@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Core Web API  için Planlanmış Görevler"
-date: 2018-02-09 04:27:00 +0300
+date: 2018-02-09 04:27:00
 categories:
   - Framework Tabanlı Programlama
 tags:

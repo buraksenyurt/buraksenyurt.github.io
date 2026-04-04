@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DataGrid Denetimi Üzerinde Sayfalama(Paging) İşlemi"
-date: 2003-12-16 12:00:00 +0300
+date: 2003-12-16 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

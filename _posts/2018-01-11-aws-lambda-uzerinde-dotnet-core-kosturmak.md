@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Lambda Üzerinde .Net Core Koşturmak"
-date: 2018-01-11 21:30:00 +0300
+date: 2018-01-11 21:30:00
 categories:
   - Framework Tabanlı Programlama
   - Bulut Bilişim

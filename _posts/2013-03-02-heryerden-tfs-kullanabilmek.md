@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Heryerden TFS Kullanabilmek"
-date: 2013-03-02 08:50:00 +0300
+date: 2013-03-02 08:50:00
 categories:
   - DevOps
 tags:

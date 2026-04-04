@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - Loglama"
-date: 2022-01-30 13:45:00 +0300
+date: 2022-01-30 13:45:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API ile OData Kullanımı"
-date: 2016-04-21 09:00:00 +0300
+date: 2016-04-21 09:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 132 - Bir Tipin Özelliklerine Varsayılan Değerlerini Set Etmek"
-date: 2016-06-05 18:00:00 +0300
+date: 2016-06-05 18:00:00
 categories:
   - Genel
 tags:

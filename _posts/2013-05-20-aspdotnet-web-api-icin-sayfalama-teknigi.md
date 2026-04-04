@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API için Sayfalama Tekniği"
-date: 2013-05-20 06:11:00 +0300
+date: 2013-05-20 06:11:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

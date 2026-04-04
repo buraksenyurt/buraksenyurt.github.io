@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Servislerinin Kontrolü -1"
-date: 2004-05-05 09:00:00 +0300
+date: 2004-05-05 09:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

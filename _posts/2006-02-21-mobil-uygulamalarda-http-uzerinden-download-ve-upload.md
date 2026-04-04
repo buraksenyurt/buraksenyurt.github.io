@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mobil Uygulamalarda Http Üzerinden Download ve Upload"
-date: 2006-02-21 10:00:00 +0300
+date: 2006-02-21 10:00:00
 categories:
   - Mobil Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "LINQ to SQL – EF 4.0 (Aradaki 9 Farkı Bulun)"
-date: 2010-09-20 15:07:00 +0300
+date: 2010-09-20 15:07:00
 categories:
   - Veritabanı
 tags:

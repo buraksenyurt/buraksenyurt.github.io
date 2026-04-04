@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API Security - Giriş ve Custom Basic Authentication Module"
-date: 2013-04-30 07:05:00 +0300
+date: 2013-04-30 07:05:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eğlenceli Sayılabilecek bir SignalR Uygulaması"
-date: 2020-03-31 21:44:00 +0300
+date: 2020-03-31 21:44:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 126 - XML Tabanlı Metinsel İçerikleri Nesneleştirme"
-date: 2016-01-04 07:00:00 +0300
+date: 2016-01-04 07:00:00
 categories:
   - Genel
 tags:

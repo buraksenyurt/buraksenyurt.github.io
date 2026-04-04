@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NoSQL Maceraları - MemCached ile Hello World"
-date: 2013-12-18 23:45:00 +0300
+date: 2013-12-18 23:45:00
 categories:
   - Veritabanı
 tags:

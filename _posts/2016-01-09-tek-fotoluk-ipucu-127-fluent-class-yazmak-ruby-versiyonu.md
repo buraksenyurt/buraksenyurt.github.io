@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 127 – Fluent Class Yazmak (Ruby versiyonu)"
-date: 2016-01-09 20:00:00 +0300
+date: 2016-01-09 20:00:00
 categories:
   - Genel
 tags:

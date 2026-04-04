@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Core - Dependency Lifetimes"
-date: 2021-04-30 23:54:00 +0300
+date: 2021-04-30 23:54:00
 categories:
   - Web Programlama
 tags:

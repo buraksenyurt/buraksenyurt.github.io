@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Authentication Domain Service - Profile ve Role"
-date: 2010-01-20 16:10:00 +0300
+date: 2010-01-20 16:10:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

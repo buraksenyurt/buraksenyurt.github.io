@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Angular ile Basit Bir Görevler Listesi Uygulaması Yazmak"
-date: 2019-05-08 06:00:00 +0300
+date: 2019-05-08 06:00:00
 categories:
   - Web Programlama
 tags:

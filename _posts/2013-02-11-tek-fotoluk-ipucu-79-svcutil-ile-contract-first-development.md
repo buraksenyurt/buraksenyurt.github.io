@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 79– svcutil ile Contract-First Development"
-date: 2013-02-11 02:56:00 +0300
+date: 2013-02-11 02:56:00
 categories:
   - Genel
 tags:

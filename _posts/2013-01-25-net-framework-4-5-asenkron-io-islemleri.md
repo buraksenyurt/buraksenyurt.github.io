@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Framework 4.5 Asenkron IO İşlemleri"
-date: 2013-01-25 02:27:00 +0300
+date: 2013-01-25 02:27:00
 categories:
   - Framework Tabanlı Programlama
 tags:

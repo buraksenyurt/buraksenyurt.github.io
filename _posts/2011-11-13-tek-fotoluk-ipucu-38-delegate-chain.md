@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-38(Delegate Chain)"
-date: 2011-11-13 08:45:00 +0300
+date: 2011-11-13 08:45:00
 categories:
   - Programlama Dilleri
   - Genel

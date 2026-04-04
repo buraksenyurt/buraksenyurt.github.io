@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 115 - C# 6.0 Pratikleri (Dictionary Initializer)"
-date: 2015-06-11 12:09:00 +0300
+date: 2015-06-11 12:09:00
 categories:
   - Genel
 tags:

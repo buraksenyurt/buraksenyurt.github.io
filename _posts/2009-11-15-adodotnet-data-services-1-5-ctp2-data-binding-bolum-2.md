@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services 1.5 CTP2 - Data Binding Bölüm 2"
-date: 2009-11-15 23:09:00 +0300
+date: 2009-11-15 23:09:00
 categories:
   - Framework Tabanlı Programlama
 tags:

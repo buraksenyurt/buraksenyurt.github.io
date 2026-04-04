@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sequelize Kullanılan Bir NodeJs Rest Servisi Geliştirmek"
-date: 2020-05-27 20:23:00 +0300
+date: 2020-05-27 20:23:00
 categories:
   - Web Programlama
 tags:

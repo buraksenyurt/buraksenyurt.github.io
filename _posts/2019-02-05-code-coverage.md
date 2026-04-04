@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Code Coverage"
-date: 2019-02-05 21:01:00 +0300
+date: 2019-02-05 21:01:00
 categories:
   - Framework Tabanlı Programlama
 tags:

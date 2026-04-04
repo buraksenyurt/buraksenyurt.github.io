@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Default Behavior Configuration [Beta 1]"
-date: 2009-08-13 10:01:00 +0300
+date: 2009-08-13 10:01:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cross-Page Postback Paradigması"
-date: 2006-08-04 12:00:00 +0300
+date: 2006-08-04 12:00:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Elastic Beanstalk Macerası"
-date: 2018-02-16 05:00:00 +0300
+date: 2018-02-16 05:00:00
 categories:
   - Bulut Bilişim
   - Programlama Dilleri

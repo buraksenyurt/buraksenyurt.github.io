@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nedir Bu MSBuild?"
-date: 2013-08-01 07:47:00 +0300
+date: 2013-08-01 07:47:00
 categories:
   - Framework Tabanlı Programlama
   - DevOps

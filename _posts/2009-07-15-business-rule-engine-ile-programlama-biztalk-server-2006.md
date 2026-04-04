@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Business Rule Engine ile Programlama(Biztalk Server 2006)"
-date: 2009-07-15 13:30:00 +0300
+date: 2009-07-15 13:30:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Harici Paket(Package) Yazıp Kullanmak"
-date: 2017-01-28 14:42:00 +0300
+date: 2017-01-28 14:42:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Değişken Atamalarında Bir Efsane"
-date: 2010-04-12 02:30:00 +0300
+date: 2010-04-12 02:30:00
 categories:
   - Programlama Dilleri
 tags:

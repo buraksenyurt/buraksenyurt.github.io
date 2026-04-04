@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 1)"
-date: 2004-11-06 04:00:00 +0300
+date: 2004-11-06 04:00:00
 categories:
   - Programlama Dilleri
 tags:

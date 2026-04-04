@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hexagonal Architecture 101"
-date: 2026-03-13 19:31:00 +0300
+date: 2026-03-13 19:31:00
 categories:
   - Programlama Dilleri
 tags:

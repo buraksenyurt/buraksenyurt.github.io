@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JSON to BSON"
-date: 2017-04-30 21:36:00 +0300
+date: 2017-04-30 21:36:00
 categories:
   - Programlama Dilleri
 tags:

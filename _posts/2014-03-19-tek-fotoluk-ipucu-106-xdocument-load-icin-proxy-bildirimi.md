@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 106 - XDocument.Load için Proxy Bildirimi"
-date: 2014-03-19 15:45:00 +0300
+date: 2014-03-19 15:45:00
 categories:
   - Genel
 tags: []

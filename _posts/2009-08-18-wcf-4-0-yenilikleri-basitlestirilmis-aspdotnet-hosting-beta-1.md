@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Basitleştirilmiş Asp.Net Hosting [Beta 1]"
-date: 2009-08-18 03:10:00 +0300
+date: 2009-08-18 03:10:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

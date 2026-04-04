@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–73–LINQ to Excel için Strongly Typed Tip Kullanmak"
-date: 2012-11-27 04:10:00 +0300
+date: 2012-11-27 04:10:00
 categories:
   - Genel
 tags:

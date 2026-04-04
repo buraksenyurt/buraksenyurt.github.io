@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Custom Activity Designer Geliştirmek"
-date: 2012-06-12 07:00:00 +0300
+date: 2012-06-12 07:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CORS(Cross-Origin Resource Sharing)"
-date: 2017-12-29 21:01:00 +0300
+date: 2017-12-29 21:01:00
 categories:
   - Framework Tabanlı Programlama
 tags:

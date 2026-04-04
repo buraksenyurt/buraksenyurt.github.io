@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Transaction Kavramı"
-date: 2003-11-17 10:00:00 +0300
+date: 2003-11-17 10:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

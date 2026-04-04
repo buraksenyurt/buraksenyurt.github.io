@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Checked, Unchecked Anahtar Kelimeleri ve OverFlow Hatası"
-date: 2004-01-15 12:00:00 +0300
+date: 2004-01-15 12:00:00
 categories:
   - Programlama Dilleri
 tags:

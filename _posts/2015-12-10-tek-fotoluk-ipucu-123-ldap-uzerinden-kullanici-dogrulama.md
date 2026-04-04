@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 123 - LDAP Üzerinden Kullanıcı Doğrulama"
-date: 2015-12-10 11:00:00 +0300
+date: 2015-12-10 11:00:00
 categories:
   - Genel
 tags:

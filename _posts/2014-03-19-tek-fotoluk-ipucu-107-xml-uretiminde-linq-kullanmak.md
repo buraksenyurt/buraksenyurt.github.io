@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 107 - XML Üretiminde LINQ Kullanmak"
-date: 2014-03-19 15:50:00 +0300
+date: 2014-03-19 15:50:00
 categories:
   - Genel
 tags: []

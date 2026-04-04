@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hey Raspi! Gerçekten Çok Güçlü Bir Bilgisayara İhtiyacım Var mı?"
-date: 2019-09-16 10:13:00 +0300
+date: 2019-09-16 10:13:00
 categories:
   - IoT
 tags:

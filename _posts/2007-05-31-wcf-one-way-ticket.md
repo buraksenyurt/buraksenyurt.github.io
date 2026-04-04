@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - One Way Ticket"
-date: 2007-05-31 09:00:00 +0300
+date: 2007-05-31 09:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

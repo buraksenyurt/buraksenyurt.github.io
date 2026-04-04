@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-39(Dynamic Delegate Üretmek)"
-date: 2011-11-14 14:45:00 +0300
+date: 2011-11-14 14:45:00
 categories:
   - Programlama Dilleri
   - Genel

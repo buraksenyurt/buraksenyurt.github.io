@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nasıl Yapılır : Connected(Bağlı) Web Parts"
-date: 2006-12-26 12:00:00 +0300
+date: 2006-12-26 12:00:00
 categories:
   - Web Programlama
 tags:

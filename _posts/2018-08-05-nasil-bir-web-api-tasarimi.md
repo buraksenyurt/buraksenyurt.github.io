@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nasıl bir Web API Tasarımı?"
-date: 2018-08-05 21:30:00 +0300
+date: 2018-08-05 21:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

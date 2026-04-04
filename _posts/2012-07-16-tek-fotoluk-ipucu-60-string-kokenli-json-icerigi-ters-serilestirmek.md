@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 60 - string Kökenli JSON İçeriği Ters Serileştirmek"
-date: 2012-07-16 21:03:00 +0300
+date: 2012-07-16 21:03:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Haydi Bir Captcha Kontrolü Yazalım"
-date: 2011-09-26 23:11:00 +0300
+date: 2011-09-26 23:11:00
 categories:
   - Web Programlama
 tags:

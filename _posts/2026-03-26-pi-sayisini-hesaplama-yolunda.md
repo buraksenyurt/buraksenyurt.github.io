@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pi(π) Sayısını Hesaplama Yolunda"
-date: 2026-03-26 20:30:00 +0300
+date: 2026-03-26 20:30:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Strongly Typed DataSet - 1 (Kuvvetle Türlendirilmiş Veri Kümeleri)"
-date: 2004-02-04 12:00:00 +0300
+date: 2004-02-04 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 117 - LINQtoExcel ile Hello World"
-date: 2015-06-20 07:47:00 +0300
+date: 2015-06-20 07:47:00
 categories:
   - Genel
 tags:

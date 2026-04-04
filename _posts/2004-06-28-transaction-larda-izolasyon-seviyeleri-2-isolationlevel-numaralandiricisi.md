@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Transaction' larda Izolasyon Seviyeleri -2 (IsolationLevel Numaralandırıcısı)"
-date: 2004-06-28 12:00:00 +0300
+date: 2004-06-28 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

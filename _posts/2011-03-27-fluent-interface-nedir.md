@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fluent Interface Nedir?"
-date: 2011-03-27 05:15:00 +0300
+date: 2011-03-27 05:15:00
 categories:
   - Programlama Dilleri
 tags:

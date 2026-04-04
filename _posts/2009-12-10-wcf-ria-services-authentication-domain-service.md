@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Authentication Domain Service"
-date: 2009-12-10 04:40:00 +0300
+date: 2009-12-10 04:40:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

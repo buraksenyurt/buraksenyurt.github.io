@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework - POCO ve Lazy Loading"
-date: 2010-05-09 21:55:00 +0300
+date: 2010-05-09 21:55:00
 categories:
   - Veritabanı
 tags:

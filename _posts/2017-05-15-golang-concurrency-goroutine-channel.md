@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Concurrency (goroutine, channel)"
-date: 2017-05-15 11:52:00 +0300
+date: 2017-05-15 11:52:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "EF Core ile MariaDb Kullanımı"
-date: 2018-02-19 17:18:00 +0300
+date: 2018-02-19 17:18:00
 categories:
   - Framework Tabanlı Programlama
 tags:

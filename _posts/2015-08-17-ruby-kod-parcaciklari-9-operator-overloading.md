@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 9 (Operator Overloading)"
-date: 2015-08-17 09:00:00 +0300
+date: 2015-08-17 09:00:00
 categories:
   - Programlama Dilleri
 tags:

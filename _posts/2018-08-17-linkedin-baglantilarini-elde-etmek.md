@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linkedin Bağlantılarını Elde Etmek"
-date: 2018-08-17 21:30:00 +0300
+date: 2018-08-17 21:30:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Kalıtımsız Bir Dünya"
-date: 2017-02-25 21:38:00 +0300
+date: 2017-02-25 21:38:00
 categories:
   - Programlama Dilleri
 tags:

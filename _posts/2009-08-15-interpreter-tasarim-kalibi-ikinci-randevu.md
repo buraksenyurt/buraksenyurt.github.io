@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Interpreter Tasarım Kalıbı - İkinci Randevu"
-date: 2009-08-15 17:37:00 +0300
+date: 2009-08-15 17:37:00
 categories:
   - Yazılım Tasarımı
 tags:

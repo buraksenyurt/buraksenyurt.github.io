@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–74–SequenceEqual<T>"
-date: 2012-12-10 20:40:00 +0300
+date: 2012-12-10 20:40:00
 categories:
   - Genel
 tags:

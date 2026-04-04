@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Workflow Services - Custom Authorization"
-date: 2010-03-22 04:30:00 +0300
+date: 2010-03-22 04:30:00
 categories:
   - Servis Tabanlı Geliştirme
   - Framework Tabanlı Programlama

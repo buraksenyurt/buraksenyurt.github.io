@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 4.0 - Metod Overloading ve Dynamic Tipler"
-date: 2010-04-13 04:40:00 +0300
+date: 2010-04-13 04:40:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Tv - Design Patterns : Proxy"
-date: 2009-05-07 15:25:00 +0300
+date: 2009-05-07 15:25:00
 categories:
   - Yazılım Tasarımı
 tags:

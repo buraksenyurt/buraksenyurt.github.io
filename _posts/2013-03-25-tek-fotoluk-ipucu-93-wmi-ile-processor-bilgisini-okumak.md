@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 93–WMI ile Processor Bilgisini Okumak"
-date: 2013-03-25 21:20:00 +0300
+date: 2013-03-25 21:20:00
 categories:
   - Genel
 tags:

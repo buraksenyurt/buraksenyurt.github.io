@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ocelot - .Net Core Tarafında Bir API Gateway Denemesi"
-date: 2020-12-16 11:51:00 +0300
+date: 2020-12-16 11:51:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Simple Stack ile Bir Başka TDD Pratiği"
-date: 2018-08-09 13:18:00 +0300
+date: 2018-08-09 13:18:00
 categories:
   - Algoritma
 tags:

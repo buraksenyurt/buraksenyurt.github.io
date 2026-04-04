@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Smart Enums"
-date: 2026-04-01 18:00:00 +0300
+date: 2026-04-01 18:00:00
 categories:
   - Programlama Dilleri
 tags:

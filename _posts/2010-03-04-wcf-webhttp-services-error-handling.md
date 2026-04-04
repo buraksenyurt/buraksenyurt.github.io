@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - Error Handling"
-date: 2010-03-04 23:10:00 +0300
+date: 2010-03-04 23:10:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Iterator"
-date: 2009-07-30 12:52:00 +0300
+date: 2009-07-30 12:52:00
 categories:
   - Yazılım Tasarımı
 tags:

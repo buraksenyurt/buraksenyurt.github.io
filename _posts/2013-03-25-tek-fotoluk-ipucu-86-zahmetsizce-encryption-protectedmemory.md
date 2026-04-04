@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 86–Zahmetsizce Encryption (ProtectedMemory)"
-date: 2013-03-25 20:50:00 +0300
+date: 2013-03-25 20:50:00
 categories:
   - Genel
 tags:

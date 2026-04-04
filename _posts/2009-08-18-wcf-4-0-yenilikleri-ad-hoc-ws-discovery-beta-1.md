@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Ad Hoc WS-Discovery [Beta 1]"
-date: 2009-08-18 09:23:00 +0300
+date: 2009-08-18 09:23:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Binary Search Tree' yi Anlamak"
-date: 2012-01-09 11:01:00 +0300
+date: 2012-01-09 11:01:00
 categories:
   - Algoritma
   - Programlama Dilleri

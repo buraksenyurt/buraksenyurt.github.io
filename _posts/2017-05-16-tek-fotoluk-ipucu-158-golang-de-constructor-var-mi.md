@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 158 - GoLang'de Constructor var mı?"
-date: 2017-05-16 18:17:00 +0300
+date: 2017-05-16 18:17:00
 categories:
   - Programlama Dilleri
 tags:

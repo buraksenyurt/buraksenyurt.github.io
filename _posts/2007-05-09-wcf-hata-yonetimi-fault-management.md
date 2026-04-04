@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Hata Yönetimi (Fault Management)"
-date: 2007-05-09 06:00:00 +0300
+date: 2007-05-09 06:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - HTTP Cache Desteği [Beta 1]"
-date: 2009-09-22 13:07:00 +0300
+date: 2009-09-22 13:07:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

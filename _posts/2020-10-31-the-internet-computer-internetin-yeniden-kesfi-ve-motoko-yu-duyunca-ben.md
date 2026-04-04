@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Internet Computer (Internetin Yeniden Keşfi) ve Motoko'yu Duyunca Ben"
-date: 2020-10-31 22:31:00 +0300
+date: 2020-10-31 22:31:00
 categories:
   - Programlama Dilleri
 tags:

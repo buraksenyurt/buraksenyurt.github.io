@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net 2.0 ve Data Provider-Independent Mimari"
-date: 2005-04-24 12:00:00 +0300
+date: 2005-04-24 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

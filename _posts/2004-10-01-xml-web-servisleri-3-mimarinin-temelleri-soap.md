@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Xml Web Servisleri - 3 ( Mimarinin Temelleri - SOAP)"
-date: 2004-10-01 12:00:00 +0300
+date: 2004-10-01 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

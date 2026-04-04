@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-33(Xml Cast)"
-date: 2011-10-10 07:00:00 +0300
+date: 2011-10-10 07:00:00
 categories:
   - Programlama Dilleri
   - Genel

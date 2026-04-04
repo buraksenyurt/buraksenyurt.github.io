@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Prensipleri - Open Closed"
-date: 2009-06-25 04:22:00 +0300
+date: 2009-06-25 04:22:00
 categories:
   - Yazılım Tasarımı
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Blazor ile Hello World Uygulaması Geliştirmek"
-date: 2019-06-07 11:00:00 +0300
+date: 2019-06-07 11:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

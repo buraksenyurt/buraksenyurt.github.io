@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 4.0 - Invariance, Covariance, Contravariance ???"
-date: 2009-12-22 07:15:00 +0300
+date: 2009-12-22 07:15:00
 categories:
   - Programlama Dilleri
 tags:

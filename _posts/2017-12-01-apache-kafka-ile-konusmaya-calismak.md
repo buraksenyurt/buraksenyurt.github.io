@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Apache Kafka ile Konuşmaya Çalışmak"
-date: 2017-12-01 06:01:00 +0300
+date: 2017-12-01 06:01:00
 categories:
   - Framework Tabanlı Programlama
 tags:

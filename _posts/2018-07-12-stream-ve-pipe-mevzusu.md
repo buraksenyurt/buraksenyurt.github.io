@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Stream ve Pipe Mevzusu"
-date: 2018-07-12 21:30:00 +0300
+date: 2018-07-12 21:30:00
 categories:
   - Web Programlama
 tags:

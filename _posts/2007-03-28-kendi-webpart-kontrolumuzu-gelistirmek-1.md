@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kendi WebPart Kontrolümüzü Geliştirmek - 1"
-date: 2007-03-28 11:47:00 +0300
+date: 2007-03-28 11:47:00
 categories:
   - Web Programlama
 tags:

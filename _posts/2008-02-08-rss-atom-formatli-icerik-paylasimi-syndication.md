@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RSS, Atom Formatlı İçerik Paylaşımı(Syndication)"
-date: 2008-02-08 12:00:00 +0300
+date: 2008-02-08 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Windows CardSpace ile Güvenlik"
-date: 2007-10-25 12:00:00 +0300
+date: 2007-10-25 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

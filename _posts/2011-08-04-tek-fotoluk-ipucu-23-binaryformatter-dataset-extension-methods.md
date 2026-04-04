@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-23 (BinaryFormatter, DataSet, Extension Methods)"
-date: 2011-08-04 21:38:00 +0300
+date: 2011-08-04 21:38:00
 categories:
   - Programlama Dilleri
   - Genel

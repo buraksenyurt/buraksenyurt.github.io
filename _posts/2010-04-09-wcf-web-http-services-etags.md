@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Web Http Services - ETags"
-date: 2010-04-09 05:05:00 +0300
+date: 2010-04-09 05:05:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-22 (GetCommandLineArgs)"
-date: 2011-08-01 00:31:00 +0300
+date: 2011-08-01 00:31:00
 categories:
   - Programlama Dilleri
   - Genel

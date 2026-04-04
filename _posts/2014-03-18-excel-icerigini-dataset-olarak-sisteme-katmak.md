@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Excel İçeriğini DataSet Olarak Sisteme Katmak"
-date: 2014-03-18 19:13:00 +0300
+date: 2014-03-18 19:13:00
 categories:
   - Programlama Dilleri
 tags: []

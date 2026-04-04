@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Hello World [Beta 1]"
-date: 2009-08-26 15:03:00 +0300
+date: 2009-08-26 15:03:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

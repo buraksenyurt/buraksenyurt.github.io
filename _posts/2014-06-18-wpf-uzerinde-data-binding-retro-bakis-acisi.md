@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF Üzerinde Data Binding– Retro Bakış Açısı"
-date: 2014-06-18 16:55:00 +0300
+date: 2014-06-18 16:55:00
 categories:
   - Framework Tabanlı Programlama
 tags:

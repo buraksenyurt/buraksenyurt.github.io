@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Overload Metodların Gücü"
-date: 2003-11-13 13:00:00 +0300
+date: 2003-11-13 13:00:00
 categories:
   - Programlama Dilleri
 tags:

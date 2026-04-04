@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Bir Merhaba Diyelim"
-date: 2009-11-24 01:56:00 +0300
+date: 2009-11-24 01:56:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

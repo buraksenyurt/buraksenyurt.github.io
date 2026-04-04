@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API’ leri ASPX’ den Asenkron Çağırmak"
-date: 2012-11-14 00:00:00 +0300
+date: 2012-11-14 06:45:00
 categories:
   - Framework Tabanlı Programlama
 tags:

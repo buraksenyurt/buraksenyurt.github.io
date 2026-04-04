@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF - Grafik İşlemlerinde Fırçaların(Brushes) Kullanımı"
-date: 2007-09-11 12:00:00 +0300
+date: 2007-09-11 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

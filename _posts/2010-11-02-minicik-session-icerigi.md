@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Minicik Session İçeriği"
-date: 2010-11-02 15:10:00 +0300
+date: 2010-11-02 15:10:00
 categories:
   - Web Programlama
 tags:

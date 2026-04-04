@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.5–Task Based Asynchronous Operasyonlar"
-date: 2013-01-01 13:51:00 +0300
+date: 2013-01-01 13:51:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

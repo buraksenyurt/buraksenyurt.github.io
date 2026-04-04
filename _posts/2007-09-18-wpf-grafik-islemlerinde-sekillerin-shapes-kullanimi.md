@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF - Grafik İşlemlerinde Şekillerin(Shapes) Kullanımı"
-date: 2007-09-18 09:00:00 +0300
+date: 2007-09-18 09:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

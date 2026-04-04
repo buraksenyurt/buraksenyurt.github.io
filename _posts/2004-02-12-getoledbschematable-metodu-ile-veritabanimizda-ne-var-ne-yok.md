@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GetOleDbSchemaTable Metodu İle Veritabanımızda Ne Var Ne Yok"
-date: 2004-02-12 12:00:00 +0300
+date: 2004-02-12 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "LINQ Sorgusu mu? ForEach mi? Bir Türlü Karar Veremedim"
-date: 2010-05-27 20:40:00 +0300
+date: 2010-05-27 20:40:00
 categories:
   - Programlama Dilleri
   - Veritabanı

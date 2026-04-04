@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Vue ve NW.js ile Desktop Uygulaması Geliştirmek"
-date: 2019-06-14 13:00:00 +0300
+date: 2019-06-14 13:00:00
 categories:
   - Web Programlama
 tags:

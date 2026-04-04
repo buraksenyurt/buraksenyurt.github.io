@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 4.0 - Özelleştirilmiş Cache Sağlayıcısı(Custom Cache Provider) [Beta 2]"
-date: 2009-11-17 06:10:00 +0300
+date: 2009-11-17 06:10:00
 categories:
   - Web Programlama
 tags:

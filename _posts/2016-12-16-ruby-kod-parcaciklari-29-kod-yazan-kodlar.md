@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 29 - Kod Yazan Kodlar"
-date: 2016-12-16 16:51:00 +0300
+date: 2016-12-16 16:51:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task Parallel Library(TPL) - Detached Tasks [Beta 2]"
-date: 2009-11-12 06:00:00 +0300
+date: 2009-11-12 06:00:00
 categories:
   - Paralel Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Copilot SDK ile İlk Deneyimler"
-date: 2026-03-03 14:40:00 +0300
+date: 2026-03-03 14:40:00
 categories:
   - Programlama Dilleri
 tags:

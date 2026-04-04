@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dependency Inversion Principle - Kavramak"
-date: 2013-05-03 00:10:00 +0300
+date: 2013-05-03 00:10:00
 categories:
   - Yazılım Tasarımı
 tags:

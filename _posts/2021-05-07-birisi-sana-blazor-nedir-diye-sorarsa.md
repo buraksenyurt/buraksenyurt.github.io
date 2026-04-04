@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Birisi Sana \\\"Blazor Nedir?\\\" Diye Sorarsa"
-date: 2021-05-07 22:04:00 +0300
+date: 2021-05-07 22:04:00
 categories:
   - Web Programlama
 tags:

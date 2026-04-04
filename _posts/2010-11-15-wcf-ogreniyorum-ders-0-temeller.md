@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Öğreniyorum Ders 0–Temeller"
-date: 2010-11-15 08:30:00 +0300
+date: 2010-11-15 08:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

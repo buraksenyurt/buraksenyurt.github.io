@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Business Delegate Pattern"
-date: 2016-05-02 06:00:00 +0300
+date: 2016-05-02 06:00:00
 categories:
   - Yazılım Tasarımı
 tags:

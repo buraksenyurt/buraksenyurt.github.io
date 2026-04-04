@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WF Ado.Net Entity Pack - Hello World"
-date: 2010-05-03 01:00:00 +0300
+date: 2010-05-03 01:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

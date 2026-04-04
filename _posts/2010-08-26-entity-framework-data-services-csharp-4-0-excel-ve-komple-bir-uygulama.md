@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework, Data Services, C# 4.0, Excel ve Komple Bir Uygulama"
-date: 2010-08-26 04:50:00 +0300
+date: 2010-08-26 04:50:00
 categories:
   - Programlama Dilleri
   - Veritabanı

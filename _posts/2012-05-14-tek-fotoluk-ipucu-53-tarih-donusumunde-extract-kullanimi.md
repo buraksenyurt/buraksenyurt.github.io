@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 53 - Tarih Dönüşümünde Extract Kullanımı"
-date: 2012-05-14 23:48:00 +0300
+date: 2012-05-14 23:48:00
 categories:
   - Genel
 tags:

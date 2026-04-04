@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mocha'nızı Node.js ile Alır mıydınız?"
-date: 2018-06-07 21:03:00 +0300
+date: 2018-06-07 21:03:00
 categories:
   - Web Programlama
 tags:

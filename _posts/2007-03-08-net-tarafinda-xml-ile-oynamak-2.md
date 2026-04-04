@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Tarafında Xml ile Oynamak-2"
-date: 2007-03-08 12:00:00 +0300
+date: 2007-03-08 12:00:00
 categories:
   - Programlama Dilleri
 tags:

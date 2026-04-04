@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "FizzBuzz ile Basit Bir TDD Pratiği"
-date: 2018-08-09 07:52:00 +0300
+date: 2018-08-09 07:52:00
 categories:
   - Algoritma
 tags:

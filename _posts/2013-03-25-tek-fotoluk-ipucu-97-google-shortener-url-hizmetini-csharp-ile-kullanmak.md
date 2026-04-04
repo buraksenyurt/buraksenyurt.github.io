@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 97–Google Shortener URL Hizmetini C# ile Kullanmak"
-date: 2013-03-25 21:30:00 +0300
+date: 2013-03-25 21:30:00
 categories:
   - Genel
 tags:

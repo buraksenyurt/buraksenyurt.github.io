@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Entity Framework 4.0 - Lazy Loading [Beta 2]"
-date: 2009-12-07 02:27:00 +0300
+date: 2009-12-07 02:27:00
 categories:
   - Veritabanı
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PLINQ (Parallel LINQ) - Hello World [Beta 1]"
-date: 2009-05-21 19:11:00 +0300
+date: 2009-05-21 19:11:00
 categories:
   - Veritabanı
   - Paralel Programlama

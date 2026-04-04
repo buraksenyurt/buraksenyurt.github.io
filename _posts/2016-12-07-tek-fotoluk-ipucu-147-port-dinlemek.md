@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 147 - Port Dinlemek"
-date: 2016-12-07 21:51:00 +0300
+date: 2016-12-07 21:51:00
 categories:
   - Programlama Dilleri
 tags:

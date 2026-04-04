@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Öğreniyorum Ders 2–Veri Sözleşmeleri II"
-date: 2010-12-05 19:40:00 +0300
+date: 2010-12-05 19:40:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

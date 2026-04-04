@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CallBack Tekniği ile Asenkron Metod Yürütmek"
-date: 2005-09-09 12:00:00 +0300
+date: 2005-09-09 12:00:00
 categories:
   - Programlama Dilleri
 tags:

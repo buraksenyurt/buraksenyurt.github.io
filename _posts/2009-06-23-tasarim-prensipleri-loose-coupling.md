@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Prensipleri - Loose Coupling"
-date: 2009-06-23 22:46:00 +0300
+date: 2009-06-23 22:46:00
 categories:
   - Yazılım Tasarımı
 tags:

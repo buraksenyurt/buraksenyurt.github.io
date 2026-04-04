@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-19 (StringBuilder deyip geçme)"
-date: 2011-07-17 21:51:00 +0300
+date: 2011-07-17 21:51:00
 categories:
   - Programlama Dilleri
   - Genel

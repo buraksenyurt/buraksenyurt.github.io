@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bunu Bir Dene 01 - Çoklu Thread Ortamlarında Ortak Veriyi Değiştirmek (C#, Rust ve Zig)"
-date: 2026-02-15 19:31:00 +0300
+date: 2026-02-15 19:31:00
 categories:
   - Programlama Dilleri
 tags:

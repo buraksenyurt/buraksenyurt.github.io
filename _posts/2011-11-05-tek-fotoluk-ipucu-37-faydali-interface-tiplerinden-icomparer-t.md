@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-37(Faydalı Interface Tiplerinden IComparer<T>)"
-date: 2011-11-05 07:39:00 +0300
+date: 2011-11-05 07:39:00
 categories:
   - Programlama Dilleri
   - Genel

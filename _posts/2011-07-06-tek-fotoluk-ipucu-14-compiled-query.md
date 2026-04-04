@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–14 (Compiled Query)"
-date: 2011-07-06 00:30:00 +0300
+date: 2011-07-06 00:30:00
 categories:
   - Veritabanı
   - Genel

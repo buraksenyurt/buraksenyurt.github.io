@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Paralel Programlamada Performans, Hız, Verimlilik ve Ölçeklenebilirlik Ölçümleri"
-date: 2010-02-21 23:05:00 +0300
+date: 2010-02-21 23:05:00
 categories:
   - Paralel Programlama
 tags:

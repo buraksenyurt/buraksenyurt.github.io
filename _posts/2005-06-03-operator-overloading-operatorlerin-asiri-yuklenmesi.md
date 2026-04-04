@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Operator Overloading (Operatörlerin Aşırı Yüklenmesi)"
-date: 2005-06-03 12:00:00 +0300
+date: 2005-06-03 12:00:00
 categories:
   - Programlama Dilleri
 tags:

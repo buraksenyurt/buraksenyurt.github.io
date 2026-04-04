@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Default Binding Configuration [Beta 1]"
-date: 2009-08-12 03:30:00 +0300
+date: 2009-08-12 03:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

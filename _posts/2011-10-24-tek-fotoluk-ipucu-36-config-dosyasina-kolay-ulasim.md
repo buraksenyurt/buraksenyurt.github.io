@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-36(Config Dosyasına Kolay Ulaşım)"
-date: 2011-10-24 14:30:00 +0300
+date: 2011-10-24 14:30:00
 categories:
   - Programlama Dilleri
   - Genel

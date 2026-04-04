@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Generic Mimaride Kısıtlamaların(Constraints) Kullanımı"
-date: 2005-12-31 08:00:00 +0300
+date: 2005-12-31 08:00:00
 categories:
   - Programlama Dilleri
 tags:

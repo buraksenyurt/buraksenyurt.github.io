@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–54Buçuk"
-date: 2012-06-04 11:12:00 +0300
+date: 2012-06-04 11:12:00
 categories:
   - Genel
 tags:

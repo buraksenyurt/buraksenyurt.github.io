@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 4.0 - Heryerde Cache [Beta 2]"
-date: 2009-11-18 04:20:00 +0300
+date: 2009-11-18 04:20:00
 categories:
   - Web Programlama
 tags:

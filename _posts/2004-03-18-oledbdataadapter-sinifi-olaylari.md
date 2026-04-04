@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OleDbDataAdapter Sınıfı Olayları"
-date: 2004-03-18 12:00:00 +0300
+date: 2004-03-18 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-30 (Entity Sorgusundan Excel Dosyasına)"
-date: 2011-09-13 10:30:00 +0300
+date: 2011-09-13 10:30:00
 categories:
   - Framework Tabanlı Programlama
   - Genel

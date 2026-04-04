@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Workflow Foundation 4.0 - Custom Activity Geliştirmek [Beta 2]"
-date: 2010-01-01 07:00:00 +0300
+date: 2010-01-01 07:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

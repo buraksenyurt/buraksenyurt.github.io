@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF ile WF Entegrasyonu - 1"
-date: 2008-04-17 12:00:00 +0300
+date: 2008-04-17 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
   - Framework Tabanlı Programlama

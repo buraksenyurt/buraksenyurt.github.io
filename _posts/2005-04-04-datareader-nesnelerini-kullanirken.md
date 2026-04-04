@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DataReader Nesnelerini Kullanırken…"
-date: 2005-04-04 12:00:00 +0300
+date: 2005-04-04 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

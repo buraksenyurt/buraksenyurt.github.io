@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net RIA Servisleri - DomainDataSource Kulanımı"
-date: 2009-05-14 12:30:00 +0300
+date: 2009-05-14 12:30:00
 categories:
   - Framework Tabanlı Programlama
 tags:

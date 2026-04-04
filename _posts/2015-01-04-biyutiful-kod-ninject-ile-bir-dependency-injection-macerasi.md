@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Biyütıful Kod - Ninject ile Bir Dependency Injection Macerası"
-date: 2015-01-04 20:00:00 +0300
+date: 2015-01-04 20:00:00
 categories:
   - Programlama Dilleri
   - Yazılım Tasarımı

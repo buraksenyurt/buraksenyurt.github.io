@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go Dilini Anlamaya Çalışırken"
-date: 2017-01-06 03:56:00 +0300
+date: 2017-01-06 03:56:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 2 (StackTrace ve Çalışma Zamanı Metod Bilgisi)"
-date: 2011-06-22 01:48:00 +0300
+date: 2011-06-22 01:48:00
 categories:
   - Programlama Dilleri
   - Genel

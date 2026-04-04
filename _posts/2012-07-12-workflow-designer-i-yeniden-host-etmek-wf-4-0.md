@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Workflow Designer’ ı Yeniden Host Etmek (WF 4.0)"
-date: 2012-07-12 23:05:00 +0300
+date: 2012-07-12 23:05:00
 categories:
   - Framework Tabanlı Programlama
 tags:

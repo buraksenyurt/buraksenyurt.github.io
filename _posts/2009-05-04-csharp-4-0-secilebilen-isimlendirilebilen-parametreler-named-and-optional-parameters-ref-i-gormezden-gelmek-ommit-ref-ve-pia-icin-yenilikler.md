@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 4.0 - Seçilebilen, İsimlendirilebilen Parametreler(Named and Optional Parameters), ref' i Görmezden Gelmek(Ommit Ref) ve PIA için Yenilikler"
-date: 2009-05-04 13:46:00 +0300
+date: 2009-05-04 13:46:00
 categories:
   - Programlama Dilleri
 tags:

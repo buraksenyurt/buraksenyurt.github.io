@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust ile Kodlama İdmanları - Başlangıç Seviyesi"
-date: 2025-10-25 20:04:00 +0300
+date: 2025-10-25 20:04:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NoSQL Maceraları–Redis ile Hello World"
-date: 2014-02-11 13:04:00 +0300
+date: 2014-02-11 13:04:00
 categories:
   - Veritabanı
 tags: []

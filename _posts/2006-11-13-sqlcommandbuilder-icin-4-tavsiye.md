@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SqlCommandBuilder için 4 Tavsiye"
-date: 2006-11-13 12:00:00 +0300
+date: 2006-11-13 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

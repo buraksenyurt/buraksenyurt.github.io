@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 135 - Ruby ile Tek Satırda Dosya içi Arama"
-date: 2016-10-18 21:30:00 +0300
+date: 2016-10-18 21:30:00
 categories:
   - Programlama Dilleri
 tags:

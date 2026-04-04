@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WF 4.0 - Veri(Data)[Beta 1]"
-date: 2009-10-12 14:48:00 +0300
+date: 2009-10-12 14:48:00
 categories:
   - Framework Tabanlı Programlama
 tags:

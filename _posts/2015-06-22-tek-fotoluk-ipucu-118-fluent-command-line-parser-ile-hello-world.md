@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 118 - Fluent Command Line Parser ile Hello World"
-date: 2015-06-22 04:09:00 +0300
+date: 2015-06-22 04:09:00
 categories:
   - Genel
 tags:

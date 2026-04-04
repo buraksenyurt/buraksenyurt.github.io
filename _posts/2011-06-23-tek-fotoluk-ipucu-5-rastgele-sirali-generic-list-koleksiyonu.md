@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 5 (Rastgele Sıralı Generic List Koleksiyonu)"
-date: 2011-06-23 21:15:00 +0300
+date: 2011-06-23 21:15:00
 categories:
   - Programlama Dilleri
   - Genel

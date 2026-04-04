@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Parallel Programming–Reduction"
-date: 2011-12-02 11:51:00 +0300
+date: 2011-12-02 11:51:00
 categories:
   - Paralel Programlama
 tags:

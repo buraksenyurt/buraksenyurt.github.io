@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Çalışma Zamanında Generic Tip Üretmek, Generic Metod Çağırmak"
-date: 2013-11-01 03:45:00 +0300
+date: 2013-11-01 03:45:00
 categories:
   - Programlama Dilleri
 tags:

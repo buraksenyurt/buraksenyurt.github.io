@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Virtual(Sanal) Metotlar"
-date: 2003-12-25 10:00:00 +0300
+date: 2003-12-25 10:00:00
 categories:
   - Programlama Dilleri
 tags:

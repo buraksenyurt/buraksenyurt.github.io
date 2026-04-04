@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task Süreçlerinde Bilinçli Olarak Duraksatma"
-date: 2010-12-31 13:20:00 +0300
+date: 2010-12-31 13:20:00
 categories:
   - Paralel Programlama
 tags:

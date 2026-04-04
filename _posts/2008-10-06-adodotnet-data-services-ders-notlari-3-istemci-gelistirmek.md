@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 3 (İstemci Geliştirmek)"
-date: 2008-10-06 12:00:00 +0300
+date: 2008-10-06 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

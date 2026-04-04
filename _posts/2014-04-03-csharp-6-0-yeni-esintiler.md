@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 6.0–Yeni Esintiler"
-date: 2014-04-03 13:04:00 +0300
+date: 2014-04-03 13:04:00
 categories:
   - Programlama Dilleri
 tags:

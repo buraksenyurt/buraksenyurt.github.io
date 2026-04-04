@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-40(Sebze Çorbası)"
-date: 2011-11-16 15:20:00 +0300
+date: 2011-11-16 15:20:00
 categories:
   - Programlama Dilleri
   - Genel

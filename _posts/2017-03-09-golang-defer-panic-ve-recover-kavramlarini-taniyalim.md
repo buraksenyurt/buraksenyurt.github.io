@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - defer, panic ve recover Kavramlarını Tanıyalım"
-date: 2017-03-09 21:32:00 +0300
+date: 2017-03-09 21:32:00
 categories:
   - Programlama Dilleri
 tags:

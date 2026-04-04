@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bana Bir Struct Yaz. Yok Yok Bana Bir Class Yaz."
-date: 2011-02-28 16:30:00 +0300
+date: 2011-02-28 16:30:00
 categories:
   - Programlama Dilleri
 tags:

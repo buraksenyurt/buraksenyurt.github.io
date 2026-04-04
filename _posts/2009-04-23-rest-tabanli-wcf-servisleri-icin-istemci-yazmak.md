@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rest Tabanlı WCF Servisleri için İstemci Yazmak"
-date: 2009-04-23 12:12:00 +0300
+date: 2009-04-23 12:12:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

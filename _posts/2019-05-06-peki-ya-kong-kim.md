@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Peki ya Kong Kim?"
-date: 2019-05-06 07:00:00 +0300
+date: 2019-05-06 07:00:00
 categories:
   - DevOps
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mountebank ile Mock Servis Desteği Sunmak"
-date: 2020-12-07 14:00:00 +0300
+date: 2020-12-07 14:00:00
 categories:
   - Web Programlama
 tags:

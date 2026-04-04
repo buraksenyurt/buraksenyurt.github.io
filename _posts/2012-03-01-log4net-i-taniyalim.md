@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Log4Net’ i Tanıyalım"
-date: 2012-03-01 07:22:00 +0300
+date: 2012-03-01 07:22:00
 categories:
   - Framework Tabanlı Programlama
 tags:

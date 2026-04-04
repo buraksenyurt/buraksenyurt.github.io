@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MemoryCache"
-date: 2010-11-08 03:34:00 +0300
+date: 2010-11-08 03:34:00
 categories:
   - Web Programlama
 tags:

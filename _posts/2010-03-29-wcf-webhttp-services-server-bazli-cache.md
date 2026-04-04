@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - Server Bazlı Cache"
-date: 2010-03-29 15:05:00 +0300
+date: 2010-03-29 15:05:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

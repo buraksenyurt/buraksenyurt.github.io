@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 84–WCF içerisinde Property Kullanımı"
-date: 2013-03-25 20:40:00 +0300
+date: 2013-03-25 20:40:00
 categories:
   - Genel
 tags:

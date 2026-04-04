@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 26 - Eğlenerek Binary Dosya Okumak"
-date: 2016-11-14 21:30:00 +0300
+date: 2016-11-14 21:30:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 159 - GoLang ile Fonksiyonları Parametre Olarak Kullanmak"
-date: 2017-05-22 14:30:00 +0300
+date: 2017-05-22 14:30:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TPL - İptal İşlemi [Beta 1]"
-date: 2009-06-08 13:19:00 +0300
+date: 2009-06-08 13:19:00
 categories:
   - Paralel Programlama
 tags:

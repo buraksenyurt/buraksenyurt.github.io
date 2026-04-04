@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework - Generic Repository ve Unit of Work Uyarlaması"
-date: 2014-12-14 03:00:00 +0300
+date: 2014-12-14 03:00:00
 categories:
   - Veritabanı
   - Yazılım Tasarımı

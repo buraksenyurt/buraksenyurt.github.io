@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 4.0 - Dynamic Olmak"
-date: 2009-04-30 15:02:00 +0300
+date: 2009-04-30 15:02:00
 categories:
   - Programlama Dilleri
 tags:

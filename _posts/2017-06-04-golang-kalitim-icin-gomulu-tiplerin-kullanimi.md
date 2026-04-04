@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Kalıtım için Gömülü Tiplerin Kullanımı"
-date: 2017-06-04 09:25:00 +0300
+date: 2017-06-04 09:25:00
 categories:
   - Programlama Dilleri
 tags:

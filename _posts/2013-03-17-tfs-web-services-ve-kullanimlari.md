@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFS Web Services ve Kullanımları"
-date: 2013-03-17 12:30:00 +0300
+date: 2013-03-17 12:30:00
 categories:
   - DevOps
 tags:

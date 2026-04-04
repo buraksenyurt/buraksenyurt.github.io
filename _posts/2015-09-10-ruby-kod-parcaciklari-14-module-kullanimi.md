@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 14 (Module Kullanımı)"
-date: 2015-09-10 08:00:00 +0300
+date: 2015-09-10 08:00:00
 categories:
   - Programlama Dilleri
 tags: []

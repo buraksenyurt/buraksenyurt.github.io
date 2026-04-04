@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Distributed Cache(Velocity Project) - Hello World"
-date: 2009-12-11 00:25:00 +0300
+date: 2009-12-11 00:25:00
 categories:
   - Framework Tabanlı Programlama
   - Servis Tabanlı Geliştirme

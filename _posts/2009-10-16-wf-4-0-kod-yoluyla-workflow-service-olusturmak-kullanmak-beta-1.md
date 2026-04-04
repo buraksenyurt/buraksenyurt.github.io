@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WF 4.0 - Kod Yoluyla Workflow Service Oluşturmak, Kullanmak [Beta 1]"
-date: 2009-10-16 00:00:00 +0300
+date: 2009-10-16 00:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

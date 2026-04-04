@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Karmaşık Değil Son Derece Basit"
-date: 2011-09-29 06:50:00 +0300
+date: 2011-09-29 06:50:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

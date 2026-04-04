@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Service, JSON, jQuery, Ajax ve CORS ile Yeni Bir Macera"
-date: 2014-09-03 08:27:00 +0300
+date: 2014-09-03 08:27:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

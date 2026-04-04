@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Tarafında Task Bazlı Asenkron Operasyonlar"
-date: 2012-05-24 14:50:00 +0300
+date: 2012-05-24 14:50:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

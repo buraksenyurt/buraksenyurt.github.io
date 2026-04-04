@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using İfadesi ile Garanti Dispose"
-date: 2007-10-27 21:37:00 +0300
+date: 2007-10-27 21:37:00
 categories:
   - Programlama Dilleri
 tags:

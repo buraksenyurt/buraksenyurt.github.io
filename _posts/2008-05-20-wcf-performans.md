@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Performans"
-date: 2008-05-20 12:00:00 +0300
+date: 2008-05-20 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

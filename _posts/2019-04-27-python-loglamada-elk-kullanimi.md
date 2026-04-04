@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python Loglamada ELK Kullanımı"
-date: 2019-04-27 19:32:00 +0300
+date: 2019-04-27 19:32:00
 categories:
   - Programlama Dilleri
 tags:

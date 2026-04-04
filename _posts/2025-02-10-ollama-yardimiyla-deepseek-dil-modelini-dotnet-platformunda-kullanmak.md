@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ollama Yardımıyla Deepseek Dil Modelini .Net Platformunda Kullanmak"
-date: 2025-02-10 14:00:00 +0300
+date: 2025-02-10 14:00:00
 categories:
   - Programlama Dilleri
 tags:

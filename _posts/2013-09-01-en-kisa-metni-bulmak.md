@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "En Kısa Metni Bulmak"
-date: 2013-09-01 20:45:00 +0300
+date: 2013-09-01 20:45:00
 categories:
   - Algoritma
 tags:

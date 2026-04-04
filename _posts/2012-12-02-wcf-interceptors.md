@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Interceptors"
-date: 2012-12-02 19:53:00 +0300
+date: 2012-12-02 19:53:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

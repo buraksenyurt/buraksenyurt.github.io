@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 7 (Windows Liste Bazlı Kontrolleri ve ToString Metodu)"
-date: 2011-06-27 00:48:00 +0300
+date: 2011-06-27 00:48:00
 categories:
   - Programlama Dilleri
   - Genel

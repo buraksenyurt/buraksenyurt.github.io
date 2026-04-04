@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework 6 – Code First için Convention Nedir?"
-date: 2012-12-12 05:15:00 +0300
+date: 2012-12-12 05:15:00
 categories:
   - Veritabanı
 tags:

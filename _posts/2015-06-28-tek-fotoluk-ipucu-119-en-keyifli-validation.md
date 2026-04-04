@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 119 - En Keyifli Validation"
-date: 2015-06-28 10:40:00 +0300
+date: 2015-06-28 10:40:00
 categories:
   - Genel
 tags:

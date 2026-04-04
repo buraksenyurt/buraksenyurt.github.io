@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Discovery için Scope Kullanmak [Beta 1]"
-date: 2009-08-20 16:57:00 +0300
+date: 2009-08-20 16:57:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

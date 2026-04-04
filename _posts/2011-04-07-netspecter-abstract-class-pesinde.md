@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Netspecter Abstract Class Peşinde"
-date: 2011-04-07 09:18:00 +0300
+date: 2011-04-07 09:18:00
 categories:
   - Programlama Dilleri
 tags:

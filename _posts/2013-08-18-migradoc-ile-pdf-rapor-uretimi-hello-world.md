@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MigraDoc ile PDF Rapor Üretimi - Hello World"
-date: 2013-08-18 11:48:00 +0300
+date: 2013-08-18 11:48:00
 categories:
   - Programlama Dilleri
 tags:

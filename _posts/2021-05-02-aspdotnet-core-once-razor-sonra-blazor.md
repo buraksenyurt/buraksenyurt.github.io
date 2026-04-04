@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Core - Önce Razor Sonra Blazor"
-date: 2021-05-02 21:30:00 +0300
+date: 2021-05-02 21:30:00
 categories:
   - Web Programlama
 tags:

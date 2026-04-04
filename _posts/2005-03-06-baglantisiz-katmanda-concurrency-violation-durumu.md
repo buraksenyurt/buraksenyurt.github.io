@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bağlantısız Katmanda Concurrency Violation Durumu"
-date: 2005-03-06 10:00:00 +0300
+date: 2005-03-06 10:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

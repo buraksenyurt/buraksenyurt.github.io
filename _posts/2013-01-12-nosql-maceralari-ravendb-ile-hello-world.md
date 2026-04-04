@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NoSQL Maceraları - RavenDB ile Hello World"
-date: 2013-01-12 12:05:00 +0300
+date: 2013-01-12 12:05:00
 categories:
   - Veritabanı
 tags:

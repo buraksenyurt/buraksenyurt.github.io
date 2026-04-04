@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 2 (Hashes)"
-date: 2015-08-04 21:30:00 +0300
+date: 2015-08-04 21:30:00
 categories:
   - Programlama Dilleri
 tags:

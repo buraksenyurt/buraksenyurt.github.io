@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Strategy"
-date: 2009-07-02 22:34:00 +0300
+date: 2009-07-02 22:34:00
 categories:
   - Yazılım Tasarımı
 tags:

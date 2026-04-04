@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 22 - Twitter API'sinin Basit Kullanımı"
-date: 2016-04-04 15:00:00 +0300
+date: 2016-04-04 15:00:00
 categories:
   - Programlama Dilleri
 tags:

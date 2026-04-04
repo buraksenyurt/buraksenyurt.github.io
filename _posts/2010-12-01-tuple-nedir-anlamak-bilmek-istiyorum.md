@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tuple Nedir? Anlamak, Bilmek İstiyorum."
-date: 2010-12-01 03:55:00 +0300
+date: 2010-12-01 03:55:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

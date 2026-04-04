@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ObservableCollection’ ı Anlamak"
-date: 2014-05-01 13:59:00 +0300
+date: 2014-05-01 13:59:00
 categories:
   - Framework Tabanlı Programlama
 tags:

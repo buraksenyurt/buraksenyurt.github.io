@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Prensipleri - Dependency Inversion"
-date: 2009-06-30 10:45:00 +0300
+date: 2009-06-30 10:45:00
 categories:
   - Yazılım Tasarımı
 tags:

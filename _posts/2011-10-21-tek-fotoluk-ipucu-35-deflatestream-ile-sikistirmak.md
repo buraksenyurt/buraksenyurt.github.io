@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-35(DeflateStream ile Sıkıştırmak)"
-date: 2011-10-21 08:13:00 +0300
+date: 2011-10-21 08:13:00
 categories:
   - Programlama Dilleri
   - Genel

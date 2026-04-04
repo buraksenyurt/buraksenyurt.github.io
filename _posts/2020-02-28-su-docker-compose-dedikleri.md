@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Şu Docker-Compose Dedikleri"
-date: 2020-02-28 20:23:00 +0300
+date: 2020-02-28 20:23:00
 categories:
   - Framework Tabanlı Programlama
 tags:

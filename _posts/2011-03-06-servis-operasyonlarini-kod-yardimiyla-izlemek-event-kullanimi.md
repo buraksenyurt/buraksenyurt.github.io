@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Servis Operasyonlarını Kod Yardımıyla İzlemek – Event Kullanımı"
-date: 2011-03-06 18:00:00 +0300
+date: 2011-03-06 18:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

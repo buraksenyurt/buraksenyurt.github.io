@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".NET Remoting'i Kavramak"
-date: 2004-05-22 09:00:00 +0300
+date: 2004-05-22 09:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

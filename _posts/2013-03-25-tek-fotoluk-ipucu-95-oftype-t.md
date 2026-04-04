@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 95–OfType<T>"
-date: 2013-03-25 19:25:00 +0300
+date: 2013-03-25 19:25:00
 categories:
   - Genel
 tags:

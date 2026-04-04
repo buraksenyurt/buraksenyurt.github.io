@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Standard Endpoints [Beta 1]"
-date: 2009-08-14 03:15:00 +0300
+date: 2009-08-14 03:15:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

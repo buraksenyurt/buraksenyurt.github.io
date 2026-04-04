@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Private Assembly ve Shared Assembly Kavramı"
-date: 2004-04-22 09:00:00 +0300
+date: 2004-04-22 09:00:00
 categories:
   - Programlama Dilleri
 tags:

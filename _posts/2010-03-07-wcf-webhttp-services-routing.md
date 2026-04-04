@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - Routing"
-date: 2010-03-07 21:45:00 +0300
+date: 2010-03-07 21:45:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

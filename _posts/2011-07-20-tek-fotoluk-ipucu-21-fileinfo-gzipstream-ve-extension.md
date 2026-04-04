@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-21(FileInfo,GZipStream ve Extension)"
-date: 2011-07-20 08:28:00 +0300
+date: 2011-07-20 08:28:00
 categories:
   - Programlama Dilleri
   - Genel

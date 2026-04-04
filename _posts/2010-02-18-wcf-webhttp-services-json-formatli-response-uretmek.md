@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - JSON Formatlı Response Üretmek"
-date: 2010-02-18 22:50:00 +0300
+date: 2010-02-18 22:50:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF WebHttp Services - Client Tarafını Geliştirmek"
-date: 2010-02-05 00:45:00 +0300
+date: 2010-02-05 00:45:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

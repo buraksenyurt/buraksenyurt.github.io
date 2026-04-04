@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dizilere(Arrays) İlişkin Üç Basit Öneri"
-date: 2005-07-14 09:00:00 +0300
+date: 2005-07-14 09:00:00
 categories:
   - Programlama Dilleri
 tags:

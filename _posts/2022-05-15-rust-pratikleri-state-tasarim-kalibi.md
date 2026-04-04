@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - State Tasarım Kalıbı"
-date: 2022-05-15 09:00:00 +0300
+date: 2022-05-15 09:00:00
 categories:
   - Programlama Dilleri
 tags:

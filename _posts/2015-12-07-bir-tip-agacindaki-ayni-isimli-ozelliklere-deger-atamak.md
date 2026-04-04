@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir Tip Ağacındaki Aynı İsimli Özelliklere Değer Atamak"
-date: 2015-12-07 20:00:00 +0300
+date: 2015-12-07 20:00:00
 categories:
   - Programlama Dilleri
 tags:

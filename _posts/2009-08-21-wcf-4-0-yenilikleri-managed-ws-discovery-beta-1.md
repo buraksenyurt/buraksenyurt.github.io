@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Managed WS-Discovery [Beta 1]"
-date: 2009-08-21 23:13:00 +0300
+date: 2009-08-21 23:13:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

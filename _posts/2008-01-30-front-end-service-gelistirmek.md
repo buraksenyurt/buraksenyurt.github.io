@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Front-End Service Geliştirmek"
-date: 2008-01-30 12:00:00 +0300
+date: 2008-01-30 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

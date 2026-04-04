@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-32(Environment Verisini XML Olarak Sunmak)"
-date: 2011-09-22 07:05:00 +0300
+date: 2011-09-22 07:05:00
 categories:
   - Programlama Dilleri
   - Genel

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Announcement Kullanımı [Beta 1]"
-date: 2009-08-21 04:00:00 +0300
+date: 2009-08-21 04:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

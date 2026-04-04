@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API Webiner Kaydı"
-date: 2012-03-20 15:23:00 +0300
+date: 2012-03-20 15:23:00
 categories:
   - Genel
 tags:

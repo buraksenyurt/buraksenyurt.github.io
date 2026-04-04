@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AJAX ve JSON Desteği"
-date: 2008-02-25 08:00:00 +0300
+date: 2008-02-25 08:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

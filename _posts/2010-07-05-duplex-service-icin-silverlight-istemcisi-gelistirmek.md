@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Duplex Service için Silverlight İstemcisi Geliştirmek"
-date: 2010-07-05 01:00:00 +0300
+date: 2010-07-05 01:00:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

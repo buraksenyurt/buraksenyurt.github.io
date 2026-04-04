@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-25 (Runtime Value ve Extension Method)"
-date: 2011-08-18 06:08:00 +0300
+date: 2011-08-18 06:08:00
 categories:
   - Programlama Dilleri
   - Genel

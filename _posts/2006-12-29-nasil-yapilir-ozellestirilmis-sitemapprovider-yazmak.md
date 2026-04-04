@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nasıl Yapılır : Özelleştirilmiş SiteMapProvider Yazmak"
-date: 2006-12-29 12:00:00 +0300
+date: 2006-12-29 12:00:00
 categories:
   - Web Programlama
 tags:

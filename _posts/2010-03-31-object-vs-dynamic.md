@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Object vs Dynamic"
-date: 2010-03-31 15:10:00 +0300
+date: 2010-03-31 15:10:00
 categories:
   - Programlama Dilleri
 tags:

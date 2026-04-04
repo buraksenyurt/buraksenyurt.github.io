@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Raspberry Pi Maceramız Kaldığı Yerden Devam Ediyor"
-date: 2016-06-15 19:07:00 +0300
+date: 2016-06-15 19:07:00
 categories:
   - Programlama Dilleri
   - IoT

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Built-In JSON Desteği"
-date: 2017-06-16 06:18:00 +0300
+date: 2017-06-16 06:18:00
 categories:
   - Programlama Dilleri
 tags:

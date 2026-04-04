@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task Parallel Library(TPL) - İptal İşlemi [Beta 2]"
-date: 2009-11-12 02:00:00 +0300
+date: 2009-11-12 02:00:00
 categories:
   - Paralel Programlama
 tags:

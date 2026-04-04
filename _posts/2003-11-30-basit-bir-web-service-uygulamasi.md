@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Basit Bir Web Service Uygulaması"
-date: 2003-11-30 14:00:00 +0300
+date: 2003-11-30 14:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

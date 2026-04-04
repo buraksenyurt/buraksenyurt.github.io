@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 2 (Custom LINQ Providers)"
-date: 2008-09-24 12:00:00 +0300
+date: 2008-09-24 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

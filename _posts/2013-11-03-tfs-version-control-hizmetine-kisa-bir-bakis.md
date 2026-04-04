@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFS Version Control Hizmetine Kısa Bir Bakış"
-date: 2013-11-03 14:58:00 +0300
+date: 2013-11-03 14:58:00
 categories:
   - DevOps
 tags:

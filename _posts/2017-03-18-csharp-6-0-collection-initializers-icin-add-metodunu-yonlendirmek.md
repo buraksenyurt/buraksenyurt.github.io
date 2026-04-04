@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 6.0 - Collection Initializers için Add Metodunu Yönlendirmek"
-date: 2017-03-18 22:50:00 +0300
+date: 2017-03-18 22:50:00
 categories:
   - Programlama Dilleri
 tags:

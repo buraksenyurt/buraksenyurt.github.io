@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - DataContractResolver ile Dinamik Tip Çözümleme(Dynamic Type Resolution) [Beta 1]"
-date: 2009-09-26 16:30:00 +0300
+date: 2009-09-26 16:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

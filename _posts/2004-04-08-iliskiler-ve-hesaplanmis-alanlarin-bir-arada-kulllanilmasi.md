@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "İlişkiler ve Hesaplanmış Alanların Bir Arada Kullanılması"
-date: 2004-04-08 12:00:00 +0300
+date: 2004-04-08 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mesaj Sözleşmeleri(Message Contracts)"
-date: 2008-02-09 12:00:00 +0300
+date: 2008-02-09 12:00:00
 categories:
   - Programlama Dilleri
 tags:

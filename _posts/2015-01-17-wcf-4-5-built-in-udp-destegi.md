@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.5–Built-In UDP Desteği"
-date: 2015-01-17 23:00:00 +0300
+date: 2015-01-17 23:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

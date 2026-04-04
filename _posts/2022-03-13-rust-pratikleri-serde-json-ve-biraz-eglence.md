@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - Serde, Json ve Biraz Eğlence"
-date: 2022-03-13 09:00:00 +0300
+date: 2022-03-13 09:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-31(Hashing)"
-date: 2011-09-18 02:50:00 +0300
+date: 2011-09-18 02:50:00
 categories:
   - Programlama Dilleri
   - Genel

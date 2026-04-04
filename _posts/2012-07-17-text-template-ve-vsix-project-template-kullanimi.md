@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Text Template ve VSIX Project Template Kullanımı"
-date: 2012-07-17 08:04:00 +0300
+date: 2012-07-17 08:04:00
 categories:
   - DevOps
 tags:

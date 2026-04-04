@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 130 - Distinct Fonksiyonunu IEqualityComparer<T> ile Özelleştirmek"
-date: 2016-04-12 12:15:00 +0300
+date: 2016-04-12 12:15:00
 categories:
   - Genel
 tags:

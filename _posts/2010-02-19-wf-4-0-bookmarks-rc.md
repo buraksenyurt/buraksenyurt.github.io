@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WF 4.0 - Bookmarks [RC]"
-date: 2010-02-19 05:04:00 +0300
+date: 2010-02-19 05:04:00
 categories:
   - Framework Tabanlı Programlama
 tags:

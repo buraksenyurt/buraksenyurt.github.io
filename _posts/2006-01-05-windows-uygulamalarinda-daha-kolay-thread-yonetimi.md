@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Uygulamalarında Daha Kolay Thread Yönetimi"
-date: 2006-01-05 08:00:00 +0300
+date: 2006-01-05 08:00:00
 categories:
   - Windows Programlama
 tags:

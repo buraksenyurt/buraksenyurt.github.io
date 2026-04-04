@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları - 4 (Control Statements, Loops, Statement Modifiers)"
-date: 2015-08-09 10:00:00 +0300
+date: 2015-08-09 10:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net 2.0(Beta 2) - Connection String Security (Bağlantı Katarı için Güvenlik)"
-date: 2005-10-17 09:00:00 +0300
+date: 2005-10-17 09:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web API'leri Swagger ile Zenginleştirelim"
-date: 2018-09-20 21:22:00 +0300
+date: 2018-09-20 21:22:00
 categories:
   - Web Programlama
 tags:

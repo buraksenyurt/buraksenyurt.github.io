@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "XPath ve .Net"
-date: 2006-03-04 06:00:00 +0300
+date: 2006-03-04 06:00:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework Code-First Development Webiner Kayıdı"
-date: 2012-02-04 00:00:00 +0300
+date: 2012-02-04 00:00:00
 categories:
   - Genel
 tags:

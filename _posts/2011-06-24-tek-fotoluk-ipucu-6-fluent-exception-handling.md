@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 6 (Fluent Exception Handling)"
-date: 2011-06-24 09:22:00 +0300
+date: 2011-06-24 09:22:00
 categories:
   - Programlama Dilleri
   - Genel

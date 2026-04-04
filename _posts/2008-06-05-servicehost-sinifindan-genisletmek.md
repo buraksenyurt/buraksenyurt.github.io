@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ServiceHost Sınıfından Genişletmek"
-date: 2008-06-05 12:00:00 +0300
+date: 2008-06-05 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

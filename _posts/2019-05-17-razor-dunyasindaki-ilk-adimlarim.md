@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Razor Dünyasındaki İlk Adımlarım"
-date: 2019-05-17 12:53:00 +0300
+date: 2019-05-17 12:53:00
 categories:
   - Web Programlama
 tags:

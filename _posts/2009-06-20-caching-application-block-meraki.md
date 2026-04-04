@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Caching Application Block Merakı"
-date: 2009-06-20 17:52:00 +0300
+date: 2009-06-20 17:52:00
 categories:
   - Framework Tabanlı Programlama
 tags:

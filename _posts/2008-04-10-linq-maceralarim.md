@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "LINQ Maceralarım"
-date: 2008-04-10 06:00:00 +0300
+date: 2008-04-10 06:00:00
 categories:
   - Programlama Dilleri
   - Veritabanı

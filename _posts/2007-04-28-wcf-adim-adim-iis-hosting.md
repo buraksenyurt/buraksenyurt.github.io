@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Adım Adım IIS Hosting"
-date: 2007-04-28 03:00:00 +0300
+date: 2007-04-28 03:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

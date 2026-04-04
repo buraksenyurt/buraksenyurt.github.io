@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 49–Daha Hızlı Count"
-date: 2012-03-06 22:50:00 +0300
+date: 2012-03-06 22:50:00
 categories:
   - Veritabanı
 tags:

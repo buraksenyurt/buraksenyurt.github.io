@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Visual Studio 2012 için Entity Framework Yenilikleri"
-date: 2013-02-13 01:18:00 +0300
+date: 2013-02-13 01:18:00
 categories:
   - Framework Tabanlı Programlama
 tags:

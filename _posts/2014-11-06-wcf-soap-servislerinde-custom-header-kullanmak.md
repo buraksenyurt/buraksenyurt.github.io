@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF–SOAP Servislerinde Custom Header Kullanmak"
-date: 2014-11-06 12:00:00 +0300
+date: 2014-11-06 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

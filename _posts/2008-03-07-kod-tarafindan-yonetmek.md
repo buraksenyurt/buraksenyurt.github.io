@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kod Tarafından Yönetmek"
-date: 2008-03-07 12:00:00 +0300
+date: 2008-03-07 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

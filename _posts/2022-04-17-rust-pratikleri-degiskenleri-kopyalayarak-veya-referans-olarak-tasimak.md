@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - Değişkenleri Kopyalayarak veya Referans Olarak Taşımak"
-date: 2022-04-17 09:00:00 +0300
+date: 2022-04-17 09:00:00
 categories:
   - Programlama Dilleri
 tags:

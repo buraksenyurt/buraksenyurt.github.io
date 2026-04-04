@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 103–Database.Query ve dynamic Avantajı"
-date: 2013-07-04 21:31:00 +0300
+date: 2013-07-04 21:31:00
 categories:
   - Genel
 tags:

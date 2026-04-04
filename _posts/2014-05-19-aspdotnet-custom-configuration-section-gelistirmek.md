@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net–Custom Configuration Section Geliştirmek"
-date: 2014-05-19 16:50:00 +0300
+date: 2014-05-19 16:50:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oracle View' ları için Otomatik DataTable' lar Üretmek"
-date: 2016-03-19 18:21:00 +0300
+date: 2016-03-19 18:21:00
 categories:
   - Programlama Dilleri
 tags:

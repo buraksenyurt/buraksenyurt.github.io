@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NoSQL Maceraları - Graph Database DEX"
-date: 2013-02-20 04:00:00 +0300
+date: 2013-02-20 04:00:00
 categories:
   - Veritabanı
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SQL Persistence Hizmeti"
-date: 2009-03-06 12:00:00 +0300
+date: 2009-03-06 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

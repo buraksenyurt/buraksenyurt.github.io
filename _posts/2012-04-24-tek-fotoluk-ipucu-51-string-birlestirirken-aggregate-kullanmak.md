@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 51 - String Birleştirirken Aggregate Kullanmak"
-date: 2012-04-24 09:40:00 +0300
+date: 2012-04-24 09:40:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Effective Engine — Bir Uzay Macerası"
-date: 2021-05-14 18:22:00 +0300
+date: 2021-05-14 18:22:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

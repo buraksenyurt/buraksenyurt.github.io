@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Native Web Services"
-date: 2006-05-22 12:00:00 +0300
+date: 2006-05-22 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

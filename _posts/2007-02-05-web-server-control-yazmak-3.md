@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web Server Control Yazmak - 3"
-date: 2007-02-05 12:00:00 +0300
+date: 2007-02-05 12:00:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Task Relations–Continuation Metodları"
-date: 2011-11-18 12:00:00 +0300
+date: 2011-11-18 12:00:00
 categories:
   - Paralel Programlama
 tags:

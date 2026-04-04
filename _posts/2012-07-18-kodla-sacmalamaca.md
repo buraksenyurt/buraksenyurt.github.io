@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kodla Saçmalamaca"
-date: 2012-07-18 05:05:00 +0300
+date: 2012-07-18 05:05:00
 categories:
   - Programlama Dilleri
 tags:

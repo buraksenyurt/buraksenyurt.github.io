@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Temelleri : Etkili Trace Kullanımı"
-date: 2007-08-02 12:00:00 +0300
+date: 2007-08-02 12:00:00
 categories:
   - Web Programlama
 tags:

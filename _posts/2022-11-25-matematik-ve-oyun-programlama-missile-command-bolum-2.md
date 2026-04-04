@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Matematik ve Oyun Programlama - Missile Command - Bölüm 2"
-date: 2022-11-25 12:15:00 +0300
+date: 2022-11-25 12:15:00
 categories:
   - Programlama Dilleri
 tags: []

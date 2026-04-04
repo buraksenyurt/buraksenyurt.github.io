@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Core Tarafından RabbitMQ'ya Mesaj Göndermek ve Java Tarafından Dinlemek"
-date: 2020-11-23 21:00:00 +0300
+date: 2020-11-23 21:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

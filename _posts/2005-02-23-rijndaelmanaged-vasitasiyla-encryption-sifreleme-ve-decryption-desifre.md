@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "RijndaelManaged Vasıtasıyla Encryption(Şifreleme) ve Decryption(Deşifre)"
-date: 2005-02-23 12:00:00 +0300
+date: 2005-02-23 12:00:00
 categories:
   - Programlama Dilleri
 tags:

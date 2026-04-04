@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 31 - Kendi gem Paketimizi Hazırlamak"
-date: 2017-01-03 22:30:00 +0300
+date: 2017-01-03 22:30:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFS 32Bit Uygulama Hatası (Bir Garip Geliştiricinin Haykırışı)"
-date: 2013-01-01 15:52:00 +0300
+date: 2013-01-01 15:52:00
 categories:
   - DevOps
 tags:

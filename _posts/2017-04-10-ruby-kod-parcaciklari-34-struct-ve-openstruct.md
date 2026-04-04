@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 34 - Struct ve OpenStruct"
-date: 2017-04-10 15:00:00 +0300
+date: 2017-04-10 15:00:00
 categories:
   - Programlama Dilleri
 tags:

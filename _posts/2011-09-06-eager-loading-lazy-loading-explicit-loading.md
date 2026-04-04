@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eager Loading, Lazy Loading, Explicit Loading"
-date: 2011-09-06 20:30:00 +0300
+date: 2011-09-06 20:30:00
 categories:
   - Veritabanı
 tags:

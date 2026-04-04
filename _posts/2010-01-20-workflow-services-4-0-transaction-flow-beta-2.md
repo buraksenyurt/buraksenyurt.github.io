@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Workflow Services 4.0 - Transaction Flow [Beta 2]"
-date: 2010-01-20 01:00:00 +0300
+date: 2010-01-20 01:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

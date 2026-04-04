@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bing Maps WCF Servisleri"
-date: 2012-02-13 01:05:00 +0300
+date: 2012-02-13 01:05:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

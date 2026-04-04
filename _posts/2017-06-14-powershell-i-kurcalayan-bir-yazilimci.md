@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell'i Kurcalayan Bir Yazılımcı"
-date: 2017-06-14 09:27:00 +0300
+date: 2017-06-14 09:27:00
 categories:
   - DevOps
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Tarafından Redis(Docker Bazlı) Veritabanı ile Konuşmak"
-date: 2019-12-01 09:45:00 +0300
+date: 2019-12-01 09:45:00
 categories:
   - Programlama Dilleri
 tags:

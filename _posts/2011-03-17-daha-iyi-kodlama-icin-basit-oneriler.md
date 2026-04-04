@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Daha iyi Kodlama için Basit Öneriler"
-date: 2011-03-17 07:01:00 +0300
+date: 2011-03-17 07:01:00
 categories:
   - Programlama Dilleri
 tags:

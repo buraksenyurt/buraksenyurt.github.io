@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-16 (Dynamic Var)"
-date: 2011-07-10 21:41:00 +0300
+date: 2011-07-10 21:41:00
 categories:
   - Programlama Dilleri
   - Genel

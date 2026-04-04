@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SSIS - Programatik Olarak Variable Değeri Set Etmek"
-date: 2011-11-11 14:59:00 +0300
+date: 2011-11-11 14:59:00
 categories:
   - Programlama Dilleri
 tags:

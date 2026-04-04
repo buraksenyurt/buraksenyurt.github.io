@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "VSTS 2008 için Custom Check-In Policy Geliştirmek"
-date: 2009-08-07 12:56:00 +0300
+date: 2009-08-07 12:56:00
 categories:
   - DevOps
 tags:

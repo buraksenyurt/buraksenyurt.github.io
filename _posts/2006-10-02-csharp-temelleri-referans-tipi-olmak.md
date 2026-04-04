@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# Temelleri : Referans Tipi Olmak"
-date: 2006-10-02 06:00:00 +0300
+date: 2006-10-02 06:00:00
 categories:
   - Programlama Dilleri
 tags:

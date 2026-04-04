@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft DotNet Platformunda Bir MCP Server Yazmak"
-date: 2026-03-07 14:34:00 +0300
+date: 2026-03-07 14:34:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

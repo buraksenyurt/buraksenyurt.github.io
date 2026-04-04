@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Arayüzlerde is ve as Anahtar Sözcüklerinin Kullanımı"
-date: 2004-01-12 12:00:00 +0300
+date: 2004-01-12 12:00:00
 categories:
   - Programlama Dilleri
 tags:

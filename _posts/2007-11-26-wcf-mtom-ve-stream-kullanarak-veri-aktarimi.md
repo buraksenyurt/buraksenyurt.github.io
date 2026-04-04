@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - MTOM ve Stream Kullanarak Veri Aktarımı"
-date: 2007-11-26 12:00:00 +0300
+date: 2007-11-26 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

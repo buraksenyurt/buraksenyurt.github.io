@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gopher Olma Çalışmaları"
-date: 2017-01-13 12:10:00 +0300
+date: 2017-01-13 12:10:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Automatic Help Page [Beta 1]"
-date: 2009-09-16 16:02:00 +0300
+date: 2009-09-16 16:02:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

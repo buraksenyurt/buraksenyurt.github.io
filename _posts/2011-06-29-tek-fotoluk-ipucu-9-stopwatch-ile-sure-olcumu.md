@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu – 9 (Stopwatch ile süre ölçümü)"
-date: 2011-06-29 00:58:00 +0300
+date: 2011-06-29 00:58:00
 categories:
   - Framework Tabanlı Programlama
   - Programlama Dilleri

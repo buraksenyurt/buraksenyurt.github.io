@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFS Client Object Model ile Word Entegrasyonu"
-date: 2013-04-11 13:15:00 +0300
+date: 2013-04-11 13:15:00
 categories:
   - DevOps
 tags:

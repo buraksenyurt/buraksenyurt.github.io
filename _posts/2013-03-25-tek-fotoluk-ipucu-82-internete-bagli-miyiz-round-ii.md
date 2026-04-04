@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 82–Internete Bağlı mıyız? (Round II)"
-date: 2013-03-25 20:30:00 +0300
+date: 2013-03-25 20:30:00
 categories:
   - Genel
 tags:

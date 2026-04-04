@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "FORParallelism"
-date: 2009-12-16 04:55:00 +0300
+date: 2009-12-16 04:55:00
 categories:
   - Paralel Programlama
 tags:

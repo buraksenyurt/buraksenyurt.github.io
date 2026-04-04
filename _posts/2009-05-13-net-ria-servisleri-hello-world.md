@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net RIA Servisleri - Hello World"
-date: 2009-05-13 13:29:00 +0300
+date: 2009-05-13 13:29:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Rest Modelinde UriTemplate Kullanımı"
-date: 2009-04-20 19:19:00 +0300
+date: 2009-04-20 19:19:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go Web Sunucusunu Docker Üzerinden Yayınlamak"
-date: 2017-11-15 10:00:00 +0300
+date: 2017-11-15 10:00:00
 categories:
   - Programlama Dilleri
 tags:

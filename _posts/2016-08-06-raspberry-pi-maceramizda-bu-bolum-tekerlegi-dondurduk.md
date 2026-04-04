@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Raspberry Pi Maceramızda Bu Bölüm - Tekerleği Döndürdük"
-date: 2016-08-06 21:01:00 +0300
+date: 2016-08-06 21:01:00
 categories:
   - Programlama Dilleri
   - IoT

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Generic Lazy Tipi Olmasaydı"
-date: 2010-10-18 02:05:00 +0300
+date: 2010-10-18 02:05:00
 categories:
   - Programlama Dilleri
 tags:

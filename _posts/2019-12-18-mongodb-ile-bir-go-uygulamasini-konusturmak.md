@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MongoDB ile Bir GO Uygulamasını Konuşturmak"
-date: 2019-12-18 08:00:00 +0300
+date: 2019-12-18 08:00:00
 categories:
   - Programlama Dilleri
 tags:

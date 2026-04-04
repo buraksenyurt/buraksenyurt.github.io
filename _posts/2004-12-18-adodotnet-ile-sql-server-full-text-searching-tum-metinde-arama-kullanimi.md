@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net ile Sql Server Full-Text Searching (Tüm Metinde Arama) Kullanımı"
-date: 2004-12-18 12:00:00 +0300
+date: 2004-12-18 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net–Farklı Ortam, Farklı Config, Farklı Deploy"
-date: 2014-07-07 12:04:00 +0300
+date: 2014-07-07 12:04:00
 categories:
   - Web Programlama
 tags: []

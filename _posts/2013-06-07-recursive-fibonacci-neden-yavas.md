@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Recursive Fibonacci Neden Yavaş?"
-date: 2013-06-07 00:40:00 +0300
+date: 2013-06-07 00:40:00
 categories:
   - Algoritma
   - Programlama Dilleri

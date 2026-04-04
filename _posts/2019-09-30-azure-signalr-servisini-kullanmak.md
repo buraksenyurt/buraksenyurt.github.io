@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure SignalR Servisini Kullanmak"
-date: 2019-09-30 13:00:00 +0300
+date: 2019-09-30 13:00:00
 categories:
   - Bulut Bilişim
 tags:

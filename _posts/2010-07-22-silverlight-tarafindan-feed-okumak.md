@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Silverlight Tarafından Feed Okumak"
-date: 2010-07-22 09:05:00 +0300
+date: 2010-07-22 09:05:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

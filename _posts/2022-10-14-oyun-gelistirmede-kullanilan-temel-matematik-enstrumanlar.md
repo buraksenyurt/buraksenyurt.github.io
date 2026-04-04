@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oyun Geliştirmede Kullanılan Temel Matematik Enstrümanlar"
-date: 2022-10-14 11:20:00 +0300
+date: 2022-10-14 11:20:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - Dokümantasyon"
-date: 2022-02-13 09:00:00 +0300
+date: 2022-02-13 09:00:00
 categories:
   - Programlama Dilleri
 tags:

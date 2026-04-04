@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - InstanceContextMode"
-date: 2007-05-24 12:00:00 +0300
+date: 2007-05-24 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

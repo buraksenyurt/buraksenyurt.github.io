@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net 2.0 ile Veri Kümelerinde Sayfalama İşlemleri"
-date: 2004-09-01 12:00:00 +0300
+date: 2004-09-01 12:00:00
 categories:
   - Web Programlama
 tags:

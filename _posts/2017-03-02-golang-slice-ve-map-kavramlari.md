@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Slice ve Map Kavramları"
-date: 2017-03-02 21:23:00 +0300
+date: 2017-03-02 21:23:00
 categories:
   - Programlama Dilleri
 tags:

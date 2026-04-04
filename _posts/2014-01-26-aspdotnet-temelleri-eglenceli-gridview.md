@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Temelleri–Eğlenceli GridView"
-date: 2014-01-26 19:01:00 +0300
+date: 2014-01-26 19:01:00
 categories:
   - Web Programlama
 tags:

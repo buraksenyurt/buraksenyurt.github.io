@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eclipse Üzerinden Java ile TFS Client Object Model Konuşuyor"
-date: 2013-05-12 10:10:00 +0300
+date: 2013-05-12 10:10:00
 categories:
   - DevOps
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 7 (Security)"
-date: 2009-02-02 12:00:00 +0300
+date: 2009-02-02 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

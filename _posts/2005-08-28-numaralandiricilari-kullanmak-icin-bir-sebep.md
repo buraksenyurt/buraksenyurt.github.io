@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Numaralandırıcıları Kullanmak İçin Bir Sebep"
-date: 2005-08-28 12:00:00 +0300
+date: 2005-08-28 12:00:00
 categories:
   - Programlama Dilleri
 tags:

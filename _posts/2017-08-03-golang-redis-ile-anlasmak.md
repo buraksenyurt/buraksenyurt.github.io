@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Redis ile Anlaşmak"
-date: 2017-08-03 21:16:00 +0300
+date: 2017-08-03 21:16:00
 categories:
   - Programlama Dilleri
   - Veritabanı

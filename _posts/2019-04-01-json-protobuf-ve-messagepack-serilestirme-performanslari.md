@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Json, Protobuf ve MessagePack Serileştirme Performansları"
-date: 2019-04-01 06:00:00 +0300
+date: 2019-04-01 06:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

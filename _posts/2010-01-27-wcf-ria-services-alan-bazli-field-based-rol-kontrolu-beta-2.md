@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Alan Bazlı(Field Based) Rol Kontrolü [Beta 2]"
-date: 2010-01-27 02:33:00 +0300
+date: 2010-01-27 02:33:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

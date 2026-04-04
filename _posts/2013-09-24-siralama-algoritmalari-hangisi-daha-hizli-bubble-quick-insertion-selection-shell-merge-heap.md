@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sıralama Algoritmaları - Hangisi Daha Hızlı (Bubble, Quick, Insertion, Selection, Shell, Merge, Heap)"
-date: 2013-09-24 14:08:00 +0300
+date: 2013-09-24 14:08:00
 categories:
   - Programlama Dilleri
   - Algoritma

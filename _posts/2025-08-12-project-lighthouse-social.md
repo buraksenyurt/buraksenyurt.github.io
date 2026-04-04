@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Project Lighthouse Social"
-date: 2025-08-12 08:00:00 +0300
+date: 2025-08-12 08:00:00
 categories:
   - Programlama Dilleri
 tags: []

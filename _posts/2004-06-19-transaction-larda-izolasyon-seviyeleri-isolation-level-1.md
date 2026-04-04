@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Transaction' larda Izolasyon Seviyeleri (Isolation Level) - 1"
-date: 2004-06-19 12:00:00 +0300
+date: 2004-06-19 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

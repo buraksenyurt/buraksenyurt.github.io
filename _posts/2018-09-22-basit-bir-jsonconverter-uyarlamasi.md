@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Basit Bir JsonConverter Uyarlaması"
-date: 2018-09-22 11:28:00 +0300
+date: 2018-09-22 11:28:00
 categories:
   - Framework Tabanlı Programlama
 tags:

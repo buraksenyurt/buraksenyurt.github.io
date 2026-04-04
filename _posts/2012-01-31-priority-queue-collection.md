@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Priority Queue Collection"
-date: 2012-01-31 15:01:00 +0300
+date: 2012-01-31 15:01:00
 categories:
   - Programlama Dilleri
 tags:

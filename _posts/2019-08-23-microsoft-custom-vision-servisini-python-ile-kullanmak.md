@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Custom Vision Servisini Python ile Kullanmak"
-date: 2019-08-23 13:00:00 +0300
+date: 2019-08-23 13:00:00
 categories:
   - Bulut Bilişim
 tags:

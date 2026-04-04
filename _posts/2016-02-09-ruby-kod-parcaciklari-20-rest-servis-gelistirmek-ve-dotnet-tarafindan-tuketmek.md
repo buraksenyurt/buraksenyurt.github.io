@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 20 - REST Servis Geliştirmek ve .Net Tarafından Tüketmek"
-date: 2016-02-09 01:44:00 +0300
+date: 2016-02-09 01:44:00
 categories:
   - Servis Tabanlı Geliştirme
   - Programlama Dilleri

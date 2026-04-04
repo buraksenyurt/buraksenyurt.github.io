@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Concurrent Collections : Macera BlockingCollection<T> ile Devam Ediyor [Beta 1]"
-date: 2009-06-16 06:54:00 +0300
+date: 2009-06-16 06:54:00
 categories:
   - Paralel Programlama
 tags:

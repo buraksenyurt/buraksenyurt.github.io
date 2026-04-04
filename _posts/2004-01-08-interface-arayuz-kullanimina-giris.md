@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Interface (Arayüz) Kullanımına Giriş"
-date: 2004-01-08 10:00:00 +0300
+date: 2004-01-08 10:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Apollo Server ile Bir GraphQL Sunucusu Yazmak"
-date: 2019-04-26 07:07:00 +0300
+date: 2019-04-26 07:07:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework Code First için Doğrulama(Validation) Stratejileri Webiner(Webcast) Kayıtları"
-date: 2012-11-18 08:51:00 +0300
+date: 2012-11-18 08:51:00
 categories:
   - Genel
 tags:

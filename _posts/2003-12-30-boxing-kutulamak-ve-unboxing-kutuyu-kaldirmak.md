@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Boxing (Kutulamak) ve Unboxing (Kutuyu Kaldırmak)"
-date: 2003-12-30 12:00:00 +0300
+date: 2003-12-30 12:00:00
 categories:
   - Programlama Dilleri
 tags:

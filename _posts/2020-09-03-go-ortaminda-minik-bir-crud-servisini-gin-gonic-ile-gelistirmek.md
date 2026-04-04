@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GO Ortamında Minik Bir CRUD Servisini Gin-Gonic ile Geliştirmek"
-date: 2020-09-03 13:00:00 +0300
+date: 2020-09-03 13:00:00
 categories:
   - Programlama Dilleri
 tags:

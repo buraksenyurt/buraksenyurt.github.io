@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tembellik Etmek İstiyorum (Generic Lazy Tipi ile Et)"
-date: 2010-10-11 12:20:00 +0300
+date: 2010-10-11 12:20:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Özelleştirilmiş UsernamePassword Validator Kullanımı"
-date: 2017-10-24 14:18:00 +0300
+date: 2017-10-24 14:18:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

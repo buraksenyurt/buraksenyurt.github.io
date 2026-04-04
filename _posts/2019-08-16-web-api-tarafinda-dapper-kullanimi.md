@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web API Tarafında Dapper Kullanımı"
-date: 2019-08-16 10:30:00 +0300
+date: 2019-08-16 10:30:00
 categories:
   - Framework Tabanlı Programlama
 tags:

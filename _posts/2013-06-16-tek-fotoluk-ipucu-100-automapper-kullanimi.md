@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 100–AutoMapper Kullanımı"
-date: 2013-06-16 09:45:00 +0300
+date: 2013-06-16 09:45:00
 categories:
   - Genel
 tags:

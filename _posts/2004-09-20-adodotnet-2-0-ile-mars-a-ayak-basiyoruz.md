@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net 2.0 ile Mars' a Ayak Basıyoruz"
-date: 2004-09-20 12:00:00 +0300
+date: 2004-09-20 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

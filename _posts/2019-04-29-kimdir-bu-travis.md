@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kimdir Bu Travis?"
-date: 2019-04-29 07:24:00 +0300
+date: 2019-04-29 07:24:00
 categories:
   - Framework Tabanlı Programlama
 tags:

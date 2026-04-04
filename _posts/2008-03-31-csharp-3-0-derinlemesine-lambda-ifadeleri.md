@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 3.0 : Derinlemesine Lambda İfadeleri"
-date: 2008-03-31 06:00:00 +0300
+date: 2008-03-31 06:00:00
 categories:
   - Programlama Dilleri
 tags:

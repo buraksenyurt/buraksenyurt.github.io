@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API ile OData Service İnşa Etmek–CRUD Operasyonları"
-date: 2013-04-25 11:15:00 +0300
+date: 2013-04-25 11:15:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

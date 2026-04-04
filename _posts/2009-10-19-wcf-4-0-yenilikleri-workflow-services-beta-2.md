@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.0 Yenilikleri - Workflow Services [Beta 2]"
-date: 2009-10-19 13:22:00 +0300
+date: 2009-10-19 13:22:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

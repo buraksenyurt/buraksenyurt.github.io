@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Decorator"
-date: 2009-07-22 08:44:00 +0300
+date: 2009-07-22 08:44:00
 categories:
   - Yazılım Tasarımı
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Memory Management’ i Kavramak"
-date: 2012-03-02 06:54:00 +0300
+date: 2012-03-02 06:54:00
 categories:
   - Framework Tabanlı Programlama
 tags:

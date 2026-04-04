@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "for mu, foreach mi? Yoksa Parallel.For mu, Parallel.ForEach mi? [Beta 1]"
-date: 2009-06-09 16:51:00 +0300
+date: 2009-06-09 16:51:00
 categories:
   - Paralel Programlama
 tags:

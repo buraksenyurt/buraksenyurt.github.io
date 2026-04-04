@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Meraklısına NuGet ve NLog ile 5 Dakikada Loglama"
-date: 2014-06-20 20:12:00 +0300
+date: 2014-06-20 20:12:00
 categories:
   - Framework Tabanlı Programlama
 tags: []

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TFS–Client Object Model için Hello World"
-date: 2013-03-15 02:30:00 +0300
+date: 2013-03-15 02:30:00
 categories:
   - DevOps
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Distributed Transactions"
-date: 2003-11-19 12:00:00 +0300
+date: 2003-11-19 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

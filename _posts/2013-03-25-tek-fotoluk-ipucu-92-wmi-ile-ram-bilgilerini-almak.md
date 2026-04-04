@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 92–WMI ile RAM Bilgilerini Almak"
-date: 2013-03-25 21:17:00 +0300
+date: 2013-03-25 21:17:00
 categories:
   - Genel
 tags:

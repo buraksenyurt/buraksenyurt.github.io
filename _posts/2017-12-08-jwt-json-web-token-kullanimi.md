@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JWT(JSON Web Token) Kullanımı"
-date: 2017-12-08 06:00:00 +0300
+date: 2017-12-08 06:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

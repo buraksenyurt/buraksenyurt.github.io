@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Serileştirme İşlemlerinde Versiyonlama(Versioning) Vakaları"
-date: 2008-06-22 12:00:00 +0300
+date: 2008-06-22 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

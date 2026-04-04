@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 90–Office Ailesinin Versiyonlarını Öğrenmek"
-date: 2013-03-25 21:10:00 +0300
+date: 2013-03-25 21:10:00
 categories:
   - Genel
 tags:

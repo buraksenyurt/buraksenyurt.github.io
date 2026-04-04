@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Excel ve Entity Framework Konuşuyor"
-date: 2013-06-30 17:57:00 +0300
+date: 2013-06-30 17:57:00
 categories:
   - Windows Programlama
 tags:

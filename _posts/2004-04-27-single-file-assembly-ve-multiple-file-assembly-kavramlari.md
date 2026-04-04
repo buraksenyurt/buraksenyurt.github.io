@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Single File Assembly ve Multiple-File Assembly Kavramları"
-date: 2004-04-27 12:00:00 +0300
+date: 2004-04-27 12:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-48(Uri Extensions for RSS)"
-date: 2012-03-16 00:00:00 +0300
+date: 2012-03-16 00:00:00
 categories:
   - Genel
 tags:

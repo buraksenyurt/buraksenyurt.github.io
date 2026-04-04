@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Specification Tasarım Kalıbına Gitmeye Çalışırken Ben"
-date: 2016-09-20 21:30:00 +0300
+date: 2016-09-20 21:30:00
 categories:
   - Yazılım Tasarımı
 tags:

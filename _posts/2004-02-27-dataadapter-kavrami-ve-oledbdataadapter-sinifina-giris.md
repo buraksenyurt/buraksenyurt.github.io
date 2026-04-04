@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DataAdapter Kavramı ve OleDbDataAdapter Sınıfına Giriş"
-date: 2004-02-27 08:00:00 +0300
+date: 2004-02-27 08:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Daha Verimli Konfigürasyon Yönetimi (.Net Core)"
-date: 2018-12-10 06:36:00 +0300
+date: 2018-12-10 06:36:00
 categories:
   - Framework Tabanlı Programlama
 tags:

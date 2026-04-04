@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Command Nesnelerine Dikkat!"
-date: 2005-03-27 09:00:00 +0300
+date: 2005-03-27 09:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bu Yaz Macerasının Adı Python"
-date: 2016-06-17 00:00:00 +0300
+date: 2016-06-17 00:00:00
 categories:
   - Programlama Dilleri
 tags:

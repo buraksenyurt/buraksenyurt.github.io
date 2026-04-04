@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir SOAP Web Servisini Proxy Olmadan WebClient ile Çağırmak"
-date: 2017-05-22 13:13:00 +0300
+date: 2017-05-22 13:13:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

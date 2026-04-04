@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework Üzerinde TransactionScope Kullanımı"
-date: 2011-04-01 08:52:00 +0300
+date: 2011-04-01 08:52:00
 categories:
   - Veritabanı
 tags:

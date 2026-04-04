@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 87–Enum Sabitleri ile Attribute Kullanımı"
-date: 2013-03-25 20:55:00 +0300
+date: 2013-03-25 20:55:00
 categories:
   - Genel
 tags:

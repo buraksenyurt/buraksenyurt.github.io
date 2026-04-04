@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NDepend Tool ve CQL(Code Query Language)"
-date: 2010-09-22 20:16:00 +0300
+date: 2010-09-22 20:16:00
 categories:
   - Genel
 tags:

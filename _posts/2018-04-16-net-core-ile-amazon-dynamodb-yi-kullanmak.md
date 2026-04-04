@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Core ile Amazon DynamoDB'yi Kullanmak"
-date: 2018-04-16 06:00:00 +0300
+date: 2018-04-16 06:00:00
 categories:
   - Framework Tabanlı Programlama
   - Bulut Bilişim

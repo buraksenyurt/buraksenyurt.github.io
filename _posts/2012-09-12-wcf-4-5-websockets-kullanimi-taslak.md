@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF 4.5 WebSockets Kullanımı [Taslak]"
-date: 2012-09-12 15:04:00 +0300
+date: 2012-09-12 15:04:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

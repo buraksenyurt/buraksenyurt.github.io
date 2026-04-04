@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Silverlight İstemcileri için Duplex Service Geliştirmek"
-date: 2010-06-18 04:50:00 +0300
+date: 2010-06-18 04:50:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Atlas ile Node.js Üzerinden Haberleşmek"
-date: 2018-05-01 21:30:00 +0300
+date: 2018-05-01 21:30:00
 categories:
   - Web Programlama
 tags:

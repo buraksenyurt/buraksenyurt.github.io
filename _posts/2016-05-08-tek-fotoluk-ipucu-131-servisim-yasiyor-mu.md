@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 131 - Servisim Yaşıyor mu?"
-date: 2016-05-08 02:00:00 +0300
+date: 2016-05-08 02:00:00
 categories:
   - Genel
 tags:

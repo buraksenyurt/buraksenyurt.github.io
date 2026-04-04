@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "React Üzerinde Socket.IO Kullanımı"
-date: 2019-08-30 13:00:00 +0300
+date: 2019-08-30 13:00:00
 categories:
   - Web Programlama
 tags:

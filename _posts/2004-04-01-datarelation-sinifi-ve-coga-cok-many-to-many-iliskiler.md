@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DataRelation Sınıfı ve Çoğa-Çok (Many-to-many) İlişkiler"
-date: 2004-04-01 09:00:00 +0300
+date: 2004-04-01 09:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

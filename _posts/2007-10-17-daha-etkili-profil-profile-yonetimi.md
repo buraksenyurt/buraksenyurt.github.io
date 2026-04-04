@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Daha Etkili Profil(Profile) Yönetimi"
-date: 2007-10-17 12:00:00 +0300
+date: 2007-10-17 12:00:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 80–Bir Assembly’ ın Public Key Token Değerini Bulmak"
-date: 2013-02-18 02:00:00 +0300
+date: 2013-02-18 02:00:00
 categories:
   - Genel
 tags:

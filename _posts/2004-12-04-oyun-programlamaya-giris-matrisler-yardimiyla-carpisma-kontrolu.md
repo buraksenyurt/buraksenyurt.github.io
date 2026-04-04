@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Oyun Programlamaya Giriş (Matrisler Yardımıyla Çarpışma Kontrolü)"
-date: 2004-12-04 12:00:00 +0300
+date: 2004-12-04 12:00:00
 categories:
   - Programlama Dilleri
 tags:

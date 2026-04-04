@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Temelleri - Etkin Hata Yönetimi (Error Management)"
-date: 2007-07-18 12:00:00 +0300
+date: 2007-07-18 12:00:00
 categories:
   - Web Programlama
 tags:

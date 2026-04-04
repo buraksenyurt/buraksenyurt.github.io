@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kalıtım (Inheritance) Kavramına Kısa Bir Bakış"
-date: 2003-12-25 12:00:00 +0300
+date: 2003-12-25 12:00:00
 categories:
   - Programlama Dilleri
 tags:

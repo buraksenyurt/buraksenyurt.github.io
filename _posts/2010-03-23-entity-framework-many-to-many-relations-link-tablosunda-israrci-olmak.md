@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework - Many To Many Relations - Link Tablosunda Israrcı Olmak"
-date: 2010-03-23 22:35:00 +0300
+date: 2010-03-23 22:35:00
 categories:
   - Veritabanı
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Remoting Dünyasından WCF'e Geçmek"
-date: 2007-12-03 12:00:00 +0300
+date: 2007-12-03 12:00:00
 categories:
   - Framework Tabanlı Programlama
   - Servis Tabanlı Geliştirme

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GoLang - Yönlendiriciler (Routers)"
-date: 2017-06-26 10:30:00 +0300
+date: 2017-06-26 10:30:00
 categories:
   - Programlama Dilleri
 tags:

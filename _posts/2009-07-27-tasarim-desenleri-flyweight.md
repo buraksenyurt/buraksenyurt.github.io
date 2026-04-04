@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - FlyWeight"
-date: 2009-07-27 09:30:00 +0300
+date: 2009-07-27 09:30:00
 categories:
   - Yazılım Tasarımı
 tags:

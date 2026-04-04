@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TPL ve Shared Data Isolation"
-date: 2011-01-20 13:35:00 +0300
+date: 2011-01-20 13:35:00
 categories:
   - Paralel Programlama
 tags:

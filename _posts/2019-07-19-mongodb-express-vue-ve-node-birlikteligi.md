@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MongoDb,Express,Vue ve Node Birlikteliği"
-date: 2019-07-19 05:47:00 +0300
+date: 2019-07-19 05:47:00
 categories:
   - Web Programlama
 tags:

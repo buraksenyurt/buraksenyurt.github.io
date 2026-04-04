@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net’ ten HTTPS Tabanlı WCF Çağrısı Gerçekleştirmek"
-date: 2014-08-13 12:00:00 +0300
+date: 2014-08-13 12:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags: []

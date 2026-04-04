@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bir Arayüz, Bir Sınıf ve Bir Tablo"
-date: 2004-01-14 12:00:00 +0300
+date: 2004-01-14 12:00:00
 categories:
   - Programlama Dilleri
 tags:

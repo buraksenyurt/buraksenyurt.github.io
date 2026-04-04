@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 125 - Single Instance Application"
-date: 2015-12-22 15:00:00 +0300
+date: 2015-12-22 15:00:00
 categories:
   - Genel
 tags:

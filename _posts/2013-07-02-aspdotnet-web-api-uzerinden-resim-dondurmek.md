@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net Web API Üzerinden Resim Döndürmek"
-date: 2013-07-02 13:08:00 +0300
+date: 2013-07-02 13:08:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asp.Net–Doğru async, await Kullanımı"
-date: 2014-06-27 04:00:00 +0300
+date: 2014-06-27 04:00:00
 categories:
   - Web Programlama
 tags: []

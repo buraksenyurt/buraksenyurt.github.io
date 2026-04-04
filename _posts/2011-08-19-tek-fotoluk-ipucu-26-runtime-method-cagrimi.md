@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-26 (Runtime Method Çağrımı)"
-date: 2011-08-19 06:30:00 +0300
+date: 2011-08-19 06:30:00
 categories:
   - Programlama Dilleri
   - Genel

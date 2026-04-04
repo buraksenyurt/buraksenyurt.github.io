@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# 3.0 - İlk Bakışta DLINQ"
-date: 2006-09-25 12:00:00 +0300
+date: 2006-09-25 12:00:00
 categories:
   - Programlama Dilleri
 tags:

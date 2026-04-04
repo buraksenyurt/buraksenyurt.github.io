@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - Builder"
-date: 2009-07-17 10:44:00 +0300
+date: 2009-07-17 10:44:00
 categories:
   - Yazılım Tasarımı
 tags:

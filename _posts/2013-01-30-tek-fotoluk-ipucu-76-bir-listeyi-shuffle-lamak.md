@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 76–Bir Listeyi Shuffle’ lamak"
-date: 2013-01-30 21:50:00 +0300
+date: 2013-01-30 21:50:00
 categories:
   - Genel
 tags:

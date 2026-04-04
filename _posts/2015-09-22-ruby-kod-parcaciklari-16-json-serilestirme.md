@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 16 - (JSON Serileştirme)"
-date: 2015-09-22 03:30:00 +0300
+date: 2015-09-22 03:30:00
 categories:
   - Programlama Dilleri
 tags:

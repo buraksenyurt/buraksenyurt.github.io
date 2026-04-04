@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sql Tablolarına Resim Eklemek"
-date: 2004-01-23 02:00:00 +0300
+date: 2004-01-23 02:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

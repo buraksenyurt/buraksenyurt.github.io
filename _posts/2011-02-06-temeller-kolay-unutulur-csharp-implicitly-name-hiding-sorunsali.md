@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Temeller Kolay Unutulur (C# – Implicitly Name Hiding Sorunsalı)"
-date: 2011-02-06 15:50:00 +0300
+date: 2011-02-06 15:50:00
 categories:
   - Programlama Dilleri
 tags:

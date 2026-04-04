@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rust Pratikleri - Aynı Anda Sadece Tek Bir Değiştirilebilir Referans Olabilir"
-date: 2022-04-03 09:00:00 +0300
+date: 2022-04-03 09:00:00
 categories:
   - Programlama Dilleri
 tags:

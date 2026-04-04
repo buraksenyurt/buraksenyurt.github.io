@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WWF : Çalışma Zamanı Motoru, Singleton ve Factory Desenleri"
-date: 2008-01-04 12:00:00 +0300
+date: 2008-01-04 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF–Custom AuthenticationService"
-date: 2014-11-30 23:00:00 +0300
+date: 2014-11-30 23:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

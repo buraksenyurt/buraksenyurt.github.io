@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Strongly Typed Data Control"
-date: 2012-10-01 02:45:00 +0300
+date: 2012-10-01 02:45:00
 categories:
   - Web Programlama
 tags:

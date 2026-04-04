@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 128 - IFormattable ile Sihir"
-date: 2016-01-13 19:00:00 +0300
+date: 2016-01-13 19:00:00
 categories:
   - Programlama Dilleri
 tags:

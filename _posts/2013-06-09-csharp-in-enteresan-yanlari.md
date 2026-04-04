@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C#’ ın Enteresan Yanları"
-date: 2013-06-09 02:44:00 +0300
+date: 2013-06-09 02:44:00
 categories:
   - Programlama Dilleri
 tags:

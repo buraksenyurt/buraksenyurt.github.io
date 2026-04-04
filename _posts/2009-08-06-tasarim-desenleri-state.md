@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tasarım Desenleri - State"
-date: 2009-08-06 06:00:00 +0300
+date: 2009-08-06 06:00:00
 categories:
   - Yazılım Tasarımı
 tags:

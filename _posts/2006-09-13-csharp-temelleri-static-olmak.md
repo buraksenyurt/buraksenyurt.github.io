@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C# Temelleri : Static Olmak"
-date: 2006-09-13 18:00:00 +0300
+date: 2006-09-13 18:00:00
 categories:
   - Programlama Dilleri
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "West-World'ün Uzaydan Gelen SQL Server ile Tanışması"
-date: 2018-06-26 03:00:00 +0300
+date: 2018-06-26 03:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

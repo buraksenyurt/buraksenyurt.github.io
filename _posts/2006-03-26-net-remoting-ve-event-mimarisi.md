@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Remoting ve Event Mimarisi"
-date: 2006-03-26 12:00:00 +0300
+date: 2006-03-26 12:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

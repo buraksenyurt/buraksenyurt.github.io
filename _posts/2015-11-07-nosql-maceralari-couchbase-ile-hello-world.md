@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NoSQL Maceraları - Couchbase İle Hello World"
-date: 2015-11-07 20:00:00 +0300
+date: 2015-11-07 20:00:00
 categories:
   - Veritabanı
 tags:

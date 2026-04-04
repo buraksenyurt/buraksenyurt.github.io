@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Programcıdan Programcıya Rust"
-date: 2021-12-24 10:00:00 +0300
+date: 2021-12-24 10:00:00
 categories:
   - Programlama Dilleri
 tags:

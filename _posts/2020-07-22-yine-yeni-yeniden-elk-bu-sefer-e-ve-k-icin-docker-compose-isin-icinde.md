@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yine Yeni Yeniden ELK(Bu sefer E ve K için docker-compose işin içinde)"
-date: 2020-07-22 20:23:00 +0300
+date: 2020-07-22 20:23:00
 categories:
   - Framework Tabanlı Programlama
 tags:

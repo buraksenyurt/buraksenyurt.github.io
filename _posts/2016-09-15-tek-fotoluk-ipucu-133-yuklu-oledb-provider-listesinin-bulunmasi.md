@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 133 - Yüklü OLEDB Provider Listesinin Bulunması"
-date: 2016-09-15 21:01:00 +0300
+date: 2016-09-15 21:01:00
 categories:
   - Programlama Dilleri
 tags:

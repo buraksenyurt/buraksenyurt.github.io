@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk ipucu - 58 Derived Tipler için XElement Converter"
-date: 2012-07-11 21:15:00 +0300
+date: 2012-07-11 21:15:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sql 2005 XML Veri Tipini XSD ile Doğrulamak"
-date: 2006-04-21 12:00:00 +0300
+date: 2006-04-21 12:00:00
 categories:
   - Veritabanı
 tags:

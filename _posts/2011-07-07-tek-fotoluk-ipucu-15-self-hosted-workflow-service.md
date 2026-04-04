@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 15(Self Hosted Workflow Service)"
-date: 2011-07-07 08:05:00 +0300
+date: 2011-07-07 08:05:00
 categories:
   - Genel
   - Servis Tabanlı Geliştirme

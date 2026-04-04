@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Core Konfigurasyon Yönetimi Üzerine"
-date: 2018-03-01 07:33:00 +0300
+date: 2018-03-01 07:33:00
 categories:
   - Framework Tabanlı Programlama
 tags:

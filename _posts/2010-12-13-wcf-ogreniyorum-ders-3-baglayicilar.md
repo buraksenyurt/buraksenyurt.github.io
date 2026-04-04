@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Öğreniyorum Ders 3–Bağlayıcılar"
-date: 2010-12-13 10:30:00 +0300
+date: 2010-12-13 10:30:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

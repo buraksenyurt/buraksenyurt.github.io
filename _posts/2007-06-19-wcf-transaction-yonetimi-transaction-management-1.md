@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF - Transaction Yonetimi (Transaction Management) - 1"
-date: 2007-06-19 09:00:00 +0300
+date: 2007-06-19 09:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

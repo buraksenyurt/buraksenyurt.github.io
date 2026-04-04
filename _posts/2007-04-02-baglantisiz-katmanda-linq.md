@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bağlantısız Katmanda LINQ"
-date: 2007-04-02 12:00:00 +0300
+date: 2007-04-02 12:00:00
 categories:
   - Programlama Dilleri
 tags:

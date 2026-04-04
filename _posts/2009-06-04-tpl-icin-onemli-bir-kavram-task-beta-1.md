@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TPL için Önemli Bir Kavram : Task [Beta 1]"
-date: 2009-06-04 19:05:00 +0300
+date: 2009-06-04 19:05:00
 categories:
   - Paralel Programlama
 tags:

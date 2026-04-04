@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby Kod Parçacıkları 27 - Hello Multithreading"
-date: 2016-12-01 21:15:00 +0300
+date: 2016-12-01 21:15:00
 categories:
   - Programlama Dilleri
 tags:

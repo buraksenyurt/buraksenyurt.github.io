@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "West-World'ün RabbitMQ ile Tanışmasının Zamanı Gelmişti"
-date: 2018-09-09 21:49:00 +0300
+date: 2018-09-09 21:49:00
 categories:
   - Framework Tabanlı Programlama
 tags:

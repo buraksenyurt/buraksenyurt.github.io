@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web Uygulamalarında Özel Doğrulama İşlemleri"
-date: 2006-01-14 10:00:00 +0300
+date: 2006-01-14 10:00:00
 categories:
   - Web Programlama
 tags:

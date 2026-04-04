@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF, Xaml, Baml ve Dahası"
-date: 2007-03-21 12:00:00 +0300
+date: 2007-03-21 12:00:00
 categories:
   - Programlama Dilleri
 tags:

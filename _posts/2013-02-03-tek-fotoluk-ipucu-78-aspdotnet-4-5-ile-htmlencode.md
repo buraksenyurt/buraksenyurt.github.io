@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 78 - Asp.Net 4.5 ile HtmlEncode"
-date: 2013-02-03 17:07:00 +0300
+date: 2013-02-03 17:07:00
 categories:
   - Genel
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF–Concurrency"
-date: 2013-04-10 10:41:00 +0300
+date: 2013-04-10 10:41:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:
