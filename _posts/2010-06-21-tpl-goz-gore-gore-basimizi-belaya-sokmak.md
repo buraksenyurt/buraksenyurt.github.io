@@ -18,12 +18,11 @@ Bazen göz göre göre başımıza bi ton dert açarız. Kimi zaman başlayacağ
 
 ![blg209_Giris](/assets/images/2010/blg209_Giris.jpg)
 
-
 Tabi ki bir yazılımcı için adrenalin genellikle üst yöneticisi tarafından salgılanan bir hormondur. Nitekim yazılımcıların, ilerideki felaketleri kestirerek hareket etmesi ve geliştirmeleri buna göre yapması her zaman kolay olmayabilir. Bir başka deyişle bazı vakalara hazırlıklı olmak için önceden bunları çalışmak gerekmektedir.
 
 İşte bu yazımızda biz de Task Parallel Library için söz konusu olan ve geliştiricilerin başını derde sokacak 2 vaka üzerinde duruyor olacağız. Haydi o zaman parmakları sıvayalım ve işe koyulalım.
 
-Deadlock Durumu
+## Deadlock Durumu
 
 Bu kelime her zaman korkutucu olmuştur. Yazılım Geliştirme serüvenime ilk başladığım yıllarda çoğunlukla veritabanı tarafındaki kilitlenmelerden söz edildiğini çok net hatırlıyorum. Ancak birden fazla iş parçasının da deadlock’ a düşmesi, bir başka deyişle birbirlerini beklemeleri nedeniyle, içinde çalıştıkları Thread’ i (çoğunlukla ana uygulama iş parçası-Main Thread) kitlemeleri söz konusudur. Durumu daha net anlayabilmek için aşağıdaki kod parçasını göz önüne alalım.
 
@@ -83,7 +82,7 @@ Görüldüğü üzere her iki Task birbirini bekler şekilde kalmıştır. Çok 
 
 Gelelim diğer bir senaryoya.
 
-Döngü Değişkenlerine Dikkat
+## Döngü Değişkenlerine Dikkat
 
 Bu aslında oldukça eğlenceli ve bir o kadarda beklenmedik sonuçları üreten vakalardandır. Olayı hızlı bir şekilde değerlendirmek adına aşağıdaki kod parçasını göz önüne alabiliriz.
 

@@ -20,7 +20,7 @@ Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredey
 
 İşte geçen gün özlediğim [Star Wars](http://tr.wikipedia.org/wiki/Y%C4%B1ld%C4%B1z_Sava%C5%9Flar%C4%B1) serilerinden birisini izlerken birden kendimi bilgisayarımın başında ve başka bir hikayenin giriş noktasında buldum. Karşımdaki ekran da karalara bağlamış, alacalı bulacalı bir geliştirme penceresi duruyordu. İçerisinde ise HTML ve Asp.Net karışımı bir şeyler…
 
-Hikayenin Başı
+## Hikayenin Başladığı Yer
 
 Her şey uzun bir zaman önce değil ama kısa bir süre önce Asp.Net 4.5 tabanlı bir Empty Web Application açmamla başlamış ve sonrasında olanlar olmuştu
 
@@ -62,7 +62,7 @@ Web form içeriğinin görsel tasarımı ise aşağıdaki ekran görüntüsünde
 
 Ekranın görevi oldukça basitti. Kullanıcıdan Nickname ve Password bilgisi ile giriş yapması isteniyordu. Eğer bu TextBox kontrollerinin içeriği boş bırakılırsa da RequiredFiledValidator kontrolleri devreye girerek kullanıcıyı uyarmaktaydı.
 
-İlk Çalışma
+## İlk Çalışma
 
 Herşey bana göre son derece normaldi ancak çalışma zamanı böyle demiyordu. Sonuç aşağıdaki ekran görüntüsünde ki gibi olmuştu.
 
@@ -92,7 +92,7 @@ Bilindiği üzere bu sayede istemci tarafı sunucuya gönderilmeden de doğrulam
 
 Asp.Net 4.5 ile birlikte ise daha önceden kullanılan javascript odaklı sistem yerine, varsayılan olarak HTML 5’ in data-val-controltovalidate, data-val-errormessage, data-val, data-val-evaluationfunction, data-val-initialvalue gibi nitelikleri (attribute) ve jQuery kütüphanesi ele alınmaktadır. Dolayısıla Asp.Net 4.5 tipinden bir Empty Web Application söz konusu olduğunda ve doğrulama işlemlerini uygulamak istediğimizde, bazı ayarlamaları yapmamız söz konusudur.(Bu işlemlere Web Forms tipinden bir Asp.Net uygulaması açtığınızda ihtiyaç duymayabilirsiniz)
 
-Adımlar
+## Adımlar
 
 Tekrar Target Framework’ ü.Net Framework 4.5’ e çekelim. Sonrasında ise Unobtrusive Validation akışı için ihtiyacımız olan jQuery kütüphanelerini NuGet paket yönetim aracı ile projemize dahil edelim. (Son sürümleri eklememiz daha akıllıca olabilir)
 
@@ -132,7 +132,7 @@ namespace WebApplication2
 
 Bir takım path tanımlamaları yapıldığı görülmektedir. jQuery için yapılan tanımlamalar haricinde Content Delivery Network ([CDN](https://en.wikipedia.org/wiki/Content_delivery_network)) için de bazı path bildirimleri belirtilmiştir. Senaryo da, Microsoft AJAX CDN’ leri kullanılmaktadır. İlgili path tanımlamaları ScriptResourceDefinition sınıf örneği için yapıldıktan sonra, ilgili nesne örneğinin ScriptResourceMapping özelliğine eklenmesi yeterlidir.
 
-Yeni Bir Test
+## Yeni Bir Test
 
 Uygulamamızı tekrar çalıştırıp test edelim. Bir hata oluşmayacak ve doğrulama kontrollerinin çalıştığı gözlemlenecektir.
 
@@ -160,7 +160,7 @@ Hımmm bir terslik var gibi. Sanki buralar da HTML 5’ den hiç bir eser yok...
 
 appSettings sekmesinde yer alan ValidationSettings:UnobtrusiveValidationMode key değeri, Asp.Net çalışma zamanı için anlamlıdır. Value niteliğine WebForms dışında None değeri de verilebilmektedir. None değerinin verilmesi halinde tahmin edileceği üzere eski stil doğrulama sürecine geçilmektedir. Şu anki haliyle de yeni stilin kullanılacağı belirtilmektedir.
 
-Bir Test Daha
+## Bir Test Daha
 
 Öyleyse uygulama tekrardan çalıştırılır ve istemci tarafına giden kaynak kod içeriğine bakılır.
 
@@ -170,7 +170,7 @@ Bir Test Daha
 
 > Size tavsiyem diğer doğrulama kontrollerini de işin içine katarak senaryoyu genişletmeniz ve özellikle data-val-evaluationfunction değerlerinin nasıl üretildiğine bakmanız yönünde olacaktır.
 
-Kıssadan Hisse
+## Kıssadan Hisse
 
 Yeni nesil doğrulama stratejisi için son teknoloji ürünüdür diyebilir miyiz acaba? Bence evet ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_205.png)
 

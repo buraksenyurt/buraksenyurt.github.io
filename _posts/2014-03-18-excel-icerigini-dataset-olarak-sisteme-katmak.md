@@ -10,10 +10,9 @@ Bazen geliştirme ortamımız ile yazılan uygulamanın taşınacağı ortamlar 
 
 ![production-bug](/assets/images/2014/production-bug.jpg)
 
-
 Bu tip bir yaklaşım ortak ortam standartlarının geliştirme de kullanılmasına olanak tanımaktadır. Ancak geliştiriciler uygulamanın host edileceği ortamlar hakkında fazla düşünceli davranmazsa (aynen benim gibi), özellikle kendi ortamında elinde yer alan her aracın orada sorunsuz çalışabileceğini düşünürse büyük hata yapar. İşte benim içine düştüğüm durum ve uyguladığım basit çözüm.
 
-Vaka
+## Vaka
 
 Geçtiğimiz günlerde şirkette geliştirmekte olduğumuz projede şöyle bir ihtiyaç oluştu;
 
@@ -31,12 +30,13 @@ Kurumsal bir firma da sunucular için uyulması gereken pek çok kural vardır. 
 
 Tabi geliştirici makinelerinde Excel gibi Office ürünleri yüklü olduğundan bu Interop'ların kullanılabilmesi son derece kolaydır. Ancak sunucu ortamlarında işler farklı yürür.
 
-Uygun Çözümü Keşfetmek
+## Uygun Çözümü Keşfetmek
 
 İşte bu yüzden farklı bir yol bulmam gerekiyordu. En pratik olan eski stilde Excel içeriğine ulaşmaya çalışmaktı. Yani OleDbConnection sınıfını uygun provider bilgisini içeren bir bağlantı ifadesi ile tesis ederek işe başlamam gerekiyordu.
 
 > Aslında bir Excel dosyasını okumak için kullanılabilecek bir kaç yol bulunmaktadır. Aşağıdaki şekilde görüldüğü gibi pek çok Provider söz konusudur.
-> ![exltods_5](/assets/images/2014/exltods_5.png)
+
+![exltods_5](/assets/images/2014/exltods_5.png)
 
 Bu noktada epeyce şanslı olduğumu ifade edebilirim. Nitekim sunucular üzerinde ücretsiz olarak dağıtılabilen Microsoft Access Database Engine 2010 Redistributable paketi kuruluydu. Hatta bunun 4.0 versiyonu da yer alıyordu. [Bu adresten](http://www.microsoft.com/en-us/download/details.aspx?id=13255) indirebileceğiniz paket ile Excel'in var olan tüm sürümlerine bağlantı kurulabilmekte.
 
@@ -50,13 +50,13 @@ Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\GameBook.xlsx;Extended Properti
 
 Her iki bağlantı ifadesinde yer alan HDR ifadesi, Excel dosyası içerisindeki Sheet'ler ilk satırın başlık kolonları olduğunu ifade etmektedir. Extended Properties kısmında kullanılabilecek başka key-value değerleri de mevcuttur. Bunları araştırmanızı öneririm. Diğer yandan Excel için farklı Provider'larca kullanılabilecek bağlantı ifadeleri için [şu adrese bakabilirsiniz](http://www.connectionstrings.com/excel/).
 
-Bağlantı Cümlesi Tamam da Sonrası
+## Bağlantı Cümlesi Tamam da Sonrası
 
 Bağlantı cümlesi hazır olduğuna göre artık kodlamaya başlayabilirdim. Burada da aslında izlenebilecek epeyce farklı yol vardı. Ben Excel içeriklerini sistem içerisinde bir DataSet olarak taşımayı düşünmüştüm. Uygulama da çeşitli tiplerin genişletilmiş fonksiyonelliklerinin tutulduğu Cross-Cutting vari bir kütüphaneye odaklandım ve DataSet tipine bir LoadFromExcel isimli bir Extension Metod ilave etmeye karar verdim.
 
 > Takip eden örnek kod parçasında yer alan pek çok kısım kasıtlı olarak çıkartılmıştır. Çıkartılan kısımlar yazının sonundaki maddelerde belirtilen ve siz değerli okurlarıma ödev olanlardır.
 
-Kodlama
+## Kodlama
 
 İşte DataSet için eklediğimiz genişletme metodunun kod parçası.
 
@@ -111,7 +111,7 @@ namespace Demo
 }
 ```
 
-Kodlarda Ne Yaptım
+## Kodlarda Ne Yaptım
 
 Pek tabi genişletme metodları (Extension Methods) static olup ilk parametresinde this keyword'ünü kullanmak durumundadır. Bilindiği üzere buradaki ilk parametre genişletme metodunun uygulandığı tipi ifade etmektedir.
 
@@ -121,7 +121,9 @@ Metodun ilk parametresi aynı zamanda LoadFromExcel fonksiyonunu çalışma zama
 
 Kod bu Sheet'leri tek tek sorgulamak için OldDbCommand nesnesinin CommandText özelliğini değiştirmektedir. Aslında burada tipik bir SQL Select ifadesi çalıştırılır.
 
+```sql
 Select from [Oyuncular$]
+```
 
 gibi.
 
@@ -131,7 +133,7 @@ Mutlaka dikkatinizi çekmiştir ki bir de CreateDataTable isimli bir fonksiyon k
 
 Son olarak metodun geriye, eklenen DataTable sayısını döndürdüğünü belirtebiliriz. Bu bilgi object user tarafından değerlendirilebilir. Bir nevi ExecuteNonQuery metodunun işlem gören satır sayısını döndürmesi felsefesini kullanmaya çalıştık.
 
-Testler
+## Testler
 
 Uygulamayı test etmek için ben aşağıdaki içeriklere sahip basit bir Excel dosyasından yararlandım. GameBook isimli dosya Excel 2013 formatında ama diğer formatları da deneyebiliriz.
 
@@ -143,7 +145,7 @@ Uygulamayı test etmek için ben aşağıdaki içeriklere sahip basit bir Excel 
 
 ![exltods_4](/assets/images/2014/exltods_4.png)
 
-Peki Ya Yapmadıklarımız
+## Peki Ya Yapmadıklarımız
 
 Önceden de belirttiğim üzere bu gerçek hayat senaryosunda ki bazı maddeler çıkartılmış durumdadır. Aşağıdakileri yapmaya çalışarak kendinizi bu konuda geliştirmeye devam edebilirsiniz.
 
@@ -153,6 +155,6 @@ Peki Ya Yapmadıklarımız
 - Metodun farklı Excel Provider’ ları ile çalışacak şekilde dekore edilmesi gerekebilir. Firmanın farklı kullanıcılarının farklı Excel sürümleri ile çalışmak istemesi bir yana, ürünün dağıtılacağı sunucuların Provider kısıtları olabilir. Buna dikkat ederek bir geliştirme yapmak faydalı olabilir. Her ne kadar bu tip bir Container yazmak zor görünsede IoC araçlarına bir bakılabilir.
 - Exception Handling mekanizması konulamalıdır. Testler de Provider'ın nadiren de olsa exception verdiği durumlar ile karşılaştığımı ifade edebilirim. Bu genellikle Provider'ın kullandığı dll'den kaynaklansa da ele alınması ve object user tarafna uygun bir bilgilendirme yapılması gerekmektedir. Aslında ödevlere başlanabilecek en basit madde sanıyorum ki budur.
 
-Sonuç
+## Sonuç
 
 Sonuç olarak bir Excel içeriğini sisteme almanın birden fazla yolu olduğunu ifade edebiliriz. Ancak bunu etkileyen bazı faktörler olduğunu da bilmeliyiz. En önemlisi de içeriğin alınacağı ortama ait sistemsel parametrelerdir. Çok doğal olarak bu tip bir senaryoda SSIS paketlerinin kullanılmasını da düşünebilirsiniz. Hatta daha önceden çalıştığım bir finans kurumunda tam da bu işler için SSIS (SQL Server Integration Services) paketleri hazırlamakta olduğumu ifade edebilirim. Ama işte gün geliyor SSIS paketi yazacak ortam veya ürün bulamayabiliyorsunuz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

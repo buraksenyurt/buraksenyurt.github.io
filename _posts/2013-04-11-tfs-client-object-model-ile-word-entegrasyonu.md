@@ -18,31 +18,27 @@ Geçtiğimiz gün National Geographic kanalında Mega Fabrikalar’ ı seyretme 
 
 ![Dodge-Challenger-production-1024x566](/assets/images/2013/Dodge-Challenger-production-1024x566.jpg)
 
-
 Robotların, gelişmiş endüstürinin ve insan gücünün bir araya geldiği fabrika, sadece 24 saat içerisinde üretim hattından mükemmel spor arabalar çıkmaktaydı. Üstelik motor bloğu da kıtanın bir diğer ucundan geliyordu.
 
 Her ne kadar mükemmele yakın bir üretim bandı da olsa, akıllı bilgisayarlar üretim sürecindeki her adımı gözlemliyor ve bir istisna olması halinde bandı durduruyordu. O da yetmiyor pek çok noktada usta insanlar devreye giriyor ve gerekirse üretim bandını kendi insiyatifleri ile durduruyorlardı. Tabi burada yazarak anlatmak çok zor o yüzden mutlaka seyredin derim. Aslında belgeseli izlerken en çok da şunu düşündüm “Böyle muazzam yapılar nasıl oluyor da inşa ediliyor? İnsan aklı ne kadar muazzam ki her ayrıntıyı düşünüyor, düşünmeye çalışıyor”
 
-Derken bilgisayarımın başına döndüm ve kendi kendime şöyle dedim “E illa ki bir Hello World uygulamaları vardır yahu”
-
-![Nerd smile](/assets/images/2013/wlEmoticon-nerdsmile.png)
-
-Bu yazımız ile birlikte Team Foundation Server maceralarımıza devam etmeye çalışıyor olacağız. Yeni bölümüzde Client Object Model’ i bir Word uygulaması içerisinde kullanmaya çalışacağız ve çok basit olarak Work Item öğelerini nasıl kayıt edebileceğimizi göreceğiz.
+Derken bilgisayarımın başına döndüm ve kendi kendime şöyle dedim “E illa ki bir Hello World uygulamaları vardır yahu”... Bu yazımız ile birlikte Team Foundation Server maceralarımıza devam etmeye çalışıyor olacağız. Yeni bölümüzde Client Object Model’ i bir Word uygulaması içerisinde kullanmaya çalışacağız ve çok basit olarak Work Item öğelerini nasıl kayıt edebileceğimizi göreceğiz.
 
 > Team Foundation Server dünyası ile ilişkili önceki yazılarıma aşağıdaki adreslerden ulaşabilirsiniz.
-> - [TFS Client Object Model için Hello World](/2013/03/15/tfs-client-object-model-icin-hello-world/)
-> - [TFS Web Services ve Kullanımları](/2013/03/17/tfs-web-services-ve-kullanimlari/)
-> - [Heryerden TFS Kullanabilmek](/2013/03/02/heryerden-tfs-kullanabilmek/)
+
+- [TFS Client Object Model için Hello World](/2013/03/15/tfs-client-object-model-icin-hello-world/)
+- [TFS Web Services ve Kullanımları](/2013/03/17/tfs-web-services-ve-kullanimlari/)
+- [Heryerden TFS Kullanabilmek](/2013/03/02/heryerden-tfs-kullanabilmek/)
 
 Çalışmakta olduğumuz Team Project’ in süreç şablonu (Process Template) ne olursa olsun (Scrum, MSF, CMMI) giriş yapılan öğeler Work Item olarak düşünülmektedir. Örneğin Scrum felsefesi göz önüne alındığında Product Backlog Item, Task, Bug, Test Case ve Impediment birer Work Item’ dır. CMMI şablonuna bakıldığında ise Requirement, Task, Bug, Change Request, Issue, Review, Risk ve Test Case birer Work Item olarak düşünülmektedir.
 
 Pek tabi bu Work Item öğeleri Client Object Model tarafında da birer tip olarak ele alınabilirler. Client Object Model bilindiği üzere, Team Foundation Server ın dış dünya ile olan iletişiminde ve özellikle çevre araçlar ile olan entegrasyonunda önemli bir yere sahiptir. Dilerseniz örneğimize geçelim ve adım adım ilerleyerek konuyu anlamaya çalışalım.
 
-Senaryo
+## Senaryo
 
 Elimizde Scrum 2.0 formatında oluşturulmuş bir Team Project var. Amacımız Word belgesi içerisinden, bir Product Backlog Item ve buna bağlı iki Task öğesinin kayıt edilmesini sağlamak. Olayı son derece basit bir biçimde ele alacağımızdan Product Backlog Item ve Task öğeleri için sadece Title ve Description içeriklerin yer veriyor olacağız. Kritik noktalardan birisi de, Task öğeleri ile Product Backlog Item arasında Parent-Child ilişkinin kurulmasıdır. Yani Task öğeleri ilgili Product Backlog’ a bağlı olacaklardır.
 
-Ön Hazırlıklar ve Doküman Tasarımı
+## Ön Hazırlıklar ve Doküman Tasarımı
 
 İşe ilk olarak Visual Studio 2012 ortamında bir Word 2010 Document projesi oluşturarak başlamalıyız.
 
@@ -58,7 +54,7 @@ Word dokümanının tasarımını ise aşağıdaki ekran görüntüsünde yer al
 
 Oldukça sade bir tasarımımız var. Örneği mümkün olduğunca basit seviyede tutmamız önemli. Product Backlog Item ile Task öğelerine ait Title ve Description girişleri için PlainTextContentControl bileşeninden yararlanılmaktadır. Ve,
 
-Kod
+## Kod
 
 Kullanıcı Save işlemini icra ettiğinde (Ribbon kontrolüne basabilir, Ctrl+Save yapabilir vb), girdiği veri içeriğinin TFS tarafındaki ilgili projenin backlog’ una yazılması gerekmektedir. Bu nedenle odak noktası dokümanın BeforeSave olay metodudur. Lakin Client Object Model nesne referanslarının nasıl kullanıldığına da dikkat edilmelidir.
 
@@ -153,7 +149,7 @@ Product Backlog Item için CreateBacklogItem, Task içinse CreateTask isimli met
 
 WorkItem nesneleri kayıt edildiğinde Id özellikleri de, sunucu tarafından verilen değer ile otomatik olarak doldurulur. Nitekim Parent-Child ilişkinin oluşturulması noktasında, Parent Work Item’ ın Id değerinin bilinmesi önemlidir. Bu sebepten CreateBacklogItem metodu geriyer üretilen Work Item Id değerini döndürmektedir. Bu değer CreateTask fonksiyonu için bir girdidir. CreateTask metodunun en kritik noktası ise WorkItemLinks koleksiyonuna Parent tipte bir bağlantı tanımının eklenmesidir. Bunun için WorkItemLinkTypeEnd ve WorkItemLink tiplerinden yararlanılmıştır. Parametre olarak gelen integer değer bu senaryo da Parent olacak Product Backlog Item’ ı işaret etmektedir.
 
-Testler
+## Testler
 
 Artık uygulamayı test edebiliriz. Örnek olarak ben aşağıdaki ekran görüntüsünde yer alan içeriği oluşturdum.
 
@@ -179,7 +175,7 @@ Pek tabi ki bu Task örneklerine çift tıklandığında, Word dosyasında belir
 
 Her şey çok kolay görünüyor değil mi? Ama pek çok eksik ve tamamlanması gereken iş var. Bu işlerin tamamlanması da önemli bir development eforunu gerektirmekte.
 
-Eksikler
+## Eksikler
 
 Bu nokta da örneğimizin aslında sadece bir Hello World olduğunu ifade etmem gerekiyor. Sizin de fark edeceğiniz gibi bazı eksik noktalar var. Örneğin,
 

@@ -23,6 +23,7 @@ tags:
 
 ![cpdf_10](/assets/images/2013/cpdf_10.png)
 
+```text
 "Buyrun" dedi Reno, nefes nefese kalmış bir halde.
 
 Fransız, yazılım alanında çift doktora yapmış birisiydi. Şirketin en kilit projelerinde görev almıştı. Bu yüzden Carl'ın da bir numaralı adamıydı.
@@ -34,6 +35,7 @@ Fransız, yazılım alanında çift doktora yapmış birisiydi. Şirketin en kil
 Gülümsedi Fransız Reno.
 
 "Neden olmasın? Bana mesai bitimine kadar müddet verin lütfen."
+```
 
 Özellikle veri odaklı (Data-Centric) çalışan uygulamalar düşünüldüğünde çeşitleri ne olursa olsun raporlama, işin oldukça önemli bir parçasını oluşturmaktadır. Ağırlıklı olarak rapora ihtiyaç duyan pozisyonlar, söz konusu raporları çeşitli ortamlarda görmek isteyen elemanlardır. Örneğin bunları Web arayüzünde açabilmeyi, Excel veya Word formatındaki dosyalara çıktı olarak alabilmeyi ve mobil cihazlarından takip edebilmeyi isterler. Günümüzün pek çok modern uygulaması zaten bu tip çıktıların alınmasını standart olarak olanak sunmaktadır.
 
@@ -41,7 +43,7 @@ Elbette çok farklı istekler de gelebilmektedir. Söz gelimi çıktı olarak ba
 
 > MigraDoc aslında, PDFSharp and MigraDoc Foundation isimli ürün ailesinin bir parçasıdır. Bu ürünlere ait kaynak kodları veya derlenmiş Binary dosyalarını [Codeplex üzerinden](http://pdfsharp.codeplex.com/releases) indirebilirsiniz.
 
-Senaryo
+## Senaryo
 
 İlk olarak örnek senaryomuzu ele alalım. Bilindiği üzere Northwind veritabanında aşağıdaki ekran görüntüsünde yer alan standart View nesneleri varsayılan olarak yer almaktadır.
 
@@ -55,7 +57,7 @@ Senaryomuza göre basit bir Windows Forms uygulamasında, Northwind veritabanı 
 
 Sol üst köşede şirkete ait bir logo, Footer ve Header kısımlarında açık gri formatta bir bilgi, raporun alındığı View nesnesinin adı, üretildiği tarih, detay için URL adresine gönderme yapan bir link ve çok doğal olarak verinin kendisini içeren bir tablo. Peki bu içeriği nasıl üretiyor olacağız?
 
-Kodlama Zamanı
+## Kodlama Zamanı
 
 Örneğimiz basit bir Windows Forms uygulaması şeklinde geliştirilecektir. İlk etapta uygulamaya aşağıdaki görselde yer alan MigraDoc.DocumentObjectModel, MigraDoc.Rendering ve MigraDoc.RtfRendering isim Assembly'ları referans etmemiz gerekiyor.
 
@@ -338,11 +340,7 @@ Document tipi aslında sayfa içerisinde kullanılacak global Style'leri ve Sect
 
 Kodlama sırasında keşfetmemiz gereken veya bizleri zorlayabilecek olan noktalar genellikle ilgili içeriğin (paragraf, tablo, resim vb) sayfa içerisindeki yerleşimlerinin ayarlanmasıdır. Aslında bir kaç deneme yanılma ile düzgün bir şablon oturtabiliriz. Ancak yine de dikkate alınması gereken bazı hususlar vardır. Söz gelimi View'un döndürdüğü sonuç kümesinde yer alan kolon sayısının çok fazla olması halinde sayfaya sığmayacak ve yatay olarak görüntü kayıpları yaşanacaktır ki bu Jimmy Carl'ın pek de hoşuna gitmeyecektir. Bu gibi ileri seviye sayılabilecek hususlar örneğimizde ele alınmamıştır. Dolayısıyla siz kendi örneklerinizi icra ederken daha dikkatli davranmalısınız.
 
-> Satır sayısı çok fazla olan bir içeriğin PDF'e yazılması oldukça uzun sürebilir/sürdüğü gözlemlenmiştir. Bu sebepten ilgili dosya kaydetme operasyonunun aslında asenkron bir düzenek ile icra edilmesi çok daha uygun olabilir. Hatta büyük boyutlu raporlar için bir Progress Bar ile durum bildirimi bile yapabilirsiniz
->
-> ![Sarcastic smile](/assets/images/2013/wlEmoticon-sarcasticsmile_16.png)
->
-> (async ve await kullanmayı deneyiniz)
+> Satır sayısı çok fazla olan bir içeriğin PDF'e yazılması oldukça uzun sürebilir/sürdüğü gözlemlenmiştir. Bu sebepten ilgili dosya kaydetme operasyonunun aslında asenkron bir düzenek ile icra edilmesi çok daha uygun olabilir. Hatta büyük boyutlu raporlar için bir Progress Bar ile durum bildirimi bile yapabilirsiniz. (async ve await kullanmayı deneyiniz)
 
 Form içeriğindeki kodlarımız ise aşağıdaki gibidir. Utility tipi pek çok ağır fonksiyonelliği kapsüllediğinden bu kısımın okunurluğu çok daha kolaydır.
 
@@ -386,7 +384,7 @@ namespace ReportApp
 
 Dikkat edilmesi gereken noktalardan birisi de PDF dosyasının kayıt edilmesinden sonra Process.Start operasyonu ile ilgili içeriğin otomatik olarak açılmasıdır. Bu sayede sonuçları anında görebiliriz.
 
-Çalışma Zamanı
+## Çalışma Zamanı
 
 Örneğimizi çalıştırdığımızda Select name from sys.views order by name sorgusunun bir sonucu olarak tüm View nesnelerinin elde edilebildiği görülecektir. Bu şekilde bir kullanım nedeni ile, Northwind veritabanına eklenecek olan yeni View'ları da PDF üretimi sürecine katabiliriz.
 
@@ -394,7 +392,7 @@ Dikkat edilmesi gereken noktalardan birisi de PDF dosyasının kayıt edilmesind
 
 ve bir kaç rapor örneğine ait ekran çıktısına yer vererek devam edelim.
 
-Örnek PDF Çıktıları
+## Örnek PDF Çıktıları
 
 Products by Category View'u için örnek ekran çıktısı
 
@@ -408,7 +406,7 @@ Order Subtotals View'u için örnek ekran çıktısı
 
 ![cpdf_9](/assets/images/2013/cpdf_9.png)
 
-PDF içinde Chart Üretimi
+## PDF içinde Chart Üretimi
 
 Elbette PDF dosyasına çıktı olarak verilen bu raporlar arasında en etkileyici olanlarından birisi de Chart tipindekilerdir. Şimdi örnek senaryomuzda aşağıdaki görsel de yer alan ve kategori bazlı toplam satış rakamlarını gösteren View nesnesini kullanarak Line tipinde bir raporu üretmeye çalışalım.
 
@@ -487,11 +485,9 @@ Uygulamayı çalıştırdığımızda aşağıdakine benzer bir sonuç ile karş
 
 ![pdfchart_2](/assets/images/2013/pdfchart_2.png)
 
-Sonuç
+## Sonuç
 
 Sonuç olarak en azından işe yarar PDF içeriklerini kolayca üretebildiğimize şahit olduk. Örnekleri geliştirmek tamamen sizin elinizde. Söz gelimi Chart bileşenini kullandığımız senaryoyu daha da ileri götürebilir, örneğin Elma Dilimi raporları işin içersine katarak daha etkileyici çıktılar sunabilirsiniz (Üstelik bu tip görsel raporlar Jimmy Carl'ın da çok hoşuna gidecektir) Buna ilaveten bir ön iletişim kutusundan yararlanarak görsellik üzerine detay bilgilerini (örneğin tablonun arka plan rengi, font büyüklükleri, logonun gösterilip gösterilmeyeceği, bir özet bilginin konulup konulmayacağı, header veya footer kısımlarında ne yazılması istendiği vb) kullanıcıdan alabilirsiniz. Biz bu yazımızda sadece Hello World demeye çalıştık
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_192.png)
 
 > PDF Sharp ve Migra kütüphanelerinin detaylı kullanımı ile ilişkili olarak [bu Wiki sayfasından](http://www.pdfsharp.net/wiki/MainPage.ashx) da yararlanabilirsiniz. Oldukça geniş kullanım örnekleri olduğunu ifade edebilirim.
 

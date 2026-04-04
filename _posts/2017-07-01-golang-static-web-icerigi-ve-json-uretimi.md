@@ -52,7 +52,7 @@ Paketi LiteIDE ile oluşturup build edebiliriz. Sonrasında pkg klasöründe bui
 
 Artık makinedeki diğer go örneklerimizde entity/starwars şeklinde paket tanımlayıp kullanabiliriz.
 
-Örneğin Klasör Yapısı
+## Örneğin Klasör Yapısı
 
 Uygulamamızda statik web içeriğini ve REST tadındaki GET taleplerini karşılayacak yönlendirmeleri bir arada sunacağız. Burada dikkat edilmesi gereken nokta statik içeriğin bir alt alanda oluşturulması. Aksi halde joker karakter kullanımı (filepath şeklinde olan) tüm yönlendirme taleplerini karşılayacağından build işleminde hata alırız. Bu yüzden örneğin klasör yapısını aşağıdaki gibi oluşturabiliriz.
 
@@ -65,7 +65,7 @@ Uygulamamızda statik web içeriğini ve REST tadındaki GET taleplerini karşı
 
 Static klasörü tahmin edeceğiniz üzere alt alanımız olarak görev yapacak.
 
-Ön Hazırlıklar
+## Ön Hazırlıklar
 
 main.go içeriğine geçmeden önce static klasöründeki index.html ve common.css içeriklerini tasarlayalım. Açılış sayfası gibi düşünebileceğimiz index.html içeriği şu şekildedir.
 
@@ -104,7 +104,7 @@ Sonuçta aşağıdaki ekran görüntüsündeki gibi bir içerik oluşturmaya ça
 
 ![gorouting_9.gif](/assets/images/2017/gorouting_9.gif)
 
-Dikkat edilmesi gereken nokta index.html'e ulaşırken http://localhost:4569/static adresi üzerinden gidiyor olmamız. main paketinde buna göre bir kodlama yapacağız.
+Dikkat edilmesi gereken nokta index.html'e ulaşırken `http://localhost:4569/static` adresi üzerinden gidiyor olmamız. main paketinde buna göre bir kodlama yapacağız.
 
 main.go
 
@@ -181,26 +181,27 @@ JSON çıktısı üreteceğimiz için encoding/json, web sunucusu dinlemesi yapa
 En sonda yer alan loadDataSet fonksiyonu Category ve Model tipinden slice örnekleri oluşturup döndürüyor. Onunla ilgili olarak söyleyebileceğimiz en güzel şey n sayıda parametre döndüren fonksiyonlara bir örnek olması. append çağrıları ile n sayıda tipi ilave ettiğimiz de dikkatten kaçmamalı. main fonksiyonu içerisinde Router nesnesini örnekleyerek işe başıyoruz. Bu sefer bir önceki yazımızda ele aldığımız GET çağrıları dışında ServeFiles isimli bir kullanım da söz konusu. Bu fonksiyon ilk parametre olarak statik sayfalarımızı tuttuğumuz adreslemeyi alıyor. *filepath kullanımına dikkat etmek lazım. Case-Sensitive bir ifade olduğunu belirtelim. * işareti nedeniyle ikinci parametre ile bildirilen klasördeki her dosyanın ele alınacağını bildiriyoruz. Bu tanımlama ile static adresine gelecek taleplerin hangi fiziki adresten karşılanacağını belirtmiş olduk. ServeFiles bildiriminde daha geniş imkanlara da sahibiz. Nitekim statik dosyaların ele alınması sırasında araya girip HTTP paketine müdahale edebilir Header kısımlarını kurcalayabiliriz ([Şu adresteki tartışmayı](https://github.com/julienschmidt/httprouter/issues/40) incelemenizi öneririm. Statik sayfalarda Cache-Control header bilgisinin nasıl ilave edilebileceği incelenmiş)
 
 > Eğer /static/ *filepath bildirimi yerine /* filepath şeklinde bir tanımlama yaparsak kodun derlenmesi sırasında aşağıdaki hataları alırız.
-> ```bash
-> panic: '/category' in new path '/category' conflicts with existing wildcard '/*filepath' in existing prefix '/*filepath'
->
-> goroutine 1 [running]:
-> panic(0x5fd040, 0x125624d0)
-> 	C:/Go/src/runtime/panic.go:500 +0x331
-> github.com/julienschmidt/httprouter.(*node).addRoute(0x1254a630, 0x6379cc, 0x9, 0x65ead8)
-> 	c:/go works/samples/src/github.com/julienschmidt/httprouter/tree.go:162 +0x6db
-> github.com/julienschmidt/httprouter.(*Router).Handle(0x125d0340, 0x636829, 0x3, 0x6379cc, 0x9, 0x65ead8)
-> 	c:/go works/samples/src/github.com/julienschmidt/httprouter/router.go:236 +0x1b2
-> github.com/julienschmidt/httprouter.(*Router).GET(0x125d0340, 0x6379cc, 0x9, 0x65ead8)
-> 	c:/go works/samples/src/github.com/julienschmidt/httprouter/router.go:180 +0x4a
-> main.main()
-> 	C:/Go Works/Samples/book/Web Programming/Lesson_26/Server.go:25 +0xe2
-> Error: process exited with code 2.
-> ```
+
+```text
+panic: '/category' in new path '/category' conflicts with existing wildcard '/*filepath' in existing prefix '/*filepath'
+ 
+goroutine 1 [running]:
+panic(0x5fd040, 0x125624d0)
+    C:/Go/src/runtime/panic.go:500 +0x331
+github.com/julienschmidt/httprouter.(*node).addRoute(0x1254a630, 0x6379cc, 0x9, 0x65ead8)
+    c:/go works/samples/src/github.com/julienschmidt/httprouter/tree.go:162 +0x6db
+github.com/julienschmidt/httprouter.(*Router).Handle(0x125d0340, 0x636829, 0x3, 0x6379cc, 0x9, 0x65ead8)
+    c:/go works/samples/src/github.com/julienschmidt/httprouter/router.go:236 +0x1b2
+github.com/julienschmidt/httprouter.(*Router).GET(0x125d0340, 0x6379cc, 0x9, 0x65ead8)
+    c:/go works/samples/src/github.com/julienschmidt/httprouter/router.go:180 +0x4a
+main.main()
+    C:/Go Works/Samples/book/Web Programming/Lesson_26/Server.go:25 +0xe2
+Error: process exited with code 2.
+```
 
 GET ile yapılan fonksiyon yönlendirmelerinde JSON üretimi için gerekli adımlar atılıyor. JSON çıktısı için Marshal fonksiyonunu kullanmamız yeterli. Bunların dışında çıktıyı üretirken Header'a içerik tipinin JSON formatında olduğunu belirtiyoruz ki istemciler gelen içeriğin ne olduğunu anlayabilsinler. WriteHeader fonksiyonuna verilen 200 değeri tahmin edeceğiniz üzere HTTP 200 kodunu belirtmekte. JSON çıktısını cevap olarak yazmak için Fprintf fonksiyonunu ele alıyoruz. GetModelsByCategoryName fonksiyonunda parametreye gelen kategori adını kullanarak bir sonuç kümesi oluşturmaktayız. Kategori adını params.ByName çağrısını kullanarak yakalıyoruz. Buna göre belli bir kategorideki modelleri elde ederek JSON çıktısı üretiyoruz.
 
-Sonuçlar
+## Sonuçlar
 
 Eğer doğrudan / lokasyonuna gidersek pek tabii HTTP 404 not found hatası alırız. Nitekim bu adres için bir yönlendirme yapmadık. Statik içeriklerimiz /static altında yer alıyor. Diğer yandan index.html'deki All Categories bağlantısına basarsak veya URL bilgisi olarak /category şeklinde bir talep gönderirsek aşağıdaki JSON içeriğini elde ettiğimizi görebiliriz.
 

@@ -19,16 +19,11 @@ Bir süre öncesine kadar Composition adı verilen bir katmanda yer alacak çeş
 
 Sadece bunlar olsa iyi. Bir de bunlar içerisine Oracle üzerinde koşan Transactional veritabanı işlemleri de mevcut olunca, işler ister istemez karışıyor ve künde pozisyonuna geliyorsunuz. Nitekim bu servisler n sayıda kombinasyon ile birbirleriyle etkileşimde bulunabilirler ve bu tip senaryolarda bir şekilde Distributed Transaction terminolojisinin uygulanması ve servisler arasında başarılı bir şekilde akıtılarak, Two Phase Commit ilkesinin gerçekleştirilebiliyor olması gereklidir.
 
-> Daha önceden ele aldığımız bir yazıda, WCF servislerinin Workflow tarafındaki TransactionScope kontrolüne dahil edilme durumlarını incelemeye çalışmıştık hatırlayalım.
-> [Workflow Foundation, Oracle, WCF ve TransactionScope](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/)
+> Daha önceden ele aldığımız bir yazıda, WCF servislerinin Workflow tarafındaki TransactionScope kontrolüne dahil edilme durumlarını incelemeye çalışmıştık hatırlayalım. [Workflow Foundation, Oracle, WCF ve TransactionScope](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/)
 
-Senaryo
+## Senaryo
 
-Bu seferki senaryomuz biraz daha farklı ve karışık
-
-![Confused smile](/assets/images/2013/wlEmoticon-confusedsmile_22.png)
-
-Elimizde iki adet servis bulunmakta. Her ikisi de kendi içerisindeki operasyonlarında, Oracle tabanlı bir veritabanı üzerine insert işlemi gerçekleştirmekte (Senaryo gereği insert, ama tabiki her tür CRUD operasyonu söz konusu olabilir)
+Bu seferki senaryomuz biraz daha farklı ve karışık. Elimizde iki adet servis bulunmakta. Her ikisi de kendi içerisindeki operasyonlarında, Oracle tabanlı bir veritabanı üzerine insert işlemi gerçekleştirmekte (Senaryo gereği insert, ama tabiki her tür CRUD operasyonu söz konusu olabilir)
 
 Ne varki bu servislerden birisi Windows Communication Foundation yapısında iken diğeri eski XML Web Service formatında tasarlanmış durumdalar. Senaryomuzda bu iki servisi kendi bünyesinde birleştiren bir de Workflow Activity bulunuyor. Çok doğal olarak bu bileşenin içerisinde ele alacağımız bir TransactionScope kontrolü de yer almakta. Hal böyle olunca TransactionScope içerisinde üretilen Transaction’ ın servisler arasında nasıl akacağı, büyük soru işareti olarak karşımıza çıkıyor. Aslında senaryoyu aşağıdaki şekle bakarak kafamızda daha iyi canlandırabileceğimizi düşünüyorum.
 
@@ -40,7 +35,7 @@ WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların ser
 
 Ne yazık ki, istemci tarafında başlatılan Transaction’ ın kod yardımıyla XML Web Service içerisindeki ilgili Web Method’ a aktarılması gerekmektedir. Aksi durumda bir çalışma zamanı hatası alınmıyor olmasına karşın, bir dağıtık Transaction’ ın ilgili Web Method içerisindeki CRUD (Create Retrieve Update Delete) işlemini ele alamadığı görülür. Bu görünmez hata fark edilmediği takdirde, kötü sonuçlara neden olabilir tahmin edeceğiniz üzere.
 
-Örnek
+## Örnek
 
 Öyleyse gelin yola koyulalım ve adım adım Solution içeriğimizi inşa ederek teste çıkalım. Çözümümüz içerisinde bir ortak fonksiyonellik kütüphanesi, bir WCF Servis uygulaması, bir XML Web Servis içeren Asp.Net Web uygulaması ve son olarak da bir adet Workflow Console projesi bulunmakta.
 
@@ -140,8 +135,7 @@ Servis Konfigurasyon içeriği
 
 Servis metodu Account isimli bir tabloya veri girişi işlemini icra edecek şekilde tasarlanmıştır. wsHttpBinding bağlayıcı tipini kullanmaktadır. Oracle üzerinde bir veri işlemi söz konusu olması nedeniyle ODP.Net’ in ilgili versiyonu ele alınmıştır.
 
-> Bu servis uygulamasında ve takip eden kod satırlarında belirteceğimiz XML Web Service uygulamasında, güncel Transaction bilgilerini fiziki bir dosyaya loglamak amacıyla bir kütüphane fonksiyonundan yararlanılmaktadır. Utility sınıfına ait static Log metodunun içeriği aşağıdaki gibidir.
-> Log bilgisinin en önemli parçalarından birisi de DistributedIdentifier özelliğinin değeridir. Bu değer ilk başlatıldığı noktada ne ise, diğer servis çağrıları içerisinde de aynı olmalıdır ki ortak bir dağıtık transaction yapısından söz edilebilsin.
+> Bu servis uygulamasında ve takip eden kod satırlarında belirteceğimiz XML Web Service uygulamasında, güncel Transaction bilgilerini fiziki bir dosyaya loglamak amacıyla bir kütüphane fonksiyonundan yararlanılmaktadır. Utility sınıfına ait static Log metodunun içeriği aşağıdaki gibidir. Log bilgisinin en önemli parçalarından birisi de DistributedIdentifier özelliğinin değeridir. Bu değer ilk başlatıldığı noktada ne ise, diğer servis çağrıları içerisinde de aynı olmalıdır ki ortak bir dağıtık transaction yapısından söz edilebilsin.
 
 ```csharp
 using System.IO; 
@@ -170,13 +164,9 @@ namespace CommonLibrary
 }
 ```
 
-Gelelim XML Web Service tarafına. Eminim ki uzun süredir bir XML Web Servis yazmıyor veya tüketmiyorsunuzdur
+Gelelim XML Web Service tarafına. Eminim ki uzun süredir bir XML Web Servis yazmıyor veya tüketmiyorsunuzdur ama çalıştığınız kurum da eski sistemler söz konusu ise bundan kaçış yolunuz olmadığını ifade edebilirim.
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_111.png)
-
-Ama çalıştığınız kurum da eski sistemler söz konusu ise bundan kaçış yolunuz olmadığını ifade edebilirim.
-
-XML Web Servis kodlar
+## XML Web Servis kodları
 
 ```csharp
 using System.Configuration; 
@@ -228,13 +218,9 @@ namespace WebApplication1
 
 Branch tablosuna insert işlemini icra eden InsertBranch web metodu içerisindeki en önemli kısım, parametre olarak gelen byte[] tipindeki propToken değişkeninin kullanılış şeklidir. Dikkat edileceği üzere bu değişken değerinden yararlanılarak istemci tarafından gelen dağıtık transaction tipi yakalanmakta ve onu baz alacak şekilde bir TransactionScope bloğu üretilmektedir. Bu sayede istemci tarafındaki Transaction Scope’ un başlattığı dağıtık transaction’ a dahil olunabilecektir.
 
-> Pek tabi kodumuz içerisinde daha sonradan yapacağımız testler için ele alacağımız bir yorum satırı vardır
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_111.png)
->
-> Amaç olarak ilgili satırı test sırasında açıp bu web servis ve öncesinden gelen WCF servisi içerisindeki veritabanı operasyonlarının rollback edildiğini görmek istiyoruz.
+> Pek tabi kodumuz içerisinde daha sonradan yapacağımız testler için ele alacağımız bir yorum satırı vardır. Amaç olarak ilgili satırı test sırasında açıp bu web servis ve öncesinden gelen WCF servisi içerisindeki veritabanı operasyonlarının rollback edildiğini görmek istiyoruz.
 
-İstemci Tarafı
+## İstemci Tarafı
 
 Öyleyse gelelim istemci tarafına. İstemci uygulamamız bildiğiniz üzere bir Workflow çağrısı gerçekleştiriyor olacak. Bu sebepten bir Workflow Console Application projesinden yararlanabiliriz. Söz konusu projeye hem WCF hem de XML Web servislerini referans olarak eklememiz gerekiyor.
 
@@ -417,4 +403,4 @@ Görüldüğü üzere biraz kodlama yardımıyla WCF ve XML Web Servislerini, Tr
 
 [HowTo_AtomicTransactions.zip (117,25 kb)](/assets/files/2013/HowTo_AtomicTransactions.zip)
 
-[Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır.

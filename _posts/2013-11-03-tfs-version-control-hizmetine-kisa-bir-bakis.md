@@ -10,9 +10,7 @@ tags:
   - xml-web-service
   - version-control
 ---
-TFS Web Services kullanımlarını incelediğimiz [bu](/2013/03/17/tfs-web-services-ve-kullanimlari/) yazımızda, en popüler hizmetlerden birisi olan Work Item Tracking servisine odaklamıştık. Bu servisten yararlanarak özellikle template bazlı öğelerin (Task, Bug, Product Back Log Item gibi) nasıl okunabileceğini öğrenmiştik. Çok doğal olarak daha pek çok servis kullanımı söz konusu. Önemli olan nokta, ilgili servislerin TFS Client Object Model üzerinden kullanılabileceğidir.
-
-[Yazı, Team Foundation Server 2012 üzerinde ele alınmıştır]
+TFS Web Services kullanımlarını incelediğimiz [bu](/2013/03/17/tfs-web-services-ve-kullanimlari/) yazımızda, en popüler hizmetlerden birisi olan Work Item Tracking servisine odaklamıştık. Bu servisten yararlanarak özellikle template bazlı öğelerin (Task, Bug, Product Back Log Item gibi) nasıl okunabileceğini öğrenmiştik. Çok doğal olarak daha pek çok servis kullanımı söz konusu. Önemli olan nokta, ilgili servislerin TFS Client Object Model üzerinden kullanılabileceğidir. *(Yazı, Team Foundation Server 2012 üzerinde ele alınmıştır)*
 
 İşte bu yazımızda başka bir servis kullanımını incelemeye çalışıyor alacağız. Amacımız Version Control hizmetini ele alarak bir Team Project içerisinde yer alan ve Source Control’e dahil edilmiş çeşitli içerikleri elde edebilmek. Ağırlıklı olarak kod dosylarını görmeyi hedefliyoruz.
 
@@ -20,7 +18,7 @@ TFS Web Services kullanımlarını incelediğimiz [bu](/2013/03/17/tfs-web-servi
 
 ![versioncontrolfunny](/assets/images/2013/versioncontrolfunny.png)
 
-Başlangıç
+## Başlangıç
 
 İlk olarak uygulamaya Microsoft.TeamFoundation.Client, Microsoft.TeamFoundation. Common ve Microsoft.TeamFoundation.VersionControl.Client assembly kütüphanelerini referans ederek işe başlayabiliriz. Örneğimize konu olan VersionControlServer tahmin edileceği üzere Microsoft.TeamFoundation.VersionControl.Client assembly’ ının bir parçasıdır.
 
@@ -33,11 +31,12 @@ Uygulamamıza ait Form ise aşağıdaki gibi tasarlanabilir.
 Kullanıcılar app.config dosyasında belirtilen TFS sunucusuna bağlanabilecektir. Bu TFS sunucusu çok doğal olarak kendi içerisinde n sayıda Team Project Collection barındırabilir. İlgili Team Project Collection’ a ait bazı bilgilerin Collections bileşeni yanındaki ComboBox kontrolüne doldurulması sağlanmalıdır. Kullanıcı, bir Team Project Collection seçimi yaptığında ise, buna bağlı Team Project listesinin de ilgili ComboBox kontrolüne eklenmesi gerekmektedir. En azından bağlı olan Team Project adlarının listelenmesi gerekir. Kullanıcının yapacağı bir diğer seçim de, source control üzerinden çekilmek istenen dosyaların tipleridir. Örneğin C#, VB gibi kod dosyaları olabileceği gibi, XAML içerikli dosyalara da bakılmak istenebilir. Örnekte kısıtlı bir küme kullanılmıştır ancak bu genişletilebilir.
 
 > Kendi çalışmalarınızı yaparken Team Foundation Server’ ın tfs.visualstudio.com adresinden sunulan hizmetini göz önüne almanızı ve o ortamda sunulan Code penceresini incelemenizi öneriririm. Code penceresine gelindiğinde aslında bu, bir Team Project Collection’ daki bir Team Project içerisindeyiz anlamına gelir. Dolayısıyla bu Team Project içerisindeyken source control üzerine atılan ne kadar içerik varsa görülebilir. Biz çok daha kısıtlı bir örneğini yapıyoruz. Aslında kapıyı azcık aralamak niyetindeyiz.
-> ![tfsvc_5](/assets/images/2013/tfsvc_5.png)
+
+![tfsvc_5](/assets/images/2013/tfsvc_5.png)
 
 Dosya tipi seçimi de belli olduğunda liste kontrolüne, söz konusu uzantıya sahip dosyaların bazı bilgileri gelecektir. Eğer herhangibir dosya seçilirse de, bu dosyanın içeriği gösterilecektir.
 
-Yardımcı Sınıflar
+## Yardımcı Sınıflar
 
 Örnekte işleri biraz olsun kolaylaştırmak adına iki yardımcı POCO (PlainOldClrObject) tipi kullanılmıştır. Bu tipler içerisinde bir Team Project Collection’ ın ve Change Set’ in temel bilgileri tutulmaktadır.
 
@@ -88,7 +87,7 @@ namespace HowTo_TFSVersionControl
 }
 ```
 
-Kod Tarafı
+## Kod Tarafı
 
 Dilerseniz öncelikle Form1’ e ait kod içeriklerini üretelim ve neler yaptığımızı açıklamaya çalışalım.
 
@@ -220,13 +219,13 @@ Seçilen öğenin karşılığı olan TfsTeamProjectCollection nesnesine ulaşma
 
 Lakin bu kez CalatogResourceTypes enum sabitinin TeamProject değeri kullanılır. Buna göre seçili olan Team Project Collection’a bağlı olan Team Project listesi, birer CatalogNode olarak elde edilebilir. Sonrasında ise liste dönülür ve her bir Team Project’ in Resource özelliği üzerinden yakalanacak DisplayName değeri, cmbTeamProjects bileşeninin Items koleksiyonuna eklenir.
 
-Version Control Servisinin Çalışması
+## Version Control Servisinin Çalışması
 
 Yazımıza konu olan Verison Control servisi ise bu noktadan sonra devreye girecektir. İlgili servis örneği kullanıcının yaptığı Team Project seçimi sonrasında önemlidir. Nitekim Change Set veri içeriklerinin elde edilmesi için ilgili operasyon desteğini sunmaktadır.
 
 İlk olarak güncel Team Project Collection tespit edilerek generic GetService metoduna bir çağrıda bulunulur ve VersionControlServer tipinden bir referans alınır. Bu referansın GetItems metodu kilit noktamızdır. İlk parametre ile bir string verilmektedir ama yazım şekli özeldir.
 
-$/{0}/.{1}
+`$/{0}/.{1}`
 
 ifadesinde {0} yerine Team Project adı, {1} yerine ise talep edilen dosya formatının uzantısı gelir. GetItems metodu esas itibariyle bir ItemSet örneği döndürür ve aslında beklediğimiz dosyalar bu tipin Items koleksiyonunca alınır. Örnekte Items özelliği dolaşılmakta olup her biri için bir ChangeSetItem örneklenir. ChangeSetItem sınıfında bir kaç temel özellik bulunmaktadır. ItemId, ChangeSetId, ItemType ve ServerItem.
 
@@ -234,7 +233,7 @@ Bu aşamadan sonra kullanıcının bir ChangeSetItem’ ı listeden seçmesi hal
 
 Elde edilen Item öğesinin DownloadFile isimli bir fonksiyonu da bulunmaktadır. Bu metod sayesinde, sunucudaki içeriğin Stream olarak elde edilmesi mümkündür. Örnek kod parçasında StreamReader sınıfından yararlanılmış ve ilgili sunucu içeriğinin txtItemContent isimli TextBox kontrolüne basılması sağlanmıştır.
 
-Çalışma Zamanı Sonuçları
+## Çalışma Zamanı Sonuçları
 
 Örneği çalıştırdığımızda ve sırasıyla Team Project Collection, File Type ve Team Project seçimlerine yaptığımızda, aşağıdakine benzer sonuçlar ile karşılaşabiliriz.
 
@@ -242,7 +241,7 @@ Elde edilen Item öğesinin DownloadFile isimli bir fonksiyonu da bulunmaktadır
 
 Dikkat edileceği üzere Default Collection altındaki bir Team Project’ in içerisinde yer alan C# kod dosyalarının temel bilgileri çekilebilmiştir. Bu bilgiler arasında, Item ve Change Set numarası ile Server üzerinde tutulan Full Path bilgisi yer almaktadır. Hatta istenirse son Check-In bilgisi bile alınabilir (Belki de alınamaz. Neden araştırmıyorsunuz ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_197.png)) İşin güzel yanı söz konusu öğelerden herhangibirisine tıklandığında, içeriğinin de görüldüğüdür.
 
-Uygulamada Neleri Yapmadık?
+## Uygulamada Neleri Yapmadık?
 
 Version Control hizmetini kullanarak, Source Control içeriğini çekelebilmek oldukça kolaydır. Bu felsefeden yola çıkarak kendi Source Control arabirimlerinizi yazabilirsiniz. Örneğin Windows Phone tabanlı çalışacak bir istemci söz konusu olabilir. Yani mobil bir cihazdan Source Control üzerindeki hareketlilikleri takip edebilirsiniz. Pek tabi yapabileceğimiz daha pek çok şey var. Örneğin,
 

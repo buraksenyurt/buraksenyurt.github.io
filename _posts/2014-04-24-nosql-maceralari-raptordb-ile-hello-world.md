@@ -11,7 +11,6 @@ Yıllardır vaz geçemediğim bilgisayar oyunlarından birisidir [Command and Co
 
 ![070401-F-6701P-005](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046.jpg)
 
-
 USA Air Force’ un en belirgin özelliği King Raptor olarak adlandırılan ve aslında günümüzde de [F22 Raptor olarak bilinen savaş uçaklarını](http://tr.wikipedia.org/wiki/F-22_Raptor) içermesidir. Bu uçaklar kendilerine fırlatılan füzeleri lazer ile vurabilir, ayrıca normal Raptor’ lara göre daha fazla güdümlü füze taşıyabilir.
 
 Araştırmasam da, Raptor isminin Dinazor çağındaki [Velociraptor](http://tr.wikipedia.org/wiki/Velociraptor) isimli yırtıcıdan geldiğini düşünmekteyim. Hızlı Hırsız anlamına gelen Velociraptor, 15Kg ağırlığında olan bir etoburdur. Yaklaşık 75 ila 71 milyon yıl önce yaşadığı bilinmektedir. Saatte 40km hızla koşabilen 2metre boyundaki canlı ölümcül bir yırtıcı olarak ifade edilmiştir. O kadar sivri ve güçlü pençelere sahipmiş ki, kurbanının damarlarına denk gelmesi halinde onu 3 ile 5 saniye içerisinde öldürürmüş. Günümüzde bir Hindi boyunda olan bu canlının en korkutucu yanı ise sürü halinde dolaşıyor olmalarıymış. Karada yürüyen Pirhanalara benzetebiliriz sanırım
@@ -24,7 +23,7 @@ Peki bu ismin bir NoSQL veritabanı sisteminde de ele alındığını biliyor mu
 
 ![Smile](/assets/images/2014/wlEmoticon-smile_89.png)
 
-Tanım
+## Tanım
 
 Document Store NoSQL veritabanı tiplerinden birisi olan RaptorDB kuvvetle muhtemel isimlendirilirken tarih öncesi Velociraptor’ dan esinlenilmiştir. Pek çok NoSQL sisteminde olduğu gibi geniş bir kullanım yelpazesi olduğunu ifade edebiliriz. Her ne kadar diğer NoSQL ürünlerinde olduğu gibi geniş bir referans kitlesi göze çarpmasa da, Forumlar, Bloglar, Wiki tarzı siteler, İçerik Yönetim Sistemleri (Content Management Systems) ve Sharepoint benzeri uygulamaların yazılabileceği belirtilmektedir.
 
@@ -38,7 +37,7 @@ RaptorDB projesinin sahibi ve geliştiricisi olan Mehdi Gholam,.Net tabanlı ola
 
 İçeriğin JSON (JavaScriptObjectNotation) formatında ele alındığını görmekteyiz ama bunun dışında Binary serileştirme noktasında devreye giren yardımcı bir kütüphanede söz konusu. Özellikle verinin sıkıştırılması noktasında b-tree algoritmasını baz alan WAHBitArray’ den yararlanılmış. Full Text Search işlemlerinde h00t isimli ürün devreye girerken Log tutmada ise Enterprise çözümlerde dahi sıklıkla kullandığımız Log4Net’ in daha sade bir sürümü değerlendirilmiş. Pek tabi başrol oyuncusu RaptorDB kütüphanesi.
 
-Genel Özellikleri
+## Genel Özellikleri
 
 RaptorDB’ yi bir ürün olarak göz önüne aldığımızda ise aşağıdaki maddelerde yer alan temel özelliklere sahip olduğunu görmekteyiz.
 
@@ -70,10 +69,9 @@ Bu hazırlıklar sonrasında örnek Entity’ ler kayıt edilebilir veya var ola
 
 Aslında View’ lar üretilirken var olan doküman verileri de, Map adı verilen fonksiyonlar yardımıyla View içerisine alınırlar. Doküman (Document) esas itibariyle bir Entity veya bir Entity örneği (Object) olarak düşünülmelidir. Her doküman, sistem içerisinde bir Guid ile benzersiz olarak işaretlenir. Sorgulamanın en hassas kısmı iyi indeksler kullanılmasıdır. Bu sebepten View’ lar içerisinde indeks’ lere ilişkin basit şemalar kullanılır. Bu şemalar aslında birer inner type’ dır ve View içerisinde bir sınıf olarak ifade edilir.
 
-> View, belli bir amaç için oluşturulmuş çok boyutlu bir doküman (Multi Dimensional Document) nesnesinin, 2 boyutlu resmidir.
-> Mehdi Gholam
+> View, belli bir amaç için oluşturulmuş çok boyutlu bir doküman (Multi Dimensional Document) nesnesinin, 2 boyutlu resmidir. *Mehdi Gholam*
 
-Örnek
+## Örnek
 
 Dilerseniz bu kadar laf kalabalığı ve Key Note’ dan sonra basit bir örnek üzerinden ilerlemeye çalışalım. Her zamanki gibi bir Console uygulamasına odaklanıyor olacağız. Ürünü CodeProject veya CodePlex üzerinden tedarik ettikten sonra Source Code’ u Visual Studio ortamında açıp Build etmeniz yeterli olacaktır. Elde edilen üretim sonrasında ortaya çıkan Assembly’ ı ise, RaptorDB’ yi kullanmak istediğimiz uygulamaya referans etmemiz gerekmektedir.
 
@@ -258,7 +256,7 @@ namespace HowTo_RaptorDB
 }
 ```
 
-Kodun İşleyişi
+## Kodun İşleyişi
 
 İki adet POCO tipi söz konusudur. Category ve Product. Tahmin edileceği üzere bir kategori altında n sayıda ürün olabilmelidir. Bu ilişki için Category sınıfı içerisinde Product tipinden generic bir List kullanılmaktadır.
 
@@ -270,7 +268,7 @@ View’ ların etkinliği veritabanına kayıt edilmelerine bağlıdır. Bu nede
 
 Aslında bundan sonraki aşamalar oldukça kolaydır. Bir dokümanı kaydetmek için RaptorDB örneğinin Save metodu kullanılırken ilk parametre olarak bir Guid bilgisi verilir. Diğer yandan sorgulamalar için Query fonksiyonu ele alınmaktadır. Query fonksiyonunun farklı versiyonları vardır. Eğer parametre olarak bir Entity nesne örneği verilirse bu durumda ilgili Entity için belirtilen Primary View kim ise, sorgulama için o View örneği ele alınır. Ancak farklı bir View kullanılması isteniyorsa, bu durumda ilgili View’ un tipi veya string olarak adı kullanılabilir.
 
-Debug Anında
+## Debug Anında
 
 RaptorDB nesnesi örneklenirken parametre olarak bir klasör belirtilir. Eğer bu klasör yoksa uygulamanın çalışması sırasında oluşturulur. Ben örneği test ederken RaptorDB’ nin örneklendiği noktada durdum ve aşağıdaki klasör yapısının otomatik olarak üretildiğine şahit oldum.
 
@@ -281,8 +279,6 @@ Hatta Data klasörü içerisine baktığımda farklı uzantılarda pek çok dosy
 ![raptor_3](/assets/images/2014/raptor_3.png)
 
 Her ne zaman Entity örnekleri birer Doküman olarak kayıt edilmeye başladılar işte o zaman mgdat ve mgidx uzantılı dosyaların içerikleri değişmeye başladı. Örnek olarak her bir kategori için 100bin Dummy Product nesne örneği ürettiğimde yaklaşık olarak 188 megabyte’ lık veri kümesinin 4 saniyeye yakın bir sürede üretildiğine tanık oldum. Diğer ürünler ile kıyaslanmasına bakmadım tabi ama bu süre oldukça etkileyici gibi geldi bana
-
-![Sarcastic smile](/assets/images/2014/wlEmoticon-sarcasticsmile_15.png)
 
 ![raptor_4](/assets/images/2014/raptor_4.png)
 
@@ -301,8 +297,6 @@ Dikkat edileceği üzere sadece kategori adı ve açıklaması ile benzersiz bir
 Görüldüğü üzere 20 satırlık bir sonuç kümesi söz konusudur ve her bir satır içerisinde CategoryWithProductsView’ da belirtilen şemaya uygun alanlar yer almaktadır. Ürün başlığı (Title), stok miktarı (StockSize), kategori adı (CategoryName) ve kategori açıklaması (Description). Bu son derece doğaldır çünkü ilgili View içerisindeki şema yapısı buna uygun olacak şekildedir. Pek tabi bu şema yapısı indekside ifade ettiğinden, LINQ sorgusunda belirtilen alanlardan biri veya bir kaçının kullanılabilirliği söz konusudur.
 
 Görüldüğü üzere RaptorDB, kullanımı ve felsefesi ile dikkat çekicidir. Hızlı bir Document Store NoSQL ürünü olduğunu ifade edebiliriz. Açık kaynak olması da işin cabası
-
-![Smile](/assets/images/2014/wlEmoticon-smile_89.png)
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 

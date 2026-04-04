@@ -29,22 +29,22 @@ Bugün de benzer bir durumla karşı karşıyayım. Ne gecenin bu sessiz vaktind
 
 Senaryomuzda basit bir Web API Servisi bulunuyor..Net Core ile geliştirilen servisin bir Controller'ı için yetkilendirme (Authorization) sürecini uygulatmak istiyoruz. Burada OAuth 2 standardını ele almak, kullanıcı yetkilendirme yöneticisi ve bilet (Token) tedarikçisi olarak Github'dan yararlanmak istiyoruz. Tabii bu senaryonun gerçekleşmesi için bizim Github'a bir proje kaydettirmemiz (Pek çok platform için söz konusu olan Application Registration işlemi diyelim) ve özellike Redirect URI bilgisini Consumer rolündeki uygulamamıza bildirmemiz gerekiyor (Az sonra yapacağız)
 
-Yaşam Döngüsü
+## Yaşam Döngüsü
 
 OAuth 2 temelli sistemin çalışma prensibi basit (Aslında karmaşık ama iyice didikleyince gayet anlaşılır, mantıklı ve basit) Ortada üç aktör yer var. Senaryomuzu göz önüne alırsak bu aktörlerimiz Web API (Consumer), Github (Idendity and Token Service Provider) ve Web API servisini tüketmek isteyen kullanıcı (User) şeklinde ifade edilebilirler. Bu üç aktörün yaşam döngüsü içerisindeki iletişimi ise sırasyıla şöyle özetlenebilir.
 
-Kullanıcı yerel makinesindeki servise bir talepte bulunur (HTTP Get gibi) O anda elinde geçerli bir bilet olmadığını düşünelim.
-Bunun üzerine Web API uygulaması Github'dan bir kullanıcı doğrulaması ister.
-Github kullanıcıyı doğrulamak için Login sayfasına yönlendirme yapar.
-Kullanıcı doğrulanırsa, Github'ın bir sorusu ile karşılaşılır. Github'daki "bla bla" uygulamasının bilgilerinize erişmesine izin veriyor musunuz? gibi.
-Eğer kullanıcı bunu kabul ederse, Github tarafından Redirect URI ile belirtilen adrese yönlendirilir. Bu yönlendirmede geçici bir erişim kodu bulunur.
-Web API servisi aldığı kod ile Github'ın bilet sağlayan adresine (Token Endpoint) gider.
-Github bu talep üzerine daha kalıcı olan onaylanmış bir bilet hazırlayıp bunu Web API servisine verir.
-Web API servisi bu bilgiyi saklar (genelde bir son kullanma tarihi olur ama Github OAuth biletlerinde durum farklı) ve sonraki taleplerde bu bilet kullanılır.
+- Kullanıcı yerel makinesindeki servise bir talepte bulunur (HTTP Get gibi) O anda elinde geçerli bir bilet olmadığını düşünelim.
+- Bunun üzerine Web API uygulaması Github'dan bir kullanıcı doğrulaması ister.
+- Github kullanıcıyı doğrulamak için Login sayfasına yönlendirme yapar.
+- Kullanıcı doğrulanırsa, Github'ın bir sorusu ile karşılaşılır. Github'daki "bla bla" uygulamasının bilgilerinize erişmesine izin veriyor musunuz? gibi.
+- Eğer kullanıcı bunu kabul ederse, Github tarafından Redirect URI ile belirtilen adrese yönlendirilir. Bu yönlendirmede geçici bir erişim kodu bulunur.
+- Web API servisi aldığı kod ile Github'ın bilet sağlayan adresine (Token Endpoint) gider.
+- Github bu talep üzerine daha kalıcı olan onaylanmış bir bilet hazırlayıp bunu Web API servisine verir.
+- Web API servisi bu bilgiyi saklar (genelde bir son kullanma tarihi olur ama Github OAuth biletlerinde durum farklı) ve sonraki taleplerde bu bilet kullanılır.
 
 Karışık değil mi? Hofff...Siz birde bana sorun. Eğer basit bir şekilde anlatamadıysam bu konuyu anlamamışım demektir. Diğer yandan adım adım örneği işlettiğimizde konuyu biraz daha pekiştirebileceğimizi düşünüyorum. Haydi başlayalım.
 
-OAuth Uygulaması için Kayıt İşlemi
+## OAuth Uygulaması için Kayıt İşlemi
 
 İlk olarak [şu adrese](https://github.com/settings/developers) giderek OAuth uygulamamızı Github'a kayıt etmemiz gerekiyor. "Register a new application" başlıklı düğmeye basarak işleme başlayabiliriz. Burada uygulamaya ait bazı bilgileri doldurmamız lazım.
 
@@ -58,7 +58,7 @@ vb bilgiler olabilir. Authorization Callback URL bilgisi dikkatiniz çekmiş olm
 
 Buradaki Client ID ve Client Secret değerleri Web API servisimizin Github uygulamasını kullanabilmesi için gereklidir.
 
-Web API Servisinin Geliştirilmesi
+## Web API Servisinin Geliştirilmesi
 
 Sırada Web API servisinin oluşturulması adımı var. Bunun için aşağıdaki terminal komutunu kullanabiliriz.
 
@@ -224,7 +224,7 @@ namespace MyQuoteService.Controllers
 
 Sadece özlü sözler listesini HTTP Get talebi karşılığında geriye döndüren bir operasyonumuz var. Get operasyonu içerisinde Github kullanıcısının doğrulanması sonrası çekilen ClaimSet içerisindeki bazı değerlere ulaşılmakta. Bu örnekte login olan Github kullanıcısına ait username,id,email ve blog bilgilerini Console ekranına bastırmaktayız. Bu bilgiler loglama amacıyla kullanılabilir. QuotesController sınıfının bir diğer önemli özelliği de Authorize niteliği ile işaretlenmiş olması. Buna göre tüm operasyonları için yetkilendirme sürecine dahil olacağız.
 
-Testler
+## Testler
 
 Geliştirme safhasını sonlandırdığımıza göre test sürüşüne çıkabiliriz. Uygulamayı
 
@@ -232,16 +232,16 @@ Geliştirme safhasını sonlandırdığımıza göre test sürüşüne çıkabil
 dotnet run
 ```
 
-terminal komutu ile çalıştırdıktan ve tarayıcı üzerinden http://localhost:5005/api/quotes adresine gittikten sonra aşağıdaki ekran görüntüsü ile karşılaşırız.
+terminal komutu ile çalıştırdıktan ve tarayıcı üzerinden `http://localhost:5005/api/quotes` adresine gittikten sonra aşağıdaki ekran görüntüsü ile karşılaşırız.
 
 ![githuboauth_3.gif](/assets/images/2018/githuboauth_3.gif)
 
 Dikkat edileceği üzere Github login sayfasına yönlendirildik. Eğer Network hareketliliklerini izlersek aşağıdaki geçişlerin olduğunu fark edebiliriz.
 
-localhost:5005/api/quotes HTTP Get talebi HTTP 302 koduna çevrilerek Location header bilgisindeki github adresine yönlendirilir.
-Yönlendirildiğimiz https://github.com/login/oauth/authorize? client_id={client id bilgisi}&scope=&response_type=code&redirect_uri= http://localhost:5005/signin-github&state= {uzuuunnn bir state bilgisi var} adresinde Authorize kontrolünden geçeriz ki önceden login olmamışsak yeni bir adrese yönleniriz.
-HTTP Get ile https://github.com/login?client_id= {client id bilgisi}&return_to=/login/oauth/authorize?client_id= {client id bilgisi}&redirect_uri= http%3A%2F%2Flocalhost%3A5005%2Fsignin-github&response_type=code&scope=&state= {uzuuuuun state bilgisi} geldiğimiz bu adreste ise Login olmamız yeterli olacaktır.
-Sonrasında Github kullanıcısının söz konusu uygulama için yetki vermesini bekleyen bir onayı penceresi ile karşılaşabiliriz.
+- `http://localhost:5005/api/quotes` HTTP Get talebi HTTP 302 koduna çevrilerek Location header bilgisindeki github adresine yönlendirilir.
+- Yönlendirildiğimiz `https://github.com/login/oauth/authorize? client_id={client id bilgisi}&scope=&response_type=code&redirect_uri= http://localhost:5005/signin-github&state= {uzuuunnn bir state bilgisi var}` adresinde Authorize kontrolünden geçeriz ki önceden login olmamışsak yeni bir adrese yönleniriz.
+- HTTP Get ile `https://github.com/login?client_id= {client id bilgisi}&return_to=/login/oauth/authorize?client_id= {client id bilgisi}&redirect_uri= http%3A%2F%2Flocalhost%3A5005%2Fsignin-github&response_type=code&scope=&state= {uzuuuuun state bilgisi}` geldiğimiz bu adreste ise Login olmamız yeterli olacaktır.
+- Sonrasında Github kullanıcısının söz konusu uygulama için yetki vermesini bekleyen bir onayı penceresi ile karşılaşabiliriz.
 
 ![githuboauth_4.gif](/assets/images/2018/githuboauth_4.gif)
 

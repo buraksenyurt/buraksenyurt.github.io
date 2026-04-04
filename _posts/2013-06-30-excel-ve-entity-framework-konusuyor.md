@@ -18,33 +18,25 @@ Artık uygulamaların birbirleri ile konuşmaları çok ama çok kolay. Bu gerç
 
 Ancak Developer gözüyle olaya bakıldığında, her segmenti memnun edecek şekilde geliştirme yapması beklendiği oldukça aşikar. Bu sebepten, farklı uygulamaların birbirleriyle rahatça konuşabilmeleri önemli bir mesele olarak karşımıza çıkıyor. Visual Studio 2012 tarafında olaya baktığımızda bir Office uygulamasının, önceki sürümlere göre.Net Framework ile daha yüksek seviyede etkileşime girerek tasarlanabilmesi/geliştirilebilmesi de pekala mümkün.
 
-Özellikle Sheet’ ler veya Workbook’ lar kodlanabilir birer C#(Vb.Net) dosyası olduğu için, uygulama bazında istediğimiz taklayı atma şansına sahibiz. İşte bu düşünceler ışığında yola çıktığımız ve okumakta olduğunuz yazımızda, Excel’ i, Entity Framework’ ü, C#’ ı işin içerisine katacak ve birbirleri ile konuşmalarını sağlamaya çalışacağız. Haydi hiç vakit kaybetmeden yola koyulalım. Ama önce örnek senaryomuz
+Özellikle Sheet’ ler veya Workbook’ lar kodlanabilir birer C#(Vb.Net) dosyası olduğu için, uygulama bazında istediğimiz taklayı atma şansına sahibiz. İşte bu düşünceler ışığında yola çıktığımız ve okumakta olduğunuz yazımızda, Excel’ i, Entity Framework’ ü, C#’ ı işin içerisine katacak ve birbirleri ile konuşmalarını sağlamaya çalışacağız. Haydi hiç vakit kaybetmeden yola koyulalım. Ama önce örnek senaryomuz.
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_193.png)
-
-Senaryo
+## Senaryo
 
 Amacımız, Northwind veritabanında bulunan 3 adet View nesne örneğinin Excel dokümanı içerisindeki Sheet’ ler de gösterilmesini sağlamak. Bu amaçla Category Sales for 1997, Product Sales for 1997 ve Invoices isimli View nesnelerini kullanıyor olacağız. Sheet1 içeriğini kendi kod dosyası içerisinde üretmek istiyoruz. Sheet2 ve Sheet3 içeriklerini ise, Workbook’ a ait kod dosyasından besliyor olacağız. Bu noktada ağırlıklı olarak Workbook ve Sheet sınıflarının ilgili başlangıç noktalarını değerlendireceğiz. Kabaca senaryomuzu işaret eden aşağıdaki görseli göz önüne alabiliriz.
 
 ![ewef_8](/assets/images/2013/ewef_8.png)
 
-Konuşan Çözüm
-
 Dilerseniz senaryo içerisinde tarafların gözünden olaya bakalım.
 
 ## Sheet Konuşuyor
 
-"Merhaba, benim adım Sheet1. Çalıştırıldığımda Sheet1Startup olay metoduna bir çağrıda bulunurum. Ey Startup metodu, haydi işini yap derim. O da kendi içinde Entity Framework tabanlı Context nesnesini kullanır ve 1997 yılına ait kategori bazlı satışların verilerini, sahip olduğum hücrelere teker teker aktarır
-
-![Smile](/assets/images/2013/wlEmoticon-smile_93.png)
-
-Onunla çok iyi anlaşırız.
+"Merhaba, benim adım Sheet1. Çalıştırıldığımda Sheet1Startup olay metoduna bir çağrıda bulunurum. Ey Startup metodu, haydi işini yap derim. O da kendi içinde Entity Framework tabanlı Context nesnesini kullanır ve 1997 yılına ait kategori bazlı satışların verilerini, sahip olduğum hücrelere teker teker aktarır. Onunla çok iyi anlaşırız.
 
 ## Workbook Konuşuyor
 
 Merhaba, ben ThisWorkbook. Ben sahip olduğum tüm Sheet’ leri yönetebilirim. Örneğin kendi Startup metoduma, tüm Sheet’ leri çeşitli yerlerden topladığı veriler ile doldurmasını söyleyebilirim. He-Man ile aramdaki tek fark onun kılıcının olmasıdır.
 
-Hazırlıklar
+## Hazırlıklar
 
 Dilerseniz senaryomuzu nihai sonuca ulaştırmak için adım adım ilerlemeye başlayalım. İlk olarak Visual Studio 2012 ortamında bir Excel 2010 Workbook projesi oluşturmalıyız. Bu nedenle New Project kısmında ilgili proje tipini işaretliyoruz.
 
@@ -253,13 +245,11 @@ namespace HowTo_ExcelWithEF
 
 > Office uygulamalarını geliştirirken C# 4.0 ile birlikte gelen dynamic, Optional and Named Parameters gibi yeniliklerin işlerimizi nasıl kolaylaştırdığına bir kere daha şahit oluyoruz.
 
-Kodlarda bizi zorlayacak bir karmaşa yoktur. İki View sırasıyla sorgulanmakta ve elde edilen listeler ilgili Sheet’ ler deki hücrelere satır satır doldurulmaktadır. Özellikle 1997 yılına ait satış rakamları alınırken 30000 birimden büyük olunması halinde, o satırın arka plan ve font renkleri değiştirilerek göze batmaları sağlanmaktadır
-
-![Smile](/assets/images/2013/wlEmoticon-smile_93.png)
+Kodlarda bizi zorlayacak bir karmaşa yoktur. İki View sırasıyla sorgulanmakta ve elde edilen listeler ilgili Sheet’ ler deki hücrelere satır satır doldurulmaktadır. Özellikle 1997 yılına ait satış rakamları alınırken 30000 birimden büyük olunması halinde, o satırın arka plan ve font renkleri değiştirilerek göze batmaları sağlanmaktadır.
 
 Dikkate değer noktalar, ilgili hücrelerin nasıl formatlandığı veya belirli bir Sheet’ e nasıl ulaşıldığı ile alakalıdır.
 
-Sonuçlar
+## Sonuçlar
 
 Uygulamayı çalıştırdığımızda çalışma zamanında bir Excel Workbook’ un açıldığını ve Sheet1, Sheet2, Sheet3 sayfalarının ilgili View içerikleri ile doldurulduğunu görebiliriz.
 
@@ -290,10 +280,8 @@ Böylece geldik bir yazımızın daha sonuna. Size düşen örneği daha da zeng
 
 vb
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_193.png)
-
 Burada hayal gücünüzü kullanmadan önce, bir Excel uygulamasının aslında bir Windows uygulaması olduğunu ve Visual Studio 2012 tarafında istenildiği gibi özelleştirilebildiğini düşünmenizde yarar olacaktır. Nitekim gördüğünüz üzere aynen bir Windows Forms uygulamasında olduğu gibi olay metodlarına girebiliyor ve C# kodlarımızı konuşturabiliyoruz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_ExcelWithEF.zip (1,20 mb)](/assets/files/2013/HowTo_ExcelWithEF.zip)
 
-[Orjinal Yazım Tarihi 03-05-2013]
+(Orjinal Yazım Tarihi 03-05-2013)

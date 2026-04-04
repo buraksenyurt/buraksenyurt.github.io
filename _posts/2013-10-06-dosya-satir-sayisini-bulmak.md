@@ -17,16 +17,15 @@ Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalı
 
 ![1370555_lots_of_files_2](/assets/images/2013/1370555_lots_of_files_2.jpg)
 
-
 Malum Bankaların sistemleri halen daha eski olabildiğinden, bölümler arası veya uygulamalar arası veri aktarmanın en popüler yollarından birisi olarak Text tabanlı dosya formatları göz önüne alınmaktadır. Bazen onlarca megabyte'ı aşan ve milyonlarca satırdan oluşabilen düzenli text dosyaları söz konusu olur ve bunların bir şekilde uygulamaların konuştuğu veritabanı ortamlarına işlenerek, ilişkisel veri bütünlüğü içerisinde yerlerini alması beklenir.
 
-Vaka
+## Vaka
 
 Aktarım işlemleri sırasında çoğunlukla SSIS (Sql Server Integration Services) paketlerinden yararlanılmaktadır veya ekstra 3ncü parti araçlar kullanılır. Lakin bazen kendi uygulamalarımız içerisinde bu tip dosyaların kod yardımıyla ayrıştırılması ve işlenmesi de gerekebilir. Böyle bir halde ise son kullanıcının durumdan haberdar edilmesi ve özellikle işlem çok uzun sürecekse bir Progress Bar bileşeni ile (En azından Windows Forms tarafı için) anlık ilerleme durumunun gösterilmesi uygun olabilir. Tabi anlık durumun bir dosya için gösterilmesi söz konusu ise, dosyanın toplam satır sayısının da bilinmesi gerekecektir.
 
 Hımmm…Bir dosyanın toplam satır sayısı nasıl bulunabilir peki? Bunun için aklımıza gelecek ve uygulayabileceğimiz bir çok yol bulunmakta. Ancak hangisinin daha efektif olduğunu bir şekilde tespit etmemiz ve görmemiz önemlidir. Dolayısıyla bu yazımızda, bir text dosyanın satır sayısını bulmak için kullanabileceğimiz metodlardan bazılarını ve bu fonksiyonların toplam çalışma sürelerini hesaplatacağız. Tabi alacağımız sonuçlar sistemden sisteme farklılık gösterebilirler.
 
-Hazırlıklar
+## Hazırlıklar
 
 İlk olarak operasyonel işlemleri üstlenen tipimizi ve test kodumuzu geliştirip üzerinde kısaca konuşalım. Uygulamamıza ait sınıf diagramı ve kod içeriği aşağıdaki gibidir.
 
@@ -194,7 +193,7 @@ namespace FindLineCountsApp
 }
 ```
 
-Kod Ne Yapıyor?
+## Kod Ne Yapıyor?
 
 FileProcessor isimli sınıfımız ComputeX isimli 8 adet metod içermektedir. Her bir metod yorum satırlarında belirtildiği üzere, ilgili dosyanın satır sayısını bulmak için farklı bir yöntem kullanılmaktadır. Constructor (Yapıcı Metod) teste tabi tutulacak olan dosya adını alır.
 
@@ -202,7 +201,7 @@ Dikkat edilmesi gereken noktalardan birisi de, ComputeX metodlarının LineTest 
 
 Main metodu içerisinde dikkat edileceği üzere Reflection’ dan yararlanılarak FileProcessor tipinin üye metodları arasında gezilmekte ve LineTest niteliği uygulanmış olanların çağırılması sağlanmaktadır.
 
-Testler
+## Testler
 
 Teste tabi tutacağımız text dosyası içerisinde Lorem Ipsum metinlerinden bolca yer almaktadır. İlk testler için dosyamızda 10891 satır yer alıyor. Buna göre ilk sonuçlar aşağıdaki gibidir.
 
@@ -218,7 +217,7 @@ Compute2 metodunu hariç tuttuğumuzda 1nci ve 2nci testlerin sonuçlarını aş
 
 ![report](/assets/images/2013/report.png)
 
-Sonuçlar
+## Sonuçlar
 
 Görüldüğü üzere sonuçlar gayet açık ve net. File.ReadAllLines metodunun eline pek su döken olmadı. Ancak yaklaşabilenler var. Peki bu metod kendi içerisinde nasıl bir çalışma modeline sahipte bu kadar hızlı sonuç döndürülmesine olanak sağlıyor?
 

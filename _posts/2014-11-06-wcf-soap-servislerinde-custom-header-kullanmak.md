@@ -17,7 +17,6 @@ tags:
 
 ![OldMail](/assets/images/2014/OldMail.jpg)
 
-
 O vakitlerde yine yakın arkadaşlarımdan birisi ile işte bu sosyal ağ mevzularını ve insanlar üzerindeki olumsuz etkilerini konuşmaya başlamıştık. Bir arkadaşımla uzun zamandır e-posta üzerinden böylesine yoğun iletişim kurmamıştım. Heyecan verici ve sürükleyici bir deneyim idi. Şirkette uçuşan e-posta trafiğinden çok daha farklıydı. Duygusal anlamı vardı. Suni, bayağı değildi. İletişim kurmak isteyen iki arkadaşın yazışmalarıydı.
 
 Derken acaba eski günlerdeki gibi postaneden mektup göndererek iletişim kursak nasıl olur diye düşünmeye başladık. İlk okul sıralarına kadar gittik. Yurt dışında mektup arkadaşı bulmaya çalıştığımız günleri hatırladık. Şimdi tabi benim bir şekilde bu mektup meselesinden makalenin konusu olan SOAP Header’ a inmem gerekiyor…Bir deneyelim.
@@ -26,7 +25,7 @@ Bazen kurum içerisinde kullanılan SOAP (Simpe Object Access Protocol) bazlı s
 
 XML Web Service zamanlarından beri var olan bu yaklaşım, WCF tabanlı SOAP servisleri için de geçerlidir. Pek tabi Header bilgisi network trafiğini dinleyenler tarafından yakalansa da sorun teşkil etmeyecek vakalarda ele alınması daha uygundur.
 
-SOAP Hakkında Kısa Bilgi
+## SOAP Hakkında Kısa Bilgi
 
 SOAP, uygulamalar arası mesajlaşmayı tanımlayan iletişim protokollerinden birisidir. W3C tarafından tavsiye edilen, XML tabanlı olan, genişletilebilen bir yapıya sahiptir. Dilden ve platformdan bağımsız olması onu servis dünyasında popüler hale getiren etkenler arasında yer alır. HTTP üzerinde koşan bu standart yıllarca internet/intranet tabanlı uygulamaların birbirleriyle haberleşmesi noktasında ön plana çıkmıştır. Kurumsal çözümler, miras sistemler ile olan iletişim biçimlerinde halen daha popülerliğini korumaktadır. SOAP standardının tanımladığı mesaj içeriği temel olarak aşağıdaki şekilde yer alan şema yapısına sahiptir.
 
@@ -34,11 +33,11 @@ SOAP, uygulamalar arası mesajlaşmayı tanımlayan iletişim protokollerinden b
 
 SOAP Header içeriklerinin istemci tarafında oluşturulması ve servis tarafında ele alınması son derece basittir. Kod yoluyla veya konfigurasyon dosyası içerisinden doğrudan bildirilerek kullanılabilir. Nasıl mı? Haydi gelin birlikte inceleyelim.
 
-Senaryo
+## Senaryo
 
 İstemcilerin, Header bilgisinde gönderdikleri kullanıcı adına göre kurum network’ ü içerisinde yapabilecekleri aksiyonları taşıyan rolleri yükleyecek operasyonelliği sunan bir servise ihtiyacımız olduğunu düşünelim. Burada söz konusu olan operasyonu bir WCF servisi içerisinde konuşlandırmayı planlıyoruz. Buna göre istemcilerin servisten talepte bulunmadan önce SOAP zarfının Header kısmına bir bilgi koyması ve servisin bu bilgiyi ilgili operasyon içerisinde yakalayarak değerlendirmesi gerekiyor. Gelin adım adım bu işi nasıl yapabileceğimize bir bakalım.
 
-Servis Tarafı
+## Servis Tarafı
 
 Geliştireceğimiz WCF Service Application içerisinde, aşağıdaki sınıf diagramında görülen tiplerin olduğunu varsayalım. (Bunlar bir anlamda senaryomuzu zevkli ve eğlenceli hale getirmek için yaptığımız çabalar aslında)
 
@@ -180,7 +179,7 @@ Konfigurasyon dosyasında, istemci tarafından gelen mesaj içeriklerini görebi
 
 Görüldüğü üzere tipik olarak SOAP tabanlı basit bir WCF servisi söz konusudur. Servisin can alıcı noktası ise GetRoles metodunun içeriğidir.
 
-GetRoles Metodunun İşleyişi
+## GetRoles Metodunun İşleyişi
 
 Bu metod içerisindeki kritik planlama, istemciden gelen mesaj içeriğindeki Header elementinin yakalanmasıdır. İlk olarak güncel çalışma zamanı içeriği yakalanır. OperationContext tipinden ele alınan içerik üzerinden RequestContext örneği yakalanır. Bu bilgi içerisinde istemciden gelen mesaj bulunmaktadır. Çok doğal olarak RequestMessage.Headers özelliği, mesaj içerisindeki olası Header elementlerini döndürecektir.
 
@@ -190,7 +189,7 @@ FindHeader metoduna yapılan çağrıda iki parametre kullanılmıştır. İlk p
 
 Metodun ilerleyen kısımlarında dummy bir kod parçası uygulanmış ve sembolik olarak rol yükleme işlemi gerçekleştirilmiştir. Gerçek hayat örneğinde buradaki yüklemelerin bir repository üzerinden yapılması elbette daha uygun olacaktır.
 
-İstemci Tarafı
+## İstemci Tarafı
 
 Senaryomuzda istemci tarafının basit bir Console uygulaması olarak geliştirilmesinde her hangi bir sakınca yoktur. WCF servisine ait referansın indirilmesi ve Proxy tipinin hazırlanmasını takiben aşağıdaki kod içeriği geliştirilerek ilerlenebilir.
 
@@ -238,7 +237,7 @@ AddressHeader tipinin CreateAddressHeader metodu üç parametre almaktadır.İlk
 
 Hazırlanan bu yeni bilgiler ışığında EndPoint bilgisinin yeniden üretilmesi gerekir. Bu aşamada EndpointAddressBuilder sınıfının ToEndpointAddress metodundan yararlanılmış ve oluşan örnek, proxy tipinin kullanmakta olduğu Endpoint’ in Address bilgisine atanmıştır. Bu kısımdan sonra normal olarak servis üzerindeki GetRoles metodunun çağırılması ve elde edilen Role ve Action listelerinde dolaşılması söz konusudur.
 
-Çalışma Zamanı Sonuçları
+## Çalışma Zamanı Sonuçları
 
 Uygulama test edildiğinde istemci tarafının aşağıdaki çalışma zamanı görüntüsüne sahip olması beklenmektedir.
 
@@ -256,7 +255,7 @@ XML içeriği;
 
 Pek tabi bir Header bilgisinin gönderilmemesi veya yanlış olması halinde istemci tarafına bir Role listesi gönderilmeyecektir (Belki bu durumda varsayılan bir listenin gönderilmesi düşünülebilir)
 
-Bir Diğer Yol
+## Bir Diğer Yol
 
 Header bilgisi göndermenin bir diğer yolu da konfigurasyon içerisinde bunu doğrudan yazmaktır. İstemci tarafında ki EndPoint elementi içerisinde aşağıdaki gibi bir değişiklik yeterli olacaktır.
 
@@ -291,7 +290,7 @@ Header bilgisi göndermenin bir diğer yolu da konfigurasyon içerisinde bunu do
 
 Tabi bu teknik seçildiğinde kod tarafındaki Header ekleme kısımlarının kullanılmaması gerekir. Aksi durumda çalışma zamanında iki yerden birden Header kısmı eklenmeye çalışıldığına yönelik Exception mesajı alınacaktır.
 
-Peki Ya Custom Type Kullanmak İstersek?
+## Peki Ya Custom Type Kullanmak İstersek?
 
 Örnek senaryoda istemci tarafından Header bilgisi olarak string bir içeriğin gönderilmesi ele alınmıştır. Çok doğal olarak istemci tarafının örneğin bir POCO (Plain Old CLR Object) tipine ait nesneyi göndermesi de düşünülebilir. Örneğin hem servis hem de istemci tarafı için aşağıdaki gibi ortak bir tipin var olduğunu düşünelim.
 
@@ -326,7 +325,7 @@ addressBuilder.Headers.Add(
 
 İlk olarak CustomMessageHeader tipi için XmlIObjectSerializer türevi bir nesne örneği oluşturulmlaktadır. Bu örnek CreateAddressHeader metodunun son parametresinde kullanılmakta olup, istemcinin servis tarafına mesaj gönderdiği noktada devreye girecek ve CustomMessageHeader nesne örneğini Xml formatında serileştirecektir.
 
-Servis Tarafına Gelen Mesaj
+## Servis Tarafına Gelen Mesaj
 
 Eğer uygulama test edilir ve servis tarafına inen mesaj içeriğine bakılırsa, CustomeMessageHeader sınıfının özelliklerine ait değerlerin eklendiği gözlemlenebilir. Trace log’ ların da bu içerik aşağıda görüldüğü gibidir.
 
@@ -351,7 +350,7 @@ SOAP zarf içeriğine bakıldığında durum daha net fark edilebilir.
 </s:Envelope>
 ```
 
-Servis Bunu Nasıl Anlayacak?
+## Servis Bunu Nasıl Anlayacak?
 
 Servis tarafına istemcinin özel bir.Net nesne içeriğini Header bilgisi olarak göndermesi bu kadar basittir. Peki ya servis tarafı bu tipi nasıl çözümleyecek? XML olarak gelen bu element yapısının kod tarafında anlaşılabilir olması/değerlendirilmesi için bir kaç yol mevcuttur. Her şeyden önce Header içeriğinin bir XML element ağacından oluştuğunu düşünecek olursak bunu parse ederek yorumlamak çok da zor değil. Bu amaçla GetRoles metodu içerisinde aşağıdaki gibi bir kod parçasını kullanabiliriz.
 
@@ -379,7 +378,7 @@ Aslında tek yaptığımız gelen Request mesajının XML içeriği üzerinde Te
 
 Tabi ki söz konusu içeriği servis tarafında bir nesne olarak ele almak çok daha mantıklıdır. Fakat bu senaryoda servis tarafında bir tip bildirimi söz konusu değildir. Yani istemci tarafında Header bilgisini oluşturmak için kullanılan ve XML serileştirmeye tabi tutulan CustomMessageHeader sınıfı servis tarafında oluşturulmamıştır.
 
-Message Contracts
+## Message Contracts
 
 Bu senaryo haricinde Header kullanımları için WCF tarafında farklı bir kavramı da değerlendirmeyi düşünebiliriz. O da MessageContract kullanımıdır. Mesaj sözleşmeleri sayesinde SOAP zarflarının Header ve Body kısımlarının servis tarafında tanımlanması mümkündür. Bir başka deyişle SOAP mesaj içeriklerinin nesnel olarak kod tarafında tanımlanabilmesi söz konusudur. Bu durumda Header içeriklerinin birer POCO gibi ele alınması daha kolay olmaktadır.
 

@@ -24,7 +24,9 @@ Geçtiğimiz iki hafta boyunca neredeyse her gün yarım saatimi ayırdığım v
 
 Örneğin Bitcoin, secp256k1 isimli ve aşağıdaki eşitlikle ifade edilen eliptik eğri denklemini kullanmakta. secp256k1' deki sec, Standards for Efficent Cryptography anlamına gelirken 256 değeri asal sayının kaç bit olduğunu ifade etmektedir. Sonlara doğru bu kavramları anlayacağım/anlatabileceğim diye umut ediyorum.
 
+```text
 y2=x3+7
+```
 
 Gerçek sayılar için olan gösterimi şöyle;
 
@@ -36,7 +38,7 @@ Toplam eleman sayısı asal olacak şekilde oluşturulmuş bir sonlu alan dizili
 
 Merak uyandırdı değil mi? Öyleyse ilk konumuz ile başlayalım.
 
-Eliptik Eğriler
+## Eliptik Eğriler
 
 Eliptik eğri denklemlerine geçmeden önce bir kaç basit denklemi de hatırlamamız lazım. Doğrusal, ikinci dereceden ve üçüncü dereceden denklemleri ve x,y düzlemindeki gösterimlerini görünce sizler de hatırlayacaksınız?
 
@@ -66,6 +68,7 @@ Yukarıdaki şekilde denkleme ait bir kaç farklı örnek görmektesiniz. Her ne
 
 > 3ncü noktanın bulunmasında ilk iki noktanın sıralı olması şart değildir. Sadece eğri üzerinde olduğu bilinen iki noktanın üzerinden geçen doğrunun kestiği üçüncü noktanın x düzlemindeki iz düşümü önemlidir.
 
+```text
 Eğri denklemimiz: y2 = x3 + ax + b
 
 M1 = (x1,y1), M2 = (x2,y2), M1 + M2 = (x3,y3)
@@ -92,10 +95,11 @@ y3 = 2 (2 - (-1)) - 5 = -1
 
 P3 = (-1,1)
 12= 1 = -13+(5*(-1))+7 (P3 noktası eğri üzerinde)
+```
 
 Şimdi örnekte neler oldu anlamaya çalışalım. Denklem ortada. İki tane noktamız var. Öncelikle bu noktaların eğri üzerinde olup olmadıklarının sağlamasını yapıyoruz. Sonrasında eğim değerini (s) bulmamız gerekiyor. Eğim bulunduktan sonra bu değerden yararlanarak x3 bilinmeyenini ve x3'ü de işin içerisine katarak y3 değerini hesaplıyor ve 3ncü noktanın koordinatlarını bulmuş oluyoruz. Son aşamada yine x3,y3 noktasının eliptik eğri üzerinde olup olmadığının sağlamasını gerçekleştiriyoruz. Bunu program kodu ile de deneyimleyebiliriz. Özellikle Python gibi diller bu tip matematiksel işlemler için kolaylıklar sunmakta.
 
-```text
+```python
 p1=(2,5)
 p2=(3,7)
 
@@ -135,7 +139,7 @@ Python tarafına aşina olmayanlar için bile okunması oldukça kolay bir kod p
 
 ![ecc_12.gif](/assets/images/2018/ecc_12.gif)
 
-Eliptik Eğrilerin Gruplar ile İlişkisi
+## Eliptik Eğrilerin Gruplar ile İlişkisi
 
 Eliptik eğriler ile matematik grupları arasında yakın ilişki vardır. Özellikle asallık söz konusu ise. Bunları bir eliptik eğri için düşündüğümüzde şunları söyleyebiliriz.
 
@@ -147,25 +151,31 @@ Eliptik eğriler ile matematik grupları arasında yakın ilişki vardır. Özel
 
 Grup olma özellikleri biraz sonra kriptografinin zorluğunu ortaya koyarken değer kazancak. Bu nedenle eliptik eğri kriptografisine geçmeden önce sonlu alanlara, asal sayılar nezninde de uğramamız gerekiyor.
 
-Sonlu Alanlar
+## Sonlu Alanlar
 
 Artık eliptik eğrilerin nasıl bir denklem ile ifade edildiğini biliyoruz. Yazının başında Blockchain tarafından kullanılan denklemin grafiğini hatırlarsanız gerçek sayılar yerine toplam eleman sayısı bir asal sayı ile ifade edilen eliptik eğrinin söz konusu olduğunu belirtmiştik. Peki ne olaki bu sonlu alanlar (Finite Fields) Aşağıdaki gibi ifade edilen bir sayı dizisi olduğunu düşünelim (Aslında bizler için 0dan başlayan 13 elemanlı bir tamsayı dizisi)
 
+```text
 F13 = {0, 1, 2, 3, … 12}
+```
 
 Bu dizilimin en önemli yanı 13 elemandan oluşması. 13 asal bir sayı. Dizinin bir diğer önemli özelliği de modüler aritmetik denklik kuramına göre içerideki iki sayının toplamının yine içerideki bir elemanı veriyor olması. Üstelik bu sadece toplama değil, çıkarma, çarpma ve bölme işlemleri için de geçerli bir durum. Sadece bölme işleminde kafaların biraz karışabildiği bir senaryo var ki burada da işin içerisine Fermat'nın Küçük Teorim (Fermat's Little Theorem) girmekte.
 
 Toplama, çıkartma ve çarpma işlemlerine örnekler;
 
+```text
 4 + 5 = 9 % 13 = 9 (Dizi içerisinde)
 8 + 11 = 19 %13 = 6 (Dizi içerisinde)
 8 - 12 = (-4) % 13 = 4 (Dizi içerisinde)
 9 - 4 = 5 % 13 = 5 (Dizi içerisinde)
+```
 
 Gelelim bölme işlemine...
 
+```text
 2 / 3 = 2 * 3-1 = 2 * 311 = 354.294 % 13 = 5 (Dizi içerisinde)
 3 / 12 = 3 * 12-1 = 3 * 1211 = 2.229.025.112.064 % 13 = 10 (Dizi içerisinde)
+```
 
 İşlemler biraz tuhaf geldi değil mi? Özellike -1 üs değerinin eşitliğin devamında 13-2 şeklinde ifade edilmesi. Burada az önce bahsettiğimiz küçük teorimin büyük bir önemi var. Fermat'a göre p bir asal sayı, a bir tamsayı ve a ile p aralarında asal (p, a'nın bir çarpanı olamaz) iken
 
@@ -185,7 +195,7 @@ ap-2 ≡ a-1 ≡ 1/a (mod p)
 
 Böylece bir bölme işleminin modüler aritmetik enstürmanlarına göre yine dizi içerisindeki bir elemanı işaret ettiğini görmüş oluyoruz.
 
-Eliptik Eğrideki Ayrık Logaritma Problemi
+## Eliptik Eğrideki Ayrık Logaritma Problemi
 
 Gelelim yukarıda anlattıklarımızı kullanarak neler yapabileceğimize bakmaya. Bir eliptik eğri üzerinde bir başlangıç noktası seçtiğimizi düşünelim. P olarak isimlendirelim (Sonradan Generator Point adına kavuşacak) Buna göre P'nin 1 katını, 2katını, 3katını ekleyerek devam edelim. Artık elimizde bir nokta grubu var ve onu şöyle ifade edebiliriz.
 
@@ -193,30 +203,51 @@ Gelelim yukarıda anlattıklarımızı kullanarak neler yapabileceğimize bakmay
 
 Çarpan olarak ele alınan n'nin gizli bir anahtar olduğunu düşündüğümüzde her ne kadar sP=Q değerini bulmak kolay olsa da P ve Q'yi bilip s'yi bulmaya çalıştığımız durumda bu o kadar da kolay olmayacaktır. Çünkü 0 ile n-1 arasındaki tüm olası değerleri göz önüne alıp eşitliğin sağlanıp sağlanmadığını anlamamız gerekir. Bunun sebebi ayrık logaritma problemi ile açıklanmaktadır.
 
-> Discrete Logarithm Problem
-> Aşağıdaki işlemi düşünelim.
-> 329 mod 17 ≡ 12
-> Burada 12 değerine ulaşmak kolay. Fakat soru şu;
-> 3x mod 17 ≡ 12
-> Burada x değerini nasıl bulabiliriz? Aslında 3ün olası üslerini taramak söz konusu eşitlikteki uygun x değerini bulmak için yeterli. Küçük bir asal sayı için bu çok büyük sorun teşkil etmeyecektir. Sorun 17 sayısı yerine çok çok çok büyük bir asal sayı geldiğinde ortaya çıkmaktadır. Teorikte mümkün ama pratiğe dökülmesi için asal değere göre dünyadaki işlemci gücünün tamamına sahip olsak bile çok uzun yıllar sürebilecek bir problem söz konusu (Uzmanların dilinden)
+```text
+Discrete Logarithm Problem
+
+Aşağıdaki işlemi düşünelim.
+
+329 mod 17 ≡ 12
+
+Burada 12 değerine ulaşmak kolay. Fakat soru şu;
+
+3x mod 17 ≡ 12
+
+Burada x değerini nasıl bulabiliriz? Aslında 3ün olası üslerini taramak söz konusu eşitlikteki uygun x değerini bulmak için yeterli. Küçük bir asal sayı için bu çok büyük sorun teşkil etmeyecektir. Sorun 17 sayısı yerine çok çok çok büyük bir asal sayı geldiğinde ortaya çıkmaktadır. Teorikte mümkün ama pratiğe dökülmesi için asal değere göre dünyadaki işlemci gücünün tamamına sahip olsak bile çok uzun yıllar sürebilecek bir problem söz konusu (Uzmanların dilinden)
+```
 
 Tekrar P noktalarından oluşan grubumuza dönelim. Buradaki çarpan hesaplamaları için Double and Add algoritmasından yararlanılabilir.
 
-> Double and Add algorithm
-> Double and Add algoritmasında noktanın çarpanının ikilik sayı sistemindeki ifadesinden yararlanılır. Şöyle başlayalım. 19 asal sayısının ikilik sistemdeki karşılğı
-> 10011
-> şeklindedir.
-> Bunu üssel gösterimle ifade etmek istersek şu eşitliği de yazabiliriz.
-> 19 = 10011 = 1.24 + 0.23 + 0.22 + 1.21 + 1.20
-> Buna göre bir noktanın 19 ile çarpımını da şu şekilde ifade etmemiz mümkün hale gelir.
-> 19P = 24P + 21P + 20P
-> Oluşan eşitliğe göre Double and Add algoritması şöyle işletilir.
-> P noktasını al.
-> Bunu 2ye katla (double). Bu sayede 2P değerini elde ederiz.
-> 2P yi P ile topla (add) Böylece 21P + 20P değerini yakalarız.
-> ...
-> Bu şekilde ikiye katlama ve toplama işlemlerinin tekrar edilmesi yoluyla sonuca ulaşabiliriz. Siz örneğin 151 sayısı için bu denkliği sağlamaya çalışarak konuyu pekiştirebilirsiniz. İpucu olarak başlangıçı veriyorum;
-> 151 = 10010111 = 1.27 + 0.26 + 0.25 + 1.24 + 0.23 + 1.22 + 1.21 + 1.20 = 27 + 24 + 22 + 21 +20
+```text
+Double and Add algorithm
+
+Double and Add algoritmasında noktanın çarpanının ikilik sayı sistemindeki ifadesinden yararlanılır. Şöyle başlayalım. 19 asal sayısının ikilik sistemdeki karşılğı
+
+10011
+
+şeklindedir.
+
+Bunu üssel gösterimle ifade etmek istersek şu eşitliği de yazabiliriz.
+
+19 = 10011 = 1.24 + 0.23 + 0.22 + 1.21 + 1.20
+
+Buna göre bir noktanın 19 ile çarpımını da şu şekilde ifade etmemiz mümkün hale gelir.
+
+19P = 24P + 21P + 20P
+
+Oluşan eşitliğe göre Double and Add algoritması şöyle işletilir.
+P noktasını al.
+
+Bunu 2ye katla (double). Bu sayede 2P değerini elde ederiz.
+
+2P yi P ile topla (add) Böylece 21P + 20P değerini yakalarız.
+...
+
+Bu şekilde ikiye katlama ve toplama işlemlerinin tekrar edilmesi yoluyla sonuca ulaşabiliriz. Siz örneğin 151 sayısı için bu denkliği sağlamaya çalışarak konuyu pekiştirebilirsiniz. İpucu olarak başlangıçı veriyorum;
+
+151 = 10010111 = 1.27 + 0.26 + 0.25 + 1.24 + 0.23 + 1.22 + 1.21 + 1.20 = 27 + 24 + 22 + 21 +20
+```
 
 Bir nokta grubu için tam sayı ile çarpma işlemini ele aldığımıza göre P grubu için şöyle bir örnek yapalım.
 
@@ -225,6 +256,7 @@ Sonlu alandaki toplam sayı adedi 17 (asaldır dikkat edin)
 Başlangıç noktamız P (3,6)
 Buna göre P'yi kendisi ile toplaya toplaya aşağıdaki dizilimi elde edebiliriz.
 
+```text
 0P = 0
 1P = (3,6)
 2P = (12,2)
@@ -240,12 +272,13 @@ Buna göre P'yi kendisi ile toplaya toplaya aşağıdaki dizilimi elde edebiliri
 12P = (3,6)
 13P = (12,2)
 14P =(15,5)...
+```
 
 ![ecc_11.gif](/assets/images/2018/ecc_11.gif)
 
 Bir şey dikkatinizi çekti mi? Toplamda denklemi sağlayan 22 adet (x,y) noktası söz konusu iken biz 11 elemanlı bir alt grup elde ettik ve bu grubun tekrar eden bir döngü içerisinde olduğunu görmekteyiz. Buradaki hesaplamalar için aşağıdaki örnek kod parçasını da kullanabiliriz. Fonksiyonları ve kullanım şekillerini anlamaya çalışın. İçeride bir de uzatılmış Euclid algoritması olarak isimlendirilmiş bir kısım var.
 
-```text
+```python
 import collections
 
 EllipticCurve = collections.namedtuple('EliptikEgri', 'name p a b g')
@@ -355,24 +388,26 @@ for i in range(0,17):
 
 Nokta sahası sonlu uzunlukta ve çok doğal olarak alt grup da öyle. Ancak denklem ve asal sayı değeri dikkatli seçilirse çok büyük bir grubun elde edilmesi söz konusu olabilir. Öyle ki geri çevirlemeye çalışıldığında bu inanılmaz derecede zor olur.
 
-Bitcoin Cephesi (secp256k1)
+## Bitcoin Cephesi (secp256k1)
 
 Onlar Blockchain'in bu kriptografi kuramını göz önüne alarak aşağıdaki parametreleri içeren bir eğri tanımlamışlar.
 
+```text
 Denklem: y2=x3+7
 Sonlu alan asal sayı değeri (p) = 2256 -232 - 29 -28 -27 -26 - 24 - 1
 Giriş noktası G=(79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798, 483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8)
 Bir gruptaki asal nokta sayısı n = FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+```
 
 Dikkat edileceği üzere nokta ve asal sayı değerleri oldukça büyük. Bu da ayrık logaritma probleminin getireceği sorunun çözümünü oldukça zorlaştırır nitelikte. Her şeyden önce ortada 256bitlik bir asal sayı var. Bunun bir sonucu da en iyimser tahminle ortada 2256 olası gizli anahtarın olması ki herhangibirini tespit edebilmek için var olanlarından mümkün olduğunca çoğunu bilmek gerekiyor. Bunu anlatmak çok zor ama trilyonlarca yıl alabilecek bir zaman ortaya çıktığı söyleniyor (Teorik olarak)
 
 Peki yazılımcı olarak biz bu değerleri kullanarak ne yapabiliriz? Aslında seçeceğimiz bir private key değeri ile public key üretebilir sonra bu iki anahtar bilgisinden yararlanarak dijital bir imza oluşturarak belgelerimizi kriptolayabiliriz. Bu amaçla kullanılabilecek pek çok kütüphane var. Hatta [şu adreste güzel bir kod örneği](https://blog.todotnet.com/2018/02/public-private-keys-and-signing/) de bulunmakta. İnceleyip denemenizi öneririm.
 
-Sonuç
+## Sonuç
 
 Eliptik Eğri denklemi Blockchain ve ondan türeyen pek çok yapı tarafından asimetrik şifre üretilip transaction'ların imzalanması maksadıyla kullanılmakta. Asitmerik şifrelemede public ve private olmak üzere iki anahtar söz konusu. Public Key herkes tarafından görülebilir bir bilgi ama private key tahmin edeceğiniz üzere kişiye özel. Private key değeri kullanılarak public key değerinin elde edilmesi mümkün. Bu değeri elde ederken yukarıdaki eliptik eğri denkleminden yararlanılmakta. Ancak public key değerini kullanarak private key bilgisine oluşturmak en azından önümüzdeki birkaç milyon yüz yıl (belki de fazlası) için mümkün değil. Blockchain bir transaction'ı imzalarken private key ile oluşturulmuş bir hash değeri kullanıyor. Hash bilgisinin geriye döndürülerek private key içeriğinin bulunması zaten mümkün değil lakin public key değerine sahip olan birisi kendi ürettiği private key'leri kullanarak oluşturacağı hash'leri karşılaştırmaya çalışabilir. Lakin burada onu bekleyen şey Eliptik Eğri Dijital Kriptografi Algoritması (Elliptic Curve Digital Signature Algorithm) oluyor; ki bu konu şu an için beni aşmakta. Kaynaklar arasında daha fazla kaybolmadan hatırladığım eski matematik denklemlerimi bir kenara bırakıyor ve hepinize mutlu günler diliyerek istirahata çekiliyorum.
 
-Kaynaklar
+## Kaynaklar
 
 [Blockchain 101 - Foundational Math](https://eng.paxos.com/blockchain-101-foundational-math)
 [Blockchain 101 - Elliptic Curve Cryptography](https://eng.paxos.com/blockchain-101-elliptic-curve-cryptography)

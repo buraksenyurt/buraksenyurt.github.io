@@ -17,12 +17,9 @@ Bir süredir şirket içerisinde kullanılacak olan web tabanlı bir.Net uygulam
 
 ![browser_wars](/assets/images/2014/browser_wars.jpg)
 
-
 Projede kaynak sıkıntısı nedeniyle uzun bir süre servis katmanı haricinde kalan arayüz tarafı ile de ilgilenmek zorunda kaldım. Arayüz tarafı ile uğraşırken iş biriminden gelen isteklere göre CSS (Cascading Style Sheets) ve bol miktarda Javascript kodlamak benim gibi acemiler için epeyce zorlayıcıydı. Lakin en çok zaman kaybettiğim vaka, şirket içinde kullanılmakta olan eski,yeni ve çeşitli tipteki tarayıcıların uyumlu çalışmasının sağlanabilmesiydi. Kimi lokasyonda Internet Explorer 8, kimi yerlede Google Chrome’ un en güncel sürümü bulunmakta. Hatta global çevrimde Firefox standart olarak her bilgisasyarda yüklü geliyor.
 
 Şunu fark ettim ki, tarayıcı savaşları makalelerde okuduğumuzdan çok daha ciddi boyutta. Havada uçuşan standartları farklı farklı yorumlama biçimleri nedeniyle her tarayıcıya uygun standart çözümler üretmek gerçekten zormuş. En azından benim için
-
-![Smile](/assets/images/2014/wlEmoticon-smile_105.png)
 
 Basit bir CSS'in Internet Explorer'da sorunsuz çalışırken Chrome'da problem çıkarttığına, Chrome'da dertsiz işleyen bir Ajax Control Toolkit kontrolünün, Firefox’ un eski bir sürümünde hiç çalışmadığına şahit oldum. Hal böyle olunca çalışma zamanında, tarayıcıların debug kabiliyetleri ile de haşır neşir olmak zorunda kaldım. Sıkıcı mıydı? Hayır
 
@@ -30,7 +27,7 @@ Basit bir CSS'in Internet Explorer'da sorunsuz çalışırken Chrome'da problem 
 
 Aksine benim için farklı ve değer katan deneyimlerdi. İşte bu düşünceler geçtiğimiz günlerde yine internet üzerinde bir şeyler araştırıp öğrenmeye çalışırken kendimi farklı bir macera içerisinde buldum. Sonunda bunu kaleme almanın yararlı olacağını düşündüm ve işte buradayım.
 
-Senaryo
+## Senaryo
 
 Bu yazımızda bir kavram ve terim cümbüşü içerisinde yer alacağımızı söyleyebilirim. Yazacağımız basit bir WCF servisini öncelikle REST tabanlı çalışır hale getireceğiz. Ardından söz konusu servise jQuery kütüphanesinden yararlanarak bir Ajax çağrısı gerçekleştireceğiz. Temel hedefimiz ise HTTP Post metoduna göre bir içeriği tarayıcı üzerinden servise göndermek olacak. Lakin JSON (JavaScript Object Notation) tipinden bir nesne kullanacağız. Kabaca aşağıdaki çizelge de görülen durumun söz konusu olduğunu söyleyebiliriz.
 
@@ -38,7 +35,7 @@ Bu yazımızda bir kavram ve terim cümbüşü içerisinde yer alacağımızı s
 
 Bu toplu senaryo aslına bakılırsa günümüzün popüler pek çok web tabanlı uygulamasında kullanılabilecek türden. Haydi gelin parmaklarımızı sıvayalım...
 
-Servis Tarafının Geliştirilmesi
+## Servis Tarafının Geliştirilmesi
 
 İlk olarak aşağıdaki servis sözleşmesini içeren bir WCF Service Application projesi açarak yola çıkabiliriz. Söz konusu projede IProductService isimli bir sözleşme (Service Contract) yer alacak.
 
@@ -103,7 +100,7 @@ namespace AzonServices
 
 ProductService.svc içerisinde çok özel bir kod parçası yoktur. Sadece generic bir List örneğine, PostProduct metoduna gelen Product örneğinin eklenmesi işlemi icra edilmektedir. Test sırasında istemcinin doğru bir cevap aldığını kolayca tespit etmek adına metod geriye benzersiz bir Guid değeri döndürmektedir.
 
-EndPoint Bildirimi
+## EndPoint Bildirimi
 
 Servis tarafı için önem arz eden konulardan birisi de EndPoint tanımlamasıdır. Servis, REST tabanlı olacak şekilde çalışabilmelidir. WCF bu noktada WebHttpBinding isimli Binding tipini sağlamaktadır. Bu sebepten web.config içerisinde gerekli tanımlamaların yapılması gerekmektedir. Aynen aşağıda görüldüğü gibi.
 
@@ -136,7 +133,7 @@ endpoint elementi içerisinde yer alan binding niteliğine webHttpBinding atanma
 
 > Servisin Metadata Publishing özelliği kapalıdır. Bilindiği üzere REST tabanlı servislere HTTP protokolü ve metodları ile erişilmektedir. Bu yüzden istemci tarafında bir Proxy nesnesi kullanılmasına gerek yoktur.
 
-İstemci Tarafı
+## İstemci Tarafı
 
 Gelelim istemci uygulamanın geliştirilmesi. Servis tüketicisi bir Web uygulaması olarak inşa edilecektir. Detayları bir kenara bırakıp asıl konuya odaklanmak istediğimizden Asp.Net Empty Web Application projesi bizim için biçilmiş kaftandır. Web uygulamamızda jQuery kullanacağımızdan en azından ilgili javascript kütüphanesinin eklenmesi gerekir.
 
@@ -144,7 +141,7 @@ Gelelim istemci uygulamanın geliştirilmesi. Servis tüketicisi bir Web uygulam
 
 Ben örnek projemizde jQuery-2.1.0.min.js sürümünü kullanmayı tercih ettim. İlgili Script dosyasını projeye ekledikten sonra Default.aspx sayfasını aşağıdaki gibi geliştirebiliriz.
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ClientApp.Default" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
@@ -189,7 +186,7 @@ Ben örnek projemizde jQuery-2.1.0.min.js sürümünü kullanmayı tercih ettim.
 </html>
 ```
 
-Çalışma Şekli
+## Çalışma Şekli
 
 Şimdi web sayfasını biraz inceleyelim. Burada koşullara ve şartlara göre uygulanmış bazı hileler de bulunmaktadır. İlk olarak projeye ilave edilmiş jQuery kütüphanesinin kullanılacağı belirtilmiştir. Form üzerinde button tipinden bir input elementi yer almaktadır. İstemci tarafında bu buton tıklandığında ise AddNewProduct isimli javascript fonksiyonu çalıştırılmaktadır. Peki fonksiyon içerisinde neler olmaktadır?
 
@@ -205,29 +202,19 @@ Bunu şöyle ifade etmeye çalışalım. Örneği gerçekleştirdiğimiz sistemd
 
 ![restJquery_2](/assets/images/2014/restJquery_2_1.png)
 
-> Bu sorun IE 11' de kendini göstermeyebilir. Ya da jQuery kütüphanesinin daha eski bir sürümü böyle bir hatayı oluşturmayabilir. Hatta bu meta tag açık olduğunda Document Mode'un IE 9, 8 ve 7 olduğu durumlarda kütüphanenin aynı hatayı vermeye devam ettiği de tespit edilmiştir. Bu tarayıcıları anlamak hakikaten zor
->
-> ![Confused smile](/assets/images/2014/wlEmoticon-confusedsmile_33.png)
+> Bu sorun IE 11' de kendini göstermeyebilir. Ya da jQuery kütüphanesinin daha eski bir sürümü böyle bir hatayı oluşturmayabilir. Hatta bu meta tag açık olduğunda Document Mode'un IE 9, 8 ve 7 olduğu durumlarda kütüphanenin aynı hatayı vermeye devam ettiği de tespit edilmiştir. Bu tarayıcıları anlamak hakikaten zor.
 
-Uyumluluk Sonrası Chrome Öncesi ve CORS
+## Uyumluluk Sonrası Chrome Öncesi ve CORS
 
 Örneğimizi Internet Explorer ile (en azından sistemde var olan sürümü ile) uyumlu hale getirdik diyebiliriz. Default.aspx sayfasında Add New Product başlıklı butona bastığımızda aşağıdakine benzer bir mesaj kutusu ile karşılaşmamız gerekmektedir.
 
 ![restJquery_3](/assets/images/2014/restJquery_3_1.png)
 
-Görüldüğü üzere başarılı bir şekilde servis çağrısı yapılmıştır. JSON içeriği üretilmiş ve servisden benzersiz bir GUID değeri elde edilmiştir. Ne var ki örnek Chrome'da çalışmamaktadır
-
-![Surprised smile](/assets/images/2014/wlEmoticon-surprisedsmile_6.png)
-
-(Yine örneğin geliştirildiği makinedeki tarayıcı sürüm için böyle bir durum oluştuğunu ifade edelim)
+Görüldüğü üzere başarılı bir şekilde servis çağrısı yapılmıştır. JSON içeriği üretilmiş ve servisden benzersiz bir GUID değeri elde edilmiştir. Ne var ki örnek Chrome'da çalışmamaktadır. *(Yine örneğin geliştirildiği makinedeki tarayıcı sürüm için böyle bir durum oluştuğunu ifade edelim)*
 
 ![restJquery_4](/assets/images/2014/restJquery_4_1.png)
 
-Pek de sevimli olmayan bir hata mesajı
-
-![Sad smile](/assets/images/2014/wlEmoticon-sadsmile_16.png)
-
-Eğer Chrome tarafında debug işlemi uygulanırsa aşağıdaki gibi bazı hataların oluştuğuna şahit olunur. İşte buton tıklandıktan sonraki durum.
+Pek de sevimli olmayan bir hata mesajı. Eğer Chrome tarafında debug işlemi uygulanırsa aşağıdaki gibi bazı hataların oluştuğuna şahit olunur. İşte buton tıklandıktan sonraki durum.
 
 ![restJquery_5](/assets/images/2014/restJquery_5_1.png)
 
@@ -235,7 +222,7 @@ Eğer Chrome tarafında debug işlemi uygulanırsa aşağıdaki gibi bazı hatal
 
 > Modern tarayıcıların bu tip Cross Domain referans çağrılarına izin vermediği bilinmektedir. Servislerin bu noktada çözüm olarak istemciden gelecek olan bu tip Header'ları kabul edecek şekilde tesis edilmesi gerekmektedir. Bu sıkıntı CROS olarak isimlendirilmiştir. Dolayısıyla servis tarafı CORS (Cross-Origin Resource Sharing) özelliğini desteklemelidir. Bir başka deyişle servisin istemciden gelen Header bilgisine göre POST talebini kabul edecek şekilde ayarlanması sorunu çözecektir.
 
-Sorunu Büyüttük
+## Sorunu Büyüttük
 
 Görüldüğü üzere yeni bir mücade ile karşı karşıyayız. WCF servisini CORS destekli hale getirmek çözümlerden bir tanesi. Ancak oldukça zahmetli olan bu yola yazımızda değinmeyeceğiz. Yine de ilgilenler [http://enable-cors.org/server_wcf.html](http://enable-cors.org/server_wcf.html) adresine uğrayabilirler. Daha basit bir çözüm olarak WCF Service Application'ın aslında bir Web uygulaması gibi davranış gösterdiğini düşünerek hareket edeceğiz. Dolayısıyla bir global.asax dosyası ve gelen uygulamaya gelen taleplerin yakalandığı olay metodları söz konusudur. Bu noktada Application_BeginRequest metodu içeriğini aşağıdaki kod parçasında görüldüğü gibi yazmamız yeterli olacaktır.
 
@@ -256,7 +243,7 @@ BeginRequest metodu tahmin edileceği üzere WCF servisini host ettiğimiz uygul
 
 ![restJquery_6](/assets/images/2014/restJquery_6_1.png)
 
-Eksikler
+## Eksikler
 
 Elbette senaryomuzda önemli eksiklikler bulunmaktadır. Örneğin,
 

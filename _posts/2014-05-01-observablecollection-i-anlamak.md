@@ -13,7 +13,6 @@ tags:
 
 ![Formspring.me](/assets/images/2014/Formspring.me.jpg)
 
-
 İşte o dönemlerde WCF tarafında Interceptor'ların nasıl kullanıldığına dair bir makale talebi almıştım Formspring üzerinden. [Onu geçtiğimiz zamanlarda cevaplamayı başardım](/2012/12/02/wcf-interceptors/). Derken bunun ardından benzer bir soru daha gelmişti. Someone'dan gelen soru şöyleydi ve henüz cevaplamayı başaramamıştım…
 
 > burak abi merhaba senden wpf de sık kullanılan observablecollection konusunu anlatmanı rica ediyorum mmalesef bu konuda derinlemesine anlatım yapan türkçe kaynak yok saygılarımla başarılar hayırlı işler
@@ -22,7 +21,7 @@ tags:
 
 WPF (Windows Presentation Foundation) bilindiği üzere Microsoft.Net Framework 3.0 ile birlikte tanıtılmış bir alt yapı (Infrastructure). Windows tabanlı masaüstü uygulamalarına (ve hatta Browser tabanlı da çalışabiliyorlar) yeni bir soluk getiren yapının XAML (eXtensible Application Markup Language) ile olan sıkı bir ilişkisi de bulunmakta. Dolayısıyla anlatacağımız konu aslında çok uzun zamandır var olan bir mevzu, lakin WPF tarafına yeni başlayan birisi için de epey yabancı sayılabilir. İşe ilk olarak bu koleksiyona olan ihtiyacı ortaya koyarak başlamakta yarar var.
 
-Gereksinim
+## Gereksinim
 
 Günümüz yazılım ürünlerinin pek çoğu ister web tabanlı olsunlar, ister mobil cihaz üzerinde koşsunlar vb, genellikle Data-Centric (Veri odaklı) olarak geliştirilmekteler. İçerik bir veritabanı sunucusundan (hatta NoSQL tabanlı bir kaynak bile olabilir) gelebileceği gibi, bellek üzerinde oluşturulmuş bir koleksiyon veya basit bir POCO (Plain Old CLR Object) tipi dahi olabilir.
 
@@ -30,7 +29,7 @@ Bu açıdan bakıldığında veri odaklı uygulamaların ön yüzlerinin (User I
 
 > Şimdi burada durup biraz daha derin düşünmemiz gerekiyor. Tarafların birisinde meydana gelen değişiklikler sonucu başka bir tarafın/tarafların uyarılması (Notify edilmesi diyelim) yazılım dünyasında çok sık rastlanan bir durum olsa gerek. İşte bu sebepten zaten bir tasarım kalıbı bile ortaya çıkmış. Observer Design Pattern. Bu konuda daha önceden [yazdığım bir makaleye şu adresten ulaşabilirsiniz](/2009/07/09/tasarim-desenleri-observer/)
 
-Observer Tasarım Kalıbı ile Olan İlişki
+## Observer Tasarım Kalıbı ile Olan İlişki
 
 Peki bu desenin konumuzla ilgisi nedir? Sadece kök kelime isim benzerliği olabilir mi? Aslında pek değil. ObservableCollection'un iç yapısına bakıldığında Observer Tasarım Kalıbını uyguladığını fark edebiliriz. Çünkü bu koleksiyonun en büyük özelliği, veri bağlı kontroller ile ilişkilendirildiğinde ekleme, çıkartma ve tazeleme gibi işlemlerde uyarı verilmesine zemin hazırlıyor olmasıdır. Bu uyarı genellikle bir arayüz kontrolünün durum değişikliğinden haberdar olması olarak algılanır. Örneğin koleksiyona bir veri eklendiğinde, bu koleksiyon ile ilişkili kontrolün ilgili öğeyi otomatik olarak göstermesi gibi.
 
@@ -42,7 +41,7 @@ System.Collections.ObjectModel isim alanı (namespace) içerisinde yer alan gene
 
 Öyleyse ObservableCollection ın temel amacı bellidir; Generic T tipi için söz konusu olan ekleme (Add), silme (Remove) veya yeniden tazeleme (Refresh) gibi işlemlerde bir uyarı (Notify) yayınlamak.
 
-Örnek
+## Örnek
 
 Konuyu daha net anlamak adına basit bir örnek üzerinden ilerlemeye çalışalım. Öncelikli olarak aşağıdaki sınıf çizelgesinde (Class Diagram) görünen tipleri içeren bir WPF uygulaması oluşturduğumuzu düşünelim.
 
@@ -105,7 +104,7 @@ Book tipine ait özelliklerin, DataTemplate içerisindeki kontrollerin Text öze
 
 Lakin burada ayrı bir nokta daha vardır. Eğer BookList sınıfını ObservableCollection yerine List tipinden türetirsek de, az önce belirttiğimiz davranış sergilenecektir. Yani Visual Studio tasarım zamanı yine kitap bilgilerini bağlanan kontrollerde gösterecektir. O zaman ObservableCollection nin henüz kullanım amacı tam olarak tespit edilebilmiş değildir. Eğer List tipi de yukarıdaki senaryoda aynı davranışı gösterdiyse, neden ObservableCollection kullanalım ki.
 
-Neden ObservableCollection Kullanırız ki?
+## Neden ObservableCollection Kullanırız ki?
 
 Gelin örneğimizi biraz daha değiştirelim ve aşağıdaki hale getirelim.
 

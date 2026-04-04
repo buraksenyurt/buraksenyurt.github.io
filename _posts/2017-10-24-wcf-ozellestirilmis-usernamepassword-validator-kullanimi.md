@@ -21,7 +21,7 @@ Yeni ekibimdeki çalışmalar doğrultusunda bir süredir servis tabanlı mimari
 
 Senaryomuz şu; istemcilerin özel bir doğrulama mekanizması ile ele alınmasını sağlamak istiyoruz. Ancak bunu mesaj seviyesinde güvenli olan bir iletişim hattı üzerinde gerçekleştirmeliyiz. Binding konusunda serbestiz. Bir başka deyişle WsHttpBinding'i Message Based güvenlik modunda kullanıp özel bir UserNamePasswordValidator tipi ele alacağız. Mesaj tabanlı güvenlik söz konusu olduğu için sunucu ve istemcinin birbirlerine olan güvenini sertifikalarıyla sağlamamız gerekiyor. Biliyorum terimlerle kavramlar birbirine girdi ve kafalar karıştı. O zaman gelin adım adım ilerlemeye çalışalım.
 
-Sertifikaların Oluşturulması
+## Sertifikaların Oluşturulması
 
 Aynı ortamda geliştirme yapmaktayız. Sunucu ve istemcinin birbirlerini doğrulaması noktasında iki adet sertifikaya ihtiyacımız olacak. Bu sertifikaları makecert aracını kullanarak üretebiliriz.
 
@@ -103,7 +103,7 @@ namespace AzonHostApp
 
 AzonUsernamePasswordValidator sınıfı UserNamePasswordValidator tipinden türemekte. Üst tipten gelen Validate fonksiyonunun ezildiğine (override) dikkat edelim. Örneği oldukça basit bir şekilde ele almak istediğimizden tek yaptığımız belli bir kullanıcı ve şifresini kontrol etmekten ibaret. Önemli olan ise geçersiz oldukları takdirde bir SecurityTokenException fırlatıyor olmamız. Gerçek hayat senaryosunda buradaki kontrol operasyonunun bir Identity Server üzerinden gerçekleştirilmesi de düşünülebilir.
 
-Host Uygulamanın Geliştirilmesi
+## Host Uygulamanın Geliştirilmesi
 
 Gelelim host tarafına. Burada standart olarak servis çalışma zamanını ayağa kaldıracak işlemler yapacağız. Normalde konfigurasyon bazlı olarak da ilerleyebiliriz. Ne var ki projelerimizde standart.config seçenekleri dışında kod yoluyla bir takım yetenekleri ortama dahil ediyoruz. Aslında tasarlanacak IoC yapısındaki konfigurasyon seçenekleri ile WCF çalışma ortamını genişletmeyi planladığımızı itiraf edebilirim. Lafı fazla uzatmadan Main metodundaki kodları aşağıdaki gibi düzenleyerek devam edelim.
 
@@ -156,7 +156,7 @@ Son olarak Open ve Close metodları kullanılarak gerekli açma ve kapatma işle
 
 ![custa_3.gif](/assets/images/2017/custa_3.gif)
 
-İstemci Tarafının Geliştirilmesi
+## İstemci Tarafının Geliştirilmesi
 
 Artık istemci tarafını yazmaya başlayabiliriz. Onu da basitlik olması açısından bir Console uygulaması olarak geliştirelim. Host uygulaması açıkken aşağıdaki ekran görüntüsünde olduğu gibi servis referansını istemci tarafına ekleyebiliriz.
 
@@ -245,6 +245,6 @@ Elbette hatalı kullanıcı bilgisi ile ilerlenirse bir istisna alınacağı aş
 
 ![custa_7.gif](/assets/images/2017/custa_7.gif)
 
-Sonuç
+## Sonuç
 
 Bu örnekte istemci ve servis arasında WS standartlarında mesaj tabanlı güvenlikle sağlanan bir iletişim gerçekleştirildiğini gördük. Ayrıca istemciyi kendi doğrulama modelimize dahil ettik. Kritik nokta bu örnekte yer alan sunucu ve istemcinin farklı makinelerde birer uygulama olması hali. Böyle bir vakada AzonServer ve AzonClient isimli sertifikaların her iki makinenin Trusted People kısmında yüklü olması gerekecektir. İstemci ve sunucuyu ayrı birer uygulama sunucusu olarak da düşünebiliriz. Örneği farklı güvenlik modları ile denemenizi öneririm. Örneğin Transport seviyesinde güvenlik moduna geçmeyi deneyebilirsiniz. Bu durumda https şemasını destekleyecek bir sunucuya da sahip olabilirsiniz. İlk başta da belirttiğim üzere WCF tarafındaki güvenlik bazlı senaryolar ve kullanılabilecek kombinasyon oldukça fazla. Benim bu örnekte yaptığım gibi denemelerden yararlanarak kendiniz keşfetmeye çalışırsanız öğrendiklerinizin daha kalıcı olacağını görebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrarda görüşünceye dek hepinize mutlu günler dilerim.

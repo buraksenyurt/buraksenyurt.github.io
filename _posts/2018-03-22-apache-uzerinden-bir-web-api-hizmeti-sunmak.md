@@ -31,7 +31,7 @@ Geçenlerde bir süredir West-World üzerinde denemek istediğim vakaların üst
 
 Öncelikle sisteme Apache kurulumunu gerçekleştirdim. Konum ile çok alakalı olmasa da Firewall ayarlarını yapıp, Apache'nin belirli komutlarını inceleyerek devam ettim. Ardından Apache üzerinde yönlendirme (Redirect) gerçekleştirilebilmesi için konfigurasyon ayarlamaları yaptım. Standard Web API servisini geliştirip aynen NGinX odaklı yaklaşımda olduğu gibi sisteme bir Service dosyası atıp testleri gerçekleştirdim. İlk adımla başlayalım.
 
-Apache Kurulumu
+## Apache Kurulumu
 
 Kurulum için standart olarak öncelikle bir sistem güncellemesi yapmak, ardından da apache2'yi yüklemek doğru olacaktı. West-World dünyasında her şeyin başı apt-get update idi.
 
@@ -110,7 +110,7 @@ Konfigurasyon değişikliklerini bağlantıyı kopartmadan yüklemek içinse
 sudo systemctl reload apache2
 ```
 
-ModProxy Özelliğini Etkinleştiriyoruz
+## ModProxy Özelliğini Etkinleştiriyoruz
 
 Artık West-World'de gezinen bir Apache olduğuna göre basit bir.Net Core Web API hizmeti yazıp bunu apache üzerinden host etmeyi deneyebilirdim. Aslında olay NginX senaryosundakine çok benziyor. Apache'yi reverse proxy server rolünde çalışacak hale getirip localhost 80 portuna gelen taleplerin kestrel'e yönlendirilmesini sağlamak işin anafikri diyebiliriz (Tam tersi istikamette söz konusu tabii) İlk adım ise modproxy'yi etkinleştirmek. Bu sayede apache sunucumu HTTP taleplerini yönlendirecek kıvama getirebileceğim. Bunun için terminalden aşağıdaki komutu vermek gerekiyor.
 
@@ -148,7 +148,7 @@ sudo service apache2 status
 
 ![apachecore_7.gif](/assets/images/2018/apachecore_7.gif)
 
-Web API ve Apache Service Dosyasının Oluşturulması
+## Web API ve Apache Service Dosyasının Oluşturulması
 
 Tüm bunlar yeterli değil. Apache'nin bu konfigurasyon dosyası bilgisine göre, 80 portuna gelen talep için Kestrel çalışma zamanını da nasıl işleteceğini bilmesi lazım. Bir service dosyası oluşturmalı ve içerisinde gerekli ortam bilgilendirmelerini belirtmeliyiz. Ama her şeyden önce bir Web API projesi oluştursam hiç fena olmazdı. Bunun yolunu artık siz de benim kadar iyi biliyorsunuz.
 
@@ -193,7 +193,7 @@ WantedBy=multi-user.target
 
 Dosyanın üç parçası bulunuyor. Unit kısmında servise ait bir açıklamaya yer verilmekte. Servisin çalışacağı klasör WorkingDirectory bilgisi ile belirtilmekte. ExecStart, dotnet.exe'yi (West World için geçerli olan bu lokasyon sizin ortamınızda farklı olabilir) kullanarak publish edilen apacheler hizmetini başlatmakta. Bir nevi dotnet start işlemini gerçekleştirdiğini ifade edebiliriz. Hata olması halinde her zaman restart işlemi uygulanacağını da belirtiyoruz. Buradaki dayanma süremiz de 30 saniye. Servis hizmete girdikten sonra sistemden log'ları incelemek isteyebiliriz. SyslogIdentifier'a atanan apachelerlog kelimesi ile bu içerikleri daha kolay ayırt etme şansımız var. Kullanıcı olarak ben root'a yetki verdim ama bunu alana özel bir kullanıcı bazında kullandırmak daha doğru olabilir.
 
-Testler
+## Testler
 
 Servis dosyası artık hazır. Şimdi bunu etkinleştirip devreye almak gerekiyor. Devreye aldıktan sonra da servis durumunu gözlemlemekte yarar var. Terminalden systemctl komutu kullanılarak bu işlemler gerçekleştirilebilir. Önce etkinleştir (enable), sonra başlat (start) ve güncel durumu izle (status).
 
@@ -205,7 +205,7 @@ sudo systemctl status kestrel-apacheler.service
 
 ![apachecore_9.gif](/assets/images/2018/apachecore_9.gif)
 
-Gözlemlediğim kadarı ile kestrel-apacheler.service içeriği geçerliydi ve çalışır konumdaydı. Bunu gördükten sonra Firefox'tan http://localhost/api/values adresine gitmeyi denedim. Son ayların en popüler değer listesine erişebilmiştim.
+Gözlemlediğim kadarı ile kestrel-apacheler.service içeriği geçerliydi ve çalışır konumdaydı. Bunu gördükten sonra Firefox'tan `http://localhost/api/values` adresine gitmeyi denedim. Son ayların en popüler değer listesine erişebilmiştim.
 
 ![apachecore_10.gif](/assets/images/2018/apachecore_10.gif)
 

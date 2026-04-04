@@ -13,12 +13,11 @@ Tam da bu gün İstanbul’ da hafif rüzgarlı, güneşli bir bahar havası var
 
 ![ef61_6](/assets/images/2014/ef61_6.png)
 
-
 Bahara olan özlemimizin tavan yaptığı bu günlerde, başka diyarlarda da değişik esintiler söz konusu elbette. [Örneğin C# 6.0 da](/2014/04/03/csharp-6-0-yeni-esintiler/), örneğin Entity Framework’ de. Bakalım bu günkü esintiler bizi nerelere götürecek?
 
 Entity Framework geliştirilmeye ve bünyesine yeni özellikler dahil edilmeye devam etmekte. Ancak son gelişmelerden bir tanesi oldukça önemli sanırım. O da artık Entity Framework’ ün tamamen harici bir NuGet paketi olarak kullanılacağı. Bir başka deyişle.Net Framework’ ün bir parçası olmaktan çıkartılmış ve Codeplex üzerinden yürür duruma gelmiş. Son bilgileri göre EF 6x verisyonları.Net 4.0 ve üstü için kullanılabiliyor. Ayrıca Visual Studio 2010 ve sonrası IDE’ ler de ele alındığını da belirtelim. (Standalone bir kütüphane olarak değerlendirebileceğimiz Entity Framework ile ilişkili son gelişmeleri [Codeplex üzerindeki adreslerinden](http://entityframework.codeplex.com/) takip etmekte yarar var. Hatta yanılmıyorsam projeye Contributor olarak katılmanız bile mümkün olabilir)
 
-CUD Operasyonlarında Stored Procedure Kullanımı ve Interceptors
+## CUD Operasyonlarında Stored Procedure Kullanımı ve Interceptors
 
 Tabi bu önemli değişiklik dışında dikkatimiz çeken başka yenilikler de var. Örneğin artık context üzerinden çalıştırılan sorgu komutlarının yakalanması mümkün. Aslında basit bir kesme/araya girme mekanizmasından bahsediyoruz. Ya da veri ekleme, güncelleme ve silme gibi CUD (CreateUpdateDelete) operasyonlarına ait komutlar çalıştırılırken (Executing) ve çalıştırıldıktan sonra (Executed) araya girebilme yeteneğinden. Bu noktada çok doğal olarak devreye bir arayüz (Interface) tipinin girdiğini ve çalışma zamanı Context’ ine bu arayüz sayesinde yeni bir davranış biçimi kazandırılabildiğini ifade edebiliriz.
 
@@ -28,11 +27,11 @@ Interceptor’ lar dışında kayda değer bir diğer özellikle de CUD operasyo
 
 Biz bu yazımızda söz konusu iki önemli özelliği basit bir Console uygulaması üzerinden yüzeysel olarak incelemeye çalışacağız.
 
-Senaryo
+## Senaryo
 
 Elbette basit bir senaryo üzerinden ilerlenmesinde yarar var. İçinde sadece Product isimli bir tip barındıran DbContext türevinde, CUD işlemlerinin Stored Procedure olarak ele alınmasını sağlayacağız. Bunun haricinde çalışma zamanında her hangibir Stored Procedure çağrımı söz konusu olursa, NLog aracından faydalanarak, yordama ait o anki parametre değerlerinin Console ekranına yazdırılmasını sağlayacağız.
 
-Ön Hazırlıklar (Entity Framework ve NLog)
+## Ön Hazırlıklar (Entity Framework ve NLog)
 
 Senaryomuzda iki önemli NuGet paketine yer veriyor olacağız. Entity Framework ve NLog. Makalenin yazıldığı tarih itibariyle örnekte EF’ in Stable sürümlerinden 6.1 kullanılmıştır. NLog paketini ise Log yazma mekanizması için kullanacağız.
 
@@ -46,7 +45,7 @@ NLog Paketlerinin eklenmesi;
 
 NLog paketlerinden NLog Configuration’ ı eklemeyi unutmayalım. Bu sayede NLog.config dosyası içerisinde intellisense özelliğinden yararlanabileceğiz.
 
-Konfigurasyon İçerikleri
+## Konfigurasyon İçerikleri
 
 Normal şartlarda Entity Framework varsayılan olaral local veritabanını, Context adını baz alarak oluşturmakta ve kullanmaktadır. Ancak bilindiği üzere connectionStrings kımsında belirtilen bağlantı cümleciğinden yararlanılması da sağlanabilir. Örnekte makinede yer alan yerel SQL sunucusu kullanılmıştır. Buna göre ShopContext isimli DbContext türevi için,. ile belirtilen SQL sunucusu üzerinde YourShop isimli bir veritabanı üretilecektir. İşte App.config içeriği;
 
@@ -95,7 +94,7 @@ NLog.config dosya içeriği ise aşağıdaki gibi oluşturulabilir. Burada targe
 </nlog>
 ```
 
-Kod
+## Kod
 
 Artık kod tarafının inşasına başlanabilir. Temel olarak aşağıdaki sınıf çizelgesinde (Class Diagram) yer alan şema kodlanmıştır.
 
@@ -225,7 +224,7 @@ namespace EF6_NewFeatures
 }
 ```
 
-Detaylar
+## Detaylar
 
 ShopContext sınıfı içerisinde ezilen OnModelCreating metodunda MapToStoredProcedures isimli fonksiyonun kullanıldığı görülmektedir. Product isimli Entity tipi için çalıştırılan metodun lambda operatörünün kullanıldığı içeriğinde ise Insert ve Update fonksiyonları için bire Stored Procedure adı verildiği görülebilir. Buna göre Product tipinin insert operasyonu için spInsertProduct, Update operasyonu için spUpdateProduct isimli yordamlar oluşturulacak ve kullanılacaktır. Dikkat edileceği üzere Delete operasyonu için bir bildirim de bulunulmamıştır. Ancak MapToStroredProcedures metodu otomatik olarak delete operasyonu için ProductDelete şeklinde bir yordam üretecektir.
 
@@ -235,7 +234,7 @@ ShopContextConfig sınıfı, DbConfiguration sınıfından türetilmiştir. Bu t
 
 > DbConfiguration türevli tipler sayesinde, DbContext örneklerinin konfigurasyon bazındaki ayarları kod üzerinden yapılabilir.
 
-Çalışma Zamanı Sonuçları
+## Çalışma Zamanı Sonuçları
 
 Uygulama çalıştırıldığında aşağıdaki ekran görüntüsünde yer alan sonuçların elde edildiği görülebilir. Aslında 3 adet Product örneği eklenmekte ve birim fiyatı 2 birimin altında olanlar için bir güncelleme yapılmaktadır. Tabi örnekteki amaç bu CUD işlemlerinin oluştuğu anlarda parametre değerlerinin yakalanmasıdır.
 
@@ -243,7 +242,7 @@ Uygulama çalıştırıldığında aşağıdaki ekran görüntüsünde yer alan 
 
 Görüldüğü üzere Main metodu içerisinde gerçekleştirilen yeni ürün ekleme ve güncelleme işlemlerine karşılık yürütülen Stored Procedure çağrıları yakalanmış ve o andaki parametre değerleri Console ekranına yazdırılmıştır.
 
-Peki ya Veritabanı Durumu?
+## Peki ya Veritabanı Durumu?
 
 Veritabanına bakılırsa Products isimli bir tablonun ve CUD operasyonlarına karşılık ilgili stored procedure’ lerin oluşturulduğu gözlemlenir.
 
@@ -253,7 +252,7 @@ Yordamlara ait Script’ ler ise aşağıdaki gibidir.
 
 Product_Delete isimli yordam için;
 
-```text
+```sql
 USE [YourShop] 
 GO 
 /****** Object:  StoredProcedure [dbo].[Product_Delete]    Script Date: 04/09/2014 11:09:01 ******/ 
@@ -274,7 +273,7 @@ Delete yordamında beklendiği gibi ProductID’ nin parametre olarak değerlend
 
 sp_InsertProduct isimli yordam için;
 
-```text
+```sql
 USE [YourShop] 
 GO 
 /****** Object:  StoredProcedure [dbo].[sp_InsertProduct]    Script Date: 04/09/2014 11:08:43 ******/ 
@@ -306,7 +305,7 @@ Insert operasyonunda yeni ürünün eklenmesini takiben, ProductID için oluştu
 
 sp_UpdateProduct için;
 
-```text
+```sql
 USE [YourShop] 
 GO 
 /****** Object:  StoredProcedure [dbo].[sp_UpdateProduct]    Script Date: 04/09/2014 11:08:23 ******/ 
@@ -331,7 +330,7 @@ Update ifadesinde aynen Delete ifadesinde olduğu gibi ProductID isimli Primary 
 
 > Title isimli alanın kullanıldığı parametrelerin nvarchar (max) tipinden tanımlandığı gözden kaçmamalıdır. Bu normaldir nitekim Title alanı Products tablosu içinde bu şekilde oluşturulmuştur. Halbuki bu alanın örneğin 50 karakter uzunluğunda olması daha uygun olabilir. Code-First yaklaşımını kullandığımız bu örnek senaryoda bu kriteri nasıl sağlarsınız? İşte size güzel bir antrenman sorusu.
 
-Sonuç
+## Sonuç
 
 Dikkat edileceği üzere CUD operasyonlarının icrası noktasında araya girerek bir takım iş kurallarının işletilmesi mümkündür. Hatta örnek senaryoda görüldüğü gibi Log’ lamanın daha kural bazlı işlenmesi için bu kesmeler ideal olabilir. Diğer yandan CUD operasyonlarının Stored Procedure olarak inşa edilebilmesi, ilgili fonksiyonelliklerin veritabanı tarafında birer yordam nesnesi olarak değerlendirilebilmesi anlamına gelmektedir. Ayrıca parametre yapıları doğru ise DB tarafında var olan SP’ lerin map edilmesi de mümkündür. Bu durumda Db tarafındaki SP’ ler içerisinde yer alan ve DB’ ye özgü bir takım ifadelerin bu basit CUD operasyonları sırasında değerlendirilebilmesi de söz konusudur.
 

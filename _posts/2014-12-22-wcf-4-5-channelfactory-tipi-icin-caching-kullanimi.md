@@ -18,22 +18,17 @@ Vaktiyle üniversitedeki diferansiyel denklemler dersi hocamızın anlattığı 
 
 ![PerfectCircle](/assets/images/2014/PerfectCircle.jpg)
 
-
 Bir gün hocalar ardı ardına kalkıp tahtada hünerlerini göstermeye başlamışlar. Hemen hepsi rengarenk tebeşirler kullanıyormuş. Sarmallar, hiperboller, spiraller, üç boyutlu grafikler vb…
 
 Derken sıra son yarışmacıya gelmiş. Hoca ayağa kalkmış yavaş adımlarla boş olan tahtalardan birine doğru yürümeye başlamış. Kısa bir süre durmuş ve diğer çizimlere imrenerek bakmış. Sonra önündeki boş tahtaya bir çember çizmiş ve ortasına da bir nokta yerleştirmiş.
 
-Jüri diğer tahtaları dolaşıp puanladıktan sonra bu çemberin başında toplanmış. Çemberi ve ortadaki noktayı ölçüp biçmişler. Nokta, çemberin tam merkezindeymiş ve çember mükemmelmiş
-
-![Smile](/assets/images/2014/wlEmoticon-smile_101.png)
-
-Bu hikayenin yazımızın konusu ile doğrudan bir alakası yok tabi. Şöyle şehir efsanesi tadında bir giriş yapayım istedim. Gelelim asıl sıkıcı olan mevzumuza.
+Jüri diğer tahtaları dolaşıp puanladıktan sonra bu çemberin başında toplanmış. Çemberi ve ortadaki noktayı ölçüp biçmişler. Nokta, çemberin tam merkezindeymiş ve çember mükemmelmiş. Bu hikayenin yazımızın konusu ile doğrudan bir alakası yok tabi. Şöyle şehir efsanesi tadında bir giriş yapayım istedim. Gelelim asıl sıkıcı olan mevzumuza.
 
 Bir WCF (Windows Communication Foundation) servisi ile onun tüketicisi olan istemci arasındaki iletişimde önem arz eden konulardan birisi de kanaldır (Channel). Bu kanalın oluşturulması görevini ChannelFactory tipi üstlenmektedir. İstemci açısından bakıldığında bir kanalın oluşturulması aslında servisin bir Proxy tipinin üretilmesi ve uzak metod çağrıları için gerekli iletişim ortamının sağlanması anlamına gelmektedir. Bir kanal esas itibariyle EndPoint odaklı üretilir. Dolayısıyla WCF'in ABC'si olarak nitelendirilen Address Binding Contract üçlemesi üzerine inşa olunur (ki bu da WCF Service EndPoint tanımıdır)
 
 Tabi kanal üretimi sırasında devreye giren bir süreç de söz konusudur. Buna göre Sözleşme Tanımlama (Contract Description) ağacının üretilmesi, gerekli CLR (Common Language Runtime) tiplerinin reflecting ile açılması, kanal yığınının (Channel Stack) inşa edilmesi ve üretilen kaynaklardan sonlanması gerekenlerin sonlandırılması (Dispose işlemleri olarak düşünebiliriz). İşte bu süreç özellikle çalışma zamanına bir maliyet getirmektedir. Bu maliyeti aza indirgemek içinse genellikle özelleştirilmiş ChannelFactory tiplerinin yazılması yolu tercih edilir. Oysaki WCF 4.5 bu hazırlıkların kayıt altına alınıp yeniden ihtiyaç duyulduklarında hazır olarak sunulması için caching desteğini ClientBase tipi yardımıyla kullanıma açmıştır. İşte bu yazımızdaki amacımız ChannelFactory tipi için ön bellekleme işleminin nasıl yapılabileceğini incelemektir.
 
-Ön Hazırlıklar
+## Ön Hazırlıklar
 
 Elbette konuyu incelemek için basit bir WCF servisine ihtiyacımız olacak. Konumuz ChannelFactory ve bazı ön hazırlıkların ön belleklenmesi olduğundan servis tarafı oldukça sade ve basit şekilde inşa edilmiştir. Aşağıda servis sözleşmesi (Service Contract) ve uygulayıcı tipini içeren bir WCF Service Application kod içeriği bulunmaktadır.
 
@@ -94,7 +89,7 @@ web.config dosyası içeriğini ise standart ayarları ile bırakabiliriz. İste
 </configuration>
 ```
 
-Standart Proxy Kullanımı
+## Standart Proxy Kullanımı
 
 Bu ön hazırlıkların ardından standart bir proxy kullanımı ile ilgili servisi kullanarak konumuza devam edelim. WCF servislerini çağırırken genellikle proxy tipinin doğrudan üretilmesi yolunu tercih ederiz. Söz gelimi aşağıdaki kod parçasında basit bir WCF servis çağrısı görülmektedir.
 
@@ -124,7 +119,7 @@ Parametre olarak konfigurasyon dosyası içerisindeki endPoint adını ver.
 Örneklenen nesne üzerinden gerekli servis metodunu çağır.
 Tüm işlemler bittikten sonra ise proxy nesnesinin ömrünü sonlandır.
 
-ChannelFactory Kullanımı
+## ChannelFactory Kullanımı
 
 Aynı örneğin ChannelFactory tipi ile olan kullanımı ise aşağıdaki gibidir.
 
@@ -159,7 +154,7 @@ namespace Student
 
 Bundan sonraki kısım ise oldukça basittir. Üretilen proxy tipi üzerinden servis metoduna bir çağrı yapılır. Son olarak da oluşturulan kanalın kapatılması işlemi uygulanır.
 
-Caching
+## Caching
 
 Çok doğal olarak istemci tarafında kanal nesnesinin üretilmesinin ve iletişimin açılmasının çalışma zamanını ilgilendiren bir maliyeti söz konusudur. Yazımızın başında belirttiğimiz süreç nedeniyle oluşmaktadır. İşte bu sebepten geliştiriciler ChannelFactory tipinin özelleştirilmiş hallerini yazmak durumundadır. Lakin bu WCF 4.5’e kadar böyleydi. Artık WCF 4.5 ile birlikte bir kanalın inşa edilmesi işlemi için ön tanımlamaların ön belleklenerek kullanılması söz konusu. Peki ama nasıl?Aşağıdaki örnek kod parçasını inceleyerek devam edelim.
 
@@ -204,27 +199,15 @@ Aslında proxy tipi olarak üretilen MathServiceClient sınıfı, generic Client
 
 Bu sınıf açılımı nedeniyle CacheSetting özelliği proxy tipi üzerinden de doğrudan uygulanabilir.
 
-CacheSetting Modları
+## CacheSetting Modları
 
 CacheSetting özelliğine atanabilecek üç değer bulunmaktadır. AlwaysOn, Default ve AlwaysOff. Bu değerler ve aralarındaki farklılıklar aşağıdaki tabloda özetlenmeye çalışılmıştır.
 
-CacheSetting Değeri
-Anlamı
-
-Default
-Aynı Application Domain içerisinde olmak kaydıyla, konfigurasyon dosyasında tanımlanmış olan EndPoint bilgilerinden üretilmiş ClientBase örnekleri için Caching özelliği etkinleştirilir.
-
-Bu Application Domain içerisinde oldukları halde programatik olarak üretilen ClientBase türevli tipler ise Caching’ e dahil edilmezler.
-
-Ayrıca Credential bilgisi gibi Security özellikleri söz konusu olan ClientBase türevli örnekler de Caching dışında tutulurlar. Nitekim security bilgileri sürekli olarak değişebilir ve Cache tutulması bu anlamda doğru değildir.
-
-AlwaysOn
-Aynı Application Domain içerisinde yer alan tüm ClientBase türevli tipler için Caching özelliği etkinleştirilir.
-
-Burada dikkat edilmesi gereken nokta security-sensitive bilgiler olması halinde Caching’ in pasifleştirilmeyeceğidir. Default moddakine aykırı bir durum söz konusudur.
-
-AlwaysOff
-Application Domain içerisindeki ClientBase türevli tipler için Caching özelliği kapatılır.
+| CacheSetting Değeri | Anlamı |
+| ----------------- | --------------------- |
+| Default | Aynı Application Domain içerisinde olmak kaydıyla, konfigurasyon dosyasında tanımlanmış olan EndPoint bilgilerinden üretilmiş ClientBase örnekleri için Caching özelliği etkinleştirilir. |
+| AlwaysOn | Aynı Application Domain içerisinde yer alan tüm ClientBase türevli tipler için Caching özelliği etkinleştirilir. |
+| AlwaysOff | Application Domain içerisindeki ClientBase türevli tipler için Caching özelliği kapatılır. |
 
 Bu yeni kabiliyet küçük çaplı servis örnekleri göz önüne alındığında pek fark edilmese de, enterprise çözümlerde kullanılan ve üretim maliyetleri de yüksek olan versiyonlar düşünüldüğünde ciddi olarak dikkate alınması gerekmektedir. Tabi burada söz konusu olan modlar arasındaki farklılıklara da bakılmalıdır. Özellikle security-sensitive tanımlamalarda Default ve AlwaysOn modların farklı davranışlar gösterdiği unutulmamalıdır. Konu ile ilişkili daha detaylı bilgiyi [MSDN sayfasından](http://msdn.microsoft.com/tr-tr/library/hh314046.aspx) alabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -41,7 +41,7 @@ Bu ve benzeri tartışmalar daha da sürecek mi diye düşünürken şartlar uzu
 
 Ne alıp veremedikleri vardı ki bu ayrı dünyalarda yaşadıklarını zanneden standart koyucuların, büyük oyucuların. Bu ayrı bir hikaye ama sonuçta bugün Linux üzerinde SQL Server kullanabilir ve hatta C# üzerinden onunla konuşabilir hale geldik. Barış güzel bir şey. İşte günün konusu. Linux üzerine SQL Server kurmak ve bir Web API servisi ile CRUD operasyonlarını deneyimlemek.
 
-SQL Server Kurulumu
+## SQL Server Kurulumu
 
 Tabii ki ilk yapılması gereken Linux üzerine SQL server'ın kurulması. Her zaman ki gibi bu kurulum işleminde de terminalden yararlanacağız. Aşağıdaki komutları arka arkaya çalıştırarak işe başlayabiliriz.
 
@@ -70,7 +70,7 @@ systemctl status mssql-server
 
 ![sqlonlinux_3.gif](/assets/images/2018/sqlonlinux_3.gif)
 
-Sırada Command-Line Tool Kurulumu Var
+## Sırada Command-Line Tool Kurulumu Var
 
 Tabii ki SQL Server'ın West-World'e kurulması yeterli değil. Eğer Windows topraklarında olsaydım büyük ihtimalle Management Studio gibi bir şey de arayacaktım. Linux tarafında da bu tip bir araç kullanmak mümkün ama komut satırından da pekala bilinçli bir şekilde aynı işlemler halledilebilir. CLI aracının kurulumu için aşağıdaki komutların çalıştırılması yeterli.
 
@@ -129,7 +129,7 @@ go
 
 Doğruyu söylemek gerekirse West-World, SQL Server ile terminal üzerinden gayet güzel bir biçimde anlaşıyordu. Database oluşturulabiliyor, içerisine tablo konulup veriler eklenebiliyordu. Pekiiiii ya bu işin içerisine.Net Core ile yazılmış bir Web API servisini de katabilir miydim? Elebette bu mümkündü. Beni heyecanladıran kısım bunun Linux tabanlı bir sistemde olması.
 
-Web API Servisinin Yazılması
+## Web API Servisinin Yazılması
 
 İşe bir.Net Core Web API servisini oluşturmakla başlamak lazım. Visual Studio Code arabirimini açıp terminalden aşağıdaki komutları vererek ilerleyebiliriz.
 
@@ -268,7 +268,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Dikkat edileceği üzere AddDbContext fonksiyonunu kullanırken bir connection string tanımı mevcut. Bu West-World'e kurduğum SQL Server'a ulaşabilmek için gerekli. Diğer yandan generic tip olarak Models klasörüne eklediğimiz DbContext tipini belirtmekteyiz. Daha iyi olması açısından kullanıcı bilgilerini konfigurasyondan veya farklı bir ortamdan daha güvenli bir şekilde almayı deneyebilirsiniz. Konfigurasyonda okuyacaksanız kullanıcı adı ve şifre bilgilerinin kripto edilmiş hallerinin tutulmasında yarar var.
 
-Testler
+## Testler
 
 Artık testlere başlanabilir. İlk olarak,
 
@@ -332,7 +332,7 @@ ve güncel oyuncu listesinin durumu.
 
 ![sqlonlinux_11.gif](/assets/images/2018/sqlonlinux_11.gif)
 
-Sql Sunucusunda Durum Ne?
+## Sql Sunucusunda Durum Ne?
 
 Tüm bu işlemler kurulu olan SQL sunucusuna da yansımaktadır. Hemen aşağıdaki terminal komutlarını deneyerek gerçekten de orada da bir şeyler olduğunu kendi gözlerimizle görebiliriz. West-World'de durum aşağıdaki gibi gerçekleşti.
 

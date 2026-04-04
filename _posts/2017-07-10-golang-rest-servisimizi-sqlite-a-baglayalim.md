@@ -16,7 +16,7 @@ Son yazılarımızda GoLang ile web uygulamalarının geliştirilmesi üzerinde 
 
 Ben örnek veri kümesi için bir önceki yazıda kullandığım Star Wars çözümünü baz aldım. Yani Category ve buna bağlı Model isimli birer tablo söz konusu. Tablolar arasında bire-çok ilişkili CategoryId alanı üzerinden sağlayabiliriz. Böylece bir kategori altındaki tüm modelleri ele alacağımız basit bir senaryo üzerinde de durabiliriz. Tabii öncelikle komut satırından aşağıdaki betikler yardımıyla starwars.sdb isimli veritabanını oluşturmamız gerekiyor (Aslında istediğiniz bir uzantıyı kullanabilirsiniz nitekim SQLite dosyaları ikili-binary formatta tutulan içeriklere sahiptirler. Yani uzantısının ne olduğunu bir önemi yok) Sonrasında Category ve Model isimli iki tablo ekleyip örnek veriler ile doldurursak da güzel olabilir.
 
-Veritabanı ve Tabloların Hazırlanması
+## Veritabanı ve Tabloların Hazırlanması
 
 ```sql
 sqlite3 starwars.sdb
@@ -56,7 +56,7 @@ Eğer SQLite kurulumunuzda bir sorun yoksa yukarıdaki komutların hatasız çal
 
 ![gosqlite_1.gif](/assets/images/2017/gosqlite_1.gif)
 
-Servis Tarafı
+## Servis Tarafı
 
 Önceki yazılarımızda olduğu gibi yönlendirme işlemlerimiz için Julien Schmidt'in (bu soyadını tek seferde asla yazamadım) httpRouter paketinden yararlanacağız. Diğer yandan SQLite veritabanını kullanacağımız için yardımcı bir kütüphaneyi daha işin içine katacağız. github.com/mattn/go-sqlite3 adresinde yer alan paket SQLite üzerinde gerçekleştireceğimiz işlemlerde bize kolaylıklar sağlayacak (Paketin yazarı Japon'ya Osaka'dan. Henüz ingilizceye çeviremediğim ama oldukça merak ettiğim [blog adresi de burada](http://mattn.kaoriya.net/)) Aynen httpRouter paketinin elde edilişinde olduğu gibi LiteIDE'nin Build->Get komutunu kullanarak ilgili kütüphanenin sisteme yüklenmesini sağlayabilirsiniz. (Ben yükleme işlemi sırasında 64Bit Windows'umdaki farklı MinGW ve GCC sürümleri nedeniyle hatalarla karşılatım ve güncel versiyonunu yükleyerek sorunu aştım. [Şu adrese](http://tdm-gcc.tdragon.net/download) uğramanız gerekebilir) Şimdi Server.go isimli dosyamızın içeriğini aşağıdaki gibi oluşturalım.
 
@@ -170,11 +170,11 @@ type data interface {
 
 Bu kez kodlarımız biraz karmaşık gibi (Kendime not: Kod tekrarlarını azalt) Uygulamamız temel olarak aşağıdaki taleplere cevap verecek şekilde geliştirildi.
 
-HTTP Get; /; root taleb
-HTTP Get; /categories; kategorileri getirecek
-HTTP Get; /categories/:categoryId;belli bir kateogori numarasındaki modelleri listeleyecek (models/:categoryId de olabilirdi belki)
-HTTP Get; /models/:firstLetter; modellerin baş harfine göre listelenmesini sağlayacak
-HTTP Post; /newCategory; yeni bir kategorinin sisteme eklenmesi için kullanılacak
+- HTTP Get; /; root talep
+- HTTP Get; /categories; kategorileri getirecek
+- HTTP Get; /categories/:categoryId;belli bir kateogori numarasındaki modelleri listeleyecek (models/:categoryId de olabilirdi belki)
+- HTTP Get; /models/:firstLetter; modellerin baş harfine göre listelenmesini sağlayacak
+- HTTP Post; /newCategory; yeni bir kategorinin sisteme eklenmesi için kullanılacak
 
 Aslında önceki yazılarımızdan farklı olarak bir tane HTTP Post metodumuz bulunduğunu ifade edebiliriz. /newCategory talebimiz ile yeni bir kategoriyi Category tablosuna eklemeyi planlıyoruz. main fonksiyonumuz yönlendirici nesnenin yukarıdaki adresler için eşleştireceği metod bildirimleri ile başlıyor. Sunucumuz localhost adresinden ve 4571 nolu port üzerinden hizmet verecek şekilde ayarlanıyor.
 
@@ -206,6 +206,6 @@ getModelsByFirstLetter fonksiyonunun görevi bu. Baş harfine göre modellerin l
 
 ![gosqlite_6.gif](/assets/images/2017/gosqlite_6.gif)
 
-Sonuç
+## Sonuç
 
 Bu kısa araştırma yazımızın amacı REST (Representational State Transfer) tabanlı bir GO servisinde SQLite için gerekli bağlantıları nasıl tesis edebileceğimizi ilkel bir örnek üzerinden görmekti. SQLite dışında elbette farklı veri depolama ürünlerini de kullanmak isteyebiliriz. GitHub üzerinden yayınlanan [şu adreste](https://github.com/golang/go/wiki/SQLDrivers) oldukça geniş bir kütüphane topluluğu bulunuyor. Firebird'ten DB2'ya, MySQL'den Oracle'a, YQL (Yahoo Query Language)'ten, SQLite'a kadar geniş bir yelpaze söz konusu diyebilirim. Örneğimizde HTTP Get taleplerinden farklı olarak HTTP Post metoduna da yer verdik. Pek tabii Push, Delete gibi operasyonlar da söz konusu. Örneğin bu kodun üstüne bir kategori veya ürünü silmek için gerekli HTTP Delete operasyonunu ilave edebilirsiniz. Başlangıç benden devam ettirmesi sizden. REST testleri yapmamız da oldukça kolay. Chrome tarayıcısına eklenti olarak da gelen Postman aracı ekran görüntülerinde de gördüğünüz üzere oldukça pratik ve basit. Post gibi HTTP gövdesinden bir şeyler göndermemiz gereken senaryoları ele almak için ideal. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

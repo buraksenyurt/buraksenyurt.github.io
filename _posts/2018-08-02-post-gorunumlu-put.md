@@ -24,7 +24,7 @@ Hiç bir REST servisine POST talebi gönderip aslında onun PUT işlemini yapmas
 
 İstemci tarafı aslında bir güncelleme işlemi yapmak istiyor olsun. Örneğin bir kitabın başlığını değiştirecek. Bunun için tipik olarak HTTP PUT talebini göndermesi yeterli olacaktır. Serviste güncelleme için PUT operasyonunu destekleyen bir fonksiyon olduğunu da düşünelim. Ancak Firewall'a konan katı bir kural, eski bir tarayıcı kullanılıyor olması ya da XmlHttpRequest ile talep gönderen kod parçasının ilgili komutu işlememesi gibi sebeplerden ötürü sadece POST ve GET çağrıları yapan/yapabilen istemciler olduğunu düşünelim. Yani ben PUT ile bir güncelleme talebi göndermek istediğim halde bunu yollayamıyorum. Böyle bir durumla karşılaşma ihtimalimiz epey düşük gibi görünse de olabilir (Karşılaştım o yüzden söylüyorum) Acaba gönderilen POST talebinin aslında bir PUT talebi olması gerektiğini karşı tarafa söyleyebilir miyiz? İşte yazımızın konusu bu. Normalde.Net Framework üzerinde WCF servislerinde ele alınan bir konu olmasına rağmen biz.Net Core açısından olaya bakacağız.
 
-Kobay Web API Servisi
+## Kobay Web API Servisi
 
 İlk olarak örnek uygulamamızı oluşturalım. Ben her zaman ki gibi konuyu West-World'de ele alacağım. Visual Studio Code üzerindeki terminalden aşağıdaki komutu vererek işe başlayabiliriz.
 
@@ -116,7 +116,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         .Build();
 ```
 
-Middleware Sınıfının Geliştirilmesi
+## Middleware Sınıfının Geliştirilmesi
 
 Aslında senaryoyu gerçekleştirmek için yapılması gereken şey belli. Bir şekilde istemciden gelen mesajı yakalamalı, header içerisindeki bilgiye bakıp (X-HTTP-Method-Override anahtarının değerine bakacağız) asıl HTTP metodu yerine hangi işlemin uygulanması gerektiğini anlamalıyız. Bunu yaparken de bizim izin verdiğimiz HTTP metodları çerçevesinde gerçekleştirilir olmasına özen göstermeliyiz. Şimdi projeye middlewares isimli bir klasör ekleyelim ve içerisine aşağıdaki sınıfları koyalım (Asp.Net Core tarafında Middleware yazılması ile ilgili olarak [şu yazıya da](/2017/12/18/aspdotnet-core-web-api-icin-custom-middleware-yazmak/) göz atabilirsiniz)
 
@@ -248,7 +248,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 Dikkat edileceği üzere UseMiddleware fonksiyonuna HttpOverrider sınıfını kullanacağını söylüyor ve parametre olarak istediğimiz seçenekleri sunuyoruz. Buna göre istemciden gelen mesajın Header kısmında X-HTTP-Method-Override anahtarına bakılacak. Burada izin verilen HTTP operasylarını da belirtmekteyiz. Koda göre PUT, POST, DELETE ve GET.
 
-Testler
+## Testler
 
 Sunucuyu
 
