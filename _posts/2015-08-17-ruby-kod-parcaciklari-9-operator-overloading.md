@@ -14,9 +14,7 @@ Ruby dilinde de aynı.Net tarafında olduğu gibi operatörleri yeniden yükleme
 
 Aşağıdaki kod parçacığında Location isimli sınıf için bazı operatörlerin yeniden yüklenmesi işlemine yer verilmiştir.
 
-> şu adresten
-
-```text
+```ruby
 class Location
 	def initialize(x,y,z) # Constructor
 		@x,@y,@z=x,y,z# Coklu atama ifadesi

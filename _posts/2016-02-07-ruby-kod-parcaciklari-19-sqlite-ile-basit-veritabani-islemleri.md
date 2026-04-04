@@ -20,7 +20,9 @@ Sanıyorum bir programlama dilini öğrenirken en çok merak edilen konulardan b
 
 Bu yazımızda SQLite veritabanı ile nasıl çalışabileceğimizi çok basit bir kod parçası ile incelemeye çalışacağız. Sistemimizde Ruby kurulu olduğunu düşünecek olursak tek yapmamız gereken SQLite'a ait gem paketini yüklemek olacaktır. Bunun için komut satırından aşağıdaki ifadeyi yürütebiliriz.
 
+```bash
 gem install SQLite3
+```
 
 > SQLite dünya üzerinde oldukça fazla dağıtımı olan C/C++ ile geliştirilmiş açık kaynak kodlu RDBMS-Relational Database Management System modelinde bir veritabanıdır. Linux, Windows, MacOS platformlarında kullanılabilir ve Basic'ten Smaltalk'a, C#'dan Ruby'ye pek çok dil tarafından desteklenir. Daha geniş bilgi için [bu adrese](http://sqlite.org/) bakabilirsiniz.
 
@@ -34,7 +36,7 @@ sqlite3 AdventureWorks.db (Microsoft'un kobay veritabanının adını da yaad et
 
 Görüldüğü üzere SQL tarafında çalışmış olanlar için SQLite'ın kullanımını anlamak ve öğrenmek son derece basit. Peki Ruby tarafında nasıl kullanabiliriz? İşte örnek bir Ruby kod parçacığı.
 
-```text
+```ruby
 require 'sqlite3'
 
 begin

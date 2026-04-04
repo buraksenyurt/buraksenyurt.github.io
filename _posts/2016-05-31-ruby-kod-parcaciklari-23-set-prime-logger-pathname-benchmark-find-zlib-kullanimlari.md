@@ -25,7 +25,7 @@ Malumunuz kodlama yaparken hayatımızı kolaylaştıran pek çok fonskiyonellik
 
 Bazı durumlarda özellikle kullanıcı tarafından gelen verilerin tekil olarak saklanacağı listelere ihtiyacımız olabilir. İşte set tipini bu tip ihtiyaçlarda değerlendirebiliriz. Kullanımı oldukça basit olan Set sınıfına ait örnek bir kullanım şekli aşağıdaki kod parçasında yer almaktadır.
 
-```text
+```ruby
 require 'set'
 
 sepetteki_urunler=Set.new
@@ -50,7 +50,7 @@ set aslında hash algoritmasını kullanarak içerisine alınan elemanların tek
 
 Uygulamaların olmazsa olmaz ve vazgeçilmez ihtiyaçlarından birisidir Loglama. Kod akışının izlenmesi (trace), hataların ayıklanması (debug), sistemin durumunun anlık olarak öğrenilmesi (monitoring) ve daha pek çok yerde karşımıza çıkar bu Cross Cutting olarak adlandırdığımız mevzu. Ruby standart kütüphanesi loglama işini kolaylaştıran bir tip içermektedir. Ruby on Rails içerisinde de yer alan Logger sınıfının temel kullanımı ise aşağıdaki kod parçasında olduğu gibidir.
 
-```text
+```ruby
 require 'logger'
 
 logger=Logger.new("uygulama.log")
@@ -77,7 +77,7 @@ Logger.new('app_1.log', 0, 100 * 1024 * 1024)
 
 Özellikle dosya ve klasör işlemleri için kullanılabilen pathname sınıfı epey işe yarar fonksiyonellikler içermektedir. Çok basit anlamda aşağıdaki kod parçasında bir dosya ile ilişkili bilgileri nasıl alabiliriz, metin tabanlı içeriğini satır bazında nasıl okuyabiliriz ya da o an çalışmakta olduğumuz klasördeki öğeleri nasıl listeyebiliriz gibi temel işlemler icra edilmektedir.
 
-```text
+```ruby
 require 'pathname'
 
 cwd = Pathname.getwd # current working directory
@@ -100,7 +100,7 @@ getwd isimli metod tahmin edileceği üzere uygulamanın çalışmakta olduğu k
 
 Standart kütüphane asal sayılar ile ilgili Prime isimli bir tip içermektedir. Bu tip ile sadece bir ve kendisine bölünebilen sayılarla çalışmamız oldukça kolaydır. Örnek kod parçasına bir bakalım.
 
-```text
+```ruby
 require 'prime'
 
 puts "5 asal mi? #{5.prime?}"
@@ -123,7 +123,7 @@ Sayısal değerlerin arkasına eklenen prime? çağrısı ile ilgili değerin as
 
 Örneğin PI sayısını 100bin haneli olacak şekilde elde etmek istiyoruz. Acaba uygulamanın üzerinde çalıştığı sistem bunu ne kadar sürede yapabilir? Hemen öğrenmek ister misiniz? İşte gerekli kod parçası.
 
-```text
+```ruby
 require 'benchmark'
 require 'bigdecimal/math'
 
@@ -138,7 +138,7 @@ Tabii dört farklı değer gelmesi eminim sizi şaşırtmıştır. Bu değerler 
 
 Aşağıdaki kod parçasını bu anlamda göz önüne alabiliriz.
 
-```text
+```ruby
 require 'find'
 require 'benchmark'
 
@@ -162,7 +162,7 @@ Bu kez FindTotalSize isimli metodun iş yapma hızı elde edilmiştir. Yeri gelm
 
 Veriyi text tabanlı olarak tutmak en eskiden beri bilinen yöntemlerdendir. Bu içeriği formatlı tutmak okunabilirlik ve verinin ayrıştırılarak kolayca anlaşılabilmesi açısından da önemlidir. Veriyi satırlar ve sütunlar halinde düşünüp çeşitli seperatörler ile ayrıştırmak gerekir. [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) (comma-seperated values) sık kullanılan dosya formatlarındandır. Ruby programlama dili CSV'ler ile kolay bir şekilde çalışabilmemizi sağlar. Yine en ilkel seviyede nasıl kullanıldığına bir bakalım dilerseniz. İşte örnek kod parçamız.
 
-```text
+```ruby
 require 'csv'
 
 puts "Once information.csv icine bir seyler yazalim"

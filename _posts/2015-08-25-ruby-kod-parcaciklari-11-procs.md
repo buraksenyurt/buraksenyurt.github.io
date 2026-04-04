@@ -12,7 +12,7 @@ Bir [önceki kod parçacığımızda](/2015/08/20/ruby-kod-parcaciklari-10-yield
 
 Proc ile de bir kod bloğu işaret edilebilir. Block'dan farkı ise bu kod parçasının bir nesneye atanabiliyor olmasıdır (Yani bir kod bloğunu nesne olarak kaydedip kullanabiliriz). Bu da doğal olarak yeniden kullanılabilirliği (reusability) mümkün kılmaktadır. Bir başka deyişle bir proc nesnesi ile işaret edilen kod parçacığı program içinde farklı noktalarda tekrar tekrar kullanılabilir. Şimdi kısa bir kod parçacığı ile proc kullanımına yakından bakalım.
 
-```text
+```ruby
 class Utility
 	def justDoIt(someProc)
 		puts "Begin Time : "+Time.now.to_s

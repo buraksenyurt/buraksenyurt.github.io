@@ -23,7 +23,7 @@ Ancak dikkat çekici başka bir özelliği daha var. Nesne durumunun saklanması
 
 Ruby tarafında bir sınıfın Singleton kalıbını uygular hale getirilmesi ise oldukça kolay. Singleton modülünü sınıfa dahil etmemiz yeterli. Aşağıdaki örnek kod parçasını ele alalım.
 
-```text
+```ruby
 require "Singleton"
 
 class ConfigurationManager
@@ -55,7 +55,7 @@ reuqire bildirimi ile Singleton modülünü script'e dahil ediyoruz. Configurati
 
 Kodun ilerleyişinde ilk olarak mngr1 isimli nesne örneğini oluşuyor. Burada dikkat edilmesi gereken nokta instance özelliğinin kullanılması. Normalde bir sınıf örneğini new metodundan yararlanarak üretiriz. Ancak Singleton bir nesne söz konusu ise new metoduna yapılan çağrı aşağıdaki hata mesajının üretilmesine neden olur.
 
-```text
+```ruby
 in `<main>': private method `new' called for ConfigurationManager:Class (NoMethodError)
 ```
 
@@ -65,7 +65,7 @@ Kodda üretilen her iki ConfigurationManager nesne örneği de aynı object_id d
 
 Çok doğal olarak ConfigurationManager tipinden n sayıda nesne örneği üretilebilir. Ancak gerçek anlamda çalışma zamanında tek bir ConfigurationManager nesne örneği söz konusu olacaktır. Bu n sayıda nesne örneğinin herhangibirinde yapılan değişiklikler pek tabii diğer değişkenleri de etkiler. Söz gelimi yukarıdaki koda aşağıdaki parçayı eklediğimizi düşünelim.
 
-```text
+```ruby
 mngr2.default_host="127.0.0.1"
 puts mngr1.get_default_host
 puts mngr2.get_default_host
@@ -77,9 +77,9 @@ Bu durumda mngr2 ile yapılan değişiklik mngr1 tarafından da görülecektir.
 
 ## Marshalling ile Nesne Durumunu Korumak
 
-Gelelim Marshaling ile Singleton karakteristiğindeki bir nesne örneğinin anlık durumunun (State) saklanmasına. Bunun için Singleton modülünden gelen _load ve _dump metodlarının çalışma zamanında durumu korumak istenen sınıf için ezilmesi gerekiyor. Aşağıdaki örnek kod parçasında bu durum ele alınıyor.
+Gelelim Marshaling ile Singleton karakteristiğindeki bir nesne örneğinin anlık durumunun (State) saklanmasına. Bunun için Singleton modülünden gelen `_load` ve `_dump` metodlarının çalışma zamanında durumu korumak istenen sınıf için ezilmesi gerekiyor. Aşağıdaki örnek kod parçasında bu durum ele alınıyor.
 
-```text
+```ruby
 require "Singleton"
 
 class ConfigurationManager
@@ -124,7 +124,7 @@ puts "AfterLoad"
 puts mngr_backup.get_default_host
 ```
 
-_dump metodu içerisinde sınıf örneğinin o anki durumu ile ilişkili olarak tutmak istediğimiz ne kadar nitelik varsa ardışıl olarak aralarına pipe işareti koyarar dizdik. Bunu okuduğumuz yerde çözümlüyor ve instance ile eriştiğimiz nesne örneğinin ilgili niteliklerine atıyoruz. Okuma işlemini kolaylaştırmak için | işaretinden faydalandık. Aslında ConfigurationManager içerisindeki _dump ve _load metodları işleyişlerini gerçekleştirirken Marshal modülünün ilgili fonskiyonları kullanılmaktalar. Marshal modülü nesne içeriğinin byte stream olarak serileştirlmesi ve ters okunması noktasında görev alıyor.
+_dump metodu içerisinde sınıf örneğinin o anki durumu ile ilişkili olarak tutmak istediğimiz ne kadar nitelik varsa ardışıl olarak aralarına pipe işareti koyarar dizdik. Bunu okuduğumuz yerde çözümlüyor ve instance ile eriştiğimiz nesne örneğinin ilgili niteliklerine atıyoruz. Okuma işlemini kolaylaştırmak için | işaretinden faydalandık. Aslında ConfigurationManager içerisindeki `_dump` ve `_load` metodları işleyişlerini gerçekleştirirken Marshal modülünün ilgili fonskiyonları kullanılmaktalar. Marshal modülü nesne içeriğinin byte stream olarak serileştirlmesi ve ters okunması noktasında görev alıyor.
 
 Kodu denediğimiz akışta mngr isimli ConfigurationManager sınıf örneğinin anlık durumunu kayıt altına alıyoruz (Bellekte) Ardından niteliklerinde bir takım değişiklikler yapıyoruz. Bu sadece test amaçlı bir işlem. Sonrasında nesne örneğini ilk kayıt ettiğimiz durumuna döndürüyoruz. Farklı bir değişken ile dönmüş olsa da Singleton kalıbı gereği mngr ve mngr_backup aynı nesnelerdir. İşte çalışma zamanı çıktısı.
 

@@ -11,11 +11,9 @@ tags:
 ---
 Ruby'nin güçlü olmasını sağlayan pek çok özellik vardır. block'lar bu güçlü özelliklerden birisidir. (Block'lar dışında Proc ve Lambda kavramları da mevcuttur ki bu konuları ve aralarındaki temel farklılıkları sonraki kod parçacıklarında ele alacağız)
 
-Bir Block ile değişkene veya nesneye atayamadığımız kod parçalarını işaret edebilir ve bu isimsiz kod parçalarını metodlara parametre olarak taşıyabiliriz. Tabi burada yield anahtar kelimesinin önemli bir yeri vardır. Gelin konuyu aşağıdaki kod parçacığı ile anlamaya çalışalım.
+Bir Block ile değişkene veya nesneye atayamadığımız kod parçalarını işaret edebilir ve bu isimsiz kod parçalarını metodlara parametre olarak taşıyabiliriz. Tabi burada yield anahtar kelimesinin önemli bir yeri vardır. Gelin konuyu aşağıdaki kod parçacığı ile anlamaya çalışalım. *(Henüz ispat edecek kod parçacığı mertebesine ulaşamadım)*
 
-> (Henüz ispat edecek kod parçacığı mertebesine ulaşamadım)
-
-```text
+```ruby
 class Utility
 	def justDoIt
 		if !block_given? then #0 yield yerine bir block gelmediyse

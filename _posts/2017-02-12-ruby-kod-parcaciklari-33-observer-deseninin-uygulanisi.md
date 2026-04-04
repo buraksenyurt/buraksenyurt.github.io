@@ -17,7 +17,7 @@ Bir önceki kod parçasında [Singleton kalıbının Ruby tarafında nasıl uygu
 
 Dilerseniz örnek bir senaryo üzerinden hareket ederek bu deseni nasıl uygulayabileceğimize kısaca bakalım. Bir oyun kodunda oyuncuların belirli puan noktalarını aşmaları sonrası oyuncu nesnesi ile ilişkili başka nesnelerin bilgilendirilmesini istediğimizi düşünelim. Söz gelimi bu bilgilendirmeler sırasında oyuncuların seviyelerini bir diğer nesne üzerinden değiştirelim. Tasarım kalıbının uygulanış biçimine göre gözlemlenebilir (observable) bir oyuncu nesnesi ve bu nesnedeki durum değişikliklerini ele alacak bir gözlemci (observer) örneğine ihtiyaç bulunuyor. Aşağıdaki kod parçasını örnek olarak ele alabiliriz.
 
-```text
+```ruby
 require 'observer'
 
 class PlayerObserver

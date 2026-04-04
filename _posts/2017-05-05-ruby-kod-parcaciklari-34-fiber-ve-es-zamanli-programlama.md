@@ -22,7 +22,7 @@ Ruby tarafında da böyle bir yapı mevcut ama bunun dışında Fiber adı veril
 
 Merhaba Fiber
 
-```text
+```ruby
 =begin
 Fiber konusuna bir bakalım
 =end
@@ -53,7 +53,7 @@ Aslında ana uygulama kodu ve Fiber nesnesi ile açılan kod bloğu arasında re
 
 Pek tabi Fiber blokları ve çağıran uygulama arasında veri alışverişi yapılması da gerekebilir. Yani Fiber içerisine argüman gönderilmesi ve bir takım işlemler sonucu elde edilen değerlerin döndürülmesi istenebilir. Aşağıdaki kod parçasında bu veri alışverişinin nasıl yapılabileceği basitçe örneklenmeye çalışılmıştır.
 
-```text
+```ruby
 fiberX=Fiber.new do |input|
   puts "#{input} bilgisi geldi.Şimdi bunla bir şeyler yapayım"
   Fiber.yield(rand)
@@ -78,7 +78,7 @@ Fiber Blokları Arası Veri Transferi
 
 Şu ana kadar ki örneklerimizde Fiber ile çağıran ana uygulama arasında geçişler yaptık. Çok doğal olarak n sayıdaki Fiber bloğu arasında da veri transferi gerçekleştirmek isteyebiliriz. Nitekim bir Fiber kod bloğu tarafında yapılan hesaplamalar sırasında farklı bir Fiber kod bloğunun bu sonuçlar ile başka işlemler yapıp diğer bloğa cevap vermesi gerekebilir. Tamamen senaryoya bağlı bir durum. Biz şimdilik bu geçişlerin nasıl yapılabileceğine basit bir örnekle bakalım. İşte kod parçamız.
 
-```text
+```ruby
 require 'fiber'
 
 fiber1=fiber2=nil
@@ -113,7 +113,7 @@ Ruby, Fiber blokları görüldüğü üzere eş zamanlı programlamada adına ba
 
 Buna ait kod parçasını geliştirmeye çalışmanız, bir süre uğraşıp yapamadığınız takdirde Internetten bakmanız kişisel gelişiminiz açısından yararlı olacaktır. Aşağıdaki kod parçasına da lütfen uğraştıktan sonra bakınız.
 
-```text
+```ruby
 def fibogen
   Fiber.new do
     x,y=0,1

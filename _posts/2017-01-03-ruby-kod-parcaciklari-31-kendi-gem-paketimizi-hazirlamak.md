@@ -26,7 +26,7 @@ Bir gem üretmeden önce belli bir ağaç yapısını sistem üzerinde oluşturm
 
 Paketimizin adı Einstein. İçerisinde lib isimli bir klasör ve gemspec uzantılı bir dosya var. Kodlarımızı lib klasörü içerisinde tutmamız gerekiyor. Einstein.rb dosyasına ait kod içeriği aşağıdaki gibi oluşturulabilir.
 
-```bash
+```ruby
 #Einstein Gem
 module Algebra
 	class Common

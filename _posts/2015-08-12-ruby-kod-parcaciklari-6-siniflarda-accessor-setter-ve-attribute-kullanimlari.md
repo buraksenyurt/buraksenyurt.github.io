@@ -14,7 +14,7 @@ Nesne yönelimli dillerde sınıfların birer varlık (Entity) olarak düşünü
 
 Ruby dili içinde sınıf ve özellikler söz konusudur. Aslında özellik (property) şeklinde bir kavram yerine Java'dakine benzer metod kullanımları yer alır. Şimdi dilerseniz bir sınıfın varlığını tanımlayan değerlerini nasıl tanımlayabileceğimize bakalım. Aşağıdaki kod parçacığını bu anlamda ele alabiliriz.
 
-```text
+```ruby
 class ZoneV1
 
 	def title #1 Accessor Method
@@ -74,7 +74,7 @@ end
 Örnekte ZoneV1 ve ZoneV2 isimli iki sınıf (Class) tanımı söz konusudur. Her iki sınıfta temel olarak title, color ve capacity isimli özelliklere sahiptir. Ancak tanımlanma şekilleri nitelik (attribute) kavramını aktarabilmek adına farklıdır. Şimdi bunları maddeler halinde inceleyelim.
 
 - Aslında her iki sınıfın veri taşıyan asıl değişkenleri birer Instance Variable'dır. ZoneV1 sınıfında @title, @color ve @capacity değişkenlerine yapıcı metod (initialize) içerisinden ilk değer ataması söz konusudur (#0da bu durumu görebiliriz) @title ve @capacity değerlerini ZoneV1 nesne örneğinden dışarıya sunmak için #1 ve #2 deki Accessor metodlarından yararlanılır. title ve capacity'yi sadece okunabilir (read-only) bir özellik olarak düşünebiliriz. Yani sadece nesne örneklenirken ilk değerini almış, dışarıdan ulaşılabilir ama dışarıdan değeri değiştirilemez.
-- Diğer yandan #3de capacity isimli bir Setter metod tanımı daha görülmektedir. Bu metod ile @capacity Instance Variable'ına nesne örneği üzerinden değer ataması işlemi gerçekleştirilebilir. #4 satırındaki gibi. Dolayısıyla capacity değişkeninin hem okunabilir hem de yazılabilir bir nitelik olduğunu ifade edebiliriz.
+- Diğer yandan #3' de capacity isimli bir Setter metod tanımı daha görülmektedir. Bu metod ile @capacity Instance Variable'ına nesne örneği üzerinden değer ataması işlemi gerçekleştirilebilir. #4 satırındaki gibi. Dolayısıyla capacity değişkeninin hem okunabilir hem de yazılabilir bir nitelik olduğunu ifade edebiliriz.
 - ZoneV2 isimli sınıfa bakıldığında attr_reader, attr_wirter ve attr_accessor isimli 3 nitelik tanımı olduğu görülür. (#5,#6,#7 ile başlayan satırlar) Bu tanımlamalara göre title sadece okunabilir bir nitelik olarak tanımlanmıştır. color sadece yazılabilir, capacity ise hem okunabilir hem yazılabilirdir. Dikkat edilmesi gereken nokta bunların birer symbol olarak tanımlanmış olmalarıdır. Buna göre ilgili nitelikler aslında sınıf için gerekli olan Instance Variable'ları otomatik olarak işaret ederler.
 - Daha önceki kod parçacıklarında bahsettiğimiz üzere her iki sınıfın to_s metodları ezilmiştir (override)
 - Tabi her iki sınıf arasındaki en önemli fark ilkinde Accessor ve Setter metodlarının kullanılması ikincisinde ise sadece niteliklerden (attributes) yararlanılmasıdır. Neden? attribute'lar içsel olarak Instance Variable'ları otomatik olarak kullanır ve işaret ederler. Ancak özellik değerlerine veri atanması veya okunması işlemleri sırasında başka işlemlerin de icra edilmesi isteniyorsa metod blokları ile ele alınmaları gerekir.

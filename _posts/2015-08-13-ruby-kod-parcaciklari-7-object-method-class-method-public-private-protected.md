@@ -21,7 +21,7 @@ Varsayılan olarak tüm metodlar public tanımlanırlar. Yani kodun her seviyesi
 
 Aşağıdaki kod parçacığı ile devam edelim.
 
-```text
+```ruby
 class Vehicle
 	@@vehicleCount=0 #0 Global Variable
 	def codeName# Accessor method

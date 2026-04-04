@@ -18,7 +18,7 @@ Dilerseniz basit bir örnek ile Module kullanımını incelemeye çalışalım. 
 
 Serializer.rb içeriği
 
-```text
+```ruby
 module Serializer
 	def self.serialize(data)
 		puts "#{data} serilestiriliyor"
@@ -32,7 +32,7 @@ end
 
 UsingModules.rb içeriği
 
-```text
+```ruby
 $LOAD_PATH << '.'
 require "Serializer"
 module Grid

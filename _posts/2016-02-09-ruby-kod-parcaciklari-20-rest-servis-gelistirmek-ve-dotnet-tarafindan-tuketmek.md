@@ -39,7 +39,9 @@ Elbette işin en önemli kısmı yine de servislere düşüyor. Çözümler içi
 
 Veriyi tutmak için SQLite veritabanından yararlanacağız. Bu veritabanının basit kullanımı için [bir önceki yazımıza](/2016/02/07/ruby-kod-parcaciklari-19-sqlite-ile-basit-veritabani-islemleri/) bakabilirsiniz. Ruby tarafında REST servislerini kolayca geliştirmek için Sinatra çatısından yararlanacağız. Kullanımı son derece kolay olan Sinatra için
 
+```bash
 gem install sinatra
+```
 
 ifadesini Ruby komut satırından çalıştırmamız yeterli..Net tarafındaki istemcide REST taleplerini oluşturabilmek ve gelen içeriği JSON'dan nesnelleştirmek için RestSharp paketinden faydalanacağız.
 
@@ -47,7 +49,7 @@ ifadesini Ruby komut satırından çalıştırmamız yeterli..Net tarafındaki i
 
 SQLite ve Sinatra ile ilgili hazırlıklarımız tamamsa, aşağıdaki kod dosyasını yazarak servis tarafını ayağa kaldırmaya başlayabiliriz.
 
-```bash
+```ruby
 # Simple REST service
 require 'sinatra'
 require 'json'
@@ -119,17 +121,21 @@ end
 
 Geliştirdiğimiz servis REST tabanlıdır. Dolayısıyla HTTP Get, Post, Put, Delete gibi taleplere cevap verecek şekilde çalışır. Sinatra altyapısı sayesinde bu tip istekleri fonksiyonelleştirmek oldukça kolaydır.
 
+```ruby
 get 'products'do
 
 end
+```
 
 ve
 
+```ruby
 get '/products/:id'do
 
 end
+```
 
-metodları ile http://adres/products ve http://adres/products/id adreslerine gelen talepleri karşılayabiliriz. İlk metod ile Product tablosundaki tüm ürün listesinin JSON formatında sunulması söz konusudur. Diğer metod:id ile gelen değere göre (ki Product tablosundaki productid alanının içeriği oluyor) yapılan arama sonucunu yine JSON formatında döndürmektedir.
+metodları ile `http://adres/products` ve `http://adres/products/id` adreslerine gelen talepleri karşılayabiliriz. İlk metod ile Product tablosundaki tüm ürün listesinin JSON formatında sunulması söz konusudur. Diğer metod:id ile gelen değere göre (ki Product tablosundaki productid alanının içeriği oluyor) yapılan arama sonucunu yine JSON formatında döndürmektedir.
 
 SQLite üzerinden gerçekleştirilen select sorguları sonucu elde edilen içerikleri Product sınıfına ait nesne örneklerine aldığımıza dikkat edelim. Product sınıfında JSON serileştirme işlerini gerçekleştirmek adına bazı düzenlemeler olduğu da gözden kaçmamalıdır (JSON serileştirme ile ilgili olarak [buradaki yazıyı](/2015/09/22/ruby-kod-parcaciklari-16-json-serilestirme/) referans alabilirsiniz)
 
@@ -143,19 +149,19 @@ Yazdığımız Ruby kod dosyasını çalıştırdığımızda otomatik olarak lo
 
 Bu işlemin ardından basit bir tarayıcı yardımıyla Get operasyonlarını deneyebiliriz.
 
-http://localhost:4567/products sonucu
+`http://localhost:4567/products` sonucu
 
 ![rest_1.gif](/assets/images/2016/rest_1.gif)
 
 Görüldüğü gibi bir önceki yazımızda Product tablosuna eklediğimiz satırların tamamına ulaşabildik.
 
-http://localhost:4567/products/1 sonucu
+`http://localhost:4567/products/1` sonucu
 
 ![rest_2.gif](/assets/images/2016/rest_2.gif)
 
 Bu kez productid değeri 1 olan ürünü elde etmeyi başardık. Pek tabii var olmayan bir ürünü girersek Not Found çıktısını almamız gerekiyor.
 
-http://localhost:4567/products/10 sonucu
+`http://localhost:4567/products/10` sonucu
 
 ![rest_3.gif](/assets/images/2016/rest_3.gif)
 
@@ -217,7 +223,7 @@ namespace AW.Client
 }
 ```
 
-RestSharp kütüphanesinin kullanımı oldukça basittir. Öncelikle RestClient tipinden bir nesne örneği oluşturulur ve HTTP talep adresleri için kullanılacak kök adres belirtilir. Örneğimizde host ettiğimiz kök adres http://localhost:4567 şeklindedir. products ve products/:id talepleri için RestRequest tipinden yararlanılır. Bu sınıfın yapıcı metoduna (Constructor) gelen ilk parametre ile HTTP adresi, ikinci parametre ile de HTTP metodunun tipi belirtilir. Örneklerimizde Get metodunu kullandığımız için Method.GET değeri verilmiştir. RestResponse nesne örneğine dolacak olan JSON içeriklerine Content özelliği üzerinden doğrudan erişilebileceği gibi JsonDeserializer sınıfının generic Deserialize metodu kullanılarak, içeriğin ters serileştirilmesi ve nesnel olarak ele alınması da sağlanabilir.
+RestSharp kütüphanesinin kullanımı oldukça basittir. Öncelikle RestClient tipinden bir nesne örneği oluşturulur ve HTTP talep adresleri için kullanılacak kök adres belirtilir. Örneğimizde host ettiğimiz kök adres `http://localhost:4567` şeklindedir. `products` ve `products/:id` talepleri için RestRequest tipinden yararlanılır. Bu sınıfın yapıcı metoduna (Constructor) gelen ilk parametre ile HTTP adresi, ikinci parametre ile de HTTP metodunun tipi belirtilir. Örneklerimizde Get metodunu kullandığımız için Method.GET değeri verilmiştir. RestResponse nesne örneğine dolacak olan JSON içeriklerine Content özelliği üzerinden doğrudan erişilebileceği gibi JsonDeserializer sınıfının generic Deserialize metodu kullanılarak, içeriğin ters serileştirilmesi ve nesnel olarak ele alınması da sağlanabilir.
 
 Ruby tarafındaki servisin verdiği JSON içeriğinde jsonclass ve data isimli iki özellik yer almaktadır. Bu nedenle.Net tarafındaki sınıflar söz konusu şema yapısına göre tasarlanmış ve isimlendirme uyumluluğu sorununu çözmek için DeserializeAs niteliğinden (Attribute) yararlanılmıştır. Nitekim istemci tarafındaki sistem içerisinde sorgu sonuçlarını json_class ve data isimli olacak şekilde dolaştırmak çok doğru değildir.
 

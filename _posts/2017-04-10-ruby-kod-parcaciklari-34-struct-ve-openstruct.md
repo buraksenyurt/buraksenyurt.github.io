@@ -15,7 +15,7 @@ Bir süredir şirket içinde vereceğim Ruby eğitimine hazırlanmaktayım. İş
 
 Struct aslında Ruby'nin built-in sınıflarından birisi. Temel olarak bir sınıf hazırlamadan nitelik ve değer barındıran tip tanımlanmasına olanak sağlıyor. Konuyu basit bir şekilde incelemeye başlamak için aşağıdaki kod parçasını göz önüne alarak ilerleyebiliriz.
 
-```text
+```ruby
 player=Struct.new :firstName,:lastName,:level
 dam=player.new()
 dam.firstName="jan kulod van"
@@ -33,7 +33,7 @@ puts "#{obiWan.lastName}, #{obiWan.firstName}-[#{obiWan.level}]"
 
 Yapıları tanımlarken do...end bloklarını da işin içerisinde dahil edebilir ve bu sayede çeşitli fonksiyonlar içermesini de sağlayabiliriz. Aşağıdaki kod parçasında bu durum örneklenmektedir.
 
-```text
+```ruby
 book=Struct.new :title,:price,:category,:author do
   def getInfo
     "#{title} from #{author}. #{price},#{category}"
@@ -53,7 +53,7 @@ book isimli yapı yazılırken do end blokları arasında getInfo isimli bir met
 
 Aslında bu ve bir önceki örnekleri göz önüne alırsak benzer veri yapılarını sınıf olarak tanımlamak istediğimizde aşağıdakine benzer bir yol izlememiz gerektiği ortadadır.
 
-```text
+```ruby
 class Player
   attr_accessor :firstName,:lastName,:price
 
@@ -71,7 +71,7 @@ Dikkat edileceği üzere attribute tanımlamaları ve new operatörü için init
 
 Yapılar ile ilgili dikkat çekici bir diğer nokta da OpenStruct tipinin kullanımıdır. Bu tip kullanılırken niteliklerinin baştan belirtilmesine gerek yoktur. Yani yapı istenildiği kadar nitelik barındırabilir.Nasıl mı? Aynen aşağıdaki kod parçasında görüldüğü gibi.
 
-```text
+```ruby
 require "ostruct"
 
 parameters=OpenStruct.new()
@@ -88,7 +88,7 @@ OpenStruct için ostruct bildirimi gereklidir. Sonrasında yine new operatörün
 
 Peki bir yapının bu örneklerde olduğu gibi n sayıda niteliğinin tamamına kolayca erişmenin bir yolu yok mudur? Tabii ki vardır. Meşhur each metodumuz ne güne duruyor. İşte örnek bir kaç kullanım.
 
-```text
+```ruby
 require "ostruct"
 
 parameters=OpenStruct.new()
@@ -112,7 +112,7 @@ Bu örnekte each, each_pair ve [] operatörü kullanımları örneklenmiştir. e
 
 Peki yapıların bu pratik kullanımları nedeniyle sınıflar yerine tercih edilmeleri gerekir mi? Aslında yapıların kullanım sebepleri biraz daha farklıdır. Çoğunlukla geçici bir veri yapısına (Temporary Data Structure) ihtiyaç duyduğumuzda yapılardan yararlanabiliriz. Ya da test ortamında stub nesne ihtiyacı olduğunda kullanabiliriz. Bir diğer kullanım şeklide sınıf içerisinde dahili veri modeline ihtiyaç duyduğumuz durumlardır. Aşağıdaki kod parçasında bu durum örneklenmeye çalışılmıştır.
 
-```text
+```ruby
 class Employee
   attr_accessor :firstName,:lastName, :address
   Address = Struct.new(:street, :city, :country, :postal_code)

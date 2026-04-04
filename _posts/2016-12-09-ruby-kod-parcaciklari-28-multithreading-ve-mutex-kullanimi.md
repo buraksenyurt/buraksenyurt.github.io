@@ -22,7 +22,7 @@ Tabii öncelikle meseleyi anlamamız gerekiyor. Ortak veri nasıl olur da bozula
 
 ## Concurrency'nin Temel İlkesi Atomicity'nin Bozulması
 
-```text
+```ruby
 require 'thread'
 
 for i in 1..5 do
@@ -56,7 +56,7 @@ Bu yüzden 500000 değerinden küçük ve birbirlerinde farklı sayısal değerl
 
 Mutex sınıfını kullanarak map operasyonunu atomik hale getirebiliriz. Aslında yapacağımız şey bir iş parçacıklarını ilgili veri ile uğraşırken kitlemek ve diğer iş parçacıklarını bu iş sırasında bekletmekten ibaret. Kodu aşağıdaki gibi değiştirerek ilerleyelim.
 
-```text
+```ruby
 require 'thread'
 
 mtx=Mutex.new()

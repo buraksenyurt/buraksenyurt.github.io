@@ -20,7 +20,7 @@ Sözü fazla uzatmadan ben bu kod parçacığımızın temel konusuna geleyim. A
 
 İlk olarak kod parçalarımızı aşağıdaki gibi yazalım.
 
-```bash
+```ruby
 # encoding: ISO-8859-9
 require 'json'
 =begin
@@ -88,13 +88,12 @@ Dikkat edileceği üzere Person nesne örneklerinden oluşan dizi, JSON formatı
 
 Diğer dosya modlarını şu şekilde özetleyebiliriz.
 
-r İşaretçi dosya başına konumlandırılmak suretiyle sadece okunabilir mod.
-r+ İşaretçi dosya başında konumlandırılmak suretiyle okuma ve yazma modu.
-w Sadece yazma modu. Eğer dosya varsa üzerine yazılır, yoksa yeni bir tane oluşur.
-w+ Okuma yazma modu. Dosya varsa üzerine yazılır. Eğer yoksa yeni bir tane hem okuma hem yazma modunda açılır.
-a Sadece yazma amaçlı ekleme (Append) modu. Dosya mevcut ise işaretçi dosyanın sonuna konumlandırılır. Yani dosyaya ardışıl olarak içerikler eklenebilir.
-a+ Ekleme (Append) modunun okunabilir ve yazılabilir versiyonu. Dosya yoksa yeni bir tane oluşturulur. Dosya varsa işaretçi dosya sonuna konumlandırılır.
-- Dosya içeriğinin okunması da oldukça kolaydır. #9 numaralı satırda File sınıfının read metodu ile person.json içeriği fileContent isimli değişkene atanmıştır.
+- r İşaretçi dosya başına konumlandırılmak suretiyle sadece okunabilir mod.
+- r+ İşaretçi dosya başında konumlandırılmak suretiyle okuma ve yazma modu.
+- w Sadece yazma modu. Eğer dosya varsa üzerine yazılır, yoksa yeni bir tane oluşur.
+- w+ Okuma yazma modu. Dosya varsa üzerine yazılır. Eğer yoksa yeni bir tane hem okuma hem yazma modunda açılır.
+- a Sadece yazma amaçlı ekleme (Append) modu. Dosya mevcut ise işaretçi dosyanın sonuna konumlandırılır. Yani dosyaya ardışıl olarak içerikler eklenebilir.
+- a+ Ekleme (Append) modunun okunabilir ve yazılabilir versiyonu. Dosya yoksa yeni bir tane oluşturulur. Dosya varsa işaretçi dosya sonuna konumlandırılır. Dosya içeriğinin okunması da oldukça kolaydır. #9 numaralı satırda File sınıfının read metodu ile person.json içeriği fileContent isimli değişkene atanmıştır.
 - JSON tipinden olan içeriğin ters serileştirilmesi sonucu elde edilen örnek Array sınıfına aittir. #10 daki çalışma zamanı çıktısı bunu göstermektedir.
 
 Böylece geldik bir kod parçacığımızın sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.

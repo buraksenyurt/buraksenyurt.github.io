@@ -12,7 +12,7 @@ tags:
 ---
 Her programlama dilinde olduğu gibi Ruby içinde kontrol ifadeleri (Control Statements) ve döngüler (Loops) söz konusudur. Tabi Ruby dili özellikle yazımsal kolaylık açısından pek çok geliştiriciyi gülümseten betiklere de sahiptir. İlerleyen kod parçasında bu konudaki en temel kullanımları inceliyoruz.
 
-```text
+```ruby
 if __FILE__==$0
 	puts "Nickname?"
 	nickName=gets

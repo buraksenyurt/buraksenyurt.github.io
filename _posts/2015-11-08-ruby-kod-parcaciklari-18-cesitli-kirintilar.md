@@ -15,7 +15,7 @@ Dikkat edileceği üzere bu kez if __FILE__==$0 şeklinde bir kullanım tercih e
 
 Gelelim uygulamada neler olup bittiğine.
 
-```bash
+```ruby
 # encoding: ISO-8859-9
 =begin
 Geride Kalan Bazı Kırıntılar

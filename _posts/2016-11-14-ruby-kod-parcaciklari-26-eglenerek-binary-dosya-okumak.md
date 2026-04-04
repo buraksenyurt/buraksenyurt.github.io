@@ -18,7 +18,7 @@ Amaç bir MP3 dosyası üzerinde eğer varsa kayıtlı Tag bilgilerini elde etme
 
 Önce kod içeriğine bir bakalım ve sonrasında neler öğrendiğimi sizlere aktarayım.
 
-```text
+```ruby
 class TagInfo
 	attr_accessor :track_name,:artist_name,:album_name,:year
 	

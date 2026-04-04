@@ -20,7 +20,7 @@ Elbette çoklu iş parçacıkları ile uğraşırken dikkat edilmesi gereken hus
 
 Pek çok programlama dilinde olduğu gibi Ruby'de de bir ana iş parçacığı vardır (Main Thread) Bu iş parçacığı ile birlikte çalışacak farklı iş parçaları oluşturmak için Thread sınıfının new metodundan yararlanılır. Bu metod bir kod bloğu alır ve ilgili blok içerisindeki işlerin ana iş parçacığı haricinde farklı bir iş parçacığı olarak çalıştırılmasını sağlar. Aşağıdaki kod parçasında temel anlamda Thread yapısının yaşam döngüsü incelenmeye çalışılmıştır.
 
-```text
+```ruby
 puts "Main Thread #{Thread.current}\t#{Time.now}"
 
 t1=Thread.new{
@@ -50,7 +50,7 @@ Dikkat edileceği üzere kodun ilk ve son satırlarında elde edilen nesne örne
 
 Thread'ler de değişken kullanımları da oldukça kolaydır. Bazı hallerde farklı iş parçacıklarının aynı değişken değerleri ile çalışması gerekebilir. Ruby dilinde bunu sağlamak çokta zor değildir. Aşağıdaki basit kod parçasını göz önüne alalım.
 
-```text
+```ruby
 total=0
 threads=[]
 
@@ -80,7 +80,7 @@ t["forThis"] kullanımı ile o anki iş parçacığının sahip olduğu total de
 
 Bir başka kod parçası ile yolumuza devam edelim. Bu kez iş parçacıklarının önceliklerini anlamaya çalışacağız. Normalde Main Thread varsayılan olarak 0 priority değeri ile başlatılır. İstersek diğer iş parçacıklarının önceliklerini değiştirebiliriz. Yüksek önceliğe sahip iş parçacıkları diğer düşük öncelikli iş parçacıklarına nazaran daha çok çalıştırılırlar. Bu durumu aşağıdaki kod parçası ile daha iyi anlayabiliriz.
 
-```text
+```ruby
 for tryCount in 1..5
 	total1=total2=0
 	thread1=Thread.new{
@@ -113,7 +113,7 @@ end
 
 Multithreading ile ilgili bir diğer kritik konuda bloklar içerisinde oluşacak hatalarda sistemin nasıl davranış sergilediğidir. Yani bir iş parçacığı içerisinden ortama fırlayacak bir hata söz konusu olursa ne olur? Normal şartlarda bir iş parçacığında istisna oluşursa sadece bu iş parçacığı sonlanır ve kalanlar yaşamaya devam eder. Öncelikle bu vakayı ele alalım. İşte kod parçamız.
 
-```text
+```ruby
 threads=[]
 threads<<Thread.new{
 	puts "thread 1 is running"
@@ -144,7 +144,7 @@ Dikkat edileceği üzere thread 1 ve thread 2 başarılı bir şekilde işlemler
 
 Tabii bazı durumlarda bir iş parçacığı içerisinde oluşacak hatanın diğer bağımsız çalışan iş parçacıklarının işleyişini de kesmesi istenebilir. Bu durumda abort_on_exception değerine true atanması yeterlidir. Yukarıdaki kod parçasını aşağıdaki gibi düzenleyerek devam edelim.
 
-```text
+```ruby
 threads=[]
 threads<<Thread.new{
 	puts "thread 1 is running"

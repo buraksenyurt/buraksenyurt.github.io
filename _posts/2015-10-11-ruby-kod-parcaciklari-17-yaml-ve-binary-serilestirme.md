@@ -12,7 +12,7 @@ tags:
 ---
 Bir önceki kod parçacığında geliştirici tanımlı bir sınıf koleksiyonunun JSON formatından nasıl serileştirilebileceğini incelemiştik. Ruby dilinde dahili (built-in) olarak gelen serileştirme kütüphaneleri de vardır (YAML ve Binary) Tahmin edeceğiniz üzere duruma göre bu serileştirme çeşitlerinden birisinin kullanılması tercih edilebilir. Aşağıdaki örnek kod parçacığında bu biçimdeki serileştirme ve ters-serileştirme işlemlerinin nasıl yapıldığı ele alınmaktadır.
 
-```bash
+```ruby
 # encoding: ISO-8859-9
 require 'yaml'
 =begin
@@ -94,6 +94,6 @@ Son iki yazıda ele aldığımız serileştirme teknikleri büyük çaplı proje
 
 Üstelik JSON ve YAML gibi formatlar kürsel standartlardandır. Ön yüzlerde, servisler arası iletişimlerde, RESTFull modeldeki web sayfalarında ve pek çok noSql sisteminde JSON'un yeri vardır. Burada unutulan noktalardan birisi de XML serileştirmedir. Acaba Ruby ile bir nesne içeriğinin XML formatında serileştirilmesi mümkün müdür? Şu anda merak ettiğim bu konuyu ilerleyen zamanlarda araştırıyor olacağım. Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümküse.
 
-Kaynaklar
+**Kaynaklar**
 
 YAML Hakkında: [https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML) ve [http://www.yaml.org/](http://www.yaml.org/)

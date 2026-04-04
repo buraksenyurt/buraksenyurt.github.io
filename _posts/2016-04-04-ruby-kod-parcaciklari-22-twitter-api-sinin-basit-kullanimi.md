@@ -37,7 +37,7 @@ Uygulama oluşturulurken dikkat edilmesi gereken noktalardan birisi de Access To
 
 İlk olarak kendime ait tweet'leri çekmek ve hatta bunları YAML formatlı bir içerik olarak kaydetmek istedim. Bunun üzerine aşağıdaki kod satırlarını geliştirerek işe başladım.
 
-```text
+```ruby
 require 'twitter'
 require 'yaml'
 
@@ -73,7 +73,7 @@ Aslında bu şekilde tweet'lerin tamamını fiziki olarak indirebiliriz. Dolayı
 
 Macera yeni yeni heyecan kazanıyordu. Sıradaki hedefim ise koddan bir Tweet gönderebilmekti. Bu da oldukça basit bir işlemdi. Tek yapılması gereken update metodunu aşağıdaki gibi kullanmaktı.
 
-```text
+```ruby
 client.update("Bu tweet, Twitter gem kullanilarak Ruby kodundan atilmistir.")
 ```
 
@@ -87,7 +87,7 @@ Vuhu huuuu:) client nesne örneği üzerinden çağırılan update metodu, twitt
 
 Peki kayıt ettiğimiz YAML içeriğini nasıl okuyabiliriz? Bunun için aşağıdaki basit kod parçasını ele alabiliriz.
 
-```text
+```ruby
 loadedTweets=YAML.load_file('LastTweets.yml')
 loadedTweets.each{|t| puts "\n"+t.full_text}
 ```

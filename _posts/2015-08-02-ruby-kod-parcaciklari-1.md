@@ -11,9 +11,9 @@ tags:
 ---
 Bir programlama dilini öğrenmenin en iyi yolu elbetteki bol bol kod yazmaktan geçer. En azından belirli bir seviyeye gelene kadar basit IDE'ler ile mümkünse Console ekranları üzerinden çalışarak ilerlemekte yarar vardır. Hazır bu aralar Ruby ile haşır neşir iken hem basit kod parçaları paylaşayım hem de bu eğlenceli dili birlikte öğrenelim istedim. İşte ilk kod parçacığımız. Konumuz, diziler (Arrays).
 
-> (Örneğin Arrays.rb gibi)
+> Bu kod parçasını rb uzantılı bir dosya olarak kaydettikten sonra(Örneğin Arrays.rb gibi) komut satırından Ruby aracı ile doğrudan çalıştırabiliriz. Sisteminizde Ruby yüklüdür değil mi? :)
 
-```bash
+```ruby
 #Temel dizi işlemlerinden bazıları
 
 if __FILE__ == $0

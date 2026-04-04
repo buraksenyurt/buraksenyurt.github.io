@@ -14,7 +14,7 @@ Daha önceki kod parçacıklarımızda [Block](/2015/08/20/ruby-kod-parcaciklari
 
 Lambda nesneleri de aslında Proc'lara oldukça benziyor. Yine bir kod parçasının nesne olarak ifade edilebilmesi ve birden çok kez yeniden kullanılabilmesi mümkün. Lakin Proc'lar ile Lambda arasında bir kaç farklılık da bulunmakta. Aşağıdaki kod parçası ile hem Lambda'nın kullanımını hem de Proc ile arasındaki temel farklılıkları incelemeye çalışalım.
 
-```text
+```ruby
 class Utility
 
 	def justDoIt(val1,val2,someLambda) #3
