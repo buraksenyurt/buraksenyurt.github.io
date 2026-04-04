@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net Entity Framework 4.0 - Stored Procedures ve Complex Types"
-date: 2009-11-15 23:55:00
+date: 2009-11-15 18:00:00
 categories:
   - Veritabanı
 tags:

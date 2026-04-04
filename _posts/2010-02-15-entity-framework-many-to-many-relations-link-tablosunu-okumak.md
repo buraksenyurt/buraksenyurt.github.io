@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entity Framework - Many To Many Relations - Link Tablosunu Okumak"
-date: 2010-02-15 22:30:00
+date: 2010-02-15 18:00:00
 categories:
   - Veritabanı
 tags:
