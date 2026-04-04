@@ -24,7 +24,7 @@ Son olarak bugün gömülü tiplerin kullanımını öğrenmeye çalıştım. Bi
 
 Player ve Ability isimli yapılar FootballPlayer ve Boxer isimli diğer yapılarda gömülü tip olarak kullanılıyorlar. Buna göre her futbolcu ve boksör örneği id, nickName gibi temel bilgilere sahip olacak ve bir şeyler söyleyebilecek (saySomething metodu). Ayrıca her birisinin n sayıda kabiliyeti de bulunabilecek ve bu kabiliyetleri uygulayabilecek (useAbility metodu) Bunun için abilities niteliklerini kullanabiliriz. Gelelim bu fotoğrafın kod görüntüsüne.
 
-```cpp
+```golang
 /*
  Lesson 09
  Embedded type kullanımı

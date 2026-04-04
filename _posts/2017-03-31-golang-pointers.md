@@ -23,7 +23,7 @@ Merhaba Pointer
 
 İlk olarak aşağıdaki basit bir kod parçası ile işe başlayalım.
 
-```cpp
+```golang
 package main
 
 import (
@@ -56,7 +56,7 @@ Fonksiyon Parametresi Olarak Pointer Kullanımı
 
 İkinci örneğimizde ise pointer'ların fonksiyon parametrelerine olan etkisini inceleyeceğiz. Normalde fonksiyon parametreleri değer kopyalaması yöntemi ile kullanılırlar. Yani bir fonksiyona dışarıdan geçilen parametre değişkeni fonksiyon bloğu içerisinde kopyalanarak değerlendirirlir. Bu nedenle fonksiyon çağrımı yapılandan farklı bir değişken üzerinde işlemler yapılır. Pointer kullanıldığında ise fonksiyona geçen parametrenin adresi taşınır. Konuyu aşağıdaki örnek kod parçası ile daha iyi anlayabiliriz.
 
-```cpp
+```golang
 package main
 
 import(
@@ -94,7 +94,7 @@ new ile Pointer Oluşturulması
 
 Son olarak new fonksiyonunun kullanımına bir bakalım.
 
-```cpp
+```golang
 package main
 
 import (
@@ -118,7 +118,7 @@ Immutable Struct
 
 Immutable kavramı pek çok dilde yer alır. Bir değişkenin durumunun değiştirilemez olduğu hali temsil eder. Go dilinde örneğin string değişkenler immutable tip olarak geçerler. Yani oluşturulduktan sonra içerikleri değiştirilemez. Struct tipi de immutable özellik taşımaktadır ancak fonksiyon parametresi olarak kullanıldıklarında durum değişir. Önceden de bahsettiğimiz gibi fonksiyonlara taşınan parametreler içeride kopyalanırlar. Bu yüzden struct tipinden bir değişkeni bir Go fonksiyonuna geçtiğimizde immutable özelliğini kaybeder. Aşağıdaki kod parçasını göz önüne alalım.
 
-```cpp
+```golang
 package main
 
 import (
@@ -148,7 +148,7 @@ type Book struct{
 
 Ancak tanımlanan struct değişkeni pointer olarak taşınırsa durum daha farklı olacaktır. * ve & operatörlerini devreye katarak kodu aşağıdaki hale getirelim.
 
-```cpp
+```golang
 func main(){
 	goBook:=Book{Title:"Learning GO",Category:"Programming Languages",ListPrice:35.00}
 	fmt.Printf("%s(%s),%f\n",goBook.Title,goBook.Category,newPrice(&goBook))

@@ -287,7 +287,7 @@ Bir de Paket kavramı var tabii. Notlarıma baktığımda ilerleyen günlerde pa
 
 Aslında aynı amaca hizmet eden n sayıda modülü hiyerarşik bir klasör yapısı ile ifade edip paket haline getirebiliriz. Kritik nokta her paket içinde init.py isimli bir dosyanın olmasıdır. Bu dosyayı içeren klasör aslında otomatik olarak bir paket haline gelir. Örneğin aşağıdaki gibi bir klasör yapımız olduğunu düşünelim.
 
-```text
+```bash
 serialization/
 __init__.py
 schema.py

@@ -26,7 +26,7 @@ Sistem
 
 Örneği Ubuntu platformu üzerinde denedim. Aslında ilk olarak Windows 7 yüklü makinemde denedim lakin Shared Library oluşturulmasında 64bitlik ortamım sorun çıkarttı. Hemen emektar Ubuntu'ya döndüm ve örneği orada yazmaya karar verdim. Ubuntu tarafında Ruby (2.1.5 i386) ve Go (1.8.3 i386) versiyonları yüklü. Yazıyı yazdığım tarihler itibariyle en son sürümler bunlardı. Ruby tarafı için ihtiyaç duyacağımız FFI isimli bir gem paketi var. Bu paket ile GO tarafında üretilecek olan derlenmiş kod dosyalarını ruby ortamına yükleyip, arayüzden sunulan fonksiyonları kullanabileceğiz. Sonuçta kodlar GO ile yazılmış C kütüphaneleri de olsa bir şekilde diğer çalışma zamanı ortamlarına yüklenerek değerlendirilebilirler. FFI isimli paketi yüklemek için terminalden gem install komutunu kullanabiliriz (Kullanıcım root haklarına sahip olmadığından sudo komutu ile yükleme işlemini gerçekleştirdim)
 
-```cpp
+```bash
 sudo gem install ffi
 ```
 
@@ -34,7 +34,7 @@ GO Paketinin Yazılması
 
 İşe aşağıdaki GO paketini yazarak başlayabiliriz.
 
-```cpp
+```golang
 package main
 
 import "C"
@@ -63,7 +63,7 @@ go build -o SomeMath.so -buildmode=c-shared SomeMath.go
 
 Derleme işlemi sonrasında SomeMath.h isimli C Header ve SomeMath.so isimli bir Shared Object dosyası oluşur. Shared Object içeriği itibariyle daha büyüktür nitekim GO runtime ve gerekli paketler barındırmaktadır. Header dosyasına baktığımızda fonksiyon ve tip bazından bir eşleştirme bilgisi bulundurduğunu görebiliriz. Yaptığımız derleme işlemi sonrası oluşan header içeriği aşağıdaki gibidir.
 
-```cpp
+```c
 /* Created by "go tool cgo" - DO NOT EDIT. */
 
 /* package command-line-arguments */
@@ -124,7 +124,7 @@ Ruby Tarafından Çağırım
 
 Yazılan GO paketini Ruby tarafından çağırmak için aşağıdaki basit kod parçasını kullanabiliriz.
 
-```text
+```ruby
 require 'ffi'
 
 module ShapeMath

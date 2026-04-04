@@ -70,7 +70,7 @@ end
 
 Node sınıfı bir boğumun kendisi ve bu boğumun sağ ile sol boğumlarını temsil eden sınıfımızdır. Initialize metoduna gelen iki parametre ile harfi ve sinyali alıp bir Code nesne örneği oluşturmaktadır. Bünyesinde barındırdığı each metodunun dikkat çekici yanı parametre olarak bir block almasıdır. Bu bloğu kendisine, varsa sol ve sağ boğumlarına da uygular. left ve right değişkenleri üzerinden de each çağrısı yapıldığına dikkat edelim. each metoduan gelen kod bloğu bu sayede left ve right değişkenleri altındaki boğumlara da uygulanmaktadır. Kısacası Node örneğine ait fonksiyona bir kod bloğunu gönderebilir ve boğumun kendisi ile sonrasında gelen elemanlar için bu blok içeriğini çalıştırabiliriz. Örneğin root ve altındaki tüm boğumları yazdırabiliriz. Bunun için aşağıdaki kodu kullanmak yeterli.
 
-```text
+```ruby
 root.each{|n|puts n.to_s}
 ```
 

@@ -29,7 +29,7 @@ IIS üzerinde host edilen Asp.Net ile geliştirilmiş WorksTodo isimli bir web u
 
 `http://localhost/workstodo/main.aspx` talebi için sunucuya aşağıdaki paket gider.
 
-```text
+```http
 GET /workstodo/main.aspx HTTP/1.1
 Host: localhost
 Accept-Encoding: gzip, deflate, sdch
@@ -41,7 +41,7 @@ X-Client-Data: CKO2yQEIxLbJAQj9lcoB
 
 IIS deki Asp.Net çalışma zamanı ise şu cevabı döner.
 
-```text
+```http
 HTTP/1.1 200 OK
 Cache-Control: private
 Content-Length: 1022

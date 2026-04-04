@@ -30,7 +30,7 @@ Kök dizinimizde main fonksiyonunu içeren go kod dosyamız bulunuyor. Bu tahmin
 
 Amatörce Bir CSS Dosyası
 
-```text
+```css
 body{
 	border:3px solid cyan;
 	border-radius: 24px;
@@ -71,7 +71,7 @@ index.html web uygulamasının giriş sayfası. Aslında kod içerisinde belirle
 
 Karşılama Sayfası index.html
 
-```text
+```html
 <html>
 <head>
 	<title>Blizert World Game Entertienment</title>
@@ -93,7 +93,7 @@ Kullanıcılar örneğin http://localhost:8085 gibi bir adrese geldiklerinde bu 
 Oyuncuları gösteren Players.html sayfası
 
 {% raw %}
-```text
+```html
 <html>
 <head>
 	<title>Gold Players</title>
@@ -127,7 +127,7 @@ Hımmmm...Bir dakika...Burada oldukça enteresan ifadeler var. Bir back-end geli
 
 Başrol Oyuncusu Server.go
 
-```cpp
+```golang
 package main
 
 import (

@@ -27,7 +27,7 @@ Modelin Kurgulanması
 
 İşe bir Entity paketi hazırmakla başladım. Daha önceden yaptığım gibi GOPATH'in belirttiği src klasörü altında konuşlandırıp tüm GO uygulamaları tarafından erişilebilecek bir paket yazmaya karar verdim. İçinde iki tane Entity olsa da Gorm'un model tarafındaki bir kaç yeteneğini anlamak için ideal bir seçimdi. İşte Southwind (Emektar Northwind gelir hep aklıma ki [şu adresten REST](http://northwind.servicestack.net/) tabanlı servislerine de erişebilirsiniz) paketinin basit içeriği.
 
-```cpp
+```golang
 package Southwind
 
 import (
@@ -59,7 +59,7 @@ Asıl Kod
 
 Artık asıl test kodları geliştirmeye başlanabilir.
 
-```cpp
+```golang
 package main
 
 import (
@@ -134,7 +134,7 @@ Sonuçlar
 
 Uygulamanın çalışma zamanı çıktısı aşağıdaki gibi olacaktır. Adım adım üretilen SQL sorgularını incelemenizi ve GO lang çıktılarına bakmanızı öneririm. DB tarafına en ufak bir SQL sorgusu göndermeden var olan Entity örnekleri üzerinde gerçekleştirdiğimiz Insert, Update, Select gibi işlemler otomatik olarak SQLite üzerinde çalıştırılmıştır. Programcının aşina olduğu kavramları veritabanı tarafına göndermiş durumdayız.
 
-```text
+```bash
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:21) 
 [2017-06-05 00:02:57]  [182.01ms]  CREATE TABLE "employees" ("id" integer primary key autoincrement,"created_at" datetime,"updated_at" datetime,"deleted_at" datetime,"first_name" varchar(30) NOT NULL,"last_name" varchar(30) NOT NULL )
 

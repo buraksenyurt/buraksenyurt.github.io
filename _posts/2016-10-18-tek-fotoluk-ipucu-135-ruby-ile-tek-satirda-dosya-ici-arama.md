@@ -15,7 +15,7 @@ Geçenlerde notpead++ ile oluşturduğum bir text dosya üzerinde düşünüyord
 
 Sonra aklıma bu dosya içerisinde belli bir metnin geçtiği satırları nasıl bulabilirim sorusu geldi. Örneğin "House dizisinde çalınan şarkılardan hangileri The Rolling Stones grubuna aittir?" Mutlaka komut satırından bazı araçlar ile bu işlem kolayca gerçekleştirilebilir. Hatta hemen Visual Studio'yu açıp basit bir Console uygulaması da yazabilirim. Ancak ben bunu Interactive Ruby aracı üzerinde kodla nasıl yapabilirim peşindeydim. Çünkü hemen o anda ihtiyacım vardı bu bilgiye. Derlemeli değilde komut satırından çalışan yorumlamalı bir dil işime geliyordu. Aynı sonuca ulaşmanın birden fazla yolu olmakla birlikte istediğim bilgiyi tek satırlık bir kod parçası ile alabildiğimi görünce çok mutlu oldum. Epey hoşuma gitti o yüzden paylaşayım istedim.
 
-```text
+```ruby
 puts File.readlines('SomeAlbums.txt').select{|line| line['The Rolling Stones']}
 ```
 

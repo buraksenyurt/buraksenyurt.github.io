@@ -30,7 +30,7 @@ Entity İçeriğini Paket Olarak Tutmak
 
 Bundan sonra sistemde kullanacağım başka entity tipleri olursa burada alt klasörler içerisinde toplamayı düşünüyorum. Bir paketi oluşturduğumuzda bunun GOPATH'in tanımladığı lokasyonlarda inşa edilmesi oldukça önemli. Aksi takdirde ilgili paket sistemde bulunamaz ve dolayısıyla kullanılamaz. starwars.go içeriğini aşağıdaki gibi oluşturabiliriz. Model ve Category isimli iki yapı barındırıyor.
 
-```cpp
+```golang
 package starwars
 
 type Model struct {
@@ -69,7 +69,7 @@ Static klasörü tahmin edeceğiniz üzere alt alanımız olarak görev yapacak.
 
 main.go içeriğine geçmeden önce static klasöründeki index.html ve common.css içeriklerini tasarlayalım. Açılış sayfası gibi düşünebileceğimiz index.html içeriği şu şekildedir.
 
-```text
+```html
 <html>
 <head>
 	<title>Starwars Models</title>
@@ -85,7 +85,7 @@ main.go içeriğine geçmeden önce static klasöründeki index.html ve common.c
 
 ve common.css
 
-```text
+```css
 body{
 	border:3px solid #BA4A00;
 	border-radius: 16px;
@@ -110,7 +110,7 @@ main.go
 
 Nihayet yazımızın en önemli kısmına geldik. İşte main paketimize ait kodlarımız.
 
-```cpp
+```golang
 package main
 
 import (
@@ -181,7 +181,7 @@ JSON çıktısı üreteceğimiz için encoding/json, web sunucusu dinlemesi yapa
 En sonda yer alan loadDataSet fonksiyonu Category ve Model tipinden slice örnekleri oluşturup döndürüyor. Onunla ilgili olarak söyleyebileceğimiz en güzel şey n sayıda parametre döndüren fonksiyonlara bir örnek olması. append çağrıları ile n sayıda tipi ilave ettiğimiz de dikkatten kaçmamalı. main fonksiyonu içerisinde Router nesnesini örnekleyerek işe başıyoruz. Bu sefer bir önceki yazımızda ele aldığımız GET çağrıları dışında ServeFiles isimli bir kullanım da söz konusu. Bu fonksiyon ilk parametre olarak statik sayfalarımızı tuttuğumuz adreslemeyi alıyor. *filepath kullanımına dikkat etmek lazım. Case-Sensitive bir ifade olduğunu belirtelim. * işareti nedeniyle ikinci parametre ile bildirilen klasördeki her dosyanın ele alınacağını bildiriyoruz. Bu tanımlama ile static adresine gelecek taleplerin hangi fiziki adresten karşılanacağını belirtmiş olduk. ServeFiles bildiriminde daha geniş imkanlara da sahibiz. Nitekim statik dosyaların ele alınması sırasında araya girip HTTP paketine müdahale edebilir Header kısımlarını kurcalayabiliriz ([Şu adresteki tartışmayı](https://github.com/julienschmidt/httprouter/issues/40) incelemenizi öneririm. Statik sayfalarda Cache-Control header bilgisinin nasıl ilave edilebileceği incelenmiş)
 
 > Eğer /static/ *filepath bildirimi yerine /* filepath şeklinde bir tanımlama yaparsak kodun derlenmesi sırasında aşağıdaki hataları alırız.
-> ```text
+> ```bash
 > panic: '/category' in new path '/category' conflicts with existing wildcard '/*filepath' in existing prefix '/*filepath'
 >
 > goroutine 1 [running]:

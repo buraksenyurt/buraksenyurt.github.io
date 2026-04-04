@@ -21,7 +21,7 @@ Neredeyse her programlama dilinin Unit Test yazılmasına yönelik imkanları va
 
 İşe ilk olarak anlamsız iki fonksiyon içeren aşağıdaki kod parçasını yazarak başlayabiliriz (Amacımız GO tarafında Unit Test'lerin nasıl yazıldığını kurcalamak) Operations.go içerisinde daire alanı hesaplayan ve n sayıda float32 tipinden sayının toplamını bulan birer fonksiyon (Variadic) bulunmaktadır.
 
-```cpp
+```golang
 package operations
 
 import (
@@ -51,7 +51,7 @@ GO'nun alışageldiğimiz kurallarına göre bir paket içerisinde yer alan fonk
 
 Gelelim operations_test.go içeriğine.
 
-```cpp
+```golang
 package operations
 
 import (

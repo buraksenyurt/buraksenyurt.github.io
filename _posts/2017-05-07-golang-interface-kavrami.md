@@ -27,7 +27,7 @@ Hello World
 
 Aşağıdaki kod parçası ile işe başlayalım.
 
-```cpp
+```golang
 package main
 
 import (
@@ -81,7 +81,7 @@ interface{} Tipi
 
 Go dilinde hiç bir fonksiyon tanımı bulundurmayan interface isimli bir tip de mevcuttur. Bu tip fonksiyon parametresi olarak kullanılabilir. Böyle bir durumda fonksiyona herhangibir tip atanabilir. Go çalışma zamanı burada bir dönüştürme işlemi gerçekleştirir. Gelen değişken interface tipine dönüştürülür. Şimdi aşağıdaki gibi bir kod yazdığımızı düşünelim.
 
-```cpp
+```golang
 func main(){
 	actors:=[]Actor{Tank{"T-80",100},Player{"Gun Ball"}}
 	DoIt(actors)
@@ -101,7 +101,7 @@ Burada actors isimli slice içeriğini DoIt fonksiyonuna interface dizisi olarak
 
 Şimdi kodun doğru halini yazalım.
 
-```cpp
+```golang
 func main(){
 	actors:=[]Actor{Tank{"T-80",100},Player{"Gun Ball"}}
 	values:=[]interface{}{actors[0],actors[1]}
@@ -124,7 +124,7 @@ func DoIt(objects []interface{}){
 
 Şimdi örneğimizi biraz daha geliştirelim. Actor tiplerinin yanına örneğin int tipinden bir değişken daha koyalım ve onun için geliştireceğimiz bir metodu kullanmaya çalışalım.
 
-```cpp
+```golang
 package main
 
 import (
@@ -174,7 +174,7 @@ Pointer Kullanımı
 
 interface içinde tanımlı metodları ilgili tipler için yazarken parametrelerinde Pointer da kullanabiliriz. İlk yazdığımız örneği göz önüne alırsak metod parametrelerinde Tank ve Player tipleri için * operatörü ile bu struct'lara ait nesne örneklerini interface tipine dönüştürdüğümüz yerde & operatörünü kullanmamız yeterlidir ('ın & kullanımı halinde zorunlu olmadığını da biraz sonra göreceğiz) İlk örnek kodumuzu aşağıdaki hale getirerek ilerleyelim.
 
-```cpp
+```golang
 package main
 
 import (

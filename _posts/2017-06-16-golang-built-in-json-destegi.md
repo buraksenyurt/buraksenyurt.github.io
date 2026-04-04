@@ -13,7 +13,7 @@ Mesajlaşma formatlarından çeşitli NoSQL sistemlerine, REST tabanlı veri ser
 
 ![gophergo.gif](/assets/images/2017/gophergo.gif)
 
-```cpp
+```golang
 package main
 
 import (

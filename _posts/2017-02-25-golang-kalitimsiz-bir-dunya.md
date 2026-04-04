@@ -22,7 +22,7 @@ Doğruyu söylemek gerekirse yıllarca nesne yönelimli dillerle çalışmış b
 
 ## Composition
 
-```cpp
+```golang
 package main
 
 // Inheritance ve Composition'a baslangic kodu
@@ -86,7 +86,7 @@ Her iki tür için ekrana bilgi yazan birer fonksiyon da mevcut. writeGorlog, Go
 
 Gelelim bir diğer noktaya. Diyelim ki Gorlog ve Molag türleri için ortak bir takım işlevesellikler söz konusu. Örneğin hareket ve ateş etme kabiliyetleri olduğunu varsayalım. Normal şartlarda nesne yönelimli bir dil ile geliştirme yapıyor olsak kuvvetle muhtemel bir interface tanımlar ve ilgili tipleri bu interface tipinden türeterek üyeleri ezmeye zorlardık. Ancak bu kadar nesne odaklı bir dünyada değiliz. Yine de elimizde bir takım çözümler var. İlk olarak Go dilinde de interface tipi olduğunu belirtelim. Bu tip içerisinde tanımlanacak fonksiyonları, uygulamasını istediğimiz yapılar için yazabilir ve az da olsa çok biçimlilik sunan fonksiyonellikler sağlayabiliriz. Yukarıdaki örneğimize aşağıdaki değişikliler ile devam edelim.
 
-```cpp
+```golang
 package main
 // Inheritance ve Composition'a baslangic kodu
 import (

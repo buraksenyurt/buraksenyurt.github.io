@@ -24,7 +24,7 @@ Go dilini sistemimize yüklediğimizde zaten beraberinde pek çok paket geliyor 
 
 Buna göre kendi yazdığımız paketleri src klasörü altına atıp kullanmaya başlayabiliriz. Gelin bu vakayı basit bir örnekle incelemeye çalışalım. Tabii ilk olarak bir paket yazarak işe başlamamız gerekiyor:) Sözgelimi içerisinde bir kaç metrik dönüştürme işlemi barındıran mtrcvrt (Metric Converter diye isimlendirebiliriz) adlı bir paket geliştirdiğimizi düşünelim.
 
-```text
+```golang
 package mtrcvrt
 
 //Fahrenheit to Celsius
@@ -61,7 +61,7 @@ Yazdığımız paket içerisinde beş fonksiyon bulunuyor. Fahrenheit'dan Celsiu
 
 Şimdi örnek bir program dosyası oluşturup yazdığımız pakete ait fonksiyonellikleri test edelim.
 
-```text
+```golang
 package main
 
 import (
@@ -113,7 +113,7 @@ Ardında mtrk.go kod dosyasının commit ederek github'a yüklenmesini sağladı
 
 Artık bilgisayarımdaki workspace ile github eşleşmiş durumda. Bu yeni yapıdaki paketi kullanmak için tek yapılması gereken import ifadesini uygun bir şekilde değiştirmek.
 
-```text
+```golang
 package main
 
 import (

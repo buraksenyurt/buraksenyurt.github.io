@@ -90,7 +90,7 @@ sudo apt-get install ruby-bundler
 
 Nihayet ruby kodlarını yazmaya başlayabilirdim. Paslanmış olan ruby bilgime aldırmadan Visual Studio Code'u açtım ve uygun bir klasör içerisinde önce app.rb dosyasını ardından özellikle Google için önemli olan app.yaml ve Gemfile içeriklerini oluşturdum.
 
-```text
+```ruby
 require "sinatra"
 require "json"
 
@@ -141,7 +141,7 @@ Kod oldukça basit. Quote sınıfına ait nesne örneklerinden oluşan bir dizi 
 
 app.yaml isimli bir dosya oluşturup içeriğini aşağıdaki gibi doldurmam gerekti (Google dokümantasyonu sağolsun)
 
-```text
+```yaml
 runtime: ruby
 env: flex
 entrypoint: bundle exec ruby app.rb
@@ -184,7 +184,7 @@ terminal komutu ile proje bağımlılıkların yükleneceği Gemfile.lock'un olu
 
 İçerik proje için aşağıdaki gibi oluştu.
 
-```text
+```ini
 GEM
   remote: https://rubygems.org/
   specs:

@@ -18,7 +18,7 @@ Ben örnek veri kümesi için bir önceki yazıda kullandığım Star Wars çöz
 
 Veritabanı ve Tabloların Hazırlanması
 
-```text
+```sql
 sqlite3 starwars.sdb
 
 .databases
@@ -60,7 +60,7 @@ Servis Tarafı
 
 Önceki yazılarımızda olduğu gibi yönlendirme işlemlerimiz için Julien Schmidt'in (bu soyadını tek seferde asla yazamadım) httpRouter paketinden yararlanacağız. Diğer yandan SQLite veritabanını kullanacağımız için yardımcı bir kütüphaneyi daha işin içine katacağız. github.com/mattn/go-sqlite3 adresinde yer alan paket SQLite üzerinde gerçekleştireceğimiz işlemlerde bize kolaylıklar sağlayacak (Paketin yazarı Japon'ya Osaka'dan. Henüz ingilizceye çeviremediğim ama oldukça merak ettiğim [blog adresi de burada](http://mattn.kaoriya.net/)) Aynen httpRouter paketinin elde edilişinde olduğu gibi LiteIDE'nin Build->Get komutunu kullanarak ilgili kütüphanenin sisteme yüklenmesini sağlayabilirsiniz. (Ben yükleme işlemi sırasında 64Bit Windows'umdaki farklı MinGW ve GCC sürümleri nedeniyle hatalarla karşılatım ve güncel versiyonunu yükleyerek sorunu aştım. [Şu adrese](http://tdm-gcc.tdragon.net/download) uğramanız gerekebilir) Şimdi Server.go isimli dosyamızın içeriğini aşağıdaki gibi oluşturalım.
 
-```cpp
+```golang
 package main
 
 import (

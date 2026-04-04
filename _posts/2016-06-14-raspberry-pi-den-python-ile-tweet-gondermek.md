@@ -54,7 +54,7 @@ sudo pip install twython
 
 auth.py içeriği
 
-```text
+```python
 consumer_key="..."
 consumer_secret="..."
 access_token="..."
@@ -65,7 +65,7 @@ Tabii ki siz... yazan kısımlara Twitter'ın sizin için ürettiği değerleri 
 
 İkinci dosyamızda (twitter.py olarak kaydedebiliriz) ise aşağıdaki satırlara yer vereceğiz.
 
-```text
+```python
 from twython import Twython
 from auth import(
 consumer_key,

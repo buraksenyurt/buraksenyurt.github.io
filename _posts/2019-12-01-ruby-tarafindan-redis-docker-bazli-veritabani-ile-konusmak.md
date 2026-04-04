@@ -63,7 +63,7 @@ Son satırda yer alan install komutu ile redis isimli gem paketini sisteme dahil
 
 main.rb içeriği
 
-```text
+```ruby
 require 'redis' # redis gem'ini kullanacağımızı belirttik
 
 redis=Redis.new(host:"localhost")
@@ -151,7 +151,7 @@ puts redis.zrangebyscore('best-players-of-the-week',20,30) # skorları 20 ile 30
 
 publisher.rb içeriği
 
-```text
+```ruby
 require 'redis'
 
 puts 'Maç bilgileri gönderiliyor...'
@@ -174,7 +174,7 @@ puts 'Program sonu'
 
 subscriber.rb içeriği
 
-```text
+```ruby
 require 'redis'
 
 channelName=ARGV[0] # komut satırında kanal bilgisini al
@@ -211,7 +211,7 @@ end
 
 Player isimli bir tablomuz olduğunu düşünelim. Bu tip bir veri yığınını Redis'in deneysel dokümanlarına göre sağ taraftaki gibi tariflemek mümkün. Hash ve Sorted Set'ler tablo ve Select sorgusunu karşılayabilir niteliktedir. Örneğin oyuncuların skorlarına göre sıralanacağı bir listeyi Sorted Set nesnesi gibi düşünebilir ve belli bir puan aralığındakilerin listesinin sıralı olarak çekilmesini sağlayabiliriz. Bu deneyselliği ele aldığımız Dessert.rb dosyasının içeriği aşağıdaki gibidir.
 
-```text
+```ruby
 require "redis"
 
 redis=Redis.new(host:"localhost")
@@ -270,7 +270,7 @@ ruby main.rb
 
 Yemek olarak publisher soslu subscriber'ımız var. Üstelik en ünlü İtalyan şeflerinden Rizotta Galliani tarafından özenle hazırlandı:P Sizi ciddiyete davet ediyorum Burak Bey. En az 3 terminal ekranı açıp birisinde publisher.rb diğer ikisinde de subscriber.rb dosyalarını dinleyecekleri kanalları parametre olarak verip çalıştırmak sonuçları irdelememiz için yeterlidir. Aynen aşağıdaki gibi.
 
-```text
+```bash
 ruby subscriber.rb 'game-info-1'
 ruby subscriber.rb 'game-info-2'
 ruby publisher.rb

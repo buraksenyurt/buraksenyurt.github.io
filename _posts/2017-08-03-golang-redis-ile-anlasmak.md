@@ -46,7 +46,7 @@ go get github.com/mediocregopher/radix.v2
 
 Gelelim örnek kod parçalarına. İlk olarak basit string türünden bir veri eklemeye çalıştım. Value olarak da JSON içeriği kullanmaya karar verdim.
 
-```cpp
+```golang
 package main
 
 import (
@@ -85,7 +85,7 @@ Fonksiyon redis tipinin Dial metodu ile başlıyor. TCP protokolü ile localhost
 
 Kodları biraz daha ilerletmeye çalıştım. Acaba bir Hash nasıl üretilebilirdi ve hatta alanlarının değerlerini kod tarafından nasıl okuyabilirdim? Aşağıdaki gibi bir fonksiyon işime yarayacaktı.
 
-```cpp
+```golang
 func AddAndReadHash() {
 	conn, err := redis.Dial("tcp", "localhost:6379")
 	if err != nil {
@@ -113,7 +113,7 @@ Bu kez HMSET komutunu kullanarak bir hash üretiliyor. card:93 olarak belirtilmi
 
 Lakin bir şeyler eksik gibi. Sakladığımız verinin kendisini belki de Go tarafından başka şekilde ifade edebiliriz. Örneğin oyun kartlarına ait bilgileri taşıyan bir yapı (struct) tasarlayıp onu bu senaryoda ele almamız daha doğru olabilir. O zaman kodları aşağıdaki hale getirerek yolumuza devam edelim.
 
-```cpp
+```golang
 package main
 
 import (

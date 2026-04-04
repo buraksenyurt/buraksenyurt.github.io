@@ -77,7 +77,7 @@ sudo docker run --net=host -e "ELASTICSEARCH_URL=http://localhost:9200" docker.e
 
 terminal komutlarını çalıştırmak yeterli. Ben örneği denediğim dönemde stabil olan versiyonları kullandım ancak siz kendi denemelerinizi yaparken konuları google'layıp doğru sürümleri kullanmaya çalışın. Bu arada Elasticsearch ve Kibana container'ları çalıştıktan sonra aşağıdaki adreslere gidip aktif hale gelip gelmediklerini kontrol etmekte yarar var.
 
-```text
+```bash
 http://localhost:9200/ -> Elasticsearch
 http://localhost:5601/status -> Kibana
 ```

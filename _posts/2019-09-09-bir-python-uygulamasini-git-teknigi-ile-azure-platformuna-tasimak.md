@@ -108,7 +108,7 @@ def getRandomHero():
 
 Requirements.txt, Azure platformunun Python ortamlı deploy işlemi için kullanacağı bir doküman. Bu dosya içerisine yazılan paketler, azure deploy işlemi sırasında pip ile uzak sunucu ortamına yüklenmeye çalışılır. Örneğe göre son derece sade bir içeriğimiz var (:
 
-```text
+```ini
 Flask==1.0.2
 ```
 

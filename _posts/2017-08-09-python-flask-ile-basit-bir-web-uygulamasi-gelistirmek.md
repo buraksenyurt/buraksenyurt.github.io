@@ -46,7 +46,7 @@ Web uygulamamızda [Jinja2](http://jinja.pocoo.org/docs/2.9/) standartlarında i
 BasePage.html.Net tarafında Web uygulaması geliştiren arkadaşlarımızca Master Page olarak düşünebilir. Kısaca diğer sayfalar için tepede yer alan bir ana şablon vazifesi görmekte.
 
 {% raw %}
-```text
+```html
 <!doctype html>
 <html>
     <head>
@@ -118,7 +118,7 @@ Yine basepage sayfasından yapılan bir genişletme olduğunu ifade edebiliriz. 
 
 Aslında en kilit nokta bu pyhton kod dosyası diyebiliriz. Flask ile entegre çalışan bu kod parçası, [http://localhost:5000](http://localhost:5000) nolu porta gelecek talepleri değerlendirmek üzere çalışmakta.
 
-```text
+```python
 from flask import Flask, render_template,request
 app=Flask(__name__)
 

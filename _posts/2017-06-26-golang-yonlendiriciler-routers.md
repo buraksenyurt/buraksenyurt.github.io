@@ -28,7 +28,7 @@ Kodlar
 
 Kod içeriğini genel hatları ile şöyle özetleyebiliriz. Planet ve City isimli iki yapı bulunuyor. Bu yapılara ait test içeriklerinin yüklendiği bir fonksiyonumuz da var. github adresinden referans edilen httpRouter paketinin nimetlerinden yararlanaraktan localhost:4568 adresinden bir sunucu ayağa kaldırıyoruz. Sunucu yukarıdaki 3 temel talebi alıp işleyecek şekilde çalışıyor. Nihayi sonuçta kullanıcılara gezegenleri ve bu gezegenlerdeki önemli şehirleri göstermeyi planlıyoruz. Tüm kod içeriğini aşağıda görebilirsiniz.
 
-```cpp
+```golang
 package main
 
 import (

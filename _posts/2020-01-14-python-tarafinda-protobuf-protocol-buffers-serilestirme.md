@@ -37,7 +37,7 @@ protoc --version
 
 Örnekte birde protobuf dosyamız mevcut elbette. Yani ağ üzerinden koşturacağımız veri desenimiz. Ben örnek olarak bir görev bilgisini tasarlamaya çalıştım. Görevin başlığı, açıklaması, durumu gibi bilgilerin yer aldığı bir veri modeli...
 
-```javascript
+```protobuf
 syntax="proto3"; // Kullandığımız ProtoBuf versiyonu
 
 package company;

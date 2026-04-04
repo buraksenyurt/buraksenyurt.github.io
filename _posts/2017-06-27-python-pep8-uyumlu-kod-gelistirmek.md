@@ -35,7 +35,7 @@ Bir Test Kodu
 
 Pek tabii test için örnek bir kod parçasına ihtiyacımız var. İçeriğinin çok büyük bir önemi yok. Bizim için kobay olacak diyebiliriz.
 
-```text
+```python
 import math,os
 
 # Bu fonksiyon iki sayısal değerin toplamını hesaplamak için kullanılır. İki int gibi.
@@ -87,7 +87,7 @@ py.test --pep8 algebra.py
 
 Liste aşağıya doğru uzayıp gitmekte. Temel olarak yazım stili ile ilgili kızılan şeyler var. Örneğin math ve os paket bildirimlerinin aynı satırda olmasına kızılıyor. Fonksiyon bildirimlerinden önce iki boş satır bekleniyor. Operatorlerden önce ve sonra birer boşluk isteniyor. Bir satırdaki karakter sayısının çok fazla olduğu ifade ediliyor (72 harfi geçen bir yorum satırımız var) Sınıfın içeriğini diğer bir dosyadan kopyalarken girintilerde kaymalar olduğu için 4 boşluklu tab kuralının bozulduğu dile getiriliyor (Aslında PEP8 dokümanına bakıldığında sınıf adları veya if kullanımları ile ilgili öneriler de var. Lakin test aracından bunları çıkarttıramadım) Şimdi kodun yazım stilini belirtilen uyarı mesajlarına göre yeniden düzenleyelim.
 
-```text
+```python
 import math
 import os
 

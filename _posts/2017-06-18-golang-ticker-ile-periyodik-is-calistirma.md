@@ -14,7 +14,7 @@ GO dilinin en güçlü yanlarından birisi eş zamanlı programlama (Concurrent 
 
 ![gotimer_4.gif](/assets/images/2017/gotimer_4.gif)
 
-```cpp
+```golang
 package main
 
 import (
@@ -74,7 +74,7 @@ Kodun son parçasında bir ticker üretilmektedir. NewTicker metodu ile oluştur
 
 Sonra durdum ve daha akılda kalıcı bir periyodik kod parçası yazabilir miyim diye düşünmeye başladım. Aklıma belirli bir klasörün içerisindeki dosya değişikliklerini belirli zaman aralıklarında izleyecek bir örnek geldi (Bir nevi.Net dünyasından aşina olduğumuz FileSystemWatcher'ın ilkel bir halini geliştirmek istedim diyebiliriz) Amacım belirli zaman aralıklarında C:\Reports isimli klasördeki dosya içeriklerini terminale bastırmaktı. Bunun için komut satırından yürüyecek bir go programı yazabilir, içerisinde eş zamanlı olarak belirli periyotlarda tetiklenecek bir GoRoutine oluşturabilirdim. Öğrenmem gereken bir başka şey de bir klasör içerisindeki dosyaları nasıl ele alabileceğimdi. Biraz araştırma sonrası aşağıdaki kod parçası ortaya çıktı.
 
-```cpp
+```golang
 package main
 
 import (

@@ -49,7 +49,7 @@ end
 
 Sadece pratik olması açısından iki fonksiyonellik sunduğumuz basit bir sınıf söz konusu. Bir sayının faktöryelini ve n sayıda rakamın toplamını hesap eden operasyonlar Algebra modülündeki Common sınıfında yer alıyor (self kullanımı nedeniyle sınıfı örneklemeden ilgili fonksiyonellikleri çağırabileceğimizi hatırlatalım) Önemli olan kısım gemspec uzantılı dosya içeriği. Paket ile aynı isimde olan dosya da aslına bakarsanız ruby kodları içermekte. Dikkat edilecek olursa Specification tipinden yeni bir nesne oluşturuyor ve bazı niteliklerine değerler atılıyor.
 
-```text
+```ruby
 Gem::Specification.new do |s|
   s.name        = 'BuraksEinstein'
   s.version     = '0.0.2'

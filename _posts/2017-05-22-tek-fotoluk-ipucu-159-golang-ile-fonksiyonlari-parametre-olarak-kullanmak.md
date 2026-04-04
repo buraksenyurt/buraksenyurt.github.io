@@ -11,7 +11,7 @@ tags:
 ---
 GoLang fonksiyonel programlama konusunda oldukça fazla kabiliyete sahip. Birinci sınıf fonksiyonlar (first-class functions), yüksek öncelikli fonksiyonlar (higher-order functions), closures (çeviremedi:)), birden fazla değer döndüren fonksiyonlar (multiple return values), literals ve kullanıcı tanımlı fonksiyon tipleri (user defined function types) bunlar arasında sayılabilir. Neredeyse her gün GO dili ile ilgili bir şeylere bakmaya çalışırken geçenlerde strings paketinde yer alan FiledsFunc fonksiyonunu ile karşılaştım. Derken kendimi ikinci parametresini nasıl kullanıyoruzu anlamaya çalışırken buldum. FieldsFunc fonksiyonu
 
-```cpp
+```golang
 func FieldsFunc(s string, f func(rune) bool) []string
 ```
 
