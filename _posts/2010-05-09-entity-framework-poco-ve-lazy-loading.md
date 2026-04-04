@@ -158,8 +158,6 @@ Ve örneğimizin çalışma zamanı hali;
 
 Volaaaa!!!
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Üstelik SQL Server Profiler aracında da tam istediğimiz şekilde sorguların çalıştırıldığını görebiliriz.
 
 ![blg153_LastProfiler.gif](/assets/images/2010/blg153_LastProfiler.gif)
@@ -173,8 +171,6 @@ Buna ek olarak derleme zamanı POCO nesnesinin public olmasını beklemektedir. 
 ![blg153_Error1.gif](/assets/images/2010/blg153_Error1.gif)
 
 Navigation Property'nin virtual olarak tanımlanmaması derleme veya çalışma zamanında bir hata mesajı üretmezken Lazy Loading işleminin de çalışmamasına neden olmaktadır. İşte bu kadar. Bu yazımızda POCO nesnelerinin kullanıldığı vakalarda Lazy Loading işlemlerinin nasıl ektinleştirilebileceğini incelemeye çalıştık. Unuttuğumuz bir şey var mı? Aslında olabilir.
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Eğer öyleyse de ilerleyen yazılarımızda ele almaya çalışacağız. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 

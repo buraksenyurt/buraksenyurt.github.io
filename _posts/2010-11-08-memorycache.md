@@ -24,8 +24,6 @@ Tabi günümüzde ve öncesinde ön bellekleme için kullanılabilecek farklı a
 
 Lakin özellikle Windows Forms, WPF, Console, Class Library gibi web dışında kalan projeler için enteresan bir durum da söz konusudur. Bu proje çeşitlerinde de istenirse Asp.Net Cache tipi kullanılabilir. Tek yapılması gereken söz konusu projeye System.Web.dll assembly’ ının referans edilmesidir
 
-![Confused smile](/assets/images/2010/wlEmoticon-confusedsmile_4.png)
-
 Cümlenin sonundaki Confused Simle Emoticon’ u mutlaka dikkatinizi çekmiştir. Evet gerçekten de Asp.Net tarafının System.Web.Caching isim alanında (Namespace) yer alan Cache tipini örneğin bir Windows Forms uygulamasında kullanabiliriz. Ancak burada ters olan durum aslında Web tarafı için tasarlanmış ve o mimari alana ait olan bir assembly’ ının (System.Web.dll), konu ile pek alakası olmayan desktop tipinden bir uygulamaya referans edilmiş olmasıdır.
 
 İşte bu genel sıkıntı nedeni ile.Net Framework 4.0 sürümünde gelen yeni bir in-memory Caching alt yapısı mevcuttur (In-Memory olsa da aslında özelleştirilebilir ve farklı provider’ lar ile farklı kaynaklara doğru ön bellekleme işlemleri yapılabilir). Bu yapı aynı zamanda Asp.Net 4.0 yenilikleri arasında değerlendirilmektedir. Buna göre Asp.Net’ in Caching stratejisi, web bağımlılığından çıkartılmakta ve tüm.Net uygulamalarının kullanabileceği bir model haline getirilmektedir. Bu sayede, içerisinde barındırdığı temel tipler yardımıyla web programcılarının aşina olduğu ön bellekleme teknikleri, web ortamı dışındaki uygulama çeşitleri tarafından da kullanılabilir.
@@ -144,9 +142,7 @@ namespace NewCacheConcept
 }
 ```
 
-Olayın kalbi MemoryCache isimli nesne örneğidir. Bu nesne örneğinden yararlanılarak byte[], Person ve DataTable tipinden nesne örneklerinin ön belleğe atılması işlemleri gerçekleştirilmektedir. Özellikle PDF formatındaki dosya içeriğinin (ki içerisinde Asp.Net 4.0 ile gelen yenilikler anlatılmaktadır ![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_8.png)) byte[] dizisi olarak belleğe atılışı sırasında bir de ilke (Policy) uygulandığına dikkat edilmelidir. Öyleki bu ilkeye göre bir dosya bağımlılığı oluşturulmuştur. Gerçi PDF dosyasının değiştirilmesi pek söz konusu olmasa da önemli olan bağımlılığın nasıl yaratıldığıdır. Bu, tipik olarak dosya da değişiklik olması halinde ön bellekte duran nesnenin düşürülmesi anlamına gelmektedir. Yani web tarafından aşina olduğumuz File Dependency olayı
-
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_8.png)
+Olayın kalbi MemoryCache isimli nesne örneğidir. Bu nesne örneğinden yararlanılarak byte[], Person ve DataTable tipinden nesne örneklerinin ön belleğe atılması işlemleri gerçekleştirilmektedir. Özellikle PDF formatındaki dosya içeriğinin (ki içerisinde Asp.Net 4.0 ile gelen yenilikler anlatılmaktadır) byte[] dizisi olarak belleğe atılışı sırasında bir de ilke (Policy) uygulandığına dikkat edilmelidir. Öyleki bu ilkeye göre bir dosya bağımlılığı oluşturulmuştur. Gerçi PDF dosyasının değiştirilmesi pek söz konusu olmasa da önemli olan bağımlılığın nasıl yaratıldığıdır. Bu, tipik olarak dosya da değişiklik olması halinde ön bellekte duran nesnenin düşürülmesi anlamına gelmektedir. Yani web tarafından aşina olduğumuz File Dependency olayı
 
 Person ve DataTable tipinden olan nesne örneklerinin ön bellekte tutulması ise kesin süre sonlu olarak bildirilmiştir (Absolute Time Expiration). Yani ön belleğe atılan nesne örnekleri belirlediğimiz süre kadar tutulacaklardır. Dikkat edilmesi gereken noktalardan bir diğeri de, uygulamanın çalıştığı makinenin ön bellekleme için kullanılabilecek alan değerlerinin yüzdesel ve miktarsal olarak elde edilebiliyor olmasıdır.
 

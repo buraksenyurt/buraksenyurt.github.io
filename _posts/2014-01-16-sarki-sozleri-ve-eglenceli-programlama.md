@@ -18,14 +18,9 @@ Geçtiğimiz gün standart olarak Youtube üzerinden gerek 80ler, gerek 90lara a
 
 ![scorpions-the-millenium-collection](/assets/images/2014/scorpions-the-millenium-collection.jpg)
 
-
-![Smile](/assets/images/2014/wlEmoticon-smile_43.png)
-
 Fark ettim ki, pek çok şarkının sözünü unutuyorum/unutmuşum. Hatırlamak için de internet üzerinden Googlelamam gerekiyor. Gerçi bununla ilişkili belli başlı siteler de var ve onları da kullanabilirim ama elimde basit bir program arayüzü olsa çok daha etkili olabilir.
 
 Mesela bir Windows Forms veya WPF (Windows Presentation Foundation) uygulaması olsa. Internete bağlanabildiği sürece istediğim sanatçının istenen albümündeki istediğim şarkının sözlerini getirse
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)
 
 İşte bu amaçla çıktım yola ve basit bir uygulama geliştirmek üzere oturdum bilgisayarımın başına.
 
@@ -88,8 +83,6 @@ var song = new lyricwikiSong();
 şeklinde sonuçlar elde ederiz.
 
 Peki bu tip bir kullanım söz konusu ise.Net tarafında ilgili içerikleri kullanarak kendimiz için eğlenceli bir program geliştirebilir miyiz acaba?
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)
 
 Örnek Uygulama
 
@@ -241,8 +234,6 @@ WebClient sınıfına ait nesne örneği kullanılarak albüm listesinin alınma
 
 Uygulamanın en çok zorlayan kısımlarından birisi de, albüm listelerinin getirildiği XML içeriğinin nesnel olarak ayırştırıldığı kısmıdır (Parsing). Nedense albums elementi içerisinde alt element olarak album elementlerinin olması beklenirken, albums elementi ile aynı seviyede kullanılan album elementlerinin olduğu bir XML şeması söz konusudur
 
-![Confused smile](/assets/images/2014/wlEmoticon-confusedsmile_21.png)
-
 Neden bu şekilde bir servis üretimi gerçekleştirildiğini pek bilemiyorum (en azından yazının hazırlandığı tarih itibariyle) açıkçası ama bana kalsaydı sanırım şemayı bu şekilde tasarlamazdım.
 
 Uygulamamızda görüldüğü üzere Album isimli bir POCO (Plain Old Clr Objects) tipi kullanılmaktadır.
@@ -267,7 +258,7 @@ namespace LyricsDotCom
 
 Aslında şarkılara XML, JSON gibi içerikler ile ulaşılmak istenirse bir Song tipinin de tasarlanması düşünülebilir. Özellikle şarkı sözlerinin tamamının bulunduğu web sayfası linki bu şekilde elde edilebilir.
 
-> Lisanslama kuralları gereği bazı şarkı sözlerinin sadece 7de1 inin çekilebildiği belirtilmiştir ([Bu adresteki](http://api.wikia.com/wiki/LyricWiki_API/SOAP) Cropped Lyrics başlığını okuyunuz) Dolayısıyla uygulamamızda pek çok şarkı sözü eksik olarak görünmemektedir ama hatırlatıcı olması açısından bu da bir şeydir (Daha iyi bir şarkı söz REST servisini aramaktayım. Siz de arayın ![Smile](/assets/images/2014/wlEmoticon-smile_43.png))
+> Lisanslama kuralları gereği bazı şarkı sözlerinin sadece 7de1 inin çekilebildiği belirtilmiştir ([Bu adresteki](http://api.wikia.com/wiki/LyricWiki_API/SOAP) Cropped Lyrics başlığını okuyunuz) Dolayısıyla uygulamamızda pek çok şarkı sözü eksik olarak görünmemektedir ama hatırlatıcı olması açısından bu da bir şeydir (Daha iyi bir şarkı söz REST servisini aramaktayım. Siz de arayın)
 
 Album tipi içerisinde oldukça yararlı bilgiler bulunmaktadır. Söz gelimi albümün çıkış tarihi ve Amazon sitesinden doğrudan arama sorgusu gibi. Dolayısıyla istenirse hemen Amazon sepetinize ekleyebilirsiniz de. Amazon Web Servisler ile konuşan bir ara katman bile olabilir.
 
@@ -278,8 +269,6 @@ Album tipi içerisinde oldukça yararlı bilgiler bulunmaktadır. Söz gelimi al
 [http://www.amazon.com/exec/obidos/redirect?link_code=ur2&tag=wikia-20&camp=1789&creative=9325&path=external-search%3Fsearch-type=ss%26index=music%26keyword=Linkin%20Park%20Underground%204.0](http://www.amazon.com/exec/obidos/redirect?link_code=ur2&tag=wikia-20&camp=1789&creative=9325&path=external-search%3Fsearch-type=ss%26index=music%26keyword=Linkin%20Park%20Underground%204.0)
 
 Şimdi uygulamamızı test sürüşüne çıkartabiliriz. Bu amaçla Scorpions grubuna ait bir parçanın sözlerini çekmeye çalışalım. “Still loving you” mesela
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)
 
 ![lyricapi_6](/assets/images/2014/lyricapi_6.png)
 
@@ -292,13 +281,11 @@ Peki bundan sonrası için neler yapılabilir?
 - Uygulama bir ASP.NET Web User Control olarak da sunulabilir.
 - Bu kısımları ciddi anlamda düşünmenizi ve yapmaya çalışmanızı öneririm.
 - Var olan uygulamadaki çağrılar async ve await anahtar kelimeleri ile birlikte değerlendirilip asenkron hale de getirilebilir.
-  - Uygulama içerisinde bir WebBrowser kontrolü de kullanılarak şarkı içeriğinin tarayıcıda açılması da sağlanabilir. Aşağıdaki gibi ![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)![lyric_last](/assets/images/2014/lyric_last.png)
+ - Uygulama içerisinde bir WebBrowser kontrolü de kullanılarak şarkı içeriğinin tarayıcıda açılması da sağlanabilir. Aşağıdaki gibi![lyric_last](/assets/images/2014/lyric_last.png)
 
 Hoşunuza gitti mi? Öyleyse…
 
 Yazımızın bu kısmına kadar yapmış olduğumuz örnekte görüldüğü gibi internet üzerinden Web API’ leri kullanarak dış dünyaya sunulan ücretsiz (ve bazen de kısmen ücretsiz) bilgileri alabilir ve kullanışlı hale getirebiliriz. Tabi bu tip hizmetleri sunan başka alanlarda bulunmaktadır. Örneğin bunlardan birisi IMDB (InternationalMovieDataBase) dir
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)
 
 Aşağıdaki örnek kod parçasını yukarıdaki konu anlatımı üzerine kaymak niyetinde sürebilirsiniz. Aynı teknikleri kullanıyoruz ancak farklı bir içeriği ele alıyoruz.
 
@@ -380,8 +367,6 @@ namespace IMBDGadget
 
 ve birazcık daha kod
 
-![Smile](/assets/images/2014/wlEmoticon-smile_94.png)
-
 Windows sınıfı
 
 ```csharp
@@ -462,7 +447,5 @@ ve işte sonuç
 ![lyric_imdb](/assets/images/2014/lyric_imdb.png)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_108.png)
 
 [LyricsDotCom.rar (75,84 kb)](/assets/files/2014/LyricsDotCom.rar)

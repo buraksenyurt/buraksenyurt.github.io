@@ -14,8 +14,7 @@ categories:
 ---
 Oldu da domain üzerinde çalışırken Active Directory'nin bağlantı bilgisine ihtiyaç duydunuz? Bu özellikle AD ile.Net tarafında çalışırken size gerekli olan önemli bir bilgidir. Nasıl mı elde edebiliriz? Aslında basit bir teknik var. Garantisi yok ama en azından ben şirket makinemde başarılı bir şekilde test edebildiğimi söyleyebilirim
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_60.png)
-
 ![PhotoTrick43](/assets/images/2011/PhotoTrick43.png)
 
 [ADConStr.rar (23,80 kb)](/assets/files/2011/ADConStr.rar)
+

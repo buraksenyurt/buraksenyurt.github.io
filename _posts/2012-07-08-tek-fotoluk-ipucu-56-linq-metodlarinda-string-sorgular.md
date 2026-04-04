@@ -11,8 +11,6 @@ categories:
 ---
 Bazı durumlarda Entity Framework tabanlı nesne koleksiyonlarını sorgularken, Extension Method’ lar içerisine gelecek olan sorgulama ifadelerinin string bazlı olarak gelmesi söz konusu olabilir. Örneğin servis metodlarının istemci tarafından parametre olarak bu tip sorgu ifadeleri aldığı sıklıkla görülmektedir. Peki ama nasıl? Bunun bir örneği var mıdır? Hani elimizin altında dursa ve bir fikir verse iyi olmaz mı?
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_88.png)
-
 Buyrun öyleyse.
 
 ![tfi_57](/assets/images/2012/tfi_57.png)
@@ -28,3 +26,4 @@ Bu koda göre arka planda hareket eden SQL sorgusu da şöyledir.
 > WHERE ([Extent1].[Name] LIKE 'M%') AND ([Extent1].[ListPrice] >= 3000)
 
 Bir diğer ipucunda görüşmek dileğiyle.
+

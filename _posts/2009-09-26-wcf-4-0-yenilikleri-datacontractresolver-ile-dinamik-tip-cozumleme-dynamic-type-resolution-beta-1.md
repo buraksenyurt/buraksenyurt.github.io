@@ -11,8 +11,6 @@ Hatırlayacağınız üzere bir önceki yazımızda, WCF serileştirme işlemler
 
 Aslında teori basittir. DataContractResolver sınıfı iki abstract metod tanımlaması içerir. ResolveType ve ResolveName. Bu metodlar tahmin edileceği üzere, tip çözümlemesinde serileştirme (Serialization) ve ters-serileştirme (DeSerialization) işlemlerinde bir veya daha fazla Known Type'ın ele alınması gerektiği durumlarda devreye girmektedir. Çok doğal olarak metodların uygulanması için bir sınıfın DataContractResolver tipinden türetilmesi gerekir. O halde "türetilen ve tip çözümlemesi işlerini üstlenen sınıf nerede kullanılır?" sorusu da ortaya çıkmaktadır
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bunun için farklı teknikler olmasına rağmen belkide en basiti, DataContractSerializer nesne örneği oluşturulurken yapılan bildirimdir.
 
 Böylece, DataContractSerializer nesne örneğinin uygulayacağı serileştirme ve ters-serileştirme işlemleri sırasında karşılaşılabilecek olası Known Type sorunlarında başvurulabilecek bir yardımcı belirlenmiş olmaktadır ki bu yardımcı, DataContractResolver türevi olan bir sınıftır. İşe bu açılardan bakıldığında, DataCotractResolver sayesinde dinamik tip çözümleme yeteneğine (Dynamic Type Resolution) sahip olduğumuzu görebiliriz. Aslında kafalarımızı dahada karıştırmadan önce dilerseniz bir önceki yazımızda ele aldığımız ve Known Type sendromuna neden olan örneğimizi ele alıp ilerlemeye çalışalım. (Örneklerimizi Visual Studio 2010 Beta 1 ve.Net Framework Beta 1 üzerinde geliştirdiğimizi hatırlatmak isterim. Yani bir sonraki sürümde Beta 1 pek çok farklılık olabilir ![Undecided](/assets/images/2009/smiley-undecided.gif))
@@ -94,11 +92,9 @@ class ProductInformationResolver
 
 Güzel...
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Şimdi bir kaç noktayı açıklığa kavuşturmaya çalışalım. Öncelikli olarak DataContractResolver tipine ait iki metodun ezildiğini (override) görmekteyiz. ResolveType metodu serileştirme işlemi sırasında devreye girmektedir ve içeride kontrol edilen tipin XML'de nasıl ifade edileceğini belirtmektedir (xsi:type tanımlaması). Metodda ilk olarak dataContractType parametresinin çalışma zamanında ProductInformation olup olmadığı kontrol edilir. Eğer ProductInformaion tipindense yeni bir XmlDictionary nesnesi örneklenir ve typeName ile typeNamespace değerleri bu nesne üzerine Add metodu ile set edilir.
 
-Zaten typeName ve typeNamespace parametrelerinin out tipinden oldukları gözden kaçmamalıdır. Bir başka deyişle bu parametre değerleri, ResolveType metodunun çağırıldığı ortama aktarılmaktadır.(Out ve Ref parametrelerini hatırlıyorsunuz değil mi? ![Wink](/assets/images/2009/smiley-wink.gif)) Kısacası, serileştirme işlemi sırasında eğer ProductInformation tipi ile karşılaşılırsa, tip çözümlemesinin nasıl yapılacağı geliştiricinin isteği doğrultusunda tanımlanabilmektedir. Burada yer alan typeName veya typeNamespace değerlerinin herhangibir dış ortamdan alınabileceğini (örneğin parametrik bir XML tablosu birden fazla tipin çözümlenmesi sırasında değerlendirilebilir) belirtmekte yarar olduğu kanısındayım.
+Zaten typeName ve typeNamespace parametrelerinin out tipinden oldukları gözden kaçmamalıdır. Bir başka deyişle bu parametre değerleri, ResolveType metodunun çağırıldığı ortama aktarılmaktadır.(Out ve Ref parametrelerini hatırlıyorsunuz değil mi?) Kısacası, serileştirme işlemi sırasında eğer ProductInformation tipi ile karşılaşılırsa, tip çözümlemesinin nasıl yapılacağı geliştiricinin isteği doğrultusunda tanımlanabilmektedir. Burada yer alan typeName veya typeNamespace değerlerinin herhangibir dış ortamdan alınabileceğini (örneğin parametrik bir XML tablosu birden fazla tipin çözümlenmesi sırasında değerlendirilebilir) belirtmekte yarar olduğu kanısındayım.
 
 ResolveName metodu ise tahmin edileceği üzere ters serileştirme (DeSerialization) işlemi sırasında devreye girmektedir. Metod içerisinde ilk olarak typeName ve typeNamespace değişkenleri kontrol edilir ve buna göre geriye döndürülecek tip (Type) belirlenir. Bu metod içerisinde de nesne tipi (Object Type) ve xsi:type eşleştirmeleri için bir referans veri kaynağı (örneğin bir XML içeriği) kullanılabilir.
 

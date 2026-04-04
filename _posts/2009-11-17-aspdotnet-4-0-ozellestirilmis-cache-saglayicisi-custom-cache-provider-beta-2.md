@@ -13,8 +13,6 @@ categories:
 
 Dikkatimi çeken ilk özellik ön bellekleme (Caching) sisteminin genişletilebilmesi ile alakalıydı. Bilindiği üzere web uygulamalarında performansı arttırmanın en etikili yollarından biriside sunucu tarafındaki yükü azaltarak mümkün olabilmektedir. Bu manada istemci tarafına, sunucu üzerinde ön belleğe atılmış hazır veri çıktılarını göndermek etkili bir yaklaşımdır. Asp.Net tarafında ön bellekleme için farklı teknikler kullanılabilir. Son süre bildirimli (Expire Date), uzatmalı (Sliding), bağımlı (Dependency, SqlCacheDependency, FileDependency gibi) vb...Üstelik ön belleklenecek veri içeriği sayfa bazında, Web User Control bazında vb olabilir. Yine de eksik olan bir şeyler vardır. Herşeyden önemlisi ön bellekleme gerçekten bellek üzerinde yapılmaktadır.
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Basit bir blog sitesi için ön belleklenecek veri içeriği çok büyük problem teşkil etmeyebilir.
 
 Ne varki çok sayıda kullanıcıya hizmet veren portallerde ön belleklenen nesnelerin sayısının, içeriğinin artması, beraberinde belleğinde ölçeklendirilmesi ihtiyacını doğurmaktadır. Buna göre daha çok bellek almak gibi bir maliyet altına girmek gerekebilir. Bu duruma karşın Asp.Net 4.0 ile birlikte ön bellekleme işlemini daha kolay bir şekilde özelleştirebilme şansına sahibiz. Bir başka deyişle kendi Cache Provider tiplerimizi geliştirerek ön bellekleme yerini ve modelini değiştirebilir kendi algoritmalarımızı işin içerisine katabiliriz. Tabi Beta 2 sürümüne göre bu konuyu incelediğimden ve yazıyı hazırladığım tarih itibariyle internet üzerinde çok fazla kaynak bulamadığımdan halen daha pek çok noktada soru işareti vuku bulmuş durumdadır. Bu nedenle zaman içerisinde bu konuda çok daha detaylı bilgiye ulaşabileceğimizi düşünmekteyim.
@@ -24,8 +22,6 @@ Dilerseniz hiç vakit kaybetmeden örnek bir senaryo üzerinden hareket edelim. 
 Peki Asp.Net 4.0 tarafında bu tip özelleştirilmiş bir Cache sağlayıcısı için ne getirilmiştir?
 
 Aslında tahmin etmek oldukça kolaydır. Var olan bir sisteme yeni bir eklenti ilave etmek istiyorsak tercih edilecek yollardan birisi, sistemin bize söylediği kurallara uymaktır.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Şimdilik bu kuralı söyleyen OutputCacheProvider isimli abstract bir sınıftır. Söz konusu sınıf Add, Get, Set ve Remove isimli abstract metodlar içermektedir. Buna göre geliştireceğimiz Cache Provider sınıfının bu fonksiyonları mutlaka ve mutlaka ezmesi gerekmektedir. Bir başka deyişle Cache sistemi için gerekli temel CRUD operasyonlarının tarafımızdan uygulanması gerekmektedir. Peki yeterli midir? Elbette değildir.
 
@@ -281,3 +277,4 @@ Görüldüğü üzere iki farklı talep gönderilmiş ve özellikle ikince talep
 Hemen bir noktayı aydınlığa kavuşturalım. Geliştirdiğimiz örnekte Web User Control'ün üretimi özel Cache sağlayıcısı içerisindeki serileştirme ve ters serileştirme gibi işlemlerin çıkarttığı maliyetten daha az olabilir. Yani aslında bu örneğe göre bir Cache sistemi kullanılmasına gerek duyulmaz. Bizim amacımız sadece özel bir Cache sağlayıcısının nasıl yazılabileceğini Asp.Net 4.0 Beta 2 cephesinden incelemektir. Tabiki genişletilebilir Cache sisteminin daha esnek imkanlar sunacağıda belirtilmektedir. Aslında bu konu ile ilişkili özet bir bilgiyi [asp.net](http://www.asp.net/LEARN/whitepapers/aspnet4/default.aspx)sitesinden indireceğiniz dökümanda bulabilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tabiki buradaki eksikleri ve gereksinimleri en iyi değerlendirecek kişi sevgili arkadaşım [Uğur Umutluoğlu'dur (Asp.Net MVP)](http://www.umutluoglu.com/). Tekrardan görüşünceye dek hepinze mutlu günler dilerim.
 
 [CustomCaching.rar (26,21 kb)](/assets/files/2009/CustomCaching.rar)
+

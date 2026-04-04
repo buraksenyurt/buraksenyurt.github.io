@@ -13,8 +13,6 @@ Router servisimizin arkasında genellikle Downstream olarak adlandırılan servi
 
 Gelen talep aslında bir SOAP paketidir. Geliştirdiğimiz örnekte, Router servis tarafında yer alan filtreleme içerisinde, SOAP Action içeriğine göre bir ayrıştırma yapılacak ve arka planda uygun olan servis metodlarına yönlendirme işlemi gerçekleştirilecektir. Buna göre Router servisimizin, istemciden gelen paketin Action değerine bakarak bir karar vereceğini söyleyebiliriz. Elbette bunu birde programatik ortamda söyleyebilmemiz gerekmektedir
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Örneği tamamladıktan sonra oluşturduğumuz mimari tasarıma bakarsak (ki burada yazımızın başında veriyorum), ne yapmak istediğimizi daha net görebiliriz.
 
 ![blg73_Architecture.gif](/assets/images/2009/blg73_Architecture.gif)
@@ -136,8 +134,6 @@ namespace UserManagementService
 
 UserService sınıfı, ContractLibrary sınıf kütüphanesi içerisinde yer alan IManagementContract isimli servis sözleşmesini implemente etmektedir. Dikkat edileceği üzere RegisterUser metodu için bir implemantasyon gerçekleştirilmemiş ve hatta bilinçli olarak NotImplementedExcetion tipinden bir istisna (Exception) nesnesi fırlatılmıştır. Nitekim bu istisna mesajını hiç almayacağımızı garanti edebilirim.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Servisimizi tamamladıktan sonra çalıştırıp WSDL çıktısına baktığımızda aşağıdaki ekran görüntüsünde yer alan sonuçlar ile karşılaşırız.
 
 ![blg73_Wsdl.gif](/assets/images/2009/blg73_Wsdl.gif)
@@ -218,8 +214,6 @@ namespace InternalService
 Bu kez, RegisterUser metodu uygulanmış ancak UpdateUserName metodu içerisinden NotImplementedException istisna örneğinin fırlatılması sağlanmıştır.
 
 Artık yönlendirme servisinin yazılmasına başlanabilir. Yönlendirme servisi için belkide en önemli nokta konfigurasyon içeriğidir. Bununla birlikte yönlendirme servisinin, Downstream servislerine ait referansları bilinçli olarak (Örneğin Add Service Reference yardımıyla) eklemesine de gerek yoktur. Sadece Client Endpoint tanımlamalarını yapması yeterlidir. Bir başka deyişle hangi servise, hangi mesajlaşma tipi ile erişeceğini bilmesi yeterlidir. İşte yazımızın kalbini oluşturan yere geldik...
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -354,8 +348,6 @@ Artık örneği test etmeye ne dersiniz? İşte benim aldığım sonuçlar;
 
 Umarım sizlerde benzer sonuçları elde edebilirsiniz. Herşey yolunda görünüyor.
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Örnekte özetle neler yaptık?
 
 A
@@ -436,3 +428,4 @@ Proxy nesnesi üzerinde Register ve UpdateUser çağrılarını, Router servise 
 Elbetteki bu örnekte en kritik noktalardan birisi filtrelemelerdir. Biz örneğimizde Action içeriğine bakarak bir filtreleme işlemi gerçekleştirdik. Ancak XPath kullanımı gibi senaryolarında mümkün olduğundan bahsetmiştik. Yani talebe ait içerik üzerinden XPath sorguları ile koşula uyan durumlarıda yönlendirme işlemlerinde kullanabiliriz. Bu gibi ince noktalarıda ilerleyen yazılarımızda sizlere aktarmaya çalışıyor olacağım. Şimdilik bu kadar. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Router Project.rar (104,09 kb)](https://www.buraksenyurt.com/pics/2009%2f8%2fRouter+Project.rar)
+

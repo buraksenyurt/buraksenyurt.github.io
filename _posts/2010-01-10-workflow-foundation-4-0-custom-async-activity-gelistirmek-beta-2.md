@@ -77,8 +77,6 @@ Dikkat edileceği üzere AsyncCodeActivity türetmesinden dolayı BeginExecute v
 
 Yukarıdaki şekil sanıyorum ki bu konuda bir fikir vermektedir. Her iki metodda AsyncCodeActivityContext tipinden bir parametre almaktadır. BeginExecute metodunda bu parametrenin UserState özelliğine SendDelegate isimli Func temsilci örneği atanmıştır. Buna göre EndExecute metodu içerisinde SendDelegate referansının yakalanması ve çok doğal olarak EndInvoke metodunun çağırılabilmesi mümkündür. Aktivitemiz dışarıdan mail listesini, mail gövdesini ve konu kısımlarını almaktadır ki çok daha fazla parametre alabilir.(Size önerim MailMessage tipinin alabileceği tüm özellikleri içerecek bir mail gönderme aktivite bileşenini geliştirmeye çalışmanızdır) Gönderme işlemi sırasında makine üzerindeki varsayılan SMTP tipi sunucusu kullanılır. Bu nedenle örneğin kendi bilgisayarınızda çalışması sırasında mail gönderme işleminin gerçekleşmemesi mümkündür.
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Gelelim test kısmına. Bu amaçla TestScene.xaml içeriğini aşağıdaki gibi değiştirelim.
 
 ![blg109_DesignTime.gif](/assets/images/2010/blg109_DesignTime.gif)

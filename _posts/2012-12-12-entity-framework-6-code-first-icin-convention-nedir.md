@@ -30,8 +30,6 @@ Microsoft’ un çeşitli takımlarının açtığı anketler sayesinde, gelişt
 
 Hal böyle olunca çok doğal olarak bir sürü sürüm çıkıyor ve var olanlar çabucak eskiyor. Takip edilmesi zor olan ve özellikle Enterprise seviyede ki projelerde “acaba bu teknolojiyi kullanabilir miyiz?” gibi soruların doğmasına ve ne yazık ki negatif olarak yanıtlanmasına neden olabilecek bir durum bu. Fakat biz yine de üstümüze düşen görevi yapalım ve gerekli anlatımımızı icra ederek öğrendiklerimizi sizlerle paylaşalım. Öyleyse başlayalım
 
-![Smile](/assets/images/2012/wlEmoticon-smile_74.png)
-
 [Makalede yazılanlar Entity Framework 6 Alpha 2 sürümünü baz almaktadır]
 
 Entity Framework alt yapısının sunduğu önemli yaklaşımlardan birisi de Code-First modelidir. Bu modele göre geliştiriciler, önce sınıfları basit POCO (Plain Old CLR Objects) tipler şeklinde tasarlar. Böylece Conceptual (Domain) Model oluşturulur. POCO tiplerinin tek başına tasarlanması elbette yeterli değildir. DbContext türevli bir sınıfında, model de kullanılması düşünülen POCO tiplerine ait koleksiyon bazlı özellikleri içeriyor olması gerekmektedir. Bu noktada DbSet tipinden yararlanılır. Ayrıca tipler arasın ilişkileri betimleyen Navigation Property’ ler de tasarlanır.
@@ -319,8 +317,6 @@ Bu işlem sonrasında veri tabanı şemasının aşağıdaki gibi üretildiği g
 Dikkat edileceği üzere String özelliklerin karşılığı olarak nvarchar tipinde olan, null değer içeremeyen ve maksimum 50 karakter uzunluğunda içerik tutabilen alanlar üretilmiştir.
 
 Code First yaklaşımında Convention kullanımı ile ilişkili olarak daha ileri seviye uygulamalar da mevcuttur. Söz gelimi Custom Attribute’ lar le yeni Convention kural setleri tanımlanabilir. Özellikle LightWeight modelinde kullanılabilecek epey fazla fonksiyonllik bulunmaktadır. Bu konuda [şu adresteki](http://msdn.microsoft.com/en-us/data/jj819164) yazının son kısımlarını da değerlendirebilir ve kendi denemelerinizi yaparak konuyu irdelemeye çalışabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_162.png)
 
 [Makalede yazılanlar Entity Framework 6 Alpha 2 sürümünü baz almaktadır]
 

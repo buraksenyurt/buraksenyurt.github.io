@@ -17,8 +17,6 @@ Dolayısıyla Shakespeare gibi ünlü şarilerin eserlerini hayatım boyunca ço
 
 Geçtiğimiz günlerde Workflow Foundation 4.0 içerisinde NativeActivity türevli bileşenlerde hata yönetiminin nasıl yapılabileceğini incelerken, ne olduysa kendimi ParallelForEach aktivitesini çalıştırmaya uğraşırken buldum. Bir türlü istediğim gibi ayrı Thread parçaları oluşturulmuyor dolayısıyla aktivite içerisine aldığım işler paralel olarak yürütülmüyordu. O sırada şöyle mırıldandığımı çok net hatırlıyorum; "Paralel olmak ya da olmamak. Sanırım tüm mesele bu..."
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 İşte bu yazımızda ParallelForEach aktivitesinin örnek senaryoya göre neden çalıştırılamadığını ve buna karşın basit olan çözümün ne olduğu görmeye çalışacağız. Öncelikli olarak sorunumuzu örnek bir senaryo üzerinden masaya yatıralım. Bu amaçla aşağıdaki sınıf diagramında görülen CodeActivity türevli bir bileşenimiz olduğunu düşünelim.
 
 ![blg155_ClassDia1.gif](/assets/images/2010/blg155_ClassDia1.gif)
@@ -109,15 +107,11 @@ ve buna göre çalışma zamanı sonuçlarına kısaca bir bakalım.
 
 Uppsss!!!
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Enteresan bir durum söz konusu. "Bu gün çok güzel bir gündü" cümlesi ters sırada işlenmiştir. Dahası tüm işlemler 1 numaralı ThreadId'ye bağlı olarak gerçekleştirilmektedir. Bir başka deyişle ParallelForEach aktivitesi istediğimiz/beklediğimiz şekilde çalışmamıştır. Sorun ne olabilir acaba?
 
 ![Undecided](/assets/images/2010/smiley-undecided.gif)
 
 Aslında sorundan ziyade yanlış bir çözüm yolu izlediğimizi ifade edebiliriz. Esasında ParallelForEach bileşeninin bu senaryoda işe yarayabilmesi için içerisinde yer alan CodeActivity türevli bileşenin de paralel çalışmaya destek vermesi bir başka deyişle asenkron olarak yürütülebiliyor olması gerekmektedir. Ahaaa!!
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 İşte şimdi çözümü bulduk. Buna göre LetterCalculaterActivity bileşeninin CodeActivity yerine AsyncCodeActivity tipinden türetilmesi ve kodlanması yeterlidir. O halde söz konusu bileşenimizi aşağıdaki şekilde değiştirelim.
 
@@ -167,8 +161,7 @@ Buna göre program kodumuzu yeniden test edersek, çalışma zamanında aşağı
 
 Çalışma sırası tam olarak şöyledir; "Bu gnü ç kogz eülbir günüd". Sakın bu cümleyi okumaya çalışmayın.
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Görüldüğü üzere farklı yönetimli Thread Id değerleri üretilmiş, üstelik "Bu gün çok güzel bir gündü" cümlesi aynı harf sırasına göre ele alınmamıştır. Bir başka deyişle paralel çalışma sağlanmıştır. Tabi çalışma zamanı ve çevresel donanım şartlarına göre bu sıralama her seferinde farklı sonuçlanabilir veya aynı sonuçlar tekrar tekrar elde edilebilir. Aslında bütün mesele de budur zaten. "Paralel olmak ya da olmamak". Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ToBeOrNotToBe_RC.rar (48,75 kb)](/assets/files/2010/ToBeOrNotToBe_RC.rar) [Örnek uygulama Visual Studio 2010 Ultimate RC Sürümü Üzerinde Geliştirilmiştir ve Test Edilmiştir]
+

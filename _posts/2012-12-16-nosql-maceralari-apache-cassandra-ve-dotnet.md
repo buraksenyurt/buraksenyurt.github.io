@@ -15,10 +15,9 @@ Size bu günkü makale konumuzun yanda fotoğrafı görülen model (youtube mode
 
 ![cassandra](/assets/images/2012/cassandra.jpg)
 
-
 Uzun zamandır gündemimde olan konulardan birisi de NoSQL veritabanı sistemleri. Internet şirketlerinin pek çoğu (Facebook, Twitter, Youtube, Netflix vb) NotOnly SQL veritabanlarını kullanmakta ve hatta bir kısmının kendi geliştirdikleri NoSQL sistemleri bile var. Amazon, Google bu noktada öncüler diyebiliriz.
 
-NoSQL veritabanlarının popüler olmalarının elbette bazı sebepleri var. Özellikle RDMS'lerin tipik özelliklerine ters gelen kabiliyetleri nedeni ile büyük veriler ile çalışılmasında, ölçeklemelerde, performans da öne çıkabilmektedirler. Tabi bu avantajlar, NoSQL yapısına uygun veri kümeleri için söz konusudur. Her veri yapısı veya modeli için NoSQL sistemleri uygun olmayabilir. (Yani RDMS'i terk eden bir dünyadan bahsedemeyiz ![Smile](/assets/images/2012/wlEmoticon-smile_61.png))
+NoSQL veritabanlarının popüler olmalarının elbette bazı sebepleri var. Özellikle RDMS'lerin tipik özelliklerine ters gelen kabiliyetleri nedeni ile büyük veriler ile çalışılmasında, ölçeklemelerde, performans da öne çıkabilmektedirler. Tabi bu avantajlar, NoSQL yapısına uygun veri kümeleri için söz konusudur. Her veri yapısı veya modeli için NoSQL sistemleri uygun olmayabilir. (Yani RDMS'i terk eden bir dünyadan bahsedemeyiz)
 
 Ancak NoSQL sistemler çeşitlilikleri açısından da RDMS’ lere göre farklılaşmakta ve bu yüzden daha fazla tercih edilir olmaktadır. Bu çeşitler kısaca şunlardır;
 
@@ -55,7 +54,7 @@ Cassandra'nın genel özelliklerine baktığımızda aşağıdakileri ifade edeb
 - Sütun odaklı (Wide Column Store/Column Families) çalışan bir NoSQL tipidir.
 - Distribution tasarım modeli Amazon'un Dynamo ürünü esaslıdır.
 - Dağıtık modele destek verdiğinden veriyi n sayıda makine üzerinde genişletmek mümkündür. Bu anlamda RDMS (Relational Database Managament Systems) lerin tam aksine Ring düzenine göre çalışır. Bir başka deyişle dikey (Vertical) değil yatay (Horizontal) olarak ölçeklenir.
-- Terabyte'larca veriyi tutabilir ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_138.png)
+- Terabyte'larca veriyi tutabilir
 
 Veri modeline üstten bakıldığında yapısı RDMS şemalarına benzetilebilir. Sütunlar ve isimlendirilmiş değerler (Named Values) söz konusudur. Ancak pratikte hiç de böyle değildir. Cassandra bir şema yapısı kullanmamaktadır. Ya bizim aşina olduğumuz tipte bir şema kullanmamaktadır diyebiliriz. Veriyi sütunlar topluluğu halinde tutar. Aslında bu konuda çok fazla detaya girmeyeceğiz.
 
@@ -183,7 +182,5 @@ ve çalışma zamanı çıktısı.
 > ![uc_7](/assets/images/2012/uc_7.png)
 
 Bu ilk örnekte BiGFootCompany key space’ ine bağlanıp ModelDesigner isimli yeni bir Column Family oluşturmaktayız. Bu Column Family içerisinde de, Title, Nickname, Level ve Outsource gibi kolonlar bulunmakta. Örnek olarak iki adet satır oluşturulmakta ve veritabanına ilave edilerek bir sonuç listesinin ekrana bastırılması sağlanmaktadır. Dikkat edileceği üzere SQL ifadelerine çok benzeyen bazı sorgular da kullandık. Bunlar CQL (Cassandra Query Language) olarak adlandırılmaktadır. Ayrıca işlerimizi biraz daha kolaylaştırmak adına dynamic anahtar kelimesinden faydalanmaya çalıştık. Bu sayede Row Key’ lerin kolonlarına, birer özellikmiş gibi erişebilmemiz mümkün oldu. Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_138.png)
 
 [HowTo_HelloApacheCassandra.zip (457,46 kb)](/assets/files/2012/HowTo_HelloApacheCassandra.zip)

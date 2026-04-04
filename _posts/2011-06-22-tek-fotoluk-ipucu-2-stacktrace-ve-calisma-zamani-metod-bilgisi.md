@@ -14,8 +14,6 @@ categories:
 ---
 Hani olurda çalışma zamanında (Runtime) o anda yürütülmekte olan metodun bilgilerine kolayca ulaşmak istersiniz. Özellikle loglama sistemlerinde. İşte bu durumda StackTrace tipinden yararlanabilirsiniz. Nasıl mı? Aşağıdaki fotoğrafta (ya da Ercan Hocamızın belirttiği üzere Screen Capture'da) görüldüğü gibi
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_22.png)
-
 ### ![PhotoTrick2](/assets/images/2011/PhotoTrick2.png)
 
 ### [SmartLogger.rar (21,41 kb)](/assets/files/2011/SmartLogger.rar)

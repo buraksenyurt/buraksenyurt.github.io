@@ -86,8 +86,6 @@ Ancak bir asenkron model WinForms yada WPF gibi görsel bir arabirimde uygulanı
 
 Aslında sebep son derece basittir. Normal şartlarda Form üzerindenki tüm bileşenlerin sahibi olan bir ana iş parçamız vardır (Main Thread). Biliyoruzki bir.Net uygulaması belleğe açıldığında mutlaka bir ana Thread'e sahiptir.(Hatta Process içerisinde çalışan Module (Modules) ve bunlarında içerisindede en az bir ana thread olmak üzere birden fazla thread'de olabilir) Diğer taraftan yazdığımız asenkron modelde açılan farklı bir thread'de bu kontrollerden birisine (DataGridView bileşenimiz
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 ) erişmek istemektedir. Bu durumda ana thread buna kızar (çünkü bencildir ve kontrollerini kimse ile paylaşmak istemez) ve çalışma zamanına yukarıda gördüğümüz istisna fırlatılır. Bunu çözmek için kolaya kaçabiliriz. Ancak en etkili çözümlerden birisi Method Invoker kullanmaktır. Bu nedenle yukarıdaki kod parçasını aşağıdaki gibi değiştirmemiz gerekmektedir.
 
 ```csharp

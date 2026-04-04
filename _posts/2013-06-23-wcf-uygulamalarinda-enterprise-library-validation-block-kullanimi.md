@@ -18,13 +18,9 @@ Enterprise Library ve içerisinde yer alan Application Block’ lar çoğunlukla
 
 Örneğin Exception Handling, Security, Cryptography, Configuration, Logging, Validation, Caching vb…Bu tip modüler yapılar çok sık kullanıldıklarından her çözüm için ayrı ayrı geliştirilmemektedir/geliştirilmemelidir. Bunun yerine yeniden kullanılabilen modüler yapılar olarak ele alınmaları daha doğru bir yaklaşımdır. Örneğin Enterprise Library
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_139.png)
-
 Biz bu makalemizde WCF (Windows Communication Foundation) servislerinde, Validation Application Block’ u nasıl kullanabileceğimizi incelemeye çalışıyor olacağız. Bu block yardımıyla nitelik bazlı (Attribute Based) olacak şekilde doğrulama (Validation) kontrolleri yapılabilmektedir. Söz konusu doğrulama kontrolleri sınıfların özelliklerine uygulanan nitelikler ile yapılabileceği gibi, metodların parametreleri üzerine de enjekte olabilmektedir. Dilerseniz adım adım senaryomuzu geliştirip konuyu basit seviye de kavramaya çalışalım.
 
 Örnek senaryomuzda WCF tabanlı bir servis üzerinden bir metod çağrısı ile Player isimli bir nesne örneğinin oluşturulmasını sağlıyor olacağız. Player tipinin özelliklerine ait değerler, servis operasyonuna parametre olarak gelecekler. İşte doğrulama kriterlerimiz de bu notkada devreye girecek ve bazı veri giriş ihlallerini kontrol edecekler. Haydi başlayalım
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_139.png)
 
 İlk olarak servis tarafını geliştireceğiz. WCF Service Application şablonundan üretilen uygulamamızda, aşağıdaki ekran görüntüsünde yer alan referansların bulundurulması gerekmektedir.
 
@@ -236,8 +232,6 @@ Sonuç olarak servis tarafına ait konfigurasyon dosyası içeriği aşağıdaki
 
 Şimdi örnek bir istemci uygulama geliştirerek senaryomuzu teste çıkabiliriz. Basit bir Console uygulaması pekala işimizi görecektir
 
-![Sarcastic smile](/assets/images/2013/wlEmoticon-sarcasticsmile_9.png)
-
 Console uygulamasına servis referansını ekledikten sonra, aşağıdaki kodları geliştirdiğimizi düşünelim.
 
 > İstemci uygulamada ValidationFault tipinin kullanılabilmesi için, Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF.dll assemby’ ının da projeye referans edilmesi gerekmektedir. Bu Assembly ne yazık ki Add Service Reference seçeneği sonrası otomatik olarak eklenmemektedir.
@@ -307,8 +301,6 @@ Uygulamanın çalışma zamanı çıktısı aşağıdaki ekran görüntüsündek
 nickname, country, email, score ve notes metod parametrelerinde tanımlanan doğrulama ihlalleri istemci tarafına bu şekilde yansımıştır. Tabi yorum satırları altına alınmış Player’ ın oluşturulmasını denersek, bu durumda herhangibir doğrulama kriterine takılmadan ekleme işleminin yapılabildiğine şahit oluruz.
 
 Görüldüğü gibi Enterprise Library Validation Application Block’ u kullanarak, WCF tarafında operasyon bazında doğrulama kriterleri uygulanabilmektedir. Burada işin önemli yanlarından birisi ise, nitelik bazlı yapılan bu tanımlamaların servis operasyonları üzerinde gerçekleştirilmesidir. Dolayısıyla bu nitelikler değiştirilse bile, istemci tarafı için yeniden Proxy tipinin üretilmesine gerek yoktur
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_139.png)
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

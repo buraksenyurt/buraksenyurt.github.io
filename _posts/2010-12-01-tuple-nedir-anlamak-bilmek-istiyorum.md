@@ -12,7 +12,6 @@ Matematik Mühendisliği eğitimi almış birisi olarak hayatımın önemli bir 
 
 ![blg200_Giris](/assets/images/2010/blg200_Giris.jpg)
 
-
 Ama tabiki insanoğlu Matematik’ ten kaçamıyor. Hayatının belirli noktalarında öyle ya da böyle karşılaşıyor. Söz gelimi çalıştığım projelerin bazılarında, müşterinin sorunlarının çözümü için matematiksel modellerin kullandığını söyleyebilirim. Örneğin bir üretim hattının minimum maliyet gibi değerlere ulaşabilmesi için çalıştıracağı optimizasyon modelleri, dünyanın en zor matematik formüllerini içermektedir. Yazıya yaptığımız bu giriş sizleri korkutmasın. Bu günkü konumuzun Matematik ile çok alakası yok. Ancak Matematik dünyasından bir ismin yazılım tarafına geçirlişini inceleyeceğimizi ifade edebilirim. Bu günkü konumuz,.Net Framework 4.0 ile birlikte gelen Tuple.
 
 [Tuple](http://en.wikipedia.org/wiki/Tuple)’ ın Türkçe'deki kelime karşılığı Demet olarak ifade edilmektedir. Matematikte elementlerin sıralanmış bir liste tasarımı olarak tanımlanmaktadır. Diğer yandan İlişkisel Veritabanı Sistemlerinde (Relational Database Management Systems) tablo içerisindeki bir satır olarak düşünülür. Dolayısıyla burada da sütunların sıralı bir dizisinden oluşan liste şeklinde ifade edildiğinde, Matematiksel tanımını da işaret ettiği ifade edilebilir. Bilgisayar literatüründe birden fazla parçadan oluşan yapı anlamında kullanılmaktadır. Python dilinde ise içeriği değiştirilemeyen bir dizidir. Python demişken. Aslında fonksiyonel programlama dillerinde Tuple kavramının uzun süredir var olduğunu da ifade edebiliriz. Hatta F# programlama dilinde de tuple kullanımı mevcuttur.
@@ -223,8 +222,6 @@ public Tuple(
 ```
 
 Dolayısıya bu notkada sadece 8 elemanlı bir Tuple oluşturabileceğimizi zannedebiliriz. Ancak şöyle bir kural da yoktur; Tuple içerisindeki item değişkenleri Tuple olamaz
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Yani küçük bir hile yapıyor olacağız. Aşağıda görülen örnek kod parçasını ele alalım.
 

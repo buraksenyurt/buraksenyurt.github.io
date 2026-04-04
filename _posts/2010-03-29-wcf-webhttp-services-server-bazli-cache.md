@@ -15,8 +15,6 @@ categories:
 
 ![blg143_Giris.jpg](/assets/images/2010/blg143_Giris.jpg)
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Her cuma değişik bir yiyecek ile karşılaşıyoruz. Geçtiğimiz Cuma'lardan birisinde ise yanda çektiğim resimde görülen gülen kurabiyelerimiz vardı. E böylesine güler yüzlü kurabiyeler ile gerekli glikozu aldıktan sonra içimden hemen eve gitmek gelmedi. Bunun yerine mesai sonrasında çalışma masamda oturup, etrafın sakinleşmesi ve sessizliğin artması ile birlikte bloğuma bir şeyler yazmaya karar verdim. Bir süredir WCF Eco System'in parçaları üzerinde yazmakta olduğum bir seri bulunmaktaydı. Bunu devam ettirmek ile Cuma gecesini güzelce tamamlayabileceğimi düşündüm. İşte bu günkü konumuz...WCF WebHttp Service'lerinde ön bellekleme (Output Caching)
 
 WCF WebHttp Service'leri bildiğiniz üzere Web ortamı üzerinden sunulan hizmetlerdir. Bu sebepten Web tarafının sunucu ve istemci bazlı bazı yeteneklerini kullanabilirler. Örneğin Asp.Net Compatibility Mode ile çalıştırıldıklarında Asp.Net dünyasının Output Cache yeteneğine sahip olurlar. Bildiğiniz üzere Output Cache mekanizması sayesinde Web içeriklerine gelen taleplerin ön bellekten karşılanması ve bu sayede arka planda ilgili HTML çıktılarının üretilmesi için gerekli işlemlerin otomatikman atlanılması sağlanabilmektedir. Bu, özellikle üretim maliyeti yüksek olan ama belirli bir süre zarfı içerisinde değişmeyen sayfa içeriklerinin üretiminde oldukça performans arttırıcı bir tekniktir. Madem Web tarafında böyle bir yeteneğimiz bulunmaktadır, o halde neden bu kabiliyeti WCF Servislerinde de kullanamayalım? İşte bu yazımızda Asp.Net tarafında hazır olan bu alt yapının WebHttp Service'lerinde nasıl kullanıldığını incelemeye çalışıyor olacağız. İlk olarak konuyu sunucu bazlı ön bellekleme (Server Side Caching) olarak değerlendireceğiz. Serinin sonraki bölümünde ise istemci taraflı ön belleklemeyi ele alacağız. Dilerseniz vakit kaybetmeden kodlamaya başlayalım. Öncelikli olarak aşağıdaki WebHttp Service içeriğine sahip bir WCF REST Service Application geliştirdiğimizi düşünelim.
@@ -66,8 +64,6 @@ namespace Lesson6
 GetCategories operasyonu text dosyası içerisindeki tüm satırları string tipinden generic List koleksiyonu olarak geriye döndürmektedir. GetCategoriesByFirstLetter operasyonu ise aynı çıktıyı baş harflere göre üretmektedir. Bizim odaklanmamız gereken nokta ise her iki operasyon başında uygulanan AspNetCacheProfile niteliğidir (Attribute). Bu niteliklerin uygulanması ile söz konusu operasyonların çıktılarının ön bellekleneceği, çalışma zamanı ortamına bildirilmektedir. Her iki nitelikte birbirlerinden benzersiz olan takma adlar (Alias) ile işaret edilmektedir.
 
 Peki bu isimleri nerede değerlendireceğiz? Bu sorunun cevabı Web.config dosyasında yer alan Asp.Net Output Cache ayarlarında gizlidir...
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Buradaki ayarlar ile hangi operasyon için nasıl bir ön bellekleme işleminin uygulanacağını belirtebiliriz. Örneğin operasyonların sonuçlarının ne kadar süreyle ön bellekte tutulacaklarını farklılaştırabiliriz. Yada parametre bazlı olanları...Örneğin GetCategoriesByFirstLetter operasyonunun çalışma zamanı HTML çıktılarının firstLetter bilgisine göre ön belleklenebileceğini belirtebiliriz. Tüm bu ayarlamalar için web.config dosyasına aşağıdaki eklemeleri yapmamız yeterlidir.
 
@@ -123,3 +119,4 @@ Tabi yapımış olduğumuz bu anlatımın sonuçlarını test ederek görmemiz g
 Bu sayede geliştireceğimiz WebHttp Service'lerin operasyonlarının hızlı sonuçlar üreterek daha performanslı ve verimli olmasını sağlayabiliriz. Bu yazımızdaki örneğimizde sunucu tarafında ön bellekleme işlemlerini gerçekleştirdik. Ancak birde istemci taraflı ön bellekleme (Client Based Caching) işlemlerinin söz konusu olduğunu belirtelim. Bunu serinin sonraki yazısında incelemeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson6_RC.rar (20,41 kb)](/assets/files/2010/Lesson6_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+

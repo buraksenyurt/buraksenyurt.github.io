@@ -63,8 +63,6 @@ Test sonrasında aşağıdaki gibi bir sonuçla karşılaşmamız muhtemeldir.
 
 Görüldüğü gibi RegisterService üzerinden yapılan kullanıcı kayıt operasyonu başarılı bir şekilde çalışmış ancak, UserService üzerinden yapılan çağrı için ortama bir CommunicationException döndürülmüştür. Bu son derece doğaldır, nitekim söz konusu servis kapalıdır.
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Peki alternatif bir yolumuz var mıdır? Yazımızın başındada belirttiğimiz gibi, Downstream servislerinden birisinin çökmesi halinde en azından istemci talebinin bir başka yedek servis üzerine pas edilmesi sağlanabilir. İlk önce bu yedek servisi (Backup Service) geliştireceğiz. Sonrasında ise, Router servisimize ait konfigurasyon dosyasında bazı değişiklikler yapmamız gerekmektedir. Örneğimizin yeni modeli grafiksel olarak aşağıdaki gibi düşünülebilir.
 
 ![blg74_Architecture.gif](/assets/images/2009/blg74_Architecture.gif)
@@ -137,8 +135,6 @@ namespace UserBackupService
 
 Aslında UserService'in bire bir kopyası olan sadece farklı bir port üzerinden sunulan bir servis geliştirmiş bulunuyoruz. Elbetteki bu servisi farklı bir makine üzerinde farklı Endpoint kuralları ilede sunabilir ve alternatif Endpoint olarak kullanabiliriz. Gelelim bu yazının en can alıcı noktasına. Router servisine ait konfigurasyon dosyasının içeriği...
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -204,3 +200,4 @@ Artık vakamızı tekrardan test edebiliriz. Yine tüm servisleri (Backup servis
 Görüldüğü gibi, UserService'in kapalı olması ve Exception üretmesi durumunda, Router servisimiz talebi bu kez alternatif endPoint listesinde belirtilen UserBackupService isimli yedek servise doğru yönlendirmiş ve istemcinin talebinin buradan karşılanmasını sağlamıştır. Tabiki burada ele alınan alternatif Endpoint'lerin işaret ettiği servisler farklı makinelereden, farklı bağlayıcı tiplerle (Binding Types), farklı iletişim protokolleri ile dağıtılabilir. Bu tamamen yedek servis stratejimize bağlıdır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Router Project 2.rar (128,25 kb)](https://www.buraksenyurt.com/pics/2009%2f8%2fRouter+Project+2.rar)
+

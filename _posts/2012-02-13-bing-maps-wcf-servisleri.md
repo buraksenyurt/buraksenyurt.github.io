@@ -20,7 +20,6 @@ Eğitimci olarak çalıştığım dönemlerde servis bazlı mimarilerde, XML Web
 
 ![812522_audio_cassette_template](/assets/images/2012/812522_audio_cassette_template.jpg)
 
-
 O dönemlerde internet üzerinden yayınlanan bazı ücretsiz servislerden yararlanarak konuyu pekiştirmeye çalışırdım. Klasik hava durumu veya finans servisleri bu anlamda çok işe yaramaktaydı.
 
 Tabi zaman ilerledi ve bildiğiniz üzere Microsoft, servis odaklı geliştirme dünyasına yeni bir kavram getirdi. WCF (Windows Communication Foundation) Şimdi eskisi kadar çok sık olmasa da arada sırada eğitim veriyorum ve özellikle WCF konusuna sıra geldiğinde, öğrencilerime verdiğim gerçek hayat örnekleri arasında Bing Maps’ in ücretsiz servisleri de yer alıyor. Bu yazımızda söz konusu servislerden bazılarını nasıl kullanacağımızı, basit fonksiyonlar üzerinden görmeye çalışıyor olacağız.
@@ -43,8 +42,6 @@ Route
 [http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl](http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl)
 
 Dikkat edileceği üzere söz konusu servislerin tamamı WCF (Windows Communication Foundation) tabanlı olarak geliştirilmişlerdir (svc uzantısına dikkat)
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Dilerseniz ilk olarak Geocode servisini kullanarak, bir lokasyonun Latitude ve Longtitude değerlerini elde etmeye çalışarak işe başlayalım. Örnek fonksiyonelliklerimizi bir Class Library içerisinde toplayabilir ve her bir metodumuz için birer Unit Test geliştirerek ilerleyebiliriz. Servisleri projeye teker teker referans etmemiz gerektiğini hatırlatmak isterim. Aşağıdaki şekilde Geocode Servisinin eklenişi görülmektedir. ![bmwpf_2](/assets/images/2012/bmwpf_2.png)
 
@@ -266,8 +263,6 @@ Dolayısıyla bu duruma karşılık tedbir olarak MaxReceivedMessageSize ve MaxB
 
 Tabi bir de bunu istanbul için denemek lazım. Bu kutsal görevi de siz değerli okurlarıma bırakıyorum
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 İlgili metodumuzu dilerseniz bir de Console uygulaması üzerinden kullanmaya çalışalım ve sonuçları görelim.
 
 ```csharp
@@ -399,11 +394,7 @@ ve sonuç
 
 Eh! Fena bir tarif sayılmaz. Tabi istanbul’ da yaşayan birisi olarak, yol durumuna göre bu tarif hiçe sayılabilir. Kestirme sokaklardan gidilebilir. Hatta bana kalsa ben arabalı vapur ile üsküdara geçer oradan pendiğe gitmek için farklı bir güzergah kullanırım
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Dönüş verisi tabi XML formatındadır. Bu sebepten bu içeriği parse ederek daha düzgün bir sonuç almak yerinde olacaktır. Bu size ödev olabilir mi acaba? Olur olur
-
-![Smile](/assets/images/2012/smiley-smile.gif)
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

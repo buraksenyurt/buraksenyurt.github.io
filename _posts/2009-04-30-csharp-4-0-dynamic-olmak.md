@@ -172,8 +172,6 @@ namespace CSharp4Features
 
 Bu seferde aynı çıktıyı alırız. Tabi burada dikkat edilmesi gereken bir kaç nokta vardır ve kodun kısalmış olması bunlardan birisi değildir
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Öncelikli olarak Draw metodu, söz konusu Circle veya Rectangle nesne örneklerine çalışma zamanında bağlanmaktadır. Bu zaten bizim reflection tekniği ile yapmakta olduğumuz bir işlemdir. Diğer yandan.Net Reflector aracı yardımıyla üretilen uygulama koduna bakıldığında söz konusu metod için aşağıdaki IL çıktısının oluşturulduğunu görebiliriz.
 
 ![blg11_5.gif](/assets/images/2009/blg11_5.gif)
@@ -200,3 +198,4 @@ Görüldüğü gibi Draw metodu içerisinde oSiteContainer0 isimli generic bir t
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 NOT: Örnekler 2008 PDC'de yayımlanmış olan Visual Studio 2010 PreBeta sürümü üzerinden geliştirilmiştir.
+

@@ -27,10 +27,6 @@ Dilersek bu API’ yi kullanarak verilerimizi şifreleyebilir ve güvenliklerini
 
 Oldukça kolay bir biçimde; herhangibir algoritmaya bağımlı kalmadan, vector-key saklamadan, üstelikte karmaşıklığı basitçe arttırabileceğimiz (entropy değerlerini değiştirerek deneyin) bir formatta…Nasıl mı? Buyrun
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_159.png)
-
 ![tfi_85](/assets/images/2013/tfi_85.png)
 
 Burada ki ipucundan Data Protection kullanımı söz konusudur. Aslında aynı API’ yi kullanarak bir de Memory Protection yapabiliriz. Buna da bir sonraki ipucumuzda bakalım
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_159.png)

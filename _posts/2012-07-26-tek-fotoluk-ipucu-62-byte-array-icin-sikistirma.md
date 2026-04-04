@@ -18,10 +18,9 @@ categories:
 ---
 Kod içerisinde bir yerlerde öyle ya da böyle elde ettiğiniz ama boyutu azcık da olsa küçülebilse dediğiniz byte tipinden array’ ler olduğunu düşünün. Kimi zaman bir dosyanın içeriği olabileceği gibi, sistem içerisinde üretilmiş bir byte dizisi bile olabilir bu. Peki söz konusu içeriği var olan GZip veya Deflate algoritmalarına göre sıkıştırmak isterseniz
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_101.png)
-
 Aşağıdaki gibi bir Extension Method eminim ki işinize yarayacaktır.
 
 ![spt_62](/assets/images/2012/spt_62.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+

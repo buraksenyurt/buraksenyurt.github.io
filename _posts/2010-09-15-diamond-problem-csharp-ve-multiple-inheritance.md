@@ -14,7 +14,6 @@ Yandaki resimde mükemmel ölçülerde bir elmas taşını görmektesiniz. Sanı
 
 ![blg226_Giris](/assets/images/2010/blg226_Giris.jpg)
 
-
 Elbette bizim bu günkü konumuzun elmaslar ve üzerinde dönen dolaplar ile pek bir alakası bulunmamaktadır. Aslında bu günkü yazımızda C# programlama dilinde yasaklanmış olan ama örneğin C++ ile ele alabileceğiniz çoklu kalıtım (Multiple Inheritance) konusuna farklı bir açıdan bakmaya çalışıyor olacağız.
 
 Esasında C# programlama dili ile ilişkili kaynaklara baktığımızda, kalıtım ile ilişkili temel kurallardan birisi n sayıda sınıf kullanılarak çoklu kalıtımın yasaklanmış olduğudur. Ancak bunun sebebi veya nedenleri hakkında elle tutulur çok fazla bilgi bulunmaz. Bulunue ama pek anlaşılmaz
@@ -111,8 +110,6 @@ Sonuçlar gayet normaldir. Label tipine ait bir nesnenin kullanılması, türeti
 
 Sıkıntı ise main metodu içerisinde bold olarak işaretlemiş olduğumuz satırı etkinleştirdiğimizde meydana gelmektedir. Burada Label tipinden lblHello değişkeni kullanılarak WriteInfo metodunun çağırıldığı görülmektedir. Ne varki Label sınıfı söz konusu metodu ezmemiştir. WriteInfo metodu ezilmemekle birlikte türediği iki üst sınıf içerisinde de ezilmiştir. Bu durumda kod hangi üst WriteInfo metodunu çağıracağına karar verememektedir. Dolayısıyla derleme zamanının kafası karışmıştır
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Buna göre yorum satırı açıldığında aşağıdaki hata mesajının alındığı görülecektir.
 
 ![blg226_BuildError](/assets/images/2010/blg226_BuildError.gif)
@@ -176,8 +173,6 @@ Burada WebControl tipinden türeyen Button isimli bir sınıf olduğunu görmekt
 ![blg226_BuildError2](/assets/images/2010/blg226_BuildError2.gif)
 
 Peki kurallar biraz olsun esnetilebilir mi?
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Yani bir şekilde EventControl ve WebControl tipi üzerinden izin verilen fonksiyonların Button tipine ait bir nesne örneği üzerinden çağırılması sağlanabilir mi? Bu konuda Internet üzerinden araştırma yaptığınız takdirde genellikle LINQ tarafında çok önemli bir yere de sahip olan Extension Method’ ların göz önüne alındığını fark edebilirsiniz. Örneğin Miguel A. Castro bir blog yazısında bu durumu ele almıştır.
 
@@ -245,19 +240,13 @@ namespace MultipleInheritanceTrick
 
 Dikkat edileceği üzere Render ve FireEvent isimli metodlar bulundukları sınıflardan çıkartılarak Extension Method haline getirilmiştir. Render metodu IWebControl arayüzüne uygulanırken, FireEvent metodu da IEventControl arayüzüne uygulanmaktadır. Tesadüfe bakın ki, Button tipimizde hem IWebControl hem de IEventControl arayüzlerinden türemektedir
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Bu sebepten dolayı her iki arayüz için de geçerli olan genişletme metodlarını çağırabilecek şekilde tasarlanmış hale geldiğini söyleyebiliriz. İşte size çakma çoklu kalıtım
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Bu durumda uygulama kodunun çalışma zamanı çıktısı da aşağıdaki gibi olacaktır.
 
 ![blg226_Runtime3](/assets/images/2010/blg226_Runtime3.gif)
 
 Tabi bu tekniğin de bazı eksik yönleri ve handikapları vardır. Herşeyden önce extension method yazılması gerekmiştir ve söz konusu teknik bu sebepten sadece metodlara uygulanabilmektedir. Yani özellikler (Properties) için geçerli değildir. Tabi ilerleyen C# sürümlerinde belki de Extension Property kavramı ile karışaşabiliriz, bilemiyorum
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Okuyan arkadaşlarımız kadar benim içinde enteresan bir yazı olduğunu ifade etmek isterim. Ancak bu yazımızda en azından C++ tarafında bilinen Diamond sorunsalına bakarak C# tarafına getirilen çoklu kalıtım yasağı için bir sebep bulduğumuzu düşünüyorum. Diğer yandan Extension Method ve Interface’ leri kullanarak çoklu kalıtımın farklı bir şekilde nasıl gerçekleştirilebileceğini de görmüş olduk. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

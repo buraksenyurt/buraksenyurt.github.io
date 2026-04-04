@@ -177,8 +177,6 @@ Kullanıcılar GetProductList düğmesini kullanarak servisten ürün listeni ç
 
 Burada hemen şu noktayı vurgulamak isterim. İstemci tarafına gönderilen byte dizisinin boyutu, yine istemci tarafındaki app.config dosyasında, readerQuotas elementi içerisindeki maxArrayLength özelliği ile sınırlandırılmıştır. Resimlerin boyutlarına göre bu değerin arttırılması gerekebilir ki benim örneğimde bu arttırım yapılmak zorunda kalınmıştır.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Nihayetinde ön hazırlıklarımız tamamlanmıştır. Artık servis tarafında kullanmak istediğimiz Caching Application Block ile ilişkili hazırlıklara başlayabiliriz. Öncelikle servis uygulamasına kullanılmak istenen Enterprise Library bloğu ile ilgili assembly referansının eklenmesi gerekmektedir.
 
 ![blg34_7.gif](/assets/images/2009/blg34_7.gif)
@@ -253,16 +251,11 @@ Peki sistem nasıl çalışmaktadır?
 
 Buna göre istemci aynı resimleri talep ettiği ve servis uygulamasıda ayakta olduğu sürece, resimler ön bellekten tedarik edilecektir. Bu işlem resmin istemciye hızlı bir şekilde iletilmesini sağlamak üzere yapılmamıştır. Buna lütfen dikkat edelim. Aksine servis tarafındaki gereksiz resim okuma işlemini ekarte etmek amacıyla kullanılmıştır (Bu bloğun başka ne tip senaryolarda kullanılabileceğini düşünmenizi tavsiye ederim) Senaryomuzda elbetteki eksik kısımlar mevcuttur. Örneğin istisna yönetimi (Exception Handling) sıfırdır.
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 Asenkron erişim ile ilişkili istemci tarafında hiç bir şey yapılmamıştır.
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Diğer yandan resmin değişmesi halinde cache içeriğinin güncellenmesi ile ilgili bir çalışmada yapılmamıştır ki yapmaya çalışmanızı öneririm.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Şimdilik benden bu kadar. Yeni bir western filmi sonrasında tekrardan Enterprise Library konulu bir örnek ile görüşmek üzere...
 
 [HelloCachingBlock.rar (5,35 mb)](/assets/files/2009/HelloCachingBlock.rar)
+

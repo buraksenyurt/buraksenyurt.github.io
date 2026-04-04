@@ -15,8 +15,6 @@ Bir önceki blog yazımızda,.Net RIA Servislerin kullanıldığı Silverlight u
 
 Gördüğünüz gibi gayet basit.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Önceki blog yazımızda geliştirdiğimiz örnek proje için bu adımları uygulamaya başlayabiliriz. Örnek olarak ProductName alanı için özel bir doğrulama fonksiyonelliği geliştireceğiz. Bu doğrulamaya göre, ProductName ile ilişkili veri giriş alanı içerisinde Select, Where, Delete gibi SQL kelimelerinin olmamasını sağlamaya çalışacağız. Bu tabiki konunun anlaşılması için öne sürdüğümüz bir senaryo. Şu an için önemli olan, tekniğin nasıl uygulandığıdır. Bu amaçla web projesi tarafında ProductNameValidator.shared.cs isimli bir kod dosyası oluşturarak işe başlayabiliriz. Bu kod dosyasının adında shared kelimesinin eklenmesinin geliştirme ortamı (IDE) içinde özel bir anlamı vardır. SınıfAdı.shared.cs/vb formatında yazılan dosya adı sayesinde, istemci tarafı içinde otomatik kod üretiminin gerçekleştirilmesi sağlanmış olmaktadır.
 
 Söz konusu sınıfın kod içeriği ise aşağıdaki gibidir.
@@ -62,8 +60,6 @@ Gelelim ValidationResult tipine. Sonuç olarak doğrulamanın başarılı veya b
 
 Sırada ikinci adım var. Geliştirilen bu doğrulama tipinin, çalışma zamanı tarafından ele alınması gerekmektedir. Tabiki hal böyle olunca devreye niteliklerin (attribute) girmeside kaçınılmazdır. Neyseki kendi niteliklerimizi yazmak yerine, herhangibir validator tipini, istediğimiz özellik veya sınıfa uygulamamızı sağlayan tek bir built-in nitelik mevcuttur.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 CustomValidation. Dolayısıyla metadata dosyası içerisinde, ProductName özelliğinin aşağıdaki hale getirilmesi yeterli olacaktır.
 
 ```csharp
@@ -81,8 +77,6 @@ Artık uygulamayı test etmeye başlayabiliriz. Bu amaçla herhangibir ürünün
 ![blg25_3.gif](/assets/images/2009/blg25_3.gif)
 
 Tataaaa!!!
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

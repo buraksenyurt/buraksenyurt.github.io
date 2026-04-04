@@ -13,8 +13,7 @@ categories:
 ---
 Elinizde List tipinden bir koleksiyon var ve içerisindeki nesnelerden rastgele sırada yeni bir liste kullanmak istiyorsunuz. Ne yaparsınız? İşte cevabı
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_23.png)
-
 ![PhotoTip5](/assets/images/2011/PhotoTip5.png)
 
 [RandomList.rar (22,53 kb)](/assets/files/2011/RandomList.rar)
+

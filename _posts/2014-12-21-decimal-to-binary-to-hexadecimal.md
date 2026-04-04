@@ -29,8 +29,6 @@ Görünen o ki evrenin hemen her alanında matematiğin izlerine rastlamaktayız
 
 Bilindiği üzere decimal sayılar 0dan 9a kadardır. Binary sayıların sadece 1 ve 0 olduğunu biliyoruz. Diğer yandan Hexadecimal sayılar 0dan 9a kadar decimal sayılar şeklinde iken sonrasında A,B,C,D,E ve F olarak devam etmektedirler. Özellikle bir ondalıklı sayının ikili düzendeki ifadesine baktığımızda hane sayısı oldukça fazla olan rakam dizileri ile karşılaşmamız normaldir. Ancak hexadecimal düzene baktığımızda ise ondalıklı sayılara göre daha az haneden oluşan diziler söz konusu olmaktadır. Söz gelimi 100000000, 9 hanelidir ve binary karşılığı 27 rakamdan oluşmaktadır. Oysaki bu sayının hexadecimal karşılığı 7 hanedir. Hiç yoktan 2 hane 2 hanedir. Bir kum tanesi olarak düşünüldüğünde bir anlam ifade etmeyebilir ama bir kamyon dolusu kum düşünüldüğün daha büyük bir kazançta sağlayabilir
 
-![Wink](/assets/images/2014/smiley-wink.gif)
-
 > Tabi burada hane sayısının azalmasının veya fazla olmasının, makine seviyesinde bakıldığında bir anlam ifade etmediğini vurgulamamız gerekiyor. Nitekim makine seviyesinde herşey mutlak suretle 1 ve 0 olarak ifade edilmek durumundadır.
 
 Peki matematiksel olarak bu sayı sistemleri arasındaki dönüşümler nasıl yapılabilir? Özellikle ondalıklı sistemdeki sayıların ikili düzende ifade edilmesi veya hexadecimal’ e çevrilmesi nasıl gerçekleştirilmektedir?
@@ -48,8 +46,6 @@ Peki 78 sayısının hexadecimal karşılığı nasıl bulunabilir? ve tabi hexa
 Görüldüğü üzere bir ondalıklı sayının ikili sisteme dönüştürülmesindeki felsefenin aynısı burada da geçerlidir. Tek yapılması gereken 16ya bölme ve kalanları değerlendirmedir. Tabi kalanarın 1 ve 0 değil, 0 ile 15 aralığında olması önemlidir. 9dan sonraki rakamlarda (10,11,12,13,14,15) sırasıyla A,B,C,D,E ve F harflerine yer verilmektedir. Bir hexadecimal ifadenin ondalıklı sayıya çevrilmesinde ise 16üzeri0 ile başlayan katlı sistem devreye girer. İlgili katlar sayının veya harfin karşılık geldiği (örneğin Enin karşılığı olan 12) değer ile çarpılır ve genel toplam alınarak ondalık sayı karşılığı bulunur.
 
 Teorem bu kadar basit olduğuna göre bir sayının ikili veya 16lı sayı sistemine çevrilmesi için gerekli kodları geliştirebilirsiniz. Bu iyi bir antrenman olacaktır
-
-![Wink](/assets/images/2014/smiley-wink.gif)
 
 Ama çok da şart değildir. Nitekim Convert tipinin ilgili static metodları base parametresi ile ilgili dönüşümlere izin vermektedir. Aşağıdaki örnek kod parçasını bu anlamda göz önüne alabiliriz.
 
@@ -157,8 +153,6 @@ GetRandomNumbers isimli metodumuz belirtilen integer değer aralığında bizim 
 ![decbinhex3](/assets/images/2014/decbinhex3.png)
 
 Mutlaka dikkatinizi çekmiştir ki, Binary dosya boyutu 30 megabyte ile haklı bir liderliği üstlenmektedir
-
-![Smile](/assets/images/2014/smiley-smile.gif)
 
 Her ne kadar Decimal ile Hexadecimal arasında çok büyük bir fark olmadığı gözüksede, sayı dizisinin boyutunun arttırılması halinde durum biraz daha farklılık gösterebilmektedir. Bu amaçla test sonuçlarını biraz daha sağlıklı irdelemek adına kodumuzu biraz daha değiştirelim.
 

@@ -11,9 +11,6 @@ categories:
 
 ![blg221_Giris](/assets/images/2010/blg221_Giris.jpg)
 
-
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Gece çökmesine ve balkonda oturmama rağmen ne yazık ki yapraklar bile sıcak dolayısıyla kendinden geçmiş durumda ve bu nedenle sallanmak dahi istemiyorlar. Hal böyle olunca serinletici esintilerinde tatile çıktıklarını ifade edebilirim.
 
 Acaba tüm bu yaşadıklarımız, garip olan bu yaz mevsimi, yağmurlarla geçen günler ve aşırı sıcaklar gerçekten de Küresel Isınmanın sonuçların mı? Bu konuda dünyadaki 6 derecelik bir ısı değişiminin sonuçlarını anlatan bir kitap okumuştum aslında ([6 Derece](http://www.ntvyayinlari.com/tanim.asp?sid=SWBUBQIYKD1DPH7YQ3A8)) Merak edenlere tavsiye ederim.
@@ -35,7 +32,7 @@ Diğer taraftan bazı projelerde Doğrulama (Validation) operasyonlarını içer
 
 ![Exclamation](/assets/images/2010/Exclamation_9.gif) Aslında.Net Framework 1.1 versiyonunda yer alan Regex tipinin nesne örneklemelerinin, desen (Pattern) ile ilişkili bir ön bellekleme mekanizması zaten mevcuttur. Ancak.Net Framework 2.0 ve sonraki versiyonlarda söz konusu desen ön bellekleme işlemi static IsMatch metodu üzerine yıkılmıştır. Bir başka deyişle sadece IsMatch metodunun, parametre olarak gelen Regular Expression ifadesi için ön bellekleme yaptığını ifade edebiliriz. Normal şartlarda kaç desenin ön bellekleneceği bilgisi Regex tipinin static CacheSize özelliği (Property) ile belirlenebilir. Bu özelliğin varsayılan değeri ise 15 dir.
 
-Şimdi basit bir test uygulaması geliştireceğiz ve aslında ön belleklemenin nasıl bir faydası olduğunu görmeye gayret edeceğiz. Bu amaçla 160bin satırdan oluşan ve aşağıdaki gibi bazı URL adres bilgilerini içeren (ki çoğu aynı değerlerin tekrarıdı ![Wink](/assets/images/2010/smiley-wink.gif)) Urls.txt isimli bir Text dosyasını göz önüne alıyor olacağız. Söz konusu dosya içeriğinin bir kısmını aşağıdaki şekilden görebilirsiniz.
+Şimdi basit bir test uygulaması geliştireceğiz ve aslında ön belleklemenin nasıl bir faydası olduğunu görmeye gayret edeceğiz. Bu amaçla 160bin satırdan oluşan ve aşağıdaki gibi bazı URL adres bilgilerini içeren (ki çoğu aynı değerlerin tekrarıdı) Urls.txt isimli bir Text dosyasını göz önüne alıyor olacağız. Söz konusu dosya içeriğinin bir kısmını aşağıdaki şekilden görebilirsiniz.
 
 ![blg221_TextFileContent](/assets/images/2010/blg221_TextFileContent.gif)
 
@@ -95,8 +92,6 @@ Kodun dikkat edilmesi gereken en önemli noktası IsValid metodunun içeriğidir
 ![blg221_InstanceTestResult](/assets/images/2010/blg221_InstanceTestResult.gif)
 
 Yaklaşık olarak 4 ile 9 saniye arasında değişen süreler söz konusudur. Sürelerin tutarsızlığı bir yana, kontrol işlemlerinin de oldukça da uzun sürdüğü görülmüştür. Peki uzun sürdükleri sonucuna nasıl vardık?
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Eğer IsValid metodu içerisinde Regex tipi üzerinden static IsMatch metodunu kullandığımız durumda ki çalışma zamanı çıktısına bakarsak, çok daha kısa sürelerde doğrulama işlemlerinin yapıldığını görebiliriz. İşte aynı makine konfigurasyonundaki yeni test vakasının çalışma zamanı sonuçları.
 

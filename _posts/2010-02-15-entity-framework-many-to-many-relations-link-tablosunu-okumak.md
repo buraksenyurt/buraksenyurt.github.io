@@ -9,8 +9,6 @@ categories:
 ---
 Hatırlayacağınız üzere bir önceki yazımızda veritabanı tarafındaki Many-To-Many Relation'ların, Entity Framework tarafında nasıl değerlendirilebileceğine değinmeye çalışmıştık. Dikkat edilmesi gereken önemli noktalardan birisi, veritabanı tarafında yer alan ara bağlantı tablosunun Entity Framework üzerindeki modele alınmayışıydı. Ancak tam bu noktada ortaya bir soru işareti çıkmakta. Ya çalışma zamanında sadece ilişkili primary key alanlarının değerlerini elde etmek istersek. Bir önceki senaryomuza göre bu, hangi Track satırının hangi Playlist'ler ile ve hangi Playlist satırının hangi Track'ler ile ilişkili olduğunun görülmesi anlamına gelmektedir. Kısacası sadece TrackId ve PlaylistId değerlerinin eşleşmesine bakmak istediğimizi düşünebiliriz. Bu durumda aşağıdaki gibi bir kod parçası işimizi görecektir. Şükürler olsun isimsiz tiplere (Anonymous Type)
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 ```csharp
 using System;
 using System.Linq;
@@ -61,7 +59,5 @@ WHERE [Extent1].[Name] LIKE N'Ab%'
 ```
 
 Görüldüğü üzere Anonymous Type kullanımı nedeniyle sadece istediğimiz TrackId ve PlaylistId alanları Select sorgusuna dahil edilmiştir. Buda arka planda çalışan SQL sorgusunda, tüm tablo alanlarının hesaba katılmaması anlamına gelmektedir ki bizim için bir avantajdır ve istediğimizde zaten budur
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Bir nevi veritabanında yer alan ama Entity olarak kod tarafına aktarılmayan ara tablo içeriğini, LINQ tarafında elde etmiş olduk. Entity Framework tarafında ipucu tadındaki başka konularlar devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

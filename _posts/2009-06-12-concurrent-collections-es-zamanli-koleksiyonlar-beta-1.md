@@ -13,15 +13,11 @@ categories:
 
 Geçtiğimiz günlerde çok şanslı bir insan olarak hafta sonumu bir tatil beldesinde geçirirken, bu kez gecenin derin sessizliğinde araştırmaya başladığım konulardan biriside işte bu yeni koleksiyonlar oldu. Bu koleksiyon tipleri elbetteki relase sürümünde değişikliğe uğrayabilir.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Söz konusu koleksiyon tipleri esasında System.Collections.Concurrent isim alanı altındadır. Ancak bu isim alanı System ve Mscorlib olmak üzere iki assembly içerisine aşağıdaki şekilde görüldüğü gibi dağılmıştır.
 
 ![blg31_2.gif](/assets/images/2009/blg31_2.gif)
 
 Visual Studio 2010 Beta 1 üzerindeki object browser yardımıyla söz konusu tiplere baktığımda bana tanıdık gelebilecek olanlar sadece ConcurrentDictionary, ConcurrentQueue ve ConcurrentStack koleksiyonlarıydı. Nitekim bu tipler daha önceki.Net sürümlerinden bildiğimiz Dictionary, Queue ve Stack koleksiyonlarının eş zamanlı çalışabilen versiyonlarıydı. Ancak kafamda iki önemli soru bulunmaktaydı. Bir; diğer koleksiyon tipleri nasıl ve hangi amaçlar ile kullanılmaktaydı ve iki; koleksiyonların eş zamanlı olmasının ne anlamı vardı
-
-![Smile](/assets/images/2009/smiley-smile.gif)
 
 Paralel genişletme ile gelen koleksiyonların ataları çoğunlukla Thread Safe yapıda değildir. Bu nedenle geliştiricinin Thread Safe yapısını sağlaması gerektiği durumlarda kolları sıvaması ve kilitleme mekanizmalarını bilinçli olarak kullanması gerekmektedir. Bir başka deyişle, koleksiyon içerisine dahil edilen elemanlar üzerinde bir iterasyon yapıldığında, başka Thread'ler üzerinden aynı koleksiyonun elemanlarına ulaşmak güvenli değildir. Bu nedenle örneğin bir koleksiyonun elemanları dolaşılırken belirli kriterlere göre aynı koleksiyondan eleman çıkartılmasıda mümkün değildir.(Ki bu durumda geliştiricilerin multi-thread yapıları içerisinde ele alınan koleksiyonlar için senkronizasyon tekniklerini kullanarak sorunu çözmesi gerekmektedir) Hatta aşağıdaki kod parçasında olduğu gibi bir koleksiyonun üyelerinin dolaşılması sırasında,
 
@@ -93,9 +89,7 @@ ve sonuç;
 
 ![blg31_4.gif](/assets/images/2009/blg31_4.gif)
 
-Görüldüğü gibi koleksiyon elemanları foreach döngüsü ile gezilirken teker teker çıkartılma işlemi yapılabilmiştir. Buna göre öyle vakalar olmalıdır ki, koleksiyonları ele alan paralel süreçlerin aynı örnek üzerindeki elemanlarda Thread Safe kuralları çerçevesinde ekleme, silmve ve güncelleme gibi işlemler yapılabilmelidir. Dolayısıyla paralel genişletmelere ait veri yapılarında yer alan Concurrent koleksiyonların temel kullanım amacı belkide bu şekilde ifade edilebilir. Ben tabiki hemen diğer koleksiyonları ve kullanım amaçlarını merak etmeye başladım ve incelemeye karar verdim. Ne varki içimden bir dürtü, "bak Burakcığım, Thread Safe kolayca bertaraf edilmiş, eş zamanlı olarak aynı koleksiyon üzerinde birden fazla sürecin işlem yapabilmesi sağlanmış. Peki ya performanstan ne haber?" ![Laughing](/assets/images/2009/smiley-laughing.gif) Bu nedenle.Net 4.0 öncesi Dictionary koleksiyonu ile ConcurrentDictionary koleksiyonu arasındaki performans farklılıklarını analiz etmeye karar verdim. Aslında ilk tahminlerimin doğru çıktığını ifade edebilirim şimdiden
-
-![Sealed](/assets/images/2009/smiley-sealed.gif)
+Görüldüğü gibi koleksiyon elemanları foreach döngüsü ile gezilirken teker teker çıkartılma işlemi yapılabilmiştir. Buna göre öyle vakalar olmalıdır ki, koleksiyonları ele alan paralel süreçlerin aynı örnek üzerindeki elemanlarda Thread Safe kuralları çerçevesinde ekleme, silmve ve güncelleme gibi işlemler yapılabilmelidir. Dolayısıyla paralel genişletmelere ait veri yapılarında yer alan Concurrent koleksiyonların temel kullanım amacı belkide bu şekilde ifade edilebilir. Ben tabiki hemen diğer koleksiyonları ve kullanım amaçlarını merak etmeye başladım ve incelemeye karar verdim. Ne varki içimden bir dürtü, "bak Burakcığım, Thread Safe kolayca bertaraf edilmiş, eş zamanlı olarak aynı koleksiyon üzerinde birden fazla sürecin işlem yapabilmesi sağlanmış. Peki ya performanstan ne haber?" Bu nedenle.Net 4.0 öncesi Dictionary koleksiyonu ile ConcurrentDictionary koleksiyonu arasındaki performans farklılıklarını analiz etmeye karar verdim. Aslında ilk tahminlerimin doğru çıktığını ifade edebilirim şimdiden
 
 Thread Safe + aynı anda ilerleme,ekleme, çıkartma, düzenleme yapabilme yeteneği = pahalı maliyet
 
@@ -285,60 +279,18 @@ ConcurrentDictionary koleksiyonu için eleman ekleme sürelerinin gerçekten ço
 
 Eleman Okuma Süreleri
 
-Deneme
-Dictionary
-ConcurrentDictionary
-Parallel
-
-1
-0,2707316
-0,5216791
-0,7073974
-
-2
-0,2715216
-0,4951542
-0,7149783
-
-3
-0,3506021
-0,5100271
-0,7525682
-
-4
-0,3380284
-0,4933783
-0,7305076
-
-5
-0,338477
-1,3850732
-0,7164944
-
-6
-0,322663
-0,4776662
-0,7548498
-
-7
-0,2821501
-0,5871846
-0,8353176
-
-8
-0,3824846
-0,8149798
-0,8492322
-
-9
-0,305484
-0,577625
-0,9152573
-
-10
-0,3560983
-0,5122665
-0,8599752
+| Deneme | Dictionary | ConcurrentDictionary | Parallel |
+|-------|------------|----------------------|----------|
+| 1 | 0,2707316 | 0,5216791 | 0,7073974 |
+| 2 | 0,2715216 | 0,4951542 | 0,7149783 |
+| 3 | 0,3506021 | 0,5100271 | 0,7525682 |
+| 4 | 0,3380284 | 0,4933783 | 0,7305076 |
+| 5 | 0,338477 | 1,3850732 | 0,7164944 |
+| 6 | 0,322663 | 0,4776662 | 0,7548498 |
+| 7 | 0,2821501 | 0,5871846 | 0,8353176 |
+| 8 | 0,3824846 | 0,8149798 | 0,8492322 |
+| 9 | 0,305484 | 0,577625 | 0,9152573 |
+| 10 | 0,3560983 | 0,5122665 | 0,8599752 |
 
 Duruma grafiksel olarak baktığımızda,
 
@@ -351,3 +303,4 @@ Elbetteki bu testler, henüz relase edilmemiş olan beta 1 sürümü üzerinden 
 Concurrent koleksiyonlar ile ilişkili araştırmalarım devam etmekte. Örneğin şu sıralar göz kestirdiklerimden birisi olan ve aslında bu yazıda incelemek isteyipte, performans ve hız kriterine takıldığım için araştıramadığım BlockingCollection. Bunuda bir sonraki yazımda ele almaya gayret ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ConcurrentCollectionTest.rar (23,87 kb)](/assets/files/2009/ConcurrentCollectionTest.rar)
+

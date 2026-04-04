@@ -17,8 +17,6 @@ Bir süredir pek çok nesne yönelimli yazılım disiplininde önem arz eden ve 
 
 Elbetteki önemli olan, kısaltmalarının karşılıklarını bilmek değil
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 , söz konusu prensiplerin farkına vararak yazılım geliştirmek yada geliştirilen yazılım içerisinde bu prensiplerin uygulanabileceği, uygulanması gereken yerleri tespit edebilmektir. Bu hususları dikkate alarak ara sıra tasarım prensiplerini tekrar etmeye özen göstererekten, yeni tasarım prensibini incelemeye başlayabiliriz. Interface Segregation Principle (ISP)
 
 Çok hızlı bir giriş olacak ama konuya aşağıdaki sınıf diagramında görülen tipleri göz önüne alarak başlayalım.(Her zamanki gibi ilkenin özlü sözünü kavrayabilmek için örnekle başlamakta yarar olduğu kanısındayım)
@@ -97,8 +95,6 @@ Kod tarafından baktığımızda ise;
 Aslında böylesine kötü bir tasarım ile konuya başlamak istemezdim ancak ISP ilkesinin neyi öğütlediğini bilmek adına bu yeterli bir yaklaşımdır. Hedefte bir sistemin parçası olan görsel bileşenlerin uygulaması gereken kuralları bildiren IComponent isimli arayüz tipi bulunmaktadır. Görsel bileşenler olarak örneğimizde, Windows ve Web tabanlı uygulamalardaki Button kontrolleri göz önüne alınmaktadır. Ancak bir windows kontrolünün temel olarak ekrana çizdirilmesi ile, bir Web kontrolünün istemci tarafına HTML içeriği olarak Render edilmesi iki farklı ve ap ayrı fonksiyonelliktir.
 
 Dolayısıyla ISP ilkesine bu tespitten itibaren ters düşülmeye başlanmaktadır. Nitekim, IComponent arayüzünü uygulayan WinButton sınıfı içerisinde yer alan Render metodunun kesin olarak implemente edilmemesi gerekir. Hatta implemente edilmesi anlamsızdır. Bu nedenle çözüm olarak içerisinden NotImplementedException istisnasının fırlatıldığını görmekteyiz. Diğer taraftan benzer durum WebButton bileşeni içinde geçerlidir. Öyleki Web arayüzü için Render işlemi önemli iken, Draw isimli fonksiyonelliğin gerçekleştirilmemesi gerekir. Ayrıca IComponent arayüzüne yeni eklentiler yapılmak istendiğinde, Liskov Substitution ilkesine ters düşebilecek durumlarında oluşması söz konusudur. (Bknz: [Tasarım Prensipleri: Liskov Substitution](/2009/06/29/tasarim-prensipleri-liskov-substitution/)
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 ) Peki bu sorunlar bize neyi göstermektedir?
 
@@ -184,8 +180,6 @@ Görüldüğü gibi Web tarafını ilgilendiren Render fonksiyonu IWebComponent 
 ![blg40_3.jpg](/assets/images/2009/blg40_3.jpg)
 
 Bu ilke ile ilişkili olaraktan internet ve basılı kaynaklarda çok çok güzel örnekler yer almaktadır. Örneğin Object Oriented Design isimli sitede bir şirketin çalışanları göz önüne alınmıştır. Çalışanlar yemek yiyen insanlar ve yemek yemeyip sürekli çalışan Robotlardan oluşmaktadır.
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Ancak ilk etapta tasarlanan herşeyi içinde barındıran şişman arayüz (Fat Interface), yemek yeme fonksiyonunu barındırdığı için, Robot'larında gerekmediği halde söz konusu işlevselliği uygulaması zorunlu olmuştur ki bu andan itibaren ISP ilkesine ters bir durum oluşmaktadır. Bu yazıyıda fikir vermesi açısından incelemenizi tavsiye ederim.
 

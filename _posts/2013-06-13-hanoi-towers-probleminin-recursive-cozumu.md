@@ -17,5 +17,3 @@ Bu görsel dersimizde eğlenceli Matematik oyunlarından birisi olan [Hanoi Kule
 [Youtube Link](https://www.youtube.com/watch?v=Gqgy_lD5rrc)
 
 Faydalı olması dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_207.png)

@@ -95,8 +95,6 @@ Product.xsd içeriği;
 
 Tahmin ettiğimiz ve beklediğimiz gibi bir çıktı üretilmiştir. Ancak Information özelliğine string bir değer atanmasının sonucu oluşan çıktı biraz farklıdır. Bu noktada dikkatle duralım
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 ProductV2.xml içeriği;
 
 ```xml
@@ -138,7 +136,7 @@ Bu sefer Information özelliğine serileştirilebilir (ki DataContract ve DataMe
 
 Bu istisna mesajından anlamamız gereken özlü söz şudur;
 
-"Serileştirici tiplerin, serileştirecekleri nesne örneklerinin özelliklerinin tiplerinin neler olabileceğini açık bir şekilde bilmeye ihtiyaçları vardır. " ![Wink](/assets/images/2009/smiley-wink.gif)
+"Serileştirici tiplerin, serileştirecekleri nesne örneklerinin özelliklerinin tiplerinin neler olabileceğini açık bir şekilde bilmeye ihtiyaçları vardır. "
 
 Her ne kadar primitive bir tip kullanıldığında sorun olmasa da, yukarıdaki örnekte görüldüğü gibi bilinmeyen bir tipin atanmasında sorunlar yaşanabilir. Üstelik belkide atanan verinin tipinin, serileştirici tarafından varsayılan olarak atanan bir tip olmaması da gerekebilir. Söz gelimi Information özelliğine noktasız sayısal bir değer atandığında büyüklüğüne göre varsayılan olarak int tipi göz önüne alınacak ve XML içeriğinde bu yönde bir tanımlama olacaktır. Ki karşı tarafta belkide bu sayısal değerin string olarak değerlendirilmesi isteniyor olabilir! Upsss...
 
@@ -146,7 +144,7 @@ Peki serileştiricinin serileştirdiği tipin içeriğinde kullanılabilecek tip
 
 Yöntemlerden birisi ve belkide en basiti, aşağıdaki kod parçasında olduğu gibi serileştirilecek tip için KnownType niteliğini kullanmaktır.
 
-Kişisel Not: Başka yöntemlerde bulunmaktadır. Örneğin tip içerisinde Type[] dizisi döndüren bir metodun adı KnownType niteliğinde kullanılarak birden fazla tipin bildirimi yapılabilir. Ya da servis sözleşmesinde ServiceKnownType niteliğinde bu bildirim yapılabilir. İşte size güzel bir araştırma konusu. Bu tekniklerin nasıl uygulanabileceğini araştırabilirsiniz. Özellikle ilk teknik dikkate değerdir. Yani bir metod aracılığıyla, KnowType niteliğine birden fazla tipin Type[] dizisi olarak bildirilmesi. Dikkat edilmesi gereken tek nokta Type[] dizisi döndüren metodun static olmasını sağlamaktır. Hatta buradan bir adım öteye gidip generic bir modelin KnownType niteliğine söz konusu metod yardımıyla aktarılması dahi sağlanabilir. Bu kadar ipucu yeter. Haydi klavye başına ![Wink](/assets/images/2009/smiley-wink.gif)
+Kişisel Not: Başka yöntemlerde bulunmaktadır. Örneğin tip içerisinde Type[] dizisi döndüren bir metodun adı KnownType niteliğinde kullanılarak birden fazla tipin bildirimi yapılabilir. Ya da servis sözleşmesinde ServiceKnownType niteliğinde bu bildirim yapılabilir. İşte size güzel bir araştırma konusu. Bu tekniklerin nasıl uygulanabileceğini araştırabilirsiniz. Özellikle ilk teknik dikkate değerdir. Yani bir metod aracılığıyla, KnowType niteliğine birden fazla tipin Type[] dizisi olarak bildirilmesi. Dikkat edilmesi gereken tek nokta Type[] dizisi döndüren metodun static olmasını sağlamaktır. Hatta buradan bir adım öteye gidip generic bir modelin KnownType niteliğine söz konusu metod yardımıyla aktarılması dahi sağlanabilir. Bu kadar ipucu yeter. Haydi klavye başına
 
 ```csharp
 [DataContract]
@@ -200,3 +198,4 @@ Known Type sorunsalının bir sorunsal olarak değerlendirilmesinin ise iki sebe
 Birincisi, SOA düşünce tarzına aykırı olduğu görüşününün yaygın olmasıdır. Nitekim Shared Contract'ların söz konusu olduğu senaryolarda Interoperability sağlanırken, XML içerisindeki tipin karşı tarafça anlaşılabilir olması gerekmektedir. İkinci olarak serileştirme ve ters serileştirme işlemleri sırasında Known Type'a göre Reflection mekanizmasının devreye girmesi, XML üzerinde tip ile ilişkili bilgi edinme ve yazma gibi operasyonların söz konusu olmasından kaynaklanan performans kayıpları değerlendirilmektedir. Bu iki sebep nedeniyle zorunlu kalınmadıkça Known Type kullanımından kaçınılması önerilmektedir. Peki neden böyle bir konuya değindik? Aslında bir sonraki yazımıza zemin hazırlamaya çalışıyoruz. Nitekim WCF 4.0 tarafında bu konu ile ilişkili bir yenilik gelmesi muhtemeldir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [KnownTypes.rar (22,64 kb)](/assets/files/2009/KnownTypes.rar)
+

@@ -31,8 +31,6 @@ Ne varki bu servislerden birisi Windows Communication Foundation yapısında ike
 
 WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların servis içerisine nasıl akıtılacağını [bu yazımızda](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/) incelemiştik hatırlayacağınız üzere. Ancak işin içerisine eski stilde yazılmış bir XML Web Service girince, durum biraz farklılaşıyor
 
-![Who me?](/assets/images/2013/wlEmoticon-whome_7.png)
-
 Ne yazık ki, istemci tarafında başlatılan Transaction’ ın kod yardımıyla XML Web Service içerisindeki ilgili Web Method’ a aktarılması gerekmektedir. Aksi durumda bir çalışma zamanı hatası alınmıyor olmasına karşın, bir dağıtık Transaction’ ın ilgili Web Method içerisindeki CRUD (Create Retrieve Update Delete) işlemini ele alamadığı görülür. Bu görünmez hata fark edilmediği takdirde, kötü sonuçlara neden olabilir tahmin edeceğiniz üzere.
 
 ## Örnek
@@ -312,7 +310,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 </Activity>
 ```
 
-Ne yazık ki XML Web Service’ ler referans olarak bir Workflow projesine eklendiklerinde, Toolbox üzerinde aynı WCF Servislerinde olduğu gibi bir component olarak görülmemektedir. Tabi bunu Visual Studio 2012 için konuştuğumuzu tekrardan hatırlatalım. (Eskiye olan support’ un kalktığını bu noktada bariz bir şekilde görebiliriz aslında ![Sad smile](/assets/images/2013/wlEmoticon-sadsmile_14.png))
+Ne yazık ki XML Web Service’ ler referans olarak bir Workflow projesine eklendiklerinde, Toolbox üzerinde aynı WCF Servislerinde olduğu gibi bir component olarak görülmemektedir. Tabi bunu Visual Studio 2012 için konuştuğumuzu tekrardan hatırlatalım. (Eskiye olan support’ un kalktığını bu noktada bariz bir şekilde görebiliriz aslında)
 
 ![htt_5](/assets/images/2013/htt_5.png)
 
@@ -397,10 +395,9 @@ Ancak veritabanına gidilip ilgili tablolar sorgulandığında, iki Insert işle
 
 Görüldüğü üzere biraz kodlama yardımıyla WCF ve XML Web Servislerini, TransactionScope bileşeni içerisinde bir arada kullanabildik. Tabiki senaryonun genişletilmesi ve geliştirilmesi gerekiyor. Örneğin Savepoint kullanımları durumu var. Ya da Long Running Process söz konusu ise Persistence sisteminin bu tip vakalarda nasıl tepki vereceği. Hatta daha da zor bir senaryo var. Ya bu XML Web Service’ ler daha önceden yazılmışlar ve sizin müdahale alanınız dışındaysalar
 
-![Confused smile](/assets/images/2013/wlEmoticon-confusedsmile_22.png)
-
 Şimdilik bu kötü kokan vakaları bir kenara bırakıp önümüze bakalım derim. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_AtomicTransactions.zip (117,25 kb)](/assets/files/2013/HowTo_AtomicTransactions.zip)
 
 Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır.
+

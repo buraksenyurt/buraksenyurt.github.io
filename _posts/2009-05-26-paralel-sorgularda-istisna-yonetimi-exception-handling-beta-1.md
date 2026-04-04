@@ -108,8 +108,6 @@ namespace SequentialPLINQ
 
 Visual Studio 2010 Professional Beta 1 ile geliştirilen bu kod parçasında, Product isimli bir sınıftan yararlanılmaktadır. Product tipine ait veriler, SQL sunucusu üzerindeki Product tablosundan alındıktan sonra, generic List koleksiyonu içerisinde tutulmakta ve sonrasında ise paralel sorgulamaya tabi tutulmaktadır. Burada ayrıca dikkat edilmesi gereken bir noktada, sorgulama sırasında FindSellPrice isimli metodun çağırılması ve parametre olarak, sorgunun t anındaki Product nesnesine ait ListPrice ile StockLevel değerlerinin gönderilmesidir. Dikkat edileceği üzere FindSellPrice metodu içerisinde güne göre ürünlerde indirim uygulanmasını hedef alan bir formül yer almaktadır. Formülü tamamen kafadan uydurduğumu ifirat etmek isterim. Zaten sizde bunu anlamışsınızdır.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Asıl varmak istediğim nokta, StockLevel değerlerinin 497 ve 503 nolu ürünler için bilinçli olarak sıfıra set edilmiş olmasıdır. Bu nedenle bölme işlemi sırasında bir istisna oluşması kaçınılmazdır.
 
 (Yani kendi kendimize kaşınıp kod içerisine bir bubi tuzağı koymuş durumdayız. ![blg22_3.jpg](/assets/images/2009/blg22_3.jpg))

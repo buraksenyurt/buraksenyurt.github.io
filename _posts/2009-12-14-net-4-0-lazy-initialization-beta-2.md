@@ -12,8 +12,6 @@ Eminim hepimiz arada sırada tembellik yapıyor ve ilk bulduğumuz rahat köşey
 
 ![blg96_Giris.jpg](/assets/images/2009/blg96_Giris.jpg)
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Siz hiç gözleri açık uyuyabilen insanlar gördünüz mü? Bunun adı düpe düze tembellik olabiliyor bazen.
 
 İhtiyaç dışında uyumak ve hiç bir şeyle uğraşmadan öylece kala kalmak tembelliğin doruk noktaya ulaştığı anlar olarak düşünülebilir. Ama gelin görün ki, programatik ortamda da nesnelerin zaman zaman tembellik etmesi gerekmektedir. Bugünkü yazımızda bu konuyu değerlendiriyor olacağız. Peki neymiş şu Lazy Initialization bir bakalım.
@@ -324,7 +322,7 @@ Bu senaryoya göre nesnenin hangi Thread içerisinde oluşturulduğunun hiç bir
 
 Aslında Lazy tipinin isThreadSafe parametresinin değeri varsayılan olarak true'dur ve istenirse yapıcı metod içerisinde değiştirilebilir. Özelliğe false değer atanması halinde genellikle ilgili nesnenin tek bir thread içerisinde kullanıldığı varsayılır ve bu azda olsa performans kazanımına neden olur. Ancak birden fazla thread'in aynı Lazy nesnesini kullanacağı hallerde koordinasyon daha büyük önem kazanmaktadır ve bu nedenle isThreadSafe özelliğinin değerinin true olarak bırakılması önerilir.
 
-Kişisel Not: Özellikle birden fazla Thread'in aynı nesnenin kendi içlerinde farklı kopyalarını alarak kullanmaları istendiği durumda.Net 4.0 ile gelen ThreadLocal tipinden yararlanılabilir ki.Net 3.5' te bunun için ThreadStatic isimli bir nitelikten yararlanılmaktadır. İşte size güzel bir araştırma konusu ![Laughing](/assets/images/2009/smiley-laughing.gif)
+Kişisel Not: Özellikle birden fazla Thread'in aynı nesnenin kendi içlerinde farklı kopyalarını alarak kullanmaları istendiği durumda.Net 4.0 ile gelen ThreadLocal tipinden yararlanılabilir ki.Net 3.5' te bunun için ThreadStatic isimli bir nitelikten yararlanılmaktadır. İşte size güzel bir araştırma konusu
 
 Buraya kadar anlattıklarımıza göre dikkat edilmesi gereken bazı noktalar olduğuda aşikardır;
 
@@ -333,8 +331,9 @@ Buraya kadar anlattıklarımıza göre dikkat edilmesi gereken bazı noktalar ol
 - Multi-Thread senaryolarda isThreadSafe özelliğini true olarak bırakmak doğru bir yaklaşımdır.
 - Single-Thread senaryolarda isThreadSafe özelliği performans kazanımı adına istenirse false bırakılabilir.
 - Value özelliğine erişildiğinde oluşabilecek bir istisna halinde kodun ilerleyen kısımlarında Value özelliğine giden her çağrı için aynı Exception örneği söz konusu olacaktır. Yani Value özelliğinin ilk çağırıldığı yerde oluşacak bir istisna devam eden Value çağrılarına da akacaktır. Bu Multi-Thread senaryolarda da isThreadSafe özelliğinin değeri true bırakıldığı sürece de geçerlidir.
-- Çekinilmesi gereken nokta şudur; isThreadSafe özelliğine false değer verilmesi halinde thread'ler arasında senkronizasyon ortadan kalkacağından, bir Thread'in exception gördüğü noktada diğer bir thread kullanılabilir bir Value özelliği ile karşılaşabilir. Aman dikkat.![Sealed](/assets/images/2009/smiley-sealed.gif)
+- Çekinilmesi gereken nokta şudur; isThreadSafe özelliğine false değer verilmesi halinde thread'ler arasında senkronizasyon ortadan kalkacağından, bir Thread'in exception gördüğü noktada diğer bir thread kullanılabilir bir Value özelliği ile karşılaşabilir. Aman dikkat.
 
 Umarım faydalı bir yazı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [BeLazy.rar (28,31 kb)](/assets/files/2009/BeLazy.rar)
+

@@ -24,8 +24,6 @@ Bu işlemlerin ardından, DomainService'in erişip istemci tarafına sunacağı 
 
 Şunu hemen belirteyim; EDM içeriğini Asp.Net Web Project üzerinde oluşturmalıyız. EDM diagramından görüldüğü üzere Categories, Products ve Suppliers tabloları için gerekli Entity tipleri otomatik olarak üretilmiştir. Böylece, veriye erişimi sağlayacak olan katmanı bir nevi hazırlamış bulunuyoruz. Bu işlemin ardından proje bir kere derlendikten sonra, istemciye veriyi sunacak olan DomainService içeriğinin hazırlanmasına başlanabilir; ki buda son derece kolaydır
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Tek yapmamız gereken, yine web uygulaması projesi içerisine, aşağıdaki şekildende görüldüğü gibi bir DomainService öğesi eklemektir.
 
 ![blg15_4.gif](/assets/images/2009/blg15_4.gif)
@@ -226,3 +224,4 @@ DataGrid kontrolü, bu kategoriye bağlı ürünler ile doldurulacaktır. İşte
 Böylece geldik bir yazımızın daha sonuna..Net RIA Servisleri ile ilişkili araştırmalarıma devam ettikçe, öğrendiklerimi sizlerle paylaşmaya devam ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloRIAServices.rar (1,60 mb)](/assets/files/2009/HelloRIAServices.rar)
+

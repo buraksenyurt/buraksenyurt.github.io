@@ -13,14 +13,9 @@ Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş r
 
 ![delegating](/assets/images/2012/delegating.jpg)
 
-
-![Laughing](/assets/images/2012/smiley-laughing.gif)
-
 Konumuz işlerimizi birilerine yönlendirip yan gelip yatmak değil elbette, ama ona benzer olduğunu ifade edebilirim.
 
 Bu adamın görevlerini başkaların atadıktan sonra, söz konusu işler yapılırken başka işlere (örneğin koltuğunda şöyle bir geriye doğru yaslanarak vakit geçirmek) yönelebildiğine odaklanmaya çalışalım..Net Framework tarafındaki Delegate tipleri de benzer bir ihtiyacı karşılamıyor mu?
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Asenkron olarak fonksiyonların çağırılabilmesini sağlamak (Elbette başka yetenekleri de var ama bu en önemlileri arasında sayılabilir)
 
@@ -164,8 +159,6 @@ Sonuç olarak üretilen Async uzantılı asenkron çağırım metodu ve servis o
 
 Gayet güzel
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Buraya kadar ki kısımda zaten pek bir sıkıntı yok açıkçası. Ancak şöyle bir durum da söz konusu,
 
 > Servise eş zamanlı olarak gelen çağrılarda ve tek bir servis örneğinin (Instance) oluşmasının tercih edildiği durumlarda, servis üzerindeki bu yük nasıl asenkronize edilebilir?
@@ -273,8 +266,6 @@ Biraz karmaşık gözüken bir desen olduğunun farkındayım
 ![Undecided](/assets/images/2012/smiley-undecided.gif)
 
 Ancak kalıp olarak düşünüldüğünde pek çok servis operasyonuna kolayca entegre edilebilecek bir yapı olarak düşünülebilir. Elbette bu konuyu bir de,.Net Framework 4.5’ e entegre olarak gelen yeni async ve await anahtar kelimelerini göz önüne alarak değerlendirmekte yarar vardır. Bunu da ilerleyen zamanlarda incelemeyi planlamaktayım
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Böylece geldik bir yazımızın daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 

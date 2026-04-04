@@ -19,10 +19,6 @@ WCF 4.5 tarafında gelen yeniliklerden birisi de svcutil komut satırına eklene
 
 Bu örnekte WSDL dökümanı XSD’ leri de bünyesinde barındırmaktadır. Eğer XSD’ ler harici dosyalarda tutulmaktaysalar onları da komut satırında belirtmeniz gerekecektir. Aşağıdaki fotoğrafta görüldüğü gibi
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_140.png)
-
 ![tfi79_2](/assets/images/2013/tfi79_2.png)
 
 Başka bir ipucunda görüşmek dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_140.png)

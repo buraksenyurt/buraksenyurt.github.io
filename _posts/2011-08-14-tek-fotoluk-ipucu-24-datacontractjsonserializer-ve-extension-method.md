@@ -12,8 +12,7 @@ categories:
 ---
 Extension metodlar çok ama çok işimize yarayabiliyor. Örneğin serileştirilebilir herhangibir tipin Json formatındaki çıktısının string tipinden döndüren bir extension metodu geliştirebilirsiniz. Nasıl mı?
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_42.png)
-
 ![PhotoTrick24](/assets/images/2011/PhotoTrick24.png)
 
 [JsonExtensions.rar (23,64 kb)](/assets/files/2011/JsonExtensions.rar)
+

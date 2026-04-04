@@ -7,7 +7,7 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Geçtiğimiz günlerde çok ilginç bir rüya daha gördüm. ![Laughing](/assets/images/2009/smiley-laughing.gif) Ne zamandır paylaşmayı planlıyordum. Kısmet bu yazıymış. Rüyamda bir uçak yolculuğu ile Japonya'nın başkenti Tokyo'ya gidiyordum. Antartika üzerinden önce Hawai'ye oradanda Eminönü iskelesine uğradıktan sonra bir anda kendimi Tokyo'da buldum. E rüya tabi...Bir süre Japonya'ya vizesiz gidilebildiğini duymuştum.
+Geçtiğimiz günlerde çok ilginç bir rüya daha gördüm. Ne zamandır paylaşmayı planlıyordum. Kısmet bu yazıymış. Rüyamda bir uçak yolculuğu ile Japonya'nın başkenti Tokyo'ya gidiyordum. Antartika üzerinden önce Hawai'ye oradanda Eminönü iskelesine uğradıktan sonra bir anda kendimi Tokyo'da buldum. E rüya tabi...Bir süre Japonya'ya vizesiz gidilebildiğini duymuştum.
 
 ![blg50_3.jpg](/assets/images/2009/blg50_3.jpg)
 
@@ -48,4 +48,3 @@ Performansı arttırma maliyetinin daha ucuz olması...
 
 Başarmıştım. Farkettiğim farkları, bilinen farkları söylemiştim. Peki ne oldu? Tokyo'ya girebildim mi? Hayır...Çalar saatin sesi ile uyanıp işe koyuluverdim.
 
-![Wink](/assets/images/2009/smiley-wink.gif)

@@ -9,11 +9,7 @@ categories:
 ---
 WCF 4.0 ile birlikte gelen yenilikler bitmek bilmiyor.
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Aslında irili ufaklı bu değişikliklerin ilk bölümünde daha çok basitleştirilmiş konfigurasyon (Simplified Configuration) özellikleri üzerinde durmaya çalışıyoruz. Bu değişiklikler irili ufaklı olsalarda WCF çalışma zamanında (WCF Runtime) ciddi geliştirmelerin yapıldığını göstermektedir. Gelen değişikliklerden biriside Asp.Net Hosting tarafındadır. Aslında konunun sonuna geldiğimizde "Ben bunu bir yerlerden hatırlıyorum" diyebilirsiniz.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 İlk olarak.Net Framework 4.0 öncesinde Asp.Net Hosting tabanlı olaraktan bir WCF servisini sunmak için neler yaptığımıza bir bakalım;
 
@@ -86,8 +82,7 @@ Hatta WSDL içeriğine bakacak olursak, varsayılan Endpoint bilgisininde aşağ
 
 Peki bu yenilikler size neyi çağrıştırıyor?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Xml Web Servislerini hatırlayın. Sadece WebService ve WebMethod nitelikleri (attribute) ile imzalanan tip ve üyeleri söz konusudur. Web.config içerisinde herhangibir bildirim yapmaya gerek yoktur. Dolayısıyla WCF için Asp.Net Hosting tarafına, Xml Web Servislerindeki çalışma zamanı kolaylığının getirildiğini düşünebiliriz.
 
 [SimpleAspNetHosting.rar (12,40 kb)](/assets/files/2009/SimpleAspNetHosting.rar)
+

@@ -13,8 +13,7 @@ categories:
 ---
 Concurrent Collections deyince aklımıza Thread-Safe koleksiyon tipleri gelmelidir. Söz gelimi bir ConcurrentBag koleksiyonunun basit kullanımına bir örneği aşağıdaki gibi verebiliriz.
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_26.png)
-
 ![PhotoTrick8](/assets/images/2011/PhotoTrick8.png)
 
 [Concurrency.rar (23,94 kb)](/assets/files/2011/Concurrency.rar)
+

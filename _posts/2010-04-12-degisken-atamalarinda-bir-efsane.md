@@ -79,8 +79,6 @@ Hımmm...Enteresan bir durum söz konusu sanırım.
 
 Eşitliğin en sağında yer alan z isimli değişken aslında float tipinden tanımlanmıştır. Ardından hemen solunda yer alan double tipinden değişkene aktarılmıştır. y isimli değişken double tipindendir. Son olarak eşitliğin en solunda yer alan x isimli object tipinden değişkene bir atama yapılarak 3.14 değeri en sağdan en soldaki değişkene doğru taşınmıştır. Lakin değişkenin tipi eşitliğin en sağından en soluna kadar korunamamıştır.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Ekran çıktısına dikkat edilecek olursa, x değişkeni gelen değeri float tipi yerine double tipi olarak ele almıştır. Yani x=y=z atamasında en soldaki x değişkeninin tipi y'nin tipine göre belirlenmektedir. Bu durumda eşitliğin en sağındaki değişkenin tipinin en soldaki object tipine taşınmasında bir anlamda bozulma olduğunu düşünebiliriz. Konuyu biraz daha ileri götürelim ve bu kez aşağıdaki kod parçasını göz önüne alalım.
 
 Vaka 3;
@@ -132,3 +130,4 @@ burak.Name== null için False değer dönmüştür ve bu beklediğimiz sonuçtur
 Sonuç olarak bu yazıda bahsettiğimiz şekliyle gerçekleştirilen atamalarda, eşitliğin en sağındaki değerin sola doğru taşındığı efsanesinin tam olarak doğru olmadığı ispatlanmış bulunmaktadır. Nitekim ilk vakada eşitliğin en sağından soluna aynı değer başarılı bir şekilde atanmaktadır. Ancak ikinci vakaya göre aslında en soldaki değişkenin bir sağındakinin tipine büründüğü de görülmektedir. Üstelik Vaka 3' e göre en soldaki değişken en sağdan atanan değere bürünmüş ve bir sağındakini kaale bile almamıştır...Kafanız karıştı mı? Bakalım başka ne gibi efsaneler var. İlerleyen yazılarda değinmeye çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AssignMyth_RC.rar (20,03 kb)](/assets/files/2010/AssignMyth_RC.rar)
+

@@ -123,11 +123,7 @@ Ancak bu yöntem için de bir dezavantaj da söz konusu olabilir. Uygulamada kul
 
 Bu açılardan bakıldığında Entity Framework'deki doğrulama kontrolleri, ASP.Net tarafındaki hata yönetimini andırmaktadır. Asp.Net tarafında bildiğiniz üzere sırasıyla Metod, Sayfa (Page) ve uygulama (Application-global.asax.cs) seviyesinde hata kontrolleri gerçekleştirilir. EF'de de property'den başlayan, sınıf içi bir metod ile devam eden ve son olarak context nesnesi üzerinde ele alınabilen doğrulama enjekte noktaları mevcuttur. Hangi sırada çalıştıklarını merak ediyorsanız Debug edip denemenizi öneririm
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_123.png)
-
 Belki de bu sıra duruma göre değişiklik arz, eder kim bilir
-
-![Smile](/assets/images/2012/wlEmoticon-smile_55.png)
 
 ![efv_3](/assets/images/2012/efv_3.png)
 
@@ -302,15 +298,11 @@ GetValidationErros metodu IEnumerable tipinden bir referans döndürmektedir. Ç
 
 Peki özellikle attribute seviyesinde yapılan doğrulama kontrollerini göz önüne alırsak, kendi özel kriterlerimizi içeren nitelikler tanımlayamaz mıyız? Elbetteki böyle bir esnekli var
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_123.png)
-
 Nitekim System.ComponentModel.DataAnnotations isim alanı altında yer alan doğrulama kriterlerinin ortak özelliği, ValidationAttribute niteliğinden türemiş olmalarıdır.
 
 ![efv_5](/assets/images/2012/efv_5.png)
 
 ValidationAttribute niteliği de doğal olarak Attribute tipinden türemektedir. Öyleyse kendi doğrulama niteliklerimizi yazmanın bir yolunu bulduğumuzu ifade edebiliriz
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_123.png)
 
 Söz gelimi Author tipimize SocialSecurityNumber isimli string bir özellik eklediğimizi ve buraya girilen değerlerin geçerli bir numara olup olmadığını denetleyecek bir doğrulama niteliği geliştirmek istediğimizi farz edelim. Aşağıdaki şekilde ilerleyebiliriz.
 

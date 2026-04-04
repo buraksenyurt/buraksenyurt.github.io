@@ -107,8 +107,6 @@ Görüldüğü üzere outputCacheSettings elementi içerisinde iki farklı önbe
 
 Uygulama basit bir kaç ayarlamaya sahip olmasına rağmen geliştirme ve testler sırasında beklenmedik pek çok hata ile karşılabiliriz.
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 İşte karşılaşabileceğimiz bir kaç hata ve önerilen çözümler (ki bu çözümlerin bir kısmı must olarak görülmelidir)
 
 - Web.config dosyasında targetFrameworkMonikor değerinin set edildiğinden emin olmalıyız. Edilmediği takdirde çalışma zamanında alınacak hata mesajı: "The application domain or application pool is currently running version 4.0 or later of the.NET Framework. This can occur if IIS settings have been set to 4.0 or later for this Web application, or if you are using version 4.0 or later of the ASP.NET Web Development Server. The element in the Web.config file for this Web application does not contain the required 'targetFrameworkMoniker'attribute for this version of the.NET Framework (for example, ''). Update the Web.config file with this attribute, or configure the Web application to use a different version of the.NET Framework."
@@ -133,8 +131,7 @@ Görüldüğü gibi istemciye gönderilen içerik değişmemiştir. Nitekim şu 
 
 Böylece sistemin çalıştığını ispat etmiş olduk
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Output Cache özelliği REST tabanlı WCF servislerinde, perfomansı arttırıcı bir unsur olarak görülebilir. Nitekim sunucu ve istemci arasındaki gidiş gelişlerde, sürekli hesaplanması gerekmeyen ve çoğunlukla sabit olan içeriklerin tekrardan üretilmesi yerine belirli zaman dilimleri boyunca ön bellekten karşılanması hem servisin işlem yükünü azaltacak hem de hızlı cevap verme sürelerini doğuracaktır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RESTSupport.rar (37,47 kb)](/assets/files/2009/RESTSupport.rar)
+

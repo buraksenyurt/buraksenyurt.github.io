@@ -11,8 +11,6 @@ Ado.Net Entity Framework 4.0 ile birlikte gelecek/gelmekte olan yeniliklerden bi
 
 İlk olarak kendimize kobay bir Stored Procedure seçelim
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu amaçla Adventure Works veritabanında yer alan uspGetManagerEmployees Stored Procedure'ünü kullanabiliriz. Bu procedure parametre olarak ManagerID isimli int tipinden bir dğer almakta ve aşağıdaki örnek çıktıyı üretmektedir.
 
 ![blg101_SpExec.gif](/assets/images/2009/blg101_SpExec.gif)

@@ -19,8 +19,6 @@ Ama tabi zaman zaman uzmanlık alanım dışındaki konulara da merak salmıyor 
 
 Geçtiğimiz günlerde Feedreader üzerinden blogları şöyle bir tararken Windows Phone üzerinde kullanılabilecek olan veri depolama seçenekleri ile ilişkili kısa bir nota rast geldim. Özellikle Isolated Storage tabanlı depolamalar üzerinde durulmaktaydı. Derken kendimi konuyu araştırır halde buldum. İşte bu yazının amacı elde edilen sonuçlar ve hoşunuza gidecek (hoşuma gidecek) bir örneği kaleme almak
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_116.png)
-
 > Yıllar yıllar önce değil ama 2006 yılında Netron'da ilk Freelance eğitimimi bir ilaç firması (Boehringer Ingelheim) için vermiş ve Windows Mobile 6.5 üzerinde yazılım geliştirme anlatmıştım.
 > Compact.Net Framework ile ilişkili örnekleri ve konuları firmanın sağladığı HP marka akıllı telefonlarda ele almıştık. Styles Pen'ler ile çalışan ve kapasite olarak (bellek, işlemci hızı, ekran çözünürlüğü vb) sınırlı cihazlarda. Kim bilebilirdi ki iş bu noktaya kadar gelecek.
 > iPhone'lar, Blackberry'ler, Samsung Galaxy'ler ve tabi Windows Phone'lar. O zamanlarda Java tabanlı akıllı telefonlar yine.Net Compact Framework'lü olanlara göre çok daha iyiydi. Lakin bir süredir Windows Phone tarafının çok daha önemli bir atılım yaptığını ve arayı hızla kapattığını görüyoruz. En azından teknoloji ve yazılım geliştirme yetenekleri açısından.
@@ -218,7 +216,7 @@ MainPage.XAML
 </phone:PhoneApplicationPage>
 ```
 
-Görsel arabirim de çok özel bir şey yok aslına bakarsanız. Dikkate değer nokta ListBox kontrolünün bir DataTemplate ile ilişkilendirilmiş olmasıdır. ListBox kontrolü, Context nesnesinin ilgili özelliğine bağlandıktan sonra (Binding), içeride yer alan TextBlock bileşenleri de sırasıyla Name, Surname ve Salary özelliklerine bağlanmıştır (CustomerId’ yi unutmuşum onu da siz ekleyiverin ![Smile](/assets/images/2012/wlEmoticon-smile_48.png)) Şimdi arka plan kodlarını yazarak örneğimizi genişletmeye devam edebiliriz.
+Görsel arabirim de çok özel bir şey yok aslına bakarsanız. Dikkate değer nokta ListBox kontrolünün bir DataTemplate ile ilişkilendirilmiş olmasıdır. ListBox kontrolü, Context nesnesinin ilgili özelliğine bağlandıktan sonra (Binding), içeride yer alan TextBlock bileşenleri de sırasıyla Name, Surname ve Salary özelliklerine bağlanmıştır (CustomerId’ yi unutmuşum onu da siz ekleyiverin) Şimdi arka plan kodlarını yazarak örneğimizi genişletmeye devam edebiliriz.
 
 ```csharp
 using System; 
@@ -275,8 +273,6 @@ Ekleme işlemi tamamlandıktan sonra ise ListBox kontrolünün ItemsSource özel
 Görüldüğü üzere örnek olarak eklenen Customer tipleri ListBox kontrolü içerisine basılmıştır.
 
 Peki gerçekten de Isolated Storage alanı içerisinde sdf veritabanı oluşturulmakta mıdır? Örneğin başarılı bir şekilde çalışması nedeni ile bunun doğru olduğu görülmektedir ama biz yine de bakmak istediğimizi farz edelim
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_116.png)
 
 Bunu görmek için Isolated Storage içeriğine kod yardımıyla da bakabiliriz. Ama benim önerim Codeplex sitesinde yayınlanan ([http://wp7explorer.codeplex.com/)](http://wp7explorer.codeplex.com/)) Windows Phone 7 Isolated Storage Explorer'ın kullanılması olacak. Bu ürünü kurduktan sonra Visual Studio'nun View menüsüne Isolated Storage Explorer penceresinin ilave edildiği gözlemlenebilir (View->Other Windows->WP7 Isolated Storage Explorer). Tabi buraya çalışmakta olan bir Emulator’ ü ttach’ lamak için uygulamamıza IsolatedStorageExplorer assembly'ını referans etmemiz ve Appl.xaml.cs içerisinde aşağıda görülen kod değişikliklerini yapmamız gerekmektedir.
 

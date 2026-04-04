@@ -28,8 +28,6 @@ gibi gerçek hayat senaryoları söz konusu olabilir.
 
 Tahmin edeceğini üzere varmakta olduğumuz nokta bu 3 basit senaryoda benzer vakanın ve ihtiyaçların olmasıdır. Buda bizi bir tasarım kalıbına götürmektedir. Observer tasarım deseni.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu desen o kadar yaygındır ki onu;
 
 - Model View Controller (MVC) içerisinde
@@ -47,7 +45,7 @@ Burada bilgilendirmeyi yapacak olan yayımcılar (Publishers) ve bunu dinleyecek
 
 ![blg44_5.gif](/assets/images/2009/blg44_5.gif)
 
-(Bu arada sınıf diagramı biraz farklı görünebilir. Nitekim şu anda bu yazıyı kayınvalidemin bilgisayarında yazmaktayım. Makine Visual Studio yok belki ama SharpDevelop sağolsun her ihtiyacımı görüyor. ![Wink](/assets/images/2009/smiley-wink.gif))
+(Bu arada sınıf diagramı biraz farklı görünebilir. Nitekim şu anda bu yazıyı kayınvalidemin bilgisayarında yazmaktayım. Makine Visual Studio yok belki ama SharpDevelop sağolsun her ihtiyacımı görüyor.)
 
 Ve kodlarımız;
 
@@ -202,3 +200,4 @@ Modelde dikkat edilmesi gereken noktalardan biriside, Subject ve Observer tipler
 [Youtube Link](https://www.youtube.com/watch?v=X7NYBDeB2eM)
 
 [Observer.rar (29,47 kb)](/assets/files/2009/Observer.rar)
+

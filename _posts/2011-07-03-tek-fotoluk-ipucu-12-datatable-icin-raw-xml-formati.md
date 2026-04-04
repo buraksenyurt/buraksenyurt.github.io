@@ -11,7 +11,7 @@ categories:
 ---
 Peki elinizde bir DataTable var ve siz bunun Raw XML formatındaki çıktısını istemcilere vermek istiyorsunuz. Ne yaparsınız?
 
-Not: WcfTestClient istemcisine güvenmeyin. XElement tipinin geriye döndürelemeyeceğini söyleyerek örneği test etmenize izin vermez. Bu sizi yanıtlmasın. ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_30.png)
+Not: WcfTestClient istemcisine güvenmeyin. XElement tipinin geriye döndürelemeyeceğini söyleyerek örneği test etmenize izin vermez. Bu sizi yanıtlmasın.
 
 ![PhotoTrick12](/assets/images/2011/PhotoTrick12.png)
 

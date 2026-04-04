@@ -184,10 +184,9 @@ Uygulamayı çalıştırdığımızda aşağıdaki sonucu alırız.
 
 Görüldüğü gibi emir modeli general üzerinden uygulandığı için organizasyonda generale bağlı olan herkese iletilebilmektedir. Aslında son derece kolay ve kullanım alanı geniş olan bir deseni inceledik. Ancak Console uygulamasıda olsa eksik olan kısımlar var gibi. Söz gelimi hiyerarşiye göre askerlerin ekrana girintili olarak yazdırılması sağlanabilir.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Hatta bunu bir WPF veya Windows uygulamasında görsel olarak yapmaya çalışmanızı öneririm. Bu mukaddes görevleride sizlere bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Not: Desene ait görsel anlatım en yakın zamanda eklenecektir.
 
 [CompositePattern.rar (13,44 kb)](/assets/files/2009/CompositePattern.rar)
+

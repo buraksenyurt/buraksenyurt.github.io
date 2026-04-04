@@ -239,7 +239,7 @@ Elde edilen Item öğesinin DownloadFile isimli bir fonksiyonu da bulunmaktadır
 
 ![tfsvc_4](/assets/images/2013/tfsvc_4.png)
 
-Dikkat edileceği üzere Default Collection altındaki bir Team Project’ in içerisinde yer alan C# kod dosyalarının temel bilgileri çekilebilmiştir. Bu bilgiler arasında, Item ve Change Set numarası ile Server üzerinde tutulan Full Path bilgisi yer almaktadır. Hatta istenirse son Check-In bilgisi bile alınabilir (Belki de alınamaz. Neden araştırmıyorsunuz ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_197.png)) İşin güzel yanı söz konusu öğelerden herhangibirisine tıklandığında, içeriğinin de görüldüğüdür.
+Dikkat edileceği üzere Default Collection altındaki bir Team Project’ in içerisinde yer alan C# kod dosyalarının temel bilgileri çekilebilmiştir. Bu bilgiler arasında, Item ve Change Set numarası ile Server üzerinde tutulan Full Path bilgisi yer almaktadır. Hatta istenirse son Check-In bilgisi bile alınabilir (Belki de alınamaz. Neden araştırmıyorsunuz) İşin güzel yanı söz konusu öğelerden herhangibirisine tıklandığında, içeriğinin de görüldüğüdür.
 
 ## Uygulamada Neleri Yapmadık?
 
@@ -255,3 +255,4 @@ ve benzerleri…
 Bu konuları örneğimizde ele almadık ancak VersionControlServer tipinin işaret ettiği servis metodlarını inceleyerek nasıl yapabileceğinizi araştırmaya başlayabilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_VersionControl.zip (218,31 kb)](/assets/files/2013/HowTo_VersionControl.zip)
+

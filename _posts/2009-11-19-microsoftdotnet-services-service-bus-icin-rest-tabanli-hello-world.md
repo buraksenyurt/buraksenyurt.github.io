@@ -105,8 +105,6 @@ WCF Servis sözleşmemiz içerisinde yer alan GetDailyFoodList operasyonu, strin
 
 Pekala dünya üzerindeki restoran zincirlerine veya herhangibir evin mutfağındaki dokunmatik ekranlara bu tip bir servis yardımıyla hizmet götürüyor olsaydık daha fazla parametre alacak ve veri kaynağı olarak Azure üzerinde yer alacak bir Database Service'ini kullanacak bir operasyon da geliştirebilirdik. Kimbilir belki ilerleyen zamanlarda bu tip komple bir örneğide geliştirme fırsatımız olur.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Servis uygulamamız tarafında çalışma zamanı konfigurasyon bilgileri içinde App.config dosyasının aşağıdaki gibi düzenlenmesi yeterlidir.
 
 ```xml
@@ -152,8 +150,6 @@ Konfigurasyon içeriğinde dikkat çekici noktaların başında kullanılan bağ
 Görüldüğü üzere Wednesday için bir talepte bulunulmuş ve bir içerik elde edilmiştir. Bu örnekte en çok dikkat edilmesi gereken nokta ise operasyon talebinin yapıldığı adres bilgisidir.
 
 https://myfoodcompany.servicebus.windows.net/Foods/GetDailyFoodList?Day=Wednesday Volaaa!!!
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Parametreyi nasıl gönderdiğimize, https protokolüne göre bir URL bilgisi yazıldığına dikkat edilmelidir.
 

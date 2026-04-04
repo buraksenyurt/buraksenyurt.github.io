@@ -17,16 +17,11 @@ Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu ser
 
 ![big-mistake](/assets/images/2013/big-mistake.jpg)
 
-
-![Smile](/assets/images/2013/wlEmoticon-smile_86.png)
-
 Öyleyse haydi buyrun bakalım hiyayemize…
 
 Biliyorsunuz TFS kurduğunuzda IIS alına bir Team Foundation Server isimli bir Web Site oluşturulmakta (Web Access arayüzü buradaki tfs klasörü altında duruyor ve hatta TFS servisleri de yine buradaki TeamProjectServices uygulaması içerisinde yer almakta)
 
 Web Site’ ın en belirgin özelliği ise Microsoft Team Foundation Server Application Pool isimli bir havuzu kullanıyor olması. Bu havuzun özelliklerine genellikle pek dokunmuyoruz ama ben bir test sırasında dokundum ve bakın neler oldu. Lafı fazla uzatmadan hemen senaryoya geçeyim dilerseniz
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_183.png)
 
 O gün elimde geliştirmelerini yeni bitirdiğim ve yerel makinede test ettiğim bir WCF Servis uygulaması vardı ve ağda ilk bulabildiğim sunucu üzerinde de test etmek istiyordum. Erişim hakkım olan ve üzerinde TFS yüklü makinemi gözüme kestirdim. Bu arada söz konusu WCF servis uygulaması içerisinde, sadece 32bit uyumlu olan bir Assembly da kullanmaktaydım (Oracle.DataAccess.dll).
 
@@ -37,8 +32,6 @@ Ancak servise erişmek istediğimde Oracle.DataAcesss.dll ile ilişkili bir hata
 ![tfserror_3](/assets/images/2013/tfserror_3.png)
 
 Hatanın sebebi belirgindi. Makine üzerindeki işletim sistemi 64bit olarak yüklenmişti ve IIS’ de bu şekilde yürütülmekteydi (Zaten TFS 2012’ de 64bit işletim sistemi üzerine kurulmaktadır. [Detaylar için bu adresteki yazıya bakabilirsiniz](http://msdn.microsoft.com/en-us/library/vstudio/dd578592.aspx)) Dolayısıyla Microsoft Team Foundation Server Application Pool’ un 32bit yazılmış assembly’ ları yükleyebilmesi bu senaryo için gerekiyordu. Ben de ilgili Pool’ un Advanced Settings kısmına giderek Enable 32-Bit Applications değerini true olarak değiştirdim. Bu masumane davranışın nasıl kötü bir sonucu olabilirdi ki
-
-![Smile](/assets/images/2013/wlEmoticon-smile_86.png)
 
 ![tfserror_2](/assets/images/2013/tfserror_2.png)
 
@@ -57,7 +50,5 @@ Bir anda ortalık karıştı tabi. Telefonlar ardı ardına geliyor, ter damlala
 Sonunda oluşan hatanın sebebinin Enable 32-Bit Applications değerinin true olması olduğunu anladık. Nitekim 64bit işletim sistemi üzerinde kurulmuş olan TFS, her nedense bu değişikliği lisans ihlali gibi algılamıştı (Öyle tahmin ediyorum)
 
 O yüzden siz siz olun, mutlaka servislerinizi test etmek için ayrı bir IIS sunucusunun tahsis edilmesini isteyin
-
-![Smile](/assets/images/2013/wlEmoticon-smile_86.png)
 
 Başıma gelen başka bir garip olayda görüşmek dileğiyle hepinize mutlu günler dilerim.

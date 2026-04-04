@@ -104,8 +104,6 @@ Bu sorunun cevabı, DomainDataSource.DomainContext elementi içerisinde verilmek
 
 DataGrid bileşeninin söz konusu DomainDataSource kontrolüne bağlanması içinse, ItemsSource niteliğine ilgili değerin atanması yeterlidir. (İtiraf etmeliyim ki, ItemsSource niteliğine atanan değerin yazım stilini, ne kadar dekleratif olsada halen ezbere yazamamaktayım
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 ) Uygulamayı bu haliyle çalıştırdığımızda aşağıdaki ekran görüntüsü ile karşılaşmamız son derece muhtemeldir.
 
 ![blg17_2.gif](/assets/images/2009/blg17_2.gif)
@@ -206,8 +204,6 @@ Burada dikkat çeken noktalardan biriside LoadSize ile ilk etapta 40 satırın y
 
 Sayfa ilk yüklendiğinde TOP 40 ile 40 satırlık bir veri bloğunun yüklenmesi sağlanır. PageSize değeri 20 olarak berlilendiğinden 1nci sayfadan 2nci sayfaya geçtiğimizde, SQL tarafında herhangibir sorgu çalıştırılmadığı gözlemlenir.(İyi bir gelişme
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 ) Ancak 3ncü sayfaya geçmek istediğimizde, 40 satırlık yükleme boyutunu geçtiğimiz için sunucu tarafında yeni bir SQL sorgusu çalıştırılacak ve rownumber değeri 40' ın üzerinde olanlar talep edilecektir. Aşağıdaki SQL cümlesinde görüldüğü gibi...
 
 ```text
@@ -283,3 +279,4 @@ ORDER BY [Project1].[UnitPrice] DESC
 ```
 
 Yinede TOP 40 oluşumu söz konusudur. Ancak istediğimiz sonuç alınmıştır. Sayfalama işlemide başarılı bir şekilde gerçekleştirilmiştir. Böylece geldik bir blog yazımızın daha sonuna. Şimdi müsadenizle biraz dinlenmeye çekileceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

@@ -87,8 +87,7 @@ Aslında her zaman için süreler farklı olacaktır ancak grafiksel eğriler be
 
 Görüldüğü üzere foreach döngüsü ile yapılan hesaplamalar değer aralığı büyüse dahi LINQ sorgusuna göre daha kısa sürede icra edilmektedir. Buna göre foreach'in daha hızlı olduğunu söyleyebilir miyiz? Bu senaryo için evet.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Ama bildiğiniz üzere LINQ daha karmaşık sorgular yazılması noktasında elbetteki iç içe geçecek sayısız foreach kullanımından çok daha etkili bir yöntemdir. Ancak başta da belirttiğimiz gibi insan bir an için hangi hapı yutacağına karar veremiyor. Tabi farklı sorgulama senaryoları ile farklı denemeler yaparak karşılaştırmalara devam etmekte yarar olabilir. Bu kutsal görevi de siz değerli okurlarıma bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [LINQForEachPerformance.rar (23,30 kb)](/assets/files/2010/LINQForEachPerformance.rar) [Örnek Visual Studio 2010 Ultimate ile geliştirilmiş ve test edilmiştir]
+

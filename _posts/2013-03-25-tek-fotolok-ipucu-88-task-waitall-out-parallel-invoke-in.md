@@ -19,10 +19,6 @@ Bildiğiniz üzere paralel çalışmasını istediğimiz görevler olduğunda ge
 
 Ancak bunun daha pratik olan bir yolu da vardır. O da Parallel sınıfı üzerinden erişilebilen Invoke metodudur. Bu metod birden fazla Action örneğini parametre olarak alabilir, çalıştırabilir ve hatta tamamı sonlanıncaya kadar kod satırını duraksatabilir. Nasıl mı? Aynen aşağıda görüldüğü gibi
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_168.png)
-
 ![tfii_88](/assets/images/2013/tfii_88.png)
 
 Bir başka ipucunda görüşmek dileğiyle
-
-![Smile](/assets/images/2013/wlEmoticon-smile_78.png)

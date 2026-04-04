@@ -23,5 +23,3 @@ Bu görsel dersimizde önce basit bir.Net uygulamasını, CIL (Common Intermedia
 [Youtube Link](https://www.youtube.com/watch?v=gk_IN5_lsRc)
 
 Ara sıra gelen o gıcık öksürük ritmimi bozduğundan sürçü lisan etmişimdir mutlaka. O yüzden affola. Bir başka görsel dersimizde görüşünceye dek hepinize mutlu günler dilerim
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_203.png)

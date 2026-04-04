@@ -15,12 +15,9 @@ Bir yazar, hazırlayacağı hikaye için çoğu zaman çevrede dolaşıp malzeme
 
 ![blg218_Giris](/assets/images/2011/blg218_Giris_1.jpg)
 
-
 Sonuç olarak yazarın elinde bir senaryo taslağı oluşur. Artık tek yapması gereken sakin bir köşe bulmak ve daktilosunun başına geçerek (ki günümüde büyük bir olasılıkla bu diz üstü bir bilgisayar olacaktır) yazmaya başlamaktır. Çözülmesi en zor olan parçaların başında kitaba bir isim bulmak ve ilk giriş cümlesini yazmak gelmektedir. Her ne kadar bu güne kadar yazılmış bir kitabım olmasa da böyle olduğunu tahmin etmekteyim.
 
 Bugün yazımız içinde elimizde bir takım malzemelerimiz bulunmakta. Bir adet TCP bazlı olarak çalışan WCF (Windows Communication Foundation) servisi. Bu servisi kullanan Silverlight 4.0 tabanlı bir istemci. TCP bazlı servisimiz son derece zıpkın bir delikanlı aslında. Nitekim şirketin iç ağı üzerinden Binary tabanlı mesaj formatını kullandığı için ondan daha hızlısı neredeyse yok gibi. Diğer yandan Silverlight istemcimiz son derece yakışıklı ve zengin bir kız (Rich Internet Application). İşte bu yazımızda bu iki kişiyi buluşturmaya çalışıyor olacağız. Ne varki arada zıpkın delikanlının bir de ablası var ki o da IIS (Internet Information Services) mahallesinde oturmayı istemeyen ama hep hayal eden Self-Hosted stilde yazılmış bir Console uygulaması. Neredeyse içi kap kara olmuş birisi (Ama biz çalışma zamanı ekranında onun içindeki iyiliği beyaza boyayıp çıkartacağız) Bakalım abla, kızın, erkek arkadaşına ulaşmasına izin verecek mi?
-
-![Laughing](/assets/images/2011/smiley-laughing.gif)
 
 ## Varsayılan Olarak
 
@@ -367,11 +364,7 @@ Artık tanışmak için son bir deneme yapılabilir. İşte sonuç.
 
 Görüldüğü üzere servis tarafındaki metod başarılı bir şekilde çalışmıştır. Peki bu kadar zahmete girmeye gerek var mıdır? Aslında olmadığını söylersem şu anda bana çok kızabileceğinizi düşünüyorum. Ancak var. Nitekim IIS (Internet Information Services) üzerinde WAS (Windows Process Activation Service) kullanımı sayesinde host edebileceğimiz TCP bazlı bir servisin, doğru ClientAccessPolicy.xml içeriği ile bir Silverlight istemcisi tarafından kullanılabilmesi mümkündür. Şu anda umuyorum ki içinizde @#$½!:=|<> gibi bir şey demiyorsunuzdur
 
-![Embarassed](/assets/images/2011/smiley-embarassed.gif)
-
 Tabi yapılan örneğe göre kafalarda hale soru işaretleri oluşabilir. Söz gelimi 80 yerine örneğin 4508 numaralı bir port üzerinden iletişim geçerli olsa (http://localhost:4508 şeklinde) Yine de hatalar ile karşılaşır mıyız acaba?
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Bu sorunun araştırılmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

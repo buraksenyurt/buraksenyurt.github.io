@@ -19,8 +19,6 @@ Aslında süreç son derece basittir. Veri bağlı kontroller üzerinde yapılan
 
 Örneğimizde kendi geliştirdiğimiz BookShop isimli bir veritabanını kullanıyor olacağız. Hayali olarak bir kitapçının veri ambarı olarak tasarladığımızı farz edebiliriz.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Söz konusu veritabanını oluşturmak için [BookShopDbScripts.sql (13,83 kb)](/assets/files/2009/BookShopDbScripts.sql) dosyasından yararlanabilirsiniz. Bu dosya içerisinde veritabanı, tabloların oluşturulması ve örnek veri girişleri için gerekli SQL Script'leri bulunmaktadır. Bu noktadan yola çıkarak geliştireceğimiz Ado.Net Data Service örneğinde kullanacağımız Entity DataModel diagramını aşağıdaki gibi tasarlayabiliriz. Örneğimizdeki amacımız kitap güncellemek, kitap eklemek ve silmek gibi işlemler olacaktır.
 
 ![blg83_Edmx.gif](/assets/images/2009/blg83_Edmx.gif)
@@ -97,15 +95,11 @@ XAML İçeriği;
 
 Her şeyden önce, ComboBox içeriğinin her bir öğesinin birer StackPanel olduğunu ve CategoryId ile Name alanlarının içeriklerinin TextBlock'ların Text özelliklerine bağlandıklarını görebiliriz. Benzer durum ListBox kontrolü içinde geçerlidir. Ne varki ListBox kontrolünün içerisinde yer alan ve Text özellikleri Book Entity'sinin Name ile ListPrice alanlarına bağlanmış olan TextBox kontrolleri, aslında kullanıcı tarafından düzenlenebilirde.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Volaaaa!!! Öyleyse akla şu gelebilir.
 
 "Eğer bu kontrollerin Text özellikleri, kod tarafındaki Entity örneklerine bağlanmışlarsa ve çalışma zamanında içerikleri değiştirilirse bu düzenlemeler Entity içeriklerine de yansır mı? Peki diyelim ki yansıdı. SaveChanges metodunu çağırdığımızda bu değişikliler servis tarafına da yansır mı?"
 
 Aslında bu sorularının tamamının cevabı Evet'tir. Ama tabiki bizim bu durumu analiz etmemiz ve gözümüzle görmemiz şart.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Buna göre kod içeriğimizi aşağıdaki gibi geliştirmemiz yeterlidir.
 
@@ -142,8 +136,6 @@ namespace BookSeller
 
 Programı ilk çalıştırdığımızda aşağıdaki bilgilerin geldiğini görebiliriz. Her ne kadar tasarım konusunda zayıf bir örnek olsada, ListBox içerisinde her bir satırda düzenlenebilir, veriye bağlanmış kontrollerin yer alması dahi benim için önemli bir adımdır.
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 ![blg83_FirstRun.gif](/assets/images/2009/blg83_FirstRun.gif)
 
 Şimdi ListBox içerisindeki verilerde değişiklik yapıldığını varsayalım. Örnek olarak Pro WCF 3.5 isimli kitabın adına Second Edition kelimelerini ilave ettiğimizi ve ListPrice değerini 39 birim olarak değiştirdiğimizi düşünebiliriz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
@@ -155,8 +147,6 @@ Programı ilk çalıştırdığımızda aşağıdaki bilgilerin geldiğini göre
 ![blg83_Breakpoint1.gif](/assets/images/2009/blg83_Breakpoint1.gif)
 
 Hımmmmm...
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Görüldüğü üzere Category üzerinden gittiğimiz Book özelliğine bağlı koleksiyonda az önce yapılan Name ve ListPrice değişikliklerin gerçekleştirildiği gözlemlenmektedir. Benzer şekilde BookShopEntities nesne örneğinin içeriğine baktığımızda, ilgili Book örneği için aynı değişikliklerin yansıtıldığını görebiliriz.
 
@@ -217,8 +207,6 @@ Yapılan bu değişikliklerden sonra ise XAML içeriğinin aşağıdaki gibi olu
 
 Kullanıcı bu forma göre yeni bir kitap ekleyebilmelidir. Bir kitabın bir kategori altında olması gerektiğinden, oluşturulacak kitabın hangi kategoriye ekleneceğinin belirlenmesi sırasında ComboBox'ta seçili olan Category nesne örneğinden yararlanabiliriz. Kitabın tabiki öncelikle nesnel olarak oluşturulması gerekmektedir. Sonrasında ise ComboBox'ta seçili olan Category öğesinin Book özelliği yardımıyla ilgili koleksiyona eklenmelidir. Bu ekleme işleminin ardından yapılacak olan SaveChanges çağrısı, ekleme işlemi için Ado.Net Data Service tarafına uygun talebin gönderilmesini sağlayacaktır. Bunun doğal sonucu olarakta sunucu tarafında uygun olan SQL Insert sorgusu çalıştırılacaktır. Bakalım gerçekten böyle mi?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu amaçla Add başlıklı Button kontrolümüzün Click olay metodunu aşağıdaki gibi kodladığımızı düşünelim.
 
 ```csharp
@@ -238,7 +226,7 @@ private void btnAddBook_Click(object sender, RoutedEventArgs e)
         }
 ```
 
-İlk olarak kitabın ekleneceği kategori bulunmaktadır. Burada SelectedItem özelliğinin Category tipine dönüştürüldüğüne dikkat edilmelidir. Sonrasında yeni bir Book nesnesi örneklenir ve ilgili özellikleri kontrollerden alınır.(Burada herhangibir hatalı giriş kontrolü yapmadığımızı belirtelim. Aslında yapmamız gerekiyor ancak şu an için odaklanmamız gereken kısım bu değil. Yinede siz örneği denerken mutlaka olası hataların önüne geçmenizi sağlayacak eklemeleri yapmayı unutmayın ![Wink](/assets/images/2009/smiley-wink.gif))
+İlk olarak kitabın ekleneceği kategori bulunmaktadır. Burada SelectedItem özelliğinin Category tipine dönüştürüldüğüne dikkat edilmelidir. Sonrasında yeni bir Book nesnesi örneklenir ve ilgili özellikleri kontrollerden alınır.(Burada herhangibir hatalı giriş kontrolü yapmadığımızı belirtelim. Aslında yapmamız gerekiyor ancak şu an için odaklanmamız gereken kısım bu değil. Yinede siz örneği denerken mutlaka olası hataların önüne geçmenizi sağlayacak eklemeleri yapmayı unutmayın)
 
 Dikkat edilmesi gereken noktalardan birisi de, Book nesnesi örneklenirken Category özelliğine currentCategory değişkeninin referansını atamamızdır. Bundan sonraki kısım ise son derece basittir. Örneklenen Book nesne örneği, o an seçili olan Category nesnesinin Book özelliğinin temsil ettiği koleksiyona atanır. Birde çalışma zamanına bakalım. Aşağıdaki örnekte bir veri girişi yapılmak istendiğini görüyoruz.
 
@@ -272,8 +260,7 @@ where @@ROWCOUNT > 0 and [BookId] = scope_identity()',N'@0 nvarchar(28),@1 decim
 
 İşte bu kadar...Sırada silme işlemi var ama uzun olan bir yazının verdiği yorgunluğu yaşayan ben bu kutsal görevi siz değerli okurlarıma bırakıyorum
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Silme operasyonunu uygularken debug işlemlerini yapmayı ve çalışma zamanını analiz edip SQL tarafında neler olup bittiğini incelemeyi unutmayın. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [BindingV2.rar (93,31 kb)](/assets/files/2009/BindingV2.rar)
+

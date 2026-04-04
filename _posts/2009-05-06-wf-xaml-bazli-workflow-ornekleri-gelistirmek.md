@@ -105,8 +105,6 @@ Bunun sonucunda projeye aşağıdaki şekilde görülen ProductOrderFlow isimli 
 
 Ancak görüldüğü gibi bu oluşum sırasında xoml uzantılı içerik dışında cs uzantılı bir kod içeriğide üretilmektedir. Şunu hemen hatırlatayım. Amacımız kesin olarak kod dosyasından bağımsız bir Workflow örneği oluşturmaktır. Peki bunun için ne yapmalıyız? Aslında şu an için çözüm son derece basit. cs uzantılı dosya silinir
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Bende aynen böyle yaptım. Tabi şu anda Workflow içerisinde herhangibir aktivite kullanılmamakta.
 
 Ancak dikkat edilmesi gereken önemli bir nokta daha var. Bu Workflow için bir kod bloğu olmadığından, içeride kullanacağımız aktivitelerin Codebehind dosyası içerisine kod atmayacak şekilde kullanılmaları gerekmekte. Söz gelimi bir CodeActivity bileşenini kullanmak istediğimizde, bu bileşenin çalıştırılması sonucu devreye girecek metodun, cs kod dosyası içerisinde yer alması gerekmektedir. Oysaki şu anki teorimize göre böyle bir dosya bulunmamaktadır (olmamalıdır). Buda bizi, özel aktivite tiplerinin yazılmasına itmektedir. Ama elbetteki kod dosyasına ihtiyaç duymayan bazı aktivite bileşenleri burada ele alınabilir. Örneğin DelayActivity aktivitesi. Bu bilgilerden yola çıkarak ProductOrderFlow.xoml içeriğini tasarım zamanında aşağıdaki gibi oluşturdum.
@@ -125,8 +123,6 @@ Ancak dikkat edilmesi gereken önemli bir nokta daha var. Bu Workflow için bir 
 Görüldüğü gibi Workflow içerisinde aktivitilerin tamamı, XAML içeriği olarak oluşturulmuştur. Bu, zihinlerde yeni ufuklar açacak kadar önemli bir ayrıntır. Çünkü, istenirse bu içerikte yer alan elementlerin yerleri değiştirilerek akışın şekline müdahele edilebilir (Koda girmeye gerek kalmadan). Yada başka elementler basit bir notepad programı yardımıyla içeriğe dahil edilip akışa yeni adımların eklenmesi sağlanabilir. Hatta bu içerik belki bir depolama ortamında saklanarak farklı görsel uygulamaların bu akışları ele alabilmesi, değiştirebilmesi sağlanabilir (Oslo, Quadrant kavramına gitmeye çalıştığımı sanıyorumki anlamışsınızdır)
 
 Sonrasında aşırı heyecan yapmaya gerek olmadığını farkedip devam etmeye karar verdim. Bu nedenle projeyi derleyerek yoluma devam etmek istedim. Ancak oldukça ilginç bir durumla karşılaştım. Proje içerisinde birden ProductOrderFlow.xoml.cs isimli kod dosyası ortaya çıktı.
-
-![Sealed](/assets/images/2009/smiley-sealed.gif)
 
 Gecenin karanlığında sanki bir korku filminde yaşanan gerilimi hissetmiştim. Ensemden soğuk bir ter damlası ilerlerken, bu hortlağın nereden çıktığını düşünüyordum. Aslında bu son derece doğaldı. Nitekim proje derlendiğinde, xoml dosyası da hesaba katıldığından, cs dosyası otomatik olarak üretilmekteydi. Bu tabiki istediğim bir durum değildi. Bu nedenle ProductOrderFlow.xoml dosyasının Build Action özelliğinin değerini None olarak belirlemek yeterliydi. Tabiki sonrasında (öncesinde) cs dosyasını silmeyi unutmamak da gerekiyordu.
 
@@ -182,11 +178,9 @@ x:Class="NorthwindActivities.ProductOrderFlow"
 
 bildirimiydi. Çalışma zamanının kızması son derece doğaldı. Hak vermem gerekiyordu. Hata mesajındanda anlaşılacağı üzere bir doğrulama (Validation) sorunu vardı. Bunun kaynadğında ise ProductOrderFlow tipi yer almakta. Derken tepemde bir ampül yanıverdi.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 cs dosyasını çıkarmış ve xoml içeriğini uygulamaya dahil etmemiştim. Dolayısıyla söz konusu tip zaten yoktu ve çalışma zamanı, akışı doğrulamaya çalışırken tam bu noktada çatlıyordu. Neden böyle olmuştu peki? Tabiki Visual Studio ortamında sadece XAML içeriğinden oluşan bir akış geliştirme desteği bulunmamaktaydı ve ben kod parçalı oluşturulan akışın üzerinde değişiklikler yapıyordum. Yani varsayılan modele karşı gelmiştim. Haliyle xoml içeriğini aşağıdaki gibi değiştirmem gerekti.
 
-```csharp
+```xml
 <SequentialWorkflowActivity x:Name="ProductOrderFlow" xmlns:ns0="clr-namespace:NorthwindActivities;Assembly=NorthwindActivities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
  <DelayActivity TimeoutDuration="00:00:05" x:Name="delayActivity1" />
  <ns0:ProductOrderActivity x:Name="productOrderActivity1" ProductNumber="PART-1001" PartCount="100" OrderDate="2009-05-07T00:00:00.0000000" />
@@ -198,8 +192,6 @@ Artık tekrar testi yapabilirdim. Programı çalıştırdığımda aşağıdaki 
 ![blg13_8.gif](/assets/images/2009/blg13_8.gif)
 
 Nihayet
-
-![Smile](/assets/images/2009/smiley-smile.gif)
 
 Artık xoml içeriği ile biraz oynayabilirdim. Bu amaçla xoml dosyasını notepad ile açtım ve aşağıdaki hale getirdim.
 

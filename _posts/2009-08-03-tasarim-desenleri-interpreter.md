@@ -15,19 +15,15 @@ Yandaki legoya baktığımızda sanıyorum ki hepimizin aklına Romalılar gelme
 
 Romalılar, Mısırlıların fikirlerinden yola çıkarak harfler ile ifade edilebilen bir sayı sistemini geliştirmiştir. Bu nedenle mutlaka okul hayatımızın bir döneminde Roma Rakamları ile karşılaşmışızdır. Aslında son derece eğlenceli bir sayı sistemidir ve bazı filmlerin sonunda, çevrildikleri yıllar genellikle Roma rakamları ile ifade edilmektedir.
 
-Tabi Romalılar, geliştirdikleri bu sayı sistemlerinin bir gün gelipte GOF'un tasarım kalıplarından birisine ilham vereceklerini eminimki düşünmemiştir. (Gerçi yazılım teknolojilerindeki pek çok sorunsalın çözümünde tarihten dersler alınmıştır. Örneğin Microsoft Solution Framework (MSF) eğitim materyallerinde Kartaca savaşından bahsedildiğini çok iyi hatırlarım ![Wink](/assets/images/2009/smiley-wink.gif)) İlhamı alan desen Interpreter tasarım kalıbıdır. Aslında kalıbın amacını anlamak için örnek senaryolara bir bakalım.
+Tabi Romalılar, geliştirdikleri bu sayı sistemlerinin bir gün gelipte GOF'un tasarım kalıplarından birisine ilham vereceklerini eminimki düşünmemiştir. (Gerçi yazılım teknolojilerindeki pek çok sorunsalın çözümünde tarihten dersler alınmıştır. Örneğin Microsoft Solution Framework (MSF) eğitim materyallerinde Kartaca savaşından bahsedildiğini çok iyi hatırlarım) İlhamı alan desen Interpreter tasarım kalıbıdır. Aslında kalıbın amacını anlamak için örnek senaryolara bir bakalım.
 
 Diyelim ki çalışma ortamımız içerisinde şöyle bir bilgi yer alıyor. "MDCLXIV". Hatta bu bilgi, tarihsel kaynaklar ile ilişkili bir veritabanı giriş ekranından aynen bu metin formatında geliyor olsun. Ne varki, bu string bilgi yerine sayısal karşılığının bulunmasının daha önemli olduğu açıktır. Nitekim sayısal değer olması halinde bazı tarih bazlı hesaplamalar daha kolay yapılabilecektir. MDCLXIV değerinin karşılığı aslında 1664' tür. Nasıl mı? Aşağıdaki satıra geçmeden önce kağıt ve kalemi alıp hatırlamaya ve çözmeye çalışın
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 MDCLXVI = (M=1000)+(D=500)+(C=100)+(L=50)+(X=10)+(V=5)-(I=1) = 1664
 
 Çok güzel. Peki programatik ortamda bu tip bir ifadeyi kim, nasıl yorumlayacaktır? İşte Interpreter tasarım kalıbının ana fikri bu tip ifadelerden oluşan bazı özel veri gramerlerini yorumlayabilecek bir yapının oluşturulması için bir model sunmaktır. Bu örnek son derece popülerdir. Pek çok kaynakta (başta DoFactory ve OODesign) Roma rakamlarının sayıya dönüştürülmesi işlemlerinin tasarım kalıbına örnek bir senaryo olarak sunulduğunu görebilirsiniz.
 
 Hemen konuya farklı bir örnekle devam edelim. Söz gelimi günün tarihini sistemde "MM - DD - YYYY" şeklinde elde etmek istediğimizi farzedelim (Tabi hile yapıp DateTime fonksiyonlarını kullanmıyoruz). Bunun için günün tarihini, formatta gösterilen şekilde sunmamız yeterli olacaktır. Ama olayı birde şu açıdan ele alalım. Burada tarih bilgisi için bir veri gramerimiz olduğunu düşünelim. Buna göre, günün tarihini sistemin o anki ihtiyaçları doğrultusunda "MM - DD - YYYY", "DD - MM - YYYY", "D - MMMM - YY", "DD - YYYY", "MMMM - YY" vb formatlara göre elde etmekte isteyebiliriz. Şimdi durum biraz değişti sanırım
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Hımmm... Bu durumda programatik tarafta ayrı ayrı parser yazmak çok da mantıklı olmayacaktır. Ne yapılabilir? Interpreter deseni ile bu tarih gramerini kolayca yorumlayabilir ve günün tarihinin istediğimiz formatta sunulmasını sağlayabiliriz.
 
@@ -179,3 +175,4 @@ Dikkat edileceği üzere Main metodunda bir Expression Tree oluşturulmaktadır.
 Yaptığımız bu basit yorumlayıcı sadece metinsel bir ifade bütününü yorumlayarak ele almıştır. Aslında yapılan iş, berlirli bir grameri alıp sınıflara dönüştürmekle alakalıdır. Bu dönüştürme işlemi sırasında devreye Interpreter kalıbının aktörleri girmektedir. Grammer içerisinde yer alan herhangibir parça aslında bir TerminalExpression veya NonTerminalExpression olarak birer sınıfa dönüşür ve AbstractExpression tipi içerisinde veya türevlerinde işlenir. Sonrasında ise istemci uygulama, bir Expression Tree bütününü, kullandığı bir Context tipi üzerinde çalıştırır. Tabiki desenin bu basit uygulanış şekli dışında kural motorlarında olduğu gibi NonTerminalExpression tiplerininde işin içerisinde girdiği daha karmaşık uyarlamaları vardır. (Dikkat edeceğiniz üzere birleşik bir metin var. Arada boşluklar veya aritmetiksel operatörler yok) Bu uyarlamalardan basit bir örneğini ilerleyen blog yazılarımdan birisinde aktarmaya çalışıyor olacağım. Böylece geldik bir tasarım deseninin daha sonuna. Tekrardan görüşünceye dek hepinze mutlu günler dilerim.
 
 [Interpreter.rar (253,31 kb)](/assets/files/2009/Interpreter.rar)
+

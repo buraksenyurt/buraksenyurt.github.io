@@ -28,8 +28,6 @@ NDepend aracı hem kod kalitesini arttırmak için gerekli metric’ lerin kontr
 
 Sağ alt köşede sarı renkli olan daire mutlaka dikkatinizi çekmiştir. Aslında bu NDepend aracı ile gelen ve Popup Menu açan sihirli bir dairedir
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Ki bastığınızda aşağıdaki ekran görüntüsüne benzer sonuçlar ile karşılaşabilirsiniz.
 
 ![blg227_YellowCircle](/assets/images/2010/blg227_YellowCircle.gif)
@@ -48,26 +46,16 @@ Bu ekran görüntüsünden de anlaşılacağı üzere bazı kalite kriterlerine 
 
 Volaaa!!!
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Süper. CQL sorgusunu okuduğumuzda 20 den fazla metod içeren 10 tip olduğunu görmekteyiz (Çok doğru. Bunların hepsi Entity Framework tarafndan üretilen Entity tipleri ve Context sınıfıdır
-
-![Sealed](/assets/images/2010/smiley-sealed.gif)
 
 ) Burada tanımlı olan kurala göre bir tipin 20den fazla metod içeriyor olması kodun yönetimi açısından zorlayıcıdır. Tabi bu bir Warning olarak karşımıza çıkmaktadır. İsterseniz bu kuralı hiçe sayabilir veya uymak için bir şeyler yapabilirsiniz. Tabi söz konusu kuralları esnetmeniz de mümkündür. Nitekim buradaki metric’ ler atlına yenilerini ekleyebilir, yeni gruplar oluşturabilir ve var olan bazı metric’ lerin sorgularını değiştirebiliriz.
 
 Halen söz konusu aracı detaylı bir şekilde incelemekteyim. Kurulum sonrasın zaten Visual Studio 2010, 2008 ve 2005 için de AddIn olarak kullanabileceğinizi görebilirsiniz. Şu sıralar özellikle kodun kaliteli olması noktasında son derece hassas bir dönemimdeyim
 
-![Smile](/assets/images/2010/smiley-smile.gif)
-
 NDepend aracının bu yazıya sığmayacak kadar fazla sayıda özelliği var. Söz gelimi projenin analiz raporu basit bir HTML çıktısı olarak bizlere sunulmakta ama içerisinde inanılmaz derece de derin bilgiler yer almakta. Örneğin aşağıdaki gibi görsel bağımlılık bilgisi içeren görüntüler. Resmen uygulamaların röntgeninin çekildiğini ifade edebiliriz
-
-![Laughing](/assets/images/2010/smiley-laughing.gif)
 
 ![blg227_NDependView](/assets/images/2010/blg227_NDependView.png)
 
 Hani projeyi analiz etmeye, dökümantasyon çıkartmaya üşenenlerin yardımına koşan araçlardan birisi olduğunu açıkça ifade etmek isterim. Mesajım umuyorum ki gerekli yerlere gider
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 NDepend uygulaması ile ilişkili [detaylı bilgiye buradan](http://www.ndepend.com/Features.aspx) ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

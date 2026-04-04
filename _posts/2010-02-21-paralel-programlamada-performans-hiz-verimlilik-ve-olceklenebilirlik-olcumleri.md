@@ -16,8 +16,6 @@ Ben Matematik Mühendisliği eğitimi almış bir bireyim. Öğrenim hayatım bo
 
 Zaman zaman neden yaptığımızı anlamadığım ispatlardan tutunda, lastiğine konumuş olan sineğin bisikletin ileriye yönlü ama düz bir rotada olmayan hareketi boyunca çizdiği sarmalımsının denklemini çıkartmaya kadar matematiğin bir o kadar garip ama gizemli evreninde dolaşıp durduğumu hatırlıyorum. Hatta bir gün Matematik Analiz dersinin finalinde karşılaştığım bir soruda ne hikmetse 1=2 sonucuna ulaşmışımdır. Halbuki 1=1' e ulaşmış olmam gerekirdi.
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Tabi zaman ilerleyip iş para kazanmaya gelince kimsenin teorem ispatları ile uğraşmadığnı acı olarak farketmiştim. İlgi duyduğum yazılım sektörüne gireli uzun yıllar olduğu için matematiksel teorem ispatlarında tam anlamıyla pas tutmuş durumdayım. Yine de zaman zaman yazılım içerisinde matematiği basit haliyle bile görebilmek, en azından bazı konuların ispatında kullanabiliyor olmak sevindirici.
 
 Gelelim bu yazımızın konusuna. Bildiğiniz üzere bir süredir paralel programlama ile ilişkili konuları incelemeye çalışıyor ve öğrenebildiklerimi sizlerle paylaşıyorum. Yine bu vesile ile geçtiğimiz haftalar içerisinde internette dolaşırken gözüme ilişen kısa ve özlü bir yazı ile karşılaştım. [Microsoft Paralel programlama takımı tarafından yayınlanan FAQ girdisinde](http://blogs.msdn.com/pfxteam/archive/2010/01/19/9950541.aspx), çeşitli kriterlere göre hangi kodun daha iyi olduğunun ölçümlenebilmesi için hangi kriterlere bakılabileceği özetlenmektedir. Kısaca elimizde aşağıdaki tabloda yer alan kriterler mevcut. Bu kriterlere göre seri ve paralel olarak yazılmış kod algoritmalarının kıyaslanması mümkün. Özellikle yazdığımız paralel program kodlarının normal versiyonlarına göre daha iyi olup olmadıklarının tespit edilmesi noktasında son derece mühim kriterler olduklarını düşünmekteyim.
@@ -129,8 +127,7 @@ Uygulamayı kendi makinemde (Intel Core2Duo, 2.5 Gb Ram), 45 resim (44.8 Mb) üz
 
 Buna göre paralel çalıştırmanın performansı seri olana göre daha yüksektir. Ayrıca paralel çalıştırma, seri olana göre 1,55 kata kadar daha hızlıdır. İlaveten paralel olan çalıştırmanın seri olana göre %77 daha verimli/etkili olduğu sonucuna ulaşılabilir. Tabi bu kodu farklı sayıdaki işlemci veya çekirdek sayısına sahip sistemlerde defalarca test edip bir istatistik çıkartmak ve bunun sonuçlarına bakmak daha doğru olacaktır. İsterseniz bu kod parçasında farklı bir deneyimi tecrübe edebilirsiniz. Örneğin SerialExecution ve ParallelExecution metodlarını arka arkaya 10 kez çalıştırıp sonuçları Excel tablosunda istatistikleştirip gerekli analizleri yapabilir ve hangisini tercih edebileceğinize daha kolay karar verebilirsiniz. En azından ispatı daha güçlü kılarsınız.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ProofOfConcept_RC.rar (4,33 mb)](/assets/files/2010/ProofOfConcept_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

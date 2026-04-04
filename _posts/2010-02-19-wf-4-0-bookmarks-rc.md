@@ -11,17 +11,13 @@ categories:
 
 ![blg154_Giris.jpg](/assets/images/2010/blg154_Giris.jpg)
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Nitekim çok büyük bir yer ve A'dan Z'ye herşey bulunabilmekte. Arkadaşlarım ile sık uğradığım mekanlardan birisi de D&R kitap evi. Çoğunlukla aylık dergilerimi almak için uğramaktayım (Aslında Türkiye'de Amazon gibi bir kitap dağıtım evi olmadığı için çok şanslı olduğumu düşünüyorum. Her halde öyle bir yer açılsa kazancımın çok büyük bir kısmı meslek kitaplarına gider)
 
-Geçen gün yine Bilim Teknik, NTV Bilim ve NG dergilerimi almak üzere oradaydım. Sırada beklerken kasada ücretsiz olarak verilen kitap ayraçlarını farkettim. Hep görürdüm ama bu gün biraz daha anlamlı geliyorlardı. Üzelerinde çeşitli reklamlar veya faydalı bilgiler bulunan bu ayraçlar yardımıyla (ki Bookmark diyebilir miyiz acaba? ![Wink](/assets/images/2010/smiley-wink.gif)), okuduğumuz kitabın neresinde kaldığımızı kolayca hatırlayabildiğimizi düşünmeye başladım. Derken evde uzun süredir el değdirip kaldığım yerden devam edemediğim kitaplarım aklıma geldi. Hüzünlendim...
+Geçen gün yine Bilim Teknik, NTV Bilim ve NG dergilerimi almak üzere oradaydım. Sırada beklerken kasada ücretsiz olarak verilen kitap ayraçlarını farkettim. Hep görürdüm ama bu gün biraz daha anlamlı geliyorlardı. Üzelerinde çeşitli reklamlar veya faydalı bilgiler bulunan bu ayraçlar yardımıyla (ki Bookmark diyebilir miyiz acaba?), okuduğumuz kitabın neresinde kaldığımızı kolayca hatırlayabildiğimizi düşünmeye başladım. Derken evde uzun süredir el değdirip kaldığım yerden devam edemediğim kitaplarım aklıma geldi. Hüzünlendim...
 
 ![Tongue out](/assets/images/2010/smiley-tongue-out.gif)
 
 Tesadüfe bakın ki bu kitapları okumak baya uzun sürmüştü. Zamanın neresinde okumaya başladığımı pek hatırlamamakla birlikte, neresinde kaldığımı da hatırlamadığım bir kaç kitap...Tesadüfe bakın ki bu uzun sürecin benzeri Workflow Uygulamalarında da söz konusu olabilmekteydi.
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Aslında.Net Framework 3.5 sürümünde Uzun Süreli İşemlerin (Long Running Process) için ExternalDataExchangeService veya WorkflowQueue tiplerinden yararlanılmaktadır. Ne varki Workflow Foundation 4.0 sürümünde, geliştiricilerin kulağına daha hoş gelen Bookmark kavramı ile karşılaşmaktayız. Peki Bookmark nedir? Ne işe yaramaktadır? Nasıl kullanılmaktadır? Konuyu anlamanın belki de en kolay yolu her zaman ki gibi basit bir örnek üzerinden ilerlemekle olacaktır. Bu nedenle Bookmark kavramının tanımlamasını yazımızın sonunda yapmaya çalışacağız.
 
@@ -80,8 +76,6 @@ Diğer versiyonlar göz önüne alındığında dikkat çeken parametrelerden bi
 ![blg154_Workflow1.gif](/assets/images/2010/blg154_Workflow1.gif)
 
 Bookmark kullanımı yazımızın başında da belirttiğimiz üzere uzun süreli işlemler (Long Running Process) için anlamlıdır. Bu sebepten WorkflowApplication tipinin kullanılması gerekmektedir. Workflow Console Application tipinden olan uygulamamızda, çalışma zamanındaki Idle durumları irdelememiz aslında son derece kolaydır. Console.ReadLine metodu burada çok işe yarayacaktır.
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 İşte kod içeriğimiz;
 
@@ -255,3 +249,4 @@ Ve işte çalışma zamanı sonuçları;
 Görüldüğü gibi bir aktivitenin Bookmark'lanması aslında isimlendirilmiş duraksama noktalarına (Named Pause Points) sahip olması anlamına gelmektedir. Öyleki, ResumeBookmark metodu sayesinde Pause edilen noktadan tekrar yürütülmeleri sağlanabilir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloBookmarks.rar (54,52 kb)](/assets/files/2010/HelloBookmarks.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

@@ -23,8 +23,6 @@ Projede kaynak sıkıntısı nedeniyle uzun bir süre servis katmanı haricinde 
 
 Basit bir CSS'in Internet Explorer'da sorunsuz çalışırken Chrome'da problem çıkarttığına, Chrome'da dertsiz işleyen bir Ajax Control Toolkit kontrolünün, Firefox’ un eski bir sürümünde hiç çalışmadığına şahit oldum. Hal böyle olunca çalışma zamanında, tarayıcıların debug kabiliyetleri ile de haşır neşir olmak zorunda kaldım. Sıkıcı mıydı? Hayır
 
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_216.png)
-
 Aksine benim için farklı ve değer katan deneyimlerdi. İşte bu düşünceler geçtiğimiz günlerde yine internet üzerinde bir şeyler araştırıp öğrenmeye çalışırken kendimi farklı bir macera içerisinde buldum. Sonunda bunu kaleme almanın yararlı olacağını düşündüm ve işte buradayım.
 
 ## Senaryo
@@ -256,3 +254,4 @@ Elbette senaryomuzda önemli eksiklikler bulunmaktadır. Örneğin,
 Bu soruların çözümünü, araştırmasını ve uygulanmasını siz değerli okurlarıma bırakıyorum. Bu mücadeleler inanın size önemli saha tecrübeleri kazandıracaktır. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_RestPostJQuery.rar (111,76 kb)](/assets/files/2014/HowTo_RestPostJQuery.rar)
+

@@ -29,14 +29,10 @@ categories:
 Hangisi olursa olsun kullanıcı bir insan olarak düşünüldüğünde çok da fazla zorlanmamalı veya kolayca adapte olabilmelidir. Ne kadar kolay kullanılırsa, hedef kitle içerisinde o kadar fazla sayıda farklı profile de ulaşılabilinir. Ancak bazı hallerde ürünün hedef kitlesi o kadar dağınıktır ki, hepsini çekebilmek ya da bir başka deyişle kazanabilmek için yapılan genişletmeler yeterli gelmeyebilir. Böyle bir durumda çevreye şu mesajı vermeniz gerekebilir;
 
 > Ey ahali…Bu gördüğünüz, ürünümüzün dışarıya açılmış olan servisi/servisleri/sdk’sı/api’si. Buyrun istediğiniz gibi uyarlayın, kullanın. Sonuçta ürünümüzün yaşamının bir parçası olabileceksiniz
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_195.png)
 
 Özellikle ALM (Application Lifecycle Management) gibi geniş konuların uygulandığı ürünlerin değerlendirildiği firmalar ve kalabalık ekipleri düşünüldüğünde, bu heterojenlik kendini iyiden iyiye hissettir. Dolayısıyla ürünün geliştiriciler açısından ne kadar ve nasıl genişletilebileceği önem kazanır.
 
 > Ekipleriniz içindeki profilleri düşünün! Yazılımcılar IDE’ leri, iş analistleri Word dokümanlarını, Müdür’ ler web browser üzerinden erişilebilen raporları, Release Manager’ lar Team Explorer’ ı, Proje Yöneticileri Ms Project’ i, CIO’ lar ise ürünlerinin hangi sprint’ ler de olup ne kadarlık işlerinin kaldığını okuyabildikleri e-postaları, sever. Listeyi uzatmak mümkün
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_195.png)
 
 Bu felsefeden baktığımızda bence Microsoft’ un Team Foundation Server ürünü epey önemli bir noktada yer alıyor. Hatta Gartner’ ın Application Lifecycle Management konusundaki bi raprunda yer alan Magic Quadrant grafiği de, bunu doğrular nitelikte. Kabiliyet ve sunulan vizyon açısından Microsoft liderler arasında en iyi noktada yer alıyor diyebiliriz (Rapor hakkında detaylı bilgiye [bu adresten](http://www.gartner.com/technology/reprints.do?id=1-1ASCXON&ct=120606&st=sb) ulaşabilirsiniz)
 
@@ -71,13 +67,9 @@ Seddulbahir
 
 Bu amaçla ben seddulbahir.visualstudio.com adresinde konuşlandırılmış olan ve sahibi olduğum Team Project Collection alanını kullanıyor olacağım. OData örnekleri için çok basit olarak SoniK isimli uydurmasyon bir Team Project oluşturdum. Söz konusu proje Scrum 2.2 şablonuna göre kullanılmakta. Şimdilik tek üyesi benim ve tüm Task’ lar üzerimde
 
-![Confused smile](/assets/images/2013/wlEmoticon-confusedsmile_30.png)
-
 > tfs.visualstudio.com servisinin en güzel yanlarından birisi de, son güncellemeleri haberiniz olmasa dahi hızla ve ilk elden implemente ediyor oluşu. Söz gelimi Scrum’ ın yeni bir versiyonunun çıktığını fark etmemiş olabilirsiniz. Ama bulut üzerinde bu güncelleme çıktığı gibi entegre edilmiştir de.
 
 Tabi OData servisleri ile bir Team Project’ in sorgulanması denince dikkatler hemen Work Item içeriklerine çevrilecektir. Yani Product Backlog Item, Task, Test Case, Bug, Impediment gibi öğelere (Scrum için söz konusu olan bu Work Item çeşitleri, seçilen süreç şablonuna göre elbetteki değişiklik gösterebilir) Bu nedenle SoniK isimli proje içerisine aşağıdaki ekran görüntüsünde yer alan bazı Work Item’ ları ekledim ve bunları şimdilik, 2 haftalık süreye sahip olan Sprint 1 içerisinde değerlendirmeye aldım. Görüldüğü gibi TO DO’ dan IN PROGRESS’e aldığım iki Task’ ım var
-
-![Smile](/assets/images/2013/wlEmoticon-smile_95.png)
 
 ![odatatfs_2](/assets/images/2013/odatatfs_2.png)
 
@@ -88,8 +80,6 @@ Sorgulama işlemine başlamadan önce yapılması gereken küçük bir hazırlı
 ![odatatfs_1](/assets/images/2013/odatatfs_1.png)
 
 Bu işlemin ardından [https://tfsodata.visualstudio.com/defaultcollection](https://tfsodata.visualstudio.com/defaultcollection) adresine girerek başlama vuruşunu yapabiliriz
-
-![Smile](/assets/images/2013/wlEmoticon-smile_95.png)
 
 domainAdı\kullanıcıAdı ve şifre ile giriş yapabiliriz. Örneğin benim TFS projem seddulbahir.visualstudio.com olduğundan, seddulbahir\AlternatifKullanıcıAdı ve şifre ile giriş yapmam gerekiyor. defaultcollection adresini sorguladığımızda standart bir OData servisinden beklediğimiz sonuçlar ile karşılaşırız. Bize TFS hizmeti için sorgulanabilir olan Entity adlarının adreslerini içeren bir sayfa üretilecektir. Aşağıdaki ekran görüntüsündeki gibi.
 
@@ -175,8 +165,6 @@ https://tfsodata.visualstudio.com/DefaultCollection/WorkItems?$filter=Project eq
 ![odatatfs_14](/assets/images/2013/odatatfs_14.png)
 
 Şu an için TFS Odata servis sorgularında filter, count, select, orderby, top, skip, format ve callback anahtar kelimeleri kullanılabilmektedir. Ancak bu anahtar kelime seti artabilir. Sorgular sırasında? ve $ harflerine de dikkat edilmelidir. Tüm OData komutlarının önünde dikkat edileceği üzere $ harfi yer almaktadır. Her ne kadar örneklerde ağırlıklı olarak Work Item’ lar üzerinde durulmuş olsa da DefaultCollection altında sunulan Entity’ lerin çoğu üzerinde sorgulamalar yapılabilir. Bunu denemenizi öneririm
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_195.png)
 
 Görüldüğü üzere söz konusu OData sorgularını kullanarak farklı platformlar üzerinde çalışacak istemci uygulamaların geliştirilmesinin önü son derece açıktır. Şu anda halen geliştirilmekte olan [TFS OData servislerinin kullanımına ilişkin detaylı bilgileri bu adresten takip edebilirsiniz](https://tfsodata.visualstudio.com/). Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

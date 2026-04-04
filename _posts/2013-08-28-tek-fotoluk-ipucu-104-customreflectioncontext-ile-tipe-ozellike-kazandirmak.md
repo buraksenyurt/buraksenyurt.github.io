@@ -14,10 +14,7 @@ categories:
 ---
 Bir tipin çalışma zamanında Reflection ile yakalanabilen özelliklerine ilaveler yapmak ister miydiniz? Aslında bunun çok kolay bir yolu var. Tek yapmanız gereken CustomReflectionContext tipinden yeni bir sınıf üretmek ve bunu aşağıdakine benzer bir şekilde kullanmak
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_212.png)
-
 ![tfi_104n](/assets/images/2013/tfi_104n.png)
 
 Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim
 
-![Smile](/assets/images/2013/wlEmoticon-smile_102.png)

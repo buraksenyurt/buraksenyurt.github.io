@@ -9,8 +9,6 @@ categories:
 ---
 Nihayet WCF 4.0 için basitleştirilmiş konfigurasyon (Simplified Configuration) yeniliklerinden sonuncusuna değineceğimiz blog girişimize ulaştık. Tabiki WCF 4.0 tarafındaki diğer yenilikleride zaman içerisinde inceliyoruz olacağız. Örneğin Discovery, Routing, RESTful geliştirmeleri vb...Ancak diğer köklü değişikliklere başlamadan önce konfigurasyon tarafına son noktayı koyalım artık.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bir önceki blog yazımızdan hatırlayacağınız üzere Asp.Net tabanlı olarak host edilen WCF servislerinde, tek bir svc dosyası ilede yayınlama yapabileceğimizi görmüştük. Asp.Net hosting tarafını ilgilendiren bir diğer yenilik ise Url Rewriting konusunun Svc dosyaları için de uyarlanabilir olmasıdır. Bildiğiniz gibi özellikle RESTful servislerde, URL satırında yer alan bilginin daha okunaklı ve anlaşılır olması söz konusudur ve önemlidir. Genellikle IIS tarafında veya kod yardımıyla gerçekleştirilebilecek bu işlemler için WCF tarafı konfigurasyon bazında bir kolaylık getirmektedir. Yine bir önceki blog yazımızda yer alan örneği göz önüne alırsak son hali ile aşağıdaki gibi çalıştırıldığını hatırlayabiliriz.
 
 ![blg65_RuntimeMetadata.gif](/assets/images/2009/blg65_RuntimeMetadata.gif)
@@ -51,3 +49,4 @@ Hatta WSDL içeriğide aynı adresleme formatı üzerinden elde edilebilmektedir
 Sırada Discovery, RESTFul ve Routing gibi yeniliklerin incelenmesi var. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SimpleAspNetHosting2.rar (13,94 kb)](/assets/files/2009/SimpleAspNetHosting2.rar)
+

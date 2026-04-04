@@ -38,8 +38,6 @@ WCF 4.0 tarafında WS-Discovery tabanlı olarak gerçekleştirilen uygulamalarda
 
 Konfigurasyon dosyasında, Servis tarafına yeni bir davranış (Service Behavior) eklenmiş ve bu davranış için udpAnnouncementEndpoint tipinden bir Endpoint kullanılacağı belirtmiştir. Bu endpoint tipi çalışma zamanında, servisin ağ üzerindeki dinleyicilere mesaj gönderebilmesi için gerekli alt yapının oluşturulmasını sağlamaktadır. Bir bakşa deyişle işimizi oldukça kolaylaştırmaktadır
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Ancak istemci tarafında biraz kod eforu sarfedilmelidir. İstemci tarafı bir dinleyici olarak, servisin ortama gönderdiği "ben geldim" veya "ben gittim" tadındaki mesajları yakaladığında devreye girecek olan iki olay metodunu ele alabilmelidir. Tabi bunlardan daha önemlisi çalışma zamanı için gerekli alt yapı hazırlıklarınıda gerçekleştirmelidir. Şimdi istemci tarafındaki kodlarımızı aşağıdaki gibi geliştirdiğimizi düşünelim.
 
 ```csharp
@@ -100,8 +98,6 @@ namespace ClientV2
 
 Her ne kadar istemci tarafını geliştiriyor olsakta pek istemci tarzında olmadığını eminimki farketmişsinizdir.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Nitekim istemci tarafında ServiceHost nesnesi örneklenmekte ve kullanılmaktadır. Aslında bu son derece doğaldır. Nitekim online veya offline olan servislerin, istemciler üzerinde tetikleyebildiği iki olay söz konusudur. Buda istemcinin bir anlamda servis gibide davranış gösterebilmesini gerektirmektedir. (Normal şartlar altında servisin, istemciler üzerinde olay tetikletmesi gerektiği durumlarda özellikle.Net Remoting gibi modellerde çok kafa karıştırıcı kodlamalar yapılması gerektiğini hatırlatmak isterim.![Undecided](/assets/images/2009/smiley-undecided.gif))
 
 WCF 4.0 tarafında ise tek yapmamız gereken bu iş yükünü AnnouncementService tipine atmaktır. Dikkat edileceği üzere ServiceHost nesnesi örneklenirken parametre olarak AnnouncementService referansı verilmektedir. Sonrasında ise ServiceHost nesnesine, UpdAnnouncementEndpoint tipinden bir Endpoint ilave edilmiştir. Örnekle ilişkili ilginç noktalardan biriside istemci tarafında App.config dosyasının bulunmayışıdır.(Örnekten bu dosyası bilinçli bir şekilde çıkarttığımı belirtmek isterim)
@@ -113,8 +109,6 @@ WCF 4.0 tarafında ise tek yapmamız gereken bu iş yükünü AnnouncementServic
 Görüldüğü üzere servisin bir kaç kere açılması ve kapatılmasının ardından istemci tarafındaki OnlineAnnouncementReceived ve OfflineAnnouncementReceived olayları tetiklenmiş ve gerekli bildirimler yakalanmıştır. Artık bu noktadan sonra istemcinin sadece online olan Endpoint noktalarına göre proxy nesnelerini oluşturması ve kullanması yeterli olacaktır.
 
 Bir sonraki yazımızda Ad Hoc modelini terkedip, Managed Discovery modelini incelemeye çalışacağız. Bildiğiniz üzere Ad Hoc modelde yerel/alt ağlar söz konusudur ve ağın ötesine geçilmesi halinde proxy tabanlı bir sistemin kullanılması gerekmektedir. Bakalım bizi ne gibi sürprizler bekliyor olacak...
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

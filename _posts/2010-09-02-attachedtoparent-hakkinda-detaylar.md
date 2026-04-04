@@ -109,8 +109,6 @@ Bir önceki örnektekine benzer olaraktan, Child Task nesne örneğinin icra ett
 
 İlk iki kod örneğimizde olaylar oldukça nettir ve beklediğimiz şekildedir. Dilerseniz diğer örnekler ile devam edelim ve işleri biraz daha karıştıralım
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 İşte yeni kod parçamız.
 
 ```csharp
@@ -160,8 +158,6 @@ Yukarıdaki duruma göre childTask3, parentTask'in alt Task örneğidir. Parent 
 ![blg178_Region3_2Runtime.gif](/assets/images/2010/blg178_Region3_2Runtime.gif)
 
 Volaaa!!!
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Dikkat edilecek olursa en içteki Task, parentTask nesne örneğinin çalışma zamanındaki yaşam döngüsüne ilave edilmemiştir. Kendi başına çalışan bir Task olarak ele alınmaktadır. İşte bu, dikkat edilmesi gereken vakalardan birisidir. Nitekim parent Task örneğine Attach edilen bir Task içerisindeki Task'lerin enum sabitinin ilgili değeri belirtilmeden Attach olmaları gerektiği sanılabilir. Oysaki şu durumda böyle olmadığı görülmektedir.
 
@@ -265,8 +261,6 @@ Beklendiği üzere detachedTask2 kesinlikle Parent Task nesne örneğinin başla
 
 Gelelim bir diğer kod parçamıza. Bu biraz ilginç bir deneyim olacak aslında
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 ```csharp
 using System;
 using System.Threading;
@@ -316,8 +310,7 @@ Beklediğimiz gibi detachedTask3 nesne örneği, Parent Task örneğinin yaşam 
 
 3 numaralı ID değerine sahip olan Task, childTask7 nesne örneğini işaret etmektedir ve Parent değeri yoktur. Bir başka deyişle bu Task örneği, herhangibir Task örneğinin (Özellikle parentTask değişkeninin başlattığı) yaşam döngüsüne katılmamıştır. Bu durumu bende biraz garipsemiş durumdayım ve araştırmalarıma devam etmekteyim. Mutlaka gözden kaçırdığım bir yer olmalı diye düşünüyorum. Belki de siz bana bu konuda yardımcı olabilirsiniz. Nitekim şu anda benim de bir BreakPoint anında belirli bir süre beklemem gerekiyor.
 
-![Smile](/assets/images/2010/smiley-smile.gif)
-
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AttachedToParentCases.rar (26,72 kb)](/assets/files/2010/AttachedToParentCases.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

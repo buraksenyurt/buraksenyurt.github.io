@@ -19,15 +19,13 @@ categories:
 
 ![Challenge.jpg](/assets/images/2012/Challenge.jpg)
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Geçtiğimiz günlerde Workflow Foundation tarafında bir Component Set'in geliştirilmesi üzerine açılan POC (Proof of Concept) projesinde görev aldım. Bu anlamda yoğun bir şekilde Custom Activity Designer konusu ile yakın ilişki içerisinde yer almam gerekti. Workflow Foundation'ın bileşen seti her ne kadar geniş bir yelpazeye sahip olsa da, özellikle uygulama geliştiricilerin hızlı bir şekilde Workflow (Flow Chart, Sequential vb) tasarlaması gerektiği durumlarda, işleri kolaylaştıracak Component setlerinin üretilmesi son derece önemlidir. Ne varki XAML tabanlı çalışan Activity Designer örnekleri, Visual Studio IDE'si ile pek kardeşçe yaşamamaktadır (Bu durumun Visual Studio 2012' de devam etmediğini umuyorum). Dikkat edilmesi gereken pek çok nokta ve ip ucu bulunmakta. Dilerseniz ne demek istediğimi örnek bir senaryo üzerinden görmeye çalışalım.
 
 Senaryomuzda metod adlarını ve bu fonksiyonlara bağlı parametre listelerini gösteren basit bir Workflow Activity bileşenini tasarlamaya çalışıyor olacağız. Bileşenimiz standart bir Code/Native Activity’ den farklı olarak görsel arayüze sahip olacak ve Visual Studio IDE’ si içerisinden de kullanılabilecek. Bir başka deyişle ToolBox sekmesinden designer ortamına sürükleyip bıraktığımızda, IDE kullanıcısı ile etkileşim içerisinde olacak. Dolayısıyla Activity Designer tipini ele alacağımız bir örnek üzerinde çalışıyor olacağız. İlk olarak projelerimizi oluşturarak işe başlayalım. Bu anlamda Solution içeriğini aşağıdaki şekilde görüldüğü gibi tasarlayabiliriz.
 
 ![wda_1.png](/assets/images/2012/wda_1.png)
 
-Solution yapısı oldukça önemlidir. Activity projesi NativeActivity türevli tipleri barındırıyor iken, Design kütüphanesinde sadece görsel tasarımlar yer alacaktır. Azon.Workflow.Activity projesi Activity Library tipinden iken Azon.Workflow.Activity.Design, Activity Designer Library tipindendir. Burada Visual Studio 2010 IDE’ sinin beklediği bir isimlendirme standartı bulunmaktadır. Buna göre, Component’ in görsel arayüzünün tasarlanacağı kütüphane adının mutlaka Design kelimesi ile bitmesi gerekmektedir (Bu bilgiyi bulmak oldukça fazla vakit kaybına neden oldu. Ben en başından söylemek istiyorum ![Wink](/assets/images/2012/smiley-wink.gif))
+Solution yapısı oldukça önemlidir. Activity projesi NativeActivity türevli tipleri barındırıyor iken, Design kütüphanesinde sadece görsel tasarımlar yer alacaktır. Azon.Workflow.Activity projesi Activity Library tipinden iken Azon.Workflow.Activity.Design, Activity Designer Library tipindendir. Burada Visual Studio 2010 IDE’ sinin beklediği bir isimlendirme standartı bulunmaktadır. Buna göre, Component’ in görsel arayüzünün tasarlanacağı kütüphane adının mutlaka Design kelimesi ile bitmesi gerekmektedir (Bu bilgiyi bulmak oldukça fazla vakit kaybına neden oldu. Ben en başından söylemek istiyorum)
 
 Yolumuza Native Activity bileşenimizi geliştirerek devam edelim. Azon.Workflow.Activity kütüphanesi içerisinde aşağıdaki sınıf diagramında görülen tipleri üretiyor olacağız. Senaryomuza göre bileşenimiz, kaynak bir listede yer alan metod adlarını ve bunlara ait parametreleri gösteriyor olacak. İlk hedefimiz bu.
 
@@ -205,8 +203,6 @@ Gelelim bileşenimizin arayüzünü tasarlayacağımız Activity Designer öğes
 ```
 
 Vuuuuu!!!
-
-![Sealed](/assets/images/2012/smiley-sealed.gif)
 
 Biraz korkutucu bir içerik gibi görünebilir. Ama korkmayın. Tek tek açıklamaya çalışalım.
 
@@ -438,6 +434,7 @@ Olay metodu içerisindeki felsefe oldukça basittir. Button kontrolü aslında b
 
 ![wda_8.png](/assets/images/2012/wda_8.png)
 
-Görüldüğü üzere Custom Activity geliştirmek kolay olsa da, bu bileşeni Designer desteğine sahip olacak şekilde genişletmek bir kaç ipucu içeren ve dikkat edilmesi gereken bir süreci gerektirmektedir. Geliştirmiş olduğumuz örnekte bazı eksik kısımlar da bulunmaktadır. Örneğin XAML tarafında dekleratif olarak Event bazlı etkileşimler çok fazla ele alınmamıştır.(Bir veritabanı bağlantısını seçtiren ve hatta design tarafında bir SQL sorgusunu çalıştırtıp sonuçları bir DataGrid kontrolüne basan bir Activity Designer yazmaya çalıştığınızı hayal edin. Üstelik Connection'ı tanımladığınızda Test'de edebilmelisiniz vs ![Wink](/assets/images/2012/smiley-wink.gif)) Bu konuda detaylı ve derinlemesine araştırmalarıma devam ediyorum. Yeni bilgiler edindikçe sizinle paylaşmaya gayret ediyor olacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Görüldüğü üzere Custom Activity geliştirmek kolay olsa da, bu bileşeni Designer desteğine sahip olacak şekilde genişletmek bir kaç ipucu içeren ve dikkat edilmesi gereken bir süreci gerektirmektedir. Geliştirmiş olduğumuz örnekte bazı eksik kısımlar da bulunmaktadır. Örneğin XAML tarafında dekleratif olarak Event bazlı etkileşimler çok fazla ele alınmamıştır.(Bir veritabanı bağlantısını seçtiren ve hatta design tarafında bir SQL sorgusunu çalıştırtıp sonuçları bir DataGrid kontrolüne basan bir Activity Designer yazmaya çalıştığınızı hayal edin. Üstelik Connection'ı tanımladığınızda Test'de edebilmelisiniz vs) Bu konuda detaylı ve derinlemesine araştırmalarıma devam ediyorum. Yeni bilgiler edindikçe sizinle paylaşmaya gayret ediyor olacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WritingDesignerActivityV2.zip (155,91 kb)](/assets/files/2012/WritingDesignerActivityV2.zip)
+

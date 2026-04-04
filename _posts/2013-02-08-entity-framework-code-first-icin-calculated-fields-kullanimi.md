@@ -18,16 +18,11 @@ Genellikle göç etmek gibi anlamlarda kullanılan Migrate kelimesinin yazılım
 
 ![hot-water-migration](/assets/images/2013/hot-water-migration.jpg)
 
-
 Ancak Entity Framework Code-First yaklaşımı ve Calculated Fields kavramını göz önüne getirdiğimizde, Migration kelimesini ciddi manada düşünmemiz gerekebilir. Nasıl mı? Haydi okumaya devam
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_134.png)
 
 Hesaplanmış alanlar (Calculated Fields/Columns) veritabanı programcılığında sık kullanılan özelliklerden birisidir. Bu alanların içeriği genellikle tablonun diğer alanları kullanılarak bir hesaplama sonucu üretilir. Söz gelimi personel verilerinin tutulduğu bir tablodaki FirstName ve LastName alanlarının değerleri birleştirilerek, bir Calculated Field oluşturulması mümkündür. Peki bu desteği Entity Framework Code-First yaklaşımında nasıl değerlendirebiliriz?
 
 Bildiğiniz üzere Entity Framework Code-First yaklaşımında, veritabanı nesnelerinin tasarımları POCO (Plain Old CRL Object) tipleri üzerinden gerçekleştirilmektedir. Dolayısıyla Calculated Field şeklinde düşünülmesi gereken bir özelliğin veritabanı tarafına nasıl yansıtılacağı kafalarda bir soru işareti oluşturmaktadır. Pek tabi bunun için de bir nitelik (attribute) desteği sunulmuş olabilir ki öyledir. DatabaseGenerated niteliğinde DatabaseGeneratedOption.Computed enum sabiti değerini kullanarak, istenilen hesaplanabilir alan bildirimlerini yaptırabiliriz. Acaba durum gerçekten böyle midir?
-
-![Who me?](/assets/images/2013/wlEmoticon-whome.png)
 
 Dilerseniz basit bir örnek üzerinden hareket ederek konuyu incelemeye çalışalım. İlk etapta aşağıdaki sınıf çizelgesinde (Class Diagram) yer alan tipleri geliştirdiğimizi düşünelim. Senaryomuzdaki başrol oyuncuları, Shop isimli Context tipi ve Product sınıfının TotalPrice özelliğidir.
 
@@ -124,7 +119,7 @@ Peki ya çözüm?
 
 ![I don't know smile](/assets/images/2013/wlEmoticon-idontknowsmile.png)
 
-Neyseki elimizin altında migration diye bir kabiliyet bulunmakta. Şu anda var olan veritabanı yapısını biraz değiştirip, TotalPrice alanı için de bir müdahalede bulunmamız gerekecek. (Hatta Name alanının boyutuna bir dokunuş yaparsak hiç de fena olmaz ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_134.png))
+Neyseki elimizin altında migration diye bir kabiliyet bulunmakta. Şu anda var olan veritabanı yapısını biraz değiştirip, TotalPrice alanı için de bir müdahalede bulunmamız gerekecek. (Hatta Name alanının boyutuna bir dokunuş yaparsak hiç de fena olmaz)
 
 Şimdi Migration özelliğini etkinleştirip yeni bir Migration setini projeye dahil ediyor olacağız. Bunun için Package Manager Console penceresinden sırasıyla Enable-Migrations ve Add-Migration komutlarını çağıralım. Aşağıdaki gibi.
 
@@ -171,8 +166,6 @@ Aslında iki noktaya dokunduk. İlk olarak TotalPrice alaının eklenmesi için 
 
 Artık veritabanını manuel olarak güncelletebiliriz. Bu güncelleme işlemi için Package Manager Console üzerinden Update-Database komutunu göndermemiz yeterli olacaktır
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_134.png)
-
 > Verbose anahtarını kullanmamızın tek sebebi, veritabanına doğru giden T-SQL ifadelerini görmektir.
 
 ![efcf_5](/assets/images/2013/efcf_5.png)
@@ -186,8 +179,6 @@ Bu adımdan sonra veritabanına gidip Products tablosuna baktığımızda, gerç
 ![efcf_7](/assets/images/2013/efcf_7.png)
 
 Herşey buraya kadar iyi gitti diyebiliriz. Lakin ufak bir sorunumuz daha var.
-
-![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_1.png)
 
 Eğer Quantity veya ListPrice değerlerinde, nesne örneği üzerinden değişiklik yaparsak, bu durumda Calculated Field beklediğimiz gibi bir davranış göstermeyecektir. Aşağıdaki ekran görüntüsünde yer alan kod parçasını dikkate alalım.
 
@@ -226,8 +217,6 @@ namespace HowTo_CalculatedFields
 ```
 
 İşte şimdi oldu
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_134.png)
 
 ![efcf_9](/assets/images/2013/efcf_9.png)
 

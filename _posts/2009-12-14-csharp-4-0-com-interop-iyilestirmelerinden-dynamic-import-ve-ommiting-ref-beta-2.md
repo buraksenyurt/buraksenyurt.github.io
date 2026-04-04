@@ -12,8 +12,6 @@ Hani bazen insanın canı şöyle çıtır çıtır kuruyemiş çeker ya...Hatta
 
 ![blg117_Giris.jpg](/assets/images/2009/blg117_Giris.jpg)
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 İşte bende bu düşünceyle yola çıkıp siz değerli okurlarım kuruyemiş yerken kısa zamanda bir şeyler öğrenebilin, keyifli bir on dakika geçirin diye bu yazıyı hazırladım. Bakalım bu yazımızda bizleri hangi macera bekliyor.
 
 Bildiğiniz üzere C# 4.0 ile birlikte yine köklü dil değişiklikleri hayatımıza girmiş bulunmakta. Özellikle dinamik diller ile olan etkileşimin arttırılması ve COM dünyası ile olan haberleşmede getirilen yenilikler son derece önemli. Bu gelen yenilikler arasında [dynamic](/2009/04/30/csharp-4-0-dynamic-olmak/) anahtar kelimesi, [opsiyonal ve isimlendirilmiş parametrelerde (Optional & Named Parameters)](/2009/05/04/csharp-4-0-secilebilen-isimlendirilebilen-parametreler-named-and-optional-parameters-ref-i-gormezden-gelmek-ommit-ref-ve-pia-icin-yenilikler/) en çok göze çarpanlar arasında yer almakta. Ancak çok fazla irdelenmeyen fakat özellikle COM Interop dünyasını ilgilendiren minik ve önemli iyileştirmelerde bulunmakta. Bu neden bu kısa yazımızda söz konusu minik iyileştirmelerden ikisini çok basit olarak incelemeye çalışıyor olacağız.
@@ -117,8 +115,6 @@ namespace COMInteropFeatures
 
 Bu seferki örneğimizde çok basit olarak Word Interop nesnesini kullanarak Belge.docx isimli dosyanın açılması sağlanmaktadır. Ancak Open metodunun yazılışı mutlaka dikkatinizi çekmiştir. Peki bir sürü ref missing yazmamış dışında bir sıkıntı görebiliyor musnuz?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Aslında Named ve Optional Parametre özellikleri ile bu kod stilinden zaten kurtulduk. Ne varki buradaki sıkınta bu değil. Sıkıntı, ref tipinden olan parametreler için missing isimli object tipinden bir değişken tanımlamak zorunda olmamız.
 
 Bu birden fazla çeşitte ref parametresi alan bir COM Interop çağrısı için birden fazla geçici değişken tanımlamak zorunda kalabiliriz anlamına da gelmekte. İşte C# 4.0 ile gelen Omitting Ref (ref'leri göz ardı etmek olarak düşünebiliriz) kabiliyeti sayesinde artık ref olarak kullanılması gereken parametrelere değer türü (Value Type) şeklinde argüman geçirebilmekteyiz. Peki ref kullanımından kaçılıyor mu? Elbetteki hayır. Arka planda derleyici bizim için gerekli geçici değişkenleri zaten oluşturuyor ve metod yine referans tipinden gelen parametreler ile çalışıyor. Kısacası yukarıdaki kodu aşağıdaki şekilde yazmamız mümkün.
@@ -130,3 +126,4 @@ wordApp.Documents.Open(filePath, Type.Missing, Type.Missing);
 Dikkat edileceği üzere doğrudan değer ataması yapılmış, herhangibir değişken kullanımına gidilmemiştir.
 
 İşte sizlere bir kaç dakika içerisinde çerez niyetine okuyup öğrenebileceğiniz bir yazı. Umarım faydalı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

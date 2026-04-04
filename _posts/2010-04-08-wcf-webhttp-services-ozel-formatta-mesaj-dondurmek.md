@@ -15,8 +15,6 @@ Bu yazımızda bizleri uzun, zorlu ve yorucu bir macera bekliyor. Şimdiden söy
 
 ![blg146_Giris.jpg](/assets/images/2010/blg146_Giris.jpg)
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Gelelim bu günkü konumuza.
 
 Bu yazımızda, son günlerde sıklıkla üzerinde durduğumuz WCF WebHttp Service'lerinde, istemciden gelen root adres bazlı taleplerin nasıl karşılanacağını ve özel formatta mesajların nasıl döndürüleceğini incelemeye çalışıyor olacağız. Ancak işe başlamadan önce ihtiyacın ne olduğundan bahsetmemizde yarar var. Bu amaçla bir Web uygulaması üzerinden host edilen birden fazla WebHttp servisimiz olduğunu düşünerek ilerleyelim. Bu servisler içerisinde de örneğin HTTP Get taleplerinin karışılığında çeşitli tipte koleksiyonları döndüren operasyonlarımız olduğunu farz edelim. Bu durumda global.asax dosyasındaki kodlarda yönlendirme tablosuna ekleyeceğimiz adres bilgilerine göre, gelen talepleri uygun olan servislere yöndermemiz mümkün olacaktır. Bunu zaten daha önceki bir yazımızda incelemiştik.
@@ -305,8 +303,7 @@ Kodlarımızı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer
 
 Vuuuvvvv!!! Şu anda masamdaki şekerlerin oranına bakıyorum da...Baya bir tüketmişim.
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Artık dinlenmeye çekilmenin vakti geldi sanırım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson8_RC.rar (181,52 kb)](/assets/files/2010/Lesson8_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+

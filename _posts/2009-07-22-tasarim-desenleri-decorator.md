@@ -139,8 +139,7 @@ Tabiki bu desende kritik olan noktalardan biriside Decorator tipinin tanımlanı
 
 Ancak bu desendede bazı eksik noktalar olabilir. Özellikle, nesnelere yeni fonksiyonelliklerin çalışma zamanında eklenmesi nedeni ile sistemin fonksiyonelliğine ait hataları ayıklamak (debug) daha zordur. Decorator deseni, Adapter ve Composite kalıpları ile zaman zaman karıştırılabilir. Adapter deseni bir nesnenin arayüzünü değiştirirken, Decorator kalıbı sorumlulukları (Responsibilities) değiştirmektedir. Bununla birlikte decorator deseni sadece bir component ile ilgilendiğinden, Composite kalıbının çakma bir hali olarakta düşünülebilir
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Ancak bununla birlikte Decorator kalıbının bileşene ek sorumlulukla yüklediğide bir gerçektir. Böylece geldik bir yazımızın daha sonuna. Umarım sizler için yararlı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Decorator.rar (22,98 kb)](/assets/files/2009/Decorator.rar)
+

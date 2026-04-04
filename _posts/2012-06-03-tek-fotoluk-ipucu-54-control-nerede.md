@@ -15,10 +15,6 @@ Diyelim ki çalışma zamanında, Windows Forms'un içerisindeki bir kontrolü (
 
 Ne yaparsınız? Bir Recursive metod ile bunu çözebilir misiniz? Hatta bunu bir Extension Method olarak tasarlayıp herhangibir Container Control için de çalışacak hale getirmek istemez misiniz? Buyrun öyleyse
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ![tfi55.png](/assets/images/2012/tfi55.png)
 
 Bir sonraki ipucunda görüşmek dileğiyle
-
-![Wink](/assets/images/2012/smiley-wink.gif)

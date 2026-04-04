@@ -92,8 +92,6 @@ Burada dikkat edileceği üzere sonuç listesinin eleman sayısı kontrol edilmi
 
 Aslında tam liste içeriği şudur
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Accepted, Ambiguous, BadGateway, BadRequest, Conflict, Continue, Created, Expectation Failed, Forbidden, Found, GatewayTimeout, Gone, HttpVersionNotSupported, InternalServerError, LengthRequired, MethodNotAllowed, Moved, MovedPermanently, MultipleChoices, NoContent, NonAuthoritativeInformation, NotAcceptable, NotFound, NotImplemented, NotModified, OK, PartialContent, PaymentRequired, PreconditionFailed, ProxyAuthenticationRequired, Redirect, RedirectKeepVerb, RedirectMethod, RequestedRangeNotSatisfiable, RequestEntityTooLarge, RequestTimeout, RequestUriTooLong, ResetContent, SeeOther, ServiceUnavailable, SwitchingProtocols, TemporaryRedirect, Unauthorized, UnsupportedMediaType, Unused, UseProxy
 
 Operasyonumuzu bu yeni haliyle denediğimizde ise tarayıcı uygulama üzerinde aşağıdaki şekilde görülen çıktı ile karşılaşırız.
@@ -163,3 +161,4 @@ namespace ClientApp
 Görüldüğü üzere servis operasyonu içerisinde üretilen ErrorInformation bilgisi istemci tarafına XML formatlı olacak şekilde aktarılmıştır. Sonuç olarak olası veya beklenen hatalar karşısında istemci tarafına uygun bir bildirim yapılması HTTP durum kodları bazında mümkündür. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson4_RC.rar (174,57 kb)](/assets/files/2010/Lesson4_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+

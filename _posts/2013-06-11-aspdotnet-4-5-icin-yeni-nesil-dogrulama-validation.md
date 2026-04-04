@@ -24,8 +24,6 @@ Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredey
 
 Her şey uzun bir zaman önce değil ama kısa bir süre önce Asp.Net 4.5 tabanlı bir Empty Web Application açmamla başlamış ve sonrasında olanlar olmuştu
 
-![Confused smile](/assets/images/2013/wlEmoticon-confusedsmile_32.png)
-
 Aslında senaryo gereği çok basit olarak bir web form üzerinde doğrulama kontrollerini kullanacaktım. Bunun için Visual Studio 2012 ortamında Asp.Net Empty Web Application tipinden bir proje oluşturdum ve aşağıdaki Web Form içeriğini tasarladım.
 
 ```html
@@ -68,7 +66,7 @@ Herşey bana göre son derece normaldi ancak çalışma zamanı böyle demiyordu
 
 ![ngv_2](/assets/images/2013/ngv_2.png)
 
-Tabi ilk dikkatimi çeken nokta Unobtrusive olarak yazılan ve telafüz etmesini halen daha başaramadığım kelime idi. “Dikkati çekmeyen”, “mütevazi”, “kendi halinde”, “fark edilmeyen”, “kolay görülmeyen” gibi Türkçe karşılıkları olan kelimenin Asp.Net açısından önemini araştırırken bakın neler buldum ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_205.png)
+Tabi ilk dikkatimi çeken nokta Unobtrusive olarak yazılan ve telafüz etmesini halen daha başaramadığım kelime idi. “Dikkati çekmeyen”, “mütevazi”, “kendi halinde”, “fark edilmeyen”, “kolay görülmeyen” gibi Türkçe karşılıkları olan kelimenin Asp.Net açısından önemini araştırırken bakın neler buldum
 
 Peki neden böyle oldu?
 
@@ -77,8 +75,6 @@ Peki neden böyle oldu?
 ![ngv_4](/assets/images/2013/ngv_4.png)
 
 ve tabi çalıştırdım
-
-![Smile](/assets/images/2013/wlEmoticon-smile_98.png)
 
 ![ngv_3](/assets/images/2013/ngv_3.png)
 
@@ -172,8 +168,9 @@ appSettings sekmesinde yer alan ValidationSettings:UnobtrusiveValidationMode key
 
 ## Kıssadan Hisse
 
-Yeni nesil doğrulama stratejisi için son teknoloji ürünüdür diyebilir miyiz acaba? Bence evet ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_205.png)
+Yeni nesil doğrulama stratejisi için son teknoloji ürünüdür diyebilir miyiz acaba? Bence evet
 
 Hem HTML 5’ e hem de jQuery’ ye yatırım yapmış bir doğrulama süreci söz konusu. Üstelik yeni nesil çıktılar da, doğrulama operasyonları adına Javascript kullanımı (CDATA içerisindeki kısımlar) mevcut değil. Doğrulama bilgisi tamamen HTML 5 içerisine, nitelik-değer (key-value) bazlı olarak yıkılmış durumda. Elbette bunun en büyük artısı sayfa cevap boyutunun (Page Response Size) küçülmüş olması. (Elbette tarayıcı desteği de önem arz eden bir konu)
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

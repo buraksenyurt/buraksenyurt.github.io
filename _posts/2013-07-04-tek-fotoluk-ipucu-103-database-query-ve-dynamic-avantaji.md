@@ -23,6 +23,4 @@ Söz gelimi Northwind veritabanındaki ürünlerin kategori bazlı sayılarını
 
 dynamic türü nedeniyle sorgu sonucu elde edilen liste elemanları üzerinden doğrudan CategoryName ve ProductCount alanlarına gidilmesi mümkün olmuştur
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_211.png)
-
 Bir başka ip ucunda görüşmek dileğiyle.

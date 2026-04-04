@@ -12,8 +12,6 @@ Bildiğiniz üzere bir süredir WCF servislerinin REST modeline göre geliştiri
 
 Bu görsel derste, veri kaynağı olarak içerdikleri koleksiyonları yanlız okuma (Read-only) amaçlı ele alan REST bazlı WCF servislerinin, WCF Rest Start Kit Preview 1 sürümü ile nasıl geliştirilebileceğini incelemeye çalışmıştım. Tabi aradan uzun zaman geçti ve WCF Rest Start Kit Preview 2 sürümü yayınlandı. Ayrıca görsel derste insert, update ve delete işlemlerini ele almamıştım. Bende hazır fırsat varken, bu tip WCF servislerinde Insert, Update, Delete işlemlerini nasıl yapabiliriz konusunu araştırmaya başladım. Starter Kit ile birlikte gelen Lab'lar içerisinde (3ncü alıştırmada) bu konu oldukça kolay anlaşılır bir şekilde ele alınmaktadır. Benim size aktaracaklarım daha çok başıma nelerin geldiği.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 İlk olarak REST Collection Service kavramını biraz açmamızda yarar var. Starter Kit ile birlikte Visual Studio 2008 ortamına bir proje şablonu olarak gelen bu yapı, REST modeline göre veri kümelerinin, servis tarafında koleksiyon bazlı olaraktan ele alınmasını otomatikleştirmektedir. Veriler istemci tarafına XML formatı dışında [JSON (JavaScript Object Notation)](http://www.json.org/json-tr.html) standartlarına görede yayımlanabilir. Ayrıca daha önceki yazılarımızda değindiğimiz WebGet niteliği ile UriTemplate'ler oluşturulmasına gerek yoktur. Çünkü buda hazır olarak gelmektedir. Bunlara ek olarak, HTTP POST, GET, DELETE ve PUT metodlarına cevap verecek şekilde bir çalışma zamanı alt yapısına sahiptir ki bu sayede Select dışında Insert,Update,Delete gibi işlemleride yapabiliriz. Tabiki request'leri doğru bir şekilde gönderebildiğimiz takdirde. Şablonu Visual Studio 2008 ortamında kullanmak son derece kolaydır.
 
 ![blg5_1.gif](/assets/images/2009/blg5_1.gif)
@@ -308,8 +306,6 @@ SQL Tarafı
 
 Artık güncelleme ve silme işlemlerini tespit edebilirdim. Güncelleştirme işlemi sırasında dikkat etmem gereken noktalardan ilki, HTTP protokolünün Put metodunu kullanmam gerektiğiydi. Ancak ilk denemede yine patlayınca aslında güncelleştirmek istediğim satırın ProductID değerini Request Body içerisindeki XML kısmında değil, URL kısmında belirtmem gerektiğini farkettim.
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 Buna göre Fiddler aracı yardımıyla aşağıdaki talebi gönderdiğimde,
 
 ![blg5_8.gif](/assets/images/2009/blg5_8.gif)
@@ -317,8 +313,6 @@ Buna göre Fiddler aracı yardımıyla aşağıdaki talebi gönderdiğimde,
 servis tarafından 200-Ok cevabını alabildiğimi gördüm.
 
 ![blg5_9.gif](/assets/images/2009/blg5_9.gif)
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 İşte mutluluğun resmi.
 

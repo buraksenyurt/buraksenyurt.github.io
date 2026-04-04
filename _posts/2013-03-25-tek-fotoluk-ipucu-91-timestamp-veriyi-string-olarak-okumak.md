@@ -17,5 +17,3 @@ Diyelim ki SQL Server üzerinde duran tablolarda timestamp veri tipinden alanlar
 ![tfi_91](/assets/images/2013/tfi_91.png)
 
 Bir başka ipucunda görüşmek dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_173.png)

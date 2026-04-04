@@ -22,11 +22,7 @@ Pek tabi yazılım dünyası söz konusu olduğunda var olan hemen her algoritma
 
 Biraz eskilere gidiyor olacağız. Hatta Roma imparatoru Ceaser zamanına
 
-![Smile](/assets/images/2012/smiley-smile.gif)
-
 Ceaser, Roma imparatorluğunun şaşalı dönemlerinde generalleri ile haberleşirken basit bir şifreleme metodolojisini kullanmaktaymış. Büyük bir ihtimalle sonradan Ceaser Cheaper olarak adlandırılan bu algoritmanın çalışma şekli aslında son derece basitmiş. Algoritmaya göre bir cümleyi veya metni, alfabe üzerinde belirlenen sayı kadar sağa (ileri) veya sola (geri) doğru ötelenmek suretiyle karşılık gelen harfler ile dizmek söz konusudur. Sonuçta ortaya, okunabilirliği pek olmayan anlamsız bir veri çıkmaktadır ama generaller tarafından bu, merkez sayı noktasına göre tekrardan geriye doğru ötelenerek anlamlı hale getirilebilir. Elbetteki bizim gerçek hayat uygulamalarımızda kullanacağımız bir şifreleme algoritması değildir bu. Ancak basit bir zeka oyununda neden kullanılmasın ki. Eğlenceli olabilir
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 (Algoritma hakkında detaylı bilgilere [bu adresten](http://en.wikipedia.org/wiki/Caesar_cipher) ulaşabilirsiniz.) Haydi gelin bu algoritma için bir genişletme metodu yazalım.
 
@@ -59,8 +55,6 @@ public static class AlgorithmExtensions
 ```
 
 Aslında algoritma oldukça basit gördüğünüz gibi. Girilen Shift değerine göre ASCII tablosu üzerinden sağa veya sola doğru hareket ediliyor. z ve a aralığında bir öteleme hareketi yapıldığına dikkat edelim. Öteleme noktalarında elde edilen karakterler ardışıl olarak dizilerekten metnin karıştırılmış hali geriye döndürülüyor. Bir Extension Method olarak yazdığımız için herhangibir String değişken üzerinden uygulanabilir. Peki nasıl kullanacağız?
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Gelin aşağıdaki kod parçası ile ilerleyelim.
 
@@ -97,8 +91,6 @@ namespace TestApp
 
 Dikkat edileceği üzere eğlenceli görünen karmaşık veri içerikleri üretilmiş durumda. Tabi bunu çözümlemeye çalışmak oyuncunun işi olacak. Oldukça fazla zorlanacağından emin olabilirsiniz.
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ![image.axd](/assets/images/2012/image.axd)
 
 Ceaser'ın hakkına Ceaser'a verip ve Ceaser'a elveda diyerek yolumuza devam edelim. Sırada yer alan algoritmamız ise Fisher-Yates Shuffle olarak literatürde yer almaktadır. Bu algoritma yardımıyla bir sayı veya kelime dizisinin ya da farklı bir veri kümesinin her defasında farklı olacak şekilde karıştırılarak elde edilmesi söz konusudur. Bir başka deyişle farklı permütasyonların hesap edilerek bir karma veri içeriği üretilmesi gibi bir durum mevcuttur. (1938 yılında keşfedilmiş olan bu algoritma hakkında ki detaylı bilgileri yine [wikipedia](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) adresi üzerinden elde edebilirsiniz.) Biz hiç vakit kaybetmeden bu algoritma için bir extension metod geliştirerek ilerleyelim.
@@ -128,7 +120,7 @@ public static class AlgorithmExtensions
 }
 ```
 
-Görüldüğü gibi algoritmamız kaynak olan dizi içerisindeki elemanları sondan başa doğru gezmektedir. Bu işlem sırasında o anki iterasyon değerine kadarki aralıkta üretilen bir rastgele sayı ve bunun dizideki karşılığı olan değer geçici bir değişkene atanır. Ardından o anki iterasyonun bir önceki değerine karşılık gelen dizi elemanı rastgele elde edilen değerin işaret ettiği indise taşınır. Son olarak da geçici değişkene alınan eleman o anki iterasyon değerinin bir öncesine karşılık gelen indise yerleştirilir. Genişletme metodunu generic olarak tasarladığımızı ve herhangibir List tipine uygulayabildiğimizi fark etmişsinizdir. Temel olarak hedefimiz sayısal veya metin tabanlı koleksiyon listelerinin karıştırılmış çıktılarını elde etmektir (ki bir Puzzle uygulamasında bu teknik oldukça işe yarayabilir ![Wink](/assets/images/2012/smiley-wink.gif)) Metodun kalbinde Random tipi yer almaktadır. Metodumuzu aşağıdaki kod parçasında olduğu gibi test sürüşüne çıkartabiliriz.
+Görüldüğü gibi algoritmamız kaynak olan dizi içerisindeki elemanları sondan başa doğru gezmektedir. Bu işlem sırasında o anki iterasyon değerine kadarki aralıkta üretilen bir rastgele sayı ve bunun dizideki karşılığı olan değer geçici bir değişkene atanır. Ardından o anki iterasyonun bir önceki değerine karşılık gelen dizi elemanı rastgele elde edilen değerin işaret ettiği indise taşınır. Son olarak da geçici değişkene alınan eleman o anki iterasyon değerinin bir öncesine karşılık gelen indise yerleştirilir. Genişletme metodunu generic olarak tasarladığımızı ve herhangibir List tipine uygulayabildiğimizi fark etmişsinizdir. Temel olarak hedefimiz sayısal veya metin tabanlı koleksiyon listelerinin karıştırılmış çıktılarını elde etmektir (ki bir Puzzle uygulamasında bu teknik oldukça işe yarayabilir) Metodun kalbinde Random tipi yer almaktadır. Metodumuzu aşağıdaki kod parçasında olduğu gibi test sürüşüne çıkartabiliriz.
 
 ```csharp
 using System;
@@ -183,8 +175,6 @@ Test kodunda string tipte isimlerden oluşan bir List koleksiyonu ve benzer şek
 ![artcl_8_3.jpg](/assets/images/2012/artcl_8_3.jpg)
 
 Size tavsiyem basit bir fotoğrafı n sayıda kareye böldükten sonra, bu parçaları işaret eden sınıfa ait nesne örneklerinden oluşan bir List koleksiyonunu, Fisher-Yates Shuffle algoritmasını kullanarak, oyuncuyu her seferinde farklı bir karmaşa ile baş başa bırakmayı denemeniz olacaktır
-
-![Smile](/assets/images/2012/smiley-smile.gif)
 
 ![image.axd](/assets/images/2012/image.axd)
 
@@ -280,8 +270,5 @@ namespace TestApp
 
 Bu algoritmayı oyuncudan ziyade oyun motoru kullanıyor olabilir. Ya da siz geniş bir kelime kümesini ekrana basıp bu küme içerisindeki Palindromic kelimeleri tespit etmesi için henüz ilk okul çağında olan bir oyuncuyu tercih edebilir ve süre bazlı bir ortam sağlayarak, onun dikkat, kavrama, fark etme, görsel hafıza gibi yeteneklerini arttırmaya çalışabilirsiniz
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Aslında oyun programlama denilince çok basit ve yararlı algoritmalar olduğunu görebiliyoruz. Ben bu yazımızda sadece 3 tanesini sizlere aktarmaya çalıştım. Elbetteki çok daha fazlası var. Araştırmak, denemek, öğrenmek, test etmek ve kullanmak sizin göreviniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
-![Wink](/assets/images/2012/smiley-wink.gif)

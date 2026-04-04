@@ -69,8 +69,6 @@ Sol üst köşede şirkete ait bir logo, Footer ve Header kısımlarında açık
 
 Pek tabi uygulamamız Northwind veritabanına bağlanacağından bazı SQL işlemlerini de icra ediyor olacak. Söz gelimi View adlarını, sys.Views metadata içeriğini kullanarak çekeceğiz. Diğer yandan bir View nesnesinin sunduğu veriyi almak için de SQL sorgusuna da ihtiyacımız olacak. Uzun lafın kısası temelde bir Connection String bilgisi gerekiyor
 
-![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_9.png)
-
 İşte o bilgiyi App.config dosyasından tedarik edebiliriz.
 
 ```xml
@@ -332,8 +330,6 @@ Document tipi aslında sayfa içerisinde kullanılacak global Style'leri ve Sect
 
 Örneğimizin kalbi rapor içeriklerinin bir tablo içerisinde gösterilmesidir. Bu sebepe bir Table tipi kullanılmış ve örneklenmesi için yine section nesnesi üzerinden hareket edilerek, AddTable metoduna başvuruda bulunulmuştur. Bir Table örneklendikten sonra içerisinde yer alan satırların (Rows) veya hücrelerin (Cells) doldurulması işi, aslında bir HTML Table içeriğinin dinamik olarak üretilmesinden pek de farklı değildir. Yeterki doküman nesne modeline hakim olalım
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_192.png)
-
 Örneğimizin daha kolay anlaşılması açısından aşağıdaki görseli dikkate alabilirsiniz.
 
 ![cpdf_11](/assets/images/2013/cpdf_11.png)
@@ -494,3 +490,4 @@ Sonuç olarak en azından işe yarar PDF içeriklerini kolayca üretebildiğimiz
 Böylece geldik bir makalemizin daha sonuna. Bir diğer yazımızda görüşünce dek hepinize mutlu günler dilerim.
 
 [HowTo_PDFSharpV2.zip (555,18 kb)](/assets/files/2013/HowTo_PDFSharpV2.zip)
+

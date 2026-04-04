@@ -40,8 +40,6 @@ ve Mapper.xml içeriği,
 
 Görüldüğü gibi images klasörü altındaki her bir resim ve eş düşen kelime, Xml içeriğinde tanımlanmış durumda. Tabi bu benim minik hayal gücümün bir ürünü. Buradaki sistem dahada etkili geliştirilebilir. Söz gelimi kullanıcının girdiği kelimeye göre, sunucu tarafında çalışacak akıllı bir robot, resim kataloğundan, kelime bire bir uymasa bile en yakın olanı bulup istemciye gönderebilir. Bu kısmı siz değerli okurlarıma bırakayım
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Gelelim projenin kod yapısına. Burada WCF Rest Starter Kit kullandığımız için herhangibir REST şablonuna ait projelerden birisini oluşturmak yeterli. Önemli olan noktalardan birisi servis tarafındaki çalışma zamanı için WebServiceFactory2 isimli fabrikanın (Factory Class) kullanılmasıdır. O yüzden Servis'e ait markup içeriğinin aşağıdaki gibi olmasına özen göstermekte yarar vardır.
 
 ```csharp
@@ -146,7 +144,5 @@ Hemen arka planda çalışan Fiddler aracına baktığımdaysa, gelen talebe kar
 Görüldüğü gibi AdapterStream kullanımı son derece kolay. Özellikle REST bazlı WCF servislerini tüketen web uygulamalarında göz önüne alınabilir. Umarım size faydalı bir bilgi daha aktarabilmişimdir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Streaming.rar (5,62 mb)](/assets/files/2009/Streaming.rar) (Dosya içerisinde bir TODO var. Bu kısmı gözden kaçırmayın
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 )

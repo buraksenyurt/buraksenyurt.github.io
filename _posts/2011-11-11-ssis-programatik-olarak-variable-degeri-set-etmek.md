@@ -15,14 +15,9 @@ Beni tanıyanlar SQL ailesini pek sevmediğimi ve biraz uzak durmaya çalışmak
 
 ![SQL-Server-2008-Grid-v-r_2-300x187](/assets/images/2011/SQL-Server-2008-Grid-v-r_2-300x187.png)
 
-
-![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile_13.png)
-
 Örneğin ben çalışmakta olduğum bankanın önemli bazı operasyonlarında SSIS (Sql Server Integration Services) paketleri ile çalışmak durumundayım. Özellikle bankaların metin tabanlı dosya formatlarını sıklıkla tercih ettiklerini biliyoruz.
 
 Ne varki bu ham veri içeriklerinin operasyonel düzeyde ele alınabilmeleri için ilişkisel hale getirilmeleri, bir başka deyişle SQL Server gibi ilişkisel veritabanı ortamlarına aktarılmarı gerekmektedir. Pek tabi tersi bir durumda çoğu zaman söz konusu olmaktadır. Bu gibi ihtiyaçlar dahilinde SSIS (Sql Server Integration Services) paketleri oldukça kullanışlıdır. Özellikle bir tasarım aracının söz konusu olması, zengin kontrol seti ve akış bazlı çalışma modeli önemli avantajlar olarak karşımıza çıkmaktadır. Tabi böyle bir senaryo ve işin içerisinde benim gibi bir.Net geliştiricisi olunca, ister istemez bir SSIS paketini programatik olarak değerlendirmek söz konusu olabilmektedir
-
-![Smile](/assets/images/2011/wlEmoticon-smile_22.png)
 
 Ben de bu düşünceden yola çıkarak programatik anlamda bir SSIS paketinin değişkenlerine (Variables) dış ortamdan nasıl erişebileceğimizi ve değiştirebileceğimizi incelemeye çalıştım.
 
@@ -76,8 +71,6 @@ namespace ST_7bc89561acee425798facb4212b1828a.csproj
 
 Bu tabi kobay bir SSIS paketi olduğundan ne yaptığının çok fazla önemi yoktur. Ancak senaryomuz gereği Script olarak çalıştırılan kod bloğu içerisindeki kullanım şekli önemlidir. Main metodunda paket seviyesindeki DatabaseName ve TableName değişkenleri kullanılmakta olup değerleri bir Text dosyaya yazdırılmaktadır. Aslına bakarsanız senaryomuzu test etmek için yeterli bir kod parçasıdır
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_73.png)
-
 Bildiğiniz üzere amacımız başka bir.Net uygulamasını kullanarak söz konusu değişkenlerin dış ortamdan set edilmesini sağlamaktı. Şimdi dilerseniz basit bir Console uygulaması oluşturarak akışımıza devam edelim.
 
 İlk olarak SSIS paketleri üzerinde yönetimli kod tarafını kullanabilmek için ilgili Assembly'ın projeye referans edilmesi gerekmektedir. Bu yüzden C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies klasörü içerisinde yer alan Microsoft.SQLServer.ManagedDTS.dll'ini projeye referans etmemiz yeterlidir. (SSIS aslında eskiden DTS olarak anılan bir alt yapıdır. Bu yüzden assembly adlarına şaşırmayın)
@@ -85,8 +78,6 @@ Bildiğiniz üzere amacımız başka bir.Net uygulamasını kullanarak söz konu
 ![artcl_2_4](/assets/images/2011/artcl_2_4.gif)
 
 Bundan sonrası ise oldukça basit. Hatta zevkli bir oyun gibi diyebilirim
-
-![Smile](/assets/images/2011/wlEmoticon-smile_22.png)
 
 İşte örnek kod parçamız.
 
@@ -135,13 +126,9 @@ namespace SSISExecuter
 
 Görüldüğü üzere ilk olarak paketin ilgili adresten yüklenmesi sağlanmış ve arından Variables özelliği üzerinden DatabaseName ve TableName parametrelerine yeni değerleri aktarılmıştır. Son olarakta ilgili paket çalıştırılmıştır. Paketin çalıştırıcısı bu Console uygulaması olduğu için text dosyasının çıktısı da exe'nin bulunduğu dosya adresi olacaktır. İçeriği ise tam istediğimiz gibidir
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_73.png)
-
 ![artcl_2_5](/assets/images/2011/artcl_2_5.gif)
 
 Sonuç olarak bir SSIS paketinin iç değişkenlerine dış ortamdan değer atamanın farklı bir yolunu görmüş olduk. Managed tarafta SSIS paketlerini daha da etkin yönetebilmemiz de mümkündür. Hatta bu kütüphaneyi kullanarak özellikle görsel SSIS yürütücüleri geliştirebilirsiniz. Bir düşünün
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_73.png)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -17,11 +17,7 @@ categories:
 
 ![artcl_7_1.jpg](/assets/images/2012/artcl_7_1.jpg)
 
-![Sealed](/assets/images/2012/smiley-sealed.gif)
-
 Aslında VIP benzeri bir durum söz konusu idi belkide. Hani pek çok filmde görmüşüzdür. Lüks bir barın veya gece kulübünün önünde içeri girmek için bekleyen pek çok insandan oluşan bir kuyruk söz konusu olur. Ama genelde filmin kahramanı ve hatta arkadaşları gelir, en önden kulübe pat diye girerlar. Çünkü yüksek öncelikli şahsiyetlerdir. Sanırım hayatımızda yaşadığımız bu ve benzeri tipteki vakalar yazılım dünyasından da nasibini almıştır. Çünkü yazılım tarafında da Öncelikli Kuyruk Koleksiyonu (Priority Queue Collection) denen bir veri yapısı (data structure) söz konusudur
-
-![Smile](/assets/images/2012/smiley-smile.gif)
 
 (Detaylı bilgi için [Wiki](http://en.wikipedia.org/wiki/Priority_queue) adresine bakabilirsiniz)
 
@@ -30,8 +26,6 @@ Temel olarak bu tip bir koleksiyon Queue (FIFO - First In First Out ilkesine gö
 Bildiğiniz gibi.Net Framework platformu ilk sürümünden itibaren çeşitli tipte koleksiyonlara hizmet etmektedir. İlk sürümde Stack, Queue, ArrayList, Hashtable ve SortedList gibi farklı şekillerde çalışan koleksiyonlar söz konusudur. Framework.Net 2.0 sürümüne yükseldiğinde ise koleksiyonların generic olma durumu devreye girmiş ve bu sayede tür bağımsız ve tip güvenli (Type Safety) versiyonlar ortaya çıkmıştır (List, Dictionary, Stack, Queue, HashSet, SortedDictionary, SortedList gibi). Tabi Framework sürümü 4.0' a yükseldiğinde ve işin içerisinde paralel programlama kabiliyetleri de girdiğinde, Concurrent olarak çalışabilen koleksiyonlar ortaya çıkmıştır (BlockingCollection, ConcurrentBag, ConcurrentDictionary, ConcurrentQueue, ConcurrentStack, OrderablePartitioner, Partitioner gibi).
 
 Ne yazık ki tüm bu koleksiyon tipleri arasında öncelik seviyelendirmesini kullanan bir Queue koleksiyonu mevcut değildir. Bir başka deyişle iş başa düşer ve bu koleksiyonu bizim yazmamız gerekir. Aslında.Net Framework alt yapısı içerisindeki koleksiyonların gelişimini düşündüğümüzde, söz konusu yeni koleksiyon tipinin generic bir versiyonu dışında Concurrent çalışabilen sürümünü de yazmak icap etmektedir
-
-![Sealed](/assets/images/2012/smiley-sealed.gif)
 
 Biz bu yazımızda basit ve daha kolay bir adım atıp generic olan bir sürümünü yazmaya çalışıyor olacağız.
 
@@ -228,3 +222,4 @@ Burada dikkat edilmesi gereken nokta Dequeue metodunun her zaman için öncelik 
 Görüldüğü gibi biraz uğraşarak öncelikli derecelendirmeli bir kuyruk koleksiyonu tipini yazabildik. Sizde denemelerinizde IComparer implementasyonu yapan bir kritere göre söz konusu koleksiyonu Max-Heap mantığında çalıştırmay deneyebilirisiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [PQueue.rar (31,33 kb)](/assets/files/2012/PQueue.rar)
+

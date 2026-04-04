@@ -11,8 +11,6 @@ Kronometrelerinizi hazır edin! Bu yazımızda Absolute ve Sliding Expiration mo
 
 ![blg103_Giris.jpg](/assets/images/2009/blg103_Giris.jpg)
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Ön bellekleme işlemleri ile performans arttırımı çoğunlukla web uygulamalarında akla gelen bir konudur. Ancak gerçek hayat uygulamaları sadece Web tabanlı değildir. Windows Forms, WPF gibi masaüstü uygulamalarından tutunda, katmanları ifade eden Class Library'lere kadar çok çeşitli ürünler yer almaktadır. Dolayısıyla performans kazanımı, iş yükünün hafifletilmesi için ön bellekleme işleminin sadece Web uygulamalarına bağımlı kalması düşünülemez. Peki Web ortamı dışında ön bellekleme (Caching) teknikleri için hangi imkanlar bulunmaktadır?
 
 Aslında listenin başında System.Web.Caching.dll assembly'ının Web dışındaki uygulamalara referans edilerek kullanılmasının yer aldığını söyleyebiliriz. Ne varki bir Windows uygulamasına Web alanına ait bir Assembly'ın referans edilmeside son derece gariptir.
@@ -129,8 +127,6 @@ Cache yönetimi için MemoryCache.Default özelliğinin ürettiği ObjectCache n
 
 Gelelim testlerimize. Hatırlarsanız kronometrelerinizi hazır tutmanızı söylemiştim. Bu tabiki işin şakası
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Nitekim kodun içerisinde de test amaçlı olarak bir kronometre kullanılabilir. Çalışma zamanındaki testlerimizi aşağıdaki adımlarda olduğu gibi geliştirelim.
 
 1 - Uygulama başlatıldıktan sonra Get başlıklı düğmeye basılır ve aşağıdaki ekran görüntüsü ile karşılaşılır.
@@ -160,3 +156,4 @@ Bu adımdan sonra 30 saniyelik süre dolmadan tekrar Get düğmesine basarsanız
 Tüm bunlar bir yana en iyi test yöntemlerinden biriside uygulmayı Debug ederek incelemeniz olacaktır ki bunu yapmanızı şiddetle tavsiye ederim. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingObjectCache.rar (42,82 kb)](/assets/files/2009/UsingObjectCache.rar)
+

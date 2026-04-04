@@ -13,8 +13,6 @@ Programlamaya profesyonel olarak adım attığım yıllarda henüz.Net mimarisi 
 
 Ancak ister Delphi olsun ister.Net ister Java platformu, görsel program geliştirme ortamlarında var olan bileşenlerin yeterli gelmediği durumlar ile karşılaşılabilir. Bu durumda, geliştiriciler kendi bileşenlerini yazmaya çalışırlar (Yada ihtiyaçlarını karşılayan bileşenleri satın alma yoluna giderler
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 ). Bunun pek çok nedeni olabilir. Bu nedenler basit Web tabanlı bir TextBox kontrolünün güvenlik açığı, çok sık kullanılan IPV4 girişleri için bir kontrolün bulunmayışı veya birden fazla kontrolün birleşiminin pek çok yerde kullanılması gerekliliği vb olabilir...
 
 Özel bileşenlerin geliştirilmesi genellikle bellidir. Bunlardan birisi bileşenin sıfırdan yazılmasıdır. Bu zaman zaman zahmetli bir yoldur. Söz gelimi Windows veya Web tarafında ekrana basılacak olan çıktının üretilmesi için gerekli kodlamaların yapılması gerekir. Bu Windows tarafında Paint olayının ezilerek GDI/DirectX gibi tekniklerin konuşturulması veya Web tarafında HTML ve Javascript destekli kodlamaların yapılmasını gerektirebilir. İkinci bir yol var olan bileşenlerin tasarım ortamında bir arada değerlendirilerek composite üretimlerin gerçekleştirilmesidir. Yine Windows ve Web tarafındaki User Control'leri bu anlamda düşünebiliriz. Diğer bir teknik ise, var olan bir bileşenden türetme yoluna gidilerek geliştirmenin yapılmasıdır ki bu çok sıkça tercih edilmektedir. Peki Workflow Foundation alt yapısında kendi bileşenlerimizi nasıl yazabiliriz? Aslında Workflow Foundation tarafında kullanılan Activity'lerin, Windows veya Web tarafındaki görsel olan/olmayan kontrollerden pekte farkı yoktur. Aktivite'lerde Workflow Foundation tarafında geliştirici tarafından değerlendirilen özel bileşenlerdir.
@@ -128,3 +126,4 @@ Custom Activity geliştirmek ile ilişkili diğer teknikleri de ilerleyen yazıl
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ActivityLibrary2.rar (47,00 kb)](/assets/files/2010/ActivityLibrary2.rar)
+

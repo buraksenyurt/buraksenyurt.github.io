@@ -20,14 +20,11 @@ Hepimizin hafızasında yer eden ve defalarca seyretse de asla sıkılmayacağı
 
 ![32484720231_large](/assets/images/2012/32484720231_large.jpg)
 
-
 The Godfather, Starwars, Matrix, The Good the bad and the ugly, Back to the future vb…Bunlardan birisi de benim için [Mad Max](http://www.imdb.com/title/tt0079501/)’ dir.
 
 Serinin ilginç konusu dışında en çok dikkatimi çeken (pek çok erkeğin de dikkatini çetkiği üzere) filmde kullanılan araçlardır. Bunlardan birisi de o zamanlar yol devriyesi olarak görev yapan V8 motora sahip 1974 model Ford Falcon XB dir. Tabi bunu tahmin edeceğiniz üzere siyah renkli efsanevi Ford GT351 takip etmiştir. [Detaylar için wikipedia’ dan bilgi alabilirsiniz](http://en.wikipedia.org/wiki/Mad_Max#Vehicles)
 
 Peki bizimle ne alakası var
-
-![Who me?](/assets/images/2012/wlEmoticon-whome_2.png)
 
 Bu yazımızda farklı bir Interceptor kavramını göz önüne alıyor olacağız.
 
@@ -36,8 +33,6 @@ WCF (Windows Communication Foundation) alt yapısının popüler olmasının en 
 WCF tarafındaki genişletilebilirlik (extendability) ve hatta yeniden yazabilme yetenekleri, WCF alt yapısı üzerine oturmuş yan ürünlerin de oluşmasına neden olmuştur. Söz gelimi Data Service’ ler veya WCF Web API bu duruma verilebilecek en güzel örneklerdendir. Tabi bunun dışında daha ince ayarlar da yapılabilir. Söz gelimi kendi ServiceHost ortamımızı yazabiliriz veya özel kanal yığını (Channel Stack) oluşturup güvenlik için daha etkin çözümler üretebiliriz. Ya da kendi Binding tipimizi geliştirerek şirketimize ait bir mesajlaşma protokolünün devreye alınmasını sağlayabiliriz.
 
 WCF çalışma mantığı düşünüldüğünde istemci ve servis tarafı (Dispatcher diyelim bu yazımız için) arasındaki iletişim sırasında da araya girebileceğimiz konumlar bulunmaktadır. Sonuçta istemci bir mesajı servis tarafına gönderir ve karşılığında genellikle bir cevap bekler (veya beklemez. OneWay tipindeki operasyonları düşünelim) İşte bu süreçte parametre dahil, mesaj seviyesinde dahi araya girebilir ve istediklerimizi gerçekleştirebiliriz. İşte bu yazımızın konusu da budur. Interceptors
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_144.png)
 
 > Interceptor kelimesi durdurucu, yol kesen, önleme uçağı gibi anlamlara gelmektedir. Lakin ilerleyen kısımlarda göreceğiniz gibi kendi geliştireceğimiz özel kesici tipler Inspector kelimesini içeren arayüzleri (Interface) uygular. Inspector ise kontrolör, denetleyici, denetmen, müfettiş gibi anlamlara gelmektedir. Dolayısıyla kelimeler ve kavramlar birbirleri yerine geçebilirler. Algıda bir karmaşa olmaması adına belirtmek isterim.
 
@@ -133,8 +128,6 @@ namespace SomeServiceApp
 
 Parametre bazlı kesme tiplerinin kullanılabileceği senaryolardan ilk akla gelen sanıyorumki doğrulama operasyonlarıdır. Söz gelimi örnek servisimizi göz önüne aldığımızda, ProcessCadImage operasyonuna gelen byte[] tipinden dizinin içeriğini kontrol ettirebilir ve gerçekten bir Image olup olmadığını denetleyebiliriz. Ama bu kadar komplike düşünmemize şu aşamada pek gerek yoktur
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_144.png)
-
 Sonuçta basit bir boyut kontrolü de pekala işimizi görecektir. Buna göre ilk yapmamız gereken bir parametre kesicisi yazmaktır. Bunun için System.ServiceModel.Dispatcher isim alanında bulunan IParameterInspector türevli bir tip geliştirmemiz gerekecek. Aynen aşağıda olduğu gibi.
 
 ```csharp
@@ -174,8 +167,6 @@ namespace SomeServiceApp
 
 IParameterInspector arayüzü (Interface) ile birlikte gelen iki kritik operasyon vardır. Bunlardan birisi AfterCall diğeri ise BeforeCall’ dur. Geriye bir şey döndürmeyen AfterCall metodu, tahmin edileceği üzere ilgili servis operasyonu işleyişini tamamladıktan sonra devreye girmektedir. Tabiri yerinde ise iş işten geçtikten sonra diyebiliriz
 
-![Smile](/assets/images/2012/wlEmoticon-smile_64.png)
-
 İşin aslı, burada servis operasyon çağrısının tamamlanması sonrası gerçekleştirilecek işlemlere yer verebiliriz. Belki loglama veya performans ölçümleri adına ideal bir yer olabilir.
 
 Geriye object tipinden değer döndüren ve çağrıda bulunulan operasyon adı ile o operasyona gelen parametreler için object tipinden bir diziyi parametre olarak alan BeforeCall metodu ise, kesme işleminin uygulanabileceği en ideal yerdir.
@@ -185,8 +176,6 @@ Geriye object tipinden değer döndüren ve çağrıda bulunulan operasyon adı 
 > Aslında bu tip boyut kontrolleri için konfigurasyon dosyasında yer alan binding nitelikleri de kullanılabilir. Lakin bu ayarlarda daha çok mesajın boyutu göz önüne alınmaktadır. Bizim senaryomuzda ise dikkat edileceği üzere operasyona gelen bir parametreye özgü olacak şekilde boyut kontrolü gerçekleştirilmektedir.
 
 Peki parametre için gerekli kesme tipini tanımladık. Bunu WCF çalışma zamanı nasıl bilebilir?
-
-![Sarcastic smile](/assets/images/2012/wlEmoticon-sarcasticsmile_11.png)
 
 Söz konusu kesme operasyonu aslında bir servis metoduna ait olduğundan, nitelik bazlı bir davranış (Attribute -ased Behavior) olarak ortama bildirilebilir. Yani, bir Custom Behavior tipi söz konusudur. Bu amaçla aşağıdaki sınıfı geliştirmemiz yeterli olacaktır.
 
@@ -300,8 +289,6 @@ namespace ClientApp
 
 Görüldüğü gibi Parametre bazlı çalışan kesici tip devreye girmiş ve servis tarafında üretilen Fault mesajı istemci tarafında da ele alınabilmiştir. (Bu noktada AfterCall metoduna hiç uğranılmayacağını da ifade edebiliriz) Tabi tam tersi durumu da test etmemiz yerinde olacaktır. Yani uygun bir boyut gönderdiğimizde true değerini aldığımızı da görmeliyiz
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_144.png)
-
 ## Mesaj Bazlı Kesici (Message Interceptor)
 
 Gelelim mesaj bazında kesme işleminin nasıl yapılabileceğine. Mesaj kesme işlemini istemci veya servis tarafında gerçekleştirebiliriz. Eğer servis tarafında (Dispatch kısmı) bir kesici söz konusu ise öncelikli olarak IDispatchMessageInspector arayüzünü implemente edecek bir sınıfın geliştirilmesi gerekmektedir. İstemci taraflı bir kesme operasyonu için de IClientMessageInspector arayüzü uygulanmalıdır. Bazı senaryolarda her iki arayüzün implemente edildiği tek bir hybrid tip de söz konusu olabilir. Bu sayede hem istemci hem de servis tarafı için çalışabilecek bir mesaj kesicisi geliştirilebilir. Biz örnek senaryomuzda mesajın toplandığı servis tarafını göz önüne alarak ilerleyeceğiz. Bu nedenle IDispatchMessageInspector arayüzünü değerlendiriyor olacağız.
@@ -338,15 +325,11 @@ namespace SomeServiceApp
 
 AfterReceiveRequest tahmin edileceği üzere istemciden ilgili operasyon için gelen talep alındığında devreye girmektedir. Burada mesaj içeriği henüz işlenmemiştir. Bir başka deyişle taleb edilen operasyon henüz çalıştırılmamıştır. Dolayısıyla gelen mesaj alınıp, istenirse değiştirilebilir
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_144.png)
-
 (Message tipinden olan request değişkeninin ref ile tanımlandığına dikkat edelim. Dolayısıyla runtime’ da mesajın geldiği yerde bulunan mesaj içeriği buradan değiştirilebilir)
 
 BeforeSendReply metodu ise istemcinin talep ettiği operasyonun işlenmesi sonrası cevap dönülmeden önce devreye giren fonksiyondur. Burada da dikkat edileceği üzere dönüş için kullanılan mesaj ele alınabilir ve istenirse değiştirilebilir.
 
 Örneğimizde her iki operasyon içeriği de boş bırakılmıştır. Siz, söz konusu implementasyonu yaparken bir senaryo üzerinden gidebilirsiniz. Örneğin gelen mesaj içeriğinde yer alan Türkçe karakterleri ayrıştırma veya dönüş sırasında üretilen mesajı kendi geliştirdiğiniz ve şirketinize özel algoritmaya göre şifreleyerek göndermek gibi
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_144.png)
 
 Mesaj tabanlı kesici tip geliştirildikten sonra, parametre kesicilerindekine benzer olarak, çalışma zamanına bir bildirimde bulunmamız gerekecektir. Bu sefer bu bildirimi konfigurasyon bazlı olacak şekilde gerçekleştireceğiz. Bu amaçla bir Endpoint davranışı belirleyip bunu konfigurasyon dosyasında değerlendirilebilecek şekilde ele almamız yeterlidir.
 

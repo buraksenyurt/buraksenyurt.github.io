@@ -135,8 +135,6 @@ Dikkat edileceği üzere sadece istediğimiz alanlar sorguya dahil edilmiştir.
 
 Derken rüyadan uyanırım ve birden aklıma artık Ado.Net Entity Framework konulu bir yazı yazacağım gelir.
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 Bakalım o tararfa Lazy Loading, Eager Loading durumları nasıl ele alınabilir. Bu kez projede kullanacağımız tiplerin EDM (Entity Data Model) diagramındaki görüntüsü aşağıdaki gibidir. Aynen yukarıda örneklerde olduğu gibi Category ve Product tablolarını ele alıyor olacağız.
 
 ![blog1_7.gif](/assets/images/2009/blog1_7.gif)

@@ -88,8 +88,6 @@ namespace <#= dbName #>
 
 Örneğimizde yer alan ilk bloğun yaptığı iş, veritabanına bağlanıp Chinook tablolarını ve bu tablolara ait kolonların karşılığı olan class ve property içeriklerini üretmektir. Bu amaçla içeride StringBuilder tipinden yararlanıldığı görülmektedir. Yanlız şu kod parçasına dikkat etmeliyiz
 
-![Sarcastic smile](/assets/images/2012/wlEmoticon-sarcasticsmile_5.png)
-
 ```csharp
 using System; 
 using System.Linq; 
@@ -108,8 +106,6 @@ Dosyamızı bu haliyle kayıt ettiğimizde, Visual Studio IDE'si otomatik olarak
 Dikkat edileceği üzere Chinook veritabanında yer alan tablolara karşılık gelen sınıf dosyaları üretilmiş olup, Column’ ların veri tiplerine göre de uygun Property’ ler ilgili tipler içerisine dahil edilmiştir. Artık elimizde cs tabanlı otomatik olarak üretilmiş bir içerik mevcuttur. Bu haliyle de içeriği herhangibir.Net projesine ekleyip kullanabilme şansına sahibiz.
 
 Şu anda yapmak istediğimiz ise söz konusu Text Template içeriğini ve üretimini bir Extension haline getirmektir. Bu sayede bu TT öğesini herhangibir projeye ekleyebilir ve gerekli otomatik üretimleri yaptırtabiliriz. Tabi bu yapının parametrik olarak çalışması çok daha önemlidir. Nitekim geliştiriciler üretimini yapacakları veritabanına ait Connection String bilgisini isterlerse seçebilmelidir. Şimdi yazımızın ikinci kısmını ele almaya başlayabiliriz
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_99.png)
 
 Bu amaçla ilk olarak File menüsünden Export Template seçeneğini işaretleyip DbClassGenerator’ ü sıkıştırılmış bir paket haline getirmemiz gerekmektedir. Söz konusu paketin üretimi sırasında Visual Studio bir Wizard yardımıyla bizden bir kaç adımı tamamlamamızı isteyecektir. Söz konusu adımları aşağıdaki sırayla icra edebiliriz.
 
@@ -143,7 +139,7 @@ Bu işlem sonrasında Visual Studio IDE’ si karşımıza detaylı bir özellik
 
 ![tutorialtt10](/assets/images/2012/tutorialtt10.png)
 
-Type kısmında ItemTemplate seçildiği görülmektedir (Template’ i hangi tipte Export ettiğimizi hatırlayın ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_99.png)) Kaynak olarak File on filesystem seçeneği işaretlenmiştir. Path bölümünde zip uzantılı dosyanın lokasyonunun verilmesi yeterli olacaktır. İlgili adres bilgisi verildikten sonra Asset kısmına tekrardan girilirse yol bilgisinin artık projedeki ItemTemplates klasörünü işaret ettiği gözlemlenebilir. Bunun sebebi ilk adımda seçilen adreste yer alan içeriğin VSIX projesine kopyalanmış olmasıdır.
+Type kısmında ItemTemplate seçildiği görülmektedir (Template’ i hangi tipte Export ettiğimizi hatırlayın) Kaynak olarak File on filesystem seçeneği işaretlenmiştir. Path bölümünde zip uzantılı dosyanın lokasyonunun verilmesi yeterli olacaktır. İlgili adres bilgisi verildikten sonra Asset kısmına tekrardan girilirse yol bilgisinin artık projedeki ItemTemplates klasörünü işaret ettiği gözlemlenebilir. Bunun sebebi ilk adımda seçilen adreste yer alan içeriğin VSIX projesine kopyalanmış olmasıdır.
 
 ![tutorialtt11](/assets/images/2012/tutorialtt11.png)
 
@@ -176,8 +172,6 @@ Yaptığımız çalışma sonucu projeyi build edersek eğer aşağıdaki gibi v
 ![tutorialtt12](/assets/images/2012/tutorialtt12.png)
 
 Bir başka deyişle söz konusu installer dosyasını çalıştırıp template’ imizin Visual Studio ortamına entegre edilmesini sağlayabiliriz. Lakin halen eksik olan bir kaç şey bulunmaktadır. Projemizde kullandığımız Text Template içerisinde yer alan Connection String ve DbName gibi bilgiler hard coded olarak tutulmaktadır. Oysaki bağlantı bilgisini dışarıdan verebilmiş olsaydık çok daha generic bir proje öğemiz olurdu. Şimdi bu parametreleri dışarıdan nasıl alabileceğimize bir bakalım
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_99.png)
 
 İlk olarak DbClassGenerator.Design isimli bir Windows uygulaması oluşturalım ve söz konusu projeye aşağıdaki referansları ekleyelim. Bu proje öğeyi eklediğimiz sırada devreye girecek bir arabirimi geliştiricinin karşısına çıkartmak için kullanılacaktır.
 
@@ -349,8 +343,6 @@ Bu son işlemlerden sonra VSIX Projesini bir kere daha derlememiz gerekir. (Hatt
 ![tutorialtt16](/assets/images/2012/tutorialtt16.png)
 
 Öğeyi seçtikten sonra ise karşımıza tasarladığımız Windows Forms penceresi çıkacaktır. Eğer doğru Connection String bilgisini girersek (bu örnekte MultipleActiveResultSets değeri için true vermeyi unutmayın) cs içeriğinin otomatik olarak üretildiğine şahit olabilirsiniz
-
-![Smile](/assets/images/2012/wlEmoticon-smile_40.png)
 
 Görüldüğü üzere bir TT projesi VSIX ile bir arada değerlendirildiğinde Visual Studio tarafına Extension yazılması söz konusudur. Biraz uzun ve yorucu bir makale olduğu kadar uygulama sırasında da oldukça dikkat ve titizlik isteyen bir çalışma söz konusudur. Umarım istediğiniz sonuçları sizlerde elde edersiniz. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -113,6 +113,4 @@ Görüldüğü gibi tek yaptığımız Scopes koleksiyonuna yeni bir Uri bilgisi
 
 Özetle Scope eklentileri sayesinde istemcinin, servis keşfi yapması için gerekli ayarları tabir yerinde ise akord etmesi ve gerçekten ilgilendiği alanlara ait servisleri araması mümkün hale gelebilmektedir. Konu ile ilişkili olarak örneğin son halini link olarak vermiyorum. Lütfen burada yazılanları oraya taşıyıp denemekten üşenmeyiniz
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

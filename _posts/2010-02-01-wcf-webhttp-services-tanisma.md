@@ -44,7 +44,7 @@ Create servis operasyonu ile yeni bir SampleItem nesnesinin HTTP Post metoduna g
 
 Şimdi servis uygulamamız üzerinde bir kaç küçük değişiklik yapalım. Öncelikli olarak hayatımızı kolaylaştırmak adına Entity Framework'ten yararlanalım ve meşhur Chinook veritabanını ve işlemleri basit bir biçimde ele almak için sadece Artist tablosunu kullanmak istediğimizi düşünelim. Gerçi bu noktadan sonra biraz WCF Data Service'lere doğru kaymaya başlamış oluyoruz ancak amacımız tabiki HTTP Get,Post,Put ve Delete işlemlerini kendi kontrolümüz altında geliştirmek.
 
-Not: Tam bu noktada geliştirilen uygulamanın Data Service'ten veya RIA Service'ten ne farkı kaldığı sorusu akla gelebilir. ![Wink](/assets/images/2010/smiley-wink.gif) WCF WebHttp servislerinde asıl nokta operasyonun non-SOAP olacak şekilde sunulması (yani HTTP Get,Post,Put,Delete) ayrıca URI, format, protocol gibi bilgilerin tamamen geliştirici kontrolü altında olmasıdır.
+Not: Tam bu noktada geliştirilen uygulamanın Data Service'ten veya RIA Service'ten ne farkı kaldığı sorusu akla gelebilir. WCF WebHttp servislerinde asıl nokta operasyonun non-SOAP olacak şekilde sunulması (yani HTTP Get,Post,Put,Delete) ayrıca URI, format, protocol gibi bilgilerin tamamen geliştirici kontrolü altında olmasıdır.
 
 Şimdi servis kodlarını aşağıdaki gibi geliştirdiğimizi varsayalım.
 
@@ -123,8 +123,6 @@ Dikkat edileceği üzere http://makineadı:portnumarası/Chinook üzerine gelen 
 
 Tabi test derken ilk etapta servis operasyonlarını nasıl çağırabileceğimizi bilemeyebiliriz. Yada bulmak için araştırmaya üşenebiliriz.
 
-![Embarassed](/assets/images/2010/smiley-embarassed.gif)
-
 İşte bu amaçla WCF tarafına gelen Auto Help yetenekleri sayesinde çalışma zamanında yardım sayfasına gidebilir ve servis operasyonlarını nasıl çağırabileceğimizi, içeriklerinin ne olacağını görebiliriz.. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![blg127_Runtime1.gif](/assets/images/2010/blg127_Runtime1.gif)
@@ -144,3 +142,4 @@ Son olarak ArtistId değer aralığına göre Artist listesini elde etmek istedi
 Oldukça basit ve etkili değil mi? WCF WebHttp Service'ler ile ilişkili incelemelerimize devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloWebHttp.rar (31,23 kb)](/assets/files/2010/HelloWebHttp.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+

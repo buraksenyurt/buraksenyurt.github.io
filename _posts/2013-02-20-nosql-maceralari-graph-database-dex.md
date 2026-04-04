@@ -21,8 +21,7 @@ Eminim pek çoğunuzun hastası/fanatiği olduğu yerli veya yabancı diziler va
 
 ![dex_7](/assets/images/2013/dex_7.png)
 
-
-Bilişim alanında görev alanların ağırlıkla CNBC-E gibi kanallarda yer alan dizilere olan bağımlılığı da aslında su götürmez bir gerçektir. Örneğin benim fanatiği olduğum dizilerden birisi Dexter ve ne tesadüftür ki bu gün yazımızda ele alacağımız ürünün adı da onun lakabı ile eş: DEX ![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_4.png)
+Bilişim alanında görev alanların ağırlıkla CNBC-E gibi kanallarda yer alan dizilere olan bağımlılığı da aslında su götürmez bir gerçektir. Örneğin benim fanatiği olduğum dizilerden birisi Dexter ve ne tesadüftür ki bu gün yazımızda ele alacağımız ürünün adı da onun lakabı ile eş: DEX
 
 Daha önceden hatırlayacağınız üzere şuradaki makalede [Apache Cassandra](/2012/12/16/nosql-maceralari-apache-cassandra-ve-dotnet/)’ yı, oradaki makalede ise [RavedDB](/2013/01/12/nosql-maceralari-ravendb-ile-hello-world/)’ yi incelemeye çalışmıştık. Bu yazımızda ise yine NoSQL veritabanı çeşitlerinden birisi olup Graph teorisini baz alan DEX isimli ürünü incelemeye çalışıyor olacağız.
 
@@ -37,8 +36,6 @@ DEX veritabanı C++ ile yazılmıştır. Java,.Net, C++, Blueprints Interface AP
 ![dex_1](/assets/images/2013/dex_1.png)
 
 Bu şekli biraz inceleyelim
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_170.png)
 
 Basketbol oyuncuları, takım koçları ve takımların yer aldığı bir şema görmekteyiz. Ayrıca bu karakterlerin bazı özellikleri de bulunmaktadır. Örneğin isimler, ülkeler ve benzersiz olmalarını sağlayan sayısal numaralar gibi. Ayrıca bu karakterler arasında belirli bir yöne doğru çizilmiş ilişkiler olduğu görülmektedir. Tüm bunları birleştirdiğimizde şekle bakarak aşağıdaki cümleleri ve benzerlerini sarf edebilmekteyiz.
 
@@ -236,8 +233,6 @@ Kod satırlarının uzun görünmesine aldırış etmeyin. Temel olarak icar ett
 Edge örnekleri oluşturulurken de ilk olarak Edge tipi belirtilmektedir. Tip belirtildikten sonra ise yine Node oluşturulmasına benzer olacak şekilde nitelik değerlerinin verilmesi söz konusudur. Her iki kullanımda da değerlerin atanması için Value tipinden ve ilgili Set fonksiyonundan yararlanılmaktadır. Örneğin long tipinden olan ElemanId için value nesne örneğinin SetLong metodundan yararlanılırken, string tipte olan takım adları için SetString fonksiyonu kullanılmaktadır. Tanımlanan her Edge ile Graph görselinde yer alan ilişkilerin tanımlandığına dikkat edilmelidir.
 
 > Siz tabiki makaleyi okuyup kullanım tekniklerini öğrendikten sonra şöyle güzel janjanlı WPF/Asp.Net ekranları hazırlayarak bu işi daha zevkli hale getirebilirsiniz
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_170.png)
 
 Veri ekleme işlemlerini tamamladığımıza göre basit bir arama işlemi ile devam edebiliriz. Örneğin Semih Erden’ in bağlı olduğu boğumları bulalım.
 
@@ -265,8 +260,6 @@ while (iterator.HasNext())
 Yine Graph nesne örneğinden yararlanılmaktadır. İlk olarak Neighbors metodu ile semihErden örneğinin roleType’ a göre dışarıya doğru olan komşularına gidilmektedir. roleType bildiğiniz üzere bir Edge örneğidir. Tabi n sayıda sonuç dönebileceğinden ileri yönlü bir iterasyona ihtiyaç vardır. Bu sebepten ObjectsIterator tipinden bir nesne örneklenmiş ve while döngüsüne başvurulmuştur. HasNext’ in true döndürdüğü sürece devam eden döngü içerisinde ise GetAttribute metodundan yararlanılarak elde edilen Node’ un bazı değerleri okunmaktadır. Takım adı ve bulunduğu ülke.
 
 Peki iki Node arasındaki Edge örneğini nasıl yakalayabiliriz?
-
-![Who me?](/assets/images/2013/wlEmoticon-whome_4.png)
 
 Bunun için örnek bir kullanım aşağıdaki kod parçasında görüldüğü gibidir.
 
@@ -308,7 +301,5 @@ Uygulamanın çalışma zamanı çıktısına baktığımızda aşağıdaki ekra
 ![dex_6](/assets/images/2013/dex_6.png)
 
 Görüldüğü üzere Graph teorisine bağlı kalaraktan, DEX API’ sinden de yararlanarak tüm Euroelague takımları ve oyuncuları için (hatta bunların içerisine başka nesneleri de katabiliriz) kocaman bir veri içeriğini oluşturmamız mümkündür. Tabi böyle bir içerik kuvvetle muhtemel 1milyon nesneyi aşabilir ve dolayısıyla lisans satın alınması gerekebilir. DEX gibi başka pek çok Graph veritabanı mevcuttur. Örneğin Trinity, BigData vb…Bunları da fırsatım olursa incelemeye çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_170.png)
 
 [HowTo_DEX.zip (785,18 kb)](/assets/files/2013/HowTo_DEX.zip)

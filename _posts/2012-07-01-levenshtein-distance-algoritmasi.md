@@ -14,10 +14,7 @@ Bir süredir yazılım dünyasında sıklıkla kullanılan basit algoritmalara m
 
 ![artcl_11_4](/assets/images/2012/artcl_11_4.jpg)
 
-
 Aslına bakarsanız bilgisayar bilimlerinde uygulanabilen, gerçekten çok işe yarayan ve onları keşfedenleri saygıyla hatırlamamız gereken algoritmalar mevcut. Örneğin bunlardan birisi olan [Levenshtein Distance](http://en.wikipedia.org/wiki/Vladimir_Levenshtein) algoritması ve mucidi Vladimir Levenshtein
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_79.png)
 
 Bu algoritma bizlere, özellikle arama motorlarında da kullanılabilen bir model sunmaktadır. Son kullanıcıların aradıkları kelimeleri tam olarak belirleyemedikleri veya kestiremedikleri durumlarda, öneri olarak sunulan kelimelerin tespit edilmesi sırasında ele alınan bir algoritmadır. Örneğin ben Google sitesindeki arama kutucuğunda kendi ismimi eksik karakterler ile yazdığımda, google daha önceden yapmış olduğu indekslenmiş içeriklere göre bir öneri de bulunmuştur (Bunu mu demek istediniz kısmı) Aşağıdaki şekilde bu durum açık bir şekilde görülmektedir.
 
@@ -30,8 +27,6 @@ Biz bu yazımızda söz konusu algoritmanın kullanılması için gerekli olan t
 Aslında algoritma temel olarak iki kelimenin birbirlerine olan benzerliklerini ölçümlemek amacıyla kullanılmaktadır. Sonuç tek bir sayısal değerdir ve iki kelimeden birinin diğerine dönüştürülebilmesi için gerekli olan işlem sayısını ya da maliyetini vermektedir. Çok doğal olarak bu sayınının düşük olması arzu edilen neticedir. Nitekim daha az değişiklik anlamına gelmektedir. Çok doğal olarak bir kelimenin, bir öneri kelime kümesi içerisindekiler ile karşılaştırılması sonucu ortaya çıkan sayısal değerlerden en küçüğü veya küçükleri, sonuca ulaşılması ve doğru önerilerde bulunulması açısından önemlidir.
 
 Peki bu yakınlık değeri nasıl hesaplanmaktadır?
-
-![Smile](/assets/images/2012/wlEmoticon-smile_27.png)
 
 Bunun için kelimeler arası iki boyutlu bir matris dizisi kullanılır. Lakin söz konusu matrisin içereceği değerlerin tespiti çok da kolay değildir. Dilerseniz aşağıdaki Excel görüntüsünde yer alan örneklemelere bir bakalım ve algoritmayı daha yakından tanımaya çalışalım.
 
@@ -136,8 +131,6 @@ Uygulamamız içerisinde dikkat edeceğiniz üzere Excel tablosunda yer alan kel
 ![artcl_11_2](/assets/images/2012/artcl_11_2.png)
 
 Artık bundan sonrasında yapılması gereken, bir text kutucuğuna girilen metni, bir metin kümesi içerisinde söz konusu algoritmaya göre aramak ve yakınlık derecesi, bir başka deyişle operasyon işlem maliyeti en düşük olan kelime veya kelimeleri kullanıcıya sunmaya çalışmaktan ibarettir. Dilerseniz bu konuyu bir düşünün ve uygulamaya çalışın
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_79.png)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

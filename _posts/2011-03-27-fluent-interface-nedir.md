@@ -14,9 +14,6 @@ Yazılımcı olarak bizlerin zaman içerisindeki gelişimimiz/ilerleyişimiz aç
 
 ![blg236_Giris](/assets/images/2011/blg236_Giris.jpg)
 
-
-![Smile](/assets/images/2011/wlEmoticon-smile.png)
-
 Bu güne kadar yayımlamış olduğu çok değerli kitaplar bulunmaktadır. Hatta son çıkarttığı ve merakla bekleyip okumaya başladığım [Domain-Specific Languages (Addison-Wesley Signature Series)](http://www.amazon.com/Domain-Specific-Languages-Addison-Wesley-Signature-Martin/dp/0321712943/ref=sr_1_1?ie=UTF8&qid=1288249840&sr=8-1) isimli kitap en büyük favorilerim arasında yer almakta.
 
 > Bundan önceki favori kitaplarım ise [Clean Code: A Handbook of Agile Software Craftsmanship](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_10?ie=UTF8&qid=1288249840&sr=8-10) ve [Agile Principles, Patterns, and Practices in C#](http://www.amazon.com/Agile-Principles-Patterns-Practices-C/dp/0131857258/ref=sr_1_14?ie=UTF8&qid=1288256328&sr=8-14) dir
@@ -26,8 +23,6 @@ Pek Martin Fowler’ ın kulaklarını niye bu kadar çok çınlatıyoruz
 ![Thinking smile](/assets/images/2011/wlEmoticon-thinkingsmile_1.png)
 
 Bu günkü yazımızda ilk olarak Martin Fowler ve Eric Evans tarafından tanımlanan Fluent Interface konusunu irdelemeye çalışıyor olacağız. Aslında kelime anlamlarından yola çıkarsak okunabilir, açık, net arayüz tiplerinden bahsettiğimizi düşünebiliriz. Ancak bu şekilde söz konusu kavrama biraz haksızlık etmiş oluruz. Fluent Interface esas itibariyle daha okunabilir kodlama açısından önem arz eden ve uygulanması sırasında metod zincirlerinden yararlananan bir yaklaşım sunmaktadır. Şimdi ne demek istediğimizi ben de ifade edemedim aslında
-
-![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile_2.png)
 
 Gelin basit bir örnek ile konuyu didiklemeye başlayalım.Bu amaçla aşağıdaki kod içeriğini göz önüne alabiliriz.
 
@@ -226,8 +221,6 @@ Mutlaka dikkatinizi çekmiştir. Set… ön eki ile başlayan metodlardan hangis
 
 İşte size bir metod zinciri. Bu tip bir kullanım son derece doğaldır, nitekim Set… metodları geriye IPlayerSpecV2 arayüzünün taşıyabileceği referansları döndürmek üzere kodlanmıştır. Bu sayede her hangibir Set… metod çağrısı ile başlatılan çalışma zamanı Context’ inin alt metod çağrılarına da taşınabilmesi kolaylaşmaktadır. Ayrıca ilk başlangıçta üretilen ile son kullanılan Context içeriğinin aynı ve tek olması da garanti altına alınmaktadır
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_6.png)
-
 Şimdi dilerseniz başka bir örnek daha ele alalım. İşte kodlarımız.
 
 ![blg236_RealExample](/assets/images/2011/blg236_RealExample.gif)
@@ -320,8 +313,6 @@ Bu noktada PlayerV3 nesne örneğini üretirken yapılan metod çağrılarına d
 ![blg236_Runtime](/assets/images/2011/blg236_Runtime.gif)
 
 Sanıyorum ki bu son örnek Fluent Interface kullanımı konusunda bizlere daha fazla fikir verebilmiştir. Ancak son olarak işin içerisine bir de Extension metodları katarak işin kaymağını da hazırlayabiliriz
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_6.png)
 
 Son örneğimizde PlayerV3 tipinden tek bir nesne örneği için metod zincirini oluşturduğumuzu görüyoruz. Oysaki n sayıda tank için de birlikte hareket etmelerini sağlayacak biçimde metod zincirleri kurmak ve kullanmak isteyebiliriz. Bu noktada elimizde bir koleksiyon yapısı olduğu düşünülebilir (IEnumerable gibi) Söz konusu koleksiyon yapısı için eklenecek olan bir Extension ile de istediğimiz fonksiyonelliği kazanma şansına sahip olabiliriz. Gelin bu amaçla aşağıdaki gibi bir kod parçası geliştirelim.
 
@@ -446,8 +437,6 @@ Söz gelimi Main metodu içerisindeki kod parçalarına dikkat edildiğinde aTea
 ![blg236_Runtime2](/assets/images/2011/blg236_Runtime2.gif)
 
 Sanıyorum ki Fluent Interface kullanımı şimdi daha da bir anlam kazanmış oldu
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_6.png)
 
 İlerleyen zamanlarda bu tip uç prensipleri incelemeye devam etmeye çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

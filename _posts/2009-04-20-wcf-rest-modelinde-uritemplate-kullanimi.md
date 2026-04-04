@@ -191,8 +191,6 @@ List<Product> GetProducts(string categoryId);
 
 Ne kadar basit öyle değil mi?
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Hatta istersek IIS 7.0 üzerindeki ayarları kullanarak (bir sonrak yazımda ele almaya çalışacağım) svc uzantılı kısımlardan kurtulabilir ve URL kısmını dahada özelleştirebiliriz.
 
 Böylece geldik bir blog yazımın daha sonuna. Bu yazımızda WebGet niteliğinin UriTemplate özelliğini kullanarak, istemciden servis tarafına gelecek olan URL bilgilerinin nasıl özelleştirilebileceğini, WCF Resf modeli için değerlendirmeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim...

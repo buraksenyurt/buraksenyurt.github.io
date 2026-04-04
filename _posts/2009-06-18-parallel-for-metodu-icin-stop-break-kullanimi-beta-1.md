@@ -92,8 +92,6 @@ if (threadId=="10")
 
 Volaaaa...
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Bu durumda oluşan farklı çalışma zamanı sonuçlarından birisi aşağıdaki ekran görüntüsündeki gibi oldu.
 
 ![blg33_3.gif](/assets/images/2009/blg33_3.gif)
@@ -109,8 +107,6 @@ Bu sonuçlara ve diğerlerine baktığımda 1000 adımlık iterasyonun, Thread'l
 Görüldüğü gibi 10ncu Thread çalışmaya başlayıp 1 eleman ekledikten sonra gelen Stop metodu nedeniyle hem kendisi hemde diğer Thread'ler mümkün olan en kısa sürede durdurulmuştur.
 
 Sanıyorumki artık Stop ve Break arasındaki farkı daha iyi görebiliyoruz.
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

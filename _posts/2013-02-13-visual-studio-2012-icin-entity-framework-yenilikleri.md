@@ -13,7 +13,6 @@ categories:
 
 ![Delphi5_RTM](/assets/images/2013/Delphi5_RTM.jpg)
 
-
 Gelişen sistemler, kullanıcı deneyimleri ve görselliklerin artması ile de yazılımcıların daha profesyonel olan IDE’ ler üzerinde çalışması şart olmuştur.
 
 Bu anlamda tarihin belki en başarılı geliştirme arayüzlerinden birisi, herkesin bildiği üzere Delphi ortamıdır. Ne varki o zaman ki Borland firmasının sahip olduğu bu özellik, Anders Heijslberg’ in Microsoft takımına geçmesi ile birlikte yerini Visual Studio ailesine bırakmıştır. Anders sadece.Net Framework plaformu ve C# diline babalık etmemiş önemli bir User Experience tecrübesini de Microsoft şirketine taşımıştır. Visual Studio özellikle 2008 sürümünden itibaren inanılmaz derecede gelişti ve gelişmeye de devam ediyor.
@@ -80,8 +79,6 @@ Yeni bir diagram oluşturulduktan sonra yine Model Browser içerisinde yer alan 
 Malum pek çok veritabanı sistemi (özellikle Relational olanlar ve Enterprise çözümlerde kullanılanlar) oldukça fazla sayıda tablo, view ve Stored Procedure içermekte. Hal böyle olunca Entity modellerini içeren diagramların, Visual Studio IDE ortamında takip edilmesi de çok zor olabilmekte.
 
 Diagramların bölünebilmesi özelliği haricinde Visual Studio 2012 ile gelen önemli özelliklerden birisi de, Entity objelerinin renklendirilebiliyor olması. Bu özellik sayesinde örneğin aynı isim alanına ait (veya aynı domain içerisinde yer alması gereken) Entity’ leri farklı şekillerde renklendirerek, diagramın hem göze daha hoş görünmesi sağlanabilmekte hem de algının daha da güçlendirilmesi mümkün olmakta. Bunun için bir kaç Entity objesini aynı anda seçip, özellikler penceresinden Fill Color’ ı set etmemiz yeterli olacaktır. Aşağıdaki ekran çıktısında bu kullanıma örnek bir görüntü yer almaktadır
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_147.png)
 
 Renkli TV Versiyonu
 

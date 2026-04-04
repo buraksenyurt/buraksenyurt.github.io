@@ -15,8 +15,7 @@ categories:
 ---
 Elimizde bir Uri nesne örneği olduğunu varsayalım. Bu Uri adres bilgisinden de port numarası ve protocol bilgisine ulaşmak istiyorsunuz. Aslında string tabanlı fonksiyonellikler ile bu iş gerçekleştirilebilir ama Regex tipini işin içerisine katar ve bir de Extension Method haline getirirsek tadından yinmez
 
-![Smile](/assets/images/2012/wlEmoticon-smile_42.png)
-
 ![tfi_66](/assets/images/2012/tfi_66.png)
 
 Bir başka tek fotoluk ip ucunda görüşmek dileğiyle.
+

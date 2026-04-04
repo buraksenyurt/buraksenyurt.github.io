@@ -13,10 +13,9 @@ Savaş meydanlarında ezelden beri uygulanan istihbarat ve haber alma teknikleri
 
 ![blg219_Giris](/assets/images/2011/blg219_Giris.jpg)
 
-
 Yakın zamana kadar bu işler için yüksek irtifalardan, ses hızının bir kaç kat üstünde uçan uçaklar görev alırdı ki halen daha pek çok hava kuvvetlerince kullanılmaktadır. Örneğin bir zamanlar Birleşik Devletler ile Sovyetler Birliği arasında krize neden olan U2’ ler, şekli ve harcadığı yakıt ile ün salıp emekli olan SR71 Blackbird’ ler vs…
 
-Ancak artık uzaktan kumanda edilebilen, düştüklerinde pilot kaybı yaşanmasını engelleyen, insansız olmaları nedeni ile çok yüksek irtifalara kadar çıkabilen İnsansız Hava Araçları (Unmanned Aeiral Vehicle) var. Aslında uzun süredir varlar (Üstelik ben Generals oyununda da sıklıkla bunları kullanıyorum ![Wink](/assets/images/2011/smiley-wink.gif) Hatta geçtiğimiz günlerde bizimde gurur kaynağımız olan ANKA isimli insanız hava aracımız, ilk kez hangardan çıkarak uçuşunu gerçekleştirdi. Peki bu İHA’ ların bu günkü yazımız ile bir bağlantısı var mı? Pek olduğunu söyleyemeyiz.
+Ancak artık uzaktan kumanda edilebilen, düştüklerinde pilot kaybı yaşanmasını engelleyen, insansız olmaları nedeni ile çok yüksek irtifalara kadar çıkabilen İnsansız Hava Araçları (Unmanned Aeiral Vehicle) var. Aslında uzun süredir varlar (Üstelik ben Generals oyununda da sıklıkla bunları kullanıyorum Hatta geçtiğimiz günlerde bizimde gurur kaynağımız olan ANKA isimli insanız hava aracımız, ilk kez hangardan çıkarak uçuşunu gerçekleştirdi. Peki bu İHA’ ların bu günkü yazımız ile bir bağlantısı var mı? Pek olduğunu söyleyemeyiz.
 
 Aslında bu günkü yazımızda bir WCF (Windows Communication Foundation) servisinin operasyonlarına gelen çağrılar hakkında istihbarat toplamaya çalışıyor olacağız. Ancak bunun için standart Trace ve Monitoring özellikleri yerine kod yardımıyla ilerleyeceğiz. Normal şartlarda IIS (Internet Information Services) üzerinden yayınlanan bir WCF servisine gelen operasyon çağrılarını izlemek son derece kolaydır. Bu amaçla konfigurasyon dosyasında gerekli ayarların yapılması yeterlidir. Diğer taraftan istenirse Windows Server AppFabric ile IIS üzerine gelen eklentilerden yararlanarak bu tip izleme ayarları kolaylıkla yapılabilir.
 
@@ -104,7 +103,7 @@ Buna göre kullanıcı Open başlıklı düğmeye basarak servisi yayına sunaca
 
 Servisimiz TCP protokolüne göre yayın yapmaktadır. Ayrıca MexTcpBinding bağlayıcı tipini kullanarak Metadata yayını da yapmaktadır. Dolayısıyla istemciler kendileri için gerekli Proxy tiplerini üretmek amacıyla WSDL içeriğine ulaşabilirler.
 
-Gelelim WinForms’ un başlangıçta arka plandaki kodlarına (Tam anlamıyla Buton Arkası Kodlarına ![Sealed](/assets/images/2011/smiley-sealed.gif))
+Gelelim WinForms’ un başlangıçta arka plandaki kodlarına (Tam anlamıyla Buton Arkası Kodlarına)
 
 ```csharp
 using System; 
@@ -155,8 +154,6 @@ namespace HostApp
 Çok basit olarak özetlemek gerekirse, ServiceHost sınıfına ait nesne örneği üretilirken AccountService tipini parametre olarak almaktadır. Yani AccountService servisi yayına alınmaktadır. Bu servis üzerinden Open ve Close işlemlerinin uygulanması halinde Opened ve Closed olay metodları devreye girmektedir.
 
 Kahveleriniz yanınızda değil mi?
-
-![Laughing](/assets/images/2011/smiley-laughing.gif)
 
 Artık asıl işlemlerimize başlayabiliriz. İlk olarak içeriği aşağıda görülen ve IParameterInspector arayüzünü (Interface) uygulayan bir sınıf geliştirerek yola çıkalım.
 
@@ -218,8 +215,6 @@ namespace InspectorLib
 TextFileInspector sınıfı, IParameterInspector arayüzünü (Interface) uygulamaktadır. Bu arayüz görüldüğü üzere AfterCall ve BeforeCall isimli iki metodun ezilmesini istemektedir. BeforeCall metodu ile operasyona yapılan çağrıya ait bilgiler yakalanabilir. Aslında operasyon başlatılmadan önce, yakalandığı yer olarakta düşünebiliriz. AfterCall metodu hangi operasyona çağrı yapılığına dair operationName parametresini kullanmaktadır. Diğer yandan object dizisi tipinden olan inputs parametresi ile, çağrıda bulunulan operasyona gelen giriş değerleri öğrenilebilir. Benzer şekilde AfterCall fonksiyonunu da, operasyondan istemciye cevap dönerken değerlendirilebilir. Böylece istemciye hangi operasyon için hangi değerin döndürüldüğü yakalanabilir. Her iki metod da, Text tabanlı bir dosyaya bilgi yazmakta ve raporlamayı bu şekilde gerçekleştirmektedir. Ama bu bir zorunluluk değildir. Burada ListBox içeriğine bilgilendirme amaçlı öğe eklenmesi de sağlanabilir, bir veritabanı tablosuna yazma işlemi de gerçekleştirilebilir.
 
 Çok doğal olarak bu sınıfın çalışma zamanına bir şekilde öğretilmesi gerekmektedir. Bu noktada servis metodları ve servise söz konusu tipin bildirilmesi gerektiğini düşünebiliriz. Servis operasyonları için bu tip bir davranış uygulanacağı nitelikler (Attributes) yardımıyla kolayca öğretilebilir
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Dolayısıyla ilk olarak servis operasyonları için TextFileInspector tipinin bir davranış olarak bildirilmesi gerekmektedir. Bu amaçla aşağıdaki sınıfı tasarlamamız yeterli olacaktır.
 
@@ -347,8 +342,6 @@ namespace AdventureWorksFinance
 
 Bu örnek kullanımda operasyon metodlarının başında TextFileInspectorOperationBehavior niteliği uygulanmıştır. Böylece çalışma zamanına hangi operasyonların izleneceği bildirilmiş olmaktadır. Ancak istersek sınıfın başındaki TextFileInspectorServiceBehavior niteliğini etkinleştirerek, servis içerisindeki tüm metodların, TextFileInspectorOperationBehavior uygulanmadan izlenebilmesi de sağlanabilir
 
-![Wink](/assets/images/2011/smiley-wink.gif)
-
 Şimdi senaryomuzu test etmeye başlayabiliriz. Tabi bu amaçla basit bir istemci uygulama yazmamız ve servisimizi referans etmemiz gerekmektedir. Burada Self-Hosted bir servis çalışma zamanı söz konusu olduğundan, proxy üretimi için host uygulamanın öncelikli olarak çalışıtırlması ve servisin açılması gerektiği unutulmamalıdır. Bu işlemin ardından Mex talebi yapılabilir.
 
 ![blg219_AddServiceReference](/assets/images/2011/blg219_AddServiceReference.gif)
@@ -391,13 +384,11 @@ Görüldüğü üzere GetTotalSalaryByDepartment ve GetTotalGains metodlarına y
 
 Sonuç olarak operasyonlara yapılan çağrıları izlemek ve istihbarat toplamak adına buradaki senaryodan yararlanılabilir. Elbette senaryonun geliştirilmesi gereken pek çok yanı vardır. Söz gelimi şu anki örnekte
 
-- dosya tabanlı IO işlemlerinin sayısı oldukça fazla olabilir. Özellikle eş zamanlı gelecek operasyon çağrılarında StreamWriter tipinin exception verme olasılığı (Paylaşılan dosya kaynağı nedeni ile) an meselesidir ![Sealed](/assets/images/2011/smiley-sealed.gif)
+- dosya tabanlı IO işlemlerinin sayısı oldukça fazla olabilir. Özellikle eş zamanlı gelecek operasyon çağrılarında StreamWriter tipinin exception verme olasılığı (Paylaşılan dosya kaynağı nedeni ile) an meselesidir
 - Dosya tabanlı olarak yapılan veri toplama işlemi yerine, veritabanı odaklı bir çözümde geliştirilebilir. Yani operasyon çağrılarına ait bilgiler dosya yerine bir veritabanı tablosuna yazdırılabilir.
 - Senaryo tek bir servis örneğini izleyecek şekilde çalışmaktadır. Oysaki host uygulamanın birden fazla servisi dış dünyaya sunma olasılığı bulunmaktadır.
 
 Bu gibi durumları iyice irdeleyerek ilerlemekte yarar vardır. İşte size çalışmak için bir sürü ev ödevi
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Bu arada örnek Solution içerisinde ikinci bir servis daha yer almaktadır. Bu serviside devreye alarak operasyon izleme işlemlerini birden fazla servis için gerçeklemeye çalışabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

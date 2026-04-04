@@ -65,8 +65,6 @@ Download işlemi ardından kurulum gerçekleştirildiğinde, geliştirici bilgis
 Örneğimizi.Net 4.5 tabanlı olacak şekilde Visual Studio 2012 üzerinde basit bir Console uygulaması şeklinde geliştireceğiz. Yazacağımız örnekler göz önüne alındığında projemize Db4objects.Db4o ve Db4Objects.Db4o.Linq assembly’ larının referans edilmesi yeterlidir.
 
 > Nesne veritabanlarının özünde nesnelerin (Object Instance) yer aldığını vurgulamalıyız
->
-> ![Smile](/assets/images/2013/wlEmoticon-smile_81.png)
 
 Örnek POCO Tiplerinin Oluşturulması
 

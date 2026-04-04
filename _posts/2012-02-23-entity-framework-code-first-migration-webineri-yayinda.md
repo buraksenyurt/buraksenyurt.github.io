@@ -17,10 +17,7 @@ categories:
 
 ![efcfm.jpg](/assets/images/2012/efcfm.jpg)
 
-
 [Diğer detaylar ve örnek proje çalışması için sizi böyle alalım](http://nedirtv.com/video/entity-framework-code-first-migration-webineri)
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 [Youtube Link](https://www.youtube.com/watch?v=Q3yasXYIPXo)
 

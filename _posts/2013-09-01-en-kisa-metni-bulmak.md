@@ -14,8 +14,6 @@ Uzun zamandır makale yazmaya çalışmakta ve öğrendiklerimi, edindiğim tecr
 
 ![205735_getting_the_last_word.jpg](/assets/images/2013/205735_getting_the_last_word.jpg)
 
-![Smile](/assets/images/2013/smiley-smile.gif)
-
 İşte geçtiğimiz hafta içerisinde de Internet üzerinden araştırma yaparken enteresan bir konu ile karşılaştım. Aslında konuyu isimlendirmek oldukça zor ama bir optimizasyon işlemi olduğunu ifade edebilirim. Sorun n sayıda kelimenin saklanmak istendiği bir durumda ortaya çıkıyor. İstenen, bu kelimeleri birleştirerek saklamak ancak bunu yaparkende olabilecek en kısa cümleyi elde ederek ilgili depolama işlemini gerçekleştirmek. Öyleki, üretilen cümle hem çok kısa olmalı hem de tüm kelimeleri içermeli.
 
 Dilerseniz önce sorunu ve ulaşmak istediğimiz hedefi bir örnek üzerinden ifade etmeye çalışalım. Elimizde 4 adet kelime olduğunu farz edelim. Enginar, Arpa, Keten ve Paket. Normal şartlarda bu 4 kelimeyi sırasız olarak birleştirirsek aşağıdaki gibi bir string katarının oluştuğunu görürüz.
@@ -23,8 +21,6 @@ Dilerseniz önce sorunu ve ulaşmak istediğimiz hedefi bir örnek üzerinden if
 EnginarArpaKetenPaket
 
 Bu son derece doğal bir sonuç tabi
-
-![Wink](/assets/images/2013/smiley-wink.gif)
 
 Ancak amacımız bu metni mümkün olduğu kadar kısaltmak. Peki bunu nasıl yapabiliriz?
 
@@ -56,8 +52,6 @@ Burada enginar -> arpa birleşimi ile keten -> enginar birleşimlerinin sayısal
 ![ko_5.png](/assets/images/2013/ko_5.png)
 
 Sanırım bu şekil yardımıyla kelimeler arasındaki ilişkileri daha net görebilmekteyiz. Biraz renkli oldu ama olsun
-
-![Wink](/assets/images/2013/smiley-wink.gif)
 
 Sonuç olarak aşağıdaki iki kelime katarından birisini üretebiliriz.
 
@@ -133,8 +127,6 @@ Yazmış olduğumuz bu temel fonksiyon iki kelime işin içerisinde olduğunda i
 ![ko_8.png](/assets/images/2013/ko_8.png)
 
 Sınıf diagramında (Class Diagram) da görüleceği üzere, kelimeler arası ilişkileri tasvir edebilmek adına bir Node listesini modelemeye çalışıyoruz. Bu Node listesi, bir kelime ve buna bağlı ne kadar diğer kelime kombinasyonu varsa, ağırlıkları ile birlikte cover etmeye çalışmaktadır. Diğer yandan Node listesini kullanarak uygun olabilecek bir birleşimi üretme fonksiyonelliğini, Creator isimli tip karşılamaktadır. Kodun biraz karmaşık olduğunu biliyorum. Lakin bu konu ile ilişkili olarak yaptığım araştırmalarda, en basite indirgeyebildiğim sıkıştırma algoritması bu oldu. İnanın bu anlamda ele alınan diğer algoritmalar (NP Algoritmaları özellikle) inanılmaz derecede karışık geliyor bana
-
-![Sealed](/assets/images/2013/smiley-sealed.gif)
 
 Ama yılmak yok! Lafı fazla uzatmadan kodumuzu paylaşalım.
 
@@ -366,3 +358,4 @@ sonuçlarını elde edebiliriz. Yani PA hecesinin teke indirgenmesi söz konusud
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EnKisaCumle.zip (59,15 kb)](/assets/files/2013/EnKisaCumle.zip)
+

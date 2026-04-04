@@ -11,10 +11,9 @@ categories:
 ---
 Bazen iç içe çağrılarda bulunan metod zincirlerinde herhangibir seviyede meydana gelen Exception durumunu, en üst noktada yakalamak isteriz. Bu durumda balon köpüğü misali bir aşağıdan yukarı yükselen bir mekanizmayı kullanabiliriz. Nasıl mı?
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_24.png)
-
 ![PhotoTrick6](/assets/images/2011/PhotoTrick6.png)
 
 (Büyük hali için fotoğrafa tıklayın)
 
 [GoodExceptionCatching.rar (22,12 kb)](/assets/files/2011/GoodExceptionCatching.rar)
+

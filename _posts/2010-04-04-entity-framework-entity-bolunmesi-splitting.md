@@ -18,9 +18,7 @@ Person, Password ve BusinessEntity tabloları arasındaki ilişkileri değerlend
 
 Tabi kod tarafında Person içeriğini değerlendirirken Password veya BusinessEntity içeriklerine de kolay bir şekilde erişebilmek gibi bir amacımız varsa eğer, 3 farklı Entity yerine 1 Entity kullanmak daha avantajlı olabilir. Özellikle kodlama zamanında yazılan LINQ sorgularında veya CRUD işlemlerinde. Peki bu 3 Entity'nin tek bir Entity olarak ele alınması için ne yapmak gerekmektedir? Son derece basit. Cut-Paste özelliklerinden faydalanılmalıdır
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
-Bu anlamda, BusinessEntity ve Password Entity içeriklerine baktığımızda bizim için gerekli olan alanları kesip Person Entity tipi içerisine yapıştırmamız yeterlidir. Ne yazık ki bu örnekte yer alan BusinessEntity tablosunun içeriğinde çok faydalı bilgiler bulunmamaktadır. Ama yinede konunun kavranabilmesi açısından değerlendirilmiştir. Bu işlemleri gerçekleştirirken dikkat edilmesi gereken noktalaradan biriside, aynı isimli Property'lerin kopyalanması sonrasında, son ek olarak 1 gibi sayısal bir isimlendirmenin söz konusu olmasıdır. Tabiki bu tip özellikleri tekrardan isimlendirmekte yarar vardır. Gerekli kesme ve yapıştırma işlemleri tamamlandıktan sonra Password ve BusinessEntity tipleri diagramdan silinebilir. Yine bu işlem sırasında dikkat edilmesi gereken bir noktada bize sorulan soruya No cevabını vermektir.(Sorunun ne olduğunu söylemeyeceğim, örneği yaparken görmenizi istiyorum. ![Wink](/assets/images/2010/smiley-wink.gif)) Sonuç olarak diagramın yeni hali aşağıdaki gibi olacaktır.
+Bu anlamda, BusinessEntity ve Password Entity içeriklerine baktığımızda bizim için gerekli olan alanları kesip Person Entity tipi içerisine yapıştırmamız yeterlidir. Ne yazık ki bu örnekte yer alan BusinessEntity tablosunun içeriğinde çok faydalı bilgiler bulunmamaktadır. Ama yinede konunun kavranabilmesi açısından değerlendirilmiştir. Bu işlemleri gerçekleştirirken dikkat edilmesi gereken noktalaradan biriside, aynı isimli Property'lerin kopyalanması sonrasında, son ek olarak 1 gibi sayısal bir isimlendirmenin söz konusu olmasıdır. Tabiki bu tip özellikleri tekrardan isimlendirmekte yarar vardır. Gerekli kesme ve yapıştırma işlemleri tamamlandıktan sonra Password ve BusinessEntity tipleri diagramdan silinebilir. Yine bu işlem sırasında dikkat edilmesi gereken bir noktada bize sorulan soruya No cevabını vermektir.(Sorunun ne olduğunu söylemeyeceğim, örneği yaparken görmenizi istiyorum.) Sonuç olarak diagramın yeni hali aşağıdaki gibi olacaktır.
 
 ![blg142_NewType.gif](/assets/images/2010/blg142_NewType.gif)
 
@@ -98,3 +96,4 @@ Dolayısıyla bu çalışma şekli dikkate alınarak gerçekten gereksinim var i
 Sonuç olarak Splitting özelliği yardımıyla bir Entity içerisinde yer alan özelliklerin (Property), veritabanı tarafında birden fazla Tablo'nun alanlarına (Fields) ait olması sağlanabilmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Splitting_RC.rar (49,90 kb)](/assets/files/2010/Splitting_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

@@ -21,21 +21,15 @@ Sonrada olayların ardı arkası kesilmedi ve Pentium MMX, Celeron derken, çift
 
 Özellikle işlemcilerin bu şekilde ilerlemesine paralel olarak, yazılım geliştirme ortamlarında da pekala pek çok değişiklik ve yenilikçi fikir ortaya çıktı. Son zamanların özellikle Microsoft.Net cephesindeki en popüler konularından biriside paralel genişletmeler (Parallel Extensions). Bir başka deyişle, sistemin sahip olduğu işlemci gücünün tümünü kullanarak (Arabanın hakkını ver hakkını
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 ), paralel işlemler veya eş zamanlı yürütmelerin gerçekleştirilmesi. Bildiğiniz gibi paralel genişletmelerin önemli kısımlarından birisi olan PLINQ (Parallel Language INtegrated Query) alt yapısı üzerine yaptığım araştırmalarımı ve edindiğim bilgileri bir süredir sizlerle paylaşmaktayım. İşte bu yazımızda diğer önemli parça olan (belkide ile etapta incelenmesi gereken) TPL (Task Parallel Library) alt yapısını incelemeye başlıyor olacağız.
 
 TPL'in en büyük amacı, eş zamanlı veya paralel olarak yürütülmek istenen işlemlerin, daha kolay ve basit bir şekilde ele alınmasını sağlamaktır. Bu anlamda günümüz işlmecilerinin çekirdek sayısı veya sistemlerdeki işlemci sayısının birden fazla olması durumunda, TPL verimli sonuçlar elde etmemizi sağlamaktadır. Bu açıdan bakıldığında TPL alt yapısına tüm sistem çekirdek gücünü verme imkanına sahip olduğumuzu belirtebiliriz. Ancak elbetteki bu güç yanlış anlaşılmamalı ve kullanılmamalıdır. Bildiğiniz gibi "kontrolsüz güç, güç değildir" derler
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Elbetekki TPL kullanımı ile ilişkili olarak unutulmaması gereken bir noktada, işlemlerin Multi-Threading mantığına göre yapılıyor olmasıdır. Dolayısıyla, programın çalışma zamanı yükünü arttırıcı bir etkendir. Bir başka deyişle her işlemin, elimizde TPL var diye paralel olarak yürütülmeye çalışılması doğru değildir. Bazı süreçlerin gerçekten ve bilinçli olaraktan ardışık (Sequential) yürümesi gerekebilir.
 
 NOT: Aslında, PLINQ (Parallel Language INtegrated Query) kendi alt yapısında TPL tipleri ve üyelerinden destek almaktadır.
 
 Artık olaya biraz daha teknik açıdan bakabileceğimizi düşünüyorum. TPL esas itibariyle.Net Framework 4.0 ile birlikte gelen ve paralel işlem yapma yeteneklerini ele alan kütüphanedir. System.Threading ve System.Threading.Tasks isim alanları bu kütüphaneye ait çeşitli tipleri ve üyelerini içermektedir. TPL, içerisinde birde Task Scheduler içerir. Bu planlayıcı ThreadPool ile TPL tipleri arasındaki entegrasyonu sağlamaktadır. Ancak istenirse kendi özel görev planlayıcılarımızı yazabilir ve kullanabiliriz. Gerçi benim buna niyetim yok
-
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
 
 Aşağıdaki şekilde özellikle System.Threading.Tasks isim alanı altında yer alan tipler görülmektedir.
 
@@ -187,3 +181,4 @@ Böylece geldik bir yazımızın daha sonuna. Bu yazımızda TPL alt yapısını
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloTPL.rar (25,96 kb)](/assets/files/2009/HelloTPL.rar)
+

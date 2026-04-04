@@ -12,9 +12,6 @@ Uzun süre önce dış kaynak (Outsource) olarak görev aldığım bir bankacıl
 
 ![blg232_Giris](/assets/images/2011/blg232_Giris.jpg)
 
-
-![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile_1.png)
-
 Genellikle servisin çalışma durumunu izlemek adına özellikle Exception bloklarında veya metod başlangıç ile bitiş noktalarında (örneğin OnStart başında ve sonunda) işletim sisteminin uygulamaya özel Event Log’ larına bilgi atmaktaydım. Bu bilgileri atarken de durumun kritikliğine göre Warning, Exclamation, Error gibi hazır sistem ikonlarından yararlanıyor ve çalışma zamanındaki durumu analiz etmeye çalışıyordum.
 
 Ancak bir developer için, kodun çalışma zamanındaki durumunu incelemenin sayısız yolu olduğu da bir gerçek. Öyleki, Debug etmek bence en güzel yollardan birisi. Lakin bir Windows Service uygulamasının Debug edilmesi de sanıldığı kadar kolay değil
@@ -23,13 +20,9 @@ Ancak bir developer için, kodun çalışma zamanındaki durumunu incelemenin sa
 
 İşte bu yazımızda internet üzerinden yaptığım araştırmalar sonucu öğrendiğim ve bir Windows Service uygulamasının nasıl debug edilebeceğine dair uygulanabilen yöntemlerden birisini ele alıyor olacağız. Olabildiğince basit bir şekilde anlatmaya gayret edeceğim bu vaka çalışmamızda, adım adım ilerliyor olacağız
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_2.png)
-
 Öyleyse gelin şu metal entegre üzerindeki böcekleri ayıklamaya çalışalım.
 
 İlk olarak Windows Service Application tipinden bir uygulama oluşturmamız gerekiyor. Bu uygulama içerisinde yer alan ControllerService isimli Windows Service tipinin içeriği başlangıçta aşağıdaki gibidir. Söz konusu servis içerisindeki Timer örneğinin 10 saniyede bir çalıştırdığı olay metoduna göre, belirli bir klasördeki (ki path bilgisi App.config dosyasından çekilmektedir) dosyaların şifrelenmesi için bir akış çalıştırmaktadır ki aslında bunun konumuz için çok da büyük bir önemi yoktur
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_2.png)
 
 ```csharp
 using System.Configuration; 
@@ -269,8 +262,6 @@ namespace FileControllerService
 
 Debug edilmek istenen kod içeriğini taşıyan DebugableControllerService örneğinin oluşturulmasından sonra ServiceStarter tipinin Run metodundan yararlanarak sürecin başlatılması sağlanır. Şu aşamada kod içerisinde breakpoint’ ler yardımıyla ilerlenmesi mümkündür
 
-![Laughing out loud](/assets/images/2011/wlEmoticon-laughingoutloud.png)
-
 Hatta örneğin olmayan bir klasör içeriğinin Directory tipinin GetFiles metodu yardımıyla okunmaya çalışılması sırasında oluşan Exception mesajları da, Visual Studio arabiriminin Output ekranına düşmektedir. Aynen aşağıdaki ekran çıktısında görüldüğü gibi.
 
 ![blg231_DebugWindow](/assets/images/2011/blg231_DebugWindow.gif)
@@ -302,8 +293,6 @@ void timer_Elapsed(object sender, ElapsedEventArgs e)
 ![blg232_WriteToConsole](/assets/images/2011/blg232_WriteToConsole.gif)
 
 Elbette Debug işlemleri sonrasında hataları bertaraf edilen servis kodunun son hali asıl Windows Service kodu ile değiştirilmeli ve bu şekilde install edilmelidir. Örneğimiz bu haliyle artık Console penceresine bilgilendirme de bulunabilir. Ne Text dosyaya, ne işletim sistemindeki Event Log’ lara ne veritabanı üzerindeki ilgili tablolara loglama işlemleri yapmak için gerekli atraksiyonlar ile uğraşmamıza gerek kalmamaktadır. Uygulamanın dışına çıkmadan, olduğumuz Visual Studio ortamı (Environment) içerisinden gerekli izleme ve Debug işlemleri yapılabilir. Doğrudan Console penceresinden gerekli izlemeler de yapılabilecektir. Bunu da unutmayalım
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_2.png)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

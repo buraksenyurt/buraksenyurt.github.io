@@ -13,20 +13,13 @@ Bildiğiniz üzere bir süredir Microsoft Teknoloji Günleri Akşam Sınıfı et
 
 ![blg237_Giris](/assets/images/2010/blg237_Giris.jpg)
 
-
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_7.png)
-
 Web programlamanın gelişen ihtiyaçları nedeniyle Asp.Net alt yapısında da her major sürümde fazlasıyla yenilik bulunmakta.
 
 Tabi yine bildiğiniz üzere bendeniz web konusunda uzman değilim. Ağırlıklı olarak servis yönelimli mimari (Service Oriented Architecture) tarafı ile ilgilenmekteyim. Ancak eğitmenlik yaptığım dönemlerden kalan bir hastalık olsa gerek,.Net'in diğer pek çok alanı ile de ilgilenmekteyim. Eğitime blog yazısını hazırladığım tarih itibaryile oldukça az bir süre kaldı. Çıraklık başvuruları, Microsoft gönüllü çalışmaları, 11 haftalık proje planı olup bizden 4 haftada bitirmemizi istedikleri kocaman POC çalışması, S (h) arp Efe derken zamanı etkin kullanmak konusunda sıkıntılar yaşamaya başladım
 
-![Confused smile](/assets/images/2010/wlEmoticon-confusedsmile_3.png)
-
 Aslında.Net Framework 4.0 tarafını uzun süredir incelememe rağmen, en ince detaylarına kadar girmeden konuya hakim olmanın zor olacağını da gayet iyi biliyordum. Hatta bana göre yazarak anlatmak öğrenmenin en iyi yollarından birisi. İşte bu bi dolu düşünce altında başladığım gece çalışmasının sonucu olan küçük bir blog girdisi ile karşınızdayım. Bu yazımızda Asp.Net 4.0 tarafında gelen önemli yeniliklerden birisi olan serileştirilebilir Session içeriğini ufaltmak (daha teknik bir tabirle sıkıştırmak) konusuna değiniyor olacağız.
 
 Session bildiğiniz üzere web çalışma modelinde önemli bir yere sahip. Özellikle oturum bazlı olarak veri tutulması istenen durumlarda, sunucu tarafında kullanılabilecek seçeneklerden birisi olduğunu ifade edebiliriz. Session içeriklerini kullanmak da son derece basit. Bu anlamda Asp.Net'in başlangıcından beri var olan HttpSessionState tipinden yararlanıldığını biliyoruz. Tabi Session kullanımında dikkat edilmesi gereken bazı hususlarda var. Söz gelimi varsayılan olarak In-Proc mod adı verilen ve çalışmakta olan Asp.Net uygulamasına ait Worker Process ile ilişkili bellek alanlarında tutulan Session içeriklerinin, SQL veritabanı veya farklı bir State Service'e ait process altında tutulması da söz konusu. Bu farklı tutuluş şekillerine ilaveten object tipi ile çalışabilen bir yapıdan bahsettiğimizi de ifade etmek isterim. Yani her tür.Net nesnesini atayabilirsiniz. Hımmm
-
-![Sarcastic smile](/assets/images/2010/wlEmoticon-sarcasticsmile_3.png)
 
 Şimdi In-Proc mod dışındaki modları göz önüne alalım. SQL sunucusu (SQLServer modu) veya State Service (StateServer modu) kullanan modları. Bu modlar kullanıldığında Session içerisine atılan verilerin serileştirilerek tutulması söz konusudur. Bu son derece mantıklıdır çünkü object tipi içerisine çok büyük boyutlu nesnelerin dahi atılması mümkündür. Ancak bu durum zamanla SQL veya State Service modlarının kullandığı alanların önemli ölçüde şişmesine de neden olabilir. İşte Asp.Net 4.0 ile Session ayarlamaları için eklenen compressionEnabled özelliği sayesinde, söz konusu Session içeriklerinin önemli ölçüde sıkıştırılması da mümkündür. Bu noktada System.IO.Compression.GZipStream tipinin büyük bir rol oynadığını ifade edebiliriz. Nitekim bu tip sayesinde serileştirilmiş olan verinin sıkıştırılması söz konusudur.
 

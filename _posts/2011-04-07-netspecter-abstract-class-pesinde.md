@@ -13,7 +13,6 @@ Yağmur şiddetini giderek arttırıyordu. Karanlık ara sokakta gizemli bir par
 
 ![blg230_Giris](/assets/images/2011/blg230_Giris.jpg)
 
-
 Karanlık içerisinde sadece gözleri belli oluyordu. Kaşlarını çattı ve bir anda irkilerek koşmaya başladı. O kadar paniklemişti ki, koşarken teneke çöp kutularını fark etmedi bile. Önce yere düştü, bir süre yuvarlandı. Çevredeki kediler sağ sola kaçışırken, kalkmaya çalıştı ama önündeki metal iskeleyi hesaplayamadı. Kafasını sert bir şekilde demire çarptı.
 
 Bir kaç saniye sonra gökyüzünden düşen yağmur damlalarını görebiliyor ama seslerini duyamıyordu. Onun yerine kafasında bir uğultu vardı. Etrafında dans eden kod parçları görüyordu. Gözleri yavaş yavaş kararmaya başlamıştı. Derken başında beliren kişiyi gördü…
@@ -21,8 +20,6 @@ Bir kaç saniye sonra gökyüzünden düşen yağmur damlalarını görebiliyor 
 - Gizemli Pardesü: Netspecter!!! Sen haaa …
 
 - Netspecter: Evet yaaa. Ben…Fazla uzağa kaçamadın eski dostum Abstract Class
-
-![Sarcastic smile](/assets/images/2011/wlEmoticon-sarcasticsmile.png)
 
 Netspecter bu kez bir abstract sınıfın peşinde. Sizin içinde eğlenceli bir deneyim olacağına inandığım enteresan bir vakayı analiz etmeye çalışıyor olacağız. Çoğunlukla kod geliştirirken pek fark etmediğimiz bir hata ama hemen çözüm üretebiliyorz. Lakin bu çözümü üretirken istediğimizin dışında bir sonuca da neden olabiliyoruz. Dilerseniz hiç vakit kaybetmeden konumuza geçelim. İlk olarak aşağıdaki kod içeriğini göz önüne alarak başlamamızda yarar olacağı kanısındayım.
 
@@ -65,8 +62,6 @@ internal interface IWriter
 
 Burada yine de şüphe uyandırıcı bir gelişme vardır. Bilindiği üzere Interface üyeleri doğal olarak public’ tir. Buna rağmen doğal olarak public olan CreateComposer metodu Internal erişim belirleyicisine sahip bir örneği döndürmektedir. Oysaki public olan IWriter arayüzünün internal olan Composer tipini kullanmasına izin verilmemiştir
 
-![Confused smile](/assets/images/2011/wlEmoticon-confusedsmile.png)
-
 Şimdilik bunu düşünerek kafamızı karıştırmayalım. Çünkü asıl amacımız internal’ a çekmek zorunda kaldığımız IWriter arayüz tipinin public olarak kullanılmasının istenmesidir. Açık olmak gerekirse şu an için bunu da bir kenara bırakalım ve IWriter arayüzünü bir sınıfa bu haliyle uygulamak istediğimizi düşünelim. Örneğin aşağıdaki kod parçasında görüldüğü gibi.
 
 ```csharp
@@ -93,8 +88,6 @@ Yine yine yine…Inconsistent Accessibility hatası
 ![Annoyed](/assets/images/2011/wlEmoticon-annoyed.png)
 
 Burada arayüz tipinin bilinçsiz (Implicitly) olarak uygulandığı görülmektedir. İşte hani bazen interface tiplerini implemente ederken Ctrl+Shift+F10 tuşlarına bastığımızda çıkan seçenekler arasında bir de Explicit olanı vardır ya
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile.png)
 
 İşte o açık bildirim burada bir çözüm olmaktadır.
 
@@ -151,14 +144,10 @@ public class LogWriter
 
 Volaaaa… Evet evet biliyorum interface tipi kullanımından vazgeçtik ve abstract class kullanımına geçtik. Ancak bir açıdan baktığımızda aynı amaca hizmet ettiklerini ifade ebiliriz. Söz gelimi gerek interface gerek abstract sınıflar örneklenemezler. Yani new operatörü ile initialize edilemezler
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile.png)
-
 Üstelik her ikiside çok biçimli davranış gösterebilirler. Türetme amacıyla kullanılabilirler ve kendisinden türeyen tiplerin mutlaka uyması gereken kuralları belirtebilirler. Sadece nasıl belirttikleri farklıdır. Tabi arada başka farklarda bulunmaktadır. Söz gelimi arayüz tiplerinde iş yapan bloklara sahip üye bildirimleri yapılamaz veya bu üyeler için erişim belirleyicisi kullanılamaz. Ancak abstract tiplerde durum tam tersidir.
 
 Örnek vakamızın son halinde AbstractWriter abstract sınıfı içerisinde internal olarak işaretlenen CreateComposer metodu olduğu görülmetkedir. Üstelik bu metodun geriye dönüş tipi de internal olan Composer sınıfıdır. Diğer yandan en önemli sonuç AbstractWriter tipinin public olarak işaretlenebilmiş olmasıdır. Yani çok biçimlilik gösteren tipimiz dış ortama public olarak sunulabilmektedir.
 
 Bu vaka çalışmasında her zaman karşımıza çıkmayacak ama hangi durumlarda abstract sınıf kullanımını tercih etmemizi belirleyebilecek bir konuyu ele almaya çalıştık. Sanıyorum artık bir interface tipini implemente ederken Explicitly olan versiyonuna daha bir anlamlı bakıyor olacağız
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile.png)
 
 Tekrardan görüşünceye ve Netspecter’ ın farklı bir macerasında buluşuncaya dek hepinize mutlu günler dilerim.

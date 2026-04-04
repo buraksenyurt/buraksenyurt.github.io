@@ -17,7 +17,7 @@ Her zamanki gibi konuyu daha kolay kavrayabilmek adına basit bir örnek üzerin
 
 Bu konu ile ilişkili olaraktan çeşitli kaynaklarda oldukça farklı ve güzel örnekler bulunmakta. Özellikle şu sıralar takip ettiğim, Robert C. Martin'in [Agile Principles, Patterns, and Practices in C#](http://www.amazon.com/Principles-Patterns-Practices-Robert-Martin/dp/0131857258/ref=sr_1_1?ie=UTF8&s=books&qid=1246047268&sr=8-1)kitabındaki örneklerden esinlendiğimi baştan belirtmek isterim.
 
-Öncelikli olarak problemi içeren Solution içeriğimizi ele alalım. Örneğimizde Star isimli bir sınıf bulunmaktadır. Bu sınıf basit anlamda 3 boyutlu bir yıldız şeklinin bazı değerlerini tutmaktadır. Ancak dahada önemlisi içerisinde yıldızın hacmini hesaplayan ve yıldız şeklinde bir Windows Formu çizen fonksiyonlar yer almaktadır.(Bu son görevleri kafamızın bir köşesinde şimdiden tutalım ![Wink](/assets/images/2009/smiley-wink.gif)) Sınıfımız bir Class Library içerisindedir. Bu sınıf içerisinde bir Windows Form'unun çizilmesi sağlandığından System.Windows.Forms assembly'ını referans etmektedir. Diğer yandan Star isimli sınıfı kullanan iki farklı uygulama söz konusudur. Bunlardan birisi bir Windows uygulaması olup Star sınıfı içerisinde Form çizen operasyonu ele almaktadır. Diğer uygulama ise basit bir Console projesidir ve sadece generic List tabanlı bir Star nesne koleksiyonundaki hacim değerlerini kullanarak bilimsel bir hesaplama gerçekleştirmektedir. Solution içeriği aşağıda görüldüğü gibidir.
+Öncelikli olarak problemi içeren Solution içeriğimizi ele alalım. Örneğimizde Star isimli bir sınıf bulunmaktadır. Bu sınıf basit anlamda 3 boyutlu bir yıldız şeklinin bazı değerlerini tutmaktadır. Ancak dahada önemlisi içerisinde yıldızın hacmini hesaplayan ve yıldız şeklinde bir Windows Formu çizen fonksiyonlar yer almaktadır.(Bu son görevleri kafamızın bir köşesinde şimdiden tutalım) Sınıfımız bir Class Library içerisindedir. Bu sınıf içerisinde bir Windows Form'unun çizilmesi sağlandığından System.Windows.Forms assembly'ını referans etmektedir. Diğer yandan Star isimli sınıfı kullanan iki farklı uygulama söz konusudur. Bunlardan birisi bir Windows uygulaması olup Star sınıfı içerisinde Form çizen operasyonu ele almaktadır. Diğer uygulama ise basit bir Console projesidir ve sadece generic List tabanlı bir Star nesne koleksiyonundaki hacim değerlerini kullanarak bilimsel bir hesaplama gerçekleştirmektedir. Solution içeriği aşağıda görüldüğü gibidir.
 
 ![blg37_1.gif](/assets/images/2009/blg37_1.gif)
 
@@ -57,8 +57,6 @@ namespace GraphicLib
 ```
 
 Star sınıfı içerisinde yapılan anlamsız işlemlere takılmayın. Amacımız tamamen işe yarar bir sınıfı kullanmak değil şu aşamada
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Ancak Paint ve Volume metodları bizim için oldukça önemlidir. Computer isimli Console uygulamamız içerisinde Geometric isimli yardımcı bir sınıf bulunmaktadır.
 
@@ -164,8 +162,6 @@ namespace ProblemWinForm
 
 Peki şimdi ne oldu? Görüldüğü gibi tozu dumana kattık ve ortalığı iyice karştırdık. Karıştırdım
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Aslında aşağıdaki şekil zihnimizi biraz daha kolay aydınlatabilir.
 
 ![blg37_2.gif](/assets/images/2009/blg37_2.gif)
@@ -186,8 +182,7 @@ Söz gelimi bu yazıdaki örneklerde farklı Assembly'lar yer almaktadır. Star 
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda basit bir şekilde Single Responsibility prensibini incelemeye çalıştık. Örnek tam olarak faydalı olmasada, bir sınıfın tek bir sorumluluğa sahip olması gerekliliğinin Single Responsibility prensibinin kendisi olduğunu anlamış bulunuyoruz.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SRP.rar (109,33 kb)](/assets/files/2009/SRP.rar)
+

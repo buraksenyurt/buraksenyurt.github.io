@@ -41,8 +41,6 @@ Client: Talebi veya mesajı gönderir.
 
 Artık kendi örneğimizi geliştirmemizin vakti geldi sanırım.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Örnek senaryomuzda sorumluluk zincirine dahil edeceğimiz bir servis bilgisi olacak. Servis bilgisini basit bir sınıf olarak tasarlayacağız. Servisin en önemli noktası lokasyon özelliğidir (Location). Servisin yerel makineden, bilgisayarın içinde bulunduğu bir network'ten veya internet üzerinden erişilebilir bir yerde olup olmama durumuna göre zincir içerisindeki sorumlu nesne tarafından ele alınmasını sağlamaya çalışacağız. İşte örnek kodlarımız ve sınıf çizelgemiz.
 
 ![blg49_3.gif](/assets/images/2009/blg49_3.gif)
@@ -160,14 +158,13 @@ namespace ChainOfResponsibilityPattern
 
 ![blg49_4.gif](/assets/images/2009/blg49_4.gif)
 
-Servis lokasyonu intranet olduğundan, zincirin ilk halkasındaki handlerLocal isimli nesne örneği, sorumluluğu bir sonraki nesneye atmıştır. Bu nedenle IntranetHandler tipi içerisinde ProcessRequest metodu çalışmıştır ve sonraki adımda yer alan InternetHandler tipine bir geçiş söz konusu olmamıştır. info değişkenine ait Location özelliğinin değerini değiştirerek farklı sonuçları değerlendirebilirsiniz. Tabi mutlaka dikkatinizi çekmiştir, Location özelliğinin işaret ettiği ServiceLocation enum tipi içerisinde, zincir üzerinde ele alınmayan sabit bir değerde vardır. SecureZone. Dın dın dın dııınnnnn ![Sealed](/assets/images/2009/smiley-sealed.gif) Sizce neden panik oldum acaba. Bunu bir düşünün.
+Servis lokasyonu intranet olduğundan, zincirin ilk halkasındaki handlerLocal isimli nesne örneği, sorumluluğu bir sonraki nesneye atmıştır. Bu nedenle IntranetHandler tipi içerisinde ProcessRequest metodu çalışmıştır ve sonraki adımda yer alan InternetHandler tipine bir geçiş söz konusu olmamıştır. info değişkenine ait Location özelliğinin değerini değiştirerek farklı sonuçları değerlendirebilirsiniz. Tabi mutlaka dikkatinizi çekmiştir, Location özelliğinin işaret ettiği ServiceLocation enum tipi içerisinde, zincir üzerinde ele alınmayan sabit bir değerde vardır. SecureZone. Dın dın dın dııınnnnn Sizce neden panik oldum acaba. Bunu bir düşünün.
 
 Örnekte görüldüğü üzere, ServiceInfo tipinden bir nesne örneğinin Location özelliğinin değerine göre bir akış gerçekleştirilmektedir. Bu akışa ait zincir halkasının ilk nesnesi LocalMachineHandler iken son nesneside InternetHandler tipine aittir. Zincirdeki tüm tipler, ServiceHandler isimli abstract sınıftan türemektedir. Bu abstract sınıf, kendi tipinden bir özelliğe sahiptir. Successor isimli bu özellik ile amaç, halkadaki bir nesnenin kendisinden sonra gelecek olanı işaret etmesini sağlamaktır. Zincirdeki her nesnenin (Sonuncu hariç) bir Successor'u olmalıdır. Doğal olarak ilerleyen zamanlarda zincire başka bir nesnenin eklenmesi söz konusu olabilir. Bu nedenle, Successor özelliğinin aslında tüm ConcreteHandler'ların türediği ata tipi (Handler) kullanması son derece mantıklıdır.
 
 İstemci tarafındaki kod içinde de dikkat edilmesi gereken bir takım hususlar vardır. Zincir içerisindeki her bir nesne örneklendikten sonra, sıraya göre birbirlerine Successor özellikleri üzerinden bağlanırlar. Bu doğal olarak zincirin doğru biçimde sıralanmasını gerektirir. Aksi durumda iş mantığına uygun olmayan sonuçlar alabiliriz. Öyleki asıl gidilmesi gereken yer yerine farklı bir yere gidilebilir.(Ödemenin onayını Genel Müdürün vermesi gerekirken, zincirdeki hatalı atama sonrası gişe memurunun trilyonlar için yetki vermesi gibi ![Undecided](/assets/images/2009/smiley-undecided.gif)) Yada zinciri kıracak şekilde bir çağrıda gelebilir. Örneğin kodun son kısmında minik bir bomba yer almaktadır. Buradaki sorunun ne olabileceğini bulmak ve bir yorum yapmak sizin göreviniz.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ChainOfResponsibilityPattern.rar (25,32 kb)](/assets/files/2009/ChainOfResponsibilityPattern.rar)
+

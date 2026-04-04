@@ -15,8 +15,6 @@ Bir süredir Team Foundation Server üzerinde ve doğal olarak Visual Studio Tea
 
 Biz bu yazımızda Visual Studio Team System 2008 ile çalışırken, özel Check-In ilkelerinin (Custom Check-In Policy) nasıl geliştirilebileceğini basit bir örnek üzerinden ele almaya çalışacağız. Genellikle yazılım projelerinde görev alan geliştiricilerin, en alt kademeden en üst kademeye doğru çıktıkça (Junior -> Architect) çok daha az sayıda Check-In yaptıkları görülebilir
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu aslında iyi yazılım geliştirme süreçlerinde bir kural olarak değerlendirilmesi gereken durumlardandır. Söz gelimi bir projenin mesai sonunda eğer derlenemiyorsa Check-In'lenmemesi (ki bunu VSTS üzerinden vereceğiniz hazır bir Policy ile kolayca garantileyebilirsiniz), gün içinde belkide 1 en fazla 2 Check-In yapılmasına izin verilmesi, özellikle versiyon takibi açısından da son derece önemlidir. Peki VSTS tarafından bizlere sunulan hazır Check-In ilkeleri (Builds, Code Analysis, Testing Policy, Work Items) dışında kendi özel politikalarımızı nasıl geliştirebilir ve projeye uygulayabiliriz?
 
 Aslında burada amaç, VSTS'in dış ortama sunulan bazı arayüzlerini kullanarak kendisine yeni davranışlar ekleyebilmektir. Yani bir Plug-In modeli ile karşı karşıya olduğumuzu düşünebiliriz. Dilerseniz bu fikirden yola çıkalım. İşe ilk olarak basit bir Class Library geliştirerek başlamamız gerekiyor. Söz konusu sınıf kütüphanesine, Microsoft.TeamFoundation.Version.Client isimli referansın eklenmesi gerekmektedir. Bu referans varsayılan kuruluma göre C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies klasörü altında bulunmaktadır. Refernasların eklenmesinin arından, PolicyBase isimli tipten türetilen bir sınıfın geliştirilmesi ve bunun içerisinde gerekli üyelerin ezilmesi (Override) gerekmektedir.
@@ -169,8 +167,7 @@ Süper. Artık durumu test edebiliriz. Ben TFS üzerindeki örnek bir projede bu
 
 TimeoutDay özelliğini 7 gün olarak set ettikten sonra başıma neler gelmiş neler?
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Elbette buradaki ilkeleri ezip geçebiliyoruz bildiğiniz üzere ama izleri kalıyor... Bu örnek ilkeyi uygulanızı önermem. Ancak sanıyorumki artık kendi özel Check-In ilkelerinizi nasıl geliştirebileceğinizi gördünüz. Böylece geldik bir yazımızın daha sonuna. Tekraradan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TimeoutPolicy.rar (30,07 kb)](/assets/files/2009/TimeoutPolicy.rar)
+

@@ -85,8 +85,6 @@ namespace WeatherClientApp
 
 Dikkat edileceği üzere WeatherDuplexServiceClient tipinden olan proxy nesnesi örneklenirken iki önemli parametre bilgisi geçilmektedir. Bunlardan ilki PollingDuplexHttpBinding tipinden olan bağlayıcı tiptir (Binding Type). Diğeri ise servise erişilecek olan Endpoint adresidir. İstemci tarafı asenkron olarak SetCity metoduna erişebilir. Bu nedenle SetCityCompleted olay metodu yüklenmiştir. Dikkat çekici noktalardan birisi de NoticeReceived isimli bir olayın söz konusu olmasıdır. Bilinen Completed son eki yerine Received son ekinin gelmesinin de bir anlamı vardır elbette.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Bu, istemcinin servisten gelen Notice çağrısını takiben devreye girecek operasyon ile alakalıdır. Bir başka deyişle servis tarafı Notice metodunu çağırdıktan ve bu operasyon işleyişini tamamladıktan sonra istemci tarafında proxyNoticeReceived olay metodu devreye girecektir. Ayrıca, bu olay metodunun NoticeReceivedEventArgs tipinden olan parametresi üzerinden yakalanan weather özelliği yardımıyla, servisin gönderdiği WeatherStatus nesnesine ulaşılabilir. Sonuç olarak uygulamayı test ettiğimizde örnek olarak aşağıdakine benzer bir sonuç elde ettiğimizi görebiliriz.
 
 ![blg172_Runtime.gif](/assets/images/2010/blg172_Runtime.gif)
@@ -100,3 +98,4 @@ Tüm bu çalışma sırasında dikkat edilmesi gereken bir husus da, önceki yaz
 Oysaki geliştirdiğimiz örnek Asp.Net Development Server üzerinden yayınlanmaktadır (http://localhost:22334/WeatherClientAppTestPage.aspx) ve sorunsuz bir şekilde IIS üzerindeki WorldWeatherService uygulamasına erişebilmektedir. Dolayısıyla Silverlight uygulamalarında sıkça rastladığımız Cross Domain sorunu yaşanmamaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WeatherClientApp.rar (540,12 kb)](/assets/files/2010/WeatherClientApp.rar) [Örnek Visual Studio 2010 RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

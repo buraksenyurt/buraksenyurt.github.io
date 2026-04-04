@@ -25,8 +25,6 @@ Ancak Task nesne örneklerinin devreye girdiği noktada, Parent-Child ilişkiler
 
 Task nesne örnekleri arasında Parent-Child ilişki oluşturulabilmesi için gerekli iki şart vardır. İlk olarak Child olacak Task örneğinin, Parent Task örneğinin çalıştığı yaşam döngüsü (Life Cycle) içerisindeyken oluşturulması (Create) gerekmektedir. İkincil olarak Child Task örneklerinin oluşturulma işlemleri sırasında, TaskCreationOptions enum sabitlerinden AttachedToParent değeri ile üretilmesi gerekmektedir. Bir başka deyişle oluşturulan Task nesne örneğinin, içerisinde çalıştığı Task nesne örneğinin Child'ı olacağının bilinçli bir şekilde bildirilmesi gerekir. Nitekim normal şartlarda varsayılan olarak tüm Task nesne örnekleri Detached pozisyondadır. Çok doğal olarak Parent-Child Task ilişkisi için en az iki Task nesne örneğinin olması gerektiği ortadadır.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Child Task örnekleri, Parent Task örneklerine dönüş durumlarının (Return States) değerlerine göre etkide bulunabilirler. TaskStatus enum sabiti için olası değerler bu noktada önem taşımaktadır. Aşağıdaki şemada olası durumların hangi zaman aralıklarında anlam kazandığı gösterilmeye çalışılmaktadır.
 
 ![blg171_SchemaNew.gif](/assets/images/2010/blg171_SchemaNew.gif)
@@ -63,7 +61,7 @@ Kod parçasında dikkat edileceği üzere childTaskOne, childTaskTwo ve childTas
 
 ![blg171_Runtime1.gif](/assets/images/2010/blg171_Runtime1.gif)
 
-Karşılaşılabilir diyoruz, nitekim Parent Task nesne örneğine dahil olan Child Task nesne örnekleri farklı sıralarda çalıştırılabilirler. Örneğimizde Task sırası 1,3,2 şeklindedir ama bu sıra sabit ve kesin değildir. Yani 3,2,1 veya 3,1,2 vb sonuçlar elde edilebilir.(Toplamda 6 farklı sonuç olabileceğini de ifade edebiliriz![Smile](/assets/images/2010/smiley-smile.gif))
+Karşılaşılabilir diyoruz, nitekim Parent Task nesne örneğine dahil olan Child Task nesne örnekleri farklı sıralarda çalıştırılabilirler. Örneğimizde Task sırası 1,3,2 şeklindedir ama bu sıra sabit ve kesin değildir. Yani 3,2,1 veya 3,1,2 vb sonuçlar elde edilebilir.(Toplamda 6 farklı sonuç olabileceğini de ifade edebiliriz)
 
 Biraz önce Child Task nesne örneklerinin Parent Task örneğine dahil olmaları için AttachedToParent sabit değerini belirtmeleri gerektiğini söylemiştik. Aksi durumda varsayılan olarak Detached olduklarını ifade etmiştik. Yukarıdaki kod parçasında AttachedToParent değerlerini kullanmassak aşağıdaki ekran görüntülerinde yer alanlara benzer sonuçlar ile karşılaşırız.
 
@@ -145,8 +143,6 @@ Dikkat edileceği üzere parentTask nesne örneğinin RanToCompletion moduna, bi
 
 Parent Task nesne örneğinin Final State zaman dilimine girmesi anında olası 3 Status değeri bulunmaktadır. Şemamızdan hatırlayacağınız üzere bunlar RanToCompletion, Canceled ve Faulted olarak belirlenmiştir. Child Task örneklerinin başarılı bir şekilde tamamlanmış olmaları, Parent Task örneğinin RanToCompletion değeri üretmesi için yeterlidir. Peki ya Child Task nesne örneklerinden herhangibirinin başlattığı kod içerisinden çalışma zamanına bir Exception fırlatılırsa?
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Söz gelimi bir önceki örnek kodumuzda yer alan Child Task örneklerinden birisinden bir Exception fırlattığımızı ve bunu yakalamak istediğimizi düşünelim.
 
 ```csharp
@@ -177,3 +173,4 @@ Dikkat edilmesi gereken 3 önemli nokta vardır. Parent Task nesne örneği Faul
 Son olarak Parent-Child ilişki ile ilgili olarak şu notu düşebiliriz; Parent Task nesne örnekleri, kaç adet Child Task örneği içerdiğini bilmektedir. Bir başka deyişle kendisine eklenen Child Task'lerin sayısını tutar. Dolayısıyla Child Task nesne örneklerinin, dahil oldukları Parent Task örneğine bir referans bildiriminde bulunduğunu ve hatta tamamlanma durumlarını ilettiklerini ifade edebiliriz. Parent-Child Task'ler arasındaki ilişkiyi fırsat buldukça incelemeye devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StructuredTasking_RTM.rar (23,32 kb)](/assets/files/2010/StructuredTasking_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM Sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

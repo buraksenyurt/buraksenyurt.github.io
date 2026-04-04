@@ -13,16 +13,13 @@ categories:
 ---
 [Bir önceki ip ucunda](/2012/11/22/tek-fotoluk-ipucu-72-linq-to-excel-ile-basit-sorgulama/) LINQ to Excel Provider’ dan yararlanmış ve bir Excel dosyasını kolayca nasıl sorgulayabileceğimizi görmüştük. Peki ya Excel tablosunda yer alan satırları, kod tarafında oluşturacağımız Strongly Typed sınıflar içerisindeki özelliklere karşılık gelecek şekilde ifade edebiliyor olsaydık
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_120.png)
-
 Daha şık olmaz mıydı?
 
 İşte size basit bir örnek. Tek dikkat etmemiz gereken, Excel tablosundaki kolonların başlıkları ile aynı isimde olan ve veri türü olarak da dönüştürülebilir tipteki özellikleri (Property) içeren basit bir POCO sınıfı tasarlamamız ve bunu Worksheet çağrısında T yerine kullanmamız. Bir başka deyişle Worksheet ile doğru şekilde eşleştirilebilecek bir POCO (Plain Old CLR Object) sınıfına ihtiyacımız var; o kadar. Hepsi bu
-
-![Smile](/assets/images/2012/wlEmoticon-smile_52.png)
 
 ![tfi_73](/assets/images/2012/tfi_73.png)
 
 Bir başka ip ucunda görüşünceye dek hepinize mutlu günler dilerim.
 
 [Not:Provider'da değişiklik yapılmış olabilir ve yukarıdaki kod parçasının son sürümde daha farklı bir şekilde ele alınması gerekebilir. Buna dikkat edelim]
+

@@ -18,9 +18,7 @@ Tabiki öncelikli olarak PLINQ kavramından biraz bahsetmemizde yarar var. PLINQ
 
 > Unutulmaması gereken noktalardan biriside, PLINQ ifadelerinin aslında çift çekirdek ve üstü işlemcilerin yada birden fazla işlemcinin olduğu sistemlerde anlamlı olmasıdır. Nitekim, PLINQ motoru, çalışmakta olan sorgu sürecini, makinenin sahip olduğu çekirdek sayısına göre parçalara ayırır ve yürütür. Bu özellikle büyük çaplı projeler göz önüne alındığında, şirketin sahip olduğu kaç bilgisayar var ise hepsini en azından çift çekirdekli olacak şekilde yenilemek gibi bir maliyet anlamına da gelmemelidir.
 > Nitekim bazı istemci-sunucu mimarilerinde, sunucu tarafında çalışmakta olan pek çok LINQ sorgusu, PLINQ motoru kullanılaraktan daha efektif hale getirilebilir. Bir başka deyişle, istemciler birden fazla çekirdekli işlemcilere sahip olmasalarda, mümkün mertebe LINQ ifadelerini içeren iş mantıklarının, sunucu tarafında olduğu senaryolarda PLINQ büyük avantajlar sağlayabilir (Çok kısa bir süre önce çalışmakta olduğum bir projede yer alan test makinesinin, 8 işlemcili olduğunu hatırlıyorum
->
-> ![Laughing](/assets/images/2009/smiley-laughing.gif)
->
+
 > )
 
 Tabi burada var olan nesneler üzerindeki LINQ sorgularının paralel olarak çalıştırılması için, Select, Where gibi genişletme metodlarının (Extension Methods) çalışma sırasında işi farklı parçalara bölebilecek versiyonlarının olması gerektiği düşünülebilir. İşte bu noktada devreye, System.Core assembly'ının 4.0 versiyonu içerisinde yer alan ve System.Linq isim alanında bulunan ParallelEnumerable adlı static sınıf girmektedir.
@@ -105,8 +103,6 @@ Uygulama içerisinde Products isimli bir sınıf ve bu tipe ait nesne örnekleri
 
 Hemen şunu belirteyim. Programı yazdığım makinede çift çekirdekli Intel işlemci ve 4 Gb Ram bulunmakta. İşletim sistemi olarakta Windows Vista Enterprise yer alıyor. Tabi bu örnek için Intel tabanlı işlemcinin daha büyük önem taşıdığını hemen söyleyebiliriz. Çalışma zamanındanda görüldüğü gibi, paralel olarak yürütülen LINQ ifadesi neredeyse %50 daha az zamanda tamamlanmıştır. (Aslında bu kod parçasını 4 çekirdekli bir işlemcide test etmeyi çok istiyorum. Bu konuda siz değerli okurlarımın yorumlarını ve test sonuçlarını bekliyor olacağım
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 )
 
 Uygulama çalışırken Task Manager aracı ile CPU kullanım durumuna baktığımda ise aşağıdaki sonuçlar ile karşılaştım.
@@ -152,3 +148,4 @@ Aslında bu sonuç son derece doğaldır. PLINQ motoru çalışma zamanında, ç
 Böylece geldik bir yazımızın daha sonuna. Tatil dönüşü sonrası üzerimdeki adaptasyon bıkkınlığını hafifleten bu yazımda sizlere,.Net Framework 4.0 içerisinde artık standart olarak yer alan ve Parallel Extension mimarisinin bir parçası olan PLINQ konusunu anlatmaya çalıştım. Elbetteki PLINQ içerisindede çok daha fazlası var. Bunlarıda ilerleyen yazılarımda aktarmaya çalışıyor olacağım. Sizlerde [bu](http://blogs.msdn.com/pfxteam/default.aspx)adresten Parallel Extension ile ilişkili son bilgileri alabilirsiniz. Hatta şu saatlerde VS 2010 ile gelen yeniliklerde anlatılmakta. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloWorld.rar (21,81 kb)](/assets/files/2009/HelloWorld.rar)
+

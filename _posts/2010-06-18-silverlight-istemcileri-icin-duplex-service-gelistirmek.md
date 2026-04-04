@@ -109,8 +109,6 @@ namespace WorldWeatherService
 
 WeatherDuplexService sınıfı IWeatherDuplexService arayüzünü (Interfaca) uygulamaktadır. Bu uyarlamaya göre SetCity metodunu ezmektedir. SetCity metodu içerisinde en can alıcı nokta ise, Callback Channel nesne referansının yakalanmasıdır. Dikkat edileceği üzere GetCallbackChannel metodu generic olarak IWeatherDuplexClient arayüzünü kullanmaktadır. Buna göre, çalışma zamanında istemcinin servise gönderdiği çağrıya göre yakalayacağı kanalın, IWeatherDuplexClient arayüzünü uygulamış bir tip olacağı ortadadır. E haliyle bu arayüzün içerisinde tanımlanmış bir de operasyonumuz bulunmaktadır. Notice isimli metod.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Dolayısıyla yakalanan kanal üzerinden yapılabilecek olan bir Notice operasyon çağrısı mevcuttur ve bu çağrı servis tarafından istemci üzerinde gerçekleştirilecektir. Kod içerisinde sembolik olarak bir gecikme işlemi uygulanmış ve bunun sonucunda TimerCallback temsilci tipinin (Delegate) işaret ettiği bir metod gövdesinin de devreye girmesi sağlanmıştır. Bu metod bloğu içerisindeyse Notice metod çağrısı gerçekleştirilmekte ve aşağıdaki içeriğe sahip olan WeatherStatus tipinden bir nesne örneği üretilmektedir.
 
 ```csharp
@@ -126,8 +124,6 @@ namespace WorldWeatherService
 ```
 
 Sırada servis tarafının çalışma zamanını ilgilendiren konfigurasyon ayarlarının yapılması yer almakta. Burada işler biraz karışıyor.
-
-![Sealed](/assets/images/2010/smiley-sealed.gif)
 
 Neyseki MSDN üzerinden konu ile ilişkili yardımcı dökümanların fazlasıyla yararı olduğunu ifade edebilirim. İşte sunucu uygulamamıza ait web.config içeriğimiz.
 
@@ -202,3 +198,4 @@ Bu içeriğe sahip olan ClientAccessPolicy.xml dosyasının ise WCF Servisimizi 
 Artık farklı bir domainde yer alan herhangibir Silverlight istemcisi WorldWeatherService'ini kullanabilecektir. Artık geride istemci tarafının yazılması ve test edilmesinden başka bir şey kalmamıştır. Ancak biraz nefes alalım ve bunu bir sonraki yazımıza bırakalım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WorldWeatherService.rar (157,92 kb)](/assets/files/2010/WorldWeatherService.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir.]
+

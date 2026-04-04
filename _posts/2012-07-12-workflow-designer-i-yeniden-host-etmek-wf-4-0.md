@@ -18,16 +18,11 @@ categories:
 
 ![total-recall-2012-official-trailer-teaser-00 (1)](/assets/images/2012/total-recall-2012-official-trailer-teaser-00%20%281%29.jpg)
 
-
 Sonuç itibariyle insanlar zaman zaman yapılmış olan bazı çalışmaları hem teknolojinin yeni nimetleri, hem de farklı şekilde yorumlayabilme isteği nedeni ile tekrardan ele alabilirler.
 
 Hatta bu felsefe yazılım dünyasında da zaman zaman vuku bulan bir senaryodur. Özellikle IDE tarafında. Bir IDE’ nin kabuğu üstüne giyidirilebilen parçaları farklılaştırabildiğinizi veya var olan IDE’ lerden farklı olan alternatiflerini üretebildiğinizi düşünün. Örneğin SharpDevelop
 
-![Smile](/assets/images/2012/wlEmoticon-smile_39.png)
-
 Aslına bakarsanız Visual Studio gerçekten harika bir IDE ortamı sunmaktadır. Hatta UX olarak bilien User eXperience değil de tam anlamıya Developer eXperience’ ın hat safhada olduğu bir geliştirme ortamıdır. Lakin genişletilebilir olması (Extension Manager’ a dikkatiniz çekmek isterim) haricinde çok gelişmiş özellikleri olmakla birlikte, zaman zaman daha hafif bir sürüme ihtiyaç duyabiliriz. Örneğin Workflow Foundation tabanlı olarak bir iş akışı tasarım uygulaması geliştirmek istediğinizi düşünün
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_98.png)
 
 Bu tip uygulamalarda herşeyi baştan ele alıp Amerikayı tekrardan keşfetmeyi deneyebilirsiniz elbette. Ancak zaten elimizde var olan bir Designer ortamı var ise, sadece bunu alıp yeni bir kabuk giydirmeye çalışmak daha etkili ve hızlı bir çözüm olabilir. İşte bu yazımızda çok basit olarak Workflow Designer ortamının Visual Studio dışarısında nasıl kullanılabileceğini öğrenmeye çalışıyor olacağız. Aracımızdan beklediğimiz özellikler temel olarak aşağıdaki maddeler halinde ifade edilebilir.
 
@@ -39,8 +34,6 @@ Tasarlanan veya yüklenen Workflow örnekleri çalıştırılabilmelidir.
 Kullanıcı deneyimini yüksek tutmak istediğimizden WPF (Windows Presentation Foundation) tabanlı bir arayüz sunulabilmelidir.
 
 Bu temel özellikleri gerçekleştirdiğimiz takdirde elimizde basit bir Workflow geliştirme aracı oluşacaktır. Söz konusu aracın daha da etkin hale getirilmesi için genişletilebilir bir yapıda tasarlanması önemlidir, ancak bu örneğimizde bu biraz daha göz ardı edilecek bir unsurdur
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_98.png)
 
 Peki bu tip bir uygulama geliştirmek için elimizde neler var bir de buna bakalım dilerseniz.
 
@@ -107,8 +100,6 @@ Uygulamanın sol tarafında Toolbox’ ımız, ortasında Workflow tasarımını
 ![rwd_2](/assets/images/2012/rwd_2.png)
 
 Sanırım bu ekran görüntüsüne bakınca biraz daha heyecanlanmış ve iştahlanmış olabilirsiniz yanılıyor muyum?
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_98.png)
 
 O halde kod tarafında neler yaptığımıza bir bakalım. İşte kodlarımız.
 
@@ -364,9 +355,9 @@ Aslında bu tip Visual Studio IDE’ si dışında bir Designer geliştirmenin n
 Visual Studio ürünü dışında daha basit içeriğe sahip olup örneğin sadece İş Analistlerini hedef alan bir araca sahip olabiliriz.
 Workflow Foundation içerisindeki tüm Component seti yerine sadece işe ve ihtiyaca yönelik bileşenlerin yer aldığı bir Toolbox’ un ürün bazlı olarak sunulabilmesini sağlayabiliriz.
 Söz konusu Toolbox içeriği yetkilendirilebilir (Authorization) ve ürünü kullananların pozisyonlarına göre yapabilecekleri sınırlanabilir.
-Bir dezavantaj olarak görebileceğimiz Debug etme güçlüğüne karşılık ürünün Developer profili dışında kullanılacağı tezini öne sürebiliriz ![Smile](/assets/images/2012/wlEmoticon-smile_39.png)
+Bir dezavantaj olarak görebileceğimiz Debug etme güçlüğüne karşılık ürünün Developer profili dışında kullanılacağı tezini öne sürebiliriz
 Geliştirilen araç, Visual Studio bağımsız bir ürün olarak düşünülüp lisanslanabilir veya ücretsiz olarak şirket içi çalışmalarda değerlendirilebilir.
-Özellikle görsel yeteneğe sahip Workflow Activity bileşenlerinin, bu aracın Visual Studio ile birlikte çalıştırılması halinde, Designer’ a bağlandıklarındaki davranışlarının Debug edilmesi çok daha kolay olacaktır (Acısını çok çektim o yüzden kulak verin bu avantajı yaban atmayın ![Smile](/assets/images/2012/wlEmoticon-smile_39.png))
+Özellikle görsel yeteneğe sahip Workflow Activity bileşenlerinin, bu aracın Visual Studio ile birlikte çalıştırılması halinde, Designer’ a bağlandıklarındaki davranışlarının Debug edilmesi çok daha kolay olacaktır (Acısını çok çektim o yüzden kulak verin bu avantajı yaban atmayın)
 
 Görüldüğü üzere Visual Studio IDE’ sinin bir parçası olarak sunulan ve kullanılan Workflow Designer’ ın harici bir ürün haline dönüştürülmesi son derece kolaydır. Umarım vizyonunuza değer katacak bir çalışma olmuştur. Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 

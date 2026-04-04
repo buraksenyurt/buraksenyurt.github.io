@@ -31,15 +31,11 @@ Standart SOAP (Simple Object Access Protocol) servisleri (klasik XML Web Service
 
 Bu geniş servis yelpazesinin uygulandığı alanlar göz önüne alındığında, SQL Server, Sharepoint, BizTalk gibi pek çok ürün grubu işin içerisine giriyor ki buna bir de Cloud üzerindeki WCF uç noktalarını etkilediğimizde modelin ne kadar etkili bir alana yayıldığını daha iyi görebiliyoruz. Dolayısıyla WCF, etkisini pek çok noktadan pozitif anlamda hissettiriyor. Peki biz bu yazımızda neyi inceliyor olacağız?
 
-![Smile](/assets/images/2012/smiley-smile.gif)
-
 Çoğunluka Entity Framework odaklı olarak kullanılan Data Service’ ler, basit HTTP protokolü üzerinden, Querystring bazlı olacak şekilde içerik yayınlanmasına izin vermektedir. Bu anlamda HTTP protokolünün basit Get, Post, Put, Delete metodları ile çalışabilen, XML, JSON veya OData standardında Entity çıktılarını verebilen bir servis yapısı söz konusudur. Burada kafamıza takılan veya çok fazla ilişmediğimiz konulardan birisi ise,
 
 > Data Service’ leri her zaman Entity Framework tabanlı olarak kullanmak zorunda olup olmadığımızdır?
 
 Güzel soru
-
-![Sealed](/assets/images/2012/smiley-sealed.gif)
 
 Acaba var olan Data Service çalışma modeli esnetilip Entity Framework yerine kendi veri sağlayıcılarımız (Provider) ile çalışabilir miyiz? Bir başka deyişle, örneğin ASP.NET üzerindeki Membership Provider, Profile Provider gibi yapılarda uygulanabilen özelleştirme mantığını, Data Service’ ler tarafında da yapabilir miyiz? İşte bu yazımızda bu konuyu ele alıyor olacağız.
 
@@ -57,8 +53,6 @@ Burada görüldüğü üzere uygulamamızda DataService tipini kullanarak bir Se
 Örnek uygulamamızda felsefeyi anlamaya odaklanacağımız için çok basit bir Text dosyasını veri kaynağı olarak kullanıyor olacağız. Bu text dosya içerisinde | işaretleri ile ayrılmış şekilde bir personel verisini tutmayı planlıyoruz. Personel numarası, adı, soyadı, ünvanı ve bulunduğu ülke örnek veri alanlarımız olarak düşünülebilir.
 
 > Pek tabi çok daha farklı bir veri kaynağını da senaryoya dahil edebilirsiniz. Örneğin donanımsal bir arayüzün verilerini bu şekilde Data Service ‘ler üzerinden sunabileceğinizi düşünün. Söz gelimi bu bir mobil cihaz üzerinde bir süredir çalışmakta olan GPS servisinin topladığı içerik olabilir
->
-> ![Wink](/assets/images/2012/smiley-wink.gif)
 
 ![dsrp_4](/assets/images/2012/dsrp_4.png)
 
@@ -128,8 +122,6 @@ namespace ReflectionProvider
 
 Bag sınıfı içerisinde text tabanlı dosya içeriğinin okunması ve Person tipinden generic bir List koleksiyonuna atanması işlemleri yapılmaktadır. Bu işlemler static yapıcı metod (Constructor) içerisinde gerçekleştirilmektedir. Diğer yandan sınıfın olabilecek belki de en önemli özelliği Persons üyesidir. Dikkat edileceği üzere bu üye geriye IQueryable tipinden bir referans döndürmektedir. Bu sayede biz Data Service host ortamına, URL bazlı olarak sorgulanabilir bir içerik sağlayacağımızı da belirtmiş olacağız (Bir başka deyişle EntitySet tipini ifade etmiş olmaktayız) Tabi bu belirtme işlemini asıl DataService sınıfı içerisinde gerçekleştireceğiz. Aynen aşağıda olduğu gibi
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ```csharp
 using System.Data.Services;
 
@@ -188,8 +180,6 @@ Dikkat edileceği üzere Text dosyamız içerisinde yer alan tüm içerik XML fo
 
 İkinci sorgumuzda ise belirli bir PersonId değerine sahip içeriği getirmeye çalışacağız. Hatırlayacağınız gibi Person tipine uyguladığımız DataServiceKey niteliği ile, PersonId özelliğinin unique anahtar olduğunu belirtmiştik. Bu amaçla http://localhost:8080/Persons (10002) URL'ini deneyebiliriz. İşte sonuç
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ![dsrp_7.png](/assets/images/2012/dsrp_7.png)
 
 Çok doğal olarak servise başka sorgular da gerçekleştirilebilir. Örneğin Country özelliğinin değerine göre alfabetik sırada listenin elde edilmesi sağlanabilir. Bunun için orderby anahtar kelimesini kullanmak yeterlidir. Tabi dikkat edilmesi gereken noktalardan birisi de, sorgu içerisinde yer alan özellik adlarının case-sensitive olarak ele alınması gerekliliğidir. Bir başka deyişle, Country yerine country yazmak hataya neden olacak ve bir sonuç kümesi döndürülmeyecektir. Dolayısıyla http://localhost:8080/Persons?$orderby=Country şeklindeki URL ifadesi aşağıdaki sonucun üretilmesini sağlayacaktır.
@@ -198,6 +188,5 @@ Dikkat edileceği üzere Text dosyamız içerisinde yer alan tüm içerik XML fo
 
 Görüldüğü gibi WCF Data Service'lerde Reflection Provider'larını kullanarak Entity Framework dışındaki kaynakları kullanmak son derece kolaydır. Bu yazıda geliştirdiğimiz örnekte, POST, PUT ve DELETE sorguları için gerekli destek yoktur. Bunun için IUpdatable arayüzünün ve onunla birlikte tanımlanan üyelerin ezilmesi (override) gerekmektedir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 [ReflectionProvider.rar (36,11 kb)](/assets/files/2012/ReflectionProvider.rar)
+

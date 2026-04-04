@@ -126,7 +126,7 @@ Aşağıdaki şekilde ise ForAll kullanımı sırasındaki senaryo ifade edilmey
 
 ![blg23_3.gif](/assets/images/2009/blg23_3.gif)
 
-Yine PLINQ ifadesinin çalışması sırasında n adet Task paralel olarak başlatılır. Ancak foreach'ten farklı olarak her task'in içerisinde hem Where gibi koşulların kontrolü ele alınmakta hemde örneğimizde ki her bir sonuç için ayrı ayrı işlemler (Console.WriteLine gibi) gerçekleştirilmektedir. Yani task'ler paralel olarak işledikten sonra tek bir Task altında birleştirilmezler. Sanıyorum şekil yardımıyla sizde benim gibi, gerçekleşen iki farklı işleyişi daha net canlandırabildiniz. (Tabi işlemcinin içerisine girip olan biteni canlı canlı görmemiz mümkün değil. Ama kim bilir, belki gelecek nesil sistemlerde çalışma zamanını, tıpkı bir doktorun sanal bir hastanın organları içerisinde ilerleyişi gibi, bilgisayar donanımı üzerindem gözlemleyebiliriz. ![Wink](/assets/images/2009/smiley-wink.gif))
+Yine PLINQ ifadesinin çalışması sırasında n adet Task paralel olarak başlatılır. Ancak foreach'ten farklı olarak her task'in içerisinde hem Where gibi koşulların kontrolü ele alınmakta hemde örneğimizde ki her bir sonuç için ayrı ayrı işlemler (Console.WriteLine gibi) gerçekleştirilmektedir. Yani task'ler paralel olarak işledikten sonra tek bir Task altında birleştirilmezler. Sanıyorum şekil yardımıyla sizde benim gibi, gerçekleşen iki farklı işleyişi daha net canlandırabildiniz. (Tabi işlemcinin içerisine girip olan biteni canlı canlı görmemiz mümkün değil. Ama kim bilir, belki gelecek nesil sistemlerde çalışma zamanını, tıpkı bir doktorun sanal bir hastanın organları içerisinde ilerleyişi gibi, bilgisayar donanımı üzerindem gözlemleyebiliriz.)
 
 Herşey güzel ama, hangisini ne zaman kullanmak gerekir öyleyse?
 

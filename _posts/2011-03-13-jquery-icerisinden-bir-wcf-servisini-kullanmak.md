@@ -12,7 +12,6 @@ Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ 
 
 ![blg234_Giris](/assets/images/2011/blg234_Giris.jpg)
 
-
 Güneş batmış ve hava çoktan kararmıştır. Müşterileri çoğunlukla buluşmalara geç kalır. Aslında çevrede oturanları gizlice gözlemlediğinde onlardan birisinin kalkıp yanına geleceğini ve kendisini müşterisi olarak tanıtacağını gayet iyi bilmektedir. Bir açıdan müşterilerinin aslında kendinden önce geldiğini ama tedrigin oldukları için yaklaşmakta zorlandıklarını bilmektedir. Daha önce bu çok sık başına gelmiştir.
 
 Masadaki metal peçetelikten arkasına doğru baktığında çok fazla dikkat çekmeyen ama müşterisi olabilecek bir kişinin oturduğunu uzun süre önce fark etmiştir. Cam kapıdaki yansımadan okumakta olduğu gazeteye tersten baktığı anlaşılmaktadır. Derken tahmin ettiği gibi olur…Adam ayağa kalkar ve masasına doğru yavaş ve tedirgin adımlarla yürür. Netspecter sakin bir şekilde Java Chip Chocolate’ inden bir yudum daha alır. Elini pardesüsünün cebine götürür ve en gelişmiş silahı 38lik Obfuscator’ unu hazırlar. Derken adam karşısına gelir ve….
@@ -22,8 +21,6 @@ Masadaki metal peçetelikten arkasına doğru baktığında çok fazla dikkat ç
 ![Smile with tongue out](/assets/images/2011/wlEmoticon-smilewithtongueout.png)
 
 Son yıllarda özellikle Web uygulamalarında jQuery’ nin oldukça fazla yaygınlaştığını görmekteyiz. Özellikle Asp.Net MVC (Model View Controller) disiplinin de…Ben her ne kadar Javascript vey jQuery tarafında uzman olmasam da sonuçta bu istemcilerin çağrıda bulunabileceği WCF (Windows Communication Foundation) servisleri olabileceğini biliyorum
-
-![Sarcastic smile](/assets/images/2011/wlEmoticon-sarcasticsmile_2.png)
 
 Dolayısıyla bu günkü yazımızda jQuery içerisinden JSON (JavaScript Object Notation) ve XML (eXtensible Markup Language) formatında veri sunan operasyonlara sahip bir WCF servisinin nasıl kullanılabileceğini incelemeye çalışıyor olacağız.
 
@@ -186,8 +183,6 @@ Dikkat edileceği üzere Category tipinden olan dizinin içeriği XML formatınd
 
 Şu an geldiğimiz noktaya bakdığımızda, jQuery içerisinden WCF servis operasyonlarının çağırılması ve JSON ile XML formatında veri alınması söz konusudur. Bir de bu verileri kullanabilirsek süper olmaz mı?
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_4.png)
-
 Bu amaçla servis çağrılarının başarılı olması sonucu devreye giren Success metodlarındaki javascript kodlarını aşağıdaki gibi değiştirmemiz yeterli olacaktır.
 
 ```javascript
@@ -272,8 +267,6 @@ Tabi JSON ve XML formatındaki veri dönüşleri birbirlerinden farklı şekilde
 ![blg234_RuntimeResult](/assets/images/2011/blg234_RuntimeResult.gif)
 
 Görüldüğü gibi jQuery kütüphanesi içerisinden bir WCF servis çağrısını gerçekleştirmek ve operasyon çağrısı sonucu üretilen veriyi javascript tarafında ele almak son derece kolaydır. Tabi bu noktada akla gelen sorulardan biriside bu tip bir işlevselliğin ASP.NET MVC tarafında nasıl ele alınabileceğidir
-
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_4.png)
 
 Bunu da ilerleyen yazılarımızdan birisinde ele almaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

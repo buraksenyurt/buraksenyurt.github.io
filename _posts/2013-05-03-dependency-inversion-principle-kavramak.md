@@ -19,5 +19,3 @@ Bu görsel dersimizde, SOLID ilkelerinden birisi olup Yazılım Tasarım Presinp
 [Youtube Link](https://www.youtube.com/watch?v=zQvkzzwElXs)
 
 Bir başka görsel dersimizde görüşmek dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_202.png)

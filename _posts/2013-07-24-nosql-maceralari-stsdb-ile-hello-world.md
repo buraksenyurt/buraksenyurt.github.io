@@ -16,8 +16,6 @@ categories:
 
 General Motors firmasına ait olan otomobillerden birisi de, Cadillac STS'in farklı bir versiyonu olan CTS idi. Tabi ben konuyu bir şekilde bu günkü yazının konusu olan STSdb'ye getirmek istediğimden [Cadillac STS](http://en.wikipedia.org/wiki/Cadillac_STS)'e ait bir fotoğrafa yer vermek istedim
 
-![Smile](/assets/images/2013/wlEmoticon-smile_80.png)
-
 Öyleyse vakit kaybetmeden konumuza geçelim.
 
 Bilindiği üzere bir süredir NoSQL (Not only SQL) veritabanlarını incelemeye (öğrenmeye) çalışıyoruz. Daha önceki yazılarımızda Apache Cassandra, RavenDB ve DEX ürünlerine bir göz atmış ve.Net uygulamalarında nasıl kullanılabileceklerini görmüştük. Klasik olarak yaptığımız Hello World uygulamalarının bir benzerini de bu gün inceleyeceğimiz STSdb için gerçekleştiriyor olacağız.
@@ -25,8 +23,6 @@ Bilindiği üzere bir süredir NoSQL (Not only SQL) veritabanlarını incelemeye
 Bu veritabanı için bazı kaynaklarda Revolutionary (Devrimci, devrimsel, devrim niteliğinde) sıfatı kullanılmış. Gerçekten böyle bir sistem olduğunu ispat etmemiz oldukça zor tabi. Yine de bu konu ile ilişkili yapılmış bir kaç veritabanı testine bakmak az da olsa fikir verebilir. Söz gelimi kaynağının ne kadar güvenilir olduğunu tam olarak bilmediğim [bu adreste](http://www.techmixer.com/revolutionary-database-paradigm-stsdb/), karşılaştırıldığı veritabanlarına göre en hızlısı olduğu iddia edilmiş.
 
 Aslında bizim temel amacımız key-value modeline göre çalışan NoSQL veritabanlarından bir diğerini incelemektir
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_174.png)
 
 Dilerseniz STSdb ürününü kısaca mercek atlına almaya başlayalım.
 
@@ -52,8 +48,6 @@ Genel özelliklerini ise aşağıdaki maddeler halinde ifade edebiliriz.
 - Belki de en önemli özelliklerinden birisi tutabileceği tablo veya kayıt için bir üst limit değerinin olmayışıdır. Bu nedenle çok büyük boyutlu veri kümeleri için tercih edilebilir.
 
 İlk olarak ürünü tedarik etmemiz gerekiyor tabi ki
-
-![Laughing out loud](/assets/images/2013/wlEmoticon-laughingoutloud_5.png)
 
 Bunun için [şu adresi](http://stsdb.com/products/stsdb-w4.0/downloads/embedded-server/) kullanabiliriz. İndirilen içerik aşağıdaki gibidir. (Yazının yayınlandığı tarihi itibariyle 4.0 RC sürümüde mevcut)
 
@@ -213,7 +207,7 @@ Temel olarak key-value teorisini baz alarak çalışan STSdb sisteminde, tablo a
 Tablo anahtarlarına (Table Keys) baktığımızda aşağıdaki tiplerin desteklendiğini görmekteyiz.
 
 - .Net primitive types (Boolean, Byte, Char, DateTime, Decimal, Double, Int16, Int32, Int64, TimeSpan, SByte, Single, String, UInt16, UInt32, Uınt64)
-- byte[] dizisi (Örneğin bir resmin byte içeriğini Key olarak kullanabilirsiniz ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_174.png))
+- byte[] dizisi (Örneğin bir resmin byte içeriğini Key olarak kullanabilirsiniz)
 - STSdb’ ye özgün Locator tipi
 - Tn primitive olmak suretiyle XKey,
 - IKeyMap arayüzü (Interface) türetmeleri
@@ -221,7 +215,7 @@ Tablo anahtarlarına (Table Keys) baktığımızda aşağıdaki tiplerin destekl
 Tablo kayıtlarına (Table Records) baktığımızda ise benzer tiplerin desteklendiğini görürüz.
 
 - .Net primitive types (Boolean, Byte, Char, DateTime, Decimal, Double, Int16, Int32, Int64, TimeSpan, SByte, Single, String, UInt16, UInt32, Uınt64)
-- byte[] dizisi, enum, Type ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_174.png), Image, Icon, MemoryStream, Guid, XElement gibi diğer tipler
+- byte[] dizisi, enum, Type, Image, Icon, MemoryStream, Guid, XElement gibi diğer tipler
 - STSdb’ ye özgü Locator ve BlobStream (Çok büyük boyutlu binary içerikleri alabilirsiniz demek)
 - Serileştirilebilir nesneler (Serializable Objects)
 - IBinaryPersist> arayüzünün türevleri (Özellikle kendi Persistence mekanizmamızı yazmak istediğimiz durumlarda yine bu arayüzden türetilmiş tipler söz konusu olacaktır. Bir başka deyişle Binary olarak yazma ve okuma işlemlerine müdahale edip Persistence şeklini değiştirebiliriz)

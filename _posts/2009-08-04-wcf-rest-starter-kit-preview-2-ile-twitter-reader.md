@@ -11,13 +11,11 @@ Minik bir çocukken Televizyon bağımlılığı (Malesef bu aptal kutuda çok v
 
 ![blg56_giris.gif](/assets/images/2009/blg56_giris.gif)
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
-Şimdi bu konuya nereden geldiğimi düşünebilirsiniz. Şu sıralarda sık sık takip ettiğim geekswithblogs sitesinde twitter'da (Sanırım niye cikcik diyerek yazımıza başladığımızı anlamışsınızdır ![Laughing](/assets/images/2009/smiley-laughing.gif)) yayınlanan içeriklerin WCF Rest Starter Kit Preview 2 ile birlikte gelen HttpClient sınıfı yardımıyla nasıl kolayca ele alınabileceğine dair bazı yazılar gördüm.
+Şimdi bu konuya nereden geldiğimi düşünebilirsiniz. Şu sıralarda sık sık takip ettiğim geekswithblogs sitesinde twitter'da (Sanırım niye cikcik diyerek yazımıza başladığımızı anlamışsınızdır) yayınlanan içeriklerin WCF Rest Starter Kit Preview 2 ile birlikte gelen HttpClient sınıfı yardımıyla nasıl kolayca ele alınabileceğine dair bazı yazılar gördüm.
 
 Konunun içerisinde REST bazlı iletişim ve WCF söz konusu olunca hemen kolları sıvadım ve Windows tabanlı basit bir örnek geliştirmeye karar verdim. Tabi başlamadan önce projemizin amacından biraz bahsetmek isterim. [Twitter](http://twitter.com/)üzerinde yayınlanan girişleri HTTP üzerinden GET metodu ile çekmeyi, buna göre eklenen güncel içerikleri uygulamamızda göstermeyi ve yenilerinide kendi Twitter hesabımız üzerinden, HTTP Post metodu ile ekleyebilmeyi planlıyoruz. Aslında olay bir RSS Reader yazmak kadar basit. Diğer yandan burada bahsettiğimiz işlevsellikleri geliştirmek için elimizde WCF Rest Starter Kit Preview 2 olmasına da gerek yoktur. Ancak Kit'in bize sağladığı bazı avantajlar ve kolaylıklar bulunmaktadır.
 
-Örneğin, XML içeriğini managed tarafta kolayca ele alabilmemiz için gerekli tiplerin üretimini kolaylaştıran Paste XML As Types ![Laughing](/assets/images/2009/smiley-laughing.gif) Örneği geliştirebilmek için çok sık kullanmasamda Twitter'da bir hesap oluşturdum ve bildiğim geliştiricilerin Tweet'lerini takip etmeye başladım. İşe başlamadan önce, Twitter'da ne olup bittiğine bir bakayım dedim.
+Örneğin, XML içeriğini managed tarafta kolayca ele alabilmemiz için gerekli tiplerin üretimini kolaylaştıran Paste XML As Types Örneği geliştirebilmek için çok sık kullanmasamda Twitter'da bir hesap oluşturdum ve bildiğim geliştiricilerin Tweet'lerini takip etmeye başladım. İşe başlamadan önce, Twitter'da ne olup bittiğine bir bakayım dedim.
 
 ![blg56_Twitter.gif](/assets/images/2009/blg56_Twitter.gif)
 
@@ -34,8 +32,6 @@ Bu içeriği sayfanın View Source kısmını kullanarak kopyalayıp, Paste XML 
 ![blg56_ClassDiagram.gif](/assets/images/2009/blg56_ClassDiagram.gif)
 
 Harika! Görüldüğü üzere XML içeriğinin karşılığı olan sınıflar başarılı bir şekilde oluşturulmuştur. Dikkat edilmesi gereken noktalardan birisi, XML deki Child Node bağlantılarının sınıf bazında nasıl ifade edildiğidir. Örneğin statuses sınıfı içerisinde statusesStatus tipinden bir dizi olarak tanımlanmış status özelliği... Bu özelliği kod tarafında değerlendirerek, tweet içeriğini giren User'a dahi ulaşabiliriz. Nitekim bunun için statusesStatus sınıfı içerisinde, statusesStatusUser tipinden user isimli bir özellik tanımlanmıştır. Zaten işin en önemli kısımlarından biriside bu XML içeriğinin, kod tarafınaki ifade şekli değil midir? Teşekkürler Paste Xml As Types
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Managed tiplerde oluşturulduğuna göre artık arka plan kodlarımızı geliştirebiliriz. (Hemen şunu hatırlatalım.Paste Xml As Types ile üretilen sınıf ve üyelerinin adlarını dilediğiniz gibi değiştirebilirsiniz. Özellikle yazım standartlarına uygun-CamelCasing isimlendirmeler yapılmasında yarar vardır. Şu an örneği hızlı bir şekilde geliştirme istediğinde bu noktaları atlamış bulunuyorum) Windows Form'unu aşağıdaki gibi tasarlayabiliriz.
 
@@ -145,11 +141,7 @@ namespace TwitterReader
 
 Görüldüğü üzere örneği geliştirdiğim sıradaki tüm Tweet girişlerini elde edebilmiştim. Evet, tasarım biraz kötü
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 Hatta çok kötü
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Dahada güzelleştirilmesini size bırakıyorum.
 
@@ -171,8 +163,7 @@ Peki örnekte yapmadıklarım neler?
 
 Her şeyden önce asenkron bir erişim söz konusu değildir. Bu nedenle verilerin çekilmesi veya yeni bir Tweet'in eklenmesi sırasında ekranda donmalar olmaktadır. Diğer taraftan çok güçlü bir Exception yönetimiz yok. Belki bir loglama sistemi koyarark Exception'ların uygulamayı geliştirenler için saklanması sağlanabilir. Örneği geliştirirken bir Exception almamış olmama rağmen Tweet bilgilerinin çekilmesi sırasında bağlantıdaki aksaklıklar nedeni ile Time out istisnalarına düşülebileceğini tahmin ediyorum. Bunu kod içerisinde kontrollü bir şekilde ele almak yerinde olacaktır. Diğer taraftan Button kontrolü yardımıyla veri çekmek yerine, kullanıcının kendisinin set edebileceği zaman dilimleri içerisinde veri çekilmesi sağlanabilir. Bu işi bir Timer bileşeni kolayca halledebilir. Birde tasarım konusunda beni takip etmemenizi öneririm
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bunları deneyin ve çok daha iyisini yapmaya çalışın. Umarım yararlı bir yazı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TwitterReader.rar (187,66 kb)](/assets/files/2009/TwitterReader.rar)
+

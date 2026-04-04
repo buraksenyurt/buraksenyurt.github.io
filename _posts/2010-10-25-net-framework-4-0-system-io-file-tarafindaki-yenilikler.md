@@ -18,7 +18,7 @@ Bu tip bir dosyanın bir bankadan gönderilme olasılığı aslında çok yükse
 
 ![Undecided](/assets/images/2010/smiley-undecided.gif)
 
-Tabi bu tip dosyaların en büyük özelliği de veri taşımak amacıyla satır ve sütun kavramlarını kullanmalarıdır. Ayrıca verinin çok yalın bir formatta taşınması ve her tür platform tarafından kolayca ele alınması, hatta çıplak gözle (Tabi zaman zaman. Nitekim benim üzerinde çalıştığım SSIS paketlerinin sütunlarının sayısı 250’ ye varmaktaydı ![Sealed](/assets/images/2010/smiley-sealed.gif)) rahatlıkla okunabilmesi gibi avantajlar da söz konusudur. Buna göre aşağıdaki gibi bir text içeriği doğru bir veri saklama biçimi olarak düşünülebilir.
+Tabi bu tip dosyaların en büyük özelliği de veri taşımak amacıyla satır ve sütun kavramlarını kullanmalarıdır. Ayrıca verinin çok yalın bir formatta taşınması ve her tür platform tarafından kolayca ele alınması, hatta çıplak gözle (Tabi zaman zaman. Nitekim benim üzerinde çalıştığım SSIS paketlerinin sütunlarının sayısı 250’ ye varmaktaydı) rahatlıkla okunabilmesi gibi avantajlar da söz konusudur. Buna göre aşağıdaki gibi bir text içeriği doğru bir veri saklama biçimi olarak düşünülebilir.
 
 ![blg199_TextContent_.gif](/assets/images/2010/blg199_TextContent_.gif)
 
@@ -175,3 +175,4 @@ Yeri geldikçe bunları toplu olarak ele almaya çalışıyor olacağız. Bu yaz
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [NewIOFeatures.rar (21,53 kb)](/assets/files/2010/NewIOFeatures.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
+

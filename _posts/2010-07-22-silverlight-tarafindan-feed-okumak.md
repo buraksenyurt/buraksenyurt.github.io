@@ -16,8 +16,6 @@ Yeni bir maceraya hazır mısınız? Hureyyy dediğinizi duyar gibiyim. Bildiği
 
 Pek tabi yayınlanan bu içeriklerin takip edilebilmesi içinde çeşitli istemci programlar söz konusu. FeedReader bu uygulamalara örnek olarak verilebilecek Windows tabanlı iddialı programlardan birisi. Feed içerikleri zaman zaman internet siteleri üzerinde kontrol şeklinde de barındırılmaktadır. Söz gelimi pek çok blog içerisinde bu durum söz konusudur ve hatta hazır Widget'lar yardımıyla entegrasyonları son derece kolaydır. Peki maceramız nerede başlıyor? Özellikle ambulans resminin bu konu ile alakası nedir?
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Doğruyu söylemek gerekirse sıkıldığım bir ara ne yapayım diye düşünürken Silverlight 4.0 tabanlı olarak geliştirilen bir uygulamadan RSS içeriklerini nasıl okuyabileceğimi düşünmeye başladım. Daha önceden HTTP bazlı Get,Post,Put, Delete metodlarınaa cevap veren WCF tabanlı servislerin tüketilmesi için WebClient tipinden nasıl yararlanıldığını incelemiştim ([Silverlight Tarafında HTTP Bazli Servisleri Kullanmak](/2010/07/12/silverlight-tarafinda-http-bazli-servisleri-kullanmak/) isimli yazıyı incelemenizi öneririm) Yine aynı şekilde devam ederek herhangibir RSS içeriğini örnek Silverlight uygulamama taşıyabileceğimi düşünerek kolları sıvadım ve heyecanlı bir şekilde aşağıdaki ekran görüntüsü ve XAML içeriğine sahip kontrolü oluşturdum.
 
 ![blg176_Design.gif](/assets/images/2010/blg176_Design.gif)
@@ -194,8 +192,6 @@ namespace RSSReaderim.Web
 
 Servis kodunda dikkat edilmesi gereken en önemli noktalardan birisi, ReadRss metodunun geriye SyndItem tipinden generic bir List koleksiyonu döndürmesidir. Bu noktada akla şu soru gelebilir. Neden List gibi bir koleksiyon döndürmüyoruz?
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Aslında buradaki sorun SyndicationItem tipinin serileştirme işlemi sırasında çalışma zamanı hatasına neden olmasıdır. Serileştirmedeki bu sıkıntı bizi alternatif bir yola itmiştir. Bu sebepten örnekte bir Surrogate tip kullanılmaktadır. Bu işlemin ardından artık Silverlight tarafı için gerekli geliştirmeler yapılabilir. İlk etapta aynı Domain içerisindeki (bir başka deyişle aynı Solution içerisindeki) WCF Servisinin Silverlight projesine eklenmesi gerekmektedir.
 
 ![blg176_AddServiceRef.gif](/assets/images/2010/blg176_AddServiceRef.gif)
@@ -283,10 +279,9 @@ ve diğer bir örnek;
 
 Görüldüğü üzere RSS içerikleri başarılı bir şekilde getirilebilmektedir. Elbetteki örnekte eksik olan bir çok kısım vardır. Söz gelimi RSS ile ilişkili olarak daha çok verinin getirilmesi daha iyi olacaktır. Söz gelimi Feed'in sahibi olan siteye ait bilgiler. Diğer yandan eksik kalan önemli noktalardan biriside ListBox'ta bir öğe seçildiğinde ilgili Feed adresine nasıl gidileceğidir. Sonuç itibariyle Silverlight uygulaması tarayıcı üzerinde çalışmaktadır ve ilgili Feed içeriğinin Content verisinin gösterilmesini herkes isteyecektir. İşte size güzel bir araştırma konusu ve ödev
 
-![Smile](/assets/images/2010/smiley-smile.gif)
-
 Benden buraya kadar. Bir süre dinlenmeye çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RSSReaderim_RTM.rar (1,48 mb)](/assets/files/2010/RSSReaderim_RTM.rar)
 
 > Örnek Visual Studio 2010 Ultimate RTM sürümünde geliştirilmiş ve test edilmiştir.
+

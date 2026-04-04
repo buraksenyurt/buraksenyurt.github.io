@@ -133,8 +133,6 @@ Aslında Siverlight-enabled WCF Service'i AlbumProcuder.svc adıyla eklediğimiz
 
 Hemen bir hatırlatmada bulunalım. Servisi çalıştıran Asp.Net Development Server uygulamasının açtığı port numarası önemlidir. Nitekim istemci tarafında yazılacak olan kod içerisinde bu port numarası değerlendirilecektir
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 İşin belkide kodlama açısından en sıkıcı noktası ise istemci tarafını geliştirmektir. Her şeyden önce istemci tarafının, sunucu tarafında yer alan IAlbumProducer.cs dosyasını referans etmesi gerekmektedir ki bunu ilgili dosyayı ilave ederken Add As Link seçeneğinin kullanılmasında yarar vardır. Böylece dosyanın tek bir noktada durması garanti edilmiş olur. Diğer yandan System.ServiceModel.dll (Servis çalışma zamanının tesisi için gerekli tipleri kullanabilmek için) ve System.Runtime.Serialization.dll (Veri sözleşme nitelikleri için) Assembly'larının Silverlight uygulamasının olduğu projeye referans edilmesi şarttır.
 
 ![blg170_ReferencesNew.gif](/assets/images/2010/blg170_ReferencesNew.gif)
@@ -213,3 +211,4 @@ Volaaa!!! Uygulamayı test ettiğimizde aşağıdaki çalışma zamanı çıktı
 Dikkat edileceği üzere istemci tarafında bir konfigurasyon dosyası içeriği hazırlanmamıştır. Bir başka deyişe WCF Çalışma Zamanı (WCF Runtime) için gerekli Endpoint, CustomBinding bildirimlerinin tamamı kod içerisinde gerçekleştirilmiştir. Özet olarak Silverlight istemcisinin Proxy tipine ihtiyaç duymadan çalışması sağlanabilmiştir. Böylece geldik bir görsel dersimizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WithChannelBased_RTM.rar (72,10 kb)](/assets/files/2010/WithChannelBased_RTM.rar) [Örnek Visual Studio 2010 RC sürümü üzerinde geliştirilmiş ve RTM sürümü üzerinden de test edilmiştir. Son sürümle birlikte test etmenizde yarar bulunmaktadır.]
+

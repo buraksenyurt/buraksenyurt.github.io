@@ -19,12 +19,8 @@ Bildiğiniz üzere JSON (JavaScriptObjectNotation) oldukça kompakt bir veri for
 
 Şimdi düşünün ki elinizde C#’ ın dynamic gücü ve Newtonsoft’ un JSON.net kütüphanesi var. Sizce bir JSON nesnesini oluşturmak ne kadar zor olabilir
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_112.png)
-
 ![tfi_69](/assets/images/2012/tfi_69.png)
 
 İşte bu kadar
-
-![Smile](/assets/images/2012/wlEmoticon-smile_44.png)
 
 Başka bir ipucunda görüşmek dileğiyle.

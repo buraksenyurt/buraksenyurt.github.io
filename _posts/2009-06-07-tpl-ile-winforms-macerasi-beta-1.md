@@ -9,8 +9,6 @@ categories:
 ---
 Dün gece Task Parallel Library ile ilgili olarak internette araştırma yaparken, örnekleri çoğunlukla (hatta tamamen) Console uygulamaları üzerinde geliştirdiğimi farkettim. Oysaki TPL veya PLINQ gibi alt yapıların, WinForms yada WPF (Windows Presentation Foundation) uygulamalarında nasıl kullanılabileceğide önemli bir konuydu. Özellikle Windows Form'larının TPL çalışmalarına karşı nasıl tepkilerde bulunabileceği belkide en önemli noktaydı. Biliyorsunuz TPL alt yapısında, işlemci ve çekirdek gücü sonuna kadar kullanılmakta ve arka planda coşan pek çok Thread yer almaktadır. Fakat WinForms uygulamalarında herşeyin hakimi olan ana Thread'in genellikle bencil olduğuda bilinmektedir. Bu nedenle TPL ile çekilen bir veri içeriğinin, Form üzerindeki bir kontrole doldurulması gerçekten başa bela olabilir.
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 İşte bu düşünceler içerisinde yola çıktım ve örnek bir senaryo üzerinde durmaya çalıştım.
 
 İlk olarak senaryodan biraz bahsedeyim; bilgisayarımda resimlerin tutulduğu klasörde yer alan jpg dosyalarından 100 KB'ın altında olanları bulup, Form üzerindeki bir FlowLayoutPanel içerisinde Button bileşenleri ile göstermek istemekteyim. Kabaca aşağıdaki ekran görüntüsünde yer alan sonuçları elde etmek istediğimizi düşünebiliriz.
@@ -120,8 +118,6 @@ Görüldüğü gibi tek fark Parallel.ForEach kullanımıdır. Bu sayede, ForEac
 ![blg28_3.gif](/assets/images/2009/blg28_3.gif)
 
 İşte beklenen hayalet.
-
-![Sealed](/assets/images/2009/smiley-sealed.gif)
 
 Durumu şu şekilde açıklayabiliriz. Windows uygulaması çalıştırıldığıda yürümekte olan ana Thread, kendisini Form üzerindeki tüm kontrollerin sahibi olarak ilan etmiştir. Bu nedenle farklı bir Thread içerisinden, sahibi olduğu bir kontrole ulaşılmasına izin vermez. Çözüm için pek çok farklı yol vardır. Ben bu yollardan birisi olan Invoker'lardan faydalanmaya karar verdim. İşte kodun son hali.
 
@@ -254,8 +250,6 @@ private void btnStart4_Click(object sender, EventArgs e)
 ```
 
 Bir önceki yazımızdan hatırlayacağınız gibi Task sınıfı üzerinden StartNew metodunu kullanarak paralel görevlerin başlatılması sağlanabilmektedir. Burada metoda parametre olarak Action temsilcisinin işaret edebileceği FillImage fonksiyonu verilmiştir. Sonuçlar yine yukarıdaki Flash animasyonundakine benzer olacaktır. Kullanıcılar, resimleri gösteren Button kontrolleri yüklenirken, Formun diğer alanları ile etkileşimde bulunubilmektedir. Ayrıca Button bileşenleri oluşturuldukça FlowLayoutPanel içerisinde görülebilmektedir. Ancak kod içerisinde küçük bir hile yaptığımı belirtmek isterim.
-
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
 
 Dikkat ederseniz FillImages metodu içerisinde o anki Thread için 100 milisaniye kadar bir duraksatma yapılmaktadır. Bu yapılmadığı takdirde Button bileşenlerinin oluşturuldukça FlowLayoutPanel içerisinde gösterilmelerinde bir sıkıntı olduğu gözlemlenir. Açıkçası Tutarsız bir çalışma olmaktadır. Ancak şimdilik bu gecikmenin olmasında bir sakınca yoktur. Nitekim, kullanıcı zaten paralel süreç içerisindeki işlemlerden her biri bittikçe, tamamlanan o işi ele alabilmektedir. Yani işlemlerin tamamalanmasının beklenmesine gerek kalınmadan çalışmaya devam edilebilmektedir.
 

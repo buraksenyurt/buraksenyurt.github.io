@@ -82,8 +82,6 @@ namespace Problem
 
 Console uygulaması Pdf ve Xps sınıflarına ait nesne örneklerinin toplandığı Document tipinden bir diziyi oluşturmakta ve bunu DocumentManager sınıfındaki SendAll metoduna göndermektedir. Xps ve Pdf tipleri, Document sınıfından türemiştir ve Send metodunun abstract olarak tanımlanması nedeniylede, söz konusu fonksiyonu kendi içlerinde ezmişlerdir (Override). Bu nedenle Send metodu içerisindeki döngüde, Document tipinden nesne örnekleri ele alınmasına rağmen, Send metodu çalışma zamanında yeri geldiğinde Xps için, yeri geldiğinde de Pdf için çalıştırılacaktır. İşte nesne yönelimli olmanın güzel noktalarından birisi.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Uygulamayı çalıştırdığımızda aşağıdaki sonuçlar alırız.
 
 ![blg38_3.gif](/assets/images/2009/blg38_3.gif)
@@ -182,3 +180,4 @@ namespace Problem
 Internet ve basılı kaynaklarda LSP ilkesini araştırdığınızda Rectangle ve Square örneği ilede karşılaşabilirsiniz. Bu senaryoda, Liskov Substitution ilkesini son derece basit ve yalın bir dille anlatmaktadır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [LSP.rar (23,83 kb)](/assets/files/2009/LSP.rar)
+

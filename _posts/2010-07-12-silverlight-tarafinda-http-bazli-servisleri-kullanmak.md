@@ -240,8 +240,6 @@ Görüldüğü üzere ListBox içeriği baş harfi A olan albüm adları ile dol
 
 Süper değil mi?
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 ## Özet
 
 Tabi bu örnekte dikkat edilmesi gereken noktalardan birisi de, istemci tarafında herhangibir Proxy tipinin olmayışıdır. Bunun yerine HTTP Get metodu ile talepte bulunulmuş ve elde edilen Stream üzerindeki XML içeriği değerlendirilmiştir. Diğer yandan çok doğal olarak Servis tarafında kullanılan Entity Data Model içerisindeki tiplerin istemci tarafındaki karşılıkları bulunmamaktadır. Eğer bu tiplerin istemci tarafında ele alınması arzu edilirse açık bir şekilde oluşturulmaları gerekecektir. Tabi böyle bir senaryoda gelen XML veya JSON tipindeki içeriğinde ilgili tiplere dönüştürülmesi gibi bir işlem söz konusu olacaktır.
@@ -256,3 +254,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 [ConsumingHTTPBasedServices_RTM.rar (273,75 kb)](/assets/files/2010/ConsumingHTTPBasedServices_RTM.rar)
 
 Örnek Visual Studio 2010 Ultimate RC Sürümü üzerinde geliştirişmiş ve RTM sürümü üzerinde test edilmiştir
+

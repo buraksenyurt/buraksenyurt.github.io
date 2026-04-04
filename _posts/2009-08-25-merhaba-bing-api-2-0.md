@@ -24,8 +24,6 @@ Bing API 2.0
 
 Microsoft'un arama motoru Bing'i duymayan olmamıştır sanırım. Peki Bing'in kendi uygulamalarımızda kullanılabilmesi için dışarıya bir API sunduğunu biliyor muydunuz? Ta ta ta taaaa...
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 İşin içerisinde bir developer API'si, helede servis bazlı bir sunum olunca, değmeyin keyfime dedim ve yola koyuldum. Dolayısıyla bu yazımda sizlere Bing API'si ile ilişkili ilk izlenimlerimi ve çıkarımlarımı aktarmaya çalışacağım.
 
 Bing API'si, kendi web sitesinden sunduğu arama özelliklerinin tamamını, farklı iletişim protokollerine göre istemci tarafına servis bazlı olarak sunmaktadır. Buna göre dilersek Bing üzerinden gerçekleştirilen arama kabiliyetlerini ve sonuçlarını, kendi uygulamalarımıza entegre ederek kullanabiliriz. Bing hizmetinden yararlanabilmek için öncelikli olarak [http://www.bing.com/developers/](http://www.bing.com/developers/) adresindeki formu doldurmamız ve yeni bir App Id almamız gerekmektedir. Nitekim Live servisi ile olan haberleşmede App Id değerinden yararlanılmaktadır. Teori oldukça basittir. Arama kutucuğundan yapılan kabliyetleri, kendi uygulamamızdan bir şekilde request olarak göndermemiz gerekmektedir. Bu noktada aslında, Bing API ile neler yapabileceğimiz kararının nasıl verildiğine bakmamızda yarar vardır. Söz konusu karar verilirken aslında aramanın tipini/modelinide belirlemiş oluruz. Yada var olan aramayı genişletmiş oluruz. İşte burada a bahsedilen arama modelleri belirlenirken SourceTypes isimli tip değerlerinden yararlanılmaktadır. SourceTypes'ın değerleri managed code tarafında verilebileceği gibi, örneğin HTTP Get metoduna bağlı olarak URL formatında da yazılabilir. Genel SourceTypes değerleri ve uygulayabileceğimiz arama modelleri aşağıdaki gibidir;
@@ -44,8 +42,6 @@ Bing API'si, kendi web sitesinden sunduğu arama özelliklerinin tamamını, far
 - vb...
 
 Güzel. Şimdi kafamızda bir şeyler şekillenmeye başladı. En azından arama modelini nasıl seçebileceğimizi anladık. Peki talepler nasıl iletilecekler?
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 İstemciler taleplerini Bing API servisine 3 farklı formatta iletebilirler.
 
@@ -71,13 +67,11 @@ Görüldüğü gibi, Bing API'si için değerlendirilecek istemci talepleri, Jso
 
 Öyleyse hiç vakit kaybetmeden acele acele bir örnek yapalım.
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Bu acele örneğimizde basit bir Windows uygulamasına, aradığımız kritere uyan 20 resmi çekmeye çalışacağız. Bir başka deyişle SourceTypes.Image tipinden bir arama gerçekleştireceğiz. Yapmamız gereken ilk şey, Live Search servisine ait Xml Web Service referansını uygulamamıza eklemek olmalıdır. Aşağıdaki görüntüde olduğu gibi. Dilerseniz benim yaptığım gibi Web reference name alanının değerini aynen bırakabilirsiniz.
 
 ![blg72_AddWebReference.gif](/assets/images/2009/blg72_AddWebReference.gif)
 
-Kişisel Not: Referans eklemesinden sonra Class Diagram görüntüsüne bakmanızı öneririm ![Sealed](/assets/images/2009/smiley-sealed.gif)
+Kişisel Not: Referans eklemesinden sonra Class Diagram görüntüsüne bakmanızı öneririm
 
 Uygulamamızın Form tasarımını aşağıdaki gibi düzenleyebiliriz. Ben arama kutucuğunun sonucu olarak gelecek resim bilgilerini, alt tarafta yer alan FlowLayoutPanel bileşeni içerisinde PictureBox kontrolleri ile ifade etmeyi tercih ettim.
 
@@ -202,11 +196,10 @@ Hatırlayınız, bu değeri siz formu doldurduktan sonra alıyorsunuz. Önemli a
 
 Görüldüğü gibi minik resimlerden herhangirine tıklandığında orjinal halide yeni bir Form içerisinde gösterilebilmektedir. Buna ek olarak resim ile ilişkili bir kaç basit bilgide Form'un başlığında gösterilmektedir. Resmin boyutları, başlığı ve büyüklüğü. Ne kadar basit öğle değil mi?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu arada Bing API ile ilişkili dökümanı indirdiğinizde içerisinde JSON, XML ve SOAP modellerinin her biri için ayrı ayrı yapılmış detaylı örnek anlatımları ve projeler olduğunu göreceksiniz. Bunları incelemenizi şiddetle tavsiye ederim. Peki bu acele örnekte yapmadıklarımız?
 
 - Exception kontrolü (Örneğin bağlantı problemelerinde yada resmin elde edilememesinde yaşanabilecek sıkıntıları handle etmek gerekir)
 - Asenkron arama metodu uygulanabilir ama bu durumda Illegal Cross Thread Exception hatasından kaçınmak gerekir.
 
 Bunlarda size görev olsun. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

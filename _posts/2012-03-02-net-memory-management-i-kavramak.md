@@ -12,10 +12,7 @@ Matix! Ne filmdi ama değil mi? Özellikle yazılım tarafına hakim olan bizler
 
 ![Merovingian200px](/assets/images/2012/Merovingian200px.png)
 
-
 Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutulmuş ve bellek üzerinde bir şekilde ayakta kalmış bir programcıktı
-
-![Smile](/assets/images/2012/smiley-smile.gif)
 
 Şimdi nereden çıktı bu Matrix, Merovingian diyeceksiniz. Konumuz.Net bellek yönetimi. Ama bu kez biraz daha farklı ve detaylı.
 
@@ -30,8 +27,6 @@ Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutul
 Bize öğretilen, bizim öğrendiğimiz ve hatta öğrettiğimiz haliyle,.Net Framework içerisinde veri türleri iki ana dala ayrılır. Belleğin Stack bölgesinde tutulan değer türleri (Value Types) ve belleğin Heap bölgesinde tutulan referans türleri (Reference Types). int, double, Point, DateTime gibi aslında Common Type System içerisinde birer struct ile ifade edilebilen tüm tipler değer türü iken, class gibi tipler de referans türleridir. Özellikle bunların kendi aralarındaki atamalarında bellek üzerindeki işleyiş şekilleri de çouğunlukla farklıdır. Aksi belirtilmediği ve müdahale edilmediği sürece referans türleri arası yapılan atamalar, aslında stack bölgesindeki adres işaretçilerinin çoğullanması ama heap üzerindeki aynı adres bölgesinin ifade edilmesidir. Değer türlerinde ise bu durum tam tersidir. Değerler stack bölgesinde atamalar sonrası kopyalanırlar.
 
 Aslında bu bilgiler bizim için temel niteliği taşımaktadır. Dedik ya, CLR aslında çalışma zamanındaki bellek yönetimini de üstlenmektedir. O yüzden çoğumuz, “nasıl olsa belleği birileri yönetiyor, nesneleri de zamanı gelince temizliyor, ortalığı toparlıyor” diyerek temel olan başka bir konuyu da atlarız. Gerçekten de.Net Memory Management acaba nasıl çalışmaktadır? Eğer bunu merak ediyorsanız, yaptığım araştırmalar ve kendimce edindiğim fikirler ile konuyu sizlere aktarmaya çalışıyor olacağım. Dolayısıyla bundan sonrasını merak ediyorsanız okumaya devam edin
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Uygulamalarımızın çalışma zamanında ürettiği referans tiplerinin Garbage Collector tarafından ele alındığını biliyoruz aslında. Hatta GC, GCSettings gibi tipler yardımıyla ona bir ölçüde müdahale etme şansımız da bulunmakta. Teorik olarak Heap bellek bölgesindeki nesne örneklerinin yaşam döngüsünden, onların bellek üzerindeki fragmantasyonlarından ve elbetteki serbest bırakılmalarından sorumlu olduğunu özetleyebiliriz. Garbage Collector ilke olarak iki tip nesne ile ilgilenir.
 
@@ -51,27 +46,19 @@ Generation 1 bölgesinin de çok doğal olarak bir kapasitesi vardır ve zaman i
 
 Durumu kabaca bu şekilde düşünecek olursak aşağıdaki gibi bir zaman diagramını göz önüne almamız mümkün olabilir. Kabaca tabi
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ![memmng_3](/assets/images/2012/memmng_3.png)
 
 Ancak, olay bu kadar da basit değildir. Aslında GC mekanizması ana uygulama Thread’ inden bağımsız olarak çalışan farklı bir Thread olarak düşünüldüğünde, söz konusu işlemleri concurrent olarak gerçekleştirmektedir. Özellikle Generation 0,1 ve 2 bölgeleri üzerinde her zaman şekilde olduğu gibi sıralı ve düzgün bir dizilim söz konusu olmayacaktır. Dolayısıyla kopyalama metoduna göre yapılan taşıma işlemleri sırasında, nesneler boş bulunan bellek bölgelerine atılırlar.
 
 Diğer yandan kopyalama işlemleri sırasında oluşabilecek bir sorun da vardır. GC ayrı bir Thread üzerinden, bir alt Generation’ daki canlı nesneleri tespit ettikten sonra, bunları bir üst generation’ a kopyalar. Lakin alt Generation’ daki nesneler bu taşıma sırasında veya öncesinde halen daha ana veya farklı bir Thread tarafından kullanılıyor olabilirler. Hımmm
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 İşte bu noktada GC şöyle bir yol izler. Thread’ ler arası güvenli bir nokta oluşturur (Safe Point) ve taşıma sırasında ilgili uygulama Thread’ lerinin tamamı durdurulur. Sonrasında ise kopyalanan tüm içeriği orjinal referansları ile eşleştirerek düzeni korur. Güzel bir trick öyle değil mi?
-
-![Laughing](/assets/images/2012/smiley-laughing.gif)
 
 Bir o kadar da karışık aslına bakarsanız. (Ben hala konu ile ilişkili kaynakları ve CLR via C#’ ın ilgili bölümlerini okuyarak pekiştirmeye çalışıyorum)
 
 Generation 2 bölgesi aslında performans ölçümlerinde de ip ucu veren bir alan olarak düşünülmektedir. Bu bölgenin çok sık ve fazla şişerek dolması ileride programın bellek ile ilişkili sıkıntılar üretebileceğinin de bir işaretedir.
 
 > [ANTS Memory Profiler](http://www.red-gate.com/products/dotnet-development/ants-memory-profiler/) gibi araçlar yardımıyla, uygulamalarımızın bellek üzerindeki ölçümlerini detaylamasına yapabiliriz. Tabi daha ucuz çözümler de var. CLR Performance Counter’ lar
->
-> ![Wink](/assets/images/2012/smiley-wink.gif)
 
 Gelelim LOH (Large Object Heap) bölgesine. 83KB üzeri olarak belirtilen Large Object’ lerin taşıma/kopylama maliyetleri tahmin edileceği üzere yüksektir. Bu sebepten dolayı SOH için uygulanan Generations tekniği yerine farklı bir yaklaşım kullanılır. Generation 2 parçasında Large Object nesnelerinin, ölen nesnelerden boşalan yerlere iliştirilmesi söz konusudur. Aslında aşağıdaki şekil ile durumu biraz olsun ifade edebiliriz.
 
@@ -80,8 +67,6 @@ Gelelim LOH (Large Object Heap) bölgesine. 83KB üzeri olarak belirtilen Large 
 Bir LO eklenmek istendiğinde Generation 2 kısmındaki ilk boş bölgeye açılması söz konusudur. Sonrasında sisteme dahil olacak diğer LO’ ler de Generation 2’ de boş olan yerlere serpiştirilirler. Tabi Generation 1 den gelen nesne örnekleri 83Kb’ den küçük olduklarından, yeni gelen 83Kb’ den büyük nesnelerin sığabilecekleri uygun yerlerinde Generation 2 üzerinde var olması gerekir.
 
 Peki yoksa?
-
-![Sealed](/assets/images/2012/smiley-sealed.gif)
 
 Bu durumda uygulama daha fazla bellek alanının allocate edilmesi için işletim sisteminde bir talepte bulunacaktır. Hatta Heap alanının yetmediği durumlarda, fiziki disk bölgelerinden sanal olarak bu alanların karşılanması istenecektir. Eğer işletim sisteminden olumlu bir cevap alamazsa bu durumda GC’ nin Generation 2 içerisinde yapacağı de-allocate işlemlerinin yeteri kadar yer ayırması beklenecektir.
 
@@ -94,8 +79,6 @@ LO’ ler için uygulanan strateji, generations sistematiğine göre daha perfor
 Workstation modu, kullanıcıya maksimum cevap verilebilirlik için tercih edilmekte olup Concurrent ve non-Concurrent çalışacak şekilde ele alınabilir. Varsayılan olarak Concurrent çalışma prensibi uygulanır. Buna göre GC mekanizması uygulama ile birlikte ayrı bir Thread üzerinden işlemlerini gerçekleştirir.
 
 Server mode ağırlıklı olarak performans (Performance), ölçeklenebilirlik (Scalability) ve verimliliğin (throughput) ön plana çıktığı sunucu ortamlarında (Server Environment) göz önüne alınmaktadır. Bu modda, generation eşik değerleri ile bellekteki segment boyutları, Workstation Mode’ a göre çok daha yüksektir. Bu son derece doğaldır nitekim sunucuların bellek kapasiteleri, workstation’ lara göre daha fazldır
-
-![Smile](/assets/images/2012/smiley-smile.gif)
 
 Server Mode ile çalışmanın en önemli artısı ise paralel veya multi-thread olarak çalışabilmesidir. Buna göre SOH ve LOH bölgeleri n sayıda fiziki işlemci tarafından ele alınabilir (Tabi birbirlerini kesmeyecek şekilde)
 

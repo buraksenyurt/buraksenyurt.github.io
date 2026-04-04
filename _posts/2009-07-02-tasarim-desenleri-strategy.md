@@ -17,8 +17,6 @@ Bir süredir tasarım prensiplerini (Design Principles) incelemeye çalışıyor
 
 Strategy deseni temel olarak, bir nesnenin her hangibir operasyonu gerçekleştirmek için kullanabileceği farklı algoritmaları içeren farklı tipleri kendi içerisinde ele alarak kullanması yerine, kullanmak istediği politikayı nasıl uygulandığını bilmesine gerek kalmaksızın sadece seçerek çalışma zamanında yürütmesine olanak tanımaktadır...Ughhh!!!
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Dediğimde sanıyorumki kafamızda pek bir şey oluşmamıştır. Hiç dert etmeyin bende bu deseni ilk öğrendiğim yıllarda bu tip cümleleri okurken etrafıma, havaya, doğaya şöyle bir bakıp kavramak için çaba harcardım. Bu nedenle gelin olayı önce senaryolaştıralım ve sonrasında bu cümleyi anlamaya çalışalım.
 
 Elimizde string tipte verileri çeşitli algoritmalara göre şifreleyen ve tekrar eski haline getiren bir içerik tipi (Context Type) olduğunu varsaylım. Çok doğal olarak burada iki ana operasyon söz konusudur. Bunlardan ilki veriyi şifrelemek (Encryption) diğeride çözümlemek (Decryption) olarak düşünülebilir. Ne var bu string içeriklerin şifrelenmesi ve çözümlenmesi sırasında farklı tipte algoritmalar kullanılmak istenebilir. Örneğin Rijndael, Triple Des, SHA vb... Bu durumda ilk akla gelen içerik tipi içerisinde söz konusu şifreleme seçeneklerini ele almaktır. Bu da bir sürü if veya switch ile olayı kontrol altına almak anlamına gelebilir.
@@ -127,8 +125,6 @@ Kodu incelediğinize göre biraz üzerinde konuşalım. Context tipimiz (Encrypt
 
 Tek yapılması gereken IEncrpyter arayüzünü implemente eden bir sınıfın yazılması ve çalışma zamanında bu tipin kullanılacağının söylenmesidir. Dikkat edileceği üzere Context tipi kendi içerisinde stratejik nesneye ait refaransı ele almaktadır. Dolayısıyla, arayüzlerin polimorfik özellikte olmaları nedeniyle, Context tipi içerisinde yer alan Encrpyt ve Decrypt metodları, yapıcı metod (Consturctor) ile çalışma zamanında gelen tip ne ise ona göre şifreleme ve çözümleme işlemlerini uygulayacaktır. Sanıyorumki şu anda ilk başta söylediğim o karışık cümle biraz daha anlaşılır hale gelmiştir.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Tabi tam bu noktada insanın aklına C# 3.0 ve bazı şeytanlıklarda gelmiyor değil.
 
 ![Cool](/assets/images/2009/smiley-cool.gif)
@@ -171,8 +167,7 @@ string str = "<app><config><sqlConnection>data....</sqlConnection></config></app
 
 Ne diyebilirim ki. C# 3.0 sürpriz yeteneklerle dolu ve bazı temel esaslara bakış açımızı oldukça değiştiriyor.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StrategyPattern.rar (22,61 kb)](/assets/files/2009/StrategyPattern.rar)
+

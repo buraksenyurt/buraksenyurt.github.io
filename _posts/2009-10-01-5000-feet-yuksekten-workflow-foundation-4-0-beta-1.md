@@ -11,8 +11,6 @@ Paraşütle atlamak gerçekten zevkli olsa gerek. Yerden binlerce feet (1 feet=3
 
 ![blg86_Giris.jpg](/assets/images/2009/blg86_Giris.jpg)
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Bir paraşütçü için en güzel duygulardan birisi sanıyorum ki atladığı noktadan itibaren altındaki Dünyayı görebildiği kadar yüksekten izleyebilmenin verdiği mutluluktur.
 
 Tabiki atlanılan noktadan aşağıya doğru düştükçe ve paraşütü çekme noktasına yaklaştıkça alttaki Dünyanın resimlerinin daha da büyüdüğü çok açık bir gerçektir. Büyük bir dikdörten alan...Sonrasında içerisinde başka geometrik şekiller...Sonrasında bu geometrik şekiller içerisinde daha da netleşen çayırlar, dağlar, kayalar, yollar, binalar...Sonrasında bir anlık yavaşlama ve sakin bir şekilde (bazende hızlı bir şekilde) yere ayak basmak. Kısaca yaşanan bu duruma "yüksekten görülebileceği kadar büyük bir alanı görüp, yaklaştıkça daha fazla detay fark edebilmek durumu"
@@ -22,8 +20,6 @@ Tabiki atlanılan noktadan aşağıya doğru düştükçe ve paraşütü çekme 
 adını verebiliriz. Şimdi bu noktaya nereden vardım diyebilirsiniz. Hemen açıklayayım.
 
 Yazılım ile ilişkili pek çok kaynakta şu tip başlıklar görmüşsünüzdür. 50 bin feet yukarıdan X mimarisi...İşte bizde bu felsefeyi bu günkü blog yazımızda kullanıyor olacağız. Ama biraz daha alçak mesafeden
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 5000 feet yukarıdan fotoğraflandığında, WF 4.0 modelinin ne gibi özellikleri dikkat çekiyor? İşte görülen tespitler...
 
@@ -55,3 +51,4 @@ görüyoruz. Vooovvvvv!!!! Artık paraşütümüzü açalım mı ne dersiniz?
 ![Cool](/assets/images/2009/smiley-cool.gif)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

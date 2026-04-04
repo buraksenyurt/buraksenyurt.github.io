@@ -21,8 +21,6 @@ categories:
 
 Aslında bu yol belki de ilk akla gelen yoldur. Eğer bir internet sitesine ulaşabiliyorsak zaten internete bağlıyız diye düşünebiliriz
 
-![Smile](/assets/images/2013/wlEmoticon-smile_67.png)
-
 Lakin bir önceki ipucunda kullandığımız ve daha çok donanımsal talep ile çalışan tekniğe nazaran daha yavaş ve hatta daha az bilgi veren bir çözümdür.
 
 Bir başka ipucunda görüşmek dileğiyle.

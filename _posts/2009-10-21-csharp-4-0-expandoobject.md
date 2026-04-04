@@ -31,14 +31,12 @@ Console.WriteLine(String.Format("\tName:{0} City:{1} Degree:({2})", employee.Nam
 
 Şimdi bu kod parçası ile ilişkili olara bir kaç ipucu vermek istiyorum;
 
-Öncelikli olarak uygulamamızda Name,Salary ve diğer özelliklere sahip Employee gibi ismi olan herhangibir tip (type) tanımı bulunmamaktadır ![Wink](/assets/images/2009/smiley-wink.gif)
+Öncelikli olarak uygulamamızda Name,Salary ve diğer özelliklere sahip Employee gibi ismi olan herhangibir tip (type) tanımı bulunmamaktadır
 İkinci kodu yazdığımız sırada employee isimli değişkene herhangi bir özellik eklemek istediğimizde aşağıdaki bilgi penceresi ile karşılaşırız.
 
 ![blg92_DynamicExpression.gif](/assets/images/2009/blg92_DynamicExpression.gif)
 
 Ahaaaa!!!
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Sanıyorum olayın sizde farkına varmış durumdasınız. Aslında employee ismiyle tanımlamış olduğumuz değişkeni bir sınıf nesne örneği olarak inşa ettiğimizi düşünebiliriz. Ancak bunun için Emplyee tipini tanımlamış değiliz. Tamamen kodlama zamanında verdiğimiz bazı kararlar uygulamaktayız. Örneğin employee ismiyle tanımlanan tipin ve içeriğinin oluşturulması aşaması tamamen çalışma zamanına (Runtime) bırakılmış durumdadır. employee isimli değişkenin Name, Salary, Birth gibi özellikleri dışında başka bir ExpandoObject tipine işaret eden WorkingArea isimli bir özelliği daha bulunmaktadır.
 
@@ -139,8 +137,6 @@ Dikkat edileceği üzere dinamik olarak üretilen nesne içerisinde yer alan IDi
 
 Peki ExpandoObject örneklerini metodlara parametre olarakta geçirebilir miyiz? Elbette
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Aşağıdaki kod parçasını göz önüne alalım;
 
 ```csharp
@@ -170,13 +166,11 @@ Burada file değişkeni sınıf seviyesinde tanımlanmıştır. Tabi örneği Co
 
 ![Undecided](/assets/images/2009/smiley-undecided.gif)
 
-ExpandoObject örneği Action metoduna dynamic tipi üzerinden aktarılmaktadır. Dolayısıyla Action metodu içerisinde kullanılan obj değişkeninin file değişkeni olduğunu metod çağrısını yaptığımız yerde belirtmekteyiz. Bu nedenle Action metodu içerisine zaten file değişkeninin geldiğini biliyor olmalıyız. (Peki hangi tipin geldiğini anlayabilir miyiz? İşte size süper bir araştırma konusu ![Wink](/assets/images/2009/smiley-wink.gif)) Metod içerisinde sembolik olarak Size değerini arttırmaktayız. İşte çalışma zamanı sonucu;
+ExpandoObject örneği Action metoduna dynamic tipi üzerinden aktarılmaktadır. Dolayısıyla Action metodu içerisinde kullanılan obj değişkeninin file değişkeni olduğunu metod çağrısını yaptığımız yerde belirtmekteyiz. Bu nedenle Action metodu içerisine zaten file değişkeninin geldiğini biliyor olmalıyız. (Peki hangi tipin geldiğini anlayabilir miyiz? İşte size süper bir araştırma konusu) Metod içerisinde sembolik olarak Size değerini arttırmaktayız. İşte çalışma zamanı sonucu;
 
 ![blg92_FourthRun.gif](/assets/images/2009/blg92_FourthRun.gif)
 
 ExpandoObject tipi görüldüğü üzere dinamik olarak tiplerin oluşturulması, onlara üye tanımlanması (Özellik, Event gibi), özelliklerine değer atanması gibi işlemleri yapabilmemize olanak sağlamaktadır. Bu anlamda test senaryolarında stub veya moc nesneler için kullanılabilecek bir yenilik olarak düşünebiliriz belkide. Aklıma ilk gelen kullanım alanın bu olması, belkide [The Art of Unit Testing](http://www.amazon.com/Art-Unit-Testing-Examples-NET/dp/1933988274/ref=sr_1_1?ie=UTF8&s=books&qid=1256110465&sr=8-1) kitabını okuyor olmamadan da kaynaklanabilir.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Aslında söz konusu yeniliği tanımak, kavramak ve gerçek hayat senaryolarındaki yerini anlamak için biraz daha araştırma yapmamız, çalışmamız gerektiği ortadadır. En azından benim...
 

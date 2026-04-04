@@ -17,10 +17,6 @@ Asp.Net 4.5 tarafında gelen yeniliklerden birisi de System.Web.ModelBinding isi
 
 Özellikle veri bağlı kontrollerin (GridView gibi), IQueryable benzeri referanslar döndüren metodlar ile ilişkilendirildikleri senaryolarda, query string yardımıyla filtreleme yapılmasında kullanılır. Aynen aşağıdaki fotoğrafta görüldüğü gibi
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_131.png)
-
 ![tfi_77](/assets/images/2013/tfi_77.png)
 
 Bir başka ipucunda görüşmek dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_131.png)

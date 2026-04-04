@@ -37,19 +37,13 @@ Aslında senaryomuza göre istemci herhangibir şekilde web sayfasına talep de 
 
 Sanırım kendi kafamı karıştırdığım kadar sizin kafanızı da epeyce karıştırmış olabilir!
 
-![Smile](/assets/images/2012/wlEmoticon-smile_46.png)
-
 > Başlangıç noktası olarak Asp.Net Server Based Web uygulamalarının yaşam döngülerine ve web dışında normal bir Console uygulaması üzerinde yapılabilen asenkron çalışma mantığına bakmanızı öneririm.
 
 Peki biz bu yazımızda neyi değerlendiriyor olacağız? Bize ne kaldı
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_114.png)
-
 Malum.Net Framework 4.5 ile birlikte, asenkron programlamayı biraz daha kolaylaştıran ve Task Parallel Library'nin tamamlayıcısı olarak da görebileceğimiz async ve await isimli iki yetenekli keyword ile tanıştık (Yetenekli diyorum nitekim Intermediate Language tarafında önemli eklemeler yapıyorlar) Dolayısıyla Asp.Net Web Forms uygulamalarında asenkron çalışma mantığını yeni baştan ele almamızı gerektirecek bazı kabiliyetler söz konusu.
 
 İşte bu amaça bir Asp.Net Web Forms uygulamasından bir Asp.Net Web API servis operasyonunu asenkron olarak nasıl çağırabileceğimizi adım adım incelemeye çalışıyor olacağız. Bu sayede bir Web uygulamasında asenkron erişim tekniklerini nasıl ele alabileceğimizi de.Net Framework 4.5 stilinde görmüş olacağız
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_114.png)
 
 İşe bir adet Empty Asp.Net Web Application, bir adet Asp.Net MVC 4.0 Application (ama Web API şablonunu kullanan) ve bir adet te Class Library oluşturarak başlayalım. Web API uygulamamız içerisinde Entity Framework tabanlı bir Web API servisini de kullanıyor olacağız. Temel olarak solution içeriğimizin aşağıdaki şekilde tesis edileceğini ifade edebiliriz.
 
@@ -171,8 +165,6 @@ async keyword'ü ile işaretlediğimiz GetEmployeeDataFromServiceAsync metodunun
 
 Ancak işlemlerimiz bunlarla sınırlı değil
 
-![Confused smile](/assets/images/2012/wlEmoticon-confusedsmile_23.png)
-
 Son olarak sayfanın Page direktifi içerisindeki Async niteliğine true değerinin atanması gerekmektedir. Böylece web sayfanın asenkron olarak çalıştırılacağı belirtilmektedir.
 
 ```xml
@@ -251,8 +243,6 @@ Dikkat edileceği üzere RegisterAsyncTask metoduna yapılan çağrının hemen 
 
 Normal şartlarda sayfanın yaşam döngüsünü düşündüğümüzde, senkron yapılan bir işleyiş de servis tarafındaki 5 saniyelik gecikme ve içerideki DoSomething üzerinden gelen 5 saniyelik gecikme sonrası en az 10 saniyelik bir işlem süresi olması gerekmektedir. Aslında böyledir de
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_114.png)
-
 Eğer sayfanın Trace modunu açarsak aşağıdaki Trace Information sonuçları ile karşılaşırız.
 
 ![asynwa_5](/assets/images/2012/asynwa_5.png)
@@ -262,7 +252,5 @@ Görüldüğü üzere sayfanın render edilme süresi yine 11 saniyeler civarın
 ![Open-mouthed smile](/assets/images/2012/wlEmoticon-openmouthedsmile_31.png)
 
 Başarılan, servis çağrısının sayfanın yaşam döngüsü içerisinde asenkron olarak gerçekleştirilebilmesidir
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_114.png)
 
 Böylece geldik bir yazımızın daha sonuna. Bu makalemizde bir ASP.Net Web API servisinin, bir Web uygulaması içerisinden asenkron olarak nasıl çağırılabileceğini,.Net Framework 4.5 ile birlikte gelen async ve await keyword'lerini de işin içerisine katarak değerlendirmeye çalıştık. Benim için de oldukça yeni ve halen daha öğrenmeye çalıştığımı bir konu. Özellikle MVC (Model View Controller) tabanlı Asp.Net uygulamalarında bu asenkron çağırımları nasıl değerlendirebileceğimizi de incelemeye çalışıyorum. Elde ettiğim bulguları ve öğrendiklerimi her zaman ki gibi bloğumda sizlerle paylaşıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

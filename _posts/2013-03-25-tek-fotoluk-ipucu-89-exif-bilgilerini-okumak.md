@@ -20,8 +20,7 @@ categories:
 ---
 Takip edenler amatör düzeye yaklaşmaya çalışan/çabalayan fotoğrafçılık tutkunu birisi olduğumu bilirler. Hatta okullarda “Fotoğrafçı ve Hataları…” konulu bir ders konusu olabilecek kadar iddialı bir foto bloğumda da bulunmaktadır. Bu bloğa fotoğraf yüklerken her seferinde yapmak zorunda olduğum ama bundan çok fazla derecede sıkıldığım bir işlemde fotoğrafların exif bilgilerini öğrenip yazmaktır. Oysaki Image tipine eklenebilecek bir Extension metod ve fotoğrafa ait bazı özellik bilgilerinden yararlanarak ISO, EV, Focal Length gibi istediğim temel bilgilere ulaşabilirim. Nasıl mı? Aynen aşağıdaki fotoğrafta görüldüğü gibi
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_169.png)
-
 ![tfii_89](/assets/images/2013/tfii_89.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+

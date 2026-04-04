@@ -19,8 +19,6 @@ Hatırlayacağınız üzere bir önceki yazımızda WCF WebHttp Service'leri ile
 
 İşte bu yazımızda söz konusu durumları ele alaraktan hem Post, Put, Delete metodlarının kullanımına bir örnek verecek hemde istemci tarafını geliştirmeye çalışacağız. Tabi öncesinde servis tarafını hazırlamamız gerekiyor. Bu örneğimizde herhangibir işe yaramasada konuyu anlamamızı kolaylaştıracak bir senaryomuz da olacak. Senaryomuza göre bir Piyango servisi tasarlayacağız.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Bu servis, istemcilerin yeni bir piyango bileti üretebilmesine, var olan piyango biletlerini çekebilmelerine, isterlerse biletlerini silmelerine veya güncellemelerine izin veren operasyonlar içerecek. Tabiki bu operasyonlarda HTTP protokolünün Get, Post, Put ve Delete metodları göz önüne alınıyor olacak. Dilerseniz hiç vakit kaybetmeden WCF REST Service Application uygulamasını oluşturarak işe başlayalım. Uygulamamızda bilet bilgilerinin saklanması ve depolanması amacıyla basit text dosyasından yararlandığımızı belirtmek isterim. Diğer taraftan bilet bilgileri için Ticket isimli yardımcı bir sınıfımızda yer almaktadır.
 
 ```csharp
@@ -274,3 +272,4 @@ Tabi uygulamamızın pek çok yerinde bug ve iş mantığı hatası vardır. Üs
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson2.rar (196,61 kb)](/assets/files/2010/Lesson2.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+

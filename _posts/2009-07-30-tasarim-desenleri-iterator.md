@@ -21,8 +21,6 @@ Neyse bu duygusal ortamdan çıkalım hemen. Pul koleksiyonumda yaptığım işl
 
 Koleksiyonlar, C# gibi bir programlama dilinde belkide en önemli veri yapılarından (Data Structures) birisidir. Bir koleksiyon kendi içerisinde farklı tipte veya aynı tipte nesneleri çeşitli formatlarda (List, Stack, Queue, Dictionary vb...) saklayabilen nesne bütünleri olarak düşünülebilir. Hatta bildiğiniz üzere.Net 2.0 ile birlikte C# ve Vb.Net tarafına kazandırılan generic yetenekler ile, koleksiyonların tip güvenli (Type Safety) olarak ele alınmalarıda garanti edilmiştir. Hatta, C# 3.0 ve Vb 9.0 ile birlikte neler olmuştur neler
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Artık koleksiyonlar üzerinden LINQ sorguları yardımıyla sanki bir veritabanı tablosunu sorgularmışcasına filtrelemeler yapılabilmektedir. Ancak olayın en başından beri süre gelen ve bu yazımıza konu olan bir durumda söz konusudur. Bir koleksiyonun veya bir dizinin iç yapısını bilmeye gerek duymadan, başından sonunda kadar dolaşılabilmesi mümkündür. Dolayısıyla, koleksiyon veya dizi gibi bir nesne bütününün içerisindeki elemanlara erişilmesi ve dolaşılması noktasında devreye giren bir aktör olmalıdır. Aslında bu sorumluluk, bir öteleme nesnesine (Iterator Object) verilmiştir.
 
 Bu açıdan bakıldığında nesne bütününün elemanlarına (çoğunlukla koleksiyon veya dizi olarak düşünebiliriz) erişilmesi, bu elemanların baştan sona dolaşılması, bir öteleme sırasında nerede kalındığının tutulması, hangi koşula göre devam edilmesi gerektiğinin bilinmesi, devam edilecek ise bir sonra gelen nesnenin döndürülmesi gibi sorumlulukları üstüne alan bir aktörden bahsetmekteyiz. Ki bu aktör aslında generic programlamada önemli bir yerede sahiptir. Nitekim, herhangibir nesne bütünün içinde dolaşılması için standart bir yol sunulması generic programlamanın gereksinimlerinden birisidir. Veri yapılarının ne kadar sık kullanıldığı düşünülünce doğal olarak ortaya, tasarımı kalıplaşmış bir uygulama biçimi çıkmaktadır. İşte bu yazımızın konusu, Behavioral (Davranışsal) kalıplardan olan Iterator tasarım deseni.
@@ -212,8 +210,6 @@ Tabiki amacımız sadece kalıbın nasıl uygulandığını öğrenmek olduğund
 
 Ne kadar ilginç değil mi? Kodlama sırasında bir koleksiyon üzerinde dolaşırken tek yapmamız gereken çoğunlukla bir döngüyü kullanmaktır (for, foreach, while vb...). Hatta basit bir LINQ sorgusu sonrası filtrelenmiş bir içeriği bile for, while gibi döngüler ile dolaşmamız söz konusudur. Ama hiç arka planda bu sorumluluğu alan bir Iterator nesnesi olduğunu ve bir kalıp uygulandığını düşünmeyiz. Şimdi bu moral bozukluğu ile aslında işleri nasıl kolaylaştırmış olduğumuza bir bakalım
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Yukarıda geliştirdiğimiz örneğin benzeri ile devam ediyor olacağız. İşte IEnumerable arayüzü ve yield anahtar kelimesi...
 
 ```csharp
@@ -272,3 +268,4 @@ Uzun uzun zaman önce, C# 2.0 ile birlikte gelen yenilikleri anlatırken yield a
 Böylece geldik bir tasarım kalıbının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [IteratorPattern.rar (30,73 kb)](/assets/files/2009/IteratorPattern.rar)
+

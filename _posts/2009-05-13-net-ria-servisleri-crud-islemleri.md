@@ -60,8 +60,6 @@ namespace Editing.Web
 
 GetCategories metodu ile LINQ to SQL sağlayıcısı üzerinden kategorilerin çekilmesi sağlanmaktadır. Bir kategorinin eklenmesi sırasında InsertOnSubmit, silinmesi işleminde DeleteOnSubmit ve son olarak güncellenmesinde ise Attach isimli LINQ to SQL tarafından hazır olarak gelen fonksiyonların kullanıldığı görülmektedir. Tabiki projenin Build edilmesi sonrasında, istemci tarafındada uygun metodları içeren CategoryContext isimli DomainContext tipi ile sunucu tarafındaki Category entity sınıfının karşılığı hazırlanmış olacaktır. Artık tek yapmamız gereken istemci tarafını tasarlamak ve kodlamaktır. Ben tasarım konusunda özürlü olduğumdan, ancak aşağıdaki Silverlight UserControl bileşenini oluşturabilmiş bulunuyorum.
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 MainPage.xaml
 
 ![blg16_2.gif](/assets/images/2009/blg16_2.gif)
@@ -199,8 +197,6 @@ namespace Editing
 
 Artık testlerimize başlayabiliriz. Burada Insert, Update ve Delete gibi işlemler söz konusu olduğundan ve sunucu tarafında SQL kullanıldığından, arka planda çalıştırılan sorgu cümlelerini eminimki sizde en az benim ettiğim kadar merak ediyorsunuzdur. Bu nedenle SQL Server Profiler aracımızda bir yandan açık duruyor olacak.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 İlk karşılaşacağımız ekran görüntüsü aşağıdakine benzer olacaktır.
 
 ![blg16_3.gif](/assets/images/2009/blg16_3.gif)
@@ -243,8 +239,6 @@ exec sp_executesql N'DELETE FROM [dbo].[Categories] WHERE ([CategoryID] = @p0) A
 ```
 
 Sorguda dikkat çeken en önemli nokta Where kriterine, Image tipinden olan Picture ile ntext tipinden olan Description dışındaki tüm alanların dahil edilmesidir. Bu bir anlamda eş zamanlı çakışmaların önüne geçilmesini sağlamaktadır ki aynı durum Update için çalıştırılan SQL sorgusunda da geçerlidir. Bilmem farketmiş miydiniz?
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Böylece geldik bir yazımızın daha sonuna. Bu kısa yazıda,.Net RIA Servislerinde Insert,Update ve Delete işlemlerini basit bir biçimde ele almaya ve arka planda hareket eden SQL cümleciklerine bakıldığında gözümüze çarpan önemli noktaları vurgulamaya çalıştım..Net RIA Servisleri ile ilişkiki araştırmalarıma devam ettikçe sizlerle paylaşıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -18,14 +18,9 @@ categories:
 
 ![World_Bank](/assets/images/2012/World_Bank.jpg)
 
-
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Zaman hızla geçti tabi ki. Bir baktım Microsoft.Net teknolojileri ile uğraşıyor ve yazılım geliştirici olarak kariyerimi devam ettiriyorum. Zaman hızla geçiyordu geçmesine ancak ondan daha hızlı hareket etmek isteyen de bir teknoloji vardı ortada..Net Framework platformunun gelişmesine ayak uydurabilmek gerçekten zorlaşıyordu. Ama tabi hepimiz için ortaya kullanışlı ve vizyonumuzu geliştiren ürünler çıkarttıkları da bir gerçekti.
 
 Bugüne baktığımızda pek çok dünya firmasının dışarıya açık kaynaklı veri sunarken (özellike OData-Open Data Protocol formatında), Microsoft’ un da bu veri sunumlarını etkin bir şekilde ele almamız için getirdiği yeniliklerini görmekteyiz. Şöyle bir kaç sene geriye gidelim dilerseniz
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Microsoft önce servis odaklı yaklaşımını değiştirerek Windows Communication Foundation altyapısını duyurdu. Hemen ardından WCF hızla gelişti ve pek çok Microsoft ürününün servis uç noktalarında yerini almaya başladı. Derken WCF’ e Web programlama modeli (Web Programming Model) için destekler eklendi. Artık REST (Representational State Transefer) odaklı servisleri yayınlamak ve hatta kullanmak mümkün hale gelmeye başladı. Çok basit anlamda HTTP protokolünün GET,POST,PUT,DELETE gibi metodlarına göre hizmet verebilen ve bu nedenle bir proxy ihtiyacını ortadan kaldırıp platform bağımsızlığı getiren servis yayınlama modeline destek söz konusu idi. Söz konusu model daha da geliştirildi. Özellikle Code Plex tarafında WCF Rest Service API’ si duyuruldu ve programlama modeli Astoria kod adlı WCF Data Service’ lerinde çekirdek yapı taşı haline geldi.
 
@@ -33,11 +28,7 @@ Söz konusu web programlama modeli odaklı WCF servisleri o kadar popüler olmay
 
 İster WCF Web API olsun, ister gündemimize yeni yeni giren ASP.NET Web API olsun, birbirlerinden ayrıldıkarı yönler olduğu kadar, ortak noktalarıda bulunmakta. Örneğin, OData, XML, JSON gibi çıktı üretimleri sunan REST servislerinin daha kolay kullanımı için geliştirilmiş olan HttpClient tipi
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Şimdi buraya kadar yazdıklarımızı bir toparlayalım. Dünya bankası artık verilerini OData formatında olacak şekilde dış dünyaya sunmakta. Bu anlamda Developer’ lar için bir web sayfaları bile bulunuyor (Developer’ lar için kaynak [http://data.worldbank.org/node/209](http://data.worldbank.org/node/209)) Bu sayfada söz konusu Worldbank Data API’ sinin nasıl kullanılacağı ve hatta URL bazlı sorguların nasıl gönderileceği anlatılmakta. Eee, elimizde bu servisin verisini kullanabilmek için ASP.NET Web API ile de gelen HttpClient tipi var. Daha ne bekliyoruz öyleyse
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 Gelin bir kaç dünya bankası verisini.Net kodlarımız ile sorgulayalım.
 
@@ -49,7 +40,7 @@ işte sonuç,
 
 ![worldb_8](/assets/images/2012/worldb_8.png)
 
-Görüldüğü üzere XML tabanlı olarak ilk 50 ülkenin bilgilerine ulaşmış durumdayız. page, perpage gibi nitelikleri de sorgulara parametre olarak katarak sayfalar arasında gezinebiliriz de (Örneğin 2nci sayfaya gitmeyi ve her sayfada 25 ülke göstermeyi bir deneyin ![Wink](/assets/images/2012/smiley-wink.gif))
+Görüldüğü üzere XML tabanlı olarak ilk 50 ülkenin bilgilerine ulaşmış durumdayız. page, perpage gibi nitelikleri de sorgulara parametre olarak katarak sayfalar arasında gezinebiliriz de (Örneğin 2nci sayfaya gitmeyi ve her sayfada 25 ülke göstermeyi bir deneyin)
 
 Tabi istersek bu sorguyu JSON (JavaScript Object Notation) formatında da ele alabiliriz.
 
@@ -453,11 +444,7 @@ Eğitim odaklı verilerin elde edilmesi;
 
 Gördüğünüz gibi gayet kolay
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 Tabi örneğimizin pek çok noktasında hata bulunmaktadır. (Biraz acele ile yazdığımdan dolayı) Örneğin Exception Handling mekanizması eksiktir ve hatta DataGridView kontrolü bazı noktalarda index hatası vermektedir. Diğer yandan daha fazla sorgu da işin içerisine katılabilir. Ben kapıyı gösteren kişi olarak yazımı burada sonlandırıyorum
-
-![Smile](/assets/images/2012/smiley-smile.gif)
 
 Artık Worldbank verilerinin ASP.NET Web API (ve tabi WCF Web API) ile gelen HttpClient tipi yardımıyla ve özellikle JSON formatında nasıl ele alabileceğinizi öğrendiniz. Bunun geliştirmek tamamen sizlerin elinde. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

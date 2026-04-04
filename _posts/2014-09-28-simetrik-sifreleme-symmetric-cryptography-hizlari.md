@@ -366,8 +366,6 @@ Test olması açısından 5 simetrik algoritmanın şifreleme ve çözümleme me
 
 Sonuçları daha iyi irdelemek adına süreleri bir Excel grafiğinde birleştirebiliriz. Aynen aşağıda görüldüğü gibi
 
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_143.png)
-
 ![scs_2](/assets/images/2014/scs_2.png)
 
 Elde edilen sonuçlara göre en hızlı şifreleme ve çözümleme AES sağlayıcısı tarafından gerçekleştirilmiştir. En yavaş olan algoritma ise Triple DES’ tir. Genel olarak tüm algoritmaların şifreleme süreleri çözümleme sürelerine oranla daha düşüktür. Ancak RC2 algoritması tabanlı sağlaycının verdiği sonuçlar ilginçtir. Yapılan 5 test göz önüne alındığında, RC2 için çözümleme hızı, şifreleme hızına göre daha yüksek çıkmıştır.

@@ -12,8 +12,6 @@ Bir feed içeriğini kod yoluyla çekmek için şirketinizin internet çıkış 
 
 Bu gereksinimi karşılamanın bir yolu aşağıdaki kod parçasında görüldüğü gibi olabilir mi?
 
-![Wink](/assets/images/2014/smiley-wink.gif)
-
 ![tfi_106.png](/assets/images/2014/tfi_106.png)
 
 Bir başka ipucunda görüşmek dileğiyle.

@@ -13,7 +13,6 @@ Aralık…2003 yılı. Dışarısı oldukça soğuk ve ben evdeyim. Camdan dış
 
 ![blg220_Giris](/assets/images/2011/blg220_Giris.jpg)
 
-
 O zamanlar en çok yaptığım iş, öğrendiklerimi Türkçe yazım dili ile olabildiğince doğru bir şekilde paylaşmaktı. Nitekim öğrenmenin en iyi yolunun öğrenilenleri anlatmakla mümkün olduğuna inanmaktayım. Halen daha bu düşüncemin arkasındayım.
 
 Elbette o zamanların verdiği acemilik nedeniyle, şimdi okuduğumda kaliteli olmadığını düşündüğüm yazılar üretmekteydim. Geçtiğimiz günlerde düşündüm de bu tip konuları arada sırada baştan ele almak ve yeniden örnekleyerek anlatmakta yarar olabilirdi. Hiç olmassa şu anda C# dilinin temellerini öğrenmekte olan arkadaşlarımız için. Öyleyse gelin, hiç vakit kaybetmeden yola koyulalım.
@@ -21,8 +20,6 @@ Elbette o zamanların verdiği acemilik nedeniyle, şimdi okuduğumda kaliteli o
 Bu yazımızda, Struct (Yapı) ile Class (Sınıf) tipleri arasındaki temel farklılıkları irdelemeye çalışıyor olacağız. Ancak benzerlikleri de yakalamaya gayret edeceğiz. (Hemen şunu hatırlatalım;.Net Framework, 5 temel veri tipi tanımlar. Bunlar Class, Struct, Enum, Interface ve Delegate tipleridir) Özellikle Struct tipinin kullanımına ilişkin örnekler geliştireceğiz.
 
 Aslında her iki tip arasındaki farklılıklar, uygulama geliştirirken hangi tipi tercih edeceğimiz açısından oldukça önemlidir. C# programlama dilini yeni öğrenen birisi için ilk akla gelen, bellek üzerindeki tutuluş biçimlerinin farklı olmasıdır. Hatta Struct’ ların Değer Türü (Value Type), Class’ ların ise referans türü (Reference Type) olduklarının, temel seviyede bilgi sahibi olan tüm programcılar farkındadır. Ancak fazlası da olabilir
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Bu temel farklılıklardan bazılarını örnek kodlar yardımıyla irdelemeye çalışmaya ne dersiniz? Başlamadan önce örnek bir Struct tipini göz önüne alalım.
 
@@ -48,8 +45,6 @@ namespace StructvsClass
 ```
 
 Eminim ki Location isimli Struct tipimiz pek çok deneyimli programcıya.Net Framework içerisindeki Point yapısını hatırlatmaktadır
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Temel olarak bir nesnenin uzaydaki yerini belirtmek için kullanabileceğimiz bu tip ayrıca Object tipinden kalıtsal olarak gelen ToString metodunu da ezmektedir (Override). Şimdi dilerseniz Struct tipi ile ilişkili vakalarımızı analiz etmeye ve Class’ lar ile aradaki farklılıkları görmeye çalışalım.
 
@@ -153,15 +148,11 @@ Kodun ilk kritik noktası jhonLocation değişkeninin marryLocation değişkenin
 
 Peki ya Location bir sınıf olsaydı?
 
-![Wink](/assets/images/2011/smiley-wink.gif)
-
 Bu durumda çalışma zamanı çıktısı aşağıdaki gibi olacaktı.
 
 ![blg220_Case2_Runtime2](/assets/images/2011/blg220_Case2_Runtime2.gif)
 
 Görüldüğü üzere X alanının değerinin arttımı, marryLocation değişkeninin X değeri için de geçerli olmuştur. Bu son derece doğaldır nitekim atama sonrası kopyalanan içerik değil referans adresleridir. Bu sebepten atama sonrası jhonLocation değişkeninin veri içeriğinde yapılan değişiklikler çok doğal olarak marryLocation içinde geçerli olacaktır. Bu durumda geliştiricinin karar vermesi gereken soru şudur: Marry ile Jhon birlikte hareket etmeli midir? Yoksa istedikleri noktada birbirlerinde ayrı olarak hareket edebilirler mi?
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 ## Vaka 3: Struct Tipinden Özellik (Property) Kullanılması Hali
 
@@ -243,11 +234,7 @@ Aslında bu son derece mantıklı bir kod parçasıdır. Nitekim Struct bir değ
 
 Hımmm! İlginç
 
-![Sealed](/assets/images/2011/smiley-sealed.gif)
-
 Neden böyle bir hata aldık ki? Aslında sınıfların yapamadığı bir şeyi yapıyor olmalıydık. Acaba Struct tipleri kıl mı?
-
-![Laughing](/assets/images/2011/smiley-laughing.gif)
 
 Sorun bu tip bir kullanımın sadece alanlar (Fields) için geçerli olmasıdır. Üstelik public olan alanlar için geçerlidir. Hatta ne kadar public alan var ise her birinin ilk değerinin de atanması gerekmektedir. Dolayısıyla Location tipini aşağıdaki hale getirerek devam edelim. (Elveda özellikler
 
@@ -319,8 +306,6 @@ Location yapısına TimeZone isimli string tipinden ve InGame isimli bool tipind
 
 Dikkat edileceği üzere TimeZone değişkenine varsayılan değer atanamamaktadır. Ayrıca varsayılan yapıcı metodun var olamayacağı ifade edilmektedir. Buna göre InGame değişkenin ilk değer atanması için varsayılan yapıcı metodun kullanılması planları da suya düşmüştür. Halbu ki Location tipi bir sınıf olarak tasarlanmış olsaydı!
 
-![Laughing](/assets/images/2011/smiley-laughing.gif)
-
 Bu durumda bir derleme zamanı hatası alınmayacaktı
 
 ![Undecided](/assets/images/2011/smiley-undecided.gif)
@@ -333,8 +318,6 @@ Aslında Stack bellek bölgesini kullanmalarından dolayı Struct ile çalışma
 
 Peki ya nasıl karar vereceğiz? Struct mı kullanalım, Class mı kullanalım? Hangisini tercih etmeliyiz? Sanıyorum ki cevaplanması en zor sorulardan birisi de bu. Hatta az önce bu yazıyı yazarken yanıma gelen çalışma arkadaşım şunu deyince “Valla Hocam bunca zamandır yazılım geliştiriyorum, hiç bir projemde Struct kullanıldığını görmedim”
 
-![Sealed](/assets/images/2011/smiley-sealed.gif)
-
 Aslında yaygın kanı halen daha devam etmekte. 16 byte’ tan daha küçük veri toplulukları için Struct kullanılması önerilmektedir. Ayrıca sadece veri anlamında bir tipten söz ediyorsak, Struct kullanımı Class tipine nazaran daha anlamlı olabilir.
 
 Sınıfları nesne yönelimli özellikleri tamamıyla destekleyen bir tip olarak düşünmek çok daha doğru bir yaklaşımdır. Nitekim Struct tiplerinin türetilmesi mümkün değildir ve bu OOP (Object Oriented Programming) çervecesinde önemli bir ilke ihlalidir.
@@ -344,8 +327,6 @@ Aslında karar vermek için Struct ve Class arasındaki farklılıklar dışınd
 ![blg220_DiscussionSheet](/assets/images/2011/blg220_DiscussionSheet.gif)
 
 Aradan geçen 7 yıldan sonra bir önceki yazıya bakıyorum da
-
-![Laughing](/assets/images/2011/smiley-laughing.gif)
 
 Aslında bazı kuralların hiç değişmediği ap açık ortada..Net Framework’ ün içerisinde pek çok noktada kullanılan Struct veri tipi, halen daha projelerde göz önüne alınabilir, alınmalıdır. Özellikle bu ihtiyacı farkediyor olmakta bir yazılımcı için ve hatta proje için son derece önemlidir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

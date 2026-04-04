@@ -20,8 +20,6 @@ LINQ (Language INtegrated Query) tarafını her ne kadar yoğun kullanıyor olsa
 
 Peki elinizde Actor tipinden bir liste varsa ve bir an gelipte içinden sadece Soldier olanları çekmek isterseniz, ne yaparsınız? Aşağıdaki gibi bir kullanım işinize yarayabilir mi acaba?
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_187.png)
-
 ![tfi95](/assets/images/2013/tfi95.png)
 
 Bir başka ipucunda görüşmek dileğiyle.

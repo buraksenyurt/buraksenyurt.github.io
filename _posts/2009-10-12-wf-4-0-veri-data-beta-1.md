@@ -116,8 +116,6 @@ Elbette Workflow 4.0' ın WPF tabanlı bir IDE kullanıyor olması göz ardı ed
 
 Bu nedenle şimdilik kod tarafı ile idare etmeniz gerekiyor.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingVariablesV2.rar (26,44 kb)](/assets/files/2009/UsingVariablesV2.rar)

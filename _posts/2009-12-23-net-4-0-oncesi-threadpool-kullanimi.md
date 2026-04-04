@@ -14,8 +14,6 @@ categories:
 
 Ben açıkçası bu problemleri çözmekte hep yetersiz kalmışımdır. Hatta çoğunlukla atmasyon cevaplar ürettiğimi itiraf edebilirim. Nitekim havuz deyince aklıma genellikle yandaki resimde görülen manzara gelir. Peki havuz problemlerinden kurtulabildik mi? Ihhh
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Çünkü artık Multi-thread uygulamalar ile uğraşmaktayız ve elimizde yönetebileceğimiz n sayıda Thread olabiliyor. Bu Thread'ler bir havuz içerisinde toplanabilir mi peki? Evet toplanır...İşte bu günkü konumuz. ThreadPool kullanımı.
 
 ThreadPool; arka planda belli bir işi yapmak üzere planlanmış görevlerin Thread'lere bölünmesi ve bu Thread'lerin bir koleksiyon şeklinde tutularak asenkron işleyişlerinin yönetilmesi amacıyla kullanılan sarmalayıcı (Wrapper) bir tip olarak düşünülebilir. Genellikle sunucu tabanlı uygulamalarda değerlendirildiği gözlemlenmektedir. Örneğin Windows Service'leri içerisinde ThreadPool kullanımı mantıklıdır. Bunun dışında dosya giriş çıkış (IO), yapay zeka, veritabanı, Karmaşık Matematik problemlerin çözüm algoritmaları gibi Multi-Threading gerektiren işlemlerde değerlendirilebilir.
@@ -24,7 +22,7 @@ Burada önemli olan noktalardan birisi çalışma modelidir. Aslında yapılmak 
 
 Buraya kadar anlattıklarımızı değerlendirecek olursak, Thread yönetiminin daha kolay bir şekilde ele alınabildiğini görebiliriz. Hatta ThreadPool'un temel olarak iki fonksiyonu olduğunu da düşünebiliriz. Bunlardan birincisi havuzda yer alan Thread'lerin üstlendiği işlerin tamamlanma durumlarını takip etmek, koordinasyonu sağlamak ve ikinci olarakta Thread koleksiyonunu bir kuyruk düzeninde yönetmektir. Tabi bu durumda ThreadPool tipinin yönettiği koleksiyona thread ekleme (enqueue) ve çıkarma (dequeue) işlemleri ile ilişkili bir algoritma içeridiğini ifade edebiliriz. Hatta kaç Thread'e ihtiyaç duyulacağını hesaplamak gibi önemli yeteneklere sahip olduğunu da söylemeliyiz.
 
-Açıkçası bu iki fonksiyonelliğin içerdiği algoritmaları geliştirmekle uğraşmak yerine işi ThreadPool'a bırakmak daha optimal bir çözüm olarak görülmelidir. Yine de istendiğinde kendi ThreadPool tiplerimizi de geliştirebiliriz. Tabi bilindiği üzere.Net Framework 4.0 ile birlikte ThreadPool üzerinde de bazı geliştirmeler yapılmıştır. Bu geliştirmelere göre, havuzun çalışma mantığı değişmiştir. Ancak şu anda bu konuya girmeyeceğiz. Önce var olan modeli bir öğrenelim. (.Net 4.0 tarafındaki ThreadPool kabiliyetlerini biraz daha cesaret toplayıp ileride incelemeyi ve sizlere aktarmayı planlıyorum ![Wink](/assets/images/2009/smiley-wink.gif)) Dilerseniz bu kadar laf kalabalığından sonra basit bir örnek ile devam edelim. Visual Studio 2008 ortamında ve.Net Framework 3.5 tabanlı olaraktan bir Console uygulaması geliştireceğiz. İşte örnek kodlarımız.
+Açıkçası bu iki fonksiyonelliğin içerdiği algoritmaları geliştirmekle uğraşmak yerine işi ThreadPool'a bırakmak daha optimal bir çözüm olarak görülmelidir. Yine de istendiğinde kendi ThreadPool tiplerimizi de geliştirebiliriz. Tabi bilindiği üzere.Net Framework 4.0 ile birlikte ThreadPool üzerinde de bazı geliştirmeler yapılmıştır. Bu geliştirmelere göre, havuzun çalışma mantığı değişmiştir. Ancak şu anda bu konuya girmeyeceğiz. Önce var olan modeli bir öğrenelim. (.Net 4.0 tarafındaki ThreadPool kabiliyetlerini biraz daha cesaret toplayıp ileride incelemeyi ve sizlere aktarmayı planlıyorum) Dilerseniz bu kadar laf kalabalığından sonra basit bir örnek ile devam edelim. Visual Studio 2008 ortamında ve.Net Framework 3.5 tabanlı olaraktan bir Console uygulaması geliştireceğiz. İşte örnek kodlarımız.
 
 ```csharp
 using System;
@@ -145,3 +143,4 @@ for (int i = 0; i < testCount; i++)
 Böylece geldik bir yazımızın daha sonuna. Umarım ThreadPool konusunda biraz fikir sahibi olabilmişizdir. Tekraradan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WhatIsThreadPool.rar (23,73 kb)](/assets/files/2009/WhatIsThreadPool.rar)
+

@@ -500,8 +500,6 @@ Son işlemde oluşan Exception nedeni ile bir adım önceki servis Transaction i
 
 Görüldüğü üzere bir Workflow içerisinden başlatılan Transaction’ ın, bir WCF servis operasyonuna aktarılabilmesi ve söz konusu operasyonun ilgili Transaction Scope’ a dahil hale gelerek Two Phase Commit metodolojisine uygun biçimde sisteme dahil edilmesi mümkündür. Bu, tipik anlamda bir Atomic Transaction senaryosudur. Sadece bir kaç küçük detaya ve ayarlamaya dikkat etmek gerekmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrarda görüşünceye dek hepinize mutlu günler dilerim
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_109.png)
-
 [HowToTransaction.zip (457,18 kb)](https://www.buraksenyurt.com/pics/2012%2f8%2fHowToTransaction.zip)
 
 [Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]

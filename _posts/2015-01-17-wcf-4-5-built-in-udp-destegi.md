@@ -90,8 +90,6 @@ namespace HighwayServiceLibrary
 
 Eeee bu kod hakkında söylenecek pek fazla bir şey yok aslında
 
-![Smile](/assets/images/2015/wlEmoticon-smile_57.png)
-
 ## Servis Tarafının Geliştirilmesi
 
 Servis tarafını yazarak ilerleyelim. Console uygulaması olarak tasarlayacağımız host programın en önemli özelliği birden fazla EndPoint üzerinden hizmet verecek olmasıdır. Bu nedenle App.config dosyası içeriği oldukça önemlidir.

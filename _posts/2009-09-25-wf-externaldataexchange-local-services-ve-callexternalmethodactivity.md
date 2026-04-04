@@ -11,8 +11,6 @@ Artık yazın bittiği, okulların açıldığı, şehrin kalabalığının artt
 
 ![blg81_Giris.jpg](/assets/images/2009/blg81_Giris.jpg)
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Ama yine böyle yağmurlu bir günde cama vuran damlacıkları izlerken Workflow Foundation ile ilişkili düşündüğüm ve aklıma gelen bir konunun çözümünü sizlerle paylaşmak niyetindeyim.
 
 İhtiyaç: Birden fazla aktivitenin aynı fonksiyonları ortaklaşa kullanabilmeleri nasıl sağlanır? Yani bir fonksiyonun birden fazla aktivite içerisinde kullanılması gerektiği durumlarda nasıl bir yol izleyebiliriz?
@@ -208,3 +206,4 @@ Evet...Önce belirli oranda arttırım yapıp sonra azaltım yapmak son derece s
 Ancak yakalamamız gereken nokta elbetteki bu değildir. Önemli olan, bir aktivite'nin kendi sınırları dışındaki fonksiyonellikleri kullanabilmek için yerel servislerden nasıl yararlanıldığı ve bunun için ExternalDataExchange niteliğinin nasıl değerlendirildiğidir. Üstelik bu değerlendirme, WF tasarım zamanı içinde önem arz eder. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingExternalCode.rar (50,98 kb)](/assets/files/2009/UsingExternalCode.rar)
+

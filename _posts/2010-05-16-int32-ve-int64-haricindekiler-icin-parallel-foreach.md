@@ -102,8 +102,6 @@ Dikkat edileceği üzere for döngüsünden yararlanılarak Director'den en alt 
 
 Peki ya Employee gibi bir tipin çalışma zamanındaki örneği ve içeriğindeki bağlı referanslar arasında Parallel.For döngüsü ile ilerlenilmek istenirse?
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Nitekim elimizin alında binlerce ve hatta daha fazla elemandan oluşan bir ağaç yapısı olabilir ve bu yapı üzerindeki elemanlarda bazı işlemlerin yapılması istenebilir. Bu durumda işlemlerin daha hızlı gerçekleştirilebilmesi için paralel programlama yetenekleri göz önüne alınabilir. Ancak ortada önemli bir sorun vardır. Parallel.For metodunun versiyonlarına bakıldığında int (Int32) ve long (Int64) tipleri ile çalıştığı görülecektir. Bu durumda Employee nesne örnekleri için Parallel.For döngüsünü kullanmamız mümkün değildir. O zaman belki Parallel.ForEach döngüsü tercih edilebilir. Edilebilir mi acaba? Bunu denediğimizde derleme zamanında aşağıdaki sonuçlar ile karşılaşmamız kaçınılmazdır.
 
 ![blg165_Excpetion.gif](/assets/images/2010/blg165_Excpetion.gif)
@@ -143,3 +141,4 @@ Parallel.ForEach<Employee>(
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ParallelForNonIntegralRanges_RTM.rar (27,05 kb)](/assets/files/2010/ParallelForNonIntegralRanges_RTM.rar) [Örnek uygulama Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

@@ -15,8 +15,6 @@ Aşçılık zevkli ama bir o kadarda zor bir zanaattır. Hatta bazen o kadar zor
 
 Tabi bir aşçı için olmassa olmazlardan birisi de yemeği için gerekli olan malzemelerin kalitesidir. Kaliteli zeytinyağı, hamur ve baharat ile yapılan spagettinin, kalitesiz olanlar ile yapılanı arasında dağlar kadar fark olabilir. Spagetti demişken bu günkü yazımızda neler yapacağımıza da bir bakalım dilerseniz. Aşçı olarak bu gün elimizde zor bir tarif var. Malzemelerimiz belli ama pişecek olan yemeğin yapımı biraz zahmetli. Haydi gelin hiç vakit kaybetmeden önlüğümüzü takıp klavyenin başına geçelim.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Bu yazımızda.Net Framework 4.0 tarafında geliştireceğimiz Workflow Service'lerde yetkilendirme işlemini nasıl sağlayabileceğimizi görmeye çalışacağız. Ne yazık ki Authorization işlemini kolaylaştırmak adına hazır bir yapı mevcut değil. Bu nedenle biraz kodlama yapmamız ve çalışma zamanının işleyişine bu şekilde müdahale etmemiz gerekiyor. Hatta yapacağımız özelleştirme öylesine etkili olacak ki, aradan Doğrulamayı (Authentication) bile çıkaracağız farkına varmadan.
 
 ![Surprised](/assets/images/2010/smiley-surprised.gif)
@@ -30,8 +28,6 @@ Ama önce yemek için gerekli malzemelerimizin neler olduğuna bir bakalım.
 - Windows üzerinde tanımlanmış roller ve bu roller içerisinde yer alan kullanıcılar.
 
 Tabiki malzemeleri tedarik etmek yeterli değil. Birde tarifi bilmek lazım
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Öncelikli olarak yetkilendirme işlemini üstelenen bir sınıf yazmamız gerekiyor. Çok doğal olarak bu sınıfın Workflow Service çalışma zamanı tarafından değerlendirilebilmesi için konfigurasyon dosyası üzerinde de gerekli düzenlemeleri yapmalıyız. Sonrasında ise işi istemci tarafından gelen taleplere bırakıyor olacağız. İşe ilk olarak aşağıdaki gibi bir Workflow Service projemiz olduğunu varsayarak başlayalım.
 
@@ -137,8 +133,6 @@ Sırada çalışma zamanı için Authorizer sınıfının yetki kontrolü amacı
 
 Dikkat edileceği üzere serviceAuthorization elementi ile yetkilendirme davranışını ele alacak Authorizer tipi belirlenmiştir. Ayrıca iletişimin güvenli olmasını sağlamak adına protocolMapping sekmesinde wsHttpBinding bağlayıcı tipinin kullanılacağı bildirilmiştir. İşte bu kadar.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Artık yemeğimizi orta ateşte 40 dakika kadar pişirip servis edebiliriz. Tabi servis etmeden önce tadına bakmak gerekmektedir. Nasıl mı?
 
 Öncelikli olarak Administrator rolünde olan ve olmayan iki test kullanıcımız olduğunu düşünelim. Ben, örneği geliştirmekte olduğum makinede bu amaçla bsenyurt ve runi isimli iki kullanıcı oluşturdum. Bu kullanıcılardan bsenyurt Administrator rolünde iken runi User rolü içerisinde yer almakta. Dolayısıyla test sonuçlarımıza göre runi isimli kullanıcı talebi karşılığında Access Denied hata mesajını almalı. Bakalım gerçektende böylemi oldu?
@@ -163,6 +157,5 @@ Volaaaaa!!! Bu çok doğaldır. Nitekim Runi isimli kullanıcı Administrators g
 
 Yapmış olduğumuz bu çalışmaya göre bir Workflow Service'ini host ettiğimiz sunucu üzerindeki Windows kullanıcılarından ve dahil oldukları grup bilgilerinden yararlanarak az bir kodlama ile doğrulama ve yetkilendirme işlemlerini gerçekleştirebiliriz. Afiyet olsun
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 [UsingCustomAuthorization_RC.rar (17,67 kb)](/assets/files/2010/UsingCustomAuthorization_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

@@ -38,7 +38,7 @@ Yine Data Service'lerin zaman zaman WebHttp Service'leri ile karıştırılması
 Workflow Services Modeli
 
 Uzun süreli (Long Running) ve kalıcılık (Persistence) desteği olması gereken Workflow uygulamalarının servis bazlı olarak kullanılabilmesini sağlayan modeldir. Bu modele göre Workflow nesnelerinin WCF servisi olarak sunulması, tüketilmesi ve ayrıca Workflow nesnelerinin içerisinde WCF servislerinin çağrılıp değerlendirilmesi mümkündür.
-*.Net Framework 3.0' da birbirlerine uzaktan bakan WF ve WCF alt yapıları,.Net Framework 3.5 ile flört etmeye başlamış ve.Net Framework 4.0' da evlenmiştir. ![Wink](/assets/images/2010/smiley-wink.gif)
+*.Net Framework 3.0' da birbirlerine uzaktan bakan WF ve WCF alt yapıları,.Net Framework 3.5 ile flört etmeye başlamış ve.Net Framework 4.0' da evlenmiştir.
 
 RIA Services Modeli
 

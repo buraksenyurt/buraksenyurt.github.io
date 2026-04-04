@@ -27,7 +27,7 @@ O zamanlar bu bizim için yeterli görünüyordu ama tabi.Net Framework 2.0 ile 
 
 Microsoft Build Engine aslında başlı başına bir platformdur. Kısaca MSBuild olarak anılmaktadır ve bir uygulamanın inşa edilmesi noktasında devreye giren XML (eXtensible Markup Language) tabanlı bir Script bütününü esas alır. Kısacası uygulamanın inşa edilmesi sırasındaki aşamalar XML tabanlı bir akış olarak ifade edilebilmektedir. MSBuild platformunun en önemli özelliği ise, inşa sürecinde Visual Studio gibi bir araca ihtiyaç duymuyor oluşudur.
 
-Evet Visual Studio’ nun kendisi, Build işlemlerinde bu platformu kullanmaktadır doğru ama, tam tersi durum geçerli değildir. Yani istersek MSBuild aracını kullanarak, bir uygulamanın veya uygulama ortamının üretilmesi sırasındaki aşamaları, basit bir Notepad aracı ile tasarlayabilir ve MSBuild.exe’ den yararlanarak hayata geçirebiliriz (Ancak bu gün şanslısınız çünkü Notepad2 isimli ürünü kullanacağız. [Sourceforge adresinden indirebilirsiniz](http://sourceforge.net/projects/notepad2/) ![Smile](/assets/images/2013/wlEmoticon-smile_91.png))
+Evet Visual Studio’ nun kendisi, Build işlemlerinde bu platformu kullanmaktadır doğru ama, tam tersi durum geçerli değildir. Yani istersek MSBuild aracını kullanarak, bir uygulamanın veya uygulama ortamının üretilmesi sırasındaki aşamaları, basit bir Notepad aracı ile tasarlayabilir ve MSBuild.exe’ den yararlanarak hayata geçirebiliriz (Ancak bu gün şanslısınız çünkü Notepad2 isimli ürünü kullanacağız. [Sourceforge adresinden indirebilirsiniz](http://sourceforge.net/projects/notepad2/))
 
 Bu fikir tabi ki otomatize edilmiş Build işlemlerinin de icra edilebileceği anlamına gelmektedir. Ki Team Foundation Server ürünü de MSBuild’ un etkin bir şekilde kullanılmasına olanak tanımaktadır. Özellikle Team Foundation Build olarak anılan platform içerisinde Build Server’ un kurulduğu ortam MSBuild Script’ lerini kullanarak üretim işlemlerini gerçekleştirmektedir. Söz gelimizi TFS tarafında eğer Continous Integration gibi bir strateji tercih edilmişse, kodlamacıların Check-In işlemleri sonrası Team Foundation Build devreye girecek ve MSBuild script’ leri otomatik olarak çalıştırılarak inşa işlemleri icra edilecektir. (Team Foundation Build ayrıca incelenmesi gereken bir konu olduğundan bu yazımızda detaylandırılmamıştır)
 
@@ -196,8 +196,6 @@ msbuild Builder.csproj /t: Build /verbosity: detailed
 
 Oldukça zevkli öyle değil mi?
 
-![Smile](/assets/images/2013/wlEmoticon-smile_91.png)
-
 Target Belirtmek
 
 Öyleyse gelin olayı biraz daha genişleterek devam edelim.
@@ -242,8 +240,6 @@ msbuild Builder.csproj /t: Rebuild /verbosity: detailed
 
 Örnekler daha da çoğaltılabilir. Yapılabilecek pek çok şey var
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_189.png)
-
 Bunun için mutlaka MSDN orjinli bir kaynağa başvurmanızı veya yazımızın sonunda belirttiğimiz tarzdaki bir kitabı tedarik etmenizi öneririm. Ancak temel mantığı ifade edebildiğimizi varsayıyorum. Bundan sonrasında Condition’ lara ve kullanılabilecek element/attribute tiplerine bakılması yeterli olur düşüncesindeyim.
 
 .Net Framework 4.5 ile Gelen Yenilikler
@@ -253,7 +249,7 @@ MSBuild ürününe Framework 4.5 sürümü ile birlikte bazı geliştirmeler ve 
 - ARM (Advanced RISC Machine) desteği gelmiştir. Yani Build çıktıları ARM işlemcilerini hedef alacak şekilde üretilebilir.
 - Bir Task (Target elementi ile belirtilen bir görev diyelim) süreç dışı (Out of Process) modda çalışmaya zorlanabilir.
 - Yeni bazı XML element ve nitelikleri (Attributes) gelmiştir.
-- Klasik bir cümle olacak ama, Performans (Performance) ve Ölçeklendirme (Scabilitiy) noktasında iyileştirmeler vardır ![Smile](/assets/images/2013/wlEmoticon-smile_91.png)
+- Klasik bir cümle olacak ama, Performans (Performance) ve Ölçeklendirme (Scabilitiy) noktasında iyileştirmeler vardır
 
 > MSBuild’ un etkili kullanımı üzerine geliştirilmiş bazı araçlar da vardır. Görsel arabirimleri olan bu araçlar yardımıyla MSBuild akışlarını daha kolay yönetebiliriz. Attrice firmasının bu alanda ön plana çıkan [Microsoft Build Sidekick](http://www.attrice.info/msbuild/index.htm) isimli ürünü gibi.
 
@@ -264,8 +260,6 @@ MSBuild ürününe Framework 4.5 sürümü ile birlikte bazı geliştirmeler ve 
 Örneğin MSBuild tarafında daha önceden yayınlanmış olan Inside The Microsoft Build Engine isimli kitabın Nisan ayı içerisinde yayınlanan yeni bir tamamlayıcı baskısı mevcuttur. Yaklaşık olarak 120 sayfalık bir kitap olmasına rağmen odaklandığı konu özünde MSBuild ürünüdür. Kitaba [Amazon üzerinden bu adres yardımıyla](http://www.amazon.com/Supplement-Inside-Microsoft%C2%AE-Build-Engine/dp/0735678162/ref=sr_1_1?s=books&ie=UTF8&qid=1361775657&sr=1-1&keywords=msbuild) erişebilirsiniz.
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda kısada olsa, MSBuild platformunu ve XML tarafındaki betikleri (Scripts) anlamaya çalıştık. Ağırlıklı olarak bir inşa sürecine müdahale edebildiğimizi, bunun için platformun sunduğu bazı standart element ve niteliklerin olduğunu gördük. Devamı sizde artık
-
-![Smile](/assets/images/2013/wlEmoticon-smile_91.png)
 
 Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -238,8 +238,6 @@ namespace ConcurrentCollections2
 
 Bu kez BlockingCollection tipinden bir nesne örneğini kullanmaktayız. Bu koleksiyon kendi içerisindeki elemanlar üzerinde eş zamanlı işlemler yapılabilmesine imkan tanımaktadır. Ayrıca istenirse bir boyut verilerek, eş zamanlı çalışma sırasında maksimum eleman ekleme tavanınıda belirtebiliriz. Kodda görüldüğü gibi Task sınıfından yararlanarak kodu tamamen.Net 4.0 havasına büründürmüş bulunuyoruz.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 StartTestConcurrent metodu içerisinde dikkat edilmesi gereken noktalardan biriside, Task sınıfının static WaitAll fonksiyonu ile, çalışan tüm Task'lerin tamamlanmasının beklenmesidir.
 
 Ayrıca, GetPersonList metodu içerisinde, text tabanlı dosyadaki tüm elemanların aktarılma işlemi tamamlandıktan sonra CompleteAdding fonksiyonu kullanılarak, artık daha fazla eleman eklenmeyeceği, bu nedenle aynı koleksiyon üzerinde bekleyen başka görevler var ise yollarına devam edebilecekleri belirtilmektedir. Eğer CompleteAdding metodunu kullanmassak, programın kapanmadığı gözlemlenecektir. Uygulamayı çalıştırdığımda aşağıdaki sonuçları aldığımı gördüm;
@@ -248,15 +246,11 @@ Ayrıca, GetPersonList metodu içerisinde, text tabanlı dosyadaki tüm elemanla
 
 Harika değil mi?
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Artık hata mesajı yok. Üstelik koleksiyon üzerinde aynı anda iki farklı gövde işlem yapabilmekte. İstenirse görev sayısı dahada arttırılabilir elbetteki. Örneğin çalışmasına göre bir GetPersonList bir ProcessPersonList metodundan sonuçlar alınması Thread.Sleep sürelerinin aynı olmasından kaynaklanmaktadır. Elbetteki gerçek hayat senaryosunda bu süre aynı olmayacaktır. Bende bu düşünce ile Thread.Sleep metodlarını kaldırdığıma aşağıdaki sonuçları aldım.
 
 ![blg32_5.gif](/assets/images/2009/blg32_5.gif)
 
 Dikkat edileceği üzere dosyadan koleksiyona ekleme işlemleri gerçekleşmeden, maaş bilgilerinin düzenlenmesine izin verilmemektedir. Bir başka deyişle koleksiyon içerisinde elemanlar olduğu sürece, ProcessPersonList metodu içerisindeki foreach döngüsü çalışabilmektedir. Aksi durumlarda, koleksiyon üzerindeki iterasyon elemanlar ekleninceye kadar duraksatılmaktadır (Tabi, maaş değişiklikerini yapan foreach döngüsü nerede duracağını nasıl bilecektir sorusunun cevabı = CompleteAdding metodudur). Buda koleksiyona neden BlockingCollection dendiğini açıklamaktadır.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 BlockingCollection tipinin farklı özellikleride bulunmakta. Bunlarıda yeri geldikçe incelemeye gayret edeceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

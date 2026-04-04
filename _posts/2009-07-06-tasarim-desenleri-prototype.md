@@ -15,8 +15,6 @@ Yandaki resimde 118 WallyPower isimli tekneyi (yada suda giden uzay mekiği) gö
 
 Bu arada filmin ana fikri, ileride yarın öbür gün organ ihtiyacı olabilecek olan insanların birer klonunun üretildiği ve tutulduğu gizli bir yer altı şehri üstüne kuruluydu. Klon demişken var olan insanların birebir kopyasının üretildiği bir üs olduğunu belirteyim.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 E haliyle yeni klonların üretimi bir insanın doğum sürecine göre (filme gereği) çok daha kısa sürede olabilmektedir. Peki nerden geldik bu konuya...Aslında nesne yönelimli tarafta da, üretimi pahalı olan nesneler söz konusu olduğunda ve new operatörü ile oluşan maaliyetten kaçınmak istendiğinde, klon nesnelerin üretilmesi yolu tercih edilebilir.
 
 Bu durum zaman içerisinde pek çok nesne yönelimli projede ortaya çıkınca haliyle kalıplaşmış ve bir desen haline gelmiştir. Creational tasarım kalıplarından olan Prototype deseni. Bu kalıp gerçek hayat uygulamalarının pek çok noktasında karşımıza çıkabilir. Söz gelimi bir oyun sahnesinin tekrar eden nesne üretimlerinde, oluşturulma maaliyetlerinin azaltılmasına etki edebilir (Öyleki oyun sahnesi içerisindeki sabit olan pek çok yapının nesnel olarak ifadesi sırasında bu maliyetler oldukça yükselmektedir.) Yada finansal veriler üzerine analiz gerçekleştiren bir sistemde, aynı veri kümesinden hareket edeceğimiz durumlarda, veriyi içeren nesne üretimlerinin maaliyetleri en aza indirgenebilir. Senaryolar çoğaltılabilir ancak özünde, nesne oluşturulma maaliyetleri vardır.
@@ -25,7 +23,7 @@ Dilerseniz durumu basit bir örnek üzerinde incelemeye gayret edelim. Az önce 
 
 ![blg43_3.gif](/assets/images/2009/blg43_3.gif)
 
-Görüldüğü gibi klonlama operasyonu bir abstract tip (veya interface) içerisinde bildirilmektedir. Bu abstract tip prototipimizdir. Prototype tipten türeyen Hero ve Mine sınıfları ise kullanılacak asıl nesne örneklerini modellemektedirler (Concrete Prototype). Buna göre oyun sahasını yöneten GameSceneManager sınıfı kendi içerisinde, Prototype tipten oluşan bir koleksiyonu kullanmaktadır. (Bu sayede farklı prototip tiplerinin sisteme kolayca eklenebilmesinin yoluda açılmıştır.![Wink](/assets/images/2009/smiley-wink.gif)) Peki Clone operasyonu nasıl gerçekleştirilecektir. Burada pek çok nesne yönelimli dilde yer alan bazı yardımcı metodlardan faydalanılabilir. Söz gelimi.Net tarafında MemberwiseClone fonksiyonu kullanılabilir. Buna göre uygulama kodlarımız aşağıdaki gibidir.
+Görüldüğü gibi klonlama operasyonu bir abstract tip (veya interface) içerisinde bildirilmektedir. Bu abstract tip prototipimizdir. Prototype tipten türeyen Hero ve Mine sınıfları ise kullanılacak asıl nesne örneklerini modellemektedirler (Concrete Prototype). Buna göre oyun sahasını yöneten GameSceneManager sınıfı kendi içerisinde, Prototype tipten oluşan bir koleksiyonu kullanmaktadır. (Bu sayede farklı prototip tiplerinin sisteme kolayca eklenebilmesinin yoluda açılmıştır.) Peki Clone operasyonu nasıl gerçekleştirilecektir. Burada pek çok nesne yönelimli dilde yer alan bazı yardımcı metodlardan faydalanılabilir. Söz gelimi.Net tarafında MemberwiseClone fonksiyonu kullanılabilir. Buna göre uygulama kodlarımız aşağıdaki gibidir.
 
 ```csharp
 using System;
@@ -137,3 +135,4 @@ Prototype tip görevini üstlenen GameScenePrototype abstract sınıfı içerisi
 [Youtube Link](https://www.youtube.com/watch?v=s6-d2HrXhyg)
 
 [Prototype.rar (22,60 kb)](/assets/files/2009/Prototype.rar)
+

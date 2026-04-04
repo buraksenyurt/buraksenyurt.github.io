@@ -12,15 +12,14 @@ Hatırlayacağınız üzere bir süre önce [NedirTv?com](http://www.nedirtv.com
 
 ![wcfogreniyorumDers1](/assets/images/2010/wcfogreniyorumDers1.gif)
 
-
-- Bir WCF Servis geliştirdik ![Smile](/assets/images/2010/wlEmoticon-smile_3.png) Bunu yaparken hazır Visual Studio proje şablonları yerine standart bir class library şablonu kullandık ve bu anlamda System.ServiceModel.dll assembly’ ının önemini gördük.
+- Bir WCF Servis geliştirdik Bunu yaparken hazır Visual Studio proje şablonları yerine standart bir class library şablonu kullandık ve bu anlamda System.ServiceModel.dll assembly’ ının önemini gördük.
 - Servisimizi geliştirirken ServiceContract ve OperationContract niteliklerinin (Attributes) ne işe yaradığını öğrendik.
 - ServiceContract niteliğinin Name ve Namespace özelliklerini kullandık.
 - Servis operasyonlarımızın primitive.net tipleri ile çalışmasına özen gösterdik.
 - Geliştirilen WCF Servisinin yayına alınması için bir Console uygulaması yazdık ve çalışma zamanını ayağa kaldırırken ServiceHost tipinin nasıl kullanıldığını gördük.
 - Özellikle servisin host edildiği uygulamada Endpoint’ lerin nasıl kullanıldığına şahit olduk ve bu anlamda ilk kez wsHttpBinding bağlayıcı tipi ile karşılaştık.
 - Servisimizi tüketecek/kullanacak olan istemciler için gerekli proxy üretiminde komut satırı araçlarından olan svcutil’ den yararlandık.
-- Son olarak da servis uygulamamızın çalışmasını test ettik ![Smile](/assets/images/2010/wlEmoticon-smile_3.png)
+- Son olarak da servis uygulamamızın çalışmasını test ettik
 
 Ders 1 kod adlı webinerimizde ise Veri Sözleşmeleri (Data Contracts) kavramına değindik. Bakalım neler anlatmışız.
 

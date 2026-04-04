@@ -13,14 +13,9 @@ Daha dün gibi hatırlıyorum. Windows Communication Foundation 4.0 ile gelen ye
 
 ![what-wsdl-defines](/assets/images/2012/what-wsdl-defines.jpg)
 
-
-![Smile](/assets/images/2012/wlEmoticon-smile_56.png)
-
 Nitekim.Net Framework 4.5 ha çıktı çıkacak derken, çoktan çıkmış da profesyonel projelerde kullanılmaya başlanmış bile.
 
 Dolayısıyla zaman yine benim gibi aciz geliştiriciler için bir şeyleri daha öğrenme vaktidir. İşte ben de bu hevesle çok fazla makale tadında olmayan ama yeniliklerden haberdar olmamızı (en çok da balık hafızamın unuttuklarını kayıt almamı sağlıyor) sağlayacak bir kaç yazıya yer vermek istedim. İlk konumuz SingleWSDL
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_124.png)
 
 Windows Communication Foundation 4.5 sürümü ile birlikte gelen yeniliklerden birisi de WSDL içeriklerinin tekil bir dosya halinde elde edilebilme imkanıdır. SingleWSDL anahtar kelimesi sayesinde tek bir WSDL (Web Service Description Language) içeriğine, servis tarafının kullandığı tüm veri sözleşmelerinin (Data Contract) eklenmesi mümkündür.
 
@@ -86,8 +81,7 @@ namespace ContosoService
 
 > Bonus Yenilik:
 > WCF 4.5 konfigurasyon içeriklerinde doğrulama (Validation) artık daha etkili ve kabiliyetli. Aşağıdaki şekilde yer alan Warning mesajlarına dikkat
->
-> ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_124.png)
+
 > ![wcfnf_8](/assets/images/2012/wcfnf_8.png)
 
 Amacımız WSDL çıktılarına bakmak olduğundan sadece POCO (Plain Old CLR Object) tip kullanan bir Dummy servis geliştirdiğimizi düşünebiliriz. Şu noktada servisi tarayıcı uygulamadan çağırdığımızda aşağıda görülen ekran çıktısı ile karşılaşırız.
@@ -117,8 +111,7 @@ WCF 4.5 tarafında gelmiş olan bir kaç yenilik daha bulunmaktadır. Genelde ç
 > Bonus Yenilik:
 > WCF konfigurasyon dosyası üzerinde artık daha fazla hakimiyetimiz var. Eğer sizlerde benim gibi WCF Service Configuration Editor yerine config dosyası içerisinde ilerleyenlerdenseniz özellikle intelli-sense desteğinin eksik olmasından yakınanlardansınızdır.
 > Ancak WCF 4.5 ile bu konuda önemli avantajlarımız var. Örneğin hatırlayamadığımız veya içeride hangi sözleşme var bilmediğimiz durumlarda intelli-sense yardımımıza yetişiyor. Aşağıdaki ekran görüntüsünde olduğu gibi
->
-> ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_124.png)
+
 > ![wcfnf_7](/assets/images/2012/wcfnf_7.png)
 
 [ContosoService.zip (23,61 kb)](/assets/files/2012/ContosoService.zip)

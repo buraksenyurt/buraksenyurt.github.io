@@ -12,12 +12,7 @@ Bilenler bilir, uzun süredir.Net Framework 2.0 üzerinde yazılmış ve Visual 
 
 ![blg225_Giris](/assets/images/2011/blg225_Giris.jpg)
 
-
-![Sealed](/assets/images/2011/smiley-sealed.gif)
-
 Aslında bu yeni görevime atanırken Visual Studio 2010 ile uğraştığımı hatırlıyorum da…Kendimi Ice Age filmindeki buz çağı devrine dönmüş canlı bir yaşam formu gibi zannetmiştim
-
-![Laughing](/assets/images/2011/smiley-laughing.gif)
 
 Geliştirilmiş olan ürüne ait proje kodları biraz eski tarihli olduğundan ilk zamanalarda içinde kaybolduğumu belirtebilirim. Günlerce Debug yapıp süreçlerin nasıl işlediğini anlamaya çalıştım. (E haliyle koda dökümantasyon yazmassanız, XML Comment’ ler koymassanız, proje geliştirilmekteyken sürekli eleman sirkülasyonuna izin verir ve herkesin günü kurtarmak adına kodlama yapmasına davetiye çıkartırsanız, analiz dökümanlarını saklamaz veya güncellemesseniz olacağı da budur
 
@@ -26,8 +21,6 @@ Geliştirilmiş olan ürüne ait proje kodları biraz eski tarihli olduğundan i
 )
 
 Aslında daha okunaklı, daha efektif ve zaman zaman daha verimli kod üretmek için bir kaç küçük noktaya dikkat etmekte yarar olabilir. Bu sayede sanıyorum ki kodlarımız en azından daha şık duracaktır
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Gelin bu bir kaç küçük püf noktadan bir kaçına hep birlikte bakalım.
 
@@ -84,8 +77,6 @@ Dikkat edileceği üzere PersonId ve Birth özelliklerinde get ve set blokların
 
 Peki üretilen IL (Intermediate Language) çıktısına baktığımızda
 
-![Wink](/assets/images/2011/smiley-wink.gif)
-
 Bu durumda aşağıdaki sonuçlar ile karşılaşırız.
 
 ![blg225_AutoPropertyIL](/assets/images/2011/blg225_AutoPropertyIL.gif)
@@ -112,8 +103,6 @@ Product tipi içerisinde yer alan ProductId özelliği Readonly olarak tanımlan
 ![blg225_Readonly](/assets/images/2011/blg225_Readonly.gif)
 
 Farkı görebildiniz mi?
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Dikkat edileceği üzere setProductId isimli bir metod IL üretimi içerisine dahil edilmemiştir. Belki de auto property’ lerin en sevmediğim yanı budur. Keşke sadece get veya sadece set tanımlamasına izin verilseymiş.
 
@@ -175,13 +164,9 @@ ip = targetAddress == null? new IP { Line1 = 127, Line2 = 0, Line3 = 0, Line4 = 
 
 ? işaretinden önce targetAddress değişkeninin null olup olmadığına bakılmaktadır.? ile: işaretleri arasındaki kısım koşulun true olması halini ele alırken,: işaretinden sonraki kısım false olma durumunu değerlendirmektedir. Aslında burada null kontrolü yapıldığından?? operatörü de ele alınabilir. Aşağıdaki gibi
 
-![Wink](/assets/images/2011/smiley-wink.gif)
-
 ip = targetAddress?? new IP { Line1 = 127, Line2 = 0, Line3 = 0, Line4 = 1 };
 
 Daha yalın daha okunaklı olduğunu ifade edebilir miyiz? Bu sorunun cevabı duruma göre değişir. Ancak en azından şirketinizin bir kod standardı var ise, bu tip null kontrollerinde nasıl bir yol izlenilmesi gerektiği ve hangi operatörlerin kullanılması gerektiği açıktır. Söz gelimi daha önceden çalıştığım şirketlerin birisinde?: operatörünün kullanımı yasaklanmıştır. (Sebebini hiç sormayın ama sonuç itibariyle bir standart vardı en azından
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 )
 
@@ -357,13 +342,9 @@ namespace OldTimes
 
 Dikkat edileceği üzere Calculate metodunun son parametresi TimeSpan tipi ile değiştirilmiştir. Buna göre Thread.Sleep metoduna parametre olarak nekadarlık bir süre geçirileceğini belirlemek çok daha kolaydır. Örnek kullanımlarda bu amaçla TimeSpan tipinin static ve aşırı yüklenmiş yapıcı metodlarından (Overloaded Constructors) yararlanılmaktadır. Buna göre 1 saniye, 2 saniye, 50 milisaniye ve 250 milisaniye aralıklarla işlemler yaptırılmaktadır. Hatta dilerseniz aralığı gün bazında bile belirtebilirsiniz
 
-![Laughing](/assets/images/2011/smiley-laughing.gif)
-
 ## 5 – Stopwatch Sınıfı
 
 Hazır yukarıdaki kod parçasına değinmişken…Gerçektende belirtilen sürelere göre işlemlerin yapıldığını nasıl ölçebiliriz hiç düşündünüz mü?
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Yani 1’ den 5’ e kadar olan sayıların toplamında her bir iterasyonda 2 saniye duraksama olursa tahminlerimize göre 8 saniye kadar bir toplam süre söz konusu olmalıdır öyle değil mi? Hatta bu 8 saniye de 8000 milisaniye olarak düşünülebilir. Bunu ölçmek için Calculate metodunun içerisinde aşağıdaki düzenlemeleri yaptığımızı düşünebiliriz.
 
@@ -390,8 +371,6 @@ static double Calculate(int x,int y,TimeSpan duration)
 ![blg225_Runtime1](/assets/images/2011/blg225_Runtime1.gif)
 
 Görüldüğü gibi DateTime tipine ait iki nesne örneğinden yararlanılmış ve aradaki farka bakılarak işlemin ne kadar zaman aldığı hesap edilmiştir. Peki daha şık bir kodlama söz konusu olabilir mi? Evet olur
-
-![Laughing](/assets/images/2011/smiley-laughing.gif)
 
 ```csharp
 static double Calculate(int x,int y,TimeSpan duration) 
@@ -424,8 +403,6 @@ Anlattıklarımızdan yola çıkacak olursak eğer şu tip sonuçlara da varabil
 - Özellikle.Net Framework içerisinde ki tipleri boş vakitlerimizde araştırıp, var olan bir projenin hangi noktasında avantaj sağlayabileceğini incelemekte
 
 yarar vardır
-
-![Wink](/assets/images/2011/smiley-wink.gif)
 
 Peki başka ip uçları olabilir mi? Elbette olabilir. Bunları da ilerleyen yazılarımızda incelemeye devam edeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

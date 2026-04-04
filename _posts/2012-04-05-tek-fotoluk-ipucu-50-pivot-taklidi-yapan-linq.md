@@ -10,6 +10,4 @@ categories:
 ---
 Elimizde ülke bazlı bir toplam satış rakamlarını içeren bir veri listesi olduğunu düşünelim. Normal şartlarda bu tip bir çıktıyı sorguladığımızda veri içeriği ülke bazlı olacak şekilde dikine akacaktır. Ancak istediğimiz çıktı, ükle bazlı satışların toplam tutarlarını yatay eksene taşıyabilmek. Bir nevi SQL tarafındaki PIVOT hareketini gerçekleştirmek istiyoruz. Bunu bir LINQ sorgusu ile yapmaya ne dersiniz? Burdan buyrun
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ![tfi_50.PNG](/assets/images/2012/tfi_50.PNG)

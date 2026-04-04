@@ -177,8 +177,6 @@ namespace DiscoveryProxyService
 
 Sizi bu kod parçası ile bir süre yanlız bırakmak isterim
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Aslında sınıfımızın görevi basittir. Çevre ağlar üzerinde announcement mesajı yayınlayarak online veya offline olduğunu bildiren servisleri tutmakta ve buna ek olarak, istemciden gelen arama kriterlerine uygun olanlarını yine istemci tarafına yönlendirmektedir. Sınıfımız, yardımcı metodların yanı sıra DiscoveryProxyBase tipinden gelen bazı sanal metodlarıda (Virtual Method) ezmektedir. Özellikle eş zamanlı isteklerde oluşabilecek senkronizasyon sorunlarını aşmak için basit lock tekniğinden yararlanılmaktadır. Proxy servisini geliştirmek tek başına yeterli değildir. Bu servisin bir uygulama tarafından host edilmesi gerekmektedir. Bu anlamda basit bir Console uygulaması aşağıdaki kodlar ile tasarlanabilir.
 
 ```csharp
@@ -327,8 +325,6 @@ namespace ServiceY
 
 Piuuuuuvvvvv!!!
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 İşimiz bitti diye düşünebilirsiniz. Ama hayır... Birde istemcilerin nasıl yazılabileceğine bakmamız gerekiyor. İstemci tarafında tabiki olmassa olmazlardan biriside, kullanmak istediği servislere ait proxy referanslarına sahip olmaları gerekliliğidir. Bunu göz önüne alarak ilerlediğimizi düşünürsek istemci tarafında da aşağıdaki gibi bir kodlama yapmamız yeterlidir.
 
 ```csharp
@@ -389,8 +385,6 @@ Nihayet test yapabilmek için gerekli ortamı hazırladığımızı ifade edebil
 
 Görüldüğü gibi, ServiceX ve ServiceY isimli servislerin açılmaları ve kapatılmaları, Managed Discovery Proxy servisi tarafından tespit edilebilmiştir. ServiceX'in online olduğu zaman dilimi içerisinde, istemciden gelen talep başarılı bir şekilde karşılanabilmiştir. Farklı bir testide şu şekilde yapmak gerekir. İstemci uygulama, ServiceX için talepte bulunmadan önce, ServiceX kapatılır.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu durumda istemcinin aradığı kritere uyan bir servis ayakta olmadığı için, istemcinin bir işlem yapamıyor olması gerekir. Olayı istisna ile sonlandırmayı engellemenin yolu ise if ile yapılan Count kontrolüdür. Bu tip bir testin sonucunda çalışma zamanı görüntüsü aşağıdaki gibi olacaktır.
 
 ![blg70_Runtime2.gif](/assets/images/2009/blg70_Runtime2.gif)
@@ -400,3 +394,4 @@ Her ne kadar sadece iki çalışma zamanı testi yapılmış olsada, örneğin i
 ![blg70_Son.jpg](/assets/images/2009/blg70_Son.jpg)
 
 Nihayet, uzun saatlerin, gidilen kilometrelerce yolun sonunda gece bastırmış ve şehrin ışıkları görünmüştür. Hepimiz zaman zaman yazılım alanında bir konuyu öğrenirken bu tip zorlu yollardan geçmek zorunda kalabiliriz. Ancak sabırlı olanlarımız, yolun sonuna kadar gitmekten çekinmeyecek ve ödül olarak şehrin parlak ışıkları ile karşılanacaktır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

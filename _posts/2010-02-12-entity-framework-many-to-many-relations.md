@@ -37,8 +37,6 @@ Dikkat edileceği üzere Playlist, Track ve PlaylistTrack tablolarının tamamı
 
 Hımmm...
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Dikkat edileceği üzere PlaylistTrack tablosu model diagramına dahil edilmemiştir. Neden?
 
 SQL tarafına bakıldığında PlaylistTrack tablosu üzerinde sadece Playlist ve Track tablolarına ait Primary Key alanları bulunmaktadır. Bunlar dışında ek bir alan yoktur. Bir başka deyişle veritabanı tarafında Playlist ve Track tablolarının many-to-many ilişkilerinin sağlandığı tablodur. Ancak Entity Framework tarafında tabloların sınıflar yardımıyla ve bu sınıfların referans ettikleri diğer sınıfların ise özellikler yardımıyla belirtildiği bilinmektedir. Dolayısıyla Entity Framework tarafında PlaylistTrack isimli bir sınıfın oluşturulmasının bir anlamı yoktur. Dahası olmamasının bir kaybı da yoktur. Bu yüzden Playlist ve Track sınıfları birbirlerine EntityCollection tipinden olan navigasyon özellikleri yardımıyla (Tracks ve Playlists) doğrudan bağlanmışlardır. Bu durum ilişkiyi sağlayan bileşenin (Association nesnesi) özelliklerine bakıldığında da net bir şekilde görülebilir.
@@ -280,3 +278,4 @@ where ([TrackId] = @0)',N'@0 int',@0=3503
 Insert ve Update işlemlerinin incelenmesini de siz değerli okurlarıma bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ManyToMany_RC.rar (47,16 kb)](/assets/files/2010/ManyToMany_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

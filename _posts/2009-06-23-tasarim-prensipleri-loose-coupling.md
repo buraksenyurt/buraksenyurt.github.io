@@ -15,8 +15,6 @@ Yazılım teknolojilerinde uygulanan tekniklerin çoğunda temel tasarım prensi
 
 Enterprise yazılım süreçlerinde en çok zorlanılan noktalardan biriside müşteri ihtiyaçlarının sürekli olarak en hızlı şekilde karşılanması gerekliliğidir. Bu durumda yazılımın bir süre sonra kendinden geçerek
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 dağılmasını engellemek gerekmektedir. Bu anlamda uygulanan süreçlerin içerisinde önem arz eden noktalardan biriside, kullanılacak yazılım disiplinleridir. Bu nedenle Hatta bu presipler içerisinde tasarım desenlerininde (Design Patterns) önemli bir yeri vardır. Serimizin bu ilk yazısına en kolay prensip ile başlıyor olacağız; Zayıf Bağlılık (Loose Coupling) prensibi.
 
 Konuyu kavramamın en güzel yolu tahmin edeceğiniz üzere basit bir örnek üzerinden ilerlemek olacaktır. Bu amaçla aşağıdaki Console uygulamasını geliştirdiğimizi düşünelim.
@@ -210,8 +208,6 @@ Programı çalıştırdığımızda ise aşağıdaki sonuçları elde ederiz.
 ![blg35_6.gif](/assets/images/2009/blg35_6.gif)
 
 Böylece Temel Tasarım Prensiplerinden birisi ve bana kalırsa belkide en basiti olan Loose Coupling ilkesini incelemiş olduk. İlerleyen yazılarımızda diğer prensiplerede bakıyor olacağız. Örneğin Open Closed, Single Responsibility, Liskov Substitution vb...
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

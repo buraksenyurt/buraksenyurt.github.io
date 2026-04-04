@@ -14,8 +14,7 @@ categories:
 ---
 WinForms programcılığında sık rastlanan sorunlardan birisi de, kendi özel tiplerimizi liste bazlı kontrollere bağladığımız durumlarda ortaya çıkmaktadır. Acaba liste bazlı kontrolün içeriğini kendimiz nasıl belirleyebiliriz?
 
-![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_25.png)
-
 ![PhotoTrick7](/assets/images/2011/PhotoTrick7.png)
 
 [SmartToString.rar (36,38 kb)](/assets/files/2011/SmartToString.rar)
+

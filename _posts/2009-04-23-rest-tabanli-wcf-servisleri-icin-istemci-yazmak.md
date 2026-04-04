@@ -26,8 +26,6 @@ Burada görülen Microsoft.Http.dll, Microsoft.Http.Extension.dll ve Microsoft.S
 
 Sonraki adımda ise servis tarafından yayımlanan Product tipi ve buna ait örnekleri içeren koleksiyon bazlı listenin istemci tarafında bir şekilde temsil edilmesi gerekmektedir. Nitekim, istemciden gidecek talep sonrası (örneğin tüm ürün listesinin istenmesi) servisten gelecek cevap içeriği XML tabanlı olacaktır ve kod tarafında kolay bir şekilde yönetilebilmesi arzu edilir. İşte bu noktada da WCF Rest Starter Kit kurulumu sonrası Visual Studio 2008' e eklenen Paste XML as Types menü seçeneği dikkati çekmektedir. Aslında yapacağımız tek şey, istemci tarafında boş bir namespace oluşturmak (adını NorthwindV2 olarak verebiliriz), servisi bir kere kullanıp tüm ürün listesini istedikten sonra üretilen XML içeriğini tamamıyla kopyalamak ve Paste XML as Types menü seçeneği ile yapıştırmaktır.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Bunun sonucunda istemci uygulama tarafında aşağıdaki sınıf diagramında görülen tipler otomatik olarak oluşturulacaktır.
 
 ![blg6_3.gif](/assets/images/2009/blg6_3.gif)
@@ -125,8 +123,7 @@ kodu ile sadece ProductID, ProductName, CategoryID ve UnitsInStock alanlarını 
 
 Gayet kolay gördüğünüz gibi. Artık hedefimiz Post, Put ve Delete metodlarını istemci tarafından gönderip ele alabilmek. Yazıyı sonlandırmadan önce aslında bu modelin ne gibi bir farkı olduğuna bakmakta yarar var. Dikkat edileceği üzere istemci tarafı için ürettiğimiz herhangibir Proxy tipi bulunmamaktadır. (Hiç Add Service Reference dediğimi duydunuz mu?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 )
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

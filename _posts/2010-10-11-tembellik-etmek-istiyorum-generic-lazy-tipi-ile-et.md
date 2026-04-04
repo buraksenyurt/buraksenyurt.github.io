@@ -18,8 +18,6 @@ Aslında geliştiriciler için Lazy olmanın başka manaları da vardır. Olay s
 
 Bu nokta da Lazy tipinin iki önemli özelliği (Property) olduğunu ifade etmemiz gerekiyor. Value ve IsValueCreated. Aslında Value özelliği ve ToString () metodu çağırılana kadar T tipi ile ilişkili bir yükleme işlemi yapılmadığını söylersek sanıyorum ki olay daha net bir şekilde anlaşılabilir. Ancak konuyu kod yardımıyla irdelemek elbetteki en iyi yoldur.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 İlk etapta aşağıdaki Console uygulaması kodlarına sahip olduğumuzu düşünelim.
 
 ```csharp
@@ -118,3 +116,4 @@ Burada IncreaseListPrice metodunun parametresinde Lazy nesne örneği için bir 
 Görüldüğü gibi "Product Listesi Oluşturulacak" ifadesi sadece bir kere çağırılmıştır. Son olarak Lazy tipinin Thread Safety'yi varsayılan olarak sunduğunu bu nedenle Concurrent operasyonlarda ele alınabileceğini de belirtelim. Base Class Library içerisine.Net Framework 4.0 ile birlikte gelen pek çok yeni tip söz konusudur. Lazy bunlardan sadece bir tanesiydi. İlerleyen zamanlarda diğer yenilikleri de incelemeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [LazyInitializations_.rar (27,13 kb)](/assets/files/2010/LazyInitializations_.rar) [Örnek Visual Studio 2010 Ultimate sürümü ile geliştirilmiş ve test edilmiştir]
+

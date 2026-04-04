@@ -21,7 +21,7 @@ Bildiğiniz üzere bir süre önce Visual Studio 2010 ve.Net Framework ürünler
 
 Paralel programlamadan tutun, WCF Eco System'e, C# 4.0 ile birlikte gelen yeniliklerden, WF 4.0 tarafına kadar pek çok noktada ek kabiliyetler, iyileştirmeler ve daha fazlası söz konusu. Aslında sizde benim gibi zaman zaman bu alet kutusu içerisindeki parçalardan bir kısmını alıp, örnek bir uygulamada kullanmaya çalışarak vaktinizi değerlendirmeye ve dolayısıyla offlama sorununa çare bulmaya çalışıyor olabilirsiniz. İşte bende bu düşünceler eşliğinde, havanın çok güzel olduğu şu bahar aylarında dışarıya çıkıp dolaşma şansını bulmama rağmen, evde kalıp örnek bir uygulama geliştirmeye karar verdim. İşte bu yazımız için alet çantası içinden seçtiklerimiz.
 
-- Codeplex üzerinden yayınlanan bir adet [Chinook](http://chinookdatabase.codeplex.com/)veritabanı ([github'a taşındı](https://github.com/lerocha/chinook-database)) ![Wink](/assets/images/2010/smiley-wink.gif),
+- Codeplex üzerinden yayınlanan bir adet [Chinook](http://chinookdatabase.codeplex.com/)veritabanı ([github'a taşındı](https://github.com/lerocha/chinook-database)),
 - Ado.Net Entity Framework 4.0,
 - WCF Data Services,
 - C# 4.0 Optional, Named Parameters,
@@ -37,8 +37,6 @@ Gelelim alet çantasından çıkarttığımız araçlar ile yapmak istediğimize
 ![blg181_Solution.gif](/assets/images/2010/blg181_Solution.gif)
 
 İlk olarak ChinookEntityLayer isimli Class Library projesinin geliştirilmesi söz konusudur. Bu Library içerisine eklenen Ado.Net Entity Data Model içerisine, Chinook veritabanında yer alan tüm tabloları ekleyebiliriz. Örneğimizde çok basit bir operasyonu göz önüne alıyor olsakta, sizlerin bu örnekten ilham alarak farklı sorguları da işin içerisine katacağınıza eminim
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 ChinookServices isimli WCF Service Application tipinden olan uygulama, içerdiği WCF Data Service sayesinde Chinook veritabanına ait Entity koleksiyonlarını dış ortama sunmaktadır.
 
@@ -82,13 +80,11 @@ namespace ChinookServices
 
 Buna göre Chinook veritabanı içerisindeki Entity koleksiyonlarının tamamı sadece okunabilir olacak şekilde dış dünyaya sunulmaktadır.
 
-Artık istemci tarafının geliştirilmesine başlanabilir. Console uygulaması tipinden olan istemci tarafına (Neden Console şeklinde tasarladığımı lütfen sormayın ![Smile](/assets/images/2010/smiley-smile.gif)) öncelikle ChinookDataService isimli WCF Data Service örneğinin referans edilmesi gerekmektedir. Söz konusu servis ile istemci uygulama aynı Solution içerisinde yer aldığında Add Service Reference seçeneğini aşağıdaki şekilde görüldüğü gibi kullanmak yeterlidir.(Hatırlanacağı üzere Astoria kod adlı Ado.Net Data Service'lerin Visual Studio 2008 üzerinden kullanılan sürümlerinde, Add Service Reference seçeneği kullanılamamktaydı. Bunun için datasvcutil aracından yararlanmamız gerekiyordu. Tabiki, Data Service için Add Service Reference desteği Visual Studio 2010 içerisinde mevcut)
+Artık istemci tarafının geliştirilmesine başlanabilir. Console uygulaması tipinden olan istemci tarafına (Neden Console şeklinde tasarladığımı lütfen sormayın) öncelikle ChinookDataService isimli WCF Data Service örneğinin referans edilmesi gerekmektedir. Söz konusu servis ile istemci uygulama aynı Solution içerisinde yer aldığında Add Service Reference seçeneğini aşağıdaki şekilde görüldüğü gibi kullanmak yeterlidir.(Hatırlanacağı üzere Astoria kod adlı Ado.Net Data Service'lerin Visual Studio 2008 üzerinden kullanılan sürümlerinde, Add Service Reference seçeneği kullanılamamktaydı. Bunun için datasvcutil aracından yararlanmamız gerekiyordu. Tabiki, Data Service için Add Service Reference desteği Visual Studio 2010 içerisinde mevcut)
 
 ![blg181_ServiceReference.gif](/assets/images/2010/blg181_ServiceReference.gif)
 
 Artık istemci uygulama geliştirilmeye başlanabilir ki belki de işin en heyacanlı kısmı burasıdır
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 İşte Console uygulamamız ait kod içeriğimiz.
 
@@ -161,8 +157,6 @@ Console uygulaması kullanıcıdan bir AlbumId değeri istemektedir. Söz konusu
 
 Ta taaaaaa!!!
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Bence güzel bir örnek oldu. Ancak daha da geliştirilmesi lazım. Her şeyden önce Console tipinde olan istemci uygulamadan kurtulmak ve görsel arayüze sahip bir örnek üzerinden ilermelek daha yararlı olacaktır. Bu size bir ödev olabilir mesela. Yazımızı sonlandırmadan önce benim sizlere bir kaç sorum olacak;
 
 - Örnekte C# 4.0 ile birlikte gelen hangi yeni özellikler kullanılmıştır? (Daha önceki yazılarımızda değindik)
@@ -176,3 +170,4 @@ Bence güzel bir örnek oldu. Ancak daha da geliştirilmesi lazım. Her şeyden 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ServiceBasedExcel_RTM.rar (213,11 kb)](/assets/files/2010/ServiceBasedExcel_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

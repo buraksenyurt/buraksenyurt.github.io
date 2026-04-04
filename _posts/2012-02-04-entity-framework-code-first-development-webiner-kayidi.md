@@ -15,9 +15,6 @@ Hatırlayacağınız üzere Ocak ayı içerisinde [Nedirtv?com](http://www.nedir
 
 ![efcodefirst](/assets/images/2012/efcodefirst.png)
 
-
-![Sad smile](/assets/images/2012/wlEmoticon-sadsmile_11.png)
-
 31 Ocak tarihinde tekrarladığımız Webinerimizi ise şans esesi başarılı bir şekilde gerçekleştirdik ve Nedirtv?com bünyesinde yayına aldık
 
 ![Open-mouthed smile](/assets/images/2012/wlEmoticon-openmouthedsmile_24.png)

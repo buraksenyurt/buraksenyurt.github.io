@@ -126,8 +126,6 @@ namespace Before
 
 Çok doğal olarak foreach döngüsü içerisinde albums koleksiyonu üzerinde dolaşılırken sadece Album tipleri ele alınmak istenmiştir. Ancak birisi kazayla albumList isimli koleksiyona string tipte bir değişken göndermiş ve yukarıdaki çalışma zamanı hatasının alınmasına neden olmuştur. Aman tanrımmmm!!!
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Şimdi koleksiyonlar için bahsedilen Covariant tipte oldukları gerçeği Un-Safe Covariant olarak düzeltilmelidir. Nitekim tip güvenliğinin garanti altına alınması mümkün olmamıştır. Hatta pek çok kaynak object tipi ile çalışan koleksiyonların aslında tamamen Invariant olduklarını ifade etmektedir. Kafamız gittikçe karışıyor değilmi. Öyleyse...
 
 Peki ya diziler (Arrays)...
@@ -183,7 +181,7 @@ namespace Before
 }
 ```
 
-Burada WriteAll metodu IEnumerable tipinden bir parametre almaktadır. Buna göre tüm T generic tiplerinin object tipinden türeyeceği düşünüldüğünde herhangibir sorun olmayacağı sonucuna varılabilir (En azından kafamızdaki compiler bu kodu sorunsuz olarak derleyecektir. İlk etapta...![Wink](/assets/images/2009/smiley-wink.gif)) Yani Covariance olma durumu söz konusudur diyebiliriz...Mi acaba? İşte derleme zamanının bize vereceği cevap...
+Burada WriteAll metodu IEnumerable tipinden bir parametre almaktadır. Buna göre tüm T generic tiplerinin object tipinden türeyeceği düşünüldüğünde herhangibir sorun olmayacağı sonucuna varılabilir (En azından kafamızdaki compiler bu kodu sorunsuz olarak derleyecektir. İlk etapta...) Yani Covariance olma durumu söz konusudur diyebiliriz...Mi acaba? İşte derleme zamanının bize vereceği cevap...
 
 ![blg118_Exception2.gif](/assets/images/2009/blg118_Exception2.gif)
 
@@ -304,3 +302,4 @@ namespace NowInNet4
 Ben en azından biraz olsun anlamış durumdayım. Umarım sizlerede en iyi şekilde aktarabilmişimdir. Tekrardan görüşünceye dekhepinize mutlu günler dilerim.
 
 [CoContraVariance.rar (38,87 kb)](/assets/files/2009/CoContraVariance.rar)
+

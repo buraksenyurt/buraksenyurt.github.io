@@ -16,8 +16,6 @@ Uzun süredir şöyle deliksiz uyuyamıyordum. Malum evde bir afacan var. Pek uy
 
 Televizyonda yandaki resimde görülen adam vardı ve ismi Jason'dı. Açıkçası Jason Statham'ın fanatiği bir sinemasever olarak bu isim benzerliğinin, böyle korkutucu bir karakter üzerinde olması beni üzmüştü. Nitekim Jason ismini düşününce aklıma gıcır gıcır parlayan Audi marka arabalar gelmekteydi. Her neyse...Filme fazla takılmadım ama Jason, Jason derken, bu isim JSON diye dudaklarımdan süzülmeye başladı. Pek tabi bunun doğal sonucu olarak bilgisayarımın başına oturdum ve JSON ile ilişkili bir şeyler yazmaya karar verdim. İşte başlıyoruz
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Bildiğiniz üzere HTTP bazlı WCF servislerinden ([WCF WebHttp Services - JSON Formatlı Response Üretmek](/2010/02/18/wcf-webhttp-services-json-formatli-response-uretmek/)) JSON (JavaScript Object Notation) formatında çıktılar yayınlanabilmektedir. Bazı durumlarda istemci tarafı, JSON veri içeriği ile çalışmayı tercih edilebilir. Özellikle XML ile karşılaştırıldığında, JSON formatının daha az yer tutan bir yapıya sahip olması, bu seçimin yapılmasında önemli bir etkendir. Biz bu yazımızda bir WCF WebHttp Service tarafından yayınlanan JSON formatlı veri çıktısının, örnek bir Silverlight istemcisi tarafından nasıl ele alınabileceğini incelemeye çalışıyor olacağız.
 
 Silverlight tarafında JSON içeriği ile çalışabilmek adına geliştirilmiş JsonArray, JsonObject, JsonPrimitive gibi tipler bulunmaktadır. Bu tipler sayesinde JSON veri kümesinde yer alan string, number, Boolean gibi veri türleri kod içerisinde ele alınabilir. Ayrıca tek JSON nesnesi veya bir JSON nesne listesinin ele alınması da sağlanabilir. Bu geliştiriciler için önemlidir. Nitekim Web ortamında gelen JSON içeriğinin Parse edilme işlemleri ile uğraşılmasına gerek kalmamaktadır.
@@ -171,3 +169,4 @@ Bu metoda ait kod parçasındaki en büyük yardımıcı JsonArray tipi ve Load 
 Görüldüğü gibi JSON formatındaki içerik Silverlight tarafında başarılı bir şekilde ele alınmış ve veri bağlı bir kontrol (DataGrid) ile ilişkilendirilebilmiştir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [JsonConsumer.rar (1,92 mb)](/assets/files/2010/JsonConsumer.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde test edilmiştir]
+

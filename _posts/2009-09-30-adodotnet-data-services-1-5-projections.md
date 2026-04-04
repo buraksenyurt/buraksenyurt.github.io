@@ -21,8 +21,6 @@ Nitekim program yöneticisi olan Mike Flasko boş durmamış ve [Ado.Net Data Se
 
 Bu versiyonda bazı yenilikler ve daha önceki sürüme ait çeşitli düzeltmeler (bug-fix) yer almakta. Gelen yeni özelliklerden birisi de Projections kullanımı. Bu yeniliğe göre servis üzerinde gerçekleştirilen URL bazlı sorguların sonuçları kırpılabiliyor ve sadece ilgilenilmek istenenlerin istemci tarafına çekilmesi sağlanabiliyor.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bir başka deyişle, istemcinin yapmış olduğu bir talebin (Request) sonuçlarında sadece ilgilendiği özelliklerin getirilmesi sağlanabilmekte. Bunu tam olmasada, LINQ sorguları sırasında anonymous type kullanımına benzetebiliriz. Söz konusu özellik içerisinde primitive/complex tipleri veya navigation özelliklerini de kullanabilmekteyiz. Özelliğin getirisi, istemcinin talebi sonrası tüm Entity kümesinin işlenmesi ve ağ üzerinde hareket etmesi yerine, sadece istediği özellikleri içeren kümenin/kümelerin değerlendirilebilmesi olarak görülebilir.
 
 Bu çok doğal olarak istemci ile sunucu arasındaki trafiği boyutsal olarak azaltmaktadır. Projections kullanımı son derece basittir. Bunun için $select operatöründen yararlanılmaktadır. Tabiki konuyu anlamamızın en iyi yolu basit bir örneği adım adım geliştirmek ve üzerinde ilerlemekle olacaktır. Bu nedenle kolları sıvayıp işe koyulalım. İlk olarak Visual Studio 2008 ortamında (Service Pack 1 yüklü olan) basit bir Asp.Net Web Uygulaması oluşturarak işe başlayabiliriz. Sonrasında servisimiz için gerekli Entity kaynağını oluşturmamız gerekiyor. Bu amaçla Ado.Net Entity Framework'ten yararlanabilir ve yine kobay veritabanımız olan AdventureWorks'ü değerlendirebiliriz. Örneğimizde aşağıdaki EDM şemasını kullanıyor olacağız.
@@ -109,8 +107,6 @@ http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Prod
 
 Hımmm...
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu sorguya göre ProductSubcategory içeriğinden sadece Name alanını almakla kalmıyor, aynı zamanda alt kategoriye bağlı olan ürünleride çekiyoruz. Üstelik sadece ilk 2 ProductSubcategory tipini ele alıyoruz (Sondaki top=2 sorgusu nedeniyle). İşte çalışma zamanı çıktımız.
 
 ![blg79_ForthRun.gif](/assets/images/2009/blg79_ForthRun.gif)
@@ -144,8 +140,6 @@ ORDER BY [Project2].[ProductSubcategoryID] ASC, [Project2].[C7] ASC
 ```
 
 Amanınnnn!!!
-
-![Sealed](/assets/images/2009/smiley-sealed.gif)
 
 Aslında biraz can sıkıcı ama doğal olarak tüm Product alanlarının değerlendirildiğini görüyoruz. Nitekim aksini belirtmedik. Peki belirtebilir miyiz? Yani ProductSubcategory kümesinden ve genişletilebilen Product kümesinden bir kaç alanı almayı başarabilir miydik? İşte örnek bir cevabı
 
@@ -192,3 +186,4 @@ Görüldüğü üzere Ado.Net Data Services v1.5 CTP2 ile gelen Projection özel
 Bakalım Ado.Net Data Services 1.5 CTP2 tarafında bizleri başka ne gibi sürprizler beklemekte. Bu konularıda ilerleyen yazılarımızda değerlendirmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Projections.rar (53,71 kb)](/assets/files/2009/Projections.rar)
+

@@ -12,11 +12,7 @@ Son yıllarda bildiğiniz üzere Servis Tabanlı Uygulamalar (Service Oriented A
 
 Bu model ile, Ado.Net Entity Framework veya LINQ (Language INtegrated Query) bazlı sağlayıcılar üzerinden verinin REST tabanlı olarak sunulabilmesi mümkün hale geldi.Tabi bu geçişler sırasında Client Application Services ve Azure gibi kavramlar ile geliştiricinin hayatını kolaylaştıran REST Starter Kit gibi pek çok yeni fikir ve vizyon ile karşılaştık. Ama Microsoft cephesindeki yenilikler tüm hızıyla sürmeye devam etti, ediyor, edecek...
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Bir süredir.Net Framework 4.0 ve bu etapta WF 4.0&WCF 4.0 yeniliklerini incelemekteyim. Ancak arada kaçırdığım önemli bir konu var..Net RIA (Rich Internet Application) Services ve Silverlight
-
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
 
 Dolayısıyla bu yazımda sizlere,.Net RIA Servisleri ile ilişkili öğrendiklerimi ve bilgilerimi aktarmaya çalışıyor olacağım.
 
@@ -45,8 +41,6 @@ Zengin internet uygulamalarında, sunum katmanı/mantığı istemci tarafına y�
 DataService sınıfı aslında, temel CRUD (CreateRetrieveUpdateDelete) işlemlerini ve özel bir takım operasyonları içerebilir. Bunlara ek olarak doğrulama (Validation), yetkilendirme (Authorization) gibi kısıtlarıda ele alabilir. Bu nedenle DataService sınıfının, veri için ele alınacak iş mantığını içerdiğini söyleyebiliriz. DataService sınıfı genel olarak arka planda, hazır olan (built-in) veri modellerini kullanır. Yani Ado.Net Entity Framework veya LINQ to SQL burada göz önüne alınabilir. Elbetteki diğer veri kaynaklarıda gerek servisler, gerek özel kodlamalar yardımıyla kullanılabilir.
 
 İkinci bölümde yer alan DataContext sınıfı ise, servislerin istemciye sunduğu verilerin, tip bazındaki karşılıklarını içermektedir. Bu nedenle istemci tarafında, verilerin yüklenmesi, üzerinde yapılan değişikliklerin tekrardan sunucu tarafına gönderilmesi için gerekli kodlamaları ve metodlarıda hazır olarak içermektedir. Tahmin edeceğiniz üzere,.Net RIA Servislerinin Visual Studio 2008 ortamında geliştirilmesi son derece kolay ve basittir.
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Son olarak.Net RIA Servisleri ile ilişkili olaraktan merak edilen sorulara cevap bulabileceğiniz ve gerekli yüklemeleri edinebileceğini bir [internet adresini](http://silverlight.net/forums/t/80529.aspx) paylaşmak isterim.
 

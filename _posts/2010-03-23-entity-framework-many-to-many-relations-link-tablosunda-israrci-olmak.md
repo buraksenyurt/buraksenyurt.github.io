@@ -36,12 +36,8 @@ Burada dikkat edilmesi gereken noktalardan birisi, Key Property özelliğinin ku
 Yine dikkat edilmesi gereken önemli bir nokta vardır. PlaylistTrack Entity tipi içerisinde yer alan PlaylistId ve TrackId isimli alanlarının Entity Key özelliklerine true değer atanmıştır. Buna göre bu alanların Playlist ve Track tablosundaki karşılıkları ile ilişki kurabilmesi mümkün olacaktır. Dolayısıyla sıradaki adımımız tablolar arasındaki ilişkileri kurmaktır.
 
 > Aslında PlaylistId ve TrackId alanlarının oluşturulması şart değildir. PlaylistTrack tablosuna ait bilgileri silmediğimizden Association'ları oluşturduğumuz sırada söz konusu alanların otomatik olarak üretileceğini görebiliriz. Bu tekniğide tercih edebilirsiniz. Şu andaki ilerleyişimize göre Association'ların oluşturulması sırasında Add foreign key properties to the... seçeneğini kaldırmamız gerekmektedir. Ancak kolonların oluşturulmasını otomatikleştirmek istiyorsak, bu seçeneği işaretli bırakmamız gerekmektedir. Böyle yaptığımız takdirde kolon adlarının pekte istediğimiz gibi olmayacağını, yeniden isimlendirmemiz gerektiğinide belirtmek isterim. Tercih size kalmış.
->
-> ![Wink](/assets/images/2010/smiley-wink.gif)
 
 Şimdi bir düşünelim. Bir Playlist'e bağlı birden fazla Track olabilir. Benzer şekilde bir Track birden fazla Playlist içerisinde yer alabilir. Buna göre Playlist ve Track varlıkları arasında Many-To-Many ilişki söz konusudur. Bunu zaten biliyoruz
-
-![Smile](/assets/images/2010/smiley-smile.gif)
 
 Ancak bunun Entity Model diagram tarafında, şu andaki yapıya göre ifadesi nasıl olacaktır? Cevap; Playlist Entity'sinden PlaylistTrack Entity'sine ve benzer şekilde Track Entity'sinden yine PlaylistTrack Entity'sine doğru One-To-Many ilişki sağlayarak. Bunun için diagrama bir Association nesnesi eklenmesi yeterlidir (Add->Association).
 
@@ -166,12 +162,9 @@ ORDER BY [Project1].[PlaylistId] ASC, [Project1].[C1] ASC
 
 Buuuwvvvvv!!!
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Açıkçası ben bu tip bir tablonun eğer maliyet kaybı yoksa ısrarla eklenmesinden yana değilim. Yani Ado.Net Entity Framework gibi düşünüyorum. Fakat yazımızın başında da belirttiğimiz üzere ara tablonun, One-To-Many ilişkiler için gerekli olanlar dışında ek alanlar da içerebileceği durumlar söz konusu olabilir. Bu alanların zaman içerisinde tabloya eklenmesi ve Entity tarafına da taşınması gerektiği hallerde, Entity Model üzerinde söz konusu ara tablonun karşılığının olması, sadece Conceptual Model üzerinde müdahaleler yaparak işi kurtarmamızı sağlayabilir. Teorik olarak. Yine de anlattıklarımızın RC sürümü üzerinde yazıldığını belirtmek isterim. Yani ilerleyen sürümde farklılıklar söz konusu olabilir.
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RelationEntityCreation_RC.rar (52,15 kb)](/assets/files/2010/RelationEntityCreation_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

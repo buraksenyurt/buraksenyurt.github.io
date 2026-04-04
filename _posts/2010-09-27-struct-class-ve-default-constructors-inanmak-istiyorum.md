@@ -154,8 +154,6 @@ Struct'lar için açık bir şekilde varsayılan yapıcı metod tanımlayamıyor
 
 Çok doğal olarak burada Dana Scully olsaydı söz konusu soruyu cevaplamak için hasta üzerinde otopsi yapmaya, bir başka deyişle IL (Intermediate Language) koduna bakmaya karar verirdi
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Biz de böyle yapıyor olacağız. (Bu amaçla ILDASM veya Red Gate's.Net Reflector gibi araçlardan yararlanabiliriz)
 
 Person sınıfı için üretilen IL çıktısı aşağıdaki gibidir.
@@ -248,8 +246,7 @@ Bir başka deyişle initobj çağrısının uygulandığı Struct içerisindeki 
 
 Ajan Scully gözlerini mercekten kaldırır ve Fox'a döner. Bu kez yüzünde haklı bir tebessüm vardır ve "Endişelerin boşunaymış Mulder. Uzaylıların bu işle hiç bir alakası yok" der
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Başka bir macerada görüşünceye dek hepinize mutlu günler dilerim.
 
 [ClassStructAndConstructors.rar (21,32 kb)](/assets/files/2010/ClassStructAndConstructors.rar) [Örnek Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

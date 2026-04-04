@@ -20,8 +20,6 @@ Aslında lambanın etrafında şık bir küre bulunmaktaydı fakat sakarlığıy
 
 Ancak gecenin ilerleyen saatlerinde değil NASA, sıradan bir bölümü bile kazanmamın zor olduğuna kanaat getirdim. Nitekim ampülün zaman içerisinde çevreye yaydığı aşırı ısıyı tahmin edememiştim. Ancak odanın içerisine bir yanık kokusu yayıldığında bir şeylerin ters gittiğinin farkına varabilmiştim. En nihayetinde güzelim şapkanın ortasında kocaman bir yanık izi ve erimiş kumaş parçaları ile kala kaldım. Neredeyse koca bir delik açılmıştı.
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 İşte geçen gün yine böyle dahiyane bir fikir gelir mi aklıma diye düşünürken, WCF RIA Servis operasyonlarından dönen Entity nesnelerinin alanlarını rol bazlı olarak ele alabilir miyiz diye sorgulamaya başladım. Peki neden böyle bir ihtiyacımız olsun? Çok basit bir sebep öne sürebiliriz. Sunucu tarafındaki servisten dönen Entity örnekleri içerisindeki alanlarının bazılarının, Login olan kullanıcı tarafından görülmemesi veya kullanılamaması istenebilir. Malum DomainService tipi içerisinde yer alan operasyonlarda Login olan kullanıcının içerisinde bulunduğu rol elde edilebilmektedir. Buna göre sorgunun üreteceği çıktı içerisine dahil edilecek alanların yetkiye göre oluşturulması sağlanabilir...mi acaba? Durumu örnek bir senaryo üzerinden incelersek çok daha anlaşılır olacaktır. Öncelikli olarak AdventureWorks veritabanı içerisinde yer alan SalesOrderDetail isimli tabloyu kullanmak istediğimizi düşünelim.
 
 ![blg119_EntityModelLast.gif](/assets/images/2010/blg119_EntityModelLast.gif)
@@ -58,8 +56,6 @@ namespace RoleBasedFields.Web
 
 Ancak örnek senaryomuza göre JuniorSalesPerson rolünde olan bill isimli kullanıcının UnitPriceDiscount alanını görmemesi veya anlamlandıramaması gerekmektedir.(Anlamlandıramamasının ne kadar zor olduğunu biraz sonra anlayacağız) Buna göre sunucu tarafında yer alan operasyonun özelleştirilmesi gerekmektedir. Aslında yazımızın ulaşmak istediği tek nokta budur. Peki ama nasıl?
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Sonuçta istemci ve sunucu tarafında eş olan SalesOrderDetail Entity sınıf bilgisini çalışma zamanında değiştirmemiz şu etapta pek mümkün değildir. Akla ilk gelen yöntem result set çekilirken role göre gösterilmesi istenmeyen alana örneğin null değer atanmasını sağlamak olabilir. (Bu konu ile ilişkili olaraktan yaptığım araştırmalarda, blog girdisini hazırladığım tarih itibariyle [Brad Abrams'ın ilgili yazısında](http://blogs.msdn.com/brada/archive/2009/12/08/field-level-access-with-ria-services.aspx)bu tip bir teknik uygulandığını gördüm) Tabi örneğimizdeki alan null değer almamaktadır. Buna göre belki -1 değer atanması sağlanabilir. Ama bu durumdada alan yine görülebilir olacaktır.
 
 ![Undecided](/assets/images/2010/smiley-undecided.gif)
@@ -90,10 +86,9 @@ Peki istediğimiz bu muydu?
 
 Kesinlikle değil. Bizim hayalimiz ilgili alanın istemci tarafından görülmemesini sunucudaki operasyon üzerinden sağlamaktı. Oysaki öğrenebildiğimiz sadece şu oldu; servis tarafındaki operasyondon dönen resultSet içeriğindeki veriyi istersek Login olan kullanıcının rolüne göre değiştirebiliriz. İşte şu anda lambaya koyduğumuz şapkanın delindiğini görmekteyiz. Benim NASA hayalleri yine yalan oldu anlayacağınız.
 
-![Sealed](/assets/images/2010/smiley-sealed.gif)
-
 Peki ya çözüm?
 
 En ideal çözüm istemci tarafında kullanıcının rolüne göre ilgili alanının gizlenmesi olarak düşünülebilir. Ancak buda optimal bir çözüm olmayacaktır. Nitekim sunucu tarafında ele alınması gereken güvenlik konulu bir iş mantığını istemeden istemci tarafına taşımak zorunda kalmış oluruz. Tabi en büyük sıkıntılardan birisi şudur. Sunucu tarafında bu rol kontrolünü başarabilsek dahi, istemci tarafında gönderilecek entity örneklerinin dinamik olarak değişebiliyor olması gerekecektir. Oldukça zor bir işlem aslında...
 
 Anlaşılan bu konuda WCF RIA Services tarafında bir eksiklik var. Bende en ideal çözüm için araştırmalarıma devam ediyorum. Bakalım lambanın üzerine koyduğumuz şapkadaki deliği kapatabilecek miyiz? Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

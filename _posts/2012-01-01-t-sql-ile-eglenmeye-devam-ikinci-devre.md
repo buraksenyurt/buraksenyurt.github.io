@@ -16,14 +16,11 @@ tags:
 categories:
   - Veritabanı
 ---
-Hatırlayacağınız üzere geçtiğimiz günlerde kafayı T-SQL ile bozmuş ve can sıkıntısından eğlenceli ifadeler yazmaya çalışmıştım. Sanırım söz konusu bu eğlence sonraki günlere de sirayet etti ve yine bir kaç eğlenceli T-SQL sorgusu ile karşınızdayım (İnsan ne oldum dememeli ne olacağım demeli belki de…Ben ki SQL’ den nefret eden bir birey olarak bu hale geldiysem… ![Smile](/assets/images/2012/wlEmoticon-smile_26.png))
+Hatırlayacağınız üzere geçtiğimiz günlerde kafayı T-SQL ile bozmuş ve can sıkıntısından eğlenceli ifadeler yazmaya çalışmıştım. Sanırım söz konusu bu eğlence sonraki günlere de sirayet etti ve yine bir kaç eğlenceli T-SQL sorgusu ile karşınızdayım (İnsan ne oldum dememeli ne olacağım demeli belki de…Ben ki SQL’ den nefret eden bir birey olarak bu hale geldiysem…)
 
 ![fun2](/assets/images/2012/fun2.jpg)
 
-
 Aslında hiç vakit kaybetmeden sorgularımızı incelemeye başlayalım dilerseniz. Elbetteki yine merak ettiğim ve aklıma gelen bazı ihtiyaçlar dahilinde bu sorgular ortaya çıkmakta. Örneğin sakin sakin otururken ilk aklıma gelen T-SQL tarafında bizim söyleyeceğimiz bazı kriterlere göre rastgele şifre üretecek bir fonksiyon yazmak oldu
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
 Bunun için aşağıdaki T-SQL betiğini yazdım.
 
@@ -83,9 +80,7 @@ Select @Password3 [Password]
 
 ![artcl_4_1](/assets/images/2012/artcl_4_1.gif)
 
-Bu ilginç ama bana göre oldukça işe yarayacak T-SQL ifadesinden sonra bir başkası ile devam edelim. Söz gelimi veritabanınızda yer alan belirli bir Şemaya (schema) ait tablolarınızı yeni bir schema adına taşımak istiyorsunuz (İstemem demeyin ![Smile](/assets/images/2012/wlEmoticon-smile_26.png)) Bu durumda ne yaparsınız?
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
+Bu ilginç ama bana göre oldukça işe yarayacak T-SQL ifadesinden sonra bir başkası ile devam edelim. Söz gelimi veritabanınızda yer alan belirli bir Şemaya (schema) ait tablolarınızı yeni bir schema adına taşımak istiyorsunuz (İstemem demeyin) Bu durumda ne yaparsınız?
 
 Aslında geçtiğimiz yazımızdaki örneklerimizde kullandığımız system view nesnelerini göz önüne alırsak; öncelikli olarak ilgili şemadaki tabloları bulmamız ve her biri için dinamik bir T-SQL ifadesini yürütmemiz gerektiği ortadadır. Temel olarak şema transferi için aşağıdaki gibi bir T-SQL ifadesi kullanılabilir.
 
@@ -94,8 +89,6 @@ alter schema YeniSchemaAdi transfer [HumanResources].[Employee]
 ```
 
 Söz gelimi bu ifade ile Employee tablosunun HumanResources şemasından YeniSchameAdi şemasına transfer edilmesi sağlanmaktadır. Ancak işi zorlaştıran kısım bu T-SQL ifadesinin dinamik olarak oluşturulması ve yürütülmesi sırasında ortaya çıkmaktadır. Dolayısıyla bir cursor kullanımı ve söz konusu şemaya ait tablolar üzerinden dolaşılması, diğer yandan her bir tablo için ilgili şema transfer işini üstlenen T-SQL ifadesinin dinamik olarak oluşturulması ve bu ifadeninde dinamik olarak çalıştırılması gerekmektedir. Aynen aşağıdaki T-SQL betik bloğunda görüldüğü gibi
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
 ```text
 -- Önce yeni bir schema üretelim 
@@ -133,8 +126,6 @@ Sizi bilmem ama ben çok eğleniyorum. Hız kesmeden farklı bir T-SQL ifadesi v
 
 Tüm veritabanlarını gezmek için yine sistem SP’ lerinden birisi olan sp_MSforeachdb’ den yararlanabilirdim. Hatta daha önceden yaptığımız gibi bir temp tablo kullanıp tüm sonuçları buraya da aktarabilirdim. Hımm…Beni biraz uğraştıran bir sorgu oldu aslında. Nitekim toplam tablo sayısını bulmak için öncelikli olarak her bir veritabanı bağlantısı altında çalıştırılacak T-SQL ifadeleri gerekiyordu. Bir başka deyişle yine dinamik olarak üretilecek ve her bir veritabanı için çalıştırılacak bir T-SQL ifadesi söz konusuydu
 
-![Confused smile](/assets/images/2012/wlEmoticon-confusedsmile_15.png)
-
 Ancak biraz uğraştıktan ve epey bir hata aldıktan sonra aşağıdaki T-SQL sorgusunu yazmayı başarabilmiştim.
 
 ```text
@@ -163,13 +154,9 @@ Drop Table #AllTables
 
 ve işte sonuçlar
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
-
 ![artcl_4_3](/assets/images/2012/artcl_4_3.gif)
 
 Merak ettiğim bir diğer konu ise Insert işlemlerine ilişkindi. Bazı hallerde bir Insert işlemi gerçekleştirildiğinde, insert edilen verilerin başka bir tabloya da aktarılması istenebilir. Söz gelimi bir tablo için gerçekleştirilen Insert işlemi sırasında, History bilgisini tutan başka bir tabloya da veri aktarımı yapılması sırasında... Burada aslında output anahtar kelimesi ve Inserted elemanının kullanıldığı bir ifade dizimi söz konusudur. Çoğumuz Insert işlemini bu tip bir şekilde çok fazla kullanmamışızdır eminim ki
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
 Senaryo gereği OziRestoran isimli bir veritabanı oluşturup üzerine Siparis ve SiparisTarihce isimli iki tablo ekledim.
 
@@ -195,8 +182,6 @@ Go
 ```
 
 Insert işlemimizde şunu yapmak istediğimizi düşünelim; Siparis tablosuna bir satır eklenirken, üretilen otomatik SiparisId, Aciklama ve Tarih alanları değerlerinin, siparisi onaylayan kişi bilgisi ile birlikte tarihçe tablosuna yazdırılmasını istiyoruz
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
 İşte Insert sorgumuz.
 
@@ -224,8 +209,6 @@ Görüldüğü üzere Insert ifadesi yazılırken output anahtar kelimesinden it
 ![artcl_4_4](/assets/images/2012/artcl_4_4.gif)
 
 Hazır Insert işlemlerinden konu açılmışken acaba içeriğini rastgele test verisi ile dolduracağımız devasa boyutlu tabloları nasıl oluşturabiliriz sorusu aklıma geldi
-
-![Smile](/assets/images/2012/wlEmoticon-smile_26.png)
 
 Aslında bu konuda bir önceki çalıştığım firmada Database Developer arkadaşlarımın yaptığı önemli çalışmalar vardı. Milyonlarca anlamlı veri yığını oluşturuyorlardı. Onların eline su dökemem belki ama en azından kendi çapımda bir şeyler yapabilirim diye düşündüm. İşe basit bir senaryo ile başladım. Örneğin rastgele Ad,Sodad,Şehir,Maaş ve Seviye bilgilerinden oluşacak bir veri tablosunu üretmeye çalıştım. Bu amaçla aşağıdaki gibi bir sorgu oluşturdum.
 
@@ -294,17 +277,11 @@ Select * From PersonelTestTable
 
 Şimdi burada işin püf noktası Adlar, Soyadlar ve Sehirler tablolarının CROSS JOIN ile birleştirilmesi ve PersonelTestTable içerisine atılması işlemidir. Çok doğal olarak ortaya 1200 satırlık (10 Ad X 10 Soyad X 12 Şehir) veri kümesi çıkacaktır
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
-
 ![artcl_4_5](/assets/images/2012/artcl_4_5.gif)
 
 Eğer kombinasyon sayısını arttırırsanız kısa sürede milyonlarca satırdan oluşabilecek devasa test verileri üretebilirsiniz. Örneği geliştirmek sizin elinizde
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
-
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda sadece 5 çeşit T-SQL ifadesine değindik ancak inanıyorum ki ilerleyen zamanlarda bunlara yenilerini ekliyor olacağım. Çünkü bu iş çok eğlenceli olmaya başladı. Merak işte
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_77.png)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

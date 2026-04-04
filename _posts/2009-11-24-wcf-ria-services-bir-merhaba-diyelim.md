@@ -22,11 +22,7 @@ Bildiğiniz üzere RIA Service'leri ile Silverlight gibi Rich Internet Applicati
 
 Ancak hemen öncesinde çok basit bir Hello World uygulaması yaparak, Silverlight uygulaması içerisinden WCF RIA Service'lerin nasıl kullanılabileceğini görelim. Örneğimizi mümkün olduğunda basit bir şekilde gerçekleştireceğiz. WCF RIA Service'imiz arka planda Entity Data Model'i kullanıyor olacak. Bu amaçla kaynak bir veritabanını SQL üzerinde ele alacağız. Ancak bu sefer AdventureWorks değil
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Yihaaaa!!! Bu kez örnek olarak [Chinook](http://chinookdatabase.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=21111)isimli Codeplex üzerinden yayınlanan ve pek çok MVP, Microsoft çalışanı ve profesyonlin konu anlatımlarında kullandığı açık kaynak veritabanını ele alacağız. Haydi bakalım parmakları sıvayalım.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 İlk olarak örneğimizi Visual Studio 2010 Ultimate Beta 2 üzerinde geliştirdiğimizi ifade etmek isterim. Diğer yandan [Silverlight 4.0 Beta ve WCF RIA Services](http://www.silverlight.net/getstarted/riaservices/) kurulumlarının da yapılmış olması gerektiğini hatırlatalım. Eğer bu kurulumlar tamamlandıysa işe basit bir Silverlight Application projesi oluşturarak başlayabiliriz. Oluşturma işlemi sırasında, Enable.NET RIA Services seçeneğini etkinleştirmemiz gerekmektedir ki WCF RIA Service'leri kullanabilelim (Tabi isim değişse de IDE üzerinde henüz değişmemiş olduğu gözden kaçmamalıdır. Belkide isim değişmez. Immm...Bilemiyorum. Değişirse iyi olur tabi)
 
@@ -135,8 +131,7 @@ Ve çalışma zamanındaki sonuç;
 
 Tabi daha ne kolaylıklar bar Visual Studio tarafında bir bilseniz.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 İştahınızı kabartmış olabilirim ama devamı için görsel videolarımı bekleminizi öneririm. Umarım vakit bulup çekeceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SilverlightApplication3.rar (1,28 mb)](/assets/files/2009/SilverlightApplication3.rar)
+

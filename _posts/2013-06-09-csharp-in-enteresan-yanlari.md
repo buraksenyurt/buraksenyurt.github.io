@@ -21,9 +21,7 @@ Yazılım sektöründe yer alan bizler, mutlak suretle en az bir programlama dil
 İşte size C# dili ile ilişkili olarak pek çoğumuzun hatırından giden bir kaç enteresan vaka…
 
 > Bu arada C# diline ait geniş bir dökümantasyonu C:\Program Files\Microsoft Visual Studio 11.0\VC#\Specifications\1033 klasörü altında bulabilirsiniz
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_145.png)
->
+
 > 527 sayfalık CSharp Language Specification isimli bu döküman, elinizin altındaydı her zaman. Başka bir kitaba ihtiyacınız yok. En azından başlangıç seviyesinde. Visual Studio 2012 kurulumu sonrası gelen bu dökümantasyon aslında C# 3.0 sürümünden beri de mevcut.
 
 Bu yazımızda örnek 5 vaka çalışması üzerinde duruyor olacağız.
@@ -53,8 +51,6 @@ class Vehicle
 
 Vehicle sınıfı içerisinde tanımlanmış olan _vehicleId alanı private erişim belirleyicisi ile işaretlenmiştir. Ancak dikkat edilmesi gereken bir nokta vardır. Sınıf içerisinde tanımlanan IsEqual metodu parametre olarak başka bir Vehicle nesne örneğini almakta ve içerisinde bu örneğe ait _vehicleId alanını kullanmaktadır.
 
-![Sarcastic smile](/assets/images/2013/wlEmoticon-sarcasticsmile_12.png)
-
 Kullanabilmektedir. Derleyici buna kızmamaktadır. Peki uygulama tarafına geçelim ve aşağıdaki test kodlarını değerlendirelim.
 
 ```csharp
@@ -80,7 +76,7 @@ Dikkat edileceği üzere parametre olarak gelen vehicle değişkeni üzerinden, 
 
 ## Vaka 2 – Çok yerde faydasını gördüğümüz genişletme metodları (Extension Methods), Enum sabitlerine de uygulanabilir.
 
-Genişletme metodları (Extension Methods) özellikle elimize kodları kapalı olarak gelen assembly dosyaları düşünüldüğünde, bunları ek fonksiyonellikler ile genişletmede kullanılan önemli kavramlardan birisidir. Çoğunlukla türetilemeyen veya az önce de bahsettiğimiz gibi kodları kapalı gelen sınıflar için kullanıldığına sıklıkla şahit oluru. ([Extension Method’ lar ile ilişkili bir internet sitesi dahi vardır](http://www.extensionmethod.net/csharp) ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_145.png)) Ancak bu özelliğin Enum sabitleri için de kullanılabildiğini fark etmiş miydiniz? Örneğin,
+Genişletme metodları (Extension Methods) özellikle elimize kodları kapalı olarak gelen assembly dosyaları düşünüldüğünde, bunları ek fonksiyonellikler ile genişletmede kullanılan önemli kavramlardan birisidir. Çoğunlukla türetilemeyen veya az önce de bahsettiğimiz gibi kodları kapalı gelen sınıflar için kullanıldığına sıklıkla şahit oluru. ([Extension Method’ lar ile ilişkili bir internet sitesi dahi vardır](http://www.extensionmethod.net/csharp)) Ancak bu özelliğin Enum sabitleri için de kullanılabildiğini fark etmiş miydiniz? Örneğin,
 
 ![csmyth_3](/assets/images/2013/csmyth_3.png)
 
@@ -142,8 +138,6 @@ Enum sabitinin kodlarının kapalı bir Assembly içerisinde olduğunu farz edec
 
 Bunu yazdığımızda göre önemli olsa gerek
 
-![Smile](/assets/images/2013/wlEmoticon-smile_65.png)
-
 Haydi gelin aşağıdaki kod parçasını göz önüne alalım.
 
 ```csharp
@@ -179,8 +173,6 @@ Program sınıfı içerisinde tanımlanmış olan r1 ve r2 static alanlarının 
 ![csmyth_5](/assets/images/2013/csmyth_5.png)
 
 Peki static alanların sırasını değiştirirsek?
-
-![Sarcastic smile](/assets/images/2013/wlEmoticon-sarcasticsmile_12.png)
 
 ```csharp
 using System; 
@@ -306,8 +298,6 @@ static void Main(string[] args)
 
 Dikkat edileceği üzere 0, 1, 2, 3 ve 4 numaralı indislere farklı Person nesne örnekleri atanmıştır. subSet değişkeninin elde ediliş şekline dikkat ettiniz mi
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_145.png)
-
 İşte burada params anahtar kelimesinin etkisi görülmektedir. Senaryomuza göre burada PersoneId değeleri gönderilmiş ve ona uygun olacak bir sonuç alınmıştır.
 
 singlePerson değişkeninin elde edilmesi sırasında ise, params anahtar kelimesinin kullanılmadığı indeksleyici versiyonu çalışacaktır. İşte uygulamanın çalışma zamanı sonuçları.
@@ -350,8 +340,6 @@ Console.WriteLine("Intern çağrısı sonrası. selim pool {0}", String.IsIntern
 ![csmyth_10](/assets/images/2013/csmyth_10.png)
 
 Bu yazımızda şöyle kıyıda köşede kalmış olabilecek bir kaç dil kabiliyetine yer vermeye çalıştık. Kimbilir gözümüzden kaçan, dikkat etmediğimiz veya kullanmadığımız için zamanla unuttuğumuz neler var. Biraz ilham vermiş olabilirim. Siz de araştırın bakalım. Bir başka yazımızda görüşmek dileğiyle hepinize mutlu günler dilerim
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_145.png)
 
 [HowTo_CSharp_Myths.zip (42,82 kb)](/assets/files/2013/HowTo_CSharp_Myths.zip)
 

@@ -42,10 +42,6 @@ Diyelim ki elinizde aşağıdaki gibi Master-Child veri ilişkisi içeren (1 gru
 
 ve sizde örneğin WPF-XAML tarafında buradaki Master-Detail ilişkiyi kullanmak ve hatta iki veri bağlı kontrol üzerinden sembolize etmek istiyorsunuz. Ne yaparsınız? Belki de aşağıdaki fotoğrafta görülen tekniği kullanırsınız
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_155.png)
-
 ![tfi_83](/assets/images/2013/tfi_83.png)
 
 Bir başka ipucunda görüşmek dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_155.png)

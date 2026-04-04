@@ -53,8 +53,6 @@ Dikkat edileceği üzere pi değişkeni bilinçli olarak double tipine dönüşt
 
 Şimdi durumu biraz daha entersan bir hale getireceğiz. Aşağıdaki kod parçasını göz önüne alın ve kodu kafanızda derleyip hata olup olmadığını söyleyin. Sonrasında ise çalışma zamanında bir hata oluşup oluşmayacağını düşünün ve bir karar daha verin. En sonunda ise bunu, konu ile ilgili yakın arkadaşlarınızla tartışın
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 ```csharp
 object pi = Math.PI;
 object square = (int)pi * 10 * 10;
@@ -86,8 +84,6 @@ dynamic square = pi * 10 * 10;
 
 object tipinin kullandığımız örneğe (Case 2) baktığımızda derleme zamanında bir hata aldığımızı hatırlıyoruzdur sanırım. Oysaki dynamic tipi derleme zamanı ile ilgilenmemektedir. Çalışma zamanında ise pi'yi gereken tipte ele almaktadır. Zaten object tipini kullandığımız üçüncü senaryomuzu ele almamıza da gerek kalmamıştır.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Buna göre şöyle bir sonuca varabiliriz. Dynamic tipin kullanıldığı hallerde derleyicinin (Compiler) derleme zamanında tip tahmini yapmasına gerek yoktur. Bu çözümleme işi çalışma zamanında yapılmaktadır.
 
 Tabi bu sonuçlara göre "her yerde dynamic tip kullanalım mı?" sorusu da gündeme gelir. Ancak "metodlara parametre aktarımlarında dynamic kullanımının kodun kırılmasına neden olması söz konusu olabilir mi?" sorusu daha da önemlidir. Şimdi bu durumu ele almaya çalışalım. İşte kodlarımız;
@@ -105,8 +101,6 @@ static double Calculate(double r)
 ```
 
 Bu kod parçasında kodu kırmaya yönelik olarak bir hamle yapıldığı düşünülebilir. Calculate metodu double tipinden bir değer beklemektedir. Biz ise dynamic olarak tanımladığımız R değişkenine string bir değer atayarak parametre gönderme işlemini gerçekleştirmekteyiz. Dynamic kullanımına göre derleme zamanında bir hata mesajı alınmaması normaldir. Benzer şekilde çalışma zamanında gelen string tipinin, double tipe otomatik olarak dönüştürüleceğini de düşünebiliriz. Eğer böyle olsaydı, kodun dynamic tipi yardımıyla kolayca kırılabileceği sonuçlarına varabilirdik. Şükür ki çalışma zamanında aşağıdaki hata mesajı ile cezalandırılırız.
-
-![Laughing](/assets/images/2010/smiley-laughing.gif)
 
 ![blg139_Case6.gif](/assets/images/2010/blg139_Case6.gif)
 
@@ -133,8 +127,6 @@ Bu durumda daha derleme zamanında hata mesajı alırız. Aşağıdaki şekilde 
 
 Dolayısıyla tip dönüşümü yapmamız şarttır. Öyleyse yapalım.
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 ```csharp
 object R = 12.1;
 Calculate((int)R);
@@ -158,3 +150,4 @@ Bu durumda çalışma zamanında her hangibir hata mesajı alınmadan ilerlenebi
 Görüldüğü üzere derinlerde, dynamic ve object kullanımları arasında belirgin farklılıklar bulunmaktadır. Bunların sebepleri aşikardır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek, hepinize mutlu günler dilerim.
 
 [DynamicVsObject_RC.rar (20,73 kb)](/assets/files/2010/DynamicVsObject_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

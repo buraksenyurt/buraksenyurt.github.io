@@ -20,8 +20,6 @@ Doğrulanan bir kullanıcının (Authenticated User), sistem içerisinde yapabil
 
 Bu yazımızda bir önceki örneğimizi devam ettirerek rol ve profil özelliklerinin nasıl değerlendirilebileceğini ele almaya çalışıyor olacağız. Temel amacımız rol ve profil bilgilerinin özellikle istemci tarafında nasıl kullanılabileceğini görmek olduğundan çok işe yarar bir örnek geliştirmeyeceğimizi şimdiden belirtmek isterim
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Öncelikli olarak sunucu uygulama tarafında rol ve profil yönetimi için gerekli ayarları yapmamız gerekiyor. Bir önceki örneğimizde kullandığımız buraks ve bill isimli kullanıcıları sırasıyla Developer ve Administrator isimli rollere atadığımızı düşünerek devam edeceğiz. Hatta testlerimizi daha iyi yapabilmek adına bill isimli kullanıcının her iki rol atlında da bulunması sağladığımızı düşünelim. Bu şekilde istemci tarafına birden fazla rol bilgisinin nasıl aktarıldığını değerlendirme fırsatımız olacaktır. Bildiğiniz üzere rol atama işlemleri için ASP.NET Configuration aracını kullanabiliriz. Rol atama işlemlerinin ardından örneğimizde kullanacağımız bir kaç profil özelliğini tanımlayarak devam edebiliriz. Bu amaçla Web.config dosyamızın içeriğinde aşağıdaki değişiklikleri yaptığımızı düşünelim.
 
 ```xml
@@ -261,3 +259,4 @@ Bu işlemin ardından tekrar Logout olup yeniden Login işlemini gerçekleştiri
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda WCF RIA Service - Authentication Domain Service hizmetini kullanaraktan Silverlight uygulamalarında Role ve Profile alt yapılarının nasıl değerlendirilebileceğini incelemeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SilverlightApplication7RoleAndProfile.rar (780,46 kb)](/assets/files/2010/SilverlightApplication7RoleAndProfile.rar) [Dosya boyutunun küçük olması için ASPNETDB.mdf içeriği çıkartılmıştır]
+

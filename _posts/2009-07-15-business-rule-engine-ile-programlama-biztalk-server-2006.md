@@ -15,15 +15,11 @@ Yıllardır yazılım projelerinde görev almaktayım. Çeşitli projelerde pek 
 
 Tabiki burada müşterinin kastettiği iş kurallarının nasıl tanımlandığından tutunda dile getiriliş şekli daha çok büyük öneme sahiptir. Nitekim öyle kurallar olabilir ki, yada bu kurallar öyle şekillerde dile getirilebilirki, yorumlayabilmek veya uygulatabilmek için yapay zeka stratejilerinin ele alınması zorunlu hale gelir. Ben tabiki konunun bu kısmına en azından şu an için girmemeyi tercih etmekteyim
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Özetle büyük çaplı uygulamalarda karşılaştığımız en büyük sorunlardan birisinin, müşterinin kullandığı ürün ile ilişkili olaraktan tanımlamış olduğu iş kurallarının (Business Rules) koda müdahele etmeden yönetilebilmesi olarak düşünebiliriz. Bazı durumlarda, ürüne ait iş kuralları baştan bellidir ve değişmezdir. Bu tip senaryolara az rastlanmakla birlikte geliştirilmesi kolaydır. Nitekim kod içerisinde konulacak katı kurallar ile söz konusu geliştirme pekala yapılabilir.
 
 Ancak, müşterinin uygulama üzerindeki iş kurallarını yeri geldiğinde değiştirebilmesi isteği (çok sık olmasa bile) geliştirme sürecinde bizleri bir çıkmaza düşürebilir. Öyleki, çalışmakta olan sistem içerisindeki kuralların esnetilebilmesi, değiştirilebilmesi ve hatta yenilerinin eklenebilmesi demek, kodu geliştirmeye devam etmek (Development), yeniden test (Testing) ve tekrardan dağıtım (Deployment) anlamına gelmemelidir. Her geliştirici takımı bu tip durumlara karşın, uygulamasının kodunu tekrardan güncellemeye gerek bırakmadan yeni kuralları kolayca öğrenebilmesi üzerine tasarlamak ister. Lakin bu sanıldığı kadar kolay bir süreç olmayabilir. Bir noktada XML tabanlı olaraktan söz konusu kuralların saklanması ve kod içerisine ele alınması düşünebilir.
 
 Hatta daha önceden çalıştığım çok değerli bir şirketin iş akışları üzerine geliştirdiği bir ürün, akış tasarımları, yönetimi ve geliştirilmesi için XML tabanlı olan ve basit IDE ile çalışan sistemi, Web tabanlı uygulama olarak başarılı bir şekilde dağıtabilmiştir. Hatta Workflow tabanlı WCF servislerinde (Workflow Based WCF Services) bile gelinen nokta, içeriğin XAML olarak ifade edilebilmesi ve bu nedenle koda müdahele etmeden de değiştirilebilmesi değil midir?
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Tüm bunlar bir yana dursun Biztalk ailesinde, kuralları kolayca geliştirebileceğimiz, veritabanı (database), XML veya.NET tipleri gibi kaynaklardan kural verilerini alıp değerlendirebileceğimiz bir IDE zaten mevcuttur (Business Rule Composer). Hatta kendi uygulamalarımız için Biztalk'un hazır kural moturunuda (Business Rule Engine-BRE) kullanabiliriz. Sanıyorum ki artık sadede gelsem iyi olacak. Bu yazımızda giriş seviyesininde altında kalmak üzere, Biztalk Server 2006 ile birlikte gelen Business Rule Engine kütüphanesini nasıl kullanabileceğimizi ve iş kurallarını tanımlamak için Business Rule Composer aracını nasıl ele alabileceğimizi incelemeye çalışıyor olacağız.
 
@@ -170,3 +166,4 @@ Böylece geldik zevkli bir konunun daha sonuna. Umarım sizler içinde yararlı 
 [HelloBRE.rar (37,09 kb)](/assets/files/2009/HelloBRE.rar)
 
 [Meraklısı için Business Rule Engine kavramı ile ilişkili detaylı bilgi](http://en.wikipedia.org/wiki/Business_rules_engine)
+

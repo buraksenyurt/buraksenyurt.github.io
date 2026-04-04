@@ -11,8 +11,6 @@ Ado.Net Entity Framework'ün en çok eleştirilen yönlerinden birisi, ORM (Obje
 
 Bu yazımızdaki temel amacımız ise, Ado.Net Entity Framework'ün bir önceki sürümünde durumun ne olduğunu anlamaya çalışıp, 4.0 Beta 2 sürümünde Lazy Loading adına hangi özelliğin getirildiğini (belkide getirilmediğini) ve nasıl kullanıldığını görebilmektir. Örneklerimizde Codeplex üzerinden açık kaynak olarak yayınlanan Chinook veritabanını kullanıyor olacağız. Haydi parmakları sıvayalım
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Örneklerimizden ilkini Visual Studio 2008 diğerini ise Visual Studio 2010 Ultimate Beta 2 ortamında geliştiriyor olacağız. Ancak her iki örnekte aşağıdaki şekilde görülen tabloları kullanıyor olacak.
 
 ![blg112_Model.gif](/assets/images/2009/blg112_Model.gif)
@@ -174,13 +172,11 @@ namespace ReallyLazy
 
 Dikkat edileceği üzere kod içerisinde herhangibir şey belirtmememize rağmen Album nesneleri ile ilişkili olan Track nesnelerinin Count özelliklerinin değerleri elde edilebilmiştir. Peki arka planda çalışan SQL sorgusu (sorguları)?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 İşte SQL Server Profiler aracından elde edilen sonuçlar;
 
 ![blg112_Profiler2.gif](/assets/images/2009/blg112_Profiler2.gif)
 
-Görüldüğü gibi foreach döngüsü içerisinde Track.Count özelliğine gidildiği her noktada bir SQL sorgusu çalıştırılmış ve o anki albüme bağlı olan parça bilgileri çekilmiştir. Dikkat edileceği üzere Count için SQL tarafında yapılmış özel bir sorgulama yoktur. Bu değer kod tarafında elde edilmektedir. Aslında bu çalışma şeklinin Load metodunun kullanımındaki ile benzer olduğunu söyleyebiliriz. Benzer diyorum çünkü Load kullanımında çalıştırılan SQL sorgusu ile buradaki arasında fark vardır. (Bakalım iki şekil arasındaki 9 farkı bulabilecek misiniz? ![Smile](/assets/images/2009/smiley-smile.gif))
+Görüldüğü gibi foreach döngüsü içerisinde Track.Count özelliğine gidildiği her noktada bir SQL sorgusu çalıştırılmış ve o anki albüme bağlı olan parça bilgileri çekilmiştir. Dikkat edileceği üzere Count için SQL tarafında yapılmış özel bir sorgulama yoktur. Bu değer kod tarafında elde edilmektedir. Aslında bu çalışma şeklinin Load metodunun kullanımındaki ile benzer olduğunu söyleyebiliriz. Benzer diyorum çünkü Load kullanımında çalıştırılan SQL sorgusu ile buradaki arasında fark vardır. (Bakalım iki şekil arasındaki 9 farkı bulabilecek misiniz?)
 
 > Kişisel Not: Aslında bazı blog yazılarında LazyLoadingEnabled özelliğinin true olması halinde bu şekilde çalıştığı gösterilmiştir. İşte sürüm farklılıklarının bir sonucu daha. Bu nedenle Beta 2 üzerinde yazdığımız bu konunun gelecek sürümlerde değişikliğe uğraması söz konusu olabilir.
 
@@ -207,8 +203,6 @@ FROM [dbo].[Album] AS [Extent1]
 ```
 
 Sanırım yazımızın başladığı noktadaki sonuçlara döndük ne dersiniz?
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Özetle Ado.Net Entity Framework 4.0 Beta 2 sürümünde Lazy Loading kabiliyetinin varsayılan olarak açık geldiğini ve istendiğinde Context nesnesinin LazyLoadingEnabled özelliğine atanacak false değeri ile kapatılabileceğini görmüş olduk. Bakalım sürümün ileriki versiyonlarında ne gibi yenilikler olacak. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

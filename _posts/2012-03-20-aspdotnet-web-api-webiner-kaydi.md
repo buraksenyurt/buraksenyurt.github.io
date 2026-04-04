@@ -23,10 +23,7 @@ categories:
 
 ![AspNetWebAPIWebiner](/assets/images/2012/AspNetWebAPIWebiner.png)
 
-
 Geliştirdiğimiz ilk örnekte Asp.Net MVC 4.0 ile birlikte hazır olarak gelen WebAPI şablonunu kullandık ve IE (Internet Explorer) aracılığıyla bazı sorgular tükettik. Bu sorgularda OData ifadelerinden bir kaçına da yer verdik. İkinci örneğimizde ise Self-Based olaraktan REST tabanlı servisleri nasıl host edebileceğimizi gördük. Webiner kaydına aşağıdaki adresten ulaşabilirsiniz. Her zamanki gibi kayıt alan Bahtiyar Dilek arkadaşımıza canı gönülden teşekkürlerimi sunuyorum
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_86.png)
 
 Bir sonraki Webiner’ de görüşmek dileğiyle hepinize mutlu günler dilerim.
 

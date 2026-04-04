@@ -17,11 +17,7 @@ Diyelim ki uygulamanızda zaman zaman da olsa farklı referanslar da duran ve ay
 
 Mantıksal olarak her iki koleksiyonu dolaşacak ortak bir döngü ile bire bir kıyaslama yolunu tercih edersiniz
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_122.png)
-
 Ama daha pratik yollar da var. Örneğin aşağıdaki gibi
-
-![Smile](/assets/images/2012/wlEmoticon-smile_54.png)
 
 ![tfi_74](/assets/images/2012/tfi_74.png)
 

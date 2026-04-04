@@ -42,8 +42,6 @@ Small seçimi aslında arka planda 1 ile 4 arası Cache Server'ın kullanılabil
 
 Birde mantıksal modele bakalım mı?
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Haydi bakalım.
 
 ![blg95_Logical.gif](/assets/images/2009/blg95_Logical.gif)
@@ -173,8 +171,6 @@ namespace HelloVelocity
 
 Aslında DataCache nesnesi Cache ile ilişkili tüm yönetsel işlemleri üstlenmektedir. Add, Put ve Get metodları sırasıyla Cache'e veri ekleme, Cache'deki veriyi güncelleme ve Cache'den veri çekme işlemleri için kullanılmaktadır. Tüm bu metodlar mutlaka Key ve Value değerlerine ihtiyaç duymaktadır. Yani Cache'de duran veriyi işaret eden bir anahtar ile içerik bilgisi. Örnekte Cache üzerinde String bir içerik tutulmaktadır. Ancak karmaşık tiplerin tutulmasıda mümkündür. Söz gelimi geliştirici tarafından tanımlanmış bir nesne içeriğide Cache içerisinde tutulabilir. Nitekim özellikle Get metodunun dönüş tipine bakıldığında object olduğu görülmektedir. Buda zaten herşeyi açıklamaktadır.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Peki örneğimizi nasıl test edeceğiz? İşte örnek senaryo adımları;
 
 TextBox içerisine bir şehir adı (Örneğin İstanbul) girip Kaydet tuşuna basınız.
@@ -197,3 +193,4 @@ Detaylı bilgi için [tıklayın](http://msdn.microsoft.com/en-us/data/cc655792.
 CTP3 sürümünü [Download](http://www.microsoft.com/downloads/details.aspx?FamilyId=B24C3708-EEFF-4055-A867-19B5851E7CD2&displaylang=en)etmek için tıklayın.
 
 [HelloVelocity.rar (285,93 kb)](/assets/files/2009/HelloVelocity.rar)
+

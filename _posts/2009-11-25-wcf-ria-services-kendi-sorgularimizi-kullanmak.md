@@ -10,7 +10,7 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Bir önceki yazımızda WCF RIA Service'lerine kısa bir giriş yapmış ve ilk [Hello World](/2009/11/24/wcf-ria-services-bir-merhaba-diyelim/)uygulamamızı geliştirmiştik. Bu yazımızda yine Chinook veritabanında yer alan albümlerin alfabetik olarak elde edilebildiği ve bunlara bağlı parçalarında gösterilebildiği bir Silverlight uygulaması yazmaya çalışacağız. Bu örnekteki temel amacımız ise, kendi sorgulama metodlarımızı ilgili DomainService sınıfı içerisinde nasıl geliştirebileceğimizi görmek ve Silverlight uygulamasında göze daha hoş gelecek (Her ne kadar buna kendimde inanamasam da ![Sealed](/assets/images/2009/smiley-sealed.gif)) bir arayüzü tasarlayabilmek olacak. İlk etapta hedefimizin aşağıdaki ekran görüntüsünde yer alan uygulama arayüzü ve fonksiyonelliğine ulaşmak olduğunu ifade etmek isterim.
+Bir önceki yazımızda WCF RIA Service'lerine kısa bir giriş yapmış ve ilk [Hello World](/2009/11/24/wcf-ria-services-bir-merhaba-diyelim/)uygulamamızı geliştirmiştik. Bu yazımızda yine Chinook veritabanında yer alan albümlerin alfabetik olarak elde edilebildiği ve bunlara bağlı parçalarında gösterilebildiği bir Silverlight uygulaması yazmaya çalışacağız. Bu örnekteki temel amacımız ise, kendi sorgulama metodlarımızı ilgili DomainService sınıfı içerisinde nasıl geliştirebileceğimizi görmek ve Silverlight uygulamasında göze daha hoş gelecek (Her ne kadar buna kendimde inanamasam da) bir arayüzü tasarlayabilmek olacak. İlk etapta hedefimizin aşağıdaki ekran görüntüsünde yer alan uygulama arayüzü ve fonksiyonelliğine ulaşmak olduğunu ifade etmek isterim.
 
 ![blg106_Goal.gif](/assets/images/2009/blg106_Goal.gif)
 
@@ -170,8 +170,7 @@ Peki neler öğrendik?
 
 hatta Background özelliğine Picture ekleyebileceğimizi ve bu sayede daha hoş bir görüntü sunabileceğimizi farkettik demek istesemde, bu önemsenecek bir mevzu değildir.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SilverlightApplication5.rar (5,28 mb)](/assets/files/2009/SilverlightApplication5.rar)
+

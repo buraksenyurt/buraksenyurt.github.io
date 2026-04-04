@@ -21,10 +21,7 @@ Geçtiğimiz gün özlem duyduğum bilgisayar oyunlarından birisi olan Warcraft
 
 ![WAR2](/assets/images/2013/WAR2.jpg)
 
-
 Nedense söz konusu karakterleri bir araştırma konusunda kullanma ihtiyacı da hissettim. Tesadüfe bakın ki aynı anda.Net tarafında da bir konuyu araştırmaktaydım. Sonuç olarak aşağıdaki konu için onları kendi bakış açımdan değerlendirmeye karar verdim. Bakalım bu günkü yazımızda nasıl bir maceraya dalıyor olacağız
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_117.png)
 
 Haydi buyrun öyleyse başlayalım.
 
@@ -46,20 +43,14 @@ Pek tabi.Net Framework 4.5 ile birlikte özellikle async ve await anahtar kelime
 > daha önceden çalıştığım bir banka da, sistemler arasında veri taşınması veya dışarıdan gelen bazı verilerin database ortamlarına alınması, büyük boyutlu ve genellikle text tabanlı olan dosyalar üzerinden yapılmaktaydı. Çoğunlukla otomatik olarak devreye giren ve bir SQL Job ile ilişkilendirilmiş olan SSIS (Sql Server Integration Services) paketleri söz konusuydu.
 > Ancak SSIS'de ayrı bir uzmanlık alanı gerektirmekte ve bazı durumlarda söz konusu dosya aktarım işlemleri, Form tabanlı uygulamalar içerisinden yapılmak zorundaydı.
 > Hal böyle olunca bazı vakalarda, boyutu 650 megabyte'ın üzerinde olan dosyalar için uygulama ekranının kilitlenmesi de son derece doğaldı. Hele de bu bir banka olunca süreci asenkron olarak çalıştırmak şarttır. İşte size Asenkron IO işlemleri için kocaman bir sebep
->
-> ![Smile](/assets/images/2013/wlEmoticon-smile_49.png)
 
 Yeni Fonksiyonlar
 
 Biz bu makalemizde özellikle StreamReader ve StreamWriter sınıflarına gelen ve asenkron IO işlemlerini yapmamızı sağlayan yeni metodları incelemeye çalışıyor olacağız. Konsept olarak sadece kullanım şekillerini incelemek niyetindeyiz. Bu sebepten senaryolarımızı bir Console uygulaması üzerinden ele alacağız. StreamReader ve StreamWriter gibi IO sınfılarına ilave edilen asenkron metodları bulmamız aslında son derece kolay. İsimlendirme standardı olarak sonu async kelimesi ile biten metodlar aradığımız fonksiyonlar olacaktır
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_117.png)
-
 Dilerseniz işe ilk olarak asenkron yazma işlemleri ile başlayalım ki elimizde büyükçe bir test dosyası da oluşsun
 
-![Smile](/assets/images/2013/wlEmoticon-smile_49.png)
-
-Bu amaçla basit ama işi zevkli hale getirecek de bir ön hazırlık yapacağız. Senaryomuzda en az 10milyon elementten oluşan bir oyun sahası bulunacak. Bu saha içerisinde okçu, şovalye, mancınık, kale gibi karekterlere yer vereceğiz. Bu karakterlere ait başka bilgileri de tutuabiliriz. Örneğin bulundukları kıta, harita üzerindeki koordinat bilgisi, güç seviyleri, hangi taraftan oldukları (insan, bilgisayar, hayalet ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_117.png)) gibi.
+Bu amaçla basit ama işi zevkli hale getirecek de bir ön hazırlık yapacağız. Senaryomuzda en az 10milyon elementten oluşan bir oyun sahası bulunacak. Bu saha içerisinde okçu, şovalye, mancınık, kale gibi karekterlere yer vereceğiz. Bu karakterlere ait başka bilgileri de tutuabiliriz. Örneğin bulundukları kıta, harita üzerindeki koordinat bilgisi, güç seviyleri, hangi taraftan oldukları (insan, bilgisayar, hayalet) gibi.
 
 E tabi bu karakterlerden oluşan kümeyi üretecek bir de yardımcı tipimizin söz konusu olduğunu düşünebiliriz. Lafı fazla uzatmadan ön hazırlık için kullanacağımız kod parçalarına bir göz atalım dilerseniz.
 
@@ -134,8 +125,6 @@ namespace NewIOFunctions
 static GameCreator sınıfının CreateRandomElements isimli metodu istenen boyuta göre rastgele veriler ile üretilen GameElement tipinden bir koleksiyon döndürecek şekilde tasarlanmıştır.
 
 > Dilerseniz buradaki üretim işini Task Parallel Library’ yi ve Concurrent koleksiyonları da işin içerisine katarak asenkron doldurabilirsiniz. Ama dikkatli olun. Her üretiminizde 10milyonluk bir set elde edemessiniz. Tabi Thread’ leri en azından gereken yerlerde kilitleyip senkronize etmedikçe
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_117.png)
 
 Şimdi asıl senaryolarımıza geçebiliriz. İlk etapta üretilen bu rastgele veri içeriğini fiziki bir dosyaya asenkron moda da nasıl yazdırabileceğimizi incelemeye çalışacağız. Bu nedenle Program.cs içeriğinde aşağıdaki kodlar ile işe başlayabiliriz.
 
@@ -195,9 +184,7 @@ namespace NewIOFunctions
 Üretilen dosya içeriğinin bir kısmı da aşağıdaki gibidir.
 
 > Tabi bu dosyayı Notepad açmayı nasıl başardı anlayabilmiş değilim
->
-> ![Smile](/assets/images/2013/wlEmoticon-smile_49.png)
->
+
 > Yine de siz kendi sistemlerinizde zorlanmamak adına, Notepad2' yi veya Notepad++' ı kullanmayı düşünebilirsiniz.
 
 ![aio_3](/assets/images/2013/aio_3.png)
@@ -288,8 +275,6 @@ Parçalanmış Asenkronluk
 
 Son bir senaryo ile yazımıza devam edelim dilerseniz
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_117.png)
-
 Bu kez 10milyon element'ten oluşan sahımızı 10 parçaya bölüp her bir parça içerisinde ayrı bir Text dosyaya yazma işlemini, asenkron manada simüle etmeye çalışıyor olacağız. İşte senaryoya istinaden ele alabileceğimiz kod parçaları.
 
 ```csharp
@@ -351,8 +336,6 @@ Tabi klasör yapısına bakıldığında GameZone_1’ den GameZone_10’ a kada
 ![aio_8](/assets/images/2013/aio_8.png)
 
 Senaryolarımız ile Console üzerinden basit pratiklerimizi yapmış olduk. Şimdi bu pratikleri gerçek hayat senaryoları ile değerlendirmeye çalışmalıyız. Dolayısıyla işlemlerimizi artık görsel arabirimi olan ve gerçekten de cevap verilebilirliğe ihtiyaç duyan Windows Forms, WPF (Windows Presentation Foundation) ve belki de Asp.Net gibi uygulama çeşitlerinde ele almalıyız. Her zaman olduğu gibi bu kutsal görevi siz değerli meslektaşlarıma bırakıyorum
-
-![Smile](/assets/images/2013/wlEmoticon-smile_49.png)
 
 Böylece geldik bir yazmızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

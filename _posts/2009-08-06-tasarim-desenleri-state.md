@@ -13,8 +13,6 @@ Bir süre öncesine kadar özel bir bankada uzman yazılım geliştirici olarak 
 
 ![blg57_vendingMachine.gif](/assets/images/2009/blg57_vendingMachine.gif)
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Makineyi severdim çünkü fazla mesai yapıldığı hallerde içerisinde son derece işe yarar tuzlu ve tatlı gıdalar olurdu. Makinenin başına geçer, yemek istediğim ürüne bakar karar verdikten sonra ise gerekli miktarı makineye atardım.
 
 Sonra almak istediğim ürünün kodunu tuşlardım. Makine, ürünü benim için ilgili yerden aşağıya doğru ittirerek sunardı. Sonrada ürünü afiyetle yerdim. Ama makinenin şu huyunada çok kızardım. Para üstü vermezdi
@@ -25,13 +23,9 @@ Eksiği bazı ürünler ile tamamlardım yada tamamlayamazdım. Çünkü eksik k
 
 Çünkü makine sözüm ona ürünü vermişti. Ancak makinenin alt sepetinde ürün yoktu. Nitekim ürün tam bulunduğu cepten aşağıya doğru düşmek üzereyken oracıkta takılıvermişti. Para gitmişti, nitekim makinin dijital kısmında Teşekkürler yazıyordu
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Ben olaya klasik bir insan piskolojisi ile yaklaştım. Makineyi öne arkaya itekleyerek ürünü takıldığı yerden düşürttüm ve afiyetle yedim. Makineye pis pis bakarken aklıma şunlar geldi.
 
 Makineye yaklaşırken durağandı. Öylece birbirimize bakıyorduk. Sonra paramı attıp ürünü seçtiğimde makine bir dizi kontrol yaptı ve hazırlık moduna geçti. Ardından ürünü bana teslim etmek üzere kendi içerisindeki mekanikleri çalıştırdığında ürünü teslim etme modundaydı. Peki ürün takılıp bana veremediğinde hangi moddaydı da "Teşekkürler" diyip, paramı yutup, ürünü vermemişti
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Her neyse konumuz bu değil tabiki. Ama bu makinenin bu senaryo içerisinde anlattığım tüm durumları aslında yazılım terminolojisinde State Machine tipinden bir akış ile ifade edilebilmektedir. İşte bu günkü konumuz State tasarım kalıbı...
 
@@ -53,11 +47,7 @@ Bundan sonra internal state'i taşıyan nesneye Context dediğimizi düşünelim
 
 E haydi öyleyse basit bir örnek ile kalıbı kavramaya çalışalım. Senaryomuzda yazımızın başında bol bol kulakları çınlayan otomat makinesini ele alıyor olacağız.
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 Tabiki amacımız kalıbın nasıl uygulandığını ele almak olduğundan mümkün olduğunca sade (her zamanki gibi) bir örnek geliştireceğiz. Otomat makinesi için olası durumları şu şekilde düşünebiliriz. Makine elektrik şalterinden açıldığında bazı ön hazırlıklar yapar. Bu zaman diliminde makine Initialize modundadır (InitializeState). Initialize işlemleri başarılı ise makine bekleme moduna geçer (WaitingState). Ne bekler? Tabiki bizden bir ürün almamızı
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Müşteri bir ürün talep ettiğinde bunu almak için makineye para atması ve sonrasında seçimi bildirmesi gerekir. Bu işlemi Context tipimiz içerisindeki bir metodun üstlendiğini düşünebiliriz. Eğer atılan para yeterli ise ürünün hazırlanması moduna geçilir (PreparingState) ve işlem başarılı bir şekilde tamamlanırsa ürün teslim edilir (DeliveryState). Kısaca Context tipi olarak düşündüğümüz VendingMachine sınıfı için dört farklı durum (State) düşünüyoruz. İşte sınıf diagramımız;
 
@@ -224,8 +214,6 @@ namespace StatePattern
 
 Ben geliştirdiğimiz örnekte pek çok durumuda göz ardı ettim.
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 Örneğin makinede talep edilen ürünün olmaması, atılan paranın yetersiz kalması veya fazla gelmesi yada makinin fişten çekilmesi hali...Bu olaylar gerçkeştiğindede aslında makinenin farklı durumlara geçmesi ve dolayısıyla Context tipinin farklı davranışlar sergilemesi gerekebilir. Bu kısımları, bir desen uyguladığımız için sisteme eklememiz aslında son derece basittir. Örneğimizi çalıştırdığımızda aşağıdakine benzer bir sonuç ile karşılaştığımızı görebiliriz.
 
 ![blg57_runing.gif](/assets/images/2009/blg57_runing.gif)
@@ -233,3 +221,4 @@ Ben geliştirdiğimiz örnekte pek çok durumuda göz ardı ettim.
 Tabiki yukarıdaki gibi bir deseni uygulamak yerine her şeyi if veya switch gibi kontrol deyimleri ile ele almaya çalışabiliriz. Tabi bu durumda hem kodun karmaşıklaşmasına neden olur hemde genişletilebilirliğini zorlaştırmış oluruz. Nitekim şu anda uygulanan desene göre, makine için yeni bir davranış eklemek aslında State arayüzünden türüyen bir tip ekleyip bunu ilgili yerlerde değerlendirmekten başka bir işlem değildir. Bunu daha iyi anlamak için aynı örneği if ve switch yapıları ile geliştirmeye çalışmalısınız. Böylece geldik bir tasarım deseninin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StatePattern.rar (26,49 kb)](/assets/files/2009/StatePattern.rar)
+

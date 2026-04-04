@@ -19,8 +19,6 @@ Sanıyorum yandaki resmi görenler Guy Pearce ve Carrie Anne Moss'un başrolde y
 
 Diğer taraftan memento nesnesini oluşturan, bir başka deyişle kaydeden yada var olduğu son durumu yükleyerek geri getiren fonksiyonelliklere sahip olan asıl tipimiz yer almaktadır (Originator). Bu temel tiplerin yanında, saklanan memento nesnesinin güvenli bir şekilde korunmasını sağlayacak bakıcı bir tipde yer almaktadır (Caretaker). Şimdi tabi olaya bu şekilde bakınca (şekilsiz olarak) anlamak zor olabiliyor. Yaşasın UML şemaları diyerek yola devam etmek lazım.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Bu amaçla örnek Console uygulamamızın sınıf diagramına bir bakalım.
 
 ![blg42_uml.gif](/assets/images/2009/blg42_uml.gif)
@@ -120,10 +118,9 @@ Ve uygulamamızın çalışma zamanındaki durumu.
 
 Görüldüğü gibi Product nesne örneği oluşturulup içeriği üzerinde değişiklik yapıldıktan sonra bir önceki konumuna döndürülebilmiştir. Oldukça basit ama etkileyici olan bu deseni, nesne örnekleri üzerinde Undo operasyonunun kullanılması istenen pek çok senaryoda ele alabiliriz. Tabi burada dikkat edilmesi gereken bir hususda vardır. Sadece tek bir Undo işlemi yapılabilmektedir. Oysaki istenirse birden fazla adım geriye gidilmesi de sağlanabilir. Bunu bir düşünmenizi ve yapmaya çalışmanızı öneririm
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Youtube Link](https://www.youtube.com/watch?v=yio36Q5g5vU)
 
 [MementoPattern.rar (23,01 kb)](/assets/files/2009/MementoPattern.rar)
+

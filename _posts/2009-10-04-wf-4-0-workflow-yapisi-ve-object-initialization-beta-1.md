@@ -67,8 +67,6 @@ Bu örnek kod parçasında Sequence tipinden bir nesne örneği oluşturulmaktad
 
 Böylece MethodName özelliğinde belirtilen fonskiyonun çalışma zamanında hangi tipe ait nese örneği içerisinden çağırılacağı belirtilmiş olur) Tabiki flow1 isimli Sequence nesne örneğinin çalıştırılması için WorkflowInvoker tipi üzerinden static Invoke metodu kullanılmıştır. Olaya noktalı virgüller açısından baktığımızda sadece iki satırda bir Workflow'un tasarlanıp yürütüldüğünü ifade edebiliriz. Ancak görsel bir tasarım ortamının olması elbetteki çok daha mühimdir ve tercih edilmelidir. Nitekim gerçek hayat çözümlerindeki iş akışlarının çoğu bu kadar basit Workflow örnekleri ile ifade edilememektedir. Geliştirdiğimiz Workflow herhangibir anlam içermesede
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 önemli olan, tek satırlık bir ifade ile object initializer kavramından da yararlanarak, bir Workflow örneğinin tesis edilebileceğinin farkında olmaktır. Örneği yürüttüğümüzde çalışma zamanı için aşağıdaki sonuçları aldığımızı görürüz.
 
 ![blg88_Runtime.gif](/assets/images/2009/blg88_Runtime.gif)

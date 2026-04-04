@@ -61,19 +61,13 @@ FROM [dbo].[Customer] AS [Extent1]
 ORDER BY [Extent1].[LastName] ASC, [Extent1].[FirstName] ASC
 ```
 
-![Surprised smile](/assets/images/2012/wlEmoticon-surprisedsmile_2.png)
-
 Uppsss!!! Benzer bir sorgu derken!
 
 IQueryable üzerinden yapılan Take (10) çağrısı dikkat edileceği üzere TOP 10 ifadesini kullanmıştır. Peki ya IEnumerable üzerinden yapılan Take (10) çağrısı ne yapmıştır
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_118.png)
-
 Aslında tüm liste çekilmiş sonrasında Take metodu, belleğe aldığı koleksiyon seti üzerinden ilk 10luk parçayı almıştır.
 
 Sanırım artık IQueryable mı olsun, IEnumerable mı olsun çıktı sonucu ya da var anahtar kelimesini kullanırsak hangisini göz önüne alır, hangisi daha avantajlıdır diye bir kuşku oluşturmuş bulunmaktayım içinizde
-
-![Smile](/assets/images/2012/wlEmoticon-smile_50.png)
 
 E hadi hayırlısı diyelim.
 

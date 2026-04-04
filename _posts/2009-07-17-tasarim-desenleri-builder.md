@@ -30,8 +30,6 @@ Builder tasarım kalıbının kullanım oranı doFactory.com sitesinin istatisti
 
 Söz gelimi dofactory.com tarafından verilen örneği göz önüne alalım. Bu örnekte motorsiklet, otomobil, scooter gibi ürünler söz konusudur. Tüm bu araçların istemci açısından kullanılabilir olması için üretim işleminde motorun (her ne kadar motorsiklette ve scooter'da kapı olmasada
 
-![Embarassed](/assets/images/2009/smiley-embarassed.gif)
-
 0 veya null değeri kullanılabilir), kapıların, viteslerin vb parçalarında üretimi gerekmektedir.
 
 Aslında bu ortak fonksiyonellikler bu ürünlerin hepsi için geçerlidir. Yani bu araçların kendisi bir Product olarak temsil edilebilirler. İstemci, sadece kullanmak istediği ürünün farklı bir sunumunu elde etmek isteyecektir. Bu tip bir senaryoda istemcinin asıl ürüne ulaşmak için ele alması gereken üretim aşamalarından uzaklaştırılarak sadece üretmek istediği ürüne ait tipi bildirmesi yeterli olmalıdır. Bu senaryoda araç (Vehicle) aslında üründür (Product). Motorsiklet veya araba ise araç tipleridir ve üretim işlemleri sonucu ortaya bir Vehicle çıkartırlar. Yani desendeki ConcreteBuilder tipleridir. Bu senaryo pekala bir oyun programı içerisindeki araçların üretimi aşamasında göz önüne alınabilir.
@@ -49,8 +47,6 @@ Peki daha gerçekçi bir örnek olamaz mı? Her zaman dediğim gibi, aslında ta
 ![blg47_pizza.jpg](/assets/images/2009/blg47_pizza.jpg)
 
 Ancak benim popüler senaryom şu anda midemden beynime doğru gelen sinyallerinde söylediği üzere Pizzacı örneğidir. Nitekim şu aşamada heleki hafta sonuna girdiğimiz şu güzel Cuma gecesinde, bu deseni eğlenceli bir şekilde ele almamamız için hiç bir sebep bulunmamaktadır.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 İşte deseni ele aldığımız kod parçaları.
 
@@ -160,8 +156,6 @@ namespace Builder
 ![blg47_4.gif](/assets/images/2009/blg47_4.gif)
 
 Umarım sizler içinde faydalı bir anlatım olmuştur. Her zamanki gibi bu desenin görsel dersinide en kısa sürede eklemeye çalışacağım. Bu yazının üstünede şöyle güzel bir espresso içilir kanımca
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 ![blg47_espresso.jpg](/assets/images/2009/blg47_espresso.jpg)
 

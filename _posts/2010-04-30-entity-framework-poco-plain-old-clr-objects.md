@@ -65,7 +65,7 @@ private global::System.Int32 _CustomerId;
 
 gibi.
 
-Bu noktada söz konusu tiplerin bazı bağımlıklar taşıdığını düşünebiliriz. Ancak POCO nesnelerinde, yazımızın başında da belirttiğimiz üzere bu tip bağımlılıklar söz konusu değildir. (Buna göre POCO nesneleri için şu tip bir tanımlama da yapılabilir; buradaki Entity tiplerinde yer alan bağımlılıklara ihtiyaç duymayan tiplere olan ihtiyaçlarda göz önüne alınan tiplerdir ![Wink](/assets/images/2010/smiley-wink.gif)) Şimdi örneğimizde ilerlemek için, her iki tipten sadece belirli özellikleri projemizde kullanmak istediğimizi düşünelim. Gerçekten de kod tarafında söz konusu Entity tipleri içerisinde yer alan tüm özelliklere ihtiyacımız olmayabilir. Bu amaçla sembolik olarak, Entity tiplerinden bazı özellikleri (Nullable değeri true olanlar seçilirse iyi olur) silip diagramı aşağıdaki şekilde görülen hale getirelim.
+Bu noktada söz konusu tiplerin bazı bağımlıklar taşıdığını düşünebiliriz. Ancak POCO nesnelerinde, yazımızın başında da belirttiğimiz üzere bu tip bağımlılıklar söz konusu değildir. (Buna göre POCO nesneleri için şu tip bir tanımlama da yapılabilir; buradaki Entity tiplerinde yer alan bağımlılıklara ihtiyaç duymayan tiplere olan ihtiyaçlarda göz önüne alınan tiplerdir) Şimdi örneğimizde ilerlemek için, her iki tipten sadece belirli özellikleri projemizde kullanmak istediğimizi düşünelim. Gerçekten de kod tarafında söz konusu Entity tipleri içerisinde yer alan tüm özelliklere ihtiyacımız olmayabilir. Bu amaçla sembolik olarak, Entity tiplerinden bazı özellikleri (Nullable değeri true olanlar seçilirse iyi olur) silip diagramı aşağıdaki şekilde görülen hale getirelim.
 
 ![blg152_Kalan.gif](/assets/images/2010/blg152_Kalan.gif)
 
@@ -125,8 +125,6 @@ Bu işlemin sonuçlarını aslında hemen görebiliriz. Uygulamanın build edilm
 ![blg152_AutoGClose.gif](/assets/images/2010/blg152_AutoGClose.gif)
 
 Şimdi işin en önemli kısımlarından birisine geldik. Entity Model üzerinde görülen Customer ve Invoice tiplerinin POCO versiyonlarını eklemek. Bunun için yapacağımız tek şey birer sınıf oluşturup içerisine gerekli özellikleri koymak olacaktır. Bunu zaten yapmamız gerekmektedir nitekim otomatik üretimi kapattığımız için elimizde artık Customer ve Invoice isimli Entity tipleri de bulunamamaktadır.
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 Bu amaçla uygulamamıza aşağıdaki sınıfları eklediğimizi düşünelim.
 
@@ -241,8 +239,6 @@ namespace POCODans
 
 Volaaaa!!! Dikkat edecek olursanız var olan kodu bozmadan ama bu kez POCO nesnelerinden yararlanarak çalıştırmayı başardık.
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 Bu işlemlerin ardından uygulamamızın tip yapısını Class Diagram üzerinden incelediğimizde, aşağıdaki gibi bir oluşumun söz konusu olduğunu görebiliriz.
 
 ![blg152_ClassDia2.gif](/assets/images/2010/blg152_ClassDia2.gif)
@@ -252,3 +248,4 @@ Bu yazımızda POCO (Plain Old CLR Objects) nesnelerinin ne olduğunu kısaca ta
 POCO ile ilişkili yeni bilgiler öğrendikçe sizlerle paylaşıyor olacağım. Özellikle bu yazıda henüz değerlendirmediğimiz bir durum var o da Lazy Loading durumlarında POCO nesnelerinin nasıl hazırlanması gerektiği? Bunu bir sonraki yazımızda aynı örnek üzerinden test ederek incelemeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [POCO_RTM.rar (44,97 kb)](/assets/files/2010/POCO_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
+

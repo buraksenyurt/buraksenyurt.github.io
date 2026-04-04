@@ -11,13 +11,11 @@ Günümüz yazılım teknolojilerinin belkide en popüler olan konularından bir
 
 ![blg100_Giris.jpg](/assets/images/2009/blg100_Giris.jpg)
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 ) paralel programlamaya daha fazla destek vermeye başladığını görmekteyiz.
 
 Aslında zaten var olan araçlar ile paralel programlama tekniklerini uygulayabilmekteyiz. Ne varki kodlanmasının karmaşık olması bir yana, birden fazla tekniğin kullanılabiliyor olması, hangisinin daha performanslı olduğunun anlaşılması için test aşamalarının da önemini ortaya çıkarmakta. Microsoft cephesi bir süredir, paralel programlama kütüphanesi ile söz konusu tekniklere ait tasarımları aza indirgeyip kolay geliştirilebilir ve performanslı sonuçlar üreten tiplerin tasarlanması ve geliştirilmesini gereçekleştirmekte..Net Framework 4.0 içerisinde doğrudan gelen Task Parallel Library kütüphanesi bu anlamda önemli kabiliyetler içermekte.
 
-Peki elimizde bu kütüphane olmasaydı? ![Sealed](/assets/images/2009/smiley-sealed.gif) O zaman n sayıda tekrar edecek olan bir işlemi paralel hale getirmek için nasıl bir kodlama yapmamız gerekirdi?
+Peki elimizde bu kütüphane olmasaydı? O zaman n sayıda tekrar edecek olan bir işlemi paralel hale getirmek için nasıl bir kodlama yapmamız gerekirdi?
 
 Söz gelimi başlangıç ve bitiş değerleri parametrik olan bir döngünün içerisinden çağırılan bir fonksiyonun, birden fazla Thread'e bölünerek çalıştırılmasını istediğimizi düşünelim. Aslında teorik olarak makinede kaç işlemci yada kaç çekirdek var ise o sayıda Thread açılması tercih edilir. Buna göre tekrar edecek olan işlemler belirli aralıklara bölünerek bu aralıkların açılan Thread'ler tarafından ele alınması sağlanır. Ne demek istediğimi aşağıdaki örnek kod parçası ile aktarmaya çalışayım.
 
@@ -189,8 +187,6 @@ Bu rapora göre Thread'lerin toplam çalışma sürelerinin bir önceki modele g
 
 Gördüğünüz üzere çoğu geliştirici açısından ileri seviyede kalan bir kodlama gerekmektedir. Özellikle geliştiricinin Thread konusuna son derece iyi hakim olması şarttır. Her ne kadar söz konusu karmaşık teknikler birer tasarım kalıbı olarak şekillenmiş olsalarda geliştiricinin kafa ayarını da fazla çizdirmemek gerekir. Buda yazımızın neden kafayı çizmiş bir bilgisayarcı resmi ile başladığının ispatıdır
 
-![Laughing](/assets/images/2009/smiley-laughing.gif)
-
 İşte Task Parallel Library ile birlikte gelen tipler bu anlamda işleri kolaylaştırmaktadır. Ama tabiki Concurrency Profiler ile üretilen rapor sonuçlarını değerlendirmek gerekir.(Bu tip karmaşık teknikleri tercih ederken kişisel görüşüme göre programcının performans mı? kolay ve hızlı kodlama mı? sorusuna verdiği cevap büyük önem kazanmaktadır) İşte aynı süreç için Parallel.For kullanımı ve rapor sonuçları;
 
 ```csharp
@@ -245,8 +241,7 @@ Tabiki bu test sonuçları, uygulamanın çalıştığı sistemin donanımsal ö
 
 Şimdi bu avantajları kendi yazdığımız ParallelFor metodu içinde gerçellemeye çalıştığımızı düşünelim. Hatta deneyin
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TaskParallelLibrary.rar (89,38 kb)](/assets/files/2009/TaskParallelLibrary.rar)
+

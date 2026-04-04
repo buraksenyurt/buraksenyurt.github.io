@@ -12,11 +12,7 @@ Yükseklik korkum olmasına rağmen her zaman yandaki gibi tırmanışta olanlar
 
 ![blg90_Giris.jpg](/assets/images/2009/blg90_Giris.jpg)
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Hangi açıdan bakarsak bakalım bizde hayatımızda zaman zaman böyle mücadeleler içerisine gireriz. Özellike yazılım geliştirirken
-
-![Laughing](/assets/images/2009/smiley-laughing.gif)
 
 Örneğin her zaman elimizin altında Visual Studio IDE'sinin sunduğu gibi gelişmiş arayüzler bulunmayabilir. Örneğin Visual Studio 2010 Beta 1 üzerinde yaşadığım sorunlardan birisi WPF tabanlı Designer'ı Workflow uygulamaları için kullanamıyor oluşumdu. Bu gerçekten çok üzücü bir durum.
 
@@ -31,9 +27,7 @@ Kod tarafında her ne kadar mücadeleci bir yol izlesekte, neyin nasıl oluştur
 Haydi gelin kamera arkasına bakalım.
 
 > Kişisel Not: Aslında Beta 2 sürümünde (ki henüz public olarak yayınlanmadığını biliyorsunuz), designer tarafındaki sorunların aşıldığını ifade edebilirim. Bizzat tecrübe ile sabitlenmiştir
->
-> ![Smile](/assets/images/2009/smiley-smile.gif)
->
+
 > Hatta bu konu ile ilişkili bir yazımı söz konusu sürüm public hale geldikten sonra yayınlıyor olacağım.
 
 Bu yazımızda.Net Framework 4.0 Beta 1 ile bir Workflow Service'in oluşturulması, host edilmesi ve bir istemci tarafından kullanılması konusu irdelenmeye çalışılacaktır. Workflow Service tek yönlü bir operasyon (One Way) için hizmet vermekte olup istemci tarafına bir geri bildirimde bulunmamaktadır. Her iki uygulamada birer Console Application olarak tasarlanmıştır. İstemci tarafında Workflow Service'in kullanılabilmesi için gerekli Proxy nesnesi yine kod yardımıyla (WSDL dökümanından yararlanmadan) oluşturulmaktadır. Aslında tamamlanmış olan uygulamalara baktığımızda servis ve istemci tarafı için gerekli olan referans Assembly'ların aşağıdaki şekilde görüldüğü gibi olduğunu fark edebiliriz.
@@ -253,8 +247,6 @@ Exception 3 (Service operasyonunun OneWay olduğunu belirtmediğimiz durumda);
 
 Piuuuuuvvvvv!!!
 
-![Smile](/assets/images/2009/smiley-smile.gif)
-
 Biraz uğraştık ama faydalı bir çalışma oldu sanıyorum ki. Gerçi elde edeceğimiz sonuç hiç bir anlam ifade etmesede, bir Workflow Service'in kod yardımıyla nasıl oluşturulabileceğini ve kullanılacağını görmüş olduk. İşte bir yazılımcı olarak tırmandığımız dağın zirvesindeki görüntü...
 
 ![blg90_Runtime.gif](/assets/images/2009/blg90_Runtime.gif)
@@ -268,3 +260,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 [WithWCF.rar (42,98 kb)](/assets/files/2009/WithWCF.rar)
 
 > Kişisel Not: Örnekler bildiğiniz üzere Visual Studio 2010 Beta 1 sürümünde ve.Net Framework Beta 1 üzerinde geliştirilmektedir. Beta 2 ile arasında farklılıklar olabilir. Hatta Relase sürümde çok daha fazla farklılık görülebilir.
+

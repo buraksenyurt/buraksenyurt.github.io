@@ -21,8 +21,6 @@ ve Amerika'da bir çıkış noktasında takıldı kaldı. Oysaki kütüphanede y
 
 En azından içim rahatladı ve kitabıma kavuştum.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Gel gelelim şu an okuduğunuz yazıyı yazmak için bu kitabı bir günde bitirmedim elbetteki. Aslına bakarsanız geçtiğimiz günlerde.Net Services SDK'sının Kasım sürümü ve çok doğal olarak dökümantasyonu yayınlandı. İşte bu yazımızda dökümantasyondan edindiğim ilk izlenimler ışığında geliştireceğimiz basit bir Hello World örneği yazmaya çalışıyor olacağız.
 
 Windows Azure platformunun önemli parçalarından birisi olan Microsoft.Net Services, internet tabanlı uygulama servisleri olarak düşünülebilir. Bu anlmada internet tabanlı uygulamaların Cloud üzerinde yer alan uygulamalar veya kaynaklar (Resources) ile iletişimini servis bazlı olarak koordine edebilen bir servis alt yapısı olarak düşünülebilir. Şu aşamada Microsoft.Net Service'lerin iki uygulama biçimi vardır. Service Bus ve Access Control Service. Özellikle Firewall arkasında kalan istemcilerin Cloud üzerinde yer alan bir uygulama ile haberleşmesi sırasında gerekli olan karmaşık konfigurasyon işlemleri, güvenlik gibi konuları Service Bus üzerine alarak kolay bir şekilde çözümlemeye çalışır.
@@ -230,7 +228,7 @@ Host servisin adresi belirlenir (Uri bilgisi belirlenirken Azure Projesi üzerin
 Gerekli Crendetial tanımlamaları yapılır ve bağlantı için uygulanması sağlanır (TransportClientEndpointBehavior)
 Kanal oluşturulur ve Credential'ı değerlendirmesi davranış (Behavior) eklenmesi yardımıyla belirtilir
 Kanal bağlantısı açılır.
-Gerekli servis operasyonları icra edilir.(Kobay olarak sıkça kulladığımız Sum operasyonu ![Wink](/assets/images/2009/smiley-wink.gif))
+Gerekli servis operasyonları icra edilir.(Kobay olarak sıkça kulladığımız Sum operasyonu)
 Bağlantılar kapatılır.
 
 Çok doğal olarak istemci uygulamanın WCF Çalışma zamanı içinde bir takım konfigırasyon ayarlarının yapılması gerekmektedir. İşte istemci tarafı config dosyası içeriği;
@@ -253,8 +251,6 @@ Bağlantılar kapatılır.
 
 Eğer bu şekilde bir sonuç aldıysak istemci uygulamamızın host edilen servis ile Service Bus üzerinden haberleştiğini düşünebiliriz. Aslında emin olmak için deneme amacıyla oluşturduğumuz Service Namespace'ini kaldırmamız yeterli olacaktır
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Lakin bu durumda aşağıdaki sonuç ile karşılaşırız (EndpointNotFoundException)
 
 ![blg97_Exception.gif](/assets/images/2009/blg97_Exception.gif)
@@ -262,3 +258,4 @@ Lakin bu durumda aşağıdaki sonuç ile karşılaşırız (EndpointNotFoundExce
 Böylece Azure Service Platformu üzerindeki ilk atılımımızı gerçekleştirmiş olduk arkadaşlar. Umarım birşeyler aktarabilmişimdir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AlgebraHost.rar (47,27 kb)](/assets/files/2009/AlgebraHost.rar)
+

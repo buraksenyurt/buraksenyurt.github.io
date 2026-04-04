@@ -20,7 +20,6 @@ Yandaki fotoğrafta bir duvar prizi içinden USB bağlantısı yapıldığını 
 
 ![usb-prizi](/assets/images/2013/usb-prizi.png)
 
-
 Dolayısıyla çeşitli ve pek çoğu standart hale gelen cihazlar ile USB çıkışları verebilmek mümkün. Nerden geldik şimdi bu USB Priz konusuna. Hem bir Plug-In gibi görülebildiği hem de entegrasyon anlamında sağladığı yetenekleri göz önüna alalım.
 
 Bazen kullandığımız yazılım ürünlerinin de bu tip kolay takılabilir ve entegre olabilir şekilde üretilmelerini bekleriz. Örneğin TFS’ in sadece Visual Studio, MS Office, Sharepoint vb ürünler ile değil başka başka ürünler ile de çalışmasını isteriz.
@@ -33,8 +32,6 @@ Microsoft’ un ALM (Application Lifecycle Management) tarafındaki en önemli a
 
 Hatta daha başka 3ncü parti araçlar bile söz konusu olabilir. Bu yerlerde pek tabi irili ufaklı sayısız ekip de söz konusudur. Bu ekipler, kendi içlerinde olduğu gibi şirket bazında da bir uygulama yönetim sürecine dahil olmak durumunda kalırlar. Kimi zaman CMMI gibi sıkıcı süreçler, kimi zaman da Scrum gibi eğlenceli süreçler, sistemin bir parçasıdır. İşte böyle bir senaryoda firmanın topyekün bir karar alarak TFS’ e geçeceğini hayal ediniz (ve tabi gelen tepkileri, direnci de haya ediniz). Aslında hayal etmenize gerek yok. Yapanlar var
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_172.png)
-
 Bu durumda entegrasyon son derece önemli bir hale gelmektedir.
 
 İşte bu yazımızda TFS’ in bize yabancı gelebilecek bazı geliştirme ortamları ile olan entegrasyonunu incelemeye çalışıyor olacağız.
@@ -46,8 +43,6 @@ Team Explorer Everywhere
 Özellikle Eclipse gibi IDE’ lerin, Team Explorer arabirimine sahip olması ve TFS ile entegre çalışabilmesi için kullanılmaktadır. [Bu adresten](http://www.microsoft.com/en-us/download/details.aspx?id=30661) indirilebilen ürünün ayrıca diğer platformlar için komut satırından çalışabilen bir versiyonu da bulunmaktadır. Peki, örneğin Eclipse Juno ile bu entegrasyonu nasıl gerçekleştirebiliriz? Gelin adım adım ilerleyelim.
 
 > Bazı geliştirme ortamları, Eclipse IDE’ sini kabuk olarak kullanır. Örneğin Business Process Management araçlarından birisi olan TIBCO Business Studio örnek olarak verilebilir. Bu tip araçlar da Eclipse IDE’ sini baz aldıklarından Team Explorer Everywhere ile TFS’ e ve doğal olarak ALM süreçlerine dahil olabilirler. En azından TIBCO tarafı için bunu test ettiğimi rahatlıkla ifade edebilirim
->
-> ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_172.png)
 
 Eclipse Juno
 
@@ -84,8 +79,6 @@ MSSCCI Provider
 - Microsoft eMbedded VC++ 4.0
 
 Hımmm güzel bir listeye benziyor. Sanırım ilk dikkati çekenlerden birisi de PowerBuilder 11.5
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_172.png)
 
 Peki ya elinizde çok daha eski bir sürüm var ise. Ya bu sürüm üzerinde geliştirilmiş onlarca uygulama bulunmaktaysa ve daha uzun bir süre hayatta olacaklar ise. Ya.Net tabanlı geliştirme yapanların bu ortamda geliştirilen arabirimleri de kullanması söz konusu ise. Ya her iki ortamda ALM üzerinden takip edilmek zorunda ise. Örneğin elinizde PowerBuilder’ ın 9.0.3 sürümü olduğunu düşünün.
 
@@ -130,8 +123,6 @@ Grup adının girilmesi haricinde en önemli kısım tahmin edileceği üzere Pr
 
 Buraya kadarki işlemler tamamlansa da yeterli değildir
 
-![Confused smile](/assets/images/2013/wlEmoticon-confusedsmile_28.png)
-
 Bir de Mask belirtilmesi ve Source Code Control operasyonlarının ilgili Oracle şemasındaki hangi nesneler için yapılacağının belirtilmesi gerekir. Bunun için oluşturulan grup çift tıklanır ve açılan arabirimden Add DB Object Mask seçimi yapılır.
 
 ![tfsint_12](/assets/images/2013/tfsint_12.png)
@@ -159,13 +150,9 @@ Anlattıklarımız TFS’ in, Microsoft dışı veya eski Microsoft ürünlerini
 
 Yazının bu kısmına geldiyseniz eğer kafanızda bir soru da oluşmuş olabilir. 3ncü çözüm nedir?
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_172.png)
-
 LINUX/UNIX/MAC OS X Tarafı
 
 Aslında 3ncü çözüm Windows dışı işletim sistemlerini daha fazla ilgilendirmektedir. Örneğin SOLARIS SPARC sistemi veya RED HAT yüklü bir LINUX sistemi söz konusu olabilir. Pek tabi bu platformlar üzerinde yapılan geliştirmelerde komut satırı yaygın olarak kullanılmakta ve hatta ağırlıklı olarak C kodları geliştirilmektedir. Hal böyle olunca TFS ile olan entegrasyon kocaman bir soru işerati olarak görünmektedir. İşte 3ncü çözüm bu konu ile ilintilidir. Git-tf
-
-![Surprised smile](/assets/images/2013/wlEmoticon-surprisedsmile_4.png)
 
 Sanırım adı siz de bir çağırışım yapmıştır. Git ile Team Foundation Server’ ın arasında bir köprü görevi gören bu araç, Codeplex üzerinden sunulan bir projedir. [Bu adresten](http://gittf.codeplex.com/) ulaşabilen proje, 27 Ağustos 2012’ de ilk stable sürümünü de çıkartmıştır. Henüz testlerini yapamadım ama ana sayfada da bahsedildiği üzere Linux ve Mac OS X platformlarında kurulabilen (nitekim Java Runtime üzerinde çalışmakta olan) bir ürün. Üstelik komut satırından çalıştırılabildiği için Linux/Unix tarafında çalışan geliştiriciler için de oldukça kullanışlı. Bu konuda ilk testleri yaptığımda sanıyorum ki burayı güncelliyor olacağım. (Şimdilik kurulum ve diğer detaylarla ilişkili olarak Microsoft’ un yayınladığı [şu dökümana bir göz atabilirsini](https://www.google.com.tr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CEAQFjAC&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2FA%2FE%2F2%2FAE23B059-5727-445B-91CC-15B7A078A7F4%2FGit-TF_GettingStarted.html&ei=spbuULFbzNCyBueugNgJ&usg=AFQjCNEHn0PqmiDDtfdO_b45A-WPovulEA&sig2=6zA7olBg18UM62tY4W4B9Q&bvm=bv.1357700187,d.Yms)z)
 

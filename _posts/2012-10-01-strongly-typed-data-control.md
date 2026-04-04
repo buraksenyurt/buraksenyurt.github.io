@@ -16,7 +16,7 @@ Malumunuz Web tarafı ile aram pek iyi değildir. Ancak .Net Framework’ ün he
 
 ![strong](/assets/images/2012/strong.gif)
 
-(Bu arada yandaki halter kaldıran adam ne alak diyebilirsiniz. Giriş yazısını düşünürken, Strongly kelimesinden Strong ifadesine gelince, bunu anlatabilecek fotoğraflardan birisi olarak karşıma çıktı ![Confused smile](/assets/images/2012/wlEmoticon-confusedsmile_25.png))
+(Bu arada yandaki halter kaldıran adam ne alak diyebilirsiniz. Giriş yazısını düşünürken, Strongly kelimesinden Strong ifadesine gelince, bunu anlatabilecek fotoğraflardan birisi olarak karşıma çıktı)
 
 ![stdi_1](/assets/images/2012/stdi_1.png)
 
@@ -65,8 +65,6 @@ namespace STDC_Old
 
 Kod parçasında görüldüğü üzere formviewPlayers isimli FormView kontrolüne players isimli bir koleksiyon içeriği bağlanmaktadır. Peki ya tasarım ortamında durum nedir? Tahmin edileceğiz üzere çalışma zamanında, bir Player nesne örneğinin PlayerId, Nickname ve Score gibi özelliklerinin değerlerini tek (one way) veya çift yönlü (two way) olacak şekilde göstermek için Bind veya Eval tiplerinden yararlanılmaktadır. Bu tipleri genellikle Item Template elementleri içerisindeki kontrollerde sıklıkla kullanırız. Söz gelimi aşağıdaki gibi
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_126.png)
-
 ```text
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="STDC_Old.Default" %>
 
@@ -102,13 +100,9 @@ Kod parçasında görüldüğü üzere formviewPlayers isimli FormView kontrolü
 
 Dikkat edileceği üzere lblPlayerId, txtNickname, txtScore isimli bileşenlerin Text nitelikleri, Player tipinin sırasıyla PlayerId, Nickname ve Score özelliklerine (Properties) bağlanmışlardır. FormView bileşeninde, Bind tipi kullanılmış ve çift yönlü veri bağlama imkanı sunulmuştur. Ama bildiğiniz üzere Eval de kullanılabilir ve tek yönlü bir veri akışı da sağlanabilir. Kaldı ki hangisini kullandığımızı şu anda pek bir önemi yok
 
-![Sarcastic smile](/assets/images/2012/wlEmoticon-sarcasticsmile_7.png)
-
 Peki buradaki kodları yazarken hiç şöyle bir şey de olsun ister miydiniz?
 
 > Bind veya Eval kullanırken keşke kontrolü bağladığımız tipin özelliklerini de görebilsekde, neyi neye bağladığımızı daha kolay takip edebilsek. Hatta burada Intelli-sense kabiliyetleri de bize yardımcı olsa
->
-> ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_126.png)
 
 Çünkü yukarıdaki kod parçasını yazarken Eval veya Bind kullanımlarında tamamen ezbere olacak şekilde string veriler yazılmaktadır. Bu özellikle kalabalık veri toplulukları göz önüne alındığında dikkat dağıtıcı ve zorlayıcı bir durumdur. Ayrıca hata yapma riski vardır. İfadeler yanlış yazılabilir ve sonuçlar ancak çalışma zamanında görülecektir.
 
@@ -118,8 +112,6 @@ Diğer yandan arka plandaki çalışma sistematiğine baktığımızda, bağlana
 
 Gelelim Asp.Net 4.5 tarafındaki duruma. Yine aynı örnek senaryoyu ele alacağız ancak bu kez veri bağlı kontrolümüzün ItemType isimli özelliğine, bağlanacak olan tipin (kuvvetle muhtemel bir sınıf adı olacaktır) adını vereceğiz. Aşağıdaki ekran görüntüsünde olduğu gibi. Üstelik intelli-sense desteğimiz de var
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_126.png)
-
 ![stdi_3](/assets/images/2012/stdi_3.png)
 
 Volaaaa! demek için aslında çok erken. Nitekim iş asıl tipi belirttikten sonra güzelleşiyor. ItemType tanımlaması ile söz konusu kontrolün veri bağlı içeriğinin (bir başka deyişle child element olacak kontrollerin) hangi.Net tipini değerlendirmesi gerektiğini ifade etmiş oluyoruz. İşte bu noktadan sonra sunucu bazlı kontrollerin ilgili özelliklerine veri bağlama işlemlerini yaparken intelli-sense özelliğinden yararlanabiliriz. Artık elimizde Strongly Typed bir veri bağlı kontrol bulunmakta. Aşağıdaki ekran görüntüsünde bu durum ve kullanım kolaylığı daha net bir şekilde görülebilir.
@@ -127,8 +119,6 @@ Volaaaa! demek için aslında çok erken. Nitekim iş asıl tipi belirttikten so
 ![stdi_4](/assets/images/2012/stdi_4.png)
 
 Sanırım şimdi volaaaaaa!!! diyebiliriz
-
-![Smile](/assets/images/2012/wlEmoticon-smile_58.png)
 
 > Buradaki yaklaşım XAML tarafından size tanıdık gelecektir. XAML tarafında da asıl kontrolün bir veri kaynağına bağlanması (yani bir Resource bağlanması), iç elementlerin özelliklerinin de bu verinin niteliklerine atanması işlemi, dekleratif olarak yapılmaktadır.
 
@@ -168,8 +158,6 @@ Bu durumda Asp.Net 4.5 versiyonu ile senaryomuzun aspx içeriği aşağıdaki gi
 
 Tabi bu esnekliği kullanırken aklınıza “acaba noktaya basıp özellik adını yazdıktan sonra gelen fonksiyonellikleri de kullanabilir miyiz?” diye bir soru gelebilir
 
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_126.png)
-
 Söz gelimi “string tipinden olan Nickname’ i bağladıktan sonra bir de ToUpper metodunu çağırsak da, ismi büyük harf yazsa olmaz mı?” diyebilirsiniz. Ben bunu denediğimde aşağıdaki çalışma zamanı hatasını aldım.
 
 ![stdi_5](/assets/images/2012/stdi_5.png)
@@ -177,8 +165,6 @@ Söz gelimi “string tipinden olan Nickname’ i bağladıktan sonra bir de ToU
 Bu gibi durumlara dikkat etmek gerektiğini ifade edebiliriz.
 
 Şimdi senaryomuzu biraz daha ilginçleştirelim
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_126.png)
 
 Bu sefer özelliklerinden birisi veri kontrolüne bağlanabilir liste koleksiyonu tipinden olan bir sınıfı ele alıp çalışma zamanı içeriğini master-detail formatında göstermeye çalışıyor olacağız. Senaryomuzda yine yeni gelen ItemType ve BindItem özelliklerine yer vereceğiz. İlk etapta uygulamamıza Game isimli yeni bir POCO tipi eklediğimizi düşünelim. Aşağıdaki sınıf diyagramında görüldüğü gibi.
 

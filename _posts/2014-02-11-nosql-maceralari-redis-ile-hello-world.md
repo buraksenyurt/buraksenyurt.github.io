@@ -10,9 +10,6 @@ categories:
 
 ![Blizzard_Entertainment_Logo.svg](/assets/images/2014/Blizzard_Entertainment_Logo.svg.png)
 
-
-![Smile](/assets/images/2014/wlEmoticon-smile_90.png)
-
 Buyrun öyleyse yeni yazımızda Redis’ i tanımaya başlayalım.
 
 Bildiğiniz üzere bir süredir NoSQL veritabanı sistemlerinin,.Net tarafındaki kullanımlarını basit Hello World uygulamaları ile incelemeye çalışmaktayız. Bu günkü yazımıza konu olan ürün ise, popüler NoSQL sistemler arasında yer alan Redis. Oldukça popüler sayılabilecek olan bu ürünün kullanıcıları arasında hemen hemen her gün ziyaret ettiğimiz pek çok site bulunmakta. Stackoverflow, instagram, flickr, blizzard, github, disqus ve hatta guardian. Tabi dikkat çekici noktalardan birisi tüm bu örneklerin web tabanlı birer uygulama olması.

@@ -122,11 +122,11 @@ namespace WebApplication4.Controllers
 
 LogosController sınıfı içerisinde iki adet Get metodu bulunmaktadır. İstemci tarafından gelecek HTTP Get taleplerine cevap verecek olan bu fonksiyonlardan birisi pubinfo tablosundaki pubid alanlarını liste olarak döndürmektedir. Diğer yandan senaryomuzun can alıcı Get metodu ise, HttpResponseMessage tipinden bir nesne örneğini döndürmektedir. Bu metod parametre olarak string tipinden olan bir pubid değerini alır. İlgili alana eş satırın logo içeriğini bulur (eğer varsa). Bu içeriğin byte[] tipinden olan karşılığı bir MemoryStream referansından yararlanılarak HttpResponseMessage örneğinin Content özelliğine set edilir.
 
-Bundan sonra yapılması gereken, istemciye dönecek cevap içeriğinin bir image olduğunu belirtmektir. Headers.ContentType özelliğine bir MediaTypeHeaderValue örneğinin atanmasının ve parametre olarak image/png verilmesinin sebebi de budur. Çok doğal olarak ilgili id değeri yanlış girilebilir ve LINQ sorgusu bu durumda null değer üretebilir. Null değer kontrolü yapılarak böyle bir vaka oluşması halinde HTTP 404 Not Found istisnasının döndürülmesi de sağlanmaktadır (Web’ in doğasına ve isteğine uygun şekilde ![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_210.png))
+Bundan sonra yapılması gereken, istemciye dönecek cevap içeriğinin bir image olduğunu belirtmektir. Headers.ContentType özelliğine bir MediaTypeHeaderValue örneğinin atanmasının ve parametre olarak image/png verilmesinin sebebi de budur. Çok doğal olarak ilgili id değeri yanlış girilebilir ve LINQ sorgusu bu durumda null değer üretebilir. Null değer kontrolü yapılarak böyle bir vaka oluşması halinde HTTP 404 Not Found istisnasının döndürülmesi de sağlanmaktadır (Web’ in doğasına ve isteğine uygun şekilde)
 
 ## Testler
 
-Uygulama kodunun tamamlanmasını müteakip test çalışmalarına başlanabilir. Her hangi bir tarayıcı uygulama ile bu işlemi yapabiliriz (Ben tercihimi Google Chrome’ dan yana kullandım ![Smile](/assets/images/2013/wlEmoticon-smile_100.png)) Örneğin api/logos şeklinde bir talepte bulunulduğunda aşağıdaki ekran görüntüsüne benzer olacak şekilde pubid bilgilerinin elde edildiği görülür.
+Uygulama kodunun tamamlanmasını müteakip test çalışmalarına başlanabilir. Her hangi bir tarayıcı uygulama ile bu işlemi yapabiliriz (Ben tercihimi Google Chrome’ dan yana kullandım) Örneğin api/logos şeklinde bir talepte bulunulduğunda aşağıdaki ekran görüntüsüne benzer olacak şekilde pubid bilgilerinin elde edildiği görülür.
 
 ![wapigi_8](/assets/images/2013/wapigi_8_thumb.png)
 
@@ -154,3 +154,4 @@ Senaryomuz sadece yayın evinin logosunu ve yayın evi numaralarını döndürec
 - ve benim aklıma gelmeyen ama sizin ele alacağınız başka bir senaryo da söz konusu olabilir.
 
 Görüldüğü üzere bir Asp.Net Web API servisini resim içeriklerinin elde edilmesini konu alan bir senaryo da kullanabildik. Örneğimizi yeni göz bebeğimiz Visual Studio 2013 Preview üzerinde geliştirmeye çalıştık ve böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

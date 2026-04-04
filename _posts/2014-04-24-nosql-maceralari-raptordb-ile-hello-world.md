@@ -21,8 +21,6 @@ Araştırmasam da, Raptor isminin Dinazor çağındaki [Velociraptor](http://tr.
 
 Peki bu ismin bir NoSQL veritabanı sisteminde de ele alındığını biliyor muydunuz?
 
-![Smile](/assets/images/2014/wlEmoticon-smile_89.png)
-
 ## Tanım
 
 Document Store NoSQL veritabanı tiplerinden birisi olan RaptorDB kuvvetle muhtemel isimlendirilirken tarih öncesi Velociraptor’ dan esinlenilmiştir. Pek çok NoSQL sisteminde olduğu gibi geniş bir kullanım yelpazesi olduğunu ifade edebiliriz. Her ne kadar diğer NoSQL ürünlerinde olduğu gibi geniş bir referans kitlesi göze çarpmasa da, Forumlar, Bloglar, Wiki tarzı siteler, İçerik Yönetim Sistemleri (Content Management Systems) ve Sharepoint benzeri uygulamaların yazılabileceği belirtilmektedir.
@@ -301,3 +299,4 @@ Görüldüğü üzere RaptorDB, kullanımı ve felsefesi ile dikkat çekicidir. 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_RaptorDB.zip (162,25 kb)](/assets/files/2014/HowTo_RaptorDB.zip)
+

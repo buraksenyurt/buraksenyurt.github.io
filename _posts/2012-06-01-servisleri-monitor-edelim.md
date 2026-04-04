@@ -15,7 +15,6 @@ Banka gibi, pek çok farklı sistemin bir arada yer aldığı ve çalıştığı
 
 ![504349_tft_screen_close-up_1](/assets/images/2012/504349_tft_screen_close-up_1.jpg)
 
-
 İşin içerisine servisler girdiğinde, bunların anlık durumunlarını izlemek, ayakta olup olmadıklarını görmek veya zaman içerisindeki hareketliliklerine bakarak istikrarlı yapılarının nasıl olduğunu analiz etmek isteyebiliriz. Pek tabi bunun için birden çok 3ncü parti tool olduğunu biliyoruz. Söz gelimi IIS tarafında Windows Server AppFabric aracından yararlanılarak son derece etkili ve gelişmiş izleme ve kontrol mekanizmaları gerçekleştirilebilmektedir. Lakin bazı bankacılık sistemlerinde teknoloji adaptasyonu beklendiği kadar hızlı değildir. Windows Server AppFabric gibi bir tool’ un geçişi, yıllarca XP üzerinde çalışan bankanın Windows 7’ ye geçişindeki gecikme kadar sancılı ve sıkıntılı olabilir. Hatta bankanın bir sonraki teknolojik yenilenme sürecinde ortada Windows Server AppFabric’ ten tamamen farklı bir ürün de bulunabilir
 
 ![Undecided](/assets/images/2012/smiley-undecided.gif)
@@ -157,8 +156,6 @@ namespace Kernel
 
 GetReport isimli metodumuz Analyst sınıfı içerisinde tanımlı olan Sources özelliğinin tüm içeriğini dolaşarak, her bir Source örneği için Poke metodunu çağırmakta ve sonuçları generic bir Dictionary koleksiyonu içerisinde toplamaktadır. Yazmış olduğumuz metodun işe yarayıp yaramadığını görmek için yine bir test metodunu kullanabiliriz. Aynen aşağıda olduğu gibi
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ```csharp
 /// <summary> 
 /// Bir servis adres listesi için gerekli testi yapar 
@@ -222,8 +219,6 @@ namespace Kernel
 ```
 
 İlk olarak dışarıdan erişilebilen Sources koleksiyonunu private hale getirdik. Nitekim eleman ekleme işlemi sırasında çalıştırılması gereken bir doğrulama işlemi söz konusu. Bu koleksiyona eleman ekleme adımını AddSource metoduna verdik. Bu metod içerisinde Regex ifadesinden yararlanarak, gelen Source örneğine ait address bilgisinin geçerli bir URL olup olmadığını kontrol etmekteyiz. Bu işlemin ardından iş kuralımıza göre adresin svc veya asmx uzantılı olup olmadığına bakıyoruz. Eğer bu kriterler sağlanıyorsa güncel Source nesne örneğinin ilgili koleksiyona eklenmesi sağlanıyor. Tabi yapmış olduğumuz bu değişiklik nedeni ile test metodumuzu da güncellememiz gerekecek. Keşke en başından düşünseymişiz değil mi?
-
-![Embarassed](/assets/images/2012/smiley-embarassed.gif)
 
 ```csharp
 /// <summary> 
@@ -372,10 +367,6 @@ Buraya kadar yaptıklarımızı düşündüğümüzde uygulamamızın eksik kala
 
 Bu tip kısımların geliştirilmesini siz değerli okurlarıma bırakıyorum. Hatta sıkı takipçilerim için bir ödev olsun. Ben belki bir sonraki makalede bu geliştirmeleri de ele alabilirim. Kim bilir
 
-![Laughing](/assets/images/2012/smiley-laughing.gif)
-
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 [Monitoring.zip (2,27 mb)](/assets/files/2012/Monitoring.zip)

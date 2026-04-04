@@ -13,6 +13,4 @@ categories:
 ---
 Malum Visual Studio dahil pek çok programın birden fazla monitor desteği bulunmakta. Hatta geliştirdiğimiz uygulamaların çoğu birden fazla monitor desteği olacak şekilde yapılandırılabiliyor. Peki sistemde yüklü kaç monitor var, bunların çözünürlükleri, pixel başına byte değerleri nelerdir, öğrenebilir miyiz? Tabi ki
 
-![Wink](/assets/images/2012/smiley-wink.gif)
-
 ![tfi_52.PNG](/assets/images/2012/tfi_52.PNG)

@@ -10,7 +10,6 @@ categories:
 
 ![381eed443562d941546485cc9e2decf4_1316198153](/assets/images/2014/381eed443562d941546485cc9e2decf4_1316198153_thumb.jpg)
 
-
 Ajanımızın dizi de bir de yöneticisi var. Aynı Mission Impossible’ da olduğu gibi. Onun adı “Bay Dost”
 
 Her bölüm Özel Ajan Oso’ ya bir görev veriliyor. Söz gelimi çocuklardan birisi yanlışlıkla kumbarasının bir ayağını kırmış olsun. Bunu nasıl tamir eder? 3 adımda. Dizi de olay şöyle ilerler.
@@ -94,8 +93,6 @@ namespace EmployeeService
 ```
 
 ve en önemli kısım, servis tarafındaki konfigurasyon içeriği
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_136.png)
 
 ```xml
 <?xml version="1.0"?> 
@@ -192,8 +189,6 @@ Ara adımda EntryService.svc sayfasını bir tarayıcı üzerinden açmayı dene
 ![wcfhttps_6](/assets/images/2014/wcfhttps_6.png)
 
 Ayrıca WSDL (Web Service Description Language) erişim adreslerinin de https tabanlı olduğu rahatlıkla gözlemlenebilir
-
-![Winking smile](/assets/images/2014/wlEmoticon-winkingsmile_136.png)
 
 Adım 6: İstemci Uygulamaya Servis Referanasının Eklenmesi
 

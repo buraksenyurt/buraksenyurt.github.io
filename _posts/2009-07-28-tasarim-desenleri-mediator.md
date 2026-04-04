@@ -15,8 +15,6 @@ Yandaki resimde Zurich hava alanına ait bir görüntü yer almaktadır. Hava al
 
 Konumuz aslında kimin daha iyi olduğu değil ama tüm hava alanları için ortak olan bir sorun. İnip kalkan ve hatta aynı havasahasına giren uçakların koordine edilmesi. Hiç çok işlek hava alanlarında kontrol kulesi olmadığını hayal ettiniz mi?
 
-![Sealed](/assets/images/2009/smiley-sealed.gif)
-
 Sanıyorumki aşağıdaki konuşmalar ile karşılaşabilirdik.
 
 - AzonAir - 110: Ben sağdaki piste inmek üzere alçalıyorum arkadaşlar.
@@ -34,8 +32,6 @@ Sanıyorumki aşağıdaki konuşmalar ile karşılaşabilirdik.
 Abartamaya gerek yok tabiki ama bu anektodunda bir manası var. Bir kontrol kulesi temel olarak tüm iniş kalkışları düzenler ve bu işi yaparken yukarıdaki gibi, uçakların birbirleri ile konuşmasına gerek kalmaz. Bir başka deyişle birbirleriyle etkileşimde olan uçakların tüm iletişimi, kontrol kulesi içerisinde hesaplanır ve işletilir. Dahada açık bir ifade ile kontrol kulesi aslında Mediator nesnesinin kendisidir. Mediator??? Hımmm..
 
 Pekala konuyu biraz daha örneklemeye çalışalım.
-
-![Wink](/assets/images/2009/smiley-wink.gif)
 
 Bu kez bir network ağındaki kullanıcıları ve grupları göz önüne alalım. Kullanıcıların (Users) birden fazla gruba dahil olması muhtemeldir. Benzer şekilde bir grupta kendi içerisinde birden fazla kullanıcı barındırabilir. Yani kullanıcı ve gruplar arasında çoğa çok (Many to many) ilişki söz konusudur. Bu aktörler aslında birer nesne (Object) olarak düşünüldüklerinde, birbirlerine sıkı sıkıya bağlı olmaları (Tghtly Coupling), yönetimlerini zorlaştırmakla kalmaz, ileride yapılacak olan genişletmelerin çok fazla nesneyi etkilemesinede neden olur. Dolayısıyla aralarındaki bağı zayıflaştırmak (Loose Coupling) gerekir. Bu noktada veritabanı tasarımı ile uğraşanlar için sorunu çözmek son derece kolaydır. Nitekim bir ara tablo yardımıyla çoğa çok ilişkinin tesisi kolayca sağlanabilir. Diğer yandan Nesne Yönelimli (Object Oriented) tarafta, kullanıcı ve gruplar arasındaki iletişimi, onlardan soyutlayarak kendi içerisinde yönetecek olan bir ara nesneye ihtiyaç vardır. Kim...Mediator.
 
@@ -183,3 +179,4 @@ Bu bilgilendirmenin yapılabilmesi için tahmin edileceği üzere, Concrete Medi
 Özet olarak herhangibir havayoluna ait bir uçak, İstanbul kulesine yaklaştığında kendisine yeni bir rota talep ederken diğer uçaklar ile haberleşmek ve onların konumlarına göre hesaplamalar yaparak bir yön tayin etmek zorunda değildir. Tüm uçaklar bir birlerinden ayrıştırılmış ve yönlerini belirlemek üzere kullanılması gereken algoritmalar Mediator tipi içerisine kapsüllenmiştir. Biraz karışık bir desen implemantasyonu olmasına rağmen faydalı olduğunu umuyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MediatorPattern.rar (24,85 kb)](/assets/files/2009/MediatorPattern.rar)
+

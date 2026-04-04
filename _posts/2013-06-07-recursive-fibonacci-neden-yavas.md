@@ -29,5 +29,3 @@ Recursive fonksiyonları ilk etapta anlamakta güçlük çeksek de, matematik il
 Biz bu görsel dersimizde, Fibonacci sayı dizisinin Recursive fonksiyonlar ile elde edilmesi halinde sistemin neden ve nasıl yavaşladığını anlamaya çalıştık. Ardından da iteratif bir yaklaşım üzerinde durarak basit bir çıkarımda bulunduk.
 
 Faydalı olması dileğiyle
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_206.png)

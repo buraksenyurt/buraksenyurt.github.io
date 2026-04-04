@@ -12,7 +12,6 @@ Yedek Subay olarak askerlik hizmetimi yerine getirdiğim yıllarda (O zamanlar 1
 
 ![cartoon-soldier-010](/assets/images/2013/cartoon-soldier-010.jpg)
 
-
 Bir gün komutanım ile birlikte yine sivil hayat için anlamsız olan ama Askeri disiplin kuralları çerçevesinde gayet de makul görünen bir işe adanmıştık. Neredeyse tüm komutanlık personelinin iğneli Printer’ dan çıkartılmış karınca yazısı ebatlarındaki bilgilerini, bir diğer koca liste ile karşılaştıracak ve bir filtreleme işlemi gerçekleştirecektik. (İşin yaklaşık olarak kesintisiz çalışma ile 48 saate varabileceğini biliyorduk)
 
 Takdir edersiniz ki o yıllarda bilgisayar kullanılıyor olmasına rağmen, komutanlığın ihtiyaç duyduğu ve hayatı kolaylaştıracak işlevsellikler için genellikle Microsoft Office ürünleri ele alınmaktaydı ama elimizde şöyle zırt diye filtreleme yapabileceğimiz bir SQL/Oracle ortamı da yoktu. (Yıl 2001-2003 arası diyeyim)
@@ -21,11 +20,7 @@ Hal böyle olunca elimize aldık çıktıları başladık tek tek karşılaştı
 
 Doğruyu söylemek gerekirse ne ben ne de komutanım tüm listeyi dolaşmak istemiyorduk. Kafa kafaya vererek güzel bir yol bulduk elbette
 
-![Smile](/assets/images/2013/wlEmoticon-smile_88.png)
-
 Yol derken elimizde cetvel, kalem vesaire vardı. Ne bilgisayar ne de başka bir akıllı cihaz. O zaman anladım ki bazı işlerde kişiye büyük sabır gerekebiliyor. Örneğin TFS (Team Foundation Server) üzerinde kullanılan XML Web Service örneklerinin teker teker bulunup çıkartılması gibi
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_185.png)
 
 TFS mimari alt yapısı ve çevre etkileşimini incelediğimiz [şu yazımızda](/2013/03/15/tfs-client-object-model-icin-hello-world/) Client Object Model’ i kısaca anlamaya çalışmıştık. O makalede yer alan mimari çizime dikkatlice bakarsak eğer, Client Object Model’ in aslında TFS Web Service’ ler ile haberleştiğini görebiliriz. Aslına bakarsanız Team Foundation Server tarafında epeyce fazla sayıda XML Web Service yer almaktadır. Bu servisleri ana hatları ile değerlendirdiğimizde ise sunucu ve koleksiyon seviyesinde olmak üzere iki ana dala bölündüklerini görürüz.
 
@@ -229,13 +224,9 @@ namespace AllServices
 
 ve işte çalışma zamanına ait örnek ekran çıktısı
 
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_185.png)
-
 ![tfsservices_4](/assets/images/2013/tfsservices_4.png)
 
 Bir servis adına tıklayın ve içeriğine ulaşın
-
-![Winking smile](/assets/images/2013/wlEmoticon-winkingsmile_185.png)
 
 #endregion Off Topic
 
@@ -353,8 +344,6 @@ Diğer yandan IProcessTemplate arayüzüne atanan servis referansının elde edi
 ![tfsservices_8](/assets/images/2013/tfsservices_8.png)
 
 Tabi burada akla takılan en önemli sorunlardan birisi kullanabileceğimiz TFS Web Service’ lerinin kod tarafındaki GetService metodu tarafından kullanılabilecek karşılıklarının neler olduğudur?
-
-![Who me?](/assets/images/2013/wlEmoticon-whome_9.png)
 
 Bu konuda aşağıdaki listenin yardımcı olabileceğini düşünüyorum.
 

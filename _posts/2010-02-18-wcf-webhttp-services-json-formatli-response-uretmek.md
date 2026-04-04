@@ -113,8 +113,6 @@ Dikkat edileceği üzere JSON formatında bir çıktı elde edilmiştir.
 
 İstemci tarafına gelen bu çıktının Person tipini içeren bir koleksiyon şeklinde ele alınması istediğimizdeyse HttpContent tipi üzerinden System.Runtime.Serialization.Json isim alanında yer alan ReadAsJsonDataContract genişletme metodunu çağırabiliriz. Tabi burada istemci tarafında Person tipininde bir örneğinin yer aldığını varsayıyoruz ki bunu bildiğiniz üzere WCF REST Starter Kit Preview 2 ile gelen Paste XML As Types seçeneği ile oluşturabiliriz. Eğer hatırlamıyorsanız biraz araştırmaya ne dersiniz?
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 İşte istemci tarafındaki yeni kod içeriğimiz.
 
 ```csharp
@@ -155,8 +153,6 @@ Bu durumda çalışma zamanında aşağıdaki sonucu elde ederiz.
 ![blg133_Runtime2.gif](/assets/images/2010/blg133_Runtime2.gif)
 
 Gelelim bilinçli olarak çıktı formatının nasıl belirleneceğine. Öncelikli olarak neden bilinçli bir şekilde format çıktısını söylememiz gerektiğini kavramamızda yarar olduğu kanısındayım. İstemci tarafının her zaman HTTP talebinin Header kısmına müdahale etmesi söz konusu olamayabilir. Böyle bir durumda istemcinin JSON formatında talepte bulunabilmesi de mümkün değildir. Dolayısıyla bu tip bir vakada JSON formatında çıktı verileceğinin bilinçli olarak bildirilmesi gerekmektedir. Peki ya nerede ve nasıl? Cevap: Servis tarafındaki ilgili operasyon içerisinde ve bir parça kod yardımıyla
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 İşte GetAllPersons isimli servis operasyonumuzun bilinçli olarak JSON formatında çıktı veren yeni versiyonu.
 
@@ -205,8 +201,7 @@ namespace Lesson3
 
 ki buda tam anlamıyla JSON çıktısıdır.
 
-![Smile](/assets/images/2010/smiley-smile.gif)
-
 Çıktının JSON veya XML harici formatlarda olması da söz konusudur aslında. Bu formatların nasıl ele alınacağını ise ilerleyen yazılarımızda değerlendirmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson3_RC.rar (173,29 kb)](/assets/files/2010/Lesson3_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+

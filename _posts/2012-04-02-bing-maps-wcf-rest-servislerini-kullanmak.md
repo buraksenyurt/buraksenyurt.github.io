@@ -13,12 +13,9 @@ Bazen öğrenmek istediklerimiz bize inanılmaz karşık gelir. Ne zaman kitabı
 
 ![Garfield-1](/assets/images/2012/Garfield-1.jpg)
 
-
 Yüksek Lisans yaptığım dönemlerdeki hocalarımdan birisi bu konuda şöyle bir tavsiye de bulunmuştu…
 
 > Araştırmanızda bir nokta da tıkandınız, takıldınız mı?(Bir süre sessizlik)…Tatile çıkın. Bir iki hafta o konu ile hiç uğraşmayın. Döndüğünüzde soruna çok daha farklı bir şekilde bakacağınızı göreceksiniz
->
-> ![Wink](/assets/images/2012/smiley-wink.gif)
 
 Doğruyu söylemek gerekirse hangi yolu kullanırsak kullanalım, kendimizi nasıl motive etmek istersek isteyelim, bazen araştırdığımız konu da öyle bir nokta yakalarız ki, gerisi çorap söküğü gibi gelir. İşte bu yazımızda bu çorap söküğünü bulmaya çalışıyor olacağız.
 
@@ -272,7 +269,5 @@ Bu sefer bir Stream kullanmak durumundayız. Nitekim URL olarak talep ettiğimiz
 ![bingrest11.png](/assets/images/2012/bingrest11.png)
 
 Artık çorabı yırttık diye düşünüyorum. Bir başka deyişle gerisinin çorap söküğü gibi gelmesi lazım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-
-![Wink](/assets/images/2012/smiley-wink.gif)
 
 [BingRestClient.rar (1,20 mb)](/assets/files/2012/BingRestClient.rar)

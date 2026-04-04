@@ -91,8 +91,6 @@ namespace SequentialPLINQ
 
 Örnekte SQL Server 2008 üzerinde kurulu olan, AdventureWorks2008 veritabanındaki Production şemasında yer alan Product tablosuna ait veriler kullanılmaktadır. Product tablosunun kod içerisindeki temsili için, Product isimli bir sınıf tasarlanmıştır. Sınıfa ait nesne örneklerinden oluşan generic List koleksiyonunun doldurulması için GetProductList metodundan yararlanılmaktadır. Söz konusu generic liste PLINQ ifadesi yardımıylada sorgulanmaktadır. Buraya kadarki kısımda zaten ilginç bir şey yok. Dikkat edeceğimiz nokta, isimsiz tip (Anonymous Type) içerisinde tid isimli sayacın arttırılmasıdır.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Öyleki uygulamayı çalıştırdığımızda aşağıdaki sonuçları elde ederiz.
 
 ![blg21_1.gif](/assets/images/2009/blg21_1.gif)

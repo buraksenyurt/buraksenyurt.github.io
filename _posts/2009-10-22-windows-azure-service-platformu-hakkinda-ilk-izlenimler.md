@@ -12,8 +12,6 @@ Güneşli açık bir hava ve sessiz bir gün yada gece...Deniz kenarında veya c
 
 ![blg91_Giris.jpg](/assets/images/2009/blg91_Giris.jpg)
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Microsoft'un son yıllarda Cloud Computing mimarisi için getirdiği geliştirmelerden biriside Windows Azure Services platformudur. Bu platformu servis bazlı bir işletim sistemi olarak düşünebiliriz. Ama bu çok basit bir yaklaşım olur. Bu konuda aslında pek çok kaynakta yazılmakta ve çizilmektedir. Ancak ürün henüz nihai halini almadığından sürekli olarak değişimlere uğramaktadır. Söz gelimi daha önce yayınlanan SDK içerisine Microsoft.Net Services bloku içerisinde yer alan Workflow Services modeli, Temmuz 2009' da yayınlanan CTP sürümünde kaldırılmışdır. Aslında konunun detaylarına girdiğimde çok kısa bir sürede kaybolduğumu ifade edebilirim. Bu nedenle yazımızın bundan sonraki kısımlarında mimarinin ne getirdiğini sizlere araştırma sonuçlarımdan aktarmaya çalışacağım.
 
 Windows Azure Service Platformu iki ana parçayı içermektedir. İlk parça olan Windows Azure, bulut tabanlı işletim sistemidir. Bu işletim sistemi üzerinde ise çeşitli servis inşa blokları (Building Blocks) yer alır (Microsoft SQL Services, Microsoft.Net Services, Live Services, Microsoft Sharepoint Services, Microsoft Dynamics CRM Services) gibi. Aşağıdaki şekilde söz konusu mimari model daha net görülebilmektedir.
@@ -39,3 +37,4 @@ Ben bu konuya oldukça meraklıyım aslında. Nitekim işin içerisinde Service 
 ![Cool](/assets/images/2009/smiley-cool.gif)
 
 Bu nedenle bende boş durmadım ve önümüzdeki sene Cloud Computing ve Windows Azure ile ilişkili olan araştırmalarımı daha sağlıklı devam ettirebilmek adına Amazon'dan [Cloud Computing with the Azure Platform](http://www.amazon.com/Cloud-Computing-Windows-Platform-Programmer/dp/0470506385/ref=sr_1_1?ie=UTF8&s=books&qid=1256228080&sr=8-1)adlı kitabı sipariş ettim. Bakalım önümüzdeki sene Azure ile ilişkili olarak ne gibi bir macera beni (ve doğal olarak siz değerli okurlarımı) bekliyor olacak. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

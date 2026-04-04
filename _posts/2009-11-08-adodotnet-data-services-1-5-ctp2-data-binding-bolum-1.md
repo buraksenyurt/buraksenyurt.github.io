@@ -28,8 +28,6 @@ Bu nedenle WPF ve Silverlight tarafında ele alınanveri bağlama (DataBinding) 
 
 Dilerseniz Ado.Net Data Service hizmetlerinin kullanıldığı senaryolarda, veri bağlama işlemlerinin nasıl yapılacağını örnekler üzerinden incelemeye başlayalım. İlk olarak tek yönlü (One Way) sonrasında ise iki yönlü (Two Way) veri bağlama işlemlerini ele alıyor olacağız. İşe ilk olarak basit bir Asp.Net Web Application projesi oluşturarak başlayabiliriz. Projemizde Ado.Net Entity Framework tabanlı bir veri kaynağı kullanıyor olacağız. İstemci tarafında one-to-many ilişki içerisinde değerlendirilebilecek tipleri ele almak istediğimizden kobay olarak AdventureWorks veritabanındaki ProductSubcategory ve Product tablolarını kullanıyor olacağız.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Ado.Net Entitiy Diagramımız aşağıda görüldüğü gibidir.
 
 ![blg82_Edm.gif](/assets/images/2009/blg82_Edm.gif)
@@ -62,8 +60,6 @@ Artık istemci tarafını tasarlamaya başlayabiliriz. Ancak öncesinde istemci 
 ![blg82_CommandPrompt.gif](/assets/images/2009/blg82_CommandPrompt.gif)
 
 Bu kez gerçekten istemci tarafını yazmaya başlayabiliriz.
-
-![Smile](/assets/images/2009/smiley-smile.gif)
 
 Bu amaçla basit bir WPF uygulaması geliştireceğiz. (Size tavsiyem aynı örneği Silverlight üzerinde geliştirmeye çalışmanız olacaktır.) Uygulamamızı oluşturduktan sonra ilk yapacağımız işlem, Ado.Net Data Service'imize ait URL adresinden gerekli servis referansının, Add Service Reference yardımıyla projeye eklenmesi olacaktır.
 

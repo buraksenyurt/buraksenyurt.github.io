@@ -16,8 +16,6 @@ Programlamaya ister yeni başlamış olun ister yıllardır bu işin içerisinde
 Makbul olan pek çok geliştirici gibi ortak bazı kurallar veya standartlar üzerinde buluşabiliyor olmaktır tabiki. Şimdi diyeceksiniz ki “yazının başlığı ve içeriği arasında nasıl bir bağ kurdun be adam?”. Aslında ispatlamak istediğim basit bir teori var.
 
 > Her ne kadar saçma görünen bir fikrin icrası da söz konusu olsa, developer işini kafasında veya kağıt üstünde titizce planlar, araştırır, sırayla adımlar ve hatta satranç oynarmışçasına bir kaç hamle ilerisini düşünerek kodlama yapar. Sonrasında ise…Okuyalım ve görelim
->
-> ![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_105.png)
 
 Doğruyu söylemek gerekirse bu tip felsefik söylemleri veya yaklaşımları kanıtlamak veya kabul ettirmek zordur. Hatta tepki almak çok ama çok daha kolaydır. Felsefeyi anlatabilmenin belki de en kolay yolu kendi beyninizi açıp bir işi yaparken canlı canlı kağıda dökmekten geçmektedir.
 
@@ -26,8 +24,6 @@ Lafı fazla uzatmadan felsefemizi örnek bir fikir ile ilişkilendirip ilerlemey
 > Ülkelerin isim, kod, ISO, telefon alan kodu bilgilerini tek bir XML kaynağında ele almak ve hatta gerektiğinde POCO olarak da dış ortama sunmak istiyorum. Ve…
 
 İşte gerisini beynim nasıl yorumlamış görelim
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_105.png)
 
 1- Ülkeler için öncelikli olarak XML veri kaynağı araştırılır ancak kafamızada tasarladığımız gibi tüm alanları içermediği görülebilir. Bulunan içerik her ihtimale karşı kayıt altına alınır. (5 dakika)
 
@@ -61,8 +57,6 @@ Lafı fazla uzatmadan felsefemizi örnek bir fikir ile ilişkilendirip ilerlemey
 ```
 
 3 – Elde edilen XML içeriklerine kısaca bir göz atılır. Alanlar analiz edilir. Her iki içeriğin bir arada ele alınarak tek bir çıktı üretilebileceği gözlemlenir ki bu oldukça iyidir
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_105.png)
 
 Hedef XML içeriğinin nasıl olacağı planlanır. Bunun için kağıt kalem bile kullanılabilir. (2 Dakika)
 
@@ -279,8 +273,6 @@ Doğruyu söylemek gerekirse sonuçları irdelemeden projeyi kapatırsak pek de 
 ???
 
 Soru işaretlerinden de anlaşılacağı üzere bu kısımlar tamamen size ait değerli okurlarım
-
-![Winking smile](/assets/images/2012/wlEmoticon-winkingsmile_105.png)
 
 Ama düşünce yapısını az da olsa ifade edebildiğimi düşünüyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

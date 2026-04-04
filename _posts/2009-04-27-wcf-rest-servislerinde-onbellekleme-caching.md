@@ -131,8 +131,6 @@ Tabi bu görüntü yazımız için yeterli değildir. Nitekim amacımız ön bel
 
 Servis bu haliyle talep edildiğinde, stockSize değeri 0 olduğundan if koşuluna göre 10 birimin altında olanlar getirilmektedir. Şayet bundan sonra tarayıcıdan http://localhost:1000/Service.svc/?size=100 gibi bir talep girilirse yine stok miktarı 10 birimin altında olanlar getirilecektir. Neden? Tabiki ilk talep önbellekte tutulduğu için
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Elbette, 60 saniyelik ön bellekleme süresi beklendikten sonra bu talep gönderilirse, stok miktarı 100' ün altında olan ürünlerin elde edilebildiği ve doğal olarak debug moddayken,GetFeed metodu içerisine düşülebildiği gözlemlenecektir. Bu tam olarak istenen bir şey olmayabilidir aslında. Belkide size parametresine göre ayrı ayrı ön bellekleme yapılabilmesi daha doğru olabilir ki buda son derece basittir. Tek yapılması gereken ön bellekleme profilini aşağıdaki gibi güncelleştirmektir.
 
 ![blg8_7.gif](/assets/images/2009/blg8_7.gif)

@@ -15,8 +15,6 @@ Oysaki filtreleme tipi olarak Action dışında, Address, AddressPrefix, StrictA
 
 Bu kısıtlamaya göre sadece One-Way veya Duplex modeldeki iletişim (Communication) desteklenir. Dolayısıyla Request/Reply modelde olan iletişimi ele alan tipleri yönlendirme servisi üzerinde kullanamayız. Bu kısıtlamaya rağmen bazı senaryolarda (örneğin asenkron modellerde), istemciden gelen talebin birden fazla DownStream'e aktarılmasının WCF 4.0 ile gelen özellikler sayesinde kolaylaştırılmış olması, geliştiriciler açısından oldukça heyecan vericidir.
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Öyleyse vakit kaybetmeden basit bir örnek üzerinden ilerlemeye ne dersiniz. Ben yazıyı gecenin geç bir vaktinde yazdığım için yanımda bir adet sıcak kahveyi bulundurmayı ihmal etmedim.
 
 ![Cool](/assets/images/2009/smiley-cool.gif)
@@ -115,3 +113,4 @@ Konfigurasyon dosyasında önem arz eden noktalardan bir diğeride, yönlendirme
 Görüldüğü gibi tüm DownStream servisleri, istemciden gelen Product tipini ele almış ve basit bir şekilde kullanmıştır. Biz örneğimizde sadece gelen bilgiyi ekrana yazdırıyoruz. Aynı istemci paketinin, n sayıda DownStream servisi tarafından değerlendirilip üzerlerinde farklı şekillerde işlemler uygulanması söz konusu olduğunda, MatchAll filtereleme modelini göz önüne alabiliriz. Tabiki Request/Reply kısıtlamasını unutmamak gerekir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Router Project 3.rar (249,84 kb)](https://www.buraksenyurt.com/pics/2009%2f8%2fRouter+Project+3.rar)
+

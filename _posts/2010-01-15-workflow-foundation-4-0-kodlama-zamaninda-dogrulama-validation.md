@@ -13,8 +13,6 @@ Bazen nerede duracağımızı bilmemiz gerekir ve bazende, mümkün olduğunca e
 
 Ürün geliştirmek için kullandığımız Visual Studio gibi gelişmiş bir araç,.Net Framework platformu vb...O halde bazı hataların çalışma zamanı yerine daha geliştirme aşamasındayken IDE üzerinde fark edilmesinin önemli olduğunu söyleyebiliriz. Peki geliştirme safhasında, örneğin bir Workflow aktivitesini kullanırken...Hımmmm...Sanırım nereye varmak istediğimi anladınız.
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Bu yazımızda, özel aktivite bileşenlerinin kodlama zamanındayken olası hataları nasıl bildirebileceğini ve böylece doğrulamanın (Validation) nasıl sağlanabileceğini incelemeye çalışacağız.
 
 Bundan önceki yazılarımızda özel aktivite bileşenlerimizi nasıl geliştirebileceğimizi incelemeye çalışmıştık. Bu amaçla yazdığımız örneklermizde CodeActivity ve AsyncCodeActivity türevli bileşenler geliştirmiştik. Özel aktivite bileşenleri geliştirilmesi sırasında dikkat edilmesi gereken önemli konulardan biriside kodlama zamanında gerçekleştirilmesini istediğimiz doğrulama (Validation) işlemleridir. Doğrulama için Workflow Foundation 4.0 tarafında kullanılabilen birden fazla teknik bulunmaktadır. Nitelik (Attribute) bazlı kullanım dışında Imperative ve Declerative olaraktan da doğrulama işlemlerini gerçekleştirebiliriz. Aslında konuyu anlamanın en güzel yolu öncelikli olarak sorunu ortaya koymaktan geçmektedir. Bu sebepten aşağıdaki gibi bir CodeActivity bileşeni tasarladığımızı düşünelim.
@@ -62,8 +60,6 @@ Bu durumda tasarım zamanında aşağıdaki görüntü ile karşılaşırız.
 
 Dikkat edileceği üzere Source ve Destination değelerinin doldurulması zorunlu hale getirilmiştir. Üstelik bu durum derleme işleminden sonra açık bir şekilde adeta geliştiricinin gözüne sokulmaktadır.
 
-![Laughing](/assets/images/2010/smiley-laughing.gif)
-
 RequiredArgument niteliği ile ilişkili olarak dikkat edilmesi gereken noktalardan biriside Argument tiplerine uygulandığında işe yarıyor olmasıdır. Yani Soruce ve Destination özelliklerinin string tipinden olmaları gibi bir durumda bu niteliğin bir etkisi olmayacaktır.
 
 İlk vakayı çözümledik. Artık dosya adlarını girdiğimizi düşünebiliriz. Sıradaki sorun Source özelliğine girilen dosyanın sistemde olmaması halinde ortaya çıkacaktır. Buna göre yine kopyalama işlemi sırasında bir çalışma zamanı hatası alınacaktır. Durumu irdeleyebilmek için Source ve Destination özelliklerini aşağıdaki şekilde görüldüğü gibi ayarladığımızı düşünelim.
@@ -75,8 +71,6 @@ Bu durumda çalışma zamanında aşağıdaki hata mesajını alırız.
 ![blg110_Exception2.gif](/assets/images/2010/blg110_Exception2.gif)
 
 Tabi burada c:\ klasörü içerisinde Source.txt isimli bir dosyanın gerçektende var olmadığını düşünüyoruz. Buradaki istisnaya göre kaynak dosyanın önceden kontrol edilmesi ve derleme işleminden sonra geliştiriciye bir uyarı veya hata mesajı ile durumun bildirilmesi istenebilir. Ancak burada basit bir nitelik yardımıyla aşabileceğimizin ötesinde bir durum vardır. Nitekim doğrulama için özel bir iş mantığı (Bussines Logic) bulunmaktadır. İşte bu tip doğrulamaları gerçekleştirebilmek için CodeActivity ve NativeActivity türevlerinde CacheMetadata isimli metodun ezilmesi ve Visual Studio ortamına doğrulama ile ilişkili bilgilendirmenin yapılması gerekmektedir. Sözün özü FileCopy aktivite bileşenimizi aşağıdaki hale getirmemiz yeterli olacaktır
-
-![Wink](/assets/images/2010/smiley-wink.gif)
 
 ```csharp
 using System.Activities;
@@ -117,14 +111,11 @@ Burada Source özelliğinin değerine bakılmakta ve belirtilen dosyanın sistem
 
 Tabi eğer true yerine false değerini kullanırsak aşağıda görülen nur topu gibi error'un sahibi oluruz.
 
-![Smile](/assets/images/2010/smiley-smile.gif)
-
 ![blg110_WarningFalse.gif](/assets/images/2010/blg110_WarningFalse.gif)
 
 Bu adımdan sonra geçerli bir kaynak dosyayı Source özelliğine atayarak devam edersek Destination özelliğine atanan değer ile ilişkili kontrolleri yapmamız gerektiği sonucuna varabiliriz. Buna göre hedef dosyanın kaynak dosya ile uzantı bakımından uyumlu olması sağlanabilir. Tabiki arka arkaya yapılan çalıştırmalar sonrasında hedef dosya zaten var ise overwrite ile ilişkili hataların oluşması da söz konusudur. Bu iki doğrulama işlemini siz değerli okurlarıma bir antrenman olması için bırakıyorum
 
-![Wink](/assets/images/2010/smiley-wink.gif)
-
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [CustomActivityValidation.rar (50,30 kb)](/assets/files/2010/CustomActivityValidation.rar)
+

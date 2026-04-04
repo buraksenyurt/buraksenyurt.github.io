@@ -14,9 +14,6 @@ Bildiğiniz üzere bir süre önce Microsoft PDC 2010 etkinlikleri gerçekleşti
 
 ![blg240_Giris](/assets/images/2010/blg240_Giris.gif)
 
-
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_10.png)
-
 İlginç olan noktalardan birisi ise, PDC’ de sunulan içeriklerin ve detaylı bilgilerinin Open Data Protocol (ODATA) formatında ve bir WCF Data Service aracılığıyla dış dünyaya sunuluyor olmasıydı.
 
 Aslına bakarsanız bu tip bir veri paylaşımı benim gibi servis tarafı ile ilgilenen pek çok geliştirici için tek bir anlama gelmektedir: “Git kendi uygulamanı yaz ve PDC Session bilgilerini servis aracılığıyla çek”
@@ -38,8 +35,6 @@ Servis tarafından çekilen bu içerik sanıyorum ki WCF Data Service geliştire
 ![blg240_SampleQuery](/assets/images/2010/blg240_SampleQuery.gif)
 
 Dikkat edileceği üzere gerçekleştirilen oturumlara ait detaylı bilgileri bu servis üzerinden tedarik edebiliriz. Söz gelimi Download edilebilir materyallere ait bağlantı adreslerini (Powerpoint Sunumlar, WMV ve MP4 dosyaları), konuşmacılara ait kısa öz geçmişleri, oturumlar ile ilişkili başlık, açıklama, kategori ve daha pek çok bilgiyi elde etme şansına sahibiz. Yazıyı hazırlarkenki ilk amacımız Download edilebilir içeriklere ulaşmaktır. Bunun için Sessions koleksiyonundan yararlanmamız yeterli olacaktır. Ancak tabiki de diğer Entity Set içeriklerini de değerlendirip çok daha detaylı bir arayüz uygulaması geliştirebilirsiniz
-
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_10.png)
 
 (Hatta sıkı takipçilerinden olduğum Mike Taulty’ nin daha geçen günlerde [yayınlamış](http://feedproxy.google.com/~r/mtaulty/~3/xQwMPWbDX9w/pdc-2010-session-downloader-in-silverlight.aspx) olduğu oldukça iddiali bir Silverlight uygulaması da söz konusudur)
 
@@ -209,8 +204,6 @@ Görüldüğü üzere ContentLink bileşeni üzerinde Title ve Url bilgileri tut
 
 Bu kontroller sayesinde WCF Data Service tarafına gönderilen LINQ sorguları sonrası yüklenecek olan veri içeriklerinin, görsel bileşen bazındaki karşılıkları da tasarlanmış olmaktadır. Artık Default.aspx sayfasının tasarımsal ve kodsal içeriğini kodlayabiliriz
 
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_10.png)
-
 Default.aspx içeriği;
 
 ```text
@@ -282,8 +275,6 @@ namespace PDC2010
 
 İlk olarak ScheduleModule tipine ait bir nesne örneği oluşturulduğu görülmektedir ki yapıcı metodu (Constructor) parametre olarak WCF Data Service adresini almaktadır. Sonrasında standart bir LINQ sorgusu yazılmış ve Sessions Entity içeriğine gidilerek bazı bilgilerin alınması ve bunların bir anonymous type (İsimsiz Tip) içerisinde birleştirilmesi sağlanmıştır. Bu akılcı bir yaklaşımdır nitekim Sessions tipi içerisindeki tüm özelliklere ihtiyacımız yoktur
 
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_10.png)
-
 Her bir Sessions nesne örneği üzerinden DownloadableContent özelliğine giderek indirilebilir içerik bilgilerinin Title ve Url bilgilerine ulaşılmaktadır. Elbette her bir Sessions nesne örneği için bu işlem söz konusudur. Her bir Sessions için bir SessionInfo Web User Control nesnesi örneklenirken, her bir Content nesne örneği için de ContentLink Web User Control’ üne ait örneklemeler yapılmakta ve sayfaya eklenmeleri sağlanmaktadır.
 
 Çok doğal olarak sayfaya ait Load metodunda yaptığımız bu işlemler bir kaç saniyelik zaman kaybına neden olacaktır. Burada servisten verinin alınıp indirilmesi ve işlenmesi, süre kaybına neden olan etkenlerin başında gelmektedir. Dolayısıyla asenkron olarak verinin yüklenmesi ve hatta AJAX tabanlı bir Web Control içerisinde bu yükleme işleminin yapılması çok daha doğru bir yaklaşımdır. Bu kritik noktayı bir kenara bırakıp uygulamamızı çalıştırdığımızda ise aşağıdaki ekran görüntüsündekine benzer sonuçlar ile karşılaştığımızı görürüz.
@@ -292,11 +283,7 @@ Her bir Sessions nesne örneği üzerinden DownloadableContent özelliğine gide
 
 Bu noktada dilerseniz Windows veya WPF tabanlı bir Desktop uygulaması ya da Silverlight tabanlı bir Rich Internet Application’ da geliştirebilirsiniz. Servis dünyasını seviyorum
 
-![Smile](/assets/images/2010/wlEmoticon-smile_2.png)
-
 Bu yazıda ele aldığımız PDC servisinin OData formatında veri içeriği sunuyor olması sayesinde tamamen platform bağımsız istemciler geliştirebilir ve tüm PDC içeriğini bu uygulamalar üzerinde değerlendirebiliriz. Ben kapıyı gösterdim, geçecek olan sizsiniz
-
-![Winking smile](/assets/images/2010/wlEmoticon-winkingsmile_10.png)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

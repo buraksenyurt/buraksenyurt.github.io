@@ -7,7 +7,7 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Bundan bir kaç yıl önce, eşimle birlike İtalya'daki Amca'sını ziyarete gitmiştik. Amcamız, Milano şehrinde uzun yıllar restoran işiyle uğraşmış oldukça yetenekli bir aşçı ve işletmeciydi. Bir gün İtalya'da bizi davet ettiği bir restoranda yemek yerken güzel bir tavsiyede bulunduğunu hatırlıyorum; "Yemekte bitiremediğiniz salatalar mı var? Yemekten sonra onları tavada ısıtın ve buzdolabına koyun. Ertesi gün yine soslayarak yiyebilirsiniz. Tabiki ağır soslu salatalar değilde hafif olanlardan bahsediyorum". Bir anlamda salatayı herhangibir anda o anki haliyle saklayıp (ki ben buna Persist etmek demek istiyorum) sonra t zamanında yeniden yemek. Her ne kadar bu senaryoda salatayı yıllarca saklamak zor olsada (ki bu durumdada bazı sonuçlarına katlanmak gerekebilir ![Sealed](/assets/images/2009/smiley-sealed.gif)) yazılım dünyasında uzun süreli bir iş akışının yıllarca saklanabilmesi mümkündür. İşte bu günkü konumuz; Workflow Foundation 4.0 ile Persistence işlemleri nasıl gerçekleştirilebilir...
+Bundan bir kaç yıl önce, eşimle birlike İtalya'daki Amca'sını ziyarete gitmiştik. Amcamız, Milano şehrinde uzun yıllar restoran işiyle uğraşmış oldukça yetenekli bir aşçı ve işletmeciydi. Bir gün İtalya'da bizi davet ettiği bir restoranda yemek yerken güzel bir tavsiyede bulunduğunu hatırlıyorum; "Yemekte bitiremediğiniz salatalar mı var? Yemekten sonra onları tavada ısıtın ve buzdolabına koyun. Ertesi gün yine soslayarak yiyebilirsiniz. Tabiki ağır soslu salatalar değilde hafif olanlardan bahsediyorum". Bir anlamda salatayı herhangibir anda o anki haliyle saklayıp (ki ben buna Persist etmek demek istiyorum) sonra t zamanında yeniden yemek. Her ne kadar bu senaryoda salatayı yıllarca saklamak zor olsada (ki bu durumdada bazı sonuçlarına katlanmak gerekebilir) yazılım dünyasında uzun süreli bir iş akışının yıllarca saklanabilmesi mümkündür. İşte bu günkü konumuz; Workflow Foundation 4.0 ile Persistence işlemleri nasıl gerçekleştirilebilir...
 
 ![blg104_Giris.jpg](/assets/images/2009/blg104_Giris.jpg)
 
@@ -152,10 +152,9 @@ Hatta bu noktada iken IsLocked alanın söz konusu Workflow örneği için 1 ola
 
 Peki ya uygulamanın durumu? Uygulama yeniden çalıştırıldığında CurrentNumber değerinin kaldığı yerden devam ettiği gözlemlenecektir. Bunu görme zevkini siz değerli okurlarıma bırakıyorum
 
-![Wink](/assets/images/2009/smiley-wink.gif)
-
 Persistence işlemi bu örneğimizde WorkflowApplication nesnesi tarafından ele alınmıştır. Ancak Workflow Service isimli önemli bir gerçekde vardır. Bir Workflow Service'in uzun süreli olarak saklanması da, gerçek hayat senaryolarında yaşanan vakalardan birisidir. Bu durumu bir sonraki yazımızda ele almaya çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 > Kişisel Not: Kalıcı olarak saklama işlemini yazımızın başında belirttiğimiz üzere, Persist aktivitesi ilede kolayca gerçekleştirebiliriz. Bu konu ile ilişkili bir görsel dersi ilerleyen tarihlerde yayınlamaya çalışıyor olacağım.
 
 [WFPersistence.rar (37,63 kb)](/assets/files/2009/WFPersistence.rar)
+
