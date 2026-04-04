@@ -201,7 +201,7 @@ cd docker
 sudo docker-compose up -d
 ```
 
-Bunun arından belki küçük bir kontrol yapmakta yarar olabilir. Nitekim http://localhost:9200 adresinden ElasticSearch, http://localhost:5601 adresinden de Kibana servislerine sorunsuz erişebiliyor olmalıyız.
+Bunun arından belki küçük bir kontrol yapmakta yarar olabilir. Nitekim `http://localhost:9200` adresinden ElasticSearch, `http://localhost:5601` adresinden de Kibana servislerine sorunsuz erişebiliyor olmalıyız.
 
 ![skynet_08_Screenshot_3.png](/assets/images/2020/skynet_08_Screenshot_3.png)
 
@@ -212,7 +212,7 @@ cd Readers
 dotnet run
 ```
 
-Örneğin http://localhost:5000/book adresinden bir HTTP Get talebi yollayabiliriz. Hatırlarsanız Get fonksiyonu içinden Information ve Error türlerinde örnek log mesajları fırlatmıştık (Tabii ki pratikte Error tipinden mesajları exception oluştuğu durumlarda göndermek lazım) Bu arada Kibana'ya erişmek log bilgilerini takip etmek için kafi ama yeterli değil. http://localhost:5601 adresine uğradıktan sonra Readers isimli web api servisi için aşağıdaki görsellerde olduğu gibi bir index eklemek gerekir.
+Örneğin `http://localhost:5000/book` adresinden bir HTTP Get talebi yollayabiliriz. Hatırlarsanız Get fonksiyonu içinden Information ve Error türlerinde örnek log mesajları fırlatmıştık (Tabii ki pratikte Error tipinden mesajları exception oluştuğu durumlarda göndermek lazım) Bu arada Kibana'ya erişmek log bilgilerini takip etmek için kafi ama yeterli değil. `http://localhost:5601` adresine uğradıktan sonra Readers isimli web api servisi için aşağıdaki görsellerde olduğu gibi bir index eklemek gerekir.
 
 ![skynet_08_Screenshot_1.png](/assets/images/2020/skynet_08_Screenshot_1.png)
 

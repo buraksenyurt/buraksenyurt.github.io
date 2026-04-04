@@ -16,7 +16,7 @@ tags:
   - put
   - delete
 categories:
-  - Mikroservisler
+  - Servis Tabanlı Geliştirme
 ---
 Son yılların popüler trendleri arasında MicroService ve IoT (Internet of Things) nin yer aldığını ifade edebiliriz. Akıllı cihazlar ile micro servislerin yan yana gelmesi size biraz şaşırtıcı gelmiş olabilir. Aslında birbirleri ile oldukça ilişkililer. Sonuç olarak IoT dünyasına dahil olan cihazlar birbirleri ile haberleşmek için hafif donatılmış servislerden yararlanabilirler.
 

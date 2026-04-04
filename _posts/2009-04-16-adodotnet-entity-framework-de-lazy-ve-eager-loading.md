@@ -6,7 +6,7 @@ tags:
   - entity-framework
   - language-integrated-query
 categories:
-  - Framework Tabanlı Geliştirme
+  - Framework Tabanlı Programlama
 ---
 Bildiğiniz üzere uzun bir süre önce Microsoft, LINQ to SQL yerine Ado.Net Entity Framework ile ilerleme kararı aldı. Bu konu ile ilişkili olaraktan okuduğum hemem hemen bütün kitaplarda Ado.Net'in geleceğinde önemli bir yere sahip olan Ado.Net Entity Framework alt yapısının geliştiriciler tarafından asla ihmal edilmemesi gerektiğide sıkça vurgulanmakta. Peki günlüğüme konu olan mesele nedir?
 
