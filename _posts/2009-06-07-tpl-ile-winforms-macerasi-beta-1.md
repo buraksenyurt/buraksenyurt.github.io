@@ -76,8 +76,6 @@ namespace TPLAntrenmanlari2
 
 Dikkat çekici nokta işlemlerin tamamlanma süresidir. Neredeyse 20 saniye.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Üstelik işlemler sırasında Form'u herhangibir yere çekiştiremediğimizi görürüz. Ayrıca, Button bileşenleri oluşturulup FlowLayoutPanel kontrolüne eklenirken Form üzerinde görsel bir hareketlilik olmadığı gözlemlenebilir. Ancak tüm işlemler bittikten sonra Button'ların görülmesi mümkün olacaktır. Tabiki isteklerimizden ilki işlemlerin daha kısa sürede bitirilmesi olarak düşünülebilir. Bu amaçla btnStart2_Click kodlarında Parallel.ForEach kullanımını tercih ettim. İşte kodun yeni hali;
 
 ```csharp
@@ -177,7 +175,7 @@ Bu durumda kendi sistemimde aşağıdaki sonuçlar ile karşılaştığımı gö
 
 Evett...Durumu bir değerlendirelim. 20 saniyelik sürelerden yaklaşık 8 saniyelik sürelere indik. Bu çift çekirdekli bir sistem için iyi bir sonuç olarak görünüyor. (Tabi kodu daha fazla çekirdek sayısı bir sistemde ne yazıkki test edemedim. Ama siz değerli okurlarımdan test etme fırsatı olan olursa sonuçları paylaşmasını rica edeceğim.) Yinede herşey istediğimiz gibi değildir. Süre azalmasına rağmen, Form'u işlemler sırasında harekete ettiremediğimizi görürüz. Benzer şekilde resimleri içeren Button kontrolleri yine üretildikçe değil tüm işlemler bittikten sonra bir anda ekranda gösterilmektedir. Dolayısıyla Parallel.ForEach'in tam anlamıyla yeterli gelmediğini söyleyebiliriz. Çözüm olarak ThreadPool sınıfından yararlanabiliriz aslında. Şimdi kodu aşağıdaki gibi değiştirdiğimizi düşünelim.
 
-```bash
+```csharp
 #region  Cross-thread operation not valid hatasına karşı mücadele
 
 private delegate void AddControlHandler(Button pb);
@@ -256,3 +254,4 @@ Dikkat ederseniz FillImages metodu içerisinde o anki Thread için 100 milisaniy
 Böylece geldik bir blog yazımızın daha sonuna. İlerleyen dönemlerde aynı senaryoyu bir WPF uygulaması için ele almaya çalışıyor olacağım. Görüşmek dileğiyle.
 
 [TPLAntrenmanlari2.rar (40,63 kb)](/assets/files/2009/TPLAntrenmanlari2.rar)
+

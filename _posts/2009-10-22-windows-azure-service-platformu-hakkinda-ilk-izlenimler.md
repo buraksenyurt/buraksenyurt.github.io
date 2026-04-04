@@ -34,7 +34,5 @@ Windows Azure platformu ile ilişkili olarak başlangıç noktamız [http://www.
 
 Ben bu konuya oldukça meraklıyım aslında. Nitekim işin içerisinde Service kavramı var
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Bu nedenle bende boş durmadım ve önümüzdeki sene Cloud Computing ve Windows Azure ile ilişkili olan araştırmalarımı daha sağlıklı devam ettirebilmek adına Amazon'dan [Cloud Computing with the Azure Platform](http://www.amazon.com/Cloud-Computing-Windows-Platform-Programmer/dp/0470506385/ref=sr_1_1?ie=UTF8&s=books&qid=1256228080&sr=8-1)adlı kitabı sipariş ettim. Bakalım önümüzdeki sene Azure ile ilişkili olarak ne gibi bir macera beni (ve doğal olarak siz değerli okurlarımı) bekliyor olacak. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -13,11 +13,7 @@ Bu gün itibairyle İstanbul'da sağnak yağışlı bir hava hakim. Oysaki bir k
 
 ![blg97_Giris.jpg](/assets/images/2009/blg97_Giris.jpg)
 
-Ne var ki aradan geçen uzun süreye ve Amazon'dan kitabı elden teslim eden kurye ile sipariş etmeme rağmen kitap elime bir türlü ulaşmadı
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
-ve Amerika'da bir çıkış noktasında takıldı kaldı. Oysaki kütüphanede yer alan sayısız kitap hep sorunsuz ulaşmıştı. Bir kargo firması bir Amazon ile yazışma derken arada gidip gelen sayısız elektronik postanın arkasından en azından paramı geri almaya başardım ama ne varki kitabıma ulaşamadım. Peki yıldım mı? Yılmadım. Bu kez siparişimi [Amazon.co.uk](http://www.amazon.co.uk)sitesinden verdim (Sterlin farklarını hesaba katmanızı öneririm). Kitap siparişin bir sonraki gününde UPS tarafından bana ulaştırıldı.
+Ne var ki aradan geçen uzun süreye ve Amazon'dan kitabı elden teslim eden kurye ile sipariş etmeme rağmen kitap elime bir türlü ulaşmadı ve Amerika'da bir çıkış noktasında takıldı kaldı. Oysaki kütüphanede yer alan sayısız kitap hep sorunsuz ulaşmıştı. Bir kargo firması bir Amazon ile yazışma derken arada gidip gelen sayısız elektronik postanın arkasından en azından paramı geri almaya başardım ama ne varki kitabıma ulaşamadım. Peki yıldım mı? Yılmadım. Bu kez siparişimi [Amazon.co.uk](http://www.amazon.co.uk)sitesinden verdim (Sterlin farklarını hesaba katmanızı öneririm). Kitap siparişin bir sonraki gününde UPS tarafından bana ulaştırıldı.
 
 En azından içim rahatladı ve kitabıma kavuştum.
 

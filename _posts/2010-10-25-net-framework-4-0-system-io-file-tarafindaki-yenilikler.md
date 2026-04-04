@@ -14,9 +14,7 @@ Bu yazımızda ele alacağımız konu ile ilişkili olarak kullanacağım giriş
 
 ![blg199_Giris_.jpg](/assets/images/2010/blg199_Giris_.jpg)
 
-Bu tip bir dosyanın bir bankadan gönderilme olasılığı aslında çok yüksektir. Geçmiş deneyimlerimi düşündüğümde son derece olağan bir durum. Örneğin bundan önce çalıştığım ve outsource olarak görev yaptığım bankada, boyutları 600 mb’ ın üzerinde olan text tabanlı dosyalar sistemler arasında dolaşıp durmaktaydı. Hatta bu dosyalardan bazıları SSIS paketlerine sokularak veritabanı ortamına aktarılmaktaydı. Hatta SSIS uzmanı olmamama rağmen Proje Yöneticisi tarafından bir dönem bana da böyle bir iş verildiğini ifade etmek isterim
-
-![Undecided](/assets/images/2010/smiley-undecided.gif)
+Bu tip bir dosyanın bir bankadan gönderilme olasılığı aslında çok yüksektir. Geçmiş deneyimlerimi düşündüğümde son derece olağan bir durum. Örneğin bundan önce çalıştığım ve outsource olarak görev yaptığım bankada, boyutları 600 mb’ ın üzerinde olan text tabanlı dosyalar sistemler arasında dolaşıp durmaktaydı. Hatta bu dosyalardan bazıları SSIS paketlerine sokularak veritabanı ortamına aktarılmaktaydı. Hatta SSIS uzmanı olmamama rağmen Proje Yöneticisi tarafından bir dönem bana da böyle bir iş verildiğini ifade etmek isterim.
 
 Tabi bu tip dosyaların en büyük özelliği de veri taşımak amacıyla satır ve sütun kavramlarını kullanmalarıdır. Ayrıca verinin çok yalın bir formatta taşınması ve her tür platform tarafından kolayca ele alınması, hatta çıplak gözle (Tabi zaman zaman. Nitekim benim üzerinde çalıştığım SSIS paketlerinin sütunlarının sayısı 250’ ye varmaktaydı) rahatlıkla okunabilmesi gibi avantajlar da söz konusudur. Buna göre aşağıdaki gibi bir text içeriği doğru bir veri saklama biçimi olarak düşünülebilir.
 

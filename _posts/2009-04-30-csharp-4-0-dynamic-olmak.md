@@ -9,8 +9,6 @@ categories:
 ---
 Uzun bir süredir (son bir senelik zaman dilimi içerisinde) C# 4.0 ile birlike gelen yeniliklerden haberdarız. Şöyle bir kaç sene öncesini hatırlıyorum da...
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Visual Studio 2005, Whidbey kod adı ile yayınlanmış ve C# 2.0 ile birlikte gelen pek çok yenilik olmuştu. Ancak bunlar içerisinde belkide en önemli olanı, CLR (Common Language Runtime) çekirdiğinde değiştirilme yapılmasını da zorunlu kılan generic mimari kavramıydı. Tabiki generic dışında gelen, yield anahtar kelimesi, isimsiz metodlar (anonymous methods), static sınıflar ve diğerleride önemli gelişmelerdi. Zaman ilerledi ve C# 3.0 ile birlikte bu kez hayatımıza, generic modelinden daha fazla etki yapan LINQ (Language INtegrated Query) girdi. Bir geliştirici olarak her zaman için yeniliklere açık olmamız ve yakalayabildiğimiz ölçüde takip etmemiz gerektiğini düşünüyorum. Bu bir geliştirici için neredeyse bir yaşam tarzı. Dolayısıyla artık C# 4.0 üzerinde konuşmanın zamanı geldide geçiyor.
 
 C# 4.0 ile birlikte gelen yeniliklerin daha çok dinamik çalışma zamanını (Dynamic Language Runtime-DLR) kullanan diller üzerinde odaklanmış durumda olduğunu söyleyebiliriz. Peki bu ne anlama geliyor? DLR tarafını ilgilendiren dillere ait nesneler ile daha kolay konuşulması olarak küçük bir sebep belirtebiliriz. Bu nedenle C# 4.0 ile birlikte gelen önemli yeniliklerden birisi olan dynamic anahtar kelimesi sayesinde, Python, Ruby veya Javascript ile üretilen nesnelerin C# 4.0 tarafında late-binding ile ele alınması mümkün. Hatta var olan.Net nesnelerinin reflection kullanılmadan ele alınması veya COM objelerine ait üyelerin çağırılmasında bu anahtar kelimeyi kullanabiliyoruz. Aslında C#' ın 2.0, 3.0 versiyonunda gelen yenilikler nasıl ki belirli ihtiyaçlar nedeni ile ortaya çıkmışsa, C# 4.0 ile gelen yenilikleride bu anlamda düşünmemiz ve araştırmamız gerekiyor.
@@ -198,4 +196,3 @@ Görüldüğü gibi Draw metodu içerisinde oSiteContainer0 isimli generic bir t
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 NOT: Örnekler 2008 PDC'de yayımlanmış olan Visual Studio 2010 PreBeta sürümü üzerinden geliştirilmiştir.
-

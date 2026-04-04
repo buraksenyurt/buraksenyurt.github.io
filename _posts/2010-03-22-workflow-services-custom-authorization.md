@@ -17,8 +17,6 @@ Tabi bir aşçı için olmassa olmazlardan birisi de yemeği için gerekli olan 
 
 Bu yazımızda.Net Framework 4.0 tarafında geliştireceğimiz Workflow Service'lerde yetkilendirme işlemini nasıl sağlayabileceğimizi görmeye çalışacağız. Ne yazık ki Authorization işlemini kolaylaştırmak adına hazır bir yapı mevcut değil. Bu nedenle biraz kodlama yapmamız ve çalışma zamanının işleyişine bu şekilde müdahale etmemiz gerekiyor. Hatta yapacağımız özelleştirme öylesine etkili olacak ki, aradan Doğrulamayı (Authentication) bile çıkaracağız farkına varmadan.
 
-![Surprised](/assets/images/2010/smiley-surprised.gif)
-
 Ama önce yemek için gerekli malzemelerimizin neler olduğuna bir bakalım.
 
 - Bir adet Workflow Service.

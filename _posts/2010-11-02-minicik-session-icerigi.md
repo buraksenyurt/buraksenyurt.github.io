@@ -141,9 +141,7 @@ Sql tarafında Compression kullanılması haldeki durum ise aşağıdaki gibi ol
 
 ![blg237_SecondCase](/assets/images/2010/blg237_SecondCase.gif)
 
-Görüldüğü üzere bir önceki vakanın tersine serileştirilebilir içerik SessionItemLong alanı yerine SessionItemShort içerisine eklenmiştir. Bununla birlikte söz konusu sıkıştırılmış verinin içeriği 3686 dır
-
-![Disappointed smile](/assets/images/2010/wlEmoticon-disappointedsmile_1.png)
+Görüldüğü üzere bir önceki vakanın tersine serileştirilebilir içerik SessionItemLong alanı yerine SessionItemShort içerisine eklenmiştir. Bununla birlikte söz konusu sıkıştırılmış verinin içeriği 3686 dır.
 
 Sıkıştırma algoritmasının uygulanması sonucu neredeyse standart session içeriğinin %0,0109983559158682 üne kadar verinin küçültülmesi söz konusudur. Elbette burada text tabanlı bir içerik kullanıldığından söz konusu farkın oluşması doğaldır. Özellikle binary içerikten oluşan (örneğin resim formatı gibi) bir verinin serileştirilmesi esnasında veri boyutlarında önemli bir fark olmayadabilir. Bu durumu analiz etmek için aşağıdaki kod parçasını göz önüne alalım.
 
@@ -175,11 +173,7 @@ Sıkıştırılma açık iken;
 
 Sıkıştırılmama durumunda 2712191 iken sıkıştırılma durumunda 2711426. Yani sadece % 1,000282139361355 oradanın bir sıkıştırma söz konusu olmakta.
 
-![Crying face](/assets/images/2010/wlEmoticon-cryingface_1.png)
-
 Değer mi? Değmez. Buna göre serileştirilebilir içeriklerin sıkıştırılabilir olmaları da önem kazanmaktadır. (Nitekim bir PDF veya JPEG dosyasını sıkıştırdığınızda önemli ölçüde bir sıkıştırma olmadığını görürüz) İnandırıcı geldi mi?
-
-![Annoyed](/assets/images/2010/wlEmoticon-annoyed_1.png)
 
 Varsayımsal Yaklaşım
 

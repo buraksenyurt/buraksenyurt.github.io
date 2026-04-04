@@ -24,8 +24,6 @@ Sonuç itibariyle WCF alt yapısı üzerine oturan RIA Service'leri web tabanlı
 
 Silverlight Application şablonunda bir Solution açılmasına rağmen aslında ChinookMusicSotreApp isimli proje hiç kullanılmayacaktır.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 ChinookMusicStoreApp.Web isimli web projesi, ChinookEDM isimli sınıf kütüphanesini referans etmektedir. Bu şekilde Albums ve Artist isimli Chinook tablolarına ait Entity karşılıklarını içermekte olan Ado.Net Entity Data Model öğesini kullanabilmektedir. Diğer yandan Web tarafına eklenen Domain Service sınıfı içeriğinde Album tipi üzerinden Insert, Update, Delete işlemleri yapılmasına izin verecek şekilde geliştirmeler yapılmıştır. Bu adımları tamamladıktan sonra ChinookDomainService sınıfının içeriği biraz değiştirerek aşağıdaki hale getirdim. Aslında tek yaptığım GetAlbumsByFirstLetter isimli metodu eklemek oldu.
 
 ```csharp
@@ -100,9 +98,7 @@ Domain Service sınıfı bu şekilde hazırlandıktan sonra artık asıl işimiz
 
 > Önemli Not: Örneğimizde EDM'yi Web uygulamamıza referans ettiğimiz bir Class Library içerisinde tuttuğumuz için, bu kütüphanenin App.config dosyası içerisine yazılan connectionString bilgisinin, Web uygulamasının web.config dosyasına eklenmesi gerekmektedir. Aksi takdirde çalışma zamanında hata alınacaktır.
 
-Hımmm...O halde Asp.net development server'ın çalıştırılmasını sağlayıp herhangibir tarayıcıdan örneğimize göre http://localhost:4977/ChinookMusicStoreApp-Web-ChinookDomainService.svc adresini talep ettiğimde bir Service ekranı ile karşılaşmam gerekmektedir. Oysaki bu denemenin ardından ben aşağıdaki ekran görüntüsü ile karşılaştım.
-
-![Frown](/assets/images/2009/smiley-frown.gif)
+Hımmm...O halde Asp.net development server'ın çalıştırılmasını sağlayıp herhangibir tarayıcıdan örneğimize göre `http://localhost:4977/ChinookMusicStoreApp-Web-ChinookDomainService.svc` adresini talep ettiğimde bir Service ekranı ile karşılaşmam gerekmektedir. Oysaki bu denemenin ardından ben aşağıdaki ekran görüntüsü ile karşılaştım.
 
 ![blg107_Error.gif](/assets/images/2009/blg107_Error.gif)
 
@@ -126,7 +122,7 @@ Yaptığım araştırmalar sonucunda bu servise erişmek için bir Authenticatio
 .
 ```
 
-Bu işlemin ardından http://localhost:4977/ChinookMusicStoreApp-Web-ChinookDomainService.svc adresine tekrardan talepte bulunduğumda aşağıdaki görüntü ile karşılaştım.
+Bu işlemin ardından `http://localhost:4977/ChinookMusicStoreApp-Web-ChinookDomainService.svc` adresine tekrardan talepte bulunduğumda aşağıdaki görüntü ile karşılaştım.
 
 ![blg107_Runtime.gif](/assets/images/2009/blg107_Runtime.gif)
 
@@ -136,7 +132,7 @@ Hatta WSDL talebi sonrası söz konusu servisin Description içeriğinin de geld
 
 Demekki Domain Service sınıfı yada geliştirdiğimiz RIA Service gerçektende bir WCF Service'miş.
 
-Ancak ispatı tamamlamak için söz konusu servisi örnek bir istemcide kullanabiliyor olmam da gerekmekteydi. Bu nedenle Solution içerisinde yer alan Win Forms uygulamasına Add Service Reference ile http://localhost:4977/ChinookMusicStoreApp-Web-ChinookDomainService.svc adresinden gerekli Proxy üretiminin gerçekleştirilmesi yeterli olacaktı. Ben bu şekilde yoluma devam ettim ve aşağıdaki ekran görüntüsünde olduğu ilgili servis içeriğini izin verilen operasyonları ile (SubmitChanges metodunun da olduğuna dikkat edelim) üretilebildiğini gördüm.
+Ancak ispatı tamamlamak için söz konusu servisi örnek bir istemcide kullanabiliyor olmam da gerekmekteydi. Bu nedenle Solution içerisinde yer alan Win Forms uygulamasına Add Service Reference ile `http://localhost:4977/ChinookMusicStoreApp-Web-ChinookDomainService.svc` adresinden gerekli Proxy üretiminin gerçekleştirilmesi yeterli olacaktı. Ben bu şekilde yoluma devam ettim ve aşağıdaki ekran görüntüsünde olduğu ilgili servis içeriğini izin verilen operasyonları ile (SubmitChanges metodunun da olduğuna dikkat edelim) üretilebildiğini gördüm.
 
 ![blg107_AddServiceRef.gif](/assets/images/2009/blg107_AddServiceRef.gif)
 

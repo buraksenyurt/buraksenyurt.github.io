@@ -14,8 +14,6 @@ Günlerden Salı, sonbahar. Neredeyse hiç uyumadan geçen bir gecenin ardından
 
 Kafada korkunç bir baş ağrısı, dışarıdan gelen metronun raylarda bıraktığı ses ve CAD’ in cılız miyavlamaları…Netspecter divandan kalkarken şöyle bir belinden geriye doğru esner. Derken tavan lambasının biraz üstüne vuran dikdörtgen biçimli gölgeyi fark eder. Nasıl olur? Bu kitap gözünden nasıl kaçmıştır. Gece karanlığında fark edemediği kaynağı gün ışığı açığa çıkarmıştır. İşte oradadır. Gölgenin kaynağına doğru gider. Ado.Net and System.Xml v2.0 The Beta Version
 
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_1.png)
-
 Yaşasın diyerek haykırır.
 
 Yıllar yıllar önce.Net Framework 2.0 ile gelen yenilikleri takip etmeye çalıştığım dönemlerde, Amazon üzerinden getirttiğim kitaplardan birisi de yandaki resimde görülen Ado.Net and System.Xml v2.0 kitabı idi. Şu an halen kitaplığımda durmakta. O sıralar CSharpNedir? bünyesinde Ado.Net bölüm editörlüğü yaptığımdan, bu kitabı tedarik etmiş ve çalışmıştım..Net Framework 2.0 ile gelen yeni Xml alt yapısının beta hali ile alması bir yana Ado.Net’ in yeni 2.0 sürümü için planlanan bazı kabiliyetlerde anlatılmaktaydı ki bunlardan bekli de en önemlisi System.Transaction.dll assembly içerisinde yer alan ve özellikle Distributed Transaction yönetimini daha etkili ve kolay bir şekilde ele almamızı sağlayan TransactionScope tipiydi.
@@ -257,7 +255,5 @@ Bu kez sadece ilgili Context nesne örneklerine ait SaveChanges metodlarının a
 Görüldüğü üzere her SaveChanges çağrısı için ayrı bir Transaction işlemi başlatılmıştır. Burada AzonStore için kullanılan Context örneğinin, Chinook için üretilen Context nesnesine ait using bloğu içerisinde olmasının dahi bir önemi yoktur. Olay sadece SaveChanges metod çağrılarına aittir.
 
 Entity Framework tarafında bu yazıda ele aldığımız gibi basit veritabanı modellerinin söz konusu olduğu durumlarda Transaction kullanımına dikkat edilmemesi söz konusu olabilir. Hatta gerekmeyebilir. Nitekim Transaction oluşturmanın da veritabanı kaynağı üzerinde bir maliyeti vardır. Ancak Enterprise seviyedeki uygulamalar ve kullandıkları veritabanı sistemleri ile karmaşık ve bütünlüğü önem arz eden iş kuralları söz konusu olduğunda, TransactionScope kullanımına ciddi anlamda dikkat edilmesi gerekmektedir. Tabi bilindiği üzere TransactionScope nesne örneği üzerinden yapılabilecek farklı ayarlamalar da söz konusudur. Şu anki örneklerimizde bu tipin son derece yalın ve sade kullanımı değerlendirilmiştir. Size tavsiyem söz konusu örneği farklı sunucular veya SQL Instance’ ları üzerindeki n sayıda veritabanında ele alacak şekilde değiştirmeniz ve gözlemlemenizdir.
-
-![Be right back](/assets/images/2011/wlEmoticon-berightback.png)
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

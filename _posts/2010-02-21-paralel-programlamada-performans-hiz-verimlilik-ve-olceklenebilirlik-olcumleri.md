@@ -48,8 +48,6 @@ Haydi gelin buradaki ölçüm değerlerini örnek bir kod üzerinden incelemeye 
 
 Bir klasör içerisinde yer alan jpg uzantılı resim dosyalarının boyutlarının arttırılmasını ele alan bir kod parçası geliştireceğiz. Resimlerin boyut arttırım işleminin zaman alan ve yorucu bir işlem olduğu düşünüldüğünde, seri ve paralel kodların ürettiği sonuçları yukarıdaki kriterler eşliğinde değerlendirmeye çalışacağız. Ne yazık ki elimde sadece çift çekirdekli iki makine olduğundan Scalability kriterini bu örnekte sizlere gösteremiyorum
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Ancak sizler uygun test ortamlarına sahipseniz, ölçeklenebilirlik kriterini değerlendirebilirsiniz ki değerlendirmenizi tavsiye ederim. İşte Console uygulaması kodlarımız...
 
 ```csharp

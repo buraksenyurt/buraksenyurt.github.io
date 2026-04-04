@@ -98,7 +98,7 @@ namespace ClientV2
 
 Her ne kadar istemci tarafını geliştiriyor olsakta pek istemci tarzında olmadığını eminimki farketmişsinizdir.
 
-Nitekim istemci tarafında ServiceHost nesnesi örneklenmekte ve kullanılmaktadır. Aslında bu son derece doğaldır. Nitekim online veya offline olan servislerin, istemciler üzerinde tetikleyebildiği iki olay söz konusudur. Buda istemcinin bir anlamda servis gibide davranış gösterebilmesini gerektirmektedir. (Normal şartlar altında servisin, istemciler üzerinde olay tetikletmesi gerektiği durumlarda özellikle.Net Remoting gibi modellerde çok kafa karıştırıcı kodlamalar yapılması gerektiğini hatırlatmak isterim.![Undecided](/assets/images/2009/smiley-undecided.gif))
+Nitekim istemci tarafında ServiceHost nesnesi örneklenmekte ve kullanılmaktadır. Aslında bu son derece doğaldır. Nitekim online veya offline olan servislerin, istemciler üzerinde tetikleyebildiği iki olay söz konusudur. Buda istemcinin bir anlamda servis gibide davranış gösterebilmesini gerektirmektedir. (Normal şartlar altında servisin, istemciler üzerinde olay tetikletmesi gerektiği durumlarda özellikle.Net Remoting gibi modellerde çok kafa karıştırıcı kodlamalar yapılması gerektiğini hatırlatmak isterim.)
 
 WCF 4.0 tarafında ise tek yapmamız gereken bu iş yükünü AnnouncementService tipine atmaktır. Dikkat edileceği üzere ServiceHost nesnesi örneklenirken parametre olarak AnnouncementService referansı verilmektedir. Sonrasında ise ServiceHost nesnesine, UpdAnnouncementEndpoint tipinden bir Endpoint ilave edilmiştir. Örnekle ilişkili ilginç noktalardan biriside istemci tarafında App.config dosyasının bulunmayışıdır.(Örnekten bu dosyası bilinçli bir şekilde çıkarttığımı belirtmek isterim)
 

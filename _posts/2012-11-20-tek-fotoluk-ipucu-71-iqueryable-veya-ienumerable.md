@@ -11,17 +11,13 @@ categories:
 ---
 Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğrafı bir inceleyin öncelikle ve nasıl bir fark olabileceğini düşünmeye çalışın. Yani kafanızda kod parçasını debug etmeye gayret edin.
 
-(Visual Studio ve benzeri herhangibir geliştirme aracı kullanmamanız şiddetle tavsiye edilir
-
-![Yell](/assets/images/2012/smiley-yell.gif)
-
-)
+(Visual Studio ve benzeri herhangibir geliştirme aracı kullanmamanız şiddetle tavsiye edilir)
 
 ![tfi_71](/assets/images/2012/tfi_71.png)
 
 Tabi fotoğrafa bakınca durumu görmek zor olabilir. Ama fotoğrafın arkasında yatan gerçeklere bakarsak (örneğin SQL Server Profiler yardımıyla) customerList1 üzerinden uygulanan Take (10) çağrısı için aşağıdaki SQL sorgusunun çalıştırıldığını görürüz.
 
-```text
+```sql
 SELECT TOP (10) 
 [Extent1].[CustomerId] AS [CustomerId], 
 [Extent1].[FirstName] AS [FirstName], 
@@ -42,7 +38,7 @@ ORDER BY [Extent1].[LastName] ASC, [Extent1].[FirstName] ASC
 
 customerList2 üzerinden yapılan Take (10) içinse benzer bir sorgu üretilir.
 
-```text
+```sql
 SELECT 
 [Extent1].[CustomerId] AS [CustomerId], 
 [Extent1].[FirstName] AS [FirstName], 

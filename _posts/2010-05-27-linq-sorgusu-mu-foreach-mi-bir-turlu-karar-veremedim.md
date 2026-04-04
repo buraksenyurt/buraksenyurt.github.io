@@ -13,8 +13,6 @@ Bilim Kurgu fanatiklerinin kafasında her zaman hayranı oldukları filmlerden k
 
 ![blg196_GirisNew.jpg](/assets/images/2010/blg196_GirisNew.jpg)
 
-![Yell](/assets/images/2010/smiley-yell.gif)
-
 Bizde yazılımcılar olarak bazen karar verirken tabir yerinde ise sürüncemede kalabiliriz. Böyle durumlarda ufak tefek gözüken noktaların aslında çok büyük riskler taşıdığını da düşünmemiz gerekmektedir. Çünkü karar vermek için basit bir kaç test kodu çok işimize yarayacaktır. İşte bu yazımızda böyle bir konuya değiniyor olacağız.
 
 Aslında konunun çıkış noktası [Microsoft Teknoloji Günleri Akşam Sınıfındaki](Microsoft Teknoloji Günleri Akşam Sınıfında Buluşalım.md)bir meslektaşımın sorusu oldu. Değerli meslektaşım uygulama kodunda koleksiyon bazlı sorgulamaları gerçekleştirirken pek çok vakada foreach döngülerini tercih ettiğini söyledi. Tabi her durumda değil. Bende bu noktada aynı amaca hizmet eden bir LINQ sorgusu ile ForEach çalışması arasındaki performans farklılıklarını irdelemeye karar verdim. Nitekim performans her zaman için karar vermeden önem arz eden kriterlerden birisidir. Anlayacağınız basit bir test ve sonuçlarını irdeliyor olacağız bu kısa yazımızda.

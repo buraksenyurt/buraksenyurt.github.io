@@ -16,9 +16,7 @@ Güneş batmış ve hava çoktan kararmıştır. Müşterileri çoğunlukla bulu
 
 Masadaki metal peçetelikten arkasına doğru baktığında çok fazla dikkat çekmeyen ama müşterisi olabilecek bir kişinin oturduğunu uzun süre önce fark etmiştir. Cam kapıdaki yansımadan okumakta olduğu gazeteye tersten baktığı anlaşılmaktadır. Derken tahmin ettiği gibi olur…Adam ayağa kalkar ve masasına doğru yavaş ve tedirgin adımlarla yürür. Netspecter sakin bir şekilde Java Chip Chocolate’ inden bir yudum daha alır. Elini pardesüsünün cebine götürür ve en gelişmiş silahı 38lik Obfuscator’ unu hazırlar. Derken adam karşısına gelir ve….
 
-“Bay Netspecter…Ben müşteriniz jQuery” der
-
-![Smile with tongue out](/assets/images/2011/wlEmoticon-smilewithtongueout.png)
+“Bay Netspecter…Ben müşteriniz jQuery” der.
 
 Son yıllarda özellikle Web uygulamalarında jQuery’ nin oldukça fazla yaygınlaştığını görmekteyiz. Özellikle Asp.Net MVC (Model View Controller) disiplinin de…Ben her ne kadar Javascript vey jQuery tarafında uzman olmasam da sonuçta bu istemcilerin çağrıda bulunabileceği WCF (Windows Communication Foundation) servisleri olabileceğini biliyorum
 
@@ -159,11 +157,7 @@ Dilerseniz Default.aspx sayfamızı geliştirerek ilerlemeye çalışalım. İlk
 </html>
 ```
 
-Evetttt
-
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_5.png)
-
-Bakalım burada neler yaptık?
+Evetttt. Bakalım burada neler yaptık?
 
 İlk olarak jQuery kullanmak istediğimiz için bu kütüphaneyi bildirimemiz gerekmektedir. Dolayısıla ilk script elementi içerisinde ilgili jQuery dosyasını işaret etmemiz şart. Bunun dışında javascript fonksiyonlarına baktığımızda GetCategoriesJson ve GetCategoriesXml isimli iki önemli operasyon olduğunu görmekteyiz. Her iki fonksiyonda kendi içerisinde $.ajax (ile başlayan bir metod çağrısında bulunmaktadır ki yazının kalbi de bu kod içeriğidir.
 

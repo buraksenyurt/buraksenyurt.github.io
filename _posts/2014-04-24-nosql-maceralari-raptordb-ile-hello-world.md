@@ -13,9 +13,7 @@ Yıllardır vaz geçemediğim bilgisayar oyunlarından birisidir [Command and Co
 
 USA Air Force’ un en belirgin özelliği King Raptor olarak adlandırılan ve aslında günümüzde de [F22 Raptor olarak bilinen savaş uçaklarını](http://tr.wikipedia.org/wiki/F-22_Raptor) içermesidir. Bu uçaklar kendilerine fırlatılan füzeleri lazer ile vurabilir, ayrıca normal Raptor’ lara göre daha fazla güdümlü füze taşıyabilir.
 
-Araştırmasam da, Raptor isminin Dinazor çağındaki [Velociraptor](http://tr.wikipedia.org/wiki/Velociraptor) isimli yırtıcıdan geldiğini düşünmekteyim. Hızlı Hırsız anlamına gelen Velociraptor, 15Kg ağırlığında olan bir etoburdur. Yaklaşık 75 ila 71 milyon yıl önce yaşadığı bilinmektedir. Saatte 40km hızla koşabilen 2metre boyundaki canlı ölümcül bir yırtıcı olarak ifade edilmiştir. O kadar sivri ve güçlü pençelere sahipmiş ki, kurbanının damarlarına denk gelmesi halinde onu 3 ile 5 saniye içerisinde öldürürmüş. Günümüzde bir Hindi boyunda olan bu canlının en korkutucu yanı ise sürü halinde dolaşıyor olmalarıymış. Karada yürüyen Pirhanalara benzetebiliriz sanırım
-
-![Disappointed smile](/assets/images/2014/wlEmoticon-disappointedsmile_4.png)
+Araştırmasam da, Raptor isminin Dinazor çağındaki [Velociraptor](http://tr.wikipedia.org/wiki/Velociraptor) isimli yırtıcıdan geldiğini düşünmekteyim. Hızlı Hırsız anlamına gelen Velociraptor, 15Kg ağırlığında olan bir etoburdur. Yaklaşık 75 ila 71 milyon yıl önce yaşadığı bilinmektedir. Saatte 40km hızla koşabilen 2metre boyundaki canlı ölümcül bir yırtıcı olarak ifade edilmiştir. O kadar sivri ve güçlü pençelere sahipmiş ki, kurbanının damarlarına denk gelmesi halinde onu 3 ile 5 saniye içerisinde öldürürmüş. Günümüzde bir Hindi boyunda olan bu canlının en korkutucu yanı ise sürü halinde dolaşıyor olmalarıymış. Karada yürüyen Pirhanalara benzetebiliriz sanırım.
 
 İsim içerisinde yer alan Raptor pek çok ürüne de esin kaynağı olmuştur. Bir savaş uçağına isim babası olmuştur, Western Digital tarafından bir Hard Disk’ e verilmiştir, Yamaha’ nın bir ATV modelinde kullanılmıştır, NBA takımlarından Toronto’ nun adı olmuştur, hatta Battlestar Galactica’ da bile kullanılmıştır. Popüler bir isim anlayacağınız…
 
@@ -299,4 +297,3 @@ Görüldüğü üzere RaptorDB, kullanımı ve felsefesi ile dikkat çekicidir. 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_RaptorDB.zip (162,25 kb)](/assets/files/2014/HowTo_RaptorDB.zip)
-

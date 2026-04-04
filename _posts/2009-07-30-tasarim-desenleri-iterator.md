@@ -15,8 +15,6 @@ Küçüklüğümde pek çoğumuz gibi sahip olduğum bir pul koleksiyonum vardı
 
 Tabiki posta mesajlaşması biraz zaman alan bir mevzuydu. Bu günkü gibi sosyal içerikli portallar veya mesajlaşma cihazları ve daha nice gelişmiş teknoloji yoktu. Acaba bu devirde yaşayan çocuklardan kaçı pul koleksiyonu yapıyor
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Neyse bu duygusal ortamdan çıkalım hemen. Pul koleksiyonumda yaptığım işlerden birisi zaman zaman onları baştan sonra, yada sondan başa, yada ortadan bir yerden herhangibir yöne doğru gözle taramak olurdu. Bazen kendi kafama göre sıralarını değiştirirdim. Peki nesne yönelimli dillerde kullandığımız koleksiyon veya dizi gibi veri yapıları üzerindede bu ve benzer işlemleri yapmıyor muyuz? Çeşitli tipte veri yapılarında (Data Structures) dolaşıyor, içeriklerine bakıyoruz.
 
 Koleksiyonlar, C# gibi bir programlama dilinde belkide en önemli veri yapılarından (Data Structures) birisidir. Bir koleksiyon kendi içerisinde farklı tipte veya aynı tipte nesneleri çeşitli formatlarda (List, Stack, Queue, Dictionary vb...) saklayabilen nesne bütünleri olarak düşünülebilir. Hatta bildiğiniz üzere.Net 2.0 ile birlikte C# ve Vb.Net tarafına kazandırılan generic yetenekler ile, koleksiyonların tip güvenli (Type Safety) olarak ele alınmalarıda garanti edilmiştir. Hatta, C# 3.0 ve Vb 9.0 ile birlikte neler olmuştur neler

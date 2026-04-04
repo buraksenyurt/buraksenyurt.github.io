@@ -12,10 +12,7 @@ Teknolojinin hızına inanın ki yetişilemiyor. Her gün yeni bir bilim ve tekn
 
 ![speed](/assets/images/2011/speed.jpg)
 
-
-İlk olarak Entity Framework 4.2 sürümü ile ilişkili detaylı bilgilere [Ado.Net Team Blog’](http://blogs.msdn.com/b/adonet/) un ilgili adresi üzerinden ulaşabileceğinizi belirtmek isterim. Peki herşey güzel de nedir bu Code-First Development? Ado.Net Entity Framework tarafında en başından beri var olduğunu bildiğimiz Model-First ve Database-First Development yaklaşımları mevcut. Ancak Code-First development ne ola ki
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_17.png)
+İlk olarak Entity Framework 4.2 sürümü ile ilişkili detaylı bilgilere [Ado.Net Team Blog’](http://blogs.msdn.com/b/adonet/) un ilgili adresi üzerinden ulaşabileceğinizi belirtmek isterim. Peki herşey güzel de nedir bu Code-First Development? Ado.Net Entity Framework tarafında en başından beri var olduğunu bildiğimiz Model-First ve Database-First Development yaklaşımları mevcut. Ancak Code-First development ne ola ki.
 
 Doğruyu söylemek gerekirse bu tanımı en sonda yapmanın ve aradan geçen zaman dilimi içerisinde basit bir örnek üzerinden adım adım ilerlemenin daha doğru olacağı kanısındayım.
 
@@ -56,15 +53,11 @@ namespace CodeFirstDevelopment
 
 Aslında bir departman ve bu departmana bağlı işçileri temsil etmeye çalıştığımız basit iki POCO (Plain Old CLR Object) tipi yazdığımızı görmekteyiz. Bir başka deyişle çok basit tipleri kullanarak aralarında ilişkiler tanımladığımız basit bir Model’ i kurgulamaktayız. Peki bu iki tipe ait nesne koleksiyonlarını nasıl kullanacağız? Normal şartlarda Ado.Net Entity Framework içerisinde, basit tipleri sarmallayan ve onlara ait koleksiyonları birer özellik gibi sunan, ve ayrıca yükleme, ekleme, silme gibi temel operasyonları üstlenen bir tipin daha olduğunu biliyoruz.
 
-Code-First Development senaryosunda bu tipin yazılması da geliştiriciye ait. Ancak bu tip sanıldığı kadar karmaşık değil. Tek dikkat edilmesi gereken nokta var olan EF kabiliyetlerini sunabilmesi için.Net’ in aşina olduğu bir tipten türemesi gerekliliği. İşte bu noktada NuGet ile uygulamamıza install edebileceğimiz bir kütüphane meydana çıkıyor. EntityFramework.Preview
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_68.png)
+Code-First Development senaryosunda bu tipin yazılması da geliştiriciye ait. Ancak bu tip sanıldığı kadar karmaşık değil. Tek dikkat edilmesi gereken nokta var olan EF kabiliyetlerini sunabilmesi için.Net’ in aşina olduğu bir tipten türemesi gerekliliği. İşte bu noktada NuGet ile uygulamamıza install edebileceğimiz bir kütüphane meydana çıkıyor. EntityFramework.Preview.
 
 ![bei_18](/assets/images/2011/bei_18.gif)
 
 Teşekkürler NuGet
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_17.png)
 
 Güncel proje üzerinden kısa sürede gerçekleştirilen install işlemi sonrasında bazı ek library dosyalarının referans edildiğini görürüz. Aşağıdaki şekilde bu kütüphaneler işaretlenmiştir.
 
@@ -90,9 +83,7 @@ namespace CodeFirstDevelopment
 }
 ```
 
-Dikkat edileceği üzere CompanyContext tipi Department ve Employee tiplerine ait nesnel koleksiyonları sunmak için DbSet tipinden olan özellikler sunmaktadır. Buna ek olarak DbContext tipinin de IObjectContextAdapter ve IDisposable arayüzlerini (Interface) uyguladığını görmekteyiz. Bu interface yardımıyla aslında Object Context’ e erişilmektedir. Diğer yandan ilgili nesnesinin Dispose edilebilir olması için IDisposable arayüzünün de uygulandığı görülmektedir. Eğer DbContext tipinin üyelerine bakılacak olursa SaveChanges gibi bir metod olduğunu fark edebiliriz ki bunun EF tarafında ne kadar önemli bir metod olduğunu tahmin edebilirsiniz
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_68.png)
+Dikkat edileceği üzere CompanyContext tipi Department ve Employee tiplerine ait nesnel koleksiyonları sunmak için DbSet tipinden olan özellikler sunmaktadır. Buna ek olarak DbContext tipinin de IObjectContextAdapter ve IDisposable arayüzlerini (Interface) uyguladığını görmekteyiz. Bu interface yardımıyla aslında Object Context’ e erişilmektedir. Diğer yandan ilgili nesnesinin Dispose edilebilir olması için IDisposable arayüzünün de uygulandığı görülmektedir. Eğer DbContext tipinin üyelerine bakılacak olursa SaveChanges gibi bir metod olduğunu fark edebiliriz ki bunun EF tarafında ne kadar önemli bir metod olduğunu tahmin edebilirsiniz.
 
 Aslında DbContext, Entity verileri ile birer nesne gibi çalışılabilmesini ve sorgulama işlemlerinin yapılabilmesini sağlamaktadır. Bu yüzden Entity nesneleri üzerinde yapılan veri değişimlerinin bir kaynağa doğru gönderilebilmesi için SaveChanges gibi metod sunmaktadır.
 
@@ -129,13 +120,7 @@ namespace CodeFirstDevelopment
 }
 ```
 
-Dikkat edileceği üzere Context nesnesi örneklendikten sonra önce bir Department üretilmiş ardından bu departmana bağlı bir kaç örnek Employee eklenmiştir. Yani bir departman ve bu departmana bağlı veri içerikleri bellek üzerinde gerçekleştirilmiştir. Son olarakta Context nesne örneği üzerinden SaveChanges metodu çağırılmıştır
-
-![Şaşırmış gülümseme](/assets/images/2011/wlEmoticon-surprisedsmile.png)
-
-SaveChanges? Hımmm…Şimdi burada bir saniye durup düşünelim. SaveChanges metodu bellek üzerinde gerçekleşen ekleme, silme, güncelleme vb işlemler sonucu ilgili varlık içeriklerini nereye kayıt edecektir. Sanki bir yerlerde bir şeyleri söylememiz gerekiyordu. Aslında söylemesekte olur
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_68.png)
+Dikkat edileceği üzere Context nesnesi örneklendikten sonra önce bir Department üretilmiş ardından bu departmana bağlı bir kaç örnek Employee eklenmiştir. Yani bir departman ve bu departmana bağlı veri içerikleri bellek üzerinde gerçekleştirilmiştir. Son olarakta Context nesne örneği üzerinden SaveChanges metodu çağırılmıştır. SaveChanges? Hımmm…Şimdi burada bir saniye durup düşünelim. SaveChanges metodu bellek üzerinde gerçekleşen ekleme, silme, güncelleme vb işlemler sonucu ilgili varlık içeriklerini nereye kayıt edecektir. Sanki bir yerlerde bir şeyleri söylememiz gerekiyordu. Aslında söylemesekte olur
 
 Nitekim DbContext nedeniyle ilgili şema yapıları için standart bir SQL bağlantısı söz konusudur. SQLExpress sürümü kullanılaraktan bir veritabanı otomatik olarak oluşturulacak ve söz konusu tablolar üretilerek ilgili veri içerikleri buraya yüklenecektir. Ancak biz bu davranışı değiştirmek istediğimizi düşünelim. Söz gelimi SQL Server üzerinde bir veritabanına doğru yazılsın. Bu amaçla tek yapmamız gereken uygulamanın App.Config dosyasına aşağıdaki Connection String bilgisini eklemektir.
 
@@ -148,13 +133,7 @@ Nitekim DbContext nedeniyle ilgili şema yapıları için standart bir SQL bağl
 </configuration>
 ```
 
-Buraya dikkat! Biz şu ana kadar Company isimli bir veritabanı (database) oluşturmadık
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_68.png)
-
-Dolayısıyla ilk çalışma esnasında söz konusu veritabanı ve içeriği üretilse çok iyi olur değil mi?
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_17.png)
+Buraya dikkat! Biz şu ana kadar Company isimli bir veritabanı (database) oluşturmadık. Dolayısıyla ilk çalışma esnasında söz konusu veritabanı ve içeriği üretilse çok iyi olur değil mi?
 
 Haydi gelin uygulamamızı debug modda çalıştıralım. Eğer çalışma zamanında Context nesne örneği üzerinde biraz dolaşırsak aşağıdaki gibi bir Connection String bilgisinin uygulanmaya çalışıldığını görürüz.
 
@@ -169,8 +148,6 @@ Data Source=.\SQLEXPRESS;Initial Catalog=CodeFirstDevelopment.CompanyContext;Int
 ![bei_23](/assets/images/2011/bei_23.gif)
 
 Volaaa!!! Sizce de süper değil mi?
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_17.png)
 
 Çok basit tipler tanımladık ve code modelimize bakılarak ilgili tablolar ve aralarındaki ilişkiler otomatik olarak oluşturuldu. Hatta verilerin yüklendiğini de SQL sorgularımızı atarak görebiliriz.
 

@@ -125,9 +125,7 @@ PersonManager sınıfı içerisinde yer alan StartTest metodu kendi içerisinde 
 
 ![blg32_3.gif](/assets/images/2009/blg32_3.gif)
 
-Görüldüğü gibi koleksiyon zaten farklı bir Thread içerisinde ele alındığından, düzenleme işlemi yapılmasına izin verilmemektedir. İşte eş zamanlı koleksiyonları ele almak için geçerli bir neden. Peki ama hangi eş zamanlı koleksiyon
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
+Görüldüğü gibi koleksiyon zaten farklı bir Thread içerisinde ele alındığından, düzenleme işlemi yapılmasına izin verilmemektedir. İşte eş zamanlı koleksiyonları ele almak için geçerli bir neden. Peki ama hangi eş zamanlı koleksiyon.
 
 Bu noktada bir önceki blog yazımın sonunda verdiğim sözü hatırlıyorum. BlockingCollection koleksiyonu. Bunun üzerine kodu aşağıdaki şekilde değiştirdim.
 

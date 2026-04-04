@@ -236,9 +236,7 @@ UrlPattern isimli sınıf Regex tipinden türetilmiştir. Yapıcı metoda (Const
 } // end of method UrlPatternFactory1::CreateInstance
 ```
 
-Görüldüğü üzere UrlPatternRunner1 tipine ait bir nesne örneğinin üretildiği görülmektedir. UrlPatternRunner1 tipi ise System.Text.RegularExpressions isim alanında yer alan RegexRunner sınıfından türetilmiştir. UrlPatternRunner1 tipinin içeriğinde yer alan operasyonlar tahmin edileceği üzere desen araştırma işlemlerinin yapılması için gerekli fonksiyonellikleri de içermektedir. Açıkçası bu tipin operasyonlarının içeriklerini tam olarak incelemeye çalıştığımızda çok fazla yere gittiğimiz için takibin zorlaştığını itiraf edebilirim
-
-![Undecided](/assets/images/2011/smiley-undecided.gif)
+Görüldüğü üzere UrlPatternRunner1 tipine ait bir nesne örneğinin üretildiği görülmektedir. UrlPatternRunner1 tipi ise System.Text.RegularExpressions isim alanında yer alan RegexRunner sınıfından türetilmiştir. UrlPatternRunner1 tipinin içeriğinde yer alan operasyonlar tahmin edileceği üzere desen araştırma işlemlerinin yapılması için gerekli fonksiyonellikleri de içermektedir. Açıkçası bu tipin operasyonlarının içeriklerini tam olarak incelemeye çalıştığımızda çok fazla yere gittiğimiz için takibin zorlaştığını itiraf edebilirim.
 
 Aslında bu noktada söz konusu assembly’ ı örnek bir projede kullanmamızda yarar olacağı kanısındayım. Gelin örnek bir Console uygulamasından söz konusu Assembly’ ı referans ederek LoremIpsum.txt dosyası içeriği üzerinden test edelim. İşte örnek uygulama kodlarımız.
 

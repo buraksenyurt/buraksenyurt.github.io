@@ -109,8 +109,6 @@ Uppsss!!!
 
 Enteresan bir durum söz konusu. "Bu gün çok güzel bir gündü" cümlesi ters sırada işlenmiştir. Dahası tüm işlemler 1 numaralı ThreadId'ye bağlı olarak gerçekleştirilmektedir. Bir başka deyişle ParallelForEach aktivitesi istediğimiz/beklediğimiz şekilde çalışmamıştır. Sorun ne olabilir acaba?
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Aslında sorundan ziyade yanlış bir çözüm yolu izlediğimizi ifade edebiliriz. Esasında ParallelForEach bileşeninin bu senaryoda işe yarayabilmesi için içerisinde yer alan CodeActivity türevli bileşenin de paralel çalışmaya destek vermesi bir başka deyişle asenkron olarak yürütülebiliyor olması gerekmektedir. Ahaaa!!
 
 İşte şimdi çözümü bulduk. Buna göre LetterCalculaterActivity bileşeninin CodeActivity yerine AsyncCodeActivity tipinden türetilmesi ve kodlanması yeterlidir. O halde söz konusu bileşenimizi aşağıdaki şekilde değiştirelim.

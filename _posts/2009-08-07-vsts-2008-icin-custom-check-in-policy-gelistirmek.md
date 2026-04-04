@@ -137,17 +137,11 @@ namespace TimeoutPolicy
 
 Formumuz oluşturulurken, Timeout referansını almaktadır. Böylece Form üzerindeki NumericUpDown kontrolünde yapılan değişimlere göre, Timeout içerisindeki TimeoutDay değeri dinamik olarak değiştirilebilir.
 
-İşlemlerimiz bununla bitmiyor tabiki. Geliştirdiğimiz sınıf kütüphanesinin, VSTS 2008 arabiriminde Team Exlporer üzerinden kullanılabilmesi için Registry'de ufak bir ekleme yapmamız gerekmektedir
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
-Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
+İşlemlerimiz bununla bitmiyor tabiki. Geliştirdiğimiz sınıf kütüphanesinin, VSTS 2008 arabiriminde Team Exlporer üzerinden kullanılabilmesi için Registry'de ufak bir ekleme yapmamız gerekmektedir. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![blg58_RegEditContent.gif](/assets/images/2009/blg58_RegEditContent.gif)
 
 Bu ekleme işlemi sırasında dikkat edilmesi gereken noktalardan birisi Value adının assembly adı ile aynı olmasıdır. Value Data kısmında ise dikat edileceği üzere geliştirdiğimiz sınıf kütüphanesinin fiziki adresi bulunmaktadır. Peki şimdi elimize ne geçti.
-
-![Cool](/assets/images/2009/smiley-cool.gif)
 
 VSTS 2008 üzerinde Source Settings kısmını açıp (aşağıdaki ekran görüntüsünde olduğu gibi),
 

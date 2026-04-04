@@ -11,7 +11,7 @@ Uzun uzun zaman önceydi. İlk bilgisayarımı daha dün gibi hatırlıyorum. Ef
 
 ![blg26_8.jpg](/assets/images/2009/blg26_8.jpg)
 
-Açıkçası onunla yaptığım tek şey oyun oynamaktı itiraf ediyorum. En çok sevdiğim oyunlar arasında Grean Beret, Barbarian, Karate Kid 2, 1942, Airwolf vardı. Gel zaman git zaman, Üniversite yıllarına girince, bilgisayar işini daha ciddi düşünmeye başlamıştım. Yanlış hatırlamıyorsam yaklaşık olarak 2400 dolar değerinde (![Money mouth](/assets/images/2009/smiley-money-mouth.gif)) 486DX işlemcili bir bilgisayarım daha olmuştu.
+Açıkçası onunla yaptığım tek şey oyun oynamaktı itiraf ediyorum. En çok sevdiğim oyunlar arasında Grean Beret, Barbarian, Karate Kid 2, 1942, Airwolf vardı. Gel zaman git zaman, Üniversite yıllarına girince, bilgisayar işini daha ciddi düşünmeye başlamıştım. Yanlış hatırlamıyorsam yaklaşık olarak 2400 dolar değerinde () 486DX işlemcili bir bilgisayarım daha olmuştu.
 
 ![blg26_3.jpg](/assets/images/2009/blg26_3.jpg)
 
@@ -172,13 +172,8 @@ Aslında kod son derece açıktır ancak dikkat edilmesi gereken noktalarda vard
 
 Tabiki kodu test ettiğimiz sistemin çekirdek veya işlemci sayısına göre, yada o anda çalışmakta olan programlara göre farklı sıralarda sonuçlar elde edilebilir. Ancak çalışan kod parçasında işlemlerin paralel yapıldığına dair pek çok iz vardır. Dikkatlice bakıldığında For, ForEach döngülerinin dizileri gerçekten paralel bir sırada değerlendirdiği ve işlemeri yaptığı ortadadır. Invoke metoduda benzer şekilde, çağırdığı 3 metodu mümkün mertebede paralel olarak başlatmıştır.
 
-NOT: TPL tarafında geliştiricinin alt-seviye (Low-Level) işlemlerle uğraşmasına gerek yoktur. Ancak bu durum görsel programlama tarafında, Illegal Cross Thread Exception gibi istisnaların olmayacağı anlamına gelmemelidir ![Undecided](/assets/images/2009/smiley-undecided.gif)
+NOT: TPL tarafında geliştiricinin alt-seviye (Low-Level) işlemlerle uğraşmasına gerek yoktur. Ancak bu durum görsel programlama tarafında, Illegal Cross Thread Exception gibi istisnaların olmayacağı anlamına gelmemelidir
 
-Böylece geldik bir yazımızın daha sonuna. Bu yazımızda TPL alt yapısını en basit ve yalın haliyle tanımaya çalıştık. Elbetteki işimiz bitmedi. Bi dünya işimi var aslında
-
-![Cool](/assets/images/2009/smiley-cool.gif)
-
-Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Böylece geldik bir yazımızın daha sonuna. Bu yazımızda TPL alt yapısını en basit ve yalın haliyle tanımaya çalıştık. Elbetteki işimiz bitmedi. Bi dünya işimi var aslında.Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloTPL.rar (25,96 kb)](/assets/files/2009/HelloTPL.rar)
-

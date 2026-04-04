@@ -12,8 +12,6 @@ Bir önceki blog yazımızda PLINQ ifadelerinde sıralama konusuna değinmeye ç
 
 PLINQ ifadeleri, sorgu içerisindeki işlemleri paralel çalışan görevlere ayırmakta son derece başarılıdır. Ancak öyle senaryolar olabilirki, sorgunun belirli bir noktasından (noktalarından) sonra ardışık olarak işlemlerin devam etmesi istenebilir.(Hatta sonra tekrardan paralel olarak devam edilmeside sağlanabilir) Tabi bu şekilde anlatmaya çalışınca inanın benim kafamda karışıyor.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Gelin olayı basit bir örnek ile ele almaya çalışalım. İşte Visual Studio 2010 Professional Beta 1 üzerinde geliştirdiğim Console uygulamasına ait kodlar.
 
 ```csharp

@@ -146,13 +146,9 @@ namespace CustomCaching
 
 Şimdi çok kısaca neler yaptığımıza bir bakalım. Cache sağlayıcımız Cache'lenecek olan nesneleri varsayılan olarak C:\Cache isimli bir klasör altında dosyalamaktadır (Aslında bu bilgide ilgili provider'a örneğin yapıcı metod yardımıyla web.config dosyası üzerinden geçirilebilir). Söz konusu nesne içerikleri ilgili dosyalara binary formatta serileştirilmektedir. Bu amaçla BinaryFormatter tipinden yararlanılmaktadır. Özellikle Cache'e nesne atma işlemi sırasında devreye giren Set metodu içerisinde, dosya adı için key parametresininin kullanıldığına dikkat edilmelidir. Hatta asıl dikkat edilmesi gereken nokta her cache için değişik bir key değerinin üretildiğidir (Ancak ispatını yapamadım henüz bunu belirteyim).
 
-Diğer yandan Expire süreleride ilgili metodlara (örneğin Set) parametre olarak gelmektedir. Bu süre bilgilerinden yararlanılarak ön bellekten düşürme işlemleri yapılmalıdır. Örneği geliştirirken beklentilerimi boşa çıkaran noktalardan biriside aslında Expire süreleri ile ilişkilidir. Şöyleki; örneği geliştirirken Remove metodunun belirtilen Duration süresi sonlandığında otomatik olarak devreye gireceğini tahmin etmiştim. Ancak bu şekilde olmadı
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
+Diğer yandan Expire süreleride ilgili metodlara (örneğin Set) parametre olarak gelmektedir. Bu süre bilgilerinden yararlanılarak ön bellekten düşürme işlemleri yapılmalıdır. Örneği geliştirirken beklentilerimi boşa çıkaran noktalardan biriside aslında Expire süreleri ile ilişkilidir. Şöyleki; örneği geliştirirken Remove metodunun belirtilen Duration süresi sonlandığında otomatik olarak devreye gireceğini tahmin etmiştim. Ancak bu şekilde olmadı.
 
 Bu nedenle Cache'lenen dosyaların zamanı geldiğinde silinmesi için bir mekanizmanın geliştirilmesi gerekiyordu. Bu amaçla Timer nesnesinden yararlanarak Elapsed olayı içerisinde gerekli silme işlemlerini gerçekleştirmeyi tercih ettim. Çok doğal olarak hangi dosyaların silinmesi gerektiğini anlayabilmek içinde basit bir koleksiyon tabanlı yapıyı tercih ettim. Tabiki Thread Safe bir yapı söz konusu değil. Hatta eş zamanlı gerçekleşebiliecek çıkarma işlemlerine karşın kolaya kaçıp ConcurrentCollection kullandığımı ifade edebilirim. Aslına bakarsanız şu an için tek derdim gerçekten özelleştirilmiş bu Cache sağlayıcısının çalışıp çalışmadığını görebilmek.
-
-![Cool](/assets/images/2009/smiley-cool.gif)
 
 Şimdi bu Cache Provider tipini web uygulamamızda nasıl kullanacağımızı belirtmemiz gerekiyor. Bu amaçla Web.config dosyası içerisinde aşağıdaki eklemeleri yapmamız yeterli olacaktır.
 

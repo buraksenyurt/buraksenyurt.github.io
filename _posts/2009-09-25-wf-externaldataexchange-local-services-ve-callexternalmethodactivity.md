@@ -199,9 +199,7 @@ Görüldüğü üzere Local Service'in tanımlanmasını takiben, ExternalDataEx
 
 ![blg81_Runtime.gif](/assets/images/2009/blg81_Runtime.gif)
 
-Evet...Önce belirli oranda arttırım yapıp sonra azaltım yapmak son derece saçma gözükmektedir
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
+Evet...Önce belirli oranda arttırım yapıp sonra azaltım yapmak son derece saçma gözükmektedir.
 
 Ancak yakalamamız gereken nokta elbetteki bu değildir. Önemli olan, bir aktivite'nin kendi sınırları dışındaki fonksiyonellikleri kullanabilmek için yerel servislerden nasıl yararlanıldığı ve bunun için ExternalDataExchange niteliğinin nasıl değerlendirildiğidir. Üstelik bu değerlendirme, WF tasarım zamanı içinde önem arz eder. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

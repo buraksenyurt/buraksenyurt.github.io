@@ -16,11 +16,7 @@ Bildiğiniz üzere bir süre önce Microsoft PDC 2010 etkinlikleri gerçekleşti
 
 İlginç olan noktalardan birisi ise, PDC’ de sunulan içeriklerin ve detaylı bilgilerinin Open Data Protocol (ODATA) formatında ve bir WCF Data Service aracılığıyla dış dünyaya sunuluyor olmasıydı.
 
-Aslına bakarsanız bu tip bir veri paylaşımı benim gibi servis tarafı ile ilgilenen pek çok geliştirici için tek bir anlama gelmektedir: “Git kendi uygulamanı yaz ve PDC Session bilgilerini servis aracılığıyla çek”
-
-![Open-mouthed smile](/assets/images/2010/wlEmoticon-openmouthedsmile_8.png)
-
-İşte Kurban bayramının ortasında olduğumuz şu günlerde ele aldığımız blog yazımızın konusu da bu olacak.
+Aslına bakarsanız bu tip bir veri paylaşımı benim gibi servis tarafı ile ilgilenen pek çok geliştirici için tek bir anlama gelmektedir: “Git kendi uygulamanı yaz ve PDC Session bilgilerini servis aracılığıyla çek” . İşte Kurban bayramının ortasında olduğumuz şu günlerde ele aldığımız blog yazımızın konusu da bu olacak.
 
 İlk olarak PDC 2010’ a ait bilgilerin nereden yayınlandığına bakarak başlamamızda yarar olacağı kanısındayım. Şu an itibariyle [http://odata.microsoftpdc.com/ODataSchedule.svc/](http://odata.microsoftpdc.com/ODataSchedule.svc/) adresinden bir paylaşım yapılmaktadır. Hatta her hangibir tarayıcı uygulaması ile baktığımızda aşağıdaki Atom veri içeriğinin üretildiğini görebiliriz.
 

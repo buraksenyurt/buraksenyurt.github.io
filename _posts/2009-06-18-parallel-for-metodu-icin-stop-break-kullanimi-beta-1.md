@@ -84,8 +84,6 @@ Sanıyorumki Stop ve Break metodları arasındaki farkı biraz biraz kendini gö
 
 Yinede şu ana kadar yaptığım analizde havada kalan noktalar var gibi hissediyorum.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Farklılığı tam olarak göremediğimi itirifat etemliyim. Bu nedenle Break tekniği ile ilişkili kod parçasında if kontrolünü aşağıdaki gibi değiştirdim ve Thread.Sleep süresini biraz daha kısalttım. Amaç çalışan Thread'lerden 10 numaralı Id'ye sahip olana denk gelindiğinde Break komutu kullanmak ve diğer Thread'lere ne olacağını anlamaktı.
 
 if (threadId=="10")

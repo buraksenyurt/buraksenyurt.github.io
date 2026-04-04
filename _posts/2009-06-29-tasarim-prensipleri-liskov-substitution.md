@@ -11,8 +11,6 @@ Bu günkü blog yazımızın kahramanı Barbara Liskov ([http://en.wikipedia.org
 
 ![BarbaraLiskov.jpg](/assets/images/2009/BarbaraLiskov.jpg)
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Örnek Console uygulamamızda Document isimli bir abstract sınıfımız mevcuttur. Bu sınıf Pdf, Xps gibi dökümanların ortak özellikleri ile uygulaması gereken kuralları tanımlamaktadır. Örneğin dökümanın network üzerinde bir yere gönderilmesi veya printer üzerinden yazdırılması bu anlamda zorunlu fonksiyonellikler olarak düşünülebilir. Diğer yandan, DocumentManager isimli bir başka sınıfta, Document sınıfına bağımlı olan bir tip olarak karşımıza çıkmaktadır. Bu tip kendi içerisinde, Document tipinden türeyen nesne örnekleri üzerinde ortak işlemlerin yapılmasını sağlamaktadır. Söz gelimi birden fazla Document tipinin yazdırılması veya gönderilmesi bu ortak operasyonlar olarak düşünülebilir. Burada işin önemli kısımlarından birisi, Xps, Pdf gibi sınıfların ve sonradan sisteme eklenecek Document türevli tiplerin, DocumentManager tarafında ortaklaşa kullanılabilecek olmasıdır. Dilerseniz örneğimize bakalım.
 
 ![blg38_1.gif](/assets/images/2009/blg38_1.gif)
@@ -174,8 +172,6 @@ namespace Problem
 ```
 
 Örnekte SendAll metodu içerisinde tip kontrolü yapılarak söz konusu senaryonun gerçeklenmemesi sağlanmıştır. Hatta uygulama çalıştırıldığında bir önceki ile aynı sonuçlar alınacaktır. Ancak burada ilk başka Open Closed ilkesine ters düşen bir durum yaşanmaktadır. Öyleki, sisteme yeni bir tip eklendiğinde, DocumentManager içerisindede değişiklik yapılması zorunludur. Zaten, Open Closed prensibine uymayan durumlar Liskov Substitution ilkesininde bozulduğu anlamına gelmektedir. Liskov Substitution ilkesi bize şunu söylemektedir; üst sınıf ile alt sınıf nesne örnekleri yer değiştirdiklerinde, üst sınıf kullanıcısı alt sınıfın operasyonlarına erişmeye devam edebilmelidir. Oysaki son senaryoda, CSharp alt sınıfındaki operasyona erişilirken özel bir işlem yapılması gerekmiştir (tip kontrolü veya istisna yakalama işlemi). Bu örnekte LSP ilkesine aykırı olan durumu ortadan kaldırmak için yapılması gereken tek şey vardır oda CSharp sınıfını Document sınıfına ait Domain yapısından çıkartmak.
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
 
 Internet ve basılı kaynaklarda LSP ilkesini araştırdığınızda Rectangle ve Square örneği ilede karşılaşabilirsiniz. Bu senaryoda, Liskov Substitution ilkesini son derece basit ve yalın bir dille anlatmaktadır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

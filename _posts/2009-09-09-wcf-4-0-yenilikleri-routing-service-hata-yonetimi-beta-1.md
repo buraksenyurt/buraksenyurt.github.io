@@ -191,8 +191,6 @@ Aslında UserService'in bire bir kopyası olan sadece farklı bir port üzerinde
 
 Bu liste içerisinde n sayıda alternatif endPoint ismi belirtilebilir. Bir başka deyişle bir endPoint'in karşılayamadığı istekleri, birden fazla endPoint noktasına denenmek üzere aktarabiliriz. Tabi bu durumu henüz test etme şansım olmadı. Ki beklenen sırasıyla servislerin denenmesi ve başarılı olandan sonrakilere geçilmemesi yönünde olmalıdır. Ancak entries/add elementi içerisinde priority isimli bir nitelikte bulunmakta ve öncelik seviyesini belirlemektedir. İşte size bir garajda araştırma ödevi.
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Artık vakamızı tekrardan test edebiliriz. Yine tüm servisleri (Backup servisimiz dahil) çalıştıracak, ancak istemci talepte bulunmadan önce UserService'ini kapatacağız. İşte sonuçlar;
 
 ![blg74_Result.gif](/assets/images/2009/blg74_Result.gif)

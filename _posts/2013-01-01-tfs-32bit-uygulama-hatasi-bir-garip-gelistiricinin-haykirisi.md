@@ -35,13 +35,7 @@ Hatanın sebebi belirgindi. Makine üzerindeki işletim sistemi 64bit olarak yü
 
 ![tfserror_2](/assets/images/2013/tfserror_2.png)
 
-Hay değiştirmez olaydım
-
-![Open-mouthed smile](/assets/images/2013/wlEmoticon-openmouthedsmile_42.png)
-
-Artık servis çalışıyordu bunu görebiliyordum ama…Kendi kendimi bir sonraki adıma geçmeyi planladığım sırada bir telefon sesi duydum. Takım arkadaşlarımdan birisi TFS bağlantısı sırasında bir hata aldığını söylüyordu. Hemen TFS adresine girdim ve ben de hatayı gördüm
-
-![Disappointed smile](/assets/images/2013/wlEmoticon-disappointedsmile_3.png)
+Hay değiştirmez olaydım. Artık servis çalışıyordu bunu görebiliyordum ama…Kendi kendimi bir sonraki adıma geçmeyi planladığım sırada bir telefon sesi duydum. Takım arkadaşlarımdan birisi TFS bağlantısı sırasında bir hata aldığını söylüyordu. Hemen TFS adresine girdim ve ben de hatayı gördüm
 
 ![tfserror](/assets/images/2013/tfserror.png)
 

@@ -11,7 +11,7 @@ Bir önceki yazımda, yazılm tasrımında benimsenen ilkelerinden birisi olan L
 
 Açık kapalı prensibi aslında son derece basit bir ilkedir. Bu ilke bir sistemin sürekli olarak değişimlere maruz kalabileceğini göz önüne alaraktan (ki örneğin çevik süreçlerde hızlı değişimler asıl odaklanılan noktadır), genişletilmeye açık ama modifiye edilmeye kapalı varlıkların (Sınıf, Method vb...) kullanılmasını önerir. Gerçekten de günümüz Enterprise çözümlerin çoğunda,müşteri ihtiyaçlarına göre yazılımın sürekli güncelleniyor olması gerekmektedir. Bu noktada güncelleştirme işlemleri sırasında koda dokunmadan ilerlemeye çalışmak neredeyse imkansızdır. Ancak bu risk en aza indirgenmeye çalışılabilir. OCP (Open Closed Principle) bu noktada devreye giren prensiplerden sadece birisidir. Tabikide bu teorik anlatım bir örnekle süslenmediği takdirde çok anlaşılır değildir
 
-Gelin önce problemli bir tasarım ile yola çıkalım ve sonrasında ise OCP'i nasıl uygulayabileceğimize bakalım (ki bu noktada bir önceki blog yazısına göre bir dejavu yaşayabilirsiniz benden söylemesi ![Surprised](/assets/images/2009/smiley-surprised.gif))
+Gelin önce problemli bir tasarım ile yola çıkalım ve sonrasında ise OCP'i nasıl uygulayabileceğimize bakalım (ki bu noktada bir önceki blog yazısına göre bir dejavu yaşayabilirsiniz benden söylemesi)
 
 ![blg36_1.gif](/assets/images/2009/blg36_1.gif)
 

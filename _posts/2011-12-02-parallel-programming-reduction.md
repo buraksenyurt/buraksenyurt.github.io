@@ -107,17 +107,13 @@ O ooooo too!!!
 
 Dikkat edilecek olursa Parallel.For döngüsü 7 ile bölünebilen sayıların miktarını her defasında standart for döngüsüne göre farklı hesaplamış ve aslında hiç birisinde de doğru sonucu tutturamamıştır. Bu aslına bakılacak olursa son derece doğal bir sonuçtur. Nitekim Parallel.For döngüsü çalışmaya başladıktan sonra birden fazla Task oluşturmakta ve bunları bir veya daha fazla Thread’ in yönetimine sunmaktadır. Gözden kaçan nokta, bu Task’ ların her birinin aslında aynı değişken üzerinde hesaplama yapmaya çalışıyor olmalarıdır. Yani, örneğimizde açılan Task bloklarının her biri aslında aynı parallelCount değişkeni üzerinde bir artım gerçekleştirmeye çalışmaktadır. Bu da çok doğal olarak doğru sonucun hesaplanamamasına neden olmaktadır. Peki ya öyleyse çözüm nedir?
 
-Standart bir for döngüsünün kullanılması tercih edilebilir
-
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_19.png)
-
-Lakin bu durumda Parallel olmanın avantajları kaybedilecektir. Buradaki gibi bir sayı aralığında bu çok önemli gözükmese de, bilimsel veya finansal hesaplama yapan bir uygulamada bu ayrım, performans açısında çok kritik bir fark doğurabilir. Bu nedenle Parallel döngüler ile devam edecek isek Reduction olarak tanımlanan ve aslında ilerleyen zamanlarda işleyeceğimiz MapReduce deseninin temelini oluşturan bir konuyu göz önüne alarak ilerlememiz gerekmektedir. Aslında teorik olarak çok fazla sıkmak istemiyorum sizi, ancak özet olarak işleyişi ifade etmek isterim. Parallel.For döngüsünü öyle bir çalıştırmalıyız ki, açılacak olan Thread’ ler ve bunların içerisinde yer alacak olan Task’ lar, parallelCount sayısının aslında aralarında paylaştıkları bir veri olduğunu bilmelidirdler
+Standart bir for döngüsünün kullanılması tercih edilebilir. Lakin bu durumda Parallel olmanın avantajları kaybedilecektir. Buradaki gibi bir sayı aralığında bu çok önemli gözükmese de, bilimsel veya finansal hesaplama yapan bir uygulamada bu ayrım, performans açısında çok kritik bir fark doğurabilir. Bu nedenle Parallel döngüler ile devam edecek isek Reduction olarak tanımlanan ve aslında ilerleyen zamanlarda işleyeceğimiz MapReduce deseninin temelini oluşturan bir konuyu göz önüne alarak ilerlememiz gerekmektedir. Aslında teorik olarak çok fazla sıkmak istemiyorum sizi, ancak özet olarak işleyişi ifade etmek isterim. Parallel.For döngüsünü öyle bir çalıştırmalıyız ki, açılacak olan Thread’ ler ve bunların içerisinde yer alacak olan Task’ lar, parallelCount sayısının aslında aralarında paylaştıkları bir veri olduğunu bilmelidirdler
 
 Üstelik her bir Thread kendi içerisinde bir toplam sayı hesabı yapmalı ve işleyişini bitirdiğinde de herkes için ortak olan bir değişkene bunu eklemelidir. Bu ekleme işinin ise senkronize edilerek yapılması şarttır.
 
 Neyseki Parallel.For ve Parallel.ForEach döngüleri bu ortak paylaşımlı veri değişkenlerine izin veren aşırı yüklenmiş (Overload) versiyonlara sahiptirler. Çözüm olarak kodumuzu aşağıdaki gibi değiştirmemiz yeterli olacaktır.
 
-```bash
+```csharp
 #region Reduction
 
 int reductionCount = 0;

@@ -17,9 +17,7 @@ Gelişen sistemler, kullanıcı deneyimleri ve görselliklerin artması ile de y
 
 Bu anlamda tarihin belki en başarılı geliştirme arayüzlerinden birisi, herkesin bildiği üzere Delphi ortamıdır. Ne varki o zaman ki Borland firmasının sahip olduğu bu özellik, Anders Heijslberg’ in Microsoft takımına geçmesi ile birlikte yerini Visual Studio ailesine bırakmıştır. Anders sadece.Net Framework plaformu ve C# diline babalık etmemiş önemli bir User Experience tecrübesini de Microsoft şirketine taşımıştır. Visual Studio özellikle 2008 sürümünden itibaren inanılmaz derecede gelişti ve gelişmeye de devam ediyor.
 
-Bu IDE ile çalışmak hem çok keyifli, hem de tek bir ortam üzerinden çok geniş bir yelpazeye ulaşılabilmekte. Açıkçası IDE dışına çıkmadan herşeyin elinizin altında olduğu bir geliştirme ortamında çalışmanın değeri paha biçilemez…Gerisi için Master Card
-
-![Smile with tongue out](/assets/images/2013/wlEmoticon-smilewithtongueout_7.png)
+Bu IDE ile çalışmak hem çok keyifli, hem de tek bir ortam üzerinden çok geniş bir yelpazeye ulaşılabilmekte. Açıkçası IDE dışına çıkmadan herşeyin elinizin altında olduğu bir geliştirme ortamında çalışmanın değeri paha biçilemez…Gerisi için Master Card.
 
 Entity Framework bilindiği üzere son sürümlerinden itibaren çok daha fazla etkili olmaya başladı. Bu noktada Ado.Net geliştirici takımının müşteri ihtiyaçlarını da çeşitli anketler yardımıyla dinliyor olmasının önemi büyüktür. Örneğin uzun bir zaman anketin en üst sıralarında yer alan Enum desteğinin getirilmesi gibi. (Bu amaçla açılan [Entity Framework Feature Suggestions](http://data.uservoice.com/forums/72025-entity-framework-feature-suggestions/filters/new) forumunu takip etmenizi öneririm)
 

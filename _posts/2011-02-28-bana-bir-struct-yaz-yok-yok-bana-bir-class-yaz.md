@@ -236,11 +236,7 @@ Hımmm! İlginç
 
 Neden böyle bir hata aldık ki? Aslında sınıfların yapamadığı bir şeyi yapıyor olmalıydık. Acaba Struct tipleri kıl mı?
 
-Sorun bu tip bir kullanımın sadece alanlar (Fields) için geçerli olmasıdır. Üstelik public olan alanlar için geçerlidir. Hatta ne kadar public alan var ise her birinin ilk değerinin de atanması gerekmektedir. Dolayısıyla Location tipini aşağıdaki hale getirerek devam edelim. (Elveda özellikler
-
-![Frown](/assets/images/2011/smiley-frown.gif)
-
-)
+Sorun bu tip bir kullanımın sadece alanlar (Fields) için geçerli olmasıdır. Üstelik public olan alanlar için geçerlidir. Hatta ne kadar public alan var ise her birinin ilk değerinin de atanması gerekmektedir. Dolayısıyla Location tipini aşağıdaki hale getirerek devam edelim. (Elveda özellikler)
 
 ```csharp
 namespace StructvsClass 
@@ -307,8 +303,6 @@ Location yapısına TimeZone isimli string tipinden ve InGame isimli bool tipind
 Dikkat edileceği üzere TimeZone değişkenine varsayılan değer atanamamaktadır. Ayrıca varsayılan yapıcı metodun var olamayacağı ifade edilmektedir. Buna göre InGame değişkenin ilk değer atanması için varsayılan yapıcı metodun kullanılması planları da suya düşmüştür. Halbu ki Location tipi bir sınıf olarak tasarlanmış olsaydı!
 
 Bu durumda bir derleme zamanı hatası alınmayacaktı
-
-![Undecided](/assets/images/2011/smiley-undecided.gif)
 
 ## Vaka 6: Performans
 

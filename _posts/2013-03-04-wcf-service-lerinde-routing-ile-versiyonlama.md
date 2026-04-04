@@ -316,11 +316,7 @@ Ardından 2 değerini girerek;
 
 ![rav_3](/assets/images/2013/rav_3.png)
 
-Pek tabi geçerli olmayan bir değerin girilmesi halinde istemci tarafında Exception alınması da son derece doğaldır
-
-![Embarrassed smile](/assets/images/2013/wlEmoticon-embarrassedsmile_3.png)
-
-Görüldüğü gibi bir servisin farklı versiyonlarını host ettiğimiz senaryolarda, istemcilerin istedikleri servislere gitmelerini sağlamak için araya konuşlandıracağımız bir Routing servis uygulamasından kolayca yararlanabiliriz. Senaryoda teknik olarak istemcinin Message Header içerisine koyduğu versiyon bilgisinin, yönlendirme servisi üzerinde XPath ile sorgulanması ile yakalanmaya çalışılması değerlendirilmiştir.
+Pek tabi geçerli olmayan bir değerin girilmesi halinde istemci tarafında Exception alınması da son derece doğaldır. Görüldüğü gibi bir servisin farklı versiyonlarını host ettiğimiz senaryolarda, istemcilerin istedikleri servislere gitmelerini sağlamak için araya konuşlandıracağımız bir Routing servis uygulamasından kolayca yararlanabiliriz. Senaryoda teknik olarak istemcinin Message Header içerisine koyduğu versiyon bilgisinin, yönlendirme servisi üzerinde XPath ile sorgulanması ile yakalanmaya çalışılması değerlendirilmiştir.
 
 Örnek senaryo istenirse daha da zorlaştırılabilir. Söz gelimi servislerin sözleşmelerinde yapılacak kritik değişiklikler sonucu istemcinin bilmesi gereken contract bilgisinin de güncellenmesi şarttır. Bu konuyu bir düşünmenizi ve böyle bir senaryo oluşması halinde istemcinin istediği versiyonlara nasıl gidebileceğini araştırmanızı ve bir çözüm yolu bulmaya çalışmanızı öneririm. Bu iyi bir ev ödevi gibi geldi bana
 

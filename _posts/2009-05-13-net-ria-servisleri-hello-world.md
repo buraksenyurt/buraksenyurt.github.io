@@ -28,7 +28,7 @@ Tek yapmamız gereken, yine web uygulaması projesi içerisine, aşağıdaki şe
 
 ![blg15_4.gif](/assets/images/2009/blg15_4.gif)
 
-(Kullandığım sistemdeki kurulumdan kaynaklanan bir sorun olsa gerek, ikon ne yazıkki görünmüyor ![Undecided](/assets/images/2009/smiley-undecided.gif))
+(Kullandığım sistemdeki kurulumdan kaynaklanan bir sorun olsa gerek, ikon ne yazıkki görünmüyor)
 
 Bu seçimin ardından karşımıza aşağıdaki iletişim kutusu gelecektir.
 
@@ -224,4 +224,3 @@ DataGrid kontrolü, bu kategoriye bağlı ürünler ile doldurulacaktır. İşte
 Böylece geldik bir yazımızın daha sonuna..Net RIA Servisleri ile ilişkili araştırmalarıma devam ettikçe, öğrendiklerimi sizlerle paylaşmaya devam ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloRIAServices.rar (1,60 mb)](/assets/files/2009/HelloRIAServices.rar)
-

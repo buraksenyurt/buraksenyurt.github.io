@@ -14,9 +14,7 @@ Hani bazen insanın aklına son derece zekice fikirler gelir ya...Sene 1992. Lis
 
 ![blg119_Giris.jpg](/assets/images/2010/blg119_Giris.jpg)
 
-Aslında lambanın etrafında şık bir küre bulunmaktaydı fakat sakarlığıyla bilinen bendeniz onu bir ara kırmıştım. Tabi hal böyle olunca şöyle bir sorunla karşılaştım. Işık direkt olarak gözüme geliyor ve çok rahatsız ediyordu. Çözüm olarak nemi yaptım. Dahiyane bir fikirle Amerika'daki bir arkadaşımın hediye ettiği Newyork Nicks takımının logosunu taşıyan şapkayı, lambanın üstüne güzelce yerleştirdim. Özellikle ışığın gözüme direkt olarak girmesini engelleyen ama etrafı ve okuduklarımı görmemi sağlayan bir açıyı düşünüp, ölçüp biçerek, dikkatlice yerleştirdim. Kendimle gurur duyuyordum. Bu zeka ile NASA'ya bile gidebilirim diye düşünüyordum
-
-![Tongue out](/assets/images/2010/smiley-tongue-out.gif)
+Aslında lambanın etrafında şık bir küre bulunmaktaydı fakat sakarlığıyla bilinen bendeniz onu bir ara kırmıştım. Tabi hal böyle olunca şöyle bir sorunla karşılaştım. Işık direkt olarak gözüme geliyor ve çok rahatsız ediyordu. Çözüm olarak nemi yaptım. Dahiyane bir fikirle Amerika'daki bir arkadaşımın hediye ettiği Newyork Nicks takımının logosunu taşıyan şapkayı, lambanın üstüne güzelce yerleştirdim. Özellikle ışığın gözüme direkt olarak girmesini engelleyen ama etrafı ve okuduklarımı görmemi sağlayan bir açıyı düşünüp, ölçüp biçerek, dikkatlice yerleştirdim. Kendimle gurur duyuyordum. Bu zeka ile NASA'ya bile gidebilirim diye düşünüyordum.
 
 Ancak gecenin ilerleyen saatlerinde değil NASA, sıradan bir bölümü bile kazanmamın zor olduğuna kanaat getirdim. Nitekim ampülün zaman içerisinde çevreye yaydığı aşırı ısıyı tahmin edememiştim. Ancak odanın içerisine bir yanık kokusu yayıldığında bir şeylerin ters gittiğinin farkına varabilmiştim. En nihayetinde güzelim şapkanın ortasında kocaman bir yanık izi ve erimiş kumaş parçaları ile kala kaldım. Neredeyse koca bir delik açılmıştı.
 
@@ -57,8 +55,6 @@ namespace RoleBasedFields.Web
 Ancak örnek senaryomuza göre JuniorSalesPerson rolünde olan bill isimli kullanıcının UnitPriceDiscount alanını görmemesi veya anlamlandıramaması gerekmektedir.(Anlamlandıramamasının ne kadar zor olduğunu biraz sonra anlayacağız) Buna göre sunucu tarafında yer alan operasyonun özelleştirilmesi gerekmektedir. Aslında yazımızın ulaşmak istediği tek nokta budur. Peki ama nasıl?
 
 Sonuçta istemci ve sunucu tarafında eş olan SalesOrderDetail Entity sınıf bilgisini çalışma zamanında değiştirmemiz şu etapta pek mümkün değildir. Akla ilk gelen yöntem result set çekilirken role göre gösterilmesi istenmeyen alana örneğin null değer atanmasını sağlamak olabilir. (Bu konu ile ilişkili olaraktan yaptığım araştırmalarda, blog girdisini hazırladığım tarih itibariyle [Brad Abrams'ın ilgili yazısında](http://blogs.msdn.com/brada/archive/2009/12/08/field-level-access-with-ria-services.aspx)bu tip bir teknik uygulandığını gördüm) Tabi örneğimizdeki alan null değer almamaktadır. Buna göre belki -1 değer atanması sağlanabilir. Ama bu durumdada alan yine görülebilir olacaktır.
-
-![Undecided](/assets/images/2010/smiley-undecided.gif)
 
 Aşağıdaki kod parçasını göz önüne alalım.
 

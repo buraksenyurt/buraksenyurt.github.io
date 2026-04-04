@@ -91,11 +91,7 @@ assembly’ larının yüklenmesi yukarıda bahsettiğimiz temel Designer tipler
 </Window>
 ```
 
-Aslında tasarım olarak Visual Studio IDE’ sini sadece ucundan andıran bir görselliğimiz bulunmakta
-
-![Embarrassed smile](/assets/images/2012/wlEmoticon-embarrassedsmile_2.png)
-
-Uygulamanın sol tarafında Toolbox’ ımız, ortasında Workflow tasarımının yapılacağı alanımız ve en sağda bileşenlere ait Properties penceremiz bulunmaktadır. Şimdilik basit bir POC (Proof of Concept) çalışması olarak öngördüğümüzden temel fonksiyonelliklerimiz (Load,Save,Run,New) birer Button halinde pencerenin alt kısmında yer alacaktır. Olayı kafamızda daha iyi canlandırmak için uygulamamızın bitmiş halinin çalışma zamanındaki bir görüntüsüne bakalım arzu ederseniz.
+Aslında tasarım olarak Visual Studio IDE’ sini sadece ucundan andıran bir görselliğimiz bulunmakta. Uygulamanın sol tarafında Toolbox’ ımız, ortasında Workflow tasarımının yapılacağı alanımız ve en sağda bileşenlere ait Properties penceremiz bulunmaktadır. Şimdilik basit bir POC (Proof of Concept) çalışması olarak öngördüğümüzden temel fonksiyonelliklerimiz (Load,Save,Run,New) birer Button halinde pencerenin alt kısmında yer alacaktır. Olayı kafamızda daha iyi canlandırmak için uygulamamızın bitmiş halinin çalışma zamanındaki bir görüntüsüne bakalım arzu ederseniz.
 
 ![rwd_2](/assets/images/2012/rwd_2.png)
 

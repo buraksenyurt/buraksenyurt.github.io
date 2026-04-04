@@ -22,7 +22,7 @@ Küçük içerikler söz konusu olduğunda bu çok da önem arz eden bir konu de
 
 Biz bu yazımızda, simetrik şifreleme algoritmalarından olan AES (Advenced Encryption Standard’ in Cryptographic Application Programming Interfaces uyarlaması), TripleDES, DES, RC2 ve Rijndael tekniklerini ele alıp, büyük boyutlu bir veri içeriği için şifreleme ve çözümleme zamanlarını ölçümlemeye çalışacağız. (Hem bu vesile ile söz konusu sağlayıcıları pratik olarak nasıl kullanabileceğimizi de göreceğiz)
 
-Temel Cryptography Tipleri
+## Temel Cryptography Tipleri
 
 Başlamadan önce Visual Studio – Object Browser yardımıyla söz konusu şifreleme algoritmalarının tip hiyerarşisine bakmamızda yarar olduğu kanısındayım. Temel olarak simetrik şifreleme işlemlerini üstlenen sağlayıcılar (Providers) SymmetricAlgorithm tipinden türeyen alt tiplerden üretilirler.
 
@@ -34,13 +34,13 @@ Aslında şifreleme için kullanılacak tipler Provider veya Managed son eki ile
 
 Tüm bu şifreleme algoritmalarının ortak özelliklerinden birisi de paylaşımlı anahtar (Shared Key) kullanıyor olmalarıdır. Yani, şifreleme için kullanılan anahtar (Key) ve ilklendirme vektör değeri (IV-Initialization vector) ortaktır. Dolayısıyla şifreleme yapılırken kullanılan bu değerler, çözümleme sırasında da devreye girmektedir. Bu zaten, simetrik ve asimetrik şifrelemeler arasındaki en büyük farklardan birisidir.
 
-Test Senaryosu
+## Test Senaryosu
 
 Artık söz fazla uzatmayalım ve kodlarımızı yazarak testimizi gerçekleştirmeye çalışalım. Test senaryomuzdaki amacımız, 5 şifreleme algoritmasının aynı veri üzerindeki şifreleme ve çözümleme sürelerini ölçmek olacaktır. Bunun için yaklaşık olarak 50 mb büyüklüğünde bir text dosyasını kullandığımı ifade etmek isterim. Text dosyası içeriği ise bildiğimiz Lorem Ipsum paragraflarından oluşmaktadır. [(Lorem Ipsum üretimleri için bu adresten yararlanabilirsiniz)](http://tr.lipsum.com/)
 
 ![scs_6](/assets/images/2014/scs_6.png)
 
-Uygulama Kodları
+## Uygulama Kodları
 
 Gelelim kod tarafına. Console uygulaması olarak geliştireceğimiz projemizde aşağıdaki sınıf diagramında yer alan kod içeriğini kullanıyor olacağız.
 
@@ -261,13 +261,13 @@ Aslında kod içeriği her ne kadar karmaşık görünse de region’ ları kapa
 
 ![scs_5](/assets/images/2014/scs_5.png)
 
-Kodun Çalışma Şekli
+## Kodun Çalışma Şekli
 
 Şimdi neler yaptığımızı kısaca özetleyelim.
 
 Öncelikli olarak static Utility sınıfı içerisinde bazı temel alanlar (Fields) yer aldığı görülmektedir. Her bir şifreleme sağlayıcısı (Provider) ve bunlara ait Key, IV değerleri için birer alan tanımlanmıştır. Söz konusu alanlar static yapıcı metod (Constructor) içerisinde initialize edilirler. Ayrıca yapıcı metodumuz, 50 mb’ lık text dosyasını da içerdeki string değişkene alacak şekilde tesis edilmiştir.
 
-5 farklı simetrik şifreleme algoritması için ayrı ayrı metodlar yazıldığı görülmektedir ancak her biri generic olarak tasarlanmış Encypt (ki an itibariyle yanlış yazdığımı fark ettim ![Open-mouthed smile](/assets/images/2014/wlEmoticon-openmouthedsmile_36.png) Sanırım enkıyipt olarak telafüz edebiliriz) ve Decrypt fonksiyonlarını kullanmaktadır. Bu fonksiyonlarda dikkat edilmesi gereken en önemli nokta ise generic T tipi için bir kısıtlama (Constraint) belirtilmiş olmasıdır ki bu kısıtlamaya göre T tipi mutlaka SymmetricAlgorithm türevli olmak zorundadır.
+5 farklı simetrik şifreleme algoritması için ayrı ayrı metodlar yazıldığı görülmektedir ancak her biri generic olarak tasarlanmış Encypt (ki an itibariyle yanlış yazdığımı fark ettim Sanırım enkıyipt olarak telafüz edebiliriz) ve Decrypt fonksiyonlarını kullanmaktadır. Bu fonksiyonlarda dikkat edilmesi gereken en önemli nokta ise generic T tipi için bir kısıtlama (Constraint) belirtilmiş olmasıdır ki bu kısıtlamaya göre T tipi mutlaka SymmetricAlgorithm türevli olmak zorundadır.
 
 > Yazıya konu olan kod parçasının en önemli kısımı, generic metod kullanılması ve T tipi için constraint uygulanarak, sadece simetrik algoritma sağlayacılarına destek verecek ortak fonksiyonelliklerin üretilmiş olmasıdır. Bu kodun yeniden kullanılabilirliği (re-usable), okunabilirliği (readable) ve bakımı (maintable) açısından önemlidir.
 
@@ -356,7 +356,7 @@ namespace HowTo_Cryptography
 }
 ```
 
-Test Sonuçları
+## Test Sonuçları
 
 Test olması açısından 5 simetrik algoritmanın şifreleme ve çözümleme metodlarını arka arkaya 5 kez çağıran bir yapı kurgulanmıştır. Örneği bu şekilde çalıştırdığımızda aşağıdakine benzer sonuçlar ile karşılaşırız. Tabi buradaki ölçüm değerleri donanımsal faktörlere de bağlıdır.
 
@@ -372,11 +372,10 @@ Elde edilen sonuçlara göre en hızlı şifreleme ve çözümleme AES sağlayı
 
 Bu test örneğinde simetrik şifreleme algoritmalarının Encryption ve Decryption operasyonlarına ait süre ölçümlemelerine bakılmıştır. Hızın öne çıktığı bir durum söz konusu ise AES’ in tercih edilmesi elbette olasıdır ama yine de iyi düşünmek gerekir. Nitekim hangi algoritmanın kaç bitlik şifreleme yaptığına göre de karar verilmesi önemlidir. Bu açıdan bakıldığında, en sağlam algoritmalarından birisi olarak TripleDes ve Rijndael daha fazla öne çıkmaktadır.
 
-> Tabi key boyutları dışında farklı etkenler de söz konusudur. Bilindiği üzere 2000li yılların başında şifreleme anahtarlarının en az 128bit destekli olması standart olarak kabul edilmiştir. Çok hassas verilerin korunmasında ise 192bit ile 256bit şifrelemeler önerilmektedir.
-> National Institute of Standards and Technology (NIST) in ifade ettiğine göre, 80bit anahtar kullanan algoritmalar 2015 yılından itibaren geçerliliğini yitireceklerdir. Dolayısıyla bu ve altında (örneğin 56bit gibi) anahtarlar ile hizmet veren şifreleme algoritmalarının kullanılmaması doğru bir hareket olacaktır.
+> Tabi key boyutları dışında farklı etkenler de söz konusudur. Bilindiği üzere 2000li yılların başında şifreleme anahtarlarının en az 128bit destekli olması standart olarak kabul edilmiştir. Çok hassas verilerin korunmasında ise 192bit ile 256bit şifrelemeler önerilmektedir. National Institute of Standards and Technology (NIST) in ifade ettiğine göre, 80bit anahtar kullanan algoritmalar 2015 yılından itibaren geçerliliğini yitireceklerdir. Dolayısıyla bu ve altında (örneğin 56bit gibi) anahtarlar ile hizmet veren şifreleme algoritmalarının kullanılmaması doğru bir hareket olacaktır.
 
 Bu yazımızda en bilinen ve popüler olan simetrik şifreleme algoritmalarının.Net Framework tarafındaki süre bazlı performanslarını incelemeye çalışıp, nasıl kullanıldıklarını gördük. Konu veri güvenliği olunca en sağlam sistemi de kursanız %1 ihtimalle kırılma olasılığını her zaman için göz önünde bulundurmak gerekir. Bu sebepten yazdıklarıma güvenmeyip daha derin bir araştırma ile hangi simetrik şifreleme algoritmasını seçeceğinize karar vermeniz yerinde bir hareket olacaktır. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_Cryptography.zip (45,00 kb)](/assets/files/2014/HowTo_Cryptography.zip)
 
-[Text dosyasının içeriği bilinçli olarak boşaltılıp 1Kb seviyesine indirilmiştir. Test etmeden önce dosya içeriğini copy-paste ile çoğaltarak boyut arttırımı yapmanızı ve 50mb seviyelerine getirdikten sonra kodu çalıştırmanızı öneririm]
+> Text dosyasının içeriği bilinçli olarak boşaltılıp 1Kb seviyesine indirilmiştir. Test etmeden önce dosya içeriğini copy-paste ile çoğaltarak boyut arttırımı yapmanızı ve 50mb seviyelerine getirdikten sonra kodu çalıştırmanızı öneririm.

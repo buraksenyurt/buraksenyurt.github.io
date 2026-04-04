@@ -8,20 +8,15 @@ tags:
 categories:
   - Paralel Programlama
 ---
-Böylesine yağmurlu ve sabah trafiğinin tavan yaptığı bir günde size ne Radyo Eksen’ deki güzel melodiler, ne de okuduğunuz mizah dergisindeki karikatürler iyi gelmiyorsa, başka bir şeyle uğraşmanın yeridir diyebilirim. Ben bu sıkıntıyı aşmak ve kendimi daha iyi hissetmek adına bir makale daha yazmaya karar verdim ve hemen Windows Live Writer programını açtım
+Böylesine yağmurlu ve sabah trafiğinin tavan yaptığı bir günde size ne Radyo Eksen’ deki güzel melodiler, ne de okuduğunuz mizah dergisindeki karikatürler iyi gelmiyorsa, başka bir şeyle uğraşmanın yeridir diyebilirim. Ben bu sıkıntıyı aşmak ve kendimi daha iyi hissetmek adına bir makale daha yazmaya karar verdim ve hemen Windows Live Writer programını açtım.
 
 ![1342533_gray_day_over_water](/assets/images/2011/1342533_gray_day_over_water.jpg)
-
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_20.png)
 
 Yanında da Paint.Net’ i. Bakalım bu gün menümüzde neler var?(Gerçi şöyle sahil kenarına gidip yürüyüşte yapabilirdim ama bu seferlik böyle olsun)
 
 Microsoft, paralel programlama ile ilişkili olarak olabildiğince çok alternatifi düşünmüş ve kullanıma sunmuştur. Özellikle senaryo bazında düşündüğümüzde paralel çalışma algoritmalarından senkronizasyona kadar pek çok noktada bu durumu görmekteyiz. Söz gelimi Task’ ler arası ilişkiler (Relations) ve veri transferleri konusunda olabilecek tüm kombinasyonlar değerlendirilmeye çalışılmıştır. Task’ ler arası ilişkiler oldukça ilginç ve enteresan bir konudur. Gerçek hayat senaryolarında doğru ve uygun karşılıklarını bulmak her ne kadar zor olsa da en azından teorik olarak paralel programlamacıların konuyu bilmesi önemlidir. İşte bu yazımızda Task örnekleri arası ilişkiler konusuna değinmeye başlayacak ve ilk olarak Continuations seçeneklerini irdelemeye çalışacağız.
 
 Continuations tekniklerinde, bir Task’ ın çalıştırılması veya icra edilmesi, atası olan ya da öncesinden tanımlanıp kendisine bağlanan Task örneklerine bağlıdır. Normal şartlar altında size tek bir Task örneği ve bu Task çalışmasını bitirdikten sonra devreye girmesi gereken bir Task örneğinin ele alındığı senaryoyu aktarmam gerekiyor. Ancak bana göre konunun daha iyi anlaşılabilmesi için aşağıdaki kod parçasında yer alan örneği göz önüne alarak başlamamız daha doğru olacaktır
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_71.png)
 
 ```csharp
 using System; 
@@ -84,11 +79,7 @@ namespace TaskContinuation
 }
 ```
 
-Öncelikli olarak kod parçamızı kısaca inceleyelim. Senaryomuzda 4 adet Task örneği bulunmaktadır. TaskA, TaskB ve TaskC isimli Task nesne örnekleri geriye farklı tiplerde değerler döndürmektedir. Dikkat edilmesi gereken nokta succesorTask değişkeni ile tanımlanmış olan Task örneğinin oluşturulma şeklidir. Dikkat edileceği üzere Task.Factory.ContinueWhenAll metodu kullanılmıştır. Buna göre, ContinueWhenAll metodunun ilk parametresine verilen Task dizisine ait Task örnekleri tamamlanmadığı sürece, ikinci parametre ardından gelen Anonymous Metod içeriği çalıştırılmayacaktır
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_71.png)
-
-Bir başka deyişle Succesor Task devreye girmeyecektir. Bu durumu uygulamayı çalışma zamanında Debug ederken daha net bir şekilde görebiliriz.
+Öncelikli olarak kod parçamızı kısaca inceleyelim. Senaryomuzda 4 adet Task örneği bulunmaktadır. TaskA, TaskB ve TaskC isimli Task nesne örnekleri geriye farklı tiplerde değerler döndürmektedir. Dikkat edilmesi gereken nokta succesorTask değişkeni ile tanımlanmış olan Task örneğinin oluşturulma şeklidir. Dikkat edileceği üzere Task.Factory.ContinueWhenAll metodu kullanılmıştır. Buna göre, ContinueWhenAll metodunun ilk parametresine verilen Task dizisine ait Task örnekleri tamamlanmadığı sürece, ikinci parametre ardından gelen Anonymous Metod içeriği çalıştırılmayacaktır. Bir başka deyişle Succesor Task devreye girmeyecektir. Bu durumu uygulamayı çalışma zamanında Debug ederken daha net bir şekilde görebiliriz.
 
 ![bei_33](/assets/images/2011/bei_33.gif)
 
@@ -168,11 +159,7 @@ Diğer yandan throw Exception satırı yorum haline getirilir veya kaldırılır
 
 ![bei_36](/assets/images/2011/bei_36.gif)
 
-Görüldüğü üzere bir önceki Task örneğinde herhangibir Exception durumu söz konusu olmadığından, succesorTask örneğine ait metod icra edilmemiştir. Tabi burada akıllı bir geliştirici hemen şunu soracaktır; Birden fazla Task örneğinden herhangibirinde bir hata meydana geldiğinde ilgili Succesor Task devreye girse olmaz mı?
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_71.png)
-
-Güzel soru…Bu vakayı test etmek için aşağıdaki kod parçasını deneyebiliriz.
+Görüldüğü üzere bir önceki Task örneğinde herhangibir Exception durumu söz konusu olmadığından, succesorTask örneğine ait metod icra edilmemiştir. Tabi burada akıllı bir geliştirici hemen şunu soracaktır; Birden fazla Task örneğinden herhangibirinde bir hata meydana geldiğinde ilgili Succesor Task devreye girse olmaz mı? Güzel soru…Bu vakayı test etmek için aşağıdaki kod parçasını deneyebiliriz.
 
 ```csharp
 using System; 
@@ -229,15 +216,10 @@ namespace TaskContinuation
 }
 ```
 
-Ne yazık ki uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan Exception mesajını alırız
-
-![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_8.png)
-
+Ne yazık ki uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan Exception mesajını alırız.
 ![bei_37](/assets/images/2011/bei_37.gif)
 
-Bu aslında TaskContinuationOptions enum sabitine verdiğimiz OnlyOnFaulted değeri için söz konusu bir durumdur. (Aslına bakarsanız ben bu senaryonun çalışmasını beklerdim ![Kafası karışmış gülümseme](/assets/images/2011/wlEmoticon-confusedsmile_11.png)) Diğer enum sabiti değerlerinde bu tip bir sorun ile karşılaşmasanız da OnlyOnFaulted hakkatten bir Fault vermektedir
-
-![Açık ağızlı gülümseme](/assets/images/2011/wlEmoticon-openmouthedsmile_18.png)
+Bu aslında TaskContinuationOptions enum sabitine verdiğimiz OnlyOnFaulted değeri için söz konusu bir durumdur. (Aslına bakarsanız ben bu senaryonun çalışmasını beklerdim) Diğer enum sabiti değerlerinde bu tip bir sorun ile karşılaşmasanız da OnlyOnFaulted hakkatten bir Fault vermektedir
 
 Yazımızın buraya kadarki kısmında kısaca Task örnekleri arasındaki ilişkileri sağlamak adına Continous tekniklerini ve özellikle ContinueWhenAll ve ContinueWith metodlarını irdeledik. Bu iki metoda ek olarak ContinueWhenAny isimli bir metodun daha olduğunu belirtmek isterim. Bu metod aslında bir Task dizisi içerisindeki Task’ lerden herhangibiri tamamlandıktan sonra Succesor Task örneğinin devreye girmesi amacıyla tasarlanmıştır. Bu durumu analiz etmek için aşağıdaki kod parçasını göz önüne alabiliriz.
 
@@ -302,10 +284,7 @@ Uygulama kodunda yer alan TaskA ve TaskB nesne örneklerine ait kod bloklarında
 
 ![bei_38](/assets/images/2011/bei_38.gif)
 
-Böylece geldik bir yazımızın daha sonra
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_20.png)
-
-Bir sonraki yazıda büyük bir olasılıkla Task’ ler arası ilişkiler konusuna devam ediyor olacağım. Ama araya başka bir konu da girebilir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Böylece geldik bir yazımızın daha sonra. Bir sonraki yazıda büyük bir olasılıkla Task’ ler arası ilişkiler konusuna devam ediyor olacağım. Ama araya başka bir konu da girebilir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TaskContinuation.rar (22,47 kb)](/assets/files/2011/TaskContinuation.rar)
+

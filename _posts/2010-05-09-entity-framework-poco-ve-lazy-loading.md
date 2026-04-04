@@ -50,8 +50,6 @@ namespace POCODans
 
 Örneğimizin bu yeni haline göre Company alanı dolu olan (Null veya Empty olmayan) müşterilerin şirket adları ile bulundukları şehir bilgileri, ayrıca bu firmaların faturalarına ait tarih ve tutarları ekrana yazdırılmaktadır. Bu kodun çalışması sırasındaki beklentimiz ise Customer ve bunlara bağlı olan Invoice bilgilerinin getirilmesidir. Ancak uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan sonuçları elde ettiğimizi görürüz.
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 ![blg153_Runtime1.gif](/assets/images/2010/blg153_Runtime1.gif)
 
 Dikkat edileceği üzere sadece Customer bilgileri çekilebilmiş ancak iç foreach döngüsü tarafından o anki Customer nesnesine ait Invoice bilgileri yazdırılmamıştır. Aslında bunun sebebini anlamak için SQL Server Profiler aracı yardımıyla arka planda çalıştırılan SQL sorgularına bakmamız yeterli olacaktır. Nitekim aşağıdaki ekran görüntüsünde yer alan sonuçlar ile karşılaştığımızı görürüz.

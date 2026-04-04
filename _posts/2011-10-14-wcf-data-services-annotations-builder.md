@@ -15,14 +15,9 @@ Yağmurlu bu sonbahar günlerinde eminim ki kimse hüzünlenmek, kara kara düş
 
 ![Huzun](/assets/images/2011/Huzun.jpg)
 
-
-Gün geçmiyor ki Microsoft ürünlerinde yeni bir sürüm, yeni bir güncelleme görmeyelim
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_18.png)
+Gün geçmiyor ki Microsoft ürünlerinde yeni bir sürüm, yeni bir güncelleme görmeyelim.
 
 Şurada daha iki gün oldu Entity Framework 4.2 RC ile ilişkili bir şeyler yazmaya çalışmıştım. Bu gün de ne duyduk dersiniz? [WCF Data Services October 2011 CTP](http://www.microsoft.com/download/en/details.aspx?id=27728) yayınlanmış
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_18.png)
 
 Biraz sitemkar bir giriş oldu ama boşverin…
 
@@ -70,19 +65,15 @@ namespace AdventureWorksDataServices
 }
 ```
 
-Piuvvvv
-
-![Kafası karışmış gülümseme](/assets/images/2011/wlEmoticon-confusedsmile_9.png)
-
-Burada neler oldu böyle? Daha önceden yaptığımız Ado.Net Data Service geliştirmelerine hiç ama hiç benzemiyor gibi. Daha önceden sadece ilgili Entity tiplerini belirli erişim kuralları çerçevesinde (Örneğin sadece okuma amaçı açılsınlar) dış dünyaya açan bir InitializeService metodu bulunurdu aslında
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_69.png)
+Piuvvvv. Burada neler oldu böyle? Daha önceden yaptığımız Ado.Net Data Service geliştirmelerine hiç ama hiç benzemiyor gibi. Daha önceden sadece ilgili Entity tiplerini belirli erişim kuralları çerçevesinde (Örneğin sadece okuma amaçı açılsınlar) dış dünyaya açan bir InitializeService metodu bulunurdu aslında
 
 Aslında olayı kısaca açıklayayım.
 
-DataServiceConfiguration tipine eklenen yeni AnnotationsBuilder özelliği aslında
+DataServiceConfiguration tipine eklenen yeni AnnotationsBuilder özelliği aslında.
 
+```csharp
 public Func> AnnotationsBuilder
+```
 
 ile işaret edilen bir metodu göstermektedir. Bu metod içerisinde biz, Entity Data Model’ in CSDL (Conceptual Schema Definition Language) içeriğine müdahale ederek örnek bazı değişikliklerde bulunuyoruz. Bu değişiklikler koda göre XmlReader yardımıyla okunan ProductsAnnotations.xml isimli dosyada yer almaktadır. Dikkat edecek olursak eğer CsdlReader tipinin TryParse metodu bir den fazla XmlReader referansı alabilmektedir. Bir başka deyişle bir CSDL içeriğine n adet Annotation kuralının enjekte edilmesi de mümkündür. Örneğimizde kullandığımız dosya içeriği ise aşağıdaki gibidir.
 
@@ -98,9 +89,7 @@ ile işaret edilen bir metodu göstermektedir. Bu metod içerisinde biz, Entity 
 </Schema>
 ```
 
-Burada son CTP ile gelen önemli bir nokta Using elementi ve içerisindeki NamespaceUri niteliğinin değeridir. Bu detaylar bir kenara dursun aslında bu dosyanın ne söylediğini anlamak şu anda bizim için çok daha önemlidir
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_69.png)
+Burada son CTP ile gelen önemli bir nokta Using elementi ve içerisindeki NamespaceUri niteliğinin değeridir. Bu detaylar bir kenara dursun aslında bu dosyanın ne söylediğini anlamak şu anda bizim için çok daha önemlidir.
 
 Dikkat edileceği üzere Annotations elementine ait Target niteliğinde bir tanımlama yapılmıştır. Buna göre AdventureWorksModel şemasında yer alan Product Entity tipinin ListPrice özelliği için Validation.Range formatında bir TypeAnnotation bildirimi yapılmaktadır. Bir başka deyişle ListPrice özelliği için çalışma zamanında üretilen metadata içeriğine enjekte edilecek bir doğrulama kalıbı sunulmaktadır.
 
@@ -108,25 +97,17 @@ Bu kalıba göre ListPrice özelliğinin Decimal veri tipinden olan minimum ve m
 
 ![bei_27](/assets/images/2011/bei_27.gif)
 
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_18.png)
-
-Bakın burası çok önemli. Bir WCF Data Service’ in çalışma zamanındaki metadata çıktısına bir doğrulama kuralı enjekte edilmektedir. (Bu tip bir çalışma zamanı alt yapısını sıfırdan nasıl yazabileceğinizi, hangi tasarım kalıplarına veya yazılım prensiplerine ihtiyacınız olacağını bir düşünün ![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_69.png))
+Bakın burası çok önemli. Bir WCF Data Service’ in çalışma zamanındaki metadata çıktısına bir doğrulama kuralı enjekte edilmektedir. (Bu tip bir çalışma zamanı alt yapısını sıfırdan nasıl yazabileceğinizi, hangi tasarım kalıplarına veya yazılım prensiplerine ihtiyacınız olacağını bir düşünün)
 
 Peki ama bu ne işimize yarayacak? Bunun için öncelikli olarak basit bir Client uygulaması geliştirmeyi düşünebiliriz. Console Application şeklinde tasarlayabileceğimiz bu uygulama çok basit olarak ilgili WCF Data Service’ i referans etmelidir. Sonrasında test amacıyla herhangibir Product nesne örneğinin ListPrice özelliğinin değeri 0-5000 aralığı dışında set edilerek nasıl bir sonuç elde edildiğine bakılabilir. Ben bu amaçla istemci tarafına ilgili servis referansını eklemeye çalışarak işe başladım. İşe başladım diyorum çünkü Visual Studio 2010’ a ait Add Service Reference ekleme aracı bir Namespace’ i bulamadığı için söz konusu proxy tipini üretmeyi başaramadı
-
-![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_7.png)
 
 ![bei_28](/assets/images/2011/bei_28.gif)
 
 Ben de bunun üstüne söz konusu servis referansını komut satırından DataSvcUtil aracı ile üretmeyi denedim. İşte sonuç
 
-![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_7.png)
-
 ![bei_29](/assets/images/2011/bei_29.gif)
 
 Hal böyle olunca tabi heyecanlı bir şekilde makaleyi yazmaya çalışan bir yazılım sevdalısının nasıl da hüsrana uğradığını zannediyorum ki anlayabilirsiniz
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_18.png)
 
 Eğer Proxy üretimi başarılı bir şekilde gerçekleşseydi bu durumda aşağıdaki ilüsturasyon da yer alan bir kod parçasını denemeye tabi tutacaktık.
 
@@ -161,7 +142,5 @@ namespace ClientApp
 ve özellikle örnek bir Product nesne örneğinin ListPrice özelliğinin değerini, Annotations’ da belirttiğimiz aralığın dışına çıkartmaya çalışacak ve SaveChanges çağrısı sonucu servis tarafından gelen Response’ a bakacaktık. Bu noktada tahmin edeceğiniz üzere beklentimiz validasyon ihlali nedeniyle Update işleminin yapılmaması ve buna uygun bir Response kodunun istemci tarafında döndürülmesi olacaktı. En azından benim beklentim bu yöndeydi.
 
 Yine de buraya kadar yazdıklarımız ile aslında WCF Data Service tarafındaki Annotations bildirimlerinin, yeni CTP sürümü ile gelen Vocabularies namespace’ i ile ilişkilendirildiğini düşünebiliriz. Amaç ise Entity, Property, Navigation Property gibi bazı yapılarda doğrulama kurallarını uygulatabilmektir. Bu konu ile ilişkili olarak ben de [şu adresteki](http://blogs.msdn.com/b/astoriateam/archive/2011/10/13/vocabularies-in-wcf-data-services.aspx) girdiye ait yorumları takip etmeye çalışıyor olacağım. Malum istemci tarafı için gerekli bir testi gerçekleştiremedik/gerçekleştiremedim. Dolayısıyla şimdilik yazımızı sonlandırmak durumundayız. Buruk bir son oldu ama ne yapalım.
-
-![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_7.png)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

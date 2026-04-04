@@ -64,7 +64,7 @@ Web API’ nin temel yapı taşı olan Controller tipini ekleyerek örneğimize 
 
 ![wapigi_7](/assets/images/2013/wapigi_7.png)
 
-Web API controller sınıfı için iki farklı versiyon bulunmaktadır. (Ben v1’i seçerek ilerledim ama bunu yaparken iki versiyon arasındaki farkı tam olarak bilmediğimi itiraf etmek isterim ![Embarrassed smile](/assets/images/2013/wlEmoticon-embarrassedsmile_7.png))
+Web API controller sınıfı için iki farklı versiyon bulunmaktadır. (Ben v1’i seçerek ilerledim ama bunu yaparken iki versiyon arasındaki farkı tam olarak bilmediğimi itiraf etmek isterim)
 
 LogosController sınıfı içeriği
 
@@ -154,4 +154,3 @@ Senaryomuz sadece yayın evinin logosunu ve yayın evi numaralarını döndürec
 - ve benim aklıma gelmeyen ama sizin ele alacağınız başka bir senaryo da söz konusu olabilir.
 
 Görüldüğü üzere bir Asp.Net Web API servisini resim içeriklerinin elde edilmesini konu alan bir senaryo da kullanabildik. Örneğimizi yeni göz bebeğimiz Visual Studio 2013 Preview üzerinde geliştirmeye çalıştık ve böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

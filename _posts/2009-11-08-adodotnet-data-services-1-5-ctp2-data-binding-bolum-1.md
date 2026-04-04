@@ -157,8 +157,6 @@ ORDER BY [Project1].[ProductSubcategoryID] ASC, [Project1].[C2] ASC
 
 Çok fazla alan var değil mi?
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Her neyse...Gelelim çalışma zamanındaki duruma. Örneğin Handlebase alt kategorisini seçtiğimizde aşağıdaki şekilde görülen durum oluşmaktadır.
 
 ![blg82_Run1.gif](/assets/images/2009/blg82_Run1.gif)

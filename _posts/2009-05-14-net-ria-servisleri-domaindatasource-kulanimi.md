@@ -12,8 +12,6 @@ Her ne kadar şu günlerde güzel ülkemizin Ege kıyılarında kısa bir dinlen
 
 ![blg17_4.jpg](/assets/images/2009/blg17_4.jpg)
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Artık bir yaşam tarzı haline gelen Yazılımdan, onun gizemli dünyasından uzak durmak bu nedenle, şu sıralar aşağıdaki şekilde görülen yerde tatilde bile olsam çok zor.
 
 Bu kısa yazımda sizlere yine.Net RIA Servisleri ile ilişkili bilgilerimi aktarmaya gayret edeceğim. Bu seferki konumuz DomainDataSource isimli Silverlight kontrolü. Kontrolün adında yer alan DataSource son eki aslında olayı biraz olsun açıklamakta..Net RIA Servislerinin kullanıldığı senaryolarda, sunucu tarafında mutlaka bir veri kaynağı yer almaktadır. Ağırlık olarak Ado.Net Entity Framework veya LINQ to SQL tabanlı sağlayıcılar ile eriştiğimiz bu veri kaynaklarını, istemci tarafında değiştirmek gibi işlemlerle uğraştığımızda bir gerçektir. Kısacası, istemci tarafına çekilen verinin sadece gösterilmesi dışında, düzenlenmesi, yenilerinin eklenmesi veya var olanların silinmesi gibi operasyonlar söz konusudur. Bunlara ek olarak, Silverlight tabanlı istemci tarafını düşündüğümüzde, verinin kullanıcı ile etkileşimde olan kontrollerde gösterilmeside bu işin önemli kısımlarından birisidir.
@@ -97,8 +95,6 @@ FROM [dbo].[Products] AS [Extent1]
 ```
 
 Bu kez tüm Products tablosunun içeriği seçilmektedir. LoadSize özelliğini kullanarak, Silverlight uygulamasının ilk açılışı sırasındaki veri kümesinin yoğunluğunu kontrol altına alabilir ve performansı doğudan etkileyebiliriz. Burada dikkat çeken bir diğer önemli nitelik ise LoadMethodName niteliğine atanan değerdir. Bu değer, istemci tarafında kullanılan DomainContext tipinin içerisinde yer alan yükleme metodunun kendisidir. Örneğimizde bu metod LoadCategories isimli fonksiyondur. Ancak fonksiyon adı text tabanlı olarak yazılmaktadır. Peki, DomainDataSource bileşeni, hangi DataContext nesne örneği içerisindeki LoadCategories metodunu kullanacağını nasıl bilecektir?
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
 
 Bu sorunun cevabı, DomainDataSource.DomainContext elementi içerisinde verilmektedir. Bu kısımda, ds ön ekli namespace üzerinden NorthwindContext isimli DomainContext nesne referansının tanımlaması yapılmaktadır. Böylece, DomainDataSource bileşeninin kullanacağı DomainContext nesne örneği belirlenmiş olur.
 
@@ -200,13 +196,11 @@ DataPager kontrolü doğal olarak kimi (yani hangi veri kaynağını) sayfalayac
 
 Burada dikkat çeken noktalardan biriside LoadSize ile ilk etapta 40 satırın yüklenmesine rağmen, sayfalama içerisinde en çok 80 (4X20) kaydın gösterilebilecek olmasıdır. Bu aslında kayda değer ve incelenmesi gereken bir durumdur. Nitekim SQL tarafında çalıştırılan sorgu cümelelerine dikkatlice bakmak gerekmektedir. İşte eğlence başlıyor.
 
-![Tongue out](/assets/images/2009/smiley-tongue-out.gif)
-
 Sayfa ilk yüklendiğinde TOP 40 ile 40 satırlık bir veri bloğunun yüklenmesi sağlanır. PageSize değeri 20 olarak berlilendiğinden 1nci sayfadan 2nci sayfaya geçtiğimizde, SQL tarafında herhangibir sorgu çalıştırılmadığı gözlemlenir.(İyi bir gelişme
 
 ) Ancak 3ncü sayfaya geçmek istediğimizde, 40 satırlık yükleme boyutunu geçtiğimiz için sunucu tarafında yeni bir SQL sorgusu çalıştırılacak ve rownumber değeri 40' ın üzerinde olanlar talep edilecektir. Aşağıdaki SQL cümlesinde görüldüğü gibi...
 
-```text
+```sql
 SELECT TOP (40) 
 [Project1].[C1] AS [C1], 
 [Project1].[ProductID] AS [ProductID], 
@@ -241,11 +235,9 @@ ORDER BY [Project1].[UnitPrice] DESC
 
 Ne yazıkki 20 satır veri çekilmesi gerekmesine rağmen LoadSize özelliği nedeniyle Top 40 kullanımı söz konusudur. (
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Bu açıkçası benim pek beklediğim bir durum değildi.) Peki 4ncü sayfaya geçmek istersek ne olacaktır? Bu durumda rownumber değeri 60' ın (3X20 veya 3ncü sayfa X PageSize) üzerinde olan veriler çekilmeye çalışılacaktır.
 
-```csharp
+```sql
 SELECT TOP (40) 
 [Project1].[C1] AS [C1], 
 [Project1].[ProductID] AS [ProductID], 
@@ -279,4 +271,3 @@ ORDER BY [Project1].[UnitPrice] DESC
 ```
 
 Yinede TOP 40 oluşumu söz konusudur. Ancak istediğimiz sonuç alınmıştır. Sayfalama işlemide başarılı bir şekilde gerçekleştirilmiştir. Böylece geldik bir blog yazımızın daha sonuna. Şimdi müsadenizle biraz dinlenmeye çekileceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

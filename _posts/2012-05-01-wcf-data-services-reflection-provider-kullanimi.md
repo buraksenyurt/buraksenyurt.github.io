@@ -13,13 +13,7 @@ Bundan bir kaç yıl öncesiydi. Daha dün gibi hatırlıyorum..Net Framework 3.
 
 ![1316795_bicycle.jpg](/assets/images/2012/1316795_bicycle.jpg)
 
-Hem heyecanlıydım hem de biraz korkmuştum
-
-![Undecided](/assets/images/2012/smiley-undecided.gif)
-
-Çünkü var olan tüm servis yaklaşımlarını tek bir çatı altında toplayacak bir modelden bahsediliyordu (Onun şimdiki halini ve yaygınlığını düşündüğümüzde, Microsoft'un bu vizyonunda gerçekten de haklı olduğunu bir kez daha görebiliyorum) Hemen araştırmalara başlamalıydım. Internet Explorer'ımı açtım ve WCF kelimesini googleladım. Bir de ne göreyim. Karşıma Dünya Bisiklet Federasyonu (World Cycling Federations) ile ilişkili sonuçlar çıktı. Yandaki fotoğrafın anlamı bundandır
-
-![Tongue out](/assets/images/2012/smiley-tongue-out.gif)
+Hem heyecanlıydım hem de biraz korkmuştum. Çünkü var olan tüm servis yaklaşımlarını tek bir çatı altında toplayacak bir modelden bahsediliyordu (Onun şimdiki halini ve yaygınlığını düşündüğümüzde, Microsoft'un bu vizyonunda gerçekten de haklı olduğunu bir kez daha görebiliyorum) Hemen araştırmalara başlamalıydım. Internet Explorer'ımı açtım ve WCF kelimesini googleladım. Bir de ne göreyim. Karşıma Dünya Bisiklet Federasyonu (World Cycling Federations) ile ilişkili sonuçlar çıktı. Yandaki fotoğrafın anlamı bundandır
 
 Geyiği bir kenara bırakıp konumuza dönelim.
 

@@ -120,8 +120,6 @@ ProductV2.xsd içeriği;
 
 XSD şemasında, Information elementi için type niteliğinde xs:string kullanıldığı görülmektedir. Üstelik üretilen veri içeriğinde de i:type niteliğinde Information elementinin içeriğinin string veri tipinden olduğu işaret edilmektedir. Yani Information özelliğine atadığımız string değişken, primitive bir tip tanımana göre XML içerisinde bildirilmiştir. Zaten primitive tiplere dönüşüm yapıldığı takdirde pek bir sıkıntı yoktur. Söz gelimi Information özelliğine örneğin 12 değerini atadığımızda buna uygun olarak XML içeriğinde de int tipinin kullanıldığı görülebilir. Sorun yorum satırı kodlarını çalışır hale getirdiğimizde ortaya çıkmaktadır. Yeni ProductInformation tipini etkinleştirip aşağıdaki kodları çalıştırdığımızda...
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 ```csharp
 // Exception durumu
             serializer.WriteObject(

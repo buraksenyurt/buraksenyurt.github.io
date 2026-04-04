@@ -110,8 +110,6 @@ Bu kez uygulama çalıştırıldığında aşağıdaki sonuçları alırız.
 
 Volaaa!!!
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 1 numaralı sadece tek bir thread görünüyor.
 
 Bu nasıl oldu? Acaba foreach döngüsü kullanıldığında sorgu AsParallel metodu olmasına rağmen paralel çalıştırılmadı mı? Yoksa çalışma zamanı (runtime) sorgunun paralel çalıştırılmaya değer olmadığına mı kanaat getirdi (ki böyle bir meselede var)?

@@ -13,8 +13,6 @@ Bundan yıllar önce üniversiteden arkadaşım Orkun Şentürk ile birlikte Alt
 
 Özellikle filmden çıktıktan sonra yaptığımız muhabbet bunu doğrular nitelikteydi..Net Framework 1.1 ile yazmakta olduğumuz programda kullandığımız SQL 2000 veritabanındaki many-to-many ilişkileri anlamaya çalışıyorduk. O zamanlar bizim için SQL veritabanına bağlanabilmek bile bir lüks iken bu tip alengirli konular korkutucu geliyordu. Filmden daha çok gerildiğimiz bir konuydu.
 
-![Tongue out](/assets/images/2010/smiley-tongue-out.gif)
-
 Sonuçta bende sevgili Orkun'da evlerimizin yolunu tuttuğumuzda, odamızda bizi bekleyen masa üstü bilgisayarlar ile ne yapacağımızı gayet iyi biliyorduk. Many-To-Many olayını kavramak.
 
 Gerçektende yazılımın ilk yıllarında hepimiz benzer durumları tecrübe etmekteyiz. Pek çok konuyu anlamakta, öğrenmekte güçlük çekiyoruz. Tabi içimizdeki öğrenme arzusunun gücüne bağlı olaraktan, ya çok çalışarak ya da önemli ve dikkat edilmesi gereken noktaları anında yakalayarak ilerleyişimizi sürdürüyoruz. Bir yazılımcı, yıllar sonra geldiği noktadan geriye doğru dönüp baktığındaysa, ilerleyişinin ne kadar hızlı olduğunu net bir şekilde görebilir aslında. Ancak bu yeterli değildir. Dilerseniz sözü fazla uzatmadan bu günkü konumuza geçelim. Bu gün yine Many-To-Many ilişkileri inceliyor olacağız. Ancak bu kez olayı Entity Framework üzerinden değerlendireceğiz. Başlamadan önce veritabanı üzerindeki tablolar arası ilişkilerden (Relations) kısaca bahsetmekte yarar olduğu kanısındayım.
@@ -206,8 +204,6 @@ Bu kod parçasına göre TrackId değeri 3502 olan Track satırı silinmeye çal
 ![blg131_Exception.gif](/assets/images/2010/blg131_Exception.gif)
 
 Burada sebep, söz konusu alan için bir Relation'ın var olmasıdır. Dolayısıyla öncelikle silinmek istenen Track satırı ile bağlı olduğu Playlist satırları arasındaki ilişkileri kaldırmak gerekmektedir. Silme operasyonunun gerçeklenmesi için, silinmek istenen Track'ın dahil olduğu Playlist nesnelerini bulup, herbirinin Tracks özelliği üzerinden Remove metodunun çalıştırılması yeterlidir. Mi acaba?
-
-![Undecided](/assets/images/2010/smiley-undecided.gif)
 
 Bu tip bir kod yazılmak istendiğinde elde edilen Playlist.Tracks özellikleri üzerinden yapılan silme hareketleri, koleksiyonunun değişmesine neden olacağından, çalışma zamanında Concurrency hatası alınacaktır. Çok şükür ki artık elimizin altında.Net Framework 4.0 içerisine gömülü olarak gelen Concurrent koleksiyonlar bulunmaktadır.([Concurrent Collections (Eş Zamanlı Koleksiyonlar) [Beta 1]](/2009/06/12/concurrent-collections-es-zamanli-koleksiyonlar-beta-1/), [Concurrent Collections: Macera BlockingCollection ile Devam Ediyor [Beta 1]](/2009/06/16/concurrent-collections-macera-blockingcollection-t-ile-devam-ediyor-beta-1/)) Buna göre kodu aşağıdaki gibi geliştirebiliriz.
 

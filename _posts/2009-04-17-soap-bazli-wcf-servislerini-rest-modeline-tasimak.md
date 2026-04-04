@@ -116,8 +116,6 @@ Bu son derece doğaldır. Nitekim halen web.config dosyası içerisinde service 
 
 Sonuç yine hüsran.
 
-![Cry](/assets/images/2009/smiley-cry.gif)
-
 Aslında problem servisten nasıl istekte bulunacağımızı bilmiyor oluşum. Nitekim WebGet niteliği ile imzalanmış olan GetProduct operasyonuna HTTP Get modeline göre parametre ile birlikte talepte bulunmamız gerekiyor. Aynen aşağıdaki şekilde olduğu gibi.
 
 ![blog3_5.gif](/assets/images/2009/blog3_5.gif)
@@ -133,5 +131,3 @@ Read-Only Collection Service [NedirTv?](http://www.nedirtv.com/video/WCF-REST-Bo
 [NorthwindServices.rar (16,34 kb)](/assets/files/2009/NorthwindServices.rar)
 
 Artık dinlenmeye çekilebilir miyim acaba?
-
-![Cool](/assets/images/2009/smiley-cool.gif)

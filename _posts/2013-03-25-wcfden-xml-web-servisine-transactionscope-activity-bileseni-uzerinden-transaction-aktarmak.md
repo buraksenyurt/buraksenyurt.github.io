@@ -389,15 +389,12 @@ Time:09.08.2012 09:32:35,Isolation Level:Serializable,Distributed ID:6dd28d89-aa
 Time:09.08.2012 09:32:35,Isolation Level:Serializable,Distributed ID:6dd28d89-aa10-4a97-8b32-e3439f0374ff,Local ID:384682c2-e4e1-47af-bc8e-f28c5abd7229:1,Status:Active
 ```
 
-Ancak veritabanına gidilip ilgili tablolar sorgulandığında, iki Insert işleminin de yapılmadığı gözlemlenecektir. Bir başka deyişle istediğimiz durum oluşmuş ve Transaction işlemleri Abort edilerek o ana kadar yapılan ne kadar veritabanı işlemi var ise onaylanmamıştır
+Ancak veritabanına gidilip ilgili tablolar sorgulandığında, iki Insert işleminin de yapılmadığı gözlemlenecektir. Bir başka deyişle istediğimiz durum oluşmuş ve Transaction işlemleri Abort edilerek o ana kadar yapılan ne kadar veritabanı işlemi var ise onaylanmamıştır.
 
-![Open-mouthed smile](/assets/images/2013/wlEmoticon-openmouthedsmile_30.png)
-
-Görüldüğü üzere biraz kodlama yardımıyla WCF ve XML Web Servislerini, TransactionScope bileşeni içerisinde bir arada kullanabildik. Tabiki senaryonun genişletilmesi ve geliştirilmesi gerekiyor. Örneğin Savepoint kullanımları durumu var. Ya da Long Running Process söz konusu ise Persistence sisteminin bu tip vakalarda nasıl tepki vereceği. Hatta daha da zor bir senaryo var. Ya bu XML Web Service’ ler daha önceden yazılmışlar ve sizin müdahale alanınız dışındaysalar
+Görüldüğü üzere biraz kodlama yardımıyla WCF ve XML Web Servislerini, TransactionScope bileşeni içerisinde bir arada kullanabildik. Tabiki senaryonun genişletilmesi ve geliştirilmesi gerekiyor. Örneğin Savepoint kullanımları durumu var. Ya da Long Running Process söz konusu ise Persistence sisteminin bu tip vakalarda nasıl tepki vereceği. Hatta daha da zor bir senaryo var. Ya bu XML Web Service’ ler daha önceden yazılmışlar ve sizin müdahale alanınız dışındaysalar.
 
 Şimdilik bu kötü kokan vakaları bir kenara bırakıp önümüze bakalım derim. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_AtomicTransactions.zip (117,25 kb)](/assets/files/2013/HowTo_AtomicTransactions.zip)
 
 Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır.
-

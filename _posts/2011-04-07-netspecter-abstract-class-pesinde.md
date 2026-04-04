@@ -83,9 +83,7 @@ Görüldüğü üzere SpaceWriter isimli sınıf, IWriter interface tipini imple
 
 ![blg230_SecondError](/assets/images/2011/blg230_SecondError.gif)
 
-Yine yine yine…Inconsistent Accessibility hatası
-
-![Annoyed](/assets/images/2011/wlEmoticon-annoyed.png)
+Yine yine yine…Inconsistent Accessibility hatası.
 
 Burada arayüz tipinin bilinçsiz (Implicitly) olarak uygulandığı görülmektedir. İşte hani bazen interface tiplerini implemente ederken Ctrl+Shift+F10 tuşlarına bastığımızda çıkan seçenekler arasında bir de Explicit olanı vardır ya
 
@@ -110,9 +108,7 @@ public class SpaceWriter
 }
 ```
 
-Dikkat edileceği üzere metod adının bildirimi sırasında IWriter.CreateComposer (InterfaceName.InterfaceMemberName) isimlendirme notasyonu devreye girmiştir ve derleme hatası ortadan kalkmıştır. Yine de sorun devam etmektedir
-
-![Annoyed](/assets/images/2011/wlEmoticon-annoyed.png)
+Dikkat edileceği üzere metod adının bildirimi sırasında IWriter.CreateComposer (InterfaceName.InterfaceMemberName) isimlendirme notasyonu devreye girmiştir ve derleme hatası ortadan kalkmıştır. Yine de sorun devam etmektedir.
 
 Mecburen IWriter arayüzü internal erişim belirleyicisini kullanmak zorunda kalmıştır. İşte sevgili kahramanımız Netspecter’ ın peşinden koştuğu abstract class bize bu tip bir vaka için çözüm getirebilir. Nasıl mı? İşte sınıf çizelgemiz (Class Diagramı) ve örnek kod parçamız.
 
@@ -139,8 +135,6 @@ public class LogWriter
     } 
 }
 ```
-
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile.png)
 
 Volaaaa… Evet evet biliyorum interface tipi kullanımından vazgeçtik ve abstract class kullanımına geçtik. Ancak bir açıdan baktığımızda aynı amaca hizmet ettiklerini ifade ebiliriz. Söz gelimi gerek interface gerek abstract sınıflar örneklenemezler. Yani new operatörü ile initialize edilemezler
 

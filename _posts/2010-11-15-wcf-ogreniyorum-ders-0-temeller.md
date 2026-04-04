@@ -13,8 +13,6 @@ Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü y
 
 ![blg239_Giris](/assets/images/2010/blg239_Giris.gif)
 
-![Open-mouthed smile](/assets/images/2010/wlEmoticon-openmouthedsmile_7.png)
-
 Önümüzdeki 8 Webiner (Webcast) boyunca sizlere WCF (Windows Communication Foundation) kavramını öğretmeye çalışıyor olacağım. Bu 8 bölümlük seride Microsoft standartlarına göre Level 100 ile Level 200 arasında geziniyor olacağız. Ancak 2011 başlarında ikinci bir seri ile seviyemizi Level 200’ ün üstüne çıkartmayı da planlılyoruz
 
 İlk bölümümüzde temel SOA kavramlarından bahsederek işe başladık ve basit bir WCF servis örneği geliştirerek bunu kullanan örnek istemci uygulamayı yazdık. Dersimizde

@@ -12,8 +12,6 @@ Bir süredir WCF 4.0 ile birlikte gelen yenilikleri sizlere aktarmaya çalışı
 
 ![blg72_Giris.gif](/assets/images/2009/blg72_Giris.gif)
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Bu yüzden bende yüksek lisans eğitimi aldığım yıllarda çok sevgili hocam Halil Seyidoğlu'nun bir açıklamasını uygulamaya karar verdim.
 
 Kendisi bize "Bilimsel Araştırma ve Yazma" dersinde şöyle seslenmişt; "Bir tez konusunu araştırırken çok zorlu yollardan geçersiniz. Tezin bir noktasında tıkandınız mı? O zaman ara verin...Tatile çıkın...Bir süreliğine uzaklaşın..."
@@ -187,8 +185,6 @@ namespace WinClient
 İlk olarak LiveSearchService nesnesi örneklenir. Bu örnek tahmin edileceği üzere Search operasyonunu yerine getirecek olan proxy tipimizdir. Diğer yandan arama işlemi için başlangıç kriterlerinin belirtilmesi gerekir. Bu amaçla SearchRequest tipinden bir nesne örneği oluşturulmaktadır. Dikkat edileceği üzere Image tipinden bir arama istendiği belirtilmiş ve buna göre Image özelliğine yeni bir ImageRequest nesnesi atanmıştır. ImageRequest nesnesinde 20 resimlik bir sonuç kümesinin talep edildiği belirtilmektedir. SearchRequest sınıfı örneklenirken App Id değeri verilmektedir.
 
 Hatırlayınız, bu değeri siz formu doldurduktan sonra alıyorsunuz. Önemli atamalardan biriside Query özelliği için yapılandır. Bu özelliğin değeri aranacak içeriği taşımaktadır. Bundan sonrası son derece kolaydır. LiveSearchService nesne örneğinin Search metoduna parametre olarak SearchRequest referansı atanır. Sonuçlar SearchResponse nesne örneğine gelir. Ardından SearchResponse nesne örneğinin Image özelliğinin Results koleksiyonundaki her bir ImageResult değerlendirilerek resim bilgilerinin alınması sağlanır. Elde edilen sonuçların her biri için bir ThumbImage bileşeni oluşturulur ve FlowLayoutPanel bileşeninin Controls koleksiyonuna eklenir. Uygulamanın çalışma zamanındaki örnek çıktısı aşağıda görüldüğü gibidir. Ben Ferrari kelimesi ile ilişkili resim dosyalarını arattım
-
-![Cool](/assets/images/2009/smiley-cool.gif)
 
 .
 

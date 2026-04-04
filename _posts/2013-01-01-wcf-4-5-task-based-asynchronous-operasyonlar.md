@@ -22,11 +22,7 @@ Servislerin asenkron çağrılar ile yürütülmesi, özellikle User Experience�
 
 ![tbawcf_1](/assets/images/2013/tbawcf_1.png)
 
-OptimizationService sembolik olarak uzun süren bir optimizasyon işlemini üstelenecek şekilde planlanmıştır. Senaryo gereği istemciden bir lokasyon bilgisi almakta olan servis, bu lokasyon için en ideal yolu çıkartmaktadır. Sadece hayal ediyoruz tabi
-
-![Open-mouthed smile](/assets/images/2013/wlEmoticon-openmouthedsmile_38.png)
-
-Amacımız uzun süren bir işlem ile servis tarafının istemciye geç cevap dönmesini sağlamak ve asenkronluğu devreye almaktır.
+OptimizationService sembolik olarak uzun süren bir optimizasyon işlemini üstelenecek şekilde planlanmıştır. Senaryo gereği istemciden bir lokasyon bilgisi almakta olan servis, bu lokasyon için en ideal yolu çıkartmaktadır. Sadece hayal ediyoruz tabi. Amacımız uzun süren bir işlem ile servis tarafının istemciye geç cevap dönmesini sağlamak ve asenkronluğu devreye almaktır.
 
 OptimizationService içerisinde yer alan GetBestRoot operasyonu Location tipinden bir parametre alırken, geriye de Root tipinden generic bir List koleksiyonu döndürmektedir. Servis uygulamasındaki tiplerin içerikleri ise aşağıdaki gibidir.
 

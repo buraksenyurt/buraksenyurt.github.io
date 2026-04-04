@@ -71,8 +71,6 @@ Ancak şimdiki hedefimiz bu XML çıktısı yerine JSON çıktısını vermektir
 
 Peki bu otomatikliğin anlamı nedir?
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Nitekim herhangibir yerde JSON çıktısı vereceğimizi belirtmedik. Dolayısıyla birisinin bunu talep ediyor olması gerekmekte. Tahmin edeceğiniz üzere burada sorumluluk istemci tarafına ait. Bir başka deyişle istemci uygulama talebini gönderirken JSON formatında bir içerik istediğini servis tarafına bildirmelidir. Dolayısıyla örneğimize aşağıdaki kodları içeren istemci uygulamayı yazarak devam etmeliyiz.
 
 > İstemci uygulama açısından önem arz eden konulardan biriside, HttpClient tipinin kullanımı için gerekli olan WCF REST Starter Kit Preview 2 assmebly'ları ile ReadAsJsonDataContract genişletme metodunun (Extension Methods) kullanımı için gerekli olan System.ServiceModel.Web ve System.Runtime.Serialization assembly'larını referans etmesidir.

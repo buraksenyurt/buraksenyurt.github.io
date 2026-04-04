@@ -14,9 +14,7 @@ Uzun süre önce dış kaynak (Outsource) olarak görev aldığım bir bankacıl
 
 Genellikle servisin çalışma durumunu izlemek adına özellikle Exception bloklarında veya metod başlangıç ile bitiş noktalarında (örneğin OnStart başında ve sonunda) işletim sisteminin uygulamaya özel Event Log’ larına bilgi atmaktaydım. Bu bilgileri atarken de durumun kritikliğine göre Warning, Exclamation, Error gibi hazır sistem ikonlarından yararlanıyor ve çalışma zamanındaki durumu analiz etmeye çalışıyordum.
 
-Ancak bir developer için, kodun çalışma zamanındaki durumunu incelemenin sayısız yolu olduğu da bir gerçek. Öyleki, Debug etmek bence en güzel yollardan birisi. Lakin bir Windows Service uygulamasının Debug edilmesi de sanıldığı kadar kolay değil
-
-![Thinking smile](/assets/images/2011/wlEmoticon-thinkingsmile.png)
+Ancak bir developer için, kodun çalışma zamanındaki durumunu incelemenin sayısız yolu olduğu da bir gerçek. Öyleki, Debug etmek bence en güzel yollardan birisi. Lakin bir Windows Service uygulamasının Debug edilmesi de sanıldığı kadar kolay değil.
 
 İşte bu yazımızda internet üzerinden yaptığım araştırmalar sonucu öğrendiğim ve bir Windows Service uygulamasının nasıl debug edilebeceğine dair uygulanabilen yöntemlerden birisini ele alıyor olacağız. Olabildiğince basit bir şekilde anlatmaya gayret edeceğim bu vaka çalışmamızda, adım adım ilerliyor olacağız
 
@@ -96,8 +94,6 @@ Dikkat edileceği üzere Servisin çalıştırılması işini ServiceBase tipini
 
 Aslında bir geliştirici için kodun yazılması ve test ortamına alınması esnasında debug edilebilyor olması son derece önemlidir. Şimdi dilerseniz yazımıza konu olan bu basit Windows Service örneğinin debug edilebilir bir versiyonunu nasıl geliştirebileceğimize bir bakalım
 
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_2.png)
-
 Durumu anlamanın en kolay yolu bitmiş olan örneğin sınıf diagramına bakmak olacaktır (Yani çözüme biraz tersten bakmamız gerekmektedir) İşte çözümsel yaklaşıma ait sınıf diagramı görüntüsü.
 
 ![blg232_ClassDiagram](/assets/images/2011/blg232_ClassDiagram.gif)
@@ -145,11 +141,9 @@ namespace InvestigationLib
 }
 ```
 
-WindowsServiceCallar tipi için söylenebilecek iki önemli nokta vardır. Bunlardan ilki ServiceBase tipinden türemiş olması ve senaryomuza göre OnStart ile OnStop metodlarını override etmesidir. Diğer yandan ezilen OnStart ve OnStop metodları içerisinden yapılan çağrılar, tipin yapıcı metodu (Constructor) içerisinden alınan IWindowsServiceCaller arayüzünü implemente eden herhangibir nesne örneğine aittir. Bir başka deyişle bu tip, OnStart ve OnStop metod bildirimlerini sözleşme olarak sunan IWindowsServiceContract arayüzünü implemente eden bir tipin, çalışma zamanındaki asıl OnStart ve OnStop fonksiyonelliklerini kullanmaktadır. (Oh oh ohhh!!! Including var, inheritance var, Polimorphysm var, overriding var ![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_2.png)… Nesne Yönelimli Programlama-Object Oriented Programming temellerini hatırlamanın zamanı)
+WindowsServiceCallar tipi için söylenebilecek iki önemli nokta vardır. Bunlardan ilki ServiceBase tipinden türemiş olması ve senaryomuza göre OnStart ile OnStop metodlarını override etmesidir. Diğer yandan ezilen OnStart ve OnStop metodları içerisinden yapılan çağrılar, tipin yapıcı metodu (Constructor) içerisinden alınan IWindowsServiceCaller arayüzünü implemente eden herhangibir nesne örneğine aittir. Bir başka deyişle bu tip, OnStart ve OnStop metod bildirimlerini sözleşme olarak sunan IWindowsServiceContract arayüzünü implemente eden bir tipin, çalışma zamanındaki asıl OnStart ve OnStop fonksiyonelliklerini kullanmaktadır. (Oh oh ohhh!!! Including var, inheritance var, Polimorphysm var, overriding var… Nesne Yönelimli Programlama-Object Oriented Programming temellerini hatırlamanın zamanı)
 
 Dolayısıyla bu tanımlamanın ardınan debug edilmesi gereken kod içeriğini taşıyan asıl servis tipi geliştirilir ki tesadüf bu olsa gerek bu tipte IWindowsServiceContract arayüzünü implemente etmektedir
-
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_2.png)
 
 ```csharp
 using System; 
@@ -205,11 +199,7 @@ namespace InvestigationLib
 }
 ```
 
-DebugableControllerService sınıfı aslında ilk başta debug edemediğimiz ControllerService sınıfının asıl fonksiyonelliklerini içermektedir. Tabi ControllerService tipinin yaptığı gibi ServiceBase’ den türemek yerine IWindowsServiceContract arayüzünü uygulamaktadır. Böylece WindowsServiceCaller tipinin kullanabileceği bir sınıf oluşturulmuştur. Ancak hazırlıklar bu tipleri yazmakla bitmez. Birde söz konusu debug edilecek tip örneğini başlatacak/yürütüecek bir başka sınıfın olmasında yarar vardır
-
-![Crying face](/assets/images/2011/wlEmoticon-cryingface.png)
-
-İşte başlatıcı tipimiz.
+DebugableControllerService sınıfı aslında ilk başta debug edemediğimiz ControllerService sınıfının asıl fonksiyonelliklerini içermektedir. Tabi ControllerService tipinin yaptığı gibi ServiceBase’ den türemek yerine IWindowsServiceContract arayüzünü uygulamaktadır. Böylece WindowsServiceCaller tipinin kullanabileceği bir sınıf oluşturulmuştur. Ancak hazırlıklar bu tipleri yazmakla bitmez. Birde söz konusu debug edilecek tip örneğini başlatacak/yürütüecek bir başka sınıfın olmasında yarar vardır. İşte başlatıcı tipimiz.
 
 ```csharp
 using System.Threading;

@@ -377,8 +377,6 @@ namespace ClientApp
 
 Nihayet test yapabilmek için gerekli ortamı hazırladığımızı ifade edebilirim.
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 İlk olarak Discovery Proxy servisinin, sonrasında istemcinin kullanmak istediği servislerin ayağa kaldırılması gerekir. Son olarak istemci uygulamanın çalıştırılması ve test edilmesi yeterlidir. Yapılan ilk testler sonucunda aşağıdaki sonuçlar elde edilmiştir.
 
 ![blg70_Runtime.gif](/assets/images/2009/blg70_Runtime.gif)

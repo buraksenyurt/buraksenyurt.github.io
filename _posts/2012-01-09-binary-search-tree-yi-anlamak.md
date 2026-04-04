@@ -19,15 +19,11 @@ categories:
 
 Peki kolayca unutabileceğimiz bilgiler nasıl oluşurlar?
 
-![Undecided](/assets/images/2012/smiley-undecided.gif)
-
 Genelde öğrendiklerimizi çok sık kullanmadığımız veya tekrar etmediğimiz durumlarda unutmak kaçınılmaz gerçeklerden birisidir. Kullanmama süresi arttığında ise, ihtiyaç duyulduğu anda söz konusu bilgileri tekrardan hatırlamak da giderek zorlaşmaktadır. Aslında çok sık kullanılmayan ama yaşamın herhangibir anında ihtiyaç duyabileceğimiz bilgileri yazarak bir yerlerde saklamak, mücadele etme yollarından birisidir.
 
-Örneğin Üniversitede okutulan veri yapıları ve algoritmalar derslerini düşünelim. Öğrenmek, kavrayabilmek, kodlarını geliştirebilmek için epey kafa patlattığımız zorlayıcı bu içerikler, kolayca unutulabilecek cinstendir
+Örneğin Üniversitede okutulan veri yapıları ve algoritmalar derslerini düşünelim. Öğrenmek, kavrayabilmek, kodlarını geliştirebilmek için epey kafa patlattığımız zorlayıcı bu içerikler, kolayca unutulabilecek cinstendir.
 
-![Frown](/assets/images/2012/smiley-frown.gif)
-
-Tabi eğer bunları her dönem anlatan bir akademisyen veya sürekli matematik modeller geliştiren bir uzman değilseniz. Eğer ki,.Net Framework, Java EE, SAP gibi ortamları kullanarak ağırlıklı olarak veri odaklı uygulamalar geliştiriyorsanız, zaten bu ders içeriğinin yakınından çok nadir olarak geçersiniz. İşte ben de bu hafıza kaybını yaşadığım şu dönemlerde, eski bilgilerimi hatırlamaya çalışmak istedim. İlk gözüme kestirdiğim konu ise ikili ağaç yapısı (Binary Tree) ve bunun üzerinden arama, ekleme gibi temel işlemlerin nasıl yapıldığı oldu?
+Tabi eğer bunları her dönem anlatan bir akademisyen veya sürekli matematik modeller geliştiren bir uzman değilseniz. Eğer ki,.Net Framework, Java EE, SAP gibi ortamları kullanarak ağırlıklı olarak veri odaklı uygulamalar geliştiriyorsanız, zaten bu ders içeriğinin yakınından çok nadir olarak geçersiniz. İşte ben de bu hafıza kaybını yaşadığım şu dönemlerde, eski bilgilerimi hatırlamaya çalıştım. İlk gözüme kestirdiğim konu ise ikili ağaç yapısı (Binary Tree) ve bunun üzerinden arama, ekleme gibi temel işlemlerin nasıl yapıldığı oldu?
 
 İkili ağaç yapısı basitliği ve hızlı sonuç üretimi açısından bakıldığında, arama algoritmalarından tutunda oyun programlamaya, ilişkisel veri tabanlarından, karmaşık matematik modellere kadar pek çok alanda kullanılmaktadır. Binary Tree veri yapısı ve bu yapı üzerinde gerçekleştirilecek çeşitli operasyonlar (arama, ekleme, silme gibi) göz önüne alındığında ilk etapta bu ağacın nasıl oluşturulduğunun kavranması gerekmektedir. Aslında ikili ağaçlar, şirketlerin organizasyon ağacına benzer bir içeriğe sahiptirler. Tabi teknik olarak düşündüğümüzde bu ağacı oluşturmanın bazı kuralları vardır. Şimdi gelin teknik terim karmaşası içerisine girmeden konuyu bir örnek üzerinde kavramaya çalışalım.
 

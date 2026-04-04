@@ -68,11 +68,7 @@ namespace CodeContracts
 
 Bu örnek kod parçasında Album isimli sınıfa ait iki nesne örneği üretiminin gerçekleştirildiğini görmekteyiz. CreateAlbum isimli metod içerisinde Contract.Requires isimli bir static fonksiyon çağrısı olduğu hemen dikkatinizi çekmiş olmalıdır. Bu metod ile bir ön koşul (Pre-Condition) belirtilmektedir. Bu koşula göre CreateAlbum metoduna gelen albumName parametresinin değerinin null veya boş olmaması beklenmektedir. Diğer yandan Main metodunun son satırında da Contract.Ensures isimli bir metod çağrısı yer almaktadır. Bu çağrı ilede bir son koşul (Post-Condition) tanımlaması yapılmaktadır. Bu koşula göre CreateAlbum metodu ile üretilen ikinci Album nesne örneğinin Name özelliğinin karakter sayısının 10' un üzerinde olması istenmektedir.
 
-Örneği bu haliyle çalıştırdığımızda hiç bir sorun olmadığını görürüz. Hımmm...Enteresan bir durum.
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
-Oysaki Requires veya Ensures metod çağrılarından en az birisine takılmamız gerekirdi. Aslında sorun henüz kod sözleşmelerinin çalışma zamanı (runtime) veya static olarak izlenmesi gerektiğini belirtmemiş olmamız. Bunun için Tool ile birlikte projeye eklenen Contracts sekmesindeki Runtime Checking kutusunu işaretlememiz yeterlidir.
+Örneği bu haliyle çalıştırdığımızda hiç bir sorun olmadığını görürüz. Hımmm...Enteresan bir durum. Oysaki Requires veya Ensures metod çağrılarından en az birisine takılmamız gerekirdi. Aslında sorun henüz kod sözleşmelerinin çalışma zamanı (runtime) veya static olarak izlenmesi gerektiğini belirtmemiş olmamız. Bunun için Tool ile birlikte projeye eklenen Contracts sekmesindeki Runtime Checking kutusunu işaretlememiz yeterlidir.
 
 ![blg120_RuntimeCheck.gif](/assets/images/2009/blg120_RuntimeCheck.gif)
 
@@ -136,3 +132,4 @@ Bu son derece doğaldır nitekim ürün adı Invariant çağrısında olduğu gi
 Elbette Code Contracts konusu burada anlatıldığı kadar yalın ve sade değildir. Aksine dökümantasyonuna bakıldığında çok fazla kuralı olduğu görülmektedir. Özellikle Static Checking özelliği derleme işlemi sırasında bazı kod sözleşmelerinin kontrolü sağlamaktadır. Konuyu araştırdıkça ve öğrendikçe sizlere daha fazlasını aktarmaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [CodeContracts.rar (25,40 kb)](/assets/files/2009/CodeContracts.rar)
+

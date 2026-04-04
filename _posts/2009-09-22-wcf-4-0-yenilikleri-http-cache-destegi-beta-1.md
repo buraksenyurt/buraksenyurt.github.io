@@ -61,9 +61,7 @@ Servisimize ait svc içeriği;
 <%@ ServiceHost Language="C#" Debug="true" Service="Calculus.BasicMathService" CodeBehind="BasicMathService.svc.cs" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>
 ```
 
-IBasicMathService isimli servis sözleşmesi içerisinde yer alan Sum metoduna WebGet ve OperationContract dışında AspNetCacheProfile isimli bir niteliğin (attribute) daha uygulandığı görülmektedir. Bu nitelik parametre olarak string bir bilgi alır. Bu bilgi ise biraz sonra yazacağımız Web.config dosyası içerisindeki bir Cache profilini işaret etmektedir. Dolayısıyla bir operasyonun çıktısının ön belleklenmesi için gerekli özellikler, konfigurasyon dosyasında tanımlanır. Servis kodunda dikkat çekici noktalardan biriside, BasicMathService tipinin, AspNetCompatibilityRequirements isimli niteliği uygulamış olmasıdır. Bu durumu biraz sonra değerlendiriyor olacağız nitekim uygulanmadığı hallerde başımıza iş açacaktır
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
+IBasicMathService isimli servis sözleşmesi içerisinde yer alan Sum metoduna WebGet ve OperationContract dışında AspNetCacheProfile isimli bir niteliğin (attribute) daha uygulandığı görülmektedir. Bu nitelik parametre olarak string bir bilgi alır. Bu bilgi ise biraz sonra yazacağımız Web.config dosyası içerisindeki bir Cache profilini işaret etmektedir. Dolayısıyla bir operasyonun çıktısının ön belleklenmesi için gerekli özellikler, konfigurasyon dosyasında tanımlanır. Servis kodunda dikkat çekici noktalardan biriside, BasicMathService tipinin, AspNetCompatibilityRequirements isimli niteliği uygulamış olmasıdır. Bu durumu biraz sonra değerlendiriyor olacağız nitekim uygulanmadığı hallerde başımıza iş açacaktır.
 
 Tabikide üzerinde durmamız gereken en önemli kısım config dosyası içeriğidir.
 

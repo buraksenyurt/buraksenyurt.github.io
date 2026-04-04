@@ -14,11 +14,7 @@ Bilenler bilir, uzun süredir.Net Framework 2.0 üzerinde yazılmış ve Visual 
 
 Aslında bu yeni görevime atanırken Visual Studio 2010 ile uğraştığımı hatırlıyorum da…Kendimi Ice Age filmindeki buz çağı devrine dönmüş canlı bir yaşam formu gibi zannetmiştim
 
-Geliştirilmiş olan ürüne ait proje kodları biraz eski tarihli olduğundan ilk zamanalarda içinde kaybolduğumu belirtebilirim. Günlerce Debug yapıp süreçlerin nasıl işlediğini anlamaya çalıştım. (E haliyle koda dökümantasyon yazmassanız, XML Comment’ ler koymassanız, proje geliştirilmekteyken sürekli eleman sirkülasyonuna izin verir ve herkesin günü kurtarmak adına kodlama yapmasına davetiye çıkartırsanız, analiz dökümanlarını saklamaz veya güncellemesseniz olacağı da budur
-
-![Undecided](/assets/images/2011/smiley-undecided.gif)
-
-)
+Geliştirilmiş olan ürüne ait proje kodları biraz eski tarihli olduğundan ilk zamanalarda içinde kaybolduğumu belirtebilirim. Günlerce Debug yapıp süreçlerin nasıl işlediğini anlamaya çalıştım. (E haliyle koda dökümantasyon yazmassanız, XML Comment’ ler koymassanız, proje geliştirilmekteyken sürekli eleman sirkülasyonuna izin verir ve herkesin günü kurtarmak adına kodlama yapmasına davetiye çıkartırsanız, analiz dökümanlarını saklamaz veya güncellemesseniz olacağı da budur)
 
 Aslında daha okunaklı, daha efektif ve zaman zaman daha verimli kod üretmek için bir kaç küçük noktaya dikkat etmekte yarar olabilir. Bu sayede sanıyorum ki kodlarımız en azından daha şık duracaktır
 

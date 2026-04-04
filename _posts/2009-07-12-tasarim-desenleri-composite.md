@@ -21,20 +21,18 @@ Component tipi içerisinde kendisinden türeyen Composite ve Leaf tiplerinin ort
 
 Desende dikkat edilmesi gereken noktalardan biriside, Component tipinden tanımlanan bazı operasyonların Composite tipte uygulanırken Leaf tipinde uygulanmamasıdır. Örneğe göre AddSoldier ve RemoveSoldier metodlarının Leaf tipi içerisinde bir anlamı yoktur. Nitekim Leaf kendi altında başka bir Component tipi içermeyecek nesne örneklerini temsil etmek üzere ele alınmalıdır. Diğer yandan Component tipi içerisinde tanımlanıp hem Composite hemde Leaf tipinde uygulanan ortak operasyonların, Composite içerisindeki uygulanış şeklide biraz farklıdır. Bu farka göre, Composite içerisindeki ortak operasyon (örneğimize göre ExecuteOrder metodu), Composite nesne örneğine bağlı tüm nesneleri kapsamalıdır. Sanırım kafamız iyice allak bullak oldu.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Bu nedenle olayı XML ağaçlarını düşünerektende ele alabiliriz. XML alt yapısını kod tarafında ifade ederken, Composite tasarım kalıbına göre bir ağacın OOP'ye uygun olacak şekilde tasarlanması kolay olabilir. XML yapısı gereği, herkes birer element (yada node) olarak ifade edilebilirken, aslında kendilerine bağlı başka alt elementleride barındırabilirler. Böylece çalışma zamanında birbirlerine bağlı dallar üzerinde oturan XML ağaçları kolaylıkla tasarlanabilir. Hatta bir Component üzerinden varsa alt veya üst Component tipinede ulaşılabilir. (Size tavsiyem bir XML verisinin içeriğindeki elementleri ifade edecek bir modeli, Composite desenine göre tasarlamaya çalışmanız olacaktır.)
 
 Ancak yapısal (Stuctural) desenelerden olan bu kalıpta dikkat edilmesi gereken en önemli nokta, ağaç içerisindeki tüm nesnelerin aslında aynı arayüzü (veya soyut tipi) uyguluyor olmasıdır. Bu nedenle nesne istemcileri, ağaçta yer alan Composite ve Leaf örneklerine aynı şekilde davranırlar.
 
 Dilerseniz basit bir örnek üzerinden ilerleyelim. Örneğimizde, kurduğumuz ordunun içerisindeki organizasyonel ağacı tasarlamaya çalışıyor olacağız. Buna göre
 
-General
-Colonel
-LieutenantColonel
-Major
-Captain
-Lieutenant
+- General
+- Colonel
+- LieutenantColonel
+- Major
+- Captain
+- Lieutenant
 
 şeklinde bir organizasyonumuz olduğunu göz önüne alabiliriz.
 

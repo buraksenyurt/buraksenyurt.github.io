@@ -112,8 +112,6 @@ Dikkat edileceği üzere başlangıçta 10 olan puan 10.1 birim arttırılmış 
 
 Elbette Workflow 4.0' ın WPF tabanlı bir IDE kullanıyor olması göz ardı edilemez. Bir başka deyişle söz konusu Variable ekleme işlemleri aslında tasarım zamanında çok daha kolay bir şekilde gerçekleştirilebilmektedir. Ancak yazıyı hazırladığım zaman diliminde kullandığım ve public olan Visual Studio 2010 Beta 1 sürümüne ait WF designer ne yazıkki IDE tekrardan başlatılmasına nedenl olmaktadır.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Bu nedenle şimdilik kod tarafı ile idare etmeniz gerekiyor.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

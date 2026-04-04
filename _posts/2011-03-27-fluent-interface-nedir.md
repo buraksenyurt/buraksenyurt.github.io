@@ -18,10 +18,7 @@ Bu güne kadar yayımlamış olduğu çok değerli kitaplar bulunmaktadır. Hatt
 
 > Bundan önceki favori kitaplarım ise [Clean Code: A Handbook of Agile Software Craftsmanship](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_10?ie=UTF8&qid=1288249840&sr=8-10) ve [Agile Principles, Patterns, and Practices in C#](http://www.amazon.com/Agile-Principles-Patterns-Practices-C/dp/0131857258/ref=sr_1_14?ie=UTF8&qid=1288256328&sr=8-14) dir
 
-Pek Martin Fowler’ ın kulaklarını niye bu kadar çok çınlatıyoruz
-
-![Thinking smile](/assets/images/2011/wlEmoticon-thinkingsmile_1.png)
-
+Pek Martin Fowler’ ın kulaklarını niye bu kadar çok çınlatıyoruz. 
 Bu günkü yazımızda ilk olarak Martin Fowler ve Eric Evans tarafından tanımlanan Fluent Interface konusunu irdelemeye çalışıyor olacağız. Aslında kelime anlamlarından yola çıkarsak okunabilir, açık, net arayüz tiplerinden bahsettiğimizi düşünebiliriz. Ancak bu şekilde söz konusu kavrama biraz haksızlık etmiş oluruz. Fluent Interface esas itibariyle daha okunabilir kodlama açısından önem arz eden ve uygulanması sırasında metod zincirlerinden yararlananan bir yaklaşım sunmaktadır. Şimdi ne demek istediğimizi ben de ifade edemedim aslında
 
 Gelin basit bir örnek ile konuyu didiklemeye başlayalım.Bu amaçla aşağıdaki kod içeriğini göz önüne alabiliriz.
@@ -206,18 +203,13 @@ namespace UsingFluentInterface
 ```
 
 Vay…Vay…Vay…Vayyyy!!!
-
-![Disappointed smile](/assets/images/2011/wlEmoticon-disappointedsmile.png)
-
 Bu sefer çok daha ilginç bir kod parçası ile karşı karşıyayız. İlk olarak IPlayerSpecV2 isimli arayüz tipi içerisine bakmamızda yarar olacağı kanısındayım. Görüldüğü üzere burada tanımlı olan özellikler yine IPlayerSpecV2 arayüz tipinin taşıyabileceği referansları döndürmektedir. Bir başka deyişle, IPlayerSpecV2 arayüzünü uygulayan sınıfa ait nesne örneklerinin döndürüldüğünü ifade edebiliriz. Bu durumda PlayerV2 sınıfının içeriği de önem kazanmaktadır.
 
 Nitekim Interface implementasyonu sonucu dikkat edileceği üzere Set ön eki ile başlayan her metod, iç değer atamalarında this anahtar kelimesini kullanmaktadır. Buna göre çalışma zamanında o anki PlayerV2 nesne örneğinin kullanılması söz konusudur. Ayrıca her Set… metodunun sonunda return this; ifadesinin kullanıldığına da dikkat edilmelidir. Peki tüm bunlar ne anlama geliyor? Aslında tüm bunların ne anlama geldiğini anlamak için Main metodu içerisinde yer alan kod parçasını göz önüne almamız yeterli olacaktır.
 
 ![blg236_CodeView](/assets/images/2011/blg236_CodeView.gif)
 
-Mutlaka dikkatinizi çekmiştir. Set… ön eki ile başlayan metodlardan hangisini kullanırsak kullanalım arkasından yine IPlayerSpecV2 üzerinden tanımlanmış olan metodlardan birisine erişilebilmektedir
-
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_6.png)
+Mutlaka dikkatinizi çekmiştir. Set… ön eki ile başlayan metodlardan hangisini kullanırsak kullanalım arkasından yine IPlayerSpecV2 üzerinden tanımlanmış olan metodlardan birisine erişilebilmektedir.
 
 İşte size bir metod zinciri. Bu tip bir kullanım son derece doğaldır, nitekim Set… metodları geriye IPlayerSpecV2 arayüzünün taşıyabileceği referansları döndürmek üzere kodlanmıştır. Bu sayede her hangibir Set… metod çağrısı ile başlatılan çalışma zamanı Context’ inin alt metod çağrılarına da taşınabilmesi kolaylaşmaktadır. Ayrıca ilk başlangıçta üretilen ile son kullanılan Context içeriğinin aynı ve tek olması da garanti altına alınmaktadır
 

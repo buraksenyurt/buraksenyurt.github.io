@@ -24,8 +24,6 @@ Bu günkü yazımızda Dynamic tiplerin, metodların aşırı yüklenmesi (overl
 
 Şekilden de görüleceği üzere, WriteLine metodunun farklı tipte veya sayıda parametre ile çalışabilen 19 farklı versiyonu bulunmaktadır. Burada derleme zamanı açısından önem arz eden konulardan birisi de, metodların hangisinin çağırıldığının ayırt edilmesidir. İşte bu noktada metodun imzası (Signature) adı verilen kavram devreye girmektedir. Metod imzası, parametre sayısı veya tiplerini kapsamaktadır. Buna göre aynı tipten ama farklı sayıda parametre veya farklı tipten ama aynı sayıda parametre, çoğunlukla geçerlidir. Upsss...Çoğunlukla mı?
 
-![Surprised](/assets/images/2010/smiley-surprised.gif)
-
 Neden böyle söylediğimi ispat etmek için C# 4 ile birlikte gelen dynamic tiplerin, metodların aşırı yüklenmesi sırasındaki kullanımlarına göz atmamız yeterlidir. Öncelikli olarak aşağıdaki kod parçasını göz önüne alalım.
 
 ```csharp

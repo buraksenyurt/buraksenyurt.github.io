@@ -14,13 +14,9 @@ Bir önceki yazımızda WCF RIA Service'lerine kısa bir giriş yapmış ve ilk 
 
 ![blg106_Goal.gif](/assets/images/2009/blg106_Goal.gif)
 
-Dikkat edileceği üzere A...Z'ye kadar sıralanmış bir Button kümesi görülmektedir. Bu düğmelerden herhangibirisine basıldığında, o harf ile başlayan albümlerin isimleri ComboBox bileşenine doldurulmaktadır. Kullanıcı eğer ComboBox bileşeninden bir albümü seçerse, bu albüm içerisinde yer alan şarkı listeside alt tarafta yer alan ve arka planında harikulade
+Dikkat edileceği üzere A...Z'ye kadar sıralanmış bir Button kümesi görülmektedir. Bu düğmelerden herhangibirisine basıldığında, o harf ile başlayan albümlerin isimleri ComboBox bileşenine doldurulmaktadır. Kullanıcı eğer ComboBox bileşeninden bir albümü seçerse, bu albüm içerisinde yer alan şarkı listeside alt tarafta yer alan ve arka planında harikulade bir manzaraya sahip olan DataGrid kontrolü içerisine doldurulmaktadır. Bu örnekte baş harfine göre albüm'lerin getirilebilmesi ve seçilen albüme ait olan şarkıların çekilmesi için WCF RIA Service içerisinde gerekli sorgu metodlarının yazılmış olması gerekmektedir.
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
-bir manzaraya sahip olan DataGrid kontrolü içerisine doldurulmaktadır. Bu örnekte baş harfine göre albüm'lerin getirilebilmesi ve seçilen albüme ait olan şarkıların çekilmesi için WCF RIA Service içerisinde gerekli sorgu metodlarının yazılmış olması gerekmektedir.
-
-Bildiğiniz gibi Ado.Net Entity Data Model nesnesi içeriğinden seçilen Table, View yada Stored Procedure'lere göre Domain Service sınıfının içeriğinde hazır metodlar oluşmaktadır. Ancak bu metodlar her zaman için yeterli olmayabilir. Özellikle çok büyük boyutta veri kümelerinin döndürülmesi yerine performans açısından filtrelenmiş içeriklerin tedarik edilmesi tercih edilmelidir. Bu açıdan bakıldığında Domain Service sınıfı içerisine kendi operasyonlarımı eklemek veya var olanları uygun bir şekilde güncelleştirmek kaçınılmazıdır. Bu bilgilerden yola çıkarsak, geliştireceğimiz örnekte ilk hedefimiz üretilen Domain Service sınıfının metodlarını kendi istediğimiz şekilde geliştirmek olacaktır.
+Bildiğiniz gibi Ado.Net Entity Data Model nesnesi içeriğinden seçilen Table, View yada Stored Procedure'lere göre Domain Service sınıfının içeriğinde hazır metodlar oluşmaktadır. Ancak bu metodlar her zaman için yeterli olmayabilir. Özellikle çok büyük boyutta veri kümelerinin döndürülmesi yerine performans açısından filtrelenmiş içeriklerin tedarik edilmesi tercih edilmelidir. Bu açıdan bakıldığında Domain Service sınıfı içerisine kendi operasyonlarımı eklemek veya var olanları uygun bir şekilde güncelleştirmek kaçınılmazdır. Bu bilgilerden yola çıkarsak, geliştireceğimiz örnekte ilk hedefimiz üretilen Domain Service sınıfının metodlarını kendi istediğimiz şekilde geliştirmek olacaktır.
 
 > Kişisel Not: Entity Data Model ve DomainService'in nasıl hazırlanması gerektiğini bir önceki yazımızda incelediğimizden burada tekrar edilmeyecektir. Ancak Entity Data Model içerisinde Album ve Track tablolarının karşılıklarının kullanıldığını belirtmek isterim.
 

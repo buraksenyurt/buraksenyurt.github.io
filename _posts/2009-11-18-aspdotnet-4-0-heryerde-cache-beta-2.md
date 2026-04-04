@@ -15,8 +15,6 @@ Kronometrelerinizi hazır edin! Bu yazımızda Absolute ve Sliding Expiration mo
 
 Aslında listenin başında System.Web.Caching.dll assembly'ının Web dışındaki uygulamalara referans edilerek kullanılmasının yer aldığını söyleyebiliriz. Ne varki bir Windows uygulamasına Web alanına ait bir Assembly'ın referans edilmeside son derece gariptir.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Daha etkili bir yöntem olarak Enterprise Library içerisinde yer alan Caching bloğunun kullanılması tercih edilebilir. Bunların haricinde henüz incelediğim ve yakında sizinle ilk bilgilerimi paylaşacağım Velocity projesi de yer almaktadır ki dağıtık ön bellekleme (Distributed Caching) ve dolayısıyla Cache üzerinde Load Balancing vb imkanlar sunmakta olan bir projedir. Ancak Asp.Net 4.0' ın duyurulması ile birlikte özellikle Overivew dökümünında belirtilen yeni bir koz daha bulunmaktadır. System.Runtime.Caching.dll assembly'ı. Biz bu gün geliştireceğimiz örnekte ObjectCache tipinden yararlanarak ön bellekleme işlemlerini yapmaya çalışacağız.
 
 ![blg103_Browse.gif](/assets/images/2009/blg103_Browse.gif)

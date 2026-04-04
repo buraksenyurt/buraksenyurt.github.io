@@ -127,8 +127,6 @@ Tek yapılması gereken IEncrpyter arayüzünü implemente eden bir sınıfın y
 
 Tabi tam bu noktada insanın aklına C# 3.0 ve bazı şeytanlıklarda gelmiyor değil.
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Öyleki C# 3.0' da lambda operatatörümüz, Func<> gibi temsilcilerimi bulunmakta. Bu durumda yukarıdaki desenin C# 3.0 daki yetenekler ile yazmaya çalıştığımızda belki aşağıdaki gibi bir uygulanış şeklininde söz konusu olabileceğini söyleyebiliriz. İşte Encrypter tipimizin ikinci versiyonu.
 
 ```csharp

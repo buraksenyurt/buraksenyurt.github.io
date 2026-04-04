@@ -284,13 +284,11 @@ Son sorunu çözdükten sonra hemen yeni bir satır Product eklemeye karar verdi
 
 Burada talep metodunun POST olarak seçildiğine, Content tipinin text/xml olarak belirtildiğine dikkat etmek lazım. Diğer tarafında RequestBody kısmında manuel olarak yazdığımız XML içeriğinde ProductID değeri yazmadığımı da belirtelim. Nitekim, ProductID otomatik artan ve insert sorgusuna dahil edilmeyen bir alandır. Ancak ne varki Execute işleminden sonra servis tarafından 307 kodlu bir cevap gelmiştir (Temporary Redirect).
 
-![Frown](/assets/images/2009/smiley-frown.gif)
-
 Oysaki 201 cevabının gelmesi gerekirdi.
 
 ![blg5_4.gif](/assets/images/2009/blg5_4.gif)
 
-Bu hatayla uzun bir süre cebelleştikten sonra, sorunun adres kısmını yanlış yazmamdan kaynaklandığını tespit ettim. Yani adresin http://buraksenyurt:1000/Service.svc adresinin http://buraksenyurt:1000/Service.svc/ olarak yazılması gerekiyormuş. Tamamen benim hatam...Adresi bu şekilde düzelttikten sonra insert işleminin gerçekleştirildiğini ve hem koleksiyonda hemde Products tablosunda yeni Product tipi için gerekli eklemelerin yapıldığını görebildim.
+Bu hatayla uzun bir süre cebelleştikten sonra, sorunun adres kısmını yanlış yazmamdan kaynaklandığını tespit ettim. Yani adresin `http://buraksenyurt:1000/Service.svc` adresinin `http://buraksenyurt:1000/Service.svc/` olarak yazılması gerekiyormuş. Tamamen benim hatam...Adresi bu şekilde düzelttikten sonra insert işleminin gerçekleştirildiğini ve hem koleksiyonda hemde Products tablosunda yeni Product tipi için gerekli eklemelerin yapıldığını görebildim.
 
 Fiddler görüntüsü
 

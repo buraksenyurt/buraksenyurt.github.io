@@ -111,8 +111,6 @@ MainPage.xaml içeriği;
 
 Tasarımın biraz fakir olmasına aldırmadan ilerlemeye devam edelim.
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Senaryomuzu şu şekilde işletiyor olacağız; Kullanıcı Login işlemini başarılı bir şekilde gerçekleştirdiyse eğer, WebContext.Current.User özelliğinden elde edeceğimiz kullanıcı bilgilerini Border alanı içerisindeki kontrollerde göstereceğiz. Sembolik olarak Title ve LastAccessTime değerlerini ve dahil olduğu rollerin adlarını değerlendireceğiz. Sonrasında kullanıcı isterse Save Profile başlıklı düğmeye basaraktan yeni Title ve LastAccessTime bilgilerini kaydedebilecek. Bu basit senaryo için bir önceki yazımızda geliştirdiğimiz MainPage.xaml.cs içeriğini aşağıdaki gibi güncellememiz yeterli olacaktır.
 
 ```csharp

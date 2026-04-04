@@ -53,8 +53,6 @@ NOT: Burada Juval Lowy'nin [IDesign](http://www.idesign.net/idesign/DesktopDefau
 
 Gerçekte, Open metodu içerisinde işimize yarayan ve bizim için anlam ifade eden tek bir parametre yer almaktadır. O da açılmak istenen dosyanın adıdır. Diğer parametrelerinin hiçbirini kullanmadığımız halde yazmak zorunda olduğumuzu görüyoruz. Keşke sadece gerekli olanları yazsabilseydik; o zaman bu iş daha kolay olmazmıydı?
 
-![Frown](/assets/images/2009/smiley-frown.gif)
-
 Nitekim buradaki Open metodu haricinde, çok daha fazla sayıda argüman ile çalışabilen COM fonksiyonellikleri söz konusu olabilir. Böyle bir durumda tam olarak tüm parametreleri yazma zorunluluğu bir kenara dursun, bunların bütünün ne işe yaradığınında bilinmesi gerekir.
 
 Sanırım bu cümlelerden zaten nereye varmak istediğimi anlatabilmişimdir..Net in gelecek nesillerinin en büyük hedeflerinden birisi dinamik dillere ait nesneler ile konuşabilmek ve bunu mümkün olduğunca kolaylaştırmaktır. Bu noktada COM API'leri gibi nesnelerinde kullanımı söz konusudur. Aynen yukarıda geliştirdiğimiz örnekte olduğu gibi. Bu nedenle C# 4.0 içerisinde seçimlik parametre kullanımına izin veren geliştirmeler yapılmıştır (Optional Parameters) Buna göre yukarıdaki kod parçasını C# 4.0 stilinde aşağıdaki gibi geliştirebiliriz.
@@ -85,8 +83,6 @@ namespace NewFeatures2
 Bu kod parçası çalıştığında da aynı sonucu alırız. Yine Word belgesi açılacak ve içeriği görüntülenecektir. Hem kodun okunurluğu kolaylaşmıştır, hem de kısalmıştır. Diğer taraftan parametre değerini aktarırken ref kullanılmadığına dikkat etmemiz gerekiyor.(Ommit ref özelliği) Üstelik object tipinden değişken ataması yerine doğrudan dosya adresininin içeriğini gönderebildiğimizede dikkat edelim.
 
 Tabi ihtiyaçlar bitmek bilmiyor. Burada görüldüğü gibi gereksiz olan parametrelerin hiç biri bildirilmemiştir. Ayrıca ref anahtar kelimeside herhangibir şekilde kullanılmamıştır. Ancak arada başka bir parametrenin daha kullanılması gerekirse...
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
 
 Söz gelimi 3ncü parametre dosyanın yanlız okunabilir (ReadOnly) modda açılıp açılmayacağını belirtir. Optional Parameter tekniğini kullanırsak ikinci parametreyi atlamamız mümkün olmayacaktır. Acaba böyle bir vakada kodu yine istemediğimiz şekliyle aşağıdaki gibi geliştirmemiz mi gerekir?
 

@@ -75,8 +75,6 @@ Ekran çıktısı aşağıdaki gibi olacaktır.
 
 Hımmm...Enteresan bir durum söz konusu sanırım.
 
-![Surprised](/assets/images/2010/smiley-surprised.gif)
-
 Eşitliğin en sağında yer alan z isimli değişken aslında float tipinden tanımlanmıştır. Ardından hemen solunda yer alan double tipinden değişkene aktarılmıştır. y isimli değişken double tipindendir. Son olarak eşitliğin en solunda yer alan x isimli object tipinden değişkene bir atama yapılarak 3.14 değeri en sağdan en soldaki değişkene doğru taşınmıştır. Lakin değişkenin tipi eşitliğin en sağından en soluna kadar korunamamıştır.
 
 Ekran çıktısına dikkat edilecek olursa, x değişkeni gelen değeri float tipi yerine double tipi olarak ele almıştır. Yani x=y=z atamasında en soldaki x değişkeninin tipi y'nin tipine göre belirlenmektedir. Bu durumda eşitliğin en sağındaki değişkenin tipinin en soldaki object tipine taşınmasında bir anlamda bozulma olduğunu düşünebiliriz. Konuyu biraz daha ileri götürelim ve bu kez aşağıdaki kod parçasını göz önüne alalım.
@@ -122,8 +120,6 @@ Normal şartlarda düşündüğümüzde burak.Name için geriye null değer dön
 ![blg149_Runtime3.gif](/assets/images/2010/blg149_Runtime3.gif)
 
 Oda ne?
-
-![Surprised](/assets/images/2010/smiley-surprised.gif)
 
 burak.Name== null için False değer dönmüştür ve bu beklediğimiz sonuçtur. Ancak name==null kontrolünün değeri true olarak gelmiştir. Oysaki atamaya göre name değişkenine "" değerinin gelmesi ve bu nedenle null olmaması gerekmektedir. İlginç değil mi?
 

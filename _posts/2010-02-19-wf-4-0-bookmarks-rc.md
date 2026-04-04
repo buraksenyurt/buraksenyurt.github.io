@@ -15,8 +15,6 @@ Nitekim çok büyük bir yer ve A'dan Z'ye herşey bulunabilmekte. Arkadaşları
 
 Geçen gün yine Bilim Teknik, NTV Bilim ve NG dergilerimi almak üzere oradaydım. Sırada beklerken kasada ücretsiz olarak verilen kitap ayraçlarını farkettim. Hep görürdüm ama bu gün biraz daha anlamlı geliyorlardı. Üzelerinde çeşitli reklamlar veya faydalı bilgiler bulunan bu ayraçlar yardımıyla (ki Bookmark diyebilir miyiz acaba?), okuduğumuz kitabın neresinde kaldığımızı kolayca hatırlayabildiğimizi düşünmeye başladım. Derken evde uzun süredir el değdirip kaldığım yerden devam edemediğim kitaplarım aklıma geldi. Hüzünlendim...
 
-![Tongue out](/assets/images/2010/smiley-tongue-out.gif)
-
 Tesadüfe bakın ki bu kitapları okumak baya uzun sürmüştü. Zamanın neresinde okumaya başladığımı pek hatırlamamakla birlikte, neresinde kaldığımı da hatırlamadığım bir kaç kitap...Tesadüfe bakın ki bu uzun sürecin benzeri Workflow Uygulamalarında da söz konusu olabilmekteydi.
 
 Aslında.Net Framework 3.5 sürümünde Uzun Süreli İşemlerin (Long Running Process) için ExternalDataExchangeService veya WorkflowQueue tiplerinden yararlanılmaktadır. Ne varki Workflow Foundation 4.0 sürümünde, geliştiricilerin kulağına daha hoş gelen Bookmark kavramı ile karşılaşmaktayız. Peki Bookmark nedir? Ne işe yaramaktadır? Nasıl kullanılmaktadır? Konuyu anlamanın belki de en kolay yolu her zaman ki gibi basit bir örnek üzerinden ilerlemekle olacaktır. Bu nedenle Bookmark kavramının tanımlamasını yazımızın sonunda yapmaya çalışacağız.

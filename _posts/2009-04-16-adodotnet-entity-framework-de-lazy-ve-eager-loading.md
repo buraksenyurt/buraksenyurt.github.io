@@ -48,8 +48,6 @@ Programın bu haliyele çıktısı aşağıdaki gibidir.
 
 Aslında istediğimizi elde etmiş görünüyoruz.
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Gayet doğal olarak foreach döngüsü içerisinde bir kategoriye bağlı ürün sayıları bulunurken Count özelliğinden yararlanılmaktadır. Ancak bu durumda Lazy Loading adı verilen durum oluşmakta ve SQL tarafına bakıldığında oldukça fazla sorgunun çalıştığı görülmektedir. Öyleki yukarıdaki kod çıktısı SQL Profiler yardımıyla incelendiğinde ilk sırada aşağıdaki sorgunun çalıştığı görülür.
 
 ![blog1_3.gif](/assets/images/2009/blog1_3.gif)

@@ -14,28 +14,13 @@ At yarışlarına pek ilgim yoktur aslında ama tam da bu günlerde okuduğum ki
 
 ![The starting gate](/assets/images/2011/The%20starting%20gate.jpg)
 
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_70.png)
-
 Bildiğiniz üzere bu yarışların pek çok meraklısı bulunmaktadır. Özellikle yarışları stadyumdan seyredenler oldukça heyecanlıdır. Gerçi yarışın başlamasından önceki tahminler tam başlangıç anında yerini endişeye bırakır. Bizim gibi yazılımcılar için önemli olan ise başlangıç anıdır. Neden mi? Bazen bir yarışa başlanırken, yarışa iştirak eden katılımcıların start düzlüğünde bir arada yer almalarını bekleriz. At yarışlarındaki başlangıç kapıları bu işe yaramaktadır. Tahmin edeceğiniz gibi bu kapılar atların başlangıç işareti gelmeden hareket etmelerini engellemek üzere tasarlanmışlardır.
 
-Çok doğal olarak ve pek tabi ki aynı durum program ortamı içerisinde yer alan ve paralel çalıştırılması düşünülen metodlar içinde geçerli olabilir
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_70.png)
-
-Bir başka deyişle bazı senaryolarda paralel olarak yürütülmesi istenen metodların, çalışmaya başlamadan önce bir kutu içerisinde de paralel olarak dizilmeleri ve kutu beklenen limiti aştığında başlatılmaları istenebilir. Yani paralel çalıştırılması istenen fonksiyonellikler hazırlanıp belirli bir başlangıç noktasına doğru senkronize edilir ve sonrasında belirli bir kurala göre (örneğin kutunun limitini doldurması gibi) başlatılırlar.
+Çok doğal olarak ve pek tabi ki aynı durum program ortamı içerisinde yer alan ve paralel çalıştırılması düşünülen metodlar içinde geçerli olabilir. Bir başka deyişle bazı senaryolarda paralel olarak yürütülmesi istenen metodların, çalışmaya başlamadan önce bir kutu içerisinde de paralel olarak dizilmeleri ve kutu beklenen limiti aştığında başlatılmaları istenebilir. Yani paralel çalıştırılması istenen fonksiyonellikler hazırlanıp belirli bir başlangıç noktasına doğru senkronize edilir ve sonrasında belirli bir kurala göre (örneğin kutunun limitini doldurması gibi) başlatılırlar.
 
 Durumu daha iyi analiz edebilmek için dilerseniz basit bir senaryo üzerinden ilerlemeye çalışalım. Malumunuz günümüz üniversitelerinde özellikle algoritma derslerinde en çok sorulan, okutulan, ezberletilen konuların başında sıralama teknikleri gelmektedir. Bubble Sort, Quick Sort, Insertion Sort vb…Eminim çoğumuz bunları ezberlemek ve sınavlarda çıkacak diye uzun geceler boyu hazırlanmak zorunda kalmışızdır
 
-![Kafası karışmış gülümseme](/assets/images/2011/wlEmoticon-confusedsmile_10.png)
-
-Peki ya bu sıralama algoritmalarını bir yarışa sokmak ister miydiniz? Aslında her birini bir at olarak düşünüp aynı anda yarışı başlatmak istemez miydiniz dersem çok daha uygun olacaktır
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_19.png)
-
-Bunu gerçekleştirirken aslında paralel programlama tekniklerinden yararlanma şansımız bulunmaktadır. Her bir sıralama algoritması için birer Task nesne örneği üretip bunları aynı anda çalıştırmamız yeterli olacaktır…Aynı anda
-
-![Açık ağızlı gülümseme](/assets/images/2011/wlEmoticon-openmouthedsmile_17.png)
+Peki ya bu sıralama algoritmalarını bir yarışa sokmak ister miydiniz? Aslında her birini bir at olarak düşünüp aynı anda yarışı başlatmak istemez miydiniz dersem çok daha uygun olacaktır. Bunu gerçekleştirirken aslında paralel programlama tekniklerinden yararlanma şansımız bulunmaktadır. Her bir sıralama algoritması için birer Task nesne örneği üretip bunları aynı anda çalıştırmamız yeterli olacaktır…Aynı anda
 
 İşte Barrier sınıfını kullanmak için güzel bir fırsat. Yazımızın odak noktası hangi sıralama algoritmasının hızlı çalıştığını tespit etmekten ziyade, Barrier sınıfını kullanarak ilgili sıralama algoritma metodlarını aynı anda başlatmaktır. Bu amaçla ben örnek olarak 3 adet sıralama algoritmasını baz almayı uygun gördüm. Bubble Sort, Quick Sort ve Insertion Sort…
 
@@ -246,19 +231,13 @@ namespace SortingTest
 
 Aslında uygulamamız çok karmaşık gözükse de oldukça basit temellere dayanıyor. Sıralama algoritmalarının üçü için ve bir de rastgele sayı üretimi için tasarlanmış metodlarımız bulunmaktadır. Asıl önemli olan kısım ise Main metodu içerisinde yaptıklarımızdır. Dikkat edileceği üzere ilk olarak Barrier nesne örneği kullanılarak bir akış gerçekleştirilmektedir.
 
-Barrier sınıfına ait nesne örneği üretildikten sonra, ilgili Task örneklerinin buraya dail olmaları için, anonymous metodlarda SignalAndWait fonksiyonuna birer çağrıda bulunulduğuna dikkat edelim
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_70.png)
-
-Sonrasında Task nesne örneklerinin Start metodları çağırılıyor. Ne var ki Barrier bloğunun kapasitesi dolana kadar ilgili metodlar yürütülmeyecektir. Zaten söz konusu Task örneklerinin Barrier bloğuna dahil edilme sebebi de kapasite dolumundan sonra aynı anda çalışmaya başlamalarının istenmesidir. Uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsündekine benzer sonuçlar aldığımızı görebiliriz.
+Barrier sınıfına ait nesne örneği üretildikten sonra, ilgili Task örneklerinin buraya dail olmaları için, anonymous metodlarda SignalAndWait fonksiyonuna birer çağrıda bulunulduğuna dikkat edelim. Sonrasında Task nesne örneklerinin Start metodları çağırılıyor. Ne var ki Barrier bloğunun kapasitesi dolana kadar ilgili metodlar yürütülmeyecektir. Zaten söz konusu Task örneklerinin Barrier bloğuna dahil edilme sebebi de kapasite dolumundan sonra aynı anda çalışmaya başlamalarının istenmesidir. Uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsündekine benzer sonuçlar aldığımızı görebiliriz.
 
 ![bei_31](/assets/images/2011/bei_31.gif)
 
 Görüldüğü üzere Barrier kullanımı nedeni ile ilk üç Task örneğinin tam olarak aynı anda başlatılmaları söz konusudur (Aslında bakarsanız milisaniye cinsinden de kontrol edilmeleri gerekmektedir) Diğer yandan Sequential çalışma da elbetteki metodlar başlatıldıkları sıra ile yürütülmektedirler. Burada Quick Sort algoritmasının gerçekten çok hızlı olması nedeni ile işini çok kısa sürede bitirdiğini ve hemen Insertion Sort metoduna geçilebildiğini vurgulamak isterim.
 
-Sanırım Barrier tipinin kullanımını biraz olsun kavrayabilmişizdir. Konuyu daha net kavrayabilmek için uygulamayı Debug modda çalıştırmanızı öneririm. Özellikle Sort metodlarının başlangıç noktalarına Breakpoint koyarsanız, Main metodu içerisinde ilgili Task nesne örnekleri üzerinden Start metodları çağırılsa bile Barrier bloğunun kapasitesi dolana kadar bu breakpoint noktalarına gelinemediğini görüyor olacaksınız. Burada eğer Debug Mod’ da Parallel Tasks penceresine bakarsanız Task örneklerinin Start metodlarına yapılan çağrılardan sonra Status olarak Running’ e geçtikleri görülecektir ki bu sizi yanıltmamalıdır. Bu sebepten örneği Debug modda izlemeniz son derece önemlidir
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_70.png)
+Sanırım Barrier tipinin kullanımını biraz olsun kavrayabilmişizdir. Konuyu daha net kavrayabilmek için uygulamayı Debug modda çalıştırmanızı öneririm. Özellikle Sort metodlarının başlangıç noktalarına Breakpoint koyarsanız, Main metodu içerisinde ilgili Task nesne örnekleri üzerinden Start metodları çağırılsa bile Barrier bloğunun kapasitesi dolana kadar bu breakpoint noktalarına gelinemediğini görüyor olacaksınız. Burada eğer Debug Mod’ da Parallel Tasks penceresine bakarsanız Task örneklerinin Start metodlarına yapılan çağrılardan sonra Status olarak Running’ e geçtikleri görülecektir ki bu sizi yanıltmamalıdır. Bu sebepten örneği Debug modda izlemeniz son derece önemlidir.
 
 Bakın ben çalışma zamanında durumu analiz ettiğimde Barrier bölgesine son eklenen Insertion Sort algoritma metodundan sonra, bu son eklenen ilk olmak üzere işleyişin başlayabildiğin gördüm. Bir başka deyişle Barrier için belirtilen 3 kapasite değeri InsertionSort metodu eklenene kadar dolmadığından hiç bir metod başlatılmamıştır.
 
@@ -266,8 +245,4 @@ Bakın ben çalışma zamanında durumu analiz ettiğimde Barrier bölgesine son
 
 ![240496b](/assets/images/2011/240496b.jpg) Parallel programlama ile ilişkili olarak bir kaç yazı yazmayı daha planlamaktayım. İçeride gözden kaçan oldukça önemli ve hayati pek çok konu var. Özellikle de gelecek nesil.Net platformunda bu konunun ne kadar önemli olduğunu düşünürsek geliştirici olarak iyi hazırlanmamız gerektiği kanısındayım.
 
-Aslında ben şu sıralarda [Parallel Programming Step by Step](http://amzn.com/0735640602) isimli kitabı takip ediyorum. İnce bir kitap ve sizlere de şiddetle tavsiye ederim. Gerçi ince olduğuna aldanmayın lütfen. Yeteri kadar doyurucu bilgi ve kod örneğini barındırmakta. Eğer paralel programlamaya ilgi duyuyorsanız tabi
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_19.png)
-
-Buraya kadar sabırla okuduğunuz için teşekkür ederken tekrardan görüşünceye dek hepinize mutlu günler dilerim. [SortingTest.rar (29,66 kb)](/assets/files/2011/SortingTest.rar)
+Aslında ben şu sıralarda [Parallel Programming Step by Step](http://amzn.com/0735640602) isimli kitabı takip ediyorum. İnce bir kitap ve sizlere de şiddetle tavsiye ederim. Gerçi ince olduğuna aldanmayın lütfen. Yeteri kadar doyurucu bilgi ve kod örneğini barındırmakta. Eğer paralel programlamaya ilgi duyuyorsanız tabi. Buraya kadar sabırla okuduğunuz için teşekkür ederken tekrardan görüşünceye dek hepinize mutlu günler dilerim. [SortingTest.rar (29,66 kb)](/assets/files/2011/SortingTest.rar)

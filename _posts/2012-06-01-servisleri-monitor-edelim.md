@@ -15,9 +15,7 @@ Banka gibi, pek çok farklı sistemin bir arada yer aldığı ve çalıştığı
 
 ![504349_tft_screen_close-up_1](/assets/images/2012/504349_tft_screen_close-up_1.jpg)
 
-İşin içerisine servisler girdiğinde, bunların anlık durumunlarını izlemek, ayakta olup olmadıklarını görmek veya zaman içerisindeki hareketliliklerine bakarak istikrarlı yapılarının nasıl olduğunu analiz etmek isteyebiliriz. Pek tabi bunun için birden çok 3ncü parti tool olduğunu biliyoruz. Söz gelimi IIS tarafında Windows Server AppFabric aracından yararlanılarak son derece etkili ve gelişmiş izleme ve kontrol mekanizmaları gerçekleştirilebilmektedir. Lakin bazı bankacılık sistemlerinde teknoloji adaptasyonu beklendiği kadar hızlı değildir. Windows Server AppFabric gibi bir tool’ un geçişi, yıllarca XP üzerinde çalışan bankanın Windows 7’ ye geçişindeki gecikme kadar sancılı ve sıkıntılı olabilir. Hatta bankanın bir sonraki teknolojik yenilenme sürecinde ortada Windows Server AppFabric’ ten tamamen farklı bir ürün de bulunabilir
-
-![Undecided](/assets/images/2012/smiley-undecided.gif)
+İşin içerisine servisler girdiğinde, bunların anlık durumunlarını izlemek, ayakta olup olmadıklarını görmek veya zaman içerisindeki hareketliliklerine bakarak istikrarlı yapılarının nasıl olduğunu analiz etmek isteyebiliriz. Pek tabi bunun için birden çok 3ncü parti tool olduğunu biliyoruz. Söz gelimi IIS tarafında Windows Server AppFabric aracından yararlanılarak son derece etkili ve gelişmiş izleme ve kontrol mekanizmaları gerçekleştirilebilmektedir. Lakin bazı bankacılık sistemlerinde teknoloji adaptasyonu beklendiği kadar hızlı değildir. Windows Server AppFabric gibi bir tool’ un geçişi, yıllarca XP üzerinde çalışan bankanın Windows 7’ ye geçişindeki gecikme kadar sancılı ve sıkıntılı olabilir. Hatta bankanın bir sonraki teknolojik yenilenme sürecinde ortada Windows Server AppFabric’ ten tamamen farklı bir ürün de bulunabilir.
 
 Peki böyle bir durumda ne yapabiliriz?
 

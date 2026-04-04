@@ -25,8 +25,6 @@ Genel Aktivite hiyerarşisi;
 
 Burada önemli olan nokta, her aktivitenin bir Activity tipi olması gerekmediğidir. Evet nesne yönelimli teoriye göre böyledir ancak mantıksal çerçevede böyle değildir. Özellikle generic ve normal tip yönelimlerine bakıldığında amaca göre uygun olan aktivite bileşeninden türetilme yoluna gidilmesinin tercih edillmesi gerektiği ortadadır. Bu nedenle doğrudan Activity bileşeni yerine CodeActivity, AsyncCodeActivity, NativeActivity veya bunların generic olan versiyonlarından türetme işlemleri yapılmaktadır. Aslında doğrudan Activity/Activity tipinden türetme yolu da tercih edilebilir. Aslında biraz kafamızın karıştığı ortadadır.
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Hangi türetmeyi seçeğimize karar vermek için şu noktalara dikkat etmemiz yeterli olacaktır;
 
 - Diğer aktivitelerin bir arada kullanılmasından ve doğrudan XAML tanımlamalarından oluşturalacak özel aktivite bileşenlerinin (bunları Asp.Net veya Windows uygulamalarındaki User Control'lere benzetebiliriz) Activity/Activity tipinden türetilmesi,

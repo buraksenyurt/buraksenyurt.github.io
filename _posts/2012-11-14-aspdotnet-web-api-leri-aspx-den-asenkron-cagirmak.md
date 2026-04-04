@@ -19,9 +19,7 @@ Bateri çalanları her zaman için büyük bir hayranlıkla izlerim/izlemişimdi
 
 ![baterist-290x290](/assets/images/2012/baterist-290x290.jpg)
 
-Tabi eğitimler ile belirli seviyede bateri çalabilmek pek çok insan için mümkün olabilir ama tabi ritim tutturmak, ataklarda bulunmak veya çok uzun süre boyunca aynı tempoyu hiç bozulmadan devam ettirebilmek inanılmaz bir konsantrasyon veya yetenek gerektirmektedir. Peki bu eş zamanlı çalışabilme bir yazılımcı için ne ifade edebilir? Tabi ki de asenkron çalışan kod parçalarını
-
-![Open-mouthed smile](/assets/images/2012/wlEmoticon-openmouthedsmile_31.png)
+Tabi eğitimler ile belirli seviyede bateri çalabilmek pek çok insan için mümkün olabilir ama tabi ritim tutturmak, ataklarda bulunmak veya çok uzun süre boyunca aynı tempoyu hiç bozulmadan devam ettirebilmek inanılmaz bir konsantrasyon veya yetenek gerektirmektedir. Peki bu eş zamanlı çalışabilme bir yazılımcı için ne ifade edebilir? Tabi ki de asenkron çalışan kod parçalarını.
 
 Bilindiği gibi Asenkron (Asynchronous) çalışma, günümüz yazılım geliştirme araçlarının olmazsa olmaz parçalarından birisidir. Nitekim kullanıcı deneyimi (User Experience) yüksek olan uygulamalarda, istemcilerin uzun sürebilecek işlemleri beklemeden başkalarına devam edebilmesi tercih edilen ve işlem sürelerini kısaltan bir kabiliyettir.
 
@@ -247,10 +245,6 @@ Eğer sayfanın Trace modunu açarsak aşağıdaki Trace Information sonuçları
 
 ![asynwa_5](/assets/images/2012/asynwa_5.png)
 
-Görüldüğü üzere sayfanın render edilme süresi yine 11 saniyeler civarındadır. Yaklaşık 5 saniyelik servis çağrı süresi + 5 saniyelik DoSomething süresi. Peki biz neyi başarmış olduk?
-
-![Open-mouthed smile](/assets/images/2012/wlEmoticon-openmouthedsmile_31.png)
-
-Başarılan, servis çağrısının sayfanın yaşam döngüsü içerisinde asenkron olarak gerçekleştirilebilmesidir
+Görüldüğü üzere sayfanın render edilme süresi yine 11 saniyeler civarındadır. Yaklaşık 5 saniyelik servis çağrı süresi + 5 saniyelik DoSomething süresi. Peki biz neyi başarmış olduk? Başarılan, servis çağrısının sayfanın yaşam döngüsü içerisinde asenkron olarak gerçekleştirilebilmesidir
 
 Böylece geldik bir yazımızın daha sonuna. Bu makalemizde bir ASP.Net Web API servisinin, bir Web uygulaması içerisinden asenkron olarak nasıl çağırılabileceğini,.Net Framework 4.5 ile birlikte gelen async ve await keyword'lerini de işin içerisine katarak değerlendirmeye çalıştık. Benim için de oldukça yeni ve halen daha öğrenmeye çalıştığımı bir konu. Özellikle MVC (Model View Controller) tabanlı Asp.Net uygulamalarında bu asenkron çağırımları nasıl değerlendirebileceğimizi de incelemeye çalışıyorum. Elde ettiğim bulguları ve öğrendiklerimi her zaman ki gibi bloğumda sizlerle paylaşıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

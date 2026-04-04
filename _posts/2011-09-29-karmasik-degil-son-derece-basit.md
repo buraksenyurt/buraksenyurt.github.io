@@ -15,12 +15,7 @@ Kurumsal eğitim vermenin en güzel yanlarından birisi de, gelenlerin istekleri
 
 ![experience](/assets/images/2011/experience.jpg)
 
-
-Söz gelimi geçtiğimiz hafta içerisinde vermeye başladığım ve makaleyi yazdığım tarih itibariyle devam etmekte olan bir eğitim sırasında, Binary ve XML Serileştirme konularını anlatırken, sahip olduğumuz dil ve framework materyallerinden bazılarını iç içe ve ne kadar etkili kullanabildiğimizi gördük
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)
-
-Bu durumdan esinlenerek sizlere de bir gerçek hayat örneği aktarmaya çalışmak isterim.
+Söz gelimi geçtiğimiz hafta içerisinde vermeye başladığım ve makaleyi yazdığım tarih itibariyle devam etmekte olan bir eğitim sırasında, Binary ve XML Serileştirme konularını anlatırken, sahip olduğumuz dil ve framework materyallerinden bazılarını iç içe ve ne kadar etkili kullanabildiğimizi gördük. Bu durumdan esinlenerek sizlere de bir gerçek hayat örneği aktarmaya çalışmak isterim.
 
 İlk önce ne yapacağımızı belirtmem gerekiyor ama bunu en sona bırakmak ve ne yapmış olduğumuzu o zaman göstermek (aslında sizin anladığınızı görmek) arzusundayım. Öncelikli olarak aşağıdaki şekilde görülen Solution yapısını oluşturarak işe başlayabiliriz. Tabi ki bu yapı bizim test çözümümüz olarak tasarlanmıştır.
 
@@ -76,11 +71,7 @@ namespace DomainLibrary
 }
 ```
 
-ISerializationRule interface tipini uygulamakta olan Category ve Product isimli iki sınıfımız bulunduğunu görmekteyiz. ISerializationRule arayüzü herhangibir kural bildirimi yapmasa bile ilerleyen bölümlerde çok kritik bir görevi üstlenecektir
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)
-
-Şimdi de Common isimli sınıf kütüphanemiz içerisine aşağıdaki Operations sınıfını ve içeriğini eklediğimizi düşünelim.
+ISerializationRule interface tipini uygulamakta olan Category ve Product isimli iki sınıfımız bulunduğunu görmekteyiz. ISerializationRule arayüzü herhangibir kural bildirimi yapmasa bile ilerleyen bölümlerde çok kritik bir görevi üstlenecektir. Şimdi de Common isimli sınıf kütüphanemiz içerisine aşağıdaki Operations sınıfını ve içeriğini eklediğimizi düşünelim.
 
 ![bei_5](/assets/images/2011/bei_5.gif)
 
@@ -119,15 +110,11 @@ namespace Common
 }
 ```
 
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)
-
-Operations sınıfı içerisinde Binary serileştirme işlemi olan bir metod olduğunu görmektesiniz. Söz konusu metod generic olarak tasarlanmıştır. Generic olmakla kalmayıp bir de kısıtlama (Constraints) getirmiştir. Bu kısıtlamaya göre T tipinin ISerializationRule isimli arayüz tarafından taşınabilen bir referans olması şartı konulmaktadır
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_15.png)
+Operations sınıfı içerisinde Binary serileştirme işlemi olan bir metod olduğunu görmektesiniz. Söz konusu metod generic olarak tasarlanmıştır. Generic olmakla kalmayıp bir de kısıtlama (Constraints) getirmiştir. Bu kısıtlamaya göre T tipinin ISerializationRule isimli arayüz tarafından taşınabilen bir referans olması şartı konulmaktadır.
 
 Bir başka deyişle az önce tasarlamış olduğumuz Domain yapısı içerisinde yer alan ve ISerializationRule arayüzünü uygulayan tipler için bu metodun kullanılabilmesi mümkündür. Dolayısıyla bu koşulun dışında kalan tipler için söz konusu metod kullanılamayacaktır. Sanırım bu gerçek hayat örneğinin en can alıcı noktası da burasıdır. Bizim sahip olduğumu bir Domain ile çalışabilecek generic bir serileştirme metodu geliştirmiş bulunmaktayız.
 
-Metodun içeriği son derece basittir. Exception yönetimi metodu kullanan bir üst katmana bırakılmıştır (catch bloğu içerisinde yaptığımız throw hareketine dikkat edin![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)) Diğer yandan BinaryFormatter tipinden yararlanılmış ve metoda parametre olarak gelen FilePath ile işaret edilen ve FileStream ile yazmak üzere açılan dosyaya doğru bir serileştirme işlemi gerçekleştirilmektedir.
+Metodun içeriği son derece basittir. Exception yönetimi metodu kullanan bir üst katmana bırakılmıştır (catch bloğu içerisinde yaptığımız throw hareketine dikkat edin) Diğer yandan BinaryFormatter tipinden yararlanılmış ve metoda parametre olarak gelen FilePath ile işaret edilen ve FileStream ile yazmak üzere açılan dosyaya doğru bir serileştirme işlemi gerçekleştirilmektedir.
 
 Şimdi söz konusu operasyonu test edeceğimiz kod içeriğini de Console uygulamamızda aşağıdaki gibi geliştirelim.
 
@@ -173,9 +160,7 @@ namespace TestApp
 }
 ```
 
-Örneğimizde sembolik olarak Product ve Category tipinden birer koleksiyon üretilmekte ve bunlar için Binary serileştirme işlemi icra edilmektedir. Uygulamayı çalıştırdığımızda aşağıdakine benzer bir ekran çıktısı ile karşılaşırız
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)
+Örneğimizde sembolik olarak Product ve Category tipinden birer koleksiyon üretilmekte ve bunlar için Binary serileştirme işlemi icra edilmektedir. Uygulamayı çalıştırdığımızda aşağıdakine benzer bir ekran çıktısı ile karşılaşırız.
 
 ![bei_6](/assets/images/2011/bei_6.gif)
 
@@ -197,21 +182,13 @@ Aslında bu geliştirdiğimiz örnek ile kazandığımız bir takım avantajlar 
 
 ![bei_7](/assets/images/2011/bei_7.gif)
 
-Dikkat edileceği üzere kırmızı kutucuk içerisinde almış olduğumuz kısım ile T tipinin ISerializationRule arayüzü tarafından taşınabilecek bir tip olması zorunluluğu geliştiriciye bildirilmiş oluyor
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_66.png)
-
-Sanırım şu anda ne demek istediğimi daha net anlatabilmişimdir.
+Dikkat edileceği üzere kırmızı kutucuk içerisinde almış olduğumuz kısım ile T tipinin ISerializationRule arayüzü tarafından taşınabilecek bir tip olması zorunluluğu geliştiriciye bildirilmiş oluyor. Sanırım şu anda ne demek istediğimi daha net anlatabilmişimdir.
 
 Geliştirdiğimiz örnek Solution içerisinde yer alan Assembly’ lar arası bağları ele alarak makalemizi yavaş yavaş sonlandırmaya başlayalım. Tam olarak Assembly’ larımız arası ilişki aşağıdaki şekilde görüldüğü gibidir.
 
 ![bei_8](/assets/images/2011/bei_8.gif)
 
-Generate Dependency Graph’ ı seviyorummm
-
-![Açık ağızlı gülümseme](/assets/images/2011/wlEmoticon-openmouthedsmile_15.png)
-
-Peki bu çözümde neleri kullandık?
+Generate Dependency Graph’ ı seviyorummm. Peki bu çözümde neleri kullandık?
 
 - Generic bir metod geliştirdik.
 - Generic metodda kullandığımız T tipi için generic kısıtlama (Constraint) kullandık.
@@ -221,8 +198,6 @@ Peki bu çözümde neleri kullandık?
 - Class Diagram’ ları kullanarak Domain yapımızı daha net görebildik.
 - Assembly bazında Dependency Graph üreterek Assembly’ larımız arası referans bağımlılıklarını da daha net görebildik.
 
-Görüldüğü üzere sahip olduğumuz.Net bilgi ve materyallerini bazı durumlarda bir araya getirip gerçek hayat senaryoları için icra ettirebiliyoruz. Tabi söz konusu senaryoya eklenebilecek daha pek çok fonksiyonellik söz konusu olabilir. İlerleyen zamanlarda başka gerçek hayat örneklerini de sizlerle paylaşmaya çalışıyor olacağım. Özellikle bu yazıda katılımcı arkadaşlarımızın oldukça büyük emeği var. Kendilerine de çok teşekkür ediyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_15.png)
+Görüldüğü üzere sahip olduğumuz.Net bilgi ve materyallerini bazı durumlarda bir araya getirip gerçek hayat senaryoları için icra ettirebiliyoruz. Tabi söz konusu senaryoya eklenebilecek daha pek çok fonksiyonellik söz konusu olabilir. İlerleyen zamanlarda başka gerçek hayat örneklerini de sizlerle paylaşmaya çalışıyor olacağım. Özellikle bu yazıda katılımcı arkadaşlarımızın oldukça büyük emeği var. Kendilerine de çok teşekkür ediyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [GercekHayatOrnekleri.rar (58,66 kb)](/assets/files/2011/GercekHayatOrnekleri.rar)

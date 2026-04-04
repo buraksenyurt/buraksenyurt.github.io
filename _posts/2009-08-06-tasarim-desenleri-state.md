@@ -17,8 +17,6 @@ Makineyi severdim çünkü fazla mesai yapıldığı hallerde içerisinde son de
 
 Sonra almak istediğim ürünün kodunu tuşlardım. Makine, ürünü benim için ilgili yerden aşağıya doğru ittirerek sunardı. Sonrada ürünü afiyetle yerdim. Ama makinenin şu huyunada çok kızardım. Para üstü vermezdi
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Eksiği bazı ürünler ile tamamlardım yada tamamlayamazdım. Çünkü eksik kalan kısma verilebilecek bir ürün olmazdı. Yine mesai yaptığım akşamların birisinde makineye gittim, ürüne karar verdim, paraları attım ve makine bip, bap, bup dedikten sonra öylece kala kaldım.
 
 Çünkü makine sözüm ona ürünü vermişti. Ancak makinenin alt sepetinde ürün yoktu. Nitekim ürün tam bulunduğu cepten aşağıya doğru düşmek üzereyken oracıkta takılıvermişti. Para gitmişti, nitekim makinin dijital kısmında Teşekkürler yazıyordu

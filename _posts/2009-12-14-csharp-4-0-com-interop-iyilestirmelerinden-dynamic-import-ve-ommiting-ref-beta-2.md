@@ -75,8 +75,6 @@ Sonuç aynı olacaktır. Dikkat edilmesi gereken nokta herhangibir cast işlemi 
 
 Cells[1,2]. sonrasında kullanabileceğimiz metodları gören, bilen, hatırlayan var mı?
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Omitting Ref;
 
 Yine COM Interop nesneleri ile olan münasibetlerimizde yaşadığımız sorunlardan biriside ref tipinden parametrelerin aktarılması için mutlaka geçici de olsa değişken tanımlamaları yapılması gerekliliğidir. Durumu daha net anlayabilmek için aşağıdaki kod parçasını göz önüne alalım.

@@ -117,8 +117,6 @@ Dikkat edileceğiz üzere SaveChanges metoduna yapılan çağrı sonrasında bir
 
 Peki ya çözüm?
 
-![I don't know smile](/assets/images/2013/wlEmoticon-idontknowsmile.png)
-
 Neyseki elimizin altında migration diye bir kabiliyet bulunmakta. Şu anda var olan veritabanı yapısını biraz değiştirip, TotalPrice alanı için de bir müdahalede bulunmamız gerekecek. (Hatta Name alanının boyutuna bir dokunuş yaparsak hiç de fena olmaz)
 
 Şimdi Migration özelliğini etkinleştirip yeni bir Migration setini projeye dahil ediyor olacağız. Bunun için Package Manager Console penceresinden sırasıyla Enable-Migrations ve Add-Migration komutlarını çağıralım. Aşağıdaki gibi.

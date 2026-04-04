@@ -278,9 +278,7 @@ namespace DbGenerator.Design
 }
 ```
 
-IWizard türevli bu sınıf içerisinde basit bir Application Life Cycle söz konusudur aslında. Biz ilk girişte bazı parametrelerin set edilmesi için araya girerek müdahale de bulunuyoruz. Bu nedenle dikkat edileceği üzere RunStarted metodunda, $ sembolleri arasında tanımlanmış olan bazı parametrelerin değiştirilmesi işlemi söz konusudur. Bunun için tasarladığımız Windows Form’ una ait bir örnek oluşturulmuş, ardından form içerisine girilen metinsel bilgiler alınarak koleksiyona dahil edilmiştir. Tabi çok doğal şu anda kafamızda bir soru oluşması muhtemeldir. Acaba bu değişkenler nerede tanımlanmalıdır
-
-![Thinking smile](/assets/images/2012/wlEmoticon-thinkingsmile_2.png)
+IWizard türevli bu sınıf içerisinde basit bir Application Life Cycle söz konusudur aslında. Biz ilk girişte bazı parametrelerin set edilmesi için araya girerek müdahale de bulunuyoruz. Bu nedenle dikkat edileceği üzere RunStarted metodunda, $ sembolleri arasında tanımlanmış olan bazı parametrelerin değiştirilmesi işlemi söz konusudur. Bunun için tasarladığımız Windows Form’ una ait bir örnek oluşturulmuş, ardından form içerisine girilen metinsel bilgiler alınarak koleksiyona dahil edilmiştir. Tabi çok doğal şu anda kafamızda bir soru oluşması muhtemeldir. Acaba bu değişkenler nerede tanımlanmalıdır.
 
 > Application Life Cylce içerisindeki metodlara bakıldığında Loglama işlemlerinin de yapılabileceği uygun noktalar olduğu görülmektedir.
 
@@ -330,9 +328,7 @@ Tabi tt uzantılı dosyamızda da bazı değişikliklerin yapılması şarttır.
     var dbName = "$dbnameString$";
 ```
 
-Bu son işlemlerden sonra VSIX Projesini bir kere daha derlememiz gerekir. (Hatta daha önceden install etmişsek uninstall edip son bir build yapıp tekrardan install etmemiz gerekmektedir) Tüm bu işlemlerin arından VSIX dosyasını çalıştırıp template’ in yüklenmesini sağlayabiliriz. Eğer işler yolunda giderse aşağıdaki iki pencereyi görmemiz şu an mutlu olmamız için yeterli olacaktır
-
-![Open-mouthed smile](/assets/images/2012/wlEmoticon-openmouthedsmile_28.png)
+Bu son işlemlerden sonra VSIX Projesini bir kere daha derlememiz gerekir. (Hatta daha önceden install etmişsek uninstall edip son bir build yapıp tekrardan install etmemiz gerekmektedir) Tüm bu işlemlerin arından VSIX dosyasını çalıştırıp template’ in yüklenmesini sağlayabiliriz. Eğer işler yolunda giderse aşağıdaki iki pencereyi görmemiz şu an mutlu olmamız için yeterli olacaktır.
 
 ![tutorialtt14](/assets/images/2012/tutorialtt14.png)
 

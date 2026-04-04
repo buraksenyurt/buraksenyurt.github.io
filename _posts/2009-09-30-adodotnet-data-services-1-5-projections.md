@@ -13,9 +13,7 @@ Gün geçmiyorki yazılım teknolojilerinde bir yenilik, bir güncelleme, bir ge
 
 ![blg79_Giris.jpg](/assets/images/2009/blg79_Giris.jpg)
 
-Çok zaman değil daha bir sene öncesine kadar Astoria kod adlı Ado.Net Data Services konusunu incelemeye başlamıştım. Entity Framework veya Custom LINQ Provider'ları ile sunulan veri kümelerine, REST bazlı olarak URL sorgular atılabilmesini sağlayan ve özellikle Silverlight gibi RIA içeriklerinde son derece kıymetli olan bir servis uygulaması olarak değerlendirebileceğimiz bu konu ile ilişkili ilk paylaşımlarımı yaptıktan sonra araya WCF 4.0, WF 4.0, Design Patterns, Design Principles,.Net RIA Services gibi konular girdi. Bu konulardaki incelemelerimi ve paylaşımlarımı devam ettirirken bir baktım ki Ado.Net Data Services konusuna çok uzun zaman ara vermişim. Ara vermeklede iyi yapmamışım
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
+Çok zaman değil daha bir sene öncesine kadar Astoria kod adlı Ado.Net Data Services konusunu incelemeye başlamıştım. Entity Framework veya Custom LINQ Provider'ları ile sunulan veri kümelerine, REST bazlı olarak URL sorgular atılabilmesini sağlayan ve özellikle Silverlight gibi RIA içeriklerinde son derece kıymetli olan bir servis uygulaması olarak değerlendirebileceğimiz bu konu ile ilişkili ilk paylaşımlarımı yaptıktan sonra araya WCF 4.0, WF 4.0, Design Patterns, Design Principles,.Net RIA Services gibi konular girdi. Bu konulardaki incelemelerimi ve paylaşımlarımı devam ettirirken bir baktım ki Ado.Net Data Services konusuna çok uzun zaman ara vermişim. Ara vermekle de iyi yapmamışım.
 
 Nitekim program yöneticisi olan Mike Flasko boş durmamış ve [Ado.Net Data Services v1.5](http://www.microsoft.com/downloads/details.aspx?FamilyID=a71060eb-454e-4475-81a6-e9552b1034fc&displaylang=en) versiyonu için CTP2 sürümünü duyurmuş (.Net Framework 3.5 Service Pack 1 ve Silverlight 3.0' ı hedefleyen ama.Net Framework 4.0 içerisinede dahil edilecek olan özellikleri içeren bir sürüm olarak düşünülebilir). Duyurulması ile birlikte hem [blog](http://blogs.msdn.com/astoriateam/default.aspx) sitesinde hemde çeşitli kaynaklarda konu ile ilişkili yazılar yayınlanmaya da başlanmış.
 
@@ -142,8 +140,6 @@ ORDER BY [Project2].[ProductSubcategoryID] ASC, [Project2].[C7] ASC
 Amanınnnn!!!
 
 Aslında biraz can sıkıcı ama doğal olarak tüm Product alanlarının değerlendirildiğini görüyoruz. Nitekim aksini belirtmedik. Peki belirtebilir miyiz? Yani ProductSubcategory kümesinden ve genişletilebilen Product kümesinden bir kaç alanı almayı başarabilir miydik? İşte örnek bir cevabı
-
-![Cool](/assets/images/2009/smiley-cool.gif)
 
 http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product/Name,Product/ListPrice&$expand=Product&$top=5
 

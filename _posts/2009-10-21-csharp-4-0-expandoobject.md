@@ -94,8 +94,6 @@ Bu kez dynamic liste içerisindeki nesnelerden Salary özelliği 1000 birime eş
 
 Daha neler yapabilir? Acaba tanımladığımız ExpandoObject tipinden nesne için bir olay (Event) ekleyebilir miyiz? Hımmm...
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Bu oldukça ilginç olabilir. Aşağıdaki kod parçası ile bir deneyelim bakalım;
 
 ```csharp
@@ -163,8 +161,6 @@ static void Action(dynamic obj)
 ```
 
 Burada file değişkeni sınıf seviyesinde tanımlanmıştır. Tabi örneği Console uygulamasında geliştirdiğimizden dynamic olarak tanımlanan ExpandoObject tipinin başına static anahtar kelimesininde gelmesi gerekmektedir. Bu kodu okurken biraz tuhaflığa neden olmaktadır.
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
 
 ExpandoObject örneği Action metoduna dynamic tipi üzerinden aktarılmaktadır. Dolayısıyla Action metodu içerisinde kullanılan obj değişkeninin file değişkeni olduğunu metod çağrısını yaptığımız yerde belirtmekteyiz. Bu nedenle Action metodu içerisine zaten file değişkeninin geldiğini biliyor olmalıyız. (Peki hangi tipin geldiğini anlayabilir miyiz? İşte size süper bir araştırma konusu) Metod içerisinde sembolik olarak Size değerini arttırmaktayız. İşte çalışma zamanı sonucu;
 

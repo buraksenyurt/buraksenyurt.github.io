@@ -11,8 +11,6 @@ Orta uzunlukta bir yazı için hazır mısınız? Analizi dikkat gerektiren bir 
 
 ![blg83_Giris.jpg](/assets/images/2009/blg83_Giris.jpg)
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Hatırlayacağınız gibi bir önceki yazımızda, Ado.Net Data Service için istemci taraflı veri bağlama işlemlerinde DataServiceCollection kolekisyonunu değerlendirmeye çalışmış ve istemci tarafında bu konuyu ele almak için basit bir WPF uygulaması geliştirmiştik. Bir önceki örneğimiz aslında tek yönlü veri bağlama işlemine örnek olmasında rağmen, iki yönlü modeli de desteklemektedir. Bu yazımızda geliştireceğimiz örneğimizdeki hedefimiz ise, istemci tarafındaki koleksiyonlar üzerinden yapmış olduğumuz güncelleştirme, ekleme ve silme işlemlerini servis tarafına yansıtmaktır.
 
 Aslında süreç son derece basittir. Veri bağlı kontroller üzerinde yapılan güncelleştirme hareketleri, DataServiceCollection koleksiyonu üzerinde de gerçeklenecektir. Sonrasında ise DataServiceContext türevli nesne örneği üzerinden SaveChanges metodunun çağırılması yeterli olacaktır. Bu sayede koleksiyon üzerinden yapılan tüm güncelleştirme, ekleme ve silme işlemlerinin, servis tarafına bir talep olarak gönderilmesi ve sunucu üzerinde de kullanılan veri kaynağına göre (Entity Framework veya Custom LINQ Provider) uygun bir veri işleminin yapılması sağlanır. Biz örneğimizde kendi geliştireceğimiz bir veritabanı içeriğini ve Ado.Net Entity Framework modelini kullanacağımızdan, sunucu üzerinde SQL sorgularının çalıştırıldığını göreceğiz. Dilerseniz vakit kaybetmeden örneğimizi geliştirmeye başlayalım ve işleyişini analiz edelim.
@@ -245,8 +243,6 @@ Yeni eklenen Book nesne örneğinin DataServiceCollection nesne örneği içeris
 ![blg83_AfterAdd.gif](/assets/images/2009/blg83_AfterAdd.gif)
 
 Bağlılık buna denir desek yeridir
-
-![Cool](/assets/images/2009/smiley-cool.gif)
 
 Nitekim yapmış olduğumuz nesne eklemesinden ListBox kontrolüde otomatik olarak etkilenmiş ve içeriğini yenilemiştir. Artık Save Changes başlıklı düğmeye basarak değişiklikleri servis tarafına gönderebiliriz. Bu işlem yapıldığı takdirde SQL tarafında aşağıdaki sorgunun çalıştırıldığı gözlemlenir.
 

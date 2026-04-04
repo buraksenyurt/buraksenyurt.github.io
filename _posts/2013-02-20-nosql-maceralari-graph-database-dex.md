@@ -48,8 +48,6 @@ Basketbol oyuncuları, takım koçları ve takımların yer aldığı bir şema 
 
 Peki bu cümleleri, bir başka deyişle şekilde görülen Graph unsurlarını bilgisayar ortamında nasıl saklayabiliriz?
 
-![I don't know smile](/assets/images/2013/wlEmoticon-idontknowsmile_1.png)
-
 Bu amaçla indirdiğimiz DEX ürününü kullanıyor olacağız. Ağız alışkanlığı nedeniyle bir veritabanı olarak tanımladığımız DEX aslında aşağıda şekilde görülen bir kaç DLL ile birlikte gelmektedir. Yani daha önceden incelediğimiz RavenDb gibi bir Server uygulamasına veya arayüze sahip değildir. Yine de kavramsal olarak tuttuğu içerik bir veri kümesini ifade etmektedir. Daha çok bir API olduğunu ifade edebiliriz. Veriyi disk üzerinde bir dosya şeklinde tutmaktadır.
 
 ![dex_2](/assets/images/2013/dex_2.png)

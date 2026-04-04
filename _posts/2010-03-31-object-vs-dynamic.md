@@ -134,8 +134,6 @@ Calculate((int)R);
 
 Derleme zamanında hata yok. Süper...Ama oda ne? Çalışma zamanında yine hata aldık.
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 ![blg139_Case8.gif](/assets/images/2010/blg139_Case8.gif)
 
 Tahmin edileceği üzere object tipi kullanıldığından çalışma zamanında tam olarak double tipinden bir değer taşınması beklenmektedir. 12.1 double olarak ifade edilmesine rağmen int tipine yapılan dönüşüm geçersizdir (Dynamic tipin kullanımının tam aksine). Dolayısıyla kodun aşağıdaki gibi düzenlenmesi gerekir.

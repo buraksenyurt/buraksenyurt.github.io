@@ -100,13 +100,9 @@ Bu kez sys.tables ve sys.columns view nesnelerini ele alıp ve kullanıcı tanı
 
 ![artcl_3_3](/assets/images/2011/artcl_3_3.gif)
 
-Tabi kendi sistemimde gayet makul seviyelerde rakamlara ulaştığımı ifade edebilirim. Nasıl ki kod yazarken bazı metrikleri uyguluyor ve örneğin satır sayısı 25i geçen metodları tespit edip kod standartları açısından denetlemeler yapıyoruz, benzer şekilde SQL tarafında da bu tip metrikleri uygulayabiliriz. Bu sorgu söz konusu metriklerden birisi olarak düşünülebilir. Tabi çalışmakta olduğum bankada aynı sorguyu denediğim de piuvvvvv
+Tabi kendi sistemimde gayet makul seviyelerde rakamlara ulaştığımı ifade edebilirim. Nasıl ki kod yazarken bazı metrikleri uyguluyor ve örneğin satır sayısı 25i geçen metodları tespit edip kod standartları açısından denetlemeler yapıyoruz, benzer şekilde SQL tarafında da bu tip metrikleri uygulayabiliriz. Bu sorgu söz konusu metriklerden birisi olarak düşünülebilir. Tabi çalışmakta olduğum bankada aynı sorguyu denediğim de piuvvvvv. Ehem…Ehem…Tekrar sistemime döneyim.
 
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_20.png)
-
-Ehem…Ehem…Tekrar sistemime döneyim.
-
-Bu kez aklımda şöyle bir soru vardı: Acaba sistemimde yer alan AdventureWorks veritabanında, hangi Stored Procedure’ ler içerisinde Update anahtar kelimesi (Keyword) kullanılmaktaydı
+Bu kez aklımda şöyle bir soru vardı: Acaba sistemimde yer alan AdventureWorks veritabanında, hangi Stored Procedure’ ler içerisinde Update anahtar kelimesi (Keyword) kullanılmaktaydı.
 
 Bir başka deyişle hangi SP'ler içerisinde güncelleme ile ilişkili işlemler yapıldığını görmek istiyordum. Bu tip bir ihtiyaç pek çok durumda gerekebilir. Özellikle SQL tarafına yıkılmış iş süreçlerinde değişiklikler yapmanız gerektiği durumlarda kullanabileceğiniz bir tespit yöntemidir. Söz gelimi bir tablonun adının değişmesi sonucu ilgili SP'lerde de geçtiği yerlerde de pansumanlar yapmak gerekecektir (SQL Tarafında Visual Studio'da olduğu gibi Refactor-Rename özelliği olsaydı fena olmazı aslında) Bunu öğrenmek için aşağıdaki sorguyu kullandım.
 
@@ -296,10 +292,6 @@ Elbette ben yerel makinemden sadece tek bir veri sunucusuna bağlandığımdan c
 
 Buraya kadar yazılmış olan sorguları eğlence amaçlı olarak veya ciddi manada göz önüne alarak çalışmakta olduğunuz gerçek hayat SQL sunucuları üzerinde de deneyebilirsiniz. Çok ilginç sonuçlar elde edeceğinizi ama oldukça faydalı bilgiler alabileceğinizi belirtmek isterim.
 
-Peki ya bundan sonrasında ne olacak? Aslında bakarsanız burada yazılmış olan pek çok SQL ifadesi birer View haline dönüştürülüp sunucu üzerindeki farklı bir veritabanında saklanabilirler. Hatta bu veritabanının karşılığı olan bir Entity Framework kütüphanesi üretilip ilgili raporların örneğin bir WCF Data Service yardımıyla dış ortama sunulması da sağlanabilir. Tabi hassas veriler söz konusu olduğundan bu pek de iyi bir fikir değildir. Ama dilerseniz basit bir WCF (Windows Communication Foundation) Servisini güvenli hale getirerek ilgili içerikleri dış dünyaya servis bazlı olarak sunabilirsiniz. Sanırım bir sonraki makalemde hangi konuyu/senaryoyu ele alacağımı anlamışsınızdır
-
-![Open-mouthed smile](/assets/images/2011/wlEmoticon-openmouthedsmile_20.png)
-
-Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Peki ya bundan sonrasında ne olacak? Aslında bakarsanız burada yazılmış olan pek çok SQL ifadesi birer View haline dönüştürülüp sunucu üzerindeki farklı bir veritabanında saklanabilirler. Hatta bu veritabanının karşılığı olan bir Entity Framework kütüphanesi üretilip ilgili raporların örneğin bir WCF Data Service yardımıyla dış ortama sunulması da sağlanabilir. Tabi hassas veriler söz konusu olduğundan bu pek de iyi bir fikir değildir. Ama dilerseniz basit bir WCF (Windows Communication Foundation) Servisini güvenli hale getirerek ilgili içerikleri dış dünyaya servis bazlı olarak sunabilirsiniz. Sanırım bir sonraki makalemde hangi konuyu/senaryoyu ele alacağımı anlamışsınızdır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EglencelikSQL.sql (5,39 kb)](/assets/files/2011/EglencelikSQL.sql)

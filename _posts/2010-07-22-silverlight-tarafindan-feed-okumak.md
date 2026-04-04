@@ -49,8 +49,6 @@ XAML içeriği;
 
 Aslında teori son derece basitti. Kullanıcı TextBox kontrolü üzerinden bir RSS adresi girecekti. Sonra düğmeye basarak içeriğin ListBox kontrolüne dolmasını seyredecekti. Son derece basit ve masumane bir talep öyle değil mi?
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Tabi bu işlemler için kod tarafını da, heyecanlı bir şekilde aşağıdaki gibi geliştirmeye çalıştım.
 
 ```csharp
@@ -109,19 +107,11 @@ namespace RSSReaderim
 
 Kod parçasından da görüldüğü üzere WebClient tipini kullanarak TextBox kontrolüne girilen adres için bir talepte bulunulmaktadır. Söz konusu talepin sonucu elde edildiğinde devreye giren olay metodu içerisinde ise, öncelikli olarak bir hata kontrolü yapılmaktadır. Eğer herhangibir hata söz konusu değilse SyndicationFeed tipinden yararlanılarak elde edilen Stream referansının Feed olarak ele alınabilmesi amacıyla gerekli işlemler yapılmaktadır. Son olarak söz konusu içerik nesnesi üzerinden ulaşılan Items koleksiyonu, ListBox kontrolüne bağlanır.
 
-Şimdi blog girdimizin başında yer alan resmi açıklayalım. Bu kadar süratli araba kullanırsanız duvara toslamanız an meselesi olabilir. Aynen örneğimizde şu an tosladığımız gibi
-
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
-İşte duvara tosladığımız anda saniyenin milyonda birinde şişen hava yastığı içinden fırlayan Exception mesajımız.
+Şimdi blog girdimizin başında yer alan resmi açıklayalım. Bu kadar süratli araba kullanırsanız duvara toslamanız an meselesi olabilir. Aynen örneğimizde şu an tosladığımız gibi. İşte duvara tosladığımız anda saniyenin milyonda birinde şişen hava yastığı içinden fırlayan Exception mesajımız.
 
 ![blg176_Exception.gif](/assets/images/2010/blg176_Exception.gif)
 
-Hayda breeeee!!!
-
-![Surprised](/assets/images/2010/smiley-surprised.gif)
-
-İşte hızlı gitmenin doğal sonucu.
+Hayda breeeee!!! İşte hızlı gitmenin doğal sonucu.
 
 Aslında gözden kaçırdığımız çok önemli bir durum söz konusu. O da Silverlight tarafında önem arz eden konuların başında gelen Cross-Domain Policy vakası. Sonuç itibariyle RSS çıktısı için talepte bulunduğumuz Domain adresi ile örneği geliştirmekte olduğumuz Asp.Net Development Server'ın port numarası eşliğine açtığı Domain adresleri birbirlerinden farklı. Bu sebepten sunucu tarafının bir ClientAccessPolicy.xml dosyasına sahip olması ve içerisinde söz konusu talepler için gerekli garanti haklarını belirtmiş olması şart. Ancak bu senaryoya göre Silverlight istemcileri için Cross-Domain Policy desteği vermeyen hiç bir sunucudan RSS içeriğini okumamız mümkün değil. Peki öyleyse ne yapacağız? Çözüm olarak biraz dolambaçlı bir yol olsa da, aşağıdaki şekilde görülen planı izleyebiliriz.
 

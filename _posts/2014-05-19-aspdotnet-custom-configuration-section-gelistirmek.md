@@ -14,16 +14,13 @@ Konfigurasyon tabanlı geliştirme modeli, uygulama kodlarına girilmeden çalı
 
 ![Configuration](/assets/images/2014/Configuration.png)
 
-
 > Eskilerden: [Asp.Net 2.0 ile Configuration Management (Konfigurasyon Yönetimi)](/2006/06/26/aspdotnet-2-0-ile-configuration-management-konfigurasyon-yonetimi/)
 
 Söz konusu konfigurasyon içerikleri aslında XML tabanlı bir dosya şemasının parçalarıdır ve doğal olarak element ile attribute’ lardan oluşmaktadır. Konfigurasyon dosyalarının daha iyi yönetilebilmesi için Asp.Net 2.0 ile birlikte Configuration API alt yapısı geliştirilmiştir. Bu kütüphane sayesinde konfigurasyon içerisindeki elementlere sınıf bazında erişmek ve yönetebilmek mümkündür. Pek tabi XML elementlerinin sahip oldukları nitelikler, sınıfların özellikleri (Property) olarak ele alınmaktadır.
 
 Peki konfigurasyon dosyası içerisine kendi özel kısımlarımızı (section) ilave etmek ve hatta bunları çalışma zamanında (Runtime) kullanmak istersek, nasıl bir yol izlememiz gerekir?
 
-![Thinking smile](/assets/images/2014/wlEmoticon-thinkingsmile_3.png)
-
-Konfigurasyon Yapısı
+## Konfigurasyon Yapısı
 
 Aklımıza ilk gelen belirli tip türetmeleri veya arayüz (interface) uyarlamaları ile bu işin halledilebilecek olmasıdır. Aslında olayı çözümlemek için var olan konfigurasyon parçalarının örnek tip yapısını incelemek yerinde bir hareket olacaktır. Söz gelimi system.web kısımı içerisindeki compilation ve pages elementlerini incelediğimizi düşünelim.
 
@@ -40,7 +37,7 @@ Eğer object browser üzerinden ilgili elementlerin karşılık geldiği sınıf
 
 Dolayısıyla kendi geliştireceğimiz özel Section elementleri için de bu tip bir yol izlememiz ve ilgili türetmeleri yapmamız yeterli olacaktır.
 
-Örnek Senaryo
+## Örnek Senaryo
 
 Basit bir senaryo üzerinden ilerleyebiliriz. Örneğin bir web uygulamasının web.config dosyası içerisinde aşağıdaki gibi bir konfigurasyon kısmı oluşturmak istediğimizi düşünelim.
 
@@ -109,7 +106,8 @@ Dikkat edileceği üzere Definition ve Type isimli özelliklere ConfigurationPro
 Özelliklerin get ve set bloklarında fark edileceği gibi this anahtar kelimesinden yararlanılmakta ve üst tipin indeksleyicisine (Indexer) gidilerek değer ataması veya okunması işlemi gerçekleştirilmektedir.
 
 > F12 ile ConfigurationSection elementine gidiliğinde bu indexleyici görülebilir.
-> ![ccs_6](/assets/images/2014/ccs_6.png)
+
+![ccs_6](/assets/images/2014/ccs_6.png)
 
 DefinitionSection sınıfı;
 
@@ -159,7 +157,7 @@ namespace HowTo_WritingCustomConfigSection
 
 DefinitionSection sınıfı aslında bir alt elementtir ve bu sebepten ConfigurationElement sınıfından türetilmiştir. Save operasyonuna cevap verebilmesi için IsReadOnly özelliği ezilmiştir. Name özelliğinde ConfigurationProperty dışında StringValidator niteliği de kullanılmış ve kullanılması istenmeyen bir karakter seti belirtilmiştir.
 
-Web.config Bildirimleri
+## Web.config Bildirimleri
 
 Artık konfigurasyon dosyası içerisinde kullanacağımız serviceConnection section için gerekli tip desteğine sahip bulunmaktayız. Peki web.config dosyası içerisinde bu bildirimleri nasıl gerçekleştirebiliriz?
 
@@ -192,15 +190,15 @@ Bazen 3ncü parti araçları sisteme dahil ettiğimizde, konfigurasyon dosyası 
 </configuration>
 ```
 
-Kural son derece basittir. serviceConnectionGroup, serviceConnection ve definition elementlerinin kullanılabilmesi için bir sectionGroup tanımlaması yapılması yeterlidir. Bu tanımlama içerisinde ki type kısmı ise ConfigurationSection veya ConfigurationSectionGroup türevli tipi işaret etmektedir.
+Kural son derece basittir. serviceConnectionGroup, serviceConnection ve definition elementlerinin kullanılabilmesi için bir sectionGroup tanımlaması yapılması yeterli olacaktır. Bu tanımlama içerisinde ki type kısmı ise ConfigurationSection veya ConfigurationSectionGroup türevli tipi işaret etmektedir.
 
-Test Uygulaması
+## Test Uygulaması
 
 Şimdi dilerseniz basit bir aspx sayfası hazırlayıp section içeriğini ekrana bastıralım ve hatta üzerinde değişiklik yapıp web.config dosyasına kayıt edelim. Senaryonun bu kısmını gerçekleştirmek için aşağıdaki basit aspx sayfasını tasarlayabiliriz.
 
 ![ccs_4](/assets/images/2014/ccs_4.png)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HowTo_WritingCustomConfigSection.Default" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"> 
@@ -301,7 +299,7 @@ namespace HowTo_WritingCustomConfigSection
 
 serviceSection elementinin managed karşılığını elde edebilmek için Configuration veya ConfigurationManager tipinin GetSection metodundan yararlanılmaktadır. Söz konusu metodun dönüşü ServiceConnectionSection tipine dönüştürüldükten sonra ise Type ve Definition gibi özelliklere erişilebilinir. Hatta Definition özelliği üzerinden Name ve WsdlAddress değerleri de yakalanabilir. Pek tabi Save işleminin gerçekleştirilebilmesi için WebConfigurationManager ile açılan web.config dosyasını işaret eden manager isimli Configuration tipinden yararlanılmaktadır.
 
-Çalışma Zamanı Sonuçları
+## Çalışma Zamanı Sonuçları
 
 Artık çalışma zamanına geçebilir ve sonuçları irdeleyebiliriz. Uygulamayı ilk olarak başlattığımızda PageLaod içerisindeki kodlar devreye girecektir.
 

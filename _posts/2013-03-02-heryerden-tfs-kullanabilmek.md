@@ -24,9 +24,7 @@ Dolayısıyla çeşitli ve pek çoğu standart hale gelen cihazlar ile USB çık
 
 Bazen kullandığımız yazılım ürünlerinin de bu tip kolay takılabilir ve entegre olabilir şekilde üretilmelerini bekleriz. Örneğin TFS’ in sadece Visual Studio, MS Office, Sharepoint vb ürünler ile değil başka başka ürünler ile de çalışmasını isteriz.
 
-Microsoft’ un ALM (Application Lifecycle Management) tarafındaki en önemli aracı bilindiği üzere Team Foundation Server ürünüdür. Genellikle Microsoft’ un yazılım geliştirme ürünleri ile haşırneşir olan firmalar TFS’ i ve uygun bir süreç geliştirme metodolojisini seçerek yaşamlarına devam ederler. Bu tip firmalar için karşılaşılabilecek sorunlar daha çok ALM’ in layıkıyla uygulanamayışıdır ki bu aslında hepimizin en büyük sorunudur ve tool’ dan bağımsız bir konudur. Yine de TFS kullanımı ile ilişkili olarak çok daha büyük bir sıkıntı vardır. Entegrasyon
-
-![Thinking smile](/assets/images/2013/wlEmoticon-thinkingsmile_5.png)
+Microsoft’ un ALM (Application Lifecycle Management) tarafındaki en önemli aracı bilindiği üzere Team Foundation Server ürünüdür. Genellikle Microsoft’ un yazılım geliştirme ürünleri ile haşırneşir olan firmalar TFS’ i ve uygun bir süreç geliştirme metodolojisini seçerek yaşamlarına devam ederler. Bu tip firmalar için karşılaşılabilecek sorunlar daha çok ALM’ in layıkıyla uygulanamayışıdır ki bu aslında hepimizin en büyük sorunudur ve tool’ dan bağımsız bir konudur. Yine de TFS kullanımı ile ilişkili olarak çok daha büyük bir sıkıntı vardır. Entegrasyon...
 
 Özellikle Enterprise çözümler üretmeye çalışan, bünyesinde 100lerce proje barındırabilen, zaman zaman hantallaşan firmaların, duruma göre tercih ettikleri pek çok geliştirme aracı/ortamı söz konusudur. Bazı firmalarda, Oracle’ cıları, Java’ cıları, Linux üzerinde C kodları yazanları, yeni nesil uygulamaları.Net ile geliştirenleri sıklıkla görebilirsiniz.
 

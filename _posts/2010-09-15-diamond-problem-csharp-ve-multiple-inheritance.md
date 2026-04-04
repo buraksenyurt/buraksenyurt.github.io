@@ -16,9 +16,7 @@ Yandaki resimde mükemmel ölçülerde bir elmas taşını görmektesiniz. Sanı
 
 Elbette bizim bu günkü konumuzun elmaslar ve üzerinde dönen dolaplar ile pek bir alakası bulunmamaktadır. Aslında bu günkü yazımızda C# programlama dilinde yasaklanmış olan ama örneğin C++ ile ele alabileceğiniz çoklu kalıtım (Multiple Inheritance) konusuna farklı bir açıdan bakmaya çalışıyor olacağız.
 
-Esasında C# programlama dili ile ilişkili kaynaklara baktığımızda, kalıtım ile ilişkili temel kurallardan birisi n sayıda sınıf kullanılarak çoklu kalıtımın yasaklanmış olduğudur. Ancak bunun sebebi veya nedenleri hakkında elle tutulur çok fazla bilgi bulunmaz. Bulunue ama pek anlaşılmaz
-
-![Undecided](/assets/images/2010/smiley-undecided.gif)
+Esasında C# programlama dili ile ilişkili kaynaklara baktığımızda, kalıtım ile ilişkili temel kurallardan birisi n sayıda sınıf kullanılarak çoklu kalıtımın yasaklanmış olduğudur. Ancak bunun sebebi veya nedenleri hakkında elle tutulur çok fazla bilgi bulunmaz. Bulunue ama pek anlaşılmaz.
 
 Bu nedenle durumu buna izin veren bir dil ile değerlendirmekte yarar vardır. Olaya C++ tarafından baktığımızda, Diamond Problem adı verilen bir sorunsalın, böyle bir yasağa neden olduğunu da ifade edebiliriz. Peki Diamond Problemi nedir? Dilerseniz öncelikle bu vakayı ele almaya çalışarak işe başlayalım. Bu amaçla basit bir Win32 Console Application projesi geliştiriyor olacağız. Söz konusu proje C++ ile geliştirilmiş olup aşağıdaki kod içeriğine sahiptir.
 

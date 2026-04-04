@@ -12,8 +12,6 @@ Bir kaç yıl öncesine kadar Bizitek firmasına Junior Developer olarak görev 
 
 ![blg165_Giris.jpg](/assets/images/2010/blg165_Giris.jpg)
 
-![Undecided](/assets/images/2010/smiley-undecided.gif)
-
 Dolayısıyla bazı durumlarda en tepeden aşağıya doğru inen ve bağlı liste (Linked List) benzeri bir oluşumun sağlanması zorlaşmaktaydı. Her neyse...Eminim bu sorunlar çoktan aşılmıştır. Ancak bir önceki cümlede yer alan bağlı liste tarzı yapıların başında dolaşan bir kara bulut daha mevcuttur. Sorunun kaynağında paralel programlama amacıyla.Net ortamına kazandırılan Parallel.ForEach döngüsü yer almaktadır. Dilerseniz öncelikle sorunu masaya yatıralım. Bu amaçla aşağıdaki kod içeriğine sahip Employee isimli basit bir sınıfımız olduğunu düşünelim.
 
 ```csharp

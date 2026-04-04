@@ -13,11 +13,9 @@ categories:
 
 ![terzi](/assets/images/2011/terzi.gif)
 
-Örneğin şu an kullanmakta olduğum BlogEngine sürümünde, sisteme monte edilmiş bir Captcha kontrolü veya modülü bulunmamakta (Biliyorum son sürüme geçmeliydim ![Üzgün gülümseme](/assets/images/2011/wlEmoticon-sadsmile_6.png)). Bu nedenle özellikle yorum kısımlarında dünyanın çeşitli bölgelerindeki robot programlarının tacizlerine fazlasıyla maruz kalmaktayım. Anlamsız pek çok bilgiden oluşan spam yorumlar söz konusu.
+Örneğin şu an kullanmakta olduğum BlogEngine sürümünde, sisteme monte edilmiş bir Captcha kontrolü veya modülü bulunmamakta (Biliyorum son sürüme geçmeliydim). Bu nedenle özellikle yorum kısımlarında dünyanın çeşitli bölgelerindeki robot programlarının tacizlerine fazlasıyla maruz kalmaktayım. Anlamsız pek çok bilgiden oluşan spam yorumlar söz konusu.
 
 E tabi diyebilirsiniz ki, "Ya Hocam sen de amma yaptın...Eklesene şu Captcha kontrolünü bloğa...Hayret bişi"
-
-![Açık ağızlı gülümseme](/assets/images/2011/wlEmoticon-openmouthedsmile_14.png)
 
 E ama ne demişler bilirsiniz... Terzi kendi söküğünü dikemezmiş (Aslında ben söküğümü nedense dikmek istemiyorum sanırım. Üşengeçlik bu olsa gerek)
 
@@ -204,13 +202,7 @@ public partial class _Default : System.Web.UI.Page
 } 
 ```
 
-Artık uygulamamızı test edebiliriz ne dersiniz. Hatta edebilirsiniz
-
-![Gülümseme](/assets/images/2011/wlEmoticon-smile_14.png)
-
-Örneğin ben Captcha içeriğini doğru girdikten sonra aşağıdaki çıktıyı elde ettim. Tabi burada post işleminden sonra yeni bir Captcha değeri üretildiğini unutmayalım. Bu yüzden TextBox kontrol içeriği ile şu anki Capctha içeriği farklı görünüyor. En iyisi siz uygulamayı bir çalıştırında ne demek istediğimi kendiniz görün
-
-![Göz kırpan gülümseme](/assets/images/2011/wlEmoticon-winkingsmile_65.png)
+Artık uygulamamızı test edebiliriz ne dersiniz. Hatta edebilirsiniz. Örneğin ben Captcha içeriğini doğru girdikten sonra aşağıdaki çıktıyı elde ettim. Tabi burada post işleminden sonra yeni bir Captcha değeri üretildiğini unutmayalım. Bu yüzden TextBox kontrol içeriği ile şu anki Capctha içeriği farklı görünüyor. En iyisi siz uygulamayı bir çalıştırında ne demek istediğimi kendiniz görün
 
 ![bei_2](/assets/images/2011/bei_2.gif)
 

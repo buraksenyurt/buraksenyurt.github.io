@@ -44,11 +44,7 @@ RavenDB ile ilişkili bir ürün tanıtımı ve kuzgun’ ların kanat açıklı
 
 Öncelikli olarak RavenDB’ yi kurmamız gerekiyor. Yazıyı yazdığım günlerde [bunun için şu adrese bir uğramanız](http://ravendb.net/) gerekmekteydi. Bilgilerden de anlaşılacağı üzere ürünü, NuGet paket yönetim aracı yardımıyla tedarik edebilirsiniz de.
 
-> NoSQL tipindeki veritabanı ürünlerinin bir diğer avantajıda kurulumlarının son derece kolay olmasıdır. Özellikle SQL, Oracle gibi ürünlerin kurulumları düşünüldüğünde
-
-> ![Disappointed smile](/assets/images/2013/wlEmoticon-disappointedsmile_2.png)
-
-> Pek çok NoSQL ürünü açık kaynak olarak indirilebilir ve doğrudan çalıştırılıp kullanılabilir. Bir install işleminden sürecinden geçilmesine çoğu zaman gerek duyulmamaktadır.
+> NoSQL tipindeki veritabanı ürünlerinin bir diğer avantajıda kurulumlarının son derece kolay olmasıdır. Özellikle SQL, Oracle gibi ürünlerin kurulumları düşünüldüğünde. Pek çok NoSQL ürünü açık kaynak olarak indirilebilir ve doğrudan çalıştırılıp kullanılabilir. Bir install işleminden sürecinden geçilmesine çoğu zaman gerek duyulmamaktadır.
 
 Başlatma
 
@@ -58,7 +54,7 @@ RavenDB içeriğini indirdikten sonra, Server klasörü altında yer alan Raven.
 
 İşin güzel yanı, ürünün bir de web arayüzünün bulunmasıdır. Eğer makinenizde 8080 port’ u üzerinden yayın yapan bir başka uygulama var ise (ki benim sistemimde vardı) RavenDB, 8081 numaralı port üzerinden hizmet vermeye çalışacaktır (Eğer 8081 de doluysa tahminlerime göre bir sonraki boş portu bulana kadar deneyecektir)
 
-Buna göre http://localhost:8081/ adresine gidildiğinde http://localhost:8081/raven/studio.html adresine yönlendirilip, web arayüzüne ulaşıldığı gözlemlenecektir.
+Buna göre `http://localhost:8081/` adresine gidildiğinde `http://localhost:8081/raven/studio.html` adresine yönlendirilip, web arayüzüne ulaşıldığı gözlemlenecektir.
 
 ![rvndb_2](/assets/images/2013/rvndb_2.png)
 
@@ -91,7 +87,7 @@ Referans işlemlerinin ardından, istemcinin hangi sunucuya bağlanacağını da
 
 Çok doğal olarak ilk kuruluma göre RavenDB, localhost’ daki 8081 (benim makinem de böyle varsayılan olarak 8080 portu) portu üzerinden yayın yapmaktadır.
 
-İlk Kodlar
+## İlk Kodlar
 
 Aşağıdaki örnek kodları geliştirdiğimizi düşünelim.
 
@@ -244,7 +240,7 @@ DocumentStore örneklenirken ConnectionStringName özelliğine app.config dosyas
 
 Veri çekme işlemlerinden de dikkat edileceği üzere LINQ metodlarından yararlanılmaktadır. Sorgulamalar için başlangıç noktası Query metodudur. Bunun dışında bir veriyi Key değeri üzerinden elde etmek istersek (ki Product sınıfındaki string türünden Id özelliği bunun için eklenmiştir) Load metodundan yararlanılabilinir. Veri ekleme için Store, silme işlemi içinse Delete fonksiyonları kullanılmıştır. Elbette yapılan tüm veri ekleme, silme ve güncelleştirme işlemlerinin, döküman içerisine yazılması SaveChanges metoduna yapılacak çağrı ile mümkün olmaktadır.
 
-Uygulamayı çalıştırdığımzda, 3 adet Product örneğinin eklendiğini, bir tanesinin güncelleştirildiğini ve bir diğerinin de silindiğini analiz edebiliriz. Ayrıca tüm bu işlemler Web arayüzü üzerinden de anlık olarak takip edilebilirler. Örneği çalıştırdıktan sonra http://localhost:8081/raven/studio.html adresine gidersek aşağıdaki ekran görüntüsü ile karşılaşırız.
+Uygulamayı çalıştırdığımzda, 3 adet Product örneğinin eklendiğini, bir tanesinin güncelleştirildiğini ve bir diğerinin de silindiğini analiz edebiliriz. Ayrıca tüm bu işlemler Web arayüzü üzerinden de anlık olarak takip edilebilirler. Örneği çalıştırdıktan sonra `http://localhost:8081/raven/studio.html` adresine gidersek aşağıdaki ekran görüntüsü ile karşılaşırız.
 
 ![rvndb_5](/assets/images/2013/rvndb_5.png)
 
@@ -272,15 +268,15 @@ Diğer yandan uygulama çalıştırılmadan önce, çalıştığı süre zarfı 
 
 Dikkat edileceği üzere çeşitli HTTP metodları söz konusu olmuştur. Veri çekme işlemlerinde GET, ekleme işlemlerinde POST ve silme işlemlerinde de DELETE metodlarına ilişkin talepler (Request) oluşmuştur.
 
-Bu arada 960 numaralı talebi dilerseniz URL den manuel olarak girmeyi deneyebilirsiniz. http://localhost:8081/docs/1 şeklinde bir talep gönderdiğimizde, indeks değeri 1 olan içeriğin JSON formatlı çıktısına ulaşırız.
+Bu arada 960 numaralı talebi dilerseniz URL den manuel olarak girmeyi deneyebilirsiniz. `http://localhost:8081/docs/1` şeklinde bir talep gönderdiğimizde, indeks değeri 1 olan içeriğin JSON formatlı çıktısına ulaşırız.
 
+```json
 {"ProductNumber":"E1-1001","Title":"LG-Optical Mouse","ListPrice":34.5,"StockLevel":45}
+```
 
 Bu çok doğal olarak RavenDB’ nin RESTful servis desteği sunmasından kaynaklanmaktadır.
 
-Görüldüğü üzere RavenDB’ yi kullanmak oldukça basittir. Özellikle.Net geliştiricilerin aşina olduğu teknikler söz konusudur (LINQ metodlarının kullanılması gibi). Üstelik doğrudan POCO (Plain Old Clr Object) tipleri ile çalışılabilinir. Dolayısıyla kullanışlı bir NoSQL ürünü olduğunu ifade edebiliriz
-
-![Open-mouthed smile](/assets/images/2013/wlEmoticon-openmouthedsmile_39.png)
+Görüldüğü üzere RavenDB’ yi kullanmak oldukça basittir. Özellikle.Net geliştiricilerin aşina olduğu teknikler söz konusudur (LINQ metodlarının kullanılması gibi). Üstelik doğrudan POCO (Plain Old Clr Object) tipleri ile çalışılabilinir. Dolayısıyla kullanışlı bir NoSQL ürünü olduğunu ifade edebiliriz.
 
 Size tavsiyem söz konusu örnekte yer alan kodlardan yola çıkarak, örneği Web/Windows platformuna taşımanız olacaktır. Hatta hali hazırda kullanmakta olduğunuz minik ve veritabanı odaklı çalışan bir uygulamanız var ise, bunu RavenDB ile çalışacak şekilde yeniden kurgulamayı deneyebilirsiniz. Farklı NoSQL veritabanlarını inceledikçe kullanımlarını sizlerle paylaşmaya çalışıyor olacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

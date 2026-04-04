@@ -198,8 +198,6 @@ Dikkat edileceği üzere beforefieldinit takısı görülmemektedir. İşte şim
 
 O da ne? DoSomething sonrası yine product alanının initialize edildiği görülmektedir.
 
-![Cry](/assets/images/2010/smiley-cry.gif)
-
 Tam bir hüsran diyebilir miyiz? Aslında olayı iyi tarafından ele alabiliriz. Şöyleki; sınıf içerisinde yer alan static alanlar, sınıfın başka bir static üyesi (metod, özellik) çağırıldığı takdirde otomatik olarak zaten initialize edilmektedir. Demek ki kalıbımızın uygulanış biçimi çok doğru değildir. Üstelik Thread Safe bir yaklaşım içermediği de gün gibi ortadadır. O halde ProductCreator tipimizi aşağıdaki gibi değiştirerek ilerlemeye devam edelim.
 
 ```csharp
@@ -264,8 +262,6 @@ namespace LazyPart2
 
 Bu sefer ThreadSafe olan (Double Check yapıldığına dikkat edelim) ve gerçekten Products özelliği çağırıldığında initialize işlemini gerçekleştiren bir tip elde etmiş olduk. Her ne kadar DoSomething metodunu çağrısı sonrası çalışma zamanı products ve lockObject alanlarını oluşturacak olsa da, bizim için önemli olan ürün listesinin Lazy olarak başlatılmasıdır. Sanıyorum ki biraz daha elle tutulur bir sonuca vardık. Hatta bu kod parçasına göre en basit tasarım kalıbının (Design Pattern) uygulandığı ip ucunu verebiliriz. Ama daha iyisi olabilir mi? Söz gelimi içinde hiç bir iş yapılmayan bir static metodumuz var. Bu olmasa. Sınıfımızda static tanımlanmak zorunda değil aslında. Aslında işi yine.Net tarafına yıkabiliriz. Aslında ben Lazy tipini kullanmak istiyorum diye haykırabiliriz
 
-![Yell](/assets/images/2010/smiley-yell.gif)
-
 İşte haykırıyorum. Aşağıdaki kodu göz önüne alalım.
 
 ```csharp
@@ -325,3 +321,4 @@ Bu sefer products isimli değişken Lazy> tipinden tanımlanmıştır. Diğer ya
 Vuuvvv!!! Baya bir karışık oldu yauv. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [LazyPart2.rar (21,80 kb)](/assets/files/2010/LazyPart2.rar) [Örnek Visual Studio 2010 Ultimate üzerinde geliştirilmiş ve test edilmiştir]
+

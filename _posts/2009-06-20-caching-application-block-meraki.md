@@ -12,8 +12,6 @@ Az önce 1966 yılında çevrilmiş olan ve küçüklüğümde bol bol izlediği
 
 ![blg34_1.jpg](/assets/images/2009/blg34_1.jpg)
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Sadece off-topic bir giriş yapmak istedim.
 
 Bu yazımda sizlere bahsetmek istediğim konu bir süredir boş vakitlerimde araştırıp incelediğim Caching Application Block yapısıdır. Açık kaynak olarak sunulan [Enterprise Library](http://www.microsoft.com/Downloads/details.aspx?familyid=1643758B-2986-47F7-B529-3E41584B6CE5&displaylang=en)ürün ailesinin bir parçası olan bu bloğu, uygulamalarımızda performansı arttırmak adına ele alabiliriz. Bilindiği üzere günümüz uygulamalarında sıklıkla tekrar eden pek çok kıstas (Concern) bulunmaktadır. Örneğin hata yönetimi (Error Handling), loglama (Logging), şifreleme işlemleri (Cryptography), güvenlik (Security), doğrulama (Validation) veya veri erişim işlemleri (Data Access) bu kıstaslara örnek olarak gösterilebilir. Haliyle bu kavramlar çoğunlukla uygulamadan bağımsız olmaktadır. Nitekim uygulama çeşidi değişse bile, bu kıstasların bir kısmını veya tamamını kullanmak zorunda kalabiliriz.
@@ -183,8 +181,6 @@ Nihayetinde ön hazırlıklarımız tamamlanmıştır. Artık servis tarafında 
 
 Böylece kod içerisinde, Caching Application Block ile ilişkili yönetimli kodlar ele alabileceğiz. Caching Application Block, ön belleğe alma işlemlerinde varsayılan olarak kullanıldığı host uygulamanın çalıştığı sistem belleğini ele almaktadır. Ancak istenirse saklama işlemleri için farklı bir kaynağın (örneğin fiziki disk) kullanılması sağlanabilir. Bunula birlikte, ön bellekte tutulacak maksimum eleman sayısınıda belirleyebiliriz. İyi ama bu ayarları nerede yapacağız?
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Tahmin edeceğiniz üzere host uygulamanın konfigurasyon dosyası içerisinde. Neyseki Enterprise Library kurulumlarından sonra, Visual Studio 2008 için görsel bir arabirim gelmektedir. Böylece gerekli ayarları kolayca yapabiliriz.
 
 İlk etapta servis uygulamasındaki web.config dosyasını Edit Enterprise Library Configuration ile açalım. (İstenirse tüm ayarlamalar konfigurasyon dosyası içerisinden ellede yapılabilir.)
@@ -244,8 +240,6 @@ public byte[] GetPhoto(int productId)
 ```
 
 Peki sistem nasıl çalışmaktadır?
-
-![Undecided](/assets/images/2009/smiley-undecided.gif)
 
 İstemci bir ürün resmi talep ettiğinde, kod parçasına göre öncelikle ön bellekte olup olmadığına bakılır. Eğer ön bellekte değilse Add metodu yardımıyla ön belleğe ekleme işlemi yapılır. Eğer nesne ön bellekte ise, indeksleyiciden yararlanılarak resmin byte[] dizisine cast edilerek elde edilmesi sağlanır. Burada önemli olan noktalardan biriside şudur; servise ait host uygulama açık olduğu sürece productId bazlı resimler ön bellekte saklanmaya ve korunmaya devam edecektir. Ancak host uygulamanın kapatılması durumunda, ön bellek koleksiyonuda otomatik olarak temizlenmektedir. Diğer yandan ön bellekte tutulan nesnelerin tamamını bilinçli bir şekilde temizlemek istersek, ICacheManager referansı üzerinden Flush metodunun çağırılması yeterli olacaktır. Yazımı sonlandırmadan önce son olarak şu noktayada değinmek isterim; senaryomuzda Caching bloğunu sunucu tarafındaki servis uygulaması için ele almış bulunmaktayız.
 

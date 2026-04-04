@@ -176,8 +176,6 @@ Grafiksel işlemlere ait sorumluluklar farklı bir sınıfa, bilimsel hesaplamal
 
 Görüldüğü gibi ilke son derece basit ama bazen tespit edilmesi, görülmesi ve hatta uygulanması kolay olmayabilir.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Söz gelimi bu yazıdaki örneklerde farklı Assembly'lar yer almaktadır. Star sınıfı üzerindeki sorumlulukları farklı sınıflara dağıtmış olsak bile, Console ve Windows uygulamalarının her ikiside aynı kütüphaneyi referans etmekte ve her iki Star tipinede (dolayısıyla her iki sorumluluğada) erişebilmektedir. Belkide sadece sorumlulukları dahilindeki tiplere erişmeleri için bir takım önlemler alınması gerekebilir. Nitekim bu durumda, gereksiz tiplerinde taşınması söz konusudur ki buda ürünün çevikliğini negatif etkileyebilir. İşte hepimize kafa karıştırıcı olduğu kadar gerekli olan bir tartışma konusu. Yorumlarınız, tüm okurlarımız için değerli olacaktır.
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda basit bir şekilde Single Responsibility prensibini incelemeye çalıştık. Örnek tam olarak faydalı olmasada, bir sınıfın tek bir sorumluluğa sahip olması gerekliliğinin Single Responsibility prensibinin kendisi olduğunu anlamış bulunuyoruz.

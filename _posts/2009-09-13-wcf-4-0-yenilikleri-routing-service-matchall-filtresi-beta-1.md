@@ -17,8 +17,6 @@ Bu kısıtlamaya göre sadece One-Way veya Duplex modeldeki iletişim (Communica
 
 Öyleyse vakit kaybetmeden basit bir örnek üzerinden ilerlemeye ne dersiniz. Ben yazıyı gecenin geç bir vaktinde yazdığım için yanımda bir adet sıcak kahveyi bulundurmayı ihmal etmedim.
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Örnek senaryomuzda aynı servis sözleşmesini (Service Contract) implemente eden 3 farklı alt servisimiz bulunmaktadır. Router Service, istemciden gelen talebi alıp ne olduğu ile ilgilenmeden doğrudan bu 3 servise aktarma işlemini üstlenmektedir. Dolayısıyla ispat etmemiz gereken noktalardan birisi, istemciden gelen talebin sonrasında operasyonun 3 servis üzerinde de çalışıyor olmasıdır. OneWay veya Duplex kısıtlamasından dolayı biz örneğimizde OneWay olarak imzalanmış basit bir servis operasyonu kullanıyor olacağız. Öncelikle örneğimize ait mimari modelimize bir göz atalım.
 
 ![blg75_Architecture.gif](/assets/images/2009/blg75_Architecture.gif)

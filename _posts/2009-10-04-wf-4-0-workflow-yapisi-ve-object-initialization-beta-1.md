@@ -15,8 +15,6 @@ Nitekim metodun kendi içerisinde çağırdığı ardışıl fonksiyonlar, yukar
 
 Burada ilginç olan noktalardan birisi, Workflow'ları sadece tek bir ifade içerisinde oluşturabilmemizdir.
 
-![Surprised](/assets/images/2009/smiley-surprised.gif)
-
 Bunun için nesne başlatıcılarından (Object Initializers) yararlanılmaktadır. Nasıl mı? Gelin Visual Studio 2010 Beta 1 üzerinde basit bir Console Application oluşturup Program.cs içeriğini aşağıdaki gibi oluşturduğumuz düşünelim.
 
 > Not: Console uygulaması üzerinde Workflow aktivitileri kullanılacağından, projeye System.Activities.dll Assembly'ının referans edilmesi gerekmektedir.

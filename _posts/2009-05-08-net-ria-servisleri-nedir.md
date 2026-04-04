@@ -20,8 +20,6 @@ En nihayetinde, Silverlight sayesinde istemci tarafında çok zengin içeriklere
 
 Özellikle Silverlight 3.0 ve.Net RIA Service çıkana kadar, geliştiricilerin sunucu verilerine erişmesi için biraz daha fazla kodlama yapması gerekmektedir. Aslında olaya sadece Silverlight değil, Asp.Net Ajax gibi istemciler açısından bakıldığında da, benzer kodlama süreçleri söz konusudur. Bu tip RIA uygulamalarını, n-tier tarzı mimariler ile geliştirmek istediğimizden, aslında sunum (Presentation) katmanının standart Asp.Net modelinden farklı olarak, tamamen istemci tarafına yıkıldığı oldukça önemli bir noktadır. Sanıyorum burada biraz kafaları karıştırdım.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Gelin olayı standart n-tier modelin Asp.Net uygulamalarındaki genel kullanımı ile analiz etmeye başlayalım. Aşağıdaki şekilde bu model vurgulanmaya çalışılmaktadır.
 
 ![blg14_1.gif](/assets/images/2009/blg14_1.gif)

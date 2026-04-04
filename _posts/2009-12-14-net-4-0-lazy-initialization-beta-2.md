@@ -95,8 +95,6 @@ namespace BeLazy
 
 Volaaaa!!!
 
-![Cool](/assets/images/2009/smiley-cool.gif)
-
 Görüldüğü üzere Value özelliği çağırılana kadar IsValueCreated özelliği false değer döndürmektedir. Bir başka deyişle söz konusu nesne henüz oluşturulmamıştır. Ancak Value özelliğinin kullanılması ile birlikte bir Scene nesnesinin örneklendiği görülmektedir. Burada dikkat edilmesi gereken noktalardan biriside Value özelliğinin Readonly olmasıdır. Bir başka deyişle Value özelliği ile elde edilen bir nesne referansına yeni bir atama gerçekleştirilemez.
 
 ![blg96_ReadOnlyError.gif](/assets/images/2009/blg96_ReadOnlyError.gif)

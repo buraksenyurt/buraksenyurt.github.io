@@ -16,8 +16,6 @@ Asenkron işlemler istemci tarafında uygulanır. Hazır olan temsilci (delegate
 
 Benim bu yazıda ele alacağım istemci tarafındaki asenkron işlemlerdir. Bir önceki yazımızda geliştirdiğimiz Windows uygulamasında bu amaçla yeni düzenlemeler yapılacaktır. Hazırlıklı olmamız gereken konuların başında, delegate kavramı ve asenkron Callback modeli gelmektedir. Ama sonrasıda buna event based asenkron modeli ve lambda operatörünüde katıyor olacağız. Arada ise bize bonus bir konu çıkacak. Tedbir almassak kaçınılmaz olan Illegal Cross Thread Operations
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 İlk olarak Form arkası kodlarımızı aşağıdaki gibi geliştirdiğimizi düşünelim.
 
 ```csharp

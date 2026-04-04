@@ -63,11 +63,7 @@ enginarpaketen
 
 ![ko_6.png](/assets/images/2013/ko_6.png)
 
-Herşey iyi güzel. Kafamızda kelimeleri bir şekilde birbirlerine bağladık. Peki ama bunun kodlamasını nasıl yapacağız?
-
-![Undecided](/assets/images/2013/smiley-undecided.gif)
-
-Sonuçta en önemli nokta aslında bu sıkıştırma şeklini bir şekilde kod tarafında üretebilmemizdir. İşe ufak bebek adımları ile başlamakta yarar var. Örneğin çok temel bir genişletme metodu (Extension Method) ile iki string'i ağırlık derecesine göre uygun bir biçimde birleştirmeyi düşünelim. İşte kod parçamız.
+Herşey iyi güzel. Kafamızda kelimeleri bir şekilde birbirlerine bağladık. Peki ama bunun kodlamasını nasıl yapacağız? Sonuçta en önemli nokta aslında bu sıkıştırma şeklini bir şekilde kod tarafında üretebilmemizdir. İşe ufak bebek adımları ile başlamakta yarar var. Örneğin çok temel bir genişletme metodu (Extension Method) ile iki string'i ağırlık derecesine göre uygun bir biçimde birleştirmeyi düşünelim. İşte kod parçamız.
 
 ```csharp
 using System;
@@ -351,11 +347,12 @@ Uygulama kodunu kavrayabilmek adına Debug ederek adım adım ilerlemenizi öner
 
 Başarılı bir birleştirme işlemi yapılmış gibi görünüyor değil mi? Aslında biraz daha dikkat edersek, hiç bir kelime ile ortak notkası olmayan DEMİR sözcüğünün en sona veya en başa alınmasının daha doğru olduğunu görebiliriz. Çünkü bu durumda
 
+```text
 EngiNarPAketENDEMİR veya DEMİREngiNarPAKetEN
+```
 
 sonuçlarını elde edebiliriz. Yani PA hecesinin teke indirgenmesi söz konusudur. Dolayısıyla kodun gözden geçirilmesi, algoritmanın temizlenerek en uygun sonucun elde edilmesi için gerekli müdahalelerin yapılması gerekmekte. Burada iş biraz da sizlere düşüyor. Her ne kadar mükemmel şekilde çalışan bir algoritma olmasa da, kendi adıma kelime sıkıştırma konusunda epey bir fikir verdiğini, en azından kağıt üzerinde kelimeler arası ilişkilerin bulunması noktasında nasıl hareket edilebileceğini hem kendi adıma hem de değerli okurlarım adına anlamış bulunmaktayım. Tabi önmeli bir eksiğimiz daha var. Sıkıştırılan metni nasıl geri çözümleyeceğimiz. Buna bir çözüm getirebilir misiniz?
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EnKisaCumle.zip (59,15 kb)](/assets/files/2013/EnKisaCumle.zip)
-

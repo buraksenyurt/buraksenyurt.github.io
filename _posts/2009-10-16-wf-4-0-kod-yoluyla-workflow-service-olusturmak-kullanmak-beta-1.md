@@ -16,13 +16,9 @@ Hangi açıdan bakarsak bakalım bizde hayatımızda zaman zaman böyle mücadel
 
 Örneğin her zaman elimizin altında Visual Studio IDE'sinin sunduğu gibi gelişmiş arayüzler bulunmayabilir. Örneğin Visual Studio 2010 Beta 1 üzerinde yaşadığım sorunlardan birisi WPF tabanlı Designer'ı Workflow uygulamaları için kullanamıyor oluşumdu. Bu gerçekten çok üzücü bir durum.
 
-![Undecided](/assets/images/2009/smiley-undecided.gif)
-
 Ama çaresiz değiliz. Çaresizliğin çözümü bazı işlemleri basit bir Console uygulamasında, gereklilikleri fark ederek (örneğin hangi Assembly'ların referans edilmesinin gerektiğinin bilinmesi...), kod bazında yapmaktan ibarettir. Bunun bize sağlayacağı pek çok fayda bulunmaktadır.
 
 Kod tarafında her ne kadar mücadeleci bir yol izlesekte, neyin nasıl oluşturulması gerektiğini, hangi durumlarda ne gibi istisnalara (Exceptions) düşebileceğimizi, nelere ihtiyaç duyduğumuzu ve arka planda aslında işlemlerin nasıl değerlendirildiğini görmek açısından yararlı bir yoldur. Bu kadar cümleyi elbetteki sizi yazının kalanına motive etmek için sarfettiğimi düşünebilirsiniz.
-
-![Cool](/assets/images/2009/smiley-cool.gif)
 
 Haydi gelin kamera arkasına bakalım.
 
@@ -175,8 +171,6 @@ Exception 2 (ServiceContractName'lerin Receive aktivitesi ve Endpoint içerisind
 
 Gelelim istemci tarafına. Bu noktada kendimizi yine zora sokuyor olacağız.
 
-![Yell](/assets/images/2009/smiley-yell.gif)
-
 Elimizde servisin Publish edilen bir WSDL dökümanı olmadığını ve herhangibir şekilde Proxy üretimi için bir araç kullanmadığımızı farz edeceğiz. Bu durumda istemci tarafındaki proxy sınıfının ve hatta istemciden servis tarafına gönderilecek olan mesaj sözleşmesinin manuel kod ile oluşturulması gerekmektedir. Aynen aşağıda olduğu gibi;
 
 İstemci tarafı sınıf diagramı;
@@ -251,11 +245,7 @@ Biraz uğraştık ama faydalı bir çalışma oldu sanıyorum ki. Gerçi elde ed
 
 ![blg90_Runtime.gif](/assets/images/2009/blg90_Runtime.gif)
 
-Ne kadar muhteşem değil mi?
-
-![Tongue out](/assets/images/2009/smiley-tongue-out.gif)
-
-Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Ne kadar muhteşem değil mi? Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WithWCF.rar (42,98 kb)](/assets/files/2009/WithWCF.rar)
 
