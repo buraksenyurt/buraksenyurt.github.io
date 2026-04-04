@@ -2,8 +2,6 @@
 layout: post
 title: "Bu Sefer Bir React Uygulamasını Heroku Üzerine Alalım"
 date: 2019-10-04 13:00:00
-categories:
-  - Web Programlama
 tags:
   - react
   - node
@@ -17,6 +15,8 @@ tags:
   - express
   - nodemon
   - concurrently
+categories:
+  - Web Programlama
 ---
 Sir [Ken Robinson](http://sirkenrobinson.com/), çocukların hayal güçlerini sınırlayan eğitim sistemini eleştirdiği [TED'in en çok izlenen sunumu](https://www.ted.com/talks/ken_robinson_says_schools_kill_creativity?language=en)nda William Shakespeare ile ilgili güzel bir anektod paylaşır. Konuşmasının ilgili bölümünde profesör onun bir zamanlar yedi yaşında bir çocuk olduğunu dile getirir. Kısa bir an için duraksar ve ne diyeceğini merak eden seyirciye "...Shakespeare'i hiç çocuk olarak düşünmemiştiniz, değil mi?" der:)
 

@@ -2,11 +2,11 @@
 layout: post
 title: "Caching Mekanizmasını Anlamak - 1"
 date: 2005-01-21 08:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - caching
+categories:
+  - Web Programlama
 ---
 Bu makalemiz ile birlikte, web sayfalarının istemcilere daha hızlı bir şekilde ulaştırılmasında kullanılan tekniklerden birisi olan Caching (Ara Belleğe Alma) mekanizmasını incelemeye başlayacağız. Akıllıca kullanıldığı takdirde web uygulamalarında istemcilere nazaran göreceli olarak performans artışına neden olan Caching (Ara Belleğe Alma) mekanizması, teorik olarak bir web sayfasının tamamının ya da bir parçasının ara belleğe alınarak belli bir süre boyunca burada tutulması prensibini temel alarak çalışır. ASP.NET uygulamaları söz konusu olduğunda bir sayfanın tamamını, belli bir veri kümesini veya sayfa üzerindeki herhangi bir kontrolü ara belleğe alabiliriz. Buna göre ASP.NET uygulamalarındaki Caching (Ara Belleğe Alma) mekanizması aşağıdaki üç farklı tekniği destekler.
 

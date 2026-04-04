@@ -2,8 +2,6 @@
 layout: post
 title: "WorldBank, OData ve ASP.Net Web API HttpClient Kullanımı"
 date: 2012-05-14 06:30:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - asp.net-web-api
   - wcf-web-api
@@ -13,6 +11,8 @@ tags:
   - worldbank
   - xml
   - json
+categories:
+  - Web Programlama
 ---
 1999 yılında girdiğim yüksek lisans (MBA-Master of Business Administrator) programını tamamlarken, bitirme projemde “Türkiye’ nin Dünya Bankası borçlanmalarını” ele almaya çalışmıştım. Haliyle o dönemlerde ve geçmişte, ülkemizin Worldbank üzerinden yaptığı borçlanmalara ait istatistiki bilgilere oldukça fazla ihtiyacım vardı. O kütüphane bu kütüphane gezmek dışında, dünya bankası internet sitesinden yayınlanan istatistik bazlı raporları da değerlendirmeye alıyordum. Yaklaşık olarak 60 sayfalık bir döküman oluşturmayı başarmıştım. Sunumumu yaptım, vardığım sonuçları değerli hocalarım ile paylaştım
 

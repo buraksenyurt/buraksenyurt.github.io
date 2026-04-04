@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net 2.0 ve Toplu Güncelleme İşlemleri (Batch-Updates)"
 date: 2004-09-18 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - mars
   - multiple-active-result-sets
+categories:
+  - Framework Tabanlı Programlama
 ---
 Toplu güncelleştirme işlemleri, birden fazla SQL ifadesinin (insert, update, delete, select gibi) arka arkaya gelecek şekilde ancak tek bir seferde çalıştırılmasını baz alan bir tekniktir. ADO.NET 2.0 ile, toplu güncelleştirme işlemlerine daha fazla fonksiyonellik kazandırılmıştır. Bu koşul elbette ki toplu güncelleştirme işlemlerini destekleyen veritabanı sunucuları üzerinde geçerli olmaktadır. Şu an için, yönetimsel kodda yer alan Oracle ve SQL nesnelerinin desteklediği bu fonksiyonelliği kazanmak için aşağıda prototipi verilen ve SqlDataAdapter ya da OracleDataAdapter sınıflarına ait olan UpdateBatchSize özelliği kullanılmaktadır.
 

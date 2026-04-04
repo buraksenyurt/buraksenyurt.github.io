@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu 117 - LINQtoExcel ile Hello World"
 date: 2015-06-20 07:47:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query
   - excel
+categories:
+  - Foto İpucu
 ---
 Yine çok sıkıldığınız günlerden biri ve siz şöyle bir yarım saatlik kodlama uğraşı arıyorsunuz. Hani yeni birNuGet paketi denesem nasıl olur diyorsunuz belki de. Hatta azcık da zorlayıcı bir paket olsa, yükleyince hemen çalışmasa ama çok da vaktimi almasa derdindesiniz. Bir bakıyorsunuz karşınızda Excel dosyalarında LINQ (Language INtegrated Query) sorguları yazabilmenizi sağlayan [LINQtoExcel](http://nugetmusthaves.com/Package/LinqToExcel). Hemen örnek bir Exceldosyası oluşturuyorsunuz belki de.
 

@@ -2,14 +2,14 @@
 layout: post
 title: "Boxing (Kutulamak) ve Unboxing (Kutuyu Kaldırmak)"
 date: 2003-12-30 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ado.net
   - boxing
   - csharp
   - oop
   - .net
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde, Boxing ve Unboxing kavramlarını incelemeye çalışacağız. Boxing değer türü bir değişkeni, referans türü bir nesneye aktarmaktır. Unboxing işlemi ise bunun tam tersidir. Yani referans türü değişkenin işaret ettiği değeri tekrar, değer türü bir değişkene aktarmaktır. Bu tanımlarda karşımıza çıkan ve bilmemiz gereken en önemli noktalar, değer türü değişkenler ile referans türü nesnelerin bellekte tutuluş şekilleridir.
 

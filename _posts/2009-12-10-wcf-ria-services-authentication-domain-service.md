@@ -2,13 +2,13 @@
 layout: post
 title: "WCF RIA Services - Authentication Domain Service"
 date: 2009-12-10 04:40:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services
   - windows-communication-foundation
   - wcf-eco-system
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bazen insanın yapmak zorunda olduğu bazı şeyler gözünde büyür. Örneğin havalimanlarında kontrollerden geçerek uçağa ulaşmak o daracı rahatsız koltuklara sığmak için çabalamak. Önce ilk kapıda bir güvenlik kontrollünden geçilir, ardından Check-In işlemi için kimlikle birlikte bir kontrolden daha geçilir (hatta bagajımız var ise tartılır ve gerekiyorsa ekstra para ödenir), ardından uçağa bineceğimiz kapılara gitmek için bir kontrolden daha geçilir, ardından uçağa binerken bilet ve kimlik ile kontrolden bir kere daha geçilir.
 

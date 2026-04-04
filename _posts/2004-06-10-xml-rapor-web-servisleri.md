@@ -2,11 +2,11 @@
 layout: post
 title: "XML Rapor Web Servisleri"
 date: 2004-06-10 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - report-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde, Crystal Report'ların birer web servisi olarak nasıl yayınlanacaklarını ve istemciler tarafından kullanılacaklarını kısaca incelemeye çalışacağız. Hepimizin bildiği gibi web servislerinin günümüz teknolojilerine getirdiği en büyük yenilik, merkezileştirilmiş metodların, herhangi bir platformda yer alan sayısız istemci tarafından, hiçbir engele ya da kısıtlamaya takılmadan kolayca çağrılabilmeleri ve sonuçların aynı yollar ile kolayca, sorunsuz elde edilebilmeleridir. Öyle ki, web servislerinin XML tabanlı olarak, SOAP protokolünün belirlediği kriterlerde HTTP gibi basit iletişim protokolleri üzerinden anlaşmayı desteklemesi, onların esnek, genişleyebilir, kolay erişilebilir ve popüler olmalarını sağlamıştır.
 

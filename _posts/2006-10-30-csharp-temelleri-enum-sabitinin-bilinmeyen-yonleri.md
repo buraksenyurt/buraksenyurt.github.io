@@ -2,11 +2,11 @@
 layout: post
 title: "C# Temelleri : Enum Sabitinin Bilinmeyen Yönleri"
 date: 2006-10-30 02:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - enums
+categories:
+  - Programlama Dilleri
 ---
 Enum sabitleri geliştirici dostu tipler olarak düşünülebilir. Çoğu zaman uygulamalarımız içerisinde yer alan algoritmaların bazı durumlara göre farklı şekillerde hareket etmesi beklenir. Bu hareket serbestliğini sağlamanın kolay yollarından birisi, koşulların doğru şekilde tespitinden sonra, uygun bir biçimde ele alınabilmesidir. Bu amaçla sayısal değerler ile yapılan karşılaştırmalar son derece yerinde olmaktadır. Ancak algortima işleyişini değiştirmek için sayıları ele almak, eğer bu algoritmalar pek çok yerde kullanılacaksa çeşitli zorluklara neden olabilir. En azından hangi sayının ne anlama geldiğini yada o sayı için koşulun nasıl değiştirilmesi gerektiğini hatırlamak zor olabilir. Neyseki enum sabitleri sayesinde, bu tip sayıların anlamlı şekilde isimlendirilerek kullanılabilmesi sağlanmıştır.
 

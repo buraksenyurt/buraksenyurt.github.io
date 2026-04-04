@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - OOP"
 date: 2022-04-24 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -13,6 +11,8 @@ tags:
   - trait
   - inheritance
   - polymorphism
+categories:
+  - Programlama Dilleri
 ---
 Yılların.Net geliştiricisi olunca insan ki sanıyorum Java tarafından gelse de durum değişmeyecektir, ister istemez Rust, Go gibi dillerde nesne yönelimli dünyanın karşılıklarını arıyor. Ortak özellikleri toplayacağım üst tipler yok mu, peki ya bağımlılıkları soyutlamak için başvuracağım interface türevleri, bukalemun varlıklara ne demeli. Kısacası bir nesne yönelimli dilin öne çıkan en belirgin özellikleri encapsulation, Inheritance, Polymorphism gibi detaylara bakıyoruz.
 

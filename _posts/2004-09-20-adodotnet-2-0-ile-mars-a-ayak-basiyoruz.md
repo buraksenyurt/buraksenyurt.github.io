@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net 2.0 ile Mars' a Ayak Basıyoruz"
 date: 2004-09-20 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - asynchronous-programming
   - async
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, MARS (Multiple Active Results Sets) kavramını incelemeye çalışacağız. MARS kavramı ADO.NET 2.0 mimarisine monte edilmiş yeni bir yapıdır. Bu yapının bize sağladığı avantajları anlayabilmek için, ADO.NET 1.0/1.1 sürümlerinin kabiliyetlerine ve kısıtlamalarına kısaca bir göz atmak gerekmektedir.
 

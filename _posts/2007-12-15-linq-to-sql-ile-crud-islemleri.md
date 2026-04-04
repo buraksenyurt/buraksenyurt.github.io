@@ -2,11 +2,11 @@
 layout: post
 title: "LINQ to SQL ile CRUD İşlemleri"
 date: 2007-12-15 08:00:00
-categories:
-  - Veritabanı
 tags:
   - language-integrated-query
   - crud
+categories:
+  - Framework Tabanlı Programlama
 ---
 Language Integrated Query (LINQ) mimarisi özellikle programatik ortamlarda tasarlanan nesneler üzerinde, SQL cümlelerine benzer ifadeler ile sorgulamalar yapılmasına izin vermektedir. Çok doğal olarak veritabanı (database) tarafında yer alan tablo (Table), saklı yordam (Stored Procedure), görünüm (View), fonksiyon (Function) gibi unsurlarında programatik tarafta birer varlık (Entity) olarak ifade edilebilmesi, LINQ kurallarının SQL üzerindede gerçekleştirilebilmesini sağlamaktadır. Burada varlık katmanı (Entity Layer) olarakda düşünebileceğimiz yapı üzerinde yer alan nesneler, veritabanından çekilen sonuçları saklayabilmektedir. Bunun yanında programatik ortamdaki varlıklar üzerinde yeni varlık oluşturma, güncelleme, silme gibi operasyonlarda yapılabilmektedir. İşte bu makalemizde çoğunlukla CreateRetrieveUpdateDelete (CRUD) işlemleri olarak belirtilen bu operasyonları nasıl yapabileceğimizi, adım adım basit örnekler üzerinden incelemeye çalışıyor olacağız. (Bu makalede geliştirilmekte olan örnek kod parçaları Visual Studio 2008 RTM ortamında yazılmıştır.)
 

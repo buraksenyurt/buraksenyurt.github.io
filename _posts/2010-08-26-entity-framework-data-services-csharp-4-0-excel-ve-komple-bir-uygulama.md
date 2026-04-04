@@ -2,10 +2,6 @@
 layout: post
 title: "Entity Framework, Data Services, C# 4.0, Excel ve Komple Bir Uygulama"
 date: 2010-08-26 04:50:00
-categories:
-  - Programlama Dilleri
-  - Veritabanı
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-data-services
   - entity-framework
@@ -16,6 +12,8 @@ tags:
   - excel
   - office-interop
   - visual-studio
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bildiğiniz üzere bir süre önce Visual Studio 2010 ve.Net Framework ürünlerinin RTM sürümleri yayınlandı. Her iki ürünüde sizlerle birlikte, Microsoft PDC 2008 konferanslarından bu yana gerek yazılarımızla, gerek görsel derslerimizle incelemeye çalışıyoruz. Özellikle.Net Framework 4.0 açısından baktığımızda alet, edevat çantamızın dop dolu olduğunun eminimki hepimiz farkındayız.
 

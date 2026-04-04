@@ -2,14 +2,14 @@
 layout: post
 title: "C# 2.0 Covariance ve Contravariance Delegates"
 date: 2005-06-30 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - covariance-generic
   - contravariance-generic
   - covariance
   - delegate
+categories:
+  - Programlama Dilleri
 ---
 Bildiğiniz gibi temsilciler (delegates) çalışma zamanında metotların başlangıç adreslerini işaret eden tiplerdir. Bu tipleri uygulamalarımızda tanımlarken çalışma zamanında işaret edebilecekleri metotların geri dönüş tipi ve parametrik yapılarını bildirecek şekilde oluştururuz. Ancak özellikle, C# 1.1 ortamında temsilcilerin kullanımında parametre ve dönüş tipleri açısından iki önemli sıkıntımız vardır. Bu sıkıntıların kaynağında birbirlerinden türeyen yani aralarında kalıtımsal (inheritance) ilişkiler olan tipler yer alır.
 

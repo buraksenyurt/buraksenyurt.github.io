@@ -2,8 +2,6 @@
 layout: post
 title: "TPL – Göz Göre Göre Başımızı Belaya Sokmak"
 date: 2010-06-21 06:08:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming
@@ -13,6 +11,8 @@ tags:
   - deadlock
   - local-variable-evaluation
   - excessive-spinning
+categories:
+  - Paralel Programlama
 ---
 Bazen göz göre göre başımıza bi ton dert açarız. Kimi zaman başlayacağımız iş bize çok eğlenceli gelebilir (Yandaki resimde yüzü görünmeyen şahsın da bu heyacanla Hamburgere bindiğinden eminiz) Ama işin sonuçlarını biliyorsak eğer, bunu yapmamızın nedeni büyük olasılıkla adrenalindir.
 

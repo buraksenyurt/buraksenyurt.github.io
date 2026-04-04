@@ -2,12 +2,12 @@
 layout: post
 title: "WWF : Çalışma Zamanı Motoru, Singleton ve Factory Desenleri"
 date: 2008-01-04 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - singleton
   - factory
+categories:
+  - Yazılım Tasarımı
 ---
 Bir önceki makalemizde iş akışı (Workflow) kavramını anlamaya çalışmış, Windows Workflow Foundation (WWF) mimarisini yüzeysel olarak incelemiş ve basit bir kaç Sequential Workflow örneği geliştirmiştik. Bu makalemizde ise WWF mimarisinin sunduğu çalışma zamanı ortamını derinlemesine kavramaya çalışacağız. Ağırlıklı olarak üzerinde durmaya çalışacağımız konu ise WorkflowRuntime sınıfı olacak.
 

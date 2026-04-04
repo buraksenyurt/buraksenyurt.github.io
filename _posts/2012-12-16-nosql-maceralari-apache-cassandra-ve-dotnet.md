@@ -2,14 +2,14 @@
 layout: post
 title: "NoSQL Maceraları - Apache Cassandra ve .Net"
 date: 2012-12-16 19:35:00
-categories:
-  - Veritabanı
 tags:
   - nosql
   - apache-cassandra
   - .net
   - nuget
   - not-only-sql
+categories:
+  - Veritabanı
 ---
 Size bu günkü makale konumuzun yanda fotoğrafı görülen model (youtube modeli de diyebiliriz) Cassandra Bankson ile alakalı olduğunu söylemek isterdim ama yakınlarından bile geçmeyeceğiz. (Zaten araştırırsanız aslında makyaj bidonu ile bu hale geldiğini keşfedeceksiniz) Başlıktan da anlayacağınız üzere bu günkü yazımızın konusu.Net plaftormunda Apache Cassandra’ yı kullanmak.
 

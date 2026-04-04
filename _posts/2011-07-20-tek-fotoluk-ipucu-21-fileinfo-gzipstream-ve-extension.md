@@ -2,9 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu-21(FileInfo,GZipStream ve Extension)"
 date: 2011-07-20 08:28:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - .net-framework
@@ -13,6 +10,8 @@ tags:
   - extension-methods
   - file-io
   - io
+categories:
+  - Foto İpucu
 ---
 Elimde FileInfo, GZipStream tipleri ve Extension Method kabiliyeti var. Sizce ne yapılabilir? Yoksa FileInfo tipinde Compress ve DeCompress işlemleri için birer Extension Method'mu yazılabilir?
 

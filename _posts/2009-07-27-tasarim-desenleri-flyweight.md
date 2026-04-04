@@ -2,12 +2,12 @@
 layout: post
 title: "Tasarım Desenleri - FlyWeight"
 date: 2009-07-27 09:30:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop
   - csharp
+categories:
+  - Yazılım Tasarımı
 ---
 Yandaki resimde yer alan minik boksör aslında hafif siklette mücadele etmektedir ve biraz sonra işleyeceğimiz FlyWeight tasarım kalıbı ile uzaktan yakında hiç bir alakası bulunmamaktadır. Ancak işleyeceğimiz tasarım kalbına bu ismin verilmesininde bir sebebi vardır. Bakalım neymiş?
 

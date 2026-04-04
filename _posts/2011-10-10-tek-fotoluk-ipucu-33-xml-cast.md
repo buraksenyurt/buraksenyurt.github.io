@@ -2,9 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu-33(Xml Cast)"
 date: 2011-10-10 07:00:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - xlinq
@@ -13,6 +10,8 @@ tags:
   - generics
   - extension-methods
   - reflection
+categories:
+  - Foto İpucu
 ---
 Varsayalım ki elimizde kendi geliştirdiğimiz tipler ve kullandığımız List koleksiyonları var. Ve olduda bir yerde bu koleksiyonların içeriklerinin XML çıktılarına ihtiyaç duyduk. Basit bir Extension method geliştirebilir miyiz acaba?
 

@@ -2,12 +2,12 @@
 layout: post
 title: "CurrencyManager ile Navigasyon ve Temel Satır İşlemleri"
 date: 2004-07-27 06:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - windows-forms
   - currencymanager
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, CurrencyManager sınıfı yardımıyla, bağlantısız katman nesnelerinin işaret ettiği bellek bölgelerindeki veri satırları arasında navigasyon, satır ekleme, satır silme ve satır güncelleme işlemlerinin nasıl gerçekleştirildiğini incelemeye çalışacağız.
 

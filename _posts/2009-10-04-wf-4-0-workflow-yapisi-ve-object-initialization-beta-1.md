@@ -2,10 +2,10 @@
 layout: post
 title: "WF 4.0 - Workflow Yapısı ve Object Initialization[Beta 1]"
 date: 2009-10-04 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Workflow Foundation 4.0 ile ilgili yenilikleri araştırdığım şu günlerde, yaptığım araştırmalar sırasında ilgimi çeken noktalardan biriside, bir Workflow'un kod tarafında tek bir ifade satırı ile oluşturulabiliyor olmasıydı. Burada Workflow sisteminin hiyerarşik yapısının, Object Oriented seviyede etkili bir kullanımının söz konusu olduğunu belirtmek isterim. Ancak konuya çekirdek bilgilerden başlayarak yaklaşmakta yarar var.
 

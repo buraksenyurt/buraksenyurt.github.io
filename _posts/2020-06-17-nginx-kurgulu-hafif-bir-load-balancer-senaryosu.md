@@ -2,8 +2,6 @@
 layout: post
 title: "Nginx Kurgulu Hafif Bir Load Balancer Senaryosu"
 date: 2020-06-17 09:20:00
-categories:
-  - Web Programlama
 tags:
   - nginx
   - load-balancing
@@ -13,6 +11,8 @@ tags:
   - pm2
   - docker
   - round-rubin
+categories:
+  - Web Programlama
 ---
 Dünyanın en popüler ve hızlı proxy serverlarıdan birisi sanıyorum ki Nginx. Daha önce birçok kez onun üzerinde.Net Core tabanlı servisleri konuşlandırmıştım. Ancak bu defa Nginx'in talepleri dengeli bir şekilde dağıtacak şekilde (Load Balancer olarak) nasıl kullanacağımızı öğrenmeye çalışacağız. Senaryo gereği NodeJS ile yazılmış basit bir dummy servisin birkaç kopyasını çalıştıracağız. Aynı makinede farklı port adresleri üzerinden hizmet verecek bu servislere gelen taleplerin dağıtımını, Load Balancer görevini üstlenecek olan Nginx sunucusu üstlenecek.
 

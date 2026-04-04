@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 63–Uri Üzerinden Ping Sürelerine Bakmak"
 date: 2012-09-02 19:50:00
-categories:
-  - Genel
 tags:
   - uri
   - extension-methods
@@ -13,6 +11,8 @@ tags:
   - web-request
   - web-response
   - stopwatch
+categories:
+  - Foto İpucu
 ---
 Hani bazen komut satırından bir URL adresine talep gönderip cevap sürelerine bakarız. Peki kod tarafından bu işi nasıl taklit edebiliriz? Örneğin Uri tipine bir Extension Method dahil etsek nasıl olur? Buyrun öyleyse
 

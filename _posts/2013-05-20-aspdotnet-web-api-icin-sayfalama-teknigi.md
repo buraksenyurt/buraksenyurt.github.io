@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Web API için Sayfalama Tekniği"
 date: 2013-05-20 06:11:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - web-api
   - http
@@ -16,6 +14,8 @@ tags:
   - csharp
   - javascript
   - ajax
+categories:
+  - Web Programlama
 ---
 Bu aralar şirkette işler oldukça kesat. En azından benim bulunduğum departman itibariyle böyle bir durum söz konusu. Sanırım kurumsal kimlik kazanmış firmaların genel sorunu da bu olsa gerek. Kaynak planlaması ve dağıtımının bir türlü istenen şekilde yapılamayışı. Hal böyle olunca aynı firmada hatta aynı departman içerisinde, çok yoğun çalışan insanlara ve beraberinde her hangi bir işi olmayanlara (benim gibi) rastlamak mümkün.
 

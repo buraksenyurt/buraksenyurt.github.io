@@ -2,9 +2,9 @@
 layout: post
 title: "Tek Fotoluk İpucu 107 - XML Üretiminde LINQ Kullanmak"
 date: 2014-03-19 15:50:00
-categories:
-  - Genel
 tags: []
+categories:
+  - Foto İpucu
 ---
 Diyelim ki elinizde bir biri ile ilişkili tiplere ait nesne örneklerini içeren bir koleksiyon var. Söz gelimi bu koleksiyon, kütüphanenizde yer alan kitaplar ve yazarlarını tuttuğunuz generic bir List örneği olsun. Bu listenin XML formatında bir çıktısını sunmak istediğinizi düşünelim. Elinizin altında XElement, XAttribute gibi tipler ve LINQ gibi harika bir sorgulama dili olduğunun da farkındasınız. Nasıl bir ifade yazarsınız? Aşağıdakine benzer olabilir mi?
 

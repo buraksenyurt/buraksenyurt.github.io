@@ -2,11 +2,11 @@
 layout: post
 title: "Ado.Net ile Sql Server Full-Text Searching (Tüm Metinde Arama) Kullanımı"
 date: 2004-12-18 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql-server-full-text-search
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, SQL sunucusu üzerindeki tablolarda text tabanlı arama işlemlerinin, Full-Text Searching (Tüm Metinde Arama) servisi yardımıyla nasıl gerçekleştirildiğini incelemeye çalışacağız. Konunun pekişmesi açısından basit bir web uygulaması ile de bu hizmeti kullanıp text tabanlı arama işlemlerini irdelemeye çalışacağız. Özellikle dikkatinizi çekmiştir ki, internette yer alan pek çok arama motoru aradığımız kelimelerin geçtiği web sayfalarını bulup bize getirir. Çoğunlukla arama motoruna kayıtlı web sayfasının içeriğinde yapılan text tabanlı aramalarda da Full-Text Searching (Tüm Metinde Arama) hizmetinden faydalanılır. Bu tip bir arama genellikle alanları içerisinde çok geniş text tabanlı içeriğe sahip olan tablolar üzerinde yapılmaktadır. SQL sunucusu, 7.0 versiyonundan itibaren bu hizmeti vermeye başlamıştır. Elbette ki arama işleminin gerçekleştirilebilmesi için Full-Text Searching (Tüm Metinde Arama) servisinin SQL sunucusunda yüklü olması gerekmektedir.
 

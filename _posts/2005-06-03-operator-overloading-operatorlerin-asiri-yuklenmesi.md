@@ -2,12 +2,12 @@
 layout: post
 title: "Operator Overloading (Operatörlerin Aşırı Yüklenmesi)"
 date: 2005-06-03 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - operator-overloading
   - method-overloading
+categories:
+  - Programlama Dilleri
 ---
 Hepimiz uygulamalarımızda sıklıkla operatörleri kullanmaktayız. Matematiksel işlemlerde, koşullu ifadelerde,tip dönüştürme işlemlerinde vb...Ancak onların kendi yazdığımız sınıflar için özel anlamlar ifade edecek şekilde yüklenmesi ile pek az uğraşmaktayız. Basit bir toplama operatörünün bile, yeri geldiğinde kendi sınıflarımıza ait nesne örnekleri üzerinde daha farklı davranışlar gösterecek şekilde yeniden yapılandırılması son derece önemlidir. Bu aynı zamanda dilin sağladığı esnekliği ve genişletilebilirliğini de gözler önüne sergilemektedir. İşte bu makalemizde, basit olarak operatörlerin aşırı yüklenmelerinin nasıl gerçekleştirilebileceğini örnek bir uygulama üzerinden incelemeye çalışacağız.
 

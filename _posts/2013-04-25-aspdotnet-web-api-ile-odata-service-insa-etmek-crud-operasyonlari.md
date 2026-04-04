@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Web API ile OData Service İnşa Etmek–CRUD Operasyonları"
 date: 2013-04-25 11:15:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - asp.net-web-api
   - odata
@@ -24,6 +22,8 @@ tags:
   - delete
   - mvc
   - web-api-template
+categories:
+  - Web Programlama
 ---
 Bilindiği üzere Asp.Net Web API’ den yararlanılarak Open Data Protocol destekli servisler geliştirmek mümkündür. Bu konu ile ile ilişkili olarak [daha önceden bir Hello World uygulaması yazmış](/2013/04/06/aspdotnet-web-api-ile-odata-servisi-insa-etmek/) ve HTTP Get taleplerinin yürütülmesini incelemiştik. Bu görsel dersimizde ise, CRUD (CreateReadUpdateDelete) operasyonlarının nasıl yapılabileceğini görmeye çalışıyoruz. Bu anlamda Insert, Update ve Delete gibi temel operasyonlara bakıyoruz. Veri kaynağı olarak, Code First yaklaşımını tercih ettiğimiz bir Entity Framework içeriğini değerlendiriyoruz.
 

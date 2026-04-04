@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu 135 - Ruby ile Tek Satırda Dosya içi Arama"
 date: 2016-10-18 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - tek-fotoluk-ipucu
   - file-io
+categories:
+  - Foto İpucu
 ---
 Geçenlerde notpead++ ile oluşturduğum bir text dosya üzerinde düşünüyordum da...Dosya içerisinde House dizisinde çalan 75 adet şarkının bilgisi vardı. Söyleyenler ve şarkı adları.
 

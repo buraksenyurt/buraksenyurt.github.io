@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu-23 (BinaryFormatter, DataSet, Extension Methods)"
 date: 2011-08-04 18:00:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - extension-methods
   - binary-serialize
   - binaryformatter
   - dataset
+categories:
+  - Foto İpucu
 ---
 Bu kez elimde bir DataSet, Binary serileştirme için BinaryFormatter ve tabiki Extension Method kabiliyeti var. Ne yapabiliriz? Belki de bir DataSet'in Binary formatta Serialize, DeSerialize işlemlerini üstlenen genişletme metodlarını yazabiliriz. Ben Serialize kısmını yazdım. Gerisi size kalmış
 

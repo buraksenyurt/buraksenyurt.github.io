@@ -2,12 +2,12 @@
 layout: post
 title: "Web Bazlı Programlama Modeli"
 date: 2008-02-14 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - web-programming-model
   - rest-api
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Web programlama modelinin en büyük avantajlarından biriside istemci (Client) tarafındaki uygulamaları düşünmeye gerek kalmadan istemci-sunucu (Client/Server) mimarisine uygun sistemler geliştirilebilmesidir. Basit olarak HTTP protokolünün farklı metodlarına göre işleyen bu sistemde, istemcilerin farklı tipte olabilecek tarayıcı programlar (Browsers) üzerinden talepte bulunmaları söz konusudur.
 

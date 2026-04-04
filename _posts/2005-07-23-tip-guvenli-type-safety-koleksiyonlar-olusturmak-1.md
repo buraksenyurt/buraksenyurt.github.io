@@ -2,13 +2,13 @@
 layout: post
 title: "Tip Güvenli (Type Safety ) Koleksiyonlar Oluşturmak - 1"
 date: 2005-07-23 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - type-safety
   - type-safed-collections
   - collections
+categories:
+  - Programlama Dilleri
 ---
 Tip güvenliğini sağlamak her zaman için önemli unsurlardan birisidir. Koleksiyon tabanlı nesneleri kullanırken çoğu zaman istediğimiz tip güvenliğini sağlayamayabiliriz. Buradaki en büyük etken, koleksiyon tabanlı nesnelerin object tipinden referanslar taşıyor olmasıdır. Bazen kendi belirlediğimiz tip dışında, başka her hangi bir tip barındırmasına izin vermek istemediğimiz yapıda koleksiyon nesnelerine ihtiyacımız olur. Böyle bir koleksiyon nesnesinin en büyük avantajı az önce bahsettiğimiz tip güvenliğini sağlamasıdır.
 

@@ -2,10 +2,10 @@
 layout: post
 title: "Ado.Net Data Services 1.5 CTP2 - Data Binding Bölüm 2"
 date: 2009-11-15 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
+categories:
+  - Framework Tabanlı Programlama
 ---
 Orta uzunlukta bir yazı için hazır mısınız? Analizi dikkat gerektiren bir Ado.Net Data Service örneği geliştiriyor olacağız. Genellikle bu tarz yazılara ait kodları geliştirirken sıkılmamak ve zihnimi açık tutmak için ya kahve içerim yada mutluluktan havalara uçarmış gibi yazabilmek ve kan şekerimi üst seviyede tutabilmek için bazen değişik şekerlemelerden yerim. Aynen yandaki resimde olduğu gibi.
 

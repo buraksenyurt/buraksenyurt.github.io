@@ -2,8 +2,6 @@
 layout: post
 title: "Mocha'nızı Node.js ile Alır mıydınız?"
 date: 2018-06-07 18:00:00
-categories:
-  - Web Programlama
 tags:
   - node.js
   - javascript
@@ -20,6 +18,8 @@ tags:
   - unit-test
   - tdd
   - unpkg
+categories:
+  - Web Programlama
 ---
 Çalışmakta olduğum şirketin bizlere sunduğu güzel imkanlardan birisi de Pluralsight aboneliği. Hesabım açılır açılmaz ilk yol haritamı da çıkarıverdim. Kendime göre verimli olacağını düşündüğüm bir zaman planlaması yaptım. Sabah saat 07:15 sularında şirkete vardıktan sonra, kapıdaki görevliye sıcak bir tebessümle 'Günaydın'de, mutfaktan geçerken bir bardak kahve al, masana otur ve sonrasında kaldığın yerden devam et... Şu sıralar Node.js yol haritamın merkezinde yer alıyor. Mesai başlangıç saatimiz olan 07:45'e kadar izleyebildiğim ve uygulayabildiğim kadarıyla ilerliyorum. Yer yer videoyu durduruyor, örnek kod parçalarını satır satır yazıyor, gerektiği yerlerde notlar alıyorum. Amacım şu an için sadece ve sadece Node.js'i tanımak, biraz daha iyi anlamak. Sonuçta node.js konusunda uzman olabilmem için yüzlerce saat gerçek hayat projelerinde çalışmam gerekiyor.
 

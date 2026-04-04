@@ -2,8 +2,6 @@
 layout: post
 title: "Managed Extensibility Framework - Hello World"
 date: 2015-01-13 15:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - mef
   - managed-extensibility-framework
@@ -14,6 +12,8 @@ tags:
   - modul-based-development
   - windows-api
   - .net-runtime
+categories:
+  - Framework Tabanlı Programlama
 ---
 Günümüzde uygulamaların genişletilebilir olması önemli bir konu. Modüler olarak da nitelendirebileceğimiz bu felsefe ile bir uygulamanın kullanıcıları tarafından kolayca genişletilebilmesi amaçlanır. Hatta akıllı uygulamaların kendilerini bu şekilde genişletmesi de mümkündür.
 

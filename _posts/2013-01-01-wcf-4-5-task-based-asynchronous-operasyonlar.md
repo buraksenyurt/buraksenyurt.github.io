@@ -2,8 +2,6 @@
 layout: post
 title: "WCF 4.5–Task Based Asynchronous Operasyonlar"
 date: 2013-01-01 13:51:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - task-parallel-library
@@ -11,6 +9,8 @@ tags:
   - async
   - await
   - .net-framework
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Yaklaşık olarak 4 dakika 38 saniye…İzleyen yazıyı benim okuma hızım bu oldu. Aslında bu süre şu demek; Öğle arasına çıkmadan bir 4 dakika 38 saniye demek bu...Ya da geldikten sonra bir 4 dakika 38 saniye demek…Ya da sabah işe erken geldiğimizde ayırabileceğimiz bir 4 dakika 38 saniye demek...Ya da servisi/otobüsü/minibüsü beklerken ayırabileceğimiz 4 dakika 38 saniye demek. Hatta Facebook’ a, Twitter’ a, Linkedin’ e, Youtube’a bakmadan geçireceğimiz bir 4 dakika 38 saniye demek… E o halde ne duruyorsunuz?Ayırın işte o zamanı
 

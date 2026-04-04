@@ -2,8 +2,6 @@
 layout: post
 title: "Programcıdan Programcıya Rust"
 date: 2021-12-24 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust-lang
   - ownership
@@ -20,6 +18,8 @@ tags:
   - heap
   - struct
   - data-structures
+categories:
+  - Programlama Dilleri
 ---
 İki yıl kadar önce bir merakla başladığım ama sonrasında takıntı haline gelen bir uğraş edindim; Rust programlama dili. Profesyonel iş yaşantımın neredeyse tamamında.Net platformu üstünde geliştirme yaptım ve halen daha maaşımı ondan kazanıyorum. Bazı zamanlar Python, Go, Ruby gibi dillere de baktım ama hep hobi olarak kaldılar. Rust içinse aynı şeyi söylemem zor. Onunla ilgili resmi dokümantasyonu takip edip birkaç satır kod yazmaya başladım ve derken sayısız derleme zamanı hatası ile karşılaştım. Bunların neredeyse büyük çoğunluğu borrowing, ownership, lifetimes gibi konularla ilintiliydi ve her biri Rust’ın temelde bilinmesi gereken demirbaşları.
 

@@ -2,11 +2,11 @@
 layout: post
 title: "DataTable Sınıfını Kullanarak Programatik Olarak Tablolar Oluşturmak-2"
 date: 2003-12-05 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - datatable
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hatırlayacağınız gibi yazı dizimizin ilk bölümünde, DataTable sınıfını kullanarak bellekte bir tablonun ve bu tabloya ait alanların nasıl yaratıldığını işlemiştik. Bugünkü makalemizde oluşturmuş olduğumuz bu tabloya kayıtlar ekleyeceğiz ve sonra bu DataTable nesnesini bir DataSet’e aktarıp içerisindeki verileri bir DataGrid kontrolünde göstereceğiz.
 

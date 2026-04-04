@@ -2,13 +2,13 @@
 layout: post
 title: "Go Dilini Anlamaya Çalışırken"
 date: 2017-01-06 03:56:00
-categories:
-  - Programlama Dilleri
 tags:
   - google-go
   - golang
   - programming-languages
   - programlama
+categories:
+  - Programlama Dilleri
 ---
 Liseye başladığım 1990 yılından beri arkadaşım ve aynı zamanda adaşım olan sevgili dostum Burak ile üniversite yıllarında öğrenip oynamaya başladığımız GO oyunu geldi aklıma. Öğrenmesi zor, kavramak için yıllar geçmesi gereken, iyi bir oyuncu olmak için sizden daha iyi birisiyle yine yıllarca maç yapmanızı gerektiren zevkli bir strateji oyunu. Ünlü matematikçi John Forbes Nash'ten Albert Einstein'a, Alan Turing'den Bill Gates'e tarihi değiştiren pek çok kişinin de oynadığı bir oyun.
 

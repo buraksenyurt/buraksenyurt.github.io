@@ -2,12 +2,12 @@
 layout: post
 title: "DataGrid Denetimi Üzerinde Sayfalama(Paging) İşlemi"
 date: 2003-12-16 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - datagrid
   - paging
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, bir ASP.NET sayfasında yer alan DataGrid kontrolümüzde nasıl sayfalama işlemlerini gerçekleştireceğimizi göreceğiz. Uygulamamız, sql sunucusundaki veritabanımızdan bir tablo ile ilgili bilgileri ekranda gösterecek. Ancak çok sayıda kayıt olduğu için biz bunları, dataGrid kontrolümüzde 10’ar 10’ar göstereceğiz. Olayı anlayabilmek için doğrudan kodlama ile işe başlayalım diyorum. Öncelikle VS.NET ile bir ASP.NET Web Application oluşturalım ve WebForm1.aspx sayfamızın adını default.aspx olarak değiştirelim. Şimdi öncelikle bir DataGrid nesnesini sayfamıza yerleştirelim ve hiçbir özelliğini ayarlamayalım. Bunları default.aspx sayfasının html görünümünde elle kodlayacağız. Şu an için DataGrid kontrolümüze ait aspx dataGrid tag'ımızın hâli şöyledir.
 

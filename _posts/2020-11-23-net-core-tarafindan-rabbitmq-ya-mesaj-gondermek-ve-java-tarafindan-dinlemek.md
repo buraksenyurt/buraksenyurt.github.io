@@ -2,8 +2,6 @@
 layout: post
 title: ".Net Core Tarafından RabbitMQ'ya Mesaj Göndermek ve Java Tarafından Dinlemek"
 date: 2020-11-23 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - java
@@ -14,6 +12,8 @@ tags:
   - spring-boot
   - json
   - maven
+categories:
+  - Framework Tabanlı Programlama
 ---
 Çok sık karşılaştığımız senaryolardan birisidir; Bir uygulama kendi bünyesinde gerçekleşen bir olay sonrası başka bir uygulamayı haberdar etmek ister ya da başka bir uygulamanın yaptıklarından haberdar olmak isteyen bir uygulama vardır:) Bunun bir çok sebebi olabilir. Örneğin uygulamalar farklı teknolojilerde yazılmıştır ancak ortak iş süreçleri üzerinde koşmaktadır. Gerçek bir senaryo üzerinden hareket edersek konu daha anlaşılır olabilir.
 

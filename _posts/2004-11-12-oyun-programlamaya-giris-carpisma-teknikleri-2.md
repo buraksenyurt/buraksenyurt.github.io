@@ -2,13 +2,13 @@
 layout: post
 title: "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 2)"
 date: 2004-11-12 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - game-programming
   - pisagor
   - matematik
+categories:
+  - Oyun Programlama
 ---
 Hatırlayacağınız gibi bir önceki makalemizde, Oyun Programcılığına girmek adına çarpışma tekniklerini incelemeye başlamış ve dörtgenlerin çarpışmalarını ele almıştık. Bugünkü makalemizde ise, dairesel şekillerin birbirleri ile olan çarpışmalarını incelemeye çalışacağız. Dairesel şekillerin çarpışmasına verilebilecek en güzel örnek, kaynaklardan edindiğim bilgiye göre bilardo oyunlarıdır. Burada gerçekten de mükemmel dairelerin birbirleriyle olan çarpışmaları söz konusudur. Şunu da hatırlatmakta fayda var: Şu an için teorilerimizi iki boyutlu uzayda inceliyoruz. Elbette ki işin içine üç boyutlu cisimler girdiğinde kullanacağımız algoritmalar ve teknikler biraz da olsa farklılık gösterecektir. Çünkü uzay boyutunda X ve Y koordinatlarına ek olarak Z koordinatları da işin içine girecektir. Bu da iki boyutlu bir sistemde bilardo oyununun tasarlanmasının 3 boyutlu sistemdekine göre daha kolay olduğunu göstermektedir.
 

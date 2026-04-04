@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - HTTP Sunucusu Yazmak/Yazmaya Çalışmak"
 date: 2022-03-20 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -12,6 +10,8 @@ tags:
   - tcplistener
   - http-server
   - server-object-model
+categories:
+  - Programlama Dilleri
 ---
 Bir HTTP sunucusu yazmaya ne gerek var diyebilirsiniz. Öyle düşünmeyin. Bir programlama dilini öğrenmenin en iyi yolu, var olan yapıları o dille yazmaya çalışmaktır. Hangi dil ya da platform olursa olsun ortada dolaşan yüzlerce HTTP server zaten var. Ancak nasıl çalıştıklarını anlamak için de yine yeniden yazmakta yarar var. Bugünkü pratiğimizde bir HTTP server Rust programlama dili ile nasıl yazılabilir incelemeye çalışacağız. Esasında minik bir başlanıç yapacağız. Nitekim bir HTTP sunucusunun görevleri çok geniş olabilir.
 

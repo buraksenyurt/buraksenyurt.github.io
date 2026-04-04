@@ -2,8 +2,6 @@
 layout: post
 title: "Angular ile Basit Bir Görevler Listesi Uygulaması Yazmak"
 date: 2019-05-08 06:00:00
-categories:
-  - Web Programlama
 tags:
   - angular
   - typescript
@@ -14,6 +12,8 @@ tags:
   - ubuntu
   - hello-world
   - npm
+categories:
+  - Web Programlama
 ---
 Bazen ne kadar basit olursa olsun üşenmeden bir örneğin üstüne gitmek gerekiyor. Çünkü çok basit örneklerle çalışıyor olsak bile gözümüzden kaçan önemli detaylar olabilir. Günümüzde kullanmakta olduğumuz pek çok geliştirme çatısı, belli ürünlere yönelik hazır şablonları kolayca üretebileceğimiz komut setleri sunmakta.
 

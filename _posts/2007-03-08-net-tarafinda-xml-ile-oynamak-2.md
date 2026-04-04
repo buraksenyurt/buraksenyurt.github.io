@@ -2,13 +2,13 @@
 layout: post
 title: ".Net Tarafında Xml ile Oynamak-2"
 date: 2007-03-08 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - xml
   - document-object-model
   - domain
   - x-path
+categories:
+  - Framework Tabanlı Programlama
 ---
 Yıllar önce odamdaki bilgisayarımda arkadaşlarımın telefon ve doğum günü bilgilerini C tabanlı bir programda kütük dosyasına kaydetmeye çalışmıştım. O günlerde sadece bulunduğum oda içerisindeki alanla sınırlıyken, bir süre sonra internet ortamına taşınıvermiştik. Dolayısıyla artık kütük dosyasını başka ortamlara aktarabilme imkanı doğmuştu. Elbetteki bu taşıma işinin bir standart dahilinde olması önemli idi. Sonuçta günümüzde bu tip veri taşıma standartları için Xml kullanır hale geldik. Xml elbette beraberinde pek çok teknolojiyide getirdi.
 

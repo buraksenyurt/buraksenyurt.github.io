@@ -2,14 +2,14 @@
 layout: post
 title: "Ruby Tarafından Redis(Docker Bazlı) Veritabanı ile Konuşmak"
 date: 2019-12-01 09:45:00
-categories:
-  - Programlama Dilleri
 tags:
   - redis
   - nosql
   - ruby-lang
   - docker
   - gem
+categories:
+  - Programlama Dilleri
 ---
 Geçtiğimiz yıl kendi kendimi eğitmek üzere 41 bölümden oluşan [Saturday-Night-Works](https://github.com/buraksenyurt/saturday-night-works) isimli bir çalışma yapmıştım. Github üzerine aldığım notlar ve kod örneklerini blog üzerinde derleyip toparlamak onları pekiştirmek için önemli ve gerekliydi. Ne var ki yetişemediğimiz yazılım teknolojilerindeki gelişmeler için sürekli antrenman yapmam gerekiyor. Bu sebepten araya uzun bir tatil koyup tekrardan enerjimi depolamaya çalıştım. Nadas süresi boyunca neler yapabileceğimi düşündüm. Yeni maceramın felsefesi bir öncekisi ile aynı olmalıydı. Rastgele ve pek deneyimli olmadığım konularla ilgili araştırma yapıp bunları basit örneklerle çalışmalı ve dokümanlaştırmalıydım. Ha geldi gelecek derken nihayet ilham perim beni buldu ve artık tatilimi sonlandırmam gerektiğine karar verdim. Yeni serüvenime SkyNet evrenindeki Ahch-To (MacOS Mojave - Intel Core i5 1.4Ghz, 4 Gb 1600 Mhz DDR3) gezegeninde başlıyorum. Orada geçirdiğim bir saat dünya zamanında birkaç güne denk geliyor.
 

@@ -2,13 +2,13 @@
 layout: post
 title: "Tembellik Etmek İstiyorum (Generic Lazy Tipi ile Et)"
 date: 2010-10-11 12:20:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - base-class-library
   - lazy-initialization
   - generics
+categories:
+  - Programlama Dilleri
 ---
 Yaz günlerinde pek çok geliştirici tembellik yapmak ister. Hatta benim gibi kocaman bir Üniversite Kampüsü içerisinde yer alan çalışma ortamınız var ise ve kampüsünüzün çimleri üzerinde yatıp şöyle beş on dakika kestirmeye müsaitse. Tabi tembelliğin çeşitli türevleri vardır. Çimler üzerinde uzanmak bunlardan sadece birisi.
 

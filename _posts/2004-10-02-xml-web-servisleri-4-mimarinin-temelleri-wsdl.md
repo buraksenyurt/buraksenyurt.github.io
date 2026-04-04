@@ -2,12 +2,12 @@
 layout: post
 title: "Xml Web Servisleri - 4 ( Mimarinin Temelleri - WSDL)"
 date: 2004-10-02 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - xml
   - wsdl
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 İstemciler, web servisleri ile aralarındaki iletişimi, çalıştıkları makinede oluşturulan proxy nesneleri yardımıyla gerçekleştirir. Bu, istemci uygulamanın, web servisine ait üyelerin farkında olmasını gerektiren bir durumdur. Nitekim proxy nesnesini oluşturan sınıf, web servisindeki public arayüze göre tasarlanır. Dolayısıyla, istemci uygulamanın kullandığı web servisine ait bilgileri bir şekilde temin etmesi gerekmektedir. Visual Studio .NET ortamında geliştirdiğimiz istemci uygulamada, projeye web servisinin referans olarak eklenmesi sonucu oluşturulan bazı dosyalar olduğundan bahsetmiştik. Disco uzantılı bir dosya, WSDL uzantılı bir dosya ve proxy sınıfımıza ait cs uzantılı dosya.
 

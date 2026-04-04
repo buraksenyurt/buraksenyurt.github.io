@@ -2,14 +2,14 @@
 layout: post
 title: "WCF WebHttp Services - Routing"
 date: 2010-03-07 21:45:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services
   - rest-api
   - non-soap
   - wcf-webhttp-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Geçtiğimiz aylarda yurdumuzun en güzel şehirlerinden birisi olan İstanbul'da, oldukça soğuk ve kar yağışlı günler geçirdik. Yandaki resimde görülen manzara çalıştığım ARI 1 binasının yürüyüş yolu üzerinde çok da yeni olmayan, dokunmatik ekran, Windows Mobile gibi ileri özellikleri bulunmayan ancak Carl Zeiss mercekli Sony Ericsson K810i marka cep telefonum tarafından çekilmiştir.
 

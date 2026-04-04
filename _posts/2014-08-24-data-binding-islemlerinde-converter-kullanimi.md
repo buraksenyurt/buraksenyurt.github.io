@@ -2,9 +2,9 @@
 layout: post
 title: "Data Binding İşlemlerinde Converter Kullanımı"
 date: 2014-08-24 06:40:00
+tags: []
 categories:
   - Framework Tabanlı Programlama
-tags: []
 ---
 Daha [önceki yazılarımızdan birisinde](/2014/06/18/wpf-uzerinde-data-binding-retro-bakis-acisi/) (Data-Binding Retro Bakış Açısı) özellikle WPF (Windows Presentation Foundation), Windows Phone, WF (Workflow Foundation) gibi XAML tabanlı ara birimlerin sıklıkla kullanıldığı noktalarda veri bağlama (Data Binding) işlemlerinin temellerini kavramaya çalışmış ve çok basit bir örnek ile konuyu irdelemiştik.
 

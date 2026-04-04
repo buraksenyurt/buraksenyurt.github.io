@@ -2,13 +2,13 @@
 layout: post
 title: "WPF - Sayfa(Page) Kavramı, Navigasyon İşlemleri ve XBAP"
 date: 2007-10-04 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - page
   - navigation
   - xbap
+categories:
+  - Windows Programlama
 ---
 Yıllardır ister büyük çaplı ister küçük çaplı olsun pek çok proje web tabanlı olarak geliştirilmektedir. Projelerde bu tip bir seçime gitmenin en büyük nedenlerinden biriside web uygulamalarındaki dağıtım modelinin (Deployment Model) Windows tabanlı olanlara göre çok daha kolay olmasıdır. Her ne kadar.Net 2.0 ile birlikte gelen ClickOnce veya daha öncesinden beri var olan ActiveX gibi dağıtımı kolaylaştırabilecek teknolojiler var olsada bunlar Web uygulamalarına olan yönelimi azaltamamıştır. Sonuç itibariyle web tabanlı uygulamalarda, yazılan parçaları yorumlayacak bir tarayıcı penceresinin (Browser) olması yeterlidir.
 

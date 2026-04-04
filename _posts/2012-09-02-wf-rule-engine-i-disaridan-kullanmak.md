@@ -2,8 +2,6 @@
 layout: post
 title: "WF Rule Engine’ i Dışarıdan Kullanmak"
 date: 2012-09-02 19:45:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - rule-engine
   - workflow-foundation
@@ -11,6 +9,8 @@ tags:
   - rule-set
   - ruleset
   - windows-forms
+categories:
+  - Framework Tabanlı Programlama
 ---
 Kurallar, kurallar, kurallar!Hayatın hemen her noktasında karşımıza tonlarca kural çıkar. Tabi mevzumuz kuralların zorlayıcılığı ve saire değil, kuralların ihlal edilmesi veya uyulması halinde gerçekleşen aksiyonların neler olduğu ile ilgilidir. Ki bu düşünce tarzı aslına bakarsanız iş dünyasının çekirdek süreçlerinden tutun, en ince ve hatta uç noktalarına kadar yayılır.
 

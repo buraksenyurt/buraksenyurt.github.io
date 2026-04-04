@@ -2,10 +2,10 @@
 layout: post
 title: "Server Side SponsorShip"
 date: 2006-04-19 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir önceki makalemizde Remoting mimarisinde istemci taraflı destek modelini incelemeye çalışmıştık. İstemci taraflı destek modelinin en büyük problemlerinden birisi, istemcilerin firewall arkasında olması halinde ortaya çıkmaktadır. Bu engel, sunucuların istemcilere erişimini kısıtlayacağından istemci taraflı destek modelinin çalışması garanti altına alınmamış olabilir. Bu nedenle, istemcilerin firewall arkasında olup olmadıklarının bilinmediği durumlarda kesinlikle sunucu taraflı destek (server side sponsorship) modeli kullanılmalıdır. Bu makalemizde sunucu taraflı destek modelinin işleyiş şeklinden bahsedecek ve örnek bir uygulama geliştireceğiz.
 

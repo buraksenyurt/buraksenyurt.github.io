@@ -2,8 +2,6 @@
 layout: post
 title: "Vue için Bebek Adımları"
 date: 2020-12-21 08:46:00
-categories:
-  - Web Programlama
 tags:
   - javascript
   - vue
@@ -13,6 +11,8 @@ tags:
   - html
   - mvvm
   - programlama
+categories:
+  - Web Programlama
 ---
 Yazılım işine girdiğimden beri en çok zorlandığım konu Frontend tarafında kodlama yapmak. Ne yazık ki sadece Backend tarafta kalma lüksümüz de pek bulunmuyor. Örneğin hali hazırda çalışmakta olduğum firmada yeni nesil birçok uygulama önyüz tarafında çeşitli Javascript çatıları (Framework) kullanıyor.
 

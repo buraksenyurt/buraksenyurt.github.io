@@ -2,14 +2,14 @@
 layout: post
 title: "SSIS - Programatik Olarak Variable Değeri Set Etmek"
 date: 2011-11-11 14:59:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - sql-server-integration-services
   - dts
   - dts-package
   - manageddts
+categories:
+  - Programlama Dilleri
 ---
 Beni tanıyanlar SQL ailesini pek sevmediğimi ve biraz uzak durmaya çalışmak istediğimi bilirler. Ne varki bazen iş hayatının gerçekleri ile karşı karşıya kalırız ve mecburen SQL ailesinin bazı fertleri ile yakın ilişkiler içerisine gireriz
 

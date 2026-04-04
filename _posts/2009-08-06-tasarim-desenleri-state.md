@@ -2,12 +2,12 @@
 layout: post
 title: "Tasarım Desenleri - State"
 date: 2009-08-06 06:00:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop
   - csharp
+categories:
+  - Yazılım Tasarımı
 ---
 Bir süre öncesine kadar özel bir bankada uzman yazılım geliştirici olarak görev almaktaydım. Bankada en çok hoşuma giden bazende en çok nefret ettiğim hususlardan biriside otomat makinesi idi.
 

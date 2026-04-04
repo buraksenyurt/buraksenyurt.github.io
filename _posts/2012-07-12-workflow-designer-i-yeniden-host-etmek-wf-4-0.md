@@ -2,8 +2,6 @@
 layout: post
 title: "Workflow Designer’ ı Yeniden Host Etmek (WF 4.0)"
 date: 2012-07-12 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - rehosted-workflow-designer
@@ -13,6 +11,8 @@ tags:
   - code-activity
   - native-activity
   - workflow-context
+categories:
+  - Framework Tabanlı Programlama
 ---
 Çoğu zaman sinemada daha önceden vizyona girmiş olan bir filmin yeniden çekilmiş bir versiyonuna rastlarız. Örneğin Batman Begins veya vizyona bu yaz girecek Total Recall gibi. Hatta bazen Cover olarak adlandırdığımız bir durum söz konusu olur ve çeşitli müzik guruplarının önemli parçalarının tekrardan, aynı ekipçe veya başkalarınca yorumlandığını görür, duyarız.
 

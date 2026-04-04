@@ -2,8 +2,6 @@
 layout: post
 title: "Dependency Injection'ın TDD'deki Yeri"
 date: 2018-12-21 10:30:00
-categories:
-  - Programlama Dilleri
 tags:
   - unit-test
   - tdd
@@ -22,6 +20,8 @@ tags:
   - .net
   - interface
   - constructor
+categories:
+  - Yazılım Tasarımı
 ---
 Ne zamandır oturup da Lego yapmadığımı fark ettim. Her ne kadar fiyatları epeyce artmış olsa da geçenlerde dayanamayıp bir tane aldım. Bitirir bitirmez beni tatile götüreceğini düşündüğüm güzel bir karavan. Bloklardaki canlı renklerin tatlılığı, masmavi surf tahtası, uydu alıcısı, konforlu koltukları, panaromik tavanı, spor lastikleri ile bir saate kalmadan hazırdı bile.
 

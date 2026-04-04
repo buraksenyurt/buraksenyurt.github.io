@@ -2,12 +2,11 @@
 layout: post
 title: "PLINQ - ForAll [Beta 1]"
 date: 2009-05-28 08:43:00
-categories:
-  - Veritabanı
-  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query
+categories:
+  - Paralel Programlama
 ---
 Bildiğiniz gibi bir süredir LINQ sorgularının paralel çalıştırılması ile ilişkili çalışmalarıma ve araştırmalarıma devam etmekteyim. Bu yazımdaki konumuz ise System.Linq.ParallelEnumerable static sınıfı içerisinde tanımlanmış olan ForAll genişletme metodudur (extension methods).
 

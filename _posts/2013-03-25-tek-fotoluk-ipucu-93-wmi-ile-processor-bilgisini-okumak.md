@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 93–WMI ile Processor Bilgisini Okumak"
 date: 2013-03-25 21:20:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - wmi
@@ -11,6 +9,8 @@ tags:
   - wql
   - wmi-query-language
   - wmi32_processor
+categories:
+  - Foto İpucu
 ---
 Hatırlayacağınız üzere bir önceki Tek Fotoluk İpucunda, Win32PhysicalMemory isimli WMI (Windows Management Instrumentation) tipinden yararlanarak, makinede takılı olan RAM’ ler hakkında temel bilgileri nasıl alabileceğimizi incelemiştik. Bu seferki ipucumuzda ise işlemci bilgilerini okumaya çalışıyor olacağız. Aşağıdaki fotoğrafta görüldüğü gibi.
 

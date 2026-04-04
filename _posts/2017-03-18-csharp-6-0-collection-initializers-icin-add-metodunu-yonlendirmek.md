@@ -2,12 +2,12 @@
 layout: post
 title: "C# 6.0 - Collection Initializers için Add Metodunu Yönlendirmek"
 date: 2017-03-18 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - extension-methods
   - collections
+categories:
+  - Programlama Dilleri
 ---
 Mesleki hayatımın bir döneminde yazılım eğitmeni olarak çalıştım. Ağırlıklı olarak.Net eğitimleri verdim. Tabii o zamanlar.Net nispeten daha kolaydı. Bu kadar fazla dallanan bir Framework değildi ama C# dil özellikleri de acımasızca genişlemiyordu. Aradan geçen onca yıldan sonra çalıştığım turuncu bankanın kendi akademisinden iç eğitim isteği geldi.
 

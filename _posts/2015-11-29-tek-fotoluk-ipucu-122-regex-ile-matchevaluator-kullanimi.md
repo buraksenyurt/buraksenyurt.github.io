@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu 122 - Regex ile MatchEvaluator Kullanımı"
 date: 2015-11-29 17:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - regex
   - MatchEvaluator
   - anonymous-methods
   - csharp
+categories:
+  - Foto İpucu
 ---
 Geçtiğimiz günlerde üzerinde çalıştığımız bir projede, sıkıştırılmış metinsel içeriklerin açılması ile ilgili bir ihtiyaç doğdu. Cümle biraz karışık gelmiş olabilir. İfinim müsadenizle senaryoyu anlatayım öncelikle;
 

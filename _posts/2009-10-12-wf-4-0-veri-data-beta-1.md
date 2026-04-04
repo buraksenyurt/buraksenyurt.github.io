@@ -2,10 +2,10 @@
 layout: post
 title: "WF 4.0 - Veri(Data)[Beta 1]"
 date: 2009-10-12 14:48:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir süredir Workflow Foundation 4.0 ile ilişkili blog yazılarını, makaleleri ve görsel dersleri takip etmekteyim. Bu araştırmalarım sırasında Workflow Foundation 4.0 modelinde veriye (Data) olan bakış açısının WF 3.X sürümüne göre oldukça farklılaştığını gördüm. WF 3.X tabanlı modelde, aktivite bazlı verileri temsil etmek için genellikle standart sınıf özelliklerinden (Property) veya WPF'ten esinlenilen bağımlı özelliklerden (Dependency Property) yararlanılmaktadır. WF 4.0 modelinde ise veriyi temsil etmek amacıyla Variable veya Argument türevli tiplerden yararlanıldığı görülmektedir.
 

@@ -2,13 +2,13 @@
 layout: post
 title: "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 3)"
 date: 2004-11-19 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - game-programming
   - .net
   - collasion
+categories:
+  - Oyun Programlama
 ---
 Geçtiğimiz hafta boyunca, Oyun Programcılığı ile ilgili olarak aldığım kitapları fırsat buldukça okumaya ve çalışmaya devam ettim. Konular o kadar heyecanlı ve sürükleyici ki araştırmak için zaman kavramı anlamsız hâle geliyor. Öyle ki, dün gece sabaha karşı saat 03:00 sularında kâğıt kalem ile boğuşuyor ve Çarpışma Tekniklerinden birisinin daha matematiksel modelinin C# ile nasıl uygulanabileceğini araştırıyordum. Sonuç olarak işe birkaç saatlik uykuyla gitmek zorunda kaldım. Ancak buna rağmen tüm gün dinçtim. Çünkü, çarpışma tekniklerinden birisini daha öğrenmiştim. Sıra anlatmaya gelmişti. İşte bugünkü makalemizde 3'üncü çarpışma tekniğini incelemeye çalışacağız.
 

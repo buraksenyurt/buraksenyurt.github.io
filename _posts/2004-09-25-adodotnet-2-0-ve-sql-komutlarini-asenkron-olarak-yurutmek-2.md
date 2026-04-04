@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net 2.0 ve Sql Komutlarını Asenkron Olarak Yürütmek - 2"
 date: 2004-09-25 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - asynchronous-programming
   - async
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hatırlayacağınız gibi bir önceki makalemizde, SQL komutlarının asenkron olarak yürütülmesi için kullanılan tekniklerden birisi olan polling modelini incelemiştik. Polling modeli basit olmakla birlikte, iş yükü fazla olan hacimli SQL komutlarının asenkron olarak çalıştırılmasında çok fazla tercih edilmemelidir. Bu tip sorguların yer aldığı asenkron yürütmelerde, CallBack veya Wait modellerini kullanmak verimliliği artırıcı etkenlerdir. Bu makalemizde CallBack modelini kısaca incelemeye çalışacağız.
 

@@ -2,10 +2,10 @@
 layout: post
 title: "Linq To Sql : Arka Planda Neler Oluyor?"
 date: 2007-12-19 10:00:00
-categories:
-  - Veritabanı
 tags:
   - language-integrated-query
+categories:
+  - Framework Tabanlı Programlama
 ---
 Veritabanı (Database) nesnelerinin programatik ortamda sınıf gibi tipler (Type) ve metod benzeri üyeler (Members) ile ifade ediliyor olması, bu tiplere ait nesne örnekleri üzerinden sorgulalamalar yapılabilmesi ihtiyacınıda ortaya çıkartmıştır. Bir veritabanı nesnesinin programatik taraftaki karşılığının nesne yönelimli (Object Oriented) bir dilde geliştirilmesi son derece kolaydır. Örneğin bir tablo (Table) göz önüne alındığında, bu tablonun kendisi bir sınıf (Class) olarak tasarlanabilir. Benzer şekilde, tablo içerisindeki alanlar (Fields) sınıf içinde yer alan birer özellik (Property) olarak düşünülebilir.
 

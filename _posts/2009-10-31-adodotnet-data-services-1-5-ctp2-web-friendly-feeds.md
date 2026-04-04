@@ -2,14 +2,14 @@
 layout: post
 title: "Ado.Net Data Services 1.5 CTP2 - Web Friendly Feeds"
 date: 2009-10-31 11:25:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
   - web-firendly-feeds
   - language-integrated-query
   - entity-framework
   - odata
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Ado.Net Data Services v1.5 CTP1 ile gelen Web Friendly Feeds özelliği, CTP2 sürümünde eklenen iki yeni eşleştirme seçeneği ile genişletilmiştir. Durun bir dakika...Web Friendly Feeds nedir?
 

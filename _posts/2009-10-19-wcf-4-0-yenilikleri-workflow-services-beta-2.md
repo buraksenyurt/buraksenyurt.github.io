@@ -2,11 +2,11 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Workflow Services [Beta 2]"
 date: 2009-10-19 13:22:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - workflow-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 WCF ve WF arasında ilişkiyi anlatan güzel bir cümle vardır..Net Framework 3.0' da arkadaş olan WCF ve WF,.Net Framework 3.5 sürümünde nişanlanmış,.Net Framework 4.0 sürümünde ise evlenmişlerdir.
 

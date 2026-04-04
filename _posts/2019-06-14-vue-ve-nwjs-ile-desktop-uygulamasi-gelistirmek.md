@@ -2,8 +2,6 @@
 layout: post
 title: "Vue ve NW.js ile Desktop Uygulaması Geliştirmek"
 date: 2019-06-14 13:00:00
-categories:
-  - Web Programlama
 tags:
   - vue.js
   - electron
@@ -19,6 +17,8 @@ tags:
   - .net
   - chromium
   - node-webkit
+categories:
+  - Web Programlama
 ---
 Geçen gün fark ettim ki yaş ilerleyince blogumdaki yazıların girişinde kullanabileceğim malzeme sayısı da artmış. Söz gelimi şu anda lise son yıllarıma yani seksenlerin sonu doksanların başına doğru gitmiş durumdayım. O dönemlerde kısa Amerikan dizileri popüler. Hatta Arjantin menşeeli diziler de çok yaygın. Sanıyorum Mariana isimli popüler bir dizi vardı. Kısa boylu, siyah kıvırcık saçlı, buğday tenli ve hayatı acılar içinde geçen bir Latin kadının hikayesiydi. Lakin ben hayatı toz pembe görmemize vesile olan komedileri tercih ediyordum. Hatta en çok sevdiğim komedi dizisi [Perfect Strangers](https://www.imdb.com/title/tt0090501/?ref_=nv_sr_2?ref_=nv_sr_2)'dı.
 

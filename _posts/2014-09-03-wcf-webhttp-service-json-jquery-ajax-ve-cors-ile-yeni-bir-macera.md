@@ -2,8 +2,6 @@
 layout: post
 title: "WCF WebHttp Service, JSON, jQuery, Ajax ve CORS ile Yeni Bir Macera"
 date: 2014-09-03 08:27:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - web-http-services
@@ -12,6 +10,8 @@ tags:
   - jquery
   - ajax
   - cors
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir süredir şirket içerisinde kullanılacak olan web tabanlı bir.Net uygulamasının geliştirilmesinde görev almaktayım. Uygulama, yürütülen süreç gereği her iterasyon sonunda yeni özellikler eklenmiş ve hataları giderilmiş biçimde Üretim (Production) ortamına taşınmakta.
 

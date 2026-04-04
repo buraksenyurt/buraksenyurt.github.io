@@ -2,9 +2,6 @@
 layout: post
 title: "AWS Elastic Beanstalk Macerası"
 date: 2018-02-16 05:00:00
-categories:
-  - Bulut Bilişim
-  - Programlama Dilleri
 tags:
   - python
   - aws
@@ -12,6 +9,8 @@ tags:
   - paas
   - django
   - iaas
+categories:
+  - Bulut Bilişim
 ---
 Geçenlerde sıkıldığım bir ara kendimi Google'da "How To Draw..." araması yaparken buldum. [Bir internet sitesinde](http://www.drawinghowtodraw.com/stepbystepdrawinglessons/2016/10/draw-cute-kawaii-chibi-robin-dc-comics-batman-robin-easy-steps-drawing-lesson-kids/) DC Comics'in Robin karakterini nasıl çizebileceğimizi anlatan içerik ilgimi çekmişti. Geometri bilgisini iyi kullandığı için anlaşılırdı. Tabii önemli bir eksiğim vardı...Yetenek. Sonuçları sizlerle paylaşmayı çok tercih etmiyorum ama yandaki Robin'in kafasının pek yakınlarından geçemediğimi gönül rahatlığıyla itiraf edebilirim. Dolayısıyla google aramasını ve internet sayfasını kapatıp tekrardan az buçuk anlamaya çalıştığım yazılım dünyasına döndüm.
 

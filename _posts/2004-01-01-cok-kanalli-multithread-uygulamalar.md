@@ -2,13 +2,13 @@
 layout: post
 title: "Çok Kanallı(Multithread) Uygulamalar"
 date: 2004-01-01 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - thread
   - multi-thread
   - .net
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemiz ile birlikte threading kavramını en basit hâliyle tanımaya çalışacağız. Sonraki makalelerimizde de threading kavramını daha üst seviyede işlemeye çalışacağız. Bugün hepimiz bilgisayar başındayken aynı anda pek çok uygulamanın sorunsuz bir şekilde çalıştığını görürüz. Bir belge yazarken, aynı zamanda müzik dinleyebilir, internet üzerinden program indirebilir ve sistemimizin kaynaklarının elverdiği ölçüde uygulamayla eşzamanlı olarak çalışabiliriz. Bu bize, günümüz işlemcilerinin ve üzerlerinde çalışan işletim sistemlerinin ne kadar yetenekli olduğunu gösterir. Gösterir mi acaba?
 

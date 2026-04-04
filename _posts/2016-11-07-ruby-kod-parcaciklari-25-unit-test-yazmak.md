@@ -2,8 +2,6 @@
 layout: post
 title: "Ruby Kod Parçacıkları 25 - Unit Test Yazmak"
 date: 2016-11-07 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - unit-test
@@ -11,6 +9,8 @@ tags:
   - assertion
   - test-driven-development
   - assert
+categories:
+  - Programlama Dilleri
 ---
 İyi yazılım geliştirmenin olmazsa olmaz parçalarından birisi de birim testleridir (Unit Tests) Tahmin edileceği üzere Test Driven Development denildiğinde (aklımızda hemen Red Green Blue - Fail, Fix, Refactoring oluşmalı) birim testleri ön plana çıkmaktadır. Pek çok programlama ortamında birim testler için hazır kütüphaneler yer alır. Ruby dilinde ise standart kütüpanede yer alan Test::Unit modülü kullanılmaktadır. Testlere dahil edilecek savlar (assert diyelim) oldukça geniştir. assert, assert_not_equal, assert_nil, assert_respond_to, assert_raise ve benzeri fonksiyonellikler söz konusudur ([Kullanılabilecek savların listesine şuradan bakabilirsiniz](https://ruby-doc.org/stdlib-2.1.1/libdoc/test/unit/rdoc/Test/Unit/Assertions.html)) Aşağıdaki kod parçasında basit bir test düzeneğine yer verilmiştir.
 

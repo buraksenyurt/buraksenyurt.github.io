@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - State Tasarım Kalıbı"
 date: 2022-05-15 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -11,6 +9,8 @@ tags:
   - oop
   - trait
   - trait-objects
+categories:
+  - Programlama Dilleri
 ---
 Belli bir akış içerisinde ele alınan nesneler belli durumlara sahiptirler. Bu durumlar arasındaki geçişler için fonksiyonlardan yararlanılırken bazı kuralların işletilmesi de istenebilir. Örneğin belli bir duruma sahipken diğer bir duruma geçilmesini engelleyen karar mekanizmaları ve koşullar söz konusudur. Hatta programın belli bir t anında içinde bulunabileceği durumlar bellidir. Nesne yönelimli dillerde bu gibi ihtiyaçlar için davranışsal (Behavioral) kalıplardan olan State tasarım deseni sıklıkla kullanılır. Hatta oyun programlamada State Machine türevli motorlarda nesne durumlarının yönetimi için bu desene ait pratikler söz konusudur.
 

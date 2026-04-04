@@ -2,8 +2,6 @@
 layout: post
 title: "gRPC Nedir, Nasıl Uygulanır?"
 date: 2019-04-24 07:06:00
-categories:
-  - Web Programlama
 tags:
   - node.js
   - rpc
@@ -15,6 +13,8 @@ tags:
   - service
   - soa
   - npm
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Oturduğum masanın hemen sağındaki pencerede ufak bir aralık kalmış olmalı ki "Vuuuu..." diye öten rüzgarın sesini fark ettim bir anda. Aslında işime konstantre olmuştum ama o sesle birlikte olduğum yerden uzaklaşmıştım. Dışarısı soğuktu. Havan kapalı ve biraz da kasvetliydi. Yağmur damlalarının cama vuruşunu fark ettim sonrasında. Gözlerim uzaklara daldı ve rüzgarın sesi ile birikte Lise yıllarında buldum kendimi. Doğal gaz İstanbul'a henüz gelmiş ve bizimki gibi kimi sobalı ev kalorifer petekleriyle tanışmıştı. Geçmiş yılların ardından bu yeni konfor sayesinde sabahları üşüyerek uyanmıyorduk artık. Benim en büyük keyiflerimden birisi olan öğle sonrası uykularım içinse yeni mekanımı bulmuştum bile. Okuldan her geldiğimde önce karnımı doyuruyor sonra o köşeye kuruluyordum. Minderler camın altındaki peteğin yanına seriliyor, üste hafif bir battaniye alınıyor, zaten sessiz olan sokağın sükunetini bozmak isteyen yağmur damlalarının cama vuruşu dinlenerek derin bir uykuya dalınıyor. Bazen de o sessizliğe eski sokak kapısının altındaki süngerden kaçan "Vuuuu" sesi ortak olurdu...
 

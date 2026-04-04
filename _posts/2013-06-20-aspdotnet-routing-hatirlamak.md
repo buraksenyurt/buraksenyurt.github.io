@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Routing – Hatırlamak"
 date: 2013-06-20 05:07:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - routing
@@ -12,6 +10,8 @@ tags:
   - model-view-controller
   - url
   - url-mapping
+categories:
+  - Web Programlama
 ---
 Geçtiğimiz günlerde şirkette çok küçük bir web uygulamasına ihtiyaç duyuldu. Neredeyse bir günlük geliştirme maliyeti olan, küçük bir departmanın önemli bir gereksinimi karşılayacaktı. Tabi insan uzun zaman kodlama yapmayınca veya kodlamaya ara verince bazı temel bilgileri de unutabiliyor.
 

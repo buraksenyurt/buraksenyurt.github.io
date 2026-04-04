@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service - Hata Yönetimi [Beta 1]"
 date: 2009-09-09 13:02:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir önceki [blog yazımızda](/2009/08/26/wcf-4-0-yenilikleri-routing-service-gelistirmek-hello-world-beta-1/)WCF 4.0 ile basit bir yönlendirme servisinin (Router Service) nasıl yazılabileceğini incelemeye çalışmıtık. Tabi bu tip bir sistemde dikkat edilmesi gereken vakalardan biriside, Downstream servislerde istisnaların (Exceptions) oluşması halinde nasıl davranılacağıdır. Peki ne gibi durumlardan bahsediyoruz? Örneğin, Router servisine gelen paketin yönlendirildiği bir alt servis çalışmıyor olabilir.
 

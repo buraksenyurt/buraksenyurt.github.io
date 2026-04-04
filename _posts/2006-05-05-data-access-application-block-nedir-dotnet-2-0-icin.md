@@ -2,12 +2,12 @@
 layout: post
 title: "Data Access Application Block Nedir? (.Net 2.0 için)"
 date: 2006-05-05 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - enterprise-applications
   - enterprise-architectures
   - cross-cuttings
+categories:
+  - Framework Tabanlı Programlama
 ---
 Microsoft tarafından serbest olarak dağıtılan Data Access Application Block (Veri Erişimi Uygulama Bloğu) özellikle n katmanlı mimarilerde, Data Access Layer (veri erişim katmanı) için gerekli işlevselliği sağlayan, performans ve bellek yönetimi konusunda iyi sonuçlar veren bir Enterprise Solution Pattern'dir. Bu block sayesinde, özellikle Business Layer (iş katmanındaki) katmanındaki işimiz oldukça kolaylaşmaktadır. Özellikle Sql sunucusu üzerinde uzmanlaşmış olan bu block'un.Net 2.0 için olan sürümü Ocak ayı içerisinde yayınlandı.
 

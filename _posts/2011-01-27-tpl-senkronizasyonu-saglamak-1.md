@@ -2,13 +2,13 @@
 layout: post
 title: "TPL Senkronizasyonu Sağlamak - 1"
 date: 2011-01-27 13:40:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - .net-framework
   - synchronization-primitives
   - parallel-programming
+categories:
+  - Paralel Programlama
 ---
 Pek çoğumuzun anahtarlığında sayısız anahtar bulunmaktadır. Özellike gerilim filmlerinde bu anahtarlardan doğru olanı bulmak ve anahtar deliğine sokmak, hep zaman alan başarısız kaçış girişimleri olarak sahnelenir. Genellikle bu başarız girişimlerin sonunda ne olduğu malumdur.
 

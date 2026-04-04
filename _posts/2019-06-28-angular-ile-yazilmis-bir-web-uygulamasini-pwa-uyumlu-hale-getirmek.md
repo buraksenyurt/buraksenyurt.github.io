@@ -2,8 +2,6 @@
 layout: post
 title: "Angular ile Yazılmış Bir Web Uygulamasını PWA Uyumlu Hale Getirmek"
 date: 2019-06-28 07:00:00
-categories:
-  - Web Programlama
 tags:
   - angular
   - angular-cli
@@ -19,6 +17,8 @@ tags:
   - cli
   - lighthouse
   - chrome-developer-tools
+categories:
+  - Web Programlama
 ---
 Geminin neredeyse tüm seyrüsefer sistemi ve radarı arka arkaya gelen alarm sinyalleri sonrası bozulmuştu. Güney pasifiği terk etmek üzere olan koca tekne en son Arjantin kıyılarına yakın seyrediyordu. Gecenin zifiri karanlığında ilerlerken kaptanın en büyük yol bulma ümitlerinden olan kuzey yıldızı bulutlarla kaplı gökyüzünden saatlerdir görülmüyordu.
 

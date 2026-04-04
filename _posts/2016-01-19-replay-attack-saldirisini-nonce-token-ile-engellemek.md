@@ -2,8 +2,6 @@
 layout: post
 title: "Replay Attack Saldırısını Nonce Token ile Engellemek"
 date: 2016-01-19 00:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - ddos
@@ -15,6 +13,8 @@ tags:
   - rijndael
   - encryption
   - decryption
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir zamanlar WCF servisleri ile ilişkili epeyce çalışma yapmış ve öğrendiklerimi kaleme almaya çalışmıştım. En çok zorlandığım konulardan birisi ise servislerin güvenliğini sağlamaktı. (Mesaj içeriklerinin korunmasından tutun, uç noktalar arası haberleşmenin güvenilik olmasına kadar dikkat edilmesi gereken pek çok nokta var)
 

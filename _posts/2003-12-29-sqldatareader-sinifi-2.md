@@ -2,13 +2,13 @@
 layout: post
 title: "SqlDataReader Sınıfı 2"
 date: 2003-12-29 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sqldatareader
   - .net
   - csharp
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir önceki makalemizde SqlDataReader sınıfını incelemeye başlamıştık. Listeleme amaçlı veri kümelerinin görüntülenmesinde performans açısından etkin bir rol oynadığından bahsetmiştik. Bugünkü makalemizde, SqlDataReader sınıfının faydalı diğer özelliklerinden bahsedeceğiz. Öncelikle, bir SqlDataReader nesnesinin, geçerli ve açık bir SqlConnection nesnesi üzerinde çalışan bir SqlCommand nesnesi yardımıyla oluşturulduğunu hatırlayalım.
 

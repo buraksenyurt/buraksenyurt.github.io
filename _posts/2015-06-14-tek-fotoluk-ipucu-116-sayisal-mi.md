@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu 116 - Sayısal mı?"
 date: 2015-06-14 15:32:00
-categories:
-  - Genel
 tags:
   - regex
   - extension-methods
   - csharp
+categories:
+  - Foto İpucu
 ---
 Oldu ya geliştirdiğiniz projenin bir yerinde, koda düşen metinsel bazı değişkenlerin sayısal olup olmadığını tespit etme ihtiyacı duydunuz. Söz gelimi bir Excel dokümanı içerisinden aldığınız hücre değerlerinin sayısallığını kontrol etmek ve buna göre program akışını yönlendirmek gerekiyor.
 

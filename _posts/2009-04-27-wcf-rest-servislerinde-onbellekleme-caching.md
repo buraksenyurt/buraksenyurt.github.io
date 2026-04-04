@@ -2,11 +2,11 @@
 layout: post
 title: "WCF Rest Servislerinde Önbellekleme(Caching)"
 date: 2009-04-27 12:28:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 REST (REpresentational State Transfer) modelini uygulayan WCF servislerinin geliştirilmesinde, WCF Rest Starter Kit ile birlikte gelen kolaylıklardan biriside, önbellekleme (Caching) işlemlerinin dekleratif (Declarative) olarak yapılabilmesidir. Burada dekleratiflikten kastımız, önbellekleme bildirimlerinin çalışma zamanına nitelik (Attribute) yoluyla bildirilmesidir. Web programlama modeline göre geliştirilen servislerin çeşidi ne olursa olsun, performans kriterleri söz konusu olduğunda önemli olan noktalardan biriside verilerin istemciye gönderilmeden önce gerekiyorsa belirli süreler boyunca veya bazı koşullar sağlanıncaya kadar sunucu ön belleğinde (hatta bazen istemci tarafında tarayıcı uygulama için ayrılan özel bölgelerde) tutulmasıdır.
 

@@ -2,14 +2,14 @@
 layout: post
 title: "Web Servislerinde SoapHeader ile Özelleştirilmiş Doğrulama"
 date: 2007-01-10 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - xml
   - web-service
   - soap
   - simple-object-access-protocol
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Web servislerinde güvenlik söz konusu olduğunda, geliştiricileri en çok zorlayan noktalardan birisi görsel bir arabirimin olmayışıdır. Bu nedenle özellikle web tabanlı uygulamalarda tercih edilen form tabanlı (form-based) veya windows tabanlı (windows based) doğrulama (authentication) sistemlerini uygulamak biraz daha farklıdır. Biz bu makalemizde form tabanlı doğrulama ve yetkilendirme sistemininin iskeletini, web servisleri üzerinde nasıl geliştirebileceğimizi incelemeye çalışacağız.
 

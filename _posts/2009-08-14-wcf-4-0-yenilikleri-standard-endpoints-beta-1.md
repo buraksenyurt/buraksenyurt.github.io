@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Standard Endpoints [Beta 1]"
 date: 2009-08-14 03:15:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir süredir WCF 4.0 ile birlikte gelen yenilikleri tek tek incelemeye çalışıyoruz. İlk incelediğimiz noktalar konfigurasyon ayarları üzerinde yapılmış olan basitleştirmeleri içermektedir. Bu değişimlerden bir diğerini inceleyerek serimize devam ediyor olacağız. Bu anlamda konumuz Standard Endpoints başlığı altında gelen yeniliklerdir. Bu özelliği inceledikten sonra konuyu anlamanın en iyi yolunun bir önceki versiyonda ne olduğuna bakmak olduğuna karar verdim.
 

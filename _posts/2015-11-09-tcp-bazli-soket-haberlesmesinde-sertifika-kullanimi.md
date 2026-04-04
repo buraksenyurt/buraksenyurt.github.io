@@ -2,8 +2,6 @@
 layout: post
 title: "TCP Bazlı Soket Haberleşmesinde Sertifika Kullanımı"
 date: 2015-11-09 21:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - tcp
   - soap
@@ -16,6 +14,8 @@ tags:
   - extension-methods
   - sesecurity
   - cryptography
+categories:
+  - Programlama Dilleri
 ---
 Günümüzde geliştirilen yazılım ürünleri çoğunlukla farklı uygulamalar ile de konuşmak durumunda. Sistemler sürekli birbirleri ile konuşan parçalar bütünü halinde genişlemeye devam ediyor. Akıllı cihazlar büyük ölçekli sistemlerin birer parçası olup çeşitli iş süreçlerinin işletilmesinde rol alıyor. Bu iletişimde servislerin de yeri var.
 

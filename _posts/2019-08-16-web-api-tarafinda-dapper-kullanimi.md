@@ -2,8 +2,6 @@
 layout: post
 title: "Web API Tarafında Dapper Kullanımı"
 date: 2019-08-16 10:30:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - web-api
@@ -26,6 +24,8 @@ tags:
   - entity-framework
   - extension-methods
   - microservice
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 O [cumartesi gecesi çalışması](https://github.com/buraksenyurt/saturday-night-works)nı bitirdiğimde, yaptığım örneğin beni çok da tatmin etmediği gerçeğiyle karşı karşıyaydım. Bazen böyle hissediyordum. Boşa kürek çektiğim hissine kapılıyor ve neden tüm bunlarla uğraştığımı sorguluyordum. Belki de sonraki yıllar boyunca kullanmayacağım bir şeyler üzerinde çalışmıştım. Ne aldığım notları ne de senaryo için kullandığım Westwind adını beğenmiştim. Örnek çok sığdı. Zengin değildi. Bir şekilde beni rahatsız ediyordu.
 

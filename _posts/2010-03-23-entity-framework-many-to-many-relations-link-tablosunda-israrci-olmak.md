@@ -2,10 +2,10 @@
 layout: post
 title: "Entity Framework - Many To Many Relations - Link Tablosunda Israrcı Olmak"
 date: 2010-03-23 18:00:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bazen bebek adımları ile ilerlememiz gerekir. Özellikle yazılım alanında bazı konuları öğrenirken işin teorisinden önce pratik bir örneği adım adım geliştirmek son derece faydalıdır. Ado.Net Entity Framework ile ilişkili inclemelerimize devam edeceğimiz bu yazımızda bebek adımları ile ilerleyeceğiz.
 

@@ -2,15 +2,14 @@
 layout: post
 title: "Karmaşık Değil Son Derece Basit"
 date: 2011-09-29 06:50:00
-categories:
-  - Framework Tabanlı Programlama
-  - Programlama Dilleri
 tags:
   - generic
   - generics
   - interface
   - domain
   - binary-serialization
+categories:
+  - Framework Tabanlı Programlama
 ---
 Kurumsal eğitim vermenin en güzel yanlarından birisi de, gelenlerin istekleri ve talepleri doğrultusunda gerçek hayat örneklerini daha kolay bir şekilde kodlayabilmeniz ve gösterebilmenizdir.
 

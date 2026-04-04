@@ -2,11 +2,11 @@
 layout: post
 title: "İlişkili Tabloları DataSet İle Kullanmak - 1"
 date: 2003-12-09 10:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataset
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, aralarında relationship (ilişki) bulunan tabloların, bir DataSet nesnesinin bellekte temsil ettiği alanda nasıl saklandığını incelemeye çalışacağız. Bunu yaparken de, geliştireceğimiz uygulama ile parent-child (ebeveyn-çocuk) ya da master-detail (efendi-detay) adı verilen ilişkileri taşıyan tablolarımızı bir windows application’da bir dataGrid nesnesi ile nasıl kolayca göstereceğimizi göreceğiz.
 

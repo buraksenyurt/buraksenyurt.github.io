@@ -2,13 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu - 6 (Fluent Exception Handling)"
 date: 2011-06-24 09:22:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - .net-framework
   - exception-handling
+categories:
+  - Foto İpucu
 ---
 Bazen iç içe çağrılarda bulunan metod zincirlerinde herhangibir seviyede meydana gelen Exception durumunu, en üst noktada yakalamak isteriz. Bu durumda balon köpüğü misali bir aşağıdan yukarı yükselen bir mekanizmayı kullanabiliriz. Nasıl mı?
 

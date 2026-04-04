@@ -2,15 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu - 15(Self Hosted Workflow Service)"
 date: 2011-07-07 08:05:00
-categories:
-  - Genel
-  - Servis Tabanlı Geliştirme
-  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - workflow-foundation
   - workflow-services
   - windows-workflow-foundation
+categories:
+  - Foto İpucu
 ---
 Elinizde bir Workflow Service kütüphanesi ve XAMLX uzantılı Workflow Service dosyaları var. Bu dosyalardan yararlanarak kendi Workflow Service Host uygulamanızı yazmak niyetindesiniz. Diyelim ki bu uygulama bir Console projesi olacak. Nasıl yaparsınız? İşte böyle
 

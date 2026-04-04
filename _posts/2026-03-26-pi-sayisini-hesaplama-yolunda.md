@@ -2,8 +2,6 @@
 layout: post
 title: "Pi(π) Sayısını Hesaplama Yolunda"
 date: 2026-03-26 20:30:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - rust
@@ -11,6 +9,8 @@ tags:
   - mathematics
   - simd
   - parallelComputing 
+categories:
+  - Algoritma
 ---
 Matematiksel yöntemlerden bazılarını ele alarak belli bir basamağa kadar **pi *(π)*** sayısını hesaplamaya çalışacağım. Doğru bir basamak değerine ulaşmak ve burada yüksek sürate çıkmak hedeflerim arasında. Önce en amele yöntemlerden başlayarak daha sonra daha karmaşık yöntemlere geçmek niyetindeyim ama yol beni farklı bir rotaya sürükledi diye de özet geçeyim :D Diğer modellere geçemeden kendimi diller arasında performans hesaplamaları, optimizasyonlar ve senkronizasyon sorunlarıyla uğraşırken buldum. O yüzden bu yazıda sadece Monte Carlo yöntemini ele alacağım.
 

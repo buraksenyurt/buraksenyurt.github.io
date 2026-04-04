@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net Data Services Ders Notları - 5 (Custom LINQ Provider-CUD)"
 date: 2008-10-24 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
   - wcf-data-services
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Ado.Net Data Services konusu ile ilintili bir önceki ders notlarımızda, EDM (Entity Data Model) üzerinden CUD (CreateUpdateDelete) işlemlerinin nasıl yapılabileceğini incelemeye çalışmıştık. Ancak durum özel LINQ Provider kullanımı söz konusu olduğunda biraz daha karmaşıklaşmakta. Nitekim Custom LINQ Provider kullanılması halinde istemci tarafından gelen CUD taleplerine karşılık servis tarafında özel kodlamaların yapılması gerekiyor. Bu noktada ders notlarımız içerisinde belkide çoğumuzun korkup fazla bulaşmak istemediği bir konuya kısacada olsa değineceğimizi şimdiden ifade etmek isterim. Reflection (Yansıma):)
 

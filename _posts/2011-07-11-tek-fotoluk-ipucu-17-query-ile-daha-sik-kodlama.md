@@ -2,13 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu-17 (Query ile Daha Şık Kodlama)"
 date: 2011-07-11 18:00:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - language-integrated-query
   - enums
+categories:
+  - Foto İpucu
 ---
 LINQ sorgularını sadece sorgulamak için kullandığımızı da nereden çıkartıyorsunuz. Aslında onları kodlarımızı daha şık hale getirmek için de kullanabiliriz? Nasıl mı? İşte küçük bir örnek
 

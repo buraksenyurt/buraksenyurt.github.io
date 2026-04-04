@@ -2,8 +2,6 @@
 layout: post
 title: "Web API'leri Swagger ile Zenginleştirelim"
 date: 2018-09-20 18:00:00
-categories:
-  - Web Programlama
 tags:
   - .net-core
   - web-api
@@ -13,6 +11,8 @@ tags:
   - api
   - xml
   - help-standards
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Dokümantasyon sektörümüzün olmazsa olmazları arasında yer alan bir konu. Ancak güncelliğini korumak ve okunabilirliğini sağlamak da bir o kadar zor olabiliyor. Ayrıca dokümantasyon hazırlamak da çoğumuza bir işkence gibi geliyor. Yine de belirli alanlarda tüketicilerin iyiliği için bu dokümantasyonları hazırlamak boynumuzun borcu diye düşünüyorum. Devasa kütüphanalerden oluşan uygulamalarda gerçekten dokümantasyon başlı başına bir işken daha küçük alanlarda etkili kullanabileceğimiz yerleri de var.
 

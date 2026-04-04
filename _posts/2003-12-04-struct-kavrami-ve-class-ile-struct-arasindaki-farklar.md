@@ -2,12 +2,12 @@
 layout: post
 title: "Struct Kavramı ve Class ile Struct Arasındaki Farklar"
 date: 2003-12-04 11:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - struct
   - class
   - csharp
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde struct kavramını incelemeye çalışacağız. Hatırlayacağınız gibi, kendi tanımladığımız veri türlerinden birisi olan Numaralandırıcıları (Enumerators) görmüştük. Benzer şekilde diğer bir veri tipi de struct (yapı)'lardır. Yapılar, sınıflar ile büyük benzerlik gösterirler. Sınıf gibi tanımlanırlar. Hatta sınıflar gibi, özellikler, metodlar, veriler, yapıcılar vb... içerebilirler. Buna karşın sınıflar ile yapılar arasında çok önemli farklılıklar vardır.
 

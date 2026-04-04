@@ -2,14 +2,13 @@
 layout: post
 title: "Raspberry Pi Maceramız Kaldığı Yerden Devam Ediyor"
 date: 2016-06-15 19:07:00
-categories:
-  - Programlama Dilleri
-  - IoT
 tags:
   - raspberry-pi
   - IoT
   - Internet-of-Things
   - python
+categories:
+  - IoT
 ---
 Raspberry Pi'mize yeni parçalar alarak masraf yapmaya, python dilini öğrenmeye ayırdığımız bir iki haftayı daha heyecanlı bir şekilde geride bıraktık. Ne durumdayız, merak ediyor musunuz? [Recep Duman](http://www.recepduman.net/) hocam ile kısa bir Retrospective toplantısı yapıp durumu değerlendiriyoruz. Buyrun izleyelim. Bu arada yer yer sürçü lisan'da ettik o nedenle affedin.
 

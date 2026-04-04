@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 132 - Bir Tipin Özelliklerine Varsayılan Değerlerini Set Etmek"
 date: 2016-06-05 18:00:00
-categories:
-  - Genel
 tags:
   - reflection
   - csharp
@@ -12,6 +10,8 @@ tags:
   - default-value
   - activator
   - create-instance
+categories:
+  - Foto İpucu
 ---
 Nesneler kodlarımızın olmazsa olmaz enstrümanları. Özellikle Domain odaklı çözümlerimizde POCO (Plain Old CLR Objects) tiplerini sıklıkla kullanıyoruz. Bu tipler (genellikle class olarak tasarlanıyorlar) içlerinde sayısız özellik (Property) de barındırabiliyorlar. Nesneler örneklendiklerinde ve sonrasındaki yaşam süreleri boyunca çeşitli değerler ile nitelendiriliyorlar. Peki t anında bir nesne örneğinin tüm özelliklerine varsayılan değerlerini atamanız gerekseydi ne yapardınız? Peki ya bunu herhangibir T tipi için uygulanabilir hale getirmek isteseniz ne yapardınız? Yoksa aşağıdaki gibi generic bir genişletme metodu (Generic Extension Method) ile mi çözüm arardınız?
 

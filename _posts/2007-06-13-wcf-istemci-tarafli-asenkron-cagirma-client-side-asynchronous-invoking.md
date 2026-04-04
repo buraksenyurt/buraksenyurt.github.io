@@ -2,13 +2,13 @@
 layout: post
 title: "WCF - Istemci Taraflı Asenkron Çağırma (Client Side Asynchronous Invoking)"
 date: 2007-06-13 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - asynchronous-programming
   - async
   - client-side-invoke
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Windows Communication Foundation ile ilgili bir önceki makalemizde One Way tekniğini uygulayarak istemcilerin asenkron olarak uzak metodları nasıl çağırabileceklerini incelemiştik. One Way tekniğinin elbetteki en büyük dezavantajı geriye değer döndüren metodların ele alınamayışıdır. Oysaki çoğu zaman, işlem süresi uzun zaman alabilecek metodların geriye değer döndürdüğü vakkalarda asenkron erişim tekniklerini kullanmak gerekir. Ancak Windows Communication Foundation göz önüne alındığında asenkron çalıştırma iki farklı şekilde ele alınabilmektedir. Bunlarda birisi istemci taraflı asenkron çağırma (Client Side Asynchronous Invoking) modelidir. Diğeri ise servis taraflı asenkron uyarlama modelidir (Service Side Asynchronous Implementation). Bu makalemizde istemci taraflı asenkron çağırma modelini incelemeye çalışacağız.
 

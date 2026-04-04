@@ -2,8 +2,6 @@
 layout: post
 title: "MQTT Protokolünün Kullanıldığı Basit Bir Publisher/Subscriber Senaryosu"
 date: 2020-05-05 13:48:00
-categories:
-  - Web Programlama
 tags:
   - mqtt
   - nodejs
@@ -12,6 +10,8 @@ tags:
   - docker
   - broker
   - publisher-subscriber-model
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Yine bir yerlerde bir şeyleri araştırırken özellikle IoT ve M2M konseptinde yaygın olarak kullanılan MQTT (Message Queuing Telemetry Transport) isimli bir mesajlaşma protokolüne denk geldim. Düşük bant genişliklerinde, yüksek gecikme sürelerinin olduğu senaryolarda hafif bir mesajlaşma protokolü olarak karşımıza çıkıyor. En sık verilen senaryo bir IoT cihazının ısı sensöründen yayınlanan mesajın abone olan cep telefonu veya bilgisayarlar tarafından görülebilmesi. Elimde bir Raspberry PI vardı ama ısı sensörü yoktu. Dahası sensör alıp kurcalamaya üşendim diyelim. Hızlı bir antrenman için hayali bir senaryo düşündüm aşağıdaki karalamayı yaptım.
 

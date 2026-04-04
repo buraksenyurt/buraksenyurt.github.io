@@ -2,8 +2,6 @@
 layout: post
 title: "GoLang - Basit HTTP Web Server Yapımı"
 date: 2017-02-20 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - rest-api
@@ -16,6 +14,8 @@ tags:
   - net/http
   - json
   - strings
+categories:
+  - Programlama Dilleri
 ---
 Go dili ile ilgili maceralarım devam ediyor. Dilin temel özelliklerini anlamaya çalışmak bir yana, aralarda merak ettiğim farklı konuları da incelemeye çalışıyorum. Uygulamalı örnekler üzerinden gitmek de bir programlama dilini öğrenirken tercih ettiğim yollardan birisi. Size de tavsiye ederim.
 

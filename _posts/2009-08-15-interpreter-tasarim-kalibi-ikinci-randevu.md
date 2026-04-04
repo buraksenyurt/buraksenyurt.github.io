@@ -2,12 +2,12 @@
 layout: post
 title: "Interpreter Tasarım Kalıbı - İkinci Randevu"
 date: 2009-08-15 17:37:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop
   - csharp
+categories:
+  - Yazılım Tasarımı
 ---
 Bir süre önce tasarım kalıplarından [Interpreter](/2009/08/03/tasarim-desenleri-interpreter/) desenini incelemiş ve konu ile ilişkili bir kural motorunun çok basit anlamda nasıl yazılabileceğini araştıracağımızdan bahsetmiştik. Interpreter tasarım kalıbında hatırlayacağınız gibi Terminal ve NonTerminal tipleri bulunmaktadır. NonTerminal tipler genellikle kural motoru gibi modellerde devreye girmektedir. Kural motorlarında (Rule Engine), işletilmek istenen ifadelerin içerisinde sıklıkla operatörlerin kullanılması söz konusudur.
 

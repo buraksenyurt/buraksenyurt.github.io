@@ -2,11 +2,11 @@
 layout: post
 title: "WCF - Hata Yönetimi (Fault Management)"
 date: 2007-05-09 06:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - fault-management
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Hata yönetimi her programlama dili ve geliştirme ortamı içerisinde yer alan önemli konulardan birisidir. Özellikle kullanıcıların yapmış olduğu işlemler sonucunda oluşan veya sistem üzerinde beklenmeyen durumlardan doğan hataların önüne geçmek amacıyla çeşitli mekanizmalara başvurulmaktadır. Bunlardan birisi ve aynı zamanda etkili olanıda istisna yönetimidir (Exception Handling). Microsoft.Net ortamında istisna yönetimi CLR (Common Language Runtime - Ortak Dil ÇalışmaZamanı) tarafından gerçekleştirilen bir unsurdur.
 

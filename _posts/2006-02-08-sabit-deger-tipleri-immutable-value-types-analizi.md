@@ -2,12 +2,12 @@
 layout: post
 title: "Sabit Değer Tipleri (Immutable Value Types) Analizi"
 date: 2006-02-08 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - type-systems
   - Immutable-Types
+categories:
+  - Programlama Dilleri
 ---
 Immutable (sabit) tipler basit olarak tanımlandıktan sonra varlıkları asla değişmeyen türler olarak nitelendirilebilirler. Sabit bir tipe ait bir nesne örneğini oluşturduğunuzda, bu tipin içeriği asla değişmez. Ancak bir tipin sabit olup olmayacağına karar vermek gerçekten zordur. Bu karar mekanizmasında, tipin sahip olduğu veri içeriğinin atomik (atomic) yapısı oldukça önemlidir. Atomiklik, bir tipin sahip olduğu verisel bütünlüğü oluşturan her bir elemanın aralarındaki ilişki olarak tanımlanabilir. Bu noktada bir tipin atomik olup olmaması, sabit bir tip haline getirilip getirilmemesinde önemli bir karar mekanizmasıdır.
 

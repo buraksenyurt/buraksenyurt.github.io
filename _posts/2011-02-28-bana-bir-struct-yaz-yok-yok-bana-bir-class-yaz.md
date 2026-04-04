@@ -2,12 +2,12 @@
 layout: post
 title: "Bana Bir Struct Yaz. Yok Yok Bana Bir Class Yaz."
 date: 2011-02-28 16:30:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - class
   - struct
+categories:
+  - Programlama Dilleri
 ---
 Aralık…2003 yılı. Dışarısı oldukça soğuk ve ben evdeyim. Camdan dışarıya baktığımda dışarıda pek kimseyi göremiyorum. Soğuktan dolayı sakin olan sokağımız daha da bir yanlız. Bu arada askerden döndükten sonra iş aramakla geçirdiğim 8nci ayın içerisindeydim. Neyseki mesleki kariyerimde ilerlemek için yeni bir heyecanım var. [C#Nedir?](http://www.csharpnedir.com/) ile daha ilk günlerimi yaşıyorum.
 

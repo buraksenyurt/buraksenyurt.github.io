@@ -2,12 +2,12 @@
 layout: post
 title: "REST Bazlı WCF Servislerinde AdapterStream Kullanımı"
 date: 2009-04-29 16:03:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api
   - adapterstream
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 REST bazlı WCF servislerinde zaman zaman istemcilere içerik boyutları yüksek olan çıktılar veriyor olabiliriz. Bunlara örnek olarak resim veya metin dosyaları verilebilir. Aslında Stream veya TextWriter bazlı içerikler dersek çok daha doğru olacaktır.(Neden TextWriter olarak belirttiğimi yazının sonunda öğrenebileceğiz.) Özellikle istemci/sunucu bazlı uygulamalar göz önüne alındığında, büyük boyutlu içeriklerin karşı tarafa aktarılması sırasında karşılaşılabilecek pek çok performans kaybı söz konusudur. Sunucu tarafından bakıldığında, istemcinin talep ettiği içeriğin Stream olarak elde edilmesi sırasında bellek ve işlemci bazında yüklenmeler olabilir. Buda sunucunun performansının olumsuz yönde etkiliyebilir. Nitekim kaynakların israfı söz konusudur. Tabi istemci tarafı açısından bakıldığında da, gelen Stream içeriğinin işlenmesi esnasında bazı sıkıntılar ile karşılaşılabilir.
 

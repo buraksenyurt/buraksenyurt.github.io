@@ -2,8 +2,6 @@
 layout: post
 title: "Tasarım Desenleri – Template Method"
 date: 2015-02-03 19:00:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-patterns
   - tasarım-kalıpları
@@ -11,6 +9,8 @@ tags:
   - object-oriented-programming
   - anti-pattern
   - template-method
+categories:
+  - Yazılım Tasarımı
 ---
 Düzenli olarak teknik paylaşımlarda bulunan internet yazarlarının karşılaştığı en büyük sorunlardan birisi, hızla gelişen teknoloji nedeniyle ele alınan konuların kolayca eskimesidir. Hangi firma olursa olsun bu kural geçerlidir. Bu eskitme işinde elbette başı çeken bir kaç firma var. Zaman zaman yazarların serzenişte bulunup kızdığı Microsoft, Oracle, Google ve diğerleri.
 

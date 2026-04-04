@@ -2,12 +2,11 @@
 layout: post
 title: "Tuple Nedir? Anlamak, Bilmek İstiyorum."
 date: 2010-12-01 03:55:00
-categories:
-  - Framework Tabanlı Programlama
-  - Programlama Dilleri
 tags:
   - csharp
   - tuple
+categories:
+  - Framework Tabanlı Programlama
 ---
 Matematik Mühendisliği eğitimi almış birisi olarak hayatımın önemli bir kısmını teorem ispatlarına harcadığımı itiraf edebilirim. Tabi yaşamımın mesleki olarak kırılma anı sanıyorum ki üniversite yıllarında bilgisayara merak salmam ve programlama ile alakalı dersleri daha çok sevmemdi. Kısacası Matematik üzerine eğilmekten vazgeçip (ki bundan biraz pişmanlık duyduğumu ifade edebilirim) yazılım alanında ilerlemeyi kafama koymuştum.
 

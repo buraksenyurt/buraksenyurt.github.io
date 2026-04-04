@@ -2,11 +2,11 @@
 layout: post
 title: "Kendi Referans Tiplerimizi Klonlamak"
 date: 2005-11-14 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - IClonable
+categories:
+  - Programlama Dilleri
 ---
 Bu makalemizde kendi yazmış olduğumuz referans tipleri arasında yapılan atama işlemleri sırasında üyeden üyeye (member by member) kopyalamanın nasıl yapılabileceğini incelemeye çalışacağız. Bildiğiniz gibi referans tipleri belleğin heap bellek bölgesinde tutulurlar. Bu tutuluş yapısının özellikle referans tipleri arasında yapılan atama işlemlerinde önemli bir etkisi vardır. İki referans tipi arasında bir atama işlemi söz konusu olduğunda, aslında bu referans tiplerinin heap bellek bölgesinde yer alan adresleri eşitlenmektedir. Bu eşlemenin doğal bir sonucu olarak da referans tiplerinin herhangi birisinde yapılan değişiklik diğerini de otomatikman etkileyecektir.
 

@@ -2,9 +2,6 @@
 layout: post
 title: "Recursive Fibonacci Neden Yavaş?"
 date: 2013-06-07 00:40:00
-categories:
-  - Algoritma
-  - Programlama Dilleri
 tags:
   - recursive-method
   - özyinelemeli-fonksiyonlar
@@ -18,6 +15,8 @@ tags:
   - algoritma
   - hanoi-towers
   - csharp
+categories:
+  - Algoritma
 ---
 Okulda “Algoritma ve Veri Yapıları” dersinde ya da C# benzeri nesne yönelimli (Object Oriented) bir dili öğrenmeye başladığımız ilk zamanlarda, karşımıza muhakkak Recursive fonksiyonlar çıkmıştır (Çıkmaya da devam edecektir). Hatta en meşhur olanları da, bir sayının faktöryelinin (6!=6x5x4x3x2x1=720 ve 0!=1) bulunması veya Fibonacci sayı dizisinin (0,1,1,2,3,5,8,13,21,34…, Fn=(Fn-1 (+(Fn-2)) ardışıl olarak ekrana yazdırılmasıdır.
 

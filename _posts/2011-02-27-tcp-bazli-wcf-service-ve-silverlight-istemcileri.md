@@ -2,15 +2,14 @@
 layout: post
 title: "TCP Bazlı WCF Service ve Silverlight İstemcileri"
 date: 2011-02-27 16:10:00
-categories:
-  - Web Programlama
-  - Servis Tabanlı Geliştirme
 tags:
   - nettcpbinding
   - windows-communication-foundation
   - wcf-services
   - Silverlight
   - silverlight
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir yazar, hazırlayacağı hikaye için çoğu zaman çevrede dolaşıp malzeme toplar. Olayın kahramanlarını tasvir etmek için çevredeki insanları göz önüne alır. Hatta gezdiği yerleri inceler. Bu açıdan bakıldığında iyi yazarların aslında çok iyi birer gözlemci olduğu söylenebilir.
 

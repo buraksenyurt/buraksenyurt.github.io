@@ -2,8 +2,6 @@
 layout: post
 title: "Teknik Borçları(Technical Debt) Azaltmak"
 date: 2019-01-04 05:03:00
-categories:
-  - DevOps
 tags:
   - test-driven-development
   - code-coverage
@@ -20,6 +18,8 @@ tags:
   - code-metrics
   - continuos-inspection
   - continuous-integration
+categories:
+  - Yazılım Tasarımı
 ---
 Bir yazılım ürünü geliştirilirken dikkat edilmesi gereken konuların başında kod kalitesi geliyor. Kaliteli kod, bilinen kodlama standartlarına uyan, okunabilirliği yüksek, karmaşıklığı az, dokümante edilmiş ve bakımı yapılabilir özellikleri barındırmak durumunda. Bu kurallara uymaya çalışmak geliştirme sürelerini uzatsa da uzun vadede kalitenin korunması için gerekli. Üstelik endüstüriyel normlara uygun, derecelendirilebilir uygulamalar geliştirmek istiyorsak kuvvetle üzerinde durulması gereken bir konu. Eğer kaliteyi bozacak ihlaller yaparsak uygulama arkasında ödenmesi zor büyük borçlar bırakabiliriz. Nam-ı diğer Teknik Borç (Technical Debt)
 

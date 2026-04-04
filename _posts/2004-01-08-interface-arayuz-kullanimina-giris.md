@@ -2,13 +2,13 @@
 layout: post
 title: "Interface (Arayüz) Kullanımına Giriş"
 date: 2004-01-08 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - interface
   - oop
   - inheritance
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde, nesneye dayalı programlamanın önemli kavramlarından birisi olan arayüzleri incelemeye çalışacağız. Öncelikle, arayüzün tanımını yapalım. Bir arayüz, başka sınıflar için bir rehberdir. Bu kısa tanımın arkasında, deryalar gibi bir kavram denizi olduğunu söylemekte yarar buluyorum. Arayüzün ne olduğunu tam olarak anlayabilmek için belki de asıl kullanım amacına bakmamız gerekmektedir.
 

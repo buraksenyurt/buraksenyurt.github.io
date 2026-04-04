@@ -2,14 +2,14 @@
 layout: post
 title: "Stack ve Queue Koleksiyon Sınıfı"
 date: 2003-12-19 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - collections
   - .net
   - stack
   - queue
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde Stack ve Queue koleksiyon sınıflarını incelemeye çalışacağız. Bir önceki makalemizde bildiğiniz gibi, HashTable koleksiyon sınıfını incelemiştik. Stack ve Queue koleksiyonları da, System.Collections isim alanında yer alan ve ortak koleksiyon özelliklerine sahip sınıflardır. Stack ve Queue koleksiyonları, her koleksiyon sınıfında olduğu gibi, elemanlarını nesne (object) tipinde tutmaktadırlar. Bu koleksiyonların özelliği giren-çıkan eleman prensipleri üzerine çalışmalarıdır. Stack koleksiyon sınıfı, LIFO adı verilen Last In First Out (Son giren ilk çıkar) prensibine göre çalışırken, Queue koleksiyon sınıfı ise FIFO yani First In First Out (İlk giren ilk çıkar) prensibine göre çalışır. Konuyu daha iyi anlayabilmek için aşağıdaki şekilleri göz önüne alalım.
 

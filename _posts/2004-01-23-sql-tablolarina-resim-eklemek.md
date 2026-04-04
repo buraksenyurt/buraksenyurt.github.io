@@ -2,8 +2,6 @@
 layout: post
 title: "Sql Tablolarına Resim Eklemek"
 date: 2004-01-23 02:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql
@@ -11,6 +9,8 @@ tags:
   - file-io
   - binarywriter
   - binaryreader
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, örnek bir sql tablomuzda yer alan image veri tipinden bir alana, seçtiğimiz resim dosyalarını nasıl kaydedebileceğimizi incelemeye çalışacağız. Öncelikle, sql tablolarında kullanabildiğimiz image tipinden biraz bahsedelim. Bu tip, ikili (binary) formatta verileri tutmak için geliştirilmiştir. Image veri tipi, 0 byte'dan 2,147,483,647 byte'a kadar veri alanını taşıyabilmektedir. Bu alan, verileri bir byte dizisi şeklinde tutmaktadır. Dolayısıyla resim dosyalarını tutmak için ideal bir yapı sergiler. Elbette üst sınırı aşmamaya çalışmak gerekir. Çoğu zaman uygulamalarımızda, resim dosyalarını ikili bir dizi şeklinde sql tablolarımızda, image tipindeki alanlarda tutmak isteyeceğimiz durumlar oluşabilir. (Örneğin şirket çalışanları ile ilgili personel bilgilerini tuttuğumuz tablolarda, personelin vesikalık fotoğraflarını bu alanlarda taşıdığımızı düşünelim.)
 

@@ -2,13 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu-19 (StringBuilder deyip geçme)"
 date: 2011-07-17 18:00:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - stringbuilder
   - string
+categories:
+  - Foto İpucu
 ---
 String tipleri çok garip tiplerdir. Onları + operatörü ile birleştirmek bazen akıl karı değildir. Çok fazla performans kaybettirir. Bir de uzlaşma yoluna gidebileceğini StringBuilder var. Örneğin
 

@@ -2,8 +2,6 @@
 layout: post
 title: "NoSQL Maceraları - MemCached ile Hello World"
 date: 2013-12-18 18:00:00
-categories:
-  - Veritabanı
 tags:
   - memcached
   - memorycache
@@ -11,6 +9,8 @@ tags:
   - distributed-caching
   - velocity
   - open-source
+categories:
+  - Veritabanı
 ---
 Belki de açık kaynak olarak geliştirilen projelerin bu kadar popüler olma nedenlerinden bir tanesi de, logolarındaki orjinalliktir. Küçük bir ihtimal olsa da böyle bir algı olduğuna inanıyorum. Söz gelimi Linux’ un pengueni, Mono projesinin maymunu (Biliyorsunuz Mono İspanyolca’ da maymun demek), Android’ in yeşil robotu, Joomla’ nın birbirlerine kenetlenmiş insanları vb.
 

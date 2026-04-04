@@ -2,14 +2,14 @@
 layout: post
 title: "Data Form Wizard Yardımıyla İlişkili Tablo Uygulamalarının Hazırlanması"
 date: 2004-02-09 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataform
   - wizard
   - visual-studio
   - identity
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, Visual Studio.NET ortamında, Data Form Wizard yardımıyla, veritabanı uygulamalarının ne kadar kolay bir şekilde oluşturulabileceğini inceleyeceğiz. Pek çok programcı, uygulamalarını geliştirirken sihirbazları kullanmaktan açıkça kaçınır. Bunun bir nedeni, sihirbazların işlemleri çok fazla kolaylaştırması ve programcıyı tembelliğe itmesidir. Gerçekten de, bir Data Form Wizard yardımıyla uzun sürede programlayacağınız bir veritabanı uygulamasını inanılmaz kısa sürede tamamlayabilirsiniz. Diğer yandan, bir programcı için bir uygulamayı geliştirmekteki en önemli unsur belki de şu kelimenin arkasında gizlidir: kontrol.
 

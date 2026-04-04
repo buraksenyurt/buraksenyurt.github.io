@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - HTTP Cache Desteği [Beta 1]"
 date: 2009-09-22 13:07:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Performans pek çok uygulama geliştirme ortamında önem arz eden konuların başında gelmektedir. Özellikle Web tabanlı uygulamalarda performans arttırmak adına göz önüne alınan kriterlerden biriside farklı tipteki önbellekleme (Caching) işlemleridir.
 

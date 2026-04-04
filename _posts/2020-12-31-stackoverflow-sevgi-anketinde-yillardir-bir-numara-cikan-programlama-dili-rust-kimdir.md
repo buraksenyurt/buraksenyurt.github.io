@@ -2,8 +2,6 @@
 layout: post
 title: "Stackoverflow Sevgi Anketinde Yıllardır Bir Numara Çıkan Programlama Dili Rust Kimdir?"
 date: 2020-12-31 20:59:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust-lang
   - rust
@@ -29,6 +27,8 @@ tags:
   - pattern-matching
   - closures
   - iterators
+categories:
+  - Programlama Dilleri
 ---
 Hepimiz için berbat geçen bir yılı geride bırakıyoruz. Koca sene boyunca uğraştığımız salgının etkileri daha da sürecek gibi duruyor. 2021 bize neler getirir bilemiyorum ama yazılımcıların bilgisayarları başında daha çok vakit geçirdiği günlerin hayatımızda kalıcı hale geldiğini de ifade edebilirim. Geçen yılın bir bölümünde işlerden arta kalan vakitlerde kendimce yeni şeyler öğrenmeye gayret ettim. Bunlardan birisi de Mozilla Labs'ın gücünü arkasına almış olan Rust programlama diliydi.
 

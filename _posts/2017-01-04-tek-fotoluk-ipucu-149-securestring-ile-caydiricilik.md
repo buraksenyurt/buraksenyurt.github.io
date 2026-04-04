@@ -2,14 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu 149 - SecureString ile Caydırıcılık"
 date: 2017-01-04 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - security
   - tek-fotoluk-ipucu
   - .net
   - csharp
   - securestring
+categories:
+  - Foto İpucu
 ---
 Elimizde veritabanı bağlantı bilgisi, kullanıcı şifresi, uygulamamıza özel port numaraları, finansal oranlar gibi hassas olabilecek içerikleri tutan bir sınıf olduğunu düşünelim. Bu sınıfı kullanmak için doğal olarak bir şekilde örneklenmesi gerekir. Nesnenin kullanılabilir olması içeriği ile birlikte belleğe açılması anlamına da gelir. Uygulama,.Net'in çalışma zamanı ortamında kendisi için oluşturulan Application Domain içerisinde yaşar.
 

@@ -2,10 +2,10 @@
 layout: post
 title: "TPL - İptal İşlemi [Beta 1]"
 date: 2009-06-08 13:19:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
+categories:
+  - Paralel Programlama
 ---
 Bir önceki blog yazımda, TPL kullanılarak WinForms uygulamalarında paralel işlemlerin nasıl yapılabileceğini ele almaya çalışmıştım. Örnekte son geldiğimiz noktaya bakıldığında aşağıdaki kazanımları elde ettiğimizi düşünebiliriz.
 

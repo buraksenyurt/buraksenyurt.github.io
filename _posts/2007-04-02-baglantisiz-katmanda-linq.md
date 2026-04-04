@@ -2,14 +2,14 @@
 layout: post
 title: "Bağlantısız Katmanda LINQ"
 date: 2007-04-02 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - language-integrated-query
   - dlinq
   - disconnected-layer
   - ado.net
+categories:
+  - Framework Tabanlı Programlama
 ---
 Language Integrated Query (Dil ile tümleştirilmiş sorgu) yardımıyla yapabileceklerimiz saymakla bitmiyor. Aslında LINQ projesinin en önemli çıkış nedeni, Anders Hejslberg'ın anlatımıyla veri ve nesne eşitsizliğidir. (data!=objects) Bu ifadeyi, TechEd 2006 sunumlarında kullanan Anders Hejslberg, özellikle veri yapılarının programlama ortamına alınması sonrasında, var olan basit sorgu tekniklerinin uygulanamayışından yakınmaktadır.
 

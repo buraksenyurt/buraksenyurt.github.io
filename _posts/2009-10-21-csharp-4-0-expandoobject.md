@@ -2,12 +2,12 @@
 layout: post
 title: "C# 4.0 - ExpandoObject"
 date: 2009-10-21 07:14:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - dynamic-language-runtime
   - .net-framework
+categories:
+  - Programlama Dilleri
 ---
 Bildiğiniz üzere.Net Framework 4.0 ile birlikte gelmesi muhtemel en köklü yenilikler arasında Dynamic Language Runtime alt yapısı yer almaktadır. Bu anlamda [daha önceden](/2009/04/30/csharp-4-0-dynamic-olmak/)dynamic anahtar kelimesini inceleyerek tiplerin dinamik olarak oluşturulup kullanılmasını kavramaya çalışmıştık. Bu yazımızda nasıl bir yenilikten bahsedeceğimizi anlatabilmek için öncelikle aşağıdaki kod parçasına odaklanmanızı istiyorum.
 

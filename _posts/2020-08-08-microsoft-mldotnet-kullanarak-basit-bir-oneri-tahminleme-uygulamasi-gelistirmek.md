@@ -2,8 +2,6 @@
 layout: post
 title: "Microsoft ML.Net Kullanarak Basit Bir Öneri Tahminleme Uygulaması Geliştirmek"
 date: 2020-08-08 06:13:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ml.net
   - .net-core
@@ -14,6 +12,8 @@ tags:
   - recommendation
   - mvc
   - model-view-controller
+categories:
+  - Framework Tabanlı Programlama
 ---
 Yaz başından beri Mark J. Price'ın, C# 8.0 and.NET Core 3.0 – Modern Cross-Platform Development: Build applications with C#,.NET Core, Entity Framework Core, ASP.NET Core, and ML.NET using Visual Studio Code, 4th Edition (Evet biraz uzun bir ismi var:D) [kitabıyla](https://www.amazon.com/8-0-NET-Core-3-0-Cross-Platform-dp-1788478126/dp/1788478126/ref=mt_other?_encoding=UTF8&me=&qid=) uğraştım. Hoş ben daha kitabı tamamlayamadan.Net 5.0 son sürümü çıktı ve hatta Mark bu sürüm için de yeni bir kitap yayınladı ya neyse:D Kitabın ilgimi çeken bölümlerinden birisi (19ncu Kısım) makine öğrenmesi ile alakalı olandı. Makine Öğrenmesi benim çok ama gerçekten çok uzak olduğum bir konu.
 

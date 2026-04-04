@@ -2,10 +2,10 @@
 layout: post
 title: "Windows Servislerinin Kontrolü - 2 ( Sistemdeki Servislerin Kontrol Edilmesi )"
 date: 2004-05-12 06:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde, sistemde yer alan Windows servislerini bir Windows uygulamasından nasıl elde edebileceğimizi ve nasıl kontrol edebileceğimizi incelemeye çalışacağız. Önceki makalelerimizden hatırlayacağınız gibi, sistemde yer alan servislerimiz, System.ServiceProcess isim alanında yer alan ServiceController sınıf nesneleri ile temsil edilmektedir. Eğer sistemde yer alan servisleri elde etmek istersek, aşağıda aşırı yüklenmiş iki prototipi olan, GetServices metodunu kullanabiliriz.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - GDB ile Debug İşlemleri"
 date: 2022-02-27 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -11,6 +9,8 @@ tags:
   - gdb
   - gnu-debugger
   - ubuntu
+categories:
+  - Programlama Dilleri
 ---
 Rust dilinin en güçlü olduğu yer etkili bellek yönetimi ve olası kaosların önüne herhangi bir garbage collector veya başka bir unsura ihtiyaç duymadan geçebilecek kural setleri barındırmasıdır. Özellikle Memory Leak, Double Free, Data Race gibi C, C++ dillerinde sıklıkla rastlanan durumların oluşmaması için basit kurallar barındırır. Bu kurallar ilk başlarda rust öğrenenleri epey zorlar fakat bir kez alışılınca her şey çok daha net ve berrak hale gelir. Bellek yönetimi denilince içeride neler oluyor bitiyor görmek de önemlidir. Fonksiyonlar birer kapsam olarak Stack'e yığılır, çeşitli veri türleri (String gibi) heap'e açılıp pointer alır, kapsamlar sonlandığında bir şeyler olur vs
 

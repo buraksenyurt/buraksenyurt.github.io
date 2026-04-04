@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu 64 – Assembly Adresinden Object Üretmek"
 date: 2012-09-09 18:00:00
-categories:
-  - Genel
 tags:
   - reflection
   - extension-methods
   - language-integrated-query
   - tek-fotoluk-ipucu
+categories:
+  - Foto İpucu
 ---
 Bazen reflection tekniklerini kullanarak harici assembly’ lar içerisinden bulduğumuz tiplerin örneklerini ürettirme ihtiyacı duyabiliriz. Bunun için kullanabileceğimiz pek çok yol vardır aslında. Örneğin tipin bulunduğu Assembly dosya adresini tutan bir string değişken üzerinden dahi istenilen nesne örneğinin üretilmesini sağlayabiliriz. Nasıl mı?
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Bir Web API Hizmetinde Talepler ile CQ Arasında Mediator Kullanmak"
 date: 2020-05-29 17:23:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - cqrs
   - csharp
@@ -11,6 +9,8 @@ tags:
   - rest-api
   - mediatr
   - mediator
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 CQRS, nam-ı diğer Command Query Responsibility Segregation mimari deseni, veritabanına doğru yapılan yazma, güncelleme, silme gibi aksiyonlar ile veri çekme işlemlerini ayrıştırmayı önermektedir. Command tarafı ile ilişkilendirilen aksiyonlar sadece veri üzerinde işlem yapar ve geriye bir şey döndürmezler. Sorgulama (Query) tarafına ayrılan aksiyonlar da tam tersine sadece veri döndürmekten sorumludurlar (Listeleme veya tek bir öğe detayının döndürülmesi gibi) Bir Web API ve CQRS söz konusu olduğunda karşımıza birde Mediator tasarım kalıbının uygulanışı çıkar.
 

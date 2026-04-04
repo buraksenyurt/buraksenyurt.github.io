@@ -2,8 +2,6 @@
 layout: post
 title: "Scala ile Tanışmak"
 date: 2019-02-28 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - scala
   - programming-languages
@@ -20,6 +18,8 @@ tags:
   - anonymous-function
   - trait
   - object
+categories:
+  - Programlama Dilleri
 ---
 Yazılım geliştirmek için kullanabileceğimiz bir çok programlama dili var. Hatta bir ürünün geliştirilmesi demek farklı platformların bir araya getirilmesi anlamına da geldiği için, bir firmanın kendi ekosisteminde çeşitli dilleri bir arada kullandığını görmek mümkün. [Scala](https://docs.scala-lang.org/tour/tour-of-scala.html)'da bu çark içerisinde kendisine yer edinmiş ve son zamanlarda dikkatimi çeken programlama dillerden birisi. Bunun en büyük sebebi daha önceden çalıştığım turuncu bankanın Hollanda kanadında servis odaklı süreçlerin orkestrasyonu için onu backend tarafında kullanıyor (veya deneyimliyor) olması. Hatta [şuradaki github adresinden](https://github.com/ing-bank/baker) açık kaynak olan Baker isimli ürünü inceleme şansımız da var. Scala ve Java kullanılarak yazılmış bir çatı.
 

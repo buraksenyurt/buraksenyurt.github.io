@@ -2,11 +2,11 @@
 layout: post
 title: "Client Application Services (İstemci Uygulama Servisleri)"
 date: 2008-12-16 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - client-application-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Pek çok istemci uygulama için önem arz eden konular arasında doğrulama (Authentication), Rol Yönetimi (Roles Management), profile (Profile) göre kişiselleştirme yer almaktadır. Özellikle Web tabanlı uygulamalarda bu kıstaslar daha çok ön plana çıkmaktadır. Nitekim Client/Server mimarinin en güzel uyarlamalarından birisi olan web tabanlı geliştirmelerde, istemcilerin doğrulanması, rollerine göre ne yapabileceklerinin belirlenmesi, profillerine göre istekte bulundukları sayfaların kişiselleştirilmesi önemlidir. Bu noktada Asp.Net 2.0 sürümünden itibaren saymış olduğumuz bu kriterlerin çok daha kolay bir şekilde uygulanabilmesi sağlanmıştır.
 

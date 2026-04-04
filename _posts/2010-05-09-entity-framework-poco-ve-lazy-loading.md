@@ -2,11 +2,11 @@
 layout: post
 title: "Entity Framework - POCO ve Lazy Loading"
 date: 2010-05-09 18:00:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - language-integrated-query
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hatırlayacağınız üzere [bir önceki yazımızda](/2010/04/30/entity-framework-poco-plain-old-clr-objects/) Ado.Net Entity Framework içerisinde POCO (Plain Old CLR Object) nesnelerinin kullanımını incelemeye çalışmıştık. Örneğimizde kullanmış olduğumuz LINQ sorgusu basit bir Join işlemini gerçekleştirmekteydi. Tabi Join sorgusu kullandığımız için gözden kaçırdığımız ufak ama bir o kadar da önemli bir vaka oluşmaktadır. Bu vakayı ele almak için program kodunu biraz daha değiştirdiğimizi ve aşağıdaki hale getirdiğimizi düşünelim.
 

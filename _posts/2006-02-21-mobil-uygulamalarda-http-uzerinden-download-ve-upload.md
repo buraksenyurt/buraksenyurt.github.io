@@ -2,14 +2,14 @@
 layout: post
 title: "Mobil Uygulamalarda Http Üzerinden Download ve Upload"
 date: 2006-02-21 10:00:00
-categories:
-  - Mobil Programlama
 tags:
   - windows-mobile
   - http
   - download
   - upload
   - smart-device
+categories:
+  - Mobil Programlama
 ---
 Http protolokü yardımıyla internet üzerinden sunuclar ve istemciler arasında veri alış verişinde bulunmak mobil uygulamalarda çok işe yarayan bir tekniktir. Özellikle binary (ikili) formatta veri transferi için, Http ektili ve verimli bir protokol hizmeti sunar. Bu makalemizde mobil uygulamalar ile web sunucuları arasında veri transferi işlemlerini Http protokolüne göre nasıl yapabileceğimizi incelemeye çalışacağız.
 

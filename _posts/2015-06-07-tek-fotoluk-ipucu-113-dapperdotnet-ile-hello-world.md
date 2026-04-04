@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 113 - Dapper.Net ile Hello World"
 date: 2015-06-07 08:14:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - nuget
@@ -14,6 +12,8 @@ tags:
   - query
   - entity-framework
   - dynamic
+categories:
+  - Foto İpucu
 ---
 Gecenin bir yarısı. Bilgisayarınızın başındasınız. Önünüzde Visual Studio. Yanınızda kahveniz/çayınız. Canınız da sıkılmış. Acaba ne yapsam da vaktimi iyi değerlendirebilsem diye düşünüyorsunuz. Böyle hallerde şöyle bir NuGet paketi bulup araştırmak bünyeye iyi gelebiliyor. Bunun için [Nuget Must Haves](http://nugetmusthaves.com/) isimli siteyi ziyaret edebilirsiniz.
 

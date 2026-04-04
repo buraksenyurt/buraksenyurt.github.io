@@ -2,8 +2,6 @@
 layout: post
 title: "Bir Python Uygulamasını git Tekniği ile Azure Platformuna Taşımak"
 date: 2019-09-09 12:30:00
-categories:
-  - Programlama Dilleri
 tags:
   - python
   - git
@@ -22,6 +20,8 @@ tags:
   - cloud-computing
   - cloud-services
   - flask
+categories:
+  - Programlama Dilleri
 ---
 Rey evrenin taaa bir ucundan kalkıp ahch-to gezegenine gelmiş ve Jedi ustasının onu eğitmesini istemişti. Galaksinin bir kez daha Luke Skywalker'a ihtiyacı vardı. Uzun zamandır inzivada olan Luke ise Kylo Ren'den sonra buna pek gönüllü değildi. İzleyenler bilir. Luke, neredeyse sadece sudan ibaret ahch-to gezegenindeki bir adada, eski Jedi tapınağında yaşamını sürdürmektedir (Sevgili [ekşi sözlük yazarı John Harrison](https://eksisozluk.com/entry/78992085) bu girişi beğenmeyecektir ama olsun:D)
 

@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu 118 - Fluent Command Line Parser ile Hello World"
 date: 2015-06-22 04:09:00
-categories:
-  - Genel
 tags:
   - fluent-api
   - tek-fotoluk-ipucu
   - csharp
   - command-prompt
+categories:
+  - Foto İpucu
 ---
 Nesne Yönelimli Programlama Dillerinin (Object Oriented Programming Languages) kullanıcılarını büyülediği pek çok nokta var. Örneğin Fluent API'ler bunlardan sadece birisi ve getirdiği güzellikleri pek çok bağımsız üründe de görebiliyoruz (Bu arada Fluent API geliştirilmesi ile ilgili olarak [şu eski anlatıma](/2013/12/23/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-1nci-yari/) bakabilirsiniz)
 

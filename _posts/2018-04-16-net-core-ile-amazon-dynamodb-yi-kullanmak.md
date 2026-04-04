@@ -2,9 +2,6 @@
 layout: post
 title: ".Net Core ile Amazon DynamoDB'yi Kullanmak"
 date: 2018-04-16 06:00:00
-categories:
-  - Framework Tabanlı Programlama
-  - Bulut Bilişim
 tags:
   - nosql
   - aws
@@ -12,6 +9,8 @@ tags:
   - .net-core
   - csharp
   - key-value-storage
+categories:
+  - Framework Tabanlı Programlama
 ---
 Epey zamandır NoSQL veritabanı sistemlerini kurcalamıyordum. Ağırlıklı olarak.Net Framework tarafında nasıl kullanılabildiklerini incelediğimi hatırlıyorum. 2017nin son çeyreği ve 2018in tamamı için kendime koyduğum hedeflerden birisi ise.Net Core dünyasını daha yakından tanımaktı. Zaten Ubuntu üzerinde koşan West-World'ün kurulum amacı da buydu. Sonuç olarak Amazon'un DynamoDb'sini.Net Core tarafında nasıl kullanabileceğimi incelemeye karar verdim. Bir süredir AWS Console üzerinden bir şeyler araştırıyor ve Amazon Web Service ürünleri hakkında giriş niteliğinde bilgiler edinmeye çalışıyorum.
 

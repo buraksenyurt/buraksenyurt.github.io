@@ -2,8 +2,6 @@
 layout: post
 title: "Basit Bir JsonConverter Uyarlaması"
 date: 2018-09-22 11:28:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - newtonsoft
   - json
@@ -13,6 +11,8 @@ tags:
   - nuget
   - package-management
   - reflection
+categories:
+  - Framework Tabanlı Programlama
 ---
 Merhaba Burak, Nasılsın? Umarım iyisindir ve her şey yolundadır. Beni sorarsan her zaman ki gibi oldukça yoğun bir dönemden geçmekteyim. Özellikle halen devam etmekte olan mimari dönüşüm projesinden dolayı böyle bir yoğunluğumuz var. Gerçi çevikleşmeye başladığımızdan beri fazla mesai yapmıyor ve gerçekten değer içeren sürümlenebilir çıktılar üretiyoruz. Şu an altıncı sprint'i koşmaktayız ve takımın ivmesi rayına oturmuş durumda. Bu açılardan bakınca tatlı bir yoğunluktayım desem yeridir. Sana bunları anlatmama gerek yok nitekim duyduğuma göre siz de benzer bir sürece girmişssiniz.
 

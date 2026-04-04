@@ -2,13 +2,13 @@
 layout: post
 title: "C# 4.0 Default Parameter Kullanımına Dikkat"
 date: 2011-02-13 16:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - default-parameters
   - optional-parameters
   - named-parameters
+categories:
+  - Programlama Dilleri
 ---
 2004 ve 2005 yıllarında uzun bir süre editörlüğünü yaptığım [C#Nedir?](http://www.csharpnedir.com/) topluluğunun düzenlediği C# Akademi eğitimlerinde, yarı zamanlı eğitmen olarak görev yapmıştım. Genellikle C# programlama dilinin basit ve temel konularını, ayrıca Object Oriented özelliklerini aktarmaya çalışırdım. Elbette sınıfımdaki öğrencilerim yanda görüldüğü gibi her zaman pür neşe olmazlardı.
 

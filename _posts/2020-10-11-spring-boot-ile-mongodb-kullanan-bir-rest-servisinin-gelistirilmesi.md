@@ -2,8 +2,6 @@
 layout: post
 title: "Spring Boot ile MongoDb Kullanan Bir Rest Servisinin Geliştirilmesi"
 date: 2020-10-11 19:01:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - java
   - mongodb
@@ -13,6 +11,8 @@ tags:
   - maven
   - gradle
   - spring-framework
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Spring Boot, Java kod tabanı üzerine oturmuş ve özellikle kurumsal çapta uygulamaların geliştirilmesinde önemli bir yere sahip olan Spring çatısınının kullanımını oldukça kolaylaştıran,basitleştiren zevkli hale getiren bir başka çatıdır (Framework). Dahili Dependency Injection mekanizması ve zengin paket desteği sayesinde otonom araçlardan akıllı televizyonlara, elektronik ticaretten bulut uygulamalara kadar birçok alanda Spring'in kabiliyetlerini oldukça etkin kullanabilmemize olanak sağlamaktadır. Birazdan sizin de göreceğiniz üzere az eforla oldukça etkili bir servis ortaya çıkaracağız.
 

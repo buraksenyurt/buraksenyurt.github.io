@@ -2,11 +2,11 @@
 layout: post
 title: "Asp.Net 2.0 ve Temalar (Themes)"
 date: 2004-09-03 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - themes
+categories:
+  - Web Programlama
 ---
 Bir internet sitesini önemli kılan özellikler, sayfalarının font, renk, nesne yerleşimleri ile kontrollere ait görsel özellikleri açısından birbirleriyle olan uyumluluklarıdır. Bu anlamda, çoğu zaman sayfalara CSS stilleri uygulanır ve web uygulamasındaki tüm görsel öğelerin aynı font, renk vb. özelliklere sahip olması sağlanır. ASP.NET 2.0, bu tarz stillerin çeşitli seviyelerde uygulanmasını sağlayacak yeni bir özellik sunmaktadır: Themes (Temalar). İşte bu makalemizde, ASP.NET 2.0'da yer alan temaların hangi seviyelere, nasıl ve ne şekilde uygulanabileceğini incelemeye çalışacağız.
 

@@ -2,10 +2,10 @@
 layout: post
 title: "TPL için Önemli Bir Kavram : Task [Beta 1]"
 date: 2009-06-04 19:05:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
+categories:
+  - Paralel Programlama
 ---
 Bir önceki blog yazımda Task Parallel Library alt yapısının ne olduğunu sizlere aktarmaya çalışmıştım. Tabiki bu alt yapı üzerinde durulması gereken pek çok konu bulunmaktadır. Heyecanım çok, anlatmak içinde sabırsızlanıyorum. Ama her zamanki gibi adım adım ilerlemekte ve acele etmemekte yarar olduğu kansındayın. TPL ile ilişkili önemli konulardan birisi Task (yada Task) sınıfıdır. TPL esas itibariyle görev adı verilen küçük iş parçaları üzerine kurulu bir yapı olarak düşünülebilir. Bu nedenle Task sınıfı son derece önemlidir.
 

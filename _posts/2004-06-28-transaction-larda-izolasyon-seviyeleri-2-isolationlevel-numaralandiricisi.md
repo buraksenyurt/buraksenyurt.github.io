@@ -2,12 +2,12 @@
 layout: post
 title: "Transaction' larda Izolasyon Seviyeleri -2 (IsolationLevel Numaralandırıcısı)"
 date: 2004-06-28 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
   - isolation-levels
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, SQL izolasyon seviyelerinin, .NET uygulamalarında nasıl kullanıldığını incelemeye çalışacağız. Bir önceki makalemizde, izolasyon seviyeleri için söz konusu olabilecek 3 problemi ele almıştık. Bu olası problemler phantoms, non-repeatable read ve dirty read durumlarıdır. Eşzamanlı olarak çalışan Transaction'larda meydana gelebilecek bu problemleri, IsolationLevel numaralandırıcısı yardımıyla kontrol altına alabiliriz. Bu numaralandırıcının alabileceği değerler ve bu değerlerin izin verdiği, izin vermediği durumlar aşağıdaki tabloda yer almaktadır.
 

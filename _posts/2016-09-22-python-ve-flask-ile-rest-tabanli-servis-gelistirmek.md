@@ -2,8 +2,6 @@
 layout: post
 title: "Python ve Flask ile REST Tabanlı Servis Geliştirmek"
 date: 2016-09-22 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - python
   - rest-api
@@ -16,6 +14,8 @@ tags:
   - flask
   - curl
   - ubuntu
+categories:
+  - Programlama Dilleri
 ---
 Bir süredir [Python](https://www.buraksenyurt.com/category/python) ile ilgili çalışmalarıma aralıklarla da olsa devam etmeye çalışıyorum. Malum iş yoğunluğu ve sıkışık proje takvimi nedeniyle eskisi kadar vakit ayıramıyorum. Bu nedenle öğrenmek istediğim konuları önceliklendirme yoluna gittim (Kendi çalışma programımda bir backlog oluşturup öğeleri önceliklendirdiğimi ifade edebilirim) Genellikle backend tarafında programlama yaptığımdan olsan gerek listenin üst sıralarında servis tabanlı geliştirmeler yer alıyor. Onlardan birisi de REST tabanlı servis uyarlamaları.
 

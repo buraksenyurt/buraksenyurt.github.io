@@ -2,14 +2,14 @@
 layout: post
 title: "WCF Öğreniyorum Ders 2–Veri Sözleşmeleri II"
 date: 2010-12-05 19:40:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wcf-ogreniyorum
   - data-contracts
   - surrogate-types
   - wcf-service-application
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 [Nedirtv?com](http://www.nedirtv.com) liderdliğinde sürdürdüğümüz WCF Öğreniyorum Webiner (Webcast) serisinin 3ncü dersini de (biliyorsunuz ders numaralarımız 0dan başlıyor) tamamlamış bulunuyoruz. Öncelikli olarak katılan tüm arkadaşlarımıza çok teşekkür ederim.
 

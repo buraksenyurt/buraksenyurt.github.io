@@ -2,11 +2,11 @@
 layout: post
 title: "İlk Bakışta WCF"
 date: 2007-02-14 06:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - hello-world
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bildiğiniz gibi bir süre önce Microsoft.Net Framework'un 3.0 sürümünün son halini yayınladı. Framework 3.0 beraberinde köklü ve güçlü mimari modeller ile birlikte geldi. Aslında Framework 3.0, Framework 2.0 üzerine gelen yeni eklentiler ile oluşmuştur. Bu eklentiler, Windows Presentation Foundation (WPF), Work Flow Foundation (WF), CardSpace ve Windows Communication Foundation (WCF) dır. Biz bu makalemizde WCF'ı çok yüzeysel olarak anlamaya başlayacak ve konu ile ilişkili basit bir örnek geliştirmeye çalışacağız.
 

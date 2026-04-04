@@ -2,10 +2,10 @@
 layout: post
 title: "C# 4.0 - Dynamic Olmak"
 date: 2009-04-30 15:02:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
+categories:
+  - Programlama Dilleri
 ---
 Uzun bir süredir (son bir senelik zaman dilimi içerisinde) C# 4.0 ile birlike gelen yeniliklerden haberdarız. Şöyle bir kaç sene öncesini hatırlıyorum da...
 

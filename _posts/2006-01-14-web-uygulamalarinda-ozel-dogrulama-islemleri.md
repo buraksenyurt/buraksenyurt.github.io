@@ -2,12 +2,12 @@
 layout: post
 title: "Web Uygulamalarında Özel Doğrulama İşlemleri"
 date: 2006-01-14 10:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - validation
   - custom-validation
+categories:
+  - Web Programlama
 ---
 Web uygulamalarında, kullanıcıların girmiş olduğu verilerin istenen şartlara göre doğruluklarının kontrol edilmesi son derece önemlidir. Asp.Net ile geliştirilen web uygulamalarında, kullanıcı girişlerinin kontrolü için çoğunlukla validation kontrolleri kullanılır. Validation bileşenleri hem istemci tarafında hemde sunucu tarafından veri kontrol işlemlerini gerçekleştirebilir. (Bu makaleyi daha kolay takip edebilmeniz açısından var olan Validator kontrollerinin kullanımını bildiğiniz varsayılmaktadır.)
 

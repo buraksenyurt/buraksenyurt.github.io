@@ -2,14 +2,14 @@
 layout: post
 title: "WCF WebHttp Services - Client Bazlı Cache"
 date: 2010-03-30 07:30:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services
   - rest-api
   - non-soap
   - wcf-webhttp-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir önceki yazımızda ([WCF WebHttp Services - Server Bazlı Cache)](/2010/03/29/wcf-webhttp-services-server-bazli-cache/) hatırlayacağınız üzere WCF WebHttp Service'lerinde sunucu taraflı ön belleklemeyi (Server-Based Caching) incelemeye çalışmış ve bu işin birde istemci taraflı olanından bahsetmiştik. Aslında sunucu ve istemci taraflı ön bellekleme işleyişleri birbirlerinden tamamen farklıdır. Sunucu taraflı ön bellekleme işleyişinde, tamponlanan veriyi üreten operasyonun duration süresi dolana kadar çalıştırılmaması söz konusudur. Yani istemciden gelen ilk talebin sonucunun ön belleğe alınmasını takiben gelen taleplerde, sunucu tarafındaki operasyon kodları icra edilmemektedir.
 

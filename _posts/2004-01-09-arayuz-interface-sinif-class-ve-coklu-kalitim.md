@@ -2,12 +2,12 @@
 layout: post
 title: "Arayüz(Interface), Sınıf(Class) ve Çoklu Kalıtım"
 date: 2004-01-09 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - oop
   - interface
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde, arayüzleri incelemeye devam edeceğiz. Bir önceki makalemizde, arayüzleri kullanmanın en büyük nedenlerinden birisinin sınıflara çoklu kalıtım desteği vermesi olduğunu söylemiştik. Önce basit bir uygulama ile bunu gösterelim.
 

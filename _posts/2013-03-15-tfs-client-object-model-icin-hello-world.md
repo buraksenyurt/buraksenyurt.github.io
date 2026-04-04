@@ -2,8 +2,6 @@
 layout: post
 title: "TFS–Client Object Model için Hello World"
 date: 2013-03-15 02:30:00
-categories:
-  - DevOps
 tags:
   - team-foundation-server
   - team-explorer-everywhere
@@ -17,6 +15,8 @@ tags:
   - workitemstore
   - server-object-model
   - build-process-object-model
+categories:
+  - DevOps
 ---
 Çok eskidendi diyemeyeceğimiz kadar yakın bir zamanda, bilgisayar programcılarının ilah olduğu devirlerde, evimizin 37 ekran TV’ lerine girmiş Commodore 64K, Amiga oyunlarına sabaha kadar vakit ayırdığımız yıllarda; ne Source Code Control denen bir kavram vardı, ne de 9 kişilik askeri manga misali çalışan Scrum ekipleri. Ancak teknoloji ve yazılım dünyası öylesine hızla ilerledi ki…Koşar adımlarla geldiğimiz günümüzde, özellikle Enterprise çapta yürütülen projelerde, ekip olmadan hareket etmek neredeyse imkansız hale geldi.
 

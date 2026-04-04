@@ -2,10 +2,10 @@
 layout: post
 title: ".Net Tarafında Xml ile Oynamak-1"
 date: 2007-02-28 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - xml
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemiz ile birlikte Xml mimarisini yönetimli kod (managed code) tarafından ele almaya çalışacak ve konuları örnek senaryolar üzerinden geliştireceğiz. Bildiğiniz gibi Xml (eXtensible Markup Language) çok yaygın olarak kullanılan, platformlar arası veri taşıma standartlarından birisidir..Net Framework içerisinde Xml standartları ile doğrudan iş yapmamızı sağlayan yönetimli tipler bulunmaktadır. Bu tipler sayesinde sadece Xml değil, Xml ile ilişkili diğer standartlarıda etkili bir şekilde kullanabilmekteyiz. Xml Schema, Xslt ve XPath mimarileri bunlar arasında sayılabilir. Biz bu günkü makalemizde çalışma zamanında dinamik olarak bir Xml belgesini nasıl oluşturabileceğimizi, bu belgenin kaydedilmesini ve hatta yeniden okunmasını ele alacağımız bir senaryo üzerinde duracağız. Dilerseniz işe örnek senaryomuzdan bahsederek başlayalım.
 

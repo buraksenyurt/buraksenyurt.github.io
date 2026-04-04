@@ -2,13 +2,13 @@
 layout: post
 title: "HashTable Koleksiyon Sınıfı"
 date: 2003-12-18 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - hashtable
   - .net
   - collections
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde HashTable koleksiyon sınıfını incelemeye çalışacağız. Bildiğiniz gibi Koleksiyonlar System.Collections namespace'inde yer almakta olup, birbirlerinin aynı veya birbirlerinden farklı veri tiplerinin bir arada tutulmasını sağlayan diziler oluşturmamıza imkan sağlamaktadırlar. Pek çok koleksiyon sınıfı vardır. Bugün bu koleksiyon sınıflarından birisi olan HashTable koleksiyon sınıfını inceleyeceğiz.
 

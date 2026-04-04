@@ -2,8 +2,6 @@
 layout: post
 title: "West-World'ün Uzaydan Gelen SQL Server ile Tanışması"
 date: 2018-06-26 03:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - sql-server
@@ -30,6 +28,8 @@ tags:
   - json
   - testing-framework
   - postman
+categories:
+  - Veritabanı
 ---
 Renkler ve zevkler tartışılmaz. Hatta dünya öylesine renkli bir yerdir ki insanlar bazen neyi seçeceklerine karar veremeyebilir. Tabii ki işin içerisinde yazılım olunca bu renkler siyah ve beyaz gibi sadece iki seçeneğe de indirgenebilmişdir.
 

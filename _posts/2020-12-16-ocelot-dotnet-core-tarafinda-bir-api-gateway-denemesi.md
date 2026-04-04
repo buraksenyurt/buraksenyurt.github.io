@@ -2,8 +2,6 @@
 layout: post
 title: "Ocelot - .Net Core Tarafında Bir API Gateway Denemesi"
 date: 2020-12-16 11:51:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ocelot
   - .net-core
@@ -14,6 +12,8 @@ tags:
   - routing
   - load-balancing
   - aggregation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Uzun süre önce bankada çalışırken nereye baksam servis görüyordum. Bir süre sonra ana bankacılık uygulaması dahil pek çok ürünün kullandığı bu sayısız servisler ağının yönetimi zorlaşmaya başladı. Bir takım ortak işlerin daha kolay ve etkili yönetilmesi gerekiyordu. Müşterek bir kullanıcı doğrulama ve yetkilendirme kontrolü (authentication & authorization), yük dengesi dağıtımı (load balancing), birkaç servis talebinin birleştirilmesi ve hatta birkaç servis verisinin birleştirilerek döndürülmesi (aggregation), servis verisinin örneğin XML'den JSON gibi farklı formata evrilmesi, servis geliş gidişlerinin loglanması, yönlendirmeler yapılması (routing), performans için önbellek kullanılması (caching), servis hareketliliklerini izlenmesi (tracing), servislerin kolayca keşfedilmesi (discovery), çağrı sayılarına sınırlandırma getirilmesi, bir takım güvenlik politikalarının entegre edilmesi, özelleştirilmiş delegeler yazılması (custom handler/middleware), tüm uygulamalar için ortak bir servis geçiş kanalının konuşlandırılması ve benzerleri. Yazarken yoruldum, daha ne olsun:D Sonunda Java tabanlı WSO2 isimli bir API Gateway kullanılmasına karar verildi.
 

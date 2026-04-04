@@ -2,12 +2,12 @@
 layout: post
 title: "Smart Enums"
 date: 2026-04-01 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - rust
   - domain-driven-design
+categories:
+  - Programlama Dilleri
 ---
 Yazılım geliştirme galaksisinin en zorlu yolculuklarından birisi sanıyorum ki **Domain Driven Design *(DDD)*** rotasında ilerlemek. Büyük çaplı kurumsal projelerde hangi mimari ile çalışacağımıza karar vermek bir yana dursun domain sınırlarını belirlemek, model nesneleri kurgulamak, ortak jargonu çıkarmak ve bu jargonu kod içerisinde nasıl temsil edeceğimize karar vermek gibi pek çok zorluğu beraberinde getiren bir yolculuk. Gerçekten farklı yetkinlikler gerektiğine inandığım bu yaklaşımda gün geçmiyor ki yeni bir konuyu tartışalım. İşte henüz gerçekleştirdiğimiz bir tartışma:
 

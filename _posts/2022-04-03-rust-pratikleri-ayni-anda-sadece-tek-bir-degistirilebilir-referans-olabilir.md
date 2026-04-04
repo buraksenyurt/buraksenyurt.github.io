@@ -2,14 +2,14 @@
 layout: post
 title: "Rust Pratikleri - Aynı Anda Sadece Tek Bir Değiştirilebilir Referans Olabilir"
 date: 2022-04-03 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
   - mutable-references
   - thread
   - multi-thread
+categories:
+  - Programlama Dilleri
 ---
 Thread'ler ve eş zamanlı iş parçacıkları işin içerisine girdiğinde karşımıza çıkan önemli konulardan biriside değiştirilemez (mutable) türden referansları nasıl kullanacağımızdır. Malum aynı anda çalışan bu iş parçaları aynı veri üzerinde değişiklik yapmak isteyebilirler. Fakat bu, Data Races durumunun oluşmasına sebebiyet verebilir. Esasında aynı veri alanını kullanan thread'lerin bu içeriği okumasında bir sıkıntı yoktur. Ne var ki yazma aşamasına gelindiğinde birbirlerinin değişikliğini ezme durumu da söz konusu olabilir.
 

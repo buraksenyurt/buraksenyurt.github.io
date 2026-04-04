@@ -2,14 +2,13 @@
 layout: post
 title: "Silverlight - JSON ile Çalışmak"
 date: 2010-08-13 06:15:00
-categories:
-  - Web Programlama
-  - Servis Tabanlı Geliştirme
 tags:
   - silverlight
   - windows-communication-foundation
   - wcf-webhttp-services
   - json
+categories:
+  - Web Programlama
 ---
 Uzun süredir şöyle deliksiz uyuyamıyordum. Malum evde bir afacan var. Pek uyumayı sevmeyen, sürekli hareket halinde olmak isteyen S (h) arp Efe izin verdiğinde, eşim ve ben dinlenmek için çeşitli işlere dalıyoruz. Ben uzun süredir Bulmacalara takılmış durumdayım. Bir de şu eski dil karşılıklarını isteyen sorular olmasa. Geçtiğimiz günlerde yine böyle bir boşluk yakalamışken, kendimi bulmacalar arasında yüzerken buluverdim. Ancak bir süre sonra "...eski dildeki karşılığı..." sorularından sıkıldım ve televizyonda neler olduğuna bir akayım dedim.
 

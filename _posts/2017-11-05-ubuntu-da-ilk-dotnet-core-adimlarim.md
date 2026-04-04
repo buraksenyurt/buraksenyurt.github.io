@@ -2,8 +2,6 @@
 layout: post
 title: "Ubuntu'da İlk .Net Core Adımlarım"
 date: 2017-11-05 10:17:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - ubuntu
@@ -15,6 +13,8 @@ tags:
   - curl
   - vs-code
   - cross-platform-development
+categories:
+  - Programlama Dilleri
 ---
 Üniversite yıllarımda internet yeni yeni yaygınlaşmaya başlayan bir ortamdı. 14400 kpbs hızındaki modemimi daha 3ncü sınıfta alabilmiştim. Bu sebepten okulun ilk yıllarında bilgisayar teknolojileri ile ilgili bilgileri öğrenebileceğim en güzel mecra aylık dergilerdi. Bazıları zaman içerisinde kapandı bazılarıysa internet üzerinden yayınlanmaya başladı. Ben ağırlıklı olarak PcWorld, PcNet, PcMagazine gibi dergileri okuduğumu hatta ay ay biriktirdiğimi hatırlıyorum.
 

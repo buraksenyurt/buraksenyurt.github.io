@@ -2,11 +2,11 @@
 layout: post
 title: "Koleksiyon Bazlı WCF Rest Servisleri"
 date: 2009-04-22 08:07:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - rest-api
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bildiğiniz üzere bir süredir WCF servislerinin REST modeline göre geliştirilmesi ile ilgili bilgilerimi ve öğrendiklerimi sizlerle paylaşmaktayım. Bu nedenle dün gece yaşadığım bir macerayıda aktararak başıma gelenleri sizlerle paylaşmak istiyorum. Bir süre önce [WCF Rest Starter Kit'](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24644)i incelemeye başlamış ve bu konuyla ilgili olaraktan bir görsel video yayınlamıştım.([NedirTv? bağlantısı](http://www.nedirtv.com/video/WCF-REST-Bolum-2---Readonly-Collection-Service.aspx))
 

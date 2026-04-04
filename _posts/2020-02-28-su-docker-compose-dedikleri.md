@@ -2,8 +2,6 @@
 layout: post
 title: "Şu Docker-Compose Dedikleri"
 date: 2020-02-28 20:23:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - docker
   - nodejs
@@ -15,6 +13,8 @@ tags:
   - javascript
   - yaml
   - yml
+categories:
+  - Framework Tabanlı Programlama
 ---
 Önceki çalışmalardan [birisinde](/2020/07/22/yine-yeni-yeniden-elk-bu-sefer-e-ve-k-icin-docker-compose-isin-icinde/) ELK kurgusunda ElasticSearch ve Kibana tarafı için docker compose'dan yararlanmıştım. Orada iş nispeten daha kolaydı. Var olan docker imajlarını bir kompozisyon çerçevesinde düşünerek ele almıştım. Ama kendi servislerimizden oluşan bir kompozisyon gerekirse nasıl bir yol izlenebilir merak da ediyordum. İşte yılın o vakitleri bunu öğrenmeye çalışmışım.
 

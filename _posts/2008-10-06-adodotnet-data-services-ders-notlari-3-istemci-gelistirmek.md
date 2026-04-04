@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net Data Services Ders Notları - 3 (İstemci Geliştirmek)"
 date: 2008-10-06 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
   - wcf-data-services
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Hatırlayacağınız gibi daha önceki iki ders notumuzda Ado.Net Data Service örneklerinin nasıl geliştirilebileceğini incelemeye çalışmıştık. Hatırlatmak gerekirse, Ado.Net Data Service'ler ile verilerin Entity Data Model (EDM) veya Custom LINQ Provider bazlı katmanlar üzerinden REST modeline göre sunulması mümkün olmaktadır. Bu noktada söz konusu servislerin WCF'in REST modelini kullanan ve Ado.Net üzerine odaklanmış bir açılımı olduğu görüşünde hem fikir olabiliriz. Ne varki Servis Yönelimli Mimari (Service Oriented Architecture-SOA) temelli çözümlerde yap-bozun en önemli iki parçasını servis ve istemciler oluşturmaktadır. Bir başka deyişle, servislerin tamamlayıcısı olan ve ilgili hizmetleri kullanacak istemci uygulamalar (Client Applications) olmalıdır. İşte bu yazımızda istemci uygulamaları göz önüne alacağız.
 

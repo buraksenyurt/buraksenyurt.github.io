@@ -2,12 +2,12 @@
 layout: post
 title: "WCF Data Services – Reflection Provider Kullanımı"
 date: 2012-05-01 01:25:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wcf-data-services
   - reflection
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bundan bir kaç yıl öncesiydi. Daha dün gibi hatırlıyorum..Net Framework 3.0 sürümünde çıkması beklenen yeni Foundation alt yapıları üzerine Microsoft ekibinden gelen elektronik bir postayı okuyordum. O zamana kadar XML Web Service'leri ve özellikle.Net Remoting ile yakın ilişkiler içerisinde bulunduğumdan, dikkatimi ilk çeken Windows Communication Foundation isimli konsept olmuştu. Kısaca WCF olarak adlandırılıyordu. Mutlaka üzerine eğilmem gerektiğini düşündüğüm bir konuydu. Benim için yeni bir macera başlıyordu.
 

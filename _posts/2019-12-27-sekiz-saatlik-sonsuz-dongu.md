@@ -2,8 +2,6 @@
 layout: post
 title: "Sekiz Saatlik Sonsuz Döngü"
 date: 2019-12-27 07:00:00
-categories:
-  - Genel
 tags:
   - teknoloji
   - agile
@@ -66,6 +64,8 @@ tags:
   - postman
   - soap-based-service
   - rpa
+categories:
+  - Yazılım Tasarımı
 ---
 Uygulama geliştirme yaşam döngümüzün henüz otuzuncu Sprint başındaydı. İki haftalık koşu görevlerini Sprint Planning toplantısında zaten belirlemiştik. Takım olarak 13 Story Point’e sahip Production Support Buffer mecburen her sprint içerisine dahil ettiğimiz bir maliyet. 17 yaşındaki Microsoft.Net tabanlı devasa ERP (Enterprise Resource Planning) ürünümüz ek geliştirmeler veya önceki yıllardan kalan teknik borçlar sebebiyle bazen üretim ortamı sorunları ile karşımıza gelmekte. Büyüklüğüne nazaran Code Coverage oranının düşük olması yeni ilavelerin var olan yapılara olan etkisini anlamamızı zorlaştırıyor. Ben, Mali İşler ve Ortak Modüller (Kimsenin bilmediği bir modül varsa böyle gelin) ekibindeyim. Lakin ERP’nin diğer modüllerinde de benzer sorunlar olabiliyor.
 

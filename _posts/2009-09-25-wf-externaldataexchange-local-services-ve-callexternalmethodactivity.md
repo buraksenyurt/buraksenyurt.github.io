@@ -2,10 +2,10 @@
 layout: post
 title: "WF - ExternalDataExchange, Local Services ve CallExternalMethodActivity"
 date: 2009-09-25 07:23:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Artık yazın bittiği, okulların açıldığı, şehrin kalabalığının arttığı bu günlerde birde sağnak yağışlar işin içerisine girince, insan ister istemez tatilde üzerinden denize atladığı bir iskelede olmak istiyor. Artık o iskelenin etrafında fazla insan yok ve yağmur yüzünden tahtaların üzerinde gizemli bir şekilde akan su birikintileri var; diyerek yaptığımız duygusal girişimizin aslında yazımızın ilerleyen kısmı ile bir alakası yok.
 

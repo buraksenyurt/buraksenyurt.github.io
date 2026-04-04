@@ -2,14 +2,13 @@
 layout: post
 title: "Levenshtein Distance Algoritması"
 date: 2012-07-01 18:00:00
-categories:
-  - Algoritma
-  - Programlama Dilleri
 tags:
   - csharp
   - levenshtein-distance
   - algoritma
   - extension-methods
+categories:
+  - Algoritma
 ---
 Bir süredir yazılım dünyasında sıklıkla kullanılan basit algoritmalara merak salmış durumdayım. Bazıları kafayı yedirtecek cinsten olsalarda arada sırada bunları değerlendirmekte ve paslanan dimamızı açmaya çalışmakta yarar olduğu kanısındayım.
 

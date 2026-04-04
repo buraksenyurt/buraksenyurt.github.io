@@ -2,8 +2,6 @@
 layout: post
 title: "TFS Client Object Model ile Word Entegrasyonu"
 date: 2013-04-11 13:15:00
-categories:
-  - DevOps
 tags:
   - team-foundation-server
   - client-object-model
@@ -13,6 +11,8 @@ tags:
   - scrum
   - cmmi
   - msf
+categories:
+  - DevOps
 ---
 Geçtiğimiz gün National Geographic kanalında Mega Fabrikalar’ ı seyretme fırsatı buldum. Amerikalı Dodge firması efsane Challanger‘ ı yeniden üretmekteydi. Konu bu üretimin gerçekleştirildiği mega fabrikaydı.
 

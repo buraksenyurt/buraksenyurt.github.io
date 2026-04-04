@@ -2,13 +2,13 @@
 layout: post
 title: "Asp.Net Temelleri : Tablo Bazlı Resimleri Ele Almak"
 date: 2007-07-26 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - csharp
   - BLOB
   - large-objects
+categories:
+  - Web Programlama
 ---
 Yazın bu sıcak günlerinde daha hafif konularla web maceralarımıza devam ediyoruz. Geçtiğimiz makalemizde Asp.Net uygulamalarında ektin hata yönetiminin nasıl yapılabileceğini incelemeye çalışmıştık. Bu kez veritabanı tablolarında çoğunlukla binary alanlarda saklanan resimlerin, Asp.Net uygulamalarında nasıl ele alınabileceğini örnek projeler üzerinden incelemeye çalışacağız.
 

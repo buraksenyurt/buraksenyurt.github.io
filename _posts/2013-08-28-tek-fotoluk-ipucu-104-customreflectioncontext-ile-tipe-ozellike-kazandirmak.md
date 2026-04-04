@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 104 : CustomReflectionContext ile Tipe Özellike Kazandırmak"
 date: 2013-08-28 19:18:00
-categories:
-  - Genel
 tags:
   - reflection
   - runtime
@@ -11,6 +9,8 @@ tags:
   - typeinfo
   - type
   - customreflectioncontext
+categories:
+  - Foto İpucu
 ---
 Bir tipin çalışma zamanında Reflection ile yakalanabilen özelliklerine ilaveler yapmak ister miydiniz? Aslında bunun çok kolay bir yolu var. Tek yapmanız gereken CustomReflectionContext tipinden yeni bir sınıf üretmek ve bunu aşağıdakine benzer bir şekilde kullanmak
 

@@ -2,14 +2,14 @@
 layout: post
 title: "Entity Framework Code-First Development Webiner Kayıdı"
 date: 2012-02-04 00:00:00
-categories:
-  - Genel
 tags:
   - webcast
   - entity-framework
   - code-first-development
   - dbcontext
   - nuget
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hatırlayacağınız üzere Ocak ayı içerisinde [Nedirtv?com](http://www.nedirtv.com) bünyesinde düzenlenen Webinerler arasında ben de Entity Framework-Code First Development ile kendime bir yer edinmiştim. İlk gerçekleştirdiğimiz Webinerimizde ne yazıkki Internet bağlantısında yaşadığımız şanssız sorunlar nedeni ile sağlıklı olarak ilerleyememiştik
 

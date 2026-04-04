@@ -2,14 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu 75–LINQ ile Rastgele Eleman Çekmek"
 date: 2013-01-04 00:15:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query
   - extension-methods
   - random
   - randomizer
+categories:
+  - Foto İpucu
 ---
 Pek çoğumuz Random tipini kullanır ve bir listeden rastgele elemenalar üretmeye veya elde etmeye çalışırız. Peki T tipinden bir listeden herhangibir anda rastgele eleman almak isteseniz ve bunu bir Extension metod olarak tasarlamayı planlasanız...Nasıl bir yol izlerdiniz?
 

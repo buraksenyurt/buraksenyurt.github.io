@@ -2,8 +2,6 @@
 layout: post
 title: "Eclipse Üzerinden Java ile TFS Client Object Model Konuşuyor"
 date: 2013-05-12 10:10:00
-categories:
-  - DevOps
 tags:
   - java
   - eclipse
@@ -12,6 +10,8 @@ tags:
   - client-object-model
   - work-item
   - workitemstore
+categories:
+  - DevOps
 ---
 Çok değil daha bir kaç sene öncesine kadar (Özellikle.Net’ in duyurulduğu yıllarda ve izleyen bir kaç senede) yazılım dünyasında neredeyse yandaki resimdekine benzer bir kavga vardı (Benzetmeyi biraz abartmış olabilirim)
 

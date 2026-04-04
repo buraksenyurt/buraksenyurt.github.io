@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 131 - Servisim Yaşıyor mu?"
 date: 2016-05-08 02:00:00
-categories:
-  - Genel
 tags:
   - web-request
   - web-response
@@ -12,6 +10,8 @@ tags:
   - csharp
   - httpwebrequest
   - httpwebresponse
+categories:
+  - Foto İpucu
 ---
 Böyle yeni bir şeyler öğrenmek için enerji bulamadığım vakitler oluyor zaman zaman. Ya çevremdekilerin ya da işlerin etkisi ile azalır enerjim. Bir şeyler öğrenmeyince de kendimi kötü hissettiğimden en azından genişletme metodu (Extension Method) yazmaya çalışayım da pas tutmayım derim. Tabii önce konu seçmek gerekir. Bu kez aklıma "bir servisin yaşayıp yaşamadığını nasıl anlarım?" sorusu takıldı. Mesela bir Uri için Http durum kodu bilgisinin 200 olmasını kontrol eden bir genişletme metodu yazabilirdim. Örneğin aşağıdaki fotoğrafta görüldüğü gibi.
 

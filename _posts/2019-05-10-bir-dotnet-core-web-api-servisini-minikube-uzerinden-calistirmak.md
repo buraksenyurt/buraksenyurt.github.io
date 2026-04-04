@@ -2,8 +2,6 @@
 layout: post
 title: "Bir .Net Core Web API Servisini Minikube Üzerinden Çalıştırmak"
 date: 2019-05-10 13:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - minikube
@@ -21,6 +19,8 @@ tags:
   - pod
   - service
   - cluster
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Soğuk bir Şubat akşamı mıydı, dışarıda kar var mıydı, günün tam olarak hangi vakitleriydi tam olarak hatırlamıyorum ama github'a göre 24 numaralı örneğin son check-in işlemi 20 şubat Çarşamba günüydü.
 

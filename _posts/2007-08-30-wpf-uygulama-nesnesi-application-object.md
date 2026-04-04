@@ -2,13 +2,13 @@
 layout: post
 title: "WPF-Uygulama Nesnesi (Application Object)"
 date: 2007-08-30 09:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - application-object
   - clr
   - common-language-runtime
+categories:
+  - Windows Programlama
 ---
 Windows Presentation Foundation windows tabanlı uygulama geliştirmeye çok yeni bir yaklaşım getirdi. Tabiri yerindeyse pek çok yenilik ile karşı karşıyayız. İşte bu makalemizde WPF ile geliştirilen windows uygulamalarında çekirdek nesnelerden birisi olan Application tipini incelemeye çalışacağız. Application nesnesi, WPF uygulamalarının çekirdek nesnesidir.
 

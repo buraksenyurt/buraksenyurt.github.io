@@ -2,10 +2,10 @@
 layout: post
 title: "5000 Feet Yüksekten Workflow Foundation 4.0[Beta 1]"
 date: 2009-10-01 13:54:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Paraşütle atlamak gerçekten zevkli olsa gerek. Yerden binlerce feet (1 feet=30,48 cm) yüksekten atlayıp özgür bir şekilde kendinizi yer çekimi gücüne bırakıp, saniyeler boyunca serbest düşüşü yaşamak...Size yandaki resimde atlayan kişinin ben olduğumu söylemek isterdim ama ne yazık ki değilim. Olmayı istermiydim bilemiyorum. Oldukça yüksek görünüyor.
 

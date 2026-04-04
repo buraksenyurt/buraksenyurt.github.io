@@ -2,10 +2,10 @@
 layout: post
 title: "WCF - Windows Tabanlı Doğrulama ve Yetkilendirme"
 date: 2007-07-12 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Servis yönelimli mimaride (Service Oriented Architecture), dağıtık uygulamaların bir kısmı intranet tabanlı olaraktan Windows işletim sistemleri üzerinde konuşlandırılmış olarak tasarlanmaktadır. Bu sebepten ağ üzerinde tüm kullanıcıların daha kolay bir şekilde yönetildiği var olan ve bilinen doğrulama ve yetkilendirme materyallerinden yararlanmak sık olarak başvurulan tekniklerdendir. Bir başka deyişle kullanıcı hesaplarının (Member accounts) yönetimi hazır olan Windows işletim sistemi unsurları tarafından kolayca ele alınabilmektedir. Buda doğal olarak istemcilerin servis tarafında doğrulanması (Authentication) ve yetkilendirilmesi (Authorization) için hazır olan kaynakların kullanılabilmesi anlamına gelir.
 

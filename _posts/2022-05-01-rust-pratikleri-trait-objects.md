@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - Trait Objects"
 date: 2022-05-01 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -13,6 +11,8 @@ tags:
   - dynamic-dispatch
   - plugin
   - box
+categories:
+  - Programlama Dilleri
 ---
 Bir windows forms uygulamasını ya da bir web sayfasını düşünelim. Hatta birden fazla bileşenden (component) oluşan bir mobil uygulama arayüzünü...Temelde ana kontrol üstüne eklenen başka tekil ve karma bileşenlerden oluşan bir bütün söz konusudur. Şimdi de ana saha üzerine gelen bu kontrollerin nasıl çizildiğini, hangi sırayla eklendiklerini düşünelim. Bir çalışma zamanı motoru büyük ihtimalle belli ortak davranışlara sahip olan bileşenleri, ortamın istediği kıvamda (örneğin HTML olarak) çizme görevini üstlenir. Hatta bu sistemlerde bileşen ağacı öyle bir tasarlanır ki, geliştiriciler isterlerse kendi bileşenlerini de tasarlayıp çalışma zamanı motorunun kullanımına sunabilir.
 

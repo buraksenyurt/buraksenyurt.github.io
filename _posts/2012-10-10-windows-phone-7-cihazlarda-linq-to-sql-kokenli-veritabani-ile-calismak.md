@@ -2,14 +2,14 @@
 layout: post
 title: "Windows Phone 7 Cihazlarda LINQ to SQL Kökenli Veritabanı ile Çalışmak"
 date: 2012-10-10 18:00:00
-categories:
-  - Mobil Programlama
 tags:
   - windows-phone-7
   - windows-phone-mango
   - isolated-storage
   - language-integrated-query
   - csharp
+categories:
+  - Framework Tabanlı Programlama
 ---
 Uzun zamandır bilgisayar yazılım teknolojileri ile ilgileniyor olmama rağmen zaman içerisinde belirli konularda uzmanlaşmaya çalıştığımı fark ettim. Bana göre normalde olması gereken bu. Nitekim insanın kapasitesini bilmesi ve her şeyden çok fazla anlamamaktansa, belirli bir konuda çok iyi bilgiye sahip olması daha anlamlıdır diye düşünüyorum
 

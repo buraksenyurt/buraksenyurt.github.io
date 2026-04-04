@@ -2,9 +2,6 @@
 layout: post
 title: "Asp.Net Core Web API için Custom MiddleWare Yazmak"
 date: 2017-12-18 06:01:00
-categories:
-  - Framework Tabanlı Programlama
-  - Web Programlama
 tags:
   - .net-core
   - asp.net-core
@@ -14,6 +11,8 @@ tags:
   - custom-middleware
   - kestrel
   - pipeline
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Uzun zamandır televizyon dizisi izlemiyorum. Aslında bir dönem düzenli olarak takip ettiğim diziler vardı. Bir tanesi de usta oyuncular Benedict Cumberbatch (Sherlock Holmes) ve Martin Freeman (Dr. John Watson) ın oynadığı Sherlock Holmes idi. Bu Cumartesi gecesi bir şekilde dizinin bir bölümüne rastladım. Keyifli bir bölüm tekrarı yaptım. Oyunculuklara yine hayran kaldım. Sherlock'un keskin zekasına, Watson'un her zamanki sorgulayıcı düşünce tarzının eklendiği bir bölümdü.
 

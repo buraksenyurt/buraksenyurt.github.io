@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 134 - Powershell'den XML Web Service Çağırmak"
 date: 2016-10-06 18:00:00
-categories:
-  - DevOps
 tags:
   - powershell
   - xml-web-service
@@ -13,6 +11,8 @@ tags:
   - soap-based-service
   - command-prompt
   - csharp
+categories:
+  - Foto İpucu
 ---
 Olmaz olmaz demeyin, gün gelir ihtiyacınız olur:) Ortada bir XML Web Service olduğunu düşünelim ve onu çağırmak istediğimiz bir sunucunun başında oturduğumuzu. Sunucu üzerinde SOAP-UI gibi yardımcı araçların olmadığını ve bunları kurma yetkinizin de bulunmadığını düşünün. Öyle bir sunucu ki komut satırı en etkili araç. İşte böyle bir durumda Windows PowerShell gibi araçlar web servislerini çağırma noktasında işimize yarayabilir. Nasıl mı? Gelin bakalım.
 

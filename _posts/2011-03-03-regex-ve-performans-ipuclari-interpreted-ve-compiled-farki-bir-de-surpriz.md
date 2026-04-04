@@ -2,11 +2,11 @@
 layout: post
 title: "Regex ve Performans İpuçları – Interpreted ve Compiled Farkı, Bir de Sürpriz"
 date: 2011-03-03 17:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - regex
+categories:
+  - Programlama Dilleri
 ---
 Formula 1 merakı olanlar, yarışan araçların mühendislik olarak birbirlerine çok yakın teknolojiler ile üretildikleri ve benzer olduklarını bilirler. Gerçi bazı zamanlarda ön plana çıkan araçlar da söz konusudur. Frenaj veya hızlanma sistemlerine getirilen iyileştirmeler sonucu, diğer yarış araçlarının pilotları kim olursa olsun belirgin bir şekilde öne fırlarlar.
 

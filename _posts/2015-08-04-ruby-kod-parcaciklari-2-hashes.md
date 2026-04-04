@@ -2,12 +2,12 @@
 layout: post
 title: "Ruby Kod Parçacıkları - 2 (Hashes)"
 date: 2015-08-04 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - hashes
   - data-structures
+categories:
+  - Programlama Dilleri
 ---
 Ruby programlama dilinde de veri yapıları (Data Structures) oluşturmak için kullanılan tiper vardır. Dictionary benzeri koleksiyon olarak kabul edebileceğimiz Hash sınıfı bunlardan birisidir. Benzersiz anahtar (key) ve değer (value) çiftlerinden oluşan Hash nesne örneklerinin kullanımı oldukça kolaydır.
 

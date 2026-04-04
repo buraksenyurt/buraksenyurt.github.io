@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 92–WMI ile RAM Bilgilerini Almak"
 date: 2013-03-25 21:17:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - wmi
@@ -11,6 +9,8 @@ tags:
   - wql
   - wmi-query-language
   - ansi-sql
+categories:
+  - Foto İpucu
 ---
 Diyelim ki uygulamanız içerisinden, çalışmakta olduğu Windows işletim sistemi tabanlı makinenize ait fiziki RAM bilgilerini almak istiyorsunuz. Örneğin markasını, hangi slota takılı olduğunu, boyutunu, tipini vs…
 

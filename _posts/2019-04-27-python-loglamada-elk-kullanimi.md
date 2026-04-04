@@ -2,8 +2,6 @@
 layout: post
 title: "Python Loglamada ELK Kullanımı"
 date: 2019-04-27 19:32:00
-categories:
-  - Programlama Dilleri
 tags:
   - elk
   - elasticsearch
@@ -14,6 +12,8 @@ tags:
   - ubuntu
   - json
   - gork
+categories:
+  - Programlama Dilleri
 ---
 Laptop ekranına kitlenmiş error seviyesindeki logları inceliyordum. HTTP 400 en sevdiğim (yazar burada kendisiyle dalga geçiyor) ama çözmekte en çok zorlandıklarımdan birisiydi. Neyse ki monitör ettiğimiz araç bize güzel detaylar veriyordu. Pek tabii iş yoğunluğundan olsa gerek, üzerinde geliştirme yaptığımız ürünlerin bazı kurgularını inceleme fırsatı bulamıyordum. Lakin zaman zaman takım arkadaşlarımla veya mimari ekiptekilerle yaptığım konuşmalarda havada uçuşan, daha önceden duyduğum ama derinlemesine bilgi sahibi olmadığım kelimelere rastlıyordum.
 

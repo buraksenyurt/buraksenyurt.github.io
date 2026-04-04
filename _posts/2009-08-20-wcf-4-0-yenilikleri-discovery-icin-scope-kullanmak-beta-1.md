@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Discovery için Scope Kullanmak [Beta 1]"
 date: 2009-08-20 16:57:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir [önceki](/2009/08/18/wcf-4-0-yenilikleri-ad-hoc-ws-discovery-beta-1/)yazımızda WCF 4.0 tabanlı servislerde WS-Discovery protokolünün, Ad Hoc modeline göre nasıl uygulanabileceğini görmüştük. Ad Hoc modelinde istemcinin, yerel ağ üzerine dahil olan bir servisi aramak için kullanabileceği kriterleri önceden belirlemesi ve bunları kullanması gerektiğinden bahsetmiştik. Bu amaçla kod tarafında FindCriteria tipinden yararlanılmaktadır. Bir önceki örneğimizde, arama kriterinde sadece servis sözleşmesini (Service Contract) kullanmıştık.
 

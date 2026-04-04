@@ -2,10 +2,10 @@
 layout: post
 title: "Mesaj Sözleşmeleri(Message Contracts)"
 date: 2008-02-09 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - windows-communication-foundation
+categories:
+  - Programlama Dilleri
 ---
 Servis tabanlı uygulamalarda en önemli
 noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde

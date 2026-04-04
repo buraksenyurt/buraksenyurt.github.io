@@ -2,11 +2,11 @@
 layout: post
 title: "Entity Framework Üzerinde TransactionScope Kullanımı"
 date: 2011-04-01 08:52:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - transaction
+categories:
+  - Framework Tabanlı Programlama
 ---
 Günlerden Salı, sonbahar. Neredeyse hiç uyumadan geçen bir gecenin ardından sabaha karşı yorgunluktan sızan Netspecter, CAD’ in baş ucunda dakikalarca miyavlaması sonucu ancak kendine gelebilir. Eksi ve köhne divanı, o doğrulurken olabildiğince haykırarak gıcırdamaktadır. Önce terliklerini arar. Oda darma dağınıktır. Tüm gece kütüphanedeki sayısız kitabı indirmiş ve bir sonuç bulmak için saatlerce araştırma yapmıştır. Sonuçta terliğin tekinin dahi bulunamadığı bir kalabalık kitap yığınıdır.
 

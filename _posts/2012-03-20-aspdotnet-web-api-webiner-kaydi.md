@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Web API Webiner Kaydı"
 date: 2012-03-20 15:23:00
-categories:
-  - Genel
 tags:
   - asp.net-web-api
   - wcf-web-api
@@ -18,6 +16,8 @@ tags:
   - httppost
   - httpput
   - httpdelete
+categories:
+  - Web Programlama
 ---
 19 Mart 2012 Pazartesi günü gerçekleştirdiğimiz Asp.Net WEB API Webiner kayıtlarını Nedirtv?com topluluğuna yüklemiş bulunmaktayız. Bu webinerimizde daha önceden WCF (Windows Communication Foundation) takımınca geliştirilen ve son olarak WCF Web API kütüphanesi adı altında sunulan REST (Representational State Transfer) tabanlı servis geliştirme ve tüketme alt yapısının yeni verisyonu diyebileceğimiz, Asp.Net WEB API’ yi incelemeye çalıştık.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "WCF - Adım Adım IIS Hosting"
 date: 2007-04-28 03:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - iis
   - internet-information-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Windows Communication Foundation ile ilişkili bir önceki makalemizde mimarinin detaylarına yakından bakmaya çalışmış ve örnek bir uygulama geliştirmiştik. Bu makalemizde ise bir WCF Service projesi geliştirmeye çalışacağız. Bir başka deyişle HTTP protokolünü kullanarak, IIS üzerinden bir.Net kütüphanesini servis olarak yayınlayacağız.
 

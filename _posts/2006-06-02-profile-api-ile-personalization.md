@@ -2,12 +2,12 @@
 layout: post
 title: "Profile API ile Personalization"
 date: 2006-06-02 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - profile-api
   - personalization
+categories:
+  - Web Programlama
 ---
 Günümüz web uygulamalarında, kullanıcı bazlı kişiselleştirme (personalization) oldukça önemli ve popüler bir konudur. Örneğin, bir elektronik ticaret sitesini ziyaret ettiğimizi düşünelim. Bu site bir sonraki ziyaretimizde, daha önceden bakmış olduğumuz ürünler ile ilişkili yeni önerilerde bulunabilir. Böylece siteye giren kullanıcıları başka ürünlere yönlendirebilir. Yeni önerilerin sunulabilmesi, sitenin bizim alışkanlıkarımızı takip etmesi ve kendisini buna göre değiştirmesi anlamına gelmektedir.
 

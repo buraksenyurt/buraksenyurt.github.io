@@ -2,8 +2,6 @@
 layout: post
 title: "SqlDataReader Sınıfı 1"
 date: 2003-12-28 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sqldatareader
@@ -11,6 +9,8 @@ tags:
   - oop
   - .net
   - database
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, SqlDataReader sınıfını incelemeye çalışacağız. ADO.NET’in bilgisayar programcılığına getirdiği en büyük farklıklardan birisi bağlantısız veriler ile çalışılabilmemize imkan sağlamasıydı. DataSet sınıfıını ve buna bağlı diğer teknikleri kastettiğimi anlamışsınızdır. Bu teknikler ile, bir veritabanı içinde yer alan tabloları, tablolar arasındaki ilişkileri, içerdikleri verileri vb… istemci makinenin belleğinde tutmamız mümkün olabiliyor.
 

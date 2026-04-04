@@ -2,13 +2,13 @@
 layout: post
 title: "Ruby Kod Parçacıkları - 4 (Control Statements, Loops, Statement Modifiers)"
 date: 2015-08-09 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - control-statements
   - loops
   - statement-modifiers
+categories:
+  - Programlama Dilleri
 ---
 Her programlama dilinde olduğu gibi Ruby içinde kontrol ifadeleri (Control Statements) ve döngüler (Loops) söz konusudur. Tabi Ruby dili özellikle yazımsal kolaylık açısından pek çok geliştiriciyi gülümseten betiklere de sahiptir. İlerleyen kod parçasında bu konudaki en temel kullanımları inceliyoruz.
 

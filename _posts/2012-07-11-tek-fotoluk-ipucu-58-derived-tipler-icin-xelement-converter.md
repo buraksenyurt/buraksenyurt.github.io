@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk ipucu - 58 Derived Tipler için XElement Converter"
 date: 2012-07-11 18:00:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - extension-methods
   - xelement
   - reflection
+categories:
+  - Foto İpucu
 ---
 Farz edelim ki elimizden tonlarca POCO (Plain Old CLR Object) tip var. Hatta laf aramızda tonlarca otomatik olarak üretilmiş SQL User Defined Type karşılığı sınıf var. İstiyorsunuz ki, bu tiplerin çalışma zamanındaki canlı örnekleri, XElement tipine dönüştürülebilsin. Hatta XElement içerisinde özelliklerin adları ile birlikte.Net tarafında ki type bilgileri de detaylı olarak bulunsun. Bulunsun ki başka bir yerden tekrar ayağa kaldırabilelim. Her tip için birer Extension method'mu yazarsınız? Ya da tüm tipler için Convert ile ilişkili bir Interface implementasyonu mu? Belki de bu tipler size Oracle'dan gelmiştir de türedikleri bir base type'da vardır
 

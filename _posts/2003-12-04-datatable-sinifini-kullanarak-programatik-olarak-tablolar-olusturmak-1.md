@@ -2,11 +2,11 @@
 layout: post
 title: "DataTable Sınıfını Kullanarak Programatik Olarak Tablolar Oluşturmak-1"
 date: 2003-12-04 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - datatable
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde bağlantısız katmanın önemli bir sınıfı olan DataTable nesnesini bir açıdan incelemeye çalışacağız. Bilindiği gibi DataTable sınıfından türetilen bir nesne, bir tabloyu ve elemanlarını bellekte temsil etmek için kullanılmaktadır. DataTable sınıfı bellekte temsil ettiği tablolara ait olan satırları Rows koleksiyonuna ait DataRow nesneleri ile temsil ederken, tablonun alanlarını ise, Columns koleksiyonuna ait DataColumn nesneleri ile temsil etmektedir.
 

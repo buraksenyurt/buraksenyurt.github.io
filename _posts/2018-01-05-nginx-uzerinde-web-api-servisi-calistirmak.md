@@ -2,8 +2,6 @@
 layout: post
 title: "Nginx Üzerinde Web API Servisi Çalıştırmak"
 date: 2018-01-05 08:54:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - asp.net-core-web-api
@@ -12,6 +10,8 @@ tags:
   - service
   - systemctl
   - kestrel
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Animasyon izlemek keyif aldığım hobilerden birisi. İzlediğimde bende derin izler ve duygular bırakmış uzun metrajlı bir çok anım var. Bazen filmde geçen bir söz bazen karakterin gülme krizine sokan bir davranışı ya da başına gelen dramatik bir olay. Geçenlerde bilmem kaçıncı kez izlediğim [Sing](http://www.imdb.com/title/tt3470600/) filmi de benim uzun metraj anı defterim arasında yer alanlardan. Maddi sorunlar nedeniyle banka ile başı dertten kurtulamayan Buster Moon, filmin bir yerinde tam bütün ümitlerin tükendiği noktada şöyle bir cümle sarf ediyor;
 

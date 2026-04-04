@@ -2,13 +2,13 @@
 layout: post
 title: "CallBack Tekniği ile Asenkron Metod Yürütmek"
 date: 2005-09-09 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - async
   - asynchronous-programming
   - delegate
+categories:
+  - Programlama Dilleri
 ---
 Çoğu zaman projelerimizde, çalışmakta olan uygulamaları uzun süreli olarak duraksatacak işlevlere yer veririz. Özellikle görsel tabanlı uygulamalarda veritabanlarına ait kapsamlı sorguların yer aldığı işlemlerde bu sorunla sıkça karşılaşılmaktadır. En büyük problem varsayılan olarak kod satırlarının senkron hareket etmesidir. Yani kodlar sırası geldikçe işleyen parçalar bütününden oluşmaktadır. Bu elbette ki uzun sürecek bir sorgunun cevapları alınmadan izleyen kod satırlarının işlememesi anlamına gelmektedir. Oysaki kodları asenkron olarak çalıştırma şansımız da mevcuttur. Eminim ki ADO.NET 2.0'da asenkron metot yürütme tekniklerini veya asenkron web servisi uygulamalarının nasıl yazılacağını duymuşsunuzdur. Temel prensip hepsi için aynıdır. Merkezde IAsyncResult arayüzü tipinden bir nesnenin kullanıldığı temsilci (delegate) tabanlı modeller söz konusudur.
 

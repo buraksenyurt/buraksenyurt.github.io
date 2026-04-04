@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 121 - Code Contracts ve Immutable Type"
 date: 2015-11-16 06:00:00
-categories:
-  - Genel
 tags:
   - Immutable-Types
   - code-contracts
@@ -11,6 +9,8 @@ tags:
   - Static-Checking
   - Perform-Runtime-Contract-Checking
   - precondition
+categories:
+  - Foto İpucu
 ---
 Bazı durumlarda tanımladığımız tiplerin Immutable olmasını isteriz. Bildiğiniz üzere bir nesne örneğinin özellikleri ile nitelenen durumunun (State) çalışma zamanı boyunca değişmesini istemiyorsak Immutable hale getirebiliriz.
 

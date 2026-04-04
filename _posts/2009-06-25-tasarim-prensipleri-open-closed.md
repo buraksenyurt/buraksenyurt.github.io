@@ -2,10 +2,10 @@
 layout: post
 title: "Tasarım Prensipleri - Open Closed"
 date: 2009-06-25 04:22:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-principles
+categories:
+  - Yazılım Tasarımı
 ---
 Bir önceki yazımda, yazılm tasrımında benimsenen ilkelerinden birisi olan Loose Coupling prensibine değinmiştik. Bu yazımızda ise, Open Closed (Açık Kapalı) prensibine değiniyor olacağız.(Bu prensibini pek çok yazılım disiplininde görebilirsiniz. Örneğin eXtreme Programming veya Aspect Oriented Programming-AOP içerisinde.)
 

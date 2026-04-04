@@ -2,12 +2,12 @@
 layout: post
 title: "İlişkili Tabloları DataSet İle Kullanmak - 2"
 date: 2003-12-10 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataset
   - relations
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde ilişkili tablolar arasında kısıtlamaların (constraints) nasıl kullanıldığını işlemeye çalışacağız. Hatırlayacağınız gibi bu yazı dizisinin ilk bölümünde DataRelation sınıfını kullanarak ilişkili tabloların bellekte nasıl ifade edilebileceğini görmüştük. Bir diğer önemli konu, bu ilişkili tablolar arasındaki parent-child ilişkisinin kayıt güncelleme, kayıt silme gibi durumlarda nasıl hareket edeceğini belirlemektir.
 

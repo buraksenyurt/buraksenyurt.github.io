@@ -2,13 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu - 4 (DebuggerBrowsable Niteliği)"
 date: 2011-06-23 12:40:00
-categories:
-  - Framework Tabanlı Programlama
-  - Genel
 tags:
   - csharp
   - .net-framework
   - visual-studio
+categories:
+  - Foto İpucu
 ---
 Attribute diyip geçmeyin. Bazıları çalışma zamanında o kadar çok işe yarıyor ki. Örneğin DebuggerBrowsable niteliği. İşte kullanım şekli. Farkı görebiliyor musunuz?
 

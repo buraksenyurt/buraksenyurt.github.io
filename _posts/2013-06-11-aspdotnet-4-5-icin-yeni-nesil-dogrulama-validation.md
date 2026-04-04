@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net 4.5 için Yeni Nesil Doğrulama(Validation)"
 date: 2013-06-11 14:09:00
-categories:
-  - Web Programlama
 tags:
   - asp.net-validation
   - web-forms
@@ -13,6 +11,8 @@ tags:
   - data-*
   - data-attributes
   - unobtrusive-validation
+categories:
+  - Web Programlama
 ---
 Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredeyse tamamı bu efsane cümleyi bilir. **A long tim ago in a galaxy far, far away…** Hikaye hep yazılı bir anlatım ile başlar ve daha sonra ekran yukarıdaki yıldızlardan aşağıya doğru inerek devam eder. Sornasında ya bir uzay mekiğinin kaçıs sahnesi ya da imparatorluk güçleri ile isyancılar arasındaki savaşla karşı karşıya kalırız.
 

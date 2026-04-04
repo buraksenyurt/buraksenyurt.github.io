@@ -2,8 +2,6 @@
 layout: post
 title: ".Net Core Tarafında SignalR Kullanımı"
 date: 2017-12-31 18:00:00
-categories:
-  - Web Programlama
 tags:
   - signalr
   - .net-core
@@ -13,6 +11,8 @@ tags:
   - real-time-messaging
   - hub
   - signalr.client
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir süre önce araştırmaya başladığım ama araya giren diğer konular (WebSockets ve CORS-Cross Origin Resource Sharing) nedeniyle askıda kalan SignalR mevuzusuyla ilgili West-World'de haftasonu önemli ve heyecanlı gelişmeler oldu. Epey zorlandığımı itiraf etmek isterim. Bunun en büyük sebebi standart öğretilerde yer alan web tabanlı örnekler yerine her şeyi Console üzerinde uygulamaya çalışmamdı. HUB için bir sunucu, mesaj yayını için bir başka uygulama ve yayınlanan mesajları alan bir diğeri.
 

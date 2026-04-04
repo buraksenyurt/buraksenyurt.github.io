@@ -2,12 +2,11 @@
 layout: post
 title: "PLINQ (Parallel LINQ) - Hello World [Beta 1]"
 date: 2009-05-21 19:11:00
-categories:
-  - Veritabanı
-  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query
+categories:
+  - Paralel Programlama
 ---
 Bildiğiniz gibi son yazımı deniz kenarında bir kafede tatildeyken yazmıştım. Ama tatil bitti malesef ve tekrardan Morpheus'un sözleri kulaklarımda çınladı "Wellcome to the real world". Yinede 1 haftalığınada olsa tatil yapabildiğime şükrediyorum. Gerçek dünyaya döndükten sonra tabiki bir süre adaptasyon sorunları ile karşılaşıyor insan doğal olaraktan. Bu adaptasyon sorunları içerisinde boğuşurken, neleri araştırabilirim diye düşünürken buluverdim kendimi.
 

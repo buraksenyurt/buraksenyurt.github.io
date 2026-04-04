@@ -2,8 +2,6 @@
 layout: post
 title: "Rust ile Oyun Programlama"
 date: 2022-05-08 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -12,6 +10,8 @@ tags:
   - builder-pattern
   - 2D-oyun-geliştirme
   - entity-component-system
+categories:
+  - Oyun Programlama
 ---
 Uzun süredir Rust programlama dilini öğrenmeye çalışıyorum. Bu yolda yürürken çevrimiçi eğitim materyalleri, blog yazıları ve bültenler haricinde birincil kaynak olarak da kitapları kullanmayı tercih ediyorum. Diğer yandan bir programlama dilini iyi seviyede öğrenmenin bana göre iki yolu var; var olan ürünlerin benzerini yazmak ya da oyun geliştirmeye çalışmak. Bazı yayınlar programlama dilini oyun yazarak öğretmeye çalışıyorlar. Takip ettiğim Herbert Wolverson'un Hands-on Rust: Effective Learning through 2D Game Development and Play isimli kitap da bunlardan birisi. Çok efsane bir öğrenim deneyimi olduğunu ifade edebilirim.
 

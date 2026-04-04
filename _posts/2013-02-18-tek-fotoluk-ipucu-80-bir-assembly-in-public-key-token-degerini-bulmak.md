@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 80–Bir Assembly’ ın Public Key Token Değerini Bulmak"
 date: 2013-02-18 02:00:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - assembly
@@ -11,6 +9,8 @@ tags:
   - command-prompt
   - log4net
   - public-key-token
+categories:
+  - Foto İpucu
 ---
 Diyelim ki elinizde projeye referans ettiğiniz bir.Net assembly dosyası bulunmakta. Örneğin Log4Net ve bununla birlikte konfigurasyon dosyası içerisinde de ilgili assembly’ ın versiyon numarasını ve daha da önemlisi Public Key Token değerini girmeniz gereken bir bölüm yer almakta. Söz konusu Assembly’ ın Public Key Token değerini öğrenmek için pratik olarak nasıl bir yol izlersiniz acaba?
 

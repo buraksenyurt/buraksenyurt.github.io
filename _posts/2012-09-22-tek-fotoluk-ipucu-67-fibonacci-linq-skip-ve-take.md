@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu–67–Fibonacci, LINQ, Skip ve Take"
 date: 2012-09-22 18:23:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - biginteger
@@ -12,6 +10,8 @@ tags:
   - skip
   - take
   - yield
+categories:
+  - Foto İpucu
 ---
 Biliyorsunuz.Net Framework 4.0 ile birlikte BigInteger tipi geldi ve çok büyük sayıları kullanabilir olduk. Şimdi diyelimki eğlencelik olsun diye Fibonacci sayılarının sonlu kümesine ve bu kümedende istediğiniz indexte başlayıp istediğiniz miktarda alabileceğiniz bir fonksiyonelliğe ihtiyacınız var. Ha bir de elinizin altında yield keyword’ ü. Taaaa.Net Framework 2.0 zamanlarından. Naparsınız?
 

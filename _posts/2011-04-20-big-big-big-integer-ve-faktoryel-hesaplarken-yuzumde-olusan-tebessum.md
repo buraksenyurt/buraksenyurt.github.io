@@ -2,15 +2,14 @@
 layout: post
 title: "Big Big Big Integer ve Faktöryel Hesaplarken Yüzümde Oluşan Tebessüm"
 date: 2011-04-20 15:05:00
-categories:
-  - Framework Tabanlı Programlama
-  - Programlama Dilleri
 tags:
   - biginteger
   - system.numerics
   - .net-framework
   - csharp
   - visual-studio
+categories:
+  - Framework Tabanlı Programlama
 ---
 [Monster Truck](http://en.wikipedia.org/wiki/Monster_truck) yarışlarını izleyen var mıdır bilemiyorum. Bir zamanlar Eurosport kanalında sık sık izler ve bu devasa, kocaman araçların, önlerinde ufacık kalan (ki o araçların çoğu avrupada kullanılan binek otoların çoğundan en ve boyca büyüktür) araçların üstünden atlarken onları nasıl ezdiklerine ağzım açık bakardım.
 

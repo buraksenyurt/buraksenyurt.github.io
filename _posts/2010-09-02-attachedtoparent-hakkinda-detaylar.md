@@ -2,12 +2,12 @@
 layout: post
 title: "AttachedToParent Hakkında Detaylar"
 date: 2010-09-02 08:30:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming
   - parallel-computing
+categories:
+  - Paralel Programlama
 ---
 Malum "her yiğidin farklı bir yoğurt yiğiş tarzı vardır" derler. Genellikle programlama dilleri veya.Net Framework gibi yapılarda da bir sonuca ulaşmak için birden fazla ve farklı yol söz konusu olabilir. Böyle bir durumun oluşmasına neden olan etkenlerin başında, çevresel ortam parametrelerinin farklılaşmasının geldiğini ifade edebiliriz.
 

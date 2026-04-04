@@ -2,14 +2,14 @@
 layout: post
 title: "Oyun Programlamaya Giriş (Çarpışma Teknikleri - 1)"
 date: 2004-11-06 04:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - game-programming
   - matematik
   - oyun-programlama
   - çarpışma-teorileri
+categories:
+  - Oyun Programlama
 ---
 Yaklaşık bir ay kadar önce evde dinlenirken, şu ana kadar yaptığım işleri ve projeleri düşündüm. Kesin olarak şunu söyleyebilirim ki, profesyonel anlamda ilgilendiğim ve kullandığım tek dil C# idi. C# dilini kullanarak, .NET platformu altında veritabanı ağırlıklı olmak üzere çeşitli çalışmalar yaptım. Ancak bir süre sonra fark ettim ki, bir Matematik Mühendisi olarak lisans eğitimim sırasında gördüğüm o devasa cebir problemleri, teorem ispatları hiçbir zaman işin içine girmemişti. Matematiğin belki de çok az olmakla birlikte dört işleminin ve birtakım algoritmalar için gerekli iteratif ifadelerinin yer aldığı uygulamalar dışında, onu çok yoğun şekilde kullanmamıştım.
 

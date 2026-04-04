@@ -2,11 +2,11 @@
 layout: post
 title: "Debug Edilebilir Windows Service Geliştirmek"
 date: 2011-04-10 10:34:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
   - debug
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Uzun süre önce dış kaynak (Outsource) olarak görev aldığım bir bankacılık uygulamasında Windows Service tabanlı entegrasyon işlemleri için görevlendirilmiştim. Herşeyden önce bu servislerin bankacılık uygulaması olması nedeniyle, farklı ve yabancı sistemleri de ilgilendiren iş adımları bulunmaktaydı. Bu sebepten söz konusu Windows Service uygulamalarının hem kod içerikleri hem de iş kuralları oldukça karışık olabiliyordu. İlgili Windows Service örneklerinin geliştirilmesi bir yana, bunların test ortamına atılması ve sonuçlarının takip edilmesi ise başlı başına bir dertti
 

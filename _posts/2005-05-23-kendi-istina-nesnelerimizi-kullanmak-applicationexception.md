@@ -2,11 +2,11 @@
 layout: post
 title: "Kendi İstina Nesnelerimizi Kullanmak (ApplicationException)"
 date: 2005-05-23 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - exception-handling
+categories:
+  - Programlama Dilleri
 ---
 İstisna yakalama mekanizması (Exception Handling) dotNet mimarisinde oldukça önemli bir yere sahiptir. Bu mekanizma sayesinde uygulamalarımızın kilitlenmesi ve istem dışı bir şekilde sonlandırılmaya zorlanmasının önüne geçmiş oluruz. Framework içerisinde önceden tanımlanmış pek çok istisna sınıfı mevcuttur. Bu sınıflar yardımıyla, çalışma zamanında oluşabilecek istisnai durumlar kolayca tespit edilebilmektedir.
 

@@ -2,13 +2,13 @@
 layout: post
 title: "WCF RIA Services - Custom Authorization [Beta 2]"
 date: 2010-01-26 01:52:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services
   - windows-communication-foundation
   - wcf-eco-system
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Geçtiğimiz günlerde uzun süredir yemediğim şu meşhur Dunkin & Donuts'tan bir iki kurabiye almak istedim. Ansızın gelen bu dayanılmaz istek üzerine oturduğumuz semte en yakın dükkanına gidip hem kendim hemde eşim için bir kaç tane aldım. Sonrası malum...Yanında güzel bir kahve ve harika bir tat...Tattıları afiyetle mideye indirdikten sonra evde sessiz ve sakin bir ortamın olduğunu farkettim. Bizim azman ufaklık uyumuş ve gıkı bile çıkmıyorken, yorduğu eşim divanda mışıl mışıl sızmıştı.
 

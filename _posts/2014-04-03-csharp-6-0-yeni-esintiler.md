@@ -2,11 +2,11 @@
 layout: post
 title: "C# 6.0–Yeni Esintiler"
 date: 2014-04-03 13:04:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - new-features
+categories:
+  - Programlama Dilleri
 ---
 Çok şanslı bir çocukluk geçirdim. 80li yıllarda daha minik bir çocukken Lego’ lar oyuncak dolabımdan eksik olmazdı. O zamanlar benim için çok kıymetliydiler. Tabi büyüdükçe başka başka şeyler önem kazanmaya başladı. Lego’ nun pabucu belki de dama atıldı. Ta ki bir oğlum olana kadar.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Bilmiyordum, Öğrendim : SQL Merge"
 date: 2019-01-13 13:03:00
-categories:
-  - Veritabanı
 tags:
   - sql
   - merge
@@ -18,6 +16,8 @@ tags:
   - migration
   - sql-server
   - stored-procedures
+categories:
+  - Veritabanı
 ---
 Gün geçmiyor ki çevremdeki insanlardan yeni bir şeyler daha öğrenmeyeyim. Bugün o günlerden biriydi...
 

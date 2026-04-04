@@ -2,11 +2,11 @@
 layout: post
 title: "Ado.Net 2.0 ve SqlDependency Sınıfı Yardımıyla Query Notification"
 date: 2004-10-25 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql
+categories:
+  - Framework Tabanlı Programlama
 ---
 Çoğu zaman istemci uygulamalarda, kullanıcıya sunduğumuz verilerin yer aldığı tablolarda başka kullanıcılar tarafından gerçekleştirilen değişikliklerin anında görünmesini isteriz. SqlDependency sınıfı sayesinde artık, bir veritabanında meydana gelen değişiklikleri (şu an için SQL Server ve Yukon) anında yakalayabilme şansına sahibiz. İşte bugünkü makalemizde aslında son derece derin ve geniş bir konu olan SQL Server Notification meselesini çok basit bir örnek ve ADO.NET 2.0 ile gelen yeni sınıflardan birisi olan SqlDependency yardımıyla incelemeye çalışacağız. İlk olarak şu soruyu düşünelim.
 

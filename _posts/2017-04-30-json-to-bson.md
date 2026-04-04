@@ -2,8 +2,6 @@
 layout: post
 title: "JSON to BSON"
 date: 2017-04-30 21:36:00
-categories:
-  - Programlama Dilleri
 tags:
   - json
   - bson
@@ -13,6 +11,8 @@ tags:
   - csharp
   - serialization
   - deserialization
+categories:
+  - Programlama Dilleri
 ---
 Sanıyorum her.Net programcısının takım çantasında yer alan paketlerden birisi de Newtonsoft'un JSON serileştirme kütüphanesidir. JSON (JavaScriptObjectNotation) formatı, XML (eXtensibleMarkupLanguage) şemasından sonra hafif ve az yer kaplama özellikleri nedeniyle çokça tercih edilen standartlardan birisi haline gelmiştir. Diğer yandan JSON içeriklerin Binary formatta serileştirilmiş versiyonu olarak adlandırılan BSON formatı da sıklıkla kullanılmaktadır.
 

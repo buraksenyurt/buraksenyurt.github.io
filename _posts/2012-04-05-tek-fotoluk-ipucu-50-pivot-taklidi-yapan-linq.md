@@ -2,11 +2,11 @@
 layout: post
 title: "Tek Fotoluk İpucu 50 - Pivot Taklidi Yapan LINQ"
 date: 2012-04-05 01:55:00
-categories:
-  - Genel
 tags:
   - language-integrated-query
   - pivot
+categories:
+  - Foto İpucu
 ---
 Elimizde ülke bazlı bir toplam satış rakamlarını içeren bir veri listesi olduğunu düşünelim. Normal şartlarda bu tip bir çıktıyı sorguladığımızda veri içeriği ülke bazlı olacak şekilde dikine akacaktır. Ancak istediğimiz çıktı, ükle bazlı satışların toplam tutarlarını yatay eksene taşıyabilmek. Bir nevi SQL tarafındaki PIVOT hareketini gerçekleştirmek istiyoruz. Bunu bir LINQ sorgusu ile yapmaya ne dersiniz? Burdan buyrun
 

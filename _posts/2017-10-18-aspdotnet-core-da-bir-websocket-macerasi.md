@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Core'da Bir WebSocket Macerası"
 date: 2017-10-18 14:29:00
-categories:
-  - Web Programlama
 tags:
   - asp.net-core
   - websockets
@@ -15,6 +13,8 @@ tags:
   - ws
   - async
   - await
+categories:
+  - Web Programlama
 ---
 Meşhur ve özlenen telefon markası Nokia'nın o başarılı sloganını hatırlıyor musunuz?, "Nokia, connecting people":) İşte bugünkü konumuz da o jeneriği aratmayacak türden. "WebSockets, connecting applications."(Burayı o adamın ses tonu ile zihninizde canlandırın derim) Evet berbat bir giriş oldu ama olsun. Gelelim konumuza.
 

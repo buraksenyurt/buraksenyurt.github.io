@@ -2,11 +2,11 @@
 layout: post
 title: "PLINQ - Sıralamayı(Ordering) Korumak [Beta 1]"
 date: 2009-05-23 20:30:00
-categories:
-  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query
+categories:
+  - Paralel Programlama
 ---
 Hatırlayacağınız gibi, PLINQ (Parallel LINQ) ile ilişkili ilk [yazımda](/2009/05/21/plinq-parallel-linq-hello-world-beta-1/), LINQ sorgularının eş zamanlı olarak nasıl çalıştırılabileceğini incelemeye çalışmıştık. Hello World örneğimizde ağırlıklı olarak aşağıdaki sorgu üzerinde durmuştuk.
 

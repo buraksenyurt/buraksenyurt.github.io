@@ -2,12 +2,12 @@
 layout: post
 title: "Native Web Services"
 date: 2006-05-22 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - sql
   - native-web-service
   - xml-web-service
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Sql Server 2005 ile gelen etkili özelliklerden biriside, doğal xml web servisi (native xml web services) desteğinin bulunmasıdır. Sql Server 2000 sürümünde, web servisi desteğini sunabilmek için SqlXml 3.0 ve IIS'in sunucu sistemde mutlaka yüklü olması gerekmektedir. Bununla birlikte istemciler MDAC desteğine sahip olmalıdır. Oysaki Sql Server 2005 istemcilerden Http protokolüne göre gelecek SOAP uyumlu talepleri doğrudan işletebilecek şekilde tasarlanmıştır. Sistemde yer alan Http dinleyici (Http Listener), istemcilerden gelecek olan talepleri doğrudan Sql Server 2005 üzerindeki EndPoint'lere iletmektedir. Dolayısıyla sunucu sistem üzerine IIS bulunma zorunluluğu ortadan kaldırılmıştır.
 

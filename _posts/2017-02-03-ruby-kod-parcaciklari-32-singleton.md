@@ -2,14 +2,14 @@
 layout: post
 title: "Ruby Kod Parçacıkları 32 - Singleton"
 date: 2017-02-03 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - design-patterns
   - tasarım-kalıpları
   - singleton-design-pattern
   - marshalling
+categories:
+  - Programlama Dilleri
 ---
 Ruby'nin oldukça geniş bir program kütüphanesi bulunuyor. Fırsat buldukça bazılarını incelemeye çalışıyorum. Geçtiğimiz günlerde Singleton isimli bir modüle rastladım. Kısaca tasarım kalıplarından (Design Patterns) olan Singleton deseninin kolayca uygulanmasını sağlıyor.
 

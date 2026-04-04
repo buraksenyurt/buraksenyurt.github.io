@@ -2,13 +2,12 @@
 layout: post
 title: "Correlation Nedir? Yenir mi? İçilir mi?"
 date: 2010-02-01 06:45:00
-categories:
-  - Servis Tabanlı Geliştirme
-  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - workflow-foundation
   - workflow-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bazen bir kavramı yada konuyu anlamakta inanılmaz zorlandığınızı hatırlayın. Ne yaparsınız? Kimisi kendisini yemeğe verir. Kimisi hayat küsermişçesine bir köşeye çekilir. Kimisi kendiyle baş başa kalır ve çığlık çığlık haykırır. Kimisi de daha akıllı davranıp bir süre tatile çıkar veya anlayamadığı kavramla ilişkili herhangibir dökümanı bir süreliğine araştırmamaya, okumamaya karar verir. Neredeyse unuturcasına bir zaman koyar araya. Sonrasında ise aynı konuyu tekrar araştırmaya karar verir. İnanın başarılı olma şansı bir önceki denemeye göre çok daha yüksek olacaktır. Önemli olan noktalardan birisi, yılmadan bu iterasyona devam edebilmektir. Okudunuz, hala anlamadınız...Kısa bir ara daha...Sonra tekrar aynı konu ama mümkünse farklı kaynaklarla...
 

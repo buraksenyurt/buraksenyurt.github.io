@@ -2,12 +2,12 @@
 layout: post
 title: "Transaction' larda DeadLock Kavramı"
 date: 2004-07-07 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
   - deadlock
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, eşzamanlı olarak çalışan Transaction'larda meydana gelebilecek DeadLock durumunu incelemeye çalışacağız. Öncelikle DeadLock teriminin ne olduğunu anlamaya çalışalım. DeadLock, aynı zamanlı çalışan Transaction'ların, belirli satırları kilitlemeleri sonucunda ortaya çıkabilecek bir durumdur. DeadLock terimini kavrayabilmenin en iyi yolu aşağıdaki gibi gelişebilecek bir senaryoyu zihnimizde canlandırmakla mümkündür. Bu senaryoda söz konusu olan iki tablomuz mevcuttur. Bu tablolar SQL sunucusunda Northwind veritabanı altında oluşturulmuş olup field (alan) yapıları aşağıdaki gibidir.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Bing Maps WCF Servisleri"
 date: 2012-02-13 01:05:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - bings
   - bing-maps
@@ -15,6 +13,8 @@ tags:
   - geocode
   - imagery
   - route
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Eğitimci olarak çalıştığım dönemlerde servis bazlı mimarilerde, XML Web Service’ leri son derece popüler bir kavramdı. Pek tabi öğrencilerimin çoğu, bu servislerin gerçek hayat örneklerini merak ederdi. Haklı olarak söz konusu yapının, nasıl çalıştığını anlamanın en iyi yolu onu saha da görmekti.
 

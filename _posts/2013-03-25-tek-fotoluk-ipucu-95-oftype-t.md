@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 95–OfType<T>"
 date: 2013-03-25 19:25:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query
@@ -13,6 +11,8 @@ tags:
   - inheritance
   - base-class-library
   - derived-class
+categories:
+  - Foto İpucu
 ---
 LINQ (Language INtegrated Query) tarafını her ne kadar yoğun kullanıyor olsak da gözümüzden kaçırdığımız, dikkat etmediğimiz, yerine yeni geliştirmeler yaptığımız ama aslında bizim kullanmamızı bir köşede bekleyen fonksiyonlar vardır.
 

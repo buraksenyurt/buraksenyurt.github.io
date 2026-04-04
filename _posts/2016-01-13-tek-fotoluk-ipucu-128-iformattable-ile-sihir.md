@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 128 - IFormattable ile Sihir"
 date: 2016-01-13 19:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - IFormattable
   - interface
@@ -11,6 +9,8 @@ tags:
   - json
   - newtonsoft
   - serialization
+categories:
+  - Foto İpucu
 ---
 Bildiğiniz üzere.Net Framework çatısı altında bir çok arayüz (Interface) vardır. Özellikle plug-in tabanlı geliştirmelerde sıklıkla başvurduğumuz bu arayüzleri zaman zaman inceliyor ve nerelerde kullanılabileceğine bakıyorum. Yine bu araştırmaları yaptığım bir gün IFormattable arayüzünün kullanımına ilişkin örnekler ile karşılaştım.
 

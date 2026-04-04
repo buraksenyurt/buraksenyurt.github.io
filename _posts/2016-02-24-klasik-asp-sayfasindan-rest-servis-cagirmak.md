@@ -2,8 +2,6 @@
 layout: post
 title: "Klasik ASP Sayfasından REST Servis Çağırmak"
 date: 2016-02-24 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - http
   - rest-api
@@ -13,6 +11,8 @@ tags:
   - http-post
   - MSXML2
   - ServerXMLHTTP
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Özellikle kurumsal çözümler üreten/kullanan firmalarda görev alanların sıklıkla dahil olduğu vakalardan birisi de, eski ve yeni teknolojilerin iç içe kullanıldığı senaryolardır. Bazen geliştirilen ürünler yıllara varan yaşam döngüleri boyunca çalışmaya devam eder. Yenileme maliyetlerinin yüksek olması nedeniyle de tekrardan yazılmak yerine var olan yeni teknolojiler ile entegre edilmeye çalışılırlar.
 

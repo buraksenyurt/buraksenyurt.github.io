@@ -2,8 +2,6 @@
 layout: post
 title: "Nasıl bir Web API Tasarımı?"
 date: 2018-08-05 18:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - web-api
   - asp.net-web-api
@@ -15,6 +13,8 @@ tags:
   - delete
   - service
   - standarts
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Web API'ler ya da RESTful API türünden servisler çok uzun zamandır hayatımızda. Benim de gerek blog yazılarımdaki örnekler olsun gerek iş yerinde kullandıklarımız olsun sürekli haşırneşir olduğum enstrümanlardan birisi. Ancak son zamanlarda okuduğum kaynaklardan sonra bir çok tasarım hatası yaptığımı ve uygulamadığım şeyler olduğunu fark ettim. Nedir bu işin doğru yolu diyerek ortak standartları araştırmaya başladım. Elde ettiğim bir takım sonuçlar oldu. Bu sonuçlardan basit bir çizelge de hazırladım. Aşağıda görebilirsiniz. Ama öncesinde bir kaç kısa bilgi verelim.
 

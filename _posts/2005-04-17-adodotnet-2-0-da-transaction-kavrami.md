@@ -2,13 +2,13 @@
 layout: post
 title: "Ado.Net 2.0' da Transaction Kavramı"
 date: 2005-04-17 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
   - oletx-transaction
   - lightweight-transaction
+categories:
+  - Framework Tabanlı Programlama
 ---
 Transaction kavramı ve kullanımı veritabanı programcılığının olmazsa olmaz temellerinden birisidir. Veritabanına doğru gerçekleştirilen işlemlerin tamamının onaylanması veya içlerinden birisinde meydana gelecek bir istisna sonrası o ana kadar yapılan tüm işlerin geri alınması veri bütünlüğünü korumak açısından son derece önemlidir. ADO.NET 1.0/1.1 için transaction'ların kullanımı, seçilen veri sağlayıcısına göre farklı sınıfların kullanılmasını gerektirir.
 

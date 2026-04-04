@@ -2,13 +2,13 @@
 layout: post
 title: "Localization (Yerelleştirme) - 1"
 date: 2004-08-05 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - localization
   - globalization
   - multi-language
+categories:
+  - Programlama Dilleri
 ---
 Dünya çapında ya da başka bir deyişle global çapta uygulamalar geliştirilirken karşılaşılabilecek zorluklardan birisi, uygulamanın farklı kültür ve dil seçeneklerine göre çalışabilecek şekilde tasarlanmasıdır. Eski programlama dilleri göz önüne alındığında, özellikle farklı dil desteği sağlayacak uygulamaların geliştirilmesi tam anlamıyla bir kâbus olmuştur. Söz gelimi 2 dile destek verecek bir uygulama geliştirilmek istendiğinde, her iki dil için de farklı uygulama kodları yazılması gerekirdi. Böyle bir durumda, uygulamanın piyasaya sürülmesinden sonra yapılacak güncelleme paketleri için de aynı durum söz konusuydu. Dahası, 3. bir dilin desteğinin sağlanması için, aynı projenin bu kez de bu dil için geliştirilmesi gerekmekteydi. Dil çeşitliliğinin yanı sıra, aynı dili konuşan fakat farklı takvimler, farklı parasal formatlar, farklı sayısal formatlar hatta farklı sıralamalar kullanan kültürler işin içine sokulduğunda durum tam anlamıyla bir paradoks hâline gelmektedir.
 

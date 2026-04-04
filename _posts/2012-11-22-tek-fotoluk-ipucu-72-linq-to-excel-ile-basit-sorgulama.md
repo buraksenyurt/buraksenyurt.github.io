@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu–72–LINQ to Excel ile Basit Sorgulama"
 date: 2012-11-22 18:00:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query
   - excel
   - csharp
+categories:
+  - Foto İpucu
 ---
 Zaman zaman siz de benim gibi LINQ ile yazılmış çeşitli Provider'lara şöyle bir göz gezdirenlerden misiniz?
 

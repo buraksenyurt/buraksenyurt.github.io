@@ -2,9 +2,6 @@
 layout: post
 title: "Google Cloud Storage Kullanımı"
 date: 2018-05-08 07:23:00
-categories:
-  - Framework Tabanlı Programlama
-  - Bulut Bilişim
 tags:
   - .net-core
   - google-cloud-platform
@@ -17,6 +14,8 @@ tags:
   - StorageClient
   - api
   - json
+categories:
+  - Bulut Bilişim
 ---
 Vakti zamanında sıkı bir Instagram kullanıcısıydım. En güzel fotoğrafları yakalamaya çalışır, anı görüntüleyip tüm bağlantılarımla paylaşırdım. Derken bir gün "ne yapıyorum ben yahu?" oldum. Neden o anı ille de herkesle paylaşma ihtiyacı hissediyordum. Bazen o anın fotoğrafını çekmek gerekmiyordu. Hatta hiç çekmediğim zamanlarda aklıma nasıl kazıdığımı bile unutmuştum. Üstelik ona ayıracağım zamanı pekala başka değerli şeylere de ayırabilirdim. Örneğin yeni şeyler öğrenmeye, makale yazmaya vs...
 

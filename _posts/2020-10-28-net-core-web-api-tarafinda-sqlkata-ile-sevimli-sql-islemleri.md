@@ -2,8 +2,6 @@
 layout: post
 title: ".Net Core Web Api Tarafında SqlKata ile Sevimli SQL İşlemleri"
 date: 2020-10-28 14:14:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - sqlkata
@@ -14,6 +12,8 @@ tags:
   - .net
   - northwind
   - docker
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Veri odaklı uygulamalarda sorgu komutlarını çalıştırmak için kullandığımız birçok hazır altyapı var. Örneğin.Net dünyasına baktığımızda en temel seviyede Ado.Net ve Object Relational Mapping tarafında Entity Framework sıklıkla karşılaştıklarımız arasında. [SqlKata](https://sqlkata.com/)'da bunlardan birisi olarak düşünülebilir. Bir süredir de sağda solda okuduğum makale ve github çalışmalarından dolayı merak edip kurcalamak istediğim bir kütüphane. Öncelikle ismi çok hoş (Code Kata'yı çağrıştırıyor bana)
 

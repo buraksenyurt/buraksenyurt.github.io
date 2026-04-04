@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu–66–Protokol ve Port Numarasını Bulmak"
 date: 2012-09-22 18:00:00
-categories:
-  - Genel
 tags:
   - extension-methods
   - regex
@@ -12,6 +10,8 @@ tags:
   - struct
   - port
   - protocol
+categories:
+  - Foto İpucu
 ---
 Elimizde bir Uri nesne örneği olduğunu varsayalım. Bu Uri adres bilgisinden de port numarası ve protocol bilgisine ulaşmak istiyorsunuz. Aslında string tabanlı fonksiyonellikler ile bu iş gerçekleştirilebilir ama Regex tipini işin içerisine katar ve bir de Extension Method haline getirirsek tadından yinmez
 

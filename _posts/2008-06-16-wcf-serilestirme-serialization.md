@@ -2,10 +2,10 @@
 layout: post
 title: "WCF Serileştirme(Serialization)"
 date: 2008-06-16 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Serileştirme (Serialization) ve çözümleme (Encoding) çoğu zaman bir birlerine karıştırılan kavramlar olabilmektedir. Oysaki aralarında çok ince ama bir o kadarda önemli farklılıklar vardır. Serileştirme ve çözümleme, SOA (Service Oritented Architecture) tarzındaki uygulama çözümlerinde sıklıkla kullanılmaktadır. Nitekim bu tip mimarilerde servis ve istemci arasında yapılan veri transferlerinde bilginin serileştirilmesi ve mesajların çözümlenmesi gerekmektedir.
 

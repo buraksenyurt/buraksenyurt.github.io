@@ -2,8 +2,6 @@
 layout: post
 title: "Kimdir Bu Travis?"
 date: 2019-04-29 07:24:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - travis
   - ci/cd
@@ -15,6 +13,8 @@ tags:
   - testing
   - xUnit
   - unit-test
+categories:
+  - Framework Tabanlı Programlama
 ---
 Geçen gün çalışma odamın artık ardiye haline gelmiş bir dolabını temizlemek üzere kolları sıvadım. Sayısız network kablosu, yazılabilir DVDler, müsvette notlar, bir kaç müzik CDsi, yüksek lisanstan kalma ders kitapları, kulaklıkları kayıp walkman, bataryası şişmiş Playstation Portable ve daha bir çok ıvır zıvır eşyayla doluydu. Hangileri gerekli hangileri gereksiz diye ayıklarken dönem dönem sebebsiz yere aldığım MP3 çalarlara denk geldim. Kocaman bir discman bile vardı. Ancak gözüm arkalarda köşeye sıkışmış 1 TBlık Harddisk'e takıldı. Zamanında E-book'lar, filmler ve müzikler için kullandığım bir disk olduğunu hayal mayal hatırlıyordum.
 

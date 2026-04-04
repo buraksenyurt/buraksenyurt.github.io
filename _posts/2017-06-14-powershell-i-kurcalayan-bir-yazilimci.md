@@ -2,14 +2,14 @@
 layout: post
 title: "Powershell'i Kurcalayan Bir Yazılımcı"
 date: 2017-06-14 09:27:00
-categories:
-  - DevOps
 tags:
   - powershell
   - script-languages
   - scripting
   - betik-diller
   - shell-programming
+categories:
+  - DevOps
 ---
 Powershell betikleri uzun zamandır yaygın ve etkin bir şekilde Windows ailesinde yer almakta. Özellikle sunucu tarafındaki kullanımının öne çıktığını görüyoruz. Temel olarak işletim sistemi üzerinden betik dillerin avantajlarını da kullanarak pek çok işlemin yapılabilmesine olanak sağlayan bir kabuk olarak düşünülebilir. Powershell.Net Framework kütüphanelerini de doğrudan kullanabildiğinden önemli avantajlar sağlamaktadır. Klasör listeleme veya dosya kopyalama gibi çok basit işlemler dışında, n sayıda sunucuya dağıtım paketi çıkacak programcıkların geliştirilmesi benzeri operasyonları da içeren geniş bir yetkinliğe sahiptir. DevOps kültüründe Windows ailesi için değerli ve öne çıkan bir programlama ortamıdır diyebiliriz.
 

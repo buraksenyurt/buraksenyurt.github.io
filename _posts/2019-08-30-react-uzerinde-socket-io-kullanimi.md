@@ -2,8 +2,6 @@
 layout: post
 title: "React Üzerinde Socket.IO Kullanımı"
 date: 2019-08-30 13:00:00
-categories:
-  - Web Programlama
 tags:
   - socket
   - socket.io
@@ -13,6 +11,8 @@ tags:
   - react
   - express
   - react-d3-speedometer
+categories:
+  - Web Programlama
 ---
 Bir zamanlar sıkı bir Formula 1 izleyicisiydim. O dönemde dünyanın bir numaralı pilotu üç kez F1 dünya şampiyonu olan [Ayrton Senna](https://youtu.be/-pItzcHBHt0)'ydı. Yağmurlu havalardaki ustalığı nedeniyle Rainman lakabını almış bir yarışçı olmakla birlikte virajları hız kesmeden dönmeyi becerirdi. Monaco yarışından bir görüntüsü geldi şimdi gözümün önüne. Sağ eliyle kokpitin sağındaki vitesi sol eliylede direksiyonu tutuyordu.
 

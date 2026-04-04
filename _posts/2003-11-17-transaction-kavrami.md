@@ -2,13 +2,13 @@
 layout: post
 title: "Transaction Kavramı"
 date: 2003-11-17 10:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
   - sql
   - stored-procedures
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde sizlere veritabanı programcılığında ve özellikle de çok katlı mimaride çok önemli bir yere sahip olan Transaction’lar hakkında bilgi vermeye çalışacağım. Her zaman olduğu gibi konuyu iyi anlayabilmek için bir de örnek uygulamamız olacak. Öncelikle Transaction nedir, ne işe yarar bunlardan bahsedelim. Çoğu zaman programlarımızda ardı ardına veritabanı işlemleri uygulatırız. Örneğin, bir veritabanındaki bir tablodan kayıt silerken, aynı olayın sonucunda başka bir ilişkili tabloya silinen bu verileri ekleyebilir veya güncelleyebiliriz. Hatta bu işlemin arkasından da silinen kayıtların bulunduğu tablo ile ilişkili başka tablolardan da aynı verileri sildiğimiz işlemleri başlatabiliriz. Dikkat edecek olursanız burada birbirleriyle ilintili ve ardışık işlemlerden söz ediyoruz.
 

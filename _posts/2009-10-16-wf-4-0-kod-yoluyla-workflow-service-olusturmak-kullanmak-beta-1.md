@@ -2,11 +2,11 @@
 layout: post
 title: "WF 4.0 - Kod Yoluyla Workflow Service Oluşturmak, Kullanmak [Beta 1]"
 date: 2009-10-16 00:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - windows-communication-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Yükseklik korkum olmasına rağmen her zaman yandaki gibi tırmanışta olanlara imrenmişimdir. Bu fotoğrafa konu olan kişinin tek yaptığı yoğun bir mücadele ve efor ile yukarı doğru tırmanmaktır. Bana göre sonuçta elde edilebilecek tek şey zirveye ulaşmak ve oranın eşsiz manzarasını izlemekten ibarettir. Tabi bunun birde inişi olduğunu düşünmek gerekiyor
 

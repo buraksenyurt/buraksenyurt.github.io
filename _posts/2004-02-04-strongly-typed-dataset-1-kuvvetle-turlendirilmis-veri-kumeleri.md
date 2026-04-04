@@ -2,14 +2,14 @@
 layout: post
 title: "Strongly Typed DataSet - 1 (Kuvvetle Türlendirilmiş Veri Kümeleri)"
 date: 2004-02-04 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataset
   - strongly-typed-data-controls
   - strongly-typed-dataset
   - data
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde kuvvetle türlendirilmiş veri kümelerinin ne olduğunu ve nasıl oluşturulduklarını incelemeye çalışacağız. Kuvvetle türlendirilmiş veri kümelerini tanımlamadan önce, aşağıdaki kod satırının incelemekle işe başlayalım.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "Ruby Kod Parçacıkları 34 - Struct ve OpenStruct"
 date: 2017-04-10 15:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - struct
   - openstruct
+categories:
+  - Programlama Dilleri
 ---
 Bir süredir şirket içinde vereceğim Ruby eğitimine hazırlanmaktayım. İşlerden çok vakit kalmasa da önceki Ruby notlarımı ve farklı kaynakları takip ederek 101 seviyesinde bir içerik oluşturmaya çalışıyorum. Gün içinde C# evde geç vakitlerde ise Ruby. Biraz yorucu olsa da oldukça keyifli aslında. Hem yeni bir şeyler öğreniyorum hem de iç eğitim gibi bir gerçek olduğundan ciddi anlamda not çıkartıyorum. Bugün konular üzerinden geçerken struct ve openstruct kavramlarını atladığımı fark ettim (Ov yooo) Tabii hemen öğrenmeye başladım. Neymiş ne için kullanılırmış biraz fikir sahibi oldum. İşte notlarım.
 

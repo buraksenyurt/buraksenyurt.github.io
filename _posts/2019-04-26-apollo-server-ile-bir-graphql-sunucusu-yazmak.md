@@ -2,8 +2,6 @@
 layout: post
 title: "Apollo Server ile Bir GraphQL Sunucusu Yazmak"
 date: 2019-04-26 07:07:00
-categories:
-  - Web Programlama
 tags:
   - graphql
   - apollo-server
@@ -15,6 +13,8 @@ tags:
   - ubuntu
   - query
   - mutation
+categories:
+  - Web Programlama
 ---
 James A. Lovell, John L. Swigert, ve Fred W. Haise. Bu isimleri düşününce belki de çoğumuzun aklına bir şey gelmiyordur. Peki ya, Amerikalı veya İngiliz oldukları düşünülen bu şahısların yerine şu isimleri söylersek. Tom Hanks, Bill Paxton ve Kevin Bacon. Hımm...Sanırım birilerinin zihninde bir şeyler canlandı. Evet, evet...Bunlar film yıldızları değil mi? Üçü bir arada hangi filmde oynamışlardı acaba? Hala anımsayamadıysanız işte bir ipucu daha. "Houston we've got a problem." Şimdi anımsadınız mı?
 

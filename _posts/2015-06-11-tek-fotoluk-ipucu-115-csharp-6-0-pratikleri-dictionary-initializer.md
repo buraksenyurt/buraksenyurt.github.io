@@ -2,14 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu 115 - C# 6.0 Pratikleri (Dictionary Initializer)"
 date: 2015-06-11 12:09:00
-categories:
-  - Genel
 tags:
   - csharp
   - generics
   - Dictionary,
   - initializer
   - ilasm
+categories:
+  - Foto İpucu
 ---
 Bir [önceki tek fotoluk ipucunda](/2015/06/09/tek-fotoluk-ipucu-114-csharp-6-0-pratikleri-expression-bodied-function-ve-string-interpolation/) belirttiğimiz üzere C# 6.0 ile dile kazandırılan bazı kabiliyetler kodun kolay okunabilir olması açısında önem arz ediyorlar. Örneğin generic bir Dictionary koleksiyonunu örneklemek için aşağıdaki fotoğrafta görülen yeni yazım dizimini kullanabiliyoruz. Daha okunabilir ve anlaşılır olduğu şüphesiz.
 

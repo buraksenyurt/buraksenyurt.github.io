@@ -2,9 +2,9 @@
 layout: post
 title: "Excel İçeriğini DataSet Olarak Sisteme Katmak"
 date: 2014-03-18 19:13:00
-categories:
-  - Programlama Dilleri
 tags: []
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bazen geliştirme ortamımız ile yazılan uygulamanın taşınacağı ortamlar arasında ciddi ve keskin farklılıklar bulunur. İki resim arasındaki 9 farkı bulunuzdan öte, geliştirici ekiplerinin bu farkları bilerek kodlama yapmasında yarar vardır. Tabi bazı yazılım ekiplerinde Development sunucularının sanallaştırılmış versiyonları üzerinde geliştirme yapabilme imkanı da vardır.
 

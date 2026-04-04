@@ -2,8 +2,6 @@
 layout: post
 title: "NoSQL Maceraları - db4o ile Hello World"
 date: 2013-11-12 21:01:00
-categories:
-  - Veritabanı
 tags:
   - db4o
   - object-database
@@ -19,6 +17,8 @@ tags:
   - store
   - iobjectcontainer
   - poco
+categories:
+  - Veritabanı
 ---
 Eğer bir ülke olsaydı, dünyanın 6ncı büyük ekonomisne sahip olurdu. Bu ifade Amerika’ nın en kalabalık nüfusuna sahip olan Kaliforniya eyaleti için [wikipedia](http://tr.wikipedia.org/wiki/Kaliforniya)’ da yazılmış. Birleşik Devletlerin batı kıyısının bir eyaleti olan Kaliforniya eyaletinde aslında pek çoğumuzun gıpta ederek baktığı şehirler var.
 

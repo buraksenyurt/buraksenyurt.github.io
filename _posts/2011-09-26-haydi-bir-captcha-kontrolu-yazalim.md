@@ -2,12 +2,12 @@
 layout: post
 title: "Haydi Bir Captcha Kontrolü Yazalım"
 date: 2011-09-26 18:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - captcha
   - handler
+categories:
+  - Web Programlama
 ---
 Şu sıralarda kurumsal bir Asp.Net eğitimi vermekteyim. Eğitim içeriği oldukça geniş ve güzel konuları içermekte. Bunlardan bir tanesi de Asp.Net uygulamalarında Captcha doğrulamasının kullanımı. Bildiğiniz üzere web ortamı üzerinde özellikle Form veri girişlerinin yapıldığı senaryolarda akıllı robotların gereksiz yere post atma işlemlerini engellemek çok önemlidir.
 

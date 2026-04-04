@@ -2,12 +2,12 @@
 layout: post
 title: "Sıfır Sabit Değeri ve Enum Sorunu"
 date: 2013-09-19 10:48:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - enums
   - constant
+categories:
+  - Programlama Dilleri
 ---
 C# konulu yeni bir bilmece ile karşı karşıyayız. Bu sefer kolay kolay fark edemeyebileceğimiz, basit ama irdelenmesi gereken bir vakayı göz önüne alacağız.
 

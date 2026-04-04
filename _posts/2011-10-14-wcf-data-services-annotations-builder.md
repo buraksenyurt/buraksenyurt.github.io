@@ -2,14 +2,14 @@
 layout: post
 title: "WCF Data Services– Annotations Builder"
 date: 2011-10-14 14:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-data-services
   - astoria
   - windows-communication-foundation
   - annotations
   - wcf-data-services-october-2011-ctp
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Yağmurlu bu sonbahar günlerinde eminim ki kimse hüzünlenmek, kara kara düşünmek istemez. Ama bazen o kadar garip sorunlar ile karşı karşıya kalırız ki…Ne yapacağımızı bilemeyiz ve kara kara düşünürüz. Mesela ben bu girişi yazdığım sırada, aslında tamamlamış olduğum makalenin sonucunda bir yere varamamış ve beklentilerimi karşılayamamış birisi modundayım. Neden mi? Gelin anlatayım.
 

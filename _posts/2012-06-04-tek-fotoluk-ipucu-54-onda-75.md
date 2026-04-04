@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu–54 Onda 75"
 date: 2012-06-04 15:16:00
-categories:
-  - Genel
 tags:
   - collections
   - comparer
   - .net-framework
+categories:
+  - Foto İpucu
 ---
 Kendi tiplerimize ait koleksiyon nesnelerini kullanırken, Sort metodunu ele aldığımız durumlarda mutlaka neye göre karşılaştırma yapacağımızı belirtmemiz gerekmektedir. Bu amaçla IComparer veya IComparable gibi arayüzleri (Interface) ve bunların generic versiyonlarını kullanırız.
 

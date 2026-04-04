@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 62–Byte Array için Sıkıştırma"
 date: 2012-07-26 09:00:00
-categories:
-  - Genel
 tags:
   - byte
   - compression
@@ -15,6 +13,8 @@ tags:
   - stream
   - compress
   - extension-methods
+categories:
+  - Foto İpucu
 ---
 Kod içerisinde bir yerlerde öyle ya da böyle elde ettiğiniz ama boyutu azcık da olsa küçülebilse dediğiniz byte tipinden array’ ler olduğunu düşünün. Kimi zaman bir dosyanın içeriği olabileceği gibi, sistem içerisinde üretilmiş bir byte dizisi bile olabilir bu. Peki söz konusu içeriği var olan GZip veya Deflate algoritmalarına göre sıkıştırmak isterseniz
 

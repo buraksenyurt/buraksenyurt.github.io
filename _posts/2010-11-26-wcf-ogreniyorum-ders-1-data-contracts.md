@@ -2,11 +2,11 @@
 layout: post
 title: "WCF Öğreniyorum Ders 1–Data Contracts"
 date: 2010-11-26 18:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - data-contracts
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Hatırlayacağınız üzere bir süre önce [NedirTv?com](http://www.nedirtv.com) sponsorluğunda WCF Öğreniyorum Webiner serimize başlamıştık. Ders 0 kodlu ilk Webinerimizde SOA (Service Oriented Architecture) kavramına kısaca değinmiş, SOA ile WCF arasındaki ilişkiye bakmış ve ardından WCF (Windows Communication Foundation) geliştirme modelini incelemeye başlamıştık. İlk dersimizde temel olarak aşağıdaki konuları göz önüne aldığımızı ifade edebiliriz.
 

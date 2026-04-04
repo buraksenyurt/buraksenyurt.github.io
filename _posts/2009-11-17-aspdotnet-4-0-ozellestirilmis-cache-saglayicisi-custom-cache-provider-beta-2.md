@@ -2,10 +2,10 @@
 layout: post
 title: "Asp.Net 4.0 - Özelleştirilmiş Cache Sağlayıcısı(Custom Cache Provider) [Beta 2]"
 date: 2009-11-17 06:10:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
+categories:
+  - Web Programlama
 ---
 Çok çok uzun zamandır Asp.Net üzerine eğilmiyordum. Hem tasarım yönünden kabiliyetsiz olmam (iki rengi bir araya getir deseler kesin uyumsuz renkler çıkartırım) hemde servis yönelimli mimari dünyasına dalmış olmamın bunda büyük bir rol oynadığını itiraf etmek isterim. Yine de Asp.Net 4.0 ile birlikte gelen yenilikleri okuyunca biraz olsun araştırmak ve edindiğim tecrübeleri sizlere aktarmak istedim.
 

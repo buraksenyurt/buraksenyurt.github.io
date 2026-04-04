@@ -2,12 +2,12 @@
 layout: post
 title: "C# Temelleri : Static Olmak"
 date: 2006-09-13 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - static-type
   - static-class
+categories:
+  - Programlama Dilleri
 ---
 Static anahtar sözcüğü C# programlama dilinde üstü kapalı yada açık bir biçimde pek çok yerde kullanılır. C# programlama dilini yeni öğrenen birisi için static anahtar sözcüğünün kullanım alanlarını bilmek önemlidir. İşte bu amaçla yola çıktığımız bu makalemizde, static kavramının C# programlama dilindeki yerini incelemeye çalışacağız. Static anahtar sözcüğünün aşağıdaki listede olduğu gibi çeşitli durumlarda kullanabiliriz.
 

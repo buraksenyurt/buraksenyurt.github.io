@@ -2,13 +2,13 @@
 layout: post
 title: "DataRelation Sınıfı ve Çoğa-Çok (Many-to-many) İlişkiler"
 date: 2004-04-01 09:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - relations
   - many-to-many
   - sql
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, DataRelation sınıfı yardımıyla, veritabanlarındaki many-to-many (çoğa-çok) ilişkilerin, bağlantısız katmanda nasıl kullanılabildiğini incelemeye çalışacağız. İlişkisel veri tabanı modelinde, tablolar arası ilişkilerde çoğunlukla bire-çok (one-to-many) ilişkilere rastlarız. Ancak az da olsa, çoğa-çok ilişkilerin kullanıldığı durumlar da söz konusudur. Bu ilişkiye örnek olarak çoğunlukla, SQL sunucusunda yer alan Pubs veritabanındaki Authors ve Titles tabloları gösterilir. Bu iki tablo arasındaki ilişki şöyledir: bir yazara ait birden fazla kitap Titles tablosunda yer alabilir. Aynı şekilde, bir kitap birden fazla yazar tarafından kaleme alınmış olabilir. Bu bahsedilen iki ilişki de ayrı ayrı bire-çok ilişkilerdir. Yani bir yazarın birden fazla kitabı yazmış olması bire-çok ilişki olarak düşünülebilirken, bir kitabın birden fazla yazara ait olması da bire-çok ilişki olarak gözlemlenebilir.
 

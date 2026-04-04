@@ -2,12 +2,12 @@
 layout: post
 title: "Entity Framework 6 –Yeni Esintiler"
 date: 2014-04-08 11:09:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - new-features
   - .net
+categories:
+  - Framework Tabanlı Programlama
 ---
 Tam da bu gün İstanbul’ da hafif rüzgarlı, güneşli bir bahar havası var. Binaların kapalı mekanlarında çalışan bizler için iki dakikalığına da olsa dışarıya çıkmanın, rüzgarın hafif esintisini ve güneşin ılık sıcaklığını hissetmenin değeri paha biçilemez.
 

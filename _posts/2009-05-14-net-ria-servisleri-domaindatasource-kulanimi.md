@@ -2,11 +2,11 @@
 layout: post
 title: ".Net RIA Servisleri - DomainDataSource Kulanımı"
 date: 2009-05-14 12:30:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Her ne kadar şu günlerde güzel ülkemizin Ege kıyılarında kısa bir dinlenme molası vermiş olsamda, internetin sahil kıyılarındaki cafe'lere kadar girmiş olması, herşeyi değiştiriyor.
 

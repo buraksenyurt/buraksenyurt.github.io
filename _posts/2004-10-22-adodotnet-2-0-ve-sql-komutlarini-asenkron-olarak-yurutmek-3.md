@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net 2.0 ve Sql Komutlarını Asenkron Olarak Yürütmek - 3"
 date: 2004-10-22 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - asynchronous-programming
   - async
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hatırlayacağınız gibi, asenkron erişim teknikleri ile ilgili önceki makalelerimizde Polling ve Callback modellerini incelemiştik. Bu makalemizde ise, Wait modelini incelemeye çalışacağız. Wait modeli, diğer asenkron SQL komutu yürütme tekniklerine göre biraz daha farklı bir işleyişe sahiptir. Bu model, bazı durumlarda asenkron olarak çalışan SQL komutları tamamlanıncaya kadar uygulamayı bekletmek istediğimiz durumlarda kullanılmaktadır. WaitHandle modeli aslında birden fazla sunucu üzerinde çalışacak farklı sorgular söz konusu olduğunda işe yarayacak etkili bir tekniktir. Diğer taraftan eşzamanlı çalışan sorgu sonuçlarının uygulamanın kalanında etkili olduğu durumlarda da tercih edilmelidir. Wait modeli şu an için 3 teknik ile gerçekleştirilmektedir. Dilerseniz bu tekniklerin ne olduklarını ve nasıl uygulandıklarını kısaca inceleyelim.
 

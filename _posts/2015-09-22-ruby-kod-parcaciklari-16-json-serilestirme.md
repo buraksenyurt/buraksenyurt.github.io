@@ -2,8 +2,6 @@
 layout: post
 title: "Ruby Kod Parçacıkları 16 - (JSON Serileştirme)"
 date: 2015-09-22 03:30:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - serialization
@@ -11,6 +9,8 @@ tags:
   - binary-serialization
   - json
   - json-serialization
+categories:
+  - Programlama Dilleri
 ---
 Aslında bu kod parçasında temel dosya giriş çıkış işlemlerini (IO operasyonları diyelim) ele almayı planlamıştım. Ancak konuyu araştırırken dosya içerisine ne yazabilirim sorusuna denk geldiğimde, bir nesne koleksiyonunu aktarmanın uygun olacağını düşündüm. Hal böyle olunca ortaya "hangi fortmatta?" sorusu çıktı.
 

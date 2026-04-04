@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Web API Üzerinden Resim Döndürmek"
 date: 2013-07-02 13:08:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - asp.net-web-api
   - http-get
@@ -13,6 +11,8 @@ tags:
   - httpresponsemessage
   - httpstatuscode
   - 404
+categories:
+  - Web Programlama
 ---
 Eminim çocukken çizgi filmlerle aranız vardı. Hatta çoğumuz yaşı kaç olursa olsun çizgi filmlere arada sırada da olsa zaman ayırmakta. (Ben Batman gördüm mü pür dikkat izlerim örneğin) Keza pek çok büyüğümüz de, eskiden izlediği çizgi filmler ile karşılaştığında taaaa çocukluk yıllarına kadar gidip aynı o zamanki gibi içten gülebiliyorlar da (Rahmetli babamdan bilirim)
 

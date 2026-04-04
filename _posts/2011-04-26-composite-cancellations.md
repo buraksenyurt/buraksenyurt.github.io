@@ -2,8 +2,6 @@
 layout: post
 title: "Composite Cancellations"
 date: 2011-04-26 12:15:00
-categories:
-  - Paralel Programlama
 tags:
   - csharp
   - parallel-programming
@@ -11,6 +9,8 @@ tags:
   - visual-studio
   - task-parallel-library
   - monitoring-cancellation
+categories:
+  - Paralel Programlama
 ---
 Hatırlayacağınız üzere bir önceki yazımızda ([Task İptal İşlemlerinin İzlenmesi (Monitoring Cancellation)](/2011/04/23/task-iptal-islemlerinin-izlenmesi-monitoring-cancellation/)) Task Cancellation işlemlerinin izlenmesi ile ilişkili teknikleri ve konuları irdelemeye başlamıştık. Bu yazımızda da iptal işlemleri ile ilgili farklı bir konuya değinmeye çalışıyor olacağız. Bu gün kü konumuz Composite Cancellation vakası.
 

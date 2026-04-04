@@ -2,8 +2,6 @@
 layout: post
 title: "Azure SignalR Servisini Kullanmak"
 date: 2019-09-30 13:00:00
-categories:
-  - Bulut Bilişim
 tags:
   - microsoft-azure
   - signalr
@@ -17,6 +15,8 @@ tags:
   - table-storage
   - webjobs
   - websockets
+categories:
+  - Bulut Bilişim
 ---
 Basketbolu neden bu kadar çok seviyorum diye düşündüm geçenlerde. Oturduğumuz sitenin basket sahasını futbol oynamak için kullanan onca çocuk ve genç gibi bir gerçek varken ben neden bu spora böylesine sevdalıydım. İnanılmaz enerjisi ve sürekli değiştirdiği NBA şapkaları ile rahmetli İsmet Badem mi sevdirmişti? Yoksa final serisi maçları sabahın kaçında olursa olsun uyanamayıp okula geç gitmeme neden olan majestelerinin maçları mı? Basketbolun tüm efsanelerini kendi kardeşiymiş gibi tanıyan ve maçları kendine has heyecanı ile anlatan Murat Murathanoğlu muydu yoksa?
 

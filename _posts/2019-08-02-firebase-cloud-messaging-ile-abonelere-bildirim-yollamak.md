@@ -2,8 +2,6 @@
 layout: post
 title: "Firebase Cloud Messaging ile Abonelere Bildirim Yollamak"
 date: 2019-08-02 17:48:00
-categories:
-  - Bulut Bilişim
 tags:
   - google-cloud-platform
   - progressive-web-app
@@ -18,6 +16,8 @@ tags:
   - service-worker
   - javascript
   - npm
+categories:
+  - Bulut Bilişim
 ---
 Servis kapısı açıldığında gözlerini herkesten kaçırıp araca binerken heyecanlı ses tonuyla "Günaydın" diyerek en arka koltuğa geçen kadının ruh hali her yönüyle tanıdık geliyordu. Bir buçuk yıl kadar önce yine bu servise bindiğim ilk gün bende benzer kaygıları hissetmiştim. Oysa hayatımda ilk kez servis binmiyordum.
 

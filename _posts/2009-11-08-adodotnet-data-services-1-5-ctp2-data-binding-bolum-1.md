@@ -2,14 +2,14 @@
 layout: post
 title: "Ado.Net Data Services 1.5 CTP2 - Data Binding Bölüm 1"
 date: 2009-11-08 18:30:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net-data-services
   - windows-presentation-foundation
   - silverlight
   - databinding
   - odata
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Ado.Net Data Services ile geliştirilen servislerin tüketilmesi sırasında önem arz eden konulardan biriside, istemci tarafındaki veri bağlama (DataBinding) işlemleridir. Öyleki, servisin tüketicisi olan istemcilerin
 

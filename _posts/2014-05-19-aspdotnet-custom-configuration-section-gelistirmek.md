@@ -2,13 +2,13 @@
 layout: post
 title: "Asp.Net–Custom Configuration Section Geliştirmek"
 date: 2014-05-19 16:50:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - custom-configuration
   - configuration-api
   - xml
+categories:
+  - Web Programlama
 ---
 Konfigurasyon tabanlı geliştirme modeli, uygulama kodlarına girilmeden çalışma zamanına yönelik değişiklikler yapabilmemizi sağlar. Bu sayede pek çok programın kodsal müdahale yapmadan davranışları değiştirilebilir..Net dünyasında baktığımızda da, App.Config, Web.config gibi dosyalar içerisinde Framework’ ün geneline yönelik pek çok konfigurasyon ayarı bulunduğu görülür. appSettings, connectionStrings, httpHandler vb…
 

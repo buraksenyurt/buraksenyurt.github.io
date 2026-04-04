@@ -2,13 +2,13 @@
 layout: post
 title: "Arayüzlerde is ve as Anahtar Sözcüklerinin Kullanımı"
 date: 2004-01-12 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - as
   - is
   - interface
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde, arayüzlerde is ve as anahtar kelimelerinin kullanımını inceleyeceğiz. Bir sınıfa arayüz(ler) uyguladığımızda, bu arayüzlerde tanımlanmış metodları çağırmak için çoğunlukla tercih edilen bir teknik vardır. O da, bu sınıfa ait nesne örneğini, çalıştırılacak metodun tanımlandığı arayüz tipine dönüştürmek ve bu şekilde çağırmaktır. Bu teknik, her şeyden önce, program kodlarının okunabilirliğini ve anlaşılabilirliğini arttırmaktadır. Öyle ki, bir isim uzayında yer alan çok sayıda arayüzün ve sınıfın yer aldığı uygulamalarda bu tekniği uygulayarak, hangi arayüze ait metodun çalıştırıldığı daha kolay bir şekilde gözlemlenebilmektedir. Diğer yandan bu teknik, aynı metod tanımlamalarına sahip arayüzler için de kullanılır ki bunu bir önceki makalemizde işlemiştik.
 

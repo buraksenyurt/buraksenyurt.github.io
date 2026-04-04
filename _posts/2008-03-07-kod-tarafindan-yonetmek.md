@@ -2,10 +2,10 @@
 layout: post
 title: "Kod Tarafından Yönetmek"
 date: 2008-03-07 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Windows Communication Foundation ile geliştirilen Servis Yönelimli Uygulama (SOA-Service Oriented Architecture) çözümlerinde konfigurasyon bazlı (Configuration Based) geliştirme süreci oldukça yaygındır. Konfigurasyon dosyaları içerisinde yer alan bilgiler yardımıyla WCF çalışma zamanı (WCF Runtime) ortamı otomatik olarak bazı işlemler gerçekleştirir. Söz gelimi istemci (Client) ve servis (Service) arasında taşınacak olan mesajların çözümlenmesi (Encoding), bunların seçilen bağlayıcı tipin (Binding Type) belirlediği protokole göre aktarılması gibi alt yapı (Infrastructure) hazırlıkları otomatik olarak gerçekleştirilir. Hatta istemcinin servis üzerinden talep ettiği bir operasyon (Service Operation), servis tarafındaki konfigurasyon bilgilerinden yola çıkılarak hazırlanan çalışma zamanı sayesinde, anlamlı bir metod çağrısı haline dönüşür.
 

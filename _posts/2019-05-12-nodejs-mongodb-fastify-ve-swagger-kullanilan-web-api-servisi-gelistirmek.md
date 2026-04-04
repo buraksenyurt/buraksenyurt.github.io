@@ -2,8 +2,6 @@
 layout: post
 title: "Node.js, MongoDB, Fastify ve Swagger Kullanılan Web API Servisi Geliştirmek"
 date: 2019-05-12 18:00:00
-categories:
-  - Web Programlama
 tags:
   - node.js
   - mongodb
@@ -16,6 +14,8 @@ tags:
   - nodemon
   - async
   - routers
+categories:
+  - Web Programlama
 ---
 Yazılım tarafında yeni bir şeyler öğrenmeye çalışmak hayatımın standart ritüelleri arasında. Bu döngü içerisinde yaşamak en büyük keyiflerimden birisi. Tabii bu döngünün en önemli parçalarından birisi masabaşında yapılan kodlama çalışmaları. WestWorld ve son zamanlardaki gözdem Ahch-To başlıca yardımcılarım. Çalışmalar değişik diyarlardan geliyor. Bazen konular arasında keskin geçişler yapıyorum. Bir gün Node.js dünyasında debelenirken bir başka gün daha aşina olduğum.Net Core kıyılarında yürüyüşe çıkıyorum.
 

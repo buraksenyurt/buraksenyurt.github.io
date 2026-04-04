@@ -2,10 +2,10 @@
 layout: post
 title: "C# 4.0 - Seçilebilen, İsimlendirilebilen Parametreler(Named and Optional Parameters), ref' i Görmezden Gelmek(Ommit Ref) ve PIA için Yenilikler"
 date: 2009-05-04 13:46:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
+categories:
+  - Programlama Dilleri
 ---
 Bir önceki [blog](/2009/04/30/csharp-4-0-dynamic-olmak/)yazımızda C# 4.0 ile birlikte gelen önemli yeniliklerden birisi olan dynamic kavramına değinmeye çalışmıştık. Elbetteki C# 4.0 ile birlikte gelen başka yeniliklerde var. Bu yeniliklerde, diğerleri gibi belirli ihtiyaçlardan ortaya çıkmıştır. Öncelikli olarak bu ihtiyaçları ortaya koymaya çalışıyor olacağız. Bu nedenle PDC 2008'de dağıtılan Visual Studio 2010 (PreBeta) sürümü ile yazdığım aşağıdaki kod parçasını bir süreliğine göz önüne alalım.
 

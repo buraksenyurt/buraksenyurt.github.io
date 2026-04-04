@@ -2,8 +2,6 @@
 layout: post
 title: "TFS 32Bit Uygulama Hatası (Bir Garip Geliştiricinin Haykırışı)"
 date: 2013-01-01 15:52:00
-categories:
-  - DevOps
 tags:
   - team-foundation-server
   - application-pool
@@ -12,6 +10,8 @@ tags:
   - saha-deneyimi
   - tecrübe
   - tecrübe-treni
+categories:
+  - DevOps
 ---
 Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu serisi altında paylaşım yapmaktayım. Ancak karşılaştığım ilginç bir durumu da sizinle paylaşmak istedim. Tabi olayın başrol oyuncusu olarak en büyük kabahat bende
 

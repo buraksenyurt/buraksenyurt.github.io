@@ -2,11 +2,11 @@
 layout: post
 title: "WCF - Transaction Yonetimi (Transaction Management) - 1"
 date: 2007-06-19 09:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - transaction
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Transaction (İşlem) yönetimi özellikle veritabanı kaynakları söz konusu olduğunda her sistemde büyük bir önem sahiptir. Basit olarak transaction bir veya daha çok işlem bütününü temsil eder. Bütünü oluşturan söz konusu işlem parçaları çoğunlukla birbirleriyle ilişkilidir ve hepsinin başarılı bir şekilde tamamlanabilmesi sonrasında transaction'ın başarılı olduğu söylenebilir. Bu doğal olarak işlem parçalarından herhangibirinin başarısız olması sonucunda transaction'ınında başarısız olması anlamına gelmektedir. Aşağıdaki şekilde bir transaction'ın süreç içerisinde sistemin belirli bir konumdan başka bir konuma geçişi sırasında üstlendiği rol ifade edilmeye çalışılmaktadır.
 

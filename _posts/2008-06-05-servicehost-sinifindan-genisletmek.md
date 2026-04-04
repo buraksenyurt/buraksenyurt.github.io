@@ -2,10 +2,10 @@
 layout: post
 title: "ServiceHost Sınıfından Genişletmek"
 date: 2008-06-05 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 WCF (Windows Communication Foundation) mimarisinde sunucu (Server) tarafındaki çalışma ortamınının (WCF Runtime) hazırlanması ile ilişkili olaraktan ServiceHost sınıfı kullanılmaktadır. Bir başka deyişle ServiceHost sınıfı uygulama sunucusu (Application Server) üzerindeki gerekli hazırlıkların yapılmasını sağlamaktadır. ServisHost sınıfı çoğunlukla, servis nesnesinin IIS (Internet Information Services) veya WAS (Windows Activation Services) üzerinden yayınlanmadığı durumlarda kullanılmaktadır.
 

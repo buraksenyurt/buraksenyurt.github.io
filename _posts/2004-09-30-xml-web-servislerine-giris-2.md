@@ -2,10 +2,10 @@
 layout: post
 title: "Xml Web Servislerine Giriş - 2"
 date: 2004-09-30 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde, bir XML Web Servisinin Visual Studio ile nasıl oluşturulabileceğini ve bir web sayfası üzerinden nasıl çağırılıp kullanılabileceğini incelemeye çalışacağız. Visual Studio.NET ortamında bir web servisi geliştirmek için, ilk olarak New Project bölümünden, ASP.NET Web Service şablonu seçilir. Visual Studio.NET, yerel makinede bu web servisi için gerekli fiziki ve sanal klasörleri otomatik olarak oluşturacaktır. Notepad editöründe yazdığımız örneğin aynısını, Visual Studio.NET ortamında gerçekleştireceğimizden, proje ismi olarak GeoWebServis'i kullanalım. Bu aynı zamanda web servisimizin varsayılan isim alanı (default namespace) olacaktır.
 

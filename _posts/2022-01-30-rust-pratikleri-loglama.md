@@ -2,13 +2,13 @@
 layout: post
 title: "Rust Pratikleri - Loglama"
 date: 2022-01-30 13:45:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - logging
   - env_logger
   - rust-lang
+categories:
+  - Programlama Dilleri
 ---
 Bugün bir redis, rabbitmq, kafka sunucusu başlattığımızda ya da docker container içerisine komut satırı açtığımızda terminal ekranına akan sayısız log içeriği olduğunu görüyoruz. Bu loglar hataları görmek, kodun akışını izlemek ve uyarıları çabucak fark etmek açısından sistem programcıları için son derece kıymetli bilgilerden oluşuyor. Çok doğal olarak Rust ile yazılan uygulamalar içinden de log yayınlamak isteyebiliriz ki Rust’ın asıl odağının sistem programlama olduğunu düşünecek olursak bu gereklidir. Rust Pratiklerinin bu ilk bölümünde [log](https://crates.io/crates/log) ve [env_logger](https://docs.rs/env_logger/0.9.0/env_logger/) küfelerini kullanarak basit anlamda loglamanın nasıl yapıldığını öğreneceğiz.
 

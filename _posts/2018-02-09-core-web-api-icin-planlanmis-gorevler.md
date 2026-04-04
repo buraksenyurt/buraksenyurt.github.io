@@ -2,8 +2,6 @@
 layout: post
 title: "Core Web API  için Planlanmış Görevler"
 date: 2018-02-09 04:27:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - asp.net-core
   - asp.net-core-web-api
@@ -14,6 +12,8 @@ tags:
   - task-based-programming
   - parallel-computing
   - parallel-programming
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 [Chuck Norris](https://chucknorris.com/). Sanıyorum hayatımın bir bölümü onun televizyonda arka arkaya yayınlanan filmleri ile geçmiştir. Asıl adı Carlo Ray Norris'tir ve Chuck ismi 1958de O, hava kuvvetlerindeyken takma ad olarak ortaya çıkmıştır. Dövüş sanatları ustası olan Chuck'ın harika bir web sitesi var. Hayran kitlesi oldukça geniş. 1940 doğumlu olan film yıldızını Google aramalarında daha çok "Chuck Norris Facts" ile biliyoruz.
 

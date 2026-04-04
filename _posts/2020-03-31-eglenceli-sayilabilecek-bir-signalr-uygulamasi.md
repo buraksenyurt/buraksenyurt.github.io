@@ -2,12 +2,12 @@
 layout: post
 title: "Eğlenceli Sayılabilecek bir SignalR Uygulaması"
 date: 2020-03-31 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - signalr
   - csharp
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Turşunun iyisi limonla mı olur yoksa sirkeyle mi? Neşeli Günler'i izleyenleriniz rahmetli Münir Özkul ve Adile Naşit arasındaki atışmayı gayet iyi bilir:) Arada bir eski de olsa her yönüyle bizlere tarifsiz dersler veren yapımlarımızı izlemek gerekiyor. Tabii yine de turşunun iyisi limonla mı olur yoksa sirkeyle mi olur pek bilemiyorum. İyisi mi bunu bir SignalR servisine bırakalım. Ne dersiniz?
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 152 - DebuggerDisplay Niteliği ile Debugging Daha Sevimli Olabilir"
 date: 2017-02-16 18:00:00
-categories:
-  - Genel
 tags:
   - csharp
   - tek-fotoluk-ipucu
@@ -13,6 +11,8 @@ tags:
   - metadata-programming
   - clr
   - common-language-runtime
+categories:
+  - Foto İpucu
 ---
 Nitelikler bildiğiniz üzere çalışma zamanına bilgi taşımak amacıyla kullanılan önemli tiplerdendir. Visual Studio tarafında da işimize yarayan bir çok nitelik (Attribute) yer alır. Bunlardan birisi DebuggerDisplay'dir. Önce aşağıdaki ekran görüntüsündeki kod parçasını göz önüne alalım.
 

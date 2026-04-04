@@ -2,10 +2,10 @@
 layout: post
 title: "Xml Web Servislerine Giriş - 1"
 date: 2004-09-29 09:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde, kısaca bir XML Web Servisinin ne olduğuna, ne işe yaradığına değinecek ve basit bir XML Web Servisinin Notepad ile nasıl oluşturulabileceğini incelemeye çalışacağız.
 

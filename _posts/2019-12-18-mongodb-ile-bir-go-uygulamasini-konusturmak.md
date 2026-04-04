@@ -2,8 +2,6 @@
 layout: post
 title: "MongoDB ile Bir GO Uygulamasını Konuşturmak"
 date: 2019-12-18 08:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - mongodb
@@ -17,6 +15,8 @@ tags:
   - brew
   - proto
   - json
+categories:
+  - Programlama Dilleri
 ---
 Teknoloji baş döndüren bir hızla ilerlerken beynimizin tembelleştiğini de kabul etmemiz gerekiyor. Artık pek çok işimiz otonomlaştırıldığından zihnimiz eski egzersizleri yapmıyor. Yıllar önce İngiltere'de yapılan bir araştırmada çocukların hesap makinesi kullanması sebebiyle temel dört işlem matematiğinde sorunlar yaşadığı tespit edilmişti. Yine Kanada'da yapılan bir araştırma insanların dikkat dağılma sürelerinin 8 saniyelere kadar indiğini gösterdi. Hafızamızı dinç tutma noktasında Japon balıkları ile yarışır bir konumda olduğumuz da aşikar. Kaçımız aklından ezbere 4 telefon numarasını sayabilir (Üç haneliler yasak) Otonomlaşan dünya sebebiyle tembelleşen ve dış uyarıcılar yüzünden sürekli dikkati dağılan zihnimiz...Gerçekten de dikkatimizi dağıtan, odaklanmamızı bozan o kadar çok şey var ki. Dolayısıyla kendimizi yetiştirmek istediğimiz konulara çalışırken ne kadar verimli olabiliyoruz bir bakmak gerekiyor. Tekrar satın alınamayacak olan zamanın ne kadar kıymetli olduğunu düşünürsek verimli çalışmanın ilerleyen yaşlarda çok çok önemli bir mesele haline geldiğini vurgulamak isterim.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Elasticsearch'ü West-World'e Kurdum"
 date: 2018-10-25 07:06:00
-categories:
-  - Veritabanı
 tags:
   - elasticsearch
   - linux
@@ -23,6 +21,8 @@ tags:
   - serilog
   - docker
   - container
+categories:
+  - Framework Tabanlı Programlama
 ---
 Guam adasının güney batısında yer alan ve yaklaşık 11 km derinliğindeki Mariana çukuru, dünyanın en derin noktasıdır. Benim için anlamı "Mariana Çukuru Etkisi" dir. Hatta çevik süreçlerdeki epik senaryoları da "Mariana Çukuru Etkisi" yaratan konular olarak tanımlarım. Ancak bu etkiyi daha çok bir makale için araştırma yaparken yaşarım. Bir kaynaktan diğerine geçtikçe konu derinleşir. Derinleştikçe başladığım yere olan uzaklığımın arttığını fark ederim. Işık azalır, etraf kararmaya oksijen azalmaya başlar. Derken düşünemez bir noktaya gelirim. Çünkü beyne yeteri kadar oksijen gitmez.
 

@@ -2,10 +2,10 @@
 layout: post
 title: "Asp.Net 4.0 - Heryerde Cache [Beta 2]"
 date: 2009-11-18 04:20:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
+categories:
+  - Web Programlama
 ---
 Kronometrelerinizi hazır edin! Bu yazımızda Absolute ve Sliding Expiration modelinde ön bellekleme işlemlerini Windows tabanlı bir uygulama üzerinde gerçekleştiriyor olacağız. Durun bir dakika...Windows mu? Evet evet yanlış duymadınız Windows. Aslında başlıktaki konu ile tamamen tezat bir durum. Gerçekten de öyle mi acaba? Gelin şu meseleyi açıklığa kavuşturalım.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "Windows Servislerinin Kontrolü -1"
 date: 2004-05-05 09:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
   - ServiceController
   - eventlog
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde, Windows servislerinin, bir Windows uygulamasından nasıl kontrol edilebileceğini incelemeye çalışacağız. Bir önceki makalemizde, Windows servislerinin nasıl oluşturulduğunu ve sisteme nasıl yüklendiklerini incelemiştik. Oluşturduğumuz Windows servislerini yani sistemdeki Windows servislerini SCM yardımıyla yönetebilmekteyiz. Ancak dilersek, bu yönetimi programlarımız içinden de gerçekleştirebiliriz. Bunu sağlayabilmek için, System.ServiceProcess isim alanında yer alan ServiceController sınıfını ve üyelerini kullanmaktayız.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "Ruby Kod Parçacıkları - 5 (Sınıf Kavramına Giriş)"
 date: 2015-08-10 19:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - class
   - object-oriented-programming
+categories:
+  - Programlama Dilleri
 ---
 Bilindiği üzere Ruby nesne yönelimli bir programlama dilidir. Bu yüzden Ruby dilinde her şey bir nesne olarak düşünülür. Dolayısıyla OOP dillerin Kalıtım (Inheritance), Encapsulation (Kapsülleme), Çok Biçimlilik (Polymorphism) gibi temel özelliklerini bünyesinde barındırır. Elbette en küçük yapı taşı sınıflardır (Class). İzleyen kod parçacığında basit olarak bir sınıfın nasıl tanımlandığına yer verilmektedir. Bu anlamda değişken türlerinden (Instance,Class ve Global Variable), sınıf yapıcılarından (initialize), nesne örnekleme operasyonlarından (new), standart sınıf içi metod tanımlamalarından (def) ve metod ezme (overriding) gibi işlemlerden kısaca bahsedilmektedir.
 

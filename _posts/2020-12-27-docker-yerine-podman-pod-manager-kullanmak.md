@@ -2,8 +2,6 @@
 layout: post
 title: "Docker Yerine Podman (Pod Manager) Kullanmak"
 date: 2020-12-27 09:14:00
-categories:
-  - DevOps
 tags:
   - docker
   - podman
@@ -15,6 +13,8 @@ tags:
   - skopeo
   - Poderize
   - Deamon
+categories:
+  - DevOps
 ---
 Heimdall üstünden birşeyler kurcalamak istediğimde yolum genellikle bir Docker imajı ile kesişiyor. Bakmak istediğim bir NoSQL veritabanı mı var, ELK üçlüsü mü gerekli, bir NGinx server ortamımı lazım ya da yeni bir servis için çalışma zamanımı hazırlamam gerekiyor... Hemen Docker kardeşimizin kapısını çalıyorum. Aslında bakarsanız Container teknolojileri denince çoğumuzun aklına Docker'dan başka bir şey gelmiyordur belki de. "Gerçekten de böyle mi?" diye düşündüğüm bir ara Docker'ın güçlü bir alternatifi olan Podman isimli ürünle karşılaştım ve onu biraz tanımaya karar verdim.
 

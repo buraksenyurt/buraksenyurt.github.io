@@ -2,14 +2,14 @@
 layout: post
 title: "Ruby Kod Parçacıkları 33 - Observer Deseninin Uygulanışı"
 date: 2017-02-12 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - design-patterns
   - observer-pattern
   - tasarım-kalıpları
   - observable-module
+categories:
+  - Programlama Dilleri
 ---
 Bir önceki kod parçasında [Singleton kalıbının Ruby tarafında nasıl uygulandığını](/2017/02/03/ruby-kod-parcaciklari-32-singleton/) incelemeye çalışmıştık. Hatırlayacağınız gibi hazır singleton modülünü kullanarak bu işi gerçekleştirmek oldukça kolaydı. Benzer durum Observer tasarım kalıbı için de geçerli. Bu kalıp bir nesnenin durumunda meydana gelen değişiklikler sonrası ilgili diğer nesnelerin uyarılması amacıyla kullanılan popüler yazılım desenlerinden birisi. (.Net tarafındaki uygulanış şekli ile ilgili olarak [şu eski yazımdan](/2009/07/09/tasarim-desenleri-observer/) yararlanabilirsiniz)
 

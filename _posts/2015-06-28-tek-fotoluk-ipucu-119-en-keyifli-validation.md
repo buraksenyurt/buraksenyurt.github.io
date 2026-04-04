@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu 119 - En Keyifli Validation"
 date: 2015-06-28 10:40:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - validation
   - fluent-api
+categories:
+  - Foto İpucu
 ---
 Hani şu NuGet paketlerine bakıyoruz ya bir süredir. Hatta bazılarını alıp basit Hello World uygulamalarını geliştiriyoruz. Aslında nasıl kullanıldıklarını öğrenmenin dışında GitHub gibi Repository'ler üzerinde tutulan kodlarına bakamamızda da büyük yarar var biliyor musunuz? Çünkü çoğu, nesne yönelimli programlamanın temel dinamiklerini içeriyor ve hatta yazılım prensipleri ile tasarım kalıplarını başarılı bir şekilde uyguluyor.
 

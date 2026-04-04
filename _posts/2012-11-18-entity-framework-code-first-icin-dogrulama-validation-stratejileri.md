@@ -2,14 +2,14 @@
 layout: post
 title: "Entity Framework Code First için Doğrulama(Validation) Stratejileri"
 date: 2012-11-18 06:38:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - code-first
   - validation
   - attribute
   - data-annotations
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir verinin çeşitli kurallara göre doğrulanması, verinin işlenmek üzere gönderilmeden önce yapılması gereken önemli işlemlerden birisidir. Özellikle Entity Framework gibi veri merkezli (Data-Centric) uygulama geliştirme alt yapılarında bu durum daha da önem arz etmektedir. Burada söz konusu olan, görsel bir kontrolün içerik denetiminden ziyade, çalışma zamanı Entity örneklerine ait özelliklerin (Property) değerlerinin denetlenmesidir. Çok doğal olarak verilerde tutarsızlıklara neden olabilecek çeşitli ihlallerin tespit edilmesi, toplanması, gerektiğinde son kullanıcıya bildirilmesi ya da farklı bir yere raporlanması/loglanması gerekmektedir.
 

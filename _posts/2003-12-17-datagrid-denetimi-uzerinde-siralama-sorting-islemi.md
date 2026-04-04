@@ -2,11 +2,11 @@
 layout: post
 title: "DataGrid Denetimi Üzerinde Sıralama(Sorting) İşlemi"
 date: 2003-12-17 10:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - datagrid
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, bir Web Sayfası üzerinde yer alan DataGrid kontrolü üzerinde tıklanan kolon başlığına göre sıralama işleminin manuel olarak nasıl yapılacağını işleyeceğiz. Konu teknik ağırlığa sahip olduğu için hemen kodlara geçmek istiyorum.
 

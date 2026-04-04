@@ -2,14 +2,14 @@
 layout: post
 title: "Enum Veri Türünün Rust Tarafında Etkili Bir Kullanımı"
 date: 2025-02-12 16:23:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
   - csharp
   - enums
   - algebraic-data-types
+categories:
+  - Programlama Dilleri
 ---
 Enum veri türü genellikle Algebraic Data Type olarak da ifade edilmektedir. Özellikle fonksiyonel programlama dillerinden gelenler için bu veri türü oldukça anlamlı. Tuple ve record gibi türler de bu kapsamda ele alınmakta. Yıllardır C# tarafında kodlama yapan birisi olarak enum türünün bu dilde de faydalı amaçlar için kullanıldığını ifade edebilirim. En kötü ihtimalle kafada karışılık yaratacak sayısal değerlerin anlamlı ifadeleri için kullanılabilecek bir değer türü gibi düşünülebilir. Ne varki Rust dilindeki Enum türü çok daha zengin bir veri modeli sunuyor bana kalırsa. Bunu iddia etmiyorum ama gördüğüm bazı örnekler böyle düşündürüyor. Bu kısa yazımızda C# tarafında veya herhangibir nesne yönelimli dilde icra edeceğimiz bir çözümün Rust tarafında struct yerine enum türü ile ele alınırken nasıl fark yaratabileceğini ele almaya çalışacağız. İşe şu basit senaryo ile başlayalım;
 

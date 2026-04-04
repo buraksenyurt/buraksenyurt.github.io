@@ -2,8 +2,6 @@
 layout: post
 title: "Entity Framework 6 – Code First için Convention Nedir?"
 date: 2012-12-12 05:15:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - dbcontent
@@ -21,6 +19,8 @@ tags:
   - iedmconvention
   - idbconvention
   - idbmappingconvention
+categories:
+  - Framework Tabanlı Programlama
 ---
 Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki... Aslında bakarsanız olaylar bana göre, Microsoft geliştirici takımlarının, diğer geliştiricilerin seslerini duymaya ve dikkate almaya başlamasından sonra epeyce gelişti.
 

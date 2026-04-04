@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Web API’ leri ASPX’ den Asenkron Çağırmak"
 date: 2012-11-14 06:45:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - asp.net-web-api
   - .net-framework
@@ -14,6 +12,8 @@ tags:
   - async
   - await
   - asynchronous-programming
+categories:
+  - Web Programlama
 ---
 Bateri çalanları her zaman için büyük bir hayranlıkla izlerim/izlemişimdir. Özellikle 4 uzuvlarını da (iki kol iki ayak) kullanırlar ama daha da önemlisi tüm bu unsurları eş zamanlı olarak çalıştırabilirler. Sadece iki kolu çalıştırmak nispeten bir dereceye kadar kolay olabilir biz normal insan oğulları için ama bir de ayakları devreye sokmak. Hele de tüm bu hareketli parçalardan anlamlı bir melodi çıkartmak gerçekten çok ama çok zor bir iştir.
 

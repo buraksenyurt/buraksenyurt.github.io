@@ -2,10 +2,10 @@
 layout: post
 title: "C# 2.0 ve Anonymous (İsimsiz) Metodlar"
 date: 2005-06-16 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
+categories:
+  - Programlama Dilleri
 ---
 İsimsiz metotlar bildiğiniz gibi C# 2.0'a eklenmiş olan yeni özelliklerden birisidir. Temeli C# dilinin temsilci tipine dayanan bu yeni teknikte amaç, temsilcileri işaret edecekleri metotların sahip oldukları kod blokları ile bir seferde tanımlayabilmektir. İsimsiz metotları anlayabilmek için her şeyden önce temsilcilerin (delegates) iyi kavranmış olması gerekmektedir. (Ön bilgi veya hatırlatma açısından örnek [makale](http://www.bsenyurt.com/MakaleGoster.aspx?ID=43) ve [video](http://www.bsenyurt.com/video/Delegates.zip)larımızı incelemenizi öneririm.)
 

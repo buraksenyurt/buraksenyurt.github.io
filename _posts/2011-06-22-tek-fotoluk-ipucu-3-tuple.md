@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu - 3 (Tuple)"
 date: 2011-06-22 18:00:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - tuple
   - tuple<>
   - out-parameters
   - .net-framework
+categories:
+  - Foto İpucu
 ---
 .Net Framework 4.0 ile gelen Tuple tipini duymayan kalmamıştır. Duymak bir yana en büyük sorun ne zaman ve hangi amaçlar ile kullanılabileceğidir. İşte tek fotoluk ipucu serisinin bu günkü konusu. Örnek bir Tuple kullanımı. Metodlardan birden fazla değeri out veya ref ile döndürmek yerine, Tuple tipiyle döndürebiliriz.
 

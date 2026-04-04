@@ -2,11 +2,11 @@
 layout: post
 title: "EF 4.2 ile Code–First Development"
 date: 2011-10-12 20:45:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - code-first-development
+categories:
+  - Framework Tabanlı Programlama
 ---
 Teknolojinin hızına inanın ki yetişilemiyor. Her gün yeni bir bilim ve teknoloji haberi var dünyada. Ancak bir geçek daha var ki o da Microsoft, Google, Apple gibi devlerin de hızına yetişilememsi. Örneğin daha henüz 2011 Mix’ te RTM olarak duyurulan Entity Framework 4.1 sürümü üzerine geçtiğimiz günlerde 4.2 RC (Release Candidate) duyuruldu. Ben de bunun üzerine yeni sürümde Code-First Development’ ın nasıl uygulandığını anlamak ve görmek istedim. Haydi gelin keşfetmeye başlayalım.
 

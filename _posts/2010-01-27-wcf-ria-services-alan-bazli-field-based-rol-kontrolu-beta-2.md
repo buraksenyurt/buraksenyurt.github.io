@@ -2,13 +2,13 @@
 layout: post
 title: "WCF RIA Services - Alan Bazlı(Field Based) Rol Kontrolü [Beta 2]"
 date: 2010-01-27 02:33:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services
   - windows-communication-foundation
   - wcf-eco-system
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Hani bazen insanın aklına son derece zekice fikirler gelir ya...Sene 1992. Lise öğrencisiyim. Bazı akşamlar yazlığımızdaki odamda üniversiteye hazırlanmaya çalışırdım. Güzel yaz gecelerinde, tertemiz ada ikliminde, mis gibi kokan iyotlu deniz suyunun çok yakınlarında konsantre olmak her ne kadar çok zor olsa da, buna mecburdum. Odamdaki flöresan ışığını çalışma ortamı için hiç uygun bulmazdım. Bunun yerine sarı ışığı tercih ederdim ve aynen yandaki şekilde görülene benzer bir gece lambam vardı.
 

@@ -2,14 +2,14 @@
 layout: post
 title: "The Internet Computer (Internetin Yeniden Keşfi) ve Motoko'yu Duyunca Ben"
 date: 2020-10-31 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - the-internet-computer
   - motoko
   - canister
   - internet-computer-protocol
   - icp
+categories:
+  - Programlama Dilleri
 ---
 Herkese açık olan interneti genişletip kendi yazılım sistemlerimizi, kurumsal IT çözümlerimizi, web sitelerimizi, dağıtık bir ortamda firewall'lara ve yedekleme sistemlerine ihtiyacı duymadan güvenli bir şekilde konuşlandırabildiğimizi düşünelim. Hatta bunu sağlayan altyapı ile internete konan bu sistemler arasında fonksiyon çağrımı yapar gibi kolayca haberleşebildiğimizi (ve tabii ki güvenli bir ortamda) hayal edelim. Biraz blockchain benzeri bir dağıtık sistem kurugusu gibi değil mi? Tam olarak olmasa da oradaki teorileri baz almışlar gibi görünüyor. The Internet Computer adlı bu proje ICP (Internet Computer Protocol) adı verilen ve herhangi bir merkezi olmayan bir protokolü baz alarak, küresel ortamdaki bağımsız veri merkezlerinin, web sitelerinin, backend hizmetlerinin vb yazılımların aynı güvenlik garantileriyle çalıştığı kapatılamaz bir alt evren vaat ediyor.
 

@@ -2,11 +2,11 @@
 layout: post
 title: "Rust ile Kodlama İdmanları - Başlangıç Seviyesi"
 date: 2025-10-25 20:04:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
+categories:
+  - Programlama Dilleri
 ---
 Rust, daha çok öğrenme eğrisinin zorluğu ile tanınan bir sistem programlama dilidir desek sanırım yanlış olmaz. Ownership, borrow-checker, lifetimes, macro'lar, mutex vs derken managed ortamlarda (.Net, Java, Go gibi) geliştirme yapan programcıları epeyce zorlayan konu başlıklarına sahiptir. Şahsen, aynı öğrenme eğrisi zorluğunu yaşamış birisi olarak kodladıkça daha fazla tutulacağınız bir dil olduğunu da belirtmek isterim.
 

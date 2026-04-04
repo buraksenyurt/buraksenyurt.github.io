@@ -2,11 +2,11 @@
 layout: post
 title: "Asp.Net 2.0 ve Master Page Kavramı"
 date: 2004-09-10 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - master-page
+categories:
+  - Web Programlama
 ---
 Bu makalemizde, Master Pages kavramına giriş yapacak ve web uygulamalarının geliştirilmesinde yaşamımıza getirdiği kolaylıkları incelemeye çalışacağız. İnternet sitelerini göz önüne aldığımızda, siteye ait sayfaların sıklıkla aynı şablonları kullandığını görürüz. Özellikle, header, footer, navigasyon ve advertisement alanları, çoğunlukla siteye ait tüm sayfalarda aynı yerlerde kullanılır. Bu, siteye ait sayfaların standart olarak aynı görünümde olmasını sağlamakla kalmaz, değişen içeriğin de ortak bir şablon üzerinde durmasına imkân tanır. Peki ASP.NET 2.0'ın bu kullanım için getirdiği yaklaşıma gelene kadar, sayfalarda ortak olarak kullanılan ve tasarımsal olarak sayfa koordinatlarında aynı yerlerde bulunan bu unsurlar hangi teknikler ile oluşturulmuştur?
 

@@ -2,14 +2,14 @@
 layout: post
 title: "WCF WebHttp Services - Client Tarafını Geliştirmek"
 date: 2010-02-05 00:45:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services
   - rest-api
   - non-soap
   - wcf-webhttp-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Sanırım pek çoğumuz piyangodan veya diğer şans oyunlarından kendilerine tonlarca para çıksa ne yapacağını düşünmüş veya hayal etmiştir. Açıkası kendi adıma hayat etmediğimi dile getirsem yalan söylemiş olurum. Ancak ben pek çoğumuz gibi yan yana bir kaç Ferrari'yi dizmektense bir kaç yere yatırım yapmayı hayal etmişimdir hep. Örneğin dünyanın sayılı bir kaç futbol kulübünün (Barcelona, Manchester United vb...) ve yazılım şirketinin (Microsoft, IBM vb...) hisselerinden satın alır ve şöyle güzel bir fon sepeti oluştururum. Neyse...Sözü niye piyangodan açtığımıza gelince...
 

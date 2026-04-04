@@ -2,8 +2,6 @@
 layout: post
 title: "Hanoi Towers Probleminin Recursive Çözümü"
 date: 2013-06-13 10:12:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - alogirtma
@@ -11,6 +9,8 @@ tags:
   - hanoi-towers
   - matematik
   - recursive-method
+categories:
+  - Algoritma
 ---
 Bu görsel dersimizde eğlenceli Matematik oyunlarından birisi olan [Hanoi Kuleleri problemini](http://en.wikipedia.org/wiki/Tower_of_Hanoi), Recursive bir metod yardımıyla nasıl çözebileceğimizi incelemeye çalışıyoruz. İlk olarak problemi tanımlıyor ve oyunun kurallarına kısaca bakıyoruz. Sonrasında ise 3 disk için gerçekleştirilen çözümü simüle ediyoruz. Problemin çözümü için kullanılan alt problem parçalarını tanımlıyor ve C# ile kodlama işlemlerini gerçekleştirerek uygulamamızı inşa ediyoruz.
 

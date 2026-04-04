@@ -2,8 +2,6 @@
 layout: post
 title: "Entity Framework Code-First için Calculated Fields Kullanımı"
 date: 2013-02-08 05:15:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - sql
@@ -13,6 +11,8 @@ tags:
   - csharp
   - ado.net
   - alter
+categories:
+  - Framework Tabanlı Programlama
 ---
 Genellikle göç etmek gibi anlamlarda kullanılan Migrate kelimesinin yazılım dünyasındaki karşılığını düşündüğümüzde, elbetteki yandaki fotoğrafta yer alan ve bir birlerinin akvaryumuna atlayan balıklar gelmeyecektir/gelmemelidir.
 

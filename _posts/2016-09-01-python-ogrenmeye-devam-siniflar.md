@@ -2,8 +2,6 @@
 layout: post
 title: "Python Öğrenmeye Devam - Sınıflar"
 date: 2016-09-01 01:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - python
   - oop
@@ -11,6 +9,8 @@ tags:
   - class
   - temel-kavramlar
   - nitelikler
+categories:
+  - Programlama Dilleri
 ---
 Bir süredir izinde olduğum için yeni gözdem Python ile yeterince ilgilenemedim. Döndüğümde daha önceden çalıştığım konuları hatırlamakta da epeyce zorlandım. Pasımı atmak ve tekrardan verimliliğimi yükseltmek için ilk olarak defterime karaladığım notlarımın üstünden geçtim.
 

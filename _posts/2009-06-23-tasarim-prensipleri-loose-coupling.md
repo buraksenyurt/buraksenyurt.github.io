@@ -2,14 +2,14 @@
 layout: post
 title: "Tasarım Prensipleri - Loose Coupling"
 date: 2009-06-23 18:00:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-principles
   - loose-coupling
   - oop
   - object-oriented-programming
   - aspect-oriented-programming
+categories:
+  - Yazılım Tasarımı
 ---
 Yazılım teknolojilerinde uygulanan tekniklerin çoğunda temel tasarım prensipleri sıklıkla ele alınmaktadır/Alınmalıdı. Örneğin eXtreme Programming, Aspect Oriented Programming vb... yazılım geliştirme tekniklerinde bu prensiplerin çoğuna rastlayabiliriz. Bu yazı ile birlikte Temel Tasarım Prensiplerinin incelenmesine başlıyor olacağız ki özellikle büyük çaplı projelerde bu tip disiplinler büyük bir öneme sahiptir.
 

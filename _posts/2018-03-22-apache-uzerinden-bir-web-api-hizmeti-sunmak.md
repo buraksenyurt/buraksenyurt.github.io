@@ -2,8 +2,6 @@
 layout: post
 title: "Apache Üzerinden Bir Web API Hizmeti Sunmak"
 date: 2018-03-22 03:13:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - apache
   - .net-core
@@ -20,6 +18,8 @@ tags:
   - apache-foundation
   - ubuntu
   - linux-ubuntu
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Küçük bir çocukken her pazar sabahı TRT ekranlarında kovboy (Western) filmleri olurdu. Rahmetli babam ile severek geçirdiğimiz nadide vakitlerdendi. Sanıyorum son yıllarda yine Pazar sabahları ekranlarımızı süslüyorlar (Bakamıyorum çünkü sabahlarımız basketbol antrenmanları ile geçiyor) Kızılderililer ile süvarilerin sıklıkla karşı karşıya geldiği, batının en hızlı silahşörlerinin yer aldığı filmlere ne hikmetse çok bağlanmıştım.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "C# Temelleri: 1!=1 Eşitsizliğinden GetHashCode' a Uzun İnce Bir Yol"
 date: 2006-10-11 03:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - gethashcode
   - value-types
+categories:
+  - Programlama Dilleri
 ---
 Eminimki makale başlığı size oldukça ilginç gelmiştir. Matematiksel olarak mümkün olmayan bu durum.Net programlama ortamında acaba gerçekleştirilebilir mi? Elbetteki matematiksel olarak imkansız olan bu durumun programlama ortamımız içerisinde gerçekleşebilir olmasıda pek mantıklı değil. O halde makalemizin asıl konusundan bahsedelim ve durumu açıklığa kavuşturalım.
 

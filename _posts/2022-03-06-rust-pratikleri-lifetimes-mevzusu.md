@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - Lifetimes Mevzusu"
 date: 2022-03-06 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -13,6 +11,8 @@ tags:
   - String
   - dangling-pointers
   - memory-management
+categories:
+  - Programlama Dilleri
 ---
 Rust'ın özellikle Garbage Collector kullanan dillerden çok farklı olduğunu bellek yönetimi için getirdiği kurallardan dolayı biliyoruz. Ownership, borrowing gibi hususlar sayesinde güvenli bir bellek ortamını garanti etmek üzerine ihtisas yapmış bir dil olduğunu söylesek yeridir. Bunlar pek çok dilde otomatik yönetildiği için Rust'ı öğrenmek biraz zaman alabiliyor ve bu yolda karşımıza çıkacak zor konulardan birisi de Lifetimes mevzusu. Kısaca nesnelere yaşam süresini bilinçli olarak vermek diye ifade edebileceğimiz bu konuyu esasında sevgili [Bora Kaşmer](https://www.borakasmer.com/) ile başladığımız [45 Byte sohbetleri](https://youtube.com/playlist?list=PLY-17mI_rla7WSQoRx_8a_1k79x3LDX4W)nde dile getirmek istiyorum. Lakin çok basit bir örnek ile konuyu olabildiğince sade bir şekilde anlatmam gerekiyor ve String ile &str arasındaki fark bunun için ideal olabilir.
 

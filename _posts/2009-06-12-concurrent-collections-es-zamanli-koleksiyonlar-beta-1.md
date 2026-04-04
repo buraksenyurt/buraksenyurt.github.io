@@ -2,10 +2,10 @@
 layout: post
 title: "Concurrent Collections (Eş Zamanlı Koleksiyonlar) [Beta 1]"
 date: 2009-06-12 10:20:00
-categories:
-  - Paralel Programlama
 tags:
   - parallel-programming
+categories:
+  - Paralel Programlama
 ---
 .Net Framework 4.0 ve içerdiği paralel genişletmeler (Parallel Extensions) ile birlikte gelmekte olan yenilikler arasında, eş zamanlı (Concurrent) çalışabilen ve Thread Safe olan koleksiyonlarda bulunmaktadır. Bu koleksiyonlar aslında veri yapıları (Data Structures) ile birlikte gelen yeni tipler arasında yer almaktadır.
 

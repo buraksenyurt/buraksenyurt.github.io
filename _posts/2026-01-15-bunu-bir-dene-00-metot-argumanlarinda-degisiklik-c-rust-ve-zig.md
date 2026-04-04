@@ -2,12 +2,12 @@
 layout: post
 title: "Bunu Bir Dene 00 - Metot Argümanlarında Değişiklik (C#, Rust ve Zig)"
 date: 2026-01-15 20:27:00
-categories:
-  - Programlama Dilleri
 tags:
   - zig-lang
   - csharp
   - rust
+categories:
+  - Programlama Dilleri
 ---
 C# programlama dilinde sınıf nesne örnekleri (Class Object Instance) metotlara varsayılan olarak referans türü (reference type) olarak iletilir. Bu, metot içinde yapılan değişikliklerin çağıran tarafı etkileyebileceği anlamına gelir. Bu çalışmada söz konusu senaryonun Rust ve Zig gibi programlama dillerinde nasıl ele alındığını incelemeye çalışıyorum. Sırf meraktan...Başlamadan şu notu düşmek isterim; Çalışmamdaki amaç üç dili birbiriyle kıyaslamak değil, her bir dilin bu tip senaryolardaki yaklaşımını incelemek. Normal koşullarda bir stok takip programını Rust veya Zig ile geliştirmeyi tercih etmem.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 82–Internete Bağlı mıyız? (Round II)"
 date: 2013-03-25 20:30:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - webrequest
@@ -14,6 +12,8 @@ tags:
   - proxy
   - credentials
   - internet-connection
+categories:
+  - Foto İpucu
 ---
 [Bir önceki ipucumuzda](/2013/03/11/tek-fotoluk-ipucu-81-internete-bagli-miyiz/) wininet.dll WinAPI kütüphanesinden yararlanarak, internet’ e bağlı olup olmadığımızı nasıl öğrenebileceğimizin fotoğrafını çekmiştik. Tahmin edeceğiniz üzere söz konusu senaryo için tek yol bu değil. Örneğin aşağıdaki gibi bir kullanımı da tercih edebilirsiniz.
 

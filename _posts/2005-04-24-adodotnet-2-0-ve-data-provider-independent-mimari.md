@@ -2,8 +2,6 @@
 layout: post
 title: "Ado.Net 2.0 ve Data Provider-Independent Mimari"
 date: 2005-04-24 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - data-providers
@@ -11,6 +9,8 @@ tags:
   - dbcommand
   - dbdataadapter
   - dbproviderfactory
+categories:
+  - Framework Tabanlı Programlama
 ---
 Veritabanı uygulamalarında başımızı ağrıtan noktalardan bir tanesi farklı tipte veritabanı sistemleri kullanan uygulamaların geliştirilmesi sırasında ortaya çıkar. Çoğu zaman geliştirdiğimiz bir ürün Sql sunucları üzerinde yüksek performans gösterecek şekilde çalışmak zorunda iken, aynı ürünün Oracle üzerinde çalıştırılması da istenebilir. Bu durumda ortak bir çözüm olarak OleDb isim alanı altındaki sınıfları kullanmak oldukça mantıklıdır. Çünkü OleDb üzerinden her iki veri sunucusu için gerekli olan veri sağlayıcılarını kullanabiliriz.
 

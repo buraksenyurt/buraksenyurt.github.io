@@ -2,12 +2,11 @@
 layout: post
 title: "Paralel Sorgularda İstisna Yönetimi(Exception Handling) [Beta 1]"
 date: 2009-05-26 05:30:00
-categories:
-  - Veritabanı
-  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query
+categories:
+  - Paralel Programlama
 ---
 Yönetimli kod (Managed Code) tarafında istisna yönetimi oldukça önemli konulardan birisidir. Uygulamaların veya kod süreçlerinin istem dışı sonlanmasının önüne geçilmek istendiği durumlarda, basit try...catch...finally bloklarından yararlanabilir yada Enterprise Library gibi kütüphanelerin sunduğu bloklardan faydalanarak istisna yönetimini üst seviyede sağlayabiliriz.
 

@@ -2,14 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu-28(Bir Klasörün Yaklaşık Toplam Boyutunu Bulmak)"
 date: 2011-08-24 00:09:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - io
   - directoryinfo
   - extension-methods
+categories:
+  - Foto İpucu
 ---
 Bir klasörün tüm içeriğinin toplam boyutunu öğrenmek isteyebiliriz. Bunun için DirectoryInfo tipine bir ExtensionMethod eklersek de güzel olur. Hatta bu metodun alt klasörleri de gezebilmesi için Recursive olarak yazılması da gerekir. Nasıl mı?
 

@@ -2,9 +2,6 @@
 layout: post
 title: "Biyütıful Kod - Ninject ile Bir Dependency Injection Macerası"
 date: 2015-01-04 20:00:00
-categories:
-  - Programlama Dilleri
-  - Yazılım Tasarımı
 tags:
   - dependency-injection
   - ninject
@@ -14,6 +11,8 @@ tags:
   - .net
   - inversion-of-control
   - dependency-injection-container
+categories:
+  - Programlama Dilleri
 ---
 Her yazılım geliştirici özellikle büyük bir projeye girdiğinde kodlarının kaliteli olması için uğraşır. Bu yönde adımlar atar. Çoğu zaman bu bir sanata dahi dönüşebilir. Okunabilir kodlar oluşturmanın dışında, mimari açıdan büyüleyici olan, yeniden kullanılabilirliğin üst seviyede olduğu, fazla uğraşılmadan genişleyebilen ürünler ortaya çıkartmak en büyük gayelerden birisi haline gelir. Martin Fowler'ın ilkeleri sıkı sıkıya takip edilir. Kurumsal çözüm içerisinde Fluent API'ler kullanılmaya, "Dependency Injection Container" gibi kavramlar konuşulmaya başlanır. Ne kadar başarılabilir bilinmez ama amaçlardan birisi de Biyütıful Kodu ortaya çıkartmaktır.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Rust ile ECS Yaklaşımını Anlamak"
 date: 2024-11-06 11:05:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - entity-component-system
@@ -14,6 +12,8 @@ tags:
   - oop
   - compositionOverInheritance
   - programlama
+categories:
+  - Programlama Dilleri
 ---
 ECS, Entity Component System olarak adlandırılan ve birçok oyun motorunda kullanılan bir yaklaşımı ifade eder. Composition over Inheritance prensibini benimseyen Data Oriented bir geliştirme ortamı sağlar. Rust tarafında Bevy gibi bazı oyun motorları built-in olarak bu yapıyı kullanır. Oyun kodlarının daha okunabilir, yönetilebilir ve bakımı kolay şekilde tesis edilmesinde önemli imkanlar sağlar. Plug-In ve Bundle yaklaşımlarının uygulanmasını da kolaylaştırır.
 

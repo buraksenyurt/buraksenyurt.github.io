@@ -2,12 +2,12 @@
 layout: post
 title: "Thread'lerde Öncelik(Priority) Durumları"
 date: 2004-01-05 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - thread
   - threadPriority
+categories:
+  - Programlama Dilleri
 ---
 İş parçacıklarını işlediğimiz yazı dizimizin bu üçüncü makalesinde, iş parçacıklarının birbirlerine karşı öncelik durumlarını incelemeye çalışacağız. İş parçacıkları olarak tanımladığımız metodların çalışma sıralarını, sahip oldukları öneme göre değiştirmek durumunda kalabiliriz. Normal şartlar altında, oluşturduğumuz her bir iş parçacığı nesnesi aynı ve eşit önceliğe sahiptir. Bu öncelik değeri Normal olarak tanımlanmıştır. Bir iş parçacığının önceliğini değiştirmek istediğimizde, Priority özelliğinin değerini değiştiririz. Priority özelliğinin .NET Framework'teki tanımı aşağıdaki gibidir.
 

@@ -2,14 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu-16 (Dynamic Var)"
 date: 2011-07-10 18:00:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - dynamic
   - var
   - dynamic-language-runtime
+categories:
+  - Foto İpucu
 ---
 LINQ tarafında isimsiz tipleri (Anonymous Types) oldukça sık kullanmaktayız. Ancak isimsiz tiplerin metodlara parametre olarak geçirilemediğini de biliyoruz
 

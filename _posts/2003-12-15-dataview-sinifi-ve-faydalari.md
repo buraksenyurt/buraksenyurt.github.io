@@ -2,11 +2,11 @@
 layout: post
 title: "DataView Sınıfı ve Faydaları"
 date: 2003-12-15 04:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataview
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde getirileri ve performansı ile ADO.NET içerisinde önemli bir yere sahip olan DataView nesnesini incelemeye çalışacağız. Özellikle bu sınıfa ait RowFilter özelliğinin ne gibi faydalar sağlayacağına da değineceğiz.
 

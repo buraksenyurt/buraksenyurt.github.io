@@ -2,13 +2,13 @@
 layout: post
 title: "Bir Sınıf Yazalım"
 date: 2003-12-23 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - oop
   - class
   - .net
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde ADO.NET kavramı içerisinde sınıfları nasıl kullanabileceğimizi incelemeye çalışacak ve sınıf kavramına kısa bir giriş yapacağız. Nitekim C# dili tam anlamıyla nesne yönelimli bir dildir. Bu dil içerisinde sınıf kavramının önemli bir yeri vardır. Bu kavramı iyi anlamak, her türlü teknikte, sınıfların avantajlarından yararlanmanızı ve kendinize özgü nesnelere sahip olabilmenizi sağlar. Zaten .NET teknolojisinde yer alan her nesne, mutlaka sınıflardan türetilmektedir.
 

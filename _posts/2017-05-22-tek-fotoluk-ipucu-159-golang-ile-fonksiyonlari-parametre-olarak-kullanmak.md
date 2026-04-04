@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu 159 - GoLang ile Fonksiyonları Parametre Olarak Kullanmak"
 date: 2017-05-22 14:30:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - functional-programming
   - user-defined-function-types
+categories:
+  - Foto İpucu
 ---
 GoLang fonksiyonel programlama konusunda oldukça fazla kabiliyete sahip. Birinci sınıf fonksiyonlar (first-class functions), yüksek öncelikli fonksiyonlar (higher-order functions), closures (çeviremedi:)), birden fazla değer döndüren fonksiyonlar (multiple return values), literals ve kullanıcı tanımlı fonksiyon tipleri (user defined function types) bunlar arasında sayılabilir. Neredeyse her gün GO dili ile ilgili bir şeylere bakmaya çalışırken geçenlerde strings paketinde yer alan FiledsFunc fonksiyonunu ile karşılaştım. Derken kendimi ikinci parametresini nasıl kullanıyoruzu anlamaya çalışırken buldum. FieldsFunc fonksiyonu
 

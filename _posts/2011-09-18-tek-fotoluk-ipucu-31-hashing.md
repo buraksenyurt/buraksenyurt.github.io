@@ -2,9 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu-31(Hashing)"
 date: 2011-09-18 02:50:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - security
@@ -14,6 +11,8 @@ tags:
   - sha256
   - sha384
   - sha512
+categories:
+  - Foto İpucu
 ---
 Hiç bir zaman kullanıcılarımıza ait şifreleri açık formatta saklamamamız gerekir. En basit anlamda söz konusu verileri Hash'leyerek tutmak en doğrusudur. Bu anlamda.Net tarafında kullanımı son derece basit olan Hash algoritma tipleri mevcuttur. Nasıl kullanıldığını merak ediyor musunuz?
 

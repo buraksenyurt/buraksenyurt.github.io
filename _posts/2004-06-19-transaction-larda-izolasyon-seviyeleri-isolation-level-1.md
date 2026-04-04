@@ -2,12 +2,12 @@
 layout: post
 title: "Transaction' larda Izolasyon Seviyeleri (Isolation Level) - 1"
 date: 2004-06-19 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
   - isolation-levels
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, Transaction'larda kullanılan izolasyon seviyelerini incelemeye başlayacağız. İzolasyon seviyeleri, eşzamanlı olarak çalışan Transaction'ların birbirlerini nasıl etkilemesi gerektiğini belirtmekte kullanılır. Yani bir başka deyişle, bir Transaction içinde meydana gelen değişikliklerin, başka eşzamanlı Transaction'lar tarafından nasıl ele alınması gerektiğini belirlememize olanak sağlar. İzolasyon seviyelerini anlamanın en iyi yolu, eşzamanlı olarak çalışan Transaction'larda meydana gelebilecek sorunları iyi anlamaktan geçer.
 

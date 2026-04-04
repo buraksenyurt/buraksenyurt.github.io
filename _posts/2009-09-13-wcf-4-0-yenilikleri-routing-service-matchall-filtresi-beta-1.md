@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]"
 date: 2009-09-13 18:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bundan önceki yazılarımızda WCF 4.0 için yönlendirme servislerinin (Router Service) nasıl yazılabileceğini incelemeye çalışmıştık. Fark edeceğiniz üzere yönlendirme servislerinin en önemli noktaları arasında filtreleme tablosu ve filtrelerin olduğunu gördük. Bununla birlikte sadece Action tipinde bir filtreleme kullanıp, istemciden gelen SOAP paketinin Action kısmından yararlanılarak bir yönlendirme yapılmasını inceledik.
 

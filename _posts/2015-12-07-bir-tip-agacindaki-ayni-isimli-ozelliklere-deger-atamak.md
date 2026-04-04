@@ -2,8 +2,6 @@
 layout: post
 title: "Bir Tip Ağacındaki Aynı İsimli Özelliklere Değer Atamak"
 date: 2015-12-07 20:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - generic
@@ -11,6 +9,8 @@ tags:
   - IList
   - type-safety
   - recursive-method
+categories:
+  - Programlama Dilleri
 ---
 Çalışmakta olduğumuz projelerde zaman zaman bizi zorlayan vakalar ile karşılaşıyoruz. Bu gibi durumlarda Google abimiz en büyük yardımcımız olabiliyor. Hatta pek çoğumuz sorunların çözümünde Stackoverflow gibi kaynaklardan yararlanıyor ya da daha deneyimli birisinden yardım istiyor. Ne var ki bazı vakaları kendimiz çözmeye çalışsak çok daha yararlı olabilir.
 

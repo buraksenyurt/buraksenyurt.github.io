@@ -2,11 +2,11 @@
 layout: post
 title: "DART Programlama Diliyle Az Biraz Uğraşmak"
 date: 2020-06-07 14:14:00
-categories:
-  - Programlama Dilleri
 tags:
   - dart
   - dartlang
+categories:
+  - Programlama Dilleri
 ---
 Çok duydum, çok bahsedildi. Hep Flutter arkasında kaldı. Aslında yıllardır vardı. Birazcık bakmamın zamanı gelip de geçmişti. Haydi dedim o zaman. Önce onu Heimdall (Ubuntu-20.04) yüklemem gerekiyordu tabii. [Bu adresteki talimatları](https://dart.dev/get-dart) takip ederek kurulumu gerçekleştirdim ve birkaç örnek kod parçasını bol yorum satırlarıyla önce skynet reposuna ardından da bloga bırakmaya karar verdim. Sizde Dart diline şöyle bir bakmak temel özelliklerini öğrenmek istiyorsanız aşağıdaki kronolojiyi takip ederek bana katılabilirsiniz. Eğer Java veya C# kökenliyseniz DART diline alışmanız da çok zor değil. Tabii başlamadan önce adettendir dil ile ilgili sözü geçen genel özellikleri şöyle bir sıralayalım.
 

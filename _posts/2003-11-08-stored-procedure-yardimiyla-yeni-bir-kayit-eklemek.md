@@ -2,11 +2,11 @@
 layout: post
 title: "Stored Procedure Yardımıyla Yeni Bir Kayıt Eklemek"
 date: 2003-11-08 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - stored-procedures
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu yazımızda Sql Server üzerinde, kendi yazdığımız bir Saklı Yordam (Saklı Yordam) ile, veritabanındaki ilgili tabloya nasıl kayıt ekleyeceğimizi incelemeye çalışacağız.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "Kalıtım (Inheritance) Kavramına Kısa Bir Bakış"
 date: 2003-12-25 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - oop
   - .net
+categories:
+  - Programlama Dilleri
 ---
 Bir önceki makalemizde C# dilinde sınıf kavramına bir giriş yapmış ve OOP (Objcet Oriented Programming-Nesneye Dayalı Programlama) tekniğinin en önemli kavramlarından biri olan kalıtımdan bahsedeceğimizi söylemiştik. Bugünkü makalemizde bu kavramı incelemeye çalışacağız.
 

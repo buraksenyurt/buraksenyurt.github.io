@@ -2,13 +2,13 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Giriş [Beta 1]"
 date: 2009-08-24 06:15:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - router
   - soa
   - service-oriented-architecture
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Servis Yönelimli Mimari (Service Oriented Architecture) çözümlerinde zaman zaman yönlendirme amaçlı servislerin yazılması gerekmektedir (Router Service). Bu servislerin genel kullanım amacı çoğunlukla, istemcilerden gelecek olan talepleri değerlendirip asıl işi yapacak olan servislere devretmek ile ilişkilidir.
 

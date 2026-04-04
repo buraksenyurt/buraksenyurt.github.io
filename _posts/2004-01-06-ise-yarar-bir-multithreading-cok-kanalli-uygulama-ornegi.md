@@ -2,12 +2,12 @@
 layout: post
 title: "İşe Yarar Bir MultiThreading(Çok Kanallı) Uygulama Örneği"
 date: 2004-01-06 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - thread
   - multi-thread
+categories:
+  - Programlama Dilleri
 ---
 Bundan önceki üç makalemizde iş parçacıkları hakkında bilgiler vermeye çalıştım. Bu makalemde ise işimize yarayacak tarzda bir uygulama geliştirecek ve bilgilerimizi pekiştireceğiz. Bir iş parçacığının belki de en çok işe yarayacağı yerlerden birisi veritabanı uygulamalarıdır. Bazen programımız çok uzun bir sonuç kümesi döndürecek sorgulara veya uzun sürecek güncelleme ifadeleri içeren sql cümlelerine sahip olabilir. Böyle bir durumda programın diğer öğeleri ile olan aktivitemizi devam ettirebilmek isteyebiliriz. Ya da aynı anda birden fazla iş parçacığında, birden fazla veritabanı işlemini yaptırarak bu işlemlerin tamamının daha kısa sürelerde bitmesini sağlayabiliriz. İşte bu gibi nedenleri göz önüne alarak bugün birlikte basit ama faydalı olacağına inandığım bir uygulama geliştireceğiz.
 

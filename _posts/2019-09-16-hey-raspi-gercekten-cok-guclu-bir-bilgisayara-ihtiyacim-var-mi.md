@@ -2,8 +2,6 @@
 layout: post
 title: "Hey Raspi! Gerçekten Çok Güçlü Bir Bilgisayara İhtiyacım Var mı?"
 date: 2019-09-16 10:13:00
-categories:
-  - IoT
 tags:
   - raspberry-pi
   - linux
@@ -16,6 +14,8 @@ tags:
   - 80ler
   - 90lar
   - 2000ler
+categories:
+  - IoT
 ---
 1985 Yazı - Hikayenin Başladığı Yer...Almanya’daki kuzenlerimden biri olan Haluk abi orta öğrenimi için dayımlar tarafından İstanbul’a gönderilmişti. Şu anda 94 yaşında olan anneannem ve rahmetli Hasan dedemin Barbaros mahallesindeki bahçeli evlerinin üst katında sokak tarafına bakan oturma odasında yaşıyordu. Benim ilkokul sıralarında olduğum zamanlardı. Rahmetli Ali dayım orta okul sınıf geçme hediyesi olarak Haluk abime üstünde Commodore 64 yazan bir bilgisayar almıştı. Vaktinin çoğunu resim yaparak ve 37 ekran renkli televizyona bağlanmış Commodore’unda oyun oynayarak geçiriyordu.
 

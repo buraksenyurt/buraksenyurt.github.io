@@ -2,11 +2,11 @@
 layout: post
 title: "Web Server Control Yazmak - 1"
 date: 2007-01-17 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - web-server-controls
+categories:
+  - Web Programlama
 ---
 Günümüz program geliştirme ortamların çoğu, geliştiricilerin (developers) daha kullanıcı dostu (user friendly) arabirimler tasarlayabilmeleri için sayısız kontrol içermektedir. Özellikle Asp.Net ortamından Asp.Net 2.0 ortamına geçildiğinde, web tabanlı uygulamaları geliştirirken kullanabileceğimiz kontrollerin sayısı oldukça artmıştır.(70den fazla kontrol) Buna rağmen var olan web sunucu kontrollerinin ihtiyacımızı karşılamadığı durumlar olabilir. Hatta ihtiyacımızı karşılayabilecek bir kontrol olmayabilir de. Bu gibi durumlarda geliştiriciler ya üçüncü parti bileşenleri satın alma ve kullanma yolunu tercih ederler yada ilgili sunucu kontrollerini (web server control) kendileri geliştirirler. Bu ilk makalemizde basit anlamda web sunucu kontrollerini nasıl geliştirebileceğimizi incelemeye başlayacağız.
 

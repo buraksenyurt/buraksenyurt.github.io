@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu-44 (Mail Adresi Doğru mu?)"
 date: 2012-01-02 10:40:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - smtp
   - mail
   - .net
   - extension-methods
+categories:
+  - Foto İpucu
 ---
 Aslında bu soruya cevap vermek özellikle web developer'lar için son derece kolay. RegularExpressionValidator kontrolünde uygun deseni seçip kontole hatalı mail adresi girilmesi engellenebilir. Ama yine de bazen tedbiri elden bırakmamakta yarar vardır. Söz gelimi bir mail adres listesine toplu mail atacağımız bir senaryoyu göz önüne alalım. Geliştirdiğimiz kodlarda mail adreslerinin doğru olup olmadığını çok basit bir hile ile kontrol edebiliriz. Nasıl mı?
 

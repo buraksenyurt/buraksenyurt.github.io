@@ -2,12 +2,12 @@
 layout: post
 title: "Parent-Child Tasks Kavramı"
 date: 2010-06-11 02:00:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming
   - parallel-computing
+categories:
+  - Paralel Programlama
 ---
 Planlama gerçek hayatta her zaman karşımıza çıkan ve yaşamımızın, işlerimizin düzenli devam edebilmesi için gereken olmazsa olmazlar arasında yer alan bir kavramdır. Toplantıların planlanmasından tutun da, işlerin hangi sırada yapılacağına karar verilmesine kadar pek çok yerde planlamanın önemini görürüz. Aslında başarılı sistemlerin tasarlanması, çalışması ve istenen sonuçları üretmesi iyi planlamayla ilişkilidir. Tasarımın planlanması, kaynakların planlanması, sistemin önceliklerinin planlanması, müşteri toplantılarının planlanması vs...Bazen kafamızda hayatımızın ilerleyişini planlarız ve bazende yazdığımız kodun fonksiyonelliklerini.
 

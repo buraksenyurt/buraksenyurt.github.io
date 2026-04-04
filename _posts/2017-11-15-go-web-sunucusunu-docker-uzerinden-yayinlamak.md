@@ -2,13 +2,13 @@
 layout: post
 title: "Go Web Sunucusunu Docker Üzerinden Yayınlamak"
 date: 2017-11-15 10:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - docker
   - container
   - web-hosting
+categories:
+  - Programlama Dilleri
 ---
 Gondor'da bir şeyler araştırmak için harika bir zaman. Çünkü elimdeki işler bitti. Böyle vakitleri kendi araştırmalarıma ayırmak hoşuma gidiyor, kim ne derse desin. Yeni gözdem Linux makinem de (Gondor) önümde durduğuna göre kısa bir süre onun üzerinde çalışabileceğimi düşünüyorum.
 

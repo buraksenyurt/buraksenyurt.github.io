@@ -2,8 +2,6 @@
 layout: post
 title: "Ruby Kod Parçacıkları 21 - Basit Web Server Geliştirmek"
 date: 2016-02-22 14:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - tcpserver
   - socket
@@ -14,6 +12,8 @@ tags:
   - get
   - tcp
   - iis
+categories:
+  - Programlama Dilleri
 ---
 Web tabanlı çalışan uygulamalar genellikle IIS (Internet Information Services) ve benzeri ortamlar üzerinde barındırılırlar. Aslında IIS basitçe TCP soket haberleşmesi gerçekleştiren bir ürün olarak düşünülebilir. Üzerinde konuşlandırılan kaynaklara olan erişimde ise genellikle HTTP protokolü ve Get, Post vb metodları kullanılır. Gelen taleplere göre uygun servislerin devreye girmesi söz konusudur.
 

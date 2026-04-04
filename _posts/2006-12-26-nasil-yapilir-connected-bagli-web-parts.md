@@ -2,11 +2,11 @@
 layout: post
 title: "Nasıl Yapılır : Connected(Bağlı) Web Parts"
 date: 2006-12-26 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - web-parts
+categories:
+  - Web Programlama
 ---
 Web uygulamalarımızda kullanabileceğimiz sayısız sunucu tabanlı kontrol vardır. Geliştirdiğimiz uygulamalarda bazı durumlarda birden fazla kontrolün kullanıldığı web sayfalarımız söz konusu olabilir. Bu tarz durumlarda kodları merkezileştirmek, istenen kontrolleri tek bir noktadan güncelleyebilmek amacıyla kullanıcı web kontrollerine (web user control) başvurabilir yada kendi web sunucu kontrollerimizi yazabiliriz. Özellikle kendi web sunucu kontrollerimizi var olan bir kontrolden türetme (inheritance) yardımıyla geliştirebileceğimiz gibi sıfırdan da yazabiliriz. (Kendi web kontrollerimizi oluşturmak ile ilgili olarak ilerleyen zamanlarda bir makale hazırlamayı düşünüyorum.)
 

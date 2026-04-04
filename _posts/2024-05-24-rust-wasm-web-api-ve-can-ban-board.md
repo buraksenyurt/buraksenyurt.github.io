@@ -2,8 +2,6 @@
 layout: post
 title: "Rust, WASM, Web Api ve Can-Ban Board !"
 date: 2024-05-24 08:49:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - web-api
@@ -13,6 +11,8 @@ tags:
   - html
   - bootstrap
   - javascript
+categories:
+  - Programlama Dilleri
 ---
 Rust çoğunlukla bir sistem programlama dili olarak öne çıkıyor. Ancak [geniş kütüphane](https://crates.io) desteği sayesinde bildiğimiz iş modellerinin uygulanabildiği türden birçok program da geliştirebiliyoruz. Bende hem rust kodlama pratiklerimi artırmak hem de basit gerçek hayat senaryolarını uçtan uca ele alabilmek adına bu tip bir uygulama geliştirmeye çalıştım. Sonrasında kamera arkasına geçtim.
 

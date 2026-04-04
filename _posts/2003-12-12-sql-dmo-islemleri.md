@@ -2,13 +2,13 @@
 layout: post
 title: "SQL_DMO İşlemleri"
 date: 2003-12-12 12:00:00
-categories:
-  - Veritabanı
 tags:
   - ado.net
   - sql
   - dmo
   - com+
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, Sql Distributed Management Objects (SQL Dağıtık Yönetim Nesneleri) kütüphanesini incelemeye çalışacağız. SQL_DMO kütüphanesi bir COM uygulaması olup, SQL sunucusu ile birlikte sisteme kurulmaktadır. Bu kütüphanedeki sınıflar yardımıyla, var olan bir sql sunucusu üzerinde yönetimsel işlemler gerçekleştirebiliriz. Örneğin, kullanıcı tanımlayabilir, yeni bir veritabanı yaratabilir bu veritabanına ait tablolar oluşturabilir, var olan bir veritabanı için yedekleme işlemleri gerçekleştirebilir, yedeklenmiş veritabanlarını geri yükleyebilir ve bunlar gibi pek çok yönetsel işlemi gerçekleştirebiliriz.
 

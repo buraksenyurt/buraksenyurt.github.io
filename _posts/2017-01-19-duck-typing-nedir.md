@@ -2,14 +2,14 @@
 layout: post
 title: "Duck Typing Nedir?"
 date: 2017-01-19 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - type-systems
   - duck-typing
   - static-languages
   - dynamic-programming
+categories:
+  - Programlama Dilleri
 ---
 Son bir yıldır Ruby ve Python gibi script diller üzerinde araştırmalar yapıyorum. Daha çok bu dilleri öğrenme, anlama gayretindeyim. En azından orta seviye bilgi sahibi olmak benim için yeterli. Bu dilleri incelerken uzun yıllardır çalıştığım dinamik tip sistemli ve derleyici odaklı yaklaşımları da sorgulamak durumunda kalıyoum. Nitekim farklı programlama yaklaşımlarına sahipler.
 

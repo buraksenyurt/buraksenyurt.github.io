@@ -2,13 +2,13 @@
 layout: post
 title: "Localization (Yerelleştirme) 2 - Dil Desteği"
 date: 2004-08-07 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - localization
   - globalization
   - multi-language
+categories:
+  - Programlama Dilleri
 ---
 Bir önceki makalemizde hatırlayacağınız gibi, .NET ile geliştirilen uygulamaların belirli kültürler için nasıl yerelleştirilebileceğini incelemeye başlamıştık. İlk bölümde, belirli bir kültürün daha çok sayısal, tarihsel ve sıralama formatları üzerinde durduk. Bu bölümde ise, yerelleştirmede daha da önemli olan bir konuya, uygulamaların farklı dillere göre destek vermesine değineceğiz.
 

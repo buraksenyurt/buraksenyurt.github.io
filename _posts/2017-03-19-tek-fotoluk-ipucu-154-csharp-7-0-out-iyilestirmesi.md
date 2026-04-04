@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu 154 - C# 7.0 out İyileştirmesi"
 date: 2017-03-19 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - out-variables
   - tryparse
   - out
+categories:
+  - Foto İpucu
 ---
 Henüz C# 6.0'ın nimetlerini şirket projelerinde deneyimleme fırsatı bulamamışken yakın zamanda çıkan Visual Studio 2017 ile birlikte gündeme oturan C# 7.0 kabiliyetlerini yeni yeni keşfetmeye başlıyorum. C# 7.0 tarafında da epey yenilik var. Bunlardan birisi de özellikle out anahtar kelimesinin kullanımına yönelik. En yaygın senaryo string bir içeriğin sayısal tipe dönüştürülmesi sırasında TryParse fonksiyonunun kullanılması. Normal şartlarda aşağıdaki kod parçasındaki gibi gerçekleştirdiğimiz bir operasyon bu.
 

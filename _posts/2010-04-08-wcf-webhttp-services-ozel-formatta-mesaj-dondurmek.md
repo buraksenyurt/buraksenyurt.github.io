@@ -2,14 +2,14 @@
 layout: post
 title: "WCF WebHttp Services - Özel Formatta Mesaj Döndürmek"
 date: 2010-04-08 07:39:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services
   - rest-api
   - non-soap
   - wcf-webhttp-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu yazımızda bizleri uzun, zorlu ve yorucu bir macera bekliyor. Şimdiden söylemek isterim ki yanınızda tatlı (Mesela kolalı jelibon olabilir), tuzlu yiyecek bir şeyler, boğaz kuruluğunuzu giderecek içecekler veya daha fazla oksijen çekmenizi sağlayacak sakızlar olsun. Unutmadan birde aspirin. Baş ağrısı için
 

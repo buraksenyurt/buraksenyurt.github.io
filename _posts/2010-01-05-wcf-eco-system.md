@@ -2,8 +2,6 @@
 layout: post
 title: "WCF Eco System"
 date: 2010-01-05 01:30:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - wcf-ria-services
@@ -12,6 +10,8 @@ tags:
   - ado.net-data-services
   - web-http-services
   - soap-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Özellikle son bir iki yıllık zaman dilimi içerisinde.Net tarafında pek çok servis modeli ve ismiyle karşılaştık. Örneğin Astoria kod adıyla başlayan Ado.Net Data Services, Silverlight gibi Rich Internet Application'ları hedef alan.Net RIA Services vb... (Eğer Microsoft'un ürünleri için kullandığı kod adlarını merak ediyorsanız [Wikipedia](http://en.wikipedia.org/wiki/List_of_Microsoft_codenames)'daki ilgili listeye bakmanızı öneririm) Hal böyle olunca ortada bir sürü kod adı ve isim oluşmaya başladı. Buda çok doğal olarak bizim gibi geliştricilerin kafasında pek çok soru işaretine neden oldu. Acaba hangi servis modelini hangi amaçlar ile kullanmalıyız? Bunların nihai sürümler yaklaştıkça isimlendirmeleri neler olacak? Ne gibi avantaj veya dez avantajları var?
 

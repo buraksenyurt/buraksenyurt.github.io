@@ -2,12 +2,12 @@
 layout: post
 title: "ArrayList Koleksiyonu ve DataGrid"
 date: 2004-01-07 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - arraylist
   - collections
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde, veritabanlarındaki tablo yapısında olan bir ArrayList'i bir DataGrid kontrolüne nasıl veri kaynağı olarak bağlayacağımızı inceleyeceğiz. Bildiğiniz gibi ArrayList bir koleksiyon sınıfıdır ve System.Collections isim uzayında yer almaktadır. Genelde ArrayList koleksiyonlarını tercih etmemizin nedeni, dizilere olan üstünlüklerinden kaynaklanmaktadır.
 

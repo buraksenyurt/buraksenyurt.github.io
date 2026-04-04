@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu-34(Güncel Process için Bellek Bilgileri)"
 date: 2011-10-18 15:11:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - .net-framework
   - process
   - xlinq
   - xml
+categories:
+  - Foto İpucu
 ---
 Çalıştırdığımız.Net tabanlı uygulamaların anlık bellek tüketimlerini kod içerisinden ölçümlemek ve hatta loglamak iyi bir fikir olabilir. Hatta bu çıktıyı XML formatında dış dünyaya da sunabiliriz. Basit anlamda aşağıdaki fotoğraf size ipucu verecektir kanaatindeyim.
 

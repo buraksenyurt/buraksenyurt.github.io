@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 97–Google Shortener URL Hizmetini C# ile Kullanmak"
 date: 2013-03-25 21:30:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - google
@@ -15,6 +13,8 @@ tags:
   - json
   - stream-reader
   - stream-writer
+categories:
+  - Foto İpucu
 ---
 Malumunuz bazen Web adreslerine ait URL satırları epeyce uzun olabiliyorlar ve bunları saklamak gibi amaçlarla kullanmak istediğimizde, genellikle kısaltma yoluna gitmeyi tercih ediyoruz (Sanırım kimse 20 haneye sığdırılabilecek 200 karakterlik bir URL bilgisi ile uğraşmak istemez) Bir URL adresini kısaltmak için kullanılabilecek pek çok global hizmet bulunmakta. Bunlardan birisi de Google’ ın Shortener servisi (ki [bu adresten de görebileceğiniz](http://goo.gl/) gibi kendisi de epeyce kısa ![Smile](/assets/images/2013/wlEmoticon-smile_92.png)). Peki bir tarayıcı ile bu söz konusu servise kolayca gönderebildiğimiz bir talebi kod tarafında C# ile gerçekleştirmek isteseydiniz nasıl bir yol izlersiniz? Aşağıdaki gibi olabilir mi?
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Code Coverage"
 date: 2019-02-05 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - tdd
   - test-driven-development
@@ -17,6 +15,8 @@ tags:
   - continuos-inspection
   - continuous-delivery
   - continuous-deployment
+categories:
+  - Framework Tabanlı Programlama
 ---
 Basketbol en sevdiğim spor dalı. Takım ayırt etmeksizin izlemeyi çok seviyorum. 40lı yaşların ortalarına doğru geliyor olsam da hala büyük bir keyifle oynuyorum da. Bazen saatlerce. En büyük rakibimse beş yaşından beri basketbol eğitim alan S (h) arp Efe. Son beş yıldır düzenli olarak idman yaptığı için kendisini epey geliştirmiş durumda. Bire birlerde acımıyor ve doğru basketbol oynamaya çalışıyor. Doğru basketbol için temellerin de doğru atılması gerekiyor. İlk koçu dahil şu an oynadığı kulüpteki koçu da Ona ve diğer çocuklara doğru alışkanlıkları öğretmeye çalışıyorlar. Çok zaman potaya şut bile atmadan tamamladıkları idmanlar vardır. Bunun yanına disiplinli çalışmayı da ekleyince çocuklar ilerleyen yaşlarında temel hareketlerde güçlü birer basketbolcu adayı haline geliyorlar.
 

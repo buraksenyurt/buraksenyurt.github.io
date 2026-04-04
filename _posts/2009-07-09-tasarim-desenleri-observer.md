@@ -2,12 +2,12 @@
 layout: post
 title: "Tasarım Desenleri - Observer"
 date: 2009-07-09 07:35:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop
   - csharp
+categories:
+  - Yazılım Tasarımı
 ---
 Yaklaşık olarak 10 yılı aşkın bir süredir yazılım teknolojileri ile ilgilenmekteyim. Bu süre zarfı içerisinde Delphi 1.0' dan tutunda Java'ya, C++'tan C#' a, Visual Basic'ten Cobol'a kadar pek çok programlama dili ile uğraşma fırsatım oldu. Her ne kadar dünyada kaç nesne yönelimli programlama dili olursa olsun, hayatın ve dolayısıyla yazılım teknolojilerinin değişmez kuralları arasında tasarım kalıpları yer almakta...
 

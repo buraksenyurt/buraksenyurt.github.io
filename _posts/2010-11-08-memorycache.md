@@ -2,8 +2,6 @@
 layout: post
 title: "MemoryCache"
 date: 2010-11-08 03:34:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - caching
@@ -11,6 +9,8 @@ tags:
   - memorycache
   - in-memory-caching
   - asp.net-caching
+categories:
+  - Web Programlama
 ---
 Deadline…Benim gibi yazılım geliştirici olan pek coğumuzun sevmediği kelimelerin başında geldiğinden eminim. Ancak kaçınılmaz bir gerçek olduğunu da biliyoruz. Her şeye rağmen onunla yaşamak veya yaşamasını öğrenmek zorundayız.
 

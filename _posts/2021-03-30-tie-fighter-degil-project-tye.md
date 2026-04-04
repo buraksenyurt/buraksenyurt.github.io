@@ -2,8 +2,6 @@
 layout: post
 title: "Tie Fighter Değil, Project Tye!"
 date: 2021-03-30 15:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-core
   - .net
@@ -22,6 +20,8 @@ tags:
   - wsl
   - worker-service
   - service-discovery
+categories:
+  - Framework Tabanlı Programlama
 ---
 Star Wars'ın figür kabul edilen gemilerinden birisi imparatorluk güçlerinin Tie Fighter'ıdır. Lord Vader ile özdeşlemiş olan bu figürün kulak tırmalayan ama rahatsız etmeyen sesinin Almanların İkinci Dünya savaşındaki hafif bombardıman uçaklarından birisi olan Junkers Ju-87 Stuka'dan (Sturzkampfflugzeug) geldiği bile söylenir.
 

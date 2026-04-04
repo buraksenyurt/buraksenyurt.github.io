@@ -2,13 +2,13 @@
 layout: post
 title: "Windows Servislerine Giriş"
 date: 2004-04-28 15:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-services
   - hello-world
   - csharp
   - windows
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde Windows servislerine kısa bir giriş yapacak ve en basit hâliyle bir Windows servisinin, .NET ortamında nasıl oluşturulacağını incelemeye çalışacağız. Öncelikle Windows Service nedir, ne amaçlarla kullanılır bunu irdelemeye çalışacak, daha sonra Windows servislerinin mimarisini kısaca inceleyeceğiz.
 

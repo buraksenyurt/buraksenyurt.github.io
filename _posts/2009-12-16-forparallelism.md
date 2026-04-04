@@ -2,10 +2,10 @@
 layout: post
 title: "FORParallelism"
 date: 2009-12-16 04:55:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
+categories:
+  - Paralel Programlama
 ---
 Günümüz yazılım teknolojilerinin belkide en popüler olan konularından biriside paralel programlamadır (Parallel Programming). Özellikle kullanıcı bilgisayarlarının artık birden fazla çekirdeğe sahip işlemcilerle donatılmış olduğu düşünüldüğünde geliştirme ortamlarının da (.Net Framework 4.0' da olduğu üzere
 

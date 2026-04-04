@@ -2,13 +2,12 @@
 layout: post
 title: "Raspberry Pi'den Python ile Tweet Göndermek"
 date: 2016-06-14 06:00:00
-categories:
-  - Programlama Dilleri
-  - IoT
 tags:
   - python
   - raspberry-pi
   - twitter-api
+categories:
+  - Programlama Dilleri
 ---
 Geçtiğimiz sene yaz ayı boyunca Ruby programlama dilini öğrenmeye çalışmıştım. Ruby dilinde orta seviyelere kadar bilgimi ilerletebildim ancak bu yaz dönemini paslanmamak adına farklı bir uğraş ile geçirmeye karar verdim. Ruby'yi öğrenmeye başlama amaçlarımın başında çocuklara programlama dilini öğretmek geliyordu. Benzer şekilde Raspberry Pi'nin de bu amaçla kullanılabildiğini öğrendim. Özellikle Scratch dilini kullanarak çocukların robotlara bir şeyler yaptırabilmesi ve bu şekilde programlamayı öğrenmeleri harika. Pek tabi Raspberry Pi'yi özel yapan bir diğer neden de IoT (Internet of Things).
 

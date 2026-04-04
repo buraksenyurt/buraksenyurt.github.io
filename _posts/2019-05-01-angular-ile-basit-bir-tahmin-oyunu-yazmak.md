@@ -2,8 +2,6 @@
 layout: post
 title: "Angular ile Basit Bir Tahmin Oyunu Yazmak"
 date: 2019-05-01 17:00:00
-categories:
-  - Web Programlama
 tags:
   - angular
   - typescript
@@ -17,6 +15,8 @@ tags:
   - angular-cli
   - npm
   - node-package-manager
+categories:
+  - Oyun Programlama
 ---
 Commodore 64 sahibi olduğum günlerde beni çok etkileyen bir Futbol oyunu vardı. Üstelik yerli malıydı. Görsel bir arabirimi yoktu. Komut satırından size sorulan sorulara verdiğiniz cevaplara göre Türkiye birinci futbol liginde maçlar yapıyordunuz. Açılışta takımınızı ve rakibinizi seçtikten sonra yazı tura sorusu ile başlıyordu her şey. Kazandıysanız da "top mu, kale mi" sorusuyla devam ediyordu. Maçın süresi ilerledikçe komut satırından sorular gelmeye devam ediyordu. "Rakip ceza sahasının gerisinde şut çekti. Kaleciniz ne yapacak?" Ve seçenekler geliyordu. "Plonjon, out'a çelme vs" Yapılan seçime göre gol yiyebilir, topu çelebilir veya tutabilirdiniz. İsmini bir türlü hatırlayamadığım ama komut satırından olsa bile beni saatlerce monitör başına kitleyen bir oyundu. Zaten o devrin Commodore 64 oyunlarındaki yaratıcılık, programlama kabiliyetleri bir başkaydı. Bu düşünceler ışığında günlerden bir gün Angular tarafı ile ilgili [saturday-night-works çalışmalarımı](https://github.com/buraksenyurt/saturday-night-works) yapmaktayken bende basit ama bana keyif verecek bir oyun yazayım istedim.
 

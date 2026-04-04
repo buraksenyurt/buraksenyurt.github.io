@@ -2,14 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu-32(Environment Verisini XML Olarak Sunmak)"
 date: 2011-09-22 07:05:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - system.environment
   - xlinq
   - xelement
+categories:
+  - Foto İpucu
 ---
 System.Environment tipi içerisinde son derece yararlı ortam bilgileri bulunmaktadır. Bu bilgileri elde etmek son derece kolaydır. Hatta dilerseniz bunları XML formatında dış dünyaya sunabilirsinizde. Nasıl mı?
 

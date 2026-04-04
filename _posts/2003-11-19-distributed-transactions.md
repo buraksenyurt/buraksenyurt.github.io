@@ -2,8 +2,6 @@
 layout: post
 title: "Distributed Transactions"
 date: 2003-11-19 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
@@ -11,6 +9,8 @@ tags:
   - com+
   - component-services
   - oltp
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bildiğiniz gibi bir önceki makalemizde Transaction kavramından bahsetmiş, ancak birden fazla veritabanı için geçerli olacak Transaction işlemlerinin Dağıtık Transaction’lar olarak adlandırıldığından söz etmiştik. Bu makalemizde Dağıtık Transaction’ları inceleyecek ve her zaman olduğu gibi konuyu açıklayıcı basit bir örnek geliştireceğiz.
 

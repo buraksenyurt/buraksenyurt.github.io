@@ -2,12 +2,12 @@
 layout: post
 title: "WCF Tarafında Task Bazlı Asenkron Operasyonlar"
 date: 2012-05-24 14:50:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - task-parallel-library
   - iasyncresult
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim
 

@@ -2,14 +2,14 @@
 layout: post
 title: "İlişkiler ve Hesaplanmış Alanların Bir Arada Kullanılması"
 date: 2004-04-08 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - sql
   - dataset
   - calculated
   - csharp
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde aralarında bire-çok (one-to-many) ilişki olan tablolar için hesaplanmış alanların, yani DataColumn sınıfının Expression özelliği ile oluşturduğumuz sütunların, tablolar arasındaki ilişkiler ile nasıl bir arada kullanılabileceğini incelemeye çalışacağız. Burada bir arada kullanımdan kastım, örnek olarak; ebeveyn (parent) tabloda fiziki olarak var olmayan ancak uygulamanın çalışması sırasında oluşturulacak bir sütundan, detay tablosundaki ilişkili alanlar üzerinden toplam, ortalama, miktar gibi Aggregate ifadelerinin çalıştırılmasından ve sonuçların yine parent tabloya yansıtılmasından bahsediyorum.
 

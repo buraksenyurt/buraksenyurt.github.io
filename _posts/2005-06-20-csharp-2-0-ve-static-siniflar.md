@@ -2,12 +2,12 @@
 layout: post
 title: "C# 2.0 ve Static Sınıflar"
 date: 2005-06-20 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - static
   - static-class
+categories:
+  - Programlama Dilleri
 ---
 Çoğu zaman uygulamalarımızda, nesne örneğinin oluşturulmasına gerek duymayacağımız üyeleri kullanmak isteriz. Bu amaçla static üyeleri kullanırız. Şimdi bir de sadece static üyelerden oluşacak bir sınıf tasarlamak istediğimizi düşünelim. C# programlama dilinin ilk versiyonunda bu tip bir sınıfı yazmak için dikkat etmemiz gereken bir takım noktalar vardır. Static üyeler kullanılabilmeleri için tanımlı oldukları sınıfın nesne örneğine ihtiyaç duymazlar. Bu sebepten sadece static üyeler içerecek olan bir sınıfın örneklendirilememesi tercih edilecektir. Örneğin aşağıdaki kod parçasını dikkate alalım. TemelAritmetik isimli sınıfımız Toplam isimli static bir metod içermektedir.
 

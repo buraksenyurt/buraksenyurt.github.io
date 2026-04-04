@@ -2,11 +2,11 @@
 layout: post
 title: "Derinlemesine Session Kullanımı - 1"
 date: 2004-12-30 18:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - session
+categories:
+  - Web Programlama
 ---
 Bu makalemizde, ASP.NET sunucularında durum yönetimi (state management) amacıyla kullanılan Session nesnesini detaylı bir şekilde incelemeye başlayacağız. Bildiğiniz gibi, web anatomisinde durum yönetimi başlı başına bir terminolojidir. Web sitelerinin yer aldığı web sunucularının istemci makinelerde durum yönetme yeteneğine sahip olamamaları sonucu, belli bir kullanıcıya ait bilgilerin sayfalar arasında korunması veya taşınabilmesi için değişik teknikler geliştirilmiştir. Session kullanımı bu tekniklerden birisidir. Öncelikle Session kavramının ne olduğunu ve ne için kullanıldığını kavramaya çalışalım.
 

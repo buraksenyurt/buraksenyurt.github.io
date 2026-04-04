@@ -2,8 +2,6 @@
 layout: post
 title: "Dosya Satır Sayısını Bulmak"
 date: 2013-10-06 12:02:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - text-files
@@ -12,6 +10,8 @@ tags:
   - line-codes
   - file-io
   - system.io
+categories:
+  - Programlama Dilleri
 ---
 Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalışmış ve yazılım geliştirmişseniz, eminimki hayatınızın bir döneminde büyük boyutlu Text dosyaları ile çalışmak zorunda kalmışsınızdır.
 

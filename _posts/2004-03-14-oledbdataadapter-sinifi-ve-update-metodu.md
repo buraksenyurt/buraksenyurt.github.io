@@ -2,8 +2,6 @@
 layout: post
 title: "OleDbDataAdapter Sınıfı ve Update Metodu."
 date: 2004-03-14 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb
@@ -14,6 +12,8 @@ tags:
   - update
   - crud
   - csharp
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, OleDbDataAdapter sınıfının, veriler üzerindeki güncelleme işlemlerinin veri kaynağına yansıtılması sırasında nasıl bir rol oynadığını ve kullanıldığını incelemeye çalışacağız. Önceki makalelerimizde belirttiğimiz gibi, OleDbDataAdapter nesnesi yardımıyla veri kaynağından, uygulamalarımızdaki bağlantısız katman nesnelerine veri kümelerini aktarmak amacıyla Fill metodunu kullanıyorduk. Diğer yandan, bağlantısız katman nesnelerimizin temsil ettiği veriler üzerinde yapılan değişiklikleri veritabanına göndermek istersek, Update metodunu kullanırız.
 

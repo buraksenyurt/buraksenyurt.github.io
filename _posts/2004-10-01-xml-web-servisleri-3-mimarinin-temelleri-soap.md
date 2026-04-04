@@ -2,11 +2,11 @@
 layout: post
 title: "Xml Web Servisleri - 3 ( Mimarinin Temelleri - SOAP)"
 date: 2004-10-01 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - xml-web-service
   - soap
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu makalemizde, XML Web Servislerinin mimarisine daha yakından bakmaya çalışacak ve SOAP (Simple Object Access Protocol)'ı kısaca tanımaya çalışacağız. Bir web servisinin, istemci uygulamalar tarafından nasıl kullanılabildiğini anlamak, web servislerinin mimarisini iyi bilmekle mümkündür. Mimariyi kolay bir şekilde anlayabilmek için, daha önceki makalemizde geliştirdiğimiz web servisi ve istemci uygulamayı göz önüne alacağız. Her şeyden önce geliştirdiğimiz web servisi local olarak test edilebilen ve tarayıcı üzerinde çalışabilen bir asmx dosyasından ve buna bağlı Code-Behind dosyasından oluşmaktadır. Web servisini test etmek için, web servisinin bulunduğu adresteki asmx uzantılı dosyayı, tarayıcı penceresinden çalıştırmak yeterlidir. Bunun sonucunda, tarayıcı penceresinde bu web servisi hakkındaki bilgilere ulaşabilir ve içerdiği metotları görebiliriz.
 

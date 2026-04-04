@@ -2,12 +2,12 @@
 layout: post
 title: "Minicik Session İçeriği"
 date: 2010-11-02 15:10:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - session
   - session-compression
+categories:
+  - Web Programlama
 ---
 Bildiğiniz üzere bir süredir Microsoft Teknoloji Günleri Akşam Sınıfı etkinliklerini gerçekleştirmekteyiz. Kasım ayının konusu ise hemen her sürümünde köklü ve önemli yenilikler ile birlikte gelen Asp.Net'in 4.0 sürümü
 

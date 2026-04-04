@@ -2,14 +2,14 @@
 layout: post
 title: ".NET Remoting'i Kavramak"
 date: 2004-05-22 09:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-remoting
   - hello-world
   - http
   - tcp
   - data-communication
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, .NET remoting sistemini anlamaya çalışacak ve .NET remoting sistemini oluşturan temel yapılar üzerinde duracağız. Öncelikle .NET remoting'in ne olduğunu ve ne işe yaradığını tanımlamakla işe başlayalım. Remoting sistemi, kısaca, farklı platformlarda çalışan uygulamalar arasında veri alışverişine imkân sağlayan bir sistemdir. Bu tanımda söz konusu olan platformlar farklı işletim sistemlerinin yer aldığı farklı ve birbirlerinden habersiz proseslerde çalışan uygulamaları içerebilir. Olayın en kilit noktası da, farklı sistemlerin veri alışverişinde bulunabilmelerinin sağlanmasıdır.
 

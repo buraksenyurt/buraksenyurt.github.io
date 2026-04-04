@@ -2,8 +2,6 @@
 layout: post
 title: "Sıkça Duyduğum Deno'ya Hello Dedim"
 date: 2020-01-04 18:00:00
-categories:
-  - Web Programlama
 tags:
   - deno
   - nodejs
@@ -13,6 +11,8 @@ tags:
   - router
   - postman
   - ubuntu
+categories:
+  - Web Programlama
 ---
 Denver, the last dinosaur
 He's my friend and a whole lot more

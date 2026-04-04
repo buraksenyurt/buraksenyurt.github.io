@@ -2,13 +2,13 @@
 layout: post
 title: "Transaction' larda SavePoint Kullanımı"
 date: 2004-06-15 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - transaction
   - isolation-levels
   - save-point
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, ADO.NET ile gerçekleştirilen transaction işlemlerinde, SQL'de yer alan SavePoint'lerin nasıl uygulandığını incelemeye çalışacağız. SQL'de transaction işlemlerinde, her bir iş parçasından sonra gelinen noktanın birer SavePoint olarak kaydedilmesi sık rastlanan bir tekniktir. Bir transaction birden fazla iş parçasına sahiptir. Her bir iş parçasının başarılı olması halinde, tüm bu işlemler onaylanarak (commit) kesin olarak veritabanına yansıtılır. Diğer yandan, iş parçalarının herhangi birisinde meydana gelebilecek bir aksaklık sonucu transaction RollBack işlemini uygular ve tüm işlemler yapılmamış sayılarak veritabanı, transaction başlamadan hemen önceki hâline getirilir.
 

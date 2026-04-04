@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu-48(Uri Extensions for RSS)"
 date: 2012-03-16 00:00:00
-categories:
-  - Genel
 tags:
   - uri
   - extension-methods
   - rss
   - html
+categories:
+  - Foto İpucu
 ---
 Siz de benim gibi aklınıza geldikçe ve vaktiniz oldukça Extension Method (Genişletme Metodu) yazmaya çalışanlardan mısınız?
 

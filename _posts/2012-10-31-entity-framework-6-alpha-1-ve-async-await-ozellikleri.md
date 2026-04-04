@@ -2,8 +2,6 @@
 layout: post
 title: "Entity Framework 6 Alpha 1 ve async, await Özellikleri"
 date: 2012-10-31 18:00:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - alpha
@@ -12,6 +10,8 @@ tags:
   - task-parallel-library
   - asynchronous-programming
   - nuget
+categories:
+  - Framework Tabanlı Programlama
 ---
 Doğruyu söylemek gerekirse yazılım hayatım boyunca en çok kurduğum cümlelerden birisi de sanıyorum ki şu olmuştur: “Microsoft’ un hızına yetişemiyoruz” Bazı açılardan bakıldığında bu özellikle nihayi ürün ile geliştirme yapanlar için bir handikap olarak görülebilir. Çünkü yeni sürümler genellikle geliştiricilerin ve ürün yöneticilerinin arzu ettikleri, görmek istedikleri kabiliyetleri içermektedir.
 

@@ -2,11 +2,11 @@
 layout: post
 title: ".Net 4.0 Öncesi ThreadPool Kullanımı"
 date: 2009-12-23 03:15:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - .net-framework
+categories:
+  - Framework Tabanlı Programlama
 ---
 İlk okulda eminimki pek çok arkadaşımız havuz problemlerinden müzdarip olmuştur. Genellikle bu havuzlarda ikiden fazla musluk olması neredeyse garantidir ve genellikle bu musluklardan bazıları havuzu belirli sürelerde doldururken, bazılarıda belirli sürelerde boşaltır. Hatta zamanla bu muslukların ne kadar hızla su doldurduğu veya boşalttığıda işin içerisine girer ve aslında sadece yüzmek için kullanabileceğimiz güzelim havuz koca bir problem haline dönüşür.
 

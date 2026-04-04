@@ -2,14 +2,14 @@
 layout: post
 title: "WCF–Custom AuthenticationService"
 date: 2014-11-30 18:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - asp.net-authentication-service
   - authentication
   - authorization
   - principle-permission
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bazen bir yola baş koyarız ama o kadar uzundur ki git git bitmek bilmez. Yolda bin bir türlü zorluğu aşmak zorunda kalırız. Hatta hangi zorluklarla karşılacağımızı da bilemeyebiliriz. Yolun uzunluğuna, karşılaşılan zorluklara bağlı olarak ya geri döneriz ya başka bir yola saparız ya da inat edip sonuna kadar gitmeye çalışırız. Mücadelinin sonunda yolun sonuna varmak da yeterli olmayabilir.
 

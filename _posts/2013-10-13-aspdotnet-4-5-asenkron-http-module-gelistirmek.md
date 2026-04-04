@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net 4.5–Asenkron HTTP Module Geliştirmek"
 date: 2013-10-13 11:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - http-handler
@@ -14,6 +12,8 @@ tags:
   - module
   - asp.net-pipeline
   - asp.net-runtime
+categories:
+  - Web Programlama
 ---
 Bir çoğunuz gibi ben de düzenli olarak bazı dergilerin abonesiyim ve her ay onları alıp biraz karıştırdıktan sonra arşive (yani çalışma odasındaki kütüphaneye) kaldırmaktayım.
 

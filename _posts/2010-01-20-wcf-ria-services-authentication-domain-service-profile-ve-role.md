@@ -2,13 +2,13 @@
 layout: post
 title: "WCF RIA Services - Authentication Domain Service - Profile ve Role"
 date: 2010-01-20 16:10:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services
   - windows-communication-foundation
   - wcf-eco-system
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Yandaki resmin bir renk cümbüşü oluşturup sizlere çok güzel göründüğüne eminim. Hatta bu resmin biraz sonra anlatacağımız konu ile olan ilgisini merak ediyor olabilirsiniz. Ne yazıkki yok. Sadece renk cümbüşünün benide etkilediğini ve yazının hoş görünmesi için eklediğimi itiraf edebilirim. Gelelim asıl mevzumuza.
 

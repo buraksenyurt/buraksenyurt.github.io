@@ -2,8 +2,6 @@
 layout: post
 title: "Dependency Inversion Principle - Kavramak"
 date: 2013-05-03 00:10:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - software-design-principle
   - dip
@@ -13,6 +11,8 @@ tags:
   - windsor-castle
   - unity-framework
   - solid
+categories:
+  - Yazılım Tasarımı
 ---
 Bu görsel dersimizde, SOLID ilkelerinden birisi olup Yazılım Tasarım Presinpleri (Software Design Principles) içerisinde yer alan Dependency Inversion’ ı kavramaya çalışıyoruz. Konuyu irdelerken basit bir senaryoyu göz önüne alıyor, önce DIP olmadan ilerliyor ve sorunları teşhis ediyoruz. Sonrasında ise Dependency Inversion prensibini baz alarak bağımlılıkları tersine çeviriyor ve problemli kısımları iyileştiriyoruz.
 

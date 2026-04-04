@@ -2,12 +2,12 @@
 layout: post
 title: "AJAX ve JSON Desteği"
 date: 2008-02-25 08:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - ajax
   - json
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Son yıllarda özellikle Web uygulamalarında AJAX (Asynchronous Javascript And XML) mimarisi oldukça yaygın bir şekilde kullanılmaktadır. Özellikle sunucu taraflı (Server-Side) çalışan Asp.Net gibi web uygulaması geliştirme modellerinde istemciler (Clients) tarafından sunucuya (Server) doğru gerçekleştirilen POST işlemleri sırasında, sayfanın tamamının gönderilmesi söz konusudur. AJAX modeli sayesinde istemci tarafında yer alan sayfanın tüm içeriği yerine sadece değiştirilmesi istenen parçaların sunucuya gönderilmesi, işlenmesi ve cevapların alınarak tarayıcı uygulama (Browser Application) üzerinde gösterilmesi mümkün olmaktadır. Böylece sayfanın gerçektende değişmesi gereken içeriğinin istemci ve sunucu arasındaki hareketi söz konusudur. Bir başka deyişle gereksiz olan içeriğin sunucuya tekrar gönderilmesinin, işlenmesinin önüne geçilmesi sağlanmaktadır. Bu bir anlamda son kullanıcı (End User) için daha zengin etkileşime sahip ve performanslı bir web ortamı oluşturulması anlamına da gelir.
 

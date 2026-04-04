@@ -2,8 +2,6 @@
 layout: post
 title: "NoSQL Maceraları - Couchbase İle Hello World"
 date: 2015-11-07 20:00:00
-categories:
-  - Veritabanı
 tags:
   - nosql
   - nancy-framework
@@ -13,6 +11,8 @@ tags:
   - json
   - captain-slow
   - n1ql
+categories:
+  - Veritabanı
 ---
 Uzun süredir NoSQL ürünleri ile ilgilenmediğimi fark ettim ve bu haftanın araştırma konusu olarak kendime bir NoSQL sistemi seçmeye karar verdim. Aslında aklımda bir alan vardı. Özellikle Nancy Framework'ü incelediğim sırada karşıma çıkan IoT (Internet of Things) ve NoSQL ilişkisi dikkat çekiciydi. Burada geçerli olan ve kullanılan veritabanı sistemlerinden bağzılarına baktım.
 

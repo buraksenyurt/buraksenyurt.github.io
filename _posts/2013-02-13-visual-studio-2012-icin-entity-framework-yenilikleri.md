@@ -2,12 +2,12 @@
 layout: post
 title: "Visual Studio 2012 için Entity Framework Yenilikleri"
 date: 2013-02-13 01:18:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - entity-framework
   - code-first-development
   - visual-studio
+categories:
+  - Framework Tabanlı Programlama
 ---
 Çok eskiden kullanılan programlama dilleri ve platformları düşünüldüğünde çok ilkel IDE’ ler ile çalışmış olduğumuzu görmekteyiz. Hatta bazı programlama dilleri ile yapılan geliştirmelerde değil IDE, komut satırına mahkum olmuşuzdur (Gerçi komut satırında script yazarak geliştirme yapmak özellikle fonksiyonel programlama dilleri göz önüne alınırsa oldukça popüler ve isabetlidir)
 

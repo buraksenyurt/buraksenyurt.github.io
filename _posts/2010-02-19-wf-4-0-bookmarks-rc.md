@@ -2,10 +2,10 @@
 layout: post
 title: "WF 4.0 - Bookmarks [RC]"
 date: 2010-02-19 05:04:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Çalışmakta olduğum yazılım şirketinin çok yakınında kocaman bir alışveriş merkezi bulunmakta. Bazen öğle yemekleri için alışveriş merkezinin tahsis ettiği servisler ile oraya gidiyoruz. Alışveriş merkezi olduğu için tehlikeli bir yer olduğunu da söyleyebiliriz.
 

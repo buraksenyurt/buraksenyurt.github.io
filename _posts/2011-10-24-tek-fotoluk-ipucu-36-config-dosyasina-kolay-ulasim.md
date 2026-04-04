@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu-36(Config Dosyasına Kolay Ulaşım)"
 date: 2011-10-24 14:30:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - configuration-manager
   - configuration-api
   - app.config
   - .net-framework
+categories:
+  - Foto İpucu
 ---
 .Net Framework 2.0 ile birlikte gelen Configuration API'sini hepimiz biliyoruzdur. Bu API sayesinde config dosya içeriklerinin Managed karşılıkları olan tiplere ulaşmamız son derece kolay. Aslına bakarsanız pek çok uygulamada config dosyası içerisinde ConnectionStrings ve AppSettings kısımlarını sıklıkla kullandığımızı görmekteyiz. Bu içeriklere daha efektif ve performanslı erişim için belki bir Wrapper tip işimizi görebilir. Nasıl mı?
 

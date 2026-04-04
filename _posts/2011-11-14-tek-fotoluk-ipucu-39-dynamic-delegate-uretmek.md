@@ -2,14 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu-39(Dynamic Delegate Üretmek)"
 date: 2011-11-14 14:45:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - delegate
   - reflection
   - method-info
+categories:
+  - Foto İpucu
 ---
 Bazen çalışma zamanına ilişkin yapmamız gereken atraksiyonlar olur. Söz gelimi çalışma zamanında bir delegate tipinin dinamik olarak üretilmesini ve yürütülmesini isteyebiliriz? Peki bu nasıl olacak? İşin içerisine birazcık Reflection katarak tabiki de
 

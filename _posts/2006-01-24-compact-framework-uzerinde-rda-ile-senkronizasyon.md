@@ -2,10 +2,10 @@
 layout: post
 title: "Compact Framework Üzerinde RDA ile Senkronizasyon"
 date: 2006-01-24 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - Mobile
+categories:
+  - Programlama Dilleri
 ---
 Mobil uygulamalarda veri senkronizasyonu son derece önemlidir. Örneğin bir kurye firmasının dağıtım elemanını göz önüne alalım. Mobil cihaz ile donatılmış olan bu personelin görevi, kendisine verilen teslimat bilgilerine göre, sipariş sahiplerine ürünlerini teslim etmektir. Her çalışma gününün başında, teslimat yapacağı kişilerin bilgilerini ana sunuculardan mobil cihazına yükleyerek teslimat için hareket geçen personel, tamamlanan teslimatları anında veya belirli bir süre sonunda topluca asıl sunuculara göndererek gerekli güncelleştirme işlemlerini yapar. Bu senaryo gereği personelin teslimat bilgilerini düzenli olarak alması, tamamlanaları işaretlemesi ve son olarak bu bilgileri asıl sunucuya göndermesi gerekir.Bu noktada senaryonun iki ucunda yer alan sunucu ve mobil tarafındaki veriler arasındaki güncelliği çeşitli senkranizasyon mimarileri ile sağlayabiliriz.
 

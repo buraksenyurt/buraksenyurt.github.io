@@ -2,8 +2,6 @@
 layout: post
 title: "Matematik ve Oyun Programlama - Missile Command - Final"
 date: 2022-11-29 11:32:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -13,6 +11,8 @@ tags:
   - collision-detection
   - clamping
   - vektörler
+categories:
+  - Oyun Programlama
 ---
 Hiçbir ödül veya karşılık beklemeden kendinizi iyi hissetmek adına en son ne yaptığınızı hatırlıyor musunuz? Bu öyle değişik bir iç motivasyon ki kendinizi bir amaca adayarak hareket etmenizi sağlıyor. Karşılaşılan engeller engel olmaktan çıkıyor ve anlamak istediğiniz şeyler haline geliyor. En azından ben birkaç haftadır böyle hissediyorum. Cevval bir oyun programcısı olmak ya da akademide bu alana dair dersler vermek gibi bir amacım yok ama çok güçlü bir iç motivasyonum var; öğrenmek…
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Spring Boot ile PostgreSQL Kullanan Basit Bir Web Uygulaması Geliştirmek"
 date: 2020-10-19 07:20:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - spring-framework
   - spring-boot
@@ -14,6 +12,8 @@ tags:
   - ubuntu
   - dependency-injection
   - spring-initializr
+categories:
+  - Web Programlama
 ---
 Spring Boot maceralarımız hız kesmeden devam ediyor. Bu sefer PostgreSQL veritabanını kullanan bir Web uygulamasını resmi dokümandan da yararlanarak geliştirmeye çalışacağız. Örneğimizde veritabanı olarak PostgreSQL kullanabiliriz. Her zaman olduğu gibi sisteme kurmamız şart değil. Pekala Docker imajından yararlanabiliriz. Kurgumuz basit bir MVC düzeneği olacak. Statik bir web sayfası dışında listeleme ve yeni kategori ekleme adımlarında şablonlardan (templates) faydalanacağız. Kategorileri ifade eden bir POJO sınıfımız olacak. PostgreSQL bağımlılığı kapsamında temel CRUD operasyonlarının tamamı Spring Boot'e ekleyeceğimiz bağımlılık sayesinde zaten hazır gelecek. Bunu kategori türüne uygulamak içinse generic bir Repository arayüzünden türetme yoluna gideceğiz.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Razor Dünyasındaki İlk Adımlarım"
 date: 2019-05-17 12:53:00
-categories:
-  - Web Programlama
 tags:
   - razor-page
   - .net-core
@@ -20,6 +18,8 @@ tags:
   - bootstrap
   - .net
   - viewdata
+categories:
+  - Web Programlama
 ---
 Bizim servisin dönüş yolculuğu bir başkadır. Her gün yaklaşık git gel neredeyse seksen kilometrelik yol teperiz (Daha ne kadar teperim bilemiyorum tabii) Dönüş yolculuğumuz trafiğin durumuna göre bazen çok uzun sürer. İşte böyle akşamların çok özel bir anı vardır.
 

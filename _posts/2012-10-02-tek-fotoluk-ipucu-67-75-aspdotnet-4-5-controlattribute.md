@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 67.75–Asp.Net 4.5 ControlAttribute"
 date: 2012-10-02 02:00:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - asp.net
@@ -14,6 +12,8 @@ tags:
   - attribute
   - nitelik
   - csharp
+categories:
+  - Foto İpucu
 ---
 Asp.Net 4.5 ile gelen önemli tiplerden birisi de, System.Web.ModelBinding isim alanı (System.Web.dll assembly’ ı içerisindedir) altında yer alan ControlAttribute niteliğidir (Attribute). Metod parametrelerine uygulanabilen bu nitelik ile, veri bağlı kontrollerin (GridView gibi) filtre bazlı çalıştığı senaryolarda, filtreleme kriterinin/kriterlerinin nereden alınacağı, kod seviyesinde kolayca belirtilebilir. Aşağıdaki fotoğrafta görülen örnekte, albümlerin sorgulanmasında kullanılan ArtistId değerinin bir DropDownList öğesinden çekileceği, GetAlbums metodu içerisindeki Control niteliği yardımıyla ifade edilmiştir
 

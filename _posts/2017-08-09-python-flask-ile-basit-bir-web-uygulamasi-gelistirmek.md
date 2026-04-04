@@ -2,8 +2,6 @@
 layout: post
 title: "Python - Flask ile Basit Bir Web Uygulaması Geliştirmek"
 date: 2017-08-09 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - python
   - flask
@@ -14,6 +12,8 @@ tags:
   - http
   - html
   - template
+categories:
+  - Programlama Dilleri
 ---
 Yazıyı yazdığım şu yaz gününde hava epey sıcak. İstanbul'da öğle saatlerinde 39 dereceyi gördük. Güney tarafında yaşayan bir kaç yakın arkadaşımdan 48 dereceli rakamları duyduktan sonra ise halimize şükredelim dedim. Açtım Python kitabımı, çalışmaya devam ettim.
 

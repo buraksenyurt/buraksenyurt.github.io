@@ -2,13 +2,13 @@
 layout: post
 title: "Microsoft.Net Services - Service Bus için REST Tabanlı Hello World"
 date: 2009-11-19 18:00:00
-categories:
-  - Bulut Bilişim
 tags:
   - windows-azure
   - service-bus
   - windows-communication-foundation
   - rest-api
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir önceki [yazımızda](/2009/11/11/microsoftdotnet-services-service-bus-icin-hello-world/)Microsoft.Net Services alt yapsının önemli parçalarından birisi olan Service Bus hizmetini incelemeye çalışmış ve basit bir Hello World uygulama koleksiyonu geliştirmiştik. Bu yazımızda ise REST bazlı geliştirilen bir WCF servisine herhangibir tarayıcı yardımıyla HTTP Get metoduna göre, Service Bus üzerinden nasıl ulaşabileceğimizi incelemeye çalışacağız.
 

@@ -2,14 +2,14 @@
 layout: post
 title: "Task Süreçlerinde Bilinçli Olarak Duraksatma"
 date: 2010-12-31 13:20:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - csharp
   - .net-framework
   - parallel-programming
   - thread
+categories:
+  - Paralel Programlama
 ---
 Pek çoğumuz hayatımızın çeşitli dönemlerinde ayakta veya oturarak bir şeyler için beklemek zorunda kalırız. Kimi zaman seyahat edeceğimiz yere gidecek aracı bekleriz. Özellikle uçak seyahatleri gibi gecikmelerin sıklıkla yaşanabileceği durumlardan tutunda, İstanbul trafiğinin akşam saatlerindeki yoğunluğu yüzünden yine belirsiz süre dolmuş beklenmesi gibi hallerle sıklıkla karşılaşılır.
 

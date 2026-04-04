@@ -2,8 +2,6 @@
 layout: post
 title: "Stream ve Pipe Mevzusu"
 date: 2018-07-12 18:00:00
-categories:
-  - Web Programlama
 tags:
   - nodejs
   - stream
@@ -16,6 +14,8 @@ tags:
   - event
   - writable-stream
   - readable-stream
+categories:
+  - Web Programlama
 ---
 West-World bu hafta neredeyse savaş alanı gibiydi. Node.js tarafında öğrenmeye çalştığım yeni konu sebebiyle makineyi bir çok kez restart etmek zorunda kaldım. Üstelik düğmeden...
 Sebep çok büyük boyutlu bir dosya içeriğini basit bir web sunucusu üzerinden sunmaya çalışmaktı. Aslında kimse bu tip bir şey yapmaz. Hadi yapsa da koca dosyayı tek seferde istemciye göndermez. Kaldı ki istemci de bu web hizmetine herhangi bir tarayıcıdan talep göndermez.

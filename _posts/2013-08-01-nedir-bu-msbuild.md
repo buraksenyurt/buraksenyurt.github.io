@@ -2,9 +2,6 @@
 layout: post
 title: "Nedir Bu MSBuild?"
 date: 2013-08-01 07:47:00
-categories:
-  - Framework Tabanlı Programlama
-  - DevOps
 tags:
   - microsoft-build-engine
   - build
@@ -19,6 +16,8 @@ tags:
   - build-service
   - csharp
   - project-properties
+categories:
+  - Framework Tabanlı Programlama
 ---
 Yıllar öncesinde bir kaç seneliğine de olsa saygın bir eğitim kurumunda eğitmen olarak görev alma şansını yakalamıştım. Özellikle C#’ ın öğretilmeye çalışıldığı başlangıç niteliğindeki seanslarda dilin temel özelliklerini anlatırken, tüm dış çevre ile olan bağlantıyı kesip, sadece anahtar kelime (keyword), ifade ve materyale odaklanmaya çalışırdık. Bu sebepten genellikle ilk örneklerimiz ve Hello World uygulamamız, Notepad gibi bir program ve komut satırındaki csc (C# Compiler) ile inşa edilirdi.
 

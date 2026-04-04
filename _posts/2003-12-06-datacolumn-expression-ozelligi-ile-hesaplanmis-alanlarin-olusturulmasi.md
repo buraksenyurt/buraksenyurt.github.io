@@ -2,12 +2,12 @@
 layout: post
 title: "DataColumn.Expression Özelliği İle Hesaplanmış Alanların Oluşturulması"
 date: 2003-12-06 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - data-column
   - expression
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde bir tabloda sonradan hesaplanan alanların nasıl oluşturulacağını incelemeye çalışacağız. Her zaman olduğu gibi konuyu iyi anlayabilmek için bir örnek üzerinden gideceğiz. Hesaplanan alan aslında bir hesaplama ifadesidir. Örneğin var olan bir tablodaki bir alana ait her değere ortak bir işlem yaptırmak istediğimizi ve her veri için oluşan sonuçların da tabloda ayrı bir alan adı altında gözükmesini istediğimizi varsayalım. Buna en güzel örneklerden birisi;
 

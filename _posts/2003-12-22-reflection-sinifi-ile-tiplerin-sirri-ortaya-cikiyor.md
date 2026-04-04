@@ -2,12 +2,12 @@
 layout: post
 title: "Reflection Sınıfı İle Tiplerin Sırrı Ortaya Çıkıyor"
 date: 2003-12-22 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - reflection
   - .net
+categories:
+  - Programlama Dilleri
 ---
 Hiç .NET’te yer alan bir tipin üyelerini öğrenebilmek istediniz mi? Örneğin var olan bir .NET sınıfının veya sizin kendi yazmış olduğunuz ya da bir başkasının yazdığı sınıfa ait tüm üyelerin neler olduğuna programatik olarak bakmak istediniz mi? İşte bugünkü makalemizin konusu bu: herhangi bir tipe (type) ait üyelerin neler olduğunu anlayabilmek. Bu amaçla, Reflection isim uzayını ve bu uzaya ait sınıfları kullanacağız.
 

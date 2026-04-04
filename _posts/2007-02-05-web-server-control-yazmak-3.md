@@ -2,11 +2,11 @@
 layout: post
 title: "Web Server Control Yazmak - 3"
 date: 2007-02-05 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - web-server-controls
+categories:
+  - Web Programlama
 ---
 Bir önceki makalemizde kendi web kontrollerimizi geliştirirken durum yönetimi (state management) için ViewState'lerden nasıl faydalanabileceğimizi incelemiştik. Bununla birlikte assembly, sınıf ve metod seviyesinde, çalışma zamanı için gerekli davranışları çeşitli nitelikler (attribute) yardımıyla nasıl etkileyebileceğimizi görmüştük. Bugünkü makalemizde ise, kendi web kontrollerimiz için olay güdümlü (event based) programlamayı nasıl sağlayabileceğimizi incelemeye çalışacağız.
 

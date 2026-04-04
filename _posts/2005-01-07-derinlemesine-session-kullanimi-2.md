@@ -2,11 +2,11 @@
 layout: post
 title: "Derinlemesine Session Kullanımı - 2"
 date: 2005-01-07 18:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - session
+categories:
+  - Web Programlama
 ---
 Bir önceki makalemizde hatırlayacağınız gibi, Session nesnelerinin kullanımını incelemeye başlamıştık. Bu makalemizde ise, Session nesnelerinin nerelerde saklanabildiğine değinmeye çalışacağız. Varsayılan olarak Session nesneleri In-Proc (işlem içi) modunda saklanırlar. Yani web sayfasının çalıştığı ASP.NET work process'in içinde, dolayısıyla bu işlerin çalıştığı web sunucularındaki bellek alanlarında tutulurlar. Bu özellikle Session nesnelerine bilgi yazma ve okumada önemli bir avantajdır.
 

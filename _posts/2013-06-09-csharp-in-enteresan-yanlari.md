@@ -2,8 +2,6 @@
 layout: post
 title: "C#’ ın Enteresan Yanları"
 date: 2013-06-09 02:44:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - static-fields
@@ -13,6 +11,8 @@ tags:
   - intern-pool
   - string-intern
   - indexers
+categories:
+  - Programlama Dilleri
 ---
 Yazılım sektöründe yer alan bizler, mutlak suretle en az bir programlama dilini çok iyi seviyede öğrenmeye çalışır ve bunun için epey yoğun çaba sarf ederiz (Hatta değerli bir büyüğümüzün sözüne göre, hayatımızın her hangibir noktasında C veya C++ gibi bir dili öğrenmeye çalışmış ama hiç bir zaman iyi bir C/C++ geliştiricisi olamamışızdır) Ne varki bazen dilin kullanılmayan pek çok özelliğini, zamanında öğrenmiş olsak dahi unutabiliriz. Hatta bazı ilginç olan yanlarını bugüne kadar hiç görmemiş, denememiş ya da duymamış olabiliriz.
 

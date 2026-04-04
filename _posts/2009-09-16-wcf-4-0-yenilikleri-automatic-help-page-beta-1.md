@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Automatic Help Page [Beta 1]"
 date: 2009-09-16 16:02:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 WCF 4.0 tarafında beklenen gelmesi yüksek olan yenilikleri sizlere aktarmaya çalıştığım yazılarımızın yavaş yavaş sonlarına gelmekteyiz. Elbette incelemeyemediğimiz bir çok detay var. Bunları ilerleyen dönemlerde ürün son halini alırken tartışma ve araştırma fırsatımız olacak. Bu yazımızda WCF 4.0 tarafına entegre olarak gelen REST geliştirme modeline yönelik yeteneklerden bahsedeceğiz.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "NoSQL Maceraları - RavenDB ile Hello World"
 date: 2013-01-12 12:05:00
-categories:
-  - Veritabanı
 tags:
   - ravendb
   - .net
@@ -17,6 +15,8 @@ tags:
   - load
   - query
   - generic
+categories:
+  - Veritabanı
 ---
 Kuzgun’ lar Kargagiller ailesinden gelen bir kuş çeşididir. Diğer karga cinslerine göre daha iridirler ve özellikle çok daha zeki oldukları söylenir. Yapılan araştırma ve deneyler sonrasında bu cins kargaların, sorunları çözmek için çevresel materyalleri kullanabilme (kullanmak için de öğrenebilme) becerisine sahip oldukları öne sürülmüştür. Hatta parlak, beyaz ve mavi renkli metallere karşı özel bir ilgileri olduğundan, hırsız olarak da ifade edilmektedirler.
 

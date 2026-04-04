@@ -2,11 +2,11 @@
 layout: post
 title: ".Net RIA Servisleri - Hello World"
 date: 2009-05-13 13:29:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Hatırlayacağınız gibi bir önceki [blog](/2009/05/08/net-ria-servisleri-nedir/)yazımda,.Net RIA Servisleri hakkında edindiğim kısa ve özet teorik bilgileri sizinle paylaşmaya çalışmıştım. Bu yazımda ise, teoriği pratiğe dökmeye gayret edeceğim. Geliştireceğimiz örnek,.Net RIA Servisini kullanan bir Silverlight uygulaması olacak. Geliştirmeyi Visual Studio 2008 üzerinde, Silverlight 3.0 ortamını kullanarak gerçekleştireceğim. Bu nedenle aşağıdaki şekilde görüldüğü gibi, klasik bir silverlight projesi oluşturarak işe başlayabiliriz.
 

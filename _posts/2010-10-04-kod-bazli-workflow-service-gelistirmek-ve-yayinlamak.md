@@ -2,12 +2,12 @@
 layout: post
 title: "Kod Bazlı Workflow Service Geliştirmek ve Yayınlamak"
 date: 2010-10-04 16:20:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - visual-studio
   - workflow-services
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bildiğiniz üzere bir süredir [NedirTv?com](http://www.nedirtv.com) desteğinde ["Workflow Foundation 4.0 Öğreniyorum"](http://www.nedirtv.com/kategori/Workflow-Foundation-Ogreniyorum.aspx) isimli bir seri üzerinde çalışmaktayız. Bu seride başlangıç seviyesinden orta seviyeye kadar, bir kaç ayrı derste Workflow Foundation kavramını öğrenmeye gayret ettik. Bu seriye dahil etmek istediğim bir konu da, Workflow Service örneklerinin tamamen kod bazında yazılması ve IIS (Internet Information Services) dışındaki bir uygulama tarafından host edilmesiydi. Ancak konu biraz karmaşık olduğundan ve tabiri yerinde ise yandaki resimde görülen Puzzle'a benzemediğinden, yazı haline getirilmesinin daha iyi olacağına karar verdim. Hem böylece ben de unuttuğum zamanlarda bu yazıma bakarak hatırlayabilirim. Öyleyse derin bir nefes alalım ve yola koyulalım.
 

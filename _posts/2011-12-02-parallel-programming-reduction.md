@@ -2,13 +2,13 @@
 layout: post
 title: "Parallel Programming–Reduction"
 date: 2011-12-02 11:51:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming
   - reduction
   - map-reduce
+categories:
+  - Paralel Programlama
 ---
 Neredeyse son bir kaç saattir yoğun bir şekilde Wolfenstein isimli bilgisayar oyununu oynamaktaydım. Aslında çok fazla bilgisayar oyunu oynayan birisi değilimdir. Hatta bu oyunun ilk versiyonunu çok çok uzun zaman önce oynadığımı ve arada çok az oyunla haşır neşir olduğumu itiraf edebilirim
 

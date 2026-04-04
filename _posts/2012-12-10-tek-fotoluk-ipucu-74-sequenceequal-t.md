@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu–74–SequenceEqual<T>"
 date: 2012-12-10 20:40:00
-categories:
-  - Genel
 tags:
   - language-integrated-query
   - generics
@@ -12,6 +10,8 @@ tags:
   - extension-methods
   - iequalitycomparer
   - comparer
+categories:
+  - Foto İpucu
 ---
 Diyelim ki uygulamanızda zaman zaman da olsa farklı referanslar da duran ve aynı tipte elemanlardan oluşan koleksiyonlarınız oluşuyor ve bunları yeri geldiğinde birbirleri ile kıyaslamak istiyorsunuz. Ne yaparsınız?
 

@@ -2,13 +2,13 @@
 layout: post
 title: "Ado.Net 2.0 ve Bulk-Data Kopyalama Mekanizması"
 date: 2004-09-17 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - bulk
   - data
   - copy
+categories:
+  - Framework Tabanlı Programlama
 ---
 SQL Server'da bir veritabanı tablosundan, başka bir hedef tabloya veri taşıma işlemi bulk-data kopyalama olarak adlandırılır. Veritabanı yöneticileri çoğunlukla bu operasyonu gerçekleştirmek amacıyla, BCP adı verilen komut satırı aracını kullanırlar. Burada amaç, kaynak tablodaki satırların veya bir satır kümesinin farklı konumda olabilecek bir tabloya taşınmasıdır. Hedef tablo aynı veritabanında olabileceği gibi, diğer bir SQL sunucusu üzerindeki başka bir veritabanında da yer alabilir. ADO.NET 2.0'da SqlClient isim alanına eklenen yeni sınıflar yardımıyla bu işlemleri yönetimli kodda (managed-code) gerçekleştirme imkânına da artık sahibiz. Bu makalemizde, bu işlemleri gerçekleştirmek için kullanabileceğimiz yeni ADO.NET 2.0 sınıflarını incelemeye çalışacağız.
 

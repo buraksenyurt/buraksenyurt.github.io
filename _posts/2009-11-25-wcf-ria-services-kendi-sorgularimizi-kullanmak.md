@@ -2,13 +2,13 @@
 layout: post
 title: "WCF RIA Services - Kendi Sorgularımızı Kullanmak"
 date: 2009-11-25 04:30:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - wcf-ria-services
   - .net-ria-services
   - windows-communication-foundation
   - wcf-eco-system
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir önceki yazımızda WCF RIA Service'lerine kısa bir giriş yapmış ve ilk [Hello World](/2009/11/24/wcf-ria-services-bir-merhaba-diyelim/)uygulamamızı geliştirmiştik. Bu yazımızda yine Chinook veritabanında yer alan albümlerin alfabetik olarak elde edilebildiği ve bunlara bağlı parçalarında gösterilebildiği bir Silverlight uygulaması yazmaya çalışacağız. Bu örnekteki temel amacımız ise, kendi sorgulama metodlarımızı ilgili DomainService sınıfı içerisinde nasıl geliştirebileceğimizi görmek ve Silverlight uygulamasında göze daha hoş gelecek (Her ne kadar buna kendimde inanamasam da ![Sealed](/assets/images/2009/smiley-sealed.gif)) bir arayüzü tasarlayabilmek olacak. İlk etapta hedefimizin aşağıdaki ekran görüntüsünde yer alan uygulama arayüzü ve fonksiyonelliğine ulaşmak olduğunu ifade etmek isterim.
 

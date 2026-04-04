@@ -2,8 +2,6 @@
 layout: post
 title: "Monolitik Uygulamalarda Teknik Borçlanma ile Mücadele (Teori)"
 date: 2021-10-23 07:00:00
-categories:
-  - Genel
 tags:
   - tecnichal-debt
   - monolitik-mimari
@@ -15,6 +13,8 @@ tags:
   - çevik-olmak
   - yazılım-geliştirme-yaşamdöngüsü
   - strateji
+categories:
+  - Yazılım Tasarımı
 ---
 İş hayatına adım attığımda tarihler 1999 yılını gösteriyordu. Bilgi İşlem Sorumlusu unvanı ile yarı zamanlı başladığım şirkette bir çağrı merkezi uygulamasının geliştirilmesinden, bilgisayarların kurulumlarından ve kullanıcı destek işlemlerinden sorumluydum. O zamanlar sahip olduğum bilgiler çok kıt ve tamamen programlama üzerindeydi. Ne katmanlı mimarilerden ne de tasarım kalıplarından bihaberdim. Hal böyle olunca yazdığım uygulama buton arkası kodlamanın ötesine geçemiyordu. Üstelik web tabanlı değil Windows tabanlı bir programdı ve dağıtımı çağrı merkezi bilgisayarlarına kopyala yapıştır usulüne göre yapılıyordu (Neyse ki şirkette sadece on iki çağrı personeli vardı) ancak bir sonraki işimde dengeler tamamen değişti. Bu sefer yazılım dünyasının milenyum başındaki yükselen yıldızlarından olan.Net platformu üstünde yeni yetme bir yazılımcı olarak işe başlamıştım. Bana Junior Software Developer unvanı vermişlerdi ve bu kez web tabanlı bir uygulama ile bol miktarda katman söz konusuydu. Tipik olarak katmanlı mimariye göre geliştirilmiş ve müşterisi olan bir ürün üstünde çalışan birkaç yazılımcıdan birisiydim.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Excel ve Entity Framework Konuşuyor"
 date: 2013-06-30 17:57:00
-categories:
-  - Windows Programlama
 tags:
   - entity-framework
   - excel
@@ -11,6 +9,8 @@ tags:
   - office-development
   - visual-studio
   - cells
+categories:
+  - Framework Tabanlı Programlama
 ---
 Artık uygulamaların birbirleri ile konuşmaları çok ama çok kolay. Bu gerçekten önemli bir mesele. Özellikle farklı segmentlerden insanların bir araya geldiği bilişim toplumlarında. Kimi kullanıcı için Office Excel, Word veya Powerpoint çok şey ifade ederken, kimi kullanıcı içinde SQL Management Studio ortamında hazırlanan karmaşık bir sorguya bakmak daha anlamlı olabiliyor. Ya da bir Web sayfası üzerinden alınan raporlar şirketin Muhasebe Şefi için değerli iken, kimisi SSRS ile elde edilen raporları mobil cihazında görmeyi tercih edebiliyor.
 

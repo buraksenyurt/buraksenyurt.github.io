@@ -2,8 +2,6 @@
 layout: post
 title: "Log4Net’ i Tanıyalım"
 date: 2012-03-01 07:22:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net
   - csharp
@@ -12,6 +10,8 @@ tags:
   - concern
   - log4net
   - nlog
+categories:
+  - Framework Tabanlı Programlama
 ---
 Herkesin kendine has bir parmak izi vardır. DNA gibi benzersizdir. Her ne kadar bazı ajanlı filmelerinde bu izler silinebilse de (belki de silinebilyordur):) Krimonoloji labaratuvarlarından tutunda, şirketlerdeki giriş kapılarına kadar pek çok noktada parmak izlerimiz devreye girer. Hatta günümüzde kullandığımız bilgisayarların çoğunun açılması için parmak izi kullanılabilmektedir.
 

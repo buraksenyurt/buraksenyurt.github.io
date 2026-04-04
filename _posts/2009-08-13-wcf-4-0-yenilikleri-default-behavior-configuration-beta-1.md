@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Default Behavior Configuration [Beta 1]"
 date: 2009-08-13 10:01:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir kaç gece önce evde DVD keyfi yapmak için A Fistful Of Dollars (Per un pugno di dollari) isimli çok eski bir Western filmi seyrettim. Filmi seyretmeyenler için bir kaç hatırlatma yapayım. Film aslında The Good The Bad and The Ugly ile For a Few Dollars More birlikte oluşan bir üçlemenin ilk halkasını oluşturmakta. Hepside çok güzeldi. Bu filmin belkide en can alıcı ve etkileyici yeri ise sonlarında yaşanan silahlı dövüş sahneleridir.
 

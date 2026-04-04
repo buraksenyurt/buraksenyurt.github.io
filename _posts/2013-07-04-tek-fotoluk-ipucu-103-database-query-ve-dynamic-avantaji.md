@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 103–Database.Query ve dynamic Avantajı"
 date: 2013-07-04 18:00:00
-categories:
-  - Genel
 tags:
   - web-matrix
   - webmatrix.data
@@ -12,6 +10,8 @@ tags:
   - dynamic
   - var
   - runtime
+categories:
+  - Foto İpucu
 ---
 SQL gibi bir veri kaynağına erişmek için pek çok yol olduğunu gayet iyi biliyoruz. Hatta bu işi öğrenmeye başladığımız ilk zamanları hatırlayın. Connection'ın açılması, Command hazırlanması, bir DataAdapter'dan yararlanılarak DataTable/DataSet doldurulması ve DataReader ile veri setinin ileri yönlü dolaşılması ve benzeri tiplerle uğraşırız. Hatta Entity Framework gibi alt yapılar da kendi içlerinde bu temel türlerin ata tiplerinden fazlasıyla yararlanmaktadır.
 

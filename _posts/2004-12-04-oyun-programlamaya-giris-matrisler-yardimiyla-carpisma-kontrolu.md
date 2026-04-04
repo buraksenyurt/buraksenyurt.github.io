@@ -2,14 +2,14 @@
 layout: post
 title: "Oyun Programlamaya Giriş (Matrisler Yardımıyla Çarpışma Kontrolü)"
 date: 2004-12-04 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - oyun-programlama
   - collasion
   - .net
   - arrays
+categories:
+  - Oyun Programlama
 ---
 Hafta sonu evde bilgisayarım başında internette gezinirken, tarihi oyunların anlatıldığı bir site ile karşılaştım. Aslında zaten eski oyunları araştırıyordum. Amacım bu oyunlara, oyun oynamak isteyen bir çocuk gözü ile değil, onların yapılarını ve çekirdeklerini anlamaya çalışacak bir yazılımcı gözüyle bakabilmekti. Sonuçta, içimdeki çocuk ağır basıp birkaç tanesini saatlerce oynadım. Aralarında en çok hoşuma gidenlerden birisi PackMan'di. Packman, doğrusal düzlemde 4 yöne hareket edebilen bir kahramandı. Yolda kendisini rastgele konumlardan gelerek yakalamaya çalışan böceklerden kaçıyor ve bulduğu meyveleri yiyerek de puanlar topluyordu. Tam oyunu bitirmeme az kalmıştı ki hiç beklenmedik bir şekilde böceklerden birisi tarafından yendim. Aslında ekrana bir süre donuk gözlerle bakmıştım. Nitekim, oyunu oynarken aklıma geçen gün okuduğum Oyun Programlama kitabı gelmişti.
 

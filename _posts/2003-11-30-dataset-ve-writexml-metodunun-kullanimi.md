@@ -2,13 +2,13 @@
 layout: post
 title: "DataSet ve WriteXml Metodunun Kullanımı"
 date: 2003-11-30 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - dataset
   - xml
   - writexml
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, bir dataset nesnesinin içerdiği tabloların ve bu tablolardaki alanlara ait bilgilerin XML formatında nasıl yazdırıldığını göreceğiz. Örneğimiz son derece basit. Örnek uygulamamızda, Sql sunucusu üzerinde yer alan, Friends isimli database’den Kitaplar isimli tabloya ait verileri taşıyan bir dataset nesnesini kullanacağız. DataSet sınıfına ait WriteXml metodu dataset içerisinde yer alan bilgilerin bir XML dokümanına Schema bilgisi ile birlikte aktarılmasına imkan sağlamaktadır. Bu metoda ait 8 adet yapıcı (Constructor) metod bulunmakta olup biz örneğimizde,
 

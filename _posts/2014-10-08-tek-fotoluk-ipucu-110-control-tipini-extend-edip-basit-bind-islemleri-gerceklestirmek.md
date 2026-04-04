@@ -2,13 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu 110 - Control Tipini Extend Edip Basit Bind İşlemleri Gerçekleştirmek"
 date: 2014-10-08 18:00:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - tfi
   - reflection
   - dynamic
+categories:
+  - Foto İpucu
 ---
 Diyelim ki, geliştirdiğiniz Windows Forms tabanlı ekranlarınızdaki kontrollerin içerikleri farklı bir veri kaynağından (Strongly Typed özellikte) geliyor ve siz bunları kontrollerin ilgili özelliklerine bağlayacak generic özellikte bir metod geliştirmek istiyorsunuz. Doğrudan özelliklere değer set etmek ile uğraşabilirsiniz de ama, veri kaynağından okuma yapan kod parçasının içerisinde bu işlemi merkezileştirmeyi de düşünüyorsunuz. Ancak ilk adım olarak Control türevli tipler için bir Extension metod üzerinden özelliklere değer bağlama işlemlerini yapmak istiyorsunuz. Nasıl bir yol izlersiniz? Aşağıdaki ip ucu işinize yarayabilir mi?
 

@@ -2,14 +2,14 @@
 layout: post
 title: "Oracle View' ları için Otomatik DataTable' lar Üretmek"
 date: 2016-03-19 18:21:00
-categories:
-  - Programlama Dilleri
 tags:
   - oracle
   - datatable
   - csharp
   - .net
   - type-safety
+categories:
+  - Framework Tabanlı Programlama
 ---
 Üzerinde çalıştığımız ve uzun süredir canlı ortamda yaşamakta olan eski bir ürünümüz geçtiğimiz günlerde kod kalite taramalarından birisine girdi. Vaktinde her zaman olduğu gibi alel acele yazılmak zorunda olan kodlar bir kaç ana kategori altında çeşitli tipte ihlallere yakalandı. Bunlardan birisi de Strongly Typed DataSet kullanımına ilişkindi.
 

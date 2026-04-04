@@ -2,10 +2,10 @@
 layout: post
 title: "Netspecter Takipte - Object Initializer Deyip Geçmemek Lazım"
 date: 2011-04-14 14:34:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
+categories:
+  - Programlama Dilleri
 ---
 Puslu bir sonbahar akşamında detektif Netspecter odasında sessiz sakin oturmaktadır. Loş bir ortama neden olan gece lambasının yeşil cam aksamı altından oda içerisindeki tozların sessiz ve sakin akışı bir yana, Netspecter’ ın kafasında masasına yeni gelen dosya ile ilişkili soru işaretleri koşup durmaktadır.
 

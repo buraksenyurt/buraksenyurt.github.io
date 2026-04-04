@@ -2,14 +2,14 @@
 layout: post
 title: "WCF WebHttp Services - Server Bazlı Cache"
 date: 2010-03-29 15:05:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services
   - rest-api
   - non-soap
   - wcf-webhttp-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Şirketimi çok seviyorum. Nazar değmesin ama araştırma yapmam, yeni bir şeyler öğrenmem ve bunları ekip arkadaşlarımla paylaşmam için beni özellikle teşvik eden bir şirkette bulunmaktayım. Çalıştığım şirketin en güzel özelliklerinden biriside, Cuma günleri yapılan minik ikramları.
 

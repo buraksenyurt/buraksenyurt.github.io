@@ -2,14 +2,14 @@
 layout: post
 title: "Python Tarafında ProtoBuf (Protocol Buffers) Serileştirme"
 date: 2020-01-14 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - python
   - protobuf
   - rest-api
   - websockets
   - protocol
+categories:
+  - Programlama Dilleri
 ---
 Protocol Buffer, Google'ın yapısal verileri (structured data) serileştirmek için geliştirdiği bir protokol (Hatta gRPC ile sıklıkla anılır) Onu XML (eXtensible Markup Language) benzeri bir veri tanımlama formatı olarak düşünebiliriz ama çok daha az yer tutar ve serileştirme süresi çift yönlü olarak daha kısadır. Şu sıkça gördüğümüz proto uzantılı dosyaların ana fikridir.
 

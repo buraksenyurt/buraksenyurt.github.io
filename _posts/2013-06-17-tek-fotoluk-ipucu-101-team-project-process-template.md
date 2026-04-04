@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 101–Team Project Process Template"
 date: 2013-06-17 12:30:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - team-foundation-server
@@ -11,6 +9,8 @@ tags:
   - common-structure-service
   - icommonstructureservice
   - client-object-model
+categories:
+  - Foto İpucu
 ---
 Bazı komut satırı araçları oldukça işlevseldir ve çoğunlukla tercih edilir. Örneğin TFS üzerinde bir Team Project silinmek istendiğinde, tfsdeleteproject komut satırı aracına başvrulur. Peki şirketinizde kurulu olan TFS üzerindeki Team Project örneklerinin kullandıkları Process Template’ leri yine bir komut satırı aracı ile öğrenmek isteseydiniz, nasıl bir yol izlerdiniz? Aşağıdaki fotoğraf size bir ipucu verebilir belki de
 

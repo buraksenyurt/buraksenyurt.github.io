@@ -2,8 +2,6 @@
 layout: post
 title: "Word Dosyası İçerisinden Entity Framework’ e"
 date: 2013-07-17 17:26:00
-categories:
-  - Windows Programlama
 tags:
   - office-development
   - word-projects
@@ -18,6 +16,8 @@ tags:
   - document-level
   - application-level
   - word-object-model
+categories:
+  - Framework Tabanlı Programlama
 ---
 Geliştirdiğimiz veya kullanmakta olduğumuz yazılım ürünlerine dahil olan, farklı segmentlerden gelen pek çok kullanıcı profili vardır. Farklı profillerin olması, bazı hallerde geliştirilmekte olan ürünlerin başarısını doğrudan etkilemektedir. Bir fotoğraf işleme programını geliştirirken çoğu zaman annemizin olası kullanıcı profilleri arasına gireceğini pek düşünmeyiz. Genellikle fotoğraf işleme programını kullanacak olanların, en azından temek düzeyde fotoğrafçılık bilgisine sahip olduğunu kabul eder, menü komutlarını buna göre belirler, arayüzü buna göre hazırlarız. Ama bazı uygulamalarda annemizi hedef alır ve çektiği fotoğraflara kolayca efekt uygulamasına bir kaç basit adımda olanak tanır. Örneğin instagram’ ın iPhone uygulamasında olduğu gibi.
 

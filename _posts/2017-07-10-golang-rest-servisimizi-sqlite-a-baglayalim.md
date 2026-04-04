@@ -2,13 +2,13 @@
 layout: post
 title: "GoLang - REST Servisimizi SQLite'a Bağlayalım"
 date: 2017-07-10 09:05:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - sqlite
   - rest-api
   - postman
+categories:
+  - Programlama Dilleri
 ---
 Son yazılarımızda GoLang ile web uygulamalarının geliştirilmesi üzerinde durduk. Yeni şeyler öğrendikçe bunları farklı örnekler üzerinden denemeye gayret ediyorum. Bu sefer HTTP yönlendiricimizi SQLite ile çalışan basit bir REST servisi için kullanmaya çalışacağız. Kodlara geçmeden önce sisteminize SQLite yüklemiş olduğunuzdan emin olun (Kendi sisteminiz için uygun sürümü SQLite'ın [şuradaki resmi adresinden](https://sqlite.org/download.html) bulup indirebilirsiniz) SQLite yazımızın kapsamı dışında ama bizim için hafif bir veri saklamak fonksiyonelliğini sunacağını ifade edebiliriz. Bu tipteki veritabanları fiziki birer dosya olarak tutulmaktalar. Bu nedenle geliştireceğimiz Go örneğinin erişebileceği bir konumda ilgili veritabanı dosyasının bulunması yeterli.
 

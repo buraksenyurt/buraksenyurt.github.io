@@ -2,13 +2,13 @@
 layout: post
 title: "Barrier Class, Sıralama Algoritmaları ve At Yarışı"
 date: 2011-10-17 09:47:00
-categories:
-  - Paralel Programlama
 tags:
   - parallel-programming
   - barrier-class
   - task-parallel-library
   - sort-algoritmaları
+categories:
+  - Algoritma
 ---
 At yarışlarına pek ilgim yoktur aslında ama tam da bu günlerde okuduğum kitap nedeniyle, paralel programlama ile aralarında sıkı bir ilişki olduğunu ifade edebilirim
 

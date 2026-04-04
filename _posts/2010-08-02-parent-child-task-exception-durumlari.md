@@ -2,13 +2,12 @@
 layout: post
 title: "Parent-Child Task Exception Durumları"
 date: 2010-08-02 18:00:00
-categories:
-  - Programlama Dilleri
-  - Paralel Programlama
 tags:
   - task-parallel-library
   - parallel-programming
   - parallel-computing
+categories:
+  - Programlama Dilleri
 ---
 Daha orta okul sıralarındayken havacılığa karşı müthiş bir ilgim vardı. Hiç unutmuyorum o yıllarda Uçan Türk dergisinin sıkı bir fanatiğiydim. Pek çok savaş uçağının teknik özelliklerini ezbere bilirdim ve hatta onları arşivlediğim bir not defterim dahi vardı. Uçmaktan korkan birisi olmama rağmen bunu yeneceğimi düşünerekten Lise yıllarında Hava Harp Okuluna girebilmek için özel bir çalışma programı bile uygulamıştım. Düzenli olarak spor yapıyor, kondisyon arttırmaya çalışıyor, günde değil 3, 5 kere dişlerimi fırçalıyor, gözlerimi yormamak için uykuma özen gösteriyordum.
 

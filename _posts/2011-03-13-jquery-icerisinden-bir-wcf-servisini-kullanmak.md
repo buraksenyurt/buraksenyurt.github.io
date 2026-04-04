@@ -2,11 +2,11 @@
 layout: post
 title: "jQuery İçerisinden Bir WCF Servisini Kullanmak"
 date: 2011-03-13 21:27:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - jquery
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır.
 

@@ -2,13 +2,13 @@
 layout: post
 title: "Paralel Programlamada Performans, Hız, Verimlilik ve Ölçeklenebilirlik Ölçümleri"
 date: 2010-02-21 18:00:00
-categories:
-  - Paralel Programlama
 tags:
   - parallel-programming
   - task-parallel-library
   - .net-framework
   - csharp
+categories:
+  - Paralel Programlama
 ---
 Ben Matematik Mühendisliği eğitimi almış bir bireyim. Öğrenim hayatım boyunca en çok yaptığım işlerden birisi, matematiksel teoremlerin bilimsel ispatlarını gerçekleştirmek olmuştur. Hemen hemen mühandisliğin her alanındaki farklı problemlerin modellenmesi ve ispatlarının yapılarak en uygun yol olduklarının gösterilmesi adına pek çok kağıt karalamış ve tüketmişimdir.
 

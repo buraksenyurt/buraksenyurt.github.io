@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 76–Bir Listeyi Shuffle’ lamak"
 date: 2013-01-30 21:50:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - extension-methods
@@ -12,6 +10,8 @@ tags:
   - random
   - randomizer
   - shuffle
+categories:
+  - Foto İpucu
 ---
 Malum hepimizin devasaaa/kocaman boyutlarda MP3 arşivleri var ve genelde müzik dinlerken de uygulamaların shuffle özelliklerini açarak, karışık sırada dinlemeyi tercih ediyoruz. Peki kendi tiplerinize ait generic bir listeyi Shuffle’ layarak kullanmak isteseydiniz, nasıl bir yol izlersiniz? Aşağıdaki gibi olabilir mi?
 

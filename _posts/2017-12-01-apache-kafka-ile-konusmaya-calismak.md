@@ -2,8 +2,6 @@
 layout: post
 title: "Apache Kafka ile Konuşmaya Çalışmak"
 date: 2017-12-01 06:01:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - apache-kafka
   - .net-core
@@ -17,6 +15,8 @@ tags:
   - zookeeper
   - publisher-subscriber-model
   - message-queue-middleware
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bilgisayarla yeni tanıştığım dönemlerde aynı zamane çocuklarımızın tabletlerde yaptığı gibi oyun oynamaya bayılırdım. Dersler, sınavlar bir yana oyunlar bir yana. Kasetlerin olduğu Commodore 64 zamanlarından, disketler ile 486DX işlemcili makinelerdekilere, CD ile yüklenenlerden, internetten indirilip oynananlara kadar... Pek çok efsane vardı tabii oynananlar arasında. Bazen onların başında saatlerce nasıl vakit geçiriyormuşum diye düşününce hayret ediyorum kendime. Hoşuma giden oyunların en önemli özellikleri arasında ses efektleri ve karakter konuşmaları gelirdi.
 

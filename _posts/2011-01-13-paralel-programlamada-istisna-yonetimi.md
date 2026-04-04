@@ -2,14 +2,14 @@
 layout: post
 title: "Paralel Programlamada İstisna Yönetimi"
 date: 2011-01-13 13:30:00
-categories:
-  - Paralel Programlama
 tags:
   - parallel-programming
   - task-parallel-library
   - exception-handling
   - csharp
   - visual-studio
+categories:
+  - Paralel Programlama
 ---
 Balık tutmak farklı bir hobidir. Özellikle olta ile balık yakalamaktan büyük keyif alanlar vardır. (Hatta laf aramızda, şirkette yanımda oturan çalışma arkadaşımın çekmecesinde, bir olta takımı var)
 

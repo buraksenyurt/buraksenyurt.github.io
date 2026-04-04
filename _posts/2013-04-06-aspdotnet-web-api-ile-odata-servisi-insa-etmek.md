@@ -2,8 +2,6 @@
 layout: post
 title: "Asp.Net Web API ile OData Servisi İnşa Etmek"
 date: 2013-04-06 10:33:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - asp.net-web-api
   - odata
@@ -12,6 +10,8 @@ tags:
   - excel
   - odata-data-feed
   - http-get
+categories:
+  - Web Programlama
 ---
 Bu görsel dersimizde, Asp.Net Web API’ den yararlanarak OData (Open Data) protokolü destekli bir Service geliştirmekteyiz. Ayrıca, servisin HTTP Get talebi sonucu ürettiği örnek JSON (JavaScript Object Notation) formatlı veri çıktısını da, bir Excel 2013 Sheet içerisine nasıl alabileceğimizi görmekteyiz. (Görsel dersimizi, [Nedirtv](http://www.nedirtv.com)’ ye ait [YouTube](http://www.youtube.com/user/nedirtvcom) kanalından da izleyebilirsiniz)
 

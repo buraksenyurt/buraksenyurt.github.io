@@ -2,13 +2,13 @@
 layout: post
 title: "Eager Loading, Lazy Loading, Explicit Loading"
 date: 2011-09-06 20:30:00
-categories:
-  - Veritabanı
 tags:
   - entity-framework
   - eager-loading
   - lazy-loading
   - explicit-loading
+categories:
+  - Framework Tabanlı Programlama
 ---
 Şöyle basit tek bir Main metodu içerisinde, Entity Framework'teki Loading çeşitlerini görmek ister miydiniz?
 

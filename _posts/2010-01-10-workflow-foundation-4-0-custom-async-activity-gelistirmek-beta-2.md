@@ -2,10 +2,10 @@
 layout: post
 title: "Workflow Foundation 4.0 - Custom Async Activity Geliştirmek [Beta 2]"
 date: 2010-01-10 15:45:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hatırlayacağınız üzere bir önceki blog yazımızda Workflow Foundation 4.0 üzerinde özel aktiviteleri nasıl geliştirebileceğimizi incelemeye başlamış ve bu anlamda ilk olarak CodeActivity türevli bir bileşen üretmiştik. Workflow Foundation 4.0 ile gelen önemli yeniliklerden biriside asenkron aktivite bileşenlerini içeriyor olmasıdır. Özellikle.Net Framework 4.0 tarafında üzerinde ağırlıklı olarak durulmaya başlanan paralel programlamanın da bir sonucu olan bu durum karşısında, geliştiricilerin asenkron olarak çalışabilen aktivite bileşenleri yazması pek tabidir.
 

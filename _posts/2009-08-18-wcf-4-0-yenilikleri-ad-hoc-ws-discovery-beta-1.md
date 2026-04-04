@@ -2,10 +2,10 @@
 layout: post
 title: "WCF 4.0 Yenilikleri - Ad Hoc WS-Discovery [Beta 1]"
 date: 2009-08-18 09:23:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Uzun süredir macera dolu bir rüya görmüyordum. Geçtiğimiz gece askeri bir birlikte görev yapmaktaydım ve gerideki topçu birliklerime hedeflere ait koordinatları bildiriyordum. Tabi gerçek hayatta yedek subak eğitimimi Topçu sınıfında, Ateş Destek üzerine aldığım için keşif, arama ve bulma gibi konularda azda olsa bilgi sahibiydim. Rüyamda da bu bilgilerimi kullandığımı itiraf edebilirim. Peki konumuz nedir?
 

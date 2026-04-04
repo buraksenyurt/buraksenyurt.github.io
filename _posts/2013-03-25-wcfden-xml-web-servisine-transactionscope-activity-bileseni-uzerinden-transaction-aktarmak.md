@@ -2,8 +2,6 @@
 layout: post
 title: "WCFden, XML Web Servisine TransactionScope Activity Bileşeni Üzerinden Transaction Aktarmak"
 date: 2013-03-25 10:21:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - workflow-foundation
@@ -12,6 +10,8 @@ tags:
   - distributed-transactions
   - transaction
   - csharp
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bir süre öncesine kadar Composition adı verilen bir katmanda yer alacak çeşitli servisler ile yoğun şekilde güreşmekteydim. Çok fazla faktör, çok fazla farklı sistem ve tabiri yerinde ise oyun ve oyuncu söz konusuydu. WCF servisleri, XML Web Servisleri, Java tabanlı olanları ve belki de yarın gelecek olan çeşitli COM bileşenleri, 3ncü parti uygulamalar, koduna müdahale edemeyeceğimiz programlar vs.
 

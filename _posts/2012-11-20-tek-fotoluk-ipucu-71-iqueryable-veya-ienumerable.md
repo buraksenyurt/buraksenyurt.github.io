@@ -2,12 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu–71–IQueryable veya IEnumerable"
 date: 2012-11-20 03:01:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - entity-framework
   - generics
+categories:
+  - Foto İpucu
 ---
 Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğrafı bir inceleyin öncelikle ve nasıl bir fark olabileceğini düşünmeye çalışın. Yani kafanızda kod parçasını debug etmeye gayret edin.
 

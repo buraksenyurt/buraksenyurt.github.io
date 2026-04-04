@@ -2,11 +2,11 @@
 layout: post
 title: "TFS Web Services ve Kullanımları"
 date: 2013-03-17 12:30:00
-categories:
-  - DevOps
 tags:
   - team-foundation-server
   - client-object-model
+categories:
+  - DevOps
 ---
 Yedek Subay olarak askerlik hizmetimi yerine getirdiğim yıllarda (O zamanlar 16 ay idi) Jandarma Genel Komutanlığı Personel Şube’ de görev almıştım. Aslında temel işim Powerpoint ile sunum hazırlamaktı ama verilen emir her ne ise onu da yerine getirmek mesuliyetini taşımaktaydım.
 

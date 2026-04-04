@@ -2,8 +2,6 @@
 layout: post
 title: "Decimal to Binary to Hexadecimal"
 date: 2014-12-21 17:00:00
-categories:
-  - Algoritma
 tags:
   - csharp
   - sayı-sistemleri
@@ -12,6 +10,8 @@ tags:
   - octal
   - decimal
   - convert
+categories:
+  - Algoritma
 ---
 Bundan bir kaç sene önce ünlü matematikçi Fermat’ nın son teoreminin nasıl ispat edildiğinin anlatıldığı bir kitabı okumuştum. 1670 yılında ortaya çıkan ve Fermat tarafından o zaman ispat edildiği öne sürülen ama bildiğim kadarı ile kanıt bulunamayan teorem ancak 1995 yılında Andrew Wiles tarafından kanıtlanabilmiştir.
 

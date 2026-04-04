@@ -2,9 +2,6 @@
 layout: post
 title: "Sıralama Algoritmaları - Hangisi Daha Hızlı (Bubble, Quick, Insertion, Selection, Shell, Merge, Heap)"
 date: 2013-09-24 14:08:00
-categories:
-  - Programlama Dilleri
-  - Algoritma
 tags:
   - csharp
   - sıralama-algoritmaları
@@ -17,6 +14,8 @@ tags:
   - bubble-sort
   - algoritma
   - sorting-algorithm
+categories:
+  - Algoritma
 ---
 Evimdeki çalışma odasında yer alan kütüphanemi zaman zaman gelen yeni kitaplar ve afacan S (h) arp Efe'nin haylazlıkları nedeni ile darma duman halde bulabiliyorum. Hal böyle olunca çoğu zaman kitaplıkta yer alan onlarca kitabı tekrardan düzenlemem ve uygun bir sırada dizmem gerekebiliyor. Hatta bunu kitapların tozunu almak için hepsini yerlere indirdikten sonra da yaşayabiliyorum. Aslına bakarsanız her seferinde farklı bir kategorilendirme yapıyor ve buna göre bir sıralama işlemi icra etmeye çalışıyorum. Tabi el çabukluğu dışında akıllı düşününce sıralamak ve yerleştirmek kısa sürede bitebiliyor. Ama bazen de kafa bulanık olunca bu işlem sandığımdan da uzun sürüp bir işkence haline gelebiliyor.
 

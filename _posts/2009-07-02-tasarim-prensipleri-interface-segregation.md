@@ -2,10 +2,10 @@
 layout: post
 title: "Tasarım Prensipleri - Interface Segregation"
 date: 2009-07-02 01:16:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-principles
+categories:
+  - Yazılım Tasarımı
 ---
 Bir süredir pek çok nesne yönelimli yazılım disiplininde önem arz eden ve kullanılan Tasarım Prensiplerini (Design Principles) incelemeye ve öğrendiklerimi sizlere aktarmaya çalışıyorum. Şu ana kadar pek çok prensibi inceledik ve kısaltmalarına tanık olduk.
 

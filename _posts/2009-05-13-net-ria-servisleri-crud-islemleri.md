@@ -2,11 +2,11 @@
 layout: post
 title: ".Net RIA Servisleri - CRUD İşlemleri"
 date: 2009-05-13 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - .net-ria-services
   - silverlight
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bildiğiniz gibi bir süredir.Net RIA Servisleri ile ilişkili araştırmalarıma devam etmekteyim. Bu yazımızda,.Net RIA Servislerinde Insert, Update ve Delete işlemlerini nasıl yapabileceğimizi basit bir örnek üzerinden adım adım aktarmaya çalışacağım. Daha önceki Hello World örneğimizden farklı olarak, DAL (Data Access Layer) içerisinde LINQ to SQL modelini kullanıyor olacağız. İlk adımımız elbetteki bir Silverlight Application projesi oluşturmak olmalıdır..Net RIA Servisini kullanacağımız için, projenin oluşturulması sırasında Link to ASP.NET Server Project seçeneğinin işaretli olmasına dikkat edelim.
 

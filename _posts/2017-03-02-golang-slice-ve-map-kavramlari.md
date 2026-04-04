@@ -2,8 +2,6 @@
 layout: post
 title: "GoLang - Slice ve Map Kavramları"
 date: 2017-03-02 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - slice
@@ -13,6 +11,8 @@ tags:
   - len
   - map
   - array
+categories:
+  - Programlama Dilleri
 ---
 Gopher olma çalışmalarım iş yoğunluğuna bağlı olarak zaman zaman hızlı ve zaman zaman da yavaş bir şekilde devam ediyor. Açıkçası Gopher karakterini ve internetteki örneklerini çok sevdim. Google oldukça sevimli bir logo yaratmış. Bu nedenle her bölüm mümkün mertebe farklı bir Gopher'ı ekranlarınıza taşımaya çalışıyorum.
 

@@ -2,11 +2,11 @@
 layout: post
 title: "Asp.Net 2.0 için Site Map Kullanımı"
 date: 2004-09-03 06:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - sitemap
+categories:
+  - Web Programlama
 ---
 Bu makalemizde, web sitelerinde özellikle sayfalar arasındaki hareketlerde kullanıcıların nerede olduklarını bilmelerine yardımcı olan site haritaları üzerinde duracağız. Bununla birlikte, site haritalarının ASP.NET 2.0'daki kullanım yollarından birisini sağlayan SiteMapPath sunucu kontrolünü kısaca incelemeye çalışacağız.
 

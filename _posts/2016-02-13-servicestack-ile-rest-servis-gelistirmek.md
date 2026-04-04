@@ -2,8 +2,6 @@
 layout: post
 title: "ServiceStack ile REST Servis Geliştirmek"
 date: 2016-02-13 07:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - rest-api
   - service
@@ -15,6 +13,8 @@ tags:
   - dto
   - data-transfer-object
   - service-design-patterns
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Geçenlerde üzerinde çalışmakta olduğum proje için kullandığım geliştirme ortamımı bir güzelce patlatıverdim. Oracle'ın yeni sürümüne ait Data Provider'ın,.Net Framework 4.5.2 sürümüne yükseltmiş bir uygulamada neden çalışmadığını araştırıyordum. Sorun sunucu kaynaklı idi. Vakayı geliştirme ortamında da oluşturmaya çalıştım. Nitekim orada her şey yolunda görünüyordu. Lafı fazla uzatmayayım sonunda Production ortamını da kurcalamaya karar verdim...Eee...Şey...Orayı da patlattım:) Neyseki prod sunucusu sadece kurulumu yapılmış ve henüz yayına alınmamış bir makine idi. Zaten uygulamanın orada başarılı şekilde çalışması halinde kullanıma açılacak bir sunucuydu. Durumu ben, sistem ekibindeki bir kaç kişi ve ekip arkadaşım biliyordu. Ah şu andan itibaren de siz. Dolayısıyla hafif stresli günler geçirdiğimi ifade edebilirim. Epeyce sinirlendim ve sakinleşmek için her zaman yaptığım şeyi yaptım. Makale yazdım.
 

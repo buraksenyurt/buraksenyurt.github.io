@@ -2,8 +2,6 @@
 layout: post
 title: "Mountebank ile Mock Servis Desteği Sunmak"
 date: 2020-12-07 14:00:00
-categories:
-  - Web Programlama
 tags:
   - testing
   - nodejs
@@ -16,6 +14,8 @@ tags:
   - chai
   - axios
   - rest-api
+categories:
+  - Web Programlama
 ---
 Mountebank, ne zamandır merak ettiğim ve denemek istediğim araçlardan birisiydi. Test senaryolarında kullanmak isteyeceğimiz mock servislerini kolayca inşa edebilmemize olanak sağlayan bir araç olarak tanımlayabilirim. Örneğin test kodumuz arka tarafta belki bir veritabanına bağlanan belki başka bir servis zincirini çağıran ya da farklı bağımlıkları olan bir servisi kullanmak zorunda olabilir. Normal şartlarda bu servisin ayakta olması zorunludur ki testimiz yürüsün. Ancak o anki test vakasının ilerleyen adımlarının çalışması için illaki bu servisin vereceği çıktıya ihtiyacımız yoktur. Test vakası adımlarının devamı için o servisin vereceği çıktının sanki verilmiş gibi yapılarak ilerlenilmesi tercih edilen yöntemlerdendir.
 

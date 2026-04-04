@@ -2,11 +2,11 @@
 layout: post
 title: "WPF - Temel Animasyon İşlemleri - 2"
 date: 2007-10-01 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - animation
+categories:
+  - Windows Programlama
 ---
 Bir önceki makalemizde Windows Prensetation Foundation (WPF) uygulamalarında animasyon işlemlerinin temel animasyon tipleri (Basic Animation Types) yardımıyla nasıl gerçekleştirilebileceğini incelemeye başlamıştık. Bu makalemizde animasyon işlemleri üzerindeki yönetimin biraz daha fazla olmasını sağlamak için farklı teknikleri göz önüne alıyor olacağız. Her zaman olduğu gibi konuyu daha iyi kavrayabilmek adına örnekler üzerinden ilerlemekte fayda olduğu kanısındayım. Dilerseniz hiç vakit kaybetmeden ilk örneğimiz ile başalayım. Hatırlanacağı üzere, WPF uygulamalarında bileşenlerin rotasyon işlemleri için RotateTransform, ScaleTransform ve benzeri tiplerin kullanıldığını görmüştük.
 

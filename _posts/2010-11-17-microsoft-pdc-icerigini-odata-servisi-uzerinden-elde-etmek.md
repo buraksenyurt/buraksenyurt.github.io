@@ -2,13 +2,13 @@
 layout: post
 title: "Microsoft PDC İçeriğini OData Servisi Üzerinden Elde Etmek"
 date: 2010-11-17 18:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - odata
   - wcf-data-services
   - open-data-protocol
+categories:
+  - Web Programlama
 ---
 Bildiğiniz üzere bir süre önce Microsoft PDC 2010 etkinlikleri gerçekleştirildi. Online olaraktan da canlı izleyebildiğimiz sunumlarda Microsoft’ un çok değerli sunumlarına ve anlatımlarına şahit olduk. Her PDC konferansında olduğu gibi bu sene yapılan etkinliklere ait görüntü kayıtları, Download edilmeye açıldıkları andan itibaren de ilgi odağı oldular
 

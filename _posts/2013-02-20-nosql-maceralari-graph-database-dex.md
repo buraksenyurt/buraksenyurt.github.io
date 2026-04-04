@@ -2,8 +2,6 @@
 layout: post
 title: "NoSQL Maceraları - Graph Database DEX"
 date: 2013-02-20 04:00:00
-categories:
-  - Veritabanı
 tags:
   - graph-database
   - nosql
@@ -16,6 +14,8 @@ tags:
   - social-networking
   - dexter
   - sparsity
+categories:
+  - Veritabanı
 ---
 Eminim pek çoğunuzun hastası/fanatiği olduğu yerli veya yabancı diziler vardır. Küçük bir çocukken çizgi filmlere olan düşkünlüğümüz kadar olmasa da, hemen her bölümünü heyecanla beklediklerimiz mutlaka vardır (Hatta ülkemizde geç yayınlanıyor diye ilgili dizileri internetten indirenlerimizde vardır)
 

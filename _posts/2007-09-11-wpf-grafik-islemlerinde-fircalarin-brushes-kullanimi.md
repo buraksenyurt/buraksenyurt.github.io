@@ -2,11 +2,11 @@
 layout: post
 title: "WPF - Grafik İşlemlerinde Fırçaların(Brushes) Kullanımı"
 date: 2007-09-11 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - windows-presentation-foundation
   - brushes
+categories:
+  - Windows Programlama
 ---
 Windows uygulamalarında özellikle.Net tarafında vektörel grafik işlemleri için çoğunlukla GDI+ alt yapısı (infrastructure) kullanılmaktadır. Ancak Windows Presentation Foundation (WPF) mimarisinde öne çıkan özelliklerden biriside grafik anlamdaki yeteneklerin son derece geliştirilmiş olmasıdır. Kişisel görüşüm grafik yönündeki özelliklerin gelişmesi dışında bu tekniklerin element bazında uygulanabiliyor olması son derece önemli ve yerindedir.
 

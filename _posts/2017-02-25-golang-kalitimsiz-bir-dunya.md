@@ -2,8 +2,6 @@
 layout: post
 title: "GoLang - Kalıtımsız Bir Dünya"
 date: 2017-02-25 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - inheritance
@@ -13,6 +11,8 @@ tags:
   - pointer
   - interface
   - gopher
+categories:
+  - Programlama Dilleri
 ---
 Go hızlı ve performanslı bir programlama dili olarak anılıyor. Diğer yandan nesne yönelimli dil özelliklerini büyük ölçüde içermediği gibi bir gerçek de var ortada. Tasarımı sırasında kalıtım (Inheritance) gibi yönetimin sonradan zorlaşabildiği ve bakım gerektiren çatıların performansı olumsuz yönde etkilediği düşüncesi hakim olmuş. Bu nedenle nesne yönelimli düşünce tarzını az da olsa kenara bırakarak ilerlemek gerekiyor. Kalıtım doğrudan desteklenmese de nesne kompozisyonu (Composition) mevcut. Hatta belli bir ölçüde çok biçimliliği (Polymorphism) de uygulayabiliriz gibi.
 

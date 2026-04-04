@@ -2,8 +2,6 @@
 layout: post
 title: "TFS OData Desteği"
 date: 2013-08-25 10:35:00
-categories:
-  - DevOps
 tags:
   - team-foundation-server
   - odata
@@ -21,6 +19,8 @@ tags:
   - json
   - callback
   - default-collection
+categories:
+  - Web Programlama
 ---
 Çoğu zaman geliştirilen yazılım ürünleri ile farklı profilden insanları ortak bir payda da buluşturmayı hedefleriz. Farklı özelliklere sahip insanları, ürüne nasıl katabileceğimizi keşfetmeye çalışırız. Tabi geliştirilen ürünün hedef kitlesi de burada önemli bir rol oynar. Bazı ürünlerin arayüzlerinin son derece basit tasarlanması yeterli iken bazılarında ise tam tersi bir durum söz konusudur.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "Using İfadesi ile Garanti Dispose"
 date: 2007-10-27 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - using
@@ -12,6 +10,8 @@ tags:
   - idisposable
   - dispose
   - overriding
+categories:
+  - Programlama Dilleri
 ---
 Bellek yönetimi özellikle büyük çaplı projelerde performans kazanımı açısından çok önemlidir. Günümüz sistemlerinin yüksek Ram kapasitesine sahip oldukları göz önüne alındığında bu durum çoğu zaman göz ardı edilmektedir. Ancak sayısız kullanıcının bağlandığı sunucu (server) sistemleri üzerinde çalışan windows veya web servisleri gibi uygulamalar göz önüne alındığında bellek sorunları ile her zaman için karşılaşılma olasılığı vardır.
 

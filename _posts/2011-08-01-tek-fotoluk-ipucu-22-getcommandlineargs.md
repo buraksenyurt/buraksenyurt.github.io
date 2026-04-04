@@ -2,14 +2,13 @@
 layout: post
 title: "Tek Fotoluk İpucu-22 (GetCommandLineArgs)"
 date: 2011-08-01 00:31:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - console
   - console-arguments
   - environment-class
+categories:
+  - Foto İpucu
 ---
 Zaman zaman komut satırından çalışan Console uygulamaları geliştiririz ve bu programlar genellikle komut satırı parametreleri alarak çalışırlar. Çoğunlukla Main metodunun string[] tipinden parametresini kullanırız. Peki Environment tipinin de komut satırı argümanlarını alabilmemiz için bir metod sunduğunu biliyor muydunuz?
 

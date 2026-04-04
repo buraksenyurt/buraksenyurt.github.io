@@ -2,11 +2,11 @@
 layout: post
 title: "Ado.Net 2.0(Beta 2) - Connection String Security (Bağlantı Katarı için Güvenlik)"
 date: 2005-10-17 09:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - connection-string-security
+categories:
+  - Framework Tabanlı Programlama
 ---
 Güvenlik günümüz uygulamalarında çok önemli bir yere sahiptir. Özellikle veritabanı kullanımını içeren uygulamalarda güvenliğin ayrı bir önemi vardır. Veritabanına gönderilen sorguların korunması, özellikle web servislerinden dönen veri kümelerinin etkin olarak şifrelenmesi gibi durumlar söz konusudur. Güvenlik prosedürü içerisinde yer alan unsurlardan birisi de bağlantı bilgilerinin saklanmasıdır. Biz bu makalemizde, .NET 2.0 ile birlikte gelen yeni tekniklerden birisine değinerek, bağlantı bilgisinin (çoğunlukla connection string olarak da ifade edebiliriz) kolay bir şekilde nasıl korunabileceğini incelemeye çalışacağız.
 

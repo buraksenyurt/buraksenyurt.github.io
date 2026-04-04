@@ -2,13 +2,13 @@
 layout: post
 title: "En Kısa Metni Bulmak"
 date: 2013-09-01 20:45:00
-categories:
-  - Algoritma
 tags:
   - csharp
   - string
   - extension-methods
   - np-algorithms
+categories:
+  - Algoritma
 ---
 Uzun zamandır makale yazmaya çalışmakta ve öğrendiklerimi, edindiğim tecrübeleri sizlere aktarmaktayım. Tabi zaman ilerledikçe yazacak konu bulmakta da bir hayli zorlanıyor insan. Bu noktada öğrenmeninin sınırının olmadığını hepimiz biliyoruz. Olaya bu açıdan baktığımızda yazılmaya ve araştırılmaya değer binlerce konu olduğunu gönül rahatlığıyla ifade edebilirim. Yazma hevesli bir birey olarak bu benim için gerçekten önemli
 

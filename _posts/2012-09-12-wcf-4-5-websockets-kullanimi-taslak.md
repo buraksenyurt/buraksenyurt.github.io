@@ -2,8 +2,6 @@
 layout: post
 title: "WCF 4.5 WebSockets Kullanımı [Taslak]"
 date: 2012-09-12 15:04:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - asp.net
@@ -13,6 +11,8 @@ tags:
   - http
   - polling
   - streaming
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bazen yemek yemek için dışarı çıkar ve daha önceden gitmediğimiz bir yere oturup hiç bakmadığımız tadlara yelken açarız. Bu, bazen çok başarılı sonuçlanır ve bize büyük bir keyif verir. Bazen de yapmış olduğumuz tercihlerimiz için pişmanlık duyarız. Hatta bazı zamanlarda yerken iyi gelen o tadlar, çıkışta büyük sıkıntılara yol açabilir
 

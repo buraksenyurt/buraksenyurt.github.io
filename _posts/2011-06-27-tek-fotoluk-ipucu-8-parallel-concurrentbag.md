@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu - 8 (Parallel ConcurrentBag)"
 date: 2011-06-27 18:00:00
-categories:
-  - Framework Tabanlı Programlama
-  - Genel
 tags:
   - csharp
   - parallel-programming
   - concurrent-collections
   - concurrentbag
   - thread-safe
+categories:
+  - Foto İpucu
 ---
 Concurrent Collections deyince aklımıza Thread-Safe koleksiyon tipleri gelmelidir. Söz gelimi bir ConcurrentBag koleksiyonunun basit kullanımına bir örneği aşağıdaki gibi verebiliriz.
 

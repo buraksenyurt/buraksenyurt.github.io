@@ -2,15 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu-37(Faydalı Interface Tiplerinden IComparer<T>)"
 date: 2011-11-05 07:39:00
-categories:
-  - Programlama Dilleri
-  - Genel
 tags:
   - csharp
   - generics
   - list
   - sorting
   - interface
+categories:
+  - Foto İpucu
 ---
 .Net içerisinde pek çok faydalı Interface tipi bulunmaktadır. Örneğin kendi tiplerinizin sıralama işlemlerini öğrenebilmesi için kullanabileceğimiz IComparer. Nasıl kullanıldığını merak ediyor musunuz? İşte size basit bir fotoğraf ![Winking smile](/assets/images/2011/wlEmoticon-winkingsmile_54.png)
 

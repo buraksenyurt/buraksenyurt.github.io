@@ -2,8 +2,6 @@
 layout: post
 title: "Sunucu Bazlı Blazor Uygulaması ve Firestore Kullanımı"
 date: 2019-07-05 10:20:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - blazor
   - asp.net
@@ -21,6 +19,8 @@ tags:
   - backend
   - bootstrap
   - modalPopup
+categories:
+  - Web Programlama
 ---
 Mavi renkli teknoloji firmasına henüz yeni başlamıştım. Yaş ve önceki dönem tecrübeleri nedeniyle standart olarak uygulanan oryantasyon hızlıca atlanmış ve 2002 yılında geliştirilmeye başlanmış Web Forms kurugulu ERP uygulamasından ilk görevimi almıştım. Henüz çevik dönüşüme başlanmamıştı. Elimde tek sayfalık bir analiz dokümanı bulunuyordu. Otomotiv tarafındaki iş bilgim az olduğundan dokümanda yer almayan şeyler hakkında pek bir fikrim yoktu. Görevim kağıt üstünde oldukça basitti. Popup pencere açtırıp içerisinde bir araca ait veriler gösterecektim. Ne kadar zor olabilirdi ki:))
 

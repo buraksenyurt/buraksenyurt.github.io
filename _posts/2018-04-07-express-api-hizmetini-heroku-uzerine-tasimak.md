@@ -2,8 +2,6 @@
 layout: post
 title: "Express API Hizmetini Heroku Üzerine Taşımak"
 date: 2018-04-07 19:00:00
-categories:
-  - Web Programlama
 tags:
   - heroku
   - cloud-computing
@@ -19,6 +17,8 @@ tags:
   - command-line-interface
   - linux
   - ubuntu
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Geçenlerde sevgili çalışma arkadaşlarımdan [Atahan Ceylan](https://www.linkedin.com/in/atahanceylan/) ile Node.js ve MongoDb üzerine konuşurken bana Heroku diye bir şeyden bahsetti. Daha önceden duymamış olmamın verdiği etkiyle hemen nedir ne değildir diyerek kendisinden bilgi istedim. Sonunda konuyu pekiştirmek için ninjaları bana sevimli bir şekilde hatırlatan bu ürünü incelemeye karar verdim.
 

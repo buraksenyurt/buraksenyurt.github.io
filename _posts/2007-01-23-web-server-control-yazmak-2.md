@@ -2,11 +2,11 @@
 layout: post
 title: "Web Server Control Yazmak - 2"
 date: 2007-01-23 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - web-server-controls
+categories:
+  - Web Programlama
 ---
 Bir önceki makalemizde web sunucu kontrollerini nasıl geliştireceğimizi incelemeye başlamıştık. Bu günkü makalemizde, ViewState'lerin web sunucu kontrollerinde nasıl ele alınabileceğinden ve kontrollerin tasarım zamanındaki (design time) yeteneklerinin nitelikler (attributes) yardımıyla nasıl arttırılabileceğinden bahsetmeye çalışacağız.
 

@@ -2,12 +2,12 @@
 layout: post
 title: "Tablo Değişikliklerini GetChanges ile İzlemek"
 date: 2004-01-29 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - datatable
   - GetChanges
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bugünkü makalemizde, bağlantısız olarak veri tabloları ile çalışırken, bu tablolar üzerinde meydana gelen değişiklikleri nasıl izleyebileceğimizi ve davranışlarımızı bu değişikliklere göre nasıl yönledirebileceğimizi incelemeye çalışacağız.
 

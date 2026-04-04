@@ -2,12 +2,12 @@
 layout: post
 title: "Thread'leri Belli Süreler Boyunca Uyutmak ve Yoketmek"
 date: 2004-01-02 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - thread
   - multi-thread
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde iş parçacıklarının belli süreler boyunca nasıl durgunlaştırılabileceğini yani etkisizleştirilebileceğini işlemeye çalışacağız. Ayrıca iş parçacıklarının henüz sonlanmadan önce nasıl yok edildiklerini göreceğiz.
 

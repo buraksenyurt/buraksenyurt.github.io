@@ -2,8 +2,6 @@
 layout: post
 title: "WCF - InstanceContextMode"
 date: 2007-05-24 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - singleton
@@ -12,6 +10,8 @@ tags:
   - persession
   - percall
   - instancecontextmode
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Windows Communication Foundation uygulamalarında istemciler başvurdukları servisler üzerindeki nesne örneklerini kullanırlar. Özellikle kullanılan bağlayıcının (binding) tipine göre servis üzerindeki nesne örneklerinin farklı şekillerde oluşturulup ele alınması söz konusudur..Net Remoting ile uygulama yazan geliştiriciler, istemcilerin talepte bulunacağı uzak nesne örneklerinin farklı modellerde örneklendiklerini bilirler.
 

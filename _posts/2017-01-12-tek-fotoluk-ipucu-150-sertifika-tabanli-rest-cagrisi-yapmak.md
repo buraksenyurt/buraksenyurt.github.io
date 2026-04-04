@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 150 - Sertifika Tabanlı REST Çağrısı Yapmak"
 date: 2017-01-12 18:00:00
-categories:
-  - Genel
 tags:
   - rest-api
   - tek-fotoluk-ipucu
@@ -12,6 +10,8 @@ tags:
   - httpwebrequest
   - WebClient
   - overriding
+categories:
+  - Foto İpucu
 ---
 Geçtiğimiz günlerde üzerinde çalıştığımız projede şöyle bir ihtiyaç oldu: Uygulamanın şirket ağı dışındaki bir kuruma ait REST (Representational State Transfer) tabanlı servis noktalarını kullanması gerekiyordu. Bu noktalara göndereceğimiz HTTP Get,Post taleplerine göre bir takım sonuçlar alacak ve kurum içi süreçleri işletecekti. Söz konusu servis ve sunduğu EndPoint'ler ile olan iletişim ise X509 standardındaki bir sertifika üzerinden gerçekleştirilmeliydi. Test ortamında yaptığımız çalışmada, sunucu sertifikasının doğrulanması sonrası devreye girecek Callback operasyonunda hata mesajı aldık. Kurumla yaptığımız mutabakat sonrasında ise bu adımı atlayabileceğimizi öğrendik. Çözüm olarak küçük bir hile yaptık. Nasıl mı? Aynen aşağıdaki fotoğrafta görüldüğü gibi.
 

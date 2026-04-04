@@ -2,8 +2,6 @@
 layout: post
 title: "Bir React Uygulamasında En Ala SQL Veritabanını Kullanmak"
 date: 2019-11-11 10:30:00
-categories:
-  - Web Programlama
 tags:
   - react
   - alasql
@@ -19,6 +17,8 @@ tags:
   - npm
   - npx
   - create-react-app
+categories:
+  - Web Programlama
 ---
 İngilizcede bazen gemi kaptanlarına Captain yerine Skipper dendiğini biliyor muydunuz? Aslında Hollandalıların schipper, schip en nihayetinde de ship kelimelerinden türeyerek gelmiş bir ifade. Her ikisi de kaptanı ifade etmekte ama Skipper daha çok bir hitap şekli. Hatta yer yer takım kaptanları veya uçak pilotları için de kullanılıyor. Skipper kelimesinin kullanıldığı yerleri düşününce aklıma The Hunt For Red October filminde USS Dallas kaptanı Mancuso'nun CIA'den Jack Ryan'a "That's right? Skipper's Ramius?" demesi geliyor.
 

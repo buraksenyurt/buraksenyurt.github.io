@@ -2,8 +2,6 @@
 layout: post
 title: "WCF 4.5–ChannelFactory Tipi için Caching Kullanımı"
 date: 2014-12-22 19:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - channel
@@ -13,6 +11,8 @@ tags:
   - iclientchannel
   - clientbase
   - generic
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Vaktiyle üniversitedeki diferansiyel denklemler dersi hocamızın anlattığı bir efsane vardı (Sene 94 bu arada). Ne kadar gerçektir bilinmez ama beni oldukça etkilemişti. Hikayeye göre üniversite hocaları arasında belirli aralıklarla düzenlenen bir yarışma varmış. Bu yarışmada hocaların tahtaya kalkıp seçtikleri teoremlere ait geometrik şekilleri çizmeleri istenirmiş. En güzel çizim ise mükafatlandırılırmış.
 

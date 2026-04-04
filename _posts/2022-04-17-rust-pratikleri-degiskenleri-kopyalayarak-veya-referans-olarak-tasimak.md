@@ -2,8 +2,6 @@
 layout: post
 title: "Rust Pratikleri - Değişkenleri Kopyalayarak veya Referans Olarak Taşımak"
 date: 2022-04-17 09:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - rust
   - rust-lang
@@ -11,6 +9,8 @@ tags:
   - stack
   - heap
   - gdb
+categories:
+  - Programlama Dilleri
 ---
 Rust bellek yönetimi konusunda epey hassas olduğundan, fonksiyonlara aktarılan değerlerin nasıl taşınacağı da önemli bir konudur. Bir.net geliştiricisi olarak değişkenlerin fonksiyonların değer türü veya referans türü olarak aktarıldığını biliyorum. Söz gelimi Rust tarafında olmayan class türevli nesneler fonksiyonlara otomatik olarak referans adresleri ile aktarılıyorlar. Üstelik bunu açıkça belirtmemize gerek olmadığını söyleyebilirim. Peki Rust tarafında durum nasıl? Sonuçta ortada bir Garbage Collector yok. Değişkenler varsayılan olarak değiştirilemez (immutable). Class diye bir kavram yok ve kodlarda kullandığımız değişkenler katı bir biçimde ownership, borrowing gibi kural denetimlerine tabiler.
 

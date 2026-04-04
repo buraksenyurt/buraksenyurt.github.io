@@ -2,8 +2,6 @@
 layout: post
 title: "T-SQL ile Dinlenmece Eğlenmece"
 date: 2011-12-14 16:25:00
-categories:
-  - Veritabanı
 tags:
   - sql
   - stored-procedures
@@ -14,6 +12,8 @@ tags:
   - adventure-works
   - sql-server
   - temp-table
+categories:
+  - Veritabanı
 ---
 Hiç canınızın sıkıldığı ve böyle bir buhran anına girdiğinizde SQL Server Management Studio'yu açıp T-SQL ile eğlenceli bir şeyler yapmaya çalıştığınız oldu mu?
 

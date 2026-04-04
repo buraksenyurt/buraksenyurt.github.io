@@ -2,8 +2,6 @@
 layout: post
 title: "Ruby Kod Parçacıkları 28 - Multithreading ve Mutex Kullanımı"
 date: 2016-12-09 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - mutex
@@ -13,6 +11,8 @@ tags:
   - atomicity
   - ordering
   - visibility
+categories:
+  - Programlama Dilleri
 ---
 Ruby Kod Parçacıkları serimizin bir önceki bölümünde çoklu iş parçacıklarının (Multithreading) nasıl yazılabileceğini incelemeye başlamıştık. Başrol oyuncumuz olan Thread sınıfının kullanımını gördük. Lakin birden fazla iş parçacığının ele alındığı senaryolarda dikkat edilmesi gereken önemli konulardan birisi de ortak veriler üzerinde işlemler yapıldığında ortaya çıkmaktadır. Eş zamanlı olarak çalışan iş parçacıkları bazı durumlarda verinin tutarlılığının bozulmasına neden olabilir. Nitekim n sayıda iş parçacığının farklı anlarda aynı veri üzerinde işlem yapması söz konusudur. Birbirlerinin işlerini kesebilirler.
 

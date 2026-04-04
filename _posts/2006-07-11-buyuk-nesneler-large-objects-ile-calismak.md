@@ -2,12 +2,12 @@
 layout: post
 title: "Büyük Nesneler(Large Objects) ile Çalışmak"
 date: 2006-07-11 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - Ado.Net-2
   - BLOB
   - sql
+categories:
+  - Programlama Dilleri
 ---
 Veritabanı programcılığında zaman zaman büyük nesneler (large objects) ile çalışmak zorunda kalabiliriz. Görüntü, ses, resim, text dökümanı, çalıştırılabilir uygulamalar gibi dosyalar bir veritabanı için büyük nesne (large objects) olabilecek kaynaklardır. Bu gibi dosyaların veritabanı üzerinde alanlar (fields) içerisinde saklanabilmesi bazı özel veritabanı türleri ile mümkün olabilmektedir. Sql Server temel olarak büyük nesneleri iki kategoriye ayırmaktadır.
 

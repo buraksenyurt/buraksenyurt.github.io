@@ -2,11 +2,11 @@
 layout: post
 title: "XML Verilerini XSD ile Yönetimli Kod Üzerinden Doğrulamak"
 date: 2006-09-01 09:00:00
-categories:
-  - Web Programlama
 tags:
   - xml
   - xsd
+categories:
+  - Web Programlama
 ---
 Xml içeriğini kullandığımız pek çok platformda, verinin belirli kurallara göre yazılmış olmasını istediğimiz durumlar söz konusu olabilir. Bu durum özellikle, farklı platformlar arasında taşınacak Xml tabanlı verilerin aynı kurallar dizisine uygun olacak şekilde kullanılması istendiği durumlarda karşımıza çıkmaktadır. Xml verilerinin belirli kurallara göre doğruluğunun tespitinde şu anda DTD (Document Type Definitions), XDR (Xml Data Reduced) ve XSD (Xml Schema Definitions) gibi teknolojilerden yararlanılmaktadır.
 

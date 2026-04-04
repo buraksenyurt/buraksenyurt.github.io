@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net 2.0 ve Sql Komutlarını Asenkron Olarak Yürütmek - 1"
 date: 2004-09-23 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - asynchronous-programming
   - async
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bir önceki makalemizde MARS etkisini incelemiş ve aynı bağlantı üzerinden birden fazla sayıda sonuç kümesine nasıl erişebileceğimizi görmüştük. Her ne kadar, aynı anda birden fazla sonuç kümesine erişebilsek de, hâlen MARS modeli, SQL komutları ile eşzamanlı çalışan kodlar ve asenkron yürütülebilen diğer SQL komutları için yeterli değildir. ADO.NET 2.0 ile, SQL komutlarını asenkron olarak yürütebileceğimiz birtakım yeni üyeler gelmektedir. Bu üyeler sayesinde, SQL komutlarını asenkron olarak çalıştırabilir ve hatta, diğer kod satırlarının da eşzamanlı olarak işleyebilmesini sağlayabiliriz. Bu işleri gerçekleştirebilecek üyeler şu an için sadece SqlClient sınıfında yer almaktadır. Ancak .NET Framework 2.0'ın final sürümünde bu üyelerin, diğer ADO.NET isim alanlarına da yerleştirileceklerini düşünüyorum.
 

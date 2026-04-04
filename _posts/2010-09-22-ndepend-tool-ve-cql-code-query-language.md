@@ -2,13 +2,13 @@
 layout: post
 title: "NDepend Tool ve CQL(Code Query Language)"
 date: 2010-09-22 20:16:00
-categories:
-  - Genel
 tags:
   - visual-studio
   - ndepend
   - cql
   - code-query-language
+categories:
+  - Genel
 ---
 Aşağıdaki resimde Visual Studio 2010 Ultimate ortamına ait bir ara pencere görmektesiniz. Dikkat edeceğiniz üzere Select Methods Where NbLinesOfCode>=5 şeklinde bir sorgu cümlesi var. Oppsss!!! Bu nasıl bir sorgu cümlesi? Tahmin etmeye çalışalım. Sanki uygulamadaki kod satır sayısı 5’ ten fazla olan metodların adlarını döndüren bir sorgu cümlesi gibi.
 

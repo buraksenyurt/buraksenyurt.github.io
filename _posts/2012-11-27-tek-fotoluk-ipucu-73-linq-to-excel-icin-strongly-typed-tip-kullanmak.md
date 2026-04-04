@@ -2,14 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu–73–LINQ to Excel için Strongly Typed Tip Kullanmak"
 date: 2012-11-27 04:10:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - language-integrated-query
   - excel
   - csharp
   - query
+categories:
+  - Foto İpucu
 ---
 [Bir önceki ip ucunda](/2012/11/22/tek-fotoluk-ipucu-72-linq-to-excel-ile-basit-sorgulama/) LINQ to Excel Provider’ dan yararlanmış ve bir Excel dosyasını kolayca nasıl sorgulayabileceğimizi görmüştük. Peki ya Excel tablosunda yer alan satırları, kod tarafında oluşturacağımız Strongly Typed sınıflar içerisindeki özelliklere karşılık gelecek şekilde ifade edebiliyor olsaydık
 

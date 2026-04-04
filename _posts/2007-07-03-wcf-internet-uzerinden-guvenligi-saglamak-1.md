@@ -2,14 +2,14 @@
 layout: post
 title: "WCF - Internet Üzerinden Güvenliği Sağlamak - 1"
 date: 2007-07-03 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - security
   - softwareSecurity
   - serviceSecurity
   - distributed-systems
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Windows Communication Foundation ile geliştirilen dağıtık mimari uygulamalarında istemci (client) ve servis (service) arasındaki güvenliği temel olarak mesaj seviyesinde (Message Level) ve iletişim seviyesinde (Transport Level) sağlayabileceğimizden daha önceki yazılarımızda bahsetmiştik. Söz konusu seviyelerden hangisi tercih edilirse edilsin, istemcilerin servisi kullanırken doğrulanmaları (authenticate) ve gerekli işlemleri yapabilmeleri için yetkilerine bakılmaları (authorization) gerekir. Windows Communication Foundation, istemcileri doğrulamak (authenticate) adına altı farklı yol kullanılmasına olanak tanımaktadır. Bunlar aşağıdaki tabloda görüldüğü gibidir.
 

@@ -2,14 +2,13 @@
 layout: post
 title: ".Net Framework 4.0 System.IO.File Tarafındaki Yenilikler"
 date: 2010-10-25 18:00:00
-categories:
-  - Framework Tabanlı Programlama
-  - Programlama Dilleri
 tags:
   - base-class-library
   - .net-framework
   - file-io
   - system.io
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu yazımızda ele alacağımız konu ile ilişkili olarak kullanacağım giriş resmi için uzun bir süre araştırma yapmak zorunda kaldım. Sanırım yazıyı yazdığım bu sıcak yaz gününde devrelerim istediğim randımanı vermedi. Ancak en azından yandaki resim, anlatacağım ilk konu ile doğrudan alakalı olarak düşünülebilir. Bu resimde üst üste binmiş onlarca metre yüksekliğe varan dosya dolapları olduğu ifade edilemekte. Bunların hepsinin tek bir dosya içerisinde birleştirildiğini düşünün. Üstelik bu dosya text tabanlı olsun.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "HTTP/2 Server Push Nasıl Bir Şeydir?"
 date: 2019-04-08 18:00:00
-categories:
-  - Web Programlama
 tags:
   - node
   - nodejs
@@ -19,6 +17,8 @@ tags:
   - openssl
   - linux
   - ubuntu
+categories:
+  - Web Programlama
 ---
 Bir türlü giriş hikayesini bulamıyordum. Takip ettiğim referansta geçenleri West World üzerinde kurgulayıp sonuçları görmüş ve anladığım haliyle yazıya dökmüştüm. Ama o klasik girizgah kısmına koymam gereken hikayeyi bulamıyordum. Ne hikmetse ilgi çekici olması için her fırsatta üzerinde titizlikle durduğum bu kısmın ilham perisi tatile çıkmış aklıma tek bir düşünce dahi gelmemişti. Sonuçta istediğim girizgahı yapamadım... Yine de başlayalım.
 

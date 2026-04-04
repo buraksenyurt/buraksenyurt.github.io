@@ -2,9 +2,9 @@
 layout: post
 title: "Ruby Kod Parçacıkları - 14 (Module Kullanımı)"
 date: 2015-09-10 08:00:00
+tags: []
 categories:
   - Programlama Dilleri
-tags: []
 ---
 Module’leri sınıf değişkenleri, sınıflar, metodlar ve sabitleri (Constant) içerisinde barındırabilen isim alanları (namespace) olarak düşünebiliriz. Özellikle projelerin büyüdüğü durumlarda kullanılan tip veya metodların çakışmasını engellemek, kod tekrarlarının önüne geçmek (DRY-Don'r Repeat Yourself), bakım maliyetlerini azaltmak ve özellikle aynı iş alanına (Domain) özgü operasyonları anlamlı isim alanlarında konuşlandırabilmek maksadıyla tercih edilirler.
 

@@ -2,9 +2,6 @@
 layout: post
 title: "Silverlight İstemcileri için Duplex Service Geliştirmek"
 date: 2010-06-18 04:50:00
-categories:
-  - Web Programlama
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - silverlight
@@ -12,6 +9,8 @@ tags:
   - duplex-service
   - duplex-communication
   - push
+categories:
+  - Web Programlama
 ---
 Lost dizisinin müptelası olan arkadaşlar "Push The Button" repliğini bilirler. Hikayeye göre DHARMA girişimin labaratuvarında yer alan ve 108 dakikadan geriye doğru sayan bir numarator vardır. Zaman sayacı sıfırlanmadan önce toplamları 108 olan 4,8,15,16,23,42 sayı dizisinin klavyeden girilmesi ve Enter tuşuna basılması gerekmektedir. Tabi ben Lost dizisinin tüm sezonlarını takip etmemiş ve hatta sonunu getirememiş birisi olarak ne olduğunu tam olarak anlayabilmiş değilim.
 

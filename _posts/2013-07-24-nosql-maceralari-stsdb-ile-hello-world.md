@@ -2,13 +2,13 @@
 layout: post
 title: "NoSQL Maceraları - STSdb ile Hello World"
 date: 2013-07-24 12:24:00
-categories:
-  - Veritabanı
 tags:
   - nosql
   - sts-db
   - key-value-storage
   - not-only-sql
+categories:
+  - Veritabanı
 ---
 [Matrix Reloaded'](http://en.wikipedia.org/wiki/The_Matrix_Reloaded) ı seyrettiğim zamanları düşündüğümde, anımsadıklarım arasında heyecanlı aksiyon sahnelerinde yer alan ve eski Amerikan stilini de yansıtan kocaman otomobiller vardı. (Hatta bildiğim kadarı ile ikinci dünya savaşı sonrası çelik stoklarının fazlalığı nedeniyle Amerikan otoları hep kocaman olmuşlardı)
 

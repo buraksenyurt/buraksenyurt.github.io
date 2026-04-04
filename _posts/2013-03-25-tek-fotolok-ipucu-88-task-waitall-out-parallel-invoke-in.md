@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotolok İpucu 88–Task.WaitAll out, Parallel.Invoke in"
 date: 2013-03-25 21:00:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - task-parallel-library
@@ -14,6 +12,8 @@ tags:
   - wait-all
   - wait-any
   - wait-one
+categories:
+  - Foto İpucu
 ---
 Bildiğiniz üzere paralel çalışmasını istediğimiz görevler olduğunda genellikle bunları birer Task halinde üretir ve bir dizi içerisinde toplarız (En azından TPL-Task Parallel Library geldikten sonra böyle yapmakta olduğumuzu ifade edebiliriz) Görevleri Task tipinden bir dizi içerisinde toplamamızın sebebi ise genellikle WaitAll gibi bir çağrıya ihtiyaç duyabilecek olmamızdır.
 

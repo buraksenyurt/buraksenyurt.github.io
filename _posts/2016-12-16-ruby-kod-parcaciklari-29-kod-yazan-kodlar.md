@@ -2,8 +2,6 @@
 layout: post
 title: "Ruby Kod Parçacıkları 29 - Kod Yazan Kodlar"
 date: 2016-12-16 16:51:00
-categories:
-  - Programlama Dilleri
 tags:
   - metaprogramming
   - dynamic-programming
@@ -14,6 +12,8 @@ tags:
   - define_method
   - ruby-lang
   - domain-specific-language
+categories:
+  - Programlama Dilleri
 ---
 Ruby programlama dilinin öne çıkan özellikleri arasında dinamiklik ve meta programlama yetenekleri de yer almaktadır. Aslında işin özeti kod yazan kodlardır diyebiliriz. Ruby yorumlamalı bir dildir ve doğal olarak her şey çalışma zamanında icra edilmektedir. Ancak bazı senaryolarda metinsel olarak gelen bir içeriğin kod parçası şeklinde değerlendirilmesi ve çalışma zamanında yürütülmesi istenebilir. Hatta çalışan kod üzerinde değişiklikler yapılabilmesi de belli ölçülerde mümkündür. Konu pek tabii benim burada anlatacağım kadar basit değil. Örneğin [Amazon'da bu konu üzerine yazılmış kitap](https://www.amazon.com/Metaprogramming-Ruby-Program-Like-Facets/dp/1941222129/ref=sr_1_1?s=books&ie=UTF8&qid=1481543025&sr=1-1&keywords=ruby+metaprogramming)lar bulabilirsiniz. Bu yazımızda kodu çalışma zamanında üretmek veya çalışan kodu manipule etmek için yapılabileceklerden bir kaçına değinmeye çalışacağız.
 

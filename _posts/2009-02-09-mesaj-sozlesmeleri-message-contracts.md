@@ -2,10 +2,10 @@
 layout: post
 title: "Mesaj Sözleşmeleri(Message Contracts)"
 date: 2009-02-09 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
+categories:
+  - Programlama Dilleri
 ---
 Servis tabanlı uygulamalarda en önemli noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde gerçekleştirildiğidir. Gerçek şuki, bu bilgi transferinin oluşma şekli çoğu zaman geliştiricinin gözünden kaçan yada çok fazla ilgilenmediği bir konu olmaktadır. Nitekim çoğu servis geliştirme aracı buradaki söz konusu içeriğin hazırlanmasını, gönderilmesini veya alınmasını otomatikleştirmektedir. Özellikle Windows Communication Foundation tarafında, bilginin istemci ve servis arasındaki dolaşımında bağlayıcı tiplerin (Binding Type) seçilmesi ile zaten arka tarafta ne şekilde bir haberleşme olacağı ve paketlerin nasıl hazırlanacağı belirlenmiş olur.
 

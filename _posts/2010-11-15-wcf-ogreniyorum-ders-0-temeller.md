@@ -2,12 +2,12 @@
 layout: post
 title: "WCF Öğreniyorum Ders 0–Temeller"
 date: 2010-11-15 08:30:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - nedir-tv
   - wcf-ogreniyorum
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü yapmakta olduğum [NedirTv?Com](http://www.nedirtv.com) bünyesindeki yeni Webinerlerimize (WebCasts) başlamış olduk
 

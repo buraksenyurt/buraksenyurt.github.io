@@ -2,12 +2,11 @@
 layout: post
 title: "PLINQ - Paralellik Altında Ardışık(Sequential) Çalışmak [Beta 1]"
 date: 2009-05-25 11:34:00
-categories:
-  - Veritabanı
-  - Paralel Programlama
 tags:
   - plinq
   - language-integrated-query
+categories:
+  - Paralel Programlama
 ---
 Bir önceki blog yazımızda PLINQ ifadelerinde sıralama konusuna değinmeye çalışmıştık. Bu yazımızda ise, paralel olarak çalıştırılan LINQ sorguları içerisinde, ardışık (Sequential) olarak nasıl işlem yapılabileceğini incelemeye çalışacağız.
 

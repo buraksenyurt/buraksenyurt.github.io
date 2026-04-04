@@ -2,8 +2,6 @@
 layout: post
 title: "Floyd-Warshall Algoritması ile En Kısa Yolu Bulmak"
 date: 2016-04-23 12:00:00
-categories:
-  - Algoritma
 tags:
   - algoritma
   - csharp
@@ -11,6 +9,8 @@ tags:
   - network-routing
   - dynamic-programming
   - floydWarshall
+categories:
+  - Algoritma
 ---
 Uzun zamandır algoritmalar üzerinde çalışmadığımı fark ettim. İşlerin biraz olsun hafiflediği şu vakitlerde de bir tanesini inceleyeyim dedim. Derken kendimi [Floyd-Warshall algoritmasını](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) anlamaya çalışırken buldum. Söz konusu algoritma Graph yapılarında boğumlar arasındaki en kısa yolların bulunmasında kullanılmaktadır.
 

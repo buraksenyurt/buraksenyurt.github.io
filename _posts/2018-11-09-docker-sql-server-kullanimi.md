@@ -2,8 +2,6 @@
 layout: post
 title: "Docker SQL Server Kullanımı"
 date: 2018-11-09 06:25:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - docker
   - sql-server
@@ -21,6 +19,8 @@ tags:
   - crud
   - sql
   - select
+categories:
+  - DevOps
 ---
 Geçenlerde Guinness Dünya Rekorları kitabının 2018 baskısını aldım. Bu zamana kadar kayıt altına alınmış bir çok rekorun yer aldığı resimli ansiklopedi de ilgimi çeken değişik bölümler oldu. "Derinler" başlıklı kısmı okurken aklım dünyanın ilginç ve bir o kadar da zorlu mesleklerine gitti. Mesela derin sualtı dalgıcı olduğunuzu düşünsenize. İkinci dünya savaşında Norveç'in soğuk kuzey deniz sularının 245 metre derinine gömülmüş bir savaş gemisine batık dalışı yapan 12 dalgıçtan birisi olabilirdiniz. Her ne kadar 1981'de 31 gün içinde 431 külçe altın çıkartmış olsanız da kolay iş değil. Bunun gibi bir çok zorlu meslek var düşününce. Astrontlar, madencilikle uğraşanlar, yüksek gökdelen camlarını temizleyenler, İstanbul boğazındaki köprülerin bağlantı kablolarına tadilat yapanlar, hayvanat bahçelerindeki timsahlara bakanlar, bomba imhası ile uğraşan uzmanlar ve diğerleri.
 

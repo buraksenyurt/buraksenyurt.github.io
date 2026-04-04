@@ -2,11 +2,11 @@
 layout: post
 title: "C# 3.0 : Derinlemesine Lambda İfadeleri"
 date: 2008-03-31 06:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - lambda-operator
+categories:
+  - Bulut Bilişim
 ---
 C# programlama dilinin 3ncü versiyonu ile birlikte gelen önemli yeniliklerden biriside lambda (=>) operatörüdür. Bu operatörün kullanıldığı ifadeler yardımıyla temsilci (delegate) oluşturulması, kod bloğunun yazılması, sonuçların alınması ve tip tahmini (Type Inference) gibi işlemlerin tek seferde gerçekleştirilmesi mümkündür. Bu sebepten dolayı LINQ (Language INtegrated Query) sorgularında yer alan genişletme metodlarında (Extension Methods) büyük öneme sahiptir. Ne varki lambda operatörünü kavramak için ona olan ihtiyacın nereden doğdunu bilmek ve nasıl bu operatöre ulaşıldığını anlamak gerekmektedir. En iyi başlangıç noktası elbetteki C# dilinin ilk versiyonudur. Bu yazımızda lambda operatörünün getirdiği avantajları görmeye çalışırken derinlemesinede inceliyor olacağız.
 

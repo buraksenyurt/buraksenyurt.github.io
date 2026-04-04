@@ -2,8 +2,6 @@
 layout: post
 title: "WCF - Referans Güncellemeden Güncelleme Yapmak"
 date: 2014-06-19 17:20:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - proxy
@@ -11,6 +9,8 @@ tags:
   - json
   - bson
   - xml
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bildiğiniz üzere bir servis yazıldığında genellikle bunu tüketen (Consume) en az bir taraf bulunur. İstemci olarak düşündüğümüz bu taraflar her hangi bir uygulama olabilir. WCF (Windows Communication Foundation) ile geliştirdiğimiz bu servislerin, söz konusu istemciler tarafından kullanılması noktasında ise izlenebilecek bir kaç yol bulunmaktadır. Bunlardan en yaygını, servislerin projeye referans olarak eklenmesi ve üretilen Proxy sınıfının kullanılmasıdır (Add Service Reference). Visual Studio gibi gelişmiş IDE’ lerin ilgili arabirimleri, bu noktada büyük kolaylık sağlamaktadır.
 

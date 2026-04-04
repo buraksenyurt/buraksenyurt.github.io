@@ -2,13 +2,12 @@
 layout: post
 title: "Tek Fotoluk İpucu–12 (DataTable için Raw XML Formatı)"
 date: 2011-07-03 18:00:00
-categories:
-  - Genel
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - datatable
   - ado.net
+categories:
+  - Foto İpucu
 ---
 Peki elinizde bir DataTable var ve siz bunun Raw XML formatındaki çıktısını istemcilere vermek istiyorsunuz. Ne yaparsınız?
 

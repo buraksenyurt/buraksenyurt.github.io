@@ -2,13 +2,13 @@
 layout: post
 title: "Ruby Kod Parçacıkları 27 - Hello Multithreading"
 date: 2016-12-01 18:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - thread
   - multithreading
   - thread-priority
+categories:
+  - Programlama Dilleri
 ---
 Multithreading, programlamanın zor konularından birisidir. Aslında amaç işlemciye aynı andan birden fazla iş yaptırabilmek ya da bir işi parçalara bölerek eş zamanlı olarak yürütebilmektir. İşlemcinin bu farklı iş parçacıkları (Thread) arasında kısa sürelerde geçişler yapması sonucu istenen sonuçlara daha çabuk ulaşılması sağlanır. Bu, performans gerektiren bazı vakalarda oldukça önemlidir. Büyük veri kümelerinde arama yapan algoritmalar, yüksek boyutlu video görüntülerinin render eden programla, çeşitli matematik problemleri, oyun programlama ve daha pek çok alanda çoklu iş parçacığı tekniklerine başvurulur.
 

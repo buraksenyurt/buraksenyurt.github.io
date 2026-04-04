@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 99–Tipler Arası Property Eşleştirme"
 date: 2013-03-25 17:35:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - auto-mapper
@@ -16,6 +14,8 @@ tags:
   - dto
   - business-object
   - data-transfer-object
+categories:
+  - Foto İpucu
 ---
 Özellikle ORM araçlarının ele alındığı uygulamalarda bazen Entity içeriklerini sistem içerisinde dolaştıran ve nispeten daha az sayıda özellik (asıl ihtiyaç olunanları) taşıyan tiplere ihtiyaç duyarız. Business Object veya Data Transfer Object gibi isimler de verirler bunlara.
 

@@ -2,11 +2,11 @@
 layout: post
 title: "Params Anahtar Sözcüğünün Kullanımı"
 date: 2003-11-30 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - params
+categories:
+  - Programlama Dilleri
 ---
 Bugünkü makalemizde, C# metodlarında önemli bir yere sahip olduğunu düşündüğüm params anahtar kelimesinin nasıl kullanıldığını incelemeye çalışacağız. Bildiğiniz gibi metodlara verileri parametre olarak aktarabiliyor ve bunları metod içerisinde işleyebiliyoruz. Ancak parametre olarak geçirilen veriler belli sayıda oluyor. Diyelim ki sayısını bilmediğimiz bir eleman kümesini parametre olarak geçirmek istiyoruz. Bunu nasıl başarabiliriz? İşte params anahtar sözcüğü bu noktada devreye girmektedir. Hemen çok basit bir örnek ile konuya hızlı bir giriş yapalım.
 

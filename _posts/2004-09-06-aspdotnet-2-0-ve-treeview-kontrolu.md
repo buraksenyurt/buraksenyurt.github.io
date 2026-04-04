@@ -2,11 +2,11 @@
 layout: post
 title: "Asp.Net 2.0 ve TreeView Kontrolü"
 date: 2004-09-06 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - treeview
+categories:
+  - Web Programlama
 ---
 Bu makalemizde, ASP.NET 2.0 ile birlikte gelen yeni kontrollerden birisi olan TreeView kontrolü ile, özellikle XML tabanlı veri kaynaklarına ait bilgilerin internet ortamında hiyerarşik bir yapıda nasıl gösterilebileceğini incelemeye çalışacağız. Bir önceki makalemizden hatırlayacağınız gibi, site içinde son kullanıcıya akıllı navigasyon hizmeti sunabilmek için sitemap dosyalarından faydalanabileceğimizi ve bu dosyalara ait XML içeriğinin SiteMapPath kontrolü ile sayfalarımızda gösterilebileceğinden bahsetmiş ve basit bir örnek geliştirmiştik. Benzer işlevselliğe TreeView kontrolü yardımıyla daha kuvvetli bir biçimde sahip olabiliriz.
 

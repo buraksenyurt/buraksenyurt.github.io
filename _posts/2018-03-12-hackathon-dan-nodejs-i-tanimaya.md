@@ -2,8 +2,6 @@
 layout: post
 title: "Hackathon'dan Node.js'i Tanımaya"
 date: 2018-03-12 03:00:00
-categories:
-  - Web Programlama
 tags:
   - node.js
   - javascript
@@ -19,6 +17,8 @@ tags:
   - npm
   - linux
   - ubuntu
+categories:
+  - Web Programlama
 ---
 Javascript yüzyıllardır (abartmayı severim) front-end tarafında kullanılan en güçlü yazılım geliştirme dillerinden birisi. Bir web uygulamasını onsuz düşünmek neredeyse imkansız. Her ne kadar Typescript gibi oluşumlar söz konusu olsa da, Javascript'in yeri ayrı. Javascript dilini baz alan bir çok Framework (çatı) de uzun zamandır sektörümüzde yer almakta. Hatta bazıları tamamen sunucu bazlı çalışacak şekilde tasarlanmış durumdalar. Node.js bunlardan birisi.
 

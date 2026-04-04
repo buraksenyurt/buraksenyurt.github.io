@@ -2,14 +2,14 @@
 layout: post
 title: "Tek Fotoluk İpucu 126 - XML Tabanlı Metinsel İçerikleri Nesneleştirme"
 date: 2016-01-04 07:00:00
-categories:
-  - Genel
 tags:
   - xml
   - entity
   - domain-driven-design
   - extension-methods
   - csharp
+categories:
+  - Foto İpucu
 ---
 Malumunuz nesne yönelimli (Object Oriented) dünyanın en önemli unsurlarından birisi de varlıklar (Entity). Uygulamaların çalıştığı alanlarda (Domains) bu varlıklar dolaşmakta. Birer sınıf olarak tasarlanan bu varklıklar çalışma zamanlarında örneklenmekte ve belirli içerikleri taşımakta. Varlığı niteleyen verinin kaynağı çeşitli enstrümanlar olabiliyor. Veritabanı üzerindeki bir tablo, fiziki bir dosya, bir servis uç noktası, başka bir donanım, bir ara motorunun ürettiği çıktı vb
 

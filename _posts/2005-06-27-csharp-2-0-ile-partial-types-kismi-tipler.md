@@ -2,13 +2,13 @@
 layout: post
 title: "C# 2.0 ile Partial Types (Kısmi Tipler)"
 date: 2005-06-27 12:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - csharp
   - class
   - partial-class
   - partial-type
+categories:
+  - Programlama Dilleri
 ---
 Visual Studio .NET ile Windows veya web uygulamaları geliştirirken, kod yazılması sırasında karşılaştığımız güçlüklerden birisi, tasarım kodları ile kendi yazmış olduklarımızın iç içe geçmesidir. Bu durum zamanla kodun okunabilirliğini zorlaştıran bir etmendir. Bunu Windows uygulamalarını veya ASP.NET uygulamalarını geliştirirken sıkça yaşamaktayız. Bununla birlikte, özellikle source safe gibi ortamlarda farklı geliştiricilerin aynı sınıf kodları üzerinde eş zamanlı olarak çalışması pek mümkün değildir.
 

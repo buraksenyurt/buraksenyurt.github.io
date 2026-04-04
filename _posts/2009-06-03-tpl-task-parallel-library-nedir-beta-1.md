@@ -2,10 +2,10 @@
 layout: post
 title: "TPL(Task Parallel Library) Nedir? [Beta 1]"
 date: 2009-06-03 02:50:00
-categories:
-  - Paralel Programlama
 tags:
   - task-parallel-library
+categories:
+  - Paralel Programlama
 ---
 Uzun uzun zaman önceydi. İlk bilgisayarımı daha dün gibi hatırlıyorum. Efsane Commodore 64.
 

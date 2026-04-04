@@ -2,13 +2,13 @@
 layout: post
 title: "Ruby Maceralarım"
 date: 2015-07-31 16:00:00
-categories:
-  - Programlama Dilleri
 tags:
   - ruby-lang
   - programlama
   - oop
   - newEra
+categories:
+  - Programlama Dilleri
 ---
 Kırklı yaşlarına gelmekte olan bir yazılımcıyım ve uzun zamandır bu işin içerisindeyim. Fark ettim ki yeni bir şeyler araştırmadan rahat edemiyorum. Belki hep.Net üzerine yoğunlaştım ancak zaman zaman farklı alanlara da göz atıyorum. Bu düşüncelere sahip olduğum dönemlerde ağırlıklı olarak farklı programlama dillerini tanımaya çalışıyorum.
 

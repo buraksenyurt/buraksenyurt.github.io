@@ -2,12 +2,12 @@
 layout: post
 title: "Tasarım Desenleri - Builder"
 date: 2009-07-17 10:44:00
-categories:
-  - Yazılım Tasarımı
 tags:
   - design-patterns
   - oop
   - csharp
+categories:
+  - Yazılım Tasarımı
 ---
 Zaman içerisinde geliştirdiğimiz uygulamalar son derece karmaşık bir hal alırlar. Uygulamanın çapının ve ihtiyaçlarının artması bir kenara içerisinde yer alan en küçük parçaların bile kullanımları kompleksleşebilir. Bu küçük birimlerin karmaşıklaşmasına etken olarak gösterilebilecek konulardan biriside, nesne üretimleri için kullanılan sınıfların sayılarının artması ve inşa işlemlerinin kompleks olması olarak düşünülebilir. Hal böyle olunca bazı vakalar için standartlaşmış kalıpları kullanmanın genişleyebilirlik ve ölçeklenebilirlik açısından büyük yararı vardır.
 

@@ -2,8 +2,6 @@
 layout: post
 title: "WCF Uygulamalarında Enterprise Library Validation Block Kullanımı"
 date: 2013-06-23 15:26:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - validation
@@ -11,6 +9,8 @@ tags:
   - validation-application-block
   - fault-management
   - fault-contract
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Enterprise Library ve içerisinde yer alan Application Block’ lar çoğunlukla projelerimizde ihtiyaç duyduğumuz ve Cross-Cutting olarak geçen parçaların hızlı ve kolay bir biçimde uygulanmasında kullanılmaktadır. Cross-Cutting’ ler özellikle birden fazla katmandan oluşan proje bazlı çözümlerde, katmanların pek çok noktasında sıklıkla kullanılabilen (ihtiyaç duyulabilen) fonksiyonelliklerdir.
 

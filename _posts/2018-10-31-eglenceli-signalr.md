@@ -2,8 +2,6 @@
 layout: post
 title: "Eğlenceli SignalR"
 date: 2018-10-31 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - signalr
   - chart.js
@@ -16,6 +14,8 @@ tags:
   - hub
   - task
   - asynchronous-programming
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Önce üç yumurtayı derin kabın içerisine kırıp el mikseri ile güzelce karıştırdım. Bir su bardağının 4te 3ü kadar şeker ilave edip karıştırmaya devam ettim. Şeker iyice eriyene kadar. Sonra bir su bardağı kadar zeytinyağı, iki su bardağı kadar esmer un katıp (unu önce el eleğine aldım oradan kaba boşalttım. Unu havalandırarak eklemek daha iyi sonuç veriyor çünkü) kulak memesi kıvamına gelinceye kadar çırpmaya devam ettim. Kıvamı ayarlamak için yer yer göz kararı bir miktar daha un eklemem de gerekti. Acemilik tabii...
 

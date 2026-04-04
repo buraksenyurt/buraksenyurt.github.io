@@ -2,8 +2,6 @@
 layout: post
 title: "JWT(JSON Web Token) Kullanımı"
 date: 2017-12-08 06:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - jwt
   - json
@@ -17,6 +15,8 @@ tags:
   - rest-api
   - web-api
   - asp.net-web-api
+categories:
+  - Framework Tabanlı Programlama
 ---
 Daha önce söylemiş miydim bilemiyorum ama servis odaklı yaklaşımlarda güvenlik hep korktuğum ve anlamakta güçlük çektiğim konuların başında gelir. Özellikle WCF tarafındaki güvenlik senaryolarının çeşitliliği ve zenginliği bazen kafa karıştırıcı boyutlarda olabiliyor. Bu aralar şirketteki REST tabanlı servislerin JSON Web Token ile kullanılmalarına dair bir vaka çalışması söz konusu. Bu durum REST modelinde çalışan WCF servisleri için önemli.
 

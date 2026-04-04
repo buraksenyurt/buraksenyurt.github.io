@@ -2,10 +2,10 @@
 layout: post
 title: "WF 4.0 : WorkflowInvoker ile Single Thread, WorkflowApplication ile Multi-Thread [Beta 2]"
 date: 2009-11-02 02:35:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
+categories:
+  - Framework Tabanlı Programlama
 ---
 Hiç müzik dinlerken bir yandan da kod yazmayı denediniz mi? Üstelik çevre ile olan etkileşiminiz devam ederken söz gelimi hareketli bir parçayı tempo tutarak dinleyip ondan tamamen bağımsız bir şekilde geliştirmeye devam ederken yan masadaki arkadaşınızdan gelen "Dün akşamki maçı seyrettin mi?...Ronaldo ne gol attı öyle..." sorusuna da rakip takımın orta sahasını kattığınız bir yorumda bulunup diğer taraftanda kahve içtiğinizi düşünebilirsiniz.
 

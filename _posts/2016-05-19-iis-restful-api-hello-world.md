@@ -2,8 +2,6 @@
 layout: post
 title: "IIS RESTful API Hello World"
 date: 2016-05-19 17:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - iis
   - .net-core
@@ -11,6 +9,8 @@ tags:
   - rest-api
   - microservice
   - csharp
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bugün 20 Mayıs Cuma. Dün 19 Mayıs nedeniyle resmi tatil olan bankamız bugün de toplu olarak tatil. Ancak şirkette kalmak isteyenler durumlarını bildirip gelebiliyor.
 

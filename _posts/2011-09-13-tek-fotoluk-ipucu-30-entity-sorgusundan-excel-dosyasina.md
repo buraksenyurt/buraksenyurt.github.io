@@ -2,9 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu-30 (Entity Sorgusundan Excel Dosyasına)"
 date: 2011-09-13 10:30:00
-categories:
-  - Framework Tabanlı Programlama
-  - Genel
 tags:
   - .net-framework
   - csharp
@@ -12,6 +9,8 @@ tags:
   - language-integrated-query
   - entity-framework
   - excel
+categories:
+  - Foto İpucu
 ---
 .Net Framework 4.0' ın getirdiği pek çok yenilik sayesinde Office gibi API'leri kullanmamız çok daha fazla kolaylaştı. Örneğin bir Entity sorgusunun sonucunu Excel dosyasına aktarmak için daha basit kodlamalar yapabiliyoruz. Nasıl mı?
 

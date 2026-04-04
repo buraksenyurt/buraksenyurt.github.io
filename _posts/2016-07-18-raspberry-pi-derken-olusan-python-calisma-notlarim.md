@@ -2,15 +2,14 @@
 layout: post
 title: "Raspberry PI Derken Oluşan Python Çalışma Notlarım"
 date: 2016-07-18 18:00:00
-categories:
-  - Programlama Dilleri
-  - IoT
 tags:
   - raspberry-pi
   - python
   - temel-kavramlar
   - Internet-of-Things
   - IoT
+categories:
+  - Programlama Dilleri
 ---
 Bloğumu takip edenler bu yaz için Raspberry PI ve Python programlama diline merak saldığımı biliyordur. Bu merakımı boşa çıkarmamak için de vakit buldukça her iki konuya da çalışıyorum. İş yoğunluğu ve araya giren bayram tatili beni az da olsa geriye atmış durumda. Ama neyseki defterime aldığım renkli renkli notlarım var.
 

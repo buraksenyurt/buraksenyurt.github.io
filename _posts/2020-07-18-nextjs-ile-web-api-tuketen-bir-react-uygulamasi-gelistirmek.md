@@ -2,14 +2,14 @@
 layout: post
 title: "NextJS ile Web API Tüketen bir React Uygulaması Geliştirmek"
 date: 2020-07-18 19:22:00
-categories:
-  - Web Programlama
 tags:
   - nextjs
   - react
   - rest-api
   - web-framework
   - react-hooks
+categories:
+  - Web Programlama
 ---
 Geçen sene React ile ilgili basit birkaç örnek denemiiş olmama rağmen öğrendiklerimi çok çabuk unuttuğumu fark ettim. Gerçek saha projelerinde sıklıkla kullanmayınca böyle bir şeyin olması kaçınılmazdı. Dolayısıyla [skynet çalışmaları](https://github.com/buraksenyurt/skynet) kapsamında tekrardan pratik yapmanın uygun olacağını düşündüm. Bu sefer amacımız Star Wars için [https://swapi.dev](https://swapi.dev/) adresinden sunulan REST servisini tüketen ve karakterlerin listesini gösteren bir web uygulaması geliştirmek. Bunu yaparken hafif siklet kategorisinde sayılan ancak bir çok işi kolaylaştırdığı söylenen Next.Js isimli web framework'ten faydalanacağız.
 

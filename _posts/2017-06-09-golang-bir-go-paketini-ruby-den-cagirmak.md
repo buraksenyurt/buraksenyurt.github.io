@@ -2,8 +2,6 @@
 layout: post
 title: "GoLang - Bir Go Paketini Ruby'den Çağırmak"
 date: 2017-06-09 12:33:00
-categories:
-  - Programlama Dilleri
 tags:
   - golang
   - c-programming-language
@@ -13,6 +11,8 @@ tags:
   - ffi
   - gem
   - c-header
+categories:
+  - Programlama Dilleri
 ---
 Pek çok kaynak GO dilinin ileride C'nin yerini alabileceği yönünde görüşler belirtmekte. Özellikle IoT alanında bu dilin daha fazla ön plana çıkacağı vurgulanıyor. Bu düşüncenin haklı olabileceği yönünde bazı tespitlerim var.
 

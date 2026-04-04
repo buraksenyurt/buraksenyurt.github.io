@@ -2,11 +2,11 @@
 layout: post
 title: "Connection Pooling' in Önemi"
 date: 2006-02-27 08:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - connection-pooling
+categories:
+  - Framework Tabanlı Programlama
 ---
 Connectilon Pooling veritabanı programcılığında, uygulamaların performansını doğrudan etkiliyen unsurlardan birisidir. Bağlantıların bir havuza atılarak buradan kullanılmalarını sağlamaktaki en büyük amaç, çok sayıda kullanıcının bağlı olduğu veri tabanlı uygulamalarda, aynı özelliklere sahip bağlantı bilgilerinin defalarca oluşturulmasınının önüne geçmek bu sayede var olan açık bağlantıların kullanılabilmesini sağlamaktır. Temel mantık son derece basittir. Bir kullanıcı uygulaması içerisinden bir verikaynağına bağlanmak istediğinde, geçerli bir Connection nesnesi oluşturmak zorundadır. Bu Connection nesnesi eğer ilk kez talep edilmişse, veritabanı tarafında bir bağlantı havuzunun içine atılacaktır.
 

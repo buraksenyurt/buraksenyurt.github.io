@@ -2,8 +2,6 @@
 layout: post
 title: "Tek Fotoluk İpucu 85–Zahmetsizce Encryption(ProtectedData)"
 date: 2013-03-25 20:46:00
-categories:
-  - Genel
 tags:
   - tek-fotoluk-ipucu
   - cryptography
@@ -18,6 +16,8 @@ tags:
   - şifreleme
   - çözümleme
   - memory-protection
+categories:
+  - Foto İpucu
 ---
 Cryptography denilince.Net Framework tarafında epey bir çözüm bulunmakta. Bazıları oldukça karmaşıktır ve simetrik yada a-simetrik olmalarına bağlı olaraktan, ortak noktalarından birisi de, tekniğe göre kullanılan Vector-Key değerlerinin tutulması/bilinmesi gibi zorunluluklardır.
 

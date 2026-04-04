@@ -2,8 +2,6 @@
 layout: post
 title: "Workflow Foundation, Oracle, WCF ve TransactionScope"
 date: 2013-01-31 18:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - workflow-foundation
   - windows-communication-foundation
@@ -12,6 +10,8 @@ tags:
   - oracle
   - odp.net
   - oracle-data-provider-for-.net
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Yandaki fotoğrafta görülen buluşa baktığınızda aslında gerçekten bu pilotun o koca pervaneler ile uçup uçamayacağına pek kanaat getiremiyoruz öyle değil mi? Sonuçta en azından kağıt üstünde ve teorik olarak da bu tip bir uçuş aracının çalışacağının ispat edilmesi ve sonrasında pratikteki kullanımı için teste çıkılması beklenir (Tabi buna cesaret edecek de bir pilotun olması gerekir) Bir dostumuzun söylediği üzere "tasarlanan her uçak uçmuş ama her yazılım çalışmamıştır"
 

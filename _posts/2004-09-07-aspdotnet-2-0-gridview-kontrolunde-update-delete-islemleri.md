@@ -2,13 +2,13 @@
 layout: post
 title: "Asp.Net 2.0 GridView Kontrolünde Update,Delete İşlemleri"
 date: 2004-09-07 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - gridview
   - update
   - delete
+categories:
+  - Web Programlama
 ---
 Bu makalemizde, ASP.NET 2.0 ile gelen yeni kontrollerden birisi olan GridView kontrolü üzerinde, veri güncelleme ve veri silme gibi işlemlerin nasıl yapılacağını incelemeye çalışacağız. ASP.NET 2.0 ve dolayısıyla Framework 2.0, özellikle veri bağlı kontrollerde, yazılım geliştiricilerin sıklıkla yaptıkları rutin işlemlerin daha da kolaylaştırılmasına izin veren mimari yaklaşımları benimsemektedir.
 

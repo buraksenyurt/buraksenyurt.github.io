@@ -2,11 +2,11 @@
 layout: post
 title: "Nasıl Yapılır? Adım Adım Özel HttpHandler"
 date: 2007-12-10 12:00:00
-categories:
-  - Web Programlama
 tags:
   - asp.net
   - http-handler
+categories:
+  - Web Programlama
 ---
 Uzun zaman önce Asp.Net 2.0 ile ilişkili makalelerimizden birisinde HttpHandler ve HttpModule kavramlarından bahsetmeye çalışmıştık. Bu makalemizde kendi Handler sınıfımızı geliştirmek isteyebileceğimiz örnek bir senaryo üzerinde daha durmaya çalışacağız. Bu sayede HttpHandler sınıfları yazarak neler yapılabileceğinide daha net bir şekilde görmüş olacağız. Konuyu daha net kavrayabilmek adına örnek senaryomuz üzerinden adım adım ilerleyeceğiz.
 

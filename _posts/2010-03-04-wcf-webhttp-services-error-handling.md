@@ -2,14 +2,14 @@
 layout: post
 title: "WCF WebHttp Services - Error Handling"
 date: 2010-03-04 18:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - webhttp-services
   - rest-api
   - non-soap
   - wcf-webhttp-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Bu yazımızda WCF Eco System'in bir parçası olan WebHttp Service'lerinde hata yönetimini (Error Management) etkili bir şekilde nasıl ele alabileceğimizi incelemeye çalışıyor olacağız. WCF WebHttp Service'leri üzerinden çağırılan bir servis operasyonundan, istemci tarafına kendi insiyatifimizde hata mesajları gönderilmesini sağlayabiliriz.
 

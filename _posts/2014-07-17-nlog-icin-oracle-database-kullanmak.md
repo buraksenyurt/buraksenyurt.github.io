@@ -2,9 +2,9 @@
 layout: post
 title: "NLog için Oracle Database Kullanmak"
 date: 2014-07-17 07:45:00
-categories:
-  - Programlama Dilleri
 tags: []
+categories:
+  - Framework Tabanlı Programlama
 ---
 Animasyon film meraklısı olupta [Pixar’ ın 2003 yapımı Nemo’ sunu](http://www.imdb.com/title/tt0266543/) izlemeyen sanırım yoktur. Kayıp oğlu Nemo’ yu bulmak isteyen Marlin, uzun ve zorlu yolculuğu sırasında oldukça unutkan olan ve aslında bu özelliği ile balık olduğunu adeta tüm izleyenlere ispat eden Dory ile seyahat etmektedir. Dory neredeyse bir saniye önce söylediğini hatırlamakta zorlanan bir balıktır.
 

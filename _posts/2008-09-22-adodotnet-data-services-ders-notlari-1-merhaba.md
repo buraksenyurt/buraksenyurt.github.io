@@ -2,12 +2,12 @@
 layout: post
 title: "Ado.Net Data Services Ders Notları - 1 (Merhaba)"
 date: 2008-09-22 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - windows-communication-foundation
   - ado.net-data-services
   - wcf-data-services
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Uzun bir aradan sonra yeni bir makale ile daha birlikteyiz. Sağnak yağışlı ve tamda “bu havada bir makale yazılır” dedirten bir günde hazırladığımız bu yazımızda, daha şimdiden gelecek vaat etmiş görünen,.Net Framework 3.5 Service Pack 1 ile birlikte hazır olarak gelen, Visual Studio 2008 ortamına entegre edilen ve WCF mimarisinin en güzel uyarlamalarından birisi olan ADO.Net Data Services (Astoria) üzerinde konuşuyor olacağız.
 

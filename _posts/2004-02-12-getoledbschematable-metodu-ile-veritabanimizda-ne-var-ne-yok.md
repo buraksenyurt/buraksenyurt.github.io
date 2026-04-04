@@ -2,12 +2,12 @@
 layout: post
 title: "GetOleDbSchemaTable Metodu İle Veritabanımızda Ne Var Ne Yok"
 date: 2004-02-12 12:00:00
-categories:
-  - Framework Tabanlı Programlama
 tags:
   - ado.net
   - oledb
   - GetOleDbSchemaTable
+categories:
+  - Framework Tabanlı Programlama
 ---
 Bu makalemizde, OleDbConnection sınıfına ati olan GetOleDbSchemaTable metodu sayesinde, Sql Veritabanımızdaki varlıklara ait şema bilgilerini nasıl temin edebileceğimizi incelemeye çalışacağız. Çoğu zaman programlarımızda, bağlandığımız veritabanında yer alan tabloların (Tables), görünümlerin (Views), saklı yordamların (Stored Procedures) ve daha pek çok veritabanı nesnesinin bir listesine sahip olmak isteriz. ADO.NET'te yer alan OleDbConnection nesnesine ait GetOleDbSchemaTable metodunu kullanarak bu istediğimiz sonuca varabiliriz.GetOleDbSchema metodu aşağıdaki prototipe sahiptir.
 

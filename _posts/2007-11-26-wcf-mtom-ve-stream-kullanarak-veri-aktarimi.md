@@ -2,11 +2,11 @@
 layout: post
 title: "WCF - MTOM ve Stream Kullanarak Veri Aktarımı"
 date: 2007-11-26 12:00:00
-categories:
-  - Servis Tabanlı Geliştirme
 tags:
   - windows-communication-foundation
   - mtom
+categories:
+  - Servis Tabanlı Geliştirme
 ---
 Günümüzde resim,ses, video, doküman formatında kaynakların yoğun olarak kullanıldığı pek çok sistem bulunmaktadır. Söz gelimi içerik yönetim sistemleri (Content Management Systems) neredeyse sırf bu tip verilerin kullanılması üzerine kurulmuştur. Resim, ses, video formatındaki veri kaynaklarının oluşturduğu en büyük problem ise boyutlarının söz konusu sistemlerde ne kadar etkin bir şekilde ölçeklenebildiğidir. Büyük boyutlu dosyalar çeşitli amaçlarla kullanılabilirler.
 

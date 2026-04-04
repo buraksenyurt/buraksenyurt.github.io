@@ -2,8 +2,6 @@
 layout: post
 title: "Çalışma Zamanında Generic Tip Üretmek, Generic Metod Çağırmak"
 date: 2013-11-01 03:45:00
-categories:
-  - Programlama Dilleri
 tags:
   - generics
   - type
@@ -16,6 +14,8 @@ tags:
   - runtime
   - clr
   - common-language-runtime
+categories:
+  - Programlama Dilleri
 ---
 Bu görsel dersimizde çalışma zamanında kullanılabilecek örnek senaryolardan birisine daha değinmekteyiz. İlk amacımız Generic olarak tanımlanmış bir tipin çalışma zamanında üretilmesini sağlamak (Örneğin List koleksiyonunun) Diğer amacımız ise generic bir metodun yine çalışma zamanında üretilip, yürütülmesi.
 
