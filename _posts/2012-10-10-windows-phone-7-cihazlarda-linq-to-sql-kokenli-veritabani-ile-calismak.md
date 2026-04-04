@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Phone 7 Cihazlarda LINQ to SQL Kökenli Veritabanı ile Çalışmak"
-date: 2012-10-10 21:00:00
+date: 2012-10-10 18:00:00
 categories:
   - Mobil Programlama
 tags:
@@ -14,9 +14,6 @@ tags:
 Uzun zamandır bilgisayar yazılım teknolojileri ile ilgileniyor olmama rağmen zaman içerisinde belirli konularda uzmanlaşmaya çalıştığımı fark ettim. Bana göre normalde olması gereken bu. Nitekim insanın kapasitesini bilmesi ve her şeyden çok fazla anlamamaktansa, belirli bir konuda çok iyi bilgiye sahip olması daha anlamlıdır diye düşünüyorum
 
 ![HP-iPAQ-110-classic-handheld](/assets/images/2012/HP-iPAQ-110-classic-handheld.jpg)
-
-
-![Smile](/assets/images/2012/wlEmoticon-smile_48.png)
 
 Ama tabi zaman zaman uzmanlık alanım dışındaki konulara da merak salmıyor değilim. Örneğin mobil platform üzerine geliştirme yapmak gibi. Her ne kadar Microsoft bu konuda elinden geleni yapıp işi son yıllarda daha da kolaylaştırıp Windows Phone gibi güzel bir zemin hazırlamış olsa da çok nadiren o tarafa gidip geliyorum.
 

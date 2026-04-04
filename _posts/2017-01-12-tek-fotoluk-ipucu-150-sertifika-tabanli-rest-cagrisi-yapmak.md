@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 150 - Sertifika Tabanlı REST Çağrısı Yapmak"
-date: 2017-01-12 21:15:00
+date: 2017-01-12 18:00:00
 categories:
   - Genel
 tags:

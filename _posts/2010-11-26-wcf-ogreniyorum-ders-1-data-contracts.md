@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Öğreniyorum Ders 1–Data Contracts"
-date: 2010-11-26 22:04:00
+date: 2010-11-26 18:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

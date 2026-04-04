@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF–Custom AuthenticationService"
-date: 2014-11-30 23:00:00
+date: 2014-11-30 18:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:
@@ -14,7 +14,6 @@ tags:
 Bazen bir yola baş koyarız ama o kadar uzundur ki git git bitmek bilmez. Yolda bin bir türlü zorluğu aşmak zorunda kalırız. Hatta hangi zorluklarla karşılacağımızı da bilemeyebiliriz. Yolun uzunluğuna, karşılaşılan zorluklara bağlı olarak ya geri döneriz ya başka bir yola saparız ya da inat edip sonuna kadar gitmeye çalışırız. Mücadelinin sonunda yolun sonuna varmak da yeterli olmayabilir.
 
 ![high_ropes_challenge](/assets/images/2014/high_ropes_challenge.jpg)
-
 
 Bazen varacağımız noktaya ulaşırken edindiğimiz tecrübelerin son noktada doğru sonuçların üretilmesine neden olması gerektiğine inanırız. Bu yüzden tüm zorlukları aşıp yanlış sonuçları elde ettiğimizi görürsek harcadığımız tüm emeğin boşa gittiğini düşünebiliriz. Yine de edindiğimiz tecrübleri kar sayıp “hiç olmassa…” diyebilmeliyiz.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ado.Net 2.0 ve SqlDependency Sınıfı Yardımıyla Query Notification"
-date: 2004-10-25 21:00:00
+date: 2004-10-25 18:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

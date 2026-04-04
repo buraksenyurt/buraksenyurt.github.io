@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 77–Asp.Net 4.5 QueryStringAttribute"
-date: 2013-01-22 23:55:00
+date: 2013-01-22 18:00:00
 categories:
   - Genel
 tags:

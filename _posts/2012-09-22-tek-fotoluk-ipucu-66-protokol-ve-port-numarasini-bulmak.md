@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–66–Protokol ve Port Numarasını Bulmak"
-date: 2012-09-22 21:00:00
+date: 2012-09-22 18:00:00
 categories:
   - Genel
 tags:

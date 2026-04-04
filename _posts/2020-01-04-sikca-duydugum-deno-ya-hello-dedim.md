@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sıkça Duyduğum Deno'ya Hello Dedim"
-date: 2020-01-04 21:00:00
+date: 2020-01-04 18:00:00
 categories:
   - Web Programlama
 tags:

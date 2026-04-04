@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft PDC İçeriğini OData Servisi Üzerinden Elde Etmek"
-date: 2010-11-17 22:18:00
+date: 2010-11-17 18:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pug, Pug, Pug"
-date: 2018-07-08 21:30:00
+date: 2018-07-08 18:00:00
 categories:
   - Web Programlama
 tags:

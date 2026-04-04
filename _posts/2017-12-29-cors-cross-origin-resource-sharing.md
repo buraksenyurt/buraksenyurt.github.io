@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CORS(Cross-Origin Resource Sharing)"
-date: 2017-12-29 21:01:00
+date: 2017-12-29 18:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:
@@ -18,7 +18,7 @@ Geçtiğimiz günlerde Asp.Net Core tarafında SignalR kullanımını incelemeye
 
 ![cors_6.gif](/assets/images/2017/cors_6.gif)
 
-Konuyu kısaca özetlemek için aşağıdaki grafiğin yardımcı olabileceğini düşünüyorum. Senaryoda sol taraftaki adrese erişmeye çalışan farklı kaynaklar yer alıyor. İlk senaryoda http://fabrikam.com/api/products adresine http://fabrikam.com/index.html adresinden gidilmekte. Her iki adresin de ortak özelliği aynı orjin (kök, kaynak diyelim) üzerinden sunulmaları.
+Konuyu kısaca özetlemek için aşağıdaki grafiğin yardımcı olabileceğini düşünüyorum. Senaryoda sol taraftaki adrese erişmeye çalışan farklı kaynaklar yer alıyor. İlk senaryoda `http://fabrikam.com/api/products` adresine `http://fabrikam.com/index.html` adresinden gidilmekte. Her iki adresin de ortak özelliği aynı orjin (kök, kaynak diyelim) üzerinden sunulmaları.
 
 Ancak izleyen senaryolarda servise doğru gelmek isteyen farklı kökler görüyoruz. Farklı bir alan adı (domain), alt alan adı (sub domain), şema (https ile gelinen) ve port. Bu durumlarda hedef adres gelen talep ile ilişkili olarak bir şüpheye düşüyor. Acaba benim iznim olmayan bir adresten mi geliniyor gibi duruma paranoyakça yaklaşıp isteğe olumlu cevap vermiyor. Bu durumlara özellikle AJAX modelli servis çağrılarının yapıldığı çözümlerde sıklıkla rastlanıyor. Dolayısıyla hedef tarafının belirli bir politikaya göre istekte bulunanlara izin vermesini sağlamamız gerekiyor. Yani bir CORS policy'nin uygulanması gerekmekte.
 

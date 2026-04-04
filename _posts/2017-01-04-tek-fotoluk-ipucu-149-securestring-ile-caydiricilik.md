@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 149 - SecureString ile Caydırıcılık"
-date: 2017-01-04 21:23:00
+date: 2017-01-04 18:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

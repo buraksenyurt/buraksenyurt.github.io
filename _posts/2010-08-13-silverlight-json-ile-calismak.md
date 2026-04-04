@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Silverlight - JSON ile Çalışmak"
-date: 2010-08-13 01:15:00
+date: 2010-08-13 06:15:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

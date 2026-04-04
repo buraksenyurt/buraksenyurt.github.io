@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTTP/2 Server Push Nasıl Bir Şeydir?"
-date: 2019-04-08 21:37:00
+date: 2019-04-08 18:00:00
 categories:
   - Web Programlama
 tags:

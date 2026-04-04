@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google Cloud Pub/Sub Service Macerası"
-date: 2018-07-19 21:10:00
+date: 2018-07-19 18:00:00
 categories:
   - Framework Tabanlı Programlama
   - Bulut Bilişim

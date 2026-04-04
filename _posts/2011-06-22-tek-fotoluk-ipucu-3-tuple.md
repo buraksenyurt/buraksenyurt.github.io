@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu - 3 (Tuple)"
-date: 2011-06-22 22:24:00
+date: 2011-06-22 18:00:00
 categories:
   - Programlama Dilleri
   - Genel

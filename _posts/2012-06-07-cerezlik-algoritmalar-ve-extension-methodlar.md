@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Çerezlik Algoritmalar ve Extension Methodlar"
-date: 2012-06-07 23:30:00
+date: 2012-06-07 18:00:00
 categories:
   - Programlama Dilleri
   - Algoritma

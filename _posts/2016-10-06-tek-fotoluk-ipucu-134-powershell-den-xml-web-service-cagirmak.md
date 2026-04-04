@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 134 - Powershell'den XML Web Service Çağırmak"
-date: 2016-10-06 21:10:00
+date: 2016-10-06 18:00:00
 categories:
   - DevOps
 tags:

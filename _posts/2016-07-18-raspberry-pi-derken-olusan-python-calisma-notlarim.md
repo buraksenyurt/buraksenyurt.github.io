@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Raspberry PI Derken Oluşan Python Çalışma Notlarım"
-date: 2016-07-18 21:30:00
+date: 2016-07-18 18:00:00
 categories:
   - Programlama Dilleri
   - IoT

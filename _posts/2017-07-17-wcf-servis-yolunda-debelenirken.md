@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF Servis Yolunda Debelenirken"
-date: 2017-07-17 21:47:00
+date: 2017-07-17 18:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".Net Core Tarafında SignalR Kullanımı"
-date: 2017-12-31 21:02:00
+date: 2017-12-31 18:00:00
 categories:
   - Web Programlama
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-20 (Except Sorgusu)"
-date: 2011-07-18 21:17:00
+date: 2011-07-18 18:00:00
 categories:
   - Genel
 tags:

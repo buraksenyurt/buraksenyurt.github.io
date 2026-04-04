@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WCF RIA Services - Gerçekten WCF"
-date: 2009-11-25 23:19:00
+date: 2009-11-25 18:00:00
 categories:
   - Servis Tabanlı Geliştirme
 tags:

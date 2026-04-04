@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Workflow Foundation 4.0 - Persistence [Beta 2]"
-date: 2009-11-30 23:29:00
+date: 2009-11-30 18:00:00
 categories:
   - Framework Tabanlı Programlama
 tags:

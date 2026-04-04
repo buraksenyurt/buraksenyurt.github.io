@@ -4,8 +4,17 @@ title: "SOLID–Adım Adım Tanımak"
 date: 2014-03-10 00:00:00
 categories:
   - Yazılım Tasarımı
-tags: []
+tags:
+  - SOLID
+  - Yazılım Prensipleri
+  - Single Responsibility
+  - Open-Closed
+  - Liskov Substitution
+  - Interface Segregation
+  - Dependency Inversion
 ---
 SOLID basit bir kelime gibi görünse de, her harfinin ifade ettiği yazılım prensipleri göz önüne alındığında devasa bir evreni işaret etmekte. Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation ve son olarak Dependency Inversion. İşte bu görsel dersimizde bu prensipleri çok basit ve yüzeysel bir örnek üzerinden anlamaya çalışıyoruz. Önce ilkeleri ihlal ediyor, sonrasında bunları düzeltme yoluna gidiyoruz.
+
+[Youtube Video](https://youtu.be/2AJ_trQ1LWc?si=qsRf5ZmPkjer9Nvr)
 
 Not: Şu ana kadar anlatmakta en çok zorlandığım görsel dersti. Konunun soyutluğu, örneğin yeteri kadar doyurucu olmayışı, üst kattaki iki kardeşin gecenin o vakti koşuşturması vb nedenlerden ötürü...Dolayısıyla sürçü lisan ettiysem affola.

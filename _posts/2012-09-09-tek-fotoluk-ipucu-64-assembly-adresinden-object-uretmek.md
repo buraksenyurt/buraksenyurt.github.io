@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 64 – Assembly Adresinden Object Üretmek"
-date: 2012-09-09 23:32:00
+date: 2012-09-09 18:00:00
 categories:
   - Genel
 tags:

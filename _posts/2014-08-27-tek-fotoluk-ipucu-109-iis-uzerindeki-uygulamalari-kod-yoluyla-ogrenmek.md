@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "TFİ 109 - IIS Üzerindeki Uygulamaları Kod Yoluyla Öğrenmek"
-date: 2014-08-27 13:52:00
+title: "Tek Fotoluk İpucu 109 - IIS Üzerindeki Uygulamaları Kod Yoluyla Öğrenmek"
+date: 2014-08-27 18:00:00
 categories:
   - Web Programlama
   - Servis Tabanlı Geliştirme

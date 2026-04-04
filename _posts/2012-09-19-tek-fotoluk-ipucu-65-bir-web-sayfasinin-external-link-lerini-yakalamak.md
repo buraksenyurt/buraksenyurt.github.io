@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu–65–Bir Web Sayfasının External Link’ lerini Yakalamak"
-date: 2012-09-19 23:15:00
+date: 2012-09-19 18:00:00
 categories:
   - Genel
 tags:

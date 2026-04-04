@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu-17 (Query ile Daha Şık Kodlama)"
-date: 2011-07-11 21:54:00
+date: 2011-07-11 18:00:00
 categories:
   - Programlama Dilleri
   - Genel

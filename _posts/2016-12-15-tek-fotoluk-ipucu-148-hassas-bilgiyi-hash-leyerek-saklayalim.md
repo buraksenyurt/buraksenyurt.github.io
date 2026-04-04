@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tek Fotoluk İpucu 148 - Hassas Bilgiyi Hash'leyerek Saklayalım"
-date: 2016-12-15 21:54:00
+date: 2016-12-15 18:00:00
 categories:
   - Genel
 tags:
