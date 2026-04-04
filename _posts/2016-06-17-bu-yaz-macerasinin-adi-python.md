@@ -42,7 +42,7 @@ Kodları yazmaya başladığımda karşılaştığım ilk sorun aşağıya doğr
 
 İlk olarak SomeFunctions.py isimli bir dosya oluşturdum. Bu dosyanın kod içeriği ise aşağıdaki gibi.
 
-```text
+```python
 import math
 
 def get_players():
@@ -127,51 +127,26 @@ Kod dosyasının en başında import anahtar kelimesi ile yapılan bir bildirim 
 
 Gelelim metodlarımızda neler yaptığımıza. Bunları aşağıdaki tabloda kısaca açıklamaya çalıştım.
 
-Metod
-İçinde Neler Oluyor?
-
-getplayers
-Bu metod içerisinde Tuple kullanımı söz konusudur. players isimli Tuple 3 elemandan oluşmaktadır. Dikkat edilmesi gereken nokta her bir elemanın farklı sayıda ve tipte niteliğe sahip olabileceğidir. Metod geriye oluşturduğu bu Tuple içeriğini döndürür. Tuple tipinin elemanlarına [] operatörü ile erişilebilir. main.py içerisinde örnek bir kullanım söz konusudur. Ancak siz daha fazlasını da keşfetmeye çalışın derim.
-
-getlanguage
-
-Bu fonksiyonda ise Dictionary kullanımı örneklenmiştir. Basit anlamda key:value çiftlerinden oluşan Dictionary'ler sıklıkla kullanılabilecek veri yapılarındandır.
-Metod key isimli bir parametre almış ve bunu Dictionary içerisinde [] operatörü ile arama yapılmasında kullanmıştır. Yani [] operatörü key değerini alıp buna karşılık gelen değeri elde etmemizi sağlamaktadır. Metod eğer key içeriği bulunursa değerini döndürü. Bulamazsa none şeklinde bir dönüş yapacaktır.
-
-pythagoras
-Pisagor hesabı yapan bu metod a ve b isimli iki parametre almakta olup math.sqrt fonksiyonu ile yaptığı hesaplama sonucunu geriye döndürmektedir. Fonksiyon sadece import kullanımını örneklemek amacıyla ele alınmıştır.
-
-luckynumbergame
-
-Bu metod diğerlerine göre nispeten biraz daha eğlencelidir. Kullanıcının bir sayıyı tahmin etmesi istenir. Bizim için dikkat edilmesi gereken nokta ise kullanılan while döngüsü, if ifadesi ve kullanıcıdan bilgi almak için çağırılan input fonksiyonudur.
-Gerek while döngüsü gerek if ifadesi: işareti ile tanımlandıktan sonra yine girintili şekilde koda devam edilmelidir. Aksi durumda bildiğiniz üzere Invalid Syntax hatası alırız.
-While döngüsü kullanıcı 7 sayısını girene kadar sürekli olarak bir sayı isteyecektir. Kullanıcının girdiği sayı input fonksiyonu ile alınmakta olup luckynum isimli değişkende saklanmaktadır.
-
-greetings
-Aslında ilk yazdığım metod buydu ama karışık sırada eklediğimden garip bir yere gelmiş. Console/Terminal ekranına bilgi basmak için print ve kullanıcıdan giriş almak için input fonksiyonlarının kullanımına yer verilmektedir. Bir de %s ile place holder kullanımı söz konusudur. Tahmin edileceği üzere %name ve %age değerleri, string ifadelerdeki %s yazan yerlere gelmektedir.
-
-alittlebitforloops
-
-Bu metod içerisinde for döngüsüne ait örnekler ve range kullanımı yer almaktadır. range'ler oldukça hoşuma giden bir enstrüman. Verilen parametrelere göre bir değer aralığının otomatik olarak oluşturulmasını sağlmaktadır. Örnekteki ilk döngüde de minValue ve maxValue değerlerinden yararlanılarak range türü ile bir sayı dizisi oluşturulmuştur.
-range'e üçüncü bir parametre de verilebilir. Söz konusu parametre ile adım sayısı belirtilir. Yani ikişer ikişer artan bir sayı aralığı oluşturulması da söz konusudur. Deneyin;)
-İkinci for döngüsü tahmin edileceği üzere iç içe geçen bir döngü kullanımına aittir.
-Bu arada kullanıcıdan aldığımız min ve max değerlerinin sayısal işlemlerde kullanmak için int metodu ile tür dönüşümüne dahil edildiği de gözden kaçmamalıdır.
-
-givemeanickname
-Bu fonksiyonda da bir while kullanımı söz konusudur. Ancak koşul da or operatörüne yer verilmiştir. Kullanıcının gireceği nickName'in 5 ile 10 karakter arasında olması sağlanana kadar bilgi istenen sonsuz bir döngü kurgusudur diyebiliriz. Karaketer uzunluklarının tespiti içinse len fonksiyonundan yararlanılmıştır.
-
-usinglist
-Son metodumuzda ise liste türüne ait bir örnek verilmiştir. Burada her ne kadar konudan sıkılıp sadece sayısal değerlerden oluşan bir liste söz konusu olsa da farklı türlerden oluşacak listeler tanımlanabileceğini de belirtmek isterim. Deneyin;)
+| Metod Adı | İçinde Neler Oluyor? |
+| --- | --- |
+| **get_players** | Bu metod içerisinde Tuple kullanımı söz konusudur. players isimli Tuple 3 elemandan oluşmaktadır. Dikkat edilmesi gereken nokta her bir elemanın farklı sayıda ve tipte niteliğe sahip olabileceğidir. Metod geriye oluşturduğu bu Tuple içeriğini döndürür. Tuple tipinin elemanlarına [] operatörü ile erişilebilir. main.py içerisinde örnek bir kullanım söz konusudur. Ancak siz daha fazlasını da keşfetmeye çalışın derim. |
+| **get_language** | Bu fonksiyonda ise Dictionary kullanımı örneklenmiştir. Basit anlamda key:value çiftlerinden oluşan Dictionary'ler sıklıkla kullanılabilecek veri yapılarındandır. Metod key isimli bir parametre almış ve bunu Dictionary içerisinde [] operatörü ile arama yapılmasında kullanmıştır. Yani [] operatörü key değerini alıp buna karşılık gelen değeri elde etmemizi sağlamaktadır. Metod eğer key içeriği bulunursa değerini döndürü. Bulamazsa none şeklinde bir dönüş yapacaktır. |
+| **pythagoras** | Pisagor hesabı yapan bu metod a ve b isimli iki parametre almakta olup math.sqrt fonksiyonu ile yaptığı hesaplama sonucunu geriye döndürmektedir. Fonksiyon sadece import kullanımını örneklemek amacıyla ele alınmıştır. |
+| **luckynumbergame** | Bu metod diğerlerine göre nispeten biraz daha eğlencelidir. Kullanıcının bir sayıyı tahmin etmesi istenir. Bizim için dikkat edilmesi gereken nokta ise kullanılan while döngüsü, if ifadesi ve kullanıcıdan bilgi almak için çağırılan input fonksiyonudur. Gerek while döngüsü gerek if ifadesi: işareti ile tanımlandıktan sonra yine girintili şekilde koda devam edilmelidir. Aksi durumda bildiğiniz üzere Invalid Syntax hatası alırız. While döngüsü kullanıcı 7 sayısını girene kadar sürekli olarak bir sayı isteyecektir. Kullanıcının girdiği sayı input fonksiyonu ile alınmakta olup lucky_num isimli değişkende saklanmaktadır. |
+| **greetings** | Aslında ilk yazdığım metod buydu ama karışık sırada eklediğimden garip bir yere gelmiş. Console/Terminal ekranına bilgi basmak için print ve kullanıcıdan giriş almak için input fonksiyonlarının kullanımına yer verilmektedir. Bir de %s ile place holder kullanımı söz konusudur. Tahmin edileceği üzere %name ve %age değerleri, string ifadelerdeki %s yazan yerlere gelmektedir. |
+| **a_little_bit_for_loops** | Bu metod içerisinde for döngüsüne ait örnekler ve range kullanımı yer almaktadır. range'ler oldukça hoşuma giden bir enstrüman. Verilen parametrelere göre bir değer aralığının otomatik olarak oluşturulmasını sağlmaktadır. Örnekteki ilk döngüde de minValue ve maxValue değerlerinden yararlanılarak range türü ile bir sayı dizisi oluşturulmuştur. range'e üçüncü bir parametre de verilebilir. Söz konusu parametre ile adım sayısı belirtilir. Yani ikişer ikişer artan bir sayı aralığı oluşturulması da söz konusudur. Deneyin;) İkinci for döngüsü tahmin edileceği üzere iç içe geçen bir döngü kullanımına aittir. Bu arada kullanıcıdan aldığımız min ve max değerlerinin sayısal işlemlerde kullanmak için int metodu ile tür dönüşümüne dahil edildiği de gözden kaçmamalıdır. |
+| **give_me_a_nickname** | Bu metod içerisinde while ve if elif else ifadelerinin kullanımına yer verilmiştir. Kullanıcıdan bir nickname girmesi istenir. Girilen nickname'in 5 ile 10 karakter arasında olması sağlanana kadar bilgi istenen sonsuz bir döngü kurgusudur diyebiliriz. Karaketer uzunluklarının tespiti içinse len fonksiyonundan yararlanılmıştır. |
+| **using_list** | Son metodumuzda ise liste türüne ait bir örnek verilmiştir. Burada her ne kadar konudan sıkılıp sadece sayısal değerlerden oluşan bir liste söz konusu olsa da farklı türlerden oluşacak listeler tanımlanabileceğini de belirtmek isterim. Deneyin;) |
 
 Tuple ile listeler arasında önemli bir fark vardır. Listelere yeni elemanlar eklenebilir ve çıkartılabilir ancak Tuple için bu tip işlemler söz konusu değildir. Tuple'ı sadece okunabilir bir tip listesi gibi de düşünebiliriz. Dictionary kullanımı için de verebileceğimiz bir iki tüyo var. Örneğin Dictionary'ler de değerler sayısal bile olsa çift tırnaklar arasında yazılır. Yani bir tür dönüşümü yapılması söz konusu olabilir. Ayrıca bir Dictionary'ye yeni eleman eklemek için aşağıdaki gibi bir ifade kullanılabilir.
 
-```text
+```python
 languages["ES"]="Spanish"
 ```
 
 Diğer yandan var olan bir elemanı değiştirmek istersek de aynı tekniği kullanıyoruz.
 
-```text
+```python
 languages["EN"]="British English"
 ```
 
@@ -183,7 +158,7 @@ Listelerin, Tuple ve Dictionary'lerin kullanımı hakkında daha fazla detay iç
 
 Peki ilgili metodları nasıl test edeceğiz? Hemen main.py dosyamıza geliyor ve aşağıdaki kod satırlarını oluşturuyoruz.
 
-```bash
+```python
 #Some practices
 
 import SomeFunctions as func
@@ -230,8 +205,7 @@ Yorumlamalı bir dilden bahsediyoruz. Dolayısıyla kod yukarıdan aşağıya do
 
 Kod aslında entersan bir ifade ile başlıyor. Burada [Bora Kaşmer](http://www.borakasmer.com/) hocamın aşağıdaki Tweet'inin etkili olduğunu ifade etmek isterim.
 
-> [@burakselyum](https://twitter.com/burakselyum) 5*"Burak" enteresan bir code:) Ben ilk başladığımda çok şaşırmıştım😉
-> 16 Haziran 2016
+> [@burakselyum](https://twitter.com/burakselyum) 5*"Burak" enteresan bir code:) Ben ilk başladığımda çok şaşırmıştım😉 16 Haziran 2016
 
 Sonrasında ise diğer metodların sırasıyla çağırıldığını görüyoruz. Eğer kodlarda bir hata yapmadıysanız (özellikle girintilerde) aşağıdakine benzer sonuçlar almanız gerekiyor.
 

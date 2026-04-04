@@ -66,7 +66,7 @@ Var Olan Tipleri Genişletmek
 
 Ruby'de sınıfları genişletmek oldukça kolaydır. Yani var olan bir tipe yeni bir fonksiyonellik kazandırmak basittir. Bu anlamda aşağıdaki kod parçasını göz önüne alabiliriz.
 
-```text
+```ruby
 class String
 	def KarizmatikYap
 		newWord=""
@@ -99,7 +99,7 @@ Ruby'nin Büyük Sayılar ile Arası
 
 Oldukça iyidir:) Bunu ifade etmek için aşağıdaki kod parçasını göz önüne alabiliriz.
 
-```text
+```ruby
 def Faktoryel(sayi)
 	if sayi==0
 		1
@@ -140,15 +140,10 @@ puts "#{toplam}\n#{fark}\n#{carpim}\n#{bolum}"
 
 Özellikle toplam, fark, carpim ve bolum değişkenlerin Hesapla metodunun çalışma sonuçlarının nasıl atandığına dikkat edelim. puts'dan sonra gelen ifade içerisinde yer alan #{toplam} gibi terimler ile kod dosyası içerisindeki değişkenlere erişip metin içerisine gömdüğümüzü belirtebiliriz. Çok basit ve eğlenceli değil mi?
 
-> Ruby is designed to make programmers happy.
-> -Matz-
+> Ruby is designed to make programmers happy. -Matz-
 
 Sonuç Olarak
 
 Görüldüğü üzere Ruby ile programlama oldukça eğlenceli. Dilin gerçekten çok güçlü özellikleri var. OOP temellerini taşıyor olması bunun en büyük sebebi. Diğer yandan İngilizce diline çok yakın tasarlanması, kolay okunabilir kod yazılabilmesi, "aklın yolu bir" dedirten ifadeleri ile Fluent yapıların ve doğal olarak Domain'e özgü dillerin geliştirilmesi için de ideal.
-
-Ruby ile ilişkili olarak çalışmalarıma devam etmekteyim. Yeri geldikçe öğrendiklerimi [@burakselyum](https://twitter.com/burakselyum) twitter hesabım üzerinden #Ruby #ILoveRuby hashtag'leri altında paylaşıyorum. Hatta bir kısmını Tek Fotoluk İpucu olarak bloğuma eklemeyi de planlıyorum. Yazımı sonlandırmadan önce her ne kadar sözleri çok alakalı olmasa da Ruby'yi daha da sevimli hale getiren bir Kaiser Chiefs şarkısı ile veda etmek istiyorum. Ruby...Ruby...Ruby...Ruby...
-
-[Youtube Link](https://www.youtube.com/watch?v=qObzgUfCl28)
 
 Bu yazımızda Ruby dilini kısaca tanımlamaya çalıştık. Kod parçaları biraz dağınık olsalar da size fikir verebilmişimdir diye ümit ediyorum. Henüz benim de yeni yeni öğrenmeye çalıştığım bu dil ile ilgili maceralarımız devam edecek. Bir başka yazımızda görüşmek dileğiyle, hepinize mutlu günler dilerim.

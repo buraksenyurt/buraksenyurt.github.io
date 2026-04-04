@@ -46,7 +46,7 @@ Bir Hello World desek iyi olmaz mı? E hadi o zaman. Öncesinde GO'nun derleyici
 
 İlk uygulama kodumuzu aşağıdaki gibi geliştirebiliriz.
 
-```text
+```golang
 /*
  Bu benim ilk GO programım.
  Sevdim gibi sanki.

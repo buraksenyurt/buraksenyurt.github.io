@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bellek Yönetiminde Verimlilik için İpuçları (Rust Odaklı)"
-date: 2025-04-03 21:30:00
+date: 2025-04-03 18:00:00
 categories:
   - Programlama Dilleri
 tags:
