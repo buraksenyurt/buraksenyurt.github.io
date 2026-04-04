@@ -74,17 +74,17 @@ end
 
 Uygulama içerisinde iki sınıf kullanılmaktadır. Product ve Measurement. Measurement sınıfı aynı zamanda Product sınıfı içerisindeki niteliklerden birisidir. Uygulama basit olarak Product tipinden bir diziyi ve elamanlarını, sırasıyla YAML ve Binary serileştirmeye tabii tutmaktadır. Sonuçlar Products.yaml ve Products.bin olarak aynı klasöre yazılmaktadır. Tamin edileceği üzere yaml uzantılı dosya içerisinde dizinin YAML formatında serileştirilmiş versiyonu bulunmaktadır. Bin uzantılı dosyada ise binary serileştirilmiş versiyonu. Programın çalışma zamanı çıktıları aşağıdaki gibidir.
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-17-yaml-ve-binary-serilestirme-01.jpg)
+![ruby kod parcaciklari 17 yaml ve binary serilestirme 01](/assets/images/2015/ruby-kod-parcaciklari-17-yaml-ve-binary-serilestirme-01.jpg)
 
 Serileştirilen dosya içerikleri ise aşağıdaki gibidir.
 
 Önce yaml içeriği
 
-![2Q==](/assets/images/2015/ruby-kod-parcaciklari-17-yaml-ve-binary-serilestirme-02.jpg)
+![ruby kod parcaciklari 17 yaml ve binary serilestirme 02](/assets/images/2015/ruby-kod-parcaciklari-17-yaml-ve-binary-serilestirme-02.jpg)
 
 ve Binary versiyonu
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-17-yaml-ve-binary-serilestirme-03.jpg)
+![ruby kod parcaciklari 17 yaml ve binary serilestirme 03](/assets/images/2015/ruby-kod-parcaciklari-17-yaml-ve-binary-serilestirme-03.jpg)
 
 Uygulamanın iki temel noktası vardır. YAML ve Binary tipteki serileştirme işlemleri Ruby içerisinde var olan modüllerden yararlanılarak gerçekleştirilir. Bu işlemler için YAML ve Marshal modüllerinden faydalanılmaktadır. Aslında serileştirme işlemi son derece basittir. Bunun için dump fonksiyonu kullanılır. Parametre olarak serileştirilmek istenen nesne örneği verilir. Ters serileştirme operasyonu içinse load metodundan yararlanılmaktadır. load metoduna serileştirilmiş içeriğin verilmesi yeterlidir.
 
@@ -94,6 +94,4 @@ Son iki yazıda ele aldığımız serileştirme teknikleri büyük çaplı proje
 
 Üstelik JSON ve YAML gibi formatlar kürsel standartlardandır. Ön yüzlerde, servisler arası iletişimlerde, RESTFull modeldeki web sayfalarında ve pek çok noSql sisteminde JSON'un yeri vardır. Burada unutulan noktalardan birisi de XML serileştirmedir. Acaba Ruby ile bir nesne içeriğinin XML formatında serileştirilmesi mümkün müdür? Şu anda merak ettiğim bu konuyu ilerleyen zamanlarda araştırıyor olacağım. Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümküse.
 
-**Kaynaklar**
-
-YAML Hakkında: [https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML) ve [http://www.yaml.org/](http://www.yaml.org/)
+[https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML) ve [http://www.yaml.org/](http://www.yaml.org/) adreslerinden YAML hakkında daha fazla bilgi edinebilirsiniz.

@@ -13,7 +13,7 @@ Vaktiyle zamanında (bugün aslında) çalışmakta olduğumuz projede şöyle b
 
 İşte bu noktada aklımıza aşağıdaki gibi bir çözüm geldi.
 
-![QAAAOw==](/assets/images/2015/tek-fotoluk-ipucu-120-bir-listeden-n-sayida-benzersiz-nesne-cekmek-01.gif)
+![tek fotoluk ipucu 120 bir listeden n sayida benzersiz nesne cekmek 01](/assets/images/2015/tek-fotoluk-ipucu-120-bir-listeden-n-sayida-benzersiz-nesne-cekmek-01.gif)
 
 Kodu kısaca incelediğinizde tahmin edeceğiniz üzere en kritik noktalardan birisi Randomizer sınıfının GetRandomList metoduna bool sonuç döndürüp T tipinden değer alan Func temsilcisi tipinden bir referans geçirilmesi.
 

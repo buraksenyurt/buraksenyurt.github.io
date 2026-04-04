@@ -18,11 +18,11 @@ Biliyorum epeyce geriden geliyorum yeni nesil konularda ama işler güçler derk
 
 Internet üzerinde Docker ile ilgili pek çok bilgi ve kaynağa ulaştım. Ama özellikle [Asiye Yiğit'in Linkedin üzerinden paylaştığı yazılar](https://tr.linkedin.com/pulse/docker-asiye-yigit) önemli bilgiler edinmemi sağladılar. Bunun haricinde DevOps tarafında oldukça yetenekli olan arkadaşım (ki hemen solumda oturur) Alpay Bilgiç, beni aydınlatan bilgiler verdi. Ne sorsam cevapladı. Çıkarttığım notlardan yararlanarak konuyu kavramak için şekilleri tekrardan ele aldım. Öncelikle ilgili notları bu blog yazısı aracılığıyla temize çekeceğim ki yarın öbür gün nasıl oluyordu bu iş dediğimde dönüp bakabileyim. Sonrasında Ubuntu üzerine Docker kuracağım. Ardından.Net Core 2.0 için basit bir Console uygulaması yazacağım. Son adımda ise bu uygulamayı Docker üzerinde ayağa kaldıracağım. Haydi gelin başlayalım.
 
-Docker'dan Anladığım
+## Docker'dan Anladığım
 
 Aslında her şey farklı platformlarda çalışabilecek uygulamaların ölçek büyüdükçe daha çok makineye ve kuruluma ihtiyaç duyması sonrasında başlamış gibi duruyor. Yeni makine demek, yeni kurulumlar, yeni lisans ücretleri, yeni yönetim sorumlulukları, yeni dağıtım süreçleri, yeni elemanlar demek. Durum böyle olunca maliyetlerin artması da kaçınılmaz hale gelmiş. Benim üniversite yıllarında da tanık olduğum o eski yaklaşım kabaca aşağıdaki şekilde görüldüğü gibiydi.
 
-![h8+Eae6lnKfwwAAAABJRU5ErkJggg==](/assets/images/2017/docker-uzerinde-dotnet-core-uygulamasi-calistirmak-01.png)
+![docker uzerinde dotnet core uygulamasi calistirmak 01](/assets/images/2017/docker-uzerinde-dotnet-core-uygulamasi-calistirmak-01.png)
 
 İlk dünya yukarıdaki gibiydi. Sonrasında ise Hyper-V (Fiziki bir makinede birden fazla sunucu rolünü bağımsız sanal roller içerisinde çalıştırımamızı sağlayan Microsoft ürünü de diyebiliriz) gibi isimler duymaya başladık. Bir başka deyişle sanallaştırma kavramları ile içli dışlı olmaya başladık.
 
@@ -42,7 +42,7 @@ Aşağıdaki şekil Docker'ın temel çalışma mimarisi özetlenmeye çalışı
 
 Docker temel olarak istemci-sunucu mimarisine uygun olarak geliştirilmiştir. GO dili ile yazıldığını sanıyorum belirtmiştik. Kullanıcılar esas itibariyle Docker Client üzerinden Demaon ile iletişim kuruyorlar. Build, Pull ve Run gibi komutlar Docker Client aracılığıyla, Deamon üzerinden işletilmekteler. Docker Demaon devamlı olarak çalışan bir Process (Sanırım Windows Service'e benzetebiliriz) Container’lar aslında birer çalışma zamanı nesnesi ve uygulamaların yürütülmesi için gerekli ne varsa (betikler, paketler vs) barındırıyorlar. Image öğeleri de Container’ların oluşturulması için kullanılan yalnızca okunabilir şablonlar olarak tasarlanmışlar. Şekilde Build, Pull ve Run operasyonlarının temel çalışma prensiplerini görebiliriz (Okların renklerine dikkat edelim)
 
-Özetleyecek olursak
+## Özetleyecek olursak
 
 - Docker Store: Güvenilir ve kurumsal seviyedeki imajların kayıt altına alındığı yer.
 - Docker Client: Deamon ile iletişim kuran komut satırı aracı.
@@ -50,7 +50,7 @@ Docker temel olarak istemci-sunucu mimarisine uygun olarak geliştirilmiştir. G
 - Image: Uygulamalar için gerekli konfigurasyon ve dosya sistemi ayarlarını taşıyan ve Container'ların oluşturulması için kullanılan nesneler. Docker dünyasında base,child,official ve user tipinden imajlar bulunuyor. base tipindekiler tahmin edileceği üzere linux,macos,windows gibi OS imajları.child imajlar base'lerden türetilip zenginleştiriliyor. Docker'ın official imajları (pyhton, alpine, nginx vb) dışında kullanıcıların depoya aldığı docleağrulanmış imajlarda söz konusu.
 - Container: Image'ların çalışan birer nesne örneği. Bir Container çalışan uygulama için gerekli tüm bağımlılıkları bünyesinde barındırır. Kendi çekirdeğini (Kernel) diğer Container'lar ile de paylaşır. Tamamen izole edilmiş process üzerinde çalışır.
 
-Docker'ın Kurulumu
+## Docker'ın Kurulumu
 
 Kurulum işlemlerinde halen tam olarak anlamadığım adımlar olsa da benim için önemli olan West-World'e Docker'ın başarılı bir şekilde yüklenmesiydi. Aşağıdaki adımları izleyerek bu işlemi gerçekleştirdim.
 
@@ -116,7 +116,7 @@ docker pull --help
 
 gibi
 
-Basit Bir.Net Core Console Application
+## Basit Bir .Net Core Console Application
 
 Docker üzerinde host etmek için deneme amaçlı bir Console uygulaması yazarak devam etmeliyim. Terminalden aşağıdaki komutu kullanarak şanslı sayı üretmesini planladığım uygulamayı oluşturdum.
 
@@ -157,11 +157,11 @@ Sonuçta LuckyNum.dll ve diğer gerekli dosyalar bin/debug/netcoreapp2.0/publish
 
 ![core_docker_7.gif](/assets/images/2017/core_docker_7.gif)
 
-Console Uygulamasını Docker'a Almak
+## Console Uygulamasını Docker'a Almak
 
 Nihayet son adıma geldim. Kodların olduğu klasöre gidip Dockerfile isimli bir dosya oluşturmak gerekiyor (Uzantısı olmayan bir dosya. DockerFile gibi değil Dockerfile şeklinde olmalı. Nitekim docker bunu ele alırken Case-sensitive hassasiyeti gösterdi. Epey bir deneme yapmak zorunda kaldım) Dosya içerisinde bir takım komutlar olacak. Bu komutlar aslında Linux temelli.
 
-```text
+```yaml
 FROM microsoft/dotnet:2.0-sdk
 WORKDIR /app
 
@@ -172,7 +172,7 @@ ENTRYPOINT ["dotnet", "LuckyNum.dll"]
 
 Bütün Dockerfile içerikleri mutlaka FROM komutu ile başlar. Burada base image bilgisini veriyoruz ki örnekte bu microsoft hesabına ait dotnet:2.0-sdk oluyor. Dosyayı oluşturduktan sonra bir build işlemi gerçekleştirmek ve imajı inşa etmek lazım.
 
-```text
+```bash
 sudo docker build -t lucky .
 ```
 
@@ -184,7 +184,7 @@ Artık elimde lucky isimli bir imaj var. Bu imajı doğrudan çalıştırabilece
 
 > Bu arada oluşturulan imajları isterseniz cloud.docker.com adresinden kendi hesabınızla da ilişkilendirebilirsiniz. [Şu adresteki](https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md) python örneğini adım adım yapın derim;)
 
-```text
+```bash
 sudo docker run --name luckynumber lucky
 ```
 

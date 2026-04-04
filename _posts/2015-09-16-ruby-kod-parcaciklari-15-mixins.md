@@ -83,13 +83,13 @@ end
 
 Kodun çalışma zamanı çıktısı aşağıdaki gibidir.
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-15-mixins-01.jpg)
+![ruby kod parcaciklari 15 mixins 01](/assets/images/2015/ruby-kod-parcaciklari-15-mixins-01.jpg)
 
 Kod parçasında üç Module kullanıldığı görülmektedir. Common, Zip ve Encryption. Her bir modülün kendine has bazı fonksiyonellikleri vardır. Önemli olan nokta CaseFile ve Message isimli sınıflara bu Module'lerin nasıl ilave edildiğidir.
 
 CaseFile içinde include ile bir enjekte söz konusu iken Message sınıfında extend anahtar kelimesinden yararlanılmıştır. Aradaki fark aslında basittir. Include kullanıldığı durumlarda Module fonksiyonelliklerinin kullanılabilmesi için ilgili sınıfa ait nesne örneğinin oluşturulması gerekir. Örnekte, fl değişkeni üzerinden File sınıfının bünyesine dahil ettiği Common, Encryption ve Zip modül operasyonları kullanılabilir. extends kullanıldığı durumda ise sınıfa ait nesne örneği oluşturulmasına gerek yoktur. ClassName.ModuleMethodName notasyonu ile ilgili modül fonksiyonelliği çağırılabilir. Bu nedenle gzip, gunzip ve sign operasyonlarına Message sınıfı üzerinden direkt olarak ulaşılabilinir. Aslında örnekteki bileşenler arası ilişkileri belki de aşağıdaki şekilde görüldüğü gibi ifade edebiliriz.
 
-![9k=](/assets/images/2015/ruby-kod-parcaciklari-15-mixins-02.jpg)
+![ruby kod parcaciklari 15 mixins 02](/assets/images/2015/ruby-kod-parcaciklari-15-mixins-02.jpg)
 
 Mixin esas itibariyle ortak fonksiyonelliklerin farklı sınıflar arasında paylaştırılmasında rol oynamaktadır. Aynı operasyonları ve kod parçalarını tekrarlamak yerine gruplandırıp bir modül içerisine almak ve Context bazında ayrıştırarak ihtiyaç duyan sınıflar içerisine yerleştirmek için tercih edilen bir kullanım şeklidir.
 

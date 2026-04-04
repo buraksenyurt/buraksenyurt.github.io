@@ -29,7 +29,7 @@ Bunu bir konuşma sırasında öğrenmiştim ancak inceleme fırsatını bir tü
 
 Scala 2001 yılında Martin Odersky tarafından geliştirilmeye başlanmış ve resmi olarak 2004'te yayınlanmış. Java dilinin bir uzantısı gibi görünüyor ama kesinlikle değil. Scala ile yazılan kodlar Java Bytecode'a dönüştürülüp JVM üzerinde çalıştırılabiliyor ama aynı zamanda REPL modeline göre yorumlatılarak da yürütülebiliyorlar. Hal böyle olunca Java kütüphanelerinin kullanılabilir olduğunu söylemek şaşırtıcı olmaz sanıyorum ki. Dolayısıyla Scala içinden Java kullanımı ve tam tersi durum mümkün. Esasında onu Java ile birlikte sıklıkla anıyorlar. Java ile yapılan işlerin aynısını daha az kod satırı ile halledebileceğimizi söylüyorlar. Söz gelimi Java ile yazılmış Vehicle isimli aşağıdaki sınıfı düşünelim.
 
-```csharp
+```java
 public class Vehicle{
    private final String title;
    public Vehicle(String title){
@@ -43,14 +43,15 @@ public class Vehicle{
 
 Bunu Scala tarafında şu haliyle yazmamız mümkün.
 
-```text
+```scala
 case class Vehicle(title: String)
 ```
 
 Scala ile ilgili övgüler bununla sınırlı değil tabii. Çok zarif bir şekilde nesne yönelimlilik (Object Oriented) ve fonksiyonel programlama paradigmalarını bir araya getirdiği belirtiliyor. Yani nesne yönelimli ilerlerken fonksiyonel olmanın kolaylıklarını da ele abiliriz gibime geliyor. Bu sebeptendir ki Scala'daki her şey birer nesnedir. Buna sayılar gibi tipler haricinde fonksiyonlar da dahildir. Genel amaçlı bu dilin pek çok fanatiği var. Söz gelimi Twitter'ın [şu adreste yayınlanmış repo'larında](https://github.com/twitter?language=scala) Scala sıklıkla geçiyor.
 
 > Eğer yeni mezunsanız veya halen öğrenciyseniz ve yeni bir programlama dili öğrenmek istiyorsanız size "Scala'yı mutlaka öğrenin" diyemem. Size C#'ı yutun, Java'da efsane olun da diyemem. Ancak size sıklıkla kullandığınız Facebook, Twitter, Instagram, Linkedin, Netflix, Spotify gibi devlerin Github repolarına bir bakın derim. Neyi çözmek için hangi ürünlerinde neleri kullanmışlar, sizlere birçok fikir verecektir. Asla tek bir dilin veya platformun fanatiği olmamak lazım. Bunların hepsi birer araç. Aşağıdaki görselde yazıyı hazırladığım tarih itibariyle baker projesinin içerisindeki dil kullanım oranlarını görüyorsunuz. Scala ve Java bir arada ele alınarak geliştirilmiş bir çatı.
-> ![learn_scala_1.gif](/assets/images/2019/learn_scala_1.gif)
+
+![learn_scala_1.gif](/assets/images/2019/learn_scala_1.gif)
 
 Benim şu anki amacım dili temel özellikleri ile tanımaya çalışmak, bir kaç satır kod yazıp el alışkanlığı kazanmak. Java ile yazılım geliştirenler için öğrenirken yazım stiline alışmakta zorluk yaşandığına dair söylentiler var. Java ile yıllardır uğraşmamış bir.Net geliştiricisi olarak beni de epey zorlayacak diye düşünüyorum. Haydi gelin West-World'de (Ubuntu 16.04'ün 64 Bit sürümü olduğunu biliyorsunuzdur artık), Visual Studio Code kullanarak dili tanımaya çalışalım. İşe terminalden bağzı kurulumları yaparak başlamak gerekiyor elbette. Öncelikle sistemde JDK 8 (v 1.8 olarak da biliniyor) yüklü olmalı. West-World'de yüklüydü ki bunu versiyonu kontrol ederek teyid ettim. Sonrasında Scala'nın kurulumunu yaptım. İşte kullanabileceğimiz terminal komutları.
 
@@ -69,7 +70,7 @@ sudo apt-get install scala
 
 Muhtemelen sisteminizde JDK yüklüdür ama her ihtimale karşı genel bir güncelleme ve sonrasında JDK kurulumu ile işe başlanabilir. Ardından var olan bir scala sürümü varsa bunu kaldırmanızı öneririm. Öğrenmeye başlarken son stabil sürüm ile ilerlemekte yarar var. deb paketini indirdikten sonra bunu açıp kuruyoruz. Bu işlemler başarılı bir şekilde gerçekleştiyse terminalden scala yazarak yeni bir ufka doğru yelken açmaya başlayabiliriz. Örneğin aşağıdaki ifadeleri deneyebiliriz.
 
-```text
+```scala
 scala
 nickname="persival"
 var nickname="persival"
@@ -88,7 +89,7 @@ Scala arabirimine ulaştıktan sonra ilk önce bir değişken tanımlayayım ist
 
 İlerlemeye devam ettim ve değişken tanımlarken kullanılabilen def ifadesiyle karşılaştım. Önce mutable bir değişkenle, sonradan immutable bir tanesiyle denedim.
 
-```text
+```scala
 var city="istanbul"
 def label_city=city
 label_city
@@ -103,7 +104,7 @@ Burada dikkat çekici bir nokta var. city isimli değişken için def ile bir ba
 
 Bu birkaç kod parçasında String ve Double tipleri ile tanışmış oldum. Elbette başka tipler de mevcut. Boolean, Byte, Short, Int, Long, Float, Char diğer veri tiplerinden. Aslında tip ağacının tepesinde Any yer alıyor. Any'den türeyen AnyVal ve AnyRef isimli iki ana alt tip daha var. Tüm tiplerin bu ikisinden türediğini söyleyebiliriz. AnyVal değer türleri için AnyRef ise referans türleri için ata tip olarak ele alınmakta. Yeri gelmişken Scala'nın case-sensitive bir dil olduğunu belirtelim. Şunları bir deneyin mesela;
 
-```text
+```scala
 var isExist=true
 isExist=False
 VAR name="what"
@@ -117,7 +118,7 @@ val point:Int=40
 
 Diğer dillerde olduğu gibi Scala içerisinde de if-else if-else kullanımları mevcut. Nam-ı diğer koşullu ifadeler. Ancak bunun yerine aşağıdaki kod parçasına baksak daha güzel olur.
 
-```text
+```scala
 def isEven(number:Int) = if (number%2==0) "Yes" else "No"
 ```
 
@@ -127,7 +128,7 @@ Burada isEven isimli bir değişken tanımlanmış durumda ki aslen kendisi bir 
 
 Tabii if-else if-else kullanımını görünce insan switch case gibi bir bloğu da arıyor. Tam olarak aynı isimde olmasa da Pattern Matching özelliği kullanılarak bu mümkün kılınabiliyor. Bir anlamda bir değeri bir desenle kıyaslayıp kod akışını yönlendiriyoruz. Örneğin şu kod parçasında olduğu gibi.
 
-```text
+```scala
 def gradeValue(point:Int):String = point match {
      case 1 => "A"
      case 2 => "B"
@@ -145,7 +146,7 @@ gradeValue fonksiyonu için Pattern Matching kullanılıyor. point değişkenini
 
 Ancak dahası var. Sınıflar ile birlikte kullanıldığı bir senaryo. Bu senaryoyu denemek için terminali terketmek gerektiğini düşünüyorum. Visual Studio Code ile ilerlemek daha doğru olacaktır. O zaman burada kısa bir es verelim derim. Visual Studio Code'da scala kodu nasıl yazılabilir öğrenelim isterim. Öncelikle bugün ve sonrası için West-World üzerinde bir klasör açtım. Sonrasında scala uzantılı HelloWorld isimli aşağıdaki kod içeriğine sahip dosyayı oluşturdum. Code dosyayı tanıyarak bana hemen bir uzantı (extension) önerdi. Onu yükleyerek devam ettim ve aşağıdaki içeriği oluşturdum.
 
-```text
+```scala
 object HelloWorld {
   def main(args: Array[String]) {
     println("Hello from Scala")
@@ -164,7 +165,7 @@ scala -classpath . HelloWorld
 
 Aslında burada Scala kodunun derlenerek çalıştırılması söz konusu. Zaten kod içeriğine bakılacak olursa C#,C, C++ ve Java gibi dünyalardan pekala aşina olduğumuz main metodumuz var. Ekrandan parametre alabilen ve bunları bir String dizi üzerinden içeriye alan bu metod program çalıştırıldığındaki giriş noktası görevini üstleniyor. Scala'nın aynı zamanda yorumlamalı olarak da çalışabileceğinden bahsetmiştik. Yani aşağıdaki gibi bir kullanım da söz konusu olabilir.
 
-```text
+```scala
 println("Merhaba benim adım Burak")
 println("Bugün",java.time.LocalDate.now)
 val pi=3.14
@@ -187,7 +188,7 @@ Satır satır yorumlanarak kodun çalıştırıldığını görüyoruz. İsterse
 
 Artık scala terminalini terk etmenin zamanı gelmişti. Dili öğrenmek için Visual Studio Code arabiriminden devam edebilirdim. Tekrar Pattern Matching konusuna döndüm ve bu kez aşağıdaki kod içeriğini yazdım.
 
-```text
+```scala
 abstract class Messenger
 
 case class Human(to: String, title: String, message: String) extends Messenger
@@ -219,7 +220,7 @@ Messenger soyut bir sınıf ve diğer üç case class bu tipten türüyor. Tipik
 
 İşler büyümeye başladı değil mi? if-else if-else derken pattern matching gibi değişik bir konuya denk geldik. Üstelik Pattern Matching bu kadarla da sınırlı değil. Guard, sealed class denilen kavramlar söz konusu. Hele ki case class olgusu. Normal sınıf olarak düşünebileceğimiz case class'lar aslında immutable veri tiplerinin modellenmesinde kullanılmak üzere düşünülmüşler. Onu da merak edip devam etmek istiyorum ancak oraya gelmek için başka şeyleri de öğrenmem gerekiyor. Mixin, trait, case class vs Sakin olmanın tam sırası. Böylesine ciddi bir dil çat diye öğrenilemez. Basit adımlarla dili tanımaya devam etmem lazım. Nitekim gözden kaçırdığım detaylar var. Söz gelimi fonksiyon ve metod aslında iki ayrı kavram. Aşağıdaki kod parçasını göz önüne alarak ilerleyelim.
 
-```text
+```scala
 var sayHello= (name:String) => println(s"Merhaba $name")
 sayHello("Burak")
 
@@ -247,7 +248,7 @@ println(state)
 
 Aslında metodları bir sınıf içerisinde deneyimlesek güzel olabilir değil mi? O zaman bir sınıf tanımlayalım.
 
-```text
+```scala
 class ContextManager(conStr:String)
 {
     def GetActorCount(query:String):Int={
@@ -274,7 +275,7 @@ ContextManager isimli bir sınıfımız var. Sınıf tanımı sırasında parame
 
 Yazının bu kısmında bıraksam mı yoksa hazır sınıflara değinmişken kısaca Case Class türüne bir baksam mı düşünmeye başladım. Filtre kahvem bitmişti zaten. Yenilerken soluklanır ve sonra tam gaz dokümanlar üzerinden araştırmaya devam ederim diye düşündüm. Öyle de yaptım:) Case Class aslında adı üzerinde "Kasa sınıf" olarak düşünülmeli. Bu özel tip immutable sınıflar tanımlamamıza olanak sağlıyor. Bu sebeple de değer bazlı (Compare by Value) karşılaştırmalar söz konusu. Aslında sınıfları referans, kasa sınıflarını da değer türü gibi düşünebiliriz (class vs struct gibi. Bu dillerde ne çok birbirlerine benziyorlar değil mi?) Aşağıdaki kod parçasını kullanarak bu durumu anlamaya çalışabiliriz.
 
-```text
+```scala
 case class Dimension(x:Double,y:Double,z:Double)
 class Dim(x:Double,y:Double,z:Double)
 
@@ -295,7 +296,7 @@ Dimension bir case class. Dim ise normal bir sınıf olarak tanımlandı. locati
 
 Scala'yı anlamak için bulduğum dokümanları kurcalarken dilin temel özellikleri içerisindeki Object ve Trait kavramları da ilgimi çekti. Bir sınıfın sadece tek bir nesne örneğine sahip olmasını istiyorsak Object tipinden yararlanabiliriz. Çalışma zamanı ona ihtiyaç duyulduğu yerde oluşturacaktır (Lazy creation) Bir nevi Singleton nesne tanımlamak için kullanılan basit bir tip olarak düşünebiliriz. Aşağıdaki kod parçasında object tipinin kullanımına ilişkin basit bir deneme var.
 
-```text
+```scala
 object Listener {
   def Start:Boolean = { 
     println("listening...") 
@@ -315,7 +316,7 @@ Listener.Stop
 
 Pek tabii Singleton nesnelere ihtiyaç duyulan senaryolara bakmak lazım buradaki durumu anlamak için. Şu anda sadece yazım stili ve kavramsal olarak farkındalık sahibi oldum diyebilirim. Gelin birde şu Trait mevzusuna bakalım. Trait'ler belirlenmiş alan ve metodları taşıyorlar. Örneklenemeyen bir tür ancak başka sınıf veya nesneleri genişletmekte kullanılabiliyorlar. Java 8 tarafındaki Interface tipine benzetiliyorlar (İnceleyince çok uzun zamandır C# tarafında var olan interface'lerden ne farkı var anlayamadım tabii ama Scala çalıştıkça fark edeceğim diye düşünüyorum) Generic tipleri de Trait'ler ile değerlendirmek mümkün. Aşağıdaki kod parçası onun kullanımı ile ilgili bana temel bir fikir verdi aslında.
 
-```text
+```scala
 trait Capability {
     def Walk(stepCont:Int)
     def Stop:Boolean
@@ -337,7 +338,7 @@ v40.Walk(10)
 v40.Turn("Montreal")
 ```
 
-![eWnzaQAAAABJRU5ErkJggg==](/assets/images/2019/scala-ile-tanismak-01.png)
+![scala ile tanismak 01](/assets/images/2019/scala-ile-tanismak-01.png)
 
 Capability içerisinde Walk, Stop, Turn isimli metod tanımlamaları var. Capability'den genişletilen Truck sınıfı bu metodları uygulamak zorunda. Diğer yandan SpecialCapability isimli Trait ek bir metod tanımı daha getiriyor. Yani Capability Trait'ini genişletmiş olduk.
 

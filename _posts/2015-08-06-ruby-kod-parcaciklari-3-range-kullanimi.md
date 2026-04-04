@@ -53,7 +53,7 @@ if __FILE__==$0
 end
 ````
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-3-range-kullanimi-01.jpg)
+![ruby kod parcaciklari 3 range kullanimi 01](/assets/images/2015/ruby-kod-parcaciklari-3-range-kullanimi-01.jpg)
 
 ve her zaman olduğu gibi kod parçacığımıza ait kısa notlarımızı paylaşalım.
 

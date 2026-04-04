@@ -87,7 +87,7 @@ end
 
 Kod parçasının bu haliyle çalışma zamanı çıktısı aşağıdaki gibidir.
 
-![2Q==](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-01.jpg)
+![ruby kod parcaciklari 7 object method class method public private protected 01](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-01.jpg)
 
 Gelelim kod parçasında dikkat çeken noktalara.
 
@@ -100,10 +100,10 @@ Gelelim kod parçasında dikkat çeken noktalara.
 
 protected erişim sonrası alınan hata
 
-![2Q==](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-02.jpg)
+![ruby kod parcaciklari 7 object method class method public private protected 02](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-02.jpg)
 
 private erişim sonrası alınan hata
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-03.jpg)
+![ruby kod parcaciklari 7 object method class method public private protected 03](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-03.jpg)
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

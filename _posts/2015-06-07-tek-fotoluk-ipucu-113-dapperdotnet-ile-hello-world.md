@@ -19,7 +19,7 @@ Gecenin bir yarısı. Bilgisayarınızın başındasınız. Önünüzde Visual S
 
 Diyelim ki öyle bir gece ve orada [Dapper.Net](https://github.com/StackExchange/dapper-dot-net) diye bir paket gördünüz. Hatta azcık Entity Framework, Oracel/SQL ve O-RM (Object Relational Mapping) bilginiz var. Hazır elinizin altında da Microsoft'un emektar Northwind veritabanı. O halde ne duruyorsunuz. Bir Hello World diyivirsiniz ya! Aynen aşağıdaki fotoğrafta görüldüğü gibi:)
 
-![w+CuynfEkcnBgAAAABJRU5ErkJggg==](/assets/images/2015/tek-fotoluk-ipucu-113-dapperdotnet-ile-hello-world-01.png)
+![tek fotoluk ipucu 113 dapperdotnet ile hello world 01](/assets/images/2015/tek-fotoluk-ipucu-113-dapperdotnet-ile-hello-world-01.png)
 
 Bu örnekte ilk dikkati çeken noktaları ise şu şekilde ifade edebiliriz.
 

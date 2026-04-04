@@ -13,7 +13,7 @@ Hani şu NuGet paketlerine bakıyoruz ya bir süredir. Hatta bazılarını alıp
 
 İşte yine öyle bir paket var elimizde. JeremySkinner imzalı [Fluent Validation](https://github.com/JeremySkinner/FluentValidation). Fluent API prensiplerini göre yazılmış başarılı bir doğrulama kütüphanesi. İçerisinde doğrulama adına yok yok diyebiliriz. Söz gelimi Player isimli bir sınıfın alanları için gerekli doğrulama kriterlerini, aşağıdaki fotoğrafta görüldüğü üzere çok şık bir şekilde uygulayabiliyorsunuz.
 
-![tEW1AAAAAElFTkSuQmCC](/assets/images/2015/tek-fotoluk-ipucu-119-en-keyifli-validation-01.png)
+![tek fotoluk ipucu 119 en keyifli validation 01](/assets/images/2015/tek-fotoluk-ipucu-119-en-keyifli-validation-01.png)
 
 Size düşen ise bu paketi gerekli gördüğünüz yerlerde kullanmak dışında, birde kaynak kodlarına bakmak olmalı. Hatta bakmadan önce siz bu tip bir Fluent API yazmak isteseniz nasıl hareket ederdiniz bir düşünün derim.
 

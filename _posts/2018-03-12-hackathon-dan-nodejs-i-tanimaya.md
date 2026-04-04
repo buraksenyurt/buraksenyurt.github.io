@@ -26,20 +26,24 @@ Javascript yüzyıllardır (abartmayı severim) front-end tarafında kullanılan
 
 Onunla kesişmem çalışmakta olduğum firmadaki bir kaç sevgili dostumun katılacağı [hackathon](http://hackathon.getir.com/) yarışması sayesinde oldu. Yarışmaya katılımın ön koşulu olarak bir problemin çözülmesi gerekiyordu. Katılımcılar isterlerse Node.js, MongoDb ve Heroku kullanılarak bu görevi gerçekleştirebilirlerdi. Kıt kanaat bilgi birikimimle hemen şu Node.js nedir, neler yapılabiliyordur diye bakınmaya başladım. Derken Cumartesi günü kendimi onu tanımaya çalışırken buldum. Şu an için iş yerindeki projelerimizde Node.js ile yürüyeceğimiz bir yol haritamız olmasa da, sunucu taraflı çalışan Javascript temelli bir çatı neymiş öğrenmek istedim. Örnekleri karıştırırken de benim için hızlı bir giriş niteliğinde olan aşağıdaki kod parçası ile işe başladım.
 
-> Kurulumlar
-> Malum aylardır West-World'de tatildeyim. Bu dünyada Ubuntu kuralları geçerli. Dolayısıyla öncelikli olarak buraya Node.js'in kurulması gerekiyor. Her zaman ki gibi paket listesini güncellemekle işe başlamak lazım. Sonrasında node.js yüklenebilir. npm (Node Packaged Modules) okuduğum kaynaklara göre dünyanın en büyük paket merkezi konumunda. Onu da bir takım paketlerin (mesela rest servisleri için kullanmayı düşündüğüm 'express') sisteme kolayca kurulumu için kullanmayı planladım. Kurulumları başarılı bir şekilde tamamladıktan sonra -v ile versiyon bilgisini de elde edebildiğimi de gördüm. Buraya kadar sizde beni takip ettiyseniz benzer bir görüntü ile karşılaşmanız lazım.
-> ```bash
-> sudo apt-get update
-> sudo apt-get install nodejs
-> sudo apt-get install npm
-> nodejs -v
-> ```
-> ![nodejs_3.gif](/assets/images/2018/nodejs_3.gif)
-> Kod yazımı içinse Visual Studio Code'dan yararlandım. Zaten node kod dosyasını görür görmez bir kaç eklenti önerisinde de bulundu. I love Visual Studio Code!
+## Kurulumlar
+
+Malum aylardır West-World'de tatildeyim. Bu dünyada Ubuntu kuralları geçerli. Dolayısıyla öncelikli olarak buraya Node.js'in kurulması gerekiyor. Her zaman ki gibi paket listesini güncellemekle işe başlamak lazım. Sonrasında node.js yüklenebilir. npm (Node Packaged Modules) okuduğum kaynaklara göre dünyanın en büyük paket merkezi konumunda. Onu da bir takım paketlerin (mesela rest servisleri için kullanmayı düşündüğüm 'express') sisteme kolayca kurulumu için kullanmayı planladım. Kurulumları başarılı bir şekilde tamamladıktan sonra -v ile versiyon bilgisini de elde edebildiğimi de gördüm. Buraya kadar sizde beni takip ettiyseniz benzer bir görüntü ile karşılaşmanız lazım.
+
+```bash
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+nodejs -v
+```
+
+![nodejs_3.gif](/assets/images/2018/nodejs_3.gif)
+
+Kod yazımı içinse Visual Studio Code'dan yararlandım. Zaten node kod dosyasını görür görmez bir kaç eklenti önerisinde de bulundu. I love Visual Studio Code!
 
 Bu ara bilgilendirmeden sonra aşağıdaki bir kaç kod dosyası ile devam edebiliriz.
 
-İlk Örnek
+## İlk Örnek
 
 Visual Studio Code üzerinde aşağıdaki içeriklere sahip iki js dosyası oluşturarak ilerleyebiliriz. Öncelikle modül kavramını anlamak adına utility.js adından bir dosya oluşturalım. Tahmin edeceğiniz üzere bir modülü, içerisindeki fonksiyonellikleri dışarı açmak suretiyle ortak kütüphane olacak şekilde kullanabiliyoruz. Kaldıki npm tarafına baktığımızda bu şekilde kullanabileceğimiz yüzlerce kütüphane (ya da built-in module) olduğunu söyleyebiliriz.
 
@@ -93,7 +97,7 @@ http.createServer(function (request, response) {
 
 Öncelikle burada neler olup bitti kısaca anlatmaya çalışayım. Kod temel olarak 5002 ve 5003 portlardan olacak şekilde iki farklı sunucu dinleme operasyonunu icra ediyor. Her iki operasyonda kullanıcıya HTML içerik döndürmekte. 5002 portu için querystring kullanımı ve HTML içeriğinin kod tarafında inşa edilişi söz konusu. response değişkeni üzerinden çeşitli fonksiyonları kullanarak bu yazma operasyonlarını icra ediyoruz. Querystring parametreleri ve utility sınıfındaki reverse fonksiyonu kullanılarak da sembolik bir içerik basılıyor. 5003 portuna gelen talepleri ise intro.html isimli statik bir HTML sayfası ile karşılamaktayız. Kodun başında diğer platformlardaki import, using gibi bildirimlerden aşina olduğumuz bir kaç tanımlama bulunuyor. Aslında kodda kullanılacak olan modüllerin bildirimi yapılıyor. Sunucu işlemleri için http, dosya okuma işlemi için fs, querystring parametreleri ile çalışmak için url ve son olarakta kendi modülümüzü kullanabilmek için utility modülleri için tanımlamalar söz konusu. Tabii örnekte güzel olan noktalardan birisi http.createServer metodlarının asenkron çalışma modelini desteklemeleri sayesinde programın aynı anda 5002 ve 5003 taleplerini işleyebilecek olması. Kodları geliştirirken bazı ifade sonlarına noktalı virgül koymadığımı mutlaka fark etmişssinizdir. Açıkçası yorumlayıcı bunu önemsemiyor. Bu arada intro.html içeriği de şu şekilde;
 
-```text
+```html
 <html>
 
 <head>
@@ -124,21 +128,21 @@ Lorem Ipsum sitesinden aldığım metinsel bir içeriğin tarayıcıda gösterim
 node helloWorld.js
 ```
 
-http://localhost:5003 talebi için sonuç
+`http://localhost:5003` talebi için sonuç
 
 ![nodejs_4.gif](/assets/images/2018/nodejs_4.gif)
 
-http://localhost:5002/?nick=murdock&point=450 için sonuç,
+`http://localhost:5002/?nick=murdock&point=450` için sonuç,
 
 ![nodejs_5.gif](/assets/images/2018/nodejs_5.gif)
 
-ve son olarak querystring bilgisi hatalı olan http://localhost:5002 için sonuç,
+ve son olarak querystring bilgisi hatalı olan `http://localhost:5002` için sonuç,
 
-![RrYffpfZDZgWarj5vwVygFYsqUy4+4D4cFyghVBsEQAAEQOCCIcAC86nHG4XsfWhfTPaCgYGKkook6RyaN28BLCAAAiAAAiAAAiBwwROASLrgmwAAgAAIgAAIgAAIOBGASEK7AAEQAAEQAAEQAAEHAhBJaBYgAAIgAAIgAAIgAJGENgACIAACIAACIAACwQggkhSME84CARAAARAAARC4wAj8P9LnDPj57iEMAAAAAElFTkSuQmCC](/assets/images/2018/hackathon-dan-nodejs-i-tanimaya-01.png)
+![hackathon dan nodejs i tanimaya 01](/assets/images/2018/hackathon-dan-nodejs-i-tanimaya-01.png)
 
 Elim Node.js ile bir şeyler yazmaya çabuk alıştı diyebilirim. Bunun en büyük sebebi geçen yıl boyunca farklı dilleri ve çatıları tanımaya ve özellikle Linux platformunda bir şeyleri yeniden keşfetmeye çalışmamdır. Sizlere de bu tip bir çalışma planını disiplinli bir şekilde uygulamanızı öneririm.
 
-Onun Hakkında Neler Söylenebilir?
+## Onun Hakkında Neler Söylenebilir?
 
 Yukarıdaki kod parçasından sonra bu çatının genel özelliklerini bilmekte de yarar olduğu kanısındayım. Her şeyden önce Javascript tabanlı bir çatı ya da geliştirme ortamı olduğunu ifade edebiliriz. Bu açıdan fonksiyonel programlama özelliklerini benimseyen ve modüler kod yazılmasını sağlayan bir ortam var. Google Chrome'un performansı oldukça yüksek olan [V8 Javascript motoru](https://developers.google.com/v8/) üzerinde çalışacak şekilde tasarlanmış. En büyük amacı özellikle I/O (non blocking modeli kullanıyor) işlemlerinin çok sık yapıldığı yüksek performans isteyen web uygulamalarının basitçe geliştirilmesi. Single Page Application modeli, Video Streaming sunucuları bunlara örnek olarak verilmekte. Olay güdümlü (Event-Driven) yaklaşımı destekleyen bu çatının ölçeklenebilirliği de güçlü özelliklerinden. Bu özellikleri itibariyle gerçek zamanlı veri sunan uygulamalar için de biçilmiş kaftan olduğunu söyeleyebiliriz. Ryan Dahl tarafından 2009 yılında geliştirildiği ifade edilen çatının [şurada güzel bir sunumu](https://www.youtube.com/watch?v=ztspvPYybIY) var. Tamamen açık kaynaklı olarak sunulan, OS X, Linux, Windows demeden platform bağımsız ele alınabilen, MIT lisanslama modelinde kullanılabilen bir çalışma zamanına sahip. Apple'dan IBM'e, Netflix'ten Paypal'a, Microsoft'tan benim çalışma odamdaki köhne West-World'e kadar pek çok kurum/kişi tarafından kullanılıyor. Tüm bunların yanından belki de en dikkat çekici yanı kendisinin tamamen asenkron programlamaya (Callback modelini mutlaka hatırlayınız) odaklanmış olmasıdır. Bunu daha net kavramak için öğretilerdeki örnek kod parçalarına baktım ve en sık kullanılan bir versiyonunu ele aldım.
 
@@ -192,7 +196,7 @@ readFile fonksiyonunun ikinci parametresi olan callback metodu readCallback isim
 
 ![nodejs_12.gif](/assets/images/2018/nodejs_12.gif)
 
-Terminal Penceresinden
+## Terminal Penceresinden
 
 Node.js'i öğrenmeye başlarken ille de js uzantılı dosyalar oluşturmaya gerek olmadığını da öğrendim. Meşhur REPL (Read Eval Print Loop) modelinin desteklendiği bir ortamdan söz konusu. Yani terminalden node arayüzü ile konuşmak mümkün. Sadece node demek yeterli. İşte bir kaç örnek kullanım.
 
@@ -217,7 +221,7 @@ sum(5,1.23)
 .exit
 ```
 
-![y8Gd6AAAAAElFTkSuQmCC](/assets/images/2018/hackathon-dan-nodejs-i-tanimaya-02.png)
+![hackathon dan nodejs i tanimaya 02](/assets/images/2018/hackathon-dan-nodejs-i-tanimaya-02.png)
 
 - name isimli bir değişken kullanımı
 - terminale bir şeyler yazdırma
@@ -229,7 +233,7 @@ sum(5,1.23)
 
 gibi işlemler söz konusu. Dolayısıyla dili tanımak için bu ortamı kullanabiliriz. Terminal'de açılan node ortamından çıkmak için.exit yazmak yeterli. Nokta ile başlayan farklı komutlar da var. Söz gelimi yazdığımız ve üç nokta ile devam eden bir ifadeden vazgeçmek istediğimizde.break yazabiliriz. Ya da kullanılabilecek kısayolları görmek için.help ifadesini kullanabiliriz. Bunları bir deneyin.
 
-Express ile Sonlandıralım
+## Express ile Sonlandıralım
 
 Sonuç olarak Node.js'i SPA tipinden uygulamalarda, JSON bazlı REST API'lerinin geliştirilmesinde, veri-hassas ve gerçek zamanlı akış sunan programlarda tercih edebiliriz. Hatta ilk örnekten yola çıkarsak domain bazında bölünmüş REST servislerinin ayrı ayrı sunulmasında pekala rahatlıkla kullanılabilir. Söz gelimi müşteri modülünüzü ve alt modüllerini farklı portlardan tek bir node.js sunucusundan, muhasebe modülü ve alt modüllerini farklı port aralığından sunan bir diğer node.js sunucusundan vb... şeklinde bir kurgu pekala gerçeklenebilir. Bunun ölçeklenmesi de microservice yaklaşımında kendine yer edinmesi de oldukça mümkün. REST tarafı için önceden de belirttiğim üzere express paketinden yararlanmak mantıklı görünüyor. Hadi gelin yazımızı sonlandırmadan önce onunla ilgili çok basit bir örnek yapalım. Ön hazırlık olarak express ve body-parser paketlerini sisteme dahil etmek gerekiyor. Visual Studio Code ortamından çıkmadan kendi terminalini kullanarak bu kurulumlar kolayca yapılabilir.
 
@@ -314,11 +318,11 @@ var server = app.listen(5006, function () {
 
 Ben Postman üzerinden yaptığım denemelerle aşağıdaki sonuçları elde etmeyi başardım.
 
-http://localhost:5006/api/jobs talebi için tüm json içeriğini elde edebildim.
+`http://localhost:5006/api/jobs` talebi için tüm json içeriğini elde edebildim.
 
 ![nodejs_9.gif](/assets/images/2018/nodejs_9.gif)
 
-http://localhost:5006/api/addJob adresinden yaptığım HTTP Post talebi ile de ekleme işlemi için gerekli operasyonun tetiklendiğini gördüm.
+`http://localhost:5006/api/addJob` adresinden yaptığım HTTP Post talebi ile de ekleme işlemi için gerekli operasyonun tetiklendiğini gördüm.
 
 ![nodejs_10.gif](/assets/images/2018/nodejs_10.gif)
 

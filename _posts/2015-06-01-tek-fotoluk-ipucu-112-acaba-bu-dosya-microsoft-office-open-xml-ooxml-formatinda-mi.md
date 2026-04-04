@@ -14,6 +14,6 @@ Diyelim ki bir yerlerde saklanmış ve kod tarafında byte[] array olarak ifade 
 
 Aslında dosyaların byte içeriklerinin hexadecimal karşılıkları bizlere tipleri hakkında da bir takım ipuçları vermekte ([Şu adrese bir bakın derim](http://www.garykessler.net/library/file_sigs.html)) Dolayısıyla biz de aynı felsefeyi kullanabiliriz. Aynen aşağıdaki fotoğrafta görüldüğü gibi.
 
-![H2WB7DHPkkVjAAAAAElFTkSuQmCC](/assets/images/2015/tek-fotoluk-ipucu-112-acaba-bu-dosya-microsoft-office-open-xml-ooxml-formatinda-mi-01.png)
+![tek fotoluk ipucu 112 acaba bu dosya microsoft office open xml ooxml formatinda mi 01](/assets/images/2015/tek-fotoluk-ipucu-112-acaba-bu-dosya-microsoft-office-open-xml-ooxml-formatinda-mi-01.png)
 
 Tabii tek yol bu olmayabilir. Daha pratik ve efektif yolları bulup paylaşmak siz değerli okurlarıma görev olsun. Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.

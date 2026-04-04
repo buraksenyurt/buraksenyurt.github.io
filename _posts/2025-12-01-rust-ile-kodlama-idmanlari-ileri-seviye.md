@@ -452,7 +452,7 @@ impl Product {
 
 Bu kodun çalışma zamanı çıktısı ise aşağıdaki gibidir.
 
-![H1Tz6WZq55bbAAAAAElFTkSuQmCC](/assets/images/2025/rust-ile-kodlama-idmanlari-ileri-seviye-01.png)
+![rust ile kodlama idmanlari ileri seviye 01](/assets/images/2025/rust-ile-kodlama-idmanlari-ileri-seviye-01.png)
 
 ## FFI (Foreign Function Interface) Kullanımlarında Unsafe ile Güvenli Soyutlamalar Oluşturmak
 

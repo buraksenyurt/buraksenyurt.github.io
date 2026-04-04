@@ -69,11 +69,11 @@ end
 
 Örneğin çalışma zamanı çıktısı aşağıdaki gibidir.
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-16-json-serilestirme-01.jpg)
+![ruby kod parcaciklari 16 json serilestirme 01](/assets/images/2015/ruby-kod-parcaciklari-16-json-serilestirme-01.jpg)
 
 Dikkat edileceği üzere Person nesne örneklerinden oluşan dizi, JSON formatına dönüştürülebilmiş ve hatta ilgili formattan tekrar nesne olarak ayağa kaldırılabilmiştir. Uygulamanın en kritik özelliklerinden birisi ürettiği JSON içeriğidir. Eğer jsonviewer.stack.hu gibi online bir siteden sonuçlara bakarsak aşağıdaki gibi bir içeriğin üretildiğini görebiliriz.
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-16-json-serilestirme-02.jpg)
+![ruby kod parcaciklari 16 json serilestirme 02](/assets/images/2015/ruby-kod-parcaciklari-16-json-serilestirme-02.jpg)
 
 Şimdi kod parçasında neler olduğuna bir bakalım.(Bu örneğimizde daha önceden değinmediğimiz kısımlar da bulunmakta)
 

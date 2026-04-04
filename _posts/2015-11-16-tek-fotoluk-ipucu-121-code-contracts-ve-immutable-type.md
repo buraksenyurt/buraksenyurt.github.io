@@ -22,11 +22,11 @@ Tabi Immutable tiplerin kullanılması sırasında ilk değerler verilirken yap�
 
 Proje Özellikleri -> Code Contracts -> Static Checking aktifken
 
-![rgVjAAAAAElFTkSuQmCC](/assets/images/2015/tek-fotoluk-ipucu-121-code-contracts-ve-immutable-type-01.png)
+![tek fotoluk ipucu 121 code contracts ve immutable type 01](/assets/images/2015/tek-fotoluk-ipucu-121-code-contracts-ve-immutable-type-01.png)
 
 Proje Özellikleri -> Code Contracts -> Perform Runtime Contract Checking aktifken
 
-![P9C134KIK9m5AAAAAElFTkSuQmCC](/assets/images/2015/tek-fotoluk-ipucu-121-code-contracts-ve-immutable-type-02.png)
+![tek fotoluk ipucu 121 code contracts ve immutable type 02](/assets/images/2015/tek-fotoluk-ipucu-121-code-contracts-ve-immutable-type-02.png)
 
 Görüldüğü gibi ön koşullandırma (Precondition) özelliklerini kullanarak Immutable bir tipin ilk değerlerinin çeşitli kriterleri sağlamasını garanti etmemiz oldukça kolay.
 

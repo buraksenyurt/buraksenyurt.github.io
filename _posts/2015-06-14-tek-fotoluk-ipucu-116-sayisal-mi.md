@@ -13,7 +13,7 @@ Oldu ya geliştirdiğiniz projenin bir yerinde, koda düşen metinsel bazı değ
 
 Gelen içeriğin sayısal olup olmadığını anlamanın bir kaç yolu olduğu kesin. Pek tabi Regex sınıfının static Match metodu çözüm alternatifleri içerisinde en kuvvetli olanlarından. Bunu bir de Extension metod haline getirsek ve public bir sınıf kütüphanesi (Class Library) içerisine koysak daha şık olmaz mı? Peki ama nasıl? Yoksa aşağıdaki fotoğrafta görüldüğü gibi olabilir mi?
 
-![f5MrrnqzRjzuAAAAAElFTkSuQmCC](/assets/images/2015/tek-fotoluk-ipucu-116-sayisal-mi-01.png)
+![tek fotoluk ipucu 116 sayisal mi 01](/assets/images/2015/tek-fotoluk-ipucu-116-sayisal-mi-01.png)
 
 (Tabii ben sınıf kütüphanesini içerisine koymadım ama biliyorum ki sizin bu tip Extension metodları biriktirdiğiniz ve pek çok projede kullandığınız ortak bir kütüphaneniz vardır. Siz oraya koyuverirsiniz olma mı?)
 

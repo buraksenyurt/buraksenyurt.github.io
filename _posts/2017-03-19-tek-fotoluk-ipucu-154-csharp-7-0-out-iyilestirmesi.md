@@ -47,7 +47,7 @@ namespace Classics
 
 Calculate fonksiyonu iki sayının toplamını ve farkını hesap edip out parametresi olarak geriye döndürmekte. Main metodundaki kullanım dikkatinizi çekmiştir. total ve dif isimli değişkenleri çağrım öncesi tanımlamış değiliz. Daha yaygın bir örnekle devam edelim.
 
-![NSm5NIKAICAICAKCtmw1ygAAADFJREFUgCIpnCdF0RM5l3Pnc97Yy8dwmLEeOkWIaj+qS0m6T24uQUAQEAQEgcJA4P8BOp+v6pbCzd4AAAAASUVORK5CYII=](/assets/images/2017/tek-fotoluk-ipucu-154-csharp-7-0-out-iyilestirmesi-01.png)
+![tek fotoluk ipucu 154 csharp 7 0 out iyilestirmesi 01](/assets/images/2017/tek-fotoluk-ipucu-154-csharp-7-0-out-iyilestirmesi-01.png)
 
 TryParse metodunda out değişkenini kullanırken yine number isimli değişkeni önceden tanımlamadığımızı fark etmişsinizdir. Aslında out kullanımı sırasında değişken tipini belirtmek zorunda değiliz. Yani var tipinde bir tanımlama da mümkün. Aşağıdaki ekran görüntüsünde olduğu gibi.
 

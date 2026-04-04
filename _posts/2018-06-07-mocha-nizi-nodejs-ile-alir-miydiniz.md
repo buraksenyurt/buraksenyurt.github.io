@@ -35,7 +35,7 @@ Modülde bahsedilen Mocha bir test çatısı (testing framework) olarak düşün
 
 Ben klasik olarak her cumartesi gecesi yaptığım gibi West-World'de tatildeyim. Kısa süre önce buraya Node.js'i getirmiştim. Visual Studio Code ve terminal pencerem her zaman olduğu gibi hazır. Kasabanın en meşhur müzik lokalinde Lissie, Rae Moris, Ane Brun ve Katie Melua arka arkaya en popüler şarkılarını canlı olarak seslendiriyorlar. Kahvemden küçük bir yudum alıyor ve klavyemde kodları yazmaya başlıyorum.
 
-Gerekli Kurulumlar
+## Gerekli Kurulumlar
 
 Örnek kod parçasında mocha ve should çatıları kullanıldığı için tahmin edeceğiniz gibi bu paketleri sisteme yüklemek gerekiyor. npm aracını kullanarak ilgili yükleme işlemlerini yapıyorum (Bu paragrafı daha uzun planlamıştım ama...Niye böyle oldu ki:S)
 
@@ -44,7 +44,7 @@ npm install mocha
 npm install should
 ```
 
-Test Edilecek Kod Parçası
+## Test Edilecek Kod Parçası
 
 mathForKids.js isimli bir modülümüz olacak. Bu modül içerisinden sum isimli ve iki sayıyı toplayan çok basit bir fonksiyonellik sunuyoruz. sum isimli metodun senkron çalışan bir versiyonu da mevcut (Bu cümle garibinize gitmemiş olmalı. Malum node.js doğası gereği asenkron çalışma prensiplerini benimsiyor. Senkronluk ikinci planda) mathForKids isimli dosyanın içeriğini aşağıdaki gibi geliştirebiliriz.
 
@@ -80,7 +80,7 @@ module.exports.description = "Math is fun";
 
 Kodda neler oluyor bir bakalım değil mi? sum ve sumSync isimli iki metod söz konusu. sum metodu rastgele bir geciktirme süresi esas alınaraktan asenkron çalışma senaryosunu gerçekleştiriyor. Bunun için setTimeout fonksiyonundan nasıl yararlandığımıza dikkat edin lütfen. Çocuklar için toplama işlemi yapan bir fonksiyon söz konusu ki şimdilik onların negatif sayılar dünyasına girmesini istemiyoruz (Gülmeyin cidden ilk bir kaç sene hayatlarında sadece pozitif doğal sayılar var) Bu nedenle her iki fonksiyonumuz içerisinde x ve y değerlerinin 0 dan küçük olma halleri kontrol edilmekte. Eğer bir ihlal söz konusuysa ortama hata mesajı fırlatılmasını sağlamaktayız. Modülümüzdeki fonksiyonellikleri exports bildirimi ile dışarıya sunmayı da ihmal etmiyoruz tabii. Matematik eğlencelidir mesajımızı da gizliden bilinçaltınıza işleteyim:P
 
-Test Dosyası
+## Test Dosyası
 
 Test senaryolarını içerek kod dosyasını genel kabul görmüş klasör mantığına göre test isimli dizin altına alabiliriz (Hatta aslında uygulama kodlarını app isimli bir klasörde tutmak da önerilmekte) Mocha bu durumda test dosyasının adını belirtmemize gerek kalmadan test klasöründe ne var ne yok çalıştırabilir.
 
@@ -124,7 +124,7 @@ Son test iddiamız da yine 2 ile 2nin toplamının 4 olduğu üzerine. Lakin bur
 node node_modules/.bin/mocha
 ```
 
-![z8b6TQKwdV8AAAAAElFTkSuQmCC](/assets/images/2018/mocha-nizi-nodejs-ile-alir-miydiniz-01.png)
+![mocha nizi nodejs ile alir miydiniz 01](/assets/images/2018/mocha-nizi-nodejs-ile-alir-miydiniz-01.png)
 
 ,
 
@@ -168,7 +168,7 @@ terminal komutundan yararlanabiliriz. Bu komutu çalıştırdığımızda bir ka
 
 Konumuz gereği buradaki en önemli kısım test niteliğinin değeri aslında. Bu niteliğe atanan mocha değerine göre artık uygulama testlerini aşağıdaki basit komut ile çalıştırabiliriz.
 
-```javascript
+```bash
 npm test
 ```
 
@@ -217,11 +217,11 @@ Görüldüğü üzere her şey should emri ile başlıyor. should çağrısını
 
 Should çatısında daha pek çok yardımcı bağlaç var. Bunlar arasında.an,.of,.a,.and,.be,.have,.with,.is,.which gibi fonksiyonellikler yer alıyor.
 
-![mAATYAJMgAkwASZwgRNgYXOBDyA3nwkwASbABJgAEzhHgIUNWwMTYAJMgAkwASYwYAiwsBkwQ8kdYQJMgAkwASbABFjYsA0wASbABJgAE2ACA4YAC5sBM5TcESbABJgAE2ACTICFDdsAE2ACTIAJMAEmMGAIsLAZMEPJHWECTIAJMAEmwARY2LANMAEmwASYABNgAgOGAAubATOU3BEmwASYABNgAkyAhQ3bABNgAkyACTABJjBgCLCwGTBDyR1hAkyACTABJsAEWNiwDTABJsAEmAATYAIDhgALmwEzlNwRJsAEmAATYAJM4H8AnP8HnXxODGwAAAAASUVORK5CYII=](/assets/images/2018/mocha-nizi-nodejs-ile-alir-miydiniz-02.png)
+![mocha nizi nodejs ile alir miydiniz 02](/assets/images/2018/mocha-nizi-nodejs-ile-alir-miydiniz-02.png)
 
 > Size tavsiyem Fluent Interface vb terimleri araştırarak bu tip bir fonksiyon zincirini nasıl yazabileceğinize bir bakmanız. Hazır çatıları kullanmak elbette işin kolay kısmı ve amaç test senaryolarını işletmekse tekerleği yeniden keşfetmeye gerek yok. Ancak işin aslı, "bu adamlar bunu nasıl yapıyor yahu?" diyerek incelemenin de bireysel gelişim anlamında çok değerli bir katkısı olacağı.
 
-Ya Kendi Assertion Fonksiyonumuzu Eklemek İstersek
+## Ya Kendi Assertion Fonksiyonumuzu Eklemek İstersek
 
 Bu noktada da should çatısı güzel bir genişleyebilirlik sunmakta. Aşağıdaki kod parçasını ele alalım.
 
@@ -256,7 +256,7 @@ describe('Math for kids', function () {
 
 İlk olarak should.Assertion.add fonksiyonu ile yeni bir tanımlama ekliyoruz. odd isimli fonksiyonu bir sayının tek olup olmadığını anlamak istediğimiz durumlar için kullanacağız. params ile test çalışma zamanı ortamına bir takım bilgiler bırakabiliyoruz. Açıklama ve beklenen sonuç gibi. Fonksiyon içerisinde this.object kullanarak gerçekleştirdiğimiz bir kontrol söz konusu. Dikkat edeceğiniz üzere burada da should fonksiyonundan yararlanıyor ve savımızın beklediğimiz sonucunu kontrol ediyoruz. 3 durumu test ettik. Tek sayı olma hali, tek sayı beklediğimiz halde tek sayı olmama hali, tek sayı beklemediğimiz bir çift sayı olma hali ve olmak ya da olmamak...Ehm...Pardon:) Sonuçta kendi assertion fonksiyonumuzu should çatısına nasıl ekleyebileceğimiz gördük. Hatta burada odd yerine tekSayi gibi kendi dilimizde ifadeler de ekleyebiliriz diye düşünüyorum (Şimdi Seleniumcuları daha iyi anlamaya başladım)
 
-Sizin için
+## Sizin için
 
 Yazıyı sonlandırmadan önce aşağıdaki ekran görüntüsüne bir bakalım istiyorum.
 
@@ -268,13 +268,15 @@ Test Sonuçlarını Tarayıcıda Göstermek
 
 Şimdi aşağıdaki ekran görüntüsüne bakmanızı rica ediyorum.
 
-![osvR40VycIraD7Z6ixyc4v3qU2tEgAhoRkBZDc6LlxnQLwulaSmhVarB0YwvfYoIEAEiQASIABH4SARomfhHAk+nJQJEgAgQASJABD4cAWUuTmFn00X3hjv4uXnv8j4cRmqZCBABIkAEiAAR0DYCRXFxdK32RmBNAkfbRh3FQwSIABEgAkSgBAioc3J01bkhgVMCg4dOQQSIABEgAkRA2wnICx1dFzYkcLR9xFF8RIAIEAEiQASIwHsToBTVe6OjA4kAESACRIAIEAFtJUACR1uvDMVFBIgAESACRIAIvDcBEjjvjY4OJAJEgAgQASJABLSVwP8DPjja+yYTWbMAAAAASUVORK5CYII=](/assets/images/2018/mocha-nizi-nodejs-ile-alir-miydiniz-03.png)
+![mocha nizi nodejs ile alir miydiniz 03](/assets/images/2018/mocha-nizi-nodejs-ile-alir-miydiniz-03.png)
 
 Bu görüntü komut satırındaki test çıktılarına göre daha hoş değil mi? Peki nasıl oluştu merak ediyor musunuz? Haydi gelin anlatayım. Mocha ve Should dokümanları arasında gidip gelirken Chai isimli alternatif bir BDD çatısının da kullanılabileceğini öğrendim. Chai çatısı için verilen örnekte test sonuçlarının tarayıcı penceresine yansıtıldığına dair bir kod parçası da bulunuyordu. Bense Should çatısını kullanarak bu işi yapmak istiyordum. Ancak denemelerimi yaparken oluşturduğum test klasörü bir şekilde beni CORS hatasına doğru sürükleyip duruyordu. Umutsuzluğa kapılmaya başlamıştım. Sonunda pes edip tüm dosyaların aynı klasörde yer aldığı yeni bir örnek üzerinde çalışmaya karar verdim.
 
+```text
 mathForKids.js
 mathForKids.test.js
 index.html (Biraz sonra değineceğiz)
+```
 
 Yine mathForKids.js içeriğini kullanıyordum ancak bu kez en sonda yer alan module.exports bildirimlerinin tamamını kaldırarak ilerlemeyi tercih ettim. Sonrasında test dosyasını yine aynı klasörde olacak şekilde mathForKids.test olarak değiştirdim ve içeriğini güncelledim. Buna göre tüm require bildirimlerini ve fermat nesnesini kaldırdım. Module ile test dosyası aynı klasörde yer aldıklarından dosya adı formatına göre test dosyası içerisinden sum ve sumSync fonksiyonları doğrudan kullanılabilirlerdi. Sonuç olarak yeni örnek test dosyası içeriğim şuna benziyordu.
 
@@ -332,7 +334,7 @@ describe('Math for kids', function () {
 
 Test sonuçlarını tarayıcıda göstermek için basit bir HTML sayfası oluşturulması yeterliydi. Sadece onu çalıştırdığımızda gerekli testleri yapacak ve sonuçları tarayıcıya basacak şekilde güdümlemek gerekiyordu. Bu dosyanın şablon yapısı mocha dokümantasyonunda belirtildiği gibi oluşuturulsa bu mümkündü. Bir kaç deneme ve yanılma sonrası aşağıdaki index.html içeriğinin yeterli olduğunu keşfetmeyi başardım.
 
-```text
+```html
 <meta charset="utf-8">
 <title>Mocha Tests</title>
 <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
@@ -361,7 +363,7 @@ Sayfada dikkat çekici noktalardan birisi [unpkg](https://unpkg.com/#/) adresine
 
 Pek tabii mevzu benim burada anlattığım kadar yalın değil. Yapılabilecek bir çok şey var. Tabii hangi çatı olursa olsun test yazma alışkanlığı kazanmak da mühim bir mesele bana kalırsa. Bu dediğimi lütfen dikkate alın. Hem siz hem de sizden sonra o pozisyonda görev alacak insanlar zorlanmasınlar;) Böylece geldik bir makalemizin daha sonuna. Pluralsight'tan bakalım bana ne kadar ekmek çıkacak. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-## Kaynaklar:
+### Kaynaklar
 
 [https://github.com/shouldjs/should.js/](https://github.com/shouldjs/should.js/)
 

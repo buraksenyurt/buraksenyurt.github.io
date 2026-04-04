@@ -9,19 +9,13 @@ tags:
 ---
 Bir kaç gece önce evde DVD keyfi yapmak için A Fistful Of Dollars (Per un pugno di dollari) isimli çok eski bir Western filmi seyrettim. Filmi seyretmeyenler için bir kaç hatırlatma yapayım. Film aslında The Good The Bad and The Ugly ile For a Few Dollars More birlikte oluşan bir üçlemenin ilk halkasını oluşturmakta. Hepside çok güzeldi. Bu filmin belkide en can alıcı ve etkileyici yeri ise sonlarında yaşanan silahlı dövüş sahneleridir.
 
-![AT3XAxKQZeMQAAAAAElFTkSuQmCC](/assets/images/2009/wcf-4-0-yenilikleri-default-behavior-configuration-beta-1-01.png)
+![wcf 4 0 yenilikleri default behavior configuration beta 1 01](/assets/images/2009/wcf-4-0-yenilikleri-default-behavior-configuration-beta-1-01.png)
 
-Kötü adam, Sarışına (ki bu üçlemenin hiç bir yerinde Client'in adını bilmeyiz. Herkes ona sarışın-Blonde der) defalarca ateş eder. Kötü adam keskin nişancıdır (bu filmlerdeki her kovboy gibi
-
-![Wink](/assets/images/2009/smiley-wink.gif)
-
-) ve sürekli olarak Sarışının göğsüne ateş eder. Ama Sarışın her yere düştüğünde tekrar ayağa kalkar. Sonunda kötü adamın mermisi tükenir. İşte o an...Sarışın üzerindeki kıyati aralar ve altından saç dökümden metal bir yelek çıkar. Kötü adamın şaşkın bakışları arasında film devam eder.
+Kötü adam, Sarışına (ki bu üçlemenin hiç bir yerinde Client'in adını bilmeyiz. Herkes ona sarışın-Blonde der) defalarca ateş eder. Kötü adam keskin nişancıdır (bu filmlerdeki her kovboy gibi) ve sürekli olarak Sarışının göğsüne ateş eder. Ama Sarışın her yere düştüğünde tekrar ayağa kalkar. Sonunda kötü adamın mermisi tükenir. İşte o an...Sarışın üzerindeki kıyati aralar ve altından saç dökümden metal bir yelek çıkar. Kötü adamın şaşkın bakışları arasında film devam eder.
 
 Buradaki metal döküm yelek çok küçük bir ayrıntıdır ama işlevselliği çok kritiktir. Bu işlevselliğin kritik olması bir yana, Sarışının bu detayla ilintili olarak kötü adamdan gelen kurşunları düşünmesinede gerek kalmamıştır. Şimdi bu konuya nereden geldik. İki sebebimiz var.
 
 WCF 4.0 ile gelen yeniliklerin ilk kümesi olan basitleştirilmiş konfigurasyon (Simplified Configuration) kabiliyetleri, geliştiricinin bazı ince detayları düşünme zorunluluğunu ortadan kaldırmaktadır. Örneğin Endpoint eklenmesede varsayılan olanların çalışma zamanında oluşturulması, bağlayıcılar (Binding Types) için name, binding configuration gibi nitelikleri kullanma zorunluluğunun ortadan kaldırılması veya protocol eşleştirmelerinin kolayca ele alınması vb...Bu birinci nedenimiz. İkinci neden çok daha basittir. Sıkıcı olan bir blog girişi yapmamak...
-
-![Smile](/assets/images/2009/smiley-smile.gif)
 
 Bu seferki konumuz aslında bir önceki yazımızda değerlendirdiğimiz Default Binding Configuration özelliğinin Behavior için olan versiyonudur. Dolayısıyla bu kez, name ve behaviorConfiguration niteliklerine olan zorunluluğun ortadan kalktığını söyleyerek işin içerisinden çıkabiliriz. Ama tembellik etmeyip araştırmamızdan bir zarar da gelmez.
 

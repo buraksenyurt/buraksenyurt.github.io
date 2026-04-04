@@ -26,7 +26,7 @@ tags:
 ---
 Guam adasının güney batısında yer alan ve yaklaşık 11 km derinliğindeki Mariana çukuru, dünyanın en derin noktasıdır. Benim için anlamı "Mariana Çukuru Etkisi" dir. Hatta çevik süreçlerdeki epik senaryoları da "Mariana Çukuru Etkisi" yaratan konular olarak tanımlarım. Ancak bu etkiyi daha çok bir makale için araştırma yaparken yaşarım. Bir kaynaktan diğerine geçtikçe konu derinleşir. Derinleştikçe başladığım yere olan uzaklığımın arttığını fark ederim. Işık azalır, etraf kararmaya oksijen azalmaya başlar. Derken düşünemez bir noktaya gelirim. Çünkü beyne yeteri kadar oksijen gitmez.
 
-![D4aq0ZKtPLPLAAAAAElFTkSuQmCC](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-01.png)
+![elasticsearch u west world e kurdum 01](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-01.png)
 
 İşte "Mariana Çukuru Etkisi" oluşmaya başlamadan durmam gerektiğini bilirim. Madem konu derinleşiyor ve sonrasında içinden çıkmak zorlaşabilir, bölmek en iyisidir derim. Geçen kısa sürede de böyle oldu. Amacım basitçe Elasticsearch'e log'lama amaçlı veri aktarabilmekti. Hatta bunu yapmak için.Net Core tarafında Fluent bir API'den de yararlanacaktım. Tabii başlangıç noktası Elasticsearch ürünüydü. Ona biraz daha yakında bakayım derken konu derinleşti. Konuyu anlayabilmek için parçalamam gerekiyordu. İlk önce onu West-World'e kurup basitçe deneyimleyeyim istedim. İşte buradayız.
 
@@ -65,7 +65,7 @@ Elasticsearch'ü tek bir ürün gibi düşünmemek gerekir. Esasında gücünü 
 
 Açıkçası bu kadar laf kalabalığına girmemek lazım. Yoksa "Mariana çukuru etkisi" oluşacak. Haydi geldin şunu West-World'e kuralım ve REST Api'si ile denemeler yapalım.
 
-Kurulum
+## Kurulum
 
 West-World, 64bit'lik karayollarına sahip bir Ubuntu sürümü. Kurulum gibi işlemler terminelden kolaylıkla gerçekleştirilebilir. Klasik olarak işe sistem güncellemesi ile başlamakta yarar var. Ardından Elasticsearch için gerekli deb paketini indirip install etmek yeterli. İşte ilk komutlarımız,
 
@@ -84,7 +84,7 @@ Kurulum işlemi sonrası elasticsearch, West-World'ün /usr/share/elasticsearch/
 
 Ben West-World için aşağıdaki ayarları kullandım. Varsayılan 9200 portunu 9205 yaptım, bir cluster ve node adı belirttim. Bunlara ek olarak 1 shard ve 0 replica kullanacağımı söyledim. Diğer pek çok ayarı ise varsayılan konumlarında bıraktım. Bu arada dosyanın yüklü olduğu klasör içerisine giremedim. Çünkü yetki hatası aldım. Ancak gedit aracını bu adresi işaret edecek şekilde kullandığımda yml dosyasını sorunsuz şekilde açabildim.
 
-![uuzJnmt+sTLh1opuF8iEOWhzY7Ho6Sbgg5gAE2ACTKDJE2Cx2OSX2LuBcmFnL2elKqNavlYmzMGL7XwME2ACTIAJMIHmQoDFYnNZabaTCTABJsAEmAATYAIJEGCxmAA0PoUJMAEmwASYABNgAs2FwP8HIM3UNgYoyp4AAAAASUVORK5CYII=](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-02.png)
+![elasticsearch u west world e kurdum 02](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-02.png)
 
 System Controller'dan yararlanarak Elasticsearch servisini tekrar başlatırsak değiştirdiğimiz konfigurasyon ayarlarının devreye alınmasını sağlayabiliriz. Başlattıktan sonra sağlık durumunu kontrol etmekte de yarar var. Bunları systemctl aracından yararlanarak gerçekleştirebiliriz.
 
@@ -95,11 +95,11 @@ sudo systemctl status elasticsearch.service
 
 ![eoa_4.gif](/assets/images/2018/eoa_4.gif)
 
-Testler
+## Testler
 
 Servis yeni ayaları ile birlikte aktif durumda. Buna göre http://localhost:9205 adresine talepte bulunursak Elasticsearch'ün güncel durumu ile ilgili bilgi alıyor olmamız gerekir. JSON formatında dönen içerikte node ve cluster adları, lucene algortimasının kullanılan güncel versiyonu gibi bilgiler yer alır.
 
-![B8pquJKbKA34gAAAABJRU5ErkJggg==](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-03.png)
+![elasticsearch u west world e kurdum 03](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-03.png)
 
 > Eğer sistemde firewall kural listesi (ufw) etkinse 9205 adresine dışarıdan gelecek talepler için yeni bir tane eklemek gerekebilir. Ben Apache denemelerim sırasında aktif hale getirdiğim Firewall tanımlarını bu örnek kapsamında kapatmıştım. Gerçek hayat senaryolarında bu güvenlik ayarlarına dikkat edilmesinde yarar var.
 
@@ -153,7 +153,7 @@ Aslında bir Delete işlemi de denenebilir ki bu kutsal görevi siz değerli oku
 
 İki önemli konu var. Elasticsearch'ün doğru ayarlarla kurulması ve ne tür verilerle çalışılacağının belirlenmesi. Örneğimizi düşünecek olursak POST ile gönderilen taleplerde verinin aslı _source niteliği altında tutuluyor. Adres satırındaki değerlerde index, type gibi bilgileri belirliyor. Buraya pekala bir günlük log verisi de atılabilir, A firmasından gelen araştırmaya yönelik müşteri dataları da. Veri pekala parçalanarak farklı Cluster ve Node'lara da dağıtılabilir. İşte buradaki kurgular ve içeriğin belirlenmesi çok önemli. Index kurguları, tipler, dokümanlar için geçerli olacak Shard sayıları vs...Benim gibi acemiler için Elasticsearch doğrudan Log kayıtları üzerinde deneyimlenen bir arama motorundan öteye gidemiyor ama fazlası var. Örneğin siber saldırıların önceden hissedilmesi, seyahet eden insanların 360 derece görünümlerde hızlı arama yapması, devasa bir loglama sisteminin cloud üzerine servis olarak merkezileştirimesi gibi. Yazıda da belirttiğim gibi, bir bilene danışmak, bilenlerle tartışmak, bol bol okumak gerekli. Her öğrenilecek yeni şeyde olduğu gibi.
 
-Serilog'u Devreye Alıyoruz
+## Serilog'u Devreye Alıyoruz
 
 Gelelim yapmak istediğim bir diğer şeye. Serilog paketini kullanarak West-World'e henüz kurduğumuz Elasticsearch'e log atmak. Aslında işimiz son derece basit. Elimizde dummy bir Web API uygulaması olduğunu düşünelim. Serilog paketi'nin Elasticsearch için yazılmış kütüphanelerini kullanacağız. Dolayısıyla midleware tarafında bir takım ilave bildirimlerimiz olacak. Buna göre artık endüstüriyel standart haline gelmiş olan Log.Information, Log.Warning, Log.Exception gibi metod çağrımları ile Elasticsearch'e kayıt atabileceğiz. İşe Web API uygulamasını oluşturarak başlayalım.
 
@@ -240,7 +240,7 @@ http://localhost:9205/api-log-2018.07 
 
 Görüldüğü üzere API komutlarından yararlanarak oluşturulan log mesajlarını görebildik. Her ne kadar REST API her tür ihtiyacımızı karışılıyor olsa da gerçek hayat uygulamalarında artan log miktarı onları takip etmemizi zorlaştıracaktır. Şöyle göze hoş gelen, sadece Elasticsearch içindeki bilgileri takip etmekle kalmayıp ek fonksiyonellikleri ile uygulamaları izleyebileceğimiz bir arabirim olsa fena mı olurdu? Olmazdı tabii. İşte Kibana bu noktada devreye giriyor.
 
-Sisteminizi Kirletmek İstemezseniz
+## Sisteminizi Kirletmek İstemezseniz
 
 Yazının bu kısmı bir sonraki güne denk geldi. Bir sebepten West-World'e kurduğum Kibana, Elasitcsearch ile konuşamaz hale geldi. Sanırım bazı konfigurasyon ayarlarını bozdum. Onları düzeltmek için tekrardan kurulum yapmayı denemek yerine sistemi neden bu kadar kirlettiğimi düşünmeye başladım. Docker'ın hazır imajlarını kullansaydım ya:)) Eğer sizde sisteminizi kirletmek istemezseniz Elasticsearch ve Kibana için Docker taşıyıcılarını kullanabilirsiniz. Elasticsearh container'ını kurmak ve çalıştırmak için aşağıdaki terminal komutları yeterli.
 
@@ -256,11 +256,11 @@ sudo docker pull docker.elastic.co/kibana/kibana:6.3.1
 sudo docker run --net=host -e "ELASTICSEARCH_URL=http://localhost:9200" docker.elastic.co/kibana/kibana:6.3.1
 ```
 
-Her iki container birbiriyle haberleşebilir durumdadır. Varsayılan olarak elasticsearch 9200 portundan hizmet verecektir. Bu nedenle Kibana örneğini çalıştırırken ELASTICSEARCH_URL'ini 9200 portuna göre vermek gerekir. Sonuç olarak http://localhost:5601 adresinden Kibana'ya da ulaşılabilir. West-World'de önce Elasticsearch'ü, sonra Kibana örneklerini çalıştırdıktan sonra yukarıda hazırladığımız Web API servisini kullandım. Ah bu arada port bilgisi değiştiği için Startup içerisindeki 9205 değerini tekrardan 9200'e çekmem gerekti. Elbette docker örneklerinin ilgili yml içeriklerini kurcalayarak bu bilgiler değiştirilebilir ama ben şimdilik varsayılan halleri ile bırakıyorum (yemedi:P)
+Her iki container birbiriyle haberleşebilir durumdadır. Varsayılan olarak elasticsearch 9200 portundan hizmet verecektir. Bu nedenle Kibana örneğini çalıştırırken ELASTICSEARCH_URL'ini 9200 portuna göre vermek gerekir. Sonuç olarak `http://localhost:5601` adresinden Kibana'ya da ulaşılabilir. West-World'de önce Elasticsearch'ü, sonra Kibana örneklerini çalıştırdıktan sonra yukarıda hazırladığımız Web API servisini kullandım. Ah bu arada port bilgisi değiştiği için Startup içerisindeki 9205 değerini tekrardan 9200'e çekmem gerekti. Elbette docker örneklerinin ilgili yml içeriklerini kurcalayarak bu bilgiler değiştirilebilir ama ben şimdilik varsayılan halleri ile bırakıyorum (yemedi:P)
 
 ![ewk_13.gif](/assets/images/2018/ewk_13.gif)
 
-Üst terminal kibana, alt terminal ise elasticsearch container örneklerinden gelen log'ları göstermekte. Postman ile servise yapılan bir kaç talep sonrası hemen tarayıcıyı açıp http://localhost:5601 adresinin yolunu tuttum. Kibana'ya bu şekilde bağlandıktan sonra aslında izlemek istenen Elasticsearch index'leri için bir desen oluşturulması gerekir. Hatırlanacağı üzere log bilgisini yazarken Serilog'a index adının nasıl olacağını da söylemiştik. Bu senaryo için api-log-2018-07 şeklindeydi. Dolayısıyla api* gibi bir desen kullanarak bu ve benzer isimlere uygun tüm index'lerin Kibana'dan izlenmesini sağlayabiliriz.
+Üst terminal kibana, alt terminal ise elasticsearch container örneklerinden gelen log'ları göstermekte. Postman ile servise yapılan bir kaç talep sonrası hemen tarayıcıyı açıp `http://localhost:5601` adresinin yolunu tuttum. Kibana'ya bu şekilde bağlandıktan sonra aslında izlemek istenen Elasticsearch index'leri için bir desen oluşturulması gerekir. Hatırlanacağı üzere log bilgisini yazarken Serilog'a index adının nasıl olacağını da söylemiştik. Bu senaryo için api-log-2018-07 şeklindeydi. Dolayısıyla api* gibi bir desen kullanarak bu ve benzer isimlere uygun tüm index'lerin Kibana'dan izlenmesini sağlayabiliriz.
 
 ![ewk_14.gif](/assets/images/2018/ewk_14.gif)
 

@@ -20,7 +20,7 @@ tags:
 ---
 Son yılların popüler trendleri arasında MicroService ve IoT (Internet of Things) nin yer aldığını ifade edebiliriz. Akıllı cihazlar ile micro servislerin yan yana gelmesi size biraz şaşırtıcı gelmiş olabilir. Aslında birbirleri ile oldukça ilişkililer. Sonuç olarak IoT dünyasına dahil olan cihazlar birbirleri ile haberleşmek için hafif donatılmış servislerden yararlanabilirler.
 
-![l+AAQB00fjIdoh55gAAAABJRU5ErkJggg==](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-01.png)
+![nancy framework ile bir microservice macerasi 01](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-01.png)
 
 Bu tip servislerin kolayca geliştirilebilmesi için pek çok Framework söz konusu. Nancy bu çatılardan sadece bir tanesi. Nancy Framework ile REST tabanlı servislerin kolay bir şekilde geliştirilmesi mümkün. Kendisi aynı zamanda bir Service Framework olarak da düşünülebilir. Bu yüzden kendi başına host edilebilen bir servis motoru da içermektedir. Hatta WCF, OWIN ve Asp.Net MVC üzerinde de host edilbilen bir yapıya sahiptir.
 
@@ -30,7 +30,7 @@ Ancak tüm bunlar bir yana belki de en önemli özelliği, üretilen exe ve dll'
 
 Şimdi bu özellikleri ile siz değerli okurlarımda heyecan uyandıran framework ile ilişkili basit bir örnek yapalım.
 
-> bu
+> Nancy Framework ile ilgili olarak [bu adreste](https://nancyfx.org/) daha fazla bilgi alabilirsiniz.
 
 ## Hello World
 
@@ -129,42 +129,16 @@ Main metodu içerisinde http://127.0.0.1:5555 adresi üzerinden istekleri kabul 
 
 Çalışmakta olan Nancy sunucusu o anki uygulama örneğinde yer alan NancyModule türevlerini otomatik olarak değerlendirebilmekte (Sizce nasıl yapıyor olabilir?). Bu yüzden örnek HTTP taleplerine ait route tanımlamalarını içeren bir modül sınıfı söz konusu. NancyModule türevli olan Routes sınıfı içerisinde sembolik olarak bir ürün listesi bulunuyor. Product sınıfı tipinden olan bu ürün listesini static yapıcı metod (static constructor) içerisinde doldurmaktayız. Elbette gerçek hayat örneklerinde bu veri kümeleri farklı kaynaklardan da besleniyor olabilir. (Örneğin fiziki bir dosyadan, ilişkisel veritabanı sisteminden, NoSQL'den, hatta Cloud üzerinde duran bir Repository'den...)
 
-> Modu
-> le sınıf
-> larının pub
-> lic tanım
-> lanması gerektiğini be
-> lirtmek isterim. Aksi takdirde i
-> lgi
-> li tip ça
-> lışma zamanı ortamına bağ
-> lanamıyor. Bu yüzden HTTP ta
-> lep
-> leri sonuçsuz ka
-> lıp Nancy'nin o meşhur kocaman pat
-> lak göz
-> lü, yeşi
-> l renk
-> li ve
-> göbek
-> l
-> i kahramı i
-> le karşı
-> .
+> Bu arada Module sınıflarının public tanımlanması gerektiğini belirtmek isterim. Aksi takdirde ilgili tip çalışma zamanı ortamına bağlanamıyor. Bu yüzden HTTP talepleri sonuçsuz kalıp Nancy' nin o meşhur kocaman patlak gözlü, yeşil renkli ve göbekli kahramı ile karşılaşılıyor.
 
 Gelelim Routes sınıfının varsayılan yapıcı metoduna (Default Constructor). Bu metod içerisinde iki farklı HTTP talebi ele alınmakta (Get ve Post). Kabaca aşağıdaki gibi bir durum söz konusu diyebiliriz.
 
-Get["/"]
-http://localhost:1234/ adresi talep edildiğinde devreye giren metodu işaret eder. Bunu servisin varsayılan giriş sayfası olarak düşünebiliriz. Tamamen HTML içeriği söz konusudur ve hatta bir View ile ilişkilendirilebilir.
-
-Get["products"]
-http://localhost:1234/products adresi talep edildiğinde devreye girecek olan AllProducts metodunu işaret eder. Tüm ürün listesini elde ederken kullanılabilecek harika bir url'dir.
-
-Get["product/{ID}"]
-http://localhost:1234/product/1001 gibi bir talebe karşılık işletilecek olan FindByID metodunu işaret eder. Tahmin edileceği üzere {ID} parçası FindByID metodunda gelen dynamic değişken üzerinden elde edilir ve LINQ (Language INtegrated Query) sorgusunda kullanılır.
-
-Post["add]
-http://localhost:1234/add gibi bir adrese karşılık gelecek metodu işaret eder. Tabi burada Post tipinden bir HTTP talebi söz konusu olduğundan yeni eklenecek ürünün değerleri servis tarafına bir şekilde gönderilmelidir. Bunu test ederken Fiddler gibi bir Web Debugger aracından yararlanabiliriz. Ya da Nancy'nin gelişmiş Test alt yapısındaki nesneleri kullanabiliriz.
+| HTTP Talebi | Açıklama |
+| --- | --- |
+| Get["/"] | http://localhost:1234/ adresi talep edildiğinde devreye giren metodu işaret eder. Bunu servisin varsayılan giriş sayfası olarak düşünebiliriz. Tamamen HTML içeriği söz konusudur ve hatta bir View ile ilişkilendirilebilir. |
+| Get["products"] | http://localhost:1234/products adresi talep edildiğinde devreye girecek olan AllProducts metodunu işaret eder. Tüm ürün listesini elde ederken kullanılabilecek harika bir url'dir. |
+| Get["product/{ID}"] | http://localhost:1234/product/1001 gibi bir talebe karşılık işletilecek olan FindByID metodunu işaret eder. Tahmin edileceği üzere {ID} parçası FindByID metodunda gelen dynamic değişken üzerinden elde edilir ve LINQ (Language INtegrated Query) sorgusunda kullanılır. |
+| Post["add] | http://localhost:1234/add gibi bir adrese karşılık gelecek metodu işaret eder. Tabi burada Post tipinden bir HTTP talebi söz konusu olduğundan yeni eklenecek ürünün değerleri servis tarafına bir şekilde gönderilmelidir. Bunu test ederken Fiddler gibi bir Web Debugger aracından yararlanabiliriz. Ya da Nancy'nin gelişmiş Test alt yapısındaki nesneleri kullanabiliriz. |
 
 Son üç bağlama operasyonunda birer metodun işaret edildiğinde dikkat edelim. Bu biz zorunluluk değil. Nitekim Get["/"] satırında doğrudan isimsiz metod (Anonymous Metod) kullanıyoruz. Diğer metodların en belirgin özelliği ise dönüş ve parametre tipi olarak dynamic anahtar kelimesini kullanıyor olmaları.
 
@@ -174,51 +148,41 @@ AllProducts ve FindByID metodları dışarıya JSON ve XML formatında çıktı 
 
 Şimdi dilerseniz testlerimizi yapalım. İlk oarak HTTP Get metodlu taleplerin çıktılarına bir bakalım.
 
-http://127.0.0.1:5555/ için
+`http://127.0.0.1:5555/` için
 
-![1gnAASydA0zAzmnAB6ycCazAxsnADRycDwzBvSnBE5ybFWzBtYnBGRybG8zBrenBH5yaISzCpTVJwiUcmieMwp2pwiucmS3swnBKvzHcnjBMw5BpwzeMsjOsw+WZwz2cqzwMxPwrxEP8v1ETEAA7](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-02.gif)
+![nancy framework ile bir microservice macerasi 02](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-02.gif)
 
 Direkt olarak kök adrese gittiğimizde bu şekilde bir içerikle karşılaşıyoruz.
 
-http://127.0.0.1:5555/products için,
+`http://127.0.0.1:5555/products` için,
 
-![9DhHdFAf9TXPuIAAADs=](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-03.gif)
+![nancy framework ile bir microservice macerasi 03](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-03.gif)
 
 Görüldüğü gibi ürün listesini JSON formatında elde etmiş bulunmaktayız.
 
-http://127.0.0.1:5555/product/1001 için,
+`http://127.0.0.1:5555/product/1001` için,
 
-![WBAQAOw==](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-04.gif)
+![nancy framework ile bir microservice macerasi 04](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-04.gif)
 
 Bu sefer 1041 ProductID değerli ürünün içeriğini XML formatında elde ediyoruz.
 
 Add metodunun testi içinse Fiddler'dan destek alıyoruz.([Fidd](http://www.telerik.com/fiddler)l[er'ı buradan indirebi](http://www.telerik.com/fiddler)l[irsiniz](http://www.telerik.com/fiddler)) Aynen aşağıdaki ekran çıktısında görüldüğü gibi.
 
-![voxz8CMpCCHCQhC2nIQyIykYpcJCMb6chHQtKQcZxkcCx4AAyakVOR3CQnO+nJT4IylKIcJSlL2UdKojIv85MACHSYylfCMpaynGWkjohJw5yRlrrcJS972Usb4tCVvhwmMYtpzCnaMonHXCYzm+lMEgnOrwKtrOMzq2nNa2JTUhYMCAA7](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-05.gif)
+![nancy framework ile bir microservice macerasi 05](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-05.gif)
 
-Dikkat edileceği üzere POST ile gönderilen yeni Product örneği, ürün listesine de başarılı bir şekilde eklenmiş ve http://127.0.0.1:5555/products talebi sonrası gelen JSON çıktısında yerini almıştır.
+Dikkat edileceği üzere POST ile gönderilen yeni Product örneği, ürün listesine de başarılı bir şekilde eklenmiş ve `http://127.0.0.1:5555/products` talebi sonrası gelen JSON çıktısında yerini almıştır.
 
 Tabii herhangi bir Route karşılığı olmayan talep gönderildiğinde biraz önce bahsettiğimiz sevimli arkadaşımız ile göz göze geliriz.
 
-![ABzAAjzABFzABnzACJzACrzADNzADvzAEBzBEjzBFFzBFnzBGJzBGrzBHNzBHhzBSRAEIjzCJFzCJnzCKJzCKrzCLNzCLvzCMBzDMjzDNFzDNnzDOJzDOrzDPNzDPvzDQBzEMywEAQEAOw==](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-06.gif)
+![nancy framework ile bir microservice macerasi 06](/assets/images/2015/nancy-framework-ile-bir-microservice-macerasi-06.gif)
 
 Bu makalemizde Nancy Framework'ünü kullanarak REST tabanlı servislerin basitçe nasıl geliştirilebileceğini incelemeye çalıştık. Örnektekine benzer self-hosted uygulamaları ayrı sunucular üzerinde barındırarak birer MicroService haline getirmemiz mümkün. Belirli bir amaca hizmet edecek şekilde tasarlanmış, hafif yapılı servisler...
 
-> l
-> meyi bek
-> l
-> eyen bir çok konu da var.
-> - Örneğin nasıl oluyor da Main metodu içerisinde çalıştırdığımız sunucu, NancyModule içerisindeki Get, Post bildirimlerini otomatik olarak tanıyor, biliyor, işletiyor?
-> - Ya da nasıl oluyor da POST ile gönderdiğimiz içeriklerdeki değerler biz set etmediğimiz halde o anda oluşturulan bir Product nesne örneğinin özellikerine atanıyor?
-> - Peki ya neden dynamic anahtar kelimesine ihtiyaç duyuluyor?
-> Bu soru
-> lara cevap bu
-> lmaya ça
-> lışmanızı öneririm. Gerekirse [github üzerinde konuşandırı](https://github.com/NancyFx)
-> [lmış](https://github.com/NancyFx) açık kaynak kod
-> l
-> ara da bakabi
-> l
-> irsiniz. Hatta bakınız.
+Bu arada sizin için bu Framework içerisine gizlenmiş ve keşfedilmeyi bekleyen bir çok konu da var.
 
+- Örneğin nasıl oluyor da Main metodu içerisinde çalıştırdığımız sunucu, NancyModule içerisindeki Get, Post bildirimlerini otomatik olarak tanıyor, biliyor, işletiyor?
+- Ya da nasıl oluyor da POST ile gönderdiğimiz içeriklerdeki değerler biz set etmediğimiz halde o anda oluşturulan bir Product nesne örneğinin özellikerine atanıyor?
+- Peki ya neden dynamic anahtar kelimesine ihtiyaç duyuluyor?
+
+> Bu sorulara cevap bulmaya çalışmanızı öneririm. Gerekirse [github üzerinde konuşandırılmış](https://github.com/NancyFx)açık kaynak kodara da bakabilirsiniz. Hatta bakınız.
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse...

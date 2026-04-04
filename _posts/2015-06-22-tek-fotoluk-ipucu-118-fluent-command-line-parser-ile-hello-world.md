@@ -14,7 +14,7 @@ Nesne Yönelimli Programlama Dillerinin (Object Oriented Programming Languages) 
 
 Şahsen bu yaklaşımı kullanan NuGet paketleri gördüğümüde hayranlık duymuyor değilim. İşte onlardan birisi, Fluent Command Line Parser ([NuGet detayına](https://www.nuget.org/packages/FluentCommandLineParser/) buradan bakabilirsiniz) Ne kadar sık komut satırından çalışan uygulama yazıyorsunuz bilemiyorum. Eğer yazıyorsanız mutlaka komut satırı parametrelerine başvuruyorsunuzdur. Peki bu parametreleri gayet sık bir şekilde almak ve uygulama akışına katmak istemez misiniz? İşte size örnek bir kullanım şekli.
 
-![8HQam9Sw8o8sMAAAAASUVORK5CYII=](/assets/images/2015/tek-fotoluk-ipucu-118-fluent-command-line-parser-ile-hello-world-01.png)
+![tek fotoluk ipucu 118 fluent command line parser ile hello world 01](/assets/images/2015/tek-fotoluk-ipucu-118-fluent-command-line-parser-ile-hello-world-01.png)
 
 Lütfen örneğin saçmalığına aldırmayın. Bunun yerine metod zincirine odaklanın ve hatta bu tip bir API'yi nasıl yazabileceğinizi düşünün. Hatta sadece düşünmeyin, yazmaya çalışın.
 

@@ -19,7 +19,7 @@ Nesnelerin çalışma zamanında klonlanması ile ilişkili olarak bahsi geçen 
 
 .Net içerisinde klonlama işlemi için çoğunlukla ICloneable arayüzünden (Interface) yararlanılmaktadır. Bu Interface aşağıdaki içeriğe sahiptir.
 
-![BDJIIYckskgjj0QySSWXZLJJJ5+EMkoiAwIAOw==](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-01.gif)
+![tek fotoluk ipucu 124 pratik bir deep clone senaryosu 01](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-01.gif)
 
 Görüldüğü gibi çok genel bir fonksiyonellik söz konusu.
 
@@ -65,12 +65,12 @@ class Product
 
 Her nesnenin varlığını ifade eden özellik değerleri farklılık göstereceğinden, bu konuya dahil olacak tüm tipler için kullanılabilecek ortak bir fonksiyonellik geliştirmek iyi olacaktır. Peki bu fonksiyonu nasıl yazardınız? Aşağıdaki gibi bir çözüm olabilir mi?
 
-![vt738DPOACH3i7wWXwgzeLBgRfOMMb7vCHQzziEp84xStucYEjPOMa14nCL+7xj4M85CIfOclLbhbygW885Qjv+Mlb7vKXwzzmMp85zAMCADs=](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-02.gif)
+![tek fotoluk ipucu 124 pratik bir deep clone senaryosu 02](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-02.gif)
 
 Kodda dikkat edilmesi gereken nokta DeepCopier sınıfının generic olarak tasarlanan GetDeepCopy metodudur. Metodun kullandığı T tipi sadece IWebEntity arayüzünü uygulamış tiplerle kullanılabilir (Generic constraint kullanımına dikkat edelim) Metod içerisinde T tipinden gelen source isimli nesne örneğinin Binary formatta serileştirilmesi, serileşen içeriğinin bir MemoryStream örneğine alınması ve son olarak bu bellek içeriğinin ters serileştirilerek T türünden yeni bir nesne örneğine taşınması söz konusudur. Bu sayede source isimli nesne örneğinin farklı referansta ama aynı veri içeriğine sahip bir kopyası üretilmiş olur.
 
 Örnekteki bağlayıcı nokta Product ve Category tiplerinin binary serileştirilebilir olma zorunluluğudur. Bu yüzden Product ve Category sınıfları Serializable niteliği ile işaretlenmişlerdir. Elbette farklı bir yolda düşünülebilir. Nitekim Binary serileştirme özelliği olmayan nesneler söz konusu olduğunda bu teknik işe yaramayacaktır. Bu durumda reflection'dan yararlanabilir ve source isimli nesne örneğinin tüm seviyelerdeki özelliklerini dolaşarak yeni üretilecek nesne örneğine verebiliriz (Bu çözüm recursive'lik gerektirecek bir senaryodur çünkü tip ağacında ne kadar derine inilmesi gerektiği bilinmeyecektir) Sizin için iyi bir antrenman olabilir.
 
-> ![iGdeBFt1TjLpLH5HAuQJICU9tiQNEPbb4odPpKnXZsgkLCS+DEZi8mwlVSRV6kXQVsJEbMOHKiijqViAuCFi4u6ZILediSZ4Ft8sfgvHKATT4975r1Y6MZc018oRsq5EJUqNqyR+46lqnpAhkCAgA7](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-03.gif)
+> ![tek fotoluk ipucu 124 pratik bir deep clone senaryosu 03](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-03.gif)
 
 Bir başka Tek Fotoluk İpucunda görüşünceye dek hepinize mutlu günler dilerim.

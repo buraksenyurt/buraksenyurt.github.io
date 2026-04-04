@@ -19,7 +19,7 @@ tags:
 ---
 Günümüzde geliştirilen yazılım ürünleri çoğunlukla farklı uygulamalar ile de konuşmak durumunda. Sistemler sürekli birbirleri ile konuşan parçalar bütünü halinde genişlemeye devam ediyor. Akıllı cihazlar büyük ölçekli sistemlerin birer parçası olup çeşitli iş süreçlerinin işletilmesinde rol alıyor. Bu iletişimde servislerin de yeri var.
 
-![zmgB7qgDzqhF7qhHzqiJ7qiLzqjN7qjPzqkR7qkTzqlV7qlXzqmZ7qmbzqnX0dAAAA7](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-01.gif)
+![tcp bazli soket haberlesmesinde sertifika kullanimi 01](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-01.gif)
 
 
 Artık yeni nesil servisler daha popüler. REST tabanlı çalışan HTTP servisleri, SOAP protokolünü benimseyen servisler ve daha bir çoğu ön planda. MicroService mimarisi gibi yaklaşımlar reveçta. Ne varki daha alt seviye iletişimin kurulduğu miras sistemler de söz konusu. Öyleki bu sistemlerden bazıları TCP protokolü üzerinden socket haberleşmesi yaparak çalışmakta. Aslında TCP bazlı socket iletişimi gerek performans gerek güvenlik açısından düşünüldüğünde tercih edilen yöntemlerden birisi. Sadece bu tip uygulamaların geliştirilme ve bakım maliyetleri biraaz daha yüksek.
@@ -34,7 +34,7 @@ Bu işlem için Visual Studio 2013 Developer Command Prompt üzerinden Makecert 
 
 Makecert -r -pe -n "CN=SampleSslSocketCertificate" -b 06/06/2015 -e 06/06/2016 -sk exchange -ss my
 
-![S6pwCggAOw==](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-02.gif)
+![tcp bazli soket haberlesmesinde sertifika kullanimi 02](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-02.gif)
 
 Eğer gerçekleştirilen üretim başarılı olduysa SampleSslSocketCertificate'in başarılı bir şekilde Personel sertifikalarına eklenmiş olduğu görülebilir. Sertifika üretimi de gerçekleştirildikten sonra sırasıyla sunucu ve istemci tarafı ile ortak kütüphaneyi yazmaya başlayabiliriz.
 
@@ -144,7 +144,7 @@ namespace SecureSocket.Common.Test
 
 Test sonucunda aşağıdaki gibi yeşil tik aldıysak yola devam edebiliriz.
 
-![7p6oJhlWUzRIZniAFqpNbigAAAOw==](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-03.gif)
+![tcp bazli soket haberlesmesinde sertifika kullanimi 03](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-03.gif)
 
 ## Sunucu Uygulama
 
@@ -266,7 +266,7 @@ Bu arada gerek sunucu gerek istemci uygulamaların [TLS 1.2 standardını](https
 
 İşte işin en heyecanlı kısmı. Testler... Bakalım bir sunucu ve bir kaç istemci çalıştırınca neler olacak? Ben test için sunucu haricinde istemci programdan üç adet çalıştırdım. Dikkat edilmesi gereken noktalardan birisi, istemcilerin sunucuya sırasıyla mesaj gönderebileceği. Yani sunucu, kendisine bir istemci bağlıyken ondan mesaj bekler konumda kalacak. Gelen mesajı takiben sıradaki istemcinin talebini değerlendirebilir olacak.
 
-![AjKQghwkIQtpyEMiMpGCRGOI9ihDI0ISezHhISUraclLEgwcMNEkQThZl5yBMpSiHCUpS2nKU6IylapcJStbWTJMwjKWspxlvwICADs=](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-04.gif)
+![tcp bazli soket haberlesmesinde sertifika kullanimi 04](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-04.gif)
 
 Görüldüğü gibi TCP bazlı soket haberleşmesinde sertifika kullanımı oldukça basit. Canlı ortam söz konusu olduğunda sertifikanın doğrulanma adımlarına dikkat edilmelidir. Diğer yandan örnekte geliştirdiğimiz pek çok fonksiyonellik için Unit Test metodlarını atlamış bulunuyorum. (Hani nerede Test Driven Development. Oldu mu şimdi? Olmadı...) Bunları tamamlamak sizin için iyi bir antrenman olabilir.
 

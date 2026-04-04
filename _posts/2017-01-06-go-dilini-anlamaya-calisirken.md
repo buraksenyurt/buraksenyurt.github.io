@@ -12,7 +12,7 @@ tags:
 ---
 Liseye başladığım 1990 yılından beri arkadaşım ve aynı zamanda adaşım olan sevgili dostum Burak ile üniversite yıllarında öğrenip oynamaya başladığımız GO oyunu geldi aklıma. Öğrenmesi zor, kavramak için yıllar geçmesi gereken, iyi bir oyuncu olmak için sizden daha iyi birisiyle yine yıllarca maç yapmanızı gerektiren zevkli bir strateji oyunu. Ünlü matematikçi John Forbes Nash'ten Albert Einstein'a, Alan Turing'den Bill Gates'e tarihi değiştiren pek çok kişinin de oynadığı bir oyun.
 
-![UaPOwpFnsNHrR0k9MZ+JIz8P8DGmoiHjRE+WcAAAAASUVORK5CYII=](/assets/images/2017/go-dilini-anlamaya-calisirken-01.png)
+![go dilini anlamaya calisirken 01](/assets/images/2017/go-dilini-anlamaya-calisirken-01.png)
 
 Go oldukça yüksek kombinasyon değerlerine sahip olduğundan bir insanı yenebilecek yapay zekanın geliştirilmesi de zaman aldı. Google'ın DeepMind ekibi tarafından yazılan AlphaGo isimli yapay zeka Ekim 2015'te bu durumu değiştirdi. 19X19luk bir tahtada 9ncu Dan'dan olan Lee Sedol'u 4-1 yenmeyi başarmış bir program. Bu arada IBM'in, Garry Kasparov ile 1-1 biten maçın kahramanı olan Deep Blue'dan sonra geliştirdiği ikinci versiyonu Deeper Blue, Kasparo'u 1997'de yenmeyi başarmıştı. Bundan yıllar yıllar sonra GO'da galip gelebilen bir programın yazılması oyunun ne kadar zorlayıcı olduğunun da bir göstergesi.
 
@@ -88,37 +88,7 @@ main metodu entry point'imizdir. İçerisinde fmt paketinden Println fonksiyonun
 
 Metodda ayrıca luckyNumber isimli bir yerel değişken (local variable declaration) tanımlanmıştır. Metod dışında paket seviyesinde değişkenler de tanımlanabilir (Global Variables) Bu tip global değişkenler tanımlandıkları noktadan itibaren kodun kalan kısmında kullanılabilir. luckyNumber değişkeni statik tip tanımlamasına bir örnektir. var anahtar kelimesinden sonra değişken adı ve son olarak değişkenin tipi gelir. Dinamik değişkenler de tanımlayabiliriz. pi:=3.14 gibi bir ifadeyi buna örnek gösterebiliriz. Tabii ki burada C#'tan tanıdık gelecek Type Inference söz konusudur. Yani derleyici eşitliğin sağ tarafındaki değerin hangi tipe uygun olacağını tahmin ederek işlem gerçekleştirir. Yeri gelmişken Go dilinde de az sayıda anahtar kelime (Keyword) bulunduğunu belirtelim.
 
-break
-default
-func
-interface
-
-select
-case
-defer
-go
-
-map
-struct
-chan
-else
-
-goto
-package
-switch
-const
-
-fallthrough
-if
-range
-type
-
-continue
-for
-import
-return
-
-var
+> break, default, func, interface, select, case, defer, go, map, struct, chan, else, goto, package, switch, const, fallthrough, if, range, type, continue, for, import, return ve var
 
 ## Katı Yazım Kuralları
 

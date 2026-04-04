@@ -186,6 +186,6 @@ Komutlar işletildikten sonra docker üzerinden çalışan ve localhost:9000 nol
 
 Tek kelime ile A kalite bir ürün söz konusu:P Ama tabii gerçek hayat pek de böyle olmuyor. Özellikle yaşlı ve aceleyle geliştirilmiş,acele geliştirildiği için de stratejik olarak teknik borçlanılmış ürünler söz konusu olduğunda tablo aşağıdaki grafikte görüldüğü gibi de olabilir. FAILED!!!
 
-![e8cwZAX8iYJSVr5eNb1bnlIgpKqlJ1fOg9HSsmDpn5ftzB7lvRoARYARsiAATUxtuGk+ZEQgAAmaKqd4U5NhS2d2vxqUSkf0f7m3NUWEtHmEAAAAASUVORK5CYII=](/assets/images/2019/code-coverage-01.png)
+![code coverage 01](/assets/images/2019/code-coverage-01.png)
 
 Kaliteli kod geliştirmek elimizde. Bunun için test odaklı düşünmeli ve kodun tepeden tırnağa her parçasının çalışır olduğundan emin olmalıyız. Statik kod analizi yapan araçlara güvenmeli ve uyarılarını dikkate almalıyız. CI/CD (Continuous Integration/Continuous Delivery,Continuous Deployment) hatlarını doğru kurgulayıp sağlam ve emin adımlarla ilerlemeliyiz. En başında birey olarak temellerimizi sağlam atmalıyız. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

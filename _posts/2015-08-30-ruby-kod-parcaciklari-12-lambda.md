@@ -58,7 +58,7 @@ end
 
 Çalışma zamanı sonuçlarımız ilk olarak aşağıdaki gibidir.
 
-![Z](/assets/images/2015/ruby-kod-parcaciklari-12-lambda-01.jpg)
+![ruby kod parcaciklari 12 lambda 01](/assets/images/2015/ruby-kod-parcaciklari-12-lambda-01.jpg)
 
 Kod parçamıza ait kısa notlarımıza gelince.
 
@@ -66,7 +66,7 @@ Kod parçamıza ait kısa notlarımıza gelince.
 - Lambda'lar aslında Proc sınıfın bir örneğidir. #2 numaları satırdaki kodun ekran çıktısına dikkat edin.
 - #3 numaralı kısımda başlayan justDoIt metodunun son parametresi bir Lambda değişkenidir ve #4 numaralı satırda lambdaX'in buraya gönderilmesi söz konusudur. Yine Proc kullanımındakine benzer olarak Lambda değişkeninin icrası justDoIt metodundaki call çağrısı ile gerçkleştirilmektedir.
 - Lambda ile Proc arasındaki farklardan birisi #5nci satırdaki kod parçacığının icra edilmesi halinde ortaya çıkmaktadır. Bir üst satırda procX.call çağrısında dikkat edileceği üzere m parametresi boş geçilmiştir. Benzer şekilde lambdaY.call çağrısında da parametreler gönderilmemiştir. Bu durumda çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
-![2Q==](/assets/images/2015/ruby-kod-parcaciklari-12-lambda-02.jpg)
+![ruby kod parcaciklari 12 lambda 02](/assets/images/2015/ruby-kod-parcaciklari-12-lambda-02.jpg)
 - Bir başka deyişle Proc'lar için parametre göndermek zorunlu değilken, Lambda kullanımında bu mecburidir. Nitekim Lambda, Proc gibi kod bloğunu işaret eden bir değişken değil aslında kod bloğunu metod olarak kabul eden bir yaklaşımı kullanmaktadır. Bu nedenle çalışma zamanı hatası alınmıştır.
 - #6 ve #7 numaralı satırlarda Lambda ve Proc için iki ayrı kullanım söz konusudur. Burada Proc ve Lambda arasındaki bir fark daha görülmekte. lambdaZ ve procZ tanımlamalarında return kullanıldığı görülüyor. Lambda söz konusu olduğunda return sonucu Lambda değişkenin sarmalandığı metoda dönülmektedir. Tam tersine Proc kullanıldığı durumda ise Proc bloğunun içeriği saySomethingWithProc metodunun çağırıldığı yere döndürülmüş bu yüzden #8deki satır işletilmemiştir.
 

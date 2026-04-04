@@ -159,7 +159,7 @@ Görüldüğü gibi tasarladığımız HTML sayfasını elde ettik. Burada çok 
 
 `http://localhost:8084/products`
 
-![IhJ94qGxwouZdMgAnkJAG3lhOJ1PiCm9A4cxjnW8pJ6lwWE2AClgRYnCwR8Q1MgAnYQYDFyQ7qXCcTYAKWBFicLBHxDUyACdhBgMXJDupcJxNgApYEWJwsEfENTIAJ2EGAxckO6lwnE2AClgRYnCwR8Q1MgAnYQYAPYdpBnetkAkzAkgCHr1gi4huYABOwgwCLkx3UuU4mwAQsCbA4WSLiG5gAE7CDAIuTHdS5TibABCwJsDhZIuIbmAATsIMAi5Md1LlOJsAELAmwOFki4huYABOwgwCLkx3UuU4mwAQsCfwfJPgZbOJApaQAAAAASUVORK5CYII=](/assets/images/2017/golang-basit-http-web-server-yapimi-01.png)
+![golang basit http web server yapimi 01](/assets/images/2017/golang-basit-http-web-server-yapimi-01.png)
 
 Bu sefer tüm ürün listesini elde ettik. Hem deeee JSON formatındaaaa. Peki ya belli bir kategori altındaki ürünleri nasıl yakalayabiliriz? Örneğin OEM grubundaki ürünleri almak istersek aşağıdaki gibi bir talepte bulunmamız gerekir.
 

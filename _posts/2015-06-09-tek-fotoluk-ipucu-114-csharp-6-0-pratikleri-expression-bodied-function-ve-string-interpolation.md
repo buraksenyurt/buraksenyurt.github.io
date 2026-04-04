@@ -14,6 +14,6 @@ tags:
 ---
 Eric Vogel'e göre C# 6.0 ile birlikte dile kazandırılan yenilikler kodun daha kolay okunabilmesini sağlamaktaymış. Örneğin Expression-Bodied fonksiyonlar bu kapsamda değerlendirilebilirler. Diyelim ki elinizde bir POCO (Plain Old CLR Object) tipi var ve ToString metodunu ezeceksiniz (Override). Dile gelen yeni kabiliyetler ile söz konusu metodu aşağıdaki gibi yazma imkanımız var. (Metod gövdesinde string Interpolation özelliğini kullandığımıza da dikkat edelim)
 
-![p5OHQAAAABJRU5ErkJggg==](/assets/images/2015/tek-fotoluk-ipucu-114-csharp-6-0-pratikleri-expression-bodied-function-ve-string-interpolation-01.png)
+![tek fotoluk ipucu 114 csharp 6 0 pratikleri expression bodied function ve string interpolation 01](/assets/images/2015/tek-fotoluk-ipucu-114-csharp-6-0-pratikleri-expression-bodied-function-ve-string-interpolation-01.png)
 
 Kodun daha okunabilir olduğu konusunda hem fikir olmakla birlikte, yorumu yine de size bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

@@ -14,13 +14,13 @@ tags:
 ---
 Çalışmakta olduğumuz projelerde zaman zaman bizi zorlayan vakalar ile karşılaşıyoruz. Bu gibi durumlarda Google abimiz en büyük yardımcımız olabiliyor. Hatta pek çoğumuz sorunların çözümünde Stackoverflow gibi kaynaklardan yararlanıyor ya da daha deneyimli birisinden yardım istiyor. Ne var ki bazı vakaları kendimiz çözmeye çalışsak çok daha yararlı olabilir.
 
-![2Q==](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-01.jpg)
+![bir tip agacindaki ayni isimli ozelliklere deger atamak 01](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-01.jpg)
 
 Sevdiğim çalışma arkadaşlarımdan birisi (ki kendisi ile aynı projeler üzerinde kodlama yapıyoruz) bu konuda gerçekten örnek aldığım insanlardan. Öncelikli olarak problemi kendisi çözmek için uğraşıyor. Sahip olduğu bilgi ile bunu yaparken Google'dan veya Stackoverflow gibi kaynaklardan yardım almakta ısrarcı olmuyor. Muhakkak kendi başına çözebilmek için çaba sarf ediyor. Pek tabi söz konusu iş olunca zaman sınırı da kısıtlayıcı bir rol üstleniyor. Problem ne zamanki zaman kaybına neden olacak noktaya geliyor, işte o zaman arkadaşım arama yöntemlerini tercih ediyor. Bence bu iş yapıp şekli kişisel gelişim açısından son derece kıymetli.
 
 Efendim sözü çok fazla uzatmadan ben makalenin konusuna geleyim. Vaktizamanında üzerinde çalıştığımız bir projede şöyle bir ihtiyaç doğdu; N seviyede derinliğe inen bir nesne örneğinin tamamında geçen aynı isimli özelliklerin aynı değere eşitlenmesi gerekti. Senaryoyu gözümüzde canlandırabilmek için aşağıdaki sınıf çizelgesine bir bakalım dilerseniz.
 
-![BBTmc6UpjW16U1xmlOd7pSnPfXpT4EaVKEGNRCuMKFLkUoTOS6VqU11KlOTGtWLSOOpVbXqVbGqPIBKlatd9epXwRpWsY6VrGU1NetZ0ZpWta6VrW1161vhGle5zpWudbXrXfGaV73ula999etfARtYwQ6WsIU17GERm1jFKikgADs=](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-02.gif)
+![bir tip agacindaki ayni isimli ozelliklere deger atamak 02](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-02.gif)
 
 Sorunu çözmek için öncelikle tip yapısını bir incelemeye çalışalım. Basket tipi içerisinde üç özellik bulunuyor. ID hedef özelliklerimizden birisi. Ancak Customer isimli Owner tipinden olan özelliğin içerisinde de ID var. Hatta List tipinden olan Products özelliğine yakından bakacak olursak, her bir Product örneği içinde de ID niteliğinin söz konusu olduğunu ifade edebiliriz. Üstelik, Owner tipi içerisinde yer alan Score özelliğine yakından bakacak olursak benzer bir durumun olduğunu görebiliriz. Score sınıfının da bir ID özelliği bulunmaktadır.
 
@@ -126,7 +126,7 @@ namespace SetProperties
 
 ve çalışma zamanı çıktımız.
 
-![a0BIu9KEVrdpEL9rRW230oyXt5DNP2tLNDQgAOw==](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-03.gif)
+![bir tip agacindaki ayni isimli ozelliklere deger atamak 03](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-03.gif)
 
 Dikkat edileceği üzere Basket nesne örneğinin kendisi dahil olmak üzere ağaç yapısında denk gelen ne kadar ID özelliği varsa aynı Guid ile eşleştirilmiştir.
 

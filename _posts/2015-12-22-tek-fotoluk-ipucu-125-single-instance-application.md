@@ -12,7 +12,7 @@ tags:
 ---
 Bazı uygulamaların çalışma zamanında sadece tek bir örneğinin yaşaması istenebilir (Single Instance Applications) Bilindiği üzere uygulamaların T anında birden fazla örneği olabilir (Multiple Instance Applications) Uygulamanın herhangi T anında tekil olması için ele alınabilecek bir kaç teknik vardır. Bunlardan birisi de Mutex tipinden yararlanmaktır. Aynen aşağıdaki fotoğrafta olduğu gibi.
 
-![KuEMVzCUUWywg0GKVw2LGHzmcyhG6BviEav4hiie6opfzOLVIRbGNI7xXxUY2RrrWIXq3bGPV1jOzn72x0QuspGPjOQkK3nJTCaf+RKjUpY2ecqxY5up2HJWKmtZdKppaE+3DOa8pREJK03MGsOMZqYJmDhleWia3zFctQU3gT2J2S+c7+yzyk1OcgTGs59vdj0zU9Jcfy40x0qslj4betGMbrSjHw3p+wQEADs=](/assets/images/2015/tek-fotoluk-ipucu-125-single-instance-application-01.gif)
+![tek fotoluk ipucu 125 single instance application 01](/assets/images/2015/tek-fotoluk-ipucu-125-single-instance-application-01.gif)
 
 ApplicationControl sınıfıdaki static Runnable metodu içerisinde Mutex sınıfı kullanılmaktadır.
 

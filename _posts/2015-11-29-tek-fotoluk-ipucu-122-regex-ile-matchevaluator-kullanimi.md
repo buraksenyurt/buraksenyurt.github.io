@@ -16,7 +16,7 @@ Vaktiyle zamanında üyelerine çeşitli finansal verilerden harmanlanmış meti
 
 Tabi kurum bunu yapmış yapmasına ama, bu içeriği alıp kullanmak isteyenlerin ilgili veriyi bu kurallar dahilinde açması gerekmiş. İşte tam da böyle bir zamanda gelen bu ihtiyaç üzerine ne yapabiliriz diye düşününce hemen Regex sınıfından ve Replace metodundan yararlanalım dedik. Nasıl mı? Aynen aşağıdaki fotoğrafta olduğu gibi.
 
-![Ajawgh0sYQtr2MMiNrGKXexQAgIAOw==](/assets/images/2015/tek-fotoluk-ipucu-122-regex-ile-matchevaluator-kullanimi-01.gif)
+![tek fotoluk ipucu 122 regex ile matchevaluator kullanimi 01](/assets/images/2015/tek-fotoluk-ipucu-122-regex-ile-matchevaluator-kullanimi-01.gif)
 
 Çıktıya dikkat edilecek olursa orjinal metinde @ sembolleri içeren kısımların arada belirtilen sayı kadar sıfırla değiştirildiği görülür. Üst metin kısa olsa da, bir gerçek hayat projesinde büyük boyutlarda dosya içeriklerinin olacağı gözden kaçırılmamalıdır.
 

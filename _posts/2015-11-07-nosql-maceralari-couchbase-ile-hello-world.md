@@ -16,7 +16,7 @@ tags:
 ---
 Uzun süredir NoSQL ürünleri ile ilgilenmediğimi fark ettim ve bu haftanın araştırma konusu olarak kendime bir NoSQL sistemi seçmeye karar verdim. Aslında aklımda bir alan vardı. Özellikle Nancy Framework'ü incelediğim sırada karşıma çıkan IoT (Internet of Things) ve NoSQL ilişkisi dikkat çekiciydi. Burada geçerli olan ve kullanılan veritabanı sistemlerinden bağzılarına baktım.
 
-![ZVHv20ZQR62JZsJVdnnlcrfn+MmWHAgIAOw==](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-01.gif)
+![nosql maceralari couchbase ile hello world 01](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-01.gif)
 
 En popülerleri arasında Couchbase yer alıyor. Özellike Mobile ve IoT ortamları için geliştirilen Native sürümü, verilerin Couchbase sunucusu ile senkronizasyonunun sağlanması noktasında önem arz ediyor. Pek tabi çok daha fazla özelliği olan bir ürün.
 
@@ -38,15 +38,15 @@ Bu yazımızda diğer [NoSQL](https://www.buraksenyurt.com/category/NoSQL) makal
 
 Gelelim örnek uygulamamıza. Her şeyden önce geliştireceğimiz.Net tabanlı uygulama bir Couchbase Server istemcisi olacak. Bu nedenle bir Couchbase sunucusu tedarik etmeliyiz. Onsuz olmaz. İlgili sürümü [şu adresten](http://www.couchbase.com/nosql-databases/downloads?gtmRefId=FixedCTA-Download) indirip kurabilirsiniz. Ben Community versiyonunu kullanıyorum. Eğer kurulum başarılı ise aşağıdaki gibi bir Setup ekranı ile karşılaşmamız gerekiyor.
 
-![66I8CaZAK6ZASaZEa6ZEiaZIq6ZIyaZM66ZNCaZRK6ZSKpBKowEOYAIwi6JZyaZd66ZeCaZiK6ZiSaZma6ZmiaZqq6ZqyaZu66ZvCaZzK6ZzSaZ3a6Z3iaZ7q6ZZGY1hAgAj8aaAC6qAKaqES6qEaaqIi6qIqaqMy6qM6aqRC6qRKaqVS6qVaaqZi6qZqaqdy6qd6aqiC6qiKaqmS6qmaaqqi6qqqaqXW4qt+RUAAADs=](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-02.gif)
+![nosql maceralari couchbase ile hello world 02](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-02.gif)
 
 Setup kısmında pek çok ayarlama basit bir şekilde gerçekleştirilebilir. Örneğin varsayılan olarak 127.0.0.1 adresinden yayın yapan sunucu adresi Hostname bilgisinden değiştirilebilir. Yeni bir Cluster oluşturulabilir veya var olan bir Cluster'a katılabilinir (Join). Hangi servislerin açılacağı belirlenebilir. Fiziki disk saklama yerleri, çekirdek kullanımları, RAM değerleri değiştirilebilir. Adımlarda ilerlendikçe kurulumun ne kadar basit olduğuna şahit olunur. Veri içeren örnek kümeler bile vardır (beer-sample, gamesim-sample, trave-sample). Yönetimin bu kadar kolay olması biraz önce bahsettiğimiz gibi verinin sisteme yeni sunucular eklenerek basitçe dağıtılmasında önemlidir. Her şey yolunda giderse aşağıdaki gibi bir Admin ekranı ile karşılaşırız.
 
-![dWzXNm8jrT4EBAA7](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-03.gif)
+![nosql maceralari couchbase ile hello world 03](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-03.gif)
 
 Kurulum tamamlandıktan sonra basit bir Console Application açarak yolumuza devam edebiliriz. Bir diğer ihtiyacımız da tahmin edeceğiniz üzere.Net Client kütüphanesidir. Artık.Net geliştiricilerinin hayatını inanılmaz derecede kolayaştıran NuGet paket yöneticisini kullanarak aşağıdaki paketi yüklememiz yeterlidir.
 
-![XY9oBVapJXWol1avjvapH3ad2RaqdU6p4Vaq83Dqc1al6vaq+3ax9NasLUVrvVasrW6sD1be2XXsl1bE0Vbtz2RsWVbuVXOt63bAonbuc1bgrVbvv02idVbwD27vh3c6sDbwD3cyCNcxa0Kw0VcxxWQxY1cqwgIADs=](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-04.gif)
+![nosql maceralari couchbase ile hello world 04](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-04.gif)
 
 Pek tabi paketin bağımlı olduğu diğer paketlerde beraberinde yüklenecektir.(Örneğin ürün JSON tabanlı bir doküman sistemi olduğu için de NewtonSoft.Json)
 
@@ -113,15 +113,15 @@ Uygulamada neler yaptığımıza kısaca bir bakalım.
 
 Öncelikli olarak bir Cluster eklenmesi gerekiyor. Bu nesne örneği sayesinde Bucket'lara (Kova diyelim) erişmek ve onları üretmek gibi yönetsel işlemler mümkün hale gelmekte. Üretilen Cluster nesne örneği üzerinden OpenBucket metodunu kullanarak varsayılan Bucket'ı kullanım için açmaktayız. Elbette kod üzerinden veya web tabanlı yönetim panaelinden yeni veri kovaları (Data Bucket) açılabilir. Biz daha çok çok acemi olduğumuzdan varsayılan kovayı kullanmayı tercih ediyoruz.
 
-![CrABK7ADS7AFa7AHi7AJq7ALy7AN67APC7ERK7ETS7EVa7EXi7EZq7Eby7Ed67EfC7IhK7IjS7L0GhAAOw==](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-05.gif)
+![nosql maceralari couchbase ile hello world 05](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-05.gif)
 
 Kovayı açtıktan sonra ise bir doküman oluşturmaktayız. Document sınıfı generic tiple çalışmakta. Bu yüzden parametre olarak Content özelliğinde yer almasını istediğimiz tipi vermeliyiz. Örnekte Product tipinden nesne örneklerini taşıyacak olan bir List kullanmaktayız. Document tipinin önemli özelliklerinden birisi de tabii ki Id değeri. Üretilen dokümanı açılan kovaya eklemek için Upsert metodundan yararlanıyoruz. Aslında Insert metodundan da yararlanabiliriz ancak var olan doküman üzerine yazmak istersek çalışma zamanı hatası alırız. O yüzden UPdateInSERT birleşimini kullanıyoruz. Buna göre doküman zaten varsa içeriğin güncellenmesi sağlanacak. Bucket nesneleri Dispose edilebilir nesneler. Bu yüzden using bloğu ile kullanarak kapatılmalarını ayrıca düşünmek zorunda değiliz. Eğer içerik başarılı bir şekilde eklendiyse (result.Success kısmı) Doc1001 Id'li doküman içeriğini Cluster üzerinden çekip elemanlarını ekrana yazdırmaya çalışıyoruz. Burada GetDocument metodunun generic tipine dikkat edelim. List bildirimi ile az önce eklenen ürün listesine ulaşmaktayız. Kodun çalışma zamanı çıktısı aşağıdaki gibidir.
 
-![2qOMTyk6RjHFz6H3o3DoO2McnzS69iOP77Jc8y4gizKAznJtMy9lTvlTkzkB3zMO+7jPg6VTtiOX+6CNVjkn13MOTiHp7nUkfy+IRrIQCrlekzjlrmRV97Y7om9XO6SpsnLvvvk+KraW3yH3h2M2Vywgs6BAxnjYAjjQrzFDlnl3cvKpWmuOU24gljp80vfQRypVMnNpijXlPjblCySbK7KwR2Yel2nwDrN4niUrD7q3K3HwJ2LVpjNVqqKlb69LgjR6tDrvq4OQljeHbnOUWvB4y07v+7rwa7daFnPLOjsxw5uyd7ry37K0Q7Qwn7tgJvt2l623N7tYfvt4K604hM+7iNb7uY+39ae7saL7uw+rAEBADs=](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-06.gif)
+![nosql maceralari couchbase ile hello world 06](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-06.gif)
 
 İşin güzel yanı eklediğimiz dokümanı ve JSON formatındaki içeriğini web yönetim paneli üzerinden de görebiliriz. Eğer varsayılan kurulum işlemi gerçekleştiyse [şu adresten](http://localhost:8091/index.html#sec=documents&viewsBucket=default&documentsPageNumber=0&docId=Doc1001) ilgili içeriği görebilirsiniz.
 
-![1HgBU5EAmLgBhaRBXLgB2KbBIIgBTrgCCKgCJrgA5ZgCoKfBrLgAQYEADs=](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-07.gif)
+![nosql maceralari couchbase ile hello world 07](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-07.gif)
 
 Dikkat edileceği üzere Product listesinin içeriği Doc1001 içerisine JSON formatında yazılmıştır. Admin ekranında biraz daha dolaşmanızı ve detayları incelemenizi öneririm. Ayrıca Couchbase oldukça geniş bir içeriğe sahip. Biz sadece basit anlamda Merhaba dedik. Daha fazlası ve detaylı kullanımı için [bu adresteki](http://docs.couchbase.com/developer/dotnet-2.0/getting-started.html) dokümanı incelemenizi ve örnekleri yapmaya çalışmanızı öneririm. Söz gelimi dynamic kullanımına bakabilir, yeni Bucket'ları isimle oluşturmayı deneyebilir, N1QL ile veri üzerinde sorgulama yapmaya çalışabilir, biraz daha ileri giderek Elastichsearch yeteneklerini işin içerisine katmayı deneyebilirsiniz. Bir diğer tavsiyem de Mobile sürümü indirip akıllı telefonlarda Couchebase'i kullanmaya çalışmanız olacaktır. Bu antrenmanlar sizlere oldukça kıymetli deneyimler kazandıracaktır. Tembellik etmeyin uğraşın.
 

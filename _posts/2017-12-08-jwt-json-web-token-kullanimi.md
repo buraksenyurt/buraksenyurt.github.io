@@ -20,7 +20,7 @@ tags:
 ---
 Daha önce söylemiş miydim bilemiyorum ama servis odaklı yaklaşımlarda güvenlik hep korktuğum ve anlamakta güçlük çektiğim konuların başında gelir. Özellikle WCF tarafındaki güvenlik senaryolarının çeşitliliği ve zenginliği bazen kafa karıştırıcı boyutlarda olabiliyor. Bu aralar şirketteki REST tabanlı servislerin JSON Web Token ile kullanılmalarına dair bir vaka çalışması söz konusu. Bu durum REST modelinde çalışan WCF servisleri için önemli.
 
-![8H1rRCbze4yGsAAAAASUVORK5CYII=](/assets/images/2017/jwt-json-web-token-kullanimi-01.png)
+![jwt json web token kullanimi 01](/assets/images/2017/jwt-json-web-token-kullanimi-01.png)
 
 Evdeki West-World'de ise aynı mevzu Asp.Net Core 2.0 Web API servisleri için gündeme geldi (Birkaç gün önce) Aslında o tarafta nasıl kullanıldığını merak etmek benim işim diyebilirim. Öğrenmekten keyif alacağım bir başka konu diyerekten geç vakitte çalışma odama geçtim. Beyin hücrelerine zarar verdiği söylenen sarı gece lambamı açtım. Spotify'da kısık tonda çalacak şekilde ayarladığım piyano tınıları ağırlıklı konsantrasyon albümünü başlattım. Sıcak kahvemden bir yudum aldım ve tarayıcıda aramalara başladım. İlk olarak JSON Web Token ne demektir bulduğum kaynaklardan anlamaya çalıştım. Sonrasında aşağıdakine benzer bir şeyler karalamayı da başardım.
 
@@ -28,7 +28,7 @@ Evdeki West-World'de ise aynı mevzu Asp.Net Core 2.0 Web API servisleri için g
 
 Senaryo üzerinden gidildiğinde olay biraz daha basitleşmişti. REST tabanlı servisteki bir veya daha fazla operasyonu kullanmak isteyen bir kullanıcı olduğunu düşünelim. Kullanıcı hizmeti almadan önce username ve password bilgilerini de kullanarak doğrulanmakta (Authentication safhası diyelim) Doğrulama başlı başına büyük bir iş de olabilir. Microsoft Identity Server'dan tutun da Facebook doğrulamasına kadar farklı bir katman söz konusu esasında. Benim senaryomda bu kısım hep true olarak geçilecek ama bir gerçek hayat vakasında şirketin kimlik doğrulama sunucusundan veya Azure AD'den yararlanılabilir. Doğrulama işlemi başarılı olursa servis tarafında bir Token (bilet mi desek) üretilir. Bu Token konumuz gereği JSON Web Token tipinden olabilir.
 
-Kısaca JSON Web Token
+## Kısaca JSON Web Token
 
 JSON Web Token için ayrı bir parantez açmamız şart tabii. Yapısı 3 parçadan oluşan base64 formatında kodlanmış bir biletten bahsediyoruz. Sırasıyla Header, Payload ve Signature kısımlarından oluşmakta. Header kısmında biletin tipi ve şifreleme algoritmasına ait bilgiler yer alır. Payload içerisinde ise Claim olarak isimlendirdiğimiz diğer başka bilgilere bulunur. EMail, UniqueID, Certificate, Username vb veri içeren bir çok Claim aynı Token içerisinde yer alabilir.
 
@@ -38,7 +38,7 @@ Token üretimi, doğrulanan kullanıcının bir sonraki talebi için önemlidir.
 
 Aslında Bearer olarak isimlendirilen Token Based Authentication ve Authorization modelindeki güvenlik senaryoloarı sıklıkla kullanılmaktadır. OAuth 2.0 içerisinde de benzer bir teoriyi görebilirsiniz. Peki.Net Core 2.0 ile geliştirdiğimiz bir Web API'de, JSON Web Token tipinden biletleri nasıl kullandırabiliriz? Haydi gelin işe başlayalım.
 
-Kod Tarafı
+## Kod Tarafı
 
 Öncelikle basit bir Web API uygulaması oluşturarak işe başlamamız gerekiyor. Örneği West-World'de geliştirdiğimizi hatırlatalım. Ubuntu 16.04 üzerinde.Net Core 2.0 kullanıyoruz.
 
@@ -238,7 +238,7 @@ Aslına bakarsanız kodlarımız hazır. Şimdi test sürüşüne çıkabiliriz.
 
 ![core_jwt_8.gif](/assets/images/2017/core_jwt_8.gif)
 
-Testler
+## Testler
 
 Testleri yapmak için bir istemci uygulama yazabileceğimiz gibi Chrome'da Postman veya Firefox'ta HttpRequester gibi araçları da kullanabiliriz. Ben Firefox'a kurduğum HttpRequester'dan yaralanacağım. İlk olarak geçerli kullanıcı adı ve şifre ile bir bilet almamız gerekiyor. Bunu alırken body kısmında JSON formatında username ve password bilgisinin gönderilmesi önemli. HTTP POST tipinden bir talep gerçekleştireceğiz.
 
