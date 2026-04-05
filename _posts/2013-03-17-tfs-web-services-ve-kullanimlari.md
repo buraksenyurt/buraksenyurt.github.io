@@ -34,133 +34,25 @@ Yine dikkat edileceği üzere koleksiyon seviyesinde farklılaşan (Team Project
 
 ![tfsservices_3](/assets/images/2013/tfsservices_3.png)
 
-Çok doğal olarak diğer servislere de ulaşmamız, hatta WSDL (Web Service Description Language) çıktılarına bakmamız mümkündür. Ben çalışmakta olduğum Team Foundation Server 2012 için, uygulama sunucusunun yüklü olduğu IIS (Internet Information Services) altında yaptığım araştırmalarda, aşağıdaki uzun listeye ulaştığımı rahatlıkla ifade edebilirim.
+Çok doğal olarak diğer servislere de ulaşmamız, hatta WSDL (Web Service Description Language) çıktılarına bakmamız mümkündür. Ben çalışmakta olduğum Team Foundation Server 2012 için, uygulama sunucusunun yüklü olduğu IIS (Internet Information Services) altında yaptığım araştırmalarda, aşağıdaki uzun listeye ulaştığımı rahatlıkla ifade edebilirim
 
-Administration
-
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v4.0/AccessControlService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v4.0/FileHandlerService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v4.0/IdentityManagementService2.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/AdministrationService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/CatalogService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/EventService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/IdentityManagementService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/JobService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/LocationService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/PropertyService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/RegistryService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/SecurityServices.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/TeamProjectCollectionService.asmx
-http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/WarehouseControlService.asmx
-
-Lab
-
-http://tfsserver:8080/tfs/TeamFoundation/Lab/v3.0/LabFrameworkService.asmx
-
-TFS Resources – Services
-
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/AuthorizationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/CommonStructureService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ConnectedServicesService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/EventService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/GroupSecurityService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ProcessConfigurationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ProcessTemplate.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ProjectMaintenance.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/registration.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ServerStatus.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/StrongBoxService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/TeamConfigurationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v2.0/GroupSecurityService2.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v2.0/ProcessConfigurationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v2.0/ProcessConfigurationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/AuthorizationService3.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/CommonStructureService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/IdentityManagementService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/JobService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/LocationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/PropertyService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/RegistryService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/SecurityService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/SyncService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/AccessControlService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/AuthorizationService4.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/CommonStructureService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/FileHandlerService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/IdentityManagementService2.asmx
-http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/SyncService4.asmx
-
-TFS Resources - Work Item Tracking
-
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v5.0/clientservice.asmx
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v4.0/ClientService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v3.0/ClientService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/ClientService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/ConfigurationSettingsService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/ExternalServices.asmx
-http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/Integration.asmx
-
-TFS Resources - Verison Control
-
-http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v4.0/Repository.asmx
-http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v3.0/Repository.asmx
-http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/Repository.asmx
-http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/Administration.asmx
-http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/Integration.asmx
-http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/ProxyStatistics.asmx
-
-TFS Resources - Test Management
-
-http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v2.0/TestManagementWebService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v1.0/TestImpactService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v1.0/TestResults.asmx
-http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v1.0/TestResultsEx.asmx
-
-TFS Resources - Sync
-
-http://tfsserver:8080/tfs/_tfs_resources/sync/v4.0/AdministrationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/sync/v3.0/AdministrationService.asmx
-
-TFS Resources - Lab
-
-http://tfsserver:8080/tfs/_tfs_resources/lab/v4.0/LabService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/Integration.asmx
-http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/LabAdminService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/LabService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/TestIntegrationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/WorkflowIntegrationService.asmx
-
-TFS Resources - Discussion
-
-http://tfsserver:8080/tfs/_tfs_resources/discussion/v1.0/discussionwebservice.asmx
-
-TFS Resources - Build
-
-http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/AdministrationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/AgentReservationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/BuildDeploymentService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/BuildQueueService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/BuildService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/SharedResourceService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/AdministrationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/AgentReservationService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/BuildQueueService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/BuildService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/Integration.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/SharedResourceService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v2.0/BuildService.asmx
-http://tfsserver:8080/tfs/_tfs_resources/build/v2.0/Integration.asmx
-
-Metadata Publishing'i kapalı olan WCF servisleri
-
-http://tfsserver:8080/tfs/queue/_tfs_resources/services/v4.0/MessageQueueService.svc
-http://tfsserver:8080/tfs/queue/_tfs_resources/services/v4.0/MessageQueueService2.svc
+| Servis | Endpoints |
+| --- | --- |
+| Administration | http://tfsserver:8080/tfs/TeamFoundation/Administration/v4.0/AccessControlService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v4.0/FileHandlerService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v4.0/IdentityManagementService2.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/AdministrationService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/CatalogService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/EventService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/IdentityManagementService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/JobService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/LocationService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/PropertyService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/RegistryService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/SecurityServices.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/TeamProjectCollectionService.asmx <br> http://tfsserver:8080/tfs/TeamFoundation/Administration/v3.0/WarehouseControlService.asmx |
+| Lab | http://tfsserver:8080/tfs/TeamFoundation/Lab/v3.0/LabFrameworkService.asmx |
+| TFS Resources – Services | http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/AuthorizationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/CommonStructureService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ConnectedServicesService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/EventService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/GroupSecurityService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ProcessConfigurationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ProcessTemplate.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ProjectMaintenance.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/registration.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/ServerStatus.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/StrongBoxService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v1.0/TeamConfigurationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v2.0/GroupSecurityService2.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v2.0/ProcessConfigurationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v2.0/ProcessConfigurationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/AuthorizationService3.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/CommonStructureService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/IdentityManagementService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/JobService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/LocationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/PropertyService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/RegistryService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/SecurityService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v3.0/SyncService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/AccessControlService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/AuthorizationService4.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/CommonStructureService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/FileHandlerService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/IdentityManagementService2.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/services/v4.0/SyncService4.asmx |
+| TFS Resources - Work Item Tracking | http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v5.0/clientservice.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v4.0/ClientService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v3.0/ClientService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/ClientService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/ConfigurationSettingsService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/ExternalServices.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/workitemtracking/v1.0/Integration.asmx |
+| TFS Resources - Verison Control | http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v4.0/Repository.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v3.0/Repository.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/Repository.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/Administration.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/Integration.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/VersionControl/v1.0/ProxyStatistics.asmx |
+| TFS Resources - Test Management | http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v2.0/TestManagementWebService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v1.0/TestImpactService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v1.0/TestResults.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/TestManagement/v1.0/TestResultsEx.asmx |
+| TFS Resources - Sync | http://tfsserver:8080/tfs/_tfs_resources/sync/v4.0/AdministrationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/sync/v3.0/AdministrationService.asmx |
+| TFS Resources - Lab | http://tfsserver:8080/tfs/_tfs_resources/lab/v4.0/LabService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/Integration.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/LabAdminService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/LabService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/TestIntegrationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/lab/v3.0/WorkflowIntegrationService.asmx |
+| TFS Resources - Discussion | http://tfsserver:8080/tfs/_tfs_resources/discussion/v1.0/discussionwebservice.asmx |
+| TFS Resources - Build | http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/AdministrationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/AgentReservationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/BuildDeploymentService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/BuildQueueService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/BuildService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v4.0/SharedResourceService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/AdministrationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/AgentReservationService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/BuildQueueService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/BuildService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/Integration.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v3.0/SharedResourceService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v2.0/BuildService.asmx <br> http://tfsserver:8080/tfs/_tfs_resources/build/v2.0/Integration.asmx |
+| Metadata Publishing' i kapalı olan WCF servisleri | http://tfsserver:8080/tfs/queue/_tfs_resources/services/v4.0/MessageQueueService.svc <br> http://tfsserver:8080/tfs/queue/_tfs_resources/services/v4.0/MessageQueueService2.svc |
 
 Görüldüğü üzere oldukça uzun bir servis listesi söz konusu.
 
 > Aslına bakarsanız bu servislerin detaylı olarak ne iş yaptıklarına dair MSDN üzerinde çok fazla bilgi bulunmamaktadır. Standart bir teknik Help dokümanından ötesi değildir. Bu nedenle TFS’ in çalışma yapısını bilip, biraz tahminler yürüterek ilerlemeye çalışmak, işinizi epeyce kolaylaştıracaktır.
-
-#Region Off Topic
 
 Bu arada dilerseniz bu servislerin tamamı izlemek için basit bir Web uygulaması geliştirebilir ve örneğin listedeki adresleri bir Web User Control içerisine gömerek, tıklama usulüyle ilgili XML Web Service adreslerine gidebilirsiniz. Örneğin aşağıdaki gibi bir Web User Control ve yardımcı sınıf işinizi görecektir.
 
@@ -226,11 +118,9 @@ ve işte çalışma zamanına ait örnek ekran çıktısı
 
 ![tfsservices_4](/assets/images/2013/tfsservices_4.png)
 
-Bir servis adına tıklayın ve içeriğine ulaşın
+Bir servis adına tıklayın ve içeriğine ulaşın.
 
-#endregion Off Topic
-
-Referans Etmek
+## Referans Etmek
 
 Team Foundation Server üzerinden sunulan XML Web Service örneklerini herhangibir.Net istemcisi tarafından tüketmek istediğimizde, Client Object Model üzerinden erişimde bulunmamız gerekmektedir. Normal şartlarda ilgili Web Service’ leri, Add Service Reference sekmesinden hareket edilerek projeye ilave edilebilir ve üretilen Proxy tipinin metodlarına ulaşılabilir.
 
@@ -246,7 +136,7 @@ Bunun nedeni aslında ilgili servislerin, Client Object Model (veya Server Objec
 
 Dilerseniz TFS'e uzaktan bağlanacak bir istemci açısından olaya bakmaya devam edelim ve basit bir kullanım şeklini değerlendirerek ilerlemeye çalışalım.
 
-Hello World
+## Hello World
 
 Aşağıdaki kod parçasında Collection Level grubundan iki örnek servisin kullanımına yer verilmiştir. Bu servislerden birisi ICommonStructureSerice4, diğeri ise IProcessTemplates arayüzleri (Interface) tarafından taşınmaktadır. Dikkat edileceği üzere anahtar nokta TfsTeamProjectCollection tipinin örnekleniş şeklidir. Burada TfsTeamProjectCollectionFactory sınıfının static GetTeamProjectCollection metodundan yararlanılmakta olup, fonksiyona parametre olarak TFS sunucusundaki Team Project Collection’ ın HTTP tabanlı adresi geçilmektedir.
 
@@ -345,127 +235,29 @@ Diğer yandan IProcessTemplate arayüzüne atanan servis referansının elde edi
 
 Tabi burada akla takılan en önemli sorunlardan birisi kullanabileceğimiz TFS Web Service’ lerinin kod tarafındaki GetService metodu tarafından kullanılabilecek karşılıklarının neler olduğudur?
 
-Bu konuda aşağıdaki listenin yardımcı olabileceğini düşünüyorum.
+Bu konuda aşağıdaki listenin yardımcı olabileceğini düşünüyorum
 
-Servisin Adı
-Collection Level
-Server Level
-Assembly
-Namespace
-
-ITeamFoundationRegistry
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-IIdentityManagementService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-ITeamFoundationJobService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-IPropertyService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-IEventService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-ISecurityService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-ILocationService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-TswaClientHyperlinkService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-ITeamProjectCollectionService
-Yok
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-IAdministrationService
-Var
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-ICatalogService
-Yok
-Var
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Framework.Client
-
-VersionControlServer
-Var
-Yok
-Microsoft.TeamFoundation.VersionControl.Client
-Microsoft.TeamFoundation.VersionControl.Client
-
-WorkItemStore
-Var
-Yok
-Microsoft.TeamFoundation.WorkItemTracking.Client
-Microsoft.TeamFoundation.WorkItemTracking.Client
-
-IBuildServer
-Var
-Yok
-Microsoft.TeamFoundation.Build.Client
-Microsoft.TeamFoundation.Build.Client
-
-ITestManagementService
-Var
-Yok
-Microsoft.TeamFoundation.TestManagement.Client
-Microsoft.TeamFoundation.TestManagement.Client
-
-ILinking
-Var
-Yok
-Microsoft.TeamFoundation.Common
-Microsoft.TeamFoundation
-
-ICommonStructureService3
-Var
-Yok
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Server
-
-IServerStatusService
-Var
-Yok
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Server
-
-IProcessTemplates
-Var
-Yok
-Microsoft.TeamFoundation.Client
-Microsoft.TeamFoundation.Server
+| Servisin Adı | Collection Level | Server Level | Assembly | Namespace |
+| --- | --- | --- | --- | --- |
+| ITeamFoundationRegistry | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| IIdentityManagementService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| ITeamFoundationJobService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| IPropertyService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| IEventService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| ISecurityService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| ILocationService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| TswaClientHyperlinkService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| ITeamProjectCollectionService | Yok | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| IAdministrationService | Var | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| ICatalogService | Yok | Var | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Framework <br> .Client |
+| VersionControlServer | Var | Yok | Microsoft <br> .TeamFoundation <br> .VersionControl <br> .Client | Microsoft <br> .TeamFoundation <br> .VersionControl <br> .Client |
+| WorkItemStore | Var | Yok | Microsoft <br> .TeamFoundation <br> .WorkItemTracking <br> .Client | Microsoft <br> .TeamFoundation <br> .WorkItemTracking <br> .Client |
+| IBuildServer | Var | Yok | Microsoft <br> .TeamFoundation <br> .Build <br> .Client | Microsoft <br> .TeamFoundation <br> .Build <br> .Client |
+| ITestManagementService | Var | Yok | Microsoft <br> .TeamFoundation <br> .TestManagement <br> .Client | Microsoft <br> .TeamFoundation <br> .TestManagement <br> .Client |
+| ILinking | Var | Yok | Microsoft <br> .TeamFoundation <br> .Common | Microsoft <br> .TeamFoundation |
+| ICommonStructureService3 | Var | Yok | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Server |
+| IServerStatusService | Var | Yok | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Server |
+| IProcessTemplates | Var | Yok | Microsoft <br> .TeamFoundation <br> .Client | Microsoft <br> .TeamFoundation <br> .Server |
 
 Yukarıdaki listede eksikliker olabilir. Gelen Update’ ler, Service Pack’ ler ve yeni sürümler sonrasın güncellenebilir. Lütfen MSDN üzerinden kontrol ediniz.
 

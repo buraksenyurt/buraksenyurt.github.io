@@ -160,51 +160,22 @@ where ((([KitapId] = @4) and ([Ad] = @5)) and ([Fiyat] = @6))
 ',N'@0 nvarchar(25),@1 decimal(19,4),@2 int,@3 int,@4 int,@5 nvarchar(25),@6 decimal(19,4)',@0=N'Ado.Net Data Services Pro',@1=76.0000,@2=35,@3=1,@4=81,@5=N'Ado.Net Data Services Pro',@6=71.0000
 ```
 
-Dikkat edelim! Where ifadesinden sonra KitapID, Ad ve Fiyat alanları hesaba katılmıştır. Bunun en büyük nedeni EDM diagramında Concurrency Mode değeri Fixed olarak belirlenen özelliklerdir. Dolayısıyla bu Where kriteri bozulmadığından güncelleştirme işlemi yapılmıştır. Oysaki ikinci uygulama tuşa basılarak devam ettirildiğinde, Update sorgusunun çalıştırılmadığı onun yerine 81 nolu KitapID için bir Select sorgusunun işlediği görülür. Akabindede zaten ETag verilerindeki uyuşmazlık nedeni ile istemciye bir hata mesajı gönderilmektedir. Buraya kadar anlattıklarımızın özetini aşağıdaki tablo ile özetleyebiliriz.
+Dikkat edelim! Where ifadesinden sonra KitapID, Ad ve Fiyat alanları hesaba katılmıştır. Bunun en büyük nedeni EDM diagramında Concurrency Mode değeri Fixed olarak belirlenen özelliklerdir. Dolayısıyla bu Where kriteri bozulmadığından güncelleştirme işlemi yapılmıştır. Oysaki ikinci uygulama tuşa basılarak devam ettirildiğinde, Update sorgusunun çalıştırılmadığı onun yerine 81 nolu KitapID için bir Select sorgusunun işlediği görülür. Akabindede zaten ETag verilerindeki uyuşmazlık nedeni ile istemciye bir hata mesajı gönderilmektedir. Buraya kadar anlattıklarımızın özetini aşağıdaki tablo ile özetleyebiliriz
 
-İşlem
-Açıklama (HTTP Trafiği ve SQL tarafı)
-
-Birinci Uygulama Çalışır.
-
-Kitap kitap81 = (from k in proxy.Kitap
-where k.KitapId==81
-select k).First ();
-HTTP Get Paketi Gönderilir.
-Select sorgusu 81 no için çalışır.
-Response bilgisi HTTP 200 Ok.
-ETag bilgisi "Ado.Net Data Services Pro, 71.0000"
-
-İkinci Uygulama Çalışır.
-
-Kitap kitap81 = (from k in proxy.Kitap
-where k.KitapId==81
-select k).First ();
-HTTP Get Paketi Gönderilir.
-Select sorgusu 81 no için çalışır.
-Response bilgisi HTTP 200 Ok.
-ETag bilgisi "Ado.Net Data Services Pro, 71.0000"
-
-Birinci Uygulamada Fiyat bilgisi güncellenir.
-
-Birinci Uygulamada SaveChanges metodu çalışır.
-HTTP Merge paketi gider.
-If-Match bilgisi "Ado.Net Data Services Pro, 71.0000" dir. Karşılaştırma doğrudur.
-SQL tarafında Update sorgusu çalışır güncelleme yapılır.
-Response için ETag değeri "Ado.Net Data Services Pro, 76.0000" olur.
-
-İkinci Uygulamada Fiyat bilgisi güncellenir.
-
-İkinci Uygulamada SaveChanges metodu çalışır.
-HTTP Merge paketi gider.
-If-Match bilgisi "Ado.Net Data Services Pro, 71.0000" dir.
-SQL tarafında 81 için veriler istenir.
-If-Match bilgisindeki Fiyat verisi için uyuşmazlık vardır.
-HTTP/1.1 412 (Precondition Failed) gönderilir.
+| İşlem | Açıklama (HTTP Trafiği ve SQL tarafı) |
+| --- | --- |
+| Birinci Uygulama Çalışır. |  |
+| Kitap kitap81 = (from k in proxy.Kitap <br> where k.KitapId==81 <br> select k).First(); | HTTP Get Paketi Gönderilir. <br> Select sorgusu 81 no için çalışır. <br> Response bilgisi HTTP 200 Ok. <br> ETag bilgisi "Ado.Net Data Services Pro, 71.0000" |
+| İkinci Uygulama Çalışır. |  |
+| Kitap kitap81 = (from k in proxy.Kitap <br> where k.KitapId==81 <br> select k).First(); | HTTP Get Paketi Gönderilir. <br> Select sorgusu 81 no için çalışır. <br> Response bilgisi HTTP 200 Ok. <br> ETag bilgisi "Ado.Net Data Services Pro, 71.0000" |
+| Birinci Uygulamada Fiyat bilgisi güncellenir. |  |
+| Birinci Uygulamada SaveChanges metodu çalışır. | HTTP Merge paketi gider. <br> If-Match bilgisi "Ado.Net Data Services Pro, 71.0000" dir. Karşılaştırma doğrudur. <br> SQL tarafında Update sorgusu çalışır güncelleme yapılır. <br> Response için ETag değeri "Ado.Net Data Services Pro, 76.0000" olur. |
+| İkinci Uygulamada Fiyat bilgisi güncellenir. |  |
+| İkinci Uygulamada SaveChanges metodu çalışır. | HTTP Merge paketi gider. <br> If-Match bilgisi "Ado.Net Data Services Pro, 71.0000" dir. <br> SQL tarafında 81 için veriler istenir. <br> If-Match bilgisindeki Fiyat verisi için uyuşmazlık vardır. <br> HTTP/1.1 412 (Precondition Failed) gönderilir. |
 
 Tabi işin bir de diğer şeklini ele almak gerekir. Yani Fixed değerlerini kullanmadığımız durum. Burada sadece servis tarafındaki EDM diagramında değişiklik yapmak yeterli olacaktır. Bir başka deyişle istemci tarafında, Concurrency modelinin değiştirildiğine dair bir servis güncellemesi yapılmasına gerek yoktur. Tabi böyle bir durumda her iki uygulamanın güncelleme işlemleride geçerli olacaktır ve buna görede en son yazanın verisi tabloya yansıtılacaktır. Aynı örneği buna göre test ettiğimizde SQL tarafına giden Update sorgularının aşağıdakine benzer olduğu görülmektedir.
 
-```bash
+```sql
 exec sp_executesql N'update [dbo].[Kitap]
 set [Ad] = @0, [Fiyat] = @1, [StokMiktari] = @2, [KategoriId] = @3
 where ([KitapId] = @4)

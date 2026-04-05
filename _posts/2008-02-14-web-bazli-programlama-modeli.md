@@ -25,19 +25,14 @@ Tahmin edileceği üzere WCF mimarisi.Net Framework 3.5 ile gelen tipler sayesin
 
 ![mk242_1.gif](/assets/images/2008/mk242_1.gif)
 
-HTTP üzerinden GET, POST, PUT gibi metodlar ile gelen çağrıları yönetimli kod (Managed Code) tarafında ele almak için WebGetAttribute ve WebInvokeAttribute nitelik (attribute) sınıflarından yararlanılmaktadır. Bu nitelikler temel olarak, operasyonların URI bilgilerine nasıl bağlanacağını ve hangi HTTP metodları ile eşleştirileceğini belirlemekte kullanılırlar. WebGetAttribute niteliği GET operasyonları için ele alınırken, WebInvokeAttribute POST, DELETE, PUT gibi operasyonların kullanımını sağlamaktadır.
+HTTP üzerinden GET, POST, PUT gibi metodlar ile gelen çağrıları yönetimli kod (Managed Code) tarafında ele almak için WebGetAttribute ve WebInvokeAttribute nitelik (attribute) sınıflarından yararlanılmaktadır. Bu nitelikler temel olarak, operasyonların URI bilgilerine nasıl bağlanacağını ve hangi HTTP metodları ile eşleştirileceğini belirlemekte kullanılırlar. WebGetAttribute niteliği GET operasyonları için ele alınırken, WebInvokeAttribute POST, DELETE, PUT gibi operasyonların kullanımını sağlamaktadır
 
-HTTP üzerinden POST, GET, PUT, DELETE metodları kullanılır. Bu metodların işleyiş şekli çoğu zaman CRUD tablosunda aşağıdaki gibi ifade edilir.
-
-CRUD
-
-Create, Update, Delete
-
-Read
-
-Delete
-
-Create, Update
+| CRUD |
+| --- |
+| Create, Update, Delete |
+| Read |
+| Delete |
+| Create, Update |
 
 WebGetAttribute sınının dört önemli özelliği (property) vardır. WebMessageBodyStyle enum sabiti tipinden olan BodyStyle özelliği yardımıyla parametre ve dönüş değerlerinin XML elementleri içeriğine sarmalanıp (wrap) sarmalanmayacağına karar verilir. WebMessageBodyStyle enum sabitinin içerdiği değerler Bare, WrappedRequest, WrappedResponse ve Wrapped'dır. Bare değerine göre talep (request) ve cevap (response) mesajlarındaki veriler sarmalanmazlar. Wrapped değerine göre her iki haldede sarmalanırlar. WrappedRequest değerine göre sadece taleplerin sarmalanması, WrappedResponse değerine göre ise sadece cevapların sarmalanması söz konusudur. WebGetAttribute sınıfının diğer özellikleri RequestFormat, ResponseFormat ve UriTemplate üyeleridir.
 
@@ -346,19 +341,19 @@ namespace Sunucu
 
 Artık HTTP GET metodu bazlı taleplerde bulunulabiliriz. Söz konusu talepleri (Request) basit bir tarayıcı (Browser) uygulaması yardımıyla gerçekleştirmek mümkündür. Elbette istemcilerin cevap (Response) alabilmeleri için Host uygulamanında çalışıyor olması şarttır. Aşağıda söz konuzu operasyon çağrıları ve ekran görüntüleri yer almaktadır.
 
-Toplama işlemi için yapılan çağrı; http://localhost:60001/ToplamaIslemi?sayi1=4&sayi2=6 (4 ve 6 sayılarının toplamı geriye döndürülmektedir)
+Toplama işlemi için yapılan çağrı; `http://localhost:60001/ToplamaIslemi?sayi1=4&sayi2=6` (4 ve 6 sayılarının toplamı geriye döndürülmektedir)
 
 ![mk242_6.gif](/assets/images/2008/mk242_6.gif)
 
-UrunListesi operasyonu için yapılan çağrı; http://localhost:60001/urunler/1 (1 numaralı ProductSubCategoryId değerine sahip ürünlerin DataSet içerisinde toplanmış listesini verir)
+UrunListesi operasyonu için yapılan çağrı; `http://localhost:60001/urunler/1` (1 numaralı ProductSubCategoryId değerine sahip ürünlerin DataSet içerisinde toplanmış listesini verir)
 
 ![mk242_7.gif](/assets/images/2008/mk242_7.gif)
 
-UrunCek isimli metoda yapılan çağrı; http://localhost:60001/UrunCek?urunId=1 (ProductId alanı değeri 1 olan Product tablosu satırının içeriği Urun tipine göre çekilir)
+UrunCek isimli metoda yapılan çağrı; `http://localhost:60001/UrunCek?urunId=1` (ProductId alanı değeri 1 olan Product tablosu satırının içeriği Urun tipine göre çekilir)
 
 ![mk242_8.gif](/assets/images/2008/mk242_8.gif)
 
-ToplamFiyat operasyonu için yapılan çağrı; http://localhost:60001/toplam?kategori=1 (ProductSubCategoryId değeri 1 olan ürünlerin ListPrice alanlarının toplamı elde edilir.)
+ToplamFiyat operasyonu için yapılan çağrı; `http://localhost:60001/toplam?kategori=1` (ProductSubCategoryId değeri 1 olan ürünlerin ListPrice alanlarının toplamı elde edilir.)
 
 ![mk242_9.gif](/assets/images/2008/mk242_9.gif)
 

@@ -15,28 +15,16 @@ AppSettings, ConnectionStrings, Authentication, Authorization, SessionState, Mem
 
 Configuration Management API'si sadece web uygulamalarını esas almaz. Diğer uygulamalar (örneğin Desktop) için kullanılabilecek çeşitli uygulama düzeyindeki konfigurasyon dosyalarınıda ele alabiliriz. Temek olarak bir web.config dosyasını programatik seviyede Configuration sınıfına ait bir nesne örneği ile ele alabiliriz. Configuration Management API'si içerisinde, Configuration tipini elde edebilmemizi sağlayan iki temel sınıf vardır. Bunlar ConfigurationManager ve WebConfigurationManager sınıflarıdır. ConfigurationManager sadece web uygulamalarını değil diğer platformlarıda göz önüne alır. WebConfigurationManager sınıfı ise özellikle web tabanlı sistemler için tasarlanmış üyeler içerir.
 
-ConfigurationManager sınıfı System.Configuration isim alanında, WebConfigurationManager sınıfı ise System.Web.Configuration isim alanında yer almaktadır. WebConfigurationManager tipinin belkide en önemli üyesi static OpenWebConfiguration metodudur. Bu metod sayesinde, web.config dosyalarını herhangibir seviyede açabiliriz. Diğer taraftan WebConfigurationManager sınıfı OpenMachineConfiguration isimli static bir üye metod daha içerir. Bu metod sayesinde de tahmin edebileceğiniz gibi, machine.config dosyasına erişilebilmektedir. Bu bizim makine seviyesindeki bir takım ayarları programatik olarak ele almamızı sağlar. Aşağıdaki tabloda bu metodlara ilişkin örnek bir takım senaryolar verilmiştir.
+ConfigurationManager sınıfı System.Configuration isim alanında, WebConfigurationManager sınıfı ise System.Web.Configuration isim alanında yer almaktadır. WebConfigurationManager tipinin belkide en önemli üyesi static OpenWebConfiguration metodudur. Bu metod sayesinde, web.config dosyalarını herhangibir seviyede açabiliriz. Diğer taraftan WebConfigurationManager sınıfı OpenMachineConfiguration isimli static bir üye metod daha içerir. Bu metod sayesinde de tahmin edebileceğiniz gibi, machine.config dosyasına erişilebilmektedir. Bu bizim makine seviyesindeki bir takım ayarları programatik olarak ele almamızı sağlar. Aşağıdaki tabloda bu metodlara ilişkin örnek bir takım senaryolar verilmiştir
 
-Örnek Metod
-İşlevi
-
-WebConfigurationManager.OpenWebConfiguration ("~/")
-Güncel uyulamadaki web.config dosyasını alır.
-
-WebConfigurationManager.OpenWebConfiguration ("/ConfigMngAPI")
-ConfigMngAPI isimli Web uygulamasına ait olan web.config dosyasını açar.
-
-WebConfigurationManager.OpenWebConfiguration ("/ConfigMngAPI/Admin")
-ConfigMngAPI isimli web uygulamasındaki Admin klasörü altındaki web.config dosyasını açar.
-
-WebConfigurationManager.OpenWebConfiguration ("~/", "siteAdi")
-siteAdi ile belirtilen web uygulamasındaki web.config dosyasını açalar. Bu metodun diğer versiyonları kullanılarak ilgili siteye username ve password bilgiside iletilebilinir.
-
-WebConfigurationManager.OpenWebConfiguration ("~/", null, "/Admin")
-Var olan web uygulamasındaki Admin klasöründe için web.config'de yazılmış location boğumunu açar.
-
-WebConfigurationManager.OpenMachineConfiguration ()
-Framework altındaki machine.config dosyasını açar.
+| **Örnek Metod** | **İşlevi** |
+| --- | --- |
+| WebConfigurationManager.OpenWebConfiguration("~/") | Güncel uyulamadaki web.config dosyasını alır. |
+| WebConfigurationManager.OpenWebConfiguration("/ConfigMngAPI") | ConfigMngAPI isimli Web uygulamasına ait olan web.config dosyasını açar. |
+| WebConfigurationManager.OpenWebConfiguration("/ConfigMngAPI/Admin") | ConfigMngAPI isimli web uygulamasındaki Admin klasörü altındaki web.config dosyasını açar. |
+| WebConfigurationManager.OpenWebConfiguration("~/", "siteAdi") | siteAdi ile belirtilen web uygulamasındaki web.config dosyasını açalar. Bu metodun diğer versiyonları kullanılarak ilgili siteye username ve password bilgiside iletilebilinir. |
+| WebConfigurationManager.OpenWebConfiguration("~/", null, "/Admin") | Var olan web uygulamasındaki Admin klasöründe için web.config' de yazılmış location boğumunu açar. |
+| WebConfigurationManager.OpenMachineConfiguration() | Framework altındaki machine.config dosyasını açar. |
 
 Tabloda belirtilen örnek kullanımlar çoğaltılabilir. Sonuç itibariyle OpenWebConfiguration metodunun altı farklı aşırı yüklenmiş versiyonu vardır. Buradaki önemli noktalardan biriside, OpenWebConfiguration ve OpenMachineConfiguration gibi static metodların geriye Configuration tipinden bir nesne örneği gönderiyor oluşlarıdır. Configuration sınıfına ait bu nesne örnekleri sayesinde açılan config uzantılı dosya üzerinde istediğimiz yönetimsel işlemleri (düzenleme, kaydetme, elde etme gibi) gerçekleştirebiliriz. Şimdi ilk olarak konfigurasyon dosyalarında sıkça kullandığımız appSettings ve connectionStrings kısımlarını nasıl yönetebileceğimizi göreceğiz. Bunun için web.config dosyasındaki appSettings ve connectionStrings kısımlarına aşağıda görüldüğü gibi örnek bir kaç veri gireceğiz.
 

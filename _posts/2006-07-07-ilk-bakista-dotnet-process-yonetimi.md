@@ -20,26 +20,19 @@ Yukarıdaki şekilde bir Process'in çalışma zamanında sahip olabileceği iç
 
 Process ' ler ile ilgili Managed Code (Yönetimli Kod) Tarafında Yapabileceklerimizden Bazıları
 
-1
-Sistemde var olan Process'lerin bilgilerini alabiliriz. Örneğin Process'lerin adlarını, başladıkları süreleri, sistem tarafından kendilerine verilen Identity değerlerini vb. gibi.
+- 1.Sistemde var olan Process'lerin bilgilerini alabiliriz. Örneğin Process'lerin adlarını, başladıkları süreleri, sistem tarafından kendilerine verilen Identity değerlerini vb. gibi.
 
-2
-Bir Process'i kod içerisinden çalıştırabiliriz. Bu işlemi yaparken çalıştırılacak Process için gerekli başlangıç bilgilerini söyleyebilir. (Start işlemi)
+- 2.Bir Process'i kod içerisinden çalıştırabiliriz. Bu işlemi yaparken çalıştırılacak Process için gerekli başlangıç bilgilerini söyleyebilir. (Start işlemi)
 
-3
-Bir Process'i çalıştırıp kendi içinden dış ortama sunduğu verileri başka Process'ler içerisinde yakalayabiliriz. Özellike Main metodu içerisinden dış ortama atılan stream'leri diğer Process'ler içerisinde yakalayabilmemiz mümkündür. (Yada tam dersi durumda söz konusudur.)
+- 3.Bir Process'i çalıştırıp kendi içinden dış ortama sunduğu verileri başka Process'ler içerisinde yakalayabiliriz. Özellike Main metodu içerisinden dış ortama atılan stream'leri diğer Process'ler içerisinde yakalayabilmemiz mümkündür. (Yada tam dersi durumda söz konusudur.)
 
-4
-Bir Process'i çalıştırmadan önce söz konusu Process için gerekli parametreleri kod içerisinden gönderebiliriz. Örneğin internet explorer için bir Process açarken gezilecek URL bilgisini de parametre olarak verebiliriz.
+- 4.Bir Process'i çalıştırmadan önce söz konusu Process için gerekli parametreleri kod içerisinden gönderebiliriz. Örneğin internet explorer için bir Process açarken gezilecek URL bilgisini de parametre olarak verebiliriz.
 
-5
-Bir Process'in, çalışma zamanında içerdiği Thread'leri yakalayabilir ve bir takım bilgilerine ulaşabiliriz.
+- 5.Bir Process'in, çalışma zamanında içerdiği Thread'leri yakalayabilir ve bir takım bilgilerine ulaşabiliriz.
 
-6
-Bir Process'in belleğe açılması ile birlikte, söz konusu Process'e ilave olan ve çalışması sırasında kullanılan module bilgilerini elde edebiliriz.
+- 6.Bir Process'in belleğe açılması ile birlikte, söz konusu Process'e ilave olan ve çalışması sırasında kullanılan module bilgilerini elde edebiliriz.
 
-7
-Bir Process'i istersek çalışma zamanında sonlandırabiliriz. (Kill işlemi)
+- 7.Bir Process'i istersek çalışma zamanında sonlandırabiliriz. (Kill işlemi)
 
 Burada bahsedilenleri dahada genişletebiliriz. Bizim için en önemli yardımcı tip Process isimli sınıftır. Process sınıfının çeşitli static metodları sayesinde o an çalışmakta olan tüm Process'leri elde edebiliriz; ayrıca belirli bir Process'i sistem tarafından verilen Identity değeri ile veya Process adı ile başlatabiliriz. Dilerseniz ilk örneğimiz ile işe başlayalım ve Process API'sini daha detaylı bir şekilde öğrenmeye çalışalım. İlk olarak sistem de yer alan Process'leri ve bunlara ait bir takım bilgileri nasıl elde edebileceğimize bakacağız. Bunun için aşağıdaki kod parçasını herhangibir Console uygulamasında denememiz yeterli olacaktır.
 

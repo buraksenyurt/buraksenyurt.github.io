@@ -180,16 +180,12 @@ Buradan şu sonuca varılabilir. None güvenlik modunda hiç bir şekilde istemc
 
 ![mk213_4.gif](/assets/images/2007/mk213_4.gif)
 
-Basic modda iken istemcinin servis tarafına kendisini tanıtması gerekmektedir. Bu nedenle aynen hata mesajında olduğu gibi proxy sınıfı üzerinden ClientCredentials özelliği kullanılmalıdır. Söz konusu operasyonda örnek olarak iki test kullanıcısı oluşturulmuştur. Garfield ve Rolfield isimli bu kullanıcılar, daha sonradan iki farklı Windows Group altında birleştirilecek ve rol bazlı yetkilendirmelerin (Role Based Authorization) nasıl yapılacağı ele alınacaktır. Söz konusu kullanıcılara ait Username ve Password bilgileri aşağıdaki gibidir. Bu kullanıcılar tamamen hayalidir:)
+Basic modda iken istemcinin servis tarafına kendisini tanıtması gerekmektedir. Bu nedenle aynen hata mesajında olduğu gibi proxy sınıfı üzerinden ClientCredentials özelliği kullanılmalıdır. Söz konusu operasyonda örnek olarak iki test kullanıcısı oluşturulmuştur. Garfield ve Rolfield isimli bu kullanıcılar, daha sonradan iki farklı Windows Group altında birleştirilecek ve rol bazlı yetkilendirmelerin (Role Based Authorization) nasıl yapılacağı ele alınacaktır. Söz konusu kullanıcılara ait Username ve Password bilgileri aşağıdaki gibidir. Bu kullanıcılar tamamen hayalidir
 
-Kullanıcı Adı
-Şifre
-
-Garfield
-Garfi1234.?
-
-Rolfield
-Garfi1234.?
+| **Kullanıcı Adı** | **Şifre** |
+| --- | --- |
+| Garfield | Garfi1234.? |
+| Rolfield | Garfi1234.? |
 
 Bu işlemin ardından istemci tarafındaki kodlar aşağıdaki gibi düzenlenebilir.
 
@@ -228,16 +224,12 @@ Eğer hatalı kullanıcı bilgisi veya yanlış şifre girilirse aşağıdakine 
 
 ![mk213_6.gif](/assets/images/2007/mk213_6.gif)
 
-Dikkat edilecek olursa çalışma zamanında MessageSecurityException istisnası alınmış ve 403 Forbidden mesajı ile karşılaşılmıştır. Şimdi söz konusu kullanıcıların yetkilendirilmesinin nasıl ele alınabileceğini incelemeye çalışalım. Bu amaçla söz konusu Garfield ve Lorfield isimli kullanıcılar Yonetici ve Calisan isimli iki farklı Windows grubunda toplanmıştır.
+Dikkat edilecek olursa çalışma zamanında MessageSecurityException istisnası alınmış ve 403 Forbidden mesajı ile karşılaşılmıştır. Şimdi söz konusu kullanıcıların yetkilendirilmesinin nasıl ele alınabileceğini incelemeye çalışalım. Bu amaçla söz konusu Garfield ve Lorfield isimli kullanıcılar Yonetici ve Calisan isimli iki farklı Windows grubunda toplanmıştır
 
-Kullanıcı Adı
-Windows Grubu
-
-Garfield
-Yonetici, Calisan
-
-Rolfield
-Calisan
+| **Kullanıcı Adı** | **Windows Grubu** |
+| --- | --- |
+| Garfield | Yonetici, Calisan |
+| Rolfield | Calisan |
 
 Topla metodunu sadece Yonetici grubundaki kullanıcıların çalıştırması istenirse dekleratif (declarative) olarak PrincipalPermission niteliği ele alınmalıdır. PrincipalPermission niteliği (attribute), System.Security.Permissions isim alanı altında yer almaktadır. Bu sebeple ilgili isim alanının Aritmetik sınıfına eklenmesinde fayda vardır. PrincipalPermission niteliğinin temel kullanımı aşağıdaki gibidir.
 

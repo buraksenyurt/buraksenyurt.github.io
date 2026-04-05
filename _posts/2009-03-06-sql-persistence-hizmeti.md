@@ -13,55 +13,29 @@ Workflow Foundation yardımıyla kod akışlarının modellenebilmesi ve herhang
 
 İşte bu yazımızdaki konumuz, uzun süreli çalışma ihtimali olan bir Workflow'un belirli koşullarda kalıcı olarak fiziki bir ortamda saklanmasının, SQL Persistence Service yardımıyla nasıl gerçekleştirilebileceğidir. SQL Persistence Service sayesinde, bir Workflow'un faaliyetsiz kalması (Idle) halinde bellek yerine, tablo bazlı bir ortamda saklanabilmesi ve bu durum sona erdiğinde söz konusu depolama alanından tekrar ayağa kaldırılarak çalışmaya devam etmesi mümkün olmaktadır. Konuyu daha kolay kavrayabilmek adına ilk önce Workflow çalışma zamanının kendi ve yönettiği WF örnekleri ile ilişkili yaşam döngüsünü incelemekte yarar vardır. Bu yaşam döngüsünün kolayca ele alınabilmesi için WorkflowRuntime sınıfı içerisine çeşitli olaylar eklenmiştir.
 
-Bilindiği üzere WorkflowRuntime sınıfı çalışma zamanında WF örneklerinin yönetiminden sorumludur. Bu yönetim işlemi sırasında WorkflowRuntime sınıfı üzerinden ele alınabilecek 14 farklı olay metodu vardır. Söz konusu olayların bir kısmı sadece çalışma zamanını ilgilendirirken, bir kısmıda WF örneklerinin yaşam döngülerine (LifeCycle) adanmıştır. Buna göre ServicesExceptionNotHandled, Started ve Stopped olayları Workflow çalışma zamanı olayları olarak düşünülebilir.
+Bilindiği üzere WorkflowRuntime sınıfı çalışma zamanında WF örneklerinin yönetiminden sorumludur. Bu yönetim işlemi sırasında WorkflowRuntime sınıfı üzerinden ele alınabilecek 14 farklı olay metodu vardır. Söz konusu olayların bir kısmı sadece çalışma zamanını ilgilendirirken, bir kısmıda WF örneklerinin yaşam döngülerine (LifeCycle) adanmıştır. Buna göre ServicesExceptionNotHandled, Started ve Stopped olayları Workflow çalışma zamanı olayları olarak düşünülebilir
 
-Workflow Çalışma Zamanı Olayları
+| Workflow Çalışma Zamanı Olayları |  |
+| --- | --- |
+| ServicesExceptionNotHandled | Workflow çalışma zamanı servislerinden herhangibirinde kontrol altına alınmamış bir istisna(Exception) oluştuğunda devreye giren olaydır. |
+| Started | Workflow çalışma zamanı motoru, üzerine eklenmiş servisler ile başarılı bir şekilde başlatıldığında devreye girer. Burada çalışma zamanına eklenen servislerin başarılı bir şekilde başlatıldıklarına dair bir bilgilendirme yapması söz konusudur. |
+| Stopped | Started olayına benzer olaraktan, WF çalışma zamanı motorunun, kendi üzerinde yer alan ve çalışmakta olan tüm servislerin başarılı bir şekilde durdurulması sonrasında tetiklenir. Servisler başarılı bir şekilde durdurulduklarına dair WF çalışma zamanı motoruna bilgilendirmede bulunurlar. |
 
-ServicesExceptionNotHandled
-Workflow çalışma zamanı servislerinden herhangibirinde kontrol altına alınmamış bir istisna (Exception) oluştuğunda devreye giren olaydır.
+Aşağıdaki tabloda açıklamaları verilmiş olan olaylar ise, WF çalışma zamanının yönettiği Workflow örneklerinin durumlarının (State) değiştiği hallerde tetiklenmektedir
 
-Started
-Workflow çalışma zamanı motoru, üzerine eklenmiş servisler ile başarılı bir şekilde başlatıldığında devreye girer. Burada çalışma zamanına eklenen servislerin başarılı bir şekilde başlatıldıklarına dair bir bilgilendirme yapması söz konusudur.
-
-Stopped
-Started olayına benzer olaraktan, WF çalışma zamanı motorunun, kendi üzerinde yer alan ve çalışmakta olan tüm servislerin başarılı bir şekilde durdurulması sonrasında tetiklenir. Servisler başarılı bir şekilde durdurulduklarına dair WF çalışma zamanı motoruna bilgilendirmede bulunurlar.
-
-Aşağıdaki tabloda açıklamaları verilmiş olan olaylar ise, WF çalışma zamanının yönettiği Workflow örneklerinin durumlarının (State) değiştiği hallerde tetiklenmektedir.
-
-Workflow Örneğine Adanmış Olaylar
-
-WorkflowAborted
-Workflow örneği devre dışı bırakıldığında tetiklenir. Özellikle Persistence servisi kullanıldığında önem kazınır. Nitekim devre dışı bırakılan servisin kalıcı olarak saklanması ve tekrar kaldığı yerden ayağa kaldırılması (Resume) mümkün olabilmektedir.
-
-WorkflowCompleted
-Bir Workflow örneği tamamlanıp bellekten henüz kaldırılmadan önce devreye giren olaydır. Bu olaya ait metod yardımıyla host uygulamaya, tamamlanan Workflow örneğinin output parametrelerini döndürmek mümkündür.
-
-WorkflowCreated
-Workflow örneği oluşturulduğunda ancak Start metodu ile çalıştırılmadan az önce tetiklenir.
-
-WorkflowIdled
-Bir workflow örneği dışarıdan beklediği bir etki veya Delay aktivitesi nedeni ile içerisinde yer alan herhangibir aktiviteyi işletmediği durumlarda tetiklenir. Özellikle Idle olma durumunda Persistence hizmetlerinin kullanımı önem kazanır.
-
-WorkflowLoaded
-Persistence servisi kullanıldığı durumlarda, Workflow örneğinin herhangibir aktivitesi çalıştırılmadan önce ve belleğe yüklenmesi sonrasında devreye giren olaydır.
-
-WorkflowPersisted
-Persistence servisin kullanılması halinde bir workflow örneğinin saklanmak üzere kaydedilmesi sonrasında tetiklenir. Workflow persistence servisi varsayılan olarak SQL veritabanını kullandığından, söz konusu kaydetme işlemi tablo üzerinde gerçekleştirilmektedir.
-
-WorkflowResumed
-Bir erteleme nedeni ile Suspended moda geçen bir örneğin tekrar ayağa kalkması sonrasında ve kaldığı yerden devam ederken herhangibir aktivite çalıştırılmadan önce devreye giren olaydır.
-
-WorkflowStarted
-Workflow örneği yürütülmeye başlatıldığında tetiklenir. Bu başlangıç kök aktivitenin (Root Activity) çalıştırılması sonrasında meydana gelmektedir.
-
-WorkflowSuspended
-Workflow örneği, Suspend metoduna yapılan çağrı veya Suspend aktivitesine gelinmesi nedeniyle Suspended moduna geçtiğinde tetiklenen olaydır.
-
-WorkflowTerminated
-Workflow örneği yok edildikten ama bellekten atılmadan az önce çalışan olaydır. Workflow, Terminate metodu yardımıyla, Terminate aktivitesine gelinmesi nedeniyle veya ele alınmamış bir istisna (Unhandled Exception) yüzünden Terminated durumuna geçebilir. Eğer persistence servis kullanılıyorsa, Terminate edilen workflow örneğine ait tüm kayıtlar ilgili depolama alanından kaldırılır. SQL tabanlı persistence servisi göz önüne alındığında bu, tablolar üzerinde gerekli silme işlemlerinin yapılması anlamına gelmektedir.
-
-WorkflowUnloaded
-Persistence servisleri kullanıldığında, Workflow örneği depolama alanına kaydedildikten sonra ama bellekten kaldırılmadan az önce tetiklenen olaydır.
+| Workflow Örneğine Adanmış Olaylar |  |
+| --- | --- |
+| WorkflowAborted | Workflow örneği devre dışı bırakıldığında tetiklenir. Özellikle Persistence servisi kullanıldığında önem kazınır. Nitekim devre dışı bırakılan servisin kalıcı olarak saklanması ve tekrar kaldığı yerden ayağa kaldırılması(Resume) mümkün olabilmektedir. |
+| WorkflowCompleted | Bir Workflow örneği tamamlanıp bellekten henüz kaldırılmadan önce devreye giren olaydır. Bu olaya ait metod yardımıyla host uygulamaya, tamamlanan Workflow örneğinin output parametrelerini döndürmek mümkündür. |
+| WorkflowCreated | Workflow örneği oluşturulduğunda ancak Start metodu ile çalıştırılmadan az önce tetiklenir. |
+| WorkflowIdled | Bir workflow örneği dışarıdan beklediği bir etki veya Delay aktivitesi nedeni ile içerisinde yer alan herhangibir aktiviteyi işletmediği durumlarda tetiklenir. Özellikle Idle olma durumunda Persistence hizmetlerinin kullanımı önem kazanır. |
+| WorkflowLoaded | Persistence servisi kullanıldığı durumlarda, Workflow örneğinin herhangibir aktivitesi çalıştırılmadan önce ve belleğe yüklenmesi sonrasında devreye giren olaydır. |
+| WorkflowPersisted | Persistence servisin kullanılması halinde bir workflow örneğinin saklanmak üzere kaydedilmesi sonrasında tetiklenir. Workflow persistence servisi varsayılan olarak SQL veritabanını kullandığından, söz konusu kaydetme işlemi tablo üzerinde gerçekleştirilmektedir. |
+| WorkflowResumed | Bir erteleme nedeni ile Suspended moda geçen bir örneğin tekrar ayağa kalkması sonrasında ve kaldığı yerden devam ederken herhangibir aktivite çalıştırılmadan önce devreye giren olaydır. |
+| WorkflowStarted | Workflow örneği yürütülmeye başlatıldığında tetiklenir. Bu başlangıç kök aktivitenin(Root Activity) çalıştırılması sonrasında meydana gelmektedir. |
+| WorkflowSuspended | Workflow örneği, Suspend metoduna yapılan çağrı veya Suspend aktivitesine gelinmesi nedeniyle Suspended moduna geçtiğinde tetiklenen olaydır. |
+| WorkflowTerminated | Workflow örneği yok edildikten ama bellekten atılmadan az önce çalışan olaydır. Workflow, Terminate metodu yardımıyla, Terminate aktivitesine gelinmesi nedeniyle veya ele alınmamış bir istisna(Unhandled Exception) yüzünden Terminated durumuna geçebilir. Eğer persistence servis kullanılıyorsa, Terminate edilen workflow örneğine ait tüm kayıtlar ilgili depolama alanından kaldırılır. SQL tabanlı persistence servisi göz önüne alındığında bu, tablolar üzerinde gerekli silme işlemlerinin yapılması anlamına gelmektedir. |
+| WorkflowUnloaded | Persistence servisleri kullanıldığında, Workflow örneği depolama alanına kaydedildikten sonra ama bellekten kaldırılmadan az önce tetiklenen olaydır. |
 
 Aslında WF Çalışma Zamanı Motorunun (WF Runtime Engine) kendisinin bir State Machine olduğu rahatlıkla düşünülebilir. Nitekim, yönetmekte olduğu örneklerin durumları arasındaki geçişleri kontrol altına almakta ve bununla ilişkili olayları yönetmektedir. Temel olarak workflow örnekleri Created, Running, Suspended, Completed ve Terminated olmak üzere 5 farklı duruma sahip olabilir. Bu durum aşağıdaki diyagram ile özetlenebilir.
 
@@ -335,9 +309,11 @@ namespace WFCostFactory
 
 İlk olarak System.Workflow.Runtime.Hosting isim alanında (namespace) yer alan SqlWorkflowPersistence hizmetine ait bir nesne örneği oluşturulur. Nesne örneklenirken yapıcı metod (Constructor) içerisinde persistence için kullanılacak veri depolama alanın bağlantı bilgisi verilmektedir. Bu en basit yapıcı metodu versiyonudur. Diğer versiyonlarını kullanarak farklı başlangıç ayarlamaları yapılabilir. Söz gelimi Workflow örneklerinin Idle moda geçtiklerinde bellekten kaldırılıp kaldırılmayacakları, birden fazla Workflow çalışma zamanı moturunun aynı WF örneklerini kullanmaları halinde, birbirlerini kesmemeleri için kilit sürelerinin (Lock Time) ne olacağı gibi kriterlerde yapıcı metod parametreleri ile belirlenebilir.
 
-> Servis tanımlaması ile ilgili ayarlar istenirse konfigurasyon dosyasında da yapılabilir. Bunun için host uygulamaya ait konfigurasyon dosyasında örneğin aşağıdaki tanımlamaların yapılması yeterlidir.
-> ![mk270_13.gif](/assets/images/2009/mk270_13.gif)
-> Tabi host uygulama içerisinde WorkflowRuntime nesne örneği oluşturulurken wfRuntime=new WorkflowRuntime ("WorkflowRuntime"); şeklinde bir kullanım söz konusudur. Burada parametre olarak app.config dosyasındaki section adı verilmektedir. Bu ad benzersizdir. Yani farklı bir isim olamaz. Diğer taraftan yapıcı metodun bu versiyonunun çalıştırılabilmesi için (örneğin geliştirdiğimiz Console uygulamasında) mutlaka System.Configuration assembly'ının projeye referans edilmesi gerekmektedir.
+Servis tanımlaması ile ilgili ayarlar istenirse konfigurasyon dosyasında da yapılabilir. Bunun için host uygulamaya ait konfigurasyon dosyasında örneğin aşağıdaki tanımlamaların yapılması yeterlidir.
+
+![mk270_13.gif](/assets/images/2009/mk270_13.gif)
+
+Tabi host uygulama içerisinde WorkflowRuntime nesne örneği oluşturulurken wfRuntime=new WorkflowRuntime ("WorkflowRuntime"); şeklinde bir kullanım söz konusudur. Burada parametre olarak app.config dosyasındaki section adı verilmektedir. Bu ad benzersizdir. Yani farklı bir isim olamaz. Diğer taraftan yapıcı metodun bu versiyonunun çalıştırılabilmesi için (örneğin geliştirdiğimiz Console uygulamasında) mutlaka System.Configuration assembly'ının projeye referans edilmesi gerekmektedir.
 
 Artık uygulamamızı test etmeye başlayabiliriz. Konuyu kolay takip edebilmek amacıyla geliştirdiğiniz örneği Debug ederken adım adım ilerlemenizi öneririm. Öncelikle programın çalışması sonrasındaki ekran görüntüsüne bakalım.
 

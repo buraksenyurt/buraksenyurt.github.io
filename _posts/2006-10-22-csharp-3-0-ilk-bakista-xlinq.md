@@ -15,43 +15,21 @@ XLINQ ise, yine dil tabanlı sorgulama özelliklerini alıp bunların XML verile
 
 > XLINQ ile ilgili denemeleri [LINQ Preview](http://msdn.microsoft.com/data/ref/linq/) ekini kullanarak Vs.Net 2005 üzerinden deneyebilirsiniz.
 
-XLINQ için gerekli tipler, System.Xml.XLinq isim alanı altında yer almaktadır. Bir Xml dökümanı ve içerisinde yer alabilecek elemanlar göz önüne alındığında bunların karşılıklarının yönetimli kod (managed code) tarafında X harfi ile başlayan tiplerle ifade edildiğini görebiliriz. Örneğin Xml elementlerini XElement tipi, nitelikleri (Attribute) XAttribute tipi karşılamaktadır. System.Xml.XLinq isim alanında (namespace) bu iki tipin dışında aşağıdaki tabloda bir kısmı verilen diğer yönetimli tiplerde yer almaktadır.
+XLINQ için gerekli tipler, System.Xml.XLinq isim alanı altında yer almaktadır. Bir Xml dökümanı ve içerisinde yer alabilecek elemanlar göz önüne alındığında bunların karşılıklarının yönetimli kod (managed code) tarafında X harfi ile başlayan tiplerle ifade edildiğini görebiliriz. Örneğin Xml elementlerini XElement tipi, nitelikleri (Attribute) XAttribute tipi karşılamaktadır. System.Xml.XLinq isim alanında (namespace) bu iki tipin dışında aşağıdaki tabloda bir kısmı verilen diğer yönetimli tiplerde yer almaktadır
 
-Tip Adı
-Xml Karşılığı
-
-XDocument
-Bir Xml dökümanı içermekle sorumludur. XDocument sayesinde sıfırdan Xml içerikleri bellek üzerinde oluşturulabilir, kaydedilebilir yada var olan bir Xml içeriği belleğe yüklenebilir.
-
-XElement
-Xml dökümanlarında yer alan element'lerin yönetimli kod tarafındaki karşılığıdır.
-
-XAttribute
-Xml dökümanlarında yer alan niteliklerin (attribute) yönetimli kod tarafındaki karşılığıdır.
-
-XComment
-Xml dökümanlarında kullandığımız yorum satırlarını yönetim kod tarafında kullanımamızı sağlar.
-
-XNode
-Xml dökümanı içerisinde, node (boğum) olarak ifade edilebilecek her türden elemanı yönetimli kod tarafında ele alabilmek amacıyla kullanılır.
-
-XProcessingInstruction
-Xml dökümanlarının başında yer alan processing instruction'ların managed tarafta ele alınabilmesini sağlar. Bu iş için XDecleration sınıfındanda yararlanılmaktadır. Örneğin Xml dökümanları başına standard olarak gelen versiyon numarası, encoding gibi bilgileri bu XDecleration yardımıyla kod tarafında tanımlayabiliriz.
-
-XText
-Çoğunlukla CData (Character Data) bölümlerinin yada birleştirimiş metinlerin yönetimli kod tarafında ele alınabilmesi için kullanılır.
-
-XNamespace
-Xml içerisinde yer alan isim alanlarının yönetimli kod tarafında ele alınabilmesini sağlar.
-
-XContainer
-XDocument ve XElement sınıflarının türetildikleri abstract sınıftır. Özellikle Xml dökümanı üzerinde sorgulamalar yapabilmek için gerekli fonksiyonelikleride sağlar.
-
-XDocumentType
-DTD (Document Type Definitions) yapısının yönetimli kod tarafındaki karşılığıdır.
-
-XElementSequence
-LINQ için geliştirilmiş, genişletişmiş metodları (extension methods) barındıran static sınıftır. Extension Methods kavramı C# 3.0 ile birlikte gelmiştir ve var olan framework tiplerine ek metodlar yazılabilmesini sağlamaktadır.
+| **Tip Adı** | **Xml Karşılığı** |
+| --- | --- |
+| **XDocument** | Bir Xml dökümanı içermekle sorumludur. XDocument sayesinde sıfırdan Xml içerikleri bellek üzerinde oluşturulabilir, kaydedilebilir yada var olan bir Xml içeriği belleğe yüklenebilir. |
+| **XElement** | Xml dökümanlarında yer alan element' lerin yönetimli kod tarafındaki karşılığıdır. |
+| **XAttribute** | Xml dökümanlarında yer alan niteliklerin (attribute) yönetimli kod tarafındaki karşılığıdır. |
+| **XComment** | Xml dökümanlarında kullandığımız yorum satırlarını yönetim kod tarafında kullanımamızı sağlar. |
+| **XNode** | Xml dökümanı içerisinde, node (boğum) olarak ifade edilebilecek her türden elemanı yönetimli kod tarafında ele alabilmek amacıyla kullanılır. |
+| **XProcessingInstruction** | Xml dökümanlarının başında yer alan processing instruction' ların managed tarafta ele alınabilmesini sağlar. Bu iş için XDecleration sınıfındanda yararlanılmaktadır. Örneğin Xml dökümanları başına standard olarak gelen versiyon numarası , encoding gibi bilgileri bu XDecleration yardımıyla kod tarafında tanımlayabiliriz. |
+| **XText** | Çoğunlukla CData (Character Data) bölümlerinin yada birleştirimiş metinlerin yönetimli kod tarafında ele alınabilmesi için kullanılır. |
+| **XNamespace** | Xml içerisinde yer alan isim alanlarının yönetimli kod tarafında ele alınabilmesini sağlar. |
+| **XContainer** | XDocument ve XElement sınıflarının türetildikleri abstract sınıftır. Özellikle Xml dökümanı üzerinde sorgulamalar yapabilmek için gerekli fonksiyonelikleride sağlar. |
+| **XDocumentType** | DTD (Document Type Definitions) yapısının yönetimli kod tarafındaki karşılığıdır. |
+| **XElementSequence** | LINQ için geliştirilmiş, genişletişmiş metodları (extension methods) barındıran static sınıftır. Extension Methods kavramı C# 3.0 ile birlikte gelmiştir ve var olan framework tiplerine ek metodlar yazılabilmesini sağlamaktadır. |
 
 Dilerseniz XLINQ ile geliştiricilerin hayatına girecek bir kaç yeniliği örnekler ile uygulayarak makalemize devam edelim. İlk olarak bir Xml verisinin bellek üzerinde oluşturulması sırasında XDocument tipinden nasıl yararlanabileceğimizi göreceğiz. Bu amaçla yeni bir LINQ Console Application projesi oluşturalım ve aşağıdaki kod satırlarını yazalım.
 
@@ -131,7 +109,7 @@ XElement tipi ile oluşturulan Xml elemanını var olan XDocument nesnesinin iş
 
 Gelelim dil tabanlı sorgulama özelliklerinin XLINQ içerisindeki yerine. LINQ getirdiği imkanlar sayesinde veriler üzerinde sorgulamalar yapmamızı kolaylaştıracak yenilikler getirmektedir. Buna göre özellikle Sql'den aşina olduğumuz select, where, orderby, from, sum gibi pek çok kavramı, IEnumerable dan türemiş.Net tiplerinin sunduğu veriler üzerinde, veritabanı kaynaklarının nesnel karşılıklarının sunulduğu varlıklar (entities) üzerinde kullanabilmemiz mümkündür. Bu yenilikler kendisini Xml verilerinin sorgulanmasında da göstermektedir. Örneğin, aşağıdaki gibi örnek bir Xml içeriğimiz olduğunu düşünelim.
 
-```csharp
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Personelimiz>
     <Personel ID="1">
@@ -191,7 +169,7 @@ LINQ sorgusu, XElement tipine ait nesne örneği oluşturulurken ikinci parametr
 
 Şimdi XLINQ'nun DLINQ ile olan yakın ilişkisine bir göz atalım. Bildiğiniz gibi DLINQ mimarisinde, veritabanı nesnelerini uygulama tarafında temsil ettiğimiz objeler üzerinde LINQ sorguları çalıştırabilmekteyiz. Yani bir veritabanı tablosunu uygulama ortamında nesnel olarak ifade eden bir veri üzerinde dil tabanlı sorgular çalıştırabilmekteyiz. XLINQ ilede, DLINQ nun sunduğu varlıklar (entity) üzerinde yapacağımız LINQ sorguları sonucu elde edilen sonuç kümelerini çalışma zamanında Xml içeriği haline getirebilme şansına sahibiz. Yani DLINQ ve XLINQ özelliklerini bir arada ele alabiliriz. Bu konuyu daha net anlayabilmek için Northwind veritabanının entity karşılıklarını ele alacağımız bir örnek ile devam edeceğiz. LINQ Preview ile birlikte, DLINQ içerisinde kullanılan varlıkları (entities) yazmak yerine kolayca hazırlayabileceğimiz bir araç (tool) gelmektedir. SqlMetal isimli bu aracı aşağıdaki gibi komut satırından çalıştırabiliriz.
 
-```csharp
+```bash
 D:\Program Files\LINQ Preview\Bin>sqlmetal /server:localhost /database:Northwind /code:NorthwindBase.cs
 ```
 

@@ -171,55 +171,25 @@ AJAX uyumlu WCF servislerinde önem arz eden konulardan biriside, istemcilerin s
 
 > JSON (JavaScript Object Notation) özellikle AJAX uyumlu servisler (Ajax Enabled WCF Services/Web Services) ile istemciler arasında hızlı veri değiş tokuşu yapılmasına olanak tanıyan önemli veri formatı (Data Format) standartlarındadır.
 
-JSON serileştirmede de servis tarafından istemciye yayınlanan veri tiplerinin önemi büyüktür. Nitekim WCF gibi.Net tabanlı bir ortamda, CLR tiplerinin JSON karşılıklarının bilinmesinde yarar vardır. Bu amaçla öncelikli olarak aşağıdaki tablonun göz önüne alınması yararlı olabilir. Hemen hemen tüm CLR tipleri (Common Language Runtime Types) uygun JSON tiplerine dönüştürülmektedir.
+JSON serileştirmede de servis tarafından istemciye yayınlanan veri tiplerinin önemi büyüktür. Nitekim WCF gibi.Net tabanlı bir ortamda, CLR tiplerinin JSON karşılıklarının bilinmesinde yarar vardır. Bu amaçla öncelikli olarak aşağıdaki tablonun göz önüne alınması yararlı olabilir. Hemen hemen tüm CLR tipleri (Common Language Runtime Types) uygun JSON tiplerine dönüştürülmektedir
 
-.Net Tipi
-JSON Karşılığı
-
-Int16, Int32, Double, Decimal gibi sayısal tiplerin tamamı.
-Number
-
-Boolean
-Boolean
-
-String, Char
-String
-
-Timespan, Guid, Uri
-String
-
-XmlElement, XmlNode gibi Xml tipleri
-String
-
-ISerializable, DataSet gibi tipler
-String
-
-Enum
-Number
-
-Byte Dizisi
-Number Dizisi
-
-DateTime
-DateTime veya String
-
-Collections (Koleksiyonlar), Dictionary Tipleri ve Arrays (Diziler)
-Array
-
-Herhangibir tipin Null değeri
-Null
-
-DataContract niteliğini (Attribute) uygulamış tipler
-Complex Type
-
-ISerializable arayüzünü (Interface) uygulamış tipler
-Complex Type
-
-DBNull
-Empty Complex Type
-
-XmlQualifiedName
-String
+| .Net Tipi | JSON Karşılığı |
+| --- | --- |
+| Int16, Int32, Double, Decimal gibi sayısal tiplerin tamamı. | Number |
+| Boolean | Boolean |
+| String, Char | String |
+| Timespan, Guid, Uri | String |
+| XmlElement, XmlNode gibi Xml tipleri | String |
+| ISerializable, DataSet gibi tipler | String |
+| Enum | Number |
+| Byte Dizisi | Number Dizisi |
+| DateTime | DateTime veya String |
+| Collections(Koleksiyonlar), Dictionary Tipleri ve Arrays (Diziler) | Array |
+| Herhangibir tipin Null değeri | Null |
+| DataContract niteliğini(Attribute) uygulamış tipler | Complex Type |
+| ISerializable arayüzünü(Interface) uygulamış tipler | Complex Type |
+| DBNull | Empty Complex Type |
+| XmlQualifiedName | String |
 
 Buradaki tablo.Net ve JSON tipleri arasındaki eşleştirmelerin basit bir özetidir. Tip dönüşümleri sırasında göz önüne alınması gereken oldukça fazla kural ve vaka bulunmaktadır. (Söz konusu durumlar makalemizin konusunu aşmaktadır. Ancak detaylı bilgi için [MSDN](http://msdn2.microsoft.com/en-us/library/bb412170.aspx) kaynaklarındaki ilgili bağlantıya bakılabilir.)
 
@@ -370,7 +340,7 @@ using (FileStream stream = new FileStream("Urunler.json", FileMode.Open, FileAcc
 
 Bu kez serileştirme işleminde Urun tipinden bir dizi (Array) söz konusudur. Bu sebepten DataContractJsonSerializer sınıfına ait nesne örneklenirken parametre olarak typeof (Urun[]) bilgisi verilmektedir. Sonuç olarak üretilen JSON formatlı veri içeriği aşağıdaki gibi olacaktır.
 
-```text
+```json
 [{"Ad":"Urun X","Fiyat":1.45,"Id":2,"StokGirisTarihi":"\/Date(1196546400000+0200)\/"},{"Ad":"Urun Y","Fiyat":2.34,"Id":3,"StokGirisTarihi":"\/Date(1201989600000+0200)\/"},{"Ad":"Z Urun","Fiyat":34.56,"Id":4,"StokGirisTarihi":"\/Date(1149627600000+0300)\/"}]
 ```
 
@@ -393,7 +363,7 @@ using (SqlConnection conn = new SqlConnection("data source=.;database=AdventureW
 
 Bu kodun çalışma sonrasın oluşan Products.json dosyasının içeriği aşağıdaki gibi olur.
 
-```text
+```xml
 "<DataSet><xs:schema id=\"NewDataSet\" xmlns:xs=\"http:\/\/www.w3.org\/2001\/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\"> <xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:UseCurrentLocale=\"true\"> <xs:complexType> <xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\"><xs:element name=\"Table\"> <xs:complexType><xs:sequence><xs:element name=\"ProductId\" type=\"xs:int\" minOccurs=\"0\"\/> <xs:element name=\"Name\" type=\"xs:string\" minOccurs=\"0\"\/><xs:element name=\"ListPrice\" type=\"xs:decimal\" minOccurs=\"0\"\/><\/xs:sequence> <\/xs:complexType><\/xs:element><\/xs:choice> <\/xs:complexType> <\/xs:element><\/xs:schema><diffgr:diffgram xmlns:diffgr=\"urn:schemas-microsoft-com:xml-diffgram-v1\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\"><NewDataSet> <Table diffgr:id=\"Table1\" msdata:rowOrder=\"0\"><ProductId>1<\/ProductId> <Name>Adjustable Race<\/Name><ListPrice>0.0000<\/ListPrice><\/Table><Table diffgr:id=\"Table2\" msdata:rowOrder=\"1\"><ProductId>2<\/ProductId> <Name>Bearing Ball<\/Name><ListPrice>0.0000<\/ListPrice><\/Table><Table diffgr:id=\"Table3\" msdata:rowOrder=\"2\"><ProductId>3<\/ProductId><Name>BB Ball Bearing<\/Name><ListPrice>0.0000<\/ListPrice><\/Table><Table diffgr:id=\"Table4\" msdata:rowOrder=\"3\"><ProductId>4<\/ProductId><Name>Headset Ball Bearings<\/Name><ListPrice>0.0000<\/ListPrice><\/Table><Table diffgr:id=\"Table5\" msdata:rowOrder=\"4\"><ProductId>316<\/ProductId><Name>Blade<\/Name> <ListPrice>0.0000<\/ListPrice><\/Table><\/NewDataSet><\/diffgr:diffgram><\/DataSet>"
 ```
 
@@ -504,7 +474,7 @@ Gelelim istemci tarafındaki uygulamamıza. Bu sefer ilk örnekten farklı olara
 
 ![mk243_15.gif](/assets/images/2008/mk243_15.gif)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -596,7 +566,7 @@ Gelelim istemci tarafındaki uygulamamıza. Bu sefer ilk örnekten farklı olara
 </html>
 ```
 
-İstemci tarafında klasik olarak AJAX uyumlu Javascript kodları yer almaktadır. Önemli olan noktalardan bir tanesi, xmlHttp isimli nesnesinin örneklenmesinden sonra open metodu ile WCF servisine doğru yapılan çağrıdır. Dikkat edilecek olursa WebInvoke niteliği nedeni ile http://localhost/AjaxServiceDemo2/Service.svc/UrunBul isimli bir URL bilgisi kullanılmaktadır.
+İstemci tarafında klasik olarak AJAX uyumlu Javascript kodları yer almaktadır. Önemli olan noktalardan bir tanesi, xmlHttp isimli nesnesinin örneklenmesinden sonra open metodu ile WCF servisine doğru yapılan çağrıdır. Dikkat edilecek olursa WebInvoke niteliği nedeni ile `http://localhost/AjaxServiceDemo2/Service.svc/UrunBul` isimli bir URL bilgisi kullanılmaktadır.
 
 Diğer taraftan istemciden servis operasyonuna doğru gönderilecek olan talebin (Request) başlık kısmının içeriğinin JSON olacağı setRequestHeader metodu ile belirlenmektedir. Sonrasında send metodu ile ilgili paket WCF servisine gönderilmektedir. İşlem tamamlandığında devreye giren fonksiyon içerisinde responseText özelliğinden de yararlanılarak dönen cevap alınmakta ve sayfa üzerindeki ilgili bileşenlere gelen değerler aktarılmaktadır. Burada d isimli özellik yardımıyla aslında Urun tipinin verisine ulaşılabilmektedir. Bunu daha iyi görebilmek için ilgili kodlar debug edilerek QuickWatch çıktısına bakılabilir.
 

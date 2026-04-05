@@ -18,10 +18,11 @@ Atomicity ilkesine göre bir transaction'ın başarılı olması, içerisinde ye
 
 Elbette transaction'larda söz konusu olabilecek Dirty-Read, Phantom, Non-Repeatable Read gibi durumların hangisinin tercih edileceğine göre çeşitli izolasyon seviyeleri (Isolation Levels) pek çok veri tabanı sisteminde ele alınmaktadır. Bunlar.Net tarafındaki Transaction sınıflarıncada kullanılmakta ve IsolationLevel enum sabitleri ile işaret edilmektedir. Söz konusu seviyeler WCF içerisindede bir servis davranışı (Service Behavior) olarak belirtilebilmektedir. Söz konusu bildirim ServiceBehavior niteliğinin TransactionIsolationLevel özelliğinin değeri ile sabitlenmektedir.
 
-> Temel Olarak Transaction'larda Düşünelecek Senaryolar;
-> Phantom; başlatılan iki transaction olduğunu düşünelim. Bu transactionların birisi açık iken yeni bir veri girişi yapıp işlemi onaylıyor (Commit) olsun. Bu durumda halen daha açık olan diğer transaction aynı veri kümesini tekrardan talep ettiğinde daha önce kendisinde var olmayan yeni eklenmiş bir satır ile karşılaşacaktır. Bu satırlar hayalet (Phantom) olarak adlandırılır.
-> Non-Repeatable Read; yine başlatılmış iki transaction olduğunu düşünelim. Bu sefer açık olan transaction'lardan birisi var olan veri kümesinde belirli bir satırda (satırlarda) güncelleme işlemi yapmış olsun. Sonrasında ise yapılan bu değişiklikleri onaylasın (Commit). Açık kalan diğer transaction'ın tekrardan aynı veri kümesini çektiğini düşünelim. Bu durumda açık olan transaction daha önce baktığı verilerin değiştiğini görecektir. Bu Non-Repeatable Read olarak adlandırılan bir durumdur.
-> Dirty-Read; yine başlatılmış iki transaction olduğunu göz önüne alalım. Bunlardan birisi veri kümesine herhangibir satır eklemiş veya güncellemiş olsun. Ancak bu sırada diğer transaction'ın tekrardan veri çektiğini düşünelim. Burada dikkat edilmesi gereken durum şudur; iki transaction açık iken, herhangibiri commit edilmeden önce diğeri veri çekebilmektedirler. Dolayısıyla diğer transaction var olan ekleme ve değişiklikleri o an için görecektir. Ne varki bu senaryoda değişiklikleri yapan transaction işlemleri Commit etmez. Aksine geri alır (Rollback). Bu durumda daha önce tekrardan veri çeken açık transaction'da aslında geri alınmış güncellemeler ve eklemeler görülmektedir. Bu Dirty-Read durumu olarak adlandırılmaktadır.
+Temel Olarak Transaction'larda Düşünelecek Senaryolar; Phantom; başlatılan iki transaction olduğunu düşünelim. Bu transactionların birisi açık iken yeni bir veri girişi yapıp işlemi onaylıyor (Commit) olsun. Bu durumda halen daha açık olan diğer transaction aynı veri kümesini tekrardan talep ettiğinde daha önce kendisinde var olmayan yeni eklenmiş bir satır ile karşılaşacaktır. Bu satırlar hayalet (Phantom) olarak adlandırılır.
+
+Non-Repeatable Read; yine başlatılmış iki transaction olduğunu düşünelim. Bu sefer açık olan transaction'lardan birisi var olan veri kümesinde belirli bir satırda (satırlarda) güncelleme işlemi yapmış olsun. Sonrasında ise yapılan bu değişiklikleri onaylasın (Commit). Açık kalan diğer transaction'ın tekrardan aynı veri kümesini çektiğini düşünelim. Bu durumda açık olan transaction daha önce baktığı verilerin değiştiğini görecektir. Bu Non-Repeatable Read olarak adlandırılan bir durumdur.
+
+Dirty-Read; yine başlatılmış iki transaction olduğunu göz önüne alalım. Bunlardan birisi veri kümesine herhangibir satır eklemiş veya güncellemiş olsun. Ancak bu sırada diğer transaction'ın tekrardan veri çektiğini düşünelim. Burada dikkat edilmesi gereken durum şudur; iki transaction açık iken, herhangibiri commit edilmeden önce diğeri veri çekebilmektedirler. Dolayısıyla diğer transaction var olan ekleme ve değişiklikleri o an için görecektir. Ne varki bu senaryoda değişiklikleri yapan transaction işlemleri Commit etmez. Aksine geri alır (Rollback). Bu durumda daha önce tekrardan veri çeken açık transaction'da aslında geri alınmış güncellemeler ve eklemeler görülmektedir. Bu Dirty-Read durumu olarak adlandırılmaktadır.
 
 Durability ilkesine göre transaction içerisinde yer alan iş parçalarında bir aksaklık olması halinde sistemin ilk haline dönebilmesi gerekir. Yani taşlar ilk konumlarındaki yerlerinde kalabilmeldir.
 
@@ -54,37 +55,19 @@ OleTx tipinde, transaction başlatıldığı servis, uygulama alanı ve makine s
 
 WSAT (Web Service Atomic) tipinden transactionlar aynen OleTx'de oluduğu gibi servis, uygulama alanı ve makine sınırlarını aşabilir. Diğer taraftan WS-Atomic global bir standarttır. Özellikle web servislerinde yaygın olarak kullanılmaktadır. Bu nedele açık metin tabanlı olarak çalıştığında farklı platformlar tarafından kullanılabilir ve OleTx tipinde olduğu gibi firewall engeline takılmaz. Bu sebeten internet tabanlı sistemlerdeki dağıtık transaction'ların yönetiminde tercih edilen bir protokoldür. Elbetteki intranet tabanlı sistemlerede istenirse uygulanabilir.
 
-Bildiğiniz gibi Windows Communication Foundation içerisinde servisler ile istemciler arasındaki iletişim sağlanırken pek çok ayarlamayı bünyesinde barındıran bağlayıcı tipler (Binding Type) kullanılmaktadır. Bağlayıcı tipler iletişim protokolü, güvenlik ayarları dışında, transaction protokollerininde kolay bir şekilde belirlenmesinde önemli görevler üstlenir. Bunların bir kısmının OleTx yada WSAT transaction protokolleri için desteği bulunmamaktadır. Bir kısmınında hiç bir transaction protokolüne desteği bulunmamaktadır. Aşağıdaki tabloda var olan Windows Communication Foundation bağlayıcı tiplerinin desteklediği varsayılan transaction protokolleri yer almaktadır.
+Bildiğiniz gibi Windows Communication Foundation içerisinde servisler ile istemciler arasındaki iletişim sağlanırken pek çok ayarlamayı bünyesinde barındıran bağlayıcı tipler (Binding Type) kullanılmaktadır. Bağlayıcı tipler iletişim protokolü, güvenlik ayarları dışında, transaction protokollerininde kolay bir şekilde belirlenmesinde önemli görevler üstlenir. Bunların bir kısmının OleTx yada WSAT transaction protokolleri için desteği bulunmamaktadır. Bir kısmınında hiç bir transaction protokolüne desteği bulunmamaktadır. Aşağıdaki tabloda var olan Windows Communication Foundation bağlayıcı tiplerinin desteklediği varsayılan transaction protokolleri yer almaktadır
 
-Binding Tipi
-Transaction Protokolü Desteği
-
-BasicHttpBinding
-Destek yok
-
-WSHttpBinding
-WSAT
-
-WSDualHttpBinding
-WSAT
-
-WSFederationHttpBinding
-WSAT
-
-NetTcpBinding
-OleTx
-
-NetPeerTcpBinding
-Destek yok
-
-NetNamedPipesBinding
-OleTx
-
-NetMsmqBinding
-Destek yok
-
-MsmqIntegrationBinding
-Destek yok
+| **Binding Tipi** | **Transaction Protokolü Desteği** |
+| --- | --- |
+| BasicHttpBinding | Destek yok |
+| WSHttpBinding | WSAT |
+| WSDualHttpBinding | WSAT |
+| WSFederationHttpBinding | WSAT |
+| NetTcpBinding | OleTx |
+| NetPeerTcpBinding | Destek yok |
+| NetNamedPipesBinding | OleTx |
+| NetMsmqBinding | Destek yok |
+| MsmqIntegrationBinding | Destek yok |
 
 Burada dikkat edilmesi gereken konulardan biriside NetTcpBinding, NetNamedPipesBinding için varsayılan olan OleTx transaction desteğinin WSAT olarak da ayarlanabileceğidir. Ancak intranet üzerinde koşan Windows tabanlı bir sistemde bu performası olumsuz etkileyecek bir değişiklik olabilir. Yinede istenirse, intranet üzerinde farklı platformlar söz konusu olduğunda ilgili bağlayıcı tipler için WSAT desteği seçilebilir.
 

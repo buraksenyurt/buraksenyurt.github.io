@@ -29,37 +29,18 @@ Bizim servisin dönüş yolculuğu bir başkadır. Her gün yaklaşık git gel n
 
 Şirkete ilk başladığım günlerde servisteki pek çok kişi bana bakıp rapçi olduğumu düşünmüş ve İhsan Bey'in çaldığı şarkıları pek sevemeyeceğime kanaat getirmişti. Aslında lise yıllarında sıkı bir Heavy Metal'ci olan ben büyüdükçe farklı tınıları, farklı kültürlerin tonlamalarını da dinler olmuştum. Müziğin dili, dini, ırkı olmaz diyenlerdenim. Zaman geçtikçe ve özellikle plak merakım da başlayınca Aşık Veysel'den Joe Satriani'ye, Coşkun Sabah'tan Pink Floyd'a, Barış Manço'dan Metallica'ya, Sezen Aksu'dan Mozart'a kadar çok geniş bir müzik keyfine ulaştığımı fark ettim. Bu konuya nereden mi geldik? Microsoft'un Razor'unu kurcalarken kaleme aldığım derlemeye nasıl bir giriş yaparım diye düşünürken aklıma gelen ACDC'nin The Razors Edge albümünden. Haydi başlayalım;)
 
-[Saturday-Night-Works çalışmalarımdaki 21 numaralı örnek](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2021%20-%20Introducing%20Razor)teki amacım, Microsoft'un Asp.Net Core MVC tarafında özellikle sayfa odaklı senaryolar için geliştirdiği Razor çatısını tanımaktı. Bu çatıda sayfalar doğrudan istemci taleplerini karşılayıp arada bir Controller'a uğramadan sayfa modeli (PageModel) ile konuşabilmekte. Razor sayfaları SayfaAdı.cshtml benzeri olup kullandıkları sayfa modelleri SayfaAdi.cshtml.cs şeklinde oluşturuluyor. Genel hatları ile URL yönlendirmeleri aşağıdaki tablodakine benzer şekilde olmakta. Örneğin /Book adresine göre pages klasöründeki Book.cshtml isimli sayfa talep edilmiş oluyor. Sayfanın arka plan kodları da aynı klasördeki cs dosyasında yer alıyor. Web standartları gereği /Index ve / talepleri aynı route adres olarak değerlendiriliyor. Tabii adreslere farklı şekillerde adresleme yapmakta mümkün. Tablodaki /Category önekli adres yönlendirmeleri bu anlamda düşünülebilir. Elbette konuyu anlamanın en iyi yolu bir örneği çalışmaktan geçiyor.
+[Saturday-Night-Works çalışmalarımdaki 21 numaralı örnek](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2021%20-%20Introducing%20Razor)teki amacım, Microsoft'un Asp.Net Core MVC tarafında özellikle sayfa odaklı senaryolar için geliştirdiği Razor çatısını tanımaktı. Bu çatıda sayfalar doğrudan istemci taleplerini karşılayıp arada bir Controller'a uğramadan sayfa modeli (PageModel) ile konuşabilmekte. Razor sayfaları SayfaAdı.cshtml benzeri olup kullandıkları sayfa modelleri SayfaAdi.cshtml.cs şeklinde oluşturuluyor. Genel hatları ile URL yönlendirmeleri aşağıdaki tablodakine benzer şekilde olmakta. Örneğin /Book adresine göre pages klasöründeki Book.cshtml isimli sayfa talep edilmiş oluyor. Sayfanın arka plan kodları da aynı klasördeki cs dosyasında yer alıyor. Web standartları gereği /Index ve / talepleri aynı route adres olarak değerlendiriliyor. Tabii adreslere farklı şekillerde adresleme yapmakta mümkün. Tablodaki /Category önekli adres yönlendirmeleri bu anlamda düşünülebilir. Elbette konuyu anlamanın en iyi yolu bir örneği çalışmaktan geçiyor
 
-Örnek URL Adresi
-Karşılayan Razor Sayfası
-Model Nesnesi
+| Örnek URL Adresi | Karşılayan Razor Sayfası | Model Nesnesi |
+| --- | --- | --- |
+| /Book | pages/Book.cshtml | pages/book.cshtml.cs |
+| /Category/Product | pages/Category/Product.cshtml | pages/Category/Product.cshtml.cs |
+| /Category | pages/Category/Index.cshtml | pages/Category/Index.cshtml.cs |
+| /Category/Index | pages/Category/Index.cshtml | pages/Category/Index.cshtml.cs |
+| /Index | pages/Index.cshtml | pages/Index.cshtml.cs |
+| / | pages/Index.cshtml | pages/Index.cshtml.cs |
 
-/Book
-pages/Book.cshtml
-pages/book.cshtml.cs
-
-/Category/Product
-pages/Category/Product.cshtml
-pages/Category/Product.cshtml.cs
-
-/Category
-pages/Category/Index.cshtml
-pages/Category/Index.cshtml.cs
-
-/Category/Index
-pages/Category/Index.cshtml
-pages/Category/Index.cshtml.cs
-
-/Index
-pages/Index.cshtml
-pages/Index.cshtml.cs
-
-/
-pages/Index.cshtml
-pages/Index.cshtml.cs
-
-> Çalışmada veri girişi yapılabilen basit bir form tasarlayıp, Razor'un kod dinamiklerini anlamak istedim. İlk aşamada bilgileri InMemory veri tabanında tutmayı planladım. Son aşamada ise SQLite veri tabanını devreye aldım.
+Çalışmada veri girişi yapılabilen basit bir form tasarlayıp, Razor'un kod dinamiklerini anlamak istedim. İlk aşamada bilgileri InMemory veri tabanında tutmayı planladım. Son aşamada ise SQLite veri tabanını devreye aldım.
 
 ## Başlangıç
 
@@ -134,12 +115,15 @@ namespace MyBookStore.Data
 }
 ```
 
-> Örnek ilk başta InMemory veri tabanını kullanacak şekilde tasarlanmıştır. Bu nedenle Startup.cs dosyasındaki ConfigureServices metodunda aşağıdaki gibi bir enjekte söz konusudur.
-> ```bash
-> // InMemory veritabanı kullanacağımız DbContext'imizi DI ile ekledik
-> services.AddDbContext<StoreDataContext>(options=>options.UseInMemoryDatabase("StoreLook"));
-> ```
-> SQLite kullanımına geçildiğindeyse buradaki servis entegrasyonu şöyle olmalıdır.
+Örnek ilk başta InMemory veri tabanını kullanacak şekilde tasarlanmıştır. Bu nedenle Startup.cs dosyasındaki ConfigureServices metodunda aşağıdaki gibi bir enjekte söz konusudur.
+
+```bash
+// InMemory veritabanı kullanacağımız DbContext'imizi DI ile ekledik
+services.AddDbContext<StoreDataContext>(options=>options.UseInMemoryDatabase("StoreLook"));
+```
+
+SQLite kullanımına geçildiğindeyse buradaki servis entegrasyonu şöyle olmalıdır.
+
 > ```csharp
 > // appsettings'den SQLite için gerekli connection string bilgisini aldık
 > var conStr=Configuration.GetConnectionString("StoreDataContext");
@@ -194,7 +178,7 @@ namespace MyBookStore.Pages
 
 AddBook.cshtml.cs
 
-```text
+```html
 @page // sayfanın bir razor page olduğunu belirttik
 @model MyBookStore.Pages.AddBookModel  // sayfanın konuşacağı model sınıfını işaret ettik.
 
@@ -299,7 +283,7 @@ namespace MyBookStore.Pages
 
 EditBook.cshtml
 
-```text
+```html
 @page "{id:int}" // Sayfa direktifinde parametre bilidirmi söz konusu. Nitekim buraya güncellenmek istenen sayfanın id bilgisini almamız gerekiyor
 @model MyBookStore.Pages.EditBookModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -397,7 +381,7 @@ namespace MyBookStore.Pages
 
 Index.cshtml
 
-```text
+```html
 @page
 @model IndexModel
 @{
@@ -434,7 +418,7 @@ Index.cshtml
 
 Ayrıca shared klasöründe yer alan _Layout.cshtml dosyasınıda kurcalayıp navigasyon sekmesindeki linklerin bizim istediğimiz şekilde çıkmasını sağlayabiliriz.
 
-```text
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -525,7 +509,7 @@ Kodlama tarafını tamamladıktan sonra uygulamayı aşağıdaki terminal komutu
 dotnet run
 ```
 
-Eğer uygulama sorunsuz çalıştıysa http://localhost:5401/ adresi üzerinden hareket edebiliriz. İster üst bara eklediğimiz linkten ister http://localhost:5401/AddBook adresine giderek yeni kitap ekleme sayfasına ulaşabiliriz (Razor için belirlenen varsayılan adres WestWorld sisteminde kullanıldığı için UseUrls metodu ile onu 5401e çektim. Program.cs'e bakınız)
+Eğer uygulama sorunsuz çalıştıysa `http://localhost:5401/` adresi üzerinden hareket edebiliriz. İster üst bara eklediğimiz linkten ister `http://localhost:5401/AddBook` adresine giderek yeni kitap ekleme sayfasına ulaşabiliriz (Razor için belirlenen varsayılan adres WestWorld sisteminde kullanıldığı için UseUrls metodu ile onu 5401e çektim. Program.cs'e bakınız)
 
 > In Memory veritabanı kullandığımız versiyonda uygulama sonlandığında tüm kayıtlar uçacaktır. Kalıcı bir depolama için SQL, SQLite ve benzeri sistemleri içeriye enjekte edebiliriz. İlerleyen kısımda SQLite denememiz olacak.
 

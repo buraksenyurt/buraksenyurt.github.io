@@ -87,53 +87,21 @@ namespace ForForEachPerformance
 }
 ```
 
-Aslında kodumuz son derece basit. Eleman sayısını 1000 olarak set ettiğimiz double tipinden dizilere eleman eklemek (ki eklerken işin uzun sürmesini sağlamak adına tamamen anlamsız bir matematik formülü içermektedir) ve okumak için for, foreach, Parallel.For ile Parallel.ForEach metodlarını kullanmaktayız. Burada eleman sayısının bilhakis düşük tutulması son derece önemlidir aslında. Program çalıştırıldığında, for ve Parallel.For ile yapılan ekleme işlemleri ile, yine for, foreach ve Parallel.ForEach ile yapılan okuma işlemlerine ait toplam süre değerlerini bildirmektedir. Ben arka arkaya 10 deneme yaptıktan sonra ekleme işlemleri için aşağıdaki sonuçları elde ettim.
+Aslında kodumuz son derece basit. Eleman sayısını 1000 olarak set ettiğimiz double tipinden dizilere eleman eklemek (ki eklerken işin uzun sürmesini sağlamak adına tamamen anlamsız bir matematik formülü içermektedir) ve okumak için for, foreach, Parallel.For ile Parallel.ForEach metodlarını kullanmaktayız. Burada eleman sayısının bilhakis düşük tutulması son derece önemlidir aslında. Program çalıştırıldığında, for ve Parallel.For ile yapılan ekleme işlemleri ile, yine for, foreach ve Parallel.ForEach ile yapılan okuma işlemlerine ait toplam süre değerlerini bildirmektedir. Ben arka arkaya 10 deneme yaptıktan sonra ekleme işlemleri için aşağıdaki sonuçları elde ettim
 
-Eleman Ekleme
-
-Deneme
-For ile
-Parallel.For ile
-
-1
-0,2592
-4,6796
-
-2
-0,2718
-3,8415
-
-3
-0,2799
-3,913
-
-4
-0,2732
-5,7423
-
-5
-0,2584
-4,3159
-
-6
-0,291
-3,8208
-
-7
-0,2782
-3,9725
-
-8
-0,2612
-4,041
-
-9
-0,2626
-3,9412
-
-10
-0,2598
-8,0166
+| Eleman Ekleme |  |  |
+| --- | --- | --- |
+| Deneme | For ile | Parallel.For ile |
+| 1 | 0,2592 | 4,6796 |
+| 2 | 0,2718 | 3,8415 |
+| 3 | 0,2799 | 3,913 |
+| 4 | 0,2732 | 5,7423 |
+| 5 | 0,2584 | 4,3159 |
+| 6 | 0,291 | 3,8208 |
+| 7 | 0,2782 | 3,9725 |
+| 8 | 0,2612 | 4,041 |
+| 9 | 0,2626 | 3,9412 |
+| 10 | 0,2598 | 8,0166 |
 
 Grafiksel olarak bakarsak çok daha acı bir gerçekle karşılabiliriz.
 
@@ -141,73 +109,19 @@ Grafiksel olarak bakarsak çok daha acı bir gerçekle karşılabiliriz.
 
 Görüldüğü üzere for ile gerçekleştirilen ekleme işlemi, eş zamanlı ve dolayısıyla paralel çalışabilen Parallel.For kullanımına göre çok daha hızlı yapılmıştır. Peki diziden veri okuma işlemi sırasındaki durum nedir? İşte sonuçlar;
 
-Eleman Okuma
-
-Deneme
-For ile
-Parallel.For
-For Each
-Parallel.ForEach
-
-1
-0,0128
-0,6894
-0,0145
-23,1096
-
-2
-0,0125
-0,8129
-0,0134
-26,3994
-
-3
-0,0128
-0,7707
-0,0139
-25,152
-
-4
-0,0131
-0,6062
-0,0136
-25,661
-
-5
-0,0128
-0,8048
-0,0139
-25,6406
-
-6
-0,0131
-0,842
-0,0153
-35,9978
-
-7
-0,0125
-0,5439
-0,0131
-24,9442
-
-8
-0,0134
-1,3035
-0,0134
-23,9636
-
-9
-0,0125
-0,7635
-0,0136
-24,2947
-
-10
-0,0128
-14,211
-0,0142
-37,5547
+| Eleman Okuma |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| Deneme | For ile | Parallel.For | For Each | Parallel.ForEach |
+| 1 | 0,0128 | 0,6894 | 0,0145 | 23,1096 |
+| 2 | 0,0125 | 0,8129 | 0,0134 | 26,3994 |
+| 3 | 0,0128 | 0,7707 | 0,0139 | 25,152 |
+| 4 | 0,0131 | 0,6062 | 0,0136 | 25,661 |
+| 5 | 0,0128 | 0,8048 | 0,0139 | 25,6406 |
+| 6 | 0,0131 | 0,842 | 0,0153 | 35,9978 |
+| 7 | 0,0125 | 0,5439 | 0,0131 | 24,9442 |
+| 8 | 0,0134 | 1,3035 | 0,0134 | 23,9636 |
+| 9 | 0,0125 | 0,7635 | 0,0136 | 24,2947 |
+| 10 | 0,0128 | 14,211 | 0,0142 | 37,5547 |
 
 Okuma işlemlerinin grafiksel sonucu ise aşağıdaki şekilde görüldüğü gibidir.
 

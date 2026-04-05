@@ -14,20 +14,15 @@ Bu aynı zamanda sayfalar arasında veri taşımanın etkili yollarından birisi
 
 Cross-Page Post Back Kullanırken
 
-1
-Cross-Page Postback işlemini yapabilen web tabanlı bileşenler sadece IButtonControl arayüzünü (interface) uygulamış web kontrolleridir. Bu nedenle hedef sayfada Null Reference kontrolü mutlaka yapılmalıdır.
+- 1.Cross-Page Postback işlemini yapabilen web tabanlı bileşenler sadece IButtonControl arayüzünü (interface) uygulamış web kontrolleridir. Bu nedenle hedef sayfada Null Reference kontrolü mutlaka yapılmalıdır.
 
-2
-Cross-Page Postback işlemi sırasında, kaynak sayfaya (sayfalara) ait referans (referanslar) kullanılmak istendiğinde bu sayfaya (sayfalara) ait nesne örneği (örnekleri) oluşturulur. Dolayısıyla bu kaynak sayfanın yaşam döngüsünde (Web Page Life Cycle) yer alan olay metodlarında çalışması ama görmezden gelinmesi anlamına gelir.
+- 2.Cross-Page Postback işlemi sırasında, kaynak sayfaya (sayfalara) ait referans (referanslar) kullanılmak istendiğinde bu sayfaya (sayfalara) ait nesne örneği (örnekleri) oluşturulur. Dolayısıyla bu kaynak sayfanın yaşam döngüsünde (Web Page Life Cycle) yer alan olay metodlarında çalışması ama görmezden gelinmesi anlamına gelir.
 
-3
-Kaynak sayfada tanımlı herhangibir özelliğe hedef sayfa içerisinden erişebilmek için, kaynak sınıfa ait bir nesne örneğine ihtiyaç vardır.
+- 3.Kaynak sayfada tanımlı herhangibir özelliğe hedef sayfa içerisinden erişebilmek için, kaynak sınıfa ait bir nesne örneğine ihtiyaç vardır.
 
-4
-Birden fazla sayfadan tek bir sayfaya doğru Cross-Page Postback işlemi yapılabilir. Ancak bu durumda hedef sayfaya hangi sayfadan gelindiğinin anlaşılması kaynak sayfa kontrollerinin doğru bir şekilde tespit edilebilmesi için şarttır.
+- 4.Birden fazla sayfadan tek bir sayfaya doğru Cross-Page Postback işlemi yapılabilir. Ancak bu durumda hedef sayfaya hangi sayfadan gelindiğinin anlaşılması kaynak sayfa kontrollerinin doğru bir şekilde tespit edilebilmesi için şarttır.
 
-5
-Kaynak sayfa eğer doğrulama kontrolleri (validation controls) içeriyorsa ve istemci taraflı kontrol scriptleri (özellikle java script'ler) çalışıtırılamıyorsa yada kapalıysa, hedef sayfaya yinede geçiş yapılabilir. Bu kaynak sayfaya ait doğrulama işlemlerinin komple atlanması anlamına gelir.
+- 5.Kaynak sayfa eğer doğrulama kontrolleri (validation controls) içeriyorsa ve istemci taraflı kontrol scriptleri (özellikle java script'ler) çalışıtırılamıyorsa yada kapalıysa, hedef sayfaya yinede geçiş yapılabilir. Bu kaynak sayfaya ait doğrulama işlemlerinin komple atlanması anlamına gelir.
 
 Dilerseniz bu maddeleri teker teker incelemeye çalışalım.
 
@@ -41,7 +36,7 @@ Kaynak1.aspx;
 
 ![mk170_1.gif](/assets/images/2006/mk170_1.gif)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Kaynak1.aspx.cs" Inherits="Kaynak1" %>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
@@ -179,7 +174,7 @@ Kaynak2.aspx;
 
 ![mk170_7.gif](/assets/images/2006/mk170_7.gif)
 
-```csharp
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Kaynak2.aspx.cs" Inherits="Kaynak2" %>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
@@ -215,7 +210,7 @@ Bu son derece doğaldır. Nitekim PreviousPage referansının işaret ettiği sa
 
 Öyleyse çözüm? Çözüm olarak, Reference direktifi kullanılabilir.
 
-```text
+```html
 <%@ Reference Page="~/Kaynak1.aspx" %>
 <%@ Reference Page="~/Kaynak2.aspx" %>
 ```
@@ -250,7 +245,7 @@ Kaynak3.aspx;
 
 ![mk170_10.gif](/assets/images/2006/mk170_10.gif)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Kaynak3.aspx.cs" Inherits="Kaynak3" %>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">

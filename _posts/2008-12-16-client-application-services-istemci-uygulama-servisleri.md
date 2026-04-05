@@ -22,19 +22,13 @@ Asp.Net Uygulama Servisleri (Asp.Net Application Services) sadece Asp.Net AJAX w
 
 Görüldüğü üzere uygulama servisleri aslında birer Web Servisi mantığında olduğundan HTTP üzerinden her tür istemcinin ulaşabilmesi mümkündür.(WCF bazlı bir kullanım şeklide mümkündür. Bunu ilerleyen makalelerimizde yada bir görsel dersimizde ele almaya çalışacağız) Bu servislerin temel işlevleri arasında istemcilerin doğrulanması, doğrulama sonrasında istemci tarafında biletler (ticket) açılmasının sağlanması, istemcinin hangi rolde olduğunun tespit edilmesi ve profiline göre uygulamanın içeriğinin kişiselleştirilmesi sayılabilir.
 
-Dikkat edileceği üzere söz konusu hizmetler için bir veri saklama ortamı olması şarttır. Varsayılan olarak bu ortam bilindiği üzere SQL sunucusu (veya Express sürümü) üzerindeki Membership veritabanlarıdır. Ancak istenirse bu veri kaynaklarını kullanan provider'lar servis tarafında özelleştirilebilir ve farklı depoların kullanılması sağlanabilir. Bunun için basitçe konfigurasyon içeriğinde bir kaç değişiklik yapmak yeterli olacaktır. Servislerin temel görevleri aşağıdaki tabloda olduğu gibi özetlenebilir.
+Dikkat edileceği üzere söz konusu hizmetler için bir veri saklama ortamı olması şarttır. Varsayılan olarak bu ortam bilindiği üzere SQL sunucusu (veya Express sürümü) üzerindeki Membership veritabanlarıdır. Ancak istenirse bu veri kaynaklarını kullanan provider'lar servis tarafında özelleştirilebilir ve farklı depoların kullanılması sağlanabilir. Bunun için basitçe konfigurasyon içeriğinde bir kaç değişiklik yapmak yeterli olacaktır. Servislerin temel görevleri aşağıdaki tabloda olduğu gibi özetlenebilir
 
-Servis
-Görevi
-
-Authentication Service (Doğrulama Servisi)
-İstemcinin doğrulanması ve uygulamaya giriş yapabilmesi (Login) amacıyla kullanılır. Login işlemi sonrasında istemci tarafında saklanacak bir bilet (Ticket) oluşturulur. Tahmin edileceği üzere bu bilet bir cookie olarak depolanır ve bir geçerlilik süresi vardır.
-
-Roles Service (Rol servisi)
-Uygulama bazlı olaraktan istemcinin hangi rolde olduğunun Asp.Net Role Provider tarafından denetlenmesi hizmetini üstlenir. Buna göre istemci uygulamada, örneğin menülerin veya kontrollerin rol bazlı olarak kullanılabilmesi sağlanabilir.
-
-Profile Service (Profil Servisi)
-İstemci uygulamanın sunucu üzerinde tutulan kullanıcı verilerine göre herhangibir zamanda farklı biçimlerde gösterilebilmesine veya davranış sergilemesine hizmet eden servistir. Burada servis tarafında tüm kullanıcılar için ortaklaşa tanımlanmış profil özellikleri söz konusudur. Ancak özellik değerleri her istemci için farklı olarak tutulabilmektedir.
+| Servis | Görevi |
+| --- | --- |
+| Authentication Service(Doğrulama Servisi) | İstemcinin doğrulanması ve uygulamaya giriş yapabilmesi(Login) amacıyla kullanılır. Login işlemi sonrasında istemci tarafında saklanacak bir bilet(Ticket) oluşturulur. Tahmin edileceği üzere bu bilet bir cookie olarak depolanır ve bir geçerlilik süresi vardır. |
+| Roles Service(Rol servisi) | Uygulama bazlı olaraktan istemcinin hangi rolde olduğunun Asp.Net Role Provider tarafından denetlenmesi hizmetini üstlenir. Buna göre istemci uygulamada, örneğin menülerin veya kontrollerin rol bazlı olarak kullanılabilmesi sağlanabilir. |
+| Profile Service(Profil Servisi) | İstemci uygulamanın sunucu üzerinde tutulan kullanıcı verilerine göre herhangibir zamanda farklı biçimlerde gösterilebilmesine veya davranış sergilemesine hizmet eden servistir. Burada servis tarafında tüm kullanıcılar için ortaklaşa tanımlanmış profil özellikleri söz konusudur. Ancak özellik değerleri her istemci için farklı olarak tutulabilmektedir. |
 
 Bu genel açıklamalardan sonra sanıyorumki uygulama servisleri hakkında biraz fikir sahibi olunmuştur. Makalemizin bundan sonraki bölümünde yer alan hedefimiz ise bir windows istemcisi üzerinden söz konusu servislerin kullanılmasını sağlamaktır. Bu noktada Visual Studio 2008 sürümünün İstemci Uygulama Servisilerinin (Client Application Service) ele alınmasında büyük kolaylıklar sağladığıda unutulmamalıdır. Öyleyse hiç vakit kaybetmeden işe başlayalım. Öncelikli olarak doğrulama, rol ve profil yönetimi hizmetlerini üstlenecek bir web servisi geliştiriyor olacağız.
 
@@ -48,32 +42,18 @@ Burada belirtilen bilgiler istemci uygulamada ele alınacaktır. Şimdi web.conf
 
 Konfigurasyon dosyası içeriğinde authentication, role ve profile servislerini etkinleştirmek için system.web.extensions elementi altında bazı tanımlamalar yapılmıştır. Bununla birlikte provider bazında role ve profile yönetimlerininde etkinleştirilmesi amacıyla roleManager ve profile elementleri ele alınmaktadır. Bu basit ayarlamaların hemen ardından kullanıcı ve rol tanımlamalarının yapılmasına başlanabilir. Bunun için web servisi uygulamasında Web Site Administration Tool'dan yararlanılabilir.
 
-> Örneğin geliştirildiği makinede yer alan machine.config (C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\CONFIG) içeriğinde LocalSqlServer isimli connection string bilgisi aşağıdaki gibidir.
-> ![mk264_4.gif](/assets/images/2008/mk264_4.gif)
-> Bu nedenle Asp.Net Web Site Administration Tool, web servisi uygulamasının içerisinde membership yönetimi için gerekli veritabanını (Aspnetdb.mdf) oluşturmaktadır. Elbetteki LocalSqlServer değerinin web servisi uygulamasının web.config dosyası içerisinde ezilmesi ve farklı bir lokasyonun işaret edilmeside sağlanabilir. Eğer makinedeki sunucu üzerinde veritabanının oluşturulması istenirse aspnetregsql komut satırı aracından yararlınmalıdır. Veritabanı oluşturulduktan sonra ise config dosyası içeriğinde oluşturulan veritabanı adresi işaret edilerek devam edilebilir.
+Örneğin geliştirildiği makinede yer alan machine.config (C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\CONFIG) içeriğinde LocalSqlServer isimli connection string bilgisi aşağıdaki gibidir.
 
-Asp.Net Web Site Administration Tool üzerinde From Internet seçeneği ile Form Based Authentication açılır. Testler için iki farklı rol ve kullanıcı oluşturulur. Bu kullanıcılara ait bilgileri örnek senaryomuzda aşağıdaki gibi tanımlayabiliriz.
+![mk264_4.gif](/assets/images/2008/mk264_4.gif)
 
-Kullanıcı
-Şifre
-Email
-Gizli Soru
-Gizli Cevap
-Rol
+Bu nedenle Asp.Net Web Site Administration Tool, web servisi uygulamasının içerisinde membership yönetimi için gerekli veritabanını (Aspnetdb.mdf) oluşturmaktadır. Elbetteki LocalSqlServer değerinin web servisi uygulamasının web.config dosyası içerisinde ezilmesi ve farklı bir lokasyonun işaret edilmeside sağlanabilir. Eğer makinedeki sunucu üzerinde veritabanının oluşturulması istenirse aspnetregsql komut satırı aracından yararlınmalıdır. Veritabanı oluşturulduktan sonra ise config dosyası içeriğinde oluşturulan veritabanı adresi işaret edilerek devam edilebilir.
 
-buraks
-buraks1234.
-buraks@azon.com
-buraks
-buraks
-Yonetici
+Asp.Net Web Site Administration Tool üzerinde From Internet seçeneği ile Form Based Authentication açılır. Testler için iki farklı rol ve kullanıcı oluşturulur. Bu kullanıcılara ait bilgileri örnek senaryomuzda aşağıdaki gibi tanımlayabiliriz
 
-bili
-bili1234.
-bili@azon.com
-bili
-bili
-Calisan
+| Kullanıcı | Şifre | Email | Gizli Soru | Gizli Cevap | Rol |
+| --- | --- | --- | --- | --- | --- |
+| buraks | buraks1234. | `buraks@azon.com` | buraks | buraks | Yonetici |
+| bili | bili1234. | `bili@azon.com` | bili | bili | Calisan |
 
 Bu işlemlerin arkasından AppData klasörü altında aspnetdb.mdf veritabanı dosyasının açıldığı ve yukarıdaki kullanıcı bilgilerinin ilgili tablolara eklendiği görülebilir.
 

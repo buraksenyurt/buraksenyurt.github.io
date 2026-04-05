@@ -269,103 +269,119 @@ FileManager tipinin yeni versiyonunda converters isimli koleksiyon örneğini ol
 
 Görüldüğü üzere Object Initializer karvramını sadece kodun yazımını kısaltan bir yenilik şeklinde düşünmemek gerekir. Ancak yazım ve kod okunurluğunu kolaylaştırdığı da bir gerçektir. Bunun için aşağıdaki tabloya bakmanız sanırım yeterli olacaktır
 
-Klasik Yaklaşım
-Object Initializer ile Yaklaşım
+Klasik yaklaşım book koleksiyonunun oluşturulması için en az 36 satıra ihtiyaç duyuyor.
 
+```csharp
 using System.Collections.Generic;
+
 namespace CaseObjectInitializers
 {
-class Program
-{
-static void Main (string[] args)
-{
-List books = new List ();
-Book newBook = new Book ();
-newBook.Id = 1;
-newBook.Name = "Dick Tracy Maceraları 1";
-newBook.Summary = "İlk bölüm maceraları";
-newBook.ListPrice = 10;
-newBook.Authors = new List ();
-Author newAuthor = new Author ();
-newAuthor.Id = 1;
-newAuthor.Name = "Dick";
-newAuthor.Surname = "Tracy";
-newBook.Authors.Add (newAuthor);
-books.Add (newBook);
-newBook = new Book ();
-newBook.Id = 2;
-newBook.Name = "Uygulamalı WCF";
-newBook.Summary = "İlk denemeler";
-newBook.ListPrice = 34.49M;
-newBook.Authors = new List ();
-newAuthor = new Author ();
-newAuthor.Id = 3;
-newAuthor.Name = "Burak S.";
-newAuthor.Surname = "Şenyurt";
-newBook.Authors.Add (newAuthor);
-newAuthor = new Author ();
-newAuthor.Id = 4;
-newAuthor.Name = "Ingo";
-newAuthor.Surname = "Rammer";
-newBook.Authors.Add (newAuthor);
-books.Add (newBook);
-}
-}
-class Book
-{
-public int Id { get; set; }
-public string Name { get; set; }
-public List Authors{ get; set; }
-public string Summary { get; set; }
-public decimal ListPrice { get; set; }
-}
-class Author
-{
-public int Id { get; set; }
-public string Name { get; set; }
-public string Surname { get; set; }
-}
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Book> books = new List<Book>();
 
+            Book newBook = new Book();
+            newBook.Id = 1;
+            newBook.Name = "Dick Tracy Maceraları 1";
+            newBook.Summary = "İlk bölüm maceraları";
+            newBook.ListPrice = 10;
+            newBook.Authors = new List<Author>();
+
+            Author newAuthor = new Author();
+            newAuthor.Id = 1;
+            newAuthor.Name = "Dick";
+            newAuthor.Surname = "Tracy";
+            newBook.Authors.Add(newAuthor);
+
+            books.Add(newBook);
+            newBook = new Book();
+            newBook.Id = 2;
+            newBook.Name = "Uygulamalı WCF";
+            newBook.Summary = "İlk denemeler";
+            newBook.ListPrice = 34.49M;
+            newBook.Authors = new List<Author>();
+
+            newAuthor = new Author();
+            newAuthor.Id = 3;
+            newAuthor.Name = "Burak S.";
+            newAuthor.Surname = "Şenyurt";
+            newBook.Authors.Add(newAuthor);
+
+            newAuthor = new Author();
+            newAuthor.Id = 4;
+            newAuthor.Name = "Ingo";
+            newAuthor.Surname = "Rammer";
+            newBook.Authors.Add(newAuthor);
+
+            books.Add(newBook);           
+        }
+    }
+
+    class Book
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<Author> Authors{ get; set; }
+        public string Summary { get; set; }
+        public decimal ListPrice { get; set; }
+    }
+
+    class Author
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+    }
+}
+```
+
+Object Initializer tekniği ile aynı işlemi yapmak için ise sadece 13 satır yeterli olmaktadır.
+
+```csharp
 using System.Collections.Generic;
+
 namespace CaseObjectInitializers
 {
-class Program
-{
-static void Main (string[] args)
-{
-List books = new List
-{
-new Book{Id=1, Name="Dick Tracy Maceraları 1", Summary="İlk bölüm maceraları", ListPrice=10, Authors=new List{
-new Author{Id=1, Name="Dick", Surname="Tracy"}
-}
-},
-new Book{Id=2,Name="Uygulamalı WCF", Summary="İlk denemeler", ListPrice=34.59M,Authors=new List{
-new Author{Id=3,Name="Burak S",Surname="Şenyurt"},
-new Author{Id=4,Name="Ingo",Surname="Rammer"}
-}
-}
-};
-}
-}
-class Book
-{
-public int Id { get; set; }
-public string Name { get; set; }
-public List Authors{ get; set; }
-public string Summary { get; set; }
-public decimal ListPrice { get; set; }
-}
-class Author
-{
-public int Id { get; set; }
-public string Name { get; set; }
-public string Surname { get; set; }
-}
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Book> books = new List<Book>
+            {
+                new Book{Id=1, Name="Dick Tracy Maceraları 1", Summary="İlk bölüm maceraları", ListPrice=10
+                    , Authors=new List<Author>{
+                        new Author{Id=1, Name="Dick", Surname="Tracy"}
+                }
+                },
+                new Book{Id=2,Name="Uygulamalı WCF", Summary="İlk denemeler", ListPrice=34.59M
+                    ,Authors=new List<Author>{              
+                        new Author{Id=3,Name="Burak S",Surname="Şenyurt"},
+                        new Author{Id=4,Name="Ingo",Surname="Rammer"}
+                    }
+                }
+            };   
+        }
+    }
 
-book koleksiyonunun oluşturulması için 36 satır
-book koleksiyonunun oluşturulması için 13 satır
+    class Book
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<Author> Authors{ get; set; }
+        public string Summary { get; set; }
+        public decimal ListPrice { get; set; }
+    }
+
+    class Author
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+    }
+}
+```
 
 Her iki örnek kod parçasında da Book tipinden nesne örnekleri taşıyan birer List koleksiyonu oluşturulmakta ve doldurulmaktadır. Book tipi içerisinde Author tipinden de bir koleksiyon da yer almaktadır. Tabi Book ve Author sınıfları için aşırı yüklenmiş yapıcı metodlar (Overloaded Constructors) olmadığını varsayıyoruz bu senaryo da. Kodun daha da kısalması, performans yönündeki minik fark göz önüne alındığında biraz daha önemsiz gibi duruyor. Yine de çok fazla sayıda kod parçası içeren projelerde kodun okunurluğunun da geliştiricinin psikolojisi üzerinde doğrudan etkili olduğunu ifade etmek isterim. Böylece geldik bir yazımızın daha sonuna. Netspecter’ ın bir sonraki macerasında görüşünceye dek hepinize mutlu günler dilerim.
 

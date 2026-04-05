@@ -78,6 +78,7 @@ Burada button kontrolüne basıldığında çalışan kodlarda, Person.Contat is
 Bu görüntüde yer alan NumberOfReclaimedConnections sayacı (Counter),.Net 2.0 ile birlikte gelen yeni performans ölçüm değerlerinden birisidir ve havuzda yer alıpta kapatılamayan bağlantı sayılarına ilişkin bilgileri vermektedir. Grafiktende görüleceği üzere açık bağlantılar sürekli artmıştır. Uygulama bunun sonucunda SqlException'dan çıkarak zaman aşımı (Timeout) nedeni ile InvalidOperationException'a sürüklenmiştir.
 
 > NumberOfReclaimedConnections,.Net 2.0 ile birlikte gelen Performans sayaçlarından (Performance Counter) birisidir. Bu sayaç.Net Data Provider For Sql Server performans nesnesi (Performance Object) altında yer almaktadır.
+
 > ![mk149_5.gif](/assets/images/2006/mk149_5.gif)
 
 Aslında hatanın nedeni son derece basittir. Connection sınıfına ait nesne örneğinin kapatılması garanti altına alınmamıştır. Bu gerçekten önemli bir hatadır. Bu durumu düzeltmek için ya finally bloğu eklenmeli ya da işlemler aşağıdaki kod parçasında olduğu gibi using blokları içerisinde gerçekleştirilmelidir. Nitekim using bloğu doğal olaraktan kullandığı nesnenin dispose edilmesini garanti altına alır.
@@ -153,16 +154,12 @@ Bu örnekte son derece anlamsız bir şekilde 100 defa Contact tablosundaki elem
 
 ![mk149_7.gif](/assets/images/2006/mk149_7.gif)
 
-Bu istisnanın nedeni artık havuzda duran bağlantı bilgilerinin yapısının, servisin yeniden başlatılması nedeni ile bozulmuş olmasıdır. Bu sorunu çözebilmek için yapılabileceklerden bir tanesi ve en kolayı, havuzdaki bağlantıları sıfırlamak bir başka deyişle havuzu boşaltmaktır. Ado.Net 2.0' da Connection sınıflarına bu işlemleri kolay bir şekilde yapabilmek için iki yeni metod eklenmiştir. Bu metodların prototipleri aşağıdaki gibidir.
+Bu istisnanın nedeni artık havuzda duran bağlantı bilgilerinin yapısının, servisin yeniden başlatılması nedeni ile bozulmuş olmasıdır. Bu sorunu çözebilmek için yapılabileceklerden bir tanesi ve en kolayı, havuzdaki bağlantıları sıfırlamak bir başka deyişle havuzu boşaltmaktır. Ado.Net 2.0' da Connection sınıflarına bu işlemleri kolay bir şekilde yapabilmek için iki yeni metod eklenmiştir. Bu metodların prototipleri aşağıdaki gibidir
 
-Metod
-Kısa Açıklama
-
-public static void ClearAllPools ()
-Havudaki tüm bağlantıları boşaltır.
-
-public static void ClearPool (SqlConnection connection)
-Parametre olarak verilen bağlantıya ait havuzu boşaltır.
+| **Metod** | **Kısa Açıklama** |
+| --- | --- |
+| public static void ClearAllPools () | Havudaki tüm bağlantıları boşaltır. |
+| public static void ClearPool (SqlConnection connection) | Parametre olarak verilen bağlantıya ait havuzu boşaltır. |
 
 Bu metodların uygulanması halinde yukarıdaki çalışma zamanı hatası ile başedebiliriz. Aslında bu metodlar, bağlantı havuzunu boşaltırken ilgili bağlantı nesnelerini kapatmazlar. Sadece bunların artık kullanılmayacağını belirtirler. Yukarıdaki örnek uygulamamızı aşağıdaki gibi değiştirmemiz etkili bir çalışma zamanı çözümü olacaktır.
 

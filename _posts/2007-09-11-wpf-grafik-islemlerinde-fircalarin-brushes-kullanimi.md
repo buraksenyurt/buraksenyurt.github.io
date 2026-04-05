@@ -20,7 +20,7 @@ Yani XAML tarafında grafikler ile daha kolay çalışabilme imkanının gelmiş
 
 İzleyen örneklerimizi yine Visual Studio 2008 Beta 2 sürümünde tasarladığımızı baştan belirtelim. Bu nedenle final sürümünde değişen bazı kullanım kolaylıkları olabilir. Elbette artık relase edilmiş olan WPF içinde IDE bazlı bir değişiklik olmayacağını söyleyebiliriz. Dilerseniz basit bir örnek ile başlayalım. İlk olarak aşağıda XAML (eXtensible Application Markup Language) içeriği belirlenen bir pencere (Window) geliştirelim.
 
-Merhaba Fırçalar;
+## Merhaba Fırçalar
 
 ```xml
 <Window x:Class="GrafiklerleCalismak.MerhabaFircalar" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="White" Title="Fill, Transparant Fill, SolidFillBrush Kullanımı" Height="300" Width="300">
@@ -108,7 +108,7 @@ Elbette bu kez sonuçlar tasarım zamanında (Design Time) değil, çalışma za
 
 ![mk222_16.gif](/assets/images/2007/mk222_16.gif)
 
-Gradyan Dolgular (Gradient Brush);
+## Gradyan Dolgular (Gradient Brush)
 
 İlk örnekte basit olarak SolidColorBrush kullanımına değinmeye çalıştık. Dolgu işlemlerinde popüler olan kullanımlardan biriside Gradyan efektlerin verilmesidir. Bu renkler arasında yumuşak geçişlerin oluşmasına ve bu sayede daha güzel dolguların görünmesine neden olmaktadır. Böyle bir amacı gerçekleştirmek için WPF içerisinde çeşitli tipler yer almaktadır. Sıradaki örneğimizde bu durumu incelemeye çalışacağız. Bu amaçla aşağıdaki XAML içeriğini göz önüne alabiliriz.
 
@@ -147,7 +147,7 @@ Bu pencerenin tasarım zamanındaki (Design Time) çıktısı aşağıdaki gibi 
 
 Burada üst taraftaki dörtgen içeriği LienarGradientBrush ile, alttaki dörtgen ise RadialGradientBrush fırçaları ile doldurulmuştur. Her iki fırçanında ortak noktalarına bakıldığında farklı renkler ve geçiş noktalarının belirlenmesi amacıyla GraidentStop elementlerine başvurulduğu görülmektedir. Bu elementler renkleri ve bunların geçiş yerlerinin neresi olduğunu belirtmek amacıyla kullanılmaktadır. GradientStop tipine ait nesne örnekleri, GradientStopCollections adı verilen özel bir koleksiyonda tutulmaktadır. Diğer taraftan ikinci şelilde odak noktası dikkat edileceği üzere tam merkez değildir. Bunun belirlenmesi için RadialGradientBrush elementinin GradientOrigin niteliğinden (attribute) yararlanılmaktadır.
 
-Kod Tarafından Fırça (Shape) Kullanımı;
+## Kod Tarafından Fırça (Shape) Kullanımı
 
 Şu ana kadar geliştirilen örneklerde şekillerin oluşturulması ve içlerinin doldurulması gibi işlemlerde çoğunlukla XAML elementlerinden ve niteliklerinden yararlanılmıştır. Bu geliştirici açısından tasarım zamanı (Design Time) için büyük bir esnekliktir. Nitekim işlemlerin sonuçları anında Visual Studio arabirimi üzerinde görülebilmektedir. Diğer taraftan bazı durumlarda çalışma zamanında dinamik olarak söz konusu şekillerin çizilmesi ve doldurulması istenebilir. Örneğin.Net ile yazılmış grafik uygulamalarında bu mutlaka olması gereken bir özelliktir. Sıradaki örnekte basit olarak bir dörtgenin LinearGradientBrush sınıfı ile kod tarafındaki tiplerden ve üyelerden yararlanılarak nasıl doldurulacağı örneklenmektedir. Bu amaçla yeni bir Window arkasında aşağıdaki kodlar kullanılmıştır.
 
@@ -209,7 +209,7 @@ Dikkat edilecek olursa XAML elementlerinin tip karşılıkları kullanılarak is
 
 ![mk222_3.gif](/assets/images/2007/mk222_3.gif)
 
-Resimleri Fırçalar ile Kullanmak;
+## Resimleri Fırçalar ile Kullanmak
 
 Çok doğal olarak bir şeklin içinin resimler ile doldurulması ve farklı bir taban deseni oluşturulması istenebilir. Bunun için WPF içerisinde ImageBrush tipi kullanılmaktadır. Aşağıdaki XAML içeriğinde, dörtgenin içinin örnek bir resim ile doldurulması sağlanmaktadır.
 
@@ -231,21 +231,14 @@ Bu örneğin tasarım zamanındaki (Design Time) çıktısı aşağıdaki gibi o
 
 ImageBrush elementinin dikkate değer nitelikleri ImageSource, TileMode ve ViewPort'dur. ImageSource ile tahmin edileceği gibi içerik resmi belirlenmektedir. TileMode ile resmin şekil içerisine nasıl döşeneceği belirtilir. ViewPort niteliğine atanan dört sayısal değer bulunmaktadır. Bunlardan ilk ikisi konumu, son ikiside şekil içerisinde kaç adet resim gösterileceğini belirtir. Yukarıdaki örnek göz önüne alındığında 0.1,0.1 değerlerinin verilmesi ile 10X10 resmin şekil içerisinde yer aldığı görülmektedir. TileMode değerlerinin farklı şekillerde ayarlanmasının sonuçları aşağıdakine benzerdir.
 
-TileMode Değerine Göre Dolgu Çeşitleri
+| **TileMode Değerine Göre Dolgu Çeşitleri** | |
+| :--- | :--- |
+| **FlipX** | **FlipY** |
+| ![mk222_5.gif](/assets/images/2007/mk222_5.gif) | ![mk222_6.gif](/assets/images/2007/mk222_6.gif) |
+| **FlipXY** | **None** |
+| ![mk222_7.gif](/assets/images/2007/mk222_7.gif) | ![mk222_8.gif](/assets/images/2007/mk222_8.gif) |
 
-FlipX
-FlipY
-
-![mk222_5.gif](/assets/images/2007/mk222_5.gif)
-![mk222_6.gif](/assets/images/2007/mk222_6.gif)
-
-FlipXY
-None
-
-![mk222_7.gif](/assets/images/2007/mk222_7.gif)
-![mk222_8.gif](/assets/images/2007/mk222_8.gif)
-
-WPF Bileşenlerini Fırça ile Kullanmak;
+## WPF Bileşenlerini Fırça ile Kullanmak
 
 Var olan resimleri şekillerin içerisini boyamak amacıyla kullanabileceğimiz gibi, WPF deki pek çok bileşenide dolgu efekti olarak ele alabiliriz. Bunun için VisualBrush tipinin kullanılması yeterlidir. Söz gelimi bir dörtgenin içeriğinin Button nesneleri ile doldurulmasını istediğimizi düşünelim. Bunu gerçekleştirmek için aşağıdaki XAML çıktısı göz önüne alınabilir.
 
@@ -271,27 +264,20 @@ Bu sayfanın tasarım zamanındaki (Design Time) çıktısı aşağıdaki gibidi
 
 ![mk222_9.gif](/assets/images/2007/mk222_9.gif)
 
-WPF kontrollerinin dolgu efekti olarak kullanılabilmesini sağlayan, VisualBrush elementinin VisualBrush.Visual alt elementidir. Bu elementin içerisinde bilinen WPF taşıyıcıları (Containers) kullanılabilir. Örnekte bir Grid kontrolü ve içerisidende tek bir Button nesnesi kullanılmıştır. Tabi ViewPort niteliğinde belirtilen değerlere göre Button kontrolünün dörtgen içerisindeki yerleşim sayısı değişecektir. Aynen ImageBrush tipinde olduğu gibi TileMode niteliğinin değerine göre yerleşimler aşağıdaki gibi farklı biçimlerde olabilir.
+WPF kontrollerinin dolgu efekti olarak kullanılabilmesini sağlayan, VisualBrush elementinin VisualBrush.Visual alt elementidir. Bu elementin içerisinde bilinen WPF taşıyıcıları (Containers) kullanılabilir. Örnekte bir Grid kontrolü ve içerisidende tek bir Button nesnesi kullanılmıştır. Tabi ViewPort niteliğinde belirtilen değerlere göre Button kontrolünün dörtgen içerisindeki yerleşim sayısı değişecektir. Aynen ImageBrush tipinde olduğu gibi TileMode niteliğinin değerine göre yerleşimler aşağıdaki gibi farklı biçimlerde olabilir
 
-TileMode Değerine Göre Dolgu Çeşitleri
+| **TileMode Değerine Göre Dolgu Çeşitleri** | |
+| :--- | :--- |
+| **FlipX** | **FlipY** |
+| ![mk222_10.gif](/assets/images/2007/mk222_10.gif) | ![mk222_11.gif](/assets/images/2007/mk222_11.gif) |
+| **FlipXY** | **None** |
+| ![mk222_12.gif](/assets/images/2007/mk222_12.gif) | ![mk222_13.gif](/assets/images/2007/mk222_13.gif) |
 
-FlipX
-FlipY
-
-![mk222_10.gif](/assets/images/2007/mk222_10.gif)
-![mk222_11.gif](/assets/images/2007/mk222_11.gif)
-
-FlipXY
-None
-
-![mk222_12.gif](/assets/images/2007/mk222_12.gif)
-![mk222_13.gif](/assets/images/2007/mk222_13.gif)
-
-Sistem Renklerinin Fırçalar ile Kullanımı;
+## Sistem Renklerinin Fırçalar ile Kullanımı
 
 Windows işletim sisteminde kullanılan pek çok görünüm vardır. Örneğin masaüstü rengi, aktif olan pencerelerin bar kısımlarındaki renkler ve aralarındaki geçişler vb. Çoğu zaman Windows uygulaması içerisindeki bazı dolguların, sistemdeki hazır dolgulardan alınması istenebilir. Böyle bir durumda kullanıcı, makinesindeki sistem renklerini değiştirdiğinde Windows uygulaması içerisindeki şekillerde buna uygun bir biçimde güncellenebilecektir. Bunu gerçekleştirmek için SystemColors tipi kullanılır. Aşağıdaki XAML içeriğinde bu durum irdelenmektedir.
 
-```csharp
+```xml
 <Window x:Class="GrafiklerleCalismak.SystemColorsKullanimi" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="White" Title="SystemColors Kullanimi" Height="300" Width="300">
 <Grid>
     <Rectangle Fill="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Margin="26,31,106,0" Height="86" VerticalAlignment="Top" />
@@ -311,7 +297,7 @@ SystemColors tipi System.Window isim alanı (Namespace) altında yer almakta ola
 
 Burada dikkat edilmesi gereken noktalardan birisi tüm bu değerlerin Fill işlemlerinde kullanılmadığıdır. Bir başka deyişle Fill özelliği, buradaki static üyelerden her birini kabul etmez. Özellikle sistem tarafında set edilmiş olan ve Key anahtar kelimesi ile bitenleri tercih etmek gerekmektedir.
 
-Drawing ile Fırça Kullanımı;
+## Drawing ile Fırça Kullanımı
 
 Dilersek bir şeklin içini çizerekte doldurabiliriz. Söz gelimi videoları, metinleri, başka şekilleri çizim amacıyla dolgularda ele alabiliriz. Bu oldukça geniş bir konu olmasına rağmen bir örnek yapmadan geçmenin doğru olmayacağı kanısındayım. Bu tip bir işlemde DrawingBrush tipi esas olan noktadır. DrawingBrush tipi ile oluşturulan fırçalar söz konusu alanları, GemoetryDrawing, ImageDrawing, GlpyhRunDrawing, VideoDrawing, DrawingGroup gibi tipler yardımıyla farklı şekillerde doldurabilirler. Söz gelimi bir metnin içerisinde geometrik şekiller gösterilmesini (GeometryDrawing ile), yada bir elips içerisinde bir video oynatılmasını (VideoDrawing ile) sağlayabiliriz. Aşağıdaki örnek kod parçasında, bir elips içerisinde intro.wmv isimli videonun oynatılmasını sağlamak amacıyla yazılmış ifadeler yer almaktadır.
 

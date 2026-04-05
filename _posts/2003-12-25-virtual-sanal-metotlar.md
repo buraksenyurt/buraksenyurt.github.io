@@ -160,13 +160,15 @@ namespace ConsoleApplication1
 
 Şekil 3. Tureyen sınıftaki Yazdir metodu çağırılmıştır.
 
-Burada önemli olan nokta, Temel sınıfaki metodun virtual anahtar kelimesi ile tanımlanması, Tureyen sınıftaki metodun ise override anahtar kelimesi ile tanımlanmış olmasıdır. Sanal metodları kullanırken dikkat etmemiz gereken bir takım noktalar vardır. Bu noktalar;
+Burada önemli olan nokta, Temel sınıfaki metodun virtual anahtar kelimesi ile tanımlanması, Tureyen sınıftaki metodun ise override anahtar kelimesi ile tanımlanmış olmasıdır. Sanal metodları kullanırken dikkat etmemiz gereken bir takım noktalar vardır. Bu noktalar
 
-- İki metodda aynı isime sahip olmalıdır.
-- İki metodda aynı tür ve sayıda parametre almalıdır.
-- İki metodunda geri dönüş değerleri aynı olmalıdır.
-- Metodların erişim haklarını aynı olmalıdır. Biri public tanımlanmış ise diğeride public olmalıdır.
-- Temel sınıftaki metodu türeyen sınıfta override (geçersiz) hale getimez isek metod geçersiz kılınamaz.
-- Sadece virtual olarak tanımlanmış metodları override edebiliriz. Herhangi bir base class yöntemini türeyen sınıfta override edemeyiz.
+| | Açıklama |
+| --- | --- |
+| 1 | İki metodda aynı isime sahip olmalıdır. |
+| 2 | İki metodda aynı tür ve sayıda parametre almalıdır. |
+| 3 | İki metodunda geri dönüş değerleri aynı olmalıdır. |
+| 4 | Metodların erişim haklarını aynı olmalıdır. Biri public tanımlanmış ise diğeride public olmalıdır. |
+| 5 | Temel sınıftaki metodu türeyen sınıfta override (geçersiz) hale getimez isek metod geçersiz kılınamaz. |
+| 6 | Sadece virtual olarak tanımlanmış metodları override edebiliriz. Herhangibir base class yöntemini tureyen sınıfta override edemeyiz. |
 
 Bu noktalara dikkat etmemiz gerekmektedir. Değerli Okurlarım, geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

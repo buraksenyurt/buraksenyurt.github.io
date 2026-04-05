@@ -93,15 +93,12 @@ Http kanalları SoapFormatter sınıfını kullanarak, mesajları XML formatınd
 
 Tcp isim alanında yer alan sınıflar, Http'dekiler ile aynı işlevlere sahiptirler. Tek fark, kullanılan serileştirme işleminin farklı oluşudur. Her iki isim alanı içinde, oluşturulan kanal nesne örneklerinin ChannelServices sınıfında yer alan static RegisterChannel metodu ile sisteme kayıt edilmeleri gerekmektedir (Registration).
 
-Kanalların kullanımında dikkat edilmesi gereken en önemli nokta, uzak nesnelerin aynı protokolü destekleyen kanalları kullanmalarının gerekli olduğudur. Örneğin, istemcilerden gelen çağrıları dinlemek amacıyla HTTP protokolünü taban alan kanal nesneleri kullanılıyorsa, istemcilerde de mesaj göndermek için HTTP protokolünü taban alan kanal nesneleri kullanılmalıdır. Nitekim farklı protokol tabanlı kanalların kullanılmasında istisnalar alırız. Bunun sebebi, farklı protokol kullanımının sonucu olarak kodlama ve çözümleme işlemlerinin farklı serileştirme teknikleri içerisinde yapılıyor olmasıdır. Http ve Tcp kanalları arasındaki farkları şu şekilde özetleyebiliriz.
+Kanalların kullanımında dikkat edilmesi gereken en önemli nokta, uzak nesnelerin aynı protokolü destekleyen kanalları kullanmalarının gerekli olduğudur. Örneğin, istemcilerden gelen çağrıları dinlemek amacıyla HTTP protokolünü taban alan kanal nesneleri kullanılıyorsa, istemcilerde de mesaj göndermek için HTTP protokolünü taban alan kanal nesneleri kullanılmalıdır. Nitekim farklı protokol tabanlı kanalların kullanılmasında istisnalar alırız. Bunun sebebi, farklı protokol kullanımının sonucu olarak kodlama ve çözümleme işlemlerinin farklı serileştirme teknikleri içerisinde yapılıyor olmasıdır. Http ve Tcp kanalları arasındaki farkları şu şekilde özetleyebiliriz
 
-1
-Http kanal nesneleri Http protokolünü, Tcp kanal nesneleri ise Tcp protokolünü kullanır.
-
-2
-Serileştirme işleminde, Http kanal nesneleri SoapFormatter sınıfını kullanırken, Tcp kanal nesneleri BinaryFormatter sınıfını kullanır.
-
-3
-Http kanal nesneleri için serileştirme xml tabanlı yapılırken, Tcp kanal nesneleri için serileştirme binary formatta yapılır.
+| | |
+| --- | --- |
+| 1 | Http kanal nesneleri Http protokolünü, Tcp kanal nesneleri ise Tcp protokolünü kullanır. |
+| 2 | Serileştirme işleminde, Http kanal nesneleri SoapFormatter sınıfını kullanırken, Tcp kanal nesneleri BinaryFormatter sınıfını kullanır. |
+| 3 | Http kanal nesneleri için serileştirme xml tabanlı yapılırken, Tcp kanal nesneleri için serileştirme binary formatta yapılır. |
 
 Bu makalemiz ile .NET remoting sisteminin temel yapıtaşlarını tanımaya çalıştık. Bir sonraki makalemizde, en basit anlamda bir remoting uygulamasının nasıl yapıldığını incelemeye çalışacak ve teoride anlattıklarımızın programatik olarak nasıl yazılacağını göreceğiz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

@@ -18,37 +18,19 @@ Bu Xml verisini göz önüne alacak olursak, XPath'in ilgili veri kümesini bell
 
 ![mk150_2.gif](/assets/images/2006/mk150_2.gif)
 
-Dikkat ederseniz Root element üzerinden xml verisi içerisinde tüm alt elementler bu elementlerin var ise atrribute'ları ele alınmaktadır. Kitaplar.xml verisinin tamamını grafiğe sığdırmamız zor olacağından sadece bir kısmı burada gösterilmetedir. İşte XPath, herhangibir kritere göre bir node listesi, tek bir node veya değer (örneğin toplam gibi) döndürmek için bu ağaç yapısını kullanacaktır. Bu modele göre XPath dili ile aşağıdaki tabloda da belirtilen örnek sorgular oluşturabiliriz.
+Dikkat ederseniz Root element üzerinden xml verisi içerisinde tüm alt elementler bu elementlerin var ise atrribute'ları ele alınmaktadır. Kitaplar.xml verisinin tamamını grafiğe sığdırmamız zor olacağından sadece bir kısmı burada gösterilmetedir. İşte XPath, herhangibir kritere göre bir node listesi, tek bir node veya değer (örneğin toplam gibi) döndürmek için bu ağaç yapısını kullanacaktır. Bu modele göre XPath dili ile aşağıdaki tabloda da belirtilen örnek sorgular oluşturabiliriz
 
-XPath Sorgusu
-Anlamı
-
-Kitaplar/Kitap
-Kitaplar içerisindeki her bir Kitap elementini, alt elemenetleri ile birlikte elde etmemizi sağlar.
-
-Kitaplar/Kitap/@ID
-Kitaplar içerisindeki her bir Kitap elementinin içerdiği ID attribute'larının tamamını geri döndürür.
-
-Kitaplar/Kitap[@ID=1000]
-Kitaplar içersinde Kitap element'lerinden, ID attribute'unun değeri 1000 olan elementi (elementleri) elde etmemizi sağlar.
-
-Kitaplar/Kitap[Fiyat<=50]
-Kitaplar içerisinde Kitap element'lerinden Fiyat element'inin değeri 50 veya daha az olanları elde etmemizi sağlar.
-
-Kitaplar/Kitap[Fiyat>50 and Fiyat<80]
-Kitaplar içerisinde, Kitap elementler'inden Fiyat elementinin değeri 50 ile 80 arasında olanları elde etmemizi sağlar.
-
-count (/Kitaplar/Kitap)
-Toplam Kitap sayısını verir. Bu tekil bir sonuç değeri döndürür. Üstteki sorgularda olduğu gibi bir node listesi döndürmez.
-
-sum (/Kitaplar/Kitap/Fiyat)
-Kitapların fiyatlarının toplamını geriye döndürür. Yani Kitap node'ları içerisindeki Fiyat node'larının value özelliklerinin değerlerinin toplamını verir.
-
-sum (/Kitaplar/Kitap/Fiyat[.>70])
-Fiyat element'inin değeri 70' den yüksek olan Kitap element'lerindeki Fiyat element'lerinin toplamını verir.
-
-count (/Kitaplar/Kitap/Fiyat[.>70])
-Fiyat element'inin değeri 70' den yüksek olan Kitap element'lerinin sayısını verir.
+| **XPath Sorgusu** | **Anlamı** |
+| --- | --- |
+| Kitaplar/Kitap | Kitaplar içerisindeki her bir Kitap elementini, alt elemenetleri ile birlikte elde etmemizi sağlar. |
+| Kitaplar/Kitap/@ID | Kitaplar içerisindeki her bir Kitap elementinin içerdiği ID attribute' larının tamamını geri döndürür. |
+| Kitaplar/Kitap[@ID=1000] | Kitaplar içersinde Kitap element' lerinden, ID attribute' unun değeri 1000 olan elementi (elementleri) elde etmemizi sağlar. |
+| Kitaplar/Kitap[Fiyat<=50] | Kitaplar içerisinde Kitap element' lerinden Fiyat element' inin değeri 50 veya daha az olanları elde etmemizi sağlar. |
+| Kitaplar/Kitap[Fiyat>50 and Fiyat<80] | Kitaplar içerisinde, Kitap elementler' inden Fiyat elementinin değeri 50 ile 80 arasında olanları elde etmemizi sağlar. |
+| count(/Kitaplar/Kitap) | Toplam Kitap sayısını verir. Bu tekil bir sonuç değeri döndürür. Üstteki sorgularda olduğu gibi bir node listesi döndürmez. |
+| sum(/Kitaplar/Kitap/Fiyat) | Kitapların fiyatlarının toplamını geriye döndürür. Yani Kitap node' ları içerisindeki Fiyat node' larının value özelliklerinin değerlerinin toplamını verir. |
+| sum(/Kitaplar/Kitap/Fiyat[.>70]) | Fiyat element' inin değeri 70' den yüksek olan Kitap element' lerindeki Fiyat element' lerinin toplamını verir. |
+| count(/Kitaplar/Kitap/Fiyat[.>70]) | Fiyat element' inin değeri 70' den yüksek olan Kitap element' lerinin sayısını verir. |
 
 Buradaki sorgularda kısaltmalar (abbreviation) kullanılmıştır.(/ veya. gibi) Bunun birde kısaltma kullanılmayan (unabbreviation) şekli vardır. Genellikle kıslatmaların yer aldığı kullanım şekli daha yaygındır ve esnektir.
 

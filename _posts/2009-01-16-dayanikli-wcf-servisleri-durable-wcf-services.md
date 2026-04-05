@@ -283,66 +283,17 @@ CommonService içerisinde tanımlanmış olan commonValue alanının ilk atanan 
 
 ![mk266_13.gif](/assets/images/2009/mk266_13.gif)
 
-Bir başka deyişle servis nesne örneğinin depolama alanında tutulan içeriğindeki alanda da güncelleme yapılmıştır. Kod bu şekilde sonuna kadar devam ettirildiğinde ve Stop metodu çağrısıda F10 ile geçildiğinde artık CommonService'in şu anki örneği için açılan satırın artık olmadığı açık bir şekilde gözlemlenebilir. Ki burada Stop metodundaki DurableOperation niteliğinde CompleteInstance özelliğine true değerini atadığımızı hatırlamamızda yarar vardır. Bu basit işleyişi tekrar edip SQL Server Profiler aracı yardımıyla arka plana bakıldığında ise aşağıdaki gibi bir sorgu dizisinin çalıştırıldığı gözlemlenmektedir.
+Bir başka deyişle servis nesne örneğinin depolama alanında tutulan içeriğindeki alanda da güncelleme yapılmıştır. Kod bu şekilde sonuna kadar devam ettirildiğinde ve Stop metodu çağrısıda F10 ile geçildiğinde artık CommonService'in şu anki örneği için açılan satırın artık olmadığı açık bir şekilde gözlemlenebilir. Ki burada Stop metodundaki DurableOperation niteliğinde CompleteInstance özelliğine true değerini atadığımızı hatırlamamızda yarar vardır. Bu basit işleyişi tekrar edip SQL Server Profiler aracı yardımıyla arka plana bakıldığında ise aşağıdaki gibi bir sorgu dizisinin çalıştırıldığı gözlemlenmektedir
 
-Start Metodu Çağrısında
-InsertInstance SP'si için çağrı
-
-declare @p3 xml
-set @p3=convert (xml,N'1')
-declare @p7 int
-set @p7=0
-exec InsertInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @instance=default, @instanceXml=@p3,@unlockInstance=1,@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p7 output
-select @p7
-
-IncreaseValue Metodu Çağrısında
-LoadInstance SP'si için çağrı
-
-declare @p5 int
-set @p5=0
-exec LoadInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @lockInstance=1,@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3', @lockTimeout=60,@result=@p5 output
-select @p5
-
-UpdateInstance SP'si için çağrı
-
-declare @p3 xml
-set @p3=convert (xml,N'11')
-declare @p7 int
-set @p7=0
-exec UpdateInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @instance=default, @instanceXml=@p3,@unlockInstance=1,@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p7 output
-select @p7
-
-GetInstanceId Metodu Çağrısında
-LoadInstance SP'si için çağrı
-
-declare @p5 int
-set @p5=0
-exec LoadInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @lockInstance=1, @hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p5 output
-select @p5
-
-UpdateInstance SP'si için çağrı
-
-declare @p3 xml
-set @p3=convert (xml,N'11')
-declare @p7 int
-set @p7=0
-exec UpdateInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @instance=default, @instanceXml=@p3,@unlockInstance=1,@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p7 output
-select @p7
-
-Stop Metodu Çağrısında
-LoadInstance SP'si için çağrı
-
-declare @p5 int
-set @p5=0
-exec LoadInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @lockInstance=1, @hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3', @lockTimeout=60,@result=@p5 output
-select @p5
-
-DeleteInstance SP'si için çağrı
-
-declare @p4 int
-set @p4=0
-exec DeleteInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p4 output
-select @p4
+| | |
+| :--- | :--- |
+| **Start Metodu Çağrısında** | **InsertInstance SP' si için çağrı**<br>declare @p3 xml<br>set @p3=convert(xml,N'\<CommonService xmlns="http://schemas.datacontract.org/2004/07/ServiceLib" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="1" z:Type="ServiceLib.CommonService" z:Assembly="ServiceLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">\<commonValue>1\</commonValue>\</CommonService>')<br>declare @p7 int<br>set @p7=0<br>exec InsertInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @instance=default,<br>@instanceXml=@p3,@unlockInstance=1,@hostId='97CE292D-<br>D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p7 output<br>select @p7 |
+| **IncreaseValue Metodu Çağrısında** | **LoadInstance SP' si için çağrı**<br>declare @p5 int<br>set @p5=0<br>exec LoadInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE',<br>@lockInstance=1,@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',<br>@lockTimeout=60,@result=@p5 output<br>select @p5 |
+| | **UpdateInstance SP' si için çağrı**<br>declare @p3 xml<br>set @p3=convert(xml,N'\<CommonService xmlns="http://schemas.datacontract.org/2004/07/ServiceLib" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="1" z:Type="ServiceLib.CommonService" z:Assembly="ServiceLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">\<commonValue>11\</commonValue>\</CommonService>')<br>declare @p7 int<br>set @p7=0<br>exec UpdateInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @instance=default,<br>@instanceXml=@p3,@unlockInstance=1,@hostId='97CE292D-<br>D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p7 output<br>select @p7 |
+| **GetInstanceId Metodu Çağrısında** | **LoadInstance SP'si için çağrı**<br>declare @p5 int<br>set @p5=0<br>exec LoadInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @lockInstance=1,<br>@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p5 output<br>select @p5 |
+| | **UpdateInstance SP'si için çağrı**<br>declare @p3 xml<br>set @p3=convert(xml,N'\<CommonService xmlns="http://schemas.datacontract.org/2004/07/ServiceLib" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" z:Id="1" z:Type="ServiceLib.CommonService" z:Assembly="ServiceLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">\<commonValue>11\</commonValue>\</CommonService>')<br>declare @p7 int<br>set @p7=0<br>exec UpdateInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @instance=default,<br>@instanceXml=@p3,@unlockInstance=1,@hostId='97CE292D-<br>D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p7 output<br>select @p7 |
+| **Stop Metodu Çağrısında** | **LoadInstance SP' si için çağrı**<br>declare @p5 int<br>set @p5=0<br>exec LoadInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE', @lockInstance=1,<br>@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p5 output<br>select @p5 |
+| | **DeleteInstance SP' si için çağrı**<br>declare @p4 int<br>set @p4=0<br>exec DeleteInstance @id='1B9F9AA9-4F5C-46F1-97ED-C520716CE7AE',<br>@hostId='97CE292D-D465-49B9-9200-4A55BCE2D7B3',@lockTimeout=60,@result=@p4 output<br>select @p4 |
 
 Biraz karmaşık ve gereksiz gibi görülebilir ama bu sorgular içerisinde çağırılan saklı yordamlara ve atamalara dikkat etmenizi, ayrıca incelemenizi şiddetle tavsiye ederim. İlk testimiz başarılı bir şekilde çalıştı. Depolama alanına WCF servis örneğimizin başarılı bir şekilde eklendiği, operasyon çağrıları sırasında güncellendiğini ve son olarakta silindiğini gördük. Ancak başka vakalarda söz konusudur. Örneğin istemci uygulama süreci başlattıktan sonra herhangibir sebeple sonlanırsa, servis tarafında başlattığı instance'ın içeriğine tekrar nasıl ulaşabilir?
 

@@ -128,31 +128,15 @@ Bir uzak nesneye ait kiralama sürelerini sadece kod tarafında değil xml taban
 </configuration>
 ```
 
-Kiralama sürelerine ait bilgiler eğer aksi belirtilmesse her zaman saniye cinsinden uzunlukları temsil eder. Ancak farklı takılar kullanarak bu süre cinslerini değiştirmemiz mümkündür. Bu değerleri aşağıdaki tabloda bulabilirsiniz.
+Kiralama sürelerine ait bilgiler eğer aksi belirtilmesse her zaman saniye cinsinden uzunlukları temsil eder. Ancak farklı takılar kullanarak bu süre cinslerini değiştirmemiz mümkündür. Bu değerleri aşağıdaki tabloda bulabilirsiniz
 
-Harf
-Anlamı
-Örnek
-
-D
-Gün
-3D (3 gün)
-
-H
-Saat
-2H (2 saat)
-
-M
-Dakika
-45M (45 dakika)
-
-S
-Saniye
-15 (15 saniye)
-
-MS
-Milisaniye
-100 (100 milisaniye)
+| **Harf** | **Anlamı** | **Örnek** |
+| --- | --- | --- |
+| D | Gün | 3D (3 gün) |
+| H | Saat | 2H (2 saat) |
+| M | Dakika | 45M (45 dakika) |
+| S | Saniye | 15 (15 saniye) |
+| MS | Milisaniye | 100 (100 milisaniye) |
 
 Özetlemek gerekirse, bir uzak nesnenin varsayılan kiralama süresini (lease time) değiştirebilir ve referansların yaşam sürelerini etkilyebiliriz. Bu makalemizde bunu gerçekleştirmek için programatik olarak ve konfigurasyon bazında kullanabileceğimiz yolları inceledik. Bir sonraki makalemizde, Sponsor tekniğini incelemeye çalışacağız. Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -456,20 +456,22 @@ Doğal olarak sürecin bir şekilde başlatılması gerekmektedir. Bu amaçla Wo
 
 Buraya kadar yazdıklarımız ile iş akışı (Workflow) kavramını, Windows Workflow Foundation yaklaşımını incelemeye çalıştık. Giriş niteliğindeki bu makalemizde, bir iş akışı için gerçek hayat senaryoları kullanmamış olsakta, WWF ile nasıl geliştirilebileceklerini, herhangibir.Net uygulamasından nasıl kullanılabileceklerini gördük. Bundan sonraki makalelerimizde WWF mimarisinin başka konularınıda incelemeye çalışıyor olacağız. Makalemize son vermeden önce Windows Workflow Foundation ile ilgili kaynak kitaplar hakkında bilgi vermek isterim. Söz konusu kitaplar ve bunlara ait özet bilgiler aşağıdaki tabloda yer aldığı gibidir.
 
-Kitap
-Özet Bilgi
-
 ![Wf_Book_1.jpg](/assets/images/2008/Wf_Book_1.jpg)
+
 [Microsoft Windows Workflow Foundation Step by Step](http://www.amazon.com/Microsoft-Windows-Workflow-Foundation-Developer/dp/073562335X/ref=pd_bbs_3?ie=UTF8&s=books&qid=1198592693&sr=8-3)
 
 Mart 2007 tarihinde çıkan Microsoft Press'e ait bu kitap içerisindeki bilgiler ile WWF mimarisini adım adım öğrenmek mümkün. Aynen Microsoft Windows Communication Foundation Step by Step kitabında olduğu gibi oldukça iyi bir anlatıma sahip. Kısa sürede tamamlanabilecek bu kitap ile WWF mimarisini orta seviyede öğrenmek mümkün. Toplam 19 bölümden oluşan kitap içerisinde iş akışlarının SOA ile entegrasyonu, transaction desteği, paralel aktivitilerin (Activities) tasarlanması gibi ileri seviye konularda yer almakta.
 
 ![Wf_Book_2.jpg](/assets/images/2008/Wf_Book_2.jpg)
+
 [Pro WF: Windows Workflow in.NET 3.0 (Expert's Voice in.Net)](http://www.amazon.com/exec/obidos/tg/detail/-/1590597788/ref=ord_cart_shr?_encoding=UTF8&m=ATVPDKIKX0DER&v=glance)
+
 Şubat 2007 tarihinde APress tarafından yayınlanan bu kitap 744 sayfalık bir içeriği 17 bölüm altında toplamakta. Workflow konusunda yazılmış kitaplar arasında temelden ileri seviyeye doğru giden ve en anlaşılır olanlarından bir tanesi. İleri seviye sayılabilecek bölümlerde, iş akışlarının dinamik güncellenmesi, iş akışlarında serileştirme, iş akışlarının izlenmesi gibi konu başlıklarıda yer almaktadır.
 
 ![Wf_Book_3.jpg](/assets/images/2008/Wf_Book_3.jpg)
+
 [Professional Windows Workflow Foundation](http://www.amazon.com/exec/obidos/tg/detail/-/0470053860/ref=ord_cart_shr?_encoding=UTF8&m=ATVPDKIKX0DER&v=glance)
+
 Wrox yayınlarından Mart 2007 tarihinde çıkartılan bu kitap 410 sayfalık mütevazi bir içeriğe sahip. Lakin bu içerik sayesinde çok kısa zamanda Windows Workflow Foundation mimarisini anlamak ve etkin bir şekilde kullanabilmek mümkün. Üstelik kitapta best practices, ileri seviyede aktivite (Activity) tasarlanması, dinamik güncelleştirme, ofis (Office) sistemleri ile entegrasyon gibi enteresan kısımlarda yer almakta.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

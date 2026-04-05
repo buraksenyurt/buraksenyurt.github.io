@@ -37,70 +37,22 @@ WS-ReliableMessaging, mesajların servis tarafında gönderildikleri sırada ele
 
 > WS-ReliableMessaging, Windows Communication Foundation dışında BEA WebLogic, IBM WebSphere, Apache Sandesha gibi sistemler tarafındanda ele alınmaktadır.
 
-WCF mimarisinde aslında söz konusu protokolün sağlanması için gereken teş şey kaynak ve hedef uygulamaların aynı zaman dilimi içerisinde çalışıyor olmalarıdır. WCF sistemi içerisinde yer alan bağlayıcılardan basicHttpBinding, netNamedPipeBinding, netPeerTcpBinding tipleri güvenilir oturumları (Reliable Sessions) desteklememektedir. Bununla birlikte wsDualHttpBinding tipi için güvenilir oturumlar kaldırılamaz. MSMQ desteği veren bağlayıcılardan olan msmqIntegrationBinding ve netMsmqBinding tipleri ise kendi güvenilir oturum şartnamelerini uygularken WS-ReliableSession standardını kullanmazlar. Aslında konu ile ilişkili olarak aşağıdaki tablonun göz önüne alınması önemlidir.
+WCF mimarisinde aslında söz konusu protokolün sağlanması için gereken teş şey kaynak ve hedef uygulamaların aynı zaman dilimi içerisinde çalışıyor olmalarıdır. WCF sistemi içerisinde yer alan bağlayıcılardan basicHttpBinding, netNamedPipeBinding, netPeerTcpBinding tipleri güvenilir oturumları (Reliable Sessions) desteklememektedir. Bununla birlikte wsDualHttpBinding tipi için güvenilir oturumlar kaldırılamaz. MSMQ desteği veren bağlayıcılardan olan msmqIntegrationBinding ve netMsmqBinding tipleri ise kendi güvenilir oturum şartnamelerini uygularken WS-ReliableSession standardını kullanmazlar. Aslında konu ile ilişkili olarak aşağıdaki tablonun göz önüne alınması önemlidir
 
-Bağlayıcı Tip
-(Binding Type)
-Güvenilir
-Oturum
-Desteği
-Varsayılan
-Güvenilir
-Oturum Hali
-Sıralı
-Mesaj
-Desteği
-Varsayılan
-Sıralı
-Mesaj
-Desteği
+| Bağlayıcı Tip <br> (Binding Type) | Güvenilir <br> Oturum <br> Desteği | Varsayılan <br> Güvenilir <br> Oturum Hali | Sıralı <br> Mesaj <br> Desteği | Varsayılan <br> Sıralı <br> Mesaj <br> Desteği |
+| --- | --- | --- | --- | --- |
+| netNamedPipeBinding | Yok | X | Var | X |
+| netTcpBinding | Var | Açık | Var | Kapalı |
+| netPeerTcpBinding | X | X | X | X |
+| wsDualHttpBinding | Var | Açık | Var | Açık |
+| wsHttpBinding | Var | Kapalı | Var | Açık |
+| wsFederationHttpBinding | Var | Kapalı | Var | Açık |
+| basicHttpBinding | X | X | X | X |
+| netMsmqBinding(1) | X | X | X | X |
+| msmqIntegrationBinding(2) | X | X | X | X |
 
-netNamedPipeBinding
-Yok
-
-X
-
-Var
-
-X
-
-netTcpBinding
-Var
-Açık
-Var
-Kapalı
-
-netPeerTcpBinding
-
-X
-
-wsDualHttpBinding
-Var
-Açık
-Var
-Açık
-
-wsHttpBinding
-Var
-Kapalı
-Var
-Açık
-
-wsFederationHttpBinding
-Var
-Kapalı
-Var
-Açık
-
-basicHttpBinding
-
-X
-
-netMsmqBinding
-(Bu bağlayıcı standart Web Servisi (asmx) modelini sunar. Bu modelde varsayılan olarak güvenilir oturumlar bulunmamaktadır.)
-
-msmqIntegrationBinding
-(MSMQ tabanlı bir kuyruk sistemi kullanırlar.)
+- 1 Bu bağlayıcı standart Web Servisi(asmx) modelini sunar. ve varsayılan olarak güvenilir oturumlar bulunmamaktadır.
+- 2 MSMQ tabanlı bir kuyruk sistemi kullanırlar.
 
 Bu teorik bilgilerden sonra artık bir örnek ile devam etmekte fayda bulunmaktadır. Örnekte basit olarak netTcpBinding kullanan bir WCF sistemi yer almaktadır. Sistemde yer alan servis sözleşmesi (Service Contract) ve uygulayıcı tipe ait içerikler aşağıda görüldüğü gibi olmakla birlikte, FabrikaLib isimli bir WCF Sınıf Kütüphanesi (WCF Class Library) içerisinde yer almaktadırlar.
 
@@ -224,10 +176,14 @@ Servis tarafı konfigurasyon içeriği;
 
 İstemci uygulama üzerinde, servis tarafında oluşabilecek istisnaları (Exception) detaylı bir şekilde ele alabilmek için serviceDebug elementinde includeExceptionDetailInFaults niteliğinin değeri true olarak set edilmiştir. İstemci tarafıda servis tarafı gibi bir Console uygulaması olarak tasarlanabilir.
 
-> İstemci tarafı için gerekli olan proxy sınıfı ve servise göre otomatik oluşturulan konfigurasyon dosyasının üretimi için svcutil.exe aracından aşağıdaki gibi yararlanılması gerekmektedir.
-> svcutil FabrikaLib.dll
-> svcutil www.bsenyurt.com.FabrikaLib.UretimServisi.wsdl.xsd /out:UretimServisi.cs
-> Bu işlemin ardından proxy sınıfı ve konfigurasyon dosyası, istemci uygulamaya taşınır.
+İstemci tarafı için gerekli olan proxy sınıfı ve servise göre otomatik oluşturulan konfigurasyon dosyasının üretimi için svcutil.exe aracından aşağıdaki gibi yararlanılması gerekmektedir.
+
+```bash
+svcutil FabrikaLib.dll
+svcutil www.bsenyurt.com.FabrikaLib.UretimServisi.wsdl.xsd /out:UretimServisi.cs
+```
+
+Bu işlemin ardından proxy sınıfı ve konfigurasyon dosyası, istemci uygulamaya taşınır.
 
 İstemci tarafındaki kodlar ve konfigurasyon içeriği ise aşağıdaki gibidir.
 
@@ -357,7 +313,7 @@ Bu işlemin ardından Listeners klasöründeki ServiceModelMessageLoggingListene
 
 Bu işlemlerin ardından servis tarafındaki konfigurasyon dosyasının içeriği aşağıdaki gibi olacaktır.
 
-```csharp
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
     <system.diagnostics>

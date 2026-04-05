@@ -24,39 +24,19 @@ WCF (Windows Communication Foundation) mimarisinde servis tarafındaki metodlar 
 
 > MTOM (Message Transmision Optimization Mechanism) tabanlı mesajların güvenliğinde imzalar (signature) kullanılır. WCF bu imzaları kontrol ederek alınan veya gönderilen MIME içeriğindeki eklerin (attachments) bozulup bozulmadığını anlayabilir ve buna göre uygun çalışma zamanı istisnalarını fırlatabilir.
 
-Windows Communication Foundation mimarisinde HTTP bazlı olan bağlayıcı tiplerin tamamı MTOM tipinde mesajlaşmayı desteklemektedir. Ne varki TCP, MSMQ gibi protokoller üzerinde çalışan bağlayıcı tiplerin (Binding Type) bu tip bir desteği yoktur. Bunun en büyük sebebi ise, bu protokollerin ikili (binary) formattaki veriler için kendi standartlarını kullanıyor olmalarıdır. Ancak daha öncedende değinildiği gibi, özel bağlayıcı tipler (Custom Binding Types) geliştirilerek TCP gibi bir protokol üzerinde MTOM kullanımı teorik olarak sağlanabilmektedir. Aşağıdaki tabloda MTOM tipinde mesajlaşmaya destek veren (vermeyen) bağlayıcı tipler işaret edilmektedir.
+Windows Communication Foundation mimarisinde HTTP bazlı olan bağlayıcı tiplerin tamamı MTOM tipinde mesajlaşmayı desteklemektedir. Ne varki TCP, MSMQ gibi protokoller üzerinde çalışan bağlayıcı tiplerin (Binding Type) bu tip bir desteği yoktur. Bunun en büyük sebebi ise, bu protokollerin ikili (binary) formattaki veriler için kendi standartlarını kullanıyor olmalarıdır. Ancak daha öncedende değinildiği gibi, özel bağlayıcı tipler (Custom Binding Types) geliştirilerek TCP gibi bir protokol üzerinde MTOM kullanımı teorik olarak sağlanabilmektedir. Aşağıdaki tabloda MTOM tipinde mesajlaşmaya destek veren (vermeyen) bağlayıcı tipler işaret edilmektedir
 
-Bağlayıcı Tip
-(Binding Types)
-Mesaj Kodlama/Çözümleme Tipleri
-(Message Encoding/Decoding Types)
-
-BasicHttpBinding
-Text / MTOM
-
-NetTcpBinding
-Binary
-
-NetPeerTcpBinding
-Binary
-
-NetNamedPipeBinding
-Binary
-
-WSHttpBinding
-Text / MTOM
-
-WSFederationBinding
-Text / MTOM
-
-NetMsmqBinding
-Binary
-
-MsmqIntegrationBinding
-Binary
-
-WSDualHttpBinding
-Text / MTOM
+| **Bağlayıcı Tip <br> (Binding Types)** | **Mesaj Kodlama/Çözümleme Tipleri <br> (Message Encoding/Decoding Types)** |
+| --- | --- |
+| BasicHttpBinding | Text / MTOM |
+| NetTcpBinding | Binary |
+| NetPeerTcpBinding | Binary |
+| NetNamedPipeBinding | Binary |
+| WSHttpBinding | Text / MTOM |
+| WSFederationBinding | Text / MTOM |
+| NetMsmqBinding | Binary |
+| MsmqIntegrationBinding | Binary |
+| WSDualHttpBinding | Text / MTOM |
 
 Konuyu daha iyi anlayabilmek için örnek bir senaryo üzerinden hareket etmekte fayda vardır. Bu amaçla AdventureWorks veritabanında yer alan ürünlere ait fotoğrafların tutulduğu ProductPhoto tablosundan yararlanılabilir. Söz konusu tabloda varBinary (MAX) SQL tipinden LargePhoto isimli bir alan yer almaktadır. İlerleyen örnekte LargePhoto isimli alanın içeriğinin MTOM ve Stream bazlı olacak şekilde istemci tarafına aktarılması üzerinde durulacaktır. Senaryoda göz önüne alınacak tablolar aşağıdaki veritabanı diagramında (Database Diagram) olduğu gibidir. Öncelikli olarak en azından istemciye ürün adı ve fotoğraf numarası bilgilerinin gönderilmesinde yarar vardır. Sonrasında istemcinin seçtiği ürüne ait fotoğrafın binary içeriği servis tarafından geriye doğru aktarılacaktır.
 
@@ -191,7 +171,7 @@ namespace ProductPhotoServiceLibrary
 }
 ```
 
-PhotoService isimli sınıf şu an için iki adet metoda sahiptir. GetProducts isimli metod basit olarak geriye ProductInfo tipinden nesne örneklerinden oluşan generic bir List<> koleksiyonu döndürmektedir. GetPhotoByProductId metodu geriye byte[] tipinden bir dizi döndürmektedir. Bu dizi tahmin edileceği üzere tabloda varbinary (MAX) tipinden olan LargePhoto isimli alanın içeriğini taşımaktadır.
+PhotoService isimli sınıf şu an için iki adet metoda sahiptir. GetProducts isimli metod basit olarak geriye ProductInfo tipinden nesne örneklerinden oluşan generic bir List<> koleksiyonu döndürmektedir. GetPhotoByProductId metodu geriye byte[] tipinden bir dizi döndürmektedir. Bu dizi tahmin edileceği üzere tabloda varbinary (MAX) tipinden olan LargePhoto isimli alanın içeriğini taşımaktadır
 
 > Binary dosyanın boyutunun çok büyük olması halinde parçalı olacak şekilde veri içeriğinin toplanması göz önüne alınabilir. Yapılması gereken servis tarafındaki fonksiyonellik içerisinde resim içeriğini veritabanı tablosunda parçalı olacak şekilde okuyup toparlamaktır.
 
@@ -207,7 +187,7 @@ Servis (Service) tarafında mesajlaşma ile ilişkili olan içeriği izleyebilme
 
 web.config;
 
-```csharp
+```xml
 <?xml version="1.0"?>
 <configuration>
     <system.diagnostics>
@@ -379,22 +359,14 @@ Bu işlemin ardından örnek uygulama çalıştırılırsa sonuçların başarı
 
 MTOM standardına uygun olarak hazırlanan mesajlar sayesinde büyük boyutlu ikili (Binary) verilerin gereksiz yere kodlanmadan aktarılması ve çözülmeden alınması mümkün olabilmektedir. Yinede veri boyutunun çok fazla olması halinde MTOM tabanlı mesajların hazırlanmasıda zaman kaybına neden olacaktır. Nitekim söz konusu büyük veri dosyasının tek seferde istemciye (veya servise) doğru aktarılması söz konusudur. Ayrıca bu büyük verinin alınması sırasında timeout'lar oluşabilir. Peki çözüm olarak neler yapılabilir? Eğer protokol uygunsa söz konusu büyük verilerin istemci ve servis arasında bir Stream üzerinden taşınması tercih edilmelidir. Böylece söz konusu performans kayıplarıda ortadan kalkacaktır. Nitekim mesajı tek seferde hazırlanıp tamamının gönderilmesi yerine iki taraf arasında açılan hat üzerinden akması sağlanabilmektedir.
 
-WCF (Windows Communication Foundation) içerisinde yer alan basicHttpBinding, netTcpBinding, netNamedPipeBinding tipleri Stream aktarımını desteklemektedir. Tahmin edileceği üzere diğer bağlayıcı tiplerin buna tam desteği olmadığından özel bağlayıcı tipleri (Custom Binding Types) kullanmak gerekmektedir. Stream kullanılması için tek yapılması gereken TransferMode özelliğinin değerini aşağıdaki tabloda yer alan değerlerden birisine set etmektir. (Bağlayıcı tipin TransferMode özelliği, TransferMode enum sabiti tipinden değerler alabilmektedir.)
+WCF (Windows Communication Foundation) içerisinde yer alan basicHttpBinding, netTcpBinding, netNamedPipeBinding tipleri Stream aktarımını desteklemektedir. Tahmin edileceği üzere diğer bağlayıcı tiplerin buna tam desteği olmadığından özel bağlayıcı tipleri (Custom Binding Types) kullanmak gerekmektedir. Stream kullanılması için tek yapılması gereken TransferMode özelliğinin değerini aşağıdaki tabloda yer alan değerlerden birisine set etmektir. (Bağlayıcı tipin TransferMode özelliği, TransferMode enum sabiti tipinden değerler alabilmektedir
 
-TransferMode Değeri
-Açıklama
-
-Streamed
-Serivise gelen ve servisten çıkan mesajlar stream üzerinden hareket ederler.
-
-StreamedRequest
-Sadece servis tarafına gelen taleplere (Request) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafındaki metodun parametresinin tek ve Stream sınıfından türeyen bir şekilde tasarlanmış olması şarttır.
-
-StreamedResponse
-Sadece servis tarafından istemciye geri dönen cevaplara (Response) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafında yer alan operasyonun geriye Stream sınıfından türemiş bir tip döndürmesi veya bunu out anahtar sözcüğü ile metod parametrelerinde yapması şarttır. (Burada Stream yerine IXmlSerializable arayüzünü-interface- uyarlamış bir tipin döndürülmeside sağlanabilir.)
-
-Buffered
-Mesajlar stream üzerinden hareket etmezler. Hangi taraf olursa olsun, ikili (binary) içeriğin tamamı gönderilmeye hazır hale geldiğinde karşı tarafa aktarılırlar. Karşı tarafa ulaştığında ise tamamı tampona alındıktan sonra uygulamaya işlenmek üzere aktarılırlar. TransferMode özelliğinin varsayılan (Default) değeri Buffered olarak belirlenmiştir.
+| **TransferMode Değeri** | **Açıklama** |
+| --- | --- |
+| Streamed | Serivise gelen ve servisten çıkan mesajlar stream üzerinden hareket ederler. |
+| StreamedRequest | Sadece servis tarafına gelen taleplere(Request) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafındaki metodun parametresinin tek ve Stream sınıfından türeyen bir şekilde tasarlanmış olması şarttır. |
+| StreamedResponse | Sadece servis tarafından istemciye geri dönen cevaplara(Response) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafında yer alan operasyonun geriye Stream sınıfından türemiş bir tip döndürmesi veya bunu out anahtar sözcüğü ile metod parametrelerinde yapması şarttır. (Burada Stream yerine IXmlSerializable arayüzünü-interface- uyarlamış bir tipin döndürülmeside sağlanabilir.) |
+| Buffered | Mesajlar stream üzerinden hareket etmezler. Hangi taraf olursa olsun, ikili(binary) içeriğin tamamı gönderilmeye hazır hale geldiğinde karşı tarafa aktarılırlar. Karşı tarafa ulaştığında ise tamamı tampona alındıktan sonra uygulamaya işlenmek üzere aktarılırlar. TransferMode özelliğinin varsayılan(Default) değeri Buffered olarak belirlenmiştir. |
 
 Her ne kadar stream üzerinden mesaj göndermek avantajlı gözüksede dikkat edilmesi gereken bazı hususlarda vardır. Herşeyden önce Stream kullanılması halinde mesaj seviyesinde güvenlik (Message Level Security) tesis edilememektedir. Bu nedenle iletişim seviyesinde güvenlik (Transport Level Security) kullanılmalıdır. Örneğin HTTPS kullanımı HTTP üzerinden kullanılacak Stream'ler için geçerlidir. Bunların dışında Stream kullanımı içinde bir mesaj alma sınırı vardır. Biraz önceki örnekte olduğu gibi belirlenen boyutun dışına çıkıldığında çalışma zamanı istisnaları alınabilir. Ancak en önemli kısıtlardan birisi güvenilir oturum (Reliable Session) açmanın mümkün olmayışıdır. Nitekim güvenilir oturumlar mesajların tamponlanması ve sıralanması ilkelerine göre çalışmaktadır.
 

@@ -17,33 +17,18 @@ Peki bu mesajların makalemize konu olmasının sebebi nedir? Bilindiği üzere 
 
 Yazımıza servis odaklı uygulamalarda mesajların yerini konumlandırmaya çalışarak başladık. Özellikle SOAP tabanlı bu mesajlar gerektiğinde özel olarak tasarlanabilirler. WCF tarafında bunu gerçekleştirebilmek için Mesaj Sözleşmelerinden yararlanılır. Mesaj sözleşmelerinin ne zaman kullanılacağına karar verilmesi genellikle zordur. Farklı platformlar için destek verebilme imkanı (Interoperability) ve mesaj kontrolü çoğunlukla karar vermeyi kolaylaştırmaktadır. Gerçektende servis tarafından istemciye gönderilecek veya alınacak mesajların farklı platformlara destek verebilecek şekilde tasarlanması gerektiği durumlarda özel Mesaj Sözleşmeleri göz önüne alınabilir. Diğer taraftan Mesaj Sözleşmeleri ile taşınacak bilginin değişik parçalarının SOAP paketinin Header veya Body kısmına ayrıştırılması ve bu sayede de, gerekli olmayan parçaların mesaj ile birlikte taşınmaması sağlanabilmektedir. Bu tam anlamıyla aradaki mesajlaşmanın kontrol altına alınması anlamına gelmektedir. Hatta, istemci ve servislerin belirli olduğu vakalarda, arada özel bir mesaj formatına göre veri içeriğinin taşınmasıda mümkün olabilir. Diğer taraftan göz ardı edilmemesi gereken bir noktada, mesaj seviyesinde güvenliktir. Mesaj Sözleşmeleri kullanılırken bir tipin SOAP zarfının içerisindeki yayılımı belirlenebildiği gibi (hangi kısımları Header'da olacak vb...) verinin şifrelenmeside (Encryption) özelleştirilebilir. Böylece vakaya göre bir mesaj deseninin oluşturulması ve kullanılması mümkün olabilmektedir.
 
-> Çoğu durumda Mesaj Sözleşmeleri yerine Veri Sözleşmelerininde aynı işi yapıyor olduğu görülür. Ancak genel kanıya göre, eğer bir tip n sayıda mesaj içerisinde kullanılacaksa (yani reusable type olarak düşünülebilirse) Veri Sözleşmesi olarak tanımlanması önerilmektedir. Ancak tip (type) sadece istek/cevap (Request/Respone) modeline göre bir kereliğine kullanılıyorsa, Mesaj Sözleşmesi olacak şekilde tanımlanır.
+Çoğu durumda Mesaj Sözleşmeleri yerine Veri Sözleşmelerininde aynı işi yapıyor olduğu görülür. Ancak genel kanıya göre, eğer bir tip n sayıda mesaj içerisinde kullanılacaksa(yani reusable type olarak düşünülebilirse) Veri Sözleşmesi olarak tanımlanması önerilmektedir. Ancak tip(type) sadece istek/cevap(Request/Respone) modeline göre bir kereliğine kullanılıyorsa, Mesaj Sözleşmesi olacak şekilde tanımlanır. |
 
-Mesaj sözleşmelerinin uygulanması son derece kolaydır. Ancak dikkat edilmesi gereken noktalar vardır. Herşeyden önce MessageContract, MessageHeader, MessageBodyMember, MessageHeaderArray gibi niteliklerinden (attributes) yararlanılarak Mesaj Sözleşmesi tanımlanabilmektedir. Bununla birlikte servis operasyonlarında Mesaj Sözleşmelerinin kullanılması söz konusu ise metod yapısında uyulması gereken kurallar vardır. Buna göre metod desenleri aşağıdaki örnekler olduğu gibi olmalıdır. Bu tablodaki örnek kullanımlarda yer alan ProductOrderResponse ve ProductOrderRequest isimli tipler örnek Mesaj Sözleşmesi sınıflarıdır.
+Mesaj sözleşmelerinin uygulanması son derece kolaydır. Ancak dikkat edilmesi gereken noktalar vardır. Herşeyden önce MessageContract, MessageHeader, MessageBodyMember, MessageHeaderArray gibi niteliklerinden (attributes) yararlanılarak Mesaj Sözleşmesi tanımlanabilmektedir. Bununla birlikte servis operasyonlarında Mesaj Sözleşmelerinin kullanılması söz konusu ise metod yapısında uyulması gereken kurallar vardır. Buna göre metod desenleri aşağıdaki örnekler olduğu gibi olmalıdır. Bu tablodaki örnek kullanımlarda yer alan ProductOrderResponse ve ProductOrderRequest isimli tipler örnek Mesaj Sözleşmesi sınıflarıdır
 
-Geçerli Mesaj Sözleşme Kullanımları
-
-[OperationContract]
-ProductOrderResponse CompleteOrderProcess (ProductOrderRequest request);
-Operasyonun dönüş tipi ve parametresi Mesaj Sözleşmesi tipindendir.
-
-[OperationContract]
-ProductOrderResponse CompleteOrderProcess ();
-Operasyon parametre almamakta ve Mesaj Sözleşmesi tipinden referans döndürmektedir.
-
-[OperationContract]
-void CompleteOrderPrococes2 (ProductOrderRequest request);
-Operasyon Mesaj Sözleşmesi tipinden parametre almakta ama değer döndürmemektedir.
-
-Geçersiz Mesaj Sözleşme Kullanımları
-
-[OperationContract]
-int CompleteOrderProcess (ProductOrderRequest request);
-Parametrenin Mesaj Sözleşmesi olduğu durumlarda dönüş tipi olarak Mesaj Sözleşmesi harici bir tip kullanılamaz. Exception üretir.
-
-[OperationContract]
-void ComplteOrderProcess (ProductOrderRequest request1, ProductOrderRequest request2);
-Birden fazla Mesaj Sözleşmesi parametre olarak kullanılamaz. Exception üretir.
+| Geçerli Mesaj Sözleşme Kullanımları |  |
+| --- | --- |
+| [OperationContract] <br> ProductOrderResponse CompleteOrderProcess(ProductOrderRequest request); | Operasyonun dönüş tipi ve parametresi Mesaj Sözleşmesi tipindendir. |
+| [OperationContract] <br> ProductOrderResponse CompleteOrderProcess(); | Operasyon parametre almamakta ve Mesaj Sözleşmesi tipinden referans döndürmektedir. |
+| [OperationContract] <br> void CompleteOrderPrococes2(ProductOrderRequest request); | Operasyon Mesaj Sözleşmesi tipinden parametre almakta ama değer döndürmemektedir. |
+| Geçersiz Mesaj Sözleşme Kullanımları |  |
+| [OperationContract] <br> int CompleteOrderProcess(ProductOrderRequest request); | Parametrenin Mesaj Sözleşmesi olduğu durumlarda dönüş tipi olarak Mesaj Sözleşmesi harici bir tip kullanılamaz. Exception üretir. |
+| [OperationContract] <br> void ComplteOrderProcess(ProductOrderRequest request1, ProductOrderRequest request2); | Birden fazla Mesaj Sözleşmesi parametre olarak kullanılamaz. Exception üretir. |
 
 Bu kısa teorik bilgileri devam ettireceğiz ancak dilerseniz basit bir örnek üzerinden ilerleyerek devam edelim. Öncelikli olarak bir WCF Sınıf Kütüphanesi projesi oluşturduğumuzu düşünelim. Bu projemizde yer alacak olan tiplerin sınıf diygramındaki görüntüsü aşağıdaki gibi tasarlanabilir.
 
@@ -190,16 +175,27 @@ namespace ProductTransferLib
 }
 ```
 
-ProductOrderRequest isimli sınıf bir Mesaj Sözleşmesi olacak şekilde tanımlanmıştır. Bu nedenle MessageContract niteliği ile imzalanmıştır. Bu nitelik sadece sınıf (Class) veya yapılara (Structs) uygulanabilir. Yazımızın başında mesajın Header ve Body kısımlarından bahsetmiştik. Header kısmında taşınacak olan alan (Field) veya özellikleri (Property) belirtmek için MessageHeader niteliği kullanılmaktadır. Örnektende görüldüğü gibi, Header kısmında Guid, DateTime gibi bilinen tipler dışında Product isimli geliştirici tanımlı bir sınıfada yer verilmiştir. Söz konusu tipler mesaj içerisine alınırken serileştirilmektedir. Bu nedenle Product sınıfı ve diğer geliştirici tanımlı tipler birer Veri Sözleşmesi olarak tanımlanmıştır. Body kısmında yer alacak özellik veya alanlar ise MessageBodyMember niteliği ile tanımlanırlar. Yine Body kısmındada, Sender ve Receiver isimli geliştirici tanımlı Veri Sözleşmelerine yer verilmektedir. Özellikle Receiver tipinden bir Array kullanıldığınada dikkat edilmelidir.
+ProductOrderRequest isimli sınıf bir Mesaj Sözleşmesi olacak şekilde tanımlanmıştır. Bu nedenle MessageContract niteliği ile imzalanmıştır. Bu nitelik sadece sınıf (Class) veya yapılara (Structs) uygulanabilir. Yazımızın başında mesajın Header ve Body kısımlarından bahsetmiştik. Header kısmında taşınacak olan alan (Field) veya özellikleri (Property) belirtmek için MessageHeader niteliği kullanılmaktadır. Örnektende görüldüğü gibi, Header kısmında Guid, DateTime gibi bilinen tipler dışında Product isimli geliştirici tanımlı bir sınıfada yer verilmiştir. Söz konusu tipler mesaj içerisine alınırken serileştirilmektedir. Bu nedenle Product sınıfı ve diğer geliştirici tanımlı tipler birer Veri Sözleşmesi olarak tanımlanmıştır. Body kısmında yer alacak özellik veya alanlar ise MessageBodyMember niteliği ile tanımlanırlar. Yine Body kısmındada, Sender ve Receiver isimli geliştirici tanımlı Veri Sözleşmelerine yer verilmektedir. Özellikle Receiver tipinden bir Array kullanıldığınada dikkat edilmelidir
 
-> Header veya Body kısımlarında Array'ler kullanılıyorsa MessageHeader ve MessageBodyMember nitelikleri bu dizilerin elemanlarını bir elementin alt elementleri (Child Element) olacak şekilde konumlandırır. Örneğin;
-> içeriği
-> içeriği
-> Ancak istenirse her bir dizi elemanının ayrı birer boğum olarak ele alınması sağlanabilir. Bunun için MessageHeaderArray niteliği kullanılır.
-> içeriği
-> içeriği
-> Yanlız bu nitelik sadece dizilere uygulanabilir. Bir başka deyişle koleksiyonlara uygulanamamaktadır.
-> Eğer SOAP içeriğinde byte tipinden bir diziye yer verilmişse MessageHeader veya MessageBodyMember niteliklerinin kullanılması halinde bunlar doğrudan Base64 tipine dönüştürülürler. Ancak, eğer MessageHeaderArray niteliği kullanılıyorsa, ele alınan serileştirme tipine göre (DataContractSerializer, XmlSerializer gibi) bir aktarım gerçekleştirilir.
+Header veya Body kısımlarında Array' ler kullanılıyorsa MessageHeader ve MessageBodyMember nitelikleri bu dizilerin elemanlarını bir elementin alt elementleri(Child Element) olacak şekilde konumlandırır. Örneğin; 
+
+```xml
+<diziAdi>
+    <diziElemanTipiAdi>içeriği</diziElemanTipiAdi>
+    <diziElemanTipiAdi>içeriği</diziElemanTipiAdi>
+</diziAdi>
+```
+
+Ancak istenirse her bir dizi elemanının ayrı birer boğum olarak ele alınması sağlanabilir. Bunun için MessageHeaderArray niteliği kullanılır.
+
+```xml
+<diziAdi>içeriği</diziAdi>
+<diziAdi>içeriği</diziAdi>
+```
+
+Yanlız bu nitelik sadece dizilere uygulanabilir. Bir başka deyişle koleksiyonlara uygulanamamaktadır.
+
+Eğer SOAP içeriğinde byte tipinden bir diziye yer verilmişse MessageHeader veya MessageBodyMember niteliklerinin kullanılması halinde bunlar doğrudan Base64 tipine dönüştürülürler.  Ancak, eğer MessageHeaderArray niteliği kullanılıyorsa, ele alınan serileştirme tipine göre(DataContractSerializer, XmlSerializer gibi) bir aktarım gerçekleştirilir.
 
 MessageHeader ve MessageBodyMember niteliklerinde yer alan ProtectionLevel özelliği kullanılarak dijital olarak imzalama (Sign) veya şifreleme (Encryption) sağlanabilir. ProtectionLevel özelliği System.Net.Security.ProtectionLevel enum sabiti tipinden bir değer alabilir. Bu değerler None, EncryptAndSign, Sign olabilir. Varsayılan değeri None'dur. Sign seçilirse dijital imzalama söz konusudur. EncryptAndSign seçilirsede şifreleme ve dijital imzalama söz konusudur.
 
@@ -636,9 +632,11 @@ Dikkat edileceği üzere Request mesajında gönderilen Product nesnelerine ait 
 
 ![mk269_7.gif](/assets/images/2009/mk269_7.gif)
 
-> Eğer istemciden talep gönderildikten sonra varsayılan olarak 1 dakikalık zaman dilimi içerisinde servis tarafından cevap gelmezse aşağıdaki ekran görüntüsünde yer alan TimeoutException istisnası ile karşılaşılır.
-> ![mk269_9.gif](/assets/images/2009/mk269_9.gif)
-> Bu sorun SendTimeout değeri arttırılarak çözümlenebilir. Bu sorun, uzun süren operasyonların söz konusu olduğu durumda dikkate alınması gereken istisnaların başında gelmektedir.
+Eğer istemciden talep gönderildikten sonra varsayılan olarak 1 dakikalık zaman dilimi içerisinde servis tarafından cevap gelmezse aşağıdaki ekran görüntüsünde yer alan TimeoutException istisnası ile karşılaşılır.
+
+![mk269_9.gif](/assets/images/2009/mk269_9.gif)
+
+Bu sorun SendTimeout değeri arttırılarak çözümlenebilir. Bu sorun, uzun süren operasyonların söz konusu olduğu durumda dikkate alınması gereken istisnaların başında gelmektedir.
 
 Buraya kadar yaptıklarımıza baktığımızda, istemci ve sunucu arasındaki Mesaj içeriklerinin yönetiminin Mesaj Sözleşmeleri yardımıyla ele alınabildiği sonucu ortaya çıkmaktadır. Buna göre istenirse, istemci ve sunucu arasında taşınacak bir veri tipinin belirli parçalarının SOAP zarfı içerisindek Header veya Body bölümleri arasında ayrıştırılması mümkün olabilmektedir. Hatta, istemci ve servis arasında özel mesaj desenlerinin oluşturulması da söz konusu ve olasıdır. Elbette bu işi tamamlayıcı en önemli nokta şifreleme (Encryption) işlemlerininde hesaba katılmasıdır.
 

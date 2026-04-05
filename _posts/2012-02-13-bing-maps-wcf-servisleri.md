@@ -24,22 +24,15 @@ O dönemlerde internet üzerinden yayınlanan bazı ücretsiz servislerden yarar
 
 Tabi zaman ilerledi ve bildiğiniz üzere Microsoft, servis odaklı geliştirme dünyasına yeni bir kavram getirdi. WCF (Windows Communication Foundation) Şimdi eskisi kadar çok sık olmasa da arada sırada eğitim veriyorum ve özellikle WCF konusuna sıra geldiğinde, öğrencilerime verdiğim gerçek hayat örnekleri arasında Bing Maps’ in ücretsiz servisleri de yer alıyor. Bu yazımızda söz konusu servislerden bazılarını nasıl kullanacağımızı, basit fonksiyonlar üzerinden görmeye çalışıyor olacağız.
 
-Microsoft Bing Map’ in geliştiricilere sunduğu 4 önemli servis bulunmaktadır. Bu servislere ait adresleri aşağıdaki tabloda bulabilirsiniz.
+Microsoft Bing Map’ in geliştiricilere sunduğu 4 önemli servis bulunmaktadır. Bu servislere ait adresleri aşağıdaki tabloda bulabilirsiniz
 
-Servis
-Adres
+| Servis | Adres |
+| --- | --- |
 
-Geocode
-[http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl](http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl)
-
-Search
-[http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc?wsdl](http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc?wsdl)
-
-Imagery
-[http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc?wsdl](http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc?wsdl)
-
-Route
-[http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl](http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl)
+| Geocode | http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl |
+| Search | http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc?wsdl |
+| Imagery | http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc?wsdl |
+| Route | http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl |
 
 Dikkat edileceği üzere söz konusu servislerin tamamı WCF (Windows Communication Foundation) tabanlı olarak geliştirilmişlerdir (svc uzantısına dikkat)
 

@@ -19,22 +19,14 @@ Astoria kod adı ile anılan ve İstanbul Mecidiyeköy’ deki alış veriş mer
 
 > Ebellteki Web programlama modelinin (Web Programming Model) WCF tarafına kazandırdığı tek avantaj QueryString bazlı operasyon desteği değildir. Bunun yanında JSON (Java Script Object Notation) formatında yayınlama ve RSS, Atom bazlı Syndication desteğide gelmektedir.
 
-Aslında kafayı çok fazla karıştırmaya gerek yoktur. Aşağıdaki tablo durumu daha net bir şekilde özetlemektedir.
+Aslında kafayı çok fazla karıştırmaya gerek yoktur. Aşağıdaki tablo durumu daha net bir şekilde özetlemektedir
 
-HTTP İşlemi
-CRUD Karşılığı
-
-Post
-Create, Update, Delete
-
-Get
-Read
-
-Put
-Create, Overwrite/Replace
-
-Delete
-Delete
+| HTTP İşlemi | CRUD Karşılığı |
+| --- | --- |
+| Post | Create, Update, Delete |
+| Get | Read |
+| Put | Create, Overwrite/Replace |
+| Delete | Delete |
 
 Bu tabloda anlatılmak istenen şudur; HTTP üzerinden yapılabilecek olan Post, Get, Put, Delete gibi çağrılar tablonun sağ tarafında yer alan veri operasyonlarına dönüştürülebilirler. O halde işin içersine veri kelimesinin girdiği ortadadır ve ne varki Astoria açılımı Ado.Net Data Services olarak geçmektedir. O halde Astoria için, Ado.Net tabanlı verileri REST modelinin belirttiği kriterlere uygun olacak şekilde dışarıya sunan servis mimarisidir tanımlamasını yapmak yerinde olacaktır.
 
@@ -169,70 +161,34 @@ Bu ifadelere göre Product nesneleri için sadece okuma işlemi yapılabilirken,
 
 ![mk258_14.gif](/assets/images/2008/mk258_14.gif)
 
-Buradan çıkartılması gereken ilk sonuç Product ve ProductSubcategory elementleri için taleplerde bulunulabileceğidir. Öyleyse test sorgularına başlanabilir. Sorgulardan kastımız elbetteki URL satırına girilen QueryString ifadeleri ve bunların ATOM tabanlı XML çıktılarının nasıl olacağıdır.
+Buradan çıkartılması gereken ilk sonuç Product ve ProductSubcategory elementleri için taleplerde bulunulabileceğidir. Öyleyse test sorgularına başlanabilir. Sorgulardan kastımız elbetteki URL satırına girilen QueryString ifadeleri ve bunların ATOM tabanlı XML çıktılarının nasıl olacağıdır
 
-Örnek 1;
-Tüm ProductSubcategory satırlarının elde edilmesi
-
-URL Satırı ifadesi:
-http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory
-(Burada hemen bir hatırlatma yapalım. Eğer URL satırında ProductSubcategory yerine ProductSubCategory yazılırsa Case-Sensitive özelliğinden dolayı HTTP 404 Not Found çıktısı alınır. Dolayısıyla QueryString'leri yazarken Case-Sensitive olmalarına dikkat etmek gerekir.)
-
-Sonuç Ekran görüntüsü;
-
-![mk258_15.gif](/assets/images/2008/mk258_15.gif)
-
-Örnek 2: 3 Numaralı ProductSubcategory bilgisinin elde edilmesi
-
-URL Satırı ifadesi:
-http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory (3)
-
-Sonuç Ekran görüntüsü;
-
-![mk258_16.gif](/assets/images/2008/mk258_16.gif)
-
-Not: İkinci örnekte dikkat edilmesi gereken bir nokta vardır. URL satırında parantez içerisinde 3 değeri yazılarak ProductSubCategoryID değeri 3 olan alt kategori bilgisi elde edilmiştir. Pekiya servis tarafından nasıl olmaktadırda, parantez içerisindeki değerin ProductSubCategoryID alanına işaret ettiği bilinmektedir. Burada anahtar nokta ProductSubcategory sınıfındaki ProductSubCategoryID özelliğidir.
-![mk258_17.gif](/assets/images/2008/mk258_17.gif)
-Şekildende görüleceği üzere EdmScalarPropertyAttribute niteliğinin içerisinde EntityKeyProperty özelliğine true değeri verilmiştir. Böylece çalışma zamanı, parantez içerisinde gelen ifadenin bu özelliğe ait olduğunu bilmektedir.
-
-Örnek 3: Product tablosundan ListPrice değeri 3500 birim üzerinde olanların elde edilmesi
-
-URL Satırı ifadesi:
-http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500
-(Burada gt=grater then anlamındadır.Buna göre küçüktür için lt=less then)
-
-Sonuç Ekran görüntüsü;
-
-![mk258_18.gif](/assets/images/2008/mk258_18.gif)
-
-Örnek 4: ProductSubcategoryID değeri 1 olan alt kategoriye bağlı ürünlerin listesinin elde edilmesi
-
-URL Satırı ifadesi:
-http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory (1)/Product
-
-Sonuç Ekran görüntüsü;
-
-![mk258_19.gif](/assets/images/2008/mk258_19.gif)
-
-Örnek 5: Product tablosundan ListPrice değeri 3500 birim üzerinde olanların isimlerine göre ters sırada elde edilmesi
-
-URL Satırı ifadesi:
-http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500&$orderby Name desc
-(İki ayrı sorgu ifadesi birleştirilirken & kullanılır)
-
-Sonuç Ekran görüntüsü;
-
-![mk258_20.gif](/assets/images/2008/mk258_20.gif)
-
-Örnek 6: ProductSubCategoryID değeri 4 olan alt kategorinin bilgilerinin elde edilmesi ve buna bağlı ürünlerinde getirilmesi
-
-URL Satırı ifadesi:
-http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory (4)?$expand=Product
-
-Sonuç Ekran görüntüsü;
-Dikkat edileceği üzere inline elementi altında 4 numaralı alt kategoriyi bağlı Product örneklerinin entry boğumları yer almaktadır. Service tarafı göz önüne alındığında expand komutunun kullanılabilmesini sağlayan üyenin ProductSubcategory sınıfındaki Product özelliği olduğuna dikkat etmek gerekir.
-
-![mk258_21.gif](/assets/images/2008/mk258_21.gif)
+| Örnek 1 ; <br> Tüm ProductSubcategory satırlarının elde edilmesi |
+| --- |
+| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory (Burada hemen bir hatırlatma yapalım. Eğer URL satırında ProductSubcategory yerine ProductSubCategory yazılırsa Case-Sensitive özelliğinden dolayı HTTP 404 Not Found çıktısı alınır. Dolayısıyla QueryString' leri yazarken Case-Sensitive olmalarına dikkat etmek gerekir.) |
+| Sonuç Ekran görüntüsü ; <br> ![mk258_15](/assets/images/2008/mk258_15.gif) |
+|  |
+| Örnek 2 : 3 Numaralı ProductSubcategory bilgisinin elde edilmesi |
+| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(3) |
+| Sonuç Ekran görüntüsü ; <br> ![mk258_16](/assets/images/2008/mk258_16.gif) |
+|  |
+| Not : İkinci örnekte dikkat edilmesi gereken bir nokta vardır. URL satırında parantez içerisinde 3 değeri yazılarak ProductSubCategoryID değeri 3 olan alt kategori bilgisi elde edilmiştir. Pekiya servis tarafından nasıl olmaktadırda, parantez içerisindeki değerin ProductSubCategoryID alanına işaret ettiği bilinmektedir. Burada anahtar nokta ProductSubcategory sınıfındaki ProductSubCategoryID özelliğidir. Şekildende görüleceği üzere EdmScalarPropertyAttribute niteliğinin içerisinde EntityKeyProperty özelliğine true değeri verilmiştir. Böylece çalışma zamanı, parantez içerisinde gelen ifadenin bu özelliğe ait olduğunu bilmektedir. <br> ![mk258_17](/assets/images/2008/mk258_17.gif) |
+| Örnek 3 : Product tablosundan ListPrice değeri 3500 birim üzerinde olanların elde edilmesi |
+| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500 <br> (Burada gt=grater then anlamındadır.Buna göre küçüktür için lt=less then) |
+| Sonuç Ekran görüntüsü ; <br> ![mk258_18](/assets/images/2008/mk258_18.gif) |
+|  |
+| Örnek 4 : ProductSubcategoryID değeri 1 olan alt kategoriye bağlı ürünlerin listesinin elde edilmesi |
+| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(1)/Product |
+| Sonuç Ekran görüntüsü ; <br> ![mk258_19](/assets/images/2008/mk258_19.gif) |
+|  |
+| Örnek 5 : Product tablosundan ListPrice değeri 3500 birim üzerinde olanların isimlerine göre ters sırada elde edilmesi |
+| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500&$orderby Name desc <br> (İki ayrı sorgu ifadesi birleştirilirken & kullanılır) |
+| Sonuç Ekran görüntüsü ; <br> ![mk258_20](/assets/images/2008/mk258_20.gif) |
+|  |
+| Örnek 6 : ProductSubCategoryID değeri 4 olan alt kategorinin bilgilerinin elde edilmesi ve buna bağlı ürünlerinde getirilmesi |
+| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(4)?$expand=Product |
+| Sonuç Ekran görüntüsü ; <br> ![mk258_21](/assets/images/2008/mk258_21.gif) <br> Dikkat edileceği üzere inline elementi altında 4 numaralı alt kategoriyi bağlı Product örneklerinin entry boğumları yer almaktadır. Service tarafı göz önüne alındığında expand komutunun kullanılabilmesini sağlayan üyenin ProductSubcategory sınıfındaki Product özelliği olduğuna dikkat etmek gerekir. |
+|  |
 
 Buraya kadar anlatıklarımız umarım sizlere Ado.Net Data Services hakkında biraz fikir verebilmiştir. Eğer buraya kadar makaleyi zevkle okuduysanız işte size yapmanız gereken bir kaç ödev. Öncelikli olarak tarayıcı uygulama üzerinden sorgu gönderdiğinizde SQL tarafında nasıl komutlar çalıştırıldığına bakmanızı öneririm. Kod tarafında ilgili noktalara breakpoint'ler ekleyerek nesnelerin ne zaman örneklendiklerine (REST sorgusu SQL sorgusuna dönüştürülmeden öncemi, sonra mı gibi) bakmanızı öneririm. Başka ne çeşit sorgular yazabileceğinizi filter, orderby, expand, () dışında ne gibi query komutları olabileceğini araştırın. Bu araştırmalarıda başarı ile yaparsanız şöyle güzel bir sütlü nescafe'yi deniz kenarında yudumlamayı hak etmişsiniz demektir, üstelik güneş batarken.
 

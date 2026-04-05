@@ -19,25 +19,14 @@ RDA mimarisinde işlemleri başlatan her zaman mobil tarafındaki uygulamadır. 
 
 RDA işlemleri için yönetimli kod (Managed Code) tarafında System.Data.SqlServerCe isim alanında yer alan SqlCeRemoteDataAccess sınıfı kullanılmaktadır. Bu sınıfa ait metodları kullanarak veri alma, veri çekme gibi işlemler gerçekleştirilebilir. Bu işlemler sırasında elbetteki sürekli bir bağlantı gerekmektedir. Ancak bu süreklilik RDA mimarisinin sürekli bir bağlantı gerektirdiğini göstermez. Nitekim senkronizasyonun asıl amaçlarından biriside, aralında belirli aralıklarla bağlantı sağlanan yapılarda, istemci ve sunucu arasındaki veri bütünlüğünü sağlamaktır. Teorik olarak RDA mimarisine göre, veri aktarımı sırasında bağlantının kesildiği durumlarda sistem, bağlantı tekrardan sağlayıncaya kadar veri paketinin son gönderildiği yeri aklında tutar. Bağlantı tekrardan sağlanır sağlanmaz veriler kaldığı yerden gönderilmeye devam eder.
 
-RDA mimarisinde istemci tarafına veri çekmek için Pull metodu, sunucu tarafına veri göndermek için Push metodu, sunucu üzerinde doğrudan sql cümlesi çalıştırmak için ise SubmitSql metodu kullanılır. SqlCeRemoteDataAccess sınıfına ait olan bu metodlara ilişkin temel özellikleri ve dikkat edilmesi gereken noktaları şöyle sıralayabiliriz.
+RDA mimarisinde istemci tarafına veri çekmek için Pull metodu, sunucu tarafına veri göndermek için Push metodu, sunucu üzerinde doğrudan sql cümlesi çalıştırmak için ise SubmitSql metodu kullanılır. SqlCeRemoteDataAccess sınıfına ait olan bu metodlara ilişkin temel özellikleri ve dikkat edilmesi gereken noktaları şöyle sıralayabiliriz
 
-Pull
-Push
-SubmitSql
-
-LookUp tabloların mobil tarafa aktarılmasında kullanılır.(Sadece LookUp tablolar kullanılacağı zaman Pull metodu ile güncelleme işlemi gerekmez.)
-Mobil tarafından sunucuya veri gönderilmesinde bir başka deyişle var olan mobil bilgilerin sunucuda güncellenmesinde kullanılır.
-Doğrudan sunucu üzerinde sql cümlesi çalıştırabilir.
-
-Pull işleminden önce mobil tarafta yer alan ilgili tablo silinmelidir. Aksi durumda istisna (Exception) alınır.
-Pull metodu ile çekilen veriller için Tracking özelliği aktif ise sadece değişiklikleri göndererek kaynak kullanımını azaltır.
-Insert, Update, Delete işlemleri dışında geriye sonuç kümesi döndürmeyen sp'leride çalıştırabilir.
-
-Eğer Pull ile alınan tabloda güncelleme yapılacak ve Push ile geri gönderiecek ise Tracking özelliği aktif hale getirilmelidir.
-Sunucu tarafında tracking işlemi yapılmayacağından, güncelleme işleminden sonra verilerin son hali için tekrardan Pull metodunu uygulamak gerekebilir
-Veri değişiklikleri doğrudan sunucu tarafında yapılır.
-
-Mobil tarafa alınacak her bir tablo için ayrı ayrı Pull metodları çağırılmalıdır.
+| Pull | Push | SubmitSql |
+| --- | --- | --- |
+| LookUp tabloların mobil tarafa aktarılmasında kullanılır.(Sadece LookUp tablolar kullanılacağı zaman Pull metodu ile güncelleme işlemi gerekmez.) | Mobil tarafından sunucuya veri gönderilmesinde bir başka deyişle var olan mobil bilgilerin sunucuda güncellenmesinde kullanılır. | Doğrudan sunucu üzerinde sql cümlesi çalıştırabilir. |
+| Pull işleminden önce mobil tarafta yer alan ilgili tablo silinmelidir. Aksi durumda istisna(Exception) alınır. | Pull metodu ile çekilen veriller için Tracking özelliği aktif ise sadece değişiklikleri göndererek kaynak kullanımını azaltır. | Insert, Update, Delete işlemleri dışında geriye sonuç kümesi döndürmeyen sp' leride çalıştırabilir. |
+| Eğer Pull ile alınan tabloda güncelleme yapılacak ve Push ile geri gönderiecek ise Tracking özelliği aktif hale getirilmelidir. | Sunucu tarafında tracking işlemi yapılmayacağından, güncelleme işleminden sonra verilerin son hali için tekrardan Pull metodunu uygulamak gerekebilir | Veri değişiklikleri doğrudan sunucu tarafında yapılır. |
+| Mobil tarafa alınacak her bir tablo için ayrı ayrı Pull metodları çağırılmalıdır. |  |  |
 
 Şimdi RDA işlemlerini basit örnekler ile incelemeye çalışalım. Öncelikle tüm işlemlerimiz için SqlCERemoteDataAccess sınıfına ait nesne örneğinin oluşturulması gerekmektedir. Bu nesne örneğinin InternetURL özelliği ile, uzak sunucu üzerinde sscesa20.dll dosyasını hizmete sunan http adresi belirtilir. Bir başka deyişle Sql Server CE Server Agent'a hangi adres ile erişileceği belirtilmektedir. Bu mutlaka yapılmalıdır.
 
@@ -239,22 +228,14 @@ namespace UsingRDA
 
 Örnek, RDA mimarisinin kolay anlaşılabilmesi amacıyla çok fazla detay girmemiştir. Örneğin, try...catch ile exception yönetim mekanizması daha da genişletilebilir, Region tablosuna girilecek verilere ait bilgiler form üzerindeki kontrollerden alınabilir...vb...
 
-> ![download.gif](/assets/images/2006/download.gif)
->
 > RDA mimarisinin uygulanışına ilişkin geniş bir örneğe ait Smart Device Application Solution'ı buradan [indirebilirsiniz](/assets/files/2006/UsingRDA.rar).
 
 Buraya kadar anlatıklarımızdan yola çıkaraktan RDA mimarisinin belirli avantajlarını ve dezavantajlarını şu şekilde sıralayabiliriz.
 
-Avantajlar
-DezAvantajlar
-
-Sunucu tarafındaki veri kaynları daha az kullanılır. (Bu fark özellikle Merge Replication mimarisine göre belirgin derecede azdır.
-Sunucu üzerindeki değişiklikler izlenmemektedir. Bunun yerine sadece istemci tarafındaki değişikler izlenir.
-
-Sql Server 6.5 ve üzeri sql sistemlerini destekler.
-Özellikle Pull işleminden önce istemci tarafındaki (Sql CE üzerindeki) tablolar silinmek zorundadır.
-
-RDA için gerekli sistem entegrasyonunun yapılması kolaydır.
-İstemci tarafına alınacak her bir tablo için ayrı ayrı Pulling işlemi gerektirir.
+| **Avantajlar** | **DezAvantajlar** |
+| --- | --- |
+| Sunucu tarafındaki veri kaynları daha az kullanılır. (Bu fark özellikle Merge Replication mimarisine gore belirgin derecede azdir.) | Sunucu uzerindeki degisiklikler izlenmemektedir. Bunun yerine sadece istemci tarafindaki degisiklikler izlenir. |
+| Sql Server 6.5 ve uzeri sql sistemlerini destekler. | Ozellikle Pull isleminden once istemci tarafindaki (Sql CE uzerindeki) tablolar silinmek zorundadir. |
+| RDA icin gerekli sistem entegrasyonunun yapilmasi kolaydir. | Istemci tarafina alinacak her bir tablo icin ayri ayri Pulling islemi gerektirir. |
 
 Böylece geldik bir makalemizin daha sonuna. İzleyen makalelerimizde, Merge Replication mimarisini incelemeye çalışacağız. Uygulanması ve hazırlığı RDA mimarisine göre biraz daha zor olan Merge Replication mimarisinin avantajlarını ve dezavantjlarını göreceğiz. Bu makalemizde görüşünceye dek hepinize mutlu günler dilerim.

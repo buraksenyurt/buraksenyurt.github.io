@@ -19,7 +19,7 @@ Buna göre ilk olarak web servisi üzerinden hizmet verecek saklı yordam yada f
 
 Bu kadar teorik bilgiden sonra dilerseniz örnek bir senaryo üzerinen hareket edelim. İlk olarak işe yarar bir saklı yordam (Stored Procedure) geliştireceğiz. Örnek olarak Sql Server 2005 ile standart olarak yüklenen AdventureWorks veritabanını kullanacağız. Aşağıdaki sql script ile Production isim alanındaki Product tablosundan liste fiyatı belirli bir değerin üstünde olan ürünlerin elde edilebildiği bir saklı yordam (stored procedure) oluşturulmaktadır.
 
-```text
+```sql
 USE AdventureWorks
 GO
 
@@ -43,7 +43,7 @@ GO
 
 İstemcilerin bu saklı yordama http üzerinden talepte bulunup sonuçlarını alabilmelerini sağlamak için ise Sql Server 2005 üzerinde bir EndPoint oluşturmamız gerektiğinden daha öncesinde bahsetmiştik. Bu EndPoint nesnesini aşağıdaki scriptte görüldüğü gibi oluşturabiliriz. (EndPoint nesneleride diğer çoğu veritabanı nesnesi gibi Drop ve Alter gibi komutlar ile birlikte kullanılabilmektedir.)
 
-```text
+```sql
 USE AdventureWorks
 GO
 
@@ -69,45 +69,23 @@ Geliştirdiğimiz ListeFiyatinaGoreUrunlerEndPoint adlı nesneyi ve Sql Server 2
 
 ![mk162_2.gif](/assets/images/2006/mk162_2.gif)
 
-EndPoint nesnesi oluşturulurken pek çok anahtar kelime kullanılmaktadır. Temel amaç EndPoint nesnesinin hangi saklı yordamı yada fonksiyonu, hangi iletişim protokolüne göre sunacağını belirlemek ve diğer konfigurasyon ayarlarını yapmaktır. Bu anahtar kelimeler hakkında birazda olsa bilgi vermekte fayda olacağı kanısındayım.
+EndPoint nesnesi oluşturulurken pek çok anahtar kelime kullanılmaktadır. Temel amaç EndPoint nesnesinin hangi saklı yordamı yada fonksiyonu, hangi iletişim protokolüne göre sunacağını belirlemek ve diğer konfigurasyon ayarlarını yapmaktır. Bu anahtar kelimeler hakkında birazda olsa bilgi vermekte fayda olacağı kanısındayım
 
-Anahtar Sözcük
-İşlevi
+| **Anahtar Sözcük** | **İşlevi** |
+| --- | --- |
+| **State** | EndPoint için başlangıç durumunu belirtir. Started, Stoped veya Disabled olabilir. Eğer Stoped olarak ayarlanırsa, EndPoint' e erişmek isteyen istemciler bir çalışma zamanı istisnası alırlar. Disabled olması halinde ise EndPoint sistemde kalmaya ancak gelen taleplere cevap vermemeye başalayacaktır. |
+| **Http / Tcp** | Bu kısımda iletişim protokolü tanımlanır ve bu protokol üzerinden gerekli konfigurasyon ayarları belirlenir. Http dışında tcp üzerindende servis verilebilmektedir. |
+| **Path** | EndPoint için gerekli URL bilgisini tanımlar. |
+| **Authentication** | İstemciler için güvenlik doğrulama modelini belirler. Basic, Digets, Ntlm, Kerberos, Integrated modlarından birisi olabilir. |
+| **Ports** | Clear olması halinde http portu üzerinden hizmet verilmesini sağlar. SSL olması halinde ise https üzerinden hizmet verilir. |
+| **Site** | Servisin host edildiği bilgisayarın adıdır. |
+| **Soap** | Bu kısımda SOAP mesajına yönelik tanımlamalar yapılır ve servisin SOAP protokolünü kullanacağı belirtilir. |
+| **WebMethod** | Saklı yordamın yada kullanıcı tanımlı fonksiyonumuzun istemciler tarafından kullanılabilmesi için gerekli metod adı tanımlamasıdır. |
+| **Wsdl** | Wsdl desteğini belirtir. |
+| **Database** | EndPoint' in yer aldığı veritabanı adını belirtir. |
+| **Namespace** | SOAP mesajları için gerekli xml isim alanını (xml namespace) tanımlar. |
 
-State
-EndPoint için başlangıç durumunu belirtir. Started, Stoped veya Disabled olabilir. Eğer Stoped olarak ayarlanırsa, EndPoint'e erişmek isteyen istemciler bir çalışma zamanı istisnası alırlar. Disabled olması halinde ise EndPoint sistemde kalmaya ancak gelen taleplere cevap vermemeye başalayacaktır.
-
-Http / Tcp
-Bu kısımda iletişim protokolü tanımlanır ve bu protokol üzerinden gerekli konfigurasyon ayarları belirlenir. Http dışında tcp üzerindende servis verilebilmektedir.
-
-Path
-EndPoint için gerekli URL bilgisini tanımlar.
-
-Authentication
-İstemciler için güvenlik doğrulama modelini belirler. Basic, Digets, Ntlm, Kerberos, Integrated modlarından birisi olabilir.
-
-Ports
-Clear olması halinde http portu üzerinden hizmet verilmesini sağlar. SSL olması halinde ise https üzerinden hizmet verilir.
-
-Site
-Servisin host edildiği bilgisayarın adıdır.
-
-Soap
-Bu kısımda SOAP mesajına yönelik tanımlamalar yapılır ve servisin SOAP protokolünü kullanacağı belirtilir.
-
-WebMethod
-Saklı yordamın yada kullanıcı tanımlı fonksiyonumuzun istemciler tarafından kullanılabilmesi için gerekli metod adı tanımlamasıdır.
-
-Wsdl
-Wsdl desteğini belirtir.
-
-Database
-EndPoint'in yer aldığı veritabanı adını belirtir.
-
-Namespace
-SOAP mesajları için gerekli xml isim alanını (xml namespace) tanımlar.
-
-Artık EndPoint'imiz hazır olduğuna göre bunu herhangibir istemci uygulama üzerinde test edebiliriz. Ancak teste başlamadan önce basit olarak EndPoint'in çalışıp çalışmadığını kontrol edebiliriz. Yazdığımız EndPoint'in kontrol işlemi için tarayıcı penceresinde, http://localhost/sql/ListeFiyatinaGoreUrunler?wsdl bilgisini yazmamız yeterlidir. Eğer aşağıdaki ekran görüntüsünde olduğu gibi wsdl dökümanına ulaşabiliyorsak EndPoint'imiz başarılı bir şekilde çalışıyor demektir.
+Artık EndPoint'imiz hazır olduğuna göre bunu herhangibir istemci uygulama üzerinde test edebiliriz. Ancak teste başlamadan önce basit olarak EndPoint'in çalışıp çalışmadığını kontrol edebiliriz. Yazdığımız EndPoint'in kontrol işlemi için tarayıcı penceresinde, `http://localhost/sql/ListeFiyatinaGoreUrunler?wsdl` bilgisini yazmamız yeterlidir. Eğer aşağıdaki ekran görüntüsünde olduğu gibi wsdl dökümanına ulaşabiliyorsak EndPoint'imiz başarılı bir şekilde çalışıyor demektir.
 
 ![mk162_3.gif](/assets/images/2006/mk162_3.gif)
 

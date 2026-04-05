@@ -43,21 +43,11 @@ Güzel. Şimdi kafamızda bir şeyler şekillenmeye başladı. En azından arama
 
 İstemciler taleplerini Bing API servisine 3 farklı formatta iletebilirler.
 
-Format
-Özet
-URL
-
-JavaScript Object Notation (JSON)
-Ajax tabanlı uygulamalarda kullanılması tercih edilen bu tipe göre istemciye Raw, Callback ve Function formatlarında cevap döner.
-http://api.search.live.net/json.aspx?AppId=YOURAPPID&Market=en-US&Query=testing&Sources=web+spell&Web.Count=1
-
-eXtended Markup Language (XML)
-SOAP formatını desteklemeyen veya Siverlight gibi uygulamalarda tercih edilir. İstemcinin talepleri HTTP Get metoduna göre gideceğinden URL sınırı en büyük handikapı olarak görülebilir.
-http://api.search.live.net/xml.aspx?AppId=YOURAPPID&Market=en-US&Query=testing&Sources=web+spell&Web.Count=1
-
-Simple Object Access Protocol (SOAP)
-XML modelindeki gibi URL sınır kısıtı yoktur. Ayrıca karmaşık tiplerin (Complex Type) ifade edilebilmesi, request/response nesne modelinin sağlanması gibi avantajları vardır. Özellikle masaüstü uygulamalar (Desktop Applications) veya servis bazlı uygulamalar için idealdir. C# gibi yüksek seviyeli dillerle kullanımı son derece kolaydır.
-http://api.search.live.net/search.wsdl?AppID=YourAppId (Web Service Referansını ekleme adresidir)
+| Format | Ozet | URL |
+| --- | --- | --- |
+| JavaScript Object Notation (JSON) | Ajax tabanli uygulamalarda kullanilmasi tercih edilen bu tipe gore istemciye Raw, Callback ve Function formatlarinda cevap doner. | `http://api.search.live.net/json.aspx?AppId=YOURAPPID&Market=en-US&Query=testing&Sources=web+spell&Web.Count=1` |
+| eXtended Markup Language (XML) | SOAP formatini desteklemeyen veya Siverlight gibi uygulamalarda tercih edilir. Istemcinin talepleri HTTP Get metoduna gore gideceginden URL siniri en buyuk handikapi olarak gorulebilir. | `http://api.search.live.net/xml.aspx?AppId=YOURAPPID&Market=en-US&Query=testing&Sources=web+spell&Web.Count=1` |
+| Simple Object Access Protocol (SOAP) | XML modelindeki gibi URL sinir kisiti yoktur. Ayrica karmasik tiplerin (Complex Type) ifade edilebilmesi, request/response nesne modelinin saglanmasi gibi avantajlari vardir. Ozellikle masaustu uygulamalar (Desktop Applications) veya servis bazli uygulamalar icin idealdir. C# gibi yuksek seviyeli dillerle kullanimi son derece kolaydir. | `http://api.search.live.net/search.wsdl?AppID=YourAppId` (Web Service Referansini ekleme adresidir) |
 
 Görüldüğü gibi, Bing API'si için değerlendirilecek istemci talepleri, Json formatında, HTTP Get metodunda gönderilebilmektedir. Ama burada altı çizilmesi gereken ve benimde en çok ilgimi çeken SOAP modelidir. Öyleki, bu modelin uygulanması için istemci tarafının bir XML Web Service referansını kullanması yeterlidir. Bu, istemci tarafında managed bir kodun uygulanabilmesi anlamına gelmektedir. Asenkron çağrılar gerçekleştirebilir, strong tipler kullanabilir, hatta sonuç kümeleri üzerinde LINQ sorguları dahi yapılabilir.
 
@@ -69,9 +59,7 @@ Bu acele örneğimizde basit bir Windows uygulamasına, aradığımız kritere u
 
 ![blg72_AddWebReference.gif](/assets/images/2009/blg72_AddWebReference.gif)
 
-Kişisel Not: Referans eklemesinden sonra Class Diagram görüntüsüne bakmanızı öneririm
-
-Uygulamamızın Form tasarımını aşağıdaki gibi düzenleyebiliriz. Ben arama kutucuğunun sonucu olarak gelecek resim bilgilerini, alt tarafta yer alan FlowLayoutPanel bileşeni içerisinde PictureBox kontrolleri ile ifade etmeyi tercih ettim.
+Kişisel Not: Referans eklemesinden sonra Class Diagram görüntüsüne bakmanızı öneririm. Uygulamamızın Form tasarımını aşağıdaki gibi düzenleyebiliriz. Ben arama kutucuğunun sonucu olarak gelecek resim bilgilerini, alt tarafta yer alan FlowLayoutPanel bileşeni içerisinde PictureBox kontrolleri ile ifade etmeyi tercih ettim.
 
 ![blg72_FormDesign.gif](/assets/images/2009/blg72_FormDesign.gif)
 
@@ -184,9 +172,7 @@ namespace WinClient
 
 İlk olarak LiveSearchService nesnesi örneklenir. Bu örnek tahmin edileceği üzere Search operasyonunu yerine getirecek olan proxy tipimizdir. Diğer yandan arama işlemi için başlangıç kriterlerinin belirtilmesi gerekir. Bu amaçla SearchRequest tipinden bir nesne örneği oluşturulmaktadır. Dikkat edileceği üzere Image tipinden bir arama istendiği belirtilmiş ve buna göre Image özelliğine yeni bir ImageRequest nesnesi atanmıştır. ImageRequest nesnesinde 20 resimlik bir sonuç kümesinin talep edildiği belirtilmektedir. SearchRequest sınıfı örneklenirken App Id değeri verilmektedir.
 
-Hatırlayınız, bu değeri siz formu doldurduktan sonra alıyorsunuz. Önemli atamalardan biriside Query özelliği için yapılandır. Bu özelliğin değeri aranacak içeriği taşımaktadır. Bundan sonrası son derece kolaydır. LiveSearchService nesne örneğinin Search metoduna parametre olarak SearchRequest referansı atanır. Sonuçlar SearchResponse nesne örneğine gelir. Ardından SearchResponse nesne örneğinin Image özelliğinin Results koleksiyonundaki her bir ImageResult değerlendirilerek resim bilgilerinin alınması sağlanır. Elde edilen sonuçların her biri için bir ThumbImage bileşeni oluşturulur ve FlowLayoutPanel bileşeninin Controls koleksiyonuna eklenir. Uygulamanın çalışma zamanındaki örnek çıktısı aşağıda görüldüğü gibidir. Ben Ferrari kelimesi ile ilişkili resim dosyalarını arattım
-
-.
+Hatırlayınız, bu değeri siz formu doldurduktan sonra alıyorsunuz. Önemli atamalardan biriside Query özelliği için yapılandır. Bu özelliğin değeri aranacak içeriği taşımaktadır. Bundan sonrası son derece kolaydır. LiveSearchService nesne örneğinin Search metoduna parametre olarak SearchRequest referansı atanır. Sonuçlar SearchResponse nesne örneğine gelir. Ardından SearchResponse nesne örneğinin Image özelliğinin Results koleksiyonundaki her bir ImageResult değerlendirilerek resim bilgilerinin alınması sağlanır. Elde edilen sonuçların her biri için bir ThumbImage bileşeni oluşturulur ve FlowLayoutPanel bileşeninin Controls koleksiyonuna eklenir. Uygulamanın çalışma zamanındaki örnek çıktısı aşağıda görüldüğü gibidir. Ben Ferrari kelimesi ile ilişkili resim dosyalarını arattım.
 
 ![blg72_SampleRuntime.gif](/assets/images/2009/blg72_SampleRuntime.gif)
 
@@ -198,4 +184,3 @@ Bu arada Bing API ile ilişkili dökümanı indirdiğinizde içerisinde JSON, XM
 - Asenkron arama metodu uygulanabilir ama bu durumda Illegal Cross Thread Exception hatasından kaçınmak gerekir.
 
 Bunlarda size görev olsun. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

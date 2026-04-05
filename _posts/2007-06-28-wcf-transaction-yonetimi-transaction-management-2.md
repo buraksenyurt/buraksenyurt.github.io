@@ -10,20 +10,13 @@ categories:
 ---
 Windows Communication Foundation için transaction yönetimi ile ilgili bir önceki makalemizde teorik bilgiler üzerinde durmaya çalışmıştık. Bu makalemizde ise, transaction yönetimi için gerekli materyalleri toplamaya devam edecek ve bir örnek üzerinde konuyu daha net bir şekilde anlamaya çalışacağız. Örneği geliştirmeden önce özellikle servis ve metod seviyesinde bilinmesi gerekenler olduğunu belirtelim. Özellikle servis nesnesi için çalışma zamanı davranışlarını belirlemek adına ServiceBehavior niteliğinin bazı özelliklerini kullanmak gerekmektedir. Benzer şekilde operasyonların transaction ile ilişkili çalışma zamanı davranışlarını belirlemek içinde, OperationBehavior niteliğinin özelliklerinden faydalanılmaktadır.
 
-ServiceBehavior ve OperationBehavior dışında transacation yönetimi için kullanılan bir diğer nitelik (attribute) ise, TransactionFlow'dur. Bu nitelik servis tarafındaki metodlara uygulanabilen türdedir. TransactionFlow niteliği temel olarak bir servisin dış servisler ile olan ilişkilerinde servisler arasında akan transaction'ların operasyon kademesinde kabul edilme seviyelerinin belirlenmesinde kullanılır. Söz konusu seviyeler TransactionFlowOption isimli enum sabiti tarafından belirlenebilir. TransactionFlowOption enum sabitinin değerleri ve nasıl bir akışa izin verdikleri aşağıdaki tabloda gösterilmektedir.
+ServiceBehavior ve OperationBehavior dışında transacation yönetimi için kullanılan bir diğer nitelik (attribute) ise, TransactionFlow'dur. Bu nitelik servis tarafındaki metodlara uygulanabilen türdedir. TransactionFlow niteliği temel olarak bir servisin dış servisler ile olan ilişkilerinde servisler arasında akan transaction'ların operasyon kademesinde kabul edilme seviyelerinin belirlenmesinde kullanılır. Söz konusu seviyeler TransactionFlowOption isimli enum sabiti tarafından belirlenebilir. TransactionFlowOption enum sabitinin değerleri ve nasıl bir akışa izin verdikleri aşağıdaki tabloda gösterilmektedir
 
-TransactionFlowOption
-Değeri
-Açıklaması
-
-NotAllowed
-WCF çalışma zamanı (runtime) servise akan transactionları geçersiz kılıp her zaman için yeni bir tane oluşturur.
-
-Allowed
-Transaction istemci tarafında (istemci güncel servisin konuştuğu başka bir serviste olabilir) açılır. Eğer açılmamışsa WCF çalışma zamanı (runtime) yeni bir tane oluşturur.
-
-Mandatory
-Söz konusu operasyonun yürütülebilmesi için istemci uygulma (yada diğer servis) transaction açmak zorundadır. Söz konusu transaction'a ait bilgi SOAP Header (SOAP zarfının başlık kısmında) içerisinde de taşınmaktadır.
+| **TransactionFlowOption Değeri** | **Açıklaması** |
+| --- | --- |
+| **NotAllowed** | WCF çalışma zamanı (runtime) servise akan transactionları geçersiz kılıp her zaman için yeni bir tane oluşturur. |
+| **Allowed** | Transaction istemci tarafında (istemci güncel servisin konuştuğu başka bir serviste olabilir) açılır. Eğer açılmamışsa WCF çalışma zamanı(runtime) yeni bir tane oluşturur. |
+| **Mandatory** | Söz konusu operasyonun yürütülebilmesi için istemci uygulma (yada diğer servis) transaction açmak zorundadır. Söz konusu transaction' a ait bilgi SOAP Header (SOAP zarfının başlık kısmında) içerisinde de taşınmaktadır. |
 
 Bir servisin başka servis veya istemcilerden gelecek transaction akışına izin verip vermemesi durumlarını kontrol etmek için ilgili bağlayıcı tiplerin (binding types) transactionFlow elementi kullanılır. Varsayılan olarak transaction flow seçeneği aktif değildir (disabled). Dolayısıyla transaction akışının kontrol altına alınmasının istendiği durumlarda bilinçli olarak açılması gerekmektedir. Bunun için transactionFlow niteliğine true değerinin atanması yeterlidir.
 
@@ -44,26 +37,15 @@ ServiceBehavior niteliğinde transaction yönetimi için kullanılan bir diğer 
 
 > Bir transaction tarafından etkilenen veri, değişken veri (volatile data) olarak adlandırılır.
 
-Izolasyon seviyeleri sayesinde ortak veriler üzerinde diğer transaction'ların yaptığı değişikliklerin nasıl ele alınacağı yada transaction'ın değişikliğe uğrayan veriyi ne kadar süre kilitleyeceği gibi özellikler belirlenebilir. Söz konusu özelliğin değeri IsolationLevel enum sabiti türünden olabilir. Temel olarak ele alınabilecek 5 farklı izolasyon seviyesi vardır (Chaos ve Unspecified haricinde). Bunlar aşağıdaki tabloda kısaca özetlenmektedir.
+Izolasyon seviyeleri sayesinde ortak veriler üzerinde diğer transaction'ların yaptığı değişikliklerin nasıl ele alınacağı yada transaction'ın değişikliğe uğrayan veriyi ne kadar süre kilitleyeceği gibi özellikler belirlenebilir. Söz konusu özelliğin değeri IsolationLevel enum sabiti türünden olabilir. Temel olarak ele alınabilecek 5 farklı izolasyon seviyesi vardır (Chaos ve Unspecified haricinde). Bunlar aşağıdaki tabloda kısaca özetlenmektedir
 
-Izolasyon Seviyesi
-Değeri
-Açıklaması
-
-ReadUncommited
-Transaction boyunca değişken veri (volatile data) üzerinde değişiklik ve okuma yapılabilir. Bu en düşük izolasyon seviyesi olarak nitelendirilir. Bu nedenle Phantoms, Non-Repeatable Read ve Dirty-Read durumları oluşabilir.
-
-ReadCommited
-Transaction boyunca değişken veri üzerinde değişiklik yapılabilir ama okuma yapılamaz. Non Repetable Read ve Phantoms durumları oluşabilir. Ancak Dirty-Read durumları oluşmaz.
-
-Repeatable Read
-Transaction boyunca değişken veri üzerinde değişiklik yapılamaz ama okuma yapılabilir. Bunun dışında Transaction boyunca yeni veri eklenebilir. Phantoms durumu oluşabilir ancak Non-Repeatable Read ve Dirty-Read halleri oluşmaz.
-
-Serializable
-En yüksek mertebeli izolasyon seviyesi olarak ele alınır. Buna göre Transaction boyunca değişken veri okunabilir ama değiştirme veya ekleme yapılamaz. Bu seviye Phantoms, Non-Repeatable Read ve Dirty-Read gibi durumların oluşmasına izin vemez.
-
-Snapshot
-Bu seviye aslında ReadCommited'ın farklı bir formasyonudur ve SQL Server 2005 tarafından desteklenmektedir. Transaction boyunca değişken veri okunabilir. Burada veri değiştirilmeden önce, son okumadan bu yana başka bir transaction'ın aynı veriyi değiştirip değiştirmediğine bakılır. Eğer böyle bir durum var ise hata fırlatılır. Bu bir anlamda transaction'ın son onaylanan veriyi okumasını sağlayan bir yoldur. Bu seviye Phantoms, Non-Repeatable Read ve Dirty-Read gibi durumların oluşmasına izin vermez. (Snapshot izolasyon seviyesini kullanabilmek için SQL Server üzerinde Snapshot desteğinin ilgili veritabanı için açılması gerekmetekdir.)
+| **Izolasyon Seviyesi Değeri** | **Açıklaması** |
+| --- | --- |
+| **ReadUncommited** | Transaction boyunca değişken veri (volatile data) üzerinde değişiklik ve okuma yapılabilir. Bu en düşük izolasyon seviyesi olarak nitelendirilir. Bu nedenle Phantoms, Non-Repeatable Read ve Dirty-Read durumları oluşabilir. |
+| **ReadCommited** | Transaction boyunca değişken veri üzerinde değişiklik yapılabilir ama okuma yapılamaz. Non Repetable Read ve Phantoms durumları oluşabilir. Ancak Dirty-Read durumları oluşmaz. |
+| **Repeatable Read** | Transaction boyunca değişken veri üzerinde değişiklik yapılamaz ama okuma yapılabilir. Bunun dışında Transaction boyunca yeni veri eklenebilir. Phantoms durumu oluşabilir ancak Non-Repeatable Read ve Dirty-Read halleri oluşmaz. |
+| **Serializable** | En yüksek mertebeli izolasyon seviyesi olarak ele alınır. Buna göre Transaction boyunca değişken veri okunabilir ama değiştirme veya ekleme yapılamaz. Bu seviye Phantoms, Non-Repeatable Read ve Dirty-Read gibi durumların oluşmasına izin vemez. |
+| **Snapshot** | Bu seviye aslında ReadCommited' ın farklı bir formasyonudur ve SQL Server 2005 tarafından desteklenmektedir. Transaction boyunca değişken veri okunabilir. Burada veri değiştirilmeden önce, son okumadan bu yana başka bir transaction'ın aynı veriyi değiştirip değiştirmediğine bakılır. Eğer böyle bir durum var ise hata fırlatılır. Bu bir anlamda transaction' ın son onaylanan veriyi okumasını sağlayan bir yoldur. Bu seviye Phantoms, Non-Repeatable Read ve Dirty-Read gibi durumların oluşmasına izin vermez. (Snapshot izolasyon seviyesini kullanabilmek için SQL Server üzerinde Snapshot desteğinin ilgili veritabanı için açılması gerekmetekdir.) |
 
 ServiceBehavior tarafında yer alan bir diğer özellik ise TransactionTimeOut'dur. Bu özellik tahmin edileceği üzere transaction için zaman aşımı süresini bildirir. Eğer belirtilen sürede transaction tamamlanmamışsa iptal (abort) süreci başlatılır.
 
@@ -85,52 +67,18 @@ Servis B, Servis C üzerinden bir operasyon çağırmaktadır. Servis C'deki dur
 
 Servis C, Servis D üzerinden de bir operasyon çağırmaktadır. Servis C'dekine benzer olarak diğer servis veya istemcilerden gelecek transaction akışına izin vermeyecek şekilde bağlayıcı tipi ayarlanmıştır. Diğer yandan çağırılan operasyon içinde transaction akışına izin verilmemekte ve yeni bir transaction oluşturulması da engellenmektedir. Dolayısıyla buradaki operasyon tamamen transaction haricinde kendi haline çalışmaktadır.
 
-Buradaki bilgiler ışığında pek çok senaryo düşünülebilir. Kullanılan özellikler göz önünde bulundurulduğunda çok doğal olarak olasılıkların sayısı artmakta ve ele alınmaları zorlaşmaktadır. Bu sebepten özelliklerin değerlerinin farklı kombinasyonlarının etkilerini daha kolay bir şekilde görebilmek için, aşağıdaki tablodan yararlanılabilir.
+Buradaki bilgiler ışığında pek çok senaryo düşünülebilir. Kullanılan özellikler göz önünde bulundurulduğunda çok doğal olarak olasılıkların sayısı artmakta ve ele alınmaları zorlaşmaktadır. Bu sebepten özelliklerin değerlerinin farklı kombinasyonlarının etkilerini daha kolay bir şekilde görebilmek için, aşağıdaki tablodan yararlanılabilir
 
-TransactionScopeRequired
-Değeri
-TransactionFlowOption
-Değeri
-transactionFlow
-Elementi Değeri
-Transaction'ın
-Ele Alındığı Taraf
-
-true
-Allowed
-false
-Servis Taraflı
-
-true
-NotAllowed
-false
-
-true
-Mandatory
-true
-İstemci Taraflı
-
-true
-Allowed
-true
-Çift Tarafllı
-
-false
-Allowed
-false
-Tarafsız
-
-false
-NotAllowed
-false
-
-false
-Allowed
-true
-
-false
-Mandatory
-true
+| **TransactionScopeRequired Değeri** | **TransactionFlowOption Değeri** | **transactionFlow Elementi Değeri** | **Transaction' ın Ele Alındığı Taraf** |
+| --- | --- | --- | --- |
+| true | Allowed | false | Servis Taraflı |
+| true | NotAllowed | false |  |
+| true | Mandatory | true | İstemci Taraflı |
+| true | Allowed | true | Çift Tarafllı |
+| false | Allowed | false | Tarafsız |
+| false | NotAllowed | false |  |
+| false | Allowed | true |  |
+| false | Mandatory | true |  |
 
 Tabloda TransactionScopeRequired, TransactionFlowOption özelliklerinin ve transactionFlow elementinin değerlerine göre transaction'ın hangi tarafta ele alınabileceği görülmektedir. Servis taraflı modele göre, servis uygulaması her zaman için kendine ait bir transaction'a sahiptir. Ayrıca servis tarafı bu transaction'ı her zaman için istemci transaction'ından ayrı olacak şekilde ele alır. Bir başka deyişle servis tarafının her zaman için kendi transaction'ında çalıştığı düşünülebilir. Senaryoda yer alan Servis C bu durumu tam olarak karşılamaktadır.
 

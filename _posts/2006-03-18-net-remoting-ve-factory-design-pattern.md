@@ -21,17 +21,13 @@ Factory Design Pattern (Fabrika Tasarım Deseni), istemcilerin ihtiyaç duyduğu
 
 Geliştirme Adımlarımız
 
-1 -
-Factory ve Product nesneleri için gerekli abstract sınıflarımızı public bir class library içerisinde oluştururuz.
+- 1.Factory ve Product nesneleri için gerekli abstract sınıflarımızı public bir class library içerisinde oluştururuz.
 
-2 -
-Server tarafı için gerekli abstract sınıflarımızdan türetilen Factory ve Product sınıflarımızı yazarız.
+- 2.Server tarafı için gerekli abstract sınıflarımızdan türetilen Factory ve Product sınıflarımızı yazarız.
 
-3 -
-Server tarafında gerekli remoting kodlarını yazarız.
+- 3.Server tarafında gerekli remoting kodlarını yazarız.
 
-4 -
-İstemci tarafında gerekli remoting kodlarını yazarız.
+- 4.İstemci tarafında gerekli remoting kodlarını yazarız.
 
 İlk olarak abstract sınıflarımızı yazmamız gerekiyor. Bunları bir class library içerisinde tutmamızın en önemli nedeni, hem server tarafında hemde istemci tarafında ihtiyacımızın olması ve referans olarak eklememiz gerektiği. Bu nedenle önce bir class library projesi açalım ve aşağıdaki abstract sınıflarımızı oluşturalım.
 
@@ -56,7 +52,7 @@ namespace FactoryProductBase
 
 Şimdi burada yaptıklarımızdan kısaca bahsedelim. Öncelikli olarak ProductBase abstract sınıfımız yazdık. Bu sınıfımız herhangibir istemcinin asıl olarak çalışmak isteyeceği nesnelerin uygulayacağı bir metod bildirimi içermekte. Amacımız bu abstract sınıfı uygulayan bir Product tipi ile AdventureWorks veritabanında yer alan Contact tablsoundan belirli bir ContactID'ye ait bilgileri string formatta alabilmek.
 
-Üretimden sorumlu olan FactoryBase isimli abstract sınıfımız ise, kendisini uygulayacak olan herhangibir Factory tipinin, Product üretme işini nasıl yapması gerektiğini bildiren bir abstract metod içeriyor. Dikkat ederseniz bu abstract metodumuzun dönüş tipi ProductBase'dir. Buda FactoryBase'den türemiş bir sınıfın override edilecek olan CreateProduct isimli metodunun, ProductBase tipinden türetilmiş olan bir sınıfa ait nesne örneğini döndürebileceği anlamına gelmektedir. Bu ilişkiyi sunucu tarafımızda çalışacak olan asıl sınıflarımızı yazarken kullanacağız.
+Üretimden sorumlu olan FactoryBase isimli abstract sınıfımız ise, kendisini uygulayacak olan herhangibir Factory tipinin, Product üretme işini nasıl yapması gerektiğini bildiren bir abstract metod içeriyor. Dikkat ederseniz bu abstract metodumuzun dönüş tipi ProductBase'dir. Buda FactoryBase'den türemiş bir sınıfın override edilecek olan CreateProduct isimli metodunun, ProductBase tipinden türetilmiş olan bir sınıfa ait nesne örneğini döndürebileceği anlamına gelmektedir. Bu ilişkiyi sunucu tarafımızda çalışacak olan asıl sınıflarımızı yazarken kullanacağız
 
 > Her iki abstract sınıfında, remoting içerisinde kullanılabilmesini sağlamak için MarshalByRefObject'dan türetildiğine dikkat edin. MarshalByRefObject bildiğiniz gibi, istemcinin remote nesnenin referansı ile çalışabilmesini sağlar.
 
@@ -146,7 +142,7 @@ static void Main(string[] args)
 
 İstemci tarafında, sunucu tarafı ile haberleşebilmemiz için bu kez bir TcpClientChannel nesnesine ihtiyacımız var. Bizim için burada önemli olan, server tarafından bir FactoryBase tipinden nesne örneğine ait referansı almak için Activator sınıfının GetObject static metodunu kullanıyor oluşumuz. Bu metod sayesinde, server tarafından FactoryBase tipinden bir referansı kullanacağımızı söylemiş oluyoruz. Ancak dikkat edin sadece söylüyoruz. Henüz bu referansı sunucudan istemciye almış değiliz. Nitekim sunucu üzerindeki referanslar, istemcide bir metod çağırımı yapıldığı zaman oluşturulmaktadır.
 
-Sonrasında ise, Product tipinden nesne örneğimizin ilgili metodunu çalıştırabilmek için, elde ettiğimiz FactoryBase referansının CretaeProduct isimli metodunu kullandık. Böylece sunucu tarafındaki Product tipine erişip, 1 numaralı Contact bilgisini istemci tarafına taşıyabiliyoruz. Burada önemli olan nokta, Product tipine ait bir referansı istemcinin doğrudan create etmeyişi. Bu işlemi FactoryBase'in CreateProduct isimli metodu bizzat yapmakta. Dolayısıyla Product tipine ait bir referansın nasıl oluşturulduğu, istemci tarafından tamamen soyutlaştırılmış olmaktadır.
+Sonrasında ise, Product tipinden nesne örneğimizin ilgili metodunu çalıştırabilmek için, elde ettiğimiz FactoryBase referansının CretaeProduct isimli metodunu kullandık. Böylece sunucu tarafındaki Product tipine erişip, 1 numaralı Contact bilgisini istemci tarafına taşıyabiliyoruz. Burada önemli olan nokta, Product tipine ait bir referansı istemcinin doğrudan create etmeyişi. Bu işlemi FactoryBase'in CreateProduct isimli metodu bizzat yapmakta. Dolayısıyla Product tipine ait bir referansın nasıl oluşturulduğu, istemci tarafından tamamen soyutlaştırılmış olmaktadır
 
 > İstemci tarafında FactoryBase ve ProductBase abstract sınıflarını kullanmamıza rağmen, sunucu tarafındaki Factory ve Product tiplerinin bazı üyelerini ele alabilmekteyiz. İşte bu polimorfizm'in bir etkisidir. Çünkü abstract tipler, kendilerinden türeyen tiplere ait referansları taşıdıklarında, türemiş tiplerin override edilmiş üyelerine erişebilirler.
 

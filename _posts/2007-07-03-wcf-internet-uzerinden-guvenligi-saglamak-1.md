@@ -39,24 +39,15 @@ Yok (None)
 
 İstemcilerin kendilerini servis tarafına doğrulatmaları esnasında kullanıcı bilgilerinin saklandığı bazı ortamlar söz konusudur. Windows hesaplarının (account) tutulduğu sistemler bellidir. Ancak bunun dışında özellikle internet tabanlı senaryolarda ele alınabilecek şekilde veritabanı (database) kullanımıda mümkündür. WCF mimarisinde servis tarafı IIS üzerinde barındırılabilmektedir. Bu sebepten dolayı kullanıcılara ait hesap bilgileri için Asp.Net 2.0 ile birlikte gelen üyelik yönetim sisteminden (Membership Management API) faydalanılabilir. Elbetteki windows veya veritabanı dışında özel depolama sistemleride söz konusu olabilir.
 
-Doğrulanan kullanıcıların yetkilerine bakılmadan işlem yapılması tam olarak güvenliğin sağlanamadığı anlamınada gelir. Dolayısıyla servis tarafında yer alan operasyonlarda doğrulanan kullanıcıların rollerine, başka bir deyişle yetkilerine bakılarak ilerlenilmesinde fayda vardır. WCF mimarisinde güvenlik denince aklan gelenler sadece authentication ve authorization olmamalıdır. Aslında Windows Communication Foundation, maksimum güvenliğin sağlanabilmesi için üç farklı ilkenin var olmasını gerektirmektedir. Bunlar, mesaj bütünlüğü (Message Integrity), mesaj mahremiyeti (Message Privacy) ve müşterek doğrulama (Mutual Authentication) ilkeleridir.
+Doğrulanan kullanıcıların yetkilerine bakılmadan işlem yapılması tam olarak güvenliğin sağlanamadığı anlamınada gelir. Dolayısıyla servis tarafında yer alan operasyonlarda doğrulanan kullanıcıların rollerine, başka bir deyişle yetkilerine bakılarak ilerlenilmesinde fayda vardır. WCF mimarisinde güvenlik denince aklan gelenler sadece authentication ve authorization olmamalıdır. Aslında Windows Communication Foundation, maksimum güvenliğin sağlanabilmesi için üç farklı ilkenin var olmasını gerektirmektedir. Bunlar, mesaj bütünlüğü (Message Integrity), mesaj mahremiyeti (Message Privacy) ve müşterek doğrulama (Mutual Authentication) ilkeleridir
 
 Maksimum Güvenlik için Sağlanması Gereken İlkeler
 
-İlke
-Açıklama
-
-Mesaj Bütünlüğü
-(Message Integrity)
-Mesaj bütünlüğü ilkesine göre istemciden servise doğru gidecek olan mesajın başkaları tarafından kurcalanıp bozulamaması gerekmektedir. Bir başka deyişle bu ilke, kötü niyetli kullanıcıların (malicious users) arada hareket eden mesajların bütünlüğünü bozacak şekilde hamlelerde bulunamamasının sağlanmasını gerektirir.
-
-Mesaj Mahremiyeti
-(Message Privacy)
-Bu ilke istemci ve servis arasında hareket eden mesajların gizliliğinin sağlanmasını gerektirir. Bir başka deyişle kötü niyetli kullanıcılar çeşitli 3ncü parti yazılımları kullanarak mesaj içeriklerini okuyamamalıdır. Bu ilke aynı zamanda Message Integrity ilkesinin tamamlayıcısı olarak da düşünülebilir.
-
-Müşterek Doğrulama
-(Mutual Authentication)
-İstemcilerin doğru servis ile haberleşmesini, istemciden gelen ehliyet (Crendential) bilgilerinin servis tarafında doğrulanmasını ve bunlara ek olarak tekrarlı atakların (replay attacks) bertaraf edilebilmesinin sağlanmasını hedefleyen ilkedir.
+| İlke | Açıklama |
+| --- | --- |
+| **Mesaj Bütünlüğü (Message Integrity)** | Mesaj bütünlüğü ilkesine göre istemciden servise doğru gidecek olan mesajın başkaları tarafından kurcalanıp bozulamaması gerekmektedir. Bir başka deyişle bu ilke, kötü niyetli kullanıcıların(malicious users) arada hareket eden mesajların bütünlüğünü bozacak şekilde hamlelerde bulunamamasının sağlanmasını gerektirir. |
+| **Mesaj Mahremiyeti (Message Privacy)** | Bu ilke istemci ve servis arasında hareket eden mesajların gizliliğinin sağlanmasını gerektirir. Bir başka deyişle kötü niyetli kullanıcılar çeşitli 3ncü parti yazılımları kullanarak mesaj içeriklerini okuyamamalıdır. Bu ilke aynı zamanda Message Integrity ilkesinin tamamlayıcısı olarak da düşünülebilir. |
+| **Müşterek Doğrulama (Mutual Authentication)** | İstemcilerin doğru servis ile haberleşmesini, istemciden gelen ehliyet(Crendential) bilgilerinin servis tarafında doğrulanmasını ve bunlara ek olarak tekrarlı atakların(replay attacks) bertaraf edilebilmesinin sağlanmasını hedefleyen ilkedir. |
 
 WCF için söz konusu olan iletişim güvenlik sistemleri yukarıdaki ilkeleri göz önüne alır ve buna göre maksimum güvenliğin sağlanabilmesini kolaylaştırır. Buna göre kendi özel güvenlik sistemlerimizi geliştirmek istediğimizde burada bahsedilen ilkelere uygun olacak şekilde hareket edilmesi gerekir.
 
@@ -66,68 +57,16 @@ WCF mimarisinin pek çok konusunda olduğu gibi bazı işlemleri gerçekleştirm
 
 Bağlayıcı Tipler ve İletişim Güvenlik Teknikleri Arasındaki İlişki
 
-Bağlayıcı Tip (Binding Type)
-Transport
-Message
-Mixed
-Both
-None
-
-NetTcpBinding
-Evet (Varsayılan)
-Evet
-Evet
-Hayır
-Evet
-
-NetPeerTcpBinding
-Evet (Varsayılan)
-Evet
-Evet
-Hayır
-Evet
-
-NetNamedPipeBinding
-Evet (Varsayılan)
-Hayır
-Hayır
-Hayır
-Evet
-
-NetMsmqBinding
-Evet (Varsayılan)
-Evet
-Hayır
-Evet
-Evet
-
-WSHttpBinding
-Evet
-Evet (Varsayılan)
-Evet
-Hayır
-Evet
-
-WSFederationHttpBinding
-Hayır
-Evet (Varsayılan)
-Evet
-Hayır
-Evet
-
-WSDualHttpBinding
-Hayır
-Evet (Varsayılan)
-Hayır
-Hayır
-Evet
-
-BasicHttpBinding
-Evet
-Evet
-Evet
-Hayır
-Evet (Varsayılan)
+| **Bağlayıcı Tip (Binding Type)** | **Transport** | **Message** | **Mixed** | **Both** | **None** |
+| --- | --- | --- | --- | --- | --- |
+| NetTcpBinding | Evet(Varsayılan) | Evet | Evet | Hayır | Evet |
+| NetPeerTcpBinding | Evet(Varsayılan) | Evet | Evet | Hayır | Evet |
+| NetNamedPipeBinding | Evet(Varsayılan) | Hayır | Hayır | Hayır | Evet |
+| NetMsmqBinding | Evet(Varsayılan) | Evet | Hayır | Evet | Evet |
+| WSHttpBinding | Evet | Evet(Varsayılan) | Evet | Hayır | Evet |
+| WSFederationHttpBinding | Hayır | Evet(Varsayılan) | Evet | Hayır | Evet |
+| WSDualHttpBinding | Hayır | Evet(Varsayılan) | Hayır | Hayır | Evet |
+| BasicHttpBinding | Evet | Evet | Evet | Hayır | Evet(Varsayılan) |
 
 Bu tabloda hangi bağlayıcı tipin hangi iletişim güvenlik tekniklerini desteklediği belirtilmektedir. Örneğin Both tekniğini sadece NetMsmqBinding bağlayıcı tipi desteklerken diğerleri desteklemez. Dolayısıyla istemci ve sunucu arasındaki güvenliğin nasıl sağlanacağına karar verildikten sonra uygun bağlayıcı tiplerin göz önüne alınması için yukarıdaki tabloda yer alan bilgilerden faydalanılabilir.
 
@@ -135,53 +74,16 @@ Bu bölümde geliştirilmeye başlanacak olan örnekte iletişim seviyesinde gü
 
 Bağlayıcı Tipler, İletişim Seviyesinde Güvenlik Tekniği ve Doğrulama Modelleri Arasındaki İlişki
 
-Bağlayıcı Tip (Binding Type)
-Windows
-Username/Password
-X509
-None
-
-NetTcpBinding
-Evet (Varsayılan)
-Hayır
-Evet
-Evet
-
-NetPeerTcpBinding
-Hayır
-Evet
-Evet
-Hayır
-
-NetNamedPipeBinding
-Evet (Varsayılan)
-Hayır
-Hayır
-Hayır
-
-NetMsmqBinding
-Evet (Varsayılan)
-Evet
-Hayır
-Evet
-
-WSHttpBinding
-Evet (Varsayılan)
-Evet
-Evet
-Evet
-
-WSFederationHttpBinding
-
-X
-
-WSDualHttpBinding
-
-BasicHttpBinding
-Evet
-Evet
-Evet
-Evet (Varsayılan)
+| **Bağlayıcı Tip (Binding Type)** | **Windows** | **Username/Password** | **X509** | **None** |
+| --- | --- | --- | --- | --- |
+| NetTcpBinding | Evet(Varsayılan) | Hayır | Evet | Evet |
+| NetPeerTcpBinding | Hayır | Evet | Evet | Hayır |
+| NetNamedPipeBinding | Evet(Varsayılan) | Hayır | Hayır | Hayır |
+| NetMsmqBinding | Evet(Varsayılan) | Evet | Hayır | Evet |
+| WSHttpBinding | Evet(Varsayılan) | Evet | Evet | Evet |
+| WSFederationHttpBinding | X |  |  |  |
+| WSDualHttpBinding |  |  |  |  |
+| BasicHttpBinding | Evet | Evet | Evet | Evet(Varsayılan) |
 
 Dikkat edilmesi gereken noktalardan birisi WSFederationHttpBinding ve WSDualHttpBinding bağlayıcı tiplerinin iletişim seviyesinde güvenlik tekniği söz konusu olduğunda hiç bir doğrulama modelini desteklemediğidir. Bu noktaları açıklığa kavuşturduktan sonra nihayetinde bir örnek geliştirmeye başlayarak internet tabanlı WCF uygulamalarında iletişim seviyesinde güvenliği nasıl sağlayabileceğimizi incelemeye başlayabiliriz.
 
@@ -225,17 +127,27 @@ Buradanda sertifikanın detaylarına geçilerek Thumbprint alanının değeri ö
 
 Artık HttpCfg aracı yardımıyla sertifikanın port ile ilişkilendirilmesi sağlanabilir. Httpcfg.exe aracı yardımıyla sertifikaya ait parmak damgasının (thumbprint), port ile ilişkilendirilmesini sağlamak için aşağıdaki komut, Xp Support Tools Command Prompt üzerinden çalıştırılmalıdır.
 
+```bash
 C:\>httpcfg set ssl -i 0.0.0.0:8000 h7eae8740bda1985efceaa1b91d1ce266bfe5788c
+```
 
 ![mk211_7.gif](/assets/images/2007/mk211_7.gif)
 
 HttpSetServiceConfiguration Completed with 0 mesajı görüldüğü takdirde operasyonun başarılı bir şekilde tamamlandığı anlaşılabilir.
 
-> HttpSetServiceConfiguration completed with 183 gibi bir mesaj alınması hata oluştuğu anlamına gelir. Hata mesajı zaten var olan dosyaya tekrardan yazılmak istenmesinden kaynaklanmaktadır. (ERRORALREADYEXISTS 183 Cannot create a file when that file already exists.) Bu nedenle sertifika unload edilebilir. Sertifikanın Unload edilmesi için komut satırından
-> C:\>Httpcfg delete ssl /i 0.0.0.0:8000
-> yazılması yeterlidir. Buna göre yerel makineye ait 8000 port numarası için tanımlanmış olan ssl sertifikalarına ait bildirimler silinecektir. İstenirse, Httpcfg.exe aracı yardımıyla IIS üzerinde yüklenmiş olan sertifikaları görmek için komut satırından
-> C:\>Httpcfg query ssl
-> yazılması yeterlidir.
+HttpSetServiceConfiguration completed with 183 gibi bir mesaj alınması hata oluştuğu anlamına gelir. Hata mesajı zaten var olan dosyaya tekrardan yazılmak istenmesinden kaynaklanmaktadır. (ERRORALREADYEXISTS 183 Cannot create a file when that file already exists.) Bu nedenle sertifika unload edilebilir. Sertifikanın Unload edilmesi için komut satırından
+
+```bash
+C:\>Httpcfg delete ssl /i 0.0.0.0:8000
+```
+
+yazılması yeterlidir. Buna göre yerel makineye ait 8000 port numarası için tanımlanmış olan ssl sertifikalarına ait bildirimler silinecektir. İstenirse, Httpcfg.exe aracı yardımıyla IIS üzerinde yüklenmiş olan sertifikaları görmek için komut satırından
+
+```bash
+C:\>Httpcfg query ssl
+```
+
+yazılması yeterlidir.
 
 Oluşturulan sertifikanın IIS üzerinde yer alacak WCF uygulaması tarafından kullanılabilmesi için öncelikli olarak bildirilmesi gerekir. İzleyen adımlarda Windows XP işletim sistemi üzerinde yer alan IIS 5.1 için söz konusu bildirim işleminin nasıl yapılacağı ele alınmaktadır. Öncelikli olarak Internet Information Services üzerinden Default Web Site sağ tıklanıp özelliklerden (Properties) Directory Security kısmına geçilir ve buradan Server Sertificate düğmesi tıklanır.
 

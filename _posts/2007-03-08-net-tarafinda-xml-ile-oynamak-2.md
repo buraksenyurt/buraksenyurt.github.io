@@ -33,46 +33,22 @@ XPath, XQuery, Xslt bunlardan sadece bazılarıdır. Dolayısıyla bu popüler v
 </Kitaplik>
 ```
 
-Öncelikli olarak root elementimizin Kitaplik olacağını söyleyebiliriz. Kitaplik elementi içerisinde Kitap tipinden bir çok alt element yer alabilir. Her Kitap elementi için Id isimli bir nitelik (attribute) söz konusudur. Bununla birlikte bir kitaba ait yazarlarda, Yazalar isimli element altındaki Yazar boğumları (nodes) içerisinde tutulmaktadır. Dolayısıyla programımız içerisindeki mantığı bu hiyerarşiye göre düzenlemeliyiz. Xml dökümanı üzerindeki işlemlerimizi gerçekleştirmek için yine DOM (Document Object Model) kullanıyor olacağız. Buna göre XmlDocument nesnesi oldukça işimize yarayacaktır. Bu makalemizde XmlDocument nesnesi üzerinden ele alabileceğimiz bazı yardımcı metod ve özellikler ise aşağıdaki gibidir.
+Öncelikli olarak root elementimizin Kitaplik olacağını söyleyebiliriz. Kitaplik elementi içerisinde Kitap tipinden bir çok alt element yer alabilir. Her Kitap elementi için Id isimli bir nitelik (attribute) söz konusudur. Bununla birlikte bir kitaba ait yazarlarda, Yazalar isimli element altındaki Yazar boğumları (nodes) içerisinde tutulmaktadır. Dolayısıyla programımız içerisindeki mantığı bu hiyerarşiye göre düzenlemeliyiz. Xml dökümanı üzerindeki işlemlerimizi gerçekleştirmek için yine DOM (Document Object Model) kullanıyor olacağız. Buna göre XmlDocument nesnesi oldukça işimize yarayacaktır. Bu makalemizde XmlDocument nesnesi üzerinden ele alabileceğimiz bazı yardımcı metod ve özellikler ise aşağıdaki gibidir
 
-Yardımcı Metod
-Açıklaması
-
-GetElementsByTagName
-Parametre olarak verilen elementin adına göre geriye bir XmlNodeList döndürür. Örneğimizde tüm Kitap boğumlarını elde etmek istediğimiz durumlarda bu metoddan faydalanılmaktadır.
-
-SelectSingleNode
-Tek bir node elde etmek istediğimizde kullanabileceğimiz metod. Bir XPath ifadesi alarak çalışmaktadır. Örneğimiz göz önüne alındığında belirli bir Id değerine sahip bir node elde edilmek istendiği durumlarda kullanılabilir. Geriye XmlNode tipinden bir nesne örneği döndürmektedir.
-
-CreateNode
-Herhangibir Xml ağacı üzerinde bir boğum (node) oluşturmak istediğimizde kullanabiliriz. Genellikle oluşturulacak olan boğumun çeşidinide belirtiriz. Böylece element, processing instruction, comment, attribute gibi Xml üyelerini ve benzerlerini oluşturabiliriz. Örneğimizde yeni bir Kitap eklerken pek çok boğumu oluşturmamız gerekecektir. CreateNode metodu ile bu işlevsellikler sağlanabilir.
-
-AppendChild
-Genellikle oluşturulan bir boğumun başka bir boğuma eklenmesi amacıyla kullanılır. Örneğimizde, yeni bir Kitap eklenmek istendiğinde sıkça kullanacağımız bir metoddur.
-
-Load
-Xml içeriğini belleğe almak istediğimizde ele alacağımız metoddur.
-
-Save
-Xml içeriğini fiziki ortama kaydetmek için kullanabileceğimiz metoddur.
-
-Yardımcı Özellikler
-Açıklaması
-
-FirstChild
-Xml ağacı içerisindeki, root boğum içerisindeki veya herhangibir boğum içerisindeki alt boğumlarından ilkini elde etmemizi sağlar. Bu nedenle geriye bir XmlNode referansı döner.
-
-PreviousSibling
-Ağaç yapısında o an üzerinde durulan boğum biliniyorsa, bir öncekinin elde edilmesini sağlar. Geriye XmlNode tipinden bir referans döndürür.
-
-NextSibling
-Ağaç yapısında o an üzerinde durulan boğum biliniyorsa eğer, bir sonraki boğumun elde edilmesini sağlar. Geriye XmlNode tipinden bir referans döndürür.
-
-LastChild
-Root element altındaki veya herhangibir boğum altındaki alt boğumlardan sonuncusuna gidilmesini sağlar. Geriye XmlNode tipinden bir referans döndürür.
-
-Attributes
-Bir boğumun içerisindeki niteliklere erişmemizi sağlar. Özellikle bir Kitap elementinin Id niteliğini (attribute) elde etmek istediğimiz durumlarda kullanabiliriz.
+| **Yardımcı Metod** | **Açıklaması** |
+| --- | --- |
+| **GetElementsByTagName** | Parametre olarak verilen elementin adına göre geriye bir XmlNodeList döndürür. Örneğimizde tüm Kitap boğumlarını elde etmek istediğimiz durumlarda bu metoddan faydalanılmaktadır. |
+| **SelectSingleNode** | Tek bir node elde etmek istediğimizde kullanabileceğimiz metod. Bir XPath ifadesi alarak çalışmaktadır. Örneğimiz göz önüne alındığında belirli bir Id değerine sahip bir node elde edilmek istendiği durumlarda kullanılabilir. Geriye XmlNode tipinden bir nesne örneği döndürmektedir. |
+| **CreateNode** | Herhangibir Xml ağacı üzerinde bir boğum(node) oluşturmak istediğimizde kullanabiliriz. Genellikle oluşturulacak olan boğumun çeşidinide belirtiriz. Böylece element, processing instruction, comment, attribute gibi Xml üyelerini ve benzerlerini oluşturabiliriz. Örneğimizde yeni bir Kitap eklerken pek çok boğumu oluşturmamız gerekecektir. CreateNode metodu ile bu işlevsellikler sağlanabilir. |
+| **AppendChild** | Genellikle oluşturulan bir boğumun başka bir boğuma eklenmesi amacıyla kullanılır. Örneğimizde, yeni bir Kitap eklenmek istendiğinde sıkça kullanacağımız bir metoddur. |
+| **Load** | Xml içeriğini belleğe almak istediğimizde ele alacağımız metoddur. |
+| **Save** | Xml içeriğini fiziki ortama kaydetmek için kullanabileceğimiz metoddur. |
+| **Yardımcı Özellikler** | **Açıklaması** |
+| **FirstChild** | Xml ağacı içerisindeki, root boğum içerisindeki veya herhangibir boğum içerisindeki alt boğumlarından ilkini elde etmemizi sağlar. Bu nedenle geriye bir XmlNode referansı döner. |
+| **PreviousSibling** | Ağaç yapısında o an üzerinde durulan boğum biliniyorsa, bir öncekinin elde edilmesini sağlar. Geriye XmlNode tipinden bir referans döndürür. |
+| **NextSibling** | Ağaç yapısında o an üzerinde durulan boğum biliniyorsa eğer, bir sonraki boğumun elde edilmesini sağlar. Geriye XmlNode tipinden bir referans döndürür. |
+| **LastChild** | Root element altındaki veya herhangibir boğum altındaki alt boğumlardan sonuncusuna gidilmesini sağlar. Geriye XmlNode tipinden bir referans döndürür. |
+| **Attributes** | Bir boğumun içerisindeki niteliklere erişmemizi sağlar. Özellikle bir Kitap elementinin Id niteliğini(attribute) elde etmek istediğimiz durumlarda kullanabiliriz. |
 
 Dilerseniz öncelikli olarak uygulama ekranımızı tasarlayarak işe başlayalım. Örneğimizi bir Windows uygulaması olacak şekilde tasarlayacağız. Bu amaçla aşağıdaki ekran görütünsündekine benzer bir form oluşturarak işe başlayabiliriz.
 

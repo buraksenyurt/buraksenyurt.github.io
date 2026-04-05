@@ -11,25 +11,12 @@ categories:
 ---
 Veritabanı programcılığında zaman zaman büyük nesneler (large objects) ile çalışmak zorunda kalabiliriz. Görüntü, ses, resim, text dökümanı, çalıştırılabilir uygulamalar gibi dosyalar bir veritabanı için büyük nesne (large objects) olabilecek kaynaklardır. Bu gibi dosyaların veritabanı üzerinde alanlar (fields) içerisinde saklanabilmesi bazı özel veritabanı türleri ile mümkün olabilmektedir. Sql Server temel olarak büyük nesneleri iki kategoriye ayırmaktadır.
 
-BLOBs adı verilen ikili formatta büyük nesneler (Binary Large Objects - BLOBs) ve karakter tabanlı büyük nesneler (Character Large Objects - CLOBs). Bununla birlikte Sql Server 2005 ile büyük nesneleri saklamak için gelen yeni veri türleride vardır. Bunlarıda genel olarak değer türünden büyük nesneler (Value Types Large Objects - VTLOs) olarak adlandırılmaktadır. Aşağıdaki tabloda Sql Server 2000 ve 2005 sürümlerinde geçerli olan büyük nesne türleri (Large Objects Types) listelenmektedir.
+BLOBs adı verilen ikili formatta büyük nesneler (Binary Large Objects - BLOBs) ve karakter tabanlı büyük nesneler (Character Large Objects - CLOBs). Bununla birlikte Sql Server 2005 ile büyük nesneleri saklamak için gelen yeni veri türleride vardır. Bunlarıda genel olarak değer türünden büyük nesneler (Value Types Large Objects - VTLOs) olarak adlandırılmaktadır. Aşağıdaki tabloda Sql Server 2000 ve 2005 sürümlerinde geçerli olan büyük nesne türleri (Large Objects Types) listelenmektedir
 
-Nesne Çeşidi
-Sql Server 2000 Veri Türü
-Sql Server 2005 Veri Türü
-
-BLOBs (Binary Large Objects)
-image (maksimum 2 Gb)
-image (maksimum 2 Gb)
-varbinary (max)
-
-CLOBs (Character Large Objects)
-text (maksimum 2 Gb, non-unicode)
-ntext (maksimum 1 Gb, unicode)
-text (maksimum 2 Gb, non-unicode)
-varchar (max)
-ntext (maksimum 1 Gb, unicode)
-nvarchar (max)
-xml
+| **Nesne Çeşidi** | **Sql Server 2000 Veri Türü** | **Sql Server 2005 Veri Türü** |
+| --- | --- | --- |
+| BLOBs (Binary Large Objects) | image ( maksimum 2 Gb) | image ( maksimum 2 Gb) <br> varbinary(max) |
+| CLOBs (Character Large Objects) | text (maksimum 2 Gb, non-unicode) <br> ntext (maksimum 1 Gb, unicode) | text (maksimum 2 Gb, non-unicode) <br> varchar(max) <br> ntext (maksimum 1 Gb, unicode) <br> nvarchar(max) <br> xml |
 
 Tablodan görebileceğiniz gibi Sql Server 2005 ile birlikte gelen üç yeni büyük nesne (large object) türü vardır. Varbinary (max) türü Sql Server 2000' deki image türünün benzeridir. Benzer şekilde varchar (max) ve nvarchar (max) türleride sırasıyla text ve ntext veri türlerinin yeni karşılıklarıdır. Sql Server 2005' in image, text, ntext gibi veri türlerini desteklemeye devam edeceği ancak yeni Sql sürümlerinde artık bunları kaldıracağına dair bir takım bilgiler mevcuttur. Bu nedenle Sql Server 2005 üzerinde yer verilen image, text ve ntext veri türlerinin geriye doğru uyumluluğu sağlamak amacıyla tutulduğunu düşünebiliriz. Yeni eklenen VTLOs'ların en büyük özelliklerinden birisi, büyük nesne için belirli bir boyut bildirilebilmesidir. Dolayısıyla varbinary (3000) gibi bir tanımlama yapabiliriz. Söz konusu yeni türleri birleştirebilir (concatenate), sorgulayabilir, hatta sp'lere parametre olarak geçirebiliriz. Bu imkanlar düşünüldüğünde, VLTOs eski büyük nesne türlerine nazaran önemli avantajlar içermektedir.
 

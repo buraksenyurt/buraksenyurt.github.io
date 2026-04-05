@@ -21,7 +21,7 @@ Aslında niteliklerin belkide en önemli özelliği, üretilen assembly içerisi
 
 Niteliklerin faydasını ve ne işe yaradıklarını daha net bir şekilde anlayabilmek için aşağıdaki örnek senaryolar göz önüne alınabilir.
 
-Asp.Net Web Uygulamalarında Kendi Kontrollerimizi Geliştirirken
+## Asp.Net Web Uygulamalarında Kendi Kontrollerimizi Geliştirirken
 
 Daha önceki makalelerimizde kendi web server kontrollerimizi nasıl yazacağımıza kısaca değinmiştik. Şimdi şöyle düşünelim. Yazdığımız bu kontrollerin ele alındığı bir geliştirme ortamı var mı? Cevabın Visual Studio IDE ortamı olduğunu gayet iyi biliyoruz. Peki nasıl oluyorda, bir kontrolü ToolBar üzerinden alıp sayfaya bıraktığımızda, özellikler (Properties) pencersinde, o kontrol sınıfına ait bazı üyeler (özellikler, olaylar) getiriliyor? Demekki, IDE bir çalışma zamanı ortamı olarak sürüklenip bırakılan kontrolün hangi üyelerinin Properties penceresinde görünmesi gerektiğini anlayabiliyor. Hatırlayacağınız gibi özelliklerin başına, hatta kontrol sınıfının başına atılan bazı nitelikler (attributes) vardı.
 
@@ -39,7 +39,7 @@ public string SeciliGun
 
 Çok basit olarak SeciliGun isimli özelliğin üzerine yazılmış olan nitelikler, Visual Studio IDE'si için anlamlıdır. Nitekim Visual Studio çalışan bir uygulama olaraktan, çalışma zamanında (run-time) ilgili niteliklerin değerlerine bakarak bazı hamlelerde bulunur. Örneğin Browsable niteliğinin true değerine sahip olması, SeciliGun özelliğinin Visual Studio IDE'sinde Properties penceresine eklenmesi gerektiği anlamına gelir. Description niteliği içerisindeki metinsel bilgiler, IDE tarafından değerlendirilip yine Properties penceresinde gösterilir.
 
-Kendi Web Part Bileşenlerimizi Geliştirdiğimizde
+## Kendi Web Part Bileşenlerimizi Geliştirdiğimizde
 
 Bundan bir önceki makalemizde kendi Web Part bileşenlerimizi nasıl geliştirebileceğimiz incelemiştik. Geliştirdiğimiz Web Part bileşenlerinin bazı özelliklerinin kişiselleştirilebilmesi (personalizable) ve çalışma zamanında istemcinin bilgisayarında yer alan tarayıcı pencersindeki bir PropertyGridEditorPart içerisinde açılıp değiştirilebilmesi için aşağıdaki niteliklerden faydalandık.
 
@@ -57,11 +57,11 @@ public string Url
 
 İşte buradaki nitelikleri değerlendiren kişi, Asp.Net Runtime Host'un ta kendisidir. Yine çalışma zamanındaki bir ortamın karar mekanizmalarında ihtiyaç duyacağı bazı bilgiler metadata içerisine nitelikler yardımıyla eklenmektedir. Buna göre örneğin, Asp.Net Runtime Host, Personalizable niteliğinde PersonalizationScope isim enum sabitinin değerini User olarak gördüğünde takip eden özelliğin kişiselleştirme amaçlı olarak her kullanıcı için ayrı olacak şekilde veritabanına yazılması gerektiğini anlayacaktır. Yine WebBrowsable niteliğine true değeri verilmesi sayesinde, ilgili özelliğinde istemcilerin tarayıcı penceresinde görülecek olan PropertyGridEditorPart içerisinde ele alınabileceğinide anlayacak ve sayfanın sunucundan istemciye olan hareketinde, render işlemini bu kritere göre değiştirecektir.
 
-Nesneleri Binary Formatta Serileştirmekte
+## Nesneleri Binary Formatta Serileştirmekte
 
 Bildiğiniz gibi bir nesneyi ikili (binary) formatta serileştirmek için BinaryFormatter sınıfının Serialize metodundan yararlanırız. Benzer şekilde ters serileştirme işlemi içinde Deserialize metodunu kullanırız. Ancak hepimizin yakından tanıdığı bir kural vardır. Bir tipin ikili formatta (binary) serileştirilebilmesi için Serializable niteliği ile işaretlenmiş olması gerekir. Binary formatta serileştirmenin olduğu yerler göz önüne alındığında söz konusu niteliğin önemi ortaya çıkmaktadır. Örneğin web uygulamalarında session bilgilerinin veritabanından tutulmasına karar verildiğinde veya Profile bilgilerinde kendi tiplerimizi yada var olan tipleri tablodaki binary alanda tutmak istediğimizde...
 
-Windows Communication Foundation'da Kontratları (Contrats) Hazırlarken
+## Windows Communication Foundation'da Kontratları (Contrats) Hazırlarken
 
 Yakın zamanda,.Net Framework 3.0 ile gelen ve Microsoft tabanlı dağıtık mimari (distributed architectures) modellerini tek bir çatı altında toplayan Windows Communication Foundation'da, bir sınıfın servis olarak yayınlanması için ve sınıf içinden dış dünyaya açılabilecek fonksiyonellikler için yine nitelikleri kullanmaktadır. Aşağıdaki örnek kod parçasında ServiceContract ve OperationContract isimleriye geliştirilen niteliklerin örnek uygulanış şeklini görmektesiniz.
 
@@ -76,15 +76,15 @@ Yakın zamanda,.Net Framework 3.0 ile gelen ve Microsoft tabanlı dağıtık mim
     }
 ```
 
-Web Servislerinde
+## Web Servislerinde
 
 Bir web servisinin istemci tarafından tüketilebilmesi için çoğunlukla proxy sınıflarını kullanıyoruz. Elbette istisnai olarak doğrudan HTTP veya SOAP üzerinden talepte de bulunabilmekteyiz. Nitekim proxy sınıflarının üretilebilmesi içinde, web servisine ait bir WSDL dökümanının ele alınması gerekiyor. WSDL (Web Service Description Language) dökümanı bildiğiniz gibi bir web servisinin tanımlamalarının ve fonksiyonelliklerin bir XML içeriği olarak üretilmesini sağlıyor. Peki biz bu belgeyi herhangibir şekilde talep ettiğimizde, bu talebe karşılık XML dökümanı içerisine hangi sınıfların ve hangi metodların koyulacağını sistem nereden biliyor? İşte bu noktada devreye WebService ve WebMethod gibi nitelikler (attributes) girmektedir. Böylece WSDL dökümanını hazırlayacak olan HttpHandler hangi sınıfı ve hangi metodu xml içerisine alacağını bilecektir.
 
-Katmanlı Mimaride Entity Tiplerinde
+## Katmanlı Mimaride Entity Tiplerinde
 
 Özellikle katmanlı mimaride nitelikler çok faydalı olabilmektedir. Örneğin, veritabanında yer alan tabloların karşılıklarının tutulduğu sınıflar için otomatik olarak select, insert,update ve delete gibi sorguların hazırlanması istendiği durumlarda çalışma zamanı için ekstra bilgilere (additional metadata) ihtiyaç vardır. İşte çalışma zamanındaki bu ihtiyçaları nitelikler yardımıyla karşılayabiliriz. Söz gelimi entity tipi içerisindeki alan adlarının tablolardaki karşılıklarını, identity olup olmadıklarını yada farklı entity tipleri arasında, tablolar arasındaki ilişkilerin nasıl gerçekleştirilebileceğini belirlemek vb konularda ele alınabilir.
 
-DLINQ (Database Language Integrated Query) de Yer Alan Entity Tiplerinde
+## DLINQ (Database Language Integrated Query) de Yer Alan Entity Tiplerinde
 
 Şu anda C# 3.0 ile birlikte adı en çok anılan modellerden biriside DLINQ (Database Language Integrated Query) dir. DLINQ temel olarak veritabanından nesnelere indirgenen kümeler üzerinde LINQ sorgularının çalıştırılmasına izin veren bir modeldir. Aslında model tipik olarak entity katmanlarına dayanan bir yapıya sahiptir. Tablo, alan ve ilişki (relation) eşleştirmeleri vb... için niteliklerden (attributes) faydalanılmaktadır.
 
@@ -203,56 +203,24 @@ class AlanAttribute:Attribute
 
 Ancak dikkat ederseniz yazmış olduğumuz nitelik sınıflarımıza AttributeUsage isimli başka bir nitelik daha uygulanmaktadır. Bu niteliğin amacı, ilgili niteliğin hangi seviyelere uygulanabileceğini belirlemektir. Bu seviylerin belirtilmesi içinse AttributeTargets isimli bir enum sabitini ele almaktadır. Örneğin TabloAttribute niteliğimizi sadece sınıf (class) ve yapılara (struct) uygulayabilirken, AlanAttribute isimli niteliğimizi sadece özelliklere (Property) uygulanabilir. Böylece ilgili niteliğin sadece belirtilen tip veya üyelere uygulanabilmesi adına bir zorlama getirilmiş olunur. AttributeTargets isimli enum sabitinin alabileceği tüm değerler ve kısa açıklamaları aşağıdaki tabloda görüldüğü gibidir.
 
-Değer
-Açıklama
-
-All
-Nitelik istenilen tipe veya üyeye uygulanabilir.
-
-Assembly
-Nitelik sadece assembly seviyesinde uygulanabilir.
-
-Class
-Nitelik sadece sınıflara uygulanabilir.
-
-Constructor
-Nitelik sadece yapıcı metoda uygulanabilir.
-
-Delegate
-Nitelik sadece temsilci tipine uygulanabilir.
-
-Enum
-Nitelik sadece enum sabitine uygulanabilir.
-
-Event
-Nitelik sadece olaya uygulanabilir.
-
-Field
-Nitelik sadece alana uygulanabilir.
-
-GenericParameter
-Nitelik sadece generic bir parametreye (T) uygulanabilir.
-
-Interface
-Nitelik sadece arayüze uygulanabilir.
-
-Method
-Nitelik sadece metoda uygulanabilir.
-
-Module
-Nitelik sadece modül'e uygulanabilir. Burada dikkat edilmesi gereken nokta module'ün bir Visual Basic module'ü olmayışıdır. Yani kastedilen.dll veya.exe uzantılı module'lerdir.
-
-Parameter
-Nitelik sadece parametreye uygulanabilir.
-
-Property
-Nitelik sadece özelliğe uygulanabilir.
-
-ReturnValue
-Nitelik sadece dönüş tipine uygulanabilir.
-
-Struct
-Nitelik sadece bir değer türüne bir başka deyişle yapıya uygulanabilir.
+| Değer | Açıklama |
+| :--- | :--- |
+| **All** | Nitelik istenilen tipe veya üyeye uygulanabilir. |
+| **Assembly** | Nitelik sadece assembly seviyesinde uygulanabilir. |
+| **Class** | Nitelik sadece sınıflara uygulanabilir. |
+| **Constructor** | Nitelik sadece yapıcı metoda uygulanabilir. |
+| **Delegate** | Nitelik sadece temsilci tipine uygulanabilir. |
+| **Enum** | Nitelik sadece enum sabitine uygulanabilir. |
+| **Event** | Nitelik sadece olaya uygulanabilir. |
+| **Field** | Nitelik sadece alana uygulanabilir. |
+| **GenericParameter** | Nitelik sadece generic bir parametreye(T) uygulanabilir. |
+| **Interface** | Nitelik sadece arayüze uygulanabilir. |
+| **Method** | Nitelik sadece metoda uygulanabilir. |
+| **Module** | Nitelik sadece modül' e uygulanabilir. Burada dikkat edilmesi gereken nokta module' ün bir Visual Basic module' ü olmayışıdır. Yani kastedilen .dll veya .exe uzantılı module' lerdir. |
+| **Parameter** | Nitelik sadece parametreye uygulanabilir. |
+| **Property** | Nitelik sadece özelliğe uygulanabilir. |
+| **ReturnValue** | Nitelik sadece dönüş tipine uygulanabilir. |
+| **Struct** | Nitelik sadece bir değer türüne bir başka deyişle yapıya uygulanabilir. |
 
 Şimdi bu nitelikleri UrunEntitiy sınıfı içerisinde kullanmaya çalışalım. İlk olarak sınıfımızı aşağıdaki gibi geliştirelim.
 

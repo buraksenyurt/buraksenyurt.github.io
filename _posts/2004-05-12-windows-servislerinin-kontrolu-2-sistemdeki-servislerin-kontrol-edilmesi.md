@@ -7,16 +7,12 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Bu makalemizde, sistemde yer alan Windows servislerini bir Windows uygulamasından nasıl elde edebileceğimizi ve nasıl kontrol edebileceğimizi incelemeye çalışacağız. Önceki makalelerimizden hatırlayacağınız gibi, sistemde yer alan servislerimiz, System.ServiceProcess isim alanında yer alan ServiceController sınıf nesneleri ile temsil edilmektedir. Eğer sistemde yer alan servisleri elde etmek istersek, aşağıda aşırı yüklenmiş iki prototipi olan, GetServices metodunu kullanabiliriz.
+Bu makalemizde, sistemde yer alan Windows servislerini bir Windows uygulamasından nasıl elde edebileceğimizi ve nasıl kontrol edebileceğimizi incelemeye çalışacağız. Önceki makalelerimizden hatırlayacağınız gibi, sistemde yer alan servislerimiz, System.ServiceProcess isim alanında yer alan ServiceController sınıf nesneleri ile temsil edilmektedir. Eğer sistemde yer alan servisleri elde etmek istersek, aşağıda aşırı yüklenmiş iki prototipi olan, GetServices metodunu kullanabiliriz
 
-GetServices Metodu Prototipleri
-Açıklaması
-
-public static ServiceController[] GetServices ();
-Bu prototip ile, local makinede yer alan servisler elde edilir.
-
-public static ServiceController[] GetServices (string);
-Bu prototipte, parametre olarak verilen makine bilgisine ait servisler elde edilir.
+| GetServices Metodu Prototipleri | Açıklaması |
+| --- | --- |
+| public static ServiceController[] GetServices(); | Bu prototip ile, local makinede yer alan servisler elde edilir. |
+| public static ServiceController[] GetServices(string); | Bu prototipte, parametre olarak verilen makine bilgisine ait servisler elde edilir. |
 
 Burada görüldüğü gibi, GetServices metodu ServiceController sınıfı türünden bir diziyi geri döndürür. Ayrıca bu metod static bir metod olduğundan, doğrudan ServiceController sınıfı üzerinden herhangi bir nesne örneğine gerek duymadan çağrılabilir. Aşağıda örnek olarak sistemdeki servislerin elde ediliş tekniği gösterilmektedir.
 
@@ -27,30 +23,13 @@ svc=ServiceController.GetServices();
 
 Elde edilen servislerin her biri birer ServiceController nesnesi olarak ele alınır. Elde ettiğimiz servislerin üzerinde bildiğiniz gibi, bir servisin temel davranışları olan Start, Stop, Pause, Continue, ExecuteCommand vb. işlemlerini aşağıda prototipi verilen metodlar yardımıyla gerçekleştirebilmekteyiz.
 
-Metod
-Prototip
-Açıklama
-
-Start
-public void Start ();
-public void Start (string[]);
-Servisi çalıştırır.
-
-Stop
-public void Stop ();
-Servisi durdurur.
-
-Pause
-public void Pause ();
-Çalışan servisi duraklatır.
-
-Contiune
-public void Continue ();
-Duraklatılmış servisin çalışmasına devam etmesini sağlar.
-
-ExecuteCommand
-public void ExecuteCommand (int command);
-Servisin OnCustomCommand metodunu çalıştırır.
+| Metod | Prototip | Açıklama |
+| --- | --- | --- |
+| Start | public void Start ();<br>public void Start (string[]); | Servisi çalıştırır. |
+| Stop | public void Stop (); | Servisi durdurur. |
+| Pause | public void Pause (); | Çalışan servisi duraklatır. |
+| Continue | public void Continue (); | Duraklatılmış servisin çalışmasına devam etmesini sağlar. |
+| ExecuteCommand | public void ExecuteCommand (int command); | Servisin OnCustomCommand metodunu çalıştırır. |
 
 Birazdan geliştireceğimiz örnek uygulamada, sistedemki servisler üzerinde yukarıda bahsettiğimiz metodları kullanarak, servislerin kontrolünü gerçekleştirmeye çalışacağız. Burada dikkat edilmesi gereken bir kaç nokta vardır. Öncelikle bir servis başlatılacaksa, bu servisin o an çalışmıyor olması başka bir deyişle Stopped konumunda olması gerekmektedir. Aynı durum bir servisi durdururkende geçerlidir. Böyle bir durumdada, Stop edilecek servisin, Running konumunda olması gerekmektedir. İşte bu nedenlerden dolayı, sistemdeki servislerin çalışmaya başlaması veya çalışanların durdurulması gibi hallerde, servisin o anki durumunu kontrol etmemiz gerekmektedir. Bu amaçla ServiceController sınıfının aşağıda prototipi verilen Status özelliğini kullanırız.
 
@@ -58,31 +37,17 @@ Birazdan geliştireceğimiz örnek uygulamada, sistedemki servisler üzerinde yu
 public ServiceControllerStatus Status {get;}
 ```
 
-Burada görüldüğü gibi Status özelliği ServiceControllerStatus numaralandırıcısı türünden değerler alabilmektedir. Bu numaralandırıcının alacağı değerler servisin o anki durumu hakkında bilgi vermektedir. Status özelliği sadece get bloğuna sahip olduğundan, yalnızca servisin o anki durumu hakkında bilgi vermektedir. ServiceControllerStatus numaralandırıcısının alabileceği değerler aşağıdaki tabloda belirtilmektedir.
+Burada görüldüğü gibi Status özelliği ServiceControllerStatus numaralandırıcısı türünden değerler alabilmektedir. Bu numaralandırıcının alacağı değerler servisin o anki durumu hakkında bilgi vermektedir. Status özelliği sadece get bloğuna sahip olduğundan, yalnızca servisin o anki durumu hakkında bilgi vermektedir. ServiceControllerStatus numaralandırıcısının alabileceği değerler aşağıdaki tabloda belirtilmektedir
 
-ServiceControllerStatus Değeri
-Açıklama
-
-ContinuePending
-Duraksatılan servis devam ettirilmeyi beklerken.
-
-Paused
-Servis duraksatıldığında.
-
-PausePending
-Servis duraksatılmayı beklerken.
-
-Running
-Servis çalışırken.
-
-StartPending
-Servis çalıştırılmayı beklerken.
-
-Stopped
-Servis durdurulduğunda.
-
-StopPending
-Servis durdurulmayı beklerken.
+| **ServiceControllerStatus Değeri** | **Açıklama** |
+| --- | --- |
+| ContinuePending | Duraksatılan servis devam ettirilmeyi beklerken. |
+| Paused | Servis duraksatıldığında. |
+| PausePending | Servis duraksatılmayı beklerken. |
+| Running | Servis çalışırken. |
+| StartPending | Servis çalıştırılmayı beklerken. |
+| Stopped | Servis durdurulduğunda. |
+| StopPending | Servis durdurulmayı beklerken. |
 
 Burada en çok kafa karıştırıcı haller Pending halleridir. Bunu daha iyi anlamak için örnek olarak StopPending durumunu aşağıdaki şekil üzerinden incelemeye çalışalım.
 
@@ -90,17 +55,12 @@ Burada en çok kafa karıştırıcı haller Pending halleridir. Bunu daha iyi an
 
 Şekil 1. Pending Durumları.
 
-Burada görüldüğü gibi çalışan bir servise, Stop emri verildiğinde, bu servisin durumu Stopped oluncaya kadar geçen sürede, servis StopPending durumundadır. Aynı mantık, StartPending, PausePending ve ContinuePending durumları içinde geçerlidir. Pending durumlarını daha çok, bu zaman sürelerinin tamamlanıp verilen emrin başarılı bir şekilde uygulandığının izlenmesinde kullanbiliriz. Bu amaçla, ServiceController sınıfı bize, aşağıda prototipleri verilen WaitForStatus metodunu sunmaktadır. Bu metod, parametre olarak aldığı ServiceControllerStatus değeri sağlanıncaya kadar uygulamayı duraksatmaktadır.
+Burada görüldüğü gibi çalışan bir servise, Stop emri verildiğinde, bu servisin durumu Stopped oluncaya kadar geçen sürede, servis StopPending durumundadır. Aynı mantık, StartPending, PausePending ve ContinuePending durumları içinde geçerlidir. Pending durumlarını daha çok, bu zaman sürelerinin tamamlanıp verilen emrin başarılı bir şekilde uygulandığının izlenmesinde kullanabiliriz. Bu amaçla, ServiceController sınıfı bize, aşağıda prototipleri verilen WaitForStatus metodunu sunmaktadır. Bu metod, parametre olarak aldığı ServiceControllerStatus değeri sağlanıncaya kadar uygulamayı duraksatmaktadır.
 
-Prototipler
-Açıklama
-
-public void WaitForStatus (ServiceControllerStatus desiredStatus);
-Servisin ServiceControllerStatus numaralandırıcısı ile belirtilen duruma geçmesi için, uygulamayı bekletir.
-
-public void WaitForStatus (ServiceControllerStatus desiredStatus,
-TimeSpan timeout);
-Servisin ServiceControllerStatus numaralandırıcısı ile belirtilen duruma geçmesi için, TimeSpan ile belirtilen süre kadar uygulamanın beklemesini sağlar.
+| **Prototipler** | **Açıklama** |
+| --- | --- |
+| public void WaitForStatus(ServiceControllerStatus desiredStatus); | Servisin ServiceControllerStatus numaralandırıcısı ile belirtilen duruma geçmesi için, uygulamayı bekletir. |
+| public void WaitForStatus( <br> ServiceControllerStatus desiredStatus, <br> TimeSpan timeout <br> ); | Servisin ServiceControllerStatus numaralandırıcısı ile belirtilen duruma geçmesi için, TimeSpan ile belirtilen süre kadar uygulamanın beklemesini sağlar. |
 
 Biz uygulamamızda WaitForStatus metodunu, bir servise Start,Stop,Pause ve Continue emirlerini verdiğimizde, pending işlemlerinin sona ermesi ile birlikte servisin başarılı bir şekilde istenen konuma geçtiğini anlamak amacıyla kullancağız. Bu aslında SCM yardımıyla bir servisin durdurulması veya başlatılmasında oluşan bekleme işlemi ile alakalı bir durumdur. Örneğin,
 

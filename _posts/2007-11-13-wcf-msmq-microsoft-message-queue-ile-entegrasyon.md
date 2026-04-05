@@ -12,44 +12,18 @@ TCP veya HTTP bazlı iletişimlerde, tarafların aynı zaman dilimi içerisinde 
 
 Ne varki mesajlaşmaların kuyruk (Queue) modeline göre taşındığı bir sistemde yukarıda bahsedilen iletişim sorunlarının yaşanmaması sağlanabilir. Nitekim mesaj kuyruğu (Message Queue) sisteminin geliştirilme amacıda aslında budur. Bu sistem temelde Windows tabanlı bilgisayarlar arasında kuyruk sistemine dayalı bir mesaj alışverişinin tesis edilmesini sağlamaktadır. Bu iletişimde istemci (Client), servis (Service) ve ağ (Network) arasında bir izolasyon sağlanmaktadır. Bu izolasyon sayesinde istemci, servis yada ağ çökse, hata üretse dahi fonksiyonelliklerini devam ettirebileceklerdir. Kuyruk temelli iletişimde güvenilir (Reliable) bir iletişim ortamı tesis edilmekte olup transaction kullanılabilmekte, kuyruğa atılan mesajlar fiziki yada değişken (Volatile) olarak saklanabilmektedir. Kuyruk temelli mesajlaşmanın en bilinen uyarlaması MicroSoft Message Queue bileşenidir (Component).
 
-MicroSoft Message Queue (MSMQ), Windows NT sürümünden beri gelen bir bileşendir. NT işletim sistemi için 1.0 versiyonu duyrulan MSMQ bileşeninin çok kısa tarihçesi aşağıdaki tabloda olduğu gibidir.
+MicroSoft Message Queue (MSMQ), Windows NT sürümünden beri gelen bir bileşendir. NT işletim sistemi için 1.0 versiyonu duyrulan MSMQ bileşeninin çok kısa tarihçesi aşağıdaki tabloda olduğu gibidir
 
-MSMQ
-Versiyonu
-Desteklenen
-İşletim Sistemi (Sistemleri)
-Özellikler
+| **MSMQ Versiyonu** | **Desteklenen İşletim Sistemi(Sistemleri)** | **Özellikler** |
+| --- | --- | --- |
+| 1.0 | Windows NT | Varsayılan özellikler... |
+| 2.0 | Windows 2000 | Public mesaj kuyruklarının Active Directory destekli olarak saklanması 128 bitlik şifreleme desteği Dijital imza desteği Tam COM desteği |
+| 3.0 * | Windows XP <br> Windows Server 2003 | HTTP , SOAP desteği ile internet üzerinden mesajlaşabilme IIS için MSMQ desteği Mesajların Çoklu Dönüştürülebilmesi(MultiCasting) |
+| 4.0 ** | Vista <br> Longhorn Server | Alt kuyruk desteği(Subqueue) Zehirli mesajların ele alınması(Posion Message Handling) Uzak kuyruklardan transaction bazlı mesaj alma desteği(Transactional Remote Receive) |
 
-1.0
-Windows NT
-Varsayılan özellikler...
+- `*` [http://www.microsoft.com/windowsserver2003/technologies/msmq/whatsnew.mspx](http://www.microsoft.com/windowsserver2003/technologies/msmq/whatsnew.mspx)
 
-2.0
-Windows 2000
-
-Public mesaj kuyruklarının Active Directory destekli olarak saklanması
-128 bitlik şifreleme desteği
-Dijital imza desteği
-Tam COM desteği
-
-3.0
-Windows XP
-Windows Server 2003
-
-HTTP, SOAP desteği ile internet üzerinden mesajlaşabilme
-IIS için MSMQ desteği
-Mesajların Çoklu Dönüştürülebilmesi (MultiCasting)
-
-4.0
-Vista
-Longhorn Server
-
-Alt kuyruk desteği (Subqueue)
-Zehirli mesajların ele alınması (Posion Message Handling)
-Uzak kuyruklardan transaction bazlı mesaj alma desteği (Transactional Remote Receive)
-
-* [http://www.microsoft.com/windowsserver2003/technologies/msmq/whatsnew.mspx](http://www.microsoft.com/windowsserver2003/technologies/msmq/whatsnew.mspx)
-* * [http://windowssdk.msdn.microsoft.com/en-us/library/ms701784.aspx](http://windowssdk.msdn.microsoft.com/en-us/library/ms701784.aspx)
+- `**` [http://windowssdk.msdn.microsoft.com/en-us/library/ms701784.aspx](http://windowssdk.msdn.microsoft.com/en-us/library/ms701784.aspx)
 
 Ayrıca 1999 yılında MSMQ'nun mobil cihazlar için olan desteğide Windows CE 3.0 işletim sistemi ile birlikte başlamıştır.
 
@@ -71,10 +45,11 @@ MSMQ bileşenlerinin kullanıldığı uygulamalar herhangibir Windows programı 
 
 MSMQ istemcileri yabancı bilgisayarlar (Foreign Computers) ile Connector adı verilen uygulamalar aracılığıyla haberleşebilirler. Connector uygulamaları aslında bir MSMQ sunucusunda çalışır ve yabancı bilgisayarların MSMQ istemciler ile olan haberleşmelerinde aracılık yapar. Bu aracılıkta transaction desteği olan veya olmayan kanallar söz konusudur. IBM MQSeries ile iletişimi sağlayan Connector uygulama Microsoft MSMQ-MQSeries Bridge programıdır. Tabi farklı kuyruk tabanlı sistemler için farklı Connector uygulamaları mevcuttur.
 
-> MSMQ'nun yazının hazrılandığı tarih itibariyle 4.0 versiyonu bulunmaktadır. Bu versiyon ile gelen bazı belirgin özelliklerin bilinmesi gerekmektedir. 4.0 versiyonu alt kuyruklar (SubQueue), zehirli mesajların ele alınması (Poison Message Handling), transaction bazlı uzak kuyruk desteği (Transactional Remote Receive) şeklinde 3 önemli yenilik içermektedir.
-> SubQueues (Alt Kuyruklar): Mesajların ek fiziki kuyruklar oluşturmadan mantıksal olarak çeşitli kriterlere göre alt gruplara ayrılabilmesi desteğidir.
-> Zehirli Mesajların Ele Alınmas (Poison Message Handling): Zehirli mesajlar, bir kuyrukta arkadan gelen mesajları engelleyen niteliktedir. Bir uygulama kuyruktan bir mesajı okuyup işlemek isterken, mesajdaki hata nedeni ile bu işlemi yapamadığı durumlarda, (eğer süreç bir transaction içerisindeyse) Abort işlemini gerçekleştirip mesajı tekrardan kuyruğa döndürecektir. Bu mesaj daha sonradan tekrardan işlenmek amacıyla uygulama tarafından yeniden okunacak ama hatası nedeni ile yine kuyruğa geri döndürülecektir. Bu durumda transaction'ın sürekli olarak abort edildiği ve mesajın kuyruğa gönderildiği sonsuz bir döngü oluşacaktır. Bu döngüye neden olan mesaj bir süre sonra tekrardan deneme sayısınında aşılması sebebiyle arkadan gelen mesajlarında işlenmesini engelleyecektir. İşte MSMQ 4.0 versiyonu ile birlikte bu tip mesajların daha güçlü bir şekilde ele alınması ve sorunun önüne geçilmesi sağlanmaktadır. Bunun içinde Retry Queue (yeniden deneme kuyruğu) adı verilen kuyruklar kullanılmaktadır. (WCF içerisindeki bağlayıcı tipler buna destek veren özellikler (Properties) içermektedirler)
-> Transaction bazlı uzak kuyruk desteği (Transactional Remote Receive): Tek bir mesaj kuyruğunun işleri aldığı bir durumda, başka bilgisayarlardaki uygulamalarında bu işleri değerlendirdiği düşünülsün. Uygulamardan biri sıradaki bir işi işleyemez ise bu işin sonradan değerlendirilmek üzere tekrardan kuyruğa gönderilmesi tercih edilir. Bu tip bir süreç için transaction desteği gerekmektedir. Ayrıca istemci bilgisayarların ve kuyruğun ağ (Network) üzerinden DTC (Distributed Transaction Coordinator) erişiminede izin vermesi şarttır.
+MSMQ'nun yazının hazrılandığı tarih itibariyle 4.0 versiyonu bulunmaktadır. Bu versiyon ile gelen bazı belirgin özelliklerin bilinmesi gerekmektedir. 4.0 versiyonu alt kuyruklar (SubQueue), zehirli mesajların ele alınması (Poison Message Handling), transaction bazlı uzak kuyruk desteği (Transactional Remote Receive) şeklinde 3 önemli yenilik içermektedir.
+SubQueues (Alt Kuyruklar): Mesajların ek fiziki kuyruklar oluşturmadan mantıksal olarak çeşitli kriterlere göre alt gruplara ayrılabilmesi desteğidir.
+
+Zehirli Mesajların Ele Alınmas (Poison Message Handling): Zehirli mesajlar, bir kuyrukta arkadan gelen mesajları engelleyen niteliktedir. Bir uygulama kuyruktan bir mesajı okuyup işlemek isterken, mesajdaki hata nedeni ile bu işlemi yapamadığı durumlarda, (eğer süreç bir transaction içerisindeyse) Abort işlemini gerçekleştirip mesajı tekrardan kuyruğa döndürecektir. Bu mesaj daha sonradan tekrardan işlenmek amacıyla uygulama tarafından yeniden okunacak ama hatası nedeni ile yine kuyruğa geri döndürülecektir. Bu durumda transaction'ın sürekli olarak abort edildiği ve mesajın kuyruğa gönderildiği sonsuz bir döngü oluşacaktır. Bu döngüye neden olan mesaj bir süre sonra tekrardan deneme sayısınında aşılması sebebiyle arkadan gelen mesajlarında işlenmesini engelleyecektir. İşte MSMQ 4.0 versiyonu ile birlikte bu tip mesajların daha güçlü bir şekilde ele alınması ve sorunun önüne geçilmesi sağlanmaktadır. Bunun içinde Retry Queue (yeniden deneme kuyruğu) adı verilen kuyruklar kullanılmaktadır. (WCF içerisindeki bağlayıcı tipler buna destek veren özellikler (Properties) içermektedirler)
+Transaction bazlı uzak kuyruk desteği (Transactional Remote Receive): Tek bir mesaj kuyruğunun işleri aldığı bir durumda, başka bilgisayarlardaki uygulamalarında bu işleri değerlendirdiği düşünülsün. Uygulamardan biri sıradaki bir işi işleyemez ise bu işin sonradan değerlendirilmek üzere tekrardan kuyruğa gönderilmesi tercih edilir. Bu tip bir süreç için transaction desteği gerekmektedir. Ayrıca istemci bilgisayarların ve kuyruğun ağ (Network) üzerinden DTC (Distributed Transaction Coordinator) erişiminede izin vermesi şarttır.
 
 MSMQ, WCF içerisinde de doğrudan desteklenmektedir. Üstelik WCF'in sağladığı birleştirilmiş (Unified) model sayesinde, geliştiriciler MSMQ'nun karmaşık alt yapısından uzaklaşmaktadır. Basit anlamda WCF üzerinden MSMQ konseptine bakıldığında aşağıdaki durum söz konusudur.
 
@@ -147,7 +122,7 @@ Servis uygulaması basit bir Console uygulaması olarak tasarlanabilir. Nitekim 
 
 Servis tarafı konfigurasyon dosyası;
 
-```csharp
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
     <system.serviceModel>
@@ -179,42 +154,32 @@ Bu seçimin ardından adres bilgisinin girilmesi gerekir. MSMQ kullanıldığı 
 
 ![mk231_8.gif](/assets/images/2007/mk231_8.gif)
 
-> Burada üzerinde durulması gereken noktalardan biriside şudur. SiparisKuyrugu isimli private kuyruk nasıl oluşturulmuştur? Bunun için sistemde MSMQ'nun kurulu olması elbette şarttır. MSMQ'nun kurulması halinde örneğin Vista işletim sistemi üzerinde Microsoft Management Console açılarak Meesage Queuing klasörüne gidilir. Ardından menüden New->Private Queue seçenği işaretlenir.
-> ![mk231_9.gif](/assets/images/2007/mk231_9.gif)
-> Bu işlemin ardından, New Private Queue öğesinden yararlanarak kuyruğun adı girilir. Örnek uygulamada ExactlyOnce özelliğine true değeri atanmıştır. Bu, mesajların yanlız bir tane gitmesini ve alınmasını sağlamaktadır. Yani tekrar eden mesajların önüne geçilmektedir. Ancak bunun için MSMQ'nun transactional destekli oluşturulması gerekir. Bu nedenle Transactional seçeneği işaretlenmelidir.
-> ![mk231_10.gif](/assets/images/2007/mk231_10.gif)
-> Sonuç olarak işlemler tamamlandığında, ilk haliyle aşağıdaki gibi bir sonuç ortaya çıkacaktır. (Servis uygulaması çalıştırıldıktan sonra burada retry isimli bir alt klasör daha oluşturulduğu görülebilir.)
-> ![mk231_11.gif](/assets/images/2007/mk231_11.gif)
+Burada üzerinde durulması gereken noktalardan biriside şudur. SiparisKuyrugu isimli private kuyruk nasıl oluşturulmuştur? Bunun için sistemde MSMQ'nun kurulu olması elbette şarttır. MSMQ'nun kurulması halinde örneğin Vista işletim sistemi üzerinde Microsoft Management Console açılarak Meesage Queuing klasörüne gidilir. Ardından menüden New->Private Queue seçenği işaretlenir.
+
+![mk231_9.gif](/assets/images/2007/mk231_9.gif)
+
+Bu işlemin ardından, New Private Queue öğesinden yararlanarak kuyruğun adı girilir. Örnek uygulamada ExactlyOnce özelliğine true değeri atanmıştır. Bu, mesajların yanlız bir tane gitmesini ve alınmasını sağlamaktadır. Yani tekrar eden mesajların önüne geçilmektedir. Ancak bunun için MSMQ'nun transactional destekli oluşturulması gerekir. Bu nedenle Transactional seçeneği işaretlenmelidir.
+![mk231_10.gif](/assets/images/2007/mk231_10.gif)
+
+Sonuç olarak işlemler tamamlandığında, ilk haliyle aşağıdaki gibi bir sonuç ortaya çıkacaktır. (Servis uygulaması çalıştırıldıktan sonra burada retry isimli bir alt klasör daha oluşturulduğu görülebilir.)
+
+![mk231_11.gif](/assets/images/2007/mk231_11.gif)
 
 Burada private'ın özel bir anlamı vardır. Bu tanımlamaya göre mesaj kuyruğunun, servis uygulamasının çalıştığı yerel makinede saklanacağı belirtilmektedir. Ancak Windows Domain'e dahil edilmiş bir kuyruk tanımlaması public olarak yapılarak başka bilgisayarlarında aynı kuyruğu kullanmaları sağlanabilir. Bu özellikle ağa çıkarak hedef kuyruk ile doğrudan konuşamayan alt yapılarda işe yarayabilir. Nitekim böylece ağa çıkamayan istemciler aslında public lokasyonda duran bir kuyruğa mesajlarını gönderirler. Bu kuyruğun bulunduğu makinede kuyruktaki mesajları hedef servise yönlendirir.
 
-Konfigurasyon içerisinde kullanılan bazı önemli ayarlar bulunmaktadır. Bu özelliklerin kısa açıklamaları aşağıdaki tabloda görüldüğü gibidir.
+Konfigurasyon içerisinde kullanılan bazı önemli ayarlar bulunmaktadır. Bu özelliklerin kısa açıklamaları aşağıdaki tabloda görüldüğü gibidir
 
-Özellik
-Açıklama
+| **Özellik** | **Açıklama** |
+| --- | --- |
+| **Durable** | true veya false değerini alabilir. True olması halinde mesajların fiziki diskte saklanacağı belirtilir. Bu I/O işlemlerinin yoğun şekilde kullanılmasını gerektirmektedir. Dolayısıyla sistemin en iyi performansının elde edilmesinde genellikle false olarak ayarlanır. Ne varki false değer verilmesi halinde mesajlar Volatile olarak tutulurlar. Bir başka deyişle makine kapatılıp açıldığında Volatile mesajlara ulaşılamaz. |
+| **ExactlyOnce** | true veya false değer alabilir. True olması halinde sistemde hareket eden mesajların tekrar edilmeyeceği garanti altına alınır. Bir başka deyişle mesajlar kaybolmaz veya yanlışlıklada olsa iki kere gönderilmez. Bu özelliğin true olmasının bir şartıda kuyruğun transactional olarak tanımlanma zorunluluğudur. |
+| **Security kısmından Mode** | MSMQ normalde iletişim(Transport Level) ve mesaj(Message Level) seviyesinde güvenlik kullanımına izin verir. Ancak kendisine ait bir iletişim güvenliği söz konusu olduğundan SSL kullanılmasını gerektirmez. Mesaj seviyesinde güvenlik ayarları yapıldığında tek şart vardır o da sertifika desteğinin MSMQ için sağlanmış olması gerekmektedir. |
+| **ReceiveRetryCount** | Kuyruktan uygulamaya doğru bir mesajın ulaştırılması için maksimum deneme sayısını belirtir. Varsayılan değeri 5 tir. |
+| **MaxRetryCycles** | Bir mesaj uygulama kuyruğundan retry alt kuyruğuna(SubQueue) transfer edildiğinde, RetryCycleDelay süresinden sonra uygulama kuyruğunda işlenmek üzere tekrardan gönderdilir. Buradaki tekrar sayısı MaxRertyCycle ile belirlenir. Varsayılan değeri 2 dir. |
+| **RetryCycleDelay** | RetryCycle' lar arasındaki süredir. Varsayılan olarak 30 dakikadır. Bir başka deyişle retry alt kuyruğundan uygulama kuyruğuna ne kadar sürede bir gönderilme denemesi yapılacağı belirtilir. |
+| **ReceiveErrorHandling** | Maksimum ulaştırma sayısı aşılıp hata oluşması halinde nasıl bir etki olacağı belirtilir. Varsayılan olarak bu değer Fault şeklindedir. Yani uygulamaya bir istisna mesajı fırlatılacaktır. Diğer değerleri ise Drop, Reject ve Move' dur. Vakaya göre uygun olan değerin seçilmesi gerekmektedir. |
 
-Durable
-true veya false değerini alabilir. True olması halinde mesajların fiziki diskte saklanacağı belirtilir. Bu I/O işlemlerinin yoğun şekilde kullanılmasını gerektirmektedir. Dolayısıyla sistemin en iyi performansının elde edilmesinde genellikle false olarak ayarlanır. Ne varki false değer verilmesi halinde mesajlar Volatile olarak tutulurlar. Bir başka deyişle makine kapatılıp açıldığında Volatile mesajlara ulaşılamaz.
-
-ExactlyOnce
-true veya false değer alabilir. True olması halinde sistemde hareket eden mesajların tekrar edilmeyeceği garanti altına alınır. Bir başka deyişle mesajlar kaybolmaz veya yanlışlıklada olsa iki kere gönderilmez. Bu özelliğin true olmasının bir şartıda kuyruğun transactional olarak tanımlanma zorunluluğudur.
-
-Security kısmından Mode
-MSMQ normalde iletişim (Transport Level) ve mesaj (Message Level) seviyesinde güvenlik kullanımına izin verir. Ancak kendisine ait bir iletişim güvenliği söz konusu olduğundan SSL kullanılmasını gerektirmez. Mesaj seviyesinde güvenlik ayarları yapıldığında tek şart vardır o da sertifika desteğinin MSMQ için sağlanmış olması gerekmektedir.
-
-ReceiveRetryCount
-Kuyruktan uygulamaya doğru bir mesajın ulaştırılması için maksimum deneme sayısını belirtir. Varsayılan değeri 5 tir.
-
-MaxRetryCycles
-Bir mesaj uygulama kuyruğundan retry alt kuyruğuna (SubQueue) transfer edildiğinde, RetryCycleDelay süresinden sonra uygulama kuyruğunda işlenmek üzere tekrardan gönderdilir. Buradaki tekrar sayısı MaxRertyCycle ile belirlenir. Varsayılan değeri 2 dir.
-
-RetryCycleDelay
-RetryCycle'lar arasındaki süredir. Varsayılan olarak 30 dakikadır. Bir başka deyişle retry alt kuyruğundan uygulama kuyruğuna ne kadar sürede bir gönderilme denemesi yapılacağı belirtilir.
-
-ReceiveErrorHandling
-Maksimum ulaştırma sayısı aşılıp hata oluşması halinde nasıl bir etki olacağı belirtilir. Varsayılan olarak bu değer Fault şeklindedir. Yani uygulamaya bir istisna mesajı fırlatılacaktır. Diğer değerleri ise Drop, Reject ve Move'dur. Vakaya göre uygun olan değerin seçilmesi gerekmektedir.
-
-(Burada söz konusu olan ReceiveRetryCount, MaxRetryCycles, RetryCycleDelay, ReceiveErrorHandling özellikleri zehirli mesajların ele alınması-Poison Message Handling için önemlidir)
+> Burada söz konusu olan ReceiveRetryCount, MaxRetryCycles, RetryCycleDelay, ReceiveErrorHandling özellikleri zehirli mesajların ele alınması-Poison Message Handling için önemlidir
 
 Servis tarafı uygulama kodları;
 
@@ -248,7 +213,7 @@ Bu işlemin ardından istemci uygulamanın kodları ve konfigurasyon içeriği a
 
 İstemci tarafı konfigurasyon dosyası;
 
-```csharp
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
     <system.serviceModel>
@@ -300,10 +265,11 @@ Görüldüğü gibi iki metod çağrısı sonrası oluşan mesajlar SiparisKuyru
 
 Buraya kadar anlatılanlar ile WCF mimarisinde basit olarak MSMQ bazlı uygulamaların nasıl geliştirilebileceği incelenmeye çalışılmıştır. MSMQ'nunda bazı dezavantajları elbetteki vardır. Herşeyden önce tek yönlü bir iletişimin olması, diğer iletişim tekniklerine göre daha yavaş çalışması (özellikle kuyruğun fiziki olarak tutulması nedeni ile) bu dezavantajlar arasında sayılabilir.
 
-> MSMQ kullanılacağı yerlerde en iyi senaryoları elde edebilmek için bazı kriterlere dikkat etmek gerekebilir. Söz gelimi hızlı ve yüksek performanslı bir mesajlaşma (Fast-Best Effort Queued Messaging) için transaction bazlı olmayan (Non-Transactional) kuyruklar tercih edilmeli ve buna göre ExactlyOnce özelliği ile Durable özelliklerinin değeri false yapılmalıdır.
-> Güvenilir olarak noktadan noktaya bir mesajlaşma söz konusu ise (Reliable End-To-End Queued Messaging), dört alternatif vardır. BasicTransfer, Transactional Based, Dead-Letter Based ve Poison Message Based. Bu alternatiflerden hangisinin kullanılacağına göre yine konfigurasyon elemanlarında bazı değişiklikler yapılmalıdır.
-> WCF tabanlı olmayan uygulamalar ile haberleşebilmek için msmqIntegrationBinding tipinin kullanmak gerekmektedir. Buda servisin interoperability desteği olmasını sağlamaktadır.
-> Bu tip en iyi çözümler için [http://msdn2.microsoft.com/en-us/library/ms731093.aspx](http://msdn2.microsoft.com/en-us/library/ms731093.aspx) adresinden bilgi alınabilir.
+MSMQ kullanılacağı yerlerde en iyi senaryoları elde edebilmek için bazı kriterlere dikkat etmek gerekebilir. Söz gelimi hızlı ve yüksek performanslı bir mesajlaşma (Fast-Best Effort Queued Messaging) için transaction bazlı olmayan (Non-Transactional) kuyruklar tercih edilmeli ve buna göre ExactlyOnce özelliği ile Durable özelliklerinin değeri false yapılmalıdır.
+Güvenilir olarak noktadan noktaya bir mesajlaşma söz konusu ise (Reliable End-To-End Queued Messaging), dört alternatif vardır. BasicTransfer, Transactional Based, Dead-Letter Based ve Poison Message Based. Bu alternatiflerden hangisinin kullanılacağına göre yine konfigurasyon elemanlarında bazı değişiklikler yapılmalıdır.
+
+WCF tabanlı olmayan uygulamalar ile haberleşebilmek için msmqIntegrationBinding tipinin kullanmak gerekmektedir. Buda servisin interoperability desteği olmasını sağlamaktadır.
+Bu tip en iyi çözümler için [http://msdn2.microsoft.com/en-us/library/ms731093.aspx](http://msdn2.microsoft.com/en-us/library/ms731093.aspx) adresinden bilgi alınabilir.
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde özet olarak MSMQ teknolojisini WCF içerisinde ele aldık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -18,7 +18,7 @@ Framework kendi içerisinde kullandığı pek çok yapıda aktif olarak enum sab
 - Veyalanmış (Ored) içeriklerin kullanımı.
 - IsDefined metodu her zaman yeterli olmayabilir.
 
-1. Bir enum sabitine ait içeriğin çalışma zamanında dinamik olarak elde edilmesi.
+1.Bir enum sabitine ait içeriğin çalışma zamanında dinamik olarak elde edilmesi.
 
 Bazı durumlarda enum sabitlerinin tüm içeriğinin çalışma zamanında bilinmesi ve kullanıcıya gösterilmesi gerekebilir. Söz gelimi, geliştirdiğimiz bir grafik uygulama olduğunu düşünelim. Tual üzerine çizilen resimlerin herhangibir şekilde saklandığını ve zaman içerisinde her hangibir noktada açıldıklarında, son kaydedildikleri halleriyle kullanıcıya sunulmak istendiklerini düşünelim. Çizilen şekiller ve bunlara ilişkin lokasyon, derinlik, ölçüler vb bilgileri saklamak için serileştirme gibi tekniklerden tutunda veritabanına kayıt etme yada özel formatlar ile fiziki dosyalara aktarma gibi pek çok yol tercih edilebilir. Lakin bu tip bir uygulamada ekranda olupta hatırlanması gereken şekilleri nerede saklarsak saklayalım nasıl bir veri tipi ile saklayacağımız önem kazanabilir. Çizilebilecek olan şekilleri string olarak adları ile tutmaktansa bunlara karşılık gelen sayısal değerlerden faydalanmak çoğu zaman saklanacak içeriğin boyutunu azaltabilir ve buda verinin daha az yer tutmasını sağlayabilir.
 
@@ -61,7 +61,7 @@ foreach (string sekilTipi in sekilTipleri)
 
 Tekrar etmek gerekirse önemli olan nokta, GetNames metodu ve metodun döndürdüğü string dizinin kullanılış şeklidir. Dikkat ederseniz metoda parametre olarak Sekil isimli enum sabitimizin tipi (type) verilmiştir. Burada dikkat edilmesi gereken bir nokta daha vardır. Kullanıcı ComboBox, ListBox veya RadioButton kontollerinden birini seçtiğinde, seçilen bu bilginin enum sabitimiz içerisindeki hangi değere karşılık geldiğini tespit etmek. İşte bu konuyu ikinci maddemizde irdeleyeceğiz.
 
-2. String bir verinin, bir enum sabiti içeriğindeki karşılığının elde edilmesi.
+2.String bir verinin, bir enum sabiti içeriğindeki karşılığının elde edilmesi.
 
 Belkide ilk akla gelen yöntem bir switch case yada çoklu if kullanımı olacaktır. Söz gelimi yukarıdaki windows uygulamamızda kullanıcının ComboBox, ListBox kontrolleri ile RadioButton kontrolünde seçebileceği bilginin enum tipi içerisinde karşılık geldiği değeri bulmaya çalışalım. Bu amaçla pekala aşağıdaki gibi bir metod yazabiliriz.
 
@@ -115,24 +115,16 @@ Parse metodu sayesinde ikinci parametrede verilen string bilgi, ilk parametre il
 
 Parse metodu sayesinde kullanıcının seçtiği bilgilerin, ilgili enum sabiti içerisindeki karşılıklarını bulabilir ve sayısal değerlerini elde edebiliriz. Aslında bir enum sabiti içerisinde yer alan değerlerin farklı formatta karşılıkları vardır. Örneğin bu değerlerin sadece string karşılıkları değil sayısal karşılıklarıda vardır. İşte bu karşılıkları elde etmek amacıyla ToString metoduna bir takım parametreler verilir ki buda makalemizin 3ncü maddesinin konusudur.
 
-3. Enum sabitlerinin içeriğinin ToString metodu ile farklı biçimlerde elde edilmesi
+3.Enum sabitlerinin içeriğinin ToString metodu ile farklı biçimlerde elde edilmesi
 
-Bir enum sabiti içerisindeki değerleri ToString metodu yardımıyla farklı formatlarda elde edebiliriz. Bu amaçla aşağıdaki tabloda yer alan değerler kullanılır.
+Bir enum sabiti içerisindeki değerleri ToString metodu yardımıyla farklı formatlarda elde edebiliriz. Bu amaçla aşağıdaki tabloda yer alan değerler kullanılır
 
-Parametre Değeri
-İşlevi
-
-G veya g
-Enum sabiti içerisindeki ilgili değeri genel (General) formatta yazar.
-
-D veya d
-Enum sabiti içerisindeki ilgili değerin sayısal (Decimal) karşılığını yazar.
-
-X veya x
-Enum sabiti içerisindeki ilgili değerin Hexadecimal (16lı sayı sistemindeki) karşılığını yazar.
-
-F veya f
-FlagsAttribute'unun kullanılıp kullanılmamasına göre ilgili enum sabiti değerinin string karşılığını yazar.
+| **Parametre Değeri** | **İşlevi** |
+| --- | --- |
+| **G veya g** | Enum sabiti içerisindeki ilgili değeri genel(General) formatta yazar. |
+| **D veya d** | Enum sabiti içerisindeki ilgili değerin sayısal(Decimal) karşılığını yazar. |
+| **X veya x** | Enum sabiti içerisindeki ilgili değerin Hexadecimal (16lı sayı sistemindeki) karşılığını yazar. |
+| **F veya f** | FlagsAttribute' unun kullanılıp kullanılmamasına göre ilgili enum sabiti değerinin string karşılığını yazar. |
 
 Örneğin, bir oyunda oyuncuların aldıkları puan gereği oynayabilecekleri seviyleri Yetki isimli enum sabiti ile ele aldığımızı düşünelim.
 
@@ -184,29 +176,16 @@ Burada ilginç olan bir durum vardır. O da Profesyonel ve Uzman değerlerinin s
 
 Yetki isimli enum sabiti içerisinde yer alan sayısal değerlere bakıldığında, veyalanmış olarak mümkün olabilecek pek çok kombinasyon olacağı kesindir. Örneğin aşağıdaki tabloda olası bir kaç kombinasyon verilmektedir.
 
-Caylak | Uzman
-3
-
-Caylak | Profesyonel
-5
-
-Caylak | Tecrubeli
-7
-
-Uzman | Profesyonel
-6
-
-Uzman | Tecrubeli
-8
-
-Caylak | Uzman | Profesyonel
-7
-
-Caylak | Uzman | Tecrubeli
-9
-
-Caylak | Uzman | Profesyonel | Tecrubeli
-13
+| **Enum Varyantı** | **Sayısal Değer** |
+| --- | --- |
+| Caylak \| Uzman | 3 |
+| Caylak \| Profesyonel | 5 |
+| Caylak \| Tecrubeli | 7 |
+| Uzman \| Profesyonel | 6 |
+| Uzman \| Tecrubeli | 8 |
+| Caylak \| Uzman \| Profesyonel | 7 |
+| Caylak \| Uzman \| Tecrubeli | 9 |
+| Caylak \| Uzman \| Profesyonel \| Tecrubeli | 13 |
 
 Ancak burada dikkat edilmesi gereken önemli bir husus vardır. Bunun için, Enum sabiti içerisindeki kombinasyonların program tarafındaki sonuçlarına bakmamız gerekmektedir. Örneğin 3 ve 5 değerlerini veren kombinasyonlara bakalım.
 
@@ -347,41 +326,24 @@ static bool VarMi(Parca prc)
 }
 ```
 
-Bu metod her ne kadar IsDefined metodunda olduğu gibi object tipinden parametreler ile çalışmasada içerisinde yapıtığı kontroller sayesinde çeşitli kombinasyonlara karşı doğru tepkiler verebilecek şekilde tasarlanmıştır. En önemli kısım VarMi metodu içerisindeki if koşuludur. If koşulu içerisinde Parca.Hepsi ile metoda parametre olarak gelen Parca enum sabitinin ilgili değeri bit seviyesinde and (ve) işlemine tabi tutulmaktadır. Bu işlemin sonucunun yine metoda gelen parametre değerine eşit olması halinde true değeri döndürülmektedir. Örneğin Parca.SesKarti | Parca.Ram | Parca.Islemci kombinasyonunu göz önüne alalım. Burada bitsel seviyede veya işlemi gerçekleşmektedir ve sonuçta üretilen çıktı aşağıdaki gibi olacaktır.
+Bu metod her ne kadar IsDefined metodunda olduğu gibi object tipinden parametreler ile çalışmasada içerisinde yapıtığı kontroller sayesinde çeşitli kombinasyonlara karşı doğru tepkiler verebilecek şekilde tasarlanmıştır. En önemli kısım VarMi metodu içerisindeki if koşuludur. If koşulu içerisinde Parca.Hepsi ile metoda parametre olarak gelen Parca enum sabitinin ilgili değeri bit seviyesinde and (ve) işlemine tabi tutulmaktadır. Bu işlemin sonucunun yine metoda gelen parametre değerine eşit olması halinde true değeri döndürülmektedir. Örneğin Parca.SesKarti | Parca.Ram | Parca.Islemci kombinasyonunu göz önüne alalım. Burada bitsel seviyede veya işlemi gerçekleşmektedir ve sonuçta üretilen çıktı aşağıdaki gibi olacaktır
 
-Parca.SesKarti
-16
-0 0 0 1 0 0 0 0
+| | | |
+| :--- | :--- | :--- |
+| Parca.SesKarti | 16 | 0 0 0 1 0 0 0 0 |
+| Parca.Ram | 4 | 0 0 0 0 0 1 0 0 |
+| Parca.Islemci | 1 | 0 0 0 0 0 0 0 1 |
+| **Bit seviyesinde \| islemi. (Veya)** | | |
+| Parca.SesKarti \| Parca.Ram \|<br>Parca.Islemci | **21** | **0 0 0 1 0 1 0 1** |
 
-Parca.Ram
-4
-0 0 0 0 0 1 0 0
+Metod içerisinde ise gelen bu değer Parca.Hepsi ile bitsel ve işlemine tabi tutulmaktadır
 
-Parca.Islemci
-1
-0 0 0 0 0 0 0 1
-
-Bit seviyesinde | islemi. (Veya)
-
-Parca.SesKarti | Parca.Ram | Parca.Islemci
-21
-0 0 0 1 0 1 0 1
-
-Metod içerisinde ise gelen bu değer Parca.Hepsi ile bitsel ve işlemine tabi tutulmaktadır.
-
-Parca.SesKarti | Parca.Ram | Parca.Islemci
-21
-0 0 0 1 0 1 0 1
-
-Parca.Hepsi
-31
-0 0 0 1 1 1 1 1
-
-Bit seviyesinde & islemi. (Ve)
-
-Parca.SesKarti | Parca.Ram | Parca.Islemci
-21
-0 0 0 1 0 1 0 1
+| | | |
+| :--- | :--- | :--- |
+| Parca.SesKarti \| Parca.Ram \|<br>Parca.Islemci | 21 | 0 0 0 1 0 1 0 1 |
+| Parca.Hepsi | 31 | 0 0 0 1 1 1 1 1 |
+| **Bit seviyesinde & islemi. (Ve)** | | |
+| Parca.SesKarti \| Parca.Ram \|<br>Parca.Islemci | **21** | **0 0 0 1 0 1 0 1** |
 
 Elde edilen sonuca bakıldığında tekrar 21 değerini elde ettiğimizi bir başka deyişle metoda parametre olarak gönderilen enum değerinin, Parca enum sabiti içerisinde yer alıp almadığını tespit etmiş oluyoruz. Her ne kadar kendi yazdığımız VarMi metodu parametre olarak IsDefined'da olduğu gibi object tipiyle çalışmıyorsada istersek sayısal değerlerede tepki verebilecek hale getirebiliriz. Tek yapmamız gereken VarMi metodunu aşağıdaki gibi aşırı yüklemektir (overloading).
 

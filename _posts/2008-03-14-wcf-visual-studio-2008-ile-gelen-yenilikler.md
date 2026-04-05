@@ -320,34 +320,18 @@ Visual Studio 2008 geliştirme ortamı.Net Framework 3.5 şablonu altında birde
 
 WCF servisleri, Workflow Foundation içerisindede zaman zaman kullanılmaktadır. Workflow Foundation mimarisinde iki farklı iş akışı tipi vardır. Sequential ve State Machine. Bir WCF servisi bu tipteki iş akışları içerisinden kullanılabilir yada iş akışı bir WCF servisinin parçası haline gelebilir. Bu noktada Sequential Workflow Service Library ve State Machine Workflow Service Library şablonları kullanılabilir. Bilindiği gibi.Net Framework 3.5 ile WCF tarafında RSS, Atom formatlı yayınlamalara destek verilmektedir. Bu tip bir proje şablonu için Syndication Service Library kullanılabilir.
 
-Buraya kadar anlatılanlara göre Visual Studio 2008 ile birlikte gelen WCF yenilikler aşağıdaki tablo ile özetlenebilirler.
+Buraya kadar anlatılanlara göre Visual Studio 2008 ile birlikte gelen WCF yenilikler aşağıdaki tablo ile özetlenebilirler
 
-Özellik
-Açıklama
-
-WcfSvcHost
-Herhangibir Host uygulaması yazılmasına gerek kalmadan WCF servis kütüphaneleri test amaçlı olarak yayınlanabilmektedir. Visual Studio 2008 varsayılan olarak WCF Servis kütüphaneleri için bu aracı kullanmaktadır.
-
-WcfTestClient
-Yayınlanan servislerin test edilmesi için kullanılan Windows uygulamasıdır. Servise ait operasyonların anında görülmesi, kullanılması, talep (Request) ve cevap (Response) paketlerinin data veya XML formatında okunabilmesi, farklı EndPoint noktalarının test edilebilmesi gibi imkanlar sunmaktadır. Visual Studio 2008 varsayılan olarak WCF Servis kütüphanelerinin çalıştırılmasında WcfSvcHost uygulamasından sonra bu programı çalıştırırak anında testin yapılabilmesini sağlamaktadır.
-
-Add Service Reference - Advanced Sekmesi
-Advanced sekmesindeki ayarlar yardımıyla oluşturulacak proxy sınıfı ve ilişkili tiplerine ait pek çok detay ayarlanabilir.
-
-Public/Internal
-İstemciye eklenen servis referansı içerisindeki tiplerin erişim belirleyicileri (Access Modifiers) vakaya göre public yada internal olarak set edilebilir.
-
-Koleksiyon Eşleştirme
-List gibi koleksiyonlar (IEnumerable, IList vb...) istemci tarafında T[] dizileri şeklinde ele alınırlarken, Hashtable gibi koleksiyonlar Dictionary olarak yorumlanır. Bu eşleştirme Advanced sekmesindeki Collection Type ve Dictionary Collection Type seçenekleri yardımıyla değiştirilebilir.
-
-Asenkron Proxy Metodların Üretimi
-Web servislerindeki hazır üretime benzer şekilde olay tabanlı asenkron (event based asynchronous) yürütme desenlerinin eklenmesi sağlanabilir. Üstelik bu uyarlamada thread senkronizasyonunu etkili hale getirmeyi kolaylaştırıcı fonksiyonellikler vardır.
-
-Configure Service Reference
-İstemci tarafına eklenmiş olan bir servisin koleksiyon eşleştirme, erişim belirleyicisi gibi pek çok özelliği sonradan Configure Service Reference seçeneği yardımıyla değiştirilebilir.
-
-Yeni Library Şablonları
-Özellikle WWF (Windows Workflow Foundation) tarafına ve.Net Framework 3.5 ile WCF'e getirilen Web programlama modelinin bir ürünü olan Syndication yayınlama için ek proje şablonları gelmektedir.
+| Özellik | Açıklama |
+| --- | --- |
+| **WcfSvcHost** | Herhangibir Host uygulaması yazılmasına gerek kalmadan WCF servis kütüphaneleri test amaçlı olarak yayınlanabilmektedir. Visual Studio 2008 varsayılan olarak WCF Servis kütüphaneleri için bu aracı kullanmaktadır. |
+| **WcfTestClient** | Yayınlanan servislerin test edilmesi için kullanılan Windows uygulamasıdır. Servise ait operasyonların anında görülmesi, kullanılması, talep(Request) ve cevap(Response) paketlerinin data veya XML formatında okunabilmesi, farklı EndPoint noktalarının test edilebilmesi gibi imkanlar sunmaktadır. Visual Studio 2008 varsayılan olarak WCF Servis kütüphanelerinin çalıştırılmasında WcfSvcHost uygulamasından sonra bu programı çalıştırırak anında testin yapılabilmesini sağlamaktadır. |
+| **Add Service Reference - Advanced Sekmesi** | Advanced sekmesindeki ayarlar yardımıyla oluşturulacak proxy sınıfı ve ilişkili tiplerine ait pek çok detay ayarlanabilir. |
+| **Public/Internal** | İstemciye eklenen servis referansı içerisindeki tiplerin erişim belirleyicileri(Access Modifiers) vakaya göre public yada internal olarak set edilebilir. |
+| **Koleksiyon Eşleştirme** | List gibi koleksiyonlar(IEnumerable, IList vb...) istemci tarafında T[] dizileri şeklinde ele alınırlarken, Hashtable gibi koleksiyonlar Dictionary olarak yorumlanır. Bu eşleştirme Advanced sekmesindeki Collection Type ve Dictionary Collection Type seçenekleri yardımıyla değiştirilebilir. |
+| **Asenkron Proxy Metodların Üretimi** | Web servislerindeki hazır üretime benzer şekilde olay tabanlı asenkron (event based asynchronous) yürütme desenlerinin eklenmesi sağlanabilir. Üstelik bu uyarlamada thread senkronizasyonunu etkili hale getirmeyi kolaylaştırıcı fonksiyonellikler vardır. |
+| **Configure Service Reference** | İstemci tarafına eklenmiş olan bir servisin koleksiyon eşleştirme, erişim belirleyicisi gibi pek çok özelliği sonradan Configure Service Reference seçeneği yardımıyla değiştirilebilir. |
+| **Yeni Library Şablonları** | Özellikle WWF(Windows Workflow Foundation) tarafına ve .Net Framework 3.5 ile WCF' e getirilen Web programlama modelinin bir ürünü olan Syndication yayınlama için ek proje şablonları gelmektedir. |
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde yakın zamanda son haliyle yayınlanan Visual Studio 2008 ürününün Windows Communication Foundation için getirdiği yenilikleri basit seviyede ele almaya çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 

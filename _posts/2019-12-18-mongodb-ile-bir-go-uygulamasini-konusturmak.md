@@ -54,30 +54,14 @@ Kod tarafına geçmeye hazırız ama öncesinde ufak bir bilgi.
 
 ## gRPC Hakkında Azıcık Bilgi
 
-gRPC, HTTP2 bazlı modern bir iletişim protokolü ve JSON yerine ProtoBuffers olarak isimlendirilen kuvvetle türlendirilmiş bir ikili veri formatını kullanmakta (strongly-typed binary data format) JSON özellikle REST tabanlı servislerde popüler bir format olmasına rağmen serileştirme sırasında CPU'yu yoran bir performans sergiliyor. HTTP/2 özelliklerini iyi kullanan gRPC ise 5 ile 25 kata kadar daha hızlı. Bu noktada hatırlamak için bile olsa gRPC ile REST'i kıyaslamakta yarar var. İşte karşılaştırma tablosu.
-
-REST Tarafı
-gRPC Tarafı
-
-HTTP 1.1 nedeniyle gecikme yüksek
-HTTP/2 sebebiyle daha düşük gecikme
-
-Sadece Request/Response
-Stream desteği (Örneğimizde bir kullanımı var)
-
-CRUD odaklı servisler için
-API odaklı (Burada CRUD odaklı yapacağız çaktırmayın)
-
-HTTP Get,Post,Put,Delete gibi fiil tabanlı
-RPC tabanlı, sunucu üzerinden fonksiyon çağırabilme özelliği
-
-Sadece Client->Server yönlü talepler
-Çift yönlü ve asenkron iletişim
-
-JSON kullanıyor (serileşme yavaş, boyut büyük)
-Protobuffer kullanıyor (veri daha küçük boyutta ve serileşme hızlı)
-
-Örnek Uygulama
+| REST Tarafı | gRPC Tarafı |
+| --- | --- |
+| HTTP 1.1 nedeniyle gecikme yüksek | HTTP/2 sebebiyle daha düşük gecikme |
+| Sadece Request/Response | Stream desteği(Örneğimizde bir kullanımı var) |
+| CRUD odaklı servisler için | API odaklı(Burada CRUD odaklı yapacağız çaktırmayın) |
+| HTTP Get,Post,Put,Delete gibi fiil tabanlı | RPC tabanlı, sunucu üzerinden fonksiyon çağırabilme özelliği |
+| Sadece Client->Server yönlü talepler | Çift yönlü ve asenkron iletişim |
+| JSON kullanıyor(serileşme yavaş, boyut büyük) | Protobuffer kullanıyor(veri daha küçük boyutta ve serileşme hızlı) |
 
 Gelelim kod tarafına... Uygulamanın temel klasör yapısını aşağıdaki gibi oluşturabiliriz. Ben bu işlemleri $HOME\go\src\ altında gerçekleştirdim.
 

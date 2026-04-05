@@ -11,22 +11,14 @@ categories:
 ---
 Windows Presentation Foundation (WPF), windows tabanlı uygulama geliştirme modeline yeni ve çok farklı bir soluk getirmiştir. Daha çok web uygulama geliştirme sistematiğini andıran bu yeni model,.Net Framework 2.0 ile birlikte yapabildiklerimizi tek bir çatı altında toplamıştır. Hatırlayacağınız üzere, benzer bir yaklaşım modelinin Windows Communication Foundation (WCF) içerisinde de yer aldığından daha önceki makalelerimizde bahsetmiştik. Öncelikle bu noktaya nasıl gelindiğini vurgulamakta fayda var..Net Framework 2.0 açısından baktığımızda windows uygulamalarını geliştirirken yaşanan bazı sıkıntılar vardır.
 
-Örneğin iki boyutlu grafik işlemleri için System.Drawing.dll kütüphanesinin etkin bir şekilde bilinmesi gerekir. Ancak windows uygulamalarımıza üç boyutlu grafik modeller katmak istediğimizde,.Net Framework'ün dışına çıkmalı ve yönetimli (Managed) DirectX API'sini öğrenmeliyizdir. Bunlara ek bir diğer örnek olarakta, akıcı görsel öğeleri verebiliriz. Stream Video'ları işleyebilmek için, en azından Media Player API'sinin yönetimli (Managed) halinin ele alınması gerekmektedir. Peki Windows Presentation Foundation bize bu anlamda nasıl bir getiri sağlamaktadır. WPF, yukarıda bahsetmiş olduğumuz özellikleri.Net Framework 3.0 içerisinde tek bir çatı altında ele alan bir model sunmaktadır. Böylece,.Net Framework 2.0 içerisinde ayrı ayrı ele almak zorunda kaldığımız API ve benzeri parçaları,.Net Framework 3.0 içerisinde tek ve benzersiz (unique) bir nesne modeli içerisinde ele alma şansına sahib oluruz. Temel olarak kazanımlarımızı aşağıdaki tablo ile özetleyebiliriz.
+Örneğin iki boyutlu grafik işlemleri için System.Drawing.dll kütüphanesinin etkin bir şekilde bilinmesi gerekir. Ancak windows uygulamalarımıza üç boyutlu grafik modeller katmak istediğimizde,.Net Framework'ün dışına çıkmalı ve yönetimli (Managed) DirectX API'sini öğrenmeliyizdir. Bunlara ek bir diğer örnek olarakta, akıcı görsel öğeleri verebiliriz. Stream Video'ları işleyebilmek için, en azından Media Player API'sinin yönetimli (Managed) halinin ele alınması gerekmektedir. Peki Windows Presentation Foundation bize bu anlamda nasıl bir getiri sağlamaktadır. WPF, yukarıda bahsetmiş olduğumuz özellikleri.Net Framework 3.0 içerisinde tek bir çatı altında ele alan bir model sunmaktadır. Böylece,.Net Framework 2.0 içerisinde ayrı ayrı ele almak zorunda kaldığımız API ve benzeri parçaları,.Net Framework 3.0 içerisinde tek ve benzersiz (unique) bir nesne modeli içerisinde ele alma şansına sahib oluruz. Temel olarak kazanımlarımızı aşağıdaki tablo ile özetleyebiliriz
 
-Kullanılmak İstenen Fonksiyonellik.Net 2.0 Yaklaşımı.Net 3.0 Yaklaşımı
-
-İki boyutlu grafik desteği (2D Graphics)
-GDI+
-WPF
-
-Üç boyutlu grafik desteği (3D Graphics)
-Managed Directx API
-
-Akıcı görüntü desteği (Streaming Video)
-Media Player API
-
-Bileşen ve Windows Form Desteği
-Windows Forms
+| **Kullanılmak İstenen Fonksiyonellik** | **.Net 2.0 Yaklaşımı** | **.Net 3.0 Yaklaşımı** |
+| --- | --- | --- |
+| İki boyutlu grafik desteği (2D Graphics) | GDI+ | WPF |
+| Üç boyutlu grafik desteği (3D Graphics) | Managed Directx API |  |
+| Akıcı görüntü desteği (Streaming Video) | Media Player API |  |
+| Bileşen ve Windows Form Desteği | Windows Forms |  |
 
 Windows Presentation Foundation (WPF), Windows XP, Windows Server 2003 ve Vista sistemlerinde çalışabilmektedir. Ancak en iyi performası Vista üzerinde göstermektedir.
 
@@ -137,7 +129,7 @@ Bu dosya, temel olarak XAML elementlerinin ekran yerleşimleri ile ilişkili bil
 
 ![mk196_3.gif](/assets/images/2007/mk196_3.gif)
 
-Dikkat ederseniz MSBuild.exe ile üretilen dosyalar sonrasında, C# derleyicisi sürece dahil olmakta ve otomatik olarak türetilen *.g.cs,.baml ve *.g.resources dosyalarından faydalanarak winexe tipinde bir Assembly'ın üretilmesini sağlamaktadır. Şimdi gelin MSBuild.exe aracımızı kullanalım ve nasıl bir sonuç elde edeceğimize bakalım. Bu amaçla, MSBuild.exe aracını Visual Studio 2005 komut penceresinden (Command Prompt) aşağıdaki gibi çalıştırmamız yeterli olacaktır.
+Dikkat ederseniz MSBuild.exe ile üretilen dosyalar sonrasında, C# derleyicisi sürece dahil olmakta ve otomatik olarak türetilen `*.g.cs`, `.baml` ve `*.g.resources` dosyalarından faydalanarak winexe tipinde bir Assembly'ın üretilmesini sağlamaktadır. Şimdi gelin MSBuild.exe aracımızı kullanalım ve nasıl bir sonuç elde edeceğimize bakalım. Bu amaçla, MSBuild.exe aracını Visual Studio 2005 komut penceresinden (Command Prompt) aşağıdaki gibi çalıştırmamız yeterli olacaktır.
 
 ![mk196_5.gif](/assets/images/2007/mk196_5.gif)
 

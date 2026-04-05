@@ -19,79 +19,30 @@ Bu iki taraflı bir senkronizasyon anlamına gelmektedir ki, iki tarafında birb
 
 Senkronizasyon işlemlerinde bilinen ve kullanılan farklı teknikler de söz konusudur. Örneğin Remote Data Access (RDA) veya Merge Replication. RDA, SQL Server Compact 3.5 ile diğer bir SQL veritabanı arasındaki senkronizasyon işlemlerinde ele alınır. Merge Replication ise SQL veritabanlarının herhangi versiyonları arasındaki senkronizasyon süreçlerinde kullanılır. Özellikle Merge Replication veritabanı yöneticilerine hitap eder ve SQL kaynaklarını hedefler.
 
-Ancak ADO.Net Senkronizasyon Servisleri ile WCF (Windows Communication Foundation) hizmetlerini kullanarak, sunucu tarafında farklı veri kaynaklarına erişebilmek mümkündür. Diğer taraftan Ado.Net Senkronizasyon Servisleri daha çok uygulama geliştiricileri hedef alır. Eğer istemci tarafının senkronize edeceği veri kümesi SQL dışında bir kaynak ise mutlaka Ado.Net Senkronizasyon Servisi göz önüne alınmalıdır. RDA, Merge Replication ve Ado.Net Senkronizasypn Servisleri arasındaki karşılaştırmaları aşağıdaki tablodan da inceleyebilirsiniz. Özellikle karar verme aşamasında bu tablodaki bilgilerden de yararlanılabilir.
+Ancak ADO.Net Senkronizasyon Servisleri ile WCF (Windows Communication Foundation) hizmetlerini kullanarak, sunucu tarafında farklı veri kaynaklarına erişebilmek mümkündür. Diğer taraftan Ado.Net Senkronizasyon Servisleri daha çok uygulama geliştiricileri hedef alır. Eğer istemci tarafının senkronize edeceği veri kümesi SQL dışında bir kaynak ise mutlaka Ado.Net Senkronizasyon Servisi göz önüne alınmalıdır. RDA, Merge Replication ve Ado.Net Senkronizasypn Servisleri arasındaki karşılaştırmaları aşağıdaki tablodan da inceleyebilirsiniz. Özellikle karar verme aşamasında bu tablodaki bilgilerden de yararlanılabilir
 
-Anahtar Özellik
-Kullanılabilen Teknikler
+| Anahtar Özellik | Kullanılabilen Teknikler |  |  |
+| --- | --- | --- | --- |
+| RDA (Remote Data Access) | Merge Replication | Ado.Net Sync Services |  |
+| Servisler üzerinden senkronizasyon sağlanması | Yok | Yok | Var |
+| Farklı veri kaynakları için destek | Yok | Yok | Var |
+| Değişimsel(Incremental) farklılıkların takibi | Yok* | Var | Var |
+| Çakışma(Conflict) kontrolü ve çözümleri | Yok | Var | Var |
+| İstemci tarafında View' ların kolayca oluşturulması(Görsel derslerde ele alınacaktır) | Yok | Yok | Var |
+| Otomaik şema(Schema) ve veri oluşturma | Var | Var | Var |
+| Büyük boyutlu DataSet desteği | Var | Var | Var |
+| Otomaik olarak şema değişikliklerini üretmek | Yok | Var | Yok |
+| Veriyi tekradan birleştirmek(Repartition) | Yok | Var | Yok |
+| * RDA değişimsel upload' ları destekler. Verinin istemci tarafına alınmasında Snapshot modelini kullanılır. Yani istemci tarafına tüm veriyi indirir. |  |  |  |
 
-RDA
-(Remote Data Access)
-Merge Replication
-Ado.Net Sync Services
+Teknik açıdan bakldığında Ado.Net Senkronizasyon Servisleri temel olarak aşağıdaki 3 assembly'dan oluşmaktadır. Ado.Net Senkronizasyon Servisleri tarafların sahip olduğu veri sağlayıcılarına göre 2 katlı (Two Tier), N-katlı (N-Tier) ve Servis Bazlı Mimariye (Service Oriented Architecture) uygun olacak şekilde kullanılabilmektedir. Eğer istemci ve sunucu Ado.Net veri sağlayıcıları üzerinden konuşuyorlarsa iki katlı veya n katlı modeller tercih edilebilir. Ancak sunucu tarafından SQL dışı bir veri kaynağı var ise (Söz gelimi bir XML deposu, Active Directory vb...) bu durumda servis yönemlimli olacak şekilde bir geliştirme yapılmalıdır. Senkronizasyon her zaman için istemci tarafında başlatılan bir olaydır ve temel olarak 4 farklı tipte senkronizasyon tekniği kullanılmaktadır
 
-Servisler üzerinden senkronizasyon sağlanması
-Yok
-Yok
-Var
-
-Farklı veri kaynakları için destek
-Yok
-Yok
-Var
-
-Değişimsel (Incremental) farklılıkların takibi
-Yok
-Var
-Var
-
-Çakışma (Conflict) kontrolü ve çözümleri
-Yok
-Var
-Var
-
-İstemci tarafında View'ların kolayca oluşturulması (Görsel derslerde ele alınacaktır)
-Yok
-Yok
-Var
-
-Otomaik şema (Schema) ve veri oluşturma
-Var
-Var
-Var
-
-Büyük boyutlu DataSet desteği
-Var
-Var
-Var
-
-Otomaik olarak şema değişikliklerini üretmek
-Yok
-Var
-Yok
-
-Veriyi tekradan birleştirmek (Repartition)
-Yok
-Var
-Yok
-
-RDA değişimsel upload'ları destekler. Verinin istemci tarafına alınmasında Snapshot modelini kullanılır. Yani istemci tarafına tüm veriyi indirir.
-
-Teknik açıdan bakldığında Ado.Net Senkronizasyon Servisleri temel olarak aşağıdaki 3 assembly'dan oluşmaktadır. Ado.Net Senkronizasyon Servisleri tarafların sahip olduğu veri sağlayıcılarına göre 2 katlı (Two Tier), N-katlı (N-Tier) ve Servis Bazlı Mimariye (Service Oriented Architecture) uygun olacak şekilde kullanılabilmektedir. Eğer istemci ve sunucu Ado.Net veri sağlayıcıları üzerinden konuşuyorlarsa iki katlı veya n katlı modeller tercih edilebilir. Ancak sunucu tarafından SQL dışı bir veri kaynağı var ise (Söz gelimi bir XML deposu, Active Directory vb...) bu durumda servis yönemlimli olacak şekilde bir geliştirme yapılmalıdır. Senkronizasyon her zaman için istemci tarafında başlatılan bir olaydır ve temel olarak 4 farklı tipte senkronizasyon tekniği kullanılmaktadır.
-
-Kullanılan Teknik
-Açıklama
-
-Snapshot
-Bu teknikte senkronizasyon işlemi başlatıldığında sunucu tarafındaki verinin tamamı istemci tarafına indirilir. Bir başka deyişle değişimsel (incremental) farklılıklar göz önüne alınmaz, sürekli olarak son hal indirilir.
-
-Download-Only
-Bir önceki senkronizasyona göre farklı olan verilerin download edilmesi söz konusudur. Bir başka deyişle sadece değişimsel verilerin indirilmesi söz konusudur.
-
-Upload-Only
-Senkronizasyon işleminde istemci tarafındaki veriler üzerinde yapılan değişiklikler ve yeni eklemelerin sunucu tarafına taşınması söz konusudur. Söz gelimi satış ekibinin herhangibir ürün satışı için yaptığı girişler veya güncellemeler buna örnek bir vaka olarak düşünülebilir.
-
-Bidirectional
-Çift yönlü senkronizasyon söz konusudur. Söz gelimi bir kargo dağıtım firmasının saha elemanlarının dağıtılacak kargo bilgilerini alması ve dağıtıma ait bilgileri sunucu üzerine güncellemesi gibi bir vaka örnek olarak düşünülebilir. Bu noktada özellikle senkronizasyon işlemleri sırasında oluşabilecek eş zamanlı veri çakışmalarının (Conflicts) kontrol altına alınması gerekir.
+| Kullanılan Teknik | Açıklama |
+| --- | --- |
+| Snapshot | Bu teknikte senkronizasyon işlemi başlatıldığında sunucu tarafındaki verinin tamamı istemci tarafına indirilir. Bir başka deyişle değişimsel(incremental) farklılıklar göz önüne alınmaz, sürekli olarak son hal indirilir. |
+| Download-Only | Bir önceki senkronizasyona göre farklı olan verilerin download edilmesi söz konusudur. Bir başka deyişle sadece değişimsel verilerin indirilmesi söz konusudur. |
+| Upload-Only | Senkronizasyon işleminde istemci tarafındaki veriler üzerinde yapılan değişiklikler ve yeni eklemelerin sunucu tarafına taşınması söz konusudur. Söz gelimi satış ekibinin herhangibir ürün satışı için yaptığı girişler veya güncellemeler buna örnek bir vaka olarak düşünülebilir. |
+| Bidirectional | Çift yönlü senkronizasyon söz konusudur. Söz gelimi bir kargo dağıtım firmasının saha elemanlarının dağıtılacak kargo bilgilerini alması ve dağıtıma ait bilgileri sunucu üzerine güncellemesi gibi bir vaka örnek olarak düşünülebilir. Bu noktada özellikle senkronizasyon işlemleri sırasında oluşabilecek eş zamanlı veri çakışmalarının(Conflicts) kontrol altına alınması gerekir. |
 
 Bu noktada belkide senkronizasyon servislerinin katlı mimarideki konumlarını ele almak yararlı olabilir. Bu amaçla aşağıdaki çizelgelerden yararlanabiliriz.
 
@@ -113,12 +64,15 @@ Servis Bazlı Mimari;
 
 SOA modeli sunucu tarafındaki veri kaynağının SQL olmadığı durumlarda ele alınabilir. Bu sebepten dolayı sunucu tarafında sunucu senkronizasyon sağlayıcısı veya senkronizasyon adaptörleri bulunmamaktadır. Bu mimaride istemcinin sunucu tarafı ile mutlak suretle bir servis üzerinden konuşuyor olması gerekmektedir. Bir başka deyişle sunucu senkronizasyon sağlayıcısı ile senkronizasyon adaptörlerinin görevini servis tarafı üstlenmektedir. Bu noktada servis tarafında WCF gibi gelişmiş modellerin kullanılmasıda mümkündür.(İlerleyen görsel derslerimizde bu konuyuda incelemeye çalışıyor olacağız.)
 
-> .Net Framework tarafından bakıldığında Ado.Net Sync Service'ler aşağıdaki 3 temel assembly ve tiplerinden yaralanmaktadır.
-> - Microsoft.Synchronization.Data.dll assembly (Synchronization Agent, Synchronization Tables ve Synchronization Groups)
-> - Microsoft. Synchronization.Data.SqlServerCe.dll (Client Synchronization Provider)
-> - Microsoft. Synchronization.Data.Server.dll (Server Synchronization Provider ve Synchronization Adapters)
-> ![mk265_4.gif](/assets/images/2009/mk265_4.gif)
-> (Tabi Sync Service For Ado.Net'i kullanabilmek için ilgili [sürümünü](http://www.microsoft.com/downloads/details.aspx?familyid=75FEF59F-1B5E-49BC-A21A-9EF4F34DE6FC&displaylang=en) indirip kurmanız gerekmektedir. Makalenin yazıldığı tarihten sonra farklı versiyonların çıkması ve muhtemel değişimlerin olmasınında söz konusu olduğunu belirtmek isterim. Makalemizde Microsoft Sync Framework 2.0 CTP sürümü içerisindeki Sync Services For Ado.Net alt yapısı kullanılmaktadır.)
+.Net Framework tarafından bakıldığında Ado.Net Sync Service'ler aşağıdaki 3 temel assembly ve tiplerinden yaralanmaktadır.
+
+- Microsoft.Synchronization.Data.dll assembly (Synchronization Agent, Synchronization Tables ve Synchronization Groups)
+- Microsoft. Synchronization.Data.SqlServerCe.dll (Client Synchronization Provider)
+- Microsoft. Synchronization.Data.Server.dll (Server Synchronization Provider ve Synchronization Adapters)
+
+![mk265_4.gif](/assets/images/2009/mk265_4.gif)
+
+(Tabi Sync Service For Ado.Net'i kullanabilmek için ilgili [sürümünü](http://www.microsoft.com/downloads/details.aspx?familyid=75FEF59F-1B5E-49BC-A21A-9EF4F34DE6FC&displaylang=en) indirip kurmanız gerekmektedir. Makalenin yazıldığı tarihten sonra farklı versiyonların çıkması ve muhtemel değişimlerin olmasınında söz konusu olduğunu belirtmek isterim. Makalemizde Microsoft Sync Framework 2.0 CTP sürümü içerisindeki Sync Services For Ado.Net alt yapısı kullanılmaktadır.)
 
 Makalemizin bundan sonraki bölümünde teknik detayları bir kenara bırakıp çok basit bir örnek üzerinden konuyu daha net bir şekilde kavramaya çalışacağız. Örnekte kullanılmakta olan Windows uygulaması üzerinde, Azon isimli örnek veritabanında yer alan Kitap isimli tablo için çift yönlü (Bidirectional) senkronizasyon işlemleri yapılmaktadır. Ancak elbette istediğiniz tipte bir veritabanı ve tablolarını kullanabilirsiniz. Tablomuzun ilk hali aşağıdaki şekilde görüldüğü gibidir ve bu noktadaki hali oldukça önemlidir.
 
@@ -156,56 +110,13 @@ Senkronizasyon kodlarını eklemeden önce, istemci uygulamada ve sunucu veritab
 
 ![mk265_12.gif](/assets/images/2009/mk265_12.gif)
 
-Görüldüğü üzere güncelleme ve ekleme işlemlerinin takibi için Kitap tablosuna LastEditDate ve CreationDate isimli datetime tipinden iki alan eklenmiştir. Silinen satırların bilgisi için KitapTombstone isimli bir tablo oluşturulmuştur. Bu tablo KitapId ve DeletionDate isimli alanları içermektedir. Böylece hangi satırın ne zaman silindiği bilgisi tutulabilmektedir. Diğer taraftan Insert, Update ve Delete işlemlerinden sonra devreye giren tetikleyicilerinde (triggers) eklendiği görülebilir. Triggerların içerikleri ve ne iş yaptıkları kısaca aşağıdaki tabloda açıklanmaktadır.
+Görüldüğü üzere güncelleme ve ekleme işlemlerinin takibi için Kitap tablosuna LastEditDate ve CreationDate isimli datetime tipinden iki alan eklenmiştir. Silinen satırların bilgisi için KitapTombstone isimli bir tablo oluşturulmuştur. Bu tablo KitapId ve DeletionDate isimli alanları içermektedir. Böylece hangi satırın ne zaman silindiği bilgisi tutulabilmektedir. Diğer taraftan Insert, Update ve Delete işlemlerinden sonra devreye giren tetikleyicilerinde (triggers) eklendiği görülebilir. Triggerların içerikleri ve ne iş yaptıkları kısaca aşağıdaki tabloda açıklanmaktadır
 
-Trigger
-Query
-Görevi
-
-KitapDeletionTrigger
-ALTER TRIGGER [dbo].[Kitap_DeletionTrigger]
-ON [dbo].[Kitap]
-AFTER DELETE
-AS
-SET NOCOUNT ON
-UPDATE [dbo].[Kitap_Tombstone]
-SET [DeletionDate] = GETUTCDATE ()
-FROM deleted
-WHERE
-deleted.[KitapId] = [dbo].[Kitap_Tombstone].[KitapId]
-IF @@ROWCOUNT = 0
-BEGIN
-INSERT INTO [dbo].[Kitap_Tombstone]
-([KitapId], DeletionDate)
-SELECT [KitapId], GETUTCDATE () FROM deleted
-END
-Kitap tablosunda bir satır silindiğinde KitapTombstone tablosunda silinen kayıdın var olup olmaması durumuna göre (@@ROWCOUNT değeri) ya DeletionDate alanın güncellemesi yapılır yada KitapTombstone tablosuna silinen kayıt eklenir.
-
-KitapUpdateTrigger
-ALTER TRIGGER [dbo].[Kitap_UpdateTrigger]
-ON [dbo].[Kitap]
-AFTER UPDATE
-AS
-BEGIN
-SET NOCOUNT ON
-UPDATE [dbo].[Kitap]
-SET [LastEditDate] = GETUTCDATE () FROM inserted
-WHERE inserted.[KitapId] = [dbo].[Kitap].[KitapId]
-END;
-Kitap tablosundan bir satır güncellendiğinde, o satırın LastEditDate alanına anlık zaman değeri atanır.
-
-KitapInsertTrigger
-ALTER TRIGGER [dbo].[Kitap_InsertTrigger]
-ON [dbo].[Kitap]
-AFTER INSERT
-AS
-BEGIN
-SET NOCOUNT ON
-UPDATE [dbo].[Kitap]
-SET [CreationDate] = GETUTCDATE () FROM inserted
-WHERE inserted.[KitapId] = [dbo].[Kitap].[KitapId]
-END;
-Kitap tablosuna yeni bir satır eklendikten sonra bu satırının CreationDate alanına o anki zaman değeri atanır.
+| Trigger | Query | Görevi |
+| --- | --- | --- |
+| Kitap_DeletionTrigger | ALTER TRIGGER [dbo].[Kitap_DeletionTrigger] <br> ON [dbo].[Kitap] <br> AFTER DELETE <br> AS <br> SET NOCOUNT ON <br> UPDATE [dbo].[Kitap_Tombstone] <br> SET [DeletionDate] = GETUTCDATE() <br> FROM deleted <br> WHERE <br> deleted.[KitapId] = [dbo].[Kitap_Tombstone].[KitapId] <br> IF @@ROWCOUNT = 0 <br> BEGIN <br> INSERT INTO [dbo].[Kitap_Tombstone] <br> ([KitapId], DeletionDate) <br> SELECT [KitapId], GETUTCDATE() FROM deleted <br> END | Kitap tablosunda bir satır silindiğinde Kitap_Tombstone tablosunda silinen kayıdın var olup olmaması durumuna göre(@@ROWCOUNT değeri) ya DeletionDate alanın güncellemesi yapılır yada Kitap_Tombstone tablosuna silinen kayıt eklenir. |
+| Kitap_UpdateTrigger | ALTER TRIGGER [dbo].[Kitap_UpdateTrigger] <br> ON [dbo].[Kitap] <br> AFTER UPDATE <br> AS <br> BEGIN <br> SET NOCOUNT ON <br> UPDATE [dbo].[Kitap] <br> SET [LastEditDate] = GETUTCDATE() FROM inserted <br> WHERE inserted.[KitapId] = [dbo].[Kitap].[KitapId] <br> END; | Kitap tablosundan bir satır güncellendiğinde, o satırın LastEditDate alanına anlık zaman değeri atanır. |
+| Kitap_InsertTrigger | ALTER TRIGGER [dbo].[Kitap_InsertTrigger] <br> ON [dbo].[Kitap] <br> AFTER INSERT <br> AS <br> BEGIN <br> SET NOCOUNT ON <br> UPDATE [dbo].[Kitap] <br> SET [CreationDate] = GETUTCDATE() FROM inserted <br> WHERE inserted.[KitapId] = [dbo].[Kitap].[KitapId] <br> END; | Kitap tablosuna yeni bir satır eklendikten sonra bu satırının CreationDate alanına o anki zaman değeri atanır. |
 
 Peki ya uygulama tarafındaki değişiklikler nelerdir?
 
@@ -215,29 +126,15 @@ Görüldüğü üzere Sync Services for Ado.Net için gerekli olan Microsoft.Syn
 
 ![mk265_15.gif](/assets/images/2009/mk265_15.gif)
 
-Buradaki tiplerin temel işlevleri aşağıdaki tabloda belirtilmektedir.
+Buradaki tiplerin temel işlevleri aşağıdaki tabloda belirtilmektedir
 
-Kullanılan Sınıf
-Açıklama
-
-DbServerSyncProvider
-Microsoft.Synchronization.Data.Server.dll assembly'ı içerisinde yer alan bu sınıf ServerSyncProvider tipinden türemektedir.
-Sunucu üzerindeki senkronizasyon tablolarının bilgilerinin tutulması, sunucu üzerindeki verilerde son senkronizasyondan sonra olan değişikliklerin elde edilmesi, sunucu veritabanına değişimsel (incremental) farklılıkların aktarılması, çakışmaların (Conflicts) kontrol edilmesi gibi işlemleri üstlenir.
-
-SqlCeSyncProvider
-Microsoft.Synchronization.Data.SqlServerCe.dll assembly'ı içerisinde yer almaktadır.
-İstemci tarafında senkronizasyona dahil edilmiş tabloların bilgilerinin saklanması, istemci veritabanındaki son senkronizasyondan sonra olan değişikliklerin elde edilmesi, istemci veritabanına değişimsel farklılıkların aktarılması, çakışmaların tespit edilmesi gibi kritik ve önemli işlemleri üstlenir.
-
-SyncAdapter
-Microsoft.Synchronization.Data.Server.dll assembly'ı içerisinde yer alan bu sınıf DbServerSyncProvider ile sunucu veritabanı arasında köprü vazifesi görmektedir.
-Senkronize işleminde ele alınan her tablo için bu tipten türeyen bir sınıf üretilir. Bu adaptör nesneleri, senkronizasyonun tipine göre gerekli olan DbCommand örneklerini bir başka deyişle SQL sorgularını içerir.
-
-SyncAgent
-Microsoft.Synchronization.Data.dll assembly'ı içerisinde yer almaktadır. Tüm senkronizasyon sürecinin orkestrasyonunu üstlenmektedir.
-
-SyncTable
-Microsoft.Synchronization.Data.dll assembly'ı içerisinde bulunmaktadır.
-Senkronizasyon işlemine tabi olan tüm tablolar için istemci tarafında birer adet oluşturulur. SyncAgent tipi içerisinde Nested Type (Dahili Tip) şeklinde oluşturulmaktadır. Senkronizasyona dahil olan istemci tablolarına ait ayarları taşımak gibi görevleri vardır.
+| Kullanılan Sınıf | Açıklama |
+| --- | --------------------------------- |
+| DbServerSyncProvider | Microsoft.Synchronization.Data.Server.dll assembly' ı içerisinde yer alan bu sınıf ServerSyncProvider tipinden türemektedir. Sunucu üzerindeki senkronizasyon tablolarının bilgilerinin tutulması, sunucu üzerindeki verilerde son senkronizasyondan sonra olan değişikliklerin elde edilmesi, sunucu veritabanına değişimsel(incremental) farklılıkların aktarılması, çakışmaların(Conflicts) kontrol edilmesi gibi işlemleri üstlenir. |
+| SqlCeSyncProvider | Microsoft.Synchronization.Data.SqlServerCe.dll assembly'ı içerisinde yer almaktadır. İstemci tarafında senkronizasyona dahil edilmiş tabloların bilgilerinin saklanması, istemci veritabanındaki son senkronizasyondan sonra olan değişikliklerin elde edilmesi, istemci veritabanına değişimsel farklılıkların aktarılması, çakışmaların tespit edilmesi gibi kritik ve önemli işlemleri üstlenir. |
+| SyncAdapter | Microsoft.Synchronization.Data.Server.dll assembly' ı içerisinde yer alan bu sınıf DbServerSyncProvider ile sunucu veritabanı arasında köprü vazifesi görmektedir. Senkronize işleminde ele alınan her tablo için bu tipten türeyen bir sınıf üretilir. Bu adaptör nesneleri, senkronizasyonun tipine göre gerekli olan DbCommand örneklerini bir başka deyişle SQL sorgularını içerir. |
+| SyncAgent | Microsoft.Synchronization.Data.dll assembly'ı içerisinde yer almaktadır. Tüm senkronizasyon sürecinin orkestrasyonunu üstlenmektedir. |
+| SyncTable | Microsoft.Synchronization.Data.dll assembly'ı içerisinde bulunmaktadır. Senkronizasyon işlemine tabi olan tüm tablolar için istemci tarafında birer adet oluşturulur. SyncAgent tipi içerisinde Nested Type(Dahili Tip) şeklinde oluşturulmaktadır. Senkronizasyona dahil olan istemci tablolarına ait ayarları taşımak gibi görevleri vardır. |
 
 Makalede geliştirdiğimiz örnekte sunucu tarafı senkronizasyon tiplerininde istemci uygulama üzerinde oluşması normaldir. Nitekim, Configura Data Synchronization kısmındaki Application ayarlarına bakıldığında istemci ve sunucu uygulamaların aynı olduğu görülmektedir. Ancak gerçek vakalarda sunucu veri kaynağı ile iletişimi sağlayan ayrık bir uygulamanın servis bazlı olması söz konusudur ki bu durumda N-Tier veya SOA mimarisine geçilmiş olmaktadır.
 

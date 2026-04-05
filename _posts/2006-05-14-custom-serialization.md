@@ -22,22 +22,14 @@ Hangi nedenle olursa olsun özel serileştirme, kod tarafında bir takım özel 
 
 > OnSerializing, OnSerialized, OnDeserializing, OnDeserialized olayları sadece Binary serileştirmede gerçekleşir. Soap formatında yapılan serileştirmede sadece Serialization olayları meydana gelir.
 
-Peki bahsetmiş olduğumuz bu olayları nasıl ele alacağız? Bunun için Framework 2.0 ile birlikte gelen yeni attribute (nitelik) larımız mevcuttur. Bu attribute'ların listesini ve kısa açıklamalarını aşağıdaki tabloda bulabilirsiniz.
+Peki bahsetmiş olduğumuz bu olayları nasıl ele alacağız? Bunun için Framework 2.0 ile birlikte gelen yeni attribute (nitelik) larımız mevcuttur. Bu attribute'ların listesini ve kısa açıklamalarını aşağıdaki tabloda bulabilirsiniz
 
-Attribute
-Kısa Açıklama
-
-OnSerializing
-Serileştirme işlemi sırasındaki olay metodlarını niteler.
-
-OnSerialized
-Serileştirme işlemi tamamlandıktan sonraki olay metodlarını niteler.
-
-OnDeserializing
-Ters-Serileştirme işlemi yapıldığı sıradaki olay metodlarını niteler.
-
-OnDeserialized
-Ters-Serileştirme işlemi tamamlandıktan sonraki olay metodlarını niteler.
+| **Attribute** | **Kısa Açıklama** |
+| --- | --- |
+| OnSerializing | Serileştirme işlemi sırasındaki olay metodlarını niteler. |
+| OnSerialized | Serileştirme işlemi tamamlandıktan sonraki olay metodlarını niteler. |
+| OnDeserializing | Ters-Serileştirme işlemi yapıldığı sıradaki olay metodlarını niteler. |
+| OnDeserialized | Ters-Serileştirme işlemi tamamlandıktan sonraki olay metodlarını niteler. |
 
 Bu attribute'lar yardımıyla bir metodu işaretlediğimizde, serileştirme (ters-serileştirme) sırasındaki süreci ele alabiliriz. Framework 2.0 ile özel serileştirmeye getirilen yenilikleri ele almadan önce Framework 1.1' de bu işi nasıl gerçekleştirebileceğimizi incelemekte fayda var. Eğer bir sınıfa özel serileştirme uygulamak istiyorsak öncelikle bu sınıfa ISerializable arayüzünü uygulamamız gerekmektedir. Tabiki bu sınıfın Serializable niteliği ile işaretlenmiş bir sınıf olması gerektiğide unutulmamalıdır. ISerializable arayüzünün sunduğu GetObjectData metodu yardımıyla, veri içeriğini özel serileştirme işlemine tabi tutabiliriz. Diğer taraftan ters-serileştirme işlemi için söz konusu sınıfın mutlaka özel bir yapıcı metodu (constructor) kullanılması şarttır. Bu yapıcı metodun parametrik yapısı, ISerializable arayüzünden uygulanan GetObject metodunun parametrik yapısı ile aynı olmak zorundadır.
 

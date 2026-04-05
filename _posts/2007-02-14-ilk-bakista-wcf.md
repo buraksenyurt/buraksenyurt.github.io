@@ -86,71 +86,19 @@ Genellikle servisler bir sözleşme tanımlamak için ServiceContract ve Operati
 
 Bağlayıcılar (Bindings)
 
-Bağlayıcılar temel olarak servisler ile nasıl iletişim kurulacağını tanımlamak üzere kullanılırlar. Aslında bir bağlayıcı tip (Binding Type) taşıma tipi (transport type), protokol (protocol) ve veri çözümlemesi (data encoding) bildirir. Bunlar aslında servis yönelimli mimari modelde kullanılabilen senaryolar göz önüne alınarak oluşurlar. Bu sebepten dolayıda WCF, bu önceden bilinen senaryoları kullanabilmek için gerekli bağlayıcı tipleri önceden bildirmiştir. Bu tipler aşağıdaki tabloda yer aldığı gibidir.
+Bağlayıcılar temel olarak servisler ile nasıl iletişim kurulacağını tanımlamak üzere kullanılırlar. Aslında bir bağlayıcı tip (Binding Type) taşıma tipi (transport type), protokol (protocol) ve veri çözümlemesi (data encoding) bildirir. Bunlar aslında servis yönelimli mimari modelde kullanılabilen senaryolar göz önüne alınarak oluşurlar. Bu sebepten dolayıda WCF, bu önceden bilinen senaryoları kullanabilmek için gerekli bağlayıcı tipleri önceden bildirmiştir. Bu tipler aşağıdaki tabloda yer aldığı gibidir
 
-Binding Tipi
-Konfigurasyon
-Elementi
-Taşıma Çeşidi
-(Transport Type)
-Veri Çözümlemesi
-(Data Encoding)
-Platform Desteği
-(Inter operatbility)
-
-BasicHttpBinding
-
-HTTP / HTTPS
-Text
-Var
-
-NetTcpBinding
-
-TCP
-Binary
-Yok
-
-NetPeerTcpBinding
-
-P2P
-Binary
-Yok
-
-NetNamedPipeBinding
-
-IPC
-Binary
-Yok
-
-WSHttpBinding
-
-HTTP/HTTPS
-Text/MTOM
-Var
-
-WSFederationBinding
-
-HTTP/HTTPS
-Text/MTOM
-Var
-
-NetMsmqBinding
-
-MSMQ
-Binary
-Yok
-
-MsmqIntegrationBinding
-
-MSMQ
-Binary
-Var
-
-WSDualHttpBinding
-
-HTTP
-Text/MTOM
-Var
+| **Binding Tipi** | **Konfigurasyon <br> Elementi** | **Taşıma Çeşidi <br> (Transport Type)** | **Veri Çözümlemesi <br> (Data Encoding)** | **Platform Desteği <br> (Inter operatbility)** |
+| --- | --- | --- | --- | --- |
+| BasicHttpBinding |  | HTTP / HTTPS | Text | Var |
+| NetTcpBinding |  | TCP | Binary | Yok |
+| NetPeerTcpBinding |  | P2P | Binary | Yok |
+| NetNamedPipeBinding |  | IPC | Binary | Yok |
+| WSHttpBinding |  | HTTP/HTTPS | Text/MTOM | Var |
+| WSFederationBinding |  | HTTP/HTTPS | Text/MTOM | Var |
+| NetMsmqBinding |  | MSMQ | Binary | Yok |
+| MsmqIntegrationBinding |  | MSMQ | Binary | Var |
+| WSDualHttpBinding |  | HTTP | Text/MTOM | Var |
 
 Buradaki tiplerden hangisini seçeceğimiz, geliştireceğimiz SOA (Service Oriented Architecture) modelindeki ihtiyaçlarımız doğrultusunda belirlenebilirler. Dikkat ederseniz her bağlayıcı tipin interoperability desteği bulunmamaktadır. Bazılar daha yüksek performans sağlayacak şekilde Binary veri çözümlemesini ele alır. Ama kimiside IIS gibi ortamlar üzerinden internete açılabilecek protokol desteğini sunar. İşte bu tip kriterlere göre uygun olan bağlayıcı tipler seçilebilir. Elbette istersek buradaki tipler dışından kendi bağlayıcılarımızı da yazma şansına sahibiz. Ancak bahsi geçen tipler hemen hemen her dağıtık uygulama senaryosu göz önüne alınarak tasarlanmıştır.Böylece WCF'ın ABC'sine çok kısada olsa değinmiş olduk.
 
@@ -172,7 +120,8 @@ Dilerseniz basit bir örnek üzerinden hareket ederek örnek bir WCF sistemi gel
 ![mk191_6.gif](/assets/images/2007/mk191_6.gif)
 
 > WCF uygulamalarını Visual Studio 2005 üzerinde daha kolay geliştirmek için gerekli extension'ları yüklememiz gerekir. Bu extension'lar yüklendiği takdirde, proje şablonları arasına WCF Service Library seçeneğide gelecektir. Bu proje şablonu, servis sözleşmesinide uygulayan ve ön bilgiler veren hazır bir örnek kütüphane üretmektedir.
-> ![mk191_5.gif](/assets/images/2007/mk191_5.gif)
+
+![mk191_5.gif](/assets/images/2007/mk191_5.gif)
 
 Şimdi sınıf kütüphanemizin içerisine aşağıdaki tipleri ekleyelim.
 

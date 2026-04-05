@@ -14,31 +14,14 @@ Remoting mimarisinde, istemci ve sunucu arasında uzak nesneleri paylaşmanın d
 
 Üçüncü model abstract modeli ele alır ve özellikle nesne üretiminin istemciden soyutlanması söz konusu ise Fabrika Tasarım Desenini (Factory Design Pattern) uygular. Bu model içerisinde, interface modeline benzer olarak istemci tarafından iş mantığı ve özellikle uzak nesnenin üretiliş biçimi soyutlanmaktadır. Ne yazıkki bu modelin uygulanması çoğu zaman kolay değildir. Çünkü daha ileri seviye kod yazımını gerektirmektedir. Bu modelin kullanılabilmesi için abstract mimari, tasarım desenleri gibi kavramlara aşina olmak gerekir.
 
-Dördüncü ve son model ise istemci tarafındaki uygulamaların, kullanmak istedikleri uzak nesneye ait metadata bilgisini sağlayan SoapSuds aracını ele alır. Bu modelde, istemci tarafında uzak nesneye ait sadece tip ve üye bilgilerini içeren bir assembly söz konusudur. Yani istemci tarafında sadece uzak nesneye ait metadata bilgisi yer alır. Bu da elbetteki iş mantığını istemciden gizleyen bir modeldir. Ancak özellikle interface ve abstract modelinin etklinliği nedeni ile SoapSuds modeli değerini kaybetmektedir. Yinede SoapSuds modelini bilmekte yarar vardır. İşte bu makalemizde SoapSuds modelini incelemeye çalışacağız. Bu modeller arasında elbetteki bir takım avantaj ve dezavantajlar söz konusudur. Örneğin interface, abstract veya soapSuds modelleri bağlantısız çalışmaya izin vermezler. Bunun en büyük nedeni elbette iş yapacak nesnel kodların istemci tarafında bulunmayışıdır. Bu tip bir ihtiyaca ancak ve ancak Paylaşımlı Assembly modeli cevap verecektir. Ancak.Net Remoting uygulamalarının tasarım amacı düşünüldüğünde bu son derece uç bir örnektir. Bahsedilen dört model arasındaki temel farklılıkları ve birbirlerine olan üstünlüklerini aşağıdaki tabloda özet olarak bulabilirsiniz.
+Dördüncü ve son model ise istemci tarafındaki uygulamaların, kullanmak istedikleri uzak nesneye ait metadata bilgisini sağlayan SoapSuds aracını ele alır. Bu modelde, istemci tarafında uzak nesneye ait sadece tip ve üye bilgilerini içeren bir assembly söz konusudur. Yani istemci tarafında sadece uzak nesneye ait metadata bilgisi yer alır. Bu da elbetteki iş mantığını istemciden gizleyen bir modeldir. Ancak özellikle interface ve abstract modelinin etklinliği nedeni ile SoapSuds modeli değerini kaybetmektedir. Yinede SoapSuds modelini bilmekte yarar vardır. İşte bu makalemizde SoapSuds modelini incelemeye çalışacağız. Bu modeller arasında elbetteki bir takım avantaj ve dezavantajlar söz konusudur. Örneğin interface, abstract veya soapSuds modelleri bağlantısız çalışmaya izin vermezler. Bunun en büyük nedeni elbette iş yapacak nesnel kodların istemci tarafında bulunmayışıdır. Bu tip bir ihtiyaca ancak ve ancak Paylaşımlı Assembly modeli cevap verecektir. Ancak.Net Remoting uygulamalarının tasarım amacı düşünüldüğünde bu son derece uç bir örnektir. Bahsedilen dört model arasındaki temel farklılıkları ve birbirlerine olan üstünlüklerini aşağıdaki tabloda özet olarak bulabilirsiniz
 
-Model
-Dezavantajları
-Avantajları
-
-Paylaşımlı Assembly (Shared Assembly)
-İstemci tarafından iş mantığının görülebilmesi.
-Geliştirme kolaylığı. Bağlantılı ve bağlantısız çalışma desteği.
-
-Interface
-Bağlantılı ve bağlantısız katman modeline cevap verememesi.
-İstemci tarafından iş mantığının gizlenmesi (security).
-
-Abstract
-Bağlantılı ve bağlantısız katman modeline cevap verememesi.
-
-Kodlamanın zor oluşu.
-İş mantığının gizlenmesi (security) ve uzak nesne üretim işlemlerinin soyutlanması.
-
-SoapSuds
-Bağlantılı ve bağlantısız katman modeline cevap verememesi.
-
-Wrapped proxy seçeneğinde sadece HTTP desteği olması.
-İş mantığının istemci tarafından gizlenmesi. (security).
+| **Model** | **Dezavantajları** | **Avantajları** |
+| --- | --- | --- |
+| **Paylaşımlı Assembly (Shared Assembly)** | İstemci tarafından iş mantığının görülebilmesi. | Geliştirme kolaylığı. Bağlantılı ve bağlantısız çalışma desteği. |
+| **Interface** | Bağlantılı ve bağlantısız katman modeline cevap verememesi. | İstemci tarafından iş mantığının gizlenmesi (security). |
+| **Abstract** | Bağlantılı ve bağlantısız katman modeline cevap verememesi. <br> Kodlamanın zor oluşu. | İş mantığının gizlenmesi (security) ve uzak nesne üretim işlemlerinin soyutlanması. |
+| **SoapSuds** | Bağlantılı ve bağlantısız katman modeline cevap verememesi. <br> Wrapped proxy seçeneğinde sadece HTTP desteği olması. | İş mantığının istemci tarafından gizlenmesi. (security). |
 
 SoapSuds modelinde, istemci tarafında uzak nesneye ait metadata'yı içeren bir assembly üretimi söz konusudur. Framework ile gelen SoapSuds aracının en temel amacı bu assembly'ı üretmektir. Burada üretilen assembly aslında fiziki bir proxy nesnesi görevini üstlenir. Proxy'nin iki farklı üretiliş şekli vardır. Wrapped Proxy yada Non-Wrapped Proxy. Wrapped Proxy tipinde, sadece SOAP ve HTTP protokolü desteklenmektedir. Bunun dışında bu modeli uygularken istemci tarafında channel, port gibi konfigurasyon ayarlarının yapılmasına gerek kalınmaz. Çünkü bu tip bilgiler WSDL talebi sonucu üretilen Proxy Assembly'ın içerisine kaydedilmektedir. Non-Wrapped Proxy modeli ise hem HTTP hem de TCP protokolüne destek verebilmektedir (Teorik Olarak). Non-Wrapped Proxy modelinde,Wrapped Proxy Assembly'da yapılmayan konfigurasyon ayarlarının da yapılması gerekir. Hangi tip olursa olsun sonuç itibariyle SoapSuds modeli, istemcinin uzak nesneyi kullanabilmesi için gerekli bilgileri içeren bir metadata sağlar ve bunu kullanarak bir proxy assembly üretir. Şimdi dilerseniz SoapSuds modelini örnekler üzerinde incelemeye çalışalım. İlk olarak örneklerimizde kullanacağımız uzak nesneye ait sınıfımızı ve sunucu uygulamamızı tasarlayarak işe başlayacağız.
 
@@ -97,11 +80,13 @@ Sunucu Konfigurasyon bilgisi;
 
 Şimdi ilk olarak SopaSuds aracını sunucu üzerinde çalıştırıyor ve Wrapped Proxy'ımızı üretiyoruz. Bunun için Visual Studio.2005 Command Prompt'u kullanabiliriz. SoapSuds aracını kullanırken Proxy Assembly'ı üretebilmemiz için Sunucu uygulamanın mutlaka çalışıyor olması gerekmektedir. Bu arada yazdığımız komut satırındaki SOAP uzantısına ve WSDL (Web Service Description Language) talebine dikkat edelim. Burada oa anahtarı Output Assembly anlamına gelmektedir.
 
-Komut: SoapSuds -url:http://manchester:9800/Matematik.soap?wsdl -oa:MatMetaData.dll
+```bash
+SoapSuds -url:http://manchester:9800/Matematik.soap?wsdl -oa:MatMetaData.dll
+```
 
 ![mk164_2.gif](/assets/images/2006/mk164_2.gif)
 
-Komutu uygularken dikkat ederseniz?wsdl takısı kullanılıyor. Bunun sebebi Metadata'nın SOAP üzerinden elde edilen WSDL dökümanına bakılarak çıkartılmasıdır. Eğer tarayıcı penceresinden http://manchester:9800/Matematik.soap?wsdl yazarsanız aşağıdakine bezner bir ekran görüntüsü elde edersiniz. Bu web servislerinden aşina olduğumuz WSDL dökümanıdır.
+Komutu uygularken dikkat ederseniz?wsdl takısı kullanılıyor. Bunun sebebi Metadata'nın SOAP üzerinden elde edilen WSDL dökümanına bakılarak çıkartılmasıdır. Eğer tarayıcı penceresinden `http://manchester:9800/Matematik.soap?wsdl` yazarsanız aşağıdakine bezner bir ekran görüntüsü elde edersiniz. Bu web servislerinden aşina olduğumuz WSDL dökümanıdır.
 
 ![mk164_5.gif](/assets/images/2006/mk164_5.gif)
 
@@ -245,7 +230,9 @@ e the target machine actively refused it" istisnasını alırsınız ki buda rem
 
 Gelelim Non-Wrapped Proxy modeline. Bu modelde, üretilen assembly içerisinde sadece sınıfa ait metadata bilgisi bulunur. Dolayısıyla, Wrapped Proxy'lerde olduğu gibi sadece HTTP protokolüne bağlı değildir. TCP protokolünüde ele alabiliriz. Non-Wrapped Proxy kullanırken istemci tarafında gerekli konfigurasyon ayaları da yapılmalıdır. Bu sayede sunucu üzerinde meydana gelecek kanal ve port değişikliklerini istemci tarafınada yansıtabiliriz. Oysaki Wrapped proxy tipine göre SoapSuds aracı ile metadata'yı içeren assembly'ı yeniden üretmemiz ve dağıtmamız gerekecektir. Yukarıdaki örneğimizi ele aldığımızda, Non-Wrapped Proxy'imizi oluşturmak için SoapSuds aracını aşağıdaki şekilde kullanmamız yeterlidir. SoapSuds aracı yardımıyla Assembly'ın üretilebilmesi için önceden sunucu uygulamanın çalışıyor olması gerektiğini lütfen unutmayınız. Non-Wrapped Proxy üretimi için SoapSuds aracında -nowp anahtarı kullanılır.
 
-Komut: SoapSuds -nowp -url:http://localhost:9800/Matematik.soap?wsdl -oa:MatMetaDataNoWp.dll
+```bash
+SoapSuds -nowp -url:http://localhost:9800/Matematik.soap?wsdl -oa:MatMetaDataNoWp.dll
+```
 
 ![mk164_6.gif](/assets/images/2006/mk164_6.gif)
 
@@ -285,7 +272,9 @@ Console.WriteLine(mt.Toplam(3, 4).ToString());
 
 Uygulamamızı test ettiğimizde remoting sisteminin başarılı bir şekilde çalıştığını görebiliriz. Her zamanki gibi uzaktan erişimi ispat etmek için, sunucu uygulamayı çalıştırmadan istemci uygulamayı çalıştırmanızı öneririm. Görüldüğü gibi SoapSuds modelinde Wrapped Proxy ya da Non-Wrapped Proxy'lerin bir birlerine göre temel bazı farklılıkları bulunmaktadır. Son olarak SoapSuds aracı yardımıyla uzak nesne sınıfına ait bir kaynak kodun istemci tarafına taşınabileceğinide berlirtmek istiyorum. Bunun için -gc (Generate Class) anahtarını kullanmak yeterlidir. Örneğin sunucu uygulamamız çalışırken komut satırından aşağıdaki satırı çalıştıralım.
 
-Komut: SoapSuds -nowp -url:http://localhost:9800/Matematik.soap?wsdl -gc
+```bash
+SoapSuds -nowp -url:http://localhost:9800/Matematik.soap?wsdl -gc
+```
 
 Bunun sonucu olarak cs uzantılı bir kaynak kod dosyası oluşur. Dosyanın içeriği aşağıdakine benzer olacaktır.
 

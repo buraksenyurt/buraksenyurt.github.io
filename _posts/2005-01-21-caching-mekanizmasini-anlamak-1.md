@@ -12,11 +12,9 @@ Bu makalemiz ile birlikte, web sayfalarının istemcilere daha hızlı bir şeki
 
 ASP.NET Uygulamaları İçin Caching (Ara Belleğe Alma) Teknikleri
 
-1 - Output Caching (Çıktının Ara Belleğe Alınması)
-
-2 - Data Caching (Verilerin Ara Belleğe Alınması)
-
-3 - Fragment Caching (Parçaların Ara Belleğe Alınması)
+- 1 - Output Caching (Çıktının Ara Belleğe Alınması)
+- 2 - Data Caching (Verilerin Ara Belleğe Alınması)
+- 3 - Fragment Caching (Parçaların Ara Belleğe Alınması)
 
 Output Caching tekniğinde, bir aspx sayfasının tüm içeriği ara belleğe alınır ve belirli bir süre boyunca burada tutulur. Bu mekanizmanın çalışma biçimini aşağıdaki şekil ile daha kolay irdeleyebiliriz. Bu çalışma sistemi temel olarak diğer Caching mekanizmalarında da aynı şekilde işlemektedir. Değişen sadece ara belleğe alınan HTML görüntüsünün içeriği olacaktır.
 
@@ -28,7 +26,7 @@ Output Caching tekniğinde, bir aspx sayfasının tüm içeriği ara belleğe al
 
 Output Caching mekanizmasını bir aspx sayfasına uygulayabilmek için tek yapılması gereken OutputCache direktifinin sayfanın aspx kodlarının olduğu kısıma eklemek yeterlidir.
 
-```text
+```xml
 <%@ OutputCache Duration="300" VaryByParam="None"%>
 ```
 
@@ -80,7 +78,7 @@ Bir sayfanın tamamını ara belleğe aldığımızda, sayfanın arabellekte yer
 
 Bu durumu daha yakından inceleyebilmek için pubs veritabanındaki titles tablosunu kullanacağımız bir örnek geliştirelim. Uygulamanın default.aspx sayfasında bu kez titles tablosunda yer alan her bir satır için title alanının değerlerini göstereceğiz. Kullanıcı herhangi bir başlığa tıkladığında bu kitap ile ilgili detaylı bilgilerin olduğu başka bir sayfaya (detay.aspx) gidecek. Detay sayfası kitabın Primary Key değerini (title_id) QueryString parametresi olarak alacak. Bu durumda, detay sayfası için ara belleğe alma işlemini gerçekleştirebiliriz. Konuyu daha iyi anlayabilmek için örnek üzerinden adım adım gidelim. İlk olarak ana sayfamızın (default.aspx) aspx içeriğini aşağıdaki gibi değiştirmeliyiz.
 
-```text
+```html
 <asp:DataGrid id="dgVeriler" style="Z-INDEX: 101; LEFT: 56px; POSITION: absolute; TOP: 88px" runat="server" AutoGenerateColumns="False" Height="160px" Width="264px" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" BackColor="#DEBA84" CellPadding="3">
 <FooterStyle ForeColor="#8C4510" BackColor="#F7DFB5"></FooterStyle>
 <SelectedItemStyle Font-Bold="True" ForeColor="White" BackColor="#738A9C"></SelectedItemStyle>
@@ -120,31 +118,23 @@ private void Page_Load(object sender, System.EventArgs e)
 
 Burada ara belleğe alma işlemini Detay.aspx sayfası üzerinde uyguluyoruz. Çünkü detay.aspx, dinamik olarak içeriği gelen parametre değerine göre değişen bir sayfadır. Biz gelen parametre değerine göre üretilen sayfaların html çıktılarını ara belleğe almak istiyoruz. İşte bunun için yine aspx kodlarının başına OutputCache direktifini aşağıdaki gibi eklememiz gerekiyor.
 
-```text
+```html
 <%@ OutputCache Duration="300" VaryByParam="title_id"%>
 ```
 
-Böylece detay.aspx sayfası her çalıştırıldığında gelen title_id değeri baz alınarak ara bellekte 300 saniye süreyle duracak olan html çıktılarının oluşturulmasına imkan sağlıyoruz. Olayı şu şekilde irdelersek daha anlaşılır olacaktır;
+Böylece detay.aspx sayfası her çalıştırıldığında gelen title_id değeri baz alınarak ara bellekte 300 saniye süreyle duracak olan html çıktılarının oluşturulmasına imkan sağlıyoruz. Olayı şu şekilde irdelersek daha anlaşılır olacaktır
 
-Parametre tabanlı OutputCache işlemi
-
-İstemci title_id değeri BU1032 olan satırı detay.aspx sayfasından ister. Bu durumda detay.aspx sayfasının içeriği ara belleğe alınır. Bu sayfayı A olarak düşünelim.
-detay.aspx in A koypası oluşturulur.
-
-Başka bir İstemci title_id değeri MC2222 olan sayfayı talep eder. Bu durumda detay.aspx sayfasının yeni halinin kopyası ara belleğe alınır.
-detay.aspx in B koypası oluşturulur.
-
-Başka bir İstemci title_id değeri MC2222 olan sayfayı talep eder. Eğer duration süresi dolmadıysa talep edilen bu sayfanın çıktısı ara bellekte zaten olduğundan istemciye direkt olarak bu çıktı gönderilir.
-detay.aspx in var olan B kopyası döner.
-
-Başka bir İstemci title_id değeri BU1032 olan sayfayı talep eder. Eğer duration süresi dolmadıysa talep edilen bu sayfanın çıktısı ara bellekte zaten olduğundan istemciye direkt olarak bu çıktı gönderilir.
-detay.aspx in var olan A kopyası döner.
-
-Duration süreleri dolduğunda ise gelen talebe göre ara bellekteki sayfa çıktıları tekrardan oluşturulur.
+| **Parametre tabanlı OutputCache işlemi** | |
+| :--- | :--- |
+| İstemci title_id değeri BU1032 olan satırı detay.aspx sayfasından ister. Bu durumda detay.aspx sayfasının içeriği ara belleğe alınır. Bu sayfayı A olarak düşünelim. | detay.aspx in **A** koypası oluşturulur. |
+| Başka bir İstemci title_id değeri MC2222 olan sayfayı talep eder. Bu durumda detay.aspx sayfasının yeni halinin kopyası ara belleğe alınır. | detay.aspx in **B** koypası oluşturulur. |
+| Başka bir İstemci title_id değeri MC2222 olan sayfayı talep eder. Eğer duration süresi dolmadıysa talep edilen bu sayfanın çıktısı ara bellekte zaten olduğundan istemciye direkt olarak bu çıktı gönderilir. | detay.aspx in var olan **B** kopyası döner. |
+| Başka bir İstemci title_id değeri BU1032 olan sayfayı talep eder. Eğer duration süresi dolmadıysa talep edilen bu sayfanın çıktısı ara bellekte zaten olduğundan istemciye direkt olarak bu çıktı gönderilir. | detay.aspx in var olan **A** kopyası döner. |
+| * Duration süreleri dolduğunda ise gelen talebe göre ara bellekteki sayfa çıktıları tekrardan oluşturulur. | |
 
 Görüldüğü gibi VaryByParam özelliği ile, bir sayfanın kendisine QeuryString ile gelen parametrelerinin değerine göre farklı ara bellek görüntülerini elde edebilmekteyiz. Bazı durumlarda talep edilen sayfaya birden fazla parametre gönderildiği veya hiç parametre gönderilmeden çağrıldığıda olur. Bu durumu karşılamak için VaryByParam özelliğine * değerini atayabiliriz.
 
-```text
+```html
 <%@ OutputCache Duration="300" VaryByParam="*" %>
 ```
 

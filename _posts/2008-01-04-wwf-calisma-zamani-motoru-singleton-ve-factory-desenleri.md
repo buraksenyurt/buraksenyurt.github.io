@@ -43,49 +43,23 @@ Host uygulama bir WorkflowRuntime nesne örneğini oluşturduktan sonra temel ol
 
 Görüldüğü gibi ilk olarak Host uygulama WorkflowRuntime örneğini oluşturmaktadır. Aynı zamanda çalışma zamanı için gerekli olan servislerde oluşturulmakta ve WF Runtime ortamına kayıt edilmektedir (Register). Buradaki servislerin bazıları mecburidir. Bazıları ise opsiyonel olarak ele alınmaktadır. Host uygulama ayrıca, WF Runtime tarafından tetiklenen olayları ele alabilmekte ve bu şekilde WF çalışma zamanını daha kolay izleyebilmektedir.
 
-Workflow çalışma motorunun en önemli görevlerinden birisi elbetteki iş akışlarını başlatmaktır. Zaten iş akışların kendiliğinden başlatılmasında mümkün değildir. Bu noktada devreye WorkflowRuntime girmektedir. Başlatılan iş akışları WF çalışma zamanı motoru (Runtime Engine) tarafından ayrı bir thread içerisinde asenkron (Asynchronous) olarak yürütülürler. Birden fazla iş akışı WF çalışma zamanı motoru tarafından başlatılıp yönetilebilmektedir. Kaç iş akışı olursa olsun, host uygulamadaki ana thread'e paralel olacak şekilde asenkron (asynchronous) olarak yürütülebilmektedir. Başlatılan her iş akışı WF çalışma zamanı motoru (WF Runtime Engine) tarafından izlenmektedir. Buna bağlı olarak çalışma zamanında bir iş akışının durumlarının ele alınabileceği bir takım olaylar söz konusudur. Aşağıdaki tabloda yer alan olaylar WorkflowRuntime sınıfına aittir.
+Workflow çalışma motorunun en önemli görevlerinden birisi elbetteki iş akışlarını başlatmaktır. Zaten iş akışların kendiliğinden başlatılmasında mümkün değildir. Bu noktada devreye WorkflowRuntime girmektedir. Başlatılan iş akışları WF çalışma zamanı motoru (Runtime Engine) tarafından ayrı bir thread içerisinde asenkron (Asynchronous) olarak yürütülürler. Birden fazla iş akışı WF çalışma zamanı motoru tarafından başlatılıp yönetilebilmektedir. Kaç iş akışı olursa olsun, host uygulamadaki ana thread'e paralel olacak şekilde asenkron (asynchronous) olarak yürütülebilmektedir. Başlatılan her iş akışı WF çalışma zamanı motoru (WF Runtime Engine) tarafından izlenmektedir. Buna bağlı olarak çalışma zamanında bir iş akışının durumlarının ele alınabileceği bir takım olaylar söz konusudur. Aşağıdaki tabloda yer alan olaylar WorkflowRuntime sınıfına aittir
 
-Olay (Event)
-Açıklama
-
-WorkflowCreated
-Bir Workflow nesne örneği oluşturulduğunda tetiklenen olaydır. Bu olay, iş akışına ait aktiviteler çalışmaya başlamadan önce, yapıcı metod (Constructor) çalıştıktan sonra tetiklenmektedir.
-
-WorkflowStarted
-Bir iş akışı çalışmaya başladığında tetiklenen olaydır. Bir başka deyişle iş akışı içerisindeki root aktivite (Activity) icrasına başladığında tetiklenir.
-
-WorkflowLoaded
-WF Çalışma zamanı motoru tarafından bir iş akışı belleğe yüklendiğinde, iş akışına ait aktiviteler çalışmaya başlamadan önce tetiklenen olaydır.
-
-WorkflowUnloaded
-İş akışı örneği WF çalışma zamanı motoru tarafından bellekten kaldırıldığında tetiklenen olaydır. Çoğunlukla bir iş akışı uzun süre bir şey yapmadan kaldığında (Idle) ve WorkflowPersistenceService hizmeti eklenip UnloadOnIdle metodu geriye true döndürüyorsa otomatik olarak tetiklenmektedir.
-
-WorkflowCompleted
-İş akışı örneği tamamlandığında devreye giren olaydır. Bu olay geliştirici tarafından mutlaka ele alınmalıdır.
-
-WorkflowAborted
-İş akışı iptal edildiğinde tetiklenir. Bir iş akışı WorkflowInstance sınıfının Abort metodu yardımıyla manuel olaraktanda iptal edilebilir.
-
-WorkflowTerminated
-Bir iş akışı ele alınmayan (alınamayan) bir istisna (Exception), Terminate metoduna yapılan bir çağrı yada TerminateActivity aktivitesi nedeniyle sonlandığında tetiklenir. Bu olayda geliştirici tarafından mutlaka ele alınmalıdır.
-
-WorkflowSuspended
-Bir iş akışı Suspend metoduna yapılan çağrı ile, SuspendActivity aktivitesine gelinmesi nedeniyle duraksayabilir. Ama gereken durumlarda WF çalışma zamanı motoru dinamik iş akışları arasında geçişleri yaparken geçici olarak duraksatmalara başvurabilir. Bu durumlarda WorkflowSuspended olayı tetiklenir.
-
-WorkflowIdled
-İş akışları çalışma zamanı motoru tarafından iş yapmadan bırakıldığında tetiklenir. Söz gelimi DelayActivity aktivitesi ile karşılaşıldığında iş akışı idle durumuna geçecektir. Bu noktada WorkflowIdled isimli olay tetiklenmektedir.
-
-WorkflowResumed
-Suspend modda olan bir iş akışı tekrar çalışmaya başladığında tetiklenen olaydır. Resume metoduna yapılan çağrı sonucu yada WF çalışma zamanı motoru tarafından geçici olarak Suspend moda alınan bir iş akışı tekrar kaldığı yerden devam etmeye başladığında bu olay tetiklenir.
-
-WorkflowPersisted
-Eğer WF çalışma zamanına eklenmiş bir kalıcı bırakma hizmeti (Persistence Service) yüklüyse, iş akışının güncel durumu belleğe kaydedildikten sonra bu olay tetiklenebilir. Ancak bu söz konusu olayın tetiklenme nedenlerinden sadece birisidir.
-
-Started
-WF çalışma zamanı motoru nesnesi başlatıldığında tetiklenen olaydır.
-
-Stopped
-WF çalışma zamanı motoru nesnesi durdurulduğunda tetiklenen olaydır.
+| **Olay(Event)** | **Açıklama** |
+| --- | --- |
+| WorkflowCreated | Bir Workflow nesne örneği oluşturulduğunda tetiklenen olaydır. Bu olay, iş akışına ait aktiviteler çalışmaya başlamadan önce, yapıcı metod(Constructor) çalıştıktan sonra tetiklenmektedir. |
+| WorkflowStarted | Bir iş akışı çalışmaya başladığında tetiklenen olaydır. Bir başka deyişle iş akışı içerisindeki root aktivite(Activity) icrasına başladığında tetiklenir. |
+| WorkflowLoaded | WF Çalışma zamanı motoru tarafından bir iş akışı belleğe yüklendiğinde, iş akışına ait aktiviteler çalışmaya başlamadan önce tetiklenen olaydır. |
+| WorkflowUnloaded | İş akışı örneği WF çalışma zamanı motoru tarafından bellekten kaldırıldığında tetiklenen olaydır. Çoğunlukla bir iş akışı uzun süre bir şey yapmadan kaldığında(Idle) ve WorkflowPersistenceService hizmeti eklenip UnloadOnIdle metodu geriye true döndürüyorsa otomatik olarak tetiklenmektedir. |
+| WorkflowCompleted | İş akışı örneği tamamlandığında devreye giren olaydır. Bu olay geliştirici tarafından mutlaka ele alınmalıdır. |
+| WorkflowAborted | İş akışı iptal edildiğinde tetiklenir. Bir iş akışı WorkflowInstance sınıfının Abort metodu yardımıyla manuel olaraktanda iptal edilebilir. |
+| WorkflowTerminated | Bir iş akışı ele alınmayan(alınamayan) bir istisna(Exception), Terminate metoduna yapılan bir çağrı yada TerminateActivity aktivitesi nedeniyle sonlandığında tetiklenir. Bu olayda geliştirici tarafından mutlaka ele alınmalıdır. |
+| WorkflowSuspended | Bir iş akışı Suspend metoduna yapılan çağrı ile, SuspendActivity aktivitesine gelinmesi nedeniyle duraksayabilir. Ama gereken durumlarda WF çalışma zamanı motoru dinamik iş akışları arasında geçişleri yaparken geçici olarak duraksatmalara başvurabilir. Bu durumlarda WorkflowSuspended olayı tetiklenir. |
+| WorkflowIdled | İş akışları çalışma zamanı motoru tarafından iş yapmadan bırakıldığında tetiklenir. Söz gelimi DelayActivity aktivitesi ile karşılaşıldığında iş akışı idle durumuna geçecektir. Bu noktada WorkflowIdled isimli olay tetiklenmektedir. |
+| WorkflowResumed | Suspend modda olan bir iş akışı tekrar çalışmaya başladığında tetiklenen olaydır. Resume metoduna yapılan çağrı sonucu yada WF çalışma zamanı motoru tarafından geçici olarak Suspend moda alınan bir iş akışı tekrar kaldığı yerden devam etmeye başladığında bu olay tetiklenir. |
+| WorkflowPersisted | Eğer WF çalışma zamanına eklenmiş bir kalıcı bırakma hizmeti(Persistence Service) yüklüyse, iş akışının güncel durumu belleğe kaydedildikten sonra bu olay tetiklenebilir. Ancak bu söz konusu olayın tetiklenme nedenlerinden sadece birisidir. |
+| Started | WF çalışma zamanı motoru nesnesi başlatıldığında tetiklenen olaydır. |
+| Stopped | WF çalışma zamanı motoru nesnesi durdurulduğunda tetiklenen olaydır. |
 
 WF çalışma zamanı motoru, iş akışları üzerindeki yönetimini daha moduler bir şekilde gerçekleştirmek için bazı servislerden yararlanmaktadır. WF ortamında çalışma zamanı servisleri (WF Runtime Services) olarak tanımlanan söz konusu hizmetler çekirdek (Core) ve yerel (Local) olmak üzere iki ana kategoride ele alınırlar. Çekirdek servisler (Core Services) 4 ana hizmetten oluşmaktadır ve WF sınıf kütüphanelerinde (Class Libraries) içerisinde tanımlanmış olan sınıflar ile ifade edilmektedir. Bu hizmetler aşağıdaki grafikte görüldüğü gibidir.
 
@@ -93,9 +67,10 @@ WF çalışma zamanı motoru, iş akışları üzerindeki yönetimini daha modul
 
 WF çalışma zamanı motoru tarafından ele alınan bu çekirdek servislerden Commit Work Batch ve Scheduling hizmetleri mutlaka olmak zorundadır. Ancak Tracking ve Persistence hizmetlerinin kullanımı tamamen opsiyoneldir.
 
-> Opsiyonel olan servisleri WF çalışma ortamına yüklemek için şu adımlar izlenir;
-> - Servise ait nesne örneği oluşturulur.
-> - WorkflowRuntime sınıfına ait nesne örneğinin AddService metodu kullanılarak, ilgili servisin çalışma ortamına eklenmesi sağlanır.
+Opsiyonel olan servisleri WF çalışma ortamına yüklemek için şu adımlar izlenir;
+
+- Servise ait nesne örneği oluşturulur.
+- WorkflowRuntime sınıfına ait nesne örneğinin AddService metodu kullanılarak, ilgili servisin çalışma ortamına eklenmesi sağlanır.
 
 Scheduling hizmeti temel olarak çalışma zamanında iş akışlarının icra edileceği thread'lerin oluşturulması ve yönetilmesi ile ilgilidir. Bu hizmetler WorkflowSchedulerService isimli taban sınıftan (base class) türemektedir. WorkflowSchedulerService abstract bir sınıtfır.
 

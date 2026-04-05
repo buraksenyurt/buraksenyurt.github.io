@@ -196,26 +196,15 @@ public class ArabaYerelServisi :IArabaHizmetleri
 
 ArabaYerelSinifi isimli sınıf (Class), ilgili arayüzü (Interface) uygulamak dışında Host uygulama tarafından tetiklenebilecek metodlarda içermektedir. Bu metodlar kendi içlerindende akışa ait durum geçişleri için gerekli olayların tetiklenmesinde kullanılmaktadır. Sınıf içerisinde yer alan OnMesajGonder isimli metod parametre olarak string tipinden bir değişken almaktadır. Bu parametre değeri iş akışından (Workflow) gelmekte olup Host uygulamaya iletilmektedir. Bu iletim sırasında MesajAlindi isimli olay devreye girmektedir ki bu olay sadece iş akışını barındıran Host uygulama tarafından ele alınabilir. Tahmin edileceği üzere OnMesajGonder metodunun parametre değeri iş akışı tasarlanırken belirlenecektir. MesajAlindi olayı tetiklenirken parametre olarak ExternalDataEventArgs sınıfından türemiş olan MesajAlindiEventArgs sınıfı kullanılmaktadır.
 
-Bu işlemlerin tamamlanmasının ardından Durum Makinesinin (State Machine) tasarlanmasına başlanabilir. Bu amaçla Workflow1.cs üzerinden gerekli düzenlemelerin yapılması gerekmektedir. İlk olarak arabanın sahip olabileceği tüm durumlar StateActivity bileşenleri yardımıyla iş akışı üzerine alınırlar. Başlangıçta StateActivity bileşenlerinin Name özelliklerinin değerlerinin aşağıdaki tabloda yer aldığı gibi değiştirildiğini düşünelim.
+Bu işlemlerin tamamlanmasının ardından Durum Makinesinin (State Machine) tasarlanmasına başlanabilir. Bu amaçla Workflow1.cs üzerinden gerekli düzenlemelerin yapılması gerekmektedir. İlk olarak arabanın sahip olabileceği tüm durumlar StateActivity bileşenleri yardımıyla iş akışı üzerine alınırlar. Başlangıçta StateActivity bileşenlerinin Name özelliklerinin değerlerinin aşağıdaki tabloda yer aldığı gibi değiştirildiğini düşünelim
 
-StateActivity Bileşeni
-Name Özelliği Değeri
-Kısa Bilgi
-
-MotorCalismiyor
-Arabanın motorunun çalışmadığı durumu işaret eder.
-
-MotorCalisiyor
-Arabanın motorunun çalışmak olduğu durumu işaret eder.
-
-ArabaIlerliyor
-Arabanın ileri doğru hareket ettiği durumu işaret eder.
-
-ArabaGeriGidiyor
-Arabanın geriye doğru hareket ettiği durumu işaret eder.
-
-ArabadanCikilmistir
-Arabadan inildikten sonraki durumu işaret eder.
+| **StateActivity Bileşeni <br> Name Özelliği Değeri** | **Kısa Bilgi** |
+| --- | --- |
+| MotorCalismiyor | Arabanın motorunun çalışmadığı durumu işaret eder. |
+| MotorCalisiyor | Arabanın motorunun çalışmak olduğu durumu işaret eder. |
+| ArabaIlerliyor | Arabanın ileri doğru hareket ettiği durumu işaret eder. |
+| ArabaGeriGidiyor | Arabanın geriye doğru hareket ettiği durumu işaret eder. |
+| ArabadanCikilmistir | Arabadan inildikten sonraki durumu işaret eder. |
 
 Bunun sonrasında iş akışına (Workflow) ait ekran görüntüsü aşağıdaki gibi olacaktır.
 
