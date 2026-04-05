@@ -55,7 +55,7 @@ Book ve Store tablolarını göz önüne aldığımızda Store tablosundan silin
 
 Normal şartlarda yukarıdaki içerikleri eşleştirmek adına pekala aşağıdaki gibi sorgular yazılabilir (Bildiğim kadarı ile yazdım. Bu konuda alternatifler için aydınlatılmaya ihtiyacım var)
 
-```text
+```sql
 Update Book 
 Set 
 	Title=S.Title,
@@ -73,7 +73,7 @@ Delete from Book Where BookID not in
 
 İlk olarak farklılıkları bulup gerçekleştirdiğimiz bir Insert işlemi var. Burada alt sorgu kullandığımızı görebilirsiniz. Güncelleme işleminde ise bir inner join kullanımına gittik. En beter sorgu da silme operasyonu için yazdığım olmalı sanıyorum ki. Bu sorguları işlettiğimizde Book ve Store tabloları eşlenecektir. Lakin bir taşla üç kuş vurabiliriz de. Şimdi konuyu merge ifadesini baz alarak ele alalım. Aşağıdaki uçtan uca sorgu işimizi görür (Ben diğer veritabanlarını kirletmemek adına LearningDb isimli ayrı bir veritabanında çalıştım)
 
-```text
+```sql
 Create database LearningDb;
 Use LearningDb;
 

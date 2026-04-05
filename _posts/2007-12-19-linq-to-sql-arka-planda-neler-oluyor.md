@@ -51,7 +51,7 @@ Console.WriteLine(mSumListPrice.ToString("C2"));
 
 Gelelim arka tarafta çalıştırılan SQL sorgu cümlelerine. SQL Server Profiler aracı kullanılarak yapılan çalışmada Count ve Sum aggregate metodlarının aşağıdaki gibi icra edildiği görülmektedir. Count fonksiyonunun çağırılması sonucu çalışan sorgu şu şekildedir;
 
-```text
+```sql
 exec sp_executesql N'SELECT COUNT(*) AS [value]
                                     FROM [Production].[Product] AS [t0]
                                         WHERE [t0].[Class] = @p0',N'@p0 nvarchar(1)',@p0=N'M'
@@ -67,7 +67,7 @@ var mClassProducts = from prd in adw.Products
 
 Dikkat edileceği üzere burada sadece ProductID alanları seçilmektedir. Bu ifade üzerinden Count metodu kullanılırsa SQL tarafında icra edilen operasyonun değişmediği, bir başka deyişle Count () çağrısı yapıldığı görülür. Sum fonksiyonunun çağırılması sonucu çalışan sorgu ise aşağıdaki gibidir.
 
-```csharp
+```sql
 exec sp_executesql N'SELECT SUM([t1].[value]) AS [value]
 FROM (
     SELECT CONVERT(Float,[t0].[ListPrice]) AS [value], [t0].[Class]
@@ -78,7 +78,7 @@ WHERE [t1].[Class] = @p0',N'@p0 nvarchar(1)',@p0=N'M'
 
 Dikkat edilecek olursa burada Sum işlemi için bir iç Select sorgusu daha yürütülmektedir. Aynı amaca yönelik olaraktan aşağıdaki gibi bir sorguda göz önüne alınabilir.
 
-```text
+```sql
 SELECT SUM(ListPrice) AS [Value] 
 FROM Production.Product
 GROUP BY Class
@@ -108,7 +108,7 @@ Sorgu ifadesi null değere sahip olan sınıflara ait ürünlerden, ürün numar
 
 Bizim için asıl önem arz eden konu LINQ to SQL ifadesinin SQL sunucusuna nasıl gönderildiğidir. Hemen SQL Server Profiler aracına bakılırsa aşağıdaki sorgu cümlesinin çalıştırıldığı görülebilir.
 
-```text
+```sql
 exec sp_executesql N'SELECT 
     [t0].[ProductID], [t0].[Name]
     , [t0].[ProductNumber], [t0].[MakeFlag]
@@ -161,7 +161,7 @@ Bu örnek kod parçasında PA hecesini içeren ve Class alanının değeri null 
 
 SQL sunucusu tarafına gönderilen sorgu cümlesinin içeriği ise aşağıdaki gibidir.
 
-```text
+```sql
 exec sp_executesql N'SELECT [t0].[Name], [t0].[ProductNumber]
 FROM [Production].[Product] AS [t0]
 WHERE 
@@ -190,7 +190,7 @@ Yukarıdaki kod parçasında yer alan LINQ to SQL ifadesine göre, ProductSubCat
 
 Örnek kod parçasında kullanılan LINQ to SQL ifadesi için SQL sunucusu üzerine gönderilen sorgu cümlesi ise aşağıdaki gibi olacaktır.
 
-```text
+```sql
 exec sp_executesql N'SELECT [t1].[ProductSubcategoryID], [t1].[ProductCategoryID], [t1].[Name], [t1].[rowguid], [t1].[ModifiedDate]
 FROM (
     SELECT ROW_NUMBER() OVER 
@@ -257,7 +257,7 @@ Buradaki kod parçasına göre ProductCategories, ProductSubCategories ve Produc
 
 Söz konusu LINQ to SQL ifadesinin SQL tarafındaki karşılığı ise aşağıdaki gibidir.
 
-```text
+```sql
 exec sp_executesql N'SELECT [t0].[Name] AS [CategoryName], [t1].[Name] AS [SubCategoryName], [t2].[ProductNumber], [t2].[Name] AS [ProductName]
 FROM [Production].[ProductCategory] AS [t0]
     INNER JOIN [Production].[ProductSubcategory] AS [t1] ON [t0].[ProductCategoryID] = [t1].[ProductCategoryID]
@@ -293,7 +293,7 @@ Yukarıdaki kod parçasında yer alan LINQ ifadesinde, her bir Product nesne ör
 
 Burada merak edilen konu, Month değerlerinin SQL tarafında nasıl ele alınacağıdır. Bu amaçla örnek çalıştırıldıktan sonra SQL Server Profiler aracına bakılırsa, DatePart SQL fonksiyonunun kullanıldığı açık bir şekilde görülebilir.
 
-```text
+```sql
 exec sp_executesql N'SELECT [t0].[ProductNumber], [t0].[Name], [t0].[ListPrice], [t0].[SellStartDate], [t0].[SellEndDate]
 FROM [Production].[Product] AS [t0]
 WHERE 
@@ -319,7 +319,7 @@ Buradaki ifadeye göre, her bir Product nesne örneğinin Name özelliklerinin i
 
 Söz konusu LINQ to SQL ifadesinin SQL tarafına aktarılan sorgu cümlesi ise aşağıdaki gibidir.
 
-```text
+```sql
 exec sp_executesql N'SELECT TOP (1) 
         [t0].[ProductID], [t0].[Name], [t0].[ProductNumber]
         , [t0].[MakeFlag], [t0].[FinishedGoodsFlag], [t0].[Color]
@@ -363,7 +363,7 @@ Buradaki sorgu ifadesine göre, SalesPersons koleksiyonunda tutulan SalesPerson 
 
 Şu aşamada bizim ilgilendiğimiz kısım SQL tarafına gönderilen sorgu cümlesidir. Bu cümlede aşağıdaki şekildedir.
 
-```text
+```sql
 exec sp_executesql N'SELECT [t0].[SalesPersonID], [t0].[Bonus], [t1].[SubTotal], [t1].[AccountNumber]
     FROM [Sales].[SalesPerson] AS [t0], [Sales].[SalesOrderHeader] AS [t1]
         WHERE ([t1].[TerritoryID] = @p0) AND ([t0].[Bonus] >= @p1) 
@@ -397,7 +397,7 @@ foreach (var r in result)
 
 Görüldüğü gibi ürünler sınıflara göre gruplanmış ve toplam ürün fiyatlarının değerleri elde edilmiştir. Burada çalışan LINQ to SQL ifadesinin SQL tarafına gönderilen karşılığı ise aşağıdaki gibi olacaktır.
 
-```text
+```sql
 SELECT SUM([t0].[ListPrice]) AS [TotalListPrice], [t0].[Class] AS [ClassName]
 FROM [Production].[Product] AS [t0]
 WHERE [t0].[Class] IS NOT NULL
@@ -424,7 +424,7 @@ foreach (var r in result)
 
 Bu sefer gruplanan nesneye ait Key özelliğinin null olup olmadığına bakılmaktadır. Kod bu haliyle çalıştırıldığında da bir önceki ile aynı sonuçların elde edildiği görülebilir. Ne varki SQL tarafına gönderilen ifadeye bakıldığında aşağıdaki sonuçlar ortaya çıkmaktadır.
 
-```text
+```sql
 SELECT [t1].[Class] AS [ClassName], [t1].[value] AS [TotalListPrice]
 FROM (
             SELECT SUM([t0].[ListPrice]) AS [value], [t0].[Class]
@@ -456,7 +456,7 @@ Bu örnekte NorthwindDataContext kullanılmaktadır. Buna göre LINQ ifadesinde 
 
 Bu tarz bir ihtiyacı SQL tarafında karşılamak için Not In kullanımı tercih edilebilir. LINQ tarafında metod bazlı yazılan bu örnek ise, SQL tarafına aşağıdaki şekilde aktarılmaktadır.
 
-```text
+```sql
 SELECT DISTINCT [t0].[City]
 FROM [dbo].[Customers] AS [t0]
 WHERE 
@@ -496,7 +496,7 @@ LINQ to SQL ifadesinde SalesPersons koleksiyonundaki her bir SalesPerson çekilm
 
 Bu tarz bir işleyiş için SQL tarafı göz önüne alındığında ortaya karmaşık bir sorgu çıkacağı düşünülebilir. Nitekim LINQ to SQL ifadesinin SQL tarafındaki karşılığı aşağıdaki gibidir.
 
-```text
+```sql
 exec sp_executesql N'
 SELECT 
     [t0].[SalesPersonID], [t0].[TerritoryID], [t0].[SalesQuota]
@@ -532,7 +532,7 @@ Bu kodun çalışma zamanı çıktısı ise aşağıdaki gibi olacaktır.
 
 Bu sefer bir SalesOrder'ın bağlı olduğu SalesOrderHeaders koleksiyonundaki her bir SalesOrderHeader nesne örneğinin SubTotal değerlerinin her biri 80' in üzerinde olanların elde edilmesi sağlanmaktadır. Bir başka deyişle bir SalesOrder üzerinden ulaşılan nesne topluluğunda n tane SalesOrderHeader olduğu düşünülecek olursa, bunların her birine ait SubTotal özelliklerinin değerlerinin 80 ve üzerinde olma şartı konulmaktadır. Söz konusu All metodu için SQL tarafında üretilen çıktı ise aşağıdaki gibidir.
 
-```text
+```sql
 exec sp_executesql N'
 SELECT 
     [t0].[SalesPersonID], [t0].[TerritoryID], [t0].[SalesQuota]
@@ -571,7 +571,7 @@ Bu örnekte NorthwindDataContext tipi kullanılmakta olup Customers ve Suppliers
 
 Elbetteki SQL tarafına bakıldığında Concat metodunun aşağıdakine benzer bir dönüşüme uğradığı görülmektedir.
 
-```text
+```sql
 SELECT [t2].[Country], [t2].[City]
 FROM (
             SELECT [t0].[Country], [t0].[City]
@@ -594,7 +594,7 @@ Bu durumda programın çıktısı aşağıdaki gibi olacaktır.
 
 Diğer taraftan Distinct metodunun kullanılması sonrasında SQL tarafına gönderilen sorgu cümlesinde ise Distinct anahtar kelimesinin kullanıldığıda aşikardır.
 
-```text
+```sql
 SELECT DISTINCT [t3].[Country], [t3].[City]
 FROM (
             SELECT [t2].[Country], [t2].[City]
@@ -628,7 +628,7 @@ foreach (var r in result)
 
 Bu sonucun elde edilmesi için arka planda çalıştırılan SQL cümlesi ise aşağıdaki gibidir.
 
-```text
+```sql
 SELECT DISTINCT [t0].[City]
 FROM [dbo].[Customers] AS [t0]
 WHERE EXISTS(
@@ -668,7 +668,7 @@ Bu kod parçasında kullanılan LINQ ifadesine bakıldığında, LevelOk isimli 
 
 SQL tarafına baktığımızda ise aşağıdaki sorgu cümlesinin çalıştırıldığı görülmektedir.
 
-```text
+```sql
 exec sp_executesql N'SELECT [t0].[Name], [t0].[SafetyStockLevel], 
     (CASE 
         WHEN [t0].[SafetyStockLevel] >= @p0 THEN CONVERT(NVarChar(12),@p1) ELSE @p2 END

@@ -40,7 +40,7 @@ Eğer tabloda oluşan güncellemelerden sonra katalog bilgisinin otomatik olarak
 
 Artık tek yapmamız gereken Full-Text Searching (Tüm Metinde Arama) işlemini kullanmak. Bunun için T-SQL'de birkaç komut var. Bunlardan ikisi, prototipleri aşağıdaki gibi olan FREETEXT ve FREETEXTTABLE anahtar sözcükleridir.
 
-```text
+```sql
 FREETEXT ( Arama Yapılacak Alan , 'Aranacak Kelime' )
 FREETEXTTABLE ( Tablo Adi , Arama Yapılacak Alan , 'Aranacak Kelime' )
 ```
@@ -61,7 +61,7 @@ FreeTextTable anahtar sözcüğünün kullanımı ise biraz daha karmaşıktır.
 
 Şimdi Full-Text Searching (Tüm Metinde Arama) işlemini bir ASP.NET uygulamasında kullanalım. Bu uygulamada basit olarak bir arama işlemi sonucunda elde edilecek sonuçlar bir DataGrid kontrolünde gösterilecektir. Amacımız bir kelimeyi makalelerin içeriğinde aramak ve bulunan sonuçları kullanıcıya sunmak. Gerçekleştireceğimiz uygulamada aranan kelimenin girileceği TextBox'ta oluşturulabilecek SQL Injection'ların önüne geçmek amacıyla bir Stored Procedure kullanacağız. Öncelikle SP'mizi aşağıdaki gibi oluşturalım.
 
-```text
+```sql
 CREATE PROCEDURE dbo.sp_AraBul
 (
       @Aranan nvarchar(255) 
@@ -147,7 +147,7 @@ Full-Text Searching (Tüm Metinde Arama) tekniğinde sadece tek bir kelime üzer
 
 Diğer yandan içerik alanında hem overload kelimesi hem de interface kelimesi geçen makaleleri bulmak istediğimiz bir örnek ile karşılaşırsak ne yaparız? İşte böyle bir durumda AND, OR gibi mantıksal operatörlerin sunduğu imkânlardan faydalanmamız gerekecektir. Bunun için Full-Text Searching (Tüm Metinde Arama) işlemlerinde kullanabileceğimiz iki yeni SQL anahtar sözcüğü vardır. Bunlar CONTAINS ve CONTAINSTABLE anahtar sözcükleridir. Bu ifadelerde AND, OR, NEAR gibi mantıksal operatörler kullanılarak arama işlemleri daha detaylı bir şekilde gerçekleştirilebilir. Örneğin aşağıdaki sorgu, overload ve interface kelimelerinin bir arada geçtiği alanları arar.
 
-```text
+```sql
 SELECT A.*,M.Konu,M.[ID] FROM Makale AS M INNER JOIN
 CONTAINSTABLE(Makale,Icerik,'overload AND interface') AS A ON M.[ID]=A.[KEY]
 ORDER BY A.RANK DESC

@@ -15,7 +15,7 @@ Ado.Net Data Service operasyonlarına yapılan istemci çağrılarının HTTP ba
 
 İlk olarak veritabanı üzerindeki hazırlıklarımızı yapalım. Örneğimizde Azon isimli (Benim seminerlerimi takip edenler bu isimdeki hayali şirketi hatırlayacaktır:)) bir veritabanını ve bunun üzerinde yer alan Kategori ve Kitap isimli tabloları kullanıyor olacağız. Şimdi hiç vakit kaybetmeden aşağıdaki SQL Script'ini SQL Management Studio üzerinde çalıştırabilir ve örnek veritabanı, tablo ve test verilerinin eklenmesini sağlayabilirsiniz.
 
-```text
+```sql
 --Test veritabanı oluşturulur
 Create Database Azon
 GO
@@ -189,7 +189,7 @@ SaveChanges metodunun çağırılması sırasında birde System.Data.Services.Cl
 
 Tabi SaveChanges çağrısı sırasında sunucu tarafındaki veri kaynağı üzerindede bir takım SQL sorgu ifadeleri çalışacaktır. Burada SQL Server Profiler aracının kullanmanızı şiddetle tavsiye ederim. Örneğin veri ekleme testleri sırasında benim yakaladığım örnek sql ifadeleri aşağıdaki gibi olumuştur.
 
-```text
+```sql
 -- Kategori için Insert çağrısı
 exec sp_executesql N'insert [dbo].[Kategori]([Ad])
 values (@0)
@@ -256,7 +256,7 @@ foreach (Kitap k in tumKitaplar)
 
 Bu kod parçasında örnek olarak KategoriId değeri 1 olan Kategoriye bağlı Kitap nesnelerinin fiyatlarının 10 birim arttırılması sağlanmaktadır. Bizim için bu kod parçasında dikkat edilmesi gereken fonksiyonellikler UpdateObject ve yine SaveChanges metodlarıdır. SaveChanges metodu SQL tarafında aşağıdaki sorgu ifadelerinin oluşmasına neden olur.
 
-```text
+```sql
 -- İki Update yakalanır. Nitekim 1 numaralı kategoride sadece iki Kitap vardır.
 exec sp_executesql N'update [dbo].[Kitap]
 set [Ad] = @0, [Fiyat] = @1, [StokMiktari] = @2
@@ -328,7 +328,7 @@ if (Int32.TryParse(Console.ReadLine(),out secilenKategoriId))
 
 Kodda öncelikli olarak kullanıcıya var olan Kategori listesi gösterilir ve silmek istediği Kategoriye ait KategoriId değerini girmesi istenir. Bunun sonrasında söz konusu Kategori ve buna bağlı Kitaplar bulunur. Önce Kitap nesne örnekleri tek tek DeleteObject metodu ile çıkartılmak üzere işaretlenir. Sonrasında ise aynı işlem seçilen Kategori için yapılır. Son olarak tüm işlemlerin SaveChanges metodu ile veritabanına gönderilmesi sağlanır. Bu noktada SQL tarafında oluşturulan sorgu ifadeleri aşağıdakilere benzer olacaktır. (Bu ifadelerin yakalanması için SQL Server Profiler aracını kullandığımızı hatırlayalım)
 
-```text
+```sql
 -- 43 nolu KategoriId değerine sahip Kitap verileri silinir
 exec sp_executesql N'delete [dbo].[Kitap]
 where (([KitapId] = @0) and ([KategoriId] = @1))',N'@0 int,@1 int',@0=75,@1=43

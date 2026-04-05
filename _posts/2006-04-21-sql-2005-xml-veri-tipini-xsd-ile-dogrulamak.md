@@ -64,7 +64,7 @@ Bu şema bilgisinde Kitaplar root elementi içerisinde yer alan Kitap elementi t
 
 Yukarıdaki gibi bir şema (Schema) bilgisini sisteme kayıt edebilmek için Sql Server 2005 üzerinde aşağıdaki sorgu cümlesini çalıştırmamız gerekmektedir. Bu cümle ile yukarıdaki şema bilgisini sisteme KitapSchema XML şema koleksiyonu olacak şekilde eklemekteyiz.
 
-```text
+```sql
 IF EXISTS (SELECT schema_id FROM sys.XML_schema_collections WHERE name='KitapSchema')
 BEGIN
      RAISERROR('Şema zaten var...',16,1)
@@ -104,7 +104,7 @@ Bu sql cümlesini çalıştırdığımız takdirde, sistemde yer alan belirli ta
 
 ![mk158_1.gif](/assets/images/2006/mk158_1.gif)
 
-Dikkat ederseniz en tepede şema koleksiyonumuzun (KitapSchema) yer aldığı sistem tablosuna bakıyoruz. Burada şema koleksiyonumuz için oluşturulan xml_collection_id alanının, namespaces, elements ve attributes sistem tablolarında nasıl yer aldığına dikkat ediniz. Gördüğünüz gibi, şemamız içerisindeki her bir ayrıntı sistem tablolarına yazılmaktadır. Özellikle namespaces sistem tablosundaki isim alanı bizim için önemlidir. Buradaki isim alanını, şema bilgisini uygulamak istediğimiz XML veri tiplerinde kullanacağız. Varsayılan olarak, Visual Studio.Net gibi bir ortamda şema dosyanızı hazırladıysanız eğer (ki ben böyle yaptım) encoding formatının utf-8 olduğunu ve buradaki gibi http://www.bsenyurt.com/Kitaplar adında bir isim alanının eklenmediği görürsünüz. Burada Utf-8 formatını mutlaka Utf-16 olarak çevirmeliyiz. Nitekim Sql Server 2005 özellikle şema bilgilerinde sadece Utf-16 formatını desteklemektedir. Ayrıca, Sql Server 2005 içerisindeki XML verilerinin bu şemayı kullanabilmesi içinde, namespaces sistem tablosuna bir adın eklenmiş olması gerekmektedir. Bu amaçlada ayrıca bir xmlns'i eklememiz gerekti. Aksi takdirde, namespaces sistem tablosunda name alanı boş olan bir satır elde ederiz.
+Dikkat ederseniz en tepede şema koleksiyonumuzun (KitapSchema) yer aldığı sistem tablosuna bakıyoruz. Burada şema koleksiyonumuz için oluşturulan xml_collection_id alanının, namespaces, elements ve attributes sistem tablolarında nasıl yer aldığına dikkat ediniz. Gördüğünüz gibi, şemamız içerisindeki her bir ayrıntı sistem tablolarına yazılmaktadır. Özellikle namespaces sistem tablosundaki isim alanı bizim için önemlidir. Buradaki isim alanını, şema bilgisini uygulamak istediğimiz XML veri tiplerinde kullanacağız. Varsayılan olarak, Visual Studio.Net gibi bir ortamda şema dosyanızı hazırladıysanız eğer (ki ben böyle yaptım) encoding formatının utf-8 olduğunu ve buradaki gibi `http://www.bsenyurt.com/Kitaplar` adında bir isim alanının eklenmediği görürsünüz. Burada Utf-8 formatını mutlaka Utf-16 olarak çevirmeliyiz. Nitekim Sql Server 2005 özellikle şema bilgilerinde sadece Utf-16 formatını desteklemektedir. Ayrıca, Sql Server 2005 içerisindeki XML verilerinin bu şemayı kullanabilmesi içinde, namespaces sistem tablosuna bir adın eklenmiş olması gerekmektedir. Bu amaçlada ayrıca bir xmlns'i eklememiz gerekti. Aksi takdirde, namespaces sistem tablosunda name alanı boş olan bir satır elde ederiz.
 
 ```xml
 <?xml version="1.0" encoding="utf-16"?>
@@ -117,7 +117,7 @@ Artık sistemde, KitapSchema isminde bir XML şema koleksiyonumuz mevcuttur. Sı
 
 Benzer kurallar, tablomuzu sorgu cümlesi ile oluştururken de geçerlidir. Örneğin aşağıdaki sql cümlesinde, yukarıdaki tabloya ait script yer almaktadır. Gördüğünüz gibi XML veri tipini belirlerken içeriğin dbo.KitapSchema nesnesi tarafında denetleneceği belirtilmektedir.
 
-```text
+```sql
 CREATE TABLE dbo.BookBase
 (
     ID int IDENTITY(1,1) NOT NULL,
@@ -136,7 +136,7 @@ ON PRIMARY
 
 Aşağıdaki insert sorgusunda geçerli bir veri girişi yapılmaktadır.
 
-```text
+```sql
 INSERT INTO dbo.BookBase VALUES 
     (N'<Kitaplar xmlns="http://www.bsenyurt.com/Kitaplar">
             <Kitap ID="1000">
@@ -156,7 +156,7 @@ INSERT INTO dbo.BookBase VALUES
 
 Son olarak sistemde yer alan bir şema koleksiyonunu kaldırmak istediğimizde her zamanki gibi drop anahtar sözcüğünü aşağıdaki gibi kullanmamız gerekecektir.
 
-```csharp
+```sql
 IF EXISTS (SELECT schema_id FROM sys.XML_schema_collections WHERE name='KitapSchema')
 BEGIN
     DROP XML SCHEMA COLLECTION KitapSchema

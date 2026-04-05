@@ -46,7 +46,7 @@ Her zamanki gibi elimizde REST modelin taşınmış hazır bir WCF Servis uygula
 
 Sp içeriği
 
-```text
+```sql
 CREATE PROCEDURE dbo.GetProductsByCategory
 (
  @CategoryID int

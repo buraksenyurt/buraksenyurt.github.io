@@ -47,7 +47,7 @@ DataSource bileşenleri genellikle veri-bağlı kontroller ile kullanılırlar. 
 
 LoadSize niteliğine atanan değer, Silverlight uygulaması ilk yüklendiğinde çekilecek olan satır sayısını belirtmektedir. Gerçektende, uygulama bu haliyle çalıştırıldığında, SQL Server Profiler aracından yakalanan sorgu cümlesi aşağıdaki gibidir.
 
-```text
+```sql
 SELECT 
 [Limit1].[C1] AS [C1], 
 [Limit1].[ProductID] AS [ProductID], 
@@ -78,7 +78,7 @@ FROM ( SELECT TOP (10)
 
 Sanıyorumki SELECT TOP (10) ifadesi sizlerin dikkatinizden kaçmamıştır. Ancak LoadSize niteliği kaldırılırsa bu durumda SQL tarafında aşağıdaki sorgunun çalıştırıldığı görülecektir.
 
-```text
+```sql
 SELECT 
 1 AS [C1], 
 [Extent1].[ProductID] AS [ProductID], 
@@ -98,15 +98,13 @@ Bu kez tüm Products tablosunun içeriği seçilmektedir. LoadSize özelliğini 
 
 Bu sorunun cevabı, DomainDataSource.DomainContext elementi içerisinde verilmektedir. Bu kısımda, ds ön ekli namespace üzerinden NorthwindContext isimli DomainContext nesne referansının tanımlaması yapılmaktadır. Böylece, DomainDataSource bileşeninin kullanacağı DomainContext nesne örneği belirlenmiş olur.
 
-DataGrid bileşeninin söz konusu DomainDataSource kontrolüne bağlanması içinse, ItemsSource niteliğine ilgili değerin atanması yeterlidir. (İtiraf etmeliyim ki, ItemsSource niteliğine atanan değerin yazım stilini, ne kadar dekleratif olsada halen ezbere yazamamaktayım
-
-) Uygulamayı bu haliyle çalıştırdığımızda aşağıdaki ekran görüntüsü ile karşılaşmamız son derece muhtemeldir.
+DataGrid bileşeninin söz konusu DomainDataSource kontrolüne bağlanması içinse, ItemsSource niteliğine ilgili değerin atanması yeterlidir. (İtiraf etmeliyim ki, ItemsSource niteliğine atanan değerin yazım stilini, ne kadar dekleratif olsada halen ezbere yazamamaktayım) Uygulamayı bu haliyle çalıştırdığımızda aşağıdaki ekran görüntüsü ile karşılaşmamız son derece muhtemeldir.
 
 ![blg17_2.gif](/assets/images/2009/blg17_2.gif)
 
 Burada önemli olan noktalardan birisi, tanımlamalarım tamamen dekleratif olarak yapılmış olması ve geliştiricinin herhangibir kodlama yapmamış olmasıdır. Daha önceki blog yazılarımda yer alan örnekler göz önüne aldığımızda, CRUD operasyonları için istemci tarafında bazı kodlamalar yaptığımız ortadadır. Şimdi XAML içeriğimizi biraz daha zengineştirmeye çalışalım. Örneğin, sıralama kriteri ekleyebiliriz. Bunun için SortDescriptor elementinin kullanılması gerekmektedir. Bu element, System.Windows.Ria.Controls.dll assembly'ı içerisinde yer aldığında, isim alanının XAML içeriğinde bildirilmesi gerekir. Bu şekilde başlayan düzenlemelerin son hali aşağıdaki gibidir.
 
-```csharp
+```html
 <UserControl xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Ria.Controls"  xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data" 
     x:Class="DomainDS.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
@@ -130,7 +128,7 @@ Burada önemli olan noktalardan birisi, tanımlamalarım tamamen dekleratif olar
 
 SortDescription elementi içerisinde yer alan Direction niteliğine atanan değer ile sıralamanın yönü belirtilmektedir. Diğer taraftan PropertyPath niteliğine atanan değer ilede hangi alana göre sıralama yapılacağına karar verilir. Bu ayarlamalara göre Products tablosundan ilk yüklemede 40 adet ürün bilgisi, UnitPrice değerlerine göre ters sırada çekilecektir. Nitekim SQL tarafında çalıştırılan sorguya bakıldığında aşağıdaki cümlenin çalıştırıldığı kolayca tespit edilebilir.
 
-```text
+```sql
 SELECT TOP (40) 
 [Project1].[C1] AS [C1], 
 [Project1].[ProductID] AS [ProductID], 
@@ -196,9 +194,7 @@ DataPager kontrolü doğal olarak kimi (yani hangi veri kaynağını) sayfalayac
 
 Burada dikkat çeken noktalardan biriside LoadSize ile ilk etapta 40 satırın yüklenmesine rağmen, sayfalama içerisinde en çok 80 (4X20) kaydın gösterilebilecek olmasıdır. Bu aslında kayda değer ve incelenmesi gereken bir durumdur. Nitekim SQL tarafında çalıştırılan sorgu cümelelerine dikkatlice bakmak gerekmektedir. İşte eğlence başlıyor.
 
-Sayfa ilk yüklendiğinde TOP 40 ile 40 satırlık bir veri bloğunun yüklenmesi sağlanır. PageSize değeri 20 olarak berlilendiğinden 1nci sayfadan 2nci sayfaya geçtiğimizde, SQL tarafında herhangibir sorgu çalıştırılmadığı gözlemlenir.(İyi bir gelişme
-
-) Ancak 3ncü sayfaya geçmek istediğimizde, 40 satırlık yükleme boyutunu geçtiğimiz için sunucu tarafında yeni bir SQL sorgusu çalıştırılacak ve rownumber değeri 40' ın üzerinde olanlar talep edilecektir. Aşağıdaki SQL cümlesinde görüldüğü gibi...
+Sayfa ilk yüklendiğinde TOP 40 ile 40 satırlık bir veri bloğunun yüklenmesi sağlanır. PageSize değeri 20 olarak berlilendiğinden 1nci sayfadan 2nci sayfaya geçtiğimizde, SQL tarafında herhangibir sorgu çalıştırılmadığı gözlemlenir.(İyi bir gelişme) Ancak 3ncü sayfaya geçmek istediğimizde, 40 satırlık yükleme boyutunu geçtiğimiz için sunucu tarafında yeni bir SQL sorgusu çalıştırılacak ve rownumber değeri 40' ın üzerinde olanlar talep edilecektir. Aşağıdaki SQL cümlesinde görüldüğü gibi...
 
 ```sql
 SELECT TOP (40) 
@@ -233,9 +229,7 @@ WHERE [Project1].[row_number] > 40
 ORDER BY [Project1].[UnitPrice] DESC
 ```
 
-Ne yazıkki 20 satır veri çekilmesi gerekmesine rağmen LoadSize özelliği nedeniyle Top 40 kullanımı söz konusudur. (
-
-Bu açıkçası benim pek beklediğim bir durum değildi.) Peki 4ncü sayfaya geçmek istersek ne olacaktır? Bu durumda rownumber değeri 60' ın (3X20 veya 3ncü sayfa X PageSize) üzerinde olan veriler çekilmeye çalışılacaktır.
+Ne yazıkki 20 satır veri çekilmesi gerekmesine rağmen LoadSize özelliği nedeniyle Top 40 kullanımı söz konusudur. (Bu açıkçası benim pek beklediğim bir durum değildi.) Peki 4ncü sayfaya geçmek istersek ne olacaktır? Bu durumda rownumber değeri 60' ın (3X20 veya 3ncü sayfa X PageSize) üzerinde olan veriler çekilmeye çalışılacaktır.
 
 ```sql
 SELECT TOP (40) 

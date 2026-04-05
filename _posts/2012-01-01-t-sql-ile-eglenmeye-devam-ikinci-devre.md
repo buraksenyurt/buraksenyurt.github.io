@@ -24,7 +24,7 @@ Aslında hiç vakit kaybetmeden sorgularımızı incelemeye başlayalım dilerse
 
 Bunun için aşağıdaki T-SQL betiğini yazdım.
 
-```text
+```sql
 Use AdventureWorks 
 Go 
 -- Function içerisinde Rand() fonksiyonunu kullanamayız(Invalid use of side-effecting or time-dependent operator in 'rand' within a function.) hatası alırız. Bu yüzden bir hile yapacağız ve rastgele sayıyı bir view içerisinden alacağız ;) Steve Kass' ın güzide çözümlerinden birisidir. 
@@ -64,7 +64,7 @@ Go
 
 Burada tanımlamış olduğumuz ufnGeneratePassword isimli fonksiyon parametre olarak üretilecek şifre uzunluğunu, bu şifrenin ASCII tablosundaki hangi değer aralığında olacağını ve şifre içerisinde olmasını istemediğimiz karakterleri almaktadır. Fonksiyon kendi içerisinde söz konusu ASCII değer aralığında bir üretim gerçekleştirmek için de, rastgele sayı üretme işini üstlenen bir View’ dan yararlanmaktadır. Fonksiyonu aşağıdaki T-SQL ifadesinde olduğu gibi kullanıp bir kaç kez test ettiğimizde başarılı sonuçlar elde ettiğimizi görebiliriz.
 
-```text
+```sql
 Declare @Password1 nvarchar(10) 
 Set @Password1= dbo.ufnGeneratePassword(10,65,29,'abcdefg') 
 Select @Password1 [Password]
@@ -84,13 +84,13 @@ Bu ilginç ama bana göre oldukça işe yarayacak T-SQL ifadesinden sonra bir ba
 
 Aslında geçtiğimiz yazımızdaki örneklerimizde kullandığımız system view nesnelerini göz önüne alırsak; öncelikli olarak ilgili şemadaki tabloları bulmamız ve her biri için dinamik bir T-SQL ifadesini yürütmemiz gerektiği ortadadır. Temel olarak şema transferi için aşağıdaki gibi bir T-SQL ifadesi kullanılabilir.
 
-```text
+```sql
 alter schema YeniSchemaAdi transfer [HumanResources].[Employee]
 ```
 
 Söz gelimi bu ifade ile Employee tablosunun HumanResources şemasından YeniSchameAdi şemasına transfer edilmesi sağlanmaktadır. Ancak işi zorlaştıran kısım bu T-SQL ifadesinin dinamik olarak oluşturulması ve yürütülmesi sırasında ortaya çıkmaktadır. Dolayısıyla bir cursor kullanımı ve söz konusu şemaya ait tablolar üzerinden dolaşılması, diğer yandan her bir tablo için ilgili şema transfer işini üstlenen T-SQL ifadesinin dinamik olarak oluşturulması ve bu ifadeninde dinamik olarak çalıştırılması gerekmektedir. Aynen aşağıdaki T-SQL betik bloğunda görüldüğü gibi
 
-```text
+```sql
 -- Önce yeni bir schema üretelim 
 create schema HumanResourcesNew 
 go
@@ -128,7 +128,7 @@ Tüm veritabanlarını gezmek için yine sistem SP’ lerinden birisi olan sp_MS
 
 Ancak biraz uğraştıktan ve epey bir hata aldıktan sonra aşağıdaki T-SQL sorgusunu yazmayı başarabilmiştim.
 
-```text
+```sql
 -- Önce veritabanı adı ve buradaki toplam tablo sayısını tutacak olan Temp tabloyu üretelim 
 Create Table #AllTables 
 ( 
@@ -160,7 +160,7 @@ Merak ettiğim bir diğer konu ise Insert işlemlerine ilişkindi. Bazı hallerd
 
 Senaryo gereği OziRestoran isimli bir veritabanı oluşturup üzerine Siparis ve SiparisTarihce isimli iki tablo ekledim.
 
-```text
+```sql
 Create database OziRestoran 
 go
 
@@ -185,7 +185,7 @@ Insert işlemimizde şunu yapmak istediğimizi düşünelim; Siparis tablosuna b
 
 İşte Insert sorgumuz.
 
-```text
+```sql
 Use OziRestoran 
 Go 
 insert into Siparis( Aciklama, Tarih ) 
@@ -212,7 +212,7 @@ Hazır Insert işlemlerinden konu açılmışken acaba içeriğini rastgele test
 
 Aslında bu konuda bir önceki çalıştığım firmada Database Developer arkadaşlarımın yaptığı önemli çalışmalar vardı. Milyonlarca anlamlı veri yığını oluşturuyorlardı. Onların eline su dökemem belki ama en azından kendi çapımda bir şeyler yapabilirim diye düşündüm. İşe basit bir senaryo ile başladım. Örneğin rastgele Ad,Sodad,Şehir,Maaş ve Seviye bilgilerinden oluşacak bir veri tablosunu üretmeye çalıştım. Bu amaçla aşağıdaki gibi bir sorgu oluşturdum.
 
-```text
+```sql
 Create Table Adlar 
 ( 
     Ad nvarchar(50) 

@@ -34,13 +34,13 @@ Bizim için önemli olan adımlar, 5inci ve 6ncı adımlardır. Nitekim bu adım
 
 DeadLock oluşması durumunda, birbirlerini bekleyen Transaction'larda, bekleme sürelerini ayarlayabilir ve hangi Transaction'ın daha önce RollBack edilmesi gerektiğine karar verebiliriz. Bunun için, T-Sql'in LOCK_TIMEOUT ve DEADLOCK_PRIORITY anahtar sözcükleri kullanılır. Bir Transaction'ın başka bir Transaction'da oluşan kilidi ne kadar süre ile beklemesi gerektiğini belirtmek için aşağıdaki gibi bir sql cümleciği kullanılır.
 
-```text
+```sql
 SET LOCK_TIMEOUT 3000
 ```
 
 Burada LOCK_TIMEOUT değeri 3 saniye (3000 milisaniye) olarak belirtilmiştir. Diğer yandan, bir Transaction için DeadLock önceliğini aşağıdaki gibi bir sql cümleciği ile belirtebiliriz.
 
-```text
+```sql
 SET DEADLOCK_PRIORITY LOW
 ```
 

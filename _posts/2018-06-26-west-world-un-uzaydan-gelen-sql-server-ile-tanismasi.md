@@ -92,14 +92,14 @@ sqlcmd -S localhost -U SA -P '...'
 
 -S anahtarı sonrası bağlanacağımız sunucuyu, -U sonrası bağlanacak kullanıcıyı ve -P sonrası da bu kullanıcının şifresini belirtiyoruz. West-World güzel havadan olsa gerek oldukça ılımlı. Sorunsuz bir şekilde bağlantı isteklerini kabul edip komut satırını kullanımıma açtı. Ben de bu teklifi memnuniyetle karşıladım ve veritabanı oluşturmak için aşağıdaki komutu kullandım.
 
-```bash
+```sql
 CREATE DATABASE azon
 Go
 ```
 
 var olan veritabanlarını görmek içinse aşağıdaki komutu. Amacım tabii ki de az önce oluşturduğum Azon isimli veritabanını sistem içerisinde görebilmekti.
 
-```bash
+```sql
 SELECT Name from sys.Databases
 go
 ```
@@ -108,7 +108,7 @@ go
 
 Derken o an üzerinde çalışılacak veritabanını değiştirmeye ve bir tablo oluşturup ona birkaç örnek veri satırı eklemeye karar verdim.
 
-```bash
+```sql
 use azon
 go
 

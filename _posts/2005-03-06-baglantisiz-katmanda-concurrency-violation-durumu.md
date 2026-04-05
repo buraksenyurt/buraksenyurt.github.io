@@ -15,15 +15,19 @@ Bağlantısız katman nesneleri ile çalışırken karşılaşabileceğimiz prob
 
 Örneğin belli bir satıra ait verileri güncellemek için kullanabileceğimiz aşağıdaki Sql sorgusunu ele alalım.
 
-```text
+```sql
 UPDATE MAILS SET AD=@AD,SOYAD=@SOYAD,EMAIL=@EMAIL WHERE ID=@ORGID AND AD=@ORGAD AND SOYAD=@ORGSOYAD AND EMAIL=@ORGEMAIL
 ```
 
 Sorgumuz basitçe, MAILS isimli veritabanındaki AD, SOYAD ve EMAIL alanlarının değerlerini güncellemektedir. Bunu yaparkende optimistic (iyimser) yaklaşımını kullanır. Bu nedenle, Where koşulunda tabloya ait primary key alanı (ID) dahil olmak üzere tüm alanlar kullanılmaktadır. Böylece tüm alanların eşleştirme için kullanıldığı bir sorgu ortaya çıkar.
 
-> Optimistic yaklaşımda ele alınan yukarıdaki sorgu modeli için SQL Server ve benzeri veritabanı sistemlerinde daha etkili yöntemler de vardır. Örneğin SQL üzerinde timestamp tipinden (ya da uniqueIdentifier tipinden) alanlar kullanılabilir. Timestamp türünden olan alanlar, satır üzerinde yapılacak herhangi bir güncelleme işlemi sonrasında sistem tarafından otomatik olarak benzersiz bir karakter dizisi ile değiştirilen alanlardır. Böylece yukarıdaki sorgunun yaptığı işin aynısını aşağıdaki gibi de yapabiliriz. (Buradaki Kontrol alanı tipi timestamp tipindendir.)
-> Update Mails Set Ad=@Ad,Soyad=@Soyad,Email=@Email Where Id=@OrgId And Kontrol=@Kontrol
-> Bu ifadenin bize sağladığı en büyük avantaj elbette n sayıda alan içeren bir tabloda where ifadesinden sonra sadece iki alan kontrolü ile (primary key ve timestamp alanı) Concurrency Violation durumunu irdeleyebilecek olmamızdır. Biz makalemizde daha uzun olan yolu incelemeye çalışacağız. Lakin gerçek hayat modellerinde timestamp veya uniqueidentifier ve benzeri tipten alanların karşılaştırma işlemi için ele alınması daha doğru ve güçlü bir yaklaşım olacaktır.
+Optimistic yaklaşımda ele alınan yukarıdaki sorgu modeli için SQL Server ve benzeri veritabanı sistemlerinde daha etkili yöntemler de vardır. Örneğin SQL üzerinde timestamp tipinden (ya da uniqueIdentifier tipinden) alanlar kullanılabilir. Timestamp türünden olan alanlar, satır üzerinde yapılacak herhangi bir güncelleme işlemi sonrasında sistem tarafından otomatik olarak benzersiz bir karakter dizisi ile değiştirilen alanlardır. Böylece yukarıdaki sorgunun yaptığı işin aynısını aşağıdaki gibi de yapabiliriz. (Buradaki Kontrol alanı tipi timestamp tipindendir.)
+
+```sql
+Update Mails Set Ad=@Ad,Soyad=@Soyad,Email=@Email Where Id=@OrgId And Kontrol=@Kontrol
+```
+
+Bu ifadenin bize sağladığı en büyük avantaj elbette n sayıda alan içeren bir tabloda where ifadesinden sonra sadece iki alan kontrolü ile (primary key ve timestamp alanı) Concurrency Violation durumunu irdeleyebilecek olmamızdır. Biz makalemizde daha uzun olan yolu incelemeye çalışacağız. Lakin gerçek hayat modellerinde timestamp veya uniqueidentifier ve benzeri tipten alanların karşılaştırma işlemi için ele alınması daha doğru ve güçlü bir yaklaşım olacaktır.
 
 Böyle bir sorgunun neden olacağı istisnai durumu anlayabilmek için aşağıdaki senaryoyu göz önüne almakta fayda olacağı inancındayım. Senaryomuzda en az iki kullanıcı rol almaktadır. Bu kullanıcılarımıza A ve B takma isimlerini verdiğimizi düşünelim. Her iki kullanıcıda database'den MAILS tablosundaki verileri bağlantısız katmana DataAdapter sınıfına ait nesne örneği vasıtasıyla almaktadır.
 

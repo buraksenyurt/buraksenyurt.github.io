@@ -58,7 +58,7 @@ Dikkat edilmesi gereken noktalardan birisi AcceptProjectionRequest ise MaxProtoc
 
 Görüldüğü üzere Product, ProductCategory ve ProductSubcategory Entity'leri kullanılmaya hazırdır. Evetttt...Gelelim yazımızın önemli olan kısmına. Tarayıcı üzerinden aşağıdaki sorguyu talep ettiğimizi düşünelim.
 
-http://localhost:1714/AdventureServices.svc/Product?$select=ProductID,Name,ListPrice
+`http://localhost:1714/AdventureServices.svc/Product?$select=ProductID,Name,ListPrice`
 
 Dikkat edileceği üzere Product Entity'si üzerinden select sorgusu atılmış ve sadece ProductID,Name,ListPrice alanları talep edilmiştir. Bu sorgunun çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
@@ -66,7 +66,7 @@ Dikkat edileceği üzere Product Entity'si üzerinden select sorgusu atılmış 
 
 Dikkat edileceği üzere Product tablosundaki tüm ürünlerin sadece ProductID,Name ve ListPrice alanları çekilmiştir. İşin güzel yanı, bu URL talebi için arka planda çalıştırılan SQL sorgusuda sadece istenen alanları değerlendirmektedir. İşte URL'imize ait SQL sorgusunun SQL Server Profiler'dan yakalanan içeriği.
 
-```text
+```sql
 SELECT 
 1 AS [C1], 
 CASE WHEN ([Extent1].[ProductID] IS NULL) THEN N'' ELSE N'AdventureWorksModel.Product' END AS [C2], 
@@ -81,7 +81,7 @@ Dolayısıyla Projection kullanılaraktan, bir Entity üzerinden sadece istenen 
 
 select operatörünü dilersek navigasyon özellikleri (Navigation Properties) ilede bir aradada kullanabiliriz. Örneğin aşağıdaki gibi bir URL talebinde bulunduğumuzu düşünelim.
 
-http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product
+`http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product`
 
 Buna göre ProductSubcategory Entity'sinden sadece Name alanlarının değerlerini isterken, her alt kategoriye bağlı ürünleri tutan Product Entity örneklerini de talep etmekteyiz. Bu URL talebinin çıktısı aşağıdaki gibi olacaktır.
 
@@ -89,7 +89,7 @@ Buna göre ProductSubcategory Entity'sinden sadece Name alanlarının değerleri
 
 Dikkat edileceği üzere alt kategoriye bağlı olan Product kümeleri için sadece bağlantı bildirimi yapılmaktadır. Söz konusu URL'ın çalıştırılması sonucunda SQL tarafında da aşağıdaki sorgunun yürütüldüğü görülecektir.
 
-```text
+```sql
 SELECT 
 1 AS [C1], 
 CASE WHEN ([Extent1].[ProductSubcategoryID] IS NULL) THEN N'' ELSE N'AdventureWorksModel.ProductSubcategory' END AS [C2], 
@@ -101,7 +101,7 @@ FROM [Production].[ProductSubcategory] AS [Extent1]
 
 Fark edilebileceği gibi, Product tablosu ile ilişkili bir sorgu ifadesi yer almamaktadır. Diğer yandan sadece Name alanını talep etmemize rağmen, PrimaryKey olan ProductSubcategoryID alanı da getirilmektedir. Bu son derece doğaldır nitekim, belirli bir ProductSubcategory'nin çekilmesinde primary key alanı ayırt edici özelliklerdendir üstelik entry/id elementleri içerisinde gereklidir. Diğer yandan, URL satırını aşağıdaki gibi değiştirirsek,
 
-http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product&$expand=Product&$top=2
+`http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product&$expand=Product&$top=2`
 
 Hımmm...
 
@@ -111,7 +111,7 @@ Bu sorguya göre ProductSubcategory içeriğinden sadece Name alanını almakla 
 
 Peki bu URL talebi sonrası arka planda nasıl bir SQL sorgusu çalışıyor?
 
-```text
+```sql
 SELECT 
 [Project2].[ProductSubcategoryID] AS [ProductSubcategoryID],[Project2].[Name] AS [Name], [Project2].[rowguid] AS [rowguid], [Project2].[ModifiedDate] AS [ModifiedDate], [Project2].[C1] AS [C1], [Project2].[C2] AS [C2], [Project2].[C3] AS [C3], [Project2].[C4] AS [C4], [Project2].[C5] AS [C5], [Project2].[C6] AS [C6], [Project2].[C7] AS [C7], [Project2].[ProductID] AS [ProductID], [Project2].[Name1] AS [Name1], [Project2].[ProductNumber] AS [ProductNumber], [Project2].[MakeFlag] AS [MakeFlag], [Project2].[FinishedGoodsFlag] AS [FinishedGoodsFlag], [Project2].[Color] AS [Color], [Project2].[SafetyStockLevel] AS [SafetyStockLevel], [Project2].[ReorderPoint] AS [ReorderPoint], [Project2].[StandardCost] AS [StandardCost], [Project2].[ListPrice] AS [ListPrice], [Project2].[Size] AS [Size], [Project2].[SizeUnitMeasureCode] AS [SizeUnitMeasureCode], [Project2].[WeightUnitMeasureCode] AS [WeightUnitMeasureCode], [Project2].[Weight] AS [Weight], [Project2].[DaysToManufacture] AS [DaysToManufacture], [Project2].[ProductLine] AS [ProductLine], [Project2].[Class] AS [Class], [Project2].[Style] AS [Style], [Project2].[ProductModelID] AS [ProductModelID], [Project2].[SellStartDate] AS [SellStartDate], [Project2].[SellEndDate] AS [SellEndDate], [Project2].[DiscontinuedDate] AS [DiscontinuedDate], [Project2].[rowguid1] AS [rowguid1], [Project2].[ModifiedDate1] AS [ModifiedDate1]
 FROM ( SELECT 
@@ -141,7 +141,7 @@ Amanınnnn!!!
 
 Aslında biraz can sıkıcı ama doğal olarak tüm Product alanlarının değerlendirildiğini görüyoruz. Nitekim aksini belirtmedik. Peki belirtebilir miyiz? Yani ProductSubcategory kümesinden ve genişletilebilen Product kümesinden bir kaç alanı almayı başarabilir miydik? İşte örnek bir cevabı
 
-http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product/Name,Product/ListPrice&$expand=Product&$top=5
+`http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product/Name,Product/ListPrice&$expand=Product&$top=5`
 
 Görüldüğü gibi EntityAdı/AlanAdı (örneğin Product/Name) stilinde yapılan bildirimlerle, üretilecek olan çıktıda birden fazla Entity'den gelebilecek alanları ayrı ayrı belirtebiliyoruz. (Buna göre sizlerde ProductCategory,ProductSubcategory ve Product kümelerinin tamamının bir arada bulunduğu örnek URL üzerinde çalışabilirsiniz. Çalışmanızı öneririm.)
 
@@ -149,7 +149,7 @@ Görüldüğü gibi EntityAdı/AlanAdı (örneğin Product/Name) stilinde yapıl
 
 Görüldüğü üzere alt kategori ile ilişkili Feed girişlerinde Name alanı yer almaktayken, o alt kategoriye bağlı Product tipleri için sadece Name ve ListPrice değerleri getirilmektedir. Dolayısıyla SQL sorgusuda buna göre aşağıda görüldüğü gibi oluşacaktır.
 
-```text
+```sql
 SELECT 
 [Project2].[ProductSubcategoryID] AS [ProductSubcategoryID], [Project2].[Name] AS [Name], [Project2].[C1] AS [C1], [Project2].[C2] AS [C2], [Project2].[C3] AS [C3], [Project2].[C4] AS [C4], [Project2].[C5] AS [C5], 
 [Project2].[C9] AS [C6], [Project2].[C6] AS [C7], [Project2].[C7] AS [C8], [Project2].[C8] AS [C9], [Project2].[Name1] AS [Name1], [Project2].[ListPrice] AS [ListPrice], [Project2].[ProductID] AS [ProductID]
@@ -174,12 +174,11 @@ ORDER BY [Project2].[ProductSubcategoryID] ASC, [Project2].[C9] ASC
 
 Görüldüğü üzere Ado.Net Data Services v1.5 CTP2 ile gelen Projection özelliği performans kazanımı elde etmemizi sağlayacak derecede önemli bir özellik olarak karşımıza çıkmaktadır. Bu yazımızda kullandığımız sorgular aşağıdaki gibidir.
 
-- http://localhost:1714/AdventureServices.svc/Product?$select=ProductID,Name,ListPrice ->(Product kümesinden ProductID, Name ve ListPrice alanları alınır)
-- http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product -> (ProductSubcategory kümesinden Name alınır, her bir alt kategoriye bağlı Product kümelerinin sadece linkleri getirilir.)
-- http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product&$expand=Product&$top=2 -> (Bir önceki sorgu değerlendirilir ama Product kümesinin tüm üyeleri ve sadece ilk iki alt kategori tipi çekilir)
-- http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product/Name,Product/ListPrice&$expand=Product&$top=5 -> (Bir önceki sorgu çalışır ancak Product kümesinden sadece Name ve ListPrice alanları hesaba katılır. Alt kategorilerinde ilk 10 adedi getirilir.)
+- `http://localhost:1714/AdventureServices.svc/Product?$select=ProductID,Name,ListPrice` ->(Product kümesinden ProductID, Name ve ListPrice alanları alınır)
+- `http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product` -> (ProductSubcategory kümesinden Name alınır, her bir alt kategoriye bağlı Product kümelerinin sadece linkleri getirilir.)
+- `http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product&$expand=Product&$top=2` -> (Bir önceki sorgu değerlendirilir ama Product kümesinin tüm üyeleri ve sadece ilk iki alt kategori tipi çekilir)
+- `http://localhost:1714/AdventureServices.svc/ProductSubcategory?$select=Name,Product/Name,Product/ListPrice&$expand=Product&$top=5` -> (Bir önceki sorgu çalışır ancak Product kümesinden sadece Name ve ListPrice alanları hesaba katılır. Alt kategorilerinde ilk 10 adedi getirilir.)
 
 Bakalım Ado.Net Data Services 1.5 CTP2 tarafında bizleri başka ne gibi sürprizler beklemekte. Bu konularıda ilerleyen yazılarımızda değerlendirmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Projections.rar (53,71 kb)](/assets/files/2009/Projections.rar)
-

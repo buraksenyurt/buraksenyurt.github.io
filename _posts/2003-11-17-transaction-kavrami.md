@@ -39,7 +39,7 @@ Merkez: Evet. Karadenizden geçen boru hattında fırtına nedeni ile kopma olmu
 
 Transactionlar ile ilgili olarak önemli bir konu ise yukarıdaki örneklerde anlattığımız gibi birden fazla veritabanı olması durumunda bu Transaction işlemlerinin nasıl koordine edileceğidir. Burada Dağıtık Transaction dediğimiz Distributed Transaction kavramı ortaya çıkar. Bu konuyu ilerleyen makalelerimizde işlemeye çalışacağım. Şimdilik sadece tek bir veritabanı üzerinde yazabileceğimiz Transaction’lardan bahsetmek istiyorum. .NET içerisinde SqlClient sınıfında yer alan nesneleri Transaction nesneleri kullanarak bu işlemi gerçekleştirebiliriz. Ben SqlTransaction nesnesini ele alacağım. Bu nesneyi oluşturmak için herhangi bir yapıcı metod yoktur. SqlDataReader sınıfında da olduğu gibi bu sınıfa ait nesneler birer değişkenmiş gibi tanımlanır. Nesne atamaları SqlConnection nesnesi ile gerçekleştirilir ve bu aynı zamanda Transaction’ın hangi SqlConnection bağlantısı için başlatılacağını belirlemeye yarar.
 
-```text
+```sql
 SqlTransaction tran;
 tran = conNorthwind.BeginTransaction();
 ```
@@ -68,7 +68,7 @@ Peki buradaki üç işlem için neden Transaction kullanıyoruz? Farz edelim ki,
 
 Uygulamamızda, Personel tablosunda yer alan PrimToplami alanının değerini prim tutarı kadar arttırmak için aşağıdaki Stored Procedure’ü kullanacağız.
 
-```text
+```sql
 CREATE PROCEDURE [Prim Toplami Arttir] 
 @prim float,
 
@@ -82,7 +82,7 @@ GO
 
 Prim tablosuna eklenecek veriler için ise INSERT sql cümleciği içeren bir Stored Procedure’ümüz var.
 
-```text
+```sql
 CREATE PROCEDURE [Prim Bilgisi Gir] 
 @pid int,
 @st float,
@@ -96,7 +96,7 @@ GO
 
 Son olarak AFinans isimli tablomuzdan prim miktarı kadar TL’sını düşecek olan Stored Procedure’ümüzü yazalım.
 
-```text
+```sql
 CREATE PROCEDURE [Prim Dus]  
 @prim float 
 AS 

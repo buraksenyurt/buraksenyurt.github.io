@@ -102,7 +102,7 @@ Burada RowUpdated metodunda, veritabanına yeni bir satır eklendiğinde, @@IDEN
 
 Gelelim ikinci yola. İkinci yolumuz ise, ekleme işleminin bir Stored Procedure yardımıyla yapılmasıdır. Bu Stored Procedure, ekleme işlemini yaparken, @@IDENTITY değerini de ortama bir Output parametresi vasıtasıyla gönderecektir. Bu amaçla Personel tablomuz için aşağıdaki Stored Procedure'ü oluşturalım.
 
-```text
+```sql
 ALTER PROCEDURE dbo.PersonelEkle
 (
     @PersonelID int OUTPUT,

@@ -24,7 +24,7 @@ public OdbcCommand();
 
 Bu teknik ile oluşturulan bir komut nesnesi için birtakım özellikleri sonradan belirleyebiliriz. Öncelikle geçerli bir bağlantı nesnesine yani bir OleDbConnection nesnesine ihtiyacımız vardır. Diğer gereklilik ise, OleDbCommand sınıfı nesne örneğinin çalıştıracağı SQL ifadesidir. Bu amaçlar için OleDbCommand sınıfının Connection ve CommandText özelliklerini kullanırız. Yukarıdaki teknik ile oluşturduğumuz bir OleDbCommand nesnesi için Connection özelliği null, CommandText özelliği ise boş bir string'e işaret etmektedir. Bu tekniği daha iyi anlamak için basit bir örnek geliştirelim. Örneğin, SQL sunucumuzda yer alan Friends isimli veri tabanındaki tabloya bir satır veri gireceğimiz aşağıdaki SQL ifadesini çalıştıracak bir komut tasarlamak istediğimizi varsayalım.
 
-```csharp
+```sql
 Insert Into Siteler (Baslik,Adres,Resim,Icerik) Values('C#','www.csharpnedir.com','images/resim1.jpg','C# üzerine her türlü makale.')
 ```
 
@@ -296,7 +296,7 @@ public virtual CommandType CommandType {get; set;}
 
 Prototipi yukarıdaki gibi olan bu özellik, CommandType numaralandırıcısı türünden 3 değer alabilir. Bu değerler ve ne işe yaradıkları aşağıdaki tabloda belirtilmiştir.
 
-| CommandType Değeri | Açıklaması |
+| **CommandType Değeri** | **Açıklaması** |
 | --- | --- |
 | Text | Sql ifadelerini çalıştırmak için kullanılır. Bu aynı zamanda OleDbCommand sınıfına ait nesne örnekleri için varsayılan değerdir. |
 | StoredProcedure | Veri kaynağında yer alan bir Saklı Yordam çalıştırılmak istendiğinde, CommandType değerine StoredProcedure verilir. |
@@ -408,7 +408,7 @@ OleDbCommand cmd=new OleDbCommand("[Site Adlari]",con);
 
 Bu durumda uygulamanın sorunsuz çalıştığını görürüz. OleDbCommand sınıfının CommandType özelliğinin diğer değeri ise StoredProcedure'dür. Bu veri kaynağındaki saklı yordamlarının çağırılması için kullanılmaktadır. Bir saklı yordam kendisi için parametreler alabileceği gibi geriye değerlerde döndürebilir. Örneğin, Primary Key alanları üzerinden arama yapılan sorgularda Saklı Yordamların kullanılması son derece verimlidir. Nitekim kullanıcıların aramak için girdikleri her ID değeri için ayrı bir select sorgusu oluşturmak yerine, veri kaynağında bir nesne olarak yer alan ve ID değerini parametre olarak alan hazır, derlenmiş bir select ifadesini çalıştırmak daha verimli olucaktır. Örneğin Makale isimli tablomuzdan ID alanı 41 olan bir satırı elde etmek istiyoruz. Bu durumda, buradaki saklı yordamımıza bu ID değerini geçirmemiz ve dönen sonuçları almamız gerekiyor. Öncelikle saklı yordamımıza bir göz atalım.
 
-```text
+```sql
 ALTER PROCEDURE dbo.MakaleBul
 (
 @MakaleID int

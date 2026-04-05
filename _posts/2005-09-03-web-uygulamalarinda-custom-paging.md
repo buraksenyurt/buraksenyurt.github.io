@@ -34,7 +34,7 @@ Buradaki yaklaşım gerçekten işe yaramaktadır. Ancak aslında performans aç
 
 Senaryomuzda AdventureWorks2000 veritabanı içerisinde yer alan Employee isimli tabloyu kullanacağız. Bu tablo üzerinde aşağıdaki select sorgusu için sayfalama işlemini gerçekleştireceğiz.
 
-```text
+```sql
 SELECT EmployeeID,FirstName,LastName,NationalIDNumber,Title,BirthDate,EmailAddress FROM Employee
 ```
 

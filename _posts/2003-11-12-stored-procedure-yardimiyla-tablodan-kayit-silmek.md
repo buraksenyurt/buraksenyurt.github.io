@@ -30,7 +30,7 @@ Burada CategoryID alanı bizim için önemlidir. Nitekim silme işlemi için kul
 
 Şekil 3. Stored Procedure Kodlari
 
-```text
+```sql
 CREATE PROCEDURE [Delete Category]
 @kid int
 AS

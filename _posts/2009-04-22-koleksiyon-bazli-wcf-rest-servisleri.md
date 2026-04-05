@@ -26,7 +26,7 @@ Neyse çok fazla dağıtmadan konuyu devam edeyim. Stored Procedure'leri temel C
 
 Ekleme işlemi
 
-```text
+```sql
 CREATE PROCEDURE InsertProduct
             @ProductName nvarchar(40)
            ,@SupplierID int
@@ -66,7 +66,7 @@ Select SCOPE_IDENTITY()
 
 Güncelleme işlemi
 
-```text
+```sql
 CREATE PROCEDURE UpdateProduct
     @ProductName nvarchar(40)
            ,@SupplierID int
@@ -97,7 +97,7 @@ Where
 
 Silme işlemi
 
-```text
+```sql
 CREATE PROCEDURE DeleteProduct
 (
  @ProductID int 
