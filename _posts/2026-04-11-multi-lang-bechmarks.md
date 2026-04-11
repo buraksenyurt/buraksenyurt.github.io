@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hangi Localization Tekniği"
-date: 2026-04-11 18:00:00
+date: 2026-04-10 18:00:00
 tags:
   - csharp
   - localization
