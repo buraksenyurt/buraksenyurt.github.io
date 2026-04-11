@@ -106,7 +106,7 @@ Bir Cross-Page Postback işlemi meydana geldiğinde, hedef sayfada PreviousPage 
 ```csharp
 private void Page_Init(object sender, EventArgs e)
 {
-    Response.Write("Init metodu..."); 
+    Response.Write("Init metodu...");
 }
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -146,7 +146,10 @@ private DateTime _istekZamani;
 
 public DateTime IstekZamani
 {
-    get { return _istekZamani; }
+    get
+    {
+        return _istekZamani;
+    }
 }
 ```
 
@@ -229,7 +232,7 @@ if (PreviousPage != null)
     {
         Kaynak2 kyn2 = PreviousPage as Kaynak2;
         Response.Write(((TextBox)kyn2.FindControl("txtInfo2")).Text);
-    } 
+    }
 }
 else
     Response.Write("Cross-Page Postback işlemi yok...");
@@ -308,7 +311,7 @@ protected void Page_Load(object sender, EventArgs e)
         if (!PreviousPage.IsValid)
         {
             Kaynak3 kyn3 = PreviousPage as Kaynak3;
-            Response.Redirect("~/Kaynak3.aspx?HatalarVar=1&email="+kyn3.Email);
+            Response.Redirect("~/Kaynak3.aspx?HatalarVar=1&email=" + kyn3.Email);
         }
     }
 }
@@ -319,7 +322,10 @@ Kaynak3.aspx.cs;
 ```csharp
 public string Email
 {
-    get { return txtEmail.Text; }
+    get
+    {
+        return txtEmail.Text;
+    }
 }
 
 protected void Page_Load(object sender, EventArgs e)

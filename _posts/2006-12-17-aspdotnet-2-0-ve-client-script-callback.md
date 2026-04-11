@@ -58,7 +58,7 @@ private string _kategoriId;
 
 public string GetCallbackResult()
 {
-    using(SqlConnection conn=new SqlConnection(ConfigurationManager.ConnectionStrings["AdvConStr"].ConnectionString))
+    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["AdvConStr"].ConnectionString))
     {
         /* istemciden gelen CategoryId değerine göre SubCategory' ler çekilir ve bir StringBuilder yardımıyla bir dönüş bilgisi oluşturulur. */
         SqlCommand cmd = new SqlCommand("Select ProductSubCategoryID,Name From Production.ProductSubCategory Where ProductCategoryId=@CatId", conn);
@@ -128,7 +128,7 @@ Bu JavaScript fonksiyonu sunucudaki GetCallbackResult metodundan dönen string b
 ```csharp
 protected void Page_Load(object sender, EventArgs e)
 {
-    string script=ClientScript.GetCallbackEventReference(this, "document.all['ddlKategoriler'].value", "IstemciGeriBildirim", null);
+    string script = ClientScript.GetCallbackEventReference(this, "document.all['ddlKategoriler'].value", "IstemciGeriBildirim", null);
     ddlKategoriler.Attributes.Add("onChange", script);
 }
 ```

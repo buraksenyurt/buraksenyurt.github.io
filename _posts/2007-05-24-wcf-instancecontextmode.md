@@ -56,7 +56,7 @@ using System.ServiceModel;
 
 namespace UrunYonetimKutuphanesi
 {
-    [ServiceContract(Name="UrunYonetimServisi", Namespace="http://www.bsenyurt.com/UrunYonetimServisi")]
+    [ServiceContract(Name = "UrunYonetimServisi", Namespace = "http://www.bsenyurt.com/UrunYonetimServisi")]
     public interface IUrunYonetici
     {
         [OperationContract()]
@@ -81,7 +81,7 @@ using System.ServiceModel;
 namespace UrunYonetimKutuphanesi
 {
     [ServiceBehavior()]
-    public class UrunYonetici:IUrunYonetici,IDisposable
+    public class UrunYonetici : IUrunYonetici, IDisposable
     {
         private FileStream fStr;
         private StreamWriter writer;
@@ -90,7 +90,7 @@ namespace UrunYonetimKutuphanesi
         public UrunYonetici()
         {
             Thread.Sleep(500);
-            builder = new StringBuilder(); 
+            builder = new StringBuilder();
             builder.AppendLine(DateTime.Now.ToLongTimeString() + ": UrunYonetici nesnesi oluşturuldu.");
         }
         #region IUrunYonetici Members
@@ -116,7 +116,7 @@ namespace UrunYonetimKutuphanesi
         #endregion
 
         #region IDisposable Members
-    
+
         public void Dispose()
         {
             Thread.Sleep(500);
@@ -158,7 +158,7 @@ namespace ServerApp
         {
             host = new ServiceHost(typeof(UrunYonetici));
             host.Open();
-            lstDurum.Items.Add(DateTime.Now.ToLongTimeString() + host.State); 
+            lstDurum.Items.Add(DateTime.Now.ToLongTimeString() + host.State);
         }
 
         private void btnBitir_Click(object sender, EventArgs e)
@@ -357,15 +357,15 @@ Görüldüğü gibi kaç istemci olursa olsun hepsi için tek bir UrunYonetici n
 Makalemizin başında özellikle PerSession modunda hangi metod çağrısı ile nesne örneğinin oluşturulabileceğini veya hangi metod çağrısından sonra servise ait nesne örneğinin yok edilebileceğini IsInitiating ve IsTerminating özellikleri ile belirtebileceğimizi söylemiştik. Bu modların kullanılabilmesi için ayrıca SessionMode özelliğinin değerinin Required olarak işaretlenmiş olması gerekmektedir. Nitekim söz konusu operasyonların takibi için bir oturumun var olması gerekir. Aşağıdaki kod parçasında söz konusu sistemin IUrunYonetici arayüzüne uygulanış şekli gösterilmektedir.
 
 ```csharp
-[ServiceContract(Name="UrunYonetimServisi",Namespace="http://www.bsenyurt.com/UrunYonetimServisi"
-,SessionMode=SessionMode.Required)]
+[ServiceContract(Name = "UrunYonetimServisi", Namespace = "http://www.bsenyurt.com/UrunYonetimServisi"
+, SessionMode = SessionMode.Required)]
 public interface IUrunYonetici
 {
-    [OperationContract(IsInitiating=true)]
+    [OperationContract(IsInitiating = true)]
     void SepeteUrunEkle(string urunId);
-    [OperationContract(IsInitiating=false)]
+    [OperationContract(IsInitiating = false)]
     void SepettenUrunCikar(string urunId);
-    [OperationContract(IsInitiating=false,IsTerminating=true)]
+    [OperationContract(IsInitiating = false, IsTerminating = true)]
     void SiparisVer();
 }
 ```
@@ -393,7 +393,7 @@ srv.SepeteUrunEkle("1000");
 srv.SepeteUrunEkle("1004");
 srv.SepettenUrunCikar("1000");
 srv.SiparisVer();
-srv.SepeteUrunEkle("1000"); 
+srv.SepeteUrunEkle("1000");
 Console.WriteLine("Uygulamadan Çıkmak için Bir Tuşa Basın");
 Console.ReadLine();
 ```

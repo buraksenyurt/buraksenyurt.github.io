@@ -33,55 +33,56 @@ using System;
 
 namespace Delegates1
 {
-     public class Calistir
-     {
-          public static int a;
-          public delegate void temcilci(int deger); /* Temsilci tanımlamamızı yapıyoruz. Aynı zamanda temsilcimiz , değer döndürmeyen ve integer tipte tek bir parametre alan bir metod tanımlıyor. Temsilcimizin adı ise temsilci.*/
+    public class Calistir
+    {
+        public static int a;
+        public delegate void temcilci(int deger);
+        /* Temsilci tanımlamamızı yapıyoruz. Aynı zamanda temsilcimiz , değer döndürmeyen ve integer tipte tek bir parametre alan bir metod tanımlıyor. Temsilcimizin adı ise temsilci.*/
 
-          /* Şimdi bu temsilciyi kullacanak bir metod yazıyoruz. İşte karar verici metodumuz budur. Dikkat ederseniz metodumuz parametre olarak, temsilci nesnemiz tipinden bir temsilci(Delegate) alıyor. Daha sonra metod bloğu içinde, parametre olarak geçirilen bu temsilcinin işaret ettiği metod çağırılıyor ve bu metoda parametre olarak integer tipte bir değer geçiriliyor. Kısaca, metod içinden, temsilcinin işaret ettiği metod çağırılıyor. Burada, temsilci tanımına uygun olan metodun çağırılması garanti altına alınmıştır. Yani, programın çalışması sırasında, new yapılandırıcısı kulllanarak oluşturacağımız bir temsilci(delegate), kendi metod tanımı ile uyuşmayan bir metod için yaratılmaya çalışıldığında bir derleyici hatası alacağızdır. Dolayısıyla bu, temsilcilerin yüksek güvenlikli işaretçiler olmasını sağlar. Bu , temsilcileri, C++ dilindeki benzeri olan işaretçilerden ayıran en önemli özelliktir. */
- 
-          public void Metod1(Calistir.temcilci t)
-          {
-                t(a);
-          }
-     }
+        /* Şimdi bu temsilciyi kullacanak bir metod yazıyoruz. İşte karar verici metodumuz budur. Dikkat ederseniz metodumuz parametre olarak, temsilci nesnemiz tipinden bir temsilci(Delegate) alıyor. Daha sonra metod bloğu içinde, parametre olarak geçirilen bu temsilcinin işaret ettiği metod çağırılıyor ve bu metoda parametre olarak integer tipte bir değer geçiriliyor. Kısaca, metod içinden, temsilcinin işaret ettiği metod çağırılıyor. Burada, temsilci tanımına uygun olan metodun çağırılması garanti altına alınmıştır. Yani, programın çalışması sırasında, new yapılandırıcısı kulllanarak oluşturacağımız bir temsilci(delegate), kendi metod tanımı ile uyuşmayan bir metod için yaratılmaya çalışıldığında bir derleyici hatası alacağızdır. Dolayısıyla bu, temsilcilerin yüksek güvenlikli işaretçiler olmasını sağlar. Bu , temsilcileri, C++ dilindeki benzeri olan işaretçilerden ayıran en önemli özelliktir. */
 
-     class Class1
-     {
-           /* IkıKat ve UcKat isimli metodlarımız, temsilcimizin programın çalışması sırasında işaret etmesini istediğimiz metodlar. Bu nedenle imzaları, temsilci tanımımızdaki metod imzası ile aynıdır. */
-          
-          public static void IkiKat(int sayi)
-          {
-               sayi=sayi*2;
-              Console.WriteLine("IkiKat isimli metodun temsilcisi tarafindan çagirildi."+sayi.ToString());
-          }
-          public static void UcKat(int sayi)   
-          {
-               sayi=sayi*3;
-               Console.WriteLine("UcKat isimli metodun temsilcisi tarafindan çagirildi."+sayi.ToString());
-          }
-          static void Main(string[] args)
-         {
-                /* Temsilci nesnelerimiz ilgili metodlar için oluşturuluyor. Burada, new yapılandırıcısı ile oluşturulan temsilci nesneleri parametre olarak, işaret edecekleri metodun ismini alıyorlar. Bu noktadan itibaren t1 isimli delegate nesnemiz IkiKat isimli metodu, t2 isimli delegate nesnemizde UcKat isimli metodu işaret ediceklerdir. */
-               Calistir.temcilci t1=new Delegates1.Calistir.temcilci(IkiKat);
-               Calistir.temcilci t2=new Delegates1.Calistir.temcilci(UcKat);
- 
-               Console.WriteLine("1 ile 20 arası değer girin");
-                  Calistir.a=System.Convert.ToInt32(Console.ReadLine());
-               Calistir c=new Calistir();
-              /* Kullanıcının Console penceresinden girdiği değer göre, Calistir sınıfının a isimli integer tipteki değerini 10 ile karşılaştırılıyor. 10 dan büyükse, karar verici metodumuza t1 temsilcisi gönderiliyor. Bu durumda Metod1 isimli karar verici metodumuz, kendi kod bloğu içinde t1 delegate nesnesinin temsil ettiği IkıKat metodunu, Calistir.a değişkeni ile çağırıyor. Aynı işlem tarzı t2 delegate nesnesi içinde geçerli.*/
+        public void Metod1(Calistir.temcilci t)
+        {
+            t(a);
+        }
+    }
 
-                   
-               if(Calistir.a>=10)
-               {
-                    c.Metod1(t1);
-               }
-               else
-               {
-                    c.Metod1(t2);
-               }
-          }
-     }
+    class Class1
+    {
+        /* IkıKat ve UcKat isimli metodlarımız, temsilcimizin programın çalışması sırasında işaret etmesini istediğimiz metodlar. Bu nedenle imzaları, temsilci tanımımızdaki metod imzası ile aynıdır. */
+
+        public static void IkiKat(int sayi)
+        {
+            sayi = sayi * 2;
+            Console.WriteLine("IkiKat isimli metodun temsilcisi tarafindan çagirildi." + sayi.ToString());
+        }
+        public static void UcKat(int sayi)
+        {
+            sayi = sayi * 3;
+            Console.WriteLine("UcKat isimli metodun temsilcisi tarafindan çagirildi." + sayi.ToString());
+        }
+        static void Main(string[] args)
+        {
+            /* Temsilci nesnelerimiz ilgili metodlar için oluşturuluyor. Burada, new yapılandırıcısı ile oluşturulan temsilci nesneleri parametre olarak, işaret edecekleri metodun ismini alıyorlar. Bu noktadan itibaren t1 isimli delegate nesnemiz IkiKat isimli metodu, t2 isimli delegate nesnemizde UcKat isimli metodu işaret ediceklerdir. */
+            Calistir.temcilci t1 = new Delegates1.Calistir.temcilci(IkiKat);
+            Calistir.temcilci t2 = new Delegates1.Calistir.temcilci(UcKat);
+
+            Console.WriteLine("1 ile 20 arası değer girin");
+            Calistir.a = System.Convert.ToInt32(Console.ReadLine());
+            Calistir c = new Calistir();
+            /* Kullanıcının Console penceresinden girdiği değer göre, Calistir sınıfının a isimli integer tipteki değerini 10 ile karşılaştırılıyor. 10 dan büyükse, karar verici metodumuza t1 temsilcisi gönderiliyor. Bu durumda Metod1 isimli karar verici metodumuz, kendi kod bloğu içinde t1 delegate nesnesinin temsil ettiği IkıKat metodunu, Calistir.a değişkeni ile çağırıyor. Aynı işlem tarzı t2 delegate nesnesi içinde geçerli.*/
+
+
+            if (Calistir.a >= 10)
+            {
+                c.Metod1(t1);
+            }
+            else
+            {
+                c.Metod1(t2);
+            }
+        }
+    }
 }
 ```
 
@@ -104,67 +105,68 @@ using System;
 
 namespace Delegates2
 {
-     public class temsilciler
-     {
-          public delegate void dgTemsilci(); /* Temsilcimiz tanımlanıyor. Geri dönüş değeri olmayan ve parametre almayan metodları temsil edebilir. */
+    public class temsilciler
+    {
+        public delegate void dgTemsilci();
+        /* Temsilcimiz tanımlanıyor. Geri dönüş değeri olmayan ve parametre almayan metodları temsil edebilir. */
 
-          /* Metod1, Metod2 ve Metod3 temsilcilerimizin işaret etmesini istediğimiz metodlar olucaktır.*/
- 
+        /* Metod1, Metod2 ve Metod3 temsilcilerimizin işaret etmesini istediğimiz metodlar olucaktır.*/
 
-          public static void Metod1()
-          {
-               Console.WriteLine("Metod 1 çalıştırıldı.");
-          }
-          public static void Metod2()
-          {
-               Console.WriteLine("PI değeri 3.14 alınsın");
-          }
-          public static void Metod3()
-          {
-               Console.WriteLine("Mail gönderildi...");
-          }
-          /* Temsilcilerimizi çalıştıran metodumuz. Parametre olarak gönderilen temsilciyi, dolayısıyla bu temsilcinin işaret ettiği metodu alıyor. */
 
-          public static void TemsilciCalistir(temsilciler.dgTemsilci dt)
-          {
-               dt();
-/* Temsilcinin işaret ettiği metod çalıştırılıyor.*/
-          }
-     }
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               /* Üç metodumuz içinde temsilci nesnelerimiz oluşturuluyor .*/
-               temsilciler.dgTemsilci t1=new Delegates2.temsilciler.dgTemsilci(temsilciler.Metod1);
+        public static void Metod1()
+        {
+            Console.WriteLine("Metod 1 çalıştırıldı.");
+        }
+        public static void Metod2()
+        {
+            Console.WriteLine("PI değeri 3.14 alınsın");
+        }
+        public static void Metod3()
+        {
+            Console.WriteLine("Mail gönderildi...");
+        }
+        /* Temsilcilerimizi çalıştıran metodumuz. Parametre olarak gönderilen temsilciyi, dolayısıyla bu temsilcinin işaret ettiği metodu alıyor. */
 
-               temsilciler.dgTemsilci t2=new Delegates2.temsilciler.dgTemsilci(temsilciler.Metod2);
+        public static void TemsilciCalistir(temsilciler.dgTemsilci dt)
+        {
+            dt();
+            /* Temsilcinin işaret ettiği metod çalıştırılıyor.*/
+        }
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            /* Üç metodumuz içinde temsilci nesnelerimiz oluşturuluyor .*/
+            temsilciler.dgTemsilci t1 = new Delegates2.temsilciler.dgTemsilci(temsilciler.Metod1);
 
-               temsilciler.dgTemsilci t3=new Delegates2.temsilciler.dgTemsilci(temsilciler.Metod3);
+            temsilciler.dgTemsilci t2 = new Delegates2.temsilciler.dgTemsilci(temsilciler.Metod2);
 
-               Console.WriteLine("sadece t1");
-               temsilciler.TemsilciCalistir(t1);
-               Console.WriteLine("---");
+            temsilciler.dgTemsilci t3 = new Delegates2.temsilciler.dgTemsilci(temsilciler.Metod3);
 
-               /* Burada t1 temsilcimize, t2 temsilcisi ekleniyor. Bu durumda, t1 temsilcimiz hem kendi metodunu hemde, t2 temsilcisinin işaret ettiği metodu işaret etmeye başlıyor. Bu halde iken TemsilciCalistir metodumuza t1 temsilcisini göndermemiz her iki temsilcinin işaret ettiği metodların çalıştırılmasına neden oluyor.*/
+            Console.WriteLine("sadece t1");
+            temsilciler.TemsilciCalistir(t1);
+            Console.WriteLine("---");
 
-               t1+=t2;
-               Console.WriteLine("t1 ve t2");
-               temsilciler.TemsilciCalistir(t1);
-               Console.WriteLine("---");
-               t1+=t3;
-/* Şimdi t1 temsilcimiz hem t1, hem t2, hem de t3 temsilcilerinin işaret ettiği metodları işaret etmiş olucak.*/
-               Console.WriteLine("t1,t2 ve t3");
-               temsilciler.TemsilciCalistir(t1);
-               Console.WriteLine("---");
-               t1-=t2;
+            /* Burada t1 temsilcimize, t2 temsilcisi ekleniyor. Bu durumda, t1 temsilcimiz hem kendi metodunu hemde, t2 temsilcisinin işaret ettiği metodu işaret etmeye başlıyor. Bu halde iken TemsilciCalistir metodumuza t1 temsilcisini göndermemiz her iki temsilcinin işaret ettiği metodların çalıştırılmasına neden oluyor.*/
 
-/* Burada ise t2 metodunu t1 temsilcimizden çıkartıyoruz. Böylece, t1 temsilcimiz sadece t1 ve t3 temsilcilerini içeriyor. */
-               Console.WriteLine("t1 ve t3");
-               temsilciler.TemsilciCalistir(t1);
-               Console.WriteLine("---");
-          }
-     }
+            t1 += t2;
+            Console.WriteLine("t1 ve t2");
+            temsilciler.TemsilciCalistir(t1);
+            Console.WriteLine("---");
+            t1 += t3;
+            /* Şimdi t1 temsilcimiz hem t1, hem t2, hem de t3 temsilcilerinin işaret ettiği metodları işaret etmiş olucak.*/
+            Console.WriteLine("t1,t2 ve t3");
+            temsilciler.TemsilciCalistir(t1);
+            Console.WriteLine("---");
+            t1 -= t2;
+
+            /* Burada ise t2 metodunu t1 temsilcimizden çıkartıyoruz. Böylece, t1 temsilcimiz sadece t1 ve t3 temsilcilerini içeriyor. */
+            Console.WriteLine("t1 ve t3");
+            temsilciler.TemsilciCalistir(t1);
+            Console.WriteLine("---");
+        }
+    }
 }
 ```
 

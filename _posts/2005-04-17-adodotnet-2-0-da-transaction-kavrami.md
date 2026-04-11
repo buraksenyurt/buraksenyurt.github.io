@@ -21,7 +21,7 @@ LightWeight Transaction'lar tek bir uygulama alanında (application-domain) çal
 ```csharp
 SqlConnection con = new SqlConnection(connectionString);
 con.Open();
-SqlCommand cmd = new SqlCommand(sqlSorgusu,con);
+SqlCommand cmd = new SqlCommand(sqlSorgusu, con);
 SqlTransaction trans;
 
 trans = con.BeginTransaction();
@@ -31,11 +31,11 @@ try
     cmd.ExecuteNonQuery();
     trans.Commit();
 }
-catch(Exception e)
+catch (Exception e)
 {
     trans.Rollback();
 }
-finally 
+finally
 {
     con.Close();
 }
@@ -145,7 +145,7 @@ TransactionScope nesnesinin belirlediği scope (faaliyet alanı) altında açıl
 TransactionOptions trOptions = new TransactionOptions();
 trOptions.IsolationLevel = System.Transactions.IsolationLevel.ReadCommitted;
 trOptions.Timeout = new TimeSpan(0, 0, 30);
-using (TransactionScope tsScope = new TransactionScope(TransactionScopeOption.RequiresNew,trOptions))
+using (TransactionScope tsScope = new TransactionScope(TransactionScopeOption.RequiresNew, trOptions))
 {
     using (SqlConnection con = new SqlConnection("data source=localhost;database=AdventureWorks;integrated security=SSPI"))
     {

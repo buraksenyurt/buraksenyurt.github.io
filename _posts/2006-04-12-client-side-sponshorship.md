@@ -37,7 +37,7 @@ public class RemoteObj : MarshalByRefObject
 ```csharp
 static void Main(string[] args)
 {
-    RemotingConfiguration.Configure("..\\..\\ServerApp.config",true);
+    RemotingConfiguration.Configure("..\\..\\ServerApp.config", true);
     Console.WriteLine("Sunucu dinlemede...Kapatmak için bir tuşa basın...");
     Console.ReadLine();
 }
@@ -86,10 +86,10 @@ static void Main(string[] args)
     {
         RemotingConfiguration.Configure("..\\..\\ClientApp.config", true);
         rm = new RemoteObj();
-  
+
         for (int i = 0; i < 10; i++)
         {
-            Console.WriteLine(i+"nci çağrı..."+rm.GetTotal(i).ToString());
+            Console.WriteLine(i + "nci çağrı..." + rm.GetTotal(i).ToString());
             System.Threading.Thread.Sleep(3000);
         }
     }
@@ -99,7 +99,7 @@ static void Main(string[] args)
     }
     finally
     {
-        
+
     }
     Console.WriteLine("Programı kapatmak için bir tuşa basın...");
     Console.ReadLine();
@@ -161,15 +161,15 @@ Dikkat ederseniz, istemci taraflı bir sponsor nesnesi MarshalByRefObject ile IS
 ```csharp
 static void Main(string[] args)
 {
-    ILease il=null;
-    ClientSponsor cs=null;
+    ILease il = null;
+    ClientSponsor cs = null;
     RemoteObj rm = null;
 
     try
     {
         RemotingConfiguration.Configure("..\\..\\ClientApp.config", true);
         rm = new RemoteObj();
-    
+
         #region Sponsor register edilir.
 
         il = (ILease)rm.GetLifetimeService();
@@ -180,7 +180,7 @@ static void Main(string[] args)
 
         for (int i = 0; i < 10; i++)
         {
-            Console.WriteLine(i+"nci çağrı..."+rm.GetTotal(i).ToString());
+            Console.WriteLine(i + "nci çağrı..." + rm.GetTotal(i).ToString());
             System.Threading.Thread.Sleep(3000);
         }
     }

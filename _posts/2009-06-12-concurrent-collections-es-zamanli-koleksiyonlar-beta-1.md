@@ -24,7 +24,7 @@ Paralel genişletme ile gelen koleksiyonların ataları çoğunlukla Thread Safe
 ```csharp
 static void Main(string[] args)
 {
- Dictionary<int, string> numbers = new Dictionary<int, string>
+    Dictionary<int, string> numbers = new Dictionary<int, string>
  {
   {1,"Bir"},
   {2,"İki"},
@@ -33,12 +33,12 @@ static void Main(string[] args)
   {5,"Beş"},
   {6,"Altı"}
  };
- 
- foreach (KeyValuePair<int,string> number in numbers)
- {
-  numbers.Remove(number.Key);
-  Console.WriteLine("{0} çıkartıldı.",number.Key);
- }
+
+    foreach (KeyValuePair<int, string> number in numbers)
+    {
+        numbers.Remove(number.Key);
+        Console.WriteLine("{0} çıkartıldı.", number.Key);
+    }
 }
 ```
 
@@ -60,7 +60,7 @@ namespace BlockingCollection
     class Program
     {
         static void Main(string[] args)
-        {           
+        {
             #region Concurrent versiyonu
 
             ConcurrentDictionary<int, string> numbers = new ConcurrentDictionary<int, string>();
@@ -71,12 +71,12 @@ namespace BlockingCollection
             numbers.TryAdd(5, "Beş");
             numbers.TryAdd(6, "Altı");
 
-            foreach (KeyValuePair<int,string> number in numbers)
+            foreach (KeyValuePair<int, string> number in numbers)
             {
                 string value;
-                bool result=numbers.TryRemove(number.Key, out value);
-                if(result)
-                    Console.WriteLine("{0} çıkartıldı.",value);
+                bool result = numbers.TryRemove(number.Key, out value);
+                if (result)
+                    Console.WriteLine("{0} çıkartıldı.", value);
             }
 
             #endregion
@@ -133,14 +133,14 @@ namespace BlockingCollection
                 collection.Add(i, rnd.Next(1, 1000000));
             }
             watch.Stop();
-            Console.WriteLine("{0}",watch.Elapsed.TotalSeconds.ToString());
+            Console.WriteLine("{0}", watch.Elapsed.TotalSeconds.ToString());
 
             // Zamanlayıcı sıfırla ve yeniden başlat.
             watch.Reset();
             watch.Start();
 
             // Eleman okuma işlemi
-            foreach (KeyValuePair<int,int> item in collection)
+            foreach (KeyValuePair<int, int> item in collection)
             {
                 int value = item.Value;
             }

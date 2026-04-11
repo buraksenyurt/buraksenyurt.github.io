@@ -13,13 +13,13 @@ categories:
 Bugünkü makalemizde, sistemimizde yer alan text tabanlı dosyaları nasıl okuyabileceğimizi incelemeye çalışacağız. .NET ortamında, dosyaların okunması için stream'ler (akımlar) kullanılır. Bugün işleyeceğimiz StreamReader sınıfı da bunlardan bir tanesidir. StreamReader sınıfı dosyaların okunmasını, dosyalara yazılmasını vb. sağlar. StreamReader sınıfını bir FileStream nesnesi ile kullanabileceğimiz gibi, tek başına da kullanabiliriz. Kullanabileceğimiz yapıcı metodlardan birisi;
 
 ```csharp
-public StreamReader( Stream stream );
+public StreamReader(Stream stream);
 ```
 
 dir. Bu yapıcı metod Stream tipinden bir nesne alır. Bu stream nesnesi çoğunlukla FileStream sınıfından türetilmiş bir nesne olur. Bu yapıcı metodumuz dışında direkt olarak okuma amacı ile StreamReader nesnesini;
 
 ```csharp
-public StreamReader( string path );
+public StreamReader(string path);
 ```
 
 yapıcısı ile de oluşturabiliriz. Burada string tipindeki path değişkenimiz, okumak amacıyla açacağımız dosyanın tam adresini temsil etmektedir. StreamReader nesnesi ile dosyamızı açtıktan sonra dosya içindeki verileri ReadLine metodu ile okuyabiliriz. ReadLine metodu, dosyadan her defasında bir satır okur ve bunu string olarak geriye döndürür. Metodun prototipi aşağıdaki gibidir.
@@ -44,9 +44,11 @@ private void btnDosyaAc_Click(object sender, System.EventArgs e)
     if (ofdDosya.ShowDialog() == DialogResult.OK)
     {
         this.Text = ofdDosya.FileName.ToString();
-        FileStream d = new FileStream(ofdDosya.FileName, FileMode.Open, FileAccess.Read); /* Burada okuma amacı ile OpenFileDialog kontrolünden seçtiğimiz dosyaya bir akım oluşturyoruz. */
+        FileStream d = new FileStream(ofdDosya.FileName, FileMode.Open, FileAccess.Read);
+        /* Burada okuma amacı ile OpenFileDialog kontrolünden seçtiğimiz dosyaya bir akım oluşturyoruz. */
     }
-    StreamReader sr = new StreamReader(d); /* Şimdi ise StreamReader nesnemizi FileStream nesnesini kullanarak oluşturuyoruz. */
+    StreamReader sr = new StreamReader(d);
+    /* Şimdi ise StreamReader nesnemizi FileStream nesnesini kullanarak oluşturuyoruz. */
     String input;
     /* Bu döngü, sr isimli StreamReader nesnemizin temsil ettiği akım vasıtasıyla, dosyamızdan bir satır alır ve bunu bellekteki tampon bölgeye yerleştirir. 
      * Daha sonra bunu bir string değişkene atıyoruz. Ardından bunun değerinin null olup olmadığına bakıyoruz. Null olması halinde dosya sonuna geldiğimiz anlaşılmaktadır. 

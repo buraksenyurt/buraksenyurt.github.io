@@ -41,17 +41,17 @@ namespace UsingHttp
     {
         static void DosyaIndir()
         {
-            HttpWebRequest request=(HttpWebRequest)WebRequest.Create("http://169.254.25.129/MobileFiles/Elvis.gif");
-            HttpWebResponse response=(HttpWebResponse)request.GetResponse();
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://169.254.25.129/MobileFiles/Elvis.gif");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            BinaryReader reader=new BinaryReader(response.GetResponseStream());
+            BinaryReader reader = new BinaryReader(response.GetResponseStream());
 
-            FileStream localFile=new FileStream("Elvis.gif",FileMode.Create);
-            BinaryWriter writer=new BinaryWriter(localFile);
+            FileStream localFile = new FileStream("Elvis.gif", FileMode.Create);
+            BinaryWriter writer = new BinaryWriter(localFile);
 
             try
             {
-                while(true)
+                while (true)
                 {
                     writer.Write(reader.ReadByte());
                 }
@@ -62,7 +62,7 @@ namespace UsingHttp
             response.Close();
             writer.Close();
         }
-    
+
         static void Main(string[] args)
         {
             DosyaIndir();
@@ -92,17 +92,17 @@ Gelelim Upload işlevinin ana hatlarına. Bu kez HttpWebRequest sınıfı başro
 ```csharp
 static void DosyaGonder()
 {
-    HttpWebRequest request=(HttpWebRequest)WebRequest.Create("http://169.254.25.129/MobileFiles/DjBurak.gif");
-    request.Method="PUT";
-    request.AllowWriteStreamBuffering=true;
-    Stream str=request.GetRequestStream();
-    FileStream reader=new FileStream("\\Program Files\\UsingHttp\\DjBurak.gif",FileMode.Open);
-    byte[] byteArr=new byte[1024];
-    int readLength=reader.Read(byteArr,0,byteArr.Length);
-    while(readLength>0)
+    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://169.254.25.129/MobileFiles/DjBurak.gif");
+    request.Method = "PUT";
+    request.AllowWriteStreamBuffering = true;
+    Stream str = request.GetRequestStream();
+    FileStream reader = new FileStream("\\Program Files\\UsingHttp\\DjBurak.gif", FileMode.Open);
+    byte[] byteArr = new byte[1024];
+    int readLength = reader.Read(byteArr, 0, byteArr.Length);
+    while (readLength > 0)
     {
-        str.Write(byteArr,0,readLength);
-        readLength=reader.Read(byteArr,0,byteArr.Length);
+        str.Write(byteArr, 0, readLength);
+        readLength = reader.Read(byteArr, 0, byteArr.Length);
     }
     reader.Close();
     str.Close();

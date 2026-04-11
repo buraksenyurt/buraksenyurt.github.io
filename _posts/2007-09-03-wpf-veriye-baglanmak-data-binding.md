@@ -201,10 +201,10 @@ public class Urun
     public double BirimFiyat;
     public int StokMiktari;
     public bool Durum;
-    
+
     public override string ToString()
     {
-        return Id.ToString() + " " + Ad+" "+BirimFiyat.ToString();
+        return Id.ToString() + " " + Ad + " " + BirimFiyat.ToString();
     }
 }
 ```
@@ -214,11 +214,11 @@ Urun sınıfı yine bir ürünü tanımlayabilecek bazı public alanlara sahipti
 ![mk221_10.gif](/assets/images/2007/mk221_10.gif)
 
 ```csharp
-public class UrunListesi:List<Urun>
+public class UrunListesi : List<Urun>
 {
     public UrunListesi()
     {
-        Add(new Urun() { Id = 1, Ad = "Grafik Kartı", BirimFiyat = 35, StokMiktari = 100,Durum=true });
+        Add(new Urun() { Id = 1, Ad = "Grafik Kartı", BirimFiyat = 35, StokMiktari = 100, Durum = true });
         Add(new Urun() { Id = 2, Ad = "Monitor", BirimFiyat = 150, StokMiktari = 50, Durum = false });
         Add(new Urun() { Id = 3, Ad = "CPU X86", BirimFiyat = 145, StokMiktari = 150, Durum = true });
         Add(new Urun() { Id = 4, Ad = "USB Bellek", BirimFiyat = 15, StokMiktari = 250, Durum = true });
@@ -287,7 +287,7 @@ namespace DataBindIslemleri
     public partial class Window6 : Window
     {
         string sqlConn = "data source=.;database=AdventureWorks;integrated security=SSPI";
-        string sorgu = @"SELECT PRD.ProductID, PRD.Name AS ProductName, PRD.SafetyStockLevel , PRD.StandardCost,PRD.ListPrice, PH.ThumbNailPhoto FROM Production.Product PRD INNER JOIN Production.ProductProductPhoto PPH ON PRD.ProductID = PPH.ProductID INNER JOIN Production.ProductPhoto PH ON PPH.ProductPhotoID = PH.ProductPhotoID"; 
+        string sorgu = @"SELECT PRD.ProductID, PRD.Name AS ProductName, PRD.SafetyStockLevel , PRD.StandardCost,PRD.ListPrice, PH.ThumbNailPhoto FROM Production.Product PRD INNER JOIN Production.ProductProductPhoto PPH ON PRD.ProductID = PPH.ProductID INNER JOIN Production.ProductPhoto PH ON PPH.ProductPhotoID = PH.ProductPhotoID";
 
         private void VeriyiCek()
         {
@@ -308,7 +308,7 @@ namespace DataBindIslemleri
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             lstUrunler.Items.Clear();
-            VeriyiCek(); 
+            VeriyiCek();
         }
     }
 }
@@ -417,10 +417,10 @@ namespace DataBindIslemleri
                 DataSet ds = new DataSet();
                 ds.Tables.Add(dtUrun);
                 ds.Tables.Add(dtKategori);
-        
+
                 DataRelation iliski = new DataRelation("SubCatToProduct", dtKategori.Columns["ProductSubCategoryID"], dtUrun.Columns["ProductSubCategoryID"]);
                 ds.Relations.Add(iliski);
-        
+
                 DataContext = dtKategori;
             }
         }

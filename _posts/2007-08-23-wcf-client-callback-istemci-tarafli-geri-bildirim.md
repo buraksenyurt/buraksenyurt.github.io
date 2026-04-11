@@ -53,7 +53,7 @@ using System.ServiceModel;
 namespace UrunServisi
 {
     // Servis sözleşmesinde, Callback sözleşmesini bildirmek için CallbackContract özelliği kullanılır.
-    [ServiceContract(CallbackContract=typeof(IGeriBildirimSozlesmesi))]
+    [ServiceContract(CallbackContract = typeof(IGeriBildirimSozlesmesi))]
     public interface IUrunYoneticiSozlesmesi
     {
         [OperationContract()]
@@ -72,11 +72,11 @@ using System.Data.SqlClient;
 
 namespace UrunServisi
 {
-    public class UrunYonetici:IUrunYoneticiSozlesmesi
+    public class UrunYonetici : IUrunYoneticiSozlesmesi
     {
         #region IUrunYoneticiSozlesmesi Members
 
-        public void StokMiktariniArttir(int gelenMiktar,int urunNo)
+        public void StokMiktariniArttir(int gelenMiktar, int urunNo)
         {
             string sorgu = "Update Products Set UnitsInStock=UnitsInStock+@GelenMiktar Where ProductID=@PrdId";
             using (SqlConnection conn = new SqlConnection("data source=.;database=Northwind;integrated security=SSPI"))
@@ -85,10 +85,10 @@ namespace UrunServisi
                 cmd.Parameters.AddWithValue("@GelenMiktar", gelenMiktar);
                 cmd.Parameters.AddWithValue("@PrdId", urunNo);
                 conn.Open();
-                int guncellenen=Convert.ToInt32(cmd.ExecuteNonQuery());
+                int guncellenen = Convert.ToInt32(cmd.ExecuteNonQuery());
                 if (guncellenen > 0)
                 {
-                         IGeriBildirimSozlesmesi geriBildirim = OperationContext.Current.GetCallbackChannel<IGeriBildirimSozlesmesi>();
+                    IGeriBildirimSozlesmesi geriBildirim = OperationContext.Current.GetCallbackChannel<IGeriBildirimSozlesmesi>();
                     if (((ICommunicationObject)geriBildirim).State == CommunicationState.Opened)
                     {
                         geriBildirim.OnStokMiktariDegisti(urunNo);
@@ -96,7 +96,7 @@ namespace UrunServisi
                 }
             }
         }
-    
+
         #endregion
     }
 }
@@ -127,49 +127,49 @@ namespace Sunucu
 {
     public partial class Form1 : Form
     {
-        ServiceHost host; 
+        ServiceHost host;
 
         public Form1()
         {
             InitializeComponent();
-            btnServisiKapat.Enabled = false; 
+            btnServisiKapat.Enabled = false;
         }
 
         private void ServisiHazirla()
         {
             host = new ServiceHost(typeof(UrunYonetici));
-            host.Opening += delegate(object sender, EventArgs e)
+            host.Opening += delegate (object sender, EventArgs e)
                                 {
                                     lblServisDurumu.Text = "Servis Açılıyor...";
                                 };
-    
-            host.Opened += delegate(object sender, EventArgs e)
+
+            host.Opened += delegate (object sender, EventArgs e)
                                 {
                                     lblServisDurumu.Text = "Servis Açıldı";
                                     btnServisiAc.Enabled = false;
                                     btnServisiKapat.Enabled = true;
                                 };
-            host.Closing += delegate(object sender, EventArgs e)
+            host.Closing += delegate (object sender, EventArgs e)
                                 {
                                     lblServisDurumu.Text = "Servis Kapatılıyor...";
                                 };
-            host.Closed += delegate(object sender, EventArgs e)
+            host.Closed += delegate (object sender, EventArgs e)
                                 {
                                     lblServisDurumu.Text = "Servis Kapatıldı.";
                                     btnServisiAc.Enabled = true;
                                     btnServisiKapat.Enabled = false;
                                 };
-        } 
+        }
 
         private void btnServisiAc_Click(object sender, EventArgs e)
         {
             ServisiHazirla();
-            host.Open(); 
+            host.Open();
         }
 
         private void btnServisiKapat_Click(object sender, EventArgs e)
         {
-            host.Close(); 
+            host.Close();
         }
     }
 }
@@ -213,36 +213,37 @@ using System.ServiceModel;
 namespace Istemci
 {
     /* Servisin, istemci tarafında bir geri bildirim operasyonu çağrısı yapabilmesi için geri bildirim sözleşmesini uygulayan bir sınıfın yazılması gerekir. */
-    public class Uygulayici:IUrunYoneticiSozlesmesiCallback,IDisposable
+    public class Uygulayici : IUrunYoneticiSozlesmesiCallback, IDisposable
     {
-        private UrunYoneticiSozlesmesiClient proxy=null;
+        private UrunYoneticiSozlesmesiClient proxy = null;
 
         public Uygulayici()
-        {           
-            proxy = new UrunYoneticiSozlesmesiClient(new InstanceContext(this), "DefaultBinding_IUrunYoneticiSozlesmesi_IUrunYoneticiSozlesmesi"); 
+        {
+            proxy = new UrunYoneticiSozlesmesiClient(new InstanceContext(this), "DefaultBinding_IUrunYoneticiSozlesmesi_IUrunYoneticiSozlesmesi");
         }
 
-        public void StokMiktariniArttiralim(int artisMiktari,int urunNumarasi)
+        public void StokMiktariniArttiralim(int artisMiktari, int urunNumarasi)
         {
             proxy.StokMiktariniArttir(artisMiktari, urunNumarasi);
-            Console.WriteLine("{0} numaralı ürünün stok miktarında {1} adet artış yapıldı",urunNumarasi,artisMiktari); 
+            Console.WriteLine("{0} numaralı ürünün stok miktarında {1} adet artış yapıldı", urunNumarasi, artisMiktari);
         }
         #region IUrunYoneticiSozlesmesiCallback Members
 
         public void OnStokMiktariDegisti(int degisenUrunId)
         {
-            Console.WriteLine("{0} numaralı ürünün stok miktarında değişiklik oldu.",degisenUrunId.ToString());
+            Console.WriteLine("{0} numaralı ürünün stok miktarında değişiklik oldu.", degisenUrunId.ToString());
         }
 
         public void Cikart()
         {
-             proxy.AboneligiKaldir(); /* Abonelik çıkartma işlemi yapılmadığ takdirde istemci uygulama istisna mesajları alabilir. Bunun için istemcide açılan bir abonelik var ise bunun bilinçli olarak kapatılmasındada yarar vardır. Cikart metodu buna destek vermesi amacıyla geliştirilmiştir. */
+            proxy.AboneligiKaldir();
+            /* Abonelik çıkartma işlemi yapılmadığ takdirde istemci uygulama istisna mesajları alabilir. Bunun için istemcide açılan bir abonelik var ise bunun bilinçli olarak kapatılmasındada yarar vardır. Cikart metodu buna destek vermesi amacıyla geliştirilmiştir. */
         }
 
         #endregion
 
         #region IDisposable Members
-    
+
         public void Dispose()
         {
             proxy.Close();
@@ -303,7 +304,7 @@ using System.ServiceModel;
 
 namespace UrunServisi
 {
-    [ServiceContract(CallbackContract=typeof(IGeriBildirimSozlesmesi))]
+    [ServiceContract(CallbackContract = typeof(IGeriBildirimSozlesmesi))]
     public interface IUrunYoneticiSozlesmesi
     {
         [OperationContract()]
@@ -311,7 +312,7 @@ namespace UrunServisi
 
         [OperationContract()]
         void AboneOl();
-    
+
         [OperationContract()]
         void AboneligiKaldir();
     }
@@ -329,7 +330,7 @@ using System.Collections.Generic;
 
 namespace UrunServisi
 {
-    public class UrunYonetici:IUrunYoneticiSozlesmesi
+    public class UrunYonetici : IUrunYoneticiSozlesmesi
     {
         // İstemcilerin geri bildirim referanslarını tutacak olan List<T> koleksiyonu.
         private static List<IGeriBildirimSozlesmesi> geriBildirimAboneleri = new List<IGeriBildirimSozlesmesi>();
@@ -343,7 +344,7 @@ namespace UrunServisi
             IGeriBildirimSozlesmesi geriBildirim = OperationContext.Current.GetCallbackChannel<IGeriBildirimSozlesmesi>();
             // Eğer List<> kolekisyonunda gelen istemci geri bildirim referansı yoksa eklenir.
             if (!geriBildirimAboneleri.Contains(geriBildirim))
-                 geriBildirimAboneleri.Add(geriBildirim);
+                geriBildirimAboneleri.Add(geriBildirim);
         }
 
         // İstemcilerin, servis tarafındaki geri bildirim abonleri listesinden çıkartılmasını sağlayan metod.
@@ -366,7 +367,7 @@ namespace UrunServisi
             }
         }
 
-        public void StokMiktariniArttir(int gelenMiktar,int urunNo)
+        public void StokMiktariniArttir(int gelenMiktar, int urunNo)
         {
             string sorgu = "Update Products Set UnitsInStock=UnitsInStock+@GelenMiktar Where ProductID=@PrdId";
             using (SqlConnection conn = new SqlConnection("data source=.;database=Northwind;integrated security=SSPI"))
@@ -375,14 +376,14 @@ namespace UrunServisi
                 cmd.Parameters.AddWithValue("@GelenMiktar", gelenMiktar);
                 cmd.Parameters.AddWithValue("@PrdId", urunNo);
                 conn.Open();
-                int guncellenen=Convert.ToInt32(cmd.ExecuteNonQuery());
+                int guncellenen = Convert.ToInt32(cmd.ExecuteNonQuery());
                 if (guncellenen > 0)
                 {
-                    AboneleriBilgilendir(urunNo);                  
+                    AboneleriBilgilendir(urunNo);
                 }
             }
         }
-            
+
         #endregion
     }
 }
@@ -400,9 +401,9 @@ using System.ServiceModel;
 
 namespace Istemci
 {
-    public class Uygulayici:IUrunYoneticiSozlesmesiCallback,IDisposable
+    public class Uygulayici : IUrunYoneticiSozlesmesiCallback, IDisposable
     {
-        private UrunYoneticiSozlesmesiClient proxy=null;
+        private UrunYoneticiSozlesmesiClient proxy = null;
 
         public Uygulayici()
         {
@@ -428,7 +429,7 @@ static void Main(string[] args)
         Console.WriteLine("Abonelik başlatıldı.Devam etmek için bir tuşa basın");
         Console.ReadLine();
         uyg.StokMiktariniArttiralim(10, 1);
-          uyg.Cikart();
+        uyg.Cikart();
     }
     catch (Exception exp)
     {

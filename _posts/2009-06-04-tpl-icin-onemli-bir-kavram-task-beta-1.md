@@ -57,8 +57,8 @@ namespace HelloTasks
 
         static long GetTotalSize()
         {
-            Console.WriteLine("\t GetTotalSize metodu için Managed Thread Id {0}. Zaman {1}",Thread.CurrentThread.ManagedThreadId.ToString(),DateTime.Now.ToLongTimeString());
-            string[] files=Directory.GetFiles(imagesPath);
+            Console.WriteLine("\t GetTotalSize metodu için Managed Thread Id {0}. Zaman {1}", Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToLongTimeString());
+            string[] files = Directory.GetFiles(imagesPath);
             long totalSize = 0;
             foreach (string file in files)
             {
@@ -93,7 +93,7 @@ namespace HelloTasks
                 FileInfo fInfo = new FileInfo(file);
                 if (fInfo.Extension.Contains("bmp"))
                 {
-                    File.Copy(file, "C:\\Bitmaps\\"+ fInfo.Name,true);
+                    File.Copy(file, "C:\\Bitmaps\\" + fInfo.Name, true);
                 }
             }
             Console.WriteLine("Kopyalama işlemi tamamlandı");
@@ -140,9 +140,9 @@ Bu noktada şunu vurgulamaktada yarar var; bazı durumlarda paralel çalışan m
 Mutlaka dikkatinizi çekmiştir; her metod için ayrı bir Managed Thread Id değeri üretilmektedir. Oysaki ardışık (Sequential) çalışan modelde tüm metodlar aynı Thread içerisinde ele alınmıştır. Bu, Thread bölünümünün de bir göstergesidir. Diğer taraftan, metodlar arası süre farklılıkları neredeyse sıfıra yakındır. Görüldüğü gibi gayet basit bir şekilde işlemleri paralel hale getirmeyi başardık. Kod ile ilişkili önemli bir noktayı daha vurgulamak isterim. Biraz önce bahsettiğimiz gibi, aynı dönüş tipine sahip metodların kullanıldığı senaryolarda Task dizilerini kullanmak daha mantıklıdır. Bu nedenle yukarıdaki senaryoda yer alan kodda dizi kullanımı şart değildir. Bir başka deyişle aynı amacı yerine getirden bir kod parçası, aşağıdaki şekilde olduğu gibi ele alınabilir.
 
 ```csharp
-Task<long> task1=Task<long>.Factory.StartNew(GetTotalSize);
-Task<int> task2=Task<int>.Factory.StartNew(GetBmpCount);
-Task task3=Task.Factory.StartNew(CopyBmp);
+Task<long> task1 = Task<long>.Factory.StartNew(GetTotalSize);
+Task<int> task2 = Task<int>.Factory.StartNew(GetBmpCount);
+Task task3 = Task.Factory.StartNew(CopyBmp);
 
 Console.WriteLine("Toplam boyut {0} byte\nBmp sayısı {1}"
                     , task1.Result.ToString()

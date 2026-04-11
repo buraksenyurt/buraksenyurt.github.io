@@ -56,7 +56,11 @@ namespace KnownTypes
     class Product
     {
         [DataMember]
-        public object Information { get; set; }
+        public object Information
+        {
+            get;
+            set;
+        }
     }
 
     // [DataContract]
@@ -122,10 +126,10 @@ XSD şemasında, Information elementi için type niteliğinde xs:string kullanı
 
 ```csharp
 // Exception durumu
-            serializer.WriteObject(
-                new FileStream("ProductV3.xml", FileMode.Create, FileAccess.Write)
-                , new Product { Information = new ProductInformation { Id=1, Summary="Ürün için çeşitli bilgiler" } }
-                ); 
+serializer.WriteObject(
+    new FileStream("ProductV3.xml", FileMode.Create, FileAccess.Write)
+    , new Product { Information = new ProductInformation { Id = 1, Summary = "Ürün için çeşitli bilgiler" } }
+    );
 ```
 
 Bu sefer Information özelliğine serileştirilebilir (ki DataContract ve DataMember nitelikleri nedeni ile) ProductInformation tipinden bir nesne örneği atanmaktadır. Bu durumda çalışma zamanında aşağıdaki ekran görüntüsünde yer alan SerializationException istisnasının alındığı görülür.
@@ -149,8 +153,12 @@ Kişisel Not: Başka yöntemlerde bulunmaktadır. Örneğin tip içerisinde Type
 [KnownType(typeof(ProductInformation))]
 class Product
 {
-   [DataMember]
-   public object Information { get; set; }
+    [DataMember]
+    public object Information
+    {
+        get;
+        set;
+    }
 }
 ```
 

@@ -24,9 +24,9 @@ using System.Workflow.ComponentModel;
 
 namespace NorthwindActivities
 {
- public class ProductOrderActivity
-        : SequenceActivity
- {
+    public class ProductOrderActivity
+           : SequenceActivity
+    {
         public static DependencyProperty ProductNumberProperty = DependencyProperty.Register("ProductNumber", typeof(string), typeof(ProductOrderActivity));
         public static DependencyProperty PartCountProperty = DependencyProperty.Register("PartCount", typeof(int), typeof(ProductOrderActivity));
         public static DependencyProperty OrderDateProperty = DependencyProperty.Register("OrderDate", typeof(DateTime), typeof(ProductOrderActivity));
@@ -81,11 +81,11 @@ namespace NorthwindActivities
 
         protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
         {
-            Console.WriteLine("{0} numaralı üründen {1} adet sipariş işlemi...",ProductNumber,PartCount.ToString());
-            Console.WriteLine("{0}  tarihine kadar sipariş edilmelidir.",OrderDate.ToShortDateString());
+            Console.WriteLine("{0} numaralı üründen {1} adet sipariş işlemi...", ProductNumber, PartCount.ToString());
+            Console.WriteLine("{0}  tarihine kadar sipariş edilmelidir.", OrderDate.ToShortDateString());
             return base.Execute(executionContext);
         }
- }
+    }
 }
 ```
 
@@ -142,14 +142,15 @@ namespace NorthwindActivities
     {
         static void Main(string[] args)
         {
-            using(WorkflowRuntime workflowRuntime = new WorkflowRuntime())
+            using (WorkflowRuntime workflowRuntime = new WorkflowRuntime())
             {
                 AutoResetEvent waitHandle = new AutoResetEvent(false);
-                workflowRuntime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e) {
+                workflowRuntime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
+                {
                     waitHandle.Set();
                     Console.WriteLine("İşlemler tamamlandı");
                 };
-                workflowRuntime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)
+                workflowRuntime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
                 {
                     Console.WriteLine(e.Exception.Message);
                     waitHandle.Set();

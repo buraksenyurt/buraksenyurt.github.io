@@ -66,7 +66,7 @@ namespace DiscoveryProxyService
             {
                 // Address key değerine sahip bir value var ise güncelleme yoksa ekleme yapar.
                 _serviceList[metadata.Address] = metadata;
-                Console.WriteLine("{0} adresli endpoint eklendi",metadata.Address.ToString());
+                Console.WriteLine("{0} adresli endpoint eklendi", metadata.Address.ToString());
             }
         }
         // Offline olan bir servisi listeden çıkartmak için kullanılır
@@ -247,7 +247,7 @@ namespace ServiceX
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
             ServiceHost host = new ServiceHost(
                 typeof(CalculusService)
                 , new Uri("net.tcp://localhost:9002/CalculusService/" + Guid.NewGuid().ToString()));
@@ -261,7 +261,7 @@ namespace ServiceX
             ServiceDiscoveryBehavior serviceDiscoveryBehavior = new ServiceDiscoveryBehavior();
             serviceDiscoveryBehavior.AnnouncementEndpoints.Add(announcementEndpoint);
             host.Description.Behaviors.Add(serviceDiscoveryBehavior);
-            
+
             host.Open();
             Console.WriteLine("Service X açıldı");
             Console.ReadLine();
@@ -351,7 +351,7 @@ namespace ClientApp
             disClient.Open();
             // Bir arama kriteri uygulanır ve dönen cevaptan kullanılabilir servis adresi tedarik edilir
             FindResponse response = disClient.Find(new FindCriteria(typeof(ICalculus)));
-            EndpointAddress epAddress=response.Endpoints[0].Address;
+            EndpointAddress epAddress = response.Endpoints[0].Address;
 
             // Eğer arama kriterine uygun servisler bulunmuşsa
             if (response.Endpoints.Count > 0)

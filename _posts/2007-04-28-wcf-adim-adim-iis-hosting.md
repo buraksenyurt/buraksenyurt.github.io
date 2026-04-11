@@ -69,7 +69,7 @@ Eğer servis metodlarımız geriye ilkel tipler döndürmüyorsa (int, double, s
 ![mk201_4.gif](/assets/images/2007/mk201_4.gif)
 
 ```csharp
-[ServiceContract(Name="Adventure Works Services")]
+[ServiceContract(Name = "Adventure Works Services")]
 public interface IAdventure
 {
     [OperationContract]
@@ -93,13 +93,13 @@ Servis sözleşmemizi tanımladıktan sonra, uzak nesne olarak asıl iş yapan m
 ![mk201_5.gif](/assets/images/2007/mk201_5.gif)
 
 ```csharp
-class AdventureManager:IAdventure
+class AdventureManager : IAdventure
 {
     #region IAdventure Members
 
     public Employee GetEmployee(int employeeId)
     {
-        Employee emp=null;
+        Employee emp = null;
         using (SqlConnection conn = new SqlConnection("data source=localhost;database=AdventureWorks;integrated security=SSPI"))
         {
             SqlCommand cmd = new SqlCommand("Select EmployeeId,Title,BirthDate,VacationHours From HumanResources.Employee Where EmployeeId=@EmpId", conn);
@@ -121,7 +121,7 @@ class AdventureManager:IAdventure
 
     public DataSet GetAllProducts()
     {
-        DataSet ds=null;
+        DataSet ds = null;
         using (SqlConnection conn = new SqlConnection("data source=localhost;database=AdventureWorks;integrated security=SSPI"))
         {
             SqlDataAdapter da = new SqlDataAdapter("Select ProductId,Name,ListPrice,Class,SellStartDate From Production.Product", conn);
@@ -151,7 +151,7 @@ class AdventureManager:IAdventure
 
     public double AverageSubTotalFromHeaders()
     {
-        double average=0;
+        double average = 0;
         using (SqlConnection conn = new SqlConnection("data source=localhost;database=AdventureWorks;integrated security=SSPI"))
         {
             SqlCommand cmd = new SqlCommand("Select Avg(SubTotal) From Sales.SalesOrderHeader", conn);
@@ -278,16 +278,16 @@ namespace Istemci
         {
             localhost.AdventureWorksServicesClient adw = new Istemci.localhost.AdventureWorksServicesClient();
             DataSet ds = adw.GetAllProducts();
-            Console.WriteLine("Urun sayısı {0} dır",ds.Tables[0].Rows.Count.ToString());
+            Console.WriteLine("Urun sayısı {0} dır", ds.Tables[0].Rows.Count.ToString());
 
-            string[] categoryNames=adw.GetAllSubCategoryNames();
+            string[] categoryNames = adw.GetAllSubCategoryNames();
             foreach (string category in categoryNames)
                 Console.WriteLine(category);
 
-            Employee emp=adw.GetEmployee(1);
+            Employee emp = adw.GetEmployee(1);
             Console.WriteLine(emp.Title + " " + emp.BirthDate.ToShortDateString() + " " + emp.VacationHours.ToString());
 
-            Console.WriteLine("Ortalama Sub Total {0}",adw.AverageSubTotalFromHeaders().ToString("C2"));
+            Console.WriteLine("Ortalama Sub Total {0}", adw.AverageSubTotalFromHeaders().ToString("C2"));
         }
     }
 }

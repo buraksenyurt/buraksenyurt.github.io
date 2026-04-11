@@ -38,14 +38,30 @@ namespace Prototype
 
     // Concrete Prototype Class A
     class Hero
-        :GameScenePrototype
+        : GameScenePrototype
     {
-        public int Width { get; set; }
-        public int Heigth { get; set; }
-        public string Name { get; set; }
-        public HeroType Type { get; set; }
+        public int Width
+        {
+            get;
+            set;
+        }
+        public int Heigth
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public HeroType Type
+        {
+            get;
+            set;
+        }
 
-        public Hero(int width,int heigth,string name,HeroType heroType)
+        public Hero(int width, int heigth, string name, HeroType heroType)
         {
             Width = width;
             Heigth = heigth;
@@ -61,12 +77,20 @@ namespace Prototype
 
     // Concrete Prototype class B
     class Mine
-        :GameScenePrototype
+        : GameScenePrototype
     {
-        public double Gravity{ get; set; }
-        public MineType Type { get; set; }
+        public double Gravity
+        {
+            get;
+            set;
+        }
+        public MineType Type
+        {
+            get;
+            set;
+        }
 
-        public Mine(double gravity,MineType mineType)
+        public Mine(double gravity, MineType mineType)
         {
             Gravity = gravity;
             Type = mineType;
@@ -78,10 +102,14 @@ namespace Prototype
         }
     }
 
- // Prototype Manager class
+    // Prototype Manager class
     class GameSceneManager
     {
-        public List<GameScenePrototype> GameObjects { get; set; }
+        public List<GameScenePrototype> GameObjects
+        {
+            get;
+            set;
+        }
         public GameSceneManager()
         {
             GameObjects = new List<GameScenePrototype>();
@@ -112,7 +140,7 @@ namespace Prototype
         {
             GameSceneManager manager = new GameSceneManager();
 
-            Hero hero1 = new Hero(10,20,"Bıkanyus", HeroType.Archer);
+            Hero hero1 = new Hero(10, 20, "Bıkanyus", HeroType.Archer);
             manager.GameObjects.Add(hero1);
             Hero hero2 = new Hero(15, 35, "Wah!tupus", HeroType.Employee);
             manager.GameObjects.Add(hero2);

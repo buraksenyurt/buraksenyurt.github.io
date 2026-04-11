@@ -31,74 +31,74 @@ using System.Threading;
 
 namespace WhatIsThreadPool
 {
-    class Program
-    {
-        static ManualResetEvent[] mrEvents;
-        static int[] testNumbers; // Faktöryel değerleri hesap edilecek sayıların tutulacağı dizi.
-        static long[] results; // Faktöryel sonuçlarının tutulacağı dizi
-        static int testCount = 5; // Denemesayısı
+    class Program
+    {
+        static ManualResetEvent[] mrEvents;
+        static int[] testNumbers; // Faktöryel değerleri hesap edilecek sayıların tutulacağı dizi.
+        static long[] results; // Faktöryel sonuçlarının tutulacağı dizi
+        static int testCount = 5; // Denemesayısı
 
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Başlamak için bir tuşa basınız. Ana Thread Id : {0}",Thread.CurrentThread.ManagedThreadId.ToString());
-            Console.ReadLine();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Başlamak için bir tuşa basınız. Ana Thread Id : {0}", Thread.CurrentThread.ManagedThreadId.ToString());
+            Console.ReadLine();
 
-            // Ana Thread' i pool içinde çalışan Thread' lerin bittiği konusunda bilgilendirecek ManualResetEvent nesne dizisi oluşturulur
-            mrEvents = new ManualResetEvent[testCount];
-            results = new long[testCount];
-            testNumbers = new int[testCount];
-            Random rnd = new Random();
+            // Ana Thread' i pool içinde çalışan Thread' lerin bittiği konusunda bilgilendirecek ManualResetEvent nesne dizisi oluşturulur
+            mrEvents = new ManualResetEvent[testCount];
+            results = new long[testCount];
+            testNumbers = new int[testCount];
+            Random rnd = new Random();
 
-            Stopwatch watcher = new Stopwatch();
-            watcher.Start();
+            Stopwatch watcher = new Stopwatch();
+            watcher.Start();
 
-            for (int i = 0; i < testCount; i++)
-            {
-                // Başlangıçta ManualResetEvent nesnesi false değer ile üretilir.
-                mrEvents[i] = new ManualResetEvent(false);
-                testNumbers[i] = rnd.Next(1, 20); // örnek bir test sayısı üretimi
-                ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadWork), i);
-            }
+            for (int i = 0; i < testCount; i++)
+            {
+                // Başlangıçta ManualResetEvent nesnesi false değer ile üretilir.
+                mrEvents[i] = new ManualResetEvent(false);
+                testNumbers[i] = rnd.Next(1, 20); // örnek bir test sayısı üretimi
+                ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadWork), i);
+            }
 
-            // Tüm Thread' lerin işi bitinceye kadar ana uygulamayı duraksat
-            WaitHandle.WaitAll(mrEvents);
+            // Tüm Thread' lerin işi bitinceye kadar ana uygulamayı duraksat
+            WaitHandle.WaitAll(mrEvents);
 
-            watcher.Stop();
-            Console.WriteLine("\nİşlemler tamamlandı...Toplam Süre {0} \n",watcher.Elapsed.TotalMilliseconds.ToString());
+            watcher.Stop();
+            Console.WriteLine("\nİşlemler tamamlandı...Toplam Süre {0} \n", watcher.Elapsed.TotalMilliseconds.ToString());
 
-            for (int i=0;i<results.Length;i++)
-            {
-                Console.WriteLine("\t\t{0} için sonuç {1} ",testNumbers[i].ToString(), results[i].ToString());
-            }
-            Console.ReadLine();
-        }
+            for (int i = 0; i < results.Length; i++)
+            {
+                Console.WriteLine("\t\t{0} için sonuç {1} ", testNumbers[i].ToString(), results[i].ToString());
+            }
+            Console.ReadLine();
+        }
 
-        // ThreadPool içerisindeki Thread' lerin işaret ettiği metod. WaitCallback temsilcisinin bildirimine uygun olaraktan object tipinden parametre almakta ve değer döndürmemektedir
-        static void ThreadWork(object obj)
-        {
-            int currentNumber = (int)obj;
+        // ThreadPool içerisindeki Thread' lerin işaret ettiği metod. WaitCallback temsilcisinin bildirimine uygun olaraktan object tipinden parametre almakta ve değer döndürmemektedir
+        static void ThreadWork(object obj)
+        {
+            int currentNumber = (int)obj;
 
-            Console.WriteLine("{0} sayısı için hesaplama. Current Thread Id : {1}",testNumbers[currentNumber].ToString(),Thread.CurrentThread.ManagedThreadId.ToString());
-            
-            // Faktöryel hesaplamasını gerçekleştiren metod çağrısı
-            results[currentNumber]=Factorial(testNumbers[currentNumber]);
-            // Ana Thread' in bilgilendirilmesi sağlanır.
-            mrEvents[currentNumber].Set();
-        }
+            Console.WriteLine("{0} sayısı için hesaplama. Current Thread Id : {1}", testNumbers[currentNumber].ToString(), Thread.CurrentThread.ManagedThreadId.ToString());
 
-        // Faktöryel hesabını yapan recursive metod
-        static long Factorial(int number)
-        {
-            long result;
-            if (number == 0
-                || number == 1)
-                result = 1;
-            else
-                result = Factorial(number - 1) * number;
+            // Faktöryel hesaplamasını gerçekleştiren metod çağrısı
+            results[currentNumber] = Factorial(testNumbers[currentNumber]);
+            // Ana Thread' in bilgilendirilmesi sağlanır.
+            mrEvents[currentNumber].Set();
+        }
 
-             return result;
-        }
-    }
+        // Faktöryel hesabını yapan recursive metod
+        static long Factorial(int number)
+        {
+            long result;
+            if (number == 0
+                || number == 1)
+                result = 1;
+            else
+                result = Factorial(number - 1) * number;
+
+            return result;
+        }
+    }
 }
 ```
 
@@ -119,28 +119,27 @@ Thread'ler ile ilişkili görevlerin ThreadPool tarafından yönetilen kuyruğa 
 
 ```csharp
 for (int i = 0; i < testCount; i++)
-            {
-                // Başlangıçta ManualResetEvent nesnesi false değer ile üretilir.
-                mrEvents[i] = new ManualResetEvent(false);
-                testNumbers[i] = rnd.Next(1, 20); // örnek bir test sayısı üretimi
-                // ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadWork), i);
+{
+    // Başlangıçta ManualResetEvent nesnesi false değer ile üretilir.
+    mrEvents[i] = new ManualResetEvent(false);
+    testNumbers[i] = rnd.Next(1, 20); // örnek bir test sayısı üretimi
+                                      // ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadWork), i);
 
-                ThreadPool.QueueUserWorkItem((obj) =>
-                {
-                    int currentNumber = (int)obj;
+    ThreadPool.QueueUserWorkItem((obj) =>
+    {
+        int currentNumber = (int)obj;
 
-                    Console.WriteLine("{0} sayısı için hesaplama. Current Thread Id : {1}", testNumbers[currentNumber].ToString(), Thread.CurrentThread.ManagedThreadId.ToString());
+        Console.WriteLine("{0} sayısı için hesaplama. Current Thread Id : {1}", testNumbers[currentNumber].ToString(), Thread.CurrentThread.ManagedThreadId.ToString());
 
-                    // Faktöryel hesaplamasını gerçekleştiren metod çağrısı
-                    results[currentNumber] = Factorial(testNumbers[currentNumber]);
-                    // Ana Thread' in bilgilendirilmesi sağlanır.
-                    mrEvents[currentNumber].Set();
-                }
-                , i);                
-            }
+        // Faktöryel hesaplamasını gerçekleştiren metod çağrısı
+        results[currentNumber] = Factorial(testNumbers[currentNumber]);
+        // Ana Thread' in bilgilendirilmesi sağlanır.
+        mrEvents[currentNumber].Set();
+    }
+    , i);
+}
 ```
 
 Böylece geldik bir yazımızın daha sonuna. Umarım ThreadPool konusunda biraz fikir sahibi olabilmişizdir. Tekraradan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WhatIsThreadPool.rar (23,73 kb)](/assets/files/2009/WhatIsThreadPool.rar)
-

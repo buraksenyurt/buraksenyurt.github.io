@@ -39,11 +39,11 @@ using System.ServiceModel;
 
 namespace RemoteLib
 {
-    [ServiceContract(Name="NorthManagerService", Namespace="http://www.bsenyurt.com/NorthService")]
+    [ServiceContract(Name = "NorthManagerService", Namespace = "http://www.bsenyurt.com/NorthService")]
     public interface INorthwind
     {
-        [OperationContract(Name="GetCustomers")]
-        DataSet GetCustomers(); 
+        [OperationContract(Name = "GetCustomers")]
+        DataSet GetCustomers();
     }
 }
 ```
@@ -58,17 +58,17 @@ using System.Data.SqlClient;
 
 namespace RemoteLib
 {
-    public class NorthManager:INorthwind
+    public class NorthManager : INorthwind
     {
         #region INorthwind Members
 
         public DataSet GetCustomers()
         {
             DataSet ds = null;
-            SqlConnection conn=null;
+            SqlConnection conn = null;
             try
             {
-                conn= new SqlConnection("data source=.;database=AdventureWorks;integrated security=SSPI");
+                conn = new SqlConnection("data source=.;database=AdventureWorks;integrated security=SSPI");
                 SqlDataAdapter da = new SqlDataAdapter("Select CustomerID,CompanyName,ContactName,ContactTitle From Customers", conn);
                 ds = new DataSet("CustomersSet");
                 da.Fill(ds);
@@ -119,7 +119,7 @@ namespace ServerApp
         static void Main(string[] args)
         {
             ServiceHost host = new ServiceHost(typeof(RemoteLib.NorthManager));
-            host.Open(); 
+            host.Open();
             Console.WriteLine("Sunucu  dinlemede...");
             Console.ReadLine();
             host.Close();
@@ -173,12 +173,12 @@ namespace ClientApp
             {
                 NorthManagerServiceClient srvClient = new NorthManagerServiceClient("NorthClientEndPoint");
                 DataSet customers = srvClient.GetCustomers();
-                if(customers.Tables.Count!=0)
+                if (customers.Tables.Count != 0)
                     Console.WriteLine(customers.Tables[0].Rows.Count.ToString());
             }
             catch (FaultException excp)
             {
-                Console.WriteLine(excp.Code.Name+ "\n" + excp.Reason.ToString());
+                Console.WriteLine(excp.Code.Name + "\n" + excp.Reason.ToString());
             }
         }
     }
@@ -269,22 +269,40 @@ namespace RemoteLib
         [DataMember]
         public string FaultCode
         {
-            get { return _faultCode; }
-            set { _faultCode = value; }
+            get
+            {
+                return _faultCode;
+            }
+            set
+            {
+                _faultCode = value;
+            }
         }
         [DataMember]
         public string Message
         {
-            get { return _Message; }
-            set { _Message = value; }
+            get
+            {
+                return _Message;
+            }
+            set
+            {
+                _Message = value;
+            }
         }
         [DataMember]
         public string Reason
         {
-            get { return _Reason; }
-            set { _Reason = value; }
+            get
+            {
+                return _Reason;
+            }
+            set
+            {
+                _Reason = value;
+            }
         }
-        public TabloAdiFault(string faultCode,string message,string reason)
+        public TabloAdiFault(string faultCode, string message, string reason)
         {
             Reason = reason;
             Message = message;
@@ -297,12 +315,12 @@ namespace RemoteLib
 Burada dikkat edilmesi gereken noktalardan biriside DataContract ve DataMember niteliklerinin kullanılabilmesi için System.Runtime.Serialization.dll assembly'ının projeye dahil edilmiş olması gerekmektedir. (Biz uygulamamızı WCF Service Library şablonundan tasarladığımız için bu assembly'lar otomatik olarak referans edilmiş olacaktır.) Artık tanımlamış olduğumuz bu sınıfın, istemcilere FaultException olarak gönderilmesi için gereken hazırlıkları yapabiliriz. Öncelikli olarak bu verinin hangi metodlardan döndürülecekse FaultContract niteliği yardımıyla bildirilmesi gerekmektedir. Bu nedenle servis sözleşmemizde gerekli tanımlamayı aşağıdaki gibi yapmamız yeterli olacaktır.
 
 ```csharp
-[ServiceContract(Name="NorthManagerService",Namespace="http://www.bsenyurt.com/NorthService")]
+[ServiceContract(Name = "NorthManagerService", Namespace = "http://www.bsenyurt.com/NorthService")]
 public interface INorthwind
 {
     [FaultContract(typeof(TabloAdiFault))]
-    [OperationContract(Name="GetCustomers")]
-    DataSet GetCustomers(); 
+    [OperationContract(Name = "GetCustomers")]
+    DataSet GetCustomers();
 }
 ```
 
@@ -312,10 +330,10 @@ FaultContract niteliği parametre olarak metoddan döndürülebilecek tipe ait b
 public DataSet GetCustomers()
 {
     DataSet ds = null;
-    SqlConnection conn=null;
+    SqlConnection conn = null;
     try
     {
-        conn= new SqlConnection("data source=.;database=AdventureWorks;integrated security=SSPI");
+        conn = new SqlConnection("data source=.;database=AdventureWorks;integrated security=SSPI");
         SqlDataAdapter da = new SqlDataAdapter("Select CustomerID,CompanyName,ContactName,ContactTitle From Customers", conn);
         ds = new DataSet("CustomersSet");
         da.Fill(ds);
@@ -380,13 +398,13 @@ namespace ServerApp
         static void Main(string[] args)
         {
             host = new ServiceHost(typeof(RemoteLib.NorthManager));
-            host.Faulted += delegate(object sender, EventArgs e)
+            host.Faulted += delegate (object sender, EventArgs e)
             {
                 host.Abort();
                 host = new ServiceHost(typeof(RemoteLib.NorthManager));
                 host.Open();
             };
-            host.Open(); 
+            host.Open();
             Console.WriteLine("Sunucu dinlemede...");
             Console.ReadLine();
             host.Close();

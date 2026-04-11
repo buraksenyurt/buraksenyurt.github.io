@@ -77,33 +77,63 @@ namespace ReadAndWrite
 
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
         public string Ad
         {
-            get { return _ad; }
-            set { _ad = value; }
+            get
+            {
+                return _ad;
+            }
+            set
+            {
+                _ad = value;
+            }
         }
         public DateTime Basim
         {
-            get { return _basim; }
-            set { _basim = value; }
+            get
+            {
+                return _basim;
+            }
+            set
+            {
+                _basim = value;
+            }
         }
         public float Fiyat
         {
-            get { return _fiyat; }
-            set { _fiyat = value; }
+            get
+            {
+                return _fiyat;
+            }
+            set
+            {
+                _fiyat = value;
+            }
         }
         public string Yazarlar
         {
-            get { return _yazarlar; }
-            set { _yazarlar = value; }
+            get
+            {
+                return _yazarlar;
+            }
+            set
+            {
+                _yazarlar = value;
+            }
         }
 
         #endregion
 
-        public Kitap(int id,string ad, DateTime basim, float fiyat, string yazarlar)
+        public Kitap(int id, string ad, DateTime basim, float fiyat, string yazarlar)
         {
             Id = id;
             Ad = ad;
@@ -155,11 +185,11 @@ namespace ReadAndWrite
                 XmlNode rootNode = _doc.CreateNode(XmlNodeType.Element, "Kitaplik", "");
                 // root element XmlDocument nesne örneğine eklenir.
                 _doc.AppendChild(rootNode);
-                _doc.Save("Kitaplik.xml"); 
+                _doc.Save("Kitaplik.xml");
             }
             _doc.Load("Kitaplik.xml");
-        } 
-        
+        }
+
         #endregion
 
         #region Genel Metodlar
@@ -191,7 +221,7 @@ namespace ReadAndWrite
             // Üretilen nesne örneği geri döndürülür.
             return ktp;
         }
-    
+
         /// <summary>
         /// XmlDocument nesne örneğinin işaret ettiği xml dokümanındaki Kitap boğumlarını çeker ve her biri için bir Kitap nesne örneği oluşturup, parametre olarak gelen         ListBox kontrolüne yükler.
         /// </summary>
@@ -207,7 +237,7 @@ namespace ReadAndWrite
             {
                 lst.Items.Add(BilgileriAl(kitapNode));
             }
-        } 
+        }
         #endregion
 
         #region Navigasyon Metodları
@@ -287,14 +317,14 @@ namespace ReadAndWrite
             XmlNode bogum = SecilenNode(id);
             // Boğumun elemanlarına yeni değerleri atanır
             bogum["Ad"].InnerText = ad;
-    
+
             // Yazalar boğumu bir liste kutusundan geldiği için önce xml ağacındaki yazarlar boğumu kaldırılır.
             bogum.RemoveChild(bogum["Yazarlar"]);
             // Sonra son hali ile yazarlar boğumu yeniden oluşturulur. 
             XmlNode yazarlar = _doc.CreateNode(XmlNodeType.Element, "Yazarlar", "");
             // Oluşturulan yazarlar boğumu tekrardan ağaç yapısı içerisinde o anki Kitap boğumuna eklenir.
             bogum.AppendChild(yazarlar);
-        
+
             // Yazarları taşıyan liste kutusunun son içeriğne göre Yazarlar elementi altındaki Yazar alt elementleri tekrardan oluşturulur.
             string yazarlari = "";
             for (int i = 0; i < lstYazarlari.Items.Count; i++)
@@ -309,14 +339,14 @@ namespace ReadAndWrite
             bogum["Basim"].InnerText = basim.ToUniversalTime().ToString();
             // ağaç yapısındaki değişiklikleri son hali ile Xml dosyasına kaydediyoruz.
             _doc.Save("Kitaplik.xml");
-        
+
             // Yapılan değişiklikleri, ilgili Kitap nesne örneği üzerindede gerçekleştiriyoruz.
             ktp.Ad = ad;
             ktp.Basim = basim;
             ktp.Fiyat = fiyat;
             ktp.Yazarlar = yazarlari;
         }
-    
+
         /// <summary>
         /// Bir Kitap boğumunun ağaç yapısından silinmesini sağlar
         /// </summary>
@@ -341,11 +371,11 @@ namespace ReadAndWrite
         /// <param name="lstYazarlari">Eklenecek kitabın yazalarını taşıyan liste kutusu</param>
         /// <param name="basimTarihi">Eklenecek kitabın basım tarihi</param>
         /// <returns>Yeni bilgilerden elde edilen Kitap nesne örneği</returns>
-        public Kitap Ekle(int yeniId,string adi, float fiyati, ListBox lstYazarlari, DateTime basimTarihi)
+        public Kitap Ekle(int yeniId, string adi, float fiyati, ListBox lstYazarlari, DateTime basimTarihi)
         {
             // Ağaç yapısı içerisinde yeni bir Kitap boğumu oluşturulur
             XmlElement kitap = _doc.CreateElement("Kitap");
-    
+
             // Id niteliği oluşturulur
             XmlAttribute id = _doc.CreateAttribute("Id");
             // Id niteliğinin değeri verilir
@@ -353,31 +383,31 @@ namespace ReadAndWrite
             id.Value = yeniId.ToString();
             // Oluşturulan Id niteliği Kitap boğumuna eklenir
             kitap.Attributes.Append(id);
- 
+
             // Ad boğumu oluşturulur.
             XmlNode ad = _doc.CreateNode(XmlNodeType.Element, "Ad", "");
             // Ad boğumuna değeri verilir
             ad.InnerText = adi;
             // Ad boğumu Kitap boğumu altına eklenir
             kitap.AppendChild(ad);
-        
+
             // Fiyat boğumu oluşturulur
             XmlNode fiyat = _doc.CreateNode(XmlNodeType.Element, "Fiyat", "");
             // Fiyat boğumunun değeri verilir
             fiyat.InnerText = fiyati.ToString();
             // Fiyat boğumun Kitap boğumu altına eklenir
             kitap.AppendChild(fiyat);
-    
+
             // Basim boğumu oluşturlur.
             XmlNode basim = _doc.CreateNode(XmlNodeType.Element, "Basim", "");
             // Basim boğumun değeri verilir
             basim.InnerText = basimTarihi.ToUniversalTime().ToString();
             // Basim boğumu Kitap boğumu altına eklenir
             kitap.AppendChild(basim);
-    
+
             // Yazarlar boğumu oluşturulur
             XmlNode yazarlar = _doc.CreateNode(XmlNodeType.Element, "Yazarlar", "");
-        
+
             string yazarlarStr = "";
             for (int i = 0; i < lstYazarlari.Items.Count; i++)
             {
@@ -393,7 +423,7 @@ namespace ReadAndWrite
             _doc.Save("Kitaplik.xml");
             // Gelen bilgilerden elde edilen Kitap nesne örneği geri döndürülür
             return new Kitap(yeniId, adi, basimTarihi, fiyati, yazarlarStr);
-        } 
+        }
         #endregion
     }
 }
@@ -420,16 +450,16 @@ public partial class Form1 : Form
         // Xml üzerindeki işlemler için (ekleme,güncelleme,silme,navigasyon vs...) tasarlanan XmlYoneticisi nesne örneği oluşturulur.
         xmlYnt = new XmlYoneticisi();
         // Eğer Kitaplik.xml dosyası var ise Kitap bilgileri çekilir
-        xmlYnt.KitaplariCek(lstKitaplar); 
+        xmlYnt.KitaplariCek(lstKitaplar);
     }
 
     /* Id değerini otomatik arttırabilmek için yardımcı bir metoda başvurabiliriz. Bu metod liste kutusundaki Kitap öğelerinde(eğer varsalar) yer alan Id değerlerinin en büyüğünü bulur. Bu elbette tek başına çalışan bir uygulama olacağından (yani client server mimaride yer almayacağından) eş zamanlı çakışma gibi durumlar ele alınmıyor.*/
     private int EnBuyuk()
     {
-        int deger1=0;
-        for (int i = 0;i< lstKitaplar.Items.Count; i++)
+        int deger1 = 0;
+        for (int i = 0; i < lstKitaplar.Items.Count; i++)
         {
-            int deger2=((Kitap)lstKitaplar.Items[i]).Id;
+            int deger2 = ((Kitap)lstKitaplar.Items[i]).Id;
             if (deger2 > deger1)
                 deger1 = deger2;
         }
@@ -472,7 +502,7 @@ public partial class Form1 : Form
 
     /* Not: Burada, liste kutusu içerisindeki nesnelerden de doğrudan faydalanılabilinir. Ancak Xml içerisindeki navigasyon işlemlerini öğrenebilmek için bu yol tercih edilmemiştir. */
     private void btnIlk_Click(object sender, EventArgs e)
-    { 
+    {
         // İlk boğuma geç.
         if ((lstKitaplar.Items.Count > 0) && (lstKitaplar.SelectedIndex != 0))
             if (Goster(xmlYnt.Ilk()))
@@ -501,13 +531,13 @@ public partial class Form1 : Form
         if ((lstKitaplar.Items.Count > 0) && (lstKitaplar.SelectedIndex < lstKitaplar.Items.Count - 1))
             if (Goster(xmlYnt.Son()))
                 lstKitaplar.SelectedIndex = lstKitaplar.Items.Count - 1;
-    } 
+    }
     #endregion
 
     #region Temel veri işlemleri
 
     private void btnYazarEkle_Click(object sender, EventArgs e)
-    { 
+    {
         // Eğer yazar liste kutusuna daha önce eklenmemişse 
         if (!lstYazarlar.Items.Contains(txtYazar.Text))
             if (!String.IsNullOrEmpty(txtYazar.Text)) // ve txtYazar kutucuğu boş değil ise ekle
@@ -522,7 +552,7 @@ public partial class Form1 : Form
         txtFiyat.Text = string.Empty;
         txtBasim.Text = string.Empty;
         lstYazarlar.Items.Clear();
-        txtYazar.Text=string.Empty;
+        txtYazar.Text = string.Empty;
     }
 
     private void btnYeni_Click(object sender, EventArgs e)
@@ -538,8 +568,8 @@ public partial class Form1 : Form
         float fiyat;
 
         // Kullanıcının eksik kontrol girip girmediğini ele alabilmek için aşağıdaki bool değişken atamaları kullanılmıştır. TryParse metodunun nasıl kullanıldığına dikkat edelim.
-        bool tarihGecerli = DateTime.TryParse(txtBasim.Text,out tarih);
-        bool fiyatGecerli = float.TryParse(txtFiyat.Text,out fiyat);
+        bool tarihGecerli = DateTime.TryParse(txtBasim.Text, out tarih);
+        bool fiyatGecerli = float.TryParse(txtFiyat.Text, out fiyat);
         bool adGecerli = !String.IsNullOrEmpty(txtAd.Text);
         bool yazarlarGecerli = lstYazarlar.Items.Count == 0 ? false : true;
         // Eğer eksik veri girişi yok ise ekleme işlemini yap, tersine eksik veri girişi var ise uyarı mesajı ver.
@@ -554,12 +584,12 @@ public partial class Form1 : Form
 
     private void btnKaydet_Click(object sender, EventArgs e)
     {
-        if(!GirisKontrol())
+        if (!GirisKontrol())
             MessageBox.Show("Eksik giriş var");
         else
         {
             // Yeni kitabı Ekle metodu ile ekliyoruz. Ekle metodu geriye Kitap tipinden bire referans döndürdüğü için bunuda alıp liste kontrolüne otomatik olarak ekleyebiliriz.
-            Kitap eklenen = xmlYnt.Ekle( EnBuyuk()+1,txtAd.Text, float.Parse(txtFiyat.Text), lstYazarlar, DateTime.Parse(txtBasim.Text));
+            Kitap eklenen = xmlYnt.Ekle(EnBuyuk() + 1, txtAd.Text, float.Parse(txtFiyat.Text), lstYazarlar, DateTime.Parse(txtBasim.Text));
             lstKitaplar.Items.Add(eklenen);
             // Eklenen yeni Kitaba ait bilgileri ilgili kontrollerde göster
             Goster(eklenen);
@@ -592,13 +622,13 @@ public partial class Form1 : Form
             if (lstKitaplar.Items.Count > 0)
                 lstKitaplar.SelectedIndex = 0;
         }
-    } 
+    }
     #endregion
 
     private void lstYazarlar_KeyUp(object sender, KeyEventArgs e)
     {
         // yazarlardan biri seçili iken Delete tuşuna basılırsa onu lstYazarlar isimli liste kutusundan çıkartıyoruz
-        if ((e.KeyCode == Keys.Delete)&&(lstYazarlar.Items.Count>0))
+        if ((e.KeyCode == Keys.Delete) && (lstYazarlar.Items.Count > 0))
             lstYazarlar.Items.Remove(lstYazarlar.SelectedItem);
     }
 }

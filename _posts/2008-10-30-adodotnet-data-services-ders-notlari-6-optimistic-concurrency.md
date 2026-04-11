@@ -45,12 +45,12 @@ using System.Linq;
 using System.ServiceModel.Web;
 using AzonModel;
 
-public class AzonServices 
+public class AzonServices
     : DataService<AzonEntities>
-{ 
+{
     public static void InitializeService(IDataServiceConfiguration config)
     {
-        config.SetEntitySetAccessRule("*", EntitySetRights.All); 
+        config.SetEntitySetAccessRule("*", EntitySetRights.All);
     }
 }
 ```
@@ -85,11 +85,11 @@ namespace ClientApp
 
             // Concurrency testi için ID si 81 olan Kitap verisi çekilir
             Kitap kitap81 = (from k in proxy.Kitap
-                                        where k.KitapId==81
-                                            select k).First<Kitap>();
-    
+                             where k.KitapId == 81
+                             select k).First<Kitap>();
+
             // 81 nolu ID' ye ait kitap bilgileri gösterilir
-            Console.WriteLine("{0} : {1} : {2} : {3}",kitap81.KitapId,kitap81.Ad,kitap81.Fiyat,kitap81.StokMiktari);
+            Console.WriteLine("{0} : {1} : {2} : {3}", kitap81.KitapId, kitap81.Ad, kitap81.Fiyat, kitap81.StokMiktari);
 
             // Test amacıyla rastgele bir artış değeri üretilir ve 81 nolu Kitap nesne örneğinin Fiyat değeri değiştirilir
             Random rnd = new Random();
@@ -102,7 +102,7 @@ namespace ClientApp
 
             // Nesne güncellenir
             proxy.UpdateObject(kitap81);
-    
+
             // Bir istisna bloğu içerisinde SaveChanges metodu çağırılır.
             try
             {

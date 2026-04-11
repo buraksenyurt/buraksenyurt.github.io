@@ -36,7 +36,7 @@ using System.Data.Services;
 
 namespace Projections
 {
-    public class AdventureServices 
+    public class AdventureServices
         : DataService<AdventureWorksEntities>
     {
         public static void InitializeService(DataServiceConfiguration config)
@@ -47,7 +47,7 @@ namespace Projections
             config.DataServiceBehavior.AcceptProjectionRequests = true;
             // Versiyon 2 için geliştirme yapacağımızı belirtiyoruz. Bu versiyon belirtilmediği takdirde select operatörü ve projection fonksiyonelliği çalışmayacaktır.
             config.DataServiceBehavior.MaxProtocolVersion = System.Data.Services.Common.DataServiceProtocolVersion.V2;
-     }
+        }
     }
 }
 ```

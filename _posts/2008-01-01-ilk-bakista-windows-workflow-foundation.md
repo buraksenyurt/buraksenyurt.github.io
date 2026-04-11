@@ -88,11 +88,14 @@ namespace MerhabaWWF
     {
         static void Main(string[] args)
         {
-            using(WorkflowRuntime workflowRuntime = new WorkflowRuntime())
+            using (WorkflowRuntime workflowRuntime = new WorkflowRuntime())
             {
                 AutoResetEvent waitHandle = new AutoResetEvent(false);
-                workflowRuntime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e) {waitHandle.Set();};
-                workflowRuntime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)
+                workflowRuntime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
+                {
+                    waitHandle.Set();
+                };
+                workflowRuntime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
                                                                             {
                                                                                 Console.WriteLine(e.Exception.Message);
                                                                                 waitHandle.Set();
@@ -145,14 +148,20 @@ Bu ekranda geriye true veya false döndürebilecek şekilde bir koşul tanımlam
 Bunun yapmanın yolu ise son derece basittir. Nitekim Workflow tipi aslında bir sınıftır. Dolayısıyla Workflow tipine özellikler (Property) ekleyerek dış ortamdan parametre aktarımı sağlanabilir. Bu nedenle örnekte yer alan Workflow1 sınıfına aşağıdaki gibi bir özelliğin ilave edilmesi yeterlidir.
 
 ```csharp
-public sealed partial class Workflow1: SequentialWorkflowActivity
+public sealed partial class Workflow1 : SequentialWorkflowActivity
 {
     private int _stokMiktari;
 
     public int StokMiktari
     {
-        get { return _stokMiktari; }
-        set { _stokMiktari = value; }
+        get
+        {
+            return _stokMiktari;
+        }
+        set
+        {
+            _stokMiktari = value;
+        }
     }
 
     public Workflow1()
@@ -202,7 +211,7 @@ Burada ikinci IfElseBranchActivity içerisinde StokMiktari özelliğinin değeri
 Dictionary<string, object> parametreler = new Dictionary<string, object>();
 parametreler.Add("StokMiktari", 45);
 
-WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(MerhabaWWF.Workflow1),parametreler);
+WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(MerhabaWWF.Workflow1), parametreler);
 ```
 
 İlk olarak parametre veya parametreleri taşıyacak olan Dictionary koleksiyonu örneklenir. Bu generic koleksiyonun anahtarları (Keys) string, değerleri (Values) ise object türünden olmalıdır. Daha sonra Add metodu ile parametre ekleme işlemi gerçekleştirilir. Örnekte StokMiktari isimi özellik için 45 değerinin verileceği belirtilmektedir. Son olarak WorkflowInstance örneği oluşturulurken CreateWorkflow metodunun ikinci parametresine, koleksiyona ait nesne örneği atanır. Burada dikkat edilmesi gereken bazı noktalarda vardır. Herşeyden önce Dictionary koleksiyonuna eklenen parametre adının, iş akışı (Workflow) sınıfı içerisinde tanımlanan özellik adı (Property Name) ile bire bir uygun olması gerekmektedir. Söz gelimi Add metodunda StokMiktari yerine stokmiktari yazılırsa aşağıdaki ekran görüntüsünde olduğu gibi çalışma zamanında ArgumentException istisnası (Exception) alınır.
@@ -243,28 +252,46 @@ Makalemizin son bölümünde iş akışını (Workflow) bir sınıf kütüphanes
 Söz konusu sürecin birden fazla.Net uygulaması içerisinde ele alınabileceğini düşünürsek iş akışının sınıf kütüphanesi olarak tasarlanması son derece mantıklıdır. İş akışının bu anlamda dışarıdan alması gereken iki adet parametre bulunmaktadır. Bunlardan birisi dosya adresini, diğeri ise aranacak bilgiyi tutmalıdır. Diğer taraftan iş akışından Host eden uygulamayada bilgi gönderilmesi istenebilir. Söz gelimi arama sonuçlarına dair bir string bilgi söz konusu olabilir. Doğal olarak 3ncü bir özelliğe daha gerek vardır. Bu nedenle workflow1 sınıfı içerisine aşağıdaki kod parçasında yer alan özelliklerin (Properties) eklenmesi gerekmektedir.
 
 ```csharp
-public sealed partial class Workflow1: SequentialWorkflowActivity
+public sealed partial class Workflow1 : SequentialWorkflowActivity
 {
     private string _dosyaAdresi;
     private string _arananKelime;
-     private string _aramaSonucu;
+    private string _aramaSonucu;
 
     public string AramaSonucu
     {
-        get { return _aramaSonucu; }
-        set { _aramaSonucu = value; }
+        get
+        {
+            return _aramaSonucu;
+        }
+        set
+        {
+            _aramaSonucu = value;
+        }
     }
 
     public string ArananKelime
     {
-        get { return _arananKelime; }
-        set { _arananKelime = value; }
+        get
+        {
+            return _arananKelime;
+        }
+        set
+        {
+            _arananKelime = value;
+        }
     }
 
     public string DosyaAdresi
     {
-        get { return _dosyaAdresi; }
-        set { _dosyaAdresi = value; }
+        get
+        {
+            return _dosyaAdresi;
+        }
+        set
+        {
+            _dosyaAdresi = value;
+        }
     }
 
     public Workflow1()
@@ -297,7 +324,7 @@ using System.IO;
 
 namespace StokAkislari
 {
-    public sealed partial class Workflow1: SequentialWorkflowActivity
+    public sealed partial class Workflow1 : SequentialWorkflowActivity
     {
         private string _dosyaAdresi;
         private string _arananKelime;
@@ -305,20 +332,38 @@ namespace StokAkislari
 
         public string AramaSonucu
         {
-            get { return _aramaSonucu; }
-            set { _aramaSonucu = value; }
+            get
+            {
+                return _aramaSonucu;
+            }
+            set
+            {
+                _aramaSonucu = value;
+            }
         }
 
         public string ArananKelime
         {
-            get { return _arananKelime; }
-            set { _arananKelime = value; }
+            get
+            {
+                return _arananKelime;
+            }
+            set
+            {
+                _arananKelime = value;
+            }
         }
 
         public string DosyaAdresi
         {
-            get { return _dosyaAdresi; }
-            set { _dosyaAdresi = value; }
+            get
+            {
+                return _dosyaAdresi;
+            }
+            set
+            {
+                _dosyaAdresi = value;
+            }
         }
 
         public Workflow1()
@@ -331,10 +376,10 @@ namespace StokAkislari
         {
             if (File.Exists(DosyaAdresi))
             {
-                StreamReader reader = new StreamReader(DosyaAdresi); 
+                StreamReader reader = new StreamReader(DosyaAdresi);
                 e.Result = reader.ReadToEnd().Contains(ArananKelime);
             }
-            else 
+            else
                 e.Result = false;
         }
 
@@ -392,16 +437,16 @@ namespace Istemci
 
             // Workflow çalışma zamanı nesnesi örneklenir
             _wfRunTime = new WorkflowRuntime();
-        
+
             // Workflow tamamlandığında devreye girecek olay metodu yüklenir
-            _wfRunTime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e)
+            _wfRunTime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
                                                                     {
                                                                         MessageBox.Show(e.OutputParameters["AramaSonucu"].ToString());
                                                                         _arEvent.Set();
                                                                     };
 
             // Workflow' un çalışması sırasında bir istisna oluştuğunda devreye girecek olay metodu yüklenir.
-            _wfRunTime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)
+            _wfRunTime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
                                                                     {
                                                                         MessageBox.Show(e.Exception.Message);
                                                                         _arEvent.Set();
@@ -429,13 +474,13 @@ namespace Istemci
                     // Workflow1 içerisindeki özelliklerin alacağı değerler set edilir.
                     parametreler.Add("DosyaAdresi", txtDosyaAdresi.Text);
                     parametreler.Add("ArananKelime", txtArananKelime.Text);
-    
+
                     // Workflow1 için bir örnek oluşturulur.
                     _wfInstance = _wfRunTime.CreateWorkflow(typeof(Workflow1), parametreler);
-    
+
                     // Workflow1 başlatılır.
                     _wfInstance.Start();
-    
+
                     _arEvent.WaitOne();
                 }
                 else

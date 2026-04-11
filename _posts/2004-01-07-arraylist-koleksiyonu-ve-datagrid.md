@@ -28,7 +28,8 @@ namespace TrimToSizeArray
         static void Main(string[] args)
         {
             ArrayList list = new ArrayList();
-            Console.WriteLine("ArrayList'in başlangıçtaki kapasitesi " + list.Capacity.ToString()); /*Capacity koleksiyonun üst eleman limitini verir. */
+            Console.WriteLine("ArrayList'in başlangıçtaki kapasitesi " + list.Capacity.ToString());
+            /*Capacity koleksiyonun üst eleman limitini verir. */
 
             Console.WriteLine("--------");
 
@@ -101,7 +102,8 @@ namespace TrimToSizeArray
     {
         static void Main(string[] args)
         {
-            ArrayList kullanicilar = new ArrayList(); /* ArrayList koleksiyonumuz oluşturuluyor. */
+            ArrayList kullanicilar = new ArrayList();
+            /* ArrayList koleksiyonumuz oluşturuluyor. */
 
             /* ArrayList koleksiyonumuza elemanlar ekleniyor. */
             kullanicilar.Add("Burki");
@@ -228,11 +230,13 @@ MailList sınıfımız Kullanici ve MailAdresi isimli iki özelliğe sahip. İş
 using System.Collections;
 using System;
 
-ArrayList mList; /* ArrayList koleksiyonumuzu tanımlıyoruz. */
+ArrayList mList;
+/* ArrayList koleksiyonumuzu tanımlıyoruz. */
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    mList = new ArrayList(); /* Form yüklenirken, ArrayList koleksiyonumuz oluşturuluyor. */
+    mList = new ArrayList();
+    /* Form yüklenirken, ArrayList koleksiyonumuz oluşturuluyor. */
     lblElemanSayisi.Text = mList.Count.ToString();
 
     /* Koleksiyonumuzun eleman sayısı alınıyor ve label kontrolüne yazdırılıyor. */
@@ -246,11 +250,13 @@ private void btnEkle_Click(object sender, System.EventArgs e)
     }
     else
     {
-        MailList kisi = new MailList(txtKullanici.Text, txtMail.Text); /* MailList sınıfından bir nesne oluşturuluyor. Yapıcı metodumuz parametre olarak, textBox kontrollerine girilen değerleri alıyor ve bunları ilgili alanlara atıyor. */
+        MailList kisi = new MailList(txtKullanici.Text, txtMail.Text);
+        /* MailList sınıfından bir nesne oluşturuluyor. Yapıcı metodumuz parametre olarak, textBox kontrollerine girilen değerleri alıyor ve bunları ilgili alanlara atıyor. */
 
         mList.Add(kisi);
         /* MailList sınıfından oluşturduğumuz nesnemizi koleksiyonumuza ekliyoruz. */
-        dgListe.DataSource = null; /* DataGrid' veri kaynağı olarak önce null değer atıyor. Nitekim, koleksiyonumuza her bir sınıf nesnesi eklendiğinde, koleksiyon güncellenirken, dataGrid'in güncellenmediğini görürüz. Yapılacak tek şey veri kaynağını önce null olarak ayarlamaktır. */
+        dgListe.DataSource = null;
+        /* DataGrid' veri kaynağı olarak önce null değer atıyor. Nitekim, koleksiyonumuza her bir sınıf nesnesi eklendiğinde, koleksiyon güncellenirken, dataGrid'in güncellenmediğini görürüz. Yapılacak tek şey veri kaynağını önce null olarak ayarlamaktır. */
         dgListe.Refresh();
         dgListe.DataSource = mList;
 
@@ -265,11 +271,13 @@ private void btnEkle_Click(object sender, System.EventArgs e)
 private void btnSil_Click(object sender, System.EventArgs e)
 {
     int index;
-    index = dgListe.CurrentCell.RowNumber; /* Silinmek istenen eleman DataGrid'te seçildiğinde, hangi satırın seçildiğini öğrenmek için CurrentCell.RowNumber özelliğini kullanıyoruz. */
+    index = dgListe.CurrentCell.RowNumber;
+    /* Silinmek istenen eleman DataGrid'te seçildiğinde, hangi satırın seçildiğini öğrenmek için CurrentCell.RowNumber özelliğini kullanıyoruz. */
 
     try
     {
-        MailList kisi = new MailList(); /* Bir MailList nesnesi oluşturuyoruz. */
+        MailList kisi = new MailList();
+        /* Bir MailList nesnesi oluşturuyoruz. */
         kisi = (MailList)mList[index];
         /* index değerimiz, DataGrid kontrolünde, bizim seçtiğimiz satırın, koleksiyonda karşılık gelen index değeridir. mList koleksiyonunda ilgili indeks'teki elemanı alıp (MailList) söz dizimi ile MailList tipinden bir nesneye dönüştürüyoruz. Nitekim koleksiyonlar elemanlarını object olarak tutarken, bu elemanları dışarı alırken açıkça bir dönüştürme işlemi uygulamamız gerekir. */
         mList.Remove(kisi);

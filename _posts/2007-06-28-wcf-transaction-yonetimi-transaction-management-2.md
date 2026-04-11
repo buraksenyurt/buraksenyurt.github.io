@@ -102,16 +102,16 @@ using System.ServiceModel;
 namespace NorthwindYonetici
 {
     // IsolationLevel enum sabitinin kullanılabilmesi için System.Transactions.dll' inin projeye referans edilmesi gerekmektedir.
-    [ServiceContract(Name="Siparis_Yonetim_Servisi", Namespace="http://www.bsenyurt.com/2007/23/6/SiparisYonetimServisi", SessionMode=SessionMode.Required)]
+    [ServiceContract(Name = "Siparis_Yonetim_Servisi", Namespace = "http://www.bsenyurt.com/2007/23/6/SiparisYonetimServisi", SessionMode = SessionMode.Required)]
     public interface ISiparisYonetici
     {
-        [OperationContract(Name="SepeteEkle",IsInitiating=true)]
+        [OperationContract(Name = "SepeteEkle", IsInitiating = true)]
         bool SepeteUrunEkle(int urunNumarasi);
-    
-        [OperationContract(Name="SepettenCikar",IsInitiating=false)]
+
+        [OperationContract(Name = "SepettenCikar", IsInitiating = false)]
         bool SepettenUrunCikart(int urunNumarais);
 
-        [OperationContract(Name="SepetiOnayla",IsInitiating=false,IsTerminating=true)]
+        [OperationContract(Name = "SepetiOnayla", IsInitiating = false, IsTerminating = true)]
         bool Onayla();
     }
 }
@@ -128,10 +128,10 @@ using System.Text;
 
 namespace NorthwindYonetici
 {
-    [ServiceBehavior(TransactionIsolationLevel= IsolationLevel.Serializable, TransactionTimeout="00:02:00", InstanceContextMode=InstanceContextMode.PerSession)]
-    public class SiparisYonetici:ISiparisYonetici
+    [ServiceBehavior(TransactionIsolationLevel = IsolationLevel.Serializable, TransactionTimeout = "00:02:00", InstanceContextMode = InstanceContextMode.PerSession)]
+    public class SiparisYonetici : ISiparisYonetici
     {
-        private string TransactionInfo(Transaction trx,string mesaj)
+        private string TransactionInfo(Transaction trx, string mesaj)
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine(mesaj);
@@ -149,21 +149,21 @@ namespace NorthwindYonetici
         }
 
         #region ISiparisYonetici Members
-    
-        [OperationBehavior(TransactionAutoComplete=false,TransactionScopeRequired=true)]
-        [TransactionFlow( TransactionFlowOption.Mandatory)]
+
+        [OperationBehavior(TransactionAutoComplete = false, TransactionScopeRequired = true)]
+        [TransactionFlow(TransactionFlowOption.Mandatory)]
         public bool SepeteUrunEkle(int urunNumarasi)
         {
             // İstemci tarafında bu metoda yapılan her çağrı sonrasında o anki transaction için bir TransactionCompleted olayı yüklenir. Bu nedenle kaç metod çağrısı var ise hepsi için TransactionCompleted olayı birer kez çalışır.
             Transaction.Current.TransactionCompleted += new TransactionCompletedEventHandler(Current_TransactionCompleted);
-            Console.WriteLine(TransactionInfo(Transaction.Current,"SepeteUrunEkle metodu çağırıldı"));
+            Console.WriteLine(TransactionInfo(Transaction.Current, "SepeteUrunEkle metodu çağırıldı"));
             return true;
         }
 
         void Current_TransactionCompleted(object sender, TransactionEventArgs e)
         {
-            Console.WriteLine(TransactionInfo(e.Transaction,"TransactionCompleted Olayı tetiklendi"));
-        } 
+            Console.WriteLine(TransactionInfo(e.Transaction, "TransactionCompleted Olayı tetiklendi"));
+        }
 
         [OperationBehavior(TransactionAutoComplete = false, TransactionScopeRequired = true)]
         [TransactionFlow(TransactionFlowOption.Mandatory)]
@@ -177,7 +177,7 @@ namespace NorthwindYonetici
         [TransactionFlow(TransactionFlowOption.Mandatory)]
         public bool Onayla()
         {
-            Console.WriteLine(TransactionInfo(Transaction.Current,"Onayla metodu çağırıldı"));
+            Console.WriteLine(TransactionInfo(Transaction.Current, "Onayla metodu çağırıldı"));
             /* Yorum satırı haline getirildiğinde TransactionAutoComplete false ise söz konusu transaction abort edilir. Ancak TransactionScopeAutoComplete true ise aşağıdaki metodu çağırmaya gerek kalmadan transaction onaylanır. Ayrıca TransactionAutoComplete özelliği true ise, SetTransactionComplete metodunu çağırmak çalışma zamanı hatasına neden olur. Bu aktif olan bir transaction var ise bununda iptal edilmesine neden olacaktır. */
             //OperationContext.Current.SetTransactionComplete(); // Bu çağrıdan sonra Transaction.Current null değer döndürecektir.
             return true;
@@ -259,15 +259,15 @@ Söz gelimi SiparisYonetici sınıfındaki TransactionFlow niteliklerini Allowed
 Console.WriteLine("Devam etmek için bir tuşa basınız");
 Console.ReadLine();
 Siparis_Yonetim_ServisiClient client = new Siparis_Yonetim_ServisiClient("Siparis_Yonetim_Servisi");
-using (TransactionScope tx =new TransactionScope(TransactionScopeOption.RequiresNew))
+using (TransactionScope tx = new TransactionScope(TransactionScopeOption.RequiresNew))
 {
     client.SepeteEkle(11);
     client.SepeteEkle(42);
 
     client.SepettenCikar(42);
 
-    if(client.SepetiOnayla())
-        tx.Complete(); 
+    if (client.SepetiOnayla())
+        tx.Complete();
 }
 Console.ReadLine();
 ```

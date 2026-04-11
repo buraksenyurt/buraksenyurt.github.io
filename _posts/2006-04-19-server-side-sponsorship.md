@@ -28,7 +28,7 @@ namespace RemoteFace
         double Toplam(double x, double y);
     }
 
-    public interface ISponsorObject:ISponsor 
+    public interface ISponsorObject : ISponsor
     {
         void CanliKal();
     }
@@ -42,7 +42,7 @@ IRemoteObject isimli arayüzümüz (interface), uzak nesnemiz için gerekli prot
 Uzak Nesne Sınıfımız;
 
 ```csharp
-class RemoteObj:MarshalByRefObject,IRemoteObject 
+class RemoteObj : MarshalByRefObject, IRemoteObject
 {
     public RemoteObj()
     {
@@ -62,7 +62,7 @@ class RemoteObj:MarshalByRefObject,IRemoteObject
 Uzak Sponsor Sınıfımız;
 
 ```csharp
-class ServerSponsor:MarshalByRefObject,ISponsorObject
+class ServerSponsor : MarshalByRefObject, ISponsorObject
 {
     public ServerSponsor()
     {
@@ -97,7 +97,7 @@ Server;
 ```csharp
 static void Main(string[] args)
 {
-    RemotingConfiguration.Configure(@"..\\..\\ServerApp.config",true);
+    RemotingConfiguration.Configure(@"..\\..\\ServerApp.config", true);
     Console.WriteLine("Sunucu dinlemede...");
     Console.ReadLine();
 }
@@ -143,15 +143,21 @@ class PollingObject
 
     public bool CanliBirak
     {
-        get { return _canliBirak; }
-        set { _canliBirak = value; }
-    } 
+        get
+        {
+            return _canliBirak;
+        }
+        set
+        {
+            _canliBirak = value;
+        }
+    }
 
     public PollingObject(ISponsorObject sponsorObject)
     {
         _canliBirak = true;
         _sponsorObject = sponsorObject;
-        Thread currTrd=new Thread(this.CanliTut);
+        Thread currTrd = new Thread(this.CanliTut);
         currTrd.Start();
     }
 
@@ -161,7 +167,7 @@ class PollingObject
         {
             _sponsorObject.CanliKal();
             Thread.Sleep(2000);
-        } 
+        }
     }
 }
 ```
@@ -174,7 +180,7 @@ Client
 static void Main(string[] args)
 {
     RemotingConfiguration.Configure("..\\..\\ClientApp.config", true);
-    
+
     IRemoteObject remObj = (IRemoteObject)Activator.GetObject(typeof(IRemoteObject), "tcp://manchester:4378/RemObj");
 
     #region Server Side Sponsor Kullanılmaya Başlanır
@@ -230,7 +236,7 @@ static void Main(string[] args)
 static void Main(string[] args)
 {
     RemotingConfiguration.Configure("..\\..\\ClientApp.config", true);
-    
+
     IRemoteObject remObj = (IRemoteObject)Activator.GetObject(typeof(IRemoteObject), "tcp://manchester:4378/RemObj");
 
     for (int i = 0; i < 8; i++)

@@ -82,7 +82,7 @@ public interface IArabaHizmetleri
     event EventHandler<ExternalDataEventArgs> SelektorYap;
 
     void OnMesajGonder(string message);
-} 
+}
 ```
 
 Bu arayüz (Interface) basit olarak iş akışına yerel bir servis (Local Service) üzerinden sunulabilecek üye bildirilmlerini içermektedir ki bunlar çoğunlukla olay ve metod tanımlamalarıdır. Diğer taraftan arayüz tipi ExternalDataExchange niteliği (attribute) ile işaretlenmiştir. Bu niteliğin (Attribute) uygulanması sayesinde arayüz tipi, iş akışları tarafından yerel bir servis (Local Service) olarak kullanılabilir hale gelir. Arayüz (Interface) içerisinde durum geçişleri (State Transitions) için gerekli temel olay tanımlamaları yer almaktadır. Örneğin arabanın ilerlemesi için Ilerle yada geriye gitmesi için GeriGit olaylarına ait bildirimler bulunmaktadır. Bununla birlikte arayüz, OnMesajGonder isimli bir metod bildirimi de içermektedir. Bu metod iş akışı (Workflow) tarafından, host uygulamaya mesaj göndermek amacıyla kullanılacaktır.
@@ -103,15 +103,21 @@ public class MesajAlindiEventArgs : ExternalDataEventArgs
 
     public string Bilgi
     {
-        get { return _bilgi; }
-        set { _bilgi = value; }
+        get
+        {
+            return _bilgi;
+        }
+        set
+        {
+            _bilgi = value;
+        }
     }
     public MesajAlindiEventArgs(Guid ornekId, string bilgi)
             : base(ornekId)
     {
         _bilgi = bilgi;
     }
-} 
+}
 ```
 
 ExternalDataEventArgs sınıfının tüm yapıcı metod (Constructor Method) versiyonları Guid tipinden bir ilk parametre alırlar. Bu sebepten base anahtar kelimesi kullanılarak MesajAlindiEventArgs sınıfına gelen Guid değerinin üst sınıf örneğine gönderilmesi sağlanmaktadır.
@@ -121,7 +127,7 @@ ArabaYerelServisi sınıfı;
 ![mk239_11.gif](/assets/images/2008/mk239_11.gif)
 
 ```csharp
-public class ArabaYerelServisi :IArabaHizmetleri
+public class ArabaYerelServisi : IArabaHizmetleri
 {
     #region IArabaHizmetleri Members
 
@@ -143,9 +149,9 @@ public class ArabaYerelServisi :IArabaHizmetleri
     }
 
     #endregion
-    
+
     #region Host uygulama tarafından kullanılan üyeler
-    
+
     public event EventHandler<MesajAlindiEventArgs> MesajAlindi;
 
     public void OnArabayiCalistir(ExternalDataEventArgs args)
@@ -317,13 +323,13 @@ namespace YarisPisti
 
             _wf = new WorkflowRuntime(); // Çalışma zamanı oluşturulur
             _wf.StartRuntime(); // WF çalışma zamanı başlatılır
-                ExternalDataExchangeService excSrv = new ExternalDataExchangeService(); // Bir adet ExternalDataExchangeService servisi oluşturulur ve şu anki WF çalışma zamanına AddService metodu ile eklenir.
+            ExternalDataExchangeService excSrv = new ExternalDataExchangeService(); // Bir adet ExternalDataExchangeService servisi oluşturulur ve şu anki WF çalışma zamanına AddService metodu ile eklenir.
             _wf.AddService(excSrv);
 
             // Yerel Servis(Local Servis) nesnesi örneklenir.
             _arabaServisi = new ArabaYerelServisi();
             // Host üzerinden ele alınacak MesajAlindi olayı yüklenir.
-            _arabaServisi.MesajAlindi+=new EventHandler<MesajAlindiEventArgs>(_arabaServisi_MesajAlindi);
+            _arabaServisi.MesajAlindi += new EventHandler<MesajAlindiEventArgs>(_arabaServisi_MesajAlindi);
             // Yerel servis ExternalDataExchangeService örneğine eklenir
             excSrv.AddService(_arabaServisi);
         }
@@ -333,12 +339,12 @@ namespace YarisPisti
         void _arabaServisi_MesajAlindi(object sender, MesajAlindiEventArgs e)
         {
             ornekId = e.InstanceId;
-            GuncellemeTemsilcisi dlg = delegate()
+            GuncellemeTemsilcisi dlg = delegate ()
             {
                 lblGelenMesaj.Content = e.Bilgi.ToString();
             };
             // Normal Windows uygulamalarında this.Invoke ile çağırabilmemiz mümkünken WPF uygulamalarında Dispatcher nesnesinden yararlanılmaktadır
-            Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, dlg); 
+            Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, dlg);
         }
 
         // Yeni araba aslında Workflow1 tipinden yeni bir State Machine Workflow örneği oluşturulmasını sağlamaktadır.
@@ -353,7 +359,7 @@ namespace YarisPisti
         private ExternalDataEventArgs ArgumanAl()
         {
             ExternalDataEventArgs args = new ExternalDataEventArgs(ornekId);
-            args.WaitForIdle = true; 
+            args.WaitForIdle = true;
             return args;
         }
 

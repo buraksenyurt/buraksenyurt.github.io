@@ -41,11 +41,23 @@ Product sınıfı;
 public class Product
 {
     [DataMember]
-    public int ProductId { get; set; }
+    public int ProductId
+    {
+        get;
+        set;
+    }
     [DataMember]
-    public string Name { get; set; }
+    public string Name
+    {
+        get;
+        set;
+    }
     [DataMember]
-    public double ListPrice { get; set; }
+    public double ListPrice
+    {
+        get;
+        set;
+    }
 }
 ```
 
@@ -54,7 +66,7 @@ Product sınıfı Production.Product tablosundaki herhangibir satıra ait Produc
 IProductManager arayüzü (Interface);
 
 ```csharp
-[ServiceContract(Name="Urun Servisi",Namespace="http://www.bsenyurt.com/UrunServisi")]
+[ServiceContract(Name = "Urun Servisi", Namespace = "http://www.bsenyurt.com/UrunServisi")]
 public interface IProductManager
 {
     [OperationContract]
@@ -186,7 +198,7 @@ Aynı işlem productId isimli aktivite özelliği içinde yapılmalıdır. Bu i�
 ```csharp
 namespace WfdenServis
 {
-    public sealed partial class Workflow1: SequentialWorkflowActivity
+    public sealed partial class Workflow1 : SequentialWorkflowActivity
     {
         public Workflow1()
         {
@@ -252,31 +264,31 @@ namespace WfdenServis
     {
         static void Main(string[] args)
         {
-            using(WorkflowRuntime workflowRuntime = new WorkflowRuntime())
+            using (WorkflowRuntime workflowRuntime = new WorkflowRuntime())
             {
                 AutoResetEvent waitHandle = new AutoResetEvent(false);
-                workflowRuntime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e) 
-                    { 
+                workflowRuntime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
+                    {
                         waitHandle.Set();
                         Product result = e.OutputParameters["sendActivity1__ReturnValue_1"] as Product;
-                        if(result!=null)
+                        if (result != null)
                             Console.WriteLine("{0} : {1} {2}", result.ProductId.ToString(), result.Name, result.ListPrice.ToString("C2"));
                         else
                             Console.WriteLine("Ürün bulunamadı");
                     };
 
-                workflowRuntime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)
+                workflowRuntime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
                     {
                         Console.WriteLine(e.Exception.Message);
                         waitHandle.Set();
                     };
 
-                    Dictionary<string, object> parametreler = new Dictionary<string, object>() { { "sendActivity1_productId1", 680 } };
-                    WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(WfdenServis.Workflow1),parametreler);
-    
-                    instance.Start();
-        
-                    waitHandle.WaitOne();
+                Dictionary<string, object> parametreler = new Dictionary<string, object>() { { "sendActivity1_productId1", 680 } };
+                WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(WfdenServis.Workflow1), parametreler);
+
+                instance.Start();
+
+                waitHandle.WaitOne();
             }
         }
     }

@@ -31,11 +31,11 @@ Tip hiyerarşisinin değişmesi elbetteki pek çok noktayı farklı şekilde etk
 
 ```csharp
 WorkflowElement workflow1;
-using (Stream workflow1Stream= File.OpenRead("Workflow1.xaml"))
+using (Stream workflow1Stream = File.OpenRead("Workflow1.xaml"))
 {
-    workflow1= WorkflowXamlServices.Load(workflow1Stream);
+    workflow1 = WorkflowXamlServices.Load(workflow1Stream);
 }
-var outputs = WorkflowInvoker.Invoke (workflow1);
+var outputs = WorkflowInvoker.Invoke(workflow1);
 ```
 
 Önce WorkflowElement nesne örneği oluşturulmaktaydı. Sonrasında ise XAML içeriği bir Stream içerisine alınıp WorkflowXamlServices tipinin static Load metodu yardımıyla belleğe yüklenmekteydi. Sonrasında ise WorkflowInvoker tipinin static Invoke metoduna parametre olarak gönderilip, XAML içeriğinden workflow'un yürütülmeye başlanması sağlanmaktaydı. Di'li geçmiş zaman kullandığımı farketmiş olmalısınız
@@ -85,8 +85,8 @@ namespace WorkflowConsoleApplication2
     {
         static void Main(string[] args)
         {
-            Activity activity=ActivityXamlServices.Load("..\\..\\Hesaplama.xaml");
-            var outputs=WorkflowInvoker.Invoke(activity);
+            Activity activity = ActivityXamlServices.Load("..\\..\\Hesaplama.xaml");
+            var outputs = WorkflowInvoker.Invoke(activity);
         }
     }
 }

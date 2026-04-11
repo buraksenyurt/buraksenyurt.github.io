@@ -29,25 +29,49 @@ namespace DynamicXmlDocument
 
         public int X2
         {
-            get { return _X2; }
-            set { _X2 = value; }
+            get
+            {
+                return _X2;
+            }
+            set
+            {
+                _X2 = value;
+            }
         }
         public int Y2
         {
-            get { return _Y2; }
-            set { _Y2 = value; }
+            get
+            {
+                return _Y2;
+            }
+            set
+            {
+                _Y2 = value;
+            }
         }
         public int X1
         {
-            get { return _X1; }
-            set { _X1 = value; }
+            get
+            {
+                return _X1;
+            }
+            set
+            {
+                _X1 = value;
+            }
         }
         public int Y1
         {
-            get { return _Y1; }
-            set { _Y1 = value; }
+            get
+            {
+                return _Y1;
+            }
+            set
+            {
+                _Y1 = value;
+            }
         }
-        public Cizgim(int x1, int y1,int x2,int y2)
+        public Cizgim(int x1, int y1, int x2, int y2)
         {
             X1 = x1;
             Y1 = y1;
@@ -102,8 +126,8 @@ namespace DynamicXmlDocument
         }
 
         private void Sahne_MouseUp(object sender, MouseEventArgs e)
-        { 
-            _Cizgiler.Add(new Cizgim(_X,_Y,e.X,e.Y));
+        {
+            _Cizgiler.Add(new Cizgim(_X, _Y, e.X, e.Y));
             _MouseDownOk = false;
         }
 
@@ -113,7 +137,7 @@ namespace DynamicXmlDocument
             {
                 Graphics grp = this.CreateGraphics();
                 grp.Clear(this.BackColor);
-                Pen pn = new Pen(Brushes.Blue); 
+                Pen pn = new Pen(Brushes.Blue);
                 pn.Width = 3;
                 grp.DrawLine(pn, _X, _Y, e.X, e.Y);
                 CizgileriCiz();
@@ -193,7 +217,7 @@ namespace DynamicXmlDocument
         {
             XmlDocument doc = new XmlDocument();
             // Önce Xml dökümanımızın başındaki processing instruction komutu oluşturulur.
-            XmlProcessingInstruction instructor=doc.CreateProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
+            XmlProcessingInstruction instructor = doc.CreateProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
             // Oluşturulan processing instruction XmlDocument nesne örneğine eklenir.
             doc.AppendChild((XmlNode)instructor);
             // root element oluşturulur
@@ -201,7 +225,7 @@ namespace DynamicXmlDocument
             // root element XmlDocument nesne örneğine eklenir.
             doc.AppendChild(rootNode);
             // cizgiler koleksiyonundaki eleman sayısı kadar Cizgim elementi oluşturulur, alt elementleri doldurulur ve bunla Sahne node' una (bir başka deyişe rootNode' a eklenir.
-            int cizgiNumarasi=0;
+            int cizgiNumarasi = 0;
             foreach (Cizgim czg in cizgiler)
             {
                 XmlNode cizgimNode = doc.CreateNode(XmlNodeType.Element, "Cizgim", "");
@@ -209,22 +233,22 @@ namespace DynamicXmlDocument
                 XmlNode idAttribute = doc.CreateNode(XmlNodeType.Attribute, "ID", "");
                 idAttribute.Value = cizgiNumarasi.ToString();
                 cizgimNode.Attributes.Append((XmlAttribute)idAttribute);
-    
+
                 XmlNode koordinatlarNode = doc.CreateNode(XmlNodeType.Element, "Koordinatlar", "");
                 XmlNode baslangicNode = doc.CreateNode(XmlNodeType.Element, "Baslangic", "");
-    
+
                 XmlAttribute xAttribute = doc.CreateAttribute("X");
                 xAttribute.Value = czg.X1.ToString();
                 baslangicNode.Attributes.Append(xAttribute);
-    
+
                 XmlAttribute yAttribute = doc.CreateAttribute("Y");
                 yAttribute.Value = czg.Y1.ToString();
                 baslangicNode.Attributes.Append(yAttribute);
-    
+
                 koordinatlarNode.AppendChild(baslangicNode);
-    
+
                 XmlNode bitisNode = doc.CreateNode(XmlNodeType.Element, "Bitis", "");
-    
+
                 xAttribute = doc.CreateAttribute("X");
                 xAttribute.Value = czg.X2.ToString();
                 bitisNode.Attributes.Append(xAttribute);
@@ -232,13 +256,13 @@ namespace DynamicXmlDocument
                 yAttribute = doc.CreateAttribute("Y");
                 yAttribute.Value = czg.Y2.ToString();
                 bitisNode.Attributes.Append(yAttribute);
-    
+
                 koordinatlarNode.AppendChild(bitisNode);
-        
+
                 cizgimNode.AppendChild(koordinatlarNode);
-    
+
                 rootNode.AppendChild(cizgimNode);
-    
+
                 cizgiNumarasi++;
             }
             doc.Save(dosya);
@@ -250,7 +274,7 @@ namespace DynamicXmlDocument
 ProjeKaydet isimli metodumuz ilk parametre olarak form üzerindeki çizgileri saklayan koleksiyon tipini almaktadır.(List). İkinci parametre olaraksa Xml bilgisinin kaydedileceği dosya adı verilmektedir. Bir windows uygulaması tasarladığımız için dosya adını saveFileDialog kontrolü yardımıyla gönderebiliriz. Peki metodumuzun içerisinde neler yapıyoruz? İlk olarak XmlDocument sınıfının AppendChild metodunun XmlNode tipinden parametreler aldığını belirtelim. Bunun dışında XmlDocument nesnesi belleğa açılan veri alanına Element, Attribute, Comment gibi Xml üyelerini eklemek için gerekli Create metodlarına sahiptir. Dolayısıyla bir Processing Instruction komutuna ihtiyacımız var ise bu durumda aşağıdaki kod satırından faydalanabiliriz.
 
 ```csharp
-XmlProcessingInstruction instructor=doc.CreateProcessingInstruction("xml",  "version=\"1.0\" encoding=\"utf-8\"");
+XmlProcessingInstruction instructor = doc.CreateProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
 ```
 
 Bu kod satırı ile bir Processing Instruction oluşturulur. Sonrasında ise bunu XmlDocument nesne örneğine ilave etmemiz gerekir. Böylece bellekteki Xml alanı içerisine ilgili üyeyi dahil etmiş oluruz. Bu amaçlada aşağıdaki kod satırı kullanılabilir.
@@ -351,7 +375,7 @@ Böylece bir cizgi için tutulan başlangıç ve bitiş noktası değerlerini ko
 
 ```csharp
 private void projeAToolStripMenuItem_Click(object sender, EventArgs e)
-{ 
+{
     if (openFileDialog1.ShowDialog() == DialogResult.OK)
     {
         Sahne shn = new Sahne();

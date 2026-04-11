@@ -30,22 +30,22 @@ class Dortgen
 
     public Dortgen() // Varsayılan yapıcı (default constructor)
     {
-        m_AKenari=1;
-        m_BKenari=1;
+        m_AKenari = 1;
+        m_BKenari = 1;
     }
     public Dortgen(int akenari) // Kare olma durumu
     {
-        m_AKenari=akenari;
-        m_BKenari=akenari;
+        m_AKenari = akenari;
+        m_BKenari = akenari;
     }
-    public Dortgen(int akenari,int bkenari) // dikdörtgen olma durumu
+    public Dortgen(int akenari, int bkenari) // dikdörtgen olma durumu
     {
-        m_AKenari=akenari;
-        m_BKenari=bkenari;
+        m_AKenari = akenari;
+        m_BKenari = bkenari;
     }
     public double Alan()
     {
-        return m_AKenari*m_BKenari;
+        return m_AKenari * m_BKenari;
     }
 }
 ```
@@ -66,20 +66,20 @@ class Dortgen_ // :Dortgen_Taban
     private int m_AKenari;
     private int m_BKenari;
 
-    public Dortgen_():this(1,1)
-    { 
-    }
-    public Dortgen_(int akenari):this(akenari,akenari)
+    public Dortgen_() : this(1, 1)
     {
     }
-    public Dortgen_(int akenari,int bkenari)
+    public Dortgen_(int akenari) : this(akenari, akenari)
     {
-        m_AKenari=akenari;
-        m_BKenari=bkenari;
+    }
+    public Dortgen_(int akenari, int bkenari)
+    {
+        m_AKenari = akenari;
+        m_BKenari = bkenari;
     }
     public double Alan()
     {
-        return m_AKenari*m_BKenari;
+        return m_AKenari * m_BKenari;
     }
 }
 ```
@@ -100,28 +100,28 @@ class TestUygulama
 
         #region birinci tip constructor kullanımı (initializers ile)
 
-        dtSimdi=DateTime.Now;
-        for(int i=1;i<500000;i++)
+        dtSimdi = DateTime.Now;
+        for (int i = 1; i < 500000; i++)
         {
-            Dortgen_ d1=new Dortgen_();
-               d1.Alan();
+            Dortgen_ d1 = new Dortgen_();
+            d1.Alan();
         }
-        fark=DateTime.Now-dtSimdi;
-        Console.WriteLine("Birinci tip constructor kullanımı {0} (Initializers ile)",fark.TotalMilliseconds.ToString());
-    
+        fark = DateTime.Now - dtSimdi;
+        Console.WriteLine("Birinci tip constructor kullanımı {0} (Initializers ile)", fark.TotalMilliseconds.ToString());
+
         #endregion
 
         #region ikinci tip constructor kullanımı
 
-        dtSimdi=DateTime.Now;
-        for(int i=1;i<500000;i++)
+        dtSimdi = DateTime.Now;
+        for (int i = 1; i < 500000; i++)
         {
-            Dortgen d2=new Dortgen();
+            Dortgen d2 = new Dortgen();
             d2.Alan();
         }
-        fark=DateTime.Now-dtSimdi;
-        Console.WriteLine("İkinci tip constructor kullanımı {0} ",fark.TotalMilliseconds.ToString());
-    
+        fark = DateTime.Now - dtSimdi;
+        Console.WriteLine("İkinci tip constructor kullanımı {0} ", fark.TotalMilliseconds.ToString());
+
         #endregion
     }
 }
@@ -140,25 +140,25 @@ public class Dortgen_2
     private int m_BKenari;
 
     public Dortgen_2()
-    {    
-        Atama(1,1);
+    {
+        Atama(1, 1);
     }
     public Dortgen_2(int akenari)
     {
-        Atama(akenari,akenari);
+        Atama(akenari, akenari);
     }
-    public Dortgen_2(int akenari,int bkenari)
+    public Dortgen_2(int akenari, int bkenari)
     {
-        Atama(akenari,bkenari);
+        Atama(akenari, bkenari);
     }
     public double Alan()
     {
-        return m_AKenari*m_BKenari;
+        return m_AKenari * m_BKenari;
     }
-    private void Atama(int akenari,int bkenari)
+    private void Atama(int akenari, int bkenari)
     {
-        m_AKenari=akenari;
-        m_BKenari=bkenari;
+        m_AKenari = akenari;
+        m_BKenari = bkenari;
     }
 }
 ```

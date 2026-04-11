@@ -31,91 +31,103 @@ Mantık aynı demiştik. Bir veritabanı yaratmak için, DatabaseClass sınıfı
 ```csharp
 SQLDMO.SQLServerClass srv;
 SQLDMO.DatabaseClass db;
-SQLDMO.TableClass tbl; 
+SQLDMO.TableClass tbl;
 
 private void btnConnect_Click(object sender, System.EventArgs e)
 {
-     srv=new SQLDMO.SQLServerClass(); /* SQL Sunucusu üzerinde, veritabani yaratma gibi islemler için, Sql Sunucusunu temsil edicek ve ona baglanmamizi sagliyacak bir nesneye ihtiyacimiz vardir. Bu nesne SQLDMO sinifinda yer alan SQLServerClass sinifinin bir örnegi olucaktir. */ 
-     srv.LoginSecure=false; /* Bu özellik true olarak belirlendiginde, Sql Sunucusuna Windows Authentication seklinde baglanilir. Eger false degerini verirsek bu durumda Sql Server Authentication geçerli olur. Iste bu durumda SQLServerClass nesnesini Connect metodu ile Sql Sunucusuna baglanirken geçerli bir kullanici adi ve sifre girmemiz gerekmektedir. */
-     try
-     {
-          srv.Connect("BURKI","sa","CucP??80."); /* Baglanti kurmak için kullandigimiz Connect metodu üç parametre almaktadir. Ilk parametre sql sunucusunun adidir. Ikinci parametre kullanici adi ve üçüncü parametrede sifresidir. Eger LoginSecure=true olarak ayarlasaydik, kullanici adini ve sifreyi bos birakicaktik, nitekim Windows Authentication (windows dogrulamasi) söz konusu olucakti.*/
-          durumCubugu.Text="Sunucuya baglanildi..."+srv.Status.ToString();
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show(hata.Message);
-     }
-} 
+    srv = new SQLDMO.SQLServerClass();
+    /* SQL Sunucusu üzerinde, veritabani yaratma gibi islemler için, Sql Sunucusunu temsil edicek ve ona baglanmamizi sagliyacak bir nesneye ihtiyacimiz vardir. Bu nesne SQLDMO sinifinda yer alan SQLServerClass sinifinin bir örnegi olucaktir. */
+    srv.LoginSecure = false;
+    /* Bu özellik true olarak belirlendiginde, Sql Sunucusuna Windows Authentication seklinde baglanilir. Eger false degerini verirsek bu durumda Sql Server Authentication geçerli olur. Iste bu durumda SQLServerClass nesnesini Connect metodu ile Sql Sunucusuna baglanirken geçerli bir kullanici adi ve sifre girmemiz gerekmektedir. */
+    try
+    {
+        srv.Connect("BURKI", "sa", "CucP??80.");
+        /* Baglanti kurmak için kullandigimiz Connect metodu üç parametre almaktadir. Ilk parametre sql sunucusunun adidir. Ikinci parametre kullanici adi ve üçüncü parametrede sifresidir. Eger LoginSecure=true olarak ayarlasaydik, kullanici adini ve sifreyi bos birakicaktik, nitekim Windows Authentication (windows dogrulamasi) söz konusu olucakti.*/
+        durumCubugu.Text = "Sunucuya baglanildi..." + srv.Status.ToString();
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show(hata.Message);
+    }
+}
 private void btnVeritabaniOlustur_Click(object sender, System.EventArgs e)
 {
-     try
-     {
-          db=new SQLDMO.DatabaseClass(); /* SQL-DMO kütüphanesinde, veritabanlarini temsil eden sinif DatabaseClass sinifidir. */
-          db.Name=this.txtVeritabaniAdi.Text; /* Veritabani nesnemizin name özelligi ile veritabaninin adi belirlenir.*/
-          srv.Databases.Add(db); /* olusturulan DatabaseClass nesnesi SQLServerClass sinifinin Databases koleksiyonuna eklenerek Sql Sunucusu üzerinde olusturulmasi saglaniyor. */
-          durumCubugu.Text=db.Name.ToString()+" veritabani "+srv.Name.ToString()+" SQL Sunucusunda olusturuldu";
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show(hata.Message);
-     }
-} 
+    try
+    {
+        db = new SQLDMO.DatabaseClass();
+        /* SQL-DMO kütüphanesinde, veritabanlarini temsil eden sinif DatabaseClass sinifidir. */
+        db.Name = this.txtVeritabaniAdi.Text;
+        /* Veritabani nesnemizin name özelligi ile veritabaninin adi belirlenir.*/
+        srv.Databases.Add(db);
+        /* olusturulan DatabaseClass nesnesi SQLServerClass sinifinin Databases koleksiyonuna eklenerek Sql Sunucusu üzerinde olusturulmasi saglaniyor. */
+        durumCubugu.Text = db.Name.ToString() + " veritabani " + srv.Name.ToString() + " SQL Sunucusunda olusturuldu";
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show(hata.Message);
+    }
+}
 private void btnTabloOlustur_Click(object sender, System.EventArgs e)
 {
-     try
-     {
-          tbl=new SQLDMO.TableClass(); /* Yeni bir tablo olusturabilmek için SQL-DMO kütüphanesinde yer alan, TableClass sinifi kullanilir.*/
-          tbl.Name=txtTabloAdi.Text; /* Tablomuzun ismini name özelligi ile belirliyoruz.*/ 
-          SQLDMO.ColumnClass dc; /* Tabloya eklenecek alanlarin her birisi birer ColumnClass sinifi nesnesidir. */
-          dc=new SQLDMO.ColumnClass();/* Bir ColumnClass nesnesi yaratiliyor ve bu nesnenin gerekli özellikleri belirleniyor. Name özelligi ile ismi, Datatype özelligi ile veri türü      belirleniyor. Biz burada ID isimli alanimizin otomatik olarak artan ve 1000 den baslayarak 1'er artan bir alan olmasini istedik. */
-          dc.Name="ID";
-          dc.Datatype="Int";
-          dc.Identity=true;
-          dc.IdentitySeed=1000;
-          dc.IdentityIncrement=1;
-          tbl.Columns.Add(dc); /* Olusturulan bu alan TableClass nesnemizin Columns koleksiyonuna eklenerek tabloda olusturulmasi saglanmis oluyor. */ 
-          dc=new SQLDMO.ColumnClass();
-          dc.Name="ISIM";
-          dc.Datatype="char"; /* String tipte bir alan */
-          dc.Length=50;
-          tbl.Columns.Add(dc); 
-          dc=new SQLDMO.ColumnClass();
-          dc.Name="SOYISIM";
-          dc.Datatype="char";
-          dc.Length=50;
-          tbl.Columns.Add(dc); 
-          /* Son olarak olusturulan TableClass nesnesi veritabanimizin tables koleksiyonuna ekleniyor. Böylece Sql sunucusunda yer alan veritabani içinde olusturulmasi saglanmis      oluyor. */
-          db.Tables.Add(tbl); 
-          durumCubugu.Text=tbl.Name.ToString()+" olusturuldu...";
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show(hata.Message);
-     } 
-} 
+    try
+    {
+        tbl = new SQLDMO.TableClass();
+        /* Yeni bir tablo olusturabilmek için SQL-DMO kütüphanesinde yer alan, TableClass sinifi kullanilir.*/
+        tbl.Name = txtTabloAdi.Text;
+        /* Tablomuzun ismini name özelligi ile belirliyoruz.*/
+        SQLDMO.ColumnClass dc;
+        /* Tabloya eklenecek alanlarin her birisi birer ColumnClass sinifi nesnesidir. */
+        dc = new SQLDMO.ColumnClass();
+        /* Bir ColumnClass nesnesi yaratiliyor ve bu nesnenin gerekli özellikleri belirleniyor. Name özelligi ile ismi, Datatype özelligi ile veri türü      belirleniyor. Biz burada ID isimli alanimizin otomatik olarak artan ve 1000 den baslayarak 1'er artan bir alan olmasini istedik. */
+        dc.Name = "ID";
+        dc.Datatype = "Int";
+        dc.Identity = true;
+        dc.IdentitySeed = 1000;
+        dc.IdentityIncrement = 1;
+        tbl.Columns.Add(dc);
+        /* Olusturulan bu alan TableClass nesnemizin Columns koleksiyonuna eklenerek tabloda olusturulmasi saglanmis oluyor. */
+        dc = new SQLDMO.ColumnClass();
+        dc.Name = "ISIM";
+        dc.Datatype = "char";
+        /* String tipte bir alan */
+        dc.Length = 50;
+        tbl.Columns.Add(dc);
+        dc = new SQLDMO.ColumnClass();
+        dc.Name = "SOYISIM";
+        dc.Datatype = "char";
+        dc.Length = 50;
+        tbl.Columns.Add(dc);
+        /* Son olarak olusturulan TableClass nesnesi veritabanimizin tables koleksiyonuna ekleniyor. Böylece Sql sunucusunda yer alan veritabani içinde olusturulmasi saglanmis      oluyor. */
+        db.Tables.Add(tbl);
+        durumCubugu.Text = tbl.Name.ToString() + " olusturuldu...";
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show(hata.Message);
+    }
+}
 private void btnSunucuVeritabanlari_Click(object sender, System.EventArgs e)
 {
-     this.lstDatabases.Items.Clear();
-     /* Öncelikle listBox nesnemize Sql Sunucusunda yer alan veritabanlarinin sayisini aktariyoruz.*/
-     this.lstDatabases.Items.Add("Sunucudaki veritabani sayisi="+srv.Databases.Count); 
-     /* Simdi bir for döngüsü ile, srv isimli SQLServerClass nesnemizin Databases koleksiyonunda geziniyoru ve her bir databaseClass nesnesinin adini alip listBox nesnemize aktariyoruz. Burada index degerinin 1 den basladigina sifirdan baslamadigina dikkat edelim. */
-     for(int i=1;i<srv.Databases.Count;++i)
-     {
-          this.lstDatabases.Items.Add(srv.Databases.Item(i,srv).Name.ToString());
-     }
-} 
+    this.lstDatabases.Items.Clear();
+    /* Öncelikle listBox nesnemize Sql Sunucusunda yer alan veritabanlarinin sayisini aktariyoruz.*/
+    this.lstDatabases.Items.Add("Sunucudaki veritabani sayisi=" + srv.Databases.Count);
+    /* Simdi bir for döngüsü ile, srv isimli SQLServerClass nesnemizin Databases koleksiyonunda geziniyoru ve her bir databaseClass nesnesinin adini alip listBox nesnemize aktariyoruz. Burada index degerinin 1 den basladigina sifirdan baslamadigina dikkat edelim. */
+    for (int i = 1; i < srv.Databases.Count; ++i)
+    {
+        this.lstDatabases.Items.Add(srv.Databases.Item(i, srv).Name.ToString());
+    }
+}
 private void btnTablolar_Click(object sender, System.EventArgs e)
 {
-     /* Burada seçilen veritabanına ait tablolar listBox kontrolüne getiriliyor */
-     this.lstTabels.Items.Clear();
-     this.lstTabels.Items.Add("Tablo Sayisi="+srv.Databases.Item(this.lstDatabases.SelectedIndex,srv).Tables.Count.ToString()); 
-     /* Döngümüz Sql Suncusundan yer alan veritabanı sayısı kadar süren bir döngü. */
-     for(int i=1;i<srv.Databases.Item(this.lstDatabases.SelectedIndex,srv).Tables.Count;++i)
-     {
-          this.lstTabels.Items.Add(srv.Databases.Item(this.lstDatabases.SelectedIndex,srv).Tables.Item(i,srv). Name.ToString());
-     }
-} 
+    /* Burada seçilen veritabanına ait tablolar listBox kontrolüne getiriliyor */
+    this.lstTabels.Items.Clear();
+    this.lstTabels.Items.Add("Tablo Sayisi=" + srv.Databases.Item(this.lstDatabases.SelectedIndex, srv).Tables.Count.ToString());
+    /* Döngümüz Sql Suncusundan yer alan veritabanı sayısı kadar süren bir döngü. */
+    for (int i = 1; i < srv.Databases.Item(this.lstDatabases.SelectedIndex, srv).Tables.Count; ++i)
+    {
+        this.lstTabels.Items.Add(srv.Databases.Item(this.lstDatabases.SelectedIndex, srv).Tables.Item(i, srv).Name.ToString());
+    }
+}
 ```
 
 Şimdi uygulamamızı çalıştıralım ve öncelikle Sql Sunucumuza bağlanalım.

@@ -82,12 +82,12 @@ using System.ServiceModel.Web;
 using System.Collections.Generic;
 using AzonModel;
 
-public class KitapServisi 
+public class KitapServisi
     : DataService<AzonEntities>
-{ 
+{
     public static void InitializeService(IDataServiceConfiguration config)
     {
-        config.SetEntitySetAccessRule("*", EntitySetRights.All); 
+        config.SetEntitySetAccessRule("*", EntitySetRights.All);
     }
 }
 ```
@@ -130,7 +130,7 @@ namespace ClientApp
             // Yeni kategorinin veritabanındaki tabloya eklenmesi için SaveChanges metodu çağırılır.
             // (Bu noktada SaveChanges çağırılması şart değildir. Bu sadece KategoriId' nin tablodan elde edilmesini sağlamada rol oynamaktadır)
             proxy.SaveChanges();
-            Console.WriteLine("{0} ID si ile {1} Kategorisi eklendi",windowsClient.KategoriId.ToString(),windowsClient.Ad);
+            Console.WriteLine("{0} ID si ile {1} Kategorisi eklendi", windowsClient.KategoriId.ToString(), windowsClient.Ad);
 
             // Generic bir List koleksiyonunda tutulacak şekilde Kitap nesne örnekleri oluşturulur.
             List<Kitap> kitaplar = new List<Kitap>()
@@ -144,7 +144,7 @@ namespace ClientApp
             foreach (Kitap k in kitaplar)
             {
                 // Her bir Kitap nesne örneği ilgili Entity örneğine ilave edilir.
-                proxy.AddToKitap(k); 
+                proxy.AddToKitap(k);
                 // O andaki kitap ile yukarıda oluşturulan Kategori arasındaki ilişki kurulur
                 proxy.AddLink(windowsClient, "Kitap", k);
             }
@@ -155,16 +155,16 @@ namespace ClientApp
 
             // Eklenen kategori servis tarafından talep edilir
             var eklenenKategori = (from k in proxy.Kategori
-                                            where k.KategoriId == windowsClient.KategoriId
-                                            select k).First();
+                                   where k.KategoriId == windowsClient.KategoriId
+                                   select k).First();
             // Elde edilen kategoriye ait kitap bilgilerinin yüklenmesi istenir
             proxy.LoadProperty(eklenenKategori, "Kitap");
-    
-            Console.WriteLine("\n{0} kategorisine eklenen kitaplar\n",eklenenKategori.Ad);
+
+            Console.WriteLine("\n{0} kategorisine eklenen kitaplar\n", eklenenKategori.Ad);
             // Eklenen kategoriye bağlı kitaplar listelenir
             foreach (Kitap k in eklenenKategori.Kitap)
-            { 
-                Console.WriteLine("{0} {1} {2} {3}",k.KitapId.ToString(),k.Ad,k.StokMiktari.ToString(),k.Fiyat.ToString("C2"));
+            {
+                Console.WriteLine("{0} {1} {2} {3}", k.KitapId.ToString(), k.Ad, k.StokMiktari.ToString(), k.Fiyat.ToString("C2"));
             }
         }
     }
@@ -228,13 +228,13 @@ Sırada güncelleştirme işlemleri var. Bu amaçla aşağıdaki örnek kod sat�
 // Güncellenecek veri kümesi çekilir.
 // Örneğin KategoriId değeri 1 olan Kitaplar çekilir
 var tumKitaplar = from k in proxy.Kitap
-                            where k.Kategori.KategoriId==1
-                            select k;
+                  where k.Kategori.KategoriId == 1
+                  select k;
 
 // Elde edilen sonuç kümesindeki her bir Kitap nesne örneği üzerinde basit bir güncelleştirme yapılır
 foreach (Kitap k in tumKitaplar)
 {
-    Console.WriteLine("Güncelleştirme öncesi {0} için Fiyat {1}",k.Ad,k.Fiyat.ToString("C2"));
+    Console.WriteLine("Güncelleştirme öncesi {0} için Fiyat {1}", k.Ad, k.Fiyat.ToString("C2"));
     k.Fiyat += 10;
     // Yapılan güncellemeler entity üzerinde onaylanır
     proxy.UpdateObject(k);
@@ -245,8 +245,8 @@ proxy.SaveChanges();
 // Sonuçları test etmek için servis tarafından 1 numaralı kategoriye bağlı kitaplar tekrar istenir
 Console.WriteLine("\nDeğişiklikler Sonrası Liste\n");
 var kategori1Kitaplari = from k in proxy.Kitap
-                                        where k.Kategori.KategoriId == 1
-                                            select k;
+                         where k.Kategori.KategoriId == 1
+                         select k;
 // Her bir kitabın bilgisi ekrana yazdırılır
 foreach (Kitap k in tumKitaplar)
 {
@@ -281,41 +281,41 @@ Son olarak basit bir silme operasyonu işlemini ele alıyor olacağız. Bu son k
 // Önce kullanıcıya Kategori listesi sunulur
 Console.WriteLine("\nSilme Operasyonu\n");
 var kategoriler = from k in proxy.Kategori
-                        select k;
+                  select k;
 foreach (Kategori kategori in kategoriler)
 {
-    Console.WriteLine("{0} {1}",kategori.KategoriId.ToString(),kategori.Ad);
+    Console.WriteLine("{0} {1}", kategori.KategoriId.ToString(), kategori.Ad);
 }
 // Kullanıcıdan silmek istediği kategorinin KategoriId değeri istenir
 Console.WriteLine("Silmek istediğini kategori id' yi seçin");
 int secilenKategoriId;
 
 // Eğer ekrandan alınan değer Int32' ye Parse edilebilirse
-if (Int32.TryParse(Console.ReadLine(),out secilenKategoriId))
+if (Int32.TryParse(Console.ReadLine(), out secilenKategoriId))
 {
     Kategori secilenKategori = null;
     try
     {
         // Ekrandan girilen ID değerine ait Kategori nesne örneği talep edilir
         secilenKategori = (from k in proxy.Kategori
-                                        where k.KategoriId == secilenKategoriId
-                                            select k).First<Kategori>();
+                           where k.KategoriId == secilenKategoriId
+                           select k).First<Kategori>();
 
         // Önce bu Kategorinin KategoriId değerine sahip Kitap listesi alınır
         var kitapListesi = from k in proxy.Kitap
-                                        where k.Kategori.KategoriId == secilenKategoriId
-                                            select k;
+                           where k.Kategori.KategoriId == secilenKategoriId
+                           select k;
         // Elde edilen her bir Kitap nesne örneği DeleteObject metodu ile çıkartılır
         foreach (Kitap kitap in kitapListesi)
         {
             proxy.DeleteObject(kitap);
-            Console.WriteLine("{0} çıkartılacak",kitap.Ad);
+            Console.WriteLine("{0} çıkartılacak", kitap.Ad);
         }
 
         // Son olarak seçilmiş olan Kategori nesnesi çıkartılır
         proxy.DeleteObject(secilenKategori);
         Console.WriteLine("{0} kategorisi çıkartılacak", secilenKategori.Ad);
-    
+
         // Değişikliklerin veri kaynağı üzerinde de yapılması için SaveChanges metodu çağırılır.
         proxy.SaveChanges(System.Data.Services.Client.SaveChangesOptions.Batch);
         Console.WriteLine("Değişiklikler gönderildi...");

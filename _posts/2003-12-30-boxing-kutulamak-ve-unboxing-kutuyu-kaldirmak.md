@@ -64,25 +64,25 @@ Görüldüğü gibi,başvuru tipleri hakikatende isimlerinin layığını vermek
 Değer türleri ile başvuru türleri arasındaki bu temel farktan sonra gelelim asıl konumuza.. NET’te her sınıf aslında en üst sınıf olan Object sınıfından türer. Yani her sınıf aslında System.Object sınıfından kalıtım yolu ile otomatik olarak türetilmiş olur. Sorun object gibi referans bir türe, değer tipi bir değerin aktarılmasında yaşanır.. NET’te herşey aslında birer nesne olarak düşünülebilir. Bir değer türünü bir nesneye atamaya çalıştığımızda, değer türünün içerdiği verinin bir kopyasının yığından alınıp, öbeğe taşınması ve nesnenin bu veri kopyasına başvurması gerekmektedir. İşte bu olay kutulama (boxing) olarak adlandırılır. Bu durumu minik bir örnek ile inceleyelim.
 
 ```csharp
-using System; 
+using System;
 
 namespace boxunbox
 {
-   class Class1
-   {
-      static void Main(string[] args)
-      {
-         double db=509809232323;
-         object obj; 
-         obj=db; 
-         Console.WriteLine(db.ToString());
-         Console.WriteLine(obj.ToString());
-         db+=1;
-         Console.WriteLine(db.ToString());
-         Console.WriteLine(obj.ToString());
-      }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            double db = 509809232323;
+            object obj;
+            obj = db;
+            Console.WriteLine(db.ToString());
+            Console.WriteLine(obj.ToString());
+            db += 1;
+            Console.WriteLine(db.ToString());
+            Console.WriteLine(obj.ToString());
+        }
     }
-} 
+}
 ```
 
 Kodumuzun çalışmasını inceleyelim. Db isimli double değişkenimiz bir değer tipidir. Örnekte bu değer tipini object tipinden bir nesneye aktarıyoruz. Bu halde bu değerler içerisindeki verileri ekrana yazdırıyoruz. Sonra db değerimizi 1 arttırıyor ve tekrar bu değerlerin içeriğini ekrana yazdırıyoruz. İşte sonuç;
@@ -100,27 +100,27 @@ Görüldüğü gibi db değişkenine yapılan arttırım object türünden obj n
 Boxing işlemi otomatik olarak yapılan bir işlemdir. Ancak UnBoxing işleminde durum biraz daha değişir. Bu kez, başvuru nesnemizin işaret ettiği veriyi öbekten alıp yığındaki bir değer tipi alanı olarak kopyalanması söz konusudur. İşte burada tip uyuşmazlığı denen bir kavramla karşılaşırız. Öbekten, yığına kopylanacak olan verinin, yığında kendisi için ayrılan yerin aynı tipte olması veya öbekteki tipi içerebilecek tipte olması gerekmektedir. Örneğin yukarıdaki örneğimize unboxing işlemini uygulayalım. Bu kez integer tipte bir değer türüne atama gerçekleştirelim.
 
 ```csharp
-using System; 
+using System;
 
 namespace boxunbox
 {
-      class Class1
-      {
-            static void Main(string[] args)
-            {
-                  double db=509809232323;
-                  object obj; 
-                  obj=db; 
-                  Console.WriteLine(db.ToString());
-                  Console.WriteLine(obj.ToString());
-                  db+=1;
-                  Console.WriteLine(db.ToString());
-                  Console.WriteLine(obj.ToString()); 
-                  int intDb;
-                  intDb=(int)obj;
-                  Console.WriteLine(intDb.ToString());
-            }
-      }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            double db = 509809232323;
+            object obj;
+            obj = db;
+            Console.WriteLine(db.ToString());
+            Console.WriteLine(obj.ToString());
+            db += 1;
+            Console.WriteLine(db.ToString());
+            Console.WriteLine(obj.ToString());
+            int intDb;
+            intDb = (int)obj;
+            Console.WriteLine(intDb.ToString());
+        }
+    }
 }
 ```
 
@@ -133,29 +133,29 @@ Bu kodu çalıştırdığımızda InvalidCastException istisnasının fırlatıl
 Ancak küçük tipi, büyük tipe dönüştürmek gibi bir serbestliğimiz vardır. Örneğin,
 
 ```csharp
-using System; 
+using System;
 namespace boxunbox
 {
- class Class1
- {
-  static void Main(string[] args)
-  {
-   double db=509809232323;
-   object obj;
-   obj=db;
-   Console.WriteLine(db.ToString());
-   Console.WriteLine(obj.ToString());
-   db+=1;
-   Console.WriteLine(db.ToString());
-   Console.WriteLine(obj.ToString());
-   /*int intDb;
-   intDb=(int)obj;
-   Console.WriteLine(intDb.ToString());*/
-   double dobDb;                                   
-   dobDb=(double)obj;
-   Console.WriteLine(dobDb.ToString());   
-  }
- }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            double db = 509809232323;
+            object obj;
+            obj = db;
+            Console.WriteLine(db.ToString());
+            Console.WriteLine(obj.ToString());
+            db += 1;
+            Console.WriteLine(db.ToString());
+            Console.WriteLine(obj.ToString());
+            /*int intDb;
+            intDb=(int)obj;
+            Console.WriteLine(intDb.ToString());*/
+            double dobDb;
+            dobDb = (double)obj;
+            Console.WriteLine(dobDb.ToString());
+        }
+    }
 }
 ```
 

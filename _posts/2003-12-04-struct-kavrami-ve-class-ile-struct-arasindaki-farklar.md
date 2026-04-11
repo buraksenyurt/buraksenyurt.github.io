@@ -46,7 +46,7 @@ namespace StructSample1
             }
             set
             {
-                kosucuAdi =value;
+                kosucuAdi = value;
             }
         }
         public int Saat
@@ -57,7 +57,7 @@ namespace StructSample1
             }
             set
             {
-                saat =value;
+                saat = value;
             }
         }
 
@@ -69,7 +69,7 @@ namespace StructSample1
             }
             set
             {
-                dakika =value;
+                dakika = value;
             }
         }
 
@@ -81,7 +81,7 @@ namespace StructSample1
             }
             set
             {
-                saniye =value;
+                saniye = value;
             }
         }
     }
@@ -122,10 +122,10 @@ Yine önemli bir farkta yapılarda türetme yapamıyacağımızdır. Bilindiği 
 ```csharp
 struct
 
-yeni:Zaman
-{ 
+yeni : Zaman
+{
 
-} 
+}
 ```
 
 satırlarını kodumuza ekleyelim.Bu durumda uygulamayı derlemeye çalıştığımızda aşağıdaki hata mesajını alırız.

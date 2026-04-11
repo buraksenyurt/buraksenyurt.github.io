@@ -48,29 +48,29 @@ namespace NorthwindClient
         // İstemci talepleri için kullanacağımız sınıf HttpClient
         HttpClient client = null;
         // Servis adresi (sondaki / işaretini unutmadım bu sefer)
-        string serviceUri="http://localhost:1000/Service.svc/";
+        string serviceUri = "http://localhost:1000/Service.svc/";
 
         public Form1()
         {
             InitializeComponent();
             // HttpClient nesnemizi örnekliyoruz
-            client = new HttpClient();            
+            client = new HttpClient();
         }
 
         private void btnGetProducts_Click(object sender, EventArgs e)
         {
             // IDisposable interface' ini implemente eden HttpResponseMessage nesne örneğinin içeriğinin HttpClient tipinin Get metodu yardımıyla elde ediyoruz. Get metodu parametre olarak servis adresini almakta.
             using (HttpResponseMessage response = client.Get(serviceUri))
-            {                
+            {
                 // Eğer servis tarafından Http 200(yani OK) cevabı gelirse işlemler devam edecektir. Aksi durumda istisna mesajı fırlatılacaktır.
                 response.EnsureStatusIs(HttpStatusCode.OK);
 
                 // cevap olarak gelen paket içeriği XML formatlıdır. Bu içeriğin ItemInfoList tipine cast edilmesi ve yönetimli kod ile ele alınabilmesi için ReadAsXmlSerializable<T> generic metodu kullanılır.
-                ItemInfoList products=response.Content.ReadAsXmlSerializable<ItemInfoList>();
+                ItemInfoList products = response.Content.ReadAsXmlSerializable<ItemInfoList>();
 
                 // ilk olarak tüm ürünleri listeleriz. ToList metoduna generic parametre olarak, servis tarafındaki Product tipinin istemcide otomatik üretilen karşılığı olan ItemInfoListItemInfoItem sınıfı verilmiştir, buna dikkat edelim.
                 grdProducts.DataSource = (from p in products.ItemInfo
-                                          select p.Item).ToList<ItemInfoListItemInfoItem>();               
+                                          select p.Item).ToList<ItemInfoListItemInfoItem>();
             }
         }
     }
@@ -90,9 +90,9 @@ Form uygulamamızı ilk haliyle çalıştırıp testlerimize başlayabilir. Tabi
 Görüldüğü üzere tüm Product bilgileri istemci tarafına gelmiştir. Tabiki koleksiyon içeriğini istemci tarafına indirdikten sonra sorgularıda istediğimiz şekilde değiştirebiliriz. Örneğin;
 
 ```csharp
- grdProducts.DataSource = (from p in products.ItemInfo
-                                          where p.Item.CategoryID == 1
-                                          select p.Item).ToList<ItemInfoListItemInfoItem>();
+grdProducts.DataSource = (from p in products.ItemInfo
+                          where p.Item.CategoryID == 1
+                          select p.Item).ToList<ItemInfoListItemInfoItem>();
 ```
 
 kodunu denediğimizde kategorisi 1 olan ürünlerin getirilmesi sağlanacaktır.
@@ -103,14 +103,14 @@ Hatta istersek anoymous type (isimsiz tip) kullanımıda söz konusu olabilir. S
 
 ```csharp
 grdProducts.DataSource = (from p in products.ItemInfo
-                                          where p.Item.CategoryID == 1
-                                          select new
-                                          {
-                                              Key = p.Item.ProductID,
-                                              p.Item.ProductName,
-                                              p.Item.CategoryID,
-                                              p.Item.UnitsInStock
-                                          }).ToList();
+                          where p.Item.CategoryID == 1
+                          select new
+                          {
+                              Key = p.Item.ProductID,
+                              p.Item.ProductName,
+                              p.Item.CategoryID,
+                              p.Item.UnitsInStock
+                          }).ToList();
 ```
 
 kodu ile sadece ProductID, ProductName, CategoryID ve UnitsInStock alanlarını içeren bir isimsiz tip topluluğunu DataGridView içerisinde gösterilmesi sağlanabilir.

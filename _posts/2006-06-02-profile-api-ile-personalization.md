@@ -39,7 +39,7 @@ Bu profile bilgisine göre, sisteme giriş yapan her kullanıcı için Kategorim
 Öncelikli olarak sayfamızın çalışma şeklinden kısaca bahsedelim. Uygulamamızda Form tabanlı doğurlama kullandığımız için, default.aspx sayfasına gelinmeden önce isimsiz kullanıcılar UserLogin.aspx sayfasına bir kere uğramak zorundalar. Burada sisteme başarılı bir şekilde Login olan kullanıcılar default.aspx sayfasına geldiklerinde güncel profillerine ait özelliklere erişebilecek ve değiştirebilecekler. Böylece Web.Config dosyasındaProfile boğumu içerisinde belirttiğimiz özelliklerin her birinin değerlerini her kullanıcı için farklı şekillerde tutabileceğiz. Yani kişiye göre özelleştirme yapmış olacağız. Bunları gerçekleştirebilmek için kodumuzda aşağıdaki değişiklikleri yapalım.
 
 ```csharp
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -129,23 +129,41 @@ public class UrlInfo
     private string _sayfaAdi;
     public string SayfaAdi
     {
-        get { return _sayfaAdi; }
-        set { _sayfaAdi = value; }
+        get
+        {
+            return _sayfaAdi;
+        }
+        set
+        {
+            _sayfaAdi = value;
+        }
     }
     private string _url;
     public string Url
     {
-        get { return _url; }
-        set { _url = value; }
+        get
+        {
+            return _url;
+        }
+        set
+        {
+            _url = value;
+        }
     }
     private DateTime _sonGirisTarihi;
     public DateTime SonGirisTarihi
     {
-        get { return _sonGirisTarihi; }
-        set { _sonGirisTarihi = value; }
+        get
+        {
+            return _sonGirisTarihi;
+        }
+        set
+        {
+            _sonGirisTarihi = value;
+        }
     }
     public UrlInfo()
-    {    }
+    { }
     public UrlInfo(string ad, string url, DateTime giris)
     {
         SayfaAdi = ad;

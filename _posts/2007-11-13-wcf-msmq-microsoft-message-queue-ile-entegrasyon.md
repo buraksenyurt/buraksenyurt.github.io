@@ -81,10 +81,10 @@ using System.ServiceModel;
 
 namespace SiparisKutuphanesi
 {
-    [ServiceContract(Name="Siparis Servisi",Namespace="http://www.bsenyurt.com/SiparisServisi")]
+    [ServiceContract(Name = "Siparis Servisi", Namespace = "http://www.bsenyurt.com/SiparisServisi")]
     public interface ISiparisYonetici
     {
-        [OperationContract(IsOneWay=true)]
+        [OperationContract(IsOneWay = true)]
         void SiparisEt(int urunNo, int miktar);
     }
 }
@@ -101,7 +101,7 @@ using System.ServiceModel;
 
 namespace SiparisKutuphanesi
 {
-    public class SiparisYonetici:ISiparisYonetici
+    public class SiparisYonetici : ISiparisYonetici
     {
         #region ISiparisYonetici Members
 
@@ -110,7 +110,7 @@ namespace SiparisKutuphanesi
             Thread.Sleep(7000);
             // Sipariş ile ilgili işlemler
         }
-        
+
         #endregion
     }
 }

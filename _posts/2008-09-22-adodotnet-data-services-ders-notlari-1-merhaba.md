@@ -136,13 +136,13 @@ using System.Linq;
 using System.ServiceModel.Web;
 using AdventureWorksModel;
 
-public class ProductService 
+public class ProductService
     : DataService<AdventureWorksEntities>
 {
     public static void InitializeService(IDataServiceConfiguration config)
     {
         config.SetEntitySetAccessRule("*", EntitySetRights.AllRead);
-    }    
+    }
 }
 ```
 

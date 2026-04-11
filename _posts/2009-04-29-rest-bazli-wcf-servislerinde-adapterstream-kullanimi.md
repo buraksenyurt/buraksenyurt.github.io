@@ -82,14 +82,14 @@ using Microsoft.ServiceModel.Web;
 [assembly: ContractNamespace("", ClrNamespace = "Streaming")]
 
 namespace Streaming
-{ 
+{
     [ServiceBehavior(IncludeExceptionDetailInFaults = true, InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single)]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     [ServiceContract]
     public class Service
-    {        
-        [WebHelp(Comment="Şansına göre bir duvar kağıdı döndürür")]
-        [WebGet(UriTemplate="yourimage?keyword={keyword}")]
+    {
+        [WebHelp(Comment = "Şansına göre bir duvar kağıdı döndürür")]
+        [WebGet(UriTemplate = "yourimage?keyword={keyword}")]
         [OperationContract]
         public Stream GetImage(string keyword)
         {
@@ -102,16 +102,16 @@ namespace Streaming
             XDocument doc = new XDocument();
             doc = XDocument.Load(System.Web.HttpContext.Current.Server.MapPath("~/Mapper.xml"));
             // TODO: Xml içeriğinde Keyword niteliğinde olmayan bir bilgi gelirse aşağıdaki sorgu patlar. Buna tedbir alınması ve uygun Http hatasının döndürülmesi önerilir.
-            string imagePath = (from img in doc.Document.Elements("Mapper").Elements("Map")                             
-                            where img.Attribute("Keyword").Value == keyword.ToLower()
-                            select img.Attribute("Image").Value).First();
+            string imagePath = (from img in doc.Document.Elements("Mapper").Elements("Map")
+                                where img.Attribute("Keyword").Value == keyword.ToLower()
+                                select img.Attribute("Image").Value).First();
 
             // eğer kelimeye denk düşen resim yoksa NotFound tipinden Http hatası döndürülür
             if (String.IsNullOrEmpty(imagePath))
                 throw new WebProtocolException(HttpStatusCode.NotFound);
 
             // Image tipi resim adresinden üretilir.
-            Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath(imagePath));            
+            Image image = Image.FromFile(System.Web.HttpContext.Current.Server.MapPath(imagePath));
             // Çıktının içerik tipi jpeg formatı olarak belirlenir.
             WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
             // AdapterStream yapıcısı kullanılarak stream istemci tarafına hazırlanıp gönderilir.

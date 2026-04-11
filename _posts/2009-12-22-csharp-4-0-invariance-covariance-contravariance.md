@@ -23,26 +23,34 @@ using System;
 
 namespace Before
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            WriteString(35);
-            WriteString("Burak Selim Şenyurt");
-            WriteString(true);
-            WriteString(new Album { AlbumID = 1, Title = "Chikenfoot" });
-        }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            WriteString(35);
+            WriteString("Burak Selim Şenyurt");
+            WriteString(true);
+            WriteString(new Album { AlbumID = 1, Title = "Chikenfoot" });
+        }
 
-        static void WriteString(object obj)
-        {
-            Console.WriteLine(obj.ToString());
-        }        
-    }
-    class Album
-    {
-        public int AlbumID { get; set; }
-        public string Title { get; set; }
-    }    
+        static void WriteString(object obj)
+        {
+            Console.WriteLine(obj.ToString());
+        }
+    }
+    class Album
+    {
+        public int AlbumID
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
+    }
 }
 ```
 
@@ -55,11 +63,11 @@ Yolumuza devam edelim ve bu sefer aşağıdaki kod parçasını göz önüne ala
 ```csharp
 static void Main(string[] args)
 {
-   object albm = CreateAlbum(2, "Is There a Love in space[Joe Satriani]");
+    object albm = CreateAlbum(2, "Is There a Love in space[Joe Satriani]");
 }
-static Album CreateAlbum(int albumId,string title)
+static Album CreateAlbum(int albumId, string title)
 {
-   return new Album{AlbumID=albumId,Title=title};
+    return new Album { AlbumID = albumId, Title = title };
 }
 ```
 
@@ -88,38 +96,46 @@ using System.Collections;
 
 namespace Before
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            ArrayList albumList = new ArrayList();
-            albumList.Add(new Album { AlbumID = 1, Title = "Chikenfoot" });
-            albumList.Add(new Album { AlbumID = 2, Title = "Is There a Love in space[Joe Satriani]" });
-            albumList.Add(new Album { AlbumID = 3, Title = "Big Blue Ball [Peter Gabriel]" });
-            albumList.Add("Reality Killed The Video Star [Robbie Willams]");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList albumList = new ArrayList();
+            albumList.Add(new Album { AlbumID = 1, Title = "Chikenfoot" });
+            albumList.Add(new Album { AlbumID = 2, Title = "Is There a Love in space[Joe Satriani]" });
+            albumList.Add(new Album { AlbumID = 3, Title = "Big Blue Ball [Peter Gabriel]" });
+            albumList.Add("Reality Killed The Video Star [Robbie Willams]");
 
-            WriteAlbumList(albumList);
-        }
+            WriteAlbumList(albumList);
+        }
 
-        static void WriteAlbumList(ArrayList albums)
-        {
-            foreach (Album albm in albums)
-            {
-                Console.WriteLine(albm.ToString());
-            }
-        }
-    }
-    class Album
-    {
-        public int AlbumID { get; set; }
-        public string Title { get; set; }
+        static void WriteAlbumList(ArrayList albums)
+        {
+            foreach (Album albm in albums)
+            {
+                Console.WriteLine(albm.ToString());
+            }
+        }
+    }
+    class Album
+    {
+        public int AlbumID
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
 
-        public override string ToString()
-        {
-            return String.Format("{0} {1}", AlbumID.ToString(), Title);
-        }
-    }    
-} 
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", AlbumID.ToString(), Title);
+        }
+    }
+}
 ```
 
 ![blg118_Exception1.gif](/assets/images/2009/blg118_Exception1.gif)
@@ -170,14 +186,22 @@ namespace Before
     }
     class Album
     {
-        public int AlbumID { get; set; }
-        public string Title { get; set; }
+        public int AlbumID
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
 
         public override string ToString()
         {
             return String.Format("{0} {1}", AlbumID.ToString(), Title);
         }
-    }    
+    }
 }
 ```
 
@@ -194,32 +218,40 @@ using System.Collections.Generic;
 
 namespace Before
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            IEnumerable<object> albums = GetAlbums();
-        }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IEnumerable<object> albums = GetAlbums();
+        }
 
-        static IEnumerable<Album> GetAlbums()
-        {
-            return new List<Album>
-            {
-                new Album { AlbumID = 1, Title = "Chikenfoot" },
-                new Album { AlbumID = 2, Title = "Is There a Love in space[Joe Satriani]" }
-            };
-        }
-    }
-    class Album
-    {
-        public int AlbumID { get; set; }
-        public string Title { get; set; }
+        static IEnumerable<Album> GetAlbums()
+        {
+            return new List<Album>
+            {
+                new Album { AlbumID = 1, Title = "Chikenfoot" },
+                new Album { AlbumID = 2, Title = "Is There a Love in space[Joe Satriani]" }
+            };
+        }
+    }
+    class Album
+    {
+        public int AlbumID
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
 
-        public override string ToString()
-        {
-            return String.Format("{0} {1}", AlbumID.ToString(), Title);
-        }
-    }    
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", AlbumID.ToString(), Title);
+        }
+    }
 }
 ```
 
@@ -268,7 +300,7 @@ namespace NowInNet4
             List<Product> products = new List<Product>
             {
                 new Product{ProductId=1,Name="Americano Coffee",ListPrice=10},
-                new Product{ProductId=2,Name="English Royal Tea",ListPrice=12}                
+                new Product{ProductId=2,Name="English Royal Tea",ListPrice=12}
             };
 
             Process(products);
@@ -281,7 +313,7 @@ namespace NowInNet4
             return new List<Product>
             {
                 new Product{ProductId=1,Name="Americano Coffee",ListPrice=10},
-                new Product{ProductId=2,Name="English Royal Tea",ListPrice=12}                
+                new Product{ProductId=2,Name="English Royal Tea",ListPrice=12}
             };
         }
 
@@ -292,9 +324,21 @@ namespace NowInNet4
     }
     class Product
     {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
     }
 }
 ```

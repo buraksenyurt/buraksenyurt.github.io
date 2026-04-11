@@ -107,41 +107,41 @@ namespace Solution
         void Draw();
     }
 
-   public class WinScreen
-       : IScreen
-   {
-       #region IScreen Members
+    public class WinScreen
+        : IScreen
+    {
+        #region IScreen Members
 
-       public void Initialize()
-       {
-           Console.WriteLine("WinScreen Initialize işlemi");
-       }
+        public void Initialize()
+        {
+            Console.WriteLine("WinScreen Initialize işlemi");
+        }
 
-       public void Draw()
-       {
-           Console.WriteLine("WinScreen draw işlemi");
-       }
+        public void Draw()
+        {
+            Console.WriteLine("WinScreen draw işlemi");
+        }
 
-       #endregion
-   }
+        #endregion
+    }
 
-   public class WebScreen
-       :IScreen
-   {
-       #region IScreen Members
+    public class WebScreen
+        : IScreen
+    {
+        #region IScreen Members
 
-       public void Initialize()
-       {
-           Console.WriteLine("WebScreen initialize işlemi");
-       }
+        public void Initialize()
+        {
+            Console.WriteLine("WebScreen initialize işlemi");
+        }
 
-       public void Draw()
-       {
-           Console.WriteLine("WebScreen draw işlemi");
-       }
+        public void Draw()
+        {
+            Console.WriteLine("WebScreen draw işlemi");
+        }
 
-       #endregion
-   }
+        #endregion
+    }
 
     public class MobileScreen
         : IScreen
@@ -191,7 +191,7 @@ namespace Solution
             creator.InitializeScreen();
             creator.DrawScreen();
 
-            creator=new ScreenCreator(new MobileScreen());
+            creator = new ScreenCreator(new MobileScreen());
             creator.InitializeScreen();
             creator.DrawScreen();
         }

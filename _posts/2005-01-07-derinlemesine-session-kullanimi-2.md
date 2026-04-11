@@ -17,15 +17,15 @@ default.aspx kodları ve Form'un ekran görüntüsü;
 ```csharp
 private void Page_Load(object sender, System.EventArgs e)
 {
-    if(Session["Bilgi"]!=null)
+    if (Session["Bilgi"] != null)
     {
-        Label1.Text=Session["Bilgi"].ToString();
+        Label1.Text = Session["Bilgi"].ToString();
     }
 }
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-    Session["Bilgi"]="Deneme";
-    Label1.Text=Session["Bilgi"].ToString();
+    Session["Bilgi"] = "Deneme";
+    Label1.Text = Session["Bilgi"].ToString();
 }
 ```
 
@@ -36,8 +36,8 @@ WebForm2.aspx kodları ve Form'un ekran görüntüsü;
 ```csharp
 private void Page_Load(object sender, System.EventArgs e)
 {
-    if(Session["Bilgi"]!=null)
-        Label1.Text=Session["Bilgi"].ToString();
+    if (Session["Bilgi"] != null)
+        Label1.Text = Session["Bilgi"].ToString();
 }
 ```
 
@@ -149,7 +149,7 @@ public class Personel
         }
         set
         {
-            mAd=value;
+            mAd = value;
         }
     }
 
@@ -161,14 +161,14 @@ public class Personel
         }
         set
         {
-            mSoyad=value;
+            mSoyad = value;
         }
     }
 
-    public Personel(string ad,string soyad)
+    public Personel(string ad, string soyad)
     {
-        mAd=ad;
-        mSoyad=soyad;
+        mAd = ad;
+        mSoyad = soyad;
     }
 
     public Personel()
@@ -186,18 +186,18 @@ private Personel pOku;
 private void Page_Load(object sender, System.EventArgs e)
 {
 
-    if(Session["Eleman"]!=null)
+    if (Session["Eleman"] != null)
     {
-        pOku=new Personel();
-        pOku=(Personel)Session["Eleman"];
-        Label1.Text=pOku.Ad+" "+pOku.Soyad;
+        pOku = new Personel();
+        pOku = (Personel)Session["Eleman"];
+        Label1.Text = pOku.Ad + " " + pOku.Soyad;
     }
 }
 
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-    Personel p1=new Personel("Burak Selim","Şenyurt");
-    Session["Eleman"]=p1;
+    Personel p1 = new Personel("Burak Selim", "Şenyurt");
+    Session["Eleman"] = p1;
 }
 ```
 
@@ -208,11 +208,11 @@ private Personel pOku;
 
 private void Page_Load(object sender, System.EventArgs e)
 {
-    if(Session["Eleman"]!=null)
+    if (Session["Eleman"] != null)
     {
-        pOku=new Personel();
-        pOku=(Personel)Session["Eleman"];
-        Label1.Text=pOku.Ad+" "+pOku.Soyad;
+        pOku = new Personel();
+        pOku = (Personel)Session["Eleman"];
+        Label1.Text = pOku.Ad + " " + pOku.Soyad;
     }
 }
 ```

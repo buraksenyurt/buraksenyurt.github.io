@@ -39,16 +39,16 @@ using System.Data.Services;
 
 namespace AdventureServices
 {
-    public class ProductionService 
+    public class ProductionService
         : DataService<AdventureWorksEntities>
     {
         public static void InitializeService(DataServiceConfiguration config)
         {
             config.SetEntitySetAccessRule("*", EntitySetRights.All);
             config.SetServiceOperationAccessRule("*", ServiceOperationRights.All);
-        
+
             config.DataServiceBehavior.MaxProtocolVersion = System.Data.Services.Common.DataServiceProtocolVersion.V2;
-     }
+        }
     }
 }
 ```
@@ -125,7 +125,7 @@ using ClientApp.ProductionSpace;
 
 namespace ClientApp
 {
-    public partial class Window1 
+    public partial class Window1
         : Window
     {
         AdventureWorksEntities adw = new AdventureWorksEntities(new Uri("http://localhost:1757/ProductionService.svc/"));

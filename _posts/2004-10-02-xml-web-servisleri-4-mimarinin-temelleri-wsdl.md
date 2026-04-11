@@ -301,63 +301,63 @@ using System.Web.Services;
 
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Web.Services.WebServiceBindingAttribute(Name="Geometrik HesaplamalarSoap", Namespace="http://ilk/servis/")]
-public class GeometrikHesaplamalar : System.Web.Services.Protocols.SoapHttpClientProtocol 
+[System.Web.Services.WebServiceBindingAttribute(Name = "Geometrik HesaplamalarSoap", Namespace = "http://ilk/servis/")]
+public class GeometrikHesaplamalar : System.Web.Services.Protocols.SoapHttpClientProtocol
 {
-    public GeometrikHesaplamalar() 
+    public GeometrikHesaplamalar()
     {
         this.Url = "http://localhost/GeoWebServis/GeoMat.asmx";
     }
 
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ilk/servis/DaireAlan", RequestNamespace="http://ilk/servis/", ResponseNamespace="http://ilk/servis/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public System.Double DaireAlan(System.Double r) 
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ilk/servis/DaireAlan", RequestNamespace = "http://ilk/servis/", ResponseNamespace = "http://ilk/servis/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public System.Double DaireAlan(System.Double r)
     {
-        object[] results = this.Invoke("DaireAlan", new object[] {r});
+        object[] results = this.Invoke("DaireAlan", new object[] { r });
         return ((System.Double)(results[0]));
     }
 
-    public System.IAsyncResult BeginDaireAlan(System.Double r, System.AsyncCallback callback, object asyncState) 
+    public System.IAsyncResult BeginDaireAlan(System.Double r, System.AsyncCallback callback, object asyncState)
     {
-        return this.BeginInvoke("DaireAlan", new object[] {r}, callback, asyncState);
+        return this.BeginInvoke("DaireAlan", new object[] { r }, callback, asyncState);
     }
 
-    public System.Double EndDaireAlan(System.IAsyncResult asyncResult) 
+    public System.Double EndDaireAlan(System.IAsyncResult asyncResult)
     {
         object[] results = this.EndInvoke(asyncResult);
         return ((System.Double)(results[0]));
     }
 
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ilk/servis/DaireCevre", RequestNamespace="http://ilk/servis/", ResponseNamespace="http://ilk/servis/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public System.Double DaireCevre(System.Double r) 
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ilk/servis/DaireCevre", RequestNamespace = "http://ilk/servis/", ResponseNamespace = "http://ilk/servis/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public System.Double DaireCevre(System.Double r)
     {
-        object[] results = this.Invoke("DaireCevre", new object[] {r});
+        object[] results = this.Invoke("DaireCevre", new object[] { r });
         return ((System.Double)(results[0]));
     }
 
-    public System.IAsyncResult BeginDaireCevre(System.Double r, System.AsyncCallback callback, object asyncState) 
+    public System.IAsyncResult BeginDaireCevre(System.Double r, System.AsyncCallback callback, object asyncState)
     {
-        return this.BeginInvoke("DaireCevre", new object[] {r}, callback, asyncState);
+        return this.BeginInvoke("DaireCevre", new object[] { r }, callback, asyncState);
     }
 
-    public System.Double EndDaireCevre(System.IAsyncResult asyncResult) 
+    public System.Double EndDaireCevre(System.IAsyncResult asyncResult)
     {
         object[] results = this.EndInvoke(asyncResult);
         return ((System.Double)(results[0]));
-    }   
+    }
 
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ilk/servis/DaireCevreDizi", RequestNamespace="http://ilk/servis/", ResponseNamespace="http://ilk/servis/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public System.Double[] DaireCevreDizi(System.Double[] r) 
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://ilk/servis/DaireCevreDizi", RequestNamespace = "http://ilk/servis/", ResponseNamespace = "http://ilk/servis/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public System.Double[] DaireCevreDizi(System.Double[] r)
     {
-        object[] results = this.Invoke("DaireCevreDizi", new object[] {r});
+        object[] results = this.Invoke("DaireCevreDizi", new object[] { r });
         return ((System.Double[])(results[0]));
-    }   
+    }
 
-    public System.IAsyncResult BeginDaireCevreDizi(System.Double[] r, System.AsyncCallback callback, object asyncState) 
+    public System.IAsyncResult BeginDaireCevreDizi(System.Double[] r, System.AsyncCallback callback, object asyncState)
     {
-        return this.BeginInvoke("DaireCevreDizi", new object[] {r}, callback, asyncState);
-    }   
+        return this.BeginInvoke("DaireCevreDizi", new object[] { r }, callback, asyncState);
+    }
 
-    public System.Double[] EndDaireCevreDizi(System.IAsyncResult asyncResult) 
+    public System.Double[] EndDaireCevreDizi(System.IAsyncResult asyncResult)
     {
         object[] results = this.EndInvoke(asyncResult);
         return ((System.Double[])(results[0]));
@@ -380,13 +380,13 @@ using System.Web.Services;
 public class Uygulama
 {
     public static void Main(String[] args)
-   {
-        GeometrikHesaplamalar hesap=new GeometrikHesaplamalar();
+    {
+        GeometrikHesaplamalar hesap = new GeometrikHesaplamalar();
         double alan;
         Console.WriteLine("YARICAP ");
-        double yariCap=Convert.ToDouble(Console.ReadLine());
-        alan=hesap.DaireAlan(yariCap);
-        Console.WriteLine("ALAN = {0}",alan);
+        double yariCap = Convert.ToDouble(Console.ReadLine());
+        alan = hesap.DaireAlan(yariCap);
+        Console.WriteLine("ALAN = {0}", alan);
     }
 }
 ```

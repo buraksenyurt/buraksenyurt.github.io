@@ -45,7 +45,7 @@ default.aspx içerisindeki değişiklik
 defaulf.aspx.cs
 
 ```csharp
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -96,8 +96,8 @@ public class WebForm1 : System.Web.UI.Page
     }
 
     private void InitializeComponent()
-    { 
-        this.Button1.Click += new System.EventHandler(this.Button1_Click); 
+    {
+        this.Button1.Click += new System.EventHandler(this.Button1_Click);
     }
     #endregion
 
@@ -176,12 +176,12 @@ Aspx tarafında
 Code Behind tarafında
 
 ```csharp
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     protected void Button1_Click(object sender, EventArgs e)
     {
         Response.Write("Deneme");
-    } 
+    }
 }
 ```
 

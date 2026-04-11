@@ -27,7 +27,8 @@ namespace Inheritance1
 {
     class TemelSinif /* Öncelikle temel sınıfımızı yani Base Class'ımızı yazalım. */
     {
-        private string SekilTipi; /* Sadece bu class içinde tanımlı bir alan tanımladık. Bu alana Türeyen sınıfımız (derived class) içerisinden de erişemeyiz. Eğer temel sınıfta yer alan bir alana sadece türeyen sınıftan erişebilmek ve başka sınıflardan erişilmesini engellemek istiyorsak, bu durumda bu alanı protected olarak tanımlarız.*/
+        private string SekilTipi;
+        /* Sadece bu class içinde tanımlı bir alan tanımladık. Bu alana Türeyen sınıfımız (derived class) içerisinden de erişemeyiz. Eğer temel sınıfta yer alan bir alana sadece türeyen sınıftan erişebilmek ve başka sınıflardan erişilmesini engellemek istiyorsak, bu durumda bu alanı protected olarak tanımlarız.*/
         /* Bir özellik tanımlıyoruz. Sadece get bloğu olduğu için yanlızca okunabilir bir özellik. */
         public string sekilTipi
         {
@@ -210,7 +211,8 @@ namespace Inheritance1
             /* Önce TemelSinif tipinde bir nesne oluşturup SekilTipiYaz metodunu çağırıyoruz.*/
             TemelSinif ts1 = new TemelSinif();
             Console.WriteLine(ts1.SekilTipiYaz());
-            TemelSinif ts2 = new TemelSinif("Dikdörtgen"); /* Bu kes TemelSinif tipinden bir nesneyi diğer yapıcı metodu ile çağırıyor ve SekilTipiYaz metodunu      çalıştırıyoruz. */
+            TemelSinif ts2 = new TemelSinif("Dikdörtgen");
+            /* Bu kes TemelSinif tipinden bir nesneyi diğer yapıcı metodu ile çağırıyor ve SekilTipiYaz metodunu      çalıştırıyoruz. */
             Console.WriteLine(ts2.SekilTipiYaz());
 
             /* Şimdi ise TureyenSinif'tan bir nesne oluşturduk ve sekilTipi isimli özelliğin değerini aldık. Kodlara bakıcak olursanız sekilTipi özelliğinin TemelSinif içinde tanımlandığını görürsünüz. Yani TureyenSinif nesnemizden, TemelSinif class'ındaki izin verilen alanlara,metodlara vb.. ulaşabilmekteyiz.*/

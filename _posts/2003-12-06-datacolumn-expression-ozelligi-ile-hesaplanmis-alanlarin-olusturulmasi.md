@@ -29,29 +29,30 @@ DataTable dtMaas;
 
 public void doldur()
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-     da=new SqlDataAdapter("Select * From Maas",conFriends);
-     dtMaas=new DataTable("Maaslar");
-     da.Fill(dtMaas);
-     dgMaas.DataSource=dtMaas;
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    da = new SqlDataAdapter("Select * From Maas", conFriends);
+    dtMaas = new DataTable("Maaslar");
+    da.Fill(dtMaas);
+    dgMaas.DataSource = dtMaas;
 }
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     doldur(); /* Tablodan verilerimizi alan procedure'u çağırıyoruz*/
+    doldur();
+    /* Tablodan verilerimizi alan procedure'u çağırıyoruz*/
 }
 
 private void btnHesapla_Click(object sender, System.EventArgs e)
 {
-     /* Hesaplanan Alanımız için bir DataColumn nesnesi tanımlıyoruz. */
-     DataColumn dcArtisAlani=new DataColumn();
-     /* Expression özelliğine yapmak istediğimiz hesaplamayı giriyoruz. Buradaki hesaplamada, kullanıcının cmbAris isimli comboBox kontrolünden seçtiği oran kadar maaşlara artış uygulanıyor.*/
-     dcArtisAlani.Expression="Maas + (Maas *"+cmbArtis.Text+"/100)";
-     /* Yeni alanımız için anlamlı bir isim veriyoruz. Bu isimde artış oranıda yazmakta.*/
-     dcArtisAlani.ColumnName="Yuzde"+cmbArtis.Text+"Artis";
-     /* Daha sonra oluşturduğumuz bu hesaplanmış alanı DataTable nesnemize ekliyoruz. Böylece bellekteki Maas tablomuzda, maaslara belirli bir artış oranı uygulanmış verileri içeren DataColumn nesnemiz hazırlanmış oluyor.*/
-     dtMaas.Columns.Add(dcArtisAlani);
-     /* Son olarak dataGrid nesnemizi Refresh() metodu ile tazeleyerek hesaplanmış alanımızında görünmesini sağlıyoruz.*/
-     dgMaas.Refresh();
+    /* Hesaplanan Alanımız için bir DataColumn nesnesi tanımlıyoruz. */
+    DataColumn dcArtisAlani = new DataColumn();
+    /* Expression özelliğine yapmak istediğimiz hesaplamayı giriyoruz. Buradaki hesaplamada, kullanıcının cmbAris isimli comboBox kontrolünden seçtiği oran kadar maaşlara artış uygulanıyor.*/
+    dcArtisAlani.Expression = "Maas + (Maas *" + cmbArtis.Text + "/100)";
+    /* Yeni alanımız için anlamlı bir isim veriyoruz. Bu isimde artış oranıda yazmakta.*/
+    dcArtisAlani.ColumnName = "Yuzde" + cmbArtis.Text + "Artis";
+    /* Daha sonra oluşturduğumuz bu hesaplanmış alanı DataTable nesnemize ekliyoruz. Böylece bellekteki Maas tablomuzda, maaslara belirli bir artış oranı uygulanmış verileri içeren DataColumn nesnemiz hazırlanmış oluyor.*/
+    dtMaas.Columns.Add(dcArtisAlani);
+    /* Son olarak dataGrid nesnemizi Refresh() metodu ile tazeleyerek hesaplanmış alanımızında görünmesini sağlıyoruz.*/
+    dgMaas.Refresh();
 }
 ```
 

@@ -22,8 +22,8 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            string refTuru=null;
-            int degerTuru=null;
+            string refTuru = null;
+            int degerTuru = null;
         }
     }
 }
@@ -40,14 +40,14 @@ namespace ConsoleApplication2
     {
     }
     struct Dvd
-     {
-     }
+    {
+    }
     class Class1
     {
         static void Main(string[] args)
         {
-            Kitap kitap=null;
-            Dvd dvd=null;
+            Kitap kitap = null;
+            Dvd dvd = null;
         }
     }
 }
@@ -190,16 +190,16 @@ namespace TestNullableValues
         private string m_sporcu;
         private double m_boy;
         private int m_kilo;
-        public Sporcu(int id,string sporcu,double boy,int kilo)
+        public Sporcu(int id, string sporcu, double boy, int kilo)
         {
-            m_id=id;
-            m_sporcu=sporcu;
-            m_boy=boy;
-            m_kilo=kilo;
+            m_id = id;
+            m_sporcu = sporcu;
+            m_boy = boy;
+            m_kilo = kilo;
         }
         public override string ToString()
         {
-            return m_id.ToString()+" "+m_sporcu+" "+m_boy.ToString()+" "+m_kilo.ToString();
+            return m_id.ToString() + " " + m_sporcu + " " + m_boy.ToString() + " " + m_kilo.ToString();
         }
     }
 
@@ -208,24 +208,24 @@ namespace TestNullableValues
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
-    
+
         public SporYonetim()
         {
-            con=new SqlConnection("data source=localhost;database=MyBase;user id=sa;password=");
+            con = new SqlConnection("data source=localhost;database=MyBase;user id=sa;password=");
         }
 
         public void SporcuListesi()
         {
-            cmd=new SqlCommand("Select ID,Sporcu,Boy,Kilo From Sporcular",con);
+            cmd = new SqlCommand("Select ID,Sporcu,Boy,Kilo From Sporcular", con);
             con.Open();
-            dr=cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            while(dr.Read())
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (dr.Read())
             {
-                int id=(int)dr["ID"];
-                string sporcu=dr["Sporcu"].ToString();
-                double boy=(double)dr["Boy"];
-                    int kilo=(int)dr["Kilo"];
-                Sporcu sprc=new Sporcu(id,sporcu,boy,kilo);
+                int id = (int)dr["ID"];
+                string sporcu = dr["Sporcu"].ToString();
+                double boy = (double)dr["Boy"];
+                int kilo = (int)dr["Kilo"];
+                Sporcu sprc = new Sporcu(id, sporcu, boy, kilo);
                 Console.WriteLine(sprc.ToString());
             }
         }
@@ -236,7 +236,7 @@ namespace TestNullableValues
         [STAThread]
         static void Main(string[] args)
         {
-            SporYonetim ynt=new SporYonetim();
+            SporYonetim ynt = new SporYonetim();
             ynt.SporcuListesi();
         }
     }
@@ -252,15 +252,15 @@ Sebep gayet net ve açıktır. Değer türleri null veri içeremeyeceği için c
 ```csharp
 double boy;
 int kilo;
-if(dr["Boy"]==System.DBNull.Value)
-    boy=0;
+if (dr["Boy"] == System.DBNull.Value)
+    boy = 0;
 else
-    boy=(double)dr["Boy"];
-if(dr["Kilo"]==System.DBNull.Value)
-    kilo=0;
+    boy = (double)dr["Boy"];
+if (dr["Kilo"] == System.DBNull.Value)
+    kilo = 0;
 else
-    kilo=(int)dr["Kilo"];
-Sporcu sprc=new Sporcu(id,sporcu,boy,kilo);
+    kilo = (int)dr["Kilo"];
+Sporcu sprc = new Sporcu(id, sporcu, boy, kilo);
 ```
 
 Aynı örneği aşağıdaki haliyle C# 2.0 versiyonunda daha farklı bir yaklaşım ile yazabiliriz. Bu kez, Sporcu sınıfımızın yapıcı metodunda yer alan boy ve kilo parametleri ile private field olarak tanımladığımız m_Boy ve m_Kilo alanlarını null değer içerebilecek şekilde tanımlayarak işe başlayacağız. Yine SqlDataReader ile okuduğumuz alanların null değer içerip içermediğini kontrol edeceğiz. Ancak bu kez null değer içerseler dahi onları taşayabilecek değer türlerimiz elimizde olacak. Böylece tablomuzda null değere sahip olan alanlarımızı ekrana yazdırabileceğiz.
@@ -280,7 +280,7 @@ namespace UsingNullableValues
 
         // Sınıf içi bu iki alanı null değerler taşıyabilecel tipten tanımladık.
         private double? m_boy;
-          private int? m_kilo;
+        private int? m_kilo;
 
         // Diğer kod satırları
     }
@@ -290,18 +290,18 @@ namespace UsingNullableValues
         // Diğer kod satırları
 
         public void SporcuListesi()
-        {    
+        {
             // Diğer kod satırları
             while (dr.Read())
             {
                 // Diğer kod satırları
-                
-                double? boy=null;
-                    int? kilo=null;
-                    if(dr["Boy"]!=System.DBNull.Value)
-                         boy=(double)dr["Boy"];
-                    if (dr["Kilo"] != System.DBNull.Value)
-                         kilo = (int)dr["Kilo"];
+
+                double? boy = null;
+                int? kilo = null;
+                if (dr["Boy"] != System.DBNull.Value)
+                    boy = (double)dr["Boy"];
+                if (dr["Kilo"] != System.DBNull.Value)
+                    kilo = (int)dr["Kilo"];
 
                 // nullable değişkenleri Sporcu sınıfının yapıcı metoduna parametre olarak gönderiyoruz.
                 Sporcu sprc = new Sporcu(id, sporcu, boy, kilo);

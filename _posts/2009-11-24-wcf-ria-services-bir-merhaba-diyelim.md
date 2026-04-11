@@ -102,7 +102,7 @@ using SilverlightApplication3.Web;
 
 namespace SilverlightApplication3
 {
-    public partial class MainPage 
+    public partial class MainPage
         : UserControl
     {
         ChinookDomainContext context;

@@ -58,20 +58,21 @@ namespace Packo
     /* Bu sinif yardimiyla oyun alaninda kullandigimiz nesnelerin X ve Y koordinatlari ve duvar sayilari için rastgele degerler ürettiriyoruz. Ekranimizi 20' ye 20'e lik karelere ayirdigimiz için random sinifinin Next metodunu buna uygun sekilde çagiriyoruz. */
     public class Konumlandir
     {
-        private int X,Y,duvarSayisi;
+        private int X, Y, duvarSayisi;
         System.Random r;
 
         public Konumlandir()
         {
-            r=new Random(); 
+            r = new Random();
         }
-    
+
         /* X koordinatlari için (herhangibir oyun elemaninin Left özelliginin degeri için) bir özellik tanimliyoruz. Bu özellik Read-Only formatindadir. */
         public int YerlestirX
         {
             get
             {
-                X=r.Next(1,20)*20; /* Oyun alani 400 piksele 400 piksel boyutunda oldugu için, 1 ile 20 arasindaki rakami 20 kat sayisi ile çarpiyoruz.*/
+                X = r.Next(1, 20) * 20;
+                /* Oyun alani 400 piksele 400 piksel boyutunda oldugu için, 1 ile 20 arasindaki rakami 20 kat sayisi ile çarpiyoruz.*/
                 return X;
             }
         }
@@ -81,7 +82,7 @@ namespace Packo
         {
             get
             {
-                Y=r.Next(1,20)*20;
+                Y = r.Next(1, 20) * 20;
                 return Y;
             }
         }
@@ -90,7 +91,7 @@ namespace Packo
         {
             get
             {
-                duvarSayisi=r.Next(10,30);
+                duvarSayisi = r.Next(10, 30);
                 return duvarSayisi;
             }
         }
@@ -104,190 +105,190 @@ Ana Program;
 Konumlandir k;
 
 /* Ekrani 20*20 lik bir matris ile ele alacagiz. */
-int[,] Matris=new int[20,20];
+int[,] Matris = new int[20, 20];
 
 /* Matristeki her bir elemanin hangi oyun nesnesini (duvar,kahramanimiz packocuk ve Muz) temsil ettigini daha kolay kontrol edebilmek için sayisal degerleri bir enum sabiti ile anlamlandiriyoruz.*/
 enum AlanSahibi
 {
-    Pakocuk=1,
-    Duvar=2,
-    Muz=3
+    Pakocuk = 1,
+    Duvar = 2,
+    Muz = 3
 }
 
 /* Ekrana duvar elemani, rastgele koordinatlara gelecek sekilde ekleniyor.*/
 private void DuvarEkle()
-{ 
+{
     /*Bir PictureBox nesnesi tanimlaniyor.*/
-    PictureBox pb=new PictureBox();
+    PictureBox pb = new PictureBox();
     /*Nesnemizin içerecegi resim yükleniyor. */
-    pb.Image=System.Drawing.Image.FromFile("duvar.jpg");
+    pb.Image = System.Drawing.Image.FromFile("duvar.jpg");
     /*Nesnemizin ekrandaki yerlesimi için gerekli koordinat ayarlamalari yapiliyor.*/
-    pb.Top=k.YerlestirY;
-    pb.Left=k.YerlestirX;
+    pb.Top = k.YerlestirY;
+    pb.Left = k.YerlestirX;
     /* Duvarin ekrandaki piksel bazli koordinatlarini Matrisimizdeki elemanlar ile uyusturabilmek için 20 ile bölüyoruz.     Matrisin bu elemanina Duvar enum sabitinin degerinin veriyoruz.*/
-    Matris[pb.Left/20,pb.Top/20]=(int)AlanSahibi.Duvar;
+    Matris[pb.Left / 20, pb.Top / 20] = (int)AlanSahibi.Duvar;
     /* Nesnemizin boyutlari belirleniyor.*/
-    pb.Width=20;
-    pb.Height=20;
-    pb.SizeMode=PictureBoxSizeMode.StretchImage;
+    pb.Width = 20;
+    pb.Height = 20;
+    pb.SizeMode = PictureBoxSizeMode.StretchImage;
     /* Nesnemiz formumuzun Controls koleksiyonuna ekleniyor.*/
     this.Controls.Add(pb);
 }
 
 /* Ekrana bir Muz elemani, rastgele koordinatlara gelecek sekilde yerlestiriliyor.*/
 private void MuzEkle()
-{ 
+{
     /*Muz nesnesinin üzerinden geçildiğinde onu ekrandan kaldırabilmek için kontrolün adını bilmem gerekiyor.Bunun için MuzEkle metodunun adını bulunduğu koordinata göre tanımlıyoruz.*/
-    string ad; 
-    PictureBox pb=new PictureBox(); 
-    pb.Image=System.Drawing.Image.FromFile("muz.jpg");
-    pb.Top=k.YerlestirY;
-    pb.Left=k.YerlestirX;
-    Matris[pb.Left/20,pb.Top/20]=(int)AlanSahibi.Muz;
-    ad="MUZ_"+Convert.ToString((pb.Left/20))+"_"+Convert.ToString((pb.Top/20));
-    pb.Name=ad;
-    pb.Width=20;
-    pb.Height=20;
-    pb.SizeMode=PictureBoxSizeMode.StretchImage;
-    this.Controls.Add(pb); 
+    string ad;
+    PictureBox pb = new PictureBox();
+    pb.Image = System.Drawing.Image.FromFile("muz.jpg");
+    pb.Top = k.YerlestirY;
+    pb.Left = k.YerlestirX;
+    Matris[pb.Left / 20, pb.Top / 20] = (int)AlanSahibi.Muz;
+    ad = "MUZ_" + Convert.ToString((pb.Left / 20)) + "_" + Convert.ToString((pb.Top / 20));
+    pb.Name = ad;
+    pb.Width = 20;
+    pb.Height = 20;
+    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+    this.Controls.Add(pb);
 }
 
 /* Kahramanimiz Packo' nun ekrandaki konumu, Matris dizisindeki yeri ve saga veya sola bakacagi resmi belirleniyor. Ayrica, ekrana DuvarSayisi kadar Duvar ve Muz elemanlari ekleniyor.*/
 private void Baslat()
 {
     /* Rastegele X,Y ve duvar sayilari için kullandigimi Konumlandir sinifina ait bir nesne örnegi olusturuluyor.*/
-    k=new Konumlandir();
-    resPacko.Left=k.YerlestirX;
-    resPacko.Top=k.YerlestirY;
-    Matris[resPacko.Left/20,resPacko.Top/20]=(int)AlanSahibi.Pakocuk;
+    k = new Konumlandir();
+    resPacko.Left = k.YerlestirX;
+    resPacko.Top = k.YerlestirY;
+    Matris[resPacko.Left / 20, resPacko.Top / 20] = (int)AlanSahibi.Pakocuk;
     /*Egere resPacko ekranin sol yarim küresinde ise, Sola bakan resmi gösteriliyor.*/
-    if(resPacko.Left<200)
-        resPacko.Image=System.Drawing.Image.FromFile("packoSol.jpg");
+    if (resPacko.Left < 200)
+        resPacko.Image = System.Drawing.Image.FromFile("packoSol.jpg");
     /*Egere resPacko ekranin sag yarim küresinde ise, Saga bakan resmi gösteriliyor.*/
-    if(resPacko.Left>200)
-        resPacko.Image=System.Drawing.Image.FromFile("packoSag.jpg");
-    resPacko.Visible=true;
-    for(int i=1;i<k.DuvarSayisi;i++)
+    if (resPacko.Left > 200)
+        resPacko.Image = System.Drawing.Image.FromFile("packoSag.jpg");
+    resPacko.Visible = true;
+    for (int i = 1; i < k.DuvarSayisi; i++)
     {
         DuvarEkle();
         MuzEkle();
     }
 }
 
-int carpismaDurumu=0;
+int carpismaDurumu = 0;
 
 /* Eğer üstünden geçtiğimiz nesne Muz ise onu ekrandan kaldırıyoruz. Bunu yaparken Form üzerindeki kontrollerde gezinip, kontrolün adını buluyor ve Remove metodunu çağırıyoruz.*/
-private void MuzYokEt(int X,int Y)
-{ 
+private void MuzYokEt(int X, int Y)
+{
     /*Önce Matirsimizin X,Y elemanının Muz olup olmadığına bakıyoruz.*/
-    if(Matris[X,Y]==(int)AlanSahibi.Muz)
+    if (Matris[X, Y] == (int)AlanSahibi.Muz)
     {
         /*Eğer Muz ise dizinin bu elemanının değerini 0 yapıyoruz. Böylece Muz nesnemizi diziden çıkarmış oluyoruz.*/
-        Matris[X,Y]=0;
+        Matris[X, Y] = 0;
         /* Daha sonra PictureBox' ımızın adını tedarik ediyoruz. */
-        string muzX=X.ToString();
-        string muzY=Y.ToString();
-        string KontrolAdi="MUZ_"+muzX+"_"+muzY;
+        string muzX = X.ToString();
+        string muzY = Y.ToString();
+        string KontrolAdi = "MUZ_" + muzX + "_" + muzY;
         /*Döngü ile, Form içindeki tüm kontroller arasında geziniyoruz.*/
-        for(int i=0;i<this.Controls.Count;i++)
+        for (int i = 0; i < this.Controls.Count; i++)
         {
             /*Eğer güncel kontrolün adı, bizim Muz nesnemizinki ile aynı ise, bu PictureBox' ı Formumuzdan çıkartıyoruz.*/
-            if(this.Controls[i].Name.ToString()==KontrolAdi)
+            if (this.Controls[i].Name.ToString() == KontrolAdi)
             {
                 this.Controls.Remove(this.Controls[i]);
-            }    
+            }
         }
     }
 }
 
-/* Çarpisma kontrolünün yapildigi metod. Bu metod Packo' nun X, Y koordinatlari ile hareket ettigi yönü (saga,sola,yukariya,asagiya) parametre olarak aliyor. Aldigi X,Y koordinatlari ve yöne göre, bir sonraki kare alaninda bir Duvar nesnesi olup olmadigina bakiyor.*/ 
-private void CarpismaKontrol(int X,int Y,char Yon)
+/* Çarpisma kontrolünün yapildigi metod. Bu metod Packo' nun X, Y koordinatlari ile hareket ettigi yönü (saga,sola,yukariya,asagiya) parametre olarak aliyor. Aldigi X,Y koordinatlari ve yöne göre, bir sonraki kare alaninda bir Duvar nesnesi olup olmadigina bakiyor.*/
+private void CarpismaKontrol(int X, int Y, char Yon)
 {
     /*Eger sola hareket ediyorsak ve Matrisimizin [X indisinin 1 önceki elemani,Y] AlanSahibi.Duvar enum sabitinin degerine esit ise çarpisma vardir. */
-    if(Yon=='A')
+    if (Yon == 'A')
     {
-        int alanSahibi=Matris[X-1,Y];
-        if(alanSahibi==(int)AlanSahibi.Duvar)
-            carpismaDurumu=1;
+        int alanSahibi = Matris[X - 1, Y];
+        if (alanSahibi == (int)AlanSahibi.Duvar)
+            carpismaDurumu = 1;
         else
-            carpismaDurumu=0;
-        MuzYokEt(X,Y);
+            carpismaDurumu = 0;
+        MuzYokEt(X, Y);
     }
     /*Eger saga hareket ediyorsak ve Matrisimizin [X indisinin 1 sonraki elemani,Y] AlanSahibi.Duvar enum sabitinin degerine esit ise çarpisma vardir. */
-    if(Yon=='D')
+    if (Yon == 'D')
     {
-        int alanSahibi=Matris[X+1,Y];
-        if(alanSahibi==(int)AlanSahibi.Duvar)
-            carpismaDurumu=1;
+        int alanSahibi = Matris[X + 1, Y];
+        if (alanSahibi == (int)AlanSahibi.Duvar)
+            carpismaDurumu = 1;
         else
-            carpismaDurumu=0;
-        MuzYokEt(X,Y);
+            carpismaDurumu = 0;
+        MuzYokEt(X, Y);
     }
     /*Eger asagi hareket ediyorsak ve Matrisimizin [X,Y indisinin 1 sonraki elemani] AlanSahibi.Duvar enum sabitinin degerine esit ise çarpisma vardir. */
-    if(Yon=='S')
+    if (Yon == 'S')
     {
-        int alanSahibi=Matris[X,Y+1];
-        if(alanSahibi==(int)AlanSahibi.Duvar)
-            carpismaDurumu=1;
+        int alanSahibi = Matris[X, Y + 1];
+        if (alanSahibi == (int)AlanSahibi.Duvar)
+            carpismaDurumu = 1;
         else
-            carpismaDurumu=0;
-        MuzYokEt(X,Y);
+            carpismaDurumu = 0;
+        MuzYokEt(X, Y);
     }
-/*Eger yukari hareket ediyorsak ve Matrisimizin [X,Y indisinin 1 önceki elemani] AlanSahibi.Duvar enum sabitinin degerine esit ise çarpisma vardir. */
-    if(Yon=='W')
+    /*Eger yukari hareket ediyorsak ve Matrisimizin [X,Y indisinin 1 önceki elemani] AlanSahibi.Duvar enum sabitinin degerine esit ise çarpisma vardir. */
+    if (Yon == 'W')
     {
-        int alanSahibi=Matris[X,Y-1];
-        if(alanSahibi==(int)AlanSahibi.Duvar)
-            carpismaDurumu=1;
+        int alanSahibi = Matris[X, Y - 1];
+        if (alanSahibi == (int)AlanSahibi.Duvar)
+            carpismaDurumu = 1;
         else
-            carpismaDurumu=0;
-        MuzYokEt(X,Y);
+            carpismaDurumu = 0;
+        MuzYokEt(X, Y);
     }
 }
 
 /*Form üzerinde A (sol), S (asagi), D (saga), W (yukari) tuslarina basildikça çarpisma kontrolü yapiliyor. Eger çarpisma var ise, belirtilen yöndeki dogrusal harekete (20 piksellik öteleme) izin verilmiyor. Aksi halde harekete devam ediliyor.*/
 private void frmPacko_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
 {
-    int x=resPacko.Left/20;
-    int y=resPacko.Top/20;
+    int x = resPacko.Left / 20;
+    int y = resPacko.Top / 20;
 
-    if(e.KeyChar==(Char)Keys.A)
+    if (e.KeyChar == (Char)Keys.A)
     {
-        resPacko.Image=System.Drawing.Image.FromFile("packoSol.jpg");
-        CarpismaKontrol(x,y,'A');
-        if(carpismaDurumu==1)
+        resPacko.Image = System.Drawing.Image.FromFile("packoSol.jpg");
+        CarpismaKontrol(x, y, 'A');
+        if (carpismaDurumu == 1)
             MessageBox.Show("DUVARA ÇARPTIN");
         else
-            resPacko.Left-=20;
+            resPacko.Left -= 20;
     }
-    if(e.KeyChar==(Char)Keys.D)
+    if (e.KeyChar == (Char)Keys.D)
     {
-        resPacko.Image=System.Drawing.Image.FromFile("packoSag.jpg");
-        CarpismaKontrol(x,y,'D');
-        if(carpismaDurumu==1)
+        resPacko.Image = System.Drawing.Image.FromFile("packoSag.jpg");
+        CarpismaKontrol(x, y, 'D');
+        if (carpismaDurumu == 1)
             MessageBox.Show("DUVARA ÇARPTIN");
         else
-            resPacko.Left+=20;
-    } 
-    if(e.KeyChar==(Char)Keys.S)
-    {
-        resPacko.Image=System.Drawing.Image.FromFile("packoAsagi.jpg");
-        CarpismaKontrol(x,y,'S');
-        if(carpismaDurumu==1)
-            MessageBox.Show("DUVARA ÇARPTIN");
-        else
-            resPacko.Top+=20;
+            resPacko.Left += 20;
     }
-    if(e.KeyChar==(Char)Keys.W)
+    if (e.KeyChar == (Char)Keys.S)
     {
-        resPacko.Image=System.Drawing.Image.FromFile("packoYukari.jpg");
-        CarpismaKontrol(x,y,'W');
-        if(carpismaDurumu==1)
+        resPacko.Image = System.Drawing.Image.FromFile("packoAsagi.jpg");
+        CarpismaKontrol(x, y, 'S');
+        if (carpismaDurumu == 1)
             MessageBox.Show("DUVARA ÇARPTIN");
         else
-            resPacko.Top-=20;
+            resPacko.Top += 20;
     }
-} 
+    if (e.KeyChar == (Char)Keys.W)
+    {
+        resPacko.Image = System.Drawing.Image.FromFile("packoYukari.jpg");
+        CarpismaKontrol(x, y, 'W');
+        if (carpismaDurumu == 1)
+            MessageBox.Show("DUVARA ÇARPTIN");
+        else
+            resPacko.Top -= 20;
+    }
+}
 
 /*Oyunu kapatmak ve baslatmak kullandigimiz menüleri ContextMenu içerisinde kullaniyoruz.*/
 private void menuItem3_Click(object sender, System.EventArgs e)
@@ -303,13 +304,13 @@ private void menuItem1_Click(object sender, System.EventArgs e)
 /* Kontrol amaciyla, Matris dizisinin degerlerini Text tabanli bir dosyaya da yazabiliyoruz.*/
 private void menuItem4_Click(object sender, System.EventArgs e)
 {
-    System.IO.FileStream fs=new System.IO.FileStream("kontrol.txt",System.IO.FileMode.OpenOrCreate,System.IO.FileAccess.Write);
-    System.IO.StreamWriter sw=new System.IO.StreamWriter(fs);
-    for(int i=0;i<20;i++)
+    System.IO.FileStream fs = new System.IO.FileStream("kontrol.txt", System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write);
+    System.IO.StreamWriter sw = new System.IO.StreamWriter(fs);
+    for (int i = 0; i < 20; i++)
     {
-        for(int j=0;j<20;j++)
+        for (int j = 0; j < 20; j++)
         {
-            sw.Write("{0,2},{1,2}={2,3}",i,j,Matris[i,j]);
+            sw.Write("{0,2},{1,2}={2,3}", i, j, Matris[i, j]);
         }
         sw.WriteLine();
     }

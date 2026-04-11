@@ -133,8 +133,8 @@ namespace Editing
 
         private void cmbCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.AddedItems.Count>0
-                && e.AddedItems[0]!=null)
+            if (e.AddedItems.Count > 0
+                && e.AddedItems[0] != null)
             {
                 Category selectedCategory = (Category)e.AddedItems[0];
 
@@ -181,9 +181,12 @@ namespace Editing
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
             // Yeni Category tipi örneklenir
-            Category newCategory = new Category { 
+            Category newCategory = new Category
+            {
                 CategoryName = txtCategoryName.Text
-                , Description = txtCategoryDescription.Text };
+                ,
+                Description = txtCategoryDescription.Text
+            };
 
             // Örneklenen Category tipi, DataContext üzerindeki Categories koleksiyonuna eklenir.
             context.Categories.Add(newCategory);

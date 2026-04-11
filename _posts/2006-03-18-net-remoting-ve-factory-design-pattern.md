@@ -74,7 +74,7 @@ public class Product : ProductBase
         _ContactInfo = "";
         using (SqlConnection con = new SqlConnection("data source=MANCHESTER;database=AdventureWorks;integrated security=SSPI"))
         {
-            using(SqlCommand cmd=new SqlCommand("Select ContactID,FirstName,MiddleName,LastName From Person.Contact Where     ContactID=@ContactID",con))
+            using (SqlCommand cmd = new SqlCommand("Select ContactID,FirstName,MiddleName,LastName From Person.Contact Where     ContactID=@ContactID", con))
             {
                 cmd.Parameters.Add("@ContactID", SqlDbType.Int);
                 cmd.Parameters["@ContactID"].Value = ContactID;
@@ -114,11 +114,11 @@ Bu metod içerisinde kısaca veritabanı bağlantı işlemlerimizi yapıp, Conta
 ```csharp
 static void Main(string[] args)
 {
-    TcpServerChannel srvChannel = new TcpServerChannel(8000);
-    ChannelServices.RegisterChannel(srvChannel,true);
-    RemotingConfiguration.RegisterWellKnownServiceType(typeof(Factory), "Server/Factory", WellKnownObjectMode.SingleCall);
-    Console.WriteLine("Sunucu dinlemede...");
-    Console.ReadLine();
+    TcpServerChannel srvChannel = new TcpServerChannel(8000);
+    ChannelServices.RegisterChannel(srvChannel, true);
+    RemotingConfiguration.RegisterWellKnownServiceType(typeof(Factory), "Server/Factory", WellKnownObjectMode.SingleCall);
+    Console.WriteLine("Sunucu dinlemede...");
+    Console.ReadLine();
 }
 ```
 

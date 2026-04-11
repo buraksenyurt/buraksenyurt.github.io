@@ -24,12 +24,12 @@ using System.ServiceModel.Web.Caching;
 
 namespace Calculus
 {
-    [ServiceContract(Namespace="http://calculus/BasicMathService")]
+    [ServiceContract(Namespace = "http://calculus/BasicMathService")]
     public interface IBasicMathService
     {
         [AspNetCacheProfile("ShortCache")] // Config dosyasındaki outputCacheProfile girdilerinden parametre olarak verilen isimdekini işaret eder
         [OperationContract]
-        [WebGet]        
+        [WebGet]
         string Sum(double x, double y);
     }
 }
@@ -43,8 +43,8 @@ using System.ServiceModel.Activation;
 
 namespace Calculus
 {
-    [AspNetCompatibilityRequirements(RequirementsMode=AspNetCompatibilityRequirementsMode.Allowed)]
-    public class BasicMathService 
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class BasicMathService
         : IBasicMathService
     {
         public string Sum(double x, double y)

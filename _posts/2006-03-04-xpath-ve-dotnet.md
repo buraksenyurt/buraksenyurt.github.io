@@ -53,13 +53,13 @@ namespace UsingXPathNavigator
             XPathNavigator navigator = doc.CreateNavigator();
 
             XPathNodeIterator nodes = navigator.Select("Kitaplar/Kitap[Fiyat>50 and Fiyat<80]");
-    
+
             while (nodes.MoveNext())
             {
                 Console.WriteLine(nodes.Current.ToString());
             }
 
-            Console.WriteLine("Toplam Kitap Sayisi (Fiyat>70) "+navigator.Evaluate("count(/Kitaplar/Kitap/Fiyat[.>70])").ToString());
+            Console.WriteLine("Toplam Kitap Sayisi (Fiyat>70) " + navigator.Evaluate("count(/Kitaplar/Kitap/Fiyat[.>70])").ToString());
         }
 
         static void Main(string[] args)
@@ -90,28 +90,28 @@ static void UsingXPathSecond()
     while (nodes.MoveNext())
     {
         // Her bir Kitap elementinin alt node' larını alıyoruz ve bu node' lar içerisinde ileri yönlü hareket ediyoruz.
-        XPathNodeIterator childNodes=nodes.Current.SelectChildren(XPathNodeType.Element);
-        while(childNodes.MoveNext())
+        XPathNodeIterator childNodes = nodes.Current.SelectChildren(XPathNodeType.Element);
+        while (childNodes.MoveNext())
         {
             // Eğer o anki alt node'un adı Yazarlar ise bu kez güncel Kitap node' unun altındaki Yazarlar node' unun alt node' ları içerisinde ileri doğru hareket ediyoruz. Eğer güncel alt node Yazarlar node' u değilse o node' un adını ve değerini yazdırıyoruz.
-            if(childNodes.Current.Name=="Yazarlar")
+            if (childNodes.Current.Name == "Yazarlar")
             {
-                XPathNodeIterator yazarlarNodes=childNodes.Current.SelectChildren(XPathNodeType.Element);
+                XPathNodeIterator yazarlarNodes = childNodes.Current.SelectChildren(XPathNodeType.Element);
                 Console.Write("Yazar(lar) : ");
-                while(yazarlarNodes.MoveNext())
+                while (yazarlarNodes.MoveNext())
                 {
-                    Console.Write(yazarlarNodes.Current.Value+", ");
+                    Console.Write(yazarlarNodes.Current.Value + ", ");
                 }
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine(childNodes.Current.Name+":"+childNodes.Current.Value);
+                Console.WriteLine(childNodes.Current.Name + ":" + childNodes.Current.Value);
             }
         }
         Console.WriteLine();
     }
-    Console.WriteLine("Toplam Kitap Sayisi (Fiyat>70) "+navigator.Evaluate("count(/Kitaplar/Kitap/Fiyat[.>70])").ToString());
+    Console.WriteLine("Toplam Kitap Sayisi (Fiyat>70) " + navigator.Evaluate("count(/Kitaplar/Kitap/Fiyat[.>70])").ToString());
 }
 ```
 
@@ -131,17 +131,17 @@ static void UsingXmlDoc()
     XmlNode currNode;
     XmlNode parentNode;
 
-    if(resultNodes.Count==1)
+    if (resultNodes.Count == 1)
     {
-        currNode=resultNodes[0];
-        parentNode=currNode.ParentNode;
+        currNode = resultNodes[0];
+        parentNode = currNode.ParentNode;
         Console.WriteLine(parentNode.InnerText);
     }
     else
     {
-        foreach(XmlNode aNode in resultNodes)
+        foreach (XmlNode aNode in resultNodes)
         {
-            parentNode=aNode.ParentNode;
+            parentNode = aNode.ParentNode;
             Console.WriteLine(parentNode.InnerText);
         }
     }

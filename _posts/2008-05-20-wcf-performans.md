@@ -58,10 +58,10 @@ using System;
 namespace ProcessLib
 {
     public class Tester
-        :ITester
+        : ITester
     {
         #region ITester Members
-    
+
         public string GetString()
         {
             return "".PadRight(1000, 'Q');
@@ -157,15 +157,16 @@ namespace ClientApp
             Console.WriteLine("WsHttpBinding için 3");
             Console.WriteLine("NetNamedPipeBinding için 4");
 
-            string secim=Console.ReadLine();
+            string secim = Console.ReadLine();
             Console.WriteLine("Sayaç Değerini Giriniz");
             int sayac;
             if (!Int32.TryParse(Console.ReadLine(), out sayac))
-                sayac = 100000; 
+                sayac = 100000;
 
-            switch (secim){
+            switch (secim)
+            {
                 case "1":
-                    TestiBaslat("ClientTcpEndPoint",sayac);
+                    TestiBaslat("ClientTcpEndPoint", sayac);
                     break;
                 case "2":
                     TestiBaslat("ClientHttpEndPoint", sayac);
@@ -181,10 +182,10 @@ namespace ClientApp
                     break;
             }
         }
-    
-        private static void TestiBaslat(string baglayici,int testSayisi)
+
+        private static void TestiBaslat(string baglayici, int testSayisi)
         {
-            Console.WriteLine("Test Başladı\nDeneme Sayisi {0}\nSeçilen EndPoint {1}",testSayisi,baglayici);
+            Console.WriteLine("Test Başladı\nDeneme Sayisi {0}\nSeçilen EndPoint {1}", testSayisi, baglayici);
             TesterClient client = new TesterClient(baglayici);
             for (int i = 0; i < testSayisi; i++)
             {

@@ -64,9 +64,10 @@ Artık tek yapmamız gereken, XML Rapor Web Servisimizden elde edeceğimiz rapor
 private void btnRaporla_Click(object sender, System.EventArgs e)
 {
     /* Öncelikle proxy sınıfımıza ait bir nesne örneğini oluşturuyoruz. */
-    localhost.MusteriRaporlariService rapor=new RaporIstemci.localhost.MusteriRaporlariService(); 
-    this.CrystalReportViewer1.ReportSource=rapor; // Web sayfamızdaki CrystalReportViewer nesnemize rapor kaynağı olarak, proxy nesnemizi atıyoruz. */
-    this.CrystalReportViewer1.DataBind(); /* Nesnemizi gelen rapor verilerine bağlıyoruz.*/
+    localhost.MusteriRaporlariService rapor = new RaporIstemci.localhost.MusteriRaporlariService();
+    this.CrystalReportViewer1.ReportSource = rapor; // Web sayfamızdaki CrystalReportViewer nesnemize rapor kaynağı olarak, proxy nesnemizi atıyoruz. */
+    this.CrystalReportViewer1.DataBind();
+    /* Nesnemizi gelen rapor verilerine bağlıyoruz.*/
 }
 ```
 

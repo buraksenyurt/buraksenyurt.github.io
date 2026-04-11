@@ -29,7 +29,7 @@ namespace SequentialPLINQ
         {
             List<Product> productList = GetProductList();
 
-            int tid= 0;
+            int tid = 0;
             var result1 = from product in productList.AsParallel()
                           where product.Color.StartsWith("B")
                           orderby product.ProductId
@@ -41,11 +41,11 @@ namespace SequentialPLINQ
                               product.ListPrice,
                               product.Color
                           };
-                         
+
 
             foreach (var r in result1)
             {
-                Console.WriteLine(r.Id+" \t"+r.ProductId+" "+r.Name+" "+r.Color);
+                Console.WriteLine(r.Id + " \t" + r.ProductId + " " + r.Name + " " + r.Color);
             }
         }
 
@@ -61,12 +61,12 @@ namespace SequentialPLINQ
             {
                 productList.Add(new Product
                 {
-                    ProductId=Convert.ToInt32(reader[0]),
-                    Name=reader[1].ToString(),
-                    ListPrice=Convert.ToDecimal(reader[2]),
-                    ProductNumber=reader[3].ToString(),
-                    Color=reader[4].ToString(),
-                    SafetyStockLevel=Convert.ToInt32(reader[5])
+                    ProductId = Convert.ToInt32(reader[0]),
+                    Name = reader[1].ToString(),
+                    ListPrice = Convert.ToDecimal(reader[2]),
+                    ProductNumber = reader[3].ToString(),
+                    Color = reader[4].ToString(),
+                    SafetyStockLevel = Convert.ToInt32(reader[5])
                 }
                 );
             }
@@ -77,12 +77,36 @@ namespace SequentialPLINQ
 
     class Product
     {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
-        public string ProductNumber{ get; set; }
-        public string Color { get; set; }
-        public int SafetyStockLevel { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
+        public string ProductNumber
+        {
+            get;
+            set;
+        }
+        public string Color
+        {
+            get;
+            set;
+        }
+        public int SafetyStockLevel
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -107,13 +131,13 @@ var result1 = productList
                 .AsSequential()
                 .Select(
                 p => new
-            {
-                Id = tid++,
-                p.ProductId,
-                p.Name,
-                p.ListPrice,
-                p.Color
-            });
+                {
+                    Id = tid++,
+                    p.ProductId,
+                    p.Name,
+                    p.ListPrice,
+                    p.Color
+                });
 ```
 
 şeklinde değiştirir ve örneği tekrar çalıştırırsak aşağıdaki sonuçları elde ederiz.

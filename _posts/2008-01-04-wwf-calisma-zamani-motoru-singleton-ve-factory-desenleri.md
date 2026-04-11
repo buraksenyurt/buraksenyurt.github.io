@@ -119,7 +119,7 @@ namespace WorkflowRuntimeInceleme
             // WorkflowRuntime nesne örneklerinden ilki oluşturulur.
             WorkflowRuntime rt1 = new WorkflowRuntime();
             rt1.Name = "WF1"; // WorkflowRuntime için bir isim belirlenir
-    
+
             // Started ve Stopped olayları yüklenir
             rt1.Started += new EventHandler<WorkflowRuntimeEventArgs>(WfStarted);
             rt1.Stopped += new EventHandler<WorkflowRuntimeEventArgs>(WFStopped);
@@ -129,18 +129,18 @@ namespace WorkflowRuntimeInceleme
             // WF Runtime için isim belirlenir.
             rt2.Name = "WF2";
             // Started ve Stopped olayları yüklenir
-            rt2.Started+=new EventHandler<WorkflowRuntimeEventArgs>(WfStarted);
-            rt2.Stopped+=new EventHandler<WorkflowRuntimeEventArgs>(WFStopped);
+            rt2.Started += new EventHandler<WorkflowRuntimeEventArgs>(WfStarted);
+            rt2.Stopped += new EventHandler<WorkflowRuntimeEventArgs>(WFStopped);
 
             // WorkflowRuntime örnekleri StartRuntime metodu ile başlatılır
-            rt1.StartRuntime(); 
+            rt1.StartRuntime();
             rt2.StartRuntime();
 
             // WorkflowRuntime örnekleri StopRuntime metodu ile durdurulur
             rt1.StopRuntime();
             rt2.StopRuntime();
         }
-    
+
         // WorkflowRuntime başlatıldığında devreye giren olay metodu
         static void WfStarted(object sender, WorkflowRuntimeEventArgs e)
         {
@@ -155,7 +155,7 @@ namespace WorkflowRuntimeInceleme
         {
             // İki WorkflowRuntime nesne örneğide aynı Started olayına bağlandığından hangisi olduğunun tespiti için sender' dan yararlanılır
             WorkflowRuntime guncelWF = sender as WorkflowRuntime;
-            Console.WriteLine(guncelWF.Name+" "+e.IsStarted);
+            Console.WriteLine(guncelWF.Name + " " + e.IsStarted);
         }
     }
 }
@@ -198,12 +198,12 @@ namespace WorkflowRuntimeInceleme
                 {
                     _wfRt = new WorkflowRuntime(); // WorkflowRuntime nesnesini üret 
                     // Process' den çıkıldığında
-                    AppDomain.CurrentDomain.ProcessExit+=delegate(object obj,EventArgs e)
+                    AppDomain.CurrentDomain.ProcessExit += delegate (object obj, EventArgs e)
                                                                 {
                                                                     WorkflowKapat(_wfRt); // Workflow ortamını kapatma metodunu çalıştır
                                                                 };
                     // Application Domain Unload edildiğinde
-                    AppDomain.CurrentDomain.DomainUnload += delegate(object obj, EventArgs e)
+                    AppDomain.CurrentDomain.DomainUnload += delegate (object obj, EventArgs e)
                                                                 {
                                                                     WorkflowKapat(_wfRt); // Workflow ortamını kapatma metodunu çalıştır
                                                                 };

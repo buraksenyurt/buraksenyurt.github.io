@@ -22,7 +22,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Web;
 
-public class IsNesnesi 
+public class IsNesnesi
 {
     public DataSet VerileriAl()
     {

@@ -70,11 +70,11 @@ class Matematik
         return x + y;
     }
 
-    public double Toplamlar(int ustSinir,double x,double y)
+    public double Toplamlar(int ustSinir, double x, double y)
     {
-        double sonuc=0;
+        double sonuc = 0;
         for (int i = 0; i < ustSinir; i++)
-            sonuc+=Toplam(x,y);
+            sonuc += Toplam(x, y);
         return sonuc;
     }
 }
@@ -149,7 +149,7 @@ Sonrasında ise program kodlarımızı aşağıdaki gibi değiştirelim.
 
 ```csharp
 static void Main(string[] args)
-{ 
+{
     Matematik mt1 = new Matematik();
     Matematik mt2 = new Matematik();
     Console.WriteLine(Matematik.Pi.ToString());
@@ -186,7 +186,7 @@ Static yapıcı metod 2nci maddedeki son örnekte meydana gelen durum için tam 
 ```csharp
 class Matematik
 {
-    public static double Pi=3.14;
+    public static double Pi = 3.14;
 
     public void PiDegistir(double pi)
     {

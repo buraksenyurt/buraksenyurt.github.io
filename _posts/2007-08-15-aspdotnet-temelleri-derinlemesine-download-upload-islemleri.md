@@ -107,11 +107,11 @@ protected void grdDosyalar_SelectedIndexChanged(object sender, EventArgs e)
     FileInfo dosya = new FileInfo(dosyaAdi);
 
     Response.Clear();
-    Response.AddHeader("Content-Disposition","attachment; filename=" + dosyaAdi);
-    Response.AddHeader("Content-Length",dosya.Length.ToString()); 
-    Response.ContentType = "application/octet-stream"; 
+    Response.AddHeader("Content-Disposition", "attachment; filename=" + dosyaAdi);
+    Response.AddHeader("Content-Length", dosya.Length.ToString());
+    Response.ContentType = "application/octet-stream";
     Response.WriteFile(dosyaAdi);
-    Response.End(); 
+    Response.End();
     Response.Write("Dosya indirildi");
 }
 ```
@@ -121,12 +121,12 @@ Hemen arkasından bilinen yaşam döngüsünü izlemek adına default.aspx sayfa
 ```csharp
 protected void Page_PreInit(object sender, EventArgs e)
 {
-    Debug.WriteLine("Page_PreInit metodu"); 
+    Debug.WriteLine("Page_PreInit metodu");
 }
 protected void Page_Init(object sender, EventArgs e)
 {
-    Debug.WriteLine("Page_Init metodu"); 
-} 
+    Debug.WriteLine("Page_Init metodu");
+}
 protected void Page_Load(object sender, EventArgs e)
 {
     // Diğer kod satırları
@@ -138,14 +138,14 @@ protected void Page_PreRender(object sender, EventArgs e)
 }
 protected void Page_Unload(object sender, EventArgs e)
 {
-    Debug.WriteLine("Page Unload Metodu"); 
-} 
+    Debug.WriteLine("Page Unload Metodu");
+}
 
 protected void grdDosyalar_SelectedIndexChanged(object sender, EventArgs e)
 {
     Debug.WriteLine("Dosya indirme işlemi başlıyor");
     // Diğer kod satırları
-    Response.End(); 
+    Response.End();
     Debug.WriteLine("Response.End metodu çağırıldı");
     Response.Write("Dosya indirildi");
 }

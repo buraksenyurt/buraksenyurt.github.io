@@ -12,7 +12,11 @@ categories:
 Toplu güncelleştirme işlemleri, birden fazla SQL ifadesinin (insert, update, delete, select gibi) arka arkaya gelecek şekilde ancak tek bir seferde çalıştırılmasını baz alan bir tekniktir. ADO.NET 2.0 ile, toplu güncelleştirme işlemlerine daha fazla fonksiyonellik kazandırılmıştır. Bu koşul elbette ki toplu güncelleştirme işlemlerini destekleyen veritabanı sunucuları üzerinde geçerli olmaktadır. Şu an için, yönetimsel kodda yer alan Oracle ve SQL nesnelerinin desteklediği bu fonksiyonelliği kazanmak için aşağıda prototipi verilen ve SqlDataAdapter ya da OracleDataAdapter sınıflarına ait olan UpdateBatchSize özelliği kullanılmaktadır.
 
 ```csharp
-public override int UpdateBatchSize {get;set;}
+public override int UpdateBatchSize
+{
+    get;
+    set;
+}
 ```
 
 Bu özellik bir anlamda, DataAdapter nesnesinin Update komutu ile veritabanına doğru yapılacak güncelleme işlemlerinin toplu olarak hangi periyotta gerçekleştirileceğini belirtir. Örneğin, 1 varsayılan değeridir ve her bir güncelleme işleminin (insert, update veya delete) her satır için ayrı ayrı yapılacağını belirtir. Daha derin düşünecek olursak, örneğin SQL Sunucusunda yer alan sp_executesql stored procedure'ünün her bir satır için birer kez ilgili komutu (insert gibi) çalıştıracağını belirtir.
@@ -72,7 +76,7 @@ Dikkat edecek olursanız, sp_executesql stored procedure'ü girilen her satır i
 for (int i = 0; i < dt.Rows.Count; i++)
 {
     dr = dt.Rows[i];
-    dr["AD"] ="_DEGISTI";
+    dr["AD"] = "_DEGISTI";
 }
 
 da.UpdateBatchSize = 0;

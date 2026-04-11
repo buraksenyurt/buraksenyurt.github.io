@@ -47,30 +47,30 @@ Uygulamamızı bir windows application olarak geliştireceğim. Bu nedenle VS.NE
 ```csharp
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     /* Önce sql sunucumuzda yer alan Friends isimli veritabanımız için bir bağlantı nesnesi oluşturuyoruz. */
+    /* Önce sql sunucumuzda yer alan Friends isimli veritabanımız için bir bağlantı nesnesi oluşturuyoruz. */
 
-     SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi"); 
-     /* SqlDataAdapter nesneleri yardımıyla, Friends veritabanında yer alan Siparis ve Sepet tablolarındaki verileri alıyoruz ve sonrada bunları DataTable nesnelerimize aktarıyoruz.*/
+    SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    /* SqlDataAdapter nesneleri yardımıyla, Friends veritabanında yer alan Siparis ve Sepet tablolarındaki verileri alıyoruz ve sonrada bunları DataTable nesnelerimize aktarıyoruz.*/
 
-     SqlDataAdapter daSiparis=new SqlDataAdapter("Select * From Siparis",conFriends);
-     SqlDataAdapter daSepet=new SqlDataAdapter("Select * From Sepet",conFriends);
-     DataTable dtSiparis=new DataTable("Siparisler");
-     DataTable dtSepet=new DataTable("SiparisDetaylari"); 
-     daSiparis.Fill(dtSiparis);
-     daSepet.Fill(dtSepet); 
-     /* Şimdi ise bu iki tablo arasındaki bire çok ilişkiyi temsil edecek DataRelation nesmemizi oluşturuyoruz. */ 
+    SqlDataAdapter daSiparis = new SqlDataAdapter("Select * From Siparis", conFriends);
+    SqlDataAdapter daSepet = new SqlDataAdapter("Select * From Sepet", conFriends);
+    DataTable dtSiparis = new DataTable("Siparisler");
+    DataTable dtSepet = new DataTable("SiparisDetaylari");
+    daSiparis.Fill(dtSiparis);
+    daSepet.Fill(dtSepet);
+    /* Şimdi ise bu iki tablo arasındaki bire çok ilişkiyi temsil edecek DataRelation nesmemizi oluşturuyoruz. */
 
-     DataRelation drSiparisToSepet=new DataRelation("Siparis_To_Sepet",dtSiparis.Columns["SiparisID"],dtSepet.Columns["SiparisID"]);
-     /* Artık oluşturduğumuz bu DataTable nesnelerini ve DataRelation nesnemizi DataSet nesnemize ekleyebiliriz. Dikkat edicek olursanız, DataRelation nesnemizi dataSet nesnemizin Relations koleksiyonuna ekledik. DataRelation nesneleri DataTable nesneleri gibi DataSet'e ait ilgili koleksiyonlarda tutulmaktadırlar. Dolayısıyla bir DataSet'e birden fazla tabloyu nasıl ekleyebiliyorsak birden fazla ilişkiyide ekleyebiliriz. */
+    DataRelation drSiparisToSepet = new DataRelation("Siparis_To_Sepet", dtSiparis.Columns["SiparisID"], dtSepet.Columns["SiparisID"]);
+    /* Artık oluşturduğumuz bu DataTable nesnelerini ve DataRelation nesnemizi DataSet nesnemize ekleyebiliriz. Dikkat edicek olursanız, DataRelation nesnemizi dataSet nesnemizin Relations koleksiyonuna ekledik. DataRelation nesneleri DataTable nesneleri gibi DataSet'e ait ilgili koleksiyonlarda tutulmaktadırlar. Dolayısıyla bir DataSet'e birden fazla tabloyu nasıl ekleyebiliyorsak birden fazla ilişkiyide ekleyebiliriz. */
 
-     DataSet ds=new DataSet();
-     ds.Tables.Add(dtSiparis);
-     ds.Tables.Add(dtSepet);
-     ds.Relations.Add(drSiparisToSepet);
-     /* Şimdi ise dataGrid nesnemizi dataSet nesnemiz ile ilişkilendirelim */
+    DataSet ds = new DataSet();
+    ds.Tables.Add(dtSiparis);
+    ds.Tables.Add(dtSepet);
+    ds.Relations.Add(drSiparisToSepet);
+    /* Şimdi ise dataGrid nesnemizi dataSet nesnemiz ile ilişkilendirelim */
 
-     dataGrid1.DataSource=ds.Tables["Siparisler"];
-}  
+    dataGrid1.DataSource = ds.Tables["Siparisler"];
+}
 ```
 
 Uygulamamızı çalıştrıdığımızda aşağıdaki ekran görüntüsünü elde ederiz. Görüldüğü gibi Siparis tablosundaki veriler görünmektedir. Lütfen satırların yanlarındaki + işaretine dikkat edelim.(Şekil 4) Bu artı işaretine tıkladığımızda oluşturmuş olduğumuz DataRelation’ın adını görürüz.(Şekil 5)

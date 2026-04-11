@@ -35,11 +35,11 @@ Northwind veritabanından ise Customer ve Supplier tabloları ele alınmaktadır
 AdventureWorksDataContext adw = new AdventureWorksDataContext();
 
 var mClassProducts = from prd in adw.Products
-                                    where prd.Class == "M"
-                                        select prd; 
+                     where prd.Class == "M"
+                     select prd;
 
 int mCount = mClassProducts.Count();
-double mSumListPrice = mClassProducts.Sum<Product>(prd => (double)prd.ListPrice); 
+double mSumListPrice = mClassProducts.Sum<Product>(prd => (double)prd.ListPrice);
 
 Console.WriteLine(mCount.ToString());
 Console.WriteLine(mSumListPrice.ToString("C2"));
@@ -61,8 +61,8 @@ Burada dikkat edilmesi gereken noktalardan birisi Count () ifadesidir. Normal ş
 
 ```csharp
 var mClassProducts = from prd in adw.Products
-                                    where prd.Class == "M"
-                                        select prd.ProductID;
+                     where prd.Class == "M"
+                     select prd.ProductID;
 ```
 
 Dikkat edileceği üzere burada sadece ProductID alanları seçilmektedir. Bu ifade üzerinden Count metodu kullanılırsa SQL tarafında icra edilen operasyonun değişmediği, bir başka deyişle Count () çağrısı yapıldığı görülür. Sum fonksiyonunun çağırılması sonucu çalışan sorgu ise aşağıdaki gibidir.
@@ -93,8 +93,8 @@ Diğer LINQ to SQL operatörlerini inceleyerek devam edelim. Sıradaki LINQ ifad
 
 ```csharp
 var allProducts = from prd in adw.Products
-                            where prd.Class == null && prd.ProductNumber.Contains("PA")
-                                select prd;
+                  where prd.Class == null && prd.ProductNumber.Contains("PA")
+                  select prd;
 
 foreach (Product p in allProducts)
 {
@@ -132,8 +132,8 @@ Dikkat edileceği üzere programatik tarafta yapılan ==null kontrolü SQL taraf
 
 ```csharp
 var allProducts = from prd in adw.Products
-                            where prd.Class == null && prd.ProductNumber.StartsWith("PA")
-                                select prd;
+                  where prd.Class == null && prd.ProductNumber.StartsWith("PA")
+                  select prd;
 ```
 
 Bu durumda SQL tarafına gönderilen sorgu cümlesinin içeriğine bakıldığında LIKE anahtar kelimesine atanan parametrenin PA% şeklinde olduğu görülmektedir. Dolayısıyla beklenildiği gibi PA hecesi ile başlayanların tedarik edilmesi için sorguda gerekli düzenleme yapılmıştır.
@@ -142,12 +142,13 @@ Bir önceki LINQ to SQL ifadesinde, SQL sunucusu üzerinde çalışan sorguya ba
 
 ```csharp
 var allProducts = from prd in adw.Products
-                            where prd.Class == null && prd.ProductNumber.Contains("PA")
-                                select new 
-                                    { 
-                                        prd.Name
-                                        , prd.ProductNumber 
-                                    };
+                  where prd.Class == null && prd.ProductNumber.Contains("PA")
+                  select new
+                  {
+                      prd.Name
+                          ,
+                      prd.ProductNumber
+                  };
 
 foreach (var p in allProducts)
 {
@@ -214,7 +215,7 @@ var tenCtg = (from cat in adw.ProductSubcategories select cat)
 
 foreach (ProductSubcategory c in tenCtg)
 {
-    Console.WriteLine("{0} -> {1}({2}) ",c.ProductSubcategoryID.ToString(),c.Name,c.Products.Count().ToString()); 
+    Console.WriteLine("{0} -> {1}({2}) ", c.ProductSubcategoryID.ToString(), c.Name, c.Products.Count().ToString());
 }
 ```
 
@@ -232,18 +233,21 @@ SQL tarafında birden fazla tablo üzerinde bir arada işlem yapılması gerekti
 
 ```csharp
 var allList = from pc in adw.ProductCategories
-                    join psc in adw.ProductSubcategories
-                        on pc.ProductCategoryID equals psc.ProductCategoryID
-                            join p in adw.Products
-                                on psc.ProductSubcategoryID equals p.ProductSubcategoryID
-                                    where p.Class == null && p.ListPrice > 100
-                                        select new 
-                                        { 
-                                            CategoryName = pc.Name
-                                            , SubCategoryName = psc.Name
-                                            , ProductNumber = p.ProductNumber
-                                            , ProductName = p.Name 
-                                        };
+              join psc in adw.ProductSubcategories
+                  on pc.ProductCategoryID equals psc.ProductCategoryID
+              join p in adw.Products
+                  on psc.ProductSubcategoryID equals p.ProductSubcategoryID
+              where p.Class == null && p.ListPrice > 100
+              select new
+              {
+                  CategoryName = pc.Name
+                  ,
+                  SubCategoryName = psc.Name
+                  ,
+                  ProductNumber = p.ProductNumber
+                  ,
+                  ProductName = p.Name
+              };
 
 foreach (var prd in allList)
 {
@@ -270,16 +274,20 @@ Görüldüğü gibi join kelimeleri SQL tarafında standart inner join muamelesi
 Sıradaki LINQ to SQL ifadesinde DateTime yapısının (struct) parçalarından yararlanılmakta olup, bu ayrıştırmanın SQL tarafına nasıl yansıtıldığı incelenmeye çalışılmaktadır. Bu amaçla uygulamaya aşağıdaki kod parçasını eklediğimizi düşünelim.
 
 ```csharp
- var result = from p in adw.Products
-                    where p.SellStartDate.Month >= 6 && p.SellStartDate.Month <= 12
-                        select new 
-                                    { 
-                                        p.ProductNumber
-                                        , p.Name
-                                        , p.ListPrice
-                                        , p.SellStartDate
-                                        , p.SellEndDate 
-                                    };
+var result = from p in adw.Products
+             where p.SellStartDate.Month >= 6 && p.SellStartDate.Month <= 12
+             select new
+             {
+                 p.ProductNumber
+                             ,
+                 p.Name
+                             ,
+                 p.ListPrice
+                             ,
+                 p.SellStartDate
+                             ,
+                 p.SellEndDate
+             };
 
 foreach (var p in result)
 {
@@ -340,16 +348,19 @@ LINQ tarafında çoklu seçimlerde (Select Many) yapılabilmektedir. Bu tarz bir
 
 ```csharp
 var result = from p in adw.SalesPersons
-                    where p.Bonus >= 1000
-                        from h in p.SalesOrderHeaders
-                            where h.TerritoryID == 1
-                                select new 
-                                            {
-                                                 p.SalesPersonID
-                                                , p.Bonus
-                                                , h.SubTotal
-                                                , h.AccountNumber 
-                                            };
+             where p.Bonus >= 1000
+             from h in p.SalesOrderHeaders
+             where h.TerritoryID == 1
+             select new
+             {
+                 p.SalesPersonID
+                             ,
+                 p.Bonus
+                             ,
+                 h.SubTotal
+                             ,
+                 h.AccountNumber
+             };
 
 foreach (var r in result)
 {
@@ -377,13 +388,14 @@ Gelelim gruplama fonksiyonelliklerinin SQL tarafına nasıl yansıtıldığında
 
 ```csharp
 var result = from p in adw.Products
-                    where p.Class != null
-                        group p by p.Class into g 
-                            select new
-                                            {
-                                                ClassName = g.Key
-                                                ,TotalListPrice = g.Sum<Product>(p => p.ListPrice)
-                                            };
+             where p.Class != null
+             group p by p.Class into g
+             select new
+             {
+                 ClassName = g.Key
+                                 ,
+                 TotalListPrice = g.Sum<Product>(p => p.ListPrice)
+             };
 
 foreach (var r in result)
 {
@@ -408,13 +420,14 @@ Aslında üretilen SQL cümlesi tam olarak düşündüğümüz şekildedir. Bunu
 
 ```csharp
 var result = from p in adw.Products
-                    group p by p.Class into g
-                        where g.Key!=null
-                            select new
-                                        {
-                                            ClassName = g.Key
-                                            ,TotalListPrice = g.Sum<Product>(p => p.ListPrice)
-                                        };
+             group p by p.Class into g
+             where g.Key != null
+             select new
+             {
+                 ClassName = g.Key
+                             ,
+                 TotalListPrice = g.Sum<Product>(p => p.ListPrice)
+             };
 
 foreach (var r in result)
 {
@@ -479,8 +492,8 @@ Makalemize yine enteresan LINQ fonksiyonları ile devam edelim. Bu kez Any ve Al
 
 ```csharp
 var result = from p in adw.SalesPersons
-                        where p.SalesOrderHeaders.Any(soh => soh.SubTotal >= 224356) 
-                            select p;
+             where p.SalesOrderHeaders.Any(soh => soh.SubTotal >= 224356)
+             select p;
 
 foreach (SalesPerson person in result)
 {
@@ -515,8 +528,8 @@ Dikkat edileceği üzere Exists anahtar kelimesi kullanılarak SubTotal değeri 
 
 ```csharp
 var result = from p in adw.SalesPersons
-                    where p.SalesOrderHeaders.All(soh => soh.SubTotal >= 80) 
-                        select p;
+             where p.SalesOrderHeaders.All(soh => soh.SubTotal >= 80)
+             select p;
 
 foreach (SalesPerson person in result)
 {
@@ -649,12 +662,14 @@ Makalemizde son olarak?: operatörünün kullanıldığı bir durumu ele almaya 
 
 ```csharp
 var result = from prd in adw.Products
-                    select new
-                                    {
-                                        prd.Name
-                                        ,prd.SafetyStockLevel
-                                        ,LevelOk = prd.SafetyStockLevel >= 50 ? "Seviye İyi" : "Seviye Düşük"
-                                    };
+             select new
+             {
+                 prd.Name
+                                 ,
+                 prd.SafetyStockLevel
+                                 ,
+                 LevelOk = prd.SafetyStockLevel >= 50 ? "Seviye İyi" : "Seviye Düşük"
+             };
 
 foreach (var p in result)
 {

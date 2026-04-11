@@ -33,8 +33,8 @@ using System.ServiceModel;
 
 namespace AritmetikLib
 {
-    [ServiceContract(Name="CebirciServisi",
-          Namespace="http://www.bsenyurt.com/CebirciServisi")]
+    [ServiceContract(Name = "CebirciServisi",
+          Namespace = "http://www.bsenyurt.com/CebirciServisi")]
     public interface IAritmetikContract
     {
         [OperationContract]
@@ -52,7 +52,7 @@ using System;
 
 namespace AritmetikLib
 {
-    public class Cebirci:IAritmetikContract
+    public class Cebirci : IAritmetikContract
     {
         #region IAritmetikContract Members
         public double Toplam(double x, double y)

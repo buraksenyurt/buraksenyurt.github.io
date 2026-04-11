@@ -166,22 +166,22 @@ using System.Windows.Media.Media3D;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-namespace XamlGiris 
+namespace XamlGiris
 {
-    public partial class Program : System.Windows.Application 
+    public partial class Program : System.Windows.Application
     {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void InitializeComponent() 
+        public void InitializeComponent()
         {
-            #line 4 "..\..\Program.xaml"
+#line 4 "..\..\Program.xaml"
             this.StartupUri = new System.Uri("Giris.xaml", System.UriKind.Relative);
 
-            #line default
-            #line hidden    
+#line default
+#line hidden
         }
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public static void Main() 
+        public static void Main()
         {
             XamlGiris.Program app = new XamlGiris.Program();
             app.InitializeComponent();
@@ -196,15 +196,15 @@ namespace XamlGiris
 ```csharp
 using System;
 // Burada isim alanlarına ait tanımalamaları vardır.
-namespace XamlGiris 
+namespace XamlGiris
 {
-    public partial class Giris : System.Windows.Window, System.Windows.Markup.IComponentConnector 
+    public partial class Giris : System.Windows.Window, System.Windows.Markup.IComponentConnector
     {
         internal System.Windows.Controls.ComboBox cmbSehirler;
         internal System.Windows.Controls.Button MerhabaDe;
         private bool _contentLoaded;
 
-        protected void XamlGiris_Loaded(object sender,EventArgs e) 
+        protected void XamlGiris_Loaded(object sender, EventArgs e)
         {
             cmbSehirler.Items.Add("Istanbul");
             cmbSehirler.Items.Add("Ankara");
@@ -213,14 +213,14 @@ namespace XamlGiris
 
         protected void btnMerhabaDe_Clicked(object sender, RoutedEventArgs e)
         {
-            string adim=cmbSehirler.Text;
-            MessageBox.Show("Merhaba "+adim);
+            string adim = cmbSehirler.Text;
+            MessageBox.Show("Merhaba " + adim);
         }
 
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void InitializeComponent() 
+        public void InitializeComponent()
         {
-            if (_contentLoaded) 
+            if (_contentLoaded)
             {
                 return;
             }
@@ -232,12 +232,12 @@ namespace XamlGiris
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
-        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) 
+        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target)
         {
             switch (connectionId)
             {
                 case 1:
-                    ((XamlGiris.Giris)(target)).Loaded += new System.Windows.RoutedEventHandler(this.XamlGiris_Loaded);                    
+                    ((XamlGiris.Giris)(target)).Loaded += new System.Windows.RoutedEventHandler(this.XamlGiris_Loaded);
                     return;
                 case 2:
                     this.cmbSehirler = ((System.Windows.Controls.ComboBox)(target));
@@ -268,14 +268,14 @@ using System.Windows.Controls;
 
 namespace XamlGiris
 {
-    public partial class Giris: Window
+    public partial class Giris : Window
     {
         public Giris()
         {
             InitializeComponent();
         }
 
-        protected void XamlGiris_Loaded(object sender,EventArgs e) 
+        protected void XamlGiris_Loaded(object sender, EventArgs e)
         {
             cmbSehirler.Items.Add("Istanbul");
             cmbSehirler.Items.Add("Ankara");
@@ -284,8 +284,8 @@ namespace XamlGiris
 
         protected void btnMerhabaDe_Clicked(object sender, RoutedEventArgs e)
         {
-            string adim=cmbSehirler.Text;
-            MessageBox.Show("Merhaba "+adim);
+            string adim = cmbSehirler.Text;
+            MessageBox.Show("Merhaba " + adim);
         }
     }
 }
@@ -302,7 +302,7 @@ using System.Windows.Controls;
 
 namespace XamlGiris
 {
-    public partial class Program: Application
+    public partial class Program : Application
     {
     }
 }

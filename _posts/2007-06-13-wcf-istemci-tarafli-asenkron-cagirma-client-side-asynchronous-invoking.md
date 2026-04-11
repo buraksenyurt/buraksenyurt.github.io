@@ -23,13 +23,13 @@ Dilerseniz örneğimize geçerek işlemlerimize başlayalım. Her zamanki gibi s
 IAdventureManager isimli arayüz içeriği aşağıdaki gibidir.
 
 ```csharp
-[ServiceContract(Name="AdventureContract",Namespace= "http://www.bsenyurt.com/2007/6/6/AdventureService")]
+[ServiceContract(Name = "AdventureContract", Namespace = "http://www.bsenyurt.com/2007/6/6/AdventureService")]
 public interface IAdventureManager
 {
-    [OperationContract(Name="AverageListPriceByCategory")]
+    [OperationContract(Name = "AverageListPriceByCategory")]
     double AverageListPrice(int subCatId);
 
-    [OperationContract(Name="TotalListPriceByCategory")]
+    [OperationContract(Name = "TotalListPriceByCategory")]
     double TotalListPrice(int subCatId);
 
     [OperationContract(Name = "GetProductsCountByCategory")]
@@ -40,7 +40,7 @@ public interface IAdventureManager
 AdventureManager isimli sınıfın içeriği aşağıdaki gibidir.
 
 ```csharp
-public class AdventureManager:IAdventureManager
+public class AdventureManager : IAdventureManager
 {
     #region IAdventureManager Members
 
@@ -48,7 +48,7 @@ public class AdventureManager:IAdventureManager
     {
         Thread.Sleep(5000);
         return 1000;
-    }    
+    }
     public double TotalListPrice(int subCatId)
     {
         Thread.Sleep(3000);
@@ -77,7 +77,7 @@ ServiceHost host;
 
 private void btnStartService_Click(object sender, EventArgs e)
 {
-    host = new ServiceHost(typeof(AdventureManager)); 
+    host = new ServiceHost(typeof(AdventureManager));
     host.Open();
     lblStatus.Text = host.State.ToString();
 }
@@ -171,13 +171,13 @@ AdventureContractClient srv = new AdventureContractClient("AdventureClientEndPoi
 
 DateTime baslangic = DateTime.Now;
 
-double ortalamaFiyat=srv.AverageListPriceByCategory(1);
+double ortalamaFiyat = srv.AverageListPriceByCategory(1);
 
 DateTime bitis = DateTime.Now;
 
 Console.WriteLine(ortalamaFiyat.ToString("C2"));
 TimeSpan fark = bitis - baslangic;
-Console.WriteLine("Geçen süre yaklaşık olarak {0} saniyedir.",fark.TotalSeconds.ToString());
+Console.WriteLine("Geçen süre yaklaşık olarak {0} saniyedir.", fark.TotalSeconds.ToString());
 Console.ReadLine();
 
 #endregion
@@ -192,12 +192,12 @@ Bu tipik olarak senkron çalışma şeklidir. Gelelim diğer tekniklere. İlk ol
 WaitOne tekniği;
 
 ```csharp
-IAsyncResult iar=srv.BeginAverageListPriceByCategory(1, null, null);
+IAsyncResult iar = srv.BeginAverageListPriceByCategory(1, null, null);
 Console.WriteLine("Bazı işlemler yapılıyor...");
 
 iar.AsyncWaitHandle.WaitOne();
 
-double sonuc=srv.EndAverageListPriceByCategory(iar);
+double sonuc = srv.EndAverageListPriceByCategory(iar);
 Console.WriteLine(sonuc.ToString("C2"));
 
 Console.ReadLine();
@@ -218,7 +218,7 @@ IAsyncResult iar1 = srv.BeginAverageListPriceByCategory(1, null, null);
 IAsyncResult iar2 = srv.BeginGetProductsCountByCategory(2, null, null);
 IAsyncResult iar3 = srv.BeginTotalListPriceByCategory(5, null, null);
 
-WaitHandle[] handles = new WaitHandle[] { iar1.AsyncWaitHandle, iar2.AsyncWaitHandle,iar3.AsyncWaitHandle };
+WaitHandle[] handles = new WaitHandle[] { iar1.AsyncWaitHandle, iar2.AsyncWaitHandle, iar3.AsyncWaitHandle };
 
 Console.WriteLine("Bazı işlemler yapılıyor...");
 
@@ -248,7 +248,7 @@ WaitAny modeli asenkron olarak çalışan metodlardan tamamlanını ortama iade 
 Polling tekniği;
 
 ```csharp
-IAsyncResult iar=srv.BeginTotalListPriceByCategory(4, null, null);
+IAsyncResult iar = srv.BeginTotalListPriceByCategory(4, null, null);
 
 while (!iar.IsCompleted)
 {
@@ -282,7 +282,7 @@ class Program
         AdventureContractClient srv = new AdventureContractClient("AdventureClientEndPoint");
 
         #region Callback Ornek
-    
+
         IAsyncResult iar = srv.BeginAverageListPriceByCategory(3, new AsyncCallback(CallbackMetod), srv);
 
         for (int i = 0; i < 10; i++)
@@ -292,14 +292,14 @@ class Program
         }
 
         Console.ReadLine();
-    
+
         #endregion
     }
 
     static void CallbackMetod(IAsyncResult iar)
     {
         AdventureContractClient srv = (AdventureContractClient)iar.AsyncState;
-        double sonuc=srv.EndAverageListPriceByCategory(iar);
+        double sonuc = srv.EndAverageListPriceByCategory(iar);
         Console.WriteLine(sonuc.ToString());
     }
 }
@@ -316,7 +316,7 @@ Callback modelinde istenirse C# 2.0 ile birlikte gelen isimsiz metodlardan (Anon
 Callback modelinde isimsiz metod kullanımı;
 
 ```csharp
-AsyncCallback async = delegate(IAsyncResult ar)
+AsyncCallback async = delegate (IAsyncResult ar)
                                 {
                                     double sonuc = srv.EndAverageListPriceByCategory(ar);
                                     Console.WriteLine(sonuc.ToString());

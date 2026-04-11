@@ -36,7 +36,7 @@ namespace UsingVariables
             Variable<Player> firstPlayer = new Variable<Player>
             {
                 Name = "FirstPlayer",
-                Default = new Player { Name = "Zen-R2", Location = new Location { X = 10, Y = 12, Altitude = 100 }, PlayerType = PlayerType.Computer, TotalPoint=10 }               
+                Default = new Player { Name = "Zen-R2", Location = new Location { X = 10, Y = 12, Altitude = 100 }, PlayerType = PlayerType.Computer, TotalPoint = 10 }
             };
 
             // Bir Sequence aktivitesi tanımlanır. Root aktivite.
@@ -48,9 +48,10 @@ namespace UsingVariables
             // To kısmında kime atama yapılacağı belirlenir. Tasarım zamanından farklı olarak bir expression kullanılır. firstPlayer isimli değişkenin işaret ettiği veri alanında TotalPoint değeri alınır.
             // Value özelliğine verilen değer ile atama yapılır. Atamada o anki variable' ın TotalPoint değeri 10.1 birim arttırılmaktadır.
             gameFlow.Activities.Add(
-                new Assign<double>() { 
-                     To=new OutArgument<double>(v=>firstPlayer.Get(v).TotalPoint),
-                     Value=new InArgument<double>(v=>firstPlayer.Get(v).TotalPoint+10.1)
+                new Assign<double>()
+                {
+                    To = new OutArgument<double>(v => firstPlayer.Get(v).TotalPoint),
+                    Value = new InArgument<double>(v => firstPlayer.Get(v).TotalPoint + 10.1)
                 }
                 );
 
@@ -66,11 +67,12 @@ namespace UsingVariables
             // Ekrana bilgi yazdırmak için WriteLine tipinden bir aktivite daha eklenir
             // Text özelliğinde ekrana bilgi yazdırabilmek için InArgument nesne örneğinden yararlanılır ve o anki firstPlayer variable' ının Name ve TotalPoint değerleri yazdırılır.
             gameFlow.Activities.Add(
-                new WriteLine { 
-                     Text=new InArgument<string>(v=>String.Format("{0} isimli oyuncunun puanı {1}. Deniz seviyesinden yüksekliği {2}",firstPlayer.Get(v).Name,firstPlayer.Get(v).TotalPoint.ToString(),firstPlayer.Get(v).Location.Altitude))
+                new WriteLine
+                {
+                    Text = new InArgument<string>(v => String.Format("{0} isimli oyuncunun puanı {1}. Deniz seviyesinden yüksekliği {2}", firstPlayer.Get(v).Name, firstPlayer.Get(v).TotalPoint.ToString(), firstPlayer.Get(v).Location.Altitude))
                 }
                 );
-            
+
             // gameFlow isimli Workflow çağırılır ve başlatılır
             WorkflowInvoker.Invoke(gameFlow);
         }
@@ -78,17 +80,45 @@ namespace UsingVariables
 
     class Player
     {
-        public string Name { get; set; }
-        public Location Location { get; set; }
-        public PlayerType PlayerType { get; set; }
-        public double TotalPoint { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public Location Location
+        {
+            get;
+            set;
+        }
+        public PlayerType PlayerType
+        {
+            get;
+            set;
+        }
+        public double TotalPoint
+        {
+            get;
+            set;
+        }
     }
 
     class Location
     {
-        public double X { get; set; }
-        public double Y { get; set; }
-        public double Altitude { get; set; }
+        public double X
+        {
+            get;
+            set;
+        }
+        public double Y
+        {
+            get;
+            set;
+        }
+        public double Altitude
+        {
+            get;
+            set;
+        }
     }
 
     enum PlayerType

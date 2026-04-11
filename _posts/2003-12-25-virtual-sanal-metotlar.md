@@ -35,19 +35,19 @@ namespace ConsoleApplication1
         {
 
         }
-        
+
         public void Yazdir()
         {
             Console.WriteLine("Ben TUREYEN(DERIVED) sinifim");
-            }
+        }
     }
-    
+
     class Class1
     {
         static void Main(string[] args)
         {
             Temel bs;
-            Tureyen drv =new Tureyen();
+            Tureyen drv = new Tureyen();
             bs = drv;
             bs.Yazdir();
         }
@@ -76,7 +76,7 @@ namespace ConsoleApplication1
         {
         }
 
-        public void Yazdir()     
+        public void Yazdir()
         {
             Console.WriteLine("Ben TEMEL(BASE) sinifim");
         }
@@ -97,7 +97,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Temel bs;
-            Tureyen drv =new Tureyen();
+            Tureyen drv = new Tureyen();
             bs = drv;
             bs.Yazdir();
         }
@@ -135,7 +135,7 @@ namespace ConsoleApplication1
     {
         public Tureyen()
         {
-        }        
+        }
 
         public override void Yazdir()
         {
@@ -148,7 +148,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Temel bs;
-            Tureyen drv =new Tureyen();
+            Tureyen drv = new Tureyen();
             bs = drv;
             bs.Yazdir();
         }

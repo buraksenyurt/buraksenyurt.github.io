@@ -31,38 +31,44 @@ Bunu daha iyi görmek için aşağıdaki örneği inceleyelim. Bu örnekte Sql s
 Şimdide program kodlarımızı oluşturalım.
 
 ```csharp
-SqlConnection conNorthwind; /*Sql sunucumuza yapıcağımız bağlantıyı sağlıyacak SqlConnection nesnemizi tanımlıyoruz.*/
+SqlConnection conNorthwind;
+/*Sql sunucumuza yapıcağımız bağlantıyı sağlıyacak SqlConnection nesnemizi tanımlıyoruz.*/
 
-SqlDataAdapter daPersonel; /* Personel tablosundaki verileri, dtPersonel tablosuna yüklemek için SqlDataAdapter nesnemizi tanımlıyoruz.*/
+SqlDataAdapter daPersonel;
+/* Personel tablosundaki verileri, dtPersonel tablosuna yüklemek için SqlDataAdapter nesnemizi tanımlıyoruz.*/
 
-DataTable dtPersonel; /* Personel tablosundaki verilerin bellek görüntüsünü referans edicek DataTable nesnemizi tanımlıyoruz.*/
+DataTable dtPersonel;
+/* Personel tablosundaki verilerin bellek görüntüsünü referans edicek DataTable nesnemizi tanımlıyoruz.*/
 
-DataTable dtDegisiklikler; /* dtPersonel, DataTable nesnesi için AcceptChanges metodu uygulanana kadar meydana gelen değişikliklerin kümesini referans edicek DataTable nesnemizi tanımlıyoruz.*/
+DataTable dtDegisiklikler;
+/* dtPersonel, DataTable nesnesi için AcceptChanges metodu uygulanana kadar meydana gelen değişikliklerin kümesini referans edicek DataTable nesnemizi tanımlıyoruz.*/
 
 /* Kullanıcı bu butona bastığında, Sql sunucumuzdaki Personel tablosunun tüm satıları, dtPersonel DataTable nesnesinin bellekte işaret ettiği alana yüklenecek ve bu veriler DataGrid kontrolüne bağlanacak.*/
 
 private void btnYukle_Click(object sender, System.EventArgs e)
 {
-     conNorthwind=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
+    conNorthwind = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
 
-     daPersonel=new SqlDataAdapter("Select * From Personel",conNorthwind);
+    daPersonel = new SqlDataAdapter("Select * From Personel", conNorthwind);
 
-     dtPersonel=new DataTable();
-     daPersonel.Fill(dtPersonel);
-     dgVeriler.DataSource=dtPersonel;
+    dtPersonel = new DataTable();
+    daPersonel.Fill(dtPersonel);
+    dgVeriler.DataSource = dtPersonel;
 }
 
 private void btnOnayla_Click(object sender, System.EventArgs e)
 {
-     dtPersonel.AcceptChanges(); /* dtPersonel tablosunda meydana gelen değişiklikleri onaylıyoruz.*/
+    dtPersonel.AcceptChanges();
+    /* dtPersonel tablosunda meydana gelen değişiklikleri onaylıyoruz.*/
 }
 
 private void btnDegisiklikler_Click(object sender, System.EventArgs e)
 {
-     dtDegisiklikler=new DataTable();
-     dtDegisiklikler=dtPersonel.GetChanges(); /* GetChanges metodu ile dtPersonel DataTable nesnesinin işaret ettiği bellek bölgesinde yer alan veri kümesinde meydana gelen değişiklileri, dtDegisiklikler DataTable nesnesinin bellekte referans ettiği bölgeye alıyoruz. */
-     dgDegisiklikler.DataSource=dtDegisiklikler; 
-     /* Bu değişiklikleri DataGrid kontrolünde gösteriyoruz. */
+    dtDegisiklikler = new DataTable();
+    dtDegisiklikler = dtPersonel.GetChanges();
+    /* GetChanges metodu ile dtPersonel DataTable nesnesinin işaret ettiği bellek bölgesinde yer alan veri kümesinde meydana gelen değişiklileri, dtDegisiklikler DataTable nesnesinin bellekte referans ettiği bölgeye alıyoruz. */
+    dgDegisiklikler.DataSource = dtDegisiklikler;
+    /* Bu değişiklikleri DataGrid kontrolünde gösteriyoruz. */
 }
 ```
 

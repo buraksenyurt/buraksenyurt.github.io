@@ -39,7 +39,7 @@ public interface IAlgebraService
 Uygulayıcı sınıf (AlgebraService.cs);
 
 ```csharp
-public class AlgebraService 
+public class AlgebraService
     : IAlgebraService
 {
     #region IAlgebraService Members
@@ -104,12 +104,12 @@ namespace TestProject2
         [TestCleanup]
         public void Bitir()
         {
-            if(client.State== System.ServiceModel.CommunicationState.Opened)
-                client.Close();        
+            if (client.State == System.ServiceModel.CommunicationState.Opened)
+                client.Close();
         }
 
         [TestMethod]
-        [Description("Toplama testi")]        
+        [Description("Toplama testi")]
         public void ToplamaTest()
         {
             Assert.AreEqual(3, client.Toplama(2, 1));
@@ -175,7 +175,7 @@ namespace TestLib
     [TestFixture]
     public class ServiceTestClass
     {
-        private AlgebraServiceClient client=null;
+        private AlgebraServiceClient client = null;
 
         [TestFixtureSetUp]
         public void Ornekle()
@@ -187,7 +187,7 @@ namespace TestLib
         [TestFixtureTearDown]
         public void Kapat()
         {
-            if(client.State== System.ServiceModel.CommunicationState.Opened)
+            if (client.State == System.ServiceModel.CommunicationState.Opened)
                 client.Close();
         }
 

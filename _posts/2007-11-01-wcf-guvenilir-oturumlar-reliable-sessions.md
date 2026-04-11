@@ -66,14 +66,14 @@ using System.ServiceModel;
 
 namespace FabrikaLib
 {
-    [ServiceContract(Name="UretimServisi", Namespace="http://www.bsenyurt.com/FabrikaLib/UretimServisi" , SessionMode=SessionMode.Required)]
+    [ServiceContract(Name = "UretimServisi", Namespace = "http://www.bsenyurt.com/FabrikaLib/UretimServisi", SessionMode = SessionMode.Required)]
     public interface IUretici
     {
-        [OperationContract(IsInitiating=true)]
+        [OperationContract(IsInitiating = true)]
         int BilesenAl(string[] bilesenAdi);
-        [OperationContract(IsInitiating=false)]
+        [OperationContract(IsInitiating = false)]
         void Karistir();
-        [OperationContract(IsInitiating=false,IsTerminating=true)]
+        [OperationContract(IsInitiating = false, IsTerminating = true)]
         bool UretimiYap();
     }
 }
@@ -89,8 +89,8 @@ using System.ServiceModel;
 
 namespace FabrikaLib
 {
-    [ServiceBehavior(InstanceContextMode= InstanceContextMode.PerSession)]
-    public class Uretici:IUretici
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    public class Uretici : IUretici
     {
         #region IUretici Members
 
@@ -200,13 +200,13 @@ namespace Istemci
         static void Main(string[] args)
         {
             try
-            {    
+            {
                 Console.WriteLine("İşlemi başlatmak için bir tuşa basınız...");
                 Console.ReadLine();
                 UretimServisiClient cli = new UretimServisiClient("UretimServisiClientEndPoint");
                 cli.BilesenAl(new string[] { "C", "O2", "H2SO4" });
                 cli.Karistir();
-                string durum = cli.UretimiYap()==true?"Üretim gerçekleştirildi":"Üretim yapılamadı";
+                string durum = cli.UretimiYap() == true ? "Üretim gerçekleştirildi" : "Üretim yapılamadı";
                 Console.WriteLine(durum);
                 Console.ReadLine();
             }

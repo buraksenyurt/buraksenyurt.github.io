@@ -36,17 +36,17 @@ using System;
 
 namespace checkedUnchecked
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               short degisken1=32760;
-               byte degisken2;
-               degisken2=(byte)degisken1;
-               Console.WriteLine("Short tipinden değişkenimiz : {0}",degisken1);
-               Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}",degisken2);
-             }
-     }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            short degisken1 = 32760;
+            byte degisken2;
+            degisken2 = (byte)degisken1;
+            Console.WriteLine("Short tipinden değişkenimiz : {0}", degisken1);
+            Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}", degisken2);
+        }
+    }
 }
 ```
 
@@ -73,14 +73,14 @@ Görüldüğü gibi 16 bitlik short tipi değişkenin ilk 8 biti havaya uçmuşt
 ```csharp
 static void Main(string[] args)
 {
-     short degisken1=32760;
-     byte degisken2;
-     checked
-     {
-          degisken2=(byte)degisken1;
-     }
-     Console.WriteLine("Short tipinden değişkenimiz : {0}",degisken1);
-     Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}",degisken2);
+    short degisken1 = 32760;
+    byte degisken2;
+    checked
+    {
+        degisken2 = (byte)degisken1;
+    }
+    Console.WriteLine("Short tipinden değişkenimiz : {0}", degisken1);
+    Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}", degisken2);
 }
 ```
 
@@ -95,23 +95,23 @@ Derleyicimiz, checked anahtar kelimesinin kullanıldığı bloktaki tüm tür d�
 ```csharp
 static void Main(string[] args)
 {
-     short degisken1=32760;
-     byte degisken2=0;
-     try
-     {
-          checked
-          {
-               degisken2=(byte)degisken1;
-               Console.WriteLine("Short tipinden değişkenimiz : {0}",degisken1);
+    short degisken1 = 32760;
+    byte degisken2 = 0;
+    try
+    {
+        checked
+        {
+            degisken2 = (byte)degisken1;
+            Console.WriteLine("Short tipinden değişkenimiz : {0}", degisken1);
 
-               Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}",degisken2);
-          }
-     }
-     catch(System.OverflowException hata)
-     {
-          Console.WriteLine(hata.Message.ToString());
-          Console.WriteLine("Değişken 2 :{0}",degisken2.ToString());
-     }
+            Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}", degisken2);
+        }
+    }
+    catch (System.OverflowException hata)
+    {
+        Console.WriteLine(hata.Message.ToString());
+        Console.WriteLine("Değişken 2 :{0}", degisken2.ToString());
+    }
 }
 ```
 
@@ -122,28 +122,28 @@ Diğer yandan bazen, meydana gelebilecek bu tarz taşma hatalırını görmezden
 ```csharp
 static void Main(string[] args)
 {
-     short degisken1=32760;
-     byte degisken2=0;
-     byte degisken3=0;
-     try
-     {
-          checked
-          {
-               unchecked
-               {
-                    degisken3=(byte)degisken1;
-                    Console.WriteLine("Kontrol edilmeyen degisken3 değeri: {0}",degisken3);
-               }
-                degisken2=(byte)degisken1;
-               Console.WriteLine("Short tipinden değişkenimiz : {0}",degisken1);
-               Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}",degisken2);
-           }
-     }
-     catch(System.OverflowException hata)   
-     {
-          Console.WriteLine(hata.Message.ToString());
-          Console.WriteLine("Değişken 2 :{0}",degisken2.ToString());
-     }
+    short degisken1 = 32760;
+    byte degisken2 = 0;
+    byte degisken3 = 0;
+    try
+    {
+        checked
+        {
+            unchecked
+            {
+                degisken3 = (byte)degisken1;
+                Console.WriteLine("Kontrol edilmeyen degisken3 değeri: {0}", degisken3);
+            }
+            degisken2 = (byte)degisken1;
+            Console.WriteLine("Short tipinden değişkenimiz : {0}", degisken1);
+            Console.WriteLine("Short değişkenimizi byte tipinden değişkene aldık : {0}", degisken2);
+        }
+    }
+    catch (System.OverflowException hata)
+    {
+        Console.WriteLine(hata.Message.ToString());
+        Console.WriteLine("Değişken 2 :{0}", degisken2.ToString());
+    }
 }
 ```
 

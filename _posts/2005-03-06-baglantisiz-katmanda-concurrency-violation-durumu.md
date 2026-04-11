@@ -55,9 +55,9 @@ private void BaglantiHazirla()
 {
     try
     {
-        con=new SqlConnection(ConfigurationSettings.AppSettings["connectionString"].ToString());
+        con = new SqlConnection(ConfigurationSettings.AppSettings["connectionString"].ToString());
     }
-    catch(SqlException hata)
+    catch (SqlException hata)
     {
         MessageBox.Show(hata.Message);
     }
@@ -67,18 +67,18 @@ private void BaglantiHazirla()
 private void VerileriYukle(string sorguCumlesi)
 {
     BaglantiHazirla();
-    da=new SqlDataAdapter(sorguCumlesi,con);
-    ds=new DataSet();
+    da = new SqlDataAdapter(sorguCumlesi, con);
+    ds = new DataSet();
     da.Fill(ds);
-    ds.Tables[0].PrimaryKey=new DataColumn[]{ds.Tables[0].Columns["ID"]};
+    ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns["ID"] };
 }
 
 /* Veri Çek başlıklı butona tıklandığında, MAILS tablosundaki tüm verileri çekeceğimiz sorguyu çalıştıracak VerileriYukle metodunu çağırıyor ve sonuç kümesini DataGrid kontrolümüze bağlıyoruz. Ardından eğer SqlConnection nesnemiz açık ise kapatıyoruz.*/
 private void btnVeriCek_Click(object sender, System.EventArgs e)
 {
     VerileriYukle("SELECT * FROM MAILS");
-    dgVeriler.DataSource=ds.Tables[0];
-    if(con.State==ConnectionState.Open)
+    dgVeriler.DataSource = ds.Tables[0];
+    if (con.State == ConnectionState.Open)
     {
         con.Close();
     }
@@ -89,36 +89,36 @@ private void VeriGuncelle()
 {
     try
     {
-        string guncellemeCumlesi="UPDATE MAILS SET AD=@AD,SOYAD=@SOYAD,EMAIL=@EMAIL WHERE ID=@ORGID AND AD=@ORGAD AND SOYAD=@ORGSOYAD AND EMAIL=@ORGEMAIL";
+        string guncellemeCumlesi = "UPDATE MAILS SET AD=@AD,SOYAD=@SOYAD,EMAIL=@EMAIL WHERE ID=@ORGID AND AD=@ORGAD AND SOYAD=@ORGSOYAD AND EMAIL=@ORGEMAIL";
         // Timestamp alanı olduğunda : Update Mails Set Ad=@Ad,Soyad=@Soyad,Email=@Email Where Id=@ORGID AND KONTROL=@KONTROL
-        SqlCommand cmdUpdate=new SqlCommand(guncellemeCumlesi,con);
+        SqlCommand cmdUpdate = new SqlCommand(guncellemeCumlesi, con);
         /* Sorgumuz için gerekli parametreleri ekliyoruz. Parametre adlarını, veri tiplerini, boyutlarını ve DataTable daki hangi alanı source olarak alacaklarını belirliyoruz.*/
-        cmdUpdate.Parameters.Add("@AD",SqlDbType.NVarChar,50,"AD");
-        cmdUpdate.Parameters.Add("@SOYAD",SqlDbType.NVarChar,50,"SOYAD");
-        cmdUpdate.Parameters.Add("@EMAIL",SqlDbType.NVarChar,50,"EMAIL");
+        cmdUpdate.Parameters.Add("@AD", SqlDbType.NVarChar, 50, "AD");
+        cmdUpdate.Parameters.Add("@SOYAD", SqlDbType.NVarChar, 50, "SOYAD");
+        cmdUpdate.Parameters.Add("@EMAIL", SqlDbType.NVarChar, 50, "EMAIL");
 
         /* WHERE koşulunda kullanılan parametreleri giriyoruz. Burada parametre değerlerimiz field' ların orjinal değerleri olacak. Bunu sağlamak için SourceVersion özelliğine DataRowVersion numaralandırıcısının Original değerini atıyoruz.*/
-        cmdUpdate.Parameters.Add("@ORGID",SqlDbType.NVarChar,50,"ID");
-        cmdUpdate.Parameters["@ORGID"].SourceVersion=DataRowVersion.Original;
-        cmdUpdate.Parameters.Add("@ORGAD",SqlDbType.NVarChar,50,"AD");
-        cmdUpdate.Parameters["@ORGAD"].SourceVersion=DataRowVersion.Original;
-        cmdUpdate.Parameters.Add("@ORGSOYAD",SqlDbType.NVarChar,50,"SOYAD");
-        cmdUpdate.Parameters["@ORGSOYAD"].SourceVersion=DataRowVersion.Original;
-        cmdUpdate.Parameters.Add("@ORGEMAIL",SqlDbType.NVarChar,50,"EMAIL");
-        cmdUpdate.Parameters["@ORGEMAIL"].SourceVersion=DataRowVersion.Original;
-// Where cümleciğinden timestamp veya uniqueIdentifier kullanıldığında yukarudaki parametre tanımlamaları yerine sadece Kontrol alanı için tek bir parametre tanımlamasının yapılması yeterli olacaktır.
+        cmdUpdate.Parameters.Add("@ORGID", SqlDbType.NVarChar, 50, "ID");
+        cmdUpdate.Parameters["@ORGID"].SourceVersion = DataRowVersion.Original;
+        cmdUpdate.Parameters.Add("@ORGAD", SqlDbType.NVarChar, 50, "AD");
+        cmdUpdate.Parameters["@ORGAD"].SourceVersion = DataRowVersion.Original;
+        cmdUpdate.Parameters.Add("@ORGSOYAD", SqlDbType.NVarChar, 50, "SOYAD");
+        cmdUpdate.Parameters["@ORGSOYAD"].SourceVersion = DataRowVersion.Original;
+        cmdUpdate.Parameters.Add("@ORGEMAIL", SqlDbType.NVarChar, 50, "EMAIL");
+        cmdUpdate.Parameters["@ORGEMAIL"].SourceVersion = DataRowVersion.Original;
+        // Where cümleciğinden timestamp veya uniqueIdentifier kullanıldığında yukarudaki parametre tanımlamaları yerine sadece Kontrol alanı için tek bir parametre tanımlamasının yapılması yeterli olacaktır.
         // cmdUpdate.Parameters.Add("@KONTROL",SqlDbType.Timestamp,8,"KONTROL");
         // cmdUpdate.Parameters["@KONTROL"].SourceVersion=DataRowVersion.Original;
 
-        da.UpdateCommand=cmdUpdate;
+        da.UpdateCommand = cmdUpdate;
 
         /* Son olarak Update metodunu çalıştırıyoruz.*/
         da.Update(ds);
     }
-    catch(SqlException hata)
+    catch (SqlException hata)
     {
         MessageBox.Show(hata.Message);
-    } 
+    }
 }
 
 private void btnGuncelle_Click(object sender, System.EventArgs e)
@@ -142,14 +142,14 @@ Eğer güncelleme yapılan kod satırlarını istisna yakalama mekanizmaları il
 ```csharp
 private void btnGuncelle_Click(object sender, System.EventArgs e)
 {
-    if(chkContinueUpdateOnError.Checked==true)
+    if (chkContinueUpdateOnError.Checked == true)
     {
-        da.ContinueUpdateOnError=true;
+        da.ContinueUpdateOnError = true;
         VeriGuncelle();
     }
-    else if(chkContinueUpdateOnError.Checked==false)
+    else if (chkContinueUpdateOnError.Checked == false)
     {
-        da.ContinueUpdateOnError=false;
+        da.ContinueUpdateOnError = false;
         VeriGuncelle();
     }
 }
@@ -160,13 +160,20 @@ private void btnGuncelle_Click(object sender, System.EventArgs e)
 Ancak hâlâ sorunlu olan satıra ait kullanıcı yeterli bilgiye sahip değildir. (Her ne kadar DataGrid bunu ünlem işaretleriyle belirtse de başka kontroller için bu özelliği sağlayamayabiliriz.) Örneğin kullanıcıyı hangi satırların Concurrency Violation (eş zamanlı uyumsuzluk) istisnasına neden olduğu konusunda daha detaylı bir şekilde uyarabiliriz. Burada DBConcurrencyException sınıfının prototipi aşağıdaki gibi olan Row özelliği işimize yarayabilir.
 
 ```csharp
-public DataRow Row {get; set;}
+public DataRow Row
+{
+    get;
+    set;
+}
 ```
 
 Bu özellik geriye hataya neden olan satırı işaret edebilecek bir DataRow nesne örneği döndürür. Böylece ilgili satıra ait detaylı bilgilere ulaşabiliriz. Ancak, istisnai durum Concurrency'e neden olan ilk satır görüldüğünde devreye girmektedir. Dolayısıyla ikinci kullanıcının elinde Concurrency istisnasına neden olacak birden fazla satır varsa tüm bu satırları yakalamak için alternatif bir yol uygulamamız gerekmektedir. ADO.NET mimarisinde yer alan DataSet, DataTable ve DataRow sınıflarının HasErrors özellikleri bu noktada bizim işimize yarayabilir.
 
 ```csharp
-public bool HasErrors {get;}
+public bool HasErrors
+{
+    get;
+}
 ```
 
 Bu özellik bool tipinden olup, herhangi bir hata var ise geriye true değerini döndürecektir. Concurrency durumunu bu hatalar arasında sayabiliriz. Şimdi uygulama kodlarımıza aşağıdaki metodu ekleyelim.
@@ -175,27 +182,27 @@ Bu özellik bool tipinden olup, herhangi bir hata var ise geriye true değerini 
 private void SonHaliAl()
 {
     string satirBilgi;
-    if(ds.Tables[0].HasErrors)
+    if (ds.Tables[0].HasErrors)
     {
-        foreach(DataRow dr in ds.Tables[0].Rows)
+        foreach (DataRow dr in ds.Tables[0].Rows)
         {
-            if(dr.HasErrors)
+            if (dr.HasErrors)
             {
-                satirBilgi=dr["AD"].ToString()+" "+dr["SOYAD"].ToString()+" Başkası tarafından değiştirilmiş. Satırın son halini elde etmek ister misiniz?";
-                if(MessageBox.Show(satirBilgi,"Son hali al",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                satirBilgi = dr["AD"].ToString() + " " + dr["SOYAD"].ToString() + " Başkası tarafından değiştirilmiş. Satırın son halini elde etmek ister misiniz?";
+                if (MessageBox.Show(satirBilgi, "Son hali al", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    SqlCommand cmdSonHaliAl=new SqlCommand("SELECT * FROM MAILS WHERE ID="+(int)dr["ID"],con);
-                    if(con.State==ConnectionState.Closed)
+                    SqlCommand cmdSonHaliAl = new SqlCommand("SELECT * FROM MAILS WHERE ID=" + (int)dr["ID"], con);
+                    if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
                     }
-                    SqlDataReader drGuncelSatir=cmdSonHaliAl.ExecuteReader(CommandBehavior.SingleRow);
-                    drGuncelSatir.Read(); 
+                    SqlDataReader drGuncelSatir = cmdSonHaliAl.ExecuteReader(CommandBehavior.SingleRow);
+                    drGuncelSatir.Read();
                     dr.BeginEdit();
-                    dr["ID"]=drGuncelSatir["ID"];
-                    dr["AD"]=drGuncelSatir["AD"];
-                    dr["SOYAD"]=drGuncelSatir["SOYAD"];
-                    dr["EMAIL"]=drGuncelSatir["EMAIL"];
+                    dr["ID"] = drGuncelSatir["ID"];
+                    dr["AD"] = drGuncelSatir["AD"];
+                    dr["SOYAD"] = drGuncelSatir["SOYAD"];
+                    dr["EMAIL"] = drGuncelSatir["EMAIL"];
                     // Timestamp veya uniqueIdentifier tipinden bir alan kullandıysak (örneğimizdeki KONTROL alanı gibi) onuda güncellememiz gerekir.
                     // dr["KONTROL"]=drGuncelSatir["KONTROL"];
                     dr.EndEdit();
@@ -217,15 +224,15 @@ Tek yapmamız gereken Concurrency Violation (eş zamanlı uyumsuzluk)' de kalan 
 ```csharp
 private void VeriGuncelle()
 {
-    try    
+    try
     {
         // diğer kod satırları
-        da.Update(ds);        
+        da.Update(ds);
     }
-    catch(DBConcurrencyException)
+    catch (DBConcurrencyException)
     {
         SonHaliAl();
-    } 
+    }
 }
 ```
 

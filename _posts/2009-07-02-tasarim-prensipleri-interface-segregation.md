@@ -26,70 +26,79 @@ Elbetteki önemli olan, kısaltmalarının karşılıklarını bilmek değil
 Kod tarafından baktığımızda ise;
 
 ```csharp
- interface IComponent
+interface IComponent
+{
+    Guid ComponentId
     {
-        Guid ComponentId { get; }
-
-        void Initialize();
-        void Draw();
-        void Render();
+        get;
     }
 
-    public class WinButton
+    void Initialize();
+    void Draw();
+    void Render();
+}
+
+public class WinButton
+: IComponent
+{
+    #region IComponent Members
+
+    public Guid ComponentId
+    {
+        get
+        {
+            return Guid.NewGuid();
+        }
+    }
+
+    public void Initialize()
+    {
+        Console.WriteLine("Windows Button başlangıç işlemleri");
+    }
+
+    public void Draw()
+    {
+        Console.WriteLine("Ekrana çizdirme işlemleri");
+    }
+
+    public void Render()
+    {
+        throw new NotImplementedException();
+    }
+
+    #endregion
+}
+
+class WebButton
     : IComponent
+{
+    #region IComponent Members
+
+    public Guid ComponentId
     {
-        #region IComponent Members
-
-        public Guid ComponentId
+        get
         {
-            get { return Guid.NewGuid(); }
+            return Guid.NewGuid();
         }
-
-        public void Initialize()
-        {
-            Console.WriteLine("Windows Button başlangıç işlemleri");
-        }
-
-        public void Draw()
-        {
-            Console.WriteLine("Ekrana çizdirme işlemleri");
-        }
-
-        public void Render()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
     }
 
-    class WebButton
-        :IComponent
+    public void Initialize()
     {
-        #region IComponent Members
-
-        public Guid ComponentId
-        {
-            get { return Guid.NewGuid(); }
-        }
-
-        public void Initialize()
-        {
-            Console.WriteLine("Web Button başlangıç işlemleri");
-        }
-
-        public void Draw()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Render()
-        {
-            Console.WriteLine("HTML Render işlemleri");
-        }
-
-        #endregion
+        Console.WriteLine("Web Button başlangıç işlemleri");
     }
+
+    public void Draw()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Render()
+    {
+        Console.WriteLine("HTML Render işlemleri");
+    }
+
+    #endregion
+}
 ```
 
 Aslında böylesine kötü bir tasarım ile konuya başlamak istemezdim ancak ISP ilkesinin neyi öğütlediğini bilmek adına bu yeterli bir yaklaşımdır. Hedefte bir sistemin parçası olan görsel bileşenlerin uygulaması gereken kuralları bildiren IComponent isimli arayüz tipi bulunmaktadır. Görsel bileşenler olarak örneğimizde, Windows ve Web tabanlı uygulamalardaki Button kontrolleri göz önüne alınmaktadır. Ancak bir windows kontrolünün temel olarak ekrana çizdirilmesi ile, bir Web kontrolünün istemci tarafına HTML içeriği olarak Render edilmesi iki farklı ve ap ayrı fonksiyonelliktir.
@@ -106,73 +115,82 @@ Kod içeriğimizi ise şu şekilde güncellemeliyiz;
 
 ```csharp
 interface IComponent
+{
+    Guid ComponentId
     {
-        Guid ComponentId { get; }
-
-        void Initialize();
-    }
-    interface IWebComponent
-    {
-        void Render();
-    }
-    interface IWinComponent
-    {
-        void Draw();
+        get;
     }
 
-    public class WinButton
-    : IComponent,IWinComponent
+    void Initialize();
+}
+interface IWebComponent
+{
+    void Render();
+}
+interface IWinComponent
+{
+    void Draw();
+}
+
+public class WinButton
+: IComponent, IWinComponent
+{
+    #region IComponent Members
+
+    public Guid ComponentId
     {
-        #region IComponent Members
-
-        public Guid ComponentId
+        get
         {
-            get { return Guid.NewGuid(); }
+            return Guid.NewGuid();
         }
-
-        public void Initialize()
-        {
-            Console.WriteLine("Windows Button başlangıç işlemleri");
-        }
-
-        #endregion
-
-        #region IWinComponent Members
-
-        public void Draw()
-        {
-            Console.WriteLine("Ekrana çizdirme işlemleri");
-        }
-
-        #endregion
     }
 
-    class WebButton
-        : IComponent,IWebComponent
+    public void Initialize()
     {
-        #region IComponent Members
-
-        public Guid ComponentId
-        {
-            get { return Guid.NewGuid(); }
-        }
-
-        public void Initialize()
-        {
-            Console.WriteLine("Web Button başlangıç işlemleri");
-        }
-
-        #endregion
-
-        #region IWebComponent Members
-
-        public void Render()
-        {
-            Console.WriteLine("HTML Render işlemleri");
-        }
-
-        #endregion
+        Console.WriteLine("Windows Button başlangıç işlemleri");
     }
+
+    #endregion
+
+    #region IWinComponent Members
+
+    public void Draw()
+    {
+        Console.WriteLine("Ekrana çizdirme işlemleri");
+    }
+
+    #endregion
+}
+
+class WebButton
+    : IComponent, IWebComponent
+{
+    #region IComponent Members
+
+    public Guid ComponentId
+    {
+        get
+        {
+            return Guid.NewGuid();
+        }
+    }
+
+    public void Initialize()
+    {
+        Console.WriteLine("Web Button başlangıç işlemleri");
+    }
+
+    #endregion
+
+    #region IWebComponent Members
+
+    public void Render()
+    {
+        Console.WriteLine("HTML Render işlemleri");
+    }
+
+    #endregion
+}
 ```
 
 Görüldüğü gibi Web tarafını ilgilendiren Render fonksiyonu IWebComponent isimli arayüzde, Windows tarafını ilgilendiren Draw metodu ise IWinComponent arayüzü içerisinde ele alınmıştır. Artık, ortak olan üyelerin IComponent, Web tarafını ilgilendirenlerin IWebComponent ve Windows tarafını ilgilendirenlerinde IWinComponent içerisinde toplanması sağlanarak ISP ilkesinin korunması sağlanabilir. Hatta söz konusu senaryoda IWebComponent ve IWinComponent arayüzlerinin IComponent arayüzünden türemesi dahi düşünülebilir.

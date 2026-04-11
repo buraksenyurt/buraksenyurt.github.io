@@ -89,7 +89,7 @@ using System.ServiceModel;
 
 namespace MatematikKutuphanesi
 {
-    [ServiceContract(Name="Matematik Servisi",Namespace="http://www.bsenyurt.com/Matematik/MatematikServisi")]
+    [ServiceContract(Name = "Matematik Servisi", Namespace = "http://www.bsenyurt.com/Matematik/MatematikServisi")]
     public interface IMatematik
     {
         [OperationContract]
@@ -112,7 +112,7 @@ using System.ServiceModel;
 
 namespace MatematikKutuphanesi
 {
-    public class Matematik:IMatematik
+    public class Matematik : IMatematik
     {
         #region IMatematik Members
 

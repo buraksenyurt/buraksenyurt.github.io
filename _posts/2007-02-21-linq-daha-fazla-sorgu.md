@@ -79,11 +79,11 @@ public class Helper
             SqlCommand cmd = new SqlCommand("SELECT ProductID, Name, ListPrice, SellStartDate, SellEndDate, ProductSubcategoryID FROM Production.Product WHERE (Name IS NOT NULL) AND (ListPrice IS NOT NULL) AND (SellStartDate IS NOT NULL) AND (SellEndDate IS NOT NULL) AND (ProductSubcategoryID IS NOT NULL)", conn);
 
             conn.Open();
-            SqlDataReader dr=cmd.ExecuteReader();
+            SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-            { 
+            {
                 // Object Initializers kullanarak nesneye ilk değerlerini atıyoruz.
-                Product urn=new Product{ProductId=Convert.ToInt32(dr["ProductID"]),Name=dr["Name"].ToString(),ListPrice=Convert.ToDouble(dr["ListPrice"]),SellStartDate=Convert.ToDateTime(dr["SellStartDate"]),SellEndDate=Convert.ToDateTime(dr["SellEndDate"]),ProductSubCategoryId=Convert.ToInt32(dr["ProductSubCategoryId"])};
+                Product urn = new Product { ProductId = Convert.ToInt32(dr["ProductID"]), Name = dr["Name"].ToString(), ListPrice = Convert.ToDouble(dr["ListPrice"]), SellStartDate = Convert.ToDateTime(dr["SellStartDate"]), SellEndDate = Convert.ToDateTime(dr["SellEndDate"]), ProductSubCategoryId = Convert.ToInt32(dr["ProductSubCategoryId"]) };
                 urunler.Add(urn);
             }
         }
@@ -98,11 +98,11 @@ public class Helper
             SqlCommand cmd = new SqlCommand("SELECT ProductSubCategoryId,Name From Production.ProductSubCategory", conn);
 
             conn.Open();
-            SqlDataReader dr=cmd.ExecuteReader();
+            SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-            { 
+            {
                 // Object Initializers kullanarak nesneye ilk değerlerini atıyoruz.
-                ProductSubCategory subCat=new ProductSubCategory{ProductSubCategoryId=Convert.ToInt32(dr["ProductSubCategoryId"]),Name=dr["Name"].ToString()};
+                ProductSubCategory subCat = new ProductSubCategory { ProductSubCategoryId = Convert.ToInt32(dr["ProductSubCategoryId"]), Name = dr["Name"].ToString() };
                 altKategorileri.Add(subCat);
             }
         }
@@ -117,15 +117,15 @@ Sorgu 1: Ürünlerden belirli bir alt kategoride olanların bulunması.
 
 ```csharp
 var products = Helper.UrunleriYukle();
-var subCategories=Helper.AltKategorileriYukle();
+var subCategories = Helper.AltKategorileriYukle();
 
 Console.WriteLine("\nProductSubCategoryId' si 1 olan Urunler\n");
 
-var resultSet=from p in products 
-                          where p.ProductSubCategoryId==1 
-                            select p;
+var resultSet = from p in products
+                where p.ProductSubCategoryId == 1
+                select p;
 
-foreach(Product prd in resultSet)
+foreach (Product prd in resultSet)
     Console.WriteLine(prd.ToString());
 ```
 
@@ -150,14 +150,14 @@ Lakin daha karmaşık sorgulama ifadeleri göz önüne alındığında durum dah
 Sorgu 2: Liste fiyatı 3000 birimin üzerinde olan ürünleri isimlerine göre tersten sıralı olacak şekilde elde etmek.
 
 ```csharp
-var resultSet2=from p in products 
-                        where p.ListPrice>=3000
-                            orderby p.Name descending
-                                select p;
+var resultSet2 = from p in products
+                 where p.ListPrice >= 3000
+                 orderby p.Name descending
+                 select p;
 
 Console.WriteLine("\nFiyatı 3000' den büyük olan Urunler. Name alanına göre tersten sıralı. \n");
 
-foreach(Product prd in resultSet2)
+foreach (Product prd in resultSet2)
     Console.WriteLine(prd.ToString());
 ```
 
@@ -170,12 +170,12 @@ Sorgu 3: Fiyatı 1000 ile 1500 birim arasında olan ürünleri isimlerine göre 
 ```csharp
 Console.WriteLine("\nFiyatı 1000 ile 1500 arasında olan ürünlerin Name alanına göre tersten sıralanmış listesi\n");
 
-var resultSet3=from p in products
-                        where p.ListPrice>=1000 && p.ListPrice<=1500
-                            orderby p.Name descending
-                                select p;
+var resultSet3 = from p in products
+                 where p.ListPrice >= 1000 && p.ListPrice <= 1500
+                 orderby p.Name descending
+                 select p;
 
-foreach(Product prd in resultSet3)
+foreach (Product prd in resultSet3)
     Console.WriteLine(prd.ToString());
 ```
 
@@ -190,11 +190,11 @@ C# 3.0 beraberinde isimsiz tip (Anonymous Type) adı verilen yeni bir kavram ile
 ```csharp
 Console.WriteLine("\nSelect sorgularında Anonymous Type Kullanımı\n");
 
-var resultSet4=from p in products
-                        select new {UrunAdi=p.Name,Fiyat=p.ListPrice.ToString("C2")};
+var resultSet4 = from p in products
+                 select new { UrunAdi = p.Name, Fiyat = p.ListPrice.ToString("C2") };
 
-foreach(var prd in resultSet4)
-    Console.WriteLine(prd.UrunAdi+" "+prd.Fiyat);
+foreach (var prd in resultSet4)
+    Console.WriteLine(prd.UrunAdi + " " + prd.Fiyat);
 ```
 
 Örneğimizi çalıştırdığımızda aşağıdakine benzer bir sonuç elde ederiz.
@@ -206,13 +206,13 @@ Sorgu 5: Sql'de Join sorgusu olurda LINQ içerisinde olmaz mı?
 Hepimiz Sql tarafında farklı tabloları birleştirmek için Join ifadelerinden faydalanırız, faydalanmaktayız. Aynı özellik LINQ ile,.Net platformuna da taşınmıştır. İşte aşağıda örnek bir sorgu. Bu sorguda products ve subCategories isimli değişkenlerde tutulan koleksiyonların içerdikleri verileri ProductSubCategoryId alanlarının değerlerine göre birleştiriyoruz. Elde edilen sonuç kümesinde, her iki koleksiyonda da var olan özelliklerden kombine edilecek yeni bir tip olsa hiç de fena olmaz aslında. İşte isimsiz tipimizin devreye gireceği yer burası olacaktır. (Bu tip bir ihtiyacı birde LINQ eklentilerini kullanmadan yapmayı denersek, sorgu ifadelerinin gelecekte hayatımızı oldukça kolaylaştıracağını daha kolay anlayabiliriz.) Birleştirme operasyonu için join anahtar kelimesinden yararlanılmaktadır. on anahtar kelimesinden sonra ise bildiğimiz kriter uygulaması gerçekleştirilmektedir.
 
 ```csharp
-var resultSet6=from prd in products 
-                         join ctg in subCategories
-                             on prd.ProductSubCategoryId equals ctg.ProductSubCategoryId
-                                 select new{prd.ProductId,prd.Name,prd.ListPrice};
- 
- foreach(var p in resultSet6) 
-     Console.WriteLine(p.ToString());
+var resultSet6 = from prd in products
+                 join ctg in subCategories
+                     on prd.ProductSubCategoryId equals ctg.ProductSubCategoryId
+                 select new { prd.ProductId, prd.Name, prd.ListPrice };
+
+foreach (var p in resultSet6)
+    Console.WriteLine(p.ToString());
 ```
 
 Programımızın ekran çıktısı aşağıdakine benzer olacaktır.
@@ -229,27 +229,33 @@ Sorgu 6: Urunler listesini alt kategorilere göre gruplamak, her bir gruptaki to
 Böyle bir sorgu için öncelikle ürünleri, alt kategorilerine göre gruplamamız gerekmektedir. Sonra gruplanan veri kümesi üzerinde bazı gruplama fonksiyonlarını kullanmalıyız. Bu cümleleri sarfettikçe aslında bir T-Sql sorgusunu ifade etmeye çalıştığımı düşünüyorum. Ama artık Sql değil LINQ tarafında ve daha tanıdık topraklardayız. Öyleyse hiç vakit kaybetmeden örnek kodumuzu aşağıdaki gibi geliştirelim.
 
 ```csharp
-var result7=from prd in products
-                     group prd by prd.ProductSubCategoryId into g
-                         orderby g.Key
-                             select new{
-                                 Kategori=g.Key
-                                 ,UrunSayisi=g.Count()
-                                 ,ToplamFiyat=g.Sum(prd=>prd.ListPrice)
-                                 ,EnDusuk=g.Min(prd=>prd.ListPrice)
-                                 ,EnYuksek=g.Max(prd=>prd.ListPrice)
-                                 ,OrtalamaFiyat=g.Average(prd=>prd.ListPrice)
-                             };
- foreach(var result in result7)
- {
-     Console.WriteLine("Kategori Id {0}",result.Kategori.ToString());
-     Console.WriteLine("\t Toplam Ürün Sayısı {0}",result.UrunSayisi.ToString());
-     Console.WriteLine("\t Toplam Birim Fiyat {0}",result.ToplamFiyat.ToString("C2"));
-     Console.WriteLine("\t En Düşük Birim Fiyat {0}",result.EnDusuk.ToString("C2"));
-     Console.WriteLine("\t En Yüksek Birim Fiyat {0}",result.EnYuksek.ToString("C2"));
-     Console.WriteLine("\t Ortalama Fiyat {0}",result.OrtalamaFiyat.ToString("C2"));
-     Console.WriteLine();
- }
+var result7 = from prd in products
+              group prd by prd.ProductSubCategoryId into g
+              orderby g.Key
+              select new
+              {
+                  Kategori = g.Key
+                  ,
+                  UrunSayisi = g.Count()
+                  ,
+                  ToplamFiyat = g.Sum(prd => prd.ListPrice)
+                  ,
+                  EnDusuk = g.Min(prd => prd.ListPrice)
+                  ,
+                  EnYuksek = g.Max(prd => prd.ListPrice)
+                  ,
+                  OrtalamaFiyat = g.Average(prd => prd.ListPrice)
+              };
+foreach (var result in result7)
+{
+    Console.WriteLine("Kategori Id {0}", result.Kategori.ToString());
+    Console.WriteLine("\t Toplam Ürün Sayısı {0}", result.UrunSayisi.ToString());
+    Console.WriteLine("\t Toplam Birim Fiyat {0}", result.ToplamFiyat.ToString("C2"));
+    Console.WriteLine("\t En Düşük Birim Fiyat {0}", result.EnDusuk.ToString("C2"));
+    Console.WriteLine("\t En Yüksek Birim Fiyat {0}", result.EnYuksek.ToString("C2"));
+    Console.WriteLine("\t Ortalama Fiyat {0}", result.OrtalamaFiyat.ToString("C2"));
+    Console.WriteLine();
+}
 ```
 
 İlk olarak group anahtar sözcüğünü kullanarak products içerisindeki Product tiplerini ProductSubCategoryId alanlarına göre gruplayacağımızı ve grupladığımız verileri g takma isimli tip içerisinde saklayacağımızı belirtiyoruz. Hatta elde edilen sonuç kümesini, grupladığımız verilerin Key özelliğine göre (ki burada Key özelliği ProductSubCategoryId alanının değerini işaret etmektedir) sıralatmaktayız. Sıralatma işlemi için bildiğimiz orderby anahtar kelimesinden faydalanıyoruz. Sonrasında ise yine bir isimsiz tip karşımıza çıkıyor ki sonuç kümesinde üretilen satırları farklı bir nesne örneği olarak kullanabilmek için tam aradığımız yapı.
@@ -263,14 +269,14 @@ Sorgu 7: Urunler içerisinde baş harfi H olanların liste fiyatına göre terst
 Sanırım, LINQ ifadeleri sonrası elde edilen sonuç kümelerini işe yarayabilecek başka tipte nesnelere aktarabilmek oldukça işe yarar bir fonksiyonellik olurdu. LINQ bu amaçla elde edilen sonuçların bir diziye (Array), List veya Dictionary koleksiyonlarına aktarılmasını sağlayan fonksiyonelliklerde içermektedir. Örneğin aşağıdaki kod parçası, products koleksiyonunda baş harif H olan ürünlerin liste fiyatına göre tersten sırlanmış halinin bir diziye aktarılmasını sağlamaktadır. Baş harfe göre karşılaştırma yapabilmek için indeksleyici operatörünü Name alanı üzerinde nasıl kullandığımıza dikkat edelim. Sonuçta Name alanı string tipte bir değişkendir ve bir karakter dizisini işaret etmektedir. Bu nedenle C# dilinin tüm sürümlerinden bildiğimiz gibi 0 indisli eleman aslında Name alanının işaret ettiği verinin birinci karakteri olacaktır.
 
 ```csharp
-var result8=from prd in products
-                    where prd.Name[0]=='H'
-                        orderby prd.ListPrice descending
-                            select prd;
+var result8 = from prd in products
+              where prd.Name[0] == 'H'
+              orderby prd.ListPrice descending
+              select prd;
 
-var result9=result8.ToArray();
+var result9 = result8.ToArray();
 
-for(int i=0;i<result9.Length;i++)
+for (int i = 0; i < result9.Length; i++)
     Console.WriteLine(result9[i].ToString());
 ```
 
@@ -283,18 +289,18 @@ Sorgu 8: Join ile birleştirilmiş bir sorgu sonucunu generic Dictionary koleksi
 Join sorgusu ile urunler ve altKategorileri birleştirdiğimizi düşünelim. Bu sonuç kümesinde ProductSubCategoryId alanı Key ve Product nesne örnekleride Value olacak şekilde bir Dictionary koleksiyonu oldukça işimize yarayabilir. Bildiğiniz gibi Dictionary bazlı koleksiyonlar (Hashtable<>, Dictionary<>, Hashtable vb...) verileri key-value çiftleri şeklinde tutmaktadırlar. Dolayısıyla özellikle birleştirilmiş veri kümelerinde elde edilen verileri key ve value olacak şekilde tutmak işe yarayabilir. Bunu gerçekleştirmek için aşağıdaki gibi bir kod parçasını kullanabiliriz.
 
 ```csharp
-var result11=from prd in products
-                        join ktg in subCategories 
-                            on prd.ProductSubCategoryId equals ktg.ProductSubCategoryId
-                                select new {Kategori=ktg.Name,Urun=prd};
+var result11 = from prd in products
+               join ktg in subCategories
+                   on prd.ProductSubCategoryId equals ktg.ProductSubCategoryId
+               select new { Kategori = ktg.Name, Urun = prd };
 
-var result12=result11.ToDictionary(ktgName=>ktgName.Urun.ProductId);
+var result12 = result11.ToDictionary(ktgName => ktgName.Urun.ProductId);
 
-IEnumerator<int> numerator=result12.Keys.GetEnumerator();
-while(numerator.MoveNext())
+IEnumerator<int> numerator = result12.Keys.GetEnumerator();
+while (numerator.MoveNext())
 {
-    var currentProduct=result12[numerator.Current];
-    Console.WriteLine(currentProduct.Urun.ProductId.ToString()+" "+currentProduct.Urun.Name+" "+currentProduct.Urun.ListPrice.ToString("C2")+" "+currentProduct.Kategori);
+    var currentProduct = result12[numerator.Current];
+    Console.WriteLine(currentProduct.Urun.ProductId.ToString() + " " + currentProduct.Urun.Name + " " + currentProduct.Urun.ListPrice.ToString("C2") + " " + currentProduct.Kategori);
 }
 ```
 
@@ -313,11 +319,11 @@ Sorgu 9: Ürünler içerisinde kaç farklı liste fiyatı olduğunu bulup bunlar
 Eminimki Sql bilen herkes bu iş için distinct operatörünün kullanılması gerektiğini söyleyecektir. Aynı operatör LINQ içerisinde yer almaktadır. Örneğin, ürünlerin tutulduğu koleksiyon içerisindeki liste fiyatlarını tekrarsız olarak elde etmek istediğimizi düşünecek olursak aşağıdaki kod parçasından faydalanabiliriz.
 
 ```csharp
-var result13=(from prd in products
-                        orderby prd.ListPrice
-                            select prd.ListPrice).Distinct();
+var result13 = (from prd in products
+                orderby prd.ListPrice
+                select prd.ListPrice).Distinct();
 
-foreach(var result in result13)
+foreach (var result in result13)
     Console.WriteLine(result.ToString());
 ```
 
@@ -330,11 +336,11 @@ Sorgu 10: Ürünleri önce adlarına göre küçükten büyüğe sonrada liste f
 Tipik olarak bahsettiğimiz, birden fazla alan üzerinde Order By işlemini uygulamaktan başka bir şey değildir. Bunu gerçekleştirmek için, LINQ ifadelerinde orderby operatöründen faydalanabiliriz. Aşağıdaki kod parçası bu işlemi gerçekleştirmektedir.
 
 ```csharp
-var result17=from prd in products
-                        orderby prd.Name,prd.ListPrice descending
-                            select prd;
+var result17 = from prd in products
+               orderby prd.Name, prd.ListPrice descending
+               select prd;
 
-foreach(var result in result17)
+foreach (var result in result17)
     Console.WriteLine(result.ToString());
 ```
 
@@ -347,11 +353,11 @@ Sorgu 11: Ürünlerin isimlerini karakter uzunluklarına göre tersten sıralaya
 Bu oldukça enteresan olacak. products koleksiyonu içerisindeki her bir Product tipinin Name alanlarını ele alacağız. Bunların karakter uzunluklarına göre tersten sıralatacağız. İşte bu eğlenceli sorgunun LINQ karşılığı.
 
 ```csharp
-var result18=from prd in products
-                        orderby prd.Name.Length descending
-                            select new{UrunAdi=prd.Name,ListeFiyati=prd.ListPrice};
+var result18 = from prd in products
+               orderby prd.Name.Length descending
+               select new { UrunAdi = prd.Name, ListeFiyati = prd.ListPrice };
 
-foreach(var result in result18)
+foreach (var result in result18)
     Console.WriteLine(result.UrunAdi);
 ```
 

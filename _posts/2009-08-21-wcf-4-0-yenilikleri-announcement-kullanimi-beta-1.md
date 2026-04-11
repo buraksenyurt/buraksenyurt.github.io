@@ -55,8 +55,8 @@ namespace ClientV2
             AnnouncementService aService = new AnnouncementService();
 
             // Servis online olduğunda devreye giren olay metodu
-            aService.OnlineAnnouncementReceived += delegate(object sender, AnnouncementEventArgs e)
-            {    
+            aService.OnlineAnnouncementReceived += delegate (object sender, AnnouncementEventArgs e)
+            {
                 // Online olan servisin etkinleştirilmiş Endpoint noktalarının Address bilgileri ve o anki mesajın numarası yazdırılır. 
                 Console.WriteLine("\nMessage No : {0}\n\t{1} adresli EndPoint ONLINE oldu",
                     e.AnnouncementMessage.MessageSequence.MessageNumber,
@@ -66,12 +66,12 @@ namespace ClientV2
                 Console.WriteLine("Contracts ");
                 foreach (var contractType in e.AnnouncementMessage.EndpointDiscoveryMetadata.ContractTypeNames)
                 {
-                    Console.WriteLine("\t{0}",contractType.Name);
+                    Console.WriteLine("\t{0}", contractType.Name);
                 }
             };
 
             // Servis offline olduğunda devreye giren olay metodu
-            aService.OfflineAnnouncementReceived += delegate(object sender, AnnouncementEventArgs e)
+            aService.OfflineAnnouncementReceived += delegate (object sender, AnnouncementEventArgs e)
             {
                 // Kapatılan servis üzerindeki Endpoint bilgileri yazdırılır.
                 Console.WriteLine("\nMessage No : {0}\n\t{1} adresli EndPoint OFFLINE oldu",

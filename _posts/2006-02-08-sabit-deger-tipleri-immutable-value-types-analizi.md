@@ -31,21 +31,39 @@ struct Zaman
     private int _Saat;
     private int _Dakika;
     private int _Saniye;
-    
+
     public int Saat
     {
-        get { return _Saat; }
-        set { _Saat = value; }
+        get
+        {
+            return _Saat;
+        }
+        set
+        {
+            _Saat = value;
+        }
     }
     public int Dakika
     {
-        get { return _Dakika; }
-        set { _Dakika = value; }
+        get
+        {
+            return _Dakika;
+        }
+        set
+        {
+            _Dakika = value;
+        }
     }
     public int Saniye
     {
-        get { return _Saniye; }
-        set { _Saniye = value; }
+        get
+        {
+            return _Saniye;
+        }
+        set
+        {
+            _Saniye = value;
+        }
     }
 }
 ```
@@ -81,15 +99,24 @@ struct Zaman
 
     public int Saat
     {
-        get { return _Saat; }
-    } 
+        get
+        {
+            return _Saat;
+        }
+    }
     public int Dakika
     {
-        get { return _Dakika; }
+        get
+        {
+            return _Dakika;
+        }
     }
     public int Saniye
     {
-        get { return _Saniye; }
+        get
+        {
+            return _Saniye;
+        }
     }
     public Zaman(int sa, int da, int sn)
     {
@@ -134,7 +161,10 @@ struct SporcuListesi
     }
     public IEnumerator ZamanListesi
     {
-        get { return zamanlar.GetEnumerator(); }
+        get
+        {
+            return zamanlar.GetEnumerator();
+        }
     }
 }
 ```
@@ -154,7 +184,7 @@ static void Listele(SporcuListesi liste)
 }
 
 static void Main(string[] args)
-{ 
+{
     Zaman zmn1 = new Zaman(3, 42, 45);
     Zaman zmn2 = new Zaman(3, 43, 31);
     Zaman zmn3 = new Zaman(3, 56, 1);

@@ -25,13 +25,25 @@ namespace AdventureLib
     public class Urun
     {
         [DataMember]
-        public int Id { get; set; }
-    
+        public int Id
+        {
+            get;
+            set;
+        }
+
         [DataMember]
-        public string Ad { get; set; }
-    
+        public string Ad
+        {
+            get;
+            set;
+        }
+
         [DataMember]
-        public double Fiyat { get; set; }
+        public double Fiyat
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -46,7 +58,7 @@ using System.ServiceModel;
 
 namespace AdventureLib
 {
-    [ServiceContract(Name="Adventure Product Service", Namespace="http://www.bsenyurt.com/AdventureProductService")]
+    [ServiceContract(Name = "Adventure Product Service", Namespace = "http://www.bsenyurt.com/AdventureProductService")]
     public interface IUrunYonetim
     {
         [OperationContract]
@@ -63,7 +75,7 @@ using System;
 namespace AdventureLib
 {
     public class UrunYonetim
-                :IUrunYonetim
+                : IUrunYonetim
     {
         #region IUrunYonetim Members
 
@@ -163,40 +175,64 @@ namespace Sunucu
 ```csharp
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-[System.Runtime.Serialization.DataContractAttribute(Name="Urun",   Namespace="http://schemas.datacontract.org/2004/07/AdventureLib")]
-public partial class Urun 
+[System.Runtime.Serialization.DataContractAttribute(Name = "Urun", Namespace = "http://schemas.datacontract.org/2004/07/AdventureLib")]
+public partial class Urun
     : object, System.Runtime.Serialization.IExtensibleDataObject
 {
     private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
     private string AdField;
     private double FiyatField;
-    private int IdField; 
+    private int IdField;
 
     public System.Runtime.Serialization.ExtensionDataObject ExtensionData
     {
-        get{return this.extensionDataField;}
-        set{this.extensionDataField = value;}
+        get
+        {
+            return this.extensionDataField;
+        }
+        set
+        {
+            this.extensionDataField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public string Ad
     {
-        get{return this.AdField;}
-        set{this.AdField = value;}
+        get
+        {
+            return this.AdField;
+        }
+        set
+        {
+            this.AdField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public double Fiyat
     {
-        get{return this.FiyatField;}
-        set{this.FiyatField = value;}
+        get
+        {
+            return this.FiyatField;
+        }
+        set
+        {
+            this.FiyatField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public int Id
     {
-        get{return this.IdField;}
-        set{this.IdField = value;}
+        get
+        {
+            return this.IdField;
+        }
+        set
+        {
+            this.IdField = value;
+        }
     }
 }
 ```
@@ -208,8 +244,8 @@ Dikkat edileceği üzere servis tarafında tanımlı veri sözleşmesi içeriği
 ```csharp
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-[System.Runtime.Serialization.DataContractAttribute(Name="Urun", Namespace="http://schemas.datacontract.org/2004/07/AdventureLib")]
-public partial class Urun 
+[System.Runtime.Serialization.DataContractAttribute(Name = "Urun", Namespace = "http://schemas.datacontract.org/2004/07/AdventureLib")]
+public partial class Urun
      : object, System.Runtime.Serialization.IExtensibleDataObject
 {
     private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -220,36 +256,66 @@ public partial class Urun
 
     public System.Runtime.Serialization.ExtensionDataObject ExtensionData
     {
-        get{return this.extensionDataField;}
-        set{this.extensionDataField = value;}
+        get
+        {
+            return this.extensionDataField;
+        }
+        set
+        {
+            this.extensionDataField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public string Ad
-    {        
-        get{return this.AdField;}
-        set{this.AdField = value;}
+    {
+        get
+        {
+            return this.AdField;
+        }
+        set
+        {
+            this.AdField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public double Fiyat
     {
-        get{return this.FiyatField;}
-        set{this.FiyatField = value;}
+        get
+        {
+            return this.FiyatField;
+        }
+        set
+        {
+            this.FiyatField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public int Id
     {
-        get{return this.IdField;}
-        set{this.IdField = value;}
+        get
+        {
+            return this.IdField;
+        }
+        set
+        {
+            this.IdField = value;
+        }
     }
 
     [System.Runtime.Serialization.DataMemberAttribute()]
     public int StokMiktari
     {
-        get{return this.StokMiktariField;}
-        set{this.StokMiktariField = value;}
+        get
+        {
+            return this.StokMiktariField;
+        }
+        set
+        {
+            this.StokMiktariField = value;
+        }
     }
 }
 ```
@@ -270,13 +336,13 @@ namespace Istemci
             Console.ReadLine();
             AdventureProductServiceClient client = new AdventureProductServiceClient("ProductServiceTcpEndPoint");
             Urun mouse = new Urun()
-                                {
-                                    Id=10,
-                                    Ad="Microsoft Optical Mouse",
-                                    Fiyat=8.45,
-                                    StokMiktari=190
-                                };
-            client.UrunEkle(mouse); 
+            {
+                Id = 10,
+                Ad = "Microsoft Optical Mouse",
+                Fiyat = 8.45,
+                StokMiktari = 190
+            };
+            client.UrunEkle(mouse);
         }
     }
 }
@@ -318,13 +384,25 @@ Görüldüğü gibi WCF çalışma zamanı servis tarafında yine olayı sessiz 
 public class Urun
 {
     [DataMember]
-    public int Id { get; set; }
-    
+    public int Id
+    {
+        get;
+        set;
+    }
+
     [DataMember]
-    public string Ad { get; set; }
-    
-    [DataMember(IsRequired=true)]
-    public double Fiyat { get; set; }
+    public string Ad
+    {
+        get;
+        set;
+    }
+
+    [DataMember(IsRequired = true)]
+    public double Fiyat
+    {
+        get;
+        set;
+    }
 }
 ```
 
@@ -345,7 +423,7 @@ using System.ServiceModel;
 
 namespace AdventureLib
 {
-    [ServiceContract(Name="Adventure Product Service",Namespace="http://www.bsenyurt.com/AdventureProductService")]
+    [ServiceContract(Name = "Adventure Product Service", Namespace = "http://www.bsenyurt.com/AdventureProductService")]
     public interface IUrunYonetim
     {
         [OperationContract]
@@ -365,7 +443,7 @@ using System;
 namespace AdventureLib
 {
     public class UrunYonetim
-        :IUrunYonetim
+        : IUrunYonetim
     {
         #region IUrunYonetim Members
 
@@ -402,12 +480,12 @@ namespace Istemci
             Console.ReadLine();
             AdventureProductServiceClient client = new AdventureProductServiceClient("ProductServiceTcpEndPoint");
             Urun mouse = new Urun()
-                                {
-                                    Id=10,
-                                    Ad="Microsoft Optical Mouse",
-                                    Fiyat=8.45,
-                                    StokMiktari=190
-                                };
+            {
+                Id = 10,
+                Ad = "Microsoft Optical Mouse",
+                Fiyat = 8.45,
+                StokMiktari = 190
+            };
             Urun donenUrun = client.UrunGuncelle(mouse);
             string urunBilgisi = String.Format("{0} {1} {2} {3}", donenUrun.Id.ToString(), donenUrun.Ad, donenUrun.Fiyat.ToString("C2"), donenUrun.StokMiktari.ToString());
             Console.WriteLine(urunBilgisi);
@@ -434,23 +512,41 @@ namespace AdventureLib
 {
     [DataContract]
     public class Urun
-        :IExtensibleDataObject
+        : IExtensibleDataObject
     {
         [DataMember]
-        public int Id { get; set; }
+        public int Id
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Ad { get; set; }
-        [DataMember(IsRequired=true)]
-        public double Fiyat { get; set; }
+        public string Ad
+        {
+            get;
+            set;
+        }
+        [DataMember(IsRequired = true)]
+        public double Fiyat
+        {
+            get;
+            set;
+        }
 
         private ExtensionDataObject extensionData;
 
         #region IExtensibleDataObject Members
-    
+
         public ExtensionDataObject ExtensionData
         {
-            get{return extensionData;}
-            set{extensionData = value;}
+            get
+            {
+                return extensionData;
+            }
+            set
+            {
+                extensionData = value;
+            }
         }
 
         #endregion

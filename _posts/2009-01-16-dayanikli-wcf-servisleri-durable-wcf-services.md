@@ -56,8 +56,8 @@ using System.ServiceModel;
 namespace ServiceLib
 {
     [ServiceContract(
-        Name="ServiceCommon"
-        ,Namespace="http://www.bsenyurt.com/CommonService")]
+        Name = "ServiceCommon"
+        , Namespace = "http://www.bsenyurt.com/CommonService")]
     interface ICommonService
     {
         [OperationContract]
@@ -65,7 +65,7 @@ namespace ServiceLib
 
         [OperationContract]
         void IncreaseValue(int value);
-    
+
         [OperationContract]
         Guid GetInstanceId();
 
@@ -88,16 +88,16 @@ namespace ServiceLib
     [Serializable]
     [DurableService]
     class CommonService
-        :ICommonService
+        : ICommonService
     {
         int commonValue;
 
         #region ICommonService Members
 
-        [DurableOperation(CanCreateInstance=true)]
+        [DurableOperation(CanCreateInstance = true)]
         public void Start()
         {
-            commonValue = 1; 
+            commonValue = 1;
         }
 
         [DurableOperation()]
@@ -112,9 +112,9 @@ namespace ServiceLib
             return System.ServiceModel.Dispatcher.DurableOperationContext.InstanceId;
         }
 
-        [DurableOperation(CompletesInstance=true)]
+        [DurableOperation(CompletesInstance = true)]
         public void Stop()
-        { 
+        {
         }
 
         #endregion
@@ -249,8 +249,8 @@ namespace ClientApp
             client.Start();
             Console.WriteLine("Service başlatıldı");
             client.IncreaseValue(10);
-            Guid instanceId=client.GetInstanceId();
-            Console.WriteLine("Instance değeri {0}",instanceId.ToString());
+            Guid instanceId = client.GetInstanceId();
+            Console.WriteLine("Instance değeri {0}", instanceId.ToString());
             client.Stop();
             Console.WriteLine("Uygulamadan çıkmak için bir tuşa basınız");
             Console.ReadLine();

@@ -20,23 +20,23 @@ namespace UsingGenericDelegates
 {
     #region Temsilci tipleri tanımlanır
 
-    public delegate float TemsilciFloat(float a,float b);
-     public delegate int TemsilciInt(int a,int b);
+    public delegate float TemsilciFloat(float a, float b);
+    public delegate int TemsilciInt(int a, int b);
 
     #endregion
 
     public class TemelAritmetik
     {
-        public TemelAritmetik() {}
-    
-        public float Toplam(float x,float y)
+        public TemelAritmetik() { }
+
+        public float Toplam(float x, float y)
         {
-            return x+y;
+            return x + y;
         }
 
-        public int Toplam(int x,int y)
+        public int Toplam(int x, int y)
         {
-            return x+y;
+            return x + y;
         }
     }
 }
@@ -54,18 +54,18 @@ namespace UsingGenericDelegates
         [STAThread]
         static void Main(string[] args)
         {
-            TemelAritmetik ta=new TemelAritmetik();
-        
+            TemelAritmetik ta = new TemelAritmetik();
+
             #region Temsilciler Oluşturulur
-        
-            TemsilciInt tint=new TemsilciInt(ta.Toplam);
-            TemsilciFloat tFloat=new TemsilciFloat(ta.Toplam);
+
+            TemsilciInt tint = new TemsilciInt(ta.Toplam);
+            TemsilciFloat tFloat = new TemsilciFloat(ta.Toplam);
 
             #endregion
 
-            int toplamInt=tint(1,2);
-            float toplamFloat=tFloat(1.2f,1.2f);
-    
+            int toplamInt = tint(1, 2);
+            float toplamFloat = tFloat(1.2f, 1.2f);
+
             Console.WriteLine(toplamInt.ToString());
             Console.WriteLine(toplamFloat.ToString());
 
@@ -105,7 +105,7 @@ Bu kod parçasında tX örneğini oluştururken, çalışma zamanında double ti
 Böylece tek bir temsilci nesnesini kullanarak çalışma zamanında kendi belirlediğimiz tipleri kullanan metodları işaret edebiliriz. Generic temsilcileri kullanarak, işaret edecekleri metodların dönüş tiplerinin çalışma zamanında ne olacağını da belirleyebiliriz. Makalemizin başındaki örneği dikkate aldığımızda Toplam metodunun her iki versiyonununda farklı tipten geri dönüş değerlerine sahip olduğunu görmekteyiz. Buna göre, generic temsilci tipimizi aşağıdaki gibi tanımlayabiliriz. Bu sefer, her metod için ayrı birer temsilci tipi tanımlamaktansa, tek bir generic temsilci tipi tanımı işimizi görecektir.
 
 ```csharp
-public delegate R Temsilci<T,R>(T deger1,T deger2);
+public delegate R Temsilci<T, R>(T deger1, T deger2);
 ```
 
 Burada R harfi ile temsilcimizin çalışma zamanında işaret edeceği metodun dönüş tipini belirtmiş oluruz. T harfi ilede, metodun alacağı parametrelerin tipini belirliyoruz. Bu değişiklikeri göz önüne aldığımızda, makalemizin başındaki örneğimizi aşağıdaki haliyle güncelleyebiliriz.
@@ -123,17 +123,17 @@ namespace UsingGenericDelegates
         [STAThread]
         static void Main(string[] args)
         {
-            TemelAritmetik ta=new TemelAritmetik();
+            TemelAritmetik ta = new TemelAritmetik();
 
             #region temsilcimize ait nesne örnekleri oluşturuluyor
-    
-            Temsilci<float, float> t1 = new Temsilci<float, float>(ta.Toplam); 
-            Temsilci<int,int> t2=new Temsilci<int,int>(ta.Toplam);
+
+            Temsilci<float, float> t1 = new Temsilci<float, float>(ta.Toplam);
+            Temsilci<int, int> t2 = new Temsilci<int, int>(ta.Toplam);
 
             #endregion
-    
+
             Console.WriteLine(t1(1.2f, 1.3f));
-            Console.WriteLine(t2(1,2));
+            Console.WriteLine(t2(1, 2));
         }
     }
 }
@@ -164,7 +164,7 @@ Console.WriteLine(t3("Burak", "Selim"));
 Burada önemli olan nokta Toplam metodunun bu versiyonunun string tipinde, (bir başka deyişle referans tipinde) parametreler alıyor oluşudur. Oysaki biz temsilcimizin sadece değer türünde (value types) parametreler alan metodlar işaret etmesini de isteyebiliriz. İşte böyle bir sorunu, where anahtar sözcüğü ile parametre tiplerine yönelik (veya dönüş tipine yönelik) kısıtlamalar girerek aşabiliriz. Dolayısıyla Temsilci isimli delegate tipimizi aşağıdaki gibi tanımlamamız yeterli olacaktır.
 
 ```csharp
-public delegate R Temsilci<T, R>(T deger1, T deger2) where T:struct where R:struct;
+public delegate R Temsilci<T, R>(T deger1, T deger2) where T : struct where R : struct;
 ```
 
 Burada where anahtar sözcüklerini kullanarak T ve R türlerinin mutlaka struct tipinde olmaları gerektiğini, bir başka deyişle değer türü olmaları gerektiğini belirtmiş oluyoruz. Dolayısıyla uygulamamızı bu haliyle derlemek istediğimizde aşağıdaki şekilde görüldüğü gibi, derleme zamanı hata mesajlarını alırız.

@@ -44,14 +44,20 @@ public string SeciliGun
 Bundan bir önceki makalemizde kendi Web Part bileşenlerimizi nasıl geliştirebileceğimiz incelemiştik. Geliştirdiğimiz Web Part bileşenlerinin bazı özelliklerinin kişiselleştirilebilmesi (personalizable) ve çalışma zamanında istemcinin bilgisayarında yer alan tarayıcı pencersindeki bir PropertyGridEditorPart içerisinde açılıp değiştirilebilmesi için aşağıdaki niteliklerden faydalandık.
 
 ```csharp
-[WebBrowsable(true)] 
+[WebBrowsable(true)]
 [WebDescription("Verilen Url adresine göre Rss bilgisini okur")]
 [Personalizable(PersonalizationScope.User)]
 [WebDisplayName("Rss Bilgisi Alınacak Url")]
 public string Url
 {
-    get { return _Url; }
-    set { _Url = value; }
+    get
+    {
+        return _Url;
+    }
+    set
+    {
+        _Url = value;
+    }
 }
 ```
 
@@ -67,13 +73,13 @@ Yakın zamanda,.Net Framework 3.0 ile gelen ve Microsoft tabanlı dağıtık mim
 
 ```csharp
 [ServiceContract]
-    public interface IMatematikServis
-    {
-        [OperationContract]
-        double Toplam(double x, double y);
+public interface IMatematikServis
+{
+    [OperationContract]
+    double Toplam(double x, double y);
 
-        void DahiliMetod();
-    }
+    void DahiliMetod();
+}
 ```
 
 ## Web Servislerinde
@@ -120,23 +126,35 @@ TabloAttribute.cs;
 
 ```csharp
 // TabloAttribute isimli niteliğimiz sadece sınıf veya yapılara uygulanabilecektir.
-[AttributeUsage(AttributeTargets.Class|AttributeTargets.Struct)]
-class TabloAttribute:Attribute
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
+class TabloAttribute : Attribute
 {
     private string _tabloAdi;
-    private string _schemaAdi; 
-  
+    private string _schemaAdi;
+
     public string TabloAdi
     {
-        get { return _tabloAdi; }
-        set { _tabloAdi = value; }
+        get
+        {
+            return _tabloAdi;
+        }
+        set
+        {
+            _tabloAdi = value;
+        }
     }
     public string SchemaAdi
     {
-        get { return _schemaAdi; }
-        set { _schemaAdi = value; }
-    } 
-  
+        get
+        {
+            return _schemaAdi;
+        }
+        set
+        {
+            _schemaAdi = value;
+        }
+    }
+
     public TabloAttribute(string tablonunAdi, string schemaninAdi)
     {
         TabloAdi = tablonunAdi;
@@ -147,8 +165,8 @@ class TabloAttribute:Attribute
     {
     }
     public TabloAttribute()
-    {    
-    } 
+    {
+    }
 }
 ```
 
@@ -156,28 +174,46 @@ AlanAttribute;
 
 ```csharp
 [AttributeUsage(AttributeTargets.Property)]
-class AlanAttribute:Attribute
+class AlanAttribute : Attribute
 {
     private string _alanAdi;
     private bool _identity;
-    private bool _nullIcerebilir; 
+    private bool _nullIcerebilir;
 
     public bool NullIcerebilir
     {
-        get { return _nullIcerebilir; }
-        set { _nullIcerebilir = value; }
+        get
+        {
+            return _nullIcerebilir;
+        }
+        set
+        {
+            _nullIcerebilir = value;
+        }
     }
 
     public string AlanAdi
     {
-        get { return _alanAdi; }
-        set { _alanAdi = value; }
+        get
+        {
+            return _alanAdi;
+        }
+        set
+        {
+            _alanAdi = value;
+        }
     }
     public bool Identity
     {
-        get { return _identity; }
-        set { _identity = value; }
-    } 
+        get
+        {
+            return _identity;
+        }
+        set
+        {
+            _identity = value;
+        }
+    }
 
     public AlanAttribute(string alaninAdi, bool identityMi, bool nullIcerirmi)
     {
@@ -194,8 +230,8 @@ class AlanAttribute:Attribute
     {
     }
     public AlanAttribute()
-    {    
-    } 
+    {
+    }
 }
 ```
 
@@ -225,47 +261,71 @@ Ancak dikkat ederseniz yazmış olduğumuz nitelik sınıflarımıza AttributeUs
 Şimdi bu nitelikleri UrunEntitiy sınıfı içerisinde kullanmaya çalışalım. İlk olarak sınıfımızı aşağıdaki gibi geliştirelim.
 
 ```csharp
-[Tablo(SchemaAdi="Production",TabloAdi="Product")]
+[Tablo(SchemaAdi = "Production", TabloAdi = "Product")]
 class UrunEntity
 {
     private int _urunId;
     private decimal _fiyat;
     private string _urunAdi;
-    private DateTime _sonSatisTarihi; 
+    private DateTime _sonSatisTarihi;
 
     [Alan(AlanAdi = "ProductID", Identity = true, NullIcerebilir = false)]
     public int UrunId
     {
-        get { return _urunId; }
-        set { _urunId = value; }
+        get
+        {
+            return _urunId;
+        }
+        set
+        {
+            _urunId = value;
+        }
     }
 
     [Alan("Name", false, false)]
     public string UrunAdi
     {
-        get { return _urunAdi; }
-        set { _urunAdi = value; }
+        get
+        {
+            return _urunAdi;
+        }
+        set
+        {
+            _urunAdi = value;
+        }
     }
     [Alan("ListPrice", Identity = false, NullIcerebilir = false)]
     public decimal Fiyat
     {
-        get { return _fiyat; }
-        set { _fiyat = value; }
+        get
+        {
+            return _fiyat;
+        }
+        set
+        {
+            _fiyat = value;
+        }
     }
 
     [Alan("SellStartDate", false, true)]
     public DateTime SonSatisTarihi
     {
-        get { return _sonSatisTarihi; }
-        set { _sonSatisTarihi = value; }
-    } 
+        get
+        {
+            return _sonSatisTarihi;
+        }
+        set
+        {
+            _sonSatisTarihi = value;
+        }
+    }
 
     public UrunEntity(int idsi, string adi, decimal fiyati)
     {
         UrunId = idsi;
         UrunAdi = adi;
         Fiyat = fiyati;
-    } 
+    }
     public UrunEntity()
     {
     }
@@ -285,8 +345,8 @@ public int Insert()
 {
     Type tip = this.GetType();
     TabloAttribute tblAtr = ((TabloAttribute[])tip.GetCustomAttributes(typeof(TabloAttribute), false))[0];
-    string tabloAdi=tblAtr.TabloAdi;
-    string schemaAdi =tblAtr.SchemaAdi;
+    string tabloAdi = tblAtr.TabloAdi;
+    string schemaAdi = tblAtr.SchemaAdi;
     StringBuilder insertBuilder = new StringBuilder();
     insertBuilder.Append("Insert into ");
     insertBuilder.Append(schemaAdi);
@@ -297,7 +357,7 @@ public int Insert()
     // Insert sorgusundaki alan adları çekiliyor.
     foreach (PropertyInfo prp in tip.GetProperties())
     {
-        AlanAttribute atr=((AlanAttribute[])prp.GetCustomAttributes(typeof(AlanAttribute), false))[0];
+        AlanAttribute atr = ((AlanAttribute[])prp.GetCustomAttributes(typeof(AlanAttribute), false))[0];
         if (!atr.Identity)
         {
             string alanAdi = atr.AlanAdi;
@@ -306,19 +366,19 @@ public int Insert()
         }
     }
     // Son eklenen virgülü kaldırmak için.
-    insertBuilder.Remove(insertBuilder.Length-1, 1);
+    insertBuilder.Remove(insertBuilder.Length - 1, 1);
     insertBuilder.Append(") Values (");
-        
+
     // insert sorgusundaki değerleri çekiliyor.
     foreach (PropertyInfo prp in tip.GetProperties())
     {
-        AlanAttribute atr=((AlanAttribute[])prp.GetCustomAttributes(typeof(AlanAttribute), false))[0];
+        AlanAttribute atr = ((AlanAttribute[])prp.GetCustomAttributes(typeof(AlanAttribute), false))[0];
         if (!atr.Identity)
         {
             object alanDegeri = prp.GetValue(this, null);
             if ((prp.PropertyType.Name == "String")
                 || (prp.PropertyType.Name == "DateTime"))
-                    insertBuilder.Append("'" + prp.GetValue(this, null).ToString() + "',");
+                insertBuilder.Append("'" + prp.GetValue(this, null).ToString() + "',");
             else
                 insertBuilder.Append(prp.GetValue(this, null).ToString() + ",");
         }
@@ -345,7 +405,7 @@ TabloAttribute tblAtr = ((TabloAttribute[])tip.GetCustomAttributes(typeof(TabloA
 Burada kullanılan GetCustomAttributes metodu tipe aittir. Sınıf içerisindeki üyelere uygulanan nitelikleri elde etmek içinde aynı yol kullanılır. Nitekim, nitelik (attribute) uygulanabilen tüm üyelerin GetCustomAttributes metodu bulunmaktadır. Söz gelimi, UrunEntity sınıfındaki özelliklere (properties) uygulanan nitelikleri çalışma zamanında elde edebilmek için GetProperties metodu ile gezilen PropertyInfo referanslarına GetCustomAttributes metodu aşağıdaki gibi uygulanmıştır.
 
 ```csharp
-AlanAttribute atr=((AlanAttribute[])prp.GetCustomAttributes(typeof(AlanAttribute), false))[0];
+AlanAttribute atr = ((AlanAttribute[])prp.GetCustomAttributes(typeof(AlanAttribute), false))[0];
 ```
 
 Bu şekilde nitelik referansları elde edildikten sonra söz konusu niteliğin üyelerinin değerlerine bakılabilir.

@@ -56,16 +56,16 @@ private void btnExecute_Click(object sender, EventArgs e)
 {
     try
     {
-        SqlConnection con = new SqlConnection("data source=MANCHESTER;database=AdventureWorks;integrated security=SSPI;Min Pool Size=10;Max Pool Size=15"); 
+        SqlConnection con = new SqlConnection("data source=MANCHESTER;database=AdventureWorks;integrated security=SSPI;Min Pool Size=10;Max Pool Size=15");
         SqlCommand cmd = new SqlCommand("SELECT Count(*) FROM Person.Contat", con);
         con.Open();
-        int kontakSayisi=Convert.ToInt32(cmd.ExecuteScalar());
+        int kontakSayisi = Convert.ToInt32(cmd.ExecuteScalar());
         con.Close();
-        }
-        catch(Exception err)
-        {
-            lstExceptions.Items.Add(err.ToString());
-        }
+    }
+    catch (Exception err)
+    {
+        lstExceptions.Items.Add(err.ToString());
+    }
 }
 ```
 
@@ -133,7 +133,7 @@ namespace Pooling_3
             }
             Console.ReadLine();
         }
-    
+
         private static void KontakSayisiniBul()
         {
             using (SqlConnection con = new SqlConnection("data source=MANCHESTER;database=AdventureWorks;integrated security=SSPI;Min Pool Size=5;Max Pool Size=15"))

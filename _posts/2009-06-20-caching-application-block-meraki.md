@@ -41,11 +41,23 @@ namespace ProductServices
     public class Product
     {
         [DataMember]
-        public int ProductId { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public decimal ListPrice { get; set; }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -83,20 +95,20 @@ using System.Xml.Linq;
 
 namespace ProductServices
 {
-    public class PhotoService 
+    public class PhotoService
         : IPhotoService
     {
         public List<Product> GetProducts()
-        {            
+        {
             XDocument doc = XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
             List<Product> products = (from p in doc.Element("Products").Elements("Product")
-                          select new Product
-                          {
-                              ProductId=Convert.ToInt32(p.Element("Id").Value),
-                              Name=p.Element("Name").Value,
-                              ListPrice=Convert.ToDecimal(p.Element("ListPrice").Value)
-                          }).ToList<Product>();
+                                      select new Product
+                                      {
+                                          ProductId = Convert.ToInt32(p.Element("Id").Value),
+                                          Name = p.Element("Name").Value,
+                                          ListPrice = Convert.ToDecimal(p.Element("ListPrice").Value)
+                                      }).ToList<Product>();
 
             return products;
         }
@@ -105,11 +117,11 @@ namespace ProductServices
 
         public byte[] GetPhoto(int productId)
         {
-            XDocument doc=XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
+            XDocument doc = XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
             string imageFileName = (from p in doc.Element("Products").Elements("Product")
-                                   where p.Element("Id").Value == productId.ToString()
-                                   select p.Element("ImageFileName").Value).Single();
+                                    where p.Element("Id").Value == productId.ToString()
+                                    select p.Element("ImageFileName").Value).Single();
 
             string imagePath = Path.Combine(ConfigurationManager.AppSettings["ImagesPath"], imageFileName);
 
@@ -152,14 +164,14 @@ namespace ClientApp
 
         private void btnGetProductList_Click(object sender, EventArgs e)
         {
-            grdProducts.DataSource=proxy.GetProducts();
+            grdProducts.DataSource = proxy.GetProducts();
         }
 
         private void grdProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int productId = Convert.ToInt32(grdProducts[2, e.RowIndex].Value);
 
-            byte[] byteArray= proxy.GetPhoto(productId);
+            byte[] byteArray = proxy.GetPhoto(productId);
             using (MemoryStream stream = new MemoryStream(byteArray))
             {
                 pcbImage.Image = Image.FromStream(stream);
@@ -213,11 +225,11 @@ Tabiki özellikler penceresindende pek çok ayarlama yapılabilir. Söz gelimi P
 ```csharp
 public byte[] GetPhoto(int productId)
 {
-    XDocument doc=XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
+    XDocument doc = XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
     string imageFileName = (from p in doc.Element("Products").Elements("Product")
-                           where p.Element("Id").Value == productId.ToString()
-                           select p.Element("ImageFileName").Value).Single();
+                            where p.Element("Id").Value == productId.ToString()
+                            select p.Element("ImageFileName").Value).Single();
 
     string imagePath = Path.Combine(ConfigurationManager.AppSettings["ImagesPath"], imageFileName);
 

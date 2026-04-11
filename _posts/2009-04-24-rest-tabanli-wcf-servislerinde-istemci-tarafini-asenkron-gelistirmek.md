@@ -34,13 +34,13 @@ namespace NorthwindClient
         // İstemci talepleri için kullanacağımız sınıf HttpClient
         HttpClient client = null;
         // Servis adresi (sondaki / işaretini unutmadım bu sefer)
-        string serviceUri="http://localhost:1000/Service.svc/";
+        string serviceUri = "http://localhost:1000/Service.svc/";
 
         public Form1()
         {
             InitializeComponent();
             // HttpClient nesnemizi örnekliyoruz
-            client = new HttpClient();            
+            client = new HttpClient();
         }
 
         private void btnGetProductsAsync_Click(object sender, EventArgs e)
@@ -62,10 +62,10 @@ namespace NorthwindClient
                 // eğer HTTP 200 kodu döndüyse exception fırlatılmadan devam edilebilir
                 response.EnsureStatusIs(HttpStatusCode.OK);
                 // ItemInfoList tipi ReadAsXmlSerializable metodu ile çekilir
-                ItemInfoList products = response.Content.ReadAsXmlSerializable<ItemInfoList>();               
+                ItemInfoList products = response.Content.ReadAsXmlSerializable<ItemInfoList>();
 
                 grdProducts.DataSource = (from p in products.ItemInfo
-                                          select p.Item).ToList();                
+                                          select p.Item).ToList();
             }
         }
     }
@@ -102,13 +102,13 @@ namespace NorthwindClient
         // İstemci talepleri için kullanacağımız sınıf HttpClient
         HttpClient client = null;
         // Servis adresi (sondaki / işaretini unutmadım bu sefer)
-        string serviceUri="http://localhost:1000/Service.svc/";
+        string serviceUri = "http://localhost:1000/Service.svc/";
 
         public Form1()
         {
             InitializeComponent();
             // HttpClient nesnemizi örnekliyoruz
-            client = new HttpClient();            
+            client = new HttpClient();
         }
 
         private void btnGetProductsAsync_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace NorthwindClient
                 // eğer HTTP 200 kodu döndüyse exception fırlatılmadan devam edilebilir
                 response.EnsureStatusIs(HttpStatusCode.OK);
                 // ItemInfoList tipi ReadAsXmlSerializable metodu ile çekilir
-                ItemInfoList products = response.Content.ReadAsXmlSerializable<ItemInfoList>();               
+                ItemInfoList products = response.Content.ReadAsXmlSerializable<ItemInfoList>();
 
                 //grdProducts.DataSource = (from p in products.ItemInfo
                 //                         select p.Item).ToList();
@@ -162,12 +162,12 @@ Aynı modeli Rest bazlı WCF servis istemcilerinde de uygulayabiliriz. Nitekim H
 ```csharp
 private void btnGetProductsEvent_Click(object sender, EventArgs e)
 {
-      client.SendCompleted += new EventHandler<SendCompletedEventArgs>(client_SendCompleted);
+    client.SendCompleted += new EventHandler<SendCompletedEventArgs>(client_SendCompleted);
 }
 
 void client_SendCompleted(object sender, SendCompletedEventArgs e)
 {
-      throw new NotImplementedException();
+    throw new NotImplementedException();
 }
 ```
 
@@ -177,7 +177,8 @@ void client_SendCompleted(object sender, SendCompletedEventArgs e)
 private void btnGetProductsEvent_Click(object sender, EventArgs e)
 {
     client.TransportSettings.ConnectionTimeout = TimeSpan.FromSeconds(10);
-    client.SendCompleted+=(sndr,arg)=>{
+    client.SendCompleted += (sndr, arg) =>
+    {
         // İşlem iptal edilmediyse
         if (arg.Cancelled)
             MessageBox.Show("İşlem iptal edildi");
@@ -186,9 +187,9 @@ private void btnGetProductsEvent_Click(object sender, EventArgs e)
             MessageBox.Show(arg.Error.Message);
         else
         {
-            ItemInfoList products=arg.Response.Content.ReadAsXmlSerializable<ItemInfoList>();
+            ItemInfoList products = arg.Response.Content.ReadAsXmlSerializable<ItemInfoList>();
             grdProducts.DataSource = (from p in products.ItemInfo
-                                              select p.Item).ToList();
+                                      select p.Item).ToList();
         }
     };
     client.SendAsync(new HttpRequestMessage("GET", serviceUri));

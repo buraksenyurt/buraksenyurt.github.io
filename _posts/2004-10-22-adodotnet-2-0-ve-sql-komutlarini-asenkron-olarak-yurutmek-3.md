@@ -99,7 +99,7 @@ wh[2] = res3.AsyncWaitHandle;
 Console.WriteLine("Burada bir şeyler yapılır...");
 for (int i = 1; i < 100; i++)
 {
-    Console.Write(i.ToString()+" ");
+    Console.Write(i.ToString() + " ");
 }
 Console.WriteLine();
 
@@ -141,9 +141,9 @@ for (int i = 0; i < 2; i++)
     int iIndis = WaitHandle.WaitAny(wh);
     if (iIndis == 0)
     {
-        int result=cmd.EndExecuteNonQuery(res1);
+        int result = cmd.EndExecuteNonQuery(res1);
         con1.Close();
-        Console.WriteLine(iIndis.ToString()+" tamamlandı." +result.ToString());
+        Console.WriteLine(iIndis.ToString() + " tamamlandı." + result.ToString());
     }
     if (iIndis == 1)
     {

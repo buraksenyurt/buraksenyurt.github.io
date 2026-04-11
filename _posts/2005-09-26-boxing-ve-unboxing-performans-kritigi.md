@@ -26,9 +26,9 @@ namespace InvestigateOfBoxingUnBoxing
     {
         static void Main(string[] args)
         {
-            int deger=25;
-            object obj=deger; // Boxing
-            int sonuc=(int)obj; // Unboxing
+            int deger = 25;
+            object obj = deger; // Boxing
+            int sonuc = (int)obj; // Unboxing
         }
     }
 }
@@ -67,17 +67,17 @@ namespace InvestigateOfBoxingUnBoxing
 {
     class BoxUnBox
     {
-        public static void EkranaYaz(int yaricap,double pi)
+        public static void EkranaYaz(int yaricap, double pi)
         {
-            double alan=yaricap*yaricap*pi;
-            Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.",yaricap,alan);
+            double alan = yaricap * yaricap * pi;
+            Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.", yaricap, alan);
         }
     }
     class Class1
     {
         static void Main(string[] args)
         {
-            BoxUnBox.EkranaYaz(10,3.14);
+            BoxUnBox.EkranaYaz(10, 3.14);
         }
     }
 }
@@ -96,10 +96,10 @@ IL_0018: call void [mscorlib]System.Console::WriteLine(string, object, object)
 Gördüğünüz gibi değer türlerimiz boxing işlemine tabi tutulmuş ve WriteLine metoduna object tipinden geçirilmiştir. Halbuki biz kodumuzda basit olarak sonuçları ekrana yazdırmaya çalışıyoruz. Şu noktada bellek üzerinde, stack ve heap arasında bir veri değiştokuşu olacağını düşünmeyebiliriz. Ancak IL kodlarının da söylediği gibi box ve unbox komutları çağırılmıştır. Oysaki aynı kodu aşağıdaki stilde yazsaydık eğer;
 
 ```csharp
-public static void EkranaYaz(int yaricap,double pi)
+public static void EkranaYaz(int yaricap, double pi)
 {
-    double alan=yaricap*yaricap*pi;
-    Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.",yaricap.ToString(),alan.ToString());
+    double alan = yaricap * yaricap * pi;
+    Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.", yaricap.ToString(), alan.ToString());
 }
 ```
 
@@ -119,28 +119,28 @@ Gördüğünüz gibi herhangi bir box komutu çağırılmamıştır. İyi, her �
 static void Main(string[] args)
 {
     #region Boxing içeren kod kısmı
-    DateTime suAn=DateTime.Now;
-    for(int i=1;i<50000;i++)
+    DateTime suAn = DateTime.Now;
+    for (int i = 1; i < 50000; i++)
     {
-        double alan=i*i*3.14;
-        Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.",i,alan); // Boxing var...
+        double alan = i * i * 3.14;
+        Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.", i, alan); // Boxing var...
     }
-    TimeSpan tsBox=DateTime.Now-suAn;
+    TimeSpan tsBox = DateTime.Now - suAn;
     #endregion
 
     #region boxing içermeyen kod kısmı
-    suAn=DateTime.Now;
-    for(int i=1;i<50000;i++)
+    suAn = DateTime.Now;
+    for (int i = 1; i < 50000; i++)
     {
-        double alan=i*i*3.14;
-        Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.",i.ToString(),alan.ToString()); // Boxing yok...
+        double alan = i * i * 3.14;
+        Console.WriteLine("Yaricapi {0} olan dairenin alanı = {1} dır.", i.ToString(), alan.ToString()); // Boxing yok...
     }
-    TimeSpan tsNoBox=DateTime.Now-suAn;
+    TimeSpan tsNoBox = DateTime.Now - suAn;
     #endregion
 
     Console.WriteLine("------------");
-    Console.WriteLine("Boxing olduğunda..."+tsBox.TotalMilliseconds.ToString());
-    Console.WriteLine("Boxing olmadığında..."+tsNoBox.TotalMilliseconds.ToString());
+    Console.WriteLine("Boxing olduğunda..." + tsBox.TotalMilliseconds.ToString());
+    Console.WriteLine("Boxing olmadığında..." + tsNoBox.TotalMilliseconds.ToString());
 }
 ```
 
@@ -163,19 +163,19 @@ namespace InvestigateOfBoxingUnBoxing
         private int m_Fiyat;
         public int Fiyat
         {
-            get    
+            get
             {
                 return m_Fiyat;
             }
             set
             {
-                m_Fiyat=value;
+                m_Fiyat = value;
             }
         }
 
         public Urun(int fiyat)
         {
-            m_Fiyat=fiyat;
+            m_Fiyat = fiyat;
         }
     }
     class Class1
@@ -183,38 +183,38 @@ namespace InvestigateOfBoxingUnBoxing
         static void Main(string[] args)
         {
             #region ArrayList koleksiyonu kullanıldığında
-            ArrayList alUrun=new ArrayList();
-            DateTime dtSuan=DateTime.Now;
-            for(int i=1;i<500000;i++)
+            ArrayList alUrun = new ArrayList();
+            DateTime dtSuan = DateTime.Now;
+            for (int i = 1; i < 500000; i++)
             {
-                alUrun.Add(new Urun(i*1000)); // boxing olacaktır
+                alUrun.Add(new Urun(i * 1000)); // boxing olacaktır
             }
-            TimeSpan tsFark=DateTime.Now-dtSuan;
-            Console.WriteLine("ArrayList Kullanımı........."+tsFark.TotalMilliseconds.ToString());
+            TimeSpan tsFark = DateTime.Now - dtSuan;
+            Console.WriteLine("ArrayList Kullanımı........." + tsFark.TotalMilliseconds.ToString());
             #endregion
 
             #region object dizisi kullanıldığında
-            object[] objUrunler=new object[500000];
-            dtSuan=DateTime.Now;
-            for(int i=1;i<500000;i++)
+            object[] objUrunler = new object[500000];
+            dtSuan = DateTime.Now;
+            for (int i = 1; i < 500000; i++)
             {
-                objUrunler[i]=new Urun(i*1000); // boxing olacaktır
+                objUrunler[i] = new Urun(i * 1000); // boxing olacaktır
             }
-            tsFark=DateTime.Now-dtSuan;
-            Console.WriteLine("Object Dizisi Kullanımı........."+tsFark.TotalMilliseconds.ToString());
+            tsFark = DateTime.Now - dtSuan;
+            Console.WriteLine("Object Dizisi Kullanımı........." + tsFark.TotalMilliseconds.ToString());
             #endregion
 
             #region Struct tipinden bir dizi kullanıldığında
-            Urun[] urunList=new Urun[500000];
-            dtSuan=DateTime.Now;
-            for(int i=1;i<500000;i++)
+            Urun[] urunList = new Urun[500000];
+            dtSuan = DateTime.Now;
+            for (int i = 1; i < 500000; i++)
             {
-                urunList[i]=new Urun(i*1000); // değer türüne aktarma var. Yani boxing yok...
+                urunList[i] = new Urun(i * 1000); // değer türüne aktarma var. Yani boxing yok...
             }
-            tsFark=DateTime.Now-dtSuan;
-            Console.WriteLine("Struct Dizisi Kullanımı........."+tsFark.TotalMilliseconds.ToString());
+            tsFark = DateTime.Now - dtSuan;
+            Console.WriteLine("Struct Dizisi Kullanımı........." + tsFark.TotalMilliseconds.ToString());
             #endregion
-        
+
         }
     }
 }

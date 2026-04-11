@@ -65,7 +65,7 @@ namespace SyndicationFormatlama
         static void Main(string[] args)
         {
             // Bir Feed oluşturulur. Parametreler title, description ve Uri bilgileridir.
-            SyndicationFeed feed=new SyndicationFeed("Makaleler","Burak Senyurt .Net Makaleleri",new Uri("http://www.bsenyurt.com"));
+            SyndicationFeed feed = new SyndicationFeed("Makaleler", "Burak Senyurt .Net Makaleleri", new Uri("http://www.bsenyurt.com"));
             // Feed yazarı tanımlanır. Yazarlar SyndicationPerson tipi ile temsil edilebilirler.
             feed.Authors.Add(new SyndicationPerson("selim(at)buraksenyurt.com"));
             // Feed için bir kategori tanımalası yapılır. Bu kategori tanımlaması SyndicationCategory tipi ile temsil edilebilir.
@@ -85,23 +85,23 @@ namespace SyndicationFormatlama
                                     // Parametreler title,content,uri,id,lastUpdatedTime
                                     new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=241"),"1",new DateTime(2008,1,30))
                                     ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=240"),"2",new DateTime(2008,1,15))
-                                }; 
+                                };
 
             feed.Items = items; // oluşturulan öğelere ait koleksiyon Feed için set edilir.
 
             // Atom 1.0 notasyonunda formatlama için SyndicationFeed nesne örneğinin GetAtom10Formatter metodu ile Atom10FeedFormatter nesnesi örneklenir.
             Atom10FeedFormatter atom10Formatter = feed.GetAtom10Formatter();
-        
+
             // Rss 2.0 notasyonunda formatlama için SyndicationFeed nesne örneğinin GetRss20Formatter metodu ile Rss20FeedFormatter nesnesi örneklenir.
             Rss20FeedFormatter rss20Formatter = feed.GetRss20Formatter();
-        
+
             // Atom içeriğinin kaydedileceği Xml dosyası XmlWriter tipi ile oluşturulur
             XmlWriter atom10writer = XmlWriter.Create("MakalelerAtom.xml");
             // Formatter nesnesinin WriteTo metodu ile Atom 1.0 notasyonunda formatlanan veri içeriği XmlWriter nesnesinin işaret ettiği fiziki dosyaya yazılır.
             atom10Formatter.WriteTo(atom10writer);
             // XmlWriter nesnesi kapatılır
             atom10writer.Close();
-        
+
             // Atom 1.0 için yapılan formatlama işlemi Rss 2.0 için benzer şekilde yapılır.
             XmlWriter rss20writer = XmlWriter.Create("MakalelerRss.xml");
             rss20Formatter.WriteTo(rss20writer);
@@ -180,7 +180,7 @@ namespace RssAtomLibrary
         {
             // Öncelikle bir Feed oluşturulur
             SyndicationFeed feed = new SyndicationFeed();
-    
+
             // İçerik paylaşımı yapan yazarlar SyndicationPerson sınıfı yardımıyla tanımlanırlar ve Authors koleksiyonuna dahil edilirler.
             feed.Authors.Add(new SyndicationPerson("selim(at)buraksenyurt.com", "Burak Selim Senyurt", "http://www.bsenyurt.com"));
             feed.Authors.Add(new SyndicationPerson("kariim@bsenyurt.com", "Kariim Abdul Cabbar", "http://www.bsenyurt.com"));
@@ -193,8 +193,8 @@ namespace RssAtomLibrary
             feed.Description = new TextSyndicationContent(".Net ve C# ağırılıklı makaleler", TextSyndicationContentKind.Html);
             feed.Language = "Tr-Tr"; // İçerik dili belirtilir
             feed.LastUpdatedTime = DateTime.Now; // Son güncelleme tarihi belirtilir
-            feed.Title=new TextSyndicationContent(".Net ile ilgili Herşey"); // İçeriğin başlığı TextSyndicationContent sınıfı yardımıyla belirtilir.
-    
+            feed.Title = new TextSyndicationContent(".Net ile ilgili Herşey"); // İçeriğin başlığı TextSyndicationContent sınıfı yardımıyla belirtilir.
+
             // Ogeler eklenir
             List<SyndicationItem> items = new List<SyndicationItem>()
                     {
@@ -204,8 +204,8 @@ namespace RssAtomLibrary
                         ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=240"),"2",new DateTime(2008,1,15))
                     };
 
-               feed.Items = items;
-            return new Rss20FeedFormatter(feed);    
+            feed.Items = items;
+            return new Rss20FeedFormatter(feed);
         }
 
         #endregion
@@ -236,12 +236,12 @@ namespace Sunucu
             WebServiceHost host = new WebServiceHost(typeof(Paylasim), new Uri("http://localhost:65001/MakalePaylasimServisi"));
 
             host.Open();
-            
+
             Console.WriteLine("Servis durumu {0} ", host.State);
             Console.WriteLine("Host dinlemede...Çıkmak için bir tuşa basınız...");
             Console.ReadLine();
-            
-            host.Close(); 
+
+            host.Close();
         }
     }
 }
@@ -281,12 +281,12 @@ namespace Istemci
             Console.WriteLine(feed.Title.Text);
             foreach (SyndicationPerson yazar in feed.Authors)
             {
-                Console.WriteLine("\t{0} \t {1}",yazar.Name,yazar.Email);
+                Console.WriteLine("\t{0} \t {1}", yazar.Name, yazar.Email);
             }
 
             foreach (SyndicationItem item in feed.Items)
             {
-                Console.WriteLine(String.Format("{0} : {1} {2}",item.Id,item.Title.Text,item.Links[0].Uri));
+                Console.WriteLine(String.Format("{0} : {1} {2}", item.Id, item.Title.Text, item.Links[0].Uri));
             }
         }
     }
@@ -312,7 +312,7 @@ public interface IPaylasim
     Rss20FeedFormatter RssCiktisi();
 
     [OperationContract]
-    [WebGet(UriTemplate="IcerikOzeti?icerikTipi={icerikTipi}")]
+    [WebGet(UriTemplate = "IcerikOzeti?icerikTipi={icerikTipi}")]
     SyndicationFeedFormatter IcerikOzeti(string icerikTipi);
 }
 ```
@@ -331,9 +331,9 @@ public SyndicationFeedFormatter IcerikOzeti(string icerikTipi)
     feed.Categories.Add(new SyndicationCategory("C#"));
 
     feed.Description = new TextSyndicationContent(".Net ve C# ağırılıklı makaleler", TextSyndicationContentKind.Html);
-    feed.Language = "Tr-Tr"; 
-    feed.LastUpdatedTime = DateTime.Now; 
-    feed.Title = new TextSyndicationContent(".Net ile ilgili Herşey"); 
+    feed.Language = "Tr-Tr";
+    feed.LastUpdatedTime = DateTime.Now;
+    feed.Title = new TextSyndicationContent(".Net ile ilgili Herşey");
 
     List<SyndicationItem> items = new List<SyndicationItem>()
         {

@@ -27,75 +27,73 @@ Uygulamamızda, bir HashTable koleksiyonuna key-value çiftleri ekleyecek, belir
 ```csharp
 System.Collections.Hashtable htTeknikSozluk;
 
-/* HashTable koleksiyon nesnemizi tanımlıyoruz.*/ 
+/* HashTable koleksiyon nesnemizi tanımlıyoruz.*/
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    htTeknikSozluk=new System.Collections.Hashtable(); /* HashTable nesnemizi oluşturuyoruz.*/
-    stbDurum.Text=htTeknikSozluk.Count.ToString();
-/* HashTable'ımızdaki eleman sayısını Count özelliği ile öğreniyoruz.*/
-} 
+    htTeknikSozluk = new System.Collections.Hashtable();
+    /* HashTable nesnemizi oluşturuyoruz.*/
+    stbDurum.Text = htTeknikSozluk.Count.ToString();
+    /* HashTable'ımızdaki eleman sayısını Count özelliği ile öğreniyoruz.*/
+}
 
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-
     try
     {
-        htTeknikSozluk.Add(txtKey.Text,txtValue.Text);
+        htTeknikSozluk.Add(txtKey.Text, txtValue.Text);
         /* HashTable'ımıza key-value çifti ekleyebilmek için Add metodu kullanılıyor.*/
         lstAnahtar.Items.Add(txtKey.Text);
-        stbDurum.Text=htTeknikSozluk.Count.ToString();  
+        stbDurum.Text = htTeknikSozluk.Count.ToString();
     }
-    catch(System.ArgumentException) /* Eğer var olan bir key'i tekrar eklemeye çalışırsak bu durumda ArgumentException istisnası fırlatılacaktır. Bu durumda, belirtilen key-value çifti HashTable koleksiyonuna eklenmez. Bu durumu kullanıcıya bildiriyoruz.*/
+    catch (System.ArgumentException) /* Eğer var olan bir key'i tekrar eklemeye çalışırsak bu durumda ArgumentException istisnası fırlatılacaktır. Bu durumda, belirtilen key-value çifti HashTable koleksiyonuna eklenmez. Bu durumu kullanıcıya bildiriyoruz.*/
     {
-        stbDurum.Text=txtKey.Text+" Zaten HashTable Koleksiyonunda Mevcut!";
+        stbDurum.Text = txtKey.Text + " Zaten HashTable Koleksiyonunda Mevcut!";
     }
-} 
+}
 
 private void lstAnahtar_DoubleClick(object sender, System.EventArgs e)
 {
     string deger;
-    deger=htTeknikSozluk[lstAnahtar.SelectedItem.ToString()].ToString();
+    deger = htTeknikSozluk[lstAnahtar.SelectedItem.ToString()].ToString();
 
     /* HashTable'daki bir değere ulaşmak için, köşeli parantezler arasında aranacak key değerini giriyoruz. Sonucu bir string değişkenine aktarıyoruz.*/
-    MessageBox.Show(deger,lstAnahtar.SelectedItem.ToString());
-} 
+    MessageBox.Show(deger, lstAnahtar.SelectedItem.ToString());
+}
 
 private void btnSil_Click(object sender, System.EventArgs e)
 {
-    if(htTeknikSozluk.Count==0)
+    if (htTeknikSozluk.Count == 0)
     {
-        stbDurum.Text="Çıkartılabilecek hiç bir eleman yok";
+        stbDurum.Text = "Çıkartılabilecek hiç bir eleman yok";
     }
-    else if(lstAnahtar.SelectedIndex==-1)
+    else if (lstAnahtar.SelectedIndex == -1)
     {
-        stbDurum.Text="Listeden bir eleman seçmelisiniz";
-    }    
+        stbDurum.Text = "Listeden bir eleman seçmelisiniz";
+    }
     else
     {
         htTeknikSozluk.Remove(lstAnahtar.SelectedItem.ToString());
         /* Bir HashTable'dan bir nesneyi çıkartmak için, Remove metodu kullanılır. Bu metod parametre olarak çıkartılmak istenen değer çiftinin key değerini alır.*/
         lstAnahtar.Items.Remove(lstAnahtar.SelectedItem);
-        stbDurum.Text="Çıkartıldı";
-        stbDurum.Text=htTeknikSozluk.Count.ToString();
+        stbDurum.Text = "Çıkartıldı";
+        stbDurum.Text = htTeknikSozluk.Count.ToString();
     }
-} 
+}
 
 private void btnTumu_Click(object sender, System.EventArgs e)
 {
-    lstTumListe.Items.Clear(); 
+    lstTumListe.Items.Clear();
     /* Aşağıdaki satırlarda, bir HashTable koleksiyonu içinde yer alan tüm elemanlara nasıl erişildiğini görmekteyiz. Keys metodu ile HashTable koleksiyonumuzda yer alan tüm anahtar değerlerini (key'leri), ICollection arayüzü(interface) türünden bir nesneye atıyoruz. Foreach döngümüz ile bu nesne içindeki her bir anahtarı, HashTable koleksiyonunda bulabiliyoruz.*/
-    ICollection anahtar=htTeknikSozluk.Keys; 
-    foreach(string a in anahtar)
+    ICollection anahtar = htTeknikSozluk.Keys;
+    foreach (string a in anahtar)
     {
-        lstTumListe.Items.Add(a+"="+htTeknikSozluk[a].ToString());
-    } 
-} 
+        lstTumListe.Items.Add(a + "=" + htTeknikSozluk[a].ToString());
+    }
+}
 ```
 
 Şimdi uygulamamızı çalıştırıp deneyelim.
 
 ![mk22_2.gif](/assets/images/2003/mk22_2.gif)
-
-## Programın Çalışmasının Sonucu
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

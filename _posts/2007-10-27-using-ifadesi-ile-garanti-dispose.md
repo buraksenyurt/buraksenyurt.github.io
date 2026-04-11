@@ -56,16 +56,16 @@ namespace InvestigateForDispose
     {
         static void Main(string[] args)
         {
-            SqlCommand cmd=null;
-            SqlConnection con=null;
+            SqlCommand cmd = null;
+            SqlConnection con = null;
             try
             {
-                con=new SqlConnection("data source=localhost;database=AdventureWorks2000;user id=sa;password=");
-                cmd=new SqlCommand("SELECT TOP 1 * FROM Customer",con);
-                con.Open(); 
+                con = new SqlConnection("data source=localhost;database=AdventureWorks2000;user id=sa;password=");
+                cmd = new SqlCommand("SELECT TOP 1 * FROM Customer", con);
+                con.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch(SqlException exp)
+            catch (SqlException exp)
             {
                 Console.WriteLine(exp.Message);
             }
@@ -82,9 +82,9 @@ namespace InvestigateForDispose
 Finally blokları try bloğunda yer alan kodlarda istisna fırlatılmasına neden olacak hatalar olsa da olmasa da devreye girer. Bu sebeple serbest bırakılacak nesneler için Dispose metodlarını çağıracağımız en uygun yer finally bloklarıdır. Yukarıdaki örnekte yer alan SqlConnection ve SqlCommand, IDisposable arayüzünü implemente eden sınıflardır. Bu sebepten Dispose metodları mevcuttur. Yukarıdaki desenin sağladığı işlevselliğin aynısını using ifadesi ile de gerçekleştirebiliriz. Aşağıdaki kod parçası yukarıdaki örneğin using ifadeleri ile nasıl kodlandığını göstermektedir.
 
 ```csharp
-using(SqlConnection con=new SqlConnection("data source=localhost;database=AdventureWorks2000;user id=sa;password="))
+using (SqlConnection con = new SqlConnection("data source=localhost;database=AdventureWorks2000;user id=sa;password="))
 {
-    using(SqlCommand cmd=new SqlCommand("SELECT TOP 1 * FROM Customer",con))
+    using (SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM Customer", con))
     {
         con.Open();
         cmd.ExecuteNonQuery();
@@ -159,12 +159,12 @@ Aslında bu gibi durumlarda using bloğunda kullanılacak nesnenin IDisposable a
 Peki kendi sınıflarımıza Dispose yeteneğini nasıl kazandırabiliriz? Bunun için sınıfımıza IDisposable arayüzünü uygularız. IDisposable arayüzü sadece Dispose metoduna ilişkin bir bildirim içerir. Sınıfın Dispose metodunda managed ve unmanaged kaynaklar için gerekli yoketme işlemlerini gerçekleştirebiliriz.
 
 ```csharp
-class VeriYonetim:IDisposable
+class VeriYonetim : IDisposable
 {
     public VeriYonetim()
-    {}
+    { }
     public void Baglan()
-    {}
+    { }
 
     #region IDisposable Members
 
@@ -172,14 +172,14 @@ class VeriYonetim:IDisposable
     {
         // Managed ve Unmanaged kaynakların serbest bırakılması.
     }
-    
+
     #endregion
 }
 class AnaProgram
 {
     static void Main(string[] args)
     {
-        using(VeriYonetim vy=new VeriYonetim())
+        using (VeriYonetim vy = new VeriYonetim())
         {
             // Bir takım işlemler
         }
@@ -202,7 +202,7 @@ Diğer yandan her nesne için GC tarafından yönetilen bir sonlandırma kuyruğ
 Bu koşullar göz önüne alındığında çoğunlukla kullanılan bir desen vardır. Bu desende hem IDisposable arayüzü implemente edilir hemde sınıfa ait desctructor (yokedici) metod kullanılır. Desctructor metodlar bildiğiniz gibi nesne GC tarafından yok edilmeden önce çalışan son metoddur. Burada çoğunlukla unmanaged referansların serbest bırakılma işlemleri ele alınır. Söz konusu desen aşağıdaki yapıya sahiptir.
 
 ```csharp
-class VeriYonetim:IDisposable
+class VeriYonetim : IDisposable
 {
     ~VeriYonetim()
     {
@@ -211,7 +211,7 @@ class VeriYonetim:IDisposable
 
     protected virtual void Dispose(bool disposeDurumu)
     {
-        if(disposeDurumu==true)
+        if (disposeDurumu == true)
         {
             // Managed kaynaklar için Dispose metodu uygulanır.
         }

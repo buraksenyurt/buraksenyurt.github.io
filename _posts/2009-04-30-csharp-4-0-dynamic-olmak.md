@@ -39,7 +39,7 @@ using System;
 namespace Commands
 {
     public class Circle
-        :IGraphic
+        : IGraphic
     {
         #region IGraphic Members
 
@@ -61,7 +61,7 @@ using System;
 namespace Commands
 {
     public class Rectangle
-        :IGraphic
+        : IGraphic
     {
         #region IGraphic Members
 
@@ -84,7 +84,7 @@ namespace CSharp4Features
 {
     class Program
     {
-        static void Draw<T>(T graphObject) 
+        static void Draw<T>(T graphObject)
             where T : IGraphic
         {
             graphObject.Draw();
@@ -152,7 +152,7 @@ using System.Reflection;
 namespace CSharp4Features
 {
     class Program
-    {     
+    {
         static void Draw<T>(T graphObject)
         {
             dynamic obj = graphObject;

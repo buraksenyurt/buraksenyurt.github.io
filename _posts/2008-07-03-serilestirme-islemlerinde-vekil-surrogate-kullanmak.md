@@ -29,10 +29,22 @@ namespace Ureticiler
 {
     public class Uretici
     {
-        public int Id { get; set; }
-        public string Ad { get; set; }
-        public string Adres { get; set; }
-        public Uretici(int id,string ad,string adres)
+        public int Id
+        {
+            get;
+            set;
+        }
+        public string Ad
+        {
+            get;
+            set;
+        }
+        public string Adres
+        {
+            get;
+            set;
+        }
+        public Uretici(int id, string ad, string adres)
         {
             Id = id;
             Ad = ad;
@@ -54,19 +66,39 @@ using System.Runtime.Serialization;
 
 namespace UrunYonetim
 {
-    [DataContract(Name="Urun")]
+    [DataContract(Name = "Urun")]
     public class Urun
     {
         [DataMember]
-        public int Id { get; set; }
+        public int Id
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Ad { get; set; }
+        public string Ad
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public double BirimFiyat { get; set; }
+        public double BirimFiyat
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public int StokMiktari { get; set; }
+        public int StokMiktari
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public Ureticiler.Uretici Ureten { get; set; }
+        public Ureticiler.Uretici Ureten
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -81,7 +113,7 @@ using System.ServiceModel;
 
 namespace UrunYonetim
 {
-    [ServiceContract(Name="UrunServisi",Namespace="http://www.bsenyurt.com/UrunServisi")]
+    [ServiceContract(Name = "UrunServisi", Namespace = "http://www.bsenyurt.com/UrunServisi")]
     public interface IUrunYonetici
     {
         [OperationContract]
@@ -103,7 +135,7 @@ using System;
 namespace UrunYonetim
 {
     public class UrunYonetici
-        :IUrunYonetici
+        : IUrunYonetici
     {
         #region IUrunYonetici Members
 
@@ -201,15 +233,27 @@ using System.Runtime.Serialization;
 
 namespace UrunYonetim
 {
-    [DataContract(Name="Vendor")] // Bilinçli olaraktan Vendor adı verilmiştir.
+    [DataContract(Name = "Vendor")] // Bilinçli olaraktan Vendor adı verilmiştir.
     public class UreticiSurrogated
     {
         [DataMember]
-        public int Id { get; set; }
+        public int Id
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Ad { get; set; }
+        public string Ad
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Adres { get; set; }
+        public string Adres
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -226,18 +270,18 @@ using Ureticiler;
 namespace UrunYonetim
 {
     public class UreticiSurrogater
-        :IDataContractSurrogate
+        : IDataContractSurrogate
     {
         #region IDataContractSurrogate Members
 
         public object GetCustomDataToExport(Type clrType, Type dataContractType)
         {
-             return null;
+            return null;
         }
 
         public object GetCustomDataToExport(System.Reflection.MemberInfo memberInfo, Type dataContractType)
         {
-             return null;
+            return null;
         }
 
         // Bu metod serileştirme(Serialization), ters-serileştirme(DeSerialization), schema import ve export işlemleri sırasında devreye girer.
@@ -257,7 +301,7 @@ namespace UrunYonetim
             if (obj is UreticiSurrogated)
             {
                 UreticiSurrogated surrogated = (UreticiSurrogated)obj;
-                Uretici uretici = new Uretici(surrogated.Id,surrogated.Ad,surrogated.Adres);
+                Uretici uretici = new Uretici(surrogated.Id, surrogated.Ad, surrogated.Adres);
                 return uretici;
             }
             return obj;
@@ -366,7 +410,7 @@ using System.ServiceModel.Description;
 
 namespace UrunYonetim
 {
-    public class SurrogaterAttribute 
+    public class SurrogaterAttribute
         : Attribute
         , IContractBehavior
         , IOperationBehavior
@@ -401,7 +445,7 @@ namespace UrunYonetim
         #endregion
 
         #region IWsdlExportExtension Members
-    
+
         public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)
         {
             if (exporter == null)
@@ -420,7 +464,7 @@ namespace UrunYonetim
             }
             if (xsdDCExporter.Options == null)
                 xsdDCExporter.Options = new ExportOptions();
-    
+
             if (xsdDCExporter.Options.DataContractSurrogate == null)
                 xsdDCExporter.Options.DataContractSurrogate = new UreticiSurrogater();
         }
@@ -432,7 +476,7 @@ namespace UrunYonetim
         #endregion
 
         #region IOperationBehavior Members
-    
+
         public void AddBindingParameters(OperationDescription description, BindingParameterCollection parameters)
         {
         }
@@ -454,7 +498,7 @@ namespace UrunYonetim
         #endregion
 
         private static void SurrogateUygula(OperationDescription description)
-         {
+        {
             DataContractSerializerOperationBehavior dcsOperationBehavior = description.Behaviors.Find<DataContractSerializerOperationBehavior>();
             if (dcsOperationBehavior != null)
             {
@@ -469,7 +513,7 @@ namespace UrunYonetim
 Artık tek yapılması gereken söz konusu niteliğin servis sözleşmesinde aşağıdaki gibi uygulanmasıdır.
 
 ```csharp
-[ServiceContract(Name="UrunServisi",Namespace="http://www.bsenyurt.com/UrunServisi")] 
+[ServiceContract(Name = "UrunServisi", Namespace = "http://www.bsenyurt.com/UrunServisi")]
 [Surrogater]
 public interface IUrunYonetici
 {

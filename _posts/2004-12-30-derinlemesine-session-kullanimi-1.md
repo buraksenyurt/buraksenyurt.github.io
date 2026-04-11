@@ -43,19 +43,19 @@ Bu kısa açıklamalardan sonra dilerseniz, Session nesnelerinin nasıl oluştur
 //default.aspx
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-    Session["Kimlik"]=txtBilgi.Text; //Session' a değer atıyoruz.
+    Session["Kimlik"] = txtBilgi.Text; //Session' a değer atıyoruz.
 }
 
 //sayfa2.aspx
 private void Page_Load(object sender, System.EventArgs e)
 {
-    lblAdSoyad.Text=Session["Kimlik"].ToString(); //Session değerini okuyoruz.
+    lblAdSoyad.Text = Session["Kimlik"].ToString(); //Session değerini okuyoruz.
 }
 
 //sayfa3.aspx
 private void Page_Load(object sender, System.EventArgs e)
 {
-    lblAdSoyad.Text=Session["Kimlik"].ToString(); //Session değerini okuyoruz.
+    lblAdSoyad.Text = Session["Kimlik"].ToString(); //Session değerini okuyoruz.
 }
 ```
 
@@ -69,22 +69,22 @@ Oturum yönetiminde işimize yarayacak iki olay vardır: Session_Start ve Sessio
 protected void Session_Start(Object sender, EventArgs e)
 {
     /*Uygulama seviyesinde bir değişken kullanmak istediğimizden Application nesnesini kullandık. Eğer ilk kez oturum açılıyor ise varsayılan değeri 1 olarak ayarlıyoruz. İlk kez açılmıyorsa var olan değeri 1 arttırıyoruz.*/
-    if((int)Application["ToplamZiyaretci"]==0)
-        Application["ToplamZiyaretci"]=1;
+    if ((int)Application["ToplamZiyaretci"] == 0)
+        Application["ToplamZiyaretci"] = 1;
     else
     {
-        int deger=(int)Application["ToplamZiyaretci"];
-        deger+=1;
-        Application["ToplamZiyaretci"]=deger;
+        int deger = (int)Application["ToplamZiyaretci"];
+        deger += 1;
+        Application["ToplamZiyaretci"] = deger;
     }
 }
 
 protected void Session_End(Object sender, EventArgs e)
 {
     /* Oturum kapatıldığında devreye giren bu olayda, uygulama seviyesindeki Application nesnesinde saklanan değerini 1 azaltıyoruz. Böylece online ziyaretçi sayısını 1 azaltmış oluyoruz.*/
-    int deger=(int)Application["ToplamZiyaretci"];
-    deger-=1;
-    Application["ToplamZiyaretci"]=deger;
+    int deger = (int)Application["ToplamZiyaretci"];
+    deger -= 1;
+    Application["ToplamZiyaretci"] = deger;
 }
 ```
 
@@ -95,15 +95,15 @@ Artık tek yapmamız gereken Application nesnesinin değerini okumak ve label ko
 ```csharp
 private void Page_Load(object sender, System.EventArgs e)
 {
-    Session["Kimlik"]=txtBilgi.Text;
-    lblZiyaretciSayisi.Text=Application["ToplamZiyaretci"].ToString();
+    Session["Kimlik"] = txtBilgi.Text;
+    lblZiyaretciSayisi.Text = Application["ToplamZiyaretci"].ToString();
 }
 ```
 
 Bundan sonra uygulamamıza her yeni oturum açışımızda, Session_Start devreye girecek ve kullanıcı sayısını otomatik olarak 1 arttıracaktır. Session'lar sonlandığında ise 1 eksileceklerdir. Bunu daha iyi kavrayabilmek için oturumların timeout süresini 1 dakikaya indirelim. Session nesnesinin TimeOut özelliğine 1 değerini atayarak bunu sağlayabiliriz.
 
 ```csharp
-Session.Timeout=1;
+Session.Timeout = 1;
 ```
 
 Şimdi peş peşe tarayıcı pencereleri açıp uygulamamızın olduğu default.aspx sayfasını çağıralım.

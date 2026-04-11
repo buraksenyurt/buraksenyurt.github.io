@@ -11,29 +11,29 @@ categories:
 Bugünkü makalemizde, C# metodlarında önemli bir yere sahip olduğunu düşündüğüm params anahtar kelimesinin nasıl kullanıldığını incelemeye çalışacağız. Bildiğiniz gibi metodlara verileri parametre olarak aktarabiliyor ve bunları metod içerisinde işleyebiliyoruz. Ancak parametre olarak geçirilen veriler belli sayıda oluyor. Diyelim ki sayısını bilmediğimiz bir eleman kümesini parametre olarak geçirmek istiyoruz. Bunu nasıl başarabiliriz? İşte params anahtar sözcüğü bu noktada devreye girmektedir. Hemen çok basit bir örnek ile konuya hızlı bir giriş yapalım.
 
 ```csharp
-using System; 
+using System;
 namespace ParamsSample1
-{  
+{
     class Class1
     {
         /* burada Carpim isimli metodumuza, integer tipinde değerler geçirilmesini sağlıyoruz. params anahtarı bu metoda istediğimiz sayıda integer değer geçirebileceğimizi ifade ediyor*/
 
         public int Carpim(params int[] deger)
         {
-        int sonuc=1;  
-            for(int i=0;i<deger.Length;++i) /*Metoda gönderilen elemanlar doğal olarak bir dizi oluştururlar. Bu dizideki elemanlara bir for döngüsü ile kolayca erişebiliriz. Dizinin eleman sayısını ise Length özelliği ile öğreniyoruz.*/
+            int sonuc = 1;
+            for (int i = 0; i < deger.Length; ++i) /*Metoda gönderilen elemanlar doğal olarak bir dizi oluştururlar. Bu dizideki elemanlara bir for döngüsü ile kolayca erişebiliriz. Dizinin eleman sayısını ise Length özelliği ile öğreniyoruz.*/
             {
-                sonuc*=deger[i];
+                sonuc *= deger[i];
                 /* Burada metoda geçirilen integer değerlerin birbirleri ile çarpılmasını sağlıyoruz*/
             }
             return sonuc;
         }
         static void Main(string[] args)
         {
-            Class1 cl=new Class1();
-            Console.WriteLine("1*2*3*4={0}",cl.Carpim(1,2,3,4));
+            Class1 cl = new Class1();
+            Console.WriteLine("1*2*3*4={0}", cl.Carpim(1, 2, 3, 4));
             /* Burada Carpim isimli metoda 4 integer değer gönderdik. Aşağıdaki kodda ise 2 adet integer değer gönderiyoruz.*/
-            Console.WriteLine("8*5={0}",cl.Carpim(8,5));
+            Console.WriteLine("8*5={0}", cl.Carpim(8, 5));
             Console.ReadLine();
         }
     }
@@ -66,17 +66,17 @@ Bazı durumlarda parametre olarak geçireceğimiz değerler farklı veri tipleri
 
 ```csharp
 public void Goster(params object[] deger)
-{   
-    for(int i=0;i<deger.Length;++i)
+{
+    for (int i = 0; i < deger.Length; ++i)
     {
-        Console.WriteLine("{0}. değerimiz={1}",i,deger[i].ToString());
+        Console.WriteLine("{0}. değerimiz={1}", i, deger[i].ToString());
     }
     Console.ReadLine();
 }
 static void Main(string[] args)
 {
-    cl.Goster(1,"Ahmet",12.3F,0.007D,
-    true,599696969,"C");
+    cl.Goster(1, "Ahmet", 12.3F, 0.007D,
+    true, 599696969, "C");
 }
 ```
 
@@ -97,41 +97,44 @@ Uygulamamız bir Windows Application. Bir adet tabControl ve bir adet Button nes
 ```csharp
 using System;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 namespace CreateDataSet
-{    
+{
     public class CDataSet
     {
-/* CreateDataSet isimli metod gönderilen baglantiAdi stringinin değerine göre bir SqlConnection nesnesi oluşturur. tabloAdi ile dataset nesnesine eklemek istediğimi tablo adlarini bu metoda göndermekteyiz. params anahtarı kullanıldığı için istediğimiz sayıda tablo adı gönderebiliriz. Elbette, geçerli bir Database ve geçerli tablo adları göndermeliyiz.*/
-        public DataSet CreateDataSet(string baglantiAdi,params string[] tabloAdi)
+        /* CreateDataSet isimli metod gönderilen baglantiAdi stringinin değerine göre bir SqlConnection nesnesi oluşturur. tabloAdi ile dataset nesnesine eklemek istediğimi tablo adlarini bu metoda göndermekteyiz. params anahtarı kullanıldığı için istediğimiz sayıda tablo adı gönderebiliriz. Elbette, geçerli bir Database ve geçerli tablo adları göndermeliyiz.*/
+        public DataSet CreateDataSet(string baglantiAdi, params string[] tabloAdi)
         {
-            string sqlSelect,conString;
-            conString="data source=localhost;initial catalog="+baglantiAdi+";integrated security=sspi";
+            string sqlSelect, conString;
+            conString = "data source=localhost;initial catalog=" + baglantiAdi + ";integrated security=sspi";
 
             /* Burada SqlConnection nesnesinin kullanacağı connectionString'i belirliyoruz.*/
-            DataSet ds=
+            DataSet ds =
 
-            new DataSet();/* Tablolarimizi taşıyacak dataset nesnesini oluşturuyoruz*/
-            SqlConnection con=new SqlConnection(conString); /*SqlConnection nesnemizi oluşturuyoruz*/
+            new DataSet();
+            /* Tablolarimizi taşıyacak dataset nesnesini oluşturuyoruz*/
+            SqlConnection con = new SqlConnection(conString);
+            /*SqlConnection nesnemizi oluşturuyoruz*/
             SqlDataAdapter da;
 
-            /* Bir SqlDataAdapter nesnesi belirtiyoruz ama henüz oluşturmuyoruz*/ 
+            /* Bir SqlDataAdapter nesnesi belirtiyoruz ama henüz oluşturmuyoruz*/
             /*Bu döngü gönderdiğimiz tabloadlarını alarak bir Select sorgusu oluşturur ve SqlDataAdapter yardımıyla select sorgusu sonucu dönen tablo verilerini oluşturulan bir DataTable nesnesine yükler. Daha sonra ise bu DataTable nesnesi DataSet nesnemizin Tables kolleksiyonuna eklenir. Bu işlem metoda gönderilen her tablo için yapılacaktır. Böylece döngü sona erdiğinde, DataSet nesnemiz göndermiş olduğumuz tablo adlarına sahip DataTable nesnelerini içermiş olucaktır. */
-            for(int i=0;i<tabloAdi.Length;++i)
+            for (int i = 0; i < tabloAdi.Length; ++i)
             {
-                sqlSelect="SELECT * FROM "+tabloAdi[i];
-                da=new SqlDataAdapter(sqlSelect,con);
-                DataTable dt=new DataTable(tabloAdi[i]);
+                sqlSelect = "SELECT * FROM " + tabloAdi[i];
+                da = new SqlDataAdapter(sqlSelect, con);
+                DataTable dt = new DataTable(tabloAdi[i]);
                 da.Fill(dt);
                 ds.Tables.Add(dt);
-            } 
-            return ds; /* Son olarak metod çağırıldığı yere DataSet nesnesini göndermektedir.*/
-        } 
+            }
+            return ds;
+            /* Son olarak metod çağırıldığı yere DataSet nesnesini göndermektedir.*/
+        }
         public CDataSet()
         {
         }
-    }    
-} 
+    }
+}
 ```
 
 Şimdi ise btnYukle isimli butonumuzun kodlarını yazalım.
@@ -139,21 +142,21 @@ namespace CreateDataSet
 ```csharp
 private void btnYukle_Click(object sender, System.EventArgs e)
 {
-    CDataSet c=new CDataSet();
-    DataSet ds=new DataSet();
-    ds=c.CreateDataSet("northwind","Products","Orders");
-    for(int i=0;i<ds.Tables.Count;++i)
-    {        
+    CDataSet c = new CDataSet();
+    DataSet ds = new DataSet();
+    ds = c.CreateDataSet("northwind", "Products", "Orders");
+    for (int i = 0; i < ds.Tables.Count; ++i)
+    {
         /* tabControl'umuza yeni bir tab page ekliyoruz.*/
         tabControl1.TabPages.Add(new System.Windows.Forms.TabPage(ds.Tables[i].TableName.ToString()));
         /* Oluşturulan bu tab page'e eklenmek üzere yeni bir datagrid oluşturuyoruz.*/
-        DataGrid dg=new DataGrid();
-        dg.Dock=DockStyle.Fill;
+        DataGrid dg = new DataGrid();
+        dg.Dock = DockStyle.Fill;
 
         /*datagrid tabpage'in tamamını kaplıyacak*/
-        dg.DataSource=ds.Tables[i];
+        dg.DataSource = ds.Tables[i];
 
-        /* DataSource özelliği ile DataSet te i indexli tabloyu bağlıyoruz.*/ 
+        /* DataSource özelliği ile DataSet te i indexli tabloyu bağlıyoruz.*/
         tabControl1.TabPages[i].Controls.Add(dg);
 
         /* Oluşturduğumuz dataGrid nesnesini TabPage üstünde göstermek için Controls koleksiyonunun Add metodunu kullanıyoruz.*/
@@ -170,7 +173,7 @@ private void btnYukle_Click(object sender, System.EventArgs e)
 Görüldüğü gibi iki tablomuzda yüklenmiştir. Burada tablo sayısını arttırabilir veya azaltabiliriz. Bunu params anahtar kelimesi mümkün kılmaktadır. Örneğin metodomuzu bu kez 3 tablo ile çağıralım;
 
 ```csharp
-ds=c.CreateDataSet("northwind","Products","Orders","Suppliers");
+ds = c.CreateDataSet("northwind", "Products", "Orders", "Suppliers");
 ```
 
 Bu durumda ekran görüntümüz Şekil 5 teki gibi olur.

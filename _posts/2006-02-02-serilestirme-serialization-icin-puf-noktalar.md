@@ -35,17 +35,17 @@ namespace Serilestirme
         private string _MuzikTuru;
         private RadyoSahip _Sahip;
 
-        public RadyoKanal(string fre,string ad,string tur,RadyoSahip s)
+        public RadyoKanal(string fre, string ad, string tur, RadyoSahip s)
         {
-            _Frekans=fre;
-            _KanalAdi=ad;
-            _MuzikTuru=tur;
-            _Sahip=s;
-        }        
-      public override string ToString()
-      {
-        return _Frekans + " " + _KanalAdi + " " + _MuzikTuru + " " + _Sahip.ToString();
-      } 
+            _Frekans = fre;
+            _KanalAdi = ad;
+            _MuzikTuru = tur;
+            _Sahip = s;
+        }
+        public override string ToString()
+        {
+            return _Frekans + " " + _KanalAdi + " " + _MuzikTuru + " " + _Sahip.ToString();
+        }
     }
 }
 ```
@@ -62,10 +62,10 @@ namespace Serilestirme
         private string _AdSoyad;
         private System.Int32 _VergiNo;
 
-        public RadyoSahip(string adS,System.Int32 vergiNo)
+        public RadyoSahip(string adS, System.Int32 vergiNo)
         {
-            _AdSoyad=adS;
-            _VergiNo=vergiNo;
+            _AdSoyad = adS;
+            _VergiNo = vergiNo;
         }
         public override string ToString()
         {
@@ -88,15 +88,15 @@ namespace Serilestirme
     {
         private static void Serialize()
         {
-            FileStream fs=null;
+            FileStream fs = null;
             try
             {
-                RadyoKanal kanal=new RadyoKanal("999.00","BurkiFM","Alternative Rock",new RadyoSahip("Burak Selim Senyurt",10000));
-                fs=new FileStream("Test.xml",FileMode.OpenOrCreate);
-                SoapFormatter bf=new SoapFormatter(); 
-                bf.Serialize(fs,kanal);
+                RadyoKanal kanal = new RadyoKanal("999.00", "BurkiFM", "Alternative Rock", new RadyoSahip("Burak Selim Senyurt", 10000));
+                fs = new FileStream("Test.xml", FileMode.OpenOrCreate);
+                SoapFormatter bf = new SoapFormatter();
+                bf.Serialize(fs, kanal);
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Console.WriteLine(err.Message);
             }
@@ -108,15 +108,15 @@ namespace Serilestirme
 
         private static void DeSerialize()
         {
-            FileStream fs=null;
+            FileStream fs = null;
             try
             {
-                fs=new FileStream("Test.xml",FileMode.Open);
-                SoapFormatter sf=new SoapFormatter();
-                RadyoKanal kanal=(RadyoKanal)sf.Deserialize(fs);
+                fs = new FileStream("Test.xml", FileMode.Open);
+                SoapFormatter sf = new SoapFormatter();
+                RadyoKanal kanal = (RadyoKanal)sf.Deserialize(fs);
                 Console.WriteLine(kanal.ToString());
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Console.WriteLine(err.Message);
             }
@@ -160,7 +160,7 @@ Gelelim bir diğer önemli noktaya. Bazen tipimiz içerisinde yer alan filed (al
 Örneğin, RadyoSahip isimli sınıfımız içerisinde yer alan _VergiNo isimli alanımızın serileştirme işlemine dahil edilmemesini istediğimizi düşünelim. Tek yapmamız gereken NonSerialized niteliğini bu alana uygulamak olacaktır.
 
 ```csharp
-[NonSerialized()] 
+[NonSerialized()]
 private System.Int32 _VergiNo;
 ```
 
@@ -177,7 +177,7 @@ using System.Runtime.Serialization;
 namespace Serilestirme
 {
     [Serializable()]
-    public class RadyoKanal:ISerializable
+    public class RadyoKanal : ISerializable
     {
         // Diğer üyeler
 
@@ -186,7 +186,7 @@ namespace Serilestirme
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("Kanal Adi", _KanalAdi);
-               info.AddValue("Radyo Frekans", _Frekans);
+            info.AddValue("Radyo Frekans", _Frekans);
             info.AddValue("Muzik Turu", _MuzikTuru);
             info.AddValue("Kanal Sahibi", _Sahip);
         }
@@ -226,7 +226,7 @@ Elbetteki bir sınıfa ISerializable arayüzünü uyguladığımızda, bu sını
 
 ```csharp
 [Serializable()]
-class RadyoPersonel:RadyoKanal
+class RadyoPersonel : RadyoKanal
 {
     private int _PersonelNo;
     private string _PersonelAd;
@@ -244,16 +244,16 @@ Bu kez uygulamamızda türeyen sınıfımıza ait bir nesne örneğini serileşt
 ```csharp
 private static void Serialize()
 {
-    FileStream fs=null;
+    FileStream fs = null;
     try
     {
         //RadyoKanal kanal=new RadyoKanal("999.00","BurkiFM","Alternative Rock",new RadyoSahip("Burak Selim Senyurt",10000));
         RadyoPersonel rp = new RadyoPersonel(10001, "DJ Burak");
-        fs=new FileStream("Test.xml",FileMode.OpenOrCreate);
-        SoapFormatter bf=new SoapFormatter(); 
-        bf.Serialize(fs,rp);
+        fs = new FileStream("Test.xml", FileMode.OpenOrCreate);
+        SoapFormatter bf = new SoapFormatter();
+        bf.Serialize(fs, rp);
     }
-    catch(Exception err)
+    catch (Exception err)
     {
         Console.WriteLine(err.Message);
     }
@@ -265,15 +265,15 @@ private static void Serialize()
 
 private static void DeSerialize()
 {
-    FileStream fs=null;
+    FileStream fs = null;
     try
     {
-        fs=new FileStream("Test.xml",FileMode.Open);
-        SoapFormatter sf=new SoapFormatter();
-        RadyoPersonel rp=(RadyoPersonel)sf.Deserialize(fs);
+        fs = new FileStream("Test.xml", FileMode.Open);
+        SoapFormatter sf = new SoapFormatter();
+        RadyoPersonel rp = (RadyoPersonel)sf.Deserialize(fs);
         Console.WriteLine(rp.ToString());
     }
-    catch(Exception err)
+    catch (Exception err)
     {
         Console.WriteLine(err.Message);
     }
@@ -306,7 +306,7 @@ protected virtual void WriteData(SerializationInfo info, StreamingContext contex
 public void GetObjectData(SerializationInfo info, StreamingContext context)
 {
     info.AddValue("Kanal Adi", _KanalAdi);
-    info.AddValue("Radyo Frekans", _Frekans); 
+    info.AddValue("Radyo Frekans", _Frekans);
     info.AddValue("Muzik Turu", _MuzikTuru);
     info.AddValue("Kanal Sahibi", _Sahip);
     WriteData(info, context);

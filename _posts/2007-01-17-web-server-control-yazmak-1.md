@@ -44,7 +44,7 @@ using System.Web.UI;
 
 namespace BenimWebKontrollerim
 {
-    public class TarihKontrolum:Control
+    public class TarihKontrolum : Control
     {
     }
 }
@@ -59,8 +59,8 @@ using System;
 using System.Web.UI;
 
 namespace BenimWebKontrollerim
-{ 
-    public class TarihKontrolum:Control
+{
+    public class TarihKontrolum : Control
     {
         private string _gunMetin;
         private string _yilMetin;
@@ -68,18 +68,36 @@ namespace BenimWebKontrollerim
 
         public string GunMetin
         {
-            get { return _gunMetin; }
-            set { _gunMetin = value; }
+            get
+            {
+                return _gunMetin;
+            }
+            set
+            {
+                _gunMetin = value;
+            }
         }
         public string AyMetin
         {
-            get { return _ayMetin; }
-            set { _ayMetin = value; }
+            get
+            {
+                return _ayMetin;
+            }
+            set
+            {
+                _ayMetin = value;
+            }
         }
         public string YilMetin
         {
-            get { return _yilMetin; }
-            set { _yilMetin = value; }
+            get
+            {
+                return _yilMetin;
+            }
+            set
+            {
+                _yilMetin = value;
+            }
         }
 
         protected override void Render(HtmlTextWriter writer)
@@ -87,20 +105,20 @@ namespace BenimWebKontrollerim
             // Gün yazısını tutacak Label için Html tarafına bir span elementi atılır.
             writer.Write("<span id='lblGun'>" + GunMetin + "</span>");
             // iki boşluk bırakılır.
-            writer.Write("  ");
+            writer.Write("  ");
             // Gün değerlerini tutacak (1...31 e kadar) select elementi oluşturulur.
             writer.Write("<select name='Gun' id='Gun'>");
             // Select elementi içerisinde, her gün için bir option elementi oluşturulur value ve text değerleri i olarak set edilir.
             for (int i = 1; i <= 31; i++)
                 writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
             // Açılan Select takısı kapatılır.
-            writer.Write("</select>"); 
+            writer.Write("</select>");
             // İki boşluk bırakılır
-            writer.Write("  ");
+            writer.Write("  ");
             // Ay metnini taşıyan Label kontrolü için span takısı atılır.
             writer.Write("<span id='lblAy'>" + AyMetin + "</span>");
             // İki boşluk bırakılır
-            writer.Write("  ");
+            writer.Write("  ");
             // Aylar için gerekli select elementi oluşturulur.
             writer.Write("<select name='Ay' id='Ay'>");
             // Her bir Ay için select elementi içerisine birer option elementi açılır.
@@ -109,11 +127,11 @@ namespace BenimWebKontrollerim
             // select elementi kapatılır.
             writer.Write("</select>");
             // İki boşluk bırakılır.
-            writer.Write("  ");
+            writer.Write("  ");
             // Yil metni için span elementi oluşturulur.
             writer.Write("<span id='lblYil'>" + YilMetin + "</span>");
             // İki boşluk bırakılır
-            writer.Write("  ");
+            writer.Write("  ");
             // Yillar için select elementi oluşturulur
             writer.Write("<select name='Yil' id='Yil'>");
             // 1900 ile 2050 arası tarih aralığındaki her bir yıl için select elementi içerisine birer option elementi açılır.

@@ -62,7 +62,7 @@ namespace SPAndComplexType
         {
             using (AdventureWorksEntities context = new AdventureWorksEntities())
             {
-                ObjectResult<ManagerEmployees> resultSet=context.uspGetManagerEmployees(16);
+                ObjectResult<ManagerEmployees> resultSet = context.uspGetManagerEmployees(16);
 
                 var subResult = from me in resultSet
                                 where me.FirstName[0] == 'M'

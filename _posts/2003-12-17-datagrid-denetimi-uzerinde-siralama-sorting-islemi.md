@@ -33,28 +33,30 @@ DataView dvKitaplar;
 
 public void Baglan()
 {
-     conFriends =new SqlConnection("Data source=localhost;integrated security=sspi;initial catalog=Friends");
-     da=new SqlDataAdapter("Select ID,Adi,Yazar,BasimEvi,Fiyat From Kitaplar",conFriends);
-     dtKitaplar=new DataTable("Kitap Listesi");
-     da.Fill(dtKitaplar);
-     dvKitaplar=dtKitaplar.DefaultView;
-     DataGrid1.AutoGenerateColumns=false; /* DataGrid nesnemizin içereceği kolonları kendimiz belirlemek istediğimizden AutoGenerateColumns özelliğine false değerini atadık.*/
-     DataGrid1.AllowSorting=true; /* AllowSorting özelliğine true değerini aktardığımızda, DataGrid'in başlık kısmında yer alan kolon isimlerine tıkladığımızda bu alanlara göre sıralama yapabilmesini sağlamış oluyoruz. */
+    conFriends = new SqlConnection("Data source=localhost;integrated security=sspi;initial catalog=Friends");
+    da = new SqlDataAdapter("Select ID,Adi,Yazar,BasimEvi,Fiyat From Kitaplar", conFriends);
+    dtKitaplar = new DataTable("Kitap Listesi");
+    da.Fill(dtKitaplar);
+    dvKitaplar = dtKitaplar.DefaultView;
+    DataGrid1.AutoGenerateColumns = false;
+    /* DataGrid nesnemizin içereceği kolonları kendimiz belirlemek istediğimizden AutoGenerateColumns özelliğine false değerini atadık.*/
+    DataGrid1.AllowSorting = true;
+    /* AllowSorting özelliğine true değerini aktardığımızda, DataGrid'in başlık kısmında yer alan kolon isimlerine tıkladığımızda bu alanlara göre sıralama yapabilmesini sağlamış oluyoruz. */
 }
 /* Sirala isimli metodumuz, DataGrid tagında OnSortCommand için belirttiğimiz metoddur. Bu metod ile , bir kolon başlığına tıklandığında yapılacak sıralama işlemlerini belirtiyoruz. Bu metod, DataGridSortCommandEventArgs tipinde bir parametre almaktadır. Bu parametremizin SortExpression değeri, tıklanan kolon başlığının dataGrid tagında,bu alan ile ilgili olan DataBound sekmesinde yer alan SortExpression ifadesine atanan değerdir. Biz bu değeri alarak DataView nesnemizin Sort metoduna gönderiyoruz. Böylece DataView nesnesinin bellekte işaret ettiği veri kümesini e.SortExpression özelliğinin değerine göre yani seçilen alana göre sıralatmış oluyoruz. Daha sonra ise yaptığımız işlem DataGrid kontrolümüzü tekrar bu veri kümesine bağlamak oluyor.*/
 
-public void Sirala(object sender,DataGridSortCommandEventArgs e)
+public void Sirala(object sender, DataGridSortCommandEventArgs e)
 {
-     lblSiralamaKriteri.Text="Sıralama Kriteri : "+e.SortExpression.ToString();
-     dvKitaplar.Sort=e.SortExpression;
-     DataGrid1.DataSource=dvKitaplar;
-     DataGrid1.DataBind(); 
+    lblSiralamaKriteri.Text = "Sıralama Kriteri : " + e.SortExpression.ToString();
+    dvKitaplar.Sort = e.SortExpression;
+    DataGrid1.DataSource = dvKitaplar;
+    DataGrid1.DataBind();
 }
 private void Page_Load(object sender, System.EventArgs e)
 {
-     Baglan();
-     DataGrid1.DataSource=dvKitaplar;
-     DataGrid1.DataBind();
+    Baglan();
+    DataGrid1.DataSource = dvKitaplar;
+    DataGrid1.DataBind();
 }
 ```
 

@@ -64,15 +64,27 @@ namespace ProductPhotoServiceLibrary
         [DataMember]
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
         }
 
         [DataMember]
         public int ProductPhotoId
         {
-            get { return _productPhotoId; }
-            set { _productPhotoId = value; }
+            get
+            {
+                return _productPhotoId;
+            }
+            set
+            {
+                _productPhotoId = value;
+            }
         }
 
         public ProductInfo(int productId, string name)
@@ -93,15 +105,15 @@ using System.Collections.Generic;
 
 namespace ProductPhotoServiceLibrary
 {
-    [ServiceContract(Name="Photo Service",Namespace="http://www.bsenyurt.com/ProductPhotoService")]
+    [ServiceContract(Name = "Photo Service", Namespace = "http://www.bsenyurt.com/ProductPhotoService")]
     public interface IPhotoService
     {
-        [OperationContract(IsInitiating=true)]
+        [OperationContract(IsInitiating = true)]
         List<ProductInfo> GetProducts();
 
         [OperationContract]
         byte[] GetPhotoByProductId(int productPhotoId);
-    } 
+    }
 }
 ```
 
@@ -119,7 +131,7 @@ namespace ProductPhotoServiceLibrary
         string conStr = "data source=.;database=AdventureWorks;integrated security=SSPI";
 
         #region IPhotoService Members
-    
+
         // İstemci için gerekli olan ürün adları ve fotoğraf numaraları, generic bir List koleksiyonu ile geriye döndürülmektedir.
         public List<ProductInfo> GetProducts()
         {
@@ -136,7 +148,7 @@ namespace ProductPhotoServiceLibrary
                     while (reader.Read())
                     {
                         // Elde edilen her bir satır için ProductInfo sınıfına ait bir nesne örneklenip generic koleksiyona eklenir.
-                         infos.Add(new ProductInfo(Convert.ToInt16(reader[0]), reader[1].ToString()));
+                        infos.Add(new ProductInfo(Convert.ToInt16(reader[0]), reader[1].ToString()));
                     }
                     reader.Close();
                 }
@@ -148,7 +160,7 @@ namespace ProductPhotoServiceLibrary
         public byte[] GetPhotoByProductId(int productPhotoId)
         {
             byte[] photoContent = null;
-        
+
             using (SqlConnection conn = new SqlConnection(conStr))
             {
                 using (SqlCommand cmd = new SqlCommand("Select LargePhoto From Production.ProductPhoto Where ProductPhotoId=@PId", conn))
@@ -162,10 +174,10 @@ namespace ProductPhotoServiceLibrary
                     reader.Close();
                 }
             }
-    
+
             return photoContent;
         }
-    
+
         #endregion
     }
 }
@@ -302,7 +314,7 @@ namespace Istemci
         private void button1_Click(object sender, EventArgs e)
         {
             // Servis tarafındaki GetProducts metodu ile ProductInfo tipinden dizi elde edilir ve her bir elemanı listBox1 isimli ListBox kontrolüne eklenir.
-            ProductInfo[] infos=client.GetProducts();
+            ProductInfo[] infos = client.GetProducts();
             foreach (ProductInfo info in infos)
                 listBox1.Items.Add(info);
         }
@@ -313,9 +325,9 @@ namespace Istemci
             // Seçilen ListBox elemanı ProductInfo tipine dönüştürüldükten sonra ProductPhotoId özelliğinin değeri elde edilir.
             Int16.TryParse(((ProductInfo)listBox1.SelectedItem).ProductPhotoId.ToString(), out photoId);
             // GetPhotoByProductId metoduna photoId değeri aktarılarak byte[] dizisi elde edilir ve bir MemoryStream nesnesi örneklenir.
-            MemoryStream stream=new MemoryStream(client.GetPhotoByProductId(photoId));
+            MemoryStream stream = new MemoryStream(client.GetPhotoByProductId(photoId));
             // MemoryStream örneğinden yararlanılarak Image nesnesi oluşturulur ve PictureBox kontrolünün Image özelliğine atanır.
-            pictureBox1.Image=Image.FromStream(stream);
+            pictureBox1.Image = Image.FromStream(stream);
         }
     }
 }

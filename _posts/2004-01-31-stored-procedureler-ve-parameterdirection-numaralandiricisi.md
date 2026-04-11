@@ -17,7 +17,11 @@ Bugünkü makalemizde, Sql sunucularında yazdığımız Stored Procedure'lere i
 Bugünkü makalemizde ise, bir Stored Procedure'den programımıza nasıl değer (ler) döndürebileceğimizi inceleyeceğiz. Dikkat ederseniz, bir Stored Procedure'e program içinden parametre aktarabileceğimiz gibi, Stored Procedure'dende programımıza değerler aktarbildiğimizden bahsediyoruz. Dolayısıyla parametrelerin bir takım farklı davranışlar sergiliyebilmesi söz konusu. SqlParameters sınıfı, parametrelerin davranışlarını yada başka bir deyişle hangi yöne doğru hareket edeceklerini belirten bir özellik içermektedir. Bu özellik Direction özelliğidir ve C# prototipi aşağıdaki gibidir.
 
 ```csharp
-public virtual ParameterDirection Direction {get; set;}
+public virtual ParameterDirection Direction
+{
+    get;
+    set;
+}
 ```
 
 Direction özelliği, ParameterDirection numaralandırıcısı tipinden değerler almaktadır. Bu değerlerin açıklaması aşağıdaki tabloda yer almaktadır.
@@ -50,48 +54,54 @@ Gelelim RETURN kısmına. Burada @@RowCount isimli sql anahtar kelimesi kullanı
 ```csharp
 private void button1_Click(object sender, System.EventArgs e)
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi"); /* Sql sunucumuza olan bağlantımızı gerçekleştiriyoruz. */
- 
-     SqlCommand cmd=new SqlCommand("MakaleMevcutmu",conFriends); /* SqlCommand nesnemizi oluşturuyoruz. SqlCommand nesnemize, Stored Procedure'ümüzün adını parametre olarak veriyoruz. */
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    /* Sql sunucumuza olan bağlantımızı gerçekleştiriyoruz. */
 
-     cmd.CommandType=CommandType.StoredProcedure; /* SqlCommand nesnemiz bir Stored Procedure çalıştıracağı için CommandType özelliği CommandType.StoredProcedure olarak belirlenir.*/
+    SqlCommand cmd = new SqlCommand("MakaleMevcutmu", conFriends);
+    /* SqlCommand nesnemizi oluşturuyoruz. SqlCommand nesnemize, Stored Procedure'ümüzün adını parametre olarak veriyoruz. */
 
-     /* Burada, Stored Procedure'ümüzüden Return ile dönen değeri işaret edicek SqlParameter nesnemizi ,SqlCommand nesnemizin Parameters koleksiyonuna Add metodu ile ekliyoruz. Return anahtar sözcüğü ile geri dönen değeri işaret edicek paramterenin adı herhangibir isim olabilir. Ancak her sql parametresinde olduğu gibi başında @ işaretini kullanmayı unutmamalıyız.*/
-     cmd.Parameters.Add("@DonenDeger",SqlDbType.Int);
-     cmd.Parameters["@DonenDeger"].Direction=ParameterDirection.ReturnValue; /* Parametrenin, Stored Procedure'den, programa doğru olduğunu ve Return anahtar sözcüğü ile geriye dönen bir değeri işaret ettiğini belirtmek için, Direction özelliğine, ParameterDirection.ReturnValue değerini veriyoruz.*/
+    cmd.CommandType = CommandType.StoredProcedure;
+    /* SqlCommand nesnemiz bir Stored Procedure çalıştıracağı için CommandType özelliği CommandType.StoredProcedure olarak belirlenir.*/
 
-     /* Burada programımızda kullanıcının girdiği Makale numarasını, Stored Procedure'ümüze doğru gönderecek SqlParameter nesnemizi tanımlanıyoruz. Bu parametre Input tipindedir. Bu nedenle, adının, Stored Procedure'ümüzdeki ile aynı olmasına dikkat etmeliyiz. */
-     cmd.Parameters.Add("@MakaleID",SqlDbType.Int);
-     cmd.Parameters["@MakaleID"].Value=txtMakaleNo.Text; /* Parametremizin değeri veriliyor.*/
+    /* Burada, Stored Procedure'ümüzüden Return ile dönen değeri işaret edicek SqlParameter nesnemizi ,SqlCommand nesnemizin Parameters koleksiyonuna Add metodu ile ekliyoruz. Return anahtar sözcüğü ile geri dönen değeri işaret edicek paramterenin adı herhangibir isim olabilir. Ancak her sql parametresinde olduğu gibi başında @ işaretini kullanmayı unutmamalıyız.*/
+    cmd.Parameters.Add("@DonenDeger", SqlDbType.Int);
+    cmd.Parameters["@DonenDeger"].Direction = ParameterDirection.ReturnValue;
+    /* Parametrenin, Stored Procedure'den, programa doğru olduğunu ve Return anahtar sözcüğü ile geriye dönen bir değeri işaret ettiğini belirtmek için, Direction özelliğine, ParameterDirection.ReturnValue değerini veriyoruz.*/
 
-     /* Güvenli bloğumuzda, öncelikle sql sunucumuza olan bağlantımızı SqlConnection yardımıyla açıyoruz ve ardından SqlCommand nesnemizin referans ettiği Stored Procedure nesnemizi çalıştırıyoruz.*/
-     try
-     {
-          conFriends.Open();
-          cmd.ExecuteNonQuery();
-          int Sonuc;
-          /* Stored Procedure'ümüzden Return anahtar sözcüğü ile dönen değeri @DonenDeger SqlParameter nesnesi ile alıyor ve sonuc ismindeki integer tipteki değişkenimize atıyoruz. SqlCommand nesnesinin, Parameters koleksiyonunda yer alan SqlParameter nesnelerinin Value özelliği geriye Object tipinden değer döndürdüğü için, bu değeri integer tipine dönüştürme işlemide uyguladığımıza dikkat edelim. */
+    /* Burada programımızda kullanıcının girdiği Makale numarasını, Stored Procedure'ümüze doğru gönderecek SqlParameter nesnemizi tanımlanıyoruz. Bu parametre Input tipindedir. Bu nedenle, adının, Stored Procedure'ümüzdeki ile aynı olmasına dikkat etmeliyiz. */
+    cmd.Parameters.Add("@MakaleID", SqlDbType.Int);
+    cmd.Parameters["@MakaleID"].Value = txtMakaleNo.Text;
+    /* Parametremizin değeri veriliyor.*/
 
-         Sonuc=Convert.ToInt32(cmd.Parameters["@DonenDeger"].Value);
+    /* Güvenli bloğumuzda, öncelikle sql sunucumuza olan bağlantımızı SqlConnection yardımıyla açıyoruz ve ardından SqlCommand nesnemizin referans ettiği Stored Procedure nesnemizi çalıştırıyoruz.*/
+    try
+    {
+        conFriends.Open();
+        cmd.ExecuteNonQuery();
+        int Sonuc;
+        /* Stored Procedure'ümüzden Return anahtar sözcüğü ile dönen değeri @DonenDeger SqlParameter nesnesi ile alıyor ve sonuc ismindeki integer tipteki değişkenimize atıyoruz. SqlCommand nesnesinin, Parameters koleksiyonunda yer alan SqlParameter nesnelerinin Value özelliği geriye Object tipinden değer döndürdüğü için, bu değeri integer tipine dönüştürme işlemide uyguladığımıza dikkat edelim. */
 
-          /* Burada dönen değeri değerlendirerek kullanıcının girdiği ID'ye sahip bir Makale olup olmadığını belirliyoruz.*/
-               if(Sonuc==1)
-               {
-                    MessageBox.Show("MAKALE BULUNDU...");
-               }
-               else if(Sonuc==0)
-               {
-                    MessageBox.Show("MAKALE BULUNAMADI...");
-               }
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show("Hata:"+hata.Message.ToString());
-     }
-     finally
-     {
-          conFriends.Close(); /* Bağlantımızı kapatıyoruz. */
-     }
+        Sonuc = Convert.ToInt32(cmd.Parameters["@DonenDeger"].Value);
+
+        /* Burada dönen değeri değerlendirerek kullanıcının girdiği ID'ye sahip bir Makale olup olmadığını belirliyoruz.*/
+        if (Sonuc == 1)
+        {
+            MessageBox.Show("MAKALE BULUNDU...");
+        }
+        else if (Sonuc == 0)
+        {
+            MessageBox.Show("MAKALE BULUNAMADI...");
+        }
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show("Hata:" + hata.Message.ToString());
+    }
+    finally
+    {
+        conFriends.Close();
+        /* Bağlantımızı kapatıyoruz. */
+    }
 }
 ```
 
@@ -116,42 +126,42 @@ Burada Select sorgusundaki @MakaleKonusu=Konu ifadesine dikkatinizi çekmek iste
 ```csharp
 private void button1_Click(object sender, System.EventArgs e)
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-     SqlCommand cmd=new SqlCommand("MakaleMevcutmu",conFriends);
-     cmd.CommandType=CommandType.StoredProcedure;
-     cmd.Parameters.Add("@DonenDeger",SqlDbType.Int);
-     cmd.Parameters["@DonenDeger"].Direction=ParameterDirection.ReturnValue;
-  cmd.Parameters.Add("@MakaleKonusu",SqlDbType.NVarChar,255);
-     cmd.Parameters["@MakaleKonusu"].Direction=ParameterDirection.Output;
-     cmd.Parameters.Add("@MakaleID",SqlDbType.Int);
-     cmd.Parameters["@MakaleID"].Value=txtMakaleNo.Text;
-     try
-     {
-          conFriends.Open();
-          cmd.ExecuteNonQuery();
-          int Sonuc;
-          string MakaleAdi;
-         Sonuc=Convert.ToInt32(cmd.Parameters["@DonenDeger"].Value);
-          MakaleAdi=cmd.Parameters["@MakaleKonusu"].Value.ToString();
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    SqlCommand cmd = new SqlCommand("MakaleMevcutmu", conFriends);
+    cmd.CommandType = CommandType.StoredProcedure;
+    cmd.Parameters.Add("@DonenDeger", SqlDbType.Int);
+    cmd.Parameters["@DonenDeger"].Direction = ParameterDirection.ReturnValue;
+    cmd.Parameters.Add("@MakaleKonusu", SqlDbType.NVarChar, 255);
+    cmd.Parameters["@MakaleKonusu"].Direction = ParameterDirection.Output;
+    cmd.Parameters.Add("@MakaleID", SqlDbType.Int);
+    cmd.Parameters["@MakaleID"].Value = txtMakaleNo.Text;
+    try
+    {
+        conFriends.Open();
+        cmd.ExecuteNonQuery();
+        int Sonuc;
+        string MakaleAdi;
+        Sonuc = Convert.ToInt32(cmd.Parameters["@DonenDeger"].Value);
+        MakaleAdi = cmd.Parameters["@MakaleKonusu"].Value.ToString();
 
-          if(Sonuc==1)
-          {
-               MessageBox.Show("MAKALE BULUNDU...");
-               lblMakaleKonusu.Text=MakaleAdi;
-          }
-          else if(Sonuc==0)
-          {
-               MessageBox.Show("MAKALE BULUNAMADI...");
-          }
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show("Hata:"+hata.Message.ToString());
-     }
-     finally
-     {
-          conFriends.Close();
-     }
+        if (Sonuc == 1)
+        {
+            MessageBox.Show("MAKALE BULUNDU...");
+            lblMakaleKonusu.Text = MakaleAdi;
+        }
+        else if (Sonuc == 0)
+        {
+            MessageBox.Show("MAKALE BULUNAMADI...");
+        }
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show("Hata:" + hata.Message.ToString());
+    }
+    finally
+    {
+        conFriends.Close();
+    }
 }
 ```
 

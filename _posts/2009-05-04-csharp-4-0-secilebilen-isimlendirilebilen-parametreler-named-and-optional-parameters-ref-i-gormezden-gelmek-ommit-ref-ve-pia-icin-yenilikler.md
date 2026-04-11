@@ -12,7 +12,7 @@ Bir önceki [blog](/2009/04/30/csharp-4-0-dynamic-olmak/)yazımızda C# 4.0 ile 
 ```csharp
 using System;
 using System.Reflection;
-using Word=Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace NewFeatures2
 {
@@ -20,7 +20,7 @@ namespace NewFeatures2
     {
         static void Main(string[] args)
         {
-            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();            
+            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();
             wrdApp.Visible = true;
             object fileNamePath = @"C:\Yeni Ozellikler.docx";
             object missingValue = Missing.Value;
@@ -62,7 +62,7 @@ Optional Parameters ile
 ```csharp
 using System;
 using System.Reflection;
-using Word=Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace NewFeatures2
 {
@@ -70,8 +70,8 @@ namespace NewFeatures2
     {
         static void Main(string[] args)
         {
-            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();            
-            wrdApp.Visible = true;            
+            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();
+            wrdApp.Visible = true;
             wrdApp.Documents.Open(@"C:\Yeni Ozellikler.docx");
             Console.WriteLine("Kapatmak için bir tuşa basınız");
             Console.ReadLine();
@@ -89,7 +89,7 @@ Söz gelimi 3ncü parametre dosyanın yanlız okunabilir (ReadOnly) modda açıl
 ```csharp
 using System;
 using System.Reflection;
-using Word=Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace NewFeatures2
 {
@@ -97,15 +97,15 @@ namespace NewFeatures2
     {
         static void Main(string[] args)
         {
-            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();            
-            wrdApp.Visible = true;            
+            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();
+            wrdApp.Visible = true;
             object fileNamePath = @"C:\Yeni Ozellikler.docx";
             object missingValue = Missing.Value;
             object onlyRead = true;
 
             wrdApp
                 .Documents
-                .Open(ref fileNamePath, ref missingValue, ref onlyRead, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue);           
+                .Open(ref fileNamePath, ref missingValue, ref onlyRead, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue, ref missingValue);
 
             Console.WriteLine("Kapatmak için bir tuşa basınız");
             Console.ReadLine();
@@ -125,7 +125,7 @@ Named Parameters kullanımı ile
 ```csharp
 using System;
 using System.Reflection;
-using Word=Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace NewFeatures2
 {
@@ -133,9 +133,9 @@ namespace NewFeatures2
     {
         static void Main(string[] args)
         {
-            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();            
+            Word.Application wrdApp = new Microsoft.Office.Interop.Word.Application();
             wrdApp.Visible = true;
-            
+
             wrdApp.Documents.Open(@"c:\Yeni Ozellikler.docx", ReadOnly: true);
 
             Console.WriteLine("Kapatmak için bir tuşa basınız");

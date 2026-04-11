@@ -44,17 +44,17 @@ namespace DataReaderDikkat
 
         /* CloseConnection kullanımına örnek metod.*/
         public DbWork(string conStr)
-        { 
-            con=new SqlConnection(conStr);
+        {
+            con = new SqlConnection(conStr);
         }
 
         public SqlDataReader Results(string selectQuery)
         {
-            SqlCommand cmd=new SqlCommand(selectQuery,con);
+            SqlCommand cmd = new SqlCommand(selectQuery, con);
             con.Open();
-            dr=cmd.ExecuteReader(); // Hatalı kullanım.
-            return dr; 
-        }      
+            dr = cmd.ExecuteReader(); // Hatalı kullanım.
+            return dr;
+        }
     }
 }
 ```
@@ -69,23 +69,23 @@ using System.Data.SqlClient;
 namespace DataReaderDikkat
 {
     class ClosingDataReader
-    { 
+    {
         [STAThread]
         static void Main(string[] args)
-        { 
-            DbWork worker=new DbWork("data source=BURKI;database=Northwind;integrated security=SSPI");
+        {
+            DbWork worker = new DbWork("data source=BURKI;database=Northwind;integrated security=SSPI");
             #region CloseConnection Kullanın.
 
-            SqlDataReader drOrders=worker.Results("SELECT TOP 10 * FROM Orders");
-            while(drOrders.Read())
+            SqlDataReader drOrders = worker.Results("SELECT TOP 10 * FROM Orders");
+            while (drOrders.Read())
             {
-                Console.WriteLine(drOrders[0].ToString()+" "+drOrders[1].ToString());
+                Console.WriteLine(drOrders[0].ToString() + " " + drOrders[1].ToString());
             }
             drOrders.Close();
-            SqlDataReader drCustomers=worker.Results("SELECT TOP 10 * FROM Customers");
-            while(drCustomers.Read())
+            SqlDataReader drCustomers = worker.Results("SELECT TOP 10 * FROM Customers");
+            while (drCustomers.Read())
             {
-                Console.WriteLine(drCustomers[0].ToString()+" "+drCustomers[1].ToString());
+                Console.WriteLine(drCustomers[0].ToString() + " " + drCustomers[1].ToString());
             }
             drCustomers.Close();
             #endregion
@@ -103,11 +103,11 @@ Sebep ilk drOrders SqlDataReader nesnesinin kullandığı SqlConnection nesnesin
 ```csharp
 public SqlDataReader Results(string selectQuery)
 {
-    SqlCommand cmd=new SqlCommand(selectQuery,con);
+    SqlCommand cmd = new SqlCommand(selectQuery, con);
     con.Open();
-    dr=cmd.ExecuteReader(CommandBehavior.CloseConnection); // Doğru Kullanım.
+    dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // Doğru Kullanım.
     // dr=cmd.ExecuteReader(); // Hatalı kullanım.
-    return dr; 
+    return dr;
 }
 ```
 
@@ -131,17 +131,17 @@ namespace DataReaderDikkat
 
         /* CloseConnection kullanımına örnek metod.*/
         public DbWork(string conStr)
-        { 
-            con=new SqlConnection(conStr);
+        {
+            con = new SqlConnection(conStr);
         }
 
-        public SqlDataReader GetRow(string FindQuery,int orderID)
+        public SqlDataReader GetRow(string FindQuery, int orderID)
         {
-            SqlCommand cmd=new SqlCommand(FindQuery,con);
-            cmd.Parameters.Add("@OrderID",SqlDbType.Int);
-            cmd.Parameters["@OrderID"].Value=orderID;
+            SqlCommand cmd = new SqlCommand(FindQuery, con);
+            cmd.Parameters.Add("@OrderID", SqlDbType.Int);
+            cmd.Parameters["@OrderID"].Value = orderID;
             con.Open();
-            dr=cmd.ExecuteReader((CommandBehavior)40);
+            dr = cmd.ExecuteReader((CommandBehavior)40);
             return dr;
         }
     }
@@ -158,21 +158,21 @@ using System.Data.SqlClient;
 namespace DataReaderDikkat
 {
     class ClosingDataReader
-    { 
+    {
         [STAThread]
         static void Main(string[] args)
-        { 
-            DbWork worker=new DbWork("data source=BURKI;database=Northwind;integrated security=SSPI");
+        {
+            DbWork worker = new DbWork("data source=BURKI;database=Northwind;integrated security=SSPI");
 
             #region SingleRow Kullanın.
-            SqlDataReader drFind=worker.GetRow("SELECT * FROM Orders WHERE OrderID=@OrderID",10248);
+            SqlDataReader drFind = worker.GetRow("SELECT * FROM Orders WHERE OrderID=@OrderID", 10248);
             drFind.Read();
-            Console.WriteLine("BULUNAN SATIR "+drFind[0].ToString());
+            Console.WriteLine("BULUNAN SATIR " + drFind[0].ToString());
             drFind.Close();
 
-            drFind=worker.GetRow("SELECT * FROM Orders WHERE OrderID=@OrderID",10249);
+            drFind = worker.GetRow("SELECT * FROM Orders WHERE OrderID=@OrderID", 10249);
             drFind.Read();
-            Console.WriteLine("BULUNAN SATIR "+drFind[0].ToString());
+            Console.WriteLine("BULUNAN SATIR " + drFind[0].ToString());
             drFind.Close();
             #endregion
         }
@@ -203,20 +203,20 @@ namespace DataReaderDikkat
 
         /* CloseConnection kullanımına örnek metod.*/
         public DbWork(string conStr)
-        { 
-            con=new SqlConnection(conStr);
+        {
+            con = new SqlConnection(conStr);
         }
-    
+
         public SqlDataReader BatchResults(string[] sorgular)
         {
-            StringBuilder sbSorgular=new StringBuilder();
-            for(int i=0;i<sorgular.Length;i++)
+            StringBuilder sbSorgular = new StringBuilder();
+            for (int i = 0; i < sorgular.Length; i++)
             {
-                sbSorgular.Append(sorgular[i]+";"); 
+                sbSorgular.Append(sorgular[i] + ";");
             }
-            SqlCommand cmd=new SqlCommand(sbSorgular.ToString(),con);
+            SqlCommand cmd = new SqlCommand(sbSorgular.ToString(), con);
             con.Open();
-            SqlDataReader dr=cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;
         }
     }
@@ -233,23 +233,23 @@ using System.Data.SqlClient;
 namespace DataReaderDikkat
 {
     class ClosingDataReader
-    { 
+    {
         [STAThread]
         static void Main(string[] args)
-        { 
-            DbWork worker=new DbWork("data source=BURKI;database=Northwind;integrated security=SSPI");
+        {
+            DbWork worker = new DbWork("data source=BURKI;database=Northwind;integrated security=SSPI");
 
             #region BatchQuery' lerde
-            string[] sorguKumesi={"SELECT TOP 5 * FROM Orders","SELECT TOP 5 * FROM Customers","SELECT TOP 5 * FROM [Order Details]"};
-            SqlDataReader drToplu=worker.BatchResults(sorguKumesi);
+            string[] sorguKumesi = { "SELECT TOP 5 * FROM Orders", "SELECT TOP 5 * FROM Customers", "SELECT TOP 5 * FROM [Order Details]" };
+            SqlDataReader drToplu = worker.BatchResults(sorguKumesi);
             do
             {
-                while(drToplu.Read())
+                while (drToplu.Read())
                 {
-                    Console.WriteLine(drToplu[0].ToString()+" "+drToplu[1].ToString());
+                    Console.WriteLine(drToplu[0].ToString() + " " + drToplu[1].ToString());
                 }
                 Console.WriteLine("------------");
-            }while(drToplu.NextResult());
+            } while (drToplu.NextResult());
             drToplu.Close();
             #endregion
         }
@@ -266,22 +266,22 @@ Bazı tablolar içerisinde text veya binary tabanlı alanlar tutarız. Örneğin
 ```csharp
 public SqlDataReader ReadText(string Query)
 {
-    SqlCommand cmd=new SqlCommand(Query,con);
+    SqlCommand cmd = new SqlCommand(Query, con);
     con.Open();
-    dr=cmd.ExecuteReader((CommandBehavior)48); // Bu kez hem SequentialAccess hem de CloseConnection seçili.
-    return dr; 
+    dr = cmd.ExecuteReader((CommandBehavior)48); // Bu kez hem SequentialAccess hem de CloseConnection seçili.
+    return dr;
 }
 ```
 
 Metodumuzun kullanılışı ise aşağıdaki gibi olacaktır.
 
 ```csharp
-SqlDataReader drText=worker.ReadText("SELECT CategoryName,Description,Picture FROM Categories");
-char[] tampon=new char[150];
-while(drText.Read()) 
-{ 
-    drText.GetChars(1,0,tampon,0,150);
-    for(int i=0;i<150;i++)
+SqlDataReader drText = worker.ReadText("SELECT CategoryName,Description,Picture FROM Categories");
+char[] tampon = new char[150];
+while (drText.Read())
+{
+    drText.GetChars(1, 0, tampon, 0, 150);
+    for (int i = 0; i < 150; i++)
     {
         Console.Write(tampon[i].ToString());
     }

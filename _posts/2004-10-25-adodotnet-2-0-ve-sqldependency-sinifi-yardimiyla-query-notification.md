@@ -106,7 +106,7 @@ dep = new SqlDependency(cmd);
 Bu arada Select sorgumuzun kurallara uygun bir yapıda olduğuna dikkat edelim. Yani, alan adlarını ve tablonun sahibini açıkça belirtiyoruz. Daha sonra ise, SqlDependency sınıfımıza OnChange olayını aşağıdaki kod satırı ile ekliyoruz.
 
 ```csharp
-dep.OnChange+=new OnChangeEventHandler(dep_OnChange);
+dep.OnChange += new OnChangeEventHandler(dep_OnChange);
 ```
 
 Bu olayın bizim için büyük bir önemi var. Nitekim, sunucu üzerinde ön belleklenen veri kümesinde değişiklikler olduğunda, SQL sunucusu tarafından uygulamaya bir Notification mesajı gönderilecektir. İşte bu mesajın ele alınacağı olay SqlDependency sınıfına ait OnChange'dır. Bu olayın prototipi aşağıdaki gibidir.
@@ -118,7 +118,7 @@ public event OnChangeEventHandler OnChange;
 Gördüğünüz gibi bu olay OnChangeEventHandler temsilcisinin tanımladığı metodları çalıştırabilir. OnChangeEventHandler temsilcisinin prototipi ise aşağıdaki gibidir.
 
 ```csharp
-public sealed delegate void OnChangeEventHandler( object sender, SqlNotificationEventArgs e );
+public sealed delegate void OnChangeEventHandler(object sender, SqlNotificationEventArgs e);
 ```
 
 Bu temsilcinin işaret edeceği metotlara ait ikinci parametre SqlNotificationEventArgs sınıfı tipinden olup oldukça önemlidir. Nitekim bu parametre yardımıyla, gelen bildirinin hangi olaya istinaden oluştuğunu ayırt edebilir ve işlemlerimize yön verebiliriz. Bu sınıfı da detaylı bir şekilde ilerleyen makalelerimizde inceleyeceğiz. Olay metodumuzda ise basit olarak herhangi bir Notification mesajı alındığında bir MessageBox'ın çıkmasını sağlıyoruz.
@@ -126,8 +126,8 @@ Bu temsilcinin işaret edeceği metotlara ait ikinci parametre SqlNotificationEv
 ```csharp
 void dep_OnChange(object sender, SqlNotificationEventArgs e)
 {
-     MessageBox.Show("YENI VERILER EKLENDI...TAZELEME YAPIN");
-} 
+    MessageBox.Show("YENI VERILER EKLENDI...TAZELEME YAPIN");
+}
 ```
 
 Şimdi uygulamamızı çalıştıralım ve verileri çekelim. Yazdığımız kodlar gereği, SQL sunucusu üzerinde Select sorgumuza istinaden bir Notification nesnesi register edilecektir. Şimdi biz bu noktada doğrudan Yukon üzerinden yeni bir satır gireceğiz. (Aslında aynı uygulamanın başka bir örneğinden veya başka bir uygulamadan da bu tablo üzerinde değişiklikler yapabiliriz.) Bunu uygulamamız çalışıyorken yapacağız.

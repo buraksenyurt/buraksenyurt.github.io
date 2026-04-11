@@ -21,12 +21,16 @@ Kullanıcı, Ekle başlıklı butona tıkladığında, textBox kontrollerine gir
 ```csharp
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-     dsMakale.MakaleRow dr; /* Yeni bir satır tanımlanıyor. MakaleRow bir DataRow tipidir ve bizim dsMakale isimli Kuvvetle Türlendirilmiş Veri Kümesi sınıfımızda yer almaktadır.*/
-     dr=mk.Makale.NewMakaleRow(); /* MakalNewRow ile dr isimli MakaleRow nesnemizin, Makale isimli DataTable'ımızda yeni ve boş bir satıra referans etmesi sağlanıyor. */
-     dr.Konu=txtKonu.Text; /* Veriler yeni satırımızın ilgili alanlarına yerleştiriliyor. */
-     dr.Tarih=Convert.ToDateTime(txtTarih.Text);
-     dr.Adres=txtAdres.Text;
-     mk.Makale.AddMakaleRow(dr); /* Son olarak AddMakaleRow metodu ile oluşturulan yeni satır dataTable'ımıza ekleniyor.*/
+    dsMakale.MakaleRow dr;
+    /* Yeni bir satır tanımlanıyor. MakaleRow bir DataRow tipidir ve bizim dsMakale isimli Kuvvetle Türlendirilmiş Veri Kümesi sınıfımızda yer almaktadır.*/
+    dr = mk.Makale.NewMakaleRow();
+    /* MakalNewRow ile dr isimli MakaleRow nesnemizin, Makale isimli DataTable'ımızda yeni ve boş bir satıra referans etmesi sağlanıyor. */
+    dr.Konu = txtKonu.Text;
+    /* Veriler yeni satırımızın ilgili alanlarına yerleştiriliyor. */
+    dr.Tarih = Convert.ToDateTime(txtTarih.Text);
+    dr.Adres = txtAdres.Text;
+    mk.Makale.AddMakaleRow(dr);
+    /* Son olarak AddMakaleRow metodu ile oluşturulan yeni satır dataTable'ımıza ekleniyor.*/
 }
 ```
 
@@ -34,10 +38,10 @@ Bu teknikte dikkat edecek olursanız Kuvvetle Türlendirilmiş Veri Kümemize ai
 
 ```csharp
 DataRow drKlasik;
-drKlasik=ds.Tables[0].NewRow();
-drKlasik[1]=txtKonu.Text;
-drKlasik[2]=Convert.ToDateTime(txtTarih.Text);
-drKlasik[3]=txtAdres.Text;
+drKlasik = ds.Tables[0].NewRow();
+drKlasik[1] = txtKonu.Text;
+drKlasik[2] = Convert.ToDateTime(txtTarih.Text);
+drKlasik[3] = txtAdres.Text;
 ds.Tables[0].Rows.Add(drKlasik);
 ```
 
@@ -57,19 +61,22 @@ Her iki teknik arasında kavramsal olarak fark bulunmamasına rağmen, uygulanab
 ```csharp
 private void btnBul_Click(object sender, System.EventArgs e)
 {
-     dsMakale.MakaleRow drBulunan; /* Arama sonucu bulunan satırı tutacak DataRow nesnemiz tanımlanıyor. */
-     drBulunan=mk.Makale.FindByID(Convert.ToInt32(txtMakaleID.Text)); /* FindByID metodu, Türlendirilimiş Veri Kümemizdeki tablomuzun Primary Key alanı üzerinden arama yapıyor ve sonucu drBulunan DataRow(MakaleRow) nesnemize atıyor. */
- 
-     if(drBulunan!=null) /* Eğer aranan satır bulunursa drBulunan değeri null olmayacaktır. */
-     {
-          txtKonu.Text=drBulunan.Konu; /* Bulunan satıra ait alan verileri ilgili kontrollere atanıyor. */
-          txtTarih.Text=drBulunan.Tarih.ToString();
-          txtAdres.Text=drBulunan.Adres;
-     }
-     else
-     {
-          MessageBox.Show("Aranan Makale Bulunamadı");
-     }
+    dsMakale.MakaleRow drBulunan;
+    /* Arama sonucu bulunan satırı tutacak DataRow nesnemiz tanımlanıyor. */
+    drBulunan = mk.Makale.FindByID(Convert.ToInt32(txtMakaleID.Text));
+    /* FindByID metodu, Türlendirilimiş Veri Kümemizdeki tablomuzun Primary Key alanı üzerinden arama yapıyor ve sonucu drBulunan DataRow(MakaleRow) nesnemize atıyor. */
+
+    if (drBulunan != null) /* Eğer aranan satır bulunursa drBulunan değeri null olmayacaktır. */
+    {
+        txtKonu.Text = drBulunan.Konu;
+        /* Bulunan satıra ait alan verileri ilgili kontrollere atanıyor. */
+        txtTarih.Text = drBulunan.Tarih.ToString();
+        txtAdres.Text = drBulunan.Adres;
+    }
+    else
+    {
+        MessageBox.Show("Aranan Makale Bulunamadı");
+    }
 }
 ```
 
@@ -101,7 +108,7 @@ drBulunan = dt.Find(new objcet[]{10756,9);
 Oysaki bu tabloyu Türlendirilmiş Veri Kümesi üzerinden kullanırsak kod satırları aşağıdakine dönüşür.
 
 ```csharp
-drBulunan=ds.SiparisDetay.FindByOrderIDProductID(10756,9);
+drBulunan = ds.SiparisDetay.FindByOrderIDProductID(10756, 9);
 ```
 
 Gelelim verilerin düzenlenmesi işlemine. Şimdi uygulamamızda bulduğumuz satıra ait verileri textBox kontrollerine aktardıktan sonra, üzerlerinde değişiklik yaptığımızda bu değişiklikleri DataTable'ımıza nasıl yansıtacağımıza bakalım. Normal şartlarda, Türlendirilmemiş Veri Kümesi üzerindeki bir DataTable'a ait herhangi bir satırda yapılan değişiklikler için, güncel DataRow nesnesine ait BeginEdit ve EndEdit metodları kullanılmaktadır. Oysaki Türlendirilmiş Veri Kümelerindeki satırlara ait alanlar birer özellik olarak tutulduklarından, sadece bu özelliklere yeni değerlerini atamamız yeterli olmaktadır. Bu, veri kümesinin bir sınıf şeklinde tutuluyor olmasının sağlamış olduğu güçtür. Bu nedenle Türlendirilmiş Veri Kümeleri Strongly takısını hak etmektedir. Dilerseniz uygulamamızda arama sonucu elde ettiğimiz bir satıra ait alan değerlerini güncelleyeceğimiz kod satırlarını yazalım.
@@ -109,9 +116,9 @@ Gelelim verilerin düzenlenmesi işlemine. Şimdi uygulamamızda bulduğumuz sat
 ```csharp
 private void btnDegistir_Click(object sender, System.EventArgs e)
 {
-     drBulunan.Konu=txtKonu.Text;
-     drBulunan.Adres=txtAdres.Text;
-     drBulunan.Tarih=Convert.ToDateTime(txtTarih.Text);
+    drBulunan.Konu = txtKonu.Text;
+    drBulunan.Adres = txtAdres.Text;
+    drBulunan.Tarih = Convert.ToDateTime(txtTarih.Text);
 }
 ```
 
@@ -130,7 +137,7 @@ Son olarak satır silme işlemini inceleyelim. Bu amaçla RemoveMakaleRow metodu
 ```csharp
 public void RemoveMakaleRow(MakaleRow row)
 {
-     this.Rows.Remove(row);
+    this.Rows.Remove(row);
 }
 ```
 
@@ -139,7 +146,7 @@ Açıkçası yaptığı işlem sınıfın Rows koleksiyonundan row parameteresi 
 ```csharp
 private void btnSil_Click(object sender, System.EventArgs e)
 {
-     mk.Makale.RemoveMakaleRow(drBulunan);
+    mk.Makale.RemoveMakaleRow(drBulunan);
 }
 ```
 

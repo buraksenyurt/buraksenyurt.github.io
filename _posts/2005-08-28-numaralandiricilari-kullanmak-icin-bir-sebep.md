@@ -33,25 +33,25 @@ namespace UsingEnumerators
 
         public DBYoneticisi()
         {
-            con=new SqlConnection("data source=localhost;database=AdventureWorks2000;integrated security=SSPI");
+            con = new SqlConnection("data source=localhost;database=AdventureWorks2000;integrated security=SSPI");
         }
 
         public DataSet SelectCategories()
         {
-            DataSet resultSet=new DataSet();
-            string sql=@"SELECT ProductSubCategoryID, Name FROM ProductSubCategory Order By ProductSubCategoryID";
-            da=new SqlDataAdapter(sql,con);
+            DataSet resultSet = new DataSet();
+            string sql = @"SELECT ProductSubCategoryID, Name FROM ProductSubCategory Order By ProductSubCategoryID";
+            da = new SqlDataAdapter(sql, con);
             da.Fill(resultSet);
-            return resultSet; 
-        } 
+            return resultSet;
+        }
 
         public DataSet SelectProducts()
         {
-            DataSet resultSet=new DataSet();
-            string sql=@"SELECT TOP 100 ProductID, Name, ProductNumber, StandardCost, ListPrice, StandardCost / ListPrice * 100 AS IncRate, Class, DealerPrice, SellStartDate, Size, Weight,ProductSubCategoryID, (SELECT Name FROM ProductSubCategory WHERE ProductSubCategoryID = P.ProductSubCategoryID) AS ProductSubCategory FROM Product P WHERE (StandardCost IS NOT NULL) AND (ListPrice IS NOT NULL) ORDER BY ProductID";
-            da=new SqlDataAdapter(sql,con);
+            DataSet resultSet = new DataSet();
+            string sql = @"SELECT TOP 100 ProductID, Name, ProductNumber, StandardCost, ListPrice, StandardCost / ListPrice * 100 AS IncRate, Class, DealerPrice, SellStartDate, Size, Weight,ProductSubCategoryID, (SELECT Name FROM ProductSubCategory WHERE ProductSubCategoryID = P.ProductSubCategoryID) AS ProductSubCategory FROM Product P WHERE (StandardCost IS NOT NULL) AND (ListPrice IS NOT NULL) ORDER BY ProductID";
+            da = new SqlDataAdapter(sql, con);
             da.Fill(resultSet);
-            return resultSet; 
+            return resultSet;
         }
     }
 }
@@ -166,63 +166,63 @@ private static DBYoneticisi yonetici;
 
 private void Page_Load(object sender, System.EventArgs e)
 {
-    yonetici=new DBYoneticisi();
+    yonetici = new DBYoneticisi();
 }
 
 private void btnYukle_Click(object sender, System.EventArgs e)
-{ 
-    dgProducts.DataSource=yonetici.SelectProducts();
+{
+    dgProducts.DataSource = yonetici.SelectProducts();
     dgProducts.DataBind();
 }
 
 private void dgProducts_ItemDataBound(object sender, DataGridItemEventArgs e)
 {
-    if((e.Item.ItemType==ListItemType.Item) || (e.Item.ItemType==ListItemType.AlternatingItem))
+    if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
     {
         double incRate;
-        Label lbl=(Label)e.Item.Cells[5].Controls[1];
-        incRate=Convert.ToDouble(lbl.Text);
-        if(incRate>=100)
+        Label lbl = (Label)e.Item.Cells[5].Controls[1];
+        incRate = Convert.ToDouble(lbl.Text);
+        if (incRate >= 100)
         {
-            e.Item.Cells[5].BackColor=Color.Red;
-            e.Item.Cells[5].ForeColor=Color.White;
+            e.Item.Cells[5].BackColor = Color.Red;
+            e.Item.Cells[5].ForeColor = Color.White;
         }
     }
 }
 
 private void dgProducts_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
 {
-    dgProducts.CurrentPageIndex=e.NewPageIndex;
-    dgProducts.DataSource=yonetici.SelectProducts();
+    dgProducts.CurrentPageIndex = e.NewPageIndex;
+    dgProducts.DataSource = yonetici.SelectProducts();
     dgProducts.DataBind();
 }
 
 public DataSet AltKategorileriAl()
 {
-    return yonetici.SelectCategories(); 
-} 
+    return yonetici.SelectCategories();
+}
 
 private void dgProducts_ItemCommand(object source, DataGridCommandEventArgs e)
 {
     switch (e.CommandName)
     {
         case "Duzenle":
-            dgProducts.EditItemIndex=e.Item.ItemIndex;
-            dgProducts.DataSource=yonetici.SelectProducts();
-            dgProducts.DataBind();
-            break;
-    
-        case "Sil":
-            break;
-    
-        case "Vazgec":
-            dgProducts.EditItemIndex=-1;
-            dgProducts.DataSource=yonetici.SelectProducts();
+            dgProducts.EditItemIndex = e.Item.ItemIndex;
+            dgProducts.DataSource = yonetici.SelectProducts();
             dgProducts.DataBind();
             break;
 
-        default :
-            break; 
+        case "Sil":
+            break;
+
+        case "Vazgec":
+            dgProducts.EditItemIndex = -1;
+            dgProducts.DataSource = yonetici.SelectProducts();
+            dgProducts.DataBind();
+            break;
+
+        default:
+            break;
     }
 }
 ```
@@ -238,15 +238,15 @@ Kullanıcı dataGrid kontrolünde sayfalama işlemi yapabilir. Sayfalama işlemi
 ```csharp
 private void dgProducts_ItemDataBound(object sender, DataGridItemEventArgs e)
 {
-    if((e.Item.ItemType==ListItemType.Item) || (e.Item.ItemType==ListItemType.AlternatingItem))
+    if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
     {
         double incRate;
-        Label lbl=(Label)e.Item.Cells[5].Controls[1];
-        incRate=Convert.ToDouble(lbl.Text);
-        if(incRate>=100)
+        Label lbl = (Label)e.Item.Cells[5].Controls[1];
+        incRate = Convert.ToDouble(lbl.Text);
+        if (incRate >= 100)
         {
-            e.Item.Cells[5].BackColor=Color.Red;
-            e.Item.Cells[5].ForeColor=Color.White;
+            e.Item.Cells[5].BackColor = Color.Red;
+            e.Item.Cells[5].ForeColor = Color.White;
         }
     }
 }
@@ -319,15 +319,15 @@ namespace UsingEnumerators
 ```csharp
 private void dgProducts_ItemDataBound(object sender, DataGridItemEventArgs e)
 {
-    if((e.Item.ItemType==ListItemType.Item) || (e.Item.ItemType==ListItemType.AlternatingItem))
+    if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
     {
         double incRate;
-        Label lbl=(Label)e.Item.Cells[(int)ProductsGridHeaders.INCRATE].Controls[1];
-        incRate=Convert.ToDouble(lbl.Text);
-        if(incRate>=100)
+        Label lbl = (Label)e.Item.Cells[(int)ProductsGridHeaders.INCRATE].Controls[1];
+        incRate = Convert.ToDouble(lbl.Text);
+        if (incRate >= 100)
         {
-            e.Item.Cells[(int)ProductsGridHeaders.INCRATE].BackColor=Color.Red;
-            e.Item.Cells[(int)ProductsGridHeaders.INCRATE].ForeColor=Color.White;
+            e.Item.Cells[(int)ProductsGridHeaders.INCRATE].BackColor = Color.Red;
+            e.Item.Cells[(int)ProductsGridHeaders.INCRATE].ForeColor = Color.White;
         }
     }
 }
@@ -338,11 +338,11 @@ Artık uygulamamız sorunsuz şekilde çalışacaktır ve istediğimiz yeni sat�
 Örneğin DropDownList kontrolümüz doldurulduğunda o an aktif olan satıra ait ürün kategori adının da seçili olarak gelmesi gerekmektedir. Şu anki kodlarımıza göre DropDownList kontrolümüz herhangi bir satır edit modunda açıldığında ürünleri başarılı bir şekilde listeliyor ama her zaman için ilk elemana konumlanıyor. Bu problemi aşmak için düzenleme moduna geçildiğinde DropDownList kontrolünün SelectedValue özelliğini uygun değere (ki bu değer ProductSubCategoryId olacaktır) atamamız yeterli olacaktır. Dolayısıyla dataGrid kontrolümüzün ItemDataBound olay metodunda aşağıdaki düzenlemeyi yapmamız bu ihtiyacımızı karşılayacaktır. Artık kodu yazarken, hangi indisli hücreyi düşünmemize gerek de yoktur. Çünkü numaralandırıcımız anlamlı isimleri ile bunu bize söylemektedir.
 
 ```csharp
-if(e.Item.ItemType==ListItemType.EditItem)
+if (e.Item.ItemType == ListItemType.EditItem)
 {
-    Label lblKatId=(Label)e.Item.Cells[(int)ProductsGridHeaders.PRODUCTSUBCATEGORYID].Controls[1];
-    DropDownList lstKategoriler=(DropDownList)e.Item.Cells[(int)ProductsGridHeaders.PRODUCTSUBCATEGORY].Controls[1];    
-    lstKategoriler.SelectedIndex=Convert.ToInt16(lblKatId.Text)-1;
+    Label lblKatId = (Label)e.Item.Cells[(int)ProductsGridHeaders.PRODUCTSUBCATEGORYID].Controls[1];
+    DropDownList lstKategoriler = (DropDownList)e.Item.Cells[(int)ProductsGridHeaders.PRODUCTSUBCATEGORY].Controls[1];
+    lstKategoriler.SelectedIndex = Convert.ToInt16(lblKatId.Text) - 1;
 }
 ```
 
@@ -352,21 +352,21 @@ Biz numaralandırıcımızı Kaydetme işleminin gerçekleştirileceği metodu �
 
 ```csharp
 private void Kaydet(DataGridCommandEventArgs e)
-{ 
-    int productID=Convert.ToInt32(dgProducts.DataKeys[e.Item.ItemIndex]);
-    TextBox txtName=(TextBox)e.Item.Cells[(int)ProductsGridHeaders.NAME].Controls[1];
-    TextBox txtStandardCost=(TextBox)e.Item.Cells[(int)ProductsGridHeaders.STANDARDCOST].Controls[1];
-    TextBox txtListPrice=(TextBox)e.Item.Cells[(int)ProductsGridHeaders.LISTPRICE].Controls[1];
-    TextBox txtWeight=(TextBox)e.Item.Cells[(int)ProductsGridHeaders.WEIGHT].Controls[1];
-    DropDownList lstSubCategories=(DropDownList)e.Item.Cells[(int)ProductsGridHeaders.PRODUCTSUBCATEGORY].Controls[1];
+{
+    int productID = Convert.ToInt32(dgProducts.DataKeys[e.Item.ItemIndex]);
+    TextBox txtName = (TextBox)e.Item.Cells[(int)ProductsGridHeaders.NAME].Controls[1];
+    TextBox txtStandardCost = (TextBox)e.Item.Cells[(int)ProductsGridHeaders.STANDARDCOST].Controls[1];
+    TextBox txtListPrice = (TextBox)e.Item.Cells[(int)ProductsGridHeaders.LISTPRICE].Controls[1];
+    TextBox txtWeight = (TextBox)e.Item.Cells[(int)ProductsGridHeaders.WEIGHT].Controls[1];
+    DropDownList lstSubCategories = (DropDownList)e.Item.Cells[(int)ProductsGridHeaders.PRODUCTSUBCATEGORY].Controls[1];
 
-    string Name=txtName.Text;
-    double StandardCost=Convert.ToDouble(txtStandardCost.Text);
-    double ListPrice=Convert.ToDouble(txtListPrice.Text);
-    double Weight=Convert.ToDouble(txtWeight.Text);
-    int SCategoryID=Convert.ToInt16(lstSubCategories.SelectedValue);
+    string Name = txtName.Text;
+    double StandardCost = Convert.ToDouble(txtStandardCost.Text);
+    double ListPrice = Convert.ToDouble(txtListPrice.Text);
+    double Weight = Convert.ToDouble(txtWeight.Text);
+    int SCategoryID = Convert.ToInt16(lstSubCategories.SelectedValue);
 
-    yonetici.UpdateProducts(productID,Name,StandardCost,ListPrice,Weight,SCategoryID);
+    yonetici.UpdateProducts(productID, Name, StandardCost, ListPrice, Weight, SCategoryID);
 }
 
 private void dgProducts_ItemCommand(object source, DataGridCommandEventArgs e)
@@ -374,15 +374,15 @@ private void dgProducts_ItemCommand(object source, DataGridCommandEventArgs e)
     switch (e.CommandName)
     {
         case "Duzenle":
-            dgProducts.EditItemIndex=e.Item.ItemIndex;
-            dgProducts.DataSource=yonetici.SelectProducts();
+            dgProducts.EditItemIndex = e.Item.ItemIndex;
+            dgProducts.DataSource = yonetici.SelectProducts();
             dgProducts.DataBind();
             break;
 
         case "Guncelle":
             Kaydet(e);
-            dgProducts.EditItemIndex=-1;
-            dgProducts.DataSource=yonetici.SelectProducts();
+            dgProducts.EditItemIndex = -1;
+            dgProducts.DataSource = yonetici.SelectProducts();
             dgProducts.DataBind();
             break;
 
@@ -390,13 +390,13 @@ private void dgProducts_ItemCommand(object source, DataGridCommandEventArgs e)
             break;
 
         case "Vazgec":
-            dgProducts.EditItemIndex=-1;
-            dgProducts.DataSource=yonetici.SelectProducts();
+            dgProducts.EditItemIndex = -1;
+            dgProducts.DataSource = yonetici.SelectProducts();
             dgProducts.DataBind();
             break;
 
-        default :
-            break; 
+        default:
+            break;
     }
 }
 ```
@@ -406,16 +406,16 @@ DbYoneticisi sınıfımızda güncelleme işlemini gerçekleştiren metodumuz is
 ```csharp
 public int UpdateProducts(int productID, string name, double standardCost, double listPrice, double weight, int subCategoryID)
 {
-    string sql=@"UPDATE Product SET Name=@Name,StandardCost=@StandardCost, ListPrice=@ListPrice,Weight=@Weight, ProductSubCategoryID=@SubCategoryID WHERE ProductID=@ProductID";
-    SqlCommand cmd=new SqlCommand(sql,con);
-    cmd.Parameters.Add("@Name",name);
-    cmd.Parameters.Add("@StandardCost",standardCost);
-    cmd.Parameters.Add("@ListPrice",listPrice);
-    cmd.Parameters.Add("@Weight",weight);
-    cmd.Parameters.Add("@SubCategoryID",subCategoryID);
-    cmd.Parameters.Add("@ProductID",productID);
+    string sql = @"UPDATE Product SET Name=@Name,StandardCost=@StandardCost, ListPrice=@ListPrice,Weight=@Weight, ProductSubCategoryID=@SubCategoryID WHERE ProductID=@ProductID";
+    SqlCommand cmd = new SqlCommand(sql, con);
+    cmd.Parameters.Add("@Name", name);
+    cmd.Parameters.Add("@StandardCost", standardCost);
+    cmd.Parameters.Add("@ListPrice", listPrice);
+    cmd.Parameters.Add("@Weight", weight);
+    cmd.Parameters.Add("@SubCategoryID", subCategoryID);
+    cmd.Parameters.Add("@ProductID", productID);
     con.Open();
-    int result=cmd.ExecuteNonQuery();
+    int result = cmd.ExecuteNonQuery();
     con.Close();
     return result;
 }

@@ -74,12 +74,12 @@ namespace WithWCF
             // Akışın içerisinde yer alan ilk aktivite Receive tipindendir.
             Receive receive1 = new Receive
             {
-                 OperationName="SquareRoot",
-                 DisplayName="Square Root Calculation",
-                 ServiceContractName = ns + "CalculatorService",
-                 CanCreateInstance=true,
-                 Value=new OutArgument<double>(number), 
-                 AdditionalCorrelations={
+                OperationName = "SquareRoot",
+                DisplayName = "Square Root Calculation",
+                ServiceContractName = ns + "CalculatorService",
+                CanCreateInstance = true,
+                Value = new OutArgument<double>(number),
+                AdditionalCorrelations ={
                       {"ChannelBasedCorellation",new InArgument<CorrelationHandle>(corHandle)}
                   }
             };
@@ -87,9 +87,9 @@ namespace WithWCF
             // Receive aktivitesi ile istemciden gelen sayısal değer number değişkenine alındıktan sonra çalışan InvokeMethod aktivitesi ile Calculator isimli sınıf içerisindeki FindSquareRoot metodu çağırılır.             
             InvokeMethod<double> invokeMethod1 = new InvokeMethod<double>
             {
-                 TargetType=typeof(Calculator),
-                 MethodName = "FindSquareRoot",
-                 Result=new OutArgument<double>(square) // FindSquareRoot metodunun çalıştırılması sonucu elde edilen sonuç square isimli değişken tarafında yakalanabilecektir.
+                TargetType = typeof(Calculator),
+                MethodName = "FindSquareRoot",
+                Result = new OutArgument<double>(square) // FindSquareRoot metodunun çalıştırılması sonucu elde edilen sonuç square isimli değişken tarafında yakalanabilecektir.
             };
             // Metoda parametre olarak number değişkeninin değeri gönderilir. Bu değer Receive aktivitesi içerisinde set edilmiş olup istemci tarafından gelmektedir.
             invokeMethod1.Parameters.Add(new InArgument<double>(number));
@@ -97,14 +97,14 @@ namespace WithWCF
             // Ekrana bilgilendirme yapılır. Bu bilgilendirmede istemciden akışa gelen sayının karekökü yazdırılmaktadır.
             WriteLine writeLine1 = new WriteLine
             {
-                Text=new InArgument<string>(e=>String.Format("Sonuç {0}",square.Get(e).ToString()))
+                Text = new InArgument<string>(e => String.Format("Sonuç {0}", square.Get(e).ToString()))
             };
 
             // Aktivitelere sırasıyla Sequence aktivitesi içerisine ilave edilir
             squareRootFlow.Activities.Add(receive1);
             squareRootFlow.Activities.Add(invokeMethod1);
             squareRootFlow.Activities.Add(writeLine1);
-            
+
             #endregion
 
             #region Workflow Servis Oluşturma İşlemleri
@@ -116,17 +116,17 @@ namespace WithWCF
             // Service nesne örneğinin Implementation özelliğine WorkflowServiceImplementation türünden bir referans atanırken, Body özelliğine yukarıda oluşturulan Workflow aktivitesi bildirilir
             service.Implementation = new WorkflowServiceImplementation
             {
-                Name = ns+"CalculatorService",
-                Body=squareRootFlow                
+                Name = ns + "CalculatorService",
+                Body = squareRootFlow
             };
 
             // Sonuçta Workflow bir WCF servisi olarak host edileceğinden bir Endpoint bilgisine sahip olmalıdır
             // Bu nedenle basit bir Endpoint bildirimi yapılır
             // Örnekte Tcp bazlı servis iletişimi tercih edilmiştir
             service.Endpoints.Add(new Endpoint
-            {                
+            {
                 Uri = new Uri("SquareRoot", UriKind.Relative), //Address bilgisi
-                Binding=new NetTcpBinding(), // Binding bilgisi
+                Binding = new NetTcpBinding(), // Binding bilgisi
                 ServiceContractName = ns + "CalculatorService" // Contract bilgisi(Burada verilen isim ile Receive aktivitesine ait ServiceContractName özelliğindeki değerler aynı olmalıdır. Aksi halde Exception2 alınır)
             });
 
@@ -218,8 +218,12 @@ namespace ClientApp
     [MessageContract(IsWrapped = false)]
     public class SquareRootRequest
     {
-        [MessageBodyMember(Namespace= "http://schemas.microsoft.com/2003/10/Serialization/",Name = "double")]
-        public double Number { get; set; }
+        [MessageBodyMember(Namespace = "http://schemas.microsoft.com/2003/10/Serialization/", Name = "double")]
+        public double Number
+        {
+            get;
+            set;
+        }
     }
 
     // Proxy tanımlaması yapılır
@@ -227,7 +231,7 @@ namespace ClientApp
     [ServiceContract(Namespace = "http://www.buraksenyurt.com/WF4")]
     interface CalculatorService
     {
-        [OperationContract(IsOneWay=true)] // Operasyonun OneWay olduğunu belirtmessek Exception3' teki çalışma zamanı hatasını alırız.
+        [OperationContract(IsOneWay = true)] // Operasyonun OneWay olduğunu belirtmessek Exception3' teki çalışma zamanı hatasını alırız.
         void SquareRoot(SquareRootRequest request);
     }
 }

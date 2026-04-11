@@ -28,18 +28,18 @@ DataTable dt;
 
 private void Bagla()
 {
-    lblPersonelID.DataBindings.Add("Text",dt,"PersonelID");
-    txtPersonelAd.DataBindings.Add("Text",dt,"PersonelAd");
-    txtPersonelSoyad.DataBindings.Add("Text",dt,"PersonelSoyad");
-    txtSaatUcreti.DataBindings.Add("Text",dt,"SaatUcreti");
-    txtCalismaSuresi.DataBindings.Add("Text",dt,"CalismaSuresi");
+    lblPersonelID.DataBindings.Add("Text", dt, "PersonelID");
+    txtPersonelAd.DataBindings.Add("Text", dt, "PersonelAd");
+    txtPersonelSoyad.DataBindings.Add("Text", dt, "PersonelSoyad");
+    txtSaatUcreti.DataBindings.Add("Text", dt, "SaatUcreti");
+    txtCalismaSuresi.DataBindings.Add("Text", dt, "CalismaSuresi");
 }
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    con=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
-    da=new SqlDataAdapter("SELECT * FROM PERSONEL",con);
-    dt=new DataTable("Personel");
+    con = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+    da = new SqlDataAdapter("SELECT * FROM PERSONEL", con);
+    dt = new DataTable("Personel");
     da.Fill(dt);
     Bagla();
 }
@@ -63,53 +63,53 @@ CurrencyManager cm;
 
 private void Bagla()
 {
-    lblPersonelID.DataBindings.Add("Text",dt,"PersonelID");
-    txtPersonelAd.DataBindings.Add("Text",dt,"PersonelAd");
-    txtPersonelSoyad.DataBindings.Add("Text",dt,"PersonelSoyad");
-    txtSaatUcreti.DataBindings.Add("Text",dt,"SaatUcreti");
-    txtCalismaSuresi.DataBindings.Add("Text",dt,"CalismaSuresi");
+    lblPersonelID.DataBindings.Add("Text", dt, "PersonelID");
+    txtPersonelAd.DataBindings.Add("Text", dt, "PersonelAd");
+    txtPersonelSoyad.DataBindings.Add("Text", dt, "PersonelSoyad");
+    txtSaatUcreti.DataBindings.Add("Text", dt, "SaatUcreti");
+    txtCalismaSuresi.DataBindings.Add("Text", dt, "CalismaSuresi");
 }
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    con=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
-    da=new SqlDataAdapter("SELECT * FROM PERSONEL",con);
-    dt=new DataTable("Personel");
+    con = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+    da = new SqlDataAdapter("SELECT * FROM PERSONEL", con);
+    dt = new DataTable("Personel");
     da.Fill(dt);
     Bagla();
-    cm=(CurrencyManager)this.BindingContext[dt];
-    lblPozisyon.Text="Guncel Pozisyon ------> "+Convert.ToString(cm.Position+1);
+    cm = (CurrencyManager)this.BindingContext[dt];
+    lblPozisyon.Text = "Guncel Pozisyon ------> " + Convert.ToString(cm.Position + 1);
 }
 
 private void btnIlkSatiraGotur_Click(object sender, System.EventArgs e)
 {
-    cm.Position=0;
-    lblPozisyon.Text="Guncel Pozisyon ------> "+Convert.ToString(cm.Position+1);
+    cm.Position = 0;
+    lblPozisyon.Text = "Guncel Pozisyon ------> " + Convert.ToString(cm.Position + 1);
 }
 
 private void btnOncekiSatiraGotur_Click(object sender, System.EventArgs e)
 {
     cm.Position--;
-    lblPozisyon.Text="Guncel Pozisyon ------> "+Convert.ToString(cm.Position+1);
+    lblPozisyon.Text = "Guncel Pozisyon ------> " + Convert.ToString(cm.Position + 1);
 }
 
 private void btnSonrakiSatiraGotur_Click(object sender, System.EventArgs e)
 {
     cm.Position++;
-    lblPozisyon.Text="Guncel Pozisyon ------> "+Convert.ToString(cm.Position+1);
+    lblPozisyon.Text = "Guncel Pozisyon ------> " + Convert.ToString(cm.Position + 1);
 }
 
 private void btnSonSatiraGotur_Click(object sender, System.EventArgs e)
 {
-    cm.Position=dt.Rows.Count-1;
-    lblPozisyon.Text="Guncel Pozisyon ------> "+Convert.ToString(cm.Position+1);
+    cm.Position = dt.Rows.Count - 1;
+    lblPozisyon.Text = "Guncel Pozisyon ------> " + Convert.ToString(cm.Position + 1);
 }
 ```
 
 Uygulama kodlarımızda en önemli nokta, Form üzerindeki kontrollerin sahip oldukları CurrencyManager nesnelerini elde edebilmek için, Form'a ait BindingContext özelliğinden yararlanmamızdır.
 
 ```csharp
-cm=(CurrencyManager)this.BindingContext[dt];
+cm = (CurrencyManager)this.BindingContext[dt];
 ```
 
 Bu satır ile, DataTable veri kaynağı için bir CurrencyManager nesnesi oluşturulur. Artık navigasyon işlemi için tek yapmamız gereken, CurrencyManager sınıfına ait Position özelliğinin kullanılmasıdır. Bu özelliğin değişmesi durumunda, Form üzerinde yer alan ve DataTable'a ait veri kaynağına bağlı olan tüm kontrollerin içeriği güncel satıra ait verileri gösterecek şekilde değişecektir. Örneğin, bir satır ileri gitmek için Position özelliğinin değerini 1 artırmamız yeterli olurken, son satıra gitmek için, veri kaynağının sahip olduğu toplam satır sayısını 1 eksiltiriz.
@@ -139,13 +139,13 @@ Uygulamamızda yeni bir satır eklemek için öncelikle aşağıdaki kodları ya
 ```csharp
 private void Temizle()
 {
-    lblPersonelID.Text="";
+    lblPersonelID.Text = "";
 
-    for(int i=0;i<this.Controls.Count;i++)
+    for (int i = 0; i < this.Controls.Count; i++)
     {
-        if(this.Controls[i] is TextBox)
+        if (this.Controls[i] is TextBox)
         {
-            this.Controls[i].Text="";
+            this.Controls[i].Text = "";
         }
     }
 }
@@ -158,7 +158,7 @@ private void btnYeniSatirEkler_Click(object sender, System.EventArgs e)
 
 private void btnVeritabaninaYaz_Click(object sender, System.EventArgs e)
 {
-    SqlCommandBuilder cmb=new SqlCommandBuilder(da);
+    SqlCommandBuilder cmb = new SqlCommandBuilder(da);
     da.Update(dt);
 }
 ```
@@ -172,7 +172,7 @@ public override void EndCurrentEdit();
 Veri kümesinden herhangi bir satırı silmek istediğimizde ise, aşağıdaki prototipe sahip olan RemoveAt metodunu kullanabiliriz.
 
 ```csharp
-public override void RemoveAt( int index);
+public override void RemoveAt(int index);
 ```
 
 Bu metod parametre olarak, silinecek satırın indeksini almalıdır. Satır güncelleme ve silme işlemleri için ilgili kodlarımız ise aşağıdaki gibidir.
@@ -180,9 +180,9 @@ Bu metod parametre olarak, silinecek satırın indeksini almalıdır. Satır gü
 ```csharp
 private void btnDegisiklikleriKaydet_Click(object sender, System.EventArgs e)
 {
-    if(MessageBox.Show("Değişiklikler kaydedilsin mi?", "Değişiklik" , MessageBoxButtons.OKCancel, MessageBoxIcon.Question )==DialogResult.OK)
-{
-    cm.EndCurrentEdit();
+    if (MessageBox.Show("Değişiklikler kaydedilsin mi?", "Değişiklik", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+    {
+        cm.EndCurrentEdit();
     }
     else
     {

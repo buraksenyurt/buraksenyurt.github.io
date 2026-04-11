@@ -61,7 +61,7 @@ Bu kod ile, sistemimizde yüklü olan veri sağlayıcılarını elde etmiş oldu
 ```csharp
 DataTable dtProviders = new DataTable();
 dtProviders = DbProviderFactories.GetFactoryClasses();
-grdProviders.DataSource=dtProviders;
+grdProviders.DataSource = dtProviders;
 ```
 
 ![mk121_2.gif](/assets/images/2005/mk121_2.gif)
@@ -189,10 +189,10 @@ fakto = DbProviderFactories.GetFactory(secilenProvider);
 con = fakto.CreateConnection();
 cmd = fakto.CreateCommand();
 if (secilenProvider == "System.Data.SqlClient")
-{ 
+{
     conStr.Add("data source", "localhost");
     conStr.Add("database", "AdventureWorks");
-    conStr.Add("integrated security", "SSPI"); 
+    conStr.Add("integrated security", "SSPI");
 }
 else if (secilenProvider == "System.Data.OleDb")
 {
@@ -211,12 +211,12 @@ try
     con.Open();
     cmd.Connection = con;
     cmd.CommandText = "INSERT INTO Personel (AD,SOYAD,MAIL) VALUES ('Burak Selim','Şenyurt','selim(at)buraksenyurt.com')";
-    int eklenen=cmd.ExecuteNonQuery();
+    int eklenen = cmd.ExecuteNonQuery();
     Console.WriteLine("Bağlantı açıldı...");
     Console.WriteLine(eklenen + " SATIR EKLENDI");
     Console.ReadLine();
 }
-catch(Exception hata)
+catch (Exception hata)
 {
     Console.WriteLine(hata.Message.ToString());
 }
@@ -237,26 +237,26 @@ static void Main(string[] args)
     DbConnection con;
     DbCommand cmd;
     DbParameter prmAd;
-     DbParameter prmSoyad;
-     DbParameter prmMail;
+    DbParameter prmSoyad;
+    DbParameter prmMail;
     DbConnectionStringBuilder conStr = new DbConnectionStringBuilder();
     string secilenProvider = ConfigurationSettings.AppSettings["ProviderTipi"];
     string cmdQuery;
     fakto = DbProviderFactories.GetFactory(secilenProvider);
     con = fakto.CreateConnection();
     cmd = fakto.CreateCommand();
-     prmAd = fakto.CreateParameter();
-     prmSoyad = fakto.CreateParameter();
-     prmMail = fakto.CreateParameter();
+    prmAd = fakto.CreateParameter();
+    prmSoyad = fakto.CreateParameter();
+    prmMail = fakto.CreateParameter();
     if (secilenProvider == "System.Data.SqlClient")
-    { 
+    {
         conStr.Add("data source", "localhost");
         conStr.Add("database", "AdventureWorks");
         conStr.Add("integrated security", "SSPI");
         cmdQuery = "INSERT INTO Personel (AD,SOYAD,MAIL) VALUES (@AD,@SOYAD,@MAIL)";
         prmAd.ParameterName = "@AD";
-          prmAd.DbType = DbType.String;
-          prmAd.Size = 50;
+        prmAd.DbType = DbType.String;
+        prmAd.Size = 50;
         cmd.Parameters.Add(prmAd);
         prmSoyad.ParameterName = "@SOYAD";
         prmSoyad.DbType = DbType.String;
@@ -277,7 +277,7 @@ static void Main(string[] args)
         conStr.Add("integrated security", "SSPI");
         cmdQuery = "INSERT INTO Personel (AD,SOYAD,MAIL) VALUES (?,?,?)";
         prmAd.DbType = DbType.String;
-          prmAd.Size = 50;
+        prmAd.Size = 50;
         cmd.Parameters.Add(prmAd);
         prmSoyad.DbType = DbType.String;
         prmSoyad.Size = 50;
@@ -298,13 +298,13 @@ static void Main(string[] args)
         con.Open();
         prmAd.Value = "Burak Selim";
         prmSoyad.Value = "Şenyurt";
-          prmMail.Value = "selim(at)buraksenyurt.com";
-        int eklenen=cmd.ExecuteNonQuery();
+        prmMail.Value = "selim(at)buraksenyurt.com";
+        int eklenen = cmd.ExecuteNonQuery();
         Console.WriteLine("Bağlantı açıldı...");
         Console.WriteLine(eklenen + " SATIR EKLENDI");
         Console.ReadLine();
     }
-    catch(Exception hata)
+    catch (Exception hata)
     {
         Console.WriteLine(hata.Message.ToString());
     }

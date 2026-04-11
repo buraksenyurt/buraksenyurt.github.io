@@ -41,10 +41,26 @@ namespace ServerApp
 {
     public class Product
     {
-        public int ProductID { get; set; }
-        public string Name { get; set; }
-        public double ListPrice { get; set; }
-        public int UnitsInStcok { get; set; }
+        public int ProductID
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public double ListPrice
+        {
+            get;
+            set;
+        }
+        public int UnitsInStcok
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -64,7 +80,7 @@ namespace ServerApp
 {
     // CUD işlemlerine destek vermesi amacıyla ShopEntities tipine IUpdatable arayüzü uyarlanmıştır.
     public class ShopEntities
-        :IUpdatable
+        : IUpdatable
     {
         // Product tipinden listeyi tutacak generic koleksiyonumuz
         static List<Product> _products;
@@ -93,7 +109,7 @@ namespace ServerApp
         }
 
         #region IUpdatable Members
-    
+
         // Yeni bir Product nesnesinin oluşturulması ve eklenmesi sırasında devreye girer
         public object CreateResource(string containerName, string fullTypeName)
         {
@@ -126,7 +142,7 @@ namespace ServerApp
                     break;
                 }
             }
-            return r; 
+            return r;
         }
 
         // gelen nesnenin belirtilen özelliğinin değerini geriye döndüren metoddur
@@ -165,7 +181,7 @@ namespace ServerApp
         public object ResetResource(object resource)
         {
             throw new NotImplementedException();
-        } 
+        }
 
         public void SetReference(object targetResource, string propertyName, object propertyValue)
         {
@@ -199,9 +215,9 @@ using System.Linq;
 using System.ServiceModel.Web;
 using ServerApp;
 
-public class ShopServices 
+public class ShopServices
      : DataService<ShopEntities>
-{ 
+{
     public static void InitializeService(IDataServiceConfiguration config)
     {
         config.SetEntitySetAccessRule("*", EntitySetRights.All);
@@ -234,12 +250,12 @@ namespace ClientApp
 
             // Yeni bir Product nesne örneği oluşturulur
             Product newProduct = new Product
-                {
-                    ProductID = 6,
-                    Name = "HP Mouse",
-                    ListPrice = 12,
-                    UnitsInStcok = 100
-                };
+            {
+                ProductID = 6,
+                Name = "HP Mouse",
+                ListPrice = 12,
+                UnitsInStcok = 100
+            };
 
             // Nesne örneği eklenir
             proxy.AddToProducts(newProduct);
@@ -249,8 +265,8 @@ namespace ClientApp
 
             // ProductID değeri 2 olan Product nesnesi istenir.
             var prd = (from p in proxy.Products
-                            where p.ProductID==2
-                            select p).First<Product>();
+                       where p.ProductID == 2
+                       select p).First<Product>();
 
             // Bazı özelliklerin değerleri sembolik olarak değiştirilir
             prd.ListPrice += 10;
@@ -263,13 +279,13 @@ namespace ClientApp
 
             // Silme işlemine örnek olması için son eklenen Product istenir
             var lastPrd = (from p in proxy.Products
-                                where p.ProductID == newProduct.ProductID
-                                select p).First<Product>();
-        
+                           where p.ProductID == newProduct.ProductID
+                           select p).First<Product>();
+
             // Nesne silinmesi yapılır
             proxy.DeleteObject(lastPrd);
             // Delete operasyonu servis tarafına gönderilir
-            proxy.SaveChanges();        
+            proxy.SaveChanges();
         }
     }
 }

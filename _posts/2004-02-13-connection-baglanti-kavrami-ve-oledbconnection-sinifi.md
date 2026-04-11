@@ -37,33 +37,37 @@ Buraya kadar bahsettiklerimiz kavramsal açıklamalardır. Dilerseniz basit örn
 ```csharp
 using System;
 
-using System.Data.OleDb; /* OleDbConnection sınıfı, Data.OleDb isim uzayında yer almaktadır. */
+using System.Data.OleDb;
+/* OleDbConnection sınıfı, Data.OleDb isim uzayında yer almaktadır. */
 
 namespace OleDbCon1
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               OleDbConnection conFriends=new OleDbConnection(); /* OleDbConnection nesnemiz oluşturuluyor. */
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            OleDbConnection conFriends = new OleDbConnection();
+            /* OleDbConnection nesnemiz oluşturuluyor. */
 
-               /* ConnectionString özelliği belirleniyor. Provider (Sağlayıcımız) SQLOLEDB. Bu bir sql sunucusuna bağlanmak istediğimizi belirtir. Data Source anahtarına localhost değerini atayarak, sunucunun yerel makinede olduğunu belirtiyoruz. Ancak buraya başka bir adreste girilebilir. Sunucunuz nerede ise oranın adresi. Database ile, bağlantı hattının açılacağı veritabanını belirliyoruz. Burada sql sunucumuzda yer alan Friends veritabanına bağlantı hattı açıyoruz. Son olarak Integrated Security=SSPI anahtar-değer çifti sayesinde Windows Doğrulaması ile sunucuya bağlanabileceğimizi belirtiyoruz. Yani sql sunucusuna bağlanma yetkisi olan her windows kullanıcısı bu hattı tesis edebilecek.*/
+            /* ConnectionString özelliği belirleniyor. Provider (Sağlayıcımız) SQLOLEDB. Bu bir sql sunucusuna bağlanmak istediğimizi belirtir. Data Source anahtarına localhost değerini atayarak, sunucunun yerel makinede olduğunu belirtiyoruz. Ancak buraya başka bir adreste girilebilir. Sunucunuz nerede ise oranın adresi. Database ile, bağlantı hattının açılacağı veritabanını belirliyoruz. Burada sql sunucumuzda yer alan Friends veritabanına bağlantı hattı açıyoruz. Son olarak Integrated Security=SSPI anahtar-değer çifti sayesinde Windows Doğrulaması ile sunucuya bağlanabileceğimizi belirtiyoruz. Yani sql sunucusuna bağlanma yetkisi olan her windows kullanıcısı bu hattı tesis edebilecek.*/
 
-               conFriends.ConnectionString="Provider=SQLOLEDB;Data Source=localhost;Database=Friends;Integrated Security=SSPI";
+            conFriends.ConnectionString = "Provider=SQLOLEDB;Data Source=localhost;Database=Friends;Integrated Security=SSPI";
 
-               try
-               {
-                    conFriends.Open(); /* Open metodu ile oluşturduğumuz iletişim hattını kullanıma açıyoruz. */
-                    Console.WriteLine("Bağlantı açıldı...");
-                    conFriends.Close(); /* Close metodu ilede oluşturulan iletişim hattını kapatıyoruz. */   
-                    Console.WriteLine("Bağlantı kapatıldı...");
-               }
-               catch(Exception hata)
-               {
-                    Console.WriteLine(hata.Message.ToString());
-               }
-          }
-     }
+            try
+            {
+                conFriends.Open();
+                /* Open metodu ile oluşturduğumuz iletişim hattını kullanıma açıyoruz. */
+                Console.WriteLine("Bağlantı açıldı...");
+                conFriends.Close();
+                /* Close metodu ilede oluşturulan iletişim hattını kapatıyoruz. */
+                Console.WriteLine("Bağlantı kapatıldı...");
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+        }
+    }
 }
 ```
 
@@ -74,24 +78,24 @@ namespace OleDbCon1
 Aynı örnekte bu kez belli bir kullanıcı ile bağlanmak istediğimizi düşünelim. Bu durumda ConnectionString'imizi aşağıdaki şekilde değiştirmemiz gerekir. Bu durumda User ID ve Password anahtarlarına gerekli kullanıcı değerlerini atarız.
 
 ```csharp
-conFriends.ConnectionString="Provider=SQLOLEDB;Data Source=localhost;Database=Friends;User Id=sa;Password=CucP??80.";
+conFriends.ConnectionString = "Provider=SQLOLEDB;Data Source=localhost;Database=Friends;User Id=sa;Password=CucP??80.";
 ```
 
 Şimdide bir Access tablosuna nasıl bağlanabileceğimizi görelim. Bunun için ConnectionString özelliğimizi aşağıdaki gibi yazarız.
 
 ```csharp
-OleDbConnection conYazarlar=new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;data source=c:\\Authors.mdb");
+OleDbConnection conYazarlar = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;data source=c:\\Authors.mdb");
 
 try
 {
-     conYazarlar.Open();
-     Console.WriteLine("Yazarlar Access veritabanına bağlantı açıldı...");
-     conYazarlar.Close();
-     Console.WriteLine("Yazarlar Access veritabanına olan bağlantı kapatıldı...");
+    conYazarlar.Open();
+    Console.WriteLine("Yazarlar Access veritabanına bağlantı açıldı...");
+    conYazarlar.Close();
+    Console.WriteLine("Yazarlar Access veritabanına olan bağlantı kapatıldı...");
 }
-catch(Exception hata)
+catch (Exception hata)
 {
-     Console.WriteLine(hata.Message.ToString());
+    Console.WriteLine(hata.Message.ToString());
 }
 ```
 
@@ -128,19 +132,19 @@ Burada örnek olarak Sql Server Provider'ımızı seçelim. Sonraki adımda ise 
 Şimdi uygulamızı buna göre değiştirelim.
 
 ```csharp
-OleDbConnection con=new OleDbConnection();
-con.ConnectionString="File Name=C:\\baglanti.udl";
+OleDbConnection con = new OleDbConnection();
+con.ConnectionString = "File Name=C:\\baglanti.udl";
 
 try
 {
-     con.Open();
-     Console.WriteLine("Bağlantı açıldı...");
-     con.Close();
-     Console.WriteLine("Bağlantı kapatıldı...");
+    con.Open();
+    Console.WriteLine("Bağlantı açıldı...");
+    con.Close();
+    Console.WriteLine("Bağlantı kapatıldı...");
 }
-catch(Exception hata)
+catch (Exception hata)
 {
-     Console.WriteLine(hata.Message.ToString());
+    Console.WriteLine(hata.Message.ToString());
 }
 ```
 
@@ -173,18 +177,18 @@ Dikkat ederseniz bağlantımız üzerinden, veri kaynağındaki tablolara ve ala
 Gelelim OleDbConnection nesnesinin diğer kullanışlı üyelerine. Buraya kadar bir bağlantı hattını oluşturmak için ConnectionString özelliğinin nasıl kullanıldığını inceledik. Bununla birlikte var olan bir bağlantı hattını açmak için Open metodunu, bu bağlantı hattını kapatmak içinde Close metodunun kullanıldığını gördük. OleDbConnection nesnesinin diğer bir özelliğide ConnectionTimeout değeridir. ConnectionTimeout özelliği, bir bağlantının sağlanması için gerekli süreyi belirtir. Bu süre boyunca bağlantı sağlanamaması bir istisnanın fırlatılmasına neden olucaktır. Bu özellik yanlız-okunabilir (read-only) bir özellik olduğundan, değerini doğrudan değiştiremeyiz. Bunun için, bu özelliği ConnectionString içerisinde belirlememiz gerekir. Örneğin aşağıdaki kodlarda, Sql sunucusuna bağlanabilmek için gerekli süre 10 saniye olarak belirlenmiştir. Şimdi ben Sql Server servisimizi durduracağım ve uygulamayı çalıştıracağım. Bakalım 10 saniye sonunda ne olucak.
 
 ```csharp
-OleDbConnection conFriends=new OleDbConnection();
-conFriends.ConnectionString="Provider=SQLOLEDB;Data Source=localhost;Database=Friends;User Id=sa;Password=CucP??80.;Connect Timeout=10";
+OleDbConnection conFriends = new OleDbConnection();
+conFriends.ConnectionString = "Provider=SQLOLEDB;Data Source=localhost;Database=Friends;User Id=sa;Password=CucP??80.;Connect Timeout=10";
 try
 {
-     conFriends.Open();
-     Console.WriteLine("Baglanti açildi...");
-     conFriends.Close();
-     Console.WriteLine("Baglanti kapatildi...");
+    conFriends.Open();
+    Console.WriteLine("Baglanti açildi...");
+    conFriends.Close();
+    Console.WriteLine("Baglanti kapatildi...");
 }
-catch(Exception hata)
+catch (Exception hata)
 {
-     Console.WriteLine(hata.Message.ToString());
+    Console.WriteLine(hata.Message.ToString());
 }
 ```
 
@@ -197,13 +201,20 @@ Bu durumda aşağıdaki hata mesajını alırız.
 OleDbConnection sınıfının Open ve Close metodları dışındada faydalı metodları vardır. Örneğin ChangeDatabase metodu. Bu metod ile açık olan bir bağlantı üzerinden, veri kaynağındaki seçili veritabanını değiştirmemiz sağlanır. Yani hattın ucu başka bir veritabanına yönlendirilebilir. Bu tabiki Oracle ve Sql gibi veritabanı sistemlerinde özellikle işe yarar. Örneğin, Friends veritabanına bağlıyken, açık olan bağlantımız üzerinden hattımızı, pubs veritabanına yönlendirelim.
 
 ```csharp
-OleDbConnection conFr=new OleDbConnection(); /* OleDbConnection nesnemiz oluşturuluyor. */
-conFr.ConnectionString="Provider=SQLOLEDB;Data Source=localhost;Database=Friends;Integrate/d Security=SSPI"; /* Bağlantı hattımız için gerekli bilgiler giriliyor. Sql sunucumuzda yer alan Friends isimli veritabanına bağlandık. */
-conFr.Open(); /* Bağlantımız açılıyor. */
-Console.WriteLine("Veritabanı "+conFr.Database.ToString()); /* Şuandaki bağlantının hangi veritabanına yapıldığını OleDbConnection sınıfının Database özelliği ile öğreniyoruz. */
-conFr.ChangeDatabase("pubs"); /* ChangeDatabase metodu ile bağlantı hattımızı yönlendirmek istediğimiz veritabanının adını giriyoruz. */
-Console.WriteLine("Şimdiki veritabanı "+conFr.Database.ToString()); /* Bağlantı hattının şu an yönlendirilmiş olduğu veritabanının adını Database özelliği ile elde ediyoruz.*/
-conFr.Close(); /* Bağlantımızı kapatıyoruz. */
+OleDbConnection conFr = new OleDbConnection();
+/* OleDbConnection nesnemiz oluşturuluyor. */
+conFr.ConnectionString = "Provider=SQLOLEDB;Data Source=localhost;Database=Friends;Integrate/d Security=SSPI";
+/* Bağlantı hattımız için gerekli bilgiler giriliyor. Sql sunucumuzda yer alan Friends isimli veritabanına bağlandık. */
+conFr.Open();
+/* Bağlantımız açılıyor. */
+Console.WriteLine("Veritabanı " + conFr.Database.ToString());
+/* Şuandaki bağlantının hangi veritabanına yapıldığını OleDbConnection sınıfının Database özelliği ile öğreniyoruz. */
+conFr.ChangeDatabase("pubs");
+/* ChangeDatabase metodu ile bağlantı hattımızı yönlendirmek istediğimiz veritabanının adını giriyoruz. */
+Console.WriteLine("Şimdiki veritabanı " + conFr.Database.ToString());
+/* Bağlantı hattının şu an yönlendirilmiş olduğu veritabanının adını Database özelliği ile elde ediyoruz.*/
+conFr.Close();
+/* Bağlantımızı kapatıyoruz. */
 ```
 
 ![mk54_14.gif](/assets/images/2004/mk54_14.gif)
@@ -232,34 +243,41 @@ Tablo 1. ConnectionState numaralandırıcısının değerleri.
 ConnectionState numaralandırıcısı aynı zamanda, State özelliği içinde kullanılabilir. State özelliği, OleDbConnection nesnesinin o anki durumunu, ConnectionState numaralandırıcısı tipinde saklar. State özelliğini uygulamalarımızda, var olan bağlantının durumun kontrol ederek hareket etmek için kullanabiliriz. Örneğin bir bağlantı nesnesini uygulamamızın bir yerinde tekrardan açmak istediğimizi varsayalım. Bu bağlantı nesnesinin durumu zaten Open ise yani açık ise, tekrardan açma işlemi uygulamamız gerekmez. Dilerseniz makalemizin sonunda StateChange olayına ilişkin bir örnek geliştirelim.
 
 ```csharp
-OleDbConnection con; /* OleDbConnection nesnemiz tanımlanıyor.*/
+OleDbConnection con;
+/* OleDbConnection nesnemiz tanımlanıyor.*/
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     lstDurum.Items.Clear();
-     con=new OleDbConnection("Provider=SQLOLEDB;Data source=localhost;initial catalog=Friends;Integrated Security=sspi"); /* Bağlantı hattımız oluşturuluyor. */
-     con.StateChange+=new StateChangeEventHandler(con_DurumDegisti); /* OleDbConnection nesnemiz için StateChange olayımız ekleniyor. Olay meydana geldiğinde con_DurumDegisti isimli metod çalıştırılıcak.*/
+    lstDurum.Items.Clear();
+    con = new OleDbConnection("Provider=SQLOLEDB;Data source=localhost;initial catalog=Friends;Integrated Security=sspi");
+    /* Bağlantı hattımız oluşturuluyor. */
+    con.StateChange += new StateChangeEventHandler(con_DurumDegisti);
+    /* OleDbConnection nesnemiz için StateChange olayımız ekleniyor. Olay meydana geldiğinde con_DurumDegisti isimli metod çalıştırılıcak.*/
 }
 
 private void btnAc_Click(object sender, System.EventArgs e)
 {
-     if(con.State==ConnectionState.Closed) /* Kullanıcı açık olan bir bağlantı üzerinden tekrar bu butona basarak bir bağlantı açmak isterse bunun önüne geçmek için ilgili OleDbConnection nesnesinin durumuna bakıyoruz. Eğer con nesnesi kapalı ise, açılabilmesini sağlıyoruz.*/
-     {
-          con.Open(); /* Bağlantımız açılıyor. İşte bu anda StateChange olayı çalıştırılır.*/
-     }
+    if (con.State == ConnectionState.Closed) /* Kullanıcı açık olan bir bağlantı üzerinden tekrar bu butona basarak bir bağlantı açmak isterse bunun önüne geçmek için ilgili OleDbConnection nesnesinin durumuna bakıyoruz. Eğer con nesnesi kapalı ise, açılabilmesini sağlıyoruz.*/
+    {
+        con.Open();
+        /* Bağlantımız açılıyor. İşte bu anda StateChange olayı çalıştırılır.*/
+    }
 }
 private void btnKapat_Click(object sender, System.EventArgs e)
 {
-     if(con.State==ConnectionState.Open) /* Eğer açık bir bağlantı varsa kapatma işlemini uyguluyoruz.*/
-     {
-          con.Close(); /* Bağlantı kapanıyor. StateChange olayı bir kez daha çalışır. */
-     }
+    if (con.State == ConnectionState.Open) /* Eğer açık bir bağlantı varsa kapatma işlemini uyguluyoruz.*/
+    {
+        con.Close();
+        /* Bağlantı kapanıyor. StateChange olayı bir kez daha çalışır. */
+    }
 }
-private void con_DurumDegisti(object sender,StateChangeEventArgs e)
+private void con_DurumDegisti(object sender, StateChangeEventArgs e)
 {
-     lstDurum.Items.Add("Bağlantı durumu "+e.OriginalState.ToString()+" idi."); /* Bağlantımızın hangi halde olduğunu alıyoruz.*/
+    lstDurum.Items.Add("Bağlantı durumu " + e.OriginalState.ToString() + " idi.");
+    /* Bağlantımızın hangi halde olduğunu alıyoruz.*/
 
-     lstDurum.Items.Add("Artık bağlantı durumu "+e.CurrentState.ToString()); /* Ve bağlantımızın yeni halini alıyoruz.*/
+    lstDurum.Items.Add("Artık bağlantı durumu " + e.CurrentState.ToString());
+    /* Ve bağlantımızın yeni halini alıyoruz.*/
 }
 ```
 

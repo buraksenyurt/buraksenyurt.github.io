@@ -100,18 +100,18 @@ Her şeyden önce uygulamamızı çalıştırdığımızda hiç bir kontrolde ve
 ```csharp
 private void btnLoad_Click(object sender, System.EventArgs e)
 {
-     try
-     {
-          // Attempt to load the dataset.
-          this.LoadDataSet();
-     }
-     catch (System.Exception eLoad)
-     {
-          // Add your error handling code here.
-          // Display error message, if any.
+    try
+    {
+        // Attempt to load the dataset.
+        this.LoadDataSet();
+    }
+    catch (System.Exception eLoad)
+    {
+        // Add your error handling code here.
+        // Display error message, if any.
         System.Windows.Forms.MessageBox.Show(eLoad.Message);
-     }
-     this.objdsSatislar_PositionChanged();
+    }
+    this.objdsSatislar_PositionChanged();
 }
 ```
 
@@ -120,35 +120,35 @@ Görüldüğü gibi kod LoadDataSet adlı bir procedure'e yönlendirilir.
 ```csharp
 public void LoadDataSet()
 {
-     // Create a new dataset to hold the records returned from the call to FillDataSet.
-     // A temporary dataset is used because filling the existing dataset would
-     // require the databindings to be rebound.
-     Wizard.dsSatislar objDataSetTemp;
-     objDataSetTemp = new Wizard.dsSatislar();
-     try
-     {
-          // Attempt to fill the temporary dataset.
-          this.FillDataSet(objDataSetTemp);
-     }
-     catch (System.Exception eFillDataSet)
-     {
-          // Add your error handling code here.
-          throw eFillDataSet;
-     }
-     try
-     {
-          grdSiparisler.DataSource = null;
-          // Empty the old records from the dataset.
-          objdsSatislar.Clear();
-          // Merge the records into the main dataset.
-          objdsSatislar.Merge(objDataSetTemp);
-          grdSiparisler.SetDataBinding(objdsSatislar, "Sepetler.drSepetlerToSiparisler");
-     }
-     catch (System.Exception eLoadMerge)
-     {
-          // Add your error handling code here.
-          throw eLoadMerge;
-     }
+    // Create a new dataset to hold the records returned from the call to FillDataSet.
+    // A temporary dataset is used because filling the existing dataset would
+    // require the databindings to be rebound.
+    Wizard.dsSatislar objDataSetTemp;
+    objDataSetTemp = new Wizard.dsSatislar();
+    try
+    {
+        // Attempt to fill the temporary dataset.
+        this.FillDataSet(objDataSetTemp);
+    }
+    catch (System.Exception eFillDataSet)
+    {
+        // Add your error handling code here.
+        throw eFillDataSet;
+    }
+    try
+    {
+        grdSiparisler.DataSource = null;
+        // Empty the old records from the dataset.
+        objdsSatislar.Clear();
+        // Merge the records into the main dataset.
+        objdsSatislar.Merge(objDataSetTemp);
+        grdSiparisler.SetDataBinding(objdsSatislar, "Sepetler.drSepetlerToSiparisler");
+    }
+    catch (System.Exception eLoadMerge)
+    {
+        // Add your error handling code here.
+        throw eLoadMerge;
+    }
 }
 ```
 
@@ -157,30 +157,30 @@ Bu metodda da yükleme işlemi için bir DataSet nesnesi oluşturulur veFillData
 ```csharp
 public void FillDataSet(Wizard.dsSatislar dataSet)
 {
-     // Turn off constraint checking before the dataset is filled.
-     // This allows the adapters to fill the dataset without concern
-     // for dependencies between the tables.
-     dataSet.EnforceConstraints = false;
-     try
-     {
-          // Open the connection.
-          this.oleDbConnection1.Open();
-          // Attempt to fill the dataset through the OleDbDataAdapter1.
-          this.oleDbDataAdapter1.Fill(dataSet);
-          this.oleDbDataAdapter2.Fill(dataSet);
-     }
-     catch (System.Exception fillException)
-     {
-          // Add your error handling code here.
-          throw fillException;
-     }
-     finally
-     {
-          // Turn constraint checking back on.
-          dataSet.EnforceConstraints = true;
-          // Close the connection whether or not the exception was thrown.
-          this.oleDbConnection1.Close();
-     }
+    // Turn off constraint checking before the dataset is filled.
+    // This allows the adapters to fill the dataset without concern
+    // for dependencies between the tables.
+    dataSet.EnforceConstraints = false;
+    try
+    {
+        // Open the connection.
+        this.oleDbConnection1.Open();
+        // Attempt to fill the dataset through the OleDbDataAdapter1.
+        this.oleDbDataAdapter1.Fill(dataSet);
+        this.oleDbDataAdapter2.Fill(dataSet);
+    }
+    catch (System.Exception fillException)
+    {
+        // Add your error handling code here.
+        throw fillException;
+    }
+    finally
+    {
+        // Turn constraint checking back on.
+        dataSet.EnforceConstraints = true;
+        // Close the connection whether or not the exception was thrown.
+        this.oleDbConnection1.Close();
+    }
 }
 ```
 
@@ -189,7 +189,7 @@ Uygulamanın diğer butonlarına ilişkin kodlarıda incelediğinizde herşeyin 
 ```csharp
 static void Main()
 {
-     Application.Run(new DataForm1());
+    Application.Run(new DataForm1());
 }
 ```
 

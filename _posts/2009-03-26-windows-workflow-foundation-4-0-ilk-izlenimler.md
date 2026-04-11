@@ -66,10 +66,18 @@ using System.WorkflowModel;
 namespace SampleActiviyLibrary
 {
     public class ProductActivity
-        :WorkflowElement
+        : WorkflowElement
     {
-        public OutArgument<int> ProductId { get; set; }
-        public OutArgument<int> Count { get; set; }
+        public OutArgument<int> ProductId
+        {
+            get;
+            set;
+        }
+        public OutArgument<int> Count
+        {
+            get;
+            set;
+        }
 
         protected override void Execute(ActivityExecutionContext context)
         {
@@ -94,18 +102,26 @@ using System.WorkflowModel;
 namespace SampleActiviyLibrary
 {
     public class OrderInformationActivity
-        :WorkflowElement
+        : WorkflowElement
     {
-        public InArgument<int> OrderedProductId { get; set; }
-        public InArgument<int> OrderedProductCount { get; set; }
+        public InArgument<int> OrderedProductId
+        {
+            get;
+            set;
+        }
+        public InArgument<int> OrderedProductCount
+        {
+            get;
+            set;
+        }
 
         protected override void Execute(ActivityExecutionContext context)
         {
-            int orderedId=OrderedProductId.Get<int>(context);
+            int orderedId = OrderedProductId.Get<int>(context);
             int orderedCount = OrderedProductCount.Get<int>(context);
 
             // TODO: Mail gönderme işlemleri.
-            Console.WriteLine("{0} numaralı üründen {1} adet siparis edilmistir",orderedId,orderedCount);
+            Console.WriteLine("{0} numaralı üründen {1} adet siparis edilmistir", orderedId, orderedCount);
         }
     }
 }
@@ -191,14 +207,14 @@ namespace HostWFApplication
             AutoResetEvent syncEvent = new AutoResetEvent(false);
 
             WorkflowInstance myInstance = WorkflowInstance.Create(new ProductOrderFlow());
-            myInstance.Completed += delegate(object sender, WorkflowCompletedEventArgs e) 
-                { 
-                    syncEvent.Set(); 
+            myInstance.Completed += delegate (object sender, WorkflowCompletedEventArgs e)
+                {
+                    syncEvent.Set();
                 };
             myInstance.Resume();
 
             syncEvent.WaitOne();
-    
+
         }
     }
 }

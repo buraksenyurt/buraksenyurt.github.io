@@ -86,7 +86,7 @@ namespace LOBs
         {
             using (_con = new SqlConnection(ConfigurationManager.ConnectionStrings["AdvConStr"].ConnectionString))
             {
-                _cmd=new SqlCommand("SELECT Production.Product.ProductID, Production.Product.Name,     Production.Product.ListPrice, Production.Product.StandardCost,Production.ProductProductPhoto.ProductPhotoID FROM Production.Product INNER JOIN Production.ProductProductPhoto ON Production.Product.ProductID = Production.ProductProductPhoto.ProductID Where Production.Product.Size is not Null",_con);
+                _cmd = new SqlCommand("SELECT Production.Product.ProductID, Production.Product.Name,     Production.Product.ListPrice, Production.Product.StandardCost,Production.ProductProductPhoto.ProductPhotoID FROM Production.Product INNER JOIN Production.ProductProductPhoto ON Production.Product.ProductID = Production.ProductProductPhoto.ProductID Where Production.Product.Size is not Null", _con);
                 _da = new SqlDataAdapter(_cmd);
                 DataTable dt = new DataTable();
                 _da.Fill(dt);
@@ -133,24 +133,24 @@ Yazma işleminide inceleyeceğimiz basit bir örnek ile makalemize devam ediyoru
 Örnek uygulamamızda LobsWorker sınıfı içerisinde yer alan aşağıdaki InsertCity isimli metodumuz, seçilen resim dosyası ve döküman bilgilerini (örnek olarak text formatı baz alınmıştır) ele alarak Sehirlerimiz isimli tabloya satır ekleme işlemini gerçekleştirmektedir.
 
 ```csharp
-public void InsertSehir(string sehir,string imagePath, string docPath)
+public void InsertSehir(string sehir, string imagePath, string docPath)
 {
     using (_con = new SqlConnection(ConfigurationManager.ConnectionStrings["AdvConStr"].ConnectionString))
     {
-        using(_cmd=new SqlCommand("Insert into Sehirlerimiz (Sehir,Resim,Tarihce) Values (@Sehir,@Resim,@Tarihce)",_con))
+        using (_cmd = new SqlCommand("Insert into Sehirlerimiz (Sehir,Resim,Tarihce) Values (@Sehir,@Resim,@Tarihce)", _con))
         {
             _cmd.Parameters.AddWithValue("@Sehir", sehir);
             _cmd.Parameters.Add("@Resim", SqlDbType.VarBinary);
             _cmd.Parameters.Add("@Tarihce", SqlDbType.NVarChar);
-            
-            FileStream fsPic = new FileStream(imagePath,FileMode.Open,FileAccess.Read);
+
+            FileStream fsPic = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fsPic);
-            _cmd.Parameters["@Resim"].Value=br.ReadBytes((int)fsPic.Length);
-            
+            _cmd.Parameters["@Resim"].Value = br.ReadBytes((int)fsPic.Length);
+
             FileStream fsDoc = new FileStream(docPath, FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fsDoc);
             _cmd.Parameters["@Tarihce"].Value = sr.ReadToEnd();
-            
+
             _con.Open();
             _cmd.ExecuteNonQuery();
         }

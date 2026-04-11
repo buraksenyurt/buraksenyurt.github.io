@@ -44,7 +44,7 @@ namespace ServerApp
     }
 
     class CalculusService
-        :ICalculus
+        : ICalculus
     {
         public double Sum(double x, double y)
         {
@@ -57,10 +57,10 @@ namespace ServerApp
         static void Main(string[] args)
         {
             ServiceHost host = new ServiceHost(typeof(CalculusService)
-                ,new Uri("http://localhost:5002/CalculusService"));
+                , new Uri("http://localhost:5002/CalculusService"));
 
             host.Open();
-            Console.WriteLine("Service status {0}",host.State.ToString());
+            Console.WriteLine("Service status {0}", host.State.ToString());
             Console.ReadLine();
             host.Close();
             Console.WriteLine("Service status {0}", host.State.ToString());
@@ -141,9 +141,9 @@ namespace ClientApp
             // Bulunan endPoint adresi, proxy' nin üretilmesinde kullanılıyor
             CalculusClient client = new CalculusClient("CalculusEndpoint", epAddress);
 
-            Console.WriteLine("{0} adresi üzerinden çağrı yapılacaktır",epAddress.Uri.ToString());
+            Console.WriteLine("{0} adresi üzerinden çağrı yapılacaktır", epAddress.Uri.ToString());
             double result = client.Sum(3, 5);
-            Console.WriteLine("{0} + {1} = {2}",3,5,result.ToString());
+            Console.WriteLine("{0} + {1} = {2}", 3, 5, result.ToString());
 
             Console.ReadLine();
         }
@@ -194,13 +194,13 @@ namespace ClientApp
             #region Asenkron erişim
 
             // Standart olay bazlı asenkron erişim tekniği kullanılır.
-            
-            disClient.FindCompleted += delegate(object sender, FindCompletedEventArgs e)
+
+            disClient.FindCompleted += delegate (object sender, FindCompletedEventArgs e)
             {
                 // Hata varsa bildir
                 if (e.Error != null)
                 {
-                    Console.WriteLine(e.Error.Message);                   
+                    Console.WriteLine(e.Error.Message);
                 }
                 else if (e.Cancelled == true) // İşlem iptal edilmişse bildir
                 {

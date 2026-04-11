@@ -73,14 +73,14 @@ public class GeometrikHesaplamalar : System.Web.Services.Protocols.SoapHttpClien
 Visual Studio.NET tarafından otomatik olarak oluşturulan bu dosyada dikkat çekici noktalar vardır. Her şeyden önce, karşımızda, web servisimizin bir görüntüsü yer almaktadır. Web servisimizde yazdığımız metotlar, kullandıkları parametreler ve daha başka bilgiler. Ancak önemli olan, bu dosya sayesinde istemci uygulamanın artık web servisine ait bir nesne örneğini oluşturup kullanabilecek olmasıdır. Dolayısıyla, istemci uygulamamıza web servisimize ait referansı eklediğimizde, istemci uygulamada bu servise ait bir nesne yapısı oluşturulabilmiştir. Bu sayede aşağıdaki gibi bir bildirim geçerli hâle gelir.
 
 ```csharp
-localhost.GeometrikHesaplamalar gh=new Istemci.localhost.GeometrikHesaplamalar();
+localhost.GeometrikHesaplamalar gh = new Istemci.localhost.GeometrikHesaplamalar();
 ```
 
 Dahası, bu nesne üzerinden, web servisindeki metotları aynı isimler ile kullanabiliriz.
 
 ```csharp
-lblAlan.Text=gh.DaireAlan(r).ToString();
-lblCevre.Text=gh.DaireCevre(r).ToString();
+lblAlan.Text = gh.DaireAlan(r).ToString();
+lblCevre.Text = gh.DaireCevre(r).ToString();
 ```
 
 Olaya daha detaylı bakıldığında, Reference.cs'nin aslında, istemci ve web servisi arasındaki haberleşmeyi sağlayacak bir proxy nesnesini oluşturmak amacıyla kullanıldığını söyleyebiliriz. Dolayısıyla, istemci uygulama bu servisi kullanmak istediğinde, yani bu servis üzerinden bir metodu çağırmak istediğinde, bu talebi proxy nesnesinden ister. Proxy nesnesi ise bu talebi, web servisine iletir. Web servisi gelen talebi değerlendirir ve ürettiği cevabı yine istemci uygulamadaki proxy nesnesine gönderir. Proxy nesnesi de sonuçları, uygulama ortamına iletir.
@@ -180,12 +180,14 @@ Görüldüğü gibi, web servisinden istemciye dönen Soap mesajında en dikkat 
 Burada görüldüğü gibi SOAP mesajlarımız tek parametre alan metodlar ve tek sonuç içeren geri dönüş değerlerini istemci ve web servisi arasında belirli bir standart dahilinde taşımaktadır. Diğer yandan, özellikle değişken sayıda parametre alan ve geriye dizi veya veri kümesi döndürebilen SOAP mesajlarıda mümkündür. Bu durumu analiz edebilmek amacıyla web servisimize parametre olarak bir dizi alan ve geriye bu dizinin işlenmiş halini döndürecek bir metod ilave edelim.
 
 ```csharp
-[WebMethod(Description="Daire Cevre Hesabini Dizi Elamanlarina Uygular.")] public double[] DaireCevreDizi( double[] r)
+[WebMethod(Description = "Daire Cevre Hesabini Dizi Elamanlarina Uygular.")]
+public double[] DaireCevreDizi(double[] r)
 {
-    int eleman_Sayisi=r.Length;      double[] dizi=new double[eleman_Sayisi];
-    for(int i=0;i<eleman_Sayisi;i++)
+    int eleman_Sayisi = r.Length;
+    double[] dizi = new double[eleman_Sayisi];
+    for (int i = 0; i < eleman_Sayisi; i++)
     {
-        dizi[i]=r[i]*pi*2;
+        dizi[i] = r[i] * pi * 2;
     }
     return dizi;
 }
@@ -200,7 +202,15 @@ Bu web metodumuz, istemciden double türünden bir dizi alacak ve bu dizideki el
 Bu durumda, istemci uygulamamız web servisimiz için oluşturduğu proxy nesnesini yeniliklere göre güncelleyecektir. Aksi takdirde web servisimize eklediğimiz metodu kullanamayız. Bu işlemlerin ardından, istemci uygulamamıza aşağıdaki kod satırlarını ilave edelim.
 
 ```csharp
-double[] dizi=new double[3]; dizi[0]=1; dizi[1]=2; dizi[2]=3;   double[] diziSonuc=new double[3]; diziSonuc=gh.DaireCevreDizi(dizi); foreach(double eleman in diziSonuc) {      lblDizi.Text+=eleman.ToString()+" ";
+double[] dizi = new double[3];
+dizi[0] = 1;
+dizi[1] = 2;
+dizi[2] = 3;
+double[] diziSonuc = new double[3];
+diziSonuc = gh.DaireCevreDizi(dizi);
+foreach (double eleman in diziSonuc)
+{
+    lblDizi.Text += eleman.ToString() + " ";
 }
 ```
 

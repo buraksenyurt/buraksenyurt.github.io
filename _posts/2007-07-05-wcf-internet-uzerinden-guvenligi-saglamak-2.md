@@ -17,7 +17,7 @@ IAritmetik arayüzü (interface) ve Aritmetik sınıfına (class) ait kodlar aş
 using System;
 using System.ServiceModel;
 
-[ServiceContract(Name="Cebirci",Namespace="http://www.bsenyurt.com/Cebirci")]
+[ServiceContract(Name = "Cebirci", Namespace = "http://www.bsenyurt.com/Cebirci")]
 public interface IAritmetik
 {
     [OperationContract]
@@ -166,8 +166,8 @@ Gerekli kodlar aşağıdaki gibi olacaktır;
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://www.bsenyurt.com/Cebirci")]
 public interface CebirServisi
 {
-    [System.ServiceModel.OperationContractAttribute(Action = "http://www.bsenyurt.com/Cebirci/Cebirci/Topla", ReplyAction = "http://www.bsenyurt.com/Cebirci/Cebirci/ToplaResponse")]
-    double Topla(double x, double y);
+    [System.ServiceModel.OperationContractAttribute(Action = "http://www.bsenyurt.com/Cebirci/Cebirci/Topla", ReplyAction = "http://www.bsenyurt.com/Cebirci/Cebirci/ToplaResponse")]
+    double Topla(double x, double y);
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -179,34 +179,34 @@ public interface CebirServisiChannel : CebirServisi, System.ServiceModel.IClient
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
 public partial class CebirServisiClient : System.ServiceModel.ClientBase<CebirServisi>, CebirServisi
 {
-    public CebirServisiClient()
-    {
-    }
+    public CebirServisiClient()
+    {
+    }
 
-    public CebirServisiClient(string endpointConfigurationName) : 
-        base(endpointConfigurationName)
-    {
-    }
+    public CebirServisiClient(string endpointConfigurationName) :
+        base(endpointConfigurationName)
+    {
+    }
 
-    public CebirServisiClient(string endpointConfigurationName, string remoteAddress) : 
-        base(endpointConfigurationName, remoteAddress)
-    {
-    }
+    public CebirServisiClient(string endpointConfigurationName, string remoteAddress) :
+        base(endpointConfigurationName, remoteAddress)
+    {
+    }
 
-    public CebirServisiClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-        base(endpointConfigurationName, remoteAddress)
-    {
-    }
+    public CebirServisiClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+        base(endpointConfigurationName, remoteAddress)
+    {
+    }
 
-    public CebirServisiClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-        base(binding, remoteAddress)
-    {
-    }
+    public CebirServisiClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+        base(binding, remoteAddress)
+    {
+    }
 
-    public double Topla(double x, double y)
-    {
-        return base.Channel.Topla(x, y);
-    }
+    public double Topla(double x, double y)
+    {
+        return base.Channel.Topla(x, y);
+    }
 }
 ```
 
@@ -242,8 +242,8 @@ CebirServisiClient client = new CebirServisiClient("CebirServiceEndpoint");
 client.ClientCredentials.UserName.UserName = "buraks";
 client.ClientCredentials.UserName.Password = "123456.";
 
-double sonuc=client.Topla(3, 4);
-Console.WriteLine("Sonuc {0}",sonuc.ToString());
+double sonuc = client.Topla(3, 4);
+Console.WriteLine("Sonuc {0}", sonuc.ToString());
 Console.ReadLine();
 ```
 
@@ -264,27 +264,27 @@ using System.Net;
 // Microsoft' tan alıntıdır.
 class PermissiveCertificatePolicy
 {
-    string subjectName;
-    static PermissiveCertificatePolicy currentPolicy;
-    PermissiveCertificatePolicy(string subjectName)
-    {
-        this.subjectName = subjectName;
-        ServicePointManager.ServerCertificateValidationCallback +=new System.Net.Security.RemoteCertificateValidationCallback(RemoteCertValidate);
-    }
+    string subjectName;
+    static PermissiveCertificatePolicy currentPolicy;
+    PermissiveCertificatePolicy(string subjectName)
+    {
+        this.subjectName = subjectName;
+        ServicePointManager.ServerCertificateValidationCallback += new System.Net.Security.RemoteCertificateValidationCallback(RemoteCertValidate);
+    }
 
-    public static void Enact(string subjectName)
-    {
-        currentPolicy = new PermissiveCertificatePolicy(subjectName);
-    }
+    public static void Enact(string subjectName)
+    {
+        currentPolicy = new PermissiveCertificatePolicy(subjectName);
+    }
 
-    bool RemoteCertValidate(object sender, X509Certificate cert, X509Chain chain, System.Net.Security.SslPolicyErrors error)
-    {
-        if (cert.Subject == subjectName)
-        {
-            return true;
-        }
-        return false;
-    }
+    bool RemoteCertValidate(object sender, X509Certificate cert, X509Chain chain, System.Net.Security.SslPolicyErrors error)
+    {
+        if (cert.Subject == subjectName)
+        {
+            return true;
+        }
+        return false;
+    }
 }
 ```
 
@@ -306,11 +306,11 @@ Gelelim rollerin ne şekilde ele alınabileceğine. Örneğin Topla isimli metod
 ```csharp
 public double Topla(double x, double y)
 {
-    IIdentity ulasanKullanici = ServiceSecurityContext.Current.PrimaryIdentity;
-    if (Roles.IsUserInRole(ulasanKullanici.Name, "Personel"))
-        return x + y;
-    else
-        throw new FaultException("Yetkiniz yok");
+    IIdentity ulasanKullanici = ServiceSecurityContext.Current.PrimaryIdentity;
+    if (Roles.IsUserInRole(ulasanKullanici.Name, "Personel"))
+        return x + y;
+    else
+        throw new FaultException("Yetkiniz yok");
 }
 ```
 

@@ -19,20 +19,38 @@ private string _seciliYil;
 
 public string SeciliGun
 {
-    get{return _seciliGun;}
-    set { _seciliGun = value; }
+    get
+    {
+        return _seciliGun;
+    }
+    set
+    {
+        _seciliGun = value;
+    }
 }
 
 public string SeciliAy
 {
-    get{return _seciliAy;}
-    set { _seciliAy= value; }
+    get
+    {
+        return _seciliAy;
+    }
+    set
+    {
+        _seciliAy = value;
+    }
 }
 
 public string SeciliYil
 {
-    get{ return _seciliYil; }
-    set { _seciliYil= value; }
+    get
+    {
+        return _seciliYil;
+    }
+    set
+    {
+        _seciliYil = value;
+    }
 }
 ```
 
@@ -42,7 +60,7 @@ public string SeciliYil
 protected override void Render(HtmlTextWriter writer)
 {
     writer.Write("<span id='lblGun'>" + GunMetin + "</span>");
-    writer.Write("  ");
+    writer.Write("  ");
     writer.Write("<select name='Gun' id='Gun'>");
     for (int i = 1; i <= 31; i++)
     {
@@ -52,9 +70,9 @@ protected override void Render(HtmlTextWriter writer)
             writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
     }
     writer.Write("</select>");
-    writer.Write("  ");
+    writer.Write("  ");
     writer.Write("<span id='lblAy'>" + AyMetin + "</span>");
-    writer.Write("  ");
+    writer.Write("  ");
     writer.Write("<select name='Ay' id='Ay'>");
     for (int i = 1; i <= 12; i++)
     {
@@ -64,15 +82,15 @@ protected override void Render(HtmlTextWriter writer)
             writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
     }
     writer.Write("</select>");
-    writer.Write("  ");
+    writer.Write("  ");
     writer.Write("<span id='lblYil'>" + YilMetin + "</span>");
-    writer.Write("  ");
+    writer.Write("  ");
     writer.Write("<select name='Yil' id='Yil'>");
     for (int i = 1950; i <= 2050; i++)
     {
         if (SeciliYil == i.ToString())
             writer.Write("<option selected='selected' value='" + i.ToString() + "'>" + i.ToString() + "</option>");
-          else
+        else
             writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
     }
     writer.Write("</select>");
@@ -109,17 +127,21 @@ Bu nedenle ViewState içerisine veri atarken çoğunlukla string tipine dönüş
 ![mk189_3.gif](/assets/images/2007/mk189_3.gif)
 
 ```csharp
-public class TarihKontrolum:Control
+public class TarihKontrolum : Control
 {
     public string GunMetin
     {
-        get {
+        get
+        {
             if (ViewState["gunMetin"] != null)
                 return ViewState["gunMetin"].ToString();
             else
-                return "Gün"; 
+                return "Gün";
         }
-        set { ViewState["gunMetin"] = value; }
+        set
+        {
+            ViewState["gunMetin"] = value;
+        }
     }
 
     public string AyMetin
@@ -131,7 +153,10 @@ public class TarihKontrolum:Control
             else
                 return "Ay";
         }
-        set { ViewState["ayMetin"] = value; }
+        set
+        {
+            ViewState["ayMetin"] = value;
+        }
     }
 
     public string YilMetin
@@ -143,7 +168,10 @@ public class TarihKontrolum:Control
             else
                 return "Yıl";
         }
-        set { ViewState["yilMetin"] = value; }
+        set
+        {
+            ViewState["yilMetin"] = value;
+        }
     }
 
     public string SeciliGun
@@ -155,7 +183,10 @@ public class TarihKontrolum:Control
             else
                 return "";
         }
-        set { ViewState["seciliGun"] = value; }
+        set
+        {
+            ViewState["seciliGun"] = value;
+        }
     }
 
     public string SeciliAy
@@ -167,7 +198,10 @@ public class TarihKontrolum:Control
             else
                 return "";
         }
-        set { ViewState["seciliAy"] = value; }
+        set
+        {
+            ViewState["seciliAy"] = value;
+        }
     }
 
     public string SeciliYil
@@ -179,41 +213,44 @@ public class TarihKontrolum:Control
             else
                 return "";
         }
-        set { ViewState["seciliYil"] = value; }
+        set
+        {
+            ViewState["seciliYil"] = value;
+        }
     }
 
     protected override void Render(HtmlTextWriter writer)
-    { 
+    {
         writer.Write("<span id='lblGun'>" + GunMetin + "</span>");
-        writer.Write("  ");
+        writer.Write("  ");
         writer.Write("<select name='Gun' id='Gun'>");
         for (int i = 1; i <= 31; i++)
         {
-            if (SeciliGun==i.ToString())
-                writer.Write("<option selected='selected' value='" + i.ToString() + "'>" + i.ToString() + "</option>");
-            else
-                writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
-        }
-        writer.Write("</select>"); 
-        writer.Write("  ");
-        writer.Write("<span id='lblAy'>" + AyMetin + "</span>");
-        writer.Write("  ");
-        writer.Write("<select name='Ay' id='Ay'>");
-        for (int i = 1; i <= 12; i++)
-        {
-            if (SeciliAy == i.ToString()) 
+            if (SeciliGun == i.ToString())
                 writer.Write("<option selected='selected' value='" + i.ToString() + "'>" + i.ToString() + "</option>");
             else
                 writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
         }
         writer.Write("</select>");
-        writer.Write("  ");
+        writer.Write("  ");
+        writer.Write("<span id='lblAy'>" + AyMetin + "</span>");
+        writer.Write("  ");
+        writer.Write("<select name='Ay' id='Ay'>");
+        for (int i = 1; i <= 12; i++)
+        {
+            if (SeciliAy == i.ToString())
+                writer.Write("<option selected='selected' value='" + i.ToString() + "'>" + i.ToString() + "</option>");
+            else
+                writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
+        }
+        writer.Write("</select>");
+        writer.Write("  ");
         writer.Write("<span id='lblYil'>" + YilMetin + "</span>");
-        writer.Write("  ");
+        writer.Write("  ");
         writer.Write("<select name='Yil' id='Yil'>");
         for (int i = 1950; i <= 2050; i++)
         {
-            if (SeciliYil==i.ToString())
+            if (SeciliYil == i.ToString())
                 writer.Write("<option selected='selected' value='" + i.ToString() + "'>" + i.ToString() + "</option>");
             else
                 writer.Write("<option value='" + i.ToString() + "'>" + i.ToString() + "</option>");
@@ -311,7 +348,10 @@ public string SeciliGun
         else
             return "";
     }
-    set { ViewState["seciliGun"] = value; }
+    set
+    {
+        ViewState["seciliGun"] = value;
+    }
 }
 ```
 

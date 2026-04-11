@@ -41,37 +41,38 @@ Sıra geldi kodlarımızı yazmaya. Önce sayfa yüklenirken neler olacağını 
 ```csharp
 /* Önce gerekli SqlConnection nesnemizi oluşturuyor ve gerekli ayarlarımızı yapıyoruz.*/
 
-SqlConnection conFriends=new SqlConnection("initial catalog=Friends;Data Source=localhost;integrated security=sspi");
+SqlConnection conFriends = new SqlConnection("initial catalog=Friends;Data Source=localhost;integrated security=sspi");
 private void Page_Load(object sender, System.EventArgs e)
 {
-     if (Page.IsPostBack==false)
-     {
-          /* SqlCommand nesnemizi yaratıyoruz. Bu nesne Select sorgusu ile Kitaplar tablosundan ID ve Adi alanlarının değerlerini alıcak. Alınan bu veri kümesi Adi alanına göre A'dan Z'ye sıralanmış olucak. Bunu sağlayan sql cümleciğindeki, "Order By Adi" ifadesidir. Tersten sıralamak istersek "Order By Adi Asc" yazmamız gerekir. */
+    if (Page.IsPostBack == false)
+    {
+        /* SqlCommand nesnemizi yaratıyoruz. Bu nesne Select sorgusu ile Kitaplar tablosundan ID ve Adi alanlarının değerlerini alıcak. Alınan bu veri kümesi Adi alanına göre A'dan Z'ye sıralanmış olucak. Bunu sağlayan sql cümleciğindeki, "Order By Adi" ifadesidir. Tersten sıralamak istersek "Order By Adi Asc" yazmamız gerekir. */
 
-          SqlCommand cmdKitaplar=new SqlCommand("Select ID,Adi From Kitaplar Order By Adi",conFriends);
+        SqlCommand cmdKitaplar = new SqlCommand("Select ID,Adi From Kitaplar Order By Adi", conFriends);
 
-          cmdKitaplar.CommandType=CommandType.Text; // SqlCommand'in command String'inin bir Sql cümleciğine işaret ettiğini belirtiyoruz.
+        cmdKitaplar.CommandType = CommandType.Text; // SqlCommand'in command String'inin bir Sql cümleciğine işaret ettiğini belirtiyoruz.
 
-          SqlDataReader dr; // Bir SqlDataReader nesnesi olşuturuyoruz.
+        SqlDataReader dr; // Bir SqlDataReader nesnesi olşuturuyoruz.
 
-          /* SqlDataReader nesnesi ileri yönlü ve sadece okunabilir bir veri akışı sağlar. (Forward and Readonly) Bu da nesneden veri aktarımlarının (örneğin bir listbox’a veya datagrid’e) hızlı çalışmasına bir nedendir. Uygulamalarımızda, listeleme gibi sadece verilere bakmak amacıyla çalıştıracağımız sorgulamalar için, SqlDataReader nesnesini kullanmak, performans açısından olumlu etkiler yapar. Ancak SqlDataReader nesnesi çalıştığı süre boyunca sunucuya olan bağlantınında sürekli olarak açık olmasını gerektirir.
+        /* SqlDataReader nesnesi ileri yönlü ve sadece okunabilir bir veri akışı sağlar. (Forward and Readonly) Bu da nesneden veri aktarımlarının (örneğin bir listbox’a veya datagrid’e) hızlı çalışmasına bir nedendir. Uygulamalarımızda, listeleme gibi sadece verilere bakmak amacıyla çalıştıracağımız sorgulamalar için, SqlDataReader nesnesini kullanmak, performans açısından olumlu etkiler yapar. Ancak SqlDataReader nesnesi çalıştığı süre boyunca sunucuya olan bağlantınında sürekli olarak açık olmasını gerektirir.
 
-          Yukarıdaki kod satırında dikkat çekici diğer bir unsur ise, bir new yapılandırıcısı kullanılmayışıdır. SqlDataReader sınıfının bir yapıcı metodu ( Constructor ) bulunmamaktadır. O nedenle bir değişken tanımlanıyormuş gibi bildirilir. Bu nesneyi asıl yükleyen, SqlCommand nesnesinin ExecuteReader metodudur. */
+        Yukarıdaki kod satırında dikkat çekici diğer bir unsur ise, bir new yapılandırıcısı kullanılmayışıdır. SqlDataReader sınıfının bir yapıcı metodu ( Constructor ) bulunmamaktadır. O nedenle bir değişken tanımlanıyormuş gibi bildirilir. Bu nesneyi asıl yükleyen, SqlCommand nesnesinin ExecuteReader metodudur. */
 
-          conFriends.Open(); // Bağlantımızı açıyoruz.
+        conFriends.Open(); // Bağlantımızı açıyoruz.
 
-          dr=cmdKitaplar.ExecuteReader(CommandBehavior.CloseConnection); /* Burada ExecuteReader metodu , SqlCommand nesnesine şöyle bir seslenişte bulunuyor. " SqlCommand'cığım, sana verilen Sql Cümleciğini (Select sorgusu) çalıştır ve sonuçlarını bir zahmet eşitliğin sol tarafında yer alan SqlDataReader nesnesinin bellekte referans ettiği alana yükle. Sonrada sana belirttiğim, sağımdaki CommandBehavior.CloseConnection parametresi nedeni ile, SqlDataReader nesnesi Close metodu ile kapatıldığında, yine bir zahmet SqlConnection nesnesininde otomatik olarak kapanmasını sağlayıver". */
+        dr = cmdKitaplar.ExecuteReader(CommandBehavior.CloseConnection);
+        /* Burada ExecuteReader metodu , SqlCommand nesnesine şöyle bir seslenişte bulunuyor. " SqlCommand'cığım, sana verilen Sql Cümleciğini (Select sorgusu) çalıştır ve sonuçlarını bir zahmet eşitliğin sol tarafında yer alan SqlDataReader nesnesinin bellekte referans ettiği alana yükle. Sonrada sana belirttiğim, sağımdaki CommandBehavior.CloseConnection parametresi nedeni ile, SqlDataReader nesnesi Close metodu ile kapatıldığında, yine bir zahmet SqlConnection nesnesininde otomatik olarak kapanmasını sağlayıver". */
 
-          lstKitaplar.DataSource=dr; // Elde edilen veri kümesi SqlDataReader nesnesi yardımıyla ListBox nesnesine veri kaynağı olarak gösteriliyor.
+        lstKitaplar.DataSource = dr; // Elde edilen veri kümesi SqlDataReader nesnesi yardımıyla ListBox nesnesine veri kaynağı olarak gösteriliyor.
 
-          lstKitaplar.DataTextField="Adi"; // ListBox nesnesinde Text olarak Adi alanının değerleri görünücek.
+        lstKitaplar.DataTextField = "Adi"; // ListBox nesnesinde Text olarak Adi alanının değerleri görünücek.
 
-          lstKitaplar.DataValueField="ID"; // Görünen Adi değerlerinin sahip olduğu ID değerleri de ValueField olarak belirleniyor. Böylece "Kitap Bul" isimli Stored Procedure'ümüze ID parametresinin değeri olarak bu alanın değeri gitmiş olucak. Kısacası görünen yazı kitabın adı olurken, bu yazının değeri ID alanının değeri olmuş oluyor.
+        lstKitaplar.DataValueField = "ID"; // Görünen Adi değerlerinin sahip olduğu ID değerleri de ValueField olarak belirleniyor. Böylece "Kitap Bul" isimli Stored Procedure'ümüze ID parametresinin değeri olarak bu alanın değeri gitmiş olucak. Kısacası görünen yazı kitabın adı olurken, bu yazının değeri ID alanının değeri olmuş oluyor.
 
-          lstKitaplar.DataBind(); // Web Sayfalarında , verileri nesnelere bağlarken DataBind metodu kullanılır.
+        lstKitaplar.DataBind(); // Web Sayfalarında , verileri nesnelere bağlarken DataBind metodu kullanılır.
 
-          dr.Close(); // SqlDataReader nesnemiz kapatılıyor. Tabiki SqlConnection nesnemizde otomatik olarak kapatılıyor.
-     }
+        dr.Close(); // SqlDataReader nesnemiz kapatılıyor. Tabiki SqlConnection nesnemizde otomatik olarak kapatılıyor.
+    }
 }
 ```
 
@@ -92,18 +93,22 @@ ListBox nesnesine tıklandığı zaman, çalışacak olan `lstKitaplar_SelectedI
 ```csharp
 private void lstKitaplar_SelectedIndexChanged(object sender, System.EventArgs e)
 {
-     SqlCommand cmdKitapBul=new SqlCommand("Kitap Bul",conFriends); /* SqlCommand nesnemizi oluşturuyoruz ve commandString parametresine Stored Procedure'ün ismini yazıyoruz.*/ 
-     cmdKitapBul.CommandType=CommandType.StoredProcedure; /* Bu kez SqlCommand'in bir Stored Procedure çalıştıracağına işaret ediyoruz.*/
+    SqlCommand cmdKitapBul = new SqlCommand("Kitap Bul", conFriends);
+    /* SqlCommand nesnemizi oluşturuyoruz ve commandString parametresine Stored Procedure'ün ismini yazıyoruz.*/
+    cmdKitapBul.CommandType = CommandType.StoredProcedure;
+    /* Bu kez SqlCommand'in bir Stored Procedure çalıştıracağına işaret ediyoruz.*/
 
-     cmdKitapBul.Parameters.Add("@id",SqlDbType.Int); /* "Kitap Bul" isimli Stored Procedure'de yer alan @id isimli parametreyi komut nesnemize bildirmek için SqlCommand nesnemizin, Parameters koleksiyonuna ekliyoruz.*/
+    cmdKitapBul.Parameters.Add("@id", SqlDbType.Int);
+    /* "Kitap Bul" isimli Stored Procedure'de yer alan @id isimli parametreyi komut nesnemize bildirmek için SqlCommand nesnemizin, Parameters koleksiyonuna ekliyoruz.*/
 
-     cmdKitapBul.Parameters[0].Value=lstKitaplar.SelectedValue; /* listBox nesnesinde seçilen öğenin değerini (ki bu değer ID değeridir) SelectedValue özelliği ile alıyor ve SqlCommand nesnesinin 0 indexli parametresi olan @id SqlParameter nesnesine atıyoruz. Artık SqlCommand nesnemizi çalıştırdığımızda , @id paramteresinin değeri olarak seçili listBox öğesinin değeri gönderilicek ve bu değere göre çalışan Select sorgusunun döndürdüğü sonuçlar SqlDataReader nesnemize yüklenecek.*/
+    cmdKitapBul.Parameters[0].Value = lstKitaplar.SelectedValue;
+    /* listBox nesnesinde seçilen öğenin değerini (ki bu değer ID değeridir) SelectedValue özelliği ile alıyor ve SqlCommand nesnesinin 0 indexli parametresi olan @id SqlParameter nesnesine atıyoruz. Artık SqlCommand nesnemizi çalıştırdığımızda , @id paramteresinin değeri olarak seçili listBox öğesinin değeri gönderilicek ve bu değere göre çalışan Select sorgusunun döndürdüğü sonuçlar SqlDataReader nesnemize yüklenecek.*/
 
-     SqlDataReader dr; 
-     conFriends.Open(); // Bağlantımız açılıyor.      dr=cmdKitapBul.ExecuteReader(CommandBehavior.CloseConnection); // Komut çalıştırılıyor. 
-     dgDetaylar.DataSource=dr; // dataGrid nesnesine veri kaynağı olarak SqlDataReader nesnemiz gösteriliyor. 
-     dgDetaylar.DataBind(); // dataGrid verilere bağlanıyor. 
-     dr.Close(); // SqlDataReader nesnemiz ve sonrada SqlConnection nesnemiz ( otomatik olarak ) kapatılıyor.
+    SqlDataReader dr;
+    conFriends.Open(); // Bağlantımız açılıyor.      dr=cmdKitapBul.ExecuteReader(CommandBehavior.CloseConnection); // Komut çalıştırılıyor. 
+    dgDetaylar.DataSource = dr; // dataGrid nesnesine veri kaynağı olarak SqlDataReader nesnemiz gösteriliyor. 
+    dgDetaylar.DataBind(); // dataGrid verilere bağlanıyor. 
+    dr.Close(); // SqlDataReader nesnemiz ve sonrada SqlConnection nesnemiz ( otomatik olarak ) kapatılıyor.
 }
 ```
 

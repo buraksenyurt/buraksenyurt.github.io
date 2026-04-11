@@ -44,22 +44,29 @@ OleDbCommandBuilder cb;
 
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;database=Friends;integrated security=sspi"); /* Bağlantımız oluşturuluyor. */
-    da=new OleDbDataAdapter("Select * From Kisiler",con); /* DataAdapter nesnesmiz, select sorgusu ile birlikte oluşturuluyor. */
-    dt=new DataTable("Kisiler"); /*DataTable nesnemiz oluşturuluyor. */
-    da.Fill(dt); /* DataTable nesnemizin bellekte gösterdiği alan Kisiler tablosundaki veriler ile dolduruluyor. */
-    dgKisiler.DataSource=dt; /* DataGrid kontrolümüz, bağlantısız katmandaki verileri işaret eden DataTable nesnemize bağlanıyor. */
+    con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;database=Friends;integrated security=sspi");
+    /* Bağlantımız oluşturuluyor. */
+    da = new OleDbDataAdapter("Select * From Kisiler", con);
+    /* DataAdapter nesnesmiz, select sorgusu ile birlikte oluşturuluyor. */
+    dt = new DataTable("Kisiler");
+    /*DataTable nesnemiz oluşturuluyor. */
+    da.Fill(dt);
+    /* DataTable nesnemizin bellekte gösterdiği alan Kisiler tablosundaki veriler ile dolduruluyor. */
+    dgKisiler.DataSource = dt;
+    /* DataGrid kontrolümüz, bağlantısız katmandaki verileri işaret eden DataTable nesnemize bağlanıyor. */
 }
 
 private void btnGuncelle_Click(object sender, System.EventArgs e)
 {
     try
     {
-        cb=new OleDbCommandBuilder(da); /* CommandBuilder nesnemiz , OleDbDataAdapter nesnemiz için oluşturuluyor. CommandBuilder'a ait new yapılandırıcısı parametre olarak aldığı OleDbDataAdapter nesnesinin SelectCommand özelliğindeki sql komutuna bakarak gerekli diğer UpdateCommand,DeleteCommand ve InsertCommand komutlarını oluşturuyor. */
+        cb = new OleDbCommandBuilder(da);
+        /* CommandBuilder nesnemiz , OleDbDataAdapter nesnemiz için oluşturuluyor. CommandBuilder'a ait new yapılandırıcısı parametre olarak aldığı OleDbDataAdapter nesnesinin SelectCommand özelliğindeki sql komutuna bakarak gerekli diğer UpdateCommand,DeleteCommand ve InsertCommand komutlarını oluşturuyor. */
 
-        da.Update(dt); /* DataTable'daki değişiklikler Update metodu ile, veritabanına gönderiliyor. */
+        da.Update(dt);
+        /* DataTable'daki değişiklikler Update metodu ile, veritabanına gönderiliyor. */
     }
-    catch(Exception hata)
+    catch (Exception hata)
     {
         MessageBox.Show(hata.Message.ToString());
     }
@@ -97,17 +104,17 @@ Tablo 2. OleDbCommandBuilder için Get metodlar.
 Dikkat edecek olursanız tüm bu metodlar geriye OleDbCommand sınıfı türünden bir nesne değeri döndürmektedir. Uygulamamızdaki btnGuncelle kodlarını aşağıdaki gibi düzenlediğimizde, OleDbCommandBuilder nesnesinin, OleDbDataAdapter nesnesi için oluşturmuş olduğu komutları görebiliriz.
 
 ```csharp
-OleDbCommand cmdInsert=new OleDbCommand();
-cmdInsert=cb.GetInsertCommand();
-MessageBox.Show("Insert Sql Ifadesi :"+cmdInsert.CommandText.ToString());
+OleDbCommand cmdInsert = new OleDbCommand();
+cmdInsert = cb.GetInsertCommand();
+MessageBox.Show("Insert Sql Ifadesi :" + cmdInsert.CommandText.ToString());
 
-OleDbCommand cmdDelete=new OleDbCommand();
-cmdDelete=cb.GetDeleteCommand();
-MessageBox.Show("Delete Sql Ifadesi :"+cmdDelete.CommandText.ToString());
+OleDbCommand cmdDelete = new OleDbCommand();
+cmdDelete = cb.GetDeleteCommand();
+MessageBox.Show("Delete Sql Ifadesi :" + cmdDelete.CommandText.ToString());
 
-OleDbCommand cmdUpdate=new OleDbCommand();
-cmdUpdate=cb.GetUpdateCommand();
-MessageBox.Show("Update Sql Ifadesi :"+cmdUpdate.CommandText.ToString());
+OleDbCommand cmdUpdate = new OleDbCommand();
+cmdUpdate = cb.GetUpdateCommand();
+MessageBox.Show("Update Sql Ifadesi :" + cmdUpdate.CommandText.ToString());
 ```
 
 Şimdi uygulamamızı çalıştıralım.
@@ -133,36 +140,36 @@ DataTable dt;
 
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;database=Friends;integrated security=sspi"); 
-    da=new OleDbDataAdapter("Select * From Kisiler",con);
-    dt=new DataTable("Kisiler"); 
-    da.Fill(dt); 
-    dgKisiler.DataSource=dt; 
+    con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;database=Friends;integrated security=sspi");
+    da = new OleDbDataAdapter("Select * From Kisiler", con);
+    dt = new DataTable("Kisiler");
+    da.Fill(dt);
+    dgKisiler.DataSource = dt;
 }
 
 private void btnGuncelle_Click(object sender, System.EventArgs e)
 {
     try
     {
-        da.InsertCommand=new OleDbCommand("INSERT INTO Kisiler (Ad,Soyad,DogumTarihi,Meslek) VALUES (?,?,?,?)",con);
-        da.InsertCommand.Parameters.Add("prmAd",OleDbType.VarChar,50,"Ad");
-        da.InsertCommand.Parameters.Add("prmSoyad",OleDbType.VarChar,50,"Soyad");
-        da.InsertCommand.Parameters.Add("prmDogum",OleDbType.Date,8,"DogumTarihi");
-        da.InsertCommand.Parameters.Add("prmMeslek",OleDbType.VarChar,50,"Meslek");
+        da.InsertCommand = new OleDbCommand("INSERT INTO Kisiler (Ad,Soyad,DogumTarihi,Meslek) VALUES (?,?,?,?)", con);
+        da.InsertCommand.Parameters.Add("prmAd", OleDbType.VarChar, 50, "Ad");
+        da.InsertCommand.Parameters.Add("prmSoyad", OleDbType.VarChar, 50, "Soyad");
+        da.InsertCommand.Parameters.Add("prmDogum", OleDbType.Date, 8, "DogumTarihi");
+        da.InsertCommand.Parameters.Add("prmMeslek", OleDbType.VarChar, 50, "Meslek");
 
-        da.UpdateCommand=new OleDbCommand("UPDATE Kisiler SET Ad=?,Soyad=?,DogumTarihi=?,Meslek=? WHERE KisiID=?",con);
-        da.UpdateCommand.Parameters.Add("prmKID",OleDbType.Integer,4,"KisiID");
-        da.UpdateCommand.Parameters.Add("prmSoyad",OleDbType.VarChar,50,"Soyad");
-        da.UpdateCommand.Parameters.Add("prmDogum",OleDbType.Date,8,"DogumTarihi");
-        da.UpdateCommand.Parameters.Add("prmMeslek",OleDbType.VarChar,50,"Meslek");
-        da.UpdateCommand.Parameters.Add("prmKisiID",OleDbType.Integer,4,"KisiID");
+        da.UpdateCommand = new OleDbCommand("UPDATE Kisiler SET Ad=?,Soyad=?,DogumTarihi=?,Meslek=? WHERE KisiID=?", con);
+        da.UpdateCommand.Parameters.Add("prmKID", OleDbType.Integer, 4, "KisiID");
+        da.UpdateCommand.Parameters.Add("prmSoyad", OleDbType.VarChar, 50, "Soyad");
+        da.UpdateCommand.Parameters.Add("prmDogum", OleDbType.Date, 8, "DogumTarihi");
+        da.UpdateCommand.Parameters.Add("prmMeslek", OleDbType.VarChar, 50, "Meslek");
+        da.UpdateCommand.Parameters.Add("prmKisiID", OleDbType.Integer, 4, "KisiID");
 
-        da.DeleteCommand=new OleDbCommand("DELETE FROM Kisiler WHERE KisiID=?",con);
-        da.DeleteCommand.Parameters.Add("prmKisiID",OleDbType.Integer,4,"KisiID");
+        da.DeleteCommand = new OleDbCommand("DELETE FROM Kisiler WHERE KisiID=?", con);
+        da.DeleteCommand.Parameters.Add("prmKisiID", OleDbType.Integer, 4, "KisiID");
 
-        da.Update(dt); 
+        da.Update(dt);
     }
-    catch(Exception hata)
+    catch (Exception hata)
     {
         MessageBox.Show(hata.Message.ToString());
     }
@@ -172,7 +179,7 @@ private void btnGuncelle_Click(object sender, System.EventArgs e)
 Burada tanımladığımız komutlar için gerekli parametreleri oluştururken Parameters koleksiyonunun Add metodunun aşağıdaki prototipini kullandık.
 
 ```csharp
-public OleDbParameter Add(string parameterName,OleDbType oleDbType,int size, string sourceColumn);
+public OleDbParameter Add(string parameterName, OleDbType oleDbType, int size, string sourceColumn);
 ```
 
 Buradaki parametreleri kısaca açıklayacak olursak; ilk parametremiz, komutumuz için kullanacağımız parametre adı. İkinci parametremizde ise tablodaki alanımızın veri tipini belirliyoruz. Buradaki veri tipleri OleDbType türündendir. Üçüncü parametremizde ise alanın büyüklüğünü belirtiyoruz. Son parametremiz ise, sql komutu içindeki bu parametrenin hangi alan için kullanılacağını belirtmektedir ve bu anlamı nedeniylede oldukça önemlidir. Dikkat ederseniz OleDb sınıfında OleDbParameter türündeki parametreleri sql komutları içinde? ile belirttik. Bu nedenle, parametrelerimizi, ilgili sql komutu nesnesinin OleDbParameter koleksiyonuna eklerken? sırasına göre tanımlamalıyız. Şimdi uygulamamızı çalıştıralım ve veriler üzerinde aşağıdaki görünen değişiklikleri yapalım.

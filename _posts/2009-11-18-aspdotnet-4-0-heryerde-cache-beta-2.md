@@ -109,9 +109,21 @@ namespace UsingObjectCache
     // Yardımcı tip
     class Product
     {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
 
         public override string ToString()
         {

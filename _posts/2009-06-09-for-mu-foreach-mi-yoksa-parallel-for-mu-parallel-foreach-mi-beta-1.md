@@ -22,16 +22,16 @@ namespace ForForEachPerformance
         {
             int arraySize = 1000;
             double[] array1 = new double[arraySize];
-            
-            Random rnd=new Random();
+
+            Random rnd = new Random();
             Stopwatch watch1 = Stopwatch.StartNew();
 
             for (int i = 0; i < array1.Length; i++)
             {
-                array1[i] = (rnd.NextDouble()/Math.Cos(rnd.NextDouble()))*Math.Sqrt(rnd.NextDouble());
+                array1[i] = (rnd.NextDouble() / Math.Cos(rnd.NextDouble())) * Math.Sqrt(rnd.NextDouble());
             }
 
-            Console.WriteLine("For döngüsü eleman ekleme süresi {0} milisaniyedir.",watch1.Elapsed.TotalMilliseconds.ToString());
+            Console.WriteLine("For döngüsü eleman ekleme süresi {0} milisaniyedir.", watch1.Elapsed.TotalMilliseconds.ToString());
 
             double[] array2 = new double[arraySize];
 

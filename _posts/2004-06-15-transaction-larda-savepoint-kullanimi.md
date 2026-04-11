@@ -36,7 +36,7 @@ Burada, RollBack metoduna, parametre olarak string türden SavePoint'in adı ver
 
 ```csharp
 /* SqlConnection ve SqlTransaction nesnelerimizi tanımlıyoruz.*/
-SqlConnection con; 
+SqlConnection con;
 SqlTransaction trans;
 
 private void frmMain_Load(object sender, System.EventArgs e)
@@ -49,60 +49,68 @@ private void btnBegin_Click(object sender, System.EventArgs e)
 {
     /* Kullanıcı transaction'ı başlatıyor. Önce bağlantımız açılır daha sonra SqlConnection nesnemizin BeginTransaction metod ile, transaction' ımız bu bağlantı için başlatılır. Ardından açılış işlemi listBox kontrolüne yazılır.*/
     con.Open();
-    trans=con.BeginTransaction();
+    trans = con.BeginTransaction();
     listBox1.Items.Add("Transaction basladi...");
-} 
+}
 
 private void btnEkle1_Click(object sender, System.EventArgs e)
 {
     /*Burada transaction' ımız içinde çalıştırılacak bir iş parçası uygulanıyor. Bu iş parçasında, Personel isimli tabloya veri girişi yapılmakta.*/
-    SqlCommand cmd=new SqlCommand("INSERT INTO Personel (ISIM,SOYISIM) VALUES ('BURAK','SENYURT')",con);
-    cmd.Transaction=trans; /* SqlCommand için transaction nesnesi belirtilir.*/
+    SqlCommand cmd = new SqlCommand("INSERT INTO Personel (ISIM,SOYISIM) VALUES ('BURAK','SENYURT')", con);
+    cmd.Transaction = trans;
+    /* SqlCommand için transaction nesnesi belirtilir.*/
     try
     {
-        int sonuc=cmd.ExecuteNonQuery(); /* Komutumuz çalıştırılır.*/
-        trans.Save("Insert_1"); /*Transaction' ımız içinde bu noktada bir SavePoint oluşturulur.*/
-        listBox1.Items.Add(sonuc+" Kayit eklendi. SavePoint=Insert_1"); /* Durum listBox'a yazılır.*/
+        int sonuc = cmd.ExecuteNonQuery();
+        /* Komutumuz çalıştırılır.*/
+        trans.Save("Insert_1");
+        /*Transaction' ımız içinde bu noktada bir SavePoint oluşturulur.*/
+        listBox1.Items.Add(sonuc + " Kayit eklendi. SavePoint=Insert_1");
+        /* Durum listBox'a yazılır.*/
     }
     catch
     {
         listBox1.Items.Add("HATA...");
-        trans.Rollback(); /* Bir hata oluşursa ilk hale dönülür.*/
+        trans.Rollback();
+        /* Bir hata oluşursa ilk hale dönülür.*/
     }
 }
 
 private void btnEkle2_Click(object sender, System.EventArgs e)
 {
     /*Burada transaction' ımız içinde çalıştırılacak bir iş parçası uygulanıyor. Bu iş parçasında, Per isimli tabloya veri girişi yapılmakta. Ancak tablomuzun ismi Personel olmalı ve Per isimli bir tablomuzda yok. Bu nedenle burada bir hata oluşacaktır. İşte bu hata sonucu transaction'ımız RollBack işlemi ile Insert_1 isimli SavePoint noktasına döner.*/
-    SqlCommand cmd=new SqlCommand("INSERT INTO Per (ISIM,SOYISIM) VALUES ('SEFER','ALGAN')",con);
-    cmd.Transaction=trans;
+    SqlCommand cmd = new SqlCommand("INSERT INTO Per (ISIM,SOYISIM) VALUES ('SEFER','ALGAN')", con);
+    cmd.Transaction = trans;
     try
     {
-        int sonuc=cmd.ExecuteNonQuery();
-        trans.Save("Insert_2");/* Insert_2 isminde bir SavePoint oluşturulur.*/
-        listBox1.Items.Add(sonuc+" Kayit eklendi. SavePoint=Insert_2");
+        int sonuc = cmd.ExecuteNonQuery();
+        trans.Save("Insert_2");
+        /* Insert_2 isminde bir SavePoint oluşturulur.*/
+        listBox1.Items.Add(sonuc + " Kayit eklendi. SavePoint=Insert_2");
     }
     catch
     {
         listBox1.Items.Add("HATA...DONUS-->Insert_1");
-        trans.Rollback("Insert_1"); /* Insert_1 isimli SavePoint noktasına dönülür.*/ 
+        trans.Rollback("Insert_1");
+        /* Insert_1 isimli SavePoint noktasına dönülür.*/
     }
 }
 
 private void btnSil_Click(object sender, System.EventArgs e)
 {
     /*Personel tablosundan ID alanının değeri 1 olan satırı silecek komutu içeren bir iş parçası uygulanıyor. Ancak ID=1 olan bir satır yok ise bir istisna oluşacaktır. Bu durumda RollBack işlemi ile, Insert_2 isimli SavePoint noktasına dönülür. */
-    SqlCommand cmd=new SqlCommand("DELETE FROM Personel WHERE ID=1",con);
-    cmd.Transaction=trans;
+    SqlCommand cmd = new SqlCommand("DELETE FROM Personel WHERE ID=1", con);
+    cmd.Transaction = trans;
     try
     {
-        int sonuc=cmd.ExecuteNonQuery();
-        listBox1.Items.Add(sonuc+" Kayit silindi.");
+        int sonuc = cmd.ExecuteNonQuery();
+        listBox1.Items.Add(sonuc + " Kayit silindi.");
     }
     catch
     {
         listBox1.Items.Add("HATA...DONUS-->Insert_2");
-        trans.Rollback("Insert_2"); /* Insert_2 SavePoint noktasına dönülür.*/ 
+        trans.Rollback("Insert_2");
+        /* Insert_2 SavePoint noktasına dönülür.*/
     }
 }
 
@@ -111,7 +119,7 @@ private void btnCommit_Click_1(object sender, System.EventArgs e)
     /* Transaction onaylanır. Eğer transaction herhangibir SavePoint' te ise, o noktaya kadar olan tüm işlemler onaylanır. */
     trans.Commit();
     listBox1.Items.Add("Islemler Onaylandi...");
-    if(con.State==ConnectionState.Open)
+    if (con.State == ConnectionState.Open)
     {
         con.Close();
     }

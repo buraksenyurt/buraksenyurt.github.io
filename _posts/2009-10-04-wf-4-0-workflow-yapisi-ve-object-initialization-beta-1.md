@@ -32,7 +32,7 @@ namespace WorkflowStructure
         {
             // Yeni bir Sequence aktivitesi oluşturulur. Top Level olduğu için workflow' un kendisidir.
             // Tek satırlık ifade içerisinde bir Workflow tanımlandığına dikkat edilmelidir
-            Sequence flow1 =new Sequence
+            Sequence flow1 = new Sequence
             {
                 DisplayName = "Hello Workflow World",
                 // Activity tipinden elamanlar taşıyan koleksiyonun içerisinde alt aktiviteler tanımlanır 
@@ -40,7 +40,7 @@ namespace WorkflowStructure
                 {
                     new WriteLine{ DisplayName="Workflow Start", Text="Starting..."},//Basit bir WriteLine aktivitesi
                     new InvokeMethod{ DisplayName="5 Times Say Hello", MethodName="SayHello", TargetType=typeof(Logic)} // Logic sınıfından SayHello metodunu çağıracak olan InvokeMethod aktivitesi tanımlanır 
-                }                 
+                }
             };
 
             WorkflowInvoker.Invoke(flow1); // Workflow örneği çalıştırılır :)

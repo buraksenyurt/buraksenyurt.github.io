@@ -42,11 +42,11 @@ using RemoteLib;
 namespace Server
 {
     // Uzak nesne tipimiz
-    public class OrderObj:MarshalByRefObject,IRLib 
+    public class OrderObj : MarshalByRefObject, IRLib
     {
 
         #region IRLib Members
-    
+
         public int GetTotal(int orderID)
         {
             Console.WriteLine("Metod çağırıldı...");
@@ -119,7 +119,7 @@ namespace Client
             TcpClientChannel cliC = new TcpClientChannel();
             IRLib rl = (IRLib)Activator.GetObject(typeof(IRLib), "tcp://manchester:8777/OrderObj");
             dlgGetTotal currGetTotal = new dlgGetTotal(rl.GetTotal);
-            IAsyncResult res=currGetTotal.BeginInvoke(1001, null, null);
+            IAsyncResult res = currGetTotal.BeginInvoke(1001, null, null);
             Console.WriteLine("Metod sonrası kodlar...");
             Console.WriteLine(currGetTotal.EndInvoke(res).ToString());
             Console.ReadLine();
@@ -137,7 +137,7 @@ dlgGetTotal currGetTotal = new dlgGetTotal(rl.GetTotal);
 Artık bu noktadan itibaren BeginInvoke ve EndInvoke metodlarını çağırabiliriz. BeginInvoke metodu bildiğiniz gibi geriye IAsyncResult arayüzü tipinden bir nesne döndürür.
 
 ```csharp
-IAsyncResult res=currGetTotal.BeginInvoke(1001, null, null);
+IAsyncResult res = currGetTotal.BeginInvoke(1001, null, null);
 ```
 
 Bunu elde ettikten sonra, istemci tarafında izleyen kod satırları başarılı bir şekilde çalışacaktır. Hemen ardından EndInvoke metodu çağırılıp, ortamdaki IAsyncResult arayüz nesnesi bu metoda devredilerek asıl sonuçlar istemci tarafına alınır.
@@ -177,8 +177,8 @@ namespace Client
 
         static void CallbackMetod(IAsyncResult res)
         {
-            if(res.IsCompleted)
-                Console.Write("Metod sonucu {0}",currGetTotal.EndInvoke(res).ToString());
+            if (res.IsCompleted)
+                Console.Write("Metod sonucu {0}", currGetTotal.EndInvoke(res).ToString());
         }
     }
 }

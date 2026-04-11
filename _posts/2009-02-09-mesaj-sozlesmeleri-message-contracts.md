@@ -47,14 +47,30 @@ namespace ProductTransferLib
     [DataContract(Namespace = "http://Northwind/ProductTransferService/Product")]
     public class Product
     {
-        [DataMember(Order=0)]
-        public int ProductId { get; set; }
-        [DataMember(Order=1)]
-        public string Name { get; set; }
-        [DataMember(Order=2)]
-        public double ListPrice { get; set; }
-        [DataMember(Order=3)]
-        public DateTime OrderDate { get; set; }
+        [DataMember(Order = 0)]
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        [DataMember(Order = 1)]
+        public string Name
+        {
+            get;
+            set;
+        }
+        [DataMember(Order = 2)]
+        public double ListPrice
+        {
+            get;
+            set;
+        }
+        [DataMember(Order = 3)]
+        public DateTime OrderDate
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -70,11 +86,23 @@ namespace ProductTransferLib
     public struct CustomerNumber
     {
         [DataMember]
-        public char Region { get; set; }
+        public char Region
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public int Number { get; set; }
+        public int Number
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string LastName { get; set; }
+        public string LastName
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -86,17 +114,33 @@ using System.Runtime.Serialization;
 
 namespace ProductTransferLib
 {
-    [DataContract(Namespace="http://Northwind/ProductTransferService/Receiver")]
+    [DataContract(Namespace = "http://Northwind/ProductTransferService/Receiver")]
     public class Receiver
     {
         [DataMember]
-        public int ReceiverId { get; set; }
+        public int ReceiverId
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public CustomerNumber Number { get; set; }
+        public CustomerNumber Number
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public int RequestedProductCount { get; set; }
+        public int RequestedProductCount
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -112,11 +156,23 @@ namespace ProductTransferLib
     public class Sender
     {
         [DataMember]
-        public int SenderId { get; set; }
+        public int SenderId
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public CustomerNumber SenderNumber { get; set; }
+        public CustomerNumber SenderNumber
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -155,20 +211,40 @@ namespace ProductTransferLib
         #region Header Kısmına yazılacak özellikler
 
         [MessageHeader]
-        public Guid OrderNumber { get; set; }
+        public Guid OrderNumber
+        {
+            get;
+            set;
+        }
         [MessageHeader]
-        public DateTime OrderDate { get; set; }
+        public DateTime OrderDate
+        {
+            get;
+            set;
+        }
         [MessageHeader]
-        public Product OrderedProduct { get; set; }
+        public Product OrderedProduct
+        {
+            get;
+            set;
+        }
 
         #endregion
 
         #region Body kısmına yazılacak özellikler
 
-        [MessageBodyMember(ProtectionLevel=System.Net.Security.ProtectionLevel.None)] // ProtectionLevel için varsayılan değre None' dur.
-        public Sender OrderSender { get; set; }
+        [MessageBodyMember(ProtectionLevel = System.Net.Security.ProtectionLevel.None)] // ProtectionLevel için varsayılan değre None' dur.
+        public Sender OrderSender
+        {
+            get;
+            set;
+        }
         [MessageBodyMember]
-        public Receiver[] Receivers { get; set; }
+        public Receiver[] Receivers
+        {
+            get;
+            set;
+        }
 
         #endregion
     }
@@ -215,16 +291,32 @@ namespace ProductTransferLib
     public class ProductOrderResponse
     {
         [MessageBodyMember]
-        public RequestStatus Status { get; set; }
+        public RequestStatus Status
+        {
+            get;
+            set;
+        }
 
         [MessageBodyMember]
-        public DateTime ProcessDate{ get; set; }
+        public DateTime ProcessDate
+        {
+            get;
+            set;
+        }
 
         [MessageBodyMember]
-        public byte[] OrderPicture { get; set; } // Burada byte[] tipinden bir dizi söz konusu olduğu için SOAP body' si içerisinde Base64 tipinden bir kodlama(encoding) söz konusu olacaktır
+        public byte[] OrderPicture
+        {
+            get;
+            set;
+        } // Burada byte[] tipinden bir dizi söz konusu olduğu için SOAP body' si içerisinde Base64 tipinden bir kodlama(encoding) söz konusu olacaktır
 
         [MessageHeader]
-        public int OrderdProductCount { get; set; }
+        public int OrderdProductCount
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -241,8 +333,8 @@ using System.ServiceModel;
 namespace ProductTransferLib
 {
     [ServiceContract(
-                                Name="ProductTransferService"
-                                ,Namespace="http://Northwind/ProductTransferService")]
+                                Name = "ProductTransferService"
+                                , Namespace = "http://Northwind/ProductTransferService")]
     public interface IProductTransferService
     {
         [OperationContract]
@@ -259,32 +351,32 @@ using System.IO;
 
 namespace ProductTransferLib
 {
-public class ProductTransferService
-    :IProductTransferService
-{
-    #region IProductTransferService Members
-
-    public ProductOrderResponse CompleteOrderProcess(ProductOrderRequest request)
+    public class ProductTransferService
+        : IProductTransferService
     {
-        DateTime requestDate = request.OrderDate;
-        Guid requestOrderNumber = request.OrderNumber;
-        Sender requestSender = request.OrderSender;
-        Receiver[] requestReceivers = request.Receivers;
+        #region IProductTransferService Members
 
-        int orderedProductCount = 0;
-        foreach (Receiver receiver in requestReceivers)
+        public ProductOrderResponse CompleteOrderProcess(ProductOrderRequest request)
         {
-            orderedProductCount += receiver.RequestedProductCount;
-        }
+            DateTime requestDate = request.OrderDate;
+            Guid requestOrderNumber = request.OrderNumber;
+            Sender requestSender = request.OrderSender;
+            Receiver[] requestReceivers = request.Receivers;
 
-        // Not : XP_HDD.gif resminin byte içeriğinin dizi boyutu istemci tarafına gönderilebilecek varsayılan dizi limini aşabilir. Bu nedenle istemci tarafındaki konfigurasyon ayarlarında maxArrayLength değerinin bilinçli olarak arttırılması gerekebilir.
-        return new ProductOrderResponse
-                        {
-                            ProcessDate=DateTime.Now,
-                            Status= RequestStatus.Ok,
-                            OrderPicture=File.ReadAllBytes(System.Environment.CurrentDirectory + "\\XP_HDD.gif"),
-                            OrderdProductCount=orderedProductCount
-                        };
+            int orderedProductCount = 0;
+            foreach (Receiver receiver in requestReceivers)
+            {
+                orderedProductCount += receiver.RequestedProductCount;
+            }
+
+            // Not : XP_HDD.gif resminin byte içeriğinin dizi boyutu istemci tarafına gönderilebilecek varsayılan dizi limini aşabilir. Bu nedenle istemci tarafındaki konfigurasyon ayarlarında maxArrayLength değerinin bilinçli olarak arttırılması gerekebilir.
+            return new ProductOrderResponse
+            {
+                ProcessDate = DateTime.Now,
+                Status = RequestStatus.Ok,
+                OrderPicture = File.ReadAllBytes(System.Environment.CurrentDirectory + "\\XP_HDD.gif"),
+                OrderdProductCount = orderedProductCount
+            };
         }
 
         #endregion
@@ -393,11 +485,11 @@ namespace ClientApp
             ProductTransferServiceClient client = new ProductTransferServiceClient("ProductTransferServiceHttpEndPoint");
 
             Sender sndr = new Sender
-                                {
-                                    Name="Burak Selim",
-                                    SenderId=10001,
-                                    SenderNumber=new CustomerNumber{ Number=1, Region='A', LastName="SENYURT"} 
-                                };
+            {
+                Name = "Burak Selim",
+                SenderId = 10001,
+                SenderNumber = new CustomerNumber { Number = 1, Region = 'A', LastName = "SENYURT" }
+            };
 
             Receiver[] receivers = {
                 new Receiver{ Name="Bil", Number=new CustomerNumber{ LastName="Geyts", Region='B', Number=1}, ReceiverId=10002, RequestedProductCount=100},
@@ -411,18 +503,18 @@ namespace ClientApp
 
             Console.WriteLine("Sipariş için bir tuşa basınız.");
             Console.ReadLine();
-    
-            int result=client.CompleteOrderProcess(
+
+            int result = client.CompleteOrderProcess(
                                                                         DateTime.Now,
                                                                         Guid.NewGuid(),
-                                                                        new Product{ ProductId=1, Name="Her Yönüyle WCF", ListPrice=10, OrderDate=DateTime.Now},
+                                                                        new Product { ProductId = 1, Name = "Her Yönüyle WCF", ListPrice = 10, OrderDate = DateTime.Now },
                                                                         sndr,
                                                                         receivers,
                                                                         out orderPicture,
                                                                         out processDate,
                                                                         out requestStatus);
 
-            Console.WriteLine("result {0}",result.ToString());
+            Console.WriteLine("result {0}", result.ToString());
             File.WriteAllBytes(System.Environment.CurrentDirectory + "\\ResponsePicture.gif", orderPicture);
 
             Console.WriteLine("İşlemler tamamlandı. Çıkmak için bir tuşa basınız.");
@@ -556,12 +648,12 @@ RunProcess isimli operasyon parametre ve dönüş değeri olarak Message tipini 
 ```csharp
 // Untyped Message alıp veren örnek servis operasyonu metodu.
 public Message RunProcess(Message request)
-{ 
+{
     // Servise gelen Untyped Message ' ın Body kısmında yer alan Product dizi içeriğini elde etmek için GetBody metodunun generic versiyonundan yararlanılır.
     Product[] products = request.GetBody<Product[]>();
 
     // İstemciye döndürelecek Untyped Message' ın Body kısmında yer alacak örnek Product içeriği için dizi oluşturulur.
-    Product[] resultSet=new Product[products.Length];
+    Product[] resultSet = new Product[products.Length];
 
     // Gelen mesajın Body kısmından elde edilen dizi üzerinde örnek işlemler yapılır.
     // Örnekte ListPrice bilgisi 1 birim arttırılmıştır.
@@ -575,7 +667,7 @@ public Message RunProcess(Message request)
     // İlk parametre SOAP versiyonunu belirtir. Örneğin "SOAP 1.1".
     // İkinci parametre servis operasyonunda ReplyAction özelliğine atanan değerdir.
     // Üçüncü parametre ise Body kısmında yer alacak olan nesne örneğidir.
-    Message response = Message.CreateMessage(request.Version, "ReplyAction",resultSet);
+    Message response = Message.CreateMessage(request.Version, "ReplyAction", resultSet);
 
     // Untyped Message geriye döndürülür.
     return response;
@@ -594,7 +686,7 @@ Console.WriteLine("\nUntyped Message\n");
 using (new OperationContextScope(client.InnerChannel))
 {
     // Untyped mesaj içerisinde gönderilecek olan Product nesneleri için bir dizi hazırlanır.
-    Product[] products = 
+    Product[] products =
         {
             new Product{ Name="Programming WCF", ListPrice=12, OrderDate=DateTime.Now, ProductId=19},
             new Product{ Name="Programming C# 3.0", ListPrice=16, OrderDate=DateTime.Now, ProductId=21}
@@ -615,7 +707,7 @@ using (new OperationContextScope(client.InnerChannel))
 
     foreach (Product product in response)
     {
-        Console.WriteLine(product.Name+" "+product.ListPrice);
+        Console.WriteLine(product.Name + " " + product.ListPrice);
     }
 }
 ```

@@ -23,7 +23,7 @@ using System.ServiceModel.Web;
 
 namespace GeoService
 {
-    [ServiceContract(Namespace="http://GeoServices/LocationService")]
+    [ServiceContract(Namespace = "http://GeoServices/LocationService")]
     public interface ILocationService
     {
         [OperationContract]
@@ -39,7 +39,7 @@ namespace GeoService
         string Delete(string location);
 
         [OperationContract]
-        [WebInvoke(Method="POST")]
+        [WebInvoke(Method = "POST")]
         bool Insert(Customer customer);
 
         [OperationContract]
@@ -56,7 +56,7 @@ using System;
 
 namespace GeoService
 {
-    public class LocationService 
+    public class LocationService
         : ILocationService
     {
         public string FindLocation(string gsmNumber)
@@ -71,7 +71,7 @@ namespace GeoService
 
         public string Delete(string location)
         {
-            return string.Format("{0} ----> {1}",location);
+            return string.Format("{0} ----> {1}", location);
         }
 
         public bool Insert(Customer customer)
@@ -87,9 +87,21 @@ namespace GeoService
 
     public class Customer
     {
-        public string GsmNo { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
+        public string GsmNo
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public string Location
+        {
+            get;
+            set;
+        }
     }
 }
 ```

@@ -44,16 +44,32 @@ namespace ConcurrentCollections2
             }
 
             Console.ReadLine();
-        }        
+        }
     }
 
     // Metin dosyasındaki bilgilerin nesne karşılıkları için tasarlanmış Person sınıfı
     class Person
     {
-        public int PersonId { get; set; }
-        public string Name { get; set; }
-        public string Title { get; set; }
-        public decimal Salary { get; set; }
+        public int PersonId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
+        public decimal Salary
+        {
+            get;
+            set;
+        }
     }
 
     // Test metodunu içeren Test sınıfımız
@@ -63,7 +79,7 @@ namespace ConcurrentCollections2
         List<Person> personList = new List<Person>();
 
         public void StartTest()
-        {            
+        {
             // GetPersonList metodu için bir Thread tanımlanır
             Thread trd1 = new Thread(new ThreadStart(GetPersonList));
             // ProcessPersonList metodu için bir Thread tanımlanır
@@ -151,16 +167,32 @@ namespace ConcurrentCollections2
             {
                 Console.WriteLine(excp.Message);
             }
-        }        
+        }
     }
 
     // Metin dosyasındaki bilgilerin nesne karşılıkları için tasarlanmış Person sınıfı
     class Person
     {
-        public int PersonId { get; set; }
-        public string Name { get; set; }
-        public string Title { get; set; }
-        public decimal Salary { get; set; }
+        public int PersonId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
+        public decimal Salary
+        {
+            get;
+            set;
+        }
     }
 
     // Test metodunu içeren Test sınıfımız
@@ -179,7 +211,7 @@ namespace ConcurrentCollections2
 
             // Tüm Task' ler tamamlanıncaya kadar bekle
             Task.WaitAll(tasks);
-            
+
             Console.WriteLine("İşlemler sona erdi. Programdan çıkmak için bir tuşa basın");
             Console.ReadLine();
         }

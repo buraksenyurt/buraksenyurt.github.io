@@ -31,28 +31,28 @@ Tablo 1. Kullanım Kuralları
 Yukarıdaki unsurlara dikkat ettiğimiz sürece dilediğimiz sayıda aşırı yüklenmiş (overload edilmiş) metod yazabiliriz. Şimdi dilerseniz küçük bir Console uygulaması ile, overload metod oluşumuna engel teşkil eden duruma bir göz atalım.Öncelikle metodun geri dönüş tipinin metodun imzası olarak kabul edilemiyeceğininden bahsediyoruz. Aşğıdaki örneğimizi inceleyelim.
 
 ```csharp
-using System; 
+using System;
 
 namespace Overloading1
 {
     class Class1
-     {
-          public int Islem(int a)
-          {
-               return a*a;
-          }
+    {
+        public int Islem(int a)
+        {
+            return a * a;
+        }
 
-          public string Islem(int a)
-          {
-               string b=System.Convert.ToString(a);
-               return "Yaşım:"+b;
-          } 
+        public string Islem(int a)
+        {
+            string b = System.Convert.ToString(a);
+            return "Yaşım:" + b;
+        }
 
-          [STAThread]
-          static void Main(string[] args)
-          {
-          }
-     }
+        [STAThread]
+        static void Main(string[] args)
+        {
+        }
+    }
 }
 ```
 
@@ -83,12 +83,14 @@ namespace Overloading
 {
     public class KolayVeri
     {
-        private string baglantiDurumu; /* Connection'ın durumunu tutacak ve sadece bu class içinde geçerli olan bir string değişken tanımladık. private anahtar kelimesi değişkenin sadece bu class içerisinde yaşayabilceğini belirtir. Yazmayabilirizde, nitekim C# default olarak değişkenleri private kabul eder.*/
+        private string baglantiDurumu;
+        /* Connection'ın durumunu tutacak ve sadece bu class içinde geçerli olan bir string değişken tanımladık. private anahtar kelimesi değişkenin sadece bu class içerisinde yaşayabilceğini belirtir. Yazmayabilirizde, nitekim C# default olarak değişkenleri private kabul eder.*/
         public string BaglantiDurumu /* Yukarıda belirttiğimiz baglantiDurumu isimli değişkenin sahip olduğu değeri, bu class'a ait nesne örneklerini kullandığımız yerde görebilmek için sadece okunabilir olan (readonly), bu sebeplede sadece Get bloğuna sahip olan bir özellik tanımlıyoruz.*/
         {
             get
             {
-                return baglantiDurumu; /* Bu özelliğe eriştiğimizde baglantiDurumu değişkeninin o anki değeri geri döndürülecek. Yani özelliğin çağırıldığı yere döndürülücek.*/
+                return baglantiDurumu;
+                /* Bu özelliğe eriştiğimizde baglantiDurumu değişkeninin o anki değeri geri döndürülecek. Yani özelliğin çağırıldığı yere döndürülücek.*/
             }
         }
         public KolayVeri() /* İşte C# derleyicisinin otomatik olarak eklediği parametresiz yapıcı metod. Biz bu yapıcıya tek satırlık bir kod ekliyoruz. Eğer nesne örneği parametresiz bir Constructor ile yapılırsa bu durumda baglantinin kapalı olduğunu belirtmek için baglantiDurumu değişkenine bir değer atıyoruz. Bu durumda uygulamamızda bu nesne örneğinin BaglantiDurumu özelliğine eriştiğimizde BAGLANAMADIK değerini elde edeceğiz.*/
@@ -99,7 +101,8 @@ namespace Overloading
         public KolayVeri(string veritabaniAdi) /* Bizim yazdığımı aşırı yüklenmiş ilk yapıcı metoda gelince. Burada yapıcımız, parametre olarak bir string alıyor. Bu string veritabanının adını barındırıcak ve SqlConnection nesnemiz için gerekli bağlantı stringine bu veritabanının adını geçiricek.*/
         {
             string connectionString = "initial catalog=" + veritabaniAdi + ";data source=localhost;integrated security=sspi";
-            SqlConnection con = new SqlConnection(connectionString); /* SqlConnection bağlantımız yaratılıyor.*/
+            SqlConnection con = new SqlConnection(connectionString);
+            /* SqlConnection bağlantımız yaratılıyor.*/
 
             try /* Bağlantı işlemini bir try bloğunda yapıyoruz ki, herhangibir nedenle Sql sunucusuna bağlantı sağlanamassa (örneğin hatalı veritabanı adı nedeni ile) catch bloğunda baglantiDurumu değişkenine BAGLANAMADIK değerini atıyoruz. Bu durumda program içinde KolayVeri sınıfından örnek nesnenin BaglantiDurumu özelliğinin değerine baktığımızda BAGLANAMADIK değerini alıyoruz böylece bağlantının sağlanamadığına kanaat getiriyoruz. Kanaat dedikte aklıma Üsküdarda ki Kanaat lokantası geldi :) Yemekleri çok güzeldir. Sanırım karnımız acıktı değerli okuyucularım.Neyse kaldığımız yerden devam edelim.*/
             {

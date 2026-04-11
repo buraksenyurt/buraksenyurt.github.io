@@ -77,17 +77,17 @@ Programı çalıştıracak olursak aşağıdaki ekran görüntüsünü elde eder
 ```csharp
 enum Artis
 {
-     Memur=15,
-     Isci=10,
-     Muhendis=8,
-     Doktor=17,
-     Asker=12
-} 
+    Memur = 15,
+    Isci = 10,
+    Muhendis = 8,
+    Doktor = 17,
+    Asker = 12
+}
 
 static void Main(string[] args)
 {
-     Console.WriteLine("Memur maaşı zam artış oranı={0}",(int)Artis.Memur);
-     Console.WriteLine("Muhendis maaşı zam artış oranı= {0}",(int)Artis.Muhendis); 
+    Console.WriteLine("Memur maaşı zam artış oranı={0}", (int)Artis.Memur);
+    Console.WriteLine("Muhendis maaşı zam artış oranı= {0}", (int)Artis.Muhendis);
 }
 ```
 
@@ -98,17 +98,17 @@ static void Main(string[] args)
 Dikkat edecek olursak, numaralandırıcıları program içinde kullanırken, açık olarak (explicit) bir dönüşüm yapmaktayız. Şu ana kadar numaralandırıcı elemanlarına integer değerler atadık. Ama dilersek Long tipinden değer de atayabiliriz. Fakat bu durumda enum’ın değer türünü de belirtmemiz gerekmektedir. Örneğin,
 
 ```csharp
-enum Sinirlar:long
+enum Sinirlar : long
 {
-     EnBuyuk=458796452135L,
-     EnKucuk=255L
-} 
+    EnBuyuk = 458796452135L,
+    EnKucuk = 255L
+}
 
 static void Main(string[] args)
 {
-    Console.WriteLine("En üst sınır={0}",(long)Sinirlar.EnBuyuk);
-    Console.WriteLine("Muhendis maaşı zam artış oranı={0}",(long)Sinirlar.EnKucuk);
-} 
+    Console.WriteLine("En üst sınır={0}", (long)Sinirlar.EnBuyuk);
+    Console.WriteLine("Muhendis maaşı zam artış oranı={0}", (long)Sinirlar.EnKucuk);
+}
 ```
 
 Görüldüğü gibi Sinirlar isimli numaralandırıcı long tipinde belirtilmiştir. Bu sayede numaralandırıcı elemanlarına long veri tipinde değerler atanabilmiştir. Dikkat edilecek bir diğer nokta da, bu elemanlara ait değerleri kullanırken long tipine dönüştürme yapılmasıdır. Bir numaralandırıcı varsayılan olarak integer tiptedir. Bu nedenle integer değerleri olan bir numaralandırıcı tanımlanırken int olarak belirtilmesine gerek yoktur. Şimdi daha çok işe yarar bir örnek geliştirmeye çalışalım. Uygulamamız son derece basit bir forma sahip ve birkaç satır koddan oluşuyor. Amacımız numaralandırıcı kullanmanın programcı açısından işleri daha da kolaylaştırıyor olması. Uygulamamız bir Windows Application. Form tasarımımız aşağıdaki gibi olacak.
@@ -122,18 +122,18 @@ Form yüklenirken Şehir Kodlarının yer aldığı comboBox kontrolümüz otoma
 ```csharp
 public enum AlanKodu
 {
-     Anadolu=216,
-     Avrupa=212,
-     Ankara=312,
-     Izmir=412
+    Anadolu = 216,
+    Avrupa = 212,
+    Ankara = 312,
+    Izmir = 412
 }
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     comboBox1.Items.Add(AlanKodu.Anadolu);
-     comboBox1.Items.Add(AlanKodu.Ankara);
-     comboBox1.Items.Add(AlanKodu.Avrupa);
-     comboBox1.Items.Add(AlanKodu.Izmir);
+    comboBox1.Items.Add(AlanKodu.Anadolu);
+    comboBox1.Items.Add(AlanKodu.Ankara);
+    comboBox1.Items.Add(AlanKodu.Avrupa);
+    comboBox1.Items.Add(AlanKodu.Izmir);
 }
 ```
 

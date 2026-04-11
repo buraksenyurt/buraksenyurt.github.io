@@ -68,9 +68,9 @@ using System.Web;
 using NorthwindModel;
 using System.Collections.Generic;
 
-public class NorthwindDataService 
+public class NorthwindDataService
     : DataService<NorthwindEntities>
-{ 
+{
     public static void InitializeService(IDataServiceConfiguration config)
     {
         // Rol tabanlı veri çekişi işlemleri örnek olarak gösterilebilir; HttpContext.Current.User.IsInRole();
@@ -90,9 +90,9 @@ public class NorthwindDataService
 
     [QueryInterceptor("Products")]
     public Expression<Func<Products, bool>> FilterForProducts()
-    { 
+    {
         string name = HttpContext.Current.User.Identity.Name;
-    
+
         if (name == "dealer1")
             return p => p.Suppliers.SupplierID == 1 || p.Suppliers.SupplierID == 2;
         else if (name == "dealer2")
@@ -111,8 +111,8 @@ public class NorthwindDataService
             case UpdateOperations.Add:
                 break;
             case UpdateOperations.Change:
-                if(!HttpContext.Current.User.IsInRole("Region")) 
-                    throw new DataServiceException(405,"UnitPrice için bu değişikliğe izin verilmedi");
+                if (!HttpContext.Current.User.IsInRole("Region"))
+                    throw new DataServiceException(405, "UnitPrice için bu değişikliğe izin verilmedi");
                 break;
             case UpdateOperations.Delete:
                 break;
@@ -124,12 +124,12 @@ public class NorthwindDataService
     }
 
     #region Service Operations
-    
-    [WebGet] 
+
+    [WebGet]
     public IQueryable<string> CustomerCities()
     {
         return (from c in this.CurrentDataSource.Customers
-            select c.City).Distinct();
+                select c.City).Distinct();
     }
 
     // filter, orderby gibi operatörler ve key bazlı erişim gibi sorgulara izin verilmez. Sadece entity bazlı erişim söz konusudur
@@ -137,8 +137,8 @@ public class NorthwindDataService
     public IEnumerable<Suppliers> MySuppliers()
     {
         return from c in this.CurrentDataSource.Suppliers
-                orderby c.CompanyName
-                select c;
+               orderby c.CompanyName
+               select c;
     }
 
     #endregion
@@ -265,7 +265,7 @@ namespace ClientApp
                 new Uri("http://buraksenyurt:1000/SecuritySolutions/NorthwindDataService.svc")
                 );
 
-            entities.SendingRequest+=delegate(object sender,SendingRequestEventArgs e)
+            entities.SendingRequest += delegate (object sender, SendingRequestEventArgs e)
             {
                 ClientFormsIdentity identity = Thread.CurrentPrincipal.Identity as ClientFormsIdentity;
                 HttpWebRequest webRequest = e.Request as HttpWebRequest;
@@ -279,20 +279,20 @@ namespace ClientApp
                 {
                     // QueryInterceptor için istemci kodu
                     var tumUrunler = from urun in entities.Products
-                                                select urun;
-    
+                                     select urun;
+
                     foreach (var urun in tumUrunler)
                     {
                         Console.WriteLine(urun.ProductName);
                     }
 
                     // Http durum kodları(Http Status Code) için link-> http://en.wikipedia.org/wiki/List_of_HTTP_status_codes 
-        
+
                     // ChangeInterceptor için istemci kodu
                     var u = (from urun in entities.Products
-                        where urun.ProductID == 1
-                            select urun).First<Products>();
-                    u.UnitPrice +=1;
+                             where urun.ProductID == 1
+                             select urun).First<Products>();
+                    u.UnitPrice += 1;
 
                     entities.UpdateObject(u);
                     entities.SaveChanges();
@@ -304,7 +304,7 @@ namespace ClientApp
                         ((DataServiceClientException)excp.InnerException).StatusCode.ToString(), excp.InnerException.Message
                     );
                 Console.WriteLine(excpMessage);
-            }            
+            }
         }
     }
 }

@@ -123,12 +123,12 @@ Kullanıcı, sayfada "Gözden Geçir" başlıklı button kontrolüne tıkladığ
 ```csharp
 void btnGozdenGecir_Click(object sender, EventArgs e)
 {
-    string secilenler="";
+    string secilenler = "";
     if (trvManav.CheckedNodes.Count > 0)
     {
         foreach (TreeNode tn in trvManav.CheckedNodes)
         {
-            secilenler += tn.Parent.Text+" "+tn.Text+"|";
+            secilenler += tn.Parent.Text + " " + tn.Text + "|";
         }
 
         lblSecilenler.Text = secilenler;

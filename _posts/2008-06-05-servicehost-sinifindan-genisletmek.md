@@ -32,7 +32,7 @@ using System.ServiceModel;
 
 namespace ServisKutuphanesi
 {
-    [ServiceContract(Name="Cebir Servisi",Namespace="http://www.bsenyurt.com/CebirServisi")]
+    [ServiceContract(Name = "Cebir Servisi", Namespace = "http://www.bsenyurt.com/CebirServisi")]
     public interface ICebir
     {
         [OperationContract]
@@ -49,7 +49,7 @@ namespace ServisKutuphanesi
 
         public double DaireAlan(double r)
         {
-            return Math.PI*r * r;
+            return Math.PI * r * r;
         }
 
         public double DaireCevre(double r)
@@ -147,11 +147,11 @@ using System.ServiceModel.Description;
 namespace Sunucu
 {
     class SmartServiceHost
-        :ServiceHost
+        : ServiceHost
     {
         // Yapıcı metoda gelen servis tipi ve adres bilgileri ServiceHost sınıfının eş düşen yapıcı metoduna(Constructor) yönlendirilir
-        public SmartServiceHost(Type servisTipi,params Uri[] adresler)
-            :base(servisTipi,adresler)
+        public SmartServiceHost(Type servisTipi, params Uri[] adresler)
+            : base(servisTipi, adresler)
         {
         }
 
@@ -160,10 +160,10 @@ namespace Sunucu
             base.ApplyConfiguration(); // Konfigurasyon dosyasındaki bilgilerin yüklenmesi için bu metod çağrısı yapılmalıdır
 
             // Eğer servis için Metadata Publishing açık değilse bunun eklenmesi sağlanır
-            ServiceMetadataBehavior servisDavranisi=this.Description.Behaviors.Find<ServiceMetadataBehavior>();
+            ServiceMetadataBehavior servisDavranisi = this.Description.Behaviors.Find<ServiceMetadataBehavior>();
             if (servisDavranisi == null)
             {
-                servisDavranisi=new ServiceMetadataBehavior();
+                servisDavranisi = new ServiceMetadataBehavior();
                 this.Description.Behaviors.Add(servisDavranisi); // MEX erişimi için yeni bir servis davranışı eklenir
             }
 
@@ -250,7 +250,7 @@ using System;
 using System.ServiceModel.Activation;
 
 public class SmartServiceHostFactory
-    :ServiceHostFactory
+    : ServiceHostFactory
 {
     protected override System.ServiceModel.ServiceHost CreateServiceHost(Type serviceType, Uri[] baseAddresses)
     {
@@ -357,7 +357,7 @@ using System.ServiceModel.MsmqIntegration;
 namespace Sunucu
 {
     class TableBasedServiceHost
-        :ServiceHost
+        : ServiceHost
     {
 
         public TableBasedServiceHost(Type servisTipi, params Uri[] adresler)
@@ -397,30 +397,30 @@ namespace Sunucu
                     // EndPoint oluşturulur ve eklenir. 
                     // EndPoint noktasının oluşturulması sırasında bağlayıcı tip(Binding Type) için BaglayiciUret isimli yardımcı metod kullanılır.
                     this.AddServiceEndpoint(reader["Contract"].ToString(), BaglayiciUret(reader["Binding"].ToString()), "");
-        
+
                     #region MEX EndPoint Ekleme İşlemleri
-                    
+
                     // Adresteki scheme bilgisine göre gerekli Mex EndPoint noktaları oluşturulur.
                     string schemaBilgisi = baseAddress.Scheme;
                     if (schemaBilgisi == Uri.UriSchemeNetTcp) // TCP için
-                    { 
-                        this.AddServiceEndpoint("IMetadataExchange",  MetadataExchangeBindings.CreateMexTcpBinding(), "Mex");
+                    {
+                        this.AddServiceEndpoint("IMetadataExchange", MetadataExchangeBindings.CreateMexTcpBinding(), "Mex");
                     }
                     else if (schemaBilgisi == Uri.UriSchemeNetPipe) // PIPE için
                     {
-                        this.AddServiceEndpoint("IMetadataExchange",  MetadataExchangeBindings.CreateMexNamedPipeBinding(), "Mex");
+                        this.AddServiceEndpoint("IMetadataExchange", MetadataExchangeBindings.CreateMexNamedPipeBinding(), "Mex");
                     }
                     else if (schemaBilgisi == Uri.UriSchemeHttp) // HTTP için
                     {
                         servisDavranisi.HttpGetEnabled = true;
-                        this.AddServiceEndpoint("IMetadataExchange",  MetadataExchangeBindings.CreateMexHttpBinding(), "Mex");
+                        this.AddServiceEndpoint("IMetadataExchange", MetadataExchangeBindings.CreateMexHttpBinding(), "Mex");
                     }
                     else if (schemaBilgisi == Uri.UriSchemeHttps) // HTTPS için
                     {
                         servisDavranisi.HttpsGetEnabled = true;
                         this.AddServiceEndpoint("IMetadataExchange", MetadataExchangeBindings.CreateMexHttpsBinding(), "Mex");
                     }
-                    
+
                     #endregion
                 }
                 reader.Close();
@@ -434,7 +434,7 @@ namespace Sunucu
             switch (baglayiciAdi)
             {
                 case "NetTcpBinding":
-                    baglayici= new NetTcpBinding();
+                    baglayici = new NetTcpBinding();
                     break;
                 case "NetNamedPipeBinding":
                     baglayici = new NetNamedPipeBinding();

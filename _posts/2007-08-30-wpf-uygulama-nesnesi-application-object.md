@@ -124,7 +124,7 @@ namespace UsingApplicationObjects
     public partial class App : Application
     {
         private void Application_Activated(object sender, EventArgs e)
-        {    
+        {
             Debug.WriteLine("Activated");
         }
 
@@ -289,13 +289,13 @@ Buna göre Application sınıfının Startup olay metoduna aşağıdaki kodları
 if (e.Args.Length == 4)
 {
     if (e.Args[0][0] == 's')
-        Application.Current.Properties["Sunucu"] = e.Args[0].Substring(2, e.Args[0].Length-2);
+        Application.Current.Properties["Sunucu"] = e.Args[0].Substring(2, e.Args[0].Length - 2);
     if (e.Args[1][0] == 'd')
-        Application.Current.Properties["Veritabani"] = e.Args[1].Substring(2, e.Args[1].Length-2);
+        Application.Current.Properties["Veritabani"] = e.Args[1].Substring(2, e.Args[1].Length - 2);
     if (e.Args[2][0] == 'u')
-        Application.Current.Properties["Kullanici"] = e.Args[2].Substring(2, e.Args[2].Length-2);
+        Application.Current.Properties["Kullanici"] = e.Args[2].Substring(2, e.Args[2].Length - 2);
     if (e.Args[3][0] == 'p')
-        Application.Current.Properties["Sifre"] = e.Args[3].Substring(2, e.Args[3].Length-2);
+        Application.Current.Properties["Sifre"] = e.Args[3].Substring(2, e.Args[3].Length - 2);
 }
 ```
 
@@ -338,9 +338,9 @@ private void Window_Loaded(object sender, RoutedEventArgs e)
     if (urn != null)
         Title = urn.Ad.ToString();
 
-      txtSunucu.Text += Application.Current.Properties["Sunucu"]!=null? Application.Current.Properties["Sunucu"].ToString():"Tanımlı Değil";
-      txtVeritabani.Text += Application.Current.Properties["Veritabani"] != null ? Application.Current.Properties["Veritabani"].ToString() : "Tanımlı Değil";
-      txtKullanici.Text += Application.Current.Properties["Kullanici"] != null ? Application.Current.Properties["Kullanici"].ToString() : "Tanımlı Değil";
+    txtSunucu.Text += Application.Current.Properties["Sunucu"] != null ? Application.Current.Properties["Sunucu"].ToString() : "Tanımlı Değil";
+    txtVeritabani.Text += Application.Current.Properties["Veritabani"] != null ? Application.Current.Properties["Veritabani"].ToString() : "Tanımlı Değil";
+    txtKullanici.Text += Application.Current.Properties["Kullanici"] != null ? Application.Current.Properties["Kullanici"].ToString() : "Tanımlı Değil";
 }
 ```
 
@@ -359,7 +359,7 @@ Bu parametre üzerinden erişilen ResonSessionEnding özelliği ResonSessionEndi
 ```csharp
 private void Application_SessionEnding(object sender, SessionEndingCancelEventArgs e)
 {
-    MessageBoxResult cevap=MessageBox.Show("Bilgisayar " + e.ReasonSessionEnding.ToString() + " nedeniyle kapatılıyor. İptal etmek ister misiniz?", "Kapatma Sorusu", MessageBoxButton.YesNo, MessageBoxImage.Question);
+    MessageBoxResult cevap = MessageBox.Show("Bilgisayar " + e.ReasonSessionEnding.ToString() + " nedeniyle kapatılıyor. İptal etmek ister misiniz?", "Kapatma Sorusu", MessageBoxButton.YesNo, MessageBoxImage.Question);
     if (cevap == MessageBoxResult.No)
         e.Cancel = true;
 }
@@ -440,7 +440,7 @@ Uygulama bu şekilde test edildiğinde ve ArgumentException istisnası oluşturu
 private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
 {
     // Burada EventLog dışından bir dosyaya yazdırma işlemleride gerçekleştirilebilir.
-    EventLog.WriteEntry("Application", "X Uygulamasında "+DateTime.Now.ToString()+" zamanında "+e.Exception.Message+" hatası alınmıştır.", EventLogEntryType.Error); // e parametresi üzerinden oluşan istisna referansı Exception özelliği ile yakalanabilir.
+    EventLog.WriteEntry("Application", "X Uygulamasında " + DateTime.Now.ToString() + " zamanında " + e.Exception.Message + " hatası alınmıştır.", EventLogEntryType.Error); // e parametresi üzerinden oluşan istisna referansı Exception özelliği ile yakalanabilir.
 
     e.Handled = true; // Eğer oluşan istisna kurtarılabilecek cinstense, standart hata mesajı kutusunun çıkartılmaması ve uygulamanın çalışmaya devam etmesi sağlanmış olur. Bu özelliğin varsayılan değeri false dur.
 }

@@ -112,7 +112,7 @@ namespace AnimasyonIslemleri
 
             // Birinci DoubleAnimation tipi oluşturulur.
             // İlk parametre To değeridir ve burada 360 dereceyi işaret etmektedir. İkinci parametre ise Duration değeridir.
-            DoubleAnimation dblAni1 = new DoubleAnimation(360, new Duration(TimeSpan.FromSeconds(3))); 
+            DoubleAnimation dblAni1 = new DoubleAnimation(360, new Duration(TimeSpan.FromSeconds(3)));
             // Animasyon tipinin RTrans adına sahip elementin AngleProperty özelliğine uygulanacağı belirtilir.
             Storyboard.SetTargetName(dblAni1, "RTrans");
             Storyboard.SetTargetProperty(dblAni1, new PropertyPath(RotateTransform.AngleProperty));
@@ -150,18 +150,18 @@ namespace AnimasyonIslemleri
             Storyboard.SetTargetProperty(dblAni5, new PropertyPath(ScaleTransform.ScaleYProperty));
             // Animasyon tipi Storyboard' a eklenir.
             strBrd.Children.Add(dblAni5);
-    
+
             // Mouse ile Button alanı üzerinde gelindiğinde animasyon başlatılır. 
-            btnMerhaba.MouseEnter += delegate(object sender, MouseEventArgs e)
+            btnMerhaba.MouseEnter += delegate (object sender, MouseEventArgs e)
                                                     {
                                                         /* İkinci parametre Storyboard' un kontrol edilebileceğini gösterir. Bir başka deyişle programatik olarak animasyonun durdurulması, duraksatılması ve benzeri işlemlerin yapılabilmesi sağlanır. */
-                                                        strBrd.Begin(this,true);
+                                                        strBrd.Begin(this, true);
                                                     };
 
-            btnMerhaba.MouseLeave += delegate(object sender, MouseEventArgs e)
-                                                    {    
+            btnMerhaba.MouseLeave += delegate (object sender, MouseEventArgs e)
+                                                    {
                                                         // Storyboard' un başlattığı animasyon çıkartılır. Dolayısıyla Button açısal konum ve büyüklük olarak ilk değerlerine döner.
-                                                        strBrd.Stop(this); 
+                                                        strBrd.Stop(this);
                                                     };
         }
 
@@ -285,7 +285,7 @@ namespace AnimasyonIslemleri
             // Animasyon tipi StoryBoard nesnesine eklenir
             strBrd.Children.Add(dblKeyFrames);
             // Animasyonun, Mouse ile Dortgen in üzerine gelindiğinde başlaması sağlanır.
-            Dortgen.MouseEnter += delegate(object sender, MouseEventArgs e)
+            Dortgen.MouseEnter += delegate (object sender, MouseEventArgs e)
                                                 {
                                                     strBrd.Begin(this);
                                                 };
@@ -344,30 +344,30 @@ namespace AnimasyonIslemleri
         {
             double randomT = rnd.Next(1, 250);
             double randomL = rnd.Next(1, 250);
-            Title=String.Format("İlk nokta {0}:{1} İkinci Nokta {2}:{3}",randomT.ToString(),randomL.ToString(),(randomT - 25).ToString(),(randomL - 25).ToString());
+            Title = String.Format("İlk nokta {0}:{1} İkinci Nokta {2}:{3}", randomT.ToString(), randomL.ToString(), (randomT - 25).ToString(), (randomL - 25).ToString());
 
             strBrd.AutoReverse = false;
             strBrd.RepeatBehavior = new RepeatBehavior(1);
 
             DoubleAnimationUsingKeyFrames keyFrm1 = new DoubleAnimationUsingKeyFrames();
             keyFrm1.KeyFrames.Add(new LinearDoubleKeyFrame(randomT, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 3))));
-            keyFrm1.KeyFrames.Add(new LinearDoubleKeyFrame(randomT-25, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 5))));
+            keyFrm1.KeyFrames.Add(new LinearDoubleKeyFrame(randomT - 25, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 5))));
 
             Storyboard.SetTargetName(keyFrm1, "dortgenim");
             Storyboard.SetTargetProperty(keyFrm1, new PropertyPath(Canvas.TopProperty));
             strBrd.Children.Add(keyFrm1);
-    
+
             DoubleAnimationUsingKeyFrames keyFrm2 = new DoubleAnimationUsingKeyFrames();
             keyFrm2.KeyFrames.Add(new LinearDoubleKeyFrame(randomL, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 3))));
-            keyFrm2.KeyFrames.Add(new LinearDoubleKeyFrame(randomL-25, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 5))));
-        
+            keyFrm2.KeyFrames.Add(new LinearDoubleKeyFrame(randomL - 25, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 5))));
+
             Storyboard.SetTargetName(keyFrm2, "dortgenim");
             Storyboard.SetTargetProperty(keyFrm2, new PropertyPath(Canvas.LeftProperty));
             strBrd.Children.Add(keyFrm2);
-        
+
             strBrd.Begin(this);
         }
-    
+
         void dortgenim_MouseEnter(object sender, MouseEventArgs e)
         {
             AnimasyonuYurut();
@@ -481,7 +481,7 @@ namespace AnimasyonIslemleri
             DoubleAnimationUsingKeyFrames dblA1 = new DoubleAnimationUsingKeyFrames();
             Storyboard.SetTargetName(dblA1, "Dortgen");
             Storyboard.SetTargetProperty(dblA1, new PropertyPath(Canvas.TopProperty));
-    
+
             // Frame' lerdeki Top özelliğinin değerleri belirtilir. Bunun için DiscreteDoubleKeyFrame nesneleri örneklenerek KeyFrames koleksiyonuna eklenir.
             dblA1.KeyFrames.Add(new DiscreteDoubleKeyFrame(150, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 1))));
             dblA1.KeyFrames.Add(new DiscreteDoubleKeyFrame(30, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 2))));
@@ -491,26 +491,26 @@ namespace AnimasyonIslemleri
             dblA1.KeyFrames.Add(new DiscreteDoubleKeyFrame(75, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 6))));
             // DoubleAnimationUsingKeyFrames nesne örneği Storyboard' a alt element olarak eklenir.
             strBrd.Children.Add(dblA1);
-    
+
             DoubleAnimationUsingKeyFrames dblA2 = new DoubleAnimationUsingKeyFrames();
             Storyboard.SetTargetName(dblA2, "Dortgen");
             Storyboard.SetTargetProperty(dblA2, new PropertyPath(Canvas.LeftProperty));
-            
-            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(150, KeyTime.FromTimeSpan(new TimeSpan(0,0, 0, 1,500))));
-            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(30, KeyTime.FromTimeSpan(new TimeSpan(0, 0,0, 2,500))));
-            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(120, KeyTime.FromTimeSpan(new TimeSpan(0, 0,0, 3,500))));
-            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(60, KeyTime.FromTimeSpan(new TimeSpan(0, 0,0, 4,500))));
-            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(90, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0,5,500))));
-            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(75, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0,6,500))));
+
+            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(150, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0, 1, 500))));
+            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(30, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0, 2, 500))));
+            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(120, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0, 3, 500))));
+            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(60, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0, 4, 500))));
+            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(90, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0, 5, 500))));
+            dblA2.KeyFrames.Add(new DiscreteDoubleKeyFrame(75, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 0, 6, 500))));
             strBrd.Children.Add(dblA2);
-    
+
             // Pencere yüklendikten sonra
-            Loaded += delegate(object sender, RoutedEventArgs e)
+            Loaded += delegate (object sender, RoutedEventArgs e)
                             {
                                 // Animasyon başlatılır
                                 strBrd.Begin(this);
                             };
-        
+
         }
         public KodlaDiscreteKullanimi()
         {
@@ -598,25 +598,25 @@ namespace AnimasyonIslemleri
             strBrd.AutoReverse = true;
 
             DoubleAnimationUsingKeyFrames dblA = new DoubleAnimationUsingKeyFrames();
-    
+
             // SplineDoubleKeyFrame nesnesi eklenir. Üçüncü parametre ile hızlanma ve yavaşlama değerleri belirlenir.
             dblA.KeyFrames.Add(new SplineDoubleKeyFrame(200, KeyTime.FromTimeSpan(new TimeSpan(0, 0, 3)), new KeySpline(0.3, 0, 0.9, 0.3)));
             // Animasyonun Dortgen isimli nesneye ve içinde bulunduğu Canvas' ın Top özelliğine uygulanacağı belirlenir
             Storyboard.SetTargetName(dblA, "Dortgen");
             Storyboard.SetTargetProperty(dblA, new PropertyPath(Canvas.TopProperty));
-    
+
             // Animasyon nesnesi Storyboard' a alt element olarak eklenir
             strBrd.Children.Add(dblA);
-        
+
             // Pencerenin yüklenmesi tamamlandıktan sonra
-            Loaded += delegate(object sender, RoutedEventArgs e)
+            Loaded += delegate (object sender, RoutedEventArgs e)
                             {
                                 // Animasyon başlatılır
                                 strBrd.Begin(this);
                             };
         }
         public KodlaSplineKullanimi()
-        {    
+        {
             InitializeComponent();
             AnimasyonuHazirla();
         }
@@ -701,18 +701,18 @@ namespace AnimasyonIslemleri
         {
             Storyboard strBrd = new Storyboard();
             strBrd.RepeatBehavior = RepeatBehavior.Forever;
-    
+
             StringAnimationUsingKeyFrames strA = new StringAnimationUsingKeyFrames();
             string[] kelimeler = slogan.Split(' ');
             strBrd.Duration = TimeSpan.FromSeconds(kelimeler.Length + 1);
-            for(int i=1;i<=kelimeler.Length;i++)
+            for (int i = 1; i <= kelimeler.Length; i++)
             {
-                strA.KeyFrames.Add(new DiscreteStringKeyFrame(kelimeler[i-1],KeyTime.FromTimeSpan(TimeSpan.FromSeconds(i))));
+                strA.KeyFrames.Add(new DiscreteStringKeyFrame(kelimeler[i - 1], KeyTime.FromTimeSpan(TimeSpan.FromSeconds(i))));
             }
             Storyboard.SetTargetName(strA, "btnMerhaba");
             Storyboard.SetTargetProperty(strA, new PropertyPath(Button.ContentProperty));
             strBrd.Children.Add(strA);
-            btnMerhaba.MouseEnter += delegate(object sender, MouseEventArgs e)
+            btnMerhaba.MouseEnter += delegate (object sender, MouseEventArgs e)
                                                     {
                                                         strBrd.Begin(this);
                                                     };

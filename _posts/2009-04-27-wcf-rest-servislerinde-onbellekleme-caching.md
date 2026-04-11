@@ -39,16 +39,16 @@ using System.ServiceModel.Web;
 using Microsoft.ServiceModel.Web;
 
 namespace Caching
-{    
+{
     [ServiceBehavior(IncludeExceptionDetailInFaults = true), AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed), ServiceContract]
     public partial class ProductFeedService
     {
         [WebHelp(Comment = "Stok bilgisine göre tüm ürün bilgileri Atom formatında getirilir.")]
         [WebGet(UriTemplate = "?size={stockSize}")]
-        [WebCache(CacheProfileName="Cache1")] // web.config dosyasında, Cache1 isimli önbellekleme profilininin takip eden operasyon için kullanılacağı belirtilir.
+        [WebCache(CacheProfileName = "Cache1")] // web.config dosyasında, Cache1 isimli önbellekleme profilininin takip eden operasyon için kullanılacağı belirtilir.
         [OperationContract]
         public Atom10FeedFormatter GetFeed(short stockSize)
-        {            
+        {
             SyndicationFeed feed;
 
             // varsayılan kontroller
@@ -56,29 +56,29 @@ namespace Caching
             if (stockSize < 0)  // stok değeri parametresi 0' ın altında ise
                 throw new WebProtocolException(HttpStatusCode.BadRequest, "Stok miktarı eksi değer olamaz.", null);
             // stok değeri parametresi girilmemişse(ki servis querystring kullanılmadan talep edilirse bu çalışır)
-            if (stockSize == 0) 
+            if (stockSize == 0)
                 stockSize = 10;
 
             // Kritere uyan her bir Product için birer SyndicationItem örneği oluşturulup, SyndicationItem tipinden generic List koleksiyonuna eklenir.
             List<SyndicationItem> items = new List<SyndicationItem>();
-            foreach(Product product in GetProducts(stockSize))
+            foreach (Product product in GetProducts(stockSize))
             {
                 items.Add(new SyndicationItem()
                 {
                     // Syndication içeriğinde olması gereken standart bazı özelliklerin değerleri set edilir.
 
                     Id = String.Format(CultureInfo.InvariantCulture, "http://northwind.com/ProductID{0}", product.ProductId),
-                    Title = new TextSyndicationContent(String.Format("'{0}' ürünü", product.Name)),                    
-                    LastUpdatedTime = DateTime.Now,                    
+                    Title = new TextSyndicationContent(String.Format("'{0}' ürünü", product.Name)),
+                    LastUpdatedTime = DateTime.Now,
                     Authors = {new SyndicationPerson() {Name = ""} // Yazar bilgisi kullanılmadığı için boş bırakıldı
                     },
-                    
-                    Content = new TextSyndicationContent(String.Format("{0}, {1}, {2}, {3}",product.ProductId.ToString(),product.Name,product.UnitPrice.ToString("C2"),product.UnitsInStock.ToString())),
-                     PublishDate=DateTime.Now,
-                      Summary=new TextSyndicationContent(String.Format("{0} isimli üründen stokta {1} adet bulunmaktadır",product.Name,product.UnitsInStock.ToString())),                      
+
+                    Content = new TextSyndicationContent(String.Format("{0}, {1}, {2}, {3}", product.ProductId.ToString(), product.Name, product.UnitPrice.ToString("C2"), product.UnitsInStock.ToString())),
+                    PublishDate = DateTime.Now,
+                    Summary = new TextSyndicationContent(String.Format("{0} isimli üründen stokta {1} adet bulunmaktadır", product.Name, product.UnitsInStock.ToString())),
                 });
             }
-            
+
             // Feed hazrılanır ve Items özelliğine, List<SyndicationItem> tipinden olan ve yukarıda hazırlanan itemsi isimli koleksiyon atanır.
             feed = new SyndicationFeed()
             {
@@ -86,9 +86,9 @@ namespace Caching
                 Title = new TextSyndicationContent("Stok miktarı bazlı ürün listesi"),
                 Items = items
             };
-            feed.AddSelfLink(WebOperationContext.Current.IncomingRequest.GetRequestUri());        
+            feed.AddSelfLink(WebOperationContext.Current.IncomingRequest.GetRequestUri());
             // Operasyonun çıktı formatının Atom olacağı ContentType özelliğine atanan değer ile belirlenir
-            WebOperationContext.Current.OutgoingResponse.ContentType = ContentTypes.Atom;            
+            WebOperationContext.Current.OutgoingResponse.ContentType = ContentTypes.Atom;
             // syndication içeriği operasyondan geriye döndürülür.
             return feed.GetAtom10Formatter();
         }
@@ -108,10 +108,10 @@ namespace Caching
                     products.Add(
                         new Product
                         {
-                             ProductId=Convert.ToInt32(reader["ProductID"]),
-                              Name=reader["ProductName"].ToString(),
-                               UnitPrice=Convert.ToDecimal(reader["UnitPrice"]),
-                                UnitsInStock=Convert.ToInt16(reader["UnitsInStock"])
+                            ProductId = Convert.ToInt32(reader["ProductID"]),
+                            Name = reader["ProductName"].ToString(),
+                            UnitPrice = Convert.ToDecimal(reader["UnitPrice"]),
+                            UnitsInStock = Convert.ToInt16(reader["UnitsInStock"])
                         }
                         );
                 }
@@ -119,7 +119,7 @@ namespace Caching
             }
             return products;
         }
-    } 
+    }
 }
 ```
 

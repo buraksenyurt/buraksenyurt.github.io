@@ -57,7 +57,7 @@ namespace PreviousVersion
     }
 
     class Aynstayn
-        :ICalculus
+        : ICalculus
     {
         public double Sum(params double[] values)
         {
@@ -72,7 +72,7 @@ namespace PreviousVersion
         {
             // Service nesnesi örneklenir
             ServiceHost host = new ServiceHost(typeof(Aynstayn));
-            
+
             // Servis açılır
             host.Open();
 
@@ -80,7 +80,7 @@ namespace PreviousVersion
             foreach (var endPoint in host.Description.Endpoints)
             {
                 // Bu örnekte sadece NetTcpBinding kullanıldığın için Binding kontrolü yapılmadan dönüştürme işlemi yapılmıştır.
-                NetTcpBinding binding = (NetTcpBinding)endPoint.Binding;              
+                NetTcpBinding binding = (NetTcpBinding)endPoint.Binding;
 
                 // Bağlayıcı tipi için ReceiveTimeout, SendTimeout, ReliableSession ve MaxConnections değerleri ekrana yazdırılır
                 Console.WriteLine(
@@ -88,8 +88,8 @@ namespace PreviousVersion
                     , binding.Name
                     , binding.ReceiveTimeout.ToString()
                     , binding.SendTimeout.ToString()
-                    ,binding.MaxConnections.ToString()
-                    ,binding.ReliableSession.Enabled.ToString());
+                    , binding.MaxConnections.ToString()
+                    , binding.ReliableSession.Enabled.ToString());
             }
 
             Console.WriteLine("Çıkmak için bir tuşa basın");

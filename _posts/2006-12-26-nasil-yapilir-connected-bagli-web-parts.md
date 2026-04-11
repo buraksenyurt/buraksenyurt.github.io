@@ -46,7 +46,7 @@ public interface IAnlasma
 IcerikSaglayici Web Part kontrolü;
 
 ```csharp
-public class IcerikSaglayici:WebPart,IAnlasma
+public class IcerikSaglayici : WebPart, IAnlasma
 {
     private string _urunAdi;
     private TextBox _aramaAlani;
@@ -66,7 +66,7 @@ public class IcerikSaglayici:WebPart,IAnlasma
         Controls.Add(_aramaAlani);
 
         // Arama emrini verecek olan Button kontrolümüzü oluşturuyoruz.
-        _btnAra = new Button(); 
+        _btnAra = new Button();
         _btnAra.Text = "Bakacağım Ürün";
         _btnAra.BackColor = System.Drawing.Color.Gold;
         _btnAra.BorderColor = System.Drawing.Color.Gray;
@@ -74,7 +74,7 @@ public class IcerikSaglayici:WebPart,IAnlasma
         _btnAra.BorderWidth = 2;
         _btnAra.Font.Bold = true;
         // Anonymous(isimsiz) metod yardımıyla Button' a basıldığında yapılması gerekenleri belirtiyoruz.
-        _btnAra.Click += delegate(object sender, EventArgs e)
+        _btnAra.Click += delegate (object sender, EventArgs e)
         {
             // TextBox' a girilen bilgiyi ArananBilgi isimli özelliğe atıyoruz.
             ArananBilgi = _aramaAlani.Text;
@@ -85,21 +85,23 @@ public class IcerikSaglayici:WebPart,IAnlasma
     #region IAntlasmaYuzu Members
 
     /* ArananBilgi isimli özelliği kişiselleştirilebilir olarak tanımlıyoruz. Böylece siteye giren her farklı kullanıcı için farklı şekilde tutulabilecektir. */
-    [Personalizable( PersonalizationScope.User)]
+    [Personalizable(PersonalizationScope.User)]
     public string ArananBilgi
     {
-        get {
+        get
+        {
             return _urunAdi;
         }
-        set { 
-            _urunAdi = value; 
+        set
+        {
+            _urunAdi = value;
         }
     }
 
     #endregion
 
     // Bağlantı noktamızı ConnectionProvider niteliği ile belirtiyoruz.
-    [ConnectionProvider("Arama Bağlantı Noktası","SaglayiciNokta")]
+    [ConnectionProvider("Arama Bağlantı Noktası", "SaglayiciNokta")]
     public IAnlasma SaglayiciBaglantiNoktasi()
     {
         return (IAnlasma)this; // O anki IcerikSaglayici nesne örneğinin referansını IAnlasma tipinden olacak şekilde geri döndürüyoruz.
@@ -117,10 +119,10 @@ public class IcerikKullanici : WebPart
     private GridView _grdUrunler;
 
     // Bağlantı noktası olması için ConnectionConsumer niteliği ile imzalıyoruz.
-    [ConnectionConsumer("Tüketici Bağlantı Noktası","TuketiciNokta")]
+    [ConnectionConsumer("Tüketici Bağlantı Noktası", "TuketiciNokta")]
     public void TuketiciBaglantiNoktasi(IAnlasma anls)
-    { 
-        _arananUrun= anls.ArananBilgi; // Sağlayıcıdan gelen referansın üzerinden ArananBilgi özelliğinin değerini alıyoruz.
+    {
+        _arananUrun = anls.ArananBilgi; // Sağlayıcıdan gelen referansın üzerinden ArananBilgi özelliğinin değerini alıyoruz.
         CreateChildControls(); // Alınan değer göre web part üzerindeki kontrollerin tekrardan oluşturulmasını sağlıyoruz.
     }
 
@@ -129,7 +131,7 @@ public class IcerikKullanici : WebPart
         Controls.Clear(); // Önce kontrolleri kaldırıp sahayı temizliyoruz.
 
         // Web Part' ın başlık bilgisini değiştiriyoruz.
-        Title = "Arama Sonuçları"; 
+        Title = "Arama Sonuçları";
 
         // Aranan bilgiyi gösterecek Label kontrolünü oluşturup Web Part' a ekliyoruz.
         _lblGelenUrunAdi = new Label();
@@ -183,10 +185,10 @@ public class IcerikKullanici : WebPart
     private GridView _grdUrunler;
 
     // Bağlantı noktası olması için ConnectionConsumer niteliği ile imzalıyoruz.
-    [ConnectionConsumer("Tüketici Bağlantı Noktası","TuketiciNokta")]
+    [ConnectionConsumer("Tüketici Bağlantı Noktası", "TuketiciNokta")]
     public void TuketiciBaglantiNoktasi(IAnlasma anls)
-    { 
-        _arananUrun= anls.ArananBilgi; // Sağlayıcıdan gelen referansın üzerinden ArananBilgi özelliğinin değerini alıyoruz.
+    {
+        _arananUrun = anls.ArananBilgi; // Sağlayıcıdan gelen referansın üzerinden ArananBilgi özelliğinin değerini alıyoruz.
         CreateChildControls(); // Alınan değer göre web part üzerindeki kontrollerin tekrardan oluşturulmasını sağlıyoruz.
     }
 
@@ -195,7 +197,7 @@ public class IcerikKullanici : WebPart
         Controls.Clear(); // Önce kontrolleri kaldırıp sahayı temizliyoruz.
 
         // Web Part' ın başlık bilgisini değiştiriyoruz.
-        Title = "Arama Sonuçları"; 
+        Title = "Arama Sonuçları";
 
         // Aranan bilgiyi gösterecek Label kontrolünü oluşturup Web Part' a ekliyoruz.
         _lblGelenUrunAdi = new Label();

@@ -44,7 +44,7 @@ Servis sözleşmesinde (Service Contract), çok basit olarak double tipinden iki
 ```csharp
 namespace CalculusService
 {
-    public class MatService 
+    public class MatService
         : IMatService
     {
         public double Sum(double x, double y)
@@ -106,10 +106,18 @@ using System.WorkflowModel;
 namespace CalculusWF
 {
     public class Read
-        :WorkflowElement
+        : WorkflowElement
     {
-        public OutArgument<double> Value1 { get; set; }
-        public OutArgument<double> Value2 { get; set; }
+        public OutArgument<double> Value1
+        {
+            get;
+            set;
+        }
+        public OutArgument<double> Value2
+        {
+            get;
+            set;
+        }
 
         protected override void Execute(ActivityExecutionContext context)
         {
@@ -131,14 +139,18 @@ using System.WorkflowModel;
 namespace CalculusWF
 {
     class Write
-        :WorkflowElement
+        : WorkflowElement
     {
-        public InArgument<double> Result { get; set; }
+        public InArgument<double> Result
+        {
+            get;
+            set;
+        }
 
         protected override void Execute(ActivityExecutionContext context)
         {
-            double r=Result.Get(context);
-            Console.WriteLine("İşlem sonucu {0} dır",r.ToString());
+            double r = Result.Get(context);
+            Console.WriteLine("İşlem sonucu {0} dır", r.ToString());
         }
     }
 }

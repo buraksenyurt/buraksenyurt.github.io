@@ -23,9 +23,21 @@ namespace Problem
     // Base Class
     abstract class Document
     {
-        public int PageCount { get; set; }
-        public string Name { get; set; }
-        public string Owner { get; set; }
+        public int PageCount
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public string Owner
+        {
+            get;
+            set;
+        }
 
         public abstract void Send();
     }
@@ -72,7 +84,7 @@ namespace Problem
                                      new Xps{Name="Design Patterns.xps",PageCount=890,Owner="The Ugly"}
                                 };
 
-            DocumentManager.SendAll(dcmnts);            
+            DocumentManager.SendAll(dcmnts);
         }
     }
 }
@@ -100,9 +112,21 @@ namespace Problem
     // Base Class
     abstract class Document
     {
-        public int PageCount { get; set; }
-        public string Name { get; set; }
-        public string Owner { get; set; }
+        public int PageCount
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public string Owner
+        {
+            get;
+            set;
+        }
 
         public abstract void Send();
     }
@@ -127,7 +151,7 @@ namespace Problem
         }
     }
 
-     // Sub Class
+    // Sub Class
     class CSharp
         : Document
     {
@@ -146,7 +170,7 @@ namespace Problem
             foreach (Document dcmnt in dcmnts)
             {
                 // Bir diğer seçenek tip kontrolü olabilir. Tipe göre söz konusu alt sınıf operasyonunun gerçekleştirilmemesi sağlanabilir.
-                if(dcmnt is CSharp)
+                if (dcmnt is CSharp)
                     continue;
                 else
                     dcmnt.Send();
@@ -165,7 +189,7 @@ namespace Problem
                                      new Xps{Name="Design Patterns.xps",PageCount=890,Owner="The Ugly"}
                                 };
 
-            DocumentManager.SendAll(dcmnts);            
+            DocumentManager.SendAll(dcmnts);
         }
     }
 }

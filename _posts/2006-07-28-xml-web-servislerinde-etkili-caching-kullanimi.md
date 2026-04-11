@@ -24,15 +24,15 @@ Bu niteliğin uygulandığı web metodun döndüreceği sonuçlar 180 saniye (3 
 [WebMethod(Description = "Alt kategoriye göre ürünler", CacheDuration = 180)]
 public DataSet GetProductsBySubCategory(int subCatId)
 {
-    using (SqlConnection con = new SqlConnection("data source=manchester;database=AdventureWorks;integrated security=SSPI"))
-    {
-        SqlCommand cmd=new SqlCommand("Select ProductID,Name,ListPrice,Size,StandardCost,ProductSubCategoryID From Production.Product Where ProductSubCategoryID=@SubCatId",con);
-        cmd.Parameters.AddWithValue("@SubCatId",subCatId);
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        DataSet ds = new DataSet();
-        da.Fill(ds);
-        return ds;
-    }
+    using (SqlConnection con = new SqlConnection("data source=manchester;database=AdventureWorks;integrated security=SSPI"))
+    {
+        SqlCommand cmd = new SqlCommand("Select ProductID,Name,ListPrice,Size,StandardCost,ProductSubCategoryID From Production.Product Where ProductSubCategoryID=@SubCatId", con);
+        cmd.Parameters.AddWithValue("@SubCatId", subCatId);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        return ds;
+    }
 }
 ```
 
@@ -51,18 +51,18 @@ Sözü geçen modelde Data Caching sistemi etkin olarak kullanılmaktadır. Şim
 ```csharp
 private DataSet GetProducts()
 {
-    if (Context.Cache["Products"] != null)
-    {
-        return (DataSet)Context.Cache["Products"];
-    }
-    else
-    {
-        SqlDataAdapter da = new SqlDataAdapter("Select ProductID,Name,ListPrice,Size,StandardCost,ProductSubCategoryID From Production.Product", "data source=manchester;database=AdventureWorks;integrated security=SSPI");
-        DataSet ds = new DataSet();
-        da.Fill(ds);
-        Context.Cache.Insert("Products", ds, null, DateTime.Now.AddMinutes(5), TimeSpan.Zero);
-        return ds;
-    }
+    if (Context.Cache["Products"] != null)
+    {
+        return (DataSet)Context.Cache["Products"];
+    }
+    else
+    {
+        SqlDataAdapter da = new SqlDataAdapter("Select ProductID,Name,ListPrice,Size,StandardCost,ProductSubCategoryID From Production.Product", "data source=manchester;database=AdventureWorks;integrated security=SSPI");
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        Context.Cache.Insert("Products", ds, null, DateTime.Now.AddMinutes(5), TimeSpan.Zero);
+        return ds;
+    }
 }
 ```
 
@@ -74,14 +74,14 @@ Cache nesnesini bir web servisi metodu içerisinde kullanabilmek için güncel t
 [WebMethod(Description = "Alt kategoriye göre ürünler")]
 public DataSet GetProductsBySubCategory(int subCatId)
 {
-    DataSet dsResult = GetProducts().Copy();
-    foreach (DataRow currRow in dsResult.Tables[0].Rows)
-    {
-        if ((currRow["ProductSubCategoryID"].ToString() == "") || (currRow["ProductSubCategoryID"] == null) || (Convert.ToInt32(currRow    ["ProductSubCategoryID"]) != subCatId))
-        currRow.Delete();
-    }
-    dsResult.AcceptChanges();
-    return dsResult;
+    DataSet dsResult = GetProducts().Copy();
+    foreach (DataRow currRow in dsResult.Tables[0].Rows)
+    {
+        if ((currRow["ProductSubCategoryID"].ToString() == "") || (currRow["ProductSubCategoryID"] == null) || (Convert.ToInt32(currRow["ProductSubCategoryID"]) != subCatId))
+            currRow.Delete();
+    }
+    dsResult.AcceptChanges();
+    return dsResult;
 }
 ```
 

@@ -39,25 +39,30 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
     public class Veri /* Sınıfımızın adı Veri */
     {
         /* İzleyen satırlarda alan tanımlamalarının yapıldığını görmekteyiz. Bu alanlar private olarak tanımlanmıştır. Yani sadece bu sınıf içerisinden erişilebilir ve değerleri değiştirilebilir. Bu alanları tanımladığımız özelliklerin değerlerini tutmak amacıyla tanımlıyoruz. Amacımız bu değerlere sınıf dışından doğrudan erişilmesini engellemek.*/
-        
+
         private string SunucuAdi;
         private string VeritabaniAdi;
         private string Kullanici;
         private string Parola;
-        private SqlConnection Kon; /* Burada SqlConnection tipinden bir değişken tanımladık. */
-        private bool BaglantiDurumu; /* Sql sunucumuza olan bağlantının açık olup olmadığına bakıcağız.*/
-        private string HataDurumu; /* Sql sunucusuna bağlanırken hata olup olmadığına bakacağız.*/
+        private SqlConnection Kon;
+        /* Burada SqlConnection tipinden bir değişken tanımladık. */
+        private bool BaglantiDurumu;
+        /* Sql sunucumuza olan bağlantının açık olup olmadığına bakıcağız.*/
+        private string HataDurumu;
+        /* Sql sunucusuna bağlanırken hata olup olmadığına bakacağız.*/
         /* Aşağıda sunucu adında bir özellik tanımladık. Herbir özellik, get veya set bloklarından en az birini içermek zorundadır. */
 
         public string sunucu /* public tipteki üyelere sınıf içinden, sınıf dışından veya türetilmiş sınıflardan yani kısaca heryerden erişilebilmektedir.*/
         {
             get
             {
-                return SunucuAdi; /* Get ile, sunucu isimli özelliğe bu sınıfın bir örneğinden erişildiğinde okunacak değerin alınabilmesi sağlanır . Bu değer bizim private olarak tanımladığımız SunucuAdi değişkeninin değeridir. */
+                return SunucuAdi;
+                /* Get ile, sunucu isimli özelliğe bu sınıfın bir örneğinden erişildiğinde okunacak değerin alınabilmesi sağlanır . Bu değer bizim private olarak tanımladığımız SunucuAdi değişkeninin değeridir. */
             }
             set
             {
-                SunucuAdi = value; /* Set bloğunda ise, bu özelliğe, bu sınıfın bir örneğinden değer atamak istediğimizde yani özelliğin gösterdiği private SunucuAdi alanının değerini değiştirmek için kullanırız. Özelliğe sınıf örneğinden atanan değer, value olarak taşınmakta ve SunucuAdi alanına aktarılmaktadır.*/
+                SunucuAdi = value;
+                /* Set bloğunda ise, bu özelliğe, bu sınıfın bir örneğinden değer atamak istediğimizde yani özelliğin gösterdiği private SunucuAdi alanının değerini değiştirmek için kullanırız. Özelliğe sınıf örneğinden atanan değer, value olarak taşınmakta ve SunucuAdi alanına aktarılmaktadır.*/
             }
         }
 
@@ -69,7 +74,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
             }
             set
             {
-                VeritabaniAdi =value;
+                VeritabaniAdi = value;
             }
         }
 
@@ -77,7 +82,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
         {
             set
             {
-                Kullanici =value;
+                Kullanici = value;
             }
         }
 
@@ -85,7 +90,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
         {
             set
             {
-                Parola =value;
+                Parola = value;
             }
         }
 
@@ -105,7 +110,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
             }
             set /* Burada set bloğunda başka kodlar da ekledik. Kullanıcımız bu sınıf örneği ile bir Sql bağlantısı yarattıktan sonra eğer bu bağlantıyı açmak isterse baglantiDurumu özelliğine true değerini göndermesi yeterli olucaktır. Eğer false değeri gönderirse bağlantı kapatılır. Bu işlemleri gerçekleştirmek için ise BaglantiAc ve BaglantiKapat isimli sadece bu sınıfa özel olan private metodlarımızı kullanıyoruz.*/
             {
-                BaglantiDurumu =value;
+                BaglantiDurumu = value;
                 if (value == true)
                 {
                     BaglantiAc();
@@ -143,7 +148,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
 
         private void Baglan()
         {
-            SqlConnection con =new SqlConnection("data source=" + SunucuAdi + ";initial catalog=" + VeritabaniAdi + ";user id=" + Kullanici + ";password=" + Parola);
+            SqlConnection con = new SqlConnection("data source=" + SunucuAdi + ";initial catalog=" + VeritabaniAdi + ";user id=" + Kullanici + ";password=" + Parola);
             Kon = con;
         }
 
@@ -153,7 +158,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
             Kon.Open();
             try
             {
-                BaglantiDurumu =true;
+                BaglantiDurumu = true;
                 HataDurumu = "Baglanti sağlandi";
             }
             catch (Exception h)
@@ -165,7 +170,7 @@ namespace Veriler /* Sınıfımız Veriler isimli isim uzayında yer alıyor. Ç
         private void BaglantiKapat()
         {
             Kon.Close();
-            BaglantiDurumu =false;
+            BaglantiDurumu = false;
         }
     }
 }

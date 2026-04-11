@@ -25,20 +25,20 @@ namespace SequentialPLINQ
     {
         static void Main(string[] args)
         {
-            List<Product> productList = GetProductList();            
+            List<Product> productList = GetProductList();
             productList[497].SafetyStockLevel = 0;
             productList[503].SafetyStockLevel = 0;
 
-            var result1 = from product in productList.AsParallel()                          
+            var result1 = from product in productList.AsParallel()
                           orderby product.ProductId
-                          where product.ListPrice>=500
+                          where product.ListPrice >= 500
                           select new
                           {
                               product.ProductId,
                               product.Name,
                               product.ListPrice,
                               product.Color,
-                              SellPrice=FindSellPrice(product.ListPrice,product.SafetyStockLevel)    // İlk durum                          
+                              SellPrice = FindSellPrice(product.ListPrice, product.SafetyStockLevel)    // İlk durum                          
                           };
 
             try
@@ -57,14 +57,14 @@ namespace SequentialPLINQ
                 }
             }
         }
-           static decimal FindSellPrice(decimal listPrice,int stockLevel)
+        static decimal FindSellPrice(decimal listPrice, int stockLevel)
         {
-            decimal result=-1;
-                if (DateTime.Now.Day >= 25
-                    && DateTime.Now.Day <= 28)
-                    result=listPrice - (listPrice * (1 / stockLevel)); // SafetyStockLevel' ın 0 gelmesi halinde exception oluşacak olan yer.
-                else
-                    result= listPrice * 1.18M;
+            decimal result = -1;
+            if (DateTime.Now.Day >= 25
+                && DateTime.Now.Day <= 28)
+                result = listPrice - (listPrice * (1 / stockLevel)); // SafetyStockLevel' ın 0 gelmesi halinde exception oluşacak olan yer.
+            else
+                result = listPrice * 1.18M;
             return result;
         }
 
@@ -96,12 +96,36 @@ namespace SequentialPLINQ
 
     class Product
     {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
-        public string ProductNumber { get; set; }
-        public string Color { get; set; }
-        public int SafetyStockLevel { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
+        public string ProductNumber
+        {
+            get;
+            set;
+        }
+        public string Color
+        {
+            get;
+            set;
+        }
+        public int SafetyStockLevel
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -123,19 +147,19 @@ Peki ya, istisna olan parçaların atlanması (bu örneğe göre) istenirse. Bir
 Bu sorunun cevabı son derece basittir aslında. Exception yönetimi, FindSellPrice isimli metod içerisinde gerçekleştirilir.
 
 ```csharp
-static decimal FindSellPrice(decimal listPrice,int stockLevel)
+static decimal FindSellPrice(decimal listPrice, int stockLevel)
 {
-    decimal result=-1;
-    try 
+    decimal result = -1;
+    try
     {
-    if (DateTime.Now.Day >= 25 && DateTime.Now.Day <= 28)
-       result=listPrice - (listPrice * (1 / stockLevel)); // SafetyStockLevel' ın 0 gelmesi halinde exception oluşacak olan yer.
-    else
-       result= listPrice * 1.18M;
+        if (DateTime.Now.Day >= 25 && DateTime.Now.Day <= 28)
+            result = listPrice - (listPrice * (1 / stockLevel)); // SafetyStockLevel' ın 0 gelmesi halinde exception oluşacak olan yer.
+        else
+            result = listPrice * 1.18M;
     }
-    catch(DivideByZeroException excp)
+    catch (DivideByZeroException excp)
     {
-      Console.WriteLine("\tStok miktarı 0 olduğundan satış fiyatı hesaplanamadı");
+        Console.WriteLine("\tStok miktarı 0 olduğundan satış fiyatı hesaplanamadı");
     }
     return result;
 }

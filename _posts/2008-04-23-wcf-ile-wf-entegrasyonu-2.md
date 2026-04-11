@@ -51,12 +51,24 @@ namespace WFSiparisKutuphanesi
     public class UrunBilgisi
     {
         [DataMember]
-        public string UrunKodu { get; set; }
+        public string UrunKodu
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public int Adet { get; set; }
+        public int Adet
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public DateTime SiparisTarihi { get; set; }
-    } 
+        public DateTime SiparisTarihi
+        {
+            get;
+            set;
+        }
+    }
 }
 ```
 
@@ -205,12 +217,12 @@ namespace Sunucu
             // Parametre olarak yayınlanacak servis bazlı kullanılacak olan aktivite sınıfı belirtilir.
             WorkflowServiceHost host = new WorkflowServiceHost(typeof(WFSiparis));
             // Host uygulama açıldığından devreye girecek olay metodu
-            host.Opened += delegate(object sender, EventArgs arg) 
+            host.Opened += delegate (object sender, EventArgs arg)
             {
                 Console.WriteLine("Host opened");
             };
             // Host uygulama kapatıldığında devreye girecek olan olay metodu
-            host.Closed += delegate(object sender, EventArgs arg)
+            host.Closed += delegate (object sender, EventArgs arg)
             {
                 Console.WriteLine("Host Closed");
             };
@@ -250,21 +262,21 @@ namespace Istemci
             Console.ReadLine();
 
             // SiparisVer metodu için gerekli parametre üretilir
-            UrunBilgisi urn = new UrunBilgisi() 
-                { 
-                    Adet = 10, 
-                    UrunKodu = "AB-100", 
-                    SiparisTarihi = DateTime.Now 
-                };
+            UrunBilgisi urn = new UrunBilgisi()
+            {
+                Adet = 10,
+                UrunKodu = "AB-100",
+                SiparisTarihi = DateTime.Now
+            };
 
             // Proxy üretimi gerçekleştirilir
             UrunSiparisServisiClient servis = new UrunSiparisServisiClient();
             Console.WriteLine("Talep gönderiliyor");
             // WF Servis operasyonu çağırılır
-            string cevap=servis.SiparisVer(urn);
+            string cevap = servis.SiparisVer(urn);
             // Operasyon sonucu gösterilir
             Console.WriteLine(cevap);
-    
+
             Console.ReadLine();
         }
     }

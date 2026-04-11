@@ -26,14 +26,14 @@ namespace UsingCovariance
         {
         }
     }
-    public class Dortgen:Sekil
+    public class Dortgen : Sekil
     {
         public Dortgen()
         {
         }
     }
 
-    public delegate Sekil Temsilci(); 
+    public delegate Sekil Temsilci();
 
     class Class1
     {
@@ -50,8 +50,8 @@ namespace UsingCovariance
         [STAThread]
         static void Main(string[] args)
         {
-            Temsilci temsilci=new Temsilci(Metod_1);
-            temsilci=new Temsilci(Metod_2); // Derleme zamanı hatası
+            Temsilci temsilci = new Temsilci(Metod_1);
+            temsilci = new Temsilci(Metod_2); // Derleme zamanı hatası
         }
     }
 }
@@ -60,13 +60,13 @@ namespace UsingCovariance
 Bu uygulamayı derlediğimizde,
 
 ```csharp
-temsilci=new Temsilci(Metod_2);
+temsilci = new Temsilci(Metod_2);
 ```
 
 satırı için Method 'UsingCovariance.Class1.Metod2 ()' does not match delegate 'UsingCovariance.Sekil UsingCovariance.Temsilci ()' hatasını alırız. Peki burada sorun nedir? Temsilci isimli delegate tipimiz, Sekil sınıfından nesne örneklerini geriye döndüren ve parametre almayan metodları işaret edebilecek şekilde tanımlanmıştır. Bu durumda,
 
 ```csharp
-Temsilci temsilci=new Temsilci(Metod_1);
+Temsilci temsilci = new Temsilci(Metod_1);
 ```
 
 satırı düzgün olarak çalışacaktır. Nitekim Metod_1 delegate tipimizin tanımlamalarına uyan tarzda bir metoddur. Oysaki Metod_2 metodumuzun geriye döndürdüğü değer Dortgen sınıfı tipindendir. Dolayısıyla temsilci nesnemizin tanımladığı bildirimin dışında bir dönüş tipininin dönüşü söz konusudur. Hatırlayın, temsilciler işaret edecekleri metodlar için kesin dönüş tipi ve parametre tipi uyumluluğu ararlar. Oysaki Dortgen ve Sekil sınıfı arasında kalıtımsal bir ilişki söz konusudur ve bu sebeple bu tarz bir kullanımın sorunsuz olarak çalışacağı düşünülmektedir. Çünkü kalıtımın doğası gereği bu Dortgen sınıfına ait nesne örnekleri Sekil sınıfına ait nesne örneklerine dönüştürülebilir. Ancak temsilcimiz açısından bu kural ne yazık ki geçerli değildir. Yani temsilcimiz belirtilen tipler için çalışma zamanında çok biçimliliği destekleyememiştir.
@@ -92,8 +92,8 @@ class Class1
     [STAThread]
     static void Main(string[] args)
     {
-        Temsilci temsilci=new Temsilci(Metod_1);
-          Temsilci2 temsilci2i=new Temsilci2(Metod_2);
+        Temsilci temsilci = new Temsilci(Metod_1);
+        Temsilci2 temsilci2i = new Temsilci2(Metod_2);
     }
 }
 ```
@@ -121,7 +121,7 @@ namespace UsingContravariance
         {
         }
     }
-    public class Dortgen:Sekil
+    public class Dortgen : Sekil
     {
         public Dortgen()
         {
@@ -133,7 +133,7 @@ namespace UsingContravariance
     class Class1
     {
         public static int Metod_1(Dortgen dortgen)
-        {    
+        {
             return 0;
         }
         public static int Metod_2(Sekil sekil)
@@ -144,8 +144,8 @@ namespace UsingContravariance
         [STAThread]
         static void Main(string[] args)
         {
-            Temsilci temsilci=new Temsilci(Metod_1);
-            temsilci=new Temsilci(Metod_2); // Derleme zamanı hatası
+            Temsilci temsilci = new Temsilci(Metod_1);
+            temsilci = new Temsilci(Metod_2); // Derleme zamanı hatası
         }
     }
 }
@@ -154,7 +154,7 @@ namespace UsingContravariance
 Bu kez delegate tipimiz geriye int tipinden değer döndüren ve parametre olarak Dortgen sınıfı tipinden nesne örneklerini alan metodları işaret edebilecek şekilde tanımlanmıştır. Kodu derlediğimizde Method 'UsingContravariance.Class1. Metod2 (UsingContravariance.Sekil)' does not match delegate 'int UsingContravariance.Temsilci (UsingContravariance.Dortgen)' hatasını alırız. Yine delegate tipimiz burada parametrik imza uyuşmazlığından bahsetmektedir. Sorun,
 
 ```csharp
-temsilci=new Temsilci(Metod_2);
+temsilci = new Temsilci(Metod_2);
 ```
 
 satırında oluşur. Çünkü Metod_2 Dortgen sınıfı tipinden bir nesne örneğini parametre olarak almaktansa Dortgen sınıfının üst sınıfı olan Sekil sınıfından bir nesne örneğini parametre olarak almaktadır. Buradaki problem tersi durum içinde söz konusudur. Yani temsilcimizi tanımlarken metodun alacağı parametrenin, türeyen sınıf yerine temel sınıftan (base class) bir nesne örneğini kullanacak şekilde aşağıdaki kod parçasında görüldüğü gibi tanımlandığını düşünürsek;
@@ -176,8 +176,8 @@ class Class1
     [STAThread]
     static void Main(string[] args)
     {
-        Temsilci temsilci=new Temsilci(Metod_1); // Derleme zamanı hatası
-        temsilci=new Temsilci(Metod_2);
+        Temsilci temsilci = new Temsilci(Metod_1); // Derleme zamanı hatası
+        temsilci = new Temsilci(Metod_2);
     }
 }
 ```
@@ -206,8 +206,8 @@ class Class1
     [STAThread]
     static void Main(string[] args)
     {
-        Temsilci temsilci=new Temsilci(Metod_1);
-          Temsilci2 temsilci2=new Temsilci2(Metod_2);
+        Temsilci temsilci = new Temsilci(Metod_1);
+        Temsilci2 temsilci2 = new Temsilci2(Metod_2);
     }
 }
 ```

@@ -17,18 +17,18 @@ using System;
 namespace UsingStaticClasses
 {
     public class TemelAritmetik
-    { 
-        public static double Toplam(double deger1,double deger2)
-        {    
-            return deger1+deger2;
+    {
+        public static double Toplam(double deger1, double deger2)
+        {
+            return deger1 + deger2;
         }
-}
+    }
 
-class Class1
-{
+    class Class1
+    {
         static void Main(string[] args)
         {
-            double toplamSonuc=TemelAritmetik.Toplam(10,15);
+            double toplamSonuc = TemelAritmetik.Toplam(10, 15);
             Console.WriteLine(toplamSonuc);
         }
     }
@@ -38,23 +38,23 @@ class Class1
 Bu kod parçasında aşağıda olduğu gibi TemelAritmetik sınıfına ait bir nesne örneği tanımlayıp Toplam metodunu bu nesne örneği üzerinden çağırmaya çalışmak derleme zamanında hataya neden olacaktır. Az öncede belirttiğimiz gibi, static üyelere tanımlandıkları sınıfa ait nesne örnekleri üzerinden erişilemezler.
 
 ```csharp
-TemelAritmetik temelAritmetik=new TemelAritmetik();
-double toplamSonuc=temelAritmetik.Toplam(4,5);
+TemelAritmetik temelAritmetik = new TemelAritmetik();
+double toplamSonuc = temelAritmetik.Toplam(4, 5);
 ```
 
 Ancak yine de dikkat ederseniz TemelAritmetik sınıfına ait nesne örneğini oluşturabilmekteyiz. Bu durumda, ilk olarak static üyelerle dolu bir sınıfın kesin olarak örneklendirilmesini önlemek isteyeceğizdir. Bu nedenle varsayılan yapıcı metodu (default constructor) private olarak tanımlayarak bu durumun önüne geçebiliriz.
 
 ```csharp
 public class TemelAritmetik
-{ 
+{
     // Varsayılan yapıcı private olduğundan sınıfa ait nesne örneği oluşturulamayacaktır.
     private TemelAritmetik()
     {
     }
 
-    public static double Toplam(double deger1,double deger2)
+    public static double Toplam(double deger1, double deger2)
     {
-        return deger1+deger2;
+        return deger1 + deger2;
     }
 }
 ```
@@ -67,18 +67,18 @@ using System;
 namespace UsingStaticClasses
 {
     public class TemelAritmetik
-    { 
+    {
         public TemelAritmetik()
         {
         }
 
-        public static double Toplam(double deger1,double deger2)
+        public static double Toplam(double deger1, double deger2)
         {
-            return deger1+deger2;
+            return deger1 + deger2;
         }
     }
 
-    public class AltAritmetik:TemelAritmetik
+    public class AltAritmetik : TemelAritmetik
     {
         public void AltIslemler()
         {
@@ -90,12 +90,12 @@ namespace UsingStaticClasses
         [STAThread]
         static void Main(string[] args)
         {
-            AltAritmetik altAritmetik=new AltAritmetik();
+            AltAritmetik altAritmetik = new AltAritmetik();
             altAritmetik.AltIslemler();
-            double sonuc=AltAritmetik.Toplam(1,2);
+            double sonuc = AltAritmetik.Toplam(1, 2);
         }
     }
-}  
+}
 ```
 
 Dolayısıyla sadece static üyeler içerecek bir sınıfın türetme işlemi için kullanılmasınıda bir şekilde önlemek isteyebiliriz. Bu durumda sealed anahtar sözcüğü yardımıyla, ilgili sınıfın türetme amacıyla kullanılamayacağını belirtiriz.
@@ -115,9 +115,9 @@ namespace UsingStaticClasses
 {
     public static class TemelAritmetik
     {
-        public static double Toplam(double deger1,double deger2)
+        public static double Toplam(double deger1, double deger2)
         {
-            return deger1+deger2;
+            return deger1 + deger2;
         }
         public static double pi = 3.14;
         public static double PI
@@ -137,7 +137,7 @@ namespace UsingStaticClasses
     {
         static void Main(string[] args)
         {
-            double sonuc=TemelAritmetik.Toplam(3, 5);
+            double sonuc = TemelAritmetik.Toplam(3, 5);
             Console.WriteLine(sonuc);
             Console.WriteLine(TemelAritmetik.pi);
             TemelAritmetik.PI = 3;
@@ -180,9 +180,9 @@ public static class TemelAritmetik
         // Bir takım kodlar.
     }
 
-    public static double Toplam(double deger1,double deger2)
+    public static double Toplam(double deger1, double deger2)
     {
-        return deger1+deger2;
+        return deger1 + deger2;
     }
     public static double pi = 3.14;
     public static double PI

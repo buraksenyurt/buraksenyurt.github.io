@@ -71,21 +71,21 @@ using System.Web;
 using System.Web.Services;
 namespace GeoWebServis
 {
-     [WebService(Namespace="http://ilk/servis/",Description="Geometrik Hesaplamalar Üzerine Metodlar İçerir. Ucgen, Dortgen gibi şekillere yönelik alan ve çevre hesaplamaları.",Name="Geometrik Hesaplamalar")]
-     public class TemelIsler : System.Web.Services.WebService
-     {
-          private const double pi=3.14;
-          [WebMethod(Description="Daire Alan Hesabı Yapar")]
-          public double DaireAlan( double r)
-          {
-              return (r*r)*pi;
-          }
-          [WebMethod(Description="Daire Çevre Hesabı Yapar.")]
-          public double DaireCevre( double r)
-          {
-              return 2*pi*r;
-          }
-     }
+    [WebService(Namespace = "http://ilk/servis/", Description = "Geometrik Hesaplamalar Üzerine Metodlar İçerir. Ucgen, Dortgen gibi şekillere yönelik alan ve çevre hesaplamaları.", Name = "Geometrik Hesaplamalar")]
+    public class TemelIsler : System.Web.Services.WebService
+    {
+        private const double pi = 3.14;
+        [WebMethod(Description = "Daire Alan Hesabı Yapar")]
+        public double DaireAlan(double r)
+        {
+            return (r * r) * pi;
+        }
+        [WebMethod(Description = "Daire Çevre Hesabı Yapar.")]
+        public double DaireCevre(double r)
+        {
+            return 2 * pi * r;
+        }
+    }
 }
 ```
 
@@ -140,24 +140,24 @@ Tüm bu dosyalar Web References sekmesinin altında yer almaktadır. Bu dosyalar
 ```csharp
 private void btnHesapla_Click(object sender, System.EventArgs e)
 {
-     double r=Convert.ToDouble(txtYaricap.Text);
-     localhost.GeometrikHesaplamalar gh=new Istemci.localhost.GeometrikHesaplamalar();
-     lblAlan.Text=gh.DaireAlan(r).ToString();
-     lblCevre.Text=gh.DaireCevre(r).ToString();
+    double r = Convert.ToDouble(txtYaricap.Text);
+    localhost.GeometrikHesaplamalar gh = new Istemci.localhost.GeometrikHesaplamalar();
+    lblAlan.Text = gh.DaireAlan(r).ToString();
+    lblCevre.Text = gh.DaireCevre(r).ToString();
 }
 ```
 
 Burada belki de en önemli kısım, web servisimizde yer alan GeometrikHesaplamalar isimli sınıfa ait bir nesne örneğinin aşağıdaki kod satırı ile oluşturulmasıdır.
 
 ```csharp
-localhost.GeometrikHesaplamalar gh=new Istemci.localhost.GeometrikHesaplamalar();
+localhost.GeometrikHesaplamalar gh = new Istemci.localhost.GeometrikHesaplamalar();
 ```
 
 Web servisimizdeki metodlara işte bu nesne vasıtasıyla erişmekteyiz.
 
 ```csharp
-lblAlan.Text=gh.DaireAlan(r).ToString();
-lblCevre.Text=gh.DaireCevre(r).ToString();
+lblAlan.Text = gh.DaireAlan(r).ToString();
+lblCevre.Text = gh.DaireCevre(r).ToString();
 ```
 
 Burada kullanılan web servisinin, global seviyedeki bir ağda yer aldığını düşünürsek, servis içindeki sınıfa ait nesnenin istemci makinede nasıl örneklenebildiğini anlamak önemlidir. Nitekim sınıfa ait nesne örneğinin oluşturulabilmesi, istemci makinede de bu sınıfın olmasını gerektirir. Bu, Remoting teknolojisinden gelen bir özelliktir. Bir Remoting uygulamasında, uzak hizmetleri sağlayan nesne modelleri (dll dosyaları), bu hizmetleri kullanmak isteyen makinelere kopyalanır ve uygulamalara referans olarak belirtilir. Oysa ki web servislerinde durum farklıdır. Web servisimize ait sınıfı, istemci uygulamaya kopyalamadık. Peki nasıl oldu da bu servis sınıfı istemci uygulamada kullanılabildi? İşte WSDL (Web Services Description Language) bu noktada devreye girerek bize yardımcı olmaktadır. Mimarinin daha derinlerine girerek bu konuyu net bir şekilde kavramadan önce uygulamamızın nasıl çalıştığına bakalım. Bunun için projeyi Run edelim ve metin kutusuna bir yarıçap değeri girelim. Sonuç aşağıdaki gibi olacaktır.

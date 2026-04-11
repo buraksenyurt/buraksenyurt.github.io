@@ -49,10 +49,10 @@ Sonuç olarak, projemizde aşağıdaki Resource dosyalarının oluşturulması g
 ```csharp
 private void Doldur()
 {
-    this.textBox1.Text=DateTime.Today.ToLongDateString();
-    this.textBox2.Text=DateTime.Now.ToLongTimeString();
-    double sayi=121345.4565;
-    this.textBox3.Text=sayi.ToString();
+    this.textBox1.Text = DateTime.Today.ToLongDateString();
+    this.textBox2.Text = DateTime.Now.ToLongTimeString();
+    double sayi = 121345.4565;
+    this.textBox3.Text = sayi.ToString();
 }
 private void Form1_Load(object sender, System.EventArgs e)
 {
@@ -61,34 +61,34 @@ private void Form1_Load(object sender, System.EventArgs e)
 
 private void button1_Click(object sender, System.EventArgs e)
 {
-    if(comboBox1.SelectedItem.ToString()=="USA")
+    if (comboBox1.SelectedItem.ToString() == "USA")
     {
-        Thread.CurrentThread.CurrentUICulture=new CultureInfo("en-US");
-        Thread.CurrentThread.CurrentCulture=new CultureInfo("en-US");
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
     }
-    else if(comboBox1.SelectedItem.ToString()=="Türkiye")
+    else if (comboBox1.SelectedItem.ToString() == "Türkiye")
     {
-        Thread.CurrentThread.CurrentUICulture=new CultureInfo("tr-TR");
-        Thread.CurrentThread.CurrentCulture=new CultureInfo("tr-TR");
-    } 
-    else if(comboBox1.SelectedItem.ToString()=="Français")
-    {
-        Thread.CurrentThread.CurrentUICulture=new CultureInfo("fr-FR");
-        Thread.CurrentThread.CurrentCulture=new CultureInfo("fr-FR");
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo("tr-TR");
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
     }
-    else if(comboBox1.SelectedItem.ToString()=="Deutschland")
+    else if (comboBox1.SelectedItem.ToString() == "Français")
     {
-        Thread.CurrentThread.CurrentUICulture=new CultureInfo("de-DE");
-        Thread.CurrentThread.CurrentCulture=new CultureInfo("de-DE");
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
+    }
+    else if (comboBox1.SelectedItem.ToString() == "Deutschland")
+    {
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
     }
 
-    ResourceManager resM=new ResourceManager("Languages.Resource1",Type.GetType("Languages.Form1").Assembly);
-    this.Text=resM.GetString("Türkçe Dil");
-    this.lblDil.Text=resM.GetString("Dil");
-    this.lblParasal.Text=resM.GetString("Parasal");
-    this.lblSaat.Text=resM.GetString("Saat");
-    this.lblTarih.Text=resM.GetString("Tarih");
-    this.button1.Text=resM.GetString("Göster");
+    ResourceManager resM = new ResourceManager("Languages.Resource1", Type.GetType("Languages.Form1").Assembly);
+    this.Text = resM.GetString("Türkçe Dil");
+    this.lblDil.Text = resM.GetString("Dil");
+    this.lblParasal.Text = resM.GetString("Parasal");
+    this.lblSaat.Text = resM.GetString("Saat");
+    this.lblTarih.Text = resM.GetString("Tarih");
+    this.button1.Text = resM.GetString("Göster");
     Doldur();
 }
 ```
@@ -98,7 +98,7 @@ Kullanıcı comboBox1 kontrolünden bir dil seçtiğinde, öncelikle uygulamanı
 If koşullarında, sonraki hamlede, güncel prosesteki sayısal, tarihsel vb. formatlar için gerekli kültür kodu, CurrentCulture özelliğine, ilgili kültür için bir CultureInfo nesnesi atanarak gerçekleştirilir. Bizim için önemli olan bir diğer nokta da, ResourceManager nesnesinin oluşturuluş şeklidir.
 
 ```csharp
-ResourceManager resM=new ResourceManager("Languages.Resource1",Type.GetType("Languages.Form1").Assembly);
+ResourceManager resM = new ResourceManager("Languages.Resource1", Type.GetType("Languages.Form1").Assembly);
 ```
 
 Burada ilk parametre, Resource dosyalarının ana adını işaret etmektedir. Ana adımız, örneğin Resource1.tr-TR.resx dosyasını baz aldığımızda, belirleyici kültür koduna kadar olan kısımdaki dosya adıdır. İkinci parametre ise, Reflection özelliklerini kullanır ve güncel assembly'ın tipini alır. Artık elimizde, resource'ları yönetebileceğimiz bir nesne vardır. Tek yapmamız gereken, uygulama arayüzündeki text'lere, ResourceManager nesnesinin GetString metodu ile, name (key) alanlarının karşılığı olan değerlerin (value) atanmasıdır. Bunun için, ResourceManager sınıfının GetString metodunu kullandık.

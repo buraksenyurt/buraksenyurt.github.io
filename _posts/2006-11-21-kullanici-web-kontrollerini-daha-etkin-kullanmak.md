@@ -72,28 +72,58 @@ Aslında senaryomuz oldukça tanıdık gelecektir. Bir alış veriş sitesinde, 
 ```csharp
 public int Il
 {
-    get { return ddlIl.SelectedIndex; }
-    set { ddlIl.SelectedIndex = value; }
+    get
+    {
+        return ddlIl.SelectedIndex;
+    }
+    set
+    {
+        ddlIl.SelectedIndex = value;
+    }
 }
 public string Ilce
 {
-    get { return txtIlce.Text; }
-    set { txtIlce.Text = value; }
+    get
+    {
+        return txtIlce.Text;
+    }
+    set
+    {
+        txtIlce.Text = value;
+    }
 }
 public string Cadde
 {
-    get { return txtCadde.Text; }
-    set { txtCadde.Text = value; }
+    get
+    {
+        return txtCadde.Text;
+    }
+    set
+    {
+        txtCadde.Text = value;
+    }
 }
 public string Sokak
 {
-    get { return txtSokak.Text; }
-    set { txtSokak.Text = value; }
+    get
+    {
+        return txtSokak.Text;
+    }
+    set
+    {
+        txtSokak.Text = value;
+    }
 }
 public string PostaKodu
 {
-    get { return txtPostakodu.Text; }
-    set { txtPostakodu.Text = value; }
+    get
+    {
+        return txtPostakodu.Text;
+    }
+    set
+    {
+        txtPostakodu.Text = value;
+    }
 }
 ```
 
@@ -136,13 +166,13 @@ Aslında bir web user control herhangi bir sayfaya eklendiği zaman, bu direktif
 ```csharp
 protected void Page_Init(object sender, EventArgs e)
 {
-    AdresBilgisi kontrol1=(AdresBilgisi)LoadControl("AdresBilgisi.ascx");
+    AdresBilgisi kontrol1 = (AdresBilgisi)LoadControl("AdresBilgisi.ascx");
     AdresBilgisi kontrol2 = (AdresBilgisi)LoadControl("AdresBilgisi.ascx");
 
     kontrol1.Ilce = "İlçe giriniz...";
     kontrol2.PostaKodu = "90000";
 
-    phKontroller.Controls.Add(kontrol1); 
+    phKontroller.Controls.Add(kontrol1);
     phKontroller.Controls.Add(kontrol2);
 }
 ```
@@ -208,7 +238,10 @@ public class KontrolBilgileri
 
     public List<string> Kontroller
     {
-        get { return m_Kontroller; }
+        get
+        {
+            return m_Kontroller;
+        }
     }
 
     public KontrolBilgileri(PlaceHolder ph)
@@ -218,7 +251,7 @@ public class KontrolBilgileri
         {
             if (ph.Controls[i] is CheckBox)
             {
-                CheckBox currentChk=ph.Controls[i] as CheckBox;
+                CheckBox currentChk = ph.Controls[i] as CheckBox;
                 if (currentChk.Checked)
                     m_Kontroller.Add(currentChk.Text);
             }
@@ -284,7 +317,7 @@ public partial class Default3 : System.Web.UI.Page
     protected void Secilenler(KontrolBilgileri kb)
     {
         for (int i = 0; i < kb.Kontroller.Count; i++)
-            Response.Write(kb.Kontroller[i]+"<br/>");
+            Response.Write(kb.Kontroller[i] + "<br/>");
     }
 }
 ```
@@ -298,7 +331,7 @@ Dikkat edilmesi gereken bir nokta vardır. Çoğunlukla kontrolleri dinamik olar
 Urun.ascx.cs'de temsilci;
 
 ```csharp
-public delegate void SecilenleriAlHandler(object gonderen,KontrolBilgileri args);
+public delegate void SecilenleriAlHandler(object gonderen, KontrolBilgileri args);
 ```
 
 Urun.ascx.cs'de olayı tetikleyen buttonClick metodu;
@@ -307,17 +340,17 @@ Urun.ascx.cs'de olayı tetikleyen buttonClick metodu;
 protected void btnIsaretle_Click(object sender, EventArgs e)
 {
     if (SecilenleriAl != null)
-        SecilenleriAl(this,new KontrolBilgileri(phGunler));
+        SecilenleriAl(this, new KontrolBilgileri(phGunler));
 }
 ```
 
 default3.aspx.cs'deki Secilenler olay metod;
 
 ```csharp
-protected void Secilenler(object sender,KontrolBilgileri kb)
+protected void Secilenler(object sender, KontrolBilgileri kb)
 {
     for (int i = 0; i < kb.Kontroller.Count; i++)
-        Response.Write(kb.Kontroller[i]+"<br/>");
+        Response.Write(kb.Kontroller[i] + "<br/>");
 }
 ```
 
@@ -326,20 +359,23 @@ Bu değişiklik bize, kontrole ait olay metodu içerisinde hangi web kullanıcı
 ```csharp
 public string Notlar
 {
-    get{return txtNot.Text;}
+    get
+    {
+        return txtNot.Text;
+    }
 }
 ```
 
 Default3.aspx sayfasında Urun.ascx kontrolünden örneğin 2 tane olduğunu ve bunların aynı olay metoda yönlendirildiğini göz önüne. Bu durumda ilgili olay metodu içerisinde, hangi kontrol tarafından bir tetikleme olduğunu tespit edebilir. Çünkü artık olayı tetikleyen nesneyi taşıyan bir parametremiz vardır. Dolayısıyla bu parametre üzerinden ilgili Notlar özelliğe geçebilir ve hangi kontrolden gelindiyse onun notlarını alabiliriz.
 
 ```csharp
-protected void Secilenler(object sender,KontrolBilgileri kb)
+protected void Secilenler(object sender, KontrolBilgileri kb)
 {
     Urun urn = (Urun)sender;
     Response.Write(urn.Notlar + "<br/>");
 
     for (int i = 0; i < kb.Kontroller.Count; i++)
-        Response.Write(kb.Kontroller[i]+"<br/>");
+        Response.Write(kb.Kontroller[i] + "<br/>");
 }
 ```
 

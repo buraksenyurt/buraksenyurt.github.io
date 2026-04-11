@@ -51,47 +51,47 @@ namespace CryptoStreamS1
             #region Dosya Şifrelemesi (Rijndael algoritması ile)
 
             // İlk olarak şifrelemek istediğimiz dosya için bir stream oluşturuyoruz.
-            FileStream fs=new FileStream(@"SifreliDosya.txt",FileMode.OpenOrCreate,FileAccess.Write);
+            FileStream fs = new FileStream(@"SifreliDosya.txt", FileMode.OpenOrCreate, FileAccess.Write);
 
             /* Kullanacağımız şifreleme algoritmasını uygulatabileceğimiz managed Rijndael sınıfına ait nesne örneğimizi tanımlıyoruz. Şifreleme algoritması olarak Rijndael tekniğini kullanıyoruz. */
-            RijndaelManaged rm=new RijndaelManaged();
+            RijndaelManaged rm = new RijndaelManaged();
             rm.GenerateKey(); // Aalgoritma için gerekli Key üretiliyor.
 
-            /* Şimdi algoritma için gerekli key ve vektör değerlerini üretiyoruz. Burada kullanılan şifreleme algoritması simetrik yapıda olduğundan şifrelenen verinin açılabilmesi için (decrypting) aynı key ve vektör değerine ihtiyacımız var. Bu nedenle bunları bir byte dizisinde tutuyoruz.*/ 
+            /* Şimdi algoritma için gerekli key ve vektör değerlerini üretiyoruz. Burada kullanılan şifreleme algoritması simetrik yapıda olduğundan şifrelenen verinin açılabilmesi için (decrypting) aynı key ve vektör değerine ihtiyacımız var. Bu nedenle bunları bir byte dizisinde tutuyoruz.*/
 
             // Elde ettiğimiz key değerini bir byte dizisine aktarıyoruz.
-            byte[] k=new byte[rm.Key.Length];
-            for(int i=0;i<rm.Key.Length;i++)
+            byte[] k = new byte[rm.Key.Length];
+            for (int i = 0; i < rm.Key.Length; i++)
             {
                 Console.Write(rm.Key[i]);
-                k[i]=rm.Key[i];
-            } 
+                k[i] = rm.Key[i];
+            }
 
             Console.WriteLine();
 
             rm.GenerateIV(); // Algoritma için gerekli IV vektör değeri üretiliyor.
-            byte[] v=new byte[rm.IV.Length];
+            byte[] v = new byte[rm.IV.Length];
 
             // Elde ettiğimiz Vektör değerini bir byte dizisine aktarıyoruz.
-            for(int i=0;i<rm.IV.Length;i++)
+            for (int i = 0; i < rm.IV.Length; i++)
             {
                 Console.Write(rm.IV[i]);
-                v[i]=rm.IV[i];
+                v[i] = rm.IV[i];
             }
-    
+
             Console.WriteLine();
 
             /* Belirlediğimiz şifreleme algoritmasını kullanarak, stream üzerinde şifrelemeyi yapacak CryptoStream nesnemizi oluşturuyoruz. Şifrelemeyi oluşturmak için RijndaelManaged sınıfından örneklendirdiğimiz nesnemizin CreateEncyrptor metodunu kullanıyoruz. Oluşturulan şifreli dökümanı ilgili stream’ e yazmak istediğimizdenCryptoStreamMode olarak Write değerini seçiyoruz.*/
-            CryptoStream cs=new CryptoStream(fs,rm.CreateEncryptor(),CryptoStreamMode.Write);
+            CryptoStream cs = new CryptoStream(fs, rm.CreateEncryptor(), CryptoStreamMode.Write);
 
-            /*Şimdi şifrelenecek olan byte dizisini almak üzere dosyamız için bir akım oluşturuyoruz. Nitekim CryptoStream’ in aşağıda kullanılan aşırı yüklenmiş versiyonu ilk parametre olarak şifrelenecek veri yapısını bir byte dizisi halinde alıyor.*/ 
-            FileStream fs2=new FileStream(@"Dosya.txt",FileMode.Open);
+            /*Şimdi şifrelenecek olan byte dizisini almak üzere dosyamız için bir akım oluşturuyoruz. Nitekim CryptoStream’ in aşağıda kullanılan aşırı yüklenmiş versiyonu ilk parametre olarak şifrelenecek veri yapısını bir byte dizisi halinde alıyor.*/
+            FileStream fs2 = new FileStream(@"Dosya.txt", FileMode.Open);
             // dosyanın içeriğini byte dizisine aktarıyoruz.
-            byte[] veriler=new byte[fs2.Length];
-            fs2.Read(veriler,0,(int)fs2.Length);
+            byte[] veriler = new byte[fs2.Length];
+            fs2.Read(veriler, 0, (int)fs2.Length);
 
             // CryptoStream sınıfının write metodu ile dosya.txt’ yi okuduğumuz byte dizisinin içeriğini fs2 ile belirttiğimiz stream’ e yazıyoruz.
-            cs.Write(veriler,0,veriler.Length);
+            cs.Write(veriler, 0, veriler.Length);
             fs2.Close();
             cs.Close();
             #endregion
@@ -99,14 +99,14 @@ namespace CryptoStreamS1
             #region Şifrelenmiş dosyanın örnek olarak ilk satırının decrypt edilerek okunması.
 
             /* Bu kez işlemleri tersten yapıyoruz. İlk olarak şifrelenmiş ve decrypt edilmek istenen stream nesnesinin oluşturuyoruz. Ardından bu stream’     deki veriye Rijndael alogirtmasını uygulayarak Decrypting yapıyoruz. */
-            FileStream fsSifreliDosya=new FileStream(@"SifreliDosya.txt",FileMode.Open,FileAccess.Read);
-            RijndaelManaged rm2=new RijndaelManaged();
+            FileStream fsSifreliDosya = new FileStream(@"SifreliDosya.txt", FileMode.Open, FileAccess.Read);
+            RijndaelManaged rm2 = new RijndaelManaged();
             //simetrik algoritma kullandığımız için decrypting içinde aynı key ve vektör değerlerini kullanmamız gerekiyor.
-            rm2.Key=k;
-            rm2.IV=v;
-            CryptoStream cs2=new CryptoStream(fsSifreliDosya,rm2.CreateDecryptor(),CryptoStreamMode.Read); 
-            StreamReader sr=new StreamReader(cs2);
-            string satir=sr.ReadLine();
+            rm2.Key = k;
+            rm2.IV = v;
+            CryptoStream cs2 = new CryptoStream(fsSifreliDosya, rm2.CreateDecryptor(), CryptoStreamMode.Read);
+            StreamReader sr = new StreamReader(cs2);
+            string satir = sr.ReadLine();
             Console.WriteLine(satir);
             #endregion
         }
@@ -133,44 +133,45 @@ namespace CryptoStreamS2
     {
         [STAThread]
         static void Main(string[] args)
-        {     
+        {
             #region verinin şifrelenmesi
             /* Öncelikle şifrelemek istediğimiz veriyi elde ediyoruz. Örnek olarak SQL Sunucusundaki Ogrenciler tablosundan belirli bir alanı aldık. */
-            SqlConnection con=new SqlConnection("data source=BURKI;database=Work;integrated security=SSPI");
-            SqlCommand cmd=new SqlCommand("SELECT AD FROM Ogrenciler WHERE OGRENCINO=1",con); 
+            SqlConnection con = new SqlConnection("data source=BURKI;database=Work;integrated security=SSPI");
+            SqlCommand cmd = new SqlCommand("SELECT AD FROM Ogrenciler WHERE OGRENCINO=1", con);
             con.Open();
-            string sifrelenecekVeri=cmd.ExecuteScalar().ToString(); 
+            string sifrelenecekVeri = cmd.ExecuteScalar().ToString();
             con.Close();
 
             /* Şifrelenecek verinin herşeyden önce bir byte dizisi olarak ele alınması gerekiyor.*/
-            byte[] sv=new byte[sifrelenecekVeri.Length];
-            for(int i=0;i<sv.Length;i++)
+            byte[] sv = new byte[sifrelenecekVeri.Length];
+            for (int i = 0; i < sv.Length; i++)
             {
-                sv[i]=(byte)sifrelenecekVeri[i];
+                sv[i] = (byte)sifrelenecekVeri[i];
             }
 
             /* Şifrelenecek veriyi belleğe yazacağız. Bu nedenle MemoryStream sınıfı tipinden bir nesne örneği oluşturduk*/
-            MemoryStream ms=new MemoryStream();
+            MemoryStream ms = new MemoryStream();
             /* Şifreleme algoritması olarak Rijnadel tekniğini sağlayan Managed nesne örneğimizi oluşturuyoruz.*/
-            System.Security.Cryptography.RijndaelManaged rm=new RijndaelManaged();
+            System.Security.Cryptography.RijndaelManaged rm = new RijndaelManaged();
 
             /* Şifreleme için gerekli anahtar ve vektör değerlerini elde ediyoruz.*/
             rm.GenerateKey();
             rm.GenerateIV();
 
             /* RijndaelManaged nesnesi tarafından üretilen anahtar ve vektör değerlerini byte dizilerine alıyoruz. Nitekim karşı tarafın şifrelenen veriyi çözebilmesi için bu anahtar ve vektör değerlerinin aynılarına ihtiyaçları olacaktır.*/
-            byte[] anahtar=rm.Key;
-            byte[] vektor=rm.IV;
+            byte[] anahtar = rm.Key;
+            byte[] vektor = rm.IV;
 
             /* Veriyi belirttiğimiz algoritmaya göre şifreleyerek parametre olarak verilen stream’ e ki burada MemoryStream’ e yazmak için CryptoStream sınıfımızdan nesne örneğimizi oluşturuyoruz.*/
-            CryptoStream cs=new CryptoStream(ms,rm.CreateEncryptor(anahtar,vektor),CryptoStreamMode.Write);
+            CryptoStream cs = new CryptoStream(ms, rm.CreateEncryptor(anahtar, vektor), CryptoStreamMode.Write);
             /* Veriyi şifreleyerek belleğe yazıyoruz. Başından sonuna kadar.*/
-            cs.Write(sv,0,sv.Length); 
+            cs.Write(sv, 0, sv.Length);
             cs.FlushFinalBlock();
 
             Console.Write("Verinin şifrelenen hali ");
-            byte[] icerik=ms.ToArray(); /* Belleğe yazdığımız şifrelenmiş veriyi bir byte dizisine alarak okuyor ve ekrana yazdırıyoruz.*/
-            for(int i=0;i<icerik.Length;i++)
+            byte[] icerik = ms.ToArray();
+            /* Belleğe yazdığımız şifrelenmiş veriyi bir byte dizisine alarak okuyor ve ekrana yazdırıyoruz.*/
+            for (int i = 0; i < icerik.Length; i++)
             {
                 Console.Write((char)icerik[i]);
             }
@@ -179,18 +180,18 @@ namespace CryptoStreamS2
 
             #region şifrelenen verinin çözümlenmesi
             /* Bellekte tutulan icerik değerini yani şifrelenmiş olan veriyi parametre alan stream nesnemizi oluşuturuyoruz.*/
-            MemoryStream msCoz=new MemoryStream(icerik);
-            RijndaelManaged rmCoz=new RijndaelManaged(); // Rijndael algoritmasını kullanarak şifrelenen veriyi çözecek olan provider nesnemizi     tanımlıyoruz.*/
+            MemoryStream msCoz = new MemoryStream(icerik);
+            RijndaelManaged rmCoz = new RijndaelManaged(); // Rijndael algoritmasını kullanarak şifrelenen veriyi çözecek olan provider nesnemizi     tanımlıyoruz.*/
             /* SymmetricAlgorithm söz konusu olduğundan RijndaelManaged sınıfına ait nesne örneğinin decryption işlemi için encrypt’ te kullanılan key ve IV değerlerine ihtiyacımı var.*/
-            rmCoz.Key=anahtar;
-            rmCoz.IV=vektor;
+            rmCoz.Key = anahtar;
+            rmCoz.IV = vektor;
             /* Bu kez CryptoStream nesnemiz stream’ den okuduğu veri üzerinde Decypting işlemini gerçekleştirecek. Bu nedenle Rijndael nesne     örneğimizin CreateDecryptor metodunu çağırıyoruz.*/
-            CryptoStream csCoz=new CryptoStream(msCoz,rmCoz.CreateDecryptor(anahtar,vektor),CryptoStreamMode.Read);
-            byte[] cozulen=new byte[ms.Length]; // Çözülen veriyi tutacak bir byte dizisi oluşturuyoruz.
-            csCoz.Read(cozulen,0,icerik.Length); // Şifrelenen veriyi çözümleyerek okuyoruz.
-            Console.Write("Şifrelenen verinin çözülmüş hali "); 
+            CryptoStream csCoz = new CryptoStream(msCoz, rmCoz.CreateDecryptor(anahtar, vektor), CryptoStreamMode.Read);
+            byte[] cozulen = new byte[ms.Length]; // Çözülen veriyi tutacak bir byte dizisi oluşturuyoruz.
+            csCoz.Read(cozulen, 0, icerik.Length); // Şifrelenen veriyi çözümleyerek okuyoruz.
+            Console.Write("Şifrelenen verinin çözülmüş hali ");
             /* Çözümlenmiş veriyi son olarak ekrana yazdırıyoruz.*/
-            for(int i=0;i<cozulen.Length;i++)
+            for (int i = 0; i < cozulen.Length; i++)
             {
                 Console.Write((char)cozulen[i]);
             }

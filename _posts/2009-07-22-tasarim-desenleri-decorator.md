@@ -40,90 +40,90 @@ using System.Collections.Generic;
 
 namespace Decorator
 {
-    // Component
-    abstract class Arms
-    {
-        public string Name;
-        public abstract void Fire();
-    }
+    // Component
+    abstract class Arms
+    {
+        public string Name;
+        public abstract void Fire();
+    }
 
-    // ConcreteComponent
-    class Artillery
-        : Arms
-    {
-        protected double _barrel;
-        protected double _range;
+    // ConcreteComponent
+    class Artillery
+        : Arms
+    {
+        protected double _barrel;
+        protected double _range;
 
-        public Artillery(double barrel, double range, string name)
-        {
-            _barrel = barrel;
-            _range = range;
-            Name = name;
-        }
+        public Artillery(double barrel, double range, string name)
+        {
+            _barrel = barrel;
+            _range = range;
+            Name = name;
+        }
 
-        public override void Fire()
-        {
-            Console.WriteLine("{0} sınıfından olan topçu, {1} mm namlusundan {2} mesafeye ateşleme yaptı", Name, _barrel.ToString(), _range.ToString());
-        }
-    }
+        public override void Fire()
+        {
+            Console.WriteLine("{0} sınıfından olan topçu, {1} mm namlusundan {2} mesafeye ateşleme yaptı", Name, _barrel.ToString(), _range.ToString());
+        }
+    }
 
-    // Decorator
-    abstract class ArmsDecorator
-        : Arms
-    {
-        protected Arms _arms;
-        public ArmsDecorator(Arms arms)
-        {
-            _arms = arms;
-        }
-        public override void Fire()
-        {
-            if (_arms != null)
-                _arms.Fire();
-        }
-    }
+    // Decorator
+    abstract class ArmsDecorator
+        : Arms
+    {
+        protected Arms _arms;
+        public ArmsDecorator(Arms arms)
+        {
+            _arms = arms;
+        }
+        public override void Fire()
+        {
+            if (_arms != null)
+                _arms.Fire();
+        }
+    }
 
-    // ConcreteDecorator
-    class ArtilleryDecorator
-        : ArmsDecorator
-    {
-        public ArtilleryDecorator(Arms arms)
-            : base(arms)
-        {
-        }
+    // ConcreteDecorator
+    class ArtilleryDecorator
+        : ArmsDecorator
+    {
+        public ArtilleryDecorator(Arms arms)
+            : base(arms)
+        {
+        }
 
-        public void Defense()
-        {
-            Console.WriteLine("\t{0} Savunma Modu!", base._arms.Name);
-        }
-        public void Easy()
-        {
-            Console.WriteLine("\t{0} Atış serbest modu!", _arms.Name);
-        }
-        public override void Fire()
-        {
-            base.Fire();
-        }
-    }
+        public void Defense()
+        {
+            Console.WriteLine("\t{0} Savunma Modu!", base._arms.Name);
+        }
+        public void Easy()
+        {
+            Console.WriteLine("\t{0} Atış serbest modu!", _arms.Name);
+        }
+        public override void Fire()
+        {
+            base.Fire();
+        }
+    }
 
-    // Client
-    class Program
-    {
-        static void Main()
-        {
-            // Bileşen örneklenir
-            Artillery azman = new Artillery(125, 40, "Fırtına A1");
-            azman.Fire();
+    // Client
+    class Program
+    {
+        static void Main()
+        {
+            // Bileşen örneklenir
+            Artillery azman = new Artillery(125, 40, "Fırtına A1");
+            azman.Fire();
 
-            // Decorator nesnesi örneklenir
-            ArtilleryDecorator  azmanDekorator= new ArtilleryDecorator(azman);
-            // Decorator nesnesi üzerinden o anki asıl Component için(Artillery sınıfı) ek fonksiyonellikler çağırılır.
-            azmanDekorator.Defense();
-            azmanDekorator.Fire();
-            azmanDekorator.Easy();
-            azmanDekorator.Fire();
-        }
-    }
+            // Decorator nesnesi örneklenir
+            ArtilleryDecorator azmanDekorator = new ArtilleryDecorator(azman);
+            // Decorator nesnesi üzerinden o anki asıl Component için(Artillery sınıfı) ek fonksiyonellikler çağırılır.
+            azmanDekorator.Defense();
+            azmanDekorator.Fire();
+            azmanDekorator.Easy();
+            azmanDekorator.Fire();
+        }
+    }
 }
 ```
 

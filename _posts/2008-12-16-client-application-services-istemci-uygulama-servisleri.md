@@ -76,7 +76,7 @@ using System.Web.Security;
 
 namespace ClientApp
 {
-    public partial class LoginForm 
+    public partial class LoginForm
         : Form
     {
         public LoginForm()
@@ -141,7 +141,7 @@ namespace ClientApp
             FormBorderStyle = FormBorderStyle.FixedSingle;
             btnGiris.DialogResult = DialogResult.OK;
             btnIptal.DialogResult = DialogResult.Cancel;
-        } 
+        }
 
         #region IClientFormsAuthenticationCredentialsProvider Members
 
@@ -156,7 +156,7 @@ namespace ClientApp
                 return null;
             }
         }
-    
+
         #endregion
     }
 }
@@ -243,7 +243,7 @@ namespace ClientApp
                 else
                 {
                     IPrincipal principal = Thread.CurrentPrincipal;
-            
+
                     if (principal.IsInRole("Yonetici"))
                     {
                         Text = String.Format("{0} ({1})", principal.Identity.Name, "Yönetici");
@@ -267,8 +267,8 @@ namespace ClientApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            ClientFormsAuthenticationMembershipProvider prvd =(ClientFormsAuthenticationMembershipProvider)System.Web.Security.Membership.Provider;
-        
+            ClientFormsAuthenticationMembershipProvider prvd = (ClientFormsAuthenticationMembershipProvider)System.Web.Security.Membership.Provider;
+
             try
             {
                 prvd.Logout();
@@ -278,7 +278,7 @@ namespace ClientApp
             {
                 MessageBox.Show(excp.Message);
             }
-        
+
         }
     }
 }
@@ -328,7 +328,7 @@ private void Form1_Load(object sender, EventArgs e)
             lblSonGirisZamani.Text = Properties.Settings.Default["SonGirisZamani"].ToString();
 
             IPrincipal principal = Thread.CurrentPrincipal;
-    
+
             if (principal.IsInRole("Yonetici"))
             {
                 Text = String.Format("{0} ({1})", principal.Identity.Name, "Yönetici");
@@ -365,7 +365,7 @@ private void Form1_FormClosing(object sender, FormClosingEventArgs e)
             Properties.Settings.Default["SonGirisZamani"] = DateTime.Now;
             Properties.Settings.Default.Save();
         }
-        catch(WebException excp)
+        catch (WebException excp)
         {
             MessageBox.Show(excp.Message);
         }

@@ -63,12 +63,12 @@ namespace UsingXLINQ
                             , new XElement("ListPrice", new XText("45"))
                                             )
                                     )
-                            ); 
+                            );
 
             xmlBook.Save("BookWithXLinq.xml");
 
             XElement element = XElement.Load("BookWithXLinq.xml");
-            Console.WriteLine(element.ToString()); 
+            Console.WriteLine(element.ToString());
 
             #endregion
         }
@@ -149,13 +149,14 @@ Personel.xml isimli dosyada tutulan bu içerikte bir Personelin ID, Sicil Numara
 
 ```csharp
 Console.WriteLine("Maaş değeri ");
-double maas=Convert.ToDouble(Console.ReadLine());
+double maas = Convert.ToDouble(Console.ReadLine());
 
-XDocument docPersonel=XDocument.Load("..\\..\\Personel.xml");
+XDocument docPersonel = XDocument.Load("..\\..\\Personel.xml");
 
-XElement elements=new XElement("PersonelListe", 
-    from pers in docPersonel.Elements("Personelimiz").Elements("Personel") 
-        where (double)pers.Element("Maas")>=maas select pers
+XElement elements = new XElement("PersonelListe",
+    from pers in docPersonel.Elements("Personelimiz").Elements("Personel")
+    where (double)pers.Element("Maas") >= maas
+    select pers
                             );
 
 Console.WriteLine(elements.ToString());
@@ -181,20 +182,23 @@ Hatırlayacağınız gibi DLINQ konusunu incelediğimiz makalemizde yukarıdakin
 
 ```csharp
 Console.WriteLine("Ürün Fiyatı ");
-decimal fiyat=Convert.ToDecimal(Console.ReadLine());
+decimal fiyat = Convert.ToDecimal(Console.ReadLine());
 
 Northwind nrth = new Northwind("data source=localhost;database=Northwind;integrated security=SSPI");
 
-XElement urunler =new XElement("Urunler",
-        from urn in nrth.Products where urn.UnitPrice> fiyat orderby urn.ProductName select
+XElement urunler = new XElement("Urunler",
+        from urn in nrth.Products
+        where urn.UnitPrice > fiyat
+        orderby urn.ProductName
+        select
             new XElement("Urun",
-                new XAttribute("ID",urn.ProductID),
+                new XAttribute("ID", urn.ProductID),
                 new XAttribute("Ad", urn.ProductName),
                 new XAttribute("BirimFiyat", urn.UnitPrice)
             )
         );
 
-urunler.Save("Urunler.xml"); 
+urunler.Save("Urunler.xml");
 Console.WriteLine(urunler.ToString());
 ```
 

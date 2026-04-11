@@ -47,7 +47,7 @@ private static void ProcessInfos()
         {
             Console.WriteLine("{0,6}, {1,20}, Başlangıç : {2,6}, Thread Sayısı {3,5}", pro.Id.ToString(), pro.ProcessName, pro.StartTime.ToShortTimeString(), pro.Threads.Count.ToString());
         }
-        catch 
+        catch
         {
             continue;
         }
@@ -65,9 +65,9 @@ Process sınıfının başka static metodlarıda vardır. Örneğin GetCurrentPr
 
 ```csharp
 Process current = Process.GetCurrentProcess();
-Console.WriteLine("{0,15} {1,15}","Id : ",current.Id.ToString());
+Console.WriteLine("{0,15} {1,15}", "Id : ", current.Id.ToString());
 Console.WriteLine("{0,15} {1,15}", "Start Time : ", current.StartTime.ToShortTimeString());
-Console.WriteLine("{0,15} {1,15}","Process Name : ", current.ProcessName);
+Console.WriteLine("{0,15} {1,15}", "Process Name : ", current.ProcessName);
 Console.WriteLine("{0,15} {1,15}", "Machine Name : ", current.MachineName);
 ```
 
@@ -143,7 +143,7 @@ if (prcs.Length > 0)
         {
             prcs[i].Kill();
         }
-        catch{}
+        catch { }
     }
 }
 ```
@@ -154,7 +154,7 @@ Bazen bir Process içerisinden, başka Process'lerce dış ortama aktarılan ver
 ProcessStartInfo strInfo = new ProcessStartInfo(@"D:\Vs2005Projects\C# 2.0\Support\Support\bin\Debug\Support.exe");
 strInfo.UseShellExecute = false;
 strInfo.RedirectStandardOutput = true;
-Process pro=Process.Start(strInfo);
+Process pro = Process.Start(strInfo);
 StreamReader reader = pro.StandardOutput;
 
 //string okunan;
@@ -176,7 +176,7 @@ Kodumuzda bu işin iki farklı yapılış yolunu görüyorsunuz. Bir tanesi sat�
 ```csharp
 static void Main(string[] args)
 {
-    Console.WriteLine("Diğer Process' den Merhabalar."); 
+    Console.WriteLine("Diğer Process' den Merhabalar.");
 }
 ```
 
@@ -195,7 +195,7 @@ if (currProc.Length > 0)
     ProcessThreadCollection currThreads = currProc[0].Threads;
     foreach (ProcessThread trd in currThreads)
     {
-        Console.WriteLine("{0,7} {1,15} {2,10} {3,15} ", trd.Id.ToString(), trd.PriorityLevel.ToString(), trd.StartTime.ToString(),trd.ThreadState.ToString());
+        Console.WriteLine("{0,7} {1,15} {2,10} {3,15} ", trd.Id.ToString(), trd.PriorityLevel.ToString(), trd.StartTime.ToString(), trd.ThreadState.ToString());
     }
 }
 ```

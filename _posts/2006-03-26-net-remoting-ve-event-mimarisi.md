@@ -44,8 +44,14 @@ public class EventInfo
 
     public string Info
     {
-        get { return _info; }
-        set { _info = value; }
+        get
+        {
+            return _info;
+        }
+        set
+        {
+            _info = value;
+        }
     }
     public EventInfo(string inf)
     {
@@ -61,7 +67,7 @@ Gelelim uzak nesnemize ait tipe. Uzak nesne sınıfımızın en önemli noktası
 Uzak nesnemize ait sınıf kodlarımız;RemObj
 
 ```csharp
-public class RemObj:MarshalByRefObject
+public class RemObj : MarshalByRefObject
 {
     public event dlg Click;
 
@@ -77,7 +83,7 @@ public class RemObj:MarshalByRefObject
     {
         if (Click != null)
         {
-            Console.WriteLine(userName + " sunucu üzerinde olay tetikledi..."+DateTime.Now.ToString());
+            Console.WriteLine(userName + " sunucu üzerinde olay tetikledi..." + DateTime.Now.ToString());
             System.Threading.Thread.Sleep(10000);
             EventInfo ei = new EventInfo(DateTime.Now.ToString());
             Click(ei);
@@ -93,7 +99,7 @@ Gelelim istemci tarafında, sunucu tarafından çağırılacak olay metodunun bu
 İstemci tarafındaki uzak nesne tipine ait kodlarımız; ClientSide
 
 ```csharp
-public class ClientSide:MarshalByRefObject
+public class ClientSide : MarshalByRefObject
 {
     public void EventMethod(EventInfo eInf)
     {
@@ -117,7 +123,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            RemotingConfiguration.Configure("..\\..\\ServerApp.config",false);
+            RemotingConfiguration.Configure("..\\..\\ServerApp.config", false);
             Console.WriteLine("Sunucu dinlemede...");
             Console.WriteLine("-------------------");
             Console.ReadLine();
@@ -163,7 +169,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            RemotingConfiguration.Configure("..\\..\\ClientApp.config",false);
+            RemotingConfiguration.Configure("..\\..\\ClientApp.config", false);
             RemObj ro = new RemObj();
             ClientSide cs = new ClientSide();
             ro.Click += new dlg(cs.EventMethod);

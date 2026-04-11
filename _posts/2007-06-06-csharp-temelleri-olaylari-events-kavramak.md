@@ -56,34 +56,56 @@ namespace Olaylar
         private int stokMiktari;
 
         public event StokAzaldiEventHandler StokAzaldi;
-    
+
         public int StokMiktari
         {
-            get { return stokMiktari; }
-            set {
-                    stokMiktari = value; 
-                    if (value < 10
-                        && StokAzaldi != null)
-                            StokAzaldi(); 
-                }
+            get
+            {
+                return stokMiktari;
+            }
+            set
+            {
+                stokMiktari = value;
+                if (value < 10
+                    && StokAzaldi != null)
+                    StokAzaldi();
+            }
         }
 
         public double BirimFiyat
         {
-            get { return birimFiyat; }
-            set { birimFiyat = value; }
+            get
+            {
+                return birimFiyat;
+            }
+            set
+            {
+                birimFiyat = value;
+            }
         }
 
         public string Ad
         {
-            get { return ad; }
-            set { ad = value; }
+            get
+            {
+                return ad;
+            }
+            set
+            {
+                ad = value;
+            }
         }
 
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
         }
 
         public Urun(int idsi, string adi, double fiyati, int stokSayisi)
@@ -127,7 +149,7 @@ using System.Text;
 using System.Threading;
 
 namespace Olaylar
-{ 
+{
     class Program
     {
         static void Main(string[] args)
@@ -135,7 +157,7 @@ namespace Olaylar
             Urun ciklet = new Urun(10001, "Tipitipitip", 1.20, 35);
             ciklet.StokAzaldi += new StokAzaldiEventHandler(ciklet_StokAzaldi);
 
-            for (int i = 0; i <5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 ciklet.StokMiktari -= 7;
                 Thread.Sleep(600);
@@ -173,14 +195,20 @@ O nedenle önceden tanımlanmış olan tüm olaylar aslında standart olarak iki
 ![mk207_6.gif](/assets/images/2007/mk207_6.gif)
 
 ```csharp
-class StokAzaldiEventArgs:EventArgs
+class StokAzaldiEventArgs : EventArgs
 {
     private int guncelStokMiktari;
 
     public int GuncelStokMiktari
     {
-        get { return guncelStokMiktari; }
-        set { guncelStokMiktari = value; }
+        get
+        {
+            return guncelStokMiktari;
+        }
+        set
+        {
+            guncelStokMiktari = value;
+        }
     }
     public StokAzaldiEventArgs(int gStk)
     {
@@ -192,7 +220,7 @@ class StokAzaldiEventArgs:EventArgs
 StokAzaldiEventArgs isimli tipin tek yaptığı, güncel stok miktarını ilgili olay metodu içerisine taşımaktır. Bu tip asıl StokAzaldi olayı için anlamlıdır. Olay argümanlarını taşıyacak kendi tiplerimizi geliştirdiğimizde bunların EventArgs tipinden türetilmesi bir zorunluluk değildir ancak bir gelenektir. Amaç aynen isimlendirme kurallarında olduğu gibi kodun standardize edilmesidir. Nitekim.Net içerisindeki tüm olay argüman tipleri, bir şekilde EventArgs sınıfından türemektedir. Bu şekilde olay metoduna bilgi taşıyabileceğimiz bir tip tanımladıktan sonra temsilcininde aşağıdaki gibi değiştirilmesi gerekmektedir.
 
 ```csharp
-delegate void StokAzaldiEventHandler(object sender,StokAzaldiEventArgs args);
+delegate void StokAzaldiEventHandler(object sender, StokAzaldiEventArgs args);
 ```
 
 Elbette temsilcide yapılan değişikliklerin olayın tetiklendiği yerede adapte edilmesi gerekmektedir. Bu amaçla StokMiktari özelliğinin set bloğu aşağıdaki gibi değiştirilmelidir.
@@ -200,12 +228,16 @@ Elbette temsilcide yapılan değişikliklerin olayın tetiklendiği yerede adapt
 ```csharp
 public int StokMiktari
 {
-    get { return stokMiktari; }
-    set {
+    get
+    {
+        return stokMiktari;
+    }
+    set
+    {
         stokMiktari = value;
         if (value < 10
             && StokAzaldi != null)
-                StokAzaldi(this, new StokAzaldiEventArgs(value)); 
+            StokAzaldi(this, new StokAzaldiEventArgs(value));
     }
 }
 ```
@@ -220,7 +252,7 @@ class Program
         Urun ciklet = new Urun(10001, "Tipitipitip", 1.20, 35);
         ciklet.StokAzaldi += new StokAzaldiEventHandler(ciklet_StokAzaldi);
 
-        for (int i = 0; i <5; i++)
+        for (int i = 0; i < 5; i++)
         {
             ciklet.StokMiktari -= 7;
             Thread.Sleep(600);
@@ -230,7 +262,7 @@ class Program
 
     static void ciklet_StokAzaldi(object sender, StokAzaldiEventArgs args)
     {
-        Console.WriteLine("Güncel stok değeri {0} . Stokta limit altına inilmiştir. Alarrmmmm!",args.GuncelStokMiktari.ToString());
+        Console.WriteLine("Güncel stok değeri {0} . Stokta limit altına inilmiştir. Alarrmmmm!", args.GuncelStokMiktari.ToString());
     }
 }
 ```
@@ -248,10 +280,10 @@ class Program
     {
         Urun ciklet = new Urun(10001, "Tipitipitip", 1.20, 35);
         Urun cikolata = new Urun(10034, "Marsi", 2.5, 25);
-        cikolata.StokAzaldi+=new StokAzaldiEventHandler(urun_StokAzaldi);
+        cikolata.StokAzaldi += new StokAzaldiEventHandler(urun_StokAzaldi);
         ciklet.StokAzaldi += new StokAzaldiEventHandler(urun_StokAzaldi);
 
-        for (int i = 0; i <5; i++)
+        for (int i = 0; i < 5; i++)
         {
             ciklet.StokMiktari -= 7;
             cikolata.StokMiktari -= 5;
@@ -264,7 +296,7 @@ class Program
     static void urun_StokAzaldi(object sender, StokAzaldiEventArgs args)
     {
         Urun urn = (Urun)sender;
-        Console.WriteLine("{0} için güncel stok değeri {1} . Stokta limit altına inilmiştir. Alarrmmmm!",urn.Ad,args.GuncelStokMiktari.ToString());
+        Console.WriteLine("{0} için güncel stok değeri {1} . Stokta limit altına inilmiştir. Alarrmmmm!", urn.Ad, args.GuncelStokMiktari.ToString());
     }
 }
 ```
@@ -274,7 +306,7 @@ class Program
 İlk olarak ciklet ve cikolata isimli iki ayrı Urun nesnesi örneklediğimize ama bunların her ikisi içinde aynı olay metodunu kullandığımıza dikkat edelim.
 
 ```csharp
-cikolata.StokAzaldi+=new StokAzaldiEventHandler(urun_StokAzaldi);
+cikolata.StokAzaldi += new StokAzaldiEventHandler(urun_StokAzaldi);
 ciklet.StokAzaldi += new StokAzaldiEventHandler(urun_StokAzaldi);
 ```
 
@@ -288,13 +320,13 @@ C# 2.0 ile gelen yeniliklerden biriside isimsiz metodlardır (anonymous methods)
 static void Main(string[] args)
 {
     Urun ciklet = new Urun(10001, "Tipitipitip", 1.20, 35);
-    ciklet.StokAzaldi += delegate(object sender, StokAzaldiEventArgs arg)
+    ciklet.StokAzaldi += delegate (object sender, StokAzaldiEventArgs arg)
                                 {
                                     Urun urn = (Urun)sender;
                                     Console.WriteLine("{0} için güncel stok değeri {1} . Stokta limit altındayız. Alarrmmmm!", urn.Ad, arg.GuncelStokMiktari.ToString());
                                 };
 
-    for (int i = 0; i <5; i++)
+    for (int i = 0; i < 5; i++)
     {
         ciklet.StokMiktari -= 7;
         Thread.Sleep(600);

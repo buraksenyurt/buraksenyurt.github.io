@@ -38,8 +38,8 @@ using System;
 using System.Runtime.Serialization;
 
 namespace Formatters
-{ 
-    [DataContract(Namespace="http://www.bsenyurt.com/Urun")]
+{
+    [DataContract(Namespace = "http://www.bsenyurt.com/Urun")]
     class Urun
     {
         private int _id;
@@ -58,29 +58,53 @@ namespace Formatters
         [DataMember]
         public DateTime StokTarihi
         {
-            get { return _stokTarihi; }
-            set { _stokTarihi = value; }
+            get
+            {
+                return _stokTarihi;
+            }
+            set
+            {
+                _stokTarihi = value;
+            }
         }
 
         [DataMember]
         public double ListeFiyati
         {
-            get { return _listeFiyati; }
-            set { _listeFiyati = value; }
+            get
+            {
+                return _listeFiyati;
+            }
+            set
+            {
+                _listeFiyati = value;
+            }
         }
 
         [DataMember]
         public string Ad
         {
-            get { return _ad; }
-            set { _ad = value; }
+            get
+            {
+                return _ad;
+            }
+            set
+            {
+                _ad = value;
+            }
         }
 
         [DataMember]
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
     }
 }
@@ -105,7 +129,7 @@ namespace Formatters
             #region DataContractSerilazier ile Type Serileştirme
 
             // Serileştirilecek nesne örneği.
-            Urun mouse=new Urun(1,"Mx Mouse Optic",10,new DateTime(2004,1,1));
+            Urun mouse = new Urun(1, "Mx Mouse Optic", 10, new DateTime(2004, 1, 1));
 
             // Serileştirici sınıf örneklenir.
             // Parametre olarak serileştirilecek veri sözleşmesi tipi verilir.
@@ -130,7 +154,7 @@ namespace Formatters
                 FileStream stream5 = new FileStream("Urun.xml", FileMode.Open, FileAccess.Read);
                 // ReadObject metodu ile parametre olarak verilen Stream içerisindeki bilgi ters serileştirme işlemine tabi tutulur.
                 // Dönüş türü object olduğu için sonucun uygun türe cast edilmesi gereklidir.
-                Urun urn=(Urun)dcDeSerializer.ReadObject(stream5);
+                Urun urn = (Urun)dcDeSerializer.ReadObject(stream5);
                 // Elde edilen nesne örneği bilgisi ekrana yazdırılır.
                 Console.WriteLine("Id :{0} Ad:{1} Fiyat:{2} Stok Tarihi:{3}", urn.Id.ToString(), urn.Ad, urn.ListeFiyati.ToString("C2"), urn.StokTarihi.ToString());
                 // Stream kapatılır.
@@ -140,23 +164,23 @@ namespace Formatters
             #endregion
 
             #region DataContractSerializer ile Array Serileştirme
-        
+
             Urun[] urunler ={
                                         new Urun(2,"A Mouse Optic",11.2,DateTime.Now),
                                         new Urun(3,"Y Mouse Optic, Kablolu",9.49,DateTime.Now),
                                         new Urun(5,"Z Mouse",3.45,new DateTime(2008,2,3)),
-                                    };    
+                                    };
 
             // DataContractSerializer nesne örneğini oluşturulurken parametre olarak Urun tipinden dizi verilmiştir
             DataContractSerializer dcArraySerializer = new DataContractSerializer(typeof(Urun[]));
             FileStream stream3 = new FileStream("Urunler.xml", FileMode.Create, FileAccess.Write);
             dcArraySerializer.WriteObject(stream3, urunler);
             stream3.Close();
-        
+
             #endregion
 
             #region DataContractSerializer ile Array Ters-Serileştirme
-        
+
             if (File.Exists("Urunler.xml"))
             {
                 DataContractSerializer dcDeSerializer = new DataContractSerializer(typeof(Urun[]));
@@ -166,7 +190,7 @@ namespace Formatters
                 foreach (Urun urun in gelenUrunler)
                 {
                     Console.WriteLine("Id :{0} Ad:{1} Fiyat:{2} Stok Tarihi:{3}", urun.Id.ToString(), urun.Ad, urun.ListeFiyati.ToString("C2"), urun.StokTarihi.ToString());
-                } 
+                }
                 stream6.Close();
             }
 
@@ -248,7 +272,7 @@ namespace Formatters
             #endregion
 
             #region NetDataContractSerializer ile Type Ters Serileştirme
-    
+
             // NerUrun.xml dosyası var ise işlemleri yap.
             if (File.Exists("NetUrun.xml"))
             {
@@ -268,7 +292,7 @@ namespace Formatters
             #endregion
 
             #region NetDataContractSerializer ile Array Serileştirme
-        
+
             Urun[] urunler ={
                                     new Urun(2,"A Mouse Optic",11.2,DateTime.Now),
                                     new Urun(3,"Y Mouse Optic, Kablolu",9.49,DateTime.Now),
@@ -276,14 +300,14 @@ namespace Formatters
                                     };
 
             NetDataContractSerializer netdcArraySerializer = new NetDataContractSerializer();
-            FileStream stream8 = new FileStream("NetUrunler.xml", FileMode.Create, FileAccess.Write);            
+            FileStream stream8 = new FileStream("NetUrunler.xml", FileMode.Create, FileAccess.Write);
             netdcArraySerializer.WriteObject(stream8, urunler);
             stream8.Close();
-        
+
             #endregion
-    
+
             #region NetDataContractSerializer ile Array Ters Serileştirme
-    
+
             if (File.Exists("NetUrunler.xml"))
             {
                 NetDataContractSerializer netdcDeSerializer = new NetDataContractSerializer();
@@ -350,7 +374,7 @@ namespace Formatters
             #endregion
 
             #region DataContractJsonSerializer ile Type Ters-Serileştirme
-        
+
             // UrunJson.xml dosyası var ise ters serileştirme işlemleri yapılır.
             if (File.Exists("UrunJson.xml"))
             {
@@ -368,9 +392,9 @@ namespace Formatters
             }
 
             #endregion
-    
+
             #region DataContractJsonSerializer ile Array Serileştirme
-        
+
             Urun[] urunler ={
                                     new Urun(2,"A Mouse Optic",11.2,DateTime.Now),
                                     new Urun(3,"Y Mouse Optic, Kablolu",9.49,DateTime.Now),
@@ -381,11 +405,11 @@ namespace Formatters
             FileStream stream12 = new FileStream("UrunlerJson.xml", FileMode.Create, FileAccess.Write);
             dcJsonArraySerializer.WriteObject(stream12, urunler);
             stream12.Close();
-        
+
             #endregion
 
             #region DataContractJsonSerializer ile Array Ters-Serileştirme
-        
+
             if (File.Exists("UrunlerJson.xml"))
             {
                 DataContractJsonSerializer dcJsonDeSerializer = new DataContractJsonSerializer(typeof(Urun[]));

@@ -68,64 +68,64 @@ Ben componentimize SatisPrimEkle adını verdim. Bu durumda Solution’ımıza S
 using System;
 using System.ComponentModel;
 using System.Collections;
-using System.Diagnostics; 
+using System.Diagnostics;
 namespace distrans
 {
-     /// <summary>
-     /// Summary description for SatisPrimEkle.
-     /// </summary>
-     public class SatisPrimEkle : System.ComponentModel.Component
-     {
-          /// <summary>
-          /// Required designer variable.
-          /// </summary>
-          private System.ComponentModel.Container components = null;
-           public SatisPrimEkle(System.ComponentModel.IContainer container)
-          {
-               ///
-               /// Required for Windows.Forms Class Composition Designer support
-               ///
-               container.Add(this);
-               InitializeComponent();
-                //
-               // TODO: Add any constructor code after InitializeComponent call
-               //
-          } 
-          public SatisPrimEkle()
-          {
-               ///
-               /// Required for Windows.Forms Class Composition Designer support
-               ///
-               InitializeComponent();
-               //
-               // TODO: Add any constructor code after InitializeComponent call
-               //
-          } 
-          /// <summary>
-          /// Clean up any resources being used.
-          /// </summary>
-          protected override void Dispose( bool disposing )
-          {
-               if( disposing )
-               {
-                    if(components != null)
-                    {
-                         components.Dispose();
-                    }
-               }
-               base.Dispose( disposing );
-          } 
-          #region Component Designer generated code
-          /// <summary>
-          /// Required method for Designer support - do not modify
-          /// the contents of this method with the code editor.
-          /// </summary>
-          private void InitializeComponent()
-          {
-               components = new System.ComponentModel.Container();
-          }
-          #endregion
-     }
+    /// <summary>
+    /// Summary description for SatisPrimEkle.
+    /// </summary>
+    public class SatisPrimEkle : System.ComponentModel.Component
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.Container components = null;
+        public SatisPrimEkle(System.ComponentModel.IContainer container)
+        {
+            ///
+            /// Required for Windows.Forms Class Composition Designer support
+            ///
+            container.Add(this);
+            InitializeComponent();
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+        }
+        public SatisPrimEkle()
+        {
+            ///
+            /// Required for Windows.Forms Class Composition Designer support
+            ///
+            InitializeComponent();
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+        }
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
+        #region Component Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+        }
+        #endregion
+    }
 }
 ```
 
@@ -144,12 +144,12 @@ using System.ComponentModel;
 using System.Collections;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using System.EnterpriseServices; 
+using System.EnterpriseServices;
 namespace distrans
 {
-     public class SatisPrimEkle : ServicedComponent
-     {   
-     }
+    public class SatisPrimEkle : ServicedComponent
+    {
+    }
 }
 ```
 
@@ -161,46 +161,49 @@ using System.ComponentModel;
 using System.Collections;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using System.EnterpriseServices; 
+using System.EnterpriseServices;
 namespace distrans
 {
-     /* [Transaction(TransactionOption.Required)] satırı ile belirtilen şudur. Component’ imiz var olan Transaction içerisinde çalıştırılacaktır. Ancak eğer oluşturulmuş yani başlatılmış bir transaction yoksa, bu component’ imiz için yeni bir tane oluşturulması sağlanacaktır. Burada,
+    /* [Transaction(TransactionOption.Required)] satırı ile belirtilen şudur. Component’ imiz var olan Transaction içerisinde çalıştırılacaktır. Ancak eğer oluşturulmuş yani başlatılmış bir transaction yoksa, bu component’ imiz için yeni bir tane oluşturulması sağlanacaktır. Burada,
 
-     TransactionOption'ın sahip olabileceği diğer değerler Disabled, NotSupported, RequiresNew ve Supported dır.
+    TransactionOption'ın sahip olabileceği diğer değerler Disabled, NotSupported, RequiresNew ve Supported dır.
 
-     Disabled durumunda, transaction özelliği görmezden gelinir. Default olarak bu değer kabul edilir. Bu durumda Transaction başlatılması gibi işlemler manuel olarak yapılır.
+    Disabled durumunda, transaction özelliği görmezden gelinir. Default olarak bu değer kabul edilir. Bu durumda Transaction başlatılması gibi işlemler manuel olarak yapılır.
 
-     Not Supported durumunda ise Component’ imiz bir transaction var olsa bile bu transaction'ın dışında çalışıcaktır.
+    Not Supported durumunda ise Component’ imiz bir transaction var olsa bile bu transaction'ın dışında çalışıcaktır.
 
-     RequiresNew durumunda, Component’ imiz için bir transaction var olsada olmasada mutlaka yeni bir transaction başlatılacaktır.
+    RequiresNew durumunda, Component’ imiz için bir transaction var olsada olmasada mutlaka yeni bir transaction başlatılacaktır.
 
-     Supported durumu ise , var olan bir transaction olması durumunda, Component’ imizin bu transaction'a katılmasını sağlar.
+    Supported durumu ise , var olan bir transaction olması durumunda, Component’ imizin bu transaction'a katılmasını sağlar.
 
-     Biz uygulamamızda otomatik transaction tekniğini kullandığımız için Required seçeneğini kullanıyoruz.
+    Biz uygulamamızda otomatik transaction tekniğini kullandığımız için Required seçeneğini kullanıyoruz.
 
-     */
+    */
 
-     [Transaction(TransactionOption.Required)]public class SatisPrimEkle : ServicedComponent
-     {
-     /* AutoComplete() satırı izleyen metodun bir transaction içerisinde yer alacağını ve transaction işlemlerinin başlatılması ve bitirilmesini Component Services 'ın üstleneceğini belirtir. Dolayısıyla Component’ imizin bu metodunu çalıştırdığımızda bir transaction başlatılır ve ContexUtil nesnesi ile manuel olarak yapacağımız SetComplete (Commit) ve SetAbort(Rollback) hareketlerini COM+ Servisi kendisi yapar. */ 
-          [AutoComplete()]public string VeriGonder(string ad,string soyad,double satisTutari)
-          {
-               SqlConnection conFriends = new SqlConnection("initial catalog=Friends;data source=127.0.0.1;integrated security=sspi;packet size=4096");
-               SqlConnection conIstanbulMerkez = new SqlConnection("initial catalog=IstanbulMerkez;data source=127.0.0.1;integrated security=sspi;packet size=4096"); 
-               /* Yukarıdaki SqlConnection nesneleri tanımlanırken data source özelliklerine sql sunucusunun bulunduğu ip adresi girildi. Bu farklı ip'lere sahip sunucular söz konusu olduğunda farklı veritabanlarınıda kullanabiliriz anlamına gelmektedir. Uygulamamızı aynı sunucu üzerinde gerçekleştirmek zorunda olduğum için aynı ip adreslerini verdim.*/ 
-               /* Aşğıdaki satırlarda veri girişi için gerekli sql cümlelerini hazırladık ve bunları SqlCommand nesneleri ile ilişkilendirip çalıştırdık. */
-               string sql1="INSERT INTO Satislar (Ad,Soyad,SatisTutari) VALUES ('"+ad+"','"+soyad+"',"+satisTutari+")";
-               double prim=satisTutari*0.10; 
-               string sql2="INSERT INTO Primler (Ad,Soyad,Prim) VALUES ('"+ad+"','"+soyad+"',"+prim+")"; 
-               SqlCommand cmdSatisGir=new SqlCommand(sql1,conFriends);
-               SqlCommand cmdPrimGir=new SqlCommand(sql2,conIstanbulMerkez);
-               conFriends.Open();
-               conIstanbulMerkez.Open(); 
-               cmdSatisGir.ExecuteNonQuery();
-               cmdPrimGir.ExecuteNonQuery(); 
-               return "ISLEM TAMAM"; /* Metod başarılı bir şekilde çalıştığında, COM+ sevisi transaction'ı otomatik olarak sonlandırır ve metodumuz geriye ISLEM TAMAM stringini döndürür. */ 
-          }
-     }
+    [Transaction(TransactionOption.Required)]
+    public class SatisPrimEkle : ServicedComponent
+    {
+        /* AutoComplete() satırı izleyen metodun bir transaction içerisinde yer alacağını ve transaction işlemlerinin başlatılması ve bitirilmesini Component Services 'ın üstleneceğini belirtir. Dolayısıyla Component’ imizin bu metodunu çalıştırdığımızda bir transaction başlatılır ve ContexUtil nesnesi ile manuel olarak yapacağımız SetComplete (Commit) ve SetAbort(Rollback) hareketlerini COM+ Servisi kendisi yapar. */
+        [AutoComplete()]
+        public string VeriGonder(string ad, string soyad, double satisTutari)
+        {
+            SqlConnection conFriends = new SqlConnection("initial catalog=Friends;data source=127.0.0.1;integrated security=sspi;packet size=4096");
+            SqlConnection conIstanbulMerkez = new SqlConnection("initial catalog=IstanbulMerkez;data source=127.0.0.1;integrated security=sspi;packet size=4096");
+            /* Yukarıdaki SqlConnection nesneleri tanımlanırken data source özelliklerine sql sunucusunun bulunduğu ip adresi girildi. Bu farklı ip'lere sahip sunucular söz konusu olduğunda farklı veritabanlarınıda kullanabiliriz anlamına gelmektedir. Uygulamamızı aynı sunucu üzerinde gerçekleştirmek zorunda olduğum için aynı ip adreslerini verdim.*/
+            /* Aşğıdaki satırlarda veri girişi için gerekli sql cümlelerini hazırladık ve bunları SqlCommand nesneleri ile ilişkilendirip çalıştırdık. */
+            string sql1 = "INSERT INTO Satislar (Ad,Soyad,SatisTutari) VALUES ('" + ad + "','" + soyad + "'," + satisTutari + ")";
+            double prim = satisTutari * 0.10;
+            string sql2 = "INSERT INTO Primler (Ad,Soyad,Prim) VALUES ('" + ad + "','" + soyad + "'," + prim + ")";
+            SqlCommand cmdSatisGir = new SqlCommand(sql1, conFriends);
+            SqlCommand cmdPrimGir = new SqlCommand(sql2, conIstanbulMerkez);
+            conFriends.Open();
+            conIstanbulMerkez.Open();
+            cmdSatisGir.ExecuteNonQuery();
+            cmdPrimGir.ExecuteNonQuery();
+            return "ISLEM TAMAM";
+            /* Metod başarılı bir şekilde çalıştığında, COM+ sevisi transaction'ı otomatik olarak sonlandırır ve metodumuz geriye ISLEM TAMAM stringini döndürür. */
+        }
+    }
 }
 ```
 
@@ -237,16 +240,16 @@ Formumuzda Component’ imize ait metodu kullanabilmek için yapmamız gereken b
 ```csharp
 private void btnGonder_Click(object sender, System.EventArgs e)
 {
-     SatisPrimEkle comp=new SatisPrimEkle();
-     double st=System.Convert.ToDouble(txtSatisTutari.Text); 
-     try
-     {
-MessageBox.Show(comp.VeriGonder(txtAd.Text,txtSoyad.Text,st)); 
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show(hata.Source + ":" + hata.Message);
-     }
+    SatisPrimEkle comp = new SatisPrimEkle();
+    double st = System.Convert.ToDouble(txtSatisTutari.Text);
+    try
+    {
+        MessageBox.Show(comp.VeriGonder(txtAd.Text, txtSoyad.Text, st));
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show(hata.Source + ":" + hata.Message);
+    }
 }
 ```
 

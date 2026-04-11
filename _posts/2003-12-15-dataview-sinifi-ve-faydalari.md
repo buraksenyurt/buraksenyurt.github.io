@@ -42,40 +42,41 @@ Tablo 2. İşleçler.
 ```csharp
 SqlConnection conFriends;
 SqlDataAdapter da;
-DataTable dtKitaplar; 
-     /* Baglan metodumuz ile SqlConnection nesnemizi oluşturarak, sql sunucumuza ve Friends isimli veritabanımıza bağlanıyoruz. Daha sonra ise SqlDataAdapter nesnemiz vasıtasıyla Kitaplar isimli tablodan tüm verileri alıp DataTable nesnemize yüklüyoruz. */ 
+DataTable dtKitaplar;
+/* Baglan metodumuz ile SqlConnection nesnemizi oluşturarak, sql sunucumuza ve Friends isimli veritabanımıza bağlanıyoruz. Daha sonra ise SqlDataAdapter nesnemiz vasıtasıyla Kitaplar isimli tablodan tüm verileri alıp DataTable nesnemize yüklüyoruz. */
 public void Baglan()
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-     da=new SqlDataAdapter("Select * From Kitaplar",conFriends);
-     dtKitaplar=new DataTable("Kitap Listesi");
-     da.Fill(dtKitaplar);
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    da = new SqlDataAdapter("Select * From Kitaplar", conFriends);
+    dtKitaplar = new DataTable("Kitap Listesi");
+    da.Fill(dtKitaplar);
 }
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     Baglan();
-     DataView dvTum_Kitaplar=dtKitaplar.DefaultView; /* Bir DataTable nesnesi yaratıldığı zaman, standart olarak en az bir tane görünüme sahiptir. Bu varsayılan görünüm bir DataView nesnesi döndüren DefaultView metodu ile elde edilebilir. Çalıştırdığımız sql sorgusu Kitaplar tablosundaki tüm kayıtları aldığınıdan buradaki DefaultView'da aynı veri kümesini sahip olucak bir DataView nesnesi döndürür. Biz bu dönen veri kümesini dvTum_Kitaplar isimli DataView nesnesine aktardık. Daha sonra ise DataView nesnemizi dgTum_Kitaplar isimli dataGrid nesnemize bağladık.*/
-     dgTum_Kitaplar.DataSource=dvTum_Kitaplar; 
-     /* Yeni bir DataView nesnesini yapılandırıcısının değişik bir versiyonu ile oluşturuyoruz. Bu yapılandırıcı 4 adet parametre alıyor. İlk parametremiz dataTable nesnemiz, ikinci parametremiz RowFilter ifademiz ki burada Adi alanı B ile başlayanları buluyor, üçüncü parametremiz sıralamanın nasıl yapılacağı ki burada Adi alanında göre tersten sıralama yapıyor. Son parametre ise, DataViewRowState türünden bir parametre. Bu özellik DataView içerisinde ye alan her bir DataRowView'un (yani satırın) durumunun değerini belirtir. Alacağı değerler
-      * 1. Added ( Sadece DataView'a eklenen satırları ifade eder)
-      * 2. Deleted ( Sadece DataView'dan silinmiş satırları ifade eder)
-      * 3. CurrentRows ( O an için geçerli tüm satırları ifade eder)
-      * 4. ModifiedCurrent ( Değiştirilen satırların o anki değerlerini ifade eder)
-      * 5. ModifiedOriginal ( Değiştirilen satırların orjinal değerlerini ifade eder)
-      * 6. Unchanged ( Herhangibir değişikliğe uğramamış satırları ifade eder)
-      * 7. OriginalRows ( Tüm satırların asıl değerlerini ifade eder)
-      * 8. None (Herhangibir satır döndürmez)
-     Buna göre bizim DataView nesnemiz güncel satırları döndürecektir. */ 
-     DataView dvBIleBaslayan=new DataView(dtKitaplar,"Adi Like 'B*'","Adi Desc",DataViewRowState.CurrentRows);
-     dgA.DataSource=dvBIleBaslayan; 
-     /* Şimdi ise 2002 yılı ve sonrası Basım tarihine sahip verilerden oluşan bir DataView nesnesi oluşturuyoruz. Bu kez yapıcı metodumuz sadece DataTable nesnemizi parametre olarak aldı. Diğer ayarlamaları RowFilter,Sort özellikleri ile yaptık. Sort özelliğimiz sıralama kriterimizi belirliyor.*/
-     DataView dv2002Sonrasi=new DataView(dtKitaplar);
-     dv2002Sonrasi.RowFilter="BasimTarihi>=#1.1.2002#";
-     dv2002Sonrasi.Sort="BasimTarihi Asc";
-     /* Bu kez DataView nesnemizi bir ListBox kontrolüne bağladık ve sadece Adi alanı değerlerini göstermesi için ayarladık.*/
-     lstPahali.DataSource=dv2002Sonrasi;
-     lstPahali.DisplayMember="Adi";
-} 
+    Baglan();
+    DataView dvTum_Kitaplar = dtKitaplar.DefaultView;
+    /* Bir DataTable nesnesi yaratıldığı zaman, standart olarak en az bir tane görünüme sahiptir. Bu varsayılan görünüm bir DataView nesnesi döndüren DefaultView metodu ile elde edilebilir. Çalıştırdığımız sql sorgusu Kitaplar tablosundaki tüm kayıtları aldığınıdan buradaki DefaultView'da aynı veri kümesini sahip olucak bir DataView nesnesi döndürür. Biz bu dönen veri kümesini dvTum_Kitaplar isimli DataView nesnesine aktardık. Daha sonra ise DataView nesnemizi dgTum_Kitaplar isimli dataGrid nesnemize bağladık.*/
+    dgTum_Kitaplar.DataSource = dvTum_Kitaplar;
+    /* Yeni bir DataView nesnesini yapılandırıcısının değişik bir versiyonu ile oluşturuyoruz. Bu yapılandırıcı 4 adet parametre alıyor. İlk parametremiz dataTable nesnemiz, ikinci parametremiz RowFilter ifademiz ki burada Adi alanı B ile başlayanları buluyor, üçüncü parametremiz sıralamanın nasıl yapılacağı ki burada Adi alanında göre tersten sıralama yapıyor. Son parametre ise, DataViewRowState türünden bir parametre. Bu özellik DataView içerisinde ye alan her bir DataRowView'un (yani satırın) durumunun değerini belirtir. Alacağı değerler
+     * 1. Added ( Sadece DataView'a eklenen satırları ifade eder)
+     * 2. Deleted ( Sadece DataView'dan silinmiş satırları ifade eder)
+     * 3. CurrentRows ( O an için geçerli tüm satırları ifade eder)
+     * 4. ModifiedCurrent ( Değiştirilen satırların o anki değerlerini ifade eder)
+     * 5. ModifiedOriginal ( Değiştirilen satırların orjinal değerlerini ifade eder)
+     * 6. Unchanged ( Herhangibir değişikliğe uğramamış satırları ifade eder)
+     * 7. OriginalRows ( Tüm satırların asıl değerlerini ifade eder)
+     * 8. None (Herhangibir satır döndürmez)
+    Buna göre bizim DataView nesnemiz güncel satırları döndürecektir. */
+    DataView dvBIleBaslayan = new DataView(dtKitaplar, "Adi Like 'B*'", "Adi Desc", DataViewRowState.CurrentRows);
+    dgA.DataSource = dvBIleBaslayan;
+    /* Şimdi ise 2002 yılı ve sonrası Basım tarihine sahip verilerden oluşan bir DataView nesnesi oluşturuyoruz. Bu kez yapıcı metodumuz sadece DataTable nesnemizi parametre olarak aldı. Diğer ayarlamaları RowFilter,Sort özellikleri ile yaptık. Sort özelliğimiz sıralama kriterimizi belirliyor.*/
+    DataView dv2002Sonrasi = new DataView(dtKitaplar);
+    dv2002Sonrasi.RowFilter = "BasimTarihi>=#1.1.2002#";
+    dv2002Sonrasi.Sort = "BasimTarihi Asc";
+    /* Bu kez DataView nesnemizi bir ListBox kontrolüne bağladık ve sadece Adi alanı değerlerini göstermesi için ayarladık.*/
+    lstPahali.DataSource = dv2002Sonrasi;
+    lstPahali.DisplayMember = "Adi";
+}
 ```
 
 Çalışma sonucu ekran görüntümüz şekil 1’deki gibi olur.
@@ -96,47 +97,52 @@ private void Form1_Load(object sender, System.EventArgs e)
 SqlConnection conFriends;
 SqlDataAdapter da;
 DataTable dtKitaplar;
-DataView dvKitaplar; 
+DataView dvKitaplar;
 /* Bu metod cmbAlanAdi isimli comboBox kontrolünü, dataTable nesnemizin bellekte temsil ettigi tablonun Alanlari ile doldurur. Nitekim bu alanlari, RowFilter özelliginde kullanacagiz. */
 public void AlanDoldur()
 {
-     for(int i=0;i<dtKitaplar.Columns.Count;++i)
-     {
-          this.cmbAlanAdi.Items.Add(dtKitaplar.Columns[i].ColumnName.ToString());
-          this.cmbAlanSira.Items.Add(dtKitaplar.Columns[i].ColumnName.ToString());
-     }
+    for (int i = 0; i < dtKitaplar.Columns.Count; ++i)
+    {
+        this.cmbAlanAdi.Items.Add(dtKitaplar.Columns[i].ColumnName.ToString());
+        this.cmbAlanSira.Items.Add(dtKitaplar.Columns[i].ColumnName.ToString());
+    }
 }
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-     da=new SqlDataAdapter("Select Kategori,Adi,Yazar,BasimEvi,BasimTarihi,Fiyat From Kitaplar",conFriends);
-     dtKitaplar=new DataTable("Kitap Listesi");
-     /* DataTable nesnemizin bellekte temsil ettigi alani,Kitaplar tablosundaki veriler ile, SqlDataAdapter nesnemizin Fill metodu sayesinde dolduruyoruz.*/
-     da.Fill(dtKitaplar); 
-     dvKitaplar=new DataView(dtKitaplar); /* Dataview nesnemizi yaratiyoruz. Dikkat ederseniz yapici metod, paremetre olarak DataTable nesnemizi aliyor. Dolayisiyla DataView nesnemiz, dataTable içindeki veriler ile dolmus sekilde olusturuluyor.*/ 
-     dataGrid1.DataSource=dvKitaplar; /* DataGrid kontrolümüze veri kaynagi olarak, DataView nesnemizi isaret ederek, DataView içindeki verileri göstermesini sagliyoruz.*/ 
-     AlanDoldur();
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    da = new SqlDataAdapter("Select Kategori,Adi,Yazar,BasimEvi,BasimTarihi,Fiyat From Kitaplar", conFriends);
+    dtKitaplar = new DataTable("Kitap Listesi");
+    /* DataTable nesnemizin bellekte temsil ettigi alani,Kitaplar tablosundaki veriler ile, SqlDataAdapter nesnemizin Fill metodu sayesinde dolduruyoruz.*/
+    da.Fill(dtKitaplar);
+    dvKitaplar = new DataView(dtKitaplar);
+    /* Dataview nesnemizi yaratiyoruz. Dikkat ederseniz yapici metod, paremetre olarak DataTable nesnemizi aliyor. Dolayisiyla DataView nesnemiz, dataTable içindeki veriler ile dolmus sekilde olusturuluyor.*/
+    dataGrid1.DataSource = dvKitaplar;
+    /* DataGrid kontrolümüze veri kaynagi olarak, DataView nesnemizi isaret ederek, DataView içindeki verileri göstermesini sagliyoruz.*/
+    AlanDoldur();
 }
-     /* Bu butona bastigimizda, kullanıcının seçtigi alan, filtreleme kriteri ve filtreleme için kullanilacak deger verileri belirlenerek, DataView nesnesinin RowFilter metodu için bir syntax belirleniyor.*/
+/* Bu butona bastigimizda, kullanıcının seçtigi alan, filtreleme kriteri ve filtreleme için kullanilacak deger verileri belirlenerek, DataView nesnesinin RowFilter metodu için bir syntax belirleniyor.*/
 private void btnCreateFilter_Click(object sender, System.EventArgs e)
 {
-     string secilenAlan=cmbAlanAdi.Text;
-     string secilenKriter=cmbKriter.Text;
-     string deger=""; 
-     /* If kosullu ifadelerinde, seçilen alanin veri tipine bakiyoruz. Nitekim RowFilter metodunda, alan'in veri tipine göre ifademiz degisiklik gösteriyor. Tarih tipindeki verilerde # karakteri aranan metnin basina ve sonuna gelirken, string tipinde degerlerde ' karakteri geliyor. Sayisal tipteki degerler için ise herhangibir karakter ifadenin aranan degerin basina veya sonuna eklenmiyor. */
-     if(dtKitaplar.Columns[secilenAlan].DataType.ToString()=="System.String")
-          deger="'"+txtDeger.Text+"'";
-     if(dtKitaplar.Columns[secilenAlan].DataType.ToString()=="System.DateTime")
-          deger="#"+txtDeger.Text+"#";
-     if(dtKitaplar.Columns[secilenAlan].DataType.ToString()=="System.Decimal")
-          deger=txtDeger.Text; 
-     txtFilter.Text=secilenAlan+secilenKriter+deger; /* Olusturulan ifade görmemiz için textBox kontrolümüze yaziliyor. */
-} 
+    string secilenAlan = cmbAlanAdi.Text;
+    string secilenKriter = cmbKriter.Text;
+    string deger = "";
+    /* If kosullu ifadelerinde, seçilen alanin veri tipine bakiyoruz. Nitekim RowFilter metodunda, alan'in veri tipine göre ifademiz degisiklik gösteriyor. Tarih tipindeki verilerde # karakteri aranan metnin basina ve sonuna gelirken, string tipinde degerlerde ' karakteri geliyor. Sayisal tipteki degerler için ise herhangibir karakter ifadenin aranan degerin basina veya sonuna eklenmiyor. */
+    if (dtKitaplar.Columns[secilenAlan].DataType.ToString() == "System.String")
+        deger = "'" + txtDeger.Text + "'";
+    if (dtKitaplar.Columns[secilenAlan].DataType.ToString() == "System.DateTime")
+        deger = "#" + txtDeger.Text + "#";
+    if (dtKitaplar.Columns[secilenAlan].DataType.ToString() == "System.Decimal")
+        deger = txtDeger.Text;
+    txtFilter.Text = secilenAlan + secilenKriter + deger;
+    /* Olusturulan ifade görmemiz için textBox kontrolümüze yaziliyor. */
+}
 private void btnFilter_Click(object sender, System.EventArgs e)
 {
-     dvKitaplar.RowFilter=txtFilter.Text; /* DataView nesnemizin RowFilter metoduna, ilgili ifademiz atanarak, süzme islemini gerçeklestirmis oluyoruz. */
-     dvKitaplar.Sort=cmbAlanSira.Text+" "+cmbSiralamaKriteri.Text; /* Burada ise Sort özelligine siralama yapmak için gerekli veriler ataniyor. */
-} 
+    dvKitaplar.RowFilter = txtFilter.Text;
+    /* DataView nesnemizin RowFilter metoduna, ilgili ifademiz atanarak, süzme islemini gerçeklestirmis oluyoruz. */
+    dvKitaplar.Sort = cmbAlanSira.Text + " " + cmbSiralamaKriteri.Text;
+    /* Burada ise Sort özelligine siralama yapmak için gerekli veriler ataniyor. */
+}
 ```
 
 Şimdi uygulamamızı çalıştıralım ve deneyelim.

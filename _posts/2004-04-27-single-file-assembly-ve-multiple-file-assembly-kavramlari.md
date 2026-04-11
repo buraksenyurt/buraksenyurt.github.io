@@ -25,18 +25,18 @@ public class Giris
 {
     public static void Main(string[] args)
     {
-        int a,b;
-        a=5;
-        b=6;
-        int sonuc=Topla(a,b);
+        int a, b;
+        a = 5;
+        b = 6;
+        int sonuc = Topla(a, b);
 
         Console.WriteLine("Single File Assembly");
-        Console.WriteLine("Toplam {0}",sonuc.ToString());
+        Console.WriteLine("Toplam {0}", sonuc.ToString());
     }
 
-    public static int Topla(int birinci,int ikinci)
+    public static int Topla(int birinci, int ikinci)
     {
-        return birinci+ikinci;
+        return birinci + ikinci;
     }
 }
 ```
@@ -141,7 +141,7 @@ public class Temel
     {
         System.Console.WriteLine("Ana uygulama");
         jsharpselam.Selam();
-        vbdotnet.vbselam.Selam(); 
+        vbdotnet.vbselam.Selam();
     }
 }
 ```

@@ -57,8 +57,8 @@ namespace DeadLockTest
     class Deadlock
     {
         /* Iki ayri Transaction için iki ayri SqlConnection nesnesi olusturuyoruz. Bununla birlikte, iki Transaction içindeki komutlari icra edecek iki adet SqlCommand nesnesi ve Transactionlar içinde iki adet SqlTransaction nesnesi tanimliyoruz.*/
-        public static SqlConnection conT1 =new SqlConnection("server=localhost;database=Northwind;integrated security=SSPI");
-        public static SqlConnection conT2 =new SqlConnection("server=localhost;database=Northwind;uid=sa;integrated security=SSPI");
+        public static SqlConnection conT1 = new SqlConnection("server=localhost;database=Northwind;integrated security=SSPI");
+        public static SqlConnection conT2 = new SqlConnection("server=localhost;database=Northwind;uid=sa;integrated security=SSPI");
         public static SqlCommand cmdT1;
         public static SqlCommand cmdT2;
         public static SqlTransaction T1;
@@ -68,36 +68,36 @@ namespace DeadLockTest
         public static void GuncellePersonelT1()
         {
             Console.WriteLine("PersonelID=78 olan satirdaki PersonelAd alaninin degeri DENEME yapiliyor...");
-            cmdT1=new SqlCommand("UPDATE Personel SET PersonelAd = 'DENEME' WHERE PersonelID = 78", conT1,T1);
+            cmdT1 = new SqlCommand("UPDATE Personel SET PersonelAd = 'DENEME' WHERE PersonelID = 78", conT1, T1);
             int sonuc = cmdT1.ExecuteNonQuery();
-            Console.WriteLine(sonuc+" guncellendi. PersonelAd = DENEME yapildi.");
+            Console.WriteLine(sonuc + " guncellendi. PersonelAd = DENEME yapildi.");
         }
 
         /* Bu metod ile DeadLock senaryomuzun 4ncü adimi gerçeklestiriliyor.*/
         public static void GuncelleMusterilerT2()
         {
             Console.WriteLine("MusteriID=1000 olan satirdaki MusteriMail alaninin degeri DENEME@DENEME.COM yapiliyor...");
-            cmdT2=new SqlCommand("UPDATE Musteriler SET MusteriMail = 'DENEME@DENEME.COM' WHERE MusteriID = 1000",conT2,T2);
+            cmdT2 = new SqlCommand("UPDATE Musteriler SET MusteriMail = 'DENEME@DENEME.COM' WHERE MusteriID = 1000", conT2, T2);
             int sonuc = cmdT2.ExecuteNonQuery();
-            Console.WriteLine(sonuc+" guncellendi. MusteriMail = DENEME@DENEME.COM yapildi.");
+            Console.WriteLine(sonuc + " guncellendi. MusteriMail = DENEME@DENEME.COM yapildi.");
         }
 
         /* Bu metod ile DeadLock senaryomuzun 5nci adimi gerçeklestiriliyor.*/
         public static void GuncelleMusterilerT1()
         {
             Console.WriteLine("MusteriID=1000 olan satirdaki MusteriMail alaninin degeri MAIL@MAIL.COM yapiliyor...");
-            cmdT1 =new SqlCommand("UPDATE Musteriler SET MusteriMail = 'MAIL@MAIL.COM' WHERE MusteriID = 1000",conT1,T1);
+            cmdT1 = new SqlCommand("UPDATE Musteriler SET MusteriMail = 'MAIL@MAIL.COM' WHERE MusteriID = 1000", conT1, T1);
             int sonuc = cmdT1.ExecuteNonQuery();
-            Console.WriteLine(sonuc+" guncellendi. MusteriMail = MAIL@MAIL.COM yapildi.");
+            Console.WriteLine(sonuc + " guncellendi. MusteriMail = MAIL@MAIL.COM yapildi.");
         }
 
         /* Bu metod ilede DeadLock senaryomuzun 6nci adimi gerçeklestiriliyor.*/
         public static void GuncellePersonelT2()
         {
             Console.WriteLine("PersonelID=78 olan satirdaki PersonelAd alaninin degeri ISIM yapiliyor...");
-            cmdT2=new SqlCommand("UPDATE Personel SET PersonelAd = 'ISIM' WHERE PersonelID = 78", conT2,T2);
+            cmdT2 = new SqlCommand("UPDATE Personel SET PersonelAd = 'ISIM' WHERE PersonelID = 78", conT2, T2);
             int sonuc = cmdT2.ExecuteNonQuery();
-            Console.WriteLine(sonuc+" guncellendi. PersonelAd = ISIM yapildi.");
+            Console.WriteLine(sonuc + " guncellendi. PersonelAd = ISIM yapildi.");
         }
 
         public static void Main()

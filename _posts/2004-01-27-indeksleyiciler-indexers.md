@@ -16,14 +16,14 @@ Indeksleyiciler tanımlanışları itibariyle, özelliklere (properties) çok be
 ```csharp
 public int this[int indis]
 {
-     get
-     {
-         // Kodlar
-     }
-     set
-     {
-         // Kodlar
-     }
+    get
+    {
+        // Kodlar
+    }
+    set
+    {
+        // Kodlar
+    }
 }
 ```
 
@@ -53,119 +53,120 @@ System.Data.SqlClient;
 
 namespace Indexers1
 {
-      /* Tablomuzda yer alan satırları temsil eden sınıfımızı ve bu tablodaki her bir alanı temsil edicek özelliklerimizi tanımlıyoruz. */
- 
-     public class Personel
-     {
-          private int perid;
-          private string perad;
-          private string persoyad;
+    /* Tablomuzda yer alan satırları temsil eden sınıfımızı ve bu tablodaki her bir alanı temsil edicek özelliklerimizi tanımlıyoruz. */
 
-          public int PerID
-          {
-               get
-               {
-                    return perid;
-               }
-               set
-               {
-                    perid=value;
-               }
-          }
-          public string PerAd
-          {
-               get
-               {
-                    return perad;
-               }
-               set
-               {
-                     perad=value;
+    public class Personel
+    {
+        private int perid;
+        private string perad;
+        private string persoyad;
+
+        public int PerID
+        {
+            get
+            {
+                return perid;
+            }
+            set
+            {
+                perid = value;
+            }
+        }
+        public string PerAd
+        {
+            get
+            {
+                return perad;
+            }
+            set
+            {
+                perad = value;
+            }
+        }
+        public string PerSoyad
+        {
+            get
+            {
+                return persoyad;
+            }
+            set
+            {
+                persoyad = value;
+            }
+        }
+    }
+
+    /* PersonelListesi sınıfımız, Personel tipinden nesneleri tutucak Object türünden bir tanımlar. Bu dizimizde, Personel sınıfı türünden nesneleri tutacağız. Bu nedenle Object türünden tanımladık. Ayrıca sınıfımız bir indeksleyiciye sahip. Bu indeksleyici, object türünden dizimizdeki elemanlara erişirken, bu sınıftan türetilen nesneyi bir diziymiş gibi kullanabilmemize imkan sağlayacak. Yani uygulamamızda, bu sınıftan bir nesne türetip nesneadi[indis] gibi bir satır yazdığımızda buradaki indis değeri, indeksleyicinin tanımlandığı bloğa aktarılıcak ve get veya set blokları için kullanılacak. Bu bloklar aldıkları bu indis parametresinin değerini Object türünden dizimizde kullanarak, karşılık gelen dizi elemanı üzerinde işlem yapılmasına imkan sağlamaktadırlar.*/
+
+    public class PersonelListesi
+    {
+        private Object[] liste = new Object[10];
+
+        /* Indeksleyicimizi tanımlıyoruz.*/
+
+        public Personel this[int indis]
+        {
+            get
+            {
+                /* liste isimli Object türünden dizimizin indis indeksli değerini döndürür. Bunu döndürürken Personel sınıfı tipinden döndürür. Böylece iligili elemandan Personel sınıfındaki özelliklere, dolayısıyla tablo alanlarındaki değere ulaşmış oluruz. */
+                return (Personel)liste[indis];
+            }
+            set
+            {
+                /* liste isimli Object türünden dizimizdeki indis indeksli elemana value değerini aktarır. */
+                liste[indis] = (Personel)value;
+            }
+        }
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection con = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
+
+            SqlCommand cmd = new SqlCommand("Select * From Personel", con);
+            SqlDataReader dr;
+            con.Open();
+            dr = cmd.ExecuteReader();
+            PersonelListesi pliste = new PersonelListesi();
+            /* Indeksleyicimizi kullandığımız sınıftan bir nesne türetiyoruz. */
+
+            int PersonelSayisi = 0;
+            int i = 0;
+            try
+            {
+                /* SqlDataReader nesnesi ile, satırlarımızı okurken bu satıra ait alanların değerlerini tutacak Personel tipinden bir sınıf nesnesi oluşturulur ve ilgili alan değerleri bu nesnenin ilgili özelliklerine atanır. */
+                while (dr.Read())
+                {
+                    Personel p = new Personel();
+                    p.PerID = (int)dr[0];
+                    p.PerAd = dr[1].ToString();
+                    p.PerSoyad = dr[2].ToString();
+                    /* Şimdi PersonelListesi sınıfı türünden nesnemize güncel satırı temsil eden Personel nesnesini atıyoruz. Bunu yaparken bu sınıf örneğine sanki bir diziymiş gibi davrandığımıza dikkat edelim. İşte bunu sağlayan indeksleyicimizdir. Burada PersonelListesi içindeki, object türünden liste isimli dizideki i indeksli elemana p nesnesi aktarılıyor. */
+                    pliste[i] = p;
+                    i += 1;
+                    PersonelSayisi += 1;
                 }
-           }
-           public string PerSoyad
-          {
-               get
-               {
-                    return persoyad;
-               }
-               set
-               {
-                     persoyad=value;
+                /* Bu döngüde, pliste isimli PersonelListesi türünden nesneye, i indeksini kullanarak  içerdiği object türünden liste isimli dizi elemanlarına, tanımladığımız indeksleyici sayesinde bir dizi elemanına erişir gibi erişiyoruz. */
+
+                for (int j = 0; j < PersonelSayisi; ++j)
+                {
+                    /* pliste'nin türetildiği PersonelListesi sınıfı indeksleyicisinin kullandığı dizi elemanlarnı Personel türüne dönüştürerek elde ettiğimiz için, bu nesnenin özelliklerinede yani veri satırı alanlarınada kolayca erişebiliyoruz. */
+
+                    Console.WriteLine(pliste[j].PerAd.ToString() + " " + pliste[j].PerSoyad.ToString() + " " + pliste[j].PerID.ToString());
                 }
-           }
-     }
-
-     /* PersonelListesi sınıfımız, Personel tipinden nesneleri tutucak Object türünden bir tanımlar. Bu dizimizde, Personel sınıfı türünden nesneleri tutacağız. Bu nedenle Object türünden tanımladık. Ayrıca sınıfımız bir indeksleyiciye sahip. Bu indeksleyici, object türünden dizimizdeki elemanlara erişirken, bu sınıftan türetilen nesneyi bir diziymiş gibi kullanabilmemize imkan sağlayacak. Yani uygulamamızda, bu sınıftan bir nesne türetip nesneadi[indis] gibi bir satır yazdığımızda buradaki indis değeri, indeksleyicinin tanımlandığı bloğa aktarılıcak ve get veya set blokları için kullanılacak. Bu bloklar aldıkları bu indis parametresinin değerini Object türünden dizimizde kullanarak, karşılık gelen dizi elemanı üzerinde işlem yapılmasına imkan sağlamaktadırlar.*/ 
-
-     public class PersonelListesi
-     {
-          private Object[] liste=new Object[10];
-
-          /* Indeksleyicimizi tanımlıyoruz.*/
-
-          public Personel this[int indis]
-          {
-               get
-               {
-                    /* liste isimli Object türünden dizimizin indis indeksli değerini döndürür. Bunu döndürürken Personel sınıfı tipinden döndürür. Böylece iligili elemandan Personel sınıfındaki özelliklere, dolayısıyla tablo alanlarındaki değere ulaşmış oluruz. */
-                    return (Personel)liste[indis];
-                }
-               set
-               {
-                    /* liste isimli Object türünden dizimizdeki indis indeksli elemana value değerini aktarır. */
-                    liste[indis]=(Personel)value;
-                }
-           }
-     }
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-                SqlConnection con=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
- 
-               SqlCommand cmd=new SqlCommand("Select * From Personel",con);
-                SqlDataReader dr;
-                con.Open();
-                dr=cmd.ExecuteReader();
-                PersonelListesi pliste=new PersonelListesi(); /* Indeksleyicimizi kullandığımız sınıftan bir nesne türetiyoruz. */
- 
-               int PersonelSayisi=0;
-               int i=0;
-               try
-               {
-                    /* SqlDataReader nesnesi ile, satırlarımızı okurken bu satıra ait alanların değerlerini tutacak Personel tipinden bir sınıf nesnesi oluşturulur ve ilgili alan değerleri bu nesnenin ilgili özelliklerine atanır. */
-                    while(dr.Read())
-                    {
-                          Personel p=new Personel();
-                          p.PerID=(int)dr[0];
-                          p.PerAd=dr[1].ToString();
-                          p.PerSoyad=dr[2].ToString();
-                          /* Şimdi PersonelListesi sınıfı türünden nesnemize güncel satırı temsil eden Personel nesnesini atıyoruz. Bunu yaparken bu sınıf örneğine sanki bir diziymiş gibi davrandığımıza dikkat edelim. İşte bunu sağlayan indeksleyicimizdir. Burada PersonelListesi içindeki, object türünden liste isimli dizideki i indeksli elemana p nesnesi aktarılıyor. */
-                         pliste[i]=p;
-                         i+=1;
-                         PersonelSayisi+=1;
-                    }
-                    /* Bu döngüde, pliste isimli PersonelListesi türünden nesneye, i indeksini kullanarak  içerdiği object türünden liste isimli dizi elemanlarına, tanımladığımız indeksleyici sayesinde bir dizi elemanına erişir gibi erişiyoruz. */
-
-                    for(int j=0;j<PersonelSayisi;++j)
-                    {
-                         /* pliste'nin türetildiği PersonelListesi sınıfı indeksleyicisinin kullandığı dizi elemanlarnı Personel türüne dönüştürerek elde ettiğimiz için, bu nesnenin özelliklerinede yani veri satırı alanlarınada kolayca erişebiliyoruz. */
-
-                         Console.WriteLine(pliste[j].PerAd.ToString()+" "+pliste[j].PerSoyad.ToString()+" "+pliste[j].PerID.ToString());
-                    }
-               }
-               catch(Exception hata)
-               {
-                    Console.WriteLine(hata.Message.ToString());
-               }
-               finally
-               {
-                    dr.Close();
-                    con.Close();
-               }
-          }
-     }
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                dr.Close();
+                con.Close();
+            }
+        }
+    }
 }
 ```
 

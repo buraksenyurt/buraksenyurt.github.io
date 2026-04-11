@@ -68,20 +68,38 @@ public class Contact
 
     public string Email
     {
-        get { return _email; }
-        set { _email = value; }
+        get
+        {
+            return _email;
+        }
+        set
+        {
+            _email = value;
+        }
     }
 
     public string Soyad
     {
-        get { return _soyad; }
-        set { _soyad = value; }
+        get
+        {
+            return _soyad;
+        }
+        set
+        {
+            _soyad = value;
+        }
     }
 
     public string Ad
     {
-        get { return _ad; }
-        set { _ad = value; }
+        get
+        {
+            return _ad;
+        }
+        set
+        {
+            _ad = value;
+        }
     }
     public Contact(string ad, string soyad, string mail)
     {
@@ -105,32 +123,62 @@ MyProfile Sınıfı;
 ![mk227_9.gif](/assets/images/2007/mk227_9.gif)
 
 ```csharp
-public class MyProfile:ProfileBase
+public class MyProfile : ProfileBase
 {
     public int SonStokDurumu
     {
-        get { return Convert.ToInt32(base["SonStokDurumu"]); }
-        set { base["SonStokDurumu"] = value; }
-    }    
+        get
+        {
+            return Convert.ToInt32(base["SonStokDurumu"]);
+        }
+        set
+        {
+            base["SonStokDurumu"] = value;
+        }
+    }
     public DateTime SonGirisZamani
     {
-        get { return Convert.ToDateTime(base["SonGirisZamani"]); }
-        set { base["SonGirisZamani"] = value; }
+        get
+        {
+            return Convert.ToDateTime(base["SonGirisZamani"]);
+        }
+        set
+        {
+            base["SonGirisZamani"] = value;
+        }
     }
     public Contact Contact2
     {
-        get { return (Contact)base["Contact2"]; }
-        set { base["Contact2"] = value; }
+        get
+        {
+            return (Contact)base["Contact2"];
+        }
+        set
+        {
+            base["Contact2"] = value;
+        }
     }
     public Contact Contact1
     {
-        get { return (Contact)base["Contact1"]; }
-        set { base["Contact1"] = value; }
+        get
+        {
+            return (Contact)base["Contact1"];
+        }
+        set
+        {
+            base["Contact1"] = value;
+        }
     }
     public string Bayi
     {
-        get { return base["Bayi"].ToString(); }
-        set { base["Bayi"] = value; }
+        get
+        {
+            return base["Bayi"].ToString();
+        }
+        set
+        {
+            base["Bayi"] = value;
+        }
     }
 }
 ```
@@ -257,7 +305,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using CustomProfileLibrary;
 
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     protected void btnGetir_Click(object sender, EventArgs e)
     {
@@ -287,7 +335,7 @@ public partial class _Default : System.Web.UI.Page
         {
             Response.Write(excp.Message);
         }
-    } 
+    }
 
     private void Kaydet()
     {
@@ -415,7 +463,7 @@ public partial class ProfilYoneticisi : System.Web.UI.Page
     private void TumProfilleriGetir()
     {
         // DropDownList kontrolünden seçilen doğrulama kriterinin enum sabitindeki karşılığı seçiliyor.
-        ProfileAuthenticationOption dogrulamaKriteri=(ProfileAuthenticationOption)Enum.Parse(typeof(ProfileAuthenticationOption), ddlDogrulamaTipi.SelectedValue);
+        ProfileAuthenticationOption dogrulamaKriteri = (ProfileAuthenticationOption)Enum.Parse(typeof(ProfileAuthenticationOption), ddlDogrulamaTipi.SelectedValue);
         // GetAllProfiles metodu ile doğrulama kriterine uygun olan profil bilgileri ProfileInfoCollection tipinden bir koleksiyona aktarılır.
         ProfileInfoCollection tumProfiller = ProfileManager.GetAllProfiles(dogrulamaKriteri);
         grdTumProfiller.DataSource = tumProfiller;
@@ -429,8 +477,8 @@ public partial class ProfilYoneticisi : System.Web.UI.Page
     {
         if (e.CommandName == "Delete")
         {
-            int rowIndex=Convert.ToInt32(e.CommandArgument);
-            string userName=grdTumProfiller.Rows[rowIndex].Cells[1].Text;
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            string userName = grdTumProfiller.Rows[rowIndex].Cells[1].Text;
             // DeleteProfile metodu ile seçilen satırdaki UserName bilgisine ait Profil silinir.
             ProfileManager.DeleteProfile(userName);
             TumProfilleriGetir();
@@ -438,7 +486,7 @@ public partial class ProfilYoneticisi : System.Web.UI.Page
     }
     protected void btnTumProfiller_Click(object sender, EventArgs e)
     {
-        TumProfilleriGetir(); 
+        TumProfilleriGetir();
     }
 
     // TextBox içerisine girilen kullanıcı adına benzer olanların Profil bilgilerini getirir.
@@ -449,20 +497,20 @@ public partial class ProfilYoneticisi : System.Web.UI.Page
         ProfileInfoCollection profiller = ProfileManager.FindProfilesByUserName(dogrulamaKriteri, "%" + txtKullaniciAdi.Text + "%");
         grdTumProfiller.DataSource = profiller;
         grdTumProfiller.DataBind();
-        lblKullaniciSayisi.Text = profiller.Count.ToString(); 
+        lblKullaniciSayisi.Text = profiller.Count.ToString();
     }
     protected void grdTumProfiller_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        
+
     }
 
     /* aspnet_Users tablosunda LastActivityDate değeri, seçilen tarihten daha önce olanların elde edilmesini sağlar. Bunun için GetAllInactiveProfiles metodunun ikinci parametresi kullanılır. */
     protected void btnPasifleriGetir_Click(object sender, EventArgs e)
     {
         ProfileAuthenticationOption dogrulamaKriteri = (ProfileAuthenticationOption)Enum.Parse(typeof(ProfileAuthenticationOption), ddlDogrulamaTipi.SelectedValue);
-        grdTumProfiller.DataSource=ProfileManager.GetAllInactiveProfiles(dogrulamaKriteri, dtTarih.SelectedDate);
+        grdTumProfiller.DataSource = ProfileManager.GetAllInactiveProfiles(dogrulamaKriteri, dtTarih.SelectedDate);
         grdTumProfiller.DataBind();
-        lblKullaniciSayisi.Text=ProfileManager.GetNumberOfInactiveProfiles(dogrulamaKriteri, dtTarih.SelectedDate).ToString();
+        lblKullaniciSayisi.Text = ProfileManager.GetNumberOfInactiveProfiles(dogrulamaKriteri, dtTarih.SelectedDate).ToString();
     }
 }
 ```
@@ -565,7 +613,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     protected void btnProfilGetir_Click(object sender, EventArgs e)
     {

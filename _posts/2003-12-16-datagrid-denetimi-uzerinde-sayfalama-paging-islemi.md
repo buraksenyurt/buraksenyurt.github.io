@@ -24,18 +24,21 @@ DataTable dtKitaplar;
 
 public void Baglan()
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-     da=new SqlDataAdapter("select ID,Kategori,Adi,Yazar,BasimEvi,BasimTarihi,Fiyat from kitaplar order by Adi",conFriends);
-     dtKitaplar=new DataTable("Tum Kitaplar");
-     da.Fill(dtKitaplar);
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    da = new SqlDataAdapter("select ID,Kategori,Adi,Yazar,BasimEvi,BasimTarihi,Fiyat from kitaplar order by Adi", conFriends);
+    dtKitaplar = new DataTable("Tum Kitaplar");
+    da.Fill(dtKitaplar);
 }
 private void Page_Load(object sender, System.EventArgs e)
 {
-     Baglan();
-     dgKitap.AutoGenerateColumns=false; /* DataGrid kontrolümüzde yer alıcak kolonları kendimiz ayarlayacığımız için bu özelliğe false değerini aktardık.*/
-     dgKitap.DataSource=dtKitaplar; /*DataGrid kontrolümüze veri kaynağı olarak dtKitaplar isimli DataTable nesnemizin bellekte işaret ettiği veri kümesini gösteriyoruz.*/
-     dgKitap.DataBind(); /* DataGrid kontrolündeki kolonları (bizim yazdığımız ve ayarladığımız kolonları) veri kaynağındaki ilgili alanlara bağlıyoruz.*/
-} 
+    Baglan();
+    dgKitap.AutoGenerateColumns = false;
+    /* DataGrid kontrolümüzde yer alıcak kolonları kendimiz ayarlayacığımız için bu özelliğe false değerini aktardık.*/
+    dgKitap.DataSource = dtKitaplar;
+    /*DataGrid kontrolümüze veri kaynağı olarak dtKitaplar isimli DataTable nesnemizin bellekte işaret ettiği veri kümesini gösteriyoruz.*/
+    dgKitap.DataBind();
+    /* DataGrid kontrolündeki kolonları (bizim yazdığımız ve ayarladığımız kolonları) veri kaynağındaki ilgili alanlara bağlıyoruz.*/
+}
 ```
 
 Şimdi sayfamızda yer alan DataGrid tag'ındaki düzenlemelerimizi yapalım. Burada Columns isimli taglar arasında, dataGrid kontrolümüzde görünmesini istediğimiz BoundColumn tipindeki sütunları belirleyeceğimiz tagları yazacağız. Bu sayede DataGrid kontrolüne ait DataBind metodu çağırıldığında, bizim bu taglarda belirttiğimiz alanlar DataGrid kontrolümüzün kolonları olacak şekilde ilgili veri alanlarına bağlanacak. Gelin şimdi buradaki düzenlemeleri gerçekleştirelim. Unutmadan, kendi DataGrid kolonlarınızı ayarlayabilmeniz için AutoGenerateColumns özelliğine false değerini aktarmanız gerekmektedir. Aksi takdirde ayarladığınız kolonların hemen arkasından, otomatik olarak DataTable'da yer alan tüm kolonlar tekrardan gelir. Yaptığımız son güncellemeler ile DataGrid tag'ımızın yeni hâli şu şekildedir.
@@ -52,19 +55,24 @@ Görüldüğü gibi kitap listesi uzayıp gitmektedir. Bizim amacımız bu liste
 
 ```csharp
 private void Page_Load(object sender, System.EventArgs e)
-{ 
-     if(!Page.IsPostBack) /* Sayfa ilk kez yükleniyorsa dataGrid'e ait özellikler belirlensin. Diğer yüklemelerde tekrardan bu işlemler yapılmasın istediğimiz için...*/
-     {
-          dgKitap.AllowPaging=true; /* DataGrid kontrolümüzde sayfalama yapılabilmesini sağlıyoruz.*/
+{
+    if (!Page.IsPostBack) /* Sayfa ilk kez yükleniyorsa dataGrid'e ait özellikler belirlensin. Diğer yüklemelerde tekrardan bu işlemler yapılmasın istediğimiz için...*/
+    {
+        dgKitap.AllowPaging = true;
+        /* DataGrid kontrolümüzde sayfalama yapılabilmesini sağlıyoruz.*/
 
-          dgKitap.PagerStyle.Mode=PagerMode.NumericPages; /* Sayfalama sistemi sayısal olucak. Yani 1 den başlayıp kaç kayıtlık sayfa oluştuysa o kadar sayıda bir buton dizesi dataGrid kontrolünün en altında yer alıcak.*/
+        dgKitap.PagerStyle.Mode = PagerMode.NumericPages;
+        /* Sayfalama sistemi sayısal olucak. Yani 1 den başlayıp kaç kayıtlık sayfa oluştuysa o kadar sayıda bir buton dizesi dataGrid kontrolünün en altında yer alıcak.*/
 
-          dgKitap.AutoGenerateColumns=false; /* DataGrid kontrolümüzde yer alıcak kolonları kendimiz ayarlayacığımız için bu özelliğe false değerini aktadık.*/
+        dgKitap.AutoGenerateColumns = false;
+        /* DataGrid kontrolümüzde yer alıcak kolonları kendimiz ayarlayacığımız için bu özelliğe false değerini aktadık.*/
 
-     }
-     Baglan();
-     dgKitap.DataSource=dtKitaplar; /*DataGrid kontrolümüze veri kaynağı olarak dtKitaplar isimli DataTable nesnemizin bellekte işaret ettiği veri kümesini gösteriyoruz.*/
-     dgKitap.DataBind(); /* DataGrid kontrolündeki kolonları (bizim yazdığımız ve ayarladığımız kolonları) veri kaynağındaki ilgili alanlara bağlıyoruz.*/
+    }
+    Baglan();
+    dgKitap.DataSource = dtKitaplar;
+    /*DataGrid kontrolümüze veri kaynağı olarak dtKitaplar isimli DataTable nesnemizin bellekte işaret ettiği veri kümesini gösteriyoruz.*/
+    dgKitap.DataBind();
+    /* DataGrid kontrolündeki kolonları (bizim yazdığımız ve ayarladığımız kolonları) veri kaynağındaki ilgili alanlara bağlıyoruz.*/
 }
 ```
 

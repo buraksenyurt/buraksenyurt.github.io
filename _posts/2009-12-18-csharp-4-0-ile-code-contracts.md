@@ -39,9 +39,9 @@ namespace CodeContracts
     {
         static void Main(string[] args)
         {
-            ChinookContext context = new ChinookContext();        
+            ChinookContext context = new ChinookContext();
             context.CreateAlbum(null, 1);
-            Album result=context.CreateAlbum("The Best", 1);
+            Album result = context.CreateAlbum("The Best", 1);
             Contract.Ensures(result.Name.Length > 10, "Album nesnesinin oluşturulmasında albüm adının 10 karakterden fazla olması beklenir");
         }
     }
@@ -50,18 +50,29 @@ namespace CodeContracts
     {
         public Album CreateAlbum(string albumName, int albumId)
         {
-            Contract.Requires(!string.IsNullOrEmpty(albumName),"Album nesnesinin oluşturulması için Album adının null veya boş olmaması gerekir");
-            Album albm=new Album { 
-                AlbumId=albumId
-                ,Name=albumName };            
+            Contract.Requires(!string.IsNullOrEmpty(albumName), "Album nesnesinin oluşturulması için Album adının null veya boş olmaması gerekir");
+            Album albm = new Album
+            {
+                AlbumId = albumId
+                ,
+                Name = albumName
+            };
             return albm;
         }
     }
 
     class Album
     {
-        public int AlbumId { get; set; }
-        public string Name { get; set; }
+        public int AlbumId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -91,7 +102,7 @@ namespace CodeContracts
     {
         static void Main(string[] args)
         {
-            Product bardak = new Product(1000,"Bardak",3.45);
+            Product bardak = new Product(1000, "Bardak", 3.45);
         }
     }
 
@@ -101,8 +112,8 @@ namespace CodeContracts
         private string Name;
         private double ListPrice;
 
-        public Product(int pId,string pName,double pListPrice)
-        {            
+        public Product(int pId, string pName, double pListPrice)
+        {
             ProductId = pId;
             Name = pName;
             ListPrice = pListPrice;
@@ -111,8 +122,8 @@ namespace CodeContracts
         [ContractInvariantMethod]
         protected void InvariantCheck()
         {
-            Contract.Invariant(this.ProductId > -1,"Ürün numarası pozitif değer olmalıdır");
-            Contract.Invariant(this.Name.StartsWith("PRD-"),"Ürün adları PRD- ile başlamalı");
+            Contract.Invariant(this.ProductId > -1, "Ürün numarası pozitif değer olmalıdır");
+            Contract.Invariant(this.Name.StartsWith("PRD-"), "Ürün adları PRD- ile başlamalı");
             Contract.Invariant(this.ListPrice != 0, "Liste fiyatı 0 olamaz");
         }
     }

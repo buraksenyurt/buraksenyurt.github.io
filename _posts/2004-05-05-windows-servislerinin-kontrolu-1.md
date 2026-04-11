@@ -188,41 +188,45 @@ public ServiceController(string serviceName);
 ServiceController sınıfına ait nesne örneğini kullanarak servisimize ilişkin pek çok bilgiyi elde edebiliriz. Örneğin, servisin görünen adını DisplayName özelliği ile, servisin çalıştığı makine adını MachineName özelliği ile elde edebiliriz. ServiceController sınıfının üyeleri yardımıyla sistemimizde kurulu olan servislere ait pek çok bilgiyi temin edebiliriz. Bu konuyu bir sonraki makalemizde incelemeye çalışacağız. Şimdi dilerseniz servisimizi kontrol edeceğimiz kısa Windows uygulamamızın kodlarını yazalım.
 
 ```csharp
-ServiceController sc; /* Servisimizi kontrol edicek olan ServiceController sınıf nesnemiz tanımlanıyor.*/
+ServiceController sc;
+/* Servisimizi kontrol edicek olan ServiceController sınıf nesnemiz tanımlanıyor.*/
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    sc=new ServiceController("BosAlanTakipServis"); /* ServiceController nesnemiz, kullanmak istediğimiz servisin adını parametre olarak almak suretiyle oluşturuluyor.*/
-    lblServisAdi.Text=sc.DisplayName.ToString()+"/"+sc.MachineName.ToString(); /* Servisimizin , sistemdeki services kısmında görünen ismi ve üzerinde çalıştığı makine adı elde ediliyor ve label kontrolümüze ekleniyor.*/
+    sc = new ServiceController("BosAlanTakipServis");
+    /* ServiceController nesnemiz, kullanmak istediğimiz servisin adını parametre olarak almak suretiyle oluşturuluyor.*/
+    lblServisAdi.Text = sc.DisplayName.ToString() + "/" + sc.MachineName.ToString();
+    /* Servisimizin , sistemdeki services kısmında görünen ismi ve üzerinde çalıştığı makine adı elde ediliyor ve label kontrolümüze ekleniyor.*/
 }
 
 private void btnPeriyod_Click(object sender, System.EventArgs e)
 {
-    if(lbPeriyod.SelectedIndex==0)
+    if (lbPeriyod.SelectedIndex == 0)
     {
-        sc.ExecuteCommand(203); /* Servisimizdeki OnCustomCommand metodu çalıştırılıyor ve bu metoda parametre değeri olarak 203 gönderiliyor. Artık servisimiz, 203 parametre değerine göre bir takım işlevler gerçekleştirecek. 203 değeri karşılığında servisimizdeki OnCustomCommand metodu, log tutma süresini yarım saat olarak belirleyecektir.*/
+        sc.ExecuteCommand(203);
+        /* Servisimizdeki OnCustomCommand metodu çalıştırılıyor ve bu metoda parametre değeri olarak 203 gönderiliyor. Artık servisimiz, 203 parametre değerine göre bir takım işlevler gerçekleştirecek. 203 değeri karşılığında servisimizdeki OnCustomCommand metodu, log tutma süresini yarım saat olarak belirleyecektir.*/
     }
-    else if(lbPeriyod.SelectedIndex==1)
+    else if (lbPeriyod.SelectedIndex == 1)
     {
         sc.ExecuteCommand(204);
     }
-    else if(lbPeriyod.SelectedIndex==2)
+    else if (lbPeriyod.SelectedIndex == 2)
     {
         sc.ExecuteCommand(205);
-    } 
+    }
 }
 
 private void btnAltSinirAyarla_Click(object sender, System.EventArgs e)
 {
-    if(lbAltSinir.SelectedIndex==0) 
+    if (lbAltSinir.SelectedIndex == 0)
     {
         sc.ExecuteCommand(201);
     }
-    else if(lbAltSinir.SelectedIndex==1)
+    else if (lbAltSinir.SelectedIndex == 1)
     {
         sc.ExecuteCommand(200);
     }
-    else if(lbAltSinir.SelectedIndex==2)
+    else if (lbAltSinir.SelectedIndex == 2)
     {
         sc.ExecuteCommand(202);
     }

@@ -19,9 +19,9 @@ C# 2.0 ile gelen isimsiz (anonymous) metodları anlamak için öncelikle C# dili
 using System;
 
 namespace DefiningDelegate
-{ 
+{
     //Temsilcimiz iki adet double tipinden parametre alan ve geriye double tipinden değer döndüren metodları işaret edebilecek.
-    public delegate double Temsilci(double pi,double r);
+    public delegate double Temsilci(double pi, double r);
 
     class Class1
     {
@@ -29,16 +29,16 @@ namespace DefiningDelegate
         static void Main(string[] args)
         {
             // Temsilci nesnemiz oluşturuluyor ve Alan isimli metodu işaret edeceği söyleniyor.
-            Temsilci t=new Temsilci(Alan);
+            Temsilci t = new Temsilci(Alan);
             // Temsilcimizin çalışma zamanında işaret ettiği metod çağırılıyor.
-            double daire_Alani=t(3.14,10);
+            double daire_Alani = t(3.14, 10);
             Console.WriteLine(daire_Alani);
         }
-    
+
         // Tanımladığımız temsilci tarafından işaret edilebilecek formatta bir metod bildirimi.
-        static double Alan(double pi_Degeri,double yaricap)
+        static double Alan(double pi_Degeri, double yaricap)
         {
-            return pi_Degeri*(yaricap*yaricap);
+            return pi_Degeri * (yaricap * yaricap);
         }
     }
 }
@@ -56,18 +56,18 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace UsingAnonymousMethods
-{ 
+{
     // Temsilcimizi tanımlıyoruz.
-    public delegate double Temsilci(double a,double b);
+    public delegate double Temsilci(double a, double b);
 
     class Program
-    {    
+    {
         static void Main(string[] args)
         {
             // Temsilcimizi hem oluşturuyor hemde işaret edeceği metod bloğunu anonymous olarak tanımlıyoruz.
-            Temsilci t = delegate(double pi,double r) 
+            Temsilci t = delegate (double pi, double r)
             {
-                return pi * r*r;
+                return pi * r * r;
             };
             // Temsilcimizi parametreler ile birlikte çağırıyoruz ve dönüş değerini double tipinden bir değişkene atıyoruz.
             double alan = t(3.14, 10);
@@ -98,7 +98,7 @@ namespace UsingThreading1
         // Thread içinde çalışacak metodlarımız.
         static void Say1()
         {
-            for(int i=0;i<100;i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.Write(i);
                 Thread.Sleep(100);
@@ -107,7 +107,7 @@ namespace UsingThreading1
 
         static void Say2()
         {
-            for(int i=0;i<100;i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine(i);
                 Thread.Sleep(150);
@@ -118,11 +118,11 @@ namespace UsingThreading1
         static void Main(string[] args)
         {
             // ThreadStart temsilcilerimiz çalışma zamanında işaret edecekleri parametre olarak alacak         şekilde tanımlanıyor.
-            threadStart1=new ThreadStart(Say1);
-            threadStart2=new ThreadStart(Say2);
+            threadStart1 = new ThreadStart(Say1);
+            threadStart2 = new ThreadStart(Say2);
             // Thread nesnelerimiz ThreadStart temsilcilerinin parametre olarak alacak şekilde tanımlanıyor.
-            thread1=new Thread(threadStart1); 
-            thread2=new Thread(threadStart2);
+            thread1 = new Thread(threadStart1);
+            thread2 = new Thread(threadStart2);
             // Threadler çalıştırılmaya başlanıyor.
             thread1.Start();
             thread2.Start();
@@ -142,13 +142,13 @@ using System.Text;
 using System.Threading;
 
 namespace UsingAnonymousMethods
-{ 
+{
     class Program
     {
         // Thread içerisinde çalışacak metodumuz.
         static void Say1()
         {
-            for(int i=0;i<100;i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.Write(i);
                 Thread.Sleep(100);
@@ -158,13 +158,15 @@ namespace UsingAnonymousMethods
         static void Main(string[] args)
         {
             // İlk Thread nesnemizi örneklerken ThreadStart temsilcisinin işaret edeceği metodu burada anonymous metod olarak tanımlıyoruz.
-            Thread thread1=new Thread(delegate(){
+            Thread thread1 = new Thread(delegate ()
+            {
                 Say1();
             });
             // Tanımladığımız thread' i çalıştırıyoruz.
             thread1.Start();
             // İkinci Thread nesne örneğimizi oluşturuyoruz. Bu sefer thread1 nesnesinden farklı olarak anonymous metodumuz içerisine direkt kodları gömdük. thread1 nesnesinde ise kodları içeren metodu, anonymous metod bloğumuz içine gömmüştük.
-            Thread thread2 = new Thread(delegate(){
+            Thread thread2 = new Thread(delegate ()
+            {
                 for (int i = 0; i < 100; i++)
                 {
                     Console.WriteLine(i);
@@ -184,23 +186,23 @@ Bu örneğimizde, dikkat ederseniz button kontrolümüze Click event'ını yükl
 ```csharp
 public class Form1 : System.Windows.Forms.Form
 {
-    private System.Windows.Forms.Button btnAksiyon; 
-    
-   
+    private System.Windows.Forms.Button btnAksiyon;
+
+
     // Diğer kodlar
-    
+
     private void InitializeComponent()
     {
-        
-        
+
+
         // Diğer Kodlar
-        
+
         this.btnAksiyon.Click += new System.EventHandler(this.btnAksiyon_Click);
     }
-    
-    
+
+
     // Diğer Kodlar
-    
+
     private void btnAksiyon_Click(object sender, System.EventArgs e)
     {
         // Bir takım kodlar.
@@ -217,16 +219,16 @@ C# 2.0 Delegate Versiyonu
 ```csharp
 private void InitializeComponent()
 {
-    
+
     // Diğer kodlar
-    
-    this.btnOnay.Click += delegate(object sender, System.EventArgs arg)
+
+    this.btnOnay.Click += delegate (object sender, System.EventArgs arg)
     {
         System.Windows.Forms.MessageBox.Show("Onay");
-    };    
-    
+    };
+
     // Diğer kodlar
-    
+
 }
 ```
 

@@ -49,28 +49,37 @@ Bu özelliklerin, RowUpdating metodu içinde nasıl işlendiğini örnekler ile 
 /* Sql veritabanındaki Friends isimli veritabanındaki Kisiler isimli tabloya bağlanabilmek için bize gerekli olan nesneleri tanımlıyoruz. Bir OleDbConnection nesnesi, sql veritabanına bağlantı hattı çekmek için; bir OleDbDataAdapter nesnesi, Kisiler tablosundaki verileri, bağlantısız katman nesnemiz olan DataTable'ın veritabanında gösterdiği alana yüklemek ve verilerdeki değişiklikleri veritabanına yazmak için.*/
 OleDbConnection con;
 OleDbDataAdapter da;
-DataTable dt; 
+DataTable dt;
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    con=new OleDbConnection("provider=SQLOLEDB;data source=localhost;integrated security=sspi;database=Friends"); /* Bağlantı hattımız oluşturuluyor.*/
-    da=new OleDbDataAdapter("Select * From Kisiler",con); /* OleDbDataAdapter nesnemiz oluşturuluyor. */
-    da.RowUpdating+=new OleDbRowUpdatingEventHandler(RowUpdatingOlayi); /*OleDbDataAdapter nesnemiz için, RowUpdating olayını tanımlıyor ve oluşturuyoruz.*/
-    dt=new DataTable("Kisiler"); /* DataTable nesnemizin oluşturuluyor. */
+    con = new OleDbConnection("provider=SQLOLEDB;data source=localhost;integrated security=sspi;database=Friends");
+    /* Bağlantı hattımız oluşturuluyor.*/
+    da = new OleDbDataAdapter("Select * From Kisiler", con);
+    /* OleDbDataAdapter nesnemiz oluşturuluyor. */
+    da.RowUpdating += new OleDbRowUpdatingEventHandler(RowUpdatingOlayi);
+    /*OleDbDataAdapter nesnemiz için, RowUpdating olayını tanımlıyor ve oluşturuyoruz.*/
+    dt = new DataTable("Kisiler");
+    /* DataTable nesnemizin oluşturuluyor. */
 }
 
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    da.Fill(dt); /* DataTable nesnemizin bellekte işaret ettiği bölge, Kisiler tablosundaki veriler ile dolduruluyor.*/
-    dataGrid1.DataSource=dt; /* DataGrid nesnemize veri kaynağı olarak DataTable nesnemiz atanıyor.*/
+    da.Fill(dt);
+    /* DataTable nesnemizin bellekte işaret ettiği bölge, Kisiler tablosundaki veriler ile dolduruluyor.*/
+    dataGrid1.DataSource = dt;
+    /* DataGrid nesnemize veri kaynağı olarak DataTable nesnemiz atanıyor.*/
 }
 private void btnGuncelle_Click(object sender, System.EventArgs e)
-{         OleDbCommandBuilder cb=new OleDbCommandBuilder(da); /* OleDbDataAdapter nesnemiz için gerekli insert,delete ve update sql komutlarını otomatik olarak OleDbCommandBuilder yardımıyla oluştuyuroz.*/
-    da.Update(dt); /* DataTable'daki değişiklikler veritabanına gönderiliyor.*/
+{
+    OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
+    /* OleDbDataAdapter nesnemiz için gerekli insert,delete ve update sql komutlarını otomatik olarak OleDbCommandBuilder yardımıyla oluştuyuroz.*/
+    da.Update(dt);
+    /* DataTable'daki değişiklikler veritabanına gönderiliyor.*/
 }
 
 /* RowUpdating olayımız tetiklendiğinde bu yordamımız çalıştırılacak. */
-private void RowUpdatingOlayi(object Sender,OleDbRowUpdatingEventArgs arg)
+private void RowUpdatingOlayi(object Sender, OleDbRowUpdatingEventArgs arg)
 {
 
 }
@@ -79,16 +88,17 @@ private void RowUpdatingOlayi(object Sender,OleDbRowUpdatingEventArgs arg)
 Şimdi RowUpdating olayımızı incelemeye başlayalım. Örneğin, Row ve Status özelliklerini bir arada inceleyelim. Farzedelimki, KisiID numarası 1000 olan satırının hiç bir şekilde güncellenmesini istemiyoruz. Bu durumu değerlendirebileceğimiz en güzel yer, Update işlemi başarı ile gerçekleşmeden önceki yerdir. Yani RowUpdating metodu.
 
 ```csharp
-private void RowUpdatingOlayi(object sender,OleDbRowUpdatingEventArgs arg)
+private void RowUpdatingOlayi(object sender, OleDbRowUpdatingEventArgs arg)
 {
-    if(arg.StatementType==StatementType.Update) /* Eğer şu an yapılan işlem OleDbDataAdapter nesnesinin UpdateCommand metodunun içerdiği OleDbCommand'ı çalıştıracaksa bu kod bloğu devreye giriyor.*/
+    if (arg.StatementType == StatementType.Update) /* Eğer şu an yapılan işlem OleDbDataAdapter nesnesinin UpdateCommand metodunun içerdiği OleDbCommand'ı çalıştıracaksa bu kod bloğu devreye giriyor.*/
     {
-        if(arg.Row["KisiID"].ToString()=="1000") /* Şu an işlemde olan satırın KisiID alanının değerine bakıyoruz.*/
+        if (arg.Row["KisiID"].ToString() == "1000") /* Şu an işlemde olan satırın KisiID alanının değerine bakıyoruz.*/
         {
             listBox1.Items.Add("1000 nolu kaydı güncelleyemessiniz.");
-            arg.Status=UpdateStatus.SkipCurrentRow; /* SkipCurrentRow ile bu satırın güncellenmesini engelliyoruz.*/
-        } 
-    } 
+            arg.Status = UpdateStatus.SkipCurrentRow;
+            /* SkipCurrentRow ile bu satırın güncellenmesini engelliyoruz.*/
+        }
+    }
 }
 ```
 
@@ -107,19 +117,19 @@ Burada Ad alanındaki Burak Selim değerini Burak S. olarak değiştirdik. Bu de
 RowUpdating olayı ile ilgili verilebilecek bir diğer güzel örnek ise, henüz güncellenmiş olan bir satırın başka bir kullanıcı tarafından güncellenmek istenmesi gibi bir durumu kontrol altına almaktır. Bu olayda, o anki satıra ait Orjinal değerlere bakarak, güncellenmek istenen değerler ile aynı olup olmadığı araştırılır. Böyle bir sonuç çıkarsa kullanıcıya bu satırın zaten güncellendiği tekrar güncellemek isteyip istemeyeceği sorulabilir. Bu işlevi yerine getirmek için RowUpdating olayımızı aşağıdaki gibi şekillendirebiliriz.
 
 ```csharp
-private void RowUpdatingOlayi(object sender,OleDbRowUpdatingEventArgs arg)
+private void RowUpdatingOlayi(object sender, OleDbRowUpdatingEventArgs arg)
 {
-    if(arg.StatementType==StatementType.Update)
+    if (arg.StatementType == StatementType.Update)
     {
-        string sqlKomutu="SELECT * FROM Kisiler WHERE KisiID='"+arg.Row["KisiID",DataRowVersion.Original]+"' AND Ad='"+arg.Row["Ad",DataRowVersion.Original]+"' AND Soyad='"+arg.Row["Soyad",DataRowVersion.Original]+"' AND DogumTarihi='"+arg.Row["DogumTarihi",DataRowVersion.Original]+"' AND Meslek='"+arg.Row["Meslek",DataRowVersion.Original]+"'"; 
-        OleDbCommand cmd=new OleDbCommand(sqlKomutu,con);
+        string sqlKomutu = "SELECT * FROM Kisiler WHERE KisiID='" + arg.Row["KisiID", DataRowVersion.Original] + "' AND Ad='" + arg.Row["Ad", DataRowVersion.Original] + "' AND Soyad='" + arg.Row["Soyad", DataRowVersion.Original] + "' AND DogumTarihi='" + arg.Row["DogumTarihi", DataRowVersion.Original] + "' AND Meslek='" + arg.Row["Meslek", DataRowVersion.Original] + "'";
+        OleDbCommand cmd = new OleDbCommand(sqlKomutu, con);
         con.Open();
-        if(cmd.ExecuteNonQuery()==0)
+        if (cmd.ExecuteNonQuery() == 0)
         {
             listBox1.Items.Add("Bu satır zaten güncellenmiş.");
-            arg.Status=UpdateStatus.SkipCurrentRow;
+            arg.Status = UpdateStatus.SkipCurrentRow;
         }
-    } 
+    }
 }
 ```
 
@@ -140,7 +150,7 @@ Bununla birlikte ikinci kullanıcının bu noktadan sonra, D. ismini Demirci ola
 Gelelim RowUpdated olayına. Bu olay ise, Şekil 1'de görüldüğü gibi, veritabanına olan güncelleme işlemleri tamamıyla gerçekleştirildikten sonra oluşur ve eklenen, silinen, yada güncellenen her satır için tetiklenir. Bu olayın OleDbDataRowUpdatedEventArgs sınıfı türünden bir parametresi vardır. Bu sınıfın özellikleri OleDbDataRowUpdatingEventArgs sınıfının özellikleri ile aynıdır. Bununla birlikte kullanabileceğimiz ekstradan bir özelliği daha vardır. Bu özellik, RecordsAffected özelliğidir. Bu özellik ile, yapılan güncelleştirmeler sonucu etkilenen satır sayısını elde edebiliriz. Dilerseniz, bu olayı kodumuza uygulayalım. Örneğin yaptığımız güncelleştirmeler sonucu, bu güncelleştirmelerden etkilenen satır sayısını elde etmeye çalışalım. Öncelikle OleDbDataAdapter nesnemize, bu olayımızı ekliyoruz.
 
 ```csharp
-da.RowUpdated+=new OleDbRowUpdatedEventHandler(RowUpdatedOlayi);
+da.RowUpdated += new OleDbRowUpdatedEventHandler(RowUpdatedOlayi);
 ```
 
 Şimdide program kodlarımızı aşağıdaki gibi güncelleyelim.
@@ -149,31 +159,31 @@ da.RowUpdated+=new OleDbRowUpdatedEventHandler(RowUpdatedOlayi);
 private void btnGuncelle_Click(object sender, System.EventArgs e)
 {
     listBox1.Items.Clear();
-    OleDbCommandBuilder cb=new OleDbCommandBuilder(da); 
-    da.Update(dt); 
+    OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
+    da.Update(dt);
     dt.AcceptChanges();
 
-    listBox1.Items.Add("Girilen :"+girilen.ToString());
-    listBox1.Items.Add("Silinen :"+silinen.ToString());
-    listBox1.Items.Add("Guncellenen :"+guncellenen.ToString());
+    listBox1.Items.Add("Girilen :" + girilen.ToString());
+    listBox1.Items.Add("Silinen :" + silinen.ToString());
+    listBox1.Items.Add("Guncellenen :" + guncellenen.ToString());
 }
 
-public int girilen=0,silinen=0,guncellenen=0;
+public int girilen = 0, silinen = 0, guncellenen = 0;
 
-private void RowUpdatedOlayi(object sender,OleDbRowUpdatedEventArgs arg)
+private void RowUpdatedOlayi(object sender, OleDbRowUpdatedEventArgs arg)
 {
-    if(arg.StatementType==StatementType.Insert)
+    if (arg.StatementType == StatementType.Insert)
     {
-        girilen+=arg.RecordsAffected;
+        girilen += arg.RecordsAffected;
     }
-    else if (arg.StatementType==StatementType.Delete)
+    else if (arg.StatementType == StatementType.Delete)
     {
-        silinen+=arg.RecordsAffected;
+        silinen += arg.RecordsAffected;
     }
-    else if (arg.StatementType==StatementType.Update)
+    else if (arg.StatementType == StatementType.Update)
     {
-        guncellenen+=arg.RecordsAffected;
-    } 
+        guncellenen += arg.RecordsAffected;
+    }
 }
 ```
 

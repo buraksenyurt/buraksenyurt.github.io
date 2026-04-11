@@ -18,7 +18,7 @@ Servis sözleşmemiz;
 using System.ServiceModel;
 
 namespace NorthwindServices
-{    
+{
     [ServiceContract]
     public interface IProductService
     {
@@ -32,8 +32,8 @@ Uygulayıcı tip;
 
 ```csharp
 namespace NorthwindServices
-{    
-    public class ProductService 
+{
+    public class ProductService
         : IProductService
     {
         #region IProductService Members
@@ -42,9 +42,9 @@ namespace NorthwindServices
         {
             return new Product
             {
-                 Id=id,
-                 Name="Bisiklet(Hemde Kırmızı)",
-                 ListPrice=10.45
+                Id = id,
+                Name = "Bisiklet(Hemde Kırmızı)",
+                ListPrice = 10.45
             };
         }
 
@@ -61,12 +61,24 @@ using System.Runtime.Serialization;
 [DataContract]
 public class Product
 {
-    [DataMember]    
-    public int Id { get; set; }
     [DataMember]
-    public string Name { get; set; }
+    public int Id
+    {
+        get;
+        set;
+    }
     [DataMember]
-    public double ListPrice { get; set; }
+    public string Name
+    {
+        get;
+        set;
+    }
+    [DataMember]
+    public double ListPrice
+    {
+        get;
+        set;
+    }
 }
 ```
 
@@ -87,11 +99,11 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 
 namespace NorthwindServices
-{    
+{
     [ServiceContract]
     public interface IProductService
     {
-        [OperationContract]        
+        [OperationContract]
         [WebGet]
         Product GetProduct(int id);
     }

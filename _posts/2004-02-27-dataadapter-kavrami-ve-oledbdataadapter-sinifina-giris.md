@@ -46,12 +46,12 @@ Tablo 1. OleDbDataAdapter sınıfının yapıcı metodları.
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    string sqlIfadesi="Select * From Makale";
-    OleDbDataAdapter daFriends=new OleDbDataAdapter(sqlIfadesi,conFriends);
-    DataSet ds=new DataSet();
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    string sqlIfadesi = "Select * From Makale";
+    OleDbDataAdapter daFriends = new OleDbDataAdapter(sqlIfadesi, conFriends);
+    DataSet ds = new DataSet();
     daFriends.Fill(ds);
-    dgMakale.DataSource=ds;
+    dgMakale.DataSource = ds;
 }
 ```
 
@@ -66,18 +66,18 @@ OleDbDataAdapter nesnesinin Fill metodunu çağırdığımızda, nesne, parametr
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
 
-    string sqlIfadesi1="Select * From Makale";
-    string sqlIfadesi2="Select * From Kitap";
+    string sqlIfadesi1 = "Select * From Makale";
+    string sqlIfadesi2 = "Select * From Kitap";
 
-    OleDbDataAdapter daMakale=new OleDbDataAdapter(sqlIfadesi1,conFriends);
-    OleDbDataAdapter daKitap=new OleDbDataAdapter(sqlIfadesi2,conFriends);
+    OleDbDataAdapter daMakale = new OleDbDataAdapter(sqlIfadesi1, conFriends);
+    OleDbDataAdapter daKitap = new OleDbDataAdapter(sqlIfadesi2, conFriends);
 
-    DataSet ds=new DataSet();
+    DataSet ds = new DataSet();
     daMakale.Fill(ds);
     daKitap.Fill(ds);
-    dgMakale.DataSource=ds;
+    dgMakale.DataSource = ds;
 }
 ```
 
@@ -86,22 +86,22 @@ Bu uygulamada iki OleDbDataAdapter nesnesi aynı bağlantıyı kullanarak farkl�
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
 
-    string sqlIfadesi1="Select * From Makale";
-    string sqlIfadesi2="Select * From Kitap";
+    string sqlIfadesi1 = "Select * From Makale";
+    string sqlIfadesi2 = "Select * From Kitap";
 
-    OleDbDataAdapter daMakale=new OleDbDataAdapter(sqlIfadesi1,conFriends);
-    OleDbDataAdapter daKitap=new OleDbDataAdapter(sqlIfadesi2,conFriends);
+    OleDbDataAdapter daMakale = new OleDbDataAdapter(sqlIfadesi1, conFriends);
+    OleDbDataAdapter daKitap = new OleDbDataAdapter(sqlIfadesi2, conFriends);
 
-    DataSet ds=new DataSet();
+    DataSet ds = new DataSet();
 
     conFriends.Open();
 
     daMakale.Fill(ds);
     daKitap.Fill(ds);
 
-    dgMakale.DataSource=ds;
+    dgMakale.DataSource = ds;
 
     conFriends.Close();
 }
@@ -122,7 +122,7 @@ Görüldüğü gibi iki tablomuzda DataSet'e tek bir tablo ismi altında yüklen
 Bu elbette istemediğimiz bir durumdur. Bunu düzeltmek için, Fill metodunun aşağıdaki prototipi verilen aşırı yüklenmiş halini kullanırız.
 
 ```csharp
-public int Fill(DataSet dataSet,string srcTable);
+public int Fill(DataSet dataSet, string srcTable);
 ```
 
 Burada ikinci parametre aktarılan tablo için bir ismi string olarak almaktadır. Böylece, DataSet içerisine aktarılan tabloları isimlendirebiliriz. Nitekim OleDbDataAdapter sınıfı, Fill metodu ile tablolardaki verileri DataSet içine alırken, sadece alan adlarını eşleştirmek için alır. Tablo adları ile ilgilenmez. Bu nedenle bir tablo ismi belirtmessek, bu DataSet içerisine Table ismi ile alınacaktır. Biz Fill metoduna bir tablo ismini parametre olarak verdiğimizde, DataAdapter sınıfının TableMappings koleksiyonu, DataSet içinde bizim verdiğimiz tablo ismini, veri kaynağındaki ile eşleştirir. Dolayısıyla yukarıdaki kodları aşağıdaki gibi düzenlersek sonuç istediğimiz gibi olucaktır.
@@ -130,22 +130,22 @@ Burada ikinci parametre aktarılan tablo için bir ismi string olarak almaktadı
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
 
-    string sqlIfadesi1="Select * From Makale";
-    string sqlIfadesi2="Select * From Kitap";
+    string sqlIfadesi1 = "Select * From Makale";
+    string sqlIfadesi2 = "Select * From Kitap";
 
-    OleDbDataAdapter daMakale=new OleDbDataAdapter(sqlIfadesi1,conFriends);
-    OleDbDataAdapter daKitap=new OleDbDataAdapter(sqlIfadesi2,conFriends);
+    OleDbDataAdapter daMakale = new OleDbDataAdapter(sqlIfadesi1, conFriends);
+    OleDbDataAdapter daKitap = new OleDbDataAdapter(sqlIfadesi2, conFriends);
 
-    DataSet ds=new DataSet();
+    DataSet ds = new DataSet();
 
     conFriends.Open();
 
-    daMakale.Fill(ds,"Makaleler");
-    daKitap.Fill(ds,"Kitaplar");
+    daMakale.Fill(ds, "Makaleler");
+    daKitap.Fill(ds, "Kitaplar");
 
-    dgMakale.DataSource=ds;
+    dgMakale.DataSource = ds;
 
     conFriends.Close();
 }
@@ -162,12 +162,12 @@ Bazı durumlarda, toplu sorgular (batch queries) çalıştırmak isteyebiliriz. 
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial             catalog=Friends;integrated security=SSPI");
-    string sqlIfadesi="Select * From Makale;Select * From Kitap;Select * From Kisiler"; 
-    OleDbDataAdapter daMakale=new OleDbDataAdapter(sqlIfadesi,conFriends); 
-    DataSet ds=new DataSet();
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial             catalog=Friends;integrated security=SSPI");
+    string sqlIfadesi = "Select * From Makale;Select * From Kitap;Select * From Kisiler";
+    OleDbDataAdapter daMakale = new OleDbDataAdapter(sqlIfadesi, conFriends);
+    DataSet ds = new DataSet();
     daMakale.Fill(ds);
-    dgMakale.DataSource=ds;
+    dgMakale.DataSource = ds;
 }
 ```
 
@@ -180,17 +180,17 @@ Bu elbette uygulamamızın görselliği açısından çok hoş bir durum değild
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    string sqlIfadesi="Select * From Makale;Select * From Kitap;Select * From Kisiler"; 
-    OleDbDataAdapter da=new OleDbDataAdapter(sqlIfadesi,conFriends); 
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    string sqlIfadesi = "Select * From Makale;Select * From Kitap;Select * From Kisiler";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqlIfadesi, conFriends);
 
-    da.TableMappings.Add("Table","Makaleler");
-    da.TableMappings.Add("Table1","Kitaplar");
-    da.TableMappings.Add("Table2","Arkadaslarim");
+    da.TableMappings.Add("Table", "Makaleler");
+    da.TableMappings.Add("Table1", "Kitaplar");
+    da.TableMappings.Add("Table2", "Arkadaslarim");
 
-    DataSet ds=new DataSet();
+    DataSet ds = new DataSet();
     da.Fill(ds);
-    dgMakale.DataSource=ds;
+    dgMakale.DataSource = ds;
 }
 ```
 
@@ -205,20 +205,20 @@ Burada yapılan işlemi açıklayalım. OleDbDataAdapter nesnemizin, TableMappin
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    string sqlIfadesi="Select * From Makale"; 
-    OleDbDataAdapter da=new OleDbDataAdapter(sqlIfadesi,conFriends);
-    DataTable dt=new DataTable("Makalelerim");
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    string sqlIfadesi = "Select * From Makale";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqlIfadesi, conFriends);
+    DataTable dt = new DataTable("Makalelerim");
     da.Fill(dt);
-    dgMakale.DataSource=dt;
-    dgMakale.CaptionText=dt.TableName.ToString();
+    dgMakale.DataSource = dt;
+    dgMakale.CaptionText = dt.TableName.ToString();
 }
 ```
 
 Burada DataTable nesnemizi oluştururken parametre olarak String bir değer girdiğimize dikkat edelim. Bu değer, verilerin alındığı kümenin, hangi isimde bir tabloya işaret edeceğini belirtmektedir. Fill metodunun kullanım şeklinde ise parametre olarak DataTable nesnesini alan aşağıdaki prototip kullanılmıştır.
 
 ```csharp
-public int Fill (DataTable dataTable);
+public int Fill(DataTable dataTable);
 ```
 
 Son kodlarımızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
@@ -232,14 +232,14 @@ Fill metodunda dikkati çeken bir diğer nokta, döndürdüğü integer tipteki 
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    string sqlIfadesi="Select * From Makale"; 
-    OleDbDataAdapter da=new OleDbDataAdapter(sqlIfadesi,conFriends);
-    DataTable dt=new DataTable("Makalelerim");
-    int SatirSayisi=da.Fill(dt);
-    dgMakale.DataSource=dt;
-    dgMakale.CaptionText=dt.TableName.ToString();
-    MessageBox.Show("Makale Sayısı "+SatirSayisi.ToString());
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    string sqlIfadesi = "Select * From Makale";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqlIfadesi, conFriends);
+    DataTable dt = new DataTable("Makalelerim");
+    int SatirSayisi = da.Fill(dt);
+    dgMakale.DataSource = dt;
+    dgMakale.CaptionText = dt.TableName.ToString();
+    MessageBox.Show("Makale Sayısı " + SatirSayisi.ToString());
 }
 ```
 
@@ -258,12 +258,12 @@ Burada Fill metodu dört parametre almaktadır. İlk parametremiz verilerin ekle
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    string sqlIfadesi="Select * From Makale Order By Tarih Desc"; 
-    OleDbDataAdapter da=new OleDbDataAdapter(sqlIfadesi,conFriends);
-    DataSet ds=new DataSet("Makaleler");
-    int SatirSayisi=da.Fill(ds,0,3,"Son3Makale");
-    dgMakale.DataSource=ds;
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    string sqlIfadesi = "Select * From Makale Order By Tarih Desc";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqlIfadesi, conFriends);
+    DataSet ds = new DataSet("Makaleler");
+    int SatirSayisi = da.Fill(ds, 0, 3, "Son3Makale");
+    dgMakale.DataSource = ds;
 }
 ```
 
@@ -293,13 +293,13 @@ RETURN
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    OleDbCommand cmd=new OleDbCommand("Makaleler",conFriends);
-    cmd.CommandType=CommandType.StoredProcedure;
-    OleDbDataAdapter da=new OleDbDataAdapter(cmd);
-    DataSet ds=new DataSet();
-    da.Fill(ds,"TumMakaleler");
-    dgMakale.DataSource=ds;
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    OleDbCommand cmd = new OleDbCommand("Makaleler", conFriends);
+    cmd.CommandType = CommandType.StoredProcedure;
+    OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+    DataSet ds = new DataSet();
+    da.Fill(ds, "TumMakaleler");
+    dgMakale.DataSource = ds;
 }
 ```
 
@@ -320,11 +320,11 @@ Bu durumda kodlarımızı aşağıdaki gibi değiştirmemiz gerekmektedir.
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    OleDbConnection conFriends=new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
-    OleDbDataAdapter da=new OleDbDataAdapter("{CALL Makaleler}",conFriends);
-    DataSet ds=new DataSet();
-    da.Fill(ds,"TumMakaleler");
-    dgMakale.DataSource=ds;
+    OleDbConnection conFriends = new OleDbConnection("Provider=SQLOLEDB;Data Source=localhost;initial catalog=Friends;integrated security=SSPI");
+    OleDbDataAdapter da = new OleDbDataAdapter("{CALL Makaleler}", conFriends);
+    DataSet ds = new DataSet();
+    da.Fill(ds, "TumMakaleler");
+    dgMakale.DataSource = ds;
 }
 ```
 

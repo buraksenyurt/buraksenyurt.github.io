@@ -201,26 +201,26 @@ namespace HostApp
         static void Main(string[] args)
         {
             // Servisin sunulacağı base address bilgisi konfigurasyon dosyasından alınır.
-            Uri adres=new Uri(ConfigurationManager.AppSettings["adres"]);
+            Uri adres = new Uri(ConfigurationManager.AppSettings["adres"]);
             // Matematik tipi, Uri üzerinden host edilmek üzere ServiceHost nesne örneğine bildirilir.
             ServiceHost srv = new ServiceHost(typeof(Matematik), adres);
             // Servis açılırken çalışan event metodu
-            srv.Opening += delegate(object sender, EventArgs e)
+            srv.Opening += delegate (object sender, EventArgs e)
             {
                 Console.WriteLine("Servis açılıyor...");
             };
             // Servis açıldıktan sonraki event metodu
-            srv.Opened += delegate(object sender, EventArgs e)
+            srv.Opened += delegate (object sender, EventArgs e)
             {
                 Console.WriteLine("Servis açıldı...");
             };
             // Servis kapanırkenki event metodu
-            srv.Closing += delegate(object sender, EventArgs e)
+            srv.Closing += delegate (object sender, EventArgs e)
             {
                 Console.WriteLine("Servis kapanıyor...");
             };
             // Servis kapandığındaki event metodu
-            srv.Closed += delegate(object sender, EventArgs e)
+            srv.Closed += delegate (object sender, EventArgs e)
             {
                 Console.WriteLine("Servis kapandı...");
             };

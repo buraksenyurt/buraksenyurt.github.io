@@ -32,7 +32,7 @@ Uzak nesne sınıfı kodları;
 ```csharp
 namespace RemoteObjects
 {
-    public class Matematik:MarshalByRefObject
+    public class Matematik : MarshalByRefObject
     {
         public Matematik()
         {
@@ -53,7 +53,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        RemotingConfiguration.Configure("..\\..\\App.config",false);
+        RemotingConfiguration.Configure("..\\..\\App.config", false);
         Console.WriteLine("Sunucu dinlemede...");
         Console.ReadLine();
     }
@@ -265,7 +265,7 @@ Daha sonra ise, yeni proxy assembly'ımızın dll dosyasını istemci uygulamam�
 Şimdi istemcimize ait kodları aşağıdaki gibi değiştirelim.
 
 ```csharp
-RemotingConfiguration.Configure("..\\..\\App.config",false);
+RemotingConfiguration.Configure("..\\..\\App.config", false);
 Matematik mt = new Matematik();
 Console.WriteLine(mt.Toplam(3, 4).ToString());
 ```
@@ -284,16 +284,17 @@ using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Metadata;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Runtime.InteropServices;
-namespace RemoteObjects 
+namespace RemoteObjects
 {
-    [Serializable, SoapType(XmlNamespace=@"http://schemas.microsoft.com/clr/nsassem/RemoteObjects/RemoteObjects%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull", XmlTypeNamespace=@"http://schemas.microsoft.com/clr/nsassem/RemoteObjects/RemoteObjects%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull")][ComVisible(true)]
+    [Serializable, SoapType(XmlNamespace = @"http://schemas.microsoft.com/clr/nsassem/RemoteObjects/RemoteObjects%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull", XmlTypeNamespace = @"http://schemas.microsoft.com/clr/nsassem/RemoteObjects/RemoteObjects%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull")]
+    [ComVisible(true)]
     public class Matematik : System.MarshalByRefObject
     {
-        [SoapMethod(SoapAction=@"http://schemas.microsoft.com/clr/nsassem/RemoteObjects.Matematik/
+        [SoapMethod(SoapAction = @"http://schemas.microsoft.com/clr/nsassem/RemoteObjects.Matematik/
 RemoteObjects#Toplam")]
         public Double Toplam(Double deger1, Double deger2)
         {
-            return((Double) (Object) null);
+            return ((Double)(Object)null);
         }
     }
 }

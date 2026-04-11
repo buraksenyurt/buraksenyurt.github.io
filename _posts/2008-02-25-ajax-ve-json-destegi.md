@@ -40,7 +40,7 @@ using System.ServiceModel.Web;
 
 namespace OrtakIslemler
 {
-    [ServiceContract(Namespace="OrtakServis")]
+    [ServiceContract(Namespace = "OrtakServis")]
     public interface IMatematik
     {
         [OperationContract]
@@ -224,29 +224,53 @@ namespace JSONSerilestirme
         [DataMember]
         public DateTime StokGirisTarihi
         {
-            get { return _stokGirisTarihi; }
-            set { _stokGirisTarihi = value; }
+            get
+            {
+                return _stokGirisTarihi;
+            }
+            set
+            {
+                _stokGirisTarihi = value;
+            }
         }
 
         [DataMember]
         public double Fiyat
         {
-            get { return _fiyat; }
-            set { _fiyat = value; }
+            get
+            {
+                return _fiyat;
+            }
+            set
+            {
+                _fiyat = value;
+            }
         }
 
         [DataMember]
         public string Ad
         {
-            get { return _ad; }
-            set { _ad = value; }
+            get
+            {
+                return _ad;
+            }
+            set
+            {
+                _ad = value;
+            }
         }
 
         [DataMember]
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
 
         public Urun(int id, string ad, double fiyat, DateTime stokGirisTarihi)
@@ -277,7 +301,7 @@ namespace JSONSerilestirme
             Urun dvd = new Urun(1, "Double Layer DVD Box 150", 30, DateTime.Now);
 
             #region Kullanıcı tanımlı bir tipi JSON Serileştirme
-    
+
             // Json serileştirme işlemleri için DataContractSerializer tipi örneklenir. Örnekleme işlemi sırasında parametre olarak serileştirilecek olan tip belirtilir.
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Urun));
             // Serileştirme örnek olarak bir dosyaya doğru yapılacaktır.
@@ -288,15 +312,15 @@ namespace JSONSerilestirme
             }
 
             #endregion
-    
+
             #region JSON datasını DeSerialize edip Object haline getirme
-    
+
             // Dosyadaki veriden nesne elde edileceği için FileStream oluşturulur.
             using (FileStream stream = new FileStream("UrunJason.xml", FileMode.Open, FileAccess.Read))
             {
                 // ReadObject metodu ile stream ile belirtilen dosya içerisindeki JSON formatlı veri okunur Object olarak elde edilir. Sonrasında ise kullanılabilmesi için Urun tipine cast edilir.
                 Urun okunanDvd = (Urun)serializer.ReadObject(stream);
-                Console.WriteLine(okunanDvd.Id+" "+okunanDvd.Ad+" "+okunanDvd.Fiyat.ToString("C2")+" "+okunanDvd.StokGirisTarihi.ToString());
+                Console.WriteLine(okunanDvd.Id + " " + okunanDvd.Ad + " " + okunanDvd.Fiyat.ToString("C2") + " " + okunanDvd.StokGirisTarihi.ToString());
             }
 
             #endregion
@@ -332,8 +356,8 @@ using (FileStream stream = new FileStream("Urunler.json", FileMode.Create, FileA
 
 using (FileStream stream = new FileStream("Urunler.json", FileMode.Open, FileAccess.Read))
 {
-    Urun[] gelenUrunler=(Urun[])arraySerializer.ReadObject(stream);
-    foreach(Urun urn in gelenUrunler)
+    Urun[] gelenUrunler = (Urun[])arraySerializer.ReadObject(stream);
+    foreach (Urun urn in gelenUrunler)
         Console.WriteLine(urn.Ad);
 }
 ```
@@ -406,12 +430,12 @@ using System.Data.SqlClient;
 
 namespace VeriServisKutuphanesi
 {
-    [ServiceContract(Namespace="AdventureVeriHizmeti")]
+    [ServiceContract(Namespace = "AdventureVeriHizmeti")]
     public interface IVeriIslemleri
     {
         [OperationContract]
         [WebInvoke(ResponseFormat = WebMessageFormat.Json)]
-        Urun UrunBul(int urunId); 
+        Urun UrunBul(int urunId);
     }
 
     public class VeriIslemleri
@@ -431,11 +455,11 @@ namespace VeriServisKutuphanesi
                 if (reader.Read())
                 {
                     u = new Urun()
-                                        {
-                                            Id=Convert.ToInt32(reader["ProductID"]),
-                                            Ad=reader["Name"].ToString(),
-                                            Fiyat=Convert.ToDouble(reader["ListPrice"])
-                                        };
+                    {
+                        Id = Convert.ToInt32(reader["ProductID"]),
+                        Ad = reader["Name"].ToString(),
+                        Fiyat = Convert.ToDouble(reader["ListPrice"])
+                    };
                 }
             }
             return u;

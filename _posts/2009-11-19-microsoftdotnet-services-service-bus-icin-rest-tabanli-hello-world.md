@@ -46,26 +46,26 @@ namespace ServerApp
     // Servisi uygulayan tip
     [ServiceBehavior(Name = "DailyFoodListService", Namespace = "http://www.buraksenyurt.com/MyFoodCompany")]
     public class DailyFoodListService
-        :IDailyFoodListContract
+        : IDailyFoodListContract
     {
         #region IDailyFoodListContract Members
-        
+
         // GetDailyFoodList metodu RSS 2.0 Formatında basit bir Syndication içeriği döndürmektedir.
         public Rss20FeedFormatter GetDailyFoodList(string Day)
         {
             // Öncelikli olarak Feed oluşturulur
             SyndicationFeed foodFeed = new SyndicationFeed();
-            foodFeed.Id=String.Format("Day_{0}",Day);
+            foodFeed.Id = String.Format("Day_{0}", Day);
             foodFeed.Title = new TextSyndicationContent("Günlük Yemek Listesi");
 
             // Feed içerisindeki Item listesi hazırlanır
             List<SyndicationItem> foodItems = new List<SyndicationItem>();
-            foodItems.Add(new SyndicationItem( "Aperatifler","Patlıcanlı Musakka", new Uri("http://myfoodcompany/Food/Musakka"), "10001", DateTime.Now));
+            foodItems.Add(new SyndicationItem("Aperatifler", "Patlıcanlı Musakka", new Uri("http://myfoodcompany/Food/Musakka"), "10001", DateTime.Now));
             foodItems.Add(new SyndicationItem("Çorbalar", "Mercimek Çorbası", new Uri("http://myfoodcompany/Food/MercimekCorba"), "12034", DateTime.Now));
             foodItems.Add(new SyndicationItem("Ana Yemekler", "Mozeralla Peynirli Makarna", new Uri("http://myfoodcompany/Food/MakarnaMozeralla"), "10025", DateTime.Now));
 
             // Item listesi feed' e eklenir.
-            foodFeed.Items=foodItems;
+            foodFeed.Items = foodItems;
 
             // RSS 2.0 formatındaki Feed içeriği üretimi için SyndicationFeed nesne örneği Rss20FeedFormatter sınıfının yapıcı metoduna parametre olarak geçirilir.
             return new Rss20FeedFormatter(foodFeed);
@@ -90,7 +90,7 @@ namespace ServerApp
             WebServiceHost host = new WebServiceHost(typeof(DailyFoodListService), address);
             host.Open(); // Servis açılır
 
-            Console.WriteLine("Servis açıldı. Servis durumu {0}\nService Adresi {1}", host.State,address.ToString());
+            Console.WriteLine("Servis açıldı. Servis durumu {0}\nService Adresi {1}", host.State, address.ToString());
             Console.WriteLine("Operasyon Adı : GetDailyFoodList\n");
             Console.WriteLine("Çıkmak için bir tuşa basınız");
             Console.ReadLine();

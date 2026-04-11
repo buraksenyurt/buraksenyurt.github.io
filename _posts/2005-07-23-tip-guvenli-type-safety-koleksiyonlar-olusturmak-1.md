@@ -37,31 +37,49 @@ namespace StrongCollections
 
         public string Baslik
         {
-            get{return m_Baslik;}
-            set{m_Baslik=value;}
+            get
+            {
+                return m_Baslik;
+            }
+            set
+            {
+                m_Baslik = value;
+            }
         }
         public int Fiyat
         {
-            get{return m_Fiyat;}
-            set{m_Fiyat=value;}
+            get
+            {
+                return m_Fiyat;
+            }
+            set
+            {
+                m_Fiyat = value;
+            }
         }
         public DateTime YapimYili
         {
-            get{return m_YapimYili;}
-            set{m_YapimYili=value;}
+            get
+            {
+                return m_YapimYili;
+            }
+            set
+            {
+                m_YapimYili = value;
+            }
         }
-        public Dvd(string baslik,int fiyat,DateTime yapimYili)
+        public Dvd(string baslik, int fiyat, DateTime yapimYili)
         {
-            Baslik=baslik;
-            Fiyat=fiyat;
-            YapimYili=yapimYili;
+            Baslik = baslik;
+            Fiyat = fiyat;
+            YapimYili = yapimYili;
         }
         public Dvd()
         {
         }
         public override string ToString()
         {
-            return this.Baslik+" "+this.Fiyat+" "+this.YapimYili.ToShortDateString();
+            return this.Baslik + " " + this.Fiyat + " " + this.YapimYili.ToShortDateString();
         }
     }
 }
@@ -79,7 +97,7 @@ using System.Collections;
 
 namespace StrongCollections
 {
-    public class DvdKoleksiyon:CollectionBase
+    public class DvdKoleksiyon : CollectionBase
     {
         public void Ekle(Dvd dvd)
         {
@@ -91,16 +109,22 @@ namespace StrongCollections
         }
         public Dvd this[int indeks]
         {
-            get{return (Dvd)this.List[indeks];}
-            set{this.List[indeks]=value;}
+            get
+            {
+                return (Dvd)this.List[indeks];
+            }
+            set
+            {
+                this.List[indeks] = value;
+            }
         }
         public void Cikart(int indeks)
         {
             this.List.RemoveAt(indeks);
         }
-        public void Ekle(int indeks,Dvd dvd)
+        public void Ekle(int indeks, Dvd dvd)
         {
-            this.List.Insert(indeks,dvd);
+            this.List.Insert(indeks, dvd);
         }
         public DvdKoleksiyon()
         {
@@ -124,8 +148,8 @@ namespace StrongCollections
         static DvdKoleksiyon dvdCol;
 
         static void Listele()
-        { 
-            foreach(Dvd dvd in dvdCol)
+        {
+            foreach (Dvd dvd in dvdCol)
             {
                 Console.WriteLine(dvd.ToString());
             }
@@ -134,17 +158,17 @@ namespace StrongCollections
 
         static void KoleksiyonOlustur()
         {
-            dvdCol.Ekle(new Dvd("Gladiator",10,new DateTime(2000,1,1)));
-            dvdCol.Ekle(new Dvd("Star Wars 3",20,new DateTime(2005,1,4)));
-            dvdCol.Ekle(new Dvd("Crow",15,new DateTime(1997,3,9)));
-        } 
+            dvdCol.Ekle(new Dvd("Gladiator", 10, new DateTime(2000, 1, 1)));
+            dvdCol.Ekle(new Dvd("Star Wars 3", 20, new DateTime(2005, 1, 4)));
+            dvdCol.Ekle(new Dvd("Crow", 15, new DateTime(1997, 3, 9)));
+        }
 
         static void Main(string[] args)
         {
-            dvdCol=new DvdKoleksiyon();
+            dvdCol = new DvdKoleksiyon();
             KoleksiyonOlustur();
 
-            for(int i=0;i<dvdCol.Count;i++)
+            for (int i = 0; i < dvdCol.Count; i++)
             {
                 Console.WriteLine(dvdCol[i].ToString());
             }
@@ -173,21 +197,21 @@ Burada problem Ekle metoduna sayısal bir değerin parametre olarak girilmeye ç
 ```csharp
 public void Ekle(Dvd dvd)
 {
-     this.List.Add(dvd);
+    this.List.Add(dvd);
 }
-public void Ekle(int indeks,Dvd dvd)
+public void Ekle(int indeks, Dvd dvd)
 {
-     this.List.Insert(indeks,dvd);
+    this.List.Insert(indeks, dvd);
 }
 ```
 
 parametre olarak sadece Dvd tipinden nesneleri aldıklarını görebiliriz. Bu nedenle kod derleme zamanında hata vererek geliştiricinin çalışma zamanında bir hataya düşmesini engellemiştir. İşte bu tip güvenliğini sağlar. Benzer şekilde koleksiyondan okuduğumuz bir Dvd nesnesini farklı bir nesne tipine de atayamayız. Örneğin aşağıdaki kod parçasını göz önüne alalım.
 
 ```csharp
-Kitap ktp=new Kitap();
-ktp=(Kitap)dvdCol[0];
+Kitap ktp = new Kitap();
+ktp = (Kitap)dvdCol[0];
 
-double dbl=(double)dvdCol[0];
+double dbl = (double)dvdCol[0];
 ```
 
 Bu durumda derleme zamanında aşağıdaki hata mesajlarını alırız.
@@ -205,14 +229,14 @@ Oysaki, bir ArrayList göz önüne alındığında geriye dönen değer her zama
 CollectionBase'den türettiğimiz sınıfların sağladığı tip güvenliği daha iyi anlayabilmek için Dvd nesnelerini taşıyacak bir ArrayList koleksiyonunun kullanıldığı aşağıdaki örneği göz önüne almakta fayda var.
 
 ```csharp
-ArrayList alDvd=new ArrayList();
+ArrayList alDvd = new ArrayList();
 
-alDvd.Add(new Dvd("Gıladyatör",10,new DateTime(2000,1,1)));
-alDvd.Add(new Dvd("Sıtar vars 3",20,new DateTime(2005,1,4)));
-alDvd.Add(new Dvd("kırouv",15,new DateTime(1997,3,9)));
-alDvd.Add(12); 
+alDvd.Add(new Dvd("Gıladyatör", 10, new DateTime(2000, 1, 1)));
+alDvd.Add(new Dvd("Sıtar vars 3", 20, new DateTime(2005, 1, 4)));
+alDvd.Add(new Dvd("kırouv", 15, new DateTime(1997, 3, 9)));
+alDvd.Add(12);
 
-foreach(Dvd dvd in alDvd)
+foreach (Dvd dvd in alDvd)
 {
     Console.WriteLine(dvd.ToString());
 }
@@ -225,7 +249,7 @@ Yazılan kod son derece masumane görünmektedir. Üstelik derleme zamanında hi
 Sorun foreach döngüsünde açıkça görülmektedir. foreach döngüsü sadece Dvd tipinden elemanlar üzerinde bir öteleme gerçekleştirmek isterken koleksiyonun sonuna eklenen sayısal değer bu durumu bozmaktadır. Eğer foreach döngüsünü terk edip aşağıdaki gibi bir for döngüsünü tercih ederseniz durum biraz daha ilginç bir hal alacaktır.
 
 ```csharp
-for(int i=0;i<alDvd.Count;i++)
+for (int i = 0; i < alDvd.Count; i++)
 {
     Console.WriteLine(alDvd[i].ToString());
 }

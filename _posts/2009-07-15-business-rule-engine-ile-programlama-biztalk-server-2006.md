@@ -48,12 +48,24 @@ Oluşturduğumuz CompanyRules isimli sınıf kütüphanesinde yer alan kod içer
 ```csharp
 namespace CompanyRules
 {
-    public class Product
-    {
-        public int ProductId { get; set; }
-        public int Count { get; set; }        
-        public bool StockLevelOk { get; set; }
-    }
+    public class Product
+    {
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        public int Count
+        {
+            get;
+            set;
+        }
+        public bool StockLevelOk
+        {
+            get;
+            set;
+        }
+    }
 }
 ```
 
@@ -68,7 +80,7 @@ using Microsoft.RuleEngine;
 namespace CompanyRules
 {
     public class ProductFactCreator
-        :IFactCreator
+        : IFactCreator
     {
         #region IFactCreator Members
 
@@ -76,8 +88,8 @@ namespace CompanyRules
         {
             Product prod = new Product
             {
-                 Count=100,
-                  ProductId=10001                   
+                Count = 100,
+                ProductId = 10001
             };
             return new object[] { prod };
         }
@@ -146,7 +158,7 @@ namespace Company
             Policy policy = new Policy("Policy2", 1, 0);
             policy.Execute(prd);
 
-            Console.WriteLine("{0} için , Stock Level Ok ? {1}",prd.ProductId,prd.StockLevelOk);
+            Console.WriteLine("{0} için , Stock Level Ok ? {1}", prd.ProductId, prd.StockLevelOk);
 
             prd.Count += 10;
             policy.Execute(prd);

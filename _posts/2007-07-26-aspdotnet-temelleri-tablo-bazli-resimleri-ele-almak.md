@@ -28,18 +28,18 @@ Eminimki ResimGoster isimli web sayfasının içeriği son derece ilginç gelmi�
 
 ```csharp
 protected void Page_Load(object sender, EventArgs e)
-{ 
+{
     string resimId = Request.QueryString["ResimId"];
     if (!String.IsNullOrEmpty(resimId))
     {
-        byte[] resimBytes=null;
+        byte[] resimBytes = null;
         using (SqlConnection conn = new SqlConnection("data source=localhost;database=AdventureWorks;integrated security=SSPI"))
         {
             SqlCommand cmd = new SqlCommand("Select ThumbNailPhoto From Production.ProductPhoto  Where ProductPhotoId=@PhotoId", conn);
             cmd.Parameters.AddWithValue("@PhotoId", resimId);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess);
-            if(reader.Read())
+            if (reader.Read())
                 resimBytes = reader.GetSqlBytes(0).Value;
             reader.Close();
             if (resimBytes != null)
@@ -49,7 +49,7 @@ protected void Page_Load(object sender, EventArgs e)
             }
             else
                 Response.Write("Resim gösterilemiyor.");
-        } 
+        }
     }
     else
         Response.Write("ResimId parametresi eksik yada hatalı.");

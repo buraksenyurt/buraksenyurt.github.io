@@ -34,73 +34,73 @@ Kodlarımız ise aşağıdaki gibi olacaktır.
 
 ```csharp
 /*global değişkenlerimizi tanımlıyoruz. */
-float Top1_X,Top1_Y,Top2_X,Top2_Y,Top1_R,Top2_R;
-double Hipotenus,YaricapToplam;
+float Top1_X, Top1_Y, Top2_X, Top2_Y, Top1_R, Top2_R;
+double Hipotenus, YaricapToplam;
 
 /*X,Y Koordinatlari ile yariçaplar belirleniyor.*/
 private void Hesapla()
 {
-    Top1_R=Top1.Width/2;
-    Top1_X=Top1.Left+Top1_R;
-    Top1_Y=Top1.Top+Top1_R;
+    Top1_R = Top1.Width / 2;
+    Top1_X = Top1.Left + Top1_R;
+    Top1_Y = Top1.Top + Top1_R;
 
-    Top2_R=Top2.Width/2;
-    Top2_X=Top2.Left+Top2_R;
-    Top2_Y=Top2.Top+Top2_R;
+    Top2_R = Top2.Width / 2;
+    Top2_X = Top2.Left + Top2_R;
+    Top2_Y = Top2.Top + Top2_R;
 
-    float Fark_X=Math.Abs(Top1_X-Top2_X);
-    float Fark_Y=Math.Abs(Top1_Y-Top2_Y);
+    float Fark_X = Math.Abs(Top1_X - Top2_X);
+    float Fark_Y = Math.Abs(Top1_Y - Top2_Y);
 
-    Hipotenus=Math.Sqrt((Fark_X*Fark_X)+(Fark_Y*Fark_Y));
+    Hipotenus = Math.Sqrt((Fark_X * Fark_X) + (Fark_Y * Fark_Y));
 
-    YaricapToplam=Top1_R+Top2_R;
+    YaricapToplam = Top1_R + Top2_R;
 }
 
 /* Ölçümleri ekrana yazdırmak için string değer döndüren bir metod hazırlıyoruz.*/
 private string Olcumler()
 {
-    string olcum="Top 1 için X:"+Top1_X.ToString();
-    olcum+=" Y:"+Top1_Y.ToString();
-    olcum+=" R:"+Top1_R.ToString();
-    olcum+=" | Top 2 için X:"+Top2_X.ToString();
-    olcum+=" Y:"+Top2_Y.ToString();
-    olcum+=" R:"+Top2_R.ToString();
-    olcum+=" | Hipotenüs:"+Hipotenus.ToString();
+    string olcum = "Top 1 için X:" + Top1_X.ToString();
+    olcum += " Y:" + Top1_Y.ToString();
+    olcum += " R:" + Top1_R.ToString();
+    olcum += " | Top 2 için X:" + Top2_X.ToString();
+    olcum += " Y:" + Top2_Y.ToString();
+    olcum += " R:" + Top2_R.ToString();
+    olcum += " | Hipotenüs:" + Hipotenus.ToString();
     return olcum;
 }
 
 private void frmCollision2_Load(object sender, System.EventArgs e)
-{ 
+{
     Hesapla();
-    lblOlcumler.Text=Olcumler();
+    lblOlcumler.Text = Olcumler();
 }
 
 /* Form üzerinde A,S,D,W tuşlarına basıldığında, Top2 isimli pictureBox' ın hareket etmesini sağlıyoruz.*/
 private void frmCollision2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
 {
-    if(e.KeyChar==(Char)Keys.A)
+    if (e.KeyChar == (Char)Keys.A)
     {
-        Top2.Left-=1;
+        Top2.Left -= 1;
         Hesapla();
-        lblOlcumler.Text=Olcumler();
+        lblOlcumler.Text = Olcumler();
     }
-    if(e.KeyChar==(Char)Keys.D)
+    if (e.KeyChar == (Char)Keys.D)
     {
-        Top2.Left+=1;
+        Top2.Left += 1;
         Hesapla();
-        lblOlcumler.Text=Olcumler();
-    } 
-    if(e.KeyChar==(Char)Keys.S)
-    {
-        Top2.Top+=1;
-        Hesapla();
-        lblOlcumler.Text=Olcumler();
+        lblOlcumler.Text = Olcumler();
     }
-    if(e.KeyChar==(Char)Keys.W)
+    if (e.KeyChar == (Char)Keys.S)
     {
-        Top2.Top-=1;
+        Top2.Top += 1;
         Hesapla();
-        lblOlcumler.Text=Olcumler();
+        lblOlcumler.Text = Olcumler();
+    }
+    if (e.KeyChar == (Char)Keys.W)
+    {
+        Top2.Top -= 1;
+        Hesapla();
+        lblOlcumler.Text = Olcumler();
     }
     Kontrol();
 }
@@ -108,32 +108,32 @@ private void frmCollision2_KeyPress(object sender, System.Windows.Forms.KeyPress
 /* Çarpışma kontrolümüzü yapıyoruz. */
 private void Kontrol()
 {
-    if(Hipotenus<YaricapToplam)
+    if (Hipotenus < YaricapToplam)
     {
-        this.Text="";
-        this.Text+=" |!!! ÇARPISMA VAR !!!| ";
+        this.Text = "";
+        this.Text += " |!!! ÇARPISMA VAR !!!| ";
     }
     else
-        this.Text="";
+        this.Text = "";
 }
 ```
 
 Kodlarımız son derece açık. Dikkat etmemiz gereken noktalardan birisi, Top1 ve Top2 isimli nesnelerin X ve Y koordinatlarının bulunmasıdır. Burada Left ve Top özelliklerinin yanısıra daire merkezlerini tam olarak bulabilmek için, Width veya Height (daire olduklarından X veya Y'ye eklenecek mesafelerin Width veya Height ile hesaplanması farketmez) değerlerinden birisinide göz önüne almamız gerekir. Yani aşağıdaki kodlarda olduğu gibi;
 
 ```csharp
-Top1_R=Top1.Width/2;
-Top1_X=Top1.Left+Top1_R;
-Top1_Y=Top1.Top+Top1_R;
+Top1_R = Top1.Width / 2;
+Top1_X = Top1.Left + Top1_R;
+Top1_Y = Top1.Top + Top1_R;
 
-Top2_R=Top2.Width/2;
-Top2_X=Top2.Left+Top2_R;
-Top2_Y=Top2.Top+Top2_R;
+Top2_R = Top2.Width / 2;
+Top2_X = Top2.Left + Top2_R;
+Top2_Y = Top2.Top + Top2_R;
 ```
 
 Bunun dışında hipotenüs hesaplamasında elbette ki karekök almak için Math sınıfının Sqrt fonksiyonundan yararlanmaktayız.
 
 ```csharp
-Hipotenus=Math.Sqrt((Fark_X*Fark_X)+(Fark_Y*Fark_Y));
+Hipotenus = Math.Sqrt((Fark_X * Fark_X) + (Fark_Y * Fark_Y));
 ```
 
 Uygulamamızı çalıştırdığımızda, Top2 isimli nesneyi herhangi bir yönden Top1 isimli nesnenin üstüne getirirsek çarpışmanın meydana geldiğini kolayca tespit edebiliriz.

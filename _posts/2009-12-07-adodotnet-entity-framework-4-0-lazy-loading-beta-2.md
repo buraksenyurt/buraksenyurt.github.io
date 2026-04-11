@@ -35,7 +35,7 @@ namespace Before
                              select a;
 
                 foreach (Album albm in albums)
-                    Console.WriteLine("{0} [{1}]",albm.Title,albm.Track.Count.ToString());
+                    Console.WriteLine("{0} [{1}]", albm.Title, albm.Track.Count.ToString());
 
             }
         }
@@ -63,7 +63,7 @@ Aslında var. Dikkat edileceği üzere güncel Album Entity nesnesi ile ilişkil
 
 ```csharp
 var albums = from a in context.Album.Include("Track")
-                             select a;
+             select a;
 ```
 
 Bu durumda çalışma zamanı görüntüsü aşağıdaki gibi olacaktır.
@@ -118,8 +118,8 @@ Diğer bir teknik ise Load metodunun kullanılmasıdır. Bu amaçla foreach dön
 ```csharp
 foreach (Album albm in albums)
 {
-   albm.Track.Load();
-   Console.WriteLine("{0} [{1}]", albm.Title, albm.Track.Count.ToString());
+    albm.Track.Load();
+    Console.WriteLine("{0} [{1}]", albm.Title, albm.Track.Count.ToString());
 }
 ```
 
@@ -156,7 +156,7 @@ namespace ReallyLazy
 
                 foreach (Album albm in albumsWithTracks)
                 {
-                    Console.WriteLine("{0} ({1})",albm.Title,albm.Tracks.Count.ToString());
+                    Console.WriteLine("{0} ({1})", albm.Title, albm.Tracks.Count.ToString());
                 }
             }
         }

@@ -19,7 +19,11 @@ namespace Problem
     // Low Level Class
     class XmlContent
     {
-        public string Content { get; set; }
+        public string Content
+        {
+            get;
+            set;
+        }
 
         public void Parse()
         {
@@ -30,7 +34,11 @@ namespace Problem
     // High Level Class
     class Parser
     {
-        XmlContent xContent { get; set; }
+        XmlContent xContent
+        {
+            get;
+            set;
+        }
 
         public Parser(XmlContent xmlContent)
         {
@@ -77,18 +85,26 @@ namespace Solution
     // Abstraction Layer
     interface IContent
     {
-        string Content { get; set; }
+        string Content
+        {
+            get;
+            set;
+        }
 
         void Parse();
     }
 
     // Low Level Class
     class XmlContent
-        :IContent
+        : IContent
     {
         #region IContent Members
 
-        public string Content { get; set; }
+        public string Content
+        {
+            get;
+            set;
+        }
 
         public void Parse()
         {
@@ -104,7 +120,11 @@ namespace Solution
     {
         #region IContent Members
 
-        public string Content { get; set; }
+        public string Content
+        {
+            get;
+            set;
+        }
 
         public void Parse()
         {
@@ -117,7 +137,11 @@ namespace Solution
     // High Level Class
     class Parser
     {
-        IContent content { get; set; }
+        IContent content
+        {
+            get;
+            set;
+        }
 
         public Parser(IContent cntnt)
         {

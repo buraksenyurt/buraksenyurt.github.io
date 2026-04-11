@@ -84,7 +84,7 @@ namespace UsingBackGroundWorkerProcess
         // DoWork olayımız, hesaplamaların arka planda yürütülmesini ve işlem sonucunun DoWorkEventArgs parametresinin Result özelliğine atanmasını sağlar. Süreç sona erdiğinde, RunWorkerCompleted metodunda bu result özelliğinin değerini alabiliriz.
         private void bgwProcess_DoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result=Compute(Convert.ToInt32(e.Argument),e);
+            e.Result = Compute(Convert.ToInt32(e.Argument), e);
         }
 
         // RunWorkerCompleted olayı, arka plan süreci tamamlandığında devreye girmektedir. Burada basit olarak işleme ait iptal talebi (Cancel Request) olup olmadığı kontrol edilir ve yoksa sonuç kullanıcıya bir MessageBox yardımıyla bildirilir. Bu metodu asenkron olarak çalışan bir işlemin tamamlanması sonrası devreye giren Callback metodu olarak düşünebilirsiniz.
@@ -99,7 +99,7 @@ namespace UsingBackGroundWorkerProcess
             else
             {
                 MessageBox.Show(e.Result.ToString());
-            } 
+            }
             btnComputeCancel.Enabled = false;
             btnComputeStart.Enabled = true;
         }

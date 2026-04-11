@@ -21,17 +21,23 @@ namespace BatchQueries
     {
         static void Main(string[] args)
         {
-            SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi"); /* Sql sunucumuza olan bağlantı hattını tesis edicek SqlConnection nesnemiz tanımlanıyor.*/
-            SqlCommand cmdMakale=new SqlCommand("Select * From Makale",conFriends); /* Makale tablosundaki tüm satırları alıcak sql sorgusunu çalıştıracak SqlCommand nesnemiz oluşturuluyor. */
-            SqlDataReader drMakale; /* SqlDataReader nesnemiz tanımlanıyor. */
-            conFriends.Open(); /*Bağlantımız açılıyor. */
-            drMakale=cmdMakale.ExecuteReader(CommandBehavior.CloseConnection); /* Komutumuz çalıştırılıyor ve sonuç kümesinin başlangıcı SqlDataReader nesnemize aktarılıyor. */
+            SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+            /* Sql sunucumuza olan bağlantı hattını tesis edicek SqlConnection nesnemiz tanımlanıyor.*/
+            SqlCommand cmdMakale = new SqlCommand("Select * From Makale", conFriends);
+            /* Makale tablosundaki tüm satırları alıcak sql sorgusunu çalıştıracak SqlCommand nesnemiz oluşturuluyor. */
+            SqlDataReader drMakale;
+            /* SqlDataReader nesnemiz tanımlanıyor. */
+            conFriends.Open();
+            /*Bağlantımız açılıyor. */
+            drMakale = cmdMakale.ExecuteReader(CommandBehavior.CloseConnection);
+            /* Komutumuz çalıştırılıyor ve sonuç kümesinin başlangıcı SqlDataReader nesnemize aktarılıyor. */
             /* İleri yünlü olarak, SqlDataReader nesnemiz ile, sonuç kümesindeki satırlar okunuyor ve 1 indisli alanın değeri ekrana yazdırılıyor. */
-            while(drMakale.Read())
+            while (drMakale.Read())
             {
                 Console.WriteLine(drMakale[1]);
             }
-            drMakale.Close(); /* Bağlantımız kapatılıyor. */
+            drMakale.Close();
+            /* Bağlantımız kapatılıyor. */
         }
     }
 }
@@ -61,14 +67,14 @@ namespace BatchQueries
     {
         static void Main(string[] args)
         {
-            SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-            string sorgu="Select * From Makale;Select * From Kitap;Select * From Siteler";
-            SqlCommand cmdMakale=new SqlCommand(sorgu,conFriends);
+            SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+            string sorgu = "Select * From Makale;Select * From Kitap;Select * From Siteler";
+            SqlCommand cmdMakale = new SqlCommand(sorgu, conFriends);
             SqlDataReader drMakale;
             conFriends.Open();
-            drMakale=cmdMakale.ExecuteReader(CommandBehavior.CloseConnection);
-            while(drMakale.Read())
-            {   
+            drMakale = cmdMakale.ExecuteReader(CommandBehavior.CloseConnection);
+            while (drMakale.Read())
+            {
                 Console.WriteLine(drMakale[1]);
             }
             drMakale.Close();
@@ -99,22 +105,22 @@ namespace BatchQueries
     {
         static void Main(string[] args)
         {
-            SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-            string sorgu="Select * From Makale;Select * From Kitap;Select * From Siteler";
-            SqlCommand cmdMakale=new SqlCommand(sorgu,conFriends);
+            SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+            string sorgu = "Select * From Makale;Select * From Kitap;Select * From Siteler";
+            SqlCommand cmdMakale = new SqlCommand(sorgu, conFriends);
             SqlDataReader drMakale;
             conFriends.Open();
-            drMakale=cmdMakale.ExecuteReader(CommandBehavior.CloseConnection);
+            drMakale = cmdMakale.ExecuteReader(CommandBehavior.CloseConnection);
             do
             {
                 Console.WriteLine("---------");
-                while(drMakale.Read())
+                while (drMakale.Read())
                 {
                     Console.WriteLine(drMakale[1]);
                 }
                 Console.WriteLine("---------");
             }
-            while(drMakale.NextResult());
+            while (drMakale.NextResult());
             drMakale.Close();
         }
     }

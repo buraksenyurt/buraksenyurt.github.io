@@ -32,14 +32,14 @@ using System.Data.Services;
 
 namespace WebFriendlyFeed
 {
-    public class AdventureServices 
+    public class AdventureServices
         : DataService<AdventureWorksEntities>
     {
         public static void InitializeService(DataServiceConfiguration config)
-        {           
-            config.SetEntitySetAccessRule("*", EntitySetRights.AllRead);        
+        {
+            config.SetEntitySetAccessRule("*", EntitySetRights.AllRead);
             config.DataServiceBehavior.MaxProtocolVersion = System.Data.Services.Common.DataServiceProtocolVersion.V2;
-     }
+        }
     }
 }
 ```

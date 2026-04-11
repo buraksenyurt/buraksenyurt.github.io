@@ -78,7 +78,7 @@ class Program
     {
         Personel prs1 = new Personel(1900, "Burak", 20);
         Personel prs2 = new Personel(1900, "Burak", 20);
-        
+
         Console.Write("Reference Equals ile ");
         if (Object.ReferenceEquals(prs1, prs2))
             Console.WriteLine(" Eşitler");
@@ -212,12 +212,12 @@ Dilerseniz ilk olarak GetHashCode metodu tarafından üretilen hash değerlerini
 string str1 = "Burak Selim Şenyurt";
 string str2 = "Burak Selim Şenyurt";
 Console.WriteLine("...String tipi için Hashcode...\n");
-Console.WriteLine("str1 için Hash Değeri : {0} ",str1.GetHashCode().ToString());
+Console.WriteLine("str1 için Hash Değeri : {0} ", str1.GetHashCode().ToString());
 Console.WriteLine("str2 için Hash Değeri : {0} \n", str2.GetHashCode().ToString());
 
 Urun urn1 = new Urun(1000, "Balata", 10);
 Urun urn2 = new Urun(1000, "Balata", 10);
-Console.WriteLine("...Urun Sınıfı(Class) için Hashcode...\n"); 
+Console.WriteLine("...Urun Sınıfı(Class) için Hashcode...\n");
 Console.WriteLine("urn1 için Hash Değeri : {0} ", urn1.GetHashCode().ToString());
 Console.WriteLine("urn2 için Hash Değeri : {0} \n", urn2.GetHashCode().ToString());
 
@@ -286,7 +286,7 @@ Uygulamayı bu haliyle çalıştıracak olursak eğer prs1 ve prs2 yapı örnekl
 
 ```csharp
 public override string ToString()
-{ 
+{
     return m_TcNo.ToString() + " " + m_Ad.ToString() + " " + m_Maas.ToString();
 }
 public override int GetHashCode()

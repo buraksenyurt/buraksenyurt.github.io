@@ -57,10 +57,10 @@ using System.ServiceModel.Channels;
 
 namespace WinClientApp
 {
-    public partial class Form1 
+    public partial class Form1
         : Form
     {
-        private ServiceCommonClient client=null;
+        private ServiceCommonClient client = null;
 
         public Form1()
         {
@@ -76,18 +76,18 @@ namespace WinClientApp
             // Start metodu çağırılır. Bu metod çağrısı ile servis tarafında InstanceData tablosuna kayıt atılır.
             client.Start();
             lblStatus.Text = "Start metodu çağırıldı";
-            txtInstanceId.Text = client.GetInstanceId().ToString(); 
+            txtInstanceId.Text = client.GetInstanceId().ToString();
         }
 
         private void btnIncreaseValue_Click(object sender, EventArgs e)
-        { 
+        {
             // Sembolik olarak değer arttırımı servis üzerinden yapılır
-            lblCommonValue.Text=client.IncreaseValue(10).ToString();
+            lblCommonValue.Text = client.IncreaseValue(10).ToString();
             lblStatus.Text = "IncreaseValue metodu çağırıldı";
         }
 
         private void btnStop_Click(object sender, EventArgs e)
-        { 
+        {
             // Stop metodu çağırılır. Bu metod çağırıldığında servis tarafında InstanceData tablosunda saklanan satır silinir
             client.Stop();
             lblStatus.Text = "Stop metodu çağırıldı";
@@ -99,7 +99,7 @@ namespace WinClientApp
             // IContextManager için System.WorkflowServices.dll assembly' ının referans edilmesi gerekir
             IContextManager conMng = ((IContextChannel)client.InnerChannel).GetProperty<IContextManager>();
             IDictionary<string, string> context = conMng.GetContext();
-        
+
             if (!context.ContainsKey("instanceId"))
             {
                 context.Add("instanceId", txtInstanceId.Text);
@@ -184,12 +184,12 @@ namespace PersistenceProviders
         #endregion
 
         #region XmlPersistenceProvider sınıfı için kullanılan ortak CRUD metodları
-    
+
         // Servis örneği için depolama kaynağının oluşturulması ve içeriğinin serileştirilmesi amacıyla kullanılır
         public object CreateInstance(object instance, TimeSpan timeout)
         {
             string fileName = InstanceFileName();
-        
+
             // Soap formatter tipinden yararlanılarak servis örneğinin serileştirilmesi sağlanır
             using (FileStream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write))
             {
@@ -250,7 +250,7 @@ namespace PersistenceProviders
         {
             // Dosya adı alınır
             string fileName = InstanceFileName();
-            
+
             // Soap formatter tipinden yararlanılarak servis örneğinin serileştirilmesi sağlanır
             using (Stream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write))
             {
@@ -263,7 +263,7 @@ namespace PersistenceProviders
         }
 
         #endregion
-    
+
         public XmlPersistenceProviderFactory()
         {
             // Eğer servis örneklerinin saklanacağı varsayılan klasör yoksa oluştur
@@ -272,10 +272,10 @@ namespace PersistenceProviders
 
             // Soap Formatter değişkeni oluşturulur
             sFrmtr = new SoapFormatter();
-    
+
             // Loglama işlemini yapacak olan sınıf örneği oluşturulur
             lgr = new Logger("CustomXmlPersistenceProvider", "Custom Xml Persistence Log(WCF)");
-    
+
             lgr.AddEventEntry("XmlPersistenceProviderFactory örneği oluşturuldu", System.Diagnostics.EventLogEntryType.SuccessAudit);
         }
 
@@ -287,12 +287,18 @@ namespace PersistenceProviders
 
         protected override TimeSpan DefaultCloseTimeout
         {
-            get { return TimeSpan.FromSeconds(10); }
+            get
+            {
+                return TimeSpan.FromSeconds(10);
+            }
         }
 
         protected override TimeSpan DefaultOpenTimeout
         {
-            get { return TimeSpan.FromSeconds(10); }
+            get
+            {
+                return TimeSpan.FromSeconds(10);
+            }
         }
 
         protected override void OnAbort()
@@ -324,7 +330,7 @@ namespace PersistenceProviders
         protected override void OnOpen(TimeSpan timeout)
         {
         }
-    } 
+    }
 }
 ```
 
@@ -365,7 +371,7 @@ namespace PersistenceProviders
 
         // Yükleme işlemi başladığından devreye girer.
         public override IAsyncResult BeginLoad(TimeSpan timeout, AsyncCallback callback, object state)
-         {
+        {
             return null;
         }
 
@@ -435,7 +441,7 @@ namespace PersistenceProviders
         protected override TimeSpan DefaultOpenTimeout
         {
             get
-            {    
+            {
                 return TimeSpan.FromSeconds(10);
             }
         }
@@ -443,7 +449,7 @@ namespace PersistenceProviders
         protected override void OnAbort()
         {
         }
-    
+
         protected override IAsyncResult OnBeginClose(TimeSpan timeout, AsyncCallback callback, object state)
         {
             return null;
@@ -461,7 +467,7 @@ namespace PersistenceProviders
         protected override void OnEndClose(IAsyncResult result)
         {
         }
-    
+
         protected override void OnEndOpen(IAsyncResult result)
         {
         }
@@ -469,7 +475,7 @@ namespace PersistenceProviders
         protected override void OnOpen(TimeSpan timeout)
         {
         }
-    
+
         #endregion
     }
 }
@@ -503,8 +509,8 @@ namespace PersistenceProviders
         public Logger(string logSource, string logName)
         {
             LogSource = logSource;
-            if(!EventLog.Exists(logName))
-                 EventLog.CreateEventSource(logSource, logName);
+            if (!EventLog.Exists(logName))
+                EventLog.CreateEventSource(logSource, logName);
         }
 
         /// <summary>

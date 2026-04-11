@@ -21,31 +21,31 @@ namespace istemciUygulama
 {
     public class Sinif
     {
-        public double Hesapla(double a,double b)
+        public double Hesapla(double a, double b)
         {
             Thread.Sleep(3500);
-            return(a*a+b*b);
+            return (a * a + b * b);
         }
     }
 
     public class istemci
     {
-        private delegate double Temsilci(double d1,double d2);
+        private delegate double Temsilci(double d1, double d2);
 
         public static void Main(string[] args)
         {
-            Sinif nesne=new Sinif();
-            Temsilci t=new Temsilci(nesne.Hesapla); 
-            IAsyncResult res=t.BeginInvoke(4,5,null,null);
-            Console.WriteLine("Uygulama çalışıyor..."); 
+            Sinif nesne = new Sinif();
+            Temsilci t = new Temsilci(nesne.Hesapla);
+            IAsyncResult res = t.BeginInvoke(4, 5, null, null);
+            Console.WriteLine("Uygulama çalışıyor...");
             res.AsyncWaitHandle.WaitOne();
-            if(res.IsCompleted)
+            if (res.IsCompleted)
             {
-                double sonuc=t.EndInvoke(res);
+                double sonuc = t.EndInvoke(res);
                 Console.WriteLine(sonuc);
             }
             Console.ReadLine();
-        } 
+        }
     }
 }
 ```
@@ -53,19 +53,19 @@ namespace istemciUygulama
 Bu uygulamayı derleyip çalıştırdığımızda acaba tam olarak neler olmaktadır? Hesapla isimli metodumuz double tipinden iki parametre alan ve yine double tipinden değer döndüren bir yapıya sahiptir. Bu metod içerisinde, Thread sınıfının sleep metodu kullanılmış ve uygulama yaklaşık olarak 3.5 saniye süre ile duraksatılmıştır. Burada amaç uzun süren bir metod işleyişi gerçekleştirmektir. Metoda asenkron erişimin sağlanabilmesi için, bir delegate nesnesi kullanılmaktadır. Öncelikle delegate nesnemiz tanımlanır.
 
 ```csharp
-private delegate double Temsilci(double d1,double d2);
+private delegate double Temsilci(double d1, double d2);
 ```
 
 Delegate nesnesinin metod imzasının, Hesapla metodu ile aynı olduğuna ve tipinin de, Hesapla metodunun geri dönüş değeri tipi ile aynı olduğuna dikkat edelim. Gelelim Main metodu içerisindeki kodlara. Öncelikle,
 
 ```csharp
-Temsilci t=new Temsilci(nesne.Hesapla);
+Temsilci t = new Temsilci(nesne.Hesapla);
 ```
 
 satırları ile delegate nesnemiz oluşturulmaktadır. Artık t isimli temsilcimiz, nesne sınıfına ait Hesapla metodunun bellekteki başlangıç adresini temsil etmektedir. İşte bu adımdan sonraki işlemler önemlidir ve asenkron erişim tekniğinin uygulanışını içermektedir.
 
 ```csharp
-IAsyncResult res=t.BeginInvoke(4,5,null,null);
+IAsyncResult res = t.BeginInvoke(4, 5, null, null);
 ```
 
 Satırı ile, delegate nesnesi için BeginInvoke metodu çağırılmaktadır. Bu metod görüldüğü gibi 4 parametre almıştır. İlk iki parametre, temsilcinin işaret ettiği metodun kullanacağı iki parametrenin değerini belirtmektedir. Sonraki parametreler ise null olarak bırakılmıştır. Burada olan olay şudur. t isimli temsilcinin işaret ettiği metod 4 ile 5 değerlerini parametre alarak çalışmaya başlamıştır. Lakin, bir metod çağırımından sonra uygulamanın izleyen kod satırlarını devam ettirebilmesi için, metodun işleyişini tamamlamış olması gerekir. Ancak burada, BeginInvoke ile Hesapla metodu çalıştırılmış ve anında ortama IAsyncResult arayüzü türünden bir nesne döndürülmüştür. Nitekim BeginInvoke metodunun geri dönüş değeri IAsyncResult arayüzü tipinden bir nesne örneğidir. Dolayısıyla izleyen satırlardaki kodlar işletilebilecektir. Bunun sonucu olarak ekrana "Uygulama çalışıyor..." ifadesi yazılır. Bu noktadan sonra uygulamada istenilen işlemler yapılabilir.
@@ -74,10 +74,10 @@ Tabii ki temsilcimizin çalıştırdığı metodun sonucunun bir şekilde alınm
 
 ```csharp
 res.AsyncWaitHandle.WaitOne();
-if(res.IsCompleted)
+if (res.IsCompleted)
 {
-      double sonuc=t.EndInvoke(res);
-      Console.WriteLine(sonuc);
+    double sonuc = t.EndInvoke(res);
+    Console.WriteLine(sonuc);
 }
 Console.ReadLine();
 ```
@@ -85,7 +85,7 @@ Console.ReadLine();
 Burada ilk satır ile, IAsyncResult arayüzü nesnesinin, çalışan asenkron metodun işleyişini tamamlamasını beklemesi söylenmiştir. Bu kod satırının yazılmasının amacı şudur. Asenkron metodun çalıştırılmaya başlamasından sonra, uygulamada izleyen kod satırları bu örnekte olduğu gibi çoktan tamamlanmış ancak hâlen asenkron metodun işleyişi bitmemiş olabilir. Bu durumda if döngüsü gerçekleşmeyeceği için metodun geri dönüş değeri de alınamayacaktır. Bu satır ile, asenkron metodun işleyişinin tamamlanması garanti altına alınmış olur. Uygulamanın bu kısmını aşağıdaki gibi daha kısa bir şekilde de yazabiliriz.
 
 ```csharp
-double sonuc=t.EndInvoke(res);
+double sonuc = t.EndInvoke(res);
 Console.WriteLine(sonuc);
 Console.ReadLine();
 ```
@@ -98,7 +98,7 @@ Burada kullandığımız basit örnekteki teknik, uzak nesnelerin kullanıldığ
 public double Alan(double yaricap)
 {
     Thread.Sleep(1500);
-    return (yaricap*3.14)/2;
+    return (yaricap * 3.14) / 2;
 }
 ```
 
@@ -119,17 +119,17 @@ namespace istemciUygulama
         public static void Main(string[] args)
         {
             RemotingConfiguration.Configure("istemci.config");
-            UzakNesne.Musteriler m=new UzakNesne.Musteriler();
-            double alani=m.Alan(3);
-            for(int i=1;i<=200;i++)
+            UzakNesne.Musteriler m = new UzakNesne.Musteriler();
+            double alani = m.Alan(3);
+            for (int i = 1; i <= 200; i++)
             {
-                Console.Write(i.ToString()+" ");
+                Console.Write(i.ToString() + " ");
             }
             Console.WriteLine("----");
             Console.WriteLine(alani);
             Console.WriteLine("Metodlarin Isleyisi Bitti");
             Console.ReadLine();
-        } 
+        }
     }
 }
 ```
@@ -155,19 +155,19 @@ namespace istemciUygulama
         public static void Main(string[] args)
         {
             RemotingConfiguration.Configure("istemci.config");
-            UzakNesne.Musteriler m=new UzakNesne.Musteriler();
-            Temsilci t=new Temsilci(m.Alan);
-            IAsyncResult res=t.BeginInvoke(3,null,null); 
-            for(int i=1;i<=500;i++)
+            UzakNesne.Musteriler m = new UzakNesne.Musteriler();
+            Temsilci t = new Temsilci(m.Alan);
+            IAsyncResult res = t.BeginInvoke(3, null, null);
+            for (int i = 1; i <= 500; i++)
             {
-                Console.Write(i.ToString()+" ");
+                Console.Write(i.ToString() + " ");
             }
             Console.WriteLine("----");
-            double alani=t.EndInvoke(res);
-            Console.WriteLine(alani); 
+            double alani = t.EndInvoke(res);
+            Console.WriteLine(alani);
             Console.WriteLine("Metodlarin Isleyisi Bitti");
             Console.ReadLine();
-        } 
+        }
     }
 }
 ```

@@ -65,57 +65,57 @@ DataTable dtMuhendisProje;
 private void Form1_Load(object sender, System.EventArgs e)
 {
     /* Sql sunucumuza bir bağlantı açıyoruz. */
-    con=new SqlConnection("Data source=localhost;initial catalog=Friends;integrated security=SSPI");
+    con = new SqlConnection("Data source=localhost;initial catalog=Friends;integrated security=SSPI");
 
     /* Mühendisler, MuhendisProje ve Projeler tablolarını referans edicek DataTable nesneleri ile bu DataTable nesnelerini bünyesinde barındıracak DataSet nesnemizi oluşturuyoruz.*/
-    DataSet ds=new DataSet(); 
-    dtMuhendisler=new DataTable();
-    dtProjeler=new DataTable();
-    dtMuhendisProje=new DataTable();
+    DataSet ds = new DataSet();
+    dtMuhendisler = new DataTable();
+    dtProjeler = new DataTable();
+    dtMuhendisProje = new DataTable();
 
     /* SqlDataAdapter nesnemiz ile ilk aşamada, Muhendisler tablosundaki bilgileri alıyor ve dtMuhendisler DataTable nesnesine yüklüyoruz. */
-    da=new SqlDataAdapter("Select * From Muhendisler",con);
+    da = new SqlDataAdapter("Select * From Muhendisler", con);
     da.Fill(dtMuhendisler);
     /* Tanımladığımız primaryKey alanını, listBox kontrolündeki bir Muhendisi seçtiğimizde bu Muhendise ait satırı bulucak Find metodunda kullanabilmek için, PersonelID üzerinden oluşturuyoruz. */
-    dtMuhendisler.PrimaryKey=new DataColumn[]{dtMuhendisler.Columns["PersonelID"]};
+    dtMuhendisler.PrimaryKey = new DataColumn[] { dtMuhendisler.Columns["PersonelID"] };
     /* dtMuhendisler DataTable nesnesini, DataSet in Tables koleksiyonuna ekliyoruz. */
     ds.Tables.Add(dtMuhendisler);
 
     /* Şimdi Projeler tablosundaki verileri, dtProjeler DataTable nesnesine ekliyor ve bu dataTable'ıda DataSet nesnemizin Tables koleksiyonuna ekliyoruz.*/
-    da=new SqlDataAdapter("Select * From Projeler",con);
+    da = new SqlDataAdapter("Select * From Projeler", con);
     da.Fill(dtProjeler);
     ds.Tables.Add(dtProjeler);
 
     /* Sıra MuhendisProje tablosundaki verilerin eklenmesinde. */
-    da=new SqlDataAdapter("Select * From MuhendisProje",con);
+    da = new SqlDataAdapter("Select * From MuhendisProje", con);
     da.Fill(dtMuhendisProje);
     ds.Tables.Add(dtMuhendisProje);
 
     /* Şimdi işin önemli kısmı. Muhendisler tablosundan MuhendisProje tablosuna olan bire-çok ilişkiyi DataSet nesnemizin Relations koleksiyonuna bir DataRelation nesnesi olarak ekliyoruz.*/
-    ds.Relations.Add("Muhendis_MuhendisProje",dtMuhendisler.Columns["PersonelID"],dtMuhendisProje.Columns["PersonelID"],false);
+    ds.Relations.Add("Muhendis_MuhendisProje", dtMuhendisler.Columns["PersonelID"], dtMuhendisProje.Columns["PersonelID"], false);
 
     /* Burada ise, Projeler tablosunda, MuhendisProje tablosuna olan bire-çok ilişkiyi tanımlıyor ve DataSet nesnemizin Relations koleksiyonuna DataRelation olarak ekliyoruz.*/
-    ds.Relations.Add("Projeler_MuhendisProje",dtProjeler.Columns["ProjeID"],dtMuhendisProje.Columns["ProjeID"],false);
+    ds.Relations.Add("Projeler_MuhendisProje", dtProjeler.Columns["ProjeID"], dtMuhendisProje.Columns["ProjeID"], false);
 
     /* lbMuhendisler ListBox kontrolünün dtMusteriler DataTable'ındaki verileri göstereceğini belirtiyoruz.*/
-lbMuhendisler.DataSource=dtMuhendisler;
+    lbMuhendisler.DataSource = dtMuhendisler;
     /* Buradaki satırlarda, Form üzerindeki lbMuhendisler ListBox kontrolü için, Muhendislerin adlarını gösterecek DisplayMember ve her bir mühendisin PersonelID alanının değerini indis olarak alıcak ValueMember özelliklerini belirliyoruz.*/
-    lbMuhendisler.DisplayMember=dtMuhendisler.Columns["Ad"].ToString();
-    lbMuhendisler.ValueMember=dtMuhendisler.Columns["PersonelID"].ToString();
+    lbMuhendisler.DisplayMember = dtMuhendisler.Columns["Ad"].ToString();
+    lbMuhendisler.ValueMember = dtMuhendisler.Columns["PersonelID"].ToString();
 }
 
 private void btnGetir_Click(object sender, System.EventArgs e)
-{ 
+{
     lbProjeler.Items.Clear();
 
     /* Öncelikle lbMuhendisler ListBox kontrolünden seçilen Mühendise ait PersonelID alanının değerini alıyor ve DataTable sınıfının Rows koleksiyonunun Find metodu yardımıyla bu PrimaryKey değerini içeren satırı dtMuhendisler tablosundan buluyor ve DataRow nesnesine aktarıyoruz.*/
-    DataRow dr; 
-    dr=dtMuhendisler.Rows.Find(lbMuhendisler.SelectedValue);
+    DataRow dr;
+    dr = dtMuhendisler.Rows.Find(lbMuhendisler.SelectedValue);
 
     /* Foreach döngüsünde ilk aşamada, seçilen Muhendisin çocuk satırlarını(child rows) MuhendisPersonel tablosundan alıyoruz. Bir veya birden fazla satır geldiğini düşünürsek her bir satır içinde, Projeler ve MuhendisProje tabloları arasındaki ilişkiyi kullanarak, GetParentRow metodu yardımıyla, Mühendislerin çalıştığı Projelere ait satırları elde ediyoruz. Sonrada bu satırlardaki ProjeAdi alanın değerini lbPorjeler isimli ListBox kontrolümüze ekliyoruz.*/
-    foreach(DataRow drProjeNo in dr.GetChildRows("Muhendis_MuhendisProje"))
+    foreach (DataRow drProjeNo in dr.GetChildRows("Muhendis_MuhendisProje"))
     {
-        DataRow drProje=drProjeNo.GetParentRow("Projeler_MuhendisProje");
+        DataRow drProje = drProjeNo.GetParentRow("Projeler_MuhendisProje");
         lbProjeler.Items.Add(drProje["ProjeAdi"]);
     }
 }
@@ -137,23 +137,23 @@ Uygulamayı çalıştırıp herhangi bir mühendis için Getir başlıklı buton
 
 ```csharp
 private void btnGetir_Click(object sender, System.EventArgs e)
-{ 
+{
     lbProjeler.Items.Clear();
     lbEkip.Items.Clear();
 
-    DataRow dr; 
-    dr=dtMuhendisler.Rows.Find(lbMuhendisler.SelectedValue);
+    DataRow dr;
+    dr = dtMuhendisler.Rows.Find(lbMuhendisler.SelectedValue);
 
-    foreach(DataRow drProjeNo in dr.GetChildRows("Muhendis_MuhendisProje"))
+    foreach (DataRow drProjeNo in dr.GetChildRows("Muhendis_MuhendisProje"))
     {
-        DataRow drProje=drProjeNo.GetParentRow("Projeler_MuhendisProje");
+        DataRow drProje = drProjeNo.GetParentRow("Projeler_MuhendisProje");
         lbProjeler.Items.Add(drProje["ProjeAdi"]);
         lbEkip.Items.Add(drProje["ProjeAdi"]);
-            foreach(DataRow drMuh in drProje.GetChildRows("Projeler_MuhendisProje"))
-            {
-                DataRow drMuhBilgi=drMuh.GetParentRow("Muhendis_MuhendisProje");
-                lbEkip.Items.Add(drMuhBilgi["Ad"]+" "+drMuhBilgi["Soyad"]);
-            }
+        foreach (DataRow drMuh in drProje.GetChildRows("Projeler_MuhendisProje"))
+        {
+            DataRow drMuhBilgi = drMuh.GetParentRow("Muhendis_MuhendisProje");
+            lbEkip.Items.Add(drMuhBilgi["Ad"] + " " + drMuhBilgi["Soyad"]);
+        }
     }
 }
 ```

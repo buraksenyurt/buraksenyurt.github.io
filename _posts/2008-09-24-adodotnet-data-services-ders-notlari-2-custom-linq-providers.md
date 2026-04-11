@@ -28,34 +28,70 @@ using System.Data.Services.Common;
 
 public class Kategori
 {
-    public int KategoriID { get; set; }
-    public string Ad { get; set; }
+    public int KategoriID
+    {
+        get;
+        set;
+    }
+    public string Ad
+    {
+        get;
+        set;
+    }
     // Kategori bağlı Kitaplara ulaşmak için IList<Kitap> tipinden bir özellik kullanılmaktadır
-    public IList<Kitap> Kitaplar { get; set; }
+    public IList<Kitap> Kitaplar
+    {
+        get;
+        set;
+    }
 }
 
 // DataServiceKey niteliği ile Kitap sınıfının anahtar-Key özelliğinin Numara olduğu belirtilir.
-[DataServiceKey("Numara")] 
+[DataServiceKey("Numara")]
 public class Kitap
-{ 
-    public int Numara { get; set; }
-    public string Ad { get; set; }
-    public double BirimFiyat { get; set; }
+{
+    public int Numara
+    {
+        get;
+        set;
+    }
+    public string Ad
+    {
+        get;
+        set;
+    }
+    public double BirimFiyat
+    {
+        get;
+        set;
+    }
     // Bir kitabın yazalarına geçiş yapmak için IList<Yazar> tipinden bir özellik kullanılır
-    public IList<Yazar> Yazarlar { get; set; }
+    public IList<Yazar> Yazarlar
+    {
+        get;
+        set;
+    }
 }
 
 // Yazar sınıfı için Key özelliği string tipinden olan SicilNo' dur.
 [DataServiceKey("SicilNo")]
 public class Yazar
 {
-    public string SicilNo { get; set; }
-    public string AdSoyad { get; set; }
+    public string SicilNo
+    {
+        get;
+        set;
+    }
+    public string AdSoyad
+    {
+        get;
+        set;
+    }
 }
 
 // Entity tiplerini içerisinde barındıran sınıf
 public class DukkanEntities
-{ 
+{
     static List<Kategori> _kategoriler;
     static List<Kitap> _kitaplar;
     static List<Yazar> _yazarlar;
@@ -120,8 +156,8 @@ public class DukkanEntities
         for (int i = 0; i < _kitaplar.Count; i++)
         {
             _kitaplar[i].Yazarlar = new List<Yazar>();
-            for(int j=0;j<3;j++) 
-                _kitaplar[i].Yazarlar.Add(_yazarlar[rnd.Next(0,_yazarlar.Count-1)]);
+            for (int j = 0; j < 3; j++)
+                _kitaplar[i].Yazarlar.Add(_yazarlar[rnd.Next(0, _yazarlar.Count - 1)]);
         }
     }
 
@@ -177,12 +213,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Web;
 
-public class DukkanServisleri 
+public class DukkanServisleri
      : DataService<DukkanEntities>
-{ 
+{
     public static void InitializeService(IDataServiceConfiguration config)
     {
-        config.SetEntitySetAccessRule("*", EntitySetRights.AllRead); 
+        config.SetEntitySetAccessRule("*", EntitySetRights.AllRead);
     }
 }
 ```

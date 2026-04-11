@@ -97,24 +97,24 @@ Tablo 3. Uyulması gereken kurallar.
 ```csharp
 public interface IArayuz
 {
-     void EkranaYaz();
-     int Yas
-     {
-          get;
-          set;
-     }
-     string isim
-     {
-          get;
-          set;
-     }
+    void EkranaYaz();
+    int Yas
+    {
+        get;
+        set;
+    }
+    string isim
+    {
+        get;
+        set;
+    }
 }
 ```
 
 Şimdide bu arayüzü kullanacak sınıfımızı tasarlayalım.
 
 ```csharp
-public class Kisiler:IArayuz
+public class Kisiler : IArayuz
 {
 }
 ```
@@ -134,56 +134,56 @@ Arayüzlerin uygulandığı sınıflar, arayüzde (lerde) tanımlanan tüm üyel
 Şimdi sınıfımızı düzgün bir şekilde geliştirelim.
 
 ```csharp
-public class Kisiler:IArayuz /* Sınıfın kullanacağı arayüz burada belirtiliyor.*/
+public class Kisiler : IArayuz /* Sınıfın kullanacağı arayüz burada belirtiliyor.*/
 {
-     private int y;
-     private string i;
+    private int y;
+    private string i;
 
-     /* Bir sınıfa bir arayüz uygulamamız, bu sınıfa başka üyeler eklememizi engellemez. Burada örneğin sınıfın yapıcı metodlarınıda düzenledik. */
- 
-     public Kisiler()
-     {
-          y=18;
-          i="Yok";
-     }
+    /* Bir sınıfa bir arayüz uygulamamız, bu sınıfa başka üyeler eklememizi engellemez. Burada örneğin sınıfın yapıcı metodlarınıda düzenledik. */
 
-     /* Dikkat ederseniz özelliğin herşeyi, arayüzdeki ile aynı olmalıdır. Veri tipi, ismi vb... Bu tüm diğer arayüz üyelerinin, sınıf içerisinde uygulanmasında da geçerlidir. */
- 
+    public Kisiler()
+    {
+        y = 18;
+        i = "Yok";
+    }
 
-     public Kisiler(string ad,int yas)
-     {
-          y=yas;
-          i=ad;
-     }
+    /* Dikkat ederseniz özelliğin herşeyi, arayüzdeki ile aynı olmalıdır. Veri tipi, ismi vb... Bu tüm diğer arayüz üyelerinin, sınıf içerisinde uygulanmasında da geçerlidir. */
 
-     public int Yas
-     {
-          get
-          {
-               return y;
-          }
-          set
-          {
-               y=value;
-          }
-     }
 
-     public string Isim
-     {
-          get
-          {
-               return i;
-          }
-          set
-          {
-               i=value;
-          }
-     }
-     public void EkranaYaz()
-     {
-          Console.WriteLine("Adım:"+i);
-          Console.WriteLine("Yaşım:"+y);
-     }
+    public Kisiler(string ad, int yas)
+    {
+        y = yas;
+        i = ad;
+    }
+
+    public int Yas
+    {
+        get
+        {
+            return y;
+        }
+        set
+        {
+            y = value;
+        }
+    }
+
+    public string Isim
+    {
+        get
+        {
+            return i;
+        }
+        set
+        {
+            i = value;
+        }
+    }
+    public void EkranaYaz()
+    {
+        Console.WriteLine("Adım:" + i);
+        Console.WriteLine("Yaşım:" + y);
+    }
 }
 ```
 
@@ -192,14 +192,14 @@ public class Kisiler:IArayuz /* Sınıfın kullanacağı arayüz burada belirtil
 ```csharp
 class Class1
 {
-     static void Main(string[] args)
-     {
-          Kisiler kisi=new Kisiler("Burak",27);
-          Console.WriteLine("Yaşım "+kisi.Yas.ToString());
-          Console.WriteLine("Adım "+kisi.Isim);
-          Console.WriteLine("-----------");
-          kisi.EkranaYaz();
-     }
+    static void Main(string[] args)
+    {
+        Kisiler kisi = new Kisiler("Burak", 27);
+        Console.WriteLine("Yaşım " + kisi.Yas.ToString());
+        Console.WriteLine("Adım " + kisi.Isim);
+        Console.WriteLine("-----------");
+        kisi.EkranaYaz();
+    }
 }
 ```
 

@@ -35,33 +35,33 @@ SqlDataAdapter da;
 
 private void btnBegin_Click(object sender, System.EventArgs e)
 {
-    if(con.State==ConnectionState.Closed)
+    if (con.State == ConnectionState.Closed)
     {
         con.Open();
-    } 
-    if(this.rdbReadCommited.Checked==true)
-    {
-        trans=con.BeginTransaction(IsolationLevel.ReadCommitted);
     }
-    else if(this.rdbReadUncommited.Checked==true)
+    if (this.rdbReadCommited.Checked == true)
     {
-        trans=con.BeginTransaction(IsolationLevel.ReadUncommitted);
+        trans = con.BeginTransaction(IsolationLevel.ReadCommitted);
     }
-    else if(this.rdbRepeatableRead.Checked==true)
+    else if (this.rdbReadUncommited.Checked == true)
     {
-        trans=con.BeginTransaction(IsolationLevel.RepeatableRead);
+        trans = con.BeginTransaction(IsolationLevel.ReadUncommitted);
     }
-    else if(this.rdbSerializable.Checked==true)
-    {    
-        trans=con.BeginTransaction(IsolationLevel.Serializable);
+    else if (this.rdbRepeatableRead.Checked == true)
+    {
+        trans = con.BeginTransaction(IsolationLevel.RepeatableRead);
+    }
+    else if (this.rdbSerializable.Checked == true)
+    {
+        trans = con.BeginTransaction(IsolationLevel.Serializable);
     }
 
-    lblDurum.Text=trans.IsolationLevel.ToString();
+    lblDurum.Text = trans.IsolationLevel.ToString();
 }
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    con=new SqlConnection("data source=localhost;database=Northwind;integrated security=SSPI"); 
+    con = new SqlConnection("data source=localhost;database=Northwind;integrated security=SSPI");
 }
 
 private void btnCommit_Click(object sender, System.EventArgs e)
@@ -78,47 +78,47 @@ private void btnBak_Click(object sender, System.EventArgs e)
 {
     try
     {
-        SqlCommand cmdBak=new SqlCommand("SELECT * FROM Personel",con);
-        cmdBak.Transaction=trans;
-        da=new SqlDataAdapter(cmdBak);
-        DataTable dt=new DataTable();
+        SqlCommand cmdBak = new SqlCommand("SELECT * FROM Personel", con);
+        cmdBak.Transaction = trans;
+        da = new SqlDataAdapter(cmdBak);
+        DataTable dt = new DataTable();
         da.Fill(dt);
-        dataGrid1.DataSource=dt;
+        dataGrid1.DataSource = dt;
     }
-    catch(SqlException hata)
+    catch (SqlException hata)
     {
         MessageBox.Show(hata.Message.ToString());
-    }    
+    }
 }
 
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmdGir=new SqlCommand("INSERT INTO Personel (ISIM,SOYISIM) VALUES ('"+txtIsim.Text+"','"+txtSoyisim.Text+"')",con);
-    cmdGir.Transaction=trans;
-    int sonuc=cmdGir.ExecuteNonQuery();
-    MessageBox.Show(sonuc+" SATIR GIRILDI");
+    SqlCommand cmdGir = new SqlCommand("INSERT INTO Personel (ISIM,SOYISIM) VALUES ('" + txtIsim.Text + "','" + txtSoyisim.Text + "')", con);
+    cmdGir.Transaction = trans;
+    int sonuc = cmdGir.ExecuteNonQuery();
+    MessageBox.Show(sonuc + " SATIR GIRILDI");
 }
 
 private void btnGuncelle_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmdGuncelle=new SqlCommand("UPDATE Personel SET     ISIM='"+txtIsim.Text+"', SOYISIM='"+txtSoyisim.Text+"' WHERE ID="+txtID.Text,con);
-    cmdGuncelle.Transaction=trans;
-    int sonuc=cmdGuncelle.ExecuteNonQuery();
-    MessageBox.Show(sonuc+" SATIR GUNCELLENDI");
+    SqlCommand cmdGuncelle = new SqlCommand("UPDATE Personel SET     ISIM='" + txtIsim.Text + "', SOYISIM='" + txtSoyisim.Text + "' WHERE ID=" + txtID.Text, con);
+    cmdGuncelle.Transaction = trans;
+    int sonuc = cmdGuncelle.ExecuteNonQuery();
+    MessageBox.Show(sonuc + " SATIR GUNCELLENDI");
 }
 
 private void btnBakID_Click(object sender, System.EventArgs e)
 {
     try
     {
-        SqlCommand cmd=new SqlCommand("SELECT ISIM,SOYISIM FROM Personel WHERE ID="+txtID.Text,con);
-        cmd.Transaction=trans;
-        da=new SqlDataAdapter(cmd);
-        DataTable dt=new DataTable();
+        SqlCommand cmd = new SqlCommand("SELECT ISIM,SOYISIM FROM Personel WHERE ID=" + txtID.Text, con);
+        cmd.Transaction = trans;
+        da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
         da.Fill(dt);
-        dataGrid1.DataSource=dt;
+        dataGrid1.DataSource = dt;
     }
-    catch(SqlException hata)
+    catch (SqlException hata)
     {
         MessageBox.Show(hata.Message.ToString());
     }

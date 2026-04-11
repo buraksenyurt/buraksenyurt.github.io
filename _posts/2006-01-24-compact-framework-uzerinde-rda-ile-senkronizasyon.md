@@ -39,9 +39,9 @@ private SqlCeRemoteDataAccess rda;
 
 private void CreateRDAObject()
 {
-    rda=new SqlCeRemoteDataAccess();
-    rda.InternetUrl="http://192.168.7.3/SQLCeRemote/sscesa20.dll";
-    rda.LocalConnectionString="Data Source=Ambar.sdf";
+    rda = new SqlCeRemoteDataAccess();
+    rda.InternetUrl = "http://192.168.7.3/SQLCeRemote/sscesa20.dll";
+    rda.LocalConnectionString = "Data Source=Ambar.sdf";
 }
 ```
 
@@ -53,8 +53,8 @@ Pull;
 private void Pull()
 {
     // Mobile taraftaki veritabanı yok ise oluşturulur. var ise silinip oluşturulur.
-    
-    rda.Pull("Musteriler","SELECT * From Customers","Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234",RdaTrackOption.TrackingOn);
+
+    rda.Pull("Musteriler", "SELECT * From Customers", "Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234", RdaTrackOption.TrackingOn);
     rda.Dispose();
 }
 ```
@@ -68,7 +68,7 @@ private void Push()
 {
     // Mobile taraftaki veritabanı üzerinde çeşitli güncelleme işlemleri yapılır.
 
-    rda.Push("Musteriler","Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234",RdaBatchOption.BatchingOn);
+    rda.Push("Musteriler", "Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234", RdaBatchOption.BatchingOn);
     rda.Dispose();
 }
 ```
@@ -80,7 +80,7 @@ SubmitSql;
 ```csharp
 private void SubmitSql()
 {
-    rda.SubmitSql("Insert Into Personel (Ad,Maas) Values ('Burak',1000)","Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234");
+    rda.SubmitSql("Insert Into Personel (Ad,Maas) Values ('Burak',1000)", "Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234");
     rda.Dispose();
 }
 ```
@@ -113,21 +113,21 @@ namespace UsingRDA
         private void CreateLocalDatabase()
         {
             // RDA Mimarisine özel olarak Pull işlemlerinden önce yerel veri tabanı dosyasının silinmesi gerekmektedir. Bu silme işlemi için standart System.IO isim alanının File sınıfını kullanabiliriz.
-            if(System.IO.File.Exists("Ambar.sdf"))
+            if (System.IO.File.Exists("Ambar.sdf"))
             {
                 System.IO.File.Delete("Ambar.sdf");
             }
             // Mobil taraftaki Sql Server Ce veritabanını oluşturmak için System.Data.SqlServerCe isim alanında yer alan SqlCeEngine sınıfını kullanıyoruz. Bu sınıf ile var sayılan olarak mobil cihazın root klasöründe Ambar.sdf isimli veritabanı dosyamızı oluşturmaktayız.
-            cEngine=new SqlCeEngine("data source=Ambar.sdf");
+            cEngine = new SqlCeEngine("data source=Ambar.sdf");
             cEngine.CreateDatabase();
         }
 
         private void CreateRDAObject()
         {
             // SqlCeRemoteDataAccess nesnemizi oluşturuyoruz. InternetURL özelliğine Server Agen t' ın adresini, LocalConnectionString özelliğine ise mobil veritabanının bağlantı     bilgisini veriyoruz.
-            rda=new SqlCeRemoteDataAccess();
-            rda.InternetUrl="http://192.168.7.3/CESrvAgent/sscesa20.dll";
-            rda.LocalConnectionString="Data Source=Ambar.sdf";
+            rda = new SqlCeRemoteDataAccess();
+            rda.InternetUrl = "http://192.168.7.3/CESrvAgent/sscesa20.dll";
+            rda.LocalConnectionString = "Data Source=Ambar.sdf";
         }
 
         private void Pull()
@@ -136,7 +136,7 @@ namespace UsingRDA
             // Pull işleminden önce mobil taraftaki veritabanımızı silip(var ise) oluşturuyoruz.
             CreateLocalDatabase();
             // Pull metodumuzu çalıştırıyoruz.
-            rda.Pull("Bolgeler","SELECT RegionID,RegionDescription From Region","Provider=SqlOleDb;data         source=192.168.7.3;database=Northwind;uid=sa;password=1234",RdaTrackOption.TrackingOn);
+            rda.Pull("Bolgeler", "SELECT RegionID,RegionDescription From Region", "Provider=SqlOleDb;data         source=192.168.7.3;database=Northwind;uid=sa;password=1234", RdaTrackOption.TrackingOn);
             // SqlCeRemoteDataAccess sınıfımıza ait nesne örneğimize ait bellek kaynağını serbest bırakıyoruz.
             rda.Dispose();
         }
@@ -144,8 +144,8 @@ namespace UsingRDA
         private DataTable LoadToDataTable()
         {
             // Yerel veritabanına yüklenen Regions tablosuna ait satırları bir DataTable nesnesine aktarıyoruz. Burada amacımız gelen verileri Form üzerindeki ListBox kontroünde     göstermek. Bunun için basit olarak SqlCeDataAdapter sınıfını kullanılıyor.
-            DataTable dtRegion=new DataTable();
-            SqlCeDataAdapter daRegion=new SqlCeDataAdapter("Select RegionID,RegionDescription From Bolgeler","data source=Ambar.sdf");
+            DataTable dtRegion = new DataTable();
+            SqlCeDataAdapter daRegion = new SqlCeDataAdapter("Select RegionID,RegionDescription From Bolgeler", "data source=Ambar.sdf");
             daRegion.Fill(dtRegion); // NOT : Fill ve diğer SqlCeDataAdapter üyelerini kullanabilmemiz için uygulamanıza System.Data.Common isim alanını açıkça referans etmemiz     gerektiğini unutmayınız. 
             return dtRegion;
         }
@@ -153,14 +153,14 @@ namespace UsingRDA
         private void LocalChange()
         {
             // Ambar.sdf isimli yerel veritabanı üzerinden Bolgeler isimli tablodaki 2 numaralı satırın içeriğini değiştirecek bir update sorgusu çalıştırıyoruz. Bu sorgu ile yaptığımız yerel güncelleme işlemini daha sonradan Push metodu ile sunucuyada göndereceğiz.
-            SqlCeConnection conn=new SqlCeConnection("data source=Ambar.sdf");
-            SqlCeCommand cmdUpdate=new SqlCeCommand("UPDATE Bolgeler SET RegionDescription='Western (Batı)' WHERE RegionID=2",conn);
+            SqlCeConnection conn = new SqlCeConnection("data source=Ambar.sdf");
+            SqlCeCommand cmdUpdate = new SqlCeCommand("UPDATE Bolgeler SET RegionDescription='Western (Batı)' WHERE RegionID=2", conn);
             try
             {
                 conn.Open();
                 cmdUpdate.ExecuteNonQuery();
             }
-            catch(SqlCeException excp)
+            catch (SqlCeException excp)
             {
                 MessageBox.Show(excp.Message.ToString());
             }
@@ -168,7 +168,7 @@ namespace UsingRDA
             {
                 conn.Close();
             }
-        } 
+        }
 
         private void Push()
         {
@@ -176,7 +176,7 @@ namespace UsingRDA
             // Simulasynon amacıyla Yerel değişikliklerimizi yapıyoruz.
             LocalChange();
             // Yerel olarak yapılan değişiklikleri uzak sunucu üzerindeki veri kaynağına aktarıyoruz. Bolgeler isimli yerel tablodan, yapılan değişiklikleri ki (sadece 2 numaralı satıra ait update işlemi var), 192.168.7.3 ip adresindeki Northwind veritabanına aktarıyoruz.
-            rda.Push("Bolgeler","Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234",RdaBatchOption.BatchingOn);
+            rda.Push("Bolgeler", "Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234", RdaBatchOption.BatchingOn);
             // SqlCeRemoteDataAccess sınıfımıza ait nesne örneğimize ait bellek kaynağını serbest bırakıyoruz.
             rda.Dispose();
         }
@@ -185,22 +185,22 @@ namespace UsingRDA
         {
             CreateRDAObject();
             // Doğrudan uzak sunucuya erişip, Region isimli tabloya yeni bir satır ekleyecek şekilde bir sql sorgusunu uzak sunucu üzerinde çalıştırıyoruz.
-            rda.SubmitSql("Insert Into Region (RegionID,RegionDescription) Values (5,'Marmara')","Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234");
+            rda.SubmitSql("Insert Into Region (RegionID,RegionDescription) Values (5,'Marmara')", "Provider=SqlOleDb;data source=192.168.7.3;database=Northwind;uid=sa;password=1234");
             // SqlCeRemoteDataAccess sınıfımıza ait nesne örneğimize ait bellek kaynağını serbest bırakıyoruz.
             rda.Dispose();
         }
 
         private void BindToListBox()
         {
-            lstRegions.DataSource=LoadToDataTable();
-            lstRegions.DisplayMember="RegionDescription";
-            lstRegions.ValueMember="RegionID";
+            lstRegions.DataSource = LoadToDataTable();
+            lstRegions.DisplayMember = "RegionDescription";
+            lstRegions.ValueMember = "RegionID";
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
             Pull();
-    
+
             // Pull metodu ile çektiğimiz verileri yerel Sql Server Ce database' inden okuyup bir DataTable' a aktardığımız metodu kullanarak, listBox kontrolüne bağlıyoruz.
             BindToListBox();
         }

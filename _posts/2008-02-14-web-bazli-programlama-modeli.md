@@ -69,7 +69,7 @@ namespace YardimciTipler
             #region UriTemplate Kullanımı
 
             // Yeni bir URI şablonu oluşturulurken süslü parantezler içerisinde yer alan verilen değişken diğerleri ise sabittir.
-            UriTemplate uriTemp = new UriTemplate("satislar/{sehirAdi}/{ilceAdi}?tarih={satisTarihi}"); 
+            UriTemplate uriTemp = new UriTemplate("satislar/{sehirAdi}/{ilceAdi}?tarih={satisTarihi}");
 
             // değişkenlerin pozisyonuna göre bağlama
             // Bu metod ile süslü parantezler içerisine gelecek veriler sıralı olarak eklenirler
@@ -84,11 +84,11 @@ namespace YardimciTipler
                         ,{"satisTarihi","2007"}
                     };
             Uri uri2 = uriTemp.BindByName(new Uri("http://www.bsenyurt.com/servisler"), values);
-        
+
             // Eşleştirme yapmak ve doğruluğunu tespit etmek
             Uri uri3 = new Uri("http://localhost/satislar/Istanbul/Besiktas?tarih=2008");
             // Eğer Match metodu geriye null değer döndürmemişse URI içeriği şablonda belirtilene uygundur.
-            UriTemplateMatch match=uriTemp.Match(new Uri("http://localhost/"), uri3);
+            UriTemplateMatch match = uriTemp.Match(new Uri("http://localhost/"), uri3);
             if (match != null)
                 Console.WriteLine("Match geçerlidir");
 
@@ -121,8 +121,8 @@ namespace YardimciTipler
 
             // UriTemplate' ler tamamı KeyValuePairs özelliği ile işaret edilen koleksiyonda tutulurlar.
             uriTable.KeyValuePairs.Add(new KeyValuePair<UriTemplate, object>(new UriTemplate("satislar/{Sehir}/{Ilce}"), "IlceBazli"));
-            uriTable.KeyValuePairs.Add(new KeyValuePair<UriTemplate,object>(new UriTemplate("satislar/{Sehir}/{Ilce}?tarih={SatisTarihi}"),"SatisBazli"));
-            uriTable.KeyValuePairs.Add(new KeyValuePair<UriTemplate,object>(new UriTemplate("satislar/{Sehir}/{Ilce}?yetkili={Yetkili}"),"YetkiliBazlı"));
+            uriTable.KeyValuePairs.Add(new KeyValuePair<UriTemplate, object>(new UriTemplate("satislar/{Sehir}/{Ilce}?tarih={SatisTarihi}"), "SatisBazli"));
+            uriTable.KeyValuePairs.Add(new KeyValuePair<UriTemplate, object>(new UriTemplate("satislar/{Sehir}/{Ilce}?yetkili={Yetkili}"), "YetkiliBazlı"));
             uriTable.KeyValuePairs.Add(new KeyValuePair<UriTemplate, object>(new UriTemplate("satislar/*"), "TumSatislar"));
 
             foreach (KeyValuePair<UriTemplate, object> kv in uriTable.KeyValuePairs)
@@ -192,7 +192,7 @@ Urun sınıfı basit olarak Product tablsoundaki belirli bir satırın ProductId
 public interface IUrunHizmetleri
 {
     [OperationContract]
-    [WebGet(UriTemplate="urunler/{altkategoriId}")] 
+    [WebGet(UriTemplate = "urunler/{altkategoriId}")]
     DataSet UrunListesi(string altKategoriId);
 
     [OperationContract]
@@ -200,15 +200,15 @@ public interface IUrunHizmetleri
     Urun UrunCek(int urunId);
 
     [OperationContract]
-    [WebInvoke(UriTemplate="guncelle?sinifi={sinifi}&altKategori={altKategoriId}")]
+    [WebInvoke(UriTemplate = "guncelle?sinifi={sinifi}&altKategori={altKategoriId}")]
     void UrunGuncelle(string sinifi, int altKategoriId);
 
     [OperationContract]
-    [WebGet(UriTemplate="toplamaIslemi?sayi1={x}&sayi2={y}")]
+    [WebGet(UriTemplate = "toplamaIslemi?sayi1={x}&sayi2={y}")]
     int Toplam(int x, int y);
 
     [OperationContract]
-    [WebGet(UriTemplate="toplam?kategori={altKategoriId}")]
+    [WebGet(UriTemplate = "toplam?kategori={altKategoriId}")]
     double ToplamFiyat(int altKategoriId);
 }
 ```
@@ -218,7 +218,7 @@ UrunListesi isimli operasyon geriye DataSet döndürmektedir. Bu DataSet içeri�
 Bir başka deyişle WebGet niteliğinde UriTemplate kullanılmadığı durumlarda, MetodAdı?parametreAdı1=değeri1¶metreAdı2=değeri2 tarzı adresler ile talepte bulunulabilinir. UrunGuncelle isimli operasyon, içerisinde sinifi ve altKategori queryString parametrelerini bulunduran adres taleplerine HTTP POST metoduna göre cevap verecek şekilde tanımlanmaktadır. Bu sebepten dolayı URL satırından bir bilgi gönderilmesine gerek yoktur. Toplam operasyonu URI bilgisi içerisinde birden fazla queryString parametresini ele alıp basit bir veri tipini geriye döndürecek şekilde tasarlanmıştır. Benzer şekilde ToplamFiyat operasyonuda belirli bir alt kategerideki ürünlerin toplam liste fiyatı değerini bulacak bir fonksiyonelliği tanımlamaktadır. Söz konusu servis sözleşmesini (Service Contract) uygulayan sınıfın içeriği ise aşağıdaki gibidir.
 
 ```csharp
-public class UrunHizmetleri 
+public class UrunHizmetleri
      : IUrunHizmetleri
 {
     string conStr = "data source=.;database=AdventureWorks;integrated security=SSPI";
@@ -229,7 +229,7 @@ public class UrunHizmetleri
         DataSet set = null;
         using (SqlConnection conn = new SqlConnection(conStr))
         {
-            SqlCommand cmd = new SqlCommand("Select ProductId,Name,ListPrice,ProductSubCategoryId,Class,SellStartDate From Production.Product Where ProductSubCategoryId=@SubCatId",     conn);
+            SqlCommand cmd = new SqlCommand("Select ProductId,Name,ListPrice,ProductSubCategoryId,Class,SellStartDate From Production.Product Where ProductSubCategoryId=@SubCatId", conn);
             cmd.Parameters.AddWithValue("@SubCatId", altKategoriId);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             set = new DataSet();
@@ -250,11 +250,13 @@ public class UrunHizmetleri
             if (reader.Read())
             {
                 u = new Urun()
-                        {
-                            Id=urunId
-                            ,Name=reader["Name"].ToString()
-                            , ListPrice=Convert.ToDouble(reader["ListPrice"])
-                        };
+                {
+                    Id = urunId
+                            ,
+                    Name = reader["Name"].ToString()
+                            ,
+                    ListPrice = Convert.ToDouble(reader["ListPrice"])
+                };
             }
             reader.Close();
         }
@@ -286,7 +288,7 @@ public class UrunHizmetleri
             SqlCommand cmd = new SqlCommand("Select Sum(ListPrice) From Production.Product Where ProductSubCategoryId=@SubCatId", conn);
             cmd.Parameters.AddWithValue("@SubCatId", altKategoriId);
             conn.Open();
-            result =Convert.ToDouble(cmd.ExecuteScalar());
+            result = Convert.ToDouble(cmd.ExecuteScalar());
         }
         return result;
     }
@@ -314,18 +316,18 @@ namespace Sunucu
         static void Main(string[] args)
         {
             WebServiceHost host = new WebServiceHost(typeof(UrunHizmetleri), new Uri("http://localhost:60001/"));
-            ServiceEndpoint ep=host.AddServiceEndpoint(typeof(IUrunHizmetleri), new WebHttpBinding(), "");
+            ServiceEndpoint ep = host.AddServiceEndpoint(typeof(IUrunHizmetleri), new WebHttpBinding(), "");
 
-            host.Opened += delegate(object sender, EventArgs e)
+            host.Opened += delegate (object sender, EventArgs e)
                                 {
                                     Console.WriteLine("Servis açık");
                                 };
-            host.Closed += delegate(object sender, EventArgs e)
+            host.Closed += delegate (object sender, EventArgs e)
                                 {
                                     Console.WriteLine("Servis kapatıldı");
                                 };
 
-            host.Open(); 
+            host.Open();
 
             Console.WriteLine("Kapatmak için bir tuşa basın");
             Console.ReadLine();
@@ -378,11 +380,11 @@ namespace Istemci
 {
     [DataContract]
     public class Urun
-    { 
+    {
         [DataMember]
-        public int Id; 
+        public int Id;
         [DataMember]
-        public string Name; 
+        public string Name;
         [DataMember]
         public double ListPrice;
     }
@@ -393,11 +395,11 @@ namespace Istemci
         [OperationContract]
         [WebGet(UriTemplate = "urunler/{altkategoriId}")]
         DataSet UrunListesi(string altKategoriId);
-    
+
         [OperationContract]
         [WebGet]
         Urun UrunCek(int urunId);
-    
+
         [OperationContract]
         [WebInvoke(UriTemplate = "guncelle?sinifi={sinifi}&altKategori={altKategoriId}")]
         void UrunGuncelle(string sinifi, int altKategoriId);
@@ -419,7 +421,7 @@ namespace Istemci
             Console.ReadLine();
             using (WebChannelFactory<IUrunHizmetleri> cf = new WebChannelFactory<IUrunHizmetleri>(new Uri("http://localhost:60001")))
             {
-                IUrunHizmetleri hiz=cf.CreateChannel();
+                IUrunHizmetleri hiz = cf.CreateChannel();
                 hiz.UrunGuncelle("M", 1);
             }
         }

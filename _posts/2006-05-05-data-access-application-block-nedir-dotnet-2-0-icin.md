@@ -134,18 +134,36 @@ public class Urun
     private double _fiyat;
     public int Id
     {
-        get { return _id; }
-        set { _id = value; }
+        get
+        {
+            return _id;
+        }
+        set
+        {
+            _id = value;
+        }
     }
     public string Ad
     {
-        get { return _ad; }
-        set { _ad = value; }
+        get
+        {
+            return _ad;
+        }
+        set
+        {
+            _ad = value;
+        }
     }
     public double Fiyat
     {
-        get { return _fiyat; }
-        set { _fiyat = value; }
+        get
+        {
+            return _fiyat;
+        }
+        set
+        {
+            _fiyat = value;
+        }
     }
     public Urun()
     {
@@ -153,7 +171,7 @@ public class Urun
     public void Load(int id)
     {
         Database db = DatabaseFactory.CreateDatabase("conn");
-          IDataReader dr = db.ExecuteReader("GetProductById", id);
+        IDataReader dr = db.ExecuteReader("GetProductById", id);
         dr.Read();
         _id = Convert.ToInt32(dr["ProductID"]);
         _ad = dr["Name"].ToString();
@@ -174,12 +192,12 @@ public class OurLogic
     private Database _db;
     public OurLogic()
     {
-        _db = DatabaseFactory.CreateDatabase("conn"); 
+        _db = DatabaseFactory.CreateDatabase("conn");
     }
 
     // Ürünleri parametre olarak gelen GridView kontrolüne yükleyen iş katmanı metodu.
     public void BindProducts(GridView dg)
-    { 
+    {
         dg.DataSource = _db.ExecuteDataSet(CommandType.Text, "Select * From Production.Product");
         dg.DataBind();
     }
@@ -187,7 +205,7 @@ public class OurLogic
     // Ürün kategorilerini parametre olarak gelen DropDownList kontrolüne bağlayan, ve value ile text özelliklerinide ayarlayan bir iş katmanı metodu. Burada ListControl kullanılmasının tek sebebi, sayfalarda yer alan DropDownList ve ListBox kontrollerine de destek verilmesini sağlamaktır. Bu yine ListControl' un polimorfik yapısının sağladığı bir avantajdır.
     public void BindPrdCategories(ListControl dl)
     {
-        dl.DataSource=_db.ExecuteReader(CommandType.Text,"SELECT ProductCategoryID, Name FROM Production.ProductCategory");
+        dl.DataSource = _db.ExecuteReader(CommandType.Text, "SELECT ProductCategoryID, Name FROM Production.ProductCategory");
         dl.DataValueField = "ProductCategoryID";
         dl.DataTextField = "Name";
         dl.DataBind();
@@ -196,7 +214,7 @@ public class OurLogic
     // Ürünlerin sayısını int tipinde döndüren bir iş katmanı metodu. Bu metodda generic bir yapıda kullanılabilir. Böylece presentation katmanından çağırılırken herhangibir tipe karşılık gelecek şekilde ele alınabilir.
     public int GetCategoryCount()
     {
-        return (int)_db.ExecuteScalar(CommandType.Text,"SELECT COUNT(*) AS CategoryCount FROM Production.ProductCategory");
+        return (int)_db.ExecuteScalar(CommandType.Text, "SELECT COUNT(*) AS CategoryCount FROM Production.ProductCategory");
     }
 
     // Urun entity tipini verilen id' ye göre yükleyen ve geri döndüren bir iş katmanı metodu.
@@ -212,7 +230,7 @@ public class OurLogic
 Şimdi iş katmanının basit olarak sunum katmanından nasıl kullanıldığına bakalım.
 
 ```csharp
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     protected OurLogic _ol;
 
@@ -230,7 +248,7 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnGetCount_Click(object sender, EventArgs e)
     {
-        lblCatCount.Text=_ol.GetCategoryCount().ToString();
+        lblCatCount.Text = _ol.GetCategoryCount().ToString();
     }
     protected void btnGet_Click(object sender, EventArgs e)
     {

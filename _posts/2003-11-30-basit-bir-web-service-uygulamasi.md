@@ -42,57 +42,57 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Web;
-using System.Web.Services; 
+using System.Web.Services;
 namespace KitapServis
 {
-      /// <summary>
-      /// Summary description for Service1.
-      /// </summary>
-      public class SrvKitap : System.Web.Services.WebService
-      {
-            public SrvKitap()
+    /// <summary>
+    /// Summary description for Service1.
+    /// </summary>
+    public class SrvKitap : System.Web.Services.WebService
+    {
+        public SrvKitap()
+        {
+            //CODEGEN: This call is required by the ASP.NET Web Services Designer
+            InitializeComponent();
+        }
+
+        #region Component Designer generated code
+        //Required by the Web Services Designer
+        private IContainer components = null;
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+
+        }
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null)
             {
-                  //CODEGEN: This call is required by the ASP.NET Web Services Designer
-                  InitializeComponent();
+                components.Dispose();
             }
- 
-            #region Component Designer generated code
-            //Required by the Web Services Designer
-            private IContainer components = null;
-            /// <summary>
-            /// Required method for Designer support - do not modify
-            /// the contents of this method with the code editor.
-            /// </summary>
-            private void InitializeComponent()
-            {
+            base.Dispose(disposing);
+        }
 
-            }
+        #endregion
 
-             /// <summary>
-            /// Clean up any resources being used.
-            /// </summary>
-            protected override void Dispose( bool disposing )
-            {
-                  if(disposing && components != null)
-                  {
-                        components.Dispose();
-                  }
-                  base.Dispose(disposing);
-            }
+        // WEB SERVICE EXAMPLE
+        // The HelloWorld() example service returns the string Hello World
+        // To build, uncomment the following lines then save and build the project
+        // To test this web service, press F5
 
-            #endregion
-
-            // WEB SERVICE EXAMPLE
-            // The HelloWorld() example service returns the string Hello World
-            // To build, uncomment the following lines then save and build the project
-            // To test this web service, press F5
-
-            // [WebMethod]
-            // public string HelloWorld()
-            // {
-            // return "Hello World";
-            // }
-      }
+        // [WebMethod]
+        // public string HelloWorld()
+        // {
+        // return "Hello World";
+        // }
+    }
 }
 ```
 
@@ -102,11 +102,11 @@ Kodları kısaca inceleyecek olursak, web servislere ait özellikleri kullanabil
 [WebMethod]
 public DataSet KitapListesi()
 {
-      SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-      SqlDataAdapter da=new SqlDataAdapter("Select Adi,Fiyat From Kitaplar",conFriends);
-      DataSet ds=new DataSet();
-      da.Fill(ds);
-      return ds;
+    SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    SqlDataAdapter da = new SqlDataAdapter("Select Adi,Fiyat From Kitaplar", conFriends);
+    DataSet ds = new DataSet();
+    da.Fill(ds);
+    return ds;
 }
 ```
 
@@ -277,13 +277,15 @@ private void button1_Click(object sender, System.EventArgs e)
 
 {
 
-      localhost.SrvKitap srv=new localhost.SrvKitap(); /* Servisimizi kullanabilmek için bu servisten bir örnek nesne yaratıyoruz*/
+    localhost.SrvKitap srv = new localhost.SrvKitap();
+    /* Servisimizi kullanabilmek için bu servisten bir örnek nesne yaratıyoruz*/
 
-      DataSet ds=new DataSet();
+    DataSet ds = new DataSet();
 
-      ds=srv.KitapListesi(); /* Servisteki KitapListesi isimli metodumuzu çağırıyoruz.*/
+    ds = srv.KitapListesi();
+    /* Servisteki KitapListesi isimli metodumuzu çağırıyoruz.*/
 
-      dataGrid1.DataSource=ds;
+    dataGrid1.DataSource = ds;
 
 }
 ```

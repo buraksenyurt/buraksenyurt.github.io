@@ -29,70 +29,78 @@ Aynı teknik yardımıyla, kullanıcı seçtiği resmi bir dosya olarakta kayded
 Şekil 1. Form Tasarımımız.
 
 ```csharp
-SqlConnection conResim; /* SqlConnection nesnemizi tanımlıyoruz. */
+SqlConnection conResim;
+/* SqlConnection nesnemizi tanımlıyoruz. */
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    conResim=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi"); /* SqlConnection nesnemizi oluşturuyor ve Norhtwind veritabanına bağlanıyoruz. */
-    SqlDataAdapter daResim=new SqlDataAdapter("Select WallID,Yorum From Wallpapers",conResim); /* Wallpapers tablosundan, WallID, ve Yorum alanlarının değerlerini almak ve bunları SqlDataAdapter nesnemizin Fill metodu ile DataTable nesnemizin bellekte işaret ettiği alana aktarmak için SqlDataAdapter nesnemizi oluşturuyoruz. */
-    DataTable dtResim=new DataTable("Duvarlar"); /* DataTable nesnemizi oluşturuyoruz.*/
-    daResim.Fill(dtResim); /* DataTable'nesnemizi select sorgusu sonucu elde edilen veri satırları ile dolduruyoruz. */
-    dgResim.DataSource=dtResim; /* DataGrid nesnemizi DataTable veri kaynağımıza bağlıyoruz. */
+    conResim = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
+    /* SqlConnection nesnemizi oluşturuyor ve Norhtwind veritabanına bağlanıyoruz. */
+    SqlDataAdapter daResim = new SqlDataAdapter("Select WallID,Yorum From Wallpapers", conResim);
+    /* Wallpapers tablosundan, WallID, ve Yorum alanlarının değerlerini almak ve bunları SqlDataAdapter nesnemizin Fill metodu ile DataTable nesnemizin bellekte işaret ettiği alana aktarmak için SqlDataAdapter nesnemizi oluşturuyoruz. */
+    DataTable dtResim = new DataTable("Duvarlar");
+    /* DataTable nesnemizi oluşturuyoruz.*/
+    daResim.Fill(dtResim);
+    /* DataTable'nesnemizi select sorgusu sonucu elde edilen veri satırları ile dolduruyoruz. */
+    dgResim.DataSource = dtResim;
+    /* DataGrid nesnemizi DataTable veri kaynağımıza bağlıyoruz. */
 }
 
 /* Yaz başlıklık buton kontrolüne tıklandığında, kullanıcının seçtiği resim sistemimize, jpg uzantılı bir resim dosyası olarak kaydedilcektir.*/
 private void btnYaz_Click(object sender, System.EventArgs e)
 {
- /* SqlDataReader nesnemiz, ileri yönlü bir okuma sağlamak için kullanılacak. */
+    /* SqlDataReader nesnemiz, ileri yönlü bir okuma sağlamak için kullanılacak. */
     SqlDataReader drResim;
     int secilen;
     /* Kullanıcının dataGrid kontrolünde seçtiği satırın, ilk sütununu yani WallID değerini seçiyoruz. Bu değeri sql sorgumuzda, ilgili satıra ait resim alanını bulmak için kullanacağız. */
-    secilen=System.Convert.ToInt32(dgResim[dgResim.CurrentCell.RowNumber,0].ToString());
+    secilen = System.Convert.ToInt32(dgResim[dgResim.CurrentCell.RowNumber, 0].ToString());
 
     /* Sql Sorgumuzu oluşturuyoruz. Bu sorgu, seçilen satıra ait Resim alanının değerini elde etmemizi sağlıyacak.*/
-    string sqlStr="Select Resim From Wallpapers Where WallID="+secilen;
-    
-    SqlCommand cmdResim=new SqlCommand(sqlStr,conResim); /* SqlCommand nesnemizi, sql sorgumuz ve SqlConnection nesnemiz üzerinden çalıştırılmak üzere oluşturuyoruz. */
+    string sqlStr = "Select Resim From Wallpapers Where WallID=" + secilen;
+
+    SqlCommand cmdResim = new SqlCommand(sqlStr, conResim);
+    /* SqlCommand nesnemizi, sql sorgumuz ve SqlConnection nesnemiz üzerinden çalıştırılmak üzere oluşturuyoruz. */
     /* Eğer SqlConnection'ımız açık değilse açıyoruz. Nitekim SqlCommand nesnesinin içerdiği sql sorgusunun çalıştırılması açık bir bağlantıyı gerektirmektedir. */
 
-    if(conResim.State!=ConnectionState.Open)
+    if (conResim.State != ConnectionState.Open)
     {
         conResim.Open();
     }
     /* SqlDataReader nesnemizi, SqlCommand nesnemizin, ExecuteReader metodu ile dolduruyoruz. CommandBehavior.SequentialAccess parametresi sayesinde, Resim alanı üzerinde byte seviyesinde sırasal bilgi okuma imkanına sahip oluyoruz. */
-    drResim=cmdResim.ExecuteReader(CommandBehavior.SequentialAccess);
-    
+    drResim = cmdResim.ExecuteReader(CommandBehavior.SequentialAccess);
+
     /* Resim alanındaki byte'ları taşıyacak bir dizi oluşturuyoruz. Bu dizinin boyutu 50. BinaryWrite nesnemiz , FileStream nesnesinin işaret ettiği dosyaya doğru bu dizideki byte'ları akıtıcak. Yani seçilen Resim alanındaki byte'ları 50 byte'lık bloklar halinde okuyacağız ve bu dizileri sırasıyla, BinaryWriter nesnemiz ile, sistemde yazmak üzere oluşturduğumuz dosyaya aktaracağız. Burada ben 50 byte'lık blokları seçimsel olarak ele aldım. Sizler bu blokları, 100 byte'lık veya 25 byte'lık veya istediğiniz bir miktarda da kullanabilirsiniz. */
 
-    byte[] bytediziResim=new byte[50];
+    byte[] bytediziResim = new byte[50];
 
     /* FileStream nesnemiz ile, BinaryWriter nesnesinin okuduğu byte'ları yazıcak dosyayı oluşturuyoruz. Dosyamız sistemde daha önceden var olabilir. Bu durumda terkardan açılıp üstüne yazılır. Yok ise bu dosya oluşturulur.Diğer yandan FileAccess.Write parametresi ile dosyayı, yazmak amacıyla açtığımızı belirtiyoruz. Burada deneme olsun diye Deneme.jpg isimli bir dosya oluşturduk. Ancak dilerseniz siz, bu dosya adına WallID alanının değerinide ekleyerek benzersiz dosyalar oluşturabilirsiniz. Veya kullanıcıdan bir dosya ismi girmesini isteyebilirsiniz. Bunun geliştirilemesini siz değerli okurlarıma bırakıyorum. */
-    FileStream fs=new FileStream("c:\\Deneme.jpg",FileMode.OpenOrCreate,FileAccess.Write);
+    FileStream fs = new FileStream("c:\\Deneme.jpg", FileMode.OpenOrCreate, FileAccess.Write);
 
     /* BinaryWriter nesnemiz, veri akışını okuduğu alandan, aldığı fs parametresinin belirttiği dosyaya doğru başlatıyor. */
-    BinaryWriter bw=new BinaryWriter(fs);
+    BinaryWriter bw = new BinaryWriter(fs);
 
     long donenBytelar;
-    long baslangicIndeksi=0;
+    long baslangicIndeksi = 0;
 
     /* SqlDataReader nesnemizin döndürdüğü satırı okumaya başlıyoruz. Sorgumuzun sadece Resim alanının değerini döndürdüğünü hatırlayalım. */
-    while(drResim.Read())
+    while (drResim.Read())
     {
         /* Şimdi Resim alanından ilk 50 byte'lık bölümü okuyoruz. GetBytes metodunun aldığı ilk parametre, SqlDataReader'ın döndürdüğü veri kümesindeki Resim alanının indeks değeridir. İkinci parametre bu alanın hangi byte'ından itibaren okunmaya başlayacağıdır. Başlangıç için 0'ncı byte'tan itibaren okumaya başlıyoruz. Üçüncü parametre okunan byte'ların hangi Byte disizine yazılacağını belirtir. Dördüncü parametre bu dizi içerisine dizinin hangi indeksinden itibaren yazılmaya başlıyacağını ve beşinci parametrede okunan byte'ların, bu dizi içinde kaç byte'lık bir alana yazılacağını belirtiyor. */
-        donenBytelar=drResim.GetBytes(0,0,bytediziResim,0,50);
+        donenBytelar = drResim.GetBytes(0, 0, bytediziResim, 0, 50);
 
         /* GetBytes metodu SqlDataReader nesnesinden okuyup, bytediziResim dizisine aktardığı byte sayısını geri döndürür. Bu dönen değeri donenBytelar isimli Long tipinde değişkenimizde tutuyoruz. Aşağıdaki döngüyle, okunan byte sayısı 50'ye eşit olduğu sürece, Resim alanından 50 byte'lık bloklar okunmaya devam ediyor. Okundukçada, BinaryWriter nesnemiz bu byte'ları FileStream ile açtığımız dosyaya yazıyor. Farz edelimki 386 byte'lık bir alana sahibiz. 350 byte okunduktan sonra, kalan 36 byte'ta son olarak okunur ve bundan sonrada döngünde çıkılmış olur.*/
-        while(donenBytelar==50)
+        while (donenBytelar == 50)
         {
             bw.Write(bytediziResim);
             bw.Flush();
-            
-            baslangicIndeksi+=50;
-            donenBytelar=drResim.GetBytes(0,baslangicIndeksi,bytediziResim,0,50);
+
+            baslangicIndeksi += 50;
+            donenBytelar = drResim.GetBytes(0, baslangicIndeksi, bytediziResim, 0, 50);
         }
         /* Bahsettiğimiz 36 bytelık kısımda son olarak buradan yazılır. */
         bw.Write(bytediziResim);
-        bw.Flush(); /* Flush metodu, BinaryWriter nesnesinin o an sahip olduğu tampon hafızayı temizler. */
+        bw.Flush();
+        /* Flush metodu, BinaryWriter nesnesinin o an sahip olduğu tampon hafızayı temizler. */
 
         /* BinaryWriter nesnemiz ve FileStream nesnemiz kapatılıyor. */
         bw.Close();
@@ -109,40 +117,41 @@ private void btnBak_Click(object sender, System.EventArgs e)
 {
     SqlDataReader drResim;
     int secilen;
-    
-    secilen=System.Convert.ToInt32(dgResim[dgResim.CurrentCell.RowNumber,0].ToString());
-    string sqlStr="Select Resim From Wallpapers Where WallID="+secilen;
 
-    SqlCommand cmdResim=new SqlCommand(sqlStr,conResim);
-    if(conResim.State!=ConnectionState.Open)
+    secilen = System.Convert.ToInt32(dgResim[dgResim.CurrentCell.RowNumber, 0].ToString());
+    string sqlStr = "Select Resim From Wallpapers Where WallID=" + secilen;
+
+    SqlCommand cmdResim = new SqlCommand(sqlStr, conResim);
+    if (conResim.State != ConnectionState.Open)
     {
         conResim.Open();
     }
-    drResim=cmdResim.ExecuteReader(CommandBehavior.SequentialAccess);
-    byte[] bytediziResim=new byte[50];
-    MemoryStream ms=new MemoryStream();
+    drResim = cmdResim.ExecuteReader(CommandBehavior.SequentialAccess);
+    byte[] bytediziResim = new byte[50];
+    MemoryStream ms = new MemoryStream();
 
-    BinaryWriter bw=new BinaryWriter(ms);
+    BinaryWriter bw = new BinaryWriter(ms);
     long donenBytelar;
-    
-    long baslangicIndeksi=0;
-    while(drResim.Read())
+
+    long baslangicIndeksi = 0;
+    while (drResim.Read())
     {
-        donenBytelar=drResim.GetBytes(0,0,bytediziResim,0,50);
-        while(donenBytelar==50)
+        donenBytelar = drResim.GetBytes(0, 0, bytediziResim, 0, 50);
+        while (donenBytelar == 50)
         {
             bw.Write(bytediziResim);
             bw.Flush();
-            baslangicIndeksi+=50;
-            donenBytelar=drResim.GetBytes(0,baslangicIndeksi,bytediziResim,0,50);
+            baslangicIndeksi += 50;
+            donenBytelar = drResim.GetBytes(0, baslangicIndeksi, bytediziResim, 0, 50);
         }
 
         bw.Write(bytediziResim);
-        pbResim.Image=System.Drawing.Image.FromStream(ms); /* Bellekteki tampon bölgeye aldığımız, byte dizisini, PictureBox kontrolünde göstermek için, Image sınıfının FromStream metodunu kullanıyoruz. Bu metod parametre olarak aldığı akımdan gerekli byte'ları okuyarak, resmin PictureBox kontrolünde gösterilebilmesini sağlıyor. */
+        pbResim.Image = System.Drawing.Image.FromStream(ms);
+        /* Bellekteki tampon bölgeye aldığımız, byte dizisini, PictureBox kontrolünde göstermek için, Image sınıfının FromStream metodunu kullanıyoruz. Bu metod parametre olarak aldığı akımdan gerekli byte'ları okuyarak, resmin PictureBox kontrolünde gösterilebilmesini sağlıyor. */
 
         bw.Flush();
         bw.Close();
-        
+
         ms.Close();
     }
 

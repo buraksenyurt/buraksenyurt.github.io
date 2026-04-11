@@ -69,17 +69,18 @@ namespace HelloTPL
 
             // Action temsilcisinin söylediği kurallara uygun olaraktan, lambda operatöründen yararlanılır.
             Console.WriteLine("For\n");
-            Parallel.For(1, numbers.Length, 
+            Parallel.For(1, numbers.Length,
                 i =>
                 {
-                    if(i%1500==0)
-                        Console.Write("{0} ",i.ToString());
+                    if (i % 1500 == 0)
+                        Console.Write("{0} ", i.ToString());
                 }
             );
-            
-            Console.WriteLine("\n\nFor(İçeriden başka metod çağırarak)\n");            
-            Parallel.For(1,numbers.Length,
-                (i)=>{
+
+            Console.WriteLine("\n\nFor(İçeriden başka metod çağırarak)\n");
+            Parallel.For(1, numbers.Length,
+                (i) =>
+                {
                     if (i % 1500 == 0)
                         Task1(i);
                 }
@@ -110,7 +111,7 @@ namespace HelloTPL
                 () =>
                 {
                     Console.WriteLine("Toplam Tek sayı hesabı başladı\n");
-                    Console.WriteLine("Managed Thread ID {0} ",Thread.CurrentThread.ManagedThreadId.ToString());
+                    Console.WriteLine("Managed Thread ID {0} ", Thread.CurrentThread.ManagedThreadId.ToString());
                     OddCount(numbers);
                     Console.WriteLine("Toplam Tek sayı bulma işi tamamlandı\n");
                 },
@@ -133,11 +134,11 @@ namespace HelloTPL
 
             #endregion
         }
-        
+
         static void Task1(int number)
         {
             // Değişiklik işlemler
-            Console.Write("{0} ", number.ToString());                
+            Console.Write("{0} ", number.ToString());
         }
 
         static void EvenCount(int[] numbers)
@@ -145,7 +146,7 @@ namespace HelloTPL
             int result = (from number in numbers
                           where number % 2 == 0
                           select number).Count();
-            Console.WriteLine("\tDizi içerisinde {0} adet ÇİFT sayı vardır\n",result.ToString());
+            Console.WriteLine("\tDizi içerisinde {0} adet ÇİFT sayı vardır\n", result.ToString());
         }
         static void OddCount(int[] numbers)
         {

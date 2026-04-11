@@ -118,12 +118,15 @@ using System.Web;
 
 namespace MyHandlers
 {
-    public class MyCustomHandler:IHttpHandler
+    public class MyCustomHandler : IHttpHandler
     {
         #region IHttpHandler Members
         public bool IsReusable
         {
-            get { return true; }
+            get
+            {
+                return true;
+            }
         }
 
         public void ProcessRequest(HttpContext context)
@@ -183,7 +186,7 @@ using System.Web;
 
 namespace MyHandlers
 {
-    class MyCustomModule:IHttpModule
+    class MyCustomModule : IHttpModule
     {
         #region IHttpModule Members
         public void Dispose()
@@ -208,14 +211,14 @@ using System.Web;
 
 namespace MyHandlers
 {
-    class MyCustomModule:IHttpModule
+    class MyCustomModule : IHttpModule
     {
-        HttpContext m_Ctx=null;
+        HttpContext m_Ctx = null;
 
         public void Init(HttpApplication context)
         {
-            m_Ctx = context.Context; 
-            context.PreSendRequestContent+= new EventHandler(context_PreSendRequestContent);
+            m_Ctx = context.Context;
+            context.PreSendRequestContent += new EventHandler(context_PreSendRequestContent);
         }
 
         void context_PreSendRequestContent(object sender, EventArgs e)
@@ -264,9 +267,9 @@ using System.Web.Security;
 
 namespace MyHandlers
 {
-    class MyCustomModule:IHttpModule
+    class MyCustomModule : IHttpModule
     {
-        HttpContext m_Ctx=null;
+        HttpContext m_Ctx = null;
         WindowsAuthenticationModule authMod = null;
 
         public void Init(HttpApplication context)

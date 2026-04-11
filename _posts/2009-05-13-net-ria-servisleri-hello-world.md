@@ -45,12 +45,15 @@ Herşeyden önce, LinqToEntitesDomainService isimli generic ve abstract bir sın
 ```csharp
 namespace System.Web.DomainServices.LinqToEntities
 {
-    public abstract class LinqToEntitiesDomainService<T> 
+    public abstract class LinqToEntitiesDomainService<T>
       : LinqToEntitiesDomainService where T : System.Data.Objects.ObjectContext
     {
         protected LinqToEntitiesDomainService();
 
-        protected T Context { get; }
+        protected T Context
+        {
+            get;
+        }
     }
 }
 ```
@@ -65,7 +68,7 @@ namespace HelloRIAServices.Web
     using System.Linq;
     using System.Web.DomainServices.LinqToEntities;
     using System.Web.Ria;
-    
+
     [EnableClientAccess()]
     public class NorthwindDomainService : LinqToEntitiesDomainService<NorthwindEntities>
     {
@@ -94,7 +97,7 @@ namespace HelloRIAServices.Web
     using System.Web.Ria;
 
     [EnableClientAccess()]
-    public class NorthwindDomainService 
+    public class NorthwindDomainService
  : LinqToEntitiesDomainService<NorthwindEntities>
     {
         public IQueryable<Categories> GetCategories()
@@ -108,7 +111,7 @@ namespace HelloRIAServices.Web
             // basit bir LINQ ifadesi yardımıyla
             return (from p in this.Context.Products
                     orderby p.ProductName descending
-                    select p);                    
+                    select p);
         }
     }
 }
@@ -195,13 +198,13 @@ namespace HelloRIAServices
         private void cmbCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Seçilen öğe Categories tipinden olduğu için CategoryID özelliğine aşağıdaki kod parçasında olduğu gibi ulaşılabilir.
-            int selectedCategoryId=((Categories)e.AddedItems[0]).CategoryID;
+            int selectedCategoryId = ((Categories)e.AddedItems[0]).CategoryID;
 
             // Eğer aşağıdaki temizleme işlemini uygulamassak, Grid kontrolü içerisinde veriler arka arkaya eklenerek çoğalır.
             context.Entities.GetEntityList<Products>().Clear();
 
             // LoadProductsByCategory metoduna, seçili kategorinin CategoryID değeri gönderilerek, bağlı olan ürün listesinin yüklenmesi sağlanır.            
-            context.LoadProductsByCategory(selectedCategoryId);            
+            context.LoadProductsByCategory(selectedCategoryId);
         }
     }
 }

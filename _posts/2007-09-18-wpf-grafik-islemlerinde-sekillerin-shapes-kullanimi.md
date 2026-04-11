@@ -102,7 +102,7 @@ namespace GrafiklerleCalismak
 {
     public partial class KodlaElipsTransform : Window
     {
-        private void ElipsCiz(Ellipse elps, int width, int height, int angle,Color color)
+        private void ElipsCiz(Ellipse elps, int width, int height, int angle, Color color)
         {
             elps.Width = width;
             elps.Height = height;
@@ -113,10 +113,10 @@ namespace GrafiklerleCalismak
         }
         private void Cizdir()
         {
-            ElipsCiz(new Ellipse(), 125, 40, 270,Colors.Red);
-            ElipsCiz(new Ellipse(), 40, 125, 90,Colors.Gold);
+            ElipsCiz(new Ellipse(), 125, 40, 270, Colors.Red);
+            ElipsCiz(new Ellipse(), 40, 125, 90, Colors.Gold);
             ElipsCiz(new Ellipse(), 125, 40, 45, Colors.DarkBlue);
-            ElipsCiz(new Ellipse(), 125, 40, 135,Colors.Lavender); 
+            ElipsCiz(new Ellipse(), 125, 40, 135, Colors.Lavender);
         }
 
         public KodlaElipsTransform()
@@ -168,7 +168,7 @@ namespace GrafiklerleCalismak
         private void ElipsCiz()
         {
             grdTahta.Children.Clear();
-            Random rnd=new Random();
+            Random rnd = new Random();
             for (int i = 0; i < 3; i++)
             {
                 Ellipse elps = new Ellipse();
@@ -179,12 +179,12 @@ namespace GrafiklerleCalismak
                 grdTahta.Children.Add(elps);
             }
         }
-    
+
         public KodYardimiylaElips()
         {
             InitializeComponent();
         }
-    
+
         private void btnCiz_Click(object sender, RoutedEventArgs e)
         {
             ElipsCiz();
@@ -285,10 +285,10 @@ namespace GrafiklerleCalismak
             InitializeComponent();
             Cizdir();
         }
-    
+
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            plgy.LayoutTransform = new RotateTransform(sayac*15);
+            plgy.LayoutTransform = new RotateTransform(sayac * 15);
             sayac++;
         }
     }
@@ -355,11 +355,11 @@ namespace GrafiklerleCalismak
 
         private void imgHarita_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            basilanNokta=e.GetPosition(grdTahta); 
+            basilanNokta = e.GetPosition(grdTahta);
         }
 
         private void imgHarita_MouseUp(object sender, MouseButtonEventArgs e)
-        { 
+        {
             Line yol = new Line();
             yol.Stroke = new SolidColorBrush(Colors.Red);
             yol.StrokeThickness = 2;
@@ -369,7 +369,7 @@ namespace GrafiklerleCalismak
             yol.X2 = bitisNoktasi.X;
             yol.Y2 = bitisNoktasi.Y;
             grdTahta.Children.Add(yol);
-        }        
+        }
     }
 }
 ```
@@ -477,7 +477,7 @@ namespace GrafiklerleCalismak
     {
         public TransformKullanimi()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void sldScale_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

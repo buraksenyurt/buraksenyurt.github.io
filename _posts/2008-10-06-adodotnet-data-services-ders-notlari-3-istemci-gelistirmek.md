@@ -53,7 +53,7 @@ using System.Linq;
 using System.ServiceModel.Web;
 using AdventureWorksModel;
 
-public class AdventureWorksServices 
+public class AdventureWorksServices
     : DataService<AdventureWorksEntities>
 {
     public static void InitializeService(IDataServiceConfiguration config)
@@ -103,14 +103,14 @@ namespace ClientApp
             // CreateQuery metodu parametre olarak Entity adını almaktadır.
             // Metodun döndürdüğü sonuç kümesi DataServiceQuery tipi ile ele alınabilir.
             // İstenirse var anahtar kelimeside göz önüne alınabilir. Her iki durumdada for döngüsü çalışacaktır.
-            DataServiceQuery<ProductSubcategory> subCategories=proxy.CreateQuery<ProductSubcategory>("ProductSubcategory");
+            DataServiceQuery<ProductSubcategory> subCategories = proxy.CreateQuery<ProductSubcategory>("ProductSubcategory");
             // var subCategories = proxy.CreateQuery<ProductSubcategory>("ProductSubcategory");
 
             // Elde edilen sonuç kümesinin her bir elemanı ProductSubcategory sınıfı tipindendir.
             foreach (ProductSubcategory subCategory in subCategories)
             {
                 //Her bir alt kategorinin Name ve ProductSubcategoryID özelliklerinin değerleri yazdırılır.
-                Console.WriteLine("{0} : {1}",subCategory.ProductSubcategoryID,subCategory.Name);
+                Console.WriteLine("{0} : {1}", subCategory.ProductSubcategoryID, subCategory.Name);
             }
         }
     }
@@ -135,7 +135,7 @@ var subCategories = proxy.Execute<ProductSubcategory>(new Uri("/ProductSubcatego
 
 foreach (ProductSubcategory subCategory in subCategories)
 {
-    Console.WriteLine("{0} : {1}",subCategory.ProductSubcategoryID,subCategory.Name);
+    Console.WriteLine("{0} : {1}", subCategory.ProductSubcategoryID, subCategory.Name);
 }
 ```
 
@@ -152,11 +152,11 @@ var subCategories = proxy.Execute<ProductSubcategory>(new Uri("/ProductSubcatego
 
 foreach (ProductSubcategory subCategory in subCategories)
 {
-    Console.WriteLine("{0} : {1}",subCategory.ProductSubcategoryID,subCategory.Name);
+    Console.WriteLine("{0} : {1}", subCategory.ProductSubcategoryID, subCategory.Name);
     // O andaki alt kategoriye bağlı ürünleri gezmek için Product özelliğinden yararlanılır.
     foreach (Product product in subCategory.Product)
     {
-        Console.WriteLine("\t {0}, {1}, {2}",product.ProductID.ToString(),product.Name,product.ListPrice.ToString());
+        Console.WriteLine("\t {0}, {1}, {2}", product.ProductID.ToString(), product.Name, product.ListPrice.ToString());
     }
 }
 ```
@@ -193,12 +193,12 @@ namespace ClientApp
             AdventureWorksEntities proxy = new AdventureWorksEntities(new Uri("http://localhost:1740/AdventureServices/AdventureWorksServices.svc"));
 
             var subCategories = from sc in proxy.ProductSubcategory
-            orderby sc.Name descending
-            select sc;
-    
+                                orderby sc.Name descending
+                                select sc;
+
             foreach (ProductSubcategory subCategory in subCategories)
             {
-                Console.WriteLine("{0} : {1}",subCategory.ProductSubcategoryID,subCategory.Name);
+                Console.WriteLine("{0} : {1}", subCategory.ProductSubcategoryID, subCategory.Name);
             }
         }
     }
@@ -219,20 +219,20 @@ Buna göre ProductSubcategory ve bunlara bağlı ürünlerin elde edilmesi için
 AdventureWorksEntities proxy = new AdventureWorksEntities(new Uri("http://localhost:1740/AdventureServices/AdventureWorksServices.svc"));
 
 // Take metodu ile A...Z ye sıralanmış listenin ilk 3 elemanı alınmış olunur.
-var subCategories = (from sc in proxy.ProductSubcategory 
-orderby sc.Name 
-select sc).Take<ProductSubcategory>(3);
+var subCategories = (from sc in proxy.ProductSubcategory
+                     orderby sc.Name
+                     select sc).Take<ProductSubcategory>(3);
 
 // Elde edilen alt kategoriler dolaşışır
 foreach (ProductSubcategory subCategory in subCategories)
 {
-    Console.WriteLine("{0} : {1}",subCategory.ProductSubcategoryID,subCategory.Name);
+    Console.WriteLine("{0} : {1}", subCategory.ProductSubcategoryID, subCategory.Name);
     // O andaki alt kategoriye bağlı ürünlerin çekilmesi için LoadProperty metodu kullanılır. İkinci parametre ilişkinin taşındığı özellik adıdır.
     proxy.LoadProperty(subCategory, "Product");
     // Artık o andaki alt kategori için yüklenen Product satırları dolaşılabili
     foreach (Product product in subCategory.Product)
     {
-        Console.WriteLine("\t{0} {1} {2}",product.ProductID.ToString(),product.Name,product.ListPrice.ToString());
+        Console.WriteLine("\t{0} {1} {2}", product.ProductID.ToString(), product.Name, product.ListPrice.ToString());
     }
 }
 ```

@@ -47,22 +47,27 @@ public interface IKisi
     }
     string Ad /* Tablomuzdaki char tipindeki Ad alanımız için string tipte bir alan.*/
     {
-        get; set;
+        get;
+        set;
     }
     string Soyad
     {
-        get; set;
+        get;
+        set;
     }
     DateTime DogumTarihi
     /* Tablomuzda, DogumTarihi alanımız datetime tipinde olduğundan, DateTime tipinde bir özellik tanımlanmasına izin veriyoruz.*/
     {
-        get; set;
+        get;
+        set;
     }
     string Meslek
     {
-        get; set;
+        get;
+        set;
     }
-    void Bul(int KID); /* Bul metod, KID parametresine göre, tablodan ilgili satıra ait verileri alıcak ve alanlara karşılık gelen özelliklere atayacak metodumuzdur.*/
+    void Bul(int KID);
+    /* Bul metod, KID parametresine göre, tablodan ilgili satıra ait verileri alıcak ve alanlara karşılık gelen özelliklere atayacak metodumuzdur.*/
 }
 ```
 
@@ -85,27 +90,54 @@ public class CKisi : IKisi /* IKisi arayüzünü uyguluyoruz.*/
     /* Arayüzümüzde yer alan üyeleri uygulamaya başlıyoruz.*/
     public int KisiID
     {
-        get { return kisiID; }
+        get
+        {
+            return kisiID;
+        }
     }
     public string Ad
     {
-        get { return ad; }
-        set { ad = value; }
+        get
+        {
+            return ad;
+        }
+        set
+        {
+            ad = value;
+        }
     }
     public string Soyad
     {
-        get { return soyad; }
-        set { soyad = value; }
+        get
+        {
+            return soyad;
+        }
+        set
+        {
+            soyad = value;
+        }
     }
     public DateTime DogumTarihi
     {
-        get { return dogumTarihi; }
-        set { dogumTarihi = value; }
+        get
+        {
+            return dogumTarihi;
+        }
+        set
+        {
+            dogumTarihi = value;
+        }
     }
     public string Meslek
     {
-        get { return meslek; }
-        set { meslek = value; }
+        get
+        {
+            return meslek;
+        }
+        set
+        {
+            meslek = value;
+        }
     }
     public void Bul(int KID)
     {
@@ -152,7 +184,8 @@ using System;
 
 private void btnGetir_Click(object sender, System.EventArgs e)
 {
-    int id = Convert.ToInt32(txtKisiID.Text.ToString()); /* Kullanıcının TextBox kontrolüne girdiği ID değeri Convert sınıfının ToInt32 metodu ile Integer'a çeviriyoruz.*/
+    int id = Convert.ToInt32(txtKisiID.Text.ToString());
+    /* Kullanıcının TextBox kontrolüne girdiği ID değeri Convert sınıfının ToInt32 metodu ile Integer'a çeviriyoruz.*/
     kisi.Bul(id);
     /* Kisi isimli CKisi sınıfından nesne örneğimizin Bul metodunu çağırıyoruz.*/
     Doldur();
@@ -165,7 +198,8 @@ private void btnGetir_Click(object sender, System.EventArgs e)
 ```csharp
 public void Doldur()
 {
-    txtAd.Text = kisi.Ad.ToString(); /* txtAd kontrolüne, kisi nesnemizin Ad özelliğinin şu anki değeri yükleniyor. Yani ilgili veri satırının ilgili alanı bu kontrole bağlamış oluyor.*/
+    txtAd.Text = kisi.Ad.ToString();
+    /* txtAd kontrolüne, kisi nesnemizin Ad özelliğinin şu anki değeri yükleniyor. Yani ilgili veri satırının ilgili alanı bu kontrole bağlamış oluyor.*/
     txtSoyad.Text = kisi.Soyad.ToString();
     txtMeslek.Text = kisi.Meslek.ToString();
     txtDogumTarihi.Text = kisi.DogumTarihi.ToShortDateString();
@@ -261,13 +295,16 @@ public void Guncelle(int ID)
     /* Update sorgumuzu oluşturuyoruz. Dikkat edicek olursanız alanlara atanacak değerler, kisi isimli nesnemizin özelliklerinin değerleridir. Bu özellik değerleri ise, TextBox kontrollerinin TextChanged olaylarına ekldeğimiz kodlar ile sürekli güncel tutulmaktadır. En ufak bir değişiklik dahi buraya yansıyabilecektir.*/
     string sorgu = "Update Kisiler Set Ad='" + kisi.Ad + "',Soyad='" + kisi.Soyad + "',Meslek='" + kisi.Meslek + "',DogumTarihi='" + kisi.DogumTarihi.ToShortDateString() + "' Where KisiID=" + ID;
 
-    SqlCommand cmd = new SqlCommand(sorgu, conFriends); /* SqlCommand nesnemizi sql cümleciğimiz ve geçerli bağlantımız ile oluşturuyoruz. */
+    SqlCommand cmd = new SqlCommand(sorgu, conFriends);
+    /* SqlCommand nesnemizi sql cümleciğimiz ve geçerli bağlantımız ile oluşturuyoruz. */
 
-    conFriends.Open(); /* Bağlantımızı açıyoruz.*/
+    conFriends.Open();
+    /* Bağlantımızı açıyoruz.*/
 
     try
     {
-        cmd.ExecuteNonQuery(); /* Komutumuzu çalıştırıyoruz.*/
+        cmd.ExecuteNonQuery();
+        /* Komutumuzu çalıştırıyoruz.*/
     }
     catch
     {

@@ -29,10 +29,10 @@ using System.Runtime.Serialization;
 
 namespace AdventureContracts
 {
-    [ServiceContract(Namespace="http://adventure/productService")]
+    [ServiceContract(Namespace = "http://adventure/productService")]
     public interface IAdventureContract
     {
-        [OperationContract(IsOneWay=true)]
+        [OperationContract(IsOneWay = true)]
         void ProcessProduct(Product product);
     }
 
@@ -40,13 +40,29 @@ namespace AdventureContracts
     public class Product
     {
         [DataMember]
-        public int ProductId { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public double ListPrice { get; set; }
+        public double ListPrice
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public int Amount { get; set; }
+        public int Amount
+        {
+            get;
+            set;
+        }
     }
 }
 ```

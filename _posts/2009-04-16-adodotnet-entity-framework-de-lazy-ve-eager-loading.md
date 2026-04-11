@@ -31,7 +31,7 @@ namespace BlogSample
             using (NorthwindDataContext northContext = new NorthwindDataContext())
             {
                 // northContext.Log = Console.Out; // İsterseniz SQL sorgularını Console çıktısından da takip edebilirsiniz.
-                
+
                 foreach (Category category in northContext.Categories)
                 {
                     Console.WriteLine("Category Name :{0} ({1})", category.CategoryName, category.Products.Count);
@@ -117,7 +117,7 @@ namespace BlogSample
                                 };
                 foreach (var result in resultSet)
                 {
-                    Console.WriteLine("Category Name :{0} ({1})", result.CategoryName,result.Count.ToString());
+                    Console.WriteLine("Category Name :{0} ({1})", result.CategoryName, result.Count.ToString());
                 }
             }
         }
@@ -144,7 +144,7 @@ using (NorthwindEntities entity = new NorthwindEntities())
 {
     foreach (var category in entity.Categories)
     {
-        Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
+        Console.WriteLine("Category Name :{0}({1})", category.CategoryName, category.Products.Count);
     }
 }
 ```
@@ -164,9 +164,9 @@ using (NorthwindEntities entity = new NorthwindEntities())
 {
     foreach (var category in entity.Categories)
     {
-        if(!category.Products.IsLoaded)
+        if (!category.Products.IsLoaded)
             category.Products.Load();
-        Console.WriteLine("Category Name :{0}({1})",category.CategoryName,category.Products.Count);
+        Console.WriteLine("Category Name :{0}({1})", category.CategoryName, category.Products.Count);
     }
 }
 ```

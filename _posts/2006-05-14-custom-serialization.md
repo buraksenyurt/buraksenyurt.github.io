@@ -48,35 +48,59 @@ namespace OzelSerilestirme
 {
     // Personel sınıfımın ikili serileştirmeye destek verebilmesi ve özel serileştirmeyi kullanabilmesi için Serializable niteliğine mutlaka sahip olması gerekir.
     [Serializable]
-    class Personel:ISerializable
+    class Personel : ISerializable
     {
         private int _id;
 
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
         private string _ad;
-    
+
         public string Ad
         {
-            get { return _ad; }
-            set { _ad = value; }
+            get
+            {
+                return _ad;
+            }
+            set
+            {
+                _ad = value;
+            }
         }
         private DateTime _dogum;
 
         public DateTime Dogum
         {
-            get { return _dogum; }
-            set { _dogum = value; }
+            get
+            {
+                return _dogum;
+            }
+            set
+            {
+                _dogum = value;
+            }
         }
         private double _maas;
-        
+
         public double Maas
         {
-            get { return _maas; }
-            set { _maas = value; }
+            get
+            {
+                return _maas;
+            }
+            set
+            {
+                _maas = value;
+            }
         }
 
         public override string ToString()
@@ -93,7 +117,7 @@ namespace OzelSerilestirme
         }
 
         #region Deserialization için kullanılan özel constructor metodumuz
-    
+
         public Personel(SerializationInfo info, StreamingContext context)
         {
             // Şifrelenmiş veriler info nesnesi üzerinden alınarak, çözücü nesnemize gönderilir. Elde edilen sonuçlar Personel nesnesinin çalışma zamanındaki örneğinin ilgili alanlarına setlenir.
@@ -106,7 +130,7 @@ namespace OzelSerilestirme
         #endregion
 
         #region ISerializable Members
-    
+
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             // Öncelikle, Personel sınıfının çalışma zamanındaki nesne örneğinin sahip olduğu özellik değerleri şifreleme işleminden geçirilir. Elde edilen byte dizileri ise info nesnesinin AddValue metodu yardımıyla, binary serileştirilmenin yapıldığı stream' e doğru yazılır.
@@ -114,7 +138,7 @@ namespace OzelSerilestirme
             byte[] sifrelenmisAd = SifrelemeYoneticisi.Sifrele(Ad);
             byte[] sifrelenmisDogum = SifrelemeYoneticisi.Sifrele(Dogum.ToString());
             byte[] sifrelenmisMaas = SifrelemeYoneticisi.Sifrele(Maas.ToString());
-    
+
             info.AddValue("Identity", sifrelenmisId);
             info.AddValue("Name", sifrelenmisAd);
             info.AddValue("BirthDate", sifrelenmisDogum);
@@ -128,19 +152,19 @@ namespace OzelSerilestirme
     class SifrelemeYoneticisi
     {
         private static byte[] Key = { 0x01, 0x06, 0x03, 0x07, 0x05, 0x06, 0x07, 0x11, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
-        private static byte[] IV = { 0x01, 0x06, 0x03, 0x07, 0x05, 0x06, 0x07, 0x11, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15,     0x16 };
+        private static byte[] IV = { 0x01, 0x06, 0x03, 0x07, 0x05, 0x06, 0x07, 0x11, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16 };
 
         public static byte[] Sifrele(string sifrelenecekVeri)
         {
             MemoryStream ms = new MemoryStream();
-            RijndaelManaged rm=new RijndaelManaged();
+            RijndaelManaged rm = new RijndaelManaged();
             CryptoStream cs;
             byte[] veri = Encoding.UTF8.GetBytes(sifrelenecekVeri);
             cs = new CryptoStream(ms, rm.CreateEncryptor(Key, IV), CryptoStreamMode.Write);
             cs.Write(veri, 0, veri.Length);
             cs.Close();
             ms.Close();
-            return ms.ToArray(); 
+            return ms.ToArray();
         }
 
         public static string SifreCoz(byte[] sifrelenmisVeri)
@@ -150,8 +174,8 @@ namespace OzelSerilestirme
             CryptoStream cs = new CryptoStream(ms, rm.CreateDecryptor(Key, IV), CryptoStreamMode.Write);
             cs.Write(sifrelenmisVeri, 0, sifrelenmisVeri.Length);
             cs.Close();
-            ms.Close(); 
-            return Encoding.UTF8.GetString(ms.ToArray()); 
+            ms.Close();
+            return Encoding.UTF8.GetString(ms.ToArray());
         }
     }
 }
@@ -220,29 +244,53 @@ class Personel2
 
     public int Id
     {
-        get { return _id; }
-        set { _id = value; }
+        get
+        {
+            return _id;
+        }
+        set
+        {
+            _id = value;
+        }
     }
     private string _ad;
 
     public string Ad
     {
-        get { return _ad; }
-        set { _ad = value; }
+        get
+        {
+            return _ad;
+        }
+        set
+        {
+            _ad = value;
+        }
     }
     private DateTime _dogum;
 
     public DateTime Dogum
     {
-        get { return _dogum; }
-        set { _dogum = value; }
+        get
+        {
+            return _dogum;
+        }
+        set
+        {
+            _dogum = value;
+        }
     }
     private double _maas;
 
     public double Maas
     {
-        get { return _maas; }
-        set { _maas = value; }
+        get
+        {
+            return _maas;
+        }
+        set
+        {
+            _maas = value;
+        }
     }
 
     public override string ToString()
@@ -294,21 +342,33 @@ Framework 2.0 ile gelen belkide en önemli yenilik generic mimaridir. Özellikle
 
 ```csharp
 [Serializable()]
-public class Personel3<G>:ISerializable
+public class Personel3<G> : ISerializable
 {
     private G _eleman;
     private string _ad;
 
     public string Ad
     {
-        get { return _ad; }
-        set { _ad = value; }
+        get
+        {
+            return _ad;
+        }
+        set
+        {
+            _ad = value;
+        }
     }
 
     public G Eleman
     {
-        get { return _eleman; }
-        set { _eleman = value; }
+        get
+        {
+            return _eleman;
+        }
+        set
+        {
+            _eleman = value;
+        }
     }
 
     #region ISerializable Members
@@ -322,12 +382,12 @@ public class Personel3<G>:ISerializable
     #endregion
 
     public Personel3(SerializationInfo info, StreamingContext context)
-    {   
+    {
         Ad = info.GetString("Ad");
-        Eleman = (G)info.GetValue("Eleman",typeof(G));
+        Eleman = (G)info.GetValue("Eleman", typeof(G));
     }
 
-    public Personel3(G eleman,string ad)
+    public Personel3(G eleman, string ad)
     {
         _eleman = eleman;
         _ad = ad;
@@ -335,7 +395,7 @@ public class Personel3<G>:ISerializable
 
     public override string ToString()
     {
-        return _eleman.ToString()+" "+_ad.ToString();
+        return _eleman.ToString() + " " + _ad.ToString();
     }
 }
 ```

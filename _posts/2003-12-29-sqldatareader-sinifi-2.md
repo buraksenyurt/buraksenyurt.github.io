@@ -34,34 +34,38 @@ Tablo 1. CommandBehavior Davranışları
 ```csharp
 using System;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 
 namespace SqlDataReader2
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               SqlConnection conFriends=new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Friends");
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conFriends = new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Friends");
 
-               SqlCommand cmd=new SqlCommand("Select * From Kitaplar Where ID=18",conFriends); /* Sql sorgumuz ID isimli primary key üzerinden bir sorgu çalıştırıyor ve 18 nolu ID değerine sahip satırı elde ediyor. Burada tek satırlık veri olduğu kesin. */
+            SqlCommand cmd = new SqlCommand("Select * From Kitaplar Where ID=18", conFriends);
+            /* Sql sorgumuz ID isimli primary key üzerinden bir sorgu çalıştırıyor ve 18 nolu ID değerine sahip satırı elde ediyor. Burada tek satırlık veri olduğu kesin. */
 
-               SqlDataReader dr;
-               conFriends.Open(); 
-               dr=cmd.ExecuteReader(CommandBehavior.SingleRow); /* Tek satırlık veri için davranışımızı SingleRow olarak belirliyoruz. */
+            SqlDataReader dr;
+            conFriends.Open();
+            dr = cmd.ExecuteReader(CommandBehavior.SingleRow);
+            /* Tek satırlık veri için davranışımızı SingleRow olarak belirliyoruz. */
 
-               dr.Read(); /* Elde edilen satırı belleğe okuyoruz. Görüldüğü gibi herhangibir while döngüsü kullanma gereği duymadık.*/
+            dr.Read();
+            /* Elde edilen satırı belleğe okuyoruz. Görüldüğü gibi herhangibir while döngüsü kullanma gereği duymadık.*/
 
-               for(int i=0;i<dr.FieldCount;++i) /* Satırın alan sayısı kadar devam edicek bir döngü kuruyoruz ve her alanın adını GetName, bu alanlara ait değerleride dr[i].ToString ile ekrana yazdırıyoruz. */
-               {
-                    Console.WriteLine(dr.GetName(i).ToString()+"="+dr[i].ToString());
-               }
-               dr.Close(); /* SqlDataReader nesnemizi kapatıyoruz. Ardından SqlConnection nesnemizide kapatmayı unutmuyoruz. Böylece bu nesnelere ait kaynaklar serbest kalmış oluyor.*/
+            for (int i = 0; i < dr.FieldCount; ++i) /* Satırın alan sayısı kadar devam edicek bir döngü kuruyoruz ve her alanın adını GetName, bu alanlara ait değerleride dr[i].ToString ile ekrana yazdırıyoruz. */
+            {
+                Console.WriteLine(dr.GetName(i).ToString() + "=" + dr[i].ToString());
+            }
+            dr.Close();
+            /* SqlDataReader nesnemizi kapatıyoruz. Ardından SqlConnection nesnemizide kapatmayı unutmuyoruz. Böylece bu nesnelere ait kaynaklar serbest kalmış oluyor.*/
 
-               conFriends.Close(); 
-          }
-     }
-} 
+            conFriends.Close();
+        }
+    }
+}
 ```
 
 ![mk29_2.gif](/assets/images/2003/mk29_2.gif)
@@ -73,25 +77,27 @@ namespace SqlDataReader2
 ```csharp
 using System;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 namespace SqlDataReader3
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               SqlConnection conNorthwind=new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Northwind");
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conNorthwind = new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Northwind");
 
-               SqlCommand cmd=new SqlCommand("Select SUM(UnitPrice)/Count(UnitPrice)As [Ortalama Birim Fiyatı] From Products",conNorthwind);
+            SqlCommand cmd = new SqlCommand("Select SUM(UnitPrice)/Count(UnitPrice)As [Ortalama Birim Fiyatı] From Products", conNorthwind);
 
-               SqlDataReader dr;
-               conNorthwind.Open();                dr=cmd.ExecuteReader(CommandBehavior.SingleResult);
-               dr.Read();                Console.WriteLine(dr.GetName(0).ToString()+"="+dr[0].ToString()); 
-               dr.Close();
-               conNorthwind.Close();
-          }
-     }
-} 
+            SqlDataReader dr;
+            conNorthwind.Open();
+            dr = cmd.ExecuteReader(CommandBehavior.SingleResult);
+            dr.Read();
+            Console.WriteLine(dr.GetName(0).ToString() + "=" + dr[0].ToString());
+            dr.Close();
+            conNorthwind.Close();
+        }
+    }
+}
 ```
 
 ![mk29_3.gif](/assets/images/2003/mk29_3.gif)
@@ -103,36 +109,36 @@ namespace SqlDataReader3
 ```csharp
 using System;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 namespace SqlDataReader4
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               SqlConnection conNorthwind=new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Northwind");
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conNorthwind = new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=Northwind");
 
-               SqlCommand cmd=new SqlCommand("Select * From Products",conNorthwind);
-               SqlDataReader dr;
-               conNorthwind.Open(); 
-               dr=cmd.ExecuteReader(CommandBehavior.SchemaOnly);
+            SqlCommand cmd = new SqlCommand("Select * From Products", conNorthwind);
+            SqlDataReader dr;
+            conNorthwind.Open();
+            dr = cmd.ExecuteReader(CommandBehavior.SchemaOnly);
 
-               dr.Read();
-               try
-               {
-                    for(int i=0;i<dr.FieldCount;++i)
-                    {
-                         Console.WriteLine(dr.GetName(i).ToString()+" "+ dr.GetFieldType(i).ToString()+" "+dr[i].ToString());
-                    }
-               }
-               catch(Exception hata)
-               {
-                    Console.WriteLine(hata.Message.ToString());
-               } 
-               dr.Close();
-               conNorthwind.Close();
-          }
-     }
+            dr.Read();
+            try
+            {
+                for (int i = 0; i < dr.FieldCount; ++i)
+                {
+                    Console.WriteLine(dr.GetName(i).ToString() + " " + dr.GetFieldType(i).ToString() + " " + dr[i].ToString());
+                }
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            dr.Close();
+            conNorthwind.Close();
+        }
+    }
 }
 ```
 
@@ -145,7 +151,7 @@ Yukarıdaki console uygulamasını çalıştırdığımızda aşağıdaki hata m
 SchemaOnly davranışı sorgu ne olursa olsun sadece alan bilgilerini döndürür. Herhangibir veri döndürmez. Bu yüzden dr[i].ToString () ifadesi i nolu indexe sahip alan için herhangibir veri bulamayıcaktır. Kodun bu bölümünü aşağıdaki gibi değiştirirsek;
 
 ```csharp
-Console.WriteLine(dr.GetName(i).ToString()+" "+dr.GetFieldType(i).ToString());  
+Console.WriteLine(dr.GetName(i).ToString() + " " + dr.GetFieldType(i).ToString());
 ```
 
 Ve şimdi console uygulamamızı çalıştırırsak aşağıdaki ekran görüntüsünü elde ederiz. GetFieldType metodu i indeksli alanın veri tipinin.NET’teki karşılığını döndürürken GetName ile bu alanın adını elde ederiz.
@@ -159,38 +165,40 @@ Ve şimdi console uygulamamızı çalıştırırsak aşağıdaki ekran görünt�
 ```csharp
 using System;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 namespace SqlDataReader5
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               SqlConnection conPubs=new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=pubs");
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conPubs = new SqlConnection("data source=localhost;integrated security=sspi;initial catalog=pubs");
 
-               SqlCommand cmd=new SqlCommand("Select pr_info From pub_info where pub_id=0736",conPubs);
-               SqlDataReader dr;
-               conPubs.Open(); 
-               dr=cmd.ExecuteReader(CommandBehavior.SequentialAccess);
-               dr.Read();
-               try
-               {
-                    char[] dizi=new char[130]; /* 130 char tipi elemandan oluşan bir dizi tanımladık. */
-                    dr.GetChars(0,0,dizi,0,130); /* Dizimize pr_info alanından 130 karakter okuduk.*/
-                    for(int i=0;i<dizi.Length;++i) /* Dizideki elemanları ekrana yazdırıyoruz. */
-                    {
-                         Console.Write(dizi[i]);
-                    }
-                    Console.WriteLine();
-               }
-               catch(Exception hata)
-               {
-                    Console.WriteLine(hata.Message.ToString());
-               }
-                dr.Close();
-               conPubs.Close();
-          }
-     }
+            SqlCommand cmd = new SqlCommand("Select pr_info From pub_info where pub_id=0736", conPubs);
+            SqlDataReader dr;
+            conPubs.Open();
+            dr = cmd.ExecuteReader(CommandBehavior.SequentialAccess);
+            dr.Read();
+            try
+            {
+                char[] dizi = new char[130];
+                /* 130 char tipi elemandan oluşan bir dizi tanımladık. */
+                dr.GetChars(0, 0, dizi, 0, 130);
+                /* Dizimize pr_info alanından 130 karakter okuduk.*/
+                for (int i = 0; i < dizi.Length; ++i) /* Dizideki elemanları ekrana yazdırıyoruz. */
+                {
+                    Console.Write(dizi[i]);
+                }
+                Console.WriteLine();
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            dr.Close();
+            conPubs.Close();
+        }
+    }
 }
 ```
 

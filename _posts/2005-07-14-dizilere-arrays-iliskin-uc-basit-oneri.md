@@ -23,40 +23,40 @@ namespace UsingArrays
     {
         static void DiziTest_1()
         {
-            double[] dizi=new double[50000000]; 
-            double toplam=0;
+            double[] dizi = new double[50000000];
+            double toplam = 0;
 
-            for(int i=0;i<dizi.Length;i++)
+            for (int i = 0; i < dizi.Length; i++)
             {
-                dizi[i]=i;
-            } 
+                dizi[i] = i;
+            }
 
             #region for döngüsü ile
-            DateTime dtBaslangic=DateTime.Now;
-            for(int i=0;i<dizi.Length;i++)
+            DateTime dtBaslangic = DateTime.Now;
+            for (int i = 0; i < dizi.Length; i++)
             {
-                toplam+=dizi[i];
+                toplam += dizi[i];
             }
-            DateTime dtBitis=DateTime.Now;
-            TimeSpan tsFark=dtBitis-dtBaslangic;
-            Console.WriteLine(tsFark.TotalSeconds+" saniye...");
+            DateTime dtBitis = DateTime.Now;
+            TimeSpan tsFark = dtBitis - dtBaslangic;
+            Console.WriteLine(tsFark.TotalSeconds + " saniye...");
             #endregion
 
             #region foreach döngüsü ile
-            toplam=0;
-            dtBaslangic=DateTime.Now;
-            foreach(int i in dizi)
+            toplam = 0;
+            dtBaslangic = DateTime.Now;
+            foreach (int i in dizi)
             {
-                toplam+=i;
+                toplam += i;
             }
-            dtBitis=DateTime.Now;
-            tsFark=dtBitis-dtBaslangic;
+            dtBitis = DateTime.Now;
+            tsFark = dtBitis - dtBaslangic;
 
-            Console.WriteLine(tsFark.TotalSeconds+" saniye...");
+            Console.WriteLine(tsFark.TotalSeconds + " saniye...");
             #endregion
 
             Console.ReadLine();
-        } 
+        }
 
         static void Main(string[] args)
         {
@@ -133,7 +133,7 @@ Sorunu çözebilmek için döngünün çalıştırılmasından hemen önce dizi 
 ```csharp
 double[] dizi;
 dizi = DiziTest_2(-1);
-if (dizi != null) 
+if (dizi != null)
 {
     foreach (double eleman in dizi)
     {
@@ -207,7 +207,7 @@ Bu kod parçasında, iki boyutlu bir diziye eleman atanışları için iki adet 
 Elbette aynı durum boyutları farklı bir dizi içinde geçerlidir. Örneğimizdeki döngü yapılarını aşağıdaki gibi değiştirelim ve tekrar deneyelim.
 
 ```csharp
-static void DiziTest(int x,int y)
+static void DiziTest(int x, int y)
 {
     int[,] dizi = new int[x, y];
     DateTime dtBaslangic, dtBitis;
@@ -234,7 +234,7 @@ static void Main(string[] args)
 {
     for (int testSayisi = 0; testSayisi < 5; testSayisi++)
     {
-        DiziTest(6000,5000);
+        DiziTest(6000, 5000);
         Console.WriteLine("-------------");
     }
 }

@@ -102,8 +102,8 @@ IAsyncResult res = cmd.BeginExecuteNonQuery();
 ```csharp
 while (!res.IsCompleted)
 {
-      Console.WriteLine("İŞLEM DEVAM EDİYOR "+i);
-      i += 1;
+    Console.WriteLine("İŞLEM DEVAM EDİYOR " + i);
+    i += 1;
 }
 ```
 
@@ -138,11 +138,11 @@ try
     SqlCommand cmd2 = new SqlCommand("SELECT * FROM Sales.vStore", con);
     con.Open(); // Bağlantımızı açıyoruz.
     IAsyncResult res = cmd.BeginExecuteNonQuery();
-     IAsyncResult res2 = cmd2.BeginExecuteReader();
+    IAsyncResult res2 = cmd2.BeginExecuteReader();
 
     //Bu aralıktaki satırlar bloke olmadan çalışır.
     /* Döngü her iki sql komutuda tamamlanıncaya kadar çalışacaktır. Eğer bunlardan her hangibir önce biterseki öyle olacaktır, diğeride sonlanıncaya kadar döngü içerisindeki kodlar işletilmeye devam eder.*/
-    while ((!res2.IsCompleted)||(!res.IsCompleted)) 
+    while ((!res2.IsCompleted) || (!res.IsCompleted))
     {
         /* Eğer Update komutu tamamlanmış ise, o anki milisaniye ile birlikte ekrana RES BITTI yazdırır. Eğer işlem tamamlanmamışsa, RES ISLEMINE DEVAM EDIYOR tekstini ve o anki milisaniyeyi yazar.*/
         if (res.IsCompleted)
@@ -154,7 +154,7 @@ try
         {
             Console.WriteLine("RES ISLEMINE DEVAM EDIYOR " + DateTime.Now.TimeOfDay.Milliseconds.ToString());
         }
-         /* Eğer Select komutu tamamlanmış ise, o anki milisaniye ile birlikte ekrana RES2 BITTI yazdırır. Eğer işlem tamamlanmamışsa, RES2 ISLEMINE DEVAM EDIYOR tekstini ve o anki milisaniyeyi yazar.*/
+        /* Eğer Select komutu tamamlanmış ise, o anki milisaniye ile birlikte ekrana RES2 BITTI yazdırır. Eğer işlem tamamlanmamışsa, RES2 ISLEMINE DEVAM EDIYOR tekstini ve o anki milisaniyeyi yazar.*/
         if (res2.IsCompleted)
         {
             Console.WriteLine("RES2 BITTI ");

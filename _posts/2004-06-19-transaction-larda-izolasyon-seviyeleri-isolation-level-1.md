@@ -26,16 +26,16 @@ SqlDataAdapter da;
 
 private void btnBegin_Click(object sender, System.EventArgs e)
 {
-    if(con.State==ConnectionState.Closed)
+    if (con.State == ConnectionState.Closed)
     {
         con.Open();
-    } 
-    trans=con.BeginTransaction();
+    }
+    trans = con.BeginTransaction();
 }
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    con=new SqlConnection("data source=localhost;database=Northwind;integrated security=SSPI"); 
+    con = new SqlConnection("data source=localhost;database=Northwind;integrated security=SSPI");
 }
 
 private void btnCommit_Click(object sender, System.EventArgs e)
@@ -50,38 +50,38 @@ private void btnRollBack_Click(object sender, System.EventArgs e)
 
 private void btnBak_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmdBak=new SqlCommand("SELECT * FROM Personel",con);
-    cmdBak.Transaction=trans;
-    da=new SqlDataAdapter(cmdBak);
-    DataTable dt=new DataTable();
+    SqlCommand cmdBak = new SqlCommand("SELECT * FROM Personel", con);
+    cmdBak.Transaction = trans;
+    da = new SqlDataAdapter(cmdBak);
+    DataTable dt = new DataTable();
     da.Fill(dt);
-    dataGrid1.DataSource=dt;
+    dataGrid1.DataSource = dt;
 }
 
 private void btnEkle_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmdGir=new SqlCommand("INSERT INTO Personel (ISIM,SOYISIM) VALUES ('"+txtIsim.Text+"','"+txtSoyisim.Text+"')",con);
-    cmdGir.Transaction=trans;
-    int sonuc=cmdGir.ExecuteNonQuery();
-    MessageBox.Show(sonuc+" SATIR GIRILDI");
+    SqlCommand cmdGir = new SqlCommand("INSERT INTO Personel (ISIM,SOYISIM) VALUES ('" + txtIsim.Text + "','" + txtSoyisim.Text + "')", con);
+    cmdGir.Transaction = trans;
+    int sonuc = cmdGir.ExecuteNonQuery();
+    MessageBox.Show(sonuc + " SATIR GIRILDI");
 }
 
 private void btnGuncelle_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmdGuncelle=new SqlCommand("UPDATE Personel SET ISIM='"+txtIsim.Text+"',     SOYISIM='"+txtSoyisim.Text+"' WHERE ID="+txtID.Text,con);
-    cmdGuncelle.Transaction=trans;
-    int sonuc=cmdGuncelle.ExecuteNonQuery();
-    MessageBox.Show(sonuc+" SATIR GUNCELLENDI");
+    SqlCommand cmdGuncelle = new SqlCommand("UPDATE Personel SET ISIM='" + txtIsim.Text + "',     SOYISIM='" + txtSoyisim.Text + "' WHERE ID=" + txtID.Text, con);
+    cmdGuncelle.Transaction = trans;
+    int sonuc = cmdGuncelle.ExecuteNonQuery();
+    MessageBox.Show(sonuc + " SATIR GUNCELLENDI");
 }
 
 private void btnBakID_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmd=new SqlCommand("SELECT ISIM,SOYISIM FROM Personel WHERE ID="+txtID.Text,con);
-    cmd.Transaction=trans;
-    da=new SqlDataAdapter(cmd);    
-    DataTable dt=new DataTable();
+    SqlCommand cmd = new SqlCommand("SELECT ISIM,SOYISIM FROM Personel WHERE ID=" + txtID.Text, con);
+    cmd.Transaction = trans;
+    da = new SqlDataAdapter(cmd);
+    DataTable dt = new DataTable();
     da.Fill(dt);
-    dataGrid1.DataSource=dt;
+    dataGrid1.DataSource = dt;
 }
 ```
 
@@ -128,13 +128,13 @@ Dirty Reads;
 Bu durum Phantoms ve Non-Repeatable Read durumlarına göre biraz daha farklıdır. Eşzamanlı olarak çalışan Transaction'lardan birisi, diğerinin okuduğu aynı veriler üzerinde değişiklik yapar. Aynen Non-Repeatable Read'e neden olan durumda olduğu gibi. Ancak önemli bir fark vardır. Değişiklik yapan Transaction Commit edilmeden, diğer Transaction aynı satırları tekrar okur ve değişiklikleri görür. Bu andan sonra, değişiklikleri yapan Transaction yaptığı güncellemeleri RollBack ile geri alır. İşte bu noktada, verileri okuyan Transaction'da geri alınmış (RollBack), yani veritabanına yansıtılmamış değişiklikler hâlen var olacaktır ki aslında bu değişiklikler mevcut değildir. İşte bu durum Dirty Read olarak adlandırılır. Şimdi bu durumu simüle etmeye çalışalım. Ancak burada söz konusu olan Transaction'lar eşzamanlı çalışmakla birlikte, birisi Commit veya RollBack edilmeden diğerinin de veri çekme gibi işlemleri yapabilmesine izin veren yapıdadırlar. O nedenle bir sonraki makalede üzerinde duracağımız IsolationLevel numaralandırıcısı türünden bir değer ile Transaction'ları çalıştırmamız lazım. Bu amaçla aşağıdaki satırı;
 
 ```csharp
-trans=con.BeginTransaction();
+trans = con.BeginTransaction();
 ```
 
 aşağıdaki ile değiştirelim.
 
 ```csharp
-trans=con.BeginTransaction(IsolationLevel.ReadUncommitted);
+trans = con.BeginTransaction(IsolationLevel.ReadUncommitted);
 ```
 
 Şu aşamada bunun ne anlama geldiğinin çok önemi yok. Bunu ve diğer numaralandırıcı değerlerinin etkilerini bir sonraki makalemizde incelemeye çalışacağız. Şimdi yine iki uygulamamızı aynı anda çalıştıralım ve Transaction'larımızı başlatalım. Önce Transaction1 için verileri çekelim. Transaction2'de belli bir satır üzerinde değişiklik yapalım.

@@ -38,7 +38,7 @@ namespace TPLAntrenmanlari2
         }
 
         private void btnStart_Click(object sender, EventArgs e)
-        {            
+        {
             flowLayoutPanel1.Controls.Clear();
 
             #region Single Thread Kullanılarak
@@ -65,7 +65,7 @@ namespace TPLAntrenmanlari2
 
             #endregion
         }
-        
+
     }
 }
 ```
@@ -98,7 +98,7 @@ private void btnStart2_Click(object sender, EventArgs e)
             btn.Height = 48;
             btn.BackgroundImageLayout = ImageLayout.Stretch;
             btn.BackgroundImage = Image.FromFile(f);
-            
+
             flowLayoutPanel1.Controls.Add(btn); // Exception: Cross-thread operation not valid: Control 'flowLayoutPanel1' accessed from a thread other than the thread it was created on.
         }
     }
@@ -165,8 +165,6 @@ private void RealAddToPanel(Button pb)
 {
     flowLayoutPanel1.Controls.Add(pb);
 }
-
-#endregion
 ```
 
 Bu durumda kendi sistemimde aşağıdaki sonuçlar ile karşılaştığımı gördüm.
@@ -181,52 +179,52 @@ Evett...Durumu bir değerlendirelim. 20 saniyelik sürelerden yaklaşık 8 saniy
 private delegate void AddControlHandler(Button pb);
 private void AddToPanel(Button pb)
 {
-	if (flowLayoutPanel1.InvokeRequired)
-		flowLayoutPanel1.BeginInvoke(new AddControlHandler(RealAddToPanel), new object[] { pb });
-	else
-		RealAddToPanel(pb);
+    if (flowLayoutPanel1.InvokeRequired)
+        flowLayoutPanel1.BeginInvoke(new AddControlHandler(RealAddToPanel), new object[] { pb });
+    else
+        RealAddToPanel(pb);
 }
 private void RealAddToPanel(Button pb)
 {
-	flowLayoutPanel1.Controls.Add(pb);
+    flowLayoutPanel1.Controls.Add(pb);
 }
 
 #endregion
 
 private void FillImages(object state)
 {
-	Parallel.ForEach(Directory.GetFiles(imagesPath), f =>
-	{
-		FileInfo fInfo = new FileInfo(f);
-		if (fInfo.Length <= 1024 * 100
-			&& fInfo.Extension == ".jpg")
-		{
-			Thread.Sleep(100); // Bunu koymadığımızda UI istediğimiz gibi reaksiyon vermiyor.
-			Button btn = new Button();
-			btn.Width = 64;
-			btn.Height = 48;
-			btn.BackgroundImageLayout = ImageLayout.Stretch;
-			btn.BackgroundImage = Image.FromFile(f);
-			AddToPanel(btn);
-		}
-	}
-	);
+    Parallel.ForEach(Directory.GetFiles(imagesPath), f =>
+    {
+        FileInfo fInfo = new FileInfo(f);
+        if (fInfo.Length <= 1024 * 100
+            && fInfo.Extension == ".jpg")
+        {
+            Thread.Sleep(100); // Bunu koymadığımızda UI istediğimiz gibi reaksiyon vermiyor.
+            Button btn = new Button();
+            btn.Width = 64;
+            btn.Height = 48;
+            btn.BackgroundImageLayout = ImageLayout.Stretch;
+            btn.BackgroundImage = Image.FromFile(f);
+            AddToPanel(btn);
+        }
+    }
+    );
 }
 
 private void btnStart3_Click(object sender, EventArgs e)
 {
-	flowLayoutPanel1.Controls.Clear();
+    flowLayoutPanel1.Controls.Clear();
 
-	#region Parallel.ForEach kullanımı
+    #region Parallel.ForEach kullanımı
 
-	Stopwatch watch = Stopwatch.StartNew();
+    Stopwatch watch = Stopwatch.StartNew();
 
-	ThreadPool.QueueUserWorkItem(new WaitCallback(FillImages));
+    ThreadPool.QueueUserWorkItem(new WaitCallback(FillImages));
 
-	watch.Stop();
-	lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
+    watch.Stop();
+    lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
 
-	#endregion
+    #endregion
 }
 ```
 

@@ -129,12 +129,12 @@ using System.ServiceModel.Channels;
 
 namespace ChatApp
 {
-    public partial class Form1 
+    public partial class Form1
         : Form
-        ,IIRCSozlesmesi
+        , IIRCSozlesmesi
     {
-        string _kullanici=null;
-        InstanceContext _instanceContext=null;
+        string _kullanici = null;
+        InstanceContext _instanceContext = null;
         DuplexChannelFactory<IIRCChannel> _fabrika = null;
         IIRCChannel _katilimci = null;
         IOnlineStatus _onlineDurum = null;
@@ -148,12 +148,12 @@ namespace ChatApp
         {
             btnKatil.Enabled = true;
             btnAyril.Enabled = false;
-            btnMesajiGonder.Enabled = false; 
-            txtMesajlar.ScrollBars = ScrollBars.Vertical; 
+            btnMesajiGonder.Enabled = false;
+            txtMesajlar.ScrollBars = ScrollBars.Vertical;
         }
 
         #region IChat Members
-    
+
         public void DahilEt(string uyeAdi)
         {
             txtMesajlar.Text += String.Format("*** {0} IRC' ye katıldı. ***", uyeAdi);
@@ -162,7 +162,7 @@ namespace ChatApp
 
         public void MesajGonder(string uyeAdi, string mesaj)
         {
-            txtMesajlar.Text += String.Format("({0}) -> {1}", uyeAdi,mesaj);
+            txtMesajlar.Text += String.Format("({0}) -> {1}", uyeAdi, mesaj);
             txtMesajlar.Text += Environment.NewLine;
         }
 
@@ -180,29 +180,29 @@ namespace ChatApp
                 _kullanici = txtKullaniciAdi.Text;
             else
                 _kullanici = "İsimsiz";
-        
+
             _instanceContext = new InstanceContext(this);
             _fabrika = new DuplexChannelFactory<IIRCChannel>(_instanceContext, "ClientEndPoint");
             _katilimci = _fabrika.CreateChannel();
-            _onlineDurum = _katilimci.GetProperty<IOnlineStatus>(); 
-        
-            _onlineDurum.Online += delegate(object snd, EventArgs ea)
+            _onlineDurum = _katilimci.GetProperty<IOnlineStatus>();
+
+            _onlineDurum.Online += delegate (object snd, EventArgs ea)
                                             {
-                                                  txtMesajlar.Text += "*** Hat Açık ***";
-                                                  txtMesajlar.Text += Environment.NewLine;
-                                                  txtMesajlar.Text += _onlineDurum.ToString();
-                                                  txtMesajlar.Text += Environment.NewLine;
+                                                txtMesajlar.Text += "*** Hat Açık ***";
+                                                txtMesajlar.Text += Environment.NewLine;
+                                                txtMesajlar.Text += _onlineDurum.ToString();
+                                                txtMesajlar.Text += Environment.NewLine;
                                             };
-            _onlineDurum.Offline += delegate(object snd, EventArgs ea)
+            _onlineDurum.Offline += delegate (object snd, EventArgs ea)
                                             {
-                                                  txtMesajlar.Text += "*** Hat Kapalı ***";
-                                                  txtMesajlar.Text += Environment.NewLine;
-                                                  txtMesajlar.Text += _onlineDurum.ToString();
-                                                  txtMesajlar.Text += Environment.NewLine;
+                                                txtMesajlar.Text += "*** Hat Kapalı ***";
+                                                txtMesajlar.Text += Environment.NewLine;
+                                                txtMesajlar.Text += _onlineDurum.ToString();
+                                                txtMesajlar.Text += Environment.NewLine;
                                             };
             _katilimci.Open();
             _katilimci.DahilEt(_kullanici);
-    
+
             btnKatil.Enabled = false;
             btnAyril.Enabled = true;
             btnMesajiGonder.Enabled = true;
@@ -213,7 +213,7 @@ namespace ChatApp
             _katilimci.Ayril(_kullanici);
             _katilimci.Close();
             _fabrika.Close();
-        
+
             btnKatil.Enabled = true;
             btnAyril.Enabled = false;
             btnMesajiGonder.Enabled = false;
@@ -239,7 +239,7 @@ namespace ChatApp
 
         [OperationContract(IsOneWay = true)]
         void MesajGonder(string uyeAdi, string mesaj);
-        
+
         [OperationContract(IsOneWay = true)]
         void Ayril(string uyeAdi);
     }

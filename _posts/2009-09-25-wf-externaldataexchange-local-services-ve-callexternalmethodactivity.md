@@ -34,16 +34,16 @@ using System.Workflow.Activities;
 namespace CommonOperations
 {
     // ICommonAccounting arayüz tipinin yerel servislerden(Local Service) birisi olduğu belirtilir
- [ExternalDataExchange]
- public interface ICommonAccounting
- {
+    [ExternalDataExchange]
+    public interface ICommonAccounting
+    {
         void IncreaseRate(double rate, int categoryId);
         void DecreaseRate(double rate, int categoryId);
- }
+    }
 
     // Yerel servis metodlarının uygulandığı yer
     public class CommonAccounting
-        :ICommonAccounting
+        : ICommonAccounting
     {
         // Host uygulamanın değerlendirebileceği basit bir olay
         public event EventHandler<AccountingResultsEventArgs> OnCompleted;
@@ -52,16 +52,16 @@ namespace CommonOperations
 
         public void IncreaseRate(double rate, int categoryId)
         {
-            Console.WriteLine("{0} kategorisindeki maaşlar % {1} oranında arttırılacak",categoryId.ToString(),rate.ToString());
+            Console.WriteLine("{0} kategorisindeki maaşlar % {1} oranında arttırılacak", categoryId.ToString(), rate.ToString());
             if (OnCompleted != null)
-                OnCompleted(this, new AccountingResultsEventArgs { StepType = "Increase", Rate = rate,StepOk=true });
+                OnCompleted(this, new AccountingResultsEventArgs { StepType = "Increase", Rate = rate, StepOk = true });
         }
 
         public void DecreaseRate(double rate, int categoryId)
         {
             Console.WriteLine("{0} kategorisindeki maaşlar % {1} oranında azaltılacak", categoryId.ToString(), rate.ToString());
             if (OnCompleted != null)
-                OnCompleted(this, new AccountingResultsEventArgs { StepType = "Decrease", Rate = rate,StepOk=true });
+                OnCompleted(this, new AccountingResultsEventArgs { StepType = "Decrease", Rate = rate, StepOk = true });
         }
 
         #endregion
@@ -71,9 +71,21 @@ namespace CommonOperations
     public class AccountingResultsEventArgs
         : EventArgs
     {
-        public string StepType { get; set; }
-        public double Rate { get; set; }
-        public bool StepOk { get; set; }
+        public string StepType
+        {
+            get;
+            set;
+        }
+        public double Rate
+        {
+            get;
+            set;
+        }
+        public bool StepOk
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -94,9 +106,21 @@ namespace HostApp
     public partial class Activity1
         : SequenceActivity
     {
-        public double IncreaseRate { get; set; }
-        public double DecreaseRate { get; set; }
-        public int CategoryId { get; set; }
+        public double IncreaseRate
+        {
+            get;
+            set;
+        }
+        public double DecreaseRate
+        {
+            get;
+            set;
+        }
+        public int CategoryId
+        {
+            get;
+            set;
+        }
 
         public Activity1()
         {
@@ -138,7 +162,7 @@ namespace HostApp
     {
         static void Main(string[] args)
         {
-            using(WorkflowRuntime workflowRuntime = new WorkflowRuntime())
+            using (WorkflowRuntime workflowRuntime = new WorkflowRuntime())
             {
                 #region Yerel Servisi Bildirme İşlemi
 
@@ -150,10 +174,10 @@ namespace HostApp
                 // ExternalMetadaExchange nitelikli interface tipini implemente eden asıl nesne örneklenir
                 CommonAccounting accounter = new CommonAccounting();
                 // HostApp uygulamasının ele alacağı OnCompleted olayı yüklenir ve anonymous method yardımıyla değerlendirilir.
-                accounter.OnCompleted += delegate(object sender, AccountingResultsEventArgs e)
+                accounter.OnCompleted += delegate (object sender, AccountingResultsEventArgs e)
                 {
                     // Örnek metodlardan gelen sonuçlar listelenir.
-                    Console.WriteLine("\n\tİşlem tipi {0}\n\tRate {1}\n\tİşlem sonucu {2}", e.StepType, e.Rate.ToString(),e.StepOk.ToString());
+                    Console.WriteLine("\n\tİşlem tipi {0}\n\tRate {1}\n\tİşlem sonucu {2}", e.StepType, e.Rate.ToString(), e.StepOk.ToString());
                 };
 
                 //accounter isimli ExternalMetadaExchange nitelikli interface tipini implemente eden asıl nesne örneği, ExternalDataExchangeService örneğine eklenir.
@@ -163,11 +187,12 @@ namespace HostApp
 
                 AutoResetEvent waitHandle = new AutoResetEvent(false);
                 // Workflow tamamlandığında devreye giren olay metodu
-                workflowRuntime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e) {
+                workflowRuntime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
+                {
                     waitHandle.Set();
                 };
                 // Exception gibi nedenlerle Workflow sonlandığında devreye giren olay metodu
-                workflowRuntime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)
+                workflowRuntime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
                 {
                     Console.WriteLine(e.Exception.Message);
                     waitHandle.Set();
@@ -182,7 +207,7 @@ namespace HostApp
                 };
 
                 // Aktivite nesnesi örneklenir, özellikleri için ilk değerleri yüklenir.
-                WorkflowInstance mathActivity = workflowRuntime.CreateWorkflow(typeof(HostApp.Activity1),parameters);
+                WorkflowInstance mathActivity = workflowRuntime.CreateWorkflow(typeof(HostApp.Activity1), parameters);
                 // Aktivite başlatılır
                 mathActivity.Start();
                 // Asenkron işleyişi ispat etmek için

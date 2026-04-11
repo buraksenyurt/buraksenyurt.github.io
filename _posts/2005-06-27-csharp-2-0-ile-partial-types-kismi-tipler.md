@@ -43,13 +43,25 @@ namespace PartialClasses
 
         public SqlConnection GuncelBaglanti
         {
-            get { return m_GuncelBaglanti; }
-            set { m_GuncelBaglanti = value; }
+            get
+            {
+                return m_GuncelBaglanti;
+            }
+            set
+            {
+                m_GuncelBaglanti = value;
+            }
         }
         public SqlCommand SqlKomutu
         {
-            get { return m_SqlKomutu; }
-            set { m_SqlKomutu = value; }
+            get
+            {
+                return m_SqlKomutu;
+            }
+            set
+            {
+                m_SqlKomutu = value;
+            }
         }
     }
 }
@@ -143,8 +155,8 @@ namespace PartialClasses
     {
         int MaasArtisOrani
         {
-        get;
-        set;
+            get;
+            set;
         }
     }
 }
@@ -174,7 +186,7 @@ Her iki interface tanımlamasıda aslında tek bir interface'in kendi kurduğumu
 Sınıflarda olduğu gibi interface'ler içinde IL kodunun verdiği görünüm benzer olacaktır. Arayüzü ilgili sınıfımıza uyguladığımızda partial bölümlerde yer alan tüm elemanların implementasyona dahil edildiğini görürüz.
 
 ```csharp
-class VeriYoneticisi:IVeriYonetim
+class VeriYoneticisi : IVeriYonetim
 {
 
     #region IVeriYonetim Members
@@ -191,7 +203,7 @@ class VeriYoneticisi:IVeriYonetim
     }
 
     // IVeriYonetim.Metodlar.cs kaynak kod dosyası içindeki partial kısımdan gelen üyeler.
-    public int MaasArtisOrani 
+    public int MaasArtisOrani
     {
         get
         {

@@ -29,7 +29,8 @@ Gelelim Queue koleksiyon sınıfının metodlarına. Dequeue metodu ile koleksiy
 
 ```csharp
 using System;
-using System.Collections; /* Uygulamalarımızda koleksiyon sınıflarını kullanabilmek için Collections isim uzayını kullanmamız gerekir.*/
+using System.Collections;
+/* Uygulamalarımızda koleksiyon sınıflarını kullanabilmek için Collections isim uzayını kullanmamız gerekir.*/
 
 namespace StackSample1
 {
@@ -37,7 +38,8 @@ namespace StackSample1
     {
         static void Main(string[] args)
         {
-            Stack stc =new Stack(4); /* 4 elemanlı bir Stack koleksiyonu oluşturduk.*/
+            Stack stc = new Stack(4);
+            /* 4 elemanlı bir Stack koleksiyonu oluşturduk.*/
             stc.Push("Burak");
             /*Eleman eklemek için Push metodu kullanılıyor.*/
             stc.Push("Selim");
@@ -86,7 +88,7 @@ namespace QueueSample1
     {
         static void Main(string[] args)
         {
-            Queue qu =new Queue(4);
+            Queue qu = new Queue(4);
             qu.Enqueue("Burak");
             /*Eleman eklemek için Enqueue metodu kullanılıyor.*/
             qu.Enqueue("Selim");

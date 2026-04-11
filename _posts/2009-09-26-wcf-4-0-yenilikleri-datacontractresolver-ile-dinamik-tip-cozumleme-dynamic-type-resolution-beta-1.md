@@ -26,16 +26,28 @@ namespace UsingDataContractResolver
     class Product
     {
         [DataMember]
-        public object Information { get; set; }
+        public object Information
+        {
+            get;
+            set;
+        }
     }
 
     [DataContract]
     class ProductInformation
     {
         [DataMember]
-        public string Summary { get; set; }
+        public string Summary
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public int Id { get; set; }
+        public int Id
+        {
+            get;
+            set;
+        }
     }
 
     class Program
@@ -46,7 +58,7 @@ namespace UsingDataContractResolver
 
             serializer.WriteObject(new XmlTextWriter(Console.Out) { Formatting = Formatting.Indented }
                 , new Product { Information = new ProductInformation { Id = 1000, Summary = "Özet bilgi" } });
-       }
+        }
     }
 }
 ```
@@ -63,31 +75,31 @@ Zaten.Net 3.5 sürümünde KnownType niteliği gibi materyalleri kullanarak bu s
 
 ```csharp
 class ProductInformationResolver
-        :DataContractResolver
+        : DataContractResolver
+{
+    public override Type ResolveName(string typeName, string typeNamespace, DataContractResolver knownTypeResolver)
     {
-        public override Type ResolveName(string typeName, string typeNamespace, DataContractResolver knownTypeResolver)
-        {
-            if (typeName == "ProductInfo" 
-                && typeNamespace == "http://www.adventure.com/resolver/productInformationType")
-                return typeof(ProductInformation);
-            else
-                return knownTypeResolver.ResolveName(typeName, typeNamespace, null);
-        }
+        if (typeName == "ProductInfo"
+            && typeNamespace == "http://www.adventure.com/resolver/productInformationType")
+            return typeof(ProductInformation);
+        else
+            return knownTypeResolver.ResolveName(typeName, typeNamespace, null);
+    }
 
-        public override void ResolveType(Type dataContractType, DataContractResolver knownTypeResolver, out XmlDictionaryString typeName, out XmlDictionaryString typeNamespace)
+    public override void ResolveType(Type dataContractType, DataContractResolver knownTypeResolver, out XmlDictionaryString typeName, out XmlDictionaryString typeNamespace)
+    {
+        if (dataContractType == typeof(ProductInformation))
         {
-            if (dataContractType == typeof(ProductInformation))
-            {
-                XmlDictionary dictionary = new XmlDictionary();
-                typeName = dictionary.Add("ProductInfo");
-                typeNamespace = dictionary.Add("http://www.adventure.com/resolver/productInformationType");
-            }
-            else
-            {
-                knownTypeResolver.ResolveType(dataContractType, null, out typeName, out typeNamespace);
-            }
+            XmlDictionary dictionary = new XmlDictionary();
+            typeName = dictionary.Add("ProductInfo");
+            typeNamespace = dictionary.Add("http://www.adventure.com/resolver/productInformationType");
+        }
+        else
+        {
+            knownTypeResolver.ResolveType(dataContractType, null, out typeName, out typeNamespace);
         }
     }
+}
 ```
 
 Güzel...
@@ -101,9 +113,9 @@ ResolveName metodu ise tahmin edileceği üzere ters serileştirme (DeSerializat
 Peki ya bundan sonrası? Çalışma zamanı ProductInformationResolver tipini kullanacağını nereden bilecek? İşte cevap...
 
 ```csharp
-XmlObjectSerializer serializer = new DataContractSerializer(typeof(Product),null,Int32.MaxValue,false,false,null,new ProductInformationResolver());
-            serializer.WriteObject(new XmlTextWriter(Console.Out) { Formatting = Formatting.Indented }
-                , new Product { Information = new ProductInformation { Id = 1000, Summary = "Özet bilgi" } });
+XmlObjectSerializer serializer = new DataContractSerializer(typeof(Product), null, Int32.MaxValue, false, false, null, new ProductInformationResolver());
+serializer.WriteObject(new XmlTextWriter(Console.Out) { Formatting = Formatting.Indented }
+    , new Product { Information = new ProductInformation { Id = 1000, Summary = "Özet bilgi" } });
 ```
 
 Dikkat edileceği üzere DataContractSerialiazer nesne örneği oluşturulurken son parametre olarak ProductInformationResolver örneği verilmektedir. Buna göre serializer nesnesinin yapacağı serileştirme ve ters-serileştirme işlemleri sırasında, ProductInformationResolver nesne örneği devreye girecektir. Örneğimizi bu haliyle deneyecek olursak, çalışma zamanında aşağıdaki sonuçların üretildiğini görebiliriz.
@@ -115,14 +127,14 @@ Görüldüğü üzere Information elementi içerisinde, DataContractResolver tü
 ```csharp
 static void Main(string[] args)
 {
-    FileStream fs=new FileStream("Product.xml",FileMode.Create,FileAccess.Write);
+    FileStream fs = new FileStream("Product.xml", FileMode.Create, FileAccess.Write);
     serializer.WriteObject(fs
         , new Product { Information = new ProductInformation { Id = 1000, Summary = "Özet bilgi" } });
     fs.Close();
 
-    Product product=(Product)serializer.ReadObject(new FileStream("Product.xml",FileMode.Open,FileAccess.Read));
-    ProductInformation information=(ProductInformation)product.Information;
-    Console.WriteLine("{0} {1}",information.Id,information.Summary);
+    Product product = (Product)serializer.ReadObject(new FileStream("Product.xml", FileMode.Open, FileAccess.Read));
+    ProductInformation information = (ProductInformation)product.Information;
+    Console.WriteLine("{0} {1}", information.Id, information.Summary);
 }
 ```
 

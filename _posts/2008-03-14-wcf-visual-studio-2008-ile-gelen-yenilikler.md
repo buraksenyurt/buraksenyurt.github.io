@@ -34,7 +34,7 @@ Sözleşmeyi uygulayan sınıfın içeriği;
 
 ```csharp
 class AdventureSrv
-        :IAdventureSrv
+        : IAdventureSrv
 {
     #region INorthwindSrv Members
 
@@ -49,10 +49,11 @@ class AdventureSrv
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
                 // C# 3.0 Object Initializers kullanılarak Urun nesnesi örneklenmektedir.
-                urn = new Urun() 
+                urn = new Urun()
                 {
-                    Ad=reader["Name"].ToString()
-                    ,Fiyat=Convert.ToDouble(reader["ListPrice"])
+                    Ad = reader["Name"].ToString()
+                    ,
+                    Fiyat = Convert.ToDouble(reader["ListPrice"])
                 };
             reader.Close();
         }
@@ -76,7 +77,7 @@ class Urun
 {
     [DataMember]
     public string Ad;
-    
+
     [DataMember]
     public double Fiyat;
 }
@@ -217,7 +218,7 @@ namespace Istemci
         static void proxy_UrunBulCompleted(object sender, Istemci.AdvService.UrunBulCompletedEventArgs e)
         {
             // UrunBul metodu geriye Urun tipinden nesne örneği döndürmektedir. Bu sebepten UrunBulCompletedEventArgs sınıfının Result özelliği Urun tipinden bir değer döndürür. Bu sayede Ad ve Fiyat alanlarına erişilebilmektedir.
-            Console.WriteLine(e.Result.Ad+" "+e.Result.Fiyat.ToString("C2"));
+            Console.WriteLine(e.Result.Ad + " " + e.Result.Fiyat.ToString("C2"));
         }
     }
 }
@@ -260,14 +261,14 @@ interface IAdventureSrv
 }
 
 class AdventureSrv
-    :IAdventureSrv
+    : IAdventureSrv
 {
     // Diğer metod uyarlamaları
 
-    public List<double> RastgeleSayilar(int baslangic,int bitis)
+    public List<double> RastgeleSayilar(int baslangic, int bitis)
     {
         List<double> liste = new List<double>();
-        Random rnd=new Random();
+        Random rnd = new Random();
         for (int i = baslangic; i < bitis; i++)
             liste.Add(rnd.NextDouble());
         return liste;
@@ -287,11 +288,13 @@ class AdventureSrv
 Servis tarafında List ve Hashtable tiplerinden değer döndüren iki operasyon yer almaktadır. Normal şartlarda WCF servisine ait proxy sınıfı üretilirken List gibi koleksiyonlar için T tipinden bir dizi (Array) baz alınmaktadır. Hashtable, SortedList gibi koleksiyonlar içinse Dictionary tipi ele alınmaktadır. Bu nedenle istemci uygulamadaki servis içeriği Update Service Reference seçeneği ile güncelleştirilirse Isimler ve RastgeleSayilar adlı fonksiyonların aktarımı aşağıdaki gibi olacaktır.
 
 ```csharp
-public System.Collections.Generic.Dictionary<object, object> Isimler() {
+public System.Collections.Generic.Dictionary<object, object> Isimler()
+{
     return base.Channel.Isimler();
 }
 
-public double[] RastgeleSayilar(int baslangic, int bitis) {
+public double[] RastgeleSayilar(int baslangic, int bitis)
+{
     return base.Channel.RastgeleSayilar(baslangic, bitis);
 }
 ```
@@ -303,11 +306,13 @@ Ancak istenirse bu aktarım tipleri değiştirilebilir. Bunun için Advanced sek
 Bu işlemin ardından ilgili operasyonların Proxy sınıfı içerisindeki yapılarının aşağıdaki gibi değiştirildiği görülebilir.
 
 ```csharp
-public System.Collections.Generic.List<double> RastgeleSayilar(int baslangic, int bitis) {
+public System.Collections.Generic.List<double> RastgeleSayilar(int baslangic, int bitis)
+{
     return base.Channel.RastgeleSayilar(baslangic, bitis);
 }
 
-public System.Collections.Hashtable Isimler() {
+public System.Collections.Hashtable Isimler()
+{
     return base.Channel.Isimler();
 }
 ```

@@ -33,10 +33,10 @@ Ve kodlar,
 ```csharp
 private void btnTabloOlustur_Click(object sender, System.EventArgs e)
 {
-            /* Bir tabloyu bellekte temsil edicek bir datatable nesnesi oluşturarak işe başlıyoruz. Tablomuza txtTabloAdi isimli TextBox'a giriline değeri isim olarak veriyoruz */
-            DataTable dt=new DataTable(txtTabloAdi.Text);
-            MessageBox.Show(dt.TableName.ToString()+" TABLOSU BELLEKTE OLUŞTURULDU");
-} 
+    /* Bir tabloyu bellekte temsil edicek bir datatable nesnesi oluşturarak işe başlıyoruz. Tablomuza txtTabloAdi isimli TextBox'a giriline değeri isim olarak veriyoruz */
+    DataTable dt = new DataTable(txtTabloAdi.Text);
+    MessageBox.Show(dt.TableName.ToString() + " TABLOSU BELLEKTE OLUŞTURULDU");
+}
 ```
 
 Şimdi programımızı çalıştıralım ve tablo ismi olarak DENEME diyelim. İşte sonuç,
@@ -54,24 +54,26 @@ private void btnTabloOlustur_Click(object sender, System.EventArgs e)
 Şimdide kodlarımızı görelim.
 
 ```csharp
-DataTable dt; /* DataTable nesnemizi uygulama boyunca kullanabilmek için tüm metodların dışında tanımladık. */ 
+DataTable dt;
+/* DataTable nesnemizi uygulama boyunca kullanabilmek için tüm metodların dışında tanımladık. */
 
 private void btnTabloOlustur_Click(object sender, System.EventArgs e)
 {
-            dt=new DataTable(txtTabloAdi.Text);
-            MessageBox.Show(dt.TableName.ToString()+" TABLOSU BELLEKTE OLUŞTURULDU");
-            lblTabloAdi.Text=dt.TableName.ToString(); /* TableName özelliği DataTable nesnesinin bellekte temsil ettiği tablonun adını vermektedir.*/
+    dt = new DataTable(txtTabloAdi.Text);
+    MessageBox.Show(dt.TableName.ToString() + " TABLOSU BELLEKTE OLUŞTURULDU");
+    lblTabloAdi.Text = dt.TableName.ToString();
+    /* TableName özelliği DataTable nesnesinin bellekte temsil ettiği tablonun adını vermektedir.*/
 }
 
 private void btnAlanEkle_Click(object sender, System.EventArgs e)
 {
-            /*Önce yeni alanımız için bir DataColumn nesnesi oluşturulur*/
-            DataColumn dc=new DataColumn();
-            /*Şimdi ise DataTable nesnemizin Columns koleksiyonuna oluşturulan alanımızı ekliyoruz. İlk parametre, alanın adını temsil ederken, ikinci parametre ise alanın veri türünü belirtmektedir. Add metodu bu özellikleri ile oluşturulan DataColumn nesnesini dataTable'a ekler. Bu sayede tabloda alanımız oluşturulmuş olur.*/
-           dt.Columns.Add(txtAlanAdi.Text,Type.GetType("System."+cmbAlanTuru.Text));
-            lstAlanlar.Items.Add("Alan Adı: "+dt.Columns[txtAlanAdi.Text].ColumnName.ToString()+" Veri Tipi: "+dt.Columns[txtAlanAdi.Text].DataType.ToString()); 
+    /*Önce yeni alanımız için bir DataColumn nesnesi oluşturulur*/
+    DataColumn dc = new DataColumn();
+    /*Şimdi ise DataTable nesnemizin Columns koleksiyonuna oluşturulan alanımızı ekliyoruz. İlk parametre, alanın adını temsil ederken, ikinci parametre ise alanın veri türünü belirtmektedir. Add metodu bu özellikleri ile oluşturulan DataColumn nesnesini dataTable'a ekler. Bu sayede tabloda alanımız oluşturulmuş olur.*/
+    dt.Columns.Add(txtAlanAdi.Text, Type.GetType("System." + cmbAlanTuru.Text));
+    lstAlanlar.Items.Add("Alan Adı: " + dt.Columns[txtAlanAdi.Text].ColumnName.ToString() + " Veri Tipi: " + dt.Columns[txtAlanAdi.Text].DataType.ToString());
 
-            /* ColumnName özelliği ile eklenen alanın adını, DataType özelliği ilede bu alanın veri türünü öğreniyoruz.*/
+    /* ColumnName özelliği ile eklenen alanın adını, DataType özelliği ilede bu alanın veri türünü öğreniyoruz.*/
 }
 ```
 

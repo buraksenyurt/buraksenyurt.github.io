@@ -52,8 +52,8 @@ Dilerseniz kodlarımızı yazmaya başlayalım. Önceliklie SqlConnection nesnem
 
 ```csharp
 public SqlDataAdapter();
-public SqlDataAdapter(string selectCommandText,string connectionString);  
-public SqlDataAdapter(string selectCommandText,SqlConnection selectConnection);  
+public SqlDataAdapter(string selectCommandText, string connectionString);
+public SqlDataAdapter(string selectCommandText, SqlConnection selectConnection);
 public SqlDataAdapter(SqlCommadn selectCommand);
 ```
 
@@ -68,72 +68,81 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
+
 /* Önce SqlConnection nesnesi yardimiyla SQL Server üzerinde yer alan, Northwind isimli veritabanina bir baglanti nesnesi tanimliyoruz. Ilk parametre yani initial catalog, veritabaninin ismini temsil ediyor. Şu anda SQL Server’ in üzerinde yer alan makinede çalisitigimizdan Data Source parametresine localhost degerini aktardik. */
 
-SqlConnection conNorthwind=new SqlConnection("initial catalog=Northwind;Data Source=localhost;integrated security=sspi;packet size=4096");
+SqlConnection conNorthwind = new SqlConnection("initial catalog=Northwind;Data Source=localhost;integrated security=sspi;packet size=4096");
 /* Şimdi Categories tablosunu bellekte temsil edicek olan DataTable nesnemizi yaratiyoruz. Dikkat edersek bellekte dedik. DataTable nesnesi Categories tablosundaki verileri programin çalistigi bilgisayar üzerindeki bellekte sakliyacaktir. Bu durumda SqlConnection nesnemizin açik kalmasina gerek yoktur. Bu da elbetteki sunucu üzerindeki yükü azaltan bir etkendir.*/
-DataTable dtbCategories=new DataTable("Kategoriler");
+DataTable dtbCategories = new DataTable("Kategoriler");
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     conNorthwind.Open();//Bağlantımızı açıyoruz. 
+    conNorthwind.Open();//Bağlantımızı açıyoruz. 
 
-     SqlDataAdapter da=new SqlDataAdapter();//Bir SqlDataAdapter nesnesi tanimladik.  
+    SqlDataAdapter da = new SqlDataAdapter();//Bir SqlDataAdapter nesnesi tanimladik.  
 
-     /* Asagidaki satir ile yarattigimiz SqlDataAdapter nesnesine bir Select sorgusu eklemis oluyoruz. Bu sorgu sonucu dönen deger kümesi, SqlDataAdapter nesnesinin Fill metodunu kullandigimizda DataTable' in içerisini hangi veriler ile dolduracagimizi belirtecek önemli bir özelliktir. Bir SqlDataAdapter nesnesi yaratildiginda, SelectCommand özelligine SqlCommand türünden bir nesne atanarak bu islem gerçeklestirilir. Burada aslinda, SelectCommand özelliginin prototipinden dolayi new anahtar sözcügü kullanilarak bir SqlCommand nesnesi parametre olarak verilen select cümlecigi ile olusturulmus ve SelectCommand özelligine atanmistir.
+    /* Asagidaki satir ile yarattigimiz SqlDataAdapter nesnesine bir Select sorgusu eklemis oluyoruz. Bu sorgu sonucu dönen deger kümesi, SqlDataAdapter nesnesinin Fill metodunu kullandigimizda DataTable' in içerisini hangi veriler ile dolduracagimizi belirtecek önemli bir özelliktir. Bir SqlDataAdapter nesnesi yaratildiginda, SelectCommand özelligine SqlCommand türünden bir nesne atanarak bu islem gerçeklestirilir. Burada aslinda, SelectCommand özelliginin prototipinden dolayi new anahtar sözcügü kullanilarak bir SqlCommand nesnesi parametre olarak verilen select cümlecigi ile olusturulmus ve SelectCommand özelligine atanmistir.
 
-      *
+     *
 
-      * public new SqlCommand SelectCommand
-      * {
-      * get;
-      * set;
-      * }
-      * Prototipten de görüldügü gibi SelectCommand özelliginin tipi SqlCommand nesnesi türündendir. Bu yüzden new SqlCommand("....") ifadesi kullanilmistir.
-      * */
+     * public new SqlCommand SelectCommand
+     * {
+     * get;
+     * set;
+     * }
+     * Prototipten de görüldügü gibi SelectCommand özelliginin tipi SqlCommand nesnesi türündendir. Bu yüzden new SqlCommand("....") ifadesi kullanilmistir.
+     * */
 
-     da.SelectCommand=new SqlCommand("SELECT * FROM Categories"); 
-     da.SelectCommand.Connection=conNorthwind; /* Select sorgusunun çalistirilacagi baglanti belirlenir.*/
-     da.FillSchema(dtbCategories,SchemaType.Mapped);/* Burada dataTable nesnemize, veritabanında yer alan Categories isimli tablonun Schema bilgilerinide yüklüyoruz. Yani primaryKey bilgileri, alanların bilgileri yükleniyor. Bunu yapmamızın sebebi, Stored Procedure ile veritabanındaki Categories tablosundan silme işlemini yapmadan önce , bellekteli tablodan da aynı satırı silip dataGrid içindeki görüntünün ve DataTable nesnesinin güncel olarak kalmasını sağlamak. Nitekim silme işleminde DataTable nesnesinden seçili satırı silmek içim kullanacağımız Remove metodu PrimaryKey alanının değerini istemektedir. Bunu verebilmek için tablonun PrimaryKey bilgisininde belleğe yani bellekteki DataTable nesnesine yüklenmiş olması gerekir. İşte bu amaçla Schema bilgilerinide alıyoruz*/ 
+    da.SelectCommand = new SqlCommand("SELECT * FROM Categories");
+    da.SelectCommand.Connection = conNorthwind;
+    /* Select sorgusunun çalistirilacagi baglanti belirlenir.*/
+    da.FillSchema(dtbCategories, SchemaType.Mapped);
+    /* Burada dataTable nesnemize, veritabanında yer alan Categories isimli tablonun Schema bilgilerinide yüklüyoruz. Yani primaryKey bilgileri, alanların bilgileri yükleniyor. Bunu yapmamızın sebebi, Stored Procedure ile veritabanındaki Categories tablosundan silme işlemini yapmadan önce , bellekteli tablodan da aynı satırı silip dataGrid içindeki görüntünün ve DataTable nesnesinin güncel olarak kalmasını sağlamak. Nitekim silme işleminde DataTable nesnesinden seçili satırı silmek içim kullanacağımız Remove metodu PrimaryKey alanının değerini istemektedir. Bunu verebilmek için tablonun PrimaryKey bilgisininde belleğe yani bellekteki DataTable nesnesine yüklenmiş olması gerekir. İşte bu amaçla Schema bilgilerinide alıyoruz*/
 
-     da.Fill(dtbCategories);/* Burada SqlDataAdapter nesnesinin Fill metodu çagirilir. Fill metodu öncelikle SelectCommand.CommandText in degeri olan Select sorgusunu çalistirir ve dönen veri kümesini dtbCategories isimli DataTable nesnesinin bellekte referans ettigi alana yükler. Artik baglantiyida kapatabiliriz.*/
+    da.Fill(dtbCategories);
+    /* Burada SqlDataAdapter nesnesinin Fill metodu çagirilir. Fill metodu öncelikle SelectCommand.CommandText in degeri olan Select sorgusunu çalistirir ve dönen veri kümesini dtbCategories isimli DataTable nesnesinin bellekte referans ettigi alana yükler. Artik baglantiyida kapatabiliriz.*/
 
-     conNorthwind.Close(); 
-     /* Simdi dataGrid nesnemize veri kaynagi olarak DataTable nesnemizi gösterecegiz. Böylece DataGrid, Categories tablosundaki veriler ile dolucak. */
-     dgCategories.DataSource=dtbCategories;
-} 
+    conNorthwind.Close();
+    /* Simdi dataGrid nesnemize veri kaynagi olarak DataTable nesnemizi gösterecegiz. Böylece DataGrid, Categories tablosundaki veriler ile dolucak. */
+    dgCategories.DataSource = dtbCategories;
+}
 
 private void btnDelete_Click(object sender, System.EventArgs e)
 {
-     /* Şİmdi silme işlemini gerçekleştireceğimiz Stored Procedure'e DataGrid nesnesi üzerinde kullanıcının seçmiş olduğu satırın CategoryID sütununun değerini göndereceğiz. Bunun için kullanıcının seçtiği satırın numarasını CurrentCell.RowNumber özelliği ile alıyoruz. Daha sonra, CategoryID sütunu dataGrid'in 0 indexli sütunu olduğundan CategoryID değerini elde ederken dgCategories[currentRow,0] metodunu kullanıyoruz.*/
+    /* Şİmdi silme işlemini gerçekleştireceğimiz Stored Procedure'e DataGrid nesnesi üzerinde kullanıcının seçmiş olduğu satırın CategoryID sütununun değerini göndereceğiz. Bunun için kullanıcının seçtiği satırın numarasını CurrentCell.RowNumber özelliği ile alıyoruz. Daha sonra, CategoryID sütunu dataGrid'in 0 indexli sütunu olduğundan CategoryID değerini elde ederken dgCategories[currentRow,0] metodunu kullanıyoruz.*/
 
-     int currentRow; 
-     int selectedCategoryID; 
-     currentRow=dgCategories.CurrentCell.RowNumber; 
-     selectedCategoryID=(int)dgCategories[currentRow,0]; /* Burada dgCategories[currentRow,0] aslında object tipinden bir değer döndürür. Bu yüzden açık olarak dönüştürme dediğimiz (Explicit) bir Parse(dönüştürme) işlemi yapıyoruz. */
+    int currentRow;
+    int selectedCategoryID;
+    currentRow = dgCategories.CurrentCell.RowNumber;
+    selectedCategoryID = (int)dgCategories[currentRow, 0];
+    /* Burada dgCategories[currentRow,0] aslında object tipinden bir değer döndürür. Bu yüzden açık olarak dönüştürme dediğimiz (Explicit) bir Parse(dönüştürme) işlemi yapıyoruz. */
 
-     /* Şimdi de Stored Procedure'ümüzü çalıştıracak olan SqlCommand nesnesini tanımlayalım*/
-     SqlCommand cmdDelete=new SqlCommand(); 
-     cmdDelete.CommandText="Delete Category";/* Stored Procedure'ün adı CommandText özelliğine atanıyor. Ve bu stringin bir Stored Procedure'e işaret ettiğini belirtmek için CommandType değerini CommandType.StoredProcedure olarak belirliyoruz.*/ 
+    /* Şimdi de Stored Procedure'ümüzü çalıştıracak olan SqlCommand nesnesini tanımlayalım*/
+    SqlCommand cmdDelete = new SqlCommand();
+    cmdDelete.CommandText = "Delete Category";
+    /* Stored Procedure'ün adı CommandText özelliğine atanıyor. Ve bu stringin bir Stored Procedure'e işaret ettiğini belirtmek için CommandType değerini CommandType.StoredProcedure olarak belirliyoruz.*/
 
-     cmdDelete.CommandType=CommandType.StoredProcedure; 
-     cmdDelete.Connection=conNorthwind;//Komutun çalıştırılacağı bağlantı belirleniyor. 
+    cmdDelete.CommandType = CommandType.StoredProcedure;
+    cmdDelete.Connection = conNorthwind;//Komutun çalıştırılacağı bağlantı belirleniyor. 
 
-     /* Şimdi ise @id isimli parametremizi oluşturacağız ve kullanıcının seçmiş olduğu satırın CategoryID değerini bu parametre ile Stored Proecedure'ümüze göndereceğiz.*/ 
-     cmdDelete.Parameters.Add("@kid",SqlDbType.Int); 
-     cmdDelete.Parameters["@kid"].Value=selectedCategoryID;
-     /* Ve önemli bir nokta. Kullanıcıyı uyarmalıyız. Gerçekten seçtiği satırı silmek istiyor mu?* Bunun için MessageBox nesnesni ve Show metodunu kullanacağız. Bu metodun dönüş değerini DialogResult tipinde bir değişkenle kontrol ettiğimize dikkat edin.*/ 
+    /* Şimdi ise @id isimli parametremizi oluşturacağız ve kullanıcının seçmiş olduğu satırın CategoryID değerini bu parametre ile Stored Proecedure'ümüze göndereceğiz.*/
+    cmdDelete.Parameters.Add("@kid", SqlDbType.Int);
+    cmdDelete.Parameters["@kid"].Value = selectedCategoryID;
+    /* Ve önemli bir nokta. Kullanıcıyı uyarmalıyız. Gerçekten seçtiği satırı silmek istiyor mu?* Bunun için MessageBox nesnesni ve Show metodunu kullanacağız. Bu metodun dönüş değerini DialogResult tipinde bir değişkenle kontrol ettiğimize dikkat edin.*/
 
-     DialogResult result; 
-     result=MessageBox.Show("CategoryID : "+selectedCategoryID.ToString()+". Bu satırı silmek istediğinizden emin misiniz?","Sil",MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-     if (result==DialogResult.Yes ) /*Eğer kullanıcının cevabı evet ise aşağıdaki kod bloğundaki kodlar çalıştırılır ve satır once DataTable nesnesinden sonrada kalıcı olarak databaseden silinir.*/
-     {
-          conNorthwind.Open();// Bağlantımızı açıyoruz.
-          /* Elbette veritabanından doğrudan sildiğimiz satırı bellekteki DataTable nesnesinin referans ettiği yerdende siliyoruz ki datagrid nesnemiz güncelliğini korusun. Bunun için seçili olan dataTable satırınu bir DataRow nesnesine aktarıyoruz. Bunu yaparkende seçili kaydı Find metodu ile CategoryID isimli Primary Key alanı üzerinden arama yapıyoruz. Kayıt bulunduğunda tüm satırbilgisi bir DataRow türü olarak geri dönüyor ve bunu DataRow nesnemize atıyoruz. Remove metodu silinmek istenen satır bilgisini parameter olarak alır. Ve bu parameter DataRow tipinden bir parametredir.*/
-          DataRow drSelectedRow;           drSelectedRow=dtbCategories.Rows.Find(selectedCategoryID);           dtbCategories.Rows.Remove(drSelectedRow); 
-          cmdDelete.ExecuteNonQuery();/ * Artık Stored Procedure de çalıştırılıyor ve slime işlemi doğrudan veritabanındaki tablo üzerinden gerçekleştiriliyor. ExecuteNonQuery bu Stored Procedure'ü çalıştıracak olan metoddur. Delete,Update,Insert gibi kayıt döndürmesi beklenmeyen (Select sorguları gibi) sql cümlecikleri için ExecuteNonQuery metodu kullanılır.*/
-          conNorthwind.Close();
-     } 
+    DialogResult result;
+    result = MessageBox.Show("CategoryID : " + selectedCategoryID.ToString() + ". Bu satırı silmek istediğinizden emin misiniz?", "Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+    if (result == DialogResult.Yes) /*Eğer kullanıcının cevabı evet ise aşağıdaki kod bloğundaki kodlar çalıştırılır ve satır once DataTable nesnesinden sonrada kalıcı olarak databaseden silinir.*/
+    {
+        conNorthwind.Open();// Bağlantımızı açıyoruz.
+        /* Elbette veritabanından doğrudan sildiğimiz satırı bellekteki DataTable nesnesinin referans ettiği yerdende siliyoruz ki datagrid nesnemiz güncelliğini korusun. Bunun için seçili olan dataTable satırınu bir DataRow nesnesine aktarıyoruz. Bunu yaparkende seçili kaydı Find metodu ile CategoryID isimli Primary Key alanı üzerinden arama yapıyoruz. Kayıt bulunduğunda tüm satırbilgisi bir DataRow türü olarak geri dönüyor ve bunu DataRow nesnemize atıyoruz. Remove metodu silinmek istenen satır bilgisini parameter olarak alır. Ve bu parameter DataRow tipinden bir parametredir.*/
+        DataRow drSelectedRow;
+        drSelectedRow = dtbCategories.Rows.Find(selectedCategoryID);
+        dtbCategories.Rows.Remove(drSelectedRow);
+        cmdDelete.ExecuteNonQuery();
+        /* Artık Stored Procedure de çalıştırılıyor ve slime işlemi doğrudan veritabanındaki tablo üzerinden gerçekleştiriliyor. ExecuteNonQuery bu Stored Procedure'ü çalıştıracak olan metoddur. Delete,Update,Insert gibi kayıt döndürmesi beklenmeyen (Select sorguları gibi) sql cümlecikleri için ExecuteNonQuery metodu kullanılır.*/
+        conNorthwind.Close();
+    }
 }
 ```
 

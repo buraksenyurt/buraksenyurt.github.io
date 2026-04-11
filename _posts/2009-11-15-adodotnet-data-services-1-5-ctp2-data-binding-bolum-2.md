@@ -28,14 +28,14 @@ using System.Data.Services;
 
 namespace BookShop
 {
-    public class BookService 
+    public class BookService
         : DataService<BookShopEntities>
     {
         public static void InitializeService(DataServiceConfiguration config)
         {
-            config.SetEntitySetAccessRule("*", EntitySetRights.All);        
+            config.SetEntitySetAccessRule("*", EntitySetRights.All);
             config.DataServiceBehavior.MaxProtocolVersion = System.Data.Services.Common.DataServiceProtocolVersion.V2;
-     }
+        }
     }
 }
 ```
@@ -109,14 +109,14 @@ using BookShopModel;
 
 namespace BookSeller
 {
-    public partial class Window1 
+    public partial class Window1
            : Window
     {
         BookShopEntities bs = null;
         DataServiceCollection<Category> _bookShopCollection = null;
 
         public Window1()
-        {   
+        {
             InitializeComponent();
 
             bs = new BookShopEntities(new Uri("http://localhost:7995/BookService.svc/"));
@@ -209,19 +209,19 @@ Bu amaçla Add başlıklı Button kontrolümüzün Click olay metodunu aşağıd
 
 ```csharp
 private void btnAddBook_Click(object sender, RoutedEventArgs e)
-        {
-            Category currentCategory = cmbCategories.SelectedItem as Category;
+{
+    Category currentCategory = cmbCategories.SelectedItem as Category;
 
-            Book newBook = new Book
-            {
-                ListPrice = Convert.ToDecimal(txtListPrice.Text),
-                Name = txtName.Text,
-                PageSize = Convert.ToInt16(txtPageSize.Text) ,
-                Category=currentCategory
-            };
+    Book newBook = new Book
+    {
+        ListPrice = Convert.ToDecimal(txtListPrice.Text),
+        Name = txtName.Text,
+        PageSize = Convert.ToInt16(txtPageSize.Text),
+        Category = currentCategory
+    };
 
-            currentCategory.Book.Add(newBook);
-        }
+    currentCategory.Book.Add(newBook);
+}
 ```
 
 İlk olarak kitabın ekleneceği kategori bulunmaktadır. Burada SelectedItem özelliğinin Category tipine dönüştürüldüğüne dikkat edilmelidir. Sonrasında yeni bir Book nesnesi örneklenir ve ilgili özellikleri kontrollerden alınır.(Burada herhangibir hatalı giriş kontrolü yapmadığımızı belirtelim. Aslında yapmamız gerekiyor ancak şu an için odaklanmamız gereken kısım bu değil. Yinede siz örneği denerken mutlaka olası hataların önüne geçmenizi sağlayacak eklemeleri yapmayı unutmayın)

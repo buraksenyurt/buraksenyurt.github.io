@@ -51,164 +51,188 @@ using System.Collections.Generic;
 
 namespace Interpreter
 {
-    // Expression Type
-    abstract class RuleExpression
-    {   
-        public abstract bool Interpret(List<string> context);
-    }
+    // Expression Type
+    abstract class RuleExpression
+    {
+        public abstract bool Interpret(List<string> context);
+    }
 
-    #region Terminal Expression Types
+    #region Terminal Expression Types
 
-    class ArgumentExpression
-    : RuleExpression
-    {
-        public string Name { get; set; }
+    class ArgumentExpression
+    : RuleExpression
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
 
-        public override bool Interpret(List<string> context)
-        {
-            if(context.Contains(Name))
-                return true;
-            else
-                return false;
-        }
-    }
+        public override bool Interpret(List<string> context)
+        {
+            if (context.Contains(Name))
+                return true;
+            else
+                return false;
+        }
+    }
 
-    #endregion
+    #endregion
 
-    #region NonTerminal Expression Types
+    #region NonTerminal Expression Types
 
-    class AndExpression
-        : RuleExpression
-    {
-        public RuleExpression Left { get; set; }
-        public RuleExpression Right { get; set; }
+    class AndExpression
+        : RuleExpression
+    {
+        public RuleExpression Left
+        {
+            get;
+            set;
+        }
+        public RuleExpression Right
+        {
+            get;
+            set;
+        }
 
-        public override bool Interpret(List<string> context)
-        {
-            return Left.Interpret(context) && Right.Interpret(context);
-        }
-    }
+        public override bool Interpret(List<string> context)
+        {
+            return Left.Interpret(context) && Right.Interpret(context);
+        }
+    }
 
-    class OrExpression
-        : RuleExpression
-    {
-        public RuleExpression Left { get; set; }
-        public RuleExpression Right { get; set; }
+    class OrExpression
+        : RuleExpression
+    {
+        public RuleExpression Left
+        {
+            get;
+            set;
+        }
+        public RuleExpression Right
+        {
+            get;
+            set;
+        }
 
-        public override bool Interpret(List<string> context)
-        {
-            return Left.Interpret(context) || Right.Interpret(context);
-        }
-    }
+        public override bool Interpret(List<string> context)
+        {
+            return Left.Interpret(context) || Right.Interpret(context);
+        }
+    }
 
-    #endregion
+    #endregion
 
-    // Expression ağacını oluşturmak ve çaşlıştırmakla görevli olan sınıf
-    class RuleComputer
-    {
-        public List<RuleExpression> Expressions { get; set; }
+    // Expression ağacını oluşturmak ve çaşlıştırmakla görevli olan sınıf
+    class RuleComputer
+    {
+        public List<RuleExpression> Expressions
+        {
+            get;
+            set;
+        }
 
-        public RuleComputer()
-        {
-            Expressions = new List<RuleExpression>();
-        }
+        public RuleComputer()
+        {
+            Expressions = new List<RuleExpression>();
+        }
 
-        // Expression ağacının oluşturucusu ve çalıştırıcısı olan metoddur
-        public bool RunExpressionTree(string ruleSyntax,List<string> context)
-        {            
-            bool result = false;
-            
-            // Önce kural metni içerisindeki boşluklara göre elemanlar ayrılır
-            string[] ruleParts = ruleSyntax.Split(' ');
+        // Expression ağacının oluşturucusu ve çalıştırıcısı olan metoddur
+        public bool RunExpressionTree(string ruleSyntax, List<string> context)
+        {
+            bool result = false;
 
-            // Küçük bir kontrol. Ancak fazlasınıda yapmak gerekir :) Yazılan kural metninin geçerli olup olmadığı denetlenmelidir.
-            if (ruleParts.Length < 3)
-                throw new Exception("Eleman sayısı kural için yeterli değildir");
+            // Önce kural metni içerisindeki boşluklara göre elemanlar ayrılır
+            string[] ruleParts = ruleSyntax.Split(' ');
 
-            // Expression Tree oluşturulmasına başlanır(Recursive fonksiyonu kullandığımıza dikkat edelim)
-            RuleExpression longExpression = Recursive(ruleParts, 1, null);
-            // Expression ağacı koleksiyona eklenir
-            Expressions.Add(longExpression);
+            // Küçük bir kontrol. Ancak fazlasınıda yapmak gerekir :) Yazılan kural metninin geçerli olup olmadığı denetlenmelidir.
+            if (ruleParts.Length < 3)
+                throw new Exception("Eleman sayısı kural için yeterli değildir");
 
-            // Koleksiyondaki her bir Expression için Interpret operasyonu çalıştırılır
-            foreach (RuleExpression expression in Expressions)
-            {
-                result = expression.Interpret(context);
-            }
+            // Expression Tree oluşturulmasına başlanır(Recursive fonksiyonu kullandığımıza dikkat edelim)
+            RuleExpression longExpression = Recursive(ruleParts, 1, null);
+            // Expression ağacı koleksiyona eklenir
+            Expressions.Add(longExpression);
 
-            return result;
-        }
+            // Koleksiyondaki her bir Expression için Interpret operasyonu çalıştırılır
+            foreach (RuleExpression expression in Expressions)
+            {
+                result = expression.Interpret(context);
+            }
 
-        // Expression ağacının oluşturulması için kullanılan recursive fonksiyon
-        // Kuralı işletmek için en soldaki ikili daldan başlayarak sağa doğru ilerliyoruz
-        RuleExpression Recursive(string[] parts, int step, RuleExpression expression)
-        {           
-            if (step == 1) // Soldan ilk operatör ile karşılaşıldığında
-            {
-                if (parts[step] == "ve")
-                {
-                    expression = new AndExpression { Left = new ArgumentExpression { Name = parts[step - 1] }, Right = new ArgumentExpression { Name = parts[step + 1] } };
-                }
-                if (parts[step] == "veya")
-                {
-                    expression = new OrExpression { Left = new ArgumentExpression { Name = parts[step - 1] }, Right = new ArgumentExpression { Name = parts[step + 1] } };
-                }
-            }
-            else // İlk çift içerisindeki operator geçildikten sonra, her zaman bir önceki dalın, sonradan gelen argüman ile ve/veya işlemine sokulması sağlanır
-            {
-                if (parts[step] == "ve")
-                {
-                    expression = new AndExpression { Left = expression, Right = new ArgumentExpression { Name = parts[step + 1] } };
-                }
-                if (parts[step] == "veya")
-                {
-                    expression = new OrExpression { Left = expression, Right = new ArgumentExpression { Name = parts[step + 1] } };
-                }
-            }
+            return result;
+        }
 
-            // Recursive metoddan bir notkada çıkılması gerekecektir. Bu çıkış noktası, son operatör ele alındıktan sonrasıdır.
-            if (step == parts.Length - 2)
-                return expression;
+        // Expression ağacının oluşturulması için kullanılan recursive fonksiyon
+        // Kuralı işletmek için en soldaki ikili daldan başlayarak sağa doğru ilerliyoruz
+        RuleExpression Recursive(string[] parts, int step, RuleExpression expression)
+        {
+            if (step == 1) // Soldan ilk operatör ile karşılaşıldığında
+            {
+                if (parts[step] == "ve")
+                {
+                    expression = new AndExpression { Left = new ArgumentExpression { Name = parts[step - 1] }, Right = new ArgumentExpression { Name = parts[step + 1] } };
+                }
+                if (parts[step] == "veya")
+                {
+                    expression = new OrExpression { Left = new ArgumentExpression { Name = parts[step - 1] }, Right = new ArgumentExpression { Name = parts[step + 1] } };
+                }
+            }
+            else // İlk çift içerisindeki operator geçildikten sonra, her zaman bir önceki dalın, sonradan gelen argüman ile ve/veya işlemine sokulması sağlanır
+            {
+                if (parts[step] == "ve")
+                {
+                    expression = new AndExpression { Left = expression, Right = new ArgumentExpression { Name = parts[step + 1] } };
+                }
+                if (parts[step] == "veya")
+                {
+                    expression = new OrExpression { Left = expression, Right = new ArgumentExpression { Name = parts[step + 1] } };
+                }
+            }
 
-            // Öteleme yapılarak sonraki çifti almak üzere aynı metod tekrar işletilir
-            return Recursive(parts, step + 2, expression);
-        }
-    }
+            // Recursive metoddan bir notkada çıkılması gerekecektir. Bu çıkış noktası, son operatör ele alındıktan sonrasıdır.
+            if (step == parts.Length - 2)
+                return expression;
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Örnek kural
-            string rule = "Kirmizi ve Mavi veya Mor ve Siyah";
+            // Öteleme yapılarak sonraki çifti almak üzere aynı metod tekrar işletilir
+            return Recursive(parts, step + 2, expression);
+        }
+    }
 
-            // Kuralın denetleneceğin veri içeriği (Context)
-            List<string> myBasket =new List<string> { "Yesil", "Kahverengi", "Lacivert", "Sari", "Mor", "Siyah" };
-            RuleComputer computer = new RuleComputer();
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Örnek kural
+            string rule = "Kirmizi ve Mavi veya Mor ve Siyah";
 
-            // Kirmizi ve Mavi = 0 && 0 => 0
-            // 0 veya Mor = 0 || 1 => 1
-            // 1 ve Siyah = 1 && 1 => 1
-            bool result=computer.RunExpressionTree(rule,myBasket);
-            Console.WriteLine(result);
+            // Kuralın denetleneceğin veri içeriği (Context)
+            List<string> myBasket = new List<string> { "Yesil", "Kahverengi", "Lacivert", "Sari", "Mor", "Siyah" };
+            RuleComputer computer = new RuleComputer();
 
-            // Kirmizi ve Mavi = 0 && 0 => 0
-            // 0 veya Mor = 0 || 0 => 0
-            // 0 ve Siyah = 0 && 0 => 0
-            myBasket = new List<string> { "Yesil", "Kahve", "Lacivert", "Beyaz" };
-            Console.WriteLine(computer.RunExpressionTree(rule,myBasket));
+            // Kirmizi ve Mavi = 0 && 0 => 0
+            // 0 veya Mor = 0 || 1 => 1
+            // 1 ve Siyah = 1 && 1 => 1
+            bool result = computer.RunExpressionTree(rule, myBasket);
+            Console.WriteLine(result);
 
-            // Kuralı değiştirelim
-            rule = "Kirmizi veya Beyaz";
+            // Kirmizi ve Mavi = 0 && 0 => 0
+            // 0 veya Mor = 0 || 0 => 0
+            // 0 ve Siyah = 0 && 0 => 0
+            myBasket = new List<string> { "Yesil", "Kahve", "Lacivert", "Beyaz" };
+            Console.WriteLine(computer.RunExpressionTree(rule, myBasket));
 
-            // Kirmizi veya Beyaz = 0 || 1 => 1
-            Console.WriteLine(computer.RunExpressionTree(rule,myBasket));
+            // Kuralı değiştirelim
+            rule = "Kirmizi veya Beyaz";
 
-            // Exception testidir
-            // rule = "Sari";
-            // Console.WriteLine(computer.RunExpressionTree(rule, myBasket));
-        }
-    }
+            // Kirmizi veya Beyaz = 0 || 1 => 1
+            Console.WriteLine(computer.RunExpressionTree(rule, myBasket));
+
+            // Exception testidir
+            // rule = "Sari";
+            // Console.WriteLine(computer.RunExpressionTree(rule, myBasket));
+        }
+    }
 }
 ```
 

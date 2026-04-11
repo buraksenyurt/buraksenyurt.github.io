@@ -35,25 +35,25 @@ Gelelim uygulama kodlarımıza. Her şeyden önce System.Globalization isim alan
 ```csharp
 private void btnKulturler_Click(object sender, System.EventArgs e)
 {
-    CultureInfo[] kulturDizi=CultureInfo.GetCultures(CultureTypes.AllCultures);
+    CultureInfo[] kulturDizi = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
-    TreeNode[] nodes=new TreeNode[kulturDizi.Length];
+    TreeNode[] nodes = new TreeNode[kulturDizi.Length];
 
-    int i=0;
-    TreeNode parent=null;
+    int i = 0;
+    TreeNode parent = null;
 
-    foreach(CultureInfo kulturBilgi in kulturDizi)
+    foreach (CultureInfo kulturBilgi in kulturDizi)
     {
-        nodes[i]=new TreeNode();
-        nodes[i].Text=kulturBilgi.DisplayName;
-        nodes[i].Tag=kulturBilgi;
+        nodes[i] = new TreeNode();
+        nodes[i].Text = kulturBilgi.DisplayName;
+        nodes[i].Tag = kulturBilgi;
 
-        if(kulturBilgi.IsNeutralCulture)
+        if (kulturBilgi.IsNeutralCulture)
         {
-            parent=nodes[i];
+            parent = nodes[i];
             treeView1.Nodes.Add(nodes[i]);
         }
-        else if(kulturBilgi.ThreeLetterISOLanguageName==CultureInfo.InvariantCulture. ThreeLetterISOLanguageName)
+        else if (kulturBilgi.ThreeLetterISOLanguageName == CultureInfo.InvariantCulture.ThreeLetterISOLanguageName)
         {
             treeView1.Nodes.Add(nodes[i]);
         }
@@ -79,11 +79,11 @@ Bundan sonraki kod satırlarında treeView kontrolümüzü doldurmak için gerek
 ```csharp
 private void Temizle()
 {
-    for(int i=0;i<this.Controls.Count;i++)
+    for (int i = 0; i < this.Controls.Count; i++)
     {
-        if(this.Controls[i] is TextBox)
+        if (this.Controls[i] is TextBox)
         {
-            this.Controls[i].Text="";
+            this.Controls[i].Text = "";
         }
     }
 }
@@ -91,33 +91,33 @@ private void treeView1_AfterSelect(object sender, System.Windows.Forms.TreeViewE
 {
 
     Temizle();
-    CultureInfo guncelKultur=(CultureInfo)treeView1.SelectedNode.Tag;
-    txtName.Text=guncelKultur.Name;
-    txtNativeName.Text=guncelKultur.NativeName;
-    txtEnglishName.Text=guncelKultur.EnglishName;
+    CultureInfo guncelKultur = (CultureInfo)treeView1.SelectedNode.Tag;
+    txtName.Text = guncelKultur.Name;
+    txtNativeName.Text = guncelKultur.NativeName;
+    txtEnglishName.Text = guncelKultur.EnglishName;
 
-    if(!guncelKultur.IsNeutralCulture)
+    if (!guncelKultur.IsNeutralCulture)
     {
-        RegionInfo bolgeBilgisi=new RegionInfo(guncelKultur.LCID);
-        txtCurrency.Text=bolgeBilgisi.CurrencySymbol;
-        txtRegion.Text=bolgeBilgisi.DisplayName;
-        txtMetric.Text=bolgeBilgisi.IsMetric.ToString();
+        RegionInfo bolgeBilgisi = new RegionInfo(guncelKultur.LCID);
+        txtCurrency.Text = bolgeBilgisi.CurrencySymbol;
+        txtRegion.Text = bolgeBilgisi.DisplayName;
+        txtMetric.Text = bolgeBilgisi.IsMetric.ToString();
 
-        Thread.CurrentThread.CurrentCulture=guncelKultur;
-        double sayi=4587512.451;
-        txtNumber.Text=sayi.ToString("N");
+        Thread.CurrentThread.CurrentCulture = guncelKultur;
+        double sayi = 4587512.451;
+        txtNumber.Text = sayi.ToString("N");
 
-        txtDate.Text=DateTime.Today.ToString("D");
+        txtDate.Text = DateTime.Today.ToString("D");
 
-        txtTime.Text=DateTime.Now.ToString("T");
-    } 
+        txtTime.Text = DateTime.Now.ToString("T");
+    }
 }
 ```
 
 TreeView kontrolünde herhangi bir öğe seçildiğinde bu öğeye ait bilgiler, textBox kontrollerine doldurulur. Eğer seçilen öğe doğal bir kültür değilse, yani belirleyici kültür ise, bu kültürün bulunduğu ülke veya bölgeye ait bilgilere ulaşmak için RegionInfo sınıfına ait bir nesne kullanılır. Bu nesnenin belirleyici bir kültüre ait olarak oluşturulması sırasında, belirleyici kültürü temsil eden bir değer kullanılır. Bu değer, CultureInfo sınıfının LCID özelliği ile elde edilen benzersiz bir belirleyicidir. RegionInfo nesnesi yardımıyla, belirleyici kültürün bulunduğu bölgeye has para birimi, bu bölgede metrik sistemin kullanılıp kullanılmadığına dair belirleyici bilgiler elde edilir. Gelelim işin en önemli kısmına. Yani uygulamanın seçilen kültüre göre yerelleştirildiği (Localization) kısma.
 
 ```csharp
-Thread.CurrentThread.CurrentCulture=guncelKultur;
+Thread.CurrentThread.CurrentCulture = guncelKultur;
 ```
 
 Bu kod satırı ile, çalışan proses için kültür değeri, seçilen kültüre göre ayarlanmıştır. Dolayısıyla bu kod satırını izleyen satırlardaki sayısal değer, tarih ve zaman formatları, seçilen kültüre göre ekrana gelecektir. İşte uygulamamız basit bir şekilde yerelleştirme işlemini gerçekleştirmiştir. Şimdi uygulamamızı çalıştıralım ve sonuçları gözlemleyelim. Programı ilk çalıştırdığımızda ve Kulturler başlıklı butona tıkladığımızda aşağıdaki ekran görüntüsünü elde ederiz.

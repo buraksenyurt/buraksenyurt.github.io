@@ -77,16 +77,16 @@ protected void custVldtr_ServerValidate(object source, ServerValidateEventArgs a
 
     List<int> kartNumarasi = new List<int>();
     List<int> ciftKartNumaralari = new List<int>();
-    int toplam1=0,toplam2 = 0;
+    int toplam1 = 0, toplam2 = 0;
 
     // TextBox' a girilen string formattaki kart numarasina ait sayı dizisinin her bir elemanı List tipinde int' değerler tutan generic kartNumarasi isimli koleksiyona aktarılır.
-    for (int i =0;i<args.Value.Length;i++)
+    for (int i = 0; i < args.Value.Length; i++)
     {
         kartNumarasi.Add(Convert.ToInt16(args.Value[i].ToString()));
-    } 
+    }
 
     // ilk olarak iki katı hesaplaması ve çıkan sayıların toplamı işlemi yapılır.
-    for (int i =0; i <kartNumarasi.Count; i =i+ 2)
+    for (int i = 0; i < kartNumarasi.Count; i = i + 2)
     {
         ciftKartNumaralari.Add(kartNumarasi[i] * 2);
     }

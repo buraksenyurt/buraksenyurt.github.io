@@ -74,13 +74,16 @@ using System.IO;
 
 namespace ReportHandlerLibrary
 {
-    public class RaporHandler:IHttpHandler
+    public class RaporHandler : IHttpHandler
     {
         #region IHttpHandler Members
 
         public bool IsReusable
         {
-            get { return false; }
+            get
+            {
+                return false;
+            }
         }
 
         // Gelen talep sonrası üretilecek HTML çıktısını bu metod içerisinden veriyor olacağız
@@ -96,7 +99,7 @@ namespace ReportHandlerLibrary
                 // Baslik elementinden raporun başlığı bilgisi alınır
                 string baslik = xDoc.SelectSingleNode("Raporlar/Rapor/Baslik").InnerText;
                 string baslikArkaPlanRengi = xDoc.SelectSingleNode("Raporlar/Rapor/Baslik").Attributes["ArkaPlan"].InnerText;
-        
+
                 // Ekran tasarımı oluşturulmaya başlanır
                 // Üretilen çıktı bir HTML sayfası olacağından HTML elementlerinin kullanılması gerekmektedir.
                 context.Response.Write("<HTML><HEAD><TITLE>" + baslik + "</TITLE></HEAD>");
@@ -111,14 +114,14 @@ namespace ReportHandlerLibrary
                 context.Response.Write("<TR><TD>");
 
                 // Bu hücreye veri ile doldurulan Grid içeriğinin HTML çıktısı yazdırılır
-                context.Response.Write(GridHTMLUret(xDoc,context).ToString());
-    
+                context.Response.Write(GridHTMLUret(xDoc, context).ToString());
+
                 context.Response.Write("</TD></TR>");
                 context.Response.Write("<TR><TD>");
-    
+
                 // Mail gönderme aksiyonu için basit bir hyperLink elementi eklenir
-                context.Response.Write("<a href='"+context.Request.Path + "?MailGonder=1'>" + "Raporu Mail Olarak Gönder" + "</a>");
-            
+                context.Response.Write("<a href='" + context.Request.Path + "?MailGonder=1'>" + "Raporu Mail Olarak Gönder" + "</a>");
+
                 context.Response.Write("</TD></TR>");
                 context.Response.Write("</BODY>");
                 context.Response.Write("</HTML>");
@@ -128,26 +131,26 @@ namespace ReportHandlerLibrary
                 bool mailGondersinmi = false;
                 Boolean.TryParse(xDoc.SelectSingleNode("Raporlar/Rapor/MailListesi").Attributes["MailGonder"].Value, out mailGondersinmi);
                 if (mailGondersinmi)
-                    MailGonder(xDoc,context);
+                    MailGonder(xDoc, context);
             }
         }
 
         #endregion
 
         // GridView kontrolünün içeriği doldurulduktan sonra HTML içeriği elde edilir ve bu içeriği taşıyan StringWriter geriye döndürülür.
-        private StringWriter GridHTMLUret(XmlDocument xDoc,HttpContext ctx)
+        private StringWriter GridHTMLUret(XmlDocument xDoc, HttpContext ctx)
         {
             // SqlDataAdapter nesne oluşturulur
-            SqlDataAdapter adapter = new SqlDataAdapter(KomutHazirla(xDoc,ctx));
+            SqlDataAdapter adapter = new SqlDataAdapter(KomutHazirla(xDoc, ctx));
             DataTable table = new DataTable();
             // DataTable doldurulur
             adapter.Fill(table);
-    
+
             // GridView kontrolü üretilir ve veriye bağlanır
             GridView grd = new GridView();
             grd.DataSource = table;
             grd.DataBind();
-    
+
             //GridView kontrolünün HTML çıktısı elde edilir
             StringWriter strWriter = new StringWriter();
             HtmlTextWriter writer = new HtmlTextWriter(strWriter);
@@ -156,12 +159,12 @@ namespace ReportHandlerLibrary
         }
 
         // Raporun üretilmesi için gerekli SqlCommand hazırlanıyor.
-        private SqlCommand KomutHazirla(XmlDocument xDoc,HttpContext ctx)
+        private SqlCommand KomutHazirla(XmlDocument xDoc, HttpContext ctx)
         {
             bool sp = false;
             // Sorgu cümlesinin Stored Procedure olup olmadığı belirlenir.
             Boolean.TryParse(xDoc.SelectSingleNode("Raporlar/Rapor/Sorgu").Attributes["Sp"].Value, out sp);
-            
+
             // SqlCommand tipi hazırlanır
             SqlCommand cmd = new SqlCommand();
             // Sorgu cümlesi alınır
@@ -171,7 +174,7 @@ namespace ReportHandlerLibrary
             // Eğer cümle Stored Procedure adını işaret ediyorsa CommandType için StoredProcedure enum sabiti değeri verilir
             if (sp)
                 cmd.CommandType = CommandType.StoredProcedure;
-    
+
             // Eğer girilmiş parametreler varsa bu parametreler Command nesnesine AddWithValue metodu ile teker teker eklenir.
             if (xDoc.SelectSingleNode("Raporlar/Rapor/Sorgu/Parametreler").ChildNodes.Count > 0)
             {
@@ -179,9 +182,9 @@ namespace ReportHandlerLibrary
                 XmlNodeList parametreler = xDoc.SelectSingleNode("Raporlar/Rapor/Sorgu/Parametreler").ChildNodes;
                 foreach (XmlNode parametre in parametreler)
                 {
-                    if(parametreNereden=="Xml")
+                    if (parametreNereden == "Xml")
                         cmd.Parameters.AddWithValue(parametre.Attributes["Ad"].Value, parametre.Attributes["Deger"].Value);
-                    else if(parametreNereden=="QueryString")
+                    else if (parametreNereden == "QueryString")
                         cmd.Parameters.AddWithValue(parametre.Attributes["Ad"].Value, ctx.Request.QueryString[parametre.Attributes["Ad"].Value.Substring(1, parametre.Attributes["Ad"].Value.Length - 1)]);
                 }
             }
@@ -193,10 +196,10 @@ namespace ReportHandlerLibrary
         private string BaglantiCumlesiOlustur(XmlDocument xDoc)
         {
             bool sspi = false;
-    
+
             // Sql bağlantısı için gerekli bağlantı cümlesi(Connection String) SqlConnectionStringBuilder sınıfı yardımıyla oluşturulur.
             SqlConnectionStringBuilder conStrBuilder = new SqlConnectionStringBuilder();
-        
+
             // Sunucu ve veritabanı bilgileri XPath ifadeleri ile alınır.
             conStrBuilder.DataSource = xDoc.SelectSingleNode("Raporlar/Rapor/Baglanti/Sunucu").InnerText;
             conStrBuilder.InitialCatalog = xDoc.SelectSingleNode("Raporlar/Rapor/Baglanti/Veritabani").InnerText;
@@ -214,7 +217,7 @@ namespace ReportHandlerLibrary
         }
 
         // Mail gönderme seçeneği aktif ise postaların gönderilme işlemini gerçekleştirecek olan metod.
-        private void MailGonder(XmlDocument doc,HttpContext ctx)
+        private void MailGonder(XmlDocument doc, HttpContext ctx)
         {
             // Mail listesi MailListesi elementinin alt elementlerinden çekilir.
             XmlNodeList mailler = doc.SelectSingleNode("Raporlar/Rapor/MailListesi").ChildNodes;

@@ -37,7 +37,7 @@ namespace KitapDukkani
             }
             set
             {
-                m_Kitap_Yazar=value;
+                m_Kitap_Yazar = value;
             }
         }
         public string Baslik
@@ -48,18 +48,18 @@ namespace KitapDukkani
             }
             set
             {
-                m_Kitap_Baslik=value;
+                m_Kitap_Baslik = value;
             }
         }
         public double Fiyat
-       {
+        {
             get
             {
                 return m_Kitap_Fiyat;
             }
             set
             {
-                m_Kitap_Fiyat=value;
+                m_Kitap_Fiyat = value;
             }
         }
         public DateTime Basim
@@ -70,7 +70,7 @@ namespace KitapDukkani
             }
             set
             {
-                m_Kitap_Basim=value;
+                m_Kitap_Basim = value;
             }
         }
         public string Kategori
@@ -81,21 +81,21 @@ namespace KitapDukkani
             }
             set
             {
-                m_Kitap_Kategori=value;
+                m_Kitap_Kategori = value;
             }
         }
 
-        public Kitap(string yazar,string baslik,double fiyat,DateTime basim,string kategori)
+        public Kitap(string yazar, string baslik, double fiyat, DateTime basim, string kategori)
         {
-            Yazar=yazar;
-            Baslik=baslik;
-            Fiyat=fiyat;
-            Basim=basim;
-            Kategori=kategori;
+            Yazar = yazar;
+            Baslik = baslik;
+            Fiyat = fiyat;
+            Basim = basim;
+            Kategori = kategori;
         }
 
         public Kitap()
-        {        
+        {
         }
     }
 }
@@ -110,9 +110,9 @@ Kitap sınıfımız tipik olarak bir kitabın temel özelliklerini sunan bir yap
 ```csharp
 private void txtFiyat_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
 {
-    if (((int)e.KeyChar < 48 || (int)e.KeyChar > 57) && ((int)e.KeyChar!=8)) 
+    if (((int)e.KeyChar < 48 || (int)e.KeyChar > 57) && ((int)e.KeyChar != 8))
     {
-        e.Handled=true;
+        e.Handled = true;
     }
 }
 ```
@@ -122,10 +122,10 @@ Ama hâlâ yazılım geliştiricinin bilmediği ve bu gibi durumlarda kullanıc�
 ```csharp
 private void btnIndirim_Click(object sender, System.EventArgs e)
 {
-    if(kitap!=null)
+    if (kitap != null)
     {
-        kitap.Fiyat-=10;
-        txtFiyat.Text=kitap.Fiyat.ToString();
+        kitap.Fiyat -= 10;
+        txtFiyat.Text = kitap.Fiyat.ToString();
     }
 }
 ```
@@ -141,16 +141,16 @@ private void btnOlustur_Click(object sender, System.EventArgs e)
 {
     try
     {
-        kitap=new Kitap();
-        kitap.Baslik=txtBaslik.Text;
-        kitap.Yazar=txtYazar.Text;
-        kitap.Basim=dtpBasim.Value;
-        kitap.Fiyat=Convert.ToDouble(txtFiyat.Text);
-        kitap.Kategori=cmbKategori.SelectedText; 
+        kitap = new Kitap();
+        kitap.Baslik = txtBaslik.Text;
+        kitap.Yazar = txtYazar.Text;
+        kitap.Basim = dtpBasim.Value;
+        kitap.Fiyat = Convert.ToDouble(txtFiyat.Text);
+        kitap.Kategori = cmbKategori.SelectedText;
     }
-    catch(System.Exception err)
+    catch (System.Exception err)
     {
-        MessageBox.Show(err.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+        MessageBox.Show(err.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 }
 ```
@@ -165,7 +165,7 @@ namespace KitapDukkani
     /// <summary>
     /// Bir kitabın fiyatı ile ilgili istisna sınıfıdır.
     /// </summary>
-    public class FiyatException:ApplicationException
+    public class FiyatException : ApplicationException
     {
         /// <summary>
         /// İstisnaya neden olan fiyat değerini tutan özel field.
@@ -180,10 +180,10 @@ namespace KitapDukkani
         /// İstisna nesnesi oluşturulurken hataya neden olan fiyat değeri alınıp m_Fiyat özel alanına eşitlenir.
         /// </summary>
         /// <param name="fiyat">İstisnaya neden olan fiyat alanının değeridir.</param>
-        public FiyatException(double fiyat,string mesaj)
+        public FiyatException(double fiyat, string mesaj)
         {
-            m_Fiyat=fiyat;
-            m_Mesaj=mesaj;
+            m_Fiyat = fiyat;
+            m_Mesaj = mesaj;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace KitapDukkani
         {
             get
             {
-                return "Kitaba ait fiyat değeri "+m_Fiyat+"belirtilen kriterlere uygun değildir."+" '"+m_Mesaj+"'";
+                return "Kitaba ait fiyat değeri " + m_Fiyat + "belirtilen kriterlere uygun değildir." + " '" + m_Mesaj + "'";
             }
         }
     }
@@ -213,15 +213,15 @@ private void btnIndirim_Click(object sender, System.EventArgs e)
 {
     try
     {
-        if(kitap!=null)
+        if (kitap != null)
         {
-            kitap.Fiyat-=10;
-            txtFiyat.Text=kitap.Fiyat.ToString();
+            kitap.Fiyat -= 10;
+            txtFiyat.Text = kitap.Fiyat.ToString();
         }
     }
-    catch(FiyatException err)
+    catch (FiyatException err)
     {
-        MessageBox.Show(err.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+        MessageBox.Show(err.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 }
 
@@ -229,16 +229,16 @@ private void btnArttir_Click(object sender, System.EventArgs e)
 {
     try
     {
-        if(kitap!=null)
+        if (kitap != null)
         {
-            kitap.Fiyat+=10;
-            txtFiyat.Text=kitap.Fiyat.ToString();
+            kitap.Fiyat += 10;
+            txtFiyat.Text = kitap.Fiyat.ToString();
         }
     }
-    catch(FiyatException err)
+    catch (FiyatException err)
     {
-        MessageBox.Show(err.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
-    } 
+        MessageBox.Show(err.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
 }
 ```
 

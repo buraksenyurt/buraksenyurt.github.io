@@ -42,11 +42,11 @@ namespace UsingConnectionString
         [STAThread]
         static void Main(string[] args)
         {
-            string conStr=System.Configuration.ConfigurationSettings.AppSettings["conStr"].ToString();
-            using(SqlConnection con=new SqlConnection(conStr))
+            string conStr = System.Configuration.ConfigurationSettings.AppSettings["conStr"].ToString();
+            using (SqlConnection con = new SqlConnection(conStr))
             {
                 con.Open();
-            } 
+            }
         }
     }
 }
@@ -71,8 +71,8 @@ Web.Config içerisindeki bağlantı katarı bilgisinin default.aspx içerisinde 
 ```csharp
 private void Page_Load(object sender, System.EventArgs e)
 {
-    string conStr=System.Configuration.ConfigurationSettings.AppSettings["conStr"].ToString();
-    using(SqlConnection con=new SqlConnection(conStr))
+    string conStr = System.Configuration.ConfigurationSettings.AppSettings["conStr"].ToString();
+    using (SqlConnection con = new SqlConnection(conStr))
     {
         con.Open();
     }
@@ -122,7 +122,7 @@ namespace UsingAppSettings
         static void Main(string[] args)
         {
             Configuration cnfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None, "");
-            cnfg.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("conStr","data source=localhost;database=AdventureWorks;integrated security=SSPI"));
+            cnfg.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("conStr", "data source=localhost;database=AdventureWorks;integrated security=SSPI"));
             cnfg.Save();
         }
     }
@@ -181,7 +181,7 @@ JbJISvyqOZH9AYIxCesaeWwcyOvQfzLyHEw==</CipherValue>
 Gördüğünüz üzere, içeride şifrelenmiş bir takım veriler bulunmaktadır. Bu veriler aslında, programatik olarak atadığımız bağlantı katarına ilişkin bilgilerdir. Peki bu bilgiyi uygulamamızda nasıl kullanabiliriz? ConfigurationManager sınıfı yardımıyla bu bağlantı bilgisini kod içerisinden okuyabilir ve ilgili bağlantı nesneleri için atayabiliriz. Aşağıdaki örnek kod parçası bu işlemin örnek olarak nasıl yapılabileceğini göstermektedir.
 
 ```csharp
-string conStr=ConfigurationManager.ConnectionStrings["conStr"].ConnectionString.ToString();
+string conStr = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString.ToString();
 using (SqlConnection con = new SqlConnection(conStr))
 {
     // Bir takım kodlar

@@ -29,32 +29,32 @@ Threading gördüğünüz gibi çok basit olmayan bir kavramdır. Bu nedenle ola
 Şimdi kodlarımızı yazalım.
 
 ```csharp
-public void z1() 
-{ 
-    for (int i = 1; i < 60; ++i) 
-    { 
-        zaman1.Value += 1; 
-        for (int j = 1; j < 10000000; ++j) 
-        { 
-            j += 1; 
-        } 
-    } 
+public void z1()
+{
+    for (int i = 1; i < 60; ++i)
+    {
+        zaman1.Value += 1;
+        for (int j = 1; j < 10000000; ++j)
+        {
+            j += 1;
+        }
+    }
 }
-public void z2() 
-{ 
-    for (int k = 1; k < 100; ++k) 
-    { 
-        zaman2.Value += 1; 
-        for (int j = 1; j < 25000000; ++j) 
-        { 
-            j += 1; 
-        } 
-    } 
+public void z2()
+{
+    for (int k = 1; k < 100; ++k)
+    {
+        zaman2.Value += 1;
+        for (int j = 1; j < 25000000; ++j)
+        {
+            j += 1;
+        }
+    }
 }
-private void btnBaslat_Click(object sender, System.EventArgs e) 
-{ 
-    z1(); 
-    z2(); 
+private void btnBaslat_Click(object sender, System.EventArgs e)
+{
+    z1();
+    z2();
 }
 ```
 
@@ -101,7 +101,8 @@ private void btnBaslat_Click(object sender, System.EventArgs e)
     ts2 = new ThreadStart(z2);
     t1 = new Thread(ts1);
     t2 = new Thread(ts2);
-    t1.Start(); /* İş parçağını Start metodu ile başlatıyoruz. */
+    t1.Start();
+    /* İş parçağını Start metodu ile başlatıyoruz. */
     t2.Start();
 
     btnBaslat.Enabled = false;

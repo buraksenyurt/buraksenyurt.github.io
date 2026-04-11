@@ -27,10 +27,10 @@ namespace DotNet1Deyken
     enum Departman
     {
         BilgiIslem
-        ,Yazilim
-        ,Muhasebe
-        ,InsanKaynaklari
-        ,GenelMudurluk
+        , Yazilim
+        , Muhasebe
+        , InsanKaynaklari
+        , GenelMudurluk
     }
 
     class Personel
@@ -44,41 +44,77 @@ namespace DotNet1Deyken
 
         public DateTime GirisTarihi
         {
-            get { return _girisTarihi; }
-            set { _girisTarihi = value; }
+            get
+            {
+                return _girisTarihi;
+            }
+            set
+            {
+                _girisTarihi = value;
+            }
         }
 
         public string Soyad
         {
-            get { return _soyad; }
-            set { _soyad = value; }
+            get
+            {
+                return _soyad;
+            }
+            set
+            {
+                _soyad = value;
+            }
         }
 
         public double Maas
         {
-            get { return _maas; }
-            set { _maas = value; }
+            get
+            {
+                return _maas;
+            }
+            set
+            {
+                _maas = value;
+            }
         }
 
         internal Departman Bolumu
         {
-            get { return _bolumu; }
-            set { _bolumu = value; }
+            get
+            {
+                return _bolumu;
+            }
+            set
+            {
+                _bolumu = value;
+            }
         }
 
         public string Ad
         {
-            get { return _ad; }
-            set { _ad = value; }
+            get
+            {
+                return _ad;
+            }
+            set
+            {
+                _ad = value;
+            }
         }
 
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
 
-        public Personel(int id, string ad, string soyad, Departman bolumu, double maas,DateTime girisTarihi)
+        public Personel(int id, string ad, string soyad, Departman bolumu, double maas, DateTime girisTarihi)
         {
             Id = id;
             Ad = ad;
@@ -88,7 +124,7 @@ namespace DotNet1Deyken
             GirisTarihi = girisTarihi;
         }
         public override string ToString()
-        {    
+        {
             return String.Format("{0} {1} {2} {3} {4} {5}", Id.ToString(), Ad, Soyad.ToUpper(), Bolumu.ToString(), Maas.ToString("C2"), GirisTarihi.ToShortDateString());
         }
     }
@@ -121,9 +157,9 @@ namespace DotNet1Deyken
         static bool Maas1000Uzerindemi(Personel prs)
         {
             return prs.Maas > 1000;
-        } 
+        }
 
-        static PersonelList Bul(PersonelList liste,KontrolHandler handler)
+        static PersonelList Bul(PersonelList liste, KontrolHandler handler)
         {
             PersonelList sonucListesi = new PersonelList();
             foreach (Personel prs in liste)
@@ -144,24 +180,24 @@ namespace DotNet1Deyken
         static void Main(string[] args)
         {
             PersonelList calisanlar = new PersonelList();
-    
-            calisanlar.Ekle(new Personel(1000,"Mayk","Hemır", Departman.BilgiIslem,1050,new DateTime(1979,10,1)));
-            calisanlar.Ekle(new Personel(1001,"Büyük","Başkan", Departman.GenelMudurluk,53000,new DateTime(1989,2,3)));
-            calisanlar.Ekle(new Personel(1002,"EmSi","Hemmır", Departman.GenelMudurluk,13500,new DateTime(1990,2,4)));
-            calisanlar.Ekle(new Personel(1003,"Tombul","Raydır", Departman.InsanKaynaklari,2250,new DateTime(1994,8,5)));
-            calisanlar.Ekle(new Personel(1008,"Şirine","Şirin", Departman.BilgiIslem,900,new DateTime(1991,3,6)));
-            calisanlar.Ekle(new Personel(1006,"Burak","Selim", Departman.InsanKaynaklari,2250,new DateTime(1976,7,3)));
-            calisanlar.Ekle(new Personel(1004,"Osvaldo","Nartayyo", Departman.Muhasebe,3500,new DateTime(1975,6,3)));
-            calisanlar.Ekle(new Personel(1005,"Higuin","Kim", Departman.Yazilim,1250,new DateTime(1974,4,2)));
-            calisanlar.Ekle(new Personel(1007,"Karim","Cabbar", Departman.Yazilim,750,new DateTime(1975,2,7)));
+
+            calisanlar.Ekle(new Personel(1000, "Mayk", "Hemır", Departman.BilgiIslem, 1050, new DateTime(1979, 10, 1)));
+            calisanlar.Ekle(new Personel(1001, "Büyük", "Başkan", Departman.GenelMudurluk, 53000, new DateTime(1989, 2, 3)));
+            calisanlar.Ekle(new Personel(1002, "EmSi", "Hemmır", Departman.GenelMudurluk, 13500, new DateTime(1990, 2, 4)));
+            calisanlar.Ekle(new Personel(1003, "Tombul", "Raydır", Departman.InsanKaynaklari, 2250, new DateTime(1994, 8, 5)));
+            calisanlar.Ekle(new Personel(1008, "Şirine", "Şirin", Departman.BilgiIslem, 900, new DateTime(1991, 3, 6)));
+            calisanlar.Ekle(new Personel(1006, "Burak", "Selim", Departman.InsanKaynaklari, 2250, new DateTime(1976, 7, 3)));
+            calisanlar.Ekle(new Personel(1004, "Osvaldo", "Nartayyo", Departman.Muhasebe, 3500, new DateTime(1975, 6, 3)));
+            calisanlar.Ekle(new Personel(1005, "Higuin", "Kim", Departman.Yazilim, 1250, new DateTime(1974, 4, 2)));
+            calisanlar.Ekle(new Personel(1007, "Karim", "Cabbar", Departman.Yazilim, 750, new DateTime(1975, 2, 7)));
             calisanlar.Ekle(new Personel(1011, "Billl", "Geytis", Departman.Yazilim, 650, new DateTime(1976, 3, 8)));
 
             // Departmanı Insan Kaynakları olanların bulunması
-            PersonelList sonuclar1=Bul(calisanlar, new KontrolHandler(DepartmaniIKmi));
-        
+            PersonelList sonuclar1 = Bul(calisanlar, new KontrolHandler(DepartmaniIKmi));
+
             // İsminin baş harfi B olanların bulunması
             PersonelList sonuclar2 = Bul(calisanlar, new KontrolHandler(AdininBasHarfiBmi));
-        
+
             // Maaşı 1000 YTL üzerinde olanların bulunması
             PersonelList sonuclar3 = Bul(calisanlar, new KontrolHandler(Maas1000Uzerindemi));
 
@@ -180,7 +216,7 @@ namespace DotNet1Deyken
 Söz konusu temsilci, Personel tipinden bir parametre alan ve geriye bool değer döndüren metodları işaret edecek şekilde tanımlanmıştır. Bu temsilcinin tek bir tasarım amacı vardır. Buna göre, bir Personel nesne örneğinin herhangibir şartı sağlayıp sağlamadığına dair true veya false değer döndürecek bir metodun işaret edilmesini sağlamaktadır. Peki neden böyle bir temsilciye ihtiyacımız vardır? Bu sorunun cevabını Bul isimli fonksiyon vermektedir.
 
 ```csharp
-static PersonelList Bul(PersonelList liste,KontrolHandler handler)
+static PersonelList Bul(PersonelList liste, KontrolHandler handler)
 {
     PersonelList sonucListesi = new PersonelList();
     foreach (Personel prs in liste)
@@ -231,10 +267,10 @@ namespace DotNet2Deyken
     enum Departman
     {
         BilgiIslem
-        ,Yazilim
-        ,Muhasebe
-        ,InsanKaynaklari
-        ,GenelMudurluk
+        , Yazilim
+        , Muhasebe
+        , InsanKaynaklari
+        , GenelMudurluk
     }
 
     class Personel
@@ -248,38 +284,74 @@ namespace DotNet2Deyken
 
         public DateTime GirisTarihi
         {
-            get { return _girisTarihi; }
-            set { _girisTarihi = value; }
+            get
+            {
+                return _girisTarihi;
+            }
+            set
+            {
+                _girisTarihi = value;
+            }
         }
 
         public string Soyad
         {
-            get { return _soyad; }
-            set { _soyad = value; }
+            get
+            {
+                return _soyad;
+            }
+            set
+            {
+                _soyad = value;
+            }
         }
 
         public double Maas
         {
-            get { return _maas; }
-            set { _maas = value; }
+            get
+            {
+                return _maas;
+            }
+            set
+            {
+                _maas = value;
+            }
         }
 
         internal Departman Bolumu
         {
-            get { return _bolumu; }
-            set { _bolumu = value; }
+            get
+            {
+                return _bolumu;
+            }
+            set
+            {
+                _bolumu = value;
+            }
         }
 
         public string Ad
         {
-            get { return _ad; }
-            set { _ad = value; }
+            get
+            {
+                return _ad;
+            }
+            set
+            {
+                _ad = value;
+            }
         }
 
         public int Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
 
         public Personel(int id, string ad, string soyad, Departman bolumu, double maas, DateTime girisTarihi)
@@ -303,14 +375,14 @@ namespace DotNet2Deyken
     class Program
     {
         // generic tipten oluşan koleksiyon üzerinden alt küme çekme işlemini üstlenen metod
-        static List<T> Bul<T>(List<T> liste,KontrolHandler<T> handler)
+        static List<T> Bul<T>(List<T> liste, KontrolHandler<T> handler)
         {
             List<T> sonuclar = new List<T>();
             foreach (T eleman in liste)
                 if (handler(eleman)) // Generic temsilcinin işaret edeceği karşılaştırma metodu çağırılır.
                     sonuclar.Add(eleman);
             return sonuclar;
-        }    
+        }
 
         // Generic Listeleme fonksiyonu
         static void Listele<T>(List<T> liste)
@@ -321,9 +393,9 @@ namespace DotNet2Deyken
         }
 
         static void Main(string[] args)
-        {    
+        {
             List<Personel> calisanlar = new List<Personel>();
-    
+
             calisanlar.Add(new Personel(1000, "Mayk", "Hemır", Departman.BilgiIslem, 1050, new DateTime(1979, 10, 1)));
             calisanlar.Add(new Personel(1001, "Büyük", "Başkan", Departman.GenelMudurluk, 53000, new DateTime(1989, 2, 3)));
             calisanlar.Add(new Personel(1002, "EmSi", "Hemmır", Departman.GenelMudurluk, 13500, new DateTime(1990, 2, 4)));
@@ -339,21 +411,21 @@ namespace DotNet2Deyken
             // Bul metodunun ikinci parametrelerinin nasıl verildiğine dikkat edelim
 
             // Insan Kaynakları departmanında çalışanların bulunması
-            List<Personel> IKCalisanlari=Bul<Personel>(calisanlar,delegate(Personel p)
+            List<Personel> IKCalisanlari = Bul<Personel>(calisanlar, delegate (Personel p)
                                                                                     {
                                                                                         return p.Bolumu == Departman.Yazilim;
                                                                                     }
                                                                                 );
 
             // Şubat ayında işe girenlerin bulunması
-            List<Personel> SubatAyindaBaslayanlar = Bul<Personel>(calisanlar, delegate(Personel p)
+            List<Personel> SubatAyindaBaslayanlar = Bul<Personel>(calisanlar, delegate (Personel p)
                                                                                     {
                                                                                         return p.GirisTarihi.Month == 2;
                                                                                     }
                                                                                 );
 
             //Departmanı Yazilim olanlardan Maaşı 1000 YTL üzerinde olanların bulunması
-            List<Personel> MaasiVeDepartmaninaGore = Bul<Personel>(calisanlar, delegate(Personel p)
+            List<Personel> MaasiVeDepartmaninaGore = Bul<Personel>(calisanlar, delegate (Personel p)
                                                                                     {
                                                                                         return (p.Maas >= 1000 && p.Bolumu == Departman.Yazilim);
                                                                                     }
@@ -371,9 +443,9 @@ Bu uzun kod parçasında bir önceki versiyona göre en büyük farklılıklar g
 Fakat bütün bunlara rağmen en çok dikkate değer kısımlardan biriside, isimsiz metodların kullanımıdır. Bu sebepten dolayı bir önceki örnekte olduğu gibi, ayrı ayrı karşılaştırma metodlarının yazılmasına gerek kalmamaktadır. Tam aksine Bul metodunun kullanıldığı yerlerde ikinci parametrelerde isimsiz metod kullanılarak koşul deyimlerinin aynı ifade içerisinde tanımlanabilmeside sağlanmıştır. Örneğin Şubat ayında işe giren personelin bulunabilme sürecini göz önüne alalım. Burada Bul metodu, calisanlar isimli generic koleksiyondaki Personel nesne örneklerini tek tek dolaşmalı, GirisTarihi özellikleri üzerinden Month değerlerinin 2 olup olmadığına bakmalı ve eğer öyleyse bunları yeni bir koleksiyonda birleştirerek geriye döndürmelidir. İsimsiz metodlar yardımıyla bu iş aşağıda görüldüğü gibi tek bir ifadede sağlanabilir.
 
 ```csharp
-List<Personel> SubatAyindaBaslayanlar = Bul<Personel>(calisanlar, delegate(Personel p)
+List<Personel> SubatAyindaBaslayanlar = Bul<Personel>(calisanlar, delegate (Personel p)
 {
-   return p.GirisTarihi.Month == 2;
+    return p.GirisTarihi.Month == 2;
 }
 );
 ```
@@ -403,32 +475,32 @@ class Program
     static void Main(string[] args)
     {
         List<Personel> calisanlar = new List<Personel>();
-        
+
         #region Test Verileri
 
         // Test verilerinin girildiği kodlar
 
         #endregion
-        
-        List<Personel> BHarfliler = 
-                                calisanlar.FindAll(delegate(Personel p)
+
+        List<Personel> BHarfliler =
+                                calisanlar.FindAll(delegate (Personel p)
                                                             {
                                                                 return p.Ad[0] == 'B';
                                                             }
                                                         );
-        List<Personel> SubattaBaslayanlar=
-                                calisanlar.FindAll(delegate(Personel p)
+        List<Personel> SubattaBaslayanlar =
+                                calisanlar.FindAll(delegate (Personel p)
                                                             {
                                                                 return p.GirisTarihi.Month == 2;
                                                             }
                                                         );
-        List<Personel> GenelMudurlukCalisanlari = 
-                                calisanlar.FindAll(delegate(Personel p)
+        List<Personel> GenelMudurlukCalisanlari =
+                                calisanlar.FindAll(delegate (Personel p)
                                                             {
                                                                 return p.Bolumu == Departman.GenelMudurluk;
                                                             }
                                                         );
-    
+
         Listele<Personel>(BHarfliler);
         Listele<Personel>(SubattaBaslayanlar);
         Listele<Personel>(GenelMudurlukCalisanlari);
@@ -456,19 +528,43 @@ namespace DotNet3Nokta5Deyken
     enum Departman
     {
         BilgiIslem
-        ,Yazilim
-        ,Muhasebe
-        ,InsanKaynaklari
-        ,GenelMudurluk
+        , Yazilim
+        , Muhasebe
+        , InsanKaynaklari
+        , GenelMudurluk
     }
     class Personel // Bu sınıfta otomatik özellikler(Automatic Property) kullanılmıştır.
     {
-        public int Id { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public Departman Bolumu { get; set; }
-        public double Maas { get; set; }
-        public DateTime GirisTarihi { get; set; }
+        public int Id
+        {
+            get;
+            set;
+        }
+        public string Ad
+        {
+            get;
+            set;
+        }
+        public string Soyad
+        {
+            get;
+            set;
+        }
+        public Departman Bolumu
+        {
+            get;
+            set;
+        }
+        public double Maas
+        {
+            get;
+            set;
+        }
+        public DateTime GirisTarihi
+        {
+            get;
+            set;
+        }
 
         public override string ToString()
         {
@@ -502,7 +598,8 @@ namespace DotNet3Nokta5Deyken
 
             //Giris yılı 1976 öncesi olanlar çekilirken başka bir metod çağırılıyor.
             var GirisYili1976OncesiOlanlar = calisanlar.FindAll(
-                                                                            p =>{
+                                                                            p =>
+                                                                            {
                                                                                 if (p.GirisTarihi.Year < 1976)
                                                                                 {
                                                                                     PrimArttir(p);
@@ -513,16 +610,16 @@ namespace DotNet3Nokta5Deyken
                                                                             }
                                                                     );
 
-            Listele<Personel>(AdiBIleBaslayanlar);        
+            Listele<Personel>(AdiBIleBaslayanlar);
             Listele<Personel>(YazilimDepartmaniCalisanlari);
             Listele<Personel>(GirisYili1976OncesiOlanlar);
         }
 
         private static void PrimArttir(Personel p)
         {
-            Console.WriteLine("\t"+p.Ad+" "+p.Soyad.ToUpper()+" için prim arttırım talebi");
+            Console.WriteLine("\t" + p.Ad + " " + p.Soyad.ToUpper() + " için prim arttırım talebi");
         }
-    
+
         static void Listele<T>(IEnumerable<T> liste)
         {
             foreach (T t in liste)
@@ -559,7 +656,8 @@ Görüldüğü gibi lambda operatörünün sağ tarafında p değişkeni kullan�
 
 ```csharp
 var GirisYili1976OncesiOlanlar = calisanlar.FindAll(
-p =>{
+p =>
+{
     if (p.GirisTarihi.Year < 1976)
     {
         PrimArttir(p);
@@ -567,7 +665,7 @@ p =>{
     }
     else
         return false;
-    }
+}
 );
 ```
 
@@ -595,7 +693,7 @@ double sonuc = calisanlar
                                 .Sum<Personel>(p => p.Maas);
 Console.WriteLine(sonuc.ToString("C2"));
 
-int sonuc2 = calisanlar.Aggregate(0,(toplam,p) => p.Maas>2000?toplam+=1:toplam);
+int sonuc2 = calisanlar.Aggregate(0, (toplam, p) => p.Maas > 2000 ? toplam += 1 : toplam);
 Console.WriteLine(sonuc2.ToString());
 ```
 
@@ -610,7 +708,7 @@ using System;
 
 namespace LambdaVeCIL
 {
-    delegate T IslemHandler<T>(T T1,T T2);
+    delegate T IslemHandler<T>(T T1, T T2);
 
     class Program
     {
@@ -618,9 +716,10 @@ namespace LambdaVeCIL
         {
             IslemHandler<double> hnd = (x, y) => x + y;
 
-            IslemHandler<int> hnd2=
-                delegate(int a,int b){
-                    return a + b; 
+            IslemHandler<int> hnd2 =
+                delegate (int a, int b)
+                {
+                    return a + b;
                 };
         }
     }

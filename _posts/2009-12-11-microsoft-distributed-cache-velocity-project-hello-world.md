@@ -118,7 +118,7 @@ namespace HelloVelocity
 
             DataCacheFactory factory = new DataCacheFactory();
             //Fabrika nesne örneğinin GetDefaultCache metodundan yararlanılarak varsayılan DataCache nesne referansı elde edilir.
-            dCache = factory.GetDefaultCache();        
+            dCache = factory.GetDefaultCache();
         }
 
         // Cache' den veri çekme işlemi

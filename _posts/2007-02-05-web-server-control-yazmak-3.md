@@ -31,17 +31,26 @@ public class TarihKontrolumEventDatas
 
     public string SeciliYil
     {
-        get { return seciliYil; }
+        get
+        {
+            return seciliYil;
+        }
     }
 
     public string SeciliAy
     {
-        get { return seciliAy; }
+        get
+        {
+            return seciliAy;
+        }
     }
 
     public string SeciliGun
     {
-        get { return seciliGun; }
+        get
+        {
+            return seciliGun;
+        }
     }
 
     #endregion
@@ -64,7 +73,7 @@ TarihKontrolumEventDatas isimli sınıfın temel görevi, olay metodu içerisine
 ![mk190_2.gif](/assets/images/2007/mk190_2.gif)
 
 ```csharp
-public delegate void TarihDogrulaEventHandler(object sender,TarihKontrolumEventDatas eData);
+public delegate void TarihDogrulaEventHandler(object sender, TarihKontrolumEventDatas eData);
 ```
 
 Temsilcimiz object ve TarihKontroumEventDatas tipinden parametreler alan ve geriye değer döndürmeyen metodları işaret edebilecek şekilde tasarlanmıştır. Bu tipik olarak varsayılan olay temsilcisi desenidir. Artık kontrolümüz için gerekli olan olayı (event) tanımlayabilir ve bu olayı tetikletecek üye metodu ekleyebiliriz. Bu amaçla TarihKontrolumWithEvent isimli yeni kontrolümüze aşağıdaki eklemeleri yapmamız gerekmektedir.
@@ -88,7 +97,7 @@ Her ne kadar kontrolümüze bir olay eklemiş olsakta, bu olayın gerçekleştir
 
 ```csharp
 protected override void Render(HtmlTextWriter writer)
-{ 
+{
     // Diğer kod satırları
     writer.Write("<input type='submit' value='...' name='sbmButton'/>");
     base.Render(writer);
@@ -117,11 +126,14 @@ protected void TarihKontrolumWithEvent1_TarihDogrula(object sender, BenimWebKont
 ```csharp
 public string SubmitName
 {
-    get { return this.UniqueID; }
+    get
+    {
+        return this.UniqueID;
+    }
 }
 
 protected override void Render(HtmlTextWriter writer)
-{ 
+{
     // Diğer Kodlar
     writer.Write("<input type='submit' value='...' name='" + SubmitName + "'/>");
     base.Render(writer);

@@ -72,7 +72,7 @@ namespace ClientApp
 
             // Standart olay bazlı asenkron erişim tekniği kullanılır.
 
-            disClient.FindCompleted += delegate(object sender, FindCompletedEventArgs e)
+            disClient.FindCompleted += delegate (object sender, FindCompletedEventArgs e)
             {
                 // Hata varsa bildir
                 if (e.Error != null)

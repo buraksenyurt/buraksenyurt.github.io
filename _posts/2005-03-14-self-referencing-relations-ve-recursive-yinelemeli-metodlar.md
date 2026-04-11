@@ -27,7 +27,7 @@ Tabloda, X şirketinin çalışan personelleri arasındaki pozisyonel hiyerarşi
 Buradaki ilişkiyi uygulamalarımızda tanımlamak için DataRelation nesnelerini kullanabiliriz. Örneğin;
 
 ```csharp
-DataRelation dr=new DataRelation("self",ds.Tables[0].Columns["PersonelNo"],ds.Tables[0].Columns["Amiri"],false);
+DataRelation dr = new DataRelation("self", ds.Tables[0].Columns["PersonelNo"], ds.Tables[0].Columns["Amiri"], false);
 ```
 
 Bizim için ikinci önemli nokta bu ilişkiyi kullanacak olan Recursive (Yinelemeli) bir metodun geliştirilmesidir. Yinelemeli metodumuzu geliştirirken tablo içerisindeki her bir satırı ele alacak ve bu satırların var ise alt satırlarına da bakacak bir algoritmayı göz önüne almamız gerekiyor. Örneğin aşağıdaki Console uygulamasını ele alalım.
@@ -35,42 +35,42 @@ Bizim için ikinci önemli nokta bu ilişkiyi kullanacak olan Recursive (Yinelem
 ```csharp
 class Worker
 {
-    SqlConnection con=new SqlConnection("data source=BURKI;database=Veritabanim;integrated security=SSPI");
+    SqlConnection con = new SqlConnection("data source=BURKI;database=Veritabanim;integrated security=SSPI");
     SqlDataAdapter da;
-    DataSet ds; 
+    DataSet ds;
     DataRelation dr;
 
     public void Baglan()
     {
-        if(con.State==ConnectionState.Closed)
-        con.Open();
+        if (con.State == ConnectionState.Closed)
+            con.Open();
     }
 
     public void VeriCek()
     {
-        da=new SqlDataAdapter("SELECT * FROM Kadro",con);
-        ds=new DataSet(); 
+        da = new SqlDataAdapter("SELECT * FROM Kadro", con);
+        ds = new DataSet();
         da.Fill(ds);
-        dr=new DataRelation("self",ds.Tables[0].Columns["PersonelNo"],ds.Tables[0].Columns["Amiri"],false);
+        dr = new DataRelation("self", ds.Tables[0].Columns["PersonelNo"], ds.Tables[0].Columns["Amiri"], false);
         ds.Relations.Add(dr);
     }
     //Recursive metodumuz.
-    public void DetayiniAl(DataRow dr,string giris)
+    public void DetayiniAl(DataRow dr, string giris)
     {
-        Console.WriteLine(giris+dr["Personel"].ToString()); 
-        foreach(DataRow drChild in dr.GetChildRows("self"))
+        Console.WriteLine(giris + dr["Personel"].ToString());
+        foreach (DataRow drChild in dr.GetChildRows("self"))
         {
-            DetayiniAl(drChild,giris+"...");
+            DetayiniAl(drChild, giris + "...");
         }
     }
 
     public void AgacOlustur()
     {
-        foreach(DataRow dr in ds.Tables[0].Rows)
+        foreach (DataRow dr in ds.Tables[0].Rows)
         {
-            if(dr.IsNull("Amiri"))
+            if (dr.IsNull("Amiri"))
             {
-                DetayiniAl(dr,"");
+                DetayiniAl(dr, "");
             }
         }
     }
@@ -81,7 +81,7 @@ class Class1
     [STAThread]
     static void Main(string[] args)
     {
-        Worker wrk=new Worker();
+        Worker wrk = new Worker();
         wrk.Baglan();
         wrk.VeriCek();
         wrk.AgacOlustur();
@@ -100,45 +100,45 @@ Gelelim, Windows uygulamamızda bu hiyerarşiyi nasıl şekillendirebileceğimiz
 TreeView kullanımı;
 
 ```csharp
-SqlConnection con=new SqlConnection("data source=BURKI;database=Veritabanim;integrated security=SSPI");
+SqlConnection con = new SqlConnection("data source=BURKI;database=Veritabanim;integrated security=SSPI");
 SqlDataAdapter da;
-DataSet ds; 
+DataSet ds;
 DataRelation dr;
 
 private void Baglan()
 {
-    if(con.State==ConnectionState.Closed)
-    con.Open();
+    if (con.State == ConnectionState.Closed)
+        con.Open();
 }
 
 private void VeriCek()
 {
-    da=new SqlDataAdapter("SELECT * FROM Kadro",con);
-    ds=new DataSet(); 
+    da = new SqlDataAdapter("SELECT * FROM Kadro", con);
+    ds = new DataSet();
     da.Fill(ds);
-    dr=new DataRelation("self",ds.Tables[0].Columns["PersonelNo"],ds.Tables[0].Columns["Amiri"],false);
+    dr = new DataRelation("self", ds.Tables[0].Columns["PersonelNo"], ds.Tables[0].Columns["Amiri"], false);
     ds.Relations.Add(dr);
 }
 
-private void DetayiniAl(DataRow dr,TreeNode t)
+private void DetayiniAl(DataRow dr, TreeNode t)
 {
-    foreach(DataRow drChild in dr.GetChildRows("self"))
+    foreach (DataRow drChild in dr.GetChildRows("self"))
     {
-        TreeNode tnChild=new TreeNode(drChild["Personel"].ToString());
+        TreeNode tnChild = new TreeNode(drChild["Personel"].ToString());
         t.Nodes.Add(tnChild);
-        DetayiniAl(drChild,tnChild);
+        DetayiniAl(drChild, tnChild);
     }
 }
 
 private void AgacOlustur()
 {
-    foreach(DataRow dr in ds.Tables[0].Rows)
+    foreach (DataRow dr in ds.Tables[0].Rows)
     {
-        if(dr.IsNull("Amiri"))
+        if (dr.IsNull("Amiri"))
         {
-            TreeNode tn=new TreeNode(dr["Personel"].ToString());
+            TreeNode tn = new TreeNode(dr["Personel"].ToString());
             treeView1.Nodes.Add(tn);
-            DetayiniAl(dr,tn);
+            DetayiniAl(dr, tn);
         }
     }
 }

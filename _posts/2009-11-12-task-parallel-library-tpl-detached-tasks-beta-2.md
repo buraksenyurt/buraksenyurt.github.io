@@ -22,7 +22,7 @@ namespace DetachedTasks
         {
             Task task1 = Task.Factory.StartNew(() =>
             {
-                Console.WriteLine("Task 1 başlangıç zamanı {0}",DateTime.Now.ToLongTimeString());
+                Console.WriteLine("Task 1 başlangıç zamanı {0}", DateTime.Now.ToLongTimeString());
                 Task task2 = Task.Factory.StartNew(() =>
                     {
                         Console.WriteLine("Task 2 başlangıç zamanı {0}", DateTime.Now.ToLongTimeString());
@@ -34,7 +34,7 @@ namespace DetachedTasks
             );
 
             task1.Wait();
-            Console.WriteLine("Program sonu :  {0}",DateTime.Now.ToLongTimeString());
+            Console.WriteLine("Program sonu :  {0}", DateTime.Now.ToLongTimeString());
         }
     }
 }
@@ -53,12 +53,12 @@ Dikkat edileceği üzere task1 ile aynı zaman dilimi içerisinde task2 başlat�
 ```csharp
 Task task1 = Task.Factory.StartNew(() =>
             {
-                Console.WriteLine("Task 1 başlangıç zamanı {0}",DateTime.Now.ToLongTimeString());
+                Console.WriteLine("Task 1 başlangıç zamanı {0}", DateTime.Now.ToLongTimeString());
                 Task task2 = Task.Factory.StartNew(() =>
                     {
                         Console.WriteLine("Task 2 başlangıç zamanı {0}", DateTime.Now.ToLongTimeString());
                         Thread.Sleep(6000);
-                    },TaskCreationOptions.AttachedToParent
+                    }, TaskCreationOptions.AttachedToParent
                 );
                 Thread.Sleep(3000);
             }

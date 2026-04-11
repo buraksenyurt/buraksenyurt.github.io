@@ -41,10 +41,10 @@ namespace UsingForAll
             List<Product> productList = GetProductList();
 
             var result = from p in productList.AsParallel()//.WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                         where p.ListPrice>=400 && p.Color=="Black"
+                         where p.ListPrice >= 400 && p.Color == "Black"
                          select p;
 
-            result.ForAll(p=>Console.WriteLine("("+Thread.CurrentThread.ManagedThreadId.ToString()+")\t"+p.Name));
+            result.ForAll(p => Console.WriteLine("(" + Thread.CurrentThread.ManagedThreadId.ToString() + ")\t" + p.Name));
         }
 
         static List<Product> GetProductList()
@@ -75,12 +75,36 @@ namespace UsingForAll
 
     class Product
     {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
-        public string ProductNumber { get; set; }
-        public string Color { get; set; }
-        public int SafetyStockLevel { get; set; }
+        public int ProductId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
+        public string ProductNumber
+        {
+            get;
+            set;
+        }
+        public string Color
+        {
+            get;
+            set;
+        }
+        public int SafetyStockLevel
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -95,12 +119,12 @@ Her ne kadar Thread sayıları eşit olmasada 4 ve 1 nolu iki ayrı iş parças�
 List<Product> productList = GetProductList();
 
 var result = from p in productList.AsParallel()//.WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                 where p.ListPrice>=400 && p.Color=="Black"
-                 select p;
+             where p.ListPrice >= 400 && p.Color == "Black"
+             select p;
 
 foreach (Product p in result)
 {
-   Console.WriteLine("(" + Thread.CurrentThread.ManagedThreadId.ToString() + ")\t" + p.Name);
+    Console.WriteLine("(" + Thread.CurrentThread.ManagedThreadId.ToString() + ")\t" + p.Name);
 }
 ```
 

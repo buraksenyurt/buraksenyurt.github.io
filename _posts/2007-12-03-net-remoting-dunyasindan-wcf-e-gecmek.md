@@ -84,12 +84,12 @@ using System.Data.SqlClient;
 
 namespace ServerApp
 {
-    public class ProductManager:MarshalByRefObject,IProductManager
+    public class ProductManager : MarshalByRefObject, IProductManager
     {
         public ProductManager()
         {
             Console.WriteLine("ProductManager nesnesi oluşturuldu...");
-        }    
+        }
         #region IProductManager Members
 
         public Product GetProductInfo(int productId)
@@ -99,7 +99,7 @@ namespace ServerApp
             {
                 using (SqlCommand cmd = new SqlCommand("Select ProductId,Name,ListPrice,SellStartDate From Production.Product Where ProductId=@PrdId", conn))
                 {
-                    cmd.Parameters.AddWithValue("@PrdId",productId);
+                    cmd.Parameters.AddWithValue("@PrdId", productId);
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
@@ -153,7 +153,7 @@ namespace ServerApp
     {
         static void Main(string[] args)
         {
-            RemotingConfiguration.Configure("..\\..\\App.config",false);
+            RemotingConfiguration.Configure("..\\..\\App.config", false);
             Console.WriteLine("Sunucu dinlemede. Kapatmak için bir tuşa basınız...");
             Console.ReadLine();
         }
@@ -175,9 +175,9 @@ namespace ClientApp
     {
         static void Main(string[] args)
         {
-            IProductManager prdMng = (IProductManager)Activator.GetObject( typeof(IProductManager), "tcp://localhost:4500/ProductMng.rem");
-            Product prd=prdMng.GetProductInfo(1);
-            Console.WriteLine(prd.Name+" "+prd.ListPrice.ToString("C2"));
+            IProductManager prdMng = (IProductManager)Activator.GetObject(typeof(IProductManager), "tcp://localhost:4500/ProductMng.rem");
+            Product prd = prdMng.GetProductInfo(1);
+            Console.WriteLine(prd.Name + " " + prd.ListPrice.ToString("C2"));
             Console.ReadLine();
         }
     }
@@ -305,9 +305,9 @@ namespace ClientApp
             //Product prd=prdMng.GetProductInfo(1);
 
             ChannelFactory<IProductManager> chn = new ChannelFactory<IProductManager>("ProductMng");
-            IProductManager prdMng=chn.CreateChannel();
+            IProductManager prdMng = chn.CreateChannel();
             Product prd = prdMng.GetProductInfo(1);
-            Console.WriteLine(prd.Name+" "+prd.ListPrice.ToString("C2"));
+            Console.WriteLine(prd.Name + " " + prd.ListPrice.ToString("C2"));
             Console.ReadLine();
         }
     }
@@ -350,16 +350,16 @@ using System.Runtime.Serialization;
 namespace AdvLibrary
 {
     [Serializable]
-    public class Product:ISerializable
+    public class Product : ISerializable
     {
         public int Id;
         public string Name;
         public double ListPrice;
         public DateTime SellStartDate; // Yeni versiyonlar için eklenen alan.
-    
+
         public Product()
         {
-    
+
         }
 
         public Product(SerializationInfo info, StreamingContext context)
@@ -386,7 +386,7 @@ namespace AdvLibrary
             info.AddValue("ListPrice", ListPrice);
             info.AddValue("SellStartDate", SellStartDate); // Yeni versiyon için ekenen kod satırı
         }
-    
+
         #endregion
     }
 }
@@ -399,11 +399,11 @@ using System;
 using System.Runtime.Serialization;
 
 namespace AdvLibrary
-{ 
+{
     [DataContract]
     public class Product
     {
-        [DataMember(IsRequired=true)] // Mutlaka olmalı
+        [DataMember(IsRequired = true)] // Mutlaka olmalı
         public int Id;
 
         [DataMember(IsRequired = true)] // Mutlaka olmalı
@@ -411,7 +411,7 @@ namespace AdvLibrary
 
         [DataMember(IsRequired = true)] // Mutlaka olmalı
         public double ListPrice;
-        
+
         [DataMember] // Opsiyonel oldu.
         public DateTime SellStartDate; // Yeni versiyonlar için eklenen alan.
     }

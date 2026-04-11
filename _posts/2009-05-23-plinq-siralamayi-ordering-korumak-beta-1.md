@@ -12,9 +12,9 @@ Hatırlayacağınız gibi, PLINQ (Parallel LINQ) ile ilişkili ilk [yazımda](/2
 
 ```csharp
 var result2 = from p in products.AsParallel()
-                          where p.ListPrice >= 10 && p.InStock==true
-                          orderby p.Name descending
-                          select p;
+              where p.ListPrice >= 10 && p.InStock == true
+              orderby p.Name descending
+              select p;
 ```
 
 Bu sorguda yer alan orderby kelimesi aslında çok büyük bir öneme sahiptir. Gelin ne demek istediğimi size anlatmaya çalışayım. Yine Visual Studio 2010 Professional Beta 1 ortamında geliştirilen aşağıdaki kod parçasına sahip bir Console uygulamamız olduğunu göz önüne alacağız.
@@ -37,7 +37,7 @@ namespace HelloWorld
             Console.WriteLine("Listenin ilk hali");
             foreach (Product prd in products)
             {
-                if(prd.InStock==true)
+                if (prd.InStock == true)
                     Console.WriteLine(prd.Name);
             }
 
@@ -61,9 +61,12 @@ namespace HelloWorld
                 Product prd = new Product
                 {
                     Id = i
-                    ,Name = "Product" + i.ToString()
-                    ,ListPrice = i * 0.1M
-                    ,InStock = i % 2 == 0 ? true : false
+                    ,
+                    Name = "Product" + i.ToString()
+                    ,
+                    ListPrice = i * 0.1M
+                    ,
+                    InStock = i % 2 == 0 ? true : false
                 };
                 products.Add(prd);
             }
@@ -74,10 +77,26 @@ namespace HelloWorld
 
     class Product
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
-        public bool InStock { get; set; }
+        public long Id
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
+        public bool InStock
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -90,9 +109,9 @@ Dikkat edileceği üzere, listenin ilk halinde stokta olan ürünler, koleksiyon
 
 ```csharp
 var result = from p in products.AsParallel()
-                         where p.InStock == true
-                         orderby p.Name
-                         select p;
+             where p.InStock == true
+             orderby p.Name
+             select p;
 ```
 
 Bu durumda örneğin çalışması sonucu aşağıdaki çıktı elde edilir.
@@ -103,8 +122,8 @@ Ancak PLINQ tipinden sorgunun çalıştırılması sırasında orjinal nesne sı
 
 ```csharp
 var result = from p in products.AsParallel().AsOrdered()
-                         where p.InStock == true
-                         select p;
+             where p.InStock == true
+             select p;
 ```
 
 Ve sonuç...

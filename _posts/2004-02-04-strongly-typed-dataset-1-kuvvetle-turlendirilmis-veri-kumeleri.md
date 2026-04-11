@@ -14,7 +14,7 @@ categories:
 Bugünkü makalemizde kuvvetle türlendirilmiş veri kümelerinin ne olduğunu ve nasıl oluşturulduklarını incelemeye çalışacağız. Kuvvetle türlendirilmiş veri kümelerini tanımlamadan önce, aşağıdaki kod satırının incelemekle işe başlayalım.
 
 ```csharp
-textBox1.Text=dsMakale1.Tables["Makale"].Rows[3]["Konu"].ToString();
+textBox1.Text = dsMakale1.Tables["Makale"].Rows[3]["Konu"].ToString();
 ```
 
 Bu satır ile, dsMakale isimli dataSet nesnemizin bellekte işaret ettiği veri bölgesinde yer alan DataTable'lardan Makale tablosuna işaret edenin, 4ncü satırındaki Konu alanının değeri alınarak, TextBox kontrolümüzün text özelliğine atanmaktadır. Şimdide aşağıdaki kod satırını ele alalım.
@@ -26,7 +26,7 @@ textBox1.Text=rsMakale.Fields("Konu").Value
 Bu ifade eski dostumuz ADO'daki rsMakale isimli recordSet'i kullanarak, Konu isimli alanın değerine ulaşmıştır. Dikkat edecek olursanız bu iki ifade arasında uzunluk açısından belirgin bir fark vardır. İkinci yazım daha kolaydır. Zaten bu nedenle, ADO.NET'i öğrenen programcıların ilk başta en çok karşılaştıkları zorluk, bu kod yazımının uzunluğu olmuştur. Bununla birlikte, ADO.NET'in XML tabanlı bir mimariye sahip olması, karşımıza Kuvvetle Türlendirilmiş Veri Kümelerini çıkarmaktadır. Microsoft .NET mimarları, programlarımızda aşağıdakine benzer daha kısa ifadelerin kullanılabilmesi amacıyla, Kuvvetle Güçlendirilmiş Veri Kümeleri kavramını ADO.NET'e yerleştirmiştir.
 
 ```csharp
-textBox1.Text=dsTypedMakale.Makale[3].Konu.ToString();
+textBox1.Text = dsTypedMakale.Makale[3].Konu.ToString();
 ```
 
 Bu ifade ilk yazdığımız ifadeye göre çok daha kısadır. Peki bu nasıl sağlanmıştır. dsTypedMakale isimli DataSet nesnemiz aslında Kuvvetle Türlendirilmiş Veri Kümemizin ta kendisidir. Bu noktada Kuvvetle Türlendirilmiş Veri Kümesi'nin ne olduğunu tanımlayabiliriz.
@@ -42,19 +42,19 @@ using System.Data.SqlClient;
 
 namespace TypeDataSet2
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-               SqlDataAdapter da=new SqlDataAdapter("Select * From Makale",conFriends);
-               DataSet dsMakale=new DataSet("Makaleler");
-               conFriends.Open();
-da.FillSchema(dsMakale,SchemaType.Source,"Makale");
-               conFriends.Close();
-               dsMakale.WriteXmlSchema("Makaleler.xsd");
-          }
-     }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+            SqlDataAdapter da = new SqlDataAdapter("Select * From Makale", conFriends);
+            DataSet dsMakale = new DataSet("Makaleler");
+            conFriends.Open();
+            da.FillSchema(dsMakale, SchemaType.Source, "Makale");
+            conFriends.Close();
+            dsMakale.WriteXmlSchema("Makaleler.xsd");
+        }
+    }
 }
 ```
 
@@ -85,19 +85,22 @@ using System.Data;
 using System.Data.SqlClient;
 namespace TypeDataSet2
 {
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               SqlConnection conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-               SqlDataAdapter da=new SqlDataAdapter("Select * From Makale",conFriends);
-               conFriends.Open();
-               Makaleler dsTypedMakale=new Makaleler(); /* Kuvvetle Türlendirilmiş Veri Kümesi sınıfımızdan bir DataSet nesnesi türetiyoruz.*/
-               da.Fill(dsTypedMakale.Makale); /* SqlDataAdapter nesnemiz yardımıyla, yeni dataSet'imizdeki Makale isimli tablomuzu Sql sunucumuzda yer alan Makale isimli tablonun verileri ile yüklüyoruz. */
-Console.WriteLine(dsTypedMakale.Makale[3].Konu.ToString()); /* Yeni DataSet nesnemizdeki Makale tablosunun 4ncü satırındaki Konu alanının değerine erişiyoruz. */
-               conFriends.Close();
-          }
-     }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+            SqlDataAdapter da = new SqlDataAdapter("Select * From Makale", conFriends);
+            conFriends.Open();
+            Makaleler dsTypedMakale = new Makaleler();
+            /* Kuvvetle Türlendirilmiş Veri Kümesi sınıfımızdan bir DataSet nesnesi türetiyoruz.*/
+            da.Fill(dsTypedMakale.Makale);
+            /* SqlDataAdapter nesnemiz yardımıyla, yeni dataSet'imizdeki Makale isimli tablomuzu Sql sunucumuzda yer alan Makale isimli tablonun verileri ile yüklüyoruz. */
+            Console.WriteLine(dsTypedMakale.Makale[3].Konu.ToString());
+            /* Yeni DataSet nesnemizdeki Makale tablosunun 4ncü satırındaki Konu alanının değerine erişiyoruz. */
+            conFriends.Close();
+        }
+    }
 }
 ```
 
@@ -112,7 +115,7 @@ Görüldüğü gibi bir Kuvvetle Türlendirilmiş Veri Kümesi oluşturmak ve ku
 ```csharp
 public class Makaleler : DataSet
 {
- // Bir takım kodlar
+    // Bir takım kodlar
 }
 ```
 
@@ -236,9 +239,9 @@ Artık uygulamamızda bu sınıfı kullanabiliriz. İşte örnek kod satırları
 ```csharp
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     dsMakale mk=new dsMakale();
-     sqlDataAdapter1.Fill(mk.Makale);
-     textBox1.Text=mk.Makale[3].Konu.ToString();
+    dsMakale mk = new dsMakale();
+    sqlDataAdapter1.Fill(mk.Makale);
+    textBox1.Text = mk.Makale[3].Konu.ToString();
 }
 ```
 

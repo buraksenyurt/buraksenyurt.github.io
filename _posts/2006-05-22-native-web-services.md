@@ -109,7 +109,7 @@ private void button1_Click(object sender, EventArgs e)
     foreach (object guncelNesne in sonuclar)
     {
         if (guncelNesne.GetType().ToString() == "System.Data.DataSet")
-            grdUrunler.DataSource = ((DataSet)guncelNesne).Tables[0]; 
+            grdUrunler.DataSource = ((DataSet)guncelNesne).Tables[0];
     }
 }
 ```

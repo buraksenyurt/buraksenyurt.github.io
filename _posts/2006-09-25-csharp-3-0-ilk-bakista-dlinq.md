@@ -45,19 +45,19 @@ DLINQ için kilit nokta DataContext isimli sınıftır. DataContext sınıfı ç
 ![mk175_2.gif](/assets/images/2006/mk175_2.gif)
 
 ```csharp
-[Table(Name="Calisanlar")]
+[Table(Name = "Calisanlar")]
 class Calisan
 {
-    [Column(Name="Id",Id=true)]
+    [Column(Name = "Id", Id = true)]
     public int Id;
 
-    [Column(Name="Ad")]
+    [Column(Name = "Ad")]
     public string Adi;
 
-    [Column(Name="Soyad")]
+    [Column(Name = "Soyad")]
     public string Soyadi;
 
-    [Column(Name="Maas")]
+    [Column(Name = "Maas")]
     public decimal Maasi;
 
     [Column()]
@@ -66,10 +66,10 @@ class Calisan
     [Column()]
     public DateTime DogumTarihi;
 
-    [Column(Name="Unvan")]
+    [Column(Name = "Unvan")]
     public string Unvani;
 
-    [Column(Name="Departman")]
+    [Column(Name = "Departman")]
     public string Departmani;
 }
 ```
@@ -92,7 +92,7 @@ using System.Data.DLinq;
 
 namespace UsingDLINQ
 {
-    class AdventureWorks:DataContext
+    class AdventureWorks : DataContext
     {
         public Table<Calisan> SirketCalisanlari;
 
@@ -118,16 +118,16 @@ namespace UsingDLINQ
         {
             AdventureWorks adw = new AdventureWorks("data source=localhost;database=AdventureWorks;integrated security=SSPI");
 
-            var calisanListesi=from clsn in adw.SirketCalisanlari select clsn;
+            var calisanListesi = from clsn in adw.SirketCalisanlari select clsn;
 
-            foreach(var c in calisanListesi)
+            foreach (var c in calisanListesi)
             {
                 Console.Write(c.Id.ToString());
-                Console.Write("\t"+c.Adi+" ");
+                Console.Write("\t" + c.Adi + " ");
                 Console.Write(c.Soyadi);
-                Console.Write("\t"+c.Maasi.ToString());
-                Console.Write("\t"+c.DogumTarihi.ToString());
-                Console.WriteLine("\t"+c.Departmani.ToString());
+                Console.Write("\t" + c.Maasi.ToString());
+                Console.Write("\t" + c.DogumTarihi.ToString());
+                Console.WriteLine("\t" + c.Departmani.ToString());
             }
         }
     }
@@ -141,7 +141,7 @@ Uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer
 Dikkat ederseniz burada C# 3.0 ile gelen bir kaç yenilik yer almaktadır. Bunlardan birisi var anahtar sözcüğünün kullanılmasıdır. Bildiğiniz gibi var anahtar sözcüğü ile bir değişkeni, tipini belirtmeden tanımlayabilir ve kullanabiliriz. İkinci önemli yenilik ise C# 3.0 ' ın asıl konusunu oluşturuan LINQ ifadelerinin kullanılmasıdır. from anahtar sözcüğü ile başlayan ifademizde AdventureWorks sınıfına ait nesne örneği içerisinde yer alan Table tipindeki SirketCalisanlari nesne örneği üzerinden basit bir select sorgusu atılmaktadır. Burada yazım tarzı T-Sql göz önüne alındığında biraz ters gelebilir. Ancak uygulamacı gözüyle baktığımızda son derece mantlık bir sorgu cümlesi ortaya çıkmaktadır. Şimdi sorgumuzu biraz değiştirip aşağıdaki hale getirelim.
 
 ```csharp
-var calisanListesi=from clsn in adw.SirketCalisanlari where clsn.Departmani=="Yazılım" select clsn;
+var calisanListesi = from clsn in adw.SirketCalisanlari where clsn.Departmani == "Yazılım" select clsn;
 ```
 
 Bu durumda uygulamamızı çalıştırdığımızda sadece yazılım departmanına ait çalışanları elde edebiliriz.
@@ -160,38 +160,44 @@ using System.Data.DLinq;
 
 namespace UsingDLINQ
 {
-    [Table(Name="Categories")]
+    [Table(Name = "Categories")]
     class Kategori
     {
-        [Column(Name="CategoryID",Id=true)]
+        [Column(Name = "CategoryID", Id = true)]
         public int KategoriId;
 
-        [Column(Name="CategoryName")]
+        [Column(Name = "CategoryName")]
         public string KategoriAdi;
 
         private EntitySet<Urun> m_urunDetay;
 
-        [Association(Storage="m_urunDetay",OtherKey="KategoriId")]
+        [Association(Storage = "m_urunDetay", OtherKey = "KategoriId")]
         public EntitySet<Urun> UrunDetaylari
         {
-            get { return m_urunDetay; }
-            set { m_urunDetay.Assign(value); }
+            get
+            {
+                return m_urunDetay;
+            }
+            set
+            {
+                m_urunDetay.Assign(value);
+            }
         }
     }
 
-    [Table(Name="Products")]
+    [Table(Name = "Products")]
     class Urun
     {
-        [Column(Name="ProductID",Id=true)]
+        [Column(Name = "ProductID", Id = true)]
         public int UrunId;
 
-        [Column(Name="ProductName")]
+        [Column(Name = "ProductName")]
         public string UrunAdi;
-    
-        [Column(Name="UnitPrice")]
+
+        [Column(Name = "UnitPrice")]
         public decimal BirimFiyat;
 
-        [Column(Name="CategoryID")]
+        [Column(Name = "CategoryID")]
         public int KategoriId;
 
         private EntityRef<Kategori> m_kategorisi;
@@ -199,8 +205,14 @@ namespace UsingDLINQ
         [Association(Storage = "m_kategorisi", ThisKey = "KategoriId")]
         public Kategori Kategorisi
         {
-            get { return m_kategorisi.Entity; }
-            set { m_kategorisi.Entity = value; }
+            get
+            {
+                return m_kategorisi.Entity;
+            }
+            set
+            {
+                m_kategorisi.Entity = value;
+            }
         }
     }
 }
@@ -216,7 +228,7 @@ using System.Data.DLinq;
 
 namespace UsingDLINQ
 {
-    class Northwind:DataContext
+    class Northwind : DataContext
     {
         public Table<Kategori> Kategoriler;
         public Table<Urun> Urunler;
@@ -232,18 +244,18 @@ namespace UsingDLINQ
 Dilerseniz daha fazla detaya girmeden nesnel bazda ifade edebileceğimiz bu ilişkiyi LINQ üzerinden nasıl kullanabileceğimize bakalım. Bu amaçla programımıza aşağıdaki kod satırlarını ekleyelim.
 
 ```csharp
-Northwind nrth=new Northwind("data source=localhost;database=Northwind;integrated security=SSPI");
+Northwind nrth = new Northwind("data source=localhost;database=Northwind;integrated security=SSPI");
 
 var sonuclar = from urn in nrth.Urunler from ktg in nrth.Kategoriler where urn.KategoriId == ktg.KategoriId select urn;
 
-var altSonuclar=from snc in sonuclar where snc.KategoriId==2 select snc;
+var altSonuclar = from snc in sonuclar where snc.KategoriId == 2 select snc;
 
 Console.WriteLine("\t Join Üzerinden Belirli Kategori Altında Olanlar...");
 Console.WriteLine();
 
 foreach (Urun u in altSonuclar)
 {
-    Console.WriteLine(u.KategoriId.ToString()+"\t"+u.Kategorisi.KategoriAdi+"\t"+u.UrunAdi+"\t"+u.BirimFiyat.ToString());
+    Console.WriteLine(u.KategoriId.ToString() + "\t" + u.Kategorisi.KategoriAdi + "\t" + u.UrunAdi + "\t" + u.BirimFiyat.ToString());
 }
 ```
 

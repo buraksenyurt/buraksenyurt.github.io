@@ -68,7 +68,8 @@ namespace ReflectionSample2
     {
         static void Main(string[] args)
         {
-            System.Data.DataTable dt = new System.Data.DataTable(); /* Bir DataTable örneği(instance) yaratıyoruz.*/
+            System.Data.DataTable dt = new System.Data.DataTable();
+            /* Bir DataTable örneği(instance) yaratıyoruz.*/
             Type tipimiz = dt.GetType();
             /* DataTable örneğimizin GetType metodunu kullanarak, bu örneğin dolayısıyla DataTable sınıfının tipini elde ediyoruz. */
             System.Reflection.MethodInfo[] tipMetodlari = tipimiz.GetMethods();
@@ -119,7 +120,7 @@ namespace ReflectionSample3
             }
             set
             {
-                deger =value;
+                deger = value;
             }
         }
 
@@ -186,7 +187,7 @@ namespace ReflectDoldur
             }
             set
             {
-                kitapAdi =value;
+                kitapAdi = value;
             }
         }
         public string BasimEvi
@@ -197,14 +198,15 @@ namespace ReflectDoldur
             }
             set
             {
-                yayimci =value;
+                yayimci = value;
             }
         }
 
         /* Yapıcı metodumuz parametre olarak geçirilen bir DataRow değişkenine sahip. Bu değişken ile o anki satırı alıyoruz.*/
         public Kitap(System.Data.DataRow dr)
         {
-            PropertyInfo[] propInfos =this.GetType().GetProperties(); /* this ile bu sınıfı temsil ediyoruz. Bu sınıfın tipini alıp bu tipe ait özellikleri elde ediyor ve bunları PropertyInfo sınıfı tipinden diziye aktarıyoruz.*/
+            PropertyInfo[] propInfos = this.GetType().GetProperties();
+            /* this ile bu sınıfı temsil ediyoruz. Bu sınıfın tipini alıp bu tipe ait özellikleri elde ediyor ve bunları PropertyInfo sınıfı tipinden diziye aktarıyoruz.*/
             /* Döngümüz ile tüm özellikleri geziyoruz. Eğer metodumuza parametre olarak geçirilen dataRow değişkenimiz, bu özelliğin adında bir alan içeriyorsa, bu özelliğe ait SetValue metodunu kullanarak özelliğimize, iligili tablo alanının değerini aktarıyoruz.*/
             for (int i = 0; i < propInfos.Length; ++i)
             {
@@ -235,9 +237,9 @@ namespace ReflectDoldur
     {
         public KitapKoleksiyonu()
         {
-            SqlConnection conFriends =new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-            SqlDataAdapter da =new SqlDataAdapter("Select Adi,BasimEvi From Kitaplar", conFriends);
-            DataTable dtKitap =new DataTable();
+            SqlConnection conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+            SqlDataAdapter da = new SqlDataAdapter("Select Adi,BasimEvi From Kitaplar", conFriends);
+            DataTable dtKitap = new DataTable();
             da.Fill(dtKitap);
             foreach (DataRow drow in dtKitap.Rows)
             {
@@ -265,8 +267,8 @@ Ve işte formumuzda kullandığımız tek satırlık kod;
 ```csharp
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-     dataGrid1.DataSource =new ReflectDoldur.KitapKoleksiyonu();
-} 
+    dataGrid1.DataSource = new ReflectDoldur.KitapKoleksiyonu();
+}
 ```
 
 Şimdi uygulamamızı çalıştıralım ve bakalım.

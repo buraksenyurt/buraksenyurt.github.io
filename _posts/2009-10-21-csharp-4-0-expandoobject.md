@@ -81,8 +81,8 @@ Hatta istersek çalışma zamanında oluşturulacak bu nesneler üzerinde LINQ s
 Console.WriteLine("\nLINQ Kullanımı\n");
 
 var result = from person in (personList as List<dynamic>)
-    where person.Salary <= 1000
-    select person;
+             where person.Salary <= 1000
+             select person;
 
 foreach (var r in result)
     Console.WriteLine("\t{0}\t{1}", r.Name, r.Salary);
@@ -99,29 +99,29 @@ Bu oldukça ilginç olabilir. Aşağıdaki kod parçası ile bir deneyelim bakal
 ```csharp
 static void Main(string[] args)
 {
-   #region Event Kullanımı
+    #region Event Kullanımı
 
-   dynamic file = new ExpandoObject();
+    dynamic file = new ExpandoObject();
 
-   file.Name = "DynamicOlmak.txt";
-   file.Size = 1024;
+    file.Name = "DynamicOlmak.txt";
+    file.Size = 1024;
 
-   file.SizeChanged = null; // Bu satır olmadığı takdirde hata mesajı alınmakta.
-   file.SizeChanged += new EventHandler(OnSizeChanged);
-   EventHandler e = file.SizeChanged;
-   
-   Random rnd = new Random();
-   file.Size += rnd.Next(1000, 10000);
+    file.SizeChanged = null; // Bu satır olmadığı takdirde hata mesajı alınmakta.
+    file.SizeChanged += new EventHandler(OnSizeChanged);
+    EventHandler e = file.SizeChanged;
 
-   if (file.Size>=5000 && e != null)
-      e(file, null);
+    Random rnd = new Random();
+    file.Size += rnd.Next(1000, 10000);
 
-   #endregion
+    if (file.Size >= 5000 && e != null)
+        e(file, null);
+
+    #endregion
 }
 
 public static void OnSizeChanged(object sender, EventArgs e)
 {
-   Console.WriteLine("Boyut değişti olayı tetiklendi");
+    Console.WriteLine("Boyut değişti olayı tetiklendi");
 }
 ```
 
@@ -142,21 +142,21 @@ static dynamic file = new ExpandoObject();
 
 static void Main(string[] args)
 {
-   #region Metoda Parametre Aktarımı
+    #region Metoda Parametre Aktarımı
 
-   file.Name = "DynamicOlmak.txt";
-   file.Size = 1024;
+    file.Name = "DynamicOlmak.txt";
+    file.Size = 1024;
 
-   Console.WriteLine("Metod çağrısı öncesi dosya boyutu {0}",file.Size);
-   Action(file);
-   Console.WriteLine("Metod çağrısı sonrası dosya boyutu {0}", file.Size);
+    Console.WriteLine("Metod çağrısı öncesi dosya boyutu {0}", file.Size);
+    Action(file);
+    Console.WriteLine("Metod çağrısı sonrası dosya boyutu {0}", file.Size);
 
-   #endregion
+    #endregion
 }
 
 static void Action(dynamic obj)
 {
-   obj.Size += 456;
+    obj.Size += 456;
 }
 ```
 

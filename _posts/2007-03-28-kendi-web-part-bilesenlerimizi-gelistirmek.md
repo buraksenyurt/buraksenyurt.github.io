@@ -68,18 +68,30 @@ private string _RssOwner;
 [WebDisplayName("Rss Bilgisi Alınacak Url")] // PropertyGridEditorPart içerisinde Url özelliği için gösterilecek bilgi
 public string Url
 {
-    get { return _Url; }
-    set { _Url = value; }
+    get
+    {
+        return _Url;
+    }
+    set
+    {
+        _Url = value;
+    }
 }
 
 [WebBrowsable(true)]
 [WebDescription("Rss sahibine ait bilgiyi içerir")]
-[Personalizable( PersonalizationScope.User)]
+[Personalizable(PersonalizationScope.User)]
 [WebDisplayName("Rss Yayımcısı")]
 public string RssOwner
 {
-    set { _RssOwner = value; }
-    get{return _RssOwner;}
+    set
+    {
+        _RssOwner = value;
+    }
+    get
+    {
+        return _RssOwner;
+    }
 }
 ```
 
@@ -108,25 +120,25 @@ protected override void Render(HtmlTextWriter output)
             output.AddStyleAttribute(HtmlTextWriterStyle.Width, "100%"); // genişlik belirleniyor
             output.RenderBeginTag(HtmlTextWriterTag.Table); // Table için açılış takısı
 
-                output.AddStyleAttribute(HtmlTextWriterStyle.BackgroundColor, "Gold");
-                output.RenderBeginTag(HtmlTextWriterTag.Tr); // Tr açılış takısı (satır)
-                    output.RenderBeginTag(HtmlTextWriterTag.Td); // Td açılış takısı (hücre)
-                        output.Write(ds.Tables["channel"].Rows[0]["title"].ToString()); // Td içerisine Rss dökümanından title bilgisi alınıyor
-                    output.RenderEndTag(); // Td için kapanış takısı
-                output.RenderEndTag(); // Tr için kapanış takısı
+            output.AddStyleAttribute(HtmlTextWriterStyle.BackgroundColor, "Gold");
+            output.RenderBeginTag(HtmlTextWriterTag.Tr); // Tr açılış takısı (satır)
+            output.RenderBeginTag(HtmlTextWriterTag.Td); // Td açılış takısı (hücre)
+            output.Write(ds.Tables["channel"].Rows[0]["title"].ToString()); // Td içerisine Rss dökümanından title bilgisi alınıyor
+            output.RenderEndTag(); // Td için kapanış takısı
+            output.RenderEndTag(); // Tr için kapanış takısı
 
-                // Rss dökümanındaki her bir item için bir Tr (Table Row) ve içerisinde bir Td (hücre) oluşturuluyor
-                for (int i = 0; i < items.Rows.Count; i++)
-                {
-                    output.RenderBeginTag(HtmlTextWriterTag.Tr); // Tr açılış takısı
-                        output.RenderBeginTag(HtmlTextWriterTag.Td); // Td açlış takısı
-                            output.AddAttribute(HtmlTextWriterAttribute.Href, items.Rows[i]["link"].ToString()); // href isimli attribute sonraki satırda açılacak olan A takısına ilave edilecek. Değeri ise link alanının içeriği olacak
-                            output.RenderBeginTag(HtmlTextWriterTag.A);// A takısı açılıyor
-                                output.Write(items.Rows[i]["title"].ToString()); // A takısı içine title alanının değeri yazılıyor
-                            output.RenderEndTag(); // A takısı kapatılıyor
-                        output.RenderEndTag(); // Td takısı kapatılıyor
-                    output.RenderEndTag(); // Tr takısı kapatılıyor
-                }
+            // Rss dökümanındaki her bir item için bir Tr (Table Row) ve içerisinde bir Td (hücre) oluşturuluyor
+            for (int i = 0; i < items.Rows.Count; i++)
+            {
+                output.RenderBeginTag(HtmlTextWriterTag.Tr); // Tr açılış takısı
+                output.RenderBeginTag(HtmlTextWriterTag.Td); // Td açlış takısı
+                output.AddAttribute(HtmlTextWriterAttribute.Href, items.Rows[i]["link"].ToString()); // href isimli attribute sonraki satırda açılacak olan A takısına ilave edilecek. Değeri ise link alanının içeriği olacak
+                output.RenderBeginTag(HtmlTextWriterTag.A);// A takısı açılıyor
+                output.Write(items.Rows[i]["title"].ToString()); // A takısı içine title alanının değeri yazılıyor
+                output.RenderEndTag(); // A takısı kapatılıyor
+                output.RenderEndTag(); // Td takısı kapatılıyor
+                output.RenderEndTag(); // Tr takısı kapatılıyor
+            }
 
             output.RenderEndTag();// Table' ın bitiş takısı </table>
         }
@@ -134,8 +146,8 @@ protected override void Render(HtmlTextWriter output)
         {
             output.Write("Adres çözümlenemedi");
         }
-    
-        #endregion 
+
+        #endregion
     }
 }
 ```
@@ -170,13 +182,13 @@ public override string Title
     }
     set
     {
-        _RssOwner= value;
+        _RssOwner = value;
     }
 }
 
 public RssPart()
 {
-    TitleIconImageUrl = "Bilgi.gif"; 
+    TitleIconImageUrl = "Bilgi.gif";
 }
 ```
 

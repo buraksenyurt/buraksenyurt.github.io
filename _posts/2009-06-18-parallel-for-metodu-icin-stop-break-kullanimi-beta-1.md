@@ -28,14 +28,14 @@ namespace ParallelForStopBreak
             // ls ParallelLoopState tipinden olup derleyici tarafından üretilmektedir.
             Random rnd = new Random();
 
-            Parallel.For(0, 1000, (i,ls) =>
+            Parallel.For(0, 1000, (i, ls) =>
                 {
                     // Güncel ThreadId değerini alalım.
-                    string threadId=Thread.CurrentThread.ManagedThreadId.ToString();
+                    string threadId = Thread.CurrentThread.ManagedThreadId.ToString();
 
                     values.TryAdd(i, DateTime.Now);
                     Thread.Sleep(500);
-                    Console.Write("({0}) {1} ",threadId,i.ToString());
+                    Console.Write("({0}) {1} ", threadId, i.ToString());
 
                     #region Stop Durumu
 
@@ -51,7 +51,7 @@ namespace ParallelForStopBreak
                 }
             );
 
-            Console.WriteLine("{0} eleman eklendi.\nÇıkmak için bir tuşa basınız.",values.Count.ToString());
+            Console.WriteLine("{0} eleman eklendi.\nÇıkmak için bir tuşa basınız.", values.Count.ToString());
             Console.ReadLine();
         }
     }
@@ -69,8 +69,8 @@ Peki ya Break metodu nasıl bir etkide bulunmaktadır. Bu amaçla Parallel.For m
 ```csharp
 if (rnd.Next(1, 100) == 3) // Eğer rastgele üretilen sayı 3 ise Break metodu çağırılır.
 {
- ls.Break();
- Console.WriteLine("\t\n {0} için Break çağrısı yapıldı.", threadId);
+    ls.Break();
+    Console.WriteLine("\t\n {0} için Break çağrısı yapıldı.", threadId);
 }
 ```
 

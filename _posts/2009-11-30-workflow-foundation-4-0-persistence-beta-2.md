@@ -93,7 +93,7 @@ namespace WFPersistence
             // Unload metodunun çalıştırılması nedeniyle Workflow örneğinin o anda bulunduğu içerik itibariyle Persist edilmeside sağlanmaktadır.
             wfApp.Unload();
 
-            Console.WriteLine("Uygulamadan çıkış zamanı {0}",DateTime.Now.ToLongTimeString());
+            Console.WriteLine("Uygulamadan çıkış zamanı {0}", DateTime.Now.ToLongTimeString());
         }
     }
 }

@@ -83,7 +83,7 @@ Burada gerçekleştirdiğimiz operasyon, bulk-data kopyalama işleminin en basit
 
 ```csharp
 SqlBulkCopy bc = new SqlBulkCopy(con);
-            
+
 bc.DestinationTableName = "YEDEK_MailList";
 
 bc.WriteToServer(dr);
@@ -163,7 +163,7 @@ Gördüğünüz gibi, WriteToServer metodunu etkili versiyonları vardır. Örne
 static void Main(string[] args)
 {
     SqlConnection con = new SqlConnection("data source=localhost;initial catalog=AdventureWorks;integrated security=SSPI");
-/*Hedef tablodaki satırları önlem olarak siliyoruz.*/
+    /*Hedef tablodaki satırları önlem olarak siliyoruz.*/
     SqlCommand cmd = new SqlCommand("DELETE FROM YEDEK_MailList", con);
     con.Open();
     cmd.ExecuteNonQuery();
@@ -187,7 +187,7 @@ static void Main(string[] args)
     dt.Rows.Add(drYeni);
 
     /*SqlBulkCopy nesnemizi hedef bağlantıyı belirterek oluşturuyoruz.*/
-    SqlBulkCopy bc = new SqlBulkCopy("data source=localhost;initial catalog=AdventureWorks;integrated security=SSPI",SqlBulkCopyOptions.KeepIdentity);
+    SqlBulkCopy bc = new SqlBulkCopy("data source=localhost;initial catalog=AdventureWorks;integrated security=SSPI", SqlBulkCopyOptions.KeepIdentity);
     /* Hedef tabloyu belirtiyoruz.*/
     bc.DestinationTableName = "YEDEK_MailList";
     /*WriteToServer metodu ile DataTable içinde sadece yeni eklenmiş olan satırları, hedef tabloya yazdırıyoruz.*/
@@ -235,7 +235,7 @@ static void Main(string[] args)
 
         /* Kaynak tablodan verileri SqlDataReader yardımıyla çekiyoruz.*/
         SqlConnection con1 = new SqlConnection("data source=localhost;initial catalog=AdventureWorks;integrated security=SSPI");
-        SqlCommand cmdCek = new SqlCommand("SELECT * FROM MailList",con1);
+        SqlCommand cmdCek = new SqlCommand("SELECT * FROM MailList", con1);
         SqlDataReader dr;
         con1.Open();
         dr = cmdCek.ExecuteReader();
@@ -255,10 +255,10 @@ static void Main(string[] args)
         bc.ColumnMappings.Add(cm2);
         bc.ColumnMappings.Add(cm3);
         bc.ColumnMappings.Add(cm4);
-    
+
         /*WriteToServer metodu ile SqlDataReader' dan okuduğumuz satırları, hedefe insert ediyoruz.*/
         bc.WriteToServer(dr);
-        
+
         /* Nesneleri kapatıyoruz.*/
         bc.Close();
         dr.Close();

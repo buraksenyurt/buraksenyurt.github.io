@@ -47,7 +47,7 @@ using System;
 using System.Configuration;
 using System.Web.Configuration;
 
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     // İlk olarak bizim için gerekli değişkenleri tanımlıyoruz.
     private Configuration _config;
@@ -57,15 +57,15 @@ public partial class _Default : System.Web.UI.Page
     // Uygulamaya ait web.config dosyası içeriği _config isimli Configuration tipine ait nesne örneğine alınır.
     private void GetConfig()
     {
-        if(_config==null)
-        _config = WebConfigurationManager.OpenWebConfiguration("/ConfigMngAPI");
+        if (_config == null)
+            _config = WebConfigurationManager.OpenWebConfiguration("/ConfigMngAPI");
     }
 
     // web.config dosyası içerisinden appSettings kısmı çekilerek AppSettingsSection tipinden _appSec isimli bir nesne örneğine atanır.
     private void GetAppSettingsSection()
     {
-        if(_appSec==null)
-        _appSec = _config.AppSettings;
+        if (_appSec == null)
+            _appSec = _config.AppSettings;
     }
 
     // web.config dosyasından connectionStrings kısmı çekilerek ConnectionStringsSection tipinden _conSec isimli nesne örneğine atılır.
@@ -128,7 +128,7 @@ public partial class _Default : System.Web.UI.Page
     protected void ddlConnectionKeys_SelectedIndexChanged(object sender, EventArgs e)
     {
         GetConStrInfo();
-    } 
+    }
 }
 ```
 
@@ -139,7 +139,7 @@ Dikkat ederseniz web.config dosyası içerisindeki kısımları ele almak için 
 Elbette Configuration API'si içerisinde var olan web.config sekmelerine karşılık gelen tipler tanımlanmıştır. Başka konfigurasyon bazlı dosyalara ekleyeceğimiz kendi sekmelerimizde elde edebileceğimiz teknikler mevcuttur. Bunun için örneğin GetSection metodundan yararlanabiliriz. Şu anki örneğimiz basit olarak web.config dosyası içerisinde yer alan bilinen kısımlardan, ConnectionStrings ve AppSettings parçalarına ait bilgileri okuyabilmemizi sağlamaktadır. Bir sonraki adımımızda ise bu bilgiler üzerinde değişiklik yaparak tekrardan web.config dosyasına yazma işlemini ele alacağız. Bunun için uygulamamıza aşağıdaki metodları eklememiz yeterli olacaktır.
 
 ```csharp
- // İlk olarak AppSettingsSection tipine ait nesne örneği üzerinden DropDownList' ten seçilen key bilgisinin value özelliğinin değeri TextBox' tan alınır. Burada kayıt işlemini web.config üzerinde gerçekleştirilmesi için mutlaka Configuration tipinen ait Save metodu çağırılmalıdır.
+// İlk olarak AppSettingsSection tipine ait nesne örneği üzerinden DropDownList' ten seçilen key bilgisinin value özelliğinin değeri TextBox' tan alınır. Burada kayıt işlemini web.config üzerinde gerçekleştirilmesi için mutlaka Configuration tipinen ait Save metodu çağırılmalıdır.
 protected void btnChangeAppSet_Click(object sender, EventArgs e)
 {
     GetConfig();
@@ -201,7 +201,7 @@ protected void btnUnprotectConn_Click(object sender, EventArgs e)
         _config.Save();
     }
     else
-    Response.Write("ConnectionStrings zaten şifresiz tutulmaktadır...");
+        Response.Write("ConnectionStrings zaten şifresiz tutulmaktadır...");
 }
 
 // AppSettings sekmesini varsayılan RSA sistemine göre şifreler. Bunun için ilgili kısmın SectionInformation özelliğinin ProtectSection metodu kullanılır.

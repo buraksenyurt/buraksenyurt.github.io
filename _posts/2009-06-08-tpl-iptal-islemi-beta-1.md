@@ -21,49 +21,49 @@ Dolayısıyla uygulamaya bir iptal sürecininde ekleniyor olması gerekmekte. As
 ```csharp
 private Task task1 = null;
 
-        private void btnStart4_Click(object sender, EventArgs e)
+private void btnStart4_Click(object sender, EventArgs e)
+{
+    flowLayoutPanel1.Controls.Clear();
+    Stopwatch watch = Stopwatch.StartNew();
+
+    task1 = Task.Factory.StartNew(() => FillImages(null));
+
+    watch.Stop();
+    lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
+}
+
+private void btnCancel_Click(object sender, EventArgs e)
+{
+    if (task1 != null)
+        task1.Cancel();
+}
+
+private void FillImages(object state)
+{
+    Task currentTask = Task.Current;
+
+    Parallel.ForEach(Directory.GetFiles(imagesPath), (f, ls) =>
+    {
+        if (currentTask.IsCancellationRequested)
         {
-            flowLayoutPanel1.Controls.Clear();
-            Stopwatch watch = Stopwatch.StartNew();
-
-            task1=Task.Factory.StartNew(() => FillImages(null));
-
-            watch.Stop();
-            lblElapsedTime.Text = String.Format("İşlemler {0} saniyede bitmiştir.", watch.Elapsed.TotalSeconds.ToString());
+            ls.Stop();
+            return;
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        FileInfo fInfo = new FileInfo(f);
+        if (fInfo.Length <= 1024 * 100
+            && fInfo.Extension == ".jpg")
         {
-            if (task1 != null)
-                task1.Cancel();
+            Thread.Sleep(100); // Bunu koymadığımızda UI istediğimiz gibi reaksiyon vermiyor.
+            Button btn = new Button();
+            btn.Width = 64;
+            btn.Height = 48;
+            btn.BackgroundImageLayout = ImageLayout.Stretch;
+            btn.BackgroundImage = Image.FromFile(f);
+            AddToPanel(btn);
         }
-
-        private void FillImages(object state)
-        {
-            Task currentTask = Task.Current;
-
-            Parallel.ForEach(Directory.GetFiles(imagesPath), (f, ls) =>
-            {
-                if (currentTask.IsCancellationRequested)
-                {
-                    ls.Stop();
-                    return;
-                }
-                FileInfo fInfo = new FileInfo(f);
-                if (fInfo.Length <= 1024 * 100
-                    && fInfo.Extension == ".jpg")
-                {
-                    Thread.Sleep(100); // Bunu koymadığımızda UI istediğimiz gibi reaksiyon vermiyor.
-                    Button btn = new Button();
-                    btn.Width = 64;
-                    btn.Height = 48;
-                    btn.BackgroundImageLayout = ImageLayout.Stretch;
-                    btn.BackgroundImage = Image.FromFile(f);
-                    AddToPanel(btn);
-                }
-            }
-            );
-        }
+    }
+    );
+}
 ```
 
 Herşeyden önce iptal edilmek istenen Task sınıfına ait nesne örneğinin (task1 isimli değişken) sınıf seviyesinde bir değişken olarak ele alındığı görülmektedir. Kullanıcı iptal işlemi için Button kontrolüne tıkladığında, task1 değişkeni üzerinden Cancel metodu çağırılmaktadır. Bu durumda çalışma zamanında ForEach döngüsü içerisinde yer alan IsCancellationRequested özelliği true değeri döndürecektir. Bu özelliğe ulaşmak için Task sınıfının Current özelliğinden yararlandığımıza dikkat edilmelidir. Bu sayede ForEach içerisinde Parent Task örneğine ulaşılabilmektedir. Ardında ilginç bir kod parçası gelmektedir. ls isimli bir değişken üzerinden Stop metodu çağırılmıştır. İşte bu metod ForEach tarafından açılan task'lerin iptal edilmesini sağlamaktadır. Aslında Parallel sınıfı içerisinde ForEach veya For metodları içerisinde kullanılan temsilcilere bakıldığında ParallelLoopState isimli bir sınıf kullanıldığı görülür.

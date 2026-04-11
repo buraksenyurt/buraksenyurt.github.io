@@ -163,7 +163,7 @@ Default.aspx sayfasındaki kodları ise aşağıdaki gibi değiştirebiliriz.
 protected void Page_Error(object sender, EventArgs e)
 {
     Exception olusanHata = Server.GetLastError();
-    ErrorPage = "HataSayfasi.aspx?EkBilgi=" + olusanHata.Message + "&HataMesaji=" + olusanHata.InnerException.Message + "&Sayfa="+Page.AppRelativeVirtualPath;
+    ErrorPage = "HataSayfasi.aspx?EkBilgi=" + olusanHata.Message + "&HataMesaji=" + olusanHata.InnerException.Message + "&Sayfa=" + Page.AppRelativeVirtualPath;
 }
 
 protected void Hesapla_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ Oluşan hatalara ilişkin kullanıcılara bilgi verilmesi dışında, siteyi tas
 protected void Page_Error(object sender, EventArgs e)
 {
     Exception olusanHata = Server.GetLastError();
-    ErrorPage = "HataSayfasi.aspx?EkBilgi=" + olusanHata.Message + "&HataMesaji=" + olusanHata.InnerException.Message + "&Sayfa="+Page.AppRelativeVirtualPath;
+    ErrorPage = "HataSayfasi.aspx?EkBilgi=" + olusanHata.Message + "&HataMesaji=" + olusanHata.InnerException.Message + "&Sayfa=" + Page.AppRelativeVirtualPath;
 
     using (FileStream stream = new FileStream("C:\\HataLogDosyasi.txt", FileMode.Append, FileAccess.Write))
     {
@@ -287,12 +287,12 @@ protected void Page_Error(object sender, EventArgs e)
 Uygulama seviyesinde hata kontrolü yapılacağından ilgili olay kodunun global application class içerisinde yer alması gerekir. Bu nedenle bir adet global.asax dosyası web sitesine dahil edilmelidir. global.asax dosyasında ApplicationError olay metodu içerisinde ise aşağıdakine benzer kodlamalar yapılmalıdır.
 
 ```csharp
-void Application_Error(object sender, EventArgs e) 
+void Application_Error(object sender, EventArgs e)
 {
     Exception excp = Server.GetLastError();
     // Burada loglama, dosyaya yazma, mail gönderme gibi işlemler yapılabilir.
     Server.ClearError();
-    Server.Transfer("GenelHataSayfasi.aspx?EkBilgi="+excp.Message+"&HataMesaji="+excp.InnerException.Message);
+    Server.Transfer("GenelHataSayfasi.aspx?EkBilgi=" + excp.Message + "&HataMesaji=" + excp.InnerException.Message);
 }
 ```
 

@@ -90,7 +90,7 @@ public partial class MerhabaFircalarKodIle : Window
     private void SekilleriCiz()
     {
         Ellipse elips = new Ellipse();
-        elips.Margin = new Thickness(78, 130, 54, 42); 
+        elips.Margin = new Thickness(78, 130, 54, 42);
         SolidColorBrush firca = new SolidColorBrush(Colors.BlueViolet);
         firca.Opacity = 0.6;
         elips.Fill = firca;
@@ -186,7 +186,7 @@ namespace GrafiklerleCalismak
             Rectangle dortgen = new Rectangle();
             // Dörtgenin genişlik ve yükseklik değerleri belirlenir.
             dortgen.Width = 200;
-            dortgen.Height = 50;        
+            dortgen.Height = 50;
             dortgen.Margin = new Thickness(0, 0, 0, 0); // Sağ, sol kenar uzaklıkları belirlenir. Buna göre şekil formun tam ortasında olacaktır.
             dortgen.Fill = fircam; // Dortgenin içinin fircam isimli LinearGradientBrush sınıfının değerleri ile doldurulacağı belirlenir.
 
@@ -321,42 +321,42 @@ namespace GrafiklerleCalismak
     public partial class DrawingBrushKullanimi : Window
     {
         private void VideoCiz()
-        { 
+        {
             // Elips oluşturulur
             Ellipse elips = new Ellipse();
             // Yükseklik ve genişlik belirtilir.
             elips.Width = 250;
             elips.Height = 75;
-        
+
             // Video dosyasını oynatacak bir MediaPlayer nesnesi örneklenir.
             MediaPlayer oynatici = new MediaPlayer();
             // intro.wmv dosyasının açılması sağlanır.
-            oynatici.Open(new Uri("..\\..\\intro.wmv",UriKind.Relative)); 
-    
+            oynatici.Open(new Uri("..\\..\\intro.wmv", UriKind.Relative));
+
             // DrawingBrush' ın kullanacağı VideoDrawing nesnesi örneklenir.
-            VideoDrawing vd=new VideoDrawing();
+            VideoDrawing vd = new VideoDrawing();
             // Oynatıcı set edilir.
-            vd.Player=oynatici;
+            vd.Player = oynatici;
             // Videonun oynayacağı alan belirlenir. Örnekte bu alan elips' inki ile aynı tutulmuştur.
-            vd.Rect = new Rect(0, 0, 250, 75); 
-    
+            vd.Rect = new Rect(0, 0, 250, 75);
+
             // Fırça oluşturulur ve Drawing özelliğine VideoDrawing nesne örneği aktarılır
             DrawingBrush fircam = new DrawingBrush();
             fircam.Drawing = vd;
-        
+
             // Elipsin için dolduracak nesne örneği belirlenir.
-            elips.Fill = fircam; 
-        
+            elips.Fill = fircam;
+
             // Elips Grid içerisine eklenir
             grdAlan.Children.Add(elips);
-    
+
             // Video oynatılır.
             oynatici.Play();
         }
 
         public DrawingBrushKullanimi()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

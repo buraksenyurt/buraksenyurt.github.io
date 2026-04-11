@@ -54,9 +54,9 @@ Sunucu;
 static void Main(string[] args)
 {
     TcpServerChannel srvC = new TcpServerChannel(4500);
-    ChannelServices.RegisterChannel(srvC,true);
+    ChannelServices.RegisterChannel(srvC, true);
     RemotingConfiguration.RegisterActivatedServiceType(typeof(RemoteObj));
-    LifetimeServices.LeaseManagerPollTime=TimeSpan.FromSeconds(1);
+    LifetimeServices.LeaseManagerPollTime = TimeSpan.FromSeconds(1);
     Console.WriteLine("Server dinlemede...");
     Console.ReadLine();
 }

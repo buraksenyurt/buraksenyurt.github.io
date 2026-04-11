@@ -87,7 +87,7 @@ namespace DefaultEndPoints
         public double GetExpensiveProduct(int categoryId)
         {
             Random rnd = new Random();
-            double price=rnd.NextDouble()*100;
+            double price = rnd.NextDouble() * 100;
             return price;
         }
     }
@@ -105,21 +105,21 @@ namespace DefaultEndPoints
                 );
 
             // Host açılır.
-            host.Open(); 
-            Console.WriteLine("Servis durumu {0}\n",host.State.ToString());
-            
+            host.Open();
+            Console.WriteLine("Servis durumu {0}\n", host.State.ToString());
+
             // Ne config içerisinde nede kod tarafında açık bir şekilde EndPoint bildirilimi yapılmamıştır. Buna rağmen çalışma zamanı ServiceHost nesnesinin yapıcı metodundaki Uri bilgilerinden yararlanarak varsayılan EndPoint bilgilerini oluşturmuştur.
 
             // Servis için oluşturulan EndPoint' lerin listesi alınır
             ServiceEndpointCollection endPoints = host.Description.Endpoints;
 
-            Console.WriteLine("{0} EndPoint oluşturuldu.\n",endPoints.Count.ToString());
+            Console.WriteLine("{0} EndPoint oluşturuldu.\n", endPoints.Count.ToString());
 
             // EndPoint nesnelerinin her biri dolaşılır
             foreach (var endPoint in endPoints)
             {
                 // EndPoint adı, adres(Address), bağlayıcı tip(Binding Type) adı, sözleşme(Contract) adı yazdılır.
-                Console.WriteLine("Name : {0} , Address : {1} , Binding : {2} , Contract : {3}\n", endPoint.Name,endPoint.Address.Uri,endPoint.Binding.Name,endPoint.Contract.Name);
+                Console.WriteLine("Name : {0} , Address : {1} , Binding : {2} , Contract : {3}\n", endPoint.Name, endPoint.Address.Uri, endPoint.Binding.Name, endPoint.Contract.Name);
             }
 
             Console.WriteLine("Kapatmak için bir tuşa basın");

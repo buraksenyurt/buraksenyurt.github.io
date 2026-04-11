@@ -18,9 +18,9 @@ namespace PriAsm
 {
     public class Hesap
     {
-        public double Topla(double a,double b)
-        {    
-            return a+b;
+        public double Topla(double a, double b)
+        {
+            return a + b;
         }
     }
 }
@@ -86,13 +86,13 @@ Artık uygulamamızda bu assembly içindeki sınıfları kolayca kullanabiliriz.
 using System;
 using PriAsm;
 namespace Ornek
-{ 
+{
     class Class1
     {
         static void Main(string[] args)
         {
-            Hesap h=new Hesap();
-            double sonuc=h.Topla(4,5);
+            Hesap h = new Hesap();
+            double sonuc = h.Topla(4, 5);
             Console.WriteLine(sonuc.ToString());
         }
     }
@@ -148,8 +148,8 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            Hesap h=new Hesap();
-            double sonuc=h.Topla(1,2);
+            Hesap h = new Hesap();
+            double sonuc = h.Topla(1, 2);
         }
     }
 }

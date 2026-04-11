@@ -148,7 +148,10 @@ Cross-Page Posting işleminde elbette sorun yaratabilecek durumlar da söz konus
 Çözüm gayet basittir. Bu sayfa çalıştırıldığında, bu sayfaya başka bir sayfadan form bilgisinin gönderilip gönderilmediği öğrenilmelidir. Bunun için, Page sınıfının IsCrossPagePostBack isimli özelliğinden yararlanılır. Bu özellik, aslında IsPostBack özelliği gibi çalışır. Sadece, başka bir sayfanın mevcut sayfaya veri postalayıp postalamadığını kontrol eden ve boolean değer döndüren bir yapıdadır. Prototipi aşağıdaki gibidir.
 
 ```csharp
-public bool IsCrossPagePostBack {get;}
+public bool IsCrossPagePostBack
+{
+    get;
+}
 ```
 
 Dolayısıyla, Diger.aspx sayfamızın arka kodlarını aşağıdaki gibi değiştirmemiz sorunun giderilmesini sağlayacaktır.
@@ -158,7 +161,7 @@ public partial class Diger_aspx
 {
     void Page_Load(object sender, EventArgs e)
     {
-        if (PreviousPage!=null && PreviousPage.IsCrossPagePostBack)
+        if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
         {
             TextBox tbRumuz = (TextBox)PreviousPage.FindControl("TextBox1");
             DropDownList lstYas = (DropDownList)PreviousPage.FindControl("DropDownList1");
@@ -167,7 +170,7 @@ public partial class Diger_aspx
         }
         else
         {
-           Response.Redirect("default.aspx");
+            Response.Redirect("default.aspx");
         }
     }
 }

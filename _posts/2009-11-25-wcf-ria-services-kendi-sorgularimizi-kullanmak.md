@@ -98,10 +98,10 @@ using SilverlightApplication5.Web;
 
 namespace SilverlightApplication5
 {
-    public partial class MainPage 
+    public partial class MainPage
         : UserControl
     {
-        ChinookDomainContext context= new ChinookDomainContext();
+        ChinookDomainContext context = new ChinookDomainContext();
 
         void LoadButtons()
         {
@@ -114,7 +114,7 @@ namespace SilverlightApplication5
                 btn.Content = ((char)i).ToString();
                 pnlButtons.Children.Add(btn);
 
-                btn.Click += (o,e) =>
+                btn.Click += (o, e) =>
                     {
                         grdTracks.Visibility = System.Windows.Visibility.Collapsed;
                         LoadOperation<Album> albumLoadOpt = context.Load<Album>(context.GetAlbumsByFirstLetterQuery(btn.Content.ToString()));
@@ -132,15 +132,15 @@ namespace SilverlightApplication5
         }
 
         private void cmbAlbums_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
+        {
             if (e.AddedItems.Count > 0)
             {
                 int albumId = ((Album)e.AddedItems[0]).AlbumId;
                 LoadOperation<Track> tracks = context.Load<Track>(
-                    context.GetTracksQuery(albumId), 
-                    (load) => 
-                    { 
-                        grdTracks.Visibility = System.Windows.Visibility.Visible; 
+                    context.GetTracksQuery(albumId),
+                    (load) =>
+                    {
+                        grdTracks.Visibility = System.Windows.Visibility.Visible;
                     },
                     null
                     );

@@ -31,17 +31,29 @@ namespace GraphicLib
 {
     public class Star
     {
-        public int CornerCount { get; set; }
-        public int LineWidth { get; set; }
-        public int zValue { get; set; }
+        public int CornerCount
+        {
+            get;
+            set;
+        }
+        public int LineWidth
+        {
+            get;
+            set;
+        }
+        public int zValue
+        {
+            get;
+            set;
+        }
 
         public Form Paint(string text)
         {
             Form frm = new Form();
-            
+
             // Aslında yıldız şeklinde bir form çizdirildiği varsayılabilir
             frm.Text = text;
-            frm.Width = LineWidth*2;
+            frm.Width = LineWidth * 2;
             frm.Height = Convert.ToInt32((CornerCount * LineWidth) / 3.14);
 
             return frm;
@@ -98,7 +110,7 @@ namespace Computer
         {
             Geometric einstein = new Geometric();
 
-            double result=einstein.Compute(
+            double result = einstein.Compute(
                 new System.Collections.Generic.List<GraphicLib.Star>{
                     new Star{CornerCount=10,LineWidth=12},
                     new Star{CornerCount=8,LineWidth=24},
@@ -106,7 +118,7 @@ namespace Computer
                 }
                 );
             System.Console.WriteLine("Bilimsel hesaplama yapılmıştır");
-            
+
             System.Console.WriteLine(result.ToString());
 
             Console.ReadLine();
@@ -128,8 +140,8 @@ namespace ProblemWinForm
         public void DrawScreen(Star aStar)
         {
             Form form = aStar.Paint("Yeni Form");
-            
-            form.Show();            
+
+            form.Show();
         }
     }
 }

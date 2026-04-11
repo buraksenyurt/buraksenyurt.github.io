@@ -33,25 +33,25 @@ namespace MultipleReader
         {
             try
             {
-                SqlConnection con=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+                SqlConnection con = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
 
                 SqlDataReader dr1;
                 SqlDataReader dr2;
                 SqlDataReader dr3;
 
-                SqlCommand cmd1=new SqlCommand("SELECT * FROM Customers",con);
-                SqlCommand cmd2=new SqlCommand("SELECT * FROM Orders",con);
-                SqlCommand cmd3=new SqlCommand("SELECT * FROM [Order Details]",con);
+                SqlCommand cmd1 = new SqlCommand("SELECT * FROM Customers", con);
+                SqlCommand cmd2 = new SqlCommand("SELECT * FROM Orders", con);
+                SqlCommand cmd3 = new SqlCommand("SELECT * FROM [Order Details]", con);
 
                 con.Open();
-            
-                dr1=cmd1.ExecuteReader();
-                dr2=cmd2.ExecuteReader();
-                dr3=cmd3.ExecuteReader();
+
+                dr1 = cmd1.ExecuteReader();
+                dr2 = cmd2.ExecuteReader();
+                dr3 = cmd3.ExecuteReader();
 
                 con.Close();
             }
-            catch(Exception hata)
+            catch (Exception hata)
             {
                 Console.WriteLine(hata.Message);
             }
@@ -69,24 +69,24 @@ Uygulamamızı çalıştırdığımızda çalışma zamanında bir istisnanın f
 Sorun şudur ki, ilk çalıştırılan SqlDataReader nesnesini kapatmadan diğerlerini çalıştırmamız da mümkün değildir. Nitekim SqlDataReader nesnesi, çalıştırdığı SQL komutu ile verileri çekebilmek için ilgili bağlantının kendisi için tahsis edilmesini ve işi bitene kadar da başkaları tarafından kullanılmamasını gerektirir. Bu, tamamıyla ADO.NET'in mimarisinden kaynaklanan bir güçlüktür. Bununla birlikte, akla şöyle bir çözüm yolu gelebilir: Her bir SqlDataReader nesnesini kendi SqlConnection havuzu içinde çalıştırmak. Yani yukarıdaki kodu aşağıdaki gibi yazmak.
 
 ```csharp
-SqlConnection con1=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
-SqlConnection con2=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
-SqlConnection con3=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+SqlConnection con1 = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+SqlConnection con2 = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+SqlConnection con3 = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
 SqlDataReader dr1;
 SqlDataReader dr2;
 SqlDataReader dr3;
 
-SqlCommand cmd1=new SqlCommand("SELECT * FROM Customers",con1);
-SqlCommand cmd2=new SqlCommand("SELECT * FROM Orders",con2);
-SqlCommand cmd3=new SqlCommand("SELECT * FROM [Order Details]",con3);
+SqlCommand cmd1 = new SqlCommand("SELECT * FROM Customers", con1);
+SqlCommand cmd2 = new SqlCommand("SELECT * FROM Orders", con2);
+SqlCommand cmd3 = new SqlCommand("SELECT * FROM [Order Details]", con3);
 
 con1.Open();
 con2.Open();
 con3.Open();
 
-dr1=cmd1.ExecuteReader();
-dr2=cmd2.ExecuteReader();
-dr3=cmd3.ExecuteReader();
+dr1 = cmd1.ExecuteReader();
+dr2 = cmd2.ExecuteReader();
+dr3 = cmd3.ExecuteReader();
 
 con1.Close();
 con2.Close();
@@ -192,7 +192,7 @@ static void Main(string[] args)
             dr2 = cmd2.ExecuteReader();
             while (dr2.Read())
             {
-                Console.WriteLine(dr2["Ad"]+" "+dr2["Soyad"]+" "+dr2["Mail"]);
+                Console.WriteLine(dr2["Ad"] + " " + dr2["Soyad"] + " " + dr2["Mail"]);
             }
             dr2.Close();
             Console.WriteLine("------------");
@@ -239,7 +239,7 @@ try
         dr2 = cmd2.ExecuteReader();
         while (dr2.Read())
         {
-            Console.WriteLine(dr2["ProductID"]+" "+dr2["UnitPrice"]+" "+dr2["Quantity"]);
+            Console.WriteLine(dr2["ProductID"] + " " + dr2["UnitPrice"] + " " + dr2["Quantity"]);
         }
         dr2.Close();
         Console.WriteLine("------------");

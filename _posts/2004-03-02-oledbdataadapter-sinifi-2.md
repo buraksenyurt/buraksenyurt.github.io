@@ -28,18 +28,19 @@ namespace OleDbDA2
     {
         static void Main(string[] args)
         {
-            OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi"); // Bağlantı nesnemiz tanımlanıyor.
-            string sqltext="Select * From Deneme"; // Tablodaki tüm verileri çekicek sql ifademiz.
-            OleDbDataAdapter da=new OleDbDataAdapter(sqltext,con); // OleDbDataAdapter nesnemiz oluşturuluyor.
-            DataSet ds=new DataSet(); // DataSet bağlantısız katman nesnemiz oluşturuluyor.
-            da.Fill(ds,"Makale"); // DataSet nesnemiz, tablomuza ait veriler ile dolduruluyor. 
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi"); // Bağlantı nesnemiz tanımlanıyor.
+            string sqltext = "Select * From Deneme"; // Tablodaki tüm verileri çekicek sql ifademiz.
+            OleDbDataAdapter da = new OleDbDataAdapter(sqltext, con); // OleDbDataAdapter nesnemiz oluşturuluyor.
+            DataSet ds = new DataSet(); // DataSet bağlantısız katman nesnemiz oluşturuluyor.
+            da.Fill(ds, "Makale"); // DataSet nesnemiz, tablomuza ait veriler ile dolduruluyor. 
             /* Tablodaki alanlara ait temel bilgileri edinmek için foreach döngüsünü kullanıyoruz. 0 indisli tablomuz yani deneme tablomuza ait tüm alanlar tek tek DataColumn tipindeki c nesnemiz ile dolaşıyoruz. */
-            foreach(DataColumn c in ds.Tables[0].Columns)
+            foreach (DataColumn c in ds.Tables[0].Columns)
             {
-                Console.WriteLine("_"+c.ColumnName.ToString()+"_"); // Alanın adı.
-                Console.WriteLine("Alan genisligi _"+c.MaxLength.ToString()); /* Alan text değer içeriyorsa maksimum uzunluk. */
-                Console.WriteLine("Veri türü _"+c.DataType.ToString()); // Alanın veri türü.
-                Console.WriteLine("Null durumu _"+c.AllowDBNull.ToString()); // Alanın null değer içerebilip içeremeyeceği.
+                Console.WriteLine("_" + c.ColumnName.ToString() + "_"); // Alanın adı.
+                Console.WriteLine("Alan genisligi _" + c.MaxLength.ToString());
+                /* Alan text değer içeriyorsa maksimum uzunluk. */
+                Console.WriteLine("Veri türü _" + c.DataType.ToString()); // Alanın veri türü.
+                Console.WriteLine("Null durumu _" + c.AllowDBNull.ToString()); // Alanın null değer içerebilip içeremeyeceği.
                 Console.WriteLine("");
             }
         }
@@ -72,21 +73,21 @@ namespace OleDbDA2
     {
         static void Main(string[] args)
         {
-            OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
-            string sqltext="Select * From Deneme";
-            OleDbDataAdapter da=new OleDbDataAdapter(sqltext,con);
-            DataSet ds=new DataSet();
-            da.FillSchema(ds,SchemaType.Source); // Şema bilgileri ekleniyor.
-            da.Fill(ds,"Makale");
-            foreach(DataColumn c in ds.Tables[0].Columns)
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+            string sqltext = "Select * From Deneme";
+            OleDbDataAdapter da = new OleDbDataAdapter(sqltext, con);
+            DataSet ds = new DataSet();
+            da.FillSchema(ds, SchemaType.Source); // Şema bilgileri ekleniyor.
+            da.Fill(ds, "Makale");
+            foreach (DataColumn c in ds.Tables[0].Columns)
             {
-                Console.WriteLine("_"+c.ColumnName.ToString()+"_");
-                Console.WriteLine("Alan genisligi _"+c.MaxLength.ToString());
-                Console.WriteLine("Veri türü _"+c.DataType.ToString());
-                Console.WriteLine("Null durumu _"+c.AllowDBNull.ToString());
+                Console.WriteLine("_" + c.ColumnName.ToString() + "_");
+                Console.WriteLine("Alan genisligi _" + c.MaxLength.ToString());
+                Console.WriteLine("Veri türü _" + c.DataType.ToString());
+                Console.WriteLine("Null durumu _" + c.AllowDBNull.ToString());
                 Console.WriteLine("");
             }
-            Console.WriteLine("Birincil anahtar alanımız:"+ds.Tables[0].PrimaryKey[0].ColumnName.ToString());
+            Console.WriteLine("Birincil anahtar alanımız:" + ds.Tables[0].PrimaryKey[0].ColumnName.ToString());
         }
     }
 }
@@ -103,12 +104,12 @@ Artık alanların null değer içerip içermeyeceklerine ait kıstaslar doğru b
 ```csharp
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
-    string sqltext="Select * From Deneme";
-    OleDbDataAdapter da=new OleDbDataAdapter(sqltext,con);
-    DataSet ds=new DataSet();
-    da.Fill(ds,"Makale");
-    dataGrid1.DataSource=ds.Tables["Makale"];
+    OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+    string sqltext = "Select * From Deneme";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqltext, con);
+    DataSet ds = new DataSet();
+    da.Fill(ds, "Makale");
+    dataGrid1.DataSource = ds.Tables["Makale"];
 }
 ```
 
@@ -123,13 +124,13 @@ Oysaki ID alanımız veri kaynağımızda birincil anahtar olarak tanımlanmış
 ```csharp
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
-    string sqltext="Select * From Deneme";
-    OleDbDataAdapter da=new OleDbDataAdapter(sqltext,con);
-    DataSet ds=new DataSet();
-    da.FillSchema(ds,SchemaType.Source,"Makale");
-    da.Fill(ds,"Makale");
-    dataGrid1.DataSource=ds.Tables["Makale"]; 
+    OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+    string sqltext = "Select * From Deneme";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqltext, con);
+    DataSet ds = new DataSet();
+    da.FillSchema(ds, SchemaType.Source, "Makale");
+    da.Fill(ds, "Makale");
+    dataGrid1.DataSource = ds.Tables["Makale"];
 }
 ```
 
@@ -144,20 +145,21 @@ Bu FillSchema metodunun, veri kaynağındaki tabloya ait ID alanının birincil 
 ```csharp
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial         catalog=Friends;integrated security=sspi");
-    string sqltext="Select * From Deneme";
-    OleDbDataAdapter da=new OleDbDataAdapter(sqltext,con);
-    DataSet ds=new DataSet();
-    da.Fill(ds,"Makale"); 
+    OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial         catalog=Friends;integrated security=sspi");
+    string sqltext = "Select * From Deneme";
+    OleDbDataAdapter da = new OleDbDataAdapter(sqltext, con);
+    DataSet ds = new DataSet();
+    da.Fill(ds, "Makale");
     /* Birincil anahtarımız olan ID alanının otomatik artan, null değer içermeyen, 1'den başlayıp 1'er artan ve benzersiz değerler alan bir alan olduğunu belirtiyoruz. */
-    ds.Tables["Makale"].Columns["ID"].AutoIncrement=true; // Alanın değerleri otomatik artıcak.
-    ds.Tables["Makale"].Columns["ID"].AutoIncrementSeed=1; // Başlama değeri 1 olucak.
-    ds.Tables["Makale"].Columns["ID"].AutoIncrementStep=1; // Artış değeri 1 olucak.
-    ds.Tables["Makale"].Columns["ID"].AllowDBNull=false; // Alan null değer içeremiyecek.
-    ds.Tables["Makale"].Columns["ID"].Unique=true; // Alan benzersiz değerler almak zorunda olucak.
+    ds.Tables["Makale"].Columns["ID"].AutoIncrement = true; // Alanın değerleri otomatik artıcak.
+    ds.Tables["Makale"].Columns["ID"].AutoIncrementSeed = 1; // Başlama değeri 1 olucak.
+    ds.Tables["Makale"].Columns["ID"].AutoIncrementStep = 1; // Artış değeri 1 olucak.
+    ds.Tables["Makale"].Columns["ID"].AllowDBNull = false; // Alan null değer içeremiyecek.
+    ds.Tables["Makale"].Columns["ID"].Unique = true; // Alan benzersiz değerler almak zorunda olucak.
     /* Bu tanımlamaların ardından yapmamız gereken, Makale isimli DataTable nesnemiz için PrimaryKey alanının ID alanı olduğunu belirtmektir. */
-    ds.Tables["Makale"].PrimaryKey=new DataColumn[]{ds.Tables["Makale"].Columns["ID"]}; /* ID alanının tanımladığımız özellikleri ile birlikte, Makale tablosunun birincil anahtarı olacağını belirtiyoruz. */
-    dataGrid1.DataSource=ds.Tables["Makale"]; 
+    ds.Tables["Makale"].PrimaryKey = new DataColumn[] { ds.Tables["Makale"].Columns["ID"] };
+    /* ID alanının tanımladığımız özellikleri ile birlikte, Makale tablosunun birincil anahtarı olacağını belirtiyoruz. */
+    dataGrid1.DataSource = ds.Tables["Makale"];
 }
 ```
 
@@ -235,7 +237,7 @@ Artık yapmamız gerekenler, formumuza bir DataGrid koymak, OleDbDataAdapter nes
 private void Form1_Load(object sender, System.EventArgs e)
 {
     oleDbDataAdapter1.Fill(dataSet11.Tables["Makale"]);
-    dataGrid1.DataSource=dataSet11.Tables["Makale"];
+    dataGrid1.DataSource = dataSet11.Tables["Makale"];
 }
 ```
 

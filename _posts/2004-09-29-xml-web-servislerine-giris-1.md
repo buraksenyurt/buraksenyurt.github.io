@@ -61,21 +61,21 @@ using System.Web.Services;
 namespace GeoWebServis
 {
 
-    [WebService(Namespace="http://ilk/servis/",Description="Geometrik Hesaplamalar Üzerine Metodlar İçerir. Ucgen, Dortgen gibi şekillere yönelik alan ve çevre hesaplamaları.",Name="Geometrik Hesaplamalar")]
+    [WebService(Namespace = "http://ilk/servis/", Description = "Geometrik Hesaplamalar Üzerine Metodlar İçerir. Ucgen, Dortgen gibi şekillere yönelik alan ve çevre hesaplamaları.", Name = "Geometrik Hesaplamalar")]
     public class TemelIsler : System.Web.Services.WebService
     {
-        private const double pi=3.14;
+        private const double pi = 3.14;
 
-        [WebMethod(Description="Daire Alan Hesabı Yapar")]
-        public double DaireAlan( double r)
+        [WebMethod(Description = "Daire Alan Hesabı Yapar")]
+        public double DaireAlan(double r)
         {
-            return (r*r)*pi;
+            return (r * r) * pi;
         }
 
-        [WebMethod(Description="Daire Çevre Hesabı Yapar.")]
-        public double DaireCevre( double r)
+        [WebMethod(Description = "Daire Çevre Hesabı Yapar.")]
+        public double DaireCevre(double r)
         {
-            return 2*pi*r;
+            return 2 * pi * r;
         }
     }
 }

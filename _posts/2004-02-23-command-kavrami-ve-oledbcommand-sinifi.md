@@ -143,37 +143,40 @@ Bu metod görüldüğü gibi int veri tipinden bir tamsayıyı geri döndürür.
 ```csharp
 using System;
 
-using System.Data.OleDb; /* OleDbCommand sınıfı bu isim uzayında yer almaktadır. */
+using System.Data.OleDb;
+/* OleDbCommand sınıfı bu isim uzayında yer almaktadır. */
 
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      /* Önce geçerli bir bağlantı hattı oluşturmamız gerekiyor. */
+        static void Main(string[] args)
+        {
+            /* Önce geçerli bir bağlantı hattı oluşturmamız gerekiyor. */
 
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmd=new OleDbCommand("Insert Into Siteler (Baslik,Adres,Resim,Icerik) Values('C#','www.csharpnedir.com','images/resim1.jpg','C# üzerine her türlü makale.')",con);
+            OleDbCommand cmd = new OleDbCommand("Insert Into Siteler (Baslik,Adres,Resim,Icerik) Values('C#','www.csharpnedir.com','images/resim1.jpg','C# üzerine her türlü makale.')", con);
 
-      try
-      {
-          con.Open(); /* Bağlantımızı açıyoruz.*/
-          int sonuc=cmd.ExecuteNonQuery(); /* Komutumuzu çalıştırıyoruz.ExecuteNonQuery metodunun döndüreceği değeri tam sayı tipindeki sonuc değişkenine atıyoruz.*/
+            try
+            {
+                con.Open();
+                /* Bağlantımızı açıyoruz.*/
+                int sonuc = cmd.ExecuteNonQuery();
+                /* Komutumuzu çalıştırıyoruz.ExecuteNonQuery metodunun döndüreceği değeri tam sayı tipindeki sonuc değişkenine atıyoruz.*/
 
-          Console.WriteLine(sonuc.ToString()+" Kayıt Girildi...");
-      }
-      catch(Exception hata)
-      {
-          Console.WriteLine(hata.Message.ToString());
-      }
-      finally
-      {
-         con.Close();
-      }
+                Console.WriteLine(sonuc.ToString() + " Kayıt Girildi...");
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-  }
 }
 ```
 
@@ -188,34 +191,35 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu alırız.
 ```csharp
 using System;
 
-using System.Data.OleDb; /* OleDbCommand sınıfı bu isim uzayında yer almaktadır. */
+using System.Data.OleDb;
+/* OleDbCommand sınıfı bu isim uzayında yer almaktadır. */
 
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+        static void Main(string[] args)
+        {
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmdUpdate=new OleDbCommand("Update Siteler Set Resim=Resim+'img' ",con);
+            OleDbCommand cmdUpdate = new OleDbCommand("Update Siteler Set Resim=Resim+'img' ", con);
 
-      try
-      {
-         con.Open();
-         int Guncellenen=cmdUpdate.ExecuteNonQuery();
-         Console.WriteLine(Guncellenen.ToString()+" Kayıt Güncellendi");
-      }
-      catch(Exception hata)
-      {
-         Console.WriteLine(hata.Message.ToString());
-      }
-      finally
-      {
-         con.Close(); 
-      }
+            try
+            {
+                con.Open();
+                int Guncellenen = cmdUpdate.ExecuteNonQuery();
+                Console.WriteLine(Guncellenen.ToString() + " Kayıt Güncellendi");
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-  }
 }
 ```
 
@@ -238,37 +242,38 @@ public virtual object ExecuteScalar();
 ```csharp
 using System;
 
-using System.Data.OleDb; /* OleDbCommand sınıfı bu isim uzayında yer almaktadır. */
+using System.Data.OleDb;
+/* OleDbCommand sınıfı bu isim uzayında yer almaktadır. */
 
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+        static void Main(string[] args)
+        {
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmd=new OleDbCommand("Select Baslik From Siteler Where ID=8",con);
+            OleDbCommand cmd = new OleDbCommand("Select Baslik From Siteler Where ID=8", con);
 
-      OleDbCommand cmdToplamSite=new OleDbCommand("Select Count(*) From Siteler",con);
+            OleDbCommand cmdToplamSite = new OleDbCommand("Select Count(*) From Siteler", con);
 
-      try
-      {
-         con.Open();
-         Console.WriteLine("ID=8 olan satırın Baslik alanının değeri: "+cmd.ExecuteScalar().ToString());
+            try
+            {
+                con.Open();
+                Console.WriteLine("ID=8 olan satırın Baslik alanının değeri: " + cmd.ExecuteScalar().ToString());
 
-         Console.WriteLine("Site Sayısı: "+cmdToplamSite.ExecuteScalar().ToString());
-      }
-      catch(Exception hata)
-      {
-         Console.WriteLine(hata.Message.ToString());
-      }
-      finally
-      {
-         con.Close();
-      }
+                Console.WriteLine("Site Sayısı: " + cmdToplamSite.ExecuteScalar().ToString());
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-  }
 }
 ```
 
@@ -279,7 +284,7 @@ namespace OleDbCmd1
 Bu örnekte, Siteler isimli tablomuza ID değeri 8 olan satırın sadece Baslik isimli alanının değerini veren bir komut nesnesi ve Siteler tablsundaki satır sayısını veren başka bir komut nesnesi kullanılmıştır. Her iki sql ifadeside tek bir hücreyi sonuç olarak döndürmektedir. Eğer sql ifadenizden birden fazla sütun alıyorsanız ve bu ifadeyi ExecuteScalar ile çalıştırıyorsanız, ilk satırın ilk sütunu haricindeki tüm veriler göz ardı edilecektir. Söz gelimi yukarıdaki örneğimizde, cmd OleDbCommand nesnesinin CommandText ifadesini aşağıdaki gibi değiştirelim.
 
 ```csharp
-OleDbCommand cmd=new OleDbCommand("Select * From Siteler",con);
+OleDbCommand cmd = new OleDbCommand("Select * From Siteler", con);
 ```
 
 Bu durumda aşağıdaki sonucu elde ederiz.
@@ -291,7 +296,11 @@ Bu durumda aşağıdaki sonucu elde ederiz.
 Görüldüğü gibi sonuç olarak, ilk satırın ilk alanının değeri elde edilmiştir. (ID alanının değeri.) OleDbCommand sınıfı ile veri kaynağında yer alan bir saklı yordamıda (Stored Procedure) çalıştırabiliriz. Bu durumda CommandText olarak bu saklı yordamın adını girmemiz yeterli olucaktır. Ancak, çalıştırılacak olan komutun bir saklı yordamı çalıştıracağını belirtmemiz gerekmektedir. İşte bu noktada OleDbConnection sınıfı nesne örneğinin CommandType özelliğinin değerini belirtmemiz gerekir.
 
 ```csharp
-public virtual CommandType CommandType {get; set;}
+public virtual CommandType CommandType
+{
+    get;
+    set;
+}
 ```
 
 Prototipi yukarıdaki gibi olan bu özellik, CommandType numaralandırıcısı türünden 3 değer alabilir. Bu değerler ve ne işe yaradıkları aşağıdaki tabloda belirtilmiştir.
@@ -312,38 +321,40 @@ using System.Data.OleDb;
 using System.Data;
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+        static void Main(string[] args)
+        {
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmd=new OleDbCommand("Makale",con); /* Komut söz dizimi olarak tüm satırlarını almak istediğimi veri tablosunun adını giriyoruz. */
-      cmd.CommandType=CommandType.TableDirect; /* Komut tipimizi TableDirect olarak ayarlayıp, komut nesnemizin sql ifadesinin Select * From Makale olmasını sağlıyoruz. */
+            OleDbCommand cmd = new OleDbCommand("Makale", con);
+            /* Komut söz dizimi olarak tüm satırlarını almak istediğimi veri tablosunun adını giriyoruz. */
+            cmd.CommandType = CommandType.TableDirect;
+            /* Komut tipimizi TableDirect olarak ayarlayıp, komut nesnemizin sql ifadesinin Select * From Makale olmasını sağlıyoruz. */
 
-      try
-      {
-         con.Open();
-      /* Bir OleDbDataReader nesnesi tanımlayıp, komutumuzu ExecuteReader metodu ile çalıştırarak, sonuç kümesine ait satırlardaki Konu alanının değerlerini ekrana yazdırıyoruz. */
+            try
+            {
+                con.Open();
+                /* Bir OleDbDataReader nesnesi tanımlayıp, komutumuzu ExecuteReader metodu ile çalıştırarak, sonuç kümesine ait satırlardaki Konu alanının değerlerini ekrana yazdırıyoruz. */
 
-         OleDbDataReader dr;
-         dr=cmd.ExecuteReader();
-         while(dr.Read())
-         {
-            Console.WriteLine(dr["Konu"].ToString());
-         }
-         dr.Close();
-      }
-      catch(Exception hata)
-      {
-         Console.WriteLine(hata.Message.ToString());
-      }
-      finally
-      {
-         con.Close();
-      }
+                OleDbDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Console.WriteLine(dr["Konu"].ToString());
+                }
+                dr.Close();
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-  }
 }
 ```
 
@@ -362,37 +373,37 @@ using System.Data;
 
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+        static void Main(string[] args)
+        {
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmd=new OleDbCommand("Site Adlari",con);
+            OleDbCommand cmd = new OleDbCommand("Site Adlari", con);
 
-      cmd.CommandType=CommandType.TableDirect;
-      try
-      {
-         con.Open();
-         OleDbDataReader dr;
-         dr=cmd.ExecuteReader();
+            cmd.CommandType = CommandType.TableDirect;
+            try
+            {
+                con.Open();
+                OleDbDataReader dr;
+                dr = cmd.ExecuteReader();
 
-         while(dr.Read())
-         {
-            Console.WriteLine(dr["Baslik"].ToString());
-         }
-         dr.Close();
-      }
-      catch(Exception hata)
-      {
-         Console.WriteLine(hata.Message.ToString());
-      }
-      finally
-      {
-         con.Close();
-      }
+                while (dr.Read())
+                {
+                    Console.WriteLine(dr["Baslik"].ToString());
+                }
+                dr.Close();
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-  }
 }
 ```
 
@@ -403,7 +414,7 @@ namespace OleDbCmd1
 Bunun sebebi OleDbCommand nesnesinin tablo isminde yer alan boşlukları anlamamış olmasıdır. Bu nedenle aynı ifadeyi aşağıdaki şekilde değiştirmemiz gerekmektedir.
 
 ```csharp
-OleDbCommand cmd=new OleDbCommand("[Site Adlari]",con);
+OleDbCommand cmd = new OleDbCommand("[Site Adlari]", con);
 ```
 
 Bu durumda uygulamanın sorunsuz çalıştığını görürüz. OleDbCommand sınıfının CommandType özelliğinin diğer değeri ise StoredProcedure'dür. Bu veri kaynağındaki saklı yordamlarının çağırılması için kullanılmaktadır. Bir saklı yordam kendisi için parametreler alabileceği gibi geriye değerlerde döndürebilir. Örneğin, Primary Key alanları üzerinden arama yapılan sorgularda Saklı Yordamların kullanılması son derece verimlidir. Nitekim kullanıcıların aramak için girdikleri her ID değeri için ayrı bir select sorgusu oluşturmak yerine, veri kaynağında bir nesne olarak yer alan ve ID değerini parametre olarak alan hazır, derlenmiş bir select ifadesini çalıştırmak daha verimli olucaktır. Örneğin Makale isimli tablomuzdan ID alanı 41 olan bir satırı elde etmek istiyoruz. Bu durumda, buradaki saklı yordamımıza bu ID değerini geçirmemiz ve dönen sonuçları almamız gerekiyor. Öncelikle saklı yordamımıza bir göz atalım.
@@ -427,39 +438,43 @@ using System.Data;
 
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+        static void Main(string[] args)
+        {
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmd=new OleDbCommand("MakaleBul",con); /* Çalıştırılacak sql ifadesi olarak saklı yordamımızın ismini giriyoruz. */
+            OleDbCommand cmd = new OleDbCommand("MakaleBul", con);
+            /* Çalıştırılacak sql ifadesi olarak saklı yordamımızın ismini giriyoruz. */
 
-      cmd.CommandType=CommandType.StoredProcedure; /* CommandText ifadesinin, geçerli bağlantı nesnesinin temsil ettiği veri kaynağındaki bir saklı yordamı ifade ettiğini belirtiyor. */
-      cmd.Parameters.Add("@MakaleID",OleDbType.Integer); /* Parametremiz oluşturuluyor. Adı @MakaleID, saklı yordamımızdaki ile aynı. Parametre tipi integer, nitekim Saklı Yordamımızdaki tipide int.*/
-      cmd.Parameters["@MakaleID"].Value=41; /* Parametremizin değeri veriliyor. */
+            cmd.CommandType = CommandType.StoredProcedure;
+            /* CommandText ifadesinin, geçerli bağlantı nesnesinin temsil ettiği veri kaynağındaki bir saklı yordamı ifade ettiğini belirtiyor. */
+            cmd.Parameters.Add("@MakaleID", OleDbType.Integer);
+            /* Parametremiz oluşturuluyor. Adı @MakaleID, saklı yordamımızdaki ile aynı. Parametre tipi integer, nitekim Saklı Yordamımızdaki tipide int.*/
+            cmd.Parameters["@MakaleID"].Value = 41;
+            /* Parametremizin değeri veriliyor. */
 
-      try
-      {
-         con.Open();
-         OleDbDataReader dr;
-         dr=cmd.ExecuteReader();
-         while(dr.Read())
-         {
-            Console.WriteLine(dr["ID"].ToString()+"-"+dr["Konu"].ToString()+"-"+dr["Tarih"].ToString());
-         }
-         dr.Close();
-      }
-      catch(Exception hata)
-      {
-         Console.WriteLine(hata.Message.ToString());
-      }
-      finally
-      {
-         con.Close();
-      }
+            try
+            {
+                con.Open();
+                OleDbDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Console.WriteLine(dr["ID"].ToString() + "-" + dr["Konu"].ToString() + "-" + dr["Tarih"].ToString());
+                }
+                dr.Close();
+            }
+            catch (Exception hata)
+            {
+                Console.WriteLine(hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-  }
 }
 ```
 
@@ -472,30 +487,30 @@ Bu uygulamayı çalıştırdığımızda, aşağıdaki sonucu elde ederiz.
 CommandType özelliğinin Text değeri varsayılandır. Text değeri, CommandText için yazılan sql ifadelerinin çalıştırılmasında kullanılır. Aslında bir saklı yordamı bu şekildede çağırabiliriz. Yani bir saklı yordamı, OleDbCommand sınıfının CommandType özelliğini Text olarak bırakarakta çağırabiliriz. Bunun için "{CALL MakaleBul (?)}" söz dizimini aşağıdaki örnekte olduğu gibi kullanırız. Sonuç aynı olucaktır. Burada, CALL ifadesinde parametrenin? işareti ile temsil edildiğine dikkat edin. SqlCommand sınıfında bu parametreler @ParametreAdı olarak kullanılır.
 
 ```csharp
-OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-OleDbCommand cmd=new OleDbCommand("{CALL MakaleBul(?)}",con);
+OleDbCommand cmd = new OleDbCommand("{CALL MakaleBul(?)}", con);
 
-cmd.Parameters.Add("@MakaleID",OleDbType.Integer);
-cmd.Parameters["@MakaleID"].Value=41;
+cmd.Parameters.Add("@MakaleID", OleDbType.Integer);
+cmd.Parameters["@MakaleID"].Value = 41;
 try
 {
-  con.Open();
-  OleDbDataReader dr;
-  dr=cmd.ExecuteReader();
-  while(dr.Read())
-  {
-    Console.WriteLine(dr["ID"].ToString()+"-"+dr["Konu"].ToString()+"-"+dr["Tarih"].ToString());
-  }
-  dr.Close();
+    con.Open();
+    OleDbDataReader dr;
+    dr = cmd.ExecuteReader();
+    while (dr.Read())
+    {
+        Console.WriteLine(dr["ID"].ToString() + "-" + dr["Konu"].ToString() + "-" + dr["Tarih"].ToString());
+    }
+    dr.Close();
 }
-catch(Exception hata)
+catch (Exception hata)
 {
-  Console.WriteLine(hata.Message.ToString());
+    Console.WriteLine(hata.Message.ToString());
 }
 finally
 {
-  con.Close();
+    con.Close();
 }
 ```
 
@@ -510,29 +525,33 @@ using System.Data;
 
 namespace OleDbCmd1
 {
-  class Class1
-  {
-    static void Main(string[] args)
+    class Class1
     {
-      OleDbConnection con=new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
+        static void Main(string[] args)
+        {
+            OleDbConnection con = new OleDbConnection("Provider=SQLOLEDB;data source=localhost;initial catalog=Friends;integrated security=sspi");
 
-      OleDbCommand cmd=new OleDbCommand("Insert Into [Site Adlari] (Baslik,Adres,Resim,Icerik) Values('C#','www.csharpnedir.com','images/resim1.jpg','C# üzerine her türlü makale.')",con);
+            OleDbCommand cmd = new OleDbCommand("Insert Into [Site Adlari] (Baslik,Adres,Resim,Icerik) Values('C#','www.csharpnedir.com','images/resim1.jpg','C# üzerine her türlü makale.')", con);
 
-      con.Open();
-      OleDbTransaction trans=con.BeginTransaction(); /* Transaction'ımız, geçerli bağlantımızı için yaratılıyor. */
-      cmd.Transaction=trans; /* Komutumuzun tanımlanan bağlantı için açılmış transaction içinde bir iş parçacığı olarak çalışacağı belirleniyor. */
-      int sonuc=cmd.ExecuteNonQuery();
-      if(sonuc==1)
-      {
-         trans.Commit(); /* Komut başarılı bir şekilde çalıştırılmışsa Commit ile tüm işlemler onaylanıyor. */
-         Console.WriteLine(sonuc.ToString()+" Kayıt Girildi...");
-      }
-      else
-      {
-         trans.Rollback(); /* Komut başarısız ise tüm işlemler geri alınıyor. */
-      }
+            con.Open();
+            OleDbTransaction trans = con.BeginTransaction();
+            /* Transaction'ımız, geçerli bağlantımızı için yaratılıyor. */
+            cmd.Transaction = trans;
+            /* Komutumuzun tanımlanan bağlantı için açılmış transaction içinde bir iş parçacığı olarak çalışacağı belirleniyor. */
+            int sonuc = cmd.ExecuteNonQuery();
+            if (sonuc == 1)
+            {
+                trans.Commit();
+                /* Komut başarılı bir şekilde çalıştırılmışsa Commit ile tüm işlemler onaylanıyor. */
+                Console.WriteLine(sonuc.ToString() + " Kayıt Girildi...");
+            }
+            else
+            {
+                trans.Rollback();
+                /* Komut başarısız ise tüm işlemler geri alınıyor. */
+            }
+        }
     }
-  }
 }
 ```
 

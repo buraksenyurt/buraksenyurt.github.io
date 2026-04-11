@@ -39,14 +39,14 @@ default.aspx sayfamızın kodları;
 ```csharp
 private void Baglan()
 {
-    con=new SqlConnection("data source=localhost;initial catalog=pubs;integrated security=SSPI");
-    cmd=new SqlCommand("SELECT * FROM authors",con);
+    con = new SqlConnection("data source=localhost;initial catalog=pubs;integrated security=SSPI");
+    cmd = new SqlCommand("SELECT * FROM authors", con);
     con.Open();
 }
 private void Doldur()
 {
-    dr=cmd.ExecuteReader(CommandBehavior.CloseConnection);
-    dgVeriler.DataSource=dr;
+    dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+    dgVeriler.DataSource = dr;
     dgVeriler.DataBind();
     dr.Close();
 }
@@ -96,21 +96,21 @@ Bu değişiklik sayesinde, dataGrid kontrolümüzden Detay.aspx sayfasına title
 ```csharp
 private void Baglan(string Id)
 {
-    con=new SqlConnection("data source=localhost;initial catalog=pubs;integrated security=SSPI");
-    cmd=new SqlCommand("SELECT title_id,title,price,pubdate FROM titles WHERE title_id='"+Id+"'",con);
+    con = new SqlConnection("data source=localhost;initial catalog=pubs;integrated security=SSPI");
+    cmd = new SqlCommand("SELECT title_id,title,price,pubdate FROM titles WHERE title_id='" + Id + "'", con);
     con.Open();
 }
 private void Doldur()
 {
-    dr=cmd.ExecuteReader(CommandBehavior.CloseConnection);
-    dgDetaylar.DataSource=dr;
-    dgDetaylar.DataBind(); 
+    dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+    dgDetaylar.DataSource = dr;
+    dgDetaylar.DataBind();
     dr.Close();
 }
 
 private void Page_Load(object sender, System.EventArgs e)
-{ 
-    string id=Request.Params["title_id"].ToString();
+{
+    string id = Request.Params["title_id"].ToString();
     Baglan(id);
     Doldur();
 }

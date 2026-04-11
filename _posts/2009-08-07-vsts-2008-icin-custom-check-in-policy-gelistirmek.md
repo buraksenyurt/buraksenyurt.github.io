@@ -36,16 +36,23 @@ namespace TimeoutPolicy
         : PolicyBase // Custom policy yazmak için PolicyBase tipinden türetme yapmak gerekmektedir
     {
         // Minimum Check-In süresi        
-        public int TimeoutDay { get; set; }
+        public int TimeoutDay
+        {
+            get;
+            set;
+        }
 
         public Timeout()
         {
-            TimeoutDay=1;
+            TimeoutDay = 1;
         }
 
         public override string Description
         {
-            get { return "Bir Check-In işlemi yapılması için, dosyanın ilk oluşturulmasından sonra geçmesi gereken minimum gün süresi kontrolünü yapar"; }
+            get
+            {
+                return "Bir Check-In işlemi yapılması için, dosyanın ilk oluşturulmasından sonra geçmesi gereken minimum gün süresi kontrolünü yapar";
+            }
         }
 
         // Policy içerisinde yer alan gün değeri istenirse editlenebilir
@@ -65,19 +72,19 @@ namespace TimeoutPolicy
 
             // Şu an beklemede olan tüm PendingChange referansları dolaşılır
             foreach (var item in PendingCheckin.PendingChanges.AllPendingChanges)
-            {                
+            {
                 // Eğer değişiklik örneğin bir dosya ile ilgiliyse
-               if(item.ItemType== ItemType.File)
-               {                   
-                   // Dosyanın oluşturulma tarihi ile güncel tarih arasındaki farka bakılır
-                   TimeSpan distance = DateTime.Now - item.CreationDate;
-                   // Fark var ise
-                   if (distance.TotalDays < TimeoutDay)
-                   {                       
-                       failures.Add(
-                           new PolicyFailure(String.Format("{0} tarihli {1} için Check-In süresi dolmamış. Lütfen {2} gün bekleyiniz",item.CreationDate,item.FileName,TimeoutDay), this)
-                           ); // Bir PolicyFailure nesnesi örneklenir ve mesaj bilgisi yazdırırılır.
-                   }
+                if (item.ItemType == ItemType.File)
+                {
+                    // Dosyanın oluşturulma tarihi ile güncel tarih arasındaki farka bakılır
+                    TimeSpan distance = DateTime.Now - item.CreationDate;
+                    // Fark var ise
+                    if (distance.TotalDays < TimeoutDay)
+                    {
+                        failures.Add(
+                            new PolicyFailure(String.Format("{0} tarihli {1} için Check-In süresi dolmamış. Lütfen {2} gün bekleyiniz", item.CreationDate, item.FileName, TimeoutDay), this)
+                            ); // Bir PolicyFailure nesnesi örneklenir ve mesaj bilgisi yazdırırılır.
+                    }
                 }
             }
 
@@ -89,12 +96,18 @@ namespace TimeoutPolicy
 
         public override string Type
         {
-            get { return "Chech-In Timeout(Day)"; }
+            get
+            {
+                return "Chech-In Timeout(Day)";
+            }
         }
 
         public override string TypeDescription
         {
-            get { return "Gün bazlı Check-In süresi"; }
+            get
+            {
+                return "Gün bazlı Check-In süresi";
+            }
         }
     }
 }
@@ -116,7 +129,10 @@ namespace TimeoutPolicy
 
         public int Day
         {
-            get { return Convert.ToInt16(nupDay.Value); }
+            get
+            {
+                return Convert.ToInt16(nupDay.Value);
+            }
         }
 
         public InputDayForm(Timeout timeOut)

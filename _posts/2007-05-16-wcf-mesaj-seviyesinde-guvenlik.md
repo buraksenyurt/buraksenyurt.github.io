@@ -33,7 +33,7 @@ using System.ServiceModel;
 
 namespace AritmetikLib
 {
-    [ServiceContract(Name="AritmetikServisi",Namespace="http://www.bsenyurt.com/AritmetikServisi")]
+    [ServiceContract(Name = "AritmetikServisi", Namespace = "http://www.bsenyurt.com/AritmetikServisi")]
     public interface IAritmetik
     {
         [OperationContract]
@@ -49,7 +49,7 @@ using System;
 
 namespace AritmetikLib
 {
-    public class Aritmetik:IAritmetik
+    public class Aritmetik : IAritmetik
     {
         #region IAritmetik Members
         public double Toplam(double x, double y)

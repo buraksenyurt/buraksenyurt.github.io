@@ -92,7 +92,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public class SiteHaritaYoneticisi:StaticSiteMapProvider
+public class SiteHaritaYoneticisi : StaticSiteMapProvider
 {
     private string _spAdi;
     private string _baglantiBilgisi;
@@ -101,11 +101,13 @@ public class SiteHaritaYoneticisi:StaticSiteMapProvider
 
     public bool Olusturuldu
     {
-        set { 
-            _olusturuldu = value; 
+        set
+        {
+            _olusturuldu = value;
         }
-        get { 
-            return _olusturuldu; 
+        get
+        {
+            return _olusturuldu;
         }
     }
 
@@ -115,11 +117,11 @@ public class SiteHaritaYoneticisi:StaticSiteMapProvider
         if (!Olusturuldu)
         {
             base.Initialize(name, attributes);
-    
+
             // NameValueCollection tipinden metoda gelen attributes isimli parametre üzerinden, spAdi ve baglantiBilgisi niteliklerinin değerleri alınır.
             _spAdi = attributes["spAdi"];
             _baglantiBilgisi = attributes["baglantiBilgisi"];
-    
+
             Olusturuldu = true;
         }
     }
@@ -154,7 +156,7 @@ public class SiteHaritaYoneticisi:StaticSiteMapProvider
                     DataRow drRoot = dtNodes.Select("Ust is null")[0];
                     // _rootNode oluşturulur. 
                     _rootNode = new SiteMapNode(this, drRoot["Url"].ToString(), drRoot["Url"].ToString(), drRoot["Baslik"].ToString(), drRoot["Aciklama"].ToString());
-        
+
                     // o anki node(boğum)' un ID alanın değeri alınır ve recursive (yinelemeli) çalışan AltNodeEkle metodu tetiklenir.
                     string rootID = drRoot["ID"].ToString();
                     AltNodEkle(_rootNode, rootID, dtNodes);
@@ -173,9 +175,9 @@ public class SiteHaritaYoneticisi:StaticSiteMapProvider
         foreach (DataRow row in altNodlar)
         {
             // O anki node(boğum) oluşturulur ve yine o anki satırın ID değeri alınır.
-            SiteMapNode cocukNod = new SiteMapNode(this,row["Url"].ToString(), row["Url"].ToString(),row["Baslik"].ToString(), row["Aciklama"].ToString());
+            SiteMapNode cocukNod = new SiteMapNode(this, row["Url"].ToString(), row["Url"].ToString(), row["Baslik"].ToString(), row["Aciklama"].ToString());
             string rowID = row["ID"].ToString();
-    
+
             // node(boğum) üst node(boğum)' a eklenir.
             AddNode(cocukNod, ustNod);
             // Recursive metodumuz tekrardan o anki satır ve node(boğum) için çalıştırlır.
@@ -192,10 +194,11 @@ public class SiteHaritaYoneticisi:StaticSiteMapProvider
     // Bellekte oluşturulan siteMapNode' un elde edilmesini sağlayan özellik. (Readonly)
     public override SiteMapNode RootNode
     {
-        get { 
-            return BuildSiteMap(); 
+        get
+        {
+            return BuildSiteMap();
         }
-    }    
+    }
 }
 ```
 

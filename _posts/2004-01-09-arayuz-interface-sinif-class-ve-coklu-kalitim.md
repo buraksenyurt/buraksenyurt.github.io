@@ -16,92 +16,164 @@ using System;
 
 namespace Interfaces2
 {
-     public interface IMusteri
-     {
-          void MusteriDetay();
-          int ID{get;}
-          string Isim{get;set;}
-          string Soyisim{get;set;}
-          string Meslek{get;set;}
-     }
+    public interface IMusteri
+    {
+        void MusteriDetay();
+        int ID
+        {
+            get;
+        }
+        string Isim
+        {
+            get;
+            set;
+        }
+        string Soyisim
+        {
+            get;
+            set;
+        }
+        string Meslek
+        {
+            get;
+            set;
+        }
+    }
 
-     public interface ISiparis
-     {
-         int SiparisID{get;}
-          string Urun{get;set;}
-          double BirimFiyat{get;set;}
-          int Miktar{get;set;}
-          void SiparisDetay();
-     }
-     public class Sepet:IMusteri,ISiparis /* Sepet isimli sınıfımız hem IMusteri arayüzünü hemde ISiparis arayüzünü uygulayacaktır. */
-     {
-          private int id,sipId,mkt;
-          private string ad,soy,mes,ur;
-          private double bf;
-          public int ID
-          {
-               get{return id;}
-          }
-          public string Isim
-          {
-               get{return ad;}
-               set{ad=value;}
-          }
-          public string Soyisim
-          {
-               get{return soy;}
-               set{soy=value;}
-          }
-          public string Meslek
-          {
-               get{return mes;}
-               set{mes=value;}
-          }
-          public void MusteriDetay()
-          {
-               Console.WriteLine(ad+" "+soy+" "+mes);
-          }
-          public int SiparisID
-          {
-               get{return sipId;}
-          }
-          public string Urun
-          {
-               get{return ur;}
-               set{ur=value;}
-          }
-          public double BirimFiyat
-          {
-               get{return bf;}
-               set{bf=value;}
-          }
-          public int Miktar
-          {
-               get{return mkt;}
-               set{mkt=value;}
-          }
-          public void SiparisDetay()
-          {
-               Console.WriteLine("----Siparisler----");
-               Console.WriteLine("Urun:"+ur+" Birim Fiyat"+bf.ToString()+" Miktar:"+mkt.ToString());
-          }
-     }
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               Sepet spt1=new Sepet();
+    public interface ISiparis
+    {
+        int SiparisID
+        {
+            get;
+        }
+        string Urun
+        {
+            get;
+            set;
+        }
+        double BirimFiyat
+        {
+            get;
+            set;
+        }
+        int Miktar
+        {
+            get;
+            set;
+        }
+        void SiparisDetay();
+    }
+    public class Sepet : IMusteri, ISiparis /* Sepet isimli sınıfımız hem IMusteri arayüzünü hemde ISiparis arayüzünü uygulayacaktır. */
+    {
+        private int id, sipId, mkt;
+        private string ad, soy, mes, ur;
+        private double bf;
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+        }
+        public string Isim
+        {
+            get
+            {
+                return ad;
+            }
+            set
+            {
+                ad = value;
+            }
+        }
+        public string Soyisim
+        {
+            get
+            {
+                return soy;
+            }
+            set
+            {
+                soy = value;
+            }
+        }
+        public string Meslek
+        {
+            get
+            {
+                return mes;
+            }
+            set
+            {
+                mes = value;
+            }
+        }
+        public void MusteriDetay()
+        {
+            Console.WriteLine(ad + " " + soy + " " + mes);
+        }
+        public int SiparisID
+        {
+            get
+            {
+                return sipId;
+            }
+        }
+        public string Urun
+        {
+            get
+            {
+                return ur;
+            }
+            set
+            {
+                ur = value;
+            }
+        }
+        public double BirimFiyat
+        {
+            get
+            {
+                return bf;
+            }
+            set
+            {
+                bf = value;
+            }
+        }
+        public int Miktar
+        {
+            get
+            {
+                return mkt;
+            }
+            set
+            {
+                mkt = value;
+            }
+        }
+        public void SiparisDetay()
+        {
+            Console.WriteLine("----Siparisler----");
+            Console.WriteLine("Urun:" + ur + " Birim Fiyat" + bf.ToString() + " Miktar:" + mkt.ToString());
+        }
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            Sepet spt1 = new Sepet();
 
-               spt1.Isim="Burak";
-               spt1.Soyisim="Software";
-               spt1.Meslek="Mat.Müh";
-               spt1.Urun="Modem 56K";
-               spt1.BirimFiyat=50000000;
-               spt1.Miktar=2;
-               spt1.MusteriDetay();
-               spt1.SiparisDetay();
-          }
-     }
+            spt1.Isim = "Burak";
+            spt1.Soyisim = "Software";
+            spt1.Meslek = "Mat.Müh";
+            spt1.Urun = "Modem 56K";
+            spt1.BirimFiyat = 50000000;
+            spt1.Miktar = 2;
+            spt1.MusteriDetay();
+            spt1.SiparisDetay();
+        }
+    }
 }
 ```
 
@@ -114,22 +186,52 @@ Yukarıdaki kodlarda aslında değişik olarak yaptığımız bir şey yok. Sade
 ```csharp
 public interface IMusteri
 {
-     void MusteriDetay();
-     int ID{get;}
-     string Isim{get;set;}
-     string Soyisim{get;set;}
-     string Meslek{get;set;}
-     void Baslat();
+    void MusteriDetay();
+    int ID
+    {
+        get;
+    }
+    string Isim
+    {
+        get;
+        set;
+    }
+    string Soyisim
+    {
+        get;
+        set;
+    }
+    string Meslek
+    {
+        get;
+        set;
+    }
+    void Baslat();
 }
 
 public interface ISiparis
 {
-     int SiparisID{get;}
-     string Urun{get;set;}
-     double BirimFiyat{get;set;}
-     int Miktar{get;set;}
-     void SiparisDetay();
-     void Baslat();
+    int SiparisID
+    {
+        get;
+    }
+    string Urun
+    {
+        get;
+        set;
+    }
+    double BirimFiyat
+    {
+        get;
+        set;
+    }
+    int Miktar
+    {
+        get;
+        set;
+    }
+    void SiparisDetay();
+    void Baslat();
 }
 ```
 
@@ -142,19 +244,19 @@ Fakat bazı durumlarda, arayüzlerdeki metodlar aynı isimli de olsalar, arayüz
 ```csharp
 void IMusteri.Baslat()
 {
-     Console.WriteLine("Müşteriler hazırlandı...");
+    Console.WriteLine("Müşteriler hazırlandı...");
 }
 void ISiparis.Baslat()
 {
-     Console.WriteLine("Siparişler hazırlandı...");
+    Console.WriteLine("Siparişler hazırlandı...");
 }
 ```
 
 Metodların isimleri başında hangi arayüz için yazıldıklarına dikkat edelim. Diğer önemli bir nokta public belirtecinin kullanılmayışıdır. Public belirtecini kullanmamız durumunda, "The modifier 'public'is not valid for this item" derleyici hatasını alırız. Çünkü, metodumuzu public olarak tanımlamaya gerek yoktur. Nitekim, bu metodların kullanıldığı sınıflara ait nesnelerden, bu metodları çağırmak istediğimizde doğrudan çağıramadığımız görürüz. Çünkü derleyici hangi arayüzde tanımlanmış metodun çağırılması gerektiğini bilemez. Bu metodları kullanabilmek için, nesne örneğini ilgili arayüz tiplerine dönüştürmemiz gerekmektedir. Bu dönüştürmenin yapılması ilgili sınıf nesnesinin, arayüz tipinden değişkenlere açık bir şekilde dönüştürülmesi ile oluşur. İşte bu yüzdende bu tip metodlar, tanımlandıkları sınıf içinde public yapılamazlar. Bu açıkça dönüştürme işlemide aşağıdaki örnek satırlarda görüldüğü gibi olur.
 
 ```csharp
-IMusteri m=(IMusteri)spt1;
-ISiparis s=(ISiparis)spt1;
+IMusteri m = (IMusteri)spt1;
+ISiparis s = (ISiparis)spt1;
 ```
 
 İşte şimdi istediğimiz metodu, bu değişken isimleri ile birlikte aşağıdaki örnek satırlarda olduğu gibi çağırabiliriz.

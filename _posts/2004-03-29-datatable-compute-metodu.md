@@ -36,40 +36,45 @@ using System.Data.SqlClient;
 
 namespace Compute
 {
-    class Class1
-    {
-        static void Main(string[] args)
-        {
-            /* Yerel sql sunucumuzdaki Northwind veritabanına bir bağlantı hattı oluşturuyoruz.*/
-            SqlConnection con=new SqlConnection("Data Source=localhost;initial catalog=Northwind;Integrated Security=SSPI");
-            /* Bu SqlCommand nesnesinin içerdiği sql cümleciği ile, SupplierID değeri 11 olan Products tablosu alanlarının UnitPrice değerlerinin toplamını ve kaç satır olduklarının sayısını elde ediyoruz. */
-            SqlCommand cmdSum=new SqlCommand("SELECT SUM(UnitPrice),COUNT(SupplierID) FROM Products WHERE SupplierID=11",con);
-            /* Bu SqlCommand nesnesinin içerdiği sql cümleciği ile, Products tablosundaki UnitPrice alanının değerlerinin ortalamasını elde ediyoruz. */
-            SqlCommand cmdAvg=new SqlCommand("SELECT AVG(UnitPrice) FROM Products",con);
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            /* Yerel sql sunucumuzdaki Northwind veritabanına bir bağlantı hattı oluşturuyoruz.*/
+            SqlConnection con = new SqlConnection("Data Source=localhost;initial catalog=Northwind;Integrated Security=SSPI");
+            /* Bu SqlCommand nesnesinin içerdiği sql cümleciği ile, SupplierID değeri 11 olan Products tablosu alanlarının UnitPrice değerlerinin toplamını ve kaç satır olduklarının sayısını elde ediyoruz. */
+            SqlCommand cmdSum = new SqlCommand("SELECT SUM(UnitPrice),COUNT(SupplierID) FROM Products WHERE SupplierID=11", con);
+            /* Bu SqlCommand nesnesinin içerdiği sql cümleciği ile, Products tablosundaki UnitPrice alanının değerlerinin ortalamasını elde ediyoruz. */
+            SqlCommand cmdAvg = new SqlCommand("SELECT AVG(UnitPrice) FROM Products", con);
 
-            /* Bağlantımızı açıyoruz. */
-            con.Open();
-            SqlDataReader dr; /* SqlDataReader nesnemizi tanımlıyoruz.*/ 
-            dr=cmdSum.ExecuteReader(); 
-/* Komutumuzu çalıştırıp sonuçları bir akım şeklinde SqlDataReader nesnemize aktarılacağını belirtiyoruz. */
-            /* SqlDataReader akım içinde satır okuyabildiği sürece devam edicek döngümüzü başlatıyoruz ve sorgu sonucu elde edilen değerleri ekrana yazdırıyoruz. */
-            while(dr.Read())
-            {
-                Console.WriteLine("Toplam Fiyat {0}, Satır Sayısı {1} ",dr[0],dr[1]);
-            }
-            dr.Close(); /* SqlDataReader nesnemizi kapatıyoruz. */
+            /* Bağlantımızı açıyoruz. */
+            con.Open();
+            SqlDataReader dr;
+            /* SqlDataReader nesnemizi tanımlıyoruz.*/
+            dr = cmdSum.ExecuteReader();
+            /* Komutumuzu çalıştırıp sonuçları bir akım şeklinde SqlDataReader nesnemize aktarılacağını belirtiyoruz. */
+            /* SqlDataReader akım içinde satır okuyabildiği sürece devam edicek döngümüzü başlatıyoruz ve sorgu sonucu elde edilen değerleri ekrana yazdırıyoruz. */
+            while (dr.Read())
+            {
+                Console.WriteLine("Toplam Fiyat {0}, Satır Sayısı {1} ", dr[0], dr[1]);
+            }
+            dr.Close();
+            /* SqlDataReader nesnemizi kapatıyoruz. */
 
-            dr=cmdAvg.ExecuteReader(); /* Bu kez SqlDataReader nesnemizi ikinci sorgu cümleciğimizi çalıştıracak SqlCommand nesnesi ile oluşturuyoruz. */
-            /* SqlDataReader akım içinde satır okuyabildiği sürece devam edicek döngümüzü başlatıyoruz ve sorgu sonucu elde edilen değerleri ekrana yazdırıyoruz. */
-            while(dr.Read())
-            {
-                Console.WriteLine("Ortalama Fiyat {0}",dr[0]);
-            }
+            dr = cmdAvg.ExecuteReader();
+            /* Bu kez SqlDataReader nesnemizi ikinci sorgu cümleciğimizi çalıştıracak SqlCommand nesnesi ile oluşturuyoruz. */
+            /* SqlDataReader akım içinde satır okuyabildiği sürece devam edicek döngümüzü başlatıyoruz ve sorgu sonucu elde edilen değerleri ekrana yazdırıyoruz. */
+            while (dr.Read())
+            {
+                Console.WriteLine("Ortalama Fiyat {0}", dr[0]);
+            }
 
-            dr.Close(); /* SqlDataReader nesnemizi kapatıyoruz. */
-            con.Close(); /* SqlConnection nesnemizi kapatıyoruz. */
-        }
-    }
+            dr.Close();
+            /* SqlDataReader nesnemizi kapatıyoruz. */
+            con.Close();
+            /* SqlConnection nesnemizi kapatıyoruz. */
+        }
+    }
 }
 ```
 
@@ -82,16 +87,16 @@ Uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsünü elde e
 Şimdi gelelim, bu gibi işlemlerin DataTable sınıfı ile nasıl gerçekleştirilebileceğine. Çoğu zaman uygulamalarımızda bağlantısız katman nesneleri ile çalışkmaktayız. Bunlardan biriside DataTable nesnesidir. DataTable nesneleri bildiğiniz gibi, veritabanındaki bir tabloya ait içeriğin bellekte tutulduğu bölgeyi işaret ederler. Yada uygulama içerisinde bizim oluşturacağımız bir tablonun bellek görüntüsünü temsil ederler. Her iki haldede, DataTable nesnesinin temsil ettiği bölgede veriler yer alabilir. Bu veriler üzerinde, Aggregate Fonksiyonlarını kullanmak istediğimizde, aşağıda prototipi belirtilen Compute metodunu kullanabiliriz.
 
 ```csharp
-public object Compute(string ifade,string filtre);
+public object Compute(string ifade, string filtre);
 ```
 
 Compute metodu, belirtilen bir alan için, belirtilen filtreleme mekanizmasının şartları dahilinde, Aggregate Fonksiyonlarının işletilmesinde kullanılır. İlk parametrede SUM, AVG gibi Aggregate fonksiyonlarının kullanıldığı ifade yer alır. İkinci parametre ise karşılaştırma koşulumuzdur. Bu koşul aslında Where koşulunun devamındaki ifadeyi içerir. Dikkat edicek olursanız, Compute metodunun geri dönüş değerinin tipi Object türündendir. Bunun sebebi, çalıştırılan fonksiyonlar sonucu elde edilecek sonuçların veri tipinin tam olarak kestirilememesidir. Aşağıda, Compute metodunun kullanımına ilişkin örnek ifadeler yer almaktadır.
 
 ```csharp
 object objToplam;
-objToplam= Tablo.Compute("Sum(Primler)", "PerID = 8");
+objToplam = Tablo.Compute("Sum(Primler)", "PerID = 8");
 object objToplam;
-objToplam= Tablo.Compute("Sum(Primler)", "Baslangic > 1/1/2004 AND Bitis < 31/1/2004");
+objToplam = Tablo.Compute("Sum(Primler)", "Baslangic > 1/1/2004 AND Bitis < 31/1/2004");
 ```
 
 Şimdi yukarıdaki örneğimizde, Product isimli veritabanına ait verileri bellekte bir DataTable içinde sakladığımızı düşünelim. Şimdi Aggregate fonksiyonlarımızı bu örnek üzerinde kullanalım. Dilerseniz bu sefer, DataTable üzerindeki Compute metodunun sonuçlarını daha kolay izleyebileceğimiz bir Windows uygulaması geliştirelim. Form tasarımımız aşağıdakine benzer şekilde olabilir.
@@ -110,29 +115,36 @@ DataTable dtProducts;
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    con=new SqlConnection("Data Source=localhost;initial catalog=Northwind;Integrated Security=SSPI"); /* SqlConnection nesnemiz oluşturuluyor ve Northwind veritabanı için bir bağlantı hattı teşkil ediliyor. */
-    da=new SqlDataAdapter("Select * From Products",con); /* SqlDataAdapter nesnemiz Products tablosundaki tüm veriler üzerinde çalışacak şekilde, geçerli bağlantı nesnesi üzerinden oluşturuluyor. */
-    dtProducts=new DataTable("Urunler"); /* Products tablosundaki verilerin bellekte tutulacağı bölgeyi temsil edicek DataTable nesnemiz oluşturuluyor. */
+    con = new SqlConnection("Data Source=localhost;initial catalog=Northwind;Integrated Security=SSPI");
+    /* SqlConnection nesnemiz oluşturuluyor ve Northwind veritabanı için bir bağlantı hattı teşkil ediliyor. */
+    da = new SqlDataAdapter("Select * From Products", con);
+    /* SqlDataAdapter nesnemiz Products tablosundaki tüm veriler üzerinde çalışacak şekilde, geçerli bağlantı nesnesi üzerinden oluşturuluyor. */
+    dtProducts = new DataTable("Urunler");
+    /* Products tablosundaki verilerin bellekte tutulacağı bölgeyi temsil edicek DataTable nesnemiz oluşturuluyor. */
 }
 
 private void btnDoldur_Click(object sender, System.EventArgs e)
 {
-    da.Fill(dtProducts); /* DataTable nesnemizin bellekte temsil ettiği bölge, SqlDataAdapter nesnemiz ile dolduruluyor. */
-    dgProducts.DataSource=dtProducts; /* DataGrid nesnemiz veri kaynağına bağlanıyor ve Products tablosundaki verileri göstermesi sağlanıyoru. */
+    da.Fill(dtProducts);
+    /* DataTable nesnemizin bellekte temsil ettiği bölge, SqlDataAdapter nesnemiz ile dolduruluyor. */
+    dgProducts.DataSource = dtProducts;
+    /* DataGrid nesnemiz veri kaynağına bağlanıyor ve Products tablosundaki verileri göstermesi sağlanıyoru. */
 }
 
 private void btnOrtalama_Click(object sender, System.EventArgs e)
 {
-    double ortalama;
-    ortalama=Convert.ToDouble(dtProducts.Compute("AVG("+cmbAlan.SelectedItem.ToString()+")","SupplierID=11")); /* Burada kullanıcının seçtiği alana göre SupplierID değeri 11 olanların ortalaması hesaplanıyor. Sonuç noktalı sayı çıkabileceğinden Convert sınıfının ToDouble metodu ile Double veri tipine aktarılıyor. */
-    lblOrt.Text=ortalama.ToString();
+    double ortalama;
+    ortalama = Convert.ToDouble(dtProducts.Compute("AVG(" + cmbAlan.SelectedItem.ToString() + ")", "SupplierID=11"));
+    /* Burada kullanıcının seçtiği alana göre SupplierID değeri 11 olanların ortalaması hesaplanıyor. Sonuç noktalı sayı çıkabileceğinden Convert sınıfının ToDouble metodu ile Double veri tipine aktarılıyor. */
+    lblOrt.Text = ortalama.ToString();
 }
 
 private void btnToplam_Click(object sender, System.EventArgs e)
 {
-    double toplam;
-    toplam=Convert.ToDouble(dtProducts.Compute("SUM("+cmbAlan.SelectedItem.ToString()+")","SupplierID=11")); /* Bu kezde SupplierID alanının değeri 11 olan alanların Toplam değeri hesaplanıyor. */
-    lblToplam.Text=toplam.ToString();
+    double toplam;
+    toplam = Convert.ToDouble(dtProducts.Compute("SUM(" + cmbAlan.SelectedItem.ToString() + ")", "SupplierID=11"));
+    /* Bu kezde SupplierID alanının değeri 11 olan alanların Toplam değeri hesaplanıyor. */
+    lblToplam.Text = toplam.ToString();
 }
 ```
 

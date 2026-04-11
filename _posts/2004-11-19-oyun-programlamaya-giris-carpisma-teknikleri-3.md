@@ -52,86 +52,86 @@ Bu anlattıklarım size biraz karmaşık geldiyse sıkı durun. Diğer bölgeler
 
 ```csharp
 /*global degiskenlerimizi tanimliyoruz. */
-float Daire_X,Daire_Y,Dortgen_X,Dortgen_Y,Daire_R;
-float Dortgen_MinX,Dortgen_MaxX,Dortgen_MinY,Dortgen_MaxY;
-double Hipotenus,FarkX,FarkY;
+float Daire_X, Daire_Y, Dortgen_X, Dortgen_Y, Daire_R;
+float Dortgen_MinX, Dortgen_MaxX, Dortgen_MinY, Dortgen_MaxY;
+double Hipotenus, FarkX, FarkY;
 
 /*Daire için X,Y koordinatlar, yarıçap Dörtgen için ise X,Y, minimum ve maksimum X,Y koordinatları hesaplanıyor.*/
 private void Hesapla()
 {
-    Daire_R=Daire.Width/2;
-    Daire_X=Daire.Left+Daire_R;
-    Daire_Y=Daire.Top+Daire_R;
+    Daire_R = Daire.Width / 2;
+    Daire_X = Daire.Left + Daire_R;
+    Daire_Y = Daire.Top + Daire_R;
 
-    Dortgen_X=Dortgen.Left+Dortgen.Width/2;
-    Dortgen_Y=Dortgen.Top+Dortgen.Height/2;
-    Dortgen_MinX=Dortgen.Left;
-    Dortgen_MaxX=Dortgen.Left+Dortgen.Width;
-    Dortgen_MinY=Dortgen.Top;
-    Dortgen_MaxY=Dortgen.Top+Dortgen.Height;
+    Dortgen_X = Dortgen.Left + Dortgen.Width / 2;
+    Dortgen_Y = Dortgen.Top + Dortgen.Height / 2;
+    Dortgen_MinX = Dortgen.Left;
+    Dortgen_MaxX = Dortgen.Left + Dortgen.Width;
+    Dortgen_MinY = Dortgen.Top;
+    Dortgen_MaxY = Dortgen.Top + Dortgen.Height;
 
     /*Burada temel olarak, dörtgenin hangi bölgelere denk düştüğüne bakarak dik üçgene ait FarkX ve FarkY değerlerini hesap ediyoruz.*/
-    if(Daire_Y<Dortgen_MinY)
+    if (Daire_Y < Dortgen_MinY)
     {
-        FarkY=Daire_Y-Dortgen_MinY;
+        FarkY = Daire_Y - Dortgen_MinY;
     }
-    if(Daire_Y>Dortgen_MaxY)
+    if (Daire_Y > Dortgen_MaxY)
     {
-        FarkY=Daire_Y-Dortgen_MaxY;
+        FarkY = Daire_Y - Dortgen_MaxY;
     }
-    if(Daire_X>Dortgen_MaxX)
+    if (Daire_X > Dortgen_MaxX)
     {
-        FarkX=Daire_X-Dortgen_MaxX;
+        FarkX = Daire_X - Dortgen_MaxX;
     }
-    if(Daire_X<Dortgen_MinX)
+    if (Daire_X < Dortgen_MinX)
     {
-        FarkX=Daire_X-Dortgen_MinX;
+        FarkX = Daire_X - Dortgen_MinX;
     }
     /*Dik üçgene ait hipotenüsü buluyoruz.*/
-    Hipotenus=Math.Sqrt((FarkX*FarkX)+(FarkY*FarkY));
+    Hipotenus = Math.Sqrt((FarkX * FarkX) + (FarkY * FarkY));
 }
 
 /* Ölçümleri ekrana yazdirmak için string deger döndüren bir metod hazirliyoruz.*/
 private string Olcumler()
 {
-    string olcum="Daire için X:"+Daire_X.ToString();
-    olcum+=" Y:"+Daire_Y.ToString();
-    olcum+=" R:"+Daire_R.ToString();
-    olcum+=" | Dortgen İçin X:"+Dortgen_X.ToString();
-    olcum+=" Y:"+Dortgen_Y.ToString();
-    olcum+=" | Dortgen İçin MinX:"+Dortgen_MinX;
-    olcum+=" | Dortgen İçin MaxX:"+Dortgen_MaxX;
-    olcum+=" | Dortgen İçin MinY:"+Dortgen_MinY;
-    olcum+=" | Dortgen İçin MaxY:"+Dortgen_MaxY;
-    olcum+=" | Hipotenüs:"+Hipotenus.ToString();
+    string olcum = "Daire için X:" + Daire_X.ToString();
+    olcum += " Y:" + Daire_Y.ToString();
+    olcum += " R:" + Daire_R.ToString();
+    olcum += " | Dortgen İçin X:" + Dortgen_X.ToString();
+    olcum += " Y:" + Dortgen_Y.ToString();
+    olcum += " | Dortgen İçin MinX:" + Dortgen_MinX;
+    olcum += " | Dortgen İçin MaxX:" + Dortgen_MaxX;
+    olcum += " | Dortgen İçin MinY:" + Dortgen_MinY;
+    olcum += " | Dortgen İçin MaxY:" + Dortgen_MaxY;
+    olcum += " | Hipotenüs:" + Hipotenus.ToString();
     return olcum;
 }
 /* Form üzerinde A,S,D,W tuslarina basildiginda, Dortgen isimli pictureBox' in hareket etmesini sagliyoruz.*/
 private void frmCollision2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
 {
-    if(e.KeyChar==(Char)Keys.A)
+    if (e.KeyChar == (Char)Keys.A)
     {
-        Dortgen.Left-=1;
+        Dortgen.Left -= 1;
         Hesapla();
-        lblOlcumler.Text=Olcumler();
+        lblOlcumler.Text = Olcumler();
     }
-    if(e.KeyChar==(Char)Keys.D)
+    if (e.KeyChar == (Char)Keys.D)
     {
-        Dortgen.Left+=1;
+        Dortgen.Left += 1;
         Hesapla();
-        lblOlcumler.Text=Olcumler();
-    } 
-    if(e.KeyChar==(Char)Keys.S)
-    {
-        Dortgen.Top+=1;
-        Hesapla();
-        lblOlcumler.Text=Olcumler();
+        lblOlcumler.Text = Olcumler();
     }
-    if(e.KeyChar==(Char)Keys.W)
+    if (e.KeyChar == (Char)Keys.S)
     {
-        Dortgen.Top-=1;
+        Dortgen.Top += 1;
         Hesapla();
-        lblOlcumler.Text=Olcumler();
+        lblOlcumler.Text = Olcumler();
+    }
+    if (e.KeyChar == (Char)Keys.W)
+    {
+        Dortgen.Top -= 1;
+        Hesapla();
+        lblOlcumler.Text = Olcumler();
     }
     Kontrol();
 }
@@ -139,13 +139,13 @@ private void frmCollision2_KeyPress(object sender, System.Windows.Forms.KeyPress
 /* Çarpisma kontrolümüzü yapiyoruz. */
 private void Kontrol()
 {
-    if(Hipotenus<Daire_R)
+    if (Hipotenus < Daire_R)
     {
-        this.Text="";
-        this.Text+=" |!!! ÇARPISMA VAR !!!| ";
+        this.Text = "";
+        this.Text += " |!!! ÇARPISMA VAR !!!| ";
     }
     else
-        this.Text="";
+        this.Text = "";
 }
 ```
 

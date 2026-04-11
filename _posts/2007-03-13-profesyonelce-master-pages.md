@@ -138,9 +138,9 @@ Master Page'ler, kendisinden üretilen içerik sayfaları için ortaklaşa kulla
 protected void Page_Load(object sender, EventArgs e)
 {
     this.Master.Page.Title = "Azon Şehri Sakinlerinin Blogları";
-    HtmlMeta metadatas=new HtmlMeta();
-    metadatas.Name="Keywords";
-    metadatas.Content="Blog, Azon, City, Azon City, Yemek, Gurme, Kermes";
+    HtmlMeta metadatas = new HtmlMeta();
+    metadatas.Name = "Keywords";
+    metadatas.Content = "Blog, Azon, City, Azon City, Yemek, Gurme, Kermes";
     this.Master.Page.Header.Controls.Add(metadatas);
     this.Master.Page.SmartNavigation = true;
 }
@@ -195,8 +195,12 @@ public partial class AzonCityMaster : System.Web.UI.MasterPage
 {
     public string Bilgi
     {
-        get { return lblBilgi.Text; }
-        set {
+        get
+        {
+            return lblBilgi.Text;
+        }
+        set
+        {
             if (!String.IsNullOrEmpty(value))
                 lblBilgi.Text = value;
             else
@@ -243,7 +247,7 @@ Master Page'ler, çalışma zamanında birleştirilecekleri içerik sayfalar ad�
 Kullanıcılar yeni bir blog girişi yapmak isteyebilir. Bu girişe ait kontrollerin iş mantığı, veri girişi için gerekli sorgunun hazırlanması ve ilgili Ado.Net işlevselliklerinin çalıştırılması gibi işlemler, Master Page içerisinde aşağıdaki gibi toplanabilir. Burada işlerin biraz daha kolaylaşması açısından tablo adına göre sorgu oluşturulabilmesi için Tablolar isimli bir enum sabiti düşünülmüştür.
 
 ```csharp
-public bool Insert(Tablolar tablo,params object[] parametreler)
+public bool Insert(Tablolar tablo, params object[] parametreler)
 {
     bool eklendi = false;
     switch (tablo)
@@ -299,12 +303,12 @@ Az öncede bahsettiğimiz gibi, MasterPageFile özelliğini sadece PreInit olay 
 ```csharp
 protected void Page_PreInit(object sender, EventArgs e)
 {
-    if(Request.QueryString["Yaz"]!=null)
+    if (Request.QueryString["Yaz"] != null)
     {
         string yazmi = Request.QueryString["Yaz"].ToString();
-        if(yazmi=="Evet")
+        if (yazmi == "Evet")
             this.MasterPageFile = "~/AzonCitySummerMaster.master";
-        else if(yazmi=="Hayir")
+        else if (yazmi == "Hayir")
             this.MasterPageFile = "~/AzonCityMaster.master";
     }
 }

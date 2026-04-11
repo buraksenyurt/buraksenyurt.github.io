@@ -98,10 +98,10 @@ namespace COMInteropFeatures
 
             Word.Application wordApp = new Word.Application();
             wordApp.Visible = true;
-            object filePath = Environment.CurrentDirectory+"\\Belge.docx";
+            object filePath = Environment.CurrentDirectory + "\\Belge.docx";
             object missing = Type.Missing;
 
-            wordApp.Documents.Open(ref filePath, ref missing, ref missing, ref missing, ref missing, ref missing,  ref missing, ref missing, ref missing, ref missing, ref missing,  ref missing, ref missing, ref missing, ref missing, ref missing);
+            wordApp.Documents.Open(ref filePath, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing, ref missing);
 
             #endregion
 

@@ -127,7 +127,7 @@ namespace NorthwindV2
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true, InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single)]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class Service 
+    public class Service
         : CollectionServiceBase<Product>, ICollectionService<Product>
     {
         // products isimli Dictionary koleksiyonunda Product nesne örnekleri value, ProductID değerleri ise key olarak tutulmakta.
@@ -139,7 +139,7 @@ namespace NorthwindV2
         // CategoryID değeri null olmayan satırlar çekilir ve IDataReader üzerinden Product nesnesi şeklinde oluşturulan örnekler, products koleksiyonuna eklenerek geriye döndürülür.
         // http://localhost:1000/Service.svc talebi sonrası bu metod devreye girer.
         protected override IEnumerable<KeyValuePair<string, Product>> OnGetItems()
-        {            
+        {
             IDataReader reader = db.ExecuteReader(CommandType.Text, "Select * From Products where CategoryID is not null");
 
             while (reader.Read())
@@ -147,16 +147,16 @@ namespace NorthwindV2
                 products.Add(reader["ProductID"].ToString(),
                     new Product
                     {
-                        ProductID=Convert.ToInt32(reader["ProductID"]), 
-                        CategoryID=Convert.ToInt32(reader["CategoryID"]),
-                          Discontinued=Convert.ToBoolean(reader["Discontinued"]),
-                           ProductName=reader["ProductName"].ToString(),
-                            QuantityPerUnit=reader["QuantityPerUnit"].ToString(),
-                             ReorderLevel=Convert.ToInt16(reader["ReorderLevel"]),
-                              SupplierID=Convert.ToInt32(reader["SupplierID"]),
-                               UnitPrice=Convert.ToDecimal(reader["UnitPrice"]),
-                                UnitsInStock=Convert.ToInt16(reader["UnitsInStock"]),
-                                 UnitsOnOrder=Convert.ToInt16(reader["UnitsOnOrder"])                           
+                        ProductID = Convert.ToInt32(reader["ProductID"]),
+                        CategoryID = Convert.ToInt32(reader["CategoryID"]),
+                        Discontinued = Convert.ToBoolean(reader["Discontinued"]),
+                        ProductName = reader["ProductName"].ToString(),
+                        QuantityPerUnit = reader["QuantityPerUnit"].ToString(),
+                        ReorderLevel = Convert.ToInt16(reader["ReorderLevel"]),
+                        SupplierID = Convert.ToInt32(reader["SupplierID"]),
+                        UnitPrice = Convert.ToDecimal(reader["UnitPrice"]),
+                        UnitsInStock = Convert.ToInt16(reader["UnitsInStock"]),
+                        UnitsOnOrder = Convert.ToInt16(reader["UnitsOnOrder"])
                     }
                     );
             }
@@ -186,16 +186,16 @@ namespace NorthwindV2
                 initialValue.ProductID = Convert.ToInt32(id);
                 this.products.Add(id, initialValue);
             }
-            catch(Exception excp)
+            catch (Exception excp)
             {
                 throw new WebException(excp.Message.ToUpper(), WebExceptionStatus.RequestCanceled);
-            }            
+            }
             return initialValue;
         }
 
         // Bir Product' ın güncelleştirilmesi işlemi sırasında kullanılan metoddur. Metod başarılı bir şekilde güncelleştirme işlemini yaparsa geriye Product tipinin son hali döndürülür.
-       protected override Product OnUpdateItem(string id, Product newValue)
-       {       
+        protected override Product OnUpdateItem(string id, Product newValue)
+        {
             int result = 0;
             try
             {
@@ -210,11 +210,11 @@ namespace NorthwindV2
             {
                 throw new WebProtocolException(HttpStatusCode.NotFound);
             }
-           
-            int result=db.ExecuteNonQuery("UpdateProduct", newValue.ProductName, newValue.SupplierID, newValue.CategoryID, newValue.QuantityPerUnit, newValue.UnitPrice, newValue.UnitsInStock, newValue.UnitsOnOrder, newValue.ReorderLevel, newValue.Discontinued, newValue.ProductID);
+
+            int result = db.ExecuteNonQuery("UpdateProduct", newValue.ProductName, newValue.SupplierID, newValue.CategoryID, newValue.QuantityPerUnit, newValue.UnitPrice, newValue.UnitsInStock, newValue.UnitsOnOrder, newValue.ReorderLevel, newValue.Discontinued, newValue.ProductID);
 
             if (result == 1) // ProductID değerleri Auto Identity tipinden olduklarında güncelleştirilen kayıt sayısı 1 ise
-            {                
+            {
                 // products koleksiyonundaki değer güncellenir
                 this.products[id] = newValue;
                 // güncellenen değerlere sahip Product tipi geriye döndürülür.
@@ -230,10 +230,10 @@ namespace NorthwindV2
             // İlk olarak silinmek istenen id değerine sahip Product tipi çekilir
             Product item = OnGetItem(id);
             // Eğer ilgili Product null ise false değer döndürülür
-            if (item == null) 
+            if (item == null)
                 return false;
             // Eğer var ise Products tablosundan silme işlemi yapılır
-            int result=db.ExecuteNonQuery("DeleteProduct", id);
+            int result = db.ExecuteNonQuery("DeleteProduct", id);
             // Eğer 1 satır silinebildiyse,
             if (result == 1)
             {
@@ -249,16 +249,56 @@ namespace NorthwindV2
     // Koleksiyon içerisinde kullanılan Product sınıfı.
     public class Product
     {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public int SupplierID { get; set; }
-        public int CategoryID { get; set; }
-        public string QuantityPerUnit { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short UnitsInStock { get; set; }
-        public short UnitsOnOrder { get; set; }
-        public short ReorderLevel { get; set; }
-        public bool Discontinued { get; set; }
+        public int ProductID
+        {
+            get;
+            set;
+        }
+        public string ProductName
+        {
+            get;
+            set;
+        }
+        public int SupplierID
+        {
+            get;
+            set;
+        }
+        public int CategoryID
+        {
+            get;
+            set;
+        }
+        public string QuantityPerUnit
+        {
+            get;
+            set;
+        }
+        public decimal UnitPrice
+        {
+            get;
+            set;
+        }
+        public short UnitsInStock
+        {
+            get;
+            set;
+        }
+        public short UnitsOnOrder
+        {
+            get;
+            set;
+        }
+        public short ReorderLevel
+        {
+            get;
+            set;
+        }
+        public bool Discontinued
+        {
+            get;
+            set;
+        }
     }
 }
 ```

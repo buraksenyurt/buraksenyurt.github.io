@@ -19,35 +19,35 @@ using System;
 
 namespace Interface3
 {
-     public interface IKullanilmayan
-     {
-          void Yaz();
-          void Bul();
-     }
-     public interface IKullanilan
-     {
-          void ArayuzAdi();
+    public interface IKullanilmayan
+    {
+        void Yaz();
+        void Bul();
+    }
+    public interface IKullanilan
+    {
+        void ArayuzAdi();
 
-     }
-  
-     public class ASinifi:IKullanilan
-     {
-          public void ArayuzAdi()
-          {
-               Console.WriteLine("Arayüz adl:IKullanilan");
-          }
-     }
-     class Class1
-     {
-          static void Main(string[] args)
-          {
-               ASinifi a=new ASinifi();
-               IKullanilan Kul=(IKullanilan)a;
-               Kul.ArayuzAdi();
-               IKullanilmayan anKul=(IKullanilmayan)a;
-               anKul.Yaz();
-          }
-     }
+    }
+
+    public class ASinifi : IKullanilan
+    {
+        public void ArayuzAdi()
+        {
+            Console.WriteLine("Arayüz adl:IKullanilan");
+        }
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            ASinifi a = new ASinifi();
+            IKullanilan Kul = (IKullanilan)a;
+            Kul.ArayuzAdi();
+            IKullanilmayan anKul = (IKullanilmayan)a;
+            anKul.Yaz();
+        }
+    }
 }
 ```
 
@@ -62,17 +62,18 @@ Is anahtar kelimesi nesne ile tipi karşılaştırır. Yani belirtilen nesne ile
 ```csharp
 static void Main(string[] args)
 {
-     ASinifi a=new ASinifi();
-     IKullanilan Kul=(IKullanilan)a;
-     Kul.ArayuzAdi();
-     if(a is IKullanilmayan){
-          IKullanilmayan anKul=(IKullanilmayan)a;
-          anKul.Yaz();
-     }
-     else
-     {
-          Console.WriteLine("ASinifi, IKullanilmayan arayüzünü uygulamamıştır.");
-     }
+    ASinifi a = new ASinifi();
+    IKullanilan Kul = (IKullanilan)a;
+    Kul.ArayuzAdi();
+    if (a is IKullanilmayan)
+    {
+        IKullanilmayan anKul = (IKullanilmayan)a;
+        anKul.Yaz();
+    }
+    else
+    {
+        Console.WriteLine("ASinifi, IKullanilmayan arayüzünü uygulamamıştır.");
+    }
 }
 ```
 
@@ -91,18 +92,18 @@ Burada eğer nesneye belirtilen tipi temsil eden arayüz uygulanmamışsa, nesne
 ```csharp
 static void Main(string[] args)
 {
-     ASinifi a=new ASinifi();
-     IKullanilan Kul=(IKullanilan)a;
-     Kul.ArayuzAdi();
-     IKullanilmayan anKul=a as IKullanilmayan;
-     if(anKul!=null)
-     {
-          anKul.Yaz();
-     }
-     else
-     {
-          Console.WriteLine("ASinifi IKullanilmayan tipine dönüştürülemedi");
-     }
+    ASinifi a = new ASinifi();
+    IKullanilan Kul = (IKullanilan)a;
+    Kul.ArayuzAdi();
+    IKullanilmayan anKul = a as IKullanilmayan;
+    if (anKul != null)
+    {
+        anKul.Yaz();
+    }
+    else
+    {
+        Console.WriteLine("ASinifi IKullanilmayan tipine dönüştürülemedi");
+    }
 }
 ```
 

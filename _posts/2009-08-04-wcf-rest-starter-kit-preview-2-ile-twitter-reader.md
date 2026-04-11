@@ -52,7 +52,7 @@ namespace TwitterReader
     public partial class Form1 : Form
     {
         // Siz kendi Twiteer kullanıcı adı ve şifrenizi kullanmalısınız.
-        private string username = "sizin kullanıcı adınız"; 
+        private string username = "sizin kullanıcı adınız";
         private string password = "sizin şifreniz";
 
         public Form1()

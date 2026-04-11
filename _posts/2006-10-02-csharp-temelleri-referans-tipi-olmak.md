@@ -38,8 +38,14 @@ class NoktaBilgisi
     }
     public string Aciklama
     {
-        get { return m_Aciklama; }
-        set { m_Aciklama = value; }
+        get
+        {
+            return m_Aciklama;
+        }
+        set
+        {
+            m_Aciklama = value;
+        }
     }
 }
 ```
@@ -52,13 +58,13 @@ NoktaBilgisi nb1 = new NoktaBilgisi("Nokta Açıklaması");
 Console.WriteLine("\t Nokta 2 nesnesi tanımlanır ve Nokta 1 nesnesi atanır...");
 NoktaBilgisi nb2 = nb1;
 Console.WriteLine("\t Nokta nesneleri için Açıklama bilgileri...");
-Console.WriteLine("Nokta 1.Açıklama ->"+nb1.Aciklama);
-Console.WriteLine("Nokta 2.Açıklama ->"+nb2.Aciklama);
+Console.WriteLine("Nokta 1.Açıklama ->" + nb1.Aciklama);
+Console.WriteLine("Nokta 2.Açıklama ->" + nb2.Aciklama);
 Console.WriteLine("\t Nokta 2 nesnesi üzerinde Açıklama bilgisi değiştirilir...");
 nb2.Aciklama = "Yeni Açıklama";
 Console.WriteLine("\t Nokta nesneleri için Açıklama bilgileri son durum...");
-Console.WriteLine("Nokta 1.Açıklama ->"+nb1.Aciklama);
-Console.WriteLine("Nokta 2.Açıklama ->"+nb2.Aciklama);
+Console.WriteLine("Nokta 1.Açıklama ->" + nb1.Aciklama);
+Console.WriteLine("Nokta 2.Açıklama ->" + nb2.Aciklama);
 ```
 
 Uygulamamızı çalıştırdığımızda elde edeceğimiz ekran görüntüsü aşağıdaki gibi olacaktır.
@@ -94,20 +100,38 @@ struct Nokta
 
     public int X
     {
-        get { return m_X; }
-        set { m_X = value; }
+        get
+        {
+            return m_X;
+        }
+        set
+        {
+            m_X = value;
+        }
     }
 
     public int Y
     {
-        get { return m_Y; }
-        set { m_Y = value; }
-    } 
+        get
+        {
+            return m_Y;
+        }
+        set
+        {
+            m_Y = value;
+        }
+    }
 
     public NoktaBilgisi Bilgi
     {
-        get { return m_bilgi; }
-        set { m_bilgi = value; }
+        get
+        {
+            return m_bilgi;
+        }
+        set
+        {
+            m_bilgi = value;
+        }
     }
 
     public Nokta(string bilgi, int x, int y)
@@ -159,20 +183,32 @@ Bazı durumlarda referans türlerine ait bir nesne örneğini o anki içeriğiyl
 ![mk176_9.gif](/assets/images/2006/mk176_9.gif)
 
 ```csharp
-public class Dortgen:ICloneable
+public class Dortgen : ICloneable
 {
     private int m_En;
     private int m_Boy;
 
     public int En
     {
-        get { return m_En; }
-        set { m_En = value; }
+        get
+        {
+            return m_En;
+        }
+        set
+        {
+            m_En = value;
+        }
     }
     public int Boy
     {
-        get { return m_Boy; }
-        set { m_Boy = value; }
+        get
+        {
+            return m_Boy;
+        }
+        set
+        {
+            m_Boy = value;
+        }
     }
     public Dortgen(int en, int boy)
     {
@@ -233,8 +269,14 @@ public class DortgenBilgi
     private string m_Bilgi;
     public string Bilgi
     {
-        get { return m_Bilgi; }
-        set { m_Bilgi = value; }
+        get
+        {
+            return m_Bilgi;
+        }
+        set
+        {
+            m_Bilgi = value;
+        }
     }
     public DortgenBilgi(string bilgi)
     {
@@ -246,23 +288,35 @@ public class DortgenBilgi
 Dortgen sınıfı içerisindede aşağıdaki değişiklikleri yapalım.
 
 ```csharp
-public class Dortgen:ICloneable
+public class Dortgen : ICloneable
 {
     private int m_En;
     private int m_Boy;
-    public DortgenBilgi DortgenBilgisi=new DortgenBilgi("Dörtgen");
+    public DortgenBilgi DortgenBilgisi = new DortgenBilgi("Dörtgen");
 
     public int En
     {
-        get { return m_En; }
-        set { m_En = value; }
+        get
+        {
+            return m_En;
+        }
+        set
+        {
+            m_En = value;
+        }
     }
     public int Boy
     {
-        get { return m_Boy; }
-        set { m_Boy = value; }
+        get
+        {
+            return m_Boy;
+        }
+        set
+        {
+            m_Boy = value;
+        }
     }
-    public Dortgen(int en, int boy,string bilgi)
+    public Dortgen(int en, int boy, string bilgi)
     {
         m_En = en;
         m_Boy = boy;
@@ -270,7 +324,7 @@ public class Dortgen:ICloneable
     }
     public override string ToString()
     {
-        return "En : " + m_En.ToString() + " Boy : " + m_Boy.ToString() + " " + DortgenBilgisi.Bilgi ;
+        return "En : " + m_En.ToString() + " Boy : " + m_Boy.ToString() + " " + DortgenBilgisi.Bilgi;
     }
     public object Clone()
     {
@@ -283,7 +337,7 @@ Dortgen sınıfımız içerisinde mızıkçılık yapacak olan ve klonlama işle
 
 ```csharp
 Console.WriteLine("\t Dortgen 1 nesnesi oluşturulur...");
-Dortgen drt1 = new Dortgen(10, 12,"Dikdörtgen");
+Dortgen drt1 = new Dortgen(10, 12, "Dikdörtgen");
 Console.WriteLine("\t Dortgen 1 nesnesi Dortgen 2 nesnesine atanır...");
 Dortgen drt2 = (Dortgen)drt1.Clone();
 Console.WriteLine("\t Atama sonrası bilgiler...");
@@ -292,7 +346,7 @@ Console.WriteLine("Dortgen 2 için " + drt2.ToString());
 Console.WriteLine("\t Dortgen 2 nesnesinin eni ve boyu değiştirilir...");
 drt2.En = 4;
 drt2.Boy = 4;
-drt2.DortgenBilgisi.Bilgi = "Kare"; 
+drt2.DortgenBilgisi.Bilgi = "Kare";
 Console.WriteLine("\t Dortgen 2 değişikliği sonrası bilgiler...");
 Console.WriteLine("Dortgen 1 için " + drt1.ToString());
 Console.WriteLine("Dortgen 2 için " + drt2.ToString());
@@ -305,7 +359,7 @@ Oysaki uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsü
 Gördüğünüz gibi drt2 nesnesi üzerinden DortgenBilgisi referansına ait Bilgi özelliğinin değeri değiştirildiğinde aynı etki drt1 içinde meydana gelmiştir. Dolayısıyla Clone metodu tam olarak işlevini yerine getirmemiştir. Bunun sebebi Clone metodu içerisinde kullanılan MemberwiseClone metodunun referans tipi için adres kopyalaması gerçekleştirmiş olmasıdır. Çözüm olarak Clone metodu içerisinde Dortgen sınıfına ait bir nesne örneği, o anki değerleri ile tekrardan örneklenip geriye döndürülebilir.
 
 ```csharp
-return new Dortgen(this.m_En, this.m_Boy,this.DortgenBilgisi.Bilgi);
+return new Dortgen(this.m_En, this.m_Boy, this.DortgenBilgisi.Bilgi);
 ```
 
 Uygulamayı bu haliyle çalıştırdığımızda aşağıdaki ekran görüntüsünü elde ederiz. Gördüğünüz gibi bu sefer tam anlamıyla bir derinlemesine kopylama işlemi gerçekleşmiştir. (Dortgen sınıfı için kullandığımız bu klonlama tekniğini 2nci maddede kullandığımız Nokta yapısı içinde kullanabiliriz.)
@@ -353,7 +407,7 @@ Uygulamamızı bu haliyle çalıştırdığımızda aşağıdaki ekran görünt�
 
 ```csharp
 static void NoktaDegistir(NoktaBilgisi noktaBlg)
-{ 
+{
     noktaBlg = new NoktaBilgisi("Yeni Açıklama");
     // noktaBlg üzerinden istenilen diğer işlemler gerçekleştirilir.
 }

@@ -42,17 +42,26 @@ public class Kullanici
 
     public string Ad
     {
-        get { return _ad; }
+        get
+        {
+            return _ad;
+        }
     }
     public string Email
     {
-        get { return _email; }
+        get
+        {
+            return _email;
+        }
     }
     public string BiletNumarasi
     {
-        get { return _biletNumarasi; }
+        get
+        {
+            return _biletNumarasi;
+        }
     }
-    public Kullanici(string kullaniciAdi,string email)
+    public Kullanici(string kullaniciAdi, string email)
     {
         _ad = kullaniciAdi;
         _email = email;
@@ -68,15 +77,21 @@ Dolayısıyla web metodlarımız içerisinden Application nesnelerine çıkıp g
 ![mk187_4.gif](/assets/images/2007/mk187_4.gif)
 
 ```csharp
-public class Bilet:System.Web.Services.Protocols.SoapHeader
+public class Bilet : System.Web.Services.Protocols.SoapHeader
 {
     private string _biletNumarasi;
 
     public string BiletNumarasi
-     {
-        get { return _biletNumarasi; }
-        set { _biletNumarasi = value; }
-     }  
+    {
+        get
+        {
+            return _biletNumarasi;
+        }
+        set
+        {
+            _biletNumarasi = value;
+        }
+    }
 
     public Bilet(string numara)
     {
@@ -100,22 +115,22 @@ public class UrunServisi : System.Web.Services.WebService
 {
     public Bilet _bilet;
 
-    [WebMethod(Description="Kullanıcı bileti oluşturulmasını sağlar")]
-    [SoapHeader("_bilet", Direction=SoapHeaderDirection.Out)]
+    [WebMethod(Description = "Kullanıcı bileti oluşturulmasını sağlar")]
+    [SoapHeader("_bilet", Direction = SoapHeaderDirection.Out)]
     public void GirisYap(string kullaniciAdi, string sifre)
     {
-        using(SqlConnection conn=new SqlConnection(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|AzonDb.mdf;User Instance=true"))
+        using (SqlConnection conn = new SqlConnection(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|AzonDb.mdf;User Instance=true"))
         {
             SqlCommand cmd = new SqlCommand("Select KullaniciAdi,PostaAdresi From Kullanicilar Where KullaniciAdi=@KullaniciAdi and Sifre=@Sifre", conn);
             cmd.Parameters.AddWithValue("@KullaniciAdi", kullaniciAdi.ToString());
             cmd.Parameters.AddWithValue("@Sifre", sifre.ToString());
             conn.Open();
-            SqlDataReader dr=cmd.ExecuteReader();
+            SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 Kullanici kln = new Kullanici(dr["KullaniciAdi"].ToString(), dr["PostaAdresi"].ToString());
                 Application[kln.BiletNumarasi] = kln;
-                _bilet = new Bilet(kln.BiletNumarasi); 
+                _bilet = new Bilet(kln.BiletNumarasi);
             }
             else
                 throw new Exception("Geçersiz kullanıcı");
@@ -128,18 +143,19 @@ public class UrunServisi : System.Web.Services.WebService
         if (kln != null)
             return kln;
         else
-            throw new Exception("Geçersiz bilet numarası"); 
+            throw new Exception("Geçersiz bilet numarası");
     }
 
-    [WebMethod(Description="Ortalama endeks hesaplamaları yapılır.")]
-    [SoapHeader("_bilet",Direction=SoapHeaderDirection.In)]
+    [WebMethod(Description = "Ortalama endeks hesaplamaları yapılır.")]
+    [SoapHeader("_bilet", Direction = SoapHeaderDirection.In)]
     public double MaliyetHesapla(double parcaNo)
     {
         KullaniciDogrula(_bilet.BiletNumarasi);
-        return parcaNo*10;
+        return parcaNo * 10;
     }
-    public UrunServisi () {
-    } 
+    public UrunServisi()
+    {
+    }
 }
 ```
 
@@ -179,11 +195,11 @@ static void Main(string[] args)
     {
         UrunWebSrv.UrunServisi urnSrv = new Istemci.UrunWebSrv.UrunServisi();
         urnSrv.GirisYap("bsenyurt", "1234");
-        Console.WriteLine("Sistem tarafından verilen unique Id \n {0}",urnSrv.BiletValue.BiletNumarasi);
-        double sonuc=urnSrv.MaliyetHesapla(1000);
-        Console.WriteLine("Maliyet "+sonuc.ToString()); 
+        Console.WriteLine("Sistem tarafından verilen unique Id \n {0}", urnSrv.BiletValue.BiletNumarasi);
+        double sonuc = urnSrv.MaliyetHesapla(1000);
+        Console.WriteLine("Maliyet " + sonuc.ToString());
     }
-    catch(Exception err)
+    catch (Exception err)
     {
         Console.WriteLine(err.Message.ToString());
     }

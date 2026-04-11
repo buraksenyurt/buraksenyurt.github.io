@@ -104,11 +104,11 @@ App.Xaml içerisinde yer alan tanımlamalar da yeterli değildir. WebContext'in 
 
 ```csharp
 private void Application_Startup(object sender, StartupEventArgs e)
-        {
-            // XAML içerisinde WebContext nesnesinin kullanılabilmesi için Resources koleksiyonuna ilgili WebContext nesne örneğinin eklenmesi gerekir.
-            this.Resources.Add("WebContext", WebContext.Current);
-            this.RootVisual = new MainPage();
-        }
+{
+    // XAML içerisinde WebContext nesnesinin kullanılabilmesi için Resources koleksiyonuna ilgili WebContext nesne örneğinin eklenmesi gerekir.
+    this.Resources.Add("WebContext", WebContext.Current);
+    this.RootVisual = new MainPage();
+}
 ```
 
 Artık Silverlight kontrolünün içeriğinin tasarlanmasına başlanabilir. Örneğimizde Login ve Logout işlemlerinin yapılması irdelenecektir. Buna göre aşağıdaki tasarım görüntüsü ve XAML içeriğine sahip olacak şekilde MainPage.xaml dosyasını düzenleyerek ilerlediğimizi düşünelim.
@@ -159,7 +159,7 @@ namespace SilverlightApplication7
             InitializeComponent();
 
             btnLogout.IsEnabled = false;
-            
+
             authSrv.LoggedIn += new System.EventHandler<AuthenticationEventArgs>(authSrv_LoggedIn);
             authSrv.LoggedOut += new System.EventHandler<AuthenticationEventArgs>(authSrv_LoggedOut);
         }

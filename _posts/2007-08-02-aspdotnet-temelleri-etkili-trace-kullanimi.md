@@ -37,7 +37,7 @@ Kod tarafından Trace mekanizmasının açılması;
 ```csharp
 protected void Page_Load(object sender, EventArgs ea)
 {
-    Page.Trace.IsEnabled = true; 
+    Page.Trace.IsEnabled = true;
 }
 ```
 
@@ -98,7 +98,7 @@ protected void Page_Load(object sender, EventArgs ea)
 
 void Trace_TraceFinished(object sender, TraceContextEventArgs e)
 {
-    IEnumerator numarator=e.TraceRecords.GetEnumerator();
+    IEnumerator numarator = e.TraceRecords.GetEnumerator();
     while (numarator.MoveNext())
     {
         TraceContextRecord record = (TraceContextRecord)numarator.Current;
@@ -173,10 +173,10 @@ using (SqlConnection conn = new SqlConnection("data source=.;database=AdventureW
     SqlCommand cmd = new SqlCommand("Select Top 10000 TransactionId From Production.TransactionHistory", conn);
     conn.Open();
     Trace.Warn("TransactionId Cekme", "TransactionId değerleri çekilmeye başlanacak");
-    SqlDataReader reader = cmd.ExecuteReader(); 
+    SqlDataReader reader = cmd.ExecuteReader();
     while (reader.Read())
     {
-        urunAdlari += reader["TransactionId"].ToString()+"|";
+        urunAdlari += reader["TransactionId"].ToString() + "|";
     }
     Trace.Warn("TransactionId Cekme", "TransactionId değerleri çekildi...");
     reader.Close();
@@ -196,7 +196,7 @@ using (SqlConnection conn = new SqlConnection("data source=.;database=AdventureW
     SqlCommand cmd = new SqlCommand("Select Top 10000 TransactionId From Production.TransactionHistory", conn);
     conn.Open();
     Trace.Warn("TransactionId Cekme", "TransactionId değerleri çekilmeye başlanacak");
-    SqlDataReader reader = cmd.ExecuteReader(); 
+    SqlDataReader reader = cmd.ExecuteReader();
     while (reader.Read())
     {
         builder.Append(reader["TransactionId"].ToString());

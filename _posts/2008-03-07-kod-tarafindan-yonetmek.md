@@ -86,7 +86,7 @@ Servis uygulamasının kodları basit olarak aşağıdaki gibi tasarlanabilir.
 using System;
 using System.ServiceModel.Channels; // Kanal tipleri için eklenen isim alanıdır.
 using System.ServiceModel;
-using ServisIslemleri; 
+using ServisIslemleri;
 
 namespace Sunucu
 {
@@ -102,7 +102,7 @@ namespace Sunucu
             rBinding.MaxRetryCount = 3; // Mesajların başarılı şekilde iletimi için maksimum tekrar sayısı belirlenir.
             binding.Elements.Add(rBinding); // Oluşturulan Bindin elementi eklenir.
 
-            SecurityBindingElement sBinding=SecurityBindingElement.CreateSecureConversationBindingElement( SecurityBindingElement.CreateSspiNegotiationBindingElement());
+            SecurityBindingElement sBinding = SecurityBindingElement.CreateSecureConversationBindingElement(SecurityBindingElement.CreateSspiNegotiationBindingElement());
             sBinding.LocalServiceSettings.DetectReplays = true; // Replay ataklarını kontrol et.
             binding.Elements.Add(sBinding); // Oluşturulan SecureBindingElement, CustomBinding nesnesinin ELements koleksiyonuna eklenir. 
 
@@ -153,8 +153,8 @@ using System.ServiceModel.Description;
 namespace Sunucu
 {
     class MesajYakalayici
-        :IDispatchMessageInspector
-    {    
+        : IDispatchMessageInspector
+    {
         #region IDispatchMessageInspector Members
 
         // Servis üzerinden talep edilen metod çalıştırılmadan hemen önce devreye giren metoddur.
@@ -168,20 +168,20 @@ namespace Sunucu
             Console.WriteLine("MessageVersion Addressing : " + request.Headers.MessageVersion.Addressing);
             Console.WriteLine("To : " + request.Headers.To.AbsolutePath);
             Console.WriteLine("Action : " + request.Headers.Action);
-            Console.WriteLine("Encoder : "+request.Properties.Encoder);
+            Console.WriteLine("Encoder : " + request.Properties.Encoder);
 
             MessageBuffer buffer = request.CreateBufferedCopy(Int32.MaxValue);
             request = buffer.CreateMessage();
-            Console.WriteLine("Mesaj Body :"+buffer.CreateMessage().GetBody<XmlElement>().InnerXml); 
-    
+            Console.WriteLine("Mesaj Body :" + buffer.CreateMessage().GetBody<XmlElement>().InnerXml);
+
             return null;
-        } 
-    
+        }
+
         // Servis metodu tamamlandığında devreye giren metoddur.
         public void BeforeSendReply(ref System.ServiceModel.Channels.Message reply, object correlationState)
         {
             Console.WriteLine("\n\n");
-            Console.WriteLine("*******Reply Bilgisi********"); 
+            Console.WriteLine("*******Reply Bilgisi********");
             Console.WriteLine("Action : " + reply.Headers.Action);
             Console.WriteLine(reply.ToString());
         }
@@ -210,7 +210,7 @@ namespace Sunucu
 
         /* Ek bağlayıcı parametrelerin ilave edilebilmesini sağlayan metoddur. Söz konusu dış ortam parametreleri metoda BindingParameterCollection tipinden aktarılır. WCF çalışma zamanı tarafından servisin dinlediği her bir URI için bir kere çağrılır.*/
         public void AddBindingParameters(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection<ServiceEndpoint> endpoints, BindingParameterCollection bindingParameters)
-        {    
+        {
         }
 
         /* ServisHost nesnesine behavior nesnesinin uygulandığı metoddur. Örnekteki mesaj yakalayıcının uygulanacağı yerdir. Servis tarafından kullanılan her bir EndPointDispatcher nesnesi için birer mesaj yakalayıcı bu metod içerisinden eklenebilir. */
@@ -231,7 +231,7 @@ namespace Sunucu
 
         /* Servisin çalışma zamanında gerekli özellikleri sağlayıp sağlamadığının denetlenebileceği yerdir.Şartlara uymayan durumlarda sözleşmenin geri çevrilmesi amacıyla metod içerisinde exception fırlatılması gibi işlemler yapılabilir */
         public void Validate(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase)
-        {        
+        {
         }
 
         #endregion
@@ -286,7 +286,7 @@ namespace Istemci
     {
         static void Main(string[] args)
         {
-            HesaplamalarClient proxy =new HesaplamalarClient("HesaplamalarClientEndPoint");
+            HesaplamalarClient proxy = new HesaplamalarClient("HesaplamalarClientEndPoint");
 
             Console.WriteLine("Devam etmek için bir tuşa basınız...");
             Console.ReadLine();
@@ -335,13 +335,13 @@ namespace Istemci
             ReliableSessionBindingElement rBinding = new ReliableSessionBindingElement();
             binding.Elements.Add(rBinding);
 
-            SecurityBindingElement sBinding = SecurityBindingElement.CreateSecureConversationBindingElement( SecurityBindingElement.CreateSspiNegotiationBindingElement());
+            SecurityBindingElement sBinding = SecurityBindingElement.CreateSecureConversationBindingElement(SecurityBindingElement.CreateSspiNegotiationBindingElement());
             binding.Elements.Add(sBinding);
 
             TextMessageEncodingBindingElement eBinding = new TextMessageEncodingBindingElement();
             binding.Elements.Add(eBinding);
 
-            TcpTransportBindingElement tcpBinding = new TcpTransportBindingElement(); 
+            TcpTransportBindingElement tcpBinding = new TcpTransportBindingElement();
             binding.Elements.Add(tcpBinding);
 
             IHesaplamalarV2 proxy = ChannelFactory<IHesaplamalarV2>.CreateChannel(binding, new EndpointAddress("net.tcp://localhost:45000/HesaplamaServisi"));

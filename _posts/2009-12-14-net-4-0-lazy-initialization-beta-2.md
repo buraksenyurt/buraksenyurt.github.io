@@ -38,24 +38,64 @@ namespace BeLazy
     }
     class Actor
     {
-        public int ActorId { get; set; }
-        public string Title { get; set; }
-        public string Capability { get; set; }
-        public ActorType ActorType { get; set; }
-        public byte[] Image { get; set; }
+        public int ActorId
+        {
+            get;
+            set;
+        }
+        public string Title
+        {
+            get;
+            set;
+        }
+        public string Capability
+        {
+            get;
+            set;
+        }
+        public ActorType ActorType
+        {
+            get;
+            set;
+        }
+        public byte[] Image
+        {
+            get;
+            set;
+        }
 
         public override string ToString()
         {
-            return string.Format("Actor Id {0} Title {1} Capability {2} Actor Type {3}", ActorId.ToString(), Title, Capability,ActorType.ToString());
+            return string.Format("Actor Id {0} Title {1} Capability {2} Actor Type {3}", ActorId.ToString(), Title, Capability, ActorType.ToString());
         }
     }
     class Scene
     {
-        public int SceneId { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public byte[] Background { get; set; }
-        public List<Actor> Actors { get; set; }
+        public int SceneId
+        {
+            get;
+            set;
+        }
+        public int Width
+        {
+            get;
+            set;
+        }
+        public int Height
+        {
+            get;
+            set;
+        }
+        public byte[] Background
+        {
+            get;
+            set;
+        }
+        public List<Actor> Actors
+        {
+            get;
+            set;
+        }
 
         public override string ToString()
         {
@@ -80,10 +120,10 @@ namespace BeLazy
         {
             Lazy<Scene> lazyScene = new Lazy<Scene>();
 
-            Console.WriteLine("Scene oluşturuldu mu? {0} ",lazyScene.IsValueCreated);
+            Console.WriteLine("Scene oluşturuldu mu? {0} ", lazyScene.IsValueCreated);
             lazyScene.Value.SceneId = 10;
             Console.WriteLine("Scene oluşturuldu mu? {0} ", lazyScene.IsValueCreated);
-            Console.WriteLine("Scene ID : {0}",lazyScene.Value.SceneId.ToString());
+            Console.WriteLine("Scene ID : {0}", lazyScene.Value.SceneId.ToString());
         }
     }
 }
@@ -112,12 +152,13 @@ namespace BeLazy
         static void Main(string[] args)
         {
             Lazy<Actor> azman = new Lazy<Actor>(() =>
-                new Actor {
-                     ActorId=1,
-                      ActorType= ActorType.Computer,
-                       Capability="Çoook!",
-                        Image=new byte[1000],
-                         Title="Azman"
+                new Actor
+                {
+                    ActorId = 1,
+                    ActorType = ActorType.Computer,
+                    Capability = "Çoook!",
+                    Image = new byte[1000],
+                    Title = "Azman"
                 }
                 );
 
@@ -143,11 +184,11 @@ namespace BeLazy
                 }
                 );
 
-            Console.WriteLine("Scene oluşturuldu mu? {0} ",scene.IsValueCreated);
-            Console.WriteLine("Azman oluşturuldu mu= {0}",azman.IsValueCreated);
+            Console.WriteLine("Scene oluşturuldu mu? {0} ", scene.IsValueCreated);
+            Console.WriteLine("Azman oluşturuldu mu= {0}", azman.IsValueCreated);
             Console.WriteLine("Gazman oluşturuldu mu= {0}", gazman.IsValueCreated);
-            
-            Scene currentScene=scene.Value;
+
+            Scene currentScene = scene.Value;
 
             Console.WriteLine("Scene oluşturuldu mu? {0} ", scene.IsValueCreated);
             Console.WriteLine("Azman oluşturuldu mu= {0}", azman.IsValueCreated);
@@ -157,7 +198,7 @@ namespace BeLazy
 
             foreach (Actor actor in currentScene.Actors)
             {
-                Console.WriteLine("\t {0}",actor.ToString());
+                Console.WriteLine("\t {0}", actor.ToString());
             }
         }
     }
@@ -186,7 +227,7 @@ namespace BeLazy
         {
             Contact cntc = new Contact(1, "Burak Selim Şenyurt", "New York", "USA", "1000");
             Console.WriteLine("Contact içerisindeki Address nesnesi üretilmiş mi ? {0}", cntc.IsAddressCreated);
-            Console.WriteLine("{0} {1} {2}",cntc.Address.Country,cntc.Address.City,cntc.Address.PostalCode);
+            Console.WriteLine("{0} {1} {2}", cntc.Address.Country, cntc.Address.City, cntc.Address.PostalCode);
             Console.WriteLine("Contact içerisindeki Address nesnesi üretilmiş mi ? {0}", cntc.IsAddressCreated);
         }
     }
@@ -195,13 +236,14 @@ namespace BeLazy
     {
         private Lazy<Address> _address;
 
-        public Contact(int contactId,string name,string city,string country,string postalCode)
+        public Contact(int contactId, string name, string city, string country, string postalCode)
         {
             _address = new Lazy<Address>(
-                () => new Address {
-                     City=city,
-                     Country=country,
-                     PostalCode=postalCode
+                () => new Address
+                {
+                    City = city,
+                    Country = country,
+                    PostalCode = postalCode
                 }
                 );
 
@@ -223,16 +265,36 @@ namespace BeLazy
                 return _address.IsValueCreated;
             }
         }
-        public int ContactId { get; set; }
-        public string Name { get; set; }
-        
+        public int ContactId
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+
     }
 
     class Address
     {
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string PostalCode { get; set; }
+        public string City
+        {
+            get;
+            set;
+        }
+        public string Country
+        {
+            get;
+            set;
+        }
+        public string PostalCode
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -258,11 +320,11 @@ namespace BeLazy
         {
             Lazy<Information> information = new Lazy<Information>();
 
-            Thread threadA=new Thread(
-                ()=>
+            Thread threadA = new Thread(
+                () =>
                     {
                         Console.WriteLine(information.Value.ToString());
-                        Console.WriteLine("\tThread A Thread Id : {0}",Thread.CurrentThread.ManagedThreadId.ToString());
+                        Console.WriteLine("\tThread A Thread Id : {0}", Thread.CurrentThread.ManagedThreadId.ToString());
                     }
                     );
 

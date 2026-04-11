@@ -74,22 +74,22 @@ DataSet ds;
 
 public void Bagla()
 {
-     if(!t1.IsAlive)
-     {
-          dataGrid1.DataSource=ds.Tables[0];
-     }
+    if (!t1.IsAlive)
+    {
+        dataGrid1.DataSource = ds.Tables[0];
+    }
 }
 
 public void Doldur()
 {
-     SqlConnection conNorthwind=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
-     conNorthwind.Open();
+    SqlConnection conNorthwind = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=sspi");
+    conNorthwind.Open();
 
-     SqlDataAdapter daNorthwind=new SqlDataAdapter("SELECT Products.* From [Order Details] Cross Join Products",conNorthwind);
-     ds=new DataSet();
-     daNorthwind.Fill(ds);
-     conNorthwind.Close();
-     MessageBox.Show("DataTable dolduruldu...");
+    SqlDataAdapter daNorthwind = new SqlDataAdapter("SELECT Products.* From [Order Details] Cross Join Products", conNorthwind);
+    ds = new DataSet();
+    daNorthwind.Fill(ds);
+    conNorthwind.Close();
+    MessageBox.Show("DataTable dolduruldu...");
 }
 
 ThreadStart ts1;
@@ -97,31 +97,31 @@ Thread t1;
 
 private void btnKapat_Click(object sender, System.EventArgs e)
 {
-     if(!t1.IsAlive)
-     {
-          Close();
-     }
-     else
-     {
-          MessageBox.Show("Is parçacigi henüz sonlandirilmadi...Daha sonra tekrar deneyin.");
-     }
+    if (!t1.IsAlive)
+    {
+        Close();
+    }
+    else
+    {
+        MessageBox.Show("Is parçacigi henüz sonlandirilmadi...Daha sonra tekrar deneyin.");
+    }
 }
 
 private void btnCalistir_Click(object sender, System.EventArgs e)
 {
-     ts1=new ThreadStart(Doldur);
-     t1=new Thread(ts1);
-     t1.Start();
+    ts1 = new ThreadStart(Doldur);
+    t1 = new Thread(ts1);
+    t1.Start();
 }
 
 private void btnIptalEt_Click(object sender, System.EventArgs e)
 {
-     t1.Abort();
+    t1.Abort();
 }
 
 private void btnGoster_Click(object sender, System.EventArgs e)
 {
-     Bagla();
+    Bagla();
 }
 ```
 

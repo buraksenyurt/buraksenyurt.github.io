@@ -56,7 +56,7 @@ namespace Problem
                 ((Tif)_image).Draw();
             else
                 Console.WriteLine("Geçersiz format");
-        }    
+        }
     }
 
     class ImageBase
@@ -64,7 +64,7 @@ namespace Problem
     }
 
     class Bmp
-        :ImageBase
+        : ImageBase
     {
         public void Randomize()
         {
@@ -77,7 +77,7 @@ namespace Problem
     }
 
     class Jpg
-        :ImageBase
+        : ImageBase
     {
         public void Randomize()
         {
@@ -90,7 +90,7 @@ namespace Problem
     }
 
     class Tif
-        :ImageBase
+        : ImageBase
     {
         public void Randomize()
         {
@@ -137,7 +137,7 @@ using System;
 namespace Solution
 {
     public class ImageCreator<T>
-        where T:IImage
+        where T : IImage
     {
         private T _image;
 
@@ -163,7 +163,7 @@ namespace Solution
     }
 
     class Bmp
-        :IImage
+        : IImage
     {
         public void Randomize()
         {
@@ -176,7 +176,7 @@ namespace Solution
     }
 
     class Jpg
-        :IImage
+        : IImage
     {
         public void Randomize()
         {
@@ -189,7 +189,7 @@ namespace Solution
     }
 
     class Tif
-        :IImage
+        : IImage
     {
         public void Randomize()
         {
@@ -211,7 +211,7 @@ namespace Solution
 
             ImageCreator<Tif> creator2 = new ImageCreator<Tif>(new Tif());
             creator2.RandomizeImage();
-            creator2.DrawImage();            
+            creator2.DrawImage();
         }
     }
 }

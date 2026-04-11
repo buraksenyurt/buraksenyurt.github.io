@@ -16,23 +16,26 @@ Tabiki insan beyninin büyülü dünyası ve eş zamanlı olarak çalışma yete
 WF 4.0 öncesinde bir Workflow örneğini çalıştırmak için WorkflowRuntime sınıfından yararlanılmaktadır. Aşağıdaki kod parçasında Visual Studio 2008 üzerinde geliştirilen basit bir WF örneğinin çalıştırılması için otomatik olarak üretilen kod görülmektedir.
 
 ```csharp
-using(WorkflowRuntime workflowRuntime = new WorkflowRuntime())
-            {
-                AutoResetEvent waitHandle = new AutoResetEvent(false);
+using (WorkflowRuntime workflowRuntime = new WorkflowRuntime())
+{
+    AutoResetEvent waitHandle = new AutoResetEvent(false);
 
-                workflowRuntime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e) {waitHandle.Set();};
+    workflowRuntime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
+    {
+        waitHandle.Set();
+    };
 
-                workflowRuntime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)
-                {
-                    Console.WriteLine(e.Exception.Message);
-                    waitHandle.Set();
-                };
+    workflowRuntime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
+    {
+        Console.WriteLine(e.Exception.Message);
+        waitHandle.Set();
+    };
 
-                WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(WorkflowConsoleApplication1.Workflow1));
-                instance.Start();
+    WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(WorkflowConsoleApplication1.Workflow1));
+    instance.Start();
 
-                waitHandle.WaitOne();
-            }
+    waitHandle.WaitOne();
+}
 ```
 
 Ancak Workflow Foundation 4.0 içerisinde bir Workflow örneğini çalıştırmak için iki farklı yol sunulmaktadır. İlk yol daha önceki yazı ve görsel derslerimizde de sıklıkla bahsettiğimiz WorkflowInvoker sınıfına ait static Invoke metodunun kullanılmasıdır. Bu tekniğin en önemli özelliği Workflow örneğinin çalıştığı uygulamaya ait Thread içerisinde senkron olaran yürütülmesini sağlamasıdır. Dilerseniz ne demek istediğimize basit bir örnek yardımıyla bakmaya çalışalım. Visual Studio 2010 Ultimate Beta 2 sürümü üzerinden oluşturduğumuz Workflow Console Application içerisinde aşağıdaki Workflow1 içeriği göz önüne alınmaktadır.
@@ -73,7 +76,7 @@ namespace WorkflowConsoleApplication5
             #region Senkron çalışma(Aynı Thread içerisinde)
 
             WorkflowInvoker.Invoke(new Workflow1());
-            Console.WriteLine("Invoke çağrısının hemen sonrası {0} Thread ID :{1}",DateTime.Now.ToLongTimeString(),Thread.CurrentThread.ManagedThreadId.ToString());
+            Console.WriteLine("Invoke çağrısının hemen sonrası {0} Thread ID :{1}", DateTime.Now.ToLongTimeString(), Thread.CurrentThread.ManagedThreadId.ToString());
 
             #endregion
         }
@@ -133,8 +136,8 @@ namespace WorkflowConsoleApplication5
             wfApp.Aborted = (e) =>
                 {
                     // Akışın bir istisna(Exception) nedeniyle iptal olması halinde Exception tipinden olan Reason özelliği değerlendirilir. 
-                    if(e.Reason!=null)
-                        Console.WriteLine("Workflow2 {0} sebebiyle iptal oldu", e.Reason.Message);                    
+                    if (e.Reason != null)
+                        Console.WriteLine("Workflow2 {0} sebebiyle iptal oldu", e.Reason.Message);
                     aResetEvent.Set(); // Workflow' un tamamlandığı bilgisi Thread' e sinyal olarak gönderilir.
                 };
 

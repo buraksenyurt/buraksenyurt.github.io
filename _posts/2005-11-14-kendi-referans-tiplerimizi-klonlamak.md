@@ -30,7 +30,7 @@ public class Dortgen
         }
         set
         {
-            kenarA=value;
+            kenarA = value;
         }
     }
 
@@ -42,25 +42,25 @@ public class Dortgen
         }
         set
         {
-            kenarB=value;
+            kenarB = value;
         }
     }
 
     public Dortgen()
     {
-        kenarA=0;
-        kenarB=0;
+        kenarA = 0;
+        kenarB = 0;
     }
 
-    public Dortgen(double aKenari,double bKenari)
+    public Dortgen(double aKenari, double bKenari)
     {
-        kenarA=aKenari;
-        kenarB=bKenari;
+        kenarA = aKenari;
+        kenarB = bKenari;
     }
 
     public override string ToString()
     {
-        string dortgenBilgi=kenarA.ToString()+" "+kenarB.ToString();
+        string dortgenBilgi = kenarA.ToString() + " " + kenarB.ToString();
         return dortgenBilgi;
     }
 }
@@ -69,18 +69,18 @@ public class Dortgen
 Şimdi Dortgen sınıfınadan iki nesne örneğini kullanacağımız bir console uygulamsına ait Main metodunda, aşağıdaki kod satırlarını yazalım.
 
 ```csharp
-Dortgen drtgX=new Dortgen(10,20);
-Console.WriteLine("X : "+drtgX.ToString());
+Dortgen drtgX = new Dortgen(10, 20);
+Console.WriteLine("X : " + drtgX.ToString());
 
 Dortgen drtgY;
-drtgY=drtgX; // referanslar eşitlenir.
-Console.WriteLine("Y : "+drtgY.ToString());
+drtgY = drtgX; // referanslar eşitlenir.
+Console.WriteLine("Y : " + drtgY.ToString());
 
-drtgY.A=30;
-drtgY.B=40;
+drtgY.A = 30;
+drtgY.B = 40;
 
-Console.WriteLine("Y : "+drtgY.ToString());
-Console.WriteLine("X : "+drtgX.ToString());
+Console.WriteLine("Y : " + drtgY.ToString());
+Console.WriteLine("X : " + drtgX.ToString());
 ```
 
 Burada ilk olarak Dortgen sınıfına ait bir nesne örneğini (drtgX) oluşturuyor. Daha sonra ise drtgY isimli bir nesne örneği oluşturup bu örneğe, drtgX nesnesini atıyoruz. İşte bu noktada her iki nesne örneğinin referans adreslerini eşitlemiş oluyoruz. İzleyen satırlarda bu kez drtgY nesnesi üzerinden A ve B özelliklerinin değerlerini değiştiriyoruz. Az önce yapılan eşleştirme işlemi nedeniyle drtgY nesnesi için gerçekleştirilen değişiklikler drtgX nesnesi içinde söz konusu olacaktır. Dolayısıyla drtgX nesnesini ilk örneklerken belirlenen A ve B değişkenlerinin değerlerini kaybetmiş oluyoruz.
@@ -98,7 +98,7 @@ Elbette ki bazı hallerde referans tiplerinin üyeden üyeye (member by member) 
 ![mk140_1.gif](/assets/images/2005/mk140_1.gif)
 
 ```csharp
-public class Dortgen:ICloneable
+public class Dortgen : ICloneable
 {
     // Diğer kodlar
 
@@ -106,7 +106,7 @@ public class Dortgen:ICloneable
 
     public object Clone()
     {
-        return new Dortgen(this.kenarA,this.kenarB);
+        return new Dortgen(this.kenarA, this.kenarB);
     }
 
     #endregion
@@ -116,7 +116,7 @@ public class Dortgen:ICloneable
 Elbette Clone metodunu atama işlemi sırasında aşağıdaki kod parçasında olduğu gibi kullanmamız gerekir.
 
 ```csharp
-drtgY=(Dortgen)drtgX.Clone();
+drtgY = (Dortgen)drtgX.Clone();
 ```
 
 Clone metodu, Dortgen sınıfına ait yeni bir nesne örneğini o an sahip olduğu A ve B değerleri ile geriye döndürür. Clone metodu varsayılan olarak Object tipinden değerler döndürdüğü için, drtgY nesnesine yapılan atama işlemi sırasında tür dönüşüm işlemi (casting) yaparak uygun tipe atama yapmamız gerekmektedir. Bu işlem ile birlikte bellekte Dortgen sınıfına ait iki nesne örneği için ayrı ayrı adreslemeler söz konusu olacaktır. drgtX nesnesi var olan değerlerini korurken oluşturulduğu sıradaki adreste konuşlanmaya devam edecektir. drtgY nesnemiz ise drtgX nesnesinin o anki içeriğine sahip olmak üzere, belleğin farklı bir adres bölgesinde yeniden örneklendirilecektir. Durumu aşağıdaki şekil ile daha kolay anlayabiliriz.
@@ -151,46 +151,61 @@ public class DortgenHesaplama
 {
 }
 
-public class Dortgen:ICloneable
+public class Dortgen : ICloneable
 {
     private double kenarA;
     private double kenarB;
-    private DortgenHesaplama drgH=new DortgenHesaplama();
+    private DortgenHesaplama drgH = new DortgenHesaplama();
 
     public double A
     {
-        get { return kenarA; }
-        set { kenarA=value; }
+        get
+        {
+            return kenarA;
+        }
+        set
+        {
+            kenarA = value;
+        }
     }
     public double B
     {
-        get { return kenarB; }
-        set { kenarB=value; }
+        get
+        {
+            return kenarB;
+        }
+        set
+        {
+            kenarB = value;
+        }
     }
     public DortgenHesaplama Hesaplama
     {
-        get { return drgH; }
+        get
+        {
+            return drgH;
+        }
     }
     public Dortgen()
     {
-        kenarA=0;
-        kenarB=0;
+        kenarA = 0;
+        kenarB = 0;
     }
 
-    public Dortgen(double aKenari,double bKenari)
+    public Dortgen(double aKenari, double bKenari)
     {
-        kenarA=aKenari;
-        kenarB=bKenari;
+        kenarA = aKenari;
+        kenarB = bKenari;
     }
 
     public override string ToString()
     {
-        string dortgenBilgi=kenarA.ToString()+" "+kenarB.ToString();
+        string dortgenBilgi = kenarA.ToString() + " " + kenarB.ToString();
         return dortgenBilgi;
     }
 
     #region ICloneable Members
-    
+
     public object Clone()
     {
         return this.MemberwiseClone();
@@ -204,17 +219,17 @@ public class Dortgen:ICloneable
 Burada dikkat ederseniz, DortgenHesaplama isimli sınıfa ait bir nesne örneğini Dortgen sınıfı içerisinde kullanmaktayız. Bu, Dortgen referans tipi içerisinde yer alan başka bir referans tipi nesne örneğidir. Atama işlemi sonrası MemberwiseClone metodu DortgenHesaplama sınıfına ait nesne örneğinin sadece adresini kopyalayacaktır. Uygulamamızın kodlarını yukarıdaki Dortgen sınıfına göre aşağıdaki gibi değiştirelim.
 
 ```csharp
-Dortgen drtgX=new Dortgen(10,20);
+Dortgen drtgX = new Dortgen(10, 20);
 Dortgen drtgY;
-drtgY=(Dortgen)drtgX.Clone();
-drtgY.A=30;
-drtgY.B=40;
+drtgY = (Dortgen)drtgX.Clone();
+drtgY.A = 30;
+drtgY.B = 40;
 
-bool refAdrEsitmi=object.ReferenceEquals(drtgX,drtgY);
-Console.WriteLine("drtgX & drtgY referans adresleri eşit mi ?"+refAdrEsitmi.ToString());
+bool refAdrEsitmi = object.ReferenceEquals(drtgX, drtgY);
+Console.WriteLine("drtgX & drtgY referans adresleri eşit mi ?" + refAdrEsitmi.ToString());
 
-refAdrEsitmi=object.ReferenceEquals(drtgX.Hesaplama,drtgY.Hesaplama);
-Console.WriteLine("drtgX.Hesaplama & drtgY.Hesaplama referans adresleri eşit mi ?"+refAdrEsitmi.ToString());
+refAdrEsitmi = object.ReferenceEquals(drtgX.Hesaplama, drtgY.Hesaplama);
+Console.WriteLine("drtgX.Hesaplama & drtgY.Hesaplama referans adresleri eşit mi ?" + refAdrEsitmi.ToString());
 ```
 
 ![mk140_5.gif](/assets/images/2005/mk140_5.gif)

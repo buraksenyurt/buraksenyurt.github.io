@@ -39,32 +39,36 @@ DataSet ds;
 private void btnGetir_Click(object sender, System.EventArgs e)
 {
     /* Sql sunucumuza olan bağlantımız oluşturuluyor. */
-    con=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=SSPI");
+    con = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=SSPI");
 
-    ds=new DataSet(); /* DataSet nesnemiz oluşturuluyor. */
+    ds = new DataSet();
+    /* DataSet nesnemiz oluşturuluyor. */
 
     /* Önce, Uyeler tablomuzdaki verileri alıyor , dtUyeler DataTable'ına yüklüyor ve oluşan veri kümesini temsil eden bu DataTable nesnesinide DataSet nesnemizin tables koleksiyonuna ekliyoruz.*/
-    da=new SqlDataAdapter("Select * From Uyeler",con); 
-    dtUyeler=new DataTable();
+    da = new SqlDataAdapter("Select * From Uyeler", con);
+    dtUyeler = new DataTable();
     da.Fill(dtUyeler);
     ds.Tables.Add(dtUyeler);
 
     /* Aynı işlemi Siparisleri tablosu için yapıyoruz.*/
-    da=new SqlDataAdapter("Select * From Siparisleri",con);
-    dtSiparisleri=new DataTable();
+    da = new SqlDataAdapter("Select * From Siparisleri", con);
+    dtSiparisleri = new DataTable();
     da.Fill(dtSiparisleri);
-    ds.Tables.Add(dtSiparisleri); 
+    ds.Tables.Add(dtSiparisleri);
 
     /* Uyeler tablosundan Siparisleri tablosuna olan (dolayısıyla dtUyeler DataTable nesnesinin bellekte işaret ettiği bölgedeki veri satırlarından, dtSiparisleri dataTable nesnesinin bellekte temsil ettiği bölgedeki veri kümesine olan) bire-çok ilişkiyi tanımlıyoruz. */
-    ds.Relations.Add("Uyeler_Siparisleri",dtUyeler.Columns["UyeID"],dtSiparisleri.Columns["UyeID"],false);
-    
-    dtSiparisleri.Columns.Add("ToplamTutar",typeof(Decimal),"Miktar*BirimFiyat");/* Bu satır ile, dtSiparisleri tablomuzda, her bir satır için Miktar ve BirimFiyat alanlarının değerlerini çarpıyoruz. Çıkan sonuçları ToplamTutar isimli yeni tanımladığımız bir alana içinde tutacak şekilde dtSiparisler DataTable nesnesinin Columns koleksiyonuna ekliyoruz. */
-    
-    dtUyeler.Columns.Add("Siparis Sayisi",typeof(int),"COUNT(Child.UyeID)");/* Burada ise, dtUyeler tablosunda Siparis Sayisi isimli yeni bir alan oluşturuyoruz. Bu alan, ilişkili tablo olan detay tablosundaki UyeId alanlarının sayısını COUNT ile hesaplıyor. Ancak bunu yaparken Child nesnesini kullanıyor. Nitekim burada Child nesnesi, Uyeler tablosundaki her bir uyenin, Siparisleri tablosunda karşılık gelen satırlarını temsil ediyor. */
-    
-    dtUyeler.Columns.Add("Toplam Ödeme",typeof(Decimal),"SUM(Child.ToplamTutar)");/* Burada ise, Child nesnesini kullanarak, var olan ilişki üzerinden, Siparisleri tablosuna gidiyor ve her bir üye için, az önce hesapladığımız ToplamTutar alanlarının toplamını SUM aggregate fonksiyonu ile hesaplıyoruz. Sonuçlarını ise, Toplam Ödeme isimli yeni bir alan olarak Uyeler tablomuza ekliyoruz.*/
+    ds.Relations.Add("Uyeler_Siparisleri", dtUyeler.Columns["UyeID"], dtSiparisleri.Columns["UyeID"], false);
 
-    dgUyeler.DataSource=ds.Tables[0];
+    dtSiparisleri.Columns.Add("ToplamTutar", typeof(Decimal), "Miktar*BirimFiyat");
+    /* Bu satır ile, dtSiparisleri tablomuzda, her bir satır için Miktar ve BirimFiyat alanlarının değerlerini çarpıyoruz. Çıkan sonuçları ToplamTutar isimli yeni tanımladığımız bir alana içinde tutacak şekilde dtSiparisler DataTable nesnesinin Columns koleksiyonuna ekliyoruz. */
+
+    dtUyeler.Columns.Add("Siparis Sayisi", typeof(int), "COUNT(Child.UyeID)");
+    /* Burada ise, dtUyeler tablosunda Siparis Sayisi isimli yeni bir alan oluşturuyoruz. Bu alan, ilişkili tablo olan detay tablosundaki UyeId alanlarının sayısını COUNT ile hesaplıyor. Ancak bunu yaparken Child nesnesini kullanıyor. Nitekim burada Child nesnesi, Uyeler tablosundaki her bir uyenin, Siparisleri tablosunda karşılık gelen satırlarını temsil ediyor. */
+
+    dtUyeler.Columns.Add("Toplam Ödeme", typeof(Decimal), "SUM(Child.ToplamTutar)");
+    /* Burada ise, Child nesnesini kullanarak, var olan ilişki üzerinden, Siparisleri tablosuna gidiyor ve her bir üye için, az önce hesapladığımız ToplamTutar alanlarının toplamını SUM aggregate fonksiyonu ile hesaplıyoruz. Sonuçlarını ise, Toplam Ödeme isimli yeni bir alan olarak Uyeler tablomuza ekliyoruz.*/
+
+    dgUyeler.DataSource = ds.Tables[0];
 }
 ```
 

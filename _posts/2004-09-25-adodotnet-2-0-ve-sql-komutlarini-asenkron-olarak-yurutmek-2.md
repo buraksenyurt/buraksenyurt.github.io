@@ -93,9 +93,9 @@ tanımlaması ile aslında UPDATE_OK isimli metodu işaret eden AsyncCallback ti
 ```csharp
 public static void UPDATE_OK(IAsyncResult r)
 {
-      SqlCommand komut = (SqlCommand)r.AsyncState;
-      int sonuc=komut.EndExecuteNonQuery(r);
-      Console.WriteLine(sonuc + " SATIR GÜNCELLENDİ...");
+    SqlCommand komut = (SqlCommand)r.AsyncState;
+    int sonuc = komut.EndExecuteNonQuery(r);
+    Console.WriteLine(sonuc + " SATIR GÜNCELLENDİ...");
 }
 ```
 

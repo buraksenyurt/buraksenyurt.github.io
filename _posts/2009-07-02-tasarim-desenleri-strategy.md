@@ -34,90 +34,90 @@ using System;
 
 namespace StrategyPattern
 {
-    // Strategy type
-    interface IEncrypter
-    {
-        string Encrypt(string obj);
-        string Decyrpt(string obj);
-    }
+    // Strategy type
+    interface IEncrypter
+    {
+        string Encrypt(string obj);
+        string Decyrpt(string obj);
+    }
 
-    // ConcreteStrategy type 1
-    class RijndaelEncrypter
-        : IEncrypter
-    {
-        #region IEncrypter Members
+    // ConcreteStrategy type 1
+    class RijndaelEncrypter
+        : IEncrypter
+    {
+        #region IEncrypter Members
 
-        public string Encrypt(string obj)
-        {
-            Console.WriteLine("obj için Rijndael şifreleme");
-            return obj;
-        }
+        public string Encrypt(string obj)
+        {
+            Console.WriteLine("obj için Rijndael şifreleme");
+            return obj;
+        }
 
-        public string Decyrpt(string obj)
-        {
-            Console.WriteLine("obj için Rijndael ters şifreleme");
-             return obj;
-        }
+        public string Decyrpt(string obj)
+        {
+            Console.WriteLine("obj için Rijndael ters şifreleme");
+            return obj;
+        }
 
-        #endregion
-    }
+        #endregion
+    }
 
-    // ConcreteStrategy type 1
-    class TripleDesEncrypter
-        : IEncrypter
-    {
-        #region IEncrypter Members
+    // ConcreteStrategy type 1
+    class TripleDesEncrypter
+        : IEncrypter
+    {
+        #region IEncrypter Members
 
-        public string Encrypt(string obj)
-        {
-            Console.WriteLine("obj için TripleDES şifreleme");
-            return obj;
-        }
+        public string Encrypt(string obj)
+        {
+            Console.WriteLine("obj için TripleDES şifreleme");
+            return obj;
+        }
 
-        public string Decyrpt(string obj)
-        {
-            Console.WriteLine("obj için TripleDES ters şifreleme");
-            return obj;
-        }
+        public string Decyrpt(string obj)
+        {
+            Console.WriteLine("obj için TripleDES ters şifreleme");
+            return obj;
+        }
 
-        #endregion
-    }
+        #endregion
+    }
 
-    // Context Type
-    class Encrypter
-    {
-        IEncrypter _enc=null;
+    // Context Type
+    class Encrypter
+    {
+        IEncrypter _enc = null;
 
-        public Encrypter(IEncrypter enc)
-        {
-            _enc = enc;
-        }
+        public Encrypter(IEncrypter enc)
+        {
+            _enc = enc;
+        }
 
-        public string Encrypt(string obj)
-        {
-             return _enc.Encrypt(obj);
-        }
-        public string Decyrpt(string obj)
-        {
-            return _enc.Decyrpt(obj);
-        }
-    }
+        public string Encrypt(string obj)
+        {
+            return _enc.Encrypt(obj);
+        }
+        public string Decyrpt(string obj)
+        {
+            return _enc.Decyrpt(obj);
+        }
+    }
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string str = "<app><config><sqlConnection>data....</sqlConnection></config></app>";
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "<app><config><sqlConnection>data....</sqlConnection></config></app>";
 
-            Encrypter enc1 = new Encrypter(new TripleDesEncrypter());            
-            string encryptedStr=enc1.Encrypt(str);
-            string decryptedStr = enc1.Decyrpt(str);
+            Encrypter enc1 = new Encrypter(new TripleDesEncrypter());
+            string encryptedStr = enc1.Encrypt(str);
+            string decryptedStr = enc1.Decyrpt(str);
 
-            enc1 = new Encrypter(new RijndaelEncrypter());
-            encryptedStr = enc1.Encrypt(str);
-            decryptedStr = enc1.Decyrpt(str);
-        }
-    }
+            enc1 = new Encrypter(new RijndaelEncrypter());
+            encryptedStr = enc1.Encrypt(str);
+            decryptedStr = enc1.Decyrpt(str);
+        }
+    }
 }
 ```
 
@@ -131,16 +131,16 @@ Tabi tam bu noktada insanın aklına C# 3.0 ve bazı şeytanlıklarda gelmiyor d
 
 ```csharp
 class EncrypterV2
-    {
-        public string Encrypt(Func<string,string> function,string obj)
-        {
-            return function(obj);
-        }
-        public string Decyrpt(Func<string, string> function, string obj)
-        {
-            return function(obj);
-        }
-    }
+{
+    public string Encrypt(Func<string, string> function, string obj)
+    {
+        return function(obj);
+    }
+    public string Decyrpt(Func<string, string> function, string obj)
+    {
+        return function(obj);
+    }
+}
 ```
 
 Görüldüğü gibi Encrypt ve Decrypt fonksiyonlarımız Func tipinden bir temsilciyi (delegate) parametre olarak almakta ve içeride uygulamaktadır.Buna göre EncyrpterV2 sınıfımızı kullanacağımız yerde, şifreleme ve ters şifreleme fonksiyonlarının kendimiz yazıp vermeliyiz. (Gerçi bu durumda Context tipinin, algoritmaların nasıl çalıştığı ve yapıldığını bilmesine gerek olmayışı ilkesi ile çelişilmektedir. Bunada dikkat edelim) Yani Context tipini çalışma zamanı için aşağıdaki gibi kullanabiliriz.
@@ -148,19 +148,19 @@ Görüldüğü gibi Encrypt ve Decrypt fonksiyonlarımız Func tipinden bir tems
 ```csharp
 string str = "<app><config><sqlConnection>data....</sqlConnection></config></app>";
 
-            EncrypterV2 v2 = new EncrypterV2();
+EncrypterV2 v2 = new EncrypterV2();
 
-            v2.Encrypt(s =>
-            {
-                Console.WriteLine("{0}\n için TripleDes şifreleme yapılıyor\n", s);
-                return s;
-            },str);
+v2.Encrypt(s =>
+{
+    Console.WriteLine("{0}\n için TripleDes şifreleme yapılıyor\n", s);
+    return s;
+}, str);
 
-            v2.Decyrpt(s =>
-            {
-                Console.WriteLine("{0}\n için TripleDes çözümleme yapılıyor\n", s);
-                return s;
-            }, str);
+v2.Decyrpt(s =>
+{
+    Console.WriteLine("{0}\n için TripleDes çözümleme yapılıyor\n", s);
+    return s;
+}, str);
 ```
 
 Ne diyebilirim ki. C# 3.0 sürpriz yeteneklerle dolu ve bazı temel esaslara bakış açımızı oldukça değiştiriyor.

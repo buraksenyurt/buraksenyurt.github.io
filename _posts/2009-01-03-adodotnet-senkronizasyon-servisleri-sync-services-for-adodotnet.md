@@ -188,11 +188,14 @@ namespace ClientApp
 Tahmin ettiğiniz gibi biz sadece button içeriğini ekliyoruz. Burada ilk olarak bir Agent nesnesi örnekleniyor. Sonrasında ise Synchronize metodu ile senkronizasyon işlemi başlatılıyor. Bu işlemin sonuçlarını istersek üretilen SyncStatistics tipi üzerinden elde edebiliriz ki bunu loglama amacıyla kullanabiliriz. Yaptığımız bu değişiklikler sonrasında uygulamayı test ettiğimizde özellikle çift yönlü olarak bir senkronizasyon işlemi yapılamadığını göreceğiz. Bu sorunu çözmek için aşağıdaki kod parçasında da görüldüğü gibi LocalKitap.sync kod dosyasının içeriğini değiştirmemiz ve senkronizasyon tipini söz konusu Kitap tablosu için belirtmemiz gerekmektedir.
 
 ```csharp
-namespace ClientApp { 
+namespace ClientApp
+{
 
-public partial class LocalAzonSyncAgent {
-    partial void OnInitialized(){
-           Kitap.SyncDirection = Microsoft.Synchronization.Data.SyncDirection.Bidirectional;
+    public partial class LocalAzonSyncAgent
+    {
+        partial void OnInitialized()
+        {
+            Kitap.SyncDirection = Microsoft.Synchronization.Data.SyncDirection.Bidirectional;
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ChinookMusicStoreApp.Web
     using ChinookEDM;
 
     [EnableClientAccess()]
-    public class ChinookDomainService 
+    public class ChinookDomainService
         : LinqToEntitiesDomainService<ChinookEntities>
     {
         // firstLetter parametresi ile başlayan Album' lerin getirilmesini sağlar
@@ -153,7 +153,7 @@ using ChinookClient.ChinookRef;
 
 namespace ChinookClient
 {
-    public partial class Form1 
+    public partial class Form1
         : Form
     {
         ChinookDomainServiceClient proxy;
@@ -175,12 +175,12 @@ namespace ChinookClient
                 btn.Text = ((char)i).ToString();
                 btn.Click += (snd, ea) =>
                     {
-                        grdAlbums.DataSource=proxy.GetAlbumsByFirstLetter(btn.Text).RootResults;
+                        grdAlbums.DataSource = proxy.GetAlbumsByFirstLetter(btn.Text).RootResults;
                     };
                 pnlButtons.Controls.Add(btn);
             }
 
-            cmbArtists.DataSource=proxy.GetArtists().RootResults;
+            cmbArtists.DataSource = proxy.GetArtists().RootResults;
         }
 
         private void btnAddNewAlbum_Click(object sender, EventArgs e)
@@ -190,7 +190,7 @@ namespace ChinookClient
                 Album albm = new Album
                 {
                     Title = txtTitle.Text,
-                     ArtistId=((Artist)cmbArtists.SelectedItem).ArtistId
+                    ArtistId = ((Artist)cmbArtists.SelectedItem).ArtistId
                 };
 
                 ChangeSetEntry[] entry = new ChangeSetEntry[]{

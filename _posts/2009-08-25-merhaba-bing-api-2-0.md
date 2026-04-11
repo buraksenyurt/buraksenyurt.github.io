@@ -72,9 +72,13 @@ using WinClient.net.live.search.api;
 namespace WinClient
 {
     class ThumbImage
-        :PictureBox
+        : PictureBox
     {
-        public ImageResult Result { get; set; }
+        public ImageResult Result
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -122,7 +126,7 @@ namespace WinClient
 
                     SearchResponse response = searchService.Search(request);
 
-                    if (response.Image!=null &&
+                    if (response.Image != null &&
                         response.Image.Results.Length > 0)
                     {
                         foreach (ImageResult imgResult in response.Image.Results)
@@ -133,20 +137,25 @@ namespace WinClient
                                 ImageLocation = imgResult.Thumbnail.Url
                             };
 
-                            img.Click += delegate(object obj, EventArgs args)
+                            img.Click += delegate (object obj, EventArgs args)
                             {
                                 Form frm = new Form()
                                 {
-                                    ControlBox=true
-                                    , MaximizeBox=false
-                                    ,MinimizeBox=false
-                                    , Text=String.Format("{0} X {1} / {2} / {3} bytes",img.Result.Width,img.Result.Height,img.Result.Title,img.Result.FileSize)
+                                    ControlBox = true
+                                    ,
+                                    MaximizeBox = false
+                                    ,
+                                    MinimizeBox = false
+                                    ,
+                                    Text = String.Format("{0} X {1} / {2} / {3} bytes", img.Result.Width, img.Result.Height, img.Result.Title, img.Result.FileSize)
                                 };
-                                PictureBox pb = new PictureBox { 
-                                    ImageLocation =img.Result.MediaUrl
-                                    ,Dock= DockStyle.Fill
+                                PictureBox pb = new PictureBox
+                                {
+                                    ImageLocation = img.Result.MediaUrl
+                                    ,
+                                    Dock = DockStyle.Fill
                                 };
-                                
+
                                 frm.Controls.Add(pb);
                                 frm.Show();
                             };
@@ -163,7 +172,7 @@ namespace WinClient
             }
             else
             {
-                MessageBox.Show("Lütfen aradığınız resim ile ilişkili bir bilgi giriniz","Sonuç", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lütfen aradığınız resim ile ilişkili bir bilgi giriniz", "Sonuç", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

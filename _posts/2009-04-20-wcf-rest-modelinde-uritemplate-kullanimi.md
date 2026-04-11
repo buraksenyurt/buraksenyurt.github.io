@@ -80,16 +80,56 @@ namespace Northwind
 {
     public class Product
     {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public int SupplierID { get; set; }
-        public int CategoryID { get; set; }
-        public string QuantityPerUnit { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short UnitsInStock { get; set; }
-        public short UnitsOnOrder { get; set; }
-        public short ReorderLevel { get; set; }
-        public bool Discontinued { get; set; }
+        public int ProductID
+        {
+            get;
+            set;
+        }
+        public string ProductName
+        {
+            get;
+            set;
+        }
+        public int SupplierID
+        {
+            get;
+            set;
+        }
+        public int CategoryID
+        {
+            get;
+            set;
+        }
+        public string QuantityPerUnit
+        {
+            get;
+            set;
+        }
+        public decimal UnitPrice
+        {
+            get;
+            set;
+        }
+        public short UnitsInStock
+        {
+            get;
+            set;
+        }
+        public short UnitsOnOrder
+        {
+            get;
+            set;
+        }
+        public short ReorderLevel
+        {
+            get;
+            set;
+        }
+        public bool Discontinued
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -102,12 +142,12 @@ using System.ServiceModel.Web;
 using System.Collections.Generic;
 
 namespace Northwind
-{    
+{
     [ServiceContract]
     public interface IProducts
     {
-        [OperationContract]        
-           [WebGet]
+        [OperationContract]
+        [WebGet]
         List<Product> GetProducts(string categoryId);
     }
 }
@@ -122,8 +162,8 @@ using System.Data;
 using System.Collections.Generic;
 
 namespace Northwind
-{    
-    public class Products 
+{
+    public class Products
         : IProducts
     {
         #region IProducts Members
@@ -132,22 +172,22 @@ namespace Northwind
         {
             List<Product> products = new List<Product>();
             Database db = DatabaseFactory.CreateDatabase("NorthConStr");
-            IDataReader reader=db.ExecuteReader("GetProductsByCategory",Convert.ToInt32(categoryId));
+            IDataReader reader = db.ExecuteReader("GetProductsByCategory", Convert.ToInt32(categoryId));
             while (reader.Read())
             {
                 products.Add(
                     new Product
                     {
-                         CategoryID=Convert.ToInt32(reader["CategoryID"]),
-                          ProductID=Convert.ToInt32(reader["ProductID"]),
-                           ProductName=reader["ProductName"].ToString(),
-                            QuantityPerUnit=reader["QuantityPerUnit"].ToString(),
-                             ReorderLevel=Convert.ToInt16(reader["ReorderLevel"]),
-                             SupplierID=Convert.ToInt32(reader["SupplierID"]),
-                              UnitPrice=Convert.ToDecimal(reader["UnitPrice"]),
-                               UnitsInStock=Convert.ToInt16(reader["UnitsInStock"]),
-                                UnitsOnOrder=Convert.ToInt16(reader["UnitsOnOrder"]),
-                                 Discontinued=Convert.ToBoolean(reader["Discontinued"])
+                        CategoryID = Convert.ToInt32(reader["CategoryID"]),
+                        ProductID = Convert.ToInt32(reader["ProductID"]),
+                        ProductName = reader["ProductName"].ToString(),
+                        QuantityPerUnit = reader["QuantityPerUnit"].ToString(),
+                        ReorderLevel = Convert.ToInt16(reader["ReorderLevel"]),
+                        SupplierID = Convert.ToInt32(reader["SupplierID"]),
+                        UnitPrice = Convert.ToDecimal(reader["UnitPrice"]),
+                        UnitsInStock = Convert.ToInt16(reader["UnitsInStock"]),
+                        UnitsOnOrder = Convert.ToInt16(reader["UnitsOnOrder"]),
+                        Discontinued = Convert.ToBoolean(reader["Discontinued"])
                     }
                     );
             }

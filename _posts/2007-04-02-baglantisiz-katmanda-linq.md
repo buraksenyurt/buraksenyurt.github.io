@@ -44,19 +44,26 @@ Artık entity sınıflarımıza ait nesne örneklerini, adWorks üzerinden kulla
 ```csharp
 private DataTable LoadProductsTable()
 {
-    var urunler =from prd in adWorks.Production.Product
-                        select new {
-                                            prd.ProductID
-                                            ,prd.Name
-                                            ,prd.ListPrice
-                                            ,prd.Class
-                                            ,prd.SellStartDate
-                                            ,prd.SafetyStockLevel
-                                            ,prd.StandardCost
-                                        };
+    var urunler = from prd in adWorks.Production.Product
+                  select new
+                  {
+                      prd.ProductID
+                                      ,
+                      prd.Name
+                                      ,
+                      prd.ListPrice
+                                      ,
+                      prd.Class
+                                      ,
+                      prd.SellStartDate
+                                      ,
+                      prd.SafetyStockLevel
+                                      ,
+                      prd.StandardCost
+                  };
 
-    DataTable dtUrunler=new DataTable("Urunler");
-    dtUrunler=urunler.ToDataTable();
+    DataTable dtUrunler = new DataTable("Urunler");
+    dtUrunler = urunler.ToDataTable();
     return dtUrunler;
 }
 ```
@@ -73,9 +80,9 @@ Artık elde ettiğimiz DataTable nesne örneğini herhangibir görsel taşıyıc
 adWorks = new AdventureWorks("data source=localhost;database=AdventureWorks;integrated security=SSPI");
 
 dtUrunler = LoadProductsTable();
-dgUrunler.DataSource=dtUrunler;
+dgUrunler.DataSource = dtUrunler;
 
-label1.Text = "Ürün Sayısı " + (dgUrunler.Rows.Count-1).ToString();
+label1.Text = "Ürün Sayısı " + (dgUrunler.Rows.Count - 1).ToString();
 ```
 
 Programın çalışması sonucu aşağıdaki ekran görüntüsünü elde ederiz. Dikkat ederseniz Product tablosundan 504 adet ürün bilgisi yüklenmiştir.
@@ -87,21 +94,28 @@ Asıl amacımız elbetteki DataTable nesne örneğini doldurmak değildir. Özel
 ```csharp
 var sorgulanabilirUrunler = dtUrunler.ToQueryable();
 
-var sonuclar=from prd in sorgulanabilirUrunler
-                        where prd.Field<DateTime>("SellStartDate")>=dateTimePicker1.Value
-                            select new {
-                                                ProductID=prd.Field<int>("ProductID")
-                                                ,Name=prd.Field<string>("Name")
-                                                ,ListPrice=prd.Field<decimal>("ListPrice")
-                                                ,Class=prd.Field<string>("Class")
-                                                ,SellStartDate=prd.Field<DateTime>("SellStartDate")
-                                                ,SafetyStockLevel=prd.Field<short>("SafetyStockLevel")
-                                                ,StandartCost=prd.Field<decimal>("StandardCost")
-                                            };
+var sonuclar = from prd in sorgulanabilirUrunler
+               where prd.Field<DateTime>("SellStartDate") >= dateTimePicker1.Value
+               select new
+               {
+                   ProductID = prd.Field<int>("ProductID")
+                                   ,
+                   Name = prd.Field<string>("Name")
+                                   ,
+                   ListPrice = prd.Field<decimal>("ListPrice")
+                                   ,
+                   Class = prd.Field<string>("Class")
+                                   ,
+                   SellStartDate = prd.Field<DateTime>("SellStartDate")
+                                   ,
+                   SafetyStockLevel = prd.Field<short>("SafetyStockLevel")
+                                   ,
+                   StandartCost = prd.Field<decimal>("StandardCost")
+               };
 
-dgUrunler.DataSource=sonuclar.ToDataTable();
+dgUrunler.DataSource = sonuclar.ToDataTable();
 
-label1.Text="Ürün Sayısı "+(dgUrunler.Rows.Count-1).ToString();
+label1.Text = "Ürün Sayısı " + (dgUrunler.Rows.Count - 1).ToString();
 ```
 
 Dikkat edeceğimiz ilk nokta ToQueryable metodunun kullanılmasıdır. Bu metodun tek amacı DataTable üzerinde LINQ sorgularının çalıştırılabilmesini sağlamaktır. Aslında ToQueryable, ToDataTable, Field gibi metodlar, System.Data.Extensions.dll içerisinde gelen genişletme metodlarıdır. Bunları görmek için her hangibir decompiler aracını kullanabiliriz. Örneğiz XenoCode Fox 2007 Community Edition aracı yardımıyla System.Data.Extensions.dll içeriğine bakacak olursak aşağıdaki sonuçları alırız.
@@ -119,28 +133,37 @@ Sorgularımızı çeşitlendirebiliriz. Öyleki artık elimizdeki nesne, DataTab
 ```csharp
 private DataTable LoadOrdersTable()
 {
-    var siparisler=from s in north.Orders 
-                            select new {
-                                                s.OrderID
-                                                ,s.ShipAddress
-                                                ,s.ShipCity
-                                                ,s.ShipRegion
-                                                ,s.ShipPostalCode
-                                                ,s.ShipCountry
-                                            };
+    var siparisler = from s in north.Orders
+                     select new
+                     {
+                         s.OrderID
+                                         ,
+                         s.ShipAddress
+                                         ,
+                         s.ShipCity
+                                         ,
+                         s.ShipRegion
+                                         ,
+                         s.ShipPostalCode
+                                         ,
+                         s.ShipCountry
+                     };
 
     return siparisler.ToDataTable();
 }
 
 private DataTable LoadOrderDetailsTable()
 {
-    var siparisDetaylari=from d in north.OrderDetails 
-                                    select new {
-                                                        d.OrderID
-                                                        ,d.UnitPrice
-                                                        ,d.Quantity
-                                                    };
-        
+    var siparisDetaylari = from d in north.OrderDetails
+                           select new
+                           {
+                               d.OrderID
+                                               ,
+                               d.UnitPrice
+                                               ,
+                               d.Quantity
+                           };
+
     return siparisDetaylari.ToDataTable();
 }
 ```
@@ -164,7 +187,7 @@ private void Form1_Load(object sender, EventArgs e)
 
     dtSiparisler = LoadOrdersTable();
     dtSiparisDetaylari = LoadOrderDetailsTable();
-    
+
     dgSiparisler.DataSource = dtSiparisler;
     dgSiparisDetaylari.DataSource = dtSiparisDetaylari;
 }
@@ -174,18 +197,23 @@ private void btnJoin_Click(object sender, EventArgs e)
     var sorgulanabilirOrders = dtSiparisler.ToQueryable();
     var sorgulanabilirOrderDetails = dtSiparisDetaylari.ToQueryable();
 
-    var sonuclar=from o in sorgulanabilirOrders
-                            join od in sorgulanabilirOrderDetails
-                                on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
-                                    select new {
-                                                        SiparisID=o.Field<int>("OrderID")
-                                                        ,BirimFiyat=od.Field<decimal>("UnitPrice")
-                                                        ,Miktar=od.Field<short>("Quantity")
-                                                        ,Sehir=o.Field<string>("ShipCity")
-                                                        ,Ulke=o.Field<string>("ShipCountry")
-                                                    };
+    var sonuclar = from o in sorgulanabilirOrders
+                   join od in sorgulanabilirOrderDetails
+                       on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
+                   select new
+                   {
+                       SiparisID = o.Field<int>("OrderID")
+                                       ,
+                       BirimFiyat = od.Field<decimal>("UnitPrice")
+                                       ,
+                       Miktar = od.Field<short>("Quantity")
+                                       ,
+                       Sehir = o.Field<string>("ShipCity")
+                                       ,
+                       Ulke = o.Field<string>("ShipCountry")
+                   };
 
-    dgJoin.DataSource=sonuclar.ToDataTable();
+    dgJoin.DataSource = sonuclar.ToDataTable();
 }
 ```
 
@@ -202,17 +230,22 @@ Programımızı çalıştırdığımızda aşağıdakine benzer bir ekran görü
 Dilersek join ile yazmış olduğumuz sorgumuza where ile başka kısıtlamalarda katabiliriz. Örneğin, elde edilen sonuç kümesinde Quantity alanının değeri 10' un üzerinde olanları elde etmek için tek yapmamız gereken sorgumuzu aşağıdaki gibi genişletmek olacaktır.
 
 ```csharp
-var sonuclar=from o in sorgulanabilirOrders
-                            join od in sorgulanabilirOrderDetails
-                                on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
-                                              where od.Field<short>("Quantity")>10
-                                    select new {
-                                                        SiparisID=o.Field<int>("OrderID")
-                                                        ,BirimFiyat=od.Field<decimal>("UnitPrice")
-                                                        ,Miktar=od.Field<short>("Quantity")
-                                                        ,Sehir=o.Field<string>("ShipCity")
-                                                        ,Ulke=o.Field<string>("ShipCountry")
-                                                    };
+var sonuclar = from o in sorgulanabilirOrders
+               join od in sorgulanabilirOrderDetails
+                   on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
+               where od.Field<short>("Quantity") > 10
+               select new
+               {
+                   SiparisID = o.Field<int>("OrderID")
+                                   ,
+                   BirimFiyat = od.Field<decimal>("UnitPrice")
+                                   ,
+                   Miktar = od.Field<short>("Quantity")
+                                   ,
+                   Sehir = o.Field<string>("ShipCity")
+                                   ,
+                   Ulke = o.Field<string>("ShipCountry")
+               };
 ```
 
 Where ifadesinde ilgili alanın değerinin karşılaştırma işlemine tabi tutmak için yine Field generic metodundan faydalandığımızda dikkat edelim.
@@ -224,22 +257,27 @@ DataSet ds = new DataSet();
 ds.Tables.Add(dtSiparisler);
 ds.Tables.Add(dtSiparisDetaylari);
 
-DataRelation drOrdToDtl = new DataRelation("OrdToDetails", dtSiparisler.Columns["OrderID"],dtSiparisDetaylari.Columns["OrderID"]);
+DataRelation drOrdToDtl = new DataRelation("OrdToDetails", dtSiparisler.Columns["OrderID"], dtSiparisDetaylari.Columns["OrderID"]);
 ds.Relations.Add(drOrdToDtl);
 
-var sorgulanabilirOrders=dtSiparisler.ToQueryable();
+var sorgulanabilirOrders = dtSiparisler.ToQueryable();
 
-var sonuclar=from o in sorgulanabilirOrders
-                        from od in o.GetChildRows("OrdToDetails")
-                            select new {
-                                                SiparisID=o.Field<int>("OrderID")
-                                                ,BirimFiyat=od.Field<decimal>("UnitPrice")
-                                                ,Miktar=od.Field<short>("Quantity")
-                                                ,Sehir=o.Field<string>("ShipCity")
-                                                ,Ulke=o.Field<string>("ShipCountry")
-                                            };
+var sonuclar = from o in sorgulanabilirOrders
+               from od in o.GetChildRows("OrdToDetails")
+               select new
+               {
+                   SiparisID = o.Field<int>("OrderID")
+                                   ,
+                   BirimFiyat = od.Field<decimal>("UnitPrice")
+                                   ,
+                   Miktar = od.Field<short>("Quantity")
+                                   ,
+                   Sehir = o.Field<string>("ShipCity")
+                                   ,
+                   Ulke = o.Field<string>("ShipCountry")
+               };
 
-dgJoin.DataSource=sonuclar.ToDataTable();
+dgJoin.DataSource = sonuclar.ToDataTable();
 ```
 
 DataSet içerisinde yer alan, dtSiparisler ve dtSiparisDetaylari isimli DataTable nesnelerinin işaret ettiği veri kümeleri arasındaki ilişkimiz OrderID alanları üzerinden Orders'dan OrderDetails'e doğrudur. Bunu DataSet içerisinde tanımlayan ise Ado.Net'in ilk çıkışından beri bildiğimiz DataRelation nesnesidir. LINQ sorgumuz, bu nesneyi GetChildRows isimli metod içerisinde parametre olarak kullanmaktadır.

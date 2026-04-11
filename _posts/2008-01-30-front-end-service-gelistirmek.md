@@ -58,7 +58,7 @@ public interface ICebir
 Cebir sınıfına (Class) ait kod içeriği ise aşağıdaki gibidir.
 
 ```csharp
-[ServiceBehavior(InstanceContextMode= InstanceContextMode.PerCall)]
+[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
 public class Cebir : ICebir
 {
     #region ICebir Members
@@ -151,7 +151,7 @@ namespace HttpClient1
         static void Main(string[] args)
         {
             CebirClient client = new CebirClient();
-            double toplam=client.Topla(4, 5);
+            double toplam = client.Topla(4, 5);
             Console.WriteLine(toplam.ToString());
             Console.WriteLine("Çıkmak için bir tuşa basınız.");
             Console.ReadLine();
@@ -176,7 +176,7 @@ namespace RouterLib
     [ServiceContract]
     public interface IRouterContract
     {
-        [OperationContract(Action="*",ReplyAction="*")]
+        [OperationContract(Action = "*", ReplyAction = "*")]
         Message MesajIsle(Message msg);
     }
 }
@@ -193,7 +193,7 @@ using System.ServiceModel.Channels;
 
 namespace RouterLib
 {
-    [ServiceBehavior(ValidateMustUnderstand=false,InstanceContextMode= InstanceContextMode.PerCall)]
+    [ServiceBehavior(ValidateMustUnderstand = false, InstanceContextMode = InstanceContextMode.PerCall)]
     public class RouterContract : IRouterContract
     {
         private static IChannelFactory<IRequestChannel> fabrika = null;
@@ -209,10 +209,10 @@ namespace RouterLib
         }
 
         #region IRouterContract Members
-    
+
         public Message MesajIsle(Message msg)
         {
-           IRequestChannel kanal = null;
+            IRequestChannel kanal = null;
             Message cevap = null;
             try
             {

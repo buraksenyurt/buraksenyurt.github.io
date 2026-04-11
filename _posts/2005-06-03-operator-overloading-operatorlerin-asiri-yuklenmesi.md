@@ -34,29 +34,29 @@ using System.Windows.Forms;
 
 namespace UsingGDIWithOperatorOverloading
 {
-    public class Dortgen:TemelSekil
+    public class Dortgen : TemelSekil
     {
-        public Dortgen(Panel aktifForm,Color color,int penSize,int x,int y,int width,int height)
+        public Dortgen(Panel aktifForm, Color color, int penSize, int x, int y, int width, int height)
         {
-            base.m_X=x;
-            base.m_Y=y;
-            base.m_Width=width;
-            base.m_Height=height;
-            base.m_Color=color;
-            base.m_PenSize=penSize;
-            base.m_AktifForm=aktifForm; 
+            base.m_X = x;
+            base.m_Y = y;
+            base.m_Width = width;
+            base.m_Height = height;
+            base.m_Color = color;
+            base.m_PenSize = penSize;
+            base.m_AktifForm = aktifForm;
         }
-    
+
         public Dortgen()
-        { 
+        {
         }
 
         public void Ciz()
         {
-            Graphics cizici=m_AktifForm.CreateGraphics();
-            Pen kalem=new Pen(m_Color,m_PenSize);
-            cizici.DrawRectangle(kalem,m_X,m_Y,m_Width,m_Height);
-        }        
+            Graphics cizici = m_AktifForm.CreateGraphics();
+            Pen kalem = new Pen(m_Color, m_PenSize);
+            cizici.DrawRectangle(kalem, m_X, m_Y, m_Width, m_Height);
+        }
     }
 }
 ```
@@ -72,38 +72,38 @@ using System.Windows.Forms;
 
 namespace UsingGDIWithOperatorOverloading
 {
-    public class Elips:TemelSekil
-    { 
-        public Elips(Panel aktifForm,Color color,int penSize,int x,int y,int width,int height)
+    public class Elips : TemelSekil
+    {
+        public Elips(Panel aktifForm, Color color, int penSize, int x, int y, int width, int height)
         {
-            base.m_X=x;
-            base.m_Y=y;
-            base.m_Width=width;
-            base.m_Height=height;
-            base.m_Color=color;
-            base.m_PenSize=penSize;
-            base.m_AktifForm=aktifForm; 
+            base.m_X = x;
+            base.m_Y = y;
+            base.m_Width = width;
+            base.m_Height = height;
+            base.m_Color = color;
+            base.m_PenSize = penSize;
+            base.m_AktifForm = aktifForm;
         }
 
         public Elips()
         {
-    
+
         }
 
         public void Ciz()
         {
-            Graphics cizici=m_AktifForm.CreateGraphics();
-            Pen kalem=new Pen(m_Color,m_PenSize);
-            cizici.DrawEllipse(kalem,m_X,m_Y,m_Width,m_Height);
+            Graphics cizici = m_AktifForm.CreateGraphics();
+            Pen kalem = new Pen(m_Color, m_PenSize);
+            cizici.DrawEllipse(kalem, m_X, m_Y, m_Width, m_Height);
         }
-    
-        public static Elips operator+(Elips k1,Elips k2)
+
+        public static Elips operator +(Elips k1, Elips k2)
         {
-            int R=(k1.m_Color.R+k2.m_Color.R)%255;
-            int G=(k1.m_Color.B+k2.m_Color.B)%255;
-            int B=(k1.m_Color.G+k2.m_Color.G)%255;
-            Color c=Color.FromArgb(R,G,B);
-            Elips elips=new Elips(k1.m_AktifForm,c,k1.m_PenSize+k2.m_PenSize, k1.m_X+k2.m_X,k1.m_Y+k2.m_Y,k1.m_Width+k2.m_Width,k1.m_Height+k2.m_Height);
+            int R = (k1.m_Color.R + k2.m_Color.R) % 255;
+            int G = (k1.m_Color.B + k2.m_Color.B) % 255;
+            int B = (k1.m_Color.G + k2.m_Color.G) % 255;
+            Color c = Color.FromArgb(R, G, B);
+            Elips elips = new Elips(k1.m_AktifForm, c, k1.m_PenSize + k2.m_PenSize, k1.m_X + k2.m_X, k1.m_Y + k2.m_Y, k1.m_Width + k2.m_Width, k1.m_Height + k2.m_Height);
             return elips;
         }
     }
@@ -177,7 +177,7 @@ namespace UsingGDIWithOperatorOverloading
             get
             {
                 return m_PenSize;
-           }
+            }
         }
         public TemelSekil()
         {
@@ -189,7 +189,7 @@ namespace UsingGDIWithOperatorOverloading
 Şimdi gelelim asıl sorunumuza; bir Dortgen nesne örneğini oluşturmak son derece basittir.
 
 ```csharp
-Dortgen dortgen=new Dortgen(this.pnlKaraTahta,Renk,2,Baslangic_X,Baslangic_Y,Genislik,Yukseklik);
+Dortgen dortgen = new Dortgen(this.pnlKaraTahta, Renk, 2, Baslangic_X, Baslangic_Y, Genislik, Yukseklik);
 ```
 
 Hatta bu nesneyi ekrana çizdirmek artık çok daha kolaydır.
@@ -201,9 +201,9 @@ dortgen.Ciz();
 Gel gelelim aşağıdaki kod satırlarının işletilmesi sonrasında nasıl bir sonuç alacağımı meçhuldür?
 
 ```csharp
-Dortgen dortgen1=new Dortgen(this.pnlKaraTahta,Color.Black,2,5,20,100,50);
-Dortgen dortgen2=new Dortgen(this.pnlKaraTahta,Color.Yellow,2,10,40,75,80);
-Dortgen d=dortgen1+dortgen2;
+Dortgen dortgen1 = new Dortgen(this.pnlKaraTahta, Color.Black, 2, 5, 20, 100, 50);
+Dortgen dortgen2 = new Dortgen(this.pnlKaraTahta, Color.Yellow, 2, 10, 40, 75, 80);
+Dortgen d = dortgen1 + dortgen2;
 d.Ciz();
 ```
 
@@ -222,13 +222,13 @@ Sebep gayet açıktır. Dortgen sınıfı toplam işleminin nasıl yapılacağı
 Bu kuralları dikkate aldığımızda Dortgen sınıfı için toplama operatörünü aşağıdaki haliyle aşırı yükleyebiliriz.
 
 ```csharp
-public static Dortgen operator+(Dortgen k1,Dortgen k2)
+public static Dortgen operator +(Dortgen k1, Dortgen k2)
 {
-    int R=(k1.m_Color.R+k2.m_Color.R)%255;
-    int G=(k1.m_Color.B+k2.m_Color.B)%255;
-    int B=(k1.m_Color.G+k2.m_Color.G)%255;
-    Color c=Color.FromArgb(R,G,B);
-    Dortgen Dortgen=new Dortgen(k1.m_AktifForm,c,k1.m_PenSize+k2.m_PenSize,k1.m_X+k2.m_X,k1.m_Y+k2.m_Y, k1.m_Width+k2.m_Width,k1.m_Height+k2.m_Height);
+    int R = (k1.m_Color.R + k2.m_Color.R) % 255;
+    int G = (k1.m_Color.B + k2.m_Color.B) % 255;
+    int B = (k1.m_Color.G + k2.m_Color.G) % 255;
+    Color c = Color.FromArgb(R, G, B);
+    Dortgen Dortgen = new Dortgen(k1.m_AktifForm, c, k1.m_PenSize + k2.m_PenSize, k1.m_X + k2.m_X, k1.m_Y + k2.m_Y, k1.m_Width + k2.m_Width, k1.m_Height + k2.m_Height);
     return Dortgen;
 }
 ```
@@ -240,13 +240,13 @@ Dikkat ederseniz + operatörümüze ilişkin metodumuz, Dortgen tipinde iki nesn
 Toplama operatörüne yaptığımız yüklemeyi diğer operatörlere de yapabiliriz. Ancak aşırı yüklenecek operatörler arasında özel öneme sahip olanlar ve hatta aşırı yükleme yapılamayacak olanlar da vardır. Sözgelimi ekrandaki bir elips şeklini dörtgen tipine çevirmek istediğimizi varsayalım. Burada bilinçsiz olarak aşağıdaki gibi bir atama yapmak isteyebiliriz.
 
 ```csharp
-Dortgen d=elipsOrnegi;
+Dortgen d = elipsOrnegi;
 ```
 
 Diğer yandan bilinçli olarak da aşağıdaki tarzda bir dönüşüm yapmak isteyebiliriz.
 
 ```csharp
-Dortgen d=(Dortgen)elipsOrnegi;
+Dortgen d = (Dortgen)elipsOrnegi;
 ```
 
 Dikkat ederseniz ilk örnekte bilinçsiz, ikinci örnekte ise bilinçli tür dönüşümü söz konusudur. Burada mevzu bahis olan dönüştürme işlemlerini ilgili sınıfa öğretebilmek için yine operatör aşırı yüklemeden faydalanabiliriz. Örneğin aşağıdaki metod bilinçli olarak Dortgen tipine ait cast operatörünü aşırı yüklemektedir.
@@ -254,8 +254,8 @@ Dikkat ederseniz ilk örnekte bilinçsiz, ikinci örnekte ise bilinçli tür dö
 ```csharp
 public static explicit operator Dortgen(Elips elips)
 {
-    TemelSekil ts=elips;
-    Dortgen Dortgen=new Dortgen(ts.AktifForm,ts.Renk,ts.KalemUcu,ts.X,ts.Y,ts.Width,ts.Height);
+    TemelSekil ts = elips;
+    Dortgen Dortgen = new Dortgen(ts.AktifForm, ts.Renk, ts.KalemUcu, ts.X, ts.Y, ts.Width, ts.Height);
     return Dortgen;
 }
 ```
@@ -265,8 +265,8 @@ Metodumuzda dikkat çeken en önemli nokta explicit anahtar sözcüğüdür. Bu 
 ```csharp
 public static implicit operator Dortgen(Elips elips)
 {
-    TemelSekil ts=elips;
-    Dortgen Dortgen=new Dortgen(ts.AktifForm,ts.Renk,ts.KalemUcu,ts.X,ts.Y,ts.Width,ts.Height);
+    TemelSekil ts = elips;
+    Dortgen Dortgen = new Dortgen(ts.AktifForm, ts.Renk, ts.KalemUcu, ts.X, ts.Y, ts.Width, ts.Height);
     return Dortgen;
 }
 ```
@@ -278,8 +278,8 @@ Elbette dönüştürme operatörlerinin aşırı yüklenmesi ile ilgili olarakta
 Ancak, sadece implicit operatörünün yüklemesi ile, çalışma zamanında hem explicit hem de implicit dönüşümlere izin vermiş oluruz. Yani aşağıdaki iki kod satırıda başarılı bir şekilde çalışacaktır.
 
 ```csharp
-Dortgen dortgen=elipsNesnesi1;
-Dortgen dortgen2=(Dortgen)elipsNesnesi2;
+Dortgen dortgen = elipsNesnesi1;
+Dortgen dortgen2 = (Dortgen)elipsNesnesi2;
 ```
 
 Görüldüğü gibi operatörlerin aşırı yüklenmesi son derece kolay. Bunları kullandığımız windows uygulamasına ait kod satırları ise aşağıdaki gibidir.
@@ -295,52 +295,52 @@ private ArrayList alElipsler;
 
 private void menuElipsToDortgen_Click(object sender, System.EventArgs e)
 {
-    if(alElipsler.Count>0)
+    if (alElipsler.Count > 0)
     {
-        Elips el=(Elips)alElipsler[0];
-        Dortgen dortgen=el;
+        Elips el = (Elips)alElipsler[0];
+        Dortgen dortgen = el;
         dortgen.Ciz();
     }
 }
 
 private void BaslangicAyarlari()
 {
-    lblSecilenRenk.Text=Renk.Name;
-    lblRenk.BackColor=Renk; 
+    lblSecilenRenk.Text = Renk.Name;
+    lblRenk.BackColor = Renk;
 }
 
 private void btnRenkSec_Click(object sender, System.EventArgs e)
 {
     colors.ShowDialog();
-    Renk=colors.Color;
+    Renk = colors.Color;
     BaslangicAyarlari();
 }
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-    Renk=Color.Black;
-    alDortgenler=new ArrayList();
-    alElipsler=new ArrayList();
+    Renk = Color.Black;
+    alDortgenler = new ArrayList();
+    alElipsler = new ArrayList();
     BaslangicAyarlari();
 }
 
 private void pnlKaraTahta_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
 {
-    Baslangic_X=e.X;
-    Baslangic_Y=e.Y;
+    Baslangic_X = e.X;
+    Baslangic_Y = e.Y;
 }
 
 private void Ciz()
 {
-    if(rdbDortgen.Checked==true)
+    if (rdbDortgen.Checked == true)
     {
-        Dortgen dortgen=new Dortgen(this.pnlKaraTahta,Renk,2,Baslangic_X,Baslangic_Y,Genislik,Yukseklik);
+        Dortgen dortgen = new Dortgen(this.pnlKaraTahta, Renk, 2, Baslangic_X, Baslangic_Y, Genislik, Yukseklik);
         dortgen.Ciz();
         alDortgenler.Add(dortgen);
     }
-    if(rdbElips.Checked==true)
+    if (rdbElips.Checked == true)
     {
-        Elips elips=new Elips(this.pnlKaraTahta,Renk,2,Baslangic_X,Baslangic_Y,Genislik,Yukseklik);
+        Elips elips = new Elips(this.pnlKaraTahta, Renk, 2, Baslangic_X, Baslangic_Y, Genislik, Yukseklik);
         elips.Ciz();
         alElipsler.Add(elips);
     }
@@ -348,27 +348,27 @@ private void Ciz()
 
 private void menuTopla_Click(object sender, System.EventArgs e)
 {
-    if(alDortgenler.Count>=2)
+    if (alDortgenler.Count >= 2)
     {
-        Dortgen d1=(Dortgen)alDortgenler[0];
-        Dortgen d2=(Dortgen)alDortgenler[1];
-        Dortgen d3=d1+d2;
+        Dortgen d1 = (Dortgen)alDortgenler[0];
+        Dortgen d2 = (Dortgen)alDortgenler[1];
+        Dortgen d3 = d1 + d2;
         d3.Ciz();
     }
 }
 private void menuTemizle_Click(object sender, System.EventArgs e)
 {
     this.Refresh();
-    Baslangic_X=0;
-    Baslangic_Y=0;
+    Baslangic_X = 0;
+    Baslangic_Y = 0;
     alDortgenler.Clear();
     alElipsler.Clear();
 }
 
 private void pnlKaraTahta_DoubleClick(object sender, System.EventArgs e)
 {
-    Genislik=Convert.ToInt32(txtGenislik.Text);
-    Yukseklik=Convert.ToInt32(txtYukseklik.Text);
+    Genislik = Convert.ToInt32(txtGenislik.Text);
+    Yukseklik = Convert.ToInt32(txtYukseklik.Text);
     Ciz();
 }
 
@@ -387,17 +387,17 @@ Dortgen sınıfı içerisinde aritmetik operatörlerin ve dönüştürme operat�
 Dortgen.cs sınıfına eklenen operator metodlarımız;
 
 ```csharp
-public static bool operator==(Dortgen d1,Dortgen d2)
+public static bool operator ==(Dortgen d1, Dortgen d2)
 {
-    if((d1.Width==d2.Width)&&(d1.Height==d2.Height))
+    if ((d1.Width == d2.Width) && (d1.Height == d2.Height))
         return true;
     else
         return false;
 }
 
-public static bool operator !=(Dortgen d1,Dortgen d2)
+public static bool operator !=(Dortgen d1, Dortgen d2)
 {
-    return !(d1==d2);
+    return !(d1 == d2);
 }
 ```
 
@@ -406,13 +406,13 @@ Operatörlerin uygulama içerisinde kullanımı;
 ```csharp
 private void menuEsitmi_Click(object sender, System.EventArgs e)
 {
-    Dortgen d1=(Dortgen)alDortgenler[0];
-    Dortgen d2=(Dortgen)alDortgenler[1];
-    if(d1==d2)
+    Dortgen d1 = (Dortgen)alDortgenler[0];
+    Dortgen d2 = (Dortgen)alDortgenler[1];
+    if (d1 == d2)
     {
         MessageBox.Show("Dortgenlerin boyutları eşit...");
     }
-    if(d1!=d2)
+    if (d1 != d2)
     {
         MessageBox.Show("Dörtgenlerin boyutları eşit değil...");
     }

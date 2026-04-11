@@ -36,28 +36,46 @@ namespace StrongCollections
 
         public int ISBN
         {
-            get{return m_ISBN;}
-            set{m_ISBN=value;}
+            get
+            {
+                return m_ISBN;
+            }
+            set
+            {
+                m_ISBN = value;
+            }
         }
         public string Baslik
         {
-            get{return m_Baslik;}
-            set{m_Baslik=value;}
+            get
+            {
+                return m_Baslik;
+            }
+            set
+            {
+                m_Baslik = value;
+            }
         }
         public int Fiyat
         {
-            get{return m_Fiyat;}
-            set{m_Fiyat=value;}
+            get
+            {
+                return m_Fiyat;
+            }
+            set
+            {
+                m_Fiyat = value;
+            }
         }
-        public Kitap(int isbn,string baslik,int fiyat)
+        public Kitap(int isbn, string baslik, int fiyat)
         {
-            m_ISBN=isbn;
-            m_Baslik=baslik;
-            m_Fiyat=fiyat;
+            m_ISBN = isbn;
+            m_Baslik = baslik;
+            m_Fiyat = fiyat;
         }
         public override string ToString()
         {
-            return m_ISBN.ToString()+" "+m_Baslik+" "+m_Fiyat.ToString();
+            return m_ISBN.ToString() + " " + m_Baslik + " " + m_Fiyat.ToString();
         }
         public Kitap()
         {
@@ -78,11 +96,11 @@ using System.Collections;
 
 namespace StrongCollections
 {
-    public class KitapKoleksiyon:DictionaryBase
+    public class KitapKoleksiyon : DictionaryBase
     {
-        public void Ekle(int isbn,Kitap kitap)
+        public void Ekle(int isbn, Kitap kitap)
         {
-            Dictionary.Add(isbn,kitap);
+            Dictionary.Add(isbn, kitap);
         }
         public void Cikart(int isbn)
         {
@@ -98,12 +116,18 @@ namespace StrongCollections
         }
         public Kitap this[int isbn]
         {
-            get{return (Kitap)Dictionary[isbn];}
-            set{Dictionary[isbn]=value;}
+            get
+            {
+                return (Kitap)Dictionary[isbn];
+            }
+            set
+            {
+                Dictionary[isbn] = value;
+            }
         }
         public IEnumerator NumaratorAl()
         {
-             return Dictionary.Keys.GetEnumerator();
+            return Dictionary.Keys.GetEnumerator();
         }
         public KitapKoleksiyon()
         {
@@ -125,45 +149,45 @@ namespace StrongCollections
     class Uygulama
     {
         static KitapKoleksiyon kitapCol;
-    
+
         static void Listele()
-        { 
-            IEnumerator numarator=kitapCol.NumaratorAl();
-            while(numarator.MoveNext())
+        {
+            IEnumerator numarator = kitapCol.NumaratorAl();
+            while (numarator.MoveNext())
             {
                 Console.WriteLine(kitapCol[Convert.ToInt32(numarator.Current)].ToString());
             }
         }
-    
+
         static void KoleksiyonOlustur()
         {
-            kitapCol.Ekle(1000,new Kitap(1000,"Her Yönüyle C#",1));
-            kitapCol.Ekle(1001,new Kitap(1001,"Thinking in C#",1));
-            kitapCol.Ekle(1002,new Kitap(1002,"Truva",1));
-            kitapCol.Ekle(1003,new Kitap(1003,"Java in a Nuthshell",1));
+            kitapCol.Ekle(1000, new Kitap(1000, "Her Yönüyle C#", 1));
+            kitapCol.Ekle(1001, new Kitap(1001, "Thinking in C#", 1));
+            kitapCol.Ekle(1002, new Kitap(1002, "Truva", 1));
+            kitapCol.Ekle(1003, new Kitap(1003, "Java in a Nuthshell", 1));
         }
 
         static void Main(string[] args)
         {
             // KitapKoleksiyon nesne örneğimizi oluşturuyoruz.
-            kitapCol=new KitapKoleksiyon();
+            kitapCol = new KitapKoleksiyon();
             // Koleksiyonumuza bir kaç örnek Kitap elemanını ekliyoruz.( key-value çifti olarak)
             KoleksiyonOlustur();
             // Koleksiyonumuzdaki elemanları listeliyoruz.
             Listele();
             Console.WriteLine("-------------");
             // Koleksiyonda belirtilen isbn değerine sahip Kitap nesnesi olup olmadığına bakıyoruz. (Sonuçlar bool tipinden)
-            Console.WriteLine("ISBN: 1000 var mı? {0}",kitapCol.Varmi(1000));
-            Console.WriteLine("ISBN: 9999 var mı? {0}",kitapCol.Varmi(9999));
+            Console.WriteLine("ISBN: 1000 var mı? {0}", kitapCol.Varmi(1000));
+            Console.WriteLine("ISBN: 9999 var mı? {0}", kitapCol.Varmi(9999));
             Console.WriteLine("-------------");
             // Koleksiyonumuzdan key değeri 1001 olan key-value çiftini çıkartıyoruz.
             kitapCol.Cikart(1001);
-            Console.WriteLine("ISBN: 1001 çıktı"); 
+            Console.WriteLine("ISBN: 1001 çıktı");
             // Koleksiyonumuzdaki elemanların son halini listeliyoruz. (Artık 1001 numaraları eleman yok)
             Listele();
             Console.WriteLine("-------------");
             // Koleksiyonumuzda 1003 isbn değerine sahip key-value çiftini buluyoruz.
-            Kitap bulunanKitap=kitapCol.Bul(1003);
+            Kitap bulunanKitap = kitapCol.Bul(1003);
             // Bulunan Kitap nesnesinin içeriğini override ettiğimiz ToString metodu ile ekrana yazdırıyoruz.
             Console.WriteLine(bulunanKitap.ToString());
         }

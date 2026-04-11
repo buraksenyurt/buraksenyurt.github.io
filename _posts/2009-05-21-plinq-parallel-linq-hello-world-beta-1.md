@@ -48,15 +48,15 @@ namespace HelloWorld
                           where p.ListPrice >= 10 && p.InStock == true
                           orderby p.Name descending
                           select p;
-            Console.WriteLine("Toplam {0} adet ürün bulundu",result1.ToList().Count.ToString());
+            Console.WriteLine("Toplam {0} adet ürün bulundu", result1.ToList().Count.ToString());
 
-            Console.WriteLine("Toplam süre {0}",watch.ElapsedMilliseconds.ToString());
+            Console.WriteLine("Toplam süre {0}", watch.ElapsedMilliseconds.ToString());
             Console.WriteLine("Parallel Olduğunda");
 
             Stopwatch watch2 = Stopwatch.StartNew();
 
             var result2 = from p in products.AsParallel()
-                          where p.ListPrice >= 10 && p.InStock==true
+                          where p.ListPrice >= 10 && p.InStock == true
                           orderby p.Name descending
                           select p;
             Console.WriteLine("Toplam {0} adet ürün bulundu", result2.ToList().Count.ToString());
@@ -70,11 +70,15 @@ namespace HelloWorld
 
             for (long i = 1; i < 1750000; i++)
             {
-                Product prd = new Product { 
+                Product prd = new Product
+                {
                     Id = i
-                    , Name = "Product" + i.ToString()
-                    , ListPrice = i * 0.1M
-                    , InStock=i%2==0?true:false
+                    ,
+                    Name = "Product" + i.ToString()
+                    ,
+                    ListPrice = i * 0.1M
+                    ,
+                    InStock = i % 2 == 0 ? true : false
                 };
                 products.Add(prd);
             }
@@ -83,13 +87,29 @@ namespace HelloWorld
         }
     }
 
-    
+
     class Product
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public decimal ListPrice { get; set; }
-        public bool InStock { get; set; }
+        public long Id
+        {
+            get;
+            set;
+        }
+        public string Name
+        {
+            get;
+            set;
+        }
+        public decimal ListPrice
+        {
+            get;
+            set;
+        }
+        public bool InStock
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -111,17 +131,18 @@ Bu ekran görüntüsünde yer alan sonuçlar tam anlamıyla durmun net analizi o
 Yazdığım örnek kod parçasında işlemleri gerçekten yavaşlatmak adına bir sıralama işlemide kullandım. Anacak bunun yapılması zorunlu değildir. Özellikle sıralama kullanılmadığında sorgu çalıştırma sürelerinin birbirlerine çok yakın olduğunu gördüm. Açıkçası, PLINQ'in avantajı gerçekten çok uzun sürebilecek sorgular söz konusu olduğunda ortaya çıkmata. Bu nedenle her LINQ sorgusunun PLINQ formatına dönüştürülmesininde anlamlı olmadığını (olmayacağını) söyleyebiliriz. Nitekim, bazı durumlarda herşey tersine dönebilir. Örneğin aşağıdaki kod parçasını göz önüne alalım.
 
 ```csharp
-int[] values = new int[100];Random rnd = new Random();
+int[] values = new int[100];
+Random rnd = new Random();
 for (int i = 1; i < values.Length; i++)
 {
- values[i] = rnd.Next(1, 1000);
+    values[i] = rnd.Next(1, 1000);
 }
 
 Stopwatch watch3 = Stopwatch.StartNew();
 var result3 = from value in values
               where value % 2 == 0
               select value;
-Console.WriteLine("Toplam {0} çift sayı var",result3.ToList().Count.ToString());
+Console.WriteLine("Toplam {0} çift sayı var", result3.ToList().Count.ToString());
 Console.WriteLine(watch3.ElapsedMilliseconds.ToString());
 
 Stopwatch watch4 = Stopwatch.StartNew();

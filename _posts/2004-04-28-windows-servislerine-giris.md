@@ -126,14 +126,17 @@ Bir EventLog nesnesi oluşturduktan sonra, bu nesne üzerinden CreateEventSource
 ```csharp
 protected override void OnStart(string[] args)
 {
-    OlayLog=new EventLog(); /* EventLog nesnemizi olusturuyoruz.*/
+    OlayLog = new EventLog();
+    /* EventLog nesnemizi olusturuyoruz.*/
 
-    if(!System.Diagnostics.EventLog.SourceExists("Kaynak")) 
+    if (!System.Diagnostics.EventLog.SourceExists("Kaynak"))
     {
-        System.Diagnostics.EventLog.CreateEventSource("Kaynak","Log Deneme"); /* Ilk parametre ile, Log Deneme ismi altinda tutulacak Log bilgilerinin kaynak ismi belirleniyor. Daha sonra bu kaynak ismi OlayLog isimli nesnemizin Source özelligine ataniyor.*/
+        System.Diagnostics.EventLog.CreateEventSource("Kaynak", "Log Deneme");
+        /* Ilk parametre ile, Log Deneme ismi altinda tutulacak Log bilgilerinin kaynak ismi belirleniyor. Daha sonra bu kaynak ismi OlayLog isimli nesnemizin Source özelligine ataniyor.*/
     }
-    OlayLog.Source="Kaynak";
-    OlayLog.WriteEntry("Servisimiz baslatildi...",EventLogEntryType.Information); /* Log olarak ilk parametrede belirtilen mesaj yazilir. Log'un tipi ise ikinci parametrede görüldügü gibi Information'dir.*/
+    OlayLog.Source = "Kaynak";
+    OlayLog.WriteEntry("Servisimiz baslatildi...", EventLogEntryType.Information);
+    /* Log olarak ilk parametrede belirtilen mesaj yazilir. Log'un tipi ise ikinci parametrede görüldügü gibi Information'dir.*/
 }
 ```
 
@@ -170,16 +173,16 @@ namespace OrnekServis
         {
             InitializeComponent();
         }
-        protected override void Dispose( bool disposing )
+        protected override void Dispose(bool disposing)
         {
-            if( disposing )
+            if (disposing)
             {
-                if(components != null)
+                if (components != null)
                 {
                     components.Dispose();
                 }
             }
-            base.Dispose( disposing );
+            base.Dispose(disposing);
         }
         private void InitializeComponent()
         {
@@ -188,7 +191,7 @@ namespace OrnekServis
             this.serviceProcessInstaller1.Password = null;
             this.serviceProcessInstaller1.Username = null;
             this.serviceInstaller1.ServiceName = "Service1";
-            this.Installers.AddRange(new System.Configuration.Install.Installer[] {this.serviceProcessInstaller1,this.serviceInstaller1});
+            this.Installers.AddRange(new System.Configuration.Install.Installer[] { this.serviceProcessInstaller1, this.serviceInstaller1 });
 
         }
     }

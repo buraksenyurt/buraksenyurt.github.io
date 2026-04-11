@@ -62,15 +62,27 @@ namespace WFCostFactory
         Consumer,
         Corporate
     }
-    public sealed partial class Costflow 
+    public sealed partial class Costflow
             : SequentialWorkflowActivity
     {
         #region Workflow özellikleri(Properties)
 
         // Dış ortamdan gelen parametreler
-        public int TotalDays { get; set; }
-        public decimal CostValue { get; set; } 
-        public WorkType WorkT { get; set; } // Dış ortama sonuç olarak döndürülen parametre
+        public int TotalDays
+        {
+            get;
+            set;
+        }
+        public decimal CostValue
+        {
+            get;
+            set;
+        }
+        public WorkType WorkT
+        {
+            get;
+            set;
+        } // Dış ortama sonuç olarak döndürülen parametre
 
         #endregion
 
@@ -118,7 +130,7 @@ namespace WFCostFactory
         static void Main(string[] args)
         {
             // Workflow Runtime nesnesi örneklenir
-            using(wfRuntime = new WorkflowRuntime())
+            using (wfRuntime = new WorkflowRuntime())
             {
                 wHandle = new AutoResetEvent(false);
 
@@ -137,7 +149,7 @@ namespace WFCostFactory
                 wfRuntime.WorkflowSuspended += new EventHandler<WorkflowSuspendedEventArgs>(wfRuntime_WorkflowSuspended);
                 wfRuntime.WorkflowTerminated += new EventHandler<WorkflowTerminatedEventArgs>(wfRuntime_WorkflowTerminated);
                 wfRuntime.WorkflowUnloaded += new EventHandler<WorkflowEventArgs>(wfRuntime_WorkflowUnloaded);
-                wfRuntime.WorkflowCompleted+=new EventHandler<WorkflowCompletedEventArgs>(wfRuntime_WorkflowCompleted);
+                wfRuntime.WorkflowCompleted += new EventHandler<WorkflowCompletedEventArgs>(wfRuntime_WorkflowCompleted);
 
                 #endregion
 
@@ -145,8 +157,8 @@ namespace WFCostFactory
                 // TotalDays ve WorkT özellikleri için ilk değerler set edilir
                 WorkflowInstance instance = wfRuntime.CreateWorkflow(
                     typeof(WFCostFactory.Costflow)
-                    , new Dictionary<string,object>
-                        { 
+                    , new Dictionary<string, object>
+                        {
                             {"TotalDays",20}
                             ,{"WorkT",WorkType.Corporate}
                         }
@@ -162,15 +174,15 @@ namespace WFCostFactory
         {
             Console.WriteLine("{0} : Event : {1}, InstanceId : {2}", DateTime.Now, "WorkflowUnloaded", e.WorkflowInstance.InstanceId.ToString());
         }
-    
+
         static void wfRuntime_WorkflowTerminated(object sender, WorkflowTerminatedEventArgs e)
         {
-            Console.WriteLine("{0} : Event : {1}, InstanceId : {2} Exception Message : {3}", DateTime.Now, "WorkflowTerminated",             e.WorkflowInstance.InstanceId.ToString(), e.Exception.Message);
+            Console.WriteLine("{0} : Event : {1}, InstanceId : {2} Exception Message : {3}", DateTime.Now, "WorkflowTerminated", e.WorkflowInstance.InstanceId.ToString(), e.Exception.Message);
             wHandle.Set();
         }
 
         static void wfRuntime_WorkflowSuspended(object sender, WorkflowSuspendedEventArgs e)
-        { 
+        {
             Console.WriteLine("{0} : Event : {1}, InstanceId : {2}", DateTime.Now, "WorkflowSuspended", e.WorkflowInstance.InstanceId.ToString());
         }
 
@@ -205,7 +217,7 @@ namespace WFCostFactory
         }
 
         static void wfRuntime_WorkflowCompleted(object sender, WorkflowCompletedEventArgs e)
-        { 
+        {
             Console.WriteLine("{0} : Event : {1}, InstanceId : {2}", DateTime.Now, "WorkflowCompleted", e.WorkflowInstance.InstanceId.ToString());
             Console.WriteLine("Maliyet : {0}", e.OutputParameters["CostValue"].ToString());
             wHandle.Set();
@@ -220,10 +232,10 @@ namespace WFCostFactory
         {
             Console.WriteLine("{0} : Event : {1}, IsStarted : {2}", DateTime.Now, "WFRuntime_Stopped", e.IsStarted.ToString());
         }
-    
+
         static void wfRuntime_ServicesExceptionNotHandled(object sender, ServicesExceptionNotHandledEventArgs e)
         {
-            Console.WriteLine("{0} : InstanceId : {1} Event : {2}, Exception Message : {3}", DateTime.Now, e.WorkflowInstanceId.ToString(),"WF        Runtime_ServicesExceptionNotHandled",e.Exception.Message);
+            Console.WriteLine("{0} : InstanceId : {1} Event : {2}, Exception Message : {3}", DateTime.Now, e.WorkflowInstanceId.ToString(), "WF        Runtime_ServicesExceptionNotHandled", e.Exception.Message);
         }
 
         static void wfRuntime_Started(object sender, WorkflowRuntimeEventArgs e)
@@ -365,8 +377,8 @@ Burada hemen bir noktayı vurgulamak isterim. Söz konusu örnek bu haliyle çal
 ```csharp
 WorkflowInstance instance = wfRuntime.CreateWorkflow(
         typeof(WFCostFactory.Costflow)
-        , new Dictionary<string,object>
-        { 
+        , new Dictionary<string, object>
+        {
             {"TotalDays",20}
             ,{"WorkT",WorkType.Corporate}
             ,{"Owner",new Customer{ Id=1000, Name="Burak Selim Şenyurt"}}
@@ -384,8 +396,16 @@ Dikkat edileceği üzere, WorkflowPersisted olay metodunun hemen arkasından Wor
 [Serializable]
 public class Customer
 {
-    public string Name { get; set; }
-    public int Id { get; set; }
+    public string Name
+    {
+        get;
+        set;
+    }
+    public int Id
+    {
+        get;
+        set;
+    }
 }
 ```
 

@@ -104,37 +104,37 @@ private DataTable dt;
 
 private void BaslangicAyarlari()
 {
-    con=new SqlConnection("data source=localhost;initial catalog=bsenyurt;integrated security=SSPI");
-    cmd=new SqlCommand("sp_AraBul",con);
-    cmd.CommandType=CommandType.StoredProcedure;
-    cmd.Parameters.Add("@Aranan",SqlDbType.NVarChar,255);
-    da=new SqlDataAdapter(cmd);
-    dt=new DataTable();
+    con = new SqlConnection("data source=localhost;initial catalog=bsenyurt;integrated security=SSPI");
+    cmd = new SqlCommand("sp_AraBul", con);
+    cmd.CommandType = CommandType.StoredProcedure;
+    cmd.Parameters.Add("@Aranan", SqlDbType.NVarChar, 255);
+    da = new SqlDataAdapter(cmd);
+    dt = new DataTable();
 }
 private void Page_Load(object sender, System.EventArgs e)
 {
     BaslangicAyarlari();
-} 
+}
 
 private void btnBul_Click(object sender, System.EventArgs e)
 {
-    cmd.Parameters["@Aranan"].Value=txtArananKelime.Text;
+    cmd.Parameters["@Aranan"].Value = txtArananKelime.Text;
     try
     {
-        if(con.State==ConnectionState.Closed)
+        if (con.State == ConnectionState.Closed)
             con.Open();
         da.Fill(dt);
-        dgSonuclar.DataSource=dt;
+        dgSonuclar.DataSource = dt;
         dgSonuclar.DataBind();
     }
-    catch(SqlException hata)
+    catch (SqlException hata)
     {
-        Label1.Text=hata.Message.ToString();
+        Label1.Text = hata.Message.ToString();
     }
     finally
     {
-        if(con.State==ConnectionState.Open)
-        con.Close();
+        if (con.State == ConnectionState.Open)
+            con.Close();
     }
 }
 ```

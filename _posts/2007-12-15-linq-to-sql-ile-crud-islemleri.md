@@ -31,11 +31,12 @@ Artık bu noktadan sonra AdventureDataContext sınıfına ait nesne örneklerini
 ```csharp
 AdventureDataContext adwContext = new AdventureDataContext();
 
-ProductCategory tools = new ProductCategory() 
-                                                                        { 
-                                                                            Name = "Tools" 
-                                                                            , ModifiedDate=new DateTime(2001,1,1)
-                                                                        };
+ProductCategory tools = new ProductCategory()
+{
+    Name = "Tools"
+                                                                            ,
+    ModifiedDate = new DateTime(2001, 1, 1)
+};
 
 adwContext.ProductCategories.InsertOnSubmit(tools);
 ```
@@ -44,9 +45,9 @@ adwContext.ProductCategories.InsertOnSubmit(tools);
 
 ```csharp
 var categories = from category in adwContext.ProductCategories
-                            select category.Name; 
+                 select category.Name;
 
-foreach(string ctgr in categories)
+foreach (string ctgr in categories)
     Console.WriteLine(ctgr);
 ```
 
@@ -113,14 +114,14 @@ Gelelim silme işlemlerine. Silme (Delete) operasyonlarındada ekleme işlemleri
 
 ```csharp
 ProductCategory silinecekVeri = (from cat in adwContext.ProductCategories
-                                                        where cat.ProductCategoryID == 25
-                                                            select cat).Single<ProductCategory>();
+                                 where cat.ProductCategoryID == 25
+                                 select cat).Single<ProductCategory>();
 
 adwContext.ProductCategories.DeleteOnSubmit(silinecekVeri);
 
 var silinenler = adwContext.GetChangeSet().Deletes;
 
-foreach(ProductCategory silinen in silinenler)
+foreach (ProductCategory silinen in silinenler)
     Console.WriteLine(silinen.Name);
 
 adwContext.SubmitChanges();
@@ -172,8 +173,8 @@ Görüldüğü gibi sadece ProductCategoryID alanı WHERE ifadesinden sonrasına
 
 ```csharp
 var kategoriGecenler = from k in adwContext.ProductCategories
-                                        where k.Name.Contains("Kategori")
-                                            select k;
+                       where k.Name.Contains("Kategori")
+                       select k;
 
 adwContext.ProductCategories.DeleteAllOnSubmit<ProductCategory>(kategoriGecenler);
 
@@ -188,8 +189,8 @@ Gelelim güncelleme (Update) işlemlerine. Güncelleme süreçlerinde, Insert ve
 
 ```csharp
 var guncellenecekler = from p in adwContext.Products
-                                    where p.ProductSubcategoryID == 1
-                                        select p;
+                       where p.ProductSubcategoryID == 1
+                       select p;
 
 foreach (Product prd in guncellenecekler)
     prd.ListPrice += 10;
@@ -237,23 +238,36 @@ Normal şartlarda SubmitChanges metodunun çağırılmasından sonra güncelleme
 
 ```csharp
 var guncellenecekler = from p in adwContext.Products
-                            where p.Class == "M" && p.ProductSubcategoryID==1
-                                select p;
+                       where p.Class == "M" && p.ProductSubcategoryID == 1
+                       select p;
 
 foreach (Product prd in guncellenecekler)
     prd.ListPrice += 10;
 
-Product newProduct = new Product() 
-    { 
-        Name = "Yeni Urun"
-        , ProductSubcategoryID = 1, Color = "Red"
-        , Class = "M", ListPrice = 100
-        , ProductNumber = "PRD-1204", ReorderPoint = 10
-        , StandardCost = 90, ProductModelID = 123
-        , SafetyStockLevel = 45,SellStartDate=new DateTime(2007,1,1)
-        , SellEndDate=new DateTime(2008,1,1), DiscontinuedDate=new DateTime(2006,6,6)
-        , ModifiedDate=DateTime.Now
-    };
+Product newProduct = new Product()
+{
+    Name = "Yeni Urun"
+        ,
+    ProductSubcategoryID = 1,
+    Color = "Red"
+        ,
+    Class = "M",
+    ListPrice = 100
+        ,
+    ProductNumber = "PRD-1204",
+    ReorderPoint = 10
+        ,
+    StandardCost = 90,
+    ProductModelID = 123
+        ,
+    SafetyStockLevel = 45,
+    SellStartDate = new DateTime(2007, 1, 1)
+        ,
+    SellEndDate = new DateTime(2008, 1, 1),
+    DiscontinuedDate = new DateTime(2006, 6, 6)
+        ,
+    ModifiedDate = DateTime.Now
+};
 
 adwContext.Products.InsertOnSubmit(newProduct);
 
@@ -268,24 +282,37 @@ Dikkat edilecek olursa Insert ve Update ifadelerinin tamamı aynı Transaction i
 
 ```csharp
 var guncellenecekler = from p in adwContext.Products
-                            where p.Class == "M" && p.ProductSubcategoryID==1
-                                select p;
+                       where p.Class == "M" && p.ProductSubcategoryID == 1
+                       select p;
 
 foreach (Product prd in guncellenecekler)
     prd.ListPrice += 10;
 adwContext.SubmitChanges();
 
-Product newProduct = new Product() 
-    { 
-        Name = "Yeni Urun"
-        , ProductSubcategoryID = 1, Color = "Red"
-        , Class = "M", ListPrice = 100
-        , ProductNumber = "PRD-1204", ReorderPoint = 10
-        , StandardCost = 90, ProductModelID = 123
-        , SafetyStockLevel = 45,SellStartDate=new DateTime(2007,1,1)
-        , SellEndDate=new DateTime(2008,1,1), DiscontinuedDate=new DateTime(2006,6,6)
-        , ModifiedDate=DateTime.Now
-    };
+Product newProduct = new Product()
+{
+    Name = "Yeni Urun"
+        ,
+    ProductSubcategoryID = 1,
+    Color = "Red"
+        ,
+    Class = "M",
+    ListPrice = 100
+        ,
+    ProductNumber = "PRD-1204",
+    ReorderPoint = 10
+        ,
+    StandardCost = 90,
+    ProductModelID = 123
+        ,
+    SafetyStockLevel = 45,
+    SellStartDate = new DateTime(2007, 1, 1)
+        ,
+    SellEndDate = new DateTime(2008, 1, 1),
+    DiscontinuedDate = new DateTime(2006, 6, 6)
+        ,
+    ModifiedDate = DateTime.Now
+};
 
 adwContext.Products.InsertOnSubmit(newProduct);
 
@@ -302,25 +329,38 @@ Görüldüğü gibi SubmitChanges her çağırıldığında o ana kadar gerçekl
 using (TransactionScope tScope = new TransactionScope())
 {
     var guncellenecekler = from p in adwContext.Products
-                                        where p.Class == "M" && p.ProductSubcategoryID==1
-                                            select p;
+                           where p.Class == "M" && p.ProductSubcategoryID == 1
+                           select p;
 
     foreach (Product prd in guncellenecekler)
         prd.ListPrice += 10;
 
     adwContext.SubmitChanges();
 
-    Product newProduct = new Product() 
-        { 
-            Name = "Yeni Urun"
-            , ProductSubcategoryID = 1, Color = "Red"
-            , Class = "M", ListPrice = 100
-            , ProductNumber = "PRD-1204", ReorderPoint = 10
-            , StandardCost = 90, ProductModelID = 123
-            , SafetyStockLevel = 45, SellStartDate=new DateTime(2007,1,1)
-            , SellEndDate=new DateTime(2008,1,1), DiscontinuedDate=new DateTime(2006,6,6)
-            , ModifiedDate=DateTime.Now
-        };
+    Product newProduct = new Product()
+    {
+        Name = "Yeni Urun"
+            ,
+        ProductSubcategoryID = 1,
+        Color = "Red"
+            ,
+        Class = "M",
+        ListPrice = 100
+            ,
+        ProductNumber = "PRD-1204",
+        ReorderPoint = 10
+            ,
+        StandardCost = 90,
+        ProductModelID = 123
+            ,
+        SafetyStockLevel = 45,
+        SellStartDate = new DateTime(2007, 1, 1)
+            ,
+        SellEndDate = new DateTime(2008, 1, 1),
+        DiscontinuedDate = new DateTime(2006, 6, 6)
+            ,
+        ModifiedDate = DateTime.Now
+    };
 
     adwContext.Products.InsertOnSubmit(newProduct);
     adwContext.SubmitChanges();
@@ -337,8 +377,8 @@ TransactionScope kullanımı dışında yerel transaction kullanılarakta ilgili
 try
 {
     var guncellenecekler = from p in adwContext.Products
-                                        where p.Class == "M" && p.ProductSubcategoryID == 1
-                                            select p;
+                           where p.Class == "M" && p.ProductSubcategoryID == 1
+                           select p;
 
     foreach (Product prd in guncellenecekler)
         prd.ListPrice += 10;
@@ -351,17 +391,30 @@ try
 
     adwContext.SubmitChanges();
 
-    Product newProduct = new Product() 
-        { 
-            Name = "Yeni Urun"
-            , ProductSubcategoryID = 1, Color = "Red"
-            , Class = "M", ListPrice = 100
-            , ProductNumber = "PRD-1204", ReorderPoint = 10
-            , StandardCost = 90, ProductModelID = 123
-            , SafetyStockLevel = 45, SellStartDate=new DateTime(2007,1,1)
-            , SellEndDate=new DateTime(2008,1,1), DiscontinuedDate=new DateTime(2006,6,6)
-            , ModifiedDate=DateTime.Now
-        };
+    Product newProduct = new Product()
+    {
+        Name = "Yeni Urun"
+            ,
+        ProductSubcategoryID = 1,
+        Color = "Red"
+            ,
+        Class = "M",
+        ListPrice = 100
+            ,
+        ProductNumber = "PRD-1204",
+        ReorderPoint = 10
+            ,
+        StandardCost = 90,
+        ProductModelID = 123
+            ,
+        SafetyStockLevel = 45,
+        SellStartDate = new DateTime(2007, 1, 1)
+            ,
+        SellEndDate = new DateTime(2008, 1, 1),
+        DiscontinuedDate = new DateTime(2006, 6, 6)
+            ,
+        ModifiedDate = DateTime.Now
+    };
 
     adwContext.Products.InsertOnSubmit(newProduct);
 

@@ -82,27 +82,28 @@ public SqlConnection(string connectionString);
 ```csharp
 private void btnInsert_Click(object sender, System.EventArgs e)
 {
-     conFriends.Open();/* Baglanti açiliyor. SqlCommand nesnesi ile ilgili ayarlamalara geçiliyor. Komut SQL Server’ da Friends database’inde yazili olan "Insert Friend" isimli Saklı Yordam’ı çalistiracak. Bu Procedure’ ün ismini, CommandText parametresine geçirdikten sonar ikinci parameter olarak SqlConnection nesnemizi belirtiyoruz.*/
-     SqlCommand cmdInsert = new SqlCommand("Insert Friend",conFriends);
+    conFriends.Open();
+    /* Baglanti açiliyor. SqlCommand nesnesi ile ilgili ayarlamalara geçiliyor. Komut SQL Server’ da Friends database’inde yazili olan "Insert Friend" isimli Saklı Yordam’ı çalistiracak. Bu Procedure’ ün ismini, CommandText parametresine geçirdikten sonar ikinci parameter olarak SqlConnection nesnemizi belirtiyoruz.*/
+    SqlCommand cmdInsert = new SqlCommand("Insert Friend", conFriends);
 
-     /* SqlCommand nesnesinin CommandType degerinide CommandType.StoredProcedure yapiyoruz. Bu sayede CommandText’e girilen değerin bir Saklı Yordam’e işaret ettiğini belirtmiş oluyoruz.*/
-     cmdInsert.CommandType=CommandType.StoredProcedure;
-     /* Şimdi bu Saklı Yordam için gerekli parametreleri olusturacagiz. Bunun için SqlCommand nesnesininin parameters koleksiyonunun Add metodunu kullaniyoruz. Parametreleri eklerken, parametre isimlerinin SQL Server’da yer alan Saklı Yordamlardaki parametre isimleri ile ayni olmasina ve baslarina @ isareti gelmesine dikkat ediyoruz. Bu Add metodunun ilk parametresinde belirtiliyor. Add metodu ikinci parametre olarak bu parametrenin veri tipini alıyor. Üçüncü parametresi ise bu parametrik degiskenin boyutu oluyor.*/
-     SqlParameter paramFirstName=cmdInsert.Parameters.Add("@fn",SqlDbType.NVarChar,50);
-     /* Burada SqlCommand nesnesine @fn isimli nvarchar tipinde ve uzunluğu 50 karaketerden olusan bir parametre ekleniyor. Aynı şekilde diğer parametrelerimizi de belirtiyoruz.*/
+    /* SqlCommand nesnesinin CommandType degerinide CommandType.StoredProcedure yapiyoruz. Bu sayede CommandText’e girilen değerin bir Saklı Yordam’e işaret ettiğini belirtmiş oluyoruz.*/
+    cmdInsert.CommandType = CommandType.StoredProcedure;
+    /* Şimdi bu Saklı Yordam için gerekli parametreleri olusturacagiz. Bunun için SqlCommand nesnesininin parameters koleksiyonunun Add metodunu kullaniyoruz. Parametreleri eklerken, parametre isimlerinin SQL Server’da yer alan Saklı Yordamlardaki parametre isimleri ile ayni olmasina ve baslarina @ isareti gelmesine dikkat ediyoruz. Bu Add metodunun ilk parametresinde belirtiliyor. Add metodu ikinci parametre olarak bu parametrenin veri tipini alıyor. Üçüncü parametresi ise bu parametrik degiskenin boyutu oluyor.*/
+    SqlParameter paramFirstName = cmdInsert.Parameters.Add("@fn", SqlDbType.NVarChar, 50);
+    /* Burada SqlCommand nesnesine @fn isimli nvarchar tipinde ve uzunluğu 50 karaketerden olusan bir parametre ekleniyor. Aynı şekilde diğer parametrelerimizi de belirtiyoruz.*/
 
-     SqlParameter paramLastName=cmdInsert.Parameters.Add("@ln",SqlDbType.NVarChar,50);
-     SqlParameter paramBirthDay=cmdInsert.Parameters.Add("@bd",SqlDbType.DateTime);
-     SqlParameter paramJob=cmdInsert.Parameters.Add("@j",SqlDbType.NVarChar,50);
-     // Şimdide paremetrelerimize degerlerini verelim.
-     paramFirstName.Value=txtFirstName.Text;
-     paramLastName.Value=txtLastName.Text;
-     paramBirthDay.Value=dtBirthDay.Text;
-     paramJob.Value=txtJob.Text;
-     // Böylece ilgili paremetrelere degerleri geçirilmis oldu. simdi komutu çalistiralim.
-     cmdInsert.ExecuteNonQuery();
-     /* Böylece Saklı Yordamimiz, paremetrelerine atanan yeni degerler ile çalisitirlir. Bunun sonucu olarak SQL Server’ daki Saklı Yordama burada belirttiğimiz parametre değerleri gider ve insert cümleciği çalıştırılarak yeni bir kayit eklenmis olur.*/
-     conFriends.Close(); // Son olarak SqlConnection’ ımızı kapatıyoruz.
+    SqlParameter paramLastName = cmdInsert.Parameters.Add("@ln", SqlDbType.NVarChar, 50);
+    SqlParameter paramBirthDay = cmdInsert.Parameters.Add("@bd", SqlDbType.DateTime);
+    SqlParameter paramJob = cmdInsert.Parameters.Add("@j", SqlDbType.NVarChar, 50);
+    // Şimdide paremetrelerimize degerlerini verelim.
+    paramFirstName.Value = txtFirstName.Text;
+    paramLastName.Value = txtLastName.Text;
+    paramBirthDay.Value = dtBirthDay.Text;
+    paramJob.Value = txtJob.Text;
+    // Böylece ilgili paremetrelere degerleri geçirilmis oldu. simdi komutu çalistiralim.
+    cmdInsert.ExecuteNonQuery();
+    /* Böylece Saklı Yordamimiz, paremetrelerine atanan yeni degerler ile çalisitirlir. Bunun sonucu olarak SQL Server’ daki Saklı Yordama burada belirttiğimiz parametre değerleri gider ve insert cümleciği çalıştırılarak yeni bir kayit eklenmis olur.*/
+    conFriends.Close(); // Son olarak SqlConnection’ ımızı kapatıyoruz.
 }
 ```
 

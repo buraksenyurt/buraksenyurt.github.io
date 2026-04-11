@@ -45,37 +45,43 @@ DataSet ds;
 
 private void Form1_Load(object sender, System.EventArgs e)
 {
-     conFriends=new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
-     daSiparis=new SqlDataAdapter("Select * From Siparis",conFriends);
-     daSepet=new SqlDataAdapter("Select * From Sepet",conFriends);
-     dtSiparis=new DataTable("Siparisler");
-     dtSepet=new DataTable("SiparisDetaylari");
-     daSiparis.Fill(dtSiparis);
-     daSepet.Fill(dtSepet);
-     dtSiparis.PrimaryKey=new DataColumn[] {dtSiparis.Columns["SiparisID"]}; 
-     /* Sıra geldi foreignKeyConstraint tanımlamamıza. */
-     fkSiparisToSepet=new ForeignKeyConstraint("fkS_S",dtSiparis.Columns["SiparisID"],dtSepet.Columns["SiparisID"]); /* Öncelikle yeni bir ForeignKeyConstraint nesnesi tanımlıyoruz.*/
-     fkSiparisToSepet.DeleteRule=Rule.Cascade; /* Delete işleminde uygulanacak kuralı belirliyoruz.*/
-     fkSiparisToSepet.UpdateRule=Rule.Cascade;/* Güncelleme işleminde uygulanacak kuralı belirliyoruz.*/
-     fkSiparisToSepet.AcceptRejectRule=AcceptRejectRule.Cascade;/* AcceptChanges ve RejectChanges metodları çağırılıdığında uygulanacak olan kuralları belirliyoruz.*/
-     ds=new DataSet();
-     ds.Tables.Add(dtSiparis);
-     ds.Tables.Add(dtSepet);
-     ds.Tables["SiparisDetaylari"].Constraints.Add(fkSiparisToSepet);/* Oluşturduğumuz kısıtlamayı ilgili tablonun Constraints koleksiyonuna ekliyoruz. */
-     ds.EnforceConstraints=true; /* Dataset'in barındırdığı kısıtlamaları uygulatmasını bildiriyoruz. False değeri atarsak dataset nesnesinin içerdiği tablo(lara) ait      kısıtlamalar görmezden gelinir.*/
-     dataGrid1.DataSource=ds;
+    conFriends = new SqlConnection("data source=localhost;initial catalog=Friends;integrated security=sspi");
+    daSiparis = new SqlDataAdapter("Select * From Siparis", conFriends);
+    daSepet = new SqlDataAdapter("Select * From Sepet", conFriends);
+    dtSiparis = new DataTable("Siparisler");
+    dtSepet = new DataTable("SiparisDetaylari");
+    daSiparis.Fill(dtSiparis);
+    daSepet.Fill(dtSepet);
+    dtSiparis.PrimaryKey = new DataColumn[] { dtSiparis.Columns["SiparisID"] };
+    /* Sıra geldi foreignKeyConstraint tanımlamamıza. */
+    fkSiparisToSepet = new ForeignKeyConstraint("fkS_S", dtSiparis.Columns["SiparisID"], dtSepet.Columns["SiparisID"]);
+    /* Öncelikle yeni bir ForeignKeyConstraint nesnesi tanımlıyoruz.*/
+    fkSiparisToSepet.DeleteRule = Rule.Cascade;
+    /* Delete işleminde uygulanacak kuralı belirliyoruz.*/
+    fkSiparisToSepet.UpdateRule = Rule.Cascade;
+    /* Güncelleme işleminde uygulanacak kuralı belirliyoruz.*/
+    fkSiparisToSepet.AcceptRejectRule = AcceptRejectRule.Cascade;
+    /* AcceptChanges ve RejectChanges metodları çağırılıdığında uygulanacak olan kuralları belirliyoruz.*/
+    ds = new DataSet();
+    ds.Tables.Add(dtSiparis);
+    ds.Tables.Add(dtSepet);
+    ds.Tables["SiparisDetaylari"].Constraints.Add(fkSiparisToSepet);
+    /* Oluşturduğumuz kısıtlamayı ilgili tablonun Constraints koleksiyonuna ekliyoruz. */
+    ds.EnforceConstraints = true;
+    /* Dataset'in barındırdığı kısıtlamaları uygulatmasını bildiriyoruz. False değeri atarsak dataset nesnesinin içerdiği tablo(lara) ait      kısıtlamalar görmezden gelinir.*/
+    dataGrid1.DataSource = ds;
 }
 private void btnSil_Click(object sender, System.EventArgs e)
 {
-     try
-     {
-          DataRow CurrentRow=dtSiparis.Rows.Find(txtSiparisID.Text);
-          CurrentRow.Delete();
-     }
-     catch(Exception hata)
-     {
-          MessageBox.Show(hata.Source+":"+hata.Message);
-     }     
+    try
+    {
+        DataRow CurrentRow = dtSiparis.Rows.Find(txtSiparisID.Text);
+        CurrentRow.Delete();
+    }
+    catch (Exception hata)
+    {
+        MessageBox.Show(hata.Source + ":" + hata.Message);
+    }
 }
 ```
 

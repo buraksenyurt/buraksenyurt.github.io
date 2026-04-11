@@ -28,7 +28,10 @@ Dikkat ederseniz WebPartEventHandler temsilcisi standart bir olay temsilcisidir.
 Bize gereken tiplerin neler olduğunu öğrendik. Peki bunları kendi Web Part kontrolümüzde nasıl ele alacağız. Bunun için WebPart sınıfından türetme yoluyla kendi Web Part kontrol sınıfımıza gelen Verbs isimli özelliğin ezilmesi (override) gerekmektedir.
 
 ```csharp
-public virtual WebPartVerbCollection Verbs { get; }
+public virtual WebPartVerbCollection Verbs
+{
+    get;
+}
 ```
 
 Yukarıda prototipi görünen bu özellik, yanlız okunabilir (read only) bir özelliktir ve geriye WebPartVerbCollection tipinden bir referans döndürmektedir. WebPartVerbCollection sınıfı türlendirilmiş (strongly typed) bir koleksiyonu temsil etmekte ve Web Part bileşenine eklenecek ekstra fiileri taşımaktadır. Dolayısıyla bu özelliğin get bloğu içerisinde istediğimiz fiileri (Verbs) oluşturmamız ve gereken olay metodu yüklemelerini yapmamız gerekecektir.
@@ -55,7 +58,7 @@ Ziyaretçinin görmek istediği kategorinin bilgisini ise ResimKategori isimli �
 
 ```csharp
 [ToolboxData("<{0}:ResimPart runat=server></{0}:ResimPart>")]
-public class ResimPart:WebPart
+public class ResimPart : WebPart
 {
     #region Kişiselleştirilebilir özellikler için alan tanımlamaları
 
@@ -73,8 +76,14 @@ public class ResimPart:WebPart
     [Personalizable(PersonalizationScope.User, false)]
     public ResimKategorisi Kategori
     {
-        get { return _kategori; }
-        set { _kategori = value; }
+        get
+        {
+            return _kategori;
+        }
+        set
+        {
+            _kategori = value;
+        }
     }
 
     [WebBrowsable(true)]
@@ -83,8 +92,14 @@ public class ResimPart:WebPart
     [Personalizable(PersonalizationScope.User, false)]
     public int GosterilecekResimSayisi
     {
-        get{return _gosterilecekResimSayisi <= 0 ? 1 : _gosterilecekResimSayisi;}
-        set{_gosterilecekResimSayisi = value <= 0 ? 1 : value;}
+        get
+        {
+            return _gosterilecekResimSayisi <= 0 ? 1 : _gosterilecekResimSayisi;
+        }
+        set
+        {
+            _gosterilecekResimSayisi = value <= 0 ? 1 : value;
+        }
     }
 
     [WebBrowsable(true)]
@@ -93,9 +108,15 @@ public class ResimPart:WebPart
     [Personalizable(PersonalizationScope.User, false)]
     public Yon CizimYonu
     {
-        get{return _cizimYonu;}
-        set{_cizimYonu = value;}
-    } 
+        get
+        {
+            return _cizimYonu;
+        }
+        set
+        {
+            _cizimYonu = value;
+        }
+    }
 
     #endregion
 }
@@ -176,7 +197,7 @@ protected override void CreateChildControls()
     int siraNo = 0;
 
     try
-    { 
+    {
         FileInfo[] resimDosyalari = DosyalariAl(fizikiKlasor);
         Random rnd = new Random();
         Table tablo = new Table();
@@ -190,7 +211,7 @@ protected override void CreateChildControls()
                 TableCell hucre = HucreOlustur(sanalResimAdresi, siraNo, resimDosyalari);
                 satir.Cells.Add(hucre);
                 tablo.Rows.Add(satir);
-            } 
+            }
         }
         else if (CizimYonu == Yon.YatayYon)
         {
@@ -198,7 +219,7 @@ protected override void CreateChildControls()
             for (int i = 0; i < GosterilecekResimSayisi; i++)
             {
                 siraNo = rnd.Next(0, resimDosyalari.Length);
-                TableCell hucre=HucreOlustur(sanalResimAdresi, siraNo, resimDosyalari);
+                TableCell hucre = HucreOlustur(sanalResimAdresi, siraNo, resimDosyalari);
                 satir.Cells.Add(hucre);
             }
             tablo.Rows.Add(satir);
@@ -245,7 +266,7 @@ Daha sonra VerbUygula isimli metodumuzu aşağıdaki gibi kodlamamız yeterli ol
 ```csharp
 public void VerbUygula(object sender, WebPartEventArgs e)
 {
-    string tetiklenenVerbId=((WebPartVerb)sender).ID;
+    string tetiklenenVerbId = ((WebPartVerb)sender).ID;
     if (tetiklenenVerbId == "DikeyDizilim")
         CizimYonu = Yon.DikeyYon;
     else if (tetiklenenVerbId == "YatayDizilim")
@@ -280,7 +301,7 @@ public override WebPartVerbCollection Verbs
 
             vrbDikey.Text = "Dikey Diz";
             vrbYatay.Text = "Yatay Diz";
-    
+
             WebPartVerb[] verbs = new WebPartVerb[2];
             verbs[0] = vrbDikey;
             verbs[1] = vrbYatay;

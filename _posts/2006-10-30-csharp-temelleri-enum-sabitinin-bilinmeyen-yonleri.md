@@ -68,7 +68,7 @@ Belkide ilk akla gelen yöntem bir switch case yada çoklu if kullanımı olacak
 ```csharp
 private Sekil SecilenSekil(string sekilAdi)
 {
-    Sekil skl=0;
+    Sekil skl = 0;
     switch (sekilAdi)
     {
         case "Kare":
@@ -132,9 +132,9 @@ Bir enum sabiti içerisindeki değerleri ToString metodu yardımıyla farklı fo
 public enum Yetki
 {
     Caylak = 1
-    ,Uzman = 2
-    ,Profesyonel = 4
-    ,Tecrubeli = 6 // Bu değer sonradan başımıza iş açabilir.
+    , Uzman = 2
+    , Profesyonel = 4
+    , Tecrubeli = 6 // Bu değer sonradan başımıza iş açabilir.
 }
 ```
 
@@ -203,9 +203,9 @@ Dikkat ederseniz ToString metodunun varsayılan ile G parametresi kullanılan ve
 public enum Yetki
 {
     Caylak = 1
-    ,Uzman = 2
-    ,Profesyonel = 4
-    ,Tecrubeli = 6
+    , Uzman = 2
+    , Profesyonel = 4
+    , Tecrubeli = 6
 }
 ```
 
@@ -249,9 +249,9 @@ Gördüğünüz gibi oldukça ilginç sonuçlar elde ettik. Pek çok kombinasyon
 public enum Yetki
 {
     Caylak = 1
-    ,Uzman = 2
-    ,Profesyonel = 4
-    ,Tecrubeli = 8
+    , Uzman = 2
+    , Profesyonel = 4
+    , Tecrubeli = 8
 }
 ```
 
@@ -268,22 +268,22 @@ IsDefined, her hangibir enum değişkeninin ilgili enum sabiti içerisinde var o
 ```csharp
 public enum Parca
 {
-    Islemci=1
-    ,Harddisk=2
-    ,Ram=4
-    ,EkranKarti=8
-    ,SesKarti=16
+    Islemci = 1
+    , Harddisk = 2
+    , Ram = 4
+    , EkranKarti = 8
+    , SesKarti = 16
 }
 ```
 
 Deneme olması açısındanda console uygulaması içerisinde aşağıdaki kodları ele alalım.
 
 ```csharp
-Console.WriteLine("Islemci var mı ? "+Enum.IsDefined(typeof(Parca),"Islemci"));
+Console.WriteLine("Islemci var mı ? " + Enum.IsDefined(typeof(Parca), "Islemci"));
 Console.WriteLine("ISLEMCI var mı ? " + Enum.IsDefined(typeof(Parca), "ISLEMCI"));
 Console.WriteLine("SESKarti var mı ? " + Enum.IsDefined(typeof(Parca), "SESKarti"));
 Console.WriteLine("Parca.SesKarti var mı ? " + Enum.IsDefined(typeof(Parca), Parca.SesKarti));
-Console.WriteLine("Parca.SesKarti|Parca.Ram|Parca.Islemci var mı ? " + Enum.IsDefined(typeof(Parca),Parca.SesKarti| Parca.Ram| Parca.Islemci));
+Console.WriteLine("Parca.SesKarti|Parca.Ram|Parca.Islemci var mı ? " + Enum.IsDefined(typeof(Parca), Parca.SesKarti | Parca.Ram | Parca.Islemci));
 Console.WriteLine("1 var mı ? " + Enum.IsDefined(typeof(Parca), 1));
 Console.WriteLine("1|2 var mı ? " + Enum.IsDefined(typeof(Parca), 3));
 ```
@@ -299,12 +299,12 @@ Kod satırlarımızın ilkinde Islemci isimli string bilgiyi kontrol ediyoruz. I
 ```csharp
 public enum Parca
 {
-    Islemci=1
-    ,Harddisk=2
-    ,Ram=4
-    ,EkranKarti=8
-    ,SesKarti=16
-    ,Hepsi=(Islemci|Harddisk|Ram|EkranKarti|SesKarti)
+    Islemci = 1
+    , Harddisk = 2
+    , Ram = 4
+    , EkranKarti = 8
+    , SesKarti = 16
+    , Hepsi = (Islemci | Harddisk | Ram | EkranKarti | SesKarti)
 }
 ```
 
@@ -314,12 +314,12 @@ Ne yazıkki bu değişkenin eklenmesi IsDefined metodunun çalışma şeklini et
 static void Main(string[] args)
 {
     Console.WriteLine("Parca.SesKarti var mı ? " + VarMi(Parca.SesKarti));
-    Console.WriteLine("Parca.SesKarti|Parca.Ram|Parca.Islemci var mı ? " +VarMi(Parca.SesKarti | Parca.Ram | Parca.Islemci)); 
+    Console.WriteLine("Parca.SesKarti|Parca.Ram|Parca.Islemci var mı ? " + VarMi(Parca.SesKarti | Parca.Ram | Parca.Islemci));
 }
 
 static bool VarMi(Parca prc)
 {
-    if((prc!=0)&&((Parca.Hepsi & prc)==prc))
+    if ((prc != 0) && ((Parca.Hepsi & prc) == prc))
         return true;
     else
         return false;

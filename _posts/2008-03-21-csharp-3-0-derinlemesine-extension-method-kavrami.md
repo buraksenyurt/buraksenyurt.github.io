@@ -71,7 +71,7 @@ namespace Genisletmeler
                 || sayi == 1)
                 return 1;
             else
-                return  sayi*Faktoryel(sayi-1);
+                return sayi * Faktoryel(sayi - 1);
         }
 
         /// <summary>
@@ -80,12 +80,12 @@ namespace Genisletmeler
         /// <param name="nokta1">Birinci nokta</param>
         /// <param name="nokta2">İkinci nokta</param>
         /// <returns>Mesafe</returns>
-        public static double Uzaklik(this Point nokta1,Point nokta2)
+        public static double Uzaklik(this Point nokta1, Point nokta2)
         {
             int xFarki = nokta1.X - nokta2.X;
             int yFarki = nokta2.X - nokta2.Y;
             return Math.Sqrt((xFarki * xFarki) + (yFarki * yFarki));
-        } 
+        }
     }
 }
 ```
@@ -110,17 +110,17 @@ namespace DerinlemesinExtensionMethods
         {
             // String sınıfı sealed olarak imzalanmıştır bu nedenle kendisinden türetme yapılıp ek fonksiyonellikler katılamaz.
             string ad = "Burak Selim";
-            byte[] asciiDegerleri=ad.GetAscii();
-            foreach(byte b in asciiDegerleri)
-                Console.Write(b.ToString()+" ");
-    
+            byte[] asciiDegerleri = ad.GetAscii();
+            foreach (byte b in asciiDegerleri)
+                Console.Write(b.ToString() + " ");
+
             // Int32 bir struct' tır. Struct' lar açıkça belirtilmesede sealed' dır. Yani kendilerinden türetme yapılamaz. Ancak genişletme metodları yardımıyla bunlar ek fonksiyonellikler     katılabilir.
             int sayi = 3;
             Console.WriteLine(sayi.Faktoryel());
 
             // Point .Net Framework içerisinde System.Drawing isim alanında tanımlanmış olan struct tipidir. Kendisinden türetme yapılamaz. Ancak extension method sayesinde Uzaklik isimli bir metoda sahip olabilir
             Point pn = new Point(10, 20);
-            Console.WriteLine("İki Nokta Arası Uzaklık {0}",pn.Uzaklik(new Point(20, 30)).ToString());
+            Console.WriteLine("İki Nokta Arası Uzaklık {0}", pn.Uzaklik(new Point(20, 30)).ToString());
         }
     }
 }
@@ -189,8 +189,8 @@ Bir başka deyişle farklı static sınıflar içerisindede olsalar genişletme 
 Bu bir anlamda orjinal CLR tiplerinin güvenliği ile ilişkilide bir konudur. Nitekim türetilmesine izin verilmeyen tiplerin asıl tasarım amaçlarından biriside içeriklerinin değiştirilmesinin engellenmesidir. Bu anlamda sealed olarak işaretlenmiş tiplerin aslında genişletme metodları yardımıyla ek fonksiyonelliklere sahip olabilmesi ve hatta aşırı yükleme yapılabilmesi orjinal tipte tanımlı metodların ezilip ezilemeyeceği vakasını ortaya çıkarmaktadır. Bu durumu analiz etmek için basit olarak String tipinde tanımlı olan bir metodun aynısını extension method olacak şekilde tanımlamaya çalışabiliriz.
 
 ```csharp
-public static string Insert(this string s,int siraNo, string metin)
-{ 
+public static string Insert(this string s, int siraNo, string metin)
+{
     Console.WriteLine("Extension Method");
     return metin;
 }
@@ -330,7 +330,7 @@ using System.Runtime.CompilerServices;
 namespace System.Runtime.CompilerServices
 {
     // 2nci: Nitelik assembly, sınıf ve metod seviyesinde uygulanabilir. Bir kere kullanılabilir.
-    [AttributeUsage(AttributeTargets.Assembly| AttributeTargets.Class| AttributeTargets.Method,AllowMultiple=false,Inherited=false)]
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
     public class ExtensionAttribute :
         Attribute
     {
@@ -339,12 +339,12 @@ namespace System.Runtime.CompilerServices
 namespace DerinlemesineExtensionMethods2
 {
     static class ExtensionMethods
-    { 
+    {
         // Eğer ExtensionAttribute tanımlanmazsa this keyword kullanımı için derleme zamanı hatası alınacaktır.
         public static string GetTypeName(this object obj)
         {
             return obj.GetType().Name;
-        }    
+        }
         public static double Faktoryel(this Int32 sayi)
         {
             if (sayi == 0
@@ -360,7 +360,7 @@ namespace DerinlemesineExtensionMethods2
         {
             int puan = 12;
             Console.WriteLine(puan.GetTypeName()); // Extension metod kullanımı
-        
+
             int sayi = 4;
             Console.WriteLine(sayi.Faktoryel().ToString());
         }
@@ -377,7 +377,7 @@ Uygulama çalıştırıldığında genişletme metodlarının işe yaradığı g
 LINQ (LanguageINtegratedQuery) mimarisinin temelinde yatan genişletme metodlarının çoğu arayüzlere (Interface) uygulanmaktadır. Böylece, genişletme metodlarının uygulandığı arayüz tiplerinden türeyen türlerin tamamı, söz konusu ek fonksiyonellikleri kullanabilir duruma gelmektedir. Bu gerçektende önemli bir yetenektir. Çok doğal olarak geliştirici tarafından yazılmış olan yada Framework içerisinde yer alan arayüz tiplerine genişletme metodları eklenebilir. Aşağıdaki örnek kod parçasında bu duruma örnek olacak bir metod içeriği yer almaktadır.
 
 ```csharp
-public static IEnumerable<string> HaricindeKalanlar(this IEnumerable<string> koleksiyon,string aranan) 
+public static IEnumerable<string> HaricindeKalanlar(this IEnumerable<string> koleksiyon, string aranan)
 {
     foreach (string s in koleksiyon)
     {
@@ -390,11 +390,11 @@ public static IEnumerable<string> HaricindeKalanlar(this IEnumerable<string> kol
 HaricindeKalanlar isimli genişletme metodu, IEnumerable tipinden türeyen generic koleksiyonlara uygulanabilmektedir. Görevi parametre olarak verilen string değer dışında kalan elemanları tespit ederek yeni bir IEnumerable tipi içerisinde geriye döndürmektedir.(İşlerin kolaylaştırılmasında.Net 2.0 ile birlikte gelen yield anahtar kelimesinin önemli bir rolü vardır.) Buna göre IEnumerable arayüzünden türeyen her tip, HaricindeKalanlar isimli genişletme metodunu kullanabilmektedir. Söz gelimi aşağıdaki kod parçasında List, Stack, Queue tiplerine uygulanmaktadır.
 
 ```csharp
-List<string> isimler = new List<string> { "Burak", "Ahmet", "Mehmet",  "Mehmet", "Ahmet", "Özgür", "Emrah", "Bülent" };
+List<string> isimler = new List<string> { "Burak", "Ahmet", "Mehmet", "Mehmet", "Ahmet", "Özgür", "Emrah", "Bülent" };
 Stack<string> isimler2 = new Stack<string>(isimler);
 Queue<string> isimler3 = new Queue<string>(isimler);
 
-var sonuc1=isimler.HaricindeKalanlar("Ahmet");
+var sonuc1 = isimler.HaricindeKalanlar("Ahmet");
 var sonuc2 = isimler3.HaricindeKalanlar("Ahmet");
 var sonuc3 = isimler.HaricindeKalanlar("Mehmet");
 ```

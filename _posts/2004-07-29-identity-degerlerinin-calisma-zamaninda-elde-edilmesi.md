@@ -29,24 +29,24 @@ DataTable dt;
 
 private void btnVeriCek_Click(object sender, System.EventArgs e)
 {
-    con=new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
-    da=new SqlDataAdapter("SELECT * FROM PERSONEL",con); 
-    dt=new DataTable("Personel");
+    con = new SqlConnection("data source=localhost;initial catalog=Northwind;integrated security=SSPI");
+    da = new SqlDataAdapter("SELECT * FROM PERSONEL", con);
+    dt = new DataTable("Personel");
     da.Fill(dt);
-    dataGrid1.DataSource=dt;
+    dataGrid1.DataSource = dt;
 }
 
 private void btnEkle_Click(object sender, System.EventArgs e)
-{ 
+{
     DataRow dr;
-    dr=dt.NewRow();
-    dr[1]=txtPersonelAd.Text;
-    dr[2]=txtPersonelSoyad.Text;
-    dr[3]=txtSaatUcreti.Text;
-    dr[4]=txtCalismaSuresi.Text;
+    dr = dt.NewRow();
+    dr[1] = txtPersonelAd.Text;
+    dr[2] = txtPersonelSoyad.Text;
+    dr[3] = txtSaatUcreti.Text;
+    dr[4] = txtCalismaSuresi.Text;
     dt.Rows.Add(dr);
 
-    SqlCommandBuilder cmb=new SqlCommandBuilder(da);
+    SqlCommandBuilder cmb = new SqlCommandBuilder(da);
     da.Update(dt);
 }
 ```
@@ -124,33 +124,34 @@ Bu Stored Procedure'de en önemli nokta Select sorgusunda @@IDENTITY değerinin,
 ```csharp
 private void btnSPileEkle_Click(object sender, System.EventArgs e)
 {
-    SqlCommand cmd=new SqlCommand("dbo.PersonelEkle",con);
-    cmd.CommandType=CommandType.StoredProcedure;
+    SqlCommand cmd = new SqlCommand("dbo.PersonelEkle", con);
+    cmd.CommandType = CommandType.StoredProcedure;
 
-    cmd.Parameters.Add("@PersonelID",SqlDbType.Int);
-    cmd.Parameters.Add("@PersonelAd",SqlDbType.VarChar,50); 
-    cmd.Parameters.Add("@PersonelSoyad",SqlDbType.VarChar,50);
-    cmd.Parameters.Add("@SaatUcreti",SqlDbType.Decimal); 
-    cmd.Parameters.Add("@CalismaSuresi",SqlDbType.Decimal);
+    cmd.Parameters.Add("@PersonelID", SqlDbType.Int);
+    cmd.Parameters.Add("@PersonelAd", SqlDbType.VarChar, 50);
+    cmd.Parameters.Add("@PersonelSoyad", SqlDbType.VarChar, 50);
+    cmd.Parameters.Add("@SaatUcreti", SqlDbType.Decimal);
+    cmd.Parameters.Add("@CalismaSuresi", SqlDbType.Decimal);
 
-    cmd.Parameters["@PersonelID"].Direction=ParameterDirection.Output;
+    cmd.Parameters["@PersonelID"].Direction = ParameterDirection.Output;
 
-    cmd.Parameters["@PersonelAd"].Value=txtPersonelAd.Text.ToString();
-    cmd.Parameters["@PersonelSoyad"].Value=txtPersonelSoyad.Text.ToString();
-    cmd.Parameters["@SaatUcreti"].Value=Convert.ToDecimal(txtSaatUcreti.Text);
-    cmd.Parameters["@CalismaSuresi"].Value=Convert.ToDecimal(txtCalismaSuresi.Text);
+    cmd.Parameters["@PersonelAd"].Value = txtPersonelAd.Text.ToString();
+    cmd.Parameters["@PersonelSoyad"].Value = txtPersonelSoyad.Text.ToString();
+    cmd.Parameters["@SaatUcreti"].Value = Convert.ToDecimal(txtSaatUcreti.Text);
+    cmd.Parameters["@CalismaSuresi"].Value = Convert.ToDecimal(txtCalismaSuresi.Text);
 
     con.Open();
     cmd.ExecuteNonQuery();
 
     /* Yeni satırı DataTable' ımızada ekliyoruz.*/
     DataRow dr;
-    dr=dt.NewRow();
-    dr[0]=cmd.Parameters["@PersonelID"].Value; /* Veritabanında henüz oluşturulan otomatik değeri alıp, satırın PersonelID alanına aktarıyoruz.*/
-    dr[1]=txtPersonelAd.Text;
-    dr[2]=txtPersonelSoyad.Text;
-    dr[3]=txtSaatUcreti.Text;
-    dr[4]=txtCalismaSuresi.Text;
+    dr = dt.NewRow();
+    dr[0] = cmd.Parameters["@PersonelID"].Value;
+    /* Veritabanında henüz oluşturulan otomatik değeri alıp, satırın PersonelID alanına aktarıyoruz.*/
+    dr[1] = txtPersonelAd.Text;
+    dr[2] = txtPersonelSoyad.Text;
+    dr[3] = txtSaatUcreti.Text;
+    dr[4] = txtCalismaSuresi.Text;
     dt.Rows.Add(dr);
     dt.AcceptChanges();
 }

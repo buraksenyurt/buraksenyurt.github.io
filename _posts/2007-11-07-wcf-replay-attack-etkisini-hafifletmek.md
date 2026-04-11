@@ -45,13 +45,13 @@ using System.ServiceModel;
 
 namespace SiparisKutuphanesi
 {
-    [ServiceContract(Name="Siparis Servisi", Namespace="http://www.bsenyurt.com/SiparisServisi", SessionMode= SessionMode.Required)]
+    [ServiceContract(Name = "Siparis Servisi", Namespace = "http://www.bsenyurt.com/SiparisServisi", SessionMode = SessionMode.Required)]
     public interface ISiparisYonetimi
     {
-        [OperationContract(IsInitiating=true)]
+        [OperationContract(IsInitiating = true)]
         void SiparisEkle(int siparisNo);
-        [OperationContract(IsInitiating=false,IsTerminating=true)]
-        void SiparisleriOnayla(); 
+        [OperationContract(IsInitiating = false, IsTerminating = true)]
+        void SiparisleriOnayla();
     }
 }
 ```
@@ -64,8 +64,8 @@ using System.ServiceModel;
 
 namespace SiparisKutuphanesi
 {
-    [ServiceBehavior(InstanceContextMode= InstanceContextMode.PerSession)]
-    public class SiparisYonetimi:ISiparisYonetimi
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    public class SiparisYonetimi : ISiparisYonetimi
     {
         #region ISiparisYonetimi Members
 
@@ -103,7 +103,7 @@ namespace Servis
             Console.WriteLine("Kapatmak için bir tuşa basınız");
             Console.ReadLine();
             if (host.State == CommunicationState.Opened)
-            host.Close();
+                host.Close();
         }
     }
 }
@@ -215,10 +215,10 @@ namespace Istemci
             Console.ReadLine();
             SiparisServisiClient cli = new SiparisServisiClient("IstemciEndPoint");
             cli.SiparisEkle(1);
-            cli.SiparisEkle(4); 
+            cli.SiparisEkle(4);
             cli.SiparisleriOnayla();
             Console.WriteLine("İşlemler tamamlandı...Çıkmak için bir tuşa basınız");
-            Console.ReadLine(); 
+            Console.ReadLine();
         }
     }
 }

@@ -109,55 +109,64 @@ Artık program kodlarımıza geçebiliriz. Kodları C# ile yazmayı tercih ettim
 ```csharp
 using System;
 using System.Data;
-using System.Data.SqlClient;  
+using System.Data.SqlClient;
 namespace TransactionSample1
 {
-     class Trans
-     {
-          [STAThread]
-          static void Main(string[] args)
-          {
+    class Trans
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
             /* IstanbulMerkez veritabanına bir bağlantı nesnesi referans ediyoruz. */
-            SqlConnection conIstanbulMerkez=new SqlConnection("initial catalog=IstanbulMerkez;data source=localhost;integrated security=sspi");
+            SqlConnection conIstanbulMerkez = new SqlConnection("initial catalog=IstanbulMerkez;data source=localhost;integrated security=sspi");
 
             /* Transaction nesnemizi tanımlıyor ve bu Transaction'ın conIstanbulMerkez isimli SqlConnection nesnesinin belirttiği bağlantıya ait komutlar için çalıştırılacağını belirtiyoruz. */
 
             SqlTransaction tr;
             conIstanbulMerkez.Open();
-            tr=conIstanbulMerkez.BeginTransaction(); 
-            double satisTutari=150000000000;
-            double primTutari=satisTutari*0.01; 
+            tr = conIstanbulMerkez.BeginTransaction();
+            double satisTutari = 150000000000;
+            double primTutari = satisTutari * 0.01;
             /* Şimdi, Personel tablosundaki PrimToplami alanın değerini primTutari değişkeninin değerin kadar arttıracak Stored Procedure'ü çalıştıracak SqlCommand nesnesini tanımlıyor ve gerekli parametreleri ekleyerek bu parametrelere değerlerini veriyoruz. Son olaraktan da SqlCommand'in Transaction özelliğine oluşturduğumuz tr isimli SqlTransaction nesnesini atıyoruz. Bu şu anlama geliyor. "Artık bu SqlCommand tr isimli Transaction içinde çalışıcak olan bir iş parçacaığıdır." */
-            SqlCommand cmdPrimToplamiArttir=new SqlCommand("Prim Toplami Arttir",conIstanbulMerkez);               cmdPrimToplamiArttir.CommandType=CommandType.StoredProcedure;               cmdPrimToplamiArttir.Parameters.Add("@prim",SqlDbType.Float);               cmdPrimToplamiArttir.Parameters.Add("@pid",SqlDbType.Int);
-            cmdPrimToplamiArttir.Parameters["@prim"].Value=primTutari;
-            cmdPrimToplamiArttir.Parameters["@pid"].Value=1;
-            cmdPrimToplamiArttir.Transaction=tr; 
+            SqlCommand cmdPrimToplamiArttir = new SqlCommand("Prim Toplami Arttir", conIstanbulMerkez);
+            cmdPrimToplamiArttir.CommandType = CommandType.StoredProcedure;
+            cmdPrimToplamiArttir.Parameters.Add("@prim", SqlDbType.Float);
+            cmdPrimToplamiArttir.Parameters.Add("@pid", SqlDbType.Int);
+            cmdPrimToplamiArttir.Parameters["@prim"].Value = primTutari;
+            cmdPrimToplamiArttir.Parameters["@pid"].Value = 1;
+            cmdPrimToplamiArttir.Transaction = tr;
             /* Aşağıdaki satırlarda ise "Prim Bilgisi Gir" isimli Stored Procedure'ü çalıştıracak olan SqlCommand nesnesi oluşturulup gerekli paramtere ayarlamaları yapılıyor ve yine Transaction nesnesi belirlenerek bu komut nesneside Transaction bloğu içerisine bir iş parçacığı olarak bildiriliyor.*/
-            SqlCommand cmdPrimBilgisiGir=new SqlCommand("Prim Bilgisi Gir",conIstanbulMerkez);
-            cmdPrimBilgisiGir.CommandType=CommandType.StoredProcedure;               cmdPrimBilgisiGir.Parameters.Add("@pid",SqlDbType.Int);               cmdPrimBilgisiGir.Parameters.Add("@st",SqlDbType.Float);               cmdPrimBilgisiGir.Parameters.Add("@p",SqlDbType.Float);               cmdPrimBilgisiGir.Parameters.Add("@str",SqlDbType.DateTime);
-            cmdPrimBilgisiGir.Parameters["@pid"].Value=1;               cmdPrimBilgisiGir.Parameters["@st"].Value=satisTutari;
-            cmdPrimBilgisiGir.Parameters["@p"].Value=primTutari;             cmdPrimBilgisiGir.Parameters["@str"].Value=System.DateTime.Now;
-            cmdPrimBilgisiGir.Transaction=tr; 
+            SqlCommand cmdPrimBilgisiGir = new SqlCommand("Prim Bilgisi Gir", conIstanbulMerkez);
+            cmdPrimBilgisiGir.CommandType = CommandType.StoredProcedure;
+            cmdPrimBilgisiGir.Parameters.Add("@pid", SqlDbType.Int);
+            cmdPrimBilgisiGir.Parameters.Add("@st", SqlDbType.Float);
+            cmdPrimBilgisiGir.Parameters.Add("@p", SqlDbType.Float);
+            cmdPrimBilgisiGir.Parameters.Add("@str", SqlDbType.DateTime);
+            cmdPrimBilgisiGir.Parameters["@pid"].Value = 1;
+            cmdPrimBilgisiGir.Parameters["@st"].Value = satisTutari;
+            cmdPrimBilgisiGir.Parameters["@p"].Value = primTutari;
+            cmdPrimBilgisiGir.Parameters["@str"].Value = System.DateTime.Now;
+            cmdPrimBilgisiGir.Transaction = tr;
             /* Son olarak AFinans isimli tablodaki Tutar alanından prim tutarı kadar TL'sını düşücek olan Stored Procedure için bir SqlCommand nesnesi tanımlanıyor, prim tutarını taşıyacak olan parametre eklenip değeri veriliyor. Tabiki en önemlisi, bu komut nesnesi içinde SqlTransaction nesnemiz belirleniyor.*/
-            SqlCommand cmdTutarDus=new SqlCommand("Prim Dus",conIstanbulMerkez);
-            cmdTutarDus.CommandType=CommandType.StoredProcedure;
-            cmdTutarDus.Parameters.Add("@prim",SqlDbType.Float);
-            cmdTutarDus.Parameters["@prim"].Value=primTutari;
-            cmdTutarDus.Transaction=tr; 
+            SqlCommand cmdTutarDus = new SqlCommand("Prim Dus", conIstanbulMerkez);
+            cmdTutarDus.CommandType = CommandType.StoredProcedure;
+            cmdTutarDus.Parameters.Add("@prim", SqlDbType.Float);
+            cmdTutarDus.Parameters["@prim"].Value = primTutari;
+            cmdTutarDus.Transaction = tr;
             /* Evet sıra geldi programın can alıcı kodlarına. Aşağıda bir Try-Catch-Finally bloğu var. Bu bloklarda dikkat edicek olursanız tüm SqlCommand nesnelerinin çalıştırılması try bloğunda yapılamktadır. Eğer tüm bu komutlar sorunsuz bir şekilde çalışırsa bu durumda, tr.Commit() ile transaction onaylanır vee değişikliklerin veritabanı üzerindeki tablolara yazılması onaylanmış olur*/
             try
             {
-                int etkilenen=cmdPrimToplamiArttir.ExecuteNonQuery();
-                Console.WriteLine("Personel tablosunda {0} kayıt güncellendi",etkilenen);
-                int eklenen=cmdPrimBilgisiGir.ExecuteNonQuery();
-                Console.WriteLine("Prim tablosunda {0} kayıt eklendi",eklenen);
-                int hesaptaKalan= cmdTutarDus.ExecuteNonQuery();
-                Console.WriteLine("AFinans tablosunda {0} kayıt güncellendi",hesaptaKalan);
+                int etkilenen = cmdPrimToplamiArttir.ExecuteNonQuery();
+                Console.WriteLine("Personel tablosunda {0} kayıt güncellendi", etkilenen);
+                int eklenen = cmdPrimBilgisiGir.ExecuteNonQuery();
+                Console.WriteLine("Prim tablosunda {0} kayıt eklendi", eklenen);
+                int hesaptaKalan = cmdTutarDus.ExecuteNonQuery();
+                Console.WriteLine("AFinans tablosunda {0} kayıt güncellendi", hesaptaKalan);
                 tr.Commit();
             }
-            catch(Exception hata) /* Ancak bir hata olması durumdan ise, kullanıcı hatanın bilgisi ile uyarılır ve tr.Rollback() ile hatanın oluştuğu ana kadar olan tüm işlemler iptal      edilir.*/
+            catch (Exception hata) /* Ancak bir hata olması durumdan ise, kullanıcı hatanın bilgisi ile uyarılır ve tr.Rollback() ile hatanın oluştuğu ana kadar olan tüm işlemler iptal edilir.*/
             {
-                Console.WriteLine(hata.Message+" Nedeni ile işlmeler iptal edildi");
+                Console.WriteLine(hata.Message + " Nedeni ile işlmeler iptal edildi");
                 tr.Rollback();
             }
             finally /* hata oluşsada oluşmasada açık bir bağlantı var ise bunun kapatılmasını garanti altına almak için finally bloğunda bağlantı nesnemizi Close metodu ile kapatırız.*/
@@ -194,7 +203,7 @@ Son olarak da, AFinans isimli tablodaki Tutar alanının değeri güncellenmişt
 Şimdi dilerseniz bir hata tetikleyelim ve ne olacağına bakalım. Bir hata üretmek aslında isteyince o kadar kolay değil maalesef. Ben Stored Procedure’lerden birinin ismini yanlış yazacağım. Bakalım ne olacak. Şu anda tablodaki veriler yukarıdaki Şekil 6, 7 ve Şekil 8’de olduğu gibi.
 
 ```csharp
-SqlCommand cmdPrimBilgisiGir=new SqlCommand("Prim Bisi Gir",conIstanbulMerkez); 
+SqlCommand cmdPrimBilgisiGir = new SqlCommand("Prim Bisi Gir", conIstanbulMerkez);
 ```
 
 Burada Stored Procedure’ün ismi “Prim Bilgisi Gir” iken ben “Prim Bisi Gir “ yaptım. Şimdi çalıştıracak olursak; aşağıdaki ekran ile karşılaşırız. İşlemler iptal edilir.

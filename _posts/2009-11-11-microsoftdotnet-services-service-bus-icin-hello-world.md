@@ -180,7 +180,7 @@ namespace AlgebraClient
         {
             Console.WriteLine("Başlamak için bir tuşa basınız");
             Console.ReadLine();
-            
+
             // Bağlantı protokolünün (Http, Tcp) otomatik olarak belirleneceği bildirilir
             ServiceBusEnvironment.SystemConnectivity.Mode = ConnectivityMode.AutoDetect;
 
@@ -204,11 +204,11 @@ namespace AlgebraClient
 
             // İletişim kanalı oluşturulur ve açılır
             IAlgebraChannel clientChannel = channelFactory.CreateChannel();
-            clientChannel.Open();            
-          
+            clientChannel.Open();
+
             // Sum operasyonuna çağrı yapılır
-            Console.WriteLine("Sum Result {0} + {1} = {2} ", 2,4,clientChannel.Sum(2,4).ToString());
-          
+            Console.WriteLine("Sum Result {0} + {1} = {2} ", 2, 4, clientChannel.Sum(2, 4).ToString());
+
             // İletişim kanalı ve kanal üretme fabrikası kapatılır
             clientChannel.Close();
             channelFactory.Close();

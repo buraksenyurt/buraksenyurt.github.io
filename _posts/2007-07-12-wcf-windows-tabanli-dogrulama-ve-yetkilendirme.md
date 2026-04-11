@@ -21,11 +21,11 @@ using System.ServiceModel;
 
 namespace CebirLib
 {
-    [ServiceContract(Name="AritmetikServisi",Namespace="http://www.bsenyurt.com/AritmetikServisi")]
+    [ServiceContract(Name = "AritmetikServisi", Namespace = "http://www.bsenyurt.com/AritmetikServisi")]
     public interface IAritmetik
     {
-        [OperationContract(Name="ToplamaOperasyonu")]
-        int Topla(int x, int y); 
+        [OperationContract(Name = "ToplamaOperasyonu")]
+        int Topla(int x, int y);
     }
 }
 ```
@@ -39,16 +39,16 @@ using System.Security.Principal;
 
 namespace CebirLib
 {
-    public class Aritmetik:IAritmetik
+    public class Aritmetik : IAritmetik
     {
         #region IAritmetik Members
 
         public int Topla(int x, int y)
-        { 
+        {
             IPrincipal principal = Thread.CurrentPrincipal;
-            string dogrulamaTipi=principal.Identity.AuthenticationType;
+            string dogrulamaTipi = principal.Identity.AuthenticationType;
             string dogrulandi = principal.Identity.IsAuthenticated ? "Dogrulandi" : "Dogrulanmadi";
-            string ad=principal.Identity.Name;
+            string ad = principal.Identity.Name;
 
             Console.WriteLine("Kullanıcı : " + ad + "\n" + "Doğrulama Tipi : " + dogrulamaTipi + "\n" + dogrulandi + "\n");
             return x + y;
@@ -242,19 +242,31 @@ public int Topla(int x, int y)
 PrincipalPermission niteliği metodlar gibi sınıflarada uygulanabilir. Ancak tavsiye edilen metod seviyesinde uygulanmasıdır. Bununla birlikte kendisinden türetilme yapılmasına izin vermeyen (sealed class) bir sınıftır. Bu sınıfın.Net içerisindeki içeriği aşağıdaki gibidir. (Sınıf içeriğinin elde edilmesi için Özcan Değirmenci tarafından geliştirilen Fox Decompiler aracı kullanılmıştır.)
 
 ```csharp
-[ComVisible(true), AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple=true, Inherited=false), Serializable]
+[ComVisible(true), AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = true, Inherited = false), Serializable]
 public sealed class PrincipalPermissionAttribute : CodeAccessSecurityAttribute
 {
     // Constructors
-    public PrincipalPermissionAttribute (SecurityAction action);
+    public PrincipalPermissionAttribute(SecurityAction action);
 
     // Methods
-    public override IPermission CreatePermission ();
+    public override IPermission CreatePermission();
 
     // Properties
-    public string Name { get; set; }
-    public string Role { get; set; }
-    public bool Authenticated { get; set; }
+    public string Name
+    {
+        get;
+        set;
+    }
+    public string Role
+    {
+        get;
+        set;
+    }
+    public bool Authenticated
+    {
+        get;
+        set;
+    }
 
     // Instance Fields
     private string m_name;
@@ -288,11 +300,11 @@ Kullanıcılara ait yetki kontrolü istenirse kod içerisindende zorunlu bir şe
 
 ```csharp
 public int Topla(int x, int y)
-{ 
+{
     IPrincipal principal = Thread.CurrentPrincipal;
-    string dogrulamaTipi=principal.Identity.AuthenticationType;
+    string dogrulamaTipi = principal.Identity.AuthenticationType;
     string dogrulandi = principal.Identity.IsAuthenticated ? "Dogrulandi" : "Dogrulanmadi";
-    string ad=principal.Identity.Name;
+    string ad = principal.Identity.Name;
 
     #region Kod içerisinden yetki kontrolü
 

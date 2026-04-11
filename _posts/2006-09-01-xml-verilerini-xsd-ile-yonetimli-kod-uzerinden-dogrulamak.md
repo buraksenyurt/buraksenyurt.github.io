@@ -96,14 +96,14 @@ using System.Web.UI.HtmlControls;
 using System.Xml;
 using System.Text;
 
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     StringBuilder hatalar;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         string xmlFile = Server.MapPath("Dukkan.xml");
-        string XSDFile =Server.MapPath( "Dukkan.XSD");
+        string XSDFile = Server.MapPath("Dukkan.XSD");
         hatalar = new StringBuilder();
 
         XmlReaderSettings xrs = new XmlReaderSettings();
@@ -112,7 +112,7 @@ public partial class _Default : System.Web.UI.Page
         xrs.ValidationType = ValidationType.Schema;
         XmlReader reader = XmlReader.Create(xmlFile, xrs);
         while (reader.Read())
-        {}
+        { }
         if (hatalar.ToString() == "")
             Response.Write("Hata yok");
         else
@@ -122,7 +122,7 @@ public partial class _Default : System.Web.UI.Page
     void xrs_ValidationEventHandler(object sender, System.Xml.Schema.ValidationEventArgs e)
     {
         if (e.Severity == System.Xml.Schema.XmlSeverityType.Error)
-            hatalar.Append(e.Message+"<br><br>");
+            hatalar.Append(e.Message + "<br><br>");
     }
 }
 ```
@@ -167,12 +167,12 @@ XSD ile doğrulama işlemleri özellikle Xml verisi üzerinde XmlDocument tipi i
 
 ```csharp
 string xmlFile = Server.MapPath("Dukkan.xml");
-string XSDFile =Server.MapPath( "Dukkan.XSD");
+string XSDFile = Server.MapPath("Dukkan.XSD");
 hatalar = new StringBuilder();
 
 XmlDocument doc = new XmlDocument();
 doc.Load(xmlFile);
-XmlElement currElement =(XmlElement)doc.DocumentElement.SelectSingleNode("//Dukkanim/Kitap[@ID='1000']");
+XmlElement currElement = (XmlElement)doc.DocumentElement.SelectSingleNode("//Dukkanim/Kitap[@ID='1000']");
 XmlNode newNode = doc.CreateNode(XmlNodeType.Element, "SayfaSayisi", null);
 newNode.InnerText = "600";
 currElement.AppendChild(newNode);
@@ -201,39 +201,39 @@ using System.Web.UI.HtmlControls;
 using System.Xml;
 using System.Text;
 
-public partial class _Default : System.Web.UI.Page 
+public partial class _Default : System.Web.UI.Page
 {
     StringBuilder hatalar;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         string xmlFile = Server.MapPath("Dukkan.xml");
-        string XSDFile =Server.MapPath( "Dukkan.XSD");
+        string XSDFile = Server.MapPath("Dukkan.XSD");
         hatalar = new StringBuilder();
 
         XmlDocument doc = new XmlDocument();
         doc.Load(xmlFile);
 
-        XmlElement currElement =(XmlElement)doc.DocumentElement.SelectSingleNode("//Dukkanim/Kitap[@ID='1000']");
+        XmlElement currElement = (XmlElement)doc.DocumentElement.SelectSingleNode("//Dukkanim/Kitap[@ID='1000']");
         XmlNode newNode = doc.CreateNode(XmlNodeType.Element, "SayfaSayisi", null);
         newNode.InnerText = "600";
         currElement.AppendChild(newNode);
 
         XmlNodeReader nodeReader = new XmlNodeReader(doc);
         XmlReaderSettings readerSettings = new XmlReaderSettings();
-        readerSettings.ValidationEventHandler+=new System.Xml.Schema.ValidationEventHandler(readerSettings_ValidationEventHandler);
-        readerSettings.ValidationType= ValidationType.Schema;
-        readerSettings.Schemas.Add(null,XmlReader.Create(XSDFile));
+        readerSettings.ValidationEventHandler += new System.Xml.Schema.ValidationEventHandler(readerSettings_ValidationEventHandler);
+        readerSettings.ValidationType = ValidationType.Schema;
+        readerSettings.Schemas.Add(null, XmlReader.Create(XSDFile));
         XmlReader reader = XmlReader.Create(nodeReader, readerSettings);
 
         while (reader.Read())
-        {}
+        { }
 
         if (hatalar.ToString() == "")
             doc.Save(xmlFile);
         else
-            Response.Write(hatalar.ToString()+"<b>Hatası Nedeniyle Xml Dökümanının yeni içeriği kayıt edilememiştir.</b>");
-    
+            Response.Write(hatalar.ToString() + "<b>Hatası Nedeniyle Xml Dökümanının yeni içeriği kayıt edilememiştir.</b>");
+
     }
 
     void readerSettings_ValidationEventHandler(object sender, System.Xml.Schema.ValidationEventArgs e)

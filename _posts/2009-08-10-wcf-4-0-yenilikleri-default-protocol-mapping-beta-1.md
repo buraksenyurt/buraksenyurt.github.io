@@ -37,7 +37,7 @@ namespace DefaultBindings
 
     // Servis
     class Aynstayn
-        :ICalculus
+        : ICalculus
     {
         public double Sum(double x, double y)
         {
@@ -63,7 +63,7 @@ namespace DefaultBindings
             // Varsayılan olarak eklenen EndPoint tipleri listelenir
             foreach (var endPoint in host.Description.Endpoints)
             {
-                Console.WriteLine("Name {0}\n\tAddress : {1}\n\tBinding : {2}\n\tContract : {3}",endPoint.Name,endPoint.Address,endPoint.Binding.Name,endPoint.Contract.Name);
+                Console.WriteLine("Name {0}\n\tAddress : {1}\n\tBinding : {2}\n\tContract : {3}", endPoint.Name, endPoint.Address, endPoint.Binding.Name, endPoint.Contract.Name);
             }
 
             Console.WriteLine("Çıkış için bir tuşa basınız.");

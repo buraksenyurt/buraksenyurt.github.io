@@ -70,17 +70,17 @@ namespace UsingSortedList
             Hazirla();
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)
         {
             Tester tester = new Tester();
-            DateTime dtBaslangic,dtBitis;
+            DateTime dtBaslangic, dtBitis;
             TimeSpan ts;
 
             #region SortedList ile
-                
+
             dtBaslangic = DateTime.Now;
             tester.Olustur();
             dtBitis = DateTime.Now;
@@ -96,7 +96,7 @@ namespace UsingSortedList
             dtBitis = DateTime.Now;
             ts = dtBitis - dtBaslangic;
             Console.WriteLine(ts.TotalMilliseconds);
-        
+
             #endregion
         }
     }
@@ -125,7 +125,7 @@ Dictionary bazlı bir koleksiyonda (çoğunlukla Hashtable ve SortedList) foreac
 
 ```csharp
 foreach (object anahtar in sl.Keys)
-{    
+{
 }
 ```
 

@@ -29,24 +29,32 @@ namespace ContractLibrary
 {
     // Downstream servislerin tamamının uygulayacağı ortak servis sözleşmesi
     // Namespace elementinin içeriği filtrelemelerde Action kısmına yazılacak bilgiler için önem arz etmektedir.
-    [ServiceContract(Name="MemberManagementService",Namespace="http://www.azon.com/Membership/Management")]
+    [ServiceContract(Name = "MemberManagementService", Namespace = "http://www.azon.com/Membership/Management")]
     public interface IManagementContract
     {
         // Action değerlerini biz belirliyoruz
-        [OperationContract(Action = "http://www.azon.com/Registration",ReplyAction="http://www.azon.com/RegistrationResponse")] 
+        [OperationContract(Action = "http://www.azon.com/Registration", ReplyAction = "http://www.azon.com/RegistrationResponse")]
         string RegisterUser(User newUser);
 
-        [OperationContract(Action = "http://www.azon.com/UpdateUser", ReplyAction = "http://www.azon.com/UpdateUserResponse")] 
+        [OperationContract(Action = "http://www.azon.com/UpdateUser", ReplyAction = "http://www.azon.com/UpdateUserResponse")]
         string UpdateUserName(User oldUser, string newName);
     }
-    
+
     [DataContract]
     public class User
     {
         [DataMember]
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
         [DataMember]
-        public string Id { get; set; }
+        public string Id
+        {
+            get;
+            set;
+        }
     }
 }
 ```
@@ -176,7 +184,7 @@ namespace InternalService
 {
     // Senaryoya göre RegisterService sadece RegisterUser operasyonunu üstlenmek üzere tasarlanmıştır.
     class RegisterService
-        :IManagementContract
+        : IManagementContract
     {
         public string RegisterUser(User newUser)
         {
@@ -324,11 +332,11 @@ namespace ClientApp
             MemberManagementServiceClient client = new MemberManagementServiceClient();
 
             User burak = new User { Name = "Burak Selim Şenyurt" };
-            
-            string registerResult=client.RegisterUser(burak);
+
+            string registerResult = client.RegisterUser(burak);
             Console.WriteLine(registerResult);
 
-            string updateResult=client.UpdateUserName(burak, "Burki");
+            string updateResult = client.UpdateUserName(burak, "Burki");
             Console.WriteLine(updateResult);
 
             Console.ReadLine();

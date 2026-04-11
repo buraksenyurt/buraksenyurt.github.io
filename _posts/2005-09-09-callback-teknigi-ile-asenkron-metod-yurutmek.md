@@ -43,12 +43,12 @@ namespace UsingAsyncCallback
     {
         public void Calistir(Temsilci t)
         {
-            t.BeginInvoke(new AsyncCallback(SonuclariAl),t);
+            t.BeginInvoke(new AsyncCallback(SonuclariAl), t);
         }
 
         public void SonuclariAl(IAsyncResult ia)
         {
-            Temsilci t=(Temsilci)ia.AsyncState;
+            Temsilci t = (Temsilci)ia.AsyncState;
             t.EndInvoke(ia);
         }
 
@@ -63,11 +63,11 @@ namespace UsingAsyncCallback
         [STAThread]
         static void Main(string[] args)
         {
-            Yurutucu yrtc=new Yurutucu();
-        
+            Yurutucu yrtc = new Yurutucu();
+
             #region Asenkron kullanıldığında
 
-            Temsilci t=new Temsilci(yrtc.Islemler);
+            Temsilci t = new Temsilci(yrtc.Islemler);
             yrtc.Calistir(t);
             Console.WriteLine("Diğer kod satırları...");
 
@@ -77,7 +77,7 @@ namespace UsingAsyncCallback
 
             // yrtc.Metod();
             // Console.WriteLine("Diğer kod satırları...");
-        
+
             #endregion
 
             Console.ReadLine();
@@ -99,7 +99,7 @@ Model ilk bakışta karışık gözükebilir. Ancak temel noktaları anladığı
 Şimdi burada anlamamız gereken nokta şudur. Biz temsilcimiz ile işaret ettiğimiz metodu çalıştırdıktan sonra normal şartlar altında bu metod sonlanıncaya kadar kodun beklemesi ve kod tamamlandıktan sonra kalan satırların işlemesi gerekirdi. Oysaki biz metodumuzu asenkron olarak yürüttüğümüzden, temsilci nesnemizin işaret ettiği metodu çalıştırdığımız kod satırından sonraki satırlar daha önceden çalışabilmiştir. Bu ayırımı anlamak çok önemlidir. Olayı daha iyi kavrayabilmek için Main metodundaki kodları aşağıdaki gibi düzenleyelim.
 
 ```csharp
-Yurutucu yrtc=new Yurutucu();
+Yurutucu yrtc = new Yurutucu();
 
 #region Asenkron kullanıldığında
 
@@ -165,23 +165,23 @@ namespace UsingAsyncCallback2
     {
         public DataSet ds;
 
-        public void Baslat(Temsilci t,string sorgu)
+        public void Baslat(Temsilci t, string sorgu)
         {
-            t.BeginInvoke(sorgu,new AsyncCallback(Bitir),t);
+            t.BeginInvoke(sorgu, new AsyncCallback(Bitir), t);
         }
 
         public void Bitir(IAsyncResult ia)
         {
-            Temsilci t=(Temsilci)ia.AsyncState;
-            ds=t.EndInvoke(ia);
-            Console.WriteLine(ds.Tables[0].Rows[1][5]+" "+ds.Tables[0].Rows[1][6]+" "+ds.Tables[0].Rows[1][7]);
+            Temsilci t = (Temsilci)ia.AsyncState;
+            ds = t.EndInvoke(ia);
+            Console.WriteLine(ds.Tables[0].Rows[1][5] + " " + ds.Tables[0].Rows[1][6] + " " + ds.Tables[0].Rows[1][7]);
         }
 
         public DataSet SonuclariAl(string sorgu)
         {
-            SqlConnection con=new SqlConnection("data source=localhost;database=AdventureWorks2000;user id=sa");
-            SqlDataAdapter da=new SqlDataAdapter(sorgu,con);
-            DataSet dsSonucKumesi=new DataSet();
+            SqlConnection con = new SqlConnection("data source=localhost;database=AdventureWorks2000;user id=sa");
+            SqlDataAdapter da = new SqlDataAdapter(sorgu, con);
+            DataSet dsSonucKumesi = new DataSet();
             da.Fill(dsSonucKumesi);
             return dsSonucKumesi;
         }
@@ -192,13 +192,13 @@ namespace UsingAsyncCallback2
         [STAThread]
         static void Main(string[] args)
         {
-            Yurutucu yrtc=new Yurutucu();
-            string sorgu=@"SELECT * FROM Customer INNER JOIN CustomerAddress ON Customer.CustomerID =         CustomerAddress.CustomerID INNER JOIN Address ON CustomerAddress.AddressID = Address.AddressID INNER JOIN SalesPerson ON Customer.SalesPersonID = SalesPerson.SalesPersonID INNER JOIN SalesPersonQuotaHistory ON SalesPerson.SalesPersonID = SalesPersonQuotaHistory.SalesPersonID";
-            Temsilci t=new Temsilci(yrtc.SonuclariAl);
-            yrtc.Baslat(t,sorgu);
-            for(int i=1;i<3000;i++)
+            Yurutucu yrtc = new Yurutucu();
+            string sorgu = @"SELECT * FROM Customer INNER JOIN CustomerAddress ON Customer.CustomerID =         CustomerAddress.CustomerID INNER JOIN Address ON CustomerAddress.AddressID = Address.AddressID INNER JOIN SalesPerson ON Customer.SalesPersonID = SalesPerson.SalesPersonID INNER JOIN SalesPersonQuotaHistory ON SalesPerson.SalesPersonID = SalesPersonQuotaHistory.SalesPersonID";
+            Temsilci t = new Temsilci(yrtc.SonuclariAl);
+            yrtc.Baslat(t, sorgu);
+            for (int i = 1; i < 3000; i++)
             {
-                Console.Write("."); 
+                Console.Write(".");
             }
             Console.ReadLine();
         }

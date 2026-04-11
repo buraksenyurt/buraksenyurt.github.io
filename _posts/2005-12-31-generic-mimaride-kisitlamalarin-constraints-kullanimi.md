@@ -26,7 +26,7 @@ Konuyu daha iyi anlayabilmek için şu örneği göz önüne alalım. Bildiğini
 ![mk142_4.gif](/assets/images/2005/mk142_4.gif)
 
 ```csharp
-public class BenimKoleksiyonum<T> :IEnumerable<T>
+public class BenimKoleksiyonum<T> : IEnumerable<T>
 {
     private List<T> icListe = new List<T>();
     public void Ekle(T urun)
@@ -41,7 +41,7 @@ public class BenimKoleksiyonum<T> :IEnumerable<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        return icListe.GetEnumerator() ;
+        return icListe.GetEnumerator();
     }
     #endregion
 
@@ -84,7 +84,7 @@ struct Dvd
     private double mFiyat;
     private int mSure;
 
-    public Dvd(string baslik, double fiyat,int sure)
+    public Dvd(string baslik, double fiyat, int sure)
     {
         mBaslik = baslik;
         mFiyat = fiyat;
@@ -92,7 +92,7 @@ struct Dvd
     }
     public override string ToString()
     {
-        return mBaslik + " " + mFiyat+" "+mSure;
+        return mBaslik + " " + mFiyat + " " + mSure;
     }
 }
 ```
@@ -140,7 +140,7 @@ namespace UsingGenericConstrainst
         private double urunFiyati;
         private string urunBilgisi;
 
-        public UrunTemel(int kod,double fiyat,string bilgi)
+        public UrunTemel(int kod, double fiyat, string bilgi)
         {
             urunKodu = kod;
             urunFiyati = fiyat;
@@ -149,16 +149,25 @@ namespace UsingGenericConstrainst
 
         public int UrunKodu
         {
-            get{return urunKodu;}
+            get
+            {
+                return urunKodu;
+            }
         }
         public double BirimFiyat
         {
-            get{return urunFiyati;}
+            get
+            {
+                return urunFiyati;
+            }
         }
 
         public string UrunTanimi
         {
-            get{return urunBilgisi;}
+            get
+            {
+                return urunBilgisi;
+            }
         }
     }
 }
@@ -186,20 +195,38 @@ namespace UsingGenericConstrainst
 
         public int Cap
         {
-            get{return capi;}
-            set{capi = value;}
+            get
+            {
+                return capi;
+            }
+            set
+            {
+                capi = value;
+            }
         }
 
         public int Genislik
         {
-            get{return genislik;}
-            set{genislik = value;}
+            get
+            {
+                return genislik;
+            }
+            set
+            {
+                genislik = value;
+            }
         }
 
         public string Tip
         {
-            get{return tipi;}
-            set{tipi = value;}
+            get
+            {
+                return tipi;
+            }
+            set
+            {
+                tipi = value;
+            }
         }
 
         public override string ToString()
@@ -229,8 +256,14 @@ namespace UsingGenericConstrainst
         }
         public int Uzunluk
         {
-            get{return uzunluk;}
-            set{uzunluk = value;}
+            get
+            {
+                return uzunluk;
+            }
+            set
+            {
+                uzunluk = value;
+            }
         }
 
         public override string ToString()
@@ -322,7 +355,7 @@ Generic kısıtlamalar ile ilgili olarak göreceğimiz bir diğer modelde interf
 Bizim bu varlıkları yönetecek bir sınıfımız var ise ve bu sınıfı generic bir mimari içerisinde kullanmak istiyorsak sadece IGenelVeriIslem arayüzünü ugulayan tiplerin kullanılmasını da garanti edebiliriz. Tek yapmamız gereken ilgili yönetici sınıfımıza arayüz kısıtlamasını aşağıdaki kod satırlarında görüldüğü gibi eklemek olacaktır.
 
 ```csharp
-class entYonetici<T> where T:IGenelVeriIslem
+class entYonetici<T> where T : IGenelVeriIslem
 {
     // örnek kod satırları
 }
@@ -337,7 +370,7 @@ Generic kısıtlamalar ile ilgili bir diğer özellikte, varsayılan yapıcı me
 Bu örnekte, CDKoleksiyon basit olarak tasarlanmış generic tipte bir koleksiyondur. Cd isimli referans tipimizi pekala bu generic koleksiyon içerisinde kullanabiliriz. Lakin Cd isimli sınıfımızın default constructor metodu mevcut değildir. Bunun yerine parametre alan overload edilmiş bir versiyonu kullanılmıştır. CDKoleksiyon sınıfının, taşıyacağı generic tiplerin mutlaka ve mutlaka varsayılan yapıcı metodları içermesini isteyeceğimiz durumlar söz konusu olabilir. Bu zorlamayı gerçekleştirmek için tek yapmamız gereken new kısıtlamasını kullanmak olacaktır.
 
 ```csharp
-public class CDKoleksiyon<T> where T:new()
+public class CDKoleksiyon<T> where T : new()
 {
     private List<T> icListe = new List<T>();
 

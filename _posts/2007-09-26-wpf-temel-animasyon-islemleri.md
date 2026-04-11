@@ -116,14 +116,14 @@ namespace AnimasyonIslemleri
             // Hedef kontrol belirlenir
             Storyboard.SetTargetName(dblAnmtr, btnMerhaba.Name);
             // Animasyon işleminde Button kontrolünün hangi özelliğinin değiştirileceği belirtilir.
-            Storyboard.SetTargetProperty(dblAnmtr,new PropertyPath(Button.WidthProperty));
+            Storyboard.SetTargetProperty(dblAnmtr, new PropertyPath(Button.WidthProperty));
             // Animasyon Begin metodu ile Button üzerine Mouse ile gelindiğinde başlatılır
-            btnMerhaba.MouseEnter += delegate(object sender, MouseEventArgs e)
-                                                    {    
+            btnMerhaba.MouseEnter += delegate (object sender, MouseEventArgs e)
+                                                    {
                                                         strBrd.Begin(this);
                                                     };
         }
-    
+
         public KodlaMerhabaAnimasyon()
         {
             InitializeComponent();
@@ -213,7 +213,7 @@ namespace AnimasyonIslemleri
             ColorAnimation clrAnmtr = new ColorAnimation(Colors.Red, Colors.Blue, new Duration(new TimeSpan(0, 0, 6)));
             // Animasyonun sürekli tekrar edeceği belirtilir
             clrAnmtr.RepeatBehavior = RepeatBehavior.Forever;
-    
+
             // Animasyonu kontrol ve özelliği ile ilişkilendirecek StoryBoard nesnesi örneklenir.
             Storyboard strBrd = new Storyboard();
             strBrd.Children.Add(clrAnmtr);
@@ -221,7 +221,7 @@ namespace AnimasyonIslemleri
             Storyboard.SetTargetProperty(clrAnmtr, new PropertyPath(SolidColorBrush.ColorProperty)); // SolidColorBrush kontrolünün Color özelliği üzerinde animasyonun uygulanacağı belirtilir.
 
             // Animasyon yine MouseEnter olay metodunda Begin metodu ile başlatılır.
-            btnMerhaba.MouseEnter += delegate(object sender, MouseEventArgs e)
+            btnMerhaba.MouseEnter += delegate (object sender, MouseEventArgs e)
                                                     {
                                                         strBrd.Begin(this);
                                                     };
@@ -310,7 +310,7 @@ namespace AnimasyonIslemleri
             // İlk parametre başlangıç noktası koordinatlarıdır From
             // İkinci parametre bitiş noktası koordinatlarıdır To
             // Üçündü parametre zaman çizelgesinin süresidir Duration
-            PointAnimation pntAnmtr = new PointAnimation(new Point(15, 15), new Point(285, 15), new Duration(new TimeSpan(0, 0, 0,1,75)));
+            PointAnimation pntAnmtr = new PointAnimation(new Point(15, 15), new Point(285, 15), new Duration(new TimeSpan(0, 0, 0, 1, 75)));
 
             // Animasyonu kontrol ve özelliği ile ilişkilendirecek olan StoryBoard oluşturulur
             Storyboard strBrd = new Storyboard();
@@ -321,11 +321,11 @@ namespace AnimasyonIslemleri
             // Animasyonun sürekli devam edeceği belirtilir
             strBrd.RepeatBehavior = RepeatBehavior.Forever;
             // Animasyonun uygulanacağı EllipsGeometry tipi seçilir. Buradaki ikinci parametre XAML tarafındaki x:Name niteliğinin değeridir
-            Storyboard.SetTargetName(pntAnmtr,"daireGeo");
+            Storyboard.SetTargetName(pntAnmtr, "daireGeo");
             // Animasyonun uygulanacağı özellik seçilir.
             Storyboard.SetTargetProperty(pntAnmtr, new PropertyPath(EllipseGeometry.CenterProperty));
             // Animasyonun, Daire isimli Path yüklendikten sonra başlatılması için Loaded olay metodu yüklenir.
-            Daire.Loaded += delegate(object sender, RoutedEventArgs e)
+            Daire.Loaded += delegate (object sender, RoutedEventArgs e)
                                         {
                                             strBrd.Begin(this);
                                         };
