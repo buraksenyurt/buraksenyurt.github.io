@@ -164,6 +164,7 @@ Pek tabii daha üst modelleri çalıştırmak için daha güçlü bir sisteme ih
 
 Şimdi yazımızın başlarında belirttiğim senaryo ile devam edelim. C# dosyalarını bu dil modeline verip kalitesini yorumlatmak istiyoruz. Pek tabii burada çok iyi prompt girilmesi gerekiyor. Dolayısıyla farklı bir yaklaşıma gideceğiz. Console uygulamamıza ait kodları aşağıdaki gibi değiştirelim.
 
+{% raw %}
 ```csharp
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.DependencyInjection;
@@ -221,6 +222,7 @@ foreach (var codeFile in codeFiles)
     Console.WriteLine($"Total time of analysis {time.Elapsed.TotalSeconds}");
 }
 ```
+{% endraw %}
 
 Örnek kodun en önemli kısmı prompt içeriği. Burada görüldüğü üzere chatbot konuşmalarından çok daha farklı bir bildiri söz konusu. İstediğimiz kod analizini yapması için dil modeline detaylı bilgiler veriyoruz. Örnekte kullandığım promptu chatgpt'ye yaptırdığımı ifade edeyim ama kendisi Deepseek için bunu istediğimi henüz önemsememiş gibi:D Dolayısıyla Prompt Engineering mevzusu hayatımızın bundan sonraki aşamalarında oldukça önemli hale gelebilir. Diğer yandan bu tip bir promptu yazdırmak içinde iyi seviyede programlama bilgisine, en azından programlama dilinin yapısı ile ilgili kavramlara hakim olmak gerekiyor. Korkma sayın programcı bize hala iş var:D Neyse neyse biz konumuza geri dönelim. Örneğin aşağıdaki kod parçası için çalıştırabiliriz.
 
