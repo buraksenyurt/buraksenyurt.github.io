@@ -127,14 +127,13 @@ protected void custVldtr_ServerValidate(object source, ServerValidateEventArgs a
 }
 ```
 
-ServerValidate metodu geri dönüş değeri olmayan bir metoddur. ServerValidateEventArgs parametresi sayesinde, ControlToValidate özelliği ile bağlanan kontrolün (ki burada TextBox kontrolüdür) doğrulama sürecine girecek değerine erişilmektedir. Bu parametrenin IsValid özelliği bool tipinden bir özelliktir ve doğrulama işleminin doğruluğunu belirtmektedir. True değerini aldığı takdirde doğrulama geçerlidir. False değerinde ise doğrulama işlemi geçersizdir. Doğrulama işlemi geçersiz olduğu takdirde uygulama işleyişini durduracak ve hata mesajı ile kullanıcı bilgilendirilecektir. Bu sayede izleyen süreçlerinde tutarlılığını sağlamış oluruz. ServerValidate metodumuz Server (sunucu) tarafında çalışmaktadır. Uygulamamızı bu haliyle çalıştırdığımızda aşağıdaki Flash animasyonunda görülen sonuçları elde ederiz.
+ServerValidate metodu geri dönüş değeri olmayan bir metoddur. ServerValidateEventArgs parametresi sayesinde, ControlToValidate özelliği ile bağlanan kontrolün (ki burada TextBox kontrolüdür) doğrulama sürecine girecek değerine erişilmektedir. Bu parametrenin IsValid özelliği bool tipinden bir özelliktir ve doğrulama işleminin doğruluğunu belirtmektedir. True değerini aldığı takdirde doğrulama geçerlidir. False değerinde ise doğrulama işlemi geçersizdir. Doğrulama işlemi geçersiz olduğu takdirde uygulama işleyişini durduracak ve hata mesajı ile kullanıcı bilgilendirilecektir. Bu sayede izleyen süreçlerinde tutarlılığını sağlamış oluruz. ServerValidate metodumuz Server (sunucu) tarafında çalışmaktadır.
 
 (Not: Aşağıdaki görüntüyü seyredebilmek için tarayıcınızda Flash Player'ın son sürümünün olması tavsiye edilir. Eğer sisteminizde XP Service Pack 2 yüklüyse ilgili uyarıyı dikkate alıp içeriğe izin vermelisiniz. (Allow Blocked Content). Videoyu yönetmek için sağ tıklayıp çıkan menüyü kullanabilirsiniz.)
 
-Dikkat ederseniz, sayfa sunucuya geri gönderildikten sonra doğrulama işlemi devreye girmektedir. Şu anda client (istemci) tarafı için bir script kodu yazmadığımızdan, normal doğrulama sürecine ait olan istemci kontrolü kısmı otomatik olarak devre dışıdır. Oysaki çoğu zaman sunucuya geri dönülmeden istemci tarafında kontroller yapmak isteyebiliriz. Ancak.Net doğrulama sistemi göz önüne alındığında istemci tarafında herşey doğru olsa bile, sunucu tarafında yinede doğrulama işlemi gerçekleştirilmektedir. O halde client (istemci) tarafında yapılan doğrulamanın ne gibi bir avantajı olabilir? İstemci tarafında yapılan doğrulama ile, sunucuya gereksiz yere gidip gelme işleminin önüne geçmiş oluruz.
+Hatırlatma; Doğrulama süreci şu şekilde işler.
 
-> Hatırlatma; Doğrulama süreci şu şekilde işler.
-> ![mk144_3.gif](/assets/images/2006/mk144_3.gif)
+![mk144_3.gif](/assets/images/2006/mk144_3.gif)
 
 Şimdi CustomValidator kontrolümüz için bir de client (istemci) script kodunu ekleyelim. Bu amaçla javascript kullanmayı seçtiğimizi düşünecek olursak tek yapmamız gereken aspx sayfamıza aşağıdaki script kodlarını eklemek olacaktır.
 
@@ -185,9 +184,5 @@ CustomValidator kontrolümüzün aspx tarafındaki kodları ise aşağıdaki gib
 ```text
 <asp:CustomValidator ID="custVldtr" runat="server" ControlToValidate="txtCreditCardNumber" OnServerValidate=custVldtr_ServerValidate" ClientValidationFunction="ValidateCreditCard"> </asp:CustomValidator>
 ```
-
-İstemci tarafında çalışan uygulamamızı aşağıdaki flash animasyonunda daha kolay izleyebilirsiniz.
-
-(Not: Aşağıdaki görüntüyü seyredebilmek için tarayıcınızda Flash Player'ın son sürümünün olması tavsiye edilir. Eğer sisteminizde XP Service Pack 2 yüklüyse ilgili uyarıyı dikkate alıp içeriğe izin vermelisiniz. (Allow Blocked Content). Videoyu yönetmek için sağ tıklayıp çıkan menüyü kullanabilirsiniz.)
 
 İstemcilerin doğası gereği, her zaman client tarafında çalışacak script'lere izin verilmez. İstemci tarafında çalışan doğrulama script'leri, sunucuya doğru yapılan gidiş-geliş işlemlerinin sayısını azaltan bir etkendir; ki buda ağ üzerindeki gereksiz yükü azaltır. Ancak bazı istemcilerin, script çalıştırma izni olmadığını için, sunucu tarafında doğrulama işlemi yapılması gerekliliği söz konusudur. Biz örneğimizde CustomValidator kontrolü için hem istemci tarafında hem de server tarafında doğrulama işlemini uygulayabileceğimiz iki metod kullandık. Böylece istemci izin veriyorsa doğrulamayaı o tarafta yapıp gereksiz ağ yükünü azaltmış olduk. Özel algoritmalar içeren veya birden fazla doğrulama işlemini bir kontrol üzerinde birleştirmek istediğimiz durumlarda CustomValidator kontrolü oldukça işimize yaramaktadır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.

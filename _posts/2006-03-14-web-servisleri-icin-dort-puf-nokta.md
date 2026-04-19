@@ -9,7 +9,7 @@ categories:
 ---
 Web Servislerini yazmak ve kullanmak, çoğu zaman bir web service projesi oluşturmak ve istemci tarafında Add Web Reference tekniği ile oluşturulan proxy sınıfını kullanmaktan ibaret basit bir mimari olarak düşünülür. Ancak sanılanın aksine Web servislerinin yazılmasında ve kullanılmasında dikkate değer çeşitli püf noktalar vardır. İşte bu makalemizde bu püf noktalardan dördünü maddeler halinde incelemeye çalışacağız.
 
-1 - Bir web metodunun overload edilmesi (aşırı yüklenmesi) standart bir metodun overload edilmesinden daha farklıdır.
+**1 - Bir web metodunun overload edilmesi (aşırı yüklenmesi) standart bir metodun overload edilmesinden daha farklıdır.**
 
 Örnek bir web servisinde aşağıdaki gibi aşırı yüklenmiş (overload) iki web metodumuz olduğunu göz önüne alalım. Bu metodların aşırı yüklenmiş olduklarını rahatlıkla söyleyebiliriz. Nitekim, her iki metodunda imzaları farklıdır. (Aşırı yüklemede (Overloading) metod imzasının, metodun aldığı parametre sayısı ve parametrelerin tiplerine bağlı olduğunu anımsayalım.)
 
@@ -49,7 +49,7 @@ public int Carp(int x, int y)
 
 Bu haliyle web servisi sorunsuz bir şekilde çalışacaktır. Değişikliğin yaptığı etkileri kullandığınız web servisinin wsdl dökümanında daha rahat izleyebilirsiniz.
 
-2 - Aralarında kalıtımsal ilişki olan nesneler söz konusu olduğunda, taban sınıfa (base class) ait nesne örneklerinden oluşan dizi tiplerinin döndürüldüğü web metodlarında uymamız gereken kurallar vardır.
+**2 - Aralarında kalıtımsal ilişki olan nesneler söz konusu olduğunda, taban sınıfa (base class) ait nesne örneklerinden oluşan dizi tiplerinin döndürüldüğü web metodlarında uymamız gereken kurallar vardır.**
 
 Çok basit olarak aralarında kalıtımsal ilişki bulunan aşağıdaki Sekil, Dortgen ve Ucgen sınıflarını göz önüne alalım. Şekildende görüleceği üzere, Dortgen ve Ucgen sınıfları Sekil taban sınıfından türeyen (derived) sınıflarımızdır.
 
@@ -109,7 +109,7 @@ public Sekil[] SekilleriAl()
 
 Diğer taraftan web metodumuz artık başarılı bir şekilde çalışacaktır.
 
-3 - Web metodlarında performans için Caching kullanabiliriz.
+**3 - Web metodlarında performans için Caching kullanabiliriz.**
 
 Web uygulamalarını geliştirirken performansı arttırıcı tedbirlerden birisi olarak caching mekanizmalarına başvururuz. Dilersek bu tekniği web servislerinde yer alan web metodların döndürdüğü sonuçlar içinde uygulayabiliriz. Web metodların WebMethod niteliğinin (attribute) CacheDuration isimli özelliği saniye cinsinden ön bellekleme süresini belirtir. Bu özellik yardımıyla bir web metodun döndüreceği sonuçları, web sunucusunun ön belleğine alabiliriz. Bu da performans olarak web metodunu kullanan istemcilere hızlı cevap dönmesi anlamına gelmektedir. Nitekim cevaplar hazır olarak ara bellekte tutulan çıktılardan döndürülür.
 
@@ -154,7 +154,7 @@ static void Main(string[] args)
 
 İlk olarak uygulamamızı çalıştıralım ve elde ettiğimiz değerlere bakalım. Daha sonra Order Details tablosunda 10250 numaralı siparişe ait bilgilerde ufak bir değişiklik yapalım. Örneğin Quantity değerini 10' dan 20' ye çıkartalım. 120 saniyelik süre dolmadan metodumuzu tekrar çağıracak olursak, Quantity değerinin halen daha 10 olarak geldiğini görürüz. Bunun sebebi verinin o an için web servisinin bulunduğu web sunucusunun ön belleğinden geliyor oluşudur. Elbetteki 120 saniyelik bu önbellekleme süresi sonunda Quantity değerinin yenilendiğini görebiliriz. Ön belleğe alma işlemi bu örnekte görüldüğü gibi sadece parametrik bazda değil, parametresiz web metodları içinde geçerlidir.
 
-4 - Web Servisi tarafında security için en basit haliyle Windows Authentication'ı kullandığımızda istemci tarafında da yapmamız gerekenler vardır.
+**4 - Web Servisi tarafında security için en basit haliyle Windows Authentication'ı kullandığımızda istemci tarafında da yapmamız gerekenler vardır.**
 
 Web servisleri, web uygulamalarında olduğu gibi bir web sunucu üzerinden yayımlanırlar. Bu anlamda bakıldığında bir web uygulaması için söz konusu olan authentication seçeneklerini, web servisleri içinde ele alabiliriz. Özellikle windows tabanlı doğrulama göz önüne alındığında istemci tarafında çalışan uygulamaların, güvenlik bilgilerini doğru bir şekilde gönderebiliyor olması gerekir. İlk olarak doğrulama metodu Basic Authentication olarak ayarlanmış bir web servisimiz olduğunu düşünelim. IIS tarafında ilgili web servisimiz için gerekli güvenlik ayarlarının aşağıdaki şekilde görüldüğü gibi olması gerekmektedir.
 

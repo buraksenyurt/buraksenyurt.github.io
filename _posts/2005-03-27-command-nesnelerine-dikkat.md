@@ -12,15 +12,12 @@ Bu makalemizde, Command nesnelerini kullanırken performans arttırıcı, kod ok
 
 Command nesneleri ayrıca diğer Ado.Net nesnelerinin işletilmelerinde de etkin rol oynamaktadır. Örneğin bağlantısız katman (disconnected layer) nesnelerinin doldurulması veya güncellenmesi için kullanılan DataAdapter nesneleri veya bağlantılı katman (connected layer) üzerinde çalışan DataReader nesneleri gibi. Dolayısıyla Command nesnelerine bağımlı olarak çalışan programların performans, güvenlik ve kod okunurluğu yönünden uygulaması tavsiye edilen bazı teknikler vardır. Command nesnelerinin hazırlanışı ve kullanılması sırasında dikkat etmemiz gereken noktalar aşağıdaki dört madde ile özetlenmiştir.
 
-SqlCommand Nesneleri İçin Pozitif Yaklaşımlar
-
-Parametrik sorguların kullanımı.
-
-Sorguların yeniden kullanım için hazırlanması (Prepare Tekniği)
-
-En etkin constructor ile nesne örneğinin oluşturulması.
-
-Tek değerlik dönüşler için ExecuteScalar metodunun tercih edilmesi.
+| **SqlCommand Nesneleri İçin Pozitif Yaklaşımlar** |
+| --- |
+| Parametrik sorguların kullanımı. |
+| Sorguların yeniden kullanım için hazırlanması (Prepare Tekniği) |
+| En etkin constructor ile nesne örneğinin oluşturulması. |
+| Tek değerlik dönüşler için ExecuteScalar metodunun tercih edilmesi. |
 
 Şimdi bu maddelerimizi tek tek incelemeye başlayalım.
 

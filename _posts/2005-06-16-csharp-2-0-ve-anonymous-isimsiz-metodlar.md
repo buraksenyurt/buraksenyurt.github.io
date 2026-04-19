@@ -7,7 +7,7 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-İsimsiz metotlar bildiğiniz gibi C# 2.0'a eklenmiş olan yeni özelliklerden birisidir. Temeli C# dilinin temsilci tipine dayanan bu yeni teknikte amaç, temsilcileri işaret edecekleri metotların sahip oldukları kod blokları ile bir seferde tanımlayabilmektir. İsimsiz metotları anlayabilmek için her şeyden önce temsilcilerin (delegates) iyi kavranmış olması gerekmektedir. (Ön bilgi veya hatırlatma açısından örnek [makale](http://www.bsenyurt.com/MakaleGoster.aspx?ID=43) ve [video](http://www.bsenyurt.com/video/Delegates.zip)larımızı incelemenizi öneririm.)
+İsimsiz metotlar bildiğiniz gibi C# 2.0'a eklenmiş olan yeni özelliklerden birisidir. Temeli C# dilinin temsilci tipine dayanan bu yeni teknikte amaç, temsilcileri işaret edecekleri metotların sahip oldukları kod blokları ile bir seferde tanımlayabilmektir. İsimsiz metotları anlayabilmek için her şeyden önce temsilcilerin (delegates) iyi kavranmış olması gerekmektedir.
 
 Kısaca temsilciler, çalışma zamanında metotların başlangıç adreslerini işaret eden tiplerdir. Temsilcilerin herhangi bir metodu çalışma zamanında işaret edebilmesinin yanı sıra bu metodu (metotları) çağırabilmesi ve hatta parametreler göndererek dönüş değerleri vermesi gibi yetenekleri de vardır. Ama tüm bu özellikleri arasında en önemlisi, çalışma zamanında hangi metodu çalıştıracağına karar vermesidir.
 
@@ -48,7 +48,7 @@ C# 2.0 için anonymous metodları kullanarak yukarıdaki uygulamayı aşağıdak
 
 > İsimsiz (Anonymous) metodlar dışarıdan parametre alabilirler ve geriye değer döndürebiliriler.
 
-C# 2.0 versiyonu
+## C# 2.0 versiyonu
 
 ```csharp
 using System;
@@ -133,7 +133,7 @@ namespace UsingThreading1
 
 Şimdi aynı örneğin C# 2.0' da isimsiz metodlar yardımıyla nasıl yazılabileceğine bakalım. Burada dikkat ederseniz ThreadStart temsilcisi görülmemektedir. Bu elbetteki ThreadStart temsilcisinin kullanılmadığı anlamına gelmemelidir. Aslında bu tanımlama gizli olarak Thread sınıfına ait nesne örnekleri oluşturulurken yapılmaktadır. Yani çalışma zamanında Thread nesnesinin zaten bir ThreadStart temsilci nesnesine ihtiyacı olduğu çalışma ortamı tarafından bilinmektedir. Diğer yandan kod yazımı açısından bakıldığında iki işlemin, (ThreadStart'ın işaret edeceği metodu gösterecek şekilde örneklenmesi ve daha sonrada Thread nesnesinin oluşuturulması için parametre olarak kullanılması) tek seferde yapılmaktadır.
 
-C# 2.0 Versiyonu
+## C# 2.0 Versiyonu (isimsiz metodlar ile)
 
 ```csharp
 using System;
@@ -214,7 +214,7 @@ public class Form1 : System.Windows.Forms.Form
 
 > İsimsiz (Anonymous) metodlarda, kullanılan temsilcinin bilinmesine gerek yoktur. delegate anahtar sözcüğü bu işi üstlenir.
 
-C# 2.0 Delegate Versiyonu
+## C# 2.0 Delegate Versiyonu
 
 ```csharp
 private void InitializeComponent()
