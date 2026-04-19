@@ -91,7 +91,9 @@ Uygulamamızı çalıştırdığımıza sadece Makale isimli tabloya ait veriler
 
 Problem şudur. Toplu sorgumuz, birbirinden farklı üç kayıt kümesi getirmektedir. Bu nedenle, her bir kayıt kümesinin ayrı ayrı okunması gereklidir. Bunu gerçekleştirmek için ise, SqlDataReader nesnesini, Read metodu false değerini döndürdükten, yani geçerli kayıt kümesindeki tüm satırların okunması bittikten sonra, başka kayıt kümesinin olup olmadığı kontrol edilmelidir. Bize bu imkanı aşağıda prototipi verilen, NextResult metodu sağlamaktadır.
 
+```csharp
 public virtual bool NextResult ();
+```
 
 Bu metod geriye bool tipinde bir değer döndürür. Eğer güncel kayıt kümesinin okunması bittikten sonra başka bir kayıt kümesi var ise, true değerini döndürecektir. Bu durumda, toplu sorgularda bir sonraki kayıt kümesinin var olup olmadığını belirlemek için başka bir while döngüsünü kullanırız. İşte yukarıdaki toplu sorgumuz sonucu elde edilen tüm kayıt kümelerini okuyabileceğimiz kodlar;
 

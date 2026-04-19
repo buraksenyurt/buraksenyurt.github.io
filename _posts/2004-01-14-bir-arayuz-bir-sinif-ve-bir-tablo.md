@@ -173,9 +173,11 @@ new SqlConnection("data source=localhost;integrated security=sspi;initial catalo
 }
 ```
 
-Artık IKisi arayüzünü uygulayan, CKisi isimli bir sınıfımız var.Şimdi Formumuzun kodlarını yazmaya başlayabiliriz. Öncelikle module düzeyinde bir CKisi sınıf nesnesi tanımlayalım.
+Artık IKisi arayüzünü uygulayan, CKisi isimli bir sınıfımız var. Şimdi Formumuzun kodlarını yazmaya başlayabiliriz. Öncelikle module düzeyinde bir CKisi sınıf nesnesi tanımlayalım.
 
-CKisi kisi=new CKisi ();
+```csharp
+CKisi kisi = new CKisi();
+```
 
 Bu nesnemiz veri tablosundan çektiğimiz veri satırına ait verileri taşıyacak. Kullanıcı Getir başlıklı button kontrolüne bastığında olucak olayları gerçekleştirecek kodları yazalım.
 

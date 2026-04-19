@@ -13,7 +13,9 @@ Bugünkü makalemizde, veritabanlarındaki tablo yapısında olan bir ArrayList'
 
 En büyük tercih nedeni, normal dizilerin boyutlarının çalışma esnasında değiştirilemeyişidir. Böyle bir işlemi gerçekleştirmek için, dizi elemanları yeni boyutlu başka boş bir diziye kopyalanır. Oysaki, ArrayList koleksiyonunda böyle bir durum söz konusu değildir. Koleksiyonu, aşağıdaki yapıcı metodu ile oluşturduğunuzda boyut belirtmezsiniz. Eleman ekledikçe, ArrayList'in kapasitesi otomatik olarak büyüyecektir.
 
+```csharp
 public ArrayList ();
+```
 
 Bu şekilde tanımlanan bir ArrayList koleksiyonu varsayılan olarak 16 elemanlı bir koleksiyon dizisi olur. Eğer kapasite aşılırsa, koleksiyonun boyutu otomatik olarak artacaktır. Bu elbette karşımıza 17 elemanlı bir koleksiyonumuz varsa fazladan yer harcadığımız anlamına da gelmektedir. Ancak sorunu TrimToSize metodu ile halledebiliriz. Dilerseniz bu konuyu aşağıdaki basit console uygulaması ile açıklayalım.
 
@@ -73,21 +75,27 @@ Görüldüğü gibi koleksiyonumuz ilk oluşturulduğunda kapasitesi 16'dır. Da
 
 Örneğimizde koleksiyonumuza eleman eklemek için Add metodunu kullandık. Add metodu her zaman yeni elemanı koleksiyonun sonuna ekler. Eğer koleksiyonda araya eleman eklemek istiyorsak insert metodunu, koleksiyonumuzdan bir eleman çıkartmak istediğimizde ise Remove metodunu kullanırız. Insert metodunun prototipi aşağıdaki gibidir.
 
+```csharp
 public virtual void Insert (int index,object value);
+```
 
 İlk parametremiz 0 indeks tabanlı bir değerdir ve object tipindeki ikinci parametre değerinin hangi indeksli eleman olarak yerleştirileceğini belirtmektedir. Dolayısıyla bu elemanın insert edildiği yerdeki eleman bir ileriye ötelenmiş olucaktır.
 
 Remove metodu ise belirtilen elemanı koleksiyondan çıkartmaktadır. Prototipi aşağıdaki gibidir.
 
+```csharp
 public virtual void Remove (object obj);
+```
 
 Metodumuz direkt olarak, çıkartılmak istenen elemanın değerini alır. ArrayList koleksiyonu, Remove metoduna alternatif başka metodlarada sahiptir. Bunlar, RemoveAt ve RemoveRange metodlarıdır. RemoveAt metodu parametre olarak bir indeks değeri alır ve bu indeks değerindeki elemanı koleksiyondan çıkartır. Eğer girilen indeks değeri 0 dan küçük yada koleksiyonun eleman sayısına eşit veya büyük ise ArgumentOutOfRangeException istisnası fırlatılır.
 
 RemoveRange metodu ise, ilk parametrede belirtilen indeks'ten, ikinci parametrede belirtilen sayıda elemanı koleksiyondan çıkartır. Elbette eğer indeks değeri 0 dan küçük yada koleksiyonun eleman sayısına eşit veya büyük ise ArgumentOutOfRangeException istisnası alınır. Tabi girdiğimiz ikinci parametre değeri, çıkartılmak istenen eleman sayısını, indeksten itibaren ele alındığında, koleksiyonun count özelliğinin değerinin üstüne çıkabilir. Bu durumda ise ArgumentException istisnası üretilecektir.
 
+```csharp
 public virtual void RemoveAt (int index);
 
 public virtual void RemoveRange (int index,int count);
+```
 
 Şimdi dilerseniz bu metodları küçük bir console uygulaması ile deneyelim.
 

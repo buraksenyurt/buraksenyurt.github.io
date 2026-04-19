@@ -121,11 +121,13 @@ public class Kisiler : IArayuz
 
 Şimdi bu anda uygulamayı derlersek, IArayuz'ündeki elemanları sınıfımız içinde kullanmadığımızdan dolayı aşağıdaki derleme zamanı hatalarını alırız.
 
+```text
 'Interfaces1.Kisiler'does not implement interface member 'Interfaces1.IArayuz.EkranaYaz ()'
 
 'Interfaces1.Kisiler'does not implement interface member 'Interfaces1.IArayuz.isim'
 
 'Interfaces1.Kisiler'does not implement interface member 'Interfaces1.IArayuz.Yas'
+```
 
 Görüldüğü gibi kullanmadığımız tüm arayüz üyeleri için bir hata mesajı oluştu. Bu noktada şunu tekrar hatırlatmak istiyorum,
 
