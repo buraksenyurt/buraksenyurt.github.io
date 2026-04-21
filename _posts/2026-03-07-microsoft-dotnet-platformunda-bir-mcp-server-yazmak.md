@@ -449,6 +449,8 @@ E ben daha ne diyeyim:D Bundan sonraki aşamada belki de kullanıcı deneyimi da
 
 Bu çalışmadaki örnekte **stdio** iletişim mekanizması kullanılmış ve yerel makinede işlerlik sağlanmıştır. Normalde sadece **SSE** ile de ilerleyebiliriz ama güncel **ModelContextProtocol.AspNetCore** paketi doğrudan **HTTP Streaming** standardını desteklemektedir.
 
+Dilerseniz **HTTP Streaming** kullanımını yeni bir **Web API** uygulaması üzerinden test edelim. Bunun için aşağıdaki terminal komutları ile devam edebiliriz.
+
 ```bash
 dotnet new web -n TodoMCPServerSSE
 
@@ -507,7 +509,6 @@ Console.WriteLine($"[MCP SERVER INFO] Hedef API: {apiUrl}");
 Console.WriteLine("[MCP SERVER INFO] Streaming endpoint: /mcp");
 
 app.Run();
-
 ```
 
 Durumu bir özetleyelim. Todo işlemleri ile ilgili web api servisimiz rust ile yazılmış bir uygulama idi. Bu servisin her durumda çalışır olmasını bekliyoruz. Yeni **MCP** sunucu uygulamamız ise bir öncekinden farklı olarak bir **WebApi** projesi. Bununla birlikte **MapMcp** isimli metotla otomatik olarak bir yapay zeka aracının iletişim kurabileceği bir endpoint haline geliyor. **AddMcpServer** metodu arkasından çağırılan **WithHttpTransport** metodu ise bu iletişim için HTTP Streaming destekli bir mekanizma kullanılacağını belirtiyor. Artık bu sunucuyu başlattığımızda, yapay zeka araçları belirtilen endpoint'e bağlanarak araç setimizi keşfedebilir ve kullanabilirler.
