@@ -427,22 +427,27 @@ Yapılacaklar listemdeki görevleri son tarihlerine göre sırala ve en yakın z
 
 E ben daha ne diyeyim:D Bundan sonraki aşamada belki de kullanıcı deneyimi daha iyi bir web uygulaması geliştirip onun üzerinden de bu araçları kullanmayı deneyebiliriz ya da örneğin sistemde yüklü olan bir CLI (Command Line Interface) aracına bu MCP sunucusunu entegre edip benzer görevleri deneyebiliriz. Bu tamamen size bağlı.
 
-## Update: MCP Server ile SSE Destekli İletişim
+## Update: MCP Server ile HTTP Streaming Destekli İletişim
 
-MCP standardı güncel olarak iki tip veri taşıma *(Transport)* mekanizmasını destekler: Standard Input/Output *(Stdio)* ve SSE *(Server-Sent Events)*.
+**MCP** standardı güncel olarak üç tip veri taşıma *(Transport)* mekanizmasını destekler: Standard Input/Output *(Stdio)*, **[SSE](https://www.utcp.io/protocols/sse) *(Server-Sent Events)*** ve **[Streamable HTTP](https://www.utcp.io/protocols/streamable-http)** *(Mart 2025'te HTTP ve SSE kullanımının alternatifi olarak eklenmiştir)*.
 
 - **Stdio:**
-  - **Çalışma şekli;** İstemci taraf (Vs Code, Copilot CLI vb.) ile MCP sunucusu arasında veri alışverişi, standart giriş/çıkış akışları üzerinden gerçekleşir. MCP sunucusu arka planda bir alt process olarak çalışır ve veri iletimi JSON-RPC mesajları ile gerçekleşir.
+  - **Çalışma şekli;** İstemci taraf *(Vs Code, Copilot CLI vb.)* ile MCP sunucusu arasında veri alışverişi, standart giriş/çıkış akışları üzerinden gerçekleşir. MCP sunucusu arka planda bir alt process olarak çalışır ve veri iletimi JSON-RPC mesajları ile gerçekleşir.
   - **Avantajları;** Kurulumu ve entegrasyonu genellikle daha basittir, özellikle yerel geliştirme ortamlarında hızlıca test etmek için idealdir, ağ yapılandırması gerektirmez, port çakışması olmaz veya güvenlik duvarı sorunları yaşanmaz.
   - **Dezavantajları;** Sadece yerel kullanım için uygundur, uzak sunucularla iletişim kurmak mümkün değildir, ölçeklenebilirlik sınırlıdır, yüksek trafik altında performans sorunları yaşanabilir.
   - **Kullanım senaryoları;** Sunucu ve istemcinin aynı makinede çalıştığı durumlar, hızlı prototipleme ve geliştirme süreçleri, basit araç entegrasyonları.
 - **SSE (Server-Sent Events):**
   - **Çalışma şekli;** MCP sunucusu bir Web API olarak çalışır. İstemci sunucuya HTTP üzerinden bir bağlantı açar ve sunucu, SSE protokolünü kullanarak istemciye asenkron mesajlar gönderir.
   - **Avantajları;** Ağ üzerinden çalışır. Dil modeli nerede olursa olsun internet veya intranet üzerinden bağlanabilir.
-  - **Dezavantajları;** Kurulumu ve entegrasyonu daha karmaşıktır. Araya bir ağ katmanı girdiğinden gecikmeler (latency) olabilir ve daha da önemlisi authentication/authorization eklemek gerejir, çünkü aksi halde herhangi biri sunucuya bağlanıp araçları kullanabilir.
-  - **Kullanım senaryoları;** Internet veya intranet üzerinden merkezi bir MCP sunucusuna ihtiyaç duyulan durumlar, birden fazla istemcinin aynı MCP sunucusunu kullanacağı senaryolar.
+  - **Dezavantajları;** Kurulumu ve entegrasyonu daha karmaşıktır. Araya bir ağ katmanı girdiğinden gecikmeler *(latency)* olabilir ve daha da önemlisi authentication/authorization eklemek gerejir, çünkü aksi halde herhangi biri sunucuya bağlanıp araçları kullanabilir.
+  - **Kullanım senaryoları;** Genellikle canlı güncellemeler *(live updates)* veya gerçek zamanlı bildirimler *(notifications)* gerektiren durumlarda ya da feed akışlarında kullanılır. Internet veya intranet üzerinden merkezi bir MCP sunucusuna ihtiyaç duyulan durumlar, birden fazla istemcinin aynı MCP sunucusunu kullanacağı senaryolar için uygundur.
+- **Streamable HTTP:**
+  - **Çalışma şekli;** İstemci ve sunucu haberleşmesi tek bir HTTP endpoint üzerinden yapılır. Kısa süreli işlemlerde standart bir **HTTP Request/Response** gibi davranırken, büyük boyutlu ve uzun sürecek akışlarda otomatik olarak **SSE** benzeri kesintisiz bir stream'e dönüşebilir.
+  - **Avantajları;** Gerçek anlamda çift yönlü *(bidirectional)* iletişim sağlar, tek bir endpoint üzerinden hem kısa hem de uzun süreli işlemleri destekler, bağlantı kopuşlarında kaldığı yerden devam edebilir, iptal edilebilirlik özelliği sunar.
+  - **Dezavantajları;** SSE'de olduğu gibi ağ üzerinden bir iletişim söz konusu olduğundan authentication/authorization eklemek gerekir.
+  - **Kullanım senaryoları;** Büyük boyultu veri akışlarının parçalar halinde eline alınacağı senaryolar için idealdir. Bu nedenle MCP tarafında özellikle araçların çıktılarının uzun olabileceği durumlarda Streamable HTTP tercih edilmektedir. Örneğin bir araç, büyük bir veri setini analiz ediyor ve sonuçları parça parça döndürüyor olabilir. Bu durumda Streamable HTTP, istemcinin bu parçaları gerçek zamanlı olarak almasını sağlar.
 
-Bu çalışmadaki örnekte **stdio** iletişim mekanizması kullanıldı. Eğer **SSE** destekli bir yapı kurmak istersek bir **WebApi** projesi oluşturabiliriz. Aşağıdaki gibi hareket edelim.
+Bu çalışmadaki örnekte **stdio** iletişim mekanizması kullanılmış ve yerel makinede işlerlik sağlanmıştır. Normalde sadece **SSE** ile de ilerleyebiliriz ama güncel **ModelContextProtocol.AspNetCore** paketi doğrudan **HTTP Streaming** standardını desteklemektedir.
 
 ```bash
 dotnet new web -n TodoMCPServerSSE
@@ -454,27 +459,26 @@ dotnet add package ModelContextProtocol.AspNetCore
 Bu uygulamada da TodoApiService ve TodoTools sınıflarını aynı şekilde kullanabiliriz. Farklı olan taraf program.cs kodları.
 
 ```csharp
+using McpServerSSE.Services;
 using ModelContextProtocol.Protocol;
+
+/*
+    Örnek promptlar:
+
+    - "Sistemimizde şu an hangi log parser benchmark projeleri koşuyor? Sadece isimlerini listele."
+    - "Zig ve Rust tabanlı log parser projelerinin detaylı metriklerini çek. Hangisinin yürütme süresi (ExecutionTime) daha kısa, hangisinin bellek tüketimi (MemoryUsage) daha az? Bu analizi Markdown formatında güzel bir tablo haline getir ve sisteme 'zig_vs_rust_analizi' adıyla rapor olarak kaydet."
+
+*/
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Logging.AddConsole(options =>
-{
-    options.LogToStandardErrorThreshold = LogLevel.Trace;
-});
-
-builder.Configuration.Sources.Clear();
-builder.Configuration
-    .SetBasePath(AppContext.BaseDirectory)
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false);
-
-var todoApiBaseUrl = builder.Configuration["TodoApiUrl"];
+string apiUrl = "http://localhost:5000/";
 
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton(sp =>
 {
     var httpClientFactory = sp.GetRequiredService<IHttpClientFactory>();
-    return new TodoApiService(httpClientFactory, todoApiBaseUrl);
+    return new BenchmarkApiService(httpClientFactory, apiUrl);
 });
 
 builder.Services
@@ -482,31 +486,46 @@ builder.Services
     {
         options.ServerInfo = new Implementation
         {
-            Name = "TodoMCPServer_SSE",
-            Version = "1.0.0"
+            Name = "Benchmark MCP Server",
+            Version = "1.0.0",
         };
     })
     .WithHttpTransport()
+    //.WithHttpTransport(options =>
+    //{
+    //    options.EnableLegacySse = true; // Legacy SSE desteğini de ekler (Obsolete oldu)
+    //    // Streamable HTTP desteği olmayan istemciler için işe yarar.
+    //})
     .WithToolsFromAssembly();
 
 var app = builder.Build();
 
-app.MapMcp("/sse");
+app.MapMcp("/mcp"); // Varsayılan olarak Streamable HTTP transport kullanılır, ama aynı zamanda legacy SSE'yi de destekler.
+
+Console.WriteLine("[MCP SERVER INFO] Benchmark MCP Server başlatılıyor...");
+Console.WriteLine($"[MCP SERVER INFO] Hedef API: {apiUrl}");
+Console.WriteLine("[MCP SERVER INFO] Streaming endpoint: /mcp");
+
 app.Run();
+
 ```
 
-Durumu bir özetleyelim. Todo işlemleri ile ilgili web api servisimiz rust ile yazılmış bir uygulama idi. Bu servisin her durumda çalışır olmasını bekliyoruz. Yeni MCP sunucu uygulamamız ise bir öncekinden farklı olarak bir WebApi projesi. Bununla birlikte **MapMcp** isimli metotla otomatik olarak bir yapay zeka aracının iletişim kurabileceği bir endpoint haline geliyor. **AddMcpServer** metodu arkasından çağırılan **WithHttpTransport** metodu ise bu iletişim için SSE destekli bir mekanizma kullanılacağını belirtiyor. Artık bu sunucuyu başlattığımızda, yapay zeka araçları belirtilen endpoint'e bağlanarak araç setimizi keşfedebilir ve kullanabilirler.
+Durumu bir özetleyelim. Todo işlemleri ile ilgili web api servisimiz rust ile yazılmış bir uygulama idi. Bu servisin her durumda çalışır olmasını bekliyoruz. Yeni **MCP** sunucu uygulamamız ise bir öncekinden farklı olarak bir **WebApi** projesi. Bununla birlikte **MapMcp** isimli metotla otomatik olarak bir yapay zeka aracının iletişim kurabileceği bir endpoint haline geliyor. **AddMcpServer** metodu arkasından çağırılan **WithHttpTransport** metodu ise bu iletişim için HTTP Streaming destekli bir mekanizma kullanılacağını belirtiyor. Artık bu sunucuyu başlattığımızda, yapay zeka araçları belirtilen endpoint'e bağlanarak araç setimizi keşfedebilir ve kullanabilirler.
 
 Bunu deneyimlemek için öncelikle **rust** ile yazılmış todo-api servisinin çalışır durumda olduğundan emin olalım. Ardından dotnet projemizi çalıştırarak **MCP** sunucusunu ayağa kaldıralım. Sonrasında istersek **VS Code** tarafındaki **mcp.json** dosyasını aşağıdaki gibi güncelleyerek yeni sunucumuzu etkinleştirebiliriz.
 
 ```json
 {
-    "servers": {
-        "Todo MCP Server V2": {
-            "type": "sse",
-            "url": "http://localhost:5055/sse"
-        }
-    }
+  "servers": {
+    "Company Benchmark Server V2": {
+      "type": "http",
+      "url": "http://localhost:5045/mcp"
+    },
+    // "Company Benchmark Server Legacy SSE": {
+    //   "type": "sse",
+    //   "url": "http://localhost:5045/mcp/sse"
+    // }
+  }
 }
 ```
 
