@@ -128,4 +128,80 @@ Farklı dillerin birbirlerini kullanabilmesini yollarından birisi **FFI**. Buna
 
 Dikkat edileceği üzere **C#** metot adlarını hiç bozmadan **IL** tarafına almıştır. **C++** tarafındaki **name mangling** semptomu burada görülmemektedir. Kafaları biraz daha karıştıralım öyleyse. **C#** ile yazdığımız ve **Native AOT-*(Ahead-of-Time)*** şeklinde derlediğimiz bir kütüphaneyi velev ki **C++** ile yazılmış bir kodda kullanmak istiyoruz *(İşte bunlar iş dünyasındaki uygulamalarda pek de yapmadığımız şeyler :D )*
 
-ÖRNEK VE ANLATIM EKLENECEK
+Öncelikle bir **class library** projesi oluşturalım.
+
+```bash
+dotnet new classlib -n FinanceLib
+```
+
+Sonrasında proje dosyasının içeriğini aşağıdaki gibi değiştirelim.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+</Project>
+```
+
+Burada iki önemli ek var. **PublishAot** ve **AllowUnsafeBlocks** kısımları. Bu sayede publish edilecek olan kodun **Native AOT** olarak üretileceğini ve doğrudan **C++** tarafında kullanılabileceğini belirtiyoruz. Ek olarak **pointer** ve bellek işlemleri yapılma ihtimali olduğundan **AllowUnsafeBlocks** özelliğini de açıyoruz.
+
+**PaymentFoundation** isimli kobay sınıf kodlarını aşağıdaki gibi düzenleyerek devam edelim.
+
+```csharp
+using System.Runtime.InteropServices;
+
+namespace FinanceLib;
+
+public class PaymentFoundation
+{
+    public static void ProcessPayment(decimal amount)
+    {
+        Console.WriteLine($"Processing payment of {amount:C}");
+    }
+
+    public static void ProcessPayment(int bonus)
+    {
+        Console.WriteLine($"Processing payment of {bonus} bonus points");
+    }
+
+    [UnmanagedCallersOnly(EntryPoint = "ProcessPayment")]
+    public static void ExportProcessPayment(decimal amount) => ProcessPayment(amount);
+
+    [UnmanagedCallersOnly(EntryPoint = "ProcessPayment")]
+    public static void ExportProcessPayment(int bonus) => ProcessPayment(bonus);
+}
+```
+
+Artık kütüphaneyi **publish** modunda çıkartabiliriz ki sorunu görebilmek adına bu gerekli. Ben **Windows 11** platformunda çalıştığım için kütüphaneyi aşağıdaki komutlarla önce derledim sonra da bir çıktı almaya çalıştım.
+
+```bash
+# Sorunsuz build
+dotnet build 
+# ama
+dotnet publish -r win-x64 -c Release
+```
+
+![MethOverload_04.png](/assets/images/2026/MethOverload_04.png)
+
+Haydaaaa! Program kodu başarılı şekilde derlense bile üretime çıkılan binary hatalı *(Benim makinede çalışıyor hocam :D)* E çok normal. Bu kütüphane **C++** tarafında kullanılacak ve orada metotlar aşırı yüklenirken aynı isimler kullanılsa bile derlenen sembollerde farklı isimlerin olması zorunlu. Bunu aslında size hatayı göstermek için ekledim. Normalda metotlarımızdaki **EntryPoint** değerlerinde farklı **EntryPoint** değerleri kullanmamız gerekir.
+
+```csharp
+[UnmanagedCallersOnly(EntryPoint = "ProcessPayment_WithAmount")]
+public static void ExportProcessPayment(decimal amount) => ProcessPayment(amount);
+
+[UnmanagedCallersOnly(EntryPoint = "ProcessPayment_WithBonus")]
+public static void ExportProcessPayment(int bonus) => ProcessPayment(bonus);
+```
+
+Bu düzenleme sonrası kütüphanenin **C++** tarafında kullanılabilir doğal çıktısının başarılı şekilde oluştuğunu görebiliriz.
+
+![MethOverload_05.png](/assets/images/2026/MethOverload_05.png)
+
+## Buraya Kadar Getirdik Madem C++ Tarafından da Çağıralım
+
+DEVAM EDECEK
