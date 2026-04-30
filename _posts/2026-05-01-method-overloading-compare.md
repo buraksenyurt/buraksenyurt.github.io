@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Metot Overloading Üzerine Düşünceler"
+title: "Method Overloading Üzerine Düşünceler"
 date: 2026-05-01 09:00:00
 tags:
     - csharp
@@ -13,21 +13,21 @@ tags:
 categories:
     - Programlama Dilleri
 ---
-Profesyonl olarak mesleki hayatımın neredeyse tamamında C# programlama dilini kullanarak geliştirme yaptım. Çoğunlukla bir arayüzün *(Web veya Windows)* bir iş sürecini tetiklediği ve bunun arkasında dönen yazılım yaşam döngüsünün bir parçası oldum. C#, Java, Go, Python vb birçok dil bu tip geliştirmeleri hızlandıracak türlü yeteneğe, kütüphane desteğine sahipler. Bununla birlikte uzun zamandır farklı programlama dillerini de öğrenmeye çalışıyorum ve çok uzun zamandır kafamı kurcalayan şeyler var. Bir programlama dilini tam olarak öğrenmek ne demektir?
+Profesyonel olarak mesleki hayatımın neredeyse tamamında **C#** programlama dilini kullanarak geliştirme yaptım. Çoğunlukla bir arayüzün *(Web veya Windows)* bir iş sürecini tetiklediği ve bunun arkasında dönen yazılım yaşam döngüsünün bir parçası oldum. **C#**, **Java**, **Go**, **Python** vb. birçok dil bu tip geliştirmeleri hızlandıracak türlü yeteneğe ve kütüphane desteğine sahip. Bununla birlikte uzun zamandır farklı programlama dillerini de öğrenmeye çalışıyorum ve çok uzun zamandır kafamı kurcalayan şeyler var. Bir programlama dilini tam olarak öğrenmek ne demektir?
 
-İş hayatının gereksinimleri düşünüldüğünde bir programlama dilinin, örneğin C#'ın tüm yeteneklerini kullanmıyoruz ve hatta yüzdesel olarak kimisini çok kimisini az ele alıyoruz. Bu yüzden farklı dillerdeki ilginç yaklaşımları görünce şaşırıyoruz *(Şahsen ben öyle hissediyorum)*. Örneğin, **OCaml** ile yazılmış bir ifadenin derlenirken matematiksel karşılığının ispatlanması, **Zig**' in **comptime** diye sadece derleme zamanında bilinen türleri desteklemesi, **Rust**'ın bellek yönetimindeki hassasiyeti vs Arada ince bir çizgi var belkide. Bilgisayar bilimlerinin akademik yanı ile saha yazılımcısı olmanın arasındaki çizgi olabilir bu. İş hayatına yönelik süreç bazlı, belli bir ekonomiyi çevreleyen çözümlere baktığımızda **Java**, **C#**, **Go**, **Python** vb dillerin epeyce öne çıktığını görüyoruz. Eğer bu alanlarda iş yapacaksak bu dillerin etkin kullanımını öğrenmek önemli ama en derin noktalarına kadar gerekli mi tartışılır.
+İş hayatının gereksinimleri düşünüldüğünde bir programlama dilinin, örneğin **C#**'ın tüm yeteneklerini kullanmıyoruz ve hatta yüzdesel olarak kimisini çok kimisini az ele alıyoruz. Bu yüzden farklı dillerdeki ilginç yaklaşımları görünce şaşırıyoruz *(Şahsen ben öyle hissediyorum)*. Örneğin, **OCaml** ile yazılmış bir ifadenin derlenirken matematiksel karşılığının ispatlanması, **Zig**'in **comptime** diye sadece derleme zamanında bilinen türleri desteklemesi, **Rust**'ın bellek yönetimindeki hassasiyeti vs. Arada ince bir çizgi var belki de. Bilgisayar bilimlerinin akademik yanı ile saha yazılımcısı olmanın arasındaki çizgi olabilir bu. İş hayatına yönelik süreç bazlı, belli bir ekonomiyi çevreleyen çözümlere baktığımızda **Java**, **C#**, **Go**, **Python** vb. dillerin epeyce öne çıktığını görüyoruz. Eğer bu alanlarda iş yapacaksak bu dillerin etkin kullanımını öğrenmek önemli ama en derin noktalarına kadar gerekli mi, tartışılır.
 
 Diğer yandan bir programlama dilinin genetiğini anlamak, felsefesini kavramak, yeteneklerini sorgulamak denince iş epeyce değişiyor. Zira başka programlama dillerinden etkilenen dillerin genetik koduna işleyen birçok kalıtımsal özellik öğrenmeye değer. Bir diğer öğrenmeye değer konuysa birisinde olan bir özelliğin diğer dilde neden olmayışını araştırmak.
 
-İşte bu karman çorman düşünceler arasında gelelim bugünkü konumuza; metotların aşırı yüklenmesi *(Method Overloading)* Baştan söyleyeyim bu yazıda "o dil bu dilden daha iyidir" gibi bir amacım yok, sadece merak ettiğim bir sorunun cevabını arayıp çıkarımlar elde etmeye çalışacağım.
+İşte bu karman çorman düşünceler arasında gelelim bugünkü konumuza; metotların aşırı yüklenmesi *(Method Overloading)*. Baştan söyleyeyim, bu yazıda "o dil bu dilden daha iyidir" gibi bir amacım yok; sadece merak ettiğim bir sorunun cevabını arayıp çıkarımlar elde etmeye çalışacağım.
 
 ## C# Bakış Açısından Method Overloading
 
-**C#** dilini ilk öğrenmeye başladığımızda her dilde olduğu gibi bir **Hello World** uygulaması yazılır ve kuvvetle muhtemel **Console** sınıfının statik olarak çağırılabilen **WriteLine** metodu kullanılır. Sonralarında bu metodun aslında aynı isimle 20 farklı sürümünün olduğu üzerinde de durulur ve bu kavram **Method Overloading** olarak adlandırılır.
+**C#** dilini ilk öğrenmeye başladığımızda her dilde olduğu gibi bir **Hello World** uygulaması yazılır ve kuvvetle muhtemel **Console** sınıfının statik olarak çağırılabilen **WriteLine** metodu kullanılır. Sonralarında bu metodun aslında aynı isimle yirmi farklı sürümünün olduğu üzerinde de durulur ve bu kavram **Method Overloading** olarak adlandırılır.
 
 ![MethOverload_00.png](/assets/images/2026/MethOverload_00.png)
 
-Gayet güzel bir özellik değil mi? Geliştirici olarak sadece **WriteLine** metodunu biliriz ve bu bilgi zihnimizde yer eder. Aşırı yüklenmiş diğer versiyonlar da aynı isimde olduğundan farklı parametrelere çalışan hallerini bilmemize de gerek yoktur. Sezgisel olarak farklı veri türleri ile çalışabileceğini de biliriz. Bu yaklaşımın **Syntatic Sugar** olarak ifade edildiğine de rastlanır.
+Gayet güzel bir özellik değil mi? Geliştirici olarak sadece **WriteLine** metodunu biliriz ve bu bilgi zihnimizde yer eder. Aşırı yüklenmiş diğer versiyonlar da aynı isimde olduğundan farklı parametrelerle çalışan hallerini bilmemize de gerek yoktur. Sezgisel olarak farklı veri türleri ile çalışabileceğini de biliriz. Bu yaklaşımın **Syntactic Sugar** olarak ifade edildiğine de rastlanır.
 
 Normal metotlar gibi yapıcı metotlar da *(Constructors)* aşırı yüklenebilirler. Metodun imzasını oluşturan parametre sayısı ve argüman tipleri ayrıştırıcıdır. Yani aynı tip ve sayıda parametre kullanamayız. Aşağıdaki örnek kod parçasında basit bir örnek yer almaktadır.
 
@@ -72,11 +72,11 @@ public class SubscriberFilter
 }
 ```
 
-Kobay olarak kullandığımız **SubscriberFilter** isimli sınıf içerisinde **Find** isimli metodun görüldüğü üzere üç farklı versiyonu yer alıyor. Parametre sayıları aynı olsa da tipleri farklı olduğu için herhangibir derleme zamanı hatası da almayız. Üstelik **Finde** metodunu kullandığımız yerde diğer varyasyonları da kolayca görebiliriz.
+Kobay olarak kullandığımız **SubscriberFilter** isimli sınıf içerisinde **Find** isimli metodun görüldüğü üzere üç farklı versiyonu yer alıyor. Parametre sayıları aynı olsa da tipleri farklı olduğu için herhangi bir derleme zamanı hatası da almayız. Üstelik **Find** metodunu kullandığımız yerde diğer varyasyonları da kolayca görebiliriz.
 
 ![MethOverload_01.png](/assets/images/2026/MethOverload_01.png)
 
-Gayet şık duruyor. Peki öyleyse neden bazı dillerde metot aşırı yükleme gibi bir özellik bulunmaz. Örneğin **Golang ([Şurada bir FAQ açıklaması vardır](https://go.dev/doc/faq#overloading))** ya da **Rust** bunu desteklemez. Bu konudaki söylemlerden birisi konunun **C++** diline dayanmasıdır. C++ method overloading' i destekler ancak derleyici **name mangling** olarak da bilinen bir taktik uygular ve metot adlarını değiştirir. Bunu derleyici çıktısı açısından verimsiz olduğu iddia edilir. Bir derleyici tasarımcısı olmadığı için söyleyecek sözüm yok ancak olayı bir **C++** kodu ile deneyebiliriz.
+Gayet şık duruyor. Peki öyleyse neden bazı dillerde metot aşırı yükleme gibi bir özellik bulunmaz? Örneğin **Golang ([Şurada bir FAQ açıklaması vardır](https://go.dev/doc/faq#overloading))** ya da **Rust** bunu desteklemez. Bu konudaki söylemlerden biri konunun **C++** diline dayanmasıdır. **C++** method overloading'i destekler ancak derleyici **name mangling** olarak da bilinen bir taktik uygular ve metot adlarını değiştirir. Bunun derleyici çıktısı açısından verimsiz olduğu iddia edilir. Bir derleyici tasarımcısı olmadığım için söyleyecek sözüm yok ancak olayı bir **C++** kodu ile deneyebiliriz.
 
 ## C++ Tarafında Method Overloading ve Name Mangling
 
@@ -118,15 +118,15 @@ Kısa bir kod parçası olsa da uzun bir içerik üretildiğini söyleyebilirim 
 
 ![MethOverload_03.png](/assets/images/2026/MethOverload_03.png)
 
-Burada ilk kısım tahmin edeceğiniz ilgili sembolün bellek adresini ifade ediyor. Öğrendiğim kadarıyla **T** harfi global olarak erişilebilen fonksiyonları işaret etmekte. Dolayısıyla **C++** dilinde aşırı yüklenen metotlar gerçekten de bahsedildiği gibi derlenen binary içerisinde isimleri değiştirilmiş semboller olarak tutuluyorlar. Metot aşırı yükleme yeteneğini kullanmayan dillerin bir argümanı **name mangling** mevzusunun başka dillerle olan iletişim sırasında *(FFI - Foreign Function Interface)* sorun çıkarttığı görüşü. Öyleyse bu durumu bir ele almaya çalışalım.
+Burada ilk kısım tahmin edeceğiniz gibi ilgili sembolün bellek adresini ifade ediyor. Öğrendiğim kadarıyla **T** harfi global olarak erişilebilen fonksiyonları işaret etmekte. Dolayısıyla **C++** dilinde aşırı yüklenen metotlar gerçekten de bahsedildiği gibi derlenen binary içerisinde isimleri değiştirilmiş semboller olarak tutuluyorlar. Metot aşırı yükleme yeteneğini kullanmayan dillerin bir argümanı, **name mangling** mevzusunun başka dillerle olan iletişim sırasında *(FFI - Foreign Function Interface)* sorun çıkardığı görüşü. Öyleyse bu durumu ele almaya çalışalım.
 
 ## FFI Mevzusu
 
-Farklı dillerin birbirlerini kullanabilmesini yollarından birisi **FFI**. Buna göre örneğin **C#** tarafında yazılmış bir kütüphaneyi **C++** tarafında kullanmamız mümkün *(ya da tam tersi)* Birçok dilin bu özelliği bulunuyor. **Rust** içinden **Python** fonksiyonu çağırabiliyorsak bu **FFI** standardı sayesinde mümkün. Ancak metotların aşırı yüklendiği senaryolar da bu ne kadar sorun çıkartabilir? Yazımızın girizgah kısmında yazdığımız **C#** kodunu bir kere daha masa yatırmak isterim. Ancak bu sefer üretilen ara dil koduna *(IL - Intermediate Languege)* odaklanalım. Aşağıdaki ekran görüntüsünde **ILSpy** eklentisi ile elde edilmiş **decompile** çıktısını görebilirsiniz.
+Farklı dillerin birbirlerini kullanabilmesinin yollarından biri **FFI**. Buna göre örneğin **C#** tarafında yazılmış bir kütüphaneyi **C++** tarafında kullanmamız mümkün *(ya da tam tersi)*. Birçok dilin bu özelliği bulunuyor. **Rust** içinden **Python** fonksiyonu çağırabiliyorsak bu, **FFI** standardı sayesinde mümkün. Ancak metotların aşırı yüklendiği senaryolarda bu ne kadar sorun çıkarabilir? Yazımızın girizgah kısmında yazdığımız **C#** kodunu bir kere daha masaya yatırmak isterim. Ancak bu sefer üretilen ara dil koduna *(IL - Intermediate Language)* odaklanalım. Aşağıdaki ekran görüntüsünde **ILSpy** eklentisi ile elde edilmiş **decompile edilmiş** çıktıyı görebilirsiniz.
 
 ![MethOverload_02.png](/assets/images/2026/MethOverload_02.png)
 
-Dikkat edileceği üzere **C#** metot adlarını hiç bozmadan **IL** tarafına almıştır. **C++** tarafındaki **name mangling** semptomu burada görülmemektedir. Kafaları biraz daha karıştıralım öyleyse. **C#** ile yazdığımız ve **Native AOT-*(Ahead-of-Time)*** şeklinde derlediğimiz bir kütüphaneyi velev ki **C++** ile yazılmış bir kodda kullanmak istiyoruz *(İşte bunlar iş dünyasındaki uygulamalarda pek de yapmadığımız şeyler :D )*
+Dikkat edileceği üzere **C#** metot adlarını hiç bozmadan **IL** tarafına almıştır. **C++** tarafındaki **name mangling** semptomu burada görülmemektedir. Kafaları biraz daha karıştıralım öyleyse. **C#** ile yazdığımız ve **Native AOT** *(Ahead-of-Time)* şeklinde derlediğimiz bir kütüphaneyi velev ki **C++** ile yazılmış bir kodda kullanmak istiyoruz *(İşte bunlar iş dünyasındaki uygulamalarda pek de yapmadığımız şeyler :D)*
 
 Öncelikle bir **class library** projesi oluşturalım.
 
@@ -177,7 +177,7 @@ public class PaymentFoundation
 }
 ```
 
-Artık kütüphaneyi **publish** modunda çıkartabiliriz ki sorunu görebilmek adına bu gerekli. Ben **Windows 11** platformunda çalıştığım için kütüphaneyi aşağıdaki komutlarla önce derledim sonra da bir çıktı almaya çalıştım.
+Artık kütüphaneyi **publish** modunda yayınlayabiliriz ki sorunu görebilmek adına bu gerekli. Ben **Windows 11** platformunda çalıştığım için kütüphaneyi aşağıdaki komutlarla önce derledim, sonra da bir çıktı almaya çalıştım.
 
 ```bash
 # Sorunsuz build
@@ -188,7 +188,7 @@ dotnet publish -r win-x64 -c Release
 
 ![MethOverload_04.png](/assets/images/2026/MethOverload_04.png)
 
-Haydaaaa! Program kodu başarılı şekilde derlense bile üretime çıkılan binary hatalı *(Benim makinede çalışıyor hocam :D)* E çok normal. Bu kütüphane **C++** tarafında kullanılacak ve orada metotlar aşırı yüklenirken aynı isimler kullanılsa bile derlenen sembollerde farklı isimlerin olması zorunlu. Bunu aslında size hatayı göstermek için ekledim. Normalda metotlarımızdaki **EntryPoint** değerlerinde farklı **EntryPoint** değerleri kullanmamız gerekir.
+Haydaaaa! Program kodu başarılı şekilde derlense bile üretime çıkılan binary hatalı *(Benim makinemde çalışıyor hocam :D)*. E, çok normal. Bu kütüphane **C++** tarafında kullanılacak ve orada metotlar aşırı yüklenirken aynı isimler kullanılsa bile derlenen sembollerde farklı isimlerin olması zorunlu. Bunu aslında size hatayı göstermek için ekledim. Normalde metotlarımızda farklı **EntryPoint** değerleri kullanmamız gerekir.
 
 ```csharp
 [UnmanagedCallersOnly(EntryPoint = "ProcessPayment_WithAmount")]
@@ -206,7 +206,7 @@ Bu düzenleme sonrası kütüphanenin **C++** tarafında kullanılabilir doğal 
 
 ## Buraya Kadar Getirdik Madem C++ Tarafından da Çağıralım
 
-Son örnekteki kodun bir **C++** kodu üzerinden nasıl çağrılacağını merak etmiş olabilirsiniz. Hemen yeri gelmişken bunu da örnekleyelim.
+Son örnekteki kodun bir **C++** programı üzerinden nasıl çağrılacağını merak etmiş olabilirsiniz. Hemen yeri gelmişken bunu da örnekleyelim.
 
 ```cpp
 #include <iostream>
@@ -244,7 +244,7 @@ int main()
 }
 ```
 
-Dosya başında gerekli kütüphane bildirimleri yapıldıktan sonra **C#** tarafındaki metotlar için gerekli tip tanımlamaları yapılıyor. Bu tanımlamalar ile ilgili fonksiyonların imzaları referans ediliyor diye düşünebiliriz. **LoadLibrary** metodu ile az önce publish edilmiş olan .NET dll'ini yüklüyoruz. Böylece **GetProcessAddress** metodu üzerinden bu **binary** referansını vererek .NET fonksiyonlarının bellek adreslerine erişmemiz mümkün. Yani fonksiyon pointer'larına ulaşmış oluyoruz. Dikkat ederseniz ikinci paramtre verilen isimler **UnmanagedCallersOnly** niteliğinde kullandığımız **EntryPoint** isimleri. Programı aşağıdaki terminal komutları ile önce derleyip sonrasında çalıştıralım.
+Dosya başında gerekli kütüphane bildirimleri yapıldıktan sonra **C#** tarafındaki metotlar için gerekli tip tanımlamaları yapılıyor. Bu tanımlamalar ile ilgili fonksiyonların imzaları referans ediliyor diye düşünebiliriz. **LoadLibrary** metodu ile az önce publish edilmiş olan .NET kütüphanesini yüklüyoruz. Böylece **GetProcAddress** fonksiyonu üzerinden bu **binary** referansını vererek .NET fonksiyonlarının bellek adreslerine erişmemiz mümkün. Yani fonksiyon işaretçilerine ulaşmış oluyoruz. Dikkat ederseniz ikinci parametrede verilen isimler, **UnmanagedCallersOnly** niteliğinde kullandığımız **EntryPoint** isimleri. Programı aşağıdaki terminal komutları ile önce derleyip sonrasında çalıştıralım.
 
 ```bash
 g++ -o ffi_sample .\ffi_sample.cpp
@@ -291,7 +291,7 @@ public record SocialSecurityNumber(string Value)
 }
 ```
 
-Bu yazıdaki örnekleri deneyenlerin için program sınıfının içeriğini de paylaşmak isterim.
+Bu yazıdaki örnekleri deneyenler için program sınıfının içeriğini de paylaşmak isterim.
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -311,7 +311,7 @@ app.MapControllers();
 await app.RunAsync();
 ```
 
-Tamamen deneysel amaçlı bu projeyi çalıştırıp örneğin `https://localhost:7036/api/Subscriber/find?id=42` adresine doğru *(sizde port numarası farklı olabilir)* bir **HTTP Get** talebi yaptığımızda **HTTP 200** cevabı almamız son derece doğaldır.
+Tamamen deneysel amaçlı bu projeyi çalıştırıp örneğin `https://localhost:7036/api/Subscriber/find?id=42` adresine *(sizde port numarası farklı olabilir)* bir **HTTP GET** talebi yaptığımızda **HTTP 200** cevabı almamız son derece doğaldır.
 
 ```bash
 curl "https://localhost:7036/api/Subscriber/find?id=42"
@@ -344,7 +344,7 @@ public class SubscriberController : ControllerBase
 }
 ```
 
-**Find** metodunun aşırı yüklenmiş üç versiyonunu yazdık. Aslında **endpoint** üzerinden sunmak istediğimiz fonksiyonellik **find**. Bunu da **HttpGet** niteliğinde her üç metot içinde aynı şekilde belirledik. Kod derlenecektir ancak az önce başarılı şekilde kullanabildiğimiz **curl** çağrısı bu sefer hata verecektir.
+**Find** metodunun aşırı yüklenmiş üç versiyonunu yazdık. Aslında **endpoint** üzerinden sunmak istediğimiz fonksiyonellik **find**. Bunu da **HttpGet** niteliğinde her üç metot için de aynı şekilde belirledik. Kod derlenecektir ancak az önce başarılı şekilde kullanabildiğimiz **curl** çağrısı bu sefer hata verecektir.
 
 ![MethOverload_08.png](/assets/images/2026/MethOverload_08.png)
 
@@ -352,7 +352,7 @@ Aslında çalışma zamanını beklemeye gerek yoktur. Visual Studio arabirimi *
 
 ![MethOverload_09.png](/assets/images/2026/MethOverload_09.png)
 
-Aslında **Router** isimlendirmesinin benzersiz olmasının beklenmesi son derece normal bana kalırsa. Amaç **endpoint** üzerinden sunulan bir fonksiyonelliğin parametre yapısına göre değil ismine bakarak anlaşılabilmesini sağlamak olmalı. Zira **OpenApi** standardı da metot imzalarını değil, **URL** yollarını anlayacak şekilde tasarlanmıştır. Yukarıdaki senaryoda çözüm olarak kullanabileceğimi yollardan birisi bu isimlendirmeleri farklılaştırmak olabilir.
+Aslında **router** isimlendirmesinin benzersiz olmasının beklenmesi bana kalırsa son derece normal. Amaç, **endpoint** üzerinden sunulan bir fonksiyonelliğin parametre yapısına göre değil, ismine bakarak anlaşılabilmesini sağlamak olmalı. Zira **OpenAPI** standardı da metot imzalarını değil, **URL** yollarını anlayacak şekilde tasarlanmıştır. Yukarıdaki senaryoda çözüm olarak kullanabileceğim yollardan biri bu isimlendirmeleri farklılaştırmak olabilir.
 
 ```csharp
 [HttpGet("find-by-email")]
@@ -367,13 +367,13 @@ public IActionResult Find([FromQuery] SocialSecurityNumber ssn)
 }
 ```
 
-Metotların aşırı yüklenmesi yeteneğinin kullanan taraf için ergonomi sağladığı aşikar. Sadece tek bir metot yazarız ve örneğin IDE bizim için en doğru olanı bulur. Ayrıca bu tip metotları türeyen sınıflarda ezmek *(override)* mümkün olabilir. Böylece aşırı yüklenmiş metotları türetme mantığı ile genişletebiliriz belki de *(Bunu ben söyledim diye inanmayın bir deneyin derim :D)*
+Metotların aşırı yüklenmesi yeteneğinin kullanan taraf açısından ergonomi sağladığı aşikar. Sadece tek bir metot yazarız ve örneğin IDE bizim için en doğru olanı bulur. Ayrıca bu tip metotları türeyen sınıflarda ezmek *(override)* mümkün olabilir. Böylece aşırı yüklenmiş metotları türetme mantığı ile genişletebiliriz belki de *(Bunu ben söyledim diye inanmayın, bir deneyin derim :D)*
 
-Diğer yandan yukarıda analiz etmeye çalıştığım ve farklı yapıların kullanımı sırasında ortaya çıkan uyumsuzluk problemine ek olarak bir tipin metot bazında fazlaca şişmesi de istenmeyen bir durum olabilir... Olabilir mi acaba? Geliştiricileri **.NET** içerisine yirmi farklı versiyonu olan **WriteLine** metodunu koymuş mesela. İşte tam bu noktada **method overloading** kavramını reddeden dillerden birisi olan **Rust** tarafından da olaya bir yaklaşalım derim.
+Diğer yandan yukarıda analiz etmeye çalıştığım ve farklı yapıların kullanımı sırasında ortaya çıkan uyumsuzluk problemine ek olarak bir tipin metot bazında fazlaca şişmesi de istenmeyen bir durum olabilir... Olabilir mi acaba? Geliştiriciler **.NET** içerisine yirmi farklı versiyonu olan **WriteLine** metodunu koymuş mesela. İşte tam bu noktada **method overloading** kavramını reddeden dillerden biri olan **Rust** tarafından da olaya yaklaşalım derim.
 
-## Method Overload Sevmem Diyen Rust
+## Method Overloading Sevmem Diyen Rust
 
-Bu sefer senaryomuzu şöyle farklılaştıralım. İlk başta değindiğimiz **SubscriberFoundation** sınıfında **UniqueNickname** isimli yeni bir alan ile de arama seçeneği eklemek istediğimizi düşünelim. **Find** metodunun aşırı yüklenmiş yeni bir versiyonunu ekleyemeyeceğiz *(Elbette aynı metot içinde if else blokları, switch ifadeleri ile de çözülebilir ama konumuzu metotların aşırı yüklenmesi)*
+Bu sefer senaryomuzu şöyle farklılaştıralım. İlk başta değindiğimiz **SubscriberFoundation** sınıfında **UniqueNickname** isimli yeni bir alan ile de arama seçeneği eklemek istediğimizi düşünelim. **Find** metodunun aşırı yüklenmiş yeni bir versiyonunu ekleyemeyeceğiz *(Elbette aynı metot içinde if else blokları, switch ifadeleri ile de çözülebilir ama konumuz metotların aşırı yüklenmesi)*
 
 ![MethOverload_10.png](/assets/images/2026/MethOverload_10.png)
 
@@ -381,41 +381,41 @@ Bu son derece doğal. Zira parametre sayısı ve tipi aynı olan iki metodun ayn
 
 ```rust
 fn main() {
-    let _subscriber = SubscriberFoundation.find(SubsriberSearchType::Id(1195));
-    let _subscriber = SubscriberFoundation.find(SubsriberSearchType::Email("bss@none".to_string()));
+    let _subscriber = SubscriberFoundation.find(SubscriberSearchType::Id(1195));
+    let _subscriber = SubscriberFoundation.find(SubscriberSearchType::Email("bss@none".to_string()));
     let _subscriber =
-        SubscriberFoundation.find(SubsriberSearchType::UniqueNickName(uuid::Uuid::new_v4()));
-    let _subscriber = SubscriberFoundation.find(SubsriberSearchType::Ssn("123-45-6789".to_string()));
+        SubscriberFoundation.find(SubscriberSearchType::UniqueNickname(uuid::Uuid::new_v4()));
+    let _subscriber = SubscriberFoundation.find(SubscriberSearchType::Ssn("123-45-6789".to_string()));
 }
 
 struct Subscriber {}
 
-enum SubsriberSearchType {
+enum SubscriberSearchType {
     Id(i32),
     Email(String),
-    UniqueNickName(uuid::Uuid),
+    UniqueNickname(uuid::Uuid),
     Ssn(String),
 }
 
 struct SubscriberFoundation;
 
 impl SubscriberFoundation {
-    fn find(&self, search_type: SubsriberSearchType) -> Option<Subscriber> {
+    fn find(&self, search_type: SubscriberSearchType) -> Option<Subscriber> {
         match search_type {
-            SubsriberSearchType::Id(id) => {
+            SubscriberSearchType::Id(id) => {
                 println!("search by id: {}", id);
                 None
             }
-            SubsriberSearchType::Email(email) => {
+            SubscriberSearchType::Email(email) => {
                 println!("search by email: {}", email);
                 None
             }
-            SubsriberSearchType::UniqueNickName(unique_nick_name) => {
+            SubscriberSearchType::UniqueNickname(unique_nick_name) => {
                 println!("search by unique nick name: {}", unique_nick_name);
 
                 None
             }
-            SubsriberSearchType::Ssn(ssn) => {
+            SubscriberSearchType::Ssn(ssn) => {
                 println!("search by ssn: {}", ssn);
                 None
             }
@@ -426,13 +426,13 @@ impl SubscriberFoundation {
 
 > Örnekte Guid üretimi için uuid isimli bir crate kullanılıyor. Konumuzla çok alakası yok ama `cargo add uuid -F v4` ile projeye eklenebilir.
 
-Eğer rust gibi bir dil metotların aşırı yüklenmesi yeteneğini kullanmıyorsa mutlaka daha şık bir çözüme ve bakış açısına sahip olduğu içindir diye kişisel yorumumu yapmak isterim. Program kodunda dikkat edileceği üzere **C#** örneğinde aşırı yüklediğimiz metotlarda kullandığımız argümanlar bir **enum** veri yapısı içerisinde toplanmışlardır. İsimler anlamlı ve ne amaçla kullanıldığını ifade edecek türdendir. Tek bir **find** metodu söz konusudur ve parametre olarak gelen arama kriteri bir **enum** olduğundan olası tüm değerlerinin ele alınması zorunludur. Bu sayede derleyici güvenliği de sağlanır. Örneğin yeni bir arama kriteri eklendiğinde **find** metodundaki **pattern match** ifadesinde bu durum ele alınmazsa kod derlenmeyecektir. Diğer yandan aynı veri türü ile arama da eklenebilmiştir. Zira **String** türü **Email** ve **UniqueNickName** varyantlarınca sarmalanmaktadır.
+Eğer **Rust** gibi bir dil metotların aşırı yüklenmesi yeteneğini kullanmıyorsa mutlaka daha şık bir çözüme ve bakış açısına sahip olduğu içindir diye kişisel yorumumu yapmak isterim. Program kodunda dikkat edileceği üzere **C#** örneğinde aşırı yüklediğimiz metotlarda kullandığımız argümanlar bir **enum** veri yapısı içerisinde toplanmışlardır. İsimler anlamlı ve ne amaçla kullanıldığını ifade edecek türdendir. Tek bir **find** metodu söz konusudur ve parametre olarak gelen arama kriteri bir **enum** olduğundan olası tüm değerlerinin ele alınması zorunludur. Bu sayede derleyici güvenliği de sağlanır. Örneğin yeni bir arama kriteri eklendiğinde **find** metodundaki **pattern match** ifadesinde bu durum ele alınmazsa kod derlenmeyecektir. Diğer yandan aynı veri türü ile arama da eklenebilmiştir. Zira **String** türü **Email** ve **UniqueNickname** varyantlarınca sarmalanmaktadır.
 
-Tüm bunlar ışığında belki de şöyle bir yorum yapabiliriz; Söz konusu senaryoda **Rust** eylem yerine veriye odaklanmaktadır. Zira varyasyonları fonksiyonlarda değil, **enum** olarak eklenmiş veri modelinde barındırıyor. Buna göre **find** metodu sadece sorguyu işleten bir yardımcı.
+Tüm bunlar ışığında belki de şöyle bir yorum yapabiliriz: Söz konusu senaryoda **Rust** eylem yerine veriye odaklanmaktadır. Zira varyasyonları fonksiyonlarda değil, **enum** olarak eklenmiş veri modelinde barındırıyor. Buna göre **find** metodu sadece sorguyu işleten bir yardımcı.
 
-Elbette birtakım eksiler de yok değil. Söz gelimi bazı metot çağrılarının parametre yapısı çok uzun olabilir. **Find(1195)** şeklinde bir çağrı yapabilecekken **find(SubsriberSearchType::Id(1195))** şeklinde uzun bir kullanım söz konusudur. Okunurluk açısından sıkıntı olabilir. Tabii bir diğer ve önemli dezavantaj da benim gibi yıllarını nesne yönelimli dillerde geçirmiş insanlar için geçerlidir. Bizim için metotları aşırı yüklemek yerine, argümanları birer veri olarak düşünüp önce **enum** tasarlamak kavramsal olarak da ters gelebilir. En azından benim için başlarda böyle olmuştu.
+Elbette birtakım eksiler de yok değil. Söz gelimi bazı metot çağrılarının parametre yapısı çok uzun olabilir. **Find(1195)** şeklinde bir çağrı yapabilecekken **find(SubscriberSearchType::Id(1195))** şeklinde uzun bir kullanım söz konusudur. Okunurluk açısından sıkıntı olabilir. Tabii bir diğer ve önemli dezavantaj da benim gibi yıllarını nesne yönelimli dillerde geçirmiş insanlar için geçerlidir. Bizim için metotları aşırı yüklemek yerine, argümanları birer veri olarak düşünüp önce **enum** tasarlamak kavramsal olarak da ters gelebilir. En azından benim için başlarda böyle olmuştu.
 
-## Birde Zig Diyelim
+## Bir de Zig Diyelim
 
 **Zig** programlama dili de metotların aşırı yüklenmesine izin vermez. Bu dil gizli kontrol akışlarına, gizli bellek tahsislerine veya derleyicinin bizim yerimize karar verdiği durumlara tamamen karşıdır. Her şeyin açık bir şekilde tariflenmesi gerektiğine inanır. Bu yüzden **C** programlama dilinin daha güvenli ve modern bir varyantı olarak da lanse edilmektedir. Buna göre fonksiyon adlarını ya açıkça yazmamız gerekir ya da... Şimdi burada durup aşağıdaki kod parçasını ele alalım derim.
 
@@ -485,9 +485,9 @@ pub fn main() void {
 }
 ```
 
-Önce kodu anlatmaya çalışayım :D **Rust** ile yazdığımız kurguya benzer görünüyor ama burada bir enum veri yapısı yok tabii ki. Yine de farklı arama seçeneklerini değişmez veri yapıları *(const struct)* tanımlıyoruz. Aslında odaklanmamız gereken nokta yine **find** isimli fonksiyonun ikinci parametresi olan ve **anytype** türünden tanımlanmış **search_param**. Bunun **switch** bloğu içerisindeki kullanımına dikkat edersek **comptime** isimli bir anahtar kelime görüyoruz. **Zig** programlama dilinin en güçlü özelliklerinden birisi **comptime** türevleri. **const** ve **var** ile tanımlı her enstrümana adapte edilebiliyor. Özelliği ise şu; bu türler sadece derleme aşamasında kullanılır ve çalışma zamanına aktarılmazlar ve dolayısıyla bellek tahsisleri söz konusu olmaz. Yani çalışma zamanı için sıfır maliyet anlamına gelen bir kullanım şeklidir. Kodlar makine koduna dönüştüğünde büyük ihtimalle her tip için spesifik bir fonksiyon üretilir *(Monomorphization)* Bu açıdan gayet **idiomatic** yazdığımız **Rust** koduna göre avantaj da sağlar. Zira rust enum türleri için bellekte etiket tutar. Yani verinin Id mi yoksa email mi olduğunu çalışma zamanında anlamak için fazladan byte tutar.
+Önce kodu anlatmaya çalışayım :D **Rust** ile yazdığımız kurguya benzer görünüyor ama burada bir enum veri yapısı yok tabii ki. Yine de farklı arama seçeneklerini değişmez veri yapıları *(const struct)* olarak tanımlıyoruz. Aslında odaklanmamız gereken nokta yine **find** isimli fonksiyonun ikinci parametresi olan ve **anytype** türünden tanımlanmış **search_param**. Bunun **switch** bloğu içerisindeki kullanımına dikkat edersek **comptime** isimli bir anahtar kelime görüyoruz. **Zig** programlama dilinin en güçlü özelliklerinden biri **comptime** türevleri. **const** ve **var** ile tanımlı her enstrümana adapte edilebiliyor. Özelliği ise şu; bu türler sadece derleme aşamasında kullanılır, çalışma zamanına aktarılmazlar ve dolayısıyla bellek tahsisleri söz konusu olmaz. Yani çalışma zamanı için sıfır maliyet anlamına gelen bir kullanım şeklidir. Kodlar makine koduna dönüştüğünde büyük ihtimalle her tip için spesifik bir fonksiyon üretilir *(Monomorphization)*. Bu açıdan gayet **idiomatic** yazdığımız **Rust** koduna göre avantaj da sağlar. Zira **Rust** enum türleri için bellekte etiket tutar. Yani verinin **Id** mi yoksa **Email** mi olduğunu çalışma zamanında anlamak için fazladan bayt tutar.
 
-Lakin senaryoda rol oynayan **anytype** avantajlı ve tehlikeli bir enstrümandır. Yani koda şöyle uzaktan bir bakarsak tam olarak ne olduğunu anlayamayabiliriz. **search_param: anytype** kullanımında search_param'ın alabileceği değerler kod içerisindeki **switch** bloğundan yakalanabilir *(Hoş bu durum rust tarafı için de geçerli :D)* Bununla birlikte **zig** kodu derlendiğinde her bir **const** için ayrı ayrı makine kodu fonksiyonları oluşturacaktır. Bu da rust tarafındaki **enum** ve **pattern match** yaklaşımını düşündüğümüzde dezavantajdır. Zig kodunu aşağıdaki gibi doğrudan çalıştırabiliriz.
+Lakin senaryoda rol oynayan **anytype** avantajlı ama tehlikeli bir enstrümandır. Yani koda şöyle uzaktan bir bakarsak tam olarak ne olduğunu anlayamayabiliriz. **search_param: anytype** kullanımında `search_param`'ın alabileceği değerler kod içerisindeki **switch** bloğundan yakalanabilir *(Hoş bu durum **Rust** tarafı için de geçerli :D)*. Bununla birlikte **Zig** kodu derlendiğinde her bir **const** için ayrı ayrı makine kodu fonksiyonları oluşturacaktır. Bu da **Rust** tarafındaki **enum** ve **pattern match** yaklaşımını düşündüğümüzde dezavantajdır. Zig kodunu aşağıdaki gibi doğrudan çalıştırabiliriz.
 
 ```bash
 # Doğrudan çalıştırmak için
@@ -504,14 +504,14 @@ zig build-exe .\app.zig
 zig build-exe .\app.zig -femit-asm
 ```
 
-Bu dosya tabii oldukça kallavi olacak. Satır satır okuyun... Şaka şaka :D **find** fonksiyonlarını bulmaya çalışacağız. Bunun için **main:** ifadesini aratabiliriz. Bizi **main** fonksiyonu için üretilen assembly kodlarına götürür. Kendi sistemimde aşağıdaki içerikle karşılaştım.
+Bu dosya tabii oldukça büyük olacak. Satır satır okuyun... Şaka şaka :D **find** fonksiyonlarını bulmaya çalışacağız. Bunun için **main:** ifadesini aratabiliriz. Bu bizi **main** fonksiyonu için üretilen **assembly** kodlarına götürür. Kendi sistemimde aşağıdaki içerikle karşılaştım.
 
 ![MethOverload_11.png](/assets/images/2026/MethOverload_11.png)
 
-Tahmin edileceği üzere sarı kutular içerisine alınmış dört çağrı *(call)* **id**, **email**, **uniqueNickName** ve **ssn** kullanımlarına ait. Örneğin **find_anon_26103** çağrımını araratırsak ilgili fonksiyonun iç yapısına da ulaşabiliriz. **Assembly** bilgim o kadar iyi seviyede olmasa da bu benim için bir ispat niteliğinde. **C++** üretimlerinde derleyicinin aşırı yüklediği metotları nispeten daha anlamlı isimlendirdiğine de şahit olmuştuk. Bu **zig** isimlendirmeden ziyade performans odaklı olarak bellek yerleşimine odaklanıyor olmasından da kaynaklanabilir. Nerden nereye geldik değil mi?
+Tahmin edileceği üzere sarı kutular içerisine alınmış dört çağrı *(call)*; **id**, **email**, **uniqueNickname** ve **ssn** kullanımlarına ait. Örneğin **find_anon_26103** çağrımını aratırsak ilgili fonksiyonun iç yapısına da ulaşabiliriz. **Assembly** bilgim o kadar iyi seviyede olmasa da bu benim için bir ispat niteliğinde. **C++** üretimlerinde derleyicinin aşırı yüklediği metotları nispeten daha anlamlı isimlendirdiğine de şahit olmuştuk. Bu durum, **Zig**'in isimlendirmeden ziyade performans odaklı olarak bellek yerleşimine odaklanıyor olmasından da kaynaklanabilir. Nereden nereye geldik değil mi?
 
-Yazının an itibariyle geldiğim bu noktasında dillerin aşırı yüklenmiş metotları destekleme ve desteklememe noktasında kendimce biraz fikir sahibi oldum diyebilirim. Benim için yorucu olan bu araştırmayı tamamlarken ortaya başka bir soru bırakıp kaçmayı tercih edeceğim; **Rust** tarafından desteklenmeyen **Variadic Arguments** kabiliyeti **C#** dilinde mevcuttur *(params kullanımı)* Peki ya Rust tarafında bu işlevsellik nasıl sağlanır?
+Yazının şu an için geldiğim bu noktasında dillerin aşırı yüklenmiş metotları destekleme ve desteklememe konusunda kendimce biraz fikir sahibi oldum diyebilirim. Benim için yorucu olan bu araştırmayı burada noktalarken ortaya başka bir soru bırakıp kaçmayı tercih edeceğim; **Rust** tarafından desteklenmeyen **variadic arguments** kabiliyeti **C#** dilinde mevcuttur *(params kullanımı)*. Peki ya **Rust** tarafında bu işlevsellik nasıl sağlanır?
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-[Çalışmada ele aldığımız örnek kodlara github reposundan ulaşabilirsiniz](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/MethodOverloading)
+[Çalışmada ele aldığımız örnek kodlara GitHub reposundan ulaşabilirsiniz](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/MethodOverloading)
