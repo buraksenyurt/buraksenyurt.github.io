@@ -112,10 +112,11 @@ namespace ClientApp
 
             // Sorgu cümlesi
             // AlbumId değerine göre Track örnekleri çekilir. Bu işlem sırasında Genre Entity örneklerine de ihtiyacımız olduğundan Expand metodu ile gerekli çağrı yapılır
-            var result = from t in entities.Tracks.Expand("Genre")
-                         where t.AlbumId == albumID
-                         orderby t.Name
-                         select t;
+            var result =
+                from t in entities.Tracks.Expand("Genre")
+                where t.AlbumId == albumID
+                orderby t.Name
+                select t;
 
             // Bir Excel Application nesnesi örneklenir.
             Excel.Application excApp = new Excel.Application();

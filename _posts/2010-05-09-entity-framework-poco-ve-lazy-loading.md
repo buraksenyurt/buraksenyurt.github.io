@@ -26,9 +26,10 @@ namespace POCODans
                 #region Sample 2
 
                 // Şirket bilgisi null veya boş olmayan müşteriler
-                var customers = from c in entities.Customers
-                                where !String.IsNullOrEmpty(c.Company)
-                                select c;
+                var customers =
+                    from c in entities.Customers
+                    where !String.IsNullOrEmpty(c.Company)
+                    select c;
 
                 foreach (var customer in customers)
                 {

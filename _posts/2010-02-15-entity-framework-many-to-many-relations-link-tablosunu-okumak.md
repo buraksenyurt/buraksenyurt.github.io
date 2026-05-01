@@ -23,13 +23,14 @@ namespace ManyToMany
             {
                 #region Only Related Columns
 
-                var relations = from t in entities.Tracks
-                                from p in entities.Playlists
-                                where t.Name.StartsWith("Ab")
-                                select new
-                                {
-                                    t.TrackId,p.PlaylistId
-                                };
+                var relations =
+                    from t in entities.Tracks
+                    from p in entities.Playlists
+                    where t.Name.StartsWith("Ab")
+                    select new
+                    {
+                        t.TrackId,p.PlaylistId
+                    };
 
                 foreach (var relation in relations)
                 {

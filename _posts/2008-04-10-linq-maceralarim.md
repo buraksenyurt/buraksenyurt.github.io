@@ -23,16 +23,17 @@ Dilerseniz hiç vakit kaybetmeden örneklerimize başlayalım.
 ```csharp
 string klasorAdresi = @"C:\Documents and Settings\BurakSenyurt\My Documents\My Pictures\Google Pictures\";
 DirectoryInfo dInfo = new DirectoryInfo(klasorAdresi);
-var resimDosyalari = from fInfo in dInfo.GetFiles()
-                     where fInfo.Extension == ".jpg" && fInfo.Length >= 1000 * 1024
-                     select new
-                     {
-                         fInfo.Name
-                                     ,
-                         fInfo.Length
-                                     ,
-                         fInfo.CreationTime
-                     };
+var resimDosyalari =
+    from fInfo in dInfo.GetFiles()
+    where fInfo.Extension == ".jpg" && fInfo.Length >= 1000 * 1024
+    select new
+    {
+        fInfo.Name
+                    ,
+        fInfo.Length
+                    ,
+        fInfo.CreationTime
+    };
 foreach (var dosya in resimDosyalari)
     Console.WriteLine(dosya);
 ```
@@ -46,13 +47,14 @@ Eğlenceli değil mi? Öyleyse devam edelim. Diyelimki dosyalama işlemleri ile 
 ```csharp
 string adres = @"C:\Windows\";
 DirectoryInfo dInfo = new DirectoryInfo(adres);
-var dosyaGruplari = from fInfo in dInfo.GetFiles()
-                    group fInfo by fInfo.Extension into grp
-                    select new
-                    {
-                        Uzanti = grp.Key,
-                        Toplam = grp.Count()
-                    };
+var dosyaGruplari =
+    from fInfo in dInfo.GetFiles()
+    group fInfo by fInfo.Extension into grp
+    select new
+    {
+        Uzanti = grp.Key,
+        Toplam = grp.Count()
+    };
 
 foreach (var dosyaGrubu in dosyaGruplari)
     Console.WriteLine(dosyaGrubu.ToString());
@@ -68,14 +70,15 @@ Bu seferki LINQ ifadesinde group by kullanımı söz konusudur. Group By sayesin
 string klasorAdresi = @"C:\Documents and Settings\BurakSenyurt\My Documents\My Pictures\Google Pictures\";
 DirectoryInfo dInfo = new DirectoryInfo(klasorAdresi);
 
-var dosyalar = from fInfo in dInfo.GetFiles()
-               where fInfo.Extension == ".jpg" && fInfo.Name[0] == 'L'
-               orderby fInfo.Length descending
-               select new
-               {
-                   fInfo.Name,
-                   fInfo.Length
-               };
+var dosyalar =
+    from fInfo in dInfo.GetFiles()
+    where fInfo.Extension == ".jpg" && fInfo.Name[0] == 'L'
+    orderby fInfo.Length descending
+    select new
+    {
+        fInfo.Name,
+        fInfo.Length
+    };
 
 foreach (var dosya in dosyalar)
     Console.WriteLine("{0} \t{1}", dosya.Length, dosya.Name);
@@ -88,15 +91,16 @@ Bu kez orderby anahtar kelimesi (ki bu arka planda OrderBy genişletme metoduna 
 LINQ sorguları dosyalama işlemleri dışında özellikle reflection (yansıma) tarafındada etkili bir şekilde kullanılabilir. Yazımızın bundan sonraki kısmındada yansıma teknikleri içerisinde LINQ ifadelerini örnekler üzerinde ele almaya çalışacağız. Öncelikli olarak Process'lerden başlamak taraftarıyım. Bilindiği üzere.Net uygulamaları sistem üzerinde açılan Process'ler içerisinde ayrı uygulama alanları (Application Domains) altına dahil edilirler. Hatta bu uygulama alanları kendi içlerinde, birden fazla (en az bir tane olmak üzere) Thread'ede sahip olabilirler. Sistem üzerinde çalışan Process'lerin yada o anda çalışmakta olan güncel Process'in bilgilerini almak için Process sınıfının farklı metodları bulunmaktadır. Bizimde aklımıza gelen soru şudur; acaba sistem üzerinde çalışmakta olan Process'ler içerisinde sadece tek bir Thread'e sahip olanlar hangileridir. Nitekim bilindiği üzere bazı Process'ler kendi içlerinde birden fazla Thread içermektedir. Bu amaçla aşağıdaki gibi bir kod parçası geliştirilebilir.
 
 ```csharp
-var processes = from prc in Process.GetProcesses()
-                where prc.Threads.Count == 1
-                orderby prc.ProcessName descending
-                select new
-                {
-                    prc.ProcessName
-                                ,
-                    prc.PagedMemorySize64
-                };
+var processes =
+    from prc in Process.GetProcesses()
+    where prc.Threads.Count == 1
+    orderby prc.ProcessName descending
+    select new
+    {
+        prc.ProcessName
+                    ,
+        prc.PagedMemorySize64
+    };
 foreach (var process in processes)
     Console.WriteLine(process.ToString());
 ```
@@ -110,16 +114,17 @@ Reflection ile başlamışken hızımızı kesmeyelim ve yeni bir sorgu ile deva
 ```csharp
 AssemblyName[] result1 = Assembly.LoadFrom(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.EnterpriseServices.dll")
 .GetReferencedAssemblies();
-var framework2Olmayanlar = from asmb in result1
-                           where asmb.Version != new Version(2, 0, 0, 0)
-                           select new
-                           {
-                               AssemblyAdi = asmb.FullName
-                                           ,
-                               IslemciMimarisi = asmb.ProcessorArchitecture
-                                           ,
-                               HashAlgoritması = asmb.HashAlgorithm
-                           };
+var framework2Olmayanlar =
+    from asmb in result1
+    where asmb.Version != new Version(2, 0, 0, 0)
+    select new
+    {
+        AssemblyAdi = asmb.FullName
+                    ,
+        IslemciMimarisi = asmb.ProcessorArchitecture
+                    ,
+        HashAlgoritması = asmb.HashAlgorithm
+    };
 
 foreach (var a in framework2Olmayanlar)
     Console.WriteLine(a.ToString());
@@ -138,9 +143,10 @@ class Program
     {
         string path = @"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727";
         DirectoryInfo klasor = new DirectoryInfo(path);
-        var assemblyOlanlar = from dosya in klasor.GetFiles("*.dll")
-                              where Yuklenebildinmi(dosya.FullName)
-                              select dosya;
+        var assemblyOlanlar =
+            from dosya in klasor.GetFiles("*.dll")
+            where Yuklenebildinmi(dosya.FullName)
+            select dosya;
 
         foreach (var asmb in assemblyOlanlar)
             Console.WriteLine(asmb.FullName);
@@ -169,14 +175,15 @@ Yine assembly'lar üzerinden LINQ sorguları yazmaya devam edelim. Örneğin bir
 
 ```csharp
 Assembly systemAsmb = Assembly.LoadFrom(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Web.dll");
-var hariciTipler = from t in systemAsmb.GetExportedTypes()
-                   group t by t.Namespace into ng
-                   orderby ng.Key descending
-                   select new
-                   {
-                       IsimAlaniAdi = ng.Key,
-                       TipSayisi = ng.Count()
-                   };
+var hariciTipler =
+    from t in systemAsmb.GetExportedTypes()
+    group t by t.Namespace into ng
+    orderby ng.Key descending
+    select new
+    {
+        IsimAlaniAdi = ng.Key,
+        TipSayisi = ng.Count()
+    };
 foreach (var hariciTip in hariciTipler)
     Console.WriteLine("{0} isim alanından {1} tip vardır", hariciTip.IsimAlaniAdi, hariciTip.TipSayisi.ToString());
 ```
@@ -190,7 +197,7 @@ Peki herhangibir assembly içerisinde kaç farklı isim alanı olduğunu bulmak 
 ```csharp
 Assembly systemAsmb = Assembly.LoadFrom(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll");
 var isimAlanlari = (from t in systemAsmb.GetTypes()
-                    select t.Namespace).Distinct();
+    select t.Namespace).Distinct();
 Console.WriteLine("\n{0} assembly' ı içerisinde {1} farklı isim alanı adı vardır", systemAsmb.FullName, isimAlanlari.Count() - 1);
 foreach (var isimAlani in isimAlanlari)
     Console.WriteLine(isimAlani);
@@ -204,14 +211,15 @@ Reflection ile ilişkili olarak LINQ sorgularını kullanacağımız son bir ör
 
 ```csharp
 Assembly systemAsmb = Assembly.LoadFrom(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll");
-var tipler = from m in systemAsmb.GetTypes()
-             group m by m.BaseType into grp
-             select new
-             {
-                 grp.Key
-                             ,
-                 Toplam = grp.Count()
-             };
+var tipler =
+    from m in systemAsmb.GetTypes()
+    group m by m.BaseType into grp
+    select new
+    {
+        grp.Key
+                    ,
+        Toplam = grp.Count()
+    };
 foreach (var tip in tipler)
     Console.WriteLine("{0} \t{1}", tip.Key, tip.Toplam.ToString());
 ```
@@ -234,7 +242,7 @@ private void button2_Click(object sender, EventArgs e)
     IEnumerable<Control> kontroller = Controls.Cast<Control>();
 
     var farkliTipler = (from kontrol in kontroller
-                        select kontrol.GetType()).Distinct().OrderBy(k => k.Name);
+        select kontrol.GetType()).Distinct().OrderBy(k => k.Name);
 
     foreach (Type farkliTip in farkliTipler)
         lstSonuclar.Items.Add(farkliTip.Name);
@@ -256,14 +264,15 @@ private void button2_Click(object sender, EventArgs e)
 
     IEnumerable<Control> kontroller = Controls.Cast<Control>();
 
-    var farkliTipler = from kontrol in kontroller
-                       group kontrol by kontrol.GetType() into grp
-                       select new
-                       {
-                           KontrolAdi = grp.Key
-                                       ,
-                           Toplam = grp.Count()
-                       };
+    var farkliTipler =
+        from kontrol in kontroller
+        group kontrol by kontrol.GetType() into grp
+        select new
+        {
+            KontrolAdi = grp.Key
+                        ,
+            Toplam = grp.Count()
+        };
 
     foreach (var farkliTip in farkliTipler)
         lstSonuclar.Items.Add(String.Format("{0} : {1}", farkliTip.KontrolAdi, farkliTip.Toplam.ToString()));
@@ -280,15 +289,16 @@ Cast metodu doğrudan LINQ genişletme metodlarının kullanılamadığı pek ç
 EventLog logs = new EventLog("Application", ".", "");
 IEnumerable<EventLogEntry> entries = logs.Entries.Cast<EventLogEntry>();
 
-var girisler = from entry in entries
-               where entry.TimeGenerated.Day == DateTime.Now.Day
-               select new
-               {
-                   entry.Category,
-                   entry.CategoryNumber,
-                   entry.EntryType,
-                   entry.TimeGenerated
-               };
+var girisler =
+    from entry in entries
+    where entry.TimeGenerated.Day == DateTime.Now.Day
+    select new
+    {
+        entry.Category,
+        entry.CategoryNumber,
+        entry.EntryType,
+        entry.TimeGenerated
+    };
 
 foreach (var giris in girisler)
     Console.WriteLine(giris.ToString());
@@ -331,9 +341,10 @@ Kod parçasında kasıtlı olarak ArrayList içerisine farklı tipte veriler at�
 ```csharp
 GenelIslemler.Yardimci yrdm = new GenelIslemler.Yardimci();
 
-var besHarfliler = from nesne in yrdm.ListeyiAl().OfType<string>()
-                   where nesne.Length == 5
-                   select nesne;
+var besHarfliler =
+    from nesne in yrdm.ListeyiAl().OfType<string>()
+    where nesne.Length == 5
+    select nesne;
 
 foreach (string nesne in besHarfliler)
     Console.WriteLine(nesne);
@@ -380,14 +391,15 @@ Bu işlemin ardından uygulamanın bir kere daha derlenmesinde yarar vardır. (S
 Artık uygulamada yer alan DataTable üzerinde LINQ sorguları çalıştırılabilir. İşte bir örnek;
 
 ```csharp
-var altKategorisi4OlanUrunler = from row in tbl.AsEnumerable()
-                                where row["ProductSubCategoryId"].ToString() == "4"
-                                select new
-                                {
-                                    Id = Convert.ToInt16(row["ProductId"]),
-                                    Ad = row["Name"].ToString(),
-                                    Fiyat = Convert.ToDouble(row["ListPrice"])
-                                };
+var altKategorisi4OlanUrunler =
+    from row in tbl.AsEnumerable()
+    where row["ProductSubCategoryId"].ToString() == "4"
+    select new
+    {
+        Id = Convert.ToInt16(row["ProductId"]),
+        Ad = row["Name"].ToString(),
+        Fiyat = Convert.ToDouble(row["ListPrice"])
+    };
 
 foreach (var urun in altKategorisi4OlanUrunler)
     Console.WriteLine(urun.ToString());

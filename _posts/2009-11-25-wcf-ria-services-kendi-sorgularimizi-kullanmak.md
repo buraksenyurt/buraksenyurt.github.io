@@ -34,18 +34,20 @@ namespace SilverlightApplication5.Web
     {
         public IQueryable<Album> GetAlbumsByFirstLetter(string firstLetter)
         {
-            return from albm in ObjectContext.Album
-                   where albm.Title.StartsWith(firstLetter)
-                   orderby albm.Title
-                   select albm;
+            return
+                from albm in ObjectContext.Album
+                where albm.Title.StartsWith(firstLetter)
+                orderby albm.Title
+                select albm;
         }
 
         public IQueryable<Track> GetTracks(int albumId)
         {
-            return from track in ObjectContext.Track
-                   where track.AlbumId == albumId
-                   orderby track.Name
-                   select track;
+            return
+                from track in ObjectContext.Track
+                where track.AlbumId == albumId
+                orderby track.Name
+                select track;
         }
     }
 }
@@ -169,4 +171,3 @@ hatta Background özelliğine Picture ekleyebileceğimizi ve bu sayede daha hoş
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SilverlightApplication5.rar (5,28 mb)](/assets/files/2009/SilverlightApplication5.rar)
-

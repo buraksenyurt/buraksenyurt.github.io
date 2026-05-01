@@ -58,7 +58,7 @@ namespace TraceLogServiceApplication
 }
 ```
 
-LogService içerisinde yer alan GetAllLogs isimli servis operasyonu Log tipinden bir kaç eleman içeren basit bir List koleksiyonunu geriye döndürmektedir. Çalışma zamanında oluşturulacak olan bu içerik, istemci tarafına JSON formatında gönderilecektir. Bunun için dikkat edileceği üzere ResponseFormat özelliğinin değeri WebMessageFormat.Json sabiti olarak belirlenmiştir. Servisimizi bu haliyle test etmek istediğimizde adres satırından http://localhost:12043/LogService/Logs/All gibi bir çağrı yapmamız yeterli olacaktır. Bunun sonucunda aşağıdaki JSON içeriği üretilecektir.
+LogService içerisinde yer alan GetAllLogs isimli servis operasyonu Log tipinden bir kaç eleman içeren basit bir List koleksiyonunu geriye döndürmektedir. Çalışma zamanında oluşturulacak olan bu içerik, istemci tarafına JSON formatında gönderilecektir. Bunun için dikkat edileceği üzere ResponseFormat özelliğinin değeri WebMessageFormat.Json sabiti olarak belirlenmiştir. Servisimizi bu haliyle test etmek istediğimizde adres satırından `http://localhost:12043/LogService/Logs/All` gibi bir çağrı yapmamız yeterli olacaktır. Bunun sonucunda aşağıdaki JSON içeriği üretilecektir.
 
 ```xml
 [{"Content":"Sql servisi başlatıldı","IsCritical":false,"Level":5,"Source":"Sql Server"},{"Content":"Sql Agent servisinde hata.","IsCritical":true,"Level":1,"Source":"Sql Server"},{"Content":"Dağıtık Transaction nesnesi üretildi.","IsCritical":false,"Level":3,"Source":"DTC"},{"Content":"Süreç persist edildi","IsCritical":true,"Level":2,"Source":"WF Runtime"}]
@@ -68,7 +68,7 @@ Bu işlemin ardından servisi IIS alınta Publish etmemiz yeterlidir. Publish ay
 
 ![blg177_PublishProfile.gif](/assets/images/2010/blg177_PublishProfile.gif)
 
-Eğer Publish işlemi başarılı olduysa (IIS üzerinden ilgili uygulamanın Web Application olarak set edilmesine-Convert to Application seçeneği dikkat ederekten) herhangibir tarayıcı uygulamadan, http://localhost/TraceLogServiceApplication/LogService/Logs/All şeklinde bir çağrıda bulunabiliyor olmamız gerekmektedir ki bu çağrının sonucu olarakta, yukarıdaki JSON içeriğine tekrardan ulaşabiliyor olmalıyız.
+Eğer Publish işlemi başarılı olduysa (IIS üzerinden ilgili uygulamanın Web Application olarak set edilmesine-Convert to Application seçeneği dikkat ederekten) herhangibir tarayıcı uygulamadan, `http://localhost/TraceLogServiceApplication/LogService/Logs/All` şeklinde bir çağrıda bulunabiliyor olmamız gerekmektedir ki bu çağrının sonucu olarakta, yukarıdaki JSON içeriğine tekrardan ulaşabiliyor olmalıyız.
 
 [TraceLogServiceApplication.rar (30,47 kb)](/assets/files/2010/TraceLogServiceApplication.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde test edilmiştir]
 
@@ -136,14 +136,15 @@ namespace JsonConsumer
             // Load metodu JsonValue tipinden bir referans döndürmektedir ve dizi olarak ele alabilmek için JsonArray tipine bilinçli bir dönüşüm yapılmıştır.
             JsonArray logs=(JsonArray)JsonArray.Load(responseStream);
             // Elde edilen JSON verisinden IsCritical değeri true olanlar çekilir ve LogInfo isimli tip içerisinde toplanır.
-            var criticialLogs = from log in logs
-                                where log["IsCritical"]
-                                select new LogInfo
-                                {
-                                     Content=log["Content"].ToString(),
-                                     Source=log["Source"].ToString(),
-                                     Level=log["Level"]
-                                };
+            var criticialLogs =
+                from log in logs
+                where log["IsCritical"]
+                select new LogInfo
+                {
+                     Content=log["Content"].ToString(),
+                     Source=log["Source"].ToString(),
+                     Level=log["Level"]
+                };
 
             // Elde edilen veri kümesi DataGrid kontrolüne veri kaynağı olarak gösterilir
             LogsDataGrid.DataContext = criticialLogs;
@@ -169,4 +170,3 @@ Bu metoda ait kod parçasındaki en büyük yardımıcı JsonArray tipi ve Load 
 Görüldüğü gibi JSON formatındaki içerik Silverlight tarafında başarılı bir şekilde ele alınmış ve veri bağlı bir kontrol (DataGrid) ile ilişkilendirilebilmiştir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [JsonConsumer.rar (1,92 mb)](/assets/files/2010/JsonConsumer.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde test edilmiştir]
-

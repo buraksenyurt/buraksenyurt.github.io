@@ -64,9 +64,10 @@ namespace SPAndComplexType
             {
                 ObjectResult<ManagerEmployees> resultSet = context.uspGetManagerEmployees(16);
 
-                var subResult = from me in resultSet
-                                where me.FirstName[0] == 'M'
-                                select me;
+                var subResult =
+                    from me in resultSet
+                    where me.FirstName[0] == 'M'
+                    select me;
 
                 foreach (var managerEmployee in subResult)
                 {

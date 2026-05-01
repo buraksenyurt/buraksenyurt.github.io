@@ -65,7 +65,7 @@ namespace NorthwindClient
                 ItemInfoList products = response.Content.ReadAsXmlSerializable<ItemInfoList>();
 
                 grdProducts.DataSource = (from p in products.ItemInfo
-                                          select p.Item).ToList();
+                    select p.Item).ToList();
             }
         }
     }
@@ -147,7 +147,7 @@ namespace NorthwindClient
                 grdProducts.Invoke(new LoadGridHandler(LoadGrid), list);
             else
                 grdProducts.DataSource = (from p in list.ItemInfo
-                                          select p.Item).ToList();
+                    select p.Item).ToList();
         }
 
         #endregion
@@ -189,7 +189,7 @@ private void btnGetProductsEvent_Click(object sender, EventArgs e)
         {
             ItemInfoList products = arg.Response.Content.ReadAsXmlSerializable<ItemInfoList>();
             grdProducts.DataSource = (from p in products.ItemInfo
-                                      select p.Item).ToList();
+                select p.Item).ToList();
         }
     };
     client.SendAsync(new HttpRequestMessage("GET", serviceUri));

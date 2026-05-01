@@ -70,7 +70,7 @@ namespace NorthwindClient
 
                 // ilk olarak tüm ürünleri listeleriz. ToList metoduna generic parametre olarak, servis tarafındaki Product tipinin istemcide otomatik üretilen karşılığı olan ItemInfoListItemInfoItem sınıfı verilmiştir, buna dikkat edelim.
                 grdProducts.DataSource = (from p in products.ItemInfo
-                                          select p.Item).ToList<ItemInfoListItemInfoItem>();
+                    select p.Item).ToList<ItemInfoListItemInfoItem>();
             }
         }
     }
@@ -91,8 +91,8 @@ Görüldüğü üzere tüm Product bilgileri istemci tarafına gelmiştir. Tabik
 
 ```csharp
 grdProducts.DataSource = (from p in products.ItemInfo
-                          where p.Item.CategoryID == 1
-                          select p.Item).ToList<ItemInfoListItemInfoItem>();
+    where p.Item.CategoryID == 1
+    select p.Item).ToList<ItemInfoListItemInfoItem>();
 ```
 
 kodunu denediğimizde kategorisi 1 olan ürünlerin getirilmesi sağlanacaktır.
@@ -103,14 +103,14 @@ Hatta istersek anoymous type (isimsiz tip) kullanımıda söz konusu olabilir. S
 
 ```csharp
 grdProducts.DataSource = (from p in products.ItemInfo
-                          where p.Item.CategoryID == 1
-                          select new
-                          {
-                              Key = p.Item.ProductID,
-                              p.Item.ProductName,
-                              p.Item.CategoryID,
-                              p.Item.UnitsInStock
-                          }).ToList();
+    where p.Item.CategoryID == 1
+    select new
+    {
+        Key = p.Item.ProductID,
+        p.Item.ProductName,
+        p.Item.CategoryID,
+        p.Item.UnitsInStock
+    }).ToList();
 ```
 
 kodu ile sadece ProductID, ProductName, CategoryID ve UnitsInStock alanlarını içeren bir isimsiz tip topluluğunu DataGridView içerisinde gösterilmesi sağlanabilir.

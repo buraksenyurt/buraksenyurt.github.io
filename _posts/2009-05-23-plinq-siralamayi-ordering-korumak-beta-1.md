@@ -11,10 +11,11 @@ categories:
 Hatırlayacağınız gibi, PLINQ (Parallel LINQ) ile ilişkili ilk [yazımda](/2009/05/21/plinq-parallel-linq-hello-world-beta-1/), LINQ sorgularının eş zamanlı olarak nasıl çalıştırılabileceğini incelemeye çalışmıştık. Hello World örneğimizde ağırlıklı olarak aşağıdaki sorgu üzerinde durmuştuk.
 
 ```csharp
-var result2 = from p in products.AsParallel()
-              where p.ListPrice >= 10 && p.InStock == true
-              orderby p.Name descending
-              select p;
+var result2 =
+    from p in products.AsParallel()
+    where p.ListPrice >= 10 && p.InStock == true
+    orderby p.Name descending
+    select p;
 ```
 
 Bu sorguda yer alan orderby kelimesi aslında çok büyük bir öneme sahiptir. Gelin ne demek istediğimi size anlatmaya çalışayım. Yine Visual Studio 2010 Professional Beta 1 ortamında geliştirilen aşağıdaki kod parçasına sahip bir Console uygulamamız olduğunu göz önüne alacağız.
@@ -41,9 +42,10 @@ namespace HelloWorld
                     Console.WriteLine(prd.Name);
             }
 
-            var result = from p in products.AsParallel()
-                         where p.InStock == true
-                         select p;
+            var result =
+                from p in products.AsParallel()
+                where p.InStock == true
+                select p;
 
             Console.WriteLine("AsParalell sonrası listenin hali");
             foreach (Product prd in result)
@@ -108,10 +110,11 @@ Bu seferki örneğimizde temel amacımız hız veya işlemlerin daha kısa süre
 Dikkat edileceği üzere, listenin ilk halinde stokta olan ürünler, koleksiyonda yer aldıkları sıraya göre ekrana getirilmektedir. Ancak AsParallel genişletme metodunun kullanılması sonrasında elde edilen listedeki ürünler sıralı bir şekilde gelmemektedir. Bu çok doğal olarak paralel çalışmanın bir sonucudur. Ancak bazı hallerde AsParallel kullanımı sonrasında, kaynak listenin sıralı olarak elde edilmesi istenebilir. Bu durumda orderby kullanımı sorunu çözecektir. Söz gelimi yukarıdaki örnekte yer alan LINQ ifadesinde orderby aşağıdaki gibi kullanılabilir.
 
 ```csharp
-var result = from p in products.AsParallel()
-             where p.InStock == true
-             orderby p.Name
-             select p;
+var result =
+    from p in products.AsParallel()
+    where p.InStock == true
+    orderby p.Name
+    select p;
 ```
 
 Bu durumda örneğin çalışması sonucu aşağıdaki çıktı elde edilir.
@@ -121,9 +124,10 @@ Bu durumda örneğin çalışması sonucu aşağıdaki çıktı elde edilir.
 Ancak PLINQ tipinden sorgunun çalıştırılması sırasında orjinal nesne sırasının korunması da istenebilir ki bu orderby kullanımından daha farklı anlamdadır. (orderby kullanımında listenin, koleksiyondaki orjinal sırası yerine, sıralama kriteri belirtilir.) İşte bu noktada devreye ParallelEnumerable static sınıfı içerisinde tanımlanmış olan AsOrdered isimli genişletme metodu (Extension Method) girer. Yani sorguyu aşağıdaki hale getirirsek, liste elemanlarının koleksiyon içerisindeki orjinal sırasını koruyarak sonuç elde edilmesi sağlanabilir.
 
 ```csharp
-var result = from p in products.AsParallel().AsOrdered()
-             where p.InStock == true
-             select p;
+var result =
+    from p in products.AsParallel().AsOrdered()
+    where p.InStock == true
+    select p;
 ```
 
 Ve sonuç...

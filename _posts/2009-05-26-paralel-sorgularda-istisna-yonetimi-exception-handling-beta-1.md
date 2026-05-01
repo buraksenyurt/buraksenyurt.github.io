@@ -29,17 +29,18 @@ namespace SequentialPLINQ
             productList[497].SafetyStockLevel = 0;
             productList[503].SafetyStockLevel = 0;
 
-            var result1 = from product in productList.AsParallel()
-                          orderby product.ProductId
-                          where product.ListPrice >= 500
-                          select new
-                          {
-                              product.ProductId,
-                              product.Name,
-                              product.ListPrice,
-                              product.Color,
-                              SellPrice = FindSellPrice(product.ListPrice, product.SafetyStockLevel)    // İlk durum                          
-                          };
+            var result1 =
+                from product in productList.AsParallel()
+                orderby product.ProductId
+                where product.ListPrice >= 500
+                select new
+                {
+                    product.ProductId,
+                    product.Name,
+                    product.ListPrice,
+                    product.Color,
+                    SellPrice = FindSellPrice(product.ListPrice, product.SafetyStockLevel)    // İlk durum                          
+                };
 
             try
             {

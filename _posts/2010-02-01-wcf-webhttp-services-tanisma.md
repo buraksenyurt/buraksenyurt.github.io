@@ -75,8 +75,8 @@ namespace HelloWebHttp
             ChinookEntities entities = new ChinookEntities();
 
             return (from artist in entities.Artist
-                    where artist.Name.Contains(name)
-                    select artist).ToList();
+                where artist.Name.Contains(name)
+                select artist).ToList();
         }
 
         [WebGet(UriTemplate = "Artist/InRange?idFirst={firstId}&idSecond={secondId}")]
@@ -84,8 +84,8 @@ namespace HelloWebHttp
         {
             ChinookEntities entities = new ChinookEntities();
             return (from a in entities.Artist
-                   where a.ArtistId >= firstId && a.ArtistId <= secondId
-                   select a).ToList();
+                where a.ArtistId >= firstId && a.ArtistId <= secondId
+                select a).ToList();
         }
     }
 }
@@ -117,7 +117,7 @@ namespace HelloWebHttp
 }
 ```
 
-Dikkat edileceği üzere http://makineadı:portnumarası/Chinook üzerine gelen talepler sonrasında, WebServiceHostFactory'nin ayağa kaldırılması ve HelloService sınıfının örneklenerek işleme alınmasının sağlanması gerçekleştirilmektedir. Artık testlerimize başlayabiliriz.
+Dikkat edileceği üzere `http://makineadı:portnumarası/Chinook` üzerine gelen talepler sonrasında, WebServiceHostFactory'nin ayağa kaldırılması ve HelloService sınıfının örneklenerek işleme alınmasının sağlanması gerçekleştirilmektedir. Artık testlerimize başlayabiliriz.
 
 > Dilerseniz Web uygulamasını IIS üzerinden host ederekte deneyebilirsiniz. Ancak ister Asp.Net Development Server ister IIS olsun, URL satırında RegisterRoutes metodunda yer alan Chinook bilgisini kullanmamız servise ulaşmamız için yeterli olacaktır.
 
@@ -142,4 +142,3 @@ Son olarak ArtistId değer aralığına göre Artist listesini elde etmek istedi
 Oldukça basit ve etkili değil mi? WCF WebHttp Service'ler ile ilişkili incelemelerimize devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloWebHttp.rar (31,23 kb)](/assets/files/2010/HelloWebHttp.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

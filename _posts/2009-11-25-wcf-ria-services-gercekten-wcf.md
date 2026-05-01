@@ -42,10 +42,11 @@ namespace ChinookMusicStoreApp.Web
         // firstLetter parametresi ile başlayan Album' lerin getirilmesini sağlar
         public IQueryable<Album> GetAlbumsByFirstLetter(string firstLetter)
         {
-            return from album in ObjectContext.Albums
-                   where album.Title.StartsWith(firstLetter)
-                   orderby album.Title
-                   select album;
+            return
+                from album in ObjectContext.Albums
+                where album.Title.StartsWith(firstLetter)
+                orderby album.Title
+                select album;
         }
 
         // Tüm Artist' lerin getirilmesini sağlar
@@ -225,4 +226,3 @@ Test olarak Van Halen isimli grub için Benim Şarkılarım isimli yeni bir alb�
 [ChinookMusicStoreApp.rar (590,82 kb)](/assets/files/2009/ChinookMusicStoreApp.rar)
 
 ![blg107_Override.gif](/assets/images/2009/blg107_Override.gif)
-

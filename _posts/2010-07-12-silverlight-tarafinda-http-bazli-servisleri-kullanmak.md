@@ -57,8 +57,8 @@ namespace ChinookDataPortal
 
             ChinookEntities entities = new ChinookEntities();
             albums=(from albm in entities.Albums
-                    orderby albm.Title
-                    select albm).ToList();
+                orderby albm.Title
+                select albm).ToList();
 
             return albums;
         }
@@ -70,9 +70,9 @@ namespace ChinookDataPortal
 
             ChinookEntities entities = new ChinookEntities();
             albums = (from albm in entities.Albums
-                      where albm.Title.ToLower().StartsWith(firstLetter.ToLower())
-                      orderby albm.Title
-                      select albm).ToList();
+                where albm.Title.ToLower().StartsWith(firstLetter.ToLower())
+                orderby albm.Title
+                select albm).ToList();
 
             return albums;
         }
@@ -217,8 +217,9 @@ namespace ConsumingHTTPBasedServices
             // XLINQ sorgusunun yapılabilmesi için XElement.Load metodu parametre olarak Stream' i kullanan XmlReader nesne örneğini alır
             XElement xElement = XElement.Load(xReader);
             // XLINQ sorgusu ile Title elementleri çekilir. XName.Get metodunun ikinci parametre XML Namespace' inin adıdır.
-            var titles = from x in xElement.Elements().Elements(XName.Get("Title", "http://schemas.datacontract.org/2004/07/ChinookDataPortal"))
-                         select x.Value;
+            var titles =
+                from x in xElement.Elements().Elements(XName.Get("Title", "http://schemas.datacontract.org/2004/07/ChinookDataPortal"))
+                select x.Value;
             // Çekilen veri içeriği ListBox kontrolünün ItemsSource özelliğine bağlanır
             AlbumListBox.ItemsSource = titles;
         }
@@ -253,5 +254,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 
 [ConsumingHTTPBasedServices_RTM.rar (273,75 kb)](/assets/files/2010/ConsumingHTTPBasedServices_RTM.rar)
 
-Örnek Visual Studio 2010 Ultimate RC Sürümü üzerinde geliştirişmiş ve RTM sürümü üzerinde test edilmiştir
-
+Örnek Visual Studio 2010 Ultimate RC Sürümü üzerinde geliştirişmiş ve RTM sürümü üzerinde test edilmiştir.

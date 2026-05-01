@@ -45,8 +45,8 @@ namespace Lesson2
         public Product GetProduct(string productId)
         {
             var product = (from p in products
-                           where p.ProductId == productId
-                           select p).FirstOrDefault();
+                where p.ProductId == productId
+                select p).FirstOrDefault();
             // Eğer bir Product nesne örneği mevcutsa...
             if (product != null)
             {
@@ -224,4 +224,3 @@ Uygulamamızı çalıştırdığımızd aşağıdaki sonuçlar ile karşılaşı
 Görüldüğü gibi, ikinci talep sonrasında istemci tarafına HTTP 304 Not Modified bilgisi ve 0 Byte uzunluğunda içerik gönderilmiştir. Böylece WCF WebHttp Service'leri ile ilişkili bir yazımızın daha sonuna geldik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson9_RC.rar (175,04 kb)](/assets/files/2010/Lesson9_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

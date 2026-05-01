@@ -80,9 +80,10 @@ Hatta istersek çalışma zamanında oluşturulacak bu nesneler üzerinde LINQ s
 ```csharp
 Console.WriteLine("\nLINQ Kullanımı\n");
 
-var result = from person in (personList as List<dynamic>)
-             where person.Salary <= 1000
-             select person;
+var result =
+    from person in (personList as List<dynamic>)
+    where person.Salary <= 1000
+    select person;
 
 foreach (var r in result)
     Console.WriteLine("\t{0}\t{1}", r.Name, r.Salary);

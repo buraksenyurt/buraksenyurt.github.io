@@ -103,8 +103,8 @@ namespace Streaming
             doc = XDocument.Load(System.Web.HttpContext.Current.Server.MapPath("~/Mapper.xml"));
             // TODO: Xml içeriğinde Keyword niteliğinde olmayan bir bilgi gelirse aşağıdaki sorgu patlar. Buna tedbir alınması ve uygun Http hatasının döndürülmesi önerilir.
             string imagePath = (from img in doc.Document.Elements("Mapper").Elements("Map")
-                                where img.Attribute("Keyword").Value == keyword.ToLower()
-                                select img.Attribute("Image").Value).First();
+                where img.Attribute("Keyword").Value == keyword.ToLower()
+                select img.Attribute("Image").Value).First();
 
             // eğer kelimeye denk düşen resim yoksa NotFound tipinden Http hatası döndürülür
             if (String.IsNullOrEmpty(imagePath))

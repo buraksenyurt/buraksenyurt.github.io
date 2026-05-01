@@ -30,17 +30,18 @@ namespace SequentialPLINQ
             List<Product> productList = GetProductList();
 
             int tid = 0;
-            var result1 = from product in productList.AsParallel()
-                          where product.Color.StartsWith("B")
-                          orderby product.ProductId
-                          select new
-                          {
-                              Id = tid++,
-                              product.ProductId,
-                              product.Name,
-                              product.ListPrice,
-                              product.Color
-                          };
+            var result1 =
+                from product in productList.AsParallel()
+                where product.Color.StartsWith("B")
+                orderby product.ProductId
+                select new
+                {
+                    Id = tid++,
+                    product.ProductId,
+                    product.Name,
+                    product.ListPrice,
+                    product.Color
+                };
 
 
             foreach (var r in result1)

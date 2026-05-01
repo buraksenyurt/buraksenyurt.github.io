@@ -40,9 +40,10 @@ namespace UsingForAll
         {
             List<Product> productList = GetProductList();
 
-            var result = from p in productList.AsParallel()//.WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-                         where p.ListPrice >= 400 && p.Color == "Black"
-                         select p;
+            var result =
+                from p in productList.AsParallel()//.WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+                where p.ListPrice >= 400 && p.Color == "Black"
+                select p;
 
             result.ForAll(p => Console.WriteLine("(" + Thread.CurrentThread.ManagedThreadId.ToString() + ")\t" + p.Name));
         }
@@ -118,9 +119,10 @@ Her ne kadar Thread sayıları eşit olmasada 4 ve 1 nolu iki ayrı iş parças�
 ```csharp
 List<Product> productList = GetProductList();
 
-var result = from p in productList.AsParallel()//.WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-             where p.ListPrice >= 400 && p.Color == "Black"
-             select p;
+var result =
+    from p in productList.AsParallel()//.WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+    where p.ListPrice >= 400 && p.Color == "Black"
+    select p;
 
 foreach (Product p in result)
 {

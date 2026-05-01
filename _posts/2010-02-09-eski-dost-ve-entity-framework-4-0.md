@@ -21,9 +21,10 @@ Ado.Net Entity Framework 4.0 öncesindeki sürümde SQL tarafında In anahtar ke
 
 ```csharp
 string[] cityNames = { "Berlin", "Paris" };
-                var result = from customer in entites.Customer
-                             where cityNames.Contains(customer.City)
-                             select customer;
+                var result =
+                    from customer in entites.Customer
+                    where cityNames.Contains(customer.City)
+                    select customer;
 
                 foreach (var r in result)
                 {
@@ -41,9 +42,10 @@ Bir SQL sorgusu yürütülememektedir nitekim çalışma zamanında aşağıdaki
 
 ```csharp
 string[] cityNames = { "Berlin", "Paris" };
-                var result = from customer in entites.Customers
-                             where cityNames.Contains(customer.City)
-                             select customer;
+                var result =
+                    from customer in entites.Customers
+                    where cityNames.Contains(customer.City)
+                    select customer;
 
                 foreach (var r in result)
                 {
@@ -53,7 +55,7 @@ string[] cityNames = { "Berlin", "Paris" };
 
 ### 4.0 - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 [Extent1].[CustomerId] AS [CustomerId], 
 [Extent1].[FirstName] AS [FirstName], 
@@ -79,16 +81,17 @@ Gruplama uygulanmış olan bir LINQ sorgusunda Count genişletme metodunun (Exte
 ### Önceki Versiyon - LINQ Sorgusu
 
 ```csharp
-var result = from track in entites.Track
-                             group track by track.Composer into trackGrp
-                             select new
-                             {
-                                 trackGrp.Key,
-                                 Count = trackGrp.Count(),
-                                 Sum = trackGrp.Sum<Track>(t => t.UnitPrice),
-                                 Max = trackGrp.Max<Track>(t => t.UnitPrice),
-                                 Min = trackGrp.Min<Track>(t => t.UnitPrice)
-                             };
+var result =
+    from track in entites.Track
+    group track by track.Composer into trackGrp
+    select new
+    {
+        trackGrp.Key,
+        Count = trackGrp.Count(),
+        Sum = trackGrp.Sum<Track>(t => t.UnitPrice),
+        Max = trackGrp.Max<Track>(t => t.UnitPrice),
+        Min = trackGrp.Min<Track>(t => t.UnitPrice)
+    };
 
                 foreach (var r in result)
                 {
@@ -98,7 +101,7 @@ var result = from track in entites.Track
 
 ### Önceki Versiyon - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 1 AS [C1], 
 [GroupBy1].[K1] AS [Composer], 
@@ -120,16 +123,17 @@ FROM ( SELECT
 ### 4.0 - LINQ Sorgusu
 
 ```csharp
-var result = from track in entites.Tracks
-                             group track by track.Composer into trackGrp
-                             select new
-                             {
-                                 trackGrp.Key,
-                                 Count = trackGrp.Count(),
-                                 Sum = trackGrp.Sum<Track>(t => t.UnitPrice),
-                                 Max = trackGrp.Max<Track>(t => t.UnitPrice),
-                                 Min = trackGrp.Min<Track>(t => t.UnitPrice)
-                             };
+var result =
+    from track in entites.Tracks
+    group track by track.Composer into trackGrp
+    select new
+    {
+        trackGrp.Key,
+        Count = trackGrp.Count(),
+        Sum = trackGrp.Sum<Track>(t => t.UnitPrice),
+        Max = trackGrp.Max<Track>(t => t.UnitPrice),
+        Min = trackGrp.Min<Track>(t => t.UnitPrice)
+    };
 
                 foreach (var r in result)
                 {
@@ -139,7 +143,7 @@ var result = from track in entites.Tracks
 
 ### 4.0 - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 1 AS [C1], 
 [GroupBy1].[K1] AS [Composer], 
@@ -165,14 +169,15 @@ LINQ tarafında icra edilen aşağıdaki gibi bir Join sorgusunda, bir önceki v
 ### Önceki Versiyon - LINQ Sorgusu
 
 ```csharp
-var result = from artist in entites.Artist
-                             join album in entites.Album
-                             on artist.ArtistId equals album.Artist.ArtistId
-                             select new
-                             {
-                                 ArtistName = artist.Name,
-                                 AlbumTitle = album.Title
-                             };
+var result =
+    from artist in entites.Artist
+    join album in entites.Album
+    on artist.ArtistId equals album.Artist.ArtistId
+    select new
+    {
+        ArtistName = artist.Name,
+        AlbumTitle = album.Title
+    };
                 foreach (var r in result)
                 {
                     Console.WriteLine(r.ToString());
@@ -181,7 +186,7 @@ var result = from artist in entites.Artist
 
 ### Önceki Versiyon - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 1 AS [C1], 
 [Extent1].[Name] AS [Name], 
@@ -193,15 +198,16 @@ INNER JOIN [dbo].[Album] AS [Extent2] ON ([Extent1].[ArtistId] = [Extent2].[Arti
 ### 4.0 - LINQ Sorgusu
 
 ```csharp
-var result = from artist in entites.Artists
-                             join album in entites.Albums
-                             //on artist.ArtistId equals album.Artist.ArtistId
-                             on artist.ArtistId equals album.ArtistId //(Zaten yeni sürümde yandaki gibi yazabiliyoruz artık)
-                             select new
-                             {
-                                 ArtistName = artist.Name,
-                                 AlbumTitle = album.Title
-                             };
+var result =
+    from artist in entites.Artists
+    join album in entites.Albums
+    //on artist.ArtistId equals album.Artist.ArtistId
+    on artist.ArtistId equals album.ArtistId //(Zaten yeni sürümde yandaki gibi yazabiliyoruz artık)
+    select new
+    {
+        ArtistName = artist.Name,
+        AlbumTitle = album.Title
+    };
 
                 foreach (var r in result)
                 {
@@ -211,7 +217,7 @@ var result = from artist in entites.Artists
 
 ### 4.0 - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 [Extent1].[ArtistId] AS [ArtistId], 
 [Extent1].[Name] AS [Name], 
@@ -228,8 +234,8 @@ Aşağıdaki LINQ sorgusuna göre artistlerin tersten sıralanan adlar listesi i
 
 ```csharp
 var result = (from artist in entites.Artist
-                              orderby artist.Name descending
-                              select artist.Name).Skip(10);
+    orderby artist.Name descending
+    select artist.Name).Skip(10);
                 foreach (var r in result)
                 {
                     Console.WriteLine(r);
@@ -252,8 +258,8 @@ ORDER BY [Extent1].[Name] DESC
 
 ```csharp
 var result = (from artist in entites.Artists
-                              orderby artist.Name descending
-                              select artist.Name).Skip(10);
+    orderby artist.Name descending
+    select artist.Name).Skip(10);
 
                 foreach (var r in result)
                 {
@@ -263,7 +269,7 @@ var result = (from artist in entites.Artists
 
 ### 4.0 - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 [Extent1].[Name] AS [Name]
 FROM ( SELECT [Extent1].[Name] AS [Name], row_number() OVER (ORDER BY [Extent1].[Name] DESC) AS [row_number]

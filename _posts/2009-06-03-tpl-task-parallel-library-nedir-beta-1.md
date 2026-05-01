@@ -144,23 +144,23 @@ namespace HelloTPL
         static void EvenCount(int[] numbers)
         {
             int result = (from number in numbers
-                          where number % 2 == 0
-                          select number).Count();
+                where number % 2 == 0
+                select number).Count();
             Console.WriteLine("\tDizi içerisinde {0} adet ÇİFT sayı vardır\n", result.ToString());
         }
         static void OddCount(int[] numbers)
         {
             int result = (from number in numbers
-                          where number % 2 != 0
-                          select number).Count();
+                where number % 2 != 0
+                select number).Count();
             Console.WriteLine("\tDizi içerisinde {0} adet TEK sayı vardır\n", result.ToString());
         }
 
         static void NineCount(int[] numbers)
         {
             int result = (from number in numbers
-                          where number % 9 == 0
-                          select number).Count();
+                where number % 9 == 0
+                select number).Count();
             Console.WriteLine("\tDizi içerisinde {0} adet 9 ile bölünebilen sayı vardır\n", result.ToString());
         }
     }

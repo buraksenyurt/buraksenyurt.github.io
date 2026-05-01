@@ -23,22 +23,22 @@ Ado.Net Data Service'lerde temel olarak birer WCF servisidir. Bununla birlikte s
 
 Her şeyden önce en önemli nokta Ado.Net Data Service'lerin veri kaynaklarını istemciye RESTful modeline göre sunmasıdır. Bu açıdan bakıldığında geliştiricilerin daha çok üzerinde duracağı nokta verinin erişilebilirliğinin güvenli hale getirilmesidir. Dolayısıyla Ado.Net Data Service'leri kullanan istemcilerin, servis tarafında bir şekilde doğrulanması (Authenticate) ve sonrasında durumlarına bakılarak yetkilendirilmeleri (Authorization) güvenliğin sağlanması adına önemlidir. Oysaki Ado.Net Data Service örnekleri, aslında herhangibir uygulama üzerinde host edilebilecek şekilde kullanılabilir. WCF kadar geniş bir konsepti yoktur. Bu nedenle kural basittir; doğrulama işlemlerinin sorumluluğu aslında Ado.Net Data Service örneğini host eden uygulamaya aittir. Bu anlamda, servisin bir WCF projesinde veya bir ASP.NET uygulamasında barındırılması doğrulama ve yetkilendirme işlemlerinin daha kolay ele alınabilmesi açısından önemlidir. Ado.Net Data Service'lerinde güvenlik 4 farklı alanda değerlendirilmektedir
 
-| Kriter | Güvenlik Alanı | Açıklama |
+| **Kriter** | **Güvenlik Alanı** | **Açıklama** |
 | --- | --- | --- |
-| Host uygulamaya ait doğrulama modeli | Authentication <br> (Doğrulama) | Servisi kullanacak olan istemcilerin doğrulanması için Host uygulama ortamı ele alınır. Söz gelimiz ASP.NET uygulaması üzerinde yapılan bir hosting işleminde built-in Membership API' si kullanılarak svc dosyalarına olan erişim kısıtlandırılabilir. |
-| Servis Operasyonları <br> (Service Operations) | Authorization <br> (Yetkilendirme) | Metod bazlı operasyonlar yazılarak veriye olan erişim kısıtlandırılabilir. Örneğin HTTP Get metoduna göre sadece tek bir sonuçun elde edilmesine izin verilmesi(Single Result) sağlanabilir. |
-| Veri Kesmeleri <br> (Data Interceptors) | İstemcinin talep ettiği verinin elde edilmesinden(Read) veya değiştirilmesinden(Update,Insert,Delete) önce işlemin kesilerek kısıtlamaların yapılması sağlanabilir. Örneğin kullanıcının yetkisine göre sadece görebileceği ürün listesinin verilmesi gibi. |  |
-| Entity Görünürlüğü <br> (Entity Visibility) | Servisin dış ortama sunduğu Entity örneklerinin işlenme şekillerinin sınırlandırılmasıdır. Örneğin Product isimli Entity üzerinde sadece yazma işlemlerine izin verilmesi gibi. |  |
+| Host uygulamaya ait doğrulama modeli | Authentication (Doğrulama) | Servisi kullanacak olan istemcilerin doğrulanması için Host uygulama ortamı ele alınır. Söz gelimiz ASP.NET uygulaması üzerinde yapılan bir hosting işleminde built-in Membership API' si kullanılarak svc dosyalarına olan erişim kısıtlandırılabilir. |
+| Servis Operasyonları (Service Operations) | Authorization (Yetkilendirme) | Metod bazlı operasyonlar yazılarak veriye olan erişim kısıtlandırılabilir. Örneğin HTTP Get metoduna göre sadece tek bir sonuçun elde edilmesine izin verilmesi(Single Result) sağlanabilir. |
+| Veri Kesmeleri (Data Interceptors) | İstemcinin talep ettiği verinin elde edilmesinden(Read) veya değiştirilmesinden(Update,Insert,Delete) önce işlemin kesilerek kısıtlamaların yapılması sağlanabilir. Örneğin kullanıcının yetkisine göre sadece görebileceği ürün listesinin verilmesi gibi. | |
+| Entity Görünürlüğü(Entity Visibility) | Servisin dış ortama sunduğu Entity örneklerinin işlenme şekillerinin sınırlandırılmasıdır. Örneğin Product isimli Entity üzerinde sadece yazma işlemlerine izin verilmesi gibi. | |
 
 Buradaki kriterlerin uygulanması ile bir Ado.Net Data Service ve içeriğine olan erişim yetkilendirilebilir. Aslında teknik detayları, geliştireceğimiz örneğin aralarına serpiştirerek devam edebiliriz. İlk olarak bize bir test servisi gerekmektedir. Konuyu kolay işlemek adına Ado.Net Entity Framework öğesini kullanaraktan Northwind veritabanındaki tüm tabloları ele aldığımızı düşünelim. Sonrasında ise basit bir Ado.Net Data Service öğesi geliştireceğiz. Peki ama bu öğeyi nerede barındıracağız? İşte burada kullanıcı doğrulamasını (Authentication) kolayca tesis edebileceğimiz bir Asp.Net uygulamasını göz önüne alabiliriz. Elbetteki Asp.Net Web Site Administration Tool'unu kullanaraktan bir kaç test kullanıcısı ve rolü oluşturmaktada yarar olacaktır. Örneklerimizde kullanacağımız kullanıcı bilgileri aşağıdaki gibidir.(Örnekte SQL Express Edition kullanılmış ve bu nedenle ASPNETDB.MDF dosyası web sitesinin olduğu AppData klasörü altında oluşturulmuştur.)
 
-| Kullanici | Sifre | Rol |
+| **Kullanici** | **Sifre** | **Rol** |
 | --- | --- | --- |
 | dealer1 | dealer1. | Dealer |
-| dealer2 | dealer2. |  |
-| dealer3 | dealer3. |  |
+| dealer2 | dealer2. | |
+| dealer3 | dealer3. | |
 | region1 | region1. | Region |
-| region2 | region2. |  |
+| region2 | region2. | |
 
 Önemli unsurlardan biriside siteye olan ve amacımız gereği özellikle Ado.Net Data Service öğelerine olan erişimi kısıtlamaktır. Yani siteye isimsiz kullanıcı (Anonymous User) girişi kesin olarak engellenmelidir. Aşağıdaki ekran görüntüsüde, web.config dosyasında söz konusu engelleme için yapılmış olan değişikliler açık bir şekilde görülebilir.
 
@@ -129,16 +129,17 @@ public class NorthwindDataService
     public IQueryable<string> CustomerCities()
     {
         return (from c in this.CurrentDataSource.Customers
-                select c.City).Distinct();
+            select c.City).Distinct();
     }
 
     // filter, orderby gibi operatörler ve key bazlı erişim gibi sorgulara izin verilmez. Sadece entity bazlı erişim söz konusudur
     [WebGet]
     public IEnumerable<Suppliers> MySuppliers()
     {
-        return from c in this.CurrentDataSource.Suppliers
-               orderby c.CompanyName
-               select c;
+        return
+            from c in this.CurrentDataSource.Suppliers
+            orderby c.CompanyName
+            select c;
     }
 
     #endregion
@@ -172,7 +173,7 @@ Bu IQueryable ve IEnumerable arasındaki farkı biraz daha net bir şekilde gör
 
 Özellikle Entity tipleri ve servis operasyonları için yapılan erişim kısıtlamalarında devreye giren EntitySetRights enum sabitinin alabileceği değerler aşağıdaki tabloda belirtildiği gibidir
 
-| EntitySetRights Değerleri |  |
+| **EntitySetRights Değerleri** | **Açıklama** |
 | --- | --- |
 | None | Entity kümesine erişilmesi yasaklanmıştır. Metadata içerisinde görünmez ve üzerine okuma yazma işlemleri yapılamaz. |
 | ReadSingle | Entity üzerinde anahtar bazlı(Key Based) aramalara izin verilir. (Customers('ALFKI') gibi ) |
@@ -187,7 +188,7 @@ Bu IQueryable ve IEnumerable arasındaki farkı biraz daha net bir şekilde gör
 
 Servis operasyonlarında erişim kısıtlamalarını belirleyen ServiceOperationRights enum sabitinin alabileceği değerler ise aşağıdaki tabloda görüldüğü gibidir
 
-| ServiceOperationRights Değerleri |  |
+| **ServiceOperationRights Değerleri** | **Açıklama** |
 | --- | --- |
 | None | Servis operasyonuna erişim izni yoktur. |
 | ReadSingle | Tek bir veri öğesinin okunmasına izin verilir. |
@@ -278,8 +279,9 @@ namespace ClientApp
                 if (Membership.ValidateUser("dealer1", "dealer1."))
                 {
                     // QueryInterceptor için istemci kodu
-                    var tumUrunler = from urun in entities.Products
-                                     select urun;
+                    var tumUrunler =
+                        from urun in entities.Products
+                        select urun;
 
                     foreach (var urun in tumUrunler)
                     {
@@ -290,8 +292,8 @@ namespace ClientApp
 
                     // ChangeInterceptor için istemci kodu
                     var u = (from urun in entities.Products
-                             where urun.ProductID == 1
-                             select urun).First<Products>();
+                        where urun.ProductID == 1
+                        select urun).First<Products>();
                     u.UnitPrice += 1;
 
                     entities.UpdateObject(u);

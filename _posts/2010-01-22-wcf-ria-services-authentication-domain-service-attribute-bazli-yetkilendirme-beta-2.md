@@ -42,10 +42,11 @@ namespace SilverlightApplication8.Web
         public IQueryable<Album> GetAlbums(int artistId)
         {
             // Örnek olarak ArtistId bilgisine göre albüm listesini Title bilgisine göre A...Z sırasında döndürüyoruz
-            return from a in ObjectContext.Albums
-                   where a.ArtistId == artistId
-                   orderby a.Title
-                   select a;
+            return
+                from a in ObjectContext.Albums
+                where a.ArtistId == artistId
+                orderby a.Title
+                select a;
         }
     }
 }
@@ -170,4 +171,3 @@ Hata mesajında yer alan Access Denied kelimeleri olayı tüm çıplaklığıyla
 ![blg115_AuthorizationOk.gif](/assets/images/2010/blg115_AuthorizationOk.gif)
 
 Tabi bu yazımızda yetkilendirme nedeniyle oluşan istisna durumu ele kontrol altına alınmamıştır. Uygulama bu istisna ile karşılaştığında sonlandırılmaktadır ve hata mesajı script error olarak tarayıcı uygulama üzerinden yakalanmaktadır. Ancak en basit haliyle attribute bazlı olaraktan yetkilendirme işlemi sunucu tarafında yer alan servisler kanalıyla gerçekleştirilebilmiştir. Bu noktada vurgulanması gereken durumlardan biriside kendi Authorization niteliklerimizi (Attribute) yazabileceğimizdir. Söz gelimi role göre değil ama başka bir kritere göre yetkilendirme yapmak isteyebiliriz. Bu durumu ilerleyen yazılarımızda ele almaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

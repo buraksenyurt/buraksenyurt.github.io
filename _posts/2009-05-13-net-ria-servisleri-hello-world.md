@@ -110,8 +110,8 @@ namespace HelloRIAServices.Web
         {
             // basit bir LINQ ifadesi yardımıyla
             return (from p in this.Context.Products
-                    orderby p.ProductName descending
-                    select p);
+                orderby p.ProductName descending
+                select p);
         }
     }
 }
@@ -123,9 +123,9 @@ Tabiki bu değişiklikler ile sınırlı değiliz. İstersek, DomainService sın
 public IQueryable<Products> GetProductsByCategory(int categoryId)
 {
     return (from p in this.Context.Products
-            where p.Categories.CategoryID == categoryId
-            orderby p.ProductName
-            select p);
+        where p.Categories.CategoryID == categoryId
+        orderby p.ProductName
+        select p);
 }
 ```
 

@@ -56,8 +56,8 @@ namespace ManyToMany
             using (ChinookEntities entities = new ChinookEntities())
             {
                 Playlist result = (from pList in entities.Playlists
-                                   where pList.PlaylistId == 10
-                                   select pList).First();
+                    where pList.PlaylistId == 10
+                    select pList).First();
 
                 Console.WriteLine("{0}-{1}", result.PlaylistId, result.Name);
                 foreach (var t in result.Tracks)
@@ -119,8 +119,8 @@ namespace ManyToMany
             using (ChinookEntities entities = new ChinookEntities())
             {
                 Track track = (from t in entities.Tracks
-                               where t.TrackId == 1
-                               select t).First();
+                    where t.TrackId == 1
+                    select t).First();
 
                 Console.WriteLine("{0}-{1}-[{2}]",track.TrackId.ToString(),track.Name,track.Milliseconds.ToString());
 
@@ -185,8 +185,8 @@ namespace ManyToMany
                 #region Delete and Foreign Key Violation
 
                 var trackOnDelete = (from t in entities.Tracks
-                                     where t.TrackId == 3502
-                                     select t).First();
+                    where t.TrackId == 3502
+                    select t).First();
 
                 entities.DeleteObject(trackOnDelete);
 
@@ -223,8 +223,8 @@ namespace ManyToMany
                 #region Delete and Foreign Key Violation
 
                 var trackOnDelete = (from t in entities.Tracks
-                                     where t.TrackId == 3503
-                                     select t).First();
+                    where t.TrackId == 3503
+                    select t).First();
 
                 ConcurrentBag<Playlist> playList = new ConcurrentBag<Playlist>(trackOnDelete.Playlists);
                 foreach (var pl in playList)
@@ -274,4 +274,3 @@ where ([TrackId] = @0)',N'@0 int',@0=3503
 Insert ve Update işlemlerinin incelenmesini de siz değerli okurlarıma bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ManyToMany_RC.rar (47,16 kb)](/assets/files/2010/ManyToMany_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

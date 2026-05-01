@@ -50,8 +50,8 @@ namespace Lesson6
         {
             string[] categories = File.ReadAllLines(HttpContext.Current.Server.MapPath("~/Kategoriler.txt"));
             return (from category in categories
-                         where category.StartsWith(firstLetter,true,null)
-                         select category).ToList();
+                where category.StartsWith(firstLetter,true,null)
+                select category).ToList();
         }
     }
 }
@@ -119,4 +119,3 @@ Tabi yapımış olduğumuz bu anlatımın sonuçlarını test ederek görmemiz g
 Bu sayede geliştireceğimiz WebHttp Service'lerin operasyonlarının hızlı sonuçlar üreterek daha performanslı ve verimli olmasını sağlayabiliriz. Bu yazımızdaki örneğimizde sunucu tarafında ön bellekleme işlemlerini gerçekleştirdik. Ancak birde istemci taraflı ön bellekleme (Client Based Caching) işlemlerinin söz konusu olduğunu belirtelim. Bunu serinin sonraki yazısında incelemeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson6_RC.rar (20,41 kb)](/assets/files/2010/Lesson6_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

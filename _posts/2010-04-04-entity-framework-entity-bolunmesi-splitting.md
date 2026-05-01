@@ -47,17 +47,17 @@ namespace Splitting
             using (AdventureWorks2008Entities entities = new AdventureWorks2008Entities())
             {
                 var result = (from p in entities.People
-                             select new
-                             {
-                                 p.PersonType,
-                                 p.FirstName,
-                                 p.MiddleName,
-                                 p.LastName,
-                                 p.PasswordHash,
-                                 p.PasswordSalt,
-                                 p.BusinessEntity_rowguid,
-                                 p.Password_ModifiedDate
-                             }).Take(3);
+                    select new
+                    {
+                        p.PersonType,
+                        p.FirstName,
+                        p.MiddleName,
+                        p.LastName,
+                        p.PasswordHash,
+                        p.PasswordSalt,
+                        p.BusinessEntity_rowguid,
+                        p.Password_ModifiedDate
+                    }).Take(3);
 
                 foreach (var r in result)
                 {
@@ -96,4 +96,3 @@ Dolayısıyla bu çalışma şekli dikkate alınarak gerçekten gereksinim var i
 Sonuç olarak Splitting özelliği yardımıyla bir Entity içerisinde yer alan özelliklerin (Property), veritabanı tarafında birden fazla Tablo'nun alanlarına (Fields) ait olması sağlanabilmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Splitting_RC.rar (49,90 kb)](/assets/files/2010/Splitting_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

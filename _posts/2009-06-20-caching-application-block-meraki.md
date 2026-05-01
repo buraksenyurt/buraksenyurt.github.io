@@ -103,12 +103,12 @@ namespace ProductServices
             XDocument doc = XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
             List<Product> products = (from p in doc.Element("Products").Elements("Product")
-                                      select new Product
-                                      {
-                                          ProductId = Convert.ToInt32(p.Element("Id").Value),
-                                          Name = p.Element("Name").Value,
-                                          ListPrice = Convert.ToDecimal(p.Element("ListPrice").Value)
-                                      }).ToList<Product>();
+                select new Product
+                {
+                    ProductId = Convert.ToInt32(p.Element("Id").Value),
+                    Name = p.Element("Name").Value,
+                    ListPrice = Convert.ToDecimal(p.Element("ListPrice").Value)
+                }).ToList<Product>();
 
             return products;
         }
@@ -120,8 +120,8 @@ namespace ProductServices
             XDocument doc = XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
             string imageFileName = (from p in doc.Element("Products").Elements("Product")
-                                    where p.Element("Id").Value == productId.ToString()
-                                    select p.Element("ImageFileName").Value).Single();
+                where p.Element("Id").Value == productId.ToString()
+                select p.Element("ImageFileName").Value).Single();
 
             string imagePath = Path.Combine(ConfigurationManager.AppSettings["ImagesPath"], imageFileName);
 
@@ -228,8 +228,8 @@ public byte[] GetPhoto(int productId)
     XDocument doc = XDocument.Load(ConfigurationManager.AppSettings["XmlSourcePath"]);
 
     string imageFileName = (from p in doc.Element("Products").Elements("Product")
-                            where p.Element("Id").Value == productId.ToString()
-                            select p.Element("ImageFileName").Value).Single();
+        where p.Element("Id").Value == productId.ToString()
+        select p.Element("ImageFileName").Value).Single();
 
     string imagePath = Path.Combine(ConfigurationManager.AppSettings["ImagesPath"], imageFileName);
 
@@ -264,4 +264,3 @@ Diğer yandan resmin değişmesi halinde cache içeriğinin güncellenmesi ile i
 Şimdilik benden bu kadar. Yeni bir western filmi sonrasında tekrardan Enterprise Library konulu bir örnek ile görüşmek üzere...
 
 [HelloCachingBlock.rar (5,35 mb)](/assets/files/2009/HelloCachingBlock.rar)
-

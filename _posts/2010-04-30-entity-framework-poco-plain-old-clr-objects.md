@@ -83,22 +83,23 @@ namespace POCODans
         {
             using (ChinookEntities entities = new ChinookEntities())
             {
-                var results = from c in entities.Customers
-                              join i in entities.Invoices on c.CustomerId equals i.CustomerId
-                              where c.City=="Sidney"
-                              select new
-                              {
-                                  c.CustomerId,
-                                  Name=c.FirstName+" "+c.LastName,
-                                  c.Email,
-                                  c.Company,
-                                  c.City,
-                                  c.Country,
-                                  i.BillingCity,
-                                  i.BillingCountry,
-                                  i.InvoiceDate,
-                                  i.Total
-                              };
+                var results =
+                    from c in entities.Customers
+                    join i in entities.Invoices on c.CustomerId equals i.CustomerId
+                    where c.City=="Sidney"
+                    select new
+                    {
+                        c.CustomerId,
+                        Name=c.FirstName+" "+c.LastName,
+                        c.Email,
+                        c.Company,
+                        c.City,
+                        c.Country,
+                        i.BillingCity,
+                        i.BillingCountry,
+                        i.InvoiceDate,
+                        i.Total
+                    };
 
                 foreach (var r in results)
                 {
@@ -248,4 +249,3 @@ Bu yazımızda POCO (Plain Old CLR Objects) nesnelerinin ne olduğunu kısaca ta
 POCO ile ilişkili yeni bilgiler öğrendikçe sizlerle paylaşıyor olacağım. Özellikle bu yazıda henüz değerlendirmediğimiz bir durum var o da Lazy Loading durumlarında POCO nesnelerinin nasıl hazırlanması gerektiği? Bunu bir sonraki yazımızda aynı örnek üzerinden test ederek incelemeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [POCO_RTM.rar (44,97 kb)](/assets/files/2010/POCO_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

@@ -54,7 +54,7 @@ namespace TupleKavrami
         static List<Tuple<string, string,double>> GetEmployees(List<Person> employees) 
         { 
             var result = (from e in employees 
-                         select new Tuple<string, string,double>(e.Name, e.Surname,e.Salary)).ToList<Tuple<string,string,double>>();
+                select new Tuple<string, string,double>(e.Name, e.Surname,e.Salary)).ToList<Tuple<string,string,double>>();
 
             return result; 
         } 
@@ -81,7 +81,7 @@ Tabi bir diğer önemli nokta Tuple nesne örneklemesi sırasında kullanılan T
 
 ![blg200_FirstRuntime](/assets/images/2010/blg200_FirstRuntime.gif)
 
-## 2 – Metodlardan Birden Fazla Değer Döndürmek İstediğimiz ve out Parametrelerini Tercih Ettiğimiz Durumlar.
+## 2 – Metodlardan Birden Fazla Değer Döndürmek İstediğimiz ve out Parametrelerini Tercih Ettiğimiz Durumlar
 
 Aslında bunun için pek çok yol mevcuttur. out tipinden metod parametreleri veya dönüş tipi olarak bir koleksiyon ya da dizi kullanılması söz konusu olabilir. Ancak Tuple tipi de bu anlamda değerlendirilebilir. Söz gelimi aşağıdaki kod parçasını göz önüne alalım.
 

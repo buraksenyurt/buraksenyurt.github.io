@@ -44,8 +44,9 @@ adwContext.ProductCategories.InsertOnSubmit(tools);
 İlk olarak AdventureDataContext tipine ait bir nesne örneği oluşturulmaktadır. Bu işlemin arkadasındanda eklenmek istenen ProductCategory nesne örneği C# 3.0 ile birlikte gelen nesne başlatıcılarından (Object Initializers) yararlanılarak örneklenmektedir. Bu noktada Table generic tipinden olan ProductCategories sınıfının InsertOnSubmit metodu, koleksiyonuna ilave edilmek üzere yeni bir ProductCategory nesne örneğinin eklenmesi için kullanılmaktadır. Burada üzerinde durulması gereken önemli bir nokta vardır. InsertOnSubmit metodu sadece Table koleksiyonuna ilave edilmek üzere bir nesne eklemektedir. Bir başka deyişle ProductCategories koleksiyonu üzerinde yapılacak bir for döngüsünde eklenen nesne (ler) görülmeyecektir. Bunu test etmek için aşağıdaki gibi bir kod parçasını ele alabiliriz.
 
 ```csharp
-var categories = from category in adwContext.ProductCategories
-                 select category.Name;
+var categories =
+    from category in adwContext.ProductCategories
+    select category.Name;
 
 foreach (string ctgr in categories)
     Console.WriteLine(ctgr);
@@ -114,8 +115,8 @@ Gelelim silme işlemlerine. Silme (Delete) operasyonlarındada ekleme işlemleri
 
 ```csharp
 ProductCategory silinecekVeri = (from cat in adwContext.ProductCategories
-                                 where cat.ProductCategoryID == 25
-                                 select cat).Single<ProductCategory>();
+    where cat.ProductCategoryID == 25
+    select cat).Single<ProductCategory>();
 
 adwContext.ProductCategories.DeleteOnSubmit(silinecekVeri);
 
@@ -172,9 +173,10 @@ Görüldüğü gibi sadece ProductCategoryID alanı WHERE ifadesinden sonrasına
 İstenirse toplu olarak silme işlemleride gerçekleştirilebilir. Örneğin Name özelliğinin içerisinde Kategori kelimesi geçen satırları silmek istediğimizi düşünelim. Bu amaçla aşağıdaki gibi bir kod parçası göz önüne alınabilir. Öncelikli olarak Contains metodu ile Kategori kelimesi geçen ProductCategory nesnelerinin bir listesinin elde edilemsi gerekmektedir. LINQ sorgusu buna göre düzenlenmiştir.
 
 ```csharp
-var kategoriGecenler = from k in adwContext.ProductCategories
-                       where k.Name.Contains("Kategori")
-                       select k;
+var kategoriGecenler =
+    from k in adwContext.ProductCategories
+    where k.Name.Contains("Kategori")
+    select k;
 
 adwContext.ProductCategories.DeleteAllOnSubmit<ProductCategory>(kategoriGecenler);
 
@@ -188,9 +190,10 @@ Söz konusu kod içerisinde SubmitChanges metodu çalıştırıldığında SQL t
 Gelelim güncelleme (Update) işlemlerine. Güncelleme süreçlerinde, Insert ve Delete işlemlerindeki gibi metodlar söz konusu değildir. Nitekim güncelleme işlemi aslında varlık nesnesinin herhangibir özelliğinin (özelliklerinin) değerinin değiştirilmesinden başka bir şey değildir. Dolayısıyla tek yapılması gereken değişiklikler tamamlandıktan sonra SubmitChanges metodunu çağırmaktır. Aşağıdaki örnek kod parçasında örnek olarak Product tablosuna ait bir varlık sınıfı (Entity Class) kullanılmaktadır. Bu sınıfı oluşturmak için tek yapılması gereken tahmin edileceği üzere Server Explorer'dan Product tablosunu Adventure.dbml üzerine tasarım zamanında sürükleyip bırakmaktır.
 
 ```csharp
-var guncellenecekler = from p in adwContext.Products
-                       where p.ProductSubcategoryID == 1
-                       select p;
+var guncellenecekler =
+    from p in adwContext.Products
+    where p.ProductSubcategoryID == 1
+    select p;
 
 foreach (Product prd in guncellenecekler)
     prd.ListPrice += 10;
@@ -237,9 +240,10 @@ Ancak bu teknik yardımıyla güncellenmiş olan tüm satırların geri alınmas
 Normal şartlarda SubmitChanges metodunun çağırılmasından sonra güncelleme, ekleme ve silme işlemleri otomatik olarak transaction içerisinde çalıştırılırlar. Bir başka deyişle SubmitChanges metodu, veritabanı üzerinde yapılacak işlemlerin, biz söylemeden otomatik olarak bir transaction içerisinde olmasını sağlamaktadır. Söz gelimi aşağıdaki kod parçasını ele alalım. Bu kod parçasında güncelleme (Update) ve yeni ürün ekleme (Insert) işlemleri söz konusudur.
 
 ```csharp
-var guncellenecekler = from p in adwContext.Products
-                       where p.Class == "M" && p.ProductSubcategoryID == 1
-                       select p;
+var guncellenecekler =
+    from p in adwContext.Products
+    where p.Class == "M" && p.ProductSubcategoryID == 1
+    select p;
 
 foreach (Product prd in guncellenecekler)
     prd.ListPrice += 10;
@@ -281,9 +285,10 @@ adwContext.SubmitChanges();
 Dikkat edilecek olursa Insert ve Update ifadelerinin tamamı aynı Transaction içerisinde yürütülmektedir. Diğer taraftan aynı kodun aşağıdaki gibi değiştirildiğini düşünelim.
 
 ```csharp
-var guncellenecekler = from p in adwContext.Products
-                       where p.Class == "M" && p.ProductSubcategoryID == 1
-                       select p;
+var guncellenecekler =
+    from p in adwContext.Products
+    where p.Class == "M" && p.ProductSubcategoryID == 1
+    select p;
 
 foreach (Product prd in guncellenecekler)
     prd.ListPrice += 10;
@@ -328,9 +333,10 @@ Görüldüğü gibi SubmitChanges her çağırıldığında o ana kadar gerçekl
 ```csharp
 using (TransactionScope tScope = new TransactionScope())
 {
-    var guncellenecekler = from p in adwContext.Products
-                           where p.Class == "M" && p.ProductSubcategoryID == 1
-                           select p;
+    var guncellenecekler =
+        from p in adwContext.Products
+        where p.Class == "M" && p.ProductSubcategoryID == 1
+        select p;
 
     foreach (Product prd in guncellenecekler)
         prd.ListPrice += 10;
@@ -376,9 +382,10 @@ TransactionScope kullanımı dışında yerel transaction kullanılarakta ilgili
 ```csharp
 try
 {
-    var guncellenecekler = from p in adwContext.Products
-                           where p.Class == "M" && p.ProductSubcategoryID == 1
-                           select p;
+    var guncellenecekler =
+        from p in adwContext.Products
+        where p.Class == "M" && p.ProductSubcategoryID == 1
+        select p;
 
     foreach (Product prd in guncellenecekler)
         prd.ListPrice += 10;

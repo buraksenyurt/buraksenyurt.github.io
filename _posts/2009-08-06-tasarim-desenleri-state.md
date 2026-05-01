@@ -171,8 +171,8 @@ namespace StatePattern
         {
             Console.WriteLine("Ürün siparişi geldi. {0} için atılan para : {1}", productName, money);
             Product prd = (from p in ProductList
-                           where (p.Name == productName && (money >= p.ListPrice && p.Count >= 1))
-                           select p).SingleOrDefault<Product>();
+                where (p.Name == productName && (money >= p.ListPrice && p.Count >= 1))
+                select p).SingleOrDefault<Product>();
 
             // Eğer talep edilen ürün stokta var ve atılan para yeterli ise 
             if (prd != null)
@@ -234,4 +234,3 @@ Ben geliştirdiğimiz örnekte pek çok durumuda göz ardı ettim.
 Tabiki yukarıdaki gibi bir deseni uygulamak yerine her şeyi if veya switch gibi kontrol deyimleri ile ele almaya çalışabiliriz. Tabi bu durumda hem kodun karmaşıklaşmasına neden olur hemde genişletilebilirliğini zorlaştırmış oluruz. Nitekim şu anda uygulanan desene göre, makine için yeni bir davranış eklemek aslında State arayüzünden türüyen bir tip ekleyip bunu ilgili yerlerde değerlendirmekten başka bir işlem değildir. Bunu daha iyi anlamak için aynı örneği if ve switch yapıları ile geliştirmeye çalışmalısınız. Böylece geldik bir tasarım deseninin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StatePattern.rar (26,49 kb)](/assets/files/2009/StatePattern.rar)
-

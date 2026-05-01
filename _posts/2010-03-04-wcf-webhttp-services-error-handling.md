@@ -45,8 +45,8 @@ namespace ServerApp
         public List<Book> GetBooks(string firstLetter)
         {
             return (from book in books
-                   where book.Name.StartsWith(firstLetter)
-                   select book).ToList();
+                where book.Name.StartsWith(firstLetter)
+                select book).ToList();
         }
     }
 
@@ -78,8 +78,8 @@ System.ServiceModel.Web isim alanı altında yer alan WebFaultException tipinin 
 public List<Book> GetBooks(string firstLetter)
 {
     var result=(from book in books
-           where book.Name.StartsWith(firstLetter)
-           select book).ToList();
+        where book.Name.StartsWith(firstLetter)
+        select book).ToList();
 
     if (result.Count == 0)
         throw new WebFaultException<string>("Talep edilen kelime ile başlayan kitaplar sistemde mevcut değiller.", System.Net.HttpStatusCode.NotFound);
@@ -109,8 +109,8 @@ Nitekim zaten HTTP 404 mesajının istemci tarafına gönderilmesi sağlanmaktad
         public List<Book> GetBooks(string firstLetter)
         {
             var result=(from book in books
-                   where book.Name.StartsWith(firstLetter)
-                   select book).ToList();
+                where book.Name.StartsWith(firstLetter)
+                select book).ToList();
 
             if (result.Count == 0)
                 throw new WebFaultException<ErrorInformation>(
@@ -161,4 +161,3 @@ namespace ClientApp
 Görüldüğü üzere servis operasyonu içerisinde üretilen ErrorInformation bilgisi istemci tarafına XML formatlı olacak şekilde aktarılmıştır. Sonuç olarak olası veya beklenen hatalar karşısında istemci tarafına uygun bir bildirim yapılması HTTP durum kodları bazında mümkündür. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson4_RC.rar (174,57 kb)](/assets/files/2010/Lesson4_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

@@ -77,8 +77,8 @@ namespace Lesson5
             try
             {
                 prd = (from p in Products
-                       where p.ProductId.ToString() == ProductId
-                       select p).First();
+                    where p.ProductId.ToString() == ProductId
+                    select p).First();
             }
             catch
             {           
@@ -185,15 +185,14 @@ Uygulama başlatıldığında ApplicationStart metoduna girilecektir. Bu metod i
 
 ![blg138_Case.gif](/assets/images/2010/blg138_Case.gif)
 
-Hemen çalışma zamanı sonuçlarına bir bakalım. Örneğin http://localhost:10860/Productions/Products/1029 talebinde bulunduğumuzda aşağıdaki sonuçlar ile karşılaşırız. Görüldüğü üzere talep ProductionService'e yönlendirilmiştir. (Tabi var olmayan bir ProductID talebi girildiğinde HTTP Status Code 404 NotFound ile karşılaşırız. WebFaultException tipinin kullanımının anlatıldığı yazımızı hatırlayalım lütfen)
+Hemen çalışma zamanı sonuçlarına bir bakalım. Örneğin `http://localhost:10860/Productions/Products/1029` talebinde bulunduğumuzda aşağıdaki sonuçlar ile karşılaşırız. Görüldüğü üzere talep ProductionService'e yönlendirilmiştir. (Tabi var olmayan bir ProductID talebi girildiğinde HTTP Status Code 404 NotFound ile karşılaşırız. WebFaultException tipinin kullanımının anlatıldığı yazımızı hatırlayalım lütfen)
 
 ![blg138_Runtime1.gif](/assets/images/2010/blg138_Runtime1.gif)
 
-Diğer yandan http://localhost:10860/Calculations/Discount/120,45 şeklinde bir talepte bulunduğumuzda ise CalculationService'e yönlendirildiğimizi görebiliriz. (Yine decimal tipe dönüştürülemeyen bir talep gönderildiğinde tahmin edileceği üzere HTTP Status Code 400 Bad Reuqest ile karşılaşırız.)
+Diğer yandan `http://localhost:10860/Calculations/Discount/120,45` şeklinde bir talepte bulunduğumuzda ise CalculationService'e yönlendirildiğimizi görebiliriz. (Yine decimal tipe dönüştürülemeyen bir talep gönderildiğinde tahmin edileceği üzere HTTP Status Code 400 Bad Reuqest ile karşılaşırız.)
 
 ![blg138_Runtime2.gif](/assets/images/2010/blg138_Runtime2.gif)
 
 Sonuç olarak UriTemplate'lerin ilgili servis operasyonları ile eşleştirilmesi çok daha kolaylaştırılmıştır. Öncelikle olarak gelen talebin hangi servis ile ilişkili olduğu noktasında Route Table devreye girmektedir. Ardından talep servise gelir. Servis ise URI içeriğine bakara uygun operasyonun çağırılması ile ilgilenir. Böylece geldik bir konumuzun daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson5_RC.rar (24,11 kb)](/assets/files/2010/Lesson5_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

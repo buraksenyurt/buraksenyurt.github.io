@@ -66,8 +66,8 @@ namespace Lesson2
         public List<string> GetMyTickets(string Name,string LastName)
         {
             return (from line in File.ReadAllLines(filePath)
-                    where line.Contains(Name + LastName)
-                    select line).ToList();
+                where line.Contains(Name + LastName)
+                select line).ToList();
         }
 
         [WebInvoke(UriTemplate = "Lottery/Create/{Name}/{Surname}", Method = "POST")]
@@ -88,8 +88,8 @@ namespace Lesson2
         public string UpdateMyTicketNumber(string TicketNumber)
         {
             string ticket = (from line in File.ReadAllLines(filePath)
-                         where line.Contains(TicketNumber)
-                         select line).First();
+                where line.Contains(TicketNumber)
+                select line).First();
             string[] infos=ticket.Split('|');
 
             string updatedTicket=string.Join("|",Guid.NewGuid().ToString(),infos[1],infos[2],"Is New? ",true.ToString());
@@ -103,8 +103,8 @@ namespace Lesson2
         public void DeleteMyTicket(string TicketNumber)
         {
             string[] newLines = (from line in File.ReadAllLines(filePath)
-                           where !line.Contains(TicketNumber)
-                           select line).ToArray();
+                where !line.Contains(TicketNumber)
+                select line).ToArray();
 
             File.WriteAllLines(filePath, newLines);
         }
@@ -130,7 +130,7 @@ Artık istemci için gerekli tüm ön hazırlıklar yapılmıştır. Şimdi dile
 
 ![blg128_Form.gif](/assets/images/2010/blg128_Form.gif)
 
-Form üzerindeki kontrolleri kullanarak bilet üretebilecek, bir bileti silip güncelleyebilecek yada var olan biletlerimizi görebileceğiz. Tabiki tüm bu fonksiyonellikler LotteryService isimli WCF HttpWeb Service üzerinden gerçekleştiriliyor olacak. İlk olarak bir kişinin sahip olduğu tüm biletleri listlemeye çalışalım. Bu noktada servis tarafındaki GetMyTickets operasyonu için bir çağrı yapılması gerekiyor. Söz konusu çağrı örneğin http://localhost:16088/LotteryService/Lottery/Coni/Vayt şeklinde olabilir. Nitekim WebGet niteliğinde belirtilen URI bilgisi bu şekildedir. Bu durumda istemci tarafında aşağıdaki kodlamayı yapabiliriz.
+Form üzerindeki kontrolleri kullanarak bilet üretebilecek, bir bileti silip güncelleyebilecek yada var olan biletlerimizi görebileceğiz. Tabiki tüm bu fonksiyonellikler LotteryService isimli WCF HttpWeb Service üzerinden gerçekleştiriliyor olacak. İlk olarak bir kişinin sahip olduğu tüm biletleri listlemeye çalışalım. Bu noktada servis tarafındaki GetMyTickets operasyonu için bir çağrı yapılması gerekiyor. Söz konusu çağrı örneğin `http://localhost:16088/LotteryService/Lottery/Coni/Vayt` şeklinde olabilir. Nitekim WebGet niteliğinde belirtilen URI bilgisi bu şekildedir. Bu durumda istemci tarafında aşağıdaki kodlamayı yapabiliriz.
 
 ```csharp
 using System;
@@ -179,8 +179,9 @@ Dikkat edileceği üzere servis tarafındaki operasyonda List tipinden olan oper
 XElement response = responseMessage.Content.ReadAsXElement();
 
 lstMyTickets.Items.Clear();
-var tickets = from node in response.Elements()
-                  select node.Value;
+var tickets =
+    from node in response.Elements()
+    select node.Value;
 
 foreach (var ticket in tickets)
 {
@@ -272,4 +273,3 @@ Tabi uygulamamızın pek çok yerinde bug ve iş mantığı hatası vardır. Üs
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson2.rar (196,61 kb)](/assets/files/2010/Lesson2.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

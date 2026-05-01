@@ -44,8 +44,8 @@ namespace Lesson7
         public List<Wallpaper> GetWallpapers(string Name)
         {
             var result = (from w in wallpapers
-                         where w.Name.ToLower().Contains(Name.ToLower())
-                         select w).ToList();
+                where w.Name.ToLower().Contains(Name.ToLower())
+                select w).ToList();
             return result;
         }
     }

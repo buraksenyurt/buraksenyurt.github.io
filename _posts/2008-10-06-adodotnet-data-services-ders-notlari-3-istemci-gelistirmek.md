@@ -192,9 +192,10 @@ namespace ClientApp
         {
             AdventureWorksEntities proxy = new AdventureWorksEntities(new Uri("http://localhost:1740/AdventureServices/AdventureWorksServices.svc"));
 
-            var subCategories = from sc in proxy.ProductSubcategory
-                                orderby sc.Name descending
-                                select sc;
+            var subCategories =
+                from sc in proxy.ProductSubcategory
+                orderby sc.Name descending
+                select sc;
 
             foreach (ProductSubcategory subCategory in subCategories)
             {
@@ -220,8 +221,8 @@ AdventureWorksEntities proxy = new AdventureWorksEntities(new Uri("http://localh
 
 // Take metodu ile A...Z ye sıralanmış listenin ilk 3 elemanı alınmış olunur.
 var subCategories = (from sc in proxy.ProductSubcategory
-                     orderby sc.Name
-                     select sc).Take<ProductSubcategory>(3);
+    orderby sc.Name
+    select sc).Take<ProductSubcategory>(3);
 
 // Elde edilen alt kategoriler dolaşışır
 foreach (ProductSubcategory subCategory in subCategories)

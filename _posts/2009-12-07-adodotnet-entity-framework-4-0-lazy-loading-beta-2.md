@@ -31,8 +31,9 @@ namespace Before
         {
             using (ChinookEntities context = new ChinookEntities())
             {
-                var albums = from a in context.Album
-                             select a;
+                var albums =
+                    from a in context.Album
+                    select a;
 
                 foreach (Album albm in albums)
                     Console.WriteLine("{0} [{1}]", albm.Title, albm.Track.Count.ToString());
@@ -62,8 +63,9 @@ FROM [dbo].[Album] AS [Extent1]
 Aslında var. Dikkat edileceği üzere güncel Album Entity nesnesi ile ilişkili olan Track nesneslerinin toplam sayıları (Count) her zaman 0 olarak elde edilmiştir. Bir başka deyişle X Entity nesnesi ile ilişkili olan Y Entity nesnesine dair herhangibir sorgunun işletilmesi söz konusu olmamıştır. Oysaki Lazy Loading kalıbına göre çalışma zamanındaki Album nesne örneklerine ait Track özellikleri üzerinden o anki Track nesne örneğinin herhangibir üyesine erişilmek istendiğinde (Örnekteki Count gibi), SQL tarafındada gerekli sorguların çalıştırılacağı düşünülür. Peki ilk versiyonda yaşanan bu durum üzerine ne yapılmaktaydı? Temel olarak iki basit yöntem ile bu durumu çözüme kavuşturabiliriz. Bunlardan birisi Include metodunun LINQ ifadesinde aşağıdaki gibi kullanılmasıdır.
 
 ```csharp
-var albums = from a in context.Album.Include("Track")
-             select a;
+var albums =
+    from a in context.Album.Include("Track")
+    select a;
 ```
 
 Bu durumda çalışma zamanı görüntüsü aşağıdaki gibi olacaktır.
@@ -151,8 +153,9 @@ namespace ReallyLazy
         {
             using (ChinookEntities context = new ChinookEntities())
             {
-                var albumsWithTracks = from a in context.Albums
-                                       select a;
+                var albumsWithTracks =
+                    from a in context.Albums
+                    select a;
 
                 foreach (Album albm in albumsWithTracks)
                 {

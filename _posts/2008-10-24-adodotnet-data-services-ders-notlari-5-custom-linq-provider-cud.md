@@ -265,8 +265,8 @@ namespace ClientApp
 
             // ProductID değeri 2 olan Product nesnesi istenir.
             var prd = (from p in proxy.Products
-                       where p.ProductID == 2
-                       select p).First<Product>();
+                where p.ProductID == 2
+                select p).First<Product>();
 
             // Bazı özelliklerin değerleri sembolik olarak değiştirilir
             prd.ListPrice += 10;
@@ -279,8 +279,8 @@ namespace ClientApp
 
             // Silme işlemine örnek olması için son eklenen Product istenir
             var lastPrd = (from p in proxy.Products
-                           where p.ProductID == newProduct.ProductID
-                           select p).First<Product>();
+                where p.ProductID == newProduct.ProductID
+                select p).First<Product>();
 
             // Nesne silinmesi yapılır
             proxy.DeleteObject(lastPrd);

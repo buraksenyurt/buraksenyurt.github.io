@@ -109,12 +109,13 @@ namespace BlogSample
         {
             using (NorthwindDataContext northContext = new NorthwindDataContext())
             {
-                var resultSet = from c in northContext.Categories
-                                select new
-                                {
-                                    c.CategoryName,
-                                    c.Products.Count
-                                };
+                var resultSet =
+                    from c in northContext.Categories
+                    select new
+                    {
+                        c.CategoryName,
+                        c.Products.Count
+                    };
                 foreach (var result in resultSet)
                 {
                     Console.WriteLine("Category Name :{0} ({1})", result.CategoryName, result.Count.ToString());
@@ -199,12 +200,13 @@ Elbette yine istediğimizi alamadık. Nitekim sadece kategori adı ve ürün say
 ```csharp
 using (NorthwindEntities entity = new NorthwindEntities())
 {
-    var resultSet = from c in entity.Categories.Include("Products")
-                    select new
-                    {
-                        c.CategoryName,
-                        c.Products.Count
-                    };
+    var resultSet =
+        from c in entity.Categories.Include("Products")
+        select new
+        {
+            c.CategoryName,
+            c.Products.Count
+        };
     foreach (var result in resultSet)
     {
         Console.WriteLine("Category Name :{0}({1})", result.CategoryName, result.Count);

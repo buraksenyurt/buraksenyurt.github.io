@@ -151,13 +151,13 @@ namespace RSSReaderim.Web
                 var syndicationItems =SyndicationFeed.Load(XmlReader.Create(address)).Items;
                 // SyndicationItem örneklerinin her biri ele alınıp yeni bir SyndItem örneklenmesinde kullanılır.
                 feedItems = (from syndicationItem in syndicationItems
-                             select new SyndItem
-                             {
-                                 Title = syndicationItem.Title.Text,
-                                 PublishDate = syndicationItem.PublishDate.DateTime,
-                                 Summary = syndicationItem.Summary.Text,
-                                 Link=syndicationItem.Links[0].Uri
-                             }
+                    select new SyndItem
+                    {
+                        Title = syndicationItem.Title.Text,
+                        PublishDate = syndicationItem.PublishDate.DateTime,
+                        Summary = syndicationItem.Summary.Text,
+                        Link=syndicationItem.Links[0].Uri
+                    }
                            ).ToList();
             }
             catch(Exception excp)
@@ -274,4 +274,3 @@ Benden buraya kadar. Bir süre dinlenmeye çalışacağım. Tekrardan görüşü
 [RSSReaderim_RTM.rar (1,48 mb)](/assets/files/2010/RSSReaderim_RTM.rar)
 
 > Örnek Visual Studio 2010 Ultimate RTM sürümünde geliştirilmiş ve test edilmiştir.
-

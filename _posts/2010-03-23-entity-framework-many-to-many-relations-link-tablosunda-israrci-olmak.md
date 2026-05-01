@@ -100,8 +100,8 @@ namespace RelationEntityCreation
             using (ChinookEntities entities = new ChinookEntities())
             {
                 var result = (from p in entities.Playlists.Include("PlaylistTracks.Track")
-                              where p.PlaylistId == 3
-                              select p).First();
+                    where p.PlaylistId == 3
+                    select p).First();
 
                 foreach (var r in result.PlaylistTracks)
                 {
@@ -167,4 +167,3 @@ Açıkçası ben bu tip bir tablonun eğer maliyet kaybı yoksa ısrarla eklenme
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RelationEntityCreation_RC.rar (52,15 kb)](/assets/files/2010/RelationEntityCreation_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

@@ -44,10 +44,11 @@ namespace HelloWorld
 
             Stopwatch watch = Stopwatch.StartNew();
 
-            var result1 = from p in products
-                          where p.ListPrice >= 10 && p.InStock == true
-                          orderby p.Name descending
-                          select p;
+            var result1 =
+                from p in products
+                where p.ListPrice >= 10 && p.InStock == true
+                orderby p.Name descending
+                select p;
             Console.WriteLine("Toplam {0} adet ürün bulundu", result1.ToList().Count.ToString());
 
             Console.WriteLine("Toplam süre {0}", watch.ElapsedMilliseconds.ToString());
@@ -55,10 +56,11 @@ namespace HelloWorld
 
             Stopwatch watch2 = Stopwatch.StartNew();
 
-            var result2 = from p in products.AsParallel()
-                          where p.ListPrice >= 10 && p.InStock == true
-                          orderby p.Name descending
-                          select p;
+            var result2 =
+                from p in products.AsParallel()
+                where p.ListPrice >= 10 && p.InStock == true
+                orderby p.Name descending
+                select p;
             Console.WriteLine("Toplam {0} adet ürün bulundu", result2.ToList().Count.ToString());
 
             Console.WriteLine("Toplam süre {0}", watch2.ElapsedMilliseconds.ToString());
@@ -139,16 +141,18 @@ for (int i = 1; i < values.Length; i++)
 }
 
 Stopwatch watch3 = Stopwatch.StartNew();
-var result3 = from value in values
-              where value % 2 == 0
-              select value;
+var result3 =
+    from value in values
+    where value % 2 == 0
+    select value;
 Console.WriteLine("Toplam {0} çift sayı var", result3.ToList().Count.ToString());
 Console.WriteLine(watch3.ElapsedMilliseconds.ToString());
 
 Stopwatch watch4 = Stopwatch.StartNew();
-var result4 = from value in values.AsParallel()
-              where value % 2 == 0
-              select value;
+var result4 =
+    from value in values.AsParallel()
+    where value % 2 == 0
+    select value;
 Console.WriteLine("Toplam {0} çift sayı var", result4.ToList().Count.ToString());
 Console.WriteLine(watch4.ElapsedMilliseconds.ToString());
 ```

@@ -155,8 +155,8 @@ namespace ClientApp
 
             // Eklenen kategori servis tarafından talep edilir
             var eklenenKategori = (from k in proxy.Kategori
-                                   where k.KategoriId == windowsClient.KategoriId
-                                   select k).First();
+                where k.KategoriId == windowsClient.KategoriId
+                select k).First();
             // Elde edilen kategoriye ait kitap bilgilerinin yüklenmesi istenir
             proxy.LoadProperty(eklenenKategori, "Kitap");
 
@@ -227,9 +227,10 @@ Sırada güncelleştirme işlemleri var. Bu amaçla aşağıdaki örnek kod sat�
 ```csharp
 // Güncellenecek veri kümesi çekilir.
 // Örneğin KategoriId değeri 1 olan Kitaplar çekilir
-var tumKitaplar = from k in proxy.Kitap
-                  where k.Kategori.KategoriId == 1
-                  select k;
+var tumKitaplar =
+    from k in proxy.Kitap
+    where k.Kategori.KategoriId == 1
+    select k;
 
 // Elde edilen sonuç kümesindeki her bir Kitap nesne örneği üzerinde basit bir güncelleştirme yapılır
 foreach (Kitap k in tumKitaplar)
@@ -244,9 +245,10 @@ proxy.SaveChanges();
 
 // Sonuçları test etmek için servis tarafından 1 numaralı kategoriye bağlı kitaplar tekrar istenir
 Console.WriteLine("\nDeğişiklikler Sonrası Liste\n");
-var kategori1Kitaplari = from k in proxy.Kitap
-                         where k.Kategori.KategoriId == 1
-                         select k;
+var kategori1Kitaplari =
+    from k in proxy.Kitap
+    where k.Kategori.KategoriId == 1
+    select k;
 // Her bir kitabın bilgisi ekrana yazdırılır
 foreach (Kitap k in tumKitaplar)
 {
@@ -280,8 +282,9 @@ Son olarak basit bir silme operasyonu işlemini ele alıyor olacağız. Bu son k
 ```csharp
 // Önce kullanıcıya Kategori listesi sunulur
 Console.WriteLine("\nSilme Operasyonu\n");
-var kategoriler = from k in proxy.Kategori
-                  select k;
+var kategoriler =
+    from k in proxy.Kategori
+    select k;
 foreach (Kategori kategori in kategoriler)
 {
     Console.WriteLine("{0} {1}", kategori.KategoriId.ToString(), kategori.Ad);
@@ -298,13 +301,14 @@ if (Int32.TryParse(Console.ReadLine(), out secilenKategoriId))
     {
         // Ekrandan girilen ID değerine ait Kategori nesne örneği talep edilir
         secilenKategori = (from k in proxy.Kategori
-                           where k.KategoriId == secilenKategoriId
-                           select k).First<Kategori>();
+            where k.KategoriId == secilenKategoriId
+            select k).First<Kategori>();
 
         // Önce bu Kategorinin KategoriId değerine sahip Kitap listesi alınır
-        var kitapListesi = from k in proxy.Kitap
-                           where k.Kategori.KategoriId == secilenKategoriId
-                           select k;
+        var kitapListesi =
+            from k in proxy.Kitap
+            where k.Kategori.KategoriId == secilenKategoriId
+            select k;
         // Elde edilen her bir Kitap nesne örneği DeleteObject metodu ile çıkartılır
         foreach (Kitap kitap in kitapListesi)
         {

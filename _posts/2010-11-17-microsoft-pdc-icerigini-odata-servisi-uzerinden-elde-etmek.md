@@ -232,15 +232,16 @@ namespace PDC2010
         protected void Page_Load(object sender, EventArgs e) 
         { 
             ScheduleModel model = new ScheduleModel(new Uri("http://odata.microsoftpdc.com/ODataSchedule.svc/")); 
-            var sessions = from p in model.Sessions 
-                           orderby p.FullTitle 
-                           select new 
-                           { 
-                              p.FullTitle, 
-                               p.FullDescription, 
-                              p.Tags, 
-                              p.ThumbnailUrl, 
-                               p.DownloadableContent 
+            var sessions =
+                from p in model.Sessions 
+                orderby p.FullTitle 
+                select new 
+                { 
+                   p.FullTitle, 
+                    p.FullDescription, 
+                   p.Tags, 
+                   p.ThumbnailUrl, 
+                    p.DownloadableContent 
                           };
 
            foreach (var s in sessions) 
