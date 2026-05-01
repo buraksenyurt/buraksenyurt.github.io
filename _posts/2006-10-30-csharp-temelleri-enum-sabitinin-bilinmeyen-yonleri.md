@@ -164,7 +164,7 @@ private static void EnumInfo(Yetki ytk)
 
 ## Veyalanmış içeriklerin kullanımı
 
-Bazı durumlarda enum sabitleri içerisindeki değerlerin | işareti ile veyalandığını görürüz. Örneğin CommandBehavior enum sabitini kullanırken SingleRow|CloseConnection ifadesi ile veya benzerleri ile çok sık karşılaşırız (kullanırız). Aynı durum kendi yazmış olduğumuz enum sabitleri içinde geçerlidir. Yetki enum sabitimizi göz önüne alırsak eğer, aşağıdaki gibi bir kullanım söz konusu olabilir. Dikkat ederseniz bit seviyesinde veya (OR) işlemi uygulanmaktadır.
+Bazı durumlarda enum sabitleri içerisindeki değerlerin `|` işareti ile veyalandığını görürüz. Örneğin CommandBehavior enum sabitini kullanırken `SingleRow|CloseConnection` ifadesi ile veya benzerleri ile çok sık karşılaşırız (kullanırız). Aynı durum kendi yazmış olduğumuz enum sabitleri içinde geçerlidir. Yetki enum sabitimizi göz önüne alırsak eğer, aşağıdaki gibi bir kullanım söz konusu olabilir. Dikkat ederseniz bit seviyesinde veya (OR) işlemi uygulanmaktadır.
 
 ```csharp
 Yetki ytk = Yetki.Profesyonel | Yetki.Uzman;
@@ -213,7 +213,7 @@ Bu durumda aynı uygulamada aşağıdaki sonuçları alırız.
 
 ![mk179_6.gif](/assets/images/2006/mk179_6.gif)
 
-Flags attribute'u ile ilgili bu kısa bilgi ardından veyalanmış enum sabitleri için ele alacağımız bir diğer kritik noktaya gelelim. Özellikle enum sabiti içerisindeki çeşitli değerlerin birlikte veyalanarak kombinasyonlar oluşturulabildiğini gördük. Peki bu kombinasyonlar gerçektende doğru sayısal değerleri mi üretiyorlar? Örneğin bu maddenin başında Uzman | Profesyonel kombinasyonunun Tecrubeli'nin sayısal değerini ürettiğini gördük ve bunun istenmeyen bir durum olacağını vurguladık. Nitekim veyalanmış ifadeler kullanılacaksa sayısal değerlerin farklı veyalanmış kombinasyonlarda çok daha garip sonuçlar üretmesi muhtemeldir. Bu durumu analiz edebilmek için örnek uygulamamızda aşağıdaki kod parçasında görülen kombinasyonları deneyelim.
+Flags attribute'u ile ilgili bu kısa bilgi ardından veyalanmış enum sabitleri için ele alacağımız bir diğer kritik noktaya gelelim. Özellikle enum sabiti içerisindeki çeşitli değerlerin birlikte veyalanarak kombinasyonlar oluşturulabildiğini gördük. Peki bu kombinasyonlar gerçektende doğru sayısal değerleri mi üretiyorlar? Örneğin bu maddenin başında Uzman `|` Profesyonel kombinasyonunun Tecrubeli'nin sayısal değerini ürettiğini gördük ve bunun istenmeyen bir durum olacağını vurguladık. Nitekim veyalanmış ifadeler kullanılacaksa sayısal değerlerin farklı veyalanmış kombinasyonlarda çok daha garip sonuçlar üretmesi muhtemeldir. Bu durumu analiz edebilmek için örnek uygulamamızda aşağıdaki kod parçasında görülen kombinasyonları deneyelim.
 
 ```csharp
 Console.WriteLine("\tCaylak");
@@ -326,7 +326,7 @@ static bool VarMi(Parca prc)
 }
 ```
 
-Bu metod her ne kadar IsDefined metodunda olduğu gibi object tipinden parametreler ile çalışmasada içerisinde yapıtığı kontroller sayesinde çeşitli kombinasyonlara karşı doğru tepkiler verebilecek şekilde tasarlanmıştır. En önemli kısım VarMi metodu içerisindeki if koşuludur. If koşulu içerisinde Parca.Hepsi ile metoda parametre olarak gelen Parca enum sabitinin ilgili değeri bit seviyesinde and (ve) işlemine tabi tutulmaktadır. Bu işlemin sonucunun yine metoda gelen parametre değerine eşit olması halinde true değeri döndürülmektedir. Örneğin Parca.SesKarti | Parca.Ram | Parca.Islemci kombinasyonunu göz önüne alalım. Burada bitsel seviyede veya işlemi gerçekleşmektedir ve sonuçta üretilen çıktı aşağıdaki gibi olacaktır
+Bu metod her ne kadar IsDefined metodunda olduğu gibi object tipinden parametreler ile çalışmasada içerisinde yapıtığı kontroller sayesinde çeşitli kombinasyonlara karşı doğru tepkiler verebilecek şekilde tasarlanmıştır. En önemli kısım VarMi metodu içerisindeki if koşuludur. If koşulu içerisinde Parca.Hepsi ile metoda parametre olarak gelen Parca enum sabitinin ilgili değeri bit seviyesinde and (ve) işlemine tabi tutulmaktadır. Bu işlemin sonucunun yine metoda gelen parametre değerine eşit olması halinde true değeri döndürülmektedir. Örneğin `Parca.SesKarti | Parca.Ram | Parca.Islemci` kombinasyonunu göz önüne alalım. Burada bitsel seviyede veya işlemi gerçekleşmektedir ve sonuçta üretilen çıktı aşağıdaki gibi olacaktır
 
 | | | |
 | :--- | :--- | :--- |
@@ -369,7 +369,7 @@ Uygulamamızı bu haliyle çalıştırdığımızda aşağıdaki sonuçları eld
 
 ![mk179_11.gif](/assets/images/2006/mk179_11.gif)
 
-Dikkat ederseniz 44 değerinin enum sabiti içerisinde bir karşılığı olmadığı için metodumuz başarılı bir şekilde false değerini döndürmektedir. Diğer taraftan Parca.SesKarti | Parca.Ram | Parca.Islemci kombinasyonuda enum sabiti içerisinde yer aldığı için metodumuz true değerini geriye döndürmektedir.
+Dikkat ederseniz 44 değerinin enum sabiti içerisinde bir karşılığı olmadığı için metodumuz başarılı bir şekilde false değerini döndürmektedir. Diğer taraftan `Parca.SesKarti | Parca.Ram | Parca.Islemci` kombinasyonuda enum sabiti içerisinde yer aldığı için metodumuz true değerini geriye döndürmektedir.
 
 Bu makalemizde enum sabitlerini biraz daha derinlemesine incelemeye çalıştık. Var olan enum sabitlerinin içeriğinin çalışma zamanından nasıl elde edilebileceğini, her hangibir string bilginin bir enum sabiti içerisindeki karşılığının Parse metodu ile nasıl bulunabileceğini gördük. Bunların dışında, enum sabitlerinin içeriklerinin string olarak farklı formatlarda yazılmasını, Flag niteliğinin bu işteki yerine baktık. Son olarakta veyalanmış (bitsel or işlemine tabi tutulmuş enum değerlerinin) içeriklerin kullanımını ve dikkat edilmesi gereken noktaları inceledik. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
