@@ -363,8 +363,6 @@ public static List<Cizgim> ProjeAc(string dosya)
 
 Metodumuzun belkide en can alıcı noktası XmlDocument nesne örneği üzerinden SelectNodes metodunun çağırılmasıdır. SelectNodes metodu parametre olarak aldığı XPath sorgusuna uygun olacak şekilde bir node listesi döndürmektedir. Dolayısıyla bu proje tarafından oluşturulmuş bir Xml dosyasını açtığımızda, Sahne root elementi içerisindeki Cizgim elementi içerisindeki tüm Koordinatlar elementleri elde edilebilecektir.(Tabi varsalar)
 
-> XPath ile ilişkili olaraktan daha detaylı bilgi için daha önceki bir [makaleden](http://www.bsenyurt.com/MakaleGoster.aspx?ID=147) faydalanabilirsiniz.
-
 Bundan sonra, elde edilen node listesi üzerinde bir iterasyon gerçekleştirilmektedir. Bu iterasyon içerisinde, her bir XmlNode nesne örneği ele alınır. Dikkat ederseniz Baslangic ve Bitis alt elementlerindeki X ve Y niteliklerinin değerlerine erişmek için aşağıdaki notasyon kullanılmıştır.
 
 ```csharp
@@ -389,7 +387,5 @@ private void projeAToolStripMenuItem_Click(object sender, EventArgs e)
 Eğer uygulamamızı çalıştıracak olursak aşağıdaki flash animasyonundakine benzer bir sonuç ile karşılaşırız. (Flash dosyasının boyutu 192 kb olduğundan yüklenmesi zaman alabilir.)
 
 Elbette bu proje içinde söz konusu olan bir sürü bug vardır. Örneğin, kullanıcılar herhangibir veri içeriğini taşıyan Xml dosyalarınıda açabilmektedir. Böyle bir durumda Sahne isimli windows formu oluşturulmakta ama içerisine hiç bir çizgi doğal olarak gelmemektedir. Pekala okuma sırasında SelectNodes metodunun dönüş değerine göre bir takım kontrol mekanizmaları geliştirilebilir. Nitekim elde edilen XmlNodeList tipinin eleman sayısı 0 ise bu durumda kalan işlemleri yapmaya gerek yoktur. Ancak daha güvenli bir yol tercih edilebilir. Bir başka deyişle kullanıcıyı daha detaylı bir şekilde bilgilendirmek amacıyla açılacak olan Xml dökümanının bizim standart veri şablonumuza uygun olup olmadığı bir Xml Schema dosyası yardımıyla kontrol edilebilir.
-
-> Xml Schema'larını yönetimli kod tarafında nasıl ele alabileceğimize dair daha önceki bir [makalemizden](http://www.bsenyurt.com/MakaleGoster.aspx?ID=172) yararlanabilirsiniz.
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde XmlDocument tipini farklı bir şekilde kullanmaya çalıştık. Umarım sizler için yararlı bir deneyim olmuştur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

@@ -161,7 +161,7 @@ Sayfanın kaynak tarafına geçtiğimizde ise kontrol içerisinde çizilen liste
 
 Tekrar konumuza dönecek olursak.
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <%@ Register Assembly="BenimWebKontrollerim" Namespace="BenimWebKontrollerim" TagPrefix="cc1" %>
@@ -202,16 +202,10 @@ O halde ikinci talepte, yani post-back işleminden sonra, aynı işlemler tekrar
 
 Bu makalemizde bir web sunucu kontrolünü geliştirmek için gereken ilk adımları attık. Yanımıza kar olarak kalanları kısaca aşağıda maddeler halinde bulabilirsiniz.
 
-Şu Ana Kadar Hatırda Kalanlar
-
-Kullanıcı tarafından bir web kontrolü geliştirmek nihayetinde, System.Web.UI.Control sınıfından bir sınıf türetmektir. (Sonradan bu işlem için sadece WebControl sınıfını tercih edeceğiz.)
-
-Özel olarak yazılacak bir web kontrolünü iki taraflı olarak düşünmek gerekir. İstemci tarafından ve sunucu tarafından. İstemci tarafında düşünülecek olanlar, kontrolün üreteceği HTML çıktısının nasıl olması gerektiğidir. Sunucu tarafında düşünülmesi gerekenler ise, istemcide seçilen verilerin nasıl hatırlanacağını ve istemci için gerekli HTML içeriğinin nasıl hazırlanacağıdır.
-
-Kullanıcı tarafından geliştirilen sunucu kontrolleri aynı zamanda, Html çıktısının hazırlanması, viewstate ve post-back işlemlerinin ele alınması gibi kavramların, sayfa geliştiricisinden soyutlanmasına yardımcı olur. (information hiding)
-
-Bir web sunucu kontrolünü, birden fazla web projesinde hatta Visual Studio IDE'si içerisinden kullanabilmek için bir class library içerisinde tutulmasında fayda vardır. Ortak kullanım amacıyla bu kütüphane GAC (Global Assembly Cache) üzerinde de tutulabilir.
-
-Geliştirilen web sunucu kontrolünün, tasarım veya çalışma zamanında değiştirilebilecek üyeleri var ise bunları birer özellik olarak tasarlamak gerekir.
+- Kullanıcı tarafından bir web kontrolü geliştirmek nihayetinde, System.Web.UI.Control sınıfından bir sınıf türetmektir. (Sonradan bu işlem için sadece WebControl sınıfını tercih edeceğiz.)
+- Özel olarak yazılacak bir web kontrolünü iki taraflı olarak düşünmek gerekir. İstemci tarafından ve sunucu tarafından. İstemci tarafında düşünülecek olanlar, kontrolün üreteceği HTML çıktısının nasıl olması gerektiğidir. Sunucu tarafında düşünülmesi gerekenler ise, istemcide seçilen verilerin nasıl hatırlanacağını ve istemci için gerekli HTML içeriğinin nasıl hazırlanacağıdır.
+-Kullanıcı tarafından geliştirilen sunucu kontrolleri aynı zamanda, Html çıktısının hazırlanması, viewstate ve post-back işlemlerinin ele alınması gibi kavramların, sayfa geliştiricisinden soyutlanmasına yardımcı olur. (information hiding)
+- Bir web sunucu kontrolünü, birden fazla web projesinde hatta Visual Studio IDE'si içerisinden kullanabilmek için bir class library içerisinde tutulmasında fayda vardır. Ortak kullanım amacıyla bu kütüphane GAC (Global Assembly Cache) üzerinde de tutulabilir.
+- Geliştirilen web sunucu kontrolünün, tasarım veya çalışma zamanında değiştirilebilecek üyeleri var ise bunları birer özellik olarak tasarlamak gerekir.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

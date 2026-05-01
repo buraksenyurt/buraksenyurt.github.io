@@ -113,7 +113,7 @@ public class Helper
 
 UrunleriYukle ve AltKategorilerYukle isimli metodlarımız sadece bize yardımcı olacak üyelerdir. Dikkat ederseniz her ikiside generic List koleksiyonu tipinden değişkenler döndürmektedirler. Biz bu koleksiyonlar üzerinde LINQ sorgularımızı denemeye çalışacağız. Testleri daha kolay yapabilmek için şimdilik bir Console uygulamasından devam edeceğiz. Dilerseniz ısınma turlarımızda basit Select ve Where kullanımları ile başlayalım.
 
-Sorgu 1: Ürünlerden belirli bir alt kategoride olanların bulunması.
+## Sorgu 1: Ürünlerden belirli bir alt kategoride olanların bulunması
 
 ```csharp
 var products = Helper.UrunleriYukle();
@@ -147,7 +147,7 @@ foreach (Product prd in products)
 
 Lakin daha karmaşık sorgulama ifadeleri göz önüne alındığında durum dahada zorlaşabilir. İmkansız değildir ama daha fazla kod yazmamızı, efor sarfetmemizi ve zaman zaman optimizasyonu zor olacak kodlar üretmemize neden olacak durumlarla karşılaşabiliriz. Örneğin, Alt Kategorilerin ve Urunlerin birbirleriyle birleştirileceğini, birleştirilen küme üzerinde gruplama yapılacağını ve hatta bu gruplamalara göre toplam fiyat, toplam ürün sayısı gibi değerlerin elde edileceğini düşünebiliriz. (Bu pek çok Sql programcısına tanıdık gelecek bir ihtiyaçtır.) Bu tarz bir ihtiyacı karşılayacak kod parçasını elbetteki yazabiliriz. Ama LINQ ile bunu ve benzerlerini çok daha basit bir biçimde, tek satırlık ifadelerde gerçekleştirme şansına sahibiz. Dilerseniz yeni örnekler ile alıştırmalarımıza devam edelim.
 
-Sorgu 2: Liste fiyatı 3000 birimin üzerinde olan ürünleri isimlerine göre tersten sıralı olacak şekilde elde etmek.
+## Sorgu 2: Liste fiyatı 3000 birimin üzerinde olan ürünleri isimlerine göre tersten sıralı olacak şekilde elde etmek
 
 ```csharp
 var resultSet2 = from p in products
@@ -165,7 +165,7 @@ Dikkat ederseniz Liste fiyatına göre kontrol işlemini gerçekleştirmek için
 
 ![mk192_3.gif](/assets/images/2007/mk192_3.gif)
 
-Sorgu 3: Fiyatı 1000 ile 1500 birim arasında olan ürünleri isimlerine göre tersten sıralayarak elde etmek.
+## Sorgu 3: Fiyatı 1000 ile 1500 birim arasında olan ürünleri isimlerine göre tersten sıralayarak elde etmek
 
 ```csharp
 Console.WriteLine("\nFiyatı 1000 ile 1500 arasında olan ürünlerin Name alanına göre tersten sıralanmış listesi\n");
@@ -183,7 +183,7 @@ Sorgu 2' dekine benzer şekilde yazılan bu kod parçasında tek fark && (ve) op
 
 ![mk192_4.gif](/assets/images/2007/mk192_4.gif)
 
-Sorgu 4: Urunler listesindeki elemanları elde ederken isimsiz bir tipten yararlanmak.
+## Sorgu 4: Urunler listesindeki elemanları elde ederken isimsiz bir tipten yararlanmak
 
 C# 3.0 beraberinde isimsiz tip (Anonymous Type) adı verilen yeni bir kavram ile birlikte gelmektedir. Diyelim ki LINQ ifadesi sonrasıda çekilen veri kümesi içerisindeki elemanları taşıyan yeni bir tipi kullanmak istemiş olalım. Çok doğal olarak, sorgulamak istediğimiz veri kümesi ne olursa olsun, önceden planlamadığımız şekilde bir tipe ihtiyacımız olması doğaldır. İşte isimsiz tip bize bu konuda yardımcı olabilmektedir. Örneğimizde bunun basit bir kullanımı gösterilmektedir. Dikkat ederseniz, Product tipine ait Name ve ListPrice alanlarını sırasıyla UrunAdi ve Fiyat olarak taşıyan yeni bir tip tanımlanmış ve foreach iterasyonu içerisinde kullanılmıştır. (İsimsiz tipler aslında tanımlandıkları yerde oluşturulan tipler olarak da düşünülebilir. Dolayısıyla proje derlendiğinde aşağıda karşılaşılan satır için yeni bir tip CIL tarafına yazılmaktadır.)
 
@@ -201,7 +201,7 @@ foreach (var prd in resultSet4)
 
 ![mk192_5.gif](/assets/images/2007/mk192_5.gif)
 
-Sorgu 5: Sql'de Join sorgusu olurda LINQ içerisinde olmaz mı?
+## Sorgu 5: Sql'de Join sorgusu olurda LINQ içerisinde olmaz mı?
 
 Hepimiz Sql tarafında farklı tabloları birleştirmek için Join ifadelerinden faydalanırız, faydalanmaktayız. Aynı özellik LINQ ile,.Net platformuna da taşınmıştır. İşte aşağıda örnek bir sorgu. Bu sorguda products ve subCategories isimli değişkenlerde tutulan koleksiyonların içerdikleri verileri ProductSubCategoryId alanlarının değerlerine göre birleştiriyoruz. Elde edilen sonuç kümesinde, her iki koleksiyonda da var olan özelliklerden kombine edilecek yeni bir tip olsa hiç de fena olmaz aslında. İşte isimsiz tipimizin devreye gireceği yer burası olacaktır. (Bu tip bir ihtiyacı birde LINQ eklentilerini kullanmadan yapmayı denersek, sorgu ifadelerinin gelecekte hayatımızı oldukça kolaylaştıracağını daha kolay anlayabiliriz.) Birleştirme operasyonu için join anahtar kelimesinden yararlanılmaktadır. on anahtar kelimesinden sonra ise bildiğimiz kriter uygulaması gerçekleştirilmektedir.
 
@@ -221,10 +221,11 @@ Programımızın ekran çıktısı aşağıdakine benzer olacaktır.
 
 Ekrandaki çıktı tesadüf değildir. İsimsiz tiplerin ToString metodunun bir sonucudur.
 
-> Bir isimsiz tip tanımlandığında bu tip için CIL tarafına eklenen kodlar içerisinde ToString metodu ezilip yukarıdakine benzer bir string döndürmesi sağlanmıştır. Bu kodu herhangibir decompiler aracı ile açtığınızda da görebilirisiniz.
-> ![mk192_7.gif](/assets/images/2007/mk192_7.gif)
+Bir isimsiz tip tanımlandığında bu tip için CIL tarafına eklenen kodlar içerisinde ToString metodu ezilip yukarıdakine benzer bir string döndürmesi sağlanmıştır. Bu kodu herhangibir decompiler aracı ile açtığınızda da görebilirisiniz.
 
-Sorgu 6: Urunler listesini alt kategorilere göre gruplamak, her bir gruptaki toplam ürün sayısı, ortalama, en yüksek, en düşük fiyatları bulmak.
+![mk192_7.gif](/assets/images/2007/mk192_7.gif)
+
+## Sorgu 6: Urunler listesini alt kategorilere göre gruplamak, her bir gruptaki toplam ürün sayısı, ortalama, en yüksek, en düşük fiyatları bulmak
 
 Böyle bir sorgu için öncelikle ürünleri, alt kategorilerine göre gruplamamız gerekmektedir. Sonra gruplanan veri kümesi üzerinde bazı gruplama fonksiyonlarını kullanmalıyız. Bu cümleleri sarfettikçe aslında bir T-Sql sorgusunu ifade etmeye çalıştığımı düşünüyorum. Ama artık Sql değil LINQ tarafında ve daha tanıdık topraklardayız. Öyleyse hiç vakit kaybetmeden örnek kodumuzu aşağıdaki gibi geliştirelim.
 
@@ -264,7 +265,7 @@ Burada dikkate değer bazı noktalar da vardır. Özellikle gruplama fonksiyonla
 
 ![mk192_8.gif](/assets/images/2007/mk192_8.gif)
 
-Sorgu 7: Urunler içerisinde baş harfi H olanların liste fiyatına göre tersten sıralanmış halini seçip bir diziye taşımak.
+## Sorgu 7: Urunler içerisinde baş harfi H olanların liste fiyatına göre tersten sıralanmış halini seçip bir diziye taşımak
 
 Sanırım, LINQ ifadeleri sonrası elde edilen sonuç kümelerini işe yarayabilecek başka tipte nesnelere aktarabilmek oldukça işe yarar bir fonksiyonellik olurdu. LINQ bu amaçla elde edilen sonuçların bir diziye (Array), List veya Dictionary koleksiyonlarına aktarılmasını sağlayan fonksiyonelliklerde içermektedir. Örneğin aşağıdaki kod parçası, products koleksiyonunda baş harif H olan ürünlerin liste fiyatına göre tersten sırlanmış halinin bir diziye aktarılmasını sağlamaktadır. Baş harfe göre karşılaştırma yapabilmek için indeksleyici operatörünü Name alanı üzerinde nasıl kullandığımıza dikkat edelim. Sonuçta Name alanı string tipte bir değişkendir ve bir karakter dizisini işaret etmektedir. Bu nedenle C# dilinin tüm sürümlerinden bildiğimiz gibi 0 indisli eleman aslında Name alanının işaret ettiği verinin birinci karakteri olacaktır.
 
@@ -284,7 +285,7 @@ Burada başrol oyuncumuz ToArray metodudur. ToArray metodu, elde edilen sonuç k
 
 ![mk192_9.gif](/assets/images/2007/mk192_9.gif)
 
-Sorgu 8: Join ile birleştirilmiş bir sorgu sonucunu generic Dictionary koleksiyonuna aktarmak.
+## Sorgu 8: Join ile birleştirilmiş bir sorgu sonucunu generic Dictionary koleksiyonuna aktarmak
 
 Join sorgusu ile urunler ve altKategorileri birleştirdiğimizi düşünelim. Bu sonuç kümesinde ProductSubCategoryId alanı Key ve Product nesne örnekleride Value olacak şekilde bir Dictionary koleksiyonu oldukça işimize yarayabilir. Bildiğiniz gibi Dictionary bazlı koleksiyonlar (Hashtable<>, Dictionary<>, Hashtable vb...) verileri key-value çiftleri şeklinde tutmaktadırlar. Dolayısıyla özellikle birleştirilmiş veri kümelerinde elde edilen verileri key ve value olacak şekilde tutmak işe yarayabilir. Bunu gerçekleştirmek için aşağıdaki gibi bir kod parçasını kullanabiliriz.
 
@@ -314,7 +315,7 @@ Uygulamamızı çalıştırdığımızda ise aşağıdakine benzer bir çıktı 
 
 Sonuç kümelerini Dictionary koleksiyonlarına nasıl alabiliyorsak List tipinden generic koleksiyonlarada alabiliriz. Tek yapılması gereken başrol oyuncusunu değiştirmek olacaktır. Yani ToDictionary yerine ToList metodunu kullanamak.
 
-Sorgu 9: Ürünler içerisinde kaç farklı liste fiyatı olduğunu bulup bunları küçükten büyüğe doğru elde etmek.
+## Sorgu 9: Ürünler içerisinde kaç farklı liste fiyatı olduğunu bulup bunları küçükten büyüğe doğru elde etmek
 
 Eminimki Sql bilen herkes bu iş için distinct operatörünün kullanılması gerektiğini söyleyecektir. Aynı operatör LINQ içerisinde yer almaktadır. Örneğin, ürünlerin tutulduğu koleksiyon içerisindeki liste fiyatlarını tekrarsız olarak elde etmek istediğimizi düşünecek olursak aşağıdaki kod parçasından faydalanabiliriz.
 
@@ -331,7 +332,7 @@ Dikkat ederseniz Distinct metodunu kullanmadan önce, tüm LINQ ifadesi paranete
 
 ![mk192_12.gif](/assets/images/2007/mk192_12.gif)
 
-Sorgu 10: Ürünleri önce adlarına göre küçükten büyüğe sonrada liste fiyatlarına göre büyükten küçüğe sıralatarak elde etme.
+## Sorgu 10: Ürünleri önce adlarına göre küçükten büyüğe sonrada liste fiyatlarına göre büyükten küçüğe sıralatarak elde etme
 
 Tipik olarak bahsettiğimiz, birden fazla alan üzerinde Order By işlemini uygulamaktan başka bir şey değildir. Bunu gerçekleştirmek için, LINQ ifadelerinde orderby operatöründen faydalanabiliriz. Aşağıdaki kod parçası bu işlemi gerçekleştirmektedir.
 
@@ -365,4 +366,4 @@ Dikkat ederseniz tek yaptığımız orderby anahtar kelimesinden sonra prd örne
 
 ![mk192_14.gif](/assets/images/2007/mk192_14.gif)
 
-Bu makalemizde 11 değişik sorguda LINQ'yu daha yakından tanımaya çalıştık. Makalemizin başında belirttiğimiz gibi LINQ içerisinde oldukça fazla sayıda operatör yer almaktadır. Anders Hejlsberg, LINQ teknolojilsini özellikle veritabanı programcılığı yapanların dil içerisindede aynı felsefeyi kullanabilmeleri için geliştirildiğini belirtmiştir. Gerçektende yukarıdaki dil içi sorgular buna verilebecek örneklerden sadece bir kaçıdır. İlerleyen makalelerimizin birisinde diğer operatörleride ele almaya çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+Bu makalemizde 11 değişik sorguda LINQ'yu daha yakından tanımaya çalıştık. Makalemizin başında belirttiğimiz gibi LINQ içerisinde oldukça fazla sayıda operatör yer almaktadır. Anders Hejlsberg, LINQ teknolojilsini özellikle veritabanı programcılığı yapanların dil içerisindede aynı felsefeyi kullanabilmeleri için geliştirildiğini belirtmiştir. Gerçektende yukarıdaki dil içi sorgular buna verilebilecek örneklerden sadece bir kaçıdır. İlerleyen makalelerimizin birisinde diğer operatörleride ele almaya çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.

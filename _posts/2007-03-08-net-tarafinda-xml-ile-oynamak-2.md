@@ -149,7 +149,7 @@ namespace ReadAndWrite
 }
 ```
 
-Bir kitabın birden fazla yazarı olabilmektedir. Bu amaçla bir yazara ait bilgileri tutacak başka bir sınıf tasarımıda düşünülebilirdi. Bu durumda Kitap sınıfımız kendi içerisinde yazarları taşıyabilecek bir koleksiyon veya diziye sahip olmalıdır. Biz örneğimizde biraz daha basite kaçtık ve birden fazla yazar bilgisini aralarına | işareti koyarak taşıyacak string tipinden tek bir özellik kullandık.
+Bir kitabın birden fazla yazarı olabilmektedir. Bu amaçla bir yazara ait bilgileri tutacak başka bir sınıf tasarımıda düşünülebilirdi. Bu durumda Kitap sınıfımız kendi içerisinde yazarları taşıyabilecek bir koleksiyon veya diziye sahip olmalıdır. Biz örneğimizde biraz daha basite kaçtık ve birden fazla yazar bilgisini aralarına `|` işareti koyarak taşıyacak string tipinden tek bir özellik kullandık.
 
 Şimdi gelelim daha önemli olan kısımlara. Özellikle Xml üzerinde yapacağımız genel işlevsellikleri taşıyacak ayrı bir tip tasarlayacağız. XmlYoneticisi isimli tipimiz genel olarak, Xml ağacı üzerinde navigasyon, Xml içeriğini liste kutusuna aktarma, Xml boğumu güncelleme, silme ve ekleme gibi işlevsellikleri bünyesinde barındırmaktadır. Elbette bunların işlenmesi sırasında ele alınacak bazı yardımcı fonksiyonellikler de yer almaktadır. XmlYoneticisi isimli sınıfımızın şeması ve kodları aşağıdaki gibidir.
 
@@ -633,8 +633,6 @@ public partial class Form1 : Form
     }
 }
 ```
-
-Uygulamız çalışma zamanında aşağıdaki örnek ekran görüntüsünde olduğu gibi kullanılabilir. (Video formatı flash olup boyutu 239 kb olduğundan yüklenmesi zaman alabilir.)
 
 Test amacıyla 3 yeni kitap girilmiştir. Kitaplardan birisi üzerinde değişiklik yapılmıştır. Var olan bir kitap silinmiştir ve navigasyon işlemleri gerçekleştirilmiştir. Ekran görüntüsündeki işlemleri yaptığımızda Xml dosyamızın son hali aşağıdaki gibi olacaktır.
 

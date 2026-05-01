@@ -44,23 +44,18 @@ Artık entity sınıflarımıza ait nesne örneklerini, adWorks üzerinden kulla
 ```csharp
 private DataTable LoadProductsTable()
 {
-    var urunler = from prd in adWorks.Production.Product
-                  select new
-                  {
-                      prd.ProductID
-                                      ,
-                      prd.Name
-                                      ,
-                      prd.ListPrice
-                                      ,
-                      prd.Class
-                                      ,
-                      prd.SellStartDate
-                                      ,
-                      prd.SafetyStockLevel
-                                      ,
-                      prd.StandardCost
-                  };
+    var urunler =
+        from prd in adWorks.Production.Product
+        select new
+        {
+            prd.ProductID,
+            prd.Name,
+            prd.ListPrice,
+            prd.Class,
+            prd.SellStartDate,
+            prd.SafetyStockLevel,
+            prd.StandardCost
+        };
 
     DataTable dtUrunler = new DataTable("Urunler");
     dtUrunler = urunler.ToDataTable();
@@ -70,9 +65,11 @@ private DataTable LoadProductsTable()
 
 Burada ilk olarak adWorks.Production.Product entity nesnesi üzerinden bir LINQ sorgusu çalıştırılmaktadır. Bunun sonucunda elde edilen veri kümesini bir DataTable içerisine aktarmak için ise tek yapılması gereken ToDataTable isimli metodun çağırılmasıdır. (System.Data.Extensions isim alanı, DataTable ve DataRow'lar için LINQ sorguları hazırlanmasını sağlayan pek çok genişletme metodu içermektedir.)
 
-> Kendi örneklerimizi denerken dikkat etmemiz gereken bir nokta vardır. Özellikle null değer alabilen sayısal ve tarihsel formatlı alanlar için LINQ sorguları aşağıdaki ekran görüntüsünde yer alan çalışma zamanı istisnasına neden olabilmektedir. Örneğin Product tablosunda sayısal ve null değer alabilen bir alan olarak tanımlanmış olan ProductSubCategoryID için bu istisna mesajı elde edilmektedir.
-> ![mk198_4.gif](/assets/images/2007/mk198_4.gif)
-> Aynı durum null değerler alabilen varchar, nvarchar tipli alanlar için geçerli değildir. Bunların program ortamı içerisinde yer alan entity sınıfları içerisinde string olarak kullanıldığına ve string'in özellikle referans tipi olduğu için null değer taşıyabildiğine dikkat edelim.
+Kendi örneklerimizi denerken dikkat etmemiz gereken bir nokta vardır. Özellikle null değer alabilen sayısal ve tarihsel formatlı alanlar için LINQ sorguları aşağıdaki ekran görüntüsünde yer alan çalışma zamanı istisnasına neden olabilmektedir. Örneğin Product tablosunda sayısal ve null değer alabilen bir alan olarak tanımlanmış olan ProductSubCategoryID için bu istisna mesajı elde edilmektedir.
+
+![mk198_4.gif](/assets/images/2007/mk198_4.gif)
+
+Aynı durum null değerler alabilen varchar, nvarchar tipli alanlar için geçerli değildir. Bunların program ortamı içerisinde yer alan entity sınıfları içerisinde string olarak kullanıldığına ve string'in özellikle referans tipi olduğu için null değer taşıyabildiğine dikkat edelim.
 
 Artık elde ettiğimiz DataTable nesne örneğini herhangibir görsel taşıyıcıya (container) bağlayabiliriz. Bu amaçla.Net 2.0 ile gelen DataGirdView kontrolü biçilmiş kaftandır. Uygulamada bu durumu test etmek için ana formumuzun Load olay metodu içerisinde aşağıdaki örnek kod parçaları yazılmıştır.
 
@@ -94,24 +91,19 @@ Asıl amacımız elbetteki DataTable nesne örneğini doldurmak değildir. Özel
 ```csharp
 var sorgulanabilirUrunler = dtUrunler.ToQueryable();
 
-var sonuclar = from prd in sorgulanabilirUrunler
-               where prd.Field<DateTime>("SellStartDate") >= dateTimePicker1.Value
-               select new
-               {
-                   ProductID = prd.Field<int>("ProductID")
-                                   ,
-                   Name = prd.Field<string>("Name")
-                                   ,
-                   ListPrice = prd.Field<decimal>("ListPrice")
-                                   ,
-                   Class = prd.Field<string>("Class")
-                                   ,
-                   SellStartDate = prd.Field<DateTime>("SellStartDate")
-                                   ,
-                   SafetyStockLevel = prd.Field<short>("SafetyStockLevel")
-                                   ,
-                   StandartCost = prd.Field<decimal>("StandardCost")
-               };
+var sonuclar =
+    from prd in sorgulanabilirUrunler
+    where prd.Field<DateTime>("SellStartDate") >= dateTimePicker1.Value
+    select new
+    {
+        ProductID = prd.Field<int>("ProductID"),
+        Name = prd.Field<string>("Name"),
+        ListPrice = prd.Field<decimal>("ListPrice"),
+        Class = prd.Field<string>("Class"),
+        SellStartDate = prd.Field<DateTime>("SellStartDate"),
+        SafetyStockLevel = prd.Field<short>("SafetyStockLevel"),
+        StandartCost = prd.Field<decimal>("StandardCost")
+    };
 
 dgUrunler.DataSource = sonuclar.ToDataTable();
 
@@ -133,36 +125,31 @@ Sorgularımızı çeşitlendirebiliriz. Öyleki artık elimizdeki nesne, DataTab
 ```csharp
 private DataTable LoadOrdersTable()
 {
-    var siparisler = from s in north.Orders
-                     select new
-                     {
-                         s.OrderID
-                                         ,
-                         s.ShipAddress
-                                         ,
-                         s.ShipCity
-                                         ,
-                         s.ShipRegion
-                                         ,
-                         s.ShipPostalCode
-                                         ,
-                         s.ShipCountry
-                     };
+    var siparisler =
+        from s in north.Orders
+        select new
+        {
+            s.OrderID,
+            s.ShipAddress,
+            s.ShipCity,
+            s.ShipRegion,
+            s.ShipPostalCode,
+            s.ShipCountry
+        };
 
     return siparisler.ToDataTable();
 }
 
 private DataTable LoadOrderDetailsTable()
 {
-    var siparisDetaylari = from d in north.OrderDetails
-                           select new
-                           {
-                               d.OrderID
-                                               ,
-                               d.UnitPrice
-                                               ,
-                               d.Quantity
-                           };
+    var siparisDetaylari =
+        from d in north.OrderDetails
+        select new
+        {
+            d.OrderID,
+            d.UnitPrice,
+            d.Quantity
+        };
 
     return siparisDetaylari.ToDataTable();
 }
@@ -197,21 +184,18 @@ private void btnJoin_Click(object sender, EventArgs e)
     var sorgulanabilirOrders = dtSiparisler.ToQueryable();
     var sorgulanabilirOrderDetails = dtSiparisDetaylari.ToQueryable();
 
-    var sonuclar = from o in sorgulanabilirOrders
-                   join od in sorgulanabilirOrderDetails
-                       on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
-                   select new
-                   {
-                       SiparisID = o.Field<int>("OrderID")
-                                       ,
-                       BirimFiyat = od.Field<decimal>("UnitPrice")
-                                       ,
-                       Miktar = od.Field<short>("Quantity")
-                                       ,
-                       Sehir = o.Field<string>("ShipCity")
-                                       ,
-                       Ulke = o.Field<string>("ShipCountry")
-                   };
+    var sonuclar =
+        from o in sorgulanabilirOrders
+        join od in sorgulanabilirOrderDetails
+            on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
+        select new
+        {
+            SiparisID = o.Field<int>("OrderID"),
+            BirimFiyat = od.Field<decimal>("UnitPrice"),
+            Miktar = od.Field<short>("Quantity"),
+            Sehir = o.Field<string>("ShipCity"),
+            Ulke = o.Field<string>("ShipCountry")
+        };
 
     dgJoin.DataSource = sonuclar.ToDataTable();
 }
@@ -230,22 +214,19 @@ Programımızı çalıştırdığımızda aşağıdakine benzer bir ekran görü
 Dilersek join ile yazmış olduğumuz sorgumuza where ile başka kısıtlamalarda katabiliriz. Örneğin, elde edilen sonuç kümesinde Quantity alanının değeri 10' un üzerinde olanları elde etmek için tek yapmamız gereken sorgumuzu aşağıdaki gibi genişletmek olacaktır.
 
 ```csharp
-var sonuclar = from o in sorgulanabilirOrders
-               join od in sorgulanabilirOrderDetails
-                   on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
-               where od.Field<short>("Quantity") > 10
-               select new
-               {
-                   SiparisID = o.Field<int>("OrderID")
-                                   ,
-                   BirimFiyat = od.Field<decimal>("UnitPrice")
-                                   ,
-                   Miktar = od.Field<short>("Quantity")
-                                   ,
-                   Sehir = o.Field<string>("ShipCity")
-                                   ,
-                   Ulke = o.Field<string>("ShipCountry")
-               };
+var sonuclar =
+    from o in sorgulanabilirOrders
+    join od in sorgulanabilirOrderDetails
+        on o.Field<int>("OrderID") equals od.Field<int>("OrderID")
+    where od.Field<short>("Quantity") > 10
+    select new
+    {
+        SiparisID = o.Field<int>("OrderID"),
+        BirimFiyat = od.Field<decimal>("UnitPrice"),
+        Miktar = od.Field<short>("Quantity"),
+        Sehir = o.Field<string>("ShipCity"),
+        Ulke = o.Field<string>("ShipCountry")
+    };
 ```
 
 Where ifadesinde ilgili alanın değerinin karşılaştırma işlemine tabi tutmak için yine Field generic metodundan faydalandığımızda dikkat edelim.
@@ -262,20 +243,17 @@ ds.Relations.Add(drOrdToDtl);
 
 var sorgulanabilirOrders = dtSiparisler.ToQueryable();
 
-var sonuclar = from o in sorgulanabilirOrders
-               from od in o.GetChildRows("OrdToDetails")
-               select new
-               {
-                   SiparisID = o.Field<int>("OrderID")
-                                   ,
-                   BirimFiyat = od.Field<decimal>("UnitPrice")
-                                   ,
-                   Miktar = od.Field<short>("Quantity")
-                                   ,
-                   Sehir = o.Field<string>("ShipCity")
-                                   ,
-                   Ulke = o.Field<string>("ShipCountry")
-               };
+var sonuclar =
+    from o in sorgulanabilirOrders
+    from od in o.GetChildRows("OrdToDetails")
+    select new
+    {
+        SiparisID = o.Field<int>("OrderID"),
+        BirimFiyat = od.Field<decimal>("UnitPrice"),
+        Miktar = od.Field<short>("Quantity"),
+        Sehir = o.Field<string>("ShipCity"),
+        Ulke = o.Field<string>("ShipCountry")
+    };
 
 dgJoin.DataSource = sonuclar.ToDataTable();
 ```

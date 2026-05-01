@@ -20,7 +20,7 @@ Söz konusu olan bu xml kaynağını SiteMapPath kontrolü doğrudan kullanırke
 
 Oysaki site haritasını, gelen kullanıcıların rollerine göre değiştireceğimiz, buna bağlı olaraktanda menülerde hangi linklerin gösterileceğine karar vermek isteyeceğimiz senaryolar söz konusu olabilir. En basit anlamda site haritasını Xml kaynağı yerine örneğin bir veritabanı tablosundan getirmek isteyebiliriz. İşte bu ve benzeri ihtiyaçlar bizim SiteMapProvider tipini özelleştirmemize neden olmaktadır. SiteMapProvider özelleştirmesi için StaticSiteMapProvider isimli abstract sınıfından türetme yapacağımız bir tipi ele almamız gerekmektedir. Bu özelleştirme işlemine başlamadan önce bizim için gerekli ön hazırlıkları yapalım. Senaryomuz gereği site haritasını Sql Server üzerinden SiteMaps isimli bir tabloda tutacağız. Tablomuzu oluşturmak için gerekli sql kodu aşağıdaki gibidir.
 
-```csharp
+```sql
 USE [AdventureWorks]
 GO
 SET ANSI_NULLS ON
@@ -48,7 +48,7 @@ Bu alan sayesinde bu tablo üzerinde self-referencing tipinden bir ilişki tanı
 
 Site haritasına ait bilgileri taşıyan bu tablonun bilgilerine çalışma zamanında ihtiyacımız olacaktır. Bu amaçla kod içerisinde SiteMaps tablosundan veri çekmek için gerekli sorgu cümlesini tutabileceğimiz gibi bir saklı yordamdan da (stored procedure) faydalanabiliriz. Aşağıdaki saklı yordam bu amaçla tasarlanmıştır ve çalışma zamanında site haritasının belleğe yüklenmesi amacıyla kullanılacaktır.
 
-```text
+```sql
 USE AdventureWorks
 GO
 SET ANSI_NULLS ON
@@ -212,7 +212,7 @@ Biz örnek sınıfımız içerisinde, üst sınıflarda abstract olarak tanımla
 
 Tüm sayfalarda navigasyon kontrollerimizi kolayca ele alabilmek için bir web user control (kullanıcı web kontrolü) bileşenini aşağıdaki gibi geliştireceğiz. Kullanıcı web kontrolümüz içerisinde SiteMapPath, Menu ve TreeView kontrollerimizi kullanacağız. Ancak dikkat etmemiz gereken bazı noktalar var. Bunlardan birisi SiteMapPath kontrolünü sürükleyip bıraktığımızda yazmış olduğumuz SiteHaritaYoneticisi tipine bağlanmadığıdır. Bunu sağlamak için SiteMapPath bileşenimizin SiteMapProvider özelliğine SiteHaritaSaglayicisi provider değerini vermemiz gerekmektedir. Bu provider web.config dosyasında kullanılacak olan SiteHaritaYoneticisi tipini işaret ettiği için SiteMapPath kontrolümüzün veriyi nereden alacağı belirlenmektedir.
 
-```text
+```xml
 <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : " SiteMapProvider="SiteHaritaSaglayicisi">
     <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
     <CurrentNodeStyle ForeColor="#333333" />
@@ -225,7 +225,7 @@ Benzer problem TreeView kontrolü içinde geçerli olacaktır. Normal şartlarda
 
 ![mk186_5.gif](/assets/images/2006/mk186_5.gif)
 
-```text
+```xml
 <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Arrows" ShowLines="True">
     <ParentNodeStyle Font-Bold="False" />
     <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />

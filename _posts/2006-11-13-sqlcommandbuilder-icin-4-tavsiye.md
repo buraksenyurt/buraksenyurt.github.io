@@ -38,8 +38,7 @@ CREATE TABLE [dbo].[Personel](
 ) ON [PRIMARY]
 ```
 
-
-1. Stored Procedure'lerin parametrik yapısını çalışma zamanında bir SqlCommand nesnesine aktarabilme
+## Stored Procedure'lerin parametrik yapısını çalışma zamanında bir SqlCommand nesnesine aktarabilme
 
 Öyle bir metod düşünelim ki, sadece çalıştıracağı saklı yordamın (stored procedure) adını, ve sayısını bilmemesine rağmen parametrelerinin değerlerini alsın. Sonrada işaret ettiği bu saklı yordamı yürütsün. Bu tam anlamıyla veri erişim katmanlarında kullanılabilecek bir metod tipidir. Bir saklı yordamı çalıştırırken eğer aldığı giriş parametreleri (input parameter) varsa bunları mutlaka ilgili SqlCommand nesnesinin Parameters koleksiyonuna aynı adlarda olmak şartıyla eklememiz gerekmektedir. Şimdi ilk olarak varsayılan haliyle böyle bir işi nasıl yapacağımızı düşünmeye çalışalım. Bu amaçla Personel tablomuza satır ekleyen aşağıdaki gibi bir saklı yordamımız olduğunu varsayalım.
 
@@ -139,7 +138,7 @@ Sistem sp'lerinden olan spprocedureparamsmanaged aslında PersonelEkle isimli sa
 
 > OleDbCommandBuilder, OracleCommandBuilder, ODBCCommandBuilder sınıflarıda DeriveParameters metodunu destekler. Tek şart, ilgili veri tabanı sisteminin saklı yordama ait parametre yapısını getirebiliyor olmasıdır. Unutmayalım; DeriveParameters sadece saklı yordamlar için geçerlidir. Düz Sql sorgu cümlelerini ele alan komutlar için (parametrik bile olsalar) InvalidOperationException istisnası döndürmektedir.
 
-2.Çakışma durumları için uygun olan yöntemi ConflictOption özelliği ile belirleyebilme
+## Çakışma durumları için uygun olan yöntemi ConflictOption özelliği ile belirleyebilme
 
 Bağlantısız katman nesneleri ile çalışırken, başımızı en çok ağrıtan konulardan biriside, birbirlerinden habersiz olarak bir den fazla kullanıcının aynı veri üzerinde değişiklik yapmasıdır. Böyle bir durumda son güncelleme kazansın (Last Wins) tekniğini tercih edebilir yada DbConcurrencyViolation istisnasını ele alabiliriz. (Konu hakkında detaylı bilgi için [tıklayın](http://www.bsenyurt.com/MakaleGoster.aspx?ID=112).) Hangi tekniği seçersek, Update ve Delete sorgularının where koşullarında değişiklik olacaktır.
 
@@ -237,7 +236,7 @@ Dikkat ederseniz Update ve Delete sorgularına ait Where koşullarına sadece Pr
 
 Görüldüğü gibi, SqlCommandBuilder sınıfına Framework 2.0 ile gelen ConflictOption özelliği, çakışma senaryolarına bağlı olarak uygun Delete ve Update komutlarının hazırlanmasını sağlamaktadır.
 
-3.Update işlemleri sırasında sadece güncellenen parametreleri sql sunucusuna gönderebilme
+## Update işlemleri sırasında sadece güncellenen parametreleri sql sunucusuna gönderebilme
 
 SqlDataAdapter bağlantısız katman nesnelerinde yapılan değişilikleri asıl veri kaynağına yazmak üzere Update metodunu kullanmaktadır. Bağlantısız katmandaki verilerde sadece değişikliğe uğramış alanları update sorgularına dahil etmek istersek SqlCommandBuilder'ın SetAllValues isimli özelliğine false değerini atamamız yeterli olacaktır. SetAllValues özelliği varsayılan olarak true değerine sahiptir. Yani bir satırdaki alanların bazılarında değişiklik olmasada update sorgusuna gönderilmektedir. Bu durumu Sql Server Profiler yardımıyla kolayca analiz edebiliriz. Ama öncesinde kodumuzda aşağıdaki değişikliği yapalım.
 
@@ -269,7 +268,7 @@ Update işlemini başlattıktan sonra Sql Server Profiler ile sql tarafına gön
 
 Gördüğünüz gibi bu kez Update sorgusunda bütün alanlar kullanılmıştır.
 
-4.SqlDataAdapter için üretilen command'lerde kolon adı kullanılmasını tercih edebilme
+## SqlDataAdapter için üretilen command'lerde kolon adı kullanılmasını tercih edebilme
 
 Şu ana kadar incelediğimiz maddelerde SqlCommandBuilder nesnesi, Update, Insert ve Delete komutlarını hazırlarken parametre adları olarak @P[Rakam] notasyonunu kullanmıştır. Yine Framework 2.0 ile gelen bir özellik sayesinde @P[KolonAdı] notasyonunu kullanma şansınada sahibiz. Bunun için GetInsertCommand, GetUpdateCommand ve GetDeleteCommand isimli metodların aşırı yüklenmiş versiyonunlarını kullanmamız gerekiyor.
 

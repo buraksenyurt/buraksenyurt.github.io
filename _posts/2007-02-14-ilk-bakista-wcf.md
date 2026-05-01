@@ -36,7 +36,7 @@ erişebiliriz. İstemciler hangi uygulama alanı (Application Domain) içerisind
 
 Dilerseniz bu kavramları kısaca anlamaya çalışalım.
 
-Servis Adresleri (Service Addresses)
+## Servis Adresleri (Service Addresses)
 
 WCF'a göre, hizmette bulunan her servis benzersiz bir adrese sahip olmalıdır. Genellikle bir servis adresi, servisin yeri (service location) ve taşıma protokolü (transport protocol) bilgilerinden oluşur. Aslında servis yerinden kasıt,
 
@@ -71,7 +71,7 @@ net.msmq://localhost:6789/MatSrv
 http://localhost:9001/MatSrv
 ```
 
-Sözleşmeler (Contracts)
+## Sözleşmeler (Contracts)
 
 Temel olarak bir servisin ne iş yaptığının bilinmesi önemlidir. Bu özellikle, istemcilerin ihtiyaç duyduğu proxy sınıflarının yazılmasında önem arz eden bir konudur. Bu nedenle WCF'da tüm servisler dış ortama bir sözleşme (Contract) sunmaktadırlar. Genel olarak dört sözleşme tipi vardır.
 
@@ -84,21 +84,21 @@ Genellikle servisler bir sözleşme tanımlamak için ServiceContract ve Operati
 
 > WCF uygulamalarını geliştirebilmek için gereken temel tipler, Framework 3.0 ile gelen System.ServiceModel.dll, System.IdentityModel.dll, System.Runtime.Serialization.dll vb... Assembly'lar içerisinde yer alırlar. Bu nedenle bu Assembly'ları gerektiğinde kullanabilmek için projelere açıkça referans etmemiz gerekmektedir.
 
-Bağlayıcılar (Bindings)
+## Bağlayıcılar (Bindings)
 
 Bağlayıcılar temel olarak servisler ile nasıl iletişim kurulacağını tanımlamak üzere kullanılırlar. Aslında bir bağlayıcı tip (Binding Type) taşıma tipi (transport type), protokol (protocol) ve veri çözümlemesi (data encoding) bildirir. Bunlar aslında servis yönelimli mimari modelde kullanılabilen senaryolar göz önüne alınarak oluşurlar. Bu sebepten dolayıda WCF, bu önceden bilinen senaryoları kullanabilmek için gerekli bağlayıcı tipleri önceden bildirmiştir. Bu tipler aşağıdaki tabloda yer aldığı gibidir
 
-| **Binding Tipi** | **Konfigurasyon <br> Elementi** | **Taşıma Çeşidi <br> (Transport Type)** | **Veri Çözümlemesi <br> (Data Encoding)** | **Platform Desteği <br> (Inter operatbility)** |
+| **Binding Tipi** | **Konfigurasyon Elementi** | **Taşıma Çeşidi (Transport Type)** | **Veri Çözümlemesi (Data Encoding)** | **Platform Desteği (Inter operatbility)** |
 | --- | --- | --- | --- | --- |
-| BasicHttpBinding |  | HTTP / HTTPS | Text | Var |
-| NetTcpBinding |  | TCP | Binary | Yok |
-| NetPeerTcpBinding |  | P2P | Binary | Yok |
-| NetNamedPipeBinding |  | IPC | Binary | Yok |
-| WSHttpBinding |  | HTTP/HTTPS | Text/MTOM | Var |
-| WSFederationBinding |  | HTTP/HTTPS | Text/MTOM | Var |
-| NetMsmqBinding |  | MSMQ | Binary | Yok |
-| MsmqIntegrationBinding |  | MSMQ | Binary | Var |
-| WSDualHttpBinding |  | HTTP | Text/MTOM | Var |
+| BasicHttpBinding | | HTTP / HTTPS | Text | Var |
+| NetTcpBinding | | TCP | Binary | Yok |
+| NetPeerTcpBinding | | P2P | Binary | Yok |
+| NetNamedPipeBinding | | IPC | Binary | Yok |
+| WSHttpBinding | | HTTP/HTTPS | Text/MTOM | Var |
+| WSFederationBinding | | HTTP/HTTPS | Text/MTOM | Var |
+| NetMsmqBinding | | MSMQ | Binary | Yok |
+| MsmqIntegrationBinding | | MSMQ | Binary | Var |
+| WSDualHttpBinding | | HTTP | Text/MTOM | Var |
 
 Buradaki tiplerden hangisini seçeceğimiz, geliştireceğimiz SOA (Service Oriented Architecture) modelindeki ihtiyaçlarımız doğrultusunda belirlenebilirler. Dikkat ederseniz her bağlayıcı tipin interoperability desteği bulunmamaktadır. Bazılar daha yüksek performans sağlayacak şekilde Binary veri çözümlemesini ele alır. Ama kimiside IIS gibi ortamlar üzerinden internete açılabilecek protokol desteğini sunar. İşte bu tip kriterlere göre uygun olan bağlayıcı tipler seçilebilir. Elbette istersek buradaki tipler dışından kendi bağlayıcılarımızı da yazma şansına sahibiz. Ancak bahsi geçen tipler hemen hemen her dağıtık uygulama senaryosu göz önüne alınarak tasarlanmıştır.Böylece WCF'ın ABC'sine çok kısada olsa değinmiş olduk.
 
@@ -238,7 +238,7 @@ Uygulamamızı çalıştırdığımızda aşağıdakine benzer bir ekran görün
 
 ![mk191_9.gif](/assets/images/2007/mk191_9.gif)
 
-Gelelim istemci tarafına. Yazımızın başında da belirttiğimiz gibi, istemcilerin WCF Servislerini kullanabilmeleri için proxy sınıflarına ve gerekli istemci taraflı konfigurasyon ayarlarına ihtiyaçları vardır. Çok doğal olarak bu sınıfların üretilebilmesi için, servise ait bir metadata bilgisinin olması ve dış ortama sunulması gerekmektedir. Şimdi şunu deneyelim. Servisimizi host eden uygulamayı çalıştıralım ve herhangibir tarayıcı penceresinden, http://localhost:4590/MatSrv adresini girelim. (Tarayıcı penceresinden bu adresi girerken host uygulamanın açık olması şarttır.)
+Gelelim istemci tarafına. Yazımızın başında da belirttiğimiz gibi, istemcilerin WCF Servislerini kullanabilmeleri için proxy sınıflarına ve gerekli istemci taraflı konfigurasyon ayarlarına ihtiyaçları vardır. Çok doğal olarak bu sınıfların üretilebilmesi için, servise ait bir metadata bilgisinin olması ve dış ortama sunulması gerekmektedir. Şimdi şunu deneyelim. Servisimizi host eden uygulamayı çalıştıralım ve herhangibir tarayıcı penceresinden, `http://localhost:4590/MatSrv` adresini girelim. (Tarayıcı penceresinden bu adresi girerken host uygulamanın açık olması şarttır.)
 
 ![mk191_10.gif](/assets/images/2007/mk191_10.gif)
 

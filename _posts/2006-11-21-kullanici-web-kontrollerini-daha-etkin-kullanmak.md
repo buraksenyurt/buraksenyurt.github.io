@@ -15,7 +15,7 @@ Ancak bu kontroller bir açıdan bakıldığında, herhangibir web sayfasına ek
 - Kullanıcı web kontrollerini dinamik oluşturma
 - Olay (Event) kullanımı
 
-1. Özellik (Property) Kullanımı
+## Özellik (Property) Kullanımı
 
 Kullanıcı web kontrollerinin aslında System.Web.UI.Control tipinden türeyen sınıflar şeklinde ifade edilebileceğinden bahsetmiştik. Bu nedenle kullanıcı web kontrollerine özellik ekleyebiliriz. Bu özellikler yardımıyla örneğin bir kullanıcı tanımlı kontrol içerisindeki bileşenlerin bazı özelliklerine dışarıdan erişebilir hatta değiştirebiliriz. Dilerseniz örnek bir senaryo üzerinden gidelim. Aşağıdaki ekran çıktısına sahip olan bir web user control'ümüz olduğunu düşünelim.
 
@@ -23,7 +23,7 @@ Kullanıcı web kontrollerinin aslında System.Web.UI.Control tipinden türeyen 
 
 AdresBilgisi.ascx;
 
-```text
+```html
 <%@ Control Language="C#" AutoEventWireup="true" CodeFile="AdresBilgisi.ascx.cs" Inherits="AdresBilgisi" %>
 <table>
     <tr>
@@ -152,11 +152,11 @@ Düğmeye basıldıktan sonra;
 
 Sonuçta, AdresBilgisi1 isimli kullanıcı web kontrolü içerisindeki bileşenlere ait değerler AdresBilgisi2 isimli kullanıcı web kontrolü içerisinde bileşenlere aynen gönderilmiştir. Dolayısıyla hem kullanıcıyı aynı bilgileri girme zahmetinden kurtardık hemde aynı web user control'e ait birden fazla örnek arasında nasıl veri transferi yapabileceğimizi aydınlatmış olduk. Gelelim ikinci konumuza.
 
-2. Kullanıcı web kontrollerini dinamik oluşturma
+## Kullanıcı web kontrollerini dinamik oluşturma
 
 Çalışma zamanında (run time) web kontrollerini dinamik olarak oluşturmak hatta bunları aynı event metodlarına yönlendirmek özellikle portal tarzı sistemlerde önemlidir. Benzer davranışı kullanıcı web kontrolleri içinde gerçekleştirebiliriz. Burada dikkat edilmesi gereken husus, kullanıcı tanımlı web kontrolünün ele alınacağı sayfa içerisinde kayıt edilerek (register) bildirilmesi gerektiğidir. Bunun için Register direktifinden yararlanabiliriz. Örneğin AdresBilgisi.ascx kullanıcı tanımlı web kontrolünü dinamik olarak default2.aspx isimli bir sayfada kullanmak istediğimizi düşünelim. İlk olarak Register direktifini aşağıdaki gibi eklemeliyiz.
 
-```text
+```xml
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="Default2" %>
 <%@ Register Src="~/AdresBilgisi.ascx" TagName="Adres" TagPrefix="adr" %>
 ```
@@ -181,16 +181,18 @@ Dikkat ederseniz, AdresBilgisi isimli kullanıcı web kontrollerini öncelikle y
 
 ![mk181_5.gif](/assets/images/2006/mk181_5.gif)
 
-3. Olay (Event) Kullanımı
+## Olay (Event) Kullanımı
 
 Kullanıcı web kontrollerini, sıradan bir web sunucu kontrolü olarak düşünmeye çalıştığımızda olaylara sahip olabileceğini de söyleyebiliriz. Örneğin bir Button nesnesi bir web sayfasına eklendiğinde ve bu nesneye mouse ile basıldığında Click event'i (eğer yüklenmiş ise) aktif hale gelir. Web tabanlı uygulamaların doğası gereği bu olaya ilişkin metodlar, her ne kadar sayfanın içerisindeki üyeler olsalarda hemen çalıştırılmazlar. Bunun sebebi, sunucu tarafında ilgili web sayfasının nesnel olarak üretilmesi sırasında çalışan yaşam döngüsü (page life cycle) dür. İstemci aslında bir düğmeye bastığında, sayfa istemci tarayıcı penceresinden sunucuya doğru içeriği ile birlikte gönderilir (Bu işlemi genellikle Postback olarak adlandırıyoruz). Bunun üzerine sunucu tarafında gönderilen sayfanın bir örneği oluşturulur ve çok genel hatları ile aşağıdaki yaşam döngüsü çalışır.
 
+```text
 Page_PreInit
 Page_Init
 Page_Load
 Button için Click / Change Olay Metodları
 Page_PreRender
 Page_UnLoad
+```
 
 Peki biz kendi geliştirdiğimiz kullanıcı web kontrollerine olay eklemek istersek ne olur. Öncelikle olarak sayfanın yaşam döngüsü aşağıdakine benzer bir sırada işleyecektir.
 
@@ -264,7 +266,7 @@ KontrolBilgileri sınıfının görevi, olay metodu içerisine, kullanıcı web 
 
 Urun.ascx;
 
-```text
+```html
 <%@ Control Language="C#" AutoEventWireup="true" CodeFile="Urun.ascx.cs" Inherits="Urun" %>
 <asp:PlaceHolder ID="phGunler" runat="server"></asp:PlaceHolder>
 <br />

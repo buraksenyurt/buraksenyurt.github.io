@@ -28,7 +28,7 @@ Dilerseniz bir örnek üzerinden devam edelim. Senaryomuzda AdventureWorks verit
 
 Dolayısıyla Alt Kategorileri doldurmak ile kastettiğimiz; istemciye gelen string cevabın içerisindeki alanları ayrıştırarak, ilgili select takısı içerisine birer option takısı olarak eklemektir. Tekrardan örneğimize dönebiliriz. İlk olarak kategorileri ProductCategories tablosundan yüklememiz gerekmektedir. Kategorileri doldurmak için SqlDataSource bilşeninden faydalanabiliriz. Select sorgumuz içerisinde ProductCategoryID ve Name alanlarını çekiyoruz.
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -91,7 +91,7 @@ Gönderilen string bilginin istemci tarafındaki fonksiyon içerisinde ayrışt�
 
 Gelelim istemci tarafındaki fonksiyonumuza. Bu fonksiyonun temel görevi, GetCallbackResult metodundan dönecek olan string bilgiyi ayrıştırıp ddlAltKategoriler isimli dropdownList'in Html karşılığı olan içeriğine birer option elemanı olarak olarak eklemek olacaktır.
 
-```text
+```javascript
 <script type="text/javascript" language="javascript">
 
     function IstemciGeriBildirim(gelenBilgi,context)
