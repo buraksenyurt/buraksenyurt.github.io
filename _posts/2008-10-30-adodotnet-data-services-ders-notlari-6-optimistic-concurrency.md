@@ -153,7 +153,7 @@ Bu kez Request Header içerisindeki ETag değeri 71.0000 değeri için talepte b
 
 Çok doğal olarak bu hata için istemci tarafına bir exception bilgisi gönderilmiştir. Bu arada SQL tarafında neler olduğunuda bilmekte yarar vardır. Aynı süreç SQL Server Profiler üzerinden incelendiğinde ilk uygulamanın güncelleştirme işleminden hemen önce 81 numaları KitapID için bir Select sorgusu çalıştırıldığı sonrasında ise aşağıdaki SQL ifadesinin devreye girdiği görülür.
 
-```bash
+```sql
 exec sp_executesql N'update [dbo].[Kitap]
 set [Ad] = @0, [Fiyat] = @1, [StokMiktari] = @2, [KategoriId] = @3
 where ((([KitapId] = @4) and ([Ad] = @5)) and ([Fiyat] = @6))

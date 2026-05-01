@@ -159,7 +159,7 @@ Diğer yandan aynı aramayı overload veya interface kelimelerinden herhangi bir
 
 And ve Or operatörleri dışında kullanabileceğimiz bir diğer kullanışlı operatörde, * asteriks karakteridir. Örneğin,
 
-```csharp
+```sql
 SELECT A.*,M.Konu,M.[ID] FROM Makale AS M INNER JOIN
 CONTAINSTABLE(Makale,Icerik,' "Datarela*" ') AS A ON M.[ID]=A.[KEY]
 ORDER BY A.RANK DESC

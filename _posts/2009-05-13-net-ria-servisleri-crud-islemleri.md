@@ -210,7 +210,7 @@ Görüldüğü gibi ComboBox içerisinde, kategorilerin tamamı yer almaktadır.
 
 Bu sırada ekrana gelen veri içeriğini değiştirdiğimizi ve sonrasında Update tuşuna bastığımızı düşünelim. Örnek olarak kategori adı ve açıklamalarının sonuna üç nokta koyduğumuzu varsayalım. Bu durumda SQL tarafında aşağıdaki sorgunun çalıştırıldığını görebiliriz.
 
-```text
+```sql
 exec sp_executesql N'UPDATE [dbo].[Categories]
 SET [CategoryName] = @p2, [Description] = @p3
 WHERE ([CategoryID] = @p0) AND ([CategoryName] = @p1)',N'@p0 int,@p1 nvarchar(10),@p2 nvarchar(13),@p3 ntext',@p0=2,@p1=N'Condiments',@p2=N'Condiments...',@p3=N'Sweet and savory sauces, relishes, spreads, and seasonings...'
@@ -224,7 +224,7 @@ Yeni bir kategori eklenmek istendiğindeyse,
 
 sunucu tarafında aşağıdaki SQL sorgusu çalıştırılacaktr.
 
-```text
+```sql
 exec sp_executesql N'INSERT INTO [dbo].[Categories]([CategoryName], [Description], [Picture])
 VALUES (@p0, @p1, @p2)
 
@@ -237,7 +237,7 @@ Sorgu cümlesinde standart bir Insert ifadesi olmasının dışında, eklenen ka
 
 Silme işlemi için bir kategorinin seçilmesi gerekmektedir. Seçilen kategoriye ait Category nesne örneği bulunduktan sonra ise Remove metodu ile DomainContext içerisindeki koleksiyondan çıkartılır. Sonrasında ise değişikleri sunucu göndermek için yine SubmitChanges metodundan yararlanılır. Sonuç itibariyle SQL sunucusuna giden sorgu cümlesi aşağıdaki gibidir.
 
-```text
+```sql
 exec sp_executesql N'DELETE FROM [dbo].[Categories] WHERE ([CategoryID] = @p0) AND ([CategoryName] = @p1)',N'@p0 int,@p1 nvarchar(5)',@p0=12,@p1=N'Kitap'
 ```
 

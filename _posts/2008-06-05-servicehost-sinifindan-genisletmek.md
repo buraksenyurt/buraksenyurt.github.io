@@ -298,7 +298,7 @@ Yazıya ikinci bir örnek ile devam edelim. Bu örnekte özel olarak yazılmış
 
 ![mk253_9.gif](/assets/images/2008/mk253_9.gif)
 
-```text
+```sql
 USE [ServiceBase]
 GO
 SET ANSI_NULLS ON

@@ -79,7 +79,7 @@ CreateDatabase static metodu konfigurasyon dosyası içerisindeki conn isimli an
 
 Kullandığımız Stored Procedure;
 
-```text
+```sql
 USE [AdventureWorks]
 GO
 

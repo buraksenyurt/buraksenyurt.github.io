@@ -28,13 +28,13 @@ Sunucu üzerinde ne gibi gelişmeler olduğunda anında haberdar olmak isteyebil
 
 Dilerseniz kısaca mimarinin işleyişinden ve bileşenlerinden bahsedelim. SqlDependency sınıfı, bir SqlCommand ile ilişkilendirilerek kullanılır ve içsel olarak bir SqlNotificationRequest nesnesini de barındırır. (Bu sınıfı ilerleyen makalelerimizde incelemeye çalışacağız.) SqlCommand sınıfının Notification işlemine uyan bir Select sorgusu içermesi gerekir. Öyle ki bu Select sorgusu şu anki versiyonlar itibarıyla aşağıdaki gibi olamaz.
 
-```csharp
+```sql
 Select * From Tablo
 ```
 
 Select sorgusunda talep edilen alan isimleri açıkça belirtilmelidir. Bununla birlikte, tablonun sahibi de yani yaratıcısı da açıkça belirtilmelidir. Yani ancak aşağıdaki gibi bir SQL ifadesi Notification desteğini sağlayabilir.
 
-```csharp
+```sql
 Select Ad,Soyad From dbo.Tablo
 ```
 

@@ -50,7 +50,7 @@ Bu LINQ sorgusunda çoklu Select işlemi yapılmaktadır. Sorguya göre Track.Na
 
 Arka planda çalışan SQL Sorgusu ise aşağıdaki gibidir.
 
-```text
+```sql
 SELECT 
 [Extent1].[TrackId] AS [TrackId], 
 [Extent2].[PlaylistId] AS [PlaylistId]

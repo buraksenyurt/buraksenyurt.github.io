@@ -105,7 +105,7 @@ namespace WFPersistence
 
 Dikkat edileceği üzer While döngüsünde CurrentNumber değeri 4158 iken çıkılmıştır. Tabiki sizin testlerinizde bu değer çok daha farklı olabilir. Uygulama Unload metodu çağrısını gerçekleştirdikten sonra SQL Server Profiler aracından yakalan sorgu aşağıdaki gibidir (SQL İçeriği çok uzun olduğundan son kısmı kırpılmıştır)
 
-```csharp
+```sql
 exec sp_executesql N'begin transaction
 declare @result int
 exec @result = [System.Activities.DurableInstancing].[SaveInstance] @instanceId, @surrogateLockOwnerId, @handleInstanceVersion, @handleIsBoundToLock,
@@ -138,7 +138,7 @@ T zaman sonra (Gün, Ay, Yıl bile olabilir. Yeterki SQL tarafındaki bilgilere 
 
 Tam Load metodunun olduğu yerde breakpoint koyarak ilerlemenizi öneririm. Persist edilen Workflow örneğinin canlandırılması esnasında SQL tarafında LoadInstance isimli bir Stored Procedure'ün çalıştırılması sağlanmaktadır. İşte çalıştırılan SQL sorgusu.
 
-```text
+```sql
 exec [System.Activities.DurableInstancing].[LoadInstance] @surrogateLockOwnerId=27,@operationType=3, @keyToLoadBy='00000000-0000-0000-0000-000000000000',
 
 @instanceId='074A5D57-C268-43E6-B516-DFE49894D7A7',
@@ -157,4 +157,3 @@ Persistence işlemi bu örneğimizde WorkflowApplication nesnesi tarafından ele
 > Kişisel Not: Kalıcı olarak saklama işlemini yazımızın başında belirttiğimiz üzere, Persist aktivitesi ilede kolayca gerçekleştirebiliriz. Bu konu ile ilişkili bir görsel dersi ilerleyen tarihlerde yayınlamaya çalışıyor olacağım.
 
 [WFPersistence.rar (37,63 kb)](/assets/files/2009/WFPersistence.rar)
-

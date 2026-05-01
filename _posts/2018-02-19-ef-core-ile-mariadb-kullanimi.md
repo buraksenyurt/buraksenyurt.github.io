@@ -41,7 +41,7 @@ Yukarıdaki ekran görüntüsünde show databases; komutu kullanılarak yüklü 
 
 Bu arada eğer sudo kullanmadan giriş yapmak istersek yada ERROR 1698 (28000): Access denied for user 'burakselyum'@'localhost'benzeri bir hata alırsak, root user'ın mysql_native_password plug-in'inini kullanabilmesini söyleyerek çözüm üretebiliriz.
 
-```bash
+```sql
 use mysql;
 update user set plugin='mysql_native_password' where user='root';
 flush privileges; 

@@ -244,7 +244,7 @@ var result = (from artist in entites.Artist
 
 ### Önceki Versiyon - SQL Sorgusu
 
-```text
+```sql
 SELECT 
 [Extent1].[Name] AS [Name]
 FROM ( SELECT [Extent1].[ArtistId] AS [ArtistId], [Extent1].[Name] AS [Name], row_number() OVER (ORDER BY [Extent1].[Name] DESC) AS [row_number]

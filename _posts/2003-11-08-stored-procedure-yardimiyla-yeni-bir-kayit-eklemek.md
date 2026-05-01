@@ -41,7 +41,7 @@ Diğer yandan, derlenmiş olmaları aslında bu sql cümleciklerinin doğrudan m
 
 Tablo 1. Saklı Yordamımızda Kullanılan Giriş Parametreleri.
 
-```csharp
+```sql
 Insert Into Base (FirstName,LastName,BirthDay,Job) values (@fn,@ln,@bd,@j)
 ```
 

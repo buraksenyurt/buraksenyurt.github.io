@@ -89,7 +89,7 @@ namespace HowTo_EFCodeFirstConvetions
 
 ![efcon_1](/assets/images/2012/efcon_1.png)
 
-Dikkat edileceği üzere Categories ve Books isimli iki tablo üretilmiştir. Her iki tabloda birer Primary Key alan bulunmaktadır. İşte burada Primary Key Convention kural kümesi devreye girmektedir. Bu kural setine göre, Guid veya int tipinden olup adı ID veya [SınıfAdı][Id] notasyonunda olan özellikler, veritabanı şemasında birer Identity alan olarak üretilecek ve hatta Primary Key şeklinde işaretleneceklerdir.
+Dikkat edileceği üzere Categories ve Books isimli iki tablo üretilmiştir. Her iki tabloda birer Primary Key alan bulunmaktadır. İşte burada Primary Key Convention kural kümesi devreye girmektedir. Bu kural setine göre, Guid veya int tipinden olup adı ID veya `[SınıfAdı][Id]` notasyonunda olan özellikler, veritabanı şemasında birer Identity alan olarak üretilecek ve hatta Primary Key şeklinde işaretleneceklerdir.
 
 Senaryomuza Class seviyesinde baktığımızda, bir kategorinin altında birden fazla kitabın yer alabileceği görülmektedir. Nesneler arası kurulan bu ilişkiyi (association) tanımlamak adına Category sınıfı içerisinde ICollection tipinden bir özellik kullanılmıştır. Bunun karşılığı olarak veritabanı şemasında görüldüğü üzere iki tablo arasında bir relation kurulmuştur. Bu ilişki, Categories tablosundan Books tablosuna doğru one-to-many olacak şekildedir. Burada ise Relation Convention kuralları devreye girmektedir.
 
@@ -97,7 +97,7 @@ Senaryomuza Class seviyesinde baktığımızda, bir kategorinin altında birden 
 
 ![efcon_3](/assets/images/2012/efcon_3.png)
 
-```text
+```sql
 USE [AzonBookShop] 
 GO
 
@@ -193,9 +193,9 @@ Convetion kurallarını manuel olarak ele almanın bir kaç yolu bulunmaktadır.
 ```csharp
 public class Category 
 { 
-	public Guid Signature { get; set; } 
-	public string Name { get; set; } 
-	public virtual ICollection<Book> Books { get; set; } 
+   public Guid Signature { get; set; } 
+   public string Name { get; set; } 
+   public virtual ICollection<Book> Books { get; set; } 
 }
 ```
 

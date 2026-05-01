@@ -78,7 +78,7 @@ Bu kod parçasının çalışması sonucunda SQL tarafında, aşağıdaki sorgun
 
 İlk önce Playlist bilgisinin çekilmesi,
 
-```text
+```sql
 SELECT TOP (1) 
 [Extent1].[PlaylistId] AS [PlaylistId], 
 [Extent1].[Name] AS [Name]
@@ -88,7 +88,7 @@ WHERE 10 = [Extent1].[PlaylistId]
 
 sonrasında ise ilgili Playlist'e bağlı Track'lerin Inner Join sorgusu ile elde edilmesi gerçekleşecektir.
 
-```text
+```sql
 exec sp_executesql N'SELECT 
 [Extent2].[TrackId] AS [TrackId], 
 [Extent2].[Name] AS [Name], 
@@ -142,7 +142,7 @@ Bu kod parçası ise bir öncekine benzer olaraktan aşağıdaki SQL sorguların
 
 Önce Track bilgileri çekilecek,
 
-```csharp
+```sql
 SELECT TOP (1) 
 [Extent1].[TrackId] AS [TrackId], 
 [Extent1].[Name] AS [Name], 
@@ -159,7 +159,7 @@ WHERE 1 = [Extent1].[TrackId]
 
 sonrasında ise ilgili Track satırının geçtiği Playlist satırlarının bulunması için gerekli Inner Join sorgusu çalıştırılacaktır.
 
-```text
+```sql
 exec sp_executesql N'SELECT 
 [Extent2].[PlaylistId] AS [PlaylistId], 
 [Extent2].[Name] AS [Name]
@@ -247,7 +247,7 @@ Biraz performans kaybı söz konusu olabilir ancak silme işlemi başarılı bir
 
 Önce Track ve Playlist tabloları arasındaki çoğa-çok ilişkiyi sağlayan PlaylistTrack tablosundaki ilgili satırlar silinir.
 
-```text
+```sql
 exec sp_executesql N'delete [dbo].[PlaylistTrack]
 where (([PlaylistId] = @0) and ([TrackId] = @1))',N'@0 int,@1 int',@0=1,@1=3503
 
@@ -266,7 +266,7 @@ where (([PlaylistId] = @0) and ([TrackId] = @1))',N'@0 int,@1 int',@0=13,@1=3503
 
 Artık sorun yoktur, nitekim Track tablosu ile Playlist arasındaki ilişkiler ortadan kalkmıştır. Buna göre son olarak, Track tablosundan ilgili satırın silinmesi işlemi gerçekleştirilir.
 
-```text
+```sql
 exec sp_executesql N'delete [dbo].[Track]
 where ([TrackId] = @0)',N'@0 int',@0=3503
 ```

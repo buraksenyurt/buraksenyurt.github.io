@@ -281,7 +281,7 @@ public OleDbDataAdapter(OleDbCommand);
 
 Burada OleDbCommand nesnesini, saklı yordamımızı çalıştıracak şekilde oluştururuz. Aşağıdaki örnek saklı yordamımızı göz önüne alalım.
 
-```csharp
+```sql
 CREATE PROCEDURE Makaleler
 AS
 Select * From Makale 

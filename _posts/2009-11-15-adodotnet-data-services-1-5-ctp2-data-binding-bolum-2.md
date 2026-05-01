@@ -152,7 +152,7 @@ Görüldüğü üzere Category üzerinden gittiğimiz Book özelliğine bağlı 
 
 Dolayısıyla iki yönlü veri bağlama (Two Way DataBinding) nedeniyle kontroller üzerine yansıyan verilerde yapılan değişiklikler, istemci tarafındaki ilgili koleksiyonlara da yansıtılmaktadır. Buna göre SaveChanges metoduna yapılan çağrı geçildiğinde, servis tarafına gerekli güncelleştirme talebinin gittiği ve aşağıdaki SQL sorgusunun çalıştırıldığı gözlemlenir.
 
-```text
+```sql
 exec sp_executesql N'update [dbo].[Book]
 set [Name] = @0, [ListPrice] = @1, [PageSize] = @2
 where ([BookId] = @3)
@@ -246,7 +246,7 @@ Bağlılık buna denir desek yeridir
 
 Nitekim yapmış olduğumuz nesne eklemesinden ListBox kontrolüde otomatik olarak etkilenmiş ve içeriğini yenilemiştir. Artık Save Changes başlıklı düğmeye basarak değişiklikleri servis tarafına gönderebiliriz. Bu işlem yapıldığı takdirde SQL tarafında aşağıdaki sorgunun çalıştırıldığı gözlemlenir.
 
-```text
+```sql
 exec sp_executesql N'insert [dbo].[Book]([Name], [ListPrice], [CategoryId], [PageSize])
 values (@0, @1, @2, @3)
 select [BookId]
@@ -259,4 +259,3 @@ where @@ROWCOUNT > 0 and [BookId] = scope_identity()',N'@0 nvarchar(28),@1 decim
 Silme operasyonunu uygularken debug işlemlerini yapmayı ve çalışma zamanını analiz edip SQL tarafında neler olup bittiğini incelemeyi unutmayın. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [BindingV2.rar (93,31 kb)](/assets/files/2009/BindingV2.rar)
-

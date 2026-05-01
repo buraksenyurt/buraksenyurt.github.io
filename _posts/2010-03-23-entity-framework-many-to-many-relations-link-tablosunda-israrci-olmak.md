@@ -119,7 +119,7 @@ namespace RelationEntityCreation
 
 Tabi bu kodun çalışması sonrasında SQL tarafında oldukça yoğun bir sorgunun üretilmesi söz konusudur.
 
-```text
+```sql
 SELECT 
 [Project1].[PlaylistId] AS [PlaylistId], 
 [Project1].[Name] AS [Name], 

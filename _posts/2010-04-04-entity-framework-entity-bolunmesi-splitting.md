@@ -75,7 +75,7 @@ namespace Splitting
 
 Bu kabiliyetin uygulanışı sırasında en çok dikkat edilmesi gereken nokta arka planda çalıştırılan SQL sorgularıdır. Nitekim birden fazla Tablonun tek bir Entity içerisinde birleştirilmesi arka planda Inner Join sorgularının atılmasına neden olacaktır. Yukarıdaki örneğin çalışma zamanı sırasında SQL tarafında icra edilen sorgudan bu durum net bir şekilde görülebilir.
 
-```text
+```sql
 SELECT TOP (3) 
 [Extent1].[BusinessEntityID] AS [BusinessEntityID], 
 [Extent3].[PersonType] AS [PersonType], 

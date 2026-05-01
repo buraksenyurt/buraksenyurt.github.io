@@ -78,7 +78,7 @@ adwContext.SubmitChanges();
 
 SubmitChanges metodu çalıştırıldığında Insert, Update veya Delete kuyruğunda bekleyen tüm nesneler için gerekli SQL sorguları (Queries) yürütülmektedir. Söz gelimi yukarıdaki örneğe göre SQL Profiler ile arkada çalışan kodlar izlenirse aşağıdaki sonuçların elde edildiği görülecektir.
 
-```text
+```sql
 exec sp_executesql N'INSERT INTO [Production].[ProductCategory]([Name], [rowguid], [ModifiedDate])
 VALUES (@p0, @p1, @p2)
 
@@ -130,7 +130,7 @@ adwContext.SubmitChanges();
 
 Burada dikkat edilmesi gerken bazı noktalar vardır. Silinmek istenilen satır veya satırların öncelikli olarak bulunması gerekir. Bu çok doğal olarak Table tipi üzerinden bir LINQ sorgusu ile mümkün olabilir. Dolayısıyla yukarıdaki kod parçasına göre, silinecekVeri isimli koleksiyon elde edilirken arka planda aşağıdaki sorgu cümlesi çalışacaktır.
 
-```text
+```sql
 exec sp_executesql N'SELECT TOP (1) [t0].[ProductCategoryID], [t0].[Name], [t0].[rowguid], [t0].[ModifiedDate]
 FROM [Production].[ProductCategory] AS [t0]
 WHERE [t0].[ProductCategoryID] = @p0',N'@p0 int',@p0=25
@@ -142,7 +142,7 @@ Bu adımdam sonra DeleteOnSubmit metoduna, silinmek istenen varlık (Entity) ör
 
 Silinmek istenen verinin programatik ortamda elde edilmesi için tek yapılması gereken GetChangeSet metodu üzerinden Deletes özelliğine ulaşmaktır. Çalışma zamanı SubmitChanges metodunu yürüttüğünde ise silinmek istenen entity nesnesi ile ilgili olaraktan aşağıdaki sorgu cümlesi SQL tarafında işletilecektir.
 
-```text
+```sql
 exec sp_executesql N'DELETE FROM [Production].[ProductCategory] 
 WHERE 
       ([ProductCategoryID] = @p0) AND ([Name] = @p1) AND ([rowguid] = @p2) AND ([ModifiedDate] = @p3)',N'@p0 int,@p1 nvarchar(10),@p2 uniqueidentifier,@p3 datetime',@p0=25,@p1=N'Kategori Y',@p2='B68CEBC9-CFFF-4AD5-9F5A-ADEC8823E88A',@p3='2006-06-05 00:00:00:000'
@@ -163,7 +163,7 @@ public string Name
 
 UpdateCheck değerine Never atanması sonucu söz konusu özelliğin değeri WHERE ifadesine parametre olarak dahil edilmeyecektir. Bu işlemin ardından örnek olarak başka bir satırı daha silmek istersek arka tarafta çalışan Delete sorgusunun aşağıdaki gibi oluşturulduğunu görebiliriz.
 
-```text
+```sql
 exec sp_executesql N'DELETE FROM [Production].[ProductCategory] 
      WHERE [ProductCategoryID] = @p0',N'@p0 int',@p0=29
 ```
