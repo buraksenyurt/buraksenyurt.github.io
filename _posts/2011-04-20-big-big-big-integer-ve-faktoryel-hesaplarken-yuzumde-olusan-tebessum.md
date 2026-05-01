@@ -15,18 +15,17 @@ categories:
 
 ![blg203_Giris](/assets/images/2011/blg203_Giris.jpg)
 
-
 Amerikalıların gerçekten garip müsabaka anlayışları ve sportif aktiviteleri var. Monster Truck araçlarının kullanıldığı bu tip yarışmalarda bile binlerce seyirciyi toplayabiliyorlar. Üstelik bu seyirciler çılgınlar gibi bağırıp duruyor ve keyif alıyorlar. (Biz daha basketbol maçlarına seyirci toplayamazken üstelik:()
 
 Bu hüzünlü girişten sonra bu kocaman araçların konumuzla ne alakası olduğunu düşünebilirsiniz. Aslında bu gün sizlere yine.Net Framework 4.0 ile birlikte gelen yeniliklerden birisinde bahsediyor olacağım. Aslında kocaman, iri, büyük bir yenilik. BigInteger;).Net Framework 4.0 ile birlikte System.Numerics.dll isimli bir assembly daha gelmektedir. Bu yeni assembly içerisinde ise aşağıdaki şekilde görülen iki Değer Türü (Value Type) yer almaktadır.
 
 ![blg203_ObjectBrowser](/assets/images/2011/blg203_ObjectBrowser.gif)
 
-Hey gidi günler:D Bir zamanlar [C#Nedir?](http://www.csharpnedir.com) adına düzenlenen C# Akademi eğitimlerinde, operatörlerin aşırı yüklenmesi (Operator Overloading) konusunu anlatırken genellikle kompleks sayılardan (-3i+2j gibi) yararlanırdık. Öncelikle kompleks sayıları ifade edebileceğimiz bir tip tanımlar ve bu tipe toplama, çıkarma gibi matematiksel işlemleri öğreterek Operator Overloading konusunu irdelerdik. Nihayet.Net Framework 4.0 sürümü ile birlikte Complex isimli yeni bir değer türüne daha sahip olduk. Tahmin edeceğiniz üzere bu tip ile kompleks sayıları ifade edebilmekteyiz.
+Hey gidi günler:D Bir zamanlar C#Nedir? adına düzenlenen C# Akademi eğitimlerinde, operatörlerin aşırı yüklenmesi (Operator Overloading) konusunu anlatırken genellikle kompleks sayılardan (-3i+2j gibi) yararlanırdık. Öncelikle kompleks sayıları ifade edebileceğimiz bir tip tanımlar ve bu tipe toplama, çıkarma gibi matematiksel işlemleri öğreterek Operator Overloading konusunu irdelerdik. Nihayet.Net Framework 4.0 sürümü ile birlikte Complex isimli yeni bir değer türüne daha sahip olduk. Tahmin edeceğiniz üzere bu tip ile kompleks sayıları ifade edebilmekteyiz.
 
 System.Numerics içerisine dahil edilen ve bu yazımıza konu olan diğer bir tip ise BigInteger isimli tam sayı türüdür. Bu tip ile gerçekten çok büyük sayıları ifade edebilmemiz mümkündür. Bu önemli bir gelişmedir. Nitekim BigInteger dışında değerlendirebileceğimiz büyük sayısal değerleri düşündüğümüzde, değer aralıklarının aşağıdaki tabloda ifade edildiği gibi olduklarını görebiliriz
 
-| Tip | Minimum Değer | Maksimum Değer |
+| **Tip** | **Minimum Değer** | **Maksimum Değer** |
 | --- | --- | --- |
 
 | Int64(long) | -9223372036854775808 | 9223372036854775807 |

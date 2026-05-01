@@ -10,10 +10,9 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-2004 ve 2005 yıllarında uzun bir süre editörlüğünü yaptığım [C#Nedir?](http://www.csharpnedir.com/) topluluğunun düzenlediği C# Akademi eğitimlerinde, yarı zamanlı eğitmen olarak görev yapmıştım. Genellikle C# programlama dilinin basit ve temel konularını, ayrıca Object Oriented özelliklerini aktarmaya çalışırdım. Elbette sınıfımdaki öğrencilerim yanda görüldüğü gibi her zaman pür neşe olmazlardı.
+2004 ve 2005 yıllarında uzun bir süre editörlüğünü yaptığım C#Nedir? topluluğunun düzenlediği C# Akademi eğitimlerinde, yarı zamanlı eğitmen olarak görev yapmıştım. Genellikle C# programlama dilinin basit ve temel konularını, ayrıca Object Oriented özelliklerini aktarmaya çalışırdım. Elbette sınıfımdaki öğrencilerim yanda görüldüğü gibi her zaman pür neşe olmazlardı.
 
 ![blg215_Giris](/assets/images/2011/blg215_Giris.jpg)
-
 
 Ancak insan zaman içerisinde profesyonelleşme yolunda ilerledikçe konuları çok daha farklı açılardan ele alması gerektiğini de öğreniyor. Profesyonel bir eğitmenin en iyi yaptığı işlerin başında, en zor konuları çöp adam kullanarak anlatmak gelmektedir. Tabi eğitmenin gerçek hayat tecrübelerini ve ip uçlarını da aktarıyor olması, profesyonelliğinin diğer bir göstergesidir. Böyle bir eğitmenin vereceği önerileri pür dikkat dinlemekte yarar vardır.
 

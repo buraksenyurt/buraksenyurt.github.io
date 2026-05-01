@@ -12,7 +12,7 @@ Asp.Net 2.0 ile gelen en önemli yeniliklerden biriside Cross-Page Postback mima
 
 Bu aynı zamanda sayfalar arasında veri taşımanın etkili yollarından birisi olarak, web uygulamalarındaki yerini almıştır. Cross-Page Postback oldukça güçlü bir yenilik olmasına karşın kullanırken dikkat edilmesi gereken bazı hususlar vardır. Bu makelemizde dikkat edilmesi gereken noktaları örnekler üzerinden incelemeye çalışacağız. Aşağıdaki tabloda Cross-Page Postback işlemi sırasında dikkat etmemiz gereken noktalar maddeler halinde özetlenmeye çalışılmıştır.
 
-Cross-Page Post Back Kullanırken
+## Cross-Page Post Back Kullanırken
 
 - 1.Cross-Page Postback işlemini yapabilen web tabanlı bileşenler sadece IButtonControl arayüzünü (interface) uygulamış web kontrolleridir. Bu nedenle hedef sayfada Null Reference kontrolü mutlaka yapılmalıdır.
 
@@ -26,7 +26,7 @@ Cross-Page Post Back Kullanırken
 
 Dilerseniz bu maddeleri teker teker incelemeye çalışalım.
 
-Madde 1:
+## Madde 1: Sadece IButtonControl
 
 Web kontrollerinden olan Button, LinkButton ve ImageButton bileşenleri, IButtonControl'den türemişlerdir. Bu sebepten dolayı PostBackUrl isimli özellikleri vardır. PostBackUrl bildiğiniz gibi, Cross-Page Postback sırasında hedef olarak gidilecek url bilgisini içermektedir. Tipik olarak hedef sayfa içerisinden kaynak sayfaya ait herhangibir kontrolün içeriğini almak (örneğin kaynak sayfadaki bir TextBox içerisine girilen bir değeri) için FindControl metodu kullanılır. Lakin hedef sayfaya geçmek için HyperLink yada Response.Redirect metodu gibi tekniklerde kullanılabilir. Bu ise Cross-Page Postback olmaması anlamına gelmektedir.
 
@@ -99,7 +99,7 @@ if (PreviousPage != null)
     Response.Write(((TextBox)PreviousPage.FindControl("txtInfo")).Text);
 ```
 
-Madde 2:
+## Madde 2 Görmezden Gelme
 
 Bir Cross-Page Postback işlemi meydana geldiğinde, hedef sayfada PreviousPage referansının ilk kullanıldığı yer kaynak sayfaya ait bir nesne örneğinin oluşturulmasına yol açacaktır. Dolayısıyla kaynak sayfanın yaşam döngüsü içerisinde yer alan olaylardan, geliştirici tarafından kodlanmış olanları çalışacaktır. Ancak bu kodlar ve sonuçları görmezden gelinecektir. Bunu daha iyi anlayabilmek için Kaynak1.aspx.cs dosyasına aşağıdaki eklemeleri yapalım.
 
@@ -135,7 +135,7 @@ Görüldüğü gibi, kaynak sayfa yüklendikten sonra PostBackUrl özelliği set
 
 Bu maddeyi daha net anlayabilmek için klasik bir Asp.Net sayfasının yaşam döngüsünü bilmekte fayda vardır. Yukarıdaki şekil bunu göstermektedir. Burada görülen changed ve click olayları çoğunlukla Web kontrollerine ait olaylardır. Bir sayfa ilk yüklendiğinde Change ve Click olayları devreye girmez. Genellikle bir Asp.Net sayfası üzerinde herhangibir şekilde PostBack işlemi yapıldığında var olan yaşam döngüsü içerisinde sırasıyla Changed ve Click olaylarıda eklenir.
 
-Madde 3:
+## Madde 3: Nesne Örneği İhtiyacı
 
 Bazı durumlarda kaynak sayfadaki herhangibir public üyeye, hedef sayfa üzerinden erişmek isteyebiliriz. Böyle bir durumda eğer herhangibir şey belirtmessek PreviousPage tipi ilgili üyelere doğrudan erişilmesi mümkün değildir. Bu çoğunlukla kaynak sayfaya ait sınıf içerisinde bir özellik (property) tanımlandığı zaman rastlanacak bir durumdur. İlgili özelliğe erişebilmek için öncelikle kaynak sayfaya ait nesne örneğinin hedef sayfada kullanılabilir olması gerekmektedir. Durumu daha iyi anlayabilmek için ilk olarak kaynak sayfa sınıfımıza bir özellik yazacağız. Daha sonra ise PreviousPage yardımıyla bu özelliğe hedef sayfa üzerinden erişmeye çalışacağız. Örneği geliştirmek için Kaynak1.aspx.cs kodlarını aşağıdaki gibi değiştirelim.
 
@@ -165,7 +165,7 @@ Sorun Kaynak1.aspx sayfasına ait arka plan sınıfının nesne örneğinin doğ
 
 Bu haliyle uygulamayı derlediğimizde hiç bir sorunla karşılaşmadan IstekZamani isimli özelliğe erişebildiğimizi görürüz.
 
-Madde 4:
+## Madde 4: Kaynak Sayfa Bilinmeli
 
 Cross-Page Postback işlemi özellikle sayfalar arasında veri taşıma işlemleri arasında önemli bir yere sahiptir. Bazı durumlarda hedef sayfaya birden fazla sayfadan Cross-Page Postback işlemi gerçekleştirebiliriz. Ancak böyle bir senaryoda, hedef sayfaya hangi tipten gelindiğinin anlaşılması şart olacaktır.
 
@@ -240,7 +240,7 @@ else
 
 Bu durumda uygulama sorunsuz olarak çalışacaktır.
 
-Madde 5:
+## Madde 5: Doğrulama Adımlarının Atlanması
 
 Gelelim bir diğer önemli konuya. Doğrulama (Validation) işlemleri bildiğiniz gibi istemci tarafından başlar ve sunucu tarafında tekrar edilir. Asp.Net 2.0' ın kullandığı Validation Kontrolleri, hem istemci taraflı script'leri hemde sunucu taraflı kodları otomatik olarak hazırlamaktadır. Istemcilerin script desteğinin olmaması ihtimaline karşılıkta sunucu tarafında mutlaka ve mutlaka doğrulama işlemleri yapılır. Dolayısıla istemci tarafında doğrulama işlemleri başarılı olsa dahi sunucu tarafında bu kontroller tekrar yapılacaktır. Ancak istemci tarafında script desteğinin olmaması halinde Cross-Page postback işleminde yaşanan bir problem vardır. Eğer istemci tarafı script desteği kapalı ise kaynak sayfadaki doğrulama işlemleri Cross-Page işlemi nedeni ile atlanmaktadır. Dilerseniz örnek üzerinden devam ederek konuyu daha net anlamaya çalışalım. Bu amaçla aşağıdaki ekran görüntüsüne sahip Kaynak3.aspx isimli bir web sayfası oluşturuyoruz.
 

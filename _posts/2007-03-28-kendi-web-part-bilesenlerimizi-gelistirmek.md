@@ -21,7 +21,7 @@ Bildiğiniz gibi, Visual Studio 2005 içerisindeki proje şablonlarından birisi
 
 Gelelim makalemizin örnek senaryosuna. Kendi Web Part kontrollerimizi geliştirmeyi öğrenirken, standart olarak ele alınan senaryo, RSS bilgilerini tutan bir bileşenin yazılmasıdır. Bizde geleneği bozmayıp bu tip bir Web Part bileşenini nasıl yazabileceğimizi incelemeye çalışacağız. Ancak başlamadan önce RSS ile ilişkili olarak biraz bilgi vermekte fayda olacağı kanısındayım. Günümüzde pek çok web sitesi, güncel olarak yayınlamak istedikleri bilgilerin, başkaları tarafından kolay bir şekilde ele alınabilmesi amacıyla, Xml tabanlı içerikler sunarlar.
 
-RSS bu anlamda Xml verisini standardize etmektedir. Böylece, her RSS içeriğinin aynı şemaya sahip olması sağlanmış olur. Bizde bu yaklaşımı kullanacağız. Özellikle.Net Framework, Xml üzerinde son derece etkili yönetimli tipler (managed types) sunmaktadır. Bu tiplerden faydalanarak her hangibir RSS içeriğini kolay bir şekilde ayrıştırabiliriz (parsing). Aşağıdaki ekran görüntüsünde C#Nedir? sitesinin [http://www.csharpnedir.com/Rss.xml](http://www.csharpnedir.com/Rss.xml) adresinden yayınlanan RSS dökümanının bir parçasını görmektesiniz.
+RSS bu anlamda Xml verisini standardize etmektedir. Böylece, her RSS içeriğinin aynı şemaya sahip olması sağlanmış olur. Bizde bu yaklaşımı kullanacağız. Özellikle.Net Framework, Xml üzerinde son derece etkili yönetimli tipler (managed types) sunmaktadır. Bu tiplerden faydalanarak her hangibir RSS içeriğini kolay bir şekilde ayrıştırabiliriz (parsing). Aşağıdaki ekran görüntüsünde C#Nedir? sitesinin RSS dökümanının bir parçasını görmektesiniz.
 
 ![mk197_1.gif](/assets/images/2007/mk197_1.gif)
 

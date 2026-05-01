@@ -18,7 +18,7 @@ Framework kendi içerisinde kullandığı pek çok yapıda aktif olarak enum sab
 - Veyalanmış (Ored) içeriklerin kullanımı.
 - IsDefined metodu her zaman yeterli olmayabilir.
 
-1.Bir enum sabitine ait içeriğin çalışma zamanında dinamik olarak elde edilmesi.
+## Bir enum sabitine ait içeriğin çalışma zamanında dinamik olarak elde edilmesi
 
 Bazı durumlarda enum sabitlerinin tüm içeriğinin çalışma zamanında bilinmesi ve kullanıcıya gösterilmesi gerekebilir. Söz gelimi, geliştirdiğimiz bir grafik uygulama olduğunu düşünelim. Tual üzerine çizilen resimlerin herhangibir şekilde saklandığını ve zaman içerisinde her hangibir noktada açıldıklarında, son kaydedildikleri halleriyle kullanıcıya sunulmak istendiklerini düşünelim. Çizilen şekiller ve bunlara ilişkin lokasyon, derinlik, ölçüler vb bilgileri saklamak için serileştirme gibi tekniklerden tutunda veritabanına kayıt etme yada özel formatlar ile fiziki dosyalara aktarma gibi pek çok yol tercih edilebilir. Lakin bu tip bir uygulamada ekranda olupta hatırlanması gereken şekilleri nerede saklarsak saklayalım nasıl bir veri tipi ile saklayacağımız önem kazanabilir. Çizilebilecek olan şekilleri string olarak adları ile tutmaktansa bunlara karşılık gelen sayısal değerlerden faydalanmak çoğu zaman saklanacak içeriğin boyutunu azaltabilir ve buda verinin daha az yer tutmasını sağlayabilir.
 
@@ -61,7 +61,7 @@ foreach (string sekilTipi in sekilTipleri)
 
 Tekrar etmek gerekirse önemli olan nokta, GetNames metodu ve metodun döndürdüğü string dizinin kullanılış şeklidir. Dikkat ederseniz metoda parametre olarak Sekil isimli enum sabitimizin tipi (type) verilmiştir. Burada dikkat edilmesi gereken bir nokta daha vardır. Kullanıcı ComboBox, ListBox veya RadioButton kontollerinden birini seçtiğinde, seçilen bu bilginin enum sabitimiz içerisindeki hangi değere karşılık geldiğini tespit etmek. İşte bu konuyu ikinci maddemizde irdeleyeceğiz.
 
-2.String bir verinin, bir enum sabiti içeriğindeki karşılığının elde edilmesi.
+## String bir verinin, bir enum sabiti içeriğindeki karşılığının elde edilmesi
 
 Belkide ilk akla gelen yöntem bir switch case yada çoklu if kullanımı olacaktır. Söz gelimi yukarıdaki windows uygulamamızda kullanıcının ComboBox, ListBox kontrolleri ile RadioButton kontrolünde seçebileceği bilginin enum tipi içerisinde karşılık geldiği değeri bulmaya çalışalım. Bu amaçla pekala aşağıdaki gibi bir metod yazabiliriz.
 
@@ -115,7 +115,7 @@ Parse metodu sayesinde ikinci parametrede verilen string bilgi, ilk parametre il
 
 Parse metodu sayesinde kullanıcının seçtiği bilgilerin, ilgili enum sabiti içerisindeki karşılıklarını bulabilir ve sayısal değerlerini elde edebiliriz. Aslında bir enum sabiti içerisinde yer alan değerlerin farklı formatta karşılıkları vardır. Örneğin bu değerlerin sadece string karşılıkları değil sayısal karşılıklarıda vardır. İşte bu karşılıkları elde etmek amacıyla ToString metoduna bir takım parametreler verilir ki buda makalemizin 3ncü maddesinin konusudur.
 
-3.Enum sabitlerinin içeriğinin ToString metodu ile farklı biçimlerde elde edilmesi
+## Enum sabitlerinin içeriğinin ToString metodu ile farklı biçimlerde elde edilmesi
 
 Bir enum sabiti içerisindeki değerleri ToString metodu yardımıyla farklı formatlarda elde edebiliriz. Bu amaçla aşağıdaki tabloda yer alan değerler kullanılır
 
@@ -162,7 +162,7 @@ private static void EnumInfo(Yetki ytk)
 
 ![mk179_3.gif](/assets/images/2006/mk179_3.gif)
 
-4. Veyalanmış içeriklerin kullanımı
+## Veyalanmış içeriklerin kullanımı
 
 Bazı durumlarda enum sabitleri içerisindeki değerlerin | işareti ile veyalandığını görürüz. Örneğin CommandBehavior enum sabitini kullanırken SingleRow|CloseConnection ifadesi ile veya benzerleri ile çok sık karşılaşırız (kullanırız). Aynı durum kendi yazmış olduğumuz enum sabitleri içinde geçerlidir. Yetki enum sabitimizi göz önüne alırsak eğer, aşağıdaki gibi bir kullanım söz konusu olabilir. Dikkat ederseniz bit seviyesinde veya (OR) işlemi uygulanmaktadır.
 
@@ -261,7 +261,7 @@ Programı tekrar çalıştırdığımızda aşağıdaki ekran görüntüsünde y
 
 Gördüğünüz gibi bu sefer elde ettiğimiz sonuçlar çok daha tutarlı ve doğrudur. Kombinasyonlar doğru sayısal karşılıkları üretmiş ve Flags attribute'u sayesinde ToString () ve ToString ("G") metodları geriye düzgün kombinasyonlar döndürmüştür. O halde enum sabitlerimiz içerisindeki değerlerin veyalanmış hallerine ihtiyacımız olucaksa, Flags niteliğini kullanmakta ve sayısal değerleri bir öncekilerin toplamının en az bir fazlası olacak şekilde belirlemekte fayda vardır.
 
-5. IsDefined metodu her zaman yeterli olmayabilir.
+## IsDefined metodu her zaman yeterli olmayabilir
 
 IsDefined, her hangibir enum değişkeninin ilgili enum sabiti içerisinde var olup olmadığına dair bool değer döndüren bir özelliktir. Bazı durumlarda parametrik bir bilginin, herhangibir enum sabiti içerisinde var olup olmadığını tespit etmek isteyebiliriz. Bu amaçla kendi switch..case yada if..else yapılarımızı kurabileceğimiz gibi Enum sınıfına ait static IsDefined metodundan da faydalanabiliriz. Ancak IsDefined metodu her zaman için yeterli olmayacaktır. Neden yeterli olmayacağını daha iyi anlayabilmek için bir örnek üzerinden devam edelim. Parca isimli bir enum sabitimiz olduğunu göz önüne alalım.
 
@@ -334,16 +334,16 @@ Bu metod her ne kadar IsDefined metodunda olduğu gibi object tipinden parametre
 | Parca.Ram | 4 | 0 0 0 0 0 1 0 0 |
 | Parca.Islemci | 1 | 0 0 0 0 0 0 0 1 |
 | **Bit seviyesinde \| islemi. (Veya)** | | |
-| Parca.SesKarti \| Parca.Ram \|<br>Parca.Islemci | **21** | **0 0 0 1 0 1 0 1** |
+| Parca.SesKarti \| Parca.Ram \| Parca.Islemci | **21** | **0 0 0 1 0 1 0 1** |
 
 Metod içerisinde ise gelen bu değer Parca.Hepsi ile bitsel ve işlemine tabi tutulmaktadır
 
 | | | |
 | :--- | :--- | :--- |
-| Parca.SesKarti \| Parca.Ram \|<br>Parca.Islemci | 21 | 0 0 0 1 0 1 0 1 |
+| Parca.SesKarti \| Parca.Ram \| Parca.Islemci | 21 | 0 0 0 1 0 1 0 1 |
 | Parca.Hepsi | 31 | 0 0 0 1 1 1 1 1 |
 | **Bit seviyesinde & islemi. (Ve)** | | |
-| Parca.SesKarti \| Parca.Ram \|<br>Parca.Islemci | **21** | **0 0 0 1 0 1 0 1** |
+| Parca.SesKarti \| Parca.Ram \| Parca.Islemci | **21** | **0 0 0 1 0 1 0 1** |
 
 Elde edilen sonuca bakıldığında tekrar 21 değerini elde ettiğimizi bir başka deyişle metoda parametre olarak gönderilen enum değerinin, Parca enum sabiti içerisinde yer alıp almadığını tespit etmiş oluyoruz. Her ne kadar kendi yazdığımız VarMi metodu parametre olarak IsDefined'da olduğu gibi object tipiyle çalışmıyorsada istersek sayısal değerlerede tepki verebilecek hale getirebiliriz. Tek yapmamız gereken VarMi metodunu aşağıdaki gibi aşırı yüklemektir (overloading).
 

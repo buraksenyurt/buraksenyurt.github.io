@@ -9,7 +9,7 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Aralık…2003 yılı. Dışarısı oldukça soğuk ve ben evdeyim. Camdan dışarıya baktığımda dışarıda pek kimseyi göremiyorum. Soğuktan dolayı sakin olan sokağımız daha da bir yanlız. Bu arada askerden döndükten sonra iş aramakla geçirdiğim 8nci ayın içerisindeydim. Neyseki mesleki kariyerimde ilerlemek için yeni bir heyecanım var. [C#Nedir?](http://www.csharpnedir.com/) ile daha ilk günlerimi yaşıyorum.
+Aralık…2003 yılı. Dışarısı oldukça soğuk ve ben evdeyim. Camdan dışarıya baktığımda dışarıda pek kimseyi göremiyorum. Soğuktan dolayı sakin olan sokağımız daha da bir yanlız. Bu arada askerden döndükten sonra iş aramakla geçirdiğim 8nci ayın içerisindeydim. Neyseki mesleki kariyerimde ilerlemek için yeni bir heyecanım var. C#Nedir? topluluğu ile daha ilk günlerimi yaşıyorum.
 
 ![blg220_Giris](/assets/images/2011/blg220_Giris.jpg)
 

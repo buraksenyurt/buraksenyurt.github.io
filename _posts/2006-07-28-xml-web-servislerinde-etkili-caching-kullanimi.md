@@ -92,6 +92,3 @@ Buradaki ana fikir ön bellekte tutulan veri seti içerisinden, kullanıcının 
 Peki bu işlemlerin bize kazandırdığı avantalar nelerdir? Her şeyden önce farklı parametre değerleri için ön bellekte farklı veri seti görüntüleri oluşturmaktan kurtulmuş oluyoruz. Bu sayede ön belleğin optimize edilişinde önemli bir kazancımız olmaktadır. Diğer taraftan tüm parametre bağımlı talepler ön bellekteki aynı veri setini kullandığından, veri ayrıştırma işlemi için veritabanına gidiş gelişler de azaltılmaktadır. Bu gidiş gelişlerin (round-trips) azalması, web servisinin sql sunucusunu çok fazla süre ile meşgul etmesinin önlenmesi anlamına gelmektedir. Bu makalemizde web servislerinde uygulanan ön bellekleme tekniğine farklı bir açıdan bakmaya çalıştık. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/AdventureServices.rar)
-
-Burak Selim ŞENYURT
-[selim (at) buraksenyurt.com](mailto:selim(at)buraksenyurt.com)

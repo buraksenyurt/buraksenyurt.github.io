@@ -14,7 +14,7 @@ Language Integrated Query (LINQ) mimarisi özellikle programatik ortamlarda tasa
 
 ![mk235_1.gif](/assets/images/2007/mk235_1.gif)
 
-Bu şart olmamakla birlikte, LINQ için gerekli olan assembly'ların (örneğin System.Data.DataSetExtensions gibi) otomatik olarak referans edilmesini sağlamaktadır. Bu adımdan sonra entity sınıflarının kolay bir şekilde oluşturulmasını sağlayan LINQ To SQL Class öğesini projemize eklememiz gerekmektedir.(LINQ to SQL sınıflarının oluşturulması ile ilişkili detaylı bilgiyi C#Nedir? yer alan [görsel](http://www.csharpnedir.com/videoindir.asp?id=71) dersten öğrenebilirsiniz.)
+Bu şart olmamakla birlikte, LINQ için gerekli olan assembly'ların (örneğin System.Data.DataSetExtensions gibi) otomatik olarak referans edilmesini sağlamaktadır. Bu adımdan sonra entity sınıflarının kolay bir şekilde oluşturulmasını sağlayan LINQ To SQL Class öğesini projemize eklememiz gerekmektedir.
 
 ![mk235_2.gif](/assets/images/2007/mk235_2.gif)
 

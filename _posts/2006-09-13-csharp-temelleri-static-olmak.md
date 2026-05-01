@@ -20,7 +20,7 @@ Static anahtar sözcüğü C# programlama dilinde üstü kapalı yada açık bir
 
 Şimdi tüm bu maddeleri genişleterek incelemeye çalışalım.
 
-1. Bir sınıf (class) içerisinde bulunan metodlar (methods) static olarak tanımlanabilir.
+## Bir sınıf (class) içerisinde bulunan metodlar (methods) static olarak tanımlanabilir
 
 Static olarak tanımlanan bir metodun kullanılabilmesi için tanımlanmış olduğu tipin nesne örneğini oluşturmaya gerek yoktur. Bu durum çoğunlukla bir tipin asıl iş yapan fonksiyonelliklerin kullanılabilmesi için, tüm nesneyi örneklemenin gereksiz olduğu durumlarda ele alınır. Örneğin aşağıdaki kod parçasını ele alalım. Bu kod parçasında basit olarak Matematik isimli sınıf içerisinde tanımlanmış Toplam isimli static bir metod yer almaktadır.
 
@@ -99,7 +99,7 @@ Elbette burada ilginç bir durum daha vardır ki buda this anahtar sözcüğü k
 
 Bu tip bir erişim mümkün olmasına rağmen uygulama kodu derleme zamanında 'this'is not valid in a static property, static method, or static field initializer hatasını verecektir. Dolayısıyla static bir üye metodu içerisinde sadece static üye metodlar çağırılabilir. Yada başka bir deyişle static bir metod içerisinden static olmayan bir metodun çağırılamayacağını söyleyebiliriz.
 
-2. Bir sınıf içerisinde bulunan alanlar (fields) static olarak tanımlanabilir.
+## Bir sınıf içerisinde bulunan alanlar (fields) static olarak tanımlanabilir
 
 Static metodlar gibi, bir sınıf içerisinde kullanılabilecek static alanlarda tanımlayabiliriz. Bir alanın static olarak tanımlanması halinde bellek üzerindeki yerleşim şeklide bilinmesi gereken noktalardan bir tanesidir. Bunu daha iyi ifade edebilmek için aşağıdaki kod parçasını göz önüne alalım.
 
@@ -179,7 +179,7 @@ public Matematik()
 
 Bu durumda görüldüğü gibi tüm örnekler için Pi static değişkeninin değeri 3.1415 olarak set edilmektedir. Bunun sebebi son derece doğaldır, nitekim yapıcı metod (constructor) her Matematik nesne örneği oluşturulurken çalıştırıldığından static değişkenimizin değeride sürekli olarak set edilmektedir. İşte bu duruma çözüm olacak bir metod çeşidi daha vardır; static yapıcı metod. (static constructor method)
 
-3. Bir sınıfa ait static yapıcılar (constructors) tanımlanabilir.
+## Bir sınıfa ait static yapıcılar (constructors) tanımlanabilir
 
 Static yapıcı metod 2nci maddedeki son örnekte meydana gelen durum için tam bir çözüm olmaktadır. Static yapıcı metodu çoğunlukla bir sınıfın static değişkenlerine ilk nesne örneği oluşturulduğunda bir kereliğine değer atmak için kullanabiliriz. Bu bilgiler ışığında Matematik sınıfımızı aşağıdaki gibi değiştirelim ve static yapıcı metodumuz içerisinde static Pi değişkeninin değerini belirleyelim.
 
@@ -212,7 +212,7 @@ Static yapıcı metoda ilişkin dikkat edilmesi gereken bir takım kurallar da v
 - Bir sınıf sadece bir static yapıcı metod içerebilir.
 - Static yapıcı metod ya ilk nesne örneği oluşturulduğunda ya da ilk static sınıf üyesi çağırılmadan hemen önce yürütülür.
 
-4. Değişmezler (constants) bilinçsiz olarak static tanımlanırlar.
+## Değişmezler (constants) bilinçsiz olarak static tanımlanırlar
 
 Constant'lar uygulamanın çalışması boyunca değişmeyecek değerleri saklamak için kullandığımız bir değişken çeşididir. Basit olarak değer türünden (value types) sabit bir değişkeni aşağıdaki gibi tanımlayabiliriz.
 
@@ -234,7 +234,7 @@ Elbetteki sabitler bilinçsiz (implicit) olarak static tanımlandıklarından, s
 
 ![mk174_11.gif](/assets/images/2006/mk174_11.gif)
 
-5. Readonly referanslar açıkça belirtilmedikçe static değildirler.
+## Readonly referanslar açıkça belirtilmedikçe static değildirler
 
 Constant'lar derleme zamanında (compile time) tanımlanan değişkenler için geçerlidir. Bu nedenlede sadece değer türlerine (value types) uygulanabilirler. Oysaki bazı durumlarda sabit olarak tanımladığımız değişkenlerin değerleri çalışma zamanında belirlenebilir. Bu nedenle referans tiplerini sabit olarak kullanılabilmek için readonly tanımlarız. Örneğin Matematik sınıfımızın readonly versiyonunu kullanan aşağıdaki Islemler isimli sınıfı göz önüne alalım.
 
@@ -258,6 +258,8 @@ Dolayısıyla readonly olarak tanımlanan referans türleri açıkça belirtilme
 
 ![mk174_13.gif](/assets/images/2006/mk174_13.gif)
 
-6. C# 2.0 static sınıflara izin verir.
+## C# 2.0 static sınıflara izin verir
 
-C# 1.1 versiyonunda olmayan özelliklerden birisi bir sınıfın static olarak tanımlanamayışıydı. Oysaki C# 2.0 ile static sınıflar tanımlayabilmekteyiz. Static sınıfların belkide en önemli özelliği sadece static üyeler içerebiliyor olmalarıdır. Static sınıflar ile ilgili daha detaylı bilgiyi [C# 2.0 ve Static Sınıflar](http://www.csharpnedir.com/makalegoster.asp?MId=521) isimli makalemde bulabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Bu makalemizde static kavramının C# dilindeki yerini incelemeye çalıştık. Temel olarak static üyelerin metod ve alan bazında kullanılışını, static yapıcı metodu, sabit olarak tanımlanan değer veya referans türlerindeki yerini incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+C# 1.1 versiyonunda olmayan özelliklerden birisi bir sınıfın static olarak tanımlanamayışıydı. Oysaki C# 2.0 ile static sınıflar tanımlayabilmekteyiz. Static sınıfların belkide en önemli özelliği sadece static üyeler içerebiliyor olmalarıdır.
+
+Böylece geldik bir makalemizin daha sonuna. Bu makalemizde static kavramının C# dilindeki yerini incelemeye çalıştık. Temel olarak static üyelerin metod ve alan bazında kullanılışını, static yapıcı metodu, sabit olarak tanımlanan değer veya referans türlerindeki yerini incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
