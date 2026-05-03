@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "RSS, Atom Formatlı İçerik Paylaşımı(Syndication)"
 date: 2008-02-08 12:00:00
@@ -337,10 +337,10 @@ public SyndicationFeedFormatter IcerikOzeti(string icerikTipi)
     feed.Title = new TextSyndicationContent(".Net ile ilgili Herşey");
 
     List<SyndicationItem> items = new List<SyndicationItem>()
-        {
-            new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("https://buraksenyurt.github.io/2008/01/30/front-end-service-gelistirmek/"),"1",new DateTime(2008,1,30))
-            ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("https://buraksenyurt.github.io/2008/01/15/adim-adim-state-machine-workflow-gelistirmek/"),"2",new DateTime(2008,1,15))
-        };
+    {
+        new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("https://buraksenyurt.github.io/2008/01/30/front-end-service-gelistirmek/"),"1",new DateTime(2008,1,30))
+        ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("https://buraksenyurt.github.io/2008/01/15/adim-adim-state-machine-workflow-gelistirmek/"),"2",new DateTime(2008,1,15))
+    };
     feed.Items = items;
 
     if (icerikTipi == "atom")

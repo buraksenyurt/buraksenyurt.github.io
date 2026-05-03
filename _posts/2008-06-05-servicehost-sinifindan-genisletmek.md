@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "ServiceHost Sınıfından Genişletmek"
 date: 2008-06-05 12:00:00

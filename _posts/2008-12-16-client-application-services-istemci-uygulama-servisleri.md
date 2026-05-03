@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Client Application Services (İstemci Uygulama Servisleri)"
 date: 2008-12-16 12:00:00
@@ -356,6 +356,7 @@ Dikkat edilecek olursa txtGirisMesaji isimli TextBox kontrolüne veri bağlamas�
 Form'dan çıkılırken bu verilerin servis tarafına gönderilmesi gerekir ki bir sonraki girişte son değerler kullanılabilsin. Bu durumda örneğin Form1Closing olay metodu içerisinde aşağıdaki kodlamalar yapılabilir.
 
 ```csharp
+{
 private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 {
     if (Thread.CurrentPrincipal.Identity.AuthenticationType.Equals("ClientForms"))

@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 1 (Merhaba)"
 date: 2008-09-22 12:00:00

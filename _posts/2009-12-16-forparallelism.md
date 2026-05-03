@@ -7,11 +7,7 @@ tags:
 categories:
   - Paralel Programlama
 ---
-Günümüz yazılım teknolojilerinin belkide en popüler olan konularından biriside paralel programlamadır (Parallel Programming). Özellikle kullanıcı bilgisayarlarının artık birden fazla çekirdeğe sahip işlemcilerle donatılmış olduğu düşünüldüğünde geliştirme ortamlarının da (.Net Framework 4.0' da olduğu üzere
-
-![blg100_Giris.jpg](/assets/images/2009/blg100_Giris.jpg)
-
-) paralel programlamaya daha fazla destek vermeye başladığını görmekteyiz.
+Günümüz yazılım teknolojilerinin belkide en popüler olan konularından biriside paralel programlamadır (Parallel Programming). Özellikle kullanıcı bilgisayarlarının artık birden fazla çekirdeğe sahip işlemcilerle donatılmış olduğu düşünüldüğünde geliştirme ortamlarının da (.Net Framework 4.0' da olduğu üzere) paralel programlamaya daha fazla destek vermeye başladığını görmekteyiz.
 
 Aslında zaten var olan araçlar ile paralel programlama tekniklerini uygulayabilmekteyiz. Ne varki kodlanmasının karmaşık olması bir yana, birden fazla tekniğin kullanılabiliyor olması, hangisinin daha performanslı olduğunun anlaşılması için test aşamalarının da önemini ortaya çıkarmakta. Microsoft cephesi bir süredir, paralel programlama kütüphanesi ile söz konusu tekniklere ait tasarımları aza indirgeyip kolay geliştirilebilir ve performanslı sonuçlar üreten tiplerin tasarlanması ve geliştirilmesini gereçekleştirmekte..Net Framework 4.0 içerisinde doğrudan gelen Task Parallel Library kütüphanesi bu anlamda önemli kabiliyetler içermekte.
 
@@ -244,4 +240,3 @@ Tabiki bu test sonuçları, uygulamanın çalıştığı sistemin donanımsal ö
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TaskParallelLibrary.rar (89,38 kb)](/assets/files/2009/TaskParallelLibrary.rar)
-

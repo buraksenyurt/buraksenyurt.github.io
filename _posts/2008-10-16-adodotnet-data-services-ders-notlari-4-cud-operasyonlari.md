@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 4 (CUD Operasyonları)"
 date: 2008-10-16 12:00:00
@@ -155,8 +155,8 @@ namespace ClientApp
 
             // Eklenen kategori servis tarafından talep edilir
             var eklenenKategori = (from k in proxy.Kategori
-                where k.KategoriId == windowsClient.KategoriId
-                select k).First();
+                                   where k.KategoriId == windowsClient.KategoriId
+                                   select k).First();
             // Elde edilen kategoriye ait kitap bilgilerinin yüklenmesi istenir
             proxy.LoadProperty(eklenenKategori, "Kitap");
 
@@ -301,8 +301,8 @@ if (Int32.TryParse(Console.ReadLine(), out secilenKategoriId))
     {
         // Ekrandan girilen ID değerine ait Kategori nesne örneği talep edilir
         secilenKategori = (from k in proxy.Kategori
-            where k.KategoriId == secilenKategoriId
-            select k).First<Kategori>();
+                           where k.KategoriId == secilenKategoriId
+                           select k).First<Kategori>();
 
         // Önce bu Kategorinin KategoriId değerine sahip Kitap listesi alınır
         var kitapListesi =

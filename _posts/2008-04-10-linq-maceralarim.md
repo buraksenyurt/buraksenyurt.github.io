@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "LINQ Maceralarım"
 date: 2008-04-10 06:00:00
@@ -197,7 +197,7 @@ Peki herhangibir assembly içerisinde kaç farklı isim alanı olduğunu bulmak 
 ```csharp
 Assembly systemAsmb = Assembly.LoadFrom(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll");
 var isimAlanlari = (from t in systemAsmb.GetTypes()
-    select t.Namespace).Distinct();
+                    select t.Namespace).Distinct();
 Console.WriteLine("\n{0} assembly' ı içerisinde {1} farklı isim alanı adı vardır", systemAsmb.FullName, isimAlanlari.Count() - 1);
 foreach (var isimAlani in isimAlanlari)
     Console.WriteLine(isimAlani);

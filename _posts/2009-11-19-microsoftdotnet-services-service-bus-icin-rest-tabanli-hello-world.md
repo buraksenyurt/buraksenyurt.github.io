@@ -147,9 +147,7 @@ Konfigurasyon içeriğinde dikkat çekici noktaların başında kullanılan bağ
 
 ![blg98_Runtime.gif](/assets/images/2009/blg98_Runtime.gif)
 
-Görüldüğü üzere Wednesday için bir talepte bulunulmuş ve bir içerik elde edilmiştir. Bu örnekte en çok dikkat edilmesi gereken nokta ise operasyon talebinin yapıldığı adres bilgisidir.
-
-https://myfoodcompany.servicebus.windows.net/Foods/GetDailyFoodList?Day=Wednesday Volaaa!!!
+Görüldüğü üzere Wednesday için bir talepte bulunulmuş ve bir içerik elde edilmiştir. Bu örnekte en çok dikkat edilmesi gereken nokta ise operasyon talebinin yapıldığı adres bilgisidir. `https://myfoodcompany.servicebus.windows.net/Foods/GetDailyFoodList?Day=Wednesday` Volaaa!!!
 
 Parametreyi nasıl gönderdiğimize, https protokolüne göre bir URL bilgisi yazıldığına dikkat edilmelidir.
 

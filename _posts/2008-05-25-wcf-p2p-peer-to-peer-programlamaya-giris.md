@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "WCF - P2P(Peer-to-peer) Programlamaya Giriş"
 date: 2008-05-25 09:00:00

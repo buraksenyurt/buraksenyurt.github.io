@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 6 (Optimistic Concurrency)"
 date: 2008-10-30 10:00:00
@@ -85,8 +85,8 @@ namespace ClientApp
 
             // Concurrency testi için ID si 81 olan Kitap verisi çekilir
             Kitap kitap81 = (from k in proxy.Kitap
-                where k.KitapId == 81
-                select k).First<Kitap>();
+                             where k.KitapId == 81
+                             select k).First<Kitap>();
 
             // 81 nolu ID' ye ait kitap bilgileri gösterilir
             Console.WriteLine("{0} : {1} : {2} : {3}", kitap81.KitapId, kitap81.Ad, kitap81.Fiyat, kitap81.StokMiktari);

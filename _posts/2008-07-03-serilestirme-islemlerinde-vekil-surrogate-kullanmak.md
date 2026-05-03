@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Serileştirme İşlemlerinde Vekil(Surrogate) Kullanmak"
 date: 2008-07-03 12:00:00

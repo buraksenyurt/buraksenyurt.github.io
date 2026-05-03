@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Serileştirme İşlemlerinde Versiyonlama(Versioning) Vakaları"
 date: 2008-06-22 12:00:00

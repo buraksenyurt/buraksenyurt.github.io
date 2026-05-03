@@ -179,7 +179,7 @@ Dikkat edileceği üzere providers elementi içerisinde DiskBasedCacheProvider i
 
 Web User Control içeriği;
 
-```text
+```html
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CurrentDateTime.ascx.cs" Inherits="CustomCaching.CurrentDateTime" %>
 
 <%@ OutputCache Duration="20" VaryByParam="none" ProviderName="DiskBasedCacheProvider" %>
@@ -220,7 +220,7 @@ Ve hemen arkasından basit bir Web sayfası...
 
 Default.aspx içeriği;
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CustomCaching.Default" %>
 
 <%@ Register src="CurrentDateTime.ascx" tagname="CurrentDateTime" tagprefix="uc1" %>

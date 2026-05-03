@@ -139,13 +139,13 @@ Gelelim testlerimize. Hatırlarsanız kronometrelerinizi hazır tutmanızı söy
 
 Nitekim kodun içerisinde de test amaçlı olarak bir kronometre kullanılabilir. Çalışma zamanındaki testlerimizi aşağıdaki adımlarda olduğu gibi geliştirelim.
 
-1 - Uygulama başlatıldıktan sonra Get başlıklı düğmeye basılır ve aşağıdaki ekran görüntüsü ile karşılaşılır.
+**1** - Uygulama başlatıldıktan sonra Get başlıklı düğmeye basılır ve aşağıdaki ekran görüntüsü ile karşılaşılır.
 
 ![blg103_Test1.gif](/assets/images/2009/blg103_Test1.gif)
 
 Get içerisinde yapılan çağrıda ObjectCache içerisinde Products isimli bir Key bulunmadığından ürün listesinin maliyeti yüksek olduğu düşünülen bir metod ile üretilmesi gerçekleştirilir.
 
-2 - 1nci testten sonra Absolute Expiration veya Sliding Expiration düğmelerinden birisi kullanılır. Absolute Expiration başlıklı düğme tıklandığında aşağıdaki ekran görüntüsü ile karşılaşılmalıdır.
+2** - 1nci testten sonra Absolute Expiration veya Sliding Expiration düğmelerinden birisi kullanılır. Absolute Expiration başlıklı düğme tıklandığında aşağıdaki ekran görüntüsü ile karşılaşılmalıdır.
 
 ![blg103_Absolute.gif](/assets/images/2009/blg103_Absolute.gif)
 
@@ -155,15 +155,14 @@ Buna göre Product listesi ön bellekte 30 saniye süreyle saklanacaktır. Süre
 
 Şimdi 30 saniyelik süre sona erdikten sonra tekrar Get düğmesine basılırsa artık ön bellekte bir veri tutulmadığından ürün listesi üretim işleminin tekrar yapıldığı görülmelidir.
 
-3 - 2nci testin bitmesinden sonra seçiminize göre diğer ön bellekleme tekniğini ele alabilirsiniz. Benim sırama göre şimdi Sliding Expiration testinin yapılması gerekmektedir. Program açık iken Sliding Expiration başlıklı düğmeye asarsanız aşağıdaki ekran görüntüsü ile karşılaşırsınız.
+**3** - 2nci testin bitmesinden sonra seçiminize göre diğer ön bellekleme tekniğini ele alabilirsiniz. Benim sırama göre şimdi Sliding Expiration testinin yapılması gerekmektedir. Program açık iken Sliding Expiration başlıklı düğmeye asarsanız aşağıdaki ekran görüntüsü ile karşılaşırsınız.
 
 ![blg103_Sliding.gif](/assets/images/2009/blg103_Sliding.gif)
 
 Bu adımdan sonra 30 saniyelik süre dolmadan tekrar Get düğmesine basarsanız içeriğin ön bellekten getirildiğini görebilirsiniz. Ancak önemli olan nokta şudur; Ön bellekte durma süresi, 30 saniyelik süre içerisinde Get düğmesine bastığınız andan itibaren 30 saniye sonrasına uzamasıdır.
 
-4 - Uygulamayı herhangibir Cache tekniği uygulandıktan sonra ilgili süreler aşılmadan kapatıp tekrar açınız ve yine Get düğmesine basınız. Bu durumda içeriğin ön bellekten değil tekrardan üretim ile geldiğini görmelisiniz ki bu son derece doğaldır. Çünkü uygulama sonlandırılmış ve kendisi için ayrılan bellek içeriği bir sonraki uygulama örneği için geçersiz hale gelmiştir. Hımmm...!!! Aslında bu çokda istediğimiz bir vaka olmayabilir.
+**4** - Uygulamayı herhangibir Cache tekniği uygulandıktan sonra ilgili süreler aşılmadan kapatıp tekrar açınız ve yine Get düğmesine basınız. Bu durumda içeriğin ön bellekten değil tekrardan üretim ile geldiğini görmelisiniz ki bu son derece doğaldır. Çünkü uygulama sonlandırılmış ve kendisi için ayrılan bellek içeriği bir sonraki uygulama örneği için geçersiz hale gelmiştir. Hımmm...!!! Aslında bu çokda istediğimiz bir vaka olmayabilir.
 
 Tüm bunlar bir yana en iyi test yöntemlerinden biriside uygulmayı Debug ederek incelemeniz olacaktır ki bunu yapmanızı şiddetle tavsiye ederim. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingObjectCache.rar (42,82 kb)](/assets/files/2009/UsingObjectCache.rar)
-

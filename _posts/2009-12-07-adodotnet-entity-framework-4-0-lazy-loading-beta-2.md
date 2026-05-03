@@ -15,7 +15,7 @@ Bu yazımızdaki temel amacımız ise, Ado.Net Entity Framework'ün bir önceki 
 
 ![blg112_Model.gif](/assets/images/2009/blg112_Model.gif)
 
-Visual Studio 2008 ve Ado.Net Entity Framework V1.0
+## Visual Studio 2008 ve Ado.Net Entity Framework V1.0
 
 İlk olarak Console uygulamamızda aşağıdaki gibi bir kod parçası geliştirdiğimizi düşüelim.
 

@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "WCF ile WF Entegrasyonu - 2"
 date: 2008-04-23 12:00:00

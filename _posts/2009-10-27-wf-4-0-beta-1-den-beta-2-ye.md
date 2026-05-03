@@ -38,9 +38,7 @@ using (Stream workflow1Stream = File.OpenRead("Workflow1.xaml"))
 var outputs = WorkflowInvoker.Invoke(workflow1);
 ```
 
-Önce WorkflowElement nesne örneği oluşturulmaktaydı. Sonrasında ise XAML içeriği bir Stream içerisine alınıp WorkflowXamlServices tipinin static Load metodu yardımıyla belleğe yüklenmekteydi. Sonrasında ise WorkflowInvoker tipinin static Invoke metoduna parametre olarak gönderilip, XAML içeriğinden workflow'un yürütülmeye başlanması sağlanmaktaydı. Di'li geçmiş zaman kullandığımı farketmiş olmalısınız
-
-(Gerçi WorkflowInvoker.Invoke halen mevcut.)
+Önce WorkflowElement nesne örneği oluşturulmaktaydı. Sonrasında ise XAML içeriği bir Stream içerisine alınıp WorkflowXamlServices tipinin static Load metodu yardımıyla belleğe yüklenmekteydi. Sonrasında ise WorkflowInvoker tipinin static Invoke metoduna parametre olarak gönderilip, XAML içeriğinden workflow'un yürütülmeye başlanması sağlanmaktaydı. Di'li geçmiş zaman kullandığımı farketmiş olmalısınız (Gerçi WorkflowInvoker.Invoke halen mevcut)
 
 Ancak bu kodlama Beta 2 sürümünde değişmiştir. Söz gelimi elimizde aşağıdaki uzun içeriğe sahip Hesaplama.xaml isimli bir Workflow dosyası olduğunu düşünelim.
 
@@ -103,4 +101,3 @@ Yine Workflow seyivesinde tip güvenli (Type Safe) özelliklerin tanımlanabilme
 Bunlar ve daha pek çok farklılığı veya yeniliği ilerleyen yazılarımızda veya görsel derslerimizde ele almaya çalışıyor olacağız. Tabiki Release sürüme yaklaştıkça çok şeyin değiştiğini de görebiliriz. Bu nedenle buradaki mimari modellerinde kalıcı olduğunu garanti etmemiz yanlış olacaktır. Ancak tüm bu yenilenmeler ve çalışmalar geliştiric olarak bizlerin iyiliği içindir.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

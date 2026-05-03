@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Kod Tarafından Yönetmek"
 date: 2008-03-07 12:00:00

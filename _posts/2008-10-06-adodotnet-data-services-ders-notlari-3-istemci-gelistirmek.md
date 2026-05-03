@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Ado.Net Data Services Ders Notları - 3 (İstemci Geliştirmek)"
 date: 2008-10-06 12:00:00
@@ -221,8 +221,8 @@ AdventureWorksEntities proxy = new AdventureWorksEntities(new Uri("http://localh
 
 // Take metodu ile A...Z ye sıralanmış listenin ilk 3 elemanı alınmış olunur.
 var subCategories = (from sc in proxy.ProductSubcategory
-    orderby sc.Name
-    select sc).Take<ProductSubcategory>(3);
+                     orderby sc.Name
+                     select sc).Take<ProductSubcategory>(3);
 
 // Elde edilen alt kategoriler dolaşışır
 foreach (ProductSubcategory subCategory in subCategories)
