@@ -16,8 +16,8 @@ AJAX mimarisi, Asp.Net AJAX ile.NET platformu üzerinde çok daha kolay bir şek
 Asp.Net AJAX modeli aslında iki önemli parçadan oluşur. Bu parçalardan birisi istemci betik kütüphanelerdir (Client Script Libraries). Diğer parça ise sunucu taraflı betik kontrollerdir (Server Side Script Controls). Asp.Net AJAX sayfalarından bir WCF servisine ulaşmak son derece kolaydır. Bunun için öncelikli olarak servisin adres bilgisinin ScriptManager bloğu içerisinde belirtilmesi gerekir. Bu işlemden sonra istemci tarafından sanki bir JavaScript fonksiyonu çağırılıyormuş gibi WCF servisine ait operasyonlar (Service Operations) kullanılabilir. Elbette servis tarafından sunulan EndPoint noktasının AJAX tipinden istemcilere hizmet verecek şekilde ayarlanmış olması gerekir.
 
 > AJAX istemcileri için WCF servisleri geliştirmek eğer Visual Studio 2008 gibi bir geliştirme ortamı kullanılıyorsa çok kolaydır. Nitekim bir Web uygulamasına Add New Item ile Ajax Enabled WCF Service şablonun eklenmesi yeterlidir.
->
-> ![mk243_2.gif](/assets/images/2008/mk243_2.gif)
+
+![mk243_2.gif](/assets/images/2008/mk243_2.gif)
 
 Ajax-enabled WCF Service seçeneğini kullanmadanda AJAX uyumlu WCF servisleri geliştirilebilir. Bunu yapmanın temel olarak iki farklı yolu vardır. Buna göre servisin kod tarafında yada konfigurasyon bazlı olacak şekilde geliştirilmesi mümkündür. Kod tarafında yapılan geliştirme çoğunlukla Dinamik Host Aktivasyon (Dynamic Host Activation) olarak bilinmektedir. Hangi model seçilirse seçilsin, AJAX istemcilere destek verecek EndPoint noktasına sahip olan WCF servisinin, IIS (Internet Information Services) üzerinde Host ediliyor olması şarttır.
 
@@ -68,7 +68,7 @@ IMatematik isimli servis sözleşme arayüzü (Interface) geriye double değer d
 
 Artık Service.svc dosyasının içeriği aşağıdaki gibi geliştirilebilir.
 
-```text
+```xml
 <%@ ServiceHost Language="C#" Debug="true" Service="OrtakIslemler.Matematik" Factory=System.ServiceModel.Activation.WebScriptServiceHostFactory %>
 ```
 
@@ -92,7 +92,7 @@ Artık AJAX uyumlu istemcinin yazılmasına başlanabilir. Söz konusu istemci V
 
 ![mk243_8.gif](/assets/images/2008/mk243_8.gif)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -148,7 +148,7 @@ Metod çağrısı gerçekleştirilirken ilk parametre olarak, DaireAlan metodunu
 
 Şimdi WCF servisinin Dynamic Host Activation yerine konfigurasyon bazlı olarak nasıl inşa edileceğine bakılabilir. Konfigurasyon dosyası kullanıldığında WebHttpBinding bağlayıcı tipinin (Binding Type) ve EnableWebScript davranışının (Behavior) kullanılması gerekir. Söz gelimi az önce geliştirilen WCF servis uygulamasının konfigurasyon tabanlı olacak şekilde çalıştırılması için web.config dosyasında yer alan system.serviceModel elementinin içeriğinin aşağıdaki gibi tasarlanması yeterlidir.
 
-```text
+```xml
 <system.serviceModel>
     <behaviors>
         <endpointBehaviors>
@@ -173,7 +173,7 @@ AJAX uyumlu WCF servislerinde önem arz eden konulardan biriside, istemcilerin s
 
 JSON serileştirmede de servis tarafından istemciye yayınlanan veri tiplerinin önemi büyüktür. Nitekim WCF gibi.Net tabanlı bir ortamda, CLR tiplerinin JSON karşılıklarının bilinmesinde yarar vardır. Bu amaçla öncelikli olarak aşağıdaki tablonun göz önüne alınması yararlı olabilir. Hemen hemen tüm CLR tipleri (Common Language Runtime Types) uygun JSON tiplerine dönüştürülmektedir
 
-| .Net Tipi | JSON Karşılığı |
+| **.Net Tipi** | **JSON Karşılığı** |
 | --- | --- |
 | Int16, Int32, Double, Decimal gibi sayısal tiplerin tamamı. | Number |
 | Boolean | Boolean |
@@ -343,10 +343,10 @@ Elbette Urun tipinden nesne örneklerini bünyesinde barındıran bir dizide JSO
 
 ```csharp
 Urun[] urunler ={
-                        new Urun(2,"Urun X",1.45,new DateTime(2007,12,2))
-                        ,new Urun(3,"Urun Y",2.34,new DateTime(2008,2,3))
-                        ,new Urun(4,"Z Urun",34.56,new DateTime(2006,6,7))
-                        };
+                new Urun(2,"Urun X",1.45,new DateTime(2007,12,2))
+                ,new Urun(3,"Urun Y",2.34,new DateTime(2008,2,3))
+                ,new Urun(4,"Z Urun",34.56,new DateTime(2006,6,7))
+                };
 
 DataContractJsonSerializer arraySerializer = new DataContractJsonSerializer(typeof(Urun[]));
 using (FileStream stream = new FileStream("Urunler.json", FileMode.Create, FileAccess.Write))
@@ -471,7 +471,7 @@ namespace VeriServisKutuphanesi
 
 UrunBul isimli metoda WebInvoke niteliği uygulanmıştır. Dikkat edileceği üzere ResponseFormat özelliğine WebMessageFormat.Json değeri atanmıştır. Bu atama, metodun çıktısının istemcilere JSON formatında gönderileceğini belirtmektedir. UrunBul isimli metod parametre olarak aldığı urunId değerine göre Product tablosundan çektiği satırı baz alarak Urun tipinde bir nesne örneği oluşturup döndürmektedir. Servis tarafı yine IIS (Internet Information Services) üzerinde konuşlandırılmış olarak tasarlanmalıdır. Bu amaçla WCF Service şablonunda bir uygulama açılarak devam edilebilir. Söz konusu uygulama çok doğal olarak VeriServisKutuphanesi.dll'ini referans etmelidir. Bununla birlikte Service.svc dosyasının içeriği aşağıdaki gibi tasarlanabilir.
 
-```text
+```xml
 <%@ ServiceHost Language="C#" Debug="true" Service="VeriServisKutuphanesi.VeriIslemleri" %>
 ```
 

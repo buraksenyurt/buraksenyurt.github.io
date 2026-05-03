@@ -204,13 +204,13 @@ ArabaYerelSinifi isimli sınıf (Class), ilgili arayüzü (Interface) uygulamak 
 
 Bu işlemlerin tamamlanmasının ardından Durum Makinesinin (State Machine) tasarlanmasına başlanabilir. Bu amaçla Workflow1.cs üzerinden gerekli düzenlemelerin yapılması gerekmektedir. İlk olarak arabanın sahip olabileceği tüm durumlar StateActivity bileşenleri yardımıyla iş akışı üzerine alınırlar. Başlangıçta StateActivity bileşenlerinin Name özelliklerinin değerlerinin aşağıdaki tabloda yer aldığı gibi değiştirildiğini düşünelim
 
-| **StateActivity Bileşeni <br> Name Özelliği Değeri** | **Kısa Bilgi** |
+| **StateActivity Bileşeni Name Özelliği Değeri** | **Kısa Bilgi** |
 | --- | --- |
-| MotorCalismiyor | Arabanın motorunun çalışmadığı durumu işaret eder. |
-| MotorCalisiyor | Arabanın motorunun çalışmak olduğu durumu işaret eder. |
-| ArabaIlerliyor | Arabanın ileri doğru hareket ettiği durumu işaret eder. |
-| ArabaGeriGidiyor | Arabanın geriye doğru hareket ettiği durumu işaret eder. |
-| ArabadanCikilmistir | Arabadan inildikten sonraki durumu işaret eder. |
+| **MotorCalismiyor** | Arabanın motorunun çalışmadığı durumu işaret eder. |
+| **MotorCalisiyor** | Arabanın motorunun çalışmak olduğu durumu işaret eder. |
+| **ArabaIlerliyor** | Arabanın ileri doğru hareket ettiği durumu işaret eder. |
+| **ArabaGeriGidiyor** | Arabanın geriye doğru hareket ettiği durumu işaret eder. |
+| **ArabadanCikilmistir** | Arabadan inildikten sonraki durumu işaret eder. |
 
 Bunun sonrasında iş akışına (Workflow) ait ekran görüntüsü aşağıdaki gibi olacaktır.
 

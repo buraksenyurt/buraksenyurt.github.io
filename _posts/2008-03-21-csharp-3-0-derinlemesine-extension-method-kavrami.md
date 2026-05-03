@@ -11,8 +11,9 @@ categories:
 ---
 Bilindiği üzere Language INtegrated Query (LINQ) mimarisinin uygulanışında C# 3.0 (Visual Basic 9.0) ile birlikte gelen yenilikler oldukça önemli bir yere sahiptir. Bu yeniliklerin çoğu var olan.Net Framework 2.0 yapısını bozmadan genişletebilmek amacıyla tasarlanmıştır. Genişletme Metodları (Extension Methods) bu yeniliklerden sadece bir tanesidir.(Object Initializers, Anonymous Types, Partial Methods, var anahtar kelimesi, auto-implemented property, => operatörü diğer C# 3.0 yenilikleri arasında sayılabilir) Söz konusu yeniliğin çıkış amacı genişletilemeyen tiplere yeni fonksiyonelliklerin eklenebilmesinin sağlanmasıdır. Öyleki bu sayede koleksiyonlar (Collections), DataTable, dizi (Array) gibi var olan CLR tipleri (Common Lanugage Runtime) üzerinde LINQ tarzı sorgu ifadelerinin yazılabilmesi olanaklı hale gelmiştir.
 
-> Örneğin IEnumerable arayüzüne (Interface) uygulanan genişletme metodları (Extension Methods) sayesinde T türünden koleksiyonlar üzerinde Sum, Count, Select, Average, OrderBy,Distinct gibi fonksiyonellikler uygulanabilmektedir. Bunun için System.Linq isim alanı (Namespace) altında Enumerable isimli static bir sınıf geliştirilmiş ve içerisine aşağıdaki sınıf diagramda (Class Diagram) bir kısmı görünen pek çok genişletme metodu ilave edilmiştir.
-> ![mk246_2.gif](/assets/images/2008/mk246_2.gif)
+Örneğin IEnumerable arayüzüne (Interface) uygulanan genişletme metodları (Extension Methods) sayesinde T türünden koleksiyonlar üzerinde Sum, Count, Select, Average, OrderBy,Distinct gibi fonksiyonellikler uygulanabilmektedir. Bunun için System.Linq isim alanı (Namespace) altında Enumerable isimli static bir sınıf geliştirilmiş ve içerisine aşağıdaki sınıf diagramda (Class Diagram) bir kısmı görünen pek çok genişletme metodu ilave edilmiştir.
+
+![mk246_2.gif](/assets/images/2008/mk246_2.gif)
 
 Bilindiği üzere SQL sorgularına benzeyen LINQ ifadeleri aslında arka planda metodlar yardımıyla işaret edilebilirler. Nitekim programatik ortamlar bu tarz bir yaklaşımı gerektirmektedir. Üstelik bu işlemler yapılırken var olan tiplerin içeriklerine müdahale edilmemekte, sadece ek fonksiyonellikler katılmaktadır. Bu nedenle genişletme metodları LINQ ifadelerinin kullanılabilmesinde önemli bir role sahiptir. Bu makalemizde genişletme metodlarını derinlemesine incelemeye çalışacak ve ayrıntılara bakıyor olacağız.
 
@@ -140,7 +141,7 @@ Görüldüğü gibi string, int ve Point tipinden değişkenler üzerinden yeni 
 
 Yukarıdaki IL görüntüsündende dikkat edileceği üzere GetAscii isimli metod ExtensionAttribute niteliği ile imzalanmıştır. Bu son derece anlamlıdır nitekim hem compiler hemde çalışma zamanı (Runtime) için, takip eden metodun, ilk parametre ile belirtilen tip için bir genişletme olduğu belirtilmektedir. Bir başka deyişle söz konusu nitelik derleyiciye veya çalışma zamanına, ilk parametredeki tip için bazı ek bilgiler gönderir ve yeni fonksiyonelliği kazanmasını sağlar. Buraya kadar genişletme metodlarının ne olduğundan ve nasıl uygulandığından bahsetmeye çalıştık. Genişletme metodları ile ilişkili dikkat edilmesi gereken bazı noktalar da vardır. Dilerseniz yazımızın ilerleyen kısımlarında bu konulara değinelim.
 
-1 - Genişletme metodları aşırı yüklenebilirler (Overloading)
+## Genişletme metodları aşırı yüklenebilirler (Overloading)
 
 Metodlar aynı isim altında birden fazla kez yazılabilirler (Buna şu an için verilebilecek en güzel örneklerden birisi WriteLine metodudur. Dikkat edileceği üzere bu metodun 19 farklı versiyonu bulunmaktadır.) Bu kısaca metodun aşırı yüklenmesi (Method Overloading) olarak adlandırılmaktadır. Metodun aşırı yüklenmesi sırasındaki önemli kriter, parametre tipleri ve sayılarının belirlediği imzalardır (Method Signature). Çok doğal olarak genişletme metodlarıda aşırı yüklenebilirler. Söz gelimi Merkez sınıfı içerisinde iki nokta arasındaki uzaklığı bulmak için tasarlanmış olan Uzaklik metodunun farklı bir versiyonu aşağıdaki gibi yazılabilir.
 
@@ -184,7 +185,7 @@ Merkez sınıfı Genisletmeler isim alanı altında ve üstelik farklı assembly
 
 Bir başka deyişle farklı static sınıflar içerisindede olsalar genişletme metodları aşırı yüklenebilirler.
 
-2 - CLR Tipi (Common Language Runtime Type) içerisinde tanımlı olan bir fonksiyonun aynısı extension method olarak yazılıp, örnek (Instance) tipe ait metod ezilebilir (Override) mi?
+## CLR Tipi içerisinde tanımlı bir fonksiyon extension method olarak yazılıp, örnek tipe ait metod ezilebilir mi?
 
 Bu bir anlamda orjinal CLR tiplerinin güvenliği ile ilişkilide bir konudur. Nitekim türetilmesine izin verilmeyen tiplerin asıl tasarım amaçlarından biriside içeriklerinin değiştirilmesinin engellenmesidir. Bu anlamda sealed olarak işaretlenmiş tiplerin aslında genişletme metodları yardımıyla ek fonksiyonelliklere sahip olabilmesi ve hatta aşırı yükleme yapılabilmesi orjinal tipte tanımlı metodların ezilip ezilemeyeceği vakasını ortaya çıkarmaktadır. Bu durumu analiz etmek için basit olarak String tipinde tanımlı olan bir metodun aynısını extension method olacak şekilde tanımlamaya çalışabiliriz.
 
@@ -202,7 +203,7 @@ Burada String sınıfının Insert metodunun aynısı extension metod olarak yaz
 
 Buna göre derleyici açısından nesne örneği (Object Instance) metodunun daha öncelikli olduğu ortadadır. Bir başka deyişle genişletme metodları yardımıyla orjinal nesne örneğine ait metodlar ezilemezler.
 
-3 - Bir tip içerisinde tanımlı özellik yada alan ile aynı isimde bir extension metod tanımlanırsa.
+## Bir tip içerisinde tanımlı özellik ya da alan ile aynı isimde bir extension metod tanımlanırsa
 
 Bu durumu analiz edebilmek için aşağıdaki kod parçası göz önüne alınabilir.
 
@@ -226,7 +227,7 @@ Burada tanımlanan Materyal isim sınıf sealed olarak imzalanmıştır ve içer
 
 Dikkat edilecek olursa sadece Katsayi isimli nesne alanı (Field) görünmektedir. Fakat burada oldukça enteresan bir durumda söz konusudur. Eğer kodda ısrar edilir ve Katsayi genişletme metodu kullanılmak istenirse derleme zamanı hatası alınmadığı görülür. Hatta kod yürütüldüğünde, genişletme metodunun çalıştığı görülecektir. Bu durum aslında genişletme metodlarının isimlendirilmesinin önemli olduğunu göstermektedir.
 
-4 - Extension metodlar dilden bağımsızdır.
+## Extension metodlar dilden bağımsızdır
 
 Genişletme metodları daha öncedende bahsedildiği gibi CIL (Common Intermediate Language) tarafında Extension niteliği ile imzalanırlar. Bu sebepten dolayıda.Net destekli diller tarafından kullanılabilirler. Söz gelimi C# kodlaması ile geliştirilmiş genişletme metodları, Visual Basic ile yazılmakta olan bir proje içerisinde kullanılabilir. Elbette tam tersi durumda geçerlidir. Konuyu daha kolay analiz etmek için Merkez isimli sınıfı içeren C# tabanlı kütüphaneyi basit bir Visual Basic Console uygulamasında aşağıdaki gibi deneyebiliriz.
 
@@ -269,7 +270,7 @@ Bu işlemin ardından uygulama çalıştırılırsa genişletme metodlarının b
 
 ![mk246_12.gif](/assets/images/2008/mk246_12.gif)
 
-5 - Object tipinin genişletilmesi.
+## Object tipinin genişletilmesi
 
 Object tipide genişletme metodlarına sahip olabilir..Net Framework içerisinde yer alan tipler object türevli olduklarından çok doğal olarak tanımlanan genişletme metodlarını kullanabilirler. Bu durumu test edebilmek için sembolik olarak aşağıdaki genişletme metodunu eklediğimizi düşünelim.
 
@@ -299,13 +300,19 @@ Console.WriteLine(firmaAdi.GetTypeName());
 
 ![mk246_15.gif](/assets/images/2008/mk246_15.gif)
 
-> Visual Basic 9.0' da özellikle Object tipinden bir değişkene atama yapıldığında, genişletme metodlarını çağırmak çalışma zamanı istisnasına (Run Time Exception) neden olmaktadır.
-> Dim obj As Object = 3.14F
-> Console.WriteLine (obj.GetTypeName ())
-> Bu kullanım çalışma zamanında MissingMemberException istisnasının (Exception) fırlatılmasına neden olmaktadır. Sorun Object tipinin Late-Bound olmasından kaynaklanmaktadır. Bunun çözmek için type inference kavramından (C# karşılığı var anahtar kelimesi) yararlanılabilir. (Dim obj=3.14F)
-> Ne varki bu durum C# tarafında geçerli değildir. Bu nedenle C# tarafında aşağıdaki kod parçası sorunsuz olarak çalışmaktadır.
-> Object obj = 3.14f;
-> Console.WriteLine (obj.GetTypeName ());
+Visual Basic 9.0' da özellikle Object tipinden bir değişkene atama yapıldığında, genişletme metodlarını çağırmak çalışma zamanı istisnasına (Run Time Exception) neden olmaktadır.
+
+```visualbasic
+Dim obj As Object = 3.14F
+Console.WriteLine (obj.GetTypeName ())
+```
+
+Bu kullanım çalışma zamanında MissingMemberException istisnasının (Exception) fırlatılmasına neden olmaktadır. Sorun Object tipinin Late-Bound olmasından kaynaklanmaktadır. Bunun çözmek için type inference kavramından (C# karşılığı var anahtar kelimesi) yararlanılabilir. (Dim obj=3.14F) Ne varki bu durum C# tarafında geçerli değildir. Bu nedenle C# tarafında aşağıdaki kod parçası sorunsuz olarak çalışmaktadır.
+
+```visualbasic
+Object obj = 3.14f;
+Console.WriteLine (obj.GetTypeName ());
+```
 
 Object tipi için genişletme metodları var anahtar kelimesi ile birliktede kullanılabilirler. Aşağıdaki kod parçası bu durumu göstermektedir. Bu kod içerisinde var anahtar kelimesi ile tanımlanan nesne isimli değişken eşitliğin sol tarafı göz önüne alındığında float (Single yapısı-struct) tipindendir. Bu sebepten nesne üzerinden çağırılan GetTypeName isimli genişletme metodu geriye Single değerini döndürecektir.
 
@@ -314,7 +321,7 @@ var nesne = 3.14f;
 Console.WriteLine(nesne.GetTypeName());
 ```
 
-6 -.Net Framework 2.0 hedefli bir uygulama içerisinde extension metodlar kullanılabilir mi?
+## .Net Framework 2.0 hedefli bir uygulama içerisinde extension metodlar kullanılabilir mi?
 
 Extension niteliği System.Core.dll assembly'içerisinde tanımlanmıştır ve System.Runtime.CompilerServices isim alanında bulunmaktadır. System.Core.dll'i.Net Framework 3.5 ile gelmekte olsada.Net Framework 2.0 motorunu kullanarak çalışmaktadır. Bu noktada.Net 2.0 ile geliştirilmiş bir uygulamada extension metod kullanımı söz konusu olabilir mi? Akla ilk gelen yöntem System.Core.dll assembly'ının ilgili projeye referans edilmesidir. Ancak Visual Studio 2008 içerisinde bu denendiğinde.Net 2.0 tabanlı projeye söz konusu referansların eklenemediği görülecektir.
 
@@ -372,7 +379,7 @@ Uygulama çalıştırıldığında genişletme metodlarının işe yaradığı g
 
 > Tabi bu vaka Visual Studio 2008 üzerinde.Net 2.0 tabanlı bir proje şablonu için gerçeklenmektedir. Nitekim derleme aşamasında sadece C# 3.0 derleyicisi genişletme metodunu değerlendirebilmektedir. Bir başka deyişle Visual Studio 2005 ortamında aynı örnek çalıştırılamayacaktır.
 
-7 - Arayüzlere genişletme metodları eklenebilir.
+## Arayüzlere genişletme metodları eklenebilir
 
 LINQ (LanguageINtegratedQuery) mimarisinin temelinde yatan genişletme metodlarının çoğu arayüzlere (Interface) uygulanmaktadır. Böylece, genişletme metodlarının uygulandığı arayüz tiplerinden türeyen türlerin tamamı, söz konusu ek fonksiyonellikleri kullanabilir duruma gelmektedir. Bu gerçektende önemli bir yetenektir. Çok doğal olarak geliştirici tarafından yazılmış olan yada Framework içerisinde yer alan arayüz tiplerine genişletme metodları eklenebilir. Aşağıdaki örnek kod parçasında bu duruma örnek olacak bir metod içeriği yer almaktadır.
 

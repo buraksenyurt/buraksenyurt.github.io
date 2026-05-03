@@ -39,17 +39,17 @@ WS-ReliableMessaging, mesajların servis tarafında gönderildikleri sırada ele
 
 WCF mimarisinde aslında söz konusu protokolün sağlanması için gereken teş şey kaynak ve hedef uygulamaların aynı zaman dilimi içerisinde çalışıyor olmalarıdır. WCF sistemi içerisinde yer alan bağlayıcılardan basicHttpBinding, netNamedPipeBinding, netPeerTcpBinding tipleri güvenilir oturumları (Reliable Sessions) desteklememektedir. Bununla birlikte wsDualHttpBinding tipi için güvenilir oturumlar kaldırılamaz. MSMQ desteği veren bağlayıcılardan olan msmqIntegrationBinding ve netMsmqBinding tipleri ise kendi güvenilir oturum şartnamelerini uygularken WS-ReliableSession standardını kullanmazlar. Aslında konu ile ilişkili olarak aşağıdaki tablonun göz önüne alınması önemlidir
 
-| Bağlayıcı Tip <br> (Binding Type) | Güvenilir <br> Oturum <br> Desteği | Varsayılan <br> Güvenilir <br> Oturum Hali | Sıralı <br> Mesaj <br> Desteği | Varsayılan <br> Sıralı <br> Mesaj <br> Desteği |
+| **Bağlayıcı Tip (Binding Type)** | **Güvenilir Oturum Desteği** | **Varsayılan Güvenilir Oturum Hali** | **Sıralı Mesaj Desteği** | **Varsayılan Sıralı Mesaj Desteği** |
 | --- | --- | --- | --- | --- |
-| netNamedPipeBinding | Yok | X | Var | X |
-| netTcpBinding | Var | Açık | Var | Kapalı |
-| netPeerTcpBinding | X | X | X | X |
-| wsDualHttpBinding | Var | Açık | Var | Açık |
-| wsHttpBinding | Var | Kapalı | Var | Açık |
-| wsFederationHttpBinding | Var | Kapalı | Var | Açık |
-| basicHttpBinding | X | X | X | X |
-| netMsmqBinding(1) | X | X | X | X |
-| msmqIntegrationBinding(2) | X | X | X | X |
+| **netNamedPipeBinding** | Yok | X | Var | X |
+| **netTcpBinding** | Var | Açık | Var | Kapalı |
+| **netPeerTcpBinding** | X | X | X | X |
+| **wsDualHttpBinding** | Var | Açık | Var | Açık |
+| **wsHttpBinding** | Var | Kapalı | Var | Açık |
+| **wsFederationHttpBinding** | Var | Kapalı | Var | Açık |
+| **basicHttpBinding** | X | X | X | X |
+| **netMsmqBinding(1)** | X | X | X | X |
+| **msmqIntegrationBinding(2)** | X | X | X | X |
 
 - 1 Bu bağlayıcı standart Web Servisi(asmx) modelini sunar. ve varsayılan olarak güvenilir oturumlar bulunmamaktadır.
 - 2 MSMQ tabanlı bir kuyruk sistemi kullanırlar.
@@ -183,9 +183,7 @@ svcutil FabrikaLib.dll
 svcutil www.bsenyurt.com.FabrikaLib.UretimServisi.wsdl.xsd /out:UretimServisi.cs
 ```
 
-Bu işlemin ardından proxy sınıfı ve konfigurasyon dosyası, istemci uygulamaya taşınır.
-
-İstemci tarafındaki kodlar ve konfigurasyon içeriği ise aşağıdaki gibidir.
+Bu işlemin ardından proxy sınıfı ve konfigurasyon dosyası, istemci uygulamaya taşınır. İstemci tarafındaki kodlar ve konfigurasyon içeriği ise aşağıdaki gibidir. 
 
 İstemci uygulaması kodları;
 

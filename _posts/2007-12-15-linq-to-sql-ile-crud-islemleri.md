@@ -33,8 +33,7 @@ AdventureDataContext adwContext = new AdventureDataContext();
 
 ProductCategory tools = new ProductCategory()
 {
-    Name = "Tools"
-                                                                            ,
+    Name = "Tools",
     ModifiedDate = new DateTime(2001, 1, 1)
 };
 
@@ -89,13 +88,13 @@ Bu çalışan sorgu (Query) basit olarak üretilen varlık nesnesinin (Entity Ob
 
 ```csharp
 adwContext.ProductCategories.InsertAllOnSubmit(
-                                                            new List<ProductCategory>()
-                                                                {
-                                                                    new ProductCategory(){Name="Kategori X", ModifiedDate=new DateTime(2006,12,3),rowguid=Guid.NewGuid()}
-                                                                    ,new ProductCategory(){Name="Kategori Y",ModifiedDate=new DateTime(2006,5,6),rowguid=Guid.NewGuid()}
-                                                                    ,new ProductCategory(){Name="Kategori Z",ModifiedDate=new DateTime(2007,1,4),rowguid=Guid.NewGuid()}
-                                                                }
-                                                            );
+    new List<ProductCategory>()
+        {
+            new ProductCategory(){Name="Kategori X", ModifiedDate=new DateTime(2006,12,3),rowguid=Guid.NewGuid()}
+            ,new ProductCategory(){Name="Kategori Y",ModifiedDate=new DateTime(2006,5,6),rowguid=Guid.NewGuid()}
+            ,new ProductCategory(){Name="Kategori Z",ModifiedDate=new DateTime(2007,1,4),rowguid=Guid.NewGuid()}
+        }
+    );
 
 var eklenenler = adwContext.GetChangeSet().Inserts;
 
@@ -234,8 +233,9 @@ Burada görüldüğü gibi prdNew nesne örneğinin ListPrice değeri 3419.99 ik
 
 Ancak bu teknik yardımıyla güncellenmiş olan tüm satırların geri alınması oldukça zordur. Nitekim Table tipinin yapıcı metodunun (Constructor) kullanılamadığı, bu yüzden new ile üretilemediği ortadadır. Ayrıca var olan DataContext nesnesinin Table tipinden özellikleri ReadOnly'dir. Bir başka deyişle bu özelliklere doğrudan atama da yapılamamaktadır. Sonuç olarak DataContext tipinin yeniden örneklenmesi sorunu çözmek için yeterli olacaktır.
 
-> Table generic tipi üzerinden kullanılan GetModifiedMembers metodu ile, parametre olarak verilen varlık (entity) nesne örneğinin değişikliğe uğrayan değerlerinin orjinal (OriginalValue) ve anlık (CurrentValue) hallerinin elde edilmesi sağlanabilmektedir. GetModifiedMembers metodu geriye ModifiedMemberInfo tipinden bir dizi döndürmektedir. Aşağıdaki şekilde örnek olarak güncellenen satırlardan ilki için orjinal ve güncel ListPrice değerlerinin elde edilişi gösterilmektedir.
-> ![mk235_17.gif](/assets/images/2007/mk235_17.gif)
+Table generic tipi üzerinden kullanılan GetModifiedMembers metodu ile, parametre olarak verilen varlık (entity) nesne örneğinin değişikliğe uğrayan değerlerinin orjinal (OriginalValue) ve anlık (CurrentValue) hallerinin elde edilmesi sağlanabilmektedir. GetModifiedMembers metodu geriye ModifiedMemberInfo tipinden bir dizi döndürmektedir. Aşağıdaki şekilde örnek olarak güncellenen satırlardan ilki için orjinal ve güncel ListPrice değerlerinin elde edilişi gösterilmektedir.
+
+![mk235_17.gif](/assets/images/2007/mk235_17.gif)
 
 Normal şartlarda SubmitChanges metodunun çağırılmasından sonra güncelleme, ekleme ve silme işlemleri otomatik olarak transaction içerisinde çalıştırılırlar. Bir başka deyişle SubmitChanges metodu, veritabanı üzerinde yapılacak işlemlerin, biz söylemeden otomatik olarak bir transaction içerisinde olmasını sağlamaktadır. Söz gelimi aşağıdaki kod parçasını ele alalım. Bu kod parçasında güncelleme (Update) ve yeni ürün ekleme (Insert) işlemleri söz konusudur.
 
@@ -250,26 +250,19 @@ foreach (Product prd in guncellenecekler)
 
 Product newProduct = new Product()
 {
-    Name = "Yeni Urun"
-        ,
+    Name = "Yeni Urun",
     ProductSubcategoryID = 1,
-    Color = "Red"
-        ,
+    Color = "Red",
     Class = "M",
-    ListPrice = 100
-        ,
+    ListPrice = 100,
     ProductNumber = "PRD-1204",
-    ReorderPoint = 10
-        ,
+    ReorderPoint = 10,
     StandardCost = 90,
-    ProductModelID = 123
-        ,
+    ProductModelID = 123,
     SafetyStockLevel = 45,
-    SellStartDate = new DateTime(2007, 1, 1)
-        ,
+    SellStartDate = new DateTime(2007, 1, 1),
     SellEndDate = new DateTime(2008, 1, 1),
-    DiscontinuedDate = new DateTime(2006, 6, 6)
-        ,
+    DiscontinuedDate = new DateTime(2006, 6, 6),
     ModifiedDate = DateTime.Now
 };
 
@@ -296,26 +289,19 @@ adwContext.SubmitChanges();
 
 Product newProduct = new Product()
 {
-    Name = "Yeni Urun"
-        ,
+    Name = "Yeni Urun",
     ProductSubcategoryID = 1,
-    Color = "Red"
-        ,
+    Color = "Red",
     Class = "M",
-    ListPrice = 100
-        ,
+    ListPrice = 100,
     ProductNumber = "PRD-1204",
-    ReorderPoint = 10
-        ,
+    ReorderPoint = 10,
     StandardCost = 90,
-    ProductModelID = 123
-        ,
+    ProductModelID = 123,
     SafetyStockLevel = 45,
-    SellStartDate = new DateTime(2007, 1, 1)
-        ,
+    SellStartDate = new DateTime(2007, 1, 1),
     SellEndDate = new DateTime(2008, 1, 1),
-    DiscontinuedDate = new DateTime(2006, 6, 6)
-        ,
+    DiscontinuedDate = new DateTime(2006, 6, 6),
     ModifiedDate = DateTime.Now
 };
 
@@ -345,26 +331,19 @@ using (TransactionScope tScope = new TransactionScope())
 
     Product newProduct = new Product()
     {
-        Name = "Yeni Urun"
-            ,
+        Name = "Yeni Urun",
         ProductSubcategoryID = 1,
-        Color = "Red"
-            ,
+        Color = "Red",
         Class = "M",
-        ListPrice = 100
-            ,
+        ListPrice = 100,
         ProductNumber = "PRD-1204",
-        ReorderPoint = 10
-            ,
+        ReorderPoint = 10,
         StandardCost = 90,
-        ProductModelID = 123
-            ,
+        ProductModelID = 123,
         SafetyStockLevel = 45,
-        SellStartDate = new DateTime(2007, 1, 1)
-            ,
+        SellStartDate = new DateTime(2007, 1, 1),
         SellEndDate = new DateTime(2008, 1, 1),
-        DiscontinuedDate = new DateTime(2006, 6, 6)
-            ,
+        DiscontinuedDate = new DateTime(2006, 6, 6),
         ModifiedDate = DateTime.Now
     };
 
@@ -400,26 +379,19 @@ try
 
     Product newProduct = new Product()
     {
-        Name = "Yeni Urun"
-            ,
+        Name = "Yeni Urun",
         ProductSubcategoryID = 1,
-        Color = "Red"
-            ,
+        Color = "Red",
         Class = "M",
-        ListPrice = 100
-            ,
+        ListPrice = 100,
         ProductNumber = "PRD-1204",
-        ReorderPoint = 10
-            ,
+        ReorderPoint = 10,
         StandardCost = 90,
-        ProductModelID = 123
-            ,
+        ProductModelID = 123,
         SafetyStockLevel = 45,
-        SellStartDate = new DateTime(2007, 1, 1)
-            ,
+        SellStartDate = new DateTime(2007, 1, 1),
         SellEndDate = new DateTime(2008, 1, 1),
-        DiscontinuedDate = new DateTime(2006, 6, 6)
-            ,
+        DiscontinuedDate = new DateTime(2006, 6, 6),
         ModifiedDate = DateTime.Now
     };
 

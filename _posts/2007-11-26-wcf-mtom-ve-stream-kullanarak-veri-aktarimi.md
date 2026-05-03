@@ -26,17 +26,17 @@ WCF (Windows Communication Foundation) mimarisinde servis tarafındaki metodlar 
 
 Windows Communication Foundation mimarisinde HTTP bazlı olan bağlayıcı tiplerin tamamı MTOM tipinde mesajlaşmayı desteklemektedir. Ne varki TCP, MSMQ gibi protokoller üzerinde çalışan bağlayıcı tiplerin (Binding Type) bu tip bir desteği yoktur. Bunun en büyük sebebi ise, bu protokollerin ikili (binary) formattaki veriler için kendi standartlarını kullanıyor olmalarıdır. Ancak daha öncedende değinildiği gibi, özel bağlayıcı tipler (Custom Binding Types) geliştirilerek TCP gibi bir protokol üzerinde MTOM kullanımı teorik olarak sağlanabilmektedir. Aşağıdaki tabloda MTOM tipinde mesajlaşmaya destek veren (vermeyen) bağlayıcı tipler işaret edilmektedir
 
-| **Bağlayıcı Tip <br> (Binding Types)** | **Mesaj Kodlama/Çözümleme Tipleri <br> (Message Encoding/Decoding Types)** |
+| **Bağlayıcı Tip (Binding Types)** | **Mesaj Kodlama/Çözümleme Tipleri (Message Encoding/Decoding Types)** |
 | --- | --- |
-| BasicHttpBinding | Text / MTOM |
-| NetTcpBinding | Binary |
-| NetPeerTcpBinding | Binary |
-| NetNamedPipeBinding | Binary |
-| WSHttpBinding | Text / MTOM |
-| WSFederationBinding | Text / MTOM |
-| NetMsmqBinding | Binary |
-| MsmqIntegrationBinding | Binary |
-| WSDualHttpBinding | Text / MTOM |
+| **BasicHttpBinding** | Text / MTOM |
+| **NetTcpBinding** | Binary |
+| **NetPeerTcpBinding** | Binary |
+| **NetNamedPipeBinding** | Binary |
+| **WSHttpBinding** | Text / MTOM |
+| **WSFederationBinding** | Text / MTOM |
+| **NetMsmqBinding** | Binary |
+| **MsmqIntegrationBinding** | Binary |
+| **WSDualHttpBinding** | Text / MTOM |
 
 Konuyu daha iyi anlayabilmek için örnek bir senaryo üzerinden hareket etmekte fayda vardır. Bu amaçla AdventureWorks veritabanında yer alan ürünlere ait fotoğrafların tutulduğu ProductPhoto tablosundan yararlanılabilir. Söz konusu tabloda varBinary (MAX) SQL tipinden LargePhoto isimli bir alan yer almaktadır. İlerleyen örnekte LargePhoto isimli alanın içeriğinin MTOM ve Stream bazlı olacak şekilde istemci tarafına aktarılması üzerinde durulacaktır. Senaryoda göz önüne alınacak tablolar aşağıdaki veritabanı diagramında (Database Diagram) olduğu gibidir. Öncelikli olarak en azından istemciye ürün adı ve fotoğraf numarası bilgilerinin gönderilmesinde yarar vardır. Sonrasında istemcinin seçtiği ürüne ait fotoğrafın binary içeriği servis tarafından geriye doğru aktarılacaktır.
 
@@ -282,7 +282,7 @@ Gelelim istemci tarafına. İstemci program basit bir Windows uygulaması olarak
 
 ![mk232_8.gif](/assets/images/2007/mk232_8.gif)
 
-(Servis tarafına ait Proxy sınıfının oluşturulması için Add Service Reference seçeneği kullanılmaldırı.)
+(Servis tarafına ait Proxy sınıfının oluşturulması için Add Service Reference seçeneği kullanılmalıdır)
 
 Add Service Reference sonrası otomatik olarak bir App.config dosyası oluşturulacak ve içerisine başlangıç değerleri atanacaktır.
 
@@ -341,7 +341,7 @@ Bu değişikliğin arkasından ListBox üzerinden SelectedItem özelliği ile el
 
 ![mk232_10.gif](/assets/images/2007/mk232_10.gif)
 
-Gelelim asıl konumuza. Bakalım log dosyalarında ne gibi sonuçlara varacağız. Öncelikli olarak Service Trace Viewer yardımıyla webtracelog.svc dosyasının açılması gerekmektedir. Bu ana kadar yapılanların tek amacı söz konusu dosya içerisinde, istemciye gönderilen mesaj formatının text tabanlı olduğunun ispat edilmesidir. İlk olarak Activity kısmından Process action "http://www.bsenyurt.com/ProductPhotoService/ Photox0020Service/GetPhotoByProductId bölümü seçilir. Bu işlemin ardından A message was written Description bölümüne bakılırsa Encoder isimli özelliğin değerinin aşağıdaki ekran görüntüsünde olduğu gibi text/xml; charset=utf-8 olduğu görülür.
+Gelelim asıl konumuza. Bakalım log dosyalarında ne gibi sonuçlara varacağız. Öncelikli olarak Service Trace Viewer yardımıyla webtracelog.svc dosyasının açılması gerekmektedir. Bu ana kadar yapılanların tek amacı söz konusu dosya içerisinde, istemciye gönderilen mesaj formatının text tabanlı olduğunun ispat edilmesidir. İlk olarak Activity kısmından Process action `http://www.bsenyurt.com/ProductPhotoService/Photox0020Service/GetPhotoByProductId` bölümü seçilir. Bu işlemin ardından A message was written Description bölümüne bakılırsa Encoder isimli özelliğin değerinin aşağıdaki ekran görüntüsünde olduğu gibi text/xml; charset=utf-8 olduğu görülür.
 
 ![mk232_11.gif](/assets/images/2007/mk232_11.gif)
 
@@ -375,10 +375,10 @@ WCF (Windows Communication Foundation) içerisinde yer alan basicHttpBinding, ne
 
 | **TransferMode Değeri** | **Açıklama** |
 | --- | --- |
-| Streamed | Serivise gelen ve servisten çıkan mesajlar stream üzerinden hareket ederler. |
-| StreamedRequest | Sadece servis tarafına gelen taleplere(Request) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafındaki metodun parametresinin tek ve Stream sınıfından türeyen bir şekilde tasarlanmış olması şarttır. |
-| StreamedResponse | Sadece servis tarafından istemciye geri dönen cevaplara(Response) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafında yer alan operasyonun geriye Stream sınıfından türemiş bir tip döndürmesi veya bunu out anahtar sözcüğü ile metod parametrelerinde yapması şarttır. (Burada Stream yerine IXmlSerializable arayüzünü-interface- uyarlamış bir tipin döndürülmeside sağlanabilir.) |
-| Buffered | Mesajlar stream üzerinden hareket etmezler. Hangi taraf olursa olsun, ikili(binary) içeriğin tamamı gönderilmeye hazır hale geldiğinde karşı tarafa aktarılırlar. Karşı tarafa ulaştığında ise tamamı tampona alındıktan sonra uygulamaya işlenmek üzere aktarılırlar. TransferMode özelliğinin varsayılan(Default) değeri Buffered olarak belirlenmiştir. |
+| **Streamed** | Serivise gelen ve servisten çıkan mesajlar stream üzerinden hareket ederler. |
+| **StreamedRequest** | Sadece servis tarafına gelen taleplere(Request) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafındaki metodun parametresinin tek ve Stream sınıfından türeyen bir şekilde tasarlanmış olması şarttır. |
+| **StreamedResponse** | Sadece servis tarafından istemciye geri dönen cevaplara(Response) ait mesajların stream üzerinden hareket etmesine izin verilir. Bu mod seçildiğinde servis tarafında yer alan operasyonun geriye Stream sınıfından türemiş bir tip döndürmesi veya bunu out anahtar sözcüğü ile metod parametrelerinde yapması şarttır. (Burada Stream yerine IXmlSerializable arayüzünü-interface- uyarlamış bir tipin döndürülmeside sağlanabilir.) |
+| **Buffered** | Mesajlar stream üzerinden hareket etmezler. Hangi taraf olursa olsun, ikili(binary) içeriğin tamamı gönderilmeye hazır hale geldiğinde karşı tarafa aktarılırlar. Karşı tarafa ulaştığında ise tamamı tampona alındıktan sonra uygulamaya işlenmek üzere aktarılırlar. TransferMode özelliğinin varsayılan(Default) değeri Buffered olarak belirlenmiştir. |
 
 Her ne kadar stream üzerinden mesaj göndermek avantajlı gözüksede dikkat edilmesi gereken bazı hususlarda vardır. Herşeyden önce Stream kullanılması halinde mesaj seviyesinde güvenlik (Message Level Security) tesis edilememektedir. Bu nedenle iletişim seviyesinde güvenlik (Transport Level Security) kullanılmalıdır. Örneğin HTTPS kullanımı HTTP üzerinden kullanılacak Stream'ler için geçerlidir. Bunların dışında Stream kullanımı içinde bir mesaj alma sınırı vardır. Biraz önceki örnekte olduğu gibi belirlenen boyutun dışına çıkıldığında çalışma zamanı istisnaları alınabilir. Ancak en önemli kısıtlardan birisi güvenilir oturum (Reliable Session) açmanın mümkün olmayışıdır. Nitekim güvenilir oturumlar mesajların tamponlanması ve sıralanması ilkelerine göre çalışmaktadır.
 

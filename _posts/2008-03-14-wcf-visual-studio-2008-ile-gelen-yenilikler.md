@@ -114,7 +114,7 @@ Topla metoduna gelen double tipinden dizinin içerisindeki sayıların toplamın
 </configuration>
 ```
 
-Konfigurasyon dosyasındanda görüldüğü gibi servis kütüphanesi Tcp (NetTcpBinding) ve WsHttp (WsHttpBinding) bazlı iki farklı EndPoint sunmaktadır. Bununla birlikte http://localhost:45000 adresi üzerinden Metadata yayınlamasıda yapılmaktadır. Metadata bilgisinin çekilebiliyor olması, istemciler için gerekli olan Proxy sınıfının üretilmesinde önemli bir yere sahiptir.
+Konfigurasyon dosyasındanda görüldüğü gibi servis kütüphanesi Tcp (NetTcpBinding) ve WsHttp (WsHttpBinding) bazlı iki farklı EndPoint sunmaktadır. Bununla birlikte `http://localhost:45000` adresi üzerinden Metadata yayınlamasıda yapılmaktadır. Metadata bilgisinin çekilebiliyor olması, istemciler için gerekli olan Proxy sınıfının üretilmesinde önemli bir yere sahiptir.
 
 WcfSvcHost aracının kullanım amacı bir servis kütüphanesinde tanımlanan hizmetlerin Host edilmesini sağlayacak otomatik bir Windows uygulamasını başlatmaktır. Bu uygulama çalıştırıldığında, parametre olarak verilen servis kütüphanesi ve konfigurasyon dosyasını kullanarak Host işlemini gerçekleştirir. Aynı zamanda konfigurasyon dosyasında tanımlanan EndPoint noktalarında tanımlanan servis sözleşmelerine (Service Contract) ait metadata bilgilerinin yayınlanmasınıda sağlayabilir. Basit olarak yukarıdaki örnek kütüphaneyi Host etmek üzere WcfSvcHost aracı komut satırından aşağıdaki gibi kullanılabilir.
 
@@ -132,7 +132,7 @@ Bir başka deyişle WcfSvcHost uygulaması arka planda Exit seçeneği ile çık
 
 Dikkat edileceği üzere yayınlanan servisin adı, durumu ve Metadata içeriğinin alınabileceği URL adresi bilgileride gösterilmektedir. Servis uygulaması başarılı bir şekilde çalıştırıldıktan sonra istenirse WcfTestClient aracı yardımıyla istemcilerin denenmesine başlanabilir. WcfTestClient aracı aldığı parametrelere göre bir Windows uygulaması başlatır ve servisten aldığı metadata bilgilerine göre kullanılabilecek hizmetleri ve metodları gösterir. En basit kullanımında servis kütüphanesinde belirtilen base address bilgisi aşağıdaki gibi parametre olarak belirtilir.
 
-WcfTestClient http://localhost:45000/
+WcfTestClient `http://localhost:45000/`
 
 ![mk245_5.gif](/assets/images/2008/mk245_5.gif)
 
@@ -154,8 +154,10 @@ WcfTestClient aracının kullanımı sırasında eğer Host uygulama (WcfSvcHost
 
 WcfSvcHost uygulamasının parametrik yapısı kullanılarak istenirse aynı anda WcfTestClient uygulamasınında çalıştırılması sağlanabilir ki Visual Studio 2008 ortamının servis kütüphanesinin çalıştırılması sonrası gerçekleştirilen işlemde budur. Bunun için WcfSvcHost aracını aşağıdaki gibi kullanmak yeterlidir.
 
+```bash
 WcfSvcHost /service:GenelIslemler.dll /config:GenelIslemler.dll.config
 /client:WcfTestClient /clientargs:http://localhost:45000/
+```
 
 ![mk245_10.gif](/assets/images/2008/mk245_10.gif)
 
@@ -327,7 +329,7 @@ WCF servisleri, Workflow Foundation içerisindede zaman zaman kullanılmaktadır
 
 Buraya kadar anlatılanlara göre Visual Studio 2008 ile birlikte gelen WCF yenilikler aşağıdaki tablo ile özetlenebilirler
 
-| Özellik | Açıklama |
+| **Özellik** | **Açıklama** |
 | --- | --- |
 | **WcfSvcHost** | Herhangibir Host uygulaması yazılmasına gerek kalmadan WCF servis kütüphaneleri test amaçlı olarak yayınlanabilmektedir. Visual Studio 2008 varsayılan olarak WCF Servis kütüphaneleri için bu aracı kullanmaktadır. |
 | **WcfTestClient** | Yayınlanan servislerin test edilmesi için kullanılan Windows uygulamasıdır. Servise ait operasyonların anında görülmesi, kullanılması, talep(Request) ve cevap(Response) paketlerinin data veya XML formatında okunabilmesi, farklı EndPoint noktalarının test edilebilmesi gibi imkanlar sunmaktadır. Visual Studio 2008 varsayılan olarak WCF Servis kütüphanelerinin çalıştırılmasında WcfSvcHost uygulamasından sonra bu programı çalıştırırak anında testin yapılabilmesini sağlamaktadır. |

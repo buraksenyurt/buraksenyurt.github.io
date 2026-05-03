@@ -54,8 +54,8 @@ Gelelim arka tarafta çalıştırılan SQL sorgu cümlelerine. SQL Server Profil
 
 ```sql
 exec sp_executesql N'SELECT COUNT(*) AS [value]
-                                    FROM [Production].[Product] AS [t0]
-                                        WHERE [t0].[Class] = @p0',N'@p0 nvarchar(1)',@p0=N'M'
+    FROM [Production].[Product] AS [t0]
+        WHERE [t0].[Class] = @p0',N'@p0 nvarchar(1)',@p0=N'M'
 ```
 
 Burada dikkat edilmesi gereken noktalardan birisi Count () ifadesidir. Normal şartlar altında tavsiye edilen yöntemlerden birisi Count (ProductID) tarzında bir kullanım yapılması yönündedir. Bu tarz bir kullanımın performans yönünde avantaj sağladığı bilinmektedir. Nitekim LINQ tarafından gelen ifadeye göre Count (*) şeklinde bir SQL fonksiyonu kullanılmıştır. Diğer tarafan LINQ sorgusunun aşağıdaki gibi değiştirilmesi düşünülebilir.
@@ -150,8 +150,7 @@ var allProducts =
     where prd.Class == null && prd.ProductNumber.Contains("PA")
     select new
     {
-        prd.Name
-            ,
+        prd.Name,
         prd.ProductNumber
     };
 
@@ -181,8 +180,8 @@ LINQ to SQL tarafında kullanılan ilginç fonksiyonelliklerden ikiside Skip ve 
 
 ```csharp
 var tenCtg = (from cat in adw.ProductSubcategories select cat)
-                        .Skip<ProductSubcategory>(5)
-                            .Take<ProductSubcategory>(10);
+            .Skip<ProductSubcategory>(5)
+                .Take<ProductSubcategory>(10);
 
 foreach (ProductSubcategory c in tenCtg)
 {
@@ -215,8 +214,8 @@ Dikkat edileceği üzere RowNumber fonksiyonu burada önemli bir rolü üstlenme
 
 ```csharp
 var tenCtg = (from cat in adw.ProductSubcategories select cat)
-                        .Skip<ProductSubcategory>(5)
-                            .Take<ProductSubcategory>(10);
+            .Skip<ProductSubcategory>(5)
+                .Take<ProductSubcategory>(10);
 
 foreach (ProductSubcategory c in tenCtg)
 {
@@ -246,12 +245,9 @@ var allList =
     where p.Class == null && p.ListPrice > 100
     select new
     {
-        CategoryName = pc.Name
-        ,
-        SubCategoryName = psc.Name
-        ,
-        ProductNumber = p.ProductNumber
-        ,
+        CategoryName = pc.Name,
+        SubCategoryName = psc.Name,
+        ProductNumber = p.ProductNumber,
         ProductName = p.Name
     };
 
@@ -285,14 +281,10 @@ var result =
     where p.SellStartDate.Month >= 6 && p.SellStartDate.Month <= 12
     select new
     {
-        p.ProductNumber
-                    ,
-        p.Name
-                    ,
-        p.ListPrice
-                    ,
-        p.SellStartDate
-                    ,
+        p.ProductNumber,
+        p.Name,
+        p.ListPrice,
+        p.SellStartDate,
         p.SellEndDate
     };
 
@@ -323,7 +315,7 @@ Bazı durumlarda sorgulanan verinin string bazlı olması halinde karakter taban
 
 ```csharp
 Product result = (from p in adw.Products select p)
-                            .First<Product>(prd => prd.Name[0] == 'C');
+                    .First<Product>(prd => prd.Name[0] == 'C');
 
 Console.WriteLine(result.Name + " " + result.ListPrice);
 ```
@@ -361,12 +353,9 @@ var result =
     where h.TerritoryID == 1
     select new
     {
-        p.SalesPersonID
-                    ,
-        p.Bonus
-                    ,
-        h.SubTotal
-                    ,
+        p.SalesPersonID,
+        p.Bonus,
+        h.SubTotal,
         h.AccountNumber
     };
 
@@ -401,11 +390,10 @@ var result =
     group p by p.Class into g
     select new
     {
-        ClassName = g.Key
-                        ,
+        ClassName = g.Key,
         TotalListPrice = g.Sum<Product>(p => p.ListPrice)
     };
-
+    
 foreach (var r in result)
 {
     Console.WriteLine("{0} : {1}", r.ClassName, r.TotalListPrice);
@@ -434,8 +422,7 @@ var result =
     where g.Key != null
     select new
     {
-        ClassName = g.Key
-                    ,
+        ClassName = g.Key,
         TotalListPrice = g.Sum<Product>(p => p.ListPrice)
     };
 
@@ -450,9 +437,9 @@ Bu sefer gruplanan nesneye ait Key özelliğinin null olup olmadığına bakılm
 ```sql
 SELECT [t1].[Class] AS [ClassName], [t1].[value] AS [TotalListPrice]
 FROM (
-            SELECT SUM([t0].[ListPrice]) AS [value], [t0].[Class]
-            FROM [Production].[Product] AS [t0]
-            GROUP BY [t0].[Class]
+    SELECT SUM([t0].[ListPrice]) AS [value], [t0].[Class]
+    FROM [Production].[Product] AS [t0]
+    GROUP BY [t0].[Class]
 ) AS [t1]
 WHERE [t1].[Class] IS NOT NULL
 ```
@@ -465,7 +452,7 @@ LINQ tarafında yer alan enteresan metodlardan biriside Except metodudur. Bu met
 
 ```csharp
 var result = (from c in north.Customers select c.City)
-                    .Except(from s in north.Suppliers select s.City);
+    .Except(from s in north.Suppliers select s.City);
 
 foreach (var r in result)
 {
@@ -483,17 +470,17 @@ Bu tarz bir ihtiyacı SQL tarafında karşılamak için Not In kullanımı terci
 SELECT DISTINCT [t0].[City]
 FROM [dbo].[Customers] AS [t0]
 WHERE 
-    NOT (EXISTS
-            (
-        SELECT NULL AS [EMPTY]
-            FROM [dbo].[Suppliers] AS [t1]
-                WHERE (([t0].[City] IS NULL) 
-                    AND ([t1].[City] IS NULL)) 
-                        OR (([t0].[City] IS NOT NULL) 
-                            AND ([t1].[City] IS NOT NULL) 
-                                AND ([t0].[City] = [t1].[City]))
-            )
+NOT (EXISTS
+        (
+    SELECT NULL AS [EMPTY]
+        FROM [dbo].[Suppliers] AS [t1]
+            WHERE (([t0].[City] IS NULL) 
+                AND ([t1].[City] IS NULL)) 
+                    OR (([t0].[City] IS NOT NULL) 
+                        AND ([t1].[City] IS NOT NULL) 
+                            AND ([t0].[City] = [t1].[City]))
         )
+    )
 ```
 
 Burada önemli olan Exists SQL fonksiyonu ile gereken işlevselliğin sağlanmış olmasıdır. Not konulmasının sebebi, Exists ile belirtilen alt sorgudaki koşula uyanların dışarıda bırakılmasını sağlamaktır. Nitekim t0 ve t1 tablolarındaki City değerlerine bakılarak eşit olanların elde edilmesi sağlanırken Except metodu kullanılması nedeniyle bunların dışarıda tutulmasını ancak Not anahtar kelimesi sağlayabilmektedir. Ayrıca hem Suppliers hemde Customers tablosundaki City alanları için detaylı bir Null kontrolü yapılmaktadır.
@@ -528,9 +515,9 @@ SELECT
     , [t0].[SalesLastYear], [t0].[rowguid], [t0].[ModifiedDate]
 FROM [Sales].[SalesPerson] AS [t0]
     WHERE EXISTS(
-                                SELECT NULL AS [EMPTY]
-                                FROM [Sales].[SalesOrderHeader] AS [t1]
-                                WHERE ([t1].[SubTotal] >= @p0) AND ([t1].[SalesPersonID] = [t0].[SalesPersonID])
+        SELECT NULL AS [EMPTY]
+        FROM [Sales].[SalesOrderHeader] AS [t1]
+        WHERE ([t1].[SubTotal] >= @p0) AND ([t1].[SalesPersonID] = [t0].[SalesPersonID])
     )'
 ,N'@p0 decimal(33,4)',@p0=224356.0000
 ```
@@ -565,14 +552,14 @@ SELECT
     , [t0].[SalesLastYear], [t0].[rowguid], [t0].[ModifiedDate]
 FROM [Sales].[SalesPerson] AS [t0]
 WHERE NOT (
-                        EXISTS(
-                                        SELECT NULL AS [EMPTY]
-                                        FROM [Sales].[SalesOrderHeader] AS [t1]
-                                        WHERE ((
-                                                            (CASE 
-                                                                WHEN [t1].[SubTotal] >= @p0 THEN 1 ELSE 0
-                                                            END)) = 0) 
-                                                            AND ([t1].[SalesPersonID] = [t0].[SalesPersonID])
+    EXISTS(
+        SELECT NULL AS [EMPTY]
+        FROM [Sales].[SalesOrderHeader] AS [t1]
+        WHERE ((
+            (CASE 
+                WHEN [t1].[SubTotal] >= @p0 THEN 1 ELSE 0
+            END)) = 0) 
+            AND ([t1].[SalesPersonID] = [t0].[SalesPersonID])
 ))'
 ,N'@p0 decimal(33,4)',@p0=80.0000
 ```
@@ -583,7 +570,7 @@ Bu kez koşulun kontrolü için Case ifadesinden yararlanılmakta ve SubTotal 80
 
 ```csharp
 var result = (from cust in north.Customers select new { cust.Country, cust.City })
-                    .Concat(from supl in north.Suppliers select new { supl.Country, supl.City });
+    .Concat(from supl in north.Suppliers select new { supl.Country, supl.City });
 foreach (var r in result)
 {
     Console.WriteLine(r.Country + ":" + r.City);
@@ -599,11 +586,11 @@ Elbetteki SQL tarafına bakıldığında Concat metodunun aşağıdakine benzer 
 ```sql
 SELECT [t2].[Country], [t2].[City]
 FROM (
-            SELECT [t0].[Country], [t0].[City]
-            FROM [dbo].[Customers] AS [t0]
-                UNION ALL
-            SELECT [t1].[Country], [t1].[City]
-            FROM [dbo].[Suppliers] AS [t1]
+    SELECT [t0].[Country], [t0].[City]
+    FROM [dbo].[Customers] AS [t0]
+        UNION ALL
+    SELECT [t1].[Country], [t1].[City]
+    FROM [dbo].[Suppliers] AS [t1]
 ) AS [t2]
 ```
 
@@ -622,14 +609,14 @@ Diğer taraftan Distinct metodunun kullanılması sonrasında SQL tarafına gön
 ```sql
 SELECT DISTINCT [t3].[Country], [t3].[City]
 FROM (
-            SELECT [t2].[Country], [t2].[City]
-            FROM (
-                        SELECT [t0].[Country], [t0].[City]
-                        FROM [dbo].[Customers] AS [t0]
-                            UNION ALL
-                        SELECT [t1].[Country], [t1].[City]
-                        FROM [dbo].[Suppliers] AS [t1]
-            ) AS [t2]
+    SELECT [t2].[Country], [t2].[City]
+    FROM (
+        SELECT [t0].[Country], [t0].[City]
+        FROM [dbo].[Customers] AS [t0]
+            UNION ALL
+        SELECT [t1].[Country], [t1].[City]
+        FROM [dbo].[Suppliers] AS [t1]
+    ) AS [t2]
 ) AS [t3]
 ```
 
@@ -639,7 +626,7 @@ Yine ilginç bir LINQ metodu ve SQL karşılığı ile devam edelim. Bu kez iki 
 
 ```csharp
 var result = (from c in north.Customers select c.City)
-                    .Intersect(from s in north.Suppliers select s.City);
+    .Intersect(from s in north.Suppliers select s.City);
 
 foreach (var r in result)
 {
@@ -657,14 +644,14 @@ Bu sonucun elde edilmesi için arka planda çalıştırılan SQL cümlesi ise a�
 SELECT DISTINCT [t0].[City]
 FROM [dbo].[Customers] AS [t0]
 WHERE EXISTS(
-                            SELECT NULL AS [EMPTY]
-                            FROM [dbo].[Suppliers] AS [t1]
-                            WHERE 
-                                (([t0].[City] IS NULL) 
-                                    AND ([t1].[City] IS NULL)) 
-                                        OR (([t0].[City] IS NOT NULL) 
-                                            AND ([t1].[City] IS NOT NULL) 
-                                                AND ([t0].[City] = [t1].[City]))
+    SELECT NULL AS [EMPTY]
+    FROM [dbo].[Suppliers] AS [t1]
+    WHERE 
+        (([t0].[City] IS NULL) 
+            AND ([t1].[City] IS NULL)) 
+                OR (([t0].[City] IS NOT NULL) 
+                    AND ([t1].[City] IS NOT NULL) 
+                        AND ([t0].[City] = [t1].[City]))
 )
 ```
 
@@ -677,10 +664,8 @@ var result =
     from prd in adw.Products
     select new
     {
-        prd.Name
-                        ,
-        prd.SafetyStockLevel
-                        ,
+        prd.Name,
+        prd.SafetyStockLevel,
         LevelOk = prd.SafetyStockLevel >= 50 ? "Seviye İyi" : "Seviye Düşük"
     };
 
@@ -712,7 +697,7 @@ Buraya kadar anlatılan örneklerde LINQ operatörlerinden veya metodlarından b
 
 ```csharp
 var result = (from ctg in adw.ProductSubcategories select ctg)
-                   .TakeWhile<ProductSubcategory>(sCtg => sCtg.Name[0] == 'A');
+    .TakeWhile<ProductSubcategory>(sCtg => sCtg.Name[0] == 'A');
 
 foreach (ProductSubcategory sc in result)
 {

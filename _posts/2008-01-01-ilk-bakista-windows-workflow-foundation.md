@@ -35,8 +35,9 @@ Bu kısa bilgilerden sonra bir iş akışını tanımlamak çok daha kolaylaşma
 
 Peki Windows Workflow Foundation ile kastedilen nedir? Microsoft bu Foundation ile iş akışlarının tasarlandığı bir programmı üretmiştir? Aslında Windows Workflow Foundation tek bir iş alanı (Single Domain) içerisinde yer alan tek bir uygulamayı (Single Application) hedeflemektedir. Bir başka deyişle Windows Workflow Foundation.Net uygulamalarının kullanabileceği iş akışlarının (Workflow) tasarlanması için gerekli altyapıyı sunan bir Framework 3.0 yaklaşımıdır.
 
-> İş akışları çoğunlukla BizTalk Server'un sundukları ile karşılaştırılır. BizTalk ile özellikle elektronik ticarete uygun olacak şekilde farklı platformlar üzerinde yer alan sistemlere ait iş süreçleri başarılı bir şekilde ele alınabilmektedir. Oysaki Windows Workflow Foundation sadece işletim sistemi seviyesinde (Operating System Level) düşünülmüştür.
-> Bu anlamda Microsoft otoriteleri BizTalk'un interapplication (Birden fazla uygulama-Mutliple Applications) olarak ele alınması gerektiğini, Windows Workflow Foundation'ın ise intraapplication (Tek bir uygulama-Single Application) şeklinde düşünülmesi gerektiğini vurgulamaktadır. Ancak bu bir kısıt değildir. Nitekim WWF içerisinde Web Servisleri gibi SOA (Service Oriented Architecture) modelleri sayesinde dış platformlara çıkılması ve iş sürecinin bu şekilde genişletilmeside mümkündür.
+İş akışları çoğunlukla BizTalk Server'un sundukları ile karşılaştırılır. BizTalk ile özellikle elektronik ticarete uygun olacak şekilde farklı platformlar üzerinde yer alan sistemlere ait iş süreçleri başarılı bir şekilde ele alınabilmektedir. Oysaki Windows Workflow Foundation sadece işletim sistemi seviyesinde (Operating System Level) düşünülmüştür.
+
+Bu anlamda Microsoft otoriteleri BizTalk'un interapplication (Birden fazla uygulama-Mutliple Applications) olarak ele alınması gerektiğini, Windows Workflow Foundation'ın ise intraapplication (Tek bir uygulama-Single Application) şeklinde düşünülmesi gerektiğini vurgulamaktadır. Ancak bu bir kısıt değildir. Nitekim WWF içerisinde Web Servisleri gibi SOA (Service Oriented Architecture) modelleri sayesinde dış platformlara çıkılması ve iş sürecinin bu şekilde genişletilmeside mümkündür.
 
 Windows Workflow Foundation mimarisi sayesinde iş akışları görsel olarak tasarlanıp kodlanabilirler. Ancak tasarlanan bu iş akışlarının işe yarayabilmesi için bir uygulama tarafından ele alınmaları şarttır. Söz konusu uygulamalar host görevini üstlenmekte olup bir veya daha fazla iş akışını barındırıp kullanabilirler. Windows Workflow Foundation mimarisi pek çok fayda sağlamaktadır. Söz konusu faydalar aşağıdaki maddeler ile özetlenebilir.
 
@@ -96,10 +97,10 @@ namespace MerhabaWWF
                     waitHandle.Set();
                 };
                 workflowRuntime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
-                                                                            {
-                                                                                Console.WriteLine(e.Exception.Message);
-                                                                                waitHandle.Set();
-                                                                            };
+                    {
+                        Console.WriteLine(e.Exception.Message);
+                        waitHandle.Set();
+                    };
 
                 WorkflowInstance instance = workflowRuntime.CreateWorkflow(typeof(MerhabaWWF.Workflow1));
                 instance.Start();
@@ -191,8 +192,9 @@ Görüldüğü gibi üretilen metod stadart bir olay metodu yapısındadır. Ger
 
 IfElseActivity içerisinde sağ tarafta kalan ikinci bir IfElseBranchActivity bileşeni daha vardır. Şu anki senaryoda bu bileşen else olma durumunda ne olacağını belirtmektedir. Diğer taraftan örnek senaryoda başka IfElseBranchActivity bileşenlerinin eklenmeside mümkündür. Örneğin Stok miktarının herhangibir nedenle 0 ve altında olması hali ve Stok Miktarının 50' nin üzerinde olması hali gibi. Bu durumların her biri için birer IfElseBranchActivity kontrolü eklenip gerekli aksiyonların gerçekleştirilmesi sağlanabilir.
 
-> IfElseActivity bileşenleri içerisine IfElseBranchActivity bileşenlerini eklemek için sağ tıklayıp Add Branch demek yeterlidir.
-> ![mk237_11.gif](/assets/images/2008/mk237_11.gif)
+IfElseActivity bileşenleri içerisine IfElseBranchActivity bileşenlerini eklemek için sağ tıklayıp Add Branch demek yeterlidir.
+
+![mk237_11.gif](/assets/images/2008/mk237_11.gif)
 
 Bu amaçla örneğimize aşağıdaki şekildede görüldüğü gibi başka IfElseBranchActivity bileşenleri daha eklediğimizi düşünelim.
 
@@ -200,8 +202,9 @@ Bu amaçla örneğimize aşağıdaki şekildede görüldüğü gibi başka IfEls
 
 Burada ikinci IfElseBranchActivity içerisinde StokMiktari özelliğinin değerinin 0' ın altında ve eşit olduğu durumda çalıştırılacak bir kod aktivitesi yer almaktadır. 3ncü IfElseBranchActivity içerisinde StokMiktari özelliğinin değerinin 50 ile 500 arasında olduğu durumda çalışacak bir aktivite bulunur. Son IfElseBranchActivity parçasında ise var olan koşulların dışındaki durum ele alınmaktadır. Genellikle birden fazla IfElseBranchActivity içeren durumlarda tüm ihtimallerin dışında kalabilecek bir seçeneğide ele almak için Condition özelliği herhangibir şekilde atanmamış boş bir IfElseBranchActivity parçası kullanmakta yarar vardır. Örnekte bu tarz bir durum için yine kod aktivitesi yürütülmektedir. Elbette her CodeActivity bileşenin ExecuteCode özelliğine ilgili değerlerin atanması ve oluşan olay metodlarının kodlanması gerekmektedir. Şimdilik bu kısım bizim açımızdan önemli değildir. Nitekim örneğe son olarak yapılan eklemelerde kavranması gereken birden fazla IfElseBranchActivity bileşenin bir arada ele alınabilmesidir.
 
-> IfElseBranchActivity işlemlerinde karar mekanizması olarak Declarative Rule Condition kullanılması halinde kuralların rules uzantılı bir XML dosyası içerisine yazıldığı görülür. Aşağıdaki ekran görüntüsünde örnekte kullanılan IfElseBranchActivity'ler için oluşturulan Workflow1.rules dosyasının sadece bir kısmı görülmektedir.
-> ![mk237_14.gif](/assets/images/2008/mk237_14.gif)
+IfElseBranchActivity işlemlerinde karar mekanizması olarak Declarative Rule Condition kullanılması halinde kuralların rules uzantılı bir XML dosyası içerisine yazıldığı görülür. Aşağıdaki ekran görüntüsünde örnekte kullanılan IfElseBranchActivity'ler için oluşturulan Workflow1.rules dosyasının sadece bir kısmı görülmektedir.
+
+![mk237_14.gif](/assets/images/2008/mk237_14.gif)
 
 Şimdi iş akışı için daha fazla önem arz eden bir konu üzerinde durulmalıdır. İş akışına ilgili parametreler nasıl aktarılacaktır? Bu amaçla Main metodu içerisinde yer alan kod parçalarında bazı değişiklikler yapılması gerekmektedir. Daha öncedende belirtildiği gibi WorkflowRuntime sınıfına ait CreateInstance metodunun ikinci parametresi iş akışlarına değer göndermek için kullanılmaktadır. İş akışları herhangibir.Net CLR tipini parametre olarak aldığından ve dış ortamdan iş akışına gönderilen değerin hangi özelliğe aktarıldığının bilinmesi gerektiğinden generic Dictionary koleksiyonu kullanılmaktadır. Böylece ilgili iş akışının hangi özelliğine, hangi değerin aktarılacağı belirtilebilir. Bu aynı zamanda iş akışına birden fazla parametre değeri gönderilebilmesi anlamınada gelmektedir.
 
@@ -440,17 +443,17 @@ namespace Istemci
 
             // Workflow tamamlandığında devreye girecek olay metodu yüklenir
             _wfRunTime.WorkflowCompleted += delegate (object sender, WorkflowCompletedEventArgs e)
-                                                                    {
-                                                                        MessageBox.Show(e.OutputParameters["AramaSonucu"].ToString());
-                                                                        _arEvent.Set();
-                                                                    };
+            {
+                MessageBox.Show(e.OutputParameters["AramaSonucu"].ToString());
+                _arEvent.Set();
+            };
 
             // Workflow' un çalışması sırasında bir istisna oluştuğunda devreye girecek olay metodu yüklenir.
             _wfRunTime.WorkflowTerminated += delegate (object sender, WorkflowTerminatedEventArgs e)
-                                                                    {
-                                                                        MessageBox.Show(e.Exception.Message);
-                                                                        _arEvent.Set();
-                                                                    };
+            {
+                MessageBox.Show(e.Exception.Message);
+                _arEvent.Set();
+            };
         }
 
         private void btnDosyaSec_Click(object sender, EventArgs e)
@@ -501,23 +504,11 @@ Doğal olarak sürecin bir şekilde başlatılması gerekmektedir. Bu amaçla Wo
 
 Buraya kadar yazdıklarımız ile iş akışı (Workflow) kavramını, Windows Workflow Foundation yaklaşımını incelemeye çalıştık. Giriş niteliğindeki bu makalemizde, bir iş akışı için gerçek hayat senaryoları kullanmamış olsakta, WWF ile nasıl geliştirilebileceklerini, herhangibir.Net uygulamasından nasıl kullanılabileceklerini gördük. Bundan sonraki makalelerimizde WWF mimarisinin başka konularınıda incelemeye çalışıyor olacağız. Makalemize son vermeden önce Windows Workflow Foundation ile ilgili kaynak kitaplar hakkında bilgi vermek isterim. Söz konusu kitaplar ve bunlara ait özet bilgiler aşağıdaki tabloda yer aldığı gibidir.
 
-![Wf_Book_1.jpg](/assets/images/2008/Wf_Book_1.jpg)
-
-[Microsoft Windows Workflow Foundation Step by Step](http://www.amazon.com/Microsoft-Windows-Workflow-Foundation-Developer/dp/073562335X/ref=pd_bbs_3?ie=UTF8&s=books&qid=1198592693&sr=8-3)
-
-Mart 2007 tarihinde çıkan Microsoft Press'e ait bu kitap içerisindeki bilgiler ile WWF mimarisini adım adım öğrenmek mümkün. Aynen Microsoft Windows Communication Foundation Step by Step kitabında olduğu gibi oldukça iyi bir anlatıma sahip. Kısa sürede tamamlanabilecek bu kitap ile WWF mimarisini orta seviyede öğrenmek mümkün. Toplam 19 bölümden oluşan kitap içerisinde iş akışlarının SOA ile entegrasyonu, transaction desteği, paralel aktivitilerin (Activities) tasarlanması gibi ileri seviye konularda yer almakta.
-
-![Wf_Book_2.jpg](/assets/images/2008/Wf_Book_2.jpg)
-
-[Pro WF: Windows Workflow in.NET 3.0 (Expert's Voice in.Net)](http://www.amazon.com/exec/obidos/tg/detail/-/1590597788/ref=ord_cart_shr?_encoding=UTF8&m=ATVPDKIKX0DER&v=glance)
-
-Şubat 2007 tarihinde APress tarafından yayınlanan bu kitap 744 sayfalık bir içeriği 17 bölüm altında toplamakta. Workflow konusunda yazılmış kitaplar arasında temelden ileri seviyeye doğru giden ve en anlaşılır olanlarından bir tanesi. İleri seviye sayılabilecek bölümlerde, iş akışlarının dinamik güncellenmesi, iş akışlarında serileştirme, iş akışlarının izlenmesi gibi konu başlıklarıda yer almaktadır.
-
-![Wf_Book_3.jpg](/assets/images/2008/Wf_Book_3.jpg)
-
-[Professional Windows Workflow Foundation](http://www.amazon.com/exec/obidos/tg/detail/-/0470053860/ref=ord_cart_shr?_encoding=UTF8&m=ATVPDKIKX0DER&v=glance)
-
-Wrox yayınlarından Mart 2007 tarihinde çıkartılan bu kitap 410 sayfalık mütevazi bir içeriğe sahip. Lakin bu içerik sayesinde çok kısa zamanda Windows Workflow Foundation mimarisini anlamak ve etkin bir şekilde kullanabilmek mümkün. Üstelik kitapta best practices, ileri seviyede aktivite (Activity) tasarlanması, dinamik güncelleştirme, ofis (Office) sistemleri ile entegrasyon gibi enteresan kısımlarda yer almakta.
+| | | |
+| --- | --- | --- |
+| ![Wf_Book_1.jpg](/assets/images/2008/Wf_Book_1.jpg) | [Microsoft Windows Workflow Foundation Step by Step](http://www.amazon.com/Microsoft-Windows-Workflow-Foundation-Developer/dp/073562335X/ref=pd_bbs_3?ie=UTF8&s=books&qid=1198592693&sr=8-3) | Mart 2007 tarihinde çıkan Microsoft Press'e ait bu kitap içerisindeki bilgiler ile WWF mimarisini adım adım öğrenmek mümkün. Aynen Microsoft Windows Communication Foundation Step by Step kitabında olduğu gibi oldukça iyi bir anlatıma sahip. Kısa sürede tamamlanabilecek bu kitap ile WWF mimarisini orta seviyede öğrenmek mümkün. Toplam 19 bölümden oluşan kitap içerisinde iş akışlarının SOA ile entegrasyonu, transaction desteği, paralel aktivitilerin (Activities) tasarlanması gibi ileri seviye konularda yer almakta. |
+| ![Wf_Book_2.jpg](/assets/images/2008/Wf_Book_2.jpg) | [Pro WF: Windows Workflow in.NET 3.0 (Expert's Voice in.Net)](http://www.amazon.com/exec/obidos/tg/detail/-/1590597788/ref=ord_cart_shr?_encoding=UTF8&m=ATVPDKIKX0DER&v=glance) | Şubat 2007 tarihinde APress tarafından yayınlanan bu kitap 744 sayfalık bir içeriği 17 bölüm altında toplamakta. Workflow konusunda yazılmış kitaplar arasında temelden ileri seviyeye doğru giden ve en anlaşılır olanlarından bir tanesi. İleri seviye sayılabilecek bölümlerde, iş akışlarının dinamik güncellenmesi, iş akışlarında serileştirme, iş akışlarının izlenmesi gibi konu başlıklarıda yer almaktadır. |
+| ![Wf_Book_3.jpg](/assets/images/2008/Wf_Book_3.jpg) | [Professional Windows Workflow Foundation](http://www.amazon.com/exec/obidos/tg/detail/-/0470053860/ref=ord_cart_shr?_encoding=UTF8&m=ATVPDKIKX0DER&v=glance) | Wrox yayınlarından Mart 2007 tarihinde çıkartılan bu kitap 410 sayfalık mütevazi bir içeriğe sahip. Lakin bu içerik sayesinde çok kısa zamanda Windows Workflow Foundation mimarisini anlamak ve etkin bir şekilde kullanabilmek mümkün. Üstelik kitapta best practices, ileri seviyede aktivite (Activity) tasarlanması, dinamik güncelleştirme, ofis (Office) sistemleri ile entegrasyon gibi enteresan kısımlarda yer almakta. |
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 

@@ -30,9 +30,9 @@ Bu senaryoda çicek dükkanından kredi kartı ile alışveriş yapmakta olan bi
 
 Bu senaryolar kulağa hoş ve mantıklı gelsede, acaba WCF (Windows Communication Foundation) ve Windows CardSpace ile aralarında nasıl bir ilişkileri vardır? Burada bahesedilen senaryolar hak-tabanlı güvenlik (claims-based security) vakkalarına örnek olabilecek gerçek dünya yansımalarıdır. Bu tip bir güvenlik sisteminde kişilerin kim olduğundan ziyade, yapılması istenen işlemler için ilgili kişinin hakkı olup olmadığının tespit edilmesi önemlidir. İşte WCF mimarisi altında geliştirilen uygulamalarda Windows CardSpace teknolojisini sayesinde hak-tabanlı güvenlik (claims-based security) altyapısı (infrastructure) sağlanabilir. Hak-tabanlı güvenlik (Claim Based Security) aslında üç ana unsurdan oluşmaktadır. Bunlar aşağıdaki listede belirtildiği gibidir.
 
-- Kullanıcı (Subject): Servise erişmek ve fonksiyonelliklerini çalıştırmak isteyen kullanıcı veya farklı bir sistem asıl öznenin (subject) kendisidir. Kullanıcı, erişmek istediği servise, onun kabul edebileceği haklar sunmakla yükümlüdür. Yukarıdaki senaryolar göz önüne alındığında, kredi kartı ile klüp kapısından girmek ne kadar mantıksızsa, klüp kartı ile çiçekçiden çiçek satın almakta o kadar mantıksızdır. Bir başka deyişle istemci tarafından sunulan hakların, servis tarafında kabul edilebilir nitelikte olması gerekmektedir.
-- Kimlik Sağlayıcı (Identity Provider): Adındanda anlaşılacağı üzere, haklar için gerekli kimliği sağlamakta olan organizasyon veya varlıktır (entity). Yukarıdaki senaryolar göz önüne alındığında kredi kartını veren banka veya üye griş kartını veren fan klübü, kimlik sağlayıcı konumundadır.
-- Güvenilir Şahıs veya Grup (Relying Party): Koruma altına alınmış hizmeti (Protected Service) sunan organizasyon yada varlıktır. Kimlik sağlayıcısına (Identity Provider), kullanıcının verdiği kartın, kullanıcının yapmak istediği işlem ile ilişkili haklara sahip olup olmadığını sormakla yükümlüdür. Söz gelimi kredi kartı ile alışveriş işlemini tasvir eden senaryoda çiçekçi yada bir başka deyişle satıcı (vendor) güvenilir şahıs (Relying Party) rolündedir.
+- **Kullanıcı (Subject):** Servise erişmek ve fonksiyonelliklerini çalıştırmak isteyen kullanıcı veya farklı bir sistem asıl öznenin (subject) kendisidir. Kullanıcı, erişmek istediği servise, onun kabul edebileceği haklar sunmakla yükümlüdür. Yukarıdaki senaryolar göz önüne alındığında, kredi kartı ile klüp kapısından girmek ne kadar mantıksızsa, klüp kartı ile çiçekçiden çiçek satın almakta o kadar mantıksızdır. Bir başka deyişle istemci tarafından sunulan hakların, servis tarafında kabul edilebilir nitelikte olması gerekmektedir.
+- **Kimlik Sağlayıcı (Identity Provider):** Adındanda anlaşılacağı üzere, haklar için gerekli kimliği sağlamakta olan organizasyon veya varlıktır (entity). Yukarıdaki senaryolar göz önüne alındığında kredi kartını veren banka veya üye griş kartını veren fan klübü, kimlik sağlayıcı konumundadır.
+- **Güvenilir Şahıs veya Grup (Relying Party):** Koruma altına alınmış hizmeti (Protected Service) sunan organizasyon yada varlıktır. Kimlik sağlayıcısına (Identity Provider), kullanıcının verdiği kartın, kullanıcının yapmak istediği işlem ile ilişkili haklara sahip olup olmadığını sormakla yükümlüdür. Söz gelimi kredi kartı ile alışveriş işlemini tasvir eden senaryoda çiçekçi yada bir başka deyişle satıcı (vendor) güvenilir şahıs (Relying Party) rolündedir.
 
 Windows CardSpace kullanılaraktan istemciler farklı bilgiler içeren çeşitli bilgi kartları (Information Card) oluşturabilirler. Servis tarafında yer alan uygulamanın kendisi, doğrulayacağı kullanıcılardan gelecek olan bilgi kartlarını kendi belirleyeceği politikalara (Policy) göre kontrol edebilir. Bilgi kartları içerisinde çok farklı veriler yer alabilir. Kullanıcının adı, email adresi, yaşı, doğum tarihi, hatta sürücü belgesi veya pasaportu ile ilgili bilgiler dahi olabilir. Bu noktada Windows CardSpace ile hak tabanlı güvenlik (Claim-Based Security) ortamı sunulan bir WCF uygulamasında, istemcinin bir servis talebi sonrası neler olacağına bakmakta yarar vardır. Aşağıdaki maddelerde, istemci (client) ve WCF servisi (Service) arasında hak-tabanlı güvenlik (Claim-Based Security) gerçekleştirildiğinde izlenen sürece ait adımlar yer almaktadır.
 
@@ -173,7 +173,7 @@ Sertifika tanımlaması yapıldığına göre servis tarafındaki uygulamanın y
 
 Servis tarafında yer alan Matematik.svc dosyasının içeriği aşağıdaki gibidir.
 
-```text
+```xml
 <%@ ServiceHost Language="C#" Debug="true" Service="MatematikKutuphanesi.Matematik" %>
 ```
 
@@ -219,7 +219,7 @@ Oluşturulan dosyada dikkat edilmesi gereken bir kaç nokta vardır. İlk olarak
 
 ```xml
 <serviceCredentials>
-                    <serviceCertificate findValue="MatematikServisi" x509FindType="FindBySubjectName" />
+    <serviceCertificate findValue="MatematikServisi" x509FindType="FindBySubjectName" />
 ```
 
 Burada findValue niteliğine verilen değer, daha önceden oluşturulan MatematikServisi isimli sertifikadır. Bu X.509 tipindeki sertifikasının bulunabilmesi içinde x509FindType niteliğine FindBySubjectName değeri verilmiştir. Buna göre ilgili sertifika, nesne adına göre aranacaktır.

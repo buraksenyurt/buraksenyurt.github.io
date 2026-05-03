@@ -17,7 +17,7 @@ Geçtiğimiz günlerde Asp.Net 2.0 ile ilgili bilgilerimi tazelerken profil yön
 
 Başlamadan önce profil kavramını kısaca tanımlamakta yarar olduğu kanısındayım. Bir web uygulamasına bağlanan kullanıcıların her biri için ortak tanımlanıp değerleri farklı olabilecek özellikler topluluğu profil bilgisini oluşturmaktadır. Bu anlamda özellikle, bir doğrulama (authentication) ve yetkilendirme (authorization) sistemine sahip olan web uygulamalarında her kullanıcı için değerleri farklı olabilecek özelliklerin tutulması ve kullanılması mümkün olabilmektedir. Bu tip bir sistemin özellikle Asp.Net 1.1 ile geliştirilmesi ekstra kodlamayı gerektirirken Asp.Net 2.0 üzerinde yer alan Profile API sayesinde son derece kolaylaşmıştır. Gelelim Profile API yeteneklerini daha etkili bir şekilde nasıl ele alabileceğimize.
 
-ProfileBase Tipinden Türetmek (Inherit);
+## ProfileBase Tipinden Türetmek *(Inheritance)*
 
 Normal şartlarda bir web uygulaması içerisinde profil bilgilerini kullanabilmek için web.config dosyası içerisinde profile elementinin ele alınması gerekmektedir. Nitekim bir web uygulamasında kullanılan profil bilgilerinin, başka web uygulamasında (web uygulamalarında) ele alınmasının istendiği vakkalarda mevcuttur. Bu tip bir durumda çözüm olarak, ProfileBase tipinden türetme yapılaraktan birden fazla web uygulamasında ele alınabilecek bir profil sınıfı geliştirmek mümkündür. ProfileBase sınıfının temel üyeleri aşağıdaki sınıf diagramında (Class Diagram) görüldüğü gibidir.
 
@@ -211,7 +211,7 @@ Default.aspx sayfası;
 
 ![mk227_10.gif](/assets/images/2007/mk227_10.gif)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -365,7 +365,7 @@ Sayfa basit olarak profil bilgilerinin getirilmesi veya kaydedilmesi için gerek
 
 ![mk227_11.gif](/assets/images/2007/mk227_11.gif)
 
-Profil Bilgilerini Kod Üzerinden Yönetebilmek;
+## Profil Bilgilerini Kod Üzerinden Yönetebilmek
 
 Bazı durumlarda çalışma zamanında (run-time) uygulamada kullanılan profil bilgilerinin yönetilmesi istenebilir. Söz gelimi profilde kayıtlı bilgilerin gösterilmesi, belirli bir tarihten öncekilerin kaldırılması, bir kullanıcının profil bilgisinin silinmesi, aktif olmayan profillerin elde edilmesi vb... işlemler yapılabilir. Bu aslında basit olarak veritabanına ulaşmak ve ilgili tablonun alanlarına bakmaktan başka bir şey değildir. Ne varki Asp.Net Profile API içerisinde söz konusu yönetsel işlemlerin daha kolay yapılmasını sağlayan ProfileManager sınıfı mevcuttur. Bu sınıfın diagram görüntüsü aşağıdaki gibidir.
 
@@ -377,18 +377,17 @@ Dikkat edileceği üzere ProfileManager, static bir sınıftır (static class).
 
 Sınıfın önemli metodları ve yaptığı işler ise aşağıdaki tabloda görüldüğü gibidir
 
-| Sutun 1 | Sutun 2 |
+| **Metodlar(Methods)** | **Açıklama** |
 | --- | --- |
-| Metodlar(Methods) | Açıklama |
-| GetAllProfiles | İki versiyonu olan bu metod sayesinde bir uygulamadaki profil bilgilerinin tamamı ProfileInfoCollection tipi içerisinde olacak şekilde elde edilebilir. Her iki versiyonda ProfileAuthenticationOption enum sabiti tipinden bir parametre almaktadır. Bu parametrenin alabileceği değerler All, Anonymous, Authneticated' dır. Bir başka deyişle tüm kullanıcıların, sadece isimsiz kullanıcıların veya sadece doğrulanmış kullanıcıların profile bilgilerinin elde edilmesi sağlanabilir. Ayrıca bu metod ile sayfalamalara uygun olacak şekilde veri çekilmeside sağlanabilmektedir. |
-| GetNumberOfProfiles | Veritabanında kayıtlı olan profil sayısının elde edilmesini sağlayan bu metod yine ProfileAuthenticationOption enum sabiti tipinden bir parametre alır. Buna göre sadece isimsiz kullanıcıların(anonymous users), doğrulanmış kullanıcıların(authenticated users) yada tüm kullanıcıların(all users) kayıtlı olan profil sayıları elde edilebilir. |
-| GetAllInactiveProfiles | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre parametre olarak verilen tarih ve öncesindeki tüm profillerin elde edilmesini sağlayan metoddur. İki versiyonu vardır ve her ikisinin ilk parametresi aynıdır. İlk parametrede ProfileAuthenticationOption değeri ikincisinde ise tarih bilgisi belirlenir. |
-| GetNumberOfInactiveProfiles | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre parametre olarak verilen tarih ve öncesindeki tüm profillerin sayısının integer olarak elde edilmesini sağlayan metoddur. |
-| FindProfilesByUserName | Belirlenen kullanıcı adıyla eşleşen profil bilgilerinin ProfileInfoCollection tipinden döndürülmesini sağlamaktadır. İki farklı versiyonu vardır. Her ikiside ilk iki parametresinde sırasıyla ProfileAuthenticationOption ve kullanıcı adı bilgilerini almaktadır. Sayfalama yapılmasıda sağlanabilmektedir. Burada kullanıcı adı girilirken % karakteri kullanılarak Like benzeri bir sorgulama yapılabilmektedir. |
-| FindInactiveProfilesByUserName | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre belirtilen tarih ve öncesinde olanların parametre olarak verilen kullanıcı adı ile eşleşenlerinin bulunmasını sağlayan metoddur. Burada kullanıcı adı girilirken % karakteri kullanılarak Like benzeri bir sorgulama yapılabilmektedir. Örneğin kullanıcı adı içerisinde ma geçenlerin elde edilip belirtilen bir tarhiten öncesine kadar aktivitesi olmayanlar listelenebilir. |
-| DeleteProfile | Parametre olarak verilen kullanıcıya ait profile bilgisinin silinmesini sağlamaktadır. Bu metod silme işlemi başarılı ise true değerini döndürür. |
-| DeleteProfiles | Bu metodun iki farklı versiyonu vardır. Bunlardan birisi ProfileInfoCollection tipinden diğeri ise string dizisi tipinden parametre almaktadır. Dolayısıyla profile bilgilerinin silinmesi istenen kullanıcı tipleri iki farklı şekilde yüklenebilir. |
-| DeleteInactiveProfiles | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre belirtilen tarih ve öncesinde olanların silinmesini sağlayan metod ProfileAuthenticationOption enum sabiti tipinden değerde almaktadır. |
+| **GetAllProfiles** | İki versiyonu olan bu metod sayesinde bir uygulamadaki profil bilgilerinin tamamı ProfileInfoCollection tipi içerisinde olacak şekilde elde edilebilir. Her iki versiyonda ProfileAuthenticationOption enum sabiti tipinden bir parametre almaktadır. Bu parametrenin alabileceği değerler All, Anonymous, Authneticated' dır. Bir başka deyişle tüm kullanıcıların, sadece isimsiz kullanıcıların veya sadece doğrulanmış kullanıcıların profile bilgilerinin elde edilmesi sağlanabilir. Ayrıca bu metod ile sayfalamalara uygun olacak şekilde veri çekilmeside sağlanabilmektedir. |
+| **GetNumberOfProfiles** | Veritabanında kayıtlı olan profil sayısının elde edilmesini sağlayan bu metod yine ProfileAuthenticationOption enum sabiti tipinden bir parametre alır. Buna göre sadece isimsiz kullanıcıların(anonymous users), doğrulanmış kullanıcıların(authenticated users) yada tüm kullanıcıların(all users) kayıtlı olan profil sayıları elde edilebilir. |
+| **GetAllInactiveProfiles** | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre parametre olarak verilen tarih ve öncesindeki tüm profillerin elde edilmesini sağlayan metoddur. İki versiyonu vardır ve her ikisinin ilk parametresi aynıdır. İlk parametrede ProfileAuthenticationOption değeri ikincisinde ise tarih bilgisi belirlenir. |
+| **GetNumberOfInactiveProfiles** | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre parametre olarak verilen tarih ve öncesindeki tüm profillerin sayısının integer olarak elde edilmesini sağlayan metoddur. |
+| **FindProfilesByUserName** | Belirlenen kullanıcı adıyla eşleşen profil bilgilerinin ProfileInfoCollection tipinden döndürülmesini sağlamaktadır. İki farklı versiyonu vardır. Her ikiside ilk iki parametresinde sırasıyla ProfileAuthenticationOption ve kullanıcı adı bilgilerini almaktadır. Sayfalama yapılmasıda sağlanabilmektedir. Burada kullanıcı adı girilirken % karakteri kullanılarak Like benzeri bir sorgulama yapılabilmektedir. |
+| **FindInactiveProfilesByUserName** | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre belirtilen tarih ve öncesinde olanların parametre olarak verilen kullanıcı adı ile eşleşenlerinin bulunmasını sağlayan metoddur. Burada kullanıcı adı girilirken % karakteri kullanılarak Like benzeri bir sorgulama yapılabilmektedir. Örneğin kullanıcı adı içerisinde ma geçenlerin elde edilip belirtilen bir tarhiten öncesine kadar aktivitesi olmayanlar listelenebilir. |
+| **DeleteProfile** | Parametre olarak verilen kullanıcıya ait profile bilgisinin silinmesini sağlamaktadır. Bu metod silme işlemi başarılı ise true değerini döndürür. |
+| **DeleteProfiles** | Bu metodun iki farklı versiyonu vardır. Bunlardan birisi ProfileInfoCollection tipinden diğeri ise string dizisi tipinden parametre almaktadır. Dolayısıyla profile bilgilerinin silinmesi istenen kullanıcı tipleri iki farklı şekilde yüklenebilir. |
+| **DeleteInactiveProfiles** | Profil sahibi kullanıcıların LastActivityDate özelliklerinin değerlerine göre belirtilen tarih ve öncesinde olanların silinmesini sağlayan metod ProfileAuthenticationOption enum sabiti tipinden değerde almaktadır. |
 
 Şimdi bu sınıfın kullanıldığı örnek bir web sayfasını projeye dahil edelim. Sayfanın tasarım zamanındaki (design-time) görüntüsü ve kodları aşağıdaki gibidir.
 
@@ -531,9 +530,11 @@ Belirli bir süreden öncesine kadar pasif olan kullanıcıların profil listesi
 
 ![mk227_14.gif](/assets/images/2007/mk227_14.gif)
 
-İsimsiz (Anonymous) kullanıcılar için profil bilgilerini kullanabilmek;
+## İsimsiz *(Anonymous)* kullanıcılar için profil bilgilerini kullanabilmek
 
-Bazı durumlarda siteyi ziyaret eden isimsiz kullanıcılar (anonymous users) içinde profil bilgilerinin tutulması ve saklanması istenebilir. Profile API, isimsiz kullanıcılar için oldukça güçlü bir hizmet sağlamaktadır. Sistemin çalışması aslında son derece basittir. Gerekli konfigurasyon ayarlarının yapılmasının ardından siteye bağlanan isimsiz kullanıcılar için birer GUID üretilmektedir. Bu GUID (Global Unique IDentifier) değerleri bir çerez (cookie) yardımıyla istemcinin bilgisayarında saklanırlar. Böylece isimsiz kullanıcıların sunucu tarafında tespit edilebilmesi kolay bir şekilde sağlanmaktadır. Dikkat edilmesi gereken durumlardan birisi istemcilerin oturum (session) açışları arasında farklı tarayıcılar kullanabilecek olmasıdır. Bu durumu ilerleyen kısımlarda analiz etmeye çalışacağız. İsimsiz kullanıcılara destek sağlayabilmek için web.config dosyası içerisinde anonymousIdentification elementinin ilgili özelliklerinin değerlerinin atanması gerekmektedir. Bir önceki örnek ile karışmaması açısından bu kez yeni bir web uygulaması ile devam edelim. Bu seferki örnekte profil özelliklerini web.config dosyası içerisinde tanımlıyor olacağız. Bu amaçla web.config dosyasının içeriğini aşağıdaki gibi tasarladığımızı varsayalım.
+Bazı durumlarda siteyi ziyaret eden isimsiz kullanıcılar (anonymous users) içinde profil bilgilerinin tutulması ve saklanması istenebilir. Profile API, isimsiz kullanıcılar için oldukça güçlü bir hizmet sağlamaktadır. Sistemin çalışması aslında son derece basittir. Gerekli konfigurasyon ayarlarının yapılmasının ardından siteye bağlanan isimsiz kullanıcılar için birer GUID üretilmektedir. Bu GUID (Global Unique IDentifier) değerleri bir çerez (cookie) yardımıyla istemcinin bilgisayarında saklanırlar. Böylece isimsiz kullanıcıların sunucu tarafında tespit edilebilmesi kolay bir şekilde sağlanmaktadır. 
+
+Dikkat edilmesi gereken durumlardan birisi istemcilerin oturum (session) açışları arasında farklı tarayıcılar kullanabilecek olmasıdır. Bu durumu ilerleyen kısımlarda analiz etmeye çalışacağız. İsimsiz kullanıcılara destek sağlayabilmek için web.config dosyası içerisinde anonymousIdentification elementinin ilgili özelliklerinin değerlerinin atanması gerekmektedir. Bir önceki örnek ile karışmaması açısından bu kez yeni bir web uygulaması ile devam edelim. Bu seferki örnekte profil özelliklerini web.config dosyası içerisinde tanımlıyor olacağız. Bu amaçla web.config dosyasının içeriğini aşağıdaki gibi tasarladığımızı varsayalım.
 
 Web.config;
 
@@ -662,7 +663,9 @@ Gelelim kullanıcının aynı uygulamaya isimsiz olarak farklı tarayıcılar il
 
 Dikkat edileceği üzere Internet Explorer kullanılıp kaydedilen profil bilgilerine 3 dakikalık süre zarfı içerisinde başka bir tarayıcı program olan Firefox Mozilla içerisinde erişilememiştir. Tersi durumda söz konusudur. Buna göre farklı tarayıcı pencereleri ile gelen taleplerde (request) sunucunun farklı bir GUID üreteceğini ve istemci bilgisayara çerez olarak yazacağını göz önüne almalıyız.
 
-İsimsiz kullanıcılar (anonymous users) ile ilgili bir diğer durumda var olan doğrulanmış bir kullanıcı ile birleştirilmeleridir (Migration). Bu durumu daha kolay anlayabilmek için [amazon.com](http://www.amazon.com) sitesinin işleyiş şeklini göz önüne alabiliriz. Bu siteye giren kayıtlı bir kullanıcı login olmadan sepete ürünler ekleyebilmektedir. Diğer taraftan kullanıcı alışveriş safhasına geçip sayfaya Login olduğunda, isimsiz kullanıcı olarak sepete attığı bilgiler var olan kullanıcı hesabındaki sepet bilgilerine eklenebilmektedir. Asp.Net 2.0 mimarisinde bu tarz bir işlemi belirli bir ölçüde kontrollü olarak gerçekleştirebilmek için için Global.asax.cs dosyasında ProfileOnMigrateAnonymous olay metodunun yüklenmesi yeterlidir. Bu metodun aldığı ProfileMigrateEventArgs tipinden parametre sayesinde isimsiz kullanıcı (anonymous user) için üretilen GUID değerine erişilebilir ve ilgili değerlerin alınarak, login olan kullanıcıya aktarılması sağlanabilir. Yanlız bu noktada daha öncede login olup profil bilgisi kaydedilmiş bir kullanıcının bilgileri üzerine yazılmamaya çalışılmasına özen gösterilmelidir. Bu durumu analiz edebilmek için global.asax.cs dosyasına aşağıdaki kod parçasını eklediğimizi göz önüne alabiliriz.
+İsimsiz kullanıcılar (anonymous users) ile ilgili bir diğer durumda var olan doğrulanmış bir kullanıcı ile birleştirilmeleridir (Migration). Bu durumu daha kolay anlayabilmek için [amazon.com](http://www.amazon.com) sitesinin işleyiş şeklini göz önüne alabiliriz. Bu siteye giren kayıtlı bir kullanıcı login olmadan sepete ürünler ekleyebilmektedir. Diğer taraftan kullanıcı alışveriş safhasına geçip sayfaya Login olduğunda, isimsiz kullanıcı olarak sepete attığı bilgiler var olan kullanıcı hesabındaki sepet bilgilerine eklenebilmektedir. 
+
+Asp.Net 2.0 mimarisinde bu tarz bir işlemi belirli bir ölçüde kontrollü olarak gerçekleştirebilmek için için Global.asax.cs dosyasında ProfileOnMigrateAnonymous olay metodunun yüklenmesi yeterlidir. Bu metodun aldığı ProfileMigrateEventArgs tipinden parametre sayesinde isimsiz kullanıcı (anonymous user) için üretilen GUID değerine erişilebilir ve ilgili değerlerin alınarak, login olan kullanıcıya aktarılması sağlanabilir. Yanlız bu noktada daha öncede login olup profil bilgisi kaydedilmiş bir kullanıcının bilgileri üzerine yazılmamaya çalışılmasına özen gösterilmelidir. Bu durumu analiz edebilmek için global.asax.cs dosyasına aşağıdaki kod parçasını eklediğimizi göz önüne alabiliriz.
 
 ```javascript
 <%@ Application Language="C#" %>
