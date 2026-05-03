@@ -62,12 +62,9 @@ namespace HelloWorld
             {
                 Product prd = new Product
                 {
-                    Id = i
-                    ,
-                    Name = "Product" + i.ToString()
-                    ,
-                    ListPrice = i * 0.1M
-                    ,
+                    Id = i,
+                    Name = "Product" + i.ToString(),
+                    ListPrice = i * 0.1M,
                     InStock = i % 2 == 0 ? true : false
                 };
                 products.Add(prd);

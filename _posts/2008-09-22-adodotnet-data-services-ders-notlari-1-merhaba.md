@@ -19,9 +19,11 @@ Astoria kod adı ile anılan ve İstanbul Mecidiyeköy’ deki alış veriş mer
 
 > Ebellteki Web programlama modelinin (Web Programming Model) WCF tarafına kazandırdığı tek avantaj QueryString bazlı operasyon desteği değildir. Bunun yanında JSON (Java Script Object Notation) formatında yayınlama ve RSS, Atom bazlı Syndication desteğide gelmektedir.
 
+## HTTP İşlemleri ve CRUD İlişkisi
+
 Aslında kafayı çok fazla karıştırmaya gerek yoktur. Aşağıdaki tablo durumu daha net bir şekilde özetlemektedir
 
-| HTTP İşlemi | CRUD Karşılığı |
+| **HTTP İşlemi** | **CRUD Karşılığı** |
 | --- | --- |
 | Post | Create, Update, Delete |
 | Get | Read |
@@ -33,6 +35,8 @@ Bu tabloda anlatılmak istenen şudur; HTTP üzerinden yapılabilecek olan Post,
 Servis talepleri (Requests) HTTP protokolüne göre QueryString bazlı olmaktadır. Bu talepler servis tarafına ulaştıklarında ise arka planda bir Data Access Layer tarafından karşılanmakta ve operasyonel olarak CRUD (CreateReadUpdateDelete) işlemlerine dönüştürülmektedir. Sonrasında istemciye gönderilecek olan cevaplar XML bazlı olarak ele alınmaktadır. Standart olarak ATOM formatında bir XML çıktısı istemci tarafına gönderilmektedir. Bu tanımlamalar kısaca bir fikir versede mimari detaylara bakmakta yarar vardır. Aşağıdaki şekil Astoria mimarisini kısaca özetlemektedir.
 
 ![mk258_1.gif](/assets/images/2008/mk258_1.gif)
+
+## Astoria Mimarisinin İşleyişi
 
 Çok kısaca mimari üzerinden konuşarak devam edelim. Öncelikli olarak internet veya intranet üzerinden talepte bulunabilecek bir istemci (Client) uygulama söz konusudur. Bu uygulama standart bir.Net programı olabilir. Örneğin bir Windows/WPF yada basit bir Console uygulaması. Çok doğal olarak istemci başka bir servisde olabilir. Ancak günümüzde Ado.Net Data Service örneklerini kullanacak en popüler istemciler web tabanlı olanlarıdır. Bir başka deyişle Ajax Based Client ve Silverlight gibi uç birimler örnek olarak verilebilirler. İlerleyen kısımlarda Ajax tabanlı bir istemcinin nasıl geliştirileceğine de değinilecektir. İstemci uygulamalar, servise doğru QueryString benzeri formatta bir talepte bulunabilir. Örneğin;
 
@@ -52,6 +56,8 @@ EDM modeline göre veritabanı bazlı Entity tipler (Types) ve bu tiplere ait ü
 
 Görüldüğü üzere REST bazlı talep, Ado.Net Data Service Entry Point’ e ulaştıktan sonra servis çalışma zamanı tarafından veritabanına doğru basit sorgular (Queries) şeklinde gönderilirler. Bunun doğal sonucu olarak bazı veri kümeleri elde edilir. Elde edilen sorgu sonuçları EDM içerisinde yer alan Entity nesneleri ve üyeleri tarafından değerlendirilir. Nitekim veritabanı tarafındaki nesnelerin karşılığı olan varlıklar, EDM içerisinde yer almakta olup çalışma zamanında servis operasyonları tarafından ele alınmaktadır. Bir başka deyişle örnek baz alındığında, ProductSubCategory tablosu içerisindeki herhangibir satırın (Table Row) karşılığı olan ProductSubcategory sınıfına ait nesne örneklerinden oluşan bir koleksiyon (Collection) üretimi gerçekleşir. Bu üretim sonrasında ilgili koleksiyon, servis çalışma ortamı tarafından XML çıktısı haline getirilir ve istemciye gönderilir.
 
+## Örnek Uygulama Kurulumu
+
 Sanıyorumki artık bir örnek geliştirerek konuyu pekiştirmenin ve makalenin yazıldığı bu yağmurlu günde ekranımızda bir güneş açtırmanın zamanı geldi. İlk olarak örneğin Visual Studio 2008 Professional Service Pack 1 üzerinde geliştirildiğini belirtelim.
 
 Ado.Net Data Service'ler esas itibariyle birer WCF servis öğesi olarak tanımlanırlar. Bu sebepten dolayı söz konusu servislerin bir sunucu uygulama üzerinde host edilmeleri gerekmektedir. Burada istenirse bir WCF Service uygulaması baz alınabilir. Yada herhangibir Asp.Net Web Site/Asp.Net Web Application üzerindede bu işlem gerçekleştirilebilir. Web tarafındaki geliştirme kurallarının buradada geçerli olduğunu ve buna göre dosya tabanlı (File-Based) yada doğrudan IIS üzerinde geliştirme yapabileceğimizi hatırlayalım.
@@ -59,6 +65,8 @@ Ado.Net Data Service'ler esas itibariyle birer WCF servis öğesi olarak tanıml
 Biz örneğimizde AdventureServices adlı WCF Service şablonunu kullanacağız. AdventureServices isimli proje File-Based olarak geliştirilecektir. Servis uygulaması oluşturulduktan sonra ilk yapılması gereken, Ado.Net Data Service'in kullanacağı Data Access Layer ortamını hazırlamaktır. Burada daha öncedende belirtildiği üzere EDM, LINQ Provider seçenekleri mevcuttur. Örneğimizde Entity Data Model kullanılmaktadır. EDM nesnesini eklemek için projeye sağ tıkladıktan sonra aşağıdaki resimde yer alan Ado.Net Entity Data Model şablonunu seçmek yeterli olacaktır.
 
 ![mk258_3.gif](/assets/images/2008/mk258_3.gif)
+
+## EDM Modelinin Oluşturulması
 
 İsim olarak AdventureModel adı kullanılabilir. edmx uzantılı dosya seçimi yapıldıktan sonra bir dizi adımdan oluşan sihirbaz arabirimi ile karşılaşılır.
 
@@ -126,6 +134,8 @@ ObjectQuery tipinden birer readonly özellik (Property) yardımıyla! Ve yine bi
 
 ![mk258_13.gif](/assets/images/2008/mk258_13.gif)
 
+## ProductService Yapılandırması ve Erişim Kuralları
+
 Bu işlemin ardından proje şablounan ProductService.svc servis ve ProductService.cs code-behind dosyaları eklenecektir. (Söz konusu işlemlerde biz WCF geliştiricilerini şaşırtan herhangibir nokta bulunmamaktadır. Nitekim Web üzerinden host edilen bir WCF serviside aynı prensiplerde oluşturulmaktadır. Bir svc içeriği ve çoğunlukla code-behind üzerinde tutulan kod içeriği.) ProductService.cs içeriği kısaca incelendiğinde bir başlatma işleminin (Initialization) yapılması gerektiği görülmektedir. Nitekim servis nesnesi örneklendiğinde EDM içerisindeki hangi tiplerin hangi şartlarda yayınlanacağının belirlenmesi gerekmektedir. Bu bir anlamda yetkilendirme süreci olarakta düşünülebilir. Söz konusu ProductService.cs içeriği örnek için aşağıdaki gibi değiştirilmelidir.
 
 ```csharp
@@ -161,34 +171,71 @@ Bu ifadelere göre Product nesneleri için sadece okuma işlemi yapılabilirken,
 
 ![mk258_14.gif](/assets/images/2008/mk258_14.gif)
 
-Buradan çıkartılması gereken ilk sonuç Product ve ProductSubcategory elementleri için taleplerde bulunulabileceğidir. Öyleyse test sorgularına başlanabilir. Sorgulardan kastımız elbetteki URL satırına girilen QueryString ifadeleri ve bunların ATOM tabanlı XML çıktılarının nasıl olacağıdır
+## Test Sorguları
 
-| Örnek 1 ; <br> Tüm ProductSubcategory satırlarının elde edilmesi |
-| --- |
-| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory (Burada hemen bir hatırlatma yapalım. Eğer URL satırında ProductSubcategory yerine ProductSubCategory yazılırsa Case-Sensitive özelliğinden dolayı HTTP 404 Not Found çıktısı alınır. Dolayısıyla QueryString' leri yazarken Case-Sensitive olmalarına dikkat etmek gerekir.) |
-| Sonuç Ekran görüntüsü ; <br> ![mk258_15](/assets/images/2008/mk258_15.gif) |
-|  |
-| Örnek 2 : 3 Numaralı ProductSubcategory bilgisinin elde edilmesi |
-| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(3) |
-| Sonuç Ekran görüntüsü ; <br> ![mk258_16](/assets/images/2008/mk258_16.gif) |
-|  |
-| Not : İkinci örnekte dikkat edilmesi gereken bir nokta vardır. URL satırında parantez içerisinde 3 değeri yazılarak ProductSubCategoryID değeri 3 olan alt kategori bilgisi elde edilmiştir. Pekiya servis tarafından nasıl olmaktadırda, parantez içerisindeki değerin ProductSubCategoryID alanına işaret ettiği bilinmektedir. Burada anahtar nokta ProductSubcategory sınıfındaki ProductSubCategoryID özelliğidir. Şekildende görüleceği üzere EdmScalarPropertyAttribute niteliğinin içerisinde EntityKeyProperty özelliğine true değeri verilmiştir. Böylece çalışma zamanı, parantez içerisinde gelen ifadenin bu özelliğe ait olduğunu bilmektedir. <br> ![mk258_17](/assets/images/2008/mk258_17.gif) |
-| Örnek 3 : Product tablosundan ListPrice değeri 3500 birim üzerinde olanların elde edilmesi |
-| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500 <br> (Burada gt=grater then anlamındadır.Buna göre küçüktür için lt=less then) |
-| Sonuç Ekran görüntüsü ; <br> ![mk258_18](/assets/images/2008/mk258_18.gif) |
-|  |
-| Örnek 4 : ProductSubcategoryID değeri 1 olan alt kategoriye bağlı ürünlerin listesinin elde edilmesi |
-| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(1)/Product |
-| Sonuç Ekran görüntüsü ; <br> ![mk258_19](/assets/images/2008/mk258_19.gif) |
-|  |
-| Örnek 5 : Product tablosundan ListPrice değeri 3500 birim üzerinde olanların isimlerine göre ters sırada elde edilmesi |
-| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500&$orderby Name desc <br> (İki ayrı sorgu ifadesi birleştirilirken & kullanılır) |
-| Sonuç Ekran görüntüsü ; <br> ![mk258_20](/assets/images/2008/mk258_20.gif) |
-|  |
-| Örnek 6 : ProductSubCategoryID değeri 4 olan alt kategorinin bilgilerinin elde edilmesi ve buna bağlı ürünlerinde getirilmesi |
-| URL Satırı ifadesi : <br> http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(4)?$expand=Product |
-| Sonuç Ekran görüntüsü ; <br> ![mk258_21](/assets/images/2008/mk258_21.gif) <br> Dikkat edileceği üzere inline elementi altında 4 numaralı alt kategoriyi bağlı Product örneklerinin entry boğumları yer almaktadır. Service tarafı göz önüne alındığında expand komutunun kullanılabilmesini sağlayan üyenin ProductSubcategory sınıfındaki Product özelliği olduğuna dikkat etmek gerekir. |
-|  |
+Buradan çıkartılması gereken ilk sonuç Product ve ProductSubcategory elementleri için taleplerde bulunulabileceğidir. Öyleyse test sorgularına başlanabilir. Sorgulardan kastımız elbetteki URL satırına girilen QueryString ifadeleri ve bunların ATOM tabanlı XML çıktılarının nasıl olacağıdır.
+
+## Örnek 1: Tüm ProductSubcategory satırlarının elde edilmesi
+
+URL satırı ifadesi: `http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory`
+
+> Not: Eğer URL satırında ProductSubcategory yerine ProductSubCategory yazılırsa Case-Sensitive özelliğinden dolayı HTTP 404 Not Found çıktısı alınır. Dolayısıyla QueryString'leri yazarken Case-Sensitive olmalarına dikkat etmek gerekir.
+
+Sonuç ekran görüntüsü:
+
+![mk258_15](/assets/images/2008/mk258_15.gif)
+
+## Örnek 2: 3 numaralı ProductSubcategory bilgisinin elde edilmesi
+
+URL satırı ifadesi: `http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(3)`
+
+Sonuç ekran görüntüsü:
+
+![mk258_16](/assets/images/2008/mk258_16.gif)
+
+> Not: İkinci örnekte dikkat edilmesi gereken bir nokta vardır. URL satırında parantez içerisinde 3 değeri yazılarak ProductSubCategoryID değeri 3 olan alt kategori bilgisi elde edilmiştir. Peki servis tarafından nasıl olmaktadır da parantez içerisindeki değerin ProductSubCategoryID alanına işaret ettiği bilinmektedir? Burada anahtar nokta ProductSubcategory sınıfındaki ProductSubCategoryID özelliğidir. Şekilden de görüleceği üzere EdmScalarPropertyAttribute niteliğinin içerisinde EntityKeyProperty özelliğine true değeri verilmiştir. Böylece çalışma zamanı, parantez içerisinde gelen ifadenin bu özelliğe ait olduğunu bilmektedir.
+
+![mk258_17](/assets/images/2008/mk258_17.gif)
+
+## Örnek 3: Product tablosundan ListPrice değeri 3500 birim üzerinde olanların elde edilmesi
+
+URL satırı ifadesi: `http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500`
+
+> Not: Burada gt "greater than" anlamındadır. Buna göre küçüktür için lt "less than" kullanılır.
+
+Sonuç ekran görüntüsü:
+
+![mk258_18](/assets/images/2008/mk258_18.gif)
+
+## Örnek 4: ProductSubcategoryID değeri 1 olan alt kategoriye bağlı ürünlerin listesinin elde edilmesi
+
+URL satırı ifadesi: `http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(1)/Product`
+
+Sonuç ekran görüntüsü:
+
+![mk258_19](/assets/images/2008/mk258_19.gif)
+
+## Örnek 5: Product tablosundan ListPrice değeri 3500 birim üzerinde olanların isimlerine göre ters sırada elde edilmesi
+
+URL satırı ifadesi: `http://localhost:3030/AdventureServices/ProductService.svc/Product?$filter=ListPrice gt 3500&$orderby Name desc`
+
+> Not: İki ayrı sorgu ifadesi birleştirilirken & kullanılır.
+
+Sonuç ekran görüntüsü:
+
+![mk258_20](/assets/images/2008/mk258_20.gif)
+
+## Örnek 6: ProductSubCategoryID değeri 4 olan alt kategorinin bilgilerinin elde edilmesi ve buna bağlı ürünlerin de getirilmesi
+
+URL satırı ifadesi: `http://localhost:3030/AdventureServices/ProductService.svc/ProductSubcategory(4)?$expand=Product`
+
+Sonuç ekran görüntüsü:
+
+![mk258_21](/assets/images/2008/mk258_21.gif)
+
+> Not: Dikkat edileceği üzere inline elementi altında 4 numaralı alt kategoriye bağlı Product örneklerinin entry boğumları yer almaktadır. Service tarafı göz önüne alındığında expand komutunun kullanılabilmesini sağlayan üyenin ProductSubcategory sınıfındaki Product özelliği olduğuna dikkat etmek gerekir.
+
+## Kapanış ve Ödevler
 
 Buraya kadar anlatıklarımız umarım sizlere Ado.Net Data Services hakkında biraz fikir verebilmiştir. Eğer buraya kadar makaleyi zevkle okuduysanız işte size yapmanız gereken bir kaç ödev. Öncelikli olarak tarayıcı uygulama üzerinden sorgu gönderdiğinizde SQL tarafında nasıl komutlar çalıştırıldığına bakmanızı öneririm. Kod tarafında ilgili noktalara breakpoint'ler ekleyerek nesnelerin ne zaman örneklendiklerine (REST sorgusu SQL sorgusuna dönüştürülmeden öncemi, sonra mı gibi) bakmanızı öneririm. Başka ne çeşit sorgular yazabileceğinizi filter, orderby, expand, () dışında ne gibi query komutları olabileceğini araştırın. Bu araştırmalarıda başarı ile yaparsanız şöyle güzel bir sütlü nescafe'yi deniz kenarında yudumlamayı hak etmişsiniz demektir, üstelik güneş batarken.
 

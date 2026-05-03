@@ -136,10 +136,6 @@ Dikkat edileceği üzere /GetProduct?id=1001 ile gönderilen talep, başarılı 
 
 REST modeli öylesine tutuldu ki WCF 4.0 içerisinde zaten gömülü olarak daha fazla eklenti ile birlikte gelecek. (Ado.Net Data Service'leri bu modelin güzel bir açılımı olarak görebiliriz aslında) Bu eklentileri bir süre önce CodePlex'te yayımlanan [WCF Rest Starter Kit](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24644)yardımıyla Visual Studio 2008 ortamı üzerinde test etmemiz ve geliştirmemizde mümkün. Hatta geçtiğimiz Mart ayında bu geliştirme kitinin 2nci versiyonuda yayınladı. REST modeli ile ilişkili olaraktan yeni yazılar eklemeye devam ediyor olacağım. Hatta Rest modeli ile ilişkili iki görsel dersimede aşağıdaki linklerden ulaşabilirsiniz.
 
-Atom Feed Service [NedirTv?](http://www.nedirtv.com/video/WCF-REST-Bolum-1---Atom-Feed-Service.aspx)
-
-Read-Only Collection Service [NedirTv?](http://www.nedirtv.com/video/WCF-REST-Bolum-2---Readonly-Collection-Service.aspx)
-
 [NorthwindServices.rar (16,34 kb)](/assets/files/2009/NorthwindServices.rar)
 
 Artık dinlenmeye çekilebilir miyim acaba?

@@ -21,19 +21,20 @@ Senkronizasyon işlemlerinde bilinen ve kullanılan farklı teknikler de söz ko
 
 Ancak ADO.Net Senkronizasyon Servisleri ile WCF (Windows Communication Foundation) hizmetlerini kullanarak, sunucu tarafında farklı veri kaynaklarına erişebilmek mümkündür. Diğer taraftan Ado.Net Senkronizasyon Servisleri daha çok uygulama geliştiricileri hedef alır. Eğer istemci tarafının senkronize edeceği veri kümesi SQL dışında bir kaynak ise mutlaka Ado.Net Senkronizasyon Servisi göz önüne alınmalıdır. RDA, Merge Replication ve Ado.Net Senkronizasypn Servisleri arasındaki karşılaştırmaları aşağıdaki tablodan da inceleyebilirsiniz. Özellikle karar verme aşamasında bu tablodaki bilgilerden de yararlanılabilir
 
-| Anahtar Özellik | Kullanılabilen Teknikler |  |  |
+| **Anahtar Özellik** | | | |
 | --- | --- | --- | --- |
-| RDA (Remote Data Access) | Merge Replication | Ado.Net Sync Services |  |
-| Servisler üzerinden senkronizasyon sağlanması | Yok | Yok | Var |
-| Farklı veri kaynakları için destek | Yok | Yok | Var |
-| Değişimsel(Incremental) farklılıkların takibi | Yok* | Var | Var |
-| Çakışma(Conflict) kontrolü ve çözümleri | Yok | Var | Var |
-| İstemci tarafında View' ların kolayca oluşturulması(Görsel derslerde ele alınacaktır) | Yok | Yok | Var |
-| Otomaik şema(Schema) ve veri oluşturma | Var | Var | Var |
-| Büyük boyutlu DataSet desteği | Var | Var | Var |
-| Otomaik olarak şema değişikliklerini üretmek | Yok | Var | Yok |
-| Veriyi tekradan birleştirmek(Repartition) | Yok | Var | Yok |
-| * RDA değişimsel upload' ları destekler. Verinin istemci tarafına alınmasında Snapshot modelini kullanılır. Yani istemci tarafına tüm veriyi indirir. |  |  |  |
+| **RDA (Remote Data Access)** (1) | Merge Replication | Ado.Net Sync Services | |
+| **Servisler üzerinden senkronizasyon sağlanması** | Yok | Yok | Var |
+| **Farklı veri kaynakları için destek** | Yok | Yok | Var |
+| **Değişimsel(Incremental) farklılıkların takibi** | Yok* | Var | Var |
+| **Çakışma(Conflict) kontrolü ve çözümleri** | Yok | Var | Var |
+| **İstemci tarafında View' ların kolayca oluşturulması(Görsel derslerde ele alınacaktır)** | Yok | Yok | Var |
+| **Otomaik şema(Schema) ve veri oluşturma** | Var | Var | Var |
+| **Büyük boyutlu DataSet desteği** | Var | Var | Var |
+| **Otomaik olarak şema değişikliklerini üretmek** | Yok | Var | Yok |
+| **Veriyi tekrardan birleştirmek(Repartition)** | Yok | Var | Yok |
+
+(1) RDA değişimsel upload' ları destekler. Verinin istemci tarafına alınmasında Snapshot modelini kullanılır. Yani istemci tarafına tüm veriyi indirir.
 
 Teknik açıdan bakldığında Ado.Net Senkronizasyon Servisleri temel olarak aşağıdaki 3 assembly'dan oluşmaktadır. Ado.Net Senkronizasyon Servisleri tarafların sahip olduğu veri sağlayıcılarına göre 2 katlı (Two Tier), N-katlı (N-Tier) ve Servis Bazlı Mimariye (Service Oriented Architecture) uygun olacak şekilde kullanılabilmektedir. Eğer istemci ve sunucu Ado.Net veri sağlayıcıları üzerinden konuşuyorlarsa iki katlı veya n katlı modeller tercih edilebilir. Ancak sunucu tarafından SQL dışı bir veri kaynağı var ise (Söz gelimi bir XML deposu, Active Directory vb...) bu durumda servis yönemlimli olacak şekilde bir geliştirme yapılmalıdır. Senkronizasyon her zaman için istemci tarafında başlatılan bir olaydır ve temel olarak 4 farklı tipte senkronizasyon tekniği kullanılmaktadır
 

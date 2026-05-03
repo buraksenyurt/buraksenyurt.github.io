@@ -175,7 +175,9 @@ Koddanda görüldüğü gibi yapılması gereken, xoml içeriğini XmlReader nes
 
 Sanıyorumki ben dahil herkes, uygulamanın çalışmasını bekliyordu. Ancak yukarıda görüldüğü gibi bir istisna (Exception) aldım. Karabasan devam ediyordu sanki. Çözümü bulmam biraz zamanımı aldı. Aslında problem, xoml içeriğinde yer alan
 
+```text
 x:Class="NorthwindActivities.ProductOrderFlow"
+```
 
 bildirimiydi. Çalışma zamanının kızması son derece doğaldı. Hak vermem gerekiyordu. Hata mesajındanda anlaşılacağı üzere bir doğrulama (Validation) sorunu vardı. Bunun kaynadğında ise ProductOrderFlow tipi yer almakta. Derken tepemde bir ampül yanıverdi.
 
@@ -192,7 +194,7 @@ Artık tekrar testi yapabilirdim. Programı çalıştırdığımda aşağıdaki 
 
 ![blg13_8.gif](/assets/images/2009/blg13_8.gif)
 
-Nihayet
+Nihayet!
 
 Artık xoml içeriği ile biraz oynayabilirdim. Bu amaçla xoml dosyasını notepad ile açtım ve aşağıdaki hale getirdim.
 

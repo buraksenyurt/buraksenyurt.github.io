@@ -1,76 +1,61 @@
 ---
 layout: post
 title: "Mesaj Sözleşmeleri(Message Contracts)"
-date: 2009-02-09 12:00:00
+date: 2008-02-09 12:00:00
 tags:
   - windows-communication-foundation
 categories:
   - Programlama Dilleri
 ---
-Servis tabanlı uygulamalarda en önemli noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde gerçekleştirildiğidir. Gerçek şuki, bu bilgi transferinin oluşma şekli çoğu zaman geliştiricinin gözünden kaçan yada çok fazla ilgilenmediği bir konu olmaktadır. Nitekim çoğu servis geliştirme aracı buradaki söz konusu içeriğin hazırlanmasını, gönderilmesini veya alınmasını otomatikleştirmektedir. Özellikle Windows Communication Foundation tarafında, bilginin istemci ve servis arasındaki dolaşımında bağlayıcı tiplerin (Binding Type) seçilmesi ile zaten arka tarafta ne şekilde bir haberleşme olacağı ve paketlerin nasıl hazırlanacağı belirlenmiş olur.
+SServis tabanlı uygulamalarda en önemli noktalardan biriside aradaki bilgi transferlerinin nasıl ve ne şekilde gerçekleştirildiğidir. Gerçek şuki, bu bilgi transferinin oluşma şekli çoğu zaman geliştiricinin gözünden kaçan yada çok fazla ilgilenmediği bir konu olmaktadır. Nitekim çoğu servis geliştirme aracı buradaki söz konusu içeriğin hazırlanmasını , gönderilmesini veya alınmasını otomatikleştirmektedir. Özellikle Windows Communication Foundation tarafında, bilginin istemci ve servis arasındaki dolaşımında bağlayıcı tiplerin(Binding Type) seçilmesi ile zaten arka tarafta ne şekilde bir haberleşme olacağı ve paketlerin nasıl hazırlanacağı belirlenmiş olur.
 
-Aslında servis ve istemci tarafında mesaj bazlı bir iletişim olduğu son derece açıktır. Farklı platformlar üzerinde koşan servislerin haberleşmeleri yada farklı tipteki istemci uygulamaların servisleri kullanabilmeleri gerektiğinde ise, aradaki haberleşmenin bir standart üzerinde ve esnek olması beklenir. Bu nedenle özellikle SOAP bazlı web servisleri göz önüne alındığında mesajın tipi ve içeriğide bellidir. İşte burada SOAP (Simpe Object Access Protocol) tarzı mesajlardan söz edilebilir. Tipik olarak SOAP mesajları bir zarf olarak temsil edilmekte (SOAP Envelope) ve Header, Body isimli iki parçadan oluşmaktadır. Aşağıdaki şekilde bu içerik temsil edilmeye çalışılmıştır.
+Aslında servis ve istemci tarafında mesaj bazlı bir iletişim olduğu son derece açıktır. Farklı platformlar üzerinde koşan servislerin haberleşmeleri yada farklı tipteki istemci uygulamaların servisleri kullanabilmeleri gerektiğinde ise, aradaki haberleşmenin bir standart üzerinde ve esnek olması beklenir. Bu nedenle özellikle SOAP bazlı web servisleri göz önüne alındığında mesajın tipi ve içeriğide bellidir. İşte burada SOAP(Simpe Object Access Protocol) tarzı mesajlardan söz edilebilir. Tipik olarak SOAP mesajları bir zarf olarak temsil edilmekte(SOAP Envelope) ve Header, Body isimli iki parçadan oluşmaktadır. Aşağıdaki şekilde bu içerik temsil edilmeye çalışılmıştır.
 
-![mk269_1.gif](/assets/images/2009/mk269_1.gif)
+![mk269_1.gif](/assets/images/2008/mk269_1.gif)
 
-Peki bu mesajların makalemize konu olmasının sebebi nedir? Bilindiği üzere WCF mimarisinde çeşitli tipte sözleşmeler (Contracts) söz konusudur. Örneğin servislerin ne iş yaptığının, nasıl fonksiyonellikler sunduğunun ifade edilmesinde Sevis Sözleşmeleri (Service Contracts) kullanılmaktadır. Benzer şekilde istemci tarafına aktarılacak serileştirilebilir (Serializable) tipler söz konusu ise Veri Sözleşmeleri (Data Contracts) tanımlanır. Yine istemci tarafına aktarılacak istisna mesajlarının çeşitli durumlar için özelleştirilmesi düşünüldüğünde Hata Sözleşmeleri (Fault Contracts) kullanılır. Ancak bu sözleşme çeşitleri dışında birde Mesaj Sözleşmeleri (Message Contracts) bulunmaktadır. İşte bu yazımızın konusuda budur.
+Peki bu mesajların makalemize konu olmasının sebebi nedir? Bilindiği üzere WCF mimarisinde çeşitli tipte sözleşmeler(Contracts) söz konusudur. Örneğin servislerin ne iş yaptığının, nasıl fonksiyonellikler sunduğunun ifade edilmesinde Sevis Sözleşmeleri(Service Contracts) kullanılmaktadır. Benzer şekilde istemci tarafına aktarılacak serileştirilebilir(Serializable) tipler söz konusu ise Veri Sözleşmeleri(Data Contracts) tanımlanır. Yine istemci tarafına aktarılacak istisna mesajlarının çeşitli durumlar için özelleştirilmesi düşünüldüğünde Hata Sözleşmeleri(Fault Contracts) kullanılır. Ancak bu sözleşme çeşitleri dışında birde Mesaj Sözleşmeleri(Message Contracts) bulunmaktadır. İşte bu yazımızın konusuda budur.
 
-Yazımıza servis odaklı uygulamalarda mesajların yerini konumlandırmaya çalışarak başladık. Özellikle SOAP tabanlı bu mesajlar gerektiğinde özel olarak tasarlanabilirler. WCF tarafında bunu gerçekleştirebilmek için Mesaj Sözleşmelerinden yararlanılır. Mesaj sözleşmelerinin ne zaman kullanılacağına karar verilmesi genellikle zordur. Farklı platformlar için destek verebilme imkanı (Interoperability) ve mesaj kontrolü çoğunlukla karar vermeyi kolaylaştırmaktadır. Gerçektende servis tarafından istemciye gönderilecek veya alınacak mesajların farklı platformlara destek verebilecek şekilde tasarlanması gerektiği durumlarda özel Mesaj Sözleşmeleri göz önüne alınabilir. Diğer taraftan Mesaj Sözleşmeleri ile taşınacak bilginin değişik parçalarının SOAP paketinin Header veya Body kısmına ayrıştırılması ve bu sayede de, gerekli olmayan parçaların mesaj ile birlikte taşınmaması sağlanabilmektedir. Bu tam anlamıyla aradaki mesajlaşmanın kontrol altına alınması anlamına gelmektedir. Hatta, istemci ve servislerin belirli olduğu vakalarda, arada özel bir mesaj formatına göre veri içeriğinin taşınmasıda mümkün olabilir. Diğer taraftan göz ardı edilmemesi gereken bir noktada, mesaj seviyesinde güvenliktir. Mesaj Sözleşmeleri kullanılırken bir tipin SOAP zarfının içerisindeki yayılımı belirlenebildiği gibi (hangi kısımları Header'da olacak vb...) verinin şifrelenmeside (Encryption) özelleştirilebilir. Böylece vakaya göre bir mesaj deseninin oluşturulması ve kullanılması mümkün olabilmektedir.
+Yazımıza servis odaklı uygulamalarda mesajların yerini konumlandırmaya çalışarak başladık. Özellikle SOAP tabanlı bu mesajlar gerektiğinde özel olarak tasarlanabilirler. WCF tarafında bunu gerçekleştirebilmek için Mesaj Sözleşmelerinden yararlanılır. Mesaj sözleşmelerinin ne zaman kullanılacağına karar verilmesi genellikle zordur. Farklı platformlar için destek verebilme imkanı(Interoperability) ve mesaj kontrolü çoğunlukla karar vermeyi kolaylaştırmaktadır. Gerçektende servis tarafından istemciye gönderilecek veya alınacak mesajların farklı platformlara destek verebilecek şekilde tasarlanması gerektiği durumlarda özel Mesaj Sözleşmeleri göz önüne alınabilir. Diğer taraftan Mesaj Sözleşmeleri ile taşınacak bilginin değişik parçalarının SOAP paketinin Header veya Body kısmına ayrıştırılması ve bu sayede de, gerekli olmayan parçaların mesaj ile birlikte taşınmaması sağlanabilmektedir. Bu tam anlamıyla aradaki mesajlaşmanın kontrol altına alınması anlamına gelmektedir. Hatta, istemci ve servislerin belirli olduğu vakalarda, arada özel bir mesaj formatına göre veri içeriğinin taşınmasıda mümkün olabilir. Diğer taraftan göz ardı edilmemesi gereken bir noktada, mesaj seviyesinde güvenliktir. Mesaj Sözleşmeleri kullanılırken bir tipin SOAP zarfının içerisindeki yayılımı belirlenebildiği gibi(hangi kısımları Header' da olacak vb...) verinin şifrelenmeside(Encryption) özelleştirilebilir. Böylece vakaya göre bir mesaj deseninin oluşturulması ve kullanılması mümkün olabilmektedir.
 
-Çoğu durumda Mesaj Sözleşmeleri yerine Veri Sözleşmelerininde aynı işi yapıyor olduğu görülür. Ancak genel kanıya göre, eğer bir tip n sayıda mesaj içerisinde kullanılacaksa(yani reusable type olarak düşünülebilirse) Veri Sözleşmesi olarak tanımlanması önerilmektedir. Ancak tip(type) sadece istek/cevap(Request/Respone) modeline göre bir kereliğine kullanılıyorsa, Mesaj Sözleşmesi olacak şekilde tanımlanır. |
+> Çoğu durumda Mesaj Sözleşmeleri yerine Veri Sözleşmelerininde aynı işi yapıyor olduğu görülür. Ancak genel kanıya göre, eğer bir tip n sayıda mesaj içerisinde kullanılacaksa(yani reusable type olarak düşünülebilirse) Veri Sözleşmesi olarak tanımlanması önerilmektedir. Ancak tip(type) sadece istek/cevap(Request/Respone) modeline göre bir kereliğine kullanılıyorsa, Mesaj Sözleşmesi olacak şekilde tanımlanır.
 
-Mesaj sözleşmelerinin uygulanması son derece kolaydır. Ancak dikkat edilmesi gereken noktalar vardır. Herşeyden önce MessageContract, MessageHeader, MessageBodyMember, MessageHeaderArray gibi niteliklerinden (attributes) yararlanılarak Mesaj Sözleşmesi tanımlanabilmektedir. Bununla birlikte servis operasyonlarında Mesaj Sözleşmelerinin kullanılması söz konusu ise metod yapısında uyulması gereken kurallar vardır. Buna göre metod desenleri aşağıdaki örnekler olduğu gibi olmalıdır. Bu tablodaki örnek kullanımlarda yer alan ProductOrderResponse ve ProductOrderRequest isimli tipler örnek Mesaj Sözleşmesi sınıflarıdır
+Mesaj sözleşmelerinin uygulanması son derece kolaydır. Ancak dikkat edilmesi gereken noktalar vardır. Herşeyden önce MessageContract, MessageHeader, MessageBodyMember, MessageHeaderArray gibi niteliklerinden(attributes) yararlanılarak Mesaj Sözleşmesi tanımlanabilmektedir. Bununla birlikte servis operasyonlarında Mesaj Sözleşmelerinin kullanılması söz konusu ise metod yapısında uyulması gereken kurallar vardır. Buna göre metod desenleri aşağıdaki örnekler olduğu gibi olmalıdır. Bu tablodaki örnek kullanımlarda yer alan ProductOrderResponse ve ProductOrderRequest isimli tipler örnek Mesaj Sözleşmesi sınıflarıdır.
 
-| Geçerli Mesaj Sözleşme Kullanımları |  |
-| --- | --- |
-| [OperationContract] <br> ProductOrderResponse CompleteOrderProcess(ProductOrderRequest request); | Operasyonun dönüş tipi ve parametresi Mesaj Sözleşmesi tipindendir. |
-| [OperationContract] <br> ProductOrderResponse CompleteOrderProcess(); | Operasyon parametre almamakta ve Mesaj Sözleşmesi tipinden referans döndürmektedir. |
-| [OperationContract] <br> void CompleteOrderPrococes2(ProductOrderRequest request); | Operasyon Mesaj Sözleşmesi tipinden parametre almakta ama değer döndürmemektedir. |
-| Geçersiz Mesaj Sözleşme Kullanımları |  |
-| [OperationContract] <br> int CompleteOrderProcess(ProductOrderRequest request); | Parametrenin Mesaj Sözleşmesi olduğu durumlarda dönüş tipi olarak Mesaj Sözleşmesi harici bir tip kullanılamaz. Exception üretir. |
-| [OperationContract] <br> void ComplteOrderProcess(ProductOrderRequest request1, ProductOrderRequest request2); | Birden fazla Mesaj Sözleşmesi parametre olarak kullanılamaz. Exception üretir. |
+| | |
+| :--- | :--- |
+| **Geçerli Mesaj Sözleşme Kullanımları** | |
+| [OperationContract]<br>**ProductOrderResponse**<br>CompleteOrderProcess(**ProductOrderRequest** request); | *Operasyonun dönüş tipi ve parametresi Mesaj Sözleşmesi tipindendir.* |
+| [OperationContract]<br>**ProductOrderResponse** CompleteOrderProcess(); | *Operasyon parametre almamakta ve Mesaj Sözleşmesi tipinden referans döndürmektedir.* |
+| [OperationContract]<br>**void** CompleteOrderPrococes2(**ProductOrderRequest**<br>request); | *Operasyon Mesaj Sözleşmesi tipinden parametre almakta ama değer döndürmemektedir.* |
+| **Geçersiz Mesaj Sözleşme Kullanımları** | |
+| [OperationContract]<br>**int** CompleteOrderProcess(**ProductOrderRequest**<br>request); | *Parametrenin Mesaj Sözleşmesi olduğu durumlarda dönüş tipi olarak Mesaj Sözleşmesi harici bir tip kullanılamaz. **Exception** üretir.* |
+| [OperationContract]<br>void ComplteOrderProcess(**ProductOrderRequest**<br>request1, **ProductOrderRequest** request2); | *Birden fazla Mesaj Sözleşmesi parametre olarak kullanılamaz. **Exception** üretir.* |
 
 Bu kısa teorik bilgileri devam ettireceğiz ancak dilerseniz basit bir örnek üzerinden ilerleyerek devam edelim. Öncelikli olarak bir WCF Sınıf Kütüphanesi projesi oluşturduğumuzu düşünelim. Bu projemizde yer alacak olan tiplerin sınıf diygramındaki görüntüsü aşağıdaki gibi tasarlanabilir.
 
-![mk269_2.gif](/assets/images/2009/mk269_2.gif)
+![mk269_2.gif](/assets/images/2008/mk269_2.gif)
 
-Sınıf diyagramı (Class Diagram) gözümüzü korkutmasın. Senaryomuz aslında sadece Mesaj Sözleşmelerinin nasıl kullanılacağını göstermeye yönelik olduğundan çok anlamlı olmayan operasyonlar içermekte. Bu yüzden örnek olarak bir sipariş sürecine özel mesajları tasarladığımız bir durum söz konusu. Kullanılan tiplerin içerikleri sırasıyla aşağıdaki gibidir;
+Sınıf diyagramı(Class Diagram) gözümüzü korkutmasın. Senaryomuz aslında sadece Mesaj Sözleşmelerinin nasıl kullanılacağını göstermeye yönelik olduğundan çok anlamlı olmayan operasyonlar içermekte. Bu yüzden örnek olarak bir sipariş sürecine özel mesajları tasarladığımız bir durum söz konusu. Kullanılan tiplerin içerikleri sırasıyla aşağıdaki gibidir;
 
 Product Sınıfı. (Veri Sözleşmesi-Data Contract olarak tanımlanmıştır)
 
 ```csharp
 using System;
 using System.Runtime.Serialization;
-
+ 
 namespace ProductTransferLib
 {
     [DataContract(Namespace = "http://Northwind/ProductTransferService/Product")]
     public class Product
     {
-        [DataMember(Order = 0)]
-        public int ProductId
-        {
-            get;
-            set;
-        }
-        [DataMember(Order = 1)]
-        public string Name
-        {
-            get;
-            set;
-        }
-        [DataMember(Order = 2)]
-        public double ListPrice
-        {
-            get;
-            set;
-        }
-        [DataMember(Order = 3)]
-        public DateTime OrderDate
-        {
-            get;
-            set;
-        }
+        [DataMember(Order=0)]
+        public int ProductId { get; set; }
+        [DataMember(Order=1)]
+        public string Name { get; set; }
+        [DataMember(Order=2)]
+        public double ListPrice { get; set; }
+        [DataMember(Order=3)]
+        public DateTime OrderDate { get; set; }
     }
 }
 ```
@@ -79,68 +64,40 @@ CustomerNumber yapısı-struct.(Veri Sözleşmesi-Data Contract olarak tanımlan
 
 ```csharp
 using System.Runtime.Serialization;
-
+ 
 namespace ProductTransferLib
 {
     [DataContract(Namespace = "http://Northwind/ProductTransferService/CustomerNumber")]
     public struct CustomerNumber
     {
         [DataMember]
-        public char Region
-        {
-            get;
-            set;
-        }
+        public char Region { get; set; }
         [DataMember]
-        public int Number
-        {
-            get;
-            set;
-        }
+        public int Number { get; set; }
         [DataMember]
-        public string LastName
-        {
-            get;
-            set;
-        }
+        public string LastName { get; set; }
     }
 }
 ```
 
-Receiver Sınıfı (Veri Sözleşmesi olarak tanımlanmıştır)
+Receiver Sınıfı(Veri Sözleşmesi olarak tanımlanmıştır)
 
 ```csharp
 using System.Runtime.Serialization;
-
+ 
 namespace ProductTransferLib
 {
-    [DataContract(Namespace = "http://Northwind/ProductTransferService/Receiver")]
+    [DataContract(Namespace="http://Northwind/ProductTransferService/Receiver")]
     public class Receiver
     {
         [DataMember]
-        public int ReceiverId
-        {
-            get;
-            set;
-        }
+        public int ReceiverId { get; set; }
         [DataMember]
-        public string Name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
         [DataMember]
-        public CustomerNumber Number
-        {
-            get;
-            set;
-        }
+        public CustomerNumber Number { get; set; }
         [DataMember]
-        public int RequestedProductCount
-        {
-            get;
-            set;
-        }
+        public int RequestedProductCount { get; set; }
     }
 }
 ```
@@ -149,30 +106,18 @@ Sender Sınıfı.(Veri Sözleşmesi olarak tanımlanmıştır)
 
 ```csharp
 using System.Runtime.Serialization;
-
+ 
 namespace ProductTransferLib
 {
     [DataContract(Namespace = "http://Northwind/ProductTransferService/Sender")]
     public class Sender
     {
         [DataMember]
-        public int SenderId
-        {
-            get;
-            set;
-        }
+        public int SenderId { get; set; }
         [DataMember]
-        public string Name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
         [DataMember]
-        public CustomerNumber SenderNumber
-        {
-            get;
-            set;
-        }
+        public CustomerNumber SenderNumber { get; set; }
     }
 }
 ```
@@ -181,7 +126,7 @@ RequestStatus Enum sabiti.(Veri Sözleşmesi olarak tanımlanmıştır. Enum sab
 
 ```csharp
 using System.Runtime.Serialization;
-
+ 
 namespace ProductTransferLib
 {
     [DataContract(Namespace = "http://Northwind/ProductTransferService/RequestStatus")]
@@ -197,63 +142,43 @@ namespace ProductTransferLib
 }
 ```
 
-Buraya kadar tanımladığımız tipler içerisinde sınıf, yapı ve enum sabiti tipleri söz konusudur. Bu tipler birer Veri Sözleşmesi olarak tanımlanmıştır ve Mesaj Sözleşmeleri içerisinde ele alınmaktadır. Yazımızın konusu olan Mesaj Sözleşmelerinden iki adet tanımlanmalıdır. Bu tanımlamalardan birisi istek (Request) diğer ise cevap (Response) içeriklerinin yapısını işaret etmektedir. Bir başka deyişle, istemciden servise gelecek veya geriye döndürülecek olan SOAP zarflarının içerikleri kod yardımıyla belirlenmektedir. İstemci tarafından gelecek olan taleplere ait Mesaj Sözleşmesi aşağıdaki kod parçasında olduğu gibi tanımlanmıştır.
+Buraya kadar tanımladığımız tipler içerisinde sınıf, yapı ve enum sabiti tipleri söz konusudur. Bu tipler birer Veri Sözleşmesi olarak tanımlanmıştır ve Mesaj Sözleşmeleri içerisinde ele alınmaktadır. Yazımızın konusu olan Mesaj Sözleşmelerinden iki adet tanımlanmalıdır. Bu tanımlamalardan birisi istek(Request) diğer ise cevap(Response) içeriklerinin yapısını işaret etmektedir. Bir başka deyişle, istemciden servise gelecek veya geriye döndürülecek olan SOAP zarflarının içerikleri kod yardımıyla belirlenmektedir. İstemci tarafından gelecek olan taleplere ait Mesaj Sözleşmesi aşağıdaki kod parçasında olduğu gibi tanımlanmıştır.
 
 ```csharp
 using System;
 using System.ServiceModel;
-
+ 
 namespace ProductTransferLib
 {
     [MessageContract]
     public class ProductOrderRequest
     {
         #region Header Kısmına yazılacak özellikler
-
+ 
         [MessageHeader]
-        public Guid OrderNumber
-        {
-            get;
-            set;
-        }
+        public Guid OrderNumber { get; set; }
         [MessageHeader]
-        public DateTime OrderDate
-        {
-            get;
-            set;
-        }
+        public DateTime OrderDate { get; set; }
         [MessageHeader]
-        public Product OrderedProduct
-        {
-            get;
-            set;
-        }
-
+        public Product OrderedProduct { get; set; }
+ 
         #endregion
-
+ 
         #region Body kısmına yazılacak özellikler
-
-        [MessageBodyMember(ProtectionLevel = System.Net.Security.ProtectionLevel.None)] // ProtectionLevel için varsayılan değre None' dur.
-        public Sender OrderSender
-        {
-            get;
-            set;
-        }
+ 
+        [MessageBodyMember(ProtectionLevel=System.Net.Security.ProtectionLevel.None)] // ProtectionLevel için varsayılan değre None' dur.
+        public Sender OrderSender { get; set; }
         [MessageBodyMember]
-        public Receiver[] Receivers
-        {
-            get;
-            set;
-        }
-
+        public Receiver[] Receivers { get; set; }
+ 
         #endregion
     }
 }
 ```
 
-ProductOrderRequest isimli sınıf bir Mesaj Sözleşmesi olacak şekilde tanımlanmıştır. Bu nedenle MessageContract niteliği ile imzalanmıştır. Bu nitelik sadece sınıf (Class) veya yapılara (Structs) uygulanabilir. Yazımızın başında mesajın Header ve Body kısımlarından bahsetmiştik. Header kısmında taşınacak olan alan (Field) veya özellikleri (Property) belirtmek için MessageHeader niteliği kullanılmaktadır. Örnektende görüldüğü gibi, Header kısmında Guid, DateTime gibi bilinen tipler dışında Product isimli geliştirici tanımlı bir sınıfada yer verilmiştir. Söz konusu tipler mesaj içerisine alınırken serileştirilmektedir. Bu nedenle Product sınıfı ve diğer geliştirici tanımlı tipler birer Veri Sözleşmesi olarak tanımlanmıştır. Body kısmında yer alacak özellik veya alanlar ise MessageBodyMember niteliği ile tanımlanırlar. Yine Body kısmındada, Sender ve Receiver isimli geliştirici tanımlı Veri Sözleşmelerine yer verilmektedir. Özellikle Receiver tipinden bir Array kullanıldığınada dikkat edilmelidir
+ProductOrderRequest isimli sınıf bir Mesaj Sözleşmesi olacak şekilde tanımlanmıştır. Bu nedenle MessageContract niteliği ile imzalanmıştır. Bu nitelik sadece sınıf(Class) veya yapılara(Structs) uygulanabilir. Yazımızın başında mesajın Header ve Body kısımlarından bahsetmiştik. Header kısmında taşınacak olan alan(Field) veya özellikleri(Property) belirtmek için MessageHeader niteliği kullanılmaktadır. Örnektende görüldüğü gibi, Header kısmında Guid, DateTime gibi bilinen tipler dışında Product isimli geliştirici tanımlı bir sınıfada yer verilmiştir. Söz konusu tipler mesaj içerisine alınırken serileştirilmektedir. Bu nedenle Product sınıfı ve diğer geliştirici tanımlı tipler birer Veri Sözleşmesi olarak tanımlanmıştır. Body kısmında yer alacak özellik veya alanlar ise MessageBodyMember niteliği ile tanımlanırlar. Yine Body kısmındada, Sender ve Receiver isimli geliştirici tanımlı Veri Sözleşmelerine yer verilmektedir. Özellikle Receiver tipinden bir Array kullanıldığınada dikkat edilmelidir.
 
-Header veya Body kısımlarında Array' ler kullanılıyorsa MessageHeader ve MessageBodyMember nitelikleri bu dizilerin elemanlarını bir elementin alt elementleri(Child Element) olacak şekilde konumlandırır. Örneğin; 
+Header veya Body kısımlarında Array' ler kullanılıyorsa MessageHeader ve MessageBodyMember nitelikleri bu dizilerin elemanlarını bir elementin alt elementleri(Child Element) olacak şekilde konumlandırır. Örneğin;
 
 ```xml
 <diziAdi>
@@ -273,7 +198,7 @@ Yanlız bu nitelik sadece dizilere uygulanabilir. Bir başka deyişle koleksiyon
 
 Eğer SOAP içeriğinde byte tipinden bir diziye yer verilmişse MessageHeader veya MessageBodyMember niteliklerinin kullanılması halinde bunlar doğrudan Base64 tipine dönüştürülürler.  Ancak, eğer MessageHeaderArray niteliği kullanılıyorsa, ele alınan serileştirme tipine göre(DataContractSerializer, XmlSerializer gibi) bir aktarım gerçekleştirilir.
 
-MessageHeader ve MessageBodyMember niteliklerinde yer alan ProtectionLevel özelliği kullanılarak dijital olarak imzalama (Sign) veya şifreleme (Encryption) sağlanabilir. ProtectionLevel özelliği System.Net.Security.ProtectionLevel enum sabiti tipinden bir değer alabilir. Bu değerler None, EncryptAndSign, Sign olabilir. Varsayılan değeri None'dur. Sign seçilirse dijital imzalama söz konusudur. EncryptAndSign seçilirsede şifreleme ve dijital imzalama söz konusudur.
+MessageHeader ve MessageBodyMember niteliklerinde yer alan ProtectionLevel özelliği kullanılarak dijital olarak imzalama(Sign) veya şifreleme(Encryption) sağlanabilir. ProtectionLevel özelliği System.Net.Security.ProtectionLevel enum sabiti tipinden bir değer alabilir. Bu değerler None, EncryptAndSign, Sign olabilir. Varsayılan değeri None' dur. Sign seçilirse dijital imzalama söz konusudur. EncryptAndSign seçilirsede şifreleme ve dijital imzalama söz konusudur.
 
 Elbette None dışındaki değerlerin işe yaraması için WCF çalışma ortamına yönelik olaraktan gerekli Binding ve Behavior ayarlamalarının yapılması gerekir. Aksi durumda çalışma zamanında doğrulama işlemi sırasında bir istisnası alınır. ProtectionLevel, Header kısmında her bir eleman için ayrı ayrı uygulanmaktadır. Body kısmı söz konusu olduğunda ise kaç eleman olursa olsun hepsi için aynı ProtectionLevel seviyesi söz konusudur. Buna göre MessageBodyMember niteliği içinde seviyesi yüksek olan ProtectionLevel değeri, diğerleri içinde uygulanır. Söz gelimi 3 farklı MessageBodyMember için sırasıyla None, EncryptAndSign, Sign değerleri belirlenmişse, tüm mesaj gövdesi için EncrptyAndSign seçeneği göz önüne alınmaktadır.
 
@@ -284,39 +209,23 @@ Elbette None dışındaki değerlerin işe yaraması için WCF çalışma ortam�
 ```csharp
 using System.ServiceModel;
 using System;
-
+ 
 namespace ProductTransferLib
 {
     [MessageContract]
     public class ProductOrderResponse
     {
         [MessageBodyMember]
-        public RequestStatus Status
-        {
-            get;
-            set;
-        }
-
+        public RequestStatus Status { get; set; }
+ 
         [MessageBodyMember]
-        public DateTime ProcessDate
-        {
-            get;
-            set;
-        }
-
+        public DateTime ProcessDate{ get; set; }
+ 
         [MessageBodyMember]
-        public byte[] OrderPicture
-        {
-            get;
-            set;
-        } // Burada byte[] tipinden bir dizi söz konusu olduğu için SOAP body' si içerisinde Base64 tipinden bir kodlama(encoding) söz konusu olacaktır
-
+        public byte[] OrderPicture { get; set; } // Burada byte[] tipinden bir dizi söz konusu olduğu için SOAP body' si içerisinde Base64 tipinden bir kodlama(encoding) söz konusu olacaktır
+ 
         [MessageHeader]
-        public int OrderdProductCount
-        {
-            get;
-            set;
-        }
+        public int OrderdProductCount { get; set; }
     }
 }
 ```
@@ -329,12 +238,12 @@ Artık istemci ve servis arasında dolaşacak olan SOAP mesajlarına ait içerik
 
 ```csharp
 using System.ServiceModel;
-
+ 
 namespace ProductTransferLib
 {
     [ServiceContract(
-                                Name = "ProductTransferService"
-                                , Namespace = "http://Northwind/ProductTransferService")]
+                                Name="ProductTransferService"
+                                ,Namespace="http://Northwind/ProductTransferService")]
     public interface IProductTransferService
     {
         [OperationContract]
@@ -348,43 +257,43 @@ Operasyonun uygulanışı içinse aşağıdaki gibi bir kod örneği geliştiril
 ```csharp
 using System;
 using System.IO;
-
+ 
 namespace ProductTransferLib
 {
-    public class ProductTransferService
-        : IProductTransferService
+public class ProductTransferService
+    :IProductTransferService
+{
+    #region IProductTransferService Members
+ 
+    public ProductOrderResponse CompleteOrderProcess(ProductOrderRequest request)
     {
-        #region IProductTransferService Members
-
-        public ProductOrderResponse CompleteOrderProcess(ProductOrderRequest request)
+        DateTime requestDate = request.OrderDate;
+        Guid requestOrderNumber = request.OrderNumber;
+        Sender requestSender = request.OrderSender;
+        Receiver[] requestReceivers = request.Receivers;
+ 
+        int orderedProductCount = 0;
+        foreach (Receiver receiver in requestReceivers)
         {
-            DateTime requestDate = request.OrderDate;
-            Guid requestOrderNumber = request.OrderNumber;
-            Sender requestSender = request.OrderSender;
-            Receiver[] requestReceivers = request.Receivers;
-
-            int orderedProductCount = 0;
-            foreach (Receiver receiver in requestReceivers)
-            {
-                orderedProductCount += receiver.RequestedProductCount;
-            }
-
-            // Not : XP_HDD.gif resminin byte içeriğinin dizi boyutu istemci tarafına gönderilebilecek varsayılan dizi limini aşabilir. Bu nedenle istemci tarafındaki konfigurasyon ayarlarında maxArrayLength değerinin bilinçli olarak arttırılması gerekebilir.
-            return new ProductOrderResponse
-            {
-                ProcessDate = DateTime.Now,
-                Status = RequestStatus.Ok,
-                OrderPicture = File.ReadAllBytes(System.Environment.CurrentDirectory + "\\XP_HDD.gif"),
-                OrderdProductCount = orderedProductCount
-            };
+            orderedProductCount += receiver.RequestedProductCount;
         }
-
+ 
+        // Not : XP_HDD.gif resminin byte içeriğinin dizi boyutu istemci tarafına gönderilebilecek varsayılan dizi limini aşabilir. Bu nedenle istemci tarafındaki konfigurasyon ayarlarında maxArrayLength değerinin bilinçli olarak arttırılması gerekebilir.
+        return new ProductOrderResponse
+                        {
+                            ProcessDate=DateTime.Now,
+                            Status= RequestStatus.Ok,
+                            OrderPicture=File.ReadAllBytes(System.Environment.CurrentDirectory + "\\XP_HDD.gif"),
+                            OrderdProductCount=orderedProductCount
+                        };
+        }
+ 
         #endregion
     }
 }
 ```
 
-Burada request değişkeninden yararlanılarak istemci tarafından gelen SOAP paketindeki mesaj içeriği ele alınmakta ve kullanılmaktadır. Sembolik olarak paket içerisinde gelen Receivers dizisindeki her bir Receiver nesne örneğinin sipariş sayısının toplamı tespit edilmektedir. Ayrıca örnek byte[] içeriği döndürülmesi için küçük bir resim dosyasından (XP_HDD.gif) yararlanılmaktadır. İşlemin tarihi, durumu, sipariş ile ilişkili resim ve toplam sipariş sayısı bilgileri kullanılaraktanda bir cevap mesajı oluşturulmakta ve istemci tarafına gönderilmektedir.
+Burada request değişkeninden yararlanılarak istemci tarafından gelen SOAP paketindeki mesaj içeriği ele alınmakta ve kullanılmaktadır. Sembolik olarak paket içerisinde gelen Receivers dizisindeki her bir Receiver nesne örneğinin sipariş sayısının toplamı tespit edilmektedir. Ayrıca örnek byte[] içeriği döndürülmesi için küçük bir resim dosyasından(XP_HDD.gif) yararlanılmaktadır. İşlemin tarihi, durumu, sipariş ile ilişkili resim ve toplam sipariş sayısı bilgileri kullanılaraktanda bir cevap mesajı oluşturulmakta ve istemci tarafına gönderilmektedir.
 
 > SOAP mesajlarının içerikleri aslında XML tabanlıdır. Bu içeriği yönetirken Mesaj Sözleşmeleri, nesne tabanlı bir modeli ele alabilmemizi sağlamaktadır. Bir başka deyişle, kod tarafında XML yapısı ile uğraşmak yerine, nesne tabanlı bir modeli kullanarak mesaj içeriğini kolayca oluşturabilmemiz olanaklı hale gelmektedir ki bu geliştirme süreci için önemli bir avantajdır.
 
@@ -396,7 +305,7 @@ Sunucu uygulama kodları;
 using System;
 using System.ServiceModel;
 using ProductTransferLib;
-
+ 
 namespace ServerApp
 {
     class Program
@@ -442,9 +351,9 @@ Sunucu tarafı konfigurasyon içeriği;
 </configuration>
 ```
 
-Sunucu uygulama basit olarak HTTP tabanlı bir sunum yapmakta ve BasicHttpBinding bağlayıcı tipini ele almaktadır. Bununla birlikte istemci tarafının, servise ait Metadata bilgisini çekebilmesi için IMetadataExchange arayüzünü kullanan bir MexHttpBinding EndPoint'ide kullanılmaktadır.
+Sunucu uygulama basit olarak HTTP tabanlı bir sunum yapmakta ve BasicHttpBinding bağlayıcı tipini ele almaktadır. Bununla birlikte istemci tarafının, servise ait Metadata bilgisini çekebilmesi için IMetadataExchange arayüzünü kullanan bir MexHttpBinding EndPoint' ide kullanılmaktadır.
 
-İstemci uygulamamızı kullanırken yine Add Service Reference seçeneği ile aynı solution içerisinde yer alan örnek servise ait referans üretimini gerçekleştirebiliriz. İstemci tarafına ait konfigurasyon içeriği aşağıdaki gibidir (Bu içerik Add Service Reference seçeneğinin kullanılması sonucunda otomatik olarak üretilmektedir.)
+İstemci uygulamamızı kullanırken yine Add Service Reference seçeneği ile aynı solution içerisinde yer alan örnek servise ait referans üretimini gerçekleştirebiliriz. İstemci tarafına ait konfigurasyon içeriği aşağıdaki gibidir(Bu içerik Add Service Reference seçeneğinin kullanılması sonucunda otomatik olarak üretilmektedir.)
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -475,7 +384,7 @@ contract="ProductTransferServiceReference.ProductTransferService" name="ProductT
 using System;
 using System.IO;
 using ClientApp.ProductTransferServiceReference;
-
+ 
 namespace ClientApp
 {
     class Program
@@ -483,40 +392,40 @@ namespace ClientApp
         static void Main(string[] args)
         {
             ProductTransferServiceClient client = new ProductTransferServiceClient("ProductTransferServiceHttpEndPoint");
-
+ 
             Sender sndr = new Sender
-            {
-                Name = "Burak Selim",
-                SenderId = 10001,
-                SenderNumber = new CustomerNumber { Number = 1, Region = 'A', LastName = "SENYURT" }
-            };
-
+                                {
+                                    Name="Burak Selim",
+                                    SenderId=10001,
+                                    SenderNumber=new CustomerNumber{ Number=1, Region='A', LastName="SENYURT"} 
+                                };
+ 
             Receiver[] receivers = {
                 new Receiver{ Name="Bil", Number=new CustomerNumber{ LastName="Geyts", Region='B', Number=1}, ReceiverId=10002, RequestedProductCount=100},
                 new Receiver{ Name="Deyv", Number=new CustomerNumber{ LastName="Masteyn", Region='C', Number=2}, ReceiverId=10003, RequestedProductCount=150},
                 new Receiver{ Name="Co", Number=new CustomerNumber{ LastName="Satriyani", Region='C', Number=3}, ReceiverId=10055, RequestedProductCount=75}
             };
-
+ 
             RequestStatus requestStatus;
             DateTime processDate;
             byte[] orderPicture;
-
+ 
             Console.WriteLine("Sipariş için bir tuşa basınız.");
             Console.ReadLine();
+     
+            int result=client.CompleteOrderProcess(
+              DateTime.Now,
+              Guid.NewGuid(),
+              new Product{ ProductId=1, Name="Her Yönüyle WCF", ListPrice=10, OrderDate=DateTime.Now},
+              sndr,
+              receivers,
+              out orderPicture,
+              out processDate,
+              out requestStatus);
 
-            int result = client.CompleteOrderProcess(
-                                                                        DateTime.Now,
-                                                                        Guid.NewGuid(),
-                                                                        new Product { ProductId = 1, Name = "Her Yönüyle WCF", ListPrice = 10, OrderDate = DateTime.Now },
-                                                                        sndr,
-                                                                        receivers,
-                                                                        out orderPicture,
-                                                                        out processDate,
-                                                                        out requestStatus);
-
-            Console.WriteLine("result {0}", result.ToString());
+            Console.WriteLine("result {0}",result.ToString());
             File.WriteAllBytes(System.Environment.CurrentDirectory + "\\ResponsePicture.gif", orderPicture);
-
+ 
             Console.WriteLine("İşlemler tamamlandı. Çıkmak için bir tuşa basınız.");
             Console.ReadLine();
         }
@@ -526,13 +435,13 @@ namespace ClientApp
 
 İstemci uygulamada servise ait proxy nesnesi örneklendikten sonra CompleteOrderProcess metodunun ihtiyacı olan parametreler hazırlanmaktadır. CompleteOrderProcess metodu aslında ProcessOrderResponse Mesaj Sözleşmesi tipinden bir parametre almaktadır. Ne varki istemci tarafında metodun uygulanış şekli biraz farklıdır. Herşeyden önce, servise gönderilecek SOAP paketi içerisinde yer alacak Header ve Body elementlerinin her biri, istemci tarafında ayrı birer metod parametresi şekline ele alınmaktadır.
 
-Metodun çağırılması sonucu istemciye dönecek olan SOAP mesajındaki Header kısmında yer alan int değer aslında istemci tarafında, CompleteOrderProcess'in dönüş değeridir. Yine istemciye döndürülen ve Body kısmında yer alan orderPicture,processDate ve requestStatus değişkenleri ise, CompleteOrderProcess metodunun out tipinden parametreleri olarak ele alınmaktadır. orderPicture değişkeni bir byte[] dizisi olarak mesaj içeriğinden toparlanmakta ve fiziki olarak istemci tarafındaki bir dosyaya yazdırılmaktadır. Bu tahmin edileceği üzere servis tarafından gönderilen resimdir. Projemizde hem sunucu hemde istemci uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan sonuçları elde ederiz.
+Metodun çağırılması sonucu istemciye dönecek olan SOAP mesajındaki Header kısmında yer alan int değer aslında istemci tarafında, CompleteOrderProcess' in dönüş değeridir. Yine istemciye döndürülen ve Body kısmında yer alan orderPicture,processDate ve requestStatus değişkenleri ise, CompleteOrderProcess metodunun out tipinden parametreleri olarak ele alınmaktadır. orderPicture değişkeni bir byte[] dizisi olarak mesaj içeriğinden toparlanmakta ve fiziki olarak istemci tarafındaki bir dosyaya yazdırılmaktadır. Bu tahmin edileceği üzere servis tarafından gönderilen resimdir. Projemizde hem sunucu hemde istemci uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan sonuçları elde ederiz.
 
-![mk269_3.gif](/assets/images/2009/mk269_3.gif)
+![mk269_3.gif](/assets/images/2008/mk269_3.gif)
 
 Aslında burada şaşırtıcı bir sonuç yoktur. Nesne tabanlı olacak şekilde istemci ve servis arasındaki tipler kolay bir şekilde kullanılmıştır. Ancak bizim için önemli olan arka planda hareket eden SOAP mesajlarının içeriklerinin ne hale geldiğidir. Bu amaçla Fiddler isimli HTTP Debugging aracından yararlanırsak, örneğin çalıştırılması sonrasında ağ trafiğinde, aşağıdaki ekran görüntüsünde yer alan mesajlaşmanın oluştuğunu görürüz.
 
-![mk269_4.gif](/assets/images/2009/mk269_4.gif)
+![mk269_4.gif](/assets/images/2008/mk269_4.gif)
 
 Dikkat edileceği üzere, Mesaj Sözleşmelerinde Header ve Body kısımlarında hangi bilgilerin yer almasını istiyorsak buna göre bir ağaç yapısı oluşmuştur. Request kısmına ait olan SOAP zarfının XML içeriği tam olarak aşağıdaki gibidir.
 
@@ -596,7 +505,7 @@ Dikkat edileceği üzere, Mesaj Sözleşmelerinde Header ve Body kısımlarında
 </s:Envelope>
 ```
 
-Bu XML içeriği incelendiğinde tam olarak Mesaj Sözleşmesinde belirttiğimiz kriterlere uyulduğu görülmektedir. Söz gelimi Header kısmında OrderDate, OrderNumber ve OrderProduct elementleri yer almaktayken, Body kısmında ProductOrderRequest elementi tarafından sarmalanmış olan, OrderSender ve Receivers elementleri bulunmaktadır. Receivers aslında Receiver[] dizisinin kullanılması nedeni ile kendi içerisinde birden fazla Receiver alt elementi içermektedir. Burada geliştirici tanımlı tiplerin (Product,Receiver,Sender gibi) Veri Sözleşmesi olarak tanımlanmaları nedeniyle XML elemetleri içerisine aktarılmış olmalarıda gözden kaçırılmamalıdır. Yine istemciye dönen mesajın (Response) tam içeriğine bakıldığında aşağıdakine benzer bir SOAP çıktısı ile karşılaşılmaktadır.
+Bu XML içeriği incelendiğinde tam olarak Mesaj Sözleşmesinde belirttiğimiz kriterlere uyulduğu görülmektedir. Söz gelimi Header kısmında OrderDate, OrderNumber ve OrderProduct elementleri yer almaktayken, Body kısmında ProductOrderRequest elementi tarafından sarmalanmış olan, OrderSender ve Receivers elementleri bulunmaktadır. Receivers aslında Receiver[] dizisinin kullanılması nedeni ile kendi içerisinde birden fazla Receiver alt elementi içermektedir. Burada geliştirici tanımlı tiplerin(Product,Receiver,Sender gibi) Veri Sözleşmesi olarak tanımlanmaları nedeniyle XML elemetleri içerisine aktarılmış olmalarıda gözden kaçırılmamalıdır. Yine istemciye dönen mesajın(Response) tam içeriğine bakıldığında aşağıdakine benzer bir SOAP çıktısı ile karşılaşılmaktadır.
 
 ```xml
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
@@ -637,24 +546,24 @@ ME9sLYBAhj QgAZxr+2113XH7cMKeivhBUHZxBADBA9U/gAGGLjgAgYZYO555pprHgMNCJVu+umop676
 </s:Envelope>
 ```
 
-Gözden kaçmayacak olan nokta OrderPicture elementinin içeriğidir:) Tahmin edileceği üzere bu elementin içeriği, servis tarafındaki resmimizin byte[] dizisi haline geldikten sonra, SOAP mesajı içeriğine Base64 kodlamasına göre serileştirilmiş halidir. Bu içerik, istemci tarafında ters serileştirilme işleminden sonra yine byte[] dizisi olacak şekilde ele alınabilmektedir. Bunların haricinde Header kısmında OrderProductCount elementinin, Body kısmında ise ProductOrderResponse elementi ile sarmalanmış olan OrderPicture, ProcessDate ve Status alt elementlerinin olduğu görülmektedir.
+Gözden kaçmayacak olan nokta OrderPicture elementinin içeriğidir :) Tahmin edileceği üzere bu elementin içeriği, servis tarafındaki resmimizin byte[] dizisi haline geldikten sonra, SOAP mesajı içeriğine Base64 kodlamasına göre serileştirilmiş halidir. Bu içerik, istemci tarafında ters serileştirilme işleminden sonra yine byte[] dizisi olacak şekilde ele alınabilmektedir. Bunların haricinde Header kısmında OrderProductCount elementinin, Body kısmında ise ProductOrderResponse elementi ile sarmalanmış olan OrderPicture, ProcessDate ve Status alt elementlerinin olduğu görülmektedir.
 
-Mesaj Sözleşmelerinde ele alınan bir diğer durumda türlendirilmemiş versiyonların kullanılmasıdır (Untyped Message Contracts). Burada System.ServiceModel.Channels isim alanında yer alan Message sınıfı ele alınmaktadır. SOAP 1.1 ve SOAP 1.2 uyumlu mesajları işaret edebilen bu sınıf yardımıyla, istemciden gelen talepler ele alınabilir ve cevaplar oluşturularak Message tipinden örnekler üzerinden karşı tarafa gönderilebilir. Son olarak bu durumu değerlendirip makalemizi tamamlayalım. Bu amaçla Servis Sözleşmemize aşağıdaki ekran görüntüsünde yer alan yeni bir operasyon ilave ettiğimizi düşünelim.
+Mesaj Sözleşmelerinde ele alınan bir diğer durumda türlendirilmemiş versiyonların kullanılmasıdır(Untyped Message Contracts). Burada System.ServiceModel.Channels isim alanında yer alan Message sınıfı ele alınmaktadır. SOAP 1.1 ve SOAP 1.2 uyumlu mesajları işaret edebilen bu sınıf yardımıyla, istemciden gelen talepler ele alınabilir ve cevaplar oluşturularak Message tipinden örnekler üzerinden karşı tarafa gönderilebilir. Son olarak bu durumu değerlendirip makalemizi tamamlayalım. Bu amaçla Servis Sözleşmemize aşağıdaki ekran görüntüsünde yer alan yeni bir operasyon ilave ettiğimizi düşünelim.
 
-![mk269_5.gif](/assets/images/2009/mk269_5.gif)
+![mk269_5.gif](/assets/images/2008/mk269_5.gif)
 
 RunProcess isimli operasyon parametre ve dönüş değeri olarak Message tipini kullanmaktadır. Söz konusu operasyon metodunun ProductTransferService içerisindeki uyarlaması ise aşağıdaki gibi yapılabilir.
 
 ```csharp
 // Untyped Message alıp veren örnek servis operasyonu metodu.
 public Message RunProcess(Message request)
-{
+{ 
     // Servise gelen Untyped Message ' ın Body kısmında yer alan Product dizi içeriğini elde etmek için GetBody metodunun generic versiyonundan yararlanılır.
     Product[] products = request.GetBody<Product[]>();
-
+ 
     // İstemciye döndürelecek Untyped Message' ın Body kısmında yer alacak örnek Product içeriği için dizi oluşturulur.
-    Product[] resultSet = new Product[products.Length];
-
+    Product[] resultSet=new Product[products.Length];
+ 
     // Gelen mesajın Body kısmından elde edilen dizi üzerinde örnek işlemler yapılır.
     // Örnekte ListPrice bilgisi 1 birim arttırılmıştır.
     for (int i = 0; i < products.Length; i++)
@@ -662,76 +571,76 @@ public Message RunProcess(Message request)
         products[i].ListPrice += 1;
         resultSet[i] = products[i];
     }
-
+ 
     // Operasyondan döndürelecek olan Untyped Message oluşturulur.
     // İlk parametre SOAP versiyonunu belirtir. Örneğin "SOAP 1.1".
     // İkinci parametre servis operasyonunda ReplyAction özelliğine atanan değerdir.
     // Üçüncü parametre ise Body kısmında yer alacak olan nesne örneğidir.
-    Message response = Message.CreateMessage(request.Version, "ReplyAction", resultSet);
-
+    Message response = Message.CreateMessage(request.Version, "ReplyAction",resultSet);
+ 
     // Untyped Message geriye döndürülür.
     return response;
 }
 ```
 
-RunProcess isimli servis operasyonu, istemciden gelen mesajın Body kısmında yer alan Product nesne verilerini ele almakta ve örnek olarak ListPrice değerlerini 1 birim arttırarak geriye döndürmektedir. Metoda gelen türlendirilmemiş mesajın gövdesindeki veri içeriğini ele alabilmek için GetBody metodundan yararlanılır. Tahmin edileceği üzere metodun kullandığı generic tip üzerinden bir XML ters serileştirme işlemi söz konusudur. Nitekim istemciden gelen mesaj XML tipindedir ve kod içerisinde nesnel olarak kullanılması gerekmektedir.
+RunProcess isimli servis operasyonu, istemciden gelen mesajın Body kısmında yer alan Product nesne verilerini ele almakta ve örnek olarak ListPrice değerlerini 1 birim arttırarak geriye döndürmektedir. Metoda gelen türlendirilmemiş mesajın gövdesindeki veri içeriğini ele alabilmek için GetBody<T> metodundan yararlanılır. Tahmin edileceği üzere metodun kullandığı generic tip üzerinden bir XML ters serileştirme işlemi söz konusudur. Nitekim istemciden gelen mesaj XML tipindedir ve kod içerisinde nesnel olarak kullanılması gerekmektedir.
 
-Bunlara ek olaraktan, servisin istemciye göndereceği türlendirilmemiş mesajın üretimi için, Message sınıfının static CreateMessage fonksiyonundan yararlanılır. Metodun aşırı yüklenmiş (overload) 11 farklı versiyonu bulunmaktadır. Örneğimizde kullandığımız halinde, ilk parametre ile SOAP versiyonu, ikinci parametre ile SOAP Action adı ve son olarak üçüncü parametre ilede Body kısmına gelecek olan nesne örneği belirtilmiştir. Eklenen bu yeni fonksiyonellik nedeniyle istemci tarafında yer alan servis referansınında güncellenmesi gerekmektedir. Bu güncelleme işleminin ardından RunProcess isimli operasyon istemci tarafında örnek olarak aşağıdaki kod parçasında görüldüğü gibi kullanılabilir.
+Bunlara ek olaraktan, servisin istemciye göndereceği türlendirilmemiş mesajın üretimi için, Message sınıfının static CreateMessage fonksiyonundan yararlanılır. Metodun aşırı yüklenmiş(overload) 11 farklı versiyonu bulunmaktadır. Örneğimizde kullandığımız halinde, ilk parametre ile SOAP versiyonu, ikinci parametre ile SOAP Action adı ve son olarak üçüncü parametre ilede Body kısmına gelecek olan nesne örneği belirtilmiştir. Eklenen bu yeni fonksiyonellik nedeniyle istemci tarafında yer alan servis referansınında güncellenmesi gerekmektedir. Bu güncelleme işleminin ardından RunProcess isimli operasyon istemci tarafında örnek olarak aşağıdaki kod parçasında görüldüğü gibi kullanılabilir.
 
 ```csharp
 Console.WriteLine("\nUntyped Message\n");
-
+ 
 // Güncel kanal implementasyonundan yararlanarak OperationContextScope nesnesi örneklenir.
 // OperationContextScope nesnesinden yararlanarak gelen ve giden mesajların içerikleri yönetilebilir, Header, Body gibi kısımlarına müdahale edilebilir.
 using (new OperationContextScope(client.InnerChannel))
 {
     // Untyped mesaj içerisinde gönderilecek olan Product nesneleri için bir dizi hazırlanır.
-    Product[] products =
+    Product[] products = 
         {
             new Product{ Name="Programming WCF", ListPrice=12, OrderDate=DateTime.Now, ProductId=19},
             new Product{ Name="Programming C# 3.0", ListPrice=16, OrderDate=DateTime.Now, ProductId=21}
         };
-
+ 
     // İstemciden servise gönderilecek olan Untyped Message hazırlanır.
     // İlk parametre mesaj versiyonudur. (SOAP 1.1 gibi).
     // İkinci parametre servis sözleşmesinde RunProcess operasyonunda belirtilen Action özelliğinin değeridir.
     // Üçüncü parametre ise mesaj içeriğinde gönderilecek olan serileştirilebilir nesne örneğidir. Bu örnekte Product tipinden bir dizi kullanılmaktadır.
     Message request = Message.CreateMessage(OperationContext.Current.OutgoingMessageHeaders.MessageVersion, "RequestAction", products);
-
+ 
     // Operasyon çağrısı yapılır ve parametre olarak hazırlanan Untyped Message örneği gönderilir.
     // Çağrı sonucu yine bir Untyped Message örneğidir.
     Message reply = client.RunProcess(request);
-
+ 
     // Servisten gelen Untyped Message içerisindeki Body kısmında tutulan Product topluluğunu dizi olarak ele almak için GetBody metodunun generic versiyonu kullanılır.     Bunun sonucu olarak elde edilen sonuç Product tipinden bir dizi olacaktır.
     Product[] response = reply.GetBody<Product[]>();
-
+ 
     foreach (Product product in response)
     {
-        Console.WriteLine(product.Name + " " + product.ListPrice);
+        Console.WriteLine(product.Name+" "+product.ListPrice);
     }
 }
 ```
 
-İstemci tarafında RunProcess metodu çağırılmadan önce gönderilecek mesajın oluşturulması için yine CreateMessage static metodundan yararlanılmaktadır. Yine ilk parametre olarak SOAP versiyonu, ikinci parametre olarak SOAP Action değeri ve üçüncü parametre olarakta Body kısmına serileştirilecek nesne örneği belirtilmiştir. Servis tarafından gelen mesaja ait Body bilgisinin okunması içinde GetBody metodundan yararlanılmaktadır. İstemci tarafında dikkat edilmesi gereken noktalardan biriside tüm bu işlemleri içerisine alan Using bloğunda OperationContextScope nesnesinden yararlanılması ve o anki kanal (Channel) bilgisinin kullanılmasıdır. Örnek uygulamamız bu haliyle test edildiğinde çalışma zamanı görüntüsü aşağıdakine benzer olacaktır.
+İstemci tarafında RunProcess metodu çağırılmadan önce gönderilecek mesajın oluşturulması için yine CreateMessage static metodundan yararlanılmaktadır. Yine ilk parametre olarak SOAP versiyonu, ikinci parametre olarak SOAP Action değeri ve üçüncü parametre olarakta Body kısmına serileştirilecek nesne örneği belirtilmiştir. Servis tarafından gelen mesaja ait Body bilgisinin okunması içinde `GetBody<T>` metodundan yararlanılmaktadır. İstemci tarafında dikkat edilmesi gereken noktalardan biriside tüm bu işlemleri içerisine alan Using bloğunda OperationContextScope nesnesinden yararlanılması ve o anki kanal(Channel) bilgisinin kullanılmasıdır. Örnek uygulamamız bu haliyle test edildiğinde çalışma zamanı görüntüsü aşağıdakine benzer olacaktır.
 
-![mk269_8.gif](/assets/images/2009/mk269_8.gif)
+![mk269_8.gif](/assets/images/2008/mk269_8.gif)
 
 Ancak elbetteki arka planda yer alan mesaj içeriğine Fiddler aracı yardımıyla bakıldığında Body kısmında hareket eden Product verilerinin içeriği açık bir şekilde görülebilmektedir.
 
-![mk269_6.gif](/assets/images/2009/mk269_6.gif)
+![mk269_6.gif](/assets/images/2008/mk269_6.gif)
 
 Dikkat edileceği üzere Request mesajında gönderilen Product nesnelerine ait ListPrice değerleri, Response mesajı içerisinde 1 birim arttırılmıştır. Eğer mesajların RAW içeriklerine bakılırsa SOAP Action bilgisininde set edilmiş olduğu görülebilir. (Size tavsiyem GetBody metodlarına olan çağrılarda BreakPoint kullanarak request ve response değişkenlerinin çalışma zamanı içeriklerini QuickWatch ile izlemenizdir.)
 
-![mk269_7.gif](/assets/images/2009/mk269_7.gif)
+![mk269_7.gif](/assets/images/2008/mk269_7.gif)
 
 Eğer istemciden talep gönderildikten sonra varsayılan olarak 1 dakikalık zaman dilimi içerisinde servis tarafından cevap gelmezse aşağıdaki ekran görüntüsünde yer alan TimeoutException istisnası ile karşılaşılır.
 
-![mk269_9.gif](/assets/images/2009/mk269_9.gif)
+![mk269_9.gif](/assets/images/2008/mk269_9.gif)
 
 Bu sorun SendTimeout değeri arttırılarak çözümlenebilir. Bu sorun, uzun süren operasyonların söz konusu olduğu durumda dikkate alınması gereken istisnaların başında gelmektedir.
 
-Buraya kadar yaptıklarımıza baktığımızda, istemci ve sunucu arasındaki Mesaj içeriklerinin yönetiminin Mesaj Sözleşmeleri yardımıyla ele alınabildiği sonucu ortaya çıkmaktadır. Buna göre istenirse, istemci ve sunucu arasında taşınacak bir veri tipinin belirli parçalarının SOAP zarfı içerisindek Header veya Body bölümleri arasında ayrıştırılması mümkün olabilmektedir. Hatta, istemci ve servis arasında özel mesaj desenlerinin oluşturulması da söz konusu ve olasıdır. Elbette bu işi tamamlayıcı en önemli nokta şifreleme (Encryption) işlemlerininde hesaba katılmasıdır.
+Buraya kadar yaptıklarımıza baktığımızda, istemci ve sunucu arasındaki Mesaj içeriklerinin yönetiminin Mesaj Sözleşmeleri yardımıyla ele alınabildiği sonucu ortaya çıkmaktadır. Buna göre istenirse, istemci ve sunucu arasında taşınacak bir veri tipinin belirli parçalarının SOAP zarfı içerisindek Header veya Body bölümleri arasında ayrıştırılması mümkün olabilmektedir. Hatta, istemci ve servis arasında özel mesaj desenlerinin oluşturulması da söz konusu ve olasıdır. Elbette bu işi tamamlayıcı en önemli nokta şifreleme(Encryption) işlemlerininde hesaba katılmasıdır.
 
 Buda yapıldığı takdirde mesajın daha güvenilir bir şekilde ele alınması ve korunması mümkün hale gelmektedir. Diğer taraftan istemci ve servis arasındaki mesajların türlendirilmemiş olmaları halindede ele alınabildikleri ve içeriklerinin yönetilebildikleride ortadadır. Mesaj Sözleşmeleri ile ilişkili olarak daha detayı bilgi almak için, [MSDN](http://msdn.microsoft.com/en-us/library/ms730255(printer).aspx)' de yayınlanan içeriği takip etmenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim
 
-[Örneği İndirmek İçin Tıklayın](/assets/files/2009/UsingMessageContracts.rar)
+[Örneği İndirmek İçin Tıklayın](/assets/files/2008/UsingMessageContracts.rar)

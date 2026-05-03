@@ -412,24 +412,24 @@ namespace DotNet2Deyken
 
             // Insan Kaynakları departmanında çalışanların bulunması
             List<Personel> IKCalisanlari = Bul<Personel>(calisanlar, delegate (Personel p)
-                                                                                    {
-                                                                                        return p.Bolumu == Departman.Yazilim;
-                                                                                    }
-                                                                                );
+                                            {
+                                                return p.Bolumu == Departman.Yazilim;
+                                            }
+                                        );
 
             // Şubat ayında işe girenlerin bulunması
             List<Personel> SubatAyindaBaslayanlar = Bul<Personel>(calisanlar, delegate (Personel p)
-                                                                                    {
-                                                                                        return p.GirisTarihi.Month == 2;
-                                                                                    }
-                                                                                );
+                                            {
+                                                return p.GirisTarihi.Month == 2;
+                                            }
+                                        );
 
             //Departmanı Yazilim olanlardan Maaşı 1000 YTL üzerinde olanların bulunması
             List<Personel> MaasiVeDepartmaninaGore = Bul<Personel>(calisanlar, delegate (Personel p)
-                                                                                    {
-                                                                                        return (p.Maas >= 1000 && p.Bolumu == Departman.Yazilim);
-                                                                                    }
-                                                                                );
+                                            {
+                                                return (p.Maas >= 1000 && p.Bolumu == Departman.Yazilim);
+                                            }
+                                        );
             Listele<Personel>(IKCalisanlari);
             Listele<Personel>(SubatAyindaBaslayanlar);
             Listele<Personel>(MaasiVeDepartmaninaGore);
@@ -484,22 +484,22 @@ class Program
 
         List<Personel> BHarfliler =
                                 calisanlar.FindAll(delegate (Personel p)
-                                                            {
-                                                                return p.Ad[0] == 'B';
-                                                            }
-                                                        );
+                                    {
+                                        return p.Ad[0] == 'B';
+                                    }
+                                );
         List<Personel> SubattaBaslayanlar =
                                 calisanlar.FindAll(delegate (Personel p)
-                                                            {
-                                                                return p.GirisTarihi.Month == 2;
-                                                            }
-                                                        );
+                                    {
+                                        return p.GirisTarihi.Month == 2;
+                                    }
+                                );
         List<Personel> GenelMudurlukCalisanlari =
                                 calisanlar.FindAll(delegate (Personel p)
-                                                            {
-                                                                return p.Bolumu == Departman.GenelMudurluk;
-                                                            }
-                                                        );
+                                    {
+                                        return p.Bolumu == Departman.GenelMudurluk;
+                                    }
+                                );
 
         Listele<Personel>(BHarfliler);
         Listele<Personel>(SubattaBaslayanlar);
@@ -598,17 +598,17 @@ namespace DotNet3Nokta5Deyken
 
             //Giris yılı 1976 öncesi olanlar çekilirken başka bir metod çağırılıyor.
             var GirisYili1976OncesiOlanlar = calisanlar.FindAll(
-                                                                            p =>
-                                                                            {
-                                                                                if (p.GirisTarihi.Year < 1976)
-                                                                                {
-                                                                                    PrimArttir(p);
-                                                                                    return true;
-                                                                                }
-                                                                                else
-                                                                                    return false;
-                                                                            }
-                                                                    );
+                                            p =>
+                                            {
+                                                if (p.GirisTarihi.Year < 1976)
+                                                {
+                                                    PrimArttir(p);
+                                                    return true;
+                                                }
+                                                else
+                                                    return false;
+                                            }
+                                    );
 
             Listele<Personel>(AdiBIleBaslayanlar);
             Listele<Personel>(YazilimDepartmaniCalisanlari);
@@ -689,8 +689,8 @@ Func bir temsilci olduğu için, kullanılacağı her yerde lambda operatörleri
 
 ```csharp
 double sonuc = calisanlar
-                            .Where<Personel>(p => p.Bolumu == Departman.Yazilim)
-                                .Sum<Personel>(p => p.Maas);
+            .Where<Personel>(p => p.Bolumu == Departman.Yazilim)
+                .Sum<Personel>(p => p.Maas);
 Console.WriteLine(sonuc.ToString("C2"));
 
 int sonuc2 = calisanlar.Aggregate(0, (toplam, p) => p.Maas > 2000 ? toplam += 1 : toplam);

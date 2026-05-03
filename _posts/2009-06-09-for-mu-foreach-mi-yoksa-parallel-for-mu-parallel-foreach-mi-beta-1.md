@@ -89,9 +89,10 @@ namespace ForForEachPerformance
 
 Aslında kodumuz son derece basit. Eleman sayısını 1000 olarak set ettiğimiz double tipinden dizilere eleman eklemek (ki eklerken işin uzun sürmesini sağlamak adına tamamen anlamsız bir matematik formülü içermektedir) ve okumak için for, foreach, Parallel.For ile Parallel.ForEach metodlarını kullanmaktayız. Burada eleman sayısının bilhakis düşük tutulması son derece önemlidir aslında. Program çalıştırıldığında, for ve Parallel.For ile yapılan ekleme işlemleri ile, yine for, foreach ve Parallel.ForEach ile yapılan okuma işlemlerine ait toplam süre değerlerini bildirmektedir. Ben arka arkaya 10 deneme yaptıktan sonra ekleme işlemleri için aşağıdaki sonuçları elde ettim
 
-| Eleman Ekleme |  |  |
+**Eleman Ekleme**
+
+| **Deneme** | **For ile** | **Parallel.For ile** |
 | --- | --- | --- |
-| Deneme | For ile | Parallel.For ile |
 | 1 | 0,2592 | 4,6796 |
 | 2 | 0,2718 | 3,8415 |
 | 3 | 0,2799 | 3,913 |
@@ -109,9 +110,10 @@ Grafiksel olarak bakarsak çok daha acı bir gerçekle karşılabiliriz.
 
 Görüldüğü üzere for ile gerçekleştirilen ekleme işlemi, eş zamanlı ve dolayısıyla paralel çalışabilen Parallel.For kullanımına göre çok daha hızlı yapılmıştır. Peki diziden veri okuma işlemi sırasındaki durum nedir? İşte sonuçlar;
 
-| Eleman Okuma |  |  |  |  |
+**Eleman Okuma**
+
+| **Deneme** | **For ile** | **Parallel.For** | **For Each** | **Parallel.ForEach** |
 | --- | --- | --- | --- | --- |
-| Deneme | For ile | Parallel.For | For Each | Parallel.ForEach |
 | 1 | 0,0128 | 0,6894 | 0,0145 | 23,1096 |
 | 2 | 0,0125 | 0,8129 | 0,0134 | 26,3994 |
 | 3 | 0,0128 | 0,7707 | 0,0139 | 25,152 |

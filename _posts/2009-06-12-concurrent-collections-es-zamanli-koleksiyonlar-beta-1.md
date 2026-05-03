@@ -214,62 +214,20 @@ namespace BlockingCollection
 
 Uygulamamızda Dictionary ve ConcurrentDictionary tipinden iki koleksiyon 3 farklı test metodu yardımıyla ele alınmaktadır. Testler sırasında her iki koleksiyonada rastgele sayılardan oluşan 9000000 tam sayı ilave edilmektedir. Sonrasında ise doldurulan koleksiyonlar ileri yönlü bir iterasyon ile okunmaktadır. Program kodunun temel amacı, eleman ekleme ile okuma işlemlerinde, Dictionary ve ConcurrentDictionary koleksiyonlarının söz konusu işlemleri ortalama olarak ne kadar sürelerde tamamladıklarının testini yapmaktır. ParallelConcurentTest isimli metod dikkat edileceği üzere TPL (Task Parallel Library) kütüphanesinde yer alan Parallel.For ve Parallel.ForEach metodlarını kullanarak ConcurrentDictionary koleksiyonunu ele almaktadır. Ben bu programı intel tabanlı çift çekirdek işlemcili, 4 Gb Ram belleğe sahip ve Vista Enterprise işletim sistemi üzerinde koşturduğumda anlık koşullara göre aşağıdaki ekleme sürelerini tespit ettim.
 
-Eleman Ekleme Süreleri
+- **Eleman Ekleme Süreleri**
 
-Deneme
-Dictionary
-ConcurrentDictionary
-Parallel
-
-1
-1,5965157
-8,6457496
-9,7127165
-
-2
-1,7207327
-8,6280703
-8,8890291
-
-3
-1,7718992
-8,6033512
-9,246576
-
-4
-1,9256235
-8,7227608
-9,4900385
-
-5
-1,9287144
-8,4039116
-9,539486
-
-6
-2,0223963
-8,6328307
-9,6052221
-
-7
-1,9426832
-10,3117767
-11,4428462
-
-8
-2,0062376
-10,2670853
-11,3882937
-
-9
-1,9487786
-9,7330822
-10,8873102
-
-10
-1,8028344
-10,4151047
-11,3630567
+| **Deneme** | **Dictionary** | **ConcurrentDictionary** | **Parallel** |
+| ------- | ---------------- | ------------------------- | ------------- |
+| **1** | 1,5965157 | 8,6457496 | 9,7127165 |
+| **2** | 1,7207327 | 8,6280703 | 8,8890291 |
+| **3** | 1,7718992 | 8,6033512 | 9,246576 |
+| **4** | 1,9256235 | 8,7227608 | 9,4900385 |
+| **5** | 1,9287144 | 8,4039116 | 9,539486 |
+| **6** | 2,0223963 | 8,6328307 | 9,6052221 |
+| **7** | 1,9426832 | 10,3117767 | 11,4428462 |
+| **8** | 2,0062376 | 10,2670853 | 11,3882937 |
+| **9** | 1,9487786 | 9,7330822 | 10,8873102 |
+| **10** | 1,8028344 | 10,4151047 | 11,3630567 |
 
 Grafik olarak baktığımızda,
 
@@ -277,20 +235,20 @@ Grafik olarak baktığımızda,
 
 ConcurrentDictionary koleksiyonu için eleman ekleme sürelerinin gerçekten çok kötü olduğu gözlemlenebilir. Hatta durumu kurtarmak adına Parallel.For ve Parallel.ForEach metodlarının kullanıldığı durumdaki zaman değerleride son derece kötüdür. Diğer yandan, oluşturulan bu koleksiyonların tüm elemanlarını ileri yönlü bir iterasyon ile dolaştığımızda aşağıdaki zaman değerlerini elde ettiğimi gördüm.
 
-Eleman Okuma Süreleri
+- **Eleman Okuma Süreleri**
 
-| Deneme | Dictionary | ConcurrentDictionary | Parallel |
-|-------|------------|----------------------|----------|
-| 1 | 0,2707316 | 0,5216791 | 0,7073974 |
-| 2 | 0,2715216 | 0,4951542 | 0,7149783 |
-| 3 | 0,3506021 | 0,5100271 | 0,7525682 |
-| 4 | 0,3380284 | 0,4933783 | 0,7305076 |
-| 5 | 0,338477 | 1,3850732 | 0,7164944 |
-| 6 | 0,322663 | 0,4776662 | 0,7548498 |
-| 7 | 0,2821501 | 0,5871846 | 0,8353176 |
-| 8 | 0,3824846 | 0,8149798 | 0,8492322 |
-| 9 | 0,305484 | 0,577625 | 0,9152573 |
-| 10 | 0,3560983 | 0,5122665 | 0,8599752 |
+| **Deneme** | **Dictionary** | **ConcurrentDictionary** | **Parallel** |
+| ------- | ------------ | ---------------------- | ---------- |
+| **1** | 0,2707316 | 0,5216791 | 0,7073974 |
+| **2** | 0,2715216 | 0,4951542 | 0,7149783 |
+| **3** | 0,3506021 | 0,5100271 | 0,7525682 |
+| **4** | 0,3380284 | 0,4933783 | 0,7305076 |
+| **5** | 0,338477 | 1,3850732 | 0,7164944 |
+| **6** | 0,322663 | 0,4776662 | 0,7548498 |
+| **7** | 0,2821501 | 0,5871846 | 0,8353176 |
+| **8** | 0,3824846 | 0,8149798 | 0,8492322 |
+| **9** | 0,305484 | 0,577625 | 0,9152573 |
+| **10** | 0,3560983 | 0,5122665 | 0,8599752 |
 
 Duruma grafiksel olarak baktığımızda,
 
@@ -303,4 +261,3 @@ Elbetteki bu testler, henüz relase edilmemiş olan beta 1 sürümü üzerinden 
 Concurrent koleksiyonlar ile ilişkili araştırmalarım devam etmekte. Örneğin şu sıralar göz kestirdiklerimden birisi olan ve aslında bu yazıda incelemek isteyipte, performans ve hız kriterine takıldığım için araştıramadığım BlockingCollection. Bunuda bir sonraki yazımda ele almaya gayret ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ConcurrentCollectionTest.rar (23,87 kb)](/assets/files/2009/ConcurrentCollectionTest.rar)
-

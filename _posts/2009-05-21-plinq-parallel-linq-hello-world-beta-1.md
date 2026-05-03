@@ -74,12 +74,9 @@ namespace HelloWorld
             {
                 Product prd = new Product
                 {
-                    Id = i
-                    ,
-                    Name = "Product" + i.ToString()
-                    ,
-                    ListPrice = i * 0.1M
-                    ,
+                    Id = i,
+                    Name = "Product" + i.ToString(),
+                    ListPrice = i * 0.1M,
                     InStock = i % 2 == 0 ? true : false
                 };
                 products.Add(prd);
@@ -120,9 +117,7 @@ Uygulama içerisinde Products isimli bir sınıf ve bu tipe ait nesne örnekleri
 
 ![blg18_3.gif](/assets/images/2009/blg18_3.gif)
 
-Hemen şunu belirteyim. Programı yazdığım makinede çift çekirdekli Intel işlemci ve 4 Gb Ram bulunmakta. İşletim sistemi olarakta Windows Vista Enterprise yer alıyor. Tabi bu örnek için Intel tabanlı işlemcinin daha büyük önem taşıdığını hemen söyleyebiliriz. Çalışma zamanındanda görüldüğü gibi, paralel olarak yürütülen LINQ ifadesi neredeyse %50 daha az zamanda tamamlanmıştır. (Aslında bu kod parçasını 4 çekirdekli bir işlemcide test etmeyi çok istiyorum. Bu konuda siz değerli okurlarımın yorumlarını ve test sonuçlarını bekliyor olacağım
-
-)
+Hemen şunu belirteyim. Programı yazdığım makinede çift çekirdekli Intel işlemci ve 4 Gb Ram bulunmakta. İşletim sistemi olarakta Windows Vista Enterprise yer alıyor. Tabi bu örnek için Intel tabanlı işlemcinin daha büyük önem taşıdığını hemen söyleyebiliriz. Çalışma zamanındanda görüldüğü gibi, paralel olarak yürütülen LINQ ifadesi neredeyse %50 daha az zamanda tamamlanmıştır. (Aslında bu kod parçasını 4 çekirdekli bir işlemcide test etmeyi çok istiyorum. Bu konuda siz değerli okurlarımın yorumlarını ve test sonuçlarını bekliyor olacağım)
 
 Uygulama çalışırken Task Manager aracı ile CPU kullanım durumuna baktığımda ise aşağıdaki sonuçlar ile karşılaştım.
 

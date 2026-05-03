@@ -10,11 +10,15 @@ categories:
 ---
 Bildiğiniz gibi bir süredir LINQ sorgularının paralel çalıştırılması ile ilişkili çalışmalarıma ve araştırmalarıma devam etmekteyim. Bu yazımdaki konumuz ise System.Linq.ParallelEnumerable static sınıfı içerisinde tanımlanmış olan ForAll genişletme metodudur (extension methods).
 
+```csharp
 public static void ForAll (this ParallelQuery source, Action action);
+```
 
 ForAll metodu yukarıdaki prototipinden de görüldüğü gibi ParallelQuery referanslarına uygulanabilmektedir. Bununla birlikte metod ikinci parametre olarak, Action tipinden generic bir temsilci almaktadır.
 
+```csharp
 public delegate void Action (T obj);
+```
 
 Yukarıdaki prototipe göreyse, Action temsilcisi (delegate), generic tip olarak ForAll metoduna gelen tipi (TSource) kullanmaktadır. Bu generic tip tahmin edeceğiniz üzere ParalleQuery referansınında kaynak tipidir. Ayrıca temsilci geriye herhangibir değer döndürmeyen (void) metodları işaret edebilmektedir.
 

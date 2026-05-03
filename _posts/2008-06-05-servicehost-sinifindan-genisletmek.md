@@ -17,8 +17,13 @@ Nitekim IIS ve WAS, ServiceHost tiplerinin çalışma zamanında kendileri ele a
 
 Genel olarak türetme doğrudan ServiceHost sınıfı üzerinden yapılmaktadır. Ezilebilen üyeler (overridable members) arasında en çok kullanılanı ApplyConfiguration metodudur. Bu metod ile Host için yüklenen konfigurasyon bilgilerine erişilmesi ve bazı davranışların değiştirilmesi mümkün olabilmektedir. Söz gelimi yazının başında belirtilen vakalardan ilkinde, EndPoint noktalarının her biri için otomatik olarak Metadata Publishing üretilmesinin istendiği bir durumda ApplyConfiguration metodu içerisinde gerekli eklemelerin yapılması sağlanabilir. Böylece servis uygulamasına kaç tane EndPoint eklenirse eklensin her biri için Metadata Publishing otomatik olarak eklenebilmektedir.
 
-> Varsayılan olarak Metadata Publishing seçeneği kapalıdır. Bunun sebebi Metadata bilgisinin istemeden yayınlanmasının önüne geçmektedir. Metadata yayınlamasının açık olması halinde kullanılan EndPoint'ler içerisindeki bağlayıcı tiplerin (Binding Type) çeşitlerine görede farklı protokoller üzerinden servis bilgilerinin çekilmesi sağlanabilmektedir. Bir başka deyişle servisin ne yaptığı, hangi operasyonları sunduğu bilgileri Metadata şeklinde sunulabilir. Bu, istemciler için gerekli olan proxy nesnelerinin üretilmesinde ele alınmaktadır. Söz konusu metadata bilgilerinin elde edilmesi için svcutil aracı komut satırından kullanılabilir. Yada Visual Studio 2008 ortamında Add Service Reference seçeneğinden yararlanılabilir.
-> Lakin öyle senaryolar vardırki metadata bilgisinin yayınlanması istenmez. Söz gelimi bir servisi kullanan başka bir servis olduğu göz önüne alınsın. Tüketici servis için proxy nesnesi önemlidir ve manuel olarak üretilip dağıtılabilir. Ancak servisin metadata bilgisinin bu iki servis dışındaki istemciler (Clients) tarafından elde edilmesi istenmemektedir. İşte bu gibi olasılıklar nedeni ile Metadata yayınlaması varsayılan olarak kapalıdır.
+---
+
+Varsayılan olarak Metadata Publishing seçeneği kapalıdır. Bunun sebebi Metadata bilgisinin istemeden yayınlanmasının önüne geçmektedir. Metadata yayınlamasının açık olması halinde kullanılan EndPoint'ler içerisindeki bağlayıcı tiplerin (Binding Type) çeşitlerine görede farklı protokoller üzerinden servis bilgilerinin çekilmesi sağlanabilmektedir. Bir başka deyişle servisin ne yaptığı, hangi operasyonları sunduğu bilgileri Metadata şeklinde sunulabilir. Bu, istemciler için gerekli olan proxy nesnelerinin üretilmesinde ele alınmaktadır. Söz konusu metadata bilgilerinin elde edilmesi için svcutil aracı komut satırından kullanılabilir. Yada Visual Studio 2008 ortamında Add Service Reference seçeneğinden yararlanılabilir.
+
+Lakin öyle senaryolar vardırki metadata bilgisinin yayınlanması istenmez. Söz gelimi bir servisi kullanan başka bir servis olduğu göz önüne alınsın. Tüketici servis için proxy nesnesi önemlidir ve manuel olarak üretilip dağıtılabilir. Ancak servisin metadata bilgisinin bu iki servis dışındaki istemciler (Clients) tarafından elde edilmesi istenmemektedir. İşte bu gibi olasılıklar nedeni ile Metadata yayınlaması varsayılan olarak kapalıdır.
+
+---
 
 Yazıda ilk olarak Metadata yayınlamasının otomatik olarak açılmasını sağlayacak bir örnek üzerinde durulacaktır. Lakin bu örnekte ServiceHost sınıfından türeyen bir tip kullanılmaktadır. Ama öncesinde Metadata yayınlamasının birden fazla EndPoint üzerinden yapıldığı bir senaryoda konfigurasyon dosyasın içerisinde nasıl bir ayarlama yapılması gerektiğini incelemekte yarar vardır. Bu amaçla aşağıdaki servis sözleşmesinin (Service Contract) bulunduğu bir WCF servis kütüphanesi (WCF Service Library) geliştirildiği göz önüne alınsın.
 
@@ -203,9 +208,11 @@ namespace Sunucu
 
 ServiceHost sınıfına ait bir nesne örneklenirken servis nesnesinin tipi ve kullanılacak adres bilgileri parametre olarak verilmektedir. Bu nedenle SmartHostService sınıfının ilgili yapıcı metodundan (Constructor), base anahtar kelimesi ile ServiceHost sınıfında eş düşen yapıcı metoda parametre aktarımı gerçekleştirilmektedir. Diğer taraftan senaryoda istenen, var olan EndPoint noktaları için Mex tanımlamalarının yapılmasıdır. Bu nedenle konfigurasyon dosyasının içeriğine ulaşılması ve servis tanımlamalarında (Service Description) gerekli ilavelerin yapılması gerekmektedir. Söz konusu işlemler için ApplyConfiguration metodu ezilmiştir.
 
-> ApplyConfiguration metodu dışında ezilebilecek olan diğer üyelerde aşağıdaki şekilde görüldüğü gibidir.
-> ![mk253_5.gif](/assets/images/2008/mk253_5.gif)
-> Dikkat edileceği üzere servisi kapatma, açma veya hata oluşması anındaki olay metodların ezilmesi dahi mümkündür.
+ApplyConfiguration metodu dışında ezilebilecek olan diğer üyelerde aşağıdaki şekilde görüldüğü gibidir.
+
+![mk253_5.gif](/assets/images/2008/mk253_5.gif)
+
+Dikkat edileceği üzere servisi kapatma, açma veya hata oluşması anındaki olay metodların ezilmesi dahi mümkündür.
 
 ApplyConfiguration metodu içerisinde ilk olarak base.ApplyConfiguration () fonksiyonuna çağrı yapılarak konfigurasyon dosyasındaki ayarların ortama yüklenmesi sağlanmaktadır. Sonrasında ise servis davranışında Metadata yayınlaması için gerekli elementin var olup olmadığına bakılır. Eğer yoksa eklenmesi sağlanır. İlerleyen adımlardaysa konfigurasyon dosyasındaki tüm temel adresler tek tek dolaşılır. Her temel adresin şema (Scheme) tipine bakılarak uygun bir Mex EndPoint yüklemesi yapılmaktadır.
 
@@ -264,7 +271,7 @@ public class SmartServiceHostFactory
 
 SmartServiceHostFactory sınıfı içerisinde CreateServiceHost isimli metod ezilmektedir (overriding). Dikkat edilecek olursa metod geriye SmartServiceHost tipinden bir nesne örneği döndürmektedir. Bir başka deyişle WCF çalışma ortamını tesis edecek nesne örneği üretilmektedir. CreateServiceHost metoduna gelen parametrelerden ilki, svc dosyasında yer alan Service niteliğinin değerini taşımaktadır. Elbette svc dosyası içerisinde hangi Factory nesnesinin kullanılacağının bildirilmeside gereklidir. Bu nedenle svc dosyasının içeriği aşağıdaki gibi düzenlenmelidir.
 
-```text
+```xml
 <%@ ServiceHost Language="C#" Debug="true" Service="ServisKutuphanesi.Cebir" Factory="SmartServiceHostFactory" %>
 ```
 

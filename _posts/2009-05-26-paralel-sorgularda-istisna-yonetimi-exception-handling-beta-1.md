@@ -8,9 +8,7 @@ tags:
 categories:
   - Paralel Programlama
 ---
-Yönetimli kod (Managed Code) tarafında istisna yönetimi oldukça önemli konulardan birisidir. Uygulamaların veya kod süreçlerinin istem dışı sonlanmasının önüne geçilmek istendiği durumlarda, basit try...catch...finally bloklarından yararlanabilir yada Enterprise Library gibi kütüphanelerin sunduğu bloklardan faydalanarak istisna yönetimini üst seviyede sağlayabiliriz.
-
-Bu yazımda çok geniş kapsamda düşünmeyip, PLINQ (Parallel Language INtegrated Query) ifadelerinde oluşabilecek istisnai durumların nasıl ele alınması gerektiği üzerinde durmaya çalışacağız. Olaya hızlı bir giriş yapıp aşağıdaki örnek kod parçasına sahip olduğumuzu düşünelim.
+Yönetimli kod (Managed Code) tarafında istisna yönetimi oldukça önemli konulardan birisidir. Uygulamaların veya kod süreçlerinin istem dışı sonlanmasının önüne geçilmek istendiği durumlarda, basit try...catch...finally bloklarından yararlanabilir yada Enterprise Library gibi kütüphanelerin sunduğu bloklardan faydalanarak istisna yönetimini üst seviyede sağlayabiliriz. Bu yazımda çok geniş kapsamda düşünmeyip, PLINQ (Parallel Language INtegrated Query) ifadelerinde oluşabilecek istisnai durumların nasıl ele alınması gerektiği üzerinde durmaya çalışacağız. Olaya hızlı bir giriş yapıp aşağıdaki örnek kod parçasına sahip olduğumuzu düşünelim.
 
 ```csharp
 using System;
@@ -133,9 +131,7 @@ namespace SequentialPLINQ
 
 Visual Studio 2010 Professional Beta 1 ile geliştirilen bu kod parçasında, Product isimli bir sınıftan yararlanılmaktadır. Product tipine ait veriler, SQL sunucusu üzerindeki Product tablosundan alındıktan sonra, generic List koleksiyonu içerisinde tutulmakta ve sonrasında ise paralel sorgulamaya tabi tutulmaktadır. Burada ayrıca dikkat edilmesi gereken bir noktada, sorgulama sırasında FindSellPrice isimli metodun çağırılması ve parametre olarak, sorgunun t anındaki Product nesnesine ait ListPrice ile StockLevel değerlerinin gönderilmesidir. Dikkat edileceği üzere FindSellPrice metodu içerisinde güne göre ürünlerde indirim uygulanmasını hedef alan bir formül yer almaktadır. Formülü tamamen kafadan uydurduğumu ifirat etmek isterim. Zaten sizde bunu anlamışsınızdır.
 
-Asıl varmak istediğim nokta, StockLevel değerlerinin 497 ve 503 nolu ürünler için bilinçli olarak sıfıra set edilmiş olmasıdır. Bu nedenle bölme işlemi sırasında bir istisna oluşması kaçınılmazdır.
-
-(Yani kendi kendimize kaşınıp kod içerisine bir bubi tuzağı koymuş durumdayız. ![blg22_3.jpg](/assets/images/2009/blg22_3.jpg))
+Asıl varmak istediğim nokta, StockLevel değerlerinin 497 ve 503 nolu ürünler için bilinçli olarak sıfıra set edilmiş olmasıdır. Bu nedenle bölme işlemi sırasında bir istisna oluşması kaçınılmazdır.(Yani kendi kendimize kaşınıp kod içerisine bir bubi tuzağı koymuş durumdayız)
 
 Önemli olan nokta, paralel sorgu motorunun bu tip bir durum ile karşılaştığında ne yapacağıdır. Nitekim söz konusu sorgulama tekniğine göre, operasyon bir kaç parça Thread'e bölünmete ve bu nedenle oluşacak bir istisnada (veya istisnalarda) çalışan iş parçalarına ne olacağı sorusu akla gelmektedir. İşte kodun yukarıdaki halinin çalışması sonrası ekran görüntümüz.
 

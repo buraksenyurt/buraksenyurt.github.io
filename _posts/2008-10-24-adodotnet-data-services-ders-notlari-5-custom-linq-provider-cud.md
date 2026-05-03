@@ -295,7 +295,7 @@ namespace ClientApp
 
 Uygulama test edilirken eğer SaveChanges metodlarında breakpoint'ler ile ilerlenir ve arka planda Fiddler gibi bir Http Debugging Proxy aracı kullanılırsa uygulamanın tamamının çalışması sonrasında aşağıdaki sonuçların elde edildiği görülür.
 
-> [Fiddler](http://www.fiddlertool.com/fiddler/) aracı basit bir HTTP Debugging Proxy uygulamasıdır ve IIS üzerinde 80 numaralı porta gelen ve giden tüm HTTP paketlerini izleyebilmenizi, içeriğini görebilmenizi sağlar. Lakin Asp.Net Development Server ile kullanımında bazı ön ayarlar yapılması gerekmektedir. Fiddler aracının kullanımı Ado.Net Data Services'lerde Batch Processing işlemlerinin ele alındığı [görsel dersimizde](http://www.csharpnedir.com/videoindir.asp?id=121) incelenmiştir.
+> [Fiddler](http://www.fiddlertool.com/fiddler/) aracı basit bir HTTP Debugging Proxy uygulamasıdır ve IIS üzerinde 80 numaralı porta gelen ve giden tüm HTTP paketlerini izleyebilmenizi, içeriğini görebilmenizi sağlar. Lakin Asp.Net Development Server ile kullanımında bazı ön ayarlar yapılması gerekmektedir.
 
 HTTP Paketlerinin Fiddler aracı üzerinden incelenmesi;
 
