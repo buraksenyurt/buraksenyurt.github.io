@@ -9,7 +9,7 @@ tags:
 categories:
   - Yazılım Tasarımı
 ---
-Yandaki resimde Zurich hava alanına ait bir görüntü yer almaktadır. Hava alanının ne kadar karmaşık olduğu aşikardır. Aslında yazımıza konu olarak Londra'daki Heathrow hava alanını dahil edecektim. Nitekim uzun zaman önce Discovery Channel'da izlediğim bir belgeselde, bir iniş ve birde kalkış pistiyle bu kadar işlek bir havalimanının ne kadar ustalıkla yönetildiği anlatılıyordu. Ancak yaptığım araştırmalar sonrası dünyadaki en iyi hava alanları arasında olmadığını gördüm.([http://www.worldairportawards.com/](http://www.worldairportawards.com/)). Her neyse.
+Yandaki resimde Zurich hava alanına ait bir görüntü yer almaktadır. Hava alanının ne kadar karmaşık olduğu aşikardır. Aslında yazımıza konu olarak Londra'daki Heathrow hava alanını dahil edecektim. Nitekim uzun zaman önce Discovery Channel'da izlediğim bir belgeselde, bir iniş ve birde kalkış pistiyle bu kadar işlek bir havalimanının ne kadar ustalıkla yönetildiği anlatılıyordu. Ancak yaptığım araştırmalar sonrası dünyadaki en iyi hava alanları arasında olmadığını gördüm.([World Airport Awards](http://www.worldairportawards.com/)). Her neyse.
 
 ![blg52_2.jpg](/assets/images/2009/blg52_2.jpg)
 
@@ -18,15 +18,10 @@ Konumuz aslında kimin daha iyi olduğu değil ama tüm hava alanları için ort
 Sanıyorumki aşağıdaki konuşmalar ile karşılaşabilirdik.
 
 - AzonAir - 110: Ben sağdaki piste inmek üzere alçalıyorum arkadaşlar.
-
 - CargoL TL 101: Hayır hayır oraya ben inecektim.
-
 - AzonAir - 110: Eeee...Önce gelen kapar.
-
 - Öz Hawai - 444: Savulunnnn!!! Ben o pistten kalkış yapıyorum.
-
 - CargoL TL 101: Hangi pist, hangi pist?...
-
 - Cazırt cuzurt, kraşş bummm...
 
 Abartamaya gerek yok tabiki ama bu anektodunda bir manası var. Bir kontrol kulesi temel olarak tüm iniş kalkışları düzenler ve bu işi yaparken yukarıdaki gibi, uçakların birbirleri ile konuşmasına gerek kalmaz. Bir başka deyişle birbirleriyle etkileşimde olan uçakların tüm iletişimi, kontrol kulesi içerisinde hesaplanır ve işletilir. Dahada açık bir ifade ile kontrol kulesi aslında Mediator nesnesinin kendisidir. Mediator??? Hımmm..
@@ -189,4 +184,3 @@ Bu bilgilendirmenin yapılabilmesi için tahmin edileceği üzere, Concrete Medi
 Özet olarak herhangibir havayoluna ait bir uçak, İstanbul kulesine yaklaştığında kendisine yeni bir rota talep ederken diğer uçaklar ile haberleşmek ve onların konumlarına göre hesaplamalar yaparak bir yön tayin etmek zorunda değildir. Tüm uçaklar bir birlerinden ayrıştırılmış ve yönlerini belirlemek üzere kullanılması gereken algoritmalar Mediator tipi içerisine kapsüllenmiştir. Biraz karışık bir desen implemantasyonu olmasına rağmen faydalı olduğunu umuyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MediatorPattern.rar (24,85 kb)](/assets/files/2009/MediatorPattern.rar)
-

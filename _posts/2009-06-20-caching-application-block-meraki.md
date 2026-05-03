@@ -257,10 +257,6 @@ Peki sistem nasıl çalışmaktadır?
 
 Buna göre istemci aynı resimleri talep ettiği ve servis uygulamasıda ayakta olduğu sürece, resimler ön bellekten tedarik edilecektir. Bu işlem resmin istemciye hızlı bir şekilde iletilmesini sağlamak üzere yapılmamıştır. Buna lütfen dikkat edelim. Aksine servis tarafındaki gereksiz resim okuma işlemini ekarte etmek amacıyla kullanılmıştır (Bu bloğun başka ne tip senaryolarda kullanılabileceğini düşünmenizi tavsiye ederim) Senaryomuzda elbetteki eksik kısımlar mevcuttur. Örneğin istisna yönetimi (Exception Handling) sıfırdır.
 
-Asenkron erişim ile ilişkili istemci tarafında hiç bir şey yapılmamıştır.
-
-Diğer yandan resmin değişmesi halinde cache içeriğinin güncellenmesi ile ilgili bir çalışmada yapılmamıştır ki yapmaya çalışmanızı öneririm.
-
-Şimdilik benden bu kadar. Yeni bir western filmi sonrasında tekrardan Enterprise Library konulu bir örnek ile görüşmek üzere...
+Asenkron erişim ile ilişkili istemci tarafında hiç bir şey yapılmamıştır. Diğer yandan resmin değişmesi halinde cache içeriğinin güncellenmesi ile ilgili bir çalışmada yapılmamıştır ki yapmaya çalışmanızı öneririm. Şimdilik benden bu kadar. Yeni bir western filmi sonrasında tekrardan Enterprise Library konulu bir örnek ile görüşmek üzere...
 
 [HelloCachingBlock.rar (5,35 mb)](/assets/files/2009/HelloCachingBlock.rar)

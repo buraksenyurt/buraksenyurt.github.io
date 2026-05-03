@@ -13,9 +13,9 @@ Artık yazın bittiği, okulların açıldığı, şehrin kalabalığının artt
 
 Ama yine böyle yağmurlu bir günde cama vuran damlacıkları izlerken Workflow Foundation ile ilişkili düşündüğüm ve aklıma gelen bir konunun çözümünü sizlerle paylaşmak niyetindeyim.
 
-İhtiyaç: Birden fazla aktivitenin aynı fonksiyonları ortaklaşa kullanabilmeleri nasıl sağlanır? Yani bir fonksiyonun birden fazla aktivite içerisinde kullanılması gerektiği durumlarda nasıl bir yol izleyebiliriz?
+**İhtiyaç:** Birden fazla aktivitenin aynı fonksiyonları ortaklaşa kullanabilmeleri nasıl sağlanır? Yani bir fonksiyonun birden fazla aktivite içerisinde kullanılması gerektiği durumlarda nasıl bir yol izleyebiliriz?
 
-Çözüm: Böyle bir ihtiyaçta metodların kod içeriklerini tüm aktivitelerde örneğin CodeActivity bileşenleri içerisinde değerlendirebiliriz. Ama bu durumda merkezileştirilmemiş ve güncelleştirmeler sırasında kullanıldığı tüm aktivitelerde düşünülmesi gereken bir çözüm üretmiş oluruz. Aslında bir yol olarak söz konusu fonksiyonellikleri ortak bir kütüphane içerisinde toplayabilir ve yine CodeActivity'ler içerisinden çağırabiliriz. Lakin bu noktada değerlendirebileceğimiz başka bir çözüm daha vardır ve gerçekten araştırılmaya değerdir. Buna göre, Local Service olarak çalışma zamanına eklenmiş bir arayüzden yararlanılabilir ve ortak fonksiyonelliklerin bu arayüz üzerinden aktiviteler ile mesajlaşması sağlanabilir.
+**Çözüm:** Böyle bir ihtiyaçta metodların kod içeriklerini tüm aktivitelerde örneğin CodeActivity bileşenleri içerisinde değerlendirebiliriz. Ama bu durumda merkezileştirilmemiş ve güncelleştirmeler sırasında kullanıldığı tüm aktivitelerde düşünülmesi gereken bir çözüm üretmiş oluruz. Aslında bir yol olarak söz konusu fonksiyonellikleri ortak bir kütüphane içerisinde toplayabilir ve yine CodeActivity'ler içerisinden çağırabiliriz. Lakin bu noktada değerlendirebileceğimiz başka bir çözüm daha vardır ve gerçekten araştırılmaya değerdir. Buna göre, Local Service olarak çalışma zamanına eklenmiş bir arayüzden yararlanılabilir ve ortak fonksiyonelliklerin bu arayüz üzerinden aktiviteler ile mesajlaşması sağlanabilir.
 
 Burada kritik olan nokta ExternalDataExchange niteliği (attribute) ile işaretleniş bir arayüzü (Interface) implemente eden bir tipin fonksiyonelliklerinin, herhangibir aktivite tarafından kullanılabilir hale gelmesidir. Tabi bu kullanımı sağlamak için CallExternalMethodActivity aktivite tipinden yararlanılması gerekir. Geliştirici olarak çalışma şeklini iyice kavramak yakalayacağımız kavramlar açısından önemlidir. Öncelikle CallExternalMethodActivity bileşeninin bir aktivite tipi olarak harici bir metodu işaret edebileceğini göz önüne almalıyız. Bu durumda tasarım zamanında (Design Time), CallExternalMethodActivity bileşeninin çağıracağı harici metodun imzasını ve nerede olduğunu bilmesi gerekmektedir ki çalışma zamanında bu bilgilerden yararlanarak, içinde bulunduğu aktivite ile harici metod arasında bir mesajlaşma sağlayabilsin.
 
@@ -93,8 +93,6 @@ namespace CommonOperations
 ICommonAccounting isimli arayüze ExternalDataExchange niteliği uygulanmıştır. Arayüzümüzde, işlevleri bizim için şu aşamada çok önemli olmayan iki basit operasyon tanımlaması yer almaktadır. Diğer taraftan bu arayüzü implemente eden CommonAccounting tipi içerisinde operasyonların uygulaması yer almaktadır. CommonAccounting sınıf ayrıca, kendisini kullanan aktivitelere bilgi taşıyabilmekte kullanılabilecek bir olay bildirimi de (OnCompleted) içermektedir.
 
 Bu olay içerisinde kullanılan AccountingResultEventArgs isimli EventArgs türevli tip, çalışma zamanındaki CommonAccounting nesne örneğinden, OnCompleted olayına abone olan aktiviteye StepType, Rate ve StepOk gibi bazı yardımcı bilgiler döndürmektedir. IncreaseReate ve DecreaseRate metodları içerisinde, OnCompleted olayının yüklü olması halinde çalıştırılması işlemi gerçekleştirilmektedir.
-
-Kişisel Not: Olayları daha net kavrayabilmek için [eski bir makalemden](http://www.csharpnedir.com/articles/read/?filter=popular&author=&cat=&id=747&title=C) faydalanabilirsiniz.
 
 Artık bu sınıf kütüphanesini kullanacak basit bir Workflow projesi geliştirebiliriz. Bu amaçla bir Sequential Workflow Console Application projesi oluşturduğumuzu ve geliştirdiğimiz CommonOperations isimli sınıf kütüphanesini buraya referans ettiğimizi düşünelim. Boş bir Activity öğesini projeye ekledikten sonra içeriğini aşağıdaki gibi kodlayalım.
 
@@ -229,4 +227,3 @@ Evet...Önce belirli oranda arttırım yapıp sonra azaltım yapmak son derece s
 Ancak yakalamamız gereken nokta elbetteki bu değildir. Önemli olan, bir aktivite'nin kendi sınırları dışındaki fonksiyonellikleri kullanabilmek için yerel servislerden nasıl yararlanıldığı ve bunun için ExternalDataExchange niteliğinin nasıl değerlendirildiğidir. Üstelik bu değerlendirme, WF tasarım zamanı içinde önem arz eder. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingExternalCode.rar (50,98 kb)](/assets/files/2009/UsingExternalCode.rar)
-

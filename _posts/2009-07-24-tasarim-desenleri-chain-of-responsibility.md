@@ -33,11 +33,9 @@ Gelelim desenimizin UML şemasına;
 
 Şekildende görüleceği üzere son derece basit bir tasarım kalıbı. Dikkat çekici ilk nokta, Handler tipi ile ConcreteHandler'lar arasında aggregation tadında bir ilişki olmasıdır. Aktörlerimiz ise;
 
-Handler: Kendisinden türeyen ConcreteHandler'ların, talebi ele alması için gerekli arayüzü tanımlar. Abstract class veya Interface olarak tasarlanır.
-
-ConcreteHandler: Sorumlu olduğu talebi değerlendirir ve işler. Gerekirse talebi zincir içerisinde arkasından gelen nesneye iletir. Sonraki nesnenin ne olacağı genellikle istemci tarafında belirlenir.
-
-Client: Talebi veya mesajı gönderir.
+- **Handler:** Kendisinden türeyen ConcreteHandler'ların, talebi ele alması için gerekli arayüzü tanımlar. Abstract class veya Interface olarak tasarlanır.
+- **ConcreteHandler:** Sorumlu olduğu talebi değerlendirir ve işler. Gerekirse talebi zincir içerisinde arkasından gelen nesneye iletir. Sonraki nesnenin ne olacağı genellikle istemci tarafında belirlenir.
+- **Client:** Talebi veya mesajı gönderir.
 
 Artık kendi örneğimizi geliştirmemizin vakti geldi sanırım.
 
@@ -175,4 +173,3 @@ Servis lokasyonu intranet olduğundan, zincirin ilk halkasındaki handlerLocal i
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ChainOfResponsibilityPattern.rar (25,32 kb)](/assets/files/2009/ChainOfResponsibilityPattern.rar)
-

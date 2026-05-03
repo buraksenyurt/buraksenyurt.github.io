@@ -25,21 +25,18 @@ Tüm bunlar bir yana dursun Biztalk ailesinde, kuralları kolayca geliştirebile
 
 Biztalk Server ile birlikte gelen Business Rule Engine'in, kendi geliştirdiğimiz.Net uygulamalarında kullanılabilmesi için, sunucu lisansına sahip ürünün yanlızca Business Rules Components özelliğinin kurulması yeterlidir. Tabiki burada önemli olan noktalardan birisi lisans konusudur. Lisanslı olan bir Biztalk Server ürünü üzerinden kurulum yapılmalıdır. Bu nedenle, kendi uygulamalarımızdan kasıt çoğunlukla sunucu tarafında çalışan servis uygulamalarıdır. Böylece, servis tabanlı.Net uygulamalarımız içerisinde istersek, Biztalk Server ile birlikte gelen kural motorunu kullanabiliriz. Business Rule Engine uzun uzun yıllar önce (1974) geliştirilmiş [RETE](http://en.wikipedia.org/wiki/Rete_algorithm)algoritmasını kullanmaktadır. Tabi başlamadan önce önem arz eden bazı kavramlardan bahsetmekte yarar olduğu kanısındayım. Bunlar;
 
-![blg46_4.jpg](/assets/images/2009/blg46_4.jpg)Business Rule Composer: İlkeleri (Policy), içerisindeki kuralları (Rules) ve daha fazlasını tasarlayabileceğimiz bir arabirim olarak düşünülebilir. Kısaca iş kurallarını görsel olarak oluşturduğumuz programdır.
+![blg46_4.jpg](/assets/images/2009/blg46_4.jpg)
 
-Policy: İçinde, iş kurallarını barındıran nesnedir. Bu nesne istenildiğinde versiyonlandırılabilir. Bu sayede, aynı policy'nin farklı kurallar içeren yada aynı kuralları farklı şekillerde yorumlayan birden çok versiyonu tasarlanabilir ve kullanılabilir.
-
-Policy State: Policy'ler temel olarak Editable, Saved, Published ve Deployed durumlarında bulunabilir. Bir Policy ilk kez oluşturulduğunda zaten otomatik olarak Editable moda geçer. Policy'nin kaydedilmesi sonrası Saved moda atanır. Saved modda düzenlemeler ve testler yapılabilir. Eğer Policy, publish edilirse artık düzenlenemez, değiştirilemez. Yani read-only olarak düşünülebilir. Bu aşama, söz konusu Policy Deploy edilmeden önceki zamandır. Policy, Deploy edildiğindeyse artık versiyonlanmış ve kullanılabilir hale gelmiştir. Ne varki bu moddada üzerinde düzenleme yapılamamaktadır. Dolayısıyla bu aşamadan sonra, Policy içerisinde yazılmış olan kurallarda değişim yapılamaz. Ancak yeni bir versiyonlama veya yeni bir Policy oluşturulması ile sorunlar ortadan kaldırılabilir.
-
-Rules: Çok doğal olarak konunun ana fikri bir takım iş kurallarının uygulanmasıdır. İş kuralları, Policy'ler içerisinde Rule nesneleri ile ifade edilir. Rule'lar kendi içlerinde, koşullandırılacak olan verileri (Fact), bunlarla ilişkili Predication'ları ve aksiyonları (Action) içermektedir.
-
-Facts: Aslında Rule içerisinde yer alan koşullar, karşılaştırmalar ve aksiyonlarda kullanılan veri birimlerini temsil etmektedir. Çok doğal olarak bu nesnenin uygulanan koşul sonrası yapılacak bir takım işlemler ile kuralın bütünü oluşturulmaktadır.
-
-Fact Source: Fact nesnelerinin içeriği, XML ve veritabanı gibi kaynaklardan gelebileceği gibi, sistemin Global Assembly Cache (GAC) alanında yüklü bir assembly içerisindeki.Net tipide olabilir.
+- **Business Rule Composer:** İlkeleri (Policy), içerisindeki kuralları (Rules) ve daha fazlasını tasarlayabileceğimiz bir arabirim olarak düşünülebilir. Kısaca iş kurallarını görsel olarak oluşturduğumuz programdır.
+- **Policy:** İçinde, iş kurallarını barındıran nesnedir. Bu nesne istenildiğinde versiyonlandırılabilir. Bu sayede, aynı policy'nin farklı kurallar içeren yada aynı kuralları farklı şekillerde yorumlayan birden çok versiyonu tasarlanabilir ve kullanılabilir.
+- **Policy State:** Policy'ler temel olarak Editable, Saved, Published ve Deployed durumlarında bulunabilir. Bir Policy ilk kez oluşturulduğunda zaten otomatik olarak Editable moda geçer. Policy'nin kaydedilmesi sonrası Saved moda atanır. Saved modda düzenlemeler ve testler yapılabilir. Eğer Policy, publish edilirse artık düzenlenemez, değiştirilemez. Yani read-only olarak düşünülebilir. Bu aşama, söz konusu Policy Deploy edilmeden önceki zamandır. Policy, Deploy edildiğindeyse artık versiyonlanmış ve kullanılabilir hale gelmiştir. Ne varki bu moddada üzerinde düzenleme yapılamamaktadır. Dolayısıyla bu aşamadan sonra, Policy içerisinde yazılmış olan kurallarda değişim yapılamaz. Ancak yeni bir versiyonlama veya yeni bir Policy oluşturulması ile sorunlar ortadan kaldırılabilir.
+- **Rules:** Çok doğal olarak konunun ana fikri bir takım iş kurallarının uygulanmasıdır. İş kuralları, Policy'ler içerisinde Rule nesneleri ile ifade edilir. Rule'lar kendi içlerinde, koşullandırılacak olan verileri (Fact), bunlarla ilişkili Predication'ları ve aksiyonları (Action) içermektedir.
+- **Facts:** Aslında Rule içerisinde yer alan koşullar, karşılaştırmalar ve aksiyonlarda kullanılan veri birimlerini temsil etmektedir. Çok doğal olarak bu nesnenin uygulanan koşul sonrası yapılacak bir takım işlemler ile kuralın bütünü oluşturulmaktadır.
+- **Fact Source:** Fact nesnelerinin içeriği, XML ve veritabanı gibi kaynaklardan gelebileceği gibi, sistemin Global Assembly Cache (GAC) alanında yüklü bir assembly içerisindeki.Net tipide olabilir.
 
 Peki bir.Net tipini, BRE içerisinde kullanmak ve herhangibir uygulamada bu tipe ait nesne örneklerini Rules Engine içerisinde tanımlı ilkelere dahil etmek istiyorsak nasıl bir yol izlemeliyiz.
 
-1 - İlk olarak.Net tipini içeren bir Class Library geliştirilir. Bu library içerisinde BRE managed nesnelerini kullanabilmek için varsayılan olarak C:\Program Files\Microsoft BizTalk Server 2006 adresinde yer alan Microsoft.RuleEngine.dll assembly'ının projeye referans edilmesi gerekir.
+**1** - İlk olarak.Net tipini içeren bir Class Library geliştirilir. Bu library içerisinde BRE managed nesnelerini kullanabilmek için varsayılan olarak C:\Program Files\Microsoft BizTalk Server 2006 adresinde yer alan Microsoft.RuleEngine.dll assembly'ının projeye referans edilmesi gerekir.
 
 ![blg46_5.gif](/assets/images/2009/blg46_5.gif)
 
@@ -71,7 +68,7 @@ namespace CompanyRules
 
 Product isimli sınıf içerisinde yer alan Count özelliğinin değerine göre bir takım kurallar tanımlayacağımızı şimdiden söyleyebilirim. Örneğin Count'un belirli bir değerin altında olması halinde StockLevelOk özelliğine false değerinin atanması bir kural olarak düşünülebilir.
 
-2 - Yazılan.Net tipi için mutlaka bir test tipi geliştirilmelidir. Daha önceden de bahsedildiği üzere, Policy, Published veya Deployed modlarına geçildiğinde değiştirilemez. Dolayısıyla test edilebilir olması önemlidir. Nitekim test sonuçlarına bakılarak Fact'lerin tanımlanan Rule'lar için doğru çalışıp çalışmadığı değerlendirilmelidir. Bu amaçla, yine Microsoft.RuleEngine isim alanı altında yer alan IFactCreator arayüzünden (Interface) türeyen bir tip kullanılır. CompanyRules sınıf kütüphanesinde yer alan Product tipi için, IFactCreator arayüzünde türeyen aşağıdaki tip tasarlanmıştır.
+**2** - Yazılan.Net tipi için mutlaka bir test tipi geliştirilmelidir. Daha önceden de bahsedildiği üzere, Policy, Published veya Deployed modlarına geçildiğinde değiştirilemez. Dolayısıyla test edilebilir olması önemlidir. Nitekim test sonuçlarına bakılarak Fact'lerin tanımlanan Rule'lar için doğru çalışıp çalışmadığı değerlendirilmelidir. Bu amaçla, yine Microsoft.RuleEngine isim alanı altında yer alan IFactCreator arayüzünden (Interface) türeyen bir tip kullanılır. CompanyRules sınıf kütüphanesinde yer alan Product tipi için, IFactCreator arayüzünde türeyen aşağıdaki tip tasarlanmıştır.
 
 ```csharp
 using System;
@@ -106,7 +103,7 @@ namespace CompanyRules
 
 Burada yapılan aslında Product biriminin belirtilen bir kural için test edilebilir olmasını sağlamaktır. Bu nedenle, CreateFacts metodu içerisinde örnek bir Product nesne örneği oluşturulmuş ve geriye döndürülmüştür. Aslında burada işleyiş şekli tam anlamıyla ders niteliğindedir. IFactCreator arayüzü, BizTalk tarafında tanımlanmıştır. Bu arayüz, Business Rule Composer programındaki testler için önemlidir. Nitekim dışarıdan bir tipin, var olan Biztalk uygulamasına entegre edilmesini sağlamaktadır. Yani bildiğimiz Plug-In mantığı söz konusudur.
 
-3 - Geliştirilen tiplerin yer aldığı.Net assembly'ının, Business Rule Composer içerisinde kullanılabilmesi için Strong Name Key ile imzalanıp Global Assembly Cache alanına atılmış olması gerekmektedir. Aksi takdirde Business Rule Composer içerisinde kullanılamaz. Tahmin edileceği üzere uygulamamızı Strong Name ile imzalamak için Visual Studio ortamında proje özelliklerinden gerekli ayarlamaları yapabiliriz.
+**3** - Geliştirilen tiplerin yer aldığı.Net assembly'ının, Business Rule Composer içerisinde kullanılabilmesi için Strong Name Key ile imzalanıp Global Assembly Cache alanına atılmış olması gerekmektedir. Aksi takdirde Business Rule Composer içerisinde kullanılamaz. Tahmin edileceği üzere uygulamamızı Strong Name ile imzalamak için Visual Studio ortamında proje özelliklerinden gerekli ayarlamaları yapabiliriz.
 
 ![blg46_7.gif](/assets/images/2009/blg46_7.gif)
 
@@ -114,7 +111,7 @@ Bu işlemin ardındada derlenen assembly, komut satırından GacUtil ile veya ba
 
 ![blg46_8.gif](/assets/images/2009/blg46_8.gif)
 
-4 - Business Rule Composer aracından yararlanılarak Policy ve içerisinde yer alan kurallar oluşturulur. Aslında bu adımı çok fazla dert etmemiz gerek yok. Bu konuyu görsel derstede ele alacağımızdan aşağıdak şekilde görülen basit kuralları oluşturmaya çalışsak yeterli olacaktır. Tabiki unutulmaması gereken önemli noktalardan biriside, Fact Explorer kısmında, aşağıdaki ekran görüntüsünde olduğu gibi CompanyRules assembly'ının seçilmesi gerekliliğidir ki bu sayede Rule içerisindeki Fact'ler için kullanılacak özellikler ele alınabilecektir.
+**4** - Business Rule Composer aracından yararlanılarak Policy ve içerisinde yer alan kurallar oluşturulur. Aslında bu adımı çok fazla dert etmemiz gerek yok. Bu konuyu görsel derstede ele alacağımızdan aşağıdak şekilde görülen basit kuralları oluşturmaya çalışsak yeterli olacaktır. Tabiki unutulmaması gereken önemli noktalardan biriside, Fact Explorer kısmında, aşağıdaki ekran görüntüsünde olduğu gibi CompanyRules assembly'ının seçilmesi gerekliliğidir ki bu sayede Rule içerisindeki Fact'ler için kullanılacak özellikler ele alınabilecektir.
 
 ![blg46_10.gif](/assets/images/2009/blg46_10.gif)
 
@@ -128,19 +125,19 @@ Policy2 içerisnde tanımlanan ilk kuralımız Rule1 ismindedir. Bu kurala göre
 
 ![blg46_14.gif](/assets/images/2009/blg46_14.gif)
 
-5 - Kurallar test edilir ve herşey beklendiği gibiyse, dağıtım (Deployement) aşamasına geçilir. Test için yapılması gereken ilk adım, tanımlanan Rule'lar üzerinde testi gerçekleştirecek olan.Net tipinin seçilmesidir. Buda Test düğmesine basıldığında bize sorulmaktadır ki yine GAC içerisinde duran assembly kütüphanemiz zaten söz konusu IFactCreator türevini içermektedir.
+**5** - Kurallar test edilir ve herşey beklendiği gibiyse, dağıtım (Deployement) aşamasına geçilir. Test için yapılması gereken ilk adım, tanımlanan Rule'lar üzerinde testi gerçekleştirecek olan.Net tipinin seçilmesidir. Buda Test düğmesine basıldığında bize sorulmaktadır ki yine GAC içerisinde duran assembly kütüphanemiz zaten söz konusu IFactCreator türevini içermektedir.
 
 ![blg46_17.gif](/assets/images/2009/blg46_17.gif)
 
-6 - Test edilen ve test sonuçları beklediğimiz gibi çıkan Policy sırasıyla Publish ve Deploy işlemlerinden geçirilerek kullanıma hazır hale getirilir.
+**6** - Test edilen ve test sonuçları beklediğimiz gibi çıkan Policy sırasıyla Publish ve Deploy işlemlerinden geçirilerek kullanıma hazır hale getirilir.
 
 ![blg46_15.gif](/assets/images/2009/blg46_15.gif)
 
-7 - Deploy edilen Policy'lerin ve içerdiği kuralların herhangibir.Net uygulamasında kullanılabilmesi için, söz konusu uyulamaya yine Microsoft.RuleEngine.dll assembly'ının referans edilmesi gerekir. Bu adıma gelinmeden önce, 5nci adımda yaptığımız testlerin sonuçlarının doğruluğundan emin olunmalıdır.
+**7** - Deploy edilen Policy'lerin ve içerdiği kuralların herhangibir.Net uygulamasında kullanılabilmesi için, söz konusu uyulamaya yine Microsoft.RuleEngine.dll assembly'ının referans edilmesi gerekir. Bu adıma gelinmeden önce, 5nci adımda yaptığımız testlerin sonuçlarının doğruluğundan emin olunmalıdır.
 
 ![blg46_18.gif](/assets/images/2009/blg46_18.gif)
 
-8 - Kural motorunu kullanacak olan.Net uygulamasında, Microsoft.RuleEngine isim alanı altında yer alan Policy tipinden yararlanılarak, Fact nesnesinin BRE içerisine atılması sağlanır. İşte Company isimli Console uygulamamızda yer alan kodlarımız.
+**8** - Kural motorunu kullanacak olan.Net uygulamasında, Microsoft.RuleEngine isim alanı altında yer alan Policy tipinden yararlanılarak, Fact nesnesinin BRE içerisine atılması sağlanır. İşte Company isimli Console uygulamamızda yer alan kodlarımız.
 
 ```csharp
 using System;
@@ -178,4 +175,3 @@ Böylece geldik zevkli bir konunun daha sonuna. Umarım sizler içinde yararlı 
 [HelloBRE.rar (37,09 kb)](/assets/files/2009/HelloBRE.rar)
 
 [Meraklısı için Business Rule Engine kavramı ile ilişkili detaylı bilgi](http://en.wikipedia.org/wiki/Business_rules_engine)
-

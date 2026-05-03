@@ -175,9 +175,7 @@ namespace DiscoveryProxyService
 }
 ```
 
-Sizi bu kod parçası ile bir süre yanlız bırakmak isterim
-
-Aslında sınıfımızın görevi basittir. Çevre ağlar üzerinde announcement mesajı yayınlayarak online veya offline olduğunu bildiren servisleri tutmakta ve buna ek olarak, istemciden gelen arama kriterlerine uygun olanlarını yine istemci tarafına yönlendirmektedir. Sınıfımız, yardımcı metodların yanı sıra DiscoveryProxyBase tipinden gelen bazı sanal metodlarıda (Virtual Method) ezmektedir. Özellikle eş zamanlı isteklerde oluşabilecek senkronizasyon sorunlarını aşmak için basit lock tekniğinden yararlanılmaktadır. Proxy servisini geliştirmek tek başına yeterli değildir. Bu servisin bir uygulama tarafından host edilmesi gerekmektedir. Bu anlamda basit bir Console uygulaması aşağıdaki kodlar ile tasarlanabilir.
+Sizi bu kod parçası ile bir süre yanlız bırakmak isterim. Aslında sınıfımızın görevi basittir. Çevre ağlar üzerinde announcement mesajı yayınlayarak online veya offline olduğunu bildiren servisleri tutmakta ve buna ek olarak, istemciden gelen arama kriterlerine uygun olanlarını yine istemci tarafına yönlendirmektedir. Sınıfımız, yardımcı metodların yanı sıra DiscoveryProxyBase tipinden gelen bazı sanal metodlarıda (Virtual Method) ezmektedir. Özellikle eş zamanlı isteklerde oluşabilecek senkronizasyon sorunlarını aşmak için basit lock tekniğinden yararlanılmaktadır. Proxy servisini geliştirmek tek başına yeterli değildir. Bu servisin bir uygulama tarafından host edilmesi gerekmektedir. Bu anlamda basit bir Console uygulaması aşağıdaki kodlar ile tasarlanabilir.
 
 ```csharp
 using System;

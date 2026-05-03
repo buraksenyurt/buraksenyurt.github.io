@@ -139,7 +139,9 @@ Hımmm...
 
 Harika! Uri bilgisindeki protokol tanımalamarına bakılarak, çalışma zamanı bizim için iki farklı EndPoint bilgisini otomatik olarak oluşturmuştur. Tcp bazlı adresleme için varsayılan olarak NetTcpBinding, Http bazlı adresleme içinse varsayılan olarak BasicHttpBinding bağlayıcı tipleri oluşturulmuştur. Diğer yandan Address özelliklerinde, Uri bilgisi sonuna sözleşme tipi (Contract Type) adının eklendiğine dikkat edilmelidir. Buradan şu sonuca varabiliriz. Servis tarafında kaç sözleşme ve adres sunuluyorsa bunların çarpanı kadar EndPoint otomatik olarak oluşturulacaktır. Elbetteki biz EndPoint bildirimlerini bilinçli olarak yapmassak. Peki ya servis tarafında EndPoint bilgisini eklemişsek? Örneğin aşağıdaki kod parçasında olduğu gibi ServiceHost nesnesinin örneklenmesinden sonra AddServiceEndpoint metodunu kullanırsak...
 
+```csharp
 host.AddServiceEndpoint (typeof (IProductService), new WSHttpBinding (), "");
+```
 
 Bu durumda aynı örneğin çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
@@ -147,7 +149,9 @@ Bu durumda aynı örneğin çalışma zamanı çıktısı aşağıdaki gibi olac
 
 Görüldüğü üzere çalışma zamanı sadece bizim eklediğimiz EndPoint bilgisini kullanmaktadır. Tam bu noktada WCF 4.0 ile birlikte gelen AddDefaultEndpoints metodunu değerlendirmeye çalışalım. Normal şartlarda servis tarafına EndPoint bilgilerini eklemessek, WCF çalışma zamanı, yeni gelen AddDefaultEndpoints metodunu kullanmakta ve Uri bilgilerine göre varsayılan atamaları yapmaktadır. Peki yukarıdaki gibi AddServiceEndpoint metodundan sonra birde AddDefaultEndpoints metodunu yukarıdaki örneğe göre aşağıdaki gibi kullanırsak...
 
+```csharp
 host.AddDefaultEndpoints ();
+```
 
 Bu durumda çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
@@ -160,4 +164,3 @@ Görüldüğü üzere hem bizim bilinçli olarak eklediğimiz hemde AddDefaultEn
 Bu kısa yazımızda WCF 4.0 tarafında, basitleştirilmiş konfigurasyon (Simplified Configuration) ayarlamalarının özelliklerinden birisi olan Default EndPoints kavramına değinmeye çalıştık. İlerleyen yazılarımızda diğer WCF 4.0 yeniliklerinede değinmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [DefaultEndPoints.rar (40,08 kb)](/assets/files/2009/DefaultEndPoints.rar)
-

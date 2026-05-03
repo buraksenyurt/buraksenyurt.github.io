@@ -18,7 +18,7 @@ Kendisi bize "Bilimsel Araştırma ve Yazma" dersinde şöyle seslenmişt; "Bir 
 
 Her ne kadar WCF 4.0 ile gelen yenilikleri araştırmak bir tez hazırlamak kadar zorlu ve çetin olmasada sıkıldığım noktada hemen bir kaçış aradım ve bakım ne buldum.
 
-Bing API 2.0
+## Bing API 2.0 Nedir?
 
 Microsoft'un arama motoru Bing'i duymayan olmamıştır sanırım. Peki Bing'in kendi uygulamalarımızda kullanılabilmesi için dışarıya bir API sunduğunu biliyor muydunuz? Ta ta ta taaaa...
 
@@ -39,11 +39,13 @@ Bing API'si, kendi web sitesinden sunduğu arama özelliklerinin tamamını, far
 - Hava durumu ile ilişkili aramalar (Weather)
 - vb...
 
+## İstemci Talep Formatları
+
 Güzel. Şimdi kafamızda bir şeyler şekillenmeye başladı. En azından arama modelini nasıl seçebileceğimizi anladık. Peki talepler nasıl iletilecekler?
 
 İstemciler taleplerini Bing API servisine 3 farklı formatta iletebilirler.
 
-| Format | Ozet | URL |
+| **Format** | **Ozet** | **URL** |
 | --- | --- | --- |
 | JavaScript Object Notation (JSON) | Ajax tabanli uygulamalarda kullanilmasi tercih edilen bu tipe gore istemciye Raw, Callback ve Function formatlarinda cevap doner. | `http://api.search.live.net/json.aspx?AppId=YOURAPPID&Market=en-US&Query=testing&Sources=web+spell&Web.Count=1` |
 | eXtended Markup Language (XML) | SOAP formatini desteklemeyen veya Siverlight gibi uygulamalarda tercih edilir. Istemcinin talepleri HTTP Get metoduna gore gideceginden URL siniri en buyuk handikapi olarak gorulebilir. | `http://api.search.live.net/xml.aspx?AppId=YOURAPPID&Market=en-US&Query=testing&Sources=web+spell&Web.Count=1` |
@@ -52,6 +54,8 @@ Güzel. Şimdi kafamızda bir şeyler şekillenmeye başladı. En azından arama
 Görüldüğü gibi, Bing API'si için değerlendirilecek istemci talepleri, Json formatında, HTTP Get metodunda gönderilebilmektedir. Ama burada altı çizilmesi gereken ve benimde en çok ilgimi çeken SOAP modelidir. Öyleki, bu modelin uygulanması için istemci tarafının bir XML Web Service referansını kullanması yeterlidir. Bu, istemci tarafında managed bir kodun uygulanabilmesi anlamına gelmektedir. Asenkron çağrılar gerçekleştirebilir, strong tipler kullanabilir, hatta sonuç kümeleri üzerinde LINQ sorguları dahi yapılabilir.
 
 > Bir zamanlar.Net üzerine eğitmenlik yapardım. İlk yıllarımda.Net 1.0 vardı ve Xml Web Service konusunda gerçek hayat örnekleri bulmakta zorlanırdık. Genellikle kendi servislerimizi yazar, çağırır ve ele alırdık. Yada popüler hava durumu servisi örneği. Ama gerçek hayat senaryolarında, çok basit olan ve bizim tarafımızdan yazılmamış bir Web Servisi nasıl değer kazanabilir,artık pek çok örneği ile görebilmekteyiz. İşte küçük bir örnek, Bing API tarafından kullanılan Live servisi...
+
+## Örnek Uygulama
 
 Öyleyse hiç vakit kaybetmeden acele acele bir örnek yapalım.
 
@@ -141,18 +145,14 @@ namespace WinClient
                             {
                                 Form frm = new Form()
                                 {
-                                    ControlBox = true
-                                    ,
-                                    MaximizeBox = false
-                                    ,
-                                    MinimizeBox = false
-                                    ,
+                                    ControlBox = true,
+                                    MaximizeBox = false,
+                                    MinimizeBox = false,
                                     Text = String.Format("{0} X {1} / {2} / {3} bytes", img.Result.Width, img.Result.Height, img.Result.Title, img.Result.FileSize)
                                 };
                                 PictureBox pb = new PictureBox
                                 {
-                                    ImageLocation = img.Result.MediaUrl
-                                    ,
+                                    ImageLocation = img.Result.MediaUrl,
                                     Dock = DockStyle.Fill
                                 };
 
@@ -179,6 +179,8 @@ namespace WinClient
 }
 ```
 
+## Kod Açıklaması
+
 İlk olarak LiveSearchService nesnesi örneklenir. Bu örnek tahmin edileceği üzere Search operasyonunu yerine getirecek olan proxy tipimizdir. Diğer yandan arama işlemi için başlangıç kriterlerinin belirtilmesi gerekir. Bu amaçla SearchRequest tipinden bir nesne örneği oluşturulmaktadır. Dikkat edileceği üzere Image tipinden bir arama istendiği belirtilmiş ve buna göre Image özelliğine yeni bir ImageRequest nesnesi atanmıştır. ImageRequest nesnesinde 20 resimlik bir sonuç kümesinin talep edildiği belirtilmektedir. SearchRequest sınıfı örneklenirken App Id değeri verilmektedir.
 
 Hatırlayınız, bu değeri siz formu doldurduktan sonra alıyorsunuz. Önemli atamalardan biriside Query özelliği için yapılandır. Bu özelliğin değeri aranacak içeriği taşımaktadır. Bundan sonrası son derece kolaydır. LiveSearchService nesne örneğinin Search metoduna parametre olarak SearchRequest referansı atanır. Sonuçlar SearchResponse nesne örneğine gelir. Ardından SearchResponse nesne örneğinin Image özelliğinin Results koleksiyonundaki her bir ImageResult değerlendirilerek resim bilgilerinin alınması sağlanır. Elde edilen sonuçların her biri için bir ThumbImage bileşeni oluşturulur ve FlowLayoutPanel bileşeninin Controls koleksiyonuna eklenir. Uygulamanın çalışma zamanındaki örnek çıktısı aşağıda görüldüğü gibidir. Ben Ferrari kelimesi ile ilişkili resim dosyalarını arattım.
@@ -186,6 +188,8 @@ Hatırlayınız, bu değeri siz formu doldurduktan sonra alıyorsunuz. Önemli a
 ![blg72_SampleRuntime.gif](/assets/images/2009/blg72_SampleRuntime.gif)
 
 Görüldüğü gibi minik resimlerden herhangirine tıklandığında orjinal halide yeni bir Form içerisinde gösterilebilmektedir. Buna ek olarak resim ile ilişkili bir kaç basit bilgide Form'un başlığında gösterilmektedir. Resmin boyutları, başlığı ve büyüklüğü. Ne kadar basit öğle değil mi?
+
+## Eksikler ve Ödevler
 
 Bu arada Bing API ile ilişkili dökümanı indirdiğinizde içerisinde JSON, XML ve SOAP modellerinin her biri için ayrı ayrı yapılmış detaylı örnek anlatımları ve projeler olduğunu göreceksiniz. Bunları incelemenizi şiddetle tavsiye ederim. Peki bu acele örnekte yapmadıklarımız?
 

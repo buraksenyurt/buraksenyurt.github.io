@@ -22,9 +22,7 @@ Kod tarafında her ne kadar mücadeleci bir yol izlesekte, neyin nasıl oluştur
 
 Haydi gelin kamera arkasına bakalım.
 
-> Kişisel Not: Aslında Beta 2 sürümünde (ki henüz public olarak yayınlanmadığını biliyorsunuz), designer tarafındaki sorunların aşıldığını ifade edebilirim. Bizzat tecrübe ile sabitlenmiştir
-
-> Hatta bu konu ile ilişkili bir yazımı söz konusu sürüm public hale geldikten sonra yayınlıyor olacağım.
+> Kişisel Not: Aslında Beta 2 sürümünde (ki henüz public olarak yayınlanmadığını biliyorsunuz), designer tarafındaki sorunların aşıldığını ifade edebilirim. Bizzat tecrübe ile sabitlenmiştir. Hatta bu konu ile ilişkili bir yazımı söz konusu sürüm public hale geldikten sonra yayınlıyor olacağım.
 
 Bu yazımızda.Net Framework 4.0 Beta 1 ile bir Workflow Service'in oluşturulması, host edilmesi ve bir istemci tarafından kullanılması konusu irdelenmeye çalışılacaktır. Workflow Service tek yönlü bir operasyon (One Way) için hizmet vermekte olup istemci tarafına bir geri bildirimde bulunmamaktadır. Her iki uygulamada birer Console Application olarak tasarlanmıştır. İstemci tarafında Workflow Service'in kullanılabilmesi için gerekli Proxy nesnesi yine kod yardımıyla (WSDL dökümanından yararlanmadan) oluşturulmaktadır. Aslında tamamlanmış olan uygulamalara baktığımızda servis ve istemci tarafı için gerekli olan referans Assembly'ların aşağıdaki şekilde görüldüğü gibi olduğunu fark edebiliriz.
 

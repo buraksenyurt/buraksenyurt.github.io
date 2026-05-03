@@ -106,9 +106,7 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonuçları elde ederiz.
 
 ![blg61_PreRun.gif](/assets/images/2009/blg61_PreRun.gif)
 
-Peki WCF 4.0 ile gelen yenilik nedir? Sakın gülmeyin ama son derece basit ve kolay
-
-Kolaylaştırılmış konfigurasyon (Simplified Configuration) yeniliklerine göre artık endpoint tanımlamalarında bindingConfiguration niteliğinin kullanılmasına gerek yoktur. Durumu daha net değerlendirebilmek için, yukarıdaki config içeriğini bu kez.Net Framework 4.0 örneğine göre aşağıdaki gibi değiştirdiğimizi düşünelim.
+Peki WCF 4.0 ile gelen yenilik nedir? Sakın gülmeyin ama son derece basit ve kolay. Kolaylaştırılmış konfigurasyon (Simplified Configuration) yeniliklerine göre artık endpoint tanımlamalarında bindingConfiguration niteliğinin kullanılmasına gerek yoktur. Durumu daha net değerlendirebilmek için, yukarıdaki config içeriğini bu kez.Net Framework 4.0 örneğine göre aşağıdaki gibi değiştirdiğimizi düşünelim.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

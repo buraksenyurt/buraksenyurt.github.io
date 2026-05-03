@@ -80,13 +80,11 @@ Aslında bu kez Stop metodu yerine sadece Break metodunu kullandığımızı gö
 
 Durumu değerlendirmeye çalışalım. Herşeyden önce birden fazla Thread'in çalıştığı kolayca gözlemlenebilir. Örnekte 10, 11, 6, 13, 12, 14, 15, 19, 21, 17 numaralı Thread'ler çalıştırılmaktadır. Derken çalışma zamanının bir anından, 14ncü Thread için Break çağrısı gelmiştir. Bunun üzerine 14 numaralı Thread durdurulmuştur. Diğer yandan, Break metodu ile karşılaşıncaya kadar başlatılan diğer Thread'ler çalışmalarına devam etmektedir. İşte Stop metodu ile aradaki önemli bir farklılık. Yinede ilerleyen kısımlarda diğer Thread'lerden bazılarının yürütülmesi esnasında Break çağrısı ile karşılaşılması olasıdır ki 13ncü Thread için bu gerçekleşmiştir. Tabiki bu çağrı sonrasında 13ncü Thread'de sonlandırılmış ama daha önceden başlatılmış diğer Thread'ler kendilerine ayrılan üst sınır değerine kadar yürümeye devam etmiştir. Nitekim ilerleyen kısımlarda diğer Thread'ler için Break komutu ile karşılaşılmamıştır.
 
-Sanıyorumki Stop ve Break metodları arasındaki farkı biraz biraz kendini göstermeye başladı.
+Sanıyorumki Stop ve Break metodları arasındaki farkı biraz biraz kendini göstermeye başladı. Yinede şu ana kadar yaptığım analizde havada kalan noktalar var gibi hissediyorum. Farklılığı tam olarak göremediğimi itirifat etemliyim. Bu nedenle Break tekniği ile ilişkili kod parçasında if kontrolünü aşağıdaki gibi değiştirdim ve Thread.Sleep süresini biraz daha kısalttım. Amaç çalışan Thread'lerden 10 numaralı Id'ye sahip olana denk gelindiğinde Break komutu kullanmak ve diğer Thread'lere ne olacağını anlamaktı.
 
-Yinede şu ana kadar yaptığım analizde havada kalan noktalar var gibi hissediyorum.
-
-Farklılığı tam olarak göremediğimi itirifat etemliyim. Bu nedenle Break tekniği ile ilişkili kod parçasında if kontrolünü aşağıdaki gibi değiştirdim ve Thread.Sleep süresini biraz daha kısalttım. Amaç çalışan Thread'lerden 10 numaralı Id'ye sahip olana denk gelindiğinde Break komutu kullanmak ve diğer Thread'lere ne olacağını anlamaktı.
-
+```csharp
 if (threadId=="10")
+```
 
 Volaaaa...
 
@@ -102,10 +100,6 @@ Bu sonuçlara ve diğerlerine baktığımda 1000 adımlık iterasyonun, Thread'l
 
 ![blg33_5.gif](/assets/images/2009/blg33_5.gif)
 
-Görüldüğü gibi 10ncu Thread çalışmaya başlayıp 1 eleman ekledikten sonra gelen Stop metodu nedeniyle hem kendisi hemde diğer Thread'ler mümkün olan en kısa sürede durdurulmuştur.
-
-Sanıyorumki artık Stop ve Break arasındaki farkı daha iyi görebiliyoruz.
-
-Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Görüldüğü gibi 10ncu Thread çalışmaya başlayıp 1 eleman ekledikten sonra gelen Stop metodu nedeniyle hem kendisi hemde diğer Thread'ler mümkün olan en kısa sürede durdurulmuştur. Sanıyorumki artık Stop ve Break arasındaki farkı daha iyi görebiliyoruz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ParallelForStopBreak.rar (21,27 kb)](/assets/files/2009/ParallelForStopBreak.rar)

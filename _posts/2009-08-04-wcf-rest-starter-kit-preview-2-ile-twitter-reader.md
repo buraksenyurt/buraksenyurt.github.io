@@ -13,7 +13,7 @@ Minik bir çocukken Televizyon bağımlılığı (Malesef bu aptal kutuda çok v
 
 Şimdi bu konuya nereden geldiğimi düşünebilirsiniz. Şu sıralarda sık sık takip ettiğim geekswithblogs sitesinde twitter'da (Sanırım niye cikcik diyerek yazımıza başladığımızı anlamışsınızdır) yayınlanan içeriklerin WCF Rest Starter Kit Preview 2 ile birlikte gelen HttpClient sınıfı yardımıyla nasıl kolayca ele alınabileceğine dair bazı yazılar gördüm.
 
-Konunun içerisinde REST bazlı iletişim ve WCF söz konusu olunca hemen kolları sıvadım ve Windows tabanlı basit bir örnek geliştirmeye karar verdim. Tabi başlamadan önce projemizin amacından biraz bahsetmek isterim. [Twitter](http://twitter.com/)üzerinde yayınlanan girişleri HTTP üzerinden GET metodu ile çekmeyi, buna göre eklenen güncel içerikleri uygulamamızda göstermeyi ve yenilerinide kendi Twitter hesabımız üzerinden, HTTP Post metodu ile ekleyebilmeyi planlıyoruz. Aslında olay bir RSS Reader yazmak kadar basit. Diğer yandan burada bahsettiğimiz işlevsellikleri geliştirmek için elimizde WCF Rest Starter Kit Preview 2 olmasına da gerek yoktur. Ancak Kit'in bize sağladığı bazı avantajlar ve kolaylıklar bulunmaktadır.
+Konunun içerisinde REST bazlı iletişim ve WCF söz konusu olunca hemen kolları sıvadım ve Windows tabanlı basit bir örnek geliştirmeye karar verdim. Tabi başlamadan önce projemizin amacından biraz bahsetmek isterim. Twitter üzerinde yayınlanan girişleri HTTP üzerinden GET metodu ile çekmeyi, buna göre eklenen güncel içerikleri uygulamamızda göstermeyi ve yenilerinide kendi Twitter hesabımız üzerinden, HTTP Post metodu ile ekleyebilmeyi planlıyoruz. Aslında olay bir RSS Reader yazmak kadar basit. Diğer yandan burada bahsettiğimiz işlevsellikleri geliştirmek için elimizde WCF Rest Starter Kit Preview 2 olmasına da gerek yoktur. Ancak Kit'in bize sağladığı bazı avantajlar ve kolaylıklar bulunmaktadır.
 
 Örneğin, XML içeriğini managed tarafta kolayca ele alabilmemiz için gerekli tiplerin üretimini kolaylaştıran Paste XML As Types Örneği geliştirebilmek için çok sık kullanmasamda Twitter'da bir hesap oluşturdum ve bildiğim geliştiricilerin Tweet'lerini takip etmeye başladım. İşe başlamadan önce, Twitter'da ne olup bittiğine bir bakayım dedim.
 
@@ -23,7 +23,7 @@ Konunun içerisinde REST bazlı iletişim ve WCF söz konusu olunca hemen kollar
 
 ![blg56_WindowsReferences.gif](/assets/images/2009/blg56_WindowsReferences.gif)
 
-Referansların eklenmesinden sonra yolumuza, Twitter'da yayınlanan Feed içeriğinin managed taraftaki karşılıklarını oluşturarak devam edebiliriz. Bu noktada, [http://twitter.com/statuses/friends_timeline.xml](http://twitter.com/statuses/friends_timeline.xml) adresinde keni twitter hesabım ile baktığımda aşağıdaki ekran görüntüsünde yer alan XML içeriği ile karşılaştığımı gördüm.
+Referansların eklenmesinden sonra yolumuza, Twitter'da yayınlanan Feed içeriğinin managed taraftaki karşılıklarını oluşturarak devam edebiliriz. Bu noktada, [http://twitter.com/statuses/friends_timeline.xml](http://twitter.com/statuses/friends_timeline.xml) adresinde kendi twitter hesabım ile baktığımda aşağıdaki ekran görüntüsünde yer alan XML içeriği ile karşılaştığımı gördüm.
 
 ![blg56_TwitterTimelineXML.gif](/assets/images/2009/blg56_TwitterTimelineXML.gif)
 
@@ -139,13 +139,7 @@ namespace TwitterReader
 
 ![blg56_GetFeeds.gif](/assets/images/2009/blg56_GetFeeds.gif)
 
-Görüldüğü üzere örneği geliştirdiğim sıradaki tüm Tweet girişlerini elde edebilmiştim. Evet, tasarım biraz kötü
-
-Hatta çok kötü
-
-Dahada güzelleştirilmesini size bırakıyorum.
-
-Peki yeni bir Tweet girdiğimizde. Örneğin aşağıdaki ekran görüntüsündeki gibi,
+Görüldüğü üzere örneği geliştirdiğim sıradaki tüm Tweet girişlerini elde edebilmiştim. Evet, tasarım biraz kötü, hatta çok kötü, daha da güzelleştirilmesini size bırakıyorum. Peki yeni bir Tweet girdiğimizde. Örneğin aşağıdaki ekran görüntüsündeki gibi,
 
 ![blg56_PostNewFeed.gif](/assets/images/2009/blg56_PostNewFeed.gif)
 
@@ -166,4 +160,3 @@ Her şeyden önce asenkron bir erişim söz konusu değildir. Bu nedenle veriler
 Bunları deneyin ve çok daha iyisini yapmaya çalışın. Umarım yararlı bir yazı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TwitterReader.rar (187,66 kb)](/assets/files/2009/TwitterReader.rar)
-
