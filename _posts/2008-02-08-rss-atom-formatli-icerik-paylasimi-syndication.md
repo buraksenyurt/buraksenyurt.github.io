@@ -22,11 +22,12 @@ Peki söz konusu RSS veya Atom formatlı içerikler hangi amaçlarla kullanılma
 
 Örneğin farklı haber sitelerinin RSS/Atom içeriklerini kullanarak istemcilere birer özet şeklinde sunan intranet tabanlı web siteleri son derece yaygındır. Bu tip bir sistemde istemciler doğrudan internete çıkamasalarda, intranet üzerinde erişebildikleri ortak bir portal üzerinden çeşitli haber sitelerinin güncel konu başlıklarına bakabilir ve bilgi alabilirler. Tabiki burada bahsetmiş olduğumuz senaryolar en yaygın kullanılanlarıdır. Geliştirici (Developer) olarak baktığımızda paylaşılabilen herhangibir veri topluluğunu RSS/Atom formatlarında yayınlayabileceğimiz sonucu ortaya çıkmaktadır.
 
-> RSS/Atom gibi formatlarda sunulan içerikler standartlaştırılmış XML verileridir. Bu veriler versiyonlara göre farklılık gösterebilir. Ancak her haldede, XML içeriklerinin ayrıştırılıp (Parse) kullanılması mümkündür..Net içerisinde ezelden beri gelen XML tipleri ile bu işlemler gerçekleştirilebilir. Ancak WCF açısından olaya bakıldığında göze çarpan noktalar şunlardır;
-> - RSS veya Atom formatlı verilerin yönetimli kod (Managed Code) tarafında kolayca ele alınmasını sağlayan tipler.Net Framework 3.5 içerisinde gelmektedir. Böylece RSS veya Atom formatlı içeriklerin oluşturulması veya okunması (ayrıştırılması) dahada kolaylaşmaktadır.
-> - WCF,.Net 3.5 içerisinde gelen destekler ile HTTP Get gibi bir metod yardımıyla EndPoint'ler üzerinde RSS/Atom desteği verebilecek şekilde kullanılabilmektedir.
+RSS/Atom gibi formatlarda sunulan içerikler standartlaştırılmış XML verileridir. Bu veriler versiyonlara göre farklılık gösterebilir. Ancak her haldede, XML içeriklerinin ayrıştırılıp (Parse) kullanılması mümkündür..Net içerisinde ezelden beri gelen XML tipleri ile bu işlemler gerçekleştirilebilir. Ancak WCF açısından olaya bakıldığında göze çarpan noktalar şunlardır;
 
-Söz gelimi bir veri yönetim sistemi üzerinde çalışan bir WCF servisi, log bilgilerini yetkili kişilere RSS/Atom formatında sunacak şekilde URL desteği verebilir. Burada URL desteğinden kasıt http://localhost:5001/VeriYonetimSistemi/LogServisi?kullaniciId=5 gibi bir adrestir. Dikkat edilecek olursa URL üzerinden yapılacak olan bu talep (request) sonrasında, WCF servisi kullanıcıID değeri 5 olan kişiyi bulup, log bilgilerini RSS/Atom formatında hazırlayarak email olarak gönderebilir. Hemen bu noktada aşağıdaki şekil ile olayı daha net kavrayabiliriz.
+- RSS veya Atom formatlı verilerin yönetimli kod (Managed Code) tarafında kolayca ele alınmasını sağlayan tipler.Net Framework 3.5 içerisinde gelmektedir. Böylece RSS veya Atom formatlı içeriklerin oluşturulması veya okunması (ayrıştırılması) dahada kolaylaşmaktadır.
+- WCF,.Net 3.5 içerisinde gelen destekler ile HTTP Get gibi bir metod yardımıyla EndPoint'ler üzerinde RSS/Atom desteği verebilecek şekilde kullanılabilmektedir.
+
+Söz gelimi bir veri yönetim sistemi üzerinde çalışan bir WCF servisi, log bilgilerini yetkili kişilere RSS/Atom formatında sunacak şekilde URL desteği verebilir. Burada URL desteğinden kasıt `http://localhost:5001/VeriYonetimSistemi/LogServisi?kullaniciId=5` gibi bir adrestir. Dikkat edilecek olursa URL üzerinden yapılacak olan bu talep (request) sonrasında, WCF servisi kullanıcıID değeri 5 olan kişiyi bulup, log bilgilerini RSS/Atom formatında hazırlayarak email olarak gönderebilir. Hemen bu noktada aşağıdaki şekil ile olayı daha net kavrayabiliriz.
 
 ![mk241_1.gif](/assets/images/2008/mk241_1.gif)
 
@@ -83,8 +84,8 @@ namespace SyndicationFormatlama
                                 {
                                     // Feed içerisindeki öğeler(Items) SyndicationItem tipi ile temsil edilirler.
                                     // Parametreler title,content,uri,id,lastUpdatedTime
-                                    new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=241"),"1",new DateTime(2008,1,30))
-                                    ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=240"),"2",new DateTime(2008,1,15))
+                                    new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("https://buraksenyurt.github.io/2008/01/30/front-end-service-gelistirmek/"),"1",new DateTime(2008,1,30))
+                                    ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("https://buraksenyurt.github.io/2008/01/15/adim-adim-state-machine-workflow-gelistirmek/"),"2",new DateTime(2008,1,15))
                                 };
 
             feed.Items = items; // oluşturulan öğelere ait koleksiyon Feed için set edilir.
@@ -200,8 +201,8 @@ namespace RssAtomLibrary
                     {
                         // Feed içerisindeki öğeler(Items) SyndicationItem tipi ile temsil edilirler.
                         // Parametreler title,content,uri,id,lastUpdatedTime
-                        new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=241"),"1",new DateTime(2008,1,30))
-                        ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=240"),"2",new DateTime(2008,1,15))
+                        new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("https://buraksenyurt.github.io/2008/01/30/front-end-service-gelistirmek/"),"1",new DateTime(2008,1,30))
+                        ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("https://buraksenyurt.github.io/2008/01/15/adim-adim-state-machine-workflow-gelistirmek/"),"2",new DateTime(2008,1,15))
                     };
 
             feed.Items = items;
@@ -247,7 +248,7 @@ namespace Sunucu
 }
 ```
 
-Host uygulamada ilk dikkati çeken noktalardan birisi WebServiceHost sınıfına ait bir nesne örneğinin kullanılmasıdır. Bilindiği gibi normal şartlarda ServiceHost sınıfından yararlanılmaktadır. WebServiceHost nesnesi örneklenirken ilk parametre olarak servis sözleşmesini (Service Contract) uygulayan sınıfın tipini almaktadır. Sonraki parametrede ise servis adresi belirlenmektedir. Host'un açılması için yine Open metoduna başvurulmaktadır. Benzer şekilde kapatma işlemi içinde Close fonksiyonundan yararlanılır. Bu işlemlerin ardından servis uygulaması çalıştırılabilir. Servis uygulaması çalışıyorken herhangibir tarayıcı penceresinden http://localhost:65001/MakalePaylasimServisi/RssCiktisi adresi talep edilirse aşağıdaki ekran çıktısında yer alan görüntü elde edilecektir.
+Host uygulamada ilk dikkati çeken noktalardan birisi WebServiceHost sınıfına ait bir nesne örneğinin kullanılmasıdır. Bilindiği gibi normal şartlarda ServiceHost sınıfından yararlanılmaktadır. WebServiceHost nesnesi örneklenirken ilk parametre olarak servis sözleşmesini (Service Contract) uygulayan sınıfın tipini almaktadır. Sonraki parametrede ise servis adresi belirlenmektedir. Host'un açılması için yine Open metoduna başvurulmaktadır. Benzer şekilde kapatma işlemi içinde Close fonksiyonundan yararlanılır. Bu işlemlerin ardından servis uygulaması çalıştırılabilir. Servis uygulaması çalışıyorken herhangibir tarayıcı penceresinden `http://localhost:65001/MakalePaylasimServisi/RssCiktisi` adresi talep edilirse aşağıdaki ekran çıktısında yer alan görüntü elde edilecektir.
 
 ![mk241_11.gif](/assets/images/2008/mk241_11.gif)
 
@@ -293,7 +294,7 @@ namespace Istemci
 }
 ```
 
-İlk olarak XmlReader sınıfından yararlanılarak http://localhost:65001/MakalePaylasimServisi/RssCiktisi adresinden talepte bulunulmaktadır. Bu talep sonrası elde edilen XML çıktısının SyndicationFeed sınıfı tarafından daha kolay bir şekilde ele alınabilmesini sağlamak amacıyla static Load metoduna XmlReader nesne örneği parametre olarak verilir. Bu işlemin ardından Feed ile ilgili olarak başlık (title) bilgisi elde edilir. Bununla birlikte SyndicationPerson sınıfı ve Authors özelliklerinden yararlanılarak yazarlara ait isim (Name) ve elektronik posta (e mail) bilgileri çekilir. Son olarakta Items koleksiyonu dolaşılarak var olan tüm öğeler SyndicationItem sınıfına ait nesne örnekleri yardımıyla ele alınır. Örnek olarak öğelerin Id, başlık (Title) ve url bilgileri verilir. İstemcilerin talepte bulunabilmesi ve Feed içeriklerini çekebilmesi için çok doğal olarak servis tarafınının çalışıyor olması gerekir. Eğer bu şart sağlanırsa aşağıdakine benzer bir ekran görüntüsü ile karşılaşılacaktır.
+İlk olarak XmlReader sınıfından yararlanılarak `http://localhost:65001/MakalePaylasimServisi/RssCiktisi` adresinden talepte bulunulmaktadır. Bu talep sonrası elde edilen XML çıktısının SyndicationFeed sınıfı tarafından daha kolay bir şekilde ele alınabilmesini sağlamak amacıyla static Load metoduna XmlReader nesne örneği parametre olarak verilir. Bu işlemin ardından Feed ile ilgili olarak başlık (title) bilgisi elde edilir. Bununla birlikte SyndicationPerson sınıfı ve Authors özelliklerinden yararlanılarak yazarlara ait isim (Name) ve elektronik posta (e mail) bilgileri çekilir. Son olarakta Items koleksiyonu dolaşılarak var olan tüm öğeler SyndicationItem sınıfına ait nesne örnekleri yardımıyla ele alınır. Örnek olarak öğelerin Id, başlık (Title) ve url bilgileri verilir. İstemcilerin talepte bulunabilmesi ve Feed içeriklerini çekebilmesi için çok doğal olarak servis tarafınının çalışıyor olması gerekir. Eğer bu şart sağlanırsa aşağıdakine benzer bir ekran görüntüsü ile karşılaşılacaktır.
 
 ![mk241_13.gif](/assets/images/2008/mk241_13.gif)
 
@@ -337,8 +338,8 @@ public SyndicationFeedFormatter IcerikOzeti(string icerikTipi)
 
     List<SyndicationItem> items = new List<SyndicationItem>()
         {
-            new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=241"),"1",new DateTime(2008,1,30))
-            ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("http://www.bsenyurt.com/MakaleGoster.aspx?ID=240"),"2",new DateTime(2008,1,15))
+            new SyndicationItem("WCF - Front End Service Geliştirmek","WCF içerisinde içerik yayınlama",new Uri("https://buraksenyurt.github.io/2008/01/30/front-end-service-gelistirmek/"),"1",new DateTime(2008,1,30))
+            ,new SyndicationItem("Adım Adım State Machine Worflow Geliştirmek","Finite State Machine nasıl geliştirilir.",new Uri("https://buraksenyurt.github.io/2008/01/15/adim-adim-state-machine-workflow-gelistirmek/"),"2",new DateTime(2008,1,15))
         };
     feed.Items = items;
 

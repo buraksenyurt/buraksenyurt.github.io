@@ -10,12 +10,12 @@ categories:
 ---
 Windows Presentation Foundation (WPF) ile ilgili bir önceki makalemizde, iki boyutlu (2D) grafiklerin çizilmesi amacıyla kullanılan fırçaları (Brushes) incelemeye çalışmıştık. Bu makalemizde ise iki boyutlu şekilleri (Shapes) araştırıyor olacağız. Vektörel grafiklerde şekillerin (Shapes) büyük önemi vardır. Nitekim temel şekiller kullanılarak asıl resimler ve görüntüler kolaylıkla elde edilebilir. Bir CAD uygulamasının karmaşık çizelgelerinden, eğlenceli çocuk programlarında kullanılan vektörel grafiklere kadar pek çok alanda temel şekiller yeterli olmaktadır. Söz gelimi bir şehrin imar planlamasında kullanılacak bir programda iki boyutlu olarak düşünüldüğünde dörtgenler, daireler, elipsler, poligonlar ve düz çizgiler evlerin, yolların, arsaların, parkların ifade edilmesi için yeterlidir. Senaryolar arttırılabilir ve daha geniş alanlarda düşünülebilir. Ancak temel olarak gereken şekiller bellidir. WPF kendi bünyesinde iki boyutlu çizimlerin gerçekleştirilebilmesi amacıyla aşağıda belirtilen şekilleri (Shapes) sunmaktadır.
 
-- Ellips: Bu tip yardımıyla içi dolu veya boş tam daire yada elipslerin çizilmesi mümkündür.
-- Line: Düz çizgilerin çizilmesini sağlayan tiptir. Başlangıç ve bitiş koordinatları düz çizginin çizilmesi için yeterlidir.
-- Rectangle: Dört köşeli şekillerin çizilmesinde kullanılan tiptir. İçi boş veya dolu dikdörtgen yada kare gibi şekillerin çizilebilmesini sağlar.
-- Polygon: N sayıda köşeden oluşan poligonların çizilmesinde kullanılır. Bir üçgen olabileceği gibi bir çokgen de olabilir. Diğer taraftan düzgün köşeli olmayan bir poligonda oluşturulabilir. Ayrıca poligonların içi boş veya dolu olacak şekilde oluşturulabilmesi de mümkündür.
-- Polyline: Birbirlerine bitiş noktalarından bağlı bir başka deyişle uç uca eklenmiş düz çizgilerin (Line) çizilmesini sağlayan tiptir.
-- Path: Birbirlerine son noktalarından bağlı olan düz çizgi veya eğri (Curve) gibi toplu şekillerin çizidirilmesini sağlayan tiptir. Farklı şekillerin bir arada kullanılabilmesini sağlamak için geometri (Geometry) tiplerinden yararlanır.
+- **Ellips:** Bu tip yardımıyla içi dolu veya boş tam daire yada elipslerin çizilmesi mümkündür.
+- **Line:** Düz çizgilerin çizilmesini sağlayan tiptir. Başlangıç ve bitiş koordinatları düz çizginin çizilmesi için yeterlidir.
+- **Rectangle:** Dört köşeli şekillerin çizilmesinde kullanılan tiptir. İçi boş veya dolu dikdörtgen yada kare gibi şekillerin çizilebilmesini sağlar.
+- **Polygon:** N sayıda köşeden oluşan poligonların çizilmesinde kullanılır. Bir üçgen olabileceği gibi bir çokgen de olabilir. Diğer taraftan düzgün köşeli olmayan bir poligonda oluşturulabilir. Ayrıca poligonların içi boş veya dolu olacak şekilde oluşturulabilmesi de mümkündür.
+- **Polyline:** Birbirlerine bitiş noktalarından bağlı bir başka deyişle uç uca eklenmiş düz çizgilerin (Line) çizilmesini sağlayan tiptir.
+- **Path:** Birbirlerine son noktalarından bağlı olan düz çizgi veya eğri (Curve) gibi toplu şekillerin çizidirilmesini sağlayan tiptir. Farklı şekillerin bir arada kullanılabilmesini sağlamak için geometri (Geometry) tiplerinden yararlanır.
 
 WPF, XAML (eXtensible Application Markup Language) tabanlı bir ortam sunduğundan, grafiksel şekillerin tasarım zamanında element bazlı olarak geliştirilmeleri ve sonuçlarının görülmesi mümkündür. GDI+ mimarisinde aynı durum düşünüldüğünde sonuçların ancak çalışma zamanında (run-time) elde edilebildiği unutulmamalıdır. Bu nedenle WPF bize büyük avantaj sağlamaktadır.
 
@@ -318,7 +318,7 @@ Dikkat edileceği üzere farklı kalınlık, renk ve lokasyonlarda yer alan çiz
 
 XAML içeriği;
 
-```text
+```xml
 <Window x:Class="GrafiklerleCalismak.KodYardimiylaLineKullanimi" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="White" Title="Kod Yardımıyla Line Kullanımı" Height="249" Width="422" WindowStyle="SingleBorderWindow">
     <Grid Name="grdTahta">
         <Image Name="imgHarita" MouseDown="imgHarita_MouseDown" MouseUp="imgHarita_MouseUp" Source="map_world_destination.gif" />
@@ -431,11 +431,11 @@ Dikkat edilecek olursa, tüm çizgiler ister eğri ister düz olsunlar, uç uca 
 
 Bu yazımızda son olarak basit anlamda dönüştürme (Transform) işlemlerine bakıyor olacağız. Transform denilince aklımıza gelmesi gerekenler bir şeklin yön, büyüklük, düzlemsel koordinat gibi değerlerinin değiştirilmesidir. Bu sayede bir şekli herhangibir açıda döndürebilir, ebatlarını ayarlayabilir yada herhangibir düzlem üzerinde öteleyebiliriz. Transform işlemlerinde beş farklı tip rol oynamaktadır. Bu tipler aşağıdaki gibidir.
 
-- RotateTransform: Şeklin belirtilen bir açıda, kendi ekseninde yada belirtilen orijine göre farklı bir eksende döndürülmesini sağlamak için kullanılır. Söz gelimi bir şeklin farklı açılardan gösterilmesinin sağlanmasında önemli rol oynamaktadır.
-- ScaleTransform: Şeklin ebatlarının eşit oranda yada farklı oranlarda arttırılması yada azaltılmasında kullanılır. Örneğin Zoom işlemlerinde bu tip çok faydalı olacaktır.
-- SkewTransform: Şeklin bükülmesini yada eğilmesini sağlamak amacıyla kullanılan tiptir.
-- TranslateTransform: Şeklin x veya y düzlemleri üzerinde farklı noktalara ötelenmesi amacıyla kullanılan tiptir.
-- MatrixTransform: Resim işlemede önemli bir yere sahip olan matris algoritmalarının iki boyutlu şekiller üzerinde de uygulanabilmesini sağlayan tiptir. Diğer Transform tipleri ile gerçekleştirilmesi zor olan dönüştürmelerde kullanılmaktadır. Bu tipi ilerleyen yazılarımızda ele almaya çalışacağız.
+- **RotateTransform:** Şeklin belirtilen bir açıda, kendi ekseninde yada belirtilen orijine göre farklı bir eksende döndürülmesini sağlamak için kullanılır. Söz gelimi bir şeklin farklı açılardan gösterilmesinin sağlanmasında önemli rol oynamaktadır.
+- **ScaleTransform:** Şeklin ebatlarının eşit oranda yada farklı oranlarda arttırılması yada azaltılmasında kullanılır. Örneğin Zoom işlemlerinde bu tip çok faydalı olacaktır.
+- **SkewTransform:** Şeklin bükülmesini yada eğilmesini sağlamak amacıyla kullanılan tiptir.
+- **TranslateTransform:** Şeklin x veya y düzlemleri üzerinde farklı noktalara ötelenmesi amacıyla kullanılan tiptir.
+- **MatrixTransform:** Resim işlemede önemli bir yere sahip olan matris algoritmalarının iki boyutlu şekiller üzerinde de uygulanabilmesini sağlayan tiptir. Diğer Transform tipleri ile gerçekleştirilmesi zor olan dönüştürmelerde kullanılmaktadır. Bu tipi ilerleyen yazılarımızda ele almaya çalışacağız.
 
 Şimdi basit bir örnek ile RotateTransform ve ScaleTransform tiplerinin nasıl kullanılabileceğini incelemeye çalışalım. Bu amaçla XAML ve kod içeriklerini aşağıdaki gibi geliştirdiğimizi düşünelim.
 

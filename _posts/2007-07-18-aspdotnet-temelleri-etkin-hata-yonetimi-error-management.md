@@ -16,7 +16,7 @@ Asp.Net ortamı, hataların yönetimi amacıyla istisna (Exception) tiplerini ve
 
 Asp.Net Hata Yönetim Seviyeleri (Error Management Levels)
 
-| Metod Seviyesinde | Sayfa Seviyesinde | Uygulama Seviyesinde |
+| **Metod Seviyesinde** | **Sayfa Seviyesinde** | **Uygulama Seviyesinde** |
 | --- | --- | --- |
 | Toparlanabilir veya bir başka deyişle kurtarılabilir hatalar çoğunlukla metod seviyesinde ele alınır. Eğer olası hatalar toparlanamayacak cinsten ise bir üst seviyeye yönlendirilir. | Bir sayfa ile ilgili tüm hataların tek bir merkezden yönetilebilmesi sağlanır. Olası hatalar sonrasında kullanıcılar çoğunlukla özel sayfalara yönlendirilir. Bu seviyede sayfaların Page_Error olay metodları ele alınır. Hata sayfasına yönlendirilmeden önce sayfa ile ilgili log bilgisi yazdırma, fiziki dosyalara bilgi atma veya adminlere mail gönderme gibi işlemler yapılabilir. | Uygulama içerisinde herhangibir sayfada meydana gelen hataların yakalanması sağlanır. Tüm web uygulamasının hata yönetiminin tek bir merkezden kontrol edilebilmesi sağlanmış olur. Bu seviyede global.asax dosyasındaki Application_Error olay metodu ele alınır. Hata sayfasına yönlendirilmeden önce log bilgisi yazdırma, fiziki dosyalara bilgi atma veya adminlere mail gönderme gibi işlemler yapılabilir. |
 
@@ -98,9 +98,9 @@ Görüldüğü üzere vakkaların sayısı ve metod içerisindeki hata yönetimi
 | **Öneri** | **Kaynak temizlemesi gerekiyor mu?** | **Olası hata var mı?** | **Olası hatalar kurtarılabilir mi?** | **Eklenecek ilave hata bilgisi var mı?** |
 | --- | --- | --- | --- | --- |
 | Hiç bir kontrole gerek yok | hayır | yok | hayır | yok |
-| hayır | var | hayır | yok |  |
+| hayır | var | hayır | yok | |
 | try...finally | evet | yok | hayır | yok |
-| evet | var | hayır | yok |  |
+| evet | var | hayır | yok | |
 | try...catch | hayır | var | hayır | var |
 | try...catch...finally | evet | evet | hayır | var |
 
@@ -112,12 +112,12 @@ Sayfa Seviyesinde Hata Kontrolü için Tavsiye Edilen Yol
 
 | **Madde** | **Yapılacak İşlem** |
 | --- | --- |
-| Madde 0 | Bir hata sayfası tasarlanır. :) |
-| Madde 1 | Sayfaya Page_Error olay metodu eklenir. |
-| Madde 2 | Sayfanın ErrorPage özelliğine hata sayfasının Url bilgisi Page direktifi içerisinde eklenir. |
-| Madde 3 | Page_Error olay metodu içerisinde Server sınıfının static GetLastError() metodu ile son oluşan istisna nesne örneği ele alınır. |
-| Madde 4 | İstenirse ErrorPage özelliğine burada değer ve hatta querystring yardımıyla bilgi aktarılması sağlanabilir. Böylece hata sayfasına bazı ekstra bilgilerin taşınmasıda sağlanmış olur. |
-| Madde 4.5 | Gerekirse bu aşamada loglama (özellikle sistemdeki event loglara bilgi yazma), fiziki dosyalara bilgi yazdırma, yönetici veya ilgili kişilere mail gönderme gibi işlemler yapılabilir. |
+| **0** | Bir hata sayfası tasarlanır. :) |
+| **1** | Sayfaya Page_Error olay metodu eklenir. |
+| **2** | Sayfanın ErrorPage özelliğine hata sayfasının Url bilgisi Page direktifi içerisinde eklenir. |
+| **3** | Page_Error olay metodu içerisinde Server sınıfının static GetLastError() metodu ile son oluşan istisna nesne örneği ele alınır. |
+| **4** | İstenirse ErrorPage özelliğine burada değer ve hatta querystring yardımıyla bilgi aktarılması sağlanabilir. Böylece hata sayfasına bazı ekstra bilgilerin taşınmasıda sağlanmış olur. |
+| **4.5** | Gerekirse bu aşamada loglama (özellikle sistemdeki event loglara bilgi yazma), fiziki dosyalara bilgi yazdırma, yönetici veya ilgili kişilere mail gönderme gibi işlemler yapılabilir. |
 
 Page_Error isimli olay metodu sayfa seviyesinde ele alınır. Normal şartlarda sayfada ele alınmayan bir hata oluştuğunda bu metod otomatik olarak çağırılacaktır. Biz bu metod içerisinde yönlendirmeler yaparak kullanıcıları daha akıllı hata bilgilendirme sayfalarına yönlendirebilir ve loglama gibi işlemleri gerçekleştirebiliriz. PageError olay metodu içerisinden ilgili hata sayfasına yönlendirme yaparken Page sınıfının ErrorPage özelliğine değer atamak gerekebilir. Bu daha çok querystring yardımıyla hata sayfasına ekstra bilgi gönderileceği durumlarda ele alınır. Aksi durumlarda metod içerisinde değilde Page direktifinde bu özelliğin değerinin belirlenmesi yeterlidir. Ancak burada dikkat edilmesi gereken bir nokta vardır. Eğer metod içerisinde ErrorPage özelliğine hata sayfasını atarken querystring kullanılmassa Asp.Net, çalışma zamanında aspxerrorpath isimli bir anahtarı ve değerini otomatik olarak ekleyecektir. Ki buda hatanın oluştuğu sayfanın yakalanabilmesi ve belkide dinamik bir linkin üretilerek tekrar geri gidilebilmesinide sağlayacaktır.
 
@@ -260,13 +260,13 @@ Gelelim uygulama seviyesinde hata yönetimine. Bu durumda web uygulamasında mey
 
 | **Madde** | **Yapılacak İşlem** |
 | ---- | --- |
-| Madde 0 | Bir hata sayfası tasarlanır. :) |
-| Madde 1 | Sayfalara Page_Error olay metodları eklenir. |
-| Madde 2 | Page_Error olay metodlarında, son olarak elde edilen istisna(Exception) nesnesinin referansı aynen metod içerisinde olduğu gibi bilinçli olarak ortama fırlatılır(throw). |
-| Madde 3 | global.asax dosyasında yer alan Application_Error olay metodu kodlanır. Bu metod içerisinde son hata bilgisi yine GetLastError metodu ile alınır. |
-| Madde 3.5 | Gerekirse bu aşamada loglama (özellikle sistemdeki event loglara bilgi yazma), fiziki dosyalara bilgi yazdırma, yönetici veya ilgili kişilere mail gönderme gibi işlemler yapılabilir. (Sistem loglarına yazma sırasında dikkat edilmesi gereken durumlardan birisi ASPNET(IIS 5.0 için) veya Network Service (IIS 6.0 için) kullanıcısının Application, System ve Security loglarına yazma hakkı olup olmadığıdır. Söz gelimi ASPNET kullanıcısının varsayılan olarak Application loglarına yazma hakkı varken System ve Security loglarına yazma hakkı yoktur. Bu nedenle ilgili kullanıcıların haklarının özellikle loglara yazma işlemleri sırasında dikkate alınması gerekebilir.) |
-| Madde 4 | Kullanıcı hata sayfasına yönlendirilmeden önce Server sınıfının ClearError metodunun çağırılması ve hataların temizlenmesi önerilir. |
-| Madde 5 | Server.Transfer metodu ile hata sayfasına yönlendirme yapılır. |
+| **0** | Bir hata sayfası tasarlanır. :) |
+| **1** | Sayfalara Page_Error olay metodları eklenir. |
+| **2** | Page_Error olay metodlarında, son olarak elde edilen istisna(Exception) nesnesinin referansı aynen metod içerisinde olduğu gibi bilinçli olarak ortama fırlatılır(throw). |
+| **3** | global.asax dosyasında yer alan Application_Error olay metodu kodlanır. Bu metod içerisinde son hata bilgisi yine GetLastError metodu ile alınır. |
+| **3.5** | Gerekirse bu aşamada loglama (özellikle sistemdeki event loglara bilgi yazma), fiziki dosyalara bilgi yazdırma, yönetici veya ilgili kişilere mail gönderme gibi işlemler yapılabilir. (Sistem loglarına yazma sırasında dikkat edilmesi gereken durumlardan birisi ASPNET(IIS 5.0 için) veya Network Service (IIS 6.0 için) kullanıcısının Application, System ve Security loglarına yazma hakkı olup olmadığıdır. Söz gelimi ASPNET kullanıcısının varsayılan olarak Application loglarına yazma hakkı varken System ve Security loglarına yazma hakkı yoktur. Bu nedenle ilgili kullanıcıların haklarının özellikle loglara yazma işlemleri sırasında dikkate alınması gerekebilir.) |
+| **4** | Kullanıcı hata sayfasına yönlendirilmeden önce Server sınıfının ClearError metodunun çağırılması ve hataların temizlenmesi önerilir. |
+| **5** | Server.Transfer metodu ile hata sayfasına yönlendirme yapılır. |
 
 Buradaki maddelerde dikkat çekici noktalardan biriside son hatanın sayfalara ait Page_Error olay metodları içerisinde tekrardan fırlatılıyor olmasıdır. Bu bir anlamda hatanın bir üst seviyeye aktarılmasıdır. Diğer taraftan bir gerekliliktir. Nitekim, hata bilinçli olarak uygulama seviyesine gönderilmesse Asp.Net çalışma ortamı (Asp.Net RunTime), hatanın ele alınması için HttpUnhandledException tipinden bir nesne örneği üretecektir. Biz hatayı kontrollü bir şekilde ele almak istiyorsak bilinçli bir şekilde fırlatma işlemini üstlenmeliyiz.
 

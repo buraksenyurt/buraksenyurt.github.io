@@ -21,7 +21,7 @@ Dosya indirme (Download) işlemlerinde bilinen IO tiplerinden ve Response sını
 
 Web uygulamamızın ilk amacı Dokumanlar klasöründeki dosyaların listelenmesini sağlamak olacak. Bu amaçla sayfada bir GridView kontrolü kullanılabilir. Hatta bu kontrolün içeriği FileInfo tipinden nesnelerden oluşan generic bir liste koleksiyonundan (List) gelebilir. Böylece istemciler indirebilecekleri dosyalarıda görebilir. Download işleminin gerçekleştirilmesi için GridView kontrolünde bir Select Button'dan faydalanılabilir. İndirme işlemi sırasında indirilmek istenen dosyanın fiziki adresi, uzunluğu gibi bilgiler önemlidir. Bu bilgileri ve fazlasını FileInfo sınıfına ait bir nesne örneği yardımıyla elde edebiliriz. Uygulamamıza ait Default.aspx sayfasının içeriği aşağıdaki gibi olacaktır.
 
-```text
+```html
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="System.IO" %>
@@ -181,7 +181,7 @@ Upload işlemlerini kolaylaştırmak adına Asp.Net 2.0, FileUpload isimli bir k
 
 ![mk218_4.gif](/assets/images/2007/mk218_4.gif)
 
-```text
+```html
 <%@ Page Language="C#" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -258,7 +258,7 @@ Gelelim makalemizin üçüncü konusuna. Yine istemciden sunucuya doğru bir dos
 
 Olayı basit bir şekilde ele almak adına Xml içeriğini mümkün olduğu kadar basit düşünmeye çalıştık. Elbetteki çok daha karmaşık ve daha çok parametre sunan bir Xml dökümanı söz konusu olabilir. Şimdi bu dosyayı nasıl ele alacağımıza bakalım. Dikkat edilmesi gereken noktalardan birisi, Upload edilecek dökümanın XML formatında olması gerekliliğidir. Bunu sağlamak için, içerik tipine (ContentType) bakmak gerekecektir. Sonrasında ise Upload edilen dosyanın Framework içerisinde yer alan XML tipleri yardımıyla ele alınması yeterlidir. Sonuç olarak Default3.aspx dosyamızın içeriği aşağıdaki gibi olacaktır.
 
-```text
+```html
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.Xml" %>
 
@@ -332,7 +332,7 @@ Dilerseniz kod içerisinde neler yaptığımıza kısaca bakalım. İlk olarak d
 
 Sonrasında ise okunan dosya içeriğini XmlDocument nesnesine yüklüyoruz. XmlDocument nesne örneğine ait Load metodunun parametresi olarak bir Stream kullanılabildiğinden, HttpPostedFile nesne örneğinin InputStream özelliğinden yararlanıyoruz. Son olarak yüklenen XML dökümanı içerisinde dolaşarak ilgili nitelikleri okuyor ve dinamik olarak oluşturulan kontrolleri, sayfadaki PlaceHolder kontrolünün Controls koleksiyonuna ekliyoruz.
 
-> İşlemlerin daha sağlıklı olması açısından yüklenen XML içeriğinin belirli kurallara uygun olup olmadığı bir şema dosyası (XSD olabilir örneğin) yardımıyla kontrol edilebilir. Söz gelimi gelen XML dökümanının yapısı, element adları, nitelik adları veya tipleri bu şema yardımıyla denetlenip, kontrollerin belirli standartlara göre okunabilmesi sağlanmış olunur. Şema kontrolünün nasıl yapılabileceğine dair daha önceki bir [makalemizden](http://www.bsenyurt.com/MakaleGoster.aspx?ID=172) yararlanabilirsiniz.
+> İşlemlerin daha sağlıklı olması açısından yüklenen XML içeriğinin belirli kurallara uygun olup olmadığı bir şema dosyası (XSD olabilir örneğin) yardımıyla kontrol edilebilir. Söz gelimi gelen XML dökümanının yapısı, element adları, nitelik adları veya tipleri bu şema yardımıyla denetlenip, kontrollerin belirli standartlara göre okunabilmesi sağlanmış olunur.
 
 Uygulamayı çalıştırdığımızda ve istemci tarafından Kontrollerim.xml dosyasını yüklediğimizde aşağıdaki ekran görüntüsünde olduğu gibi kontrollerin başarılı bir şekilde üretilip sayfaya yüklendiğini görebiliriz.
 
@@ -346,7 +346,7 @@ Her zaman olduğu gibi bir FileUpload kontrolü ile istemciye dosya seçtirilmel
 
 Dosyalar isimli tabloda, sunucuya gönderilen dosya içeriğini saklamak için image tipinden bir alan kullanılmaktadır. Bunlara ek olarak dosyanın eklenme tarihi,içeriğin tipi ve dosya adı bilgileride yer almaktadır. Söz konusu alanlar dışında, web sitesinde kullanılan doğrulama (Authentication) sistemine göre, Upload işlemini yapan kullanıcının bilgilerinin saklanması hatta varsa Membership gibi kullanıcı tablo sistemleri ile ilişkilendirilmeside mümkün olabilir. Gelelim yükleme işlemini tabloya yazacak kodlarımıza.
 
-```text
+```html
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
@@ -409,7 +409,7 @@ Elbette Upload edilen içeriklerin, istemciler tarafından indirilmeside gerekec
 
 ![mk218_11.gif](/assets/images/2007/mk218_11.gif)
 
-```text
+```html
 <%@ Page Language="C#" %>
 <%@ Import Namespace="System.IO" %>
 <%@ Import Namespace="System.Data" %>

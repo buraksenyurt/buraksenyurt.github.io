@@ -248,7 +248,7 @@ Burada klasik bir log mesajı ile başlayan ancak sonrasında modelin bir **Pyth
 
 ![AI Sandbox Demo 02](/assets/images/2026/ai_sandbox_demo_02.png)
 
-Dikkat edileceği üzere makinemdeki kullanıcı adı bilgim saldırganın yazmış olduğu servise gönderilmiş durumda :| Korkunç... Öyleyse bir de güvenli olan endpoint adresini deneyelim. Aynı içeriği `http://localhost:6001/api/agent/secure` noktasına gönderdiğimde ise **docker** ortamında geçici bir **container** açıldığını ve ilgili betiğin burada denendiğini gördüm.
+Dikkat edileceği üzere makinemdeki kullanıcı adı bilgim saldırganın yazmış olduğu servise gönderilmiş durumda `:|` Korkunç... Öyleyse bir de güvenli olan endpoint adresini deneyelim. Aynı içeriği `http://localhost:6001/api/agent/secure` noktasına gönderdiğimde ise **docker** ortamında geçici bir **container** açıldığını ve ilgili betiğin burada denendiğini gördüm.
 
 ![AI Sandbox Demo 03](/assets/images/2026/ai_sandbox_demo_03.png)
 

@@ -16,6 +16,8 @@ Geriye kalan, söz konusu tarayıcı pencerelerinin yorumlayacağı HTML içerik
 
 Microsoft,.Net Framework 3.0 ile birlikte Windows uygulamalarının tarayıcı pencereleri içerisinde çalıştırılabilmesini sağlayacak bir yenilik getirmektedir. Kısacası XBAP (XAML Browser Applications) olarak adlandırılan bu modelde, kısıtlamaları ile birlikte bir WPF (Windows Prensetation Foundation) uygulamasını bir tarayıcı penceresinde açmak mümkündür. Yazı dizimizde bu konuyada değiniyor olacağız. Ama öncesinde bunların temelini oluşturan sayfa (Page) kavramını anlamak gerekmektedir.
 
+## WPF'te Page Tabanlı Mimari
+
 WPF uygulamalarını sayfa tabanlı (Page-Based) olacak şekilde tasarlayabilmekteyiz. Burada sayfadan kasıt Page tipinden bir nesnedir. WPF mimarisinde sayfa tabanlı uygulamalarda kendi içlerinde iki ana parçaya ayrılmaktadır. Bunlardan birincisi XBAP uygulamaları, diğeri ise kendi başına çalışan (Stand-Alone) uygulamalardır. Sayfalar (Pages) aslında daha önceki makalelerimizde de incelediğimiz Window tipine benzetilebilir. Lakin arada çok önemli bir fark vardır. Window tipi temel olarak bir taşıyıcı (Container) görevini üstelenebilmektedir. Bu sebeptende ContentControl tipinden türetilmiştir. Ne varki Page tipi doğrudan FrameworkElement tipinden türemektedir. Dolayısıyla Page tiplerinin kullanılabilmesi için bunu servis edecek bir sunucuya (Host) ihtiyaç vardır. Söz konusu özet bilgilere göre sayfa bazlı (Page-Based) uygulamaları aşağıdaki gibi kategorize edebiliriz
 
 | | |
@@ -30,6 +32,8 @@ Sayfa tabanlı (Page-Based) uygulamalarda kullanılan genel tipler aşağıdaki 
 ![mk226_1.gif](/assets/images/2007/mk226_1.gif)
 
 Yukarıdaki sınıf diagramında sayfa-tabanlı (Page-Based) uygulamalarda başrol oynayan sınıflardan (class) bazıları yer almaktadır. Window sınıfı daha önceki windows programlamada yer alan Form sınıfının karşılığı olarak düşünülebilir. Bir içerik kontrolüdür (ContentControl). Bu nedenle kendi içerisinde başka elementleride barındırmaktadır. Söz gelimi Window içerisinde bir Frame tanımlanıp bu Frame içerisinde de farklı sayfalar (Page) yer alabilir. Frame tipi aslında bir sayfa içerisinde bağımsız bir parça olaraktanda düşünülebilir. Frame'leri bir Page veya Windows elementi içerisinde kullanabiliriz. Temel görevleri aslında web uygulamalarından bilinen benzeri ile aynıdır. Bir başka deyişle taşıyıcı kontrol içerisinde başka sayfaların (Page) gösterilebilmesini sağlamaktadır. Bu taşıyıcı özelliği nedeni ilede tahmin edileceği gibi ContentControl sınıfından türemektedir. NavigationWindow, içerisinde Page elementlerini içerebilen bir tiptir. Varsayılan olarak Page elementi içeren bir XAML içeriği code-behind dosyası ile birlikte çalıştırıldığında çalışma zamanında otomatik olarak bir NavigationWindow nesnesi örneklenmektedir. NavigationWindow nesneleri çalışma zamanında dinamik olaraktanda örneklenebilir ve sayfa içeriklerini göstermesi sağlanabilir.
+
+## İlk Uygulama: Hyperlink ile Sayfa Geçişleri
 
 Bu kısa teorik bilgilerden sonra dilerseniz basit örnekler yardımıyla konuyu daha iyi anlamaya çalışalım. Eğer aynı pencere üzerinde yer alacak ve aralarında geçişler yapılabilecek sayfalardan bahsediyorsak doğal olaraktan bunların arasında dolaşabilmek gerekmektedir. Dolaşma işlemleri için kullanılabilecek en basit kontrol Hyperlink bileşenidir. Bu bileşenin NavigateUri özelliğinden yararlanılarak başka bir sayfaya geçilmesi, aynı sayfa içerisinde veya başka bir sayfa içerisinde yer alan bir noktaya gidilmesi (burada anchor benzeri bir kullanımdan bahsediyoruz), başka bir NavigationWindow içerisinde bir sayfaya ve hatta var olan geçerli bir Url adresine gidilmesi sağlanabilir. Dolayısıyla ilk örneğimizde bu durumu analiz etmeye çalışıyor olacağız. Bu amaçla Visual Studio 2008 Beta 2 sürümünde yeni bir WPF uygulaması açıp XAML içerikleri başlangıçta aşağıdaki gibi olan iki sayfa (Page) tasarlamamız yeterlidir.
 
@@ -98,6 +102,8 @@ Dikkat edilecek olursa çalışma zamanında (Run-Time) otomatik olarak bir navi
 
 Görüldüğü gibi basit bir IOException alınmıştır. Elbetteki programatik olarak uygulamayı tasarlarken olmayan sayfalara gidilmemesini sağlamak geliştiricinin görevidir. Lakin NavigateUri ile var olan bir sayfa dışında geçerli bir URL adresinede gidilebilmesi sağlanabilmektedir. Bir başka deyişle var olan bir web sayfasını çalışma zamanında oluşturulan NavigationWindow içerisinde bir sayfa olarak göstermek mümkündür. Bu gibi durumlarda gidilmek istenen URL veya Sayfa bilgisinin geçerli olmaması halinde programın istem dışı bir şekilde sonlanmasının önüne geçmek için Application nesnesinin NavigationFailed olayını ele almak ve içerisinde istisna bilgisini kontrollü bir şekilde yakalamak en doğru yaklaşım olacaktır. Yukarıdaki örnekte bunu uygulamak istediğimiz App.xaml ve App.xaml.cs içeriklerinin aşağıdaki gibi tasarlanması yeterlidir.
 
+## NavigationFailed ile Hata Yakalama
+
 App.xaml;
 
 ```xml
@@ -133,6 +139,8 @@ namespace PageKullanimi
 ```
 
 Örnekte basit olması açısında sadece hataya neden olsan sayfanın Uri bilgisi bir MessageBox içerisinde gösterilmektedir. Olay metoduna gelen NavigationFailedEventArgs tipinden e parametresinin Handled özelliğine true değeri atanmasının sebebi hatanın kontrollü bir şekilde ele alındığının belirtilmesidir. Aksi durumda program yine hata sonrası, kullanıcıya oluşan hatanın gönderilip gönderilmeyeceğini soran hepimizin yakından tanıdığı mesaj kutusu ile sonlandırılacaktır. Burada yakalanan hatalar çok doğal olarak başka amaçlarlada değerlendirilebilir. Örneğin Log'lanarak, oluşan hatalar ile ilişkili genel istatistik ve analizlerin yapılması sağlanabilir.
+
+## Web Adresleri ve Parçalı Navigasyon
 
 Hyperlink kontrolünü kullanarak web sayfalarınada gidilebildiğinden bahsetmiştik. Bunun dışında bir sayfa içerisinde yer alan herhangibir konuma gidilmeside sağlanabilirki bu durum parçalı navigasyon (Fragment Navigation) olarak adlandırılmaktadır. Şimdi bu iki kullanım şeklini ele alacağımız bir örnek üzerinden ilerleyelim. Bu amaçla projemize Page3.xaml ve Page4.xaml sayfalarını aşağıdaki içerikleri ile eklediğimizi düşünebiliriz.
 
@@ -186,6 +194,8 @@ Görüldüğü gibi Page3.xaml içerisinde yer alan düğme kontrollerine basıl
 
 > Parçalı navigasyon (Fragment Navigation) işleminin olabilmesi için, söz konusu sayfa içerisinde aşağı yukarı hareket edilebilmesi bir başka deyişle scrolling olması gerekmektedir. Bu amaçla ScrollViewer kontrolünden yararlanılabilir. Söz konusu kontrolün VerticallScorllBarVisibility ve HorizontalScrollBarVisibility özelliklerine ilgili değerler atanarak dikey veya yatay yönde kaydırma çubuklarının (Scroll Bar) gösterilmesi (yada tam tersi) sağlanabilir.
 
+## Kod ile Manuel Navigasyon
+
 Navigasyon işlemleri istenirse manuel olarak kod tarafından da gerçekleştirilebilir. Bu noktada NavigationWindow içerisinde üst kısımda görünen navigasyon kontrolleri ve menünün yaptığı işlerin kod yardımıylada gerçekleştirilmesi mümkündür. Bunun için NavigationService tipinden ve üyelerinden (Members) yararlanılabilir. Sıradaki örnekte yeni bir sayfaya geçiş işlemini kod ile nasıl yapabileceğimize bakıyor olacağız. Page2.xaml içerisindeki btnKontrolSayfasi isimli Button düğmesine tıklandığında Page3.xaml sayfasına geçilmesini sağlamak için ilgili olay metodunda aşağıdaki kodları yazmak yeterli olacaktır.
 
 ```csharp
@@ -216,6 +226,8 @@ private void btnKontrolSayfasi_Click(object sender, RoutedEventArgs e)
 
 İlk olarak yeni bir NavigationWindow nesne örneği oluşturulmaktadır. Sonrasında ise bu pencerede gösterilmek istenen sayfa örneklenir. Sayfanın WindowTilte, Title, WindowWidth, WindowHeight gibi özellikleri set edildikten sonra NavigationWindow nesne örneğinin Content özelliğine oluşturulan Page3 nesne örneği atanır. Son olarak Show metodu ile yeni pencerenin gösterilmesi sağlanmaktadır. Buradaki yorum satırı açılırsa eğer, yeni pencerede navigasyon kontrollerinin gösterilmemesi sağlanmış olur. Uygulamayı bu şekilde test ettiğimizde aşağıdaki Flash görselindeki etkiler görülecektir.
 
+## Frame İçinde Sayfa Gösterimi
+
 Sayfalar istenirse Frame'ler içerisinde gösterilebilirler. Böylece bir NavigationWindow içerisinde birden fazla Frame kullanılarak birden fazla sayfanın aynı anda gösterilmesi sağlanabilir. Örneğin, içerisinde harici bir web sitesini, uygulamanın kendisi, yardım dökümanını barındıracak şekilde bir pencere geliştirilebilir. Frame tipi kendi içerisinde çeşitli elementler barındırabilmektedir ancak genel kullanım amacı Page tiplerini taşımasıdır. Bu tanımlamalar Frame tipinin webdeki kullanım şeklini tam olarak andırdığınıda göstermektedir. Konuyu daha net anlayabilmek için bir örnek üzerinden ilerlemekte fayda olacağı kanısındayım. Bu amaçla projeye aşağıdaki XAML içeriğine sahip yeni bir pencere (Window) eklediğimizi düşünelim.
 
 ```xml
@@ -236,6 +248,8 @@ Frame kullanımını kolaylaştırmak için pencere içerisinde iki satırdan ol
 Flash animasyonundan görülebileceği gibi ilk etapta navigasyon kontrolleri gösterilmemektedir. Ancak Frame'ler içerisinde yer alan sayfalar üzerindeki kontroller yardımıyla hareket edildikten sonra navigasyon kontrolleri görülmektedir. Tabi istenirse NavigationUIVisibility özelliğine Visible değeri atanarak navigasyon kontrolünün başlangıçta çıkmasıda sağlanabilir. Yukarıdaki örnekte meydana gelen işlemler aşağıdaki grafikle daha net anlaşılabilir.
 
 ![mk226_10.gif](/assets/images/2007/mk226_10.gif)
+
+## İç İçe Sayfalar (Nested-Page)
 
 İstenirse sayfalar başka sayfaların içerisinde de kullanılabilir. Böyle bir durumda iç içe sayfalar (Nested-Page) söz konusu olmaktadır. Aşağıdaki XAML içeriğinde bir nested-page tasarımı örneği görülmektedir.
 
@@ -276,6 +290,8 @@ UsesParentJournal değerinin seçilmesi halinde ise, Frame elementinin navigasyo
 
 Dikkat edileceği üzere Frame içerisinden başka iki sayfaya daha geçilebilmektedir. Diğer taraftan sayfanın kendiside (yani Frame'ide içeren Page) Page2.xaml sayfasına geçiş yapabilmektedir. Bu tip bir durumda UsesParentJournal değerinin seçilmesi özellikle XBAP uygulamalarında oldukça işe yarayacaktır. Söz konusu kullanımda sayfalar çok fazla parçalandığından zaman zaman takibin zorlaştığıda görülmektedir. Dolayısıyla Nested-Page tekniğinin bir alternatif olarak bilinmesinde ve uygun vakkalar bulunduğunda ele alınmasında yarar vardır.
 
+## Navigasyon Yaşam Döngüsü ve Olaylar
+
 Yazımızın içerisinde belirttiğimiz gibi navigasyon işlemlerini manuel olarak kod tarafından da yapabiliriz. Burada önemli olan nokta NavigationService özelliği ile elde edilecek referans olacaktır.Bununla birlikte bir sayfanın navigasyon süreci içerisinde talep edilmesi halinde neler olduğunun bilinmesinde de yarar vardır. Bir başka deyişle, navigasyon sürecindeki yaşam döngüsünü bilmekte yarar vardır. Temelde süreç bir sayfanın talep edilmesi ile başlar. Bu talep işlemi basit bir Hyperlink kontrolü ile olabileceği gibi, NavigationService sınıfının Navigate metodu ilede olabilir. Sonrasında talep edilen sayfanın yeri tespit edilir. Tahmin edileceği üzere burada bir sorun olması halinde çalışma zamanı istisnası oluşacaktır. Sayfa yeri tespit edildikten sonra bilgileri getirilir. Örneğin talep edilen sayfa bir internet sayfası ise download işlemi gerçekleşir. Bu arada eğer sayfanın indirilmesi sırasında ilişkili kaynaklar var ise bunlarında getirilmeside söz konusudur. Takip eden adımda sayfa için bir ayrıştırma (parsing) işlemi uygulanır ve sayfanın nesne ağacı (Object Tree) oluşturulur. Bu işlemi takiben sayfaya ait Initialized ve Loaded olaylarıda sırasıyla tetiklenir. Son aşamada sayfa Render işlemine tabi tutulur ve gösterilir. Bu noktada eğer parçalı navigasyon (Fragment Navigation) işlemi yapılmışsa ilgili kontrole gidilmesi sağlanır. Aşağıdaki temsili grafik bu işleyişi kısaca özetlemektedir.
 
 ![mk226_15.gif](/assets/images/2007/mk226_15.gif)
@@ -286,15 +302,15 @@ Birde bu süreç içerisinde tetiklenen bazı olaylar söz konusudur. Bu olaylar
 
 İlk olarak süreç bir sayfanın talep edilmesi ile başlar. Sonrasında ise ilgili olaylar tetiklenir. Aşağıdaki tabloda söz konusu olaylar ile ilişkili bilgiler verilmektedir
 
-| Olay(Event) | Olay Hakkında Kısa Bilgi |
+| **Olay(Event)** | **Olay Hakkında Kısa Bilgi** |
 | --- | --- |
-| Navigating | Yeni bir navigasyon talebi geldiğinde çalışan olaydır. |
-| Navigated | Navigasyon başlamıştır ve talep edilen sayfa ile ilgili bilgiler gelmektedir. Ancak sayfanın tamamı henüz gelmemiştir. |
-| NavigationProgress | Bu olaya ilişkin metod yazıldığında, sayfanın yüklenmesi tamamlanıncaya kadar bilgilendirme yapılması sağlanabilir. Örneğin sayfanın yüzde olarak kaçının tamamlandığı bilgisi gösterilebilir. Aslında bu olay klasik windows programlamadaki BackgroundWorker kontrolünün ProgressChange olayınınkine benzer bir görev üstlenmektedir. NavigationProgress olayı, talep edilen sayfa ile ilgili her 1Kb bilgi geldiğinde tetiklenmektedir. |
-| LoadCompleted | Talep edilen sayfanın ayrıştırma(Parse) işlemi tamamlanmıştır. Ancak ilgili sayfanın Initialized ve Loaded olayları henüz çalışmamıştır. |
-| FragmentNavigation | Eğer parçalı navigasyon(Fragment Navigation) söz konusu ise bu olay tetiklenir. Bu olay ilgili kontrole doğru gidilirken çalışmaktadır. |
-| NavigationStopped | NavigationService sınıfının static StopLoading metoduna yapılan çağrı sonucu tetiklenen olaydır. Bazı durumlarda uzun süren navigasyon işlemlerinde(örneğin bir web sayfası talebinde) kullanıcı tarafından işlemin durdurulması istenebilir. Böyle bir durumda StopLoading metoduna başvurulması halinde bu olay tetiklenmektedir. (StopLoading' i çalışma zamanında çağırmak son derece kolaydır. Nitekim WPF mimarisinde navigasyon işlemleri asenkron olarak yürütülmektedir.) |
-| NavigationFailed | Navigasyon işlemi sırasında bir hata oluşursa tetiklenen olaydır. Bu olay içerisinde oluşan hata ile ilişkili detaylı bilgiye ulaşılabilir ve söz konusu bilgiler örneğin loglama amacı ile kayıt altına alınabilir yada kullanıcı farklı bir şekilde yönlendirilerek uygulamanın sağlıklı bir şekilde çalışması sağlanabilir. |
+| **Navigating** | Yeni bir navigasyon talebi geldiğinde çalışan olaydır. |
+| **Navigated** | Navigasyon başlamıştır ve talep edilen sayfa ile ilgili bilgiler gelmektedir. Ancak sayfanın tamamı henüz gelmemiştir. |
+| **NavigationProgress** | Bu olaya ilişkin metod yazıldığında, sayfanın yüklenmesi tamamlanıncaya kadar bilgilendirme yapılması sağlanabilir. Örneğin sayfanın yüzde olarak kaçının tamamlandığı bilgisi gösterilebilir. Aslında bu olay klasik windows programlamadaki BackgroundWorker kontrolünün ProgressChange olayınınkine benzer bir görev üstlenmektedir. NavigationProgress olayı, talep edilen sayfa ile ilgili her 1Kb bilgi geldiğinde tetiklenmektedir. |
+| **LoadCompleted** | Talep edilen sayfanın ayrıştırma(Parse) işlemi tamamlanmıştır. Ancak ilgili sayfanın Initialized ve Loaded olayları henüz çalışmamıştır. |
+| **FragmentNavigation** | Eğer parçalı navigasyon(Fragment Navigation) söz konusu ise bu olay tetiklenir. Bu olay ilgili kontrole doğru gidilirken çalışmaktadır. |
+| **NavigationStopped** | NavigationService sınıfının static StopLoading metoduna yapılan çağrı sonucu tetiklenen olaydır. Bazı durumlarda uzun süren navigasyon işlemlerinde(örneğin bir web sayfası talebinde) kullanıcı tarafından işlemin durdurulması istenebilir. Böyle bir durumda StopLoading metoduna başvurulması halinde bu olay tetiklenmektedir. (StopLoading' i çalışma zamanında çağırmak son derece kolaydır. Nitekim WPF mimarisinde navigasyon işlemleri asenkron olarak yürütülmektedir.) |
+| **NavigationFailed** | Navigasyon işlemi sırasında bir hata oluşursa tetiklenen olaydır. Bu olay içerisinde oluşan hata ile ilişkili detaylı bilgiye ulaşılabilir ve söz konusu bilgiler örneğin loglama amacı ile kayıt altına alınabilir yada kullanıcı farklı bir şekilde yönlendirilerek uygulamanın sağlıklı bir şekilde çalışması sağlanabilir. |
 
 Doğal olarak bu olayların tetiklenmesi belirli koşullara bağlıdır. Söz gelimi bir sayfaya doğru navigasyon işleminin başlatılabilmesi için Hyperlink kontrolünün NavigateUri özelliğinden yada NavigationService sınıfının Navigate metodundan yararlanılır. Navigate metodunun aşırı yüklenmiş olan versiyonları kullanılarak yukarıda bahsi geçen olaylara veri aktarımıda söz konusu olabilmektedir. Söz gelimi navigasyonun başladığı sürenin gönderilip ilgili olaylarda güncel süre ile arasındaki fark hesap edilerek işlemlerin ne kadar sürdüğü ortalama olarak tespit edilebililir. Yada navigasyon işleminin başlatıldığı sayfanın içerisinde bulunduğu NavigationWindow referansının gönderilmesi sağlanarak, Application seviyesindeki olaylarda ele alınması sağlanabilir.
 
@@ -343,6 +359,8 @@ Page2.xaml;
 Uygulamayı çalıştırdığımızda yada derleme sonucu ortaya çıkan XBAP uzantılı dosyayı örneğin Internet Explorer 7.0 üzerinde açtığımızda aşağıdaki Flash görselinde yer alan sonuçları elde ederiz.
 
 Dikkat edileceği üzere sayfaların WindowTitle niteliklerine atanan değerler otomatik olarak Tab'da ve tarayıcı penceresinin başlık kısmında görülmektedir. Diğer taraftan burada navigasyon kontrolleri oluşturulmamış otomatik olarak tarayıcının navigasyon kontrolleri işin içerisine dahil edilmiştir. Şimdi güvenlik ile ilişkili kısıtlamaları test etmek amacıyla Page2.xaml sayfasının Loaded olayını yükleyelim ve içerisine aşağıdaki kodları yazdığımızı düşünelim.
+
+## XBAP'te Güvenlik Kısıtları ve Dağıtım
 
 Page2.xaml.cs;
 

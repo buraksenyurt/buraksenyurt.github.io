@@ -47,8 +47,9 @@ XAML içeriğinde yer alan elementler ve nitelikleri (attributes) hakkında konu
 
 Gelelim XAML içeriğinde neler yapıldığına. Daha önceki makalelerimizden de hatırlanacağı gibi Button bileşeninin arka planında LinearGradientBrush elementi ile geçişli renklerden oluşan bir dolgu efekti kullanılmaktadır. Button elementinin içerisinde animasyon özelliklerinin belirtildiği yer Button.Triggers alt elementi ile başlamaktadır. Hemen altta yer alan EventTrigger elementinin RoutedEvent niteliğine atanan değer ile animasyonun hangi olayın tetiklenmesi sonrası başlatılacağı belirtilmektedir. Örneğimizde MouseEnter olayı bu amaçla kullanılmaktadır. Burada olay adı belirtilirken tipAdı.Özellikadı (örneğin Button.MouseEnter gibi) şeklinde olmasına dikkat edilmelidir. Aksi durumda bir istisna (Exception) alınması muhtemeldir. Dolayısıyla temel anlamda animasyonların başlatılabilmesi için olaylardan yararlanılabildiğini ve bunların ilgili kontrollere birer tetikleyici (Trigger) ile bağlandığını söyleyebiliriz.
 
-> Bir kontrolün animasyon işlemlerinde kullanılabilmesi için IAnimatable arayüzünü uyarlamış (Implement) olması gerekmektedir. Söz gelimi Button bileşeninin sınıf diagramındaki (Class Diagram) görüntüsüne bakıldığında IAnimatable arayüzünü uyarladığı açık bir şekilde görülebilir.
-> ![mk224_2.gif](/assets/images/2007/mk224_2.gif)
+Bir kontrolün animasyon işlemlerinde kullanılabilmesi için IAnimatable arayüzünü uyarlamış (Implement) olması gerekmektedir. Söz gelimi Button bileşeninin sınıf diagramındaki (Class Diagram) görüntüsüne bakıldığında IAnimatable arayüzünü uyarladığı açık bir şekilde görülebilir.
+
+![mk224_2.gif](/assets/images/2007/mk224_2.gif)
 
 Animasyon işlemlerinde önemli olan noktalardan birisi kontrolün veya şeklin hangi özelliğinin değerinin, ne şekilde değiştirileceğidir. İlk örnekte Button kontrolünün Width ve Height özelliklerinin değerlerinin her ikisi birden değiştirilmektedir. Peki WPF mimarisinde hangi kontrolün hangi özelliğinin değerinin, ne şekilde değiştirileceği nasıl belirlenmektedir? İşte bu noktada devreye StoryBoard tipi ve alt elementleri girmektedir.
 
@@ -56,9 +57,11 @@ Animasyon işlemlerinde önemli olan noktalardan birisi kontrolün veya şeklin 
 
 Örnek XAML içeriğinde dikkat edilecek olursa StoryBoard elementi altında iki adet DoubleAnimation elementi tanımlanmıştır.
 
-> WPF içerisinde yer alan temel animasyon tipleri (Basic Animation Types) uygun veri türleri ile çalışacak şekilde tasarlanmışlardır. Bu tiplerin adları DoubleAnimation, ColorAnimation, PointAnimation, VectorAnimation örneklerinde olduğu gibi TürAdıAnimation kelimelerinden oluşmaktadır. Animasyon tipleride IAnimatable arayüzünü uyarlamaktadır. Söz gelimi örnekte kullanılan DoubleAnimation tipinin sınıf diagramındaki (Class Diagram) görüntüsü aşağıdaki gibidir.
-> ![mk224_3.gif](/assets/images/2007/mk224_3.gif)
-> Ayrıca söz konusu animasyon tipleri Animatable isimli abstract sınıfdan da türemektedir. Buna göre ilgili abstract sınıfı ve arayüzü kullanarak kendi animasyon tiplerimizde yazabiliriz. WPF içerisinde temel animasyon tipleri dışında yer alan animasyon tipleride vardır. ColorAnimationUsingKeyFrames gibi. Bu tipleri ilerleyen makalelerimizde incelemeye çalışıyor olacağız.
+WPF içerisinde yer alan temel animasyon tipleri (Basic Animation Types) uygun veri türleri ile çalışacak şekilde tasarlanmışlardır. Bu tiplerin adları DoubleAnimation, ColorAnimation, PointAnimation, VectorAnimation örneklerinde olduğu gibi TürAdıAnimation kelimelerinden oluşmaktadır. Animasyon tipleride IAnimatable arayüzünü uyarlamaktadır. Söz gelimi örnekte kullanılan DoubleAnimation tipinin sınıf diagramındaki (Class Diagram) görüntüsü aşağıdaki gibidir.
+
+![mk224_3.gif](/assets/images/2007/mk224_3.gif)
+
+Ayrıca söz konusu animasyon tipleri Animatable isimli abstract sınıfdan da türemektedir. Buna göre ilgili abstract sınıfı ve arayüzü kullanarak kendi animasyon tiplerimizde yazabiliriz. WPF içerisinde temel animasyon tipleri dışında yer alan animasyon tipleride vardır. ColorAnimationUsingKeyFrames gibi. Bu tipleri ilerleyen makalelerimizde incelemeye çalışıyor olacağız.
 
 Burada animasyon tipinin kullanımı ve özellikleri hakkında biraz konuşmakta yarar vardır. Örnekte yer alan Button kontrolünün animasyon etkisi oluşturan özellikleri Width ve Height üyeleridir. Bu özellikler Double tipinden değerler alabilmektedir. Bu nedenle StoryBoard içerisinde tanımlanan animasyon tipleri DoubleAnimation tipindendir. Dolayısıyla animasyon işleminde kullanılacak olan kontrol özelliği için, uygun olan animasyon tipinin seçilmesi gerekmektedir. DoubleAnimation tipi içerisinde oldukça önemli nitelik (attribute) tanımlamaları yer almaktadır. Bunlardan StoryBoard.TargetName niteliği ile animasyonun uygulanacağı kontrol seçilmektedir ki örnekte bu btnMerhaba isimli Button kontrolüdür. Diğer taraftan StoryBoard.TargetProperty niteliği ile kontrolün hangi özelliğinin animasyon işleminde kullanılacağı belirtilir. From niteliği ile hedef özelliğin hangi değerden başlayacağı, To niteliği ilede hedef özelliğin ilgili değerinin hangi değere kadar gelebileceği belirtilir.
 

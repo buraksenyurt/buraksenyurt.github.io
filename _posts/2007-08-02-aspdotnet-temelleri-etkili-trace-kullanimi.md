@@ -28,7 +28,7 @@ Trace mekanizması sadece sayfa ve uygulama seviyesinde değil, bileşen seviyes
 
 Direktik içerisinden Trace mekanizmasının açılması;
 
-```text
+```xml
 <%@ Page Language="C#" Trace="true"%>
 ```
 
@@ -67,6 +67,7 @@ Trace Çıktısında Yer Alan Bölümler
 Aynı bilgilere ulaşmak için adres satırında Trace.axd dosyasıda talep edilebilir.
 
 Trace.axd, WebResource.axd benzeri bir dosyadır. Dolayısıyla çalışma zamanında özel şekilde ele alınır. Asp.Net çalışma ortamı Trace.axd taleplerinin TraceHandler isimli sınıfa ait nesne örneklerine devredilerek karşılanmasını sağlar.
+
 ![mk216_11.gif](/assets/images/2007/mk216_11.gif)
 
 Dolayısıyla söz konusu talep sonrası oluşan ekran çıktısı TraceHandler sınıfı tarafından hazırlanır. Makinedeki ana web.config dosyasının içeriğine bakıldığında bu açıkça görülebilir. Burada dikkat edilmesi gereken noktalardan birisi sadece Trace.axd için böyle bir handler'ın yazılmış olmasıdır. Trace.axd ve WebResource.axd dışında gelecek taleplerHttpNotFoundHandler tarafından ele alınmaktadır.

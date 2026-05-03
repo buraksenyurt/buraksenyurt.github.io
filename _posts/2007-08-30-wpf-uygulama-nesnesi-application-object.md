@@ -448,19 +448,12 @@ private void Application_DispatcherUnhandledException(object sender, DispatcherU
 
 Bu makalemizde WPF uygulamalarında çekirdek nesnelerden birisi olan Application nesnesini incelemeye çalıştık. Makalemizi sonlandırmadan önce sizlere WPF ile ilişkili faydalı olabilecek bir kaç kitap tavsiye etmek isterim.
 
-[![mk220_20.gif](/assets/images/2007/mk220_20.gif)Essential Windows Presentation Foundation](http://www.amazon.com/Essential-Presentation-Foundation-Microsoft-Development/dp/0321374479/ref=pd_bbs_sr_3/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-3)
-
-Addison Wesley yayınlarının Essential serisinde yer alan kitaplar çoğunlukla içerikleri bakımından ileri seviye konuları dahi içeririler. Bu nedenle bu kitap tam anlamıyla bir başvuru kaynağı olarak düşünülebilir. Zaman zaman okura ağır gelebilecek bir içeriğe sahip olsada kitaplığımızda olması gereken bir kitap.
-
-[![mk220_21.gif](/assets/images/2007/mk220_21.gif)Pro WPF: Windows Presentation Foundation in.Net 3.0](http://www.amazon.com/Pro-WPF-Windows-Presentation-Foundation/dp/1590597826/ref=pd_bbs_sr_2/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-2)
-
-Şu sıralarda okumakta olduğum bu kitap oldukşa başarılı. Üstelik son çıkan WPF kitaplarından birisi.1000 sayfa olması nedeniyle okuması biraz zaman alıyor:) Ancak içeriğinde WPF ile ilgili hemen her bilgiye ulaşabiliyoruz. Bu kitabı ısrarla tavsiye ederim.
-
-[![mk220_22.gif](/assets/images/2007/mk220_22.gif)Professional WPF Programming](http://www.amazon.com/Professional-WPF-Programming-Development-Presentation/dp/0470041803/ref=pd_bbs_sr_4/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-4)
-
-Diğerlerine göre daha az sayfadan (480 sayfa) oluşan bu kitap içerisinde Expression Blend ile ilgili bir bölümde yer almakta. Çok kısa sürede okunabilecek bir kitap ama bazı yerlerde çok fazla detaya girilmediği için başka kaynaklara bakmayı gerektirebiliyor.
-
-[![mk220_23.gif](/assets/images/2007/mk220_23.gif)Programming WPF](http://www.amazon.com/Programming-WPF-Chris-Sells/dp/0596510373/ref=pd_bbs_sr_6/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-6)
+| | | |
+| --- | --- | --- |
+| ![mk220_20.gif](/assets/images/2007/mk220_20.gif) | [Essential Windows Presentation Foundation](http://www.amazon.com/Essential-Presentation-Foundation-Microsoft-Development/dp/0321374479/ref=pd_bbs_sr_3/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-3) | Addison Wesley yayınlarının Essential serisinde yer alan kitaplar çoğunlukla içerikleri bakımından ileri seviye konuları dahi içeririler. Bu nedenle bu kitap tam anlamıyla bir başvuru kaynağı olarak düşünülebilir. Zaman zaman okura ağır gelebilecek bir içeriğe sahip olsada kitaplığımızda olması gereken bir kitap. |
+| ![mk220_21.gif](/assets/images/2007/mk220_21.gif) | [Pro WPF: Windows Presentation Foundation in.Net 3.0](http://www.amazon.com/Pro-WPF-Windows-Presentation-Foundation/dp/1590597826/ref=pd_bbs_sr_2/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-2) | Şu sıralarda okumakta olduğum bu kitap oldukşa başarılı. Üstelik son çıkan WPF kitaplarından birisi.1000 sayfa olması nedeniyle okuması biraz zaman alıyor:) Ancak içeriğinde WPF ile ilgili hemen her bilgiye ulaşabiliyoruz. Bu kitabı ısrarla tavsiye ederim. |
+| ![mk220_22.gif](/assets/images/2007/mk220_22.gif) | [Professional WPF Programming](http://www.amazon.com/Professional-WPF-Programming-Development-Presentation/dp/0470041803/ref=pd_bbs_sr_4/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-4) | Diğerlerine göre daha az sayfadan (480 sayfa) oluşan bu kitap içerisinde Expression Blend ile ilgili bir bölümde yer almakta. Çok kısa sürede okunabilecek bir kitap ama bazı yerlerde çok fazla detaya girilmediği için başka kaynaklara bakmayı gerektirebiliyor. |
+| ![mk220_23.gif](/assets/images/2007/mk220_23.gif) | [Programming WPF](http://www.amazon.com/Programming-WPF-Chris-Sells/dp/0596510373/ref=pd_bbs_sr_6/103-1238478-4859812?ie=UTF8&s=books&qid=1188466213&sr=8-6) | O'Reilly yayınlarındaki favori yazarım Juval Lowy'ye ait bir kitap olmasada (Onun Programming WCF kitabı bir harika) yeni çıkan bir yayın olması ve 863 sayfalık (kabul edilebilir bir sayfa adedi) içeriğinin bulunması bu kitabın okunması için yeterli. Söz gelimi birinci bölümünü okuduğunuzda, WPF in temel yapısının öğrenmiş ve en büyük elementlerini kavramış oluyorsunuz. |
 
 O'Reilly yayınlarındaki favori yazarım Juval Lowy'ye ait bir kitap olmasada (Onun Programming WCF kitabı bir harika) yeni çıkan bir yayın olması ve 863 sayfalık (kabul edilebilir bir sayfa adedi) içeriğinin bulunması bu kitabın okunması için yeterli. Söz gelimi birinci bölümünü okuduğunuzda, WPF in temel yapısının öğrenmiş ve en büyük elementlerini kavramış oluyorsunuz.
 

@@ -13,37 +13,20 @@ categories:
 ---
 Windows Communication Foundation ile geliştirilen dağıtık mimari uygulamalarında istemci (client) ve servis (service) arasındaki güvenliği temel olarak mesaj seviyesinde (Message Level) ve iletişim seviyesinde (Transport Level) sağlayabileceğimizden daha önceki yazılarımızda bahsetmiştik. Söz konusu seviyelerden hangisi tercih edilirse edilsin, istemcilerin servisi kullanırken doğrulanmaları (authenticate) ve gerekli işlemleri yapabilmeleri için yetkilerine bakılmaları (authorization) gerekir. Windows Communication Foundation, istemcileri doğrulamak (authenticate) adına altı farklı yol kullanılmasına olanak tanımaktadır. Bunlar aşağıdaki tabloda görüldüğü gibidir.
 
-Windows Communication Foundation Doğrulama (Authenticate) Yolları
-
-Yol
-Açıklama
-
-Windows
-İstemcilerin doğrulanması için tipik olarak servis tarafında yer alan windows hesaplarından (Windows Accounts) faydalanılır. Daha çok Kerberos veya NTLM gibi sistemler ele alınır. Bu teknik intranet tabanlı dağıtık mimari uygulamalarında oldukça işe yaramakta ve tercih edilmektedir.
-
-Kullanıcı Adı/ Şifre
-(Username/Password)
-İstemciler servis tarafına kullanıcı adı (Username) ve şifre (Password) bilgisi gönderir. Kullanıcı hesap bilgileri servis tarafında çoğunlukla bir veritabanı sistemi üzerinde tutulur. WCF servislerinin IIS üzerinde tutulabildiği göz önüne alındığında Asp.Net ile gelen Membership veritabanlarını kullanmak yaygın olarak tercih edilebilir. WCF servisinin HTTP üzerinden yayınlandığı internet tabanlı senaryolarda sıklıkla kullanılabilir.
-
-X509
-İstemciler servis tarafına kendilerini geçerli bir sertifika yardımıyla tanıtırlar.
-
-Özel (Custom)
-Doğrulama (Authenticate) işlemleri için özelleştirilmiş yapılar kullanılır. Biometric buna örnek olarak verilebilir. Söz gelimi istemcilerin parmak izlerine veya göz retinalarına göre doğrulanması gibi mekanizmalar var olan yapıların özelleştirilmesi ile mümkün olabilir.
-
-Issued Token
-Bu doğrulama tekniğine verilebilecek en güzel örnek.Net Framework 3.0 ile gelmiş olan CardSpace mimarisidir.
-
-Yok (None)
-İstemcilerin tamamı doğrulanır. Bir anlamda da servise herkesin erişebilmesi sağlanmış olunur.
+| **Yol** | **Açıklama** |
+| --------- | ------------- |
+| **Windows** | İstemcilerin doğrulanması için tipik olarak servis tarafında yer alan windows hesaplarından (Windows Accounts) faydalanılır. Daha çok Kerberos veya NTLM gibi sistemler ele alınır. Bu teknik intranet tabanlı dağıtık mimari uygulamalarında oldukça işe yaramakta ve tercih edilmektedir. |
+| **Kullanıcı Adı/ Şifre (Username/Password)** | İstemciler servis tarafına kullanıcı adı (Username) ve şifre (Password) bilgisi gönderir. Kullanıcı hesap bilgileri servis tarafında çoğunlukla bir veritabanı sistemi üzerinde tutulur. WCF servislerinin IIS üzerinde tutulabildiği göz önüne alındığında Asp.Net ile gelen Membership veritabanlarını kullanmak yaygın olarak tercih edilebilir. WCF servisinin HTTP üzerinden yayınlandığı internet tabanlı senaryolarda sıklıkla kullanılabilir. |
+| **X509** | İstemciler servis tarafına kendilerini geçerli bir sertifika yardımıyla tanıtırlar. |
+| **Özel (Custom)** | Doğrulama (Authenticate) işlemleri için özelleştirilmiş yapılar kullanılır. Biometric buna örnek olarak verilebilir. Söz gelimi istemcilerin parmak izlerine veya göz retinalarına göre doğrulanması gibi mekanizmalar var olan yapıların özelleştirilmesi ile mümkün olabilir. |
+| **Issued Token** | Bu doğrulama tekniğine verilebilecek en güzel örnek.Net Framework 3.0 ile gelmiş olan CardSpace mimarisidir. |
+| **Yok (None)** | İstemcilerin tamamı doğrulanır. Bir anlamda da servise herkesin erişebilmesi sağlanmış olunur. |
 
 İstemcilerin kendilerini servis tarafına doğrulatmaları esnasında kullanıcı bilgilerinin saklandığı bazı ortamlar söz konusudur. Windows hesaplarının (account) tutulduğu sistemler bellidir. Ancak bunun dışında özellikle internet tabanlı senaryolarda ele alınabilecek şekilde veritabanı (database) kullanımıda mümkündür. WCF mimarisinde servis tarafı IIS üzerinde barındırılabilmektedir. Bu sebepten dolayı kullanıcılara ait hesap bilgileri için Asp.Net 2.0 ile birlikte gelen üyelik yönetim sisteminden (Membership Management API) faydalanılabilir. Elbetteki windows veya veritabanı dışında özel depolama sistemleride söz konusu olabilir.
 
-Doğrulanan kullanıcıların yetkilerine bakılmadan işlem yapılması tam olarak güvenliğin sağlanamadığı anlamınada gelir. Dolayısıyla servis tarafında yer alan operasyonlarda doğrulanan kullanıcıların rollerine, başka bir deyişle yetkilerine bakılarak ilerlenilmesinde fayda vardır. WCF mimarisinde güvenlik denince aklan gelenler sadece authentication ve authorization olmamalıdır. Aslında Windows Communication Foundation, maksimum güvenliğin sağlanabilmesi için üç farklı ilkenin var olmasını gerektirmektedir. Bunlar, mesaj bütünlüğü (Message Integrity), mesaj mahremiyeti (Message Privacy) ve müşterek doğrulama (Mutual Authentication) ilkeleridir
+Doğrulanan kullanıcıların yetkilerine bakılmadan işlem yapılması tam olarak güvenliğin sağlanamadığı anlamınada gelir. Dolayısıyla servis tarafında yer alan operasyonlarda doğrulanan kullanıcıların rollerine, başka bir deyişle yetkilerine bakılarak ilerlenilmesinde fayda vardır. WCF mimarisinde güvenlik denince aklan gelenler sadece authentication ve authorization olmamalıdır. Aslında Windows Communication Foundation, maksimum güvenliğin sağlanabilmesi için üç farklı ilkenin var olmasını gerektirmektedir. Bunlar, mesaj bütünlüğü (Message Integrity), mesaj mahremiyeti (Message Privacy) ve müşterek doğrulama (Mutual Authentication) ilkeleridir. Bu ilkeler aşağıdaki tabloda görüldüğü gibi açıklanabilir.
 
-Maksimum Güvenlik için Sağlanması Gereken İlkeler
-
-| İlke | Açıklama |
+| **İlke** | **Açıklama** |
 | --- | --- |
 | **Mesaj Bütünlüğü (Message Integrity)** | Mesaj bütünlüğü ilkesine göre istemciden servise doğru gidecek olan mesajın başkaları tarafından kurcalanıp bozulamaması gerekmektedir. Bir başka deyişle bu ilke, kötü niyetli kullanıcıların(malicious users) arada hareket eden mesajların bütünlüğünü bozacak şekilde hamlelerde bulunamamasının sağlanmasını gerektirir. |
 | **Mesaj Mahremiyeti (Message Privacy)** | Bu ilke istemci ve servis arasında hareket eden mesajların gizliliğinin sağlanmasını gerektirir. Bir başka deyişle kötü niyetli kullanıcılar çeşitli 3ncü parti yazılımları kullanarak mesaj içeriklerini okuyamamalıdır. Bu ilke aynı zamanda Message Integrity ilkesinin tamamlayıcısı olarak da düşünülebilir. |
@@ -51,7 +34,7 @@ Maksimum Güvenlik için Sağlanması Gereken İlkeler
 
 WCF için söz konusu olan iletişim güvenlik sistemleri yukarıdaki ilkeleri göz önüne alır ve buna göre maksimum güvenliğin sağlanabilmesini kolaylaştırır. Buna göre kendi özel güvenlik sistemlerimizi geliştirmek istediğimizde burada bahsedilen ilkelere uygun olacak şekilde hareket edilmesi gerekir.
 
-WCF mimarisinde iletişim güvenliğini sağlayabilmek adına kullanılabilecek 5 farklı iletişim güvenlik tekniği bulunmaktadır. Bunlar None, Transport, Message, Mixed ve Both teknikleridir. Message seviyesinde iletişim güvenliği tekniğini daha önceki [yazımızda](http://www.bsenyurt.com/MakaleGoster.aspx?ID=204) ele almıştık. Transport tekniğini ise bu yazımız ile birlikte ele almaya çalışacağız. Gelelim diğer modlara. Mixed modda Message Integrity ve Privacy ilkelerini sağlamak için iletişim (Transport) seviyesinde güvenlik tekniği kullanılır. İstemci ehliyetlerini (Client Credential) korumak içinse mesaj (Message) seviyesinde güvenlik tekniği ele alınır. Both iletişim güvenlik tekniğinde mesajlar mesaj seviyesinde güvenlik tekniğine göre şifrelenirken, istemciden servis tarafında gönderilirken Transport tekniğine göre aktarılır.
+WCF mimarisinde iletişim güvenliğini sağlayabilmek adına kullanılabilecek 5 farklı iletişim güvenlik tekniği bulunmaktadır. Bunlar None, Transport, Message, Mixed ve Both teknikleridir. Message seviyesinde iletişim güvenliği tekniğini daha önceki yazılarımızda ele almıştık. Transport tekniğini ise bu yazımız ile birlikte ele almaya çalışacağız. Gelelim diğer modlara. Mixed modda Message Integrity ve Privacy ilkelerini sağlamak için iletişim (Transport) seviyesinde güvenlik tekniği kullanılır. İstemci ehliyetlerini (Client Credential) korumak içinse mesaj (Message) seviyesinde güvenlik tekniği ele alınır. Both iletişim güvenlik tekniğinde mesajlar mesaj seviyesinde güvenlik tekniğine göre şifrelenirken, istemciden servis tarafında gönderilirken Transport tekniğine göre aktarılır.
 
 WCF mimarisinin pek çok konusunda olduğu gibi bazı işlemleri gerçekleştirmek için ele alınması gereken oldukça fazla faktör vardır. Güvenlik teknikleri ile var olan bağlayıcı tipler (binding types) arasındaki durumda aynıdır. Bu sebepten dolayı aşağıdaki tablonun bilinmesinde ve ele alınmasında fayda vardır.
 
@@ -59,14 +42,14 @@ Bağlayıcı Tipler ve İletişim Güvenlik Teknikleri Arasındaki İlişki
 
 | **Bağlayıcı Tip (Binding Type)** | **Transport** | **Message** | **Mixed** | **Both** | **None** |
 | --- | --- | --- | --- | --- | --- |
-| NetTcpBinding | Evet(Varsayılan) | Evet | Evet | Hayır | Evet |
-| NetPeerTcpBinding | Evet(Varsayılan) | Evet | Evet | Hayır | Evet |
-| NetNamedPipeBinding | Evet(Varsayılan) | Hayır | Hayır | Hayır | Evet |
-| NetMsmqBinding | Evet(Varsayılan) | Evet | Hayır | Evet | Evet |
-| WSHttpBinding | Evet | Evet(Varsayılan) | Evet | Hayır | Evet |
-| WSFederationHttpBinding | Hayır | Evet(Varsayılan) | Evet | Hayır | Evet |
-| WSDualHttpBinding | Hayır | Evet(Varsayılan) | Hayır | Hayır | Evet |
-| BasicHttpBinding | Evet | Evet | Evet | Hayır | Evet(Varsayılan) |
+| **NetTcpBinding** | Evet(Varsayılan) | Evet | Evet | Hayır | Evet |
+| **NetPeerTcpBinding** | Evet(Varsayılan) | Evet | Evet | Hayır | Evet |
+| **NetNamedPipeBinding** | Evet(Varsayılan) | Hayır | Hayır | Hayır | Evet |
+| **NetMsmqBinding** | Evet(Varsayılan) | Evet | Hayır | Evet | Evet |
+| **WSHttpBinding** | Evet | Evet(Varsayılan) | Evet | Hayır | Evet |
+| **WSFederationHttpBinding** | Hayır | Evet(Varsayılan) | Evet | Hayır | Evet |
+| **WSDualHttpBinding** | Hayır | Evet(Varsayılan) | Hayır | Hayır | Evet |
+| **BasicHttpBinding** | Evet | Evet | Evet | Hayır | Evet(Varsayılan) |
 
 Bu tabloda hangi bağlayıcı tipin hangi iletişim güvenlik tekniklerini desteklediği belirtilmektedir. Örneğin Both tekniğini sadece NetMsmqBinding bağlayıcı tipi desteklerken diğerleri desteklemez. Dolayısıyla istemci ve sunucu arasındaki güvenliğin nasıl sağlanacağına karar verildikten sonra uygun bağlayıcı tiplerin göz önüne alınması için yukarıdaki tabloda yer alan bilgilerden faydalanılabilir.
 
@@ -76,14 +59,14 @@ Bağlayıcı Tipler, İletişim Seviyesinde Güvenlik Tekniği ve Doğrulama Mod
 
 | **Bağlayıcı Tip (Binding Type)** | **Windows** | **Username/Password** | **X509** | **None** |
 | --- | --- | --- | --- | --- |
-| NetTcpBinding | Evet(Varsayılan) | Hayır | Evet | Evet |
-| NetPeerTcpBinding | Hayır | Evet | Evet | Hayır |
-| NetNamedPipeBinding | Evet(Varsayılan) | Hayır | Hayır | Hayır |
-| NetMsmqBinding | Evet(Varsayılan) | Evet | Hayır | Evet |
-| WSHttpBinding | Evet(Varsayılan) | Evet | Evet | Evet |
-| WSFederationHttpBinding | X |  |  |  |
-| WSDualHttpBinding |  |  |  |  |
-| BasicHttpBinding | Evet | Evet | Evet | Evet(Varsayılan) |
+| **NetTcpBinding** | Evet(Varsayılan) | Hayır | Evet | Evet |
+| **NetPeerTcpBinding** | Hayır | Evet | Evet | Hayır |
+| **NetNamedPipeBinding** | Evet(Varsayılan) | Hayır | Hayır | Hayır |
+| **NetMsmqBinding** | Evet(Varsayılan) | Evet | Hayır | Evet |
+| **WSHttpBinding** | Evet(Varsayılan) | Evet | Evet | Evet |
+| **WSFederationHttpBinding** | X | | | |
+| **WSDualHttpBinding** | | | | |
+| **BasicHttpBinding** | Evet | Evet | Evet | Evet(Varsayılan) |
 
 Dikkat edilmesi gereken noktalardan birisi WSFederationHttpBinding ve WSDualHttpBinding bağlayıcı tiplerinin iletişim seviyesinde güvenlik tekniği söz konusu olduğunda hiç bir doğrulama modelini desteklemediğidir. Bu noktaları açıklığa kavuşturduktan sonra nihayetinde bir örnek geliştirmeye başlayarak internet tabanlı WCF uygulamalarında iletişim seviyesinde güvenliği nasıl sağlayabileceğimizi incelemeye başlayabiliriz.
 

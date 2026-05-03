@@ -140,7 +140,7 @@ Sistem sp'lerinden olan spprocedureparamsmanaged aslında PersonelEkle isimli sa
 
 ## Çakışma durumları için uygun olan yöntemi ConflictOption özelliği ile belirleyebilme
 
-Bağlantısız katman nesneleri ile çalışırken, başımızı en çok ağrıtan konulardan biriside, birbirlerinden habersiz olarak bir den fazla kullanıcının aynı veri üzerinde değişiklik yapmasıdır. Böyle bir durumda son güncelleme kazansın (Last Wins) tekniğini tercih edebilir yada DbConcurrencyViolation istisnasını ele alabiliriz. (Konu hakkında detaylı bilgi için [tıklayın](http://www.bsenyurt.com/MakaleGoster.aspx?ID=112).) Hangi tekniği seçersek, Update ve Delete sorgularının where koşullarında değişiklik olacaktır.
+Bağlantısız katman nesneleri ile çalışırken, başımızı en çok ağrıtan konulardan biriside, birbirlerinden habersiz olarak bir den fazla kullanıcının aynı veri üzerinde değişiklik yapmasıdır. Böyle bir durumda son güncelleme kazansın (Last Wins) tekniğini tercih edebilir yada DbConcurrencyViolation istisnasını ele alabiliriz. Hangi tekniği seçersek, Update ve Delete sorgularının where koşullarında değişiklik olacaktır.
 
 SqlCommandBuilder sınıfına yeni katılan ConflictOptions özelliği ile üretilen komutların bizim seçeceğimiz çakışma kuralına göre oluşturulması sağlanabilir. Last Wins tekniği için Where koşuluna, o tabloda yer alan Primary Key alanın orjinal değeri, DBConcurrencyViolation durumda ise tüm alanların orjinal değerleri yada Id alanı ile birlikte varsa TimeStamp gibi alanların orjinal değeleri hesaba katılacaktır. Şimdi bu durumu analiz edeceğimiz örnek bir Windows uygulamasını aşağıdaki gibi geliştirelim.
 

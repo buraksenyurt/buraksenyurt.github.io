@@ -25,24 +25,25 @@ Varsayılan olarak her istemci için sunucuda bir adet nesne örneği oluşturul
 
 İlk olarak PerSession, PerCall ve Single modellerinin nasıl çalıştıklarını teorik olarak bilmekte fayda vardır.
 
-PerSession Modeli;
+**PerSession Modeli;**
 
 PerSession modunda istemciler ilk operasyon çağrısında bulunduklarında servis örneği oluşturulur ve istemci Close metodunu kullanana kadar yada uygulamayı kapatana kadar söz konusu örnek sunucuda kalır. İstemci, bir servis örneğini elde ettikten sonra bu örnek sadece ilgili istemciye ait olacak şekilde tahsis edilir. Bir anlamda o istemci için bir oturum (Session) açılmış olur. Farklı istemcilerin aynı oturumu kullanmaları mümkün değildir. İstemci uygulamalarda çok kanallı (multithread) kod parçaları olabileceği düşünüldüğünde eşzamanlı olarak aynı oturuma ait metod çağrıları söz konusu olabilir. Varsayılan olarak bir talep tamamlanmadan başka bir talep gelirse öncekinin tamamlanması beklenmektedir. Ama istenirse bu davranış biçimide ServiceBehavior niteliğinin ConcurrencyMode özelliği ile değiştirilebilir. Yani istenirse eş zamanlı olarak çağrılara cevap verilmesi de sağlanabilir.
 
 Bu mod kullanılırken, istemci tarafından çalıştırılabilecek operasyonlar için bir sıralama belirtilmek istenebilir. Örneğin hangi metod çağrısı ile servis örneğinin oluşturulacağının belirtilmesi veya hangi metod çağrısından sonra servis örneğinin yok edileceğinin belirtilmesi gibi. Bunun için de OperationContract niteliğinin IsInitiating ve IsTerminating özellikleri kullanılır. IsInitiating özelliğine true değeri atandığında, ilgili metoda bir çağrı geldiği zaman servis nesnesi örneklenecektir. Elbetteki aynı metoda oturum süresince yeni bir çağrı gelebilir. Bu durumda yeni bir servis örneği oluşturulmaz. Eğer false değeri verilirse söz konusu metoda yapılan çağrı sonrasında servise ait bir örnek oluşturulmaz. IsTerminating özelliğine true değeri atandığı takdirde, ilgili metoda dair söz konusu operasyon tamamlandığında servis örneği otomatik olarak yok edilir. Yani istemcinin Close metodunu çağırmasına gerek kalmaz.
 
-PerCall Modeli;
+**PerCall Modeli;**
 
 PerCall modunda, istemcinin yaptığı her operasyon çağrısında servis uygulamasının çalıştığı sistem üzerinde bir nesne örneği oluşturulur ve operasyon tamamlandığında (bir başka deyişle metod çağrısı sonlandığında) bu örnek yok edilir. Bu sebepten oturum yönetimi PerSession moduna göre daha zordur. Bu nedenle oturum yönetimi adına istemcinin kendisini her operasyon çağrısında servise tanıtabilmesini sağlayacak bir sistem gerekebilir. Ne varki sunucu kaynaklarının idareli kullanılması adına verimli bir modeldir.
 
-Single Modeli;
+**Single Modeli;**
 
 Single modunda, servis örneği yine istemci tarafından gelecek ilk operasyon çağrısında oluşturulur. Ne var ki PerSession modelinden farklı olarak var olan istemcinin ve diğer istemci uygulamaların metod çağrıları için servis uygulaması üzerindeki aynı nesne örneği kullanılır. Söz konusu servis örneğinin yok edilmesi ise sadece host uygulamanın kapatılması ile gerçekleşebilir. Bu teknik kaynak yönetimi adına maksimum faydayı sağlar. Ayrıca tüm kullanıcıların aynı veriyi paylaşması çok daha kolaylaşır. Lakin burada servisin single thread olup olmadığına dikkat etmek gerekir. Eğer öyleyse istemcilerden gelecek talepler sonrası zaman aşımları (timeout) söz konusu olabilir. Bunun için ConcurrencyMode özelliğine Multiple değeri atanarak thread-safe bir ortam sağlanabilir.
 
 Şimdi örnek bir uygulama üzerinden bu modelleri incelemeye çalışalım. Örnek uygulamada Tcp protokolü baz alınmaktadır ve bu nedenle NetTcpBinding bağlayıcı tipi kullanılmaktadır.
 
-> Tcp protokolü için varsayılan olarak eş zamanlı bağlantı sayısı maksimum 10 dur. Ancak istenirse binding configuration kısmından MaxConfiguration özelliği ile bu değiştirilebilir.
-> ![mk205_1.gif](/assets/images/2007/mk205_1.gif)
+Tcp protokolü için varsayılan olarak eş zamanlı bağlantı sayısı maksimum 10 dur. Ancak istenirse binding configuration kısmından MaxConfiguration özelliği ile bu değiştirilebilir.
+
+![mk205_1.gif](/assets/images/2007/mk205_1.gif)
 
 İlk olarak WCF Library şablonunda bir sınıf kütüphanesi geliştirelim. Bu sınıf kütüphanesi içerisinde yer alan tipler ve içerikleri aşağıdaki gibidir.
 
