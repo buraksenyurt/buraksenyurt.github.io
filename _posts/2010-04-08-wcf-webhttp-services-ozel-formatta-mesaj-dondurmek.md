@@ -19,7 +19,7 @@ Gelelim bu günkü konumuza.
 
 Bu yazımızda, son günlerde sıklıkla üzerinde durduğumuz WCF WebHttp Service'lerinde, istemciden gelen root adres bazlı taleplerin nasıl karşılanacağını ve özel formatta mesajların nasıl döndürüleceğini incelemeye çalışıyor olacağız. Ancak işe başlamadan önce ihtiyacın ne olduğundan bahsetmemizde yarar var. Bu amaçla bir Web uygulaması üzerinden host edilen birden fazla WebHttp servisimiz olduğunu düşünerek ilerleyelim. Bu servisler içerisinde de örneğin HTTP Get taleplerinin karışılığında çeşitli tipte koleksiyonları döndüren operasyonlarımız olduğunu farz edelim. Bu durumda global.asax dosyasındaki kodlarda yönlendirme tablosuna ekleyeceğimiz adres bilgilerine göre, gelen talepleri uygun olan servislere yöndermemiz mümkün olacaktır. Bunu zaten daha önceki bir yazımızda incelemiştik.
 
-Söz gelimi http://makineadı:port numarası/CompanyServices/AdventureWorks/Products ile http://makineadı:port numarası/CompanyServices/Chinook/Albums gibi iki talep gönderildiğini düşünelim. Bu taleplerin aynı web uygulamasından host edilen iki farklı servis tipi tarafından değerlendirildiği bir durumda, doğru yönlendirme tekniği ile uygun olan servis ve operasyonunun çağırılması mümkündür. Oysaki istemciler http://makineadı:port/CompanyServices/ adresine de talepte bulunulabilir. Böyle bir durumda ne olur? Gelin bunu açıklamak için aşağıdaki örnek servis sınıflarını içeren bir WCF REST Service Application projemiz olduğunu düşünelim.
+Söz gelimi `http://makineadı:port numarası/CompanyServices/AdventureWorks/Products` ile `http://makineadı:port numarası/CompanyServices/Chinook/Albums` gibi iki talep gönderildiğini düşünelim. Bu taleplerin aynı web uygulamasından host edilen iki farklı servis tipi tarafından değerlendirildiği bir durumda, doğru yönlendirme tekniği ile uygun olan servis ve operasyonunun çağırılması mümkündür. Oysaki istemciler `http://makineadı:port/CompanyServices/` adresine de talepte bulunulabilir. Böyle bir durumda ne olur? Gelin bunu açıklamak için aşağıdaki örnek servis sınıflarını içeren bir WCF REST Service Application projemiz olduğunu düşünelim.
 
 AdventureWorksService sınıfı;
 
@@ -109,13 +109,13 @@ namespace Lesson8
 }
 ```
 
-Buna göre istemciden gelecek olan http://localhost:10843/CompanyServices/AdventureWorks/Products ve http://localhost:10843/CompanyServices/Chinook/Artists talepleri sorunsuz bir şekilde karşılanacaktır. Ancak doğrudan Web uygulamasının Root adresine yapılan http://localhost:10843/CompanyServices/ gibi bir talepte aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
+Buna göre istemciden gelecek olan `http://localhost:10843/CompanyServices/AdventureWorks/Products` ve `http://localhost:10843/CompanyServices/Chinook/Artists` talepleri sorunsuz bir şekilde karşılanacaktır. Ancak doğrudan Web uygulamasının Root adresine yapılan `http://localhost:10843/CompanyServices/` gibi bir talepte aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
 
 ![blg146_Begining.gif](/assets/images/2010/blg146_Begining.gif)
 
-Elbette Help sayfalarına gidilerek servislere nasıl talepte bulunulabileceği öğrenilebilir. Ancak elimizde iki servis olduğundan söz konusu yardım sayfalarına gitmek için http://localhost:10843/CompanyServices/AdventureWorks/help veya http://localhost:10843/CompanyServices/Chinook/help gibi taleplerinin gönderilmesi gerekmektedir.
+Elbette Help sayfalarına gidilerek servislere nasıl talepte bulunulabileceği öğrenilebilir. Ancak elimizde iki servis olduğundan söz konusu yardım sayfalarına gitmek için `http://localhost:10843/CompanyServices/AdventureWorks/help` veya `http://localhost:10843/CompanyServices/Chinook/help` gibi taleplerinin gönderilmesi gerekmektedir.
 
-Sanıyorum ki nihayet ne yapmak istediğimize gelebildik. İstediğimiz şey http://localhost:10843/CompanyServices/ adresine yapılan talep ile Web uygulamasından sunulan servisleri bildirmek olacak. Üstelik bu talebe karşılık dönecek mesajın içeriğini kendimiz tasarlayacağız. Yapabilir miyiz? Evet yapabiliriz. Çünkü gerekli tüm tipler Framework içerisinde çoktandır mevcutlar. Özetle talebe uygun bir formatta (XML, JSON, ATOM gibi) kendi veri yayınımızı yapacağımızı ifade edebiliriz.
+Sanıyorum ki nihayet ne yapmak istediğimize gelebildik. İstediğimiz şey `http://localhost:10843/CompanyServices/` adresine yapılan talep ile Web uygulamasından sunulan servisleri bildirmek olacak. Üstelik bu talebe karşılık dönecek mesajın içeriğini kendimiz tasarlayacağız. Yapabilir miyiz? Evet yapabiliriz. Çünkü gerekli tüm tipler Framework içerisinde çoktandır mevcutlar. Özetle talebe uygun bir formatta (XML, JSON, ATOM gibi) kendi veri yayınımızı yapacağımızı ifade edebiliriz.
 
 İşe ilk olarak yeni bir servis sınıfını geliştirerek başlamamız gerekiyor. Bu sınıf içerisinde yer alan operasyonumuz geriye, System.ServiceModel.Channels isim alanında yer alan Message tipinden bir değer döndürüyor olacak. İşte EntranceService isimli yeni sınıfımızın içeriği;
 
@@ -217,11 +217,11 @@ namespace Lesson8
 }
 ```
 
-Buna göre örnek bir tarayıcı uygulama üzerinden http://localhost:10843/CompanyServices/ adresine yapacağımız bir talebin sonucu aşağıdaki gibi olacaktır.
+Buna göre örnek bir tarayıcı uygulama üzerinden `http://localhost:10843/CompanyServices/` adresine yapacağımız bir talebin sonucu aşağıdaki gibi olacaktır.
 
 ![blg146_Last.gif](/assets/images/2010/blg146_Last.gif)
 
-Her şey yolunda görünüyor. Ancak ufak bir pürüz var. EntranceService tipine boş Uri bilgisi üzerinden bir başka deyişle Web uygulamasına ait Root adresten gidilebildiği için, http://localhost:10843/CompanyServices/help şeklinde gönderilen bir talepte aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
+Her şey yolunda görünüyor. Ancak ufak bir pürüz var. EntranceService tipine boş Uri bilgisi üzerinden bir başka deyişle Web uygulamasına ait Root adresten gidilebildiği için, `http://localhost:10843/CompanyServices/help` şeklinde gönderilen bir talepte aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
 
 ![blg146_HelpPage.gif](/assets/images/2010/blg146_HelpPage.gif)
 
@@ -256,7 +256,7 @@ Oysaki bu Help sayfasının çıkmasına pekte gerek yoktur. Bu bir zorunluluk d
 </configuration>
 ```
 
-Zaten varsayılan web.config dosyası içeriğine göre, tüm servis talepleri otomatik olarak standart bir Endpoint tipine yönlendirilir. Ancak senaryomuza göre ana adres üzerinden yapılan yardım sayfası talebi geçersiz olmalı, diğerleri ile kullanılabilir durumda kalmalıdır. Bu nedenle EntranceService isimli hizmet için de bir Endpoint tanımlaması yapılmış ve webHttpEndpoint içerisindeki farklı bir ayara yönlendirilmiştir. Buradaki düzenlemeye göre EntranceService dışındaki tüm servislerin help sayfalarına ulaşılabilmektedir. Ancak EntranceService için help sayfası gösterilmemektedir. Buna göre http://localhost:10843/CompanyServices/help adresine bir talepte bulunulduğunda aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
+Zaten varsayılan web.config dosyası içeriğine göre, tüm servis talepleri otomatik olarak standart bir Endpoint tipine yönlendirilir. Ancak senaryomuza göre ana adres üzerinden yapılan yardım sayfası talebi geçersiz olmalı, diğerleri ile kullanılabilir durumda kalmalıdır. Bu nedenle EntranceService isimli hizmet için de bir Endpoint tanımlaması yapılmış ve webHttpEndpoint içerisindeki farklı bir ayara yönlendirilmiştir. Buradaki düzenlemeye göre EntranceService dışındaki tüm servislerin help sayfalarına ulaşılabilmektedir. Ancak EntranceService için help sayfası gösterilmemektedir. Buna göre `http://localhost:10843/CompanyServices/help` adresine bir talepte bulunulduğunda aşağıdaki ekran görüntüsü ile karşılaşılacaktır.
 
 ![blg146_HelpDisabled.gif](/assets/images/2010/blg146_HelpDisabled.gif)
 
@@ -306,4 +306,3 @@ Vuuuvvvv!!! Şu anda masamdaki şekerlerin oranına bakıyorum da...Baya bir tü
 Artık dinlenmeye çekilmenin vakti geldi sanırım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson8_RC.rar (181,52 kb)](/assets/files/2010/Lesson8_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

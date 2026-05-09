@@ -71,17 +71,12 @@ ve
 
 Buraya kadar yaptıklarımızı özetleyecek olursak aşağıdaki adımları gerçekleştirdiğimizi ifade edebiliriz.
 
-1- Entity'ler arasındaki Many-To-Many tipinden Relation silinir.
-
-2- Veritabanında yer alan ama Entity Model tarafına aktarılmayan ara tablonun karşılığı olan tipin üretilmesi sağlanır.
-
-3- Eklenen Entity tablosuna Entity Key özellikleri true olan ve diğer Entity'ler üzerinde karşılık düşen alanlar ile aynı tipten olan (Örneğimizde hepsi Int32) Scalar Property'ler ilave edilir.
-
-4- Entity tipleri arasındaki One-To-Many ilişkiler (Association) tesis edilir.
-
-5- Eklenen Entity nesnesi, veritabanındaki tablo ile ilişkilendirilir (Mapping).
-
-6- Association'lar ile ilişkili olaraktan gerekli Referencial Constraints'ler tanınmlanır.
+- 1.Entity'ler arasındaki Many-To-Many tipinden Relation silinir.
+- 2.Veritabanında yer alan ama Entity Model tarafına aktarılmayan ara tablonun karşılığı olan tipin üretilmesi sağlanır.
+- 3.Eklenen Entity tablosuna Entity Key özellikleri true olan ve diğer Entity'ler üzerinde karşılık düşen alanlar ile aynı tipten olan (Örneğimizde hepsi Int32) Scalar Property'ler ilave edilir.
+- 4.Entity tipleri arasındaki One-To-Many ilişkiler (Association) tesis edilir.
+- 5.Eklenen Entity nesnesi, veritabanındaki tablo ile ilişkilendirilir (Mapping).
+- 6.Association'lar ile ilişkili olaraktan gerekli Referencial Constraints'ler tanınmlanır.
 
 Artık konuyu basit bir örnek sonlandırabiliriz. Bu amaçla aşağıdaki program kodunu yazdığımızı düşünelim.
 

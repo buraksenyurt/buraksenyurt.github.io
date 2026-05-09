@@ -20,7 +20,7 @@ Lakin bu Push The Button mevzusunda düşündüğüm genelde, sunucu üzerindeki
 
 Bilindiği üzere WCF (Windows Communication Foundation) tarafında geliştirilen servislerin Duplex iletişimi kullanaraktan istemciler üzerinde operasyonlar gerçekleştirmesi, bir başka deyişle metod çağrılarında bulunabilmeleri mümkündür. Burada çift kanallı olarak gerçekleştirilen bir iletişim söz konusudur. Daha çok chat uygulamalarında veya istemcinin her hangibir durum değişikliğinde uyarılması gerektiği vakalarda bu tip servislerden yararlanılabilir. Söz gelimi bu yazımızda geliştireceğimiz WCF Servis örneği, istemcilerden aldığı şehir bilgisine göre anlık hava durumu bilgisini döndürecektir. Bu cümle ilk bakışta istemcinin yapacağı normal bir servis çağrısından ve sonucunun alınmasından farksız bir operasyonmuş gibi görünebilir. Ancak gözden kaçırılmaması gereken bir husus vardır; o da hava durumu bilgisinin bildirilme işleminin, servis tarafından istemci üzerindeki bir operasyon çağrısı ile yapılacağıdır.
 
-Tabi yazımızın başlığından da anlayacağınız üzere söz konusu WCF Servisini bir Silverlight istemcisi üzerinden test etmeye çalışıyor olacağız. Duplex WCF Servisinin geliştirilmesi başlı başına karmaşık bir süreç gerektiğinden yazımızı iki seriye bölüyor olacağız. İlk bölümdeki hedefimiz Duplex iletişimi sağlayacak olan WCF Servisini geliştirmek olacak. İşe Visual Studio 2010 Ultimate RC ortamında WorldWeatherService isminde bir WCF Service Application uygulaması açarak ve hemen C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Server adresinde yer alan System.ServiceModel.PollingDuplex.dll assembly'ını referans ederek başlayabiliriz. Nitekim bu referans içerisindeki tiplere sunucu tarafında ihtiyacımız olacaktır.
+Tabi yazımızın başlığından da anlayacağınız üzere söz konusu WCF Servisini bir Silverlight istemcisi üzerinden test etmeye çalışıyor olacağız. Duplex WCF Servisinin geliştirilmesi başlı başına karmaşık bir süreç gerektiğinden yazımızı iki seriye bölüyor olacağız. İlk bölümdeki hedefimiz Duplex iletişimi sağlayacak olan WCF Servisini geliştirmek olacak. İşe Visual Studio 2010 Ultimate RC ortamında WorldWeatherService isminde bir WCF Service Application uygulaması açarak ve hemen `C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Server` adresinde yer alan System.ServiceModel.PollingDuplex.dll assembly'ını referans ederek başlayabiliriz. Nitekim bu referans içerisindeki tiplere sunucu tarafında ihtiyacımız olacaktır.
 
 ![blg172_ServerReference.gif](/assets/images/2010/blg172_ServerReference.gif)
 
@@ -123,9 +123,7 @@ namespace WorldWeatherService
 }
 ```
 
-Sırada servis tarafının çalışma zamanını ilgilendiren konfigurasyon ayarlarının yapılması yer almakta. Burada işler biraz karışıyor.
-
-Neyseki MSDN üzerinden konu ile ilişkili yardımcı dökümanların fazlasıyla yararı olduğunu ifade edebilirim. İşte sunucu uygulamamıza ait web.config içeriğimiz.
+Sırada servis tarafının çalışma zamanını ilgilendiren konfigurasyon ayarlarının yapılması yer almakta. Burada işler biraz karışıyor. Neyse ki MSDN üzerinden konu ile ilişkili yardımcı dökümanların fazlasıyla yararı olduğunu ifade edebilirim. İşte sunucu uygulamamıza ait web.config içeriğimiz.
 
 ```xml
 <?xml version="1.0"?>
@@ -198,4 +196,3 @@ Bu içeriğe sahip olan ClientAccessPolicy.xml dosyasının ise WCF Servisimizi 
 Artık farklı bir domainde yer alan herhangibir Silverlight istemcisi WorldWeatherService'ini kullanabilecektir. Artık geride istemci tarafının yazılması ve test edilmesinden başka bir şey kalmamıştır. Ancak biraz nefes alalım ve bunu bir sonraki yazımıza bırakalım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WorldWeatherService.rar (157,92 kb)](/assets/files/2010/WorldWeatherService.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir.]
-

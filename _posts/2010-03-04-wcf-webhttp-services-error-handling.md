@@ -90,9 +90,7 @@ public List<Book> GetBooks(string firstLetter)
 
 Burada dikkat edileceği üzere sonuç listesinin eleman sayısı kontrol edilmiş ve eğer 0 ise WebFaultException tipinden bir istisna mesajı fırlatılması sağlanmıştır. WebFaultException tipinin örneklenmesi sırasında dikkat edilmesi gereken hususlardan biriside HttpStatusCode.NotFound Enum sabiti değerinin verilmesidir. Bu şekilde istemci tarafına hangi HTTP durum kodunun (Status Code) gönderileceği belirlenmektedir. Tahmin edeceğiniz üzere pek çok HTTP Status Code değeri bulunmaktadır.
 
-Aslında tam liste içeriği şudur
-
-Accepted, Ambiguous, BadGateway, BadRequest, Conflict, Continue, Created, Expectation Failed, Forbidden, Found, GatewayTimeout, Gone, HttpVersionNotSupported, InternalServerError, LengthRequired, MethodNotAllowed, Moved, MovedPermanently, MultipleChoices, NoContent, NonAuthoritativeInformation, NotAcceptable, NotFound, NotImplemented, NotModified, OK, PartialContent, PaymentRequired, PreconditionFailed, ProxyAuthenticationRequired, Redirect, RedirectKeepVerb, RedirectMethod, RequestedRangeNotSatisfiable, RequestEntityTooLarge, RequestTimeout, RequestUriTooLong, ResetContent, SeeOther, ServiceUnavailable, SwitchingProtocols, TemporaryRedirect, Unauthorized, UnsupportedMediaType, Unused, UseProxy
+> **Aslında tam liste içeriği şöyle;** Accepted, Ambiguous, BadGateway, BadRequest, Conflict, Continue, Created, Expectation Failed, Forbidden, Found, GatewayTimeout, Gone, HttpVersionNotSupported, InternalServerError, LengthRequired, MethodNotAllowed, Moved, MovedPermanently, MultipleChoices, NoContent, NonAuthoritativeInformation, NotAcceptable, NotFound, NotImplemented, NotModified, OK, PartialContent, PaymentRequired, PreconditionFailed, ProxyAuthenticationRequired, Redirect, RedirectKeepVerb, RedirectMethod, RequestedRangeNotSatisfiable, RequestEntityTooLarge, RequestTimeout, RequestUriTooLong, ResetContent, SeeOther, ServiceUnavailable, SwitchingProtocols, TemporaryRedirect, Unauthorized, UnsupportedMediaType, Unused, UseProxy
 
 Operasyonumuzu bu yeni haliyle denediğimizde ise tarayıcı uygulama üzerinde aşağıdaki şekilde görülen çıktı ile karşılaşırız.
 

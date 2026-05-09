@@ -12,7 +12,7 @@ tags:
 categories:
   - Web Programlama
 ---
-Hatırlayacağınız üzere [bir önceki yazımızda](/2010/06/18/silverlight-istemcileri-icin-duplex-service-gelistirmek/) Silverlight istemcilerinin kullanabileceği Duplex WCF Service uygulamalarının nasıl yazılabileceğini incelemeye çalışmıştık. Çok doğal olarak bu işin bir de istemci tarafı bulunmaktadır. İşte bu yazımızda söz konusu istemciyi geliştirmeye çalışacak ve bir önceki yazının yorgunluğunu üzerimizden atarcasına, basit bir şekilde ilerliyor olacağız. İlk olarak Visual Studio 2010 Ultimate RC ortamında Silverlight 4.0 tabanlı bir uygulama oluşturarak işe başlayabiliriz. Bu işlemin ardından Proxy tabanlı bir WCF servis kullanımı için Add Service Reference seçeneğine başvurmamız gerekecektir. Yine hatırlayacağınız üzere geliştirdiğimiz WorldWeatherService isimli servisi IIS üzerine Publish etmiştik. Bu sebepten ilgili servis referansına aşağıdaki şekilden de görüldüğü üzere http://localhost/WorldWeatherService/WeatherDuplexService.svc adresinden erişebiliriz.
+Hatırlayacağınız üzere [bir önceki yazımızda](/2010/06/18/silverlight-istemcileri-icin-duplex-service-gelistirmek/) Silverlight istemcilerinin kullanabileceği Duplex WCF Service uygulamalarının nasıl yazılabileceğini incelemeye çalışmıştık. Çok doğal olarak bu işin bir de istemci tarafı bulunmaktadır. İşte bu yazımızda söz konusu istemciyi geliştirmeye çalışacak ve bir önceki yazının yorgunluğunu üzerimizden atarcasına, basit bir şekilde ilerliyor olacağız. İlk olarak Visual Studio 2010 Ultimate RC ortamında Silverlight 4.0 tabanlı bir uygulama oluşturarak işe başlayabiliriz. Bu işlemin ardından Proxy tabanlı bir WCF servis kullanımı için Add Service Reference seçeneğine başvurmamız gerekecektir. Yine hatırlayacağınız üzere geliştirdiğimiz WorldWeatherService isimli servisi IIS üzerine Publish etmiştik. Bu sebepten ilgili servis referansına aşağıdaki şekilden de görüldüğü üzere `http://localhost/WorldWeatherService/WeatherDuplexService.svc` adresinden erişebiliriz.
 
 ![blg173_AddServiceReference.gif](/assets/images/2010/blg173_AddServiceReference.gif)
 
@@ -95,7 +95,6 @@ Tüm bu çalışma sırasında dikkat edilmesi gereken bir husus da, önceki yaz
 
 ![blg172_Exception.gif](/assets/images/2010/blg172_Exception.gif)
 
-Oysaki geliştirdiğimiz örnek Asp.Net Development Server üzerinden yayınlanmaktadır (http://localhost:22334/WeatherClientAppTestPage.aspx) ve sorunsuz bir şekilde IIS üzerindeki WorldWeatherService uygulamasına erişebilmektedir. Dolayısıyla Silverlight uygulamalarında sıkça rastladığımız Cross Domain sorunu yaşanmamaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Oysaki geliştirdiğimiz örnek Asp.Net Development Server üzerinden yayınlanmaktadır (`http://localhost:22334/WeatherClientAppTestPage.aspx`) ve sorunsuz bir şekilde IIS üzerindeki WorldWeatherService uygulamasına erişebilmektedir. Dolayısıyla Silverlight uygulamalarında sıkça rastladığımız Cross Domain sorunu yaşanmamaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WeatherClientApp.rar (540,12 kb)](/assets/files/2010/WeatherClientApp.rar) [Örnek Visual Studio 2010 RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

@@ -65,7 +65,9 @@ Bookmark işlemleri Idle konuma düşebilen Workflow aktivitelerinde işe yaraya
 
 CreateBookmark metodunun ikinci parametresi BookmarkCallback tipinden bir temsilcidir (Delegate). Bu temsilcinin yapısı ise aşağıdaki gibidir.
 
+```csharp
 public delegate void BookmarkCallback (System.Activities.NativeActivityContext context, System.Activities.Bookmark bookmark, object value)
+```
 
 Buna göre örneğimizde yer alan isimsiz metodun (Anonymous Method) ilk parametresi ile Activity'nin çalışma zamanındaki çevresel içeriğine, ikinci parametre ilede Bookmark örneğine erişilebilir. Bu temsilci aslında bir geri bildirim metodunu (Callback Method) işaret etmektedir. Bir başka deyişle, Idle konumda kalan Activity örneğinin tekrar Resume edilmesi halinde devreye girecek olan metod olarak düşünülebilir. Dolayısıyla geri bildirim metodu içerisinde CreateBookmark tarafında saklanan bazı varlıkların tekrardan yüklenmesi, hazırlanması gibi operasyonlar ele alınabilir. CreateBookmark metodunun aslında 8 aşırı yüklenmiş (Overload) versiyonu bulunmaktadır.
 
@@ -247,4 +249,3 @@ Ve işte çalışma zamanı sonuçları;
 Görüldüğü gibi bir aktivitenin Bookmark'lanması aslında isimlendirilmiş duraksama noktalarına (Named Pause Points) sahip olması anlamına gelmektedir. Öyleki, ResumeBookmark metodu sayesinde Pause edilen noktadan tekrar yürütülmeleri sağlanabilir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloBookmarks.rar (54,52 kb)](/assets/files/2010/HelloBookmarks.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

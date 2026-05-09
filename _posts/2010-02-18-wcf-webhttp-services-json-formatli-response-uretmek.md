@@ -58,7 +58,7 @@ Servisimizde yer alan GetAllPersons isimli operasyon istemci tarafına Person ti
 
 Ancak şimdiki hedefimiz bu XML çıktısı yerine JSON çıktısını vermektir. Bunu iki yol ile gerçekleştirebileceğimizden bahsetmiştik. Öncelikle otomatik JSON çıkıtısı üretiminin nasıl gerçekleştirilebileceğine bakalım. Bu amaçla sunucu tarafındaki web.config dosyası içerisinde yer alan webHttpEndpoint içerisindeki standardEndpoint elementinin automaticFormatSelectionEnabled niteliğinin true değere sahip olması yeterlidir. Aynen aşağıda görüldüğü gibi.
 
-```csharp
+```xml
 <system.serviceModel>
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>
     <standardEndpoints>

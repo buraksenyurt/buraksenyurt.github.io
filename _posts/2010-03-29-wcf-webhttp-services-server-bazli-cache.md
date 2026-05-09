@@ -108,13 +108,13 @@ Buradaki ayarlamalara göre CategoriesCache adı ile belirlenen operasyonlar 120
 
 Tabi yapımış olduğumuz bu anlatımın sonuçlarını test ederek görmemiz gerekiyor. Burada debug modu kullanarak talepler sırasında operasyon metodlarının içerisine ne zaman girilip ne zaman girilmediğini tespit ederek gerekli kontrolleri yapabiliriz. İşte size örnek test senaryoları;
 
-1 - Önce URL üzerinden Categories talebini gönderin. Bu durumda tüm kategorilerin aşağıdaki şekilde olduğu gibi geldiğini göreceksiniz.
+**1 - Önce URL üzerinden Categories talebini gönderin.** Bu durumda tüm kategorilerin aşağıdaki şekilde olduğu gibi geldiğini göreceksiniz.
 
 ![blg143_FirstRun.gif](/assets/images/2010/blg143_FirstRun.gif)
 
 Şimdi 120 saniyelik süre dolmadan Kategoriler.txt üzerinde bir değişiklik yapın. Örneğin Mücehver isimli yeni bir kategori ekleyin veya bir kaç kategorinin ismini değiştirin yada silin. 120 saniyelik zaman dilimi içerisinde yeniden Categories talebinden bulunursanız yapmış olduğunuz değişiklilerin tarayıcıya getirilmediğini görebilirsiniz. Ancak 120 saniyelik ön bellek süresi dolduktan sonra değişiklikleri görebileceksiniz ve hatta Debug moddaysanız ilgili operasyon kodu içerisine tekrardan girildiğini fark edeceksiniz. Bu zaten ön belleklemenin çalıştığının ispatıdır.
 
-2 - İkinci olarak parametre bazlı ön bellekleme yapıldığını test edebilirsiniz. Bu amaçla tarayıcı üzerinden örneğin Categories/A ve Categories/M taleplerinde bulunun. Debug modda ilerlerseniz testinizi daha başarılı bir şekilde yapabilirsiniz. Özellikle 300 saniyelik ön bellekleme süreleri dolmadan farklı harfler ile denemeler yaptığınızda, ön belleklenenler için operasyon koduna girilmediğini ama daha önceden talep edilmeyenler veya 300 saniyelik ön bellekte kalma süresini dolduranlar için kodun tekrar çalıştırıldığını gözlemleyebilirsiniz.
+**2 - İkinci olarak parametre bazlı ön bellekleme yapıldığını test edebilirsiniz.** Bu amaçla tarayıcı üzerinden örneğin Categories/A ve Categories/M taleplerinde bulunun. Debug modda ilerlerseniz testinizi daha başarılı bir şekilde yapabilirsiniz. Özellikle 300 saniyelik ön bellekleme süreleri dolmadan farklı harfler ile denemeler yaptığınızda, ön belleklenenler için operasyon koduna girilmediğini ama daha önceden talep edilmeyenler veya 300 saniyelik ön bellekte kalma süresini dolduranlar için kodun tekrar çalıştırıldığını gözlemleyebilirsiniz.
 
 Bu sayede geliştireceğimiz WebHttp Service'lerin operasyonlarının hızlı sonuçlar üreterek daha performanslı ve verimli olmasını sağlayabiliriz. Bu yazımızdaki örneğimizde sunucu tarafında ön bellekleme işlemlerini gerçekleştirdik. Ancak birde istemci taraflı ön bellekleme (Client Based Caching) işlemlerinin söz konusu olduğunu belirtelim. Bunu serinin sonraki yazısında incelemeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

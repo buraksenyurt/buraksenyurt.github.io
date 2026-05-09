@@ -103,17 +103,20 @@ namespace StructuredTasking
 
                     #region IsCompleted
 
-                    Task childTaskOne = Task.Factory.StartNew(() => { 
+                    Task childTaskOne = Task.Factory.StartNew(() =>
+                    {
                         Console.WriteLine("\tChild Task 1 Başladı");
                         Thread.Sleep(2000);
                         Console.WriteLine("\tChild Task 1 Bitti");
                     }, TaskCreationOptions.AttachedToParent);
-                    Task childTaskTwo = Task.Factory.StartNew(() => {
-                        Console.WriteLine("\tChild Task 2 Başladı");                        
+                    Task childTaskTwo = Task.Factory.StartNew(() =>
+                    {
+                        Console.WriteLine("\tChild Task 2 Başladı");
                         Thread.Sleep(3000);
                         Console.WriteLine("\tChild Task 2 Bitti");
                     }, TaskCreationOptions.AttachedToParent);
-                    Task childTaskThree = Task.Factory.StartNew(() => { 
+                    Task childTaskThree = Task.Factory.StartNew(() =>
+                    {
                         Console.WriteLine("\tChild Task 3 Başladı");
                         Thread.Sleep(5000);
                         Console.WriteLine("\tChild Task 3 Bitti");
@@ -125,7 +128,7 @@ namespace StructuredTasking
 
             while (!parentTask.IsCompleted)
             {
-                Console.WriteLine("{0} Parent Task Durumu : {1}",DateTime.Now.ToLongTimeString(),parentTask.Status);
+                Console.WriteLine("{0} Parent Task Durumu : {1}", DateTime.Now.ToLongTimeString(), parentTask.Status);
                 Thread.Sleep(500);
             }
             Console.WriteLine("{0} Parent Task Durumu : {1}", DateTime.Now.ToLongTimeString(), parentTask.Status);
@@ -147,21 +150,21 @@ Söz gelimi bir önceki örnek kodumuzda yer alan Child Task örneklerinden biri
 
 ```csharp
 Task childTaskOne = Task.Factory.StartNew(() => { 
-                        Console.WriteLine("\tChild Task 1 Başladı");
-                        Thread.Sleep(2000);
-                        throw new Exception("Muahahahaha!");
-                    }, TaskCreationOptions.AttachedToParent);
+                Console.WriteLine("\tChild Task 1 Başladı");
+                Thread.Sleep(2000);
+                throw new Exception("Muahahahaha!");
+            }, TaskCreationOptions.AttachedToParent);
 
 ...
 
 while (!parentTask.IsCompleted)
-            {
-                Console.WriteLine("{0} Parent Task Durumu : {1} Exception : {2}", DateTime.Now.ToLongTimeString(), parentTask.Status, parentTask.Exception);
-                Thread.Sleep(500);
-            }
+{
+    Console.WriteLine("{0} Parent Task Durumu : {1} Exception : {2}", DateTime.Now.ToLongTimeString(), parentTask.Status, parentTask.Exception);
+    Thread.Sleep(500);
+}
 
-            Console.WriteLine("{0} Parent Task Durumu : {1} Exception : {2}", DateTime.Now.ToLongTimeString(), parentTask.Status,parentTask.Exception);
-            Console.WriteLine("İşlemlerin sonu");
+Console.WriteLine("{0} Parent Task Durumu : {1} Exception : {2}", DateTime.Now.ToLongTimeString(), parentTask.Status,parentTask.Exception);
+Console.WriteLine("İşlemlerin sonu");
 ```
 
 Bu durumda uygulama aşağıdaki örnek çıktıyı verecektir.
@@ -173,4 +176,3 @@ Dikkat edilmesi gereken 3 önemli nokta vardır. Parent Task nesne örneği Faul
 Son olarak Parent-Child ilişki ile ilgili olarak şu notu düşebiliriz; Parent Task nesne örnekleri, kaç adet Child Task örneği içerdiğini bilmektedir. Bir başka deyişle kendisine eklenen Child Task'lerin sayısını tutar. Dolayısıyla Child Task nesne örneklerinin, dahil oldukları Parent Task örneğine bir referans bildiriminde bulunduğunu ve hatta tamamlanma durumlarını ilettiklerini ifade edebiliriz. Parent-Child Task'ler arasındaki ilişkiyi fırsat buldukça incelemeye devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StructuredTasking_RTM.rar (23,32 kb)](/assets/files/2010/StructuredTasking_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM Sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

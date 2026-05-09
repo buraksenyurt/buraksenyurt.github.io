@@ -21,15 +21,15 @@ Ado.Net Entity Framework 4.0 öncesindeki sürümde SQL tarafında In anahtar ke
 
 ```csharp
 string[] cityNames = { "Berlin", "Paris" };
-                var result =
-                    from customer in entites.Customer
-                    where cityNames.Contains(customer.City)
-                    select customer;
+var result =
+    from customer in entites.Customer
+    where cityNames.Contains(customer.City)
+    select customer;
 
-                foreach (var r in result)
-                {
-                    Console.WriteLine("{0} {1} {2}", r.Email, r.FirstName, r.LastName);
-                }
+foreach (var r in result)
+{
+    Console.WriteLine("{0} {1} {2}", r.Email, r.FirstName, r.LastName);
+}
 ```
 
 ### Önceki Versiyon - SQL Sorgusu
@@ -42,15 +42,15 @@ Bir SQL sorgusu yürütülememektedir nitekim çalışma zamanında aşağıdaki
 
 ```csharp
 string[] cityNames = { "Berlin", "Paris" };
-                var result =
-                    from customer in entites.Customers
-                    where cityNames.Contains(customer.City)
-                    select customer;
+var result =
+    from customer in entites.Customers
+    where cityNames.Contains(customer.City)
+    select customer;
 
-                foreach (var r in result)
-                {
-                    Console.WriteLine("{0} {1} {2}", r.Email, r.FirstName, r.LastName);
-                }
+foreach (var r in result)
+{
+    Console.WriteLine("{0} {1} {2}", r.Email, r.FirstName, r.LastName);
+}
 ```
 
 ### 4.0 - SQL Sorgusu
@@ -93,10 +93,10 @@ var result =
         Min = trackGrp.Min<Track>(t => t.UnitPrice)
     };
 
-                foreach (var r in result)
-                {
-                    Console.WriteLine(r.ToString());
-                }
+    foreach (var r in result)
+    {
+        Console.WriteLine(r.ToString());
+    }
 ```
 
 ### Önceki Versiyon - SQL Sorgusu
@@ -135,10 +135,10 @@ var result =
         Min = trackGrp.Min<Track>(t => t.UnitPrice)
     };
 
-                foreach (var r in result)
-                {
-                    Console.WriteLine(r.ToString());
-                }
+    foreach (var r in result)
+    {
+        Console.WriteLine(r.ToString());
+    }
 ```
 
 ### 4.0 - SQL Sorgusu
@@ -178,10 +178,10 @@ var result =
         ArtistName = artist.Name,
         AlbumTitle = album.Title
     };
-                foreach (var r in result)
-                {
-                    Console.WriteLine(r.ToString());
-                }
+    foreach (var r in result)
+    {
+        Console.WriteLine(r.ToString());
+    }
 ```
 
 ### Önceki Versiyon - SQL Sorgusu
@@ -209,10 +209,10 @@ var result =
         AlbumTitle = album.Title
     };
 
-                foreach (var r in result)
-                {
-                    Console.WriteLine(r.ToString());
-                }
+    foreach (var r in result)
+    {
+        Console.WriteLine(r.ToString());
+    }
 ```
 
 ### 4.0 - SQL Sorgusu
@@ -236,10 +236,10 @@ Aşağıdaki LINQ sorgusuna göre artistlerin tersten sıralanan adlar listesi i
 var result = (from artist in entites.Artist
     orderby artist.Name descending
     select artist.Name).Skip(10);
-                foreach (var r in result)
-                {
-                    Console.WriteLine(r);
-                }
+    foreach (var r in result)
+    {
+        Console.WriteLine(r);
+    }
 ```
 
 ### Önceki Versiyon - SQL Sorgusu
@@ -261,10 +261,10 @@ var result = (from artist in entites.Artists
     orderby artist.Name descending
     select artist.Name).Skip(10);
 
-                foreach (var r in result)
-                {
-                    Console.WriteLine(r);
-                }
+    foreach (var r in result)
+    {
+        Console.WriteLine(r);
+    }
 ```
 
 ### 4.0 - SQL Sorgusu

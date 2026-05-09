@@ -26,11 +26,13 @@ class Employee
 
 Employee sınıfı ile bir şirketin belirli organizasyonel pozisyonlarını ifade etmek istediğimizi düşünebiliriz. İçeriğinde yer alan Parent ve Child isimli özellikler dikkat edileceği üzere Employee tipindendir. Buna göre bir Employee nesne örneğinin altına ve üstüne başka bir Employee referansının atanması mümkündür. Dolayısıyla bir ağaç yapısının kolayca oluşturulması mümkündür. Elbetteki sembolik olarak. Söz gelimi;
 
+```text
 Director
 --->Project Manager
 ------>Technical Project Manager
 --------->Senior Developer
 ------------>Junior Developer
+```
 
 gibi.
 
@@ -120,8 +122,8 @@ Iterate isimli metod yield return kullanarak IEnumerable tipinden bir sonuç kü
 
 ```csharp
 Parallel.ForEach<Employee>(
-   Iterate(root),
-   emp => Console.WriteLine("{0} {1}", emp.Profession, emp.Name)
+    Iterate(root),
+    emp => Console.WriteLine("{0} {1}", emp.Profession, emp.Name)
 );
 ```
 

@@ -15,7 +15,7 @@ Aslında film sanayisinin ne kadar çok geliştiğini ispat eden bir dizidir. Ni
 
 Gelelim bu dizinin bu yazımızdaki konuyla ilgisinin ne olduğuna. Her zamanki gibi önce güzel bir giriş yapalım istedim. Ama asıl mesele C# tarafında da bazı efsanelerin olabileceği. Üstelik bunların çoğundan habersisiz. Ancak Internet üzerinde siz de benim gibi yeteri kadar araştırma yaparsanız bu konulara ilişkin son derece güzel yazıların olduğunu keşfedebilirsiniz. Ben bu yazımızda değişken atamaları ile ilişkili bir konuyu incelemeye çalışacağım. Olayın çıkış noktası ise aşağıdaki kod parçamız olacak.
 
-Vaka 1;
+**Vaka 1;**
 
 ```csharp
 using System;
@@ -46,7 +46,7 @@ x = (y = (z = Math.PI));
 
 Nitekim parantezlerin olaya kattığı her hangibir öncelik bulunmamaktadır. Fakat aşağıdaki kod parçasını göz önüne aldığımızda eşitliğin en sağ tarafındaki değerden başlayarak en soldaki değişkene doğru yapılan atamaların her zaman sanıldığı gibi olmadığı izlenimine varmamız söz konusudur.
 
-Vaka 2;
+**Vaka 2;**
 
 ```csharp
 using System;
@@ -79,7 +79,7 @@ Eşitliğin en sağında yer alan z isimli değişken aslında float tipinden ta
 
 Ekran çıktısına dikkat edilecek olursa, x değişkeni gelen değeri float tipi yerine double tipi olarak ele almıştır. Yani x=y=z atamasında en soldaki x değişkeninin tipi y'nin tipine göre belirlenmektedir. Bu durumda eşitliğin en sağındaki değişkenin tipinin en soldaki object tipine taşınmasında bir anlamda bozulma olduğunu düşünebiliriz. Konuyu biraz daha ileri götürelim ve bu kez aşağıdaki kod parçasını göz önüne alalım.
 
-Vaka 3;
+**Vaka 3;**
 
 ```csharp
 using System;
@@ -119,11 +119,10 @@ Normal şartlarda düşündüğümüzde burak.Name için geriye null değer dön
 
 ![blg149_Runtime3.gif](/assets/images/2010/blg149_Runtime3.gif)
 
-Oda ne?
+**O da ne?**
 
 burak.Name== null için False değer dönmüştür ve bu beklediğimiz sonuçtur. Ancak name==null kontrolünün değeri true olarak gelmiştir. Oysaki atamaya göre name değişkenine "" değerinin gelmesi ve bu nedenle null olmaması gerekmektedir. İlginç değil mi?
 
 Sonuç olarak bu yazıda bahsettiğimiz şekliyle gerçekleştirilen atamalarda, eşitliğin en sağındaki değerin sola doğru taşındığı efsanesinin tam olarak doğru olmadığı ispatlanmış bulunmaktadır. Nitekim ilk vakada eşitliğin en sağından soluna aynı değer başarılı bir şekilde atanmaktadır. Ancak ikinci vakaya göre aslında en soldaki değişkenin bir sağındakinin tipine büründüğü de görülmektedir. Üstelik Vaka 3' e göre en soldaki değişken en sağdan atanan değere bürünmüş ve bir sağındakini kaale bile almamıştır...Kafanız karıştı mı? Bakalım başka ne gibi efsaneler var. İlerleyen yazılarda değinmeye çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AssignMyth_RC.rar (20,03 kb)](/assets/files/2010/AssignMyth_RC.rar)
-

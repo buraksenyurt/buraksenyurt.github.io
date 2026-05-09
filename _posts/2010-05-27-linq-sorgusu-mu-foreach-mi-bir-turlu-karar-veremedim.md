@@ -15,7 +15,7 @@ Bilim Kurgu fanatiklerinin kafasında her zaman hayranı oldukları filmlerden k
 
 Bizde yazılımcılar olarak bazen karar verirken tabir yerinde ise sürüncemede kalabiliriz. Böyle durumlarda ufak tefek gözüken noktaların aslında çok büyük riskler taşıdığını da düşünmemiz gerekmektedir. Çünkü karar vermek için basit bir kaç test kodu çok işimize yarayacaktır. İşte bu yazımızda böyle bir konuya değiniyor olacağız.
 
-Aslında konunun çıkış noktası [Microsoft Teknoloji Günleri Akşam Sınıfındaki](Microsoft Teknoloji Günleri Akşam Sınıfında Buluşalım.md)bir meslektaşımın sorusu oldu. Değerli meslektaşım uygulama kodunda koleksiyon bazlı sorgulamaları gerçekleştirirken pek çok vakada foreach döngülerini tercih ettiğini söyledi. Tabi her durumda değil. Bende bu noktada aynı amaca hizmet eden bir LINQ sorgusu ile ForEach çalışması arasındaki performans farklılıklarını irdelemeye karar verdim. Nitekim performans her zaman için karar vermeden önem arz eden kriterlerden birisidir. Anlayacağınız basit bir test ve sonuçlarını irdeliyor olacağız bu kısa yazımızda.
+Aslında konunun çıkış noktası Microsoft Teknoloji Günleri Akşam Sınıfındaki bir meslektaşımın sorusu oldu. Değerli meslektaşım uygulama kodunda koleksiyon bazlı sorgulamaları gerçekleştirirken pek çok vakada foreach döngülerini tercih ettiğini söyledi. Tabi her durumda değil. Bende bu noktada aynı amaca hizmet eden bir LINQ sorgusu ile ForEach çalışması arasındaki performans farklılıklarını irdelemeye karar verdim. Nitekim performans her zaman için karar vermeden önem arz eden kriterlerden birisidir. Anlayacağınız basit bir test ve sonuçlarını irdeliyor olacağız bu kısa yazımızda.
 
 Örnek uygulamamızda Enumerable.Range metodu yardımıyla elde edilen bir int sayı dizisi içerisinde 2 ile tam bölünebilen sayıların adedini hesap ettirmekteyiz. Tahmin edeceğiniz üzere bu tip bir işlemi LINQ sorgusu yardımıyla anlamlı bir kod ifadesi ile yerine getirebiliriz. Ayrıca bunu bir foreach döngüsü ile de gerçekleştirebiliriz. İşte test kodlarımız.
 
@@ -28,50 +28,50 @@ using System.Diagnostics;
 
 namespace LINQForEachPerformance
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            for (int i = 1; i < 10; i++)
-            {
-                IEnumerable<int> range = Enumerable.Range(i,(i+1)*10000000);
-                WithLinq(range);
-                WithForeach(range);
-            }
-            
-        }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i < 10; i++)
+            {
+                IEnumerable<int> range = Enumerable.Range(i, (i + 1) * 10000000);
+                WithLinq(range);
+                WithForeach(range);
+            }
 
-        static void WithLinq(IEnumerable<int> range)
-        {
-            Stopwatch sWatch = new Stopwatch();
-            sWatch.Start();
+        }
 
-            int count = (from i in range
-                         where i % 2 == 0
-                         select i).Count<int>();
-            Console.WriteLine(count.ToString());
+        static void WithLinq(IEnumerable<int> range)
+        {
+            Stopwatch sWatch = new Stopwatch();
+            sWatch.Start();
 
-            sWatch.Stop();
-            Console.WriteLine("LINQ Total Time : {0}",sWatch.ElapsedMilliseconds.ToString());
-        }
+            int count = (from i in range
+                         where i % 2 == 0
+                         select i).Count<int>();
+            Console.WriteLine(count.ToString());
 
-        static void WithForeach(IEnumerable<int> range)
-        {
-            Stopwatch sWatch = new Stopwatch();
-            sWatch.Start();
+            sWatch.Stop();
+            Console.WriteLine("LINQ Total Time : {0}", sWatch.ElapsedMilliseconds.ToString());
+        }
 
-            int count = 0;
-            foreach (int i in range)
-            {
-                if (i % 2 == 0)
-                    count++;
-            }
-            Console.WriteLine("{0}",count.ToString());
+        static void WithForeach(IEnumerable<int> range)
+        {
+            Stopwatch sWatch = new Stopwatch();
+            sWatch.Start();
 
-            sWatch.Stop();
-            Console.WriteLine("ForEach Total Time : {0}", sWatch.ElapsedMilliseconds.ToString());
-        }
-    }
+            int count = 0;
+            foreach (int i in range)
+            {
+                if (i % 2 == 0)
+                    count++;
+            }
+            Console.WriteLine("{0}", count.ToString());
+
+            sWatch.Stop();
+            Console.WriteLine("ForEach Total Time : {0}", sWatch.ElapsedMilliseconds.ToString());
+        }
+    }
 }
 ```
 

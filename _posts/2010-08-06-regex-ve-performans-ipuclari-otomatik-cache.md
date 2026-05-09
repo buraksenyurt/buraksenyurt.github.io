@@ -11,20 +11,18 @@ categories:
 
 ![blg221_Giris](/assets/images/2010/blg221_Giris.jpg)
 
-Gece çökmesine ve balkonda oturmama rağmen ne yazık ki yapraklar bile sıcak dolayısıyla kendinden geçmiş durumda ve bu nedenle sallanmak dahi istemiyorlar. Hal böyle olunca serinletici esintilerinde tatile çıktıklarını ifade edebilirim.
-
-Acaba tüm bu yaşadıklarımız, garip olan bu yaz mevsimi, yağmurlarla geçen günler ve aşırı sıcaklar gerçekten de Küresel Isınmanın sonuçların mı? Bu konuda dünyadaki 6 derecelik bir ısı değişiminin sonuçlarını anlatan bir kitap okumuştum aslında ([6 Derece](http://www.ntvyayinlari.com/tanim.asp?sid=SWBUBQIYKD1DPH7YQ3A8)) Merak edenlere tavsiye ederim.
+Gece çökmesine ve balkonda oturmama rağmen ne yazık ki yapraklar bile sıcak dolayısıyla kendinden geçmiş durumda ve bu nedenle sallanmak dahi istemiyorlar. Hal böyle olunca serinletici esintilerinde tatile çıktıklarını ifade edebilirim. Acaba tüm bu yaşadıklarımız, garip olan bu yaz mevsimi, yağmurlarla geçen günler ve aşırı sıcaklar gerçekten de Küresel Isınmanın sonuçların mı? Bu konuda dünyadaki 6 derecelik bir ısı değişiminin sonuçlarını anlatan bir kitap okumuştum aslında. Merak edenlere tavsiye ederim.
 
 Neyse. Dilerseniz biz konumuza geri dönelim. Bu yazımızda belki de tek satırlık bir kod parçasının önemine değiniyor olacağız. Ancak sonuçları irdelediğimizde bunun ne kadar önemli bir fark yarattığına da şahit olacağız. Konumuz Regex tipinin kullanımına dair ip uçlarından birisi olan otomatik ön bellekleme işlemini ele almakta.
 
 Aslında Regular Expression terimini ağırlıklı olarak Asp.Net Web uygulamalarından tanımaktayız. Bu anlamda özellikle RegularExpressionValidator web kontrolünden yararlanarak, girilen verinin doğrulanması için bazı desenleri kullanabiliyoruz. Bilindiği üzere bu doğrulama işlemleri Javascript ile istemci tarafında ve her ihtimale karşın sunucu tarafında da uygulanmakta (İstemcinin javascript çalıştırmama olasılığına karşın). Tabi işin güzel yanı Regex ifadelerinin aslında dilden bağımsız olmaları. RegularExpressionValidator kontrolünün ValidationExpression özelliğinde yer alan desenlerden bazılarını aşağıda bulabilirsiniz.
 
-- Internet Email Adres Deseni \w+([-+.']\w+) *@\w+([-.]\w+)* \.\w+([-.]\w+)*
-- Internet URL Deseni http (s)?://([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?
-- US Phone Number ((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}
-- US Social Security Number \d{3}-\d{2}-\d{4}
-- US Zip Code \d{5}(-\d{4})?
-- German Phone Number ((\(0\d\d\) |(\(0\d{3}\))?\d)?\d\d \d\d \d\d|\(0\d{4}\) \d \d\d-\d\d?)
+- Internet Email Adres Deseni `\w+([-+.']\w+) *@\w+([-.]\w+)* \.\w+([-.]\w+)*`
+- Internet URL Deseni `http (s)?://([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?`
+- US Phone Number `((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}`
+- US Social Security Number `\d{3}-\d{2}-\d{4}`
+- US Zip Code `\d{5}(-\d{4})?`
+- German Phone Number `((\(0\d\d\) |(\(0\d{3}\))?\d)?\d\d \d\d \d\d|\(0\d{4}\) \d \d\d-\d\d?)`
 
 Bu desenler yardımıyla kullanıcıların girmiş olduğu verilerin geçerli bir elektronik posta/url adresi, telefon numarası, posta kodu, sosyal güvenlik bilgisi olup olmadığı kolaylıkla kontrol edilebilmekte. Tabi dilersek özel Regex ifadeleri de oluşturabiliriz.
 

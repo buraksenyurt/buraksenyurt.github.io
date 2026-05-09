@@ -20,11 +20,11 @@ Tabi bu tip dosyaların en büyük özelliği de veri taşımak amacıyla satır
 
 ![blg199_TextContent_.gif](/assets/images/2010/blg199_TextContent_.gif)
 
-Burada birbirleriyle | işaretleri şeklinde ayrılmış sütunlar söz konusudur. Toplam 4 satırdan oluşan veri içeriğini programatik ortamda da okumak son derece kolaydır. Bunun için, kolaya kaçan geliştiriciler.Net Framework 2.0 ile birlikte File sınıfına eklenmiş static ReadAllLines metodunu kullanır. Aşağıdaki kod parçasında görüldüğü gibi.
+Burada birbirleriyle `|` işaretleri şeklinde ayrılmış sütunlar söz konusudur. Toplam 4 satırdan oluşan veri içeriğini programatik ortamda da okumak son derece kolaydır. Bunun için, kolaya kaçan geliştiriciler.Net Framework 2.0 ile birlikte File sınıfına eklenmiş static ReadAllLines metodunu kullanır. Aşağıdaki kod parçasında görüldüğü gibi.
 
 ![blg199_ReadAllLines_.gif](/assets/images/2010/blg199_ReadAllLines_.gif)
 
-ReadAllLines metodu parametre olarak dosya adresini almakta ve içeriğinde tüm satırları string tipinden bir diziye aktarmaktadır. Debug çıktısında, string dizisine aktarılan içerik net bir şekilde görülebilir. Tabi bu adımdan sonra elde edilen string[] dizisi üzerinde dolaşılıp | işaretlerine göre ayrıştırma yapılarak sütunlara da kolayca erişilebilir. Ancak önemli bir sorun da vardır?
+ReadAllLines metodu parametre olarak dosya adresini almakta ve içeriğinde tüm satırları string tipinden bir diziye aktarmaktadır. Debug çıktısında, string dizisine aktarılan içerik net bir şekilde görülebilir. Tabi bu adımdan sonra elde edilen string[] dizisi üzerinde dolaşılıp `|` işaretlerine göre ayrıştırma yapılarak sütunlara da kolayca erişilebilir. Ancak önemli bir sorun da vardır?
 
 Boyutu çok yüksek olan bir dosyanın ReadAllLines metodu yardımıyla okunmasının sakıncıları var mıdır?
 
