@@ -149,10 +149,27 @@ TAG_RULES = [
   ['game-dev', [/\boyun\b/i, /game dev/i, /flappy bird/i, /dungeon crawl/i, /pack-man/i]]
 ].freeze
 
+TURKISH_CHAR_MAP = {
+  'ç' => 'c',
+  'Ç' => 'C',
+  'ğ' => 'g',
+  'Ğ' => 'G',
+  'ı' => 'i',
+  'İ' => 'I',
+  'ö' => 'o',
+  'Ö' => 'O',
+  'ş' => 's',
+  'Ş' => 'S',
+  'ü' => 'u',
+  'Ü' => 'U'
+}.freeze
+
 def normalize_key(value)
   value.to_s.encode('UTF-8', invalid: :replace, undef: :replace, replace: '')
+       .gsub(/[çÇğĞıİöÖşŞüÜ]/, TURKISH_CHAR_MAP)
+       .unicode_normalize(:nfkd)
+       .encode('ASCII', invalid: :replace, undef: :replace, replace: '')
        .downcase
-       .tr('çğıöşü', 'cgiosu')
        .gsub(/[^a-z0-9.+#\s-]/, ' ')
        .gsub(/\s+/, ' ')
        .strip

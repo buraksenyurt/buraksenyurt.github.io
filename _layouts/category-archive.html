@@ -2,7 +2,10 @@
 layout: default
 ---
 
-{%- assign taxonomy_posts = site.data.inferred_taxonomy.categories[page.category_name] | default: empty -%}
+{%- assign taxonomy_posts = site.data.inferred_taxonomy.categories[page.category_name] -%}
+{%- if taxonomy_posts == nil or taxonomy_posts == empty -%}
+  {%- assign taxonomy_posts = site.posts | where_exp: 'post', 'post.categories contains page.category_name' -%}
+{%- endif -%}
 {%- assign per_page = site.paginate | default: 20 -%}
 {%- assign current_page = page.page_number | default: 1 -%}
 {%- assign total_pages = page.total_pages | default: 1 -%}
