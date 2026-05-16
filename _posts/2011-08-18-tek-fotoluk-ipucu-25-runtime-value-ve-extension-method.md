@@ -15,4 +15,3 @@ categories:
 ![PhotoTrick25New.png](/assets/images/2011/PhotoTrick25New.png)
 
 [RuntimeValues.rar (23,48 kb)](/assets/files/2011/RuntimeValues.rar)
-

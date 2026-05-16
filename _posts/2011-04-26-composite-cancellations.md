@@ -16,7 +16,6 @@ Hatırlayacağınız üzere bir önceki yazımızda ([Task İptal İşlemlerinin
 
 ![blg205_Giris](/assets/images/2011/blg205_Giris.jpg)
 
-
 Bildiğiniz üzere Task iptal taleplerinde, CancellationTokenSource örneğine ait Cancel metodunun çağırılması gerekmektedir. CancellationTokenSource örneği üzerinden yapılan iptal taleplerinin hangi Task işleyişini keseceğinin belirlenmesinde ise CancellationToken örneklerinden yararlanılmaktadır. CancellationToken örnekleri hatırlayacağını üzere CancellationTokenSource örnekleri tarafından üretilmekte ve Task’ ler ile ilişkilendirilmektedir. Bu sebepten Cancel metodunun hangi Task ile ilişkili olduğu bellidir. Bir önceki yazımızda geliştirdiğimiz son örnekte aynı Token örneğini kullanan birden fazla Task’ in tek bir iptal çağrısı ile nasıl kesilebileceğini incelemiştik. Bir diğer durum da şudur;
 
 > Birden fazla CancellationTokenSource birbirlerine bağlanarak bir zincir oluşturulabilir ve bunlardan herhangibiri üzerinden Cancel işleminin yapılması, zincirdeki tüm source’ lar için de aynı talebin gerçekleştirilmesi anlamına gelmektedir.

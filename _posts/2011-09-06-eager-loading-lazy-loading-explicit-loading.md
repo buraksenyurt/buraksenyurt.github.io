@@ -10,13 +10,9 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Şöyle basit tek bir Main metodu içerisinde, Entity Framework'teki Loading çeşitlerini görmek ister miydiniz?
+Şöyle basit tek bir Main metodu içerisinde, Entity Framework'teki Loading çeşitlerini görmek ister miydiniz? Öyleyse aşağıdaki kod bloğu oldukça işinize yarayacaktır diye düşünüyorum. Senaryolar oldukça basit. Meşhur Chinook veritabanında yer alan Artist ve buna bağlı Album tablolarını ele alıyoruz.
 
-Öyleyse aşağıdaki kod bloğu oldukça işinize yarayacaktır diye düşünüyorum. Senaryolar oldukça basit. Meşhur Chinook veritabanında yer alan Artist ve buna bağlı Album tablolarını ele alıyoruz.
-
-Eager Loading Senaryosunda Artistler ve bunlara bağlı olan tüm Albumlerin Sub Select içeren bir Select sorgusunda tek seferde yüklendiğine şahit olmaktayız.
-
-Varsayılan olarak açık olan Lazy Loading senaryosunda ise 1 numaralı Artist ve buna bağlı Albümler çekiliyor. Dikkat edilmesi gereken artiste bağlı albümlerin sorgulandığı anda arka planda bir SQL sorgusu ile bağlı veri kümesinin çekiliyor olması. Yani lazım olduğunda.
+Eager Loading Senaryosunda Artistler ve bunlara bağlı olan tüm Albumlerin Sub Select içeren bir Select sorgusunda tek seferde yüklendiğine şahit olmaktayız. Varsayılan olarak açık olan Lazy Loading senaryosunda ise 1 numaralı Artist ve buna bağlı Albümler çekiliyor. Dikkat edilmesi gereken artiste bağlı albümlerin sorgulandığı anda arka planda bir SQL sorgusu ile bağlı veri kümesinin çekiliyor olması. Yani lazım olduğunda.
 
 Son olarak Explicit Loading senaryosunda ise Lazy Loading'deki davranış biçiminin kodlamacı tarafında açık bir şekilde yapılması durumuna şahit oluyoruz. Biz Load metodunu çağırmadığımız sürece bağlı veri kümesi yüklenmiyor.
 
@@ -174,4 +170,3 @@ namespace ConsoleApplication5
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Chinook veritabanını [bu adresten](http://chinookdatabase.codeplex.com/) indirebilirsiniz.
-

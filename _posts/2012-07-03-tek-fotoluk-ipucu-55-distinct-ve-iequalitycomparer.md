@@ -15,5 +15,4 @@ Diyelim ki elinizde kendi tipinize ait generic bir liste ve bu liste içerisinde
 
 ![tfi56.png](/assets/images/2012/tfi56.png)
 
-Bir diğer ipucunda görüşmek dileğiyle
-
+Bir diğer ipucunda görüşmek dileğiyle.

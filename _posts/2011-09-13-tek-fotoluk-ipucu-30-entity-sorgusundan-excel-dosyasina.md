@@ -17,4 +17,3 @@ categories:
 ![PhotoTrick30](/assets/images/2011/PhotoTrick30.png)
 
 [EntityToExcel.rar (57,44 kb)](/assets/files/2011/EntityToExcel.rar)
-

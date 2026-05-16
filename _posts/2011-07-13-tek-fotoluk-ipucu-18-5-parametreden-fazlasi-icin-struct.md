@@ -16,4 +16,3 @@ categories:
 ![PhotoTrick18](/assets/images/2011/PhotoTrick18.png)
 
 [StructForParameters.rar (22,91 kb)](/assets/files/2011/StructForParameters.rar)
-

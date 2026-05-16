@@ -280,11 +280,11 @@ Artık bileşenimizi deneyebiliriz demek isterdim ama son olarak yapmamız gerek
 
 Artık basit bir Workflow üzerinden bileşenimizi deneyebiliriz. Bileşenimiz otomatik olarak Toolbox sekmesinde görünecektir. İşte Visual Studio 2010 çalışma ortamına ait bir kaç örnek görüntü.
 
-Sum metodu seçildiğinde
+Sum metodu seçildiğinde,
 
 ![wda_4.png](/assets/images/2012/wda_4.png)
 
-CallSp metodu seçildiğinde
+CallSp metodu seçildiğinde,
 
 ![wda_5.png](/assets/images/2012/wda_5.png)
 
@@ -385,24 +385,29 @@ Buna göre ComboBox kontrolünde bir Metod adı seçilirse bu Properties pencere
 
 ```xml
 <DataTemplate x:Key="Expanded">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		<TextBlock Text="Metodlar" Grid.Row="0"/>
-		<ComboBox x:Name="cmbInstanceMethods" Grid.Row="1" ItemsSource="{Binding Source={StaticResource dsInstanceMethods}}" DisplayMemberPath="Name" IsSynchronizedWithCurrentItem="True" SelectedValue="{Binding Path=ModelItem.MethodName, Mode=TwoWay, Converter={StaticResource MethodToMethodNameConverter}}" />
-		<TextBlock Text="Metod Parametreleri" Grid.Row="2"/>
-		<DataGrid x:Name="grdMethodParameters" Grid.Row="3" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Source={StaticResource dsInstanceMethods}, Path=Parameters}"/>
-		<Button x:Name="btnCatchParameters" Click="btnCatchParameters_Click" Content="Parametreleri Çek" Grid.Row="4">
-		</Button>
-	</Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Metodlar" Grid.Row="0" />
+        <ComboBox x:Name="cmbInstanceMethods" Grid.Row="1"
+            ItemsSource="{Binding Source={StaticResource dsInstanceMethods}}"
+            DisplayMemberPath="Name" IsSynchronizedWithCurrentItem="True"
+            SelectedValue="{Binding Path=ModelItem.MethodName, Mode=TwoWay, Converter={StaticResource MethodToMethodNameConverter}}" />
+        <TextBlock Text="Metod Parametreleri" Grid.Row="2" />
+        <DataGrid x:Name="grdMethodParameters" Grid.Row="3" IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding Source={StaticResource dsInstanceMethods}, Path=Parameters}" />
+        <Button x:Name="btnCatchParameters" Click="btnCatchParameters_Click"
+            Content="Parametreleri Çek" Grid.Row="4">
+        </Button>
+    </Grid>
 </DataTemplate>
 ```
 
@@ -435,4 +440,3 @@ Olay metodu içerisindeki felsefe oldukça basittir. Button kontrolü aslında b
 Görüldüğü üzere Custom Activity geliştirmek kolay olsa da, bu bileşeni Designer desteğine sahip olacak şekilde genişletmek bir kaç ipucu içeren ve dikkat edilmesi gereken bir süreci gerektirmektedir. Geliştirmiş olduğumuz örnekte bazı eksik kısımlar da bulunmaktadır. Örneğin XAML tarafında dekleratif olarak Event bazlı etkileşimler çok fazla ele alınmamıştır.(Bir veritabanı bağlantısını seçtiren ve hatta design tarafında bir SQL sorgusunu çalıştırtıp sonuçları bir DataGrid kontrolüne basan bir Activity Designer yazmaya çalıştığınızı hayal edin. Üstelik Connection'ı tanımladığınızda Test'de edebilmelisiniz vs) Bu konuda detaylı ve derinlemesine araştırmalarıma devam ediyorum. Yeni bilgiler edindikçe sizinle paylaşmaya gayret ediyor olacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WritingDesignerActivityV2.zip (155,91 kb)](/assets/files/2012/WritingDesignerActivityV2.zip)
-

@@ -17,7 +17,6 @@ Herkesin kendine has bir parmak izi vardır. DNA gibi benzersizdir. Her ne kadar
 
 ![910898_who_am_i_](/assets/images/2012/910898_who_am_i_.jpg)
 
-
 Parmak izinin sahibi, sistem içerisinde yaptığı hareketliliklere ait pek çok bilgi bırakır geriye. Ne zaman gelmiş, nerede durmuş, hangi eşyayı tutmuş, kaç saat çalışmış, bilgisayarını ne zaman açmış vs…Bu tip bilgiler bazı senaryolarda çok kritiktir ve önemli anlamlar ifade etmektedir.
 
 Ancak izlenen sadece parmak izi sahip insanlar değildir. Zaman zaman sistemlerin ve onun parçası olan aktörlerin de (cihazlar veritabanları, uygulamalar örneğin) takip edilmesi ve toplanan bilgilerden yola çıkılarak, ya oluşan hataların giderilmesi ya da gelecek için gerekli yönün nasıl olacağına karar verilmesi aşamalarında da bilgi toplamak önem kazanır. Gelelim bu geniş evrenden bizim dünyamıza. Yani yazılıma.
@@ -54,7 +53,7 @@ Tabi unutulmaması gereken bir husus da, her yerde her şeyi ve her zaman için 
 
 Log4Net ürününü indirdiğimizde beraberinde oldukça büyük bir XML konfigurasyon dosyası da gelmektedir. Bu dosya içerisinde, yapılacak konfigurasyon ayarlarına ait tüm detaylı bilgiler yer alır. Log4Net’ de diğer pek çok loglama aracında olduğu gibi, loglanacak bilgilnin seviyelendirilmesini önerir. Bu anlamda Fatal, Error, Warn, Info, Debug, All ve Off gibi çeşitli seviyeler sunar. Konfigurasyon dosyasını oluşturmak son derece kolaydır. Örneğin aşağıdaki konfigurasyon içeriğinde veritabanına log mesajı yazacak şekilde yapılmış ayarlamalar vardır.
 
-```csharp
+```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
   <configSections> 

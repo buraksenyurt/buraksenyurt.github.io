@@ -17,4 +17,4 @@ Ne yaparsınız? Bir Recursive metod ile bunu çözebilir misiniz? Hatta bunu bi
 
 ![tfi55.png](/assets/images/2012/tfi55.png)
 
-Bir sonraki ipucunda görüşmek dileğiyle
+Bir sonraki ipucunda görüşmek dileğiyle.

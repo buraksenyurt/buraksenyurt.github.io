@@ -135,14 +135,14 @@ namespace Kernel
             { 
                 exception = Poke(source.Address); 
                 SourceHistory history = new SourceHistory 
-                                            { 
-                                                ServiceId=source.SourceId, 
-                                                CheckDate=DateTime.Now, 
-                                                CurrentServiceState = exception!=null?ServiceState.Dead:ServiceState.Live, 
-                                                Exception=exception, 
-                                                Source = source, 
-                                                SourceHistoryId = Guid.NewGuid() 
-                                            }; 
+                { 
+                    ServiceId=source.SourceId, 
+                    CheckDate=DateTime.Now, 
+                    CurrentServiceState = exception!=null?ServiceState.Dead:ServiceState.Live, 
+                    Exception=exception, 
+                    Source = source, 
+                    SourceHistoryId = Guid.NewGuid() 
+                }; 
                 result.Add(source,history); 
             }
 
@@ -163,24 +163,24 @@ public void GetReportTestOk()
 { 
     Analyst target = new Analyst(); 
     target.Sources = new List<Source> 
-                        { 
-                             new Source 
-                                 { 
-                                     Address = "http://www.yok.com/yok.svc", 
-                                     Histories = null, 
-                                     ServiceName = "Yok Servisi", 
-                                     ServiceType = ServiceType.WcfService, 
-                                     SourceId = 1 
-                                 }, 
-                             new Source 
-                                 { 
-                                     Address = "http://www.w3schools.com/webservices/tempconvert.asmx", 
-                                     Histories = null, 
-                                     ServiceName = "Temp Convert", 
-                                     ServiceType = ServiceType.XmlWebService, 
-                                     SourceId = 2 
-                                 } 
-                         }; 
+    { 
+            new Source 
+                { 
+                    Address = "http://www.yok.com/yok.svc", 
+                    Histories = null, 
+                    ServiceName = "Yok Servisi", 
+                    ServiceType = ServiceType.WcfService, 
+                    SourceId = 1 
+                }, 
+            new Source 
+                { 
+                    Address = "http://www.w3schools.com/webservices/tempconvert.asmx", 
+                    Histories = null, 
+                    ServiceName = "Temp Convert", 
+                    ServiceType = ServiceType.XmlWebService, 
+                    SourceId = 2 
+                } 
+    }; 
     Dictionary<Source, SourceHistory> actual; 
     actual = target.GetReport(); 
     Assert.AreEqual(target.Sources.Count, actual.Keys.Count); 
@@ -239,14 +239,14 @@ public void GetReportTestOk()
         );
 
     target.AddSource(new Source 
-                         { 
-                             Address = "ftp://www.w3schools.com/webservices/tempconvert.asmx", 
-                             Histories = null, 
-                             ServiceName = "Temp Convert", 
-                             ServiceType = ServiceType.XmlWebService, 
-                             SourceId = 2 
-                         } 
-        ); 
+        { 
+            Address = "ftp://www.w3schools.com/webservices/tempconvert.asmx", 
+            Histories = null, 
+            ServiceName = "Temp Convert", 
+            ServiceType = ServiceType.XmlWebService, 
+            SourceId = 2 
+        } 
+    ); 
     Dictionary<Source, SourceHistory> actual; 
     actual = target.GetReport(); 
     Assert.AreNotEqual(0, actual.Keys.Count); 
@@ -340,13 +340,13 @@ namespace Monitor
         private void timer1_Tick(object sender, EventArgs e) 
         { 
             var report = jackRyan.GetReport().Select((s, h) => new 
-                                                                  { 
-                                                                       s.Key.ServiceName 
-                                                                      ,s.Key.Address 
-                                                                       ,s.Value.CheckDate 
-                                                                       ,s.Value.CurrentServiceState 
-                                                                       ,s.Value.Exception 
-                                                                   }).ToList(); 
+                        { 
+                            s.Key.ServiceName 
+                            ,s.Key.Address 
+                            ,s.Value.CheckDate 
+                            ,s.Value.CurrentServiceState 
+                            ,s.Value.Exception 
+                        }).ToList(); 
             grdReport.DataSource = report; 
         } 
     } 

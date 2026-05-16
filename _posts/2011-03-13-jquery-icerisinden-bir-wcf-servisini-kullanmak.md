@@ -8,11 +8,7 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır.
-
-![blg234_Giris](/assets/images/2011/blg234_Giris.jpg)
-
-Güneş batmış ve hava çoktan kararmıştır. Müşterileri çoğunlukla buluşmalara geç kalır. Aslında çevrede oturanları gizlice gözlemlediğinde onlardan birisinin kalkıp yanına geleceğini ve kendisini müşterisi olarak tanıtacağını gayet iyi bilmektedir. Bir açıdan müşterilerinin aslında kendinden önce geldiğini ama tedrigin oldukları için yaklaşmakta zorlandıklarını bilmektedir. Daha önce bu çok sık başına gelmiştir.
+Kahramanımız Netspecter Malezyadaki müşterisi ile buluşmak üzere café’ de beklerken, detektiflik işine girdiğinden beri en çok sevdiği içecek olan Java Chip Chocolate’ ını keyifli bir şekilde yudumlamaktadır. Güneş batmış ve hava çoktan kararmıştır. Müşterileri çoğunlukla buluşmalara geç kalır. Aslında çevrede oturanları gizlice gözlemlediğinde onlardan birisinin kalkıp yanına geleceğini ve kendisini müşterisi olarak tanıtacağını gayet iyi bilmektedir. Bir açıdan müşterilerinin aslında kendinden önce geldiğini ama tedrigin oldukları için yaklaşmakta zorlandıklarını bilmektedir. Daha önce bu çok sık başına gelmiştir.
 
 Masadaki metal peçetelikten arkasına doğru baktığında çok fazla dikkat çekmeyen ama müşterisi olabilecek bir kişinin oturduğunu uzun süre önce fark etmiştir. Cam kapıdaki yansımadan okumakta olduğu gazeteye tersten baktığı anlaşılmaktadır. Derken tahmin ettiği gibi olur…Adam ayağa kalkar ve masasına doğru yavaş ve tedirgin adımlarla yürür. Netspecter sakin bir şekilde Java Chip Chocolate’ inden bir yudum daha alır. Elini pardesüsünün cebine götürür ve en gelişmiş silahı 38lik Obfuscator’ unu hazırlar. Derken adam karşısına gelir ve….
 
@@ -77,7 +73,7 @@ Dilerseniz Default.aspx sayfamızı geliştirerek ilerlemeye çalışalım. İlk
 
 ![blg234_DefaultAspx](/assets/images/2011/blg234_DefaultAspx.gif)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="JQueryAndWCF.Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -17,4 +17,3 @@ Not: Yanlız erişim yetkisi olmayan klasörler söz konusu olduğunda boyut bil
 ![PhotoTrick28](/assets/images/2011/PhotoTrick28.png)
 
 [DirectoryExtensions.rar (23,28 kb)](/assets/files/2011/DirectoryExtensions.rar)
-

@@ -20,5 +20,4 @@ Debug time görüntüsü ise,
 
 ![TPI_59_2.png](/assets/images/2012/TPI_59_2.png)
 
-Başka bir ipucundan görüşmek dileğiyle
-
+Başka bir ipucundan görüşmek dileğiyle.

@@ -16,4 +16,3 @@ Not: WcfTestClient istemcisine güvenmeyin. XElement tipinin geriye döndürelem
 ![PhotoTrick11](/assets/images/2011/PhotoTrick11.png)
 
 [WcfServiceLibrary1.rar (50,01 kb)](/assets/files/2011/WcfServiceLibrary1.rar)
-

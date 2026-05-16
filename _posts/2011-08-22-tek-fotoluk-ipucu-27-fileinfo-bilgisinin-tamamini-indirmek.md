@@ -17,4 +17,3 @@ FileInfo tipi yardımıyla bir dosyanın pek çok özelliğine erişebiliriz bil
 [ConsoleApplication1.rar (23,97 kb)](/assets/files/2011/ConsoleApplication1.rar)
 
 [BurakSenyurtVsColorSchema.vssettings (280,59 kb)](/assets/files/2011/BurakSenyurtVsColorSchema.vssettings)
-

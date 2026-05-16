@@ -18,8 +18,7 @@ Bu güne kadar yayımlamış olduğu çok değerli kitaplar bulunmaktadır. Hatt
 
 > Bundan önceki favori kitaplarım ise [Clean Code: A Handbook of Agile Software Craftsmanship](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_10?ie=UTF8&qid=1288249840&sr=8-10) ve [Agile Principles, Patterns, and Practices in C#](http://www.amazon.com/Agile-Principles-Patterns-Practices-C/dp/0131857258/ref=sr_1_14?ie=UTF8&qid=1288256328&sr=8-14) dir
 
-Pek Martin Fowler’ ın kulaklarını niye bu kadar çok çınlatıyoruz. 
-Bu günkü yazımızda ilk olarak Martin Fowler ve Eric Evans tarafından tanımlanan Fluent Interface konusunu irdelemeye çalışıyor olacağız. Aslında kelime anlamlarından yola çıkarsak okunabilir, açık, net arayüz tiplerinden bahsettiğimizi düşünebiliriz. Ancak bu şekilde söz konusu kavrama biraz haksızlık etmiş oluruz. Fluent Interface esas itibariyle daha okunabilir kodlama açısından önem arz eden ve uygulanması sırasında metod zincirlerinden yararlananan bir yaklaşım sunmaktadır. Şimdi ne demek istediğimizi ben de ifade edemedim aslında
+Pek Martin Fowler’ ın kulaklarını niye bu kadar çok çınlatıyoruz. Bugünkü yazımızda ilk olarak Martin Fowler ve Eric Evans tarafından tanımlanan Fluent Interface konusunu irdelemeye çalışıyor olacağız. Aslında kelime anlamlarından yola çıkarsak okunabilir, açık, net arayüz tiplerinden bahsettiğimizi düşünebiliriz. Ancak bu şekilde söz konusu kavrama biraz haksızlık etmiş oluruz. Fluent Interface esas itibariyle daha okunabilir kodlama açısından önem arz eden ve uygulanması sırasında metod zincirlerinden yararlananan bir yaklaşım sunmaktadır. Şimdi ne demek istediğimizi ben de ifade edemedim aslında
 
 Gelin basit bir örnek ile konuyu didiklemeye başlayalım.Bu amaçla aşağıdaki kod içeriğini göz önüne alabiliriz.
 
@@ -202,8 +201,7 @@ namespace UsingFluentInterface
 }
 ```
 
-Vay…Vay…Vay…Vayyyy!!!
-Bu sefer çok daha ilginç bir kod parçası ile karşı karşıyayız. İlk olarak IPlayerSpecV2 isimli arayüz tipi içerisine bakmamızda yarar olacağı kanısındayım. Görüldüğü üzere burada tanımlı olan özellikler yine IPlayerSpecV2 arayüz tipinin taşıyabileceği referansları döndürmektedir. Bir başka deyişle, IPlayerSpecV2 arayüzünü uygulayan sınıfa ait nesne örneklerinin döndürüldüğünü ifade edebiliriz. Bu durumda PlayerV2 sınıfının içeriği de önem kazanmaktadır.
+Vay…Vay…Vay…Vayyyy!!! Bu sefer çok daha ilginç bir kod parçası ile karşı karşıyayız. İlk olarak IPlayerSpecV2 isimli arayüz tipi içerisine bakmamızda yarar olacağı kanısındayım. Görüldüğü üzere burada tanımlı olan özellikler yine IPlayerSpecV2 arayüz tipinin taşıyabileceği referansları döndürmektedir. Bir başka deyişle, IPlayerSpecV2 arayüzünü uygulayan sınıfa ait nesne örneklerinin döndürüldüğünü ifade edebiliriz. Bu durumda PlayerV2 sınıfının içeriği de önem kazanmaktadır.
 
 Nitekim Interface implementasyonu sonucu dikkat edileceği üzere Set ön eki ile başlayan her metod, iç değer atamalarında this anahtar kelimesini kullanmaktadır. Buna göre çalışma zamanında o anki PlayerV2 nesne örneğinin kullanılması söz konusudur. Ayrıca her Set… metodunun sonunda return this; ifadesinin kullanıldığına da dikkat edilmelidir. Peki tüm bunlar ne anlama geliyor? Aslında tüm bunların ne anlama geldiğini anlamak için Main metodu içerisinde yer alan kod parçasını göz önüne almamız yeterli olacaktır.
 
@@ -428,8 +426,6 @@ Söz gelimi Main metodu içerisindeki kod parçalarına dikkat edildiğinde aTea
 
 ![blg236_Runtime2](/assets/images/2011/blg236_Runtime2.gif)
 
-Sanıyorum ki Fluent Interface kullanımı şimdi daha da bir anlam kazanmış oldu
-
-İlerleyen zamanlarda bu tip uç prensipleri incelemeye devam etmeye çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Sanıyorum ki Fluent Interface kullanımı şimdi daha da bir anlam kazanmış oldu. İlerleyen zamanlarda bu tip uç prensipleri incelemeye devam etmeye çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingFluentInterface.rar (30,94 kb)](/assets/files/2011/UsingFluentInterface.rar)

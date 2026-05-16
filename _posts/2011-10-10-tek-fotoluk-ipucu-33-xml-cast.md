@@ -18,4 +18,3 @@ Varsayalım ki elimizde kendi geliştirdiğimiz tipler ve kullandığımız List
 ![PhotoTrick33](/assets/images/2011/PhotoTrick33.png)
 
 [ListExtensions.rar (23,69 kb)](/assets/files/2011/ListExtensions.rar)
-

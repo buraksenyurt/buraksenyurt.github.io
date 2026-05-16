@@ -9,15 +9,9 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Yandaki karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim
+Gördüğünüz karikatür, aşağıdaki yazıyı bitirdiğim zaman aradığım giriş resmi ile ilişkili olarak karşıma çıkan örneklerden sadece bir tanesiydi. Beni epey bir güldürdüğünü ve neşelendirdiğini ifade edebilirim. Konumuz işlerimizi birilerine yönlendirip yan gelip yatmak değil elbette, ama ona benzer olduğunu ifade edebilirim. Bu adamın görevlerini başkalarına atadıktan sonra, söz konusu işler yapılırken başka işlere (örneğin koltuğunda şöyle bir geriye doğru yaslanarak vakit geçirmek) yönelebildiğine odaklanmaya çalışalım. .Net Framework tarafındaki Delegate tipleri de benzer bir ihtiyacı karşılamıyor mu? Asenkron olarak fonksiyonların çağırılabilmesini sağlamak mümkün mü? (Elbette başka yetenekleri de var ama bu en önemlileri arasında sayılabilir)
 
 ![delegating](/assets/images/2012/delegating.jpg)
-
-Konumuz işlerimizi birilerine yönlendirip yan gelip yatmak değil elbette, ama ona benzer olduğunu ifade edebilirim.
-
-Bu adamın görevlerini başkaların atadıktan sonra, söz konusu işler yapılırken başka işlere (örneğin koltuğunda şöyle bir geriye doğru yaslanarak vakit geçirmek) yönelebildiğine odaklanmaya çalışalım..Net Framework tarafındaki Delegate tipleri de benzer bir ihtiyacı karşılamıyor mu?
-
-Asenkron olarak fonksiyonların çağırılabilmesini sağlamak (Elbette başka yetenekleri de var ama bu en önemlileri arasında sayılabilir)
 
 Uzun bir zamandır.Net Framework içerisinde, fonksiyonların asenkronize edilmesi üzerinde çalışılmaktadır. Daha önceleri Thread bazlı veya Delegate tipleri ile gerçekleştirdiğimiz asenkron çağırımlar,.Net Framework 4.0’ a gömülü olarak gelen Task Parallel Library sayesinde daha da gelişmiş ve alt yapının her noktasına enjekte edilebilir olmuştur. Şu günlerde.Net Framework 4.5 ile birlikte gündeme gelen ve uzun zamandır da haberdar olduğumuz async, await gibi anahtar kelimeler de, temel de Task tiplerine dayanmaktadır. Bir başka deyişle TPL kütüphanesi ve içeriği, ilerleyen zamanlarda.Net Framework’ ün pek çok önemli alt yapısında etkisini hissettirecektir.
 
@@ -201,57 +195,57 @@ BeginCreateProducts metodu, ilk parametre olarak istemciden gelecek olan integer
 ProductService sınıfının yeni versiyonu;
 
 ```csharp
-using System; 
-using System.Collections.Generic; 
-using System.ServiceModel; 
+using System;
+using System.Collections.Generic;
+using System.ServiceModel;
 using System.Threading.Tasks;
 
-namespace AzonServices 
-{ 
-    [ServiceBehavior(InstanceContextMode= InstanceContextMode.Single, ConcurrencyMode= ConcurrencyMode.Multiple)] 
-    public class ProductService 
-        : IProductService 
-    { 
-        public IAsyncResult BeginCreateProducts(int totalProductCount, AsyncCallback callback, object asyncState) 
-        { 
-            var task = new Task<int>((s) => 
-                                         { 
-                                             int createdProductCount = 0; 
-                                             char[] classes = {'C', 'D', 'E', 'L', 'S'}; 
-                                             List<Product> products = new List<Product>(); 
+namespace AzonServices
+{
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+    public class ProductService
+        : IProductService
+    {
+        public IAsyncResult BeginCreateProducts(int totalProductCount, AsyncCallback callback, object asyncState)
+        {
+            var task = new Task<int>((s) =>
+                                         {
+                                             int createdProductCount = 0;
+                                             char[] classes = { 'C', 'D', 'E', 'L', 'S' };
+                                             List<Product> products = new List<Product>();
                                              Random randomizer = new Random();
 
-                                             for (int i = 0; i < totalProductCount; i++) 
-                                             { 
-                                                 Product newProduct = new Product 
-                                                                          { 
-                                                                              ProductId = i, 
-                                                                              Name = "PRD-" + i.ToString(), 
-                                                                              ListPrice = randomizer.Next(1, 100), 
-                                                                              StockSize = randomizer.Next(50, 500), 
-                                                                              Class = 
-                                                                                  classes[ 
-                                                                                      randomizer.Next(0, classes.Length) 
-                                                                                  ] 
-                                                                          }; 
-                                                 products.Add(newProduct); 
-                                                 createdProductCount++; 
-                                             } 
-                                             return createdProductCount; 
+                                             for (int i = 0; i < totalProductCount; i++)
+                                             {
+                                                 Product newProduct = new Product
+                                                 {
+                                                     ProductId = i,
+                                                     Name = "PRD-" + i.ToString(),
+                                                     ListPrice = randomizer.Next(1, 100),
+                                                     StockSize = randomizer.Next(50, 500),
+                                                     Class =
+                                                                                  classes[
+                                                                                      randomizer.Next(0, classes.Length)
+                                                                                  ]
+                                                 };
+                                                 products.Add(newProduct);
+                                                 createdProductCount++;
+                                             }
+                                             return createdProductCount;
                                          }, asyncState);
 
-            task.ContinueWith((t) => { callback(t); }); 
+            task.ContinueWith((t) => { callback(t); });
             task.Start();
 
-            return task; 
+            return task;
         }
 
-        public int EndCreateProducts(IAsyncResult result) 
-        { 
-            var task = (Task<int>) result; 
-            return task.Result; 
-        } 
-    } 
+        public int EndCreateProducts(IAsyncResult result)
+        {
+            var task = (Task<int>)result;
+            return task.Result;
+        }
+    }
 }
 ```
 

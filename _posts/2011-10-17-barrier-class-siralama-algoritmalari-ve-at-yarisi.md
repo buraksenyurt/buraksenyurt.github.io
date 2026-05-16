@@ -10,11 +10,9 @@ tags:
 categories:
   - Algoritma
 ---
-At yarışlarına pek ilgim yoktur aslında ama tam da bu günlerde okuduğum kitap nedeniyle, paralel programlama ile aralarında sıkı bir ilişki olduğunu ifade edebilirim
+At yarışlarına pek ilgim yoktur aslında ama tam da bu günlerde okuduğum kitap nedeniyle, paralel programlama ile aralarında sıkı bir ilişki olduğunu ifade edebilirim. Bildiğiniz üzere bu yarışların pek çok meraklısı bulunmaktadır. Özellikle yarışları stadyumdan seyredenler oldukça heyecanlıdır. Gerçi yarışın başlamasından önceki tahminler tam başlangıç anında yerini endişeye bırakır. Bizim gibi yazılımcılar için önemli olan ise başlangıç anıdır. Neden mi? Bazen bir yarışa başlanırken, yarışa iştirak eden katılımcıların start düzlüğünde bir arada yer almalarını bekleriz. At yarışlarındaki başlangıç kapıları bu işe yaramaktadır. Tahmin edeceğiniz gibi bu kapılar atların başlangıç işareti gelmeden hareket etmelerini engellemek üzere tasarlanmışlardır.
 
 ![The starting gate](/assets/images/2011/The%20starting%20gate.jpg)
-
-Bildiğiniz üzere bu yarışların pek çok meraklısı bulunmaktadır. Özellikle yarışları stadyumdan seyredenler oldukça heyecanlıdır. Gerçi yarışın başlamasından önceki tahminler tam başlangıç anında yerini endişeye bırakır. Bizim gibi yazılımcılar için önemli olan ise başlangıç anıdır. Neden mi? Bazen bir yarışa başlanırken, yarışa iştirak eden katılımcıların start düzlüğünde bir arada yer almalarını bekleriz. At yarışlarındaki başlangıç kapıları bu işe yaramaktadır. Tahmin edeceğiniz gibi bu kapılar atların başlangıç işareti gelmeden hareket etmelerini engellemek üzere tasarlanmışlardır.
 
 Çok doğal olarak ve pek tabi ki aynı durum program ortamı içerisinde yer alan ve paralel çalıştırılması düşünülen metodlar içinde geçerli olabilir. Bir başka deyişle bazı senaryolarda paralel olarak yürütülmesi istenen metodların, çalışmaya başlamadan önce bir kutu içerisinde de paralel olarak dizilmeleri ve kutu beklenen limiti aştığında başlatılmaları istenebilir. Yani paralel çalıştırılması istenen fonksiyonellikler hazırlanıp belirli bir başlangıç noktasına doğru senkronize edilir ve sonrasında belirli bir kurala göre (örneğin kutunun limitini doldurması gibi) başlatılırlar.
 
@@ -243,6 +241,10 @@ Bakın ben çalışma zamanında durumu analiz ettiğimde Barrier bölgesine son
 
 ![bei_32](/assets/images/2011/bei_32.gif)
 
-![240496b](/assets/images/2011/240496b.jpg) Parallel programlama ile ilişkili olarak bir kaç yazı yazmayı daha planlamaktayım. İçeride gözden kaçan oldukça önemli ve hayati pek çok konu var. Özellikle de gelecek nesil.Net platformunda bu konunun ne kadar önemli olduğunu düşünürsek geliştirici olarak iyi hazırlanmamız gerektiği kanısındayım.
+Parallel programlama ile ilişkili olarak bir kaç yazı yazmayı daha planlamaktayım. İçeride gözden kaçan oldukça önemli ve hayati pek çok konu var. Özellikle de gelecek nesil.Net platformunda bu konunun ne kadar önemli olduğunu düşünürsek geliştirici olarak iyi hazırlanmamız gerektiği kanısındayım. Aslında ben şu sıralarda [Parallel Programming Step by Step](http://amzn.com/0735640602) isimli kitabı takip ediyorum.
 
-Aslında ben şu sıralarda [Parallel Programming Step by Step](http://amzn.com/0735640602) isimli kitabı takip ediyorum. İnce bir kitap ve sizlere de şiddetle tavsiye ederim. Gerçi ince olduğuna aldanmayın lütfen. Yeteri kadar doyurucu bilgi ve kod örneğini barındırmakta. Eğer paralel programlamaya ilgi duyuyorsanız tabi. Buraya kadar sabırla okuduğunuz için teşekkür ederken tekrardan görüşünceye dek hepinize mutlu günler dilerim. [SortingTest.rar (29,66 kb)](/assets/files/2011/SortingTest.rar)
+![240496b](/assets/images/2011/240496b.jpg)
+
+İnce bir kitap ve sizlere de şiddetle tavsiye ederim. Gerçi ince olduğuna aldanmayın lütfen. Yeteri kadar doyurucu bilgi ve kod örneğini barındırmakta. Eğer paralel programlamaya ilgi duyuyorsanız tabi. Buraya kadar sabırla okuduğunuz için teşekkür ederken tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[SortingTest.rar (29,66 kb)](/assets/files/2011/SortingTest.rar)

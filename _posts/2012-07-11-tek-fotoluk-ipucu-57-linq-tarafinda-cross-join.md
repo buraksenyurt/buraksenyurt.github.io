@@ -13,5 +13,4 @@ Elinizde iki adet nesne koleksiyonu olduğunu ve bunların veri satırı bazınd
 
 ![TPP_58.png](/assets/images/2012/TPP_58.png)
 
-Görüşmek dileğiyle
-
+Görüşmek dileğiyle.

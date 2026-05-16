@@ -15,11 +15,7 @@ tags:
 categories:
   - Veritabanı
 ---
-Hiç canınızın sıkıldığı ve böyle bir buhran anına girdiğinizde SQL Server Management Studio'yu açıp T-SQL ile eğlenceli bir şeyler yapmaya çalıştığınız oldu mu?
-
-![fun](/assets/images/2011/fun.jpg)
-
-Açıkçası geçtiğimiz günlerde böyle sıkkın ve bıkkın bir ruh halindeyken ve konuşmak istediğim tüm arkadaşlarım yoğunken, ekranımda duran Management Studio'daki bembeyaz ve bomboş Query penceresi ile muhabbet etmeye karar verdim. Aslında amacım basitti. Daha önceki tecrübelerime dayanarak ihtiyaçlar dahilinde kullandığım T-SQL ifadelerini şöyle bir tekrar etmeye çalışacak ve siz değerli okurlarıma bir blog girdisi olarak sunacaktım. Aklıma geldikçe ihtiyaçlarımın T-SQL karşılıklarını yazmaya başladım. Düşündüğüm ilk gereksinim, sistemimde yüklü olan kaç veritabanı olduğunu ve bunlara ait bazı temel bilgileri edinmekti...İşte serüvenimiz bu ilk sorgumuz ile başlıyor.
+Hiç canınızın sıkıldığı ve böyle bir buhran anına girdiğinizde SQL Server Management Studio'yu açıp T-SQL ile eğlenceli bir şeyler yapmaya çalıştığınız oldu mu? Açıkçası geçtiğimiz günlerde böyle sıkkın ve bıkkın bir ruh halindeyken ve konuşmak istediğim tüm arkadaşlarım yoğunken, ekranımda duran Management Studio'daki bembeyaz ve bomboş Query penceresi ile muhabbet etmeye karar verdim. Aslında amacım basitti. Daha önceki tecrübelerime dayanarak ihtiyaçlar dahilinde kullandığım T-SQL ifadelerini şöyle bir tekrar etmeye çalışacak ve siz değerli okurlarıma bir blog girdisi olarak sunacaktım. Aklıma geldikçe ihtiyaçlarımın T-SQL karşılıklarını yazmaya başladım. Düşündüğüm ilk gereksinim, sistemimde yüklü olan kaç veritabanı olduğunu ve bunlara ait bazı temel bilgileri edinmekti...İşte serüvenimiz bu ilk sorgumuz ile başlıyor.
 
 ```sql
 select 
@@ -243,9 +239,7 @@ ve aşağıdaki ekran görüntüsünde yer alan sonuçları elde ettim. Tabi ki 
 
 ![artcl_3_10](/assets/images/2011/artcl_3_10.gif)
 
-Gerçi şimdi fark ettim ki 114 numaralı çalışan oldukça şanslıymış. Çünkü ilk iki sorguda tesadüfen çıkmış
-
-Buna tabi bir tedbir almak gerektiği kanısındayım. Aslında bu tedbiri size bırakıyorum. En azından hediye çıkmış işçileri bir flag ile işaretlemeye veya farklı bir tabloda belirli süreliğine saklayarak tekrardan sorgu sonuçlarında çıkmalarını engellemeyi düşünebilirsiniz.
+Gerçi şimdi fark ettim ki 114 numaralı çalışan oldukça şanslıymış. Çünkü ilk iki sorguda tesadüfen çıkmış. Buna tabi bir tedbir almak gerektiği kanısındayım. Aslında bu tedbiri size bırakıyorum. En azından hediye çıkmış işçileri bir flag ile işaretlemeye veya farklı bir tabloda belirli süreliğine saklayarak tekrardan sorgu sonuçlarında çıkmalarını engellemeyi düşünebilirsiniz.
 
 SQL sorgularını denediğim sırada arka planda çalışmakta olan diğer SQL penceresine gözüm ilişmişti. Aslında arada sırada oraya bakmak zorundaydım. Nitekim Test ortamında yer alan bir veritabanı üzerinde bazı işlemler yapılması gerekiyordu. Ne varki ilgili sistemde yer alan tablo 32 milyon satırlık veri içerdiğinden ve test makinesi nuhnebiden kalma bir Pentium III olduğundan miniminnacık sıkıntılar vardı. O anda aklıma acaba index kullanılmayan (örneğin Clustered Index) tablolar var mıdır acaba sorusu geldi? Hemen local sistemimde bunu araştırmak için aşağıdaki sorgu ifadesini hazırladım.
 
@@ -263,9 +257,7 @@ Bir de ne göreyim
 
 ![artcl_3_11](/assets/images/2011/artcl_3_11.gif)
 
-AdventureWorks veritabanındaki ProductProductPhoto tablosunda ClusteredIndex yok…Bak bak baaakk
-
-Tabi bu işin şaka tarafı ama performans araştırmaları yaparken belki de işe yarayacak bir sorgu olarak düşünülebilir.
+AdventureWorks veritabanındaki ProductProductPhoto tablosunda ClusteredIndex yok…Bak bak baaakk. Tabii bu işin şaka tarafı ama performans araştırmaları yaparken belki de işe yarayacak bir sorgu olarak düşünülebilir.
 
 İşler gayet eğlenceli gidiyordu ama enerjim de bitmek üzereydi. Son olarak basit bir sorgu yardımıyla Query penceresi ile olan muhabbetime son vereyim istemiştim. Bu sefer merak ettiğim, çevrede var olan SQL sunucularının hangileri olduğuydu. Aşağıdaki sorgu bunu karşılıyordu.
 

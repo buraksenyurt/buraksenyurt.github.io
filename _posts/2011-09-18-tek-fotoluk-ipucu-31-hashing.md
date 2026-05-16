@@ -19,4 +19,3 @@ Hiç bir zaman kullanıcılarımıza ait şifreleri açık formatta saklamamamı
 ![PhotoTrick31](/assets/images/2011/PhotoTrick31.png)
 
 [Hashing.rar (21,76 kb)](/assets/files/2011/Hashing.rar)
-

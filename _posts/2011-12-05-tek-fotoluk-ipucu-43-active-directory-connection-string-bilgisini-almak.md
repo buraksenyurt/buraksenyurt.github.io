@@ -17,4 +17,3 @@ Oldu da domain üzerinde çalışırken Active Directory'nin bağlantı bilgisin
 ![PhotoTrick43](/assets/images/2011/PhotoTrick43.png)
 
 [ADConStr.rar (23,80 kb)](/assets/files/2011/ADConStr.rar)
-

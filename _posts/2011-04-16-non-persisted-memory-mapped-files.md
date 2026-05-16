@@ -14,7 +14,6 @@ Akşam saatleriydi. Sıcak ama güneşin fazla görünmediği bir yaz gününün
 
 ![blg202_Giris](/assets/images/2011/blg202_Giris.jpg)
 
-
 Zaman ilerledi ve gecenin zifiri karanlığında güçlü bir gök gürültüsü duyuldu. Belli ki fırtınalı, zor bir gece olacaktı. Kimsenin açık denizde veya havada olmak istemeyeceği bir gece.
 
 Kısa bir süre sonra yağmaya başlayan yağmur ve cama vuran damlaların sesi eşliğinde kendimi bilgisayarımın başında buldum. Odayı kaplayan loş lamba ışığı konstanrasyonu en üst seviye çıkartırken, bilgisayardan gelen hafif müzik nameleri, bloğumun girişi için gerekli cümleleri hazırlamama yardımcı oluyordu. Rota çizilmişti. Geceyi güzel bir blog yazısı ile tamamlamak.

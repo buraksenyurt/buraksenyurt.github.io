@@ -442,7 +442,7 @@ Eğitim odaklı verilerin elde edilmesi;
 
 ![worldb_5](/assets/images/2012/worldb_5.png)
 
-Gördüğünüz gibi gayet kolay
+Gördüğünüz gibi gayet kolay...
 
 Tabi örneğimizin pek çok noktasında hata bulunmaktadır. (Biraz acele ile yazdığımdan dolayı) Örneğin Exception Handling mekanizması eksiktir ve hatta DataGridView kontrolü bazı noktalarda index hatası vermektedir. Diğer yandan daha fazla sorgu da işin içerisine katılabilir. Ben kapıyı gösteren kişi olarak yazımı burada sonlandırıyorum
 

@@ -10,19 +10,13 @@ tags:
 categories:
   - Algoritma
 ---
-Bir süredir yazılım dünyasında sıklıkla kullanılan basit algoritmalara merak salmış durumdayım. Bazıları kafayı yedirtecek cinsten olsalarda arada sırada bunları değerlendirmekte ve paslanan dimamızı açmaya çalışmakta yarar olduğu kanısındayım.
-
-![artcl_11_4](/assets/images/2012/artcl_11_4.jpg)
-
-Aslına bakarsanız bilgisayar bilimlerinde uygulanabilen, gerçekten çok işe yarayan ve onları keşfedenleri saygıyla hatırlamamız gereken algoritmalar mevcut. Örneğin bunlardan birisi olan [Levenshtein Distance](http://en.wikipedia.org/wiki/Vladimir_Levenshtein) algoritması ve mucidi Vladimir Levenshtein
+Bir süredir yazılım dünyasında sıklıkla kullanılan basit algoritmalara merak salmış durumdayım. Bazıları kafayı yedirtecek cinsten olsalarda arada sırada bunları değerlendirmekte ve paslanan dimamızı açmaya çalışmakta yarar olduğu kanısındayım. Aslına bakarsanız bilgisayar bilimlerinde uygulanabilen, gerçekten çok işe yarayan ve onları keşfedenleri saygıyla hatırlamamız gereken algoritmalar mevcut. Örneğin bunlardan birisi olan [Levenshtein Distance](http://en.wikipedia.org/wiki/Vladimir_Levenshtein) algoritması ve mucidi Vladimir Levenshtein
 
 Bu algoritma bizlere, özellikle arama motorlarında da kullanılabilen bir model sunmaktadır. Son kullanıcıların aradıkları kelimeleri tam olarak belirleyemedikleri veya kestiremedikleri durumlarda, öneri olarak sunulan kelimelerin tespit edilmesi sırasında ele alınan bir algoritmadır. Örneğin ben Google sitesindeki arama kutucuğunda kendi ismimi eksik karakterler ile yazdığımda, google daha önceden yapmış olduğu indekslenmiş içeriklere göre bir öneri de bulunmuştur (Bunu mu demek istediniz kısmı) Aşağıdaki şekilde bu durum açık bir şekilde görülmektedir.
 
 ![artcl_11_1](/assets/images/2012/artcl_11_1.png)
 
-Arama motorları dışında, özellikle imla kontrolü yapan uygulamalarda da (Söz gelimi Microsoft Outlook veya Microsoft Word’ ün Spell Checking mekanizmalarında) bu algoritmanın kullanımına sıklıkla şahit olmaktayız.
-
-Biz bu yazımızda söz konusu algoritmanın kullanılması için gerekli olan temel fonksiyonu, sıklıkla yaptığımız üzere bir Extension Method olarak geliştirmeye ve test etmeye çalışıyor olacağız. Ancak kodlama kısmına geçmeden önce algoritmanın nasıl çalıştığına ve işlediğine bakmamızda yarar olacağı kanısındayım.
+Arama motorları dışında, özellikle imla kontrolü yapan uygulamalarda da (Söz gelimi Microsoft Outlook veya Microsoft Word’ ün Spell Checking mekanizmalarında) bu algoritmanın kullanımına sıklıkla şahit olmaktayız. Biz bu yazımızda söz konusu algoritmanın kullanılması için gerekli olan temel fonksiyonu, sıklıkla yaptığımız üzere bir Extension Method olarak geliştirmeye ve test etmeye çalışıyor olacağız. Ancak kodlama kısmına geçmeden önce algoritmanın nasıl çalıştığına ve işlediğine bakmamızda yarar olacağı kanısındayım.
 
 Aslında algoritma temel olarak iki kelimenin birbirlerine olan benzerliklerini ölçümlemek amacıyla kullanılmaktadır. Sonuç tek bir sayısal değerdir ve iki kelimeden birinin diğerine dönüştürülebilmesi için gerekli olan işlem sayısını ya da maliyetini vermektedir. Çok doğal olarak bu sayınının düşük olması arzu edilen neticedir. Nitekim daha az değişiklik anlamına gelmektedir. Çok doğal olarak bir kelimenin, bir öneri kelime kümesi içerisindekiler ile karşılaştırılması sonucu ortaya çıkan sayısal değerlerden en küçüğü veya küçükleri, sonuca ulaşılması ve doğru önerilerde bulunulması açısından önemlidir.
 

@@ -14,4 +14,3 @@ String tipleri çok garip tiplerdir. Onları + operatörü ile birleştirmek baz
 ![PhotoTrick19](/assets/images/2011/PhotoTrick19.png)
 
 [StringPerformance.rar (22,11 kb)](/assets/files/2011/StringPerformance.rar)
-

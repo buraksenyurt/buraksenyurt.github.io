@@ -17,13 +17,14 @@ Buyrun öyleyse.
 
 Bu koda göre arka planda hareket eden SQL sorgusu da şöyledir.
 
-> SELECT
-> 1 AS [C1],
-> [Extent1].[Name] AS [Name],
-> [Extent1].[Class] AS [Class],
-> [Extent1].[ListPrice] AS [ListPrice]
-> FROM [Production].[Product] AS [Extent1]
-> WHERE ([Extent1].[Name] LIKE 'M%') AND ([Extent1].[ListPrice] >= 3000)
+```sql
+SELECT
+  1 AS [C1],
+  [Extent1].[Name] AS [Name],
+  [Extent1].[Class] AS [Class],
+  [Extent1].[ListPrice] AS [ListPrice]
+FROM [Production].[Product] AS [Extent1]
+WHERE ([Extent1].[Name] LIKE 'M%') AND ([Extent1].[ListPrice] >= 3000)
+```
 
 Bir diğer ipucunda görüşmek dileğiyle.
-

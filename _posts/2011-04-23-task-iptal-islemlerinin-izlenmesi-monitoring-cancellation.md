@@ -16,7 +16,6 @@ Bu yazımızda daha önceden.Net Framework Beta 1 ve Beta 2 sürümlerinde incel
 
 ![blg204_Giris](/assets/images/2011/blg204_Giris.jpg)
 
-
 Task örnekleri işaret ettikleri ve planladıkları fonksiyonellikleri çalıştırdıklarında ve herhangibir sebeple iptal işlemi gerçekleştirilmek istendiğinde CancellationTokenSource ve CancellationToken tiplerinden yararlanılması gerekmektedir.
 
 Bu amaçla İptal işlemlerinde CancellationTokenSource nesne örnekleri üzerinden Cancel metodunun çağırılması yeterlidir. Ancak burada da dikkat edilmesi gereken bir husus vardır. Çalışma zamanı Cancel çağrısı sonucu ilgili Task örneklerinin işleyişlerini otomatik olarak sonlandırmaz. Bir başka deyişle Task gövdeleri veya paralel yürütülen metod blokları içerisinde Cancel işleminin talep edilip edilmediğinin takibi gerekmektedir (Monitoring Cancellation). Peki bu takip işlemleri nasıl gerçekleştirilebilir. Yazımızın ilerleyen kısımlarında bu takip işlemlerinde hangi konuların ele alındığını irdelemeye çalışıyor olacağız.
@@ -89,13 +88,13 @@ Görüldüğü gibi Exception fırlatılmadığı için Task durumu Running olar
 Polling modelinde uygulanan genel kod deseni yukarıdaki gibi olmasına rağmen ikinci bir teknik daha söz konusudur. Bu teknikte kontrol etme ve Exception fırlatma işlemleri zaten var olan bir metoda yüklenmiştir. Buna göre for döngüsü içeriğini aşağıdaki gibi değiştirdiğimizi düşünelim.
 
 ```csharp
-for(int i=0;i<numbers.Count();i++) 
-{ 
-	token.ThrowIfCancellationRequested(); 
-	i++; 
-	i--; 
-	i *= 2; 
-	Console.Write("."); 
+for (int i = 0; i < numbers.Count(); i++)
+{
+    token.ThrowIfCancellationRequested();
+    i++;
+    i--;
+    i *= 2;
+    Console.Write(".");
 }
 ```
 
@@ -162,7 +161,7 @@ Dikkat edileceği üzere token nesnesi üzerinden Register metodu kullanılarak 
 
 Dikkat edilmesi gereken notkalardan birisi de, delegasyon metodu içerisine girildiğinde iptal edilen Task örneğinin durumunun halen Running olarak görünmesidir. Ancak işlem tamamlandıktan sonra Status değeri Canceled olmaktadır.
 
-![Question](/assets/images/2011/Question.gif) Bloğun sorusu; Register ile işaret edilen delegasyon metodu içerisinden, for döngüsünün hangi iterasyonunda iptal işleminin gerçekleştirildiği çalışma ortamına nasıl bildirilebilir?
+> Bloğun sorusu; Register ile işaret edilen delegasyon metodu içerisinden, for döngüsünün hangi iterasyonunda iptal işleminin gerçekleştirildiği çalışma ortamına nasıl bildirilebilir?
 
 ## Wait Handle Kullanımı
 
@@ -228,7 +227,7 @@ CancellationTokenSource nesne örneği üzerinden Cancel metodunun çağırılma
 
 Buraya kadar geliştirdiğimiz örnek kod parçaları ve iptal deseneleri göz önüne alındığında her zaman için CancellationTokenSource üzerinden üretilen bir CancellationToken nesneleri olduğu görülmektedir. Ayrıca iptal işlemi de her zaman için CancellationTokenSource örneği üzerinden yapılmaktadır. CancellationToken örnekleri ise Task üretimi sırasında ve içeride kullanılmaktadır. Peki bu bizim ne işimize yarayabilir?
 
-Birden Fazla Task İşleminin Tek Noktadan İptal Edilmesi
+## Birden Fazla Task İşleminin Tek Noktadan İptal Edilmesi
 
 İşte az önceki sorunun cevabı. Aynı CancellationToken nesne örneğinin birden fazla Task ile ilişkilendirilmesi, bu token örnekleri ile ilişkili olan CancellationTokenSource örneği üzerinden yapılan iptal talebinin, tüm ilişkili Task’ lere iletilmesi anlamına gelmektedir. Gelin bu cümleyi aşağıdaki kod parçası ile anlamaya çalışalım.
 

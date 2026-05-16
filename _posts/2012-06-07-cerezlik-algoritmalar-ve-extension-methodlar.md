@@ -29,28 +29,28 @@ Ceaser, Roma imparatorluğunun şaşalı dönemlerinde generalleri ile haberleş
 ```csharp
 public static class AlgorithmExtensions
 {
-	#region Ceaser Cheaper ile karıştırma
+    #region Ceaser Cheaper ile karıştırma
 
-	public static string CaesarChiper(this string Word, int ShiftNumber)
-	{
-		char[] chars = Word.ToCharArray();
+    public static string CaesarChiper(this string Word, int ShiftNumber)
+    {
+        char[] chars = Word.ToCharArray();
 
-		for (int i = 0; i < chars.Length; i++)
-		{
-			char currentLetter = chars[i];
-			currentLetter = (char)(currentLetter + ShiftNumber);
-			
-			if (currentLetter > 'z')
-				currentLetter = (char)(currentLetter - 26);
-			else if (currentLetter < 'a')
-				currentLetter = (char)(currentLetter + 26);
-		
-			chars[i] = currentLetter;
-		}
-		return new string(chars);
-	}
+        for (int i = 0; i < chars.Length; i++)
+        {
+            char currentLetter = chars[i];
+            currentLetter = (char)(currentLetter + ShiftNumber);
 
-	#endregion
+            if (currentLetter > 'z')
+                currentLetter = (char)(currentLetter - 26);
+            else if (currentLetter < 'a')
+                currentLetter = (char)(currentLetter + 26);
+
+            chars[i] = currentLetter;
+        }
+        return new string(chars);
+    }
+
+    #endregion
 }
 ```
 
@@ -271,4 +271,3 @@ namespace TestApp
 Bu algoritmayı oyuncudan ziyade oyun motoru kullanıyor olabilir. Ya da siz geniş bir kelime kümesini ekrana basıp bu küme içerisindeki Palindromic kelimeleri tespit etmesi için henüz ilk okul çağında olan bir oyuncuyu tercih edebilir ve süre bazlı bir ortam sağlayarak, onun dikkat, kavrama, fark etme, görsel hafıza gibi yeteneklerini arttırmaya çalışabilirsiniz
 
 Aslında oyun programlama denilince çok basit ve yararlı algoritmalar olduğunu görebiliyoruz. Ben bu yazımızda sadece 3 tanesini sizlere aktarmaya çalıştım. Elbetteki çok daha fazlası var. Araştırmak, denemek, öğrenmek, test etmek ve kullanmak sizin göreviniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
-

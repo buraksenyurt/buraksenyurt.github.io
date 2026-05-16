@@ -11,7 +11,7 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Beni tanıyanlar SQL ailesini pek sevmediğimi ve biraz uzak durmaya çalışmak istediğimi bilirler. Ne varki bazen iş hayatının gerçekleri ile karşı karşıya kalırız ve mecburen SQL ailesinin bazı fertleri ile yakın ilişkiler içerisine gireriz
+Beni tanıyanlar SQL ailesini pek sevmediğimi ve biraz uzak durmaya çalışmak istediğimi bilirler. Ne varki bazen iş hayatının gerçekleri ile karşı karşıya kalırız ve mecburen SQL ailesinin bazı fertleri ile yakın ilişkiler içerisine gireriz.
 
 ![SQL-Server-2008-Grid-v-r_2-300x187](/assets/images/2011/SQL-Server-2008-Grid-v-r_2-300x187.png)
 

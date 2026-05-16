@@ -19,10 +19,6 @@ Hatırlayacağınız üzere Ocak ayı içerisinde [Nedirtv?com](http://www.nedir
 
 [Youtube Link](https://www.youtube.com/watch?v=BL2VQcBmDoM)
 
-[Bu adresten ilgili Webineri izleyebilirsiniz](http://nedirtv.com/video/entity-framework-code-first-development-webineri). Ayrıca Webinerdeki sunum ve örnek kodlarımızı da aşağıdaki bağlantılardan tedarik edebilirsiniz. Şubat ayı içerisindeki Webiner planımıza göre bir aksilik olmassa yine Entity Framework tarafında Migration konusunu irdelemeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-
-Değerli kardeşim Bahtiyar'a Webineri kayıt edip bize ulaştırdığı için canı gönülden teşekkür ediyorum
-
-[Entity Framework - Code First Development.pptx (566,34 kb)](https://www.buraksenyurt.com/pics/2012%2f2%2fEntity+Framework+-+Code+First+Development.pptx)
+Ayrıca Webinerdeki örnek kodlarımızı da aşağıdaki bağlantıdan tedarik edebilirsiniz. Şubat ayı içerisindeki Webiner planımıza göre bir aksilik olmassa yine Entity Framework tarafında Migration konusunu irdelemeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Değerli kardeşim Bahtiyar'a Webineri kayıt edip bize ulaştırdığı için canı gönülden teşekkür ediyorum.
 
 [EFCodeFirst.rar (1,02 mb)](/assets/files/2012/EFCodeFirst.rar)

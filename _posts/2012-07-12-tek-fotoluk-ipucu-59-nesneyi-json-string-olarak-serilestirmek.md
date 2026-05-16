@@ -15,4 +15,3 @@ Diyelimki generic T tipine yazacağınız bir Extension metod ile, JSON formatı
 ![tfi60.png](/assets/images/2012/tfi60.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
-

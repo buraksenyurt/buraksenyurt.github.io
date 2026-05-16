@@ -13,4 +13,3 @@ Hemen hepimiz LINQ sorgularını kullanıyoruz (Tabi aramızda halen.Net 2.0 ve 
 ![PhotoTrick20](/assets/images/2011/PhotoTrick20.png)
 
 [LINQThink.rar (38,50 kb)](/assets/files/2011/LINQThink.rar)
-

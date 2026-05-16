@@ -18,8 +18,6 @@ categories:
 ---
 Hatırlayacağınız üzere geçtiğimiz günlerde kafayı T-SQL ile bozmuş ve can sıkıntısından eğlenceli ifadeler yazmaya çalışmıştım. Sanırım söz konusu bu eğlence sonraki günlere de sirayet etti ve yine bir kaç eğlenceli T-SQL sorgusu ile karşınızdayım (İnsan ne oldum dememeli ne olacağım demeli belki de…Ben ki SQL’ den nefret eden bir birey olarak bu hale geldiysem…)
 
-![fun2](/assets/images/2012/fun2.jpg)
-
 Aslında hiç vakit kaybetmeden sorgularımızı incelemeye başlayalım dilerseniz. Elbetteki yine merak ettiğim ve aklıma gelen bazı ihtiyaçlar dahilinde bu sorgular ortaya çıkmakta. Örneğin sakin sakin otururken ilk aklıma gelen T-SQL tarafında bizim söyleyeceğimiz bazı kriterlere göre rastgele şifre üretecek bir fonksiyon yazmak oldu
 
 Bunun için aşağıdaki T-SQL betiğini yazdım.

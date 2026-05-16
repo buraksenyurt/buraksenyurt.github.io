@@ -13,7 +13,4 @@ Bazen iç içe çağrılarda bulunan metod zincirlerinde herhangibir seviyede me
 
 ![PhotoTrick6](/assets/images/2011/PhotoTrick6.png)
 
-(Büyük hali için fotoğrafa tıklayın)
-
 [GoodExceptionCatching.rar (22,12 kb)](/assets/files/2011/GoodExceptionCatching.rar)
-

@@ -17,4 +17,3 @@ Environment tipinde neler var neler zaten
 ![PhotoTrick22](/assets/images/2011/PhotoTrick22.png)
 
 [UsingEnvironment.rar (20,82 kb)](/assets/files/2011/UsingEnvironment.rar)
-

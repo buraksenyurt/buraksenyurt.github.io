@@ -15,4 +15,3 @@ Sanırım bir önceki tek fotoluk ipucunda çalışma zamanındaki bir nesne öz
 ![PhotoTrick26](/assets/images/2011/PhotoTrick26.png)
 
 [RuntimeMethods.rar (24,17 kb)](/assets/files/2011/RuntimeMethods.rar)
-

@@ -26,17 +26,18 @@ Tabi zaman ilerledi ve bildiğiniz üzere Microsoft, servis odaklı geliştirme 
 
 Microsoft Bing Map’ in geliştiricilere sunduğu 4 önemli servis bulunmaktadır. Bu servislere ait adresleri aşağıdaki tabloda bulabilirsiniz
 
-| Servis | Adres |
+| **Servis** | **Adres** |
 | --- | --- |
-
-| Geocode | http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl |
-| Search | http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc?wsdl |
-| Imagery | http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc?wsdl |
-| Route | http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl |
+| Geocode | `http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl` |
+| Search | `http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc?wsdl` |
+| Imagery | `http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc?wsdl` |
+| Route | `http://dev.virtualearth.net/webservices/v1/routeservice/routeservice.svc?wsdl` |
 
 Dikkat edileceği üzere söz konusu servislerin tamamı WCF (Windows Communication Foundation) tabanlı olarak geliştirilmişlerdir (svc uzantısına dikkat)
 
-Dilerseniz ilk olarak Geocode servisini kullanarak, bir lokasyonun Latitude ve Longtitude değerlerini elde etmeye çalışarak işe başlayalım. Örnek fonksiyonelliklerimizi bir Class Library içerisinde toplayabilir ve her bir metodumuz için birer Unit Test geliştirerek ilerleyebiliriz. Servisleri projeye teker teker referans etmemiz gerektiğini hatırlatmak isterim. Aşağıdaki şekilde Geocode Servisinin eklenişi görülmektedir. ![bmwpf_2](/assets/images/2012/bmwpf_2.png)
+Dilerseniz ilk olarak Geocode servisini kullanarak, bir lokasyonun Latitude ve Longtitude değerlerini elde etmeye çalışarak işe başlayalım. Örnek fonksiyonelliklerimizi bir Class Library içerisinde toplayabilir ve her bir metodumuz için birer Unit Test geliştirerek ilerleyebiliriz. Servisleri projeye teker teker referans etmemiz gerektiğini hatırlatmak isterim. Aşağıdaki şekilde Geocode Servisinin eklenişi görülmektedir.
+
+![bmwpf_2](/assets/images/2012/bmwpf_2.png)
 
 Diğer servisleri de projeye referans ettiğimizde Config dosyasında aşağıdaki içeriğin üretildiğine şahit oluruz.
 
@@ -254,7 +255,7 @@ Dolayısıyla bu duruma karşılık tedbir olarak MaxReceivedMessageSize ve MaxB
 
 ![bmwpf_8](/assets/images/2012/bmwpf_8.png)
 
-Tabi bir de bunu istanbul için denemek lazım. Bu kutsal görevi de siz değerli okurlarıma bırakıyorum
+Tabi bir de bunu istanbul için denemek lazım. Bu kutsal görevi de siz değerli okurlarıma bırakıyorum.
 
 İlgili metodumuzu dilerseniz bir de Console uygulaması üzerinden kullanmaya çalışalım ve sonuçları görelim.
 

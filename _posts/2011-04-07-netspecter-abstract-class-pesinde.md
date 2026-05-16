@@ -17,9 +17,8 @@ Karanlık içerisinde sadece gözleri belli oluyordu. Kaşlarını çattı ve bi
 
 Bir kaç saniye sonra gökyüzünden düşen yağmur damlalarını görebiliyor ama seslerini duyamıyordu. Onun yerine kafasında bir uğultu vardı. Etrafında dans eden kod parçları görüyordu. Gözleri yavaş yavaş kararmaya başlamıştı. Derken başında beliren kişiyi gördü…
 
-- Gizemli Pardesü: Netspecter!!! Sen haaa …
-
-- Netspecter: Evet yaaa. Ben…Fazla uzağa kaçamadın eski dostum Abstract Class
+- **Gizemli Pardesü:** Netspecter!!! Sen haaa …
+- **Netspecter:** Evet yaaa. Ben…Fazla uzağa kaçamadın eski dostum Abstract Class
 
 Netspecter bu kez bir abstract sınıfın peşinde. Sizin içinde eğlenceli bir deneyim olacağına inandığım enteresan bir vakayı analiz etmeye çalışıyor olacağız. Çoğunlukla kod geliştirirken pek fark etmediğimiz bir hata ama hemen çözüm üretebiliyorz. Lakin bu çözümü üretirken istediğimizin dışında bir sonuca da neden olabiliyoruz. Dilerseniz hiç vakit kaybetmeden konumuza geçelim. İlk olarak aşağıdaki kod içeriğini göz önüne alarak başlamamızda yarar olacağı kanısındayım.
 

@@ -27,7 +27,6 @@ System.Numerics içerisine dahil edilen ve bu yazımıza konu olan diğer bir ti
 
 | **Tip** | **Minimum Değer** | **Maksimum Değer** |
 | --- | --- | --- |
-
 | Int64(long) | -9223372036854775808 | 9223372036854775807 |
 | Unsigned Int64 | 0 | 18446744073709551615 |
 | Decimal | -79228162514264337593543950335 | 79228162514264337593543950335 |
@@ -79,29 +78,29 @@ Yine hey gidi günler diyeceğim:) Özellikle C# programlama dilinin temellerind
 
 Yukarıdaki kod parçasında da kullanıcının girdiği sayısal değerin faktöryel hesaplamalarının yapıldığı iki yinelemeli (Recursive) metod görülmektedir. Bu metodlar arasındaki tek fark ise Factorial metodunun BigInteger tipinden bir değer döndürmesi diğerinin ise long tipini kullanmasıdır. İyi de ne olmuş ki? Gelin bir kaç sayısal değer için deneme yapalım.
 
-10! (10 Faktöryel)
+**10!**
 
 ![blg203_Test1](/assets/images/2011/blg203_Test1.gif)
 
 10 sayısının faktöryeli için bulunun sonuçlar güzel.
 
-20!
+**20!**
 
 ![blg203_Test2](/assets/images/2011/blg203_Test2.gif)
 
 Herşey yolunda görünüyor.
 
-21!
+**21!**
 
 ![blg203_Test3](/assets/images/2011/blg203_Test3.gif)
 
 Uppsss!!!:S Bir terslik var sanki. 21 sayısının faktöryel değeri için Int64 tipinden olan hesaplama negatif değer döndürdü. Oysaki BigInteger ile çalışan metodumuz olması gereken değeri döndürdü. Sanıyorum ki ne demek istediğimi gayet iyi anladınız;) Peki olayı biraz daha büyütelim mi? Örneğin 100 sayısının faktöryel değerini hesap etmek istediğimizi düşünelim.
 
-100!
+**100!**
 
 ![blg203_Test4](/assets/images/2011/blg203_Test4.gif)
 
-Volaaaaaa!!!!:D Oldukça büyük, kocaman bir rakam ile karşı karşıyayız. Ama doğru sonuç olduğunu ifade edebiliriz. Faktöryel hesaplamalarını kontrol etmek için [http://www.cs.uml.edu/~ytran/factorial.html](http://www.cs.uml.edu/~ytran/factorial.html) adresindeki web tabanlı hesap makinesinden de yararlanabilirsiniz. Hatta zamanında elimizde BigInteger gibi bir kavram olmadığından, bu web sayfasına kod içinden sayısal değerleri request olarak gönderip sonuçlarını program ortamına aktarmayı bile denemiştim. Artık bu kadar kolaya kaçmanın gereği yok;)
+Volaaaaaa!!!!:D Oldukça büyük, kocaman bir rakam ile karşı karşıyayız. Ama doğru sonuç olduğunu ifade edebiliriz. Faktöryel hesaplamalarını kontrol etmek için [Calculator Soup](https://www.calculatorsoup.com/calculators/discretemathematics/factorials.php) adresindeki web tabanlı hesap makinesinden de yararlanabilirsiniz.
 
 BigInteger tipi yukarıdaki kullanımı dışında sahip olduğu static metodlar sayesinde çok yüksek haneli sayılar ile kolayca çalışılabilmesine olanak sağlamaktadır. Aşağıdaki kod parçasında bir kaç örnek kullanıma yer verilmektedir.
 

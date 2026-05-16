@@ -18,4 +18,3 @@ Diyelim ki uygulama içerisinde kullandığınız büyük boyutlu bir byte dizis
 ![PhotoTrick35](/assets/images/2011/PhotoTrick35.png)
 
 [MemoryCompressing.rar (25,22 kb)](/assets/files/2011/MemoryCompressing.rar)
-

@@ -12,9 +12,7 @@ Matix! Ne filmdi ama değil mi? Özellikle yazılım tarafına hakim olan bizler
 
 ![Merovingian200px](/assets/images/2012/Merovingian200px.png)
 
-Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutulmuş ve bellek üzerinde bir şekilde ayakta kalmış bir programcıktı
-
-Şimdi nereden çıktı bu Matrix, Merovingian diyeceksiniz. Konumuz.Net bellek yönetimi. Ama bu kez biraz daha farklı ve detaylı.
+Sanki C++ ile geliştirilmiş bir değişken tipiydi de, Release edilmesi unutulmuş ve bellek üzerinde bir şekilde ayakta kalmış bir programcıktı. Şimdi nereden çıktı bu Matrix, Merovingian diyeceksiniz. Konumuz.Net bellek yönetimi. Ama bu kez biraz daha farklı ve detaylı.
 
 .Net Framework’ ün bilindiği üzere en önemli özelliklerinden birisi de Managed Code adını verdiğimiz yaklaşımı destekliyor olmasıdır. Hatta özellikle bu yaklaşım üzerine kurulmuş bir alt yapı mimarisi sunduğunu ifade edebiliriz. Managed Code denildiğinde, üretilen kodun çalışma zamanında bir ortam tarafından kontrol atlında tutulduğu sonucuna varmamız yeterlidir..Net Framework’ ün içsel yapılarını göz önüne aldığımızda, çalışma zamanı yani Common Language Runtime, yürütülmekte olan Assembly’ lar ve ilişkili Module’ ler ile ilgili olarak bir çok yönetsel kontrol mekanizmasını devreye sokar. Örneğin Exception Handling, Code Access Security, Type Safety ve en önemlilerinden birisi olan Memory Management.
 
@@ -52,9 +50,7 @@ Ancak, olay bu kadar da basit değildir. Aslında GC mekanizması ana uygulama T
 
 Diğer yandan kopyalama işlemleri sırasında oluşabilecek bir sorun da vardır. GC ayrı bir Thread üzerinden, bir alt Generation’ daki canlı nesneleri tespit ettikten sonra, bunları bir üst generation’ a kopyalar. Lakin alt Generation’ daki nesneler bu taşıma sırasında veya öncesinde halen daha ana veya farklı bir Thread tarafından kullanılıyor olabilirler. Hımmm
 
-İşte bu noktada GC şöyle bir yol izler. Thread’ ler arası güvenli bir nokta oluşturur (Safe Point) ve taşıma sırasında ilgili uygulama Thread’ lerinin tamamı durdurulur. Sonrasında ise kopyalanan tüm içeriği orjinal referansları ile eşleştirerek düzeni korur. Güzel bir trick öyle değil mi?
-
-Bir o kadar da karışık aslına bakarsanız. (Ben hala konu ile ilişkili kaynakları ve CLR via C#’ ın ilgili bölümlerini okuyarak pekiştirmeye çalışıyorum)
+İşte bu noktada GC şöyle bir yol izler. Thread’ ler arası güvenli bir nokta oluşturur (Safe Point) ve taşıma sırasında ilgili uygulama Thread’ lerinin tamamı durdurulur. Sonrasında ise kopyalanan tüm içeriği orjinal referansları ile eşleştirerek düzeni korur. Güzel bir trick öyle değil mi? Bir o kadar da karışık aslına bakarsanız. (Ben hala konu ile ilişkili kaynakları ve CLR via C#’ ın ilgili bölümlerini okuyarak pekiştirmeye çalışıyorum)
 
 Generation 2 bölgesi aslında performans ölçümlerinde de ip ucu veren bir alan olarak düşünülmektedir. Bu bölgenin çok sık ve fazla şişerek dolması ileride programın bellek ile ilişkili sıkıntılar üretebileceğinin de bir işaretedir.
 
@@ -98,7 +94,7 @@ Yukarıda bahsettiklerimiz anlamında GC’ i kod tarafında ve config dosyası 
 
 veya örneğin
 
-```text
+```xml
 <configuration> 
   <runtime> 
     <gcServer enabled="false"/> 
@@ -115,6 +111,8 @@ GCLatencyMode özelliği Batch, Interactive ve LowLatency olmak üzere 3 sabit d
 
 Devam eden yazımızda LOH ve SOH kullanımları sırasında uygulamalarımıza ait bellek değerlerini nasıl ölçümlendirebileceğimizi aktarmaya çalışıyor olacağım. Şimdilik teoriyi pekiştirmemizde ve neyin ne olduğunu ayrıştırmamızda yarar var. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-![memmng_5](/assets/images/2012/memmng_5.png) Bu arada CLR’ ın çalışma şeklini daha iyi ve derinlemesine öğrenmek isterseniz sizlere tavsiyem MS Press’ in Jeffrey Ritcher imzalı CLR via C# isimli kitabı olacaktır.
+Bu arada CLR’ ın çalışma şeklini daha iyi ve derinlemesine öğrenmek isterseniz sizlere tavsiyem MS Press’ in Jeffrey Ritcher imzalı CLR via C# isimli kitabı olacaktır.
+
+![memmng_5](/assets/images/2012/memmng_5.png)
 
 896 sayfalık bu kitap içerisinde elbetteki bulacağınız tek şek bellek yönetimi (Memory Managemet) değil. Ama yazdığımız temel C# kod parçalarının CLR (Common Language Runtime) tarafından nasıl ele alındığını görmek, CIL (Common Intermediate Language) seviyesine kadar inebilmek mümkün. Fiyatı biraz yüksek görünebilir ama bence elinizin altında olması gereken bir kaynaktır diye düşünüyor ve hatta bu konuda ısrar ediyorum.

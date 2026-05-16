@@ -14,5 +14,4 @@ Diyelim ki elinizde n sayıda e-mail adresi var ve bunları kod içerisinde stri
 
 ![tfi_51N.PNG](/assets/images/2012/tfi_51N.PNG)
 
-Görüşmek üzere
-
+Görüşmek üzere!

@@ -93,7 +93,7 @@ Burada son CTP ile gelen önemli bir nokta Using elementi ve içerisindeki Names
 
 Dikkat edileceği üzere Annotations elementine ait Target niteliğinde bir tanımlama yapılmıştır. Buna göre AdventureWorksModel şemasında yer alan Product Entity tipinin ListPrice özelliği için Validation.Range formatında bir TypeAnnotation bildirimi yapılmaktadır. Bir başka deyişle ListPrice özelliği için çalışma zamanında üretilen metadata içeriğine enjekte edilecek bir doğrulama kalıbı sunulmaktadır.
 
-Bu kalıba göre ListPrice özelliğinin Decimal veri tipinden olan minimum ve maximum alan değerleri belirtilmektedir. Senaryomuza göre ListPrice özelliği 0 ile 5000 birim arasında olmalıdır. İşte kod tarafında kullanılan TryParse metodu eğer XML dosyasını okuyabilme işlemi başarılı olursa, ilgili validasyonu çalışma zamanındaki metadata içeriğine dahil edecektir. Eğer Data Service örneği herhangibir tarayıcıda açılır ve metadata içeriğine ulaşılırsa aşağıdaki çıktı ile karşılaşıldığı görülecektir. (Benim örneğimde söz konusu Data Service adresi [http://localhost:4860/ProductDataService.svc/$metadata](http://localhost:4860/ProductDataService.svc/$metadata) şeklindedir)
+Bu kalıba göre ListPrice özelliğinin Decimal veri tipinden olan minimum ve maximum alan değerleri belirtilmektedir. Senaryomuza göre ListPrice özelliği 0 ile 5000 birim arasında olmalıdır. İşte kod tarafında kullanılan TryParse metodu eğer XML dosyasını okuyabilme işlemi başarılı olursa, ilgili validasyonu çalışma zamanındaki metadata içeriğine dahil edecektir. Eğer Data Service örneği herhangibir tarayıcıda açılır ve metadata içeriğine ulaşılırsa aşağıdaki çıktı ile karşılaşıldığı görülecektir. (Benim örneğimde söz konusu Data Service adresi `http://localhost:4860/ProductDataService.svc/$metadata` şeklindedir)
 
 ![bei_27](/assets/images/2011/bei_27.gif)
 
@@ -107,9 +107,7 @@ Ben de bunun üstüne söz konusu servis referansını komut satırından DataSv
 
 ![bei_29](/assets/images/2011/bei_29.gif)
 
-Hal böyle olunca tabi heyecanlı bir şekilde makaleyi yazmaya çalışan bir yazılım sevdalısının nasıl da hüsrana uğradığını zannediyorum ki anlayabilirsiniz
-
-Eğer Proxy üretimi başarılı bir şekilde gerçekleşseydi bu durumda aşağıdaki ilüsturasyon da yer alan bir kod parçasını denemeye tabi tutacaktık.
+Hal böyle olunca tabi heyecanlı bir şekilde makaleyi yazmaya çalışan bir yazılım sevdalısının nasıl da hüsrana uğradığını zannediyorum ki anlayabilirsiniz. Eğer Proxy üretimi başarılı bir şekilde gerçekleşseydi bu durumda aşağıdaki ilüsturasyon da yer alan bir kod parçasını denemeye tabi tutacaktık.
 
 ```csharp
 using System; 

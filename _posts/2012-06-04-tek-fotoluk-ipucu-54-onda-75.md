@@ -17,4 +17,4 @@ Comparer tipinin Create isimli metodu, Sort fonksiyonu için gerekli olan karş�
 
 ![TPI_54Nokta75_thumb2](/assets/images/2012/TPI_54Nokta75_thumb2.png)
 
-Başka bir ip ucunda görüşmek dileğiyle
+Başka bir ip ucunda görüşmek dileğiyle.

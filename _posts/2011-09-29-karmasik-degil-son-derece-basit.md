@@ -11,11 +11,7 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Kurumsal eğitim vermenin en güzel yanlarından birisi de, gelenlerin istekleri ve talepleri doğrultusunda gerçek hayat örneklerini daha kolay bir şekilde kodlayabilmeniz ve gösterebilmenizdir.
-
-![experience](/assets/images/2011/experience.jpg)
-
-Söz gelimi geçtiğimiz hafta içerisinde vermeye başladığım ve makaleyi yazdığım tarih itibariyle devam etmekte olan bir eğitim sırasında, Binary ve XML Serileştirme konularını anlatırken, sahip olduğumuz dil ve framework materyallerinden bazılarını iç içe ve ne kadar etkili kullanabildiğimizi gördük. Bu durumdan esinlenerek sizlere de bir gerçek hayat örneği aktarmaya çalışmak isterim.
+Kurumsal eğitim vermenin en güzel yanlarından birisi de, gelenlerin istekleri ve talepleri doğrultusunda gerçek hayat örneklerini daha kolay bir şekilde kodlayabilmeniz ve gösterebilmenizdir. Söz gelimi geçtiğimiz hafta içerisinde vermeye başladığım ve makaleyi yazdığım tarih itibariyle devam etmekte olan bir eğitim sırasında, Binary ve XML Serileştirme konularını anlatırken, sahip olduğumuz dil ve framework materyallerinden bazılarını iç içe ve ne kadar etkili kullanabildiğimizi gördük. Bu durumdan esinlenerek sizlere de bir gerçek hayat örneği aktarmaya çalışmak isterim.
 
 İlk önce ne yapacağımızı belirtmem gerekiyor ama bunu en sona bırakmak ve ne yapmış olduğumuzu o zaman göstermek (aslında sizin anladığınızı görmek) arzusundayım. Öncelikli olarak aşağıdaki şekilde görülen Solution yapısını oluşturarak işe başlayabiliriz. Tabi ki bu yapı bizim test çözümümüz olarak tasarlanmıştır.
 
@@ -166,17 +162,21 @@ namespace TestApp
 
 Tabi çıktı olarak üretilen Binary dosyaların içeriği de aşağıdaki gibi oluşturulacaktır.
 
-Categories.bin içeriği;
+**Categories.bin içeriği;**
 
+```text
 ÿÿÿÿ DDomainLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null System.Collections.Generic.List`1[[DomainLibrary.Category, DomainLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] _items_size_version DomainLibrary.Category[] DomainLibrary.Category
 DomainLibrary.Category k__BackingFieldk__BackingField Book Music
+```
 
-Products.bin içeriği;
+**Products.bin içeriği;**
 
+```text
 ÿÿÿÿ DDomainLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null €System.Collections.Generic.List`1[[DomainLibrary.Product, DomainLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] _items_size_version DomainLibrary.Product[] DomainLibrary.Product
 DomainLibrary.Product k__BackingFieldk__BackingFieldk__BackingFieldk__BackingField
 Kitap 1 10 Kitap 2 5 Muzik 1 15
 Kitap 3 3 Muzik 2 9 Kitap 4 8
+```
 
 Aslında bu geliştirdiğimiz örnek ile kazandığımız bir takım avantajlar olduğunu vurgulamalıyız. Öncelikli olarak development safhasındayken Binary serileştirme işini üstlenen metoda atayabileceğimiz tipler için Business anlamda bir Domain kuralı getirmiş bulunmaktayız. Bunu metodu çağırdığımız sırada da zaten net bir şekilde görebiliriz.
 

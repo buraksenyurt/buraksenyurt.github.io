@@ -77,9 +77,7 @@ namespace DefaultAndOptionalParametersCase
 
 Bu kod parçasında dikkat etmemiz gereken nokta Constructor metodlarıdır. Görüldüğü üzere en fazla sayıda parametre alan yapıcı metod, diğer yapıcı metodlar tarafından kullanılmaktadır. Burada this anahtar kelimesini takip eden ifadeler içerisinde gerekli aktarma işlemlerinin yapıldığı görülebilir.
 
-![Exclamation](/assets/images/2011/Exclamation_5.gif)
-
-Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda (Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
+> Eski bilgilerimizi bir hatırlayalım. Bilindiği üzere yapıcı metodlarda (Constructors) this yerine base anahtar kelimesini kullanarak, metod parametrelerinin bir üst sınıftaki versiyonuna gönderilmesi de sağlanabilir.
 
 Tabi burada C# 4.0 ile gelen Default Parameters yeteneğinin devreye girmesi ile n sayıda metod yerine tek bir metodun kullanılması söz konusu olabilir. Nitekim ele aldığımız örnek senaryoda yapıcı metodların tek yaptığı, uygun olan versiyona parametre değerlerini taşımaktır. Dikkat edileceği üzere sadece tek bir yapıcı metod içerisinde özellik değer atama işlemleri yapılmaktadır. Diğer yapıcı metodlar sadece parametre değerlerini taşımak için kullanılmaktadır. Aşağıdaki şekilde bu durum ifade edilmeye çalışılmaktadır.
 
@@ -199,7 +197,7 @@ Dikkatinizi çeken bir nokta var mı?
 
 Son çıktıya göre ProcessId değerinin 512 olduğu görülmektedir. Oysaki 512 değeri daha önceki kodlamaya göre PacketSize özelliği için atanan bir değerdir. Bir başka deyişle yanlış bir değer ataması söz konusudur. İşin kötü yanı bu senaryoda derleme zamanında bir hata veya uyarı mesajı alınmamaktadır. Dolayısıyla kodun hatalı çalışması olasıdır.
 
-![Exclamation](/assets/images/2011/Exclamation_6.gif) Öyleyse varsayılan parametre kullanımı gibi senaryolarda, metodlara yeni parametrelerin eklenmesi söz konusu ise, bu parametrelerin en sona eklenmesi daha doğru olacaktır. Named Parameters aslında köklü çözüm olsa da, ilgili tip metodlarını kullanan diğer geliştiricilerin bu kullanımı göz ardı etmesi ihtimali vardır.
+> Öyleyse varsayılan parametre kullanımı gibi senaryolarda, metodlara yeni parametrelerin eklenmesi söz konusu ise, bu parametrelerin en sona eklenmesi daha doğru olacaktır. Named Parameters aslında köklü çözüm olsa da, ilgili tip metodlarını kullanan diğer geliştiricilerin bu kullanımı göz ardı etmesi ihtimali vardır.
 
 Yani metod yapısını aşağıdaki gibi değiştirmemiz doğru bir çalışma zamanı çıktısı elde etmemizi sağlayacaktır.
 

@@ -15,4 +15,3 @@ System.Environment tipi içerisinde son derece yararlı ortam bilgileri bulunmak
 ![PhotoTrick32](/assets/images/2011/PhotoTrick32.png)
 
 [EnvironmentExtensions.rar (22,66 kb)](/assets/files/2011/EnvironmentExtensions.rar)
-

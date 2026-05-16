@@ -155,7 +155,7 @@ Dikkat edileceği üzere Compiled çalışma zamanı sonuçlarında yer yer Inte
 
 )
 
-![Exclamation](/assets/images/2011/Exclamation_10.gif) Şu da unutulmamalıdır ki burada Instance üzerinden çağırdığımız Matches veya Match gibi metodların, Regex tipi üzerinden çağrılabilen ve otomatik ön belleklemeyi kullanan Static versiyonları da mevcuttur. Bu versiyonların kullanımının daha hızlı olabileceğini düşünebiliriz. Ancak ben örneklerimdeki testler sırasında ve Base Class Library takımının konu ile ilgili araştırma yazılarında Instance üzerinden çağırılan Interpreted metodların, static olan versiyonlarına göre daha hızlı olabileceğini de gördüm. Bu konunun araştırılmasını da siz değerli okurlarıma bırakmak istiyorum
+> Şu da unutulmamalıdır ki burada Instance üzerinden çağırdığımız Matches veya Match gibi metodların, Regex tipi üzerinden çağrılabilen ve otomatik ön belleklemeyi kullanan Static versiyonları da mevcuttur. Bu versiyonların kullanımının daha hızlı olabileceğini düşünebiliriz. Ancak ben örneklerimdeki testler sırasında ve Base Class Library takımının konu ile ilgili araştırma yazılarında Instance üzerinden çağırılan Interpreted metodların, static olan versiyonlarına göre daha hızlı olabileceğini de gördüm. Bu konunun araştırılmasını da siz değerli okurlarıma bırakmak istiyorum
 
 ## Yazının Ana Konusu Dışında Bir Mevzu
 
@@ -268,9 +268,7 @@ Diğer örnekleri düşündüğümüzde herhangibir yerde kontrol edilecek bilgi
 
 Ama esneklik yönünden de derlenmiş assembly kullanımının bazı dez avantajları vardır. Örneğin dinamik olarak bir desen bildirilemez. Desen zaten önceden belirlenmiş ve assembly içerisine gömülmüştür. Hatta kodun ilerleyen kısımlarında Case Sensitive'liğin dikkate alınmaması veya alınması gereken bir durumda RegexCompilationInfo tipi ile ilgili seçeneklerinin yeniden düzenlenmesi gerekmektedir ki bu mümkün değildir.
 
-![Exclamation](/assets/images/2011/Exclamation_thumb_10.gif)
-
-Aslında mümkün değildir derken biraz kolay kaçtığımızı ifade edebiliriz. Nitekim Reflection yardımıyla başlangıç ayarlarının parametrik olarak verilmesi, yeniden derlenmesi ve dinamik olarak yüklenerek kullanılması mümkündür. Hatta bu noktada dynamic keyword'ünün de bir çok noktada işi kolaylaştıracağını ifade edebiliriz. Yine de işin içerisinde dinamik olarak çalışma zamanına yük getirecek ve performansı olumsuz yönde etkileyecek bir çalışma mekanizması söz konusudur.
+> Aslında mümkün değildir derken biraz kolay kaçtığımızı ifade edebiliriz. Nitekim Reflection yardımıyla başlangıç ayarlarının parametrik olarak verilmesi, yeniden derlenmesi ve dinamik olarak yüklenerek kullanılması mümkündür. Hatta bu noktada dynamic keyword'ünün de bir çok noktada işi kolaylaştıracağını ifade edebiliriz. Yine de işin içerisinde dinamik olarak çalışma zamanına yük getirecek ve performansı olumsuz yönde etkileyecek bir çalışma mekanizması söz konusudur.
 
 Yani Assembly'ın yeniden üretilmesi ve referans edilmesi gerekmektedir. Açıkçası tek bir desen değil ama n sayıda desenin kullanıldığı ve başlangıçtaki konfigurasyon seçeneklerinin belli olduğu senaryolarda kullanılması daha doğru olabilir. foreach döngüsünün çalışmasına göre LoremIpsum dosyasında geçerli URL formatında olan tüm cümleler elde edilebilecektir.
 

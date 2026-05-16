@@ -267,9 +267,9 @@ Dikkat edileceği üzre TCP bazlı 8342 numaralı port için garanti verilmişti
 <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>
 ```
 
-İlk dikkati çeken nokta WebHttp davranışını destekleyen WebHttpBinding bağlayıcı tipini kullanan ve ITCPPolicy sözleşmesini sunan bir Endpoint’ in eklenmiş olmasıdır. Üstelik bu Endpoint, base olarak http://localhost:8080 adresini kullanmaktadır.
+İlk dikkati çeken nokta WebHttp davranışını destekleyen WebHttpBinding bağlayıcı tipini kullanan ve ITCPPolicy sözleşmesini sunan bir Endpoint’ in eklenmiş olmasıdır. Üstelik bu Endpoint, base olarak `http://localhost:8080` adresini kullanmaktadır.
 
-Diğer yandan TCP Bazlı iletişim sağlayan Endpoint için security mode değeri none olarak işaret edilmiştir. Bu durumda Silverlight uygulamamızda net.tcp://localhost/8342/MeetingRoom/MeetingService/mex adresi üzerinden yapılan referans ekleme işlemi sonrasında, daha önceden aldığımız Warning mesajlarının kalktığı ve aşağıdaki istemci config içeriğinin oluştuğu görülecektir.
+Diğer yandan TCP Bazlı iletişim sağlayan Endpoint için security mode değeri none olarak işaret edilmiştir. Bu durumda Silverlight uygulamamızda `net.tcp://localhost:8342/MeetingRoom/MeetingService/mex` adresi üzerinden yapılan referans ekleme işlemi sonrasında, daha önceden aldığımız Warning mesajlarının kalktığı ve aşağıdaki istemci config içeriğinin oluştuğu görülecektir.
 
 ```xml
 <configuration> 
@@ -352,9 +352,9 @@ Anlaşılacağı üzere bir Cross Domain Policy sorunsalı baş göstermiştir g
 
 ## Son Karşılaşma
 
-Aslında Servisin geliştirilme mantığına göre IIS’ in olmadığı bir durum simüle edilmektedir. Nitekim Siverlight istemcilerinin TCP bazlı bir servisi tüketmesi için bu servisin IIS üzerinde host edilmesi ve ClientAccessPolicy.xml dosyası ile desteklenerek gerekli güvenlik izinlerinin verilmesi yeterlidir. Dolayısıyla bizim geliştirdiğimiz senaryoda Servis uygulamasının IIS gibi çalıştığı varsayılabilir. Buna göre ilk olarak HTTP base address tanımlamasının http://localhost:80 şeklinde değiştirilmesi düşünülmelidir.
+Aslında Servisin geliştirilme mantığına göre IIS’ in olmadığı bir durum simüle edilmektedir. Nitekim Siverlight istemcilerinin TCP bazlı bir servisi tüketmesi için bu servisin IIS üzerinde host edilmesi ve ClientAccessPolicy.xml dosyası ile desteklenerek gerekli güvenlik izinlerinin verilmesi yeterlidir. Dolayısıyla bizim geliştirdiğimiz senaryoda Servis uygulamasının IIS gibi çalıştığı varsayılabilir. Buna göre ilk olarak HTTP base address tanımlamasının `http://localhost:80` şeklinde değiştirilmesi düşünülmelidir.
 
-Diğer yandan çalışma zamanındaki hata mesajı 4502 ile 4534 numaralı portlar arasında bir değerin kullanılmasını beklemektedir. Bu sebepten servis tarafındanki TCP based address değerinin de örnek olarak net.tcp://localhost:4505/MeetingRoom/MeetingService şeklinde değiştirilmesi düşünülebilir. Yani 4502 ile 4534 arasında bir port değeri atanmalıdır. Ancak bu da yeterli olmayacaktır. Nitekim policy içeriğini teşkil eden XML dosyasında yer alan port numarası da 4505 olarak ayarlanmalıdır. Tüm bu değişiklikler Silverlight istemcisine servis referansının yeniden eklenmesini gerektirecektir.
+Diğer yandan çalışma zamanındaki hata mesajı 4502 ile 4534 numaralı portlar arasında bir değerin kullanılmasını beklemektedir. Bu sebepten servis tarafındanki TCP based address değerinin de örnek olarak `net.tcp://localhost:4505/MeetingRoom/MeetingService` şeklinde değiştirilmesi düşünülebilir. Yani 4502 ile 4534 arasında bir port değeri atanmalıdır. Ancak bu da yeterli olmayacaktır. Nitekim policy içeriğini teşkil eden XML dosyasında yer alan port numarası da 4505 olarak ayarlanmalıdır. Tüm bu değişiklikler Silverlight istemcisine servis referansının yeniden eklenmesini gerektirecektir.
 
 ![blg218_AddServiceReferenceLast](/assets/images/2011/blg218_AddServiceReferenceLast.gif)
 
@@ -362,9 +362,9 @@ Artık tanışmak için son bir deneme yapılabilir. İşte sonuç.
 
 ![blg218_Final](/assets/images/2011/blg218_Final.gif)
 
-Görüldüğü üzere servis tarafındaki metod başarılı bir şekilde çalışmıştır. Peki bu kadar zahmete girmeye gerek var mıdır? Aslında olmadığını söylersem şu anda bana çok kızabileceğinizi düşünüyorum. Ancak var. Nitekim IIS (Internet Information Services) üzerinde WAS (Windows Process Activation Service) kullanımı sayesinde host edebileceğimiz TCP bazlı bir servisin, doğru ClientAccessPolicy.xml içeriği ile bir Silverlight istemcisi tarafından kullanılabilmesi mümkündür. Şu anda umuyorum ki içinizde @#$½!:=|<> gibi bir şey demiyorsunuzdur
+Görüldüğü üzere servis tarafındaki metod başarılı bir şekilde çalışmıştır. Peki bu kadar zahmete girmeye gerek var mıdır? Aslında olmadığını söylersem şu anda bana çok kızabileceğinizi düşünüyorum. Ancak var. Nitekim IIS (Internet Information Services) üzerinde WAS (Windows Process Activation Service) kullanımı sayesinde host edebileceğimiz TCP bazlı bir servisin, doğru ClientAccessPolicy.xml içeriği ile bir Silverlight istemcisi tarafından kullanılabilmesi mümkündür. Şu anda umuyorum ki içinizden `@#$½!:=|<>` gibi bir şey demiyorsunuzdur.
 
-Tabi yapılan örneğe göre kafalarda hale soru işaretleri oluşabilir. Söz gelimi 80 yerine örneğin 4508 numaralı bir port üzerinden iletişim geçerli olsa (http://localhost:4508 şeklinde) Yine de hatalar ile karşılaşır mıyız acaba?
+Tabi yapılan örneğe göre kafalarda hale soru işaretleri oluşabilir. Söz gelimi 80 yerine örneğin 4508 numaralı bir port üzerinden iletişim geçerli olsa (`http://localhost:4508` şeklinde) Yine de hatalar ile karşılaşır mıyız acaba?
 
 Bu sorunun araştırılmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

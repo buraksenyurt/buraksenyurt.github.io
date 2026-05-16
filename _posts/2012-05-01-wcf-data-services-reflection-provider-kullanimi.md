@@ -29,7 +29,7 @@ Bu geniş servis yelpazesinin uygulandığı alanlar göz önüne alındığınd
 
 > Data Service’ leri her zaman Entity Framework tabanlı olarak kullanmak zorunda olup olmadığımızdır?
 
-Güzel soru
+Güzel soru!
 
 Acaba var olan Data Service çalışma modeli esnetilip Entity Framework yerine kendi veri sağlayıcılarımız (Provider) ile çalışabilir miyiz? Bir başka deyişle, örneğin ASP.NET üzerindeki Membership Provider, Profile Provider gibi yapılarda uygulanabilen özelleştirme mantığını, Data Service’ ler tarafında da yapabilir miyiz? İşte bu yazımızda bu konuyu ele alıyor olacağız.
 
@@ -172,15 +172,14 @@ namespace ReflectionProvider
 
 Dikkat edileceği üzere Text dosyamız içerisinde yer alan tüm içerik XML formatında tarayıcı uygulamaya gelmiştir.
 
-İkinci sorgumuzda ise belirli bir PersonId değerine sahip içeriği getirmeye çalışacağız. Hatırlayacağınız gibi Person tipine uyguladığımız DataServiceKey niteliği ile, PersonId özelliğinin unique anahtar olduğunu belirtmiştik. Bu amaçla http://localhost:8080/Persons (10002) URL'ini deneyebiliriz. İşte sonuç
+İkinci sorgumuzda ise belirli bir PersonId değerine sahip içeriği getirmeye çalışacağız. Hatırlayacağınız gibi Person tipine uyguladığımız DataServiceKey niteliği ile, PersonId özelliğinin unique anahtar olduğunu belirtmiştik. Bu amaçla `http://localhost:8080/Persons (10002)` URL'ini deneyebiliriz. İşte sonuç;
 
 ![dsrp_7.png](/assets/images/2012/dsrp_7.png)
 
-Çok doğal olarak servise başka sorgular da gerçekleştirilebilir. Örneğin Country özelliğinin değerine göre alfabetik sırada listenin elde edilmesi sağlanabilir. Bunun için orderby anahtar kelimesini kullanmak yeterlidir. Tabi dikkat edilmesi gereken noktalardan birisi de, sorgu içerisinde yer alan özellik adlarının case-sensitive olarak ele alınması gerekliliğidir. Bir başka deyişle, Country yerine country yazmak hataya neden olacak ve bir sonuç kümesi döndürülmeyecektir. Dolayısıyla http://localhost:8080/Persons?$orderby=Country şeklindeki URL ifadesi aşağıdaki sonucun üretilmesini sağlayacaktır.
+Çok doğal olarak servise başka sorgular da gerçekleştirilebilir. Örneğin Country özelliğinin değerine göre alfabetik sırada listenin elde edilmesi sağlanabilir. Bunun için orderby anahtar kelimesini kullanmak yeterlidir. Tabi dikkat edilmesi gereken noktalardan birisi de, sorgu içerisinde yer alan özellik adlarının case-sensitive olarak ele alınması gerekliliğidir. Bir başka deyişle, Country yerine country yazmak hataya neden olacak ve bir sonuç kümesi döndürülmeyecektir. Dolayısıyla `http://localhost:8080/Persons?$orderby=Country` şeklindeki URL ifadesi aşağıdaki sonucun üretilmesini sağlayacaktır.
 
 ![dsrp_8.png](/assets/images/2012/dsrp_8.png)
 
 Görüldüğü gibi WCF Data Service'lerde Reflection Provider'larını kullanarak Entity Framework dışındaki kaynakları kullanmak son derece kolaydır. Bu yazıda geliştirdiğimiz örnekte, POST, PUT ve DELETE sorguları için gerekli destek yoktur. Bunun için IUpdatable arayüzünün ve onunla birlikte tanımlanan üyelerin ezilmesi (override) gerekmektedir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
 [ReflectionProvider.rar (36,11 kb)](/assets/files/2012/ReflectionProvider.rar)
-

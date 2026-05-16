@@ -23,10 +23,6 @@ categories:
 
 ![AspNetWebAPIWebiner](/assets/images/2012/AspNetWebAPIWebiner.png)
 
-Geliştirdiğimiz ilk örnekte Asp.Net MVC 4.0 ile birlikte hazır olarak gelen WebAPI şablonunu kullandık ve IE (Internet Explorer) aracılığıyla bazı sorgular tükettik. Bu sorgularda OData ifadelerinden bir kaçına da yer verdik. İkinci örneğimizde ise Self-Based olaraktan REST tabanlı servisleri nasıl host edebileceğimizi gördük. Webiner kaydına aşağıdaki adresten ulaşabilirsiniz. Her zamanki gibi kayıt alan Bahtiyar Dilek arkadaşımıza canı gönülden teşekkürlerimi sunuyorum
-
-Bir sonraki Webiner’ de görüşmek dileğiyle hepinize mutlu günler dilerim.
+Geliştirdiğimiz ilk örnekte Asp.Net MVC 4.0 ile birlikte hazır olarak gelen WebAPI şablonunu kullandık ve IE (Internet Explorer) aracılığıyla bazı sorgular tükettik. Bu sorgularda OData ifadelerinden bir kaçına da yer verdik. İkinci örneğimizde ise Self-Based olaraktan REST tabanlı servisleri nasıl host edebileceğimizi gördük. Webiner kaydına aşağıdaki adresten ulaşabilirsiniz. Her zamanki gibi kayıt alan Bahtiyar Dilek arkadaşımıza canı gönülden teşekkürlerimi sunuyorum. Bir sonraki Webiner’ de görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Youtube Link](https://www.youtube.com/watch?v=yMzzLhiiWrk)
-
-[Nedirtv?com üzerinden videoyu izlemek veya indirmek için tıklayın.](http://nedirtv.com/video/aspnet-web-api-wcf-web-api-webineri)

@@ -40,9 +40,11 @@ namespace AdventureWorksFinance
         double GetTotalGains(); 
     } 
 }
+```
 
 Diğer taraftan söz konusu servis sözleşmesini uygulayan AccountService sınıfının içeriği de aşağıdaki gibidir.
 
+```csharp
 namespace AdventureWorksFinance 
 { 
     public class AccountService 

@@ -57,7 +57,7 @@ Code-First Development senaryosunda bu tipin yazılması da geliştiriciye ait. 
 
 ![bei_18](/assets/images/2011/bei_18.gif)
 
-Teşekkürler NuGet
+Teşekkürler NuGet!
 
 Güncel proje üzerinden kısa sürede gerçekleştirilen install işlemi sonrasında bazı ek library dosyalarının referans edildiğini görürüz. Aşağıdaki şekilde bu kütüphaneler işaretlenmiştir.
 
@@ -141,7 +141,9 @@ Haydi gelin uygulamamızı debug modda çalıştıralım. Eğer çalışma zaman
 
 Burada,
 
+```text
 Data Source=.\SQLEXPRESS;Initial Catalog=CodeFirstDevelopment.CompanyContext;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFrameworkMUE
+```
 
 şeklinde bir bağlantı bilgisi üretilmiştir. SaveChanges metodunu atladığımızda ise ilk yapmamız gereken aslında yerel sunucuya bakmak olmalıdır. Ve sonuç;
 

@@ -12,14 +12,11 @@ Aslında çok şanslı bir insanım. Çünkü çocukluğumdan beri tatile gidebi
 
 ![blg216_Giris](/assets/images/2011/blg216_Giris.jpg)
 
-
 İlerleyen yıllarda hızlandıkça deniz yüzeyinin üstünde yükselen kanatlı gemilerle karşılaştık. Ne yazık ki bu hızlı gemiler daha çok dalgasız göller için yapıldıklarından her tür havada gidemiyorlardı.
 
 Derken bu günlerde çok meşhur olan Mavi Marmara gemisinin seferlere başladığını gördük. Ancak bunun çok öncesinde deniz otobüsü seferleri de başlamıştı. Deniz otobüsleri ile adaya 3 saat gibi bir sürede gidilebiliyordu. Tabi kötü hava koşullarında (özellikle fırtınalı günlerde), hırçın Marmara Denizinde bu gemilerle seyahet etmekte ayrı bir maceraydı. Çok sık başıma gelen bir durum du. Hemen her yaz, en az bir veya iki kere fırtınaya yakalanıyordum.
 
-![Exclamation](/assets/images/2011/Exclamation_7.gif)
-
-Tabi Avşa adasına ulaşmanın tek yolu gemi ve deniz otobüsü değil. Tekirdağ ve Silivri üzerinden de araba taşıyan motorlar ile de gidebilirsiniz. Üstelik bu motorların ağırlık merkezleri ve tasarımları nedeniyle, katamaran tipinden olan deniz otobüslerine göre daha az salladıklarını ifade edebilirim. Bir diğer yolda Yenikapı’ dan hızlı feribot ile Bandırma’ ya geçmek, oradan yarım saatlik bir yol ile Erdek limanına gelmek ve yine araba taşıyan gemilerle Avşa adasına ulaşmaktır.
+> Tabi Avşa adasına ulaşmanın tek yolu gemi ve deniz otobüsü değil. Tekirdağ ve Silivri üzerinden de araba taşıyan motorlar ile de gidebilirsiniz. Üstelik bu motorların ağırlık merkezleri ve tasarımları nedeniyle, katamaran tipinden olan deniz otobüslerine göre daha az salladıklarını ifade edebilirim. Bir diğer yolda Yenikapı’ dan hızlı feribot ile Bandırma’ ya geçmek, oradan yarım saatlik bir yol ile Erdek limanına gelmek ve yine araba taşıyan gemilerle Avşa adasına ulaşmaktır.
 
 Yine böyle fırtınalı bir gündü ve ben Bizitek firmasında henüz Junior geliştiriciydim. Şirketimin bana tahsis ettiği IBM R-51 diz üstü bilgisayarımı kullanmaktaydım. Avşa’ dan döndüğüm bir pazar günü yine çok fırtınalı bir havaya denk geldim. Kusanlar, bağırıp çağıranlar, panikleyenler…Açıkçası benim de çok hoşuma giden bir durum değil di (Zaten deniz otobüsüne bindiğinizde kaptanınız “Açıkta Deniz vardır!Rahatsız olanların binmemesi önemle rica olunur!” derse, ve bunu sinirli bir şekilde söylerse durum vahimdir) Derken koltuğunda dimdik oturup, sağ sola bakmadan ince bir kitap okuyan bir yolcu ile göz göze geldim. Bana “Sürükleyici bir kitap…Fırtınayı unutturuyor…” dedi. Bu sözden etkilenmiştim. Ne yaptım dersiniz? Laptop’ umu açtım ve [Numaralandırıcıları Kullanmak İçin Bir Sebep](/2005/08/28/numaralandiricilari-kullanmak-icin-bir-sebep/) başlıklı makalemi yazdım.
 
@@ -67,25 +64,25 @@ namespace HelloAgainEnums
 İlk üç denemede 2, 1 ve 0 değerleri girilmiştir. Ancak son iki denemede aslında enum sabiti içerisinde olmayan değerlerin girildiği görülmektedir. Kod hata vermemiştir. Dönüştürme işlemi başarılı olmuştur. Ancak kavramsal olarak bir hata vardır. Enum sabitine ait olmayan bir takım değerler ile çalışılmaktadır. Çok tabi olarak enum sabitlerini kullanan pek çok geliştirici bu detayı göz ardı etmiş olabilir. Peki ya çözüm nedir?. Test metodunu aşağıdaki gibi değiştirdiğimizi düşünelim.
 
 ```csharp
-private static void Test() 
-{ 
-	Console.WriteLine("StockLevel değerini giriniz"); 
-	int userInput = Int32.Parse(Console.ReadLine()); 
-	if (Enum.IsDefined(typeof(StockLevel), userInput)) 
-	{ 
-		StockLevel sLevel = (StockLevel)userInput; 
-		Console.WriteLine(sLevel); 
-	} 
-	else 
-	{ 
-		Console.WriteLine("Girilen sayısal değer StockLevel enum sabiti içerisinde yer almamaktadır."); 
-	} 
+private static void Test()
+{
+    Console.WriteLine("StockLevel değerini giriniz");
+    int userInput = Int32.Parse(Console.ReadLine());
+    if (Enum.IsDefined(typeof(StockLevel), userInput))
+    {
+        StockLevel sLevel = (StockLevel)userInput;
+        Console.WriteLine(sLevel);
+    }
+    else
+    {
+        Console.WriteLine("Girilen sayısal değer StockLevel enum sabiti içerisinde yer almamaktadır.");
+    }
 }
 ```
 
 Enum sınıfı üzerinden erişilebilen IsDefined metodu ilk parametre olarak enum sabiti tipini almaktadır. Bu nedenle typeof operatörü kullanılmıştır. İkinci parametre object tipindendir ve kullanıcının girdiği int değeri taşımaktadır. Metod, StockLevel enum sabiti içerisinde userInput ile girilen değerin var olup olmadığına bakmakta ve buna göre true veya false değer döndürmektedir. Tabiki if kontrolü içerisinde bilinçli olarak dönüştürme işlemi yapılması şart değildir. Enum sınıfının Parse metodu kullanılabilir. Hatta TryParse metodundan yararlanılarak, dönüştürme başarılı olduğu takdirde değer atanması yapılması da sağlanabilir.
 
-![Question](/assets/images/2011/Question_1.gif) Aslında Enum sınıfının Parse ve TryParse kullanımları ile IsDefined çağrımına gereksinimin ortadan kalkabileceğini ifade edebilir miyiz? Bunu bir düşünün ve araştırın.
+> Aslında Enum sınıfının Parse ve TryParse kullanımları ile IsDefined çağrımına gereksinimin ortadan kalkabileceğini ifade edebilir miyiz? Bunu bir düşünün ve araştırın.
 
 Gelelim diğer bir vakaya. Normal şartlarda Enum sabitleri içerisine yazılan değerler için sayısal atamada bulunulmaz. Varsayılan değerler ne ise bunlar kullanılmaktadır. Buna göre ilk sabit değeri 0 ile başlar ve diğerleri de otomatik olarak artarak devam eder. Ne varki 0 değerinin kullanımı ile ilişkili bir durum vardır. Aşağıdaki kod örneğini göz önüne alalım.
 

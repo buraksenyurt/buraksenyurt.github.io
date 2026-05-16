@@ -16,4 +16,3 @@ Concurrent Collections deyince aklımıza Thread-Safe koleksiyon tipleri gelmeli
 ![PhotoTrick8](/assets/images/2011/PhotoTrick8.png)
 
 [Concurrency.rar (23,94 kb)](/assets/files/2011/Concurrency.rar)
-

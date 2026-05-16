@@ -13,21 +13,14 @@ Puslu bir sonbahar akşamında detektif Netspecter odasında sessiz sakin oturma
 
 Sıkıntılı geçen bir kaç saat sonrasında aniden telefon çalar. Ölüm sessizliği içerisinde olan odanın neredeyse canlanmasına neden olan bir çalıştır bu. Ahizeyi ancak bir kaç seferden sonra fark edip kulağına götüren Netspecter, karşısında acı çektiği belli olan bir inleme ile irkilir.
 
-Diğer ses: Objjj….eeeccttt!!!
-
-Netspector: Kimsiniz
-
-Diğer ses: Obb…ect!!!
-
-Netspector: Oba makarnası mı? Nalo, nalooo…Anlamıyorum. Etecer mi?
-
-Diğer ses: Aghhh!!!
-
-Netspector: Ha ağrı kesici?
-
-Diğer ses: Object Iniiittt….rrrr!!!
-
-Diğer taraf: Dıt dıt dıt dıtttt!!!
+- **Diğer ses:** Objjj….eeeccttt!!!
+- **Netspector:** Kimsiniz
+- **Diğer ses:** Obb…ect!!!
+- **Netspector:** Oba makarnası mı? Nalo, nalooo… Anlamıyorum. Etecer mi?
+- **Diğer ses:** Aghhh!!!
+- **Netspector:** Ha ağrı kesici?
+- **Diğer ses:** Object Iniiittt….rrrr!!!
+- **Diğer taraf:** Dıt dıt dıt dıtttt!!!
 
 Derken telefon sesi aniden kesilir. Netspector hemen sandalyesinde çabucak doğrulur, fotör şapkasını takar ve kapıdan hızla çıkar. Sevgili kedisi CAD ise bu telaşı umursamadan yemek kabındaki sütünü içmeye devam etmekte ve her içişten sonra patilerini temizlemektedir. Aslında Netspector’ ın kafasındaki güzergah bellidir. Şehir merkezinde ki büyük MSDN kütüpahnesine uğrayacak ve Object Initializer ile ilgili bir kaç soru sorup olayı çözmeye çalışacaktır.
 
@@ -216,11 +209,7 @@ Haydi gelin bir çılgınlık yapalım ve bu IL kodunu okumaya çalışalım
 
 Dikkat edileceği üzere IL003f satırında List tipi için varsayılan yapıcı metod çağrısı gerçekleştirilmektedir. Dolayısıyla bu satırda ilgili koleksiyona ait bir nesne örneğinin ürettirildiğini düşünebiliriz. Diğer yandan IL0048 numaralı satırda bir Converter tipi örneklemesi için varsayılan yapıcı metod çağrısı söz konusudur. IL0056 ve IL0063 numaralı satırlarda ise, IL0048’ de üretilen Converter nesnesine ait özelliklerin (Source ve Target) değerleri atanmaktadır. IL006b satırında ise IL0048’ de üretilen ve IL0056 ile IL0063 satırlarında sırasıyla Source ve Target özelliklerine değer atanan Converter nesne örneğinin IL003f satırında örneklenen List tipli koleksiyon örneğine Add metodu ile eklendiği gözlemlenmektedir. Bu IL çağrı akışı diğer iki Converter nesne örneği için de geçerli olacaktır.
 
-Sanıyorum ki Object Initializer tekniği hakkında biraz daha derin fikir sahibi olmaya başladık. Yeter mi? Yetmez. Bakın daha neler var?
-
-beforefieldinit
-
-Örneğimize aşağıdaki sınıf örneğini eklediğimi düşünelim.
+Sanıyorum ki Object Initializer tekniği hakkında biraz daha derin fikir sahibi olmaya başladık. Yeter mi? Yetmez. Bakın daha neler var? Örneğimize aşağıdaki sınıf örneğini eklediğimi düşünelim.
 
 ![blg229_FileManagerClassDiagram](/assets/images/2011/blg229_FileManagerClassDiagram.gif)
 

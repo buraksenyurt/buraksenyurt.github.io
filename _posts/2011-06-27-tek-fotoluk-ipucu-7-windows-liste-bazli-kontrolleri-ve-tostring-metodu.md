@@ -17,4 +17,3 @@ WinForms programcılığında sık rastlanan sorunlardan birisi de, kendi özel 
 ![PhotoTrick7](/assets/images/2011/PhotoTrick7.png)
 
 [SmartToString.rar (36,38 kb)](/assets/files/2011/SmartToString.rar)
-

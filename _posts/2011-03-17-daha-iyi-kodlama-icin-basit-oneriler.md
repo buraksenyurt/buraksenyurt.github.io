@@ -156,15 +156,17 @@ namespace OldTimes
 
 Çoğu zaman bazı referans örneklerinin null değere sahip olup olmadıklarını denetlememiz gerekir. Yukarıdaki örnek kod parçasında bu durum analiz edilmeye çalışılmaktadır. SendPacket isimli static metod IPv4 isimli sınıfa ait bir nesne örneğini parametre olarak alır. Metod içerisinde öncelikli olarak bir null kontrolü yapılır. Bunun için de standart ve yaygın yol if…else blokları kullanılmıştır. Aslında metod içerisinde ternary operatörü kullanılaraktan da aynı işlem yapılabilir.
 
+```csharp
 ip = targetAddress == null? new IP { Line1 = 127, Line2 = 0, Line3 = 0, Line4 = 1 }: targetAddress;
+```
 
 ? işaretinden önce targetAddress değişkeninin null olup olmadığına bakılmaktadır.? ile: işaretleri arasındaki kısım koşulun true olması halini ele alırken,: işaretinden sonraki kısım false olma durumunu değerlendirmektedir. Aslında burada null kontrolü yapıldığından?? operatörü de ele alınabilir. Aşağıdaki gibi
 
+```csharp
 ip = targetAddress?? new IP { Line1 = 127, Line2 = 0, Line3 = 0, Line4 = 1 };
+```
 
-Daha yalın daha okunaklı olduğunu ifade edebilir miyiz? Bu sorunun cevabı duruma göre değişir. Ancak en azından şirketinizin bir kod standardı var ise, bu tip null kontrollerinde nasıl bir yol izlenilmesi gerektiği ve hangi operatörlerin kullanılması gerektiği açıktır. Söz gelimi daha önceden çalıştığım şirketlerin birisinde?: operatörünün kullanımı yasaklanmıştır. (Sebebini hiç sormayın ama sonuç itibariyle bir standart vardı en azından
-
-)
+Daha yalın daha okunaklı olduğunu ifade edebilir miyiz? Bu sorunun cevabı duruma göre değişir. Ancak en azından şirketinizin bir kod standardı var ise, bu tip null kontrollerinde nasıl bir yol izlenilmesi gerektiği ve hangi operatörlerin kullanılması gerektiği açıktır. Söz gelimi daha önceden çalıştığım şirketlerin birisinde?: operatörünün kullanımı yasaklanmıştır. (Sebebini hiç sormayın ama sonuç itibariyle bir standart vardı en azından)
 
 ## 3 – As operatörü
 

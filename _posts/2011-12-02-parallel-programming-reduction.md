@@ -23,63 +23,63 @@ Olay paralel programlamada veriyi paralelize etmek ile alakalı. Aslında çok b
 Elimizde çok çekirdekli veya çok işlemcili bir sistem var ise, paralel döngüleri kullanmak pek çok açıdan avantajlı olabilir nitekim. Şimdi az önce bahsetmiş olduğumuz senaryoyu aşağıdaki Console uygulamasına ait kod satırlarında simüle ettiğimizi var sayalım.
 
 ```csharp
-using System; 
-using System.Collections.Generic; 
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ReductionSample 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
+namespace ReductionSample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
             List<int> numbers = Helper.GetRandomNumberList(9000000);
 
             #region Klasik Yol
 
-            int count=0; 
-            for (int i = 0; i < numbers.Count; i++) 
-            { 
-                if (numbers[i] %7==0) 
+            int count = 0;
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] % 7 == 0)
                     count++;
 
             }
 
-            Console.WriteLine("[Klasik For] 7 ile bölünebilen {0} sayı vardır",count.ToString());
+            Console.WriteLine("[Klasik For] 7 ile bölünebilen {0} sayı vardır", count.ToString());
 
             #endregion
 
-           #region Parallel For
+            #region Parallel For
 
-            int parallelCount=0;
+            int parallelCount = 0;
 
-            Parallel.For(0, numbers.Count, (i) => 
-            { 
-                if (numbers[i] % 7 == 0) 
-                    parallelCount++; 
-           } 
+            Parallel.For(0, numbers.Count, (i) =>
+            {
+                if (numbers[i] % 7 == 0)
+                    parallelCount++;
+            }
             );
 
-            Console.WriteLine("[Parallel.For] 7 ile bölünebilen {0} sayı vardır",parallelCount.ToString());
+            Console.WriteLine("[Parallel.For] 7 ile bölünebilen {0} sayı vardır", parallelCount.ToString());
 
             #endregion
 
-        } 
+        }
     }
 
-    static class Helper 
-    { 
-        public static List<int> GetRandomNumberList(int NumberCount) 
-        { 
+    static class Helper
+    {
+        public static List<int> GetRandomNumberList(int NumberCount)
+        {
             List<int> result = new List<int>();
-            Random rnd = new Random(); 
-            for (int i = 0; i < NumberCount; i++) 
-            { 
-                result.Add(rnd.Next(1, 100)); 
+            Random rnd = new Random();
+            for (int i = 0; i < NumberCount; i++)
+            {
+                result.Add(rnd.Next(1, 100));
             }
-            return result; 
+            return result;
         }
-    } 
+    }
 }
 ```
 

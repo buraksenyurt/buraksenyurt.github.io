@@ -162,61 +162,63 @@ Diğer yandan throw Exception satırı yorum haline getirilir veya kaldırılır
 Görüldüğü üzere bir önceki Task örneğinde herhangibir Exception durumu söz konusu olmadığından, succesorTask örneğine ait metod icra edilmemiştir. Tabi burada akıllı bir geliştirici hemen şunu soracaktır; Birden fazla Task örneğinden herhangibirinde bir hata meydana geldiğinde ilgili Succesor Task devreye girse olmaz mı? Güzel soru…Bu vakayı test etmek için aşağıdaki kod parçasını deneyebiliriz.
 
 ```csharp
-using System; 
-using System.IO; 
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
-namespace TaskContinuation 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
+namespace TaskContinuation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
             #region Senaryo #2
 
-            Task TaskA = new Task(() => 
-                { 
-                    Console.WriteLine("Adventure Servisi üzerinden işlemler"); 
+            Task TaskA = new Task(() =>
+                {
+                    Console.WriteLine("Adventure Servisi üzerinden işlemler");
                     //throw new FileNotFoundException(); 
-                } 
+                }
             );
 
-            Task TaskB = new Task(() => 
-            { 
-                Console.WriteLine("Northwind Servisi üzerinden işlemler"); 
-                //throw new FileNotFoundException(); 
-            } 
-); 
-            Task[] tasks = { TaskA, TaskB }; 
-            Task succesorTask = Task.Factory.ContinueWhenAny(tasks, 
-                (antecedentTasks) => 
-                { 
-                    Console.WriteLine("Bir hata oluştu. Rollback operasyonu yapılacak"); 
-               } 
-                , TaskContinuationOptions.OnlyOnFaulted  
+            Task TaskB = new Task(() =>
+                {
+                    Console.WriteLine("Northwind Servisi üzerinden işlemler");
+                    //throw new FileNotFoundException(); 
+                }
+            );
+
+            Task[] tasks = { TaskA, TaskB };
+            Task succesorTask = Task.Factory.ContinueWhenAny(tasks,
+                (antecedentTasks) =>
+                {
+                    Console.WriteLine("Bir hata oluştu. Rollback operasyonu yapılacak");
+                }
+                , TaskContinuationOptions.OnlyOnFaulted
                 );
 
-            TaskA.Start(); 
-            TaskB.Start(); 
-            try 
-            { 
-                Task.WaitAll(tasks); 
-            } 
-            catch(AggregateException excp) 
-            { 
-                succesorTask.Wait(); 
+            TaskA.Start();
+            TaskB.Start();
+            try
+            {
+                Task.WaitAll(tasks);
+            }
+            catch (AggregateException excp)
+            {
+                succesorTask.Wait();
             }
 
-            #endregion 
-            
-            Console.WriteLine("Program Sonu"); 
-            Console.ReadLine();        
-        } 
-    } 
+            #endregion
+
+            Console.WriteLine("Program Sonu");
+            Console.ReadLine();
+        }
+    }
 }
 ```
 
 Ne yazık ki uygulamayı çalıştırdığımızda aşağıdaki ekran görüntüsünde yer alan Exception mesajını alırız.
+
 ![bei_37](/assets/images/2011/bei_37.gif)
 
 Bu aslında TaskContinuationOptions enum sabitine verdiğimiz OnlyOnFaulted değeri için söz konusu bir durumdur. (Aslına bakarsanız ben bu senaryonun çalışmasını beklerdim) Diğer enum sabiti değerlerinde bu tip bir sorun ile karşılaşmasanız da OnlyOnFaulted hakkatten bir Fault vermektedir
@@ -224,59 +226,59 @@ Bu aslında TaskContinuationOptions enum sabitine verdiğimiz OnlyOnFaulted değ
 Yazımızın buraya kadarki kısmında kısaca Task örnekleri arasındaki ilişkileri sağlamak adına Continous tekniklerini ve özellikle ContinueWhenAll ve ContinueWith metodlarını irdeledik. Bu iki metoda ek olarak ContinueWhenAny isimli bir metodun daha olduğunu belirtmek isterim. Bu metod aslında bir Task dizisi içerisindeki Task’ lerden herhangibiri tamamlandıktan sonra Succesor Task örneğinin devreye girmesi amacıyla tasarlanmıştır. Bu durumu analiz etmek için aşağıdaki kod parçasını göz önüne alabiliriz.
 
 ```csharp
-using System; 
-using System.Threading; 
+using System;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace TaskContinuation 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
+namespace TaskContinuation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
             #region Senaryo #3
 
-            Task TaskA = new Task(() => 
-           { 
-                Thread.Sleep(4000); 
-                Console.WriteLine("Adventure Servisi üzerinden işlemler"); 
-                //throw new FileNotFoundException(); 
-           } 
+            Task TaskA = new Task(() =>
+           {
+               Thread.Sleep(4000);
+               Console.WriteLine("Adventure Servisi üzerinden işlemler");
+               //throw new FileNotFoundException(); 
+           }
            );
 
-            Task TaskB = new Task(() => 
-            { 
-                Thread.Sleep(2000); 
-                Console.WriteLine("Northwind Servisi üzerinden işlemler"); 
+            Task TaskB = new Task(() =>
+            {
+                Thread.Sleep(2000);
+                Console.WriteLine("Northwind Servisi üzerinden işlemler");
                 //throw new FileNotFoundException(); 
-            } 
-); 
-            Task[] tasks = { TaskA, TaskB }; 
-            Task succesorTask = Task.Factory.ContinueWhenAny(tasks, 
-               (antecedentTasks) => 
-                { 
-                   Console.WriteLine("Succesor Task"); 
-                } 
+            }
+            );
+            Task[] tasks = { TaskA, TaskB };
+            Task succesorTask = Task.Factory.ContinueWhenAny(tasks,
+               (antecedentTasks) =>
+                {
+                    Console.WriteLine("Succesor Task");
+                }
                 );
 
-            TaskA.Start(); 
-            TaskB.Start(); 
-            try 
-            { 
-                Task.WaitAll(tasks); 
-            } 
-            catch (AggregateException excp) 
-            { 
-                 
-            } 
+            TaskA.Start();
+            TaskB.Start();
+            try
+            {
+                Task.WaitAll(tasks);
+            }
+            catch (AggregateException excp)
+            {
+
+            }
             succesorTask.Wait();
 
             #endregion
 
-            Console.WriteLine("Program Sonu"); 
-            Console.ReadLine();        
-        } 
-    } 
+            Console.WriteLine("Program Sonu");
+            Console.ReadLine();
+        }
+    }
 }
 ```
 
@@ -287,4 +289,3 @@ Uygulama kodunda yer alan TaskA ve TaskB nesne örneklerine ait kod bloklarında
 Böylece geldik bir yazımızın daha sonra. Bir sonraki yazıda büyük bir olasılıkla Task’ ler arası ilişkiler konusuna devam ediyor olacağım. Ama araya başka bir konu da girebilir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TaskContinuation.rar (22,47 kb)](/assets/files/2011/TaskContinuation.rar)
-

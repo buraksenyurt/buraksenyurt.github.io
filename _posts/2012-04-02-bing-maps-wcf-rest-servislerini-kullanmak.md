@@ -27,7 +27,7 @@ Aslında tüm API arayüzleri HTTP protokolünün GET metoduna göre talep kabul
 
 İşe ilk olarak basit bir adım ile başlarsak gerisi çorap söküğü gibi gelecektir. Bu amaçla öncelikle bir adres bazlı lokasyon konumlandırma işinden başlayalım derim. Örneğin herhangibir tarayıcı üzerinden aşağıdaki talepte bulunduğumuzu düşünelim.
 
-http://dev.virtualearth.net/REST/v1/Locations/US/NH/manchester/?o=xml&key={Buraya Developer API Key gelmeli}
+`http://dev.virtualearth.net/REST/v1/Locations/US/NH/manchester/?o=xml&key={Buraya Developer API Key gelmeli}`
 
 Bu URL ifadesinden Locations REST arayüzüne (ve hatta 1.0 versiyonuna) bir talepte bulunduğu görülmektedir. US ile başlayan kısımda tahmin edileceği üzere ülke kodu belirtilir. Bu örnekte Amerika Birleşik Devleteri (United States) seçilmiştir. US kodunu izleyen kısımda ise bölge adının yazıldığı görülmektedir, NH. Sonraki kısımda ise şehir adı gelmektedir ki bu örnekte Manchester aranmaktadır.?o ile başlayan bölümde ise çıktı formatının tipi seçilir ki burada XML biçimi ele alınmıştır. Çok doğal BING Maps hizmetlerinden yararlanabilmek için bir Developer Key olması gerekmektedir. key anahtar kelimesinden sonra gelen kısımda da bu değer yazılır. Ben kendi developer key değişkenimi kullandığımda aşağıdaki XML çıktısını elde ettiğimi gördüm.
 
@@ -93,7 +93,7 @@ Aslında lokasyon ile ilişkili olarak asıl önemli bilgiler Resources/Location
 
 Aranan kritere göre çok daha fazla sonuç gelmesi de olasıdır. Örneğin,
 
-http://dev.virtualearth.net/REST/v1/Locations/manchester/?o=xml&key={developer key}
+`http://dev.virtualearth.net/REST/v1/Locations/manchester/?o=xml&key={developer key}`
 
 şeklinde bir URL talebinde bulunduğumuzda bize an itibariyle 5 adet sonuç dönecektir. Nitekim burada ülke veya lokasyonu tam onikiden vurmak için gerekli ekstra bilgiler verilmemiştir. Sadece BING serverlarında kayıtlı olan manchester mevkisine ait veriler getirilmiş ve makalenin yazıldığı tarih itibariyle de 5 yakın sonuç bulunmuştur. (Örnek erkan görüntüsünün bir kısmı aşağıdaki gibidir)
 
@@ -101,19 +101,19 @@ http://dev.virtualearth.net/REST/v1/Locations/manchester/?o=xml&key={developer k
 
 Bir kaç farklı örnek daha ilave ederek REST arayüz içeriklerini incelemeye devam edelim.
 
-http://dev.virtualearth.net/REST/v1/Locations/turkey/kadiköy/?output=xml&key={Developer key}
+`http://dev.virtualearth.net/REST/v1/Locations/turkey/kadiköy/?output=xml&key={Developer key}`
 
 Yukarıdaki sorgu ile Türkiye’ deki Kadıköy ilçesinin lokasyon bilgisi elde edilebilir.
 
 ![bngrest3](/assets/images/2012/bngrest3.png)
 
-http://dev.virtualearth.net/REST/v1/Locations?output=xml&countryRegion=DE&key={Developer Key}
+`http://dev.virtualearth.net/REST/v1/Locations?output=xml&countryRegion=DE&key={Developer Key}`
 
 Bu seferki sorgu ile de countryRegion=DE anahtar değer çiftini kullanarak Almanya’ nın merkez koordinatlarını elde edebiliriz.
 
 Peki çıktıyı JSON formatında almak istersek? Bu durumda URL sorgusundaki ufak bir değişiklik yapmamız yeterli olacaktır. Özellike WCF Data Service geliştiricileri, URLiçerisinde önceden tanımlı pek çok anahtar kelimenin kullanıldığını bilirler. BING Maps REST servislerinde de benzer bir durum söz konusudur. Nitekim? den sonra gelen kısımlarda anahtar kelime=değer şeklinde key-value çiftleri yer almaktadır. Bu çiftlerlerin sayısı & operatörü ile arttırılabilir ve birden fazla kriterin hesaba katılması sağlanabilir. Eğer o parametresinin değeri xml’ den json’ a çekilirse, bu karşı taraftaki BING Map Locations REST servisi için çıktının JSON formatında hazırlanması gerektiği anlamına gelecektir.
 
-http://dev.virtualearth.net/REST/v1/Locations/us/nh/manchester/?o=json&key={developer key}
+`http://dev.virtualearth.net/REST/v1/Locations/us/nh/manchester/?o=json&key={developer key}`
 
 Bu URL talebinin sonucunda aşağıdaki içerikte görülen JSON formatlı çıktı elde edilmiştir.
 
@@ -137,7 +137,7 @@ Pek tabi JSON formatlı çıktılar, XML formatlı çıktılara nazaran çok dah
 
 Diğer servislerinde REST arayüzlerini kullanmak suretiyle çeşitli aramalar yapabiliriz. Örneğin Routes API arayüzüne kısa bir bakış atalım. Bu arayüzü kullanarak yürüyüş, sürüş veya transit geliş gidişler için rota bilgisi elde etmemiz mümkündür. Eğer İstanbul’ dan Ankara’ ya doğru araba ile gideceğimiz bir rota bilgisi istersek, aşağıdaki gibi bir URL sorgusunu göndermemiz yeterli olacaktır.
 
-http://dev.virtualearth.net/REST/V1/Routes/Driving?o=xml&wp.0=istanbul&wp.1=ankara&avoid=minimizeTolls&distanceUnit=km&key={Developer Key}
+`http://dev.virtualearth.net/REST/V1/Routes/Driving?o=xml&wp.0=istanbul&wp.1=ankara&avoid=minimizeTolls&distanceUnit=km&key={Developer Key}`
 
 Sorgu sonucu elde edilen uzun XML çıktısına ait küçük bir ekran görüntüsü
 
@@ -149,7 +149,7 @@ Bu URL sorgusunda önemli olan bazı key’ ler vardır. wp.0 ve wp.1 ile tanım
 
 Diğer API arayüzlerinden olan Static MAP Rest arayüzü ile de standart olarak 350X350 boyutlarında harita elde edilmesi mümkün olmaktadır. Bu haritayı uydu görüntüsü şeklinde, yol haritası şeklinde elde etmemiz de söz konusudur. Aslına bakarsanız BING Maps hizmetlerinin bana kalırsa en eğlencelilerinden birisi de bu API’ dir. Örneğin
 
-http://dev.virtualearth.net/REST/v1/Imagery/Map/AerialWithLabels/istanbul?mapSize=400,300&key={developer key}
+`http://dev.virtualearth.net/REST/v1/Imagery/Map/AerialWithLabels/istanbul?mapSize=400,300&key={developer key}`
 
 URL sorgusu sonucunda aşağıdaki çıktıyı elde ederiz.
 
@@ -157,7 +157,7 @@ URL sorgusu sonucunda aşağıdaki çıktıyı elde ederiz.
 
 Bu sorguda Imagery/Map/AerialWithLabels ile şehrin coğrafik haritasının başlık bilgileri kullanılarak gösterileceği belirtilmektedir. istanbul kelimesini takip eden kısımlarda ise mapSize anahtar kelimesi kullanılmış ve üretilecek olan haritanın 400,300 boyutlarında olması sağlanmıştır.
 
-http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0=istanbul&wp.1=kocaeli&format=png&mapSize=800,600&key={developer key}
+`http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0=istanbul&wp.1=kocaeli&format=png&mapSize=800,600&key={developer key}`
 
 Yukarıdaki sorguda ise, yol haritası istenmektedir. Map/Road adresine gidilmesinin sebebi budur. Diğer taraftan Routes anahtar kelimesine atanan iki Way Point değeri ile İstanbul ile Kocaeli arası yol haritasının gösterilmesi talep edilmiştir. Söz konusu harita 800X600 pixel boyutlarında olacaktır ve png formatında üretilecektir. İşte sonuç,
 
@@ -242,25 +242,25 @@ string imagerUrl = String.Format("http://dev.virtualearth.net/REST/v1/Imagery/Ma
 
 try
 {
-	HttpWebRequest request = (HttpWebRequest)WebRequest.Create(imagerUrl);
-	using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-	{
-		List<byte> content = new List<byte>();
-		using (Stream stream = response.GetResponseStream())
-		{
-			int currentByte;
-			while ((currentByte = stream.ReadByte()) != -1)
-			{
-				content.Add((byte)currentByte);
-			}
-		}
-		string filePath = String.Format("{0}.png", Path.Combine(Environment.CurrentDirectory, Guid.NewGuid().ToString()));
-		File.WriteAllBytes(filePath, content.ToArray());
-	}
+    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(imagerUrl);
+    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+    {
+        List<byte> content = new List<byte>();
+        using (Stream stream = response.GetResponseStream())
+        {
+            int currentByte;
+            while ((currentByte = stream.ReadByte()) != -1)
+            {
+                content.Add((byte)currentByte);
+            }
+        }
+        string filePath = String.Format("{0}.png", Path.Combine(Environment.CurrentDirectory, Guid.NewGuid().ToString()));
+        File.WriteAllBytes(filePath, content.ToArray());
+    }
 }
 catch (WebException excp)
 {
-	Console.WriteLine(excp.Message);
+    Console.WriteLine(excp.Message);
 }
 ```
 

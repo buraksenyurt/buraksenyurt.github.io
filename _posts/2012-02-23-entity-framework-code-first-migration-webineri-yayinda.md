@@ -17,8 +17,6 @@ categories:
 
 ![efcfm.jpg](/assets/images/2012/efcfm.jpg)
 
-[Diğer detaylar ve örnek proje çalışması için sizi böyle alalım](http://nedirtv.com/video/entity-framework-code-first-migration-webineri)
-
 [Youtube Link](https://www.youtube.com/watch?v=Q3yasXYIPXo)
 
 Her zaman olduğu gibi sevgili Bahtiyar Dilek arkadaşımız bu webinerimizi de kayıt altına alarak bizlere ulaştırdı. Kendisine tekrardan bu emeği için çok teşekkür ediyorum.

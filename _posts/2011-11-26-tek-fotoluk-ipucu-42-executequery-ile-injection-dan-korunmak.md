@@ -15,4 +15,3 @@ LINQ to SQL kullandığımız durumlarda bildiğiniz gibi dışarıdan SQL sorgu
 ![PhotoTrick42](/assets/images/2011/PhotoTrick42.png)
 
 [ExecuteQueryAndInjection.rar (52,04 kb)](/assets/files/2011/ExecuteQueryAndInjection.rar)
-
