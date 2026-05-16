@@ -22,11 +22,9 @@ Kuzgun’ lar Kargagiller ailesinden gelen bir kuş çeşididir. Diğer karga ci
 
 ![173110_P001_Raven](/assets/images/2013/173110_P001_Raven.png)
 
-Kanat açıklığı 1.5 metreyi bulan bu kuşlar, aynı zamanda deli cesaretine sahiptir
+Kanat açıklığı 1.5 metreyi bulan bu kuşlar, aynı zamanda deli cesaretine sahiptir. Niye mi? Çünkü, kendilerinden daha yırtıcı olan kuşlara hiç düşünmeden saldırabilirler. Tabi buradaki avantajları hep bir filo halinde hareket etmeleridir. Yani ekip olgusuna inanırlar. Bir diğer önemli özellikleri de ingilizce de Raven olarak adlandırılmalarıdır. (Daha fazla detay istiyorsanız [wikipedia bağlantısına](http://tr.wikipedia.org/wiki/Baya%C4%9F%C4%B1_kuzgun) bakabilirsiniz)
 
-Niye mi? Çünkü, kendilerinden daha yırtıcı olan kuşlara hiç düşünmeden saldırabilirler. Tabi buradaki avantajları hep bir filo halinde hareket etmeleridir. Yani ekip olgusuna inanırlar. Bir diğer önemli özellikleri de ingilizce de Raven olarak adlandırılmalarıdır. (Daha fazla detay istiyorsanız [wikipedia bağlantısına](http://tr.wikipedia.org/wiki/Baya%C4%9F%C4%B1_kuzgun) bakabilirsiniz)
-
-Gelelim Raven ile ne işimiz olduğuna
+Gelelim Raven ile ne işimiz olduğuna.
 
 Açık kaynaklı NoSQL veritabanlarını incelemeye çalıştığımız ilk yazımızda, hatırlayacağınız üzere [Apache Cassandra](/2012/12/16/nosql-maceralari-apache-cassandra-ve-dotnet/)’ ya kısaca bir göz atmış ve basit bir Hello World uygulaması geliştirmiştik. Tabi NoSQL veritabanı sistemleri denilince pek çok ürün olduğunu görmekteyiz. İşte bu yazımızda bu ürünlerden dikkate değer bir tanesini daha inceleyeceğiz; RavenDB.
 
@@ -34,19 +32,13 @@ RavenDb, açık kaynak NoSQL veritabanlarındandır..Net ile yazılmıştır ve 
 
 RavenDB’ nin daha çok Windows tabanlı.Net uygulamaları için geliştirildiği düşüncesi hakimdir. Ancak RESTful desteği olması sebebiyle farklı platformlara da açılabilir. Hatta sunduğu API sayesinde.Net, Silverlight, Javascript ve HTTP tabanlı REST istemcileri ile çalışabilir. JSON formatını kullanması verinin az yer tutması için de bir avantajdır.
 
-> Document tipindeki NoSQL yapılarında genel olarak veri, bir dosya içerisinde saklanmakta ve bir anahtar (key) ile ilişkilendirilmektedir. Saklanacak veri için herhangibir şemaya (Schema) ihtiyaç yoktur.
-> Bu nedenle SQL, Oracle gibi ilişkisel veritabanı sistemlerinde (Relational Database Management System) yapılması gereken, tablo tanımlama ve benzeri işlemler mevcut değildir.
-> Çünkü buna gerekte yoktur
+> Document tipindeki NoSQL yapılarında genel olarak veri, bir dosya içerisinde saklanmakta ve bir anahtar (key) ile ilişkilendirilmektedir. Saklanacak veri için herhangibir şemaya (Schema) ihtiyaç yoktur. Bu nedenle SQL, Oracle gibi ilişkisel veritabanı sistemlerinde (Relational Database Management System) yapılması gereken, tablo tanımlama ve benzeri işlemler mevcut değildir. Çünkü buna gerekte yoktur. Düşünce son derece basit olmaktan yanadır. “Veriyi doğrudan diske yaz, okumak istediğinde anahtarı ile ulaş”
 
-> Düşünce son derece basit olmaktan yanadır. “Veriyi doğrudan diske yaz, okumak istediğinde anahtarı ile ulaş”
-
-RavenDB ile ilişkili bir ürün tanıtımı ve kuzgun’ ların kanat açıklığının 1.5 metre olması bilgilerinden sonra dilerseniz biraz da kod yazalım
-
-Öncelikli olarak RavenDB’ yi kurmamız gerekiyor. Yazıyı yazdığım günlerde [bunun için şu adrese bir uğramanız](http://ravendb.net/) gerekmekteydi. Bilgilerden de anlaşılacağı üzere ürünü, NuGet paket yönetim aracı yardımıyla tedarik edebilirsiniz de.
+RavenDB ile ilişkili bir ürün tanıtımı ve kuzgun’ ların kanat açıklığının 1.5 metre olması bilgilerinden sonra dilerseniz biraz da kod yazalım. Öncelikli olarak RavenDB’ yi kurmamız gerekiyor. Yazıyı yazdığım günlerde [bunun için şu adrese bir uğramanız](http://ravendb.net/) gerekmekteydi. Bilgilerden de anlaşılacağı üzere ürünü, NuGet paket yönetim aracı yardımıyla tedarik edebilirsiniz de.
 
 > NoSQL tipindeki veritabanı ürünlerinin bir diğer avantajıda kurulumlarının son derece kolay olmasıdır. Özellikle SQL, Oracle gibi ürünlerin kurulumları düşünüldüğünde. Pek çok NoSQL ürünü açık kaynak olarak indirilebilir ve doğrudan çalıştırılıp kullanılabilir. Bir install işleminden sürecinden geçilmesine çoğu zaman gerek duyulmamaktadır.
 
-Başlatma
+## Başlatma
 
 RavenDB içeriğini indirdikten sonra, Server klasörü altında yer alan Raven.Server.exe isimli uygulamanın çalıştırılması yeterlidir. Komut satırından yürütülen uygulama, sunucunun çalışmasını sağlayacaktır. Tahmin edileceği üzere ürün, client/server modeline göre çalışmaktadır. Sunucu açık olduğu sürece, istemcilerin RavenDB sistemini kullanması mümkündür.
 
@@ -60,7 +52,7 @@ Buna göre `http://localhost:8081/` adresine gidildiğinde `http://localhost:808
 
 Bu arayüzden yararlanılarak verilerin eklenmesi, silinmesi, değiştirilmesi veya sorgulanması sağlanabilir. Elbette biz bunu kod üzerinden nasıl yapabileceğimizi incelemeye çalışacağız. Bu amaçla basit bir Console uygulaması oluşturarak işe başlayabiliriz.
 
-İstemci için Hazırlık
+## İstemci için Hazırlık
 
 RavenDB’ yi istemci tarafında ele alırken yardımcı kütüphane olan RavenDB.Client assembly’ ından yararlanılmaktadır. RavenDB’ yi indirdiğimiz zaman Client klasörü içerisinden bu kütüphanenin farklı versiyonlarına da erişilebilinir. (Hatta burada yakından tanıdığımız bir dost da vardır. Newtonsoft.json.dll Kendisi ile [buradaki](/2012/11/04/tek-fotoluk-ipucu-69-newtonsoft-jsondotnet-ve-dynamic-keyword/) ve [şuradaki](/2012/11/12/tek-fotoluk-ipucu-70-yine-newtonsoft-jsondotnet-ve-dynamic/) tek fotoluk ipuçlarında haşırneşir olmuştuk)
 
@@ -234,11 +226,11 @@ namespace HelloWorldRavenDB
 }
 ```
 
-Daha önceden Entity Framework veya LINQ to SQL ile çalıştıysanız eğer, kodlardaki yaklaşım oldukçta tanıdık gelecektir. İlk olarak genel bir Context tipine ihtiyacımız bulunmakta. Bunun için DocumentStore tipinden yararlanılmaktadır.
-
-DocumentStore örneklenirken ConnectionStringName özelliğine app.config dosyasında yer alan key değeri verilmiştir. Sonrasında gerçekleştirilen veri çekme, ekleme, silme ve güncelleştirme işlemlerinin tamamında ise OpenSession metoduna yapılan çağrı ile elde edilen IDocumentSession arayüzü türevli referans tipi kullanılmaktadır.
+Daha önceden Entity Framework veya LINQ to SQL ile çalıştıysanız eğer, kodlardaki yaklaşım oldukçta tanıdık gelecektir. İlk olarak genel bir Context tipine ihtiyacımız bulunmakta. Bunun için DocumentStore tipinden yararlanılmaktadır. DocumentStore örneklenirken ConnectionStringName özelliğine app.config dosyasında yer alan key değeri verilmiştir. Sonrasında gerçekleştirilen veri çekme, ekleme, silme ve güncelleştirme işlemlerinin tamamında ise OpenSession metoduna yapılan çağrı ile elde edilen IDocumentSession arayüzü türevli referans tipi kullanılmaktadır.
 
 Veri çekme işlemlerinden de dikkat edileceği üzere LINQ metodlarından yararlanılmaktadır. Sorgulamalar için başlangıç noktası Query metodudur. Bunun dışında bir veriyi Key değeri üzerinden elde etmek istersek (ki Product sınıfındaki string türünden Id özelliği bunun için eklenmiştir) Load metodundan yararlanılabilinir. Veri ekleme için Store, silme işlemi içinse Delete fonksiyonları kullanılmıştır. Elbette yapılan tüm veri ekleme, silme ve güncelleştirme işlemlerinin, döküman içerisine yazılması SaveChanges metoduna yapılacak çağrı ile mümkün olmaktadır.
+
+## Çalışma Zamanı
 
 Uygulamayı çalıştırdığımzda, 3 adet Product örneğinin eklendiğini, bir tanesinin güncelleştirildiğini ve bir diğerinin de silindiğini analiz edebiliriz. Ayrıca tüm bu işlemler Web arayüzü üzerinden de anlık olarak takip edilebilirler. Örneği çalıştırdıktan sonra `http://localhost:8081/raven/studio.html` adresine gidersek aşağıdaki ekran görüntüsü ile karşılaşırız.
 
@@ -260,7 +252,9 @@ Eklenen bütün ürünler Product isimlidir ve RavenDb tarafından isim çoğull
 
 ![rvndb_11](/assets/images/2013/rvndb_11.png)
 
-> Çok doğal olarak server etkin değilse istemci tarafı, çalışma zamanına bir WebException istisnası fırlatıyor olacaktır.![rvndb_10](/assets/images/2013/rvndb_10.png)
+> Çok doğal olarak server etkin değilse istemci tarafı, çalışma zamanına bir WebException istisnası fırlatıyor olacaktır.!
+
+![rvndb_10](/assets/images/2013/rvndb_10.png)
 
 Diğer yandan uygulama çalıştırılmadan önce, çalıştığı süre zarfı içinde ve sonrasında, RavenDb.Server.exe programının komut satırına bazı loglar attığına şahit oluruz. Aynen aşağıdaki ekran görüntüsünde yer aldığı gibi.
 

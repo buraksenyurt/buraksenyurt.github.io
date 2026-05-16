@@ -44,4 +44,4 @@ ve sizde örneğin WPF-XAML tarafında buradaki Master-Detail ilişkiyi kullanma
 
 ![tfi_83](/assets/images/2013/tfi_83.png)
 
-Bir başka ipucunda görüşmek dileğiyle
+Bir başka ipucunda görüşmek dileğiyle.

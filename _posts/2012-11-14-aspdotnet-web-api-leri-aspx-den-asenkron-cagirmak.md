@@ -15,11 +15,7 @@ tags:
 categories:
   - Web Programlama
 ---
-Bateri çalanları her zaman için büyük bir hayranlıkla izlerim/izlemişimdir. Özellikle 4 uzuvlarını da (iki kol iki ayak) kullanırlar ama daha da önemlisi tüm bu unsurları eş zamanlı olarak çalıştırabilirler. Sadece iki kolu çalıştırmak nispeten bir dereceye kadar kolay olabilir biz normal insan oğulları için ama bir de ayakları devreye sokmak. Hele de tüm bu hareketli parçalardan anlamlı bir melodi çıkartmak gerçekten çok ama çok zor bir iştir.
-
-![baterist-290x290](/assets/images/2012/baterist-290x290.jpg)
-
-Tabi eğitimler ile belirli seviyede bateri çalabilmek pek çok insan için mümkün olabilir ama tabi ritim tutturmak, ataklarda bulunmak veya çok uzun süre boyunca aynı tempoyu hiç bozulmadan devam ettirebilmek inanılmaz bir konsantrasyon veya yetenek gerektirmektedir. Peki bu eş zamanlı çalışabilme bir yazılımcı için ne ifade edebilir? Tabi ki de asenkron çalışan kod parçalarını.
+Bateri çalanları her zaman için büyük bir hayranlıkla izlerim/izlemişimdir. Özellikle 4 uzuvlarını da (iki kol iki ayak) kullanırlar ama daha da önemlisi tüm bu unsurları eş zamanlı olarak çalıştırabilirler. Sadece iki kolu çalıştırmak nispeten bir dereceye kadar kolay olabilir biz normal insan oğulları için ama bir de ayakları devreye sokmak. Hele de tüm bu hareketli parçalardan anlamlı bir melodi çıkartmak gerçekten çok ama çok zor bir iştir. Tabi eğitimler ile belirli seviyede bateri çalabilmek pek çok insan için mümkün olabilir ama tabi ritim tutturmak, ataklarda bulunmak veya çok uzun süre boyunca aynı tempoyu hiç bozulmadan devam ettirebilmek inanılmaz bir konsantrasyon veya yetenek gerektirmektedir. Peki bu eş zamanlı çalışabilme bir yazılımcı için ne ifade edebilir? Tabi ki de asenkron çalışan kod parçalarını.
 
 Bilindiği gibi Asenkron (Asynchronous) çalışma, günümüz yazılım geliştirme araçlarının olmazsa olmaz parçalarından birisidir. Nitekim kullanıcı deneyimi (User Experience) yüksek olan uygulamalarda, istemcilerin uzun sürebilecek işlemleri beklemeden başkalarına devam edebilmesi tercih edilen ve işlem sürelerini kısaltan bir kabiliyettir.
 
@@ -78,20 +74,26 @@ namespace ChinookWebApi.Controllers
 }
 ```
 
-> Tabi WebApi örneğinin çalışabilmesi için WebApiConfig sınıfı içerisinde yer alan Register metodunun da aşağıdaki şekilde güncellenmesi gerekmektedir.
-> using System.Web.Http;
-> namespace ChinookWebApi
-> {
-> public static class WebApiConfig
-> {
-> public static void Register (HttpConfiguration config)
-> {
-> config.Routes.MapHttpRoute (name: "EmployeeApi",
-> routeTemplate: "api/{controller}/{id}",
-> defaults: new { id = RouteParameter.Optional });
-> }
-> }
-> }
+Tabii WebApi örneğinin çalışabilmesi için WebApiConfig sınıfı içerisinde yer alan Register metodunun da aşağıdaki şekilde güncellenmesi gerekmektedir.
+
+```csharp
+using System.Web.Http;
+
+namespace ChinookWebApi
+{
+    public static class WebApiConfig
+    {
+        public static void Register(HttpConfiguration config)
+        {
+            config.Routes.MapHttpRoute(
+                name: "EmployeeApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+        }
+    }
+}
+```
 
 EmployeeController tipi içerisinde yer alan Get metodu klasik olarak Chinook Entity Model'i sorgulamakta ve tüm Employee listesini LastName alanına göre sıralayarak geriye döndürmektedir. Metodun örneğimiz için önemli olan kısmı ise çalışmakta olan Thread'in 5 saniye boyunca duraksatıldığı kısımdır. Bu, verinin en az 5 saniye geç gelmesine neden olacak ve asenkron için gerekli senaryoya zemin hazırlayacaktır.
 
@@ -161,9 +163,7 @@ Gelelim GetEmployeeDataFromServiceAsync metoduna. Bu metod içerisinde aslında 
 
 async keyword'ü ile işaretlediğimiz GetEmployeeDataFromServiceAsync metodunun Page Framework'e register edilmesi için PageLoad olay metodu içerisinde Page özelliği ile erişilebilen RegisterAsyncTask metodunun kullanıldığını görüyoruz. Bu metoda yapılan çağrı ile, parametre olarak gelen async şeklinde işaretlenmiş asenkron çağırılabilen metodun sayfa ile ilişkilendirilmesi sağlanmış olunmaktadır.
 
-Ancak işlemlerimiz bunlarla sınırlı değil
-
-Son olarak sayfanın Page direktifi içerisindeki Async niteliğine true değerinin atanması gerekmektedir. Böylece web sayfanın asenkron olarak çalıştırılacağı belirtilmektedir.
+Ancak işlemlerimiz bunlarla sınırlı değil. Son olarak sayfanın Page direktifi içerisindeki Async niteliğine true değerinin atanması gerekmektedir. Böylece web sayfanın asenkron olarak çalıştırılacağı belirtilmektedir.
 
 ```xml
 <%@ Page Async="true" Language="C#" AutoEventWireup="true" CodeBehind="AsyncTestPage.aspx.cs" Inherits="ClientApp.AsyncTestPage" %>
@@ -215,16 +215,12 @@ namespace ClientApp
 
         public async Task<List<Employee>> InvokeEmployeeService() 
         { 
-                . 
-                . 
-                . 
+                // Kodun kalan kısmı
         }
 
         private async Task GetEmployeeDataFromServiceAsync() 
         { 
-                . 
-                . 
-                . 
+                // Kodun kalan kısmı 
         }
 
         private void DoSomething() 

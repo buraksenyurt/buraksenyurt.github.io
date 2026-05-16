@@ -21,4 +21,4 @@ Bu örnekte WSDL dökümanı XSD’ leri de bünyesinde barındırmaktadır. Eğ
 
 ![tfi79_2](/assets/images/2013/tfi79_2.png)
 
-Başka bir ipucunda görüşmek dileğiyle
+Başka bir ipucunda görüşmek dileğiyle.

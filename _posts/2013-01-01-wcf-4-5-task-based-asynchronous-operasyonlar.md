@@ -12,9 +12,7 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Yaklaşık olarak 4 dakika 38 saniye…İzleyen yazıyı benim okuma hızım bu oldu. Aslında bu süre şu demek; Öğle arasına çıkmadan bir 4 dakika 38 saniye demek bu...Ya da geldikten sonra bir 4 dakika 38 saniye demek…Ya da sabah işe erken geldiğimizde ayırabileceğimiz bir 4 dakika 38 saniye demek...Ya da servisi/otobüsü/minibüsü beklerken ayırabileceğimiz 4 dakika 38 saniye demek. Hatta Facebook’ a, Twitter’ a, Linkedin’ e, Youtube’a bakmadan geçireceğimiz bir 4 dakika 38 saniye demek… E o halde ne duruyorsunuz?Ayırın işte o zamanı
-
-![kronometrei](/assets/images/2013/kronometrei.jpg)
+Yaklaşık olarak 4 dakika 38 saniye…İzleyen yazıyı benim okuma hızım bu oldu. Aslında bu süre şu demek; Öğle arasına çıkmadan bir 4 dakika 38 saniye demek bu...Ya da geldikten sonra bir 4 dakika 38 saniye demek…Ya da sabah işe erken geldiğimizde ayırabileceğimiz bir 4 dakika 38 saniye demek...Ya da servisi/otobüsü/minibüsü beklerken ayırabileceğimiz 4 dakika 38 saniye demek. Hatta Facebook’ a, Twitter’ a, Linkedin’ e, Youtube’a bakmadan geçireceğimiz bir 4 dakika 38 saniye demek… E o halde ne duruyorsunuz? Ayırın işte o zamanı.
 
 Bilindiği üzere.Net Framework 4.5 ile birlikte altyapıya entegre olan async ve await anahtar kelimelerini kullanarak, task bazlı asenkron programlama teknikleri uygulanabilmektedir. Çok doğal olarak WCF 4.5 tarafında da bunun bir yansımasını görmekteyiz. Visual Studio arabirimi üzerinden herhangibir WCF servis referansını istemci uygulamaya eklemeye çalıştığımızda Task bazlı operasyon desteği varsayılan olarak etkinleştirilmekte ve proxy tipi içeriğinde buna uygun metodlara yer verilmektedir. Dolayısıyla WCF (Windows Communication Foundation) servislerini kullanan istemciler, operasyon çağrılarında async ve await anahtar kelimelerinden de yararlanabilirler.
 
@@ -164,7 +162,7 @@ Dikkat edileceği üzere OptimizationServiceClient sınıfı içerisinde, geriye
 </Window>
 ```
 
-Burada yer alan DataGrid kontrolünün içeriğini, servis üzerinden yapacağımız çağrı sonrası gelen Root[] referansı ile doldurmaya çalışıyor olacağız. Bu sebepten bir data bind işlemi uyguladık ve DataGrid kontrolünün kolonlarında da Root tipine ait özelliklere yer verdik (RootId, Title, Longitude, Latitude ve Altitude) Gelelim yazımızın can alıcı noktasına
+Burada yer alan DataGrid kontrolünün içeriğini, servis üzerinden yapacağımız çağrı sonrası gelen Root[] referansı ile doldurmaya çalışıyor olacağız. Bu sebepten bir data bind işlemi uyguladık ve DataGrid kontrolünün kolonlarında da Root tipine ait özelliklere yer verdik (RootId, Title, Longitude, Latitude ve Altitude) Gelelim yazımızın can alıcı noktasına.
 
 Kod içeriğini aşağıdaki gibi düzenleyelim.
 
@@ -201,7 +199,7 @@ namespace WpfClientApp
 
 İlk dikkat çekici nokta bntGetRootClick1 olay metodunun async anahtar kelimesi ile işaretlenmiş olmasıdır. Bu işaretleme nedeniyle, ilgili olay metodu içerisinde asenkron yürütülebilecek bir operasyon çağrısı yapılabileceği de belirtilmiş olmaktadır. Nitekim Root[] dizisinin çekilmesi için GetBestRootAsync metoduna yapılan çağrıda, await anahtar kelimesine yer verilmiştir. Olay metodu başında ve veriler DataGrid kontrolüne bağlandıktan sonra da lblStatus kontrolü içerisinde kısa bilgilendirmeler yapılmaktadır.
 
-İşin güzel yanı ise şudur; Asenkron olarak çağırılan servis metodunun işleyişi sırasında, Form, kullanıcı tepkilerine cevap verebilir durumdadır. Yani ekran üzerinde formu başka bir yere sürükleyebilir, içeride yer alan TextBox kontrolünde bir şeyler yazabiliriz
+İşin güzel yanı ise şudur; Asenkron olarak çağırılan servis metodunun işleyişi sırasında, Form, kullanıcı tepkilerine cevap verebilir durumdadır. Yani ekran üzerinde formu başka bir yere sürükleyebilir, içeride yer alan TextBox kontrolünde bir şeyler yazabiliriz.
 
 Oysaki eskiden, Dispatcher’ lardan ve hatta daha eskiden de Method Invoker’ lardan yararlanarak ekran arayüzünün cevap verebilir olmasını sağlamaya çalışırdık. Kafa karıştırıcı kodlar ile uğraşmak zorunda kalırdık. Bir kontrol için “hadi neyse…” derken, aynı anda yapılması gereken asenkron çağrı sayısının arttığı durumlarda kod kalabalığı ve karmaşıklığını daha da fazlalaştırıdık. Aslında uygulanan yeni model ile basitleşen bu durumu kendi gözlerinizle görmeniz daha iyi olacaktır. Ben sadece bir ekran görüntüsünü koyabilebileceğim. Siz mutlaka örnek kodu indirim test etmeye çalışın.
 

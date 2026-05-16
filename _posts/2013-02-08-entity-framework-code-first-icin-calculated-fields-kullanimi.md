@@ -14,11 +14,9 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Genellikle göç etmek gibi anlamlarda kullanılan Migrate kelimesinin yazılım dünyasındaki karşılığını düşündüğümüzde, elbetteki yandaki fotoğrafta yer alan ve bir birlerinin akvaryumuna atlayan balıklar gelmeyecektir/gelmemelidir.
+Genellikle göç etmek gibi anlamlarda kullanılan Migrate kelimesinin yazılım dünyasındaki karşılığını düşündüğümüzde, elbetteki fotoğrafta yer alan ve bir birlerinin akvaryumuna atlayan balıklar gelmeyecektir/gelmemelidir. Ancak Entity Framework Code-First yaklaşımı ve Calculated Fields kavramını göz önüne getirdiğimizde, Migration kelimesini ciddi manada düşünmemiz gerekebilir. Nasıl mı? Haydi okumaya devam.
 
 ![hot-water-migration](/assets/images/2013/hot-water-migration.jpg)
-
-Ancak Entity Framework Code-First yaklaşımı ve Calculated Fields kavramını göz önüne getirdiğimizde, Migration kelimesini ciddi manada düşünmemiz gerekebilir. Nasıl mı? Haydi okumaya devam
 
 Hesaplanmış alanlar (Calculated Fields/Columns) veritabanı programcılığında sık kullanılan özelliklerden birisidir. Bu alanların içeriği genellikle tablonun diğer alanları kullanılarak bir hesaplama sonucu üretilir. Söz gelimi personel verilerinin tutulduğu bir tablodaki FirstName ve LastName alanlarının değerleri birleştirilerek, bir Calculated Field oluşturulması mümkündür. Peki bu desteği Entity Framework Code-First yaklaşımında nasıl değerlendirebiliriz?
 
@@ -69,10 +67,7 @@ namespace HowTo_CalculatedFields
 
 Product tipi içerisinde yer alan TotalPrice özelliğine dikkat edelim. Bu özellik içerisinde ürünün fiyatı ve miktarından yararlanılarak gerçekleştirilen bir hesaplama işlemi söz konusudur. Bunun veritabanı tarafına da yansıtılması için DatabaseGenerated niteliğinden yararlanılmaktadır. Peki çalışma zamanı bu durumu anlayabilecek midir?
 
-> Örneğimizde Code-First yaklaşımına istinaden config dosyasında aşağıdaki bağlantı bilgisini kullanmayı tercih ettim. Herhangibir bilgi ifade etmediğimizde SQL Express sürümü üzerinde bir veritabanı oluşturulmaya çalışıldığını hatırlatmak isterim. Diğer önemli bir nokta da DbContext türevli sınıf adı ile ConnectionString elementinin name niteliğinin değerlerinin aynı olmasıdır. Bu sayede çalışma zamanı Shop veritabanı için gerekli bağlantı bilgisini bulabilir.
-> name="Shop"
-> connectionString="data source=localhost;database=Shop;integrated security=true"
-> providerName="System.Data.SqlClient"/>
+Örneğimizde Code-First yaklaşımına istinaden config dosyasında aşağıdaki bağlantı bilgisini kullanmayı tercih ettim. Herhangibir bilgi ifade etmediğimizde SQL Express sürümü üzerinde bir veritabanı oluşturulmaya çalışıldığını hatırlatmak isterim. Diğer önemli bir nokta da DbContext türevli sınıf adı ile ConnectionString elementinin name niteliğinin değerlerinin aynı olmasıdır. Bu sayede çalışma zamanı Shop veritabanı için gerekli bağlantı bilgisini bulabilir. `<name="Shop" connectionString="data source=localhost;database=Shop;integrated security=true" providerName="System.Data.SqlClient"/>`
 
 Program.cs içeriğini aşağıdaki şekilde kodlayarak senaryomuza devam edelim.
 
@@ -109,7 +104,9 @@ namespace HowTo_CalculatedFields
 }
 ```
 
-Shop context tipinin örneklenmesinin ardından bir Product nesnesi üretilmektedir. Dikkat edileceği üzere identity alan olarak set edilen ProductId ve Calculated Field olması planlanan TotalPrice için bir atama işlemi söz konusu değildir. Beklentimiz yeni Product, context üzerine eklendiğinde TotalPrice alanınında otomatik olarak hesaplanmış olmasıdır. Lakin bu aşamaya kadar ilerleyemeyiz bile. ![efcf_1](/assets/images/2013/efcf_1.png)
+Shop context tipinin örneklenmesinin ardından bir Product nesnesi üretilmektedir. Dikkat edileceği üzere identity alan olarak set edilen ProductId ve Calculated Field olması planlanan TotalPrice için bir atama işlemi söz konusu değildir. Beklentimiz yeni Product, context üzerine eklendiğinde TotalPrice alanınında otomatik olarak hesaplanmış olmasıdır. Lakin bu aşamaya kadar ilerleyemeyiz bile.
+
+![efcf_1](/assets/images/2013/efcf_1.png)
 
 Dikkat edileceğiz üzere SaveChanges metoduna yapılan çağrı sonrasında bir çalışma zamanı istisnası (Runtime Exception) oluşmuştur. Söylenene göre TotalPrice alanı null değer içeremez. Aslında bu mesajı doğrudan Calculated Field ile ilişkili değildir. Yine de veritabanı tarafına baktığımızda şöyle bir durum oluştuğunu gözlemleyebiliriz; Shop isimli veritabanı üretilmiş, Products isimli tablo oluşturulmuş ve hatta içerisine TotalPrice isimli alan da dahil edilmiştir. Hımmm...Ne var ki TotalPrice kolonu Calculate Field haline gelmemiştir.
 
@@ -117,9 +114,7 @@ Dikkat edileceğiz üzere SaveChanges metoduna yapılan çağrı sonrasında bir
 
 Peki ya çözüm?
 
-Neyseki elimizin altında migration diye bir kabiliyet bulunmakta. Şu anda var olan veritabanı yapısını biraz değiştirip, TotalPrice alanı için de bir müdahalede bulunmamız gerekecek. (Hatta Name alanının boyutuna bir dokunuş yaparsak hiç de fena olmaz)
-
-Şimdi Migration özelliğini etkinleştirip yeni bir Migration setini projeye dahil ediyor olacağız. Bunun için Package Manager Console penceresinden sırasıyla Enable-Migrations ve Add-Migration komutlarını çağıralım. Aşağıdaki gibi.
+Neyseki elimizin altında migration diye bir kabiliyet bulunmakta. Şu anda var olan veritabanı yapısını biraz değiştirip, TotalPrice alanı için de bir müdahalede bulunmamız gerekecek. (Hatta Name alanının boyutuna bir dokunuş yaparsak hiç de fena olmaz) Şimdi Migration özelliğini etkinleştirip yeni bir Migration setini projeye dahil ediyor olacağız. Bunun için Package Manager Console penceresinden sırasıyla Enable-Migrations ve Add-Migration komutlarını çağıralım. Aşağıdaki gibi.
 
 ![efcf_2](/assets/images/2013/efcf_2.png)
 
@@ -160,9 +155,7 @@ namespace HowTo_CalculatedFields.Migrations
 }
 ```
 
-Aslında iki noktaya dokunduk. İlk olarak TotalPrice alaının eklenmesi için herhangibir işlem yapmadığımızı görüyoruz. İkinci olarak da bir T-SQL ifadesinin çalıştırılması için gerekli metod çağrısında bulunduk. Sql Metod çağrısına dikkat edilecek olursa Calculated Field için gerekli olan T-SQL ifadesini içerdiğini görebiliriz. Kısacası tablo Create edildikten sonra bir Alter işlemini bilinçli olarak uygulatıyor ve hesaplanabilir alanın bildirilmesini sağlıyoruz.
-
-Artık veritabanını manuel olarak güncelletebiliriz. Bu güncelleme işlemi için Package Manager Console üzerinden Update-Database komutunu göndermemiz yeterli olacaktır
+Aslında iki noktaya dokunduk. İlk olarak TotalPrice alaının eklenmesi için herhangibir işlem yapmadığımızı görüyoruz. İkinci olarak da bir T-SQL ifadesinin çalıştırılması için gerekli metod çağrısında bulunduk. Sql Metod çağrısına dikkat edilecek olursa Calculated Field için gerekli olan T-SQL ifadesini içerdiğini görebiliriz. Kısacası tablo Create edildikten sonra bir Alter işlemini bilinçli olarak uygulatıyor ve hesaplanabilir alanın bildirilmesini sağlıyoruz. Artık veritabanını manuel olarak güncelletebiliriz. Bu güncelleme işlemi için Package Manager Console üzerinden Update-Database komutunu göndermemiz yeterli olacaktır.
 
 > Verbose anahtarını kullanmamızın tek sebebi, veritabanına doğru giden T-SQL ifadelerini görmektir.
 
@@ -214,7 +207,7 @@ namespace HowTo_CalculatedFields
 }
 ```
 
-İşte şimdi oldu
+İşte şimdi oldu.
 
 ![efcf_9](/assets/images/2013/efcf_9.png)
 

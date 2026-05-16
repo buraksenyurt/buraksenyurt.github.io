@@ -11,17 +11,13 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Uzun zamandır bilgisayar yazılım teknolojileri ile ilgileniyor olmama rağmen zaman içerisinde belirli konularda uzmanlaşmaya çalıştığımı fark ettim. Bana göre normalde olması gereken bu. Nitekim insanın kapasitesini bilmesi ve her şeyden çok fazla anlamamaktansa, belirli bir konuda çok iyi bilgiye sahip olması daha anlamlıdır diye düşünüyorum
+Uzun zamandır bilgisayar yazılım teknolojileri ile ilgileniyor olmama rağmen zaman içerisinde belirli konularda uzmanlaşmaya çalıştığımı fark ettim. Bana göre normalde olması gereken bu. Nitekim insanın kapasitesini bilmesi ve her şeyden çok fazla anlamamaktansa, belirli bir konuda çok iyi bilgiye sahip olması daha anlamlıdır diye düşünüyorum. Ama tabi zaman zaman uzmanlık alanım dışındaki konulara da merak salmıyor değilim. Örneğin mobil platform üzerine geliştirme yapmak gibi. Her ne kadar Microsoft bu konuda elinden geleni yapıp işi son yıllarda daha da kolaylaştırıp Windows Phone gibi güzel bir zemin hazırlamış olsa da çok nadiren o tarafa gidip geliyorum.
 
 ![HP-iPAQ-110-classic-handheld](/assets/images/2012/HP-iPAQ-110-classic-handheld.jpg)
 
-Ama tabi zaman zaman uzmanlık alanım dışındaki konulara da merak salmıyor değilim. Örneğin mobil platform üzerine geliştirme yapmak gibi. Her ne kadar Microsoft bu konuda elinden geleni yapıp işi son yıllarda daha da kolaylaştırıp Windows Phone gibi güzel bir zemin hazırlamış olsa da çok nadiren o tarafa gidip geliyorum.
-
 Geçtiğimiz günlerde Feedreader üzerinden blogları şöyle bir tararken Windows Phone üzerinde kullanılabilecek olan veri depolama seçenekleri ile ilişkili kısa bir nota rast geldim. Özellikle Isolated Storage tabanlı depolamalar üzerinde durulmaktaydı. Derken kendimi konuyu araştırır halde buldum. İşte bu yazının amacı elde edilen sonuçlar ve hoşunuza gidecek (hoşuma gidecek) bir örneği kaleme almak
 
-> Yıllar yıllar önce değil ama 2006 yılında Netron'da ilk Freelance eğitimimi bir ilaç firması (Boehringer Ingelheim) için vermiş ve Windows Mobile 6.5 üzerinde yazılım geliştirme anlatmıştım.
-> Compact.Net Framework ile ilişkili örnekleri ve konuları firmanın sağladığı HP marka akıllı telefonlarda ele almıştık. Styles Pen'ler ile çalışan ve kapasite olarak (bellek, işlemci hızı, ekran çözünürlüğü vb) sınırlı cihazlarda. Kim bilebilirdi ki iş bu noktaya kadar gelecek.
-> iPhone'lar, Blackberry'ler, Samsung Galaxy'ler ve tabi Windows Phone'lar. O zamanlarda Java tabanlı akıllı telefonlar yine.Net Compact Framework'lü olanlara göre çok daha iyiydi. Lakin bir süredir Windows Phone tarafının çok daha önemli bir atılım yaptığını ve arayı hızla kapattığını görüyoruz. En azından teknoloji ve yazılım geliştirme yetenekleri açısından.
+> Yıllar yıllar önce değil ama 2006 yılında Netron'da ilk Freelance eğitimimi bir ilaç firması (Boehringer Ingelheim) için vermiş ve Windows Mobile 6.5 üzerinde yazılım geliştirme anlatmıştım. Compact.Net Framework ile ilişkili örnekleri ve konuları firmanın sağladığı HP marka akıllı telefonlarda ele almıştık. Styles Pen'ler ile çalışan ve kapasite olarak (bellek, işlemci hızı, ekran çözünürlüğü vb) sınırlı cihazlarda. Kim bilebilirdi ki iş bu noktaya kadar gelecek. iPhone'lar, Blackberry'ler, Samsung Galaxy'ler ve tabi Windows Phone'lar. O zamanlarda Java tabanlı akıllı telefonlar yine.Net Compact Framework'lü olanlara göre çok daha iyiydi. Lakin bir süredir Windows Phone tarafının çok daha önemli bir atılım yaptığını ve arayı hızla kapattığını görüyoruz. En azından teknoloji ve yazılım geliştirme yetenekleri açısından.
 
 Veri depolama sistemleri, mobil sistemlerdeki en önemli sıkıntılardan birisi olarak da karşımıza çıkıyor. Her ne kadar günümüz cihazlarında depolama alanlarının boyutu GB'lar cinsinden ifade edilebiliyor ve haricen kolayca genişleyebiliyor olsa da, ortada senkronizasyon gibi sıkıntılı iş senaryoları da bulunmakta. Yine de saha da çalışanların offline veri depolama kabiliyetleri ile çalışabilmesi önemli. Bilindiği üzere Silverlight ile gelen Isolated Storage kavramı mobil taraf için de geçerli. Bu alan içerisinde veriyi saklamak için çeşitli yollara başvurabiliriz.
 
@@ -126,9 +122,7 @@ namespace MobileCustomerHouse
 }
 ```
 
-> Aslında örneğimizde View Model tarzı bir yaklaşımda bulunmayacağım. Bu sebepten Customer tipine INotifyPropertyChanged ve INotifyPropertyChanging arayüzlerini implemente etmesek de örneğimiz işlevsel olacaktır.
-> Ancak doğru olan, söz konusu tipin bir View ile birlikte ViewModel deseni içerisinde kullanılma ihtimalinin de olacağını göz önünde bulundurmaktır.
-> Siz, Model View View Model (MVVM) veya Model View Control (MVC) gibi desenleri göz önüne alarak bu yönde bir geliştirme yapmayı düşünebilirsiniz.
+> Aslında örneğimizde View Model tarzı bir yaklaşımda bulunmayacağım. Bu sebepten Customer tipine INotifyPropertyChanged ve INotifyPropertyChanging arayüzlerini implemente etmesek de örneğimiz işlevsel olacaktır. Ancak doğru olan, söz konusu tipin bir View ile birlikte ViewModel deseni içerisinde kullanılma ihtimalinin de olacağını göz önünde bulundurmaktır. Siz, Model View View Model (MVVM) veya Model View Control (MVC) gibi desenleri göz önüne alarak bu yönde bir geliştirme yapmayı düşünebilirsiniz.
 
 Customer tipi içerisinde dikkat edileceği üzere CustomerId,Name,Surname ve Salary özelliklerine ait Set bloklarına uygulanmış olan Notify çağrımları söz konusudur. Customer tipine INotifyPropertyChanging ve INotifyPropertyChanged arayüzlerini uyarladığımızdan, modelin görsel bir component ile bağlanması ve özelliklerde yapılan değişikliklerde View tarafının uyarılması/tepki verebilecek olması sağlanmaktadır.
 
@@ -292,7 +286,7 @@ Uygulamamızı yeniden çalıştırdığımızda ve Isolated Storage Explorer pe
 
 ![ltswp_7](/assets/images/2012/ltswp_7.png)
 
-[Bu arada söz konusu ürün makaleyi yazdığım tarih itibariyle Beta sürümündeydi. Dolayısıyla güncellenmiş ve farklı kabiliyetler ile donatılmış olabilir]
+> Bu arada söz konusu ürün makaleyi yazdığım tarih itibariyle Beta sürümündeydi. Dolayısıyla güncellenmiş ve farklı kabiliyetler ile donatılmış olabilir.
 
 Böylece geldik kısa bir maceramızın daha sonuna. Görüldüğü üzere LINQ to SQL’ i çok basit anlamda ele alarak özel depolama alanında bir veritabanının tutulmasını sağlayabildik. Yukarıda belirtiğim gibi aslında örneği MVVM veya MVC çerçvesinde göz önüne alarak arayüz ile daha güçlü entegre olacak şekilde geliştirmeye çalışmanızı öneririm. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

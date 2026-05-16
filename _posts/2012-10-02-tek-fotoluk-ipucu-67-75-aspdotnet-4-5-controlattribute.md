@@ -20,4 +20,3 @@ Asp.Net 4.5 ile gelen önemli tiplerden birisi de, System.Web.ModelBinding isim 
 ![tfi_67_75](/assets/images/2012/tfi_67_75.png)
 
 Bir başka ipucunda görüşmek dileğiyle
-

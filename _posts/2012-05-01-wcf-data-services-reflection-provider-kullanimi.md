@@ -44,7 +44,7 @@ Burada görüldüğü üzere uygulamamızda DataService tipini kullanarak bir Se
 - System.ServiceModel
 - System.ServiceModel.Web
 
-Örnek uygulamamızda felsefeyi anlamaya odaklanacağımız için çok basit bir Text dosyasını veri kaynağı olarak kullanıyor olacağız. Bu text dosya içerisinde | işaretleri ile ayrılmış şekilde bir personel verisini tutmayı planlıyoruz. Personel numarası, adı, soyadı, ünvanı ve bulunduğu ülke örnek veri alanlarımız olarak düşünülebilir.
+Örnek uygulamamızda felsefeyi anlamaya odaklanacağımız için çok basit bir Text dosyasını veri kaynağı olarak kullanıyor olacağız. Bu text dosya içerisinde `|` işaretleri ile ayrılmış şekilde bir personel verisini tutmayı planlıyoruz. Personel numarası, adı, soyadı, ünvanı ve bulunduğu ülke örnek veri alanlarımız olarak düşünülebilir.
 
 > Pek tabi çok daha farklı bir veri kaynağını da senaryoya dahil edebilirsiniz. Örneğin donanımsal bir arayüzün verilerini bu şekilde Data Service ‘ler üzerinden sunabileceğinizi düşünün. Söz gelimi bu bir mobil cihaz üzerinde bir süredir çalışmakta olan GPS servisinin topladığı içerik olabilir
 
@@ -166,7 +166,7 @@ namespace ReflectionProvider
 
 Şimdi buraya kadar yaptıklarımızı bir test edelim. İlk olarak Console uygulamamızı çalıştıralım. Sonrasında ise herhanbiri tarayıcı üzerinden uygulamamıza sorgulama talepleri gönderelim.
 
-İlk sorgumuzda http://localhost:8080/Persons talebini deneyebiliriz.
+İlk sorgumuzda `http://localhost:8080/Persons` talebini deneyebiliriz.
 
 ![dsrp_6.png](/assets/images/2012/dsrp_6.png)
 

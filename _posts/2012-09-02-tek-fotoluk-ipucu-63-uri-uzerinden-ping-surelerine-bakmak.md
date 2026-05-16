@@ -21,4 +21,3 @@ Hani bazen komut satırından bir URL adresine talep gönderip cevap sürelerine
 > NetworkCredential parametreleri sırasıya Username, Password ve Domain olarak set edilir. Eğer proxy kullanılıyorsa.
 
 Bir başka ip ucunda görüşmek dileğiyle.
-

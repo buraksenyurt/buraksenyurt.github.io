@@ -209,30 +209,30 @@ namespace AzonServices
         public IAsyncResult BeginCreateProducts(int totalProductCount, AsyncCallback callback, object asyncState)
         {
             var task = new Task<int>((s) =>
-                                         {
-                                             int createdProductCount = 0;
-                                             char[] classes = { 'C', 'D', 'E', 'L', 'S' };
-                                             List<Product> products = new List<Product>();
-                                             Random randomizer = new Random();
+            {
+                int createdProductCount = 0;
+                char[] classes = { 'C', 'D', 'E', 'L', 'S' };
+                List<Product> products = new List<Product>();
+                Random randomizer = new Random();
 
-                                             for (int i = 0; i < totalProductCount; i++)
-                                             {
-                                                 Product newProduct = new Product
-                                                 {
-                                                     ProductId = i,
-                                                     Name = "PRD-" + i.ToString(),
-                                                     ListPrice = randomizer.Next(1, 100),
-                                                     StockSize = randomizer.Next(50, 500),
-                                                     Class =
-                                                                                  classes[
-                                                                                      randomizer.Next(0, classes.Length)
-                                                                                  ]
-                                                 };
-                                                 products.Add(newProduct);
-                                                 createdProductCount++;
-                                             }
-                                             return createdProductCount;
-                                         }, asyncState);
+                for (int i = 0; i < totalProductCount; i++)
+                {
+                    Product newProduct = new Product
+                    {
+                        ProductId = i,
+                        Name = "PRD-" + i.ToString(),
+                        ListPrice = randomizer.Next(1, 100),
+                        StockSize = randomizer.Next(50, 500),
+                        Class =
+                                                    classes[
+                                                        randomizer.Next(0, classes.Length)
+                                                    ]
+                    };
+                    products.Add(newProduct);
+                    createdProductCount++;
+                }
+                return createdProductCount;
+            }, asyncState);
 
             task.ContinueWith((t) => { callback(t); });
             task.Start();

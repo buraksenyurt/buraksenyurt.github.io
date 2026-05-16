@@ -22,11 +22,9 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki... Aslında bakarsanız olaylar bana göre, Microsoft geliştirici takımlarının, diğer geliştiricilerin seslerini duymaya ve dikkate almaya başlamasından sonra epeyce gelişti.
+Entity Framework takımı aldı başını gidiyor. Kim durduracak onları. Onlarda The Mask filmindeki karakter gibi “Somebody stop me!” demiyor ki... Aslında bakarsanız olaylar bana göre, Microsoft geliştirici takımlarının, diğer geliştiricilerin seslerini duymaya ve dikkate almaya başlamasından sonra epeyce gelişti. Microsoft’ un çeşitli takımlarının açtığı anketler sayesinde, geliştiricilerin talepleri dinleniyor, değerlendiriliyor ve kayda değer olanlar planlanıp peyder pey yeni sürümlere ilave ediliyor. Hatta takımların ortaya koyduğu “şu da olsa nasıl olur?” ruh halindeki öğeler de geliştiriciler tarafından oylanıyor ve aynı sürece dahil edilebiliyor.(Bloğumdaki takip ettiklerim listesinde bir kaç survey adresini bulabilirsiniz)
 
 ![themask](/assets/images/2012/themask.jpg)
-
-Microsoft’ un çeşitli takımlarının açtığı anketler sayesinde, geliştiricilerin talepleri dinleniyor, değerlendiriliyor ve kayda değer olanlar planlanıp peyder pey yeni sürümlere ilave ediliyor. Hatta takımların ortaya koyduğu “şu da olsa nasıl olur?” ruh halindeki öğeler de geliştiriciler tarafından oylanıyor ve aynı sürece dahil edilebiliyor.(Bloğumdaki takip ettiklerim listesinde bir kaç survey adresini bulabilirsiniz)
 
 Hal böyle olunca çok doğal olarak bir sürü sürüm çıkıyor ve var olanlar çabucak eskiyor. Takip edilmesi zor olan ve özellikle Enterprise seviyede ki projelerde “acaba bu teknolojiyi kullanabilir miyiz?” gibi soruların doğmasına ve ne yazık ki negatif olarak yanıtlanmasına neden olabilecek bir durum bu. Fakat biz yine de üstümüze düşen görevi yapalım ve gerekli anlatımımızı icra ederek öğrendiklerimizi sizlerle paylaşalım. Öyleyse başlayalım
 
@@ -244,9 +242,7 @@ namespace HowTo_EFCodeFirstConvetions
 }
 ```
 
-IEdmConvention interface'ini implemente eden StringLengthConversion sınıfı Apply metodunu uygulamaktadır. Bu metodun içerisinde, edmDataModelItem isimli değişkenin String tipi olup olmadığına bakılmakta ve eğer öyleyse Max Length değeri 200 karakter ile sınırlandırılmaktadır.
-
-Bu işlem pek tabi Model içerisinde yer alan ne kadar String tipte öğe var ise geçerli olacktır. Tabi söz konusu sınıfın devreye girebilmesi için yine OnModelCreating içerisine müdahale edilmelidir. Aşağıdaki kod parçasında görüldüğü gibi.
+IEdmConvention interface'ini implemente eden StringLengthConversion sınıfı Apply metodunu uygulamaktadır. Bu metodun içerisinde, edmDataModelItem isimli değişkenin String tipi olup olmadığına bakılmakta ve eğer öyleyse Max Length değeri 200 karakter ile sınırlandırılmaktadır. Bu işlem pek tabi Model içerisinde yer alan ne kadar String tipte öğe var ise geçerli olacktır. Tabi söz konusu sınıfın devreye girebilmesi için yine OnModelCreating içerisine müdahale edilmelidir. Aşağıdaki kod parçasında görüldüğü gibi.
 
 ```csharp
 protected override void OnModelCreating(DbModelBuilder modelBuilder) 
@@ -316,7 +312,7 @@ Bu işlem sonrasında veri tabanı şemasının aşağıdaki gibi üretildiği g
 
 Dikkat edileceği üzere String özelliklerin karşılığı olarak nvarchar tipinde olan, null değer içeremeyen ve maksimum 50 karakter uzunluğunda içerik tutabilen alanlar üretilmiştir.
 
-Code First yaklaşımında Convention kullanımı ile ilişkili olarak daha ileri seviye uygulamalar da mevcuttur. Söz gelimi Custom Attribute’ lar le yeni Convention kural setleri tanımlanabilir. Özellikle LightWeight modelinde kullanılabilecek epey fazla fonksiyonllik bulunmaktadır. Bu konuda [şu adresteki](http://msdn.microsoft.com/en-us/data/jj819164) yazının son kısımlarını da değerlendirebilir ve kendi denemelerinizi yaparak konuyu irdelemeye çalışabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
+Code First yaklaşımında Convention kullanımı ile ilişkili olarak daha ileri seviye uygulamalar da mevcuttur. Söz gelimi Custom Attribute’ lar le yeni Convention kural setleri tanımlanabilir. Özellikle LightWeight modelinde kullanılabilecek epey fazla fonksiyonllik bulunmaktadır. Bu konuda [şu adresteki](http://msdn.microsoft.com/en-us/data/jj819164) yazının son kısımlarını da değerlendirebilir ve kendi denemelerinizi yaparak konuyu irdelemeye çalışabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Makalede yazılanlar Entity Framework 6 Alpha 2 sürümünü baz almaktadır]
 

@@ -14,19 +14,13 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Yazılım sektöründe yer alan bizler, mutlak suretle en az bir programlama dilini çok iyi seviyede öğrenmeye çalışır ve bunun için epey yoğun çaba sarf ederiz (Hatta değerli bir büyüğümüzün sözüne göre, hayatımızın her hangibir noktasında C veya C++ gibi bir dili öğrenmeye çalışmış ama hiç bir zaman iyi bir C/C++ geliştiricisi olamamışızdır) Ne varki bazen dilin kullanılmayan pek çok özelliğini, zamanında öğrenmiş olsak dahi unutabiliriz. Hatta bazı ilginç olan yanlarını bugüne kadar hiç görmemiş, denememiş ya da duymamış olabiliriz.
+Yazılım sektöründe yer alan bizler, mutlak suretle en az bir programlama dilini çok iyi seviyede öğrenmeye çalışır ve bunun için epey yoğun çaba sarf ederiz (Hatta değerli bir büyüğümüzün sözüne göre, hayatımızın her hangibir noktasında C veya C++ gibi bir dili öğrenmeye çalışmış ama hiç bir zaman iyi bir C/C++ geliştiricisi olamamışızdır) Ne varki bazen dilin kullanılmayan pek çok özelliğini, zamanında öğrenmiş olsak dahi unutabiliriz. Hatta bazı ilginç olan yanlarını bugüne kadar hiç görmemiş, denememiş ya da duymamış olabiliriz. İşte size C# dili ile ilişkili olarak pek çoğumuzun hatırından giden bir kaç enteresan vaka…
 
-![helpful_tips_image](/assets/images/2013/helpful_tips_image.jpg)
-
-İşte size C# dili ile ilişkili olarak pek çoğumuzun hatırından giden bir kaç enteresan vaka…
-
-> Bu arada C# diline ait geniş bir dökümantasyonu C:\Program Files\Microsoft Visual Studio 11.0\VC#\Specifications\1033 klasörü altında bulabilirsiniz
-
-> 527 sayfalık CSharp Language Specification isimli bu döküman, elinizin altındaydı her zaman. Başka bir kitaba ihtiyacınız yok. En azından başlangıç seviyesinde. Visual Studio 2012 kurulumu sonrası gelen bu dökümantasyon aslında C# 3.0 sürümünden beri de mevcut.
+> Bu arada C# diline ait geniş bir dökümantasyonu C:\Program Files\Microsoft Visual Studio 11.0\VC#\Specifications\1033 klasörü altında bulabilirsiniz. 527 sayfalık CSharp Language Specification isimli bu döküman, elinizin altındaydı her zaman. Başka bir kitaba ihtiyacınız yok. En azından başlangıç seviyesinde. Visual Studio 2012 kurulumu sonrası gelen bu dökümantasyon aslında C# 3.0 sürümünden beri de mevcut.
 
 Bu yazımızda örnek 5 vaka çalışması üzerinde duruyor olacağız.
 
-## Vaka 1 – private olarak tanımlanmış bir alana (field), tanımlandığı sınıf dışından erişilemez.
+## Vaka 1 – private olarak tanımlanmış bir alana (field), tanımlandığı sınıf dışından erişilemez
 
 Hep bu şekilde öğrendik. Genel olarak cümle kalıbı böyleydi. C# tarafından baktığımızda temel olarak 5 erişim belirleyicisi (Access Modifier) olduğunu biliyoruz. private, public, internal, protected ve son olarak da protected internal. private olarak tanımlanış üyelerin de (members), tanımlı oldukları yer dışından erişilemez olduklarını biliyoruz. Tabi istisnai durumlarda yok değil. Söz gelimi aşağıdaki kod parçasını göz önüne alalım.
 
@@ -49,7 +43,7 @@ class Vehicle
 }
 ```
 
-Vehicle sınıfı içerisinde tanımlanmış olan _vehicleId alanı private erişim belirleyicisi ile işaretlenmiştir. Ancak dikkat edilmesi gereken bir nokta vardır. Sınıf içerisinde tanımlanan IsEqual metodu parametre olarak başka bir Vehicle nesne örneğini almakta ve içerisinde bu örneğe ait _vehicleId alanını kullanmaktadır.
+Vehicle sınıfı içerisinde tanımlanmış olan `_vehicleId` alanı private erişim belirleyicisi ile işaretlenmiştir. Ancak dikkat edilmesi gereken bir nokta vardır. Sınıf içerisinde tanımlanan IsEqual metodu parametre olarak başka bir Vehicle nesne örneğini almakta ve içerisinde bu örneğe ait `_vehicleId` alanını kullanmaktadır.
 
 Kullanabilmektedir. Derleyici buna kızmamaktadır. Peki uygulama tarafına geçelim ve aşağıdaki test kodlarını değerlendirelim.
 
@@ -70,61 +64,61 @@ Sonuç false dönecektir elbette.
 
 ![csmyth_2](/assets/images/2013/csmyth_2.png)
 
-Dikkat edileceği üzere parametre olarak gelen vehicle değişkeni üzerinden, private olarak tanımlanmış _vehicleId alanına erişilebilmiştir. Tabi _vehicleId’ nin değeri, v2 isimli değişkene ait olarak üretilen Guid değeridir.
+Dikkat edileceği üzere parametre olarak gelen `vehicle` değişkeni üzerinden, private olarak tanımlanmış `_vehicleId` alanına erişilebilmiştir. Tabi `_vehicleId`’ nin değeri, `v2` isimli değişkene ait olarak üretilen Guid değeridir.
 
 > Dolayısıyla private alan kullanımları ile ilişkili olarak şunu da ifade edebiliriz. private tanımlanmış bir üyeye tanımlandığı sınıfa ait başka nesne örnekleri (Instance) üzerinden erişilebilinir.
 
-## Vaka 2 – Çok yerde faydasını gördüğümüz genişletme metodları (Extension Methods), Enum sabitlerine de uygulanabilir.
+## Vaka 2 – Çok yerde faydasını gördüğümüz genişletme metodları (Extension Methods), Enum sabitlerine de uygulanabilir
 
 Genişletme metodları (Extension Methods) özellikle elimize kodları kapalı olarak gelen assembly dosyaları düşünüldüğünde, bunları ek fonksiyonellikler ile genişletmede kullanılan önemli kavramlardan birisidir. Çoğunlukla türetilemeyen veya az önce de bahsettiğimiz gibi kodları kapalı gelen sınıflar için kullanıldığına sıklıkla şahit oluru. ([Extension Method’ lar ile ilişkili bir internet sitesi dahi vardır](http://www.extensionmethod.net/csharp)) Ancak bu özelliğin Enum sabitleri için de kullanılabildiğini fark etmiş miydiniz? Örneğin,
 
 ![csmyth_3](/assets/images/2013/csmyth_3.png)
 
 ```csharp
-enum VehicleType 
-{ 
-	Tank, 
-	MLRS, 
-	Artillary, 
-	Hummvy, 
-	HeavyAnrtillary, 
-	Destroyer, 
-	Carrier 
+enum VehicleType
+{
+    Tank,
+    MLRS,
+    Artillary,
+    Hummvy,
+    HeavyAnrtillary,
+    Destroyer,
+    Carrier
 }
 
-static class EnumExtensions 
-{ 
-	public static string GetDescription(this VehicleType vType) 
-	{ 
-		string result = String.Empty;
+static class EnumExtensions
+{
+    public static string GetDescription(this VehicleType vType)
+    {
+        string result = String.Empty;
 
-		switch (vType) 
-		{ 
-			case VehicleType.Tank: 
-				result= "Paletli zırhlı tank. 135mm top"; 
-				break; 
-			case VehicleType.MLRS: 
-				result = "Kundağı motorlu çoklu roket atar sistemi"; 
-				break; 
-			case VehicleType.Artillary: 
-				result = "75mm - 205mm arası hafif topçu"; 
-				break; 
-			case VehicleType.Hummvy: 
-				result = "Hummer jeep"; 
-				break; 
-			case VehicleType.HeavyAnrtillary: 
-				result = "205mm üstü ağır kara topçusu"; 
-				break; 
-			case VehicleType.Destroyer: 
-				result = "Güneş sınıfı yeni nesil zırhlı destroyer"; 
-				break; 
-			case VehicleType.Carrier: 
-				result = "Nimitz sınıfı nükleer Uçak gemisi"; 
-				break; 
-		}
+        switch (vType)
+        {
+            case VehicleType.Tank:
+                result = "Paletli zırhlı tank. 135mm top";
+                break;
+            case VehicleType.MLRS:
+                result = "Kundağı motorlu çoklu roket atar sistemi";
+                break;
+            case VehicleType.Artillary:
+                result = "75mm - 205mm arası hafif topçu";
+                break;
+            case VehicleType.Hummvy:
+                result = "Hummer jeep";
+                break;
+            case VehicleType.HeavyAnrtillary:
+                result = "205mm üstü ağır kara topçusu";
+                break;
+            case VehicleType.Destroyer:
+                result = "Güneş sınıfı yeni nesil zırhlı destroyer";
+                break;
+            case VehicleType.Carrier:
+                result = "Nimitz sınıfı nükleer Uçak gemisi";
+                break;
+        }
 
-		return result; 
-	} 
+        return result;
+    } 
 }
 ```
 
@@ -212,11 +206,11 @@ Yine ekrana Pi değerinin yazılmasını bekleyebiliriz öyle değil mi? Ama,
 
 sıfır yazmıştır.
 
-Görüldüğü gibi sıralama static alanların kullanıldığı durumda önemlidir. Nitekim r2 ilk tanımlandığında r1 değerini alırken, r1’ in o anki değeri varsayılan int için 0’ dır. Dolayısıyla, sonraki sırada yapılan r1 tanımlanması ve atamasında verilen Pi değeri sadece r1 için söz konusudur.
+Görüldüğü gibi sıralama static alanların kullanıldığı durumda önemlidir. Nitekim r2 ilk tanımlandığında r1 değerini alırken, r1’ in o anki değeri varsayılan int için 0’ dır. Dolayısıyla, sonraki sırada yapılan r1 tanımlanması ve atamasında verilen Pi değeri sadece r1 için söz konusudur. Peki bu durum static olmayan alanlar için de geçerli midir acaba? Bunu denediğimizde sizce ne olur?
 
-> Peki bu durum static olmayan alanlar için de geçerli midir acaba? Bunu denediğimizde sizce ne olur?
-> ![csmyth_7](/assets/images/2013/csmyth_7.png)
-> Böyle bir atamaya zaten bu Console uygulaması açısından bakıldığında, derleme zamanı izin vermeyecektir. Sıralamayı değiştirip double r2=r1; ifadesini bir alt satıra geçirseniz dahi durum değişmez.
+![csmyth_7](/assets/images/2013/csmyth_7.png)
+
+Böyle bir atamaya zaten bu Console uygulaması açısından bakıldığında, derleme zamanı izin vermeyecektir. Sıralamayı değiştirip double r2=r1; ifadesini bir alt satıra geçirseniz dahi durum değişmez.
 
 ## Vaka 4 – Indeksleyicilerde params anahtar kelimesi de kullanılabilir
 
@@ -296,11 +290,7 @@ static void Main(string[] args)
 }
 ```
 
-Dikkat edileceği üzere 0, 1, 2, 3 ve 4 numaralı indislere farklı Person nesne örnekleri atanmıştır. subSet değişkeninin elde ediliş şekline dikkat ettiniz mi
-
-İşte burada params anahtar kelimesinin etkisi görülmektedir. Senaryomuza göre burada PersoneId değeleri gönderilmiş ve ona uygun olacak bir sonuç alınmıştır.
-
-singlePerson değişkeninin elde edilmesi sırasında ise, params anahtar kelimesinin kullanılmadığı indeksleyici versiyonu çalışacaktır. İşte uygulamanın çalışma zamanı sonuçları.
+Dikkat edileceği üzere 0, 1, 2, 3 ve 4 numaralı indislere farklı Person nesne örnekleri atanmıştır. subSet değişkeninin elde ediliş şekline dikkat ettiniz mi? İşte burada params anahtar kelimesinin etkisi görülmektedir. Senaryomuza göre burada PersoneId değeleri gönderilmiş ve ona uygun olacak bir sonuç alınmıştır. singlePerson değişkeninin elde edilmesi sırasında ise, params anahtar kelimesinin kullanılmadığı indeksleyici versiyonu çalışacaktır. İşte uygulamanın çalışma zamanı sonuçları.
 
 ![csmyth_9](/assets/images/2013/csmyth_9.png)
 

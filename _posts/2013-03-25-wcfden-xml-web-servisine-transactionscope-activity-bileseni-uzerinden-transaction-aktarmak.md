@@ -15,8 +15,6 @@ categories:
 ---
 Bir süre öncesine kadar Composition adı verilen bir katmanda yer alacak çeşitli servisler ile yoğun şekilde güreşmekteydim. Çok fazla faktör, çok fazla farklı sistem ve tabiri yerinde ise oyun ve oyuncu söz konusuydu. WCF servisleri, XML Web Servisleri, Java tabanlı olanları ve belki de yarın gelecek olan çeşitli COM bileşenleri, 3ncü parti uygulamalar, koduna müdahale edemeyeceğimiz programlar vs.
 
-![1344349583_normalThumb](/assets/images/2013/1344349583_normalThumb.jpg)
-
 Sadece bunlar olsa iyi. Bir de bunlar içerisine Oracle üzerinde koşan Transactional veritabanı işlemleri de mevcut olunca, işler ister istemez karışıyor ve künde pozisyonuna geliyorsunuz. Nitekim bu servisler n sayıda kombinasyon ile birbirleriyle etkileşimde bulunabilirler ve bu tip senaryolarda bir şekilde Distributed Transaction terminolojisinin uygulanması ve servisler arasında başarılı bir şekilde akıtılarak, Two Phase Commit ilkesinin gerçekleştirilebiliyor olması gereklidir.
 
 > Daha önceden ele aldığımız bir yazıda, WCF servislerinin Workflow tarafındaki TransactionScope kontrolüne dahil edilme durumlarını incelemeye çalışmıştık hatırlayalım. [Workflow Foundation, Oracle, WCF ve TransactionScope](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/)
@@ -29,7 +27,7 @@ Ne varki bu servislerden birisi Windows Communication Foundation yapısında ike
 
 ![WP_000637](/assets/images/2013/WP_000637.jpg)
 
-WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların servis içerisine nasıl akıtılacağını [bu yazımızda](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/) incelemiştik hatırlayacağınız üzere. Ancak işin içerisine eski stilde yazılmış bir XML Web Service girince, durum biraz farklılaşıyor
+WCF servislerinin kullanıldığı senaryolarda atomic transaction’ ların servis içerisine nasıl akıtılacağını [bu yazımızda](/2013/01/31/workflow-foundation-oracle-wcf-ve-transactionscope/) incelemiştik hatırlayacağınız üzere. Ancak işin içerisine eski stilde yazılmış bir XML Web Service girince, durum biraz farklılaşıyor.
 
 Ne yazık ki, istemci tarafında başlatılan Transaction’ ın kod yardımıyla XML Web Service içerisindeki ilgili Web Method’ a aktarılması gerekmektedir. Aksi durumda bir çalışma zamanı hatası alınmıyor olmasına karşın, bir dağıtık Transaction’ ın ilgili Web Method içerisindeki CRUD (Create Retrieve Update Delete) işlemini ele alamadığı görülür. Bu görünmez hata fark edilmediği takdirde, kötü sonuçlara neden olabilir tahmin edeceğiniz üzere.
 

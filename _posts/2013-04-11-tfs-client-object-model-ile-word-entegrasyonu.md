@@ -14,11 +14,9 @@ tags:
 categories:
   - DevOps
 ---
-Geçtiğimiz gün National Geographic kanalında Mega Fabrikalar’ ı seyretme fırsatı buldum. Amerikalı Dodge firması efsane Challanger‘ ı yeniden üretmekteydi. Konu bu üretimin gerçekleştirildiği mega fabrikaydı.
+Geçtiğimiz gün National Geographic kanalında Mega Fabrikalar’ ı seyretme fırsatı buldum. Amerikalı Dodge firması efsane Challanger‘ ı yeniden üretmekteydi. Konu bu üretimin gerçekleştirildiği mega fabrikaydı. Robotların, gelişmiş endüstürinin ve insan gücünün bir araya geldiği fabrika, sadece 24 saat içerisinde üretim hattından mükemmel spor arabalar çıkmaktaydı. Üstelik motor bloğu da kıtanın bir diğer ucundan geliyordu.
 
 ![Dodge-Challenger-production-1024x566](/assets/images/2013/Dodge-Challenger-production-1024x566.jpg)
-
-Robotların, gelişmiş endüstürinin ve insan gücünün bir araya geldiği fabrika, sadece 24 saat içerisinde üretim hattından mükemmel spor arabalar çıkmaktaydı. Üstelik motor bloğu da kıtanın bir diğer ucundan geliyordu.
 
 Her ne kadar mükemmele yakın bir üretim bandı da olsa, akıllı bilgisayarlar üretim sürecindeki her adımı gözlemliyor ve bir istisna olması halinde bandı durduruyordu. O da yetmiyor pek çok noktada usta insanlar devreye giriyor ve gerekirse üretim bandını kendi insiyatifleri ile durduruyorlardı. Tabi burada yazarak anlatmak çok zor o yüzden mutlaka seyredin derim. Aslında belgeseli izlerken en çok da şunu düşündüm “Böyle muazzam yapılar nasıl oluyor da inşa ediliyor? İnsan aklı ne kadar muazzam ki her ayrıntıyı düşünüyor, düşünmeye çalışıyor”
 
@@ -52,9 +50,9 @@ Word dokümanının tasarımını ise aşağıdaki ekran görüntüsünde yer al
 
 ![tfsword_4](/assets/images/2013/tfsword_4.png)
 
-Oldukça sade bir tasarımımız var. Örneği mümkün olduğunca basit seviyede tutmamız önemli. Product Backlog Item ile Task öğelerine ait Title ve Description girişleri için PlainTextContentControl bileşeninden yararlanılmaktadır. Ve,
+Oldukça sade bir tasarımımız var. Örneği mümkün olduğunca basit seviyede tutmamız önemli. Product Backlog Item ile Task öğelerine ait Title ve Description girişleri için PlainTextContentControl bileşeninden yararlanılmaktadır.
 
-## Kod
+## Kod Tarafı
 
 Kullanıcı Save işlemini icra ettiğinde (Ribbon kontrolüne basabilir, Ctrl+Save yapabilir vb), girdiği veri içeriğinin TFS tarafındaki ilgili projenin backlog’ una yazılması gerekmektedir. Bu nedenle odak noktası dokümanın BeforeSave olay metodudur. Lakin Client Object Model nesne referanslarının nasıl kullanıldığına da dikkat edilmelidir.
 

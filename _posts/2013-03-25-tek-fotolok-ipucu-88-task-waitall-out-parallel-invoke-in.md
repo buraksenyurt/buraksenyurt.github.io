@@ -21,4 +21,4 @@ Ancak bunun daha pratik olan bir yolu da vardır. O da Parallel sınıfı üzeri
 
 ![tfii_88](/assets/images/2013/tfii_88.png)
 
-Bir başka ipucunda görüşmek dileğiyle
+Bir başka ipucunda görüşmek dileğiyle.

@@ -18,4 +18,3 @@ Asp.Net 4.5 Web Forms tarafında gelen yeniliklerden birisi de, veri bağlı kon
 ![tfi_67_5](/assets/images/2012/tfi_67_5.png)
 
 Bir başka ipucunda görüşmek dileğiyle
-

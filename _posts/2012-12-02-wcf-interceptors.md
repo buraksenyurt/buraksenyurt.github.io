@@ -16,17 +16,9 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Hepimizin hafızasında yer eden ve defalarca seyretse de asla sıkılmayacağı kült filmler vardır. Hatta nesiller ilerledikçe, her neslin mutlaka en az bir kere uğradığı, uğraması gereken yapımlar vardır.
+Hepimizin hafızasında yer eden ve defalarca seyretse de asla sıkılmayacağı kült filmler vardır. Hatta nesiller ilerledikçe, her neslin mutlaka en az bir kere uğradığı, uğraması gereken yapımlar vardır. The Godfather, Starwars, Matrix, The Good the bad and the ugly, Back to the future vb…Bunlardan birisi de benim için [Mad Max](http://www.imdb.com/title/tt0079501/)’ dir. Serinin ilginç konusu dışında en çok dikkatimi çeken (pek çok erkeğin de dikkatini çetkiği üzere) filmde kullanılan araçlardır. Bunlardan birisi de o zamanlar yol devriyesi olarak görev yapan V8 motora sahip 1974 model Ford Falcon XB dir. Tabi bunu tahmin edeceğiniz üzere siyah renkli efsanevi Ford GT351 takip etmiştir. [Detaylar için wikipedia’ dan bilgi alabilirsiniz](http://en.wikipedia.org/wiki/Mad_Max#Vehicles) Peki bizimle ne alakası var? Bu yazımızda farklı bir Interceptor kavramını göz önüne alıyor olacağız.
 
 ![32484720231_large](/assets/images/2012/32484720231_large.jpg)
-
-The Godfather, Starwars, Matrix, The Good the bad and the ugly, Back to the future vb…Bunlardan birisi de benim için [Mad Max](http://www.imdb.com/title/tt0079501/)’ dir.
-
-Serinin ilginç konusu dışında en çok dikkatimi çeken (pek çok erkeğin de dikkatini çetkiği üzere) filmde kullanılan araçlardır. Bunlardan birisi de o zamanlar yol devriyesi olarak görev yapan V8 motora sahip 1974 model Ford Falcon XB dir. Tabi bunu tahmin edeceğiniz üzere siyah renkli efsanevi Ford GT351 takip etmiştir. [Detaylar için wikipedia’ dan bilgi alabilirsiniz](http://en.wikipedia.org/wiki/Mad_Max#Vehicles)
-
-Peki bizimle ne alakası var
-
-Bu yazımızda farklı bir Interceptor kavramını göz önüne alıyor olacağız.
 
 WCF (Windows Communication Foundation) alt yapısının popüler olmasının en büyük nedenlerinden birisi de, hemen her seviyede genişletilebilir olmasıdır. Genişleyebilirlik, bir Framework için oldukça önemli bir özelliktir. Nitekim bu yeteneğin olması, geliştiricilerin daha fazla noktada müdahalede bulunabilme ve ihtiyaçları daha fazla yerde çözümleyebilme kabiliyetini kazanabilmesi anlamına gelmektedir.
 
@@ -126,7 +118,7 @@ namespace SomeServiceApp
 
 ## Parametre Bazlı Kontrolör (Parameter Inspector)
 
-Parametre bazlı kesme tiplerinin kullanılabileceği senaryolardan ilk akla gelen sanıyorumki doğrulama operasyonlarıdır. Söz gelimi örnek servisimizi göz önüne aldığımızda, ProcessCadImage operasyonuna gelen byte[] tipinden dizinin içeriğini kontrol ettirebilir ve gerçekten bir Image olup olmadığını denetleyebiliriz. Ama bu kadar komplike düşünmemize şu aşamada pek gerek yoktur
+Parametre bazlı kesme tiplerinin kullanılabileceği senaryolardan ilk akla gelen sanıyorumki doğrulama operasyonlarıdır. Söz gelimi örnek servisimizi göz önüne aldığımızda, ProcessCadImage operasyonuna gelen byte[] tipinden dizinin içeriğini kontrol ettirebilir ve gerçekten bir Image olup olmadığını denetleyebiliriz. Ama bu kadar komplike düşünmemize şu aşamada pek gerek yoktur.
 
 Sonuçta basit bir boyut kontrolü de pekala işimizi görecektir. Buna göre ilk yapmamız gereken bir parametre kesicisi yazmaktır. Bunun için System.ServiceModel.Dispatcher isim alanında bulunan IParameterInspector türevli bir tip geliştirmemiz gerekecek. Aynen aşağıda olduğu gibi.
 
@@ -165,9 +157,7 @@ namespace SomeServiceApp
 }
 ```
 
-IParameterInspector arayüzü (Interface) ile birlikte gelen iki kritik operasyon vardır. Bunlardan birisi AfterCall diğeri ise BeforeCall’ dur. Geriye bir şey döndürmeyen AfterCall metodu, tahmin edileceği üzere ilgili servis operasyonu işleyişini tamamladıktan sonra devreye girmektedir. Tabiri yerinde ise iş işten geçtikten sonra diyebiliriz
-
-İşin aslı, burada servis operasyon çağrısının tamamlanması sonrası gerçekleştirilecek işlemlere yer verebiliriz. Belki loglama veya performans ölçümleri adına ideal bir yer olabilir.
+IParameterInspector arayüzü (Interface) ile birlikte gelen iki kritik operasyon vardır. Bunlardan birisi AfterCall diğeri ise BeforeCall’ dur. Geriye bir şey döndürmeyen AfterCall metodu, tahmin edileceği üzere ilgili servis operasyonu işleyişini tamamladıktan sonra devreye girmektedir. Tabiri yerinde ise iş işten geçtikten sonra diyebiliriz. İşin aslı, burada servis operasyon çağrısının tamamlanması sonrası gerçekleştirilecek işlemlere yer verebiliriz. Belki loglama veya performans ölçümleri adına ideal bir yer olabilir.
 
 Geriye object tipinden değer döndüren ve çağrıda bulunulan operasyon adı ile o operasyona gelen parametreler için object tipinden bir diziyi parametre olarak alan BeforeCall metodu ise, kesme işleminin uygulanabileceği en ideal yerdir.
 
@@ -512,7 +502,5 @@ http://tempuri.org/IShipService/ProcessCadImageResponse</Action>
 Mesaj bazlı kesici tip, Endpoint seviyesinde bir davranış olarak tanımlandığından, bu Endpoint adına gelen ne kadar operasyon var ise her biri için devreye girecektir. Diğer yandan Parametre bazlı kesicimizin bir FaultException üretmesi halinde, BeforeSendReply metodları hatanın üretildiği servis operasyonu için devreye girmiyor olacaktır.
 
 Görüldüğü üzere parametre ve mesaj seviyesinde kesme işlemlerini uygulamak çok zor olmadığı gibi dikkat gerektiren bir işlemler bütününden oluşmaktadır. Bu yazımızda Parametre ve Mesaj bazlı kesici tiplerin WCF tarafında nasıl yazılabileceğini incelemeye çalıştık. Bu kesicilerin bir diğer implementasyonu da WCF Data Service tarafındadır. Bu konuyu da incelemenizi tavsiye ederim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-
-[Bu makale [Formspring](http://www.formspring.me/BurakSenyurt) üzerinden gelen bir soru üzerine hazırlanmıştır. Soruyu soran arkadaşımıza teşekkür etmek isterim]
 
 [HowTo_WCF_Interceptors.zip (86,34 kb)](/assets/files/2012/HowTo_WCF_Interceptors.zip)

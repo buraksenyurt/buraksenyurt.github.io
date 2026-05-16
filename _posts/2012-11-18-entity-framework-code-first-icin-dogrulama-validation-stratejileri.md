@@ -11,11 +11,7 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Bir verinin çeşitli kurallara göre doğrulanması, verinin işlenmek üzere gönderilmeden önce yapılması gereken önemli işlemlerden birisidir. Özellikle Entity Framework gibi veri merkezli (Data-Centric) uygulama geliştirme alt yapılarında bu durum daha da önem arz etmektedir. Burada söz konusu olan, görsel bir kontrolün içerik denetiminden ziyade, çalışma zamanı Entity örneklerine ait özelliklerin (Property) değerlerinin denetlenmesidir. Çok doğal olarak verilerde tutarsızlıklara neden olabilecek çeşitli ihlallerin tespit edilmesi, toplanması, gerektiğinde son kullanıcıya bildirilmesi ya da farklı bir yere raporlanması/loglanması gerekmektedir.
-
-![checklist1](/assets/images/2012/checklist1.gif)
-
-Peki verinin doğrulanmasından tam olarak beklentilerimiz neler olabilir? Bunu bir kaç gerçek hayat ihtiyacı ile cevaplayabiliriz.
+Bir verinin çeşitli kurallara göre doğrulanması, verinin işlenmek üzere gönderilmeden önce yapılması gereken önemli işlemlerden birisidir. Özellikle Entity Framework gibi veri merkezli (Data-Centric) uygulama geliştirme alt yapılarında bu durum daha da önem arz etmektedir. Burada söz konusu olan, görsel bir kontrolün içerik denetiminden ziyade, çalışma zamanı Entity örneklerine ait özelliklerin (Property) değerlerinin denetlenmesidir. Çok doğal olarak verilerde tutarsızlıklara neden olabilecek çeşitli ihlallerin tespit edilmesi, toplanması, gerektiğinde son kullanıcıya bildirilmesi ya da farklı bir yere raporlanması/loglanması gerekmektedir. Peki verinin doğrulanmasından tam olarak beklentilerimiz neler olabilir? Bunu bir kaç gerçek hayat ihtiyacı ile cevaplayabiliriz.
 
 Örneğin,
 
@@ -28,9 +24,7 @@ Peki verinin doğrulanmasından tam olarak beklentilerimiz neler olabilir? Bunu 
 
 Örnekler duruma göre çoğaltılabilir elbette. Entity Framework, özelliklerin doğrulanması için bir kaç noktada araya girmemizi sağlayacak imkanlar sunmaktadır. Biz bu örneğimizde Code-First yaklaşımı üzerinden ilgili doğrulama kurallarını hangi noktalardan ve nasıl enjekte edebileceğimizi incelemeye çalışıyor olacağız. Doğrulama işlemlerini temelde Entity ve Context seviyesinde olmak üzere iki ana dala ayırabiliriz.
 
-Doğrulama kuralları (Validation Rules), Entity seviyesinde iki şekilde yaptırılabilir. Nitelik (Attribute) bazlı veya IValidatableObject arayüzünün implementasyonu ile. Nitelik bazlı enjektelerde, System.ComponentModel.DataAnnotations isim alanı (namespace) altında yer alan bazı nitelik tiplerinden yararlanılır.
-
-Context seviyesinde ise ValidateEntity sanal metodunun ezilmesi (override) suretiyle söz konusu denetimler yaptırılabilir.
+Doğrulama kuralları (Validation Rules), Entity seviyesinde iki şekilde yaptırılabilir. Nitelik (Attribute) bazlı veya IValidatableObject arayüzünün implementasyonu ile. Nitelik bazlı enjektelerde, System.ComponentModel.DataAnnotations isim alanı (namespace) altında yer alan bazı nitelik tiplerinden yararlanılır. Context seviyesinde ise ValidateEntity sanal metodunun ezilmesi (override) suretiyle söz konusu denetimler yaptırılabilir.
 
 Hangi teknik seçilirse seçilsin, ilgili doğrulama kurallarının geçersiz olması halinde, ortama fırlatılan Exception'ların da kümülatif olarak toplanıp sunulması önemlidir. Bilindiği üzere normal şartlarda, kod akarken oluşan bir Exception sonucu çalışma zamanı catch bloğuna atlayacak ve try bloğu içerisindeki akışına devam etmeyecektir. Entity Framework gibi kullanım alanlarında, birden fazla Entity söz konusu olmakla birlikte bunların herhangibirisine ait özelliklerde oluşacak olan doğrulama ihlallerin toplanıp sunulması çok daha doğru bir yaklaşım olacaktır.
 
@@ -130,15 +124,15 @@ Belki de bu sıra duruma göre değişiklik arz, eder kim bilir
 ```csharp
 using System;
 
-namespace HowTo_Validation 
-{ 
-    public class Author 
-    { 
-        public int AuthorId { get; set; } 
-        public string FirstName { get; set; } 
-        public string Scenario { get; set; } 
-        public DateTime Birthday{ get; set; } 
-    } 
+namespace HowTo_Validation
+{
+    public class Author
+    {
+        public int AuthorId { get; set; }
+        public string FirstName { get; set; }
+        public string Scenario { get; set; }
+        public DateTime Birthday { get; set; }
+    }
 }
 
 using System; 
@@ -148,37 +142,36 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure; 
 using System.Data.Entity.Validation;
 
-namespace HowTo_Validation 
-{ 
-    public class GameContext 
-        :DbContext 
-    { 
-        public DbSet<Player> Players { get; set; } 
-        public DbSet<Layer> Layers { get; set; } 
+namespace HowTo_Validation
+{
+    public class GameContext
+        : DbContext
+    {
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Layer> Layers { get; set; }
         public DbSet<Author> Authors { get; set; }
 
-        protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, 
-IDictionary<object, object> items) 
-        { 
+        protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, IDictionary<object, object> items)
+        {
             var result = base.ValidateEntity(entityEntry, items);
 
-            if (entityEntry.State == EntityState.Added && 
-                entityEntry.Entity is Author) 
-            { 
+            if (entityEntry.State == EntityState.Added &&
+                entityEntry.Entity is Author)
+            {
                 var author = entityEntry.Entity as Author;
 
-                if (author.Birthday > DateTime.Today) 
-                { 
-                   result.ValidationErrors.Add( 
-                        new DbValidationError( 
-                            "Yazar doğum tarihi", 
-                            "Doğum tarihi bugünden büyük olamaz.") 
-                            ); 
-                } 
-            } 
-            return result; 
-       } 
-    } 
+                if (author.Birthday > DateTime.Today)
+                {
+                    result.ValidationErrors.Add(
+                         new DbValidationError(
+                             "Yazar doğum tarihi",
+                             "Doğum tarihi bugünden büyük olamaz.")
+                             );
+                }
+            }
+            return result;
+        }
+    }
 }
 ```
 
@@ -294,17 +287,11 @@ if(errorCount==0)
     context.SaveChanges();
 ```
 
-GetValidationErros metodu IEnumerable tipinden bir referans döndürmektedir. Çok doğal olarak bu içerik en az 1 ihlal dahi içerse context nesne örneğine ait SaveChanges metodunun çağırılması istenmeyebilir.
-
-Peki özellikle attribute seviyesinde yapılan doğrulama kontrollerini göz önüne alırsak, kendi özel kriterlerimizi içeren nitelikler tanımlayamaz mıyız? Elbetteki böyle bir esnekli var
-
-Nitekim System.ComponentModel.DataAnnotations isim alanı altında yer alan doğrulama kriterlerinin ortak özelliği, ValidationAttribute niteliğinden türemiş olmalarıdır.
+GetValidationErros metodu IEnumerable tipinden bir referans döndürmektedir. Çok doğal olarak bu içerik en az 1 ihlal dahi içerse context nesne örneğine ait SaveChanges metodunun çağırılması istenmeyebilir. Peki özellikle attribute seviyesinde yapılan doğrulama kontrollerini göz önüne alırsak, kendi özel kriterlerimizi içeren nitelikler tanımlayamaz mıyız? Elbetteki böyle bir esnekli var. Nitekim System.ComponentModel.DataAnnotations isim alanı altında yer alan doğrulama kriterlerinin ortak özelliği, ValidationAttribute niteliğinden türemiş olmalarıdır.
 
 ![efv_5](/assets/images/2012/efv_5.png)
 
-ValidationAttribute niteliği de doğal olarak Attribute tipinden türemektedir. Öyleyse kendi doğrulama niteliklerimizi yazmanın bir yolunu bulduğumuzu ifade edebiliriz
-
-Söz gelimi Author tipimize SocialSecurityNumber isimli string bir özellik eklediğimizi ve buraya girilen değerlerin geçerli bir numara olup olmadığını denetleyecek bir doğrulama niteliği geliştirmek istediğimizi farz edelim. Aşağıdaki şekilde ilerleyebiliriz.
+ValidationAttribute niteliği de doğal olarak Attribute tipinden türemektedir. Öyleyse kendi doğrulama niteliklerimizi yazmanın bir yolunu bulduğumuzu ifade edebiliriz. Söz gelimi Author tipimize SocialSecurityNumber isimli string bir özellik eklediğimizi ve buraya girilen değerlerin geçerli bir numara olup olmadığını denetleyecek bir doğrulama niteliği geliştirmek istediğimizi farz edelim. Aşağıdaki şekilde ilerleyebiliriz.
 
 ![efv_6](/assets/images/2012/efv_6.png)
 

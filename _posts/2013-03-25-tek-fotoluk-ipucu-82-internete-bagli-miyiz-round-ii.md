@@ -19,8 +19,6 @@ categories:
 
 ![tfi_82](/assets/images/2013/tfi_82.png)
 
-Aslında bu yol belki de ilk akla gelen yoldur. Eğer bir internet sitesine ulaşabiliyorsak zaten internete bağlıyız diye düşünebiliriz
-
-Lakin bir önceki ipucunda kullandığımız ve daha çok donanımsal talep ile çalışan tekniğe nazaran daha yavaş ve hatta daha az bilgi veren bir çözümdür.
+Aslında bu yol belki de ilk akla gelen yoldur. Eğer bir internet sitesine ulaşabiliyorsak zaten internete bağlıyız diye düşünebiliriz. Lakin bir önceki ipucunda kullandığımız ve daha çok donanımsal talep ile çalışan tekniğe nazaran daha yavaş ve hatta daha az bilgi veren bir çözümdür.
 
 Bir başka ipucunda görüşmek dileğiyle.

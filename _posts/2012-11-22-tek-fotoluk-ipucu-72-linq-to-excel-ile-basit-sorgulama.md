@@ -16,7 +16,6 @@ Belki siz de LINQtoEXCEL provider'ını duymuşsunuzdur. NuGet paket yönetim ar
 
 ![tfi_72](/assets/images/2012/tfi_72.png)
 
-Başka bir ipucunda görüşmek dileğiyle
+Başka bir ipucunda görüşmek dileğiyle.
 
-[Not:Provider'da değişiklik yapılmış olabilir ve yukarıdaki kod parçasının son sürümde daha farklı bir şekilde ele alınması gerekebilir. Buna dikkat edelim]
-
+**Not:** Provider'da değişiklik yapılmış olabilir ve yukarıdaki kod parçasının son sürümde daha farklı bir şekilde ele alınması gerekebilir. Buna dikkat edelim.

@@ -9,9 +9,7 @@ tags:
 categories:
   - Foto İpucu
 ---
-Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğrafı bir inceleyin öncelikle ve nasıl bir fark olabileceğini düşünmeye çalışın. Yani kafanızda kod parçasını debug etmeye gayret edin.
-
-(Visual Studio ve benzeri herhangibir geliştirme aracı kullanmamanız şiddetle tavsiye edilir)
+Bu sefer ki ip ucumuz biraz daha kışkırtıcı aslında. Aşağıdaki fotoğrafı bir inceleyin öncelikle ve nasıl bir fark olabileceğini düşünmeye çalışın. Yani kafanızda kod parçasını debug etmeye gayret edin. (Visual Studio ve benzeri herhangibir geliştirme aracı kullanmamanız şiddetle tavsiye edilir)
 
 ![tfi_71](/assets/images/2012/tfi_71.png)
 
@@ -59,12 +57,4 @@ ORDER BY [Extent1].[LastName] ASC, [Extent1].[FirstName] ASC
 
 Uppsss!!! Benzer bir sorgu derken!
 
-IQueryable üzerinden yapılan Take (10) çağrısı dikkat edileceği üzere TOP 10 ifadesini kullanmıştır. Peki ya IEnumerable üzerinden yapılan Take (10) çağrısı ne yapmıştır
-
-Aslında tüm liste çekilmiş sonrasında Take metodu, belleğe aldığı koleksiyon seti üzerinden ilk 10luk parçayı almıştır.
-
-Sanırım artık IQueryable mı olsun, IEnumerable mı olsun çıktı sonucu ya da var anahtar kelimesini kullanırsak hangisini göz önüne alır, hangisi daha avantajlıdır diye bir kuşku oluşturmuş bulunmaktayım içinizde
-
-E hadi hayırlısı diyelim.
-
-Başka bir ipucunda görüşmek dileğiyle.
+IQueryable üzerinden yapılan Take (10) çağrısı dikkat edileceği üzere TOP 10 ifadesini kullanmıştır. Peki ya IEnumerable üzerinden yapılan Take (10) çağrısı ne yapmıştır? Aslında tüm liste çekilmiş sonrasında Take metodu, belleğe aldığı koleksiyon seti üzerinden ilk 10luk parçayı almıştır. Sanırım artık IQueryable mı olsun, IEnumerable mı olsun çıktı sonucu ya da var anahtar kelimesini kullanırsak hangisini göz önüne alır, hangisi daha avantajlıdır diye bir kuşku oluşturmuş bulunmaktayım içinizde. E hadi hayırlısı diyelim. Başka bir ipucunda görüşmek dileğiyle.

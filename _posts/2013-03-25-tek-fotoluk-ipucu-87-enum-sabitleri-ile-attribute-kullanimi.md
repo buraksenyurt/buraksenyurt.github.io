@@ -15,5 +15,4 @@ Bazen uygulamalarımızda kullandığımız Enum sabitlerinin içerikleri anlaş
 
 ![tfii_87](/assets/images/2013/tfii_87.png)
 
-Bir başka ipucunda görüşmek dileğiyle
-
+Bir başka ipucunda görüşmek dileğiyle.

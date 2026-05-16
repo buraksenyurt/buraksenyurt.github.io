@@ -23,4 +23,3 @@ Takip edenler amatör düzeye yaklaşmaya çalışan/çabalayan fotoğrafçılı
 ![tfii_89](/assets/images/2013/tfii_89.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
-

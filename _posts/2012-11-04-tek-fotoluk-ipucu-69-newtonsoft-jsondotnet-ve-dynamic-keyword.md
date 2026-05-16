@@ -21,6 +21,4 @@ Bildiğiniz üzere JSON (JavaScriptObjectNotation) oldukça kompakt bir veri for
 
 ![tfi_69](/assets/images/2012/tfi_69.png)
 
-İşte bu kadar
-
-Başka bir ipucunda görüşmek dileğiyle.
+İşte bu kadar. Başka bir ipucunda görüşmek dileğiyle.

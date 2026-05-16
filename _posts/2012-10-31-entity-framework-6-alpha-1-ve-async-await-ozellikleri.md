@@ -19,9 +19,8 @@ Doğruyu söylemek gerekirse yazılım hayatım boyunca en çok kurduğum cümle
 
 Diğer taraftan kişisel görüşüme göre, Microsoft yazılım ekiplerinin bu çalışkanlığı da takdir edilmesi gereken bir durumdur. Bu ekiplerin başında da Entity Framework geliştirilmesinden [sorumlu ekip](http://blogs.msdn.com/b/adonet/) gelmektedir.
 
-Sözü fazla uzatmıyayım ama daha bu ayki Entity Framework 5.0 tabanlı [Nedirtv?com](HTTP://www.nedirtv.com) Webinerime hazırlanırken bir kaç gün önce EF 6.0’ nın alpha sürümünün yayınlandığını ve NuGet paket yönetim aracı ile indirilebileceğini öğrendim.
+Sözü fazla uzatmıyayım ama daha bu ayki Entity Framework 5.0 tabanlı [Nedirtv?com](HTTP://www.nedirtv.com) Webinerime hazırlanırken bir kaç gün önce EF 6.0’ nın alpha sürümünün yayınlandığını ve NuGet paket yönetim aracı ile indirilebileceğini öğrendim. Paketi arayıp bulabilmek için, Manage Nuget Packages dialog penceresindeki Include Prerelease seçeneğini işaretlemeyi unutmayın. Aksi durumda Release sürümleri öncesindeki ürünler listelenmeyeceklerdir.
 
-> Paketi arayıp bulabilmek için, Manage Nuget Packages dialog penceresindeki Include Prerelease seçeneğini işaretlemeyi unutmayın. Aksi durumda Release sürümleri öncesindeki ürünler listelenmeyeceklerdir.
 ![ef6async_1](/assets/images/2012/ef6async_1.png)
 
 Entity Framework geliştirilmesinden sorumlu takım bildiğiniz gibi [codeplex](http://entityframework.codeplex.com/) üzerinden kaynak kodları da açmış durumdadır. Dolayısıyla alpha sürümüne ait kodları açık kaynak olarak inceleyebilir ve hatta Microsoft’ un beklediği gibi, ürünle ilişkili geri bildirimlerinizi (Feedbacks) ekibe iletebilirsiniz. Bizi dinliyorlar ve gerçekten bazı gerekli özellikleri yeni sürümlere dahil ediyor veya en azından yol haritasına (Roadmap) alıyorlar. (Bu arada [Ef tarafındaki Roadmap ile ilişkili olarak bu adresi takip edebilirsiniz](http://entityframework.codeplex.com/wikipage?title=Roadmap))

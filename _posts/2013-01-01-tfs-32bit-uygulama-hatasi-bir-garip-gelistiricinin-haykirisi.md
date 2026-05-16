@@ -13,15 +13,9 @@ tags:
 categories:
   - DevOps
 ---
-Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu serisi altında paylaşım yapmaktayım. Ancak karşılaştığım ilginç bir durumu da sizinle paylaşmak istedim. Tabi olayın başrol oyuncusu olarak en büyük kabahat bende
+Genelde bu kadar kısa yazılar pek yazmıyorum. En fazla Tek Fotolok İpucu serisi altında paylaşım yapmaktayım. Ancak karşılaştığım ilginç bir durumu da sizinle paylaşmak istedim. Tabi olayın başrol oyuncusu olarak en büyük kabahat bende. Öyleyse haydi buyrun bakalım hiyayemize…
 
-![big-mistake](/assets/images/2013/big-mistake.jpg)
-
-Öyleyse haydi buyrun bakalım hiyayemize…
-
-Biliyorsunuz TFS kurduğunuzda IIS alına bir Team Foundation Server isimli bir Web Site oluşturulmakta (Web Access arayüzü buradaki tfs klasörü altında duruyor ve hatta TFS servisleri de yine buradaki TeamProjectServices uygulaması içerisinde yer almakta)
-
-Web Site’ ın en belirgin özelliği ise Microsoft Team Foundation Server Application Pool isimli bir havuzu kullanıyor olması. Bu havuzun özelliklerine genellikle pek dokunmuyoruz ama ben bir test sırasında dokundum ve bakın neler oldu. Lafı fazla uzatmadan hemen senaryoya geçeyim dilerseniz
+Biliyorsunuz TFS kurduğunuzda IIS alına bir Team Foundation Server isimli bir Web Site oluşturulmakta (Web Access arayüzü buradaki tfs klasörü altında duruyor ve hatta TFS servisleri de yine buradaki TeamProjectServices uygulaması içerisinde yer almakta) Web Site’ ın en belirgin özelliği ise Microsoft Team Foundation Server Application Pool isimli bir havuzu kullanıyor olması. Bu havuzun özelliklerine genellikle pek dokunmuyoruz ama ben bir test sırasında dokundum ve bakın neler oldu. Lafı fazla uzatmadan hemen senaryoya geçeyim dilerseniz
 
 O gün elimde geliştirmelerini yeni bitirdiğim ve yerel makinede test ettiğim bir WCF Servis uygulaması vardı ve ağda ilk bulabildiğim sunucu üzerinde de test etmek istiyordum. Erişim hakkım olan ve üzerinde TFS yüklü makinemi gözüme kestirdim. Bu arada söz konusu WCF servis uygulaması içerisinde, sadece 32bit uyumlu olan bir Assembly da kullanmaktaydım (Oracle.DataAccess.dll).
 
@@ -41,8 +35,4 @@ Hay değiştirmez olaydım. Artık servis çalışıyordu bunu görebiliyordum a
 
 Bir anda ortalık karıştı tabi. Telefonlar ardı ardına geliyor, ter damlaları heryerden boşalıyordu. TFS ile çalışan çok fazla ekip vardı. Ürün lisanslıydı. Bunu biliyorduk. Emin olmak için IT departmanımız ile görüştük. Doğruladılar. Lisans numaralarını kontrol ettik vs…
 
-Sonunda oluşan hatanın sebebinin Enable 32-Bit Applications değerinin true olması olduğunu anladık. Nitekim 64bit işletim sistemi üzerinde kurulmuş olan TFS, her nedense bu değişikliği lisans ihlali gibi algılamıştı (Öyle tahmin ediyorum)
-
-O yüzden siz siz olun, mutlaka servislerinizi test etmek için ayrı bir IIS sunucusunun tahsis edilmesini isteyin
-
-Başıma gelen başka bir garip olayda görüşmek dileğiyle hepinize mutlu günler dilerim.
+Sonunda oluşan hatanın sebebinin Enable 32-Bit Applications değerinin true olması olduğunu anladık. Nitekim 64bit işletim sistemi üzerinde kurulmuş olan TFS, her nedense bu değişikliği lisans ihlali gibi algılamıştı (Öyle tahmin ediyorum) O yüzden siz siz olun, mutlaka servislerinizi test etmek için ayrı bir IIS sunucusunun tahsis edilmesini isteyin. Başıma gelen başka bir garip olayda görüşmek dileğiyle hepinize mutlu günler dilerim.

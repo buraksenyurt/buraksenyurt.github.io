@@ -13,6 +13,6 @@ categories:
 ---
 .Net Framework 2.0 ile birlikte gelen Configuration API'sini hepimiz biliyoruzdur. Bu API sayesinde config dosya içeriklerinin Managed karşılıkları olan tiplere ulaşmamız son derece kolay. Aslına bakarsanız pek çok uygulamada config dosyası içerisinde ConnectionStrings ve AppSettings kısımlarını sıklıkla kullandığımızı görmekteyiz. Bu içeriklere daha efektif ve performanslı erişim için belki bir Wrapper tip işimizi görebilir. Nasıl mı?
 
-![PhotoTrick36](https://www.buraksenyurt.com/app_data/files/7S7C_1.jpg)
+![PhotoTrick36](/assets/images/2011/PhotoTrick36.png)
 
 [ConfigHelper.rar (24,02 kb)](/assets/files/2011/ConfigHelper.rar)

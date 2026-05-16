@@ -14,10 +14,6 @@ categories:
 ---
 Malumunuz Web tarafı ile aram pek iyi değildir. Ancak .Net Framework’ ün her sürümünde genel olarak gelen yeniliklere bakmaya çalışıyorum/çalışmaktayım. Geçtiğimiz hafta içerisinde de Asp.Net 4.5 tarafında gelen yenilikleri incelemeye başladım. Bunlar arasında dikkatimi çekenlerden birisi de, Web Form’ larda veri bağlı kontroller (Data Bind Controls) için gelen strongly typed ve intelli-sense desteğiydi. Durumu daha iyi aktarabilmem için basit bir örnek üzerinden ilerlemeye çalışım. İlk etapta aşağıdaki gibi bir POCO (Plain OLD CLR object) tipimiz olduğunu düşünelim.
 
-![strong](/assets/images/2012/strong.gif)
-
-(Bu arada yandaki halter kaldıran adam ne alak diyebilirsiniz. Giriş yazısını düşünürken, Strongly kelimesinden Strong ifadesine gelince, bunu anlatabilecek fotoğraflardan birisi olarak karşıma çıktı)
-
 ![stdi_1](/assets/images/2012/stdi_1.png)
 
 ```csharp
@@ -65,7 +61,7 @@ namespace STDC_Old
 
 Kod parçasında görüldüğü üzere formviewPlayers isimli FormView kontrolüne players isimli bir koleksiyon içeriği bağlanmaktadır. Peki ya tasarım ortamında durum nedir? Tahmin edileceğiz üzere çalışma zamanında, bir Player nesne örneğinin PlayerId, Nickname ve Score gibi özelliklerinin değerlerini tek (one way) veya çift yönlü (two way) olacak şekilde göstermek için Bind veya Eval tiplerinden yararlanılmaktadır. Bu tipleri genellikle Item Template elementleri içerisindeki kontrollerde sıklıkla kullanırız. Söz gelimi aşağıdaki gibi
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="STDC_Old.Default" %>
 
 <!DOCTYPE html>
@@ -98,9 +94,7 @@ Kod parçasında görüldüğü üzere formviewPlayers isimli FormView kontrolü
 </html>
 ```
 
-Dikkat edileceği üzere lblPlayerId, txtNickname, txtScore isimli bileşenlerin Text nitelikleri, Player tipinin sırasıyla PlayerId, Nickname ve Score özelliklerine (Properties) bağlanmışlardır. FormView bileşeninde, Bind tipi kullanılmış ve çift yönlü veri bağlama imkanı sunulmuştur. Ama bildiğiniz üzere Eval de kullanılabilir ve tek yönlü bir veri akışı da sağlanabilir. Kaldı ki hangisini kullandığımızı şu anda pek bir önemi yok
-
-Peki buradaki kodları yazarken hiç şöyle bir şey de olsun ister miydiniz?
+Dikkat edileceği üzere lblPlayerId, txtNickname, txtScore isimli bileşenlerin Text nitelikleri, Player tipinin sırasıyla PlayerId, Nickname ve Score özelliklerine (Properties) bağlanmışlardır. FormView bileşeninde, Bind tipi kullanılmış ve çift yönlü veri bağlama imkanı sunulmuştur. Ama bildiğiniz üzere Eval de kullanılabilir ve tek yönlü bir veri akışı da sağlanabilir. Kaldı ki hangisini kullandığımızı şu anda pek bir önemi yok. Peki buradaki kodları yazarken hiç şöyle bir şey de olsun ister miydiniz?
 
 > Bind veya Eval kullanırken keşke kontrolü bağladığımız tipin özelliklerini de görebilsekde, neyi neye bağladığımızı daha kolay takip edebilsek. Hatta burada Intelli-sense kabiliyetleri de bize yardımcı olsa
 
@@ -124,7 +118,7 @@ Sanırım şimdi volaaaaaa!!! diyebiliriz
 
 Bu durumda Asp.Net 4.5 versiyonu ile senaryomuzun aspx içeriği aşağıdaki gibi olacaktır.
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="STDC_New.Default" %>
 
 <!DOCTYPE html> 
@@ -156,17 +150,11 @@ Bu durumda Asp.Net 4.5 versiyonu ile senaryomuzun aspx içeriği aşağıdaki gi
 </html>
 ```
 
-Tabi bu esnekliği kullanırken aklınıza “acaba noktaya basıp özellik adını yazdıktan sonra gelen fonksiyonellikleri de kullanabilir miyiz?” diye bir soru gelebilir
-
-Söz gelimi “string tipinden olan Nickname’ i bağladıktan sonra bir de ToUpper metodunu çağırsak da, ismi büyük harf yazsa olmaz mı?” diyebilirsiniz. Ben bunu denediğimde aşağıdaki çalışma zamanı hatasını aldım.
+Tabi bu esnekliği kullanırken aklınıza “acaba noktaya basıp özellik adını yazdıktan sonra gelen fonksiyonellikleri de kullanabilir miyiz?” diye bir soru gelebilir. Söz gelimi “string tipinden olan Nickname’ i bağladıktan sonra bir de ToUpper metodunu çağırsak da, ismi büyük harf yazsa olmaz mı?” diyebilirsiniz. Ben bunu denediğimde aşağıdaki çalışma zamanı hatasını aldım.
 
 ![stdi_5](/assets/images/2012/stdi_5.png)
 
-Bu gibi durumlara dikkat etmek gerektiğini ifade edebiliriz.
-
-Şimdi senaryomuzu biraz daha ilginçleştirelim
-
-Bu sefer özelliklerinden birisi veri kontrolüne bağlanabilir liste koleksiyonu tipinden olan bir sınıfı ele alıp çalışma zamanı içeriğini master-detail formatında göstermeye çalışıyor olacağız. Senaryomuzda yine yeni gelen ItemType ve BindItem özelliklerine yer vereceğiz. İlk etapta uygulamamıza Game isimli yeni bir POCO tipi eklediğimizi düşünelim. Aşağıdaki sınıf diyagramında görüldüğü gibi.
+Bu gibi durumlara dikkat etmek gerektiğini ifade edebiliriz. Şimdi senaryomuzu biraz daha ilginçleştirelim. Bu sefer özelliklerinden birisi veri kontrolüne bağlanabilir liste koleksiyonu tipinden olan bir sınıfı ele alıp çalışma zamanı içeriğini master-detail formatında göstermeye çalışıyor olacağız. Senaryomuzda yine yeni gelen ItemType ve BindItem özelliklerine yer vereceğiz. İlk etapta uygulamamıza Game isimli yeni bir POCO tipi eklediğimizi düşünelim. Aşağıdaki sınıf diyagramında görüldüğü gibi.
 
 ![stdi_7](/assets/images/2012/stdi_7.png)
 
@@ -277,13 +265,15 @@ Bizim için önemli olan nokta listViewGame isimli ListView kontrolünün içeri
 
 Yine alt elementlerden birisi olarak iç kısımda yer alan listViewPlayers isimli ListView bileşeninde ise, daha farklı bir veri bağlama işlemi yapıldığı hemen gözünüze çarpmış olmalıdır. Dikkat edileceği üzere DataSource elementine BindItem.Players şeklinde bir atama yapılmıştır. Bir başka deyişle çalışma zamanında üst tarafa bağlı olan Game nesne örneğinin içerisindeki Players özelliğinin işaret ettiği koleksiyonun veri kaynağı olarak kullanılacağı belirtilmektedir.
 
-> Eğer DataSource özelliğine bu şekilde bir atama işlemi yapılmassa, Game örneklerinin Players koleksiyonlarına ait içerikleri ekrana basılmayacaktır. Böyle bir durumda aşağıdakine benzer bir ekran çıktısı elde edilir.
-> ![stdi_10](/assets/images/2012/stdi_10.png)
+Eğer DataSource özelliğine bu şekilde bir atama işlemi yapılmassa, Game örneklerinin Players koleksiyonlarına ait içerikleri ekrana basılmayacaktır. Böyle bir durumda aşağıdakine benzer bir ekran çıktısı elde edilir.
 
-Ayrıca listViewPlayer ListView kontrolünün ItemType özelliğine de SDTCNew.Player değeri verilmiştir. Buna göre alt elementlerdeki kontrollerin özelliklerinde Player sınıfının özellikleri kullanılabilecektir.
+![stdi_10](/assets/images/2012/stdi_10.png)
 
-> Pek tabi kodu yazarken intelli-sense özelliği de devreye girmekte ve aşağıdaki ekran çıktılarında olduğu gibi bizlere kolaylık sağlamaktadır.
-> ![stdi_8](/assets/images/2012/stdi_8.png) ![stdi_9](/assets/images/2012/stdi_9.png)
+Ayrıca listViewPlayer ListView kontrolünün ItemType özelliğine de SDTCNew.Player değeri verilmiştir. Buna göre alt elementlerdeki kontrollerin özelliklerinde Player sınıfının özellikleri kullanılabilecektir. Pek tabi kodu yazarken intelli-sense özelliği de devreye girmekte ve aşağıdaki ekran çıktılarında olduğu gibi bizlere kolaylık sağlamaktadır.
+
+![stdi_8](/assets/images/2012/stdi_8.png)
+
+![stdi_9](/assets/images/2012/stdi_9.png)
 
 Örneği çalıştırdığımızda çalışma zamanında aşağıdaki ekran görüntüsünde yer alan sonuçları aldığımızı görürüz.
 

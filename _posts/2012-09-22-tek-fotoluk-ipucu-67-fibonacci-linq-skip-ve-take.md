@@ -18,4 +18,3 @@ Biliyorsunuz.Net Framework 4.0 ile birlikte BigInteger tipi geldi ve çok büyü
 ![tfi_67.png](/assets/images/2012/tfi_67.png)
 
 Başka bir ipucundan görüşmek dileğiyle.
-

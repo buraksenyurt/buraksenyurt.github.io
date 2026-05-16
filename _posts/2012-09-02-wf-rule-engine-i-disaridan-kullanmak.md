@@ -16,7 +16,6 @@ Kurallar, kurallar, kurallar!Hayatın hemen her noktasında karşımıza tonlarc
 
 ![mfln2687l](/assets/images/2012/mfln2687l.jpg)
 
-
 Hangi sektörde olunursa olunsun, işler ister kağıt üstünde, ister elektronik ortamda yürüsün, iş süreçleri kendi içerisinde tanımlı bir çok kural kümesi içerir. İş bu kural kümeleri, gerekli durumlarda doğal yollarla sistemin bir parçası olarak ya da yürütme usulü ile manuel olarak devreye girerek, sürecin şekillenmesi ve bir takım aksiyonların alınması noktasında önemli rol üstlenirler.
 
 Biz geliştiricilerde, iş akışı mantığına dayalı sistemleri tasarladığımız durumlarda bu kural kümelerinin esnekliklerine sahip olmak isteriz. Bu Biztalk, Sharepoint, TIBCO vb iş akışı modellerini içeren gelişmiş ürünlerde çoğu zaman karşımıza çıkmaktadır.
@@ -308,11 +307,7 @@ Stok seviyesinin kuralda tanımlanan 250 birimin üstünde olması halinde,
 
 Görüldüğü gibi Workflow Foundation ile birlikte gelen kural motorunun herhangibir.Net uygulaması üzerinden kullanılabilmesi son derece kolaydır. Hatta bu tip bir arabirim yardımıyla, iş analistlerinin çeşitli kurallar tanımlayıp kayıt altına alabilecekleri ve aslında süreç yönetim araçlarında önemli yere sahip olan bir takım depolama programlarının geliştirilmesi de kolaylaşmaktadır. Çok doğal olarak bu kurallar bir servis arkasında işletilebilirler de.
 
-> WF Rule Set Editor arayüzü, kullanıcısına daha esnek bir şekilde kural tanımlayabilme ve bunları kayıt altına alarak saklayabilme imkanı sunmaktadır.
-
-> XAML formatlı olarak kayıt altına alınabilen kural kümeleri (RuleSet) istenildiği zaman çalışma zamanına yüklenebilir ve tanımın ait olduğu nesne örneği/örnekleri için işletilebilir.
-
-> Rule Set Editör içerisinde birden fazla kural tanımlanabilir ve bunlar çalışma zamanında yürütülebilir.
+> WF Rule Set Editor arayüzü, kullanıcısına daha esnek bir şekilde kural tanımlayabilme ve bunları kayıt altına alarak saklayabilme imkanı sunmaktadır. XAML formatlı olarak kayıt altına alınabilen kural kümeleri (RuleSet) istenildiği zaman çalışma zamanına yüklenebilir ve tanımın ait olduğu nesne örneği/örnekleri için işletilebilir. Rule Set Editör içerisinde birden fazla kural tanımlanabilir ve bunlar çalışma zamanında yürütülebilir.
 
 Bu yazımızda çok basit olarak Workfow Rule Engine alt yapısına bir Merhaba demeye çalıştık. Kapıyı aralamak benden içeri girip yürümek ise sizden. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

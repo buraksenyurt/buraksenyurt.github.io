@@ -19,8 +19,6 @@ categories:
 ---
 Bu aralar şirkette işler oldukça kesat. En azından benim bulunduğum departman itibariyle böyle bir durum söz konusu. Sanırım kurumsal kimlik kazanmış firmaların genel sorunu da bu olsa gerek. Kaynak planlaması ve dağıtımının bir türlü istenen şekilde yapılamayışı. Hal böyle olunca aynı firmada hatta aynı departman içerisinde, çok yoğun çalışan insanlara ve beraberinde her hangi bir işi olmayanlara (benim gibi) rastlamak mümkün.
 
-![lazy-baby-laptop](/assets/images/2013/lazy-baby-laptop.jpg)
-
 Böyle bir durumda keyif sürmek ve tembel tembel internette gezmek (Video paylaşmak, onun bunun ciklemesine yetişmeye çalışmak vb) yapılabilecek en cazip işlerden birisi gibi gözükse de, hızla ilerleyen teknoloji ne yazık ki buna müsade etmemekte. Neredeyse her hafta yeni konuların ele alındığı bilmem kaç katlık [yottabyte](http://en.wikipedia.org/wiki/Yottabyte)’ lık bilgi denizinde sürekli bir şeyler öğrenmek zorunda olan biz köle geliştiricilerin iş olmasa da kendisine iş yaratması şart. Eğitim şart da diyebiliriz. sÖyleyse tembel tembel oturmayalım ve gelin birlikte yeni bir mevzuya dalalım.
 
 Asp.Net Web API alt yapısının popüler olmasının ardında yatan en büyük sebeplerden birisi, HTTP tabanlı servis yayılımına izin vermesidir. Hemen her fonksiyonel birimin veya bütünlüğün servis odaklı teknolojiler ile ele alındığı ve istemcilere sunulduğu bir dünyada, bu ihtiyacı eskiden beri var olan HTTP protokolünün Post, Put, Get, Delete gibi standart metodlarına göre karşılamak elbette önemlidir. Bu sayede Microsoft tabanlı olarak geliştirilen Web API servislerinin, dış dünyadaki herhangibir Client tarafından tüketilmesi de oldukça kolaydır. Üstelik OData (Open Data Protocol) desteği sayesinde, veri odaklı servislerin standart URL bazlı parametreler ile sorgulanabilmesi mümkün hale gelmektedir.
@@ -268,13 +266,13 @@ Buna göre uygulamamızı çalıştırdığımızda varsayılan olarak InoviceLi
 
 ## Test
 
-İlk olarak Web API servisinin çalıştığından emin olmalıyız. Bu amaçla URL satırına [http://localhost:46672/api/Invoices](http://localhost:46672/api/Invoices) benzer bir ifade girildiğinde, aşağıdaki ekran görüntüsündekine benzer bir içeriğin üretilmiş olması gerekmektedir.
+İlk olarak Web API servisinin çalıştığından emin olmalıyız. Bu amaçla URL satırına `http://localhost:46672/api/Invoices` benzer bir ifade girildiğinde, aşağıdaki ekran görüntüsündekine benzer bir içeriğin üretilmiş olması gerekmektedir.
 
 ![wapip_9](/assets/images/2013/wapip_9.png)
 
 Eğer aşağıya doğru inerseniz tüm Invoice içeriğinin çekildiğini görebilirsiniz.
 
-Ne var ki, Web API servisimiz için test noktasında önem arz eden bir mevzuda top, skip ve orderby komutlarına cevap verebiliyor olmasıdır. Örneğin [http://localhost:46672/api/invoices?$top=3&$skip=10&$orderby=InvoiceId](http://localhost:46672/api/invoices?$top=3&$skip=10&$orderby=InvoiceId) şeklinde bir talep girdiğimizi düşünelim. Aslında bu talep ile servis tarafına şu mesajı iletmiş oluyoruz;
+Ne var ki, Web API servisimiz için test noktasında önem arz eden bir mevzuda top, skip ve orderby komutlarına cevap verebiliyor olmasıdır. Örneğin `http://localhost:46672/api/invoices?$top=3&$skip=10&$orderby=InvoiceId` şeklinde bir talep girdiğimizi düşünelim. Aslında bu talep ile servis tarafına şu mesajı iletmiş oluyoruz;
 
 Önce Invoice satırlarını InvoiceId değerine göre bir diz bakalım. Sonra da10ncu indisten itibaren bana ilk 3 sıradakini getir.
 
@@ -299,4 +297,3 @@ Dikkat edileceği üzere rownumber komutundan yararlanılarak gerçek anlamda sa
 ## Sonuç
 
 Görüldüğü üzere OData sorgu desteği sunan Asp.Net Web API servislerini kullanarak sayfalama işlemlerini gerçekleştirmek oldukça kolaydır. Bu iş de başrol oyuncu olan top, skip ve orderby anahtar kelimeleri bir OData standardı olduğundan, istemci tarafı Microsoft dışı bir platform da olabilir. Tabi burada tek bağlayıcı nokta SQL veritabanı ve Entity Framework kullanımıdır. Farklı veri kaynaklarında rownumber gibi bir kullanım şekli söz konusu olmayabilir. Böyle bir vaka da tahmin edileceği üzere Web API Controller içerisindeki ilgili operasyon noktalarında müdahale de bulunmak gerekebilir (Araştırmadım benim yerime siz bu işi yapın) Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

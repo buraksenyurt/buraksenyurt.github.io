@@ -23,5 +23,4 @@ categories:
 
 ![tfi_86](/assets/images/2013/tfi_86.png)
 
-Bir başka ipucunda görüşmek dileğiyle
-
+Bir başka ipucunda görüşmek dileğiyle.

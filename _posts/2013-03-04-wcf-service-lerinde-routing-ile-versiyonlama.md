@@ -9,21 +9,13 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Derken gözüm WCF 4.0’ ın Beta zamanlarında yazdıklarıma takıldı. O zamanlar.Net Framework 4.0' ün Beta sürümü çıktığında, incelemeye çalıştığım önemli yeniliklerden birisi de yönlendirme servisleri (Routing Service) idi.
+Geçen gün şöyle eskiden yazmış olduğum makalelere bir bakayım dedim. Derken gözüm WCF 4.0’ ın Beta zamanlarında yazdıklarıma takıldı. O zamanlar.Net Framework 4.0' ün Beta sürümü çıktığında, incelemeye çalıştığım önemli yeniliklerden birisi de yönlendirme servisleri (Routing Service) idi. İstemciden gelen talepleri analiz ederek, arka planda yer alan asıl servislere mesajların taşınması noktasında göz önüne alınabilecek önemli bir kabiliyet sunulmaktaydı. Aslında RoutingService, buradaki işi güçlü filtreleme özellikleri ile epeyce kolaylaştıran bir tip olarak karşımıza çıkmaktaydı. Hatta bu konuyu bir kaç makale ile de ele almaya çalışmıştım.
 
-![oldbook](/assets/images/2013/oldbook.jpg)
-
-İstemciden gelen talepleri analiz ederek, arka planda yer alan asıl servislere mesajların taşınması noktasında göz önüne alınabilecek önemli bir kabiliyet sunulmaktaydı. Aslında RoutingService, buradaki işi güçlü filtreleme özellikleri ile epeyce kolaylaştıran bir tip olarak karşımıza çıkmaktaydı. Hatta bu konuyu bir kaç makale ile de ele almaya çalışmıştım.
-
-[WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Giriş [Beta 1]](/2009/08/24/wcf-4-0-yenilikleri-routing-service-gelistirmek-giris-beta-1/)
-
-[WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Hello World [Beta 1]](/2009/08/26/wcf-4-0-yenilikleri-routing-service-gelistirmek-hello-world-beta-1/)
-
-[WCF 4.0 Yenilikleri - Routing Service - Hata Yönetimi [Beta 1]](/2009/09/09/wcf-4-0-yenilikleri-routing-service-hata-yonetimi-beta-1/)
-
-[WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]](/2009/09/13/wcf-4-0-yenilikleri-routing-service-matchall-filtresi-beta-1/)
-
-[WCF WebHttp Services - Routing](/2010/03/07/wcf-webhttp-services-routing/)
+- [WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Giriş [Beta 1]](/2009/08/24/wcf-4-0-yenilikleri-routing-service-gelistirmek-giris-beta-1/)
+- [WCF 4.0 Yenilikleri - Routing Service Geliştirmek - Hello World [Beta 1]](/2009/08/26/wcf-4-0-yenilikleri-routing-service-gelistirmek-hello-world-beta-1/)
+- [WCF 4.0 Yenilikleri - Routing Service - Hata Yönetimi [Beta 1]](/2009/09/09/wcf-4-0-yenilikleri-routing-service-hata-yonetimi-beta-1/)
+- [WCF 4.0 Yenilikleri - Routing Service - MatchAll Filtresi [Beta 1]](/2009/09/13/wcf-4-0-yenilikleri-routing-service-matchall-filtresi-beta-1/)
+- [WCF WebHttp Services - Routing](/2010/03/07/wcf-webhttp-services-routing/)
 
 Tabi bunların hepsi Beta sürümüne ait incelemelerdi. Zaman ilerledikçe yönlendirme servislerinin önemli senaryolarda göz önüne alınabileceğini de gördük. Örneğin Load Balancing gibi.
 
@@ -42,8 +34,7 @@ Tüm bu değişim çeşitleri mümkün olabilir ve bu son derece de olağandır.
 
 Biz bu yazımızda söz konusu versiyonalama problemini WCF tarafındaki Routing servis aracılığı ile çözümlemeye çalışıyor olacağız. Bildiğiniz üzere Routing servisler sayesinde, istemciden gelen taleplerin karşılanarak arka planda duran asıl servislere yönlendirilmesi mümkün olabilir. Bu, Load Balancing gibi çözümlerde ele alınabilecek bir servis çeşidi olmakla birlikte, biraz sonra göreceğimiz gibi versiyonlama probleminde de değerlendirilebilmektedir. Tabi biz örneğimizde aşağıdaki senaryoyu göz önüne alıyor olacağız.
 
-> Müşteri bilgisini çekmek için kullanılan bir servisin standart olarak kullandığı operasyonların bazılarının (ki örneğimizde basitlik açısından tek bir operasyon olacak) parametrik yapısında değişimler olmuştur. Var olan sürüm müşterinin hesap numarasına göre çalışmaktayken, yeni sürümde söz konusu servis operasyonu TCKN ile çalışıyor olacaktır. Buna göre var olan uygulamalar eski versiyonu kullanmaya devam edecek iken, yeni geliştirilecek olan uygulamalar son sürümü ele alacaktır.
-> Ama ilerleyen zamanlarda eski sürümlerin içerisine müdahalelerde bulunarak hangi versiyonu kullanacaklarına çalışma zamanında karar verilmesi yeteneğine sahip olmaları da gündemdedir. İşte burada servis sürümlerinin uygun olan versiyonlarna çalışma zamanında karar verilmesi yeteneği, Routing Service’ lerin önemini biraz daha arttıracaktır.
+> Müşteri bilgisini çekmek için kullanılan bir servisin standart olarak kullandığı operasyonların bazılarının (ki örneğimizde basitlik açısından tek bir operasyon olacak) parametrik yapısında değişimler olmuştur. Var olan sürüm müşterinin hesap numarasına göre çalışmaktayken, yeni sürümde söz konusu servis operasyonu TCKN ile çalışıyor olacaktır. Buna göre var olan uygulamalar eski versiyonu kullanmaya devam edecek iken, yeni geliştirilecek olan uygulamalar son sürümü ele alacaktır. Ama ilerleyen zamanlarda eski sürümlerin içerisine müdahalelerde bulunarak hangi versiyonu kullanacaklarına çalışma zamanında karar verilmesi yeteneğine sahip olmaları da gündemdedir. İşte burada servis sürümlerinin uygun olan versiyonlarna çalışma zamanında karar verilmesi yeteneği, Routing Service’ lerin önemini biraz daha arttıracaktır.
 
 Görüldüğü üzere servis sözleşmesinde bir değişim söz konusudur. Routing servisin buradaki görevi, istemciden gelecek olan versiyon talebine göre arka planda istenen servislere yönlendirme yapmaktır.
 
@@ -55,8 +46,7 @@ Gelin basit adımlar ile ilerleyerek bir Solution üzerinden ilgili senaryoyu el
 
 Şekilden de görüleceği üzere versiyonları farklı olan iki servisimiz ve bunlara istemciden gelen talep doğrultusunda yönlendirme yapan bir Router Service uygulamamız bulunmaktadır.
 
-> Senaryomuzda işlemleri olabildiğince basite indirgedik ve tüm servis noktalarında BasicHttpBinding bağlayıcı tipinden yararlandık. Çok doğal olarak arka planda yer alan servislerin sayısı artabilir ve her biri farklı Binding tipleri ile de bezenmiş olabilir ki bu durumda Binding bazlı bir versiyonlama farkı da oluşacaktır.
-> Söz gelimi servislerden birisin In-Proc modda erişilebilecek şekilde tasarlanmışken, diğer biri WS Federation 2007 standartlarında kullanılabilecek şekilde geliştirilmiş olabilir.
+> Senaryomuzda işlemleri olabildiğince basite indirgedik ve tüm servis noktalarında BasicHttpBinding bağlayıcı tipinden yararlandık. Çok doğal olarak arka planda yer alan servislerin sayısı artabilir ve her biri farklı Binding tipleri ile de bezenmiş olabilir ki bu durumda Binding bazlı bir versiyonlama farkı da oluşacaktır. Söz gelimi servislerden birisin In-Proc modda erişilebilecek şekilde tasarlanmışken, diğer biri WS Federation 2007 standartlarında kullanılabilecek şekilde geliştirilmiş olabilir.
 
 CustomerServiceV1 ve CustomerServiceV2 temel olarak iki farklı WCF servis uygulaması içerisinde yer almaktadır (Bu tabiki zorunlu değildir. Aynı WCF Service uygulaması içerisinde de birden fazla svc bulunabilir ve bu şekilde bir versiyonlama yaptırılabilir) Senaryoda bu servisler farklı WCF Service Application projeleri içerisine serpiştirilmişlerdir. Her ikisi de aynı servis sözleşmesini (ICustomerService) dışarıya sunmaktadır ve GetCustomer isimli bir operasyon içermektedirler. Lakin ilk versiyon Müşteri numarası ile çalışacak şekilde tasarlanmışken, ikinci versiyon TC Kimlik Numarasını kullanmaktadır. Söz konusu uygulamaların kod ve konfigurasyon içerikleri (web.config) aşağıdaki gibidir.
 
@@ -247,12 +237,9 @@ namespace RouterServer
 }
 ```
 
-Dikkat edileceği üzere, RoutingService tipinden bir ServiceHost örneği oluşturulmaktadır. Bu,.Net Framework’ ün built-in routing alt yapısının yüklenmesi için yeterlidir. Gelelim istemci tarafına
+Dikkat edileceği üzere, RoutingService tipinden bir ServiceHost örneği oluşturulmaktadır. Bu,.Net Framework’ ün built-in routing alt yapısının yüklenmesi için yeterlidir. Gelelim istemci tarafına. İstemci, müşteri servislerinden hangi versiyonu kullanırsa kullansın, bir şekilde sözleşmeden haberdar olmalı ve GetCustomer metoduna erişebilmelidir. Nitekim bu operasyonun çağırılabilmesi için bir de Proxy tipine ihtiyacı vardır. Burada CustomerServiceV1 veya CustomerServiceV2 isimli servislerin herhangibigirisinden yararlanılıp bir servis referansının istemci uygulamaya eklenmesi mümkündür. Şahsen ben bu şekilde bir yolu tercih ettim
 
-İstemci, müşteri servislerinden hangi versiyonu kullanırsa kullansın, bir şekilde sözleşmeden haberdar olmalı ve GetCustomer metoduna erişebilmelidir. Nitekim bu operasyonun çağırılabilmesi için bir de Proxy tipine ihtiyacı vardır. Burada CustomerServiceV1 veya CustomerServiceV2 isimli servislerin herhangibigirisinden yararlanılıp bir servis referansının istemci uygulamaya eklenmesi mümkündür. Şahsen ben bu şekilde bir yolu tercih ettim
-
-> Unutmayın! İstemcinin bilmesi gereken sözleşme Router servise ait değildir. Zaten Router servis için Metadata Publishing opsiyonu da kapalıdır ve hatta ortada bir Contract'da yoktur.
-> İstemci, GetCustomer operasyonunu kullanacağı CustomerService sözleşmesine gereksinim duymaktadır. Sadece uygun versiyonu çağırmak için Router servisden yararlanacak ama aslında CustomerService'ine ait GetCustomer metodunu çağırıyor olacaktır.
+> Unutmayın! İstemcinin bilmesi gereken sözleşme Router servise ait değildir. Zaten Router servis için Metadata Publishing opsiyonu da kapalıdır ve hatta ortada bir Contract'da yoktur. İstemci, GetCustomer operasyonunu kullanacağı CustomerService sözleşmesine gereksinim duymaktadır. Sadece uygun versiyonu çağırmak için Router servisden yararlanacak ama aslında CustomerService'ine ait GetCustomer metodunu çağırıyor olacaktır.
 
 İstemci tarafına Add Service Reference ile ilgili sözleşme eklendikten sonra (ki svcutil komut satırı aracılığı ile de ortak bir isim adı altında üretim yaptırılıp eklenmesi tercih edilebilirdi) Main metodu içerisine aşağıdaki örnek kodları eklememiz yeterli olacaktır.
 
@@ -302,11 +289,7 @@ namespace ClientApp
 }
 ```
 
-İstemci uygulamada dikkat edileceği üzere kod üzerinden bir EndPoint tanımlaması ile işe başlanmakta ve bu uç noktayı BasicHttpBinding ile kullanan bir proxy örneği (CustomerServiceClient) üretilmektedir.
-
-Kodun önemli olan kısmı MessageHeader içerisine istenen versiyon bilgisinin eklenmesidir. Bu, o andaki operasyonel Context'in elde edilmesinin ardından MessageHeaders tipi kullanılarak gerçekleştirilmektedir.
-
-Artık senaryomuzu test edebiliriz. İşte benim uygulamaları test ederken aldığım sonuçlara ait ekran çıktıları.
+İstemci uygulamada dikkat edileceği üzere kod üzerinden bir EndPoint tanımlaması ile işe başlanmakta ve bu uç noktayı BasicHttpBinding ile kullanan bir proxy örneği (CustomerServiceClient) üretilmektedir. Kodun önemli olan kısmı MessageHeader içerisine istenen versiyon bilgisinin eklenmesidir. Bu, o andaki operasyonel Context'in elde edilmesinin ardından MessageHeaders tipi kullanılarak gerçekleştirilmektedir. Artık senaryomuzu test edebiliriz. İşte benim uygulamaları test ederken aldığım sonuçlara ait ekran çıktıları.
 
 İlk olarak 1 değerini girerek bir çağrıda bulunuyoruz;
 
@@ -318,9 +301,6 @@ Ardından 2 değerini girerek;
 
 Pek tabi geçerli olmayan bir değerin girilmesi halinde istemci tarafında Exception alınması da son derece doğaldır. Görüldüğü gibi bir servisin farklı versiyonlarını host ettiğimiz senaryolarda, istemcilerin istedikleri servislere gitmelerini sağlamak için araya konuşlandıracağımız bir Routing servis uygulamasından kolayca yararlanabiliriz. Senaryoda teknik olarak istemcinin Message Header içerisine koyduğu versiyon bilgisinin, yönlendirme servisi üzerinde XPath ile sorgulanması ile yakalanmaya çalışılması değerlendirilmiştir.
 
-Örnek senaryo istenirse daha da zorlaştırılabilir. Söz gelimi servislerin sözleşmelerinde yapılacak kritik değişiklikler sonucu istemcinin bilmesi gereken contract bilgisinin de güncellenmesi şarttır. Bu konuyu bir düşünmenizi ve böyle bir senaryo oluşması halinde istemcinin istediği versiyonlara nasıl gidebileceğini araştırmanızı ve bir çözüm yolu bulmaya çalışmanızı öneririm. Bu iyi bir ev ödevi gibi geldi bana
-
-Versiyonlama her zaman için zor ve karmaşık bir konudur. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Örnek senaryo istenirse daha da zorlaştırılabilir. Söz gelimi servislerin sözleşmelerinde yapılacak kritik değişiklikler sonucu istemcinin bilmesi gereken contract bilgisinin de güncellenmesi şarttır. Bu konuyu bir düşünmenizi ve böyle bir senaryo oluşması halinde istemcinin istediği versiyonlara nasıl gidebileceğini araştırmanızı ve bir çözüm yolu bulmaya çalışmanızı öneririm. Bu iyi bir ev ödevi gibi geldi bana. Versiyonlama her zaman için zor ve karmaşık bir konudur. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RoutingAndVersioning.zip (117,79 kb)](/assets/files/2013/RoutingAndVersioning.zip)
-

@@ -17,11 +17,9 @@ tags:
 categories:
   - Veritabanı
 ---
-Eminim pek çoğunuzun hastası/fanatiği olduğu yerli veya yabancı diziler vardır. Küçük bir çocukken çizgi filmlere olan düşkünlüğümüz kadar olmasa da, hemen her bölümünü heyecanla beklediklerimiz mutlaka vardır (Hatta ülkemizde geç yayınlanıyor diye ilgili dizileri internetten indirenlerimizde vardır)
+Eminim pek çoğunuzun hastası/fanatiği olduğu yerli veya yabancı diziler vardır. Küçük bir çocukken çizgi filmlere olan düşkünlüğümüz kadar olmasa da, hemen her bölümünü heyecanla beklediklerimiz mutlaka vardır (Hatta ülkemizde geç yayınlanıyor diye ilgili dizileri internetten indirenlerimizde vardır) Bilişim alanında görev alanların ağırlıkla CNBC-E gibi kanallarda yer alan dizilere olan bağımlılığı da aslında su götürmez bir gerçektir. Örneğin benim fanatiği olduğum dizilerden birisi Dexter ve ne tesadüftür ki bu gün yazımızda ele alacağımız ürünün adı da onun lakabı ile eş: DEX
 
 ![dex_7](/assets/images/2013/dex_7.png)
-
-Bilişim alanında görev alanların ağırlıkla CNBC-E gibi kanallarda yer alan dizilere olan bağımlılığı da aslında su götürmez bir gerçektir. Örneğin benim fanatiği olduğum dizilerden birisi Dexter ve ne tesadüftür ki bu gün yazımızda ele alacağımız ürünün adı da onun lakabı ile eş: DEX
 
 Daha önceden hatırlayacağınız üzere şuradaki makalede [Apache Cassandra](/2012/12/16/nosql-maceralari-apache-cassandra-ve-dotnet/)’ yı, oradaki makalede ise [RavedDB](/2013/01/12/nosql-maceralari-ravendb-ile-hello-world/)’ yi incelemeye çalışmıştık. Bu yazımızda ise yine NoSQL veritabanı çeşitlerinden birisi olup Graph teorisini baz alan DEX isimli ürünü incelemeye çalışıyor olacağız.
 
@@ -29,13 +27,11 @@ Daha önceden hatırlayacağınız üzere şuradaki makalede [Apache Cassandra](
 
 Kısaca özetlemek gerekirse Graph veritabanlarında Node, Attribute ve Edge adı verilen nesneler söz konusudur. Her bir Node ve Edge nesnesinin attribute’ lar ile tanımlanabilen özellikleri mevcuttur. Graph veritabanlarında, node’ lar arası ilişkiler Edge örnekleri ile tanımlanmaktadır. Facebook, Twitter, Linkedin gibi popüler sosyal ağların veri ambarlarının tasarlanması noktasında son derece isabetli bir seçimdir. Nitekim node’ lar arası en kısa yolu bulmak veya ilişkileri ortaya çıkarmak, Graph teorisi nedeniyle oldukça kolay, tutarlı ve hızlıdır. Bu sebepten sadece sosyal ağlar da değil IMDB, Wikipedia tarzı oluşumlarda, Lojistik, Telekom ağları gibi daha endüstüriyel çözümlerde de değerlendirilebilmektedir. (Aslına bakarsanız Graph teorisini uygulayabileceğiniz ne kadar veri bazlı çözüm var ise DEX gibi sistemleri göz önüne alabilrsiniz)
 
-DEX veritabanı C++ ile yazılmıştır. Java,.Net, C++, Blueprints Interface API desteği bulunmaktadır. Dolayısıyla pek çok farklı platform tarafından da kullanılabilir bir üründür.
-
-Şimdi dilerseniz fazla vakit kaybetmeden basit bir Hello World uygulaması geliştirmeye çalışalım. Tabi ilk olarak bir senaryoyu göz önüne almamız gerekiyor. Senaryomuza ait basit Graph çizimimiz aşağıdaki gibidir.
+DEX veritabanı C++ ile yazılmıştır. Java,.Net, C++, Blueprints Interface API desteği bulunmaktadır. Dolayısıyla pek çok farklı platform tarafından da kullanılabilir bir üründür. Şimdi dilerseniz fazla vakit kaybetmeden basit bir Hello World uygulaması geliştirmeye çalışalım. Tabi ilk olarak bir senaryoyu göz önüne almamız gerekiyor. Senaryomuza ait basit Graph çizimimiz aşağıdaki gibidir.
 
 ![dex_1](/assets/images/2013/dex_1.png)
 
-Bu şekli biraz inceleyelim
+Bu şekli biraz inceleyelim.
 
 Basketbol oyuncuları, takım koçları ve takımların yer aldığı bir şema görmekteyiz. Ayrıca bu karakterlerin bazı özellikleri de bulunmaktadır. Örneğin isimler, ülkeler ve benzersiz olmalarını sağlayan sayısal numaralar gibi. Ayrıca bu karakterler arasında belirli bir yöne doğru çizilmiş ilişkiler olduğu görülmektedir. Tüm bunları birleştirdiğimizde şekle bakarak aşağıdaki cümleleri ve benzerlerini sarf edebilmekteyiz.
 
@@ -122,7 +118,7 @@ DEX, Edge tanımlamalarını iki şekilde değerlendirmektedir. Directed ve Undi
 
 Artık şema tanımlamalarımızı yaptığımıza göre örnek verilerin eklenmesi işlemini gerçekleştirebiliriz. Yapacağımız veri eklemeleri ile temel hedefimiz Graph görselindeki ilişkileri ve değerleri üretmektir. İşte kodlarımız.
 
-```bash
+```csharp
 #region Örnek Veri Eklenmesi
 
 Value value = new Value();
@@ -257,11 +253,9 @@ while (iterator.HasNext())
 
 Yine Graph nesne örneğinden yararlanılmaktadır. İlk olarak Neighbors metodu ile semihErden örneğinin roleType’ a göre dışarıya doğru olan komşularına gidilmektedir. roleType bildiğiniz üzere bir Edge örneğidir. Tabi n sayıda sonuç dönebileceğinden ileri yönlü bir iterasyona ihtiyaç vardır. Bu sebepten ObjectsIterator tipinden bir nesne örneklenmiş ve while döngüsüne başvurulmuştur. HasNext’ in true döndürdüğü sürece devam eden döngü içerisinde ise GetAttribute metodundan yararlanılarak elde edilen Node’ un bazı değerleri okunmaktadır. Takım adı ve bulunduğu ülke.
 
-Peki iki Node arasındaki Edge örneğini nasıl yakalayabiliriz?
+Peki iki Node arasındaki Edge örneğini nasıl yakalayabiliriz? Bunun için örnek bir kullanım aşağıdaki kod parçasında görüldüğü gibidir.
 
-Bunun için örnek bir kullanım aşağıdaki kod parçasında görüldüğü gibidir.
-
-```bash
+```csharp
 #region Edge değeri okumak
 
 Value roleTitleValue = new Value();

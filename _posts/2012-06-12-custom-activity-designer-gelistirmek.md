@@ -88,14 +88,14 @@ Bu tip içerisinde ise sembolik olarak metod parametrelerine ait çeşitli bilgi
 ```csharp
 namespace Azon.Workflow.Activity
 {
-    public enum ParameterType
-    {
-        Ref,
-        Out,
-        Standart,
-        Return,
-        Params
-    }
+    public enum ParameterType
+    {
+        Ref,
+        Out,
+        Standart,
+        Return,
+        Params
+    }
 }
 ```
 

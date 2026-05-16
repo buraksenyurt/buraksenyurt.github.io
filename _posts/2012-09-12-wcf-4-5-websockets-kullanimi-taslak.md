@@ -14,13 +14,9 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Bazen yemek yemek için dışarı çıkar ve daha önceden gitmediğimiz bir yere oturup hiç bakmadığımız tadlara yelken açarız. Bu, bazen çok başarılı sonuçlanır ve bize büyük bir keyif verir. Bazen de yapmış olduğumuz tercihlerimiz için pişmanlık duyarız. Hatta bazı zamanlarda yerken iyi gelen o tadlar, çıkışta büyük sıkıntılara yol açabilir
+Bazen yemek yemek için dışarı çıkar ve daha önceden gitmediğimiz bir yere oturup hiç bakmadığımız tadlara yelken açarız. Bu, bazen çok başarılı sonuçlanır ve bize büyük bir keyif verir. Bazen de yapmış olduğumuz tercihlerimiz için pişmanlık duyarız. Hatta bazı zamanlarda yerken iyi gelen o tadlar, çıkışta büyük sıkıntılara yol açabilir. İşin garip olan ve belki de heyecan verici yanı, sonuçları tam olarak kestiremediğimiz bir deneyimi yaşayacak olmamızdandır. Hatta biz ilk kez denerken, aynı tadları denemiş başkaları var ise onların tavsiyelerine de kulak verir, kimine inanır, kimine inanmayız. İşte bu günkü makalemizin konusu da, hiç tadmadığımız bir yemeğin bilemediğimiz sonuçlarına benzer nitelikte.
 
-![yoresel1](/assets/images/2012/yoresel1.jpg)
-
-İşin garip olan ve belki de heyecan verici yanı, sonuçları tam olarak kestiremediğimiz bir deneyimi yaşayacak olmamızdandır. Hatta biz ilk kez denerken, aynı tadları denemiş başkaları var ise onların tavsiyelerine de kulak verir, kimine inanır, kimine inanmayız. İşte bu günkü makalemizin konusu da, hiç tadmadığımız bir yemeğin bilemediğimiz sonuçlarına benzer nitelikte.
-
-Nitekim kodlamayı yapacak bir ortamımız var ama test yapacak bir çevre yok. Nitekim senaryomuz gereği şu anda sadece Windows 8 platformu ve üzerinde yüklü IIS (Internet Information Services) tarafından desteklenen ama.Net Framework 4.5 içerisinde yer aldığı için Windows 7 gibi bir platform üzerinde de geliştirilebilen bir konu söz konusu. Bu noktaya nasıl geldik bir bakalım
+Nitekim kodlamayı yapacak bir ortamımız var ama test yapacak bir çevre yok. Senaryomuz gereği şu anda sadece Windows 8 platformu ve üzerinde yüklü IIS (Internet Information Services) tarafından desteklenen ama.Net Framework 4.5 içerisinde yer aldığı için Windows 7 gibi bir platform üzerinde de geliştirilebilen bir konu söz konusu. Bu noktaya nasıl geldik bir bakalım
 
 [İzleyen makalede yazılmış olan kodlar test edilememiştir. Çalışma zamanında kuvvetle muhtemel olası hatalar olduğu aşikardır. Yazıyıyı bunu düşünerek yargılamanızı öneririm.]
 
@@ -52,8 +48,7 @@ WebSockets'in ise bu dezavantajlar karşısında sunduğu önemli avantajlar mev
 
 Peki bu güçlü özellikleri hangi hallerde ele almalıyız? Başlarda da belirttiğimiz üzere Real-Time veri transferi gerektiren pek çok senaryoda, WebSockets biçilmiş kaftan olarak görülebilir. Online Oyunlar, finansal uygulamalar, sohbet (Chat) programları, haber akışları vb...Zaten bu, HTML 5 için de ne kadar popüler olduğunun bir göstergesidir.
 
-> Yine de ortada bazı sorunlar mevcut. Yazıyı hazırladığım tarih itibariyle örneğin Asp.Net 4.5 ile olan kullanımında ciddi kısıtlamalar var. Sadece IIS 8 üzerinde host edilen Asp.Net uygulamalarında çalışabilmekte ve bunun için, IIS tarafında WebSockets özelliğinin de etkinleştirilmiş olması gerekmektedir.
-> Diğer yandan, tarayıcı uygulamaların bazı versiyonlarının da bu tekniğe tam olarak destek vermediği görülmektedir. IE10, Chrome 13+, Firefox 7, Safari 5+, Opera 11+ şu an için desteklenen tarayıcı versiyonları olarak görünüyor. Ancak bu henüz tam olarak oturmamış HTML 5 protokolünün meyvelerinden birisi. Dolayısıya zaman içerisinde iyice yerleşecek ve bence vazgeçilmez teknolojilerden birisi olacaktır.
+> Yine de ortada bazı sorunlar mevcut. Yazıyı hazırladığım tarih itibariyle örneğin Asp.Net 4.5 ile olan kullanımında ciddi kısıtlamalar var. Sadece IIS 8 üzerinde host edilen Asp.Net uygulamalarında çalışabilmekte ve bunun için, IIS tarafında WebSockets özelliğinin de etkinleştirilmiş olması gerekmektedir. Diğer yandan, tarayıcı uygulamaların bazı versiyonlarının da bu tekniğe tam olarak destek vermediği görülmektedir. IE10, Chrome 13+, Firefox 7, Safari 5+, Opera 11+ şu an için desteklenen tarayıcı versiyonları olarak görünüyor. Ancak bu henüz tam olarak oturmamış HTML 5 protokolünün meyvelerinden birisi. Dolayısıya zaman içerisinde iyice yerleşecek ve bence vazgeçilmez teknolojilerden birisi olacaktır.
 
 Dilerseniz HTTP ve WebSockets üzerinden yapılan iletişimler arasındaki farkı şekilsel olarak da ifade edelim.
 
@@ -196,11 +191,15 @@ Görüldüğü üzere ServiceHost nesne örneğine eklenen ServiceEndpoint tipi,
 
 İstemci tarafını geliştirmek için öncelikli olarak proxy sınıfının üretilmiş olması da gerekmektedir. Örneğimizde Metadata Publishing özelliğini bilinçli olarak etkinleştirmedik. Bu nedenle komut satırından svcutil aracını kullanarak gerekli üretimi gerçekleştirebiliriz. Visual Studio Command Prompt üzerinden bunu aşağıdaki ifadeler ile sağlayabiliriz.
 
-/>svcutil StockServiceLibrary.dll
+```bash
+svcutil StockServiceLibrary.dll
+```
 
 ve ardından
 
-/>svcutil.wsdl.xsd /out:proxy.cs
+```bash
+svcutil.wsdl.xsd /out:proxy.cs
+```
 
 Üretilen Proxy.cs dosyasını istemci uygulamaya ekledikten sonra Program sınıfının içeriğini de aşağıdaki şekilde kodladığımızı düşünelim.
 

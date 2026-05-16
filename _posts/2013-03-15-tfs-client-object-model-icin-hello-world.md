@@ -22,17 +22,13 @@ categories:
 
 ![commodore](/assets/images/2013/commodore.jpg)
 
-Yazılıma başladığım yıllarda Microsoft Visual SourceSafe kullanan birisi olarak olayın uzun bir süre önce kod kontrolü ve saklanmasının ötesine geçtiğini söylesem sanırım hepimiz bu noktada hem fikir oluruz
-
-Artık ALM (Application Lifecycle Management) olarak ifade edilen ve ürün geliştirmenin sadece koddan oluşmadığını ifade eden önemli bir kavram var hayatımızda. Hatta bu kavramın içerisine giren MSF (Microsoft Solution Frameworks), SCRUM, CMMI (Capability Maturity Model Integration) gibi pek çok süreçte mevcut. Müşteri ihtiyaçlarının daha hızlı daha çevik bir şekilde karşılanması esasına dayalı bu süreçler çok ama çok popüler.
+Yazılıma başladığım yıllarda Microsoft Visual SourceSafe kullanan birisi olarak olayın uzun bir süre önce kod kontrolü ve saklanmasının ötesine geçtiğini söylesem sanırım hepimiz bu noktada hem fikir oluruz. Artık ALM (Application Lifecycle Management) olarak ifade edilen ve ürün geliştirmenin sadece koddan oluşmadığını ifade eden önemli bir kavram var hayatımızda. Hatta bu kavramın içerisine giren MSF (Microsoft Solution Frameworks), SCRUM, CMMI (Capability Maturity Model Integration) gibi pek çok süreçte mevcut. Müşteri ihtiyaçlarının daha hızlı daha çevik bir şekilde karşılanması esasına dayalı bu süreçler çok ama çok popüler.
 
 Tabii işin önemli bir parçasını da ALM için kullanılan etkili araçlar üstlenmekte. Microsoft bu alanda 2000li yılların ortalarından itibaryen Visual SourceSafe’ i terk edip Team Foundation Server’ a geçiş yaptı. Team Foundation Server şu an geldiği 2012 sürümü ile, yazılım alanındaki önemli bir ihtiyacı da karşılamakta: ALM’ in dijital ortamda yönetimi, yürütümü ve kontrolü.
 
-Team Foundation Server’ ın çok geniş bir kavram olduğunu ve bir makaleye sığdırılamayacak kadar çok özelliği bulunduğunu gönül rahatlığı ile ifade edebilirim
+Team Foundation Server’ ın çok geniş bir kavram olduğunu ve bir makaleye sığdırılamayacak kadar çok özelliği bulunduğunu gönül rahatlığı ile ifade edebilirim. Diğer yandan bugünkü yazımıza konu olan onun küçük görünen ama çok önemli işlerin altına imza eden bir parçası…
 
-Diğer yandan bugünkü yazımıza konu olan onun küçük görünen ama çok önemli işlerin altına imza eden bir parçası…
-
-Client Object Model
+## Client Object Model
 
 Peki, [Microsoft adresinden download edebileceğiniz](http://visualstudiogallery.msdn.microsoft.com/f30e5cc7-036e-449c-a541-d522299445aa) bu nesne modeli bize ne sunuyor? Olaya aşağıdaki grafik ile başlayalım.
 
@@ -40,8 +36,7 @@ Peki, [Microsoft adresinden download edebileceğiniz](http://visualstudiogallery
 
 Yukarıdaki grafik anlatımında TFS’ in uygulama modeline ait örnek bir dağılıma yer verilmektedir. Hepimiz esas itibariyle Team Foundation Server’ ın, n sayıda makine üzerine fiziki olarak dağıtılabilen bir uygulama sunucusu ve çevre programlar bütünü olduğunu biliyoruz. Bu anlamda TFS uygulama sunucusuna bağlanan pek çok istemci çeşidi de mevcut. Örneğin Continous Integration gibi modelleri destekleyen Build planlarının yönetildiği Build Server veya bir geliştirici makinesi üzerinde koşan Visual Studio gibi.
 
-> TFS’ i bir dünyadan ziyade bir evren olarak nitelendirmek sanıyorum ki yanlış olmaz. Sadece kurulum sonrasında elimizin altında Application Server, Sharepoint ve SSRS (Sql Server Reporting Services), SSAS (Sql Server Analysis Services), Build Server gibi parçalar oluşmakta. Hatta sanallaştırma da işin içerisinde girdiğinde Lab Management için gerekli ek bir çok ortam türemekte. Tüm bunlara bir de Tool setlerini eklediğinizde Güneş Sisteminin üretmiş olabilirsiniz.
-> Evren demiştik…Çünkü Güneş Sistemi dışına çıkarak farklı sistemleri de bu çembere dahil edebilirsiniz (LINUX’ dan UNIX’e, MacOS X’ den Eclipse’ e, Oracle’ dan TIBCO’ ya…)
+> TFS’ i bir dünyadan ziyade bir evren olarak nitelendirmek sanıyorum ki yanlış olmaz. Sadece kurulum sonrasında elimizin altında Application Server, Sharepoint ve SSRS (Sql Server Reporting Services), SSAS (Sql Server Analysis Services), Build Server gibi parçalar oluşmakta. Hatta sanallaştırma da işin içerisinde girdiğinde Lab Management için gerekli ek bir çok ortam türemekte. Tüm bunlara bir de Tool setlerini eklediğinizde Güneş Sisteminin üretmiş olabilirsiniz. Evren demiştik…Çünkü Güneş Sistemi dışına çıkarak farklı sistemleri de bu çembere dahil edebilirsiniz (LINUX’ dan UNIX’e, MacOS X’ den Eclipse’ e, Oracle’ dan TIBCO’ ya…)
 
 Aslında TFS sistemine dahil olabilecek istemcileri düşündüğümüzde çoğumuzun aklına standart bir geliştirici makinesi ve üzerinde yüklü olan Visual Studio sürümü gelmektedir. Oysaki TFS’ i kullanabilen istemcilerin böyle bir zorunluluğu yoktur. TFS’ in çevre birimler ile olan entegrasyonu adına aşağıdakileri ifade edebiliriz.
 
@@ -52,7 +47,7 @@ Aslında TFS sistemine dahil olabilecek istemcileri düşündüğümüzde çoğu
 - [Team Explorer Everywhere](http://www.microsoft.com/en-us/download/details.aspx?id=30661) sayesinde herhangi bir Eclipse IDE ile de Team Explorer’ ın avantajlarından yararlanılabilir. Dolayısıyla örneğin Java ekipleri TFS’ e entegre olabilir.
 - Son olarak [MSSCCI Provider](http://visualstudiogallery.msdn.microsoft.com/bce06506-be38-47a1-9f29-d3937d3d88d6) hizmetinden yararlanıp, yabancı araçlarında (SQL Navigator, PowerBuilder, Solaris UNIX, LINUX, TIBCO vb) TFS’ e entegre olması mümkündür.
 
-Son iki madde saha da tecrübe edilmiştir
+Son iki madde saha da tecrübe edilmiştir.
 
 Esas itibariyle istemciler, uygulama sunucusu üzerinde yer alan TFS Web servislerini kullanırlar. Bu açıdan bakıldığında söz konusu servisleri tüketen istemci uygulamalar bu işi Client Object Model üzerinden icra etmektedirler. Bu şu anlama da geliyor; TFS’ i kullanacak kendi istemci uygulamalarımızı geliştirebiliriz.
 
@@ -60,13 +55,13 @@ Esas itibariyle istemciler, uygulama sunucusu üzerinde yer alan TFS Web servisl
 
 TFS açısından olaya bakıldığında 3 farklı nesne modeli olduğunu ifade edebiliriz. Sunucu tarafı için Server Object Model, istemci tarafı için bu yazımızda ele alacağımız Client Object Model ve son olarak da Build Service’ lerin, COM ile olan iletişiminde devreye giren Build Process Object Model. Biz bu yazımızda sadece Client Object Model’ in nasıl kullanılabileceğini basit bir Hello World uygulaması ile irdelemeye çalışıyor olacağız.
 
-Hello Client Object Model
+## Hello Client Object Model
 
 Client Object Model’ i yüklendikten sonra.Net projesine aşağıdaki ekran görüntüsünde yer alan Microsoft.TeamFoundation.Client ve Microsoft.TeamFoundation.Common assembly referanslarının eklenmesi yeterli olacaktır.
 
 ![comhello_2](/assets/images/2013/comhello_2.png)
 
-> Olur da Reference penceresinde Extensions kısmında çıkmazlar, bu durumda C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\ adresine bir uğrayın derim
+> Olur da Reference penceresinde Extensions kısmında çıkmazlar, bu durumda `C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v2.0\` adresine bir uğrayın derim.
 
 Şimdi dilerseniz ilk örnek kodlarımızı yazalım.
 
@@ -140,11 +135,9 @@ Dolayısıyla TFS üzerinde oldukça fazla nesneyi sorgulayabiliriz. Örneğimiz
 
 ![comhello_7](/assets/images/2013/comhello_7_1.png)
 
-Bu örnek tfs.visualstudio.com üzerinde oluşturduğum bir koleksiyona aittir. seddulbahir.visualstudio.com adresinden ulaşabildiğim koleksiyon içerisinde bir kaç deneme projesi oluşturdum. Tahmin edeceğiniz üzere Windows Live ID ile burada yer almanız ve eğer bir değişiklik olmadıysa 5 kişiye kadar ücretsiz olarak yararlanmanız mümkün. Yani 5 kişilik bir ekibiniz var ise hemen bir TFS hesabı açıp çalışmaya başlayabilirsiniz
+Bu örnek tfs.visualstudio.com üzerinde oluşturduğum bir koleksiyona aittir. seddulbahir.visualstudio.com adresinden ulaşabildiğim koleksiyon içerisinde bir kaç deneme projesi oluşturdum. Tahmin edeceğiniz üzere Windows Live ID ile burada yer almanız ve eğer bir değişiklik olmadıysa 5 kişiye kadar ücretsiz olarak yararlanmanız mümkün. Yani 5 kişilik bir ekibiniz var ise hemen bir TFS hesabı açıp çalışmaya başlayabilirsiniz. Bu arada Windows Live ID ile bağlandığımız bu sistemde Credential için bir Domain bilgisi vermenize gerek yoktur.
 
-Bu arada Windows Live ID ile bağlandığımız bu sistemde Credential için bir Domain bilgisi vermenize gerek yoktur.
-
-TFS Proje İskeleti
+## TFS Proje İskeleti
 
 Aslında bu tip bir örneği işletmeden önce TFS’ in genel olarak proje iskelet yapısını bilmekte de yarar vardır. Aşağıdaki şekilde bu durum kısaca özetlenmeye çalışılmaktadır.
 
@@ -158,7 +151,7 @@ Ne yazık ki Team Project ile Project kavramları zaman zaman birbirlerine karı
 
 Yani ALM yoğurt yiyiş şekli belirlenmelidir. Sonrasında ise bu Team Project içerisine dahil olan ve aynı şekilde yoğurt yiyecek olan ekip elemanları, n sayıda ve n çeşitte proje üzerinde çalışabilir. Bu projeler.Net uygulamaları olabileceği gibi.Net dışı ortamlar da olabilir. Önemli olan tüm bu projelerin aynı Team Project içerisinde dahil olmalarıdır.
 
-WorkItemStore ile Work Item Öğelerini Sorgulamak
+## WorkItemStore ile Work Item Öğelerini Sorgulamak
 
 Şimdi örneği biraz daha ilerletelim ve diğer TFS Web Service’ lerinden nasıl yararlanabileceğimize bakalım. Söz gelimi bir Team Project için söz konusu Work Item’ ları çekmeye çalışalım. Bu amaçla örnek kodlarımızı aşağıdaki gibi geliştirebiliriz.
 
@@ -220,8 +213,6 @@ namespace HelloTFSCOM
 
 > WorkItemStore dışında kullanılabilen pek çok servis vardır. Örneğin ISecurityService, ILocationService, IBuildServer, IProcessTemplates, VersionControlServer vb…Söz konusu servislerden bazıları Team Project Collection, bazıları da TFS Server seyiyesinde kullanılabilmektedir. [Detaylı bilgiye bu adresten ulaşabilirsiniz](http://msdn.microsoft.com/en-us/library/vstudio/bb286958.aspx#services).
 
-Bu yazımızda TFS Client Object Model ile basit de olsa el sıkışmaya çalıştık. Elbetteki örneği devam ettirip ilerletmek sizin elinizde. Söz gelimi iyi bir antrenman olarak Visual Studio Team Explorer penceresinin bir benzerini ve hatta Windows Phone 8 veya Windows 8 üzerinde çalışacak şekilde zengin kullanıcı deneyimi sunacak olan bir türevini geliştirebilirsiniz. Dokunmatikliği işin içerisine katın
-
-Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Bu yazımızda TFS Client Object Model ile basit de olsa el sıkışmaya çalıştık. Elbetteki örneği devam ettirip ilerletmek sizin elinizde. Söz gelimi iyi bir antrenman olarak Visual Studio Team Explorer penceresinin bir benzerini ve hatta Windows Phone 8 veya Windows 8 üzerinde çalışacak şekilde zengin kullanıcı deneyimi sunacak olan bir türevini geliştirebilirsiniz. Dokunmatikliği işin içerisine katın. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloTFSCOM.zip (181,68 kb)](/assets/files/2013/HelloTFSCOM.zip)

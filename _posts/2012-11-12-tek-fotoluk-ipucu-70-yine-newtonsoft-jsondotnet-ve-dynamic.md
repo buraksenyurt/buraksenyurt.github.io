@@ -43,12 +43,8 @@ Diyelim ki elimizde aşağıdaki gibi bir JSON içeriği var.
 }
 ```
 
-ve hatta NuGet ile eklediğimiz Newtonsoft'un JSON.net kütüphanesi.
-
-Ha bir de dynamic keyword'ümüz var.
-
-O halde bu doküman içeriğini okumamız ne kadar zor olabilir ki?
+ve hatta NuGet ile eklediğimiz Newtonsoft'un JSON.net kütüphanesi. Ha bir de dynamic keyword'ümüz var. O halde bu doküman içeriğini okumamız ne kadar zor olabilir ki?
 
 ![tfi_70](/assets/images/2012/tfi_70.png)
 
-Başka bir ipucunda görüşmek dileğiyle
+Başka bir ipucunda görüşmek dileğiyle.

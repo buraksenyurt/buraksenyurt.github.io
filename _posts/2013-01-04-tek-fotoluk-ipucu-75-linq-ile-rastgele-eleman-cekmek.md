@@ -11,11 +11,8 @@ tags:
 categories:
   - Foto İpucu
 ---
-Pek çoğumuz Random tipini kullanır ve bir listeden rastgele elemenalar üretmeye veya elde etmeye çalışırız. Peki T tipinden bir listeden herhangibir anda rastgele eleman almak isteseniz ve bunu bir Extension metod olarak tasarlamayı planlasanız...Nasıl bir yol izlerdiniz?
-
-Aşağıdaki gibi olabilir mi mesela?
+Pek çoğumuz Random tipini kullanır ve bir listeden rastgele elemenalar üretmeye veya elde etmeye çalışırız. Peki T tipinden bir listeden herhangibir anda rastgele eleman almak isteseniz ve bunu bir Extension metod olarak tasarlamayı planlasanız...Nasıl bir yol izlerdiniz? Aşağıdaki gibi olabilir mi mesela?
 
 ![tfi_75](/assets/images/2013/tfi_75.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
-

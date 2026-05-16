@@ -22,10 +22,8 @@ Okulda “Algoritma ve Veri Yapıları” dersinde ya da C# benzeri nesne yönel
 
 Recursive fonksiyonları ilk etapta anlamakta güçlük çeksek de, matematik ile bağdaşdırmakta zorlansak da, pek çok noktada hayat kurtaran ve gerekli olan metodlar olduklarını biliriz. Örneğin strateji oyunlarında, ikili (Binary) ağaç aramalarında, doğal dil işleme metodolojilerinde, Hanoi kuleleri gibi popüler problemlerin çözümünde ve daha pek çok yerde Recursive fonksiyonellikler söz konusudur.
 
-&
-
 [Youtube Link](https://www.youtube.com/watch?v=aiCwI8pGLs8)
 
 Biz bu görsel dersimizde, Fibonacci sayı dizisinin Recursive fonksiyonlar ile elde edilmesi halinde sistemin neden ve nasıl yavaşladığını anlamaya çalıştık. Ardından da iteratif bir yaklaşım üzerinde durarak basit bir çıkarımda bulunduk.
 
-Faydalı olması dileğiyle
+Faydalı olması dileğiyle.

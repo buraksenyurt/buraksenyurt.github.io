@@ -13,17 +13,13 @@ tags:
 categories:
   - DevOps
 ---
-Çok değil daha bir kaç sene öncesine kadar (Özellikle.Net’ in duyurulduğu yıllarda ve izleyen bir kaç senede) yazılım dünyasında neredeyse yandaki resimdekine benzer bir kavga vardı (Benzetmeyi biraz abartmış olabilirim)
+Çok değil daha bir kaç sene öncesine kadar (Özellikle.Net’ in duyurulduğu yıllarda ve izleyen bir kaç senede) yazılım dünyasında neredeyse yandaki resimdekine benzer bir kavga vardı (Benzetmeyi biraz abartmış olabilirim) Java’ cılar, C#’ çıları pek sevmez iken tam tersi durum da pekala geçerliydi. Ben hiç bir zaman birisinin fanatiği olmadım. Hatta Java ile ufak çaplı bir kaç deneyimim bile oldu.
 
 ![developers](/assets/images/2013/developers.jpg)
 
-Java’ cılar, C#’ çıları pek sevmez iken tam tersi durum da pekala geçerliydi. Ben hiç bir zaman birisinin fanatiği olmadım. Hatta Java ile ufak çaplı bir kaç deneyimim bile oldu.
-
 Peki gerçek dünya böyle mi? Özellikle kalabalık yazılım ekiplerinin olduğu, çok fazla sayıda ürünün koştuğu dünyalarda, sadece Java’ cıları, C#’ çıları değil, daha pek çok programlama dili geliştiricilerini bir arada görmekteyiz. Öneğin ben bulunduğum konum itibariyle C’ cilerin, Assembler’ cıların, PowerBuilder’ cıların,.Net’ çilerin, Java’ cıların ve hatta Cobol’ cuların arasında yaşamaktayım.
 
-Hepsi kendi dünyalarını kullanarak ürünler geliştiriyor olsalar da, zaman içerisinde birbirleriyle konuşması gereken uygulamalar bütününün de bir parçası olmaktan kaçamıyorlar. Özellikle işin içerisine bir ALM (Application LifeCycle Management) aracı girdiğinde. İşte bu günkü konumuzda buna itaf edilecek
-
-Haydi gelin başlayalım.
+Hepsi kendi dünyalarını kullanarak ürünler geliştiriyor olsalar da, zaman içerisinde birbirleriyle konuşması gereken uygulamalar bütününün de bir parçası olmaktan kaçamıyorlar. Özellikle işin içerisine bir ALM (Application LifeCycle Management) aracı girdiğinde. İşte bu günkü konumuzda buna itaf edilecek. Haydi gelin başlayalım.
 
 Bildiğiniz üzere bir süredir Team Foundation Server’ ın çevre dünya ile olan etkileşimini incelemeye çalışıyorum. Açıkçası TFS’ in gerek servis yapısı gerek Client Object Model gibi kütüphaneleri sayesinde, dış dünya ile olan entegrasyonu son derece kolay. Bu gün buna bir kere daha inandım. Çünkü bir Java uygulaması içerisinde TFS Client Object Model’ i kullanarak, bir Team Project’ in Work Item listesini sorguladım
 
