@@ -14,7 +14,6 @@ Sizde benim gibi basketol tutkunu musunuz? Aslında ülkemizde hemen herkesin bi
 
 ![blg214_Giris](/assets/images/2011/blg214_Giris.jpg)
 
-
 Basketbol denilince aklıma gelen en önemli şahsiyetler arasında ise değerli spiker Murat Murathanoğlu ve değerli yorumcu İsmet Badem ikilisi gelmektedir. Her ne kadar uzun bir süre önce yollarını ayırmış olsalar da, özellikle İsmet Badem’ in hemen her maçta gençlere verdiği basketbol ip uçları halen kullaklarımdadır. Özellikle basketbolun temellerinin (Fundamentals) çok önemli olduğunu genç basketbolcu adaylara sürekli ifade etmiştir, etmektedir.
 
 Aslında bakarsanız temeller bir programlama dili için de son derece önemlidir. Profesyonel geliştiriciler, yazdıkları uygulamalarının çeşitliliği ve kullanılan araçlar düşünüldüğünde zaman içerisinde programlamanın temel kavramlarını kolayca unutabilir. Temellerin yer yer tekrar edilmemesi veya zaman içerisinde geriye dönüp bakılmaması bunun en büyük nedenlerindedir.
@@ -99,9 +98,8 @@ Bunlara ek olarak IDisposable ve StreamManager’ ın çok biçimli tipler olduk
 
 Dikkat edileceği üzere fm nesne örneği üzerinden yapılan çağrıda FileManager tipine ait Dispose metodu yürütülmüştür. Ancak base class ve uygulanan IDisposable arayüzleri üzerinden yapılan Dispose çağrılarında bu böyle olmamıştır. Her iki çağrıda da sub class olan FileManager tipine ait Dispose metodu yerine StreamManager tipinin Dispose metodunun icra edildiği görülmektedir. Acaba gerçekten böyle midir? Debug noktalarını koyarak ilerlediğimizde böyle olduğu ispat edilebilir.
 
-StreamManager üzerinden Dispose çağrısı yapıldığında (sm.Dispose (); satırı) kod, StreamManager sm=fm atamasına rağmen FileManager tipinin Dispose metoduna uğramamaktadır.
-
-IDisposable üzerinden Dispose çağrısında (dm.Dispose ();) kod IDisposable dm=fm; atamasına rağmen FileManager tipinin Dispose metoduna uğramamış ve yine StreamManager tipinin Dispose metodu çağırılmıştır ki sanırım en ilginç olanı da budur.
+- StreamManager üzerinden Dispose çağrısı yapıldığında (sm.Dispose(); satırı) kod, StreamManager sm=fm atamasına rağmen FileManager tipinin Dispose metoduna uğramamaktadır.
+- IDisposable üzerinden Dispose çağrısında (dm.Dispose();) kod IDisposable dm=fm; atamasına rağmen FileManager tipinin Dispose metoduna uğramamış ve yine StreamManager tipinin Dispose metodu çağırılmıştır ki sanırım en ilginç olanı da budur.
 
 Peki bu durumların oluşmasının sebebi nedir? Aslında sorun bilinçsiz olarak yapılan üye gizleme (Implicitly Name Hiding) operasyonundan kaynaklanmaktadır. Nitekim şu anda FileManager içerisinde, üst tipteki ile aynı isimde olan bir metod tanımı söz konusudur ve çalışma zamanı bu kullanımı gördüğünde varsayılan olarak üst tipe ait üyeleri çağırmaktadır. Bir başka deyişle üst tip üyesi alt tipi gizlemektedir. Gerçi bilinçsiz bir şekilde üye gizleme yapıldığı pek doğru değildir. Nitekim Visual Studio IDE’ si geliştiriciyi bu noktada aşağıdaki gibi uyarmaktadır.
 
@@ -114,17 +112,17 @@ Peki bu temeli bilen bir geliştirici sorun haline gelen vakaya düşmemek için
 İlk akla gelen yöntem üst sınıf (base class) içerisinde tanımlı olan ve IDisposable arayüzü üzerinden gelen Dispose metodunun virtual olarak tanımlanmasıdır.
 
 ```csharp
-abstract class StreamManager 
-        :IDisposable 
-{ 
-	#region IDisposable Members
+abstract class StreamManager
+        : IDisposable
+{
+    #region IDisposable Members
 
-	public virtual void Dispose() 
-	{ 
-		Console.WriteLine("Stream Manager için Dispose çağrısı\n"); 
-	}
+    public virtual void Dispose()
+    {
+        Console.WriteLine("Stream Manager için Dispose çağrısı\n");
+    }
 
-	#endregion 
+    #endregion
 }
 ```
 
@@ -134,32 +132,32 @@ Ancak virtual olarak yapılan tanımlama da yeterli değildir. Halen daha base c
 
 Abstract bir üye olarak Dispose metodunun tanımlanması da düşünülebilir ancak üzerinde çalıştığımız senaryo da geçerli bir kullanım değildir.
 
-![Exclamation](/assets/images/2011/Exclamation_4.gif) Bilindiği üzere abstract üyeler herhangibir şekilde kod bloğu içermezler ve türeyen tipler içerisinde mutlaka ezilmek (override) zorundadırlar.
+> Bilindiği üzere abstract üyeler herhangibir şekilde kod bloğu içermezler ve türeyen tipler içerisinde mutlaka ezilmek (override) zorundadırlar.
 
 Aslında üst sınıfın üye gizleme işlemini yapması istenmiyorsa yapılması gereken yol alt tip içerisindeki ezme (override) işleminin açık bir şekilde gerçekleştirilmesidir. Söz gelimi virtual kullanımı söz konusu ise kodun aşağıdaki şekilde düzenlenmesi yeterli olacaktır.
 
 ```csharp
-abstract class StreamManager 
-	:IDisposable 
-{ 
-	#region IDisposable Members
+abstract class StreamManager
+    : IDisposable
+{
+    #region IDisposable Members
 
-	public virtual void Dispose() 
-	{ 
-		Console.WriteLine("Stream Manager için Dispose çağrısı\n"); 
-	}
+    public virtual void Dispose()
+    {
+        Console.WriteLine("Stream Manager için Dispose çağrısı\n");
+    }
 
-	#endregion 
+    #endregion
 }
 
-sealed class FileManager 
-	: StreamManager 
-{ 
-	public override void Dispose() 
-	{ 
-		Console.WriteLine("FileManager için Dispose çağrısı"); 
-		base.Dispose(); 
-	} 
+sealed class FileManager
+    : StreamManager
+{
+    public override void Dispose()
+    {
+        Console.WriteLine("FileManager için Dispose çağrısı");
+        base.Dispose();
+    }
 }
 ```
 
@@ -170,14 +168,14 @@ Dikkat edileceği üzere FileManager tipi içerisinde yer alan Dispose metodu ov
 Tabi şu durumda unutulmamalıdır. Gerçekten bilinçli bir şekilde üye gizleme (Name Hiding) işleminin yapılması gerekiyorsa, new operatörünün kullanılması gerekmektedir. Aşağıdaki kod parçasında olduğu gibi.
 
 ```csharp
-sealed class FileManager 
-        : StreamManager 
-{ 
-	public new void Dispose() 
-	{ 
-		Console.WriteLine("FileManager için Dispose çağrısı"); 
-		base.Dispose(); 
-	} 
+sealed class FileManager
+        : StreamManager
+{
+    public new void Dispose()
+    {
+        Console.WriteLine("FileManager için Dispose çağrısı");
+        base.Dispose();
+    }
 }
 ```
 

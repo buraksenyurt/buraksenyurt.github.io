@@ -9,11 +9,11 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü yapmakta olduğum [NedirTv?Com](http://www.nedirtv.com) bünyesindeki yeni Webinerlerimize (WebCasts) başlamış olduk
+Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü yapmakta olduğum NedirTv?Com bünyesindeki yeni Webinerlerimize başlamış olduk.
 
 ![blg239_Giris](/assets/images/2010/blg239_Giris.gif)
 
-Önümüzdeki 8 Webiner (Webcast) boyunca sizlere WCF (Windows Communication Foundation) kavramını öğretmeye çalışıyor olacağım. Bu 8 bölümlük seride Microsoft standartlarına göre Level 100 ile Level 200 arasında geziniyor olacağız. Ancak 2011 başlarında ikinci bir seri ile seviyemizi Level 200’ ün üstüne çıkartmayı da planlılyoruz
+Önümüzdeki 8 Webiner boyunca sizlere WCF (Windows Communication Foundation) kavramını öğretmeye çalışıyor olacağım. Bu 8 bölümlük seride Microsoft standartlarına göre Level 100 ile Level 200 arasında geziniyor olacağız. Ancak 2011 başlarında ikinci bir seri ile seviyemizi Level 200’ ün üstüne çıkartmayı da planlılyoruz
 
 İlk bölümümüzde temel SOA kavramlarından bahsederek işe başladık ve basit bir WCF servis örneği geliştirerek bunu kullanan örnek istemci uygulamayı yazdık. Dersimizde
 
@@ -25,10 +25,6 @@ Uzun bekleyiş sona erdi ve sonbaharın gelmesi ile birlikte editörlüğünü y
 
 Webinerimizin ekran görüntüsüne, örnek kod ve Powerpoint dosyalarına aşağıdaki linklerden ulaşabilirsiniz. Bir sonraki dersimizde görüşmek dileğiyle.
 
-[Youtube Link](https://www.youtube.com/watch?v=MPQ3In0n308)
-
-[NedirTv?com Üzerinden izlemek veya indirmek için](http://nedirtv.com/video/wcf-ogreniyorum-00-wcf-e-giris)
-
-[WCF 4.0 - Introduction - Microsoft.pptx (399,90 kb)](/assets/files/2010/WCF40IntroductionMicrosoft.pptx)
-
-[WCF Ogreniyorum.rar (64,13 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)
+- [Youtube Link](https://www.youtube.com/watch?v=MPQ3In0n308)
+- [WCF 4.0 - Introduction - Microsoft.pptx (399,90 kb)](/assets/files/2010/WCF40IntroductionMicrosoft.pptx)
+- [WCF Ogreniyorum.rar (64,13 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)

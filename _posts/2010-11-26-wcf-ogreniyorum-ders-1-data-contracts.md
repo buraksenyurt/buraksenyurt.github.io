@@ -8,7 +8,7 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Hatırlayacağınız üzere bir süre önce [NedirTv?com](http://www.nedirtv.com) sponsorluğunda WCF Öğreniyorum Webiner serimize başlamıştık. Ders 0 kodlu ilk Webinerimizde SOA (Service Oriented Architecture) kavramına kısaca değinmiş, SOA ile WCF arasındaki ilişkiye bakmış ve ardından WCF (Windows Communication Foundation) geliştirme modelini incelemeye başlamıştık. İlk dersimizde temel olarak aşağıdaki konuları göz önüne aldığımızı ifade edebiliriz.
+Hatırlayacağınız üzere bir süre önce NedirTv?com sponsorluğunda WCF Öğreniyorum Webiner serimize başlamıştık. Ders 0 kodlu ilk Webinerimizde SOA (Service Oriented Architecture) kavramına kısaca değinmiş, SOA ile WCF arasındaki ilişkiye bakmış ve ardından WCF (Windows Communication Foundation) geliştirme modelini incelemeye başlamıştık. İlk dersimizde temel olarak aşağıdaki konuları göz önüne aldığımızı ifade edebiliriz.
 
 ![wcfogreniyorumDers1](/assets/images/2010/wcfogreniyorumDers1.gif)
 
@@ -23,10 +23,6 @@ Hatırlayacağınız üzere bir süre önce [NedirTv?com](http://www.nedirtv.com
 
 Ders 1 kod adlı webinerimizde ise Veri Sözleşmeleri (Data Contracts) kavramına değindik. Bakalım neler anlatmışız.
 
-[Youtube Link](https://www.youtube.com/watch?v=uwo82zNlhdA)
-
-Sunum [WCF 4.0 - Ders 1 - Data Contracts.pptx (314,15 kb)](/assets/files/2010/WCF40Ders1DataContracts.pptx)
-
-[Webiner Kaydı](http://nedirtv.com/video/wcf-ogreniyorum-01-wcf-servis-gelistirmek-ve-kullanmak)
-
-Solution Dosyası Son Hali [WCF Ogreniyorum.rar (81,74 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)
+- [Youtube Link](https://www.youtube.com/watch?v=uwo82zNlhdA)
+- Sunum [WCF 4.0 - Ders 1 - Data Contracts.pptx (314,15 kb)](/assets/files/2010/WCF40Ders1DataContracts.pptx)
+- Solution Dosyası Son Hali [WCF Ogreniyorum.rar (81,74 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)

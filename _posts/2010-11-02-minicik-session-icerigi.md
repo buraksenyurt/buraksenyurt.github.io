@@ -9,15 +9,11 @@ tags:
 categories:
   - Web Programlama
 ---
-Bildiğiniz üzere bir süredir Microsoft Teknoloji Günleri Akşam Sınıfı etkinliklerini gerçekleştirmekteyiz. Kasım ayının konusu ise hemen her sürümünde köklü ve önemli yenilikler ile birlikte gelen Asp.Net'in 4.0 sürümü
+Bildiğiniz üzere bir süredir Microsoft Teknoloji Günleri Akşam Sınıfı etkinliklerini gerçekleştirmekteyiz. Kasım ayının konusu ise hemen her sürümünde köklü ve önemli yenilikler ile birlikte gelen Asp.Net'in 4.0 sürümü. Web programlamanın gelişen ihtiyaçları nedeniyle Asp.Net alt yapısında da her major sürümde fazlasıyla yenilik bulunmakta.
 
-![blg237_Giris](/assets/images/2010/blg237_Giris.jpg)
+Tabi yine bildiğiniz üzere bendeniz web konusunda uzman değilim. Ağırlıklı olarak servis yönelimli mimari (Service Oriented Architecture) tarafı ile ilgilenmekteyim. Ancak eğitmenlik yaptığım dönemlerden kalan bir hastalık olsa gerek,.Net'in diğer pek çok alanı ile de ilgilenmekteyim. Eğitime blog yazısını hazırladığım tarih itibarıyla oldukça az bir süre kaldı. Çıraklık başvuruları, Microsoft gönüllü çalışmaları, 11 haftalık proje planı olup bizden 4 haftada bitirmemizi istedikleri kocaman PoC çalışması, S(h)arp Efe derken zamanı etkin kullanmak konusunda sıkıntılar yaşamaya başladım.
 
-Web programlamanın gelişen ihtiyaçları nedeniyle Asp.Net alt yapısında da her major sürümde fazlasıyla yenilik bulunmakta.
-
-Tabi yine bildiğiniz üzere bendeniz web konusunda uzman değilim. Ağırlıklı olarak servis yönelimli mimari (Service Oriented Architecture) tarafı ile ilgilenmekteyim. Ancak eğitmenlik yaptığım dönemlerden kalan bir hastalık olsa gerek,.Net'in diğer pek çok alanı ile de ilgilenmekteyim. Eğitime blog yazısını hazırladığım tarih itibaryile oldukça az bir süre kaldı. Çıraklık başvuruları, Microsoft gönüllü çalışmaları, 11 haftalık proje planı olup bizden 4 haftada bitirmemizi istedikleri kocaman POC çalışması, S (h) arp Efe derken zamanı etkin kullanmak konusunda sıkıntılar yaşamaya başladım
-
-Aslında.Net Framework 4.0 tarafını uzun süredir incelememe rağmen, en ince detaylarına kadar girmeden konuya hakim olmanın zor olacağını da gayet iyi biliyordum. Hatta bana göre yazarak anlatmak öğrenmenin en iyi yollarından birisi. İşte bu bi dolu düşünce altında başladığım gece çalışmasının sonucu olan küçük bir blog girdisi ile karşınızdayım. Bu yazımızda Asp.Net 4.0 tarafında gelen önemli yeniliklerden birisi olan serileştirilebilir Session içeriğini ufaltmak (daha teknik bir tabirle sıkıştırmak) konusuna değiniyor olacağız.
+Aslında.Net Framework 4.0 tarafını uzun süredir incelememe rağmen, en ince detaylarına kadar girmeden konuya hakim olmanın zor olacağını da gayet iyi biliyordum. Hatta bana göre yazarak anlatmak öğrenmenin en iyi yollarından birisi. İşte bu bir dolu düşünce altında başladığım gece çalışmasının sonucu olan küçük bir blog girdisi ile karşınızdayım. Bu yazımızda Asp.Net 4.0 tarafında gelen önemli yeniliklerden birisi olan serileştirilebilir Session içeriğini ufaltmak (daha teknik bir tabirle sıkıştırmak) konusuna değiniyor olacağız.
 
 Session bildiğiniz üzere web çalışma modelinde önemli bir yere sahip. Özellikle oturum bazlı olarak veri tutulması istenen durumlarda, sunucu tarafında kullanılabilecek seçeneklerden birisi olduğunu ifade edebiliriz. Session içeriklerini kullanmak da son derece basit. Bu anlamda Asp.Net'in başlangıcından beri var olan HttpSessionState tipinden yararlanıldığını biliyoruz. Tabi Session kullanımında dikkat edilmesi gereken bazı hususlarda var. Söz gelimi varsayılan olarak In-Proc mod adı verilen ve çalışmakta olan Asp.Net uygulamasına ait Worker Process ile ilişkili bellek alanlarında tutulan Session içeriklerinin, SQL veritabanı veya farklı bir State Service'e ait process altında tutulması da söz konusu. Bu farklı tutuluş şekillerine ilaveten object tipi ile çalışabilen bir yapıdan bahsettiğimizi de ifade etmek isterim. Yani her tür.Net nesnesini atayabilirsiniz. Hımmm
 
@@ -25,10 +21,15 @@ Session bildiğiniz üzere web çalışma modelinde önemli bir yere sahip. Öze
 
 Yazımızın ilerleyen kısımlarında sıkıştırmanın bu noktadaki önemini vurgulamak açısından basit bir örnek üzerinden ilerlemeye çalışıyor olacağız. Örnek senaryomuzda Session bilgilerini SQL veritabanı üzerinde tutuyor olacağız. Bu amaçla bir ön hazırlık yapmamız gerekiyor. Visual Studio 2010 Command Prompt üzerinden aspnetregsql aracını kullanarak söz konusu veritabanını (Örneğimizde SessionDB) oluşturabiliriz.
 
-Kurulum;
+## Kurulum
 
+```bash
 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC>aspnet_regsql -S localhost -E -ssadd -sstype c -d SessionDB
+```
 
+Komut çalıştıktan sonra aşağıdakine benzer bir terminal çıktısı elde ederiz.
+
+```text
 Start adding session state.
 
 ....
@@ -36,10 +37,13 @@ Start adding session state.
 Finished.
 
 To use this custom session state database in your web application, please specify it in the configuration file by using the 'allowCustomSqlDatabase'and 'sqlConnectionString'attributes in the \ section.
+```
 
 Bu kurulum işlemi sonrasında SessionDB içerisinde oluşturulan ASPStateTempSessions tablosunun yapısı da aşağıdaki gibi olacaktır. İki alan; SessionItemShort ve SessionItemLong şu an ki vakamız için önem arz etmektedir. Bu alanlarda serileştirilen Session içerikleri tutulmaktadır. Bununla birlikte serileşen içeriğin büyüklüğüne göre iki alandan bir tanesine veri eklenmesi de söz konusu olacaktır.
 
 ![blg237_Table](/assets/images/2010/blg237_Table.gif)
+
+## Örnek Uygulama
 
 Şimdi basit bir Asp.Net Web Application üzerinden ilerleyelim. Söz konusu web uygulamasında en önemli nokta Session kullanımına ait konfigurasyon ayarlarıdır. Default.aspx sayfamız son derece basit bir fonksiyonelliğe sahiptir. Button kontrolüne basıldığında Logo isimli bir sınıf örneğinin Session nesnesi olarak atılması söz konusudur. İşte örnek uygulama kodlarımız.
 
@@ -116,7 +120,7 @@ Görüldüğü üzere Session özelliğinin Add metodundan yararlanılarak lg is
 
 SessionDB isimli bir veritabanı adı kullandığımızdan allowCustomSqlDatabase özelliğine true değeri atanmıştır. sqlConnectionString bilgisinde ise Session bilgilerinin yazılacağı veritabanı bağlantısı belirtilmektedir. mode niteliğine atanan değer ile Session içeriklerinin SQL veritabanı üzerinde (sqlConnectionString ile belirtilen bağlantıya doğru) tutulacağı ifade edilmektedir. Şu an için compressionEnabled özelliğine false değeri atanmıştır. Bu şekilde aslında Asp.Net 4.0 öncesinde olduğu gibi standart bir Session tutma işlemi yapılacağı belirtilmektedir. Örneği bu şekilde test ettiğimizde ASPStateTempSessions tablosunda üretilen Session satırına ait sorgulama sonucu, SessionItemLong alanına binary bir içeriğin serileştirilmiş olduğu görülecektir.
 
-Sql tarafında Compression kullanılmadığı haldeki durum;
+### Sıkıştırma Kapalıyken
 
 İlk olarak sıkıştırma işlemini kullanmadığımız durumu ele alalım. Add Session işleminden sonra, üretilen SessionID değerini web sayfamız üzerinde kullanırsak aşağıdaki sonuçlar ile karşılaşırız.
 
@@ -137,13 +141,15 @@ Gelelim sıkıştırılma durumuna. Bu sefer compressionEnabled özelliğine tru
 </configuration>
 ```
 
-Sql tarafında Compression kullanılması haldeki durum ise aşağıdaki gibi olacaktır;
+### Sıkıştırma Açıkken
 
 ![blg237_SecondCase](/assets/images/2010/blg237_SecondCase.gif)
 
 Görüldüğü üzere bir önceki vakanın tersine serileştirilebilir içerik SessionItemLong alanı yerine SessionItemShort içerisine eklenmiştir. Bununla birlikte söz konusu sıkıştırılmış verinin içeriği 3686 dır.
 
-Sıkıştırma algoritmasının uygulanması sonucu neredeyse standart session içeriğinin %0,0109983559158682 üne kadar verinin küçültülmesi söz konusudur. Elbette burada text tabanlı bir içerik kullanıldığından söz konusu farkın oluşması doğaldır. Özellikle binary içerikten oluşan (örneğin resim formatı gibi) bir verinin serileştirilmesi esnasında veri boyutlarında önemli bir fark olmayadabilir. Bu durumu analiz etmek için aşağıdaki kod parçasını göz önüne alalım.
+Sıkıştırma algoritmasının uygulanması sonucu neredeyse standart session içeriğinin %0,0109983559158682'üne kadar verinin küçültülmesi söz konusudur. Elbette burada text tabanlı bir içerik kullanıldığından söz konusu farkın oluşması doğaldır. Özellikle binary içerikten oluşan (örneğin resim formatı gibi) bir verinin serileştirilmesi esnasında veri boyutlarında önemli bir fark olmayabilir. Bu durumu analiz etmek için aşağıdaki kod parçasını göz önüne alalım.
+
+## DataSet ile Binary İçerik
 
 ```csharp
 protected void btnAddDataTable_Click(object sender, EventArgs e) 
@@ -163,19 +169,19 @@ protected void btnAddDataTable_Click(object sender, EventArgs e)
 
 Bu kez ProductPhoto isimli tablonun tüm içeriğini çektiğimiz bir DataSet örneğini Session'a ekliyoruz. Yine ilk olarak compressionEnabled niteliğinin false değere sahip olduğu ve sonrasında true olması halini göz önüne alalım. Bu durumda aşağıdaki örnek çıktılar elde edilecektir.
 
-Sıkıştırılma kapalı iken;
+### Sıkıştırma Kapalıyken
 
 ![blg237_ThirdCase](/assets/images/2010/blg237_ThirdCase.gif)
 
-Sıkıştırılma açık iken;
+### Sıkıştırma Açıkken
 
 ![blg237_FourthCase](/assets/images/2010/blg237_FourthCase.gif)
 
-Sıkıştırılmama durumunda 2712191 iken sıkıştırılma durumunda 2711426. Yani sadece % 1,000282139361355 oradanın bir sıkıştırma söz konusu olmakta.
+Sıkıştırılmama durumunda 2712191 iken sıkıştırılma durumunda 2711426. Yani sadece % 1,000282139361355 oranında bir sıkıştırma söz konusu olmakta.
 
 Değer mi? Değmez. Buna göre serileştirilebilir içeriklerin sıkıştırılabilir olmaları da önem kazanmaktadır. (Nitekim bir PDF veya JPEG dosyasını sıkıştırdığınızda önemli ölçüde bir sıkıştırma olmadığını görürüz) İnandırıcı geldi mi?
 
-Varsayımsal Yaklaşım
+## Varsayımsal Yaklaşım
 
 Tahmini olarak Asp.Net çalışma zamanının Session verisini nasıl işlediğini düşünelim. Sıkıştırma modu kapalı iken, binary formatta serileştirme işlemi yapılıp verinin içeriye atılıyor olması söz konusu olabilir. Diğer yandan sıkıştırma modu açık olduğunda, serileşen içeriğin olduğu gibi yazılmadan önce belki de bir GZipStream işleminden geçirilmesi ve sıkıştırılmaya çalışılması söz konusu olabilir.
 
@@ -204,7 +210,7 @@ using (SqlConnection conn = new SqlConnection("data source=.;database=AdventureW
 }
 ```
 
-Kod parçasından görüldüğü üzere ilk olarak Binary formatta bir DataSet içeriğini serlişetirmekteyiz. Bu zaten Session tarafında SessionItemLong veya SessionItemShort alanına atılan serileştirilebilir içeriktir. Kodun ilerleyen kısımlarında ise serileştirilen içeriği GZipStream sınıfından yararlanarak sıkıştırmaya çalışıyoruz. Bunun sonucu olarak üretilen dosya içeriklerinin boyutlarına baktığımızda ise aşağıdaki ekran görüntüsünde yer alan sonuçları elde ederiz.
+Kod parçasından görüldüğü üzere ilk olarak Binary formatta bir DataSet içeriğini serileştirmekteyiz. Bu zaten Session tarafında SessionItemLong veya SessionItemShort alanına atılan serileştirilebilir içeriktir. Kodun ilerleyen kısımlarında ise serileştirilen içeriği GZipStream sınıfından yararlanarak sıkıştırmaya çalışıyoruz. Bunun sonucu olarak üretilen dosya içeriklerinin boyutlarına baktığımızda ise aşağıdaki ekran görüntüsünde yer alan sonuçları elde ederiz.
 
 ![blg237_Last](/assets/images/2010/blg237_Last.gif)
 

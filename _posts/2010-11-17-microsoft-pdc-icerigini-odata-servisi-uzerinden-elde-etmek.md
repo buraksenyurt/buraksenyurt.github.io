@@ -18,23 +18,21 @@ Bildiğiniz üzere bir süre önce Microsoft PDC 2010 etkinlikleri gerçekleşti
 
 Aslına bakarsanız bu tip bir veri paylaşımı benim gibi servis tarafı ile ilgilenen pek çok geliştirici için tek bir anlama gelmektedir: “Git kendi uygulamanı yaz ve PDC Session bilgilerini servis aracılığıyla çek” . İşte Kurban bayramının ortasında olduğumuz şu günlerde ele aldığımız blog yazımızın konusu da bu olacak.
 
-İlk olarak PDC 2010’ a ait bilgilerin nereden yayınlandığına bakarak başlamamızda yarar olacağı kanısındayım. Şu an itibariyle [http://odata.microsoftpdc.com/ODataSchedule.svc/](http://odata.microsoftpdc.com/ODataSchedule.svc/) adresinden bir paylaşım yapılmaktadır. Hatta her hangibir tarayıcı uygulaması ile baktığımızda aşağıdaki Atom veri içeriğinin üretildiğini görebiliriz.
+İlk olarak PDC 2010’ a ait bilgilerin nereden yayınlandığına bakarak başlamamızda yarar olacağı kanısındayım. Şu an itibariyle [http://odata.microsoftpdc.com/ODataSchedule.svc/](http://odata.microsoftpdc.com/ODataSchedule.svc/) adresinden bir paylaşım yapılmaktadır *(2026'dan not tabii artık sitenin yerinde yeller esiyor)* Hatta her hangibir tarayıcı uygulaması ile baktığımızda aşağıdaki Atom veri içeriğinin üretildiğini görebiliriz.
 
 ![blg240_Browser](/assets/images/2010/blg240_Browser.gif)
 
 Servis tarafından çekilen bu içerik sanıyorum ki WCF Data Service geliştiren veya kullananlara tanıdık gelecektir. Aslında bir anlamda tarayıcı üzerinden sorgulanabilir veri içeriğinin söz konusu olduğunu ifade edebiliriz. Söz gelimi
 
-[http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions?$select=ShortTitle,ShortUrl,FullDescription,Tags&$orderby=ShortTitle](http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions?$select=ShortTitle,ShortUrl,FullDescription,Tags&$orderby=ShortTitle)
+`http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions?$select=ShortTitle,ShortUrl,FullDescription,Tags&$orderby=ShortTitle`
 
 şeklinde bir URL sorgulamasının sonucu olarak ShortTitle, ShortUrl, FullDescription ve Tags bilgilerinden oluşan, ayrıca ShortTitle içeriğine göre A’ dan Z’ ye sıralı olarak gelen bir listeyi elde ederiz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![blg240_SampleQuery](/assets/images/2010/blg240_SampleQuery.gif)
 
-Dikkat edileceği üzere gerçekleştirilen oturumlara ait detaylı bilgileri bu servis üzerinden tedarik edebiliriz. Söz gelimi Download edilebilir materyallere ait bağlantı adreslerini (Powerpoint Sunumlar, WMV ve MP4 dosyaları), konuşmacılara ait kısa öz geçmişleri, oturumlar ile ilişkili başlık, açıklama, kategori ve daha pek çok bilgiyi elde etme şansına sahibiz. Yazıyı hazırlarkenki ilk amacımız Download edilebilir içeriklere ulaşmaktır. Bunun için Sessions koleksiyonundan yararlanmamız yeterli olacaktır. Ancak tabiki de diğer Entity Set içeriklerini de değerlendirip çok daha detaylı bir arayüz uygulaması geliştirebilirsiniz
+Dikkat edileceği üzere gerçekleştirilen oturumlara ait detaylı bilgileri bu servis üzerinden tedarik edebiliriz. Söz gelimi Download edilebilir materyallere ait bağlantı adreslerini (Powerpoint Sunumlar, WMV ve MP4 dosyaları), konuşmacılara ait kısa öz geçmişleri, oturumlar ile ilişkili başlık, açıklama, kategori ve daha pek çok bilgiyi elde etme şansına sahibiz. Yazıyı hazırlarkenki ilk amacımız Download edilebilir içeriklere ulaşmaktır. Bunun için Sessions koleksiyonundan yararlanmamız yeterli olacaktır. Ancak tabiki de diğer Entity Set içeriklerini de değerlendirip çok daha detaylı bir arayüz uygulaması geliştirebilirsiniz.
 
-(Hatta sıkı takipçilerinden olduğum Mike Taulty’ nin daha geçen günlerde [yayınlamış](http://feedproxy.google.com/~r/mtaulty/~3/xQwMPWbDX9w/pdc-2010-session-downloader-in-silverlight.aspx) olduğu oldukça iddiali bir Silverlight uygulaması da söz konusudur)
-
-Örneği bir Web uygulaması olarak geliştirebiliriz. (Web uygulamasını tercih etmemin en büyük sebeplerinden birisi de, Download Link’ lerine doğal destek verecek olmasıdır) İlk etapta PDC için geliştirilmiş WCF Data Service’ inin projeye referans edilmesi gerekmektedir. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
+Örneğimizi bir Web uygulaması olarak geliştirebiliriz. (Web uygulamasını tercih etmemin en büyük sebeplerinden birisi de, Download Link’ lerine doğal destek verecek olmasıdır) İlk etapta PDC için geliştirilmiş WCF Data Service’ inin projeye referans edilmesi gerekmektedir. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![blg240_AddSrvRef](/assets/images/2010/blg240_AddSrvRef.gif)
 
@@ -48,7 +46,7 @@ Biz örneğimizde Web User Control tipini kullanarak ilerlemeye gayret edeceğiz
 
 SessionInfo.ascx
 
-```text
+```html
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SessionInfo.ascx.cs" Inherits="PDC2010.SessionInfo" %> 
 <style type="text/css"> 
     .style1 
@@ -136,7 +134,7 @@ SessionInfo kontrolü içerisinde Title, Description, Tags bilgilerini tuttuğum
 
 Her bir Session için n sayıda Download Link söz konusu olabilir. MP4, WMV gibi formatlardaki içeriklere ait bağlantı bilgileri Content Entity tipi üzerinde tutulmaktadır. Bu bilgilere erişildikten sonra yine bir Web User Control bileşeninden yararlanılmakta ve söz konusu bileşene ait çalışma zamanı kontrol örnekleri, LinkHolder özelliği ile, SessionInfo üzerindeki PlaceHolder bileşeninin Controls koleksiyonuna eklenmektedir. ContentLink olarak adlandırdığımız bu bileşenin içeriği ise aşağıdaki gibidir.
 
-```text
+```html
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ContentLink.ascx.cs" Inherits="PDC2010.ContentLink" %> 
 <style type="text/css"> 
     .style1 
@@ -202,7 +200,7 @@ Bu kontroller sayesinde WCF Data Service tarafına gönderilen LINQ sorguları s
 
 Default.aspx içeriği;
 
-```text
+```html
 <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" 
     CodeBehind="Default.aspx.cs" Inherits="PDC2010._Default" %> 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent"> 

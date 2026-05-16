@@ -14,7 +14,7 @@ Sene 1997. Üniversite 3ncü sınıf öğrencisiyim. Eskiden lisanslı bir baske
 
 ![blg201_Giris](/assets/images/2010/blg201_Giris.jpg)
 
-
+```text
 Burak: Serkan bak Pentium 200 MMX var. Creative CD sürücü. Üstelik uzaktan kumandalı. Diamond Stealth ekran kartı 2 mb. İyidir. Seagate Hard Disk. Süper.
 
 Serkan: Abi kaç ram var bunda?
@@ -32,6 +32,7 @@ Baba: 32 Mb olanı alalım.
 Serkan: Ama baba, 64 Mb olan daha iyi. Uygulamalar için daha çok yer tahsis ediyor. Daha rahat çalışacak uygulamalar. Aynı anda daha çok uygulama çalışacak.
 
 Baba: Sen önce 32 Mb olanı doldur, sonrasına bakarız:S
+```
 
 Bu minik hikayeden sonra şu an geldiğimiz noktaya baktığımızda Gb’ larca Ram’ den bahsediyoruz. Hatta işlemcilerin birincil ve ikincil ön bellek kapasitelerinin de oldukça yükseldiğini görüyoruz. Tabi bu bana göre yazılımların istedikleri donanımsal ihtiyaçların bir sonucu. Gelelim bu günkü konumuza. Bu günkü konumuzda aslında sanal bellek (Virtual Memory) ile alakalı ve özellikle çok büyük boyutlu dosyalar ile çalışan uygulamalar söz konusu olduğunda bir o kadar da önemli bir mevzu.
 

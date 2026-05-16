@@ -25,21 +25,20 @@ Tüm bunlara ek olarak uzun zamandır bilinen Task Parallel Library ve doğal ol
 ```csharp
 for (int i = 0; i < 5; i++) 
 { 
-	tasks[i] = new Task(() => 
+   tasks[i] = new Task(() => 
    { 
-		for (int j = 0; j < 1000; j++) 
-		{ 
-		   f16.Altitude += j - 5; 
-		} 
-	} 
-	); 
-	tasks[i].Start(); 
+      for (int j = 0; j < 1000; j++)
+      { 
+        f16.Altitude += j - 5; 
+      } 
+   }); 
+   tasks[i].Start(); 
 }
 ```
 
 Aslında ezelden beri Multi-Thread programlamada, Thread’ lerin senkronizasyonu konusu öyle ya da böyle bir şekilde kulağımıza gelmiştir. Çok doğal olarak benzer ihtiyaçlar.Net Framework 4.0 Paralel Programlama alt yapısı içinde geçerlidir. Ancak.Net Framework 4.0 tarafında Lightweight Primitives adında yeni ve daha basit senkronizasyon tipleri de söz konusudur. Bu tipler klasik senkronizasyon tiplerine göre daha kola uygulanabilir. Tabi klasik senkronizasyon Primitive’ lerinin uygulanması her ne kadar zor olsa da, birden fazla Application Domain üzerinde kontrole izin vermektedirler. Oysa ki LightWeight Primitive’ ler sadece tek bir Application Domain için uygulanabilir. Olayı daha fazla karmaşıklaştırmadan önce senkronizasyon ile neyi ifade ettiğimizi ortaya koymamızda yarar vardır.
 
-![Exclamation](/assets/images/2011/Exclamation_3.gif) “Herhangibir t anında kritik olan bölgeyde sadece tek bir Task örneğinin işlem yapmasını sağlamak”
+> “Herhangibir t anında kritik olan bölgeyde sadece tek bir Task örneğinin işlem yapmasını sağlamak”
 
 Senkronizasyonu sağlamak için.Net Framework üzerinde önceden tanımlı çeşitli Primitive’ lerden yararlanılmaktadır. Aslında özel veri tipleri olarak düşünebileceğimiz Primitive’ ler, kritik bölgelere doğru yapılan Task erişimlerini kontrol altına alan varlıklar olarak düşünülebilirler.
 

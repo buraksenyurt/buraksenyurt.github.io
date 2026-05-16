@@ -16,7 +16,6 @@ categories:
 
 ![blg207_Giris](/assets/images/2011/blg207_Giris.jpg)
 
-
 Ancak incelediğimiz bu teknikler dışında, Task nesne örnekleri veya Task sınıfı üzerinden kullanılabilecek farklı bekletme teknikleri de söz konusudur.
 
 Aslında Task örnekleri üzerinden Result değerlerinin okunmaya çalışılması, söz konusu Task’ in işleyişini tamamlayıncaya kadar, çağıran uygulamanın bekletilmesi anlamına gelmektedir. Fakat bunun dışında kullanılabilecek Wait, WaitAll ve WaitAny gibi metodlar söz konusudur. Tüm bu metodların kullanımında amaç, Task örneğini/örneklerini başlatan uygulamanın, belirtilen şartlar doğrultusunda bekletilmesini sağlamaktır. Bir önceki yazımızda incelediğimiz konular düşünüldüğünde bu önemli bir farktır. Bu seferki hedefimiz çağıran uygulamanın/metodun duraksatılmasıdır. Dilerseniz söz konusu modellere ait örnek uygulamalarımızı geliştirerek ilerleyelim.
@@ -97,13 +96,13 @@ IEnumerable<int> numbers = Enumerable.Range(0, 10000000);
 
 Task startedTask = Task.Factory.StartNew(() => 
 { 
-	for (int i = 0; i < numbers.Count(); i++) 
-	{ 
-		i++; 
-		i--; 
-		i *= 2; 
-		Console.Write("."); 
-	} 
+   for (int i = 0; i < numbers.Count(); i++) 
+   { 
+    i++; 
+    i--; 
+    i *= 2; 
+    Console.Write("."); 
+  } 
 } 
 );
 
@@ -116,7 +115,7 @@ Değer aralığı bilinçli olarak küçültülmüştür. Çok fazla beklememek 
 
 ![blg207_WaitOneTest2](/assets/images/2011/blg207_WaitOneTest2.gif)
 
-WaitAll Kullanımı
+## WaitAll Kullanımı
 
 Önceki örneklerimizde tek bir Task nesne örneği üzerinden, çağıran uygulamanın duraksatılması işlemi gerçekleştirilmiştir. Bir başka deyişle çağıran uygulama, tek bir Task nesne örneği için belirli/belirsiz süre bekletilmiştir. Ancak doğal olarak birden fazla Task örneğinin yer aldığı bir senaryoda, tüm Task’ ler için ana uygulamanın bekletilmesi de istenebilir. Hatta bu teknikte temel amaç, birden fazla Task örneğinin işleyişi tamamlanıncaya kodun ilerlememesidir. Bu durumda Task sınıfının static WaitAll metodundan yararlanılabilir. İşte örnek kod parçamız.
 
@@ -322,7 +321,7 @@ Kod içerisinde 3 farklı Task örneğinin çalıştırıldığı görülmektedi
 
 Burada dikkat edilmesi gereken nokta, üç Task nesne örneğinden ilk olarak hangisi bitmişse, WaitAny metodunun ona ait indis değerini döndürmesidir. Örneğimizde dizi içerisinde ikinci sırada yer alan, bir başka deyişle 1 numaralı index değerine sahip olan Task gövdesi ilk tamamlanan içeriktir. Dolayısıyla WaitAny metodu geriye 1 değerini döndürmektedir. Geri dönüşten sonra fark edileceği üzere henüz tamamlanmayan Task örnekleri çalışmalarına devam edecektir.
 
-![Exclamation](/assets/images/2011/Exclamation_1.gif) Örnekleri daha iyi kavrayabilmek adına mutlaka çalıştırıp test etmenizi, debug zamanında durarak anlık durumları incelemenizi öneririm.
+> Örnekleri daha iyi kavrayabilmek adına mutlaka çalıştırıp test etmenizi, debug zamanında durarak anlık durumları incelemenizi öneririm.
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda Task örneklerinin sahibi olan çalıştırıcıların (Ana uygulama Thread’ i gibi) nasıl bekletilebileceklerini inclemeye çalıştık. Tabi bu örneklerde istisna fırlatılmasına yönelik vakaları değerlendirmedik. Ancak bu tip durumlarında incelenmesi gerekmektedir. İşte size güzel bir araştırma konusu. Task Parallel Library ile ilişkili kavramları incelemeye devam ediyor olacağız. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
