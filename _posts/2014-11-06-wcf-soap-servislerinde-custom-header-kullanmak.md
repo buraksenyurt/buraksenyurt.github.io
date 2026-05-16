@@ -194,40 +194,40 @@ Metodun ilerleyen kısımlarında dummy bir kod parçası uygulanmış ve sembol
 Senaryomuzda istemci tarafının basit bir Console uygulaması olarak geliştirilmesinde her hangi bir sakınca yoktur. WCF servisine ait referansın indirilmesi ve Proxy tipinin hazırlanmasını takiben aşağıdaki kod içeriği geliştirilerek ilerlenebilir.
 
 ```csharp
-using Consumer.Rolehost; 
-using System; 
-using System.ServiceModel; 
+using Consumer.Rolehost;
+using System;
+using System.ServiceModel;
 using System.ServiceModel.Channels;
 
-namespace Consumer 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            RoleLoaderClient client = new RoleLoaderClient();
+namespace Consumer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            RoleLoaderClient client = new RoleLoaderClient();
 
-            EndpointAddressBuilder addressBuilder = new EndpointAddressBuilder(client.Endpoint.Address);
+            EndpointAddressBuilder addressBuilder = new EndpointAddressBuilder(client.Endpoint.Address);
 
-            addressBuilder.Headers.Add(AddressHeader.CreateAddressHeader("Username",string.Empty,"bsenyurt")); 
-            client.Endpoint.Address = addressBuilder.ToEndpointAddress();
+            addressBuilder.Headers.Add(AddressHeader.CreateAddressHeader("Username", string.Empty, "bsenyurt"));
+            client.Endpoint.Address = addressBuilder.ToEndpointAddress();
 
-            var roles=client.GetRoles();
+            var roles = client.GetRoles();
 
-            foreach (var role in roles) 
-            { 
-                Console.WriteLine(role.Description); 
-                foreach (var action in role.ActionList) 
-                { 
-                    Console.WriteLine("{0} -> {1}" 
-                        ,action.Name.PadRight(20) 
-                        ,action.Status.PadRight(10)); 
-                } 
-            }
+            foreach (var role in roles)
+            {
+                Console.WriteLine(role.Description);
+                foreach (var action in role.ActionList)
+                {
+                    Console.WriteLine("{0} -> {1}"
+                    , action.Name.PadRight(20)
+                    , action.Status.PadRight(10));
+                }
+            }
 
-            client.Close(); 
-        } 
-    } 
+            client.Close();
+        }
+    }
 }
 ```
 

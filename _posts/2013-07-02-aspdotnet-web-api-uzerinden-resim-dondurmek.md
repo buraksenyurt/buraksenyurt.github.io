@@ -14,11 +14,9 @@ tags:
 categories:
   - Web Programlama
 ---
-Eminim çocukken çizgi filmlerle aranız vardı. Hatta çoğumuz yaşı kaç olursa olsun çizgi filmlere arada sırada da olsa zaman ayırmakta. (Ben Batman gördüm mü pür dikkat izlerim örneğin) Keza pek çok büyüğümüz de, eskiden izlediği çizgi filmler ile karşılaştığında taaaa çocukluk yıllarına kadar gidip aynı o zamanki gibi içten gülebiliyorlar da (Rahmetli babamdan bilirim)
+Eminim çocukken çizgi filmlerle aranız vardı. Hatta çoğumuz yaşı kaç olursa olsun çizgi filmlere arada sırada da olsa zaman ayırmakta. (Ben Batman gördüm mü pür dikkat izlerim örneğin) Keza pek çok büyüğümüz de, eskiden izlediği çizgi filmler ile karşılaştığında taaaa çocukluk yıllarına kadar gidip aynı o zamanki gibi içten gülebiliyorlar da (Rahmetli babamdan bilirim) Aslına bakarsanız bazen teknoloji de bizi aynen bu mantıkta epeyce güldürebiliyor. Örneğin Microsoft’ un ürünlerini düşünelim. (Gerçi çok fazlalar ama gene de düşünmeye çalışalım) Sürekli yenilikler çıkartıyorlar, sürekli verisyon atlatıyorlar ve işin en acı tarafı da koşan [Road Runner](https://eksisozluk.com/road-runner--32627)’ a benziyorlar. Biz mi? Biz ise Road Runner’ ı her fırsatta yakalamaya çalışıp yakaladığını zanneden ama son anda hep elinden kaçıran [Coyote](https://eksisozluk.com/coyote--51208)’ ye
 
 ![Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768](/assets/images/2013/Road-Runner-Wile-E-Coyote-looney-tunes-5226561-1024-768.jpg)
-
-Aslına bakarsanız bazen teknoloji de bizi aynen bu mantıkta epeyce güldürebiliyor. Örneğin Microsoft’ un ürünlerini düşünelim. (Gerçi çok fazlalar ama gene de düşünmeye çalışalım) Sürekli yenilikler çıkartıyorlar, sürekli verisyon atlatıyorlar ve işin en acı tarafı da koşan [Road Runner](https://eksisozluk.com/road-runner--32627)’ a benziyorlar. Biz mi? Biz ise Road Runner’ ı her fırsatta yakalamaya çalışıp yakaladığını zanneden ama son anda hep elinden kaçıran [Coyote](https://eksisozluk.com/coyote--51208)’ ye
 
 Bence bu senaryoda developer’ lar biraz daha şanslı. Ya benim gibi düzenli blog tutmaya çalışanlar napsınlar. Sözü fazla uzatmadan ve moralimizi daha da bozmadan konumuza geçelim.
 
@@ -130,13 +128,11 @@ Uygulama kodunun tamamlanmasını müteakip test çalışmalarına başlanabilir
 
 ![wapigi_8](/assets/images/2013/wapigi_8_thumb.png)
 
-Eğer belirli bir pubid değeri için talepte bulunulursa asıl istediğimiz sonuçlara ulaşırız. Yani yayıncının logosuna
-
-api/logos/0736 için aşağıdaki sonuç elde edilirken
+Eğer belirli bir pubid değeri için talepte bulunulursa asıl istediğimiz sonuçlara ulaşırız. Yani yayıncının logosuna. Örneğin, `api/logos/0736` için aşağıdaki sonuç elde edilirken
 
 ![wapigi_9](/assets/images/2013/wapigi_9_thumb.png)
 
-api/logos/1756 için
+`api/logos/1756` için
 
 ![wapigi_10](/assets/images/2013/wapigi_10_thumb.png)
 

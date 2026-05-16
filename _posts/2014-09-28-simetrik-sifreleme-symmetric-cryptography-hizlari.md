@@ -47,213 +47,213 @@ Gelelim kod tarafına. Console uygulaması olarak geliştireceğimiz projemizde 
 ![scs_3](/assets/images/2014/scs_3.png)
 
 ```csharp
-using System; 
-using System.Diagnostics; 
-using System.IO; 
+using System;
+using System.Diagnostics;
+using System.IO;
 using System.Security.Cryptography;
 
-namespace HowTo_Cryptography 
-{ 
-    public static class Utility 
-    { 
-        #region Fields(Alanlar)
+namespace HowTo_Cryptography
+{
+    public static class Utility
+    {
+        #region Fields(Alanlar)
 
-        private static string _targetContent = String.Empty; 
-        private static Stopwatch _watcher = null;
+        private static string _targetContent = String.Empty;
+        private static Stopwatch _watcher = null;
 
-        private static AesCryptoServiceProvider _aesProvider = null; 
-        private static byte[] _aes_Key = null; 
-        private static byte[] _aes_IV = null;
+        private static AesCryptoServiceProvider _aesProvider = null;
+        private static byte[] _aes_Key = null;
+        private static byte[] _aes_IV = null;
 
-        private static TripleDESCryptoServiceProvider _tdesProvider = null; 
-        private static byte[] _tdes_Key = null; 
-        private static byte[] _tdes_IV = null;
+        private static TripleDESCryptoServiceProvider _tdesProvider = null;
+        private static byte[] _tdes_Key = null;
+        private static byte[] _tdes_IV = null;
 
-        private static RijndaelManaged _rijndaelProvider = null; 
-        private static byte[] _rijndael_Key = null; 
-        private static byte[] _rijndael_IV = null;
+        private static RijndaelManaged _rijndaelProvider = null;
+        private static byte[] _rijndael_Key = null;
+        private static byte[] _rijndael_IV = null;
 
-        private static RC2CryptoServiceProvider _rc2Provider = null; 
-        private static byte[] _rc2_Key = null; 
-        private static byte[] _rc2_IV = null;
+        private static RC2CryptoServiceProvider _rc2Provider = null;
+        private static byte[] _rc2_Key = null;
+        private static byte[] _rc2_IV = null;
 
-        private static DESCryptoServiceProvider _desProvider = null; 
-        private static byte[] _des_Key = null; 
-        private static byte[] _des_IV = null;
+        private static DESCryptoServiceProvider _desProvider = null;
+        private static byte[] _des_Key = null;
+        private static byte[] _des_IV = null;
 
         #endregion
 
-        static Utility() 
-        { 
-            _aesProvider = new AesCryptoServiceProvider(); 
-            _aes_Key = _aesProvider.Key; 
-            _aes_IV = _aesProvider.IV;
+        static Utility()
+        {
+            _aesProvider = new AesCryptoServiceProvider();
+            _aes_Key = _aesProvider.Key;
+            _aes_IV = _aesProvider.IV;
 
-            _tdesProvider = new TripleDESCryptoServiceProvider(); 
-            _tdes_Key = _tdesProvider.Key; 
-            _tdes_IV = _tdesProvider.IV;
+            _tdesProvider = new TripleDESCryptoServiceProvider();
+            _tdes_Key = _tdesProvider.Key;
+            _tdes_IV = _tdesProvider.IV;
 
-            _rijndaelProvider = new RijndaelManaged(); 
-            _rijndael_Key = _rijndaelProvider.Key; 
-            _rijndael_IV = _rijndaelProvider.IV;
+            _rijndaelProvider = new RijndaelManaged();
+            _rijndael_Key = _rijndaelProvider.Key;
+            _rijndael_IV = _rijndaelProvider.IV;
 
-            _rc2Provider = new RC2CryptoServiceProvider(); 
-            _rc2_Key = _rc2Provider.Key; 
-            _rc2_IV = _rc2Provider.IV;
+            _rc2Provider = new RC2CryptoServiceProvider();
+            _rc2_Key = _rc2Provider.Key;
+            _rc2_IV = _rc2Provider.IV;
 
-            _desProvider = new DESCryptoServiceProvider(); 
-            _des_Key = _desProvider.Key; 
-            _des_IV = _desProvider.IV;
+            _desProvider = new DESCryptoServiceProvider();
+            _des_Key = _desProvider.Key;
+            _des_IV = _desProvider.IV;
 
-            _targetContent = ReadContent(); 
-            _watcher = new Stopwatch(); 
-        }
+            _targetContent = ReadContent();
+            _watcher = new Stopwatch();
+        }
 
         #region AES(Advanced Encyption Standard)
 
         // Şifreleme metodu 
-        public static byte[] AES_Encrypt() 
-        { 
-            return Encypt<AesCryptoServiceProvider>(_aesProvider, _aes_Key, _aes_IV); 
-        }
+        public static byte[] AES_Encrypt()
+        {
+            return Encypt<AesCryptoServiceProvider>(_aesProvider, _aes_Key, _aes_IV);
+        }
 
         // Çözümleme metodu 
-        public static string AES_Decrypt(byte[] source) 
-        { 
-            return Decrypt<AesCryptoServiceProvider>(_aesProvider, source, _aes_Key, _aes_IV); 
-        }
+        public static string AES_Decrypt(byte[] source)
+        {
+            return Decrypt<AesCryptoServiceProvider>(_aesProvider, source, _aes_Key, _aes_IV);
+        }
 
         #endregion
 
         #region TripleDES
 
         // Şifreleme metodu 
-        public static byte[] TripleDES_Encrypt() 
-        { 
-            return Encypt<TripleDESCryptoServiceProvider>(_tdesProvider, _tdes_Key, _tdes_IV); 
-        }
+        public static byte[] TripleDES_Encrypt()
+        {
+            return Encypt<TripleDESCryptoServiceProvider>(_tdesProvider, _tdes_Key, _tdes_IV);
+        }
 
         // Çözümleme metodu 
-        public static string TripleDES_Decrypt(byte[] source) 
-        { 
-            return Decrypt<TripleDESCryptoServiceProvider>(_tdesProvider, source, _tdes_Key, _tdes_IV); 
-        }
+        public static string TripleDES_Decrypt(byte[] source)
+        {
+            return Decrypt<TripleDESCryptoServiceProvider>(_tdesProvider, source, _tdes_Key, _tdes_IV);
+        }
 
         #endregion
 
         #region Rijndael
 
         // Şifreleme metodu 
-        public static byte[] Rijndael_Encrypt() 
-        { 
-            return Encypt<RijndaelManaged>(_rijndaelProvider, _rijndael_Key, _rijndael_IV); 
-        }
+        public static byte[] Rijndael_Encrypt()
+        {
+            return Encypt<RijndaelManaged>(_rijndaelProvider, _rijndael_Key, _rijndael_IV);
+        }
 
         // Çözümleme metodu 
-        public static string Rijndael_Decrypt(byte[] source) 
-        { 
-            return Decrypt<RijndaelManaged>(_rijndaelProvider, source, _rijndael_Key, _rijndael_IV); 
-        }
+        public static string Rijndael_Decrypt(byte[] source)
+        {
+            return Decrypt<RijndaelManaged>(_rijndaelProvider, source, _rijndael_Key, _rijndael_IV);
+        }
 
         #endregion
 
         #region RC2
 
         // Şifreleme metodu 
-        public static byte[] RC2_Encrypt() 
-        { 
-            return Encypt<RC2CryptoServiceProvider>(_rc2Provider, _rc2_Key, _rc2_IV); 
-        }
+        public static byte[] RC2_Encrypt()
+        {
+            return Encypt<RC2CryptoServiceProvider>(_rc2Provider, _rc2_Key, _rc2_IV);
+        }
 
         // Çözümleme metodu 
-        public static string RC2_Decrypt(byte[] source) 
-        { 
-            return Decrypt<RC2CryptoServiceProvider>(_rc2Provider, source, _rc2_Key, _rc2_IV); 
-        }
+        public static string RC2_Decrypt(byte[] source)
+        {
+            return Decrypt<RC2CryptoServiceProvider>(_rc2Provider, source, _rc2_Key, _rc2_IV);
+        }
 
         #endregion
 
         #region DES
 
         // Şifreleme metodu 
-        public static byte[] DES_Encrypt() 
-        { 
-            return Encypt<DESCryptoServiceProvider>(_desProvider, _des_Key, _des_IV); 
-        }
+        public static byte[] DES_Encrypt()
+        {
+            return Encypt<DESCryptoServiceProvider>(_desProvider, _des_Key, _des_IV);
+        }
 
         // Çözümleme metodu 
-        public static string DES_Decrypt(byte[] source) 
-        { 
-            return Decrypt<DESCryptoServiceProvider>(_desProvider, source, _des_Key, _des_IV); 
-        }
+        public static string DES_Decrypt(byte[] source)
+        {
+            return Decrypt<DESCryptoServiceProvider>(_desProvider, source, _des_Key, _des_IV);
+        }
 
         #endregion
 
         #region Generic şifreleme ve çözümleme metodları
 
-        static byte[] Encypt<T>(T provider,byte[] key,byte[] iv) 
-            where T:SymmetricAlgorithm 
-        { 
-            byte[] result = null; 
-            ICryptoTransform encryptor = provider.CreateEncryptor(key, iv);
+        static byte[] Encypt<T>(T provider, byte[] key, byte[] iv)
+ where T : SymmetricAlgorithm
+        {
+            byte[] result = null;
+            ICryptoTransform encryptor = provider.CreateEncryptor(key, iv);
 
-            _watcher.Restart();
+            _watcher.Restart();
 
-            using (MemoryStream ms = new MemoryStream()) 
-           { 
-                using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write)) 
-               { 
-                    using (StreamWriter sWriter = new StreamWriter(cs)) 
-                    { 
-                        sWriter.Write(_targetContent); 
-                    } 
-                    result=ms.ToArray(); 
-               } 
-           }
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+                {
+                    using (StreamWriter sWriter = new StreamWriter(cs))
+                    {
+                        sWriter.Write(_targetContent);
+                    }
+                    result = ms.ToArray();
+                }
+            }
 
-            _watcher.Stop(); 
-            Console.WriteLine("Encrypt\t{0}\n{1}",provider.ToString(),_watcher.ElapsedMilliseconds.ToString());
+            _watcher.Stop();
+            Console.WriteLine("Encrypt\t{0}\n{1}", provider.ToString(), _watcher.ElapsedMilliseconds.ToString());
 
-            return result; 
-       }
+            return result;
+        }
 
-        static string Decrypt<T>(T provider,byte[] source, byte[] key, byte[] iv) 
-            where T : SymmetricAlgorithm 
-        { 
-            string result = String.Empty;
+        static string Decrypt<T>(T provider, byte[] source, byte[] key, byte[] iv)
+         where T : SymmetricAlgorithm
+        {
+            string result = String.Empty;
 
-            ICryptoTransform decryptor = provider.CreateDecryptor(key, iv);
+            ICryptoTransform decryptor = provider.CreateDecryptor(key, iv);
 
-            _watcher.Restart();
+            _watcher.Restart();
 
-            using (MemoryStream ms = new MemoryStream(source)) 
-            { 
-               using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read)) 
-                { 
-                    using (StreamReader sReader = new StreamReader(cs)) 
-                   { 
-                        result=sReader.ReadToEnd(); 
-                    } 
-                } 
-           }
+            using (MemoryStream ms = new MemoryStream(source))
+            {
+                using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read))
+                {
+                    using (StreamReader sReader = new StreamReader(cs))
+                    {
+                        result = sReader.ReadToEnd();
+                    }
+                }
+            }
 
-            _watcher.Stop(); 
-            Console.WriteLine("Encrypt\t{0}\n{1}\n", provider.ToString(), _watcher.ElapsedMilliseconds.ToString());
+            _watcher.Stop();
+            Console.WriteLine("Encrypt\t{0}\n{1}\n", provider.ToString(), _watcher.ElapsedMilliseconds.ToString());
 
-            return result; 
-        }
+            return result;
+        }
 
         #endregion
 
         #region Yardımcı metodlar
 
-        static string ReadContent() 
-        { 
-            return File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "SampleDocument.txt")); 
-        }
+        static string ReadContent()
+        {
+            return File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "SampleDocument.txt"));
+        }
 
         #endregion 
-    } 
+    }
 }
 ```
 
@@ -280,17 +280,17 @@ Gerek şifreleme gerek çözümleme operasyonları olsun, her ikisinde de Crypto
 Aslında yazma/şifreleme operasyonundaki yapı şu şekilde özetlenebilir.
 
 ```csharp
-using (MemoryStream ms = new MemoryStream()) 
-            { 
-                using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write)) 
-                { 
-                    using (StreamWriter sWriter = new StreamWriter(cs)) 
-                    { 
-                        sWriter.Write(_targetContent); 
-                    } 
-                    result=ms.ToArray(); 
-                } 
-            }
+using (MemoryStream ms = new MemoryStream())
+{
+    using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+    {
+        using (StreamWriter sWriter = new StreamWriter(cs))
+        {
+            sWriter.Write(_targetContent);
+        }
+        result = ms.ToArray();
+    }
+}
 ```
 
 StreamWriter, CryptoStream’ e yazar. CryptoStream ise MemoryStream’ e. Son olarak MemoryStream örneği üzerine yazılan içerik bir byte[] array’ e atanır.

@@ -20,6 +20,8 @@ categories:
 ---
 Bir süre önce çalıştığım firmada ufak bir web uygulaması ihtiyacı ile karşılaştım. Bir kaç günlük efor isteyen bu basit işte, uzun süredir kullanmadığım eski dostumuz GridView kontrolü ile haşır neşir oldum. Onun bir kaç etkili özelliğini ve işe yarar ip uçlarını tekrardan hatırladım. Hal böyle olunca bir araya getirip basit bir video anlatımında birleştirmek istedim. Ele aldığımız konulara gelince.
 
+[Youtube Link](https://youtu.be/2nXeoPfhbgY?si=9nwCqnFSYzMFsbjs)
+
 - Hiç veri olmadığında GridView.
 - Alan içeriklerini formatlamak.
 - N sayıda alan kullanan Link vermek.

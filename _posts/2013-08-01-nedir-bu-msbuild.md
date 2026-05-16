@@ -35,7 +35,7 @@ Visual Studio ortamında geliştirdiğimiz projeleri göz önüne aldığımızd
 
 > Visual Studio ile geliştirilen proje dosyaları C# tarafı için csproj, Visual Basic tarafı için vbproj, Managed C++ tarafı içinse vcxproj uzantılı olanlardır.
 
-Hangi Durumlarda MSBuild
+## Hangi Durumlarda MSBuild
 
 Peki MSBuild ağırlık olarak hangi hallerde ele alınır.
 
@@ -50,7 +50,7 @@ Peki MSBuild ağırlık olarak hangi hallerde ele alınır.
 
 ve benzeri pek çok durumda MSBuild’ u açık bir şekilde özelleştirerek kullanabiliriz.
 
-Proje Dosyasının İçine Bakalım
+## Proje Dosyasının İçine Bakalım
 
 Hızlı bir şekilde uygulama geliştirme işine giren pek çok yazılımcı çoğunlukla MSBuild gibi programların ürettiği çıktıları göz ardı etmektedir. Nasıl olsa binlerce dolar verilerek satın alınan Visual Studio bizim yerimize pek güzel bu işi halletmektedir. Ancak gerçek hayatta öyle vakalar ve senaryolara vuku bulmaktadır ki, bunların üstesinden gelebilmek için özelleştirmelere gidilmesi şart olmaktadır. Bu özelleştirme konsepti MSBuild tarafı için de geçerlidir. Bu sebepten proje dosyalarının içeriğinin az da olsa bilinmesi en azından şema yapısının anlaşılması yararlıdır. Tipik olarak bir Console uygulaması dahi açsak, üretilen proje dosyası içerisinde (ki örneğimiz csproj uzantılı olandır) aşağıdakine benzer bir içerik oluştuğu görülecektir.
 
@@ -123,9 +123,7 @@ Aslında içerik okunduğunda, Visual Studio Proje Özelliklerinden de ayarladı
 
 Debug ile alakalı PropertyGroup’ a bakıldığında uygulamanın vereceği çıktının exe olacağı,.Net Framework 4.5 platformunu hedef aldığı, Assembly adının ConsoleApplication33 olduğu ve buna bağlı olarak da Root Namespace’ in yine ConsoleApplication33 şeklinde set edildiği görülebilir. Condition niteliklerinde belirtilen kısımlar, MSBuild uygulamasına bazı kriterlere göre nasıl çıktı üretmesi gerektiğini de söylemektedir. Örneğin uygulama Release modda inşa edildiğinde, çıktının bin\Release klasörüne doğru yapılması gerektiği yine bir PropertyGroup içerisinde ifade edilmiştir.
 
-> Condition niteliklerinde kullanılan $ notasyonu mutlaka dikkatinizi çekmiştir. Aslında burada $[PropertyName] şeklinde bir kullanım söz konusudur. Burada inanılmaz geniş bir esneklik vardır.
-> Örneğin $(registery:Hive\SomeKey\SomeSubKey@Value) gibi bir ifade ile Registery’ deki bir değeri okuyabilir ve Build içerisinde kullanabiliriz. Ya da $([System.DateTime]::Now.ToString ("yyyy.MM.dd")) gibi bir kullanım ile o anki zamanı istediğimiz formatta elde edebiliriz vb…
-> [PropertyName] yerine gelecek MSBuild özelliklerinin neler olabileceğini [MSDN adresinden](http://msdn.microsoft.com/en-us/library/ms171458.aspx) öğrenebilirsiniz.
+> Condition niteliklerinde kullanılan `$` notasyonu mutlaka dikkatinizi çekmiştir. Aslında burada `$[PropertyName]` şeklinde bir kullanım söz konusudur. Burada inanılmaz geniş bir esneklik vardır. Örneğin `$(registery:Hive\SomeKey\SomeSubKey@Value)` gibi bir ifade ile Registery’ deki bir değeri okuyabilir ve Build içerisinde kullanabiliriz. Ya da `$([System.DateTime]::Now.ToString ("yyyy.MM.dd"))` gibi bir kullanım ile o anki zamanı istediğimiz formatta elde edebiliriz vb… `[PropertyName]` yerine gelecek MSBuild özelliklerinin neler olabileceğini [MSDN adresinden](http://msdn.microsoft.com/en-us/library/ms171458.aspx) öğrenebilirsiniz.
 
 ItemGroup elementleri içerisine bakıldığında, uygulamanın referans ettiği diğer Assembly’ ların adları, Compile işlemi sırasında derlemeye tabi olacak C# dosyaları gibi bilgiler yer almaktadır. Visual Studio’ nun ürettiği XML içeriğine bakıldığında, son kısımda yorum satırları içerisine dahil edilmiş Target isimli bir element daha olduğu görülmektedir. Bu elementi kullanarak MSBuild için bazı Task’ lar tanımlanabilir ve inşa işlemi sırasında devreye girmeleri sağlanabilir.
 
@@ -133,7 +131,7 @@ Task olarak yapılan tanımlamalar paylaşılabilir ve farklı geliştirme Build
 
 > Schema yapısı bu kadar basit değildir. Kullanılabilecek tüm elementler için [MSDN üzerindeki şu adrese gitmenizi](http://msdn.microsoft.com/en-us/library/5dy88c2e.aspx) öneririm.
 
-Klavye Başına
+## Klavye Başına
 
 Yazımızın bu bölümünde basit bir örnek geliştirmeye çalışıyor olacağız. Amacımız temel seviyede MSBuild aracını kullanmak ve konsepti anlamaya çalışmak olacaktır. İlk olarak basit bir C# koduna ihtiyacımız var. Bu amaçla örneğin C:\Samples\HowToMSBuild\ isimli klasör altında, aşağıdaki içeriğe sahip bir C# dosyası oluşturduğumuzu düşünelim.
 
@@ -156,17 +154,19 @@ Project içerisinde bir adet ItemGroup ve Target elementi yer almaktadır. ItemG
 
 Bu içeriği Builder.csproj adı ile kaydettikten sonra ise sıradaki operasyon, MSBuild komut satırı aracını kullanarak inşa işlemini yürüttürmektir. Bunun için MSBuild’ u aşağıdaki gibi kullanabiliriz.
 
+```bash
 msbuild Builder.csproj /t: Build /verbosity: detailed
+```
 
 ![msbuild_5](/assets/images/2013/msbuild_5.png)
 
-Görüldüğü gibi çalışma sonrasında MSBuildHowTo isimli bir exe dosyası oluşmuştur. Söz konusu exe dosyasını doğrudan çalıştırdığımızda ise, pre-precessor direktifi dışında kalan kod parçasının yürütüldüğü gözlemlenecektir.
+Görüldüğü gibi çalışma sonrasında MSBuildHowTo isimli bir exe dosyası oluşmuştur. Söz konusu exe dosyasını doğrudan çalıştırdığımızda ise, pre-precessor direktifi dışında kalan kod parçasının yürütüldüğü gözlemlenecektir. MSBuild özellikle kurulu olan.Net Framework versiyonuna bağlı olaraktan `Microsoft.Net\Framework\vX.X.XXXXX` altında yer almaktadır. Örneğin ben kendi sistemimde aşağıdaki klasörde yer alan sürümü kullandım.
 
-> MSBuild özellikle kurulu olan.Net Framework versiyonuna bağlı olaraktan Microsoft.Net\Framework\vX.X.XXXXX altında yer almaktadır. Örneğin ben kendi sistemimde aşağıdaki klasörde yer alan sürümü kullandım.
-> ![msbuild_4](/assets/images/2013/msbuild_4.png)
-> Bunu sistem’ de Path olarak belirtebiliriz ama dilerseniz doğrudan Visual Studio Command Prompt’ tan da yararlanabiliriz.
+![msbuild_4](/assets/images/2013/msbuild_4.png)
 
-CSPROJ İçeriğini Genişletelim
+Bunu sistem’ de Path olarak belirtebiliriz ama dilerseniz doğrudan Visual Studio Command Prompt’ tan da yararlanabiliriz.
+
+## CSPROJ İçeriğini Genişletelim
 
 Şimdi csproj dosyasının içeriğini biraz daha genişletelim ve aşağıdaki hale getirelim.
 
@@ -190,13 +190,15 @@ Bu sefer PropertyGroup içerisinde assembly adını (AssemblyName elementi) ve b
 
 Csc elementinde ise derleme işlemi için kullanılacak olan kaynak Sources elementi ile ifade edilirken, aslında ItemGroup içerisindeki Compile elementinde yer alan Include niteliğinin değeri işaret edilmektedir. OutputAssembly niteliğine atanan değer ise, OutputhPath özelliğinin belirttiği klasörün altına AssemblyName’ in işaret ettiği isimle bir exe üretilmesi gerektiğini belirtmektedir. Buna göre komut satırından yapılan MSBuild çağrısı sonucu aşağıdaki gibi olacaktır.
 
+```bash
 msbuild Builder.csproj /t: Build /verbosity: detailed
+```
 
 ![msbuild_6](/assets/images/2013/msbuild_6.png)
 
 Oldukça zevkli öyle değil mi?
 
-Target Belirtmek
+## Target Belirtmek
 
 Öyleyse gelin olayı biraz daha genişleterek devam edelim.
 
@@ -222,7 +224,9 @@ Target Belirtmek
 
 Bu seferki çalışmada 3 adet Target elementi söz konusudur. Ancak her birinin Name niteliğinin değerleri farklıdır. Buna göre, Build, Clean ve Rebuild isimli Target’ lar olduğunu ve aslında bunların 3 ayrı Task’ ı ifade ettiğini düşünebiliriz. Yani MSBuild aracını kullanırken /t: [TargetNameValue] şeklinde bir yaklaşım ile, istediğimiz Target’ ın yürütülmesini sağlayabiliriz. Söz gelimi;
 
+```bash
 msbuild Builder.csproj /t: Clean /verbosity: detailed
+```
 
 şeklinde yapılan çağrı sonucunda, proje dosyasındaki Target elementlerinden Clean isimli olanı çalıştırılacaktır. Bu elementte ise Delete isimli bir alt element yer almakta olup Files niteliğinde belirtilen kritere göre, Bin klasöre altında assembly adı ile duran exe dosyasının silinmesi gerektiği ifade edilmektedir.
 
@@ -234,15 +238,17 @@ Eğer Rebuild takısını kullanırsak bu durumda Target->Name niteliği Rebuild
 
 ki bu durumda Bin klasörü içeriği silinecek ve tekrardan bir derleme işlemi yapılarak, orada ilgili exe çıktısının üretilmesi sağlanacaktır.
 
+```bash
 msbuild Builder.csproj /t: Rebuild /verbosity: detailed
+```
 
 ![msbuild_8](/assets/images/2013/msbuild_8.png)
 
-Örnekler daha da çoğaltılabilir. Yapılabilecek pek çok şey var
+Örnekler daha da çoğaltılabilir. Yapılabilecek pek çok şey var.
 
 Bunun için mutlaka MSDN orjinli bir kaynağa başvurmanızı veya yazımızın sonunda belirttiğimiz tarzdaki bir kitabı tedarik etmenizi öneririm. Ancak temel mantığı ifade edebildiğimizi varsayıyorum. Bundan sonrasında Condition’ lara ve kullanılabilecek element/attribute tiplerine bakılması yeterli olur düşüncesindeyim.
 
-.Net Framework 4.5 ile Gelen Yenilikler
+## .Net Framework 4.5 ile Gelen Yenilikler
 
 MSBuild ürününe Framework 4.5 sürümü ile birlikte bazı geliştirmeler ve yeni özellikler de katılmıştır. Henüz inceleme fırsatı bulamadığım bu özellikleri aşağıdaki maddeler ile özetleyebiliriz.
 
@@ -253,16 +259,14 @@ MSBuild ürününe Framework 4.5 sürümü ile birlikte bazı geliştirmeler ve 
 
 > MSBuild’ un etkili kullanımı üzerine geliştirilmiş bazı araçlar da vardır. Görsel arabirimleri olan bu araçlar yardımıyla MSBuild akışlarını daha kolay yönetebiliriz. Attrice firmasının bu alanda ön plana çıkan [Microsoft Build Sidekick](http://www.attrice.info/msbuild/index.htm) isimli ürünü gibi.
 
-Öneri Kitap
+## Öneri Kitap
 
-![msbuild_1](/assets/images/2013/msbuild_1.jpg) Microsoft’ un Visual Studio ailesi ve geliştirme platformu oldukça geniş bir alana yayılmakta olup, pek çok notkasında uzmanlık gerektiren yapılar içermektedir. Bu sebepten söz konusu yapılara yönelik pek çok yayın da (kitap, official site, blog vb) mevcuttur.
+![msbuild_1](/assets/images/2013/msbuild_1.jpg)
+
+Microsoft’ un Visual Studio ailesi ve geliştirme platformu oldukça geniş bir alana yayılmakta olup, pek çok notkasında uzmanlık gerektiren yapılar içermektedir. Bu sebepten söz konusu yapılara yönelik pek çok yayın da (kitap, official site, blog vb) mevcuttur.
 
 Örneğin MSBuild tarafında daha önceden yayınlanmış olan Inside The Microsoft Build Engine isimli kitabın Nisan ayı içerisinde yayınlanan yeni bir tamamlayıcı baskısı mevcuttur. Yaklaşık olarak 120 sayfalık bir kitap olmasına rağmen odaklandığı konu özünde MSBuild ürünüdür. Kitaba [Amazon üzerinden bu adres yardımıyla](http://www.amazon.com/Supplement-Inside-Microsoft%C2%AE-Build-Engine/dp/0735678162/ref=sr_1_1?s=books&ie=UTF8&qid=1361775657&sr=1-1&keywords=msbuild) erişebilirsiniz.
 
-Böylece geldik bir yazımızın daha sonuna. Bu yazımızda kısada olsa, MSBuild platformunu ve XML tarafındaki betikleri (Scripts) anlamaya çalıştık. Ağırlıklı olarak bir inşa sürecine müdahale edebildiğimizi, bunun için platformun sunduğu bazı standart element ve niteliklerin olduğunu gördük. Devamı sizde artık
+Böylece geldik bir yazımızın daha sonuna. Bu yazımızda kısada olsa, MSBuild platformunu ve XML tarafındaki betikleri (Scripts) anlamaya çalıştık. Ağırlıklı olarak bir inşa sürecine müdahale edebildiğimizi, bunun için platformun sunduğu bazı standart element ve niteliklerin olduğunu gördük. Devamı sizde artık. Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim. [Orjinal Yazım Tarihi – 25/02/2013]
 
-Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim.
-
-[Orjinal Yazım Tarihi – 25/02/2013]
-
-[[Güncel bilgi –> MS Build is now part of Visual Studio!]](http://blogs.msdn.com/b/visualstudio/archive/2013/07/24/msbuild-is-now-part-of-visual-studio.aspx)
+[Güncel bilgi –> MS Build is now part of Visual Studio!](http://blogs.msdn.com/b/visualstudio/archive/2013/07/24/msbuild-is-now-part-of-visual-studio.aspx)

@@ -6,11 +6,7 @@ tags: []
 categories:
   - Foto İpucu
 ---
-Şirkette üzerinizdeki işler hafiflemiş durumda. Epeydir de yoğun çalışıyordunuz. Şöyle bir ara vermek istediniz. En azından bir on beş dakikanız serbest. Internette gezinebilirseniz de ama...Başka bir şeylere de bakılabilir. Öyleyse antrenman sorusu geliyor.
-
-Bir feed içeriğini kod yoluyla çekmek için şirketinizin internet çıkış proxy bilgilerini, kullanmak istediğiniz XDocument nesne örneğine nasıl bildirirsiniz?
-
-Bu gereksinimi karşılamanın bir yolu aşağıdaki kod parçasında görüldüğü gibi olabilir mi?
+Şirkette üzerinizdeki işler hafiflemiş durumda. Epeydir de yoğun çalışıyordunuz. Şöyle bir ara vermek istediniz. En azından bir on beş dakikanız serbest. Internette gezinebilirseniz de ama...Başka bir şeylere de bakılabilir. Öyleyse antrenman sorusu geliyor. Bir feed içeriğini kod yoluyla çekmek için şirketinizin internet çıkış proxy bilgilerini, kullanmak istediğiniz XDocument nesne örneğine nasıl bildirirsiniz? Bu gereksinimi karşılamanın bir yolu aşağıdaki kod parçasında görüldüğü gibi olabilir mi?
 
 ![tfi_106.png](/assets/images/2014/tfi_106.png)
 

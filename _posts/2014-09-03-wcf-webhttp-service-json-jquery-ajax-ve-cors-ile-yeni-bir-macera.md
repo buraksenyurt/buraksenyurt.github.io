@@ -13,11 +13,9 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Bir süredir şirket içerisinde kullanılacak olan web tabanlı bir.Net uygulamasının geliştirilmesinde görev almaktayım. Uygulama, yürütülen süreç gereği her iterasyon sonunda yeni özellikler eklenmiş ve hataları giderilmiş biçimde Üretim (Production) ortamına taşınmakta.
+Bir süredir şirket içerisinde kullanılacak olan web tabanlı bir.Net uygulamasının geliştirilmesinde görev almaktayım. Uygulama, yürütülen süreç gereği her iterasyon sonunda yeni özellikler eklenmiş ve hataları giderilmiş biçimde Üretim (Production) ortamına taşınmakta. Projede kaynak sıkıntısı nedeniyle uzun bir süre servis katmanı haricinde kalan arayüz tarafı ile de ilgilenmek zorunda kaldım. Arayüz tarafı ile uğraşırken iş biriminden gelen isteklere göre CSS (Cascading Style Sheets) ve bol miktarda Javascript kodlamak benim gibi acemiler için epeyce zorlayıcıydı. Lakin en çok zaman kaybettiğim vaka, şirket içinde kullanılmakta olan eski,yeni ve çeşitli tipteki tarayıcıların uyumlu çalışmasının sağlanabilmesiydi. Kimi lokasyonda Internet Explorer 8, kimi yerlede Google Chrome’ un en güncel sürümü bulunmakta. Hatta global çevrimde Firefox standart olarak her bilgisasyarda yüklü geliyor.
 
 ![browser_wars](/assets/images/2014/browser_wars.jpg)
-
-Projede kaynak sıkıntısı nedeniyle uzun bir süre servis katmanı haricinde kalan arayüz tarafı ile de ilgilenmek zorunda kaldım. Arayüz tarafı ile uğraşırken iş biriminden gelen isteklere göre CSS (Cascading Style Sheets) ve bol miktarda Javascript kodlamak benim gibi acemiler için epeyce zorlayıcıydı. Lakin en çok zaman kaybettiğim vaka, şirket içinde kullanılmakta olan eski,yeni ve çeşitli tipteki tarayıcıların uyumlu çalışmasının sağlanabilmesiydi. Kimi lokasyonda Internet Explorer 8, kimi yerlede Google Chrome’ un en güncel sürümü bulunmakta. Hatta global çevrimde Firefox standart olarak her bilgisasyarda yüklü geliyor.
 
 Şunu fark ettim ki, tarayıcı savaşları makalelerde okuduğumuzdan çok daha ciddi boyutta. Havada uçuşan standartları farklı farklı yorumlama biçimleri nedeniyle her tarayıcıya uygun standart çözümler üretmek gerçekten zormuş. En azından benim için
 
@@ -254,4 +252,3 @@ Elbette senaryomuzda önemli eksiklikler bulunmaktadır. Örneğin,
 Bu soruların çözümünü, araştırmasını ve uygulanmasını siz değerli okurlarıma bırakıyorum. Bu mücadeleler inanın size önemli saha tecrübeleri kazandıracaktır. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_RestPostJQuery.rar (111,76 kb)](/assets/files/2014/HowTo_RestPostJQuery.rar)
-

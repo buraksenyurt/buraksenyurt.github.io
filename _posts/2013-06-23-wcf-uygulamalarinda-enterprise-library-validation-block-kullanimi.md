@@ -230,9 +230,7 @@ Sonuç olarak servis tarafına ait konfigurasyon dosyası içeriği aşağıdaki
 </configuration>
 ```
 
-Şimdi örnek bir istemci uygulama geliştirerek senaryomuzu teste çıkabiliriz. Basit bir Console uygulaması pekala işimizi görecektir
-
-Console uygulamasına servis referansını ekledikten sonra, aşağıdaki kodları geliştirdiğimizi düşünelim.
+Şimdi örnek bir istemci uygulama geliştirerek senaryomuzu teste çıkabiliriz. Basit bir Console uygulaması pekala işimizi görecektir. Console uygulamasına servis referansını ekledikten sonra, aşağıdaki kodları geliştirdiğimizi düşünelim.
 
 > İstemci uygulamada ValidationFault tipinin kullanılabilmesi için, Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF.dll assemby’ ının da projeye referans edilmesi gerekmektedir. Bu Assembly ne yazık ki Add Service Reference seçeneği sonrası otomatik olarak eklenmemektedir.
 

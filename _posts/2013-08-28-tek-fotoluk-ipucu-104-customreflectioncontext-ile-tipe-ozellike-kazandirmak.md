@@ -16,5 +16,4 @@ Bir tipin çalışma zamanında Reflection ile yakalanabilen özelliklerine ilav
 
 ![tfi_104n](/assets/images/2013/tfi_104n.png)
 
-Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim
-
+Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.

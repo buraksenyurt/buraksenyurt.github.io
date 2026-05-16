@@ -14,17 +14,13 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Geçtiğimiz gün standart olarak Youtube üzerinden gerek 80ler, gerek 90lara ait iz bırakan sanatçıları ve şarkılarını izlemekteydim. Çok sık yaptığım şeylerden birisi de bu şarkıları sosyal ağda paylaşmak aslında. Ama bazende şarkıların melodileri dışında sözlerini de mırıldanmaktayım kendi kendime, ki pek çoğumuzun bunu sıkça yaptığından eminim
+Geçtiğimiz gün standart olarak Youtube üzerinden gerek 80ler, gerek 90lara ait iz bırakan sanatçıları ve şarkılarını izlemekteydim. Çok sık yaptığım şeylerden birisi de bu şarkıları sosyal ağda paylaşmak aslında. Ama bazende şarkıların melodileri dışında sözlerini de mırıldanmaktayım kendi kendime, ki pek çoğumuzun bunu sıkça yaptığından eminim. Fark ettim ki, pek çok şarkının sözünü unutuyorum/unutmuşum. Hatırlamak için de internet üzerinden Googlelamam gerekiyor. Gerçi bununla ilişkili belli başlı siteler de var ve onları da kullanabilirim ama elimde basit bir program arayüzü olsa çok daha etkili olabilir.
 
 ![scorpions-the-millenium-collection](/assets/images/2014/scorpions-the-millenium-collection.jpg)
 
-Fark ettim ki, pek çok şarkının sözünü unutuyorum/unutmuşum. Hatırlamak için de internet üzerinden Googlelamam gerekiyor. Gerçi bununla ilişkili belli başlı siteler de var ve onları da kullanabilirim ama elimde basit bir program arayüzü olsa çok daha etkili olabilir.
+Mesela bir Windows Forms veya WPF (Windows Presentation Foundation) uygulaması olsa. Internete bağlanabildiği sürece istediğim sanatçının istenen albümündeki istediğim şarkının sözlerini getirse. İşte bu amaçla çıktım yola ve basit bir uygulama geliştirmek üzere oturdum bilgisayarımın başına.
 
-Mesela bir Windows Forms veya WPF (Windows Presentation Foundation) uygulaması olsa. Internete bağlanabildiği sürece istediğim sanatçının istenen albümündeki istediğim şarkının sözlerini getirse
-
-İşte bu amaçla çıktım yola ve basit bir uygulama geliştirmek üzere oturdum bilgisayarımın başına.
-
-LyricWiki
+## LyricWiki
 
 [LyricWiki](http://api.wikia.com/wiki/LyricWiki_lyrics) isimli şarkı sözlerine ait detaylı bir içeriğe sahip olan site, dış dünyaya da servisler aracılığıyla destek vermekte. SOAP (Simple Object Access Protocol) bazlı servisler kullanılabileceği gibi REST (Representational State Transfer) API tarzındaki hizmetler yardımıyla da şarkı aramaları yapılabilmekte. Lyrics Wikia dan örnek servis çağrısı kullanımı, Linkin Park gurubu için aşağıdaki gibidir.
 
@@ -36,46 +32,41 @@ Peki bir şarkının sözlerini nasıl alabiliriz?
 
 Örneğin Linkin Park’ ın 1997 yılı Xero albümündeki Fuse isimli şarkının sözlerini Text, HTML, XML veya JSON formatlarında almak istediğimizi düşünelim. Bu durumda URL sorgularımızın aşağıdaki gibi olması yeterlidir. Dikkat edileceği üzere fmt parametresinin değiştirilmesi, istenen formatta (HTML, Text, JSON, XML) bir çıktı alınması için yeterlidir.
 
-HTML (Hyper Text Markup Language)
-
-[http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=html](http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=html) için
+HTML (Hyper Text Markup Language): `http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=html` için
 
 ![lyricapi_2](/assets/images/2014/lyricapi_2.png)
 
-Text
-
-[http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=text](http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=text) için
+Text: `http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=text` için
 
 "Of course you know what a fuse is... It's a long piece of cord impregnated with gun powder. When you strike a match and light it It burns, fitfully, spiraling to its end At which there is, a little surprise..." From the planet of Krypton Short suit MCs you will be ripped on (ripped on) You fell off and it's my lyric sheet you slipped on Get[...]
 
-XML (eXtensible Markup Language)
-
-[http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=xml](http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=xml) için
+XML (eXtensible Markup Language): `http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=xml` için
 
 ```xml
-<LyricsResult> 
-<artist>Linkin Park</artist> 
-<song>Fuse</song> 
-<lyrics> 
-"Of course you know what a fuse is... It's a long piece of cord impregnated with gun powder. When you strike a match and light it It burns, fitfully, spiraling to its end At which there is, a little surprise..." From the planet of Krypton Short suit MCs you will be ripped on (ripped on) You fell off and it's my lyric sheet you slipped on Get[...] 
-</lyrics> 
-<url>http://lyrics.wikia.com/Linkin_Park:Fuse</url> 
-<page_namespace>0</page_namespace> 
-<page_id>459941</page_id> 
-<isOnTakedownList>0</isOnTakedownList> 
+<LyricsResult>
+    <artist>Linkin Park</artist>
+    <song>Fuse</song>
+    <lyrics>
+        "Of course you know what a fuse is... It's a long piece of cord impregnated with gun powder.
+        When you strike a match and light it It burns, fitfully, spiraling to its end At which there
+        is, a little surprise..." From the planet of Krypton Short suit MCs you will be ripped on
+        (ripped on) You fell off and it's my lyric sheet you slipped on Get[...]
+    </lyrics>
+    <url>http://lyrics.wikia.com/Linkin_Park:Fuse</url>
+    <page_namespace>0</page_namespace>
+    <page_id>459941</page_id>
+    <isOnTakedownList>0</isOnTakedownList>
 </LyricsResult>
 ```
 
-JSON (JavaScript Object Notation)
-
-[http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=js](http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=js) için
+JSON (JavaScript Object Notation): `http://lyrics.wikia.com/api.php?func=getSong&artist=Linkin_Park&song=Fuse&fmt=js` için
 
 ```javascript
 function lyricwikiSong(){ 
-this.artist='Linkin Park'; 
-this.song='Fuse'; 
-this.lyrics='"Of course you know what a fuse is...\nIt\'s a long piece of cord impregnated with gun powder.\nWhen you strike a match and light it\nIt burns, fitfully, spiraling to its end\nAt which there is, a little surprise..."\n\nFrom the planet of Krypton\nShort suit MCs you will be ripped on (ripped on)\nYou fell off and it\'s my lyric sheet you slipped on\nGet[...]'; 
-this.url='http://lyrics.wikia.com/Linkin_Park:Fuse'; 
+    this.artist='Linkin Park'; 
+    this.song='Fuse'; 
+    this.lyrics='"Of course you know what a fuse is...\nIt\'s a long piece of cord impregnated with gun powder.\nWhen you strike a match and light it\nIt burns, fitfully, spiraling to its end\nAt which there is, a little surprise..."\n\nFrom the planet of Krypton\nShort suit MCs you will be ripped on (ripped on)\nYou fell off and it\'s my lyric sheet you slipped on\nGet[...]'; 
+    this.url='http://lyrics.wikia.com/Linkin_Park:Fuse'; 
 } 
 var song = new lyricwikiSong();
 ```
@@ -84,7 +75,7 @@ var song = new lyricwikiSong();
 
 Peki bu tip bir kullanım söz konusu ise.Net tarafında ilgili içerikleri kullanarak kendimiz için eğlenceli bir program geliştirebilir miyiz acaba?
 
-Örnek Uygulama
+## Örnek Uygulama
 
 Söz gelimi bir WPF uygulaması yazsak ve aradığımız bir şarkı sözünü bulmak için gerekli işlevsellikleri burada sağlamaya çalışsak. Öncelikle aşağıdaki gibi bir arayüz tasarımı ile işe başlayabiliriz diye düşünüyorum.
 
@@ -266,7 +257,7 @@ Album tipi içerisinde oldukça yararlı bilgiler bulunmaktadır. Söz gelimi al
 
 Örneğin Debug modda yakadlığımız bir albüm için gelen amazon arama sorgusu aşağıdaki gibidir.
 
-[http://www.amazon.com/exec/obidos/redirect?link_code=ur2&tag=wikia-20&camp=1789&creative=9325&path=external-search%3Fsearch-type=ss%26index=music%26keyword=Linkin%20Park%20Underground%204.0](http://www.amazon.com/exec/obidos/redirect?link_code=ur2&tag=wikia-20&camp=1789&creative=9325&path=external-search%3Fsearch-type=ss%26index=music%26keyword=Linkin%20Park%20Underground%204.0)
+`http://www.amazon.com/exec/obidos/redirect?link_code=ur2&tag=wikia-20&camp=1789&creative=9325&path=external-search%3Fsearch-type=ss%26index=music%26keyword=Linkin%20Park%20Underground%204.0`
 
 Şimdi uygulamamızı test sürüşüne çıkartabiliriz. Bu amaçla Scorpions grubuna ait bir parçanın sözlerini çekmeye çalışalım. “Still loving you” mesela
 
@@ -281,15 +272,17 @@ Peki bundan sonrası için neler yapılabilir?
 - Uygulama bir ASP.NET Web User Control olarak da sunulabilir.
 - Bu kısımları ciddi anlamda düşünmenizi ve yapmaya çalışmanızı öneririm.
 - Var olan uygulamadaki çağrılar async ve await anahtar kelimeleri ile birlikte değerlendirilip asenkron hale de getirilebilir.
- - Uygulama içerisinde bir WebBrowser kontrolü de kullanılarak şarkı içeriğinin tarayıcıda açılması da sağlanabilir. Aşağıdaki gibi![lyric_last](/assets/images/2014/lyric_last.png)
+- Uygulama içerisinde bir WebBrowser kontrolü de kullanılarak şarkı içeriğinin tarayıcıda açılması da sağlanabilir. Aşağıdaki gibi!
+
+![lyric_last](/assets/images/2014/lyric_last.png)
 
 Hoşunuza gitti mi? Öyleyse…
 
-Yazımızın bu kısmına kadar yapmış olduğumuz örnekte görüldüğü gibi internet üzerinden Web API’ leri kullanarak dış dünyaya sunulan ücretsiz (ve bazen de kısmen ücretsiz) bilgileri alabilir ve kullanışlı hale getirebiliriz. Tabi bu tip hizmetleri sunan başka alanlarda bulunmaktadır. Örneğin bunlardan birisi IMDB (InternationalMovieDataBase) dir
+Yazımızın bu kısmına kadar yapmış olduğumuz örnekte görüldüğü gibi internet üzerinden Web API’ leri kullanarak dış dünyaya sunulan ücretsiz (ve bazen de kısmen ücretsiz) bilgileri alabilir ve kullanışlı hale getirebiliriz. Tabi bu tip hizmetleri sunan başka alanlarda bulunmaktadır. Örneğin bunlardan birisi IMDB (InternationalMovieDataBase) dir.
 
 Aşağıdaki örnek kod parçasını yukarıdaki konu anlatımı üzerine kaymak niyetinde sürebilirsiniz. Aynı teknikleri kullanıyoruz ancak farklı bir içeriği ele alıyoruz.
 
-Önce WPF Windows penceresine ait XAML içeriği
+Önce WPF Windows penceresine ait XAML içeriği,
 
 ```xml
 <Window x:Class="IMBDGadget.MainWindow" 
@@ -365,9 +358,7 @@ namespace IMBDGadget
 }
 ```
 
-ve birazcık daha kod
-
-Windows sınıfı
+ve birazcık daha kod, Windows sınıfı.
 
 ```csharp
 using System; 

@@ -6,11 +6,9 @@ tags: []
 categories:
   - Framework Tabanlı Programlama
 ---
-Animasyon film meraklısı olupta [Pixar’ ın 2003 yapımı Nemo’ sunu](http://www.imdb.com/title/tt0266543/) izlemeyen sanırım yoktur. Kayıp oğlu Nemo’ yu bulmak isteyen Marlin, uzun ve zorlu yolculuğu sırasında oldukça unutkan olan ve aslında bu özelliği ile balık olduğunu adeta tüm izleyenlere ispat eden Dory ile seyahat etmektedir. Dory neredeyse bir saniye önce söylediğini hatırlamakta zorlanan bir balıktır.
+Animasyon film meraklısı olupta [Pixar’ ın 2003 yapımı Nemo’ sunu](http://www.imdb.com/title/tt0266543/) izlemeyen sanırım yoktur. Kayıp oğlu Nemo’ yu bulmak isteyen Marlin, uzun ve zorlu yolculuğu sırasında oldukça unutkan olan ve aslında bu özelliği ile balık olduğunu adeta tüm izleyenlere ispat eden Dory ile seyahat etmektedir. Dory neredeyse bir saniye önce söylediğini hatırlamakta zorlanan bir balıktır. Aslında geliştirmekte olduğumuz uygulamaların da buna benzer handikapları vardır. Bir şeyler hatırlamak zorundadırlar ve bu yüzden çeşitli depolama ortamlarını kullanırlar. Bu depolar ile olan iletişimlerinde çeşitli stratejiler uygularlar. Özellikle web tabanlı uygulamalar söz konusu olduğunda istemciler ile olan iletişimde de unutkanlık halleri baş gösterir. Web, doğası gereği çoğu zaman State tutmakta zorlanan bir ortamdır.
 
 ![marlin-dory](/assets/images/2014/marlin-dory.jpg)
-
-Aslında geliştirmekte olduğumuz uygulamaların da buna benzer handikapları vardır. Bir şeyler hatırlamak zorundadırlar ve bu yüzden çeşitli depolama ortamlarını kullanırlar. Bu depolar ile olan iletişimlerinde çeşitli stratejiler uygularlar. Özellikle web tabanlı uygulamalar söz konusu olduğunda istemciler ile olan iletişimde de unutkanlık halleri baş gösterir. Web, doğası gereği çoğu zaman State tutmakta zorlanan bir ortamdır.
 
 Unutkanlığın baş gösterdiği bir diğer yer ise uygulamalar üzerindeki işlem hareketliliklerdir. Öyleki genel performansın gözlemlenmesinde, erken uyarı sistemlerinin oluşturulmasında, hataların kodun içerisine girilmeden analiz edilmesinde, müşterilerin geçmişe yönelik hareketlerinin kayıt altına alınmasında ve benzer bazı senaryolarda uygulamanın o anki hafızasının kayıt altına alınması gerekebilir. Ne yazık ki uygulamalar bunu otomatik olarak yapmazlar. Bunu gerçekleştirebilmeleri için bir Log mekanizmasına sahip olmaları ve unutkanlıklarını kayıt altına alabilmeleri gerekir. Tabi ki geliştiricilerin yardımıyla.
 

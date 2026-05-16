@@ -10,11 +10,9 @@ tags:
 categories:
   - Veritabanı
 ---
-[Matrix Reloaded'](http://en.wikipedia.org/wiki/The_Matrix_Reloaded) ı seyrettiğim zamanları düşündüğümde, anımsadıklarım arasında heyecanlı aksiyon sahnelerinde yer alan ve eski Amerikan stilini de yansıtan kocaman otomobiller vardı. (Hatta bildiğim kadarı ile ikinci dünya savaşı sonrası çelik stoklarının fazlalığı nedeniyle Amerikan otoları hep kocaman olmuşlardı)
+[Matrix Reloaded'](http://en.wikipedia.org/wiki/The_Matrix_Reloaded) ı seyrettiğim zamanları düşündüğümde, anımsadıklarım arasında heyecanlı aksiyon sahnelerinde yer alan ve eski Amerikan stilini de yansıtan kocaman otomobiller vardı. (Hatta bildiğim kadarı ile ikinci dünya savaşı sonrası çelik stoklarının fazlalığı nedeniyle Amerikan otoları hep kocaman olmuşlardı) General Motors firmasına ait olan otomobillerden birisi de, Cadillac STS'in farklı bir versiyonu olan CTS idi. Tabi ben konuyu bir şekilde bu günkü yazının konusu olan STSdb'ye getirmek istediğimden [Cadillac STS](http://en.wikipedia.org/wiki/Cadillac_STS)'e ait bir fotoğrafa yer vermek istedim.
 
 ![Cadillac_STS](/assets/images/2013/Cadillac_STS_2.jpg)
-
-General Motors firmasına ait olan otomobillerden birisi de, Cadillac STS'in farklı bir versiyonu olan CTS idi. Tabi ben konuyu bir şekilde bu günkü yazının konusu olan STSdb'ye getirmek istediğimden [Cadillac STS](http://en.wikipedia.org/wiki/Cadillac_STS)'e ait bir fotoğrafa yer vermek istedim
 
 Öyleyse vakit kaybetmeden konumuza geçelim.
 
@@ -26,12 +24,11 @@ Aslında bizim temel amacımız key-value modeline göre çalışan NoSQL verita
 
 Dilerseniz STSdb ürününü kısaca mercek atlına almaya başlayalım.
 
-> STSdb ile ilişkili olarak karşılaştığım ilk sıkıntı dokümantasyonun yeteri kadar doyurucu olmamasıydı. MSDN benzeri API dokümantasyonu ve bir kaç örnek kod parçası haricinde, [forumlarda](http://stsdb.com/forum/forum.html) da yeteri kadar doyurucu içeriğe rastlayamadım. Amazon.com'da konu ile ilişkili bir kitabı da ne yazık ki bulamadım. Pek tabi zaman ilerledikçe bu durum değişebilir.
-> Hal böyle olunca biraz dene-keşfet modeline göre öğrenilmeye çalışılan bir ürün oldu benim için. Kaldı ki API dokümantasyonuna baktığımızda gerçekten çok önemli görünen pek çok fonksiyonellik var. Örneğin Snapshot almak için XTable sınıfına ait bir metod var ama örnek bir kod parçası yok. Dolayısıyla biraz kurcalanması gereken bir ürün olarak karşımıza çıkmakta.
+> STSdb ile ilişkili olarak karşılaştığım ilk sıkıntı dokümantasyonun yeteri kadar doyurucu olmamasıydı. MSDN benzeri API dokümantasyonu ve bir kaç örnek kod parçası haricinde, [forumlarda](http://stsdb.com/forum/forum.html) da yeteri kadar doyurucu içeriğe rastlayamadım. Amazon.com'da konu ile ilişkili bir kitabı da ne yazık ki bulamadım. Pek tabi zaman ilerledikçe bu durum değişebilir. Hal böyle olunca biraz dene-keşfet modeline göre öğrenilmeye çalışılan bir ürün oldu benim için. Kaldı ki API dokümantasyonuna baktığımızda gerçekten çok önemli görünen pek çok fonksiyonellik var. Örneğin Snapshot almak için XTable sınıfına ait bir metod var ama örnek bir kod parçası yok. Dolayısıyla biraz kurcalanması gereken bir ürün olarak karşımıza çıkmakta.
 
 STSdb, Key-Value modeline göre çalışan açık kaynak (GPL 2 ve GPL 3. Ancak Community lisanslaması da yapılabiliyor) NoSql depolama API'lerinden birisidir..Net Framework üzerinde C# programlama dili kullanılarak geliştirilmiş gömülü (Embedded) bir sistem olarak karşımıza çıkıyor. Her platformu destekleyebilir ilkesini ilgili platformlarda Mono yüklü olması halinde karşılamakta (Tam bir plaform bağımsızlık olduğunu ifade edemeyiz ama Mono ile Linux, MacOS X ve Unix gibi sistemlere de entegre edilebilir)
 
-Genel Özellikler
+## Genel Özellikler
 
 Genel özelliklerini ise aşağıdaki maddeler halinde ifade edebiliriz.
 
@@ -47,7 +44,7 @@ Genel özelliklerini ise aşağıdaki maddeler halinde ifade edebiliriz.
 - Veriyi bir algoritma yardımıyla sıkıştırmaktadır. Sıkıştırma önemli ölçüde yer kazanımına da imkan sağlamaktadır.
 - Belki de en önemli özelliklerinden birisi tutabileceği tablo veya kayıt için bir üst limit değerinin olmayışıdır. Bu nedenle çok büyük boyutlu veri kümeleri için tercih edilebilir.
 
-İlk olarak ürünü tedarik etmemiz gerekiyor tabi ki
+İlk olarak ürünü tedarik etmemiz gerekiyor tabi ki.
 
 Bunun için [şu adresi](http://stsdb.com/products/stsdb-w4.0/downloads/embedded-server/) kullanabiliriz. İndirilen içerik aşağıdaki gibidir. (Yazının yayınlandığı tarihi itibariyle 4.0 RC sürümüde mevcut)
 
@@ -61,9 +58,9 @@ Console uygulaması olarak geliştireceğimiz programımızda Hello World demek 
 
 ![sts_3](/assets/images/2013/sts_3.png)
 
-Veri Ekleme Operasyonu
+## Veri Ekleme Operasyonu
 
-ilk olarak veri ekleme işini sembolize edelim.
+İlk olarak veri ekleme işini sembolize edelim.
 
 ```csharp
 using STSdb.Data; 
@@ -157,7 +154,7 @@ Veri ekleme işlemi aslında son derece basittir. XTable tipinin indeksleyici op
 
 ![sts_4](/assets/images/2013/sts_4.png)
 
-Veri Okuma
+## Veri Okuma
 
 Gelelim veri okuma işine. Örneğin az önce eklemiş olduğumuz XTable içeriğini ekrana yazdırmayı deneyelim. Bu amaçla aşağıdaki Read metodunu ele alabiliriz.
 
@@ -201,6 +198,8 @@ Okuma işleminde başrol oyuncusu olarak yine, StorageEngine sınıfı devreye g
 table nesne örneği elde edildikten sonra basit bir foreach iterasyonu ile kayıtlar arasından dolaşılabilinir. Hatta örnekte görüldüğü gibi Where genişletme metodundan yararlanılarak bir LINQ sorgusunun icra edilmesi de sağlanabilir. lambda (=>) operatörü etrafında kullanılan r değişkeni, AutoMobile sınıfından bir nesne örneğidir. Dolayısıyla özellikleri sorgulamada filtre kriteri olarak kullanılabilir. Uygulamanın çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
 ![sts_5](/assets/images/2013/sts_5_1.png)
+
+## Desteklenen Key ve Record Tipleri
 
 Temel olarak key-value teorisini baz alarak çalışan STSdb sisteminde, tablo anahtar (Table Key) ve kayıtlarının (Table Record) hangi türlerden oluşabileceği belirlidir. Burada oldukça geniş bir nesne yelpazesinin olduğunu ifade edebiliriz.
 

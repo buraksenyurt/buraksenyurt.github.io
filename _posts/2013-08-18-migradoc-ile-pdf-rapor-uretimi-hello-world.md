@@ -328,7 +328,7 @@ Aslında fonksiyonları dikkatlice incelediğimizde PDF içeriğini oluşturma i
 
 Document tipi aslında sayfa içerisinde kullanılacak global Style'leri ve Section'ları oluşturmak için kullanılır. Bu nedenle PDF içersine bir paragraf, tablo, resim, link ve benzeri materyalleri eklemek istediğimizde bir Section tipinden yararlanmalıyız. Örnekte dikkat edileceği üzere Logo'nun eklenmesi için section nesne örneği üzerinden AddImage metodu çağırılmaktadır. Diğer yandan bir paragraf eklenmek istendiğinde yine section nesne örneği üzerinden ama bu kez AddParagraph fonksiyonuna çağrıda bulunulmaktadır.
 
-Örneğimizin kalbi rapor içeriklerinin bir tablo içerisinde gösterilmesidir. Bu sebepe bir Table tipi kullanılmış ve örneklenmesi için yine section nesnesi üzerinden hareket edilerek, AddTable metoduna başvuruda bulunulmuştur. Bir Table örneklendikten sonra içerisinde yer alan satırların (Rows) veya hücrelerin (Cells) doldurulması işi, aslında bir HTML Table içeriğinin dinamik olarak üretilmesinden pek de farklı değildir. Yeterki doküman nesne modeline hakim olalım
+Örneğimizin kalbi rapor içeriklerinin bir tablo içerisinde gösterilmesidir. Bu sebepe bir Table tipi kullanılmış ve örneklenmesi için yine section nesnesi üzerinden hareket edilerek, AddTable metoduna başvuruda bulunulmuştur. Bir Table örneklendikten sonra içerisinde yer alan satırların (Rows) veya hücrelerin (Cells) doldurulması işi, aslında bir HTML Table içeriğinin dinamik olarak üretilmesinden pek de farklı değildir. Yeterki doküman nesne modeline hakim olalım.
 
 Örneğimizin daha kolay anlaşılması açısından aşağıdaki görseli dikkate alabilirsiniz.
 
@@ -490,4 +490,3 @@ Sonuç olarak en azından işe yarar PDF içeriklerini kolayca üretebildiğimiz
 Böylece geldik bir makalemizin daha sonuna. Bir diğer yazımızda görüşünce dek hepinize mutlu günler dilerim.
 
 [HowTo_PDFSharpV2.zip (555,18 kb)](/assets/files/2013/HowTo_PDFSharpV2.zip)
-

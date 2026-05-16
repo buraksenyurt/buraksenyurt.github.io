@@ -16,18 +16,17 @@ Bildiğiniz üzere bir servis yazıldığında genellikle bunu tüketen (Consume
 
 ![wcfrf_8](/assets/images/2014/wcfrf_8.png)
 
-
 İkinci bir yol ise Proxy üretimi zorunluluğu olmadan servislerin kullanılmasıdır. Ancak söz konusu servislerin Web programlama modeline uygun olacak şekilde, HTTP protokolünün ilgili metodlarına (GET,POST,PUT,DELETE…) destek vermek üzere geliştirilmesi gerekir. Daha çok veri odaklı (Data-Centric) servisler için geçerli olan bu senaryoda, içerik de çoğunlukla JSON (JavaScriptObjectNotation), BSON (Binary Javascript Object Notation) ve XML (eXensibleMarkupLanguage) gibi veri formatlarında sunulmaktadır. Bu tip servislerin tüketilmesinde istemcinin her hangi bir Proxy üretimine gereksinimi bulunmamaktadır. Yine de işleri kolaylaştırıcı tiplerden yararlanıldığı da görülmektedir.
 
 Çok doğal olarak her iki kullanım şeklinin de bazı handikapları vardır. Özellikle Proxy bazlı servis kullanımında yaşanan sıkıntılardan birisi, servislerin çeşitli nedenler ile güncellenmeleri sonrasında, istemcilerin de sahip oldukları referansları güncelleme gerekliliği (Update Service Reference) ya da farklı versiyonların nasıl ele alınacağıdır.
 
-Vaka
+## Vaka
 
 Ancak burada özel bir vaka vardır. Bazen servis tüketicileri ile servis tarafının geliştiricileri aynı projeye dahil edilmiş ve bir arada çalışan ekiplerdir ve hatta aynı Solution üzerinde çalışmaktadırlar. Ayrıca buna bir de istemci ve servis tarafının IIS tabanlı birer Web Site projesi olması şartını da eklediğimiz de ortaya farklı bir bakış açısı çıkmaktadır. O da, istemci tarafının servis referansını güncellemeden (ve pek tabi proxy tipi ürettirmeden) çalışabilmesi ve güncellemeleri anında uygulama şansına sahip olabilmesidir.
 
 Bu tip bir vaka genellikle istemci tarafının, servise yeni bir operasyon ilave edilmesini istediği durumlarda ortaya çıkmaktadır. İşte bu yazımızda söz konusu vakayı nasıl gerçekleştirebileceğimizi incelemeye çalışıyor olacağız.
 
-Solution İçeriği
+## Solution İçeriği
 
 İlk olarak Solution içerisinde aşağıdaki proje iskeletinin söz konusu olduğunu düşünelim.
 
@@ -35,7 +34,7 @@ Solution İçeriği
 
 Dikkat edileceği üzere Client ve servisi Host eden uygulamalar aslında birer Asp.Net Web Site olarak yer almaktadır. Bununla birlikte servis sözleşmesi (Service Contract) ile sözleşme implementasyonu ayrı projeler olarak düşünülmüş ve birer WCF Service Library şeklinde tasarlanmışlardır.
 
-Projelerin Oluşturulması
+## Projelerin Oluşturulması
 
 Pek tabi servisi host eden uygulama her iki kütüphaneyi de referans etmek durumundadır. İstemci tarafından olaya baktığımızda ise sadece sözleşmeyi (Contract) barındıran kütüphaneye bir referans içerdiği gözden kaçmamalıdır. Bu yaklaşıma göre Solution’ ımızı yavaş yavaş oluşturmaya çalışalım. Bunun için aşağıdaki şekilde görülen ağaç yapısını inşa etmemiz yeterlidir.
 
@@ -45,7 +44,7 @@ Karma.HostApp, WCF Service tipinden bir Asp.Net Web Site’ dır (Add New Web Si
 
 Burada senaryo için anahtar nokta Web Site proje şablonunun kullanılmış olmasıdır. Dikkat edilirse, Solution içerisinde yapılacak Build işlemlerinin ardından Web Site projelerinin Bin klasörlerinde, referans edilen dll’ lerin otomatik olarak eklendiği görülecektir.
 
-Servis Tarafının Kodlanması
+## Servis Tarafının Kodlanması
 
 Şimdi örnek senaryo içerisinde ele alacağımız diğer tipleri de ilave etmeye başlayalım. Karma.Contract kütüphanesinde aşağıdaki servis sözleşmesinin yazıldığını düşünelim.
 
@@ -87,7 +86,7 @@ namespace Karma.Implementation
 
 Servis tarafı için gerekli sözleşme (Contract) ve uygulayıcı tip hazır. Çok doğal olarak bu sözleşmeyi bir yerde host ederek sunmalıyız. Bu amaçla projemizde yer alan Karma.HostApp uygulamasına bir WCF Service ekleyeceğiz, ancak sadece svc uzantılı dosyanın durmasına izin vermeliyiz. Bir başka deyişle AppCode klasörü içerisine atılan dosyaları (büyük ihtimalle IService1.cs ve Service1.cs) silmeliyiz. Diğer yandan AlgebraService.svc dosyasının içeriğinin de aşağıdaki şekilde düzenlenmesi gerekmektedir.
 
-```text
+```xml
 <%@ ServiceHost Language="C#" Debug="true" Service="Karma.Implementation.Algebra" %>
 ```
 
@@ -97,7 +96,7 @@ Buraya kadar ki işlemleri tamamladıktan sonra servisin çalışıp çalışmad
 
 ![wcfrf_5](/assets/images/2014/wcfrf_5.png)
 
-İstemci Tarafının Kodlanması
+## İstemci Tarafının Kodlanması
 
 Gelelim istemci tarafına. Yani Karma.ClientApp uygulamasına. Senaryomuzda belirttiğimiz üzere bu projede her hangi bir şekilde Add Service Reference ile Proxy üretimi söz konusu olmamalıdır/olmayacaktır. Nitekim kurtulmak istediğimiz nokta referans güncelleme işlemleridir. Ancak diğer taraftan istemcinin uygun servis sözleşmesini kullanarak bir şekilde ilgili host uygulamaya talepte bulunabilmesi de gerekmektedir. Bu nedenle istemci tarafında bu kullanımı sağlayabilecek ilave bir sınıfa daha ihtiyacımız vardır. Aşağıdaki kod parçasında olduğu gibi.
 
@@ -187,7 +186,7 @@ Bu içeriği oluştururken var olan bir client web.config içeriğinden yararlan
 
 Örneğimizde servis tarafında WCF’ in varsayılan konfigurasyon ayarları kullanıldığından, iletişim BasicHttpBinding üzerinden yapılmaktadır. Ancak servis tarafında seçilen EndPoint içeriğine göre istemci tarafındaki tanımlamaların da (Binding gibi) değiştirilmesi gerekebilir.
 
-Test Kodları
+## Test Kodları
 
 Artık servisi kullanmayı deneyebiliriz. Bu amaçla Karma.ClientApp içerisindeki Default.aspx sayfasına basit bir Button ekleyelim ve Click olay metodunda aşağıdaki kodları yazarak geliştirmemize devam edelim.
 
@@ -215,7 +214,7 @@ public partial class _Default : System.Web.UI.Page
 
 İstemci uygulama servis sözleşmesini içeren Karma.Contract kütüphanesini referans ettiğinden, IAlgebra üzerinde tanımlı olan Sum metoduna erişebilmektedir. Ancak çalışma zamanında bunun servis tarafına yönlendirilebilmesi, ClientBase türevli AlgebraServiceClient nesne örneğinin kullanılmasına bağlıdır.
 
-Servise Yeni Bir Operasyon Dahil Edilmesi
+## Servise Yeni Bir Operasyon Dahil Edilmesi
 
 Peki buraya kadar yazdıklarımız ile asıl hedefimize ulaştık mı dersiniz? Elbette ki hayır. Amacımız; servis tarafında yapılan bir güncelleme sonrasında, istemci tarafının bir Proxy güncellemesine gitmeye gerek duymamasını sağlamaktır. Şimdi bu durumu test etmek amacıyla servis tarafına yeni bir operasyon ilave edildiğini ve bunun uygulandığını göz önüne alalım.
 
@@ -269,14 +268,12 @@ Görüldüğü üzere yapılan yeni güncelleme build işlemi sonrasında istemc
 
 > Bütün Solution’ ın Build edilmesine gerek yoktur. Sadece istemci uygulamanın refereans ettiği Karma.Contract kütüphanesinin derlenmesi yeterli olacaktır. Bu derleme, güncellemelerin istemci tarafındaki kodlarda kullanılabilmesini sağlayacaktır, nitekim derleme sonrası DLL’ in yeni hali otomatik olarak Web Site’ ın Bin klasörüne yansıyacaktır.
 
-Son Test
+## Son Test
 
 Çalışma zamanında ki sonuçlara bakarak testimizi tamamlayalım ve senaryonun çalıştığından emin olalım.
 
 ![wcfrf_7](/assets/images/2014/wcfrf_7.png)
 
 Bu senaryoda dikkat edilmesi gereken nokta, Add Service Reference veya Update Service Reference gibi seçeneklerin kullanılmamış olmasıdır. Diğer yandan size düşen görev neden bu senaryo için Asp.Net Web Site şablonunun tercih edildiğinin bulunmasıdır? Aynı durum Asp.Net Web Application tipleri için söz konusu olamaz mı? Söz konusu olamazsa, iki uygulama şekli arasındaki farklılıklar nelerdir? Yani Web Site’ ın Web Application’ dan farkı nedir? Peki ya bu senaryo Visual Studio 2013 ile gelen yeni nesil web projesi şablonlarında nasıl ele alınabilir? Elbette bu soruları da araştırmak gerekmektedir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-
-> İpucu: Özellikle Web Site ile Web Application arasındaki farklara hızlıca bir göz atmak için [şu adresteki blog girdisinden](http://daron.yondem.com/tr/post/WebSite_ile_Web_Application_Arasindaki_Fark_Nedir) yararlanabilirsiniz.
 
 [Karma.zip (48,65 kb)](/assets/files/2014/Karma.zip)

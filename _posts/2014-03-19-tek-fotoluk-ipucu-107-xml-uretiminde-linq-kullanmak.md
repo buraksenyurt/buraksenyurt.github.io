@@ -10,4 +10,4 @@ Diyelim ki elinizde bir biri ile ilişkili tiplere ait nesne örneklerini içere
 
 ![tfi_107](/assets/images/2014/tfi_107.png)
 
-Bir başka ip ucunda görüşmek dileğiyle
+Bir başka ip ucunda görüşmek dileğiyle.

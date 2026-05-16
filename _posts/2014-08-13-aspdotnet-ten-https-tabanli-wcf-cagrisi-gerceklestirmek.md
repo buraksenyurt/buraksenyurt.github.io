@@ -6,25 +6,19 @@ tags: []
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Özel Ajan Oso! Son yılımda Disney Channel’ de sıklıkla maruz kaldığım bir çizgi karakter. Aslında bu sakar ve bir o kadar da maharetli ve sevimli çizgi dizi kahramının görevi son derece basit. Sadece 3 adımda çocuklara yol gösterici nitelikte yardımcı olmaya çalışmak.
+Özel Ajan Oso! Son yılımda Disney Channel’ de sıklıkla maruz kaldığım bir çizgi karakter. Aslında bu sakar ve bir o kadar da maharetli ve sevimli çizgi dizi kahramının görevi son derece basit. Sadece 3 adımda çocuklara yol gösterici nitelikte yardımcı olmaya çalışmak. Ajanımızın dizi de bir de yöneticisi var. Aynı Mission Impossible’ da olduğu gibi. Onun adı “Bay Dost” Her bölüm Özel Ajan Oso’ ya bir görev veriliyor. Söz gelimi çocuklardan birisi yanlışlıkla kumbarasının bir ayağını kırmış olsun. Bunu nasıl tamir eder? 3 adımda. Dizi de olay şöyle ilerler.
 
-![381eed443562d941546485cc9e2decf4_1316198153](/assets/images/2014/381eed443562d941546485cc9e2decf4_1316198153_thumb.jpg)
-
-Ajanımızın dizi de bir de yöneticisi var. Aynı Mission Impossible’ da olduğu gibi. Onun adı “Bay Dost”
-
-Her bölüm Özel Ajan Oso’ ya bir görev veriliyor. Söz gelimi çocuklardan birisi yanlışlıkla kumbarasının bir ayağını kırmış olsun. Bunu nasıl tamir eder? 3 adımda. Dizi de olay şöyle ilerler.
-
-Adım 1: Kırılan kısma tutkal sür
-
-Adım 2: Kumbara ile kırılan kısmı birleştir
-
-Adım 3: 7 saniye boyunca birleşik şekilde tut
+- Adım 1: Kırılan kısma tutkal sür
+- Adım 2: Kumbara ile kırılan kısmı birleştir
+- Adım 3: 7 saniye boyunca birleşik şekilde tut
 
 gibi
 
+![381eed443562d941546485cc9e2decf4_1316198153](/assets/images/2014/381eed443562d941546485cc9e2decf4_1316198153_thumb.jpg)
+
 Bazen biz geliştiriciler de bir işi icra edebilmek adına bu şekilde basit ve az sayıda adıma ihtiyaç duyarız. İşte bugünkü makalemizde kendimizi Özel Ajan Oso yerine koyacak ve şu senaryoyu gerçekleştirmeye çalışıyor olacağız.
 
-Adım 0: Senaryo
+## Adım 0: Senaryo
 
 Development ortamında geliştirme yapmaktayız. IIS üzerinde host edilen bir WCF Servis uygulamamız var. Bu servis uygulaması WS Security standartlarında ve SSL tabanlı bir hizmet sunmakta. Bir başka deyişle servise https üzerinden talep gönderebiliyoruz. Servisin WSDL içeriğinin elde edilebildiği adres de aslında HTTPS tabanlı.
 
@@ -32,7 +26,7 @@ Development ortamında geliştirme yapmaktayız. IIS üzerinde host edilen bir W
 
 O halde ne duruyoruz! Haydi bilgisayar başına.
 
-Adım 1: WCF Servis Uygulamasını Oluştur
+## Adım 1: WCF Servis Uygulamasını Oluştur
 
 Öncelikli olarak bir WCF Service Application projesi oluşturarak işe başlayabiliriz. Test amaçlı kodlar içerecek olan servisin dahilindeki tiplerden ziyade konfigurasyon tarafında yapılan ayarlar senaryomuz gereği çok daha önemli. İlk olarak sınıf diagramımıza bakalım ve bizim için gerekli tipleri üretelim.
 
@@ -148,15 +142,17 @@ Senaryomuza göre WCF servis uygulamamız https tabanlı olarak hizmet veriyor o
 
 > Bu arada servis uygulamasının IIS üzerinde host edilecek şekilde oluşturulduğunu ifade edelim. İlk etapta base adresin https olarak belirtilmesine rağmen IIS tarafındaki Virtual Directory’ nin HTTP tabanlı çalıştığını düşünüyoruz. Bu haliyle servisi çalıştırmaya kalkarsak, sertifikasyon ile ilişkili hatalar almamız muhtemeldir. Dolayısıyla çözüm olarak bir test sertfikası üretecek, web uygulamasının http için oluşturulan Virtual Directory’ sini IIS Manager yardımıyla ele alacak ve SSL kullanımını etkinleştireceğiz.
 
-Adım 2: Makecert ile Test Sertifikasının Oluşturulması
+## Adım 2: Makecert ile Test Sertifikasının Oluşturulması
 
 Windows SDK ile birlikte gelen makecert aracını kullanarak X509 tabanlı test sertifikalarının oluşturulması mümkündür. Özellikle development süreçlerinde bu aracı kullanarak SSL tabanlı senaryoların ele alınması son derece kolaydır. Senaryomuz için örnek bir test sertifikasını aşağıdaki ekran görüntüsünde olduğu gibi basitçe üretebiliriz.
 
-> makecert –r –pe –n “CN=makineadı" –b 01/01/2000 –e 01/01/2100 –eku 1.3.6.1.5.5.7.3.1 –ss my –sr localmachine –sky exchange –sp “Microsoft RSA SChannel Cryptographic Provider” –sy 12
+```bash
+makecert –r –pe –n “CN=makineadı" –b 01/01/2000 –e 01/01/2100 –eku 1.3.6.1.5.5.7.3.1 –ss my –sr localmachine –sky exchange –sp “Microsoft RSA SChannel Cryptographic Provider” –sy 12
+```
 
 ![wcfhttps_1](/assets/images/2014/wcfhttps_1.png)
 
-Adım 3: IIS Tarafında SSL Kullanımını Etkinleştirmek
+## Adım 3: IIS Tarafında SSL Kullanımını Etkinleştirmek
 
 Https tabanlı iletişimi IIS üzerinde oluşturulan web sayfalarında uygulayabilmemiz için öncelikli olarak site seviyesinde SSL kullanımının etkinleştirilmiş olması gerekmektedir. Bunun için https tipinin Bindings olarak ilave edilmesi yeterli olacaktır. SSL Settings-> Bindings –> Add kısmından aşağıdaki ekran görüntüsünde yer alan adımları takip ederek işlemlerimize devam edelim.
 
@@ -166,7 +162,7 @@ https tipinin eklenmesi sırasında bir de SSL sertfikası sorulacaktır. Bu ser
 
 ![wcfhttps_5](/assets/images/2014/wcfhttps_5_thumb.png)
 
-Adım 4: Publish Edilmiş Virtual Directory için SSL Etkinleştirilmesi
+## Adım 4: Publish Edilmiş Virtual Directory için SSL Etkinleştirilmesi
 
 Artık http adresi temelli oluşturulan Virtual Directory için SSL kullanımını etkinleştirebiliriz. Bunun için WCF uygulamasının SSL Settings kısmında aşağıdaki işaretlemeleri yapmamız yeterli olacaktır. Require SSL ve istemci tarafı sertifika için Accept.
 
@@ -176,13 +172,13 @@ Artık http adresi temelli oluşturulan Virtual Directory için SSL kullanımın
 
 > Örnekte kullandığımız IIS (Internet Information Services) versiyonu 7.5 dir uygulama Windows 7 Enterprise işletim sistemi üzerinde geliştirilmektedir.
 
-Adım 5: WCF Servis Uygulamasında HTTPS Adres Bilgisinin Kullanılması
+## Adım 5: WCF Servis Uygulamasında HTTPS Adres Bilgisinin Kullanılması
 
 Önceden de belirttiğimiz üzere eğer IIS tarafında SSL tabanlı bir sertifikasyon söz konusu değilse WCF uygulamasının da https tabanlı bir proje adresini kullanabilmesi söz konusu değildir. Ancak önceki adımlar ile bu sorunu aşmış bulunuyoruz. Dolayısıyla aşağıdaki ekran görüntüsündeki gibi Project Url kısmında https protokolünü kullanacağımızı belirtebiliriz.
 
 ![wcfhttps_2](/assets/images/2014/wcfhttps_2.png)
 
-Adım 5.5: Test
+## Adım 5.5: Test
 
 Ara adımda EntryService.svc sayfasını bir tarayıcı üzerinden açmayı deneyebiliriz. Bu durumda aşağıdaki ekran görüntüsüne ulaşmamız gerekmektedir. Dikkat edileceği üzere https tabanlı bir açılış söz konusu olmuştur.
 
@@ -190,7 +186,7 @@ Ara adımda EntryService.svc sayfasını bir tarayıcı üzerinden açmayı dene
 
 Ayrıca WSDL (Web Service Description Language) erişim adreslerinin de https tabanlı olduğu rahatlıkla gözlemlenebilir
 
-Adım 6: İstemci Uygulamaya Servis Referanasının Eklenmesi
+## Adım 6: İstemci Uygulamaya Servis Referanasının Eklenmesi
 
 Senaryomuza göre istemci uygulamamız ASP.Net tabanlı bir web uygulamasıdır. Visual Studio ile bir Asp.Net Empty Web Application oluşturarak bu adıma başlayabiliriz. Bundan sonraki en önemli kısım ise servis referansının projeye dahil edilmesidir. Add Service Reference kısmında https tabanlı WSDL adresine talepte bulunursak, aşağıdaki ekran görüntüsünde yer alan uyarı mesajı ile karşılaşırız.
 
@@ -230,13 +226,13 @@ Bu iletişim penceresinde Yes seçeneğini işaretleyerek ilerleyelim. Sonuç ol
 
 Dikkat edileceği üzere wsHttpBinding tipine ait güvenlik modu Transport olarak gelmiştir. Ayrıca sunucu tarafında belirttiğimiz gibi clientCredentialType niteliği None olarak atanmıştır.
 
-Adım 7: Test Sayfasının Oluşturulması ve Kodlanması
+## Adım 7: Test Sayfasının Oluşturulması ve Kodlanması
 
 Bu amaçla aşağıdaki basit Web formunu hazırladığımızı düşünelim.
 
 ![wcfhttps_10](/assets/images/2014/wcfhttps_10_thumb.png)
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewEmployee.aspx.cs" Inherits="ClientApp.NewEmployee" %>
 
 <!DOCTYPE html>
@@ -360,9 +356,7 @@ Kodun belki de en önemli kısmı ServerCertificateValidationCallback tipinin ku
 
 ![wcfhttps_11](/assets/images/2014/wcfhttps_11.png)
 
-Bir başka deyişle oluşacak olan hata sürkülase edilmiştir. Malum development ortamında geliştirme yaptığımızdan bu tip görmezden gelmeleri çözümümüze katabiliriz. Birazcık hile yaptık anlayacağınız.
-
-Artık uygulamayı çalıştırıp test edebiliriz. Eğer adımlarımızda bir sorun yoksa aşağıdaki ekran görüntüsünde olduğu gibi 1903 sonucunu alıyor olmamız gerekmektedir.
+Bir başka deyişle oluşacak olan hata sürkülase edilmiştir. Malum development ortamında geliştirme yaptığımızdan bu tip görmezden gelmeleri çözümümüze katabiliriz. Birazcık hile yaptık anlayacağınız. Artık uygulamayı çalıştırıp test edebiliriz. Eğer adımlarımızda bir sorun yoksa aşağıdaki ekran görüntüsünde olduğu gibi 1903 sonucunu alıyor olmamız gerekmektedir.
 
 ![wcfhttps_9](/assets/images/2014/wcfhttps_9.png)
 

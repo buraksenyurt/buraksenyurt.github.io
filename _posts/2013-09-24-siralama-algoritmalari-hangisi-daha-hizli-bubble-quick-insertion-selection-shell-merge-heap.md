@@ -21,7 +21,6 @@ Evimdeki çalışma odasında yer alan kütüphanemi zaman zaman gelen yeni kita
 
 ![Sorting_1](/assets/images/2013/Sorting_1.jpg)
 
-
 Üniversite yıllarında özellikle programlama derslerinde buna benzer şekilde sıralama algoritmaları ile haşır neşir olmayanımız yoktur eminim ki. Hatta çoğu sınavın korkulu rüyası sorularının kaynağını teşkil etmektedir ki hocalarımız genellikle bunları kağıt kalem kullanarak çözmemizi isterler (En azından benim zamanında böyleydi)
 
 Özellikle bu algoritmaların dil bağımsız olan Pseudo Code içeriklerinden yararlanarak her hangi bir dile uygulanmaya çalışılması üzerine epeyce kafa yormuşuzdur. C, C++, Java, Basic, Pascal ve benzeri temel programlama derslerinde edindiğimiz bilgiler ile bu algoritmaları yazmak için çokça uğraşmışızdır. Tabi üzülerek söylemeliyim ki ben üniversite yıllarındayken Bubble ve Quick Sort sıralama algoritmalarından fazlasını ne yazık ki göremedim.
@@ -298,7 +297,6 @@ namespace SortingAlgorithm.Sorters
                     Increment = 1; 
                 } 
             } 
-
         } 
 
         #endregion 
@@ -489,7 +487,7 @@ namespace SortingAlgorithm
 
 Execute metoduna dikkat edilecek olursa ISorter interface tipinden bir parametre aldığı görülmektedir. Dolayısıyla bu metoda, yukarıda tanımlanmış olan sıralama sınıflarından herhangibiri atanabilir. Çünkü hepsi bu arayüzü (Interface) implemente etmektedir. Diğer yandan Execute metodu, çalışma zamanında (Runtime), Sorter isimli değişkenin büründüğü sıralama sınıfının Execute metodunu yürütmekte ve ayrıca bu sıralama algoritması için bir Text dosyaya log atmaktadır. Metodumuzun önemli özelliklerinden birisi de, Stopwatch tipini kullanarak sıralama işlemi için gerekli çalışma süresi farkını hesaplıyor ve bunu yine Text dosyası içerisine raporluyor olmasıdır.
 
-Uygulamanın Testi
+## Uygulamanın Testi
 
 Örnek uygulamamız aslında bir Test uygulamasıdır. Amacı çeşitli sıralama algoritmalarını, içerikleri karışık tamsayılardan oluşan birden fazla boyuttaki dizi için çalıştırmak ve çalışma zamanındaki toplam icra süresi farklarını görmektir. Dolayısıyla bize yardımcı bir kaç fonksiyonellik daha gerekmektedir. Örneğin belirtilen boyutta rastgele int tipinde sayılardan oluşacak bir dizi üretimi fonksiyonelliği ve hatta bu dizinin ham ve sıralanmış hallerinin karşılıklarını yine log amaçlı olarak Text dosyasına yazdıracak bir metod düşünülebilir. Bunun için uygulamamıza Utility isimli static bir tip ilave edebiliriz.
 
@@ -628,7 +626,7 @@ Program kodumuzda kritik olan noktalardan birisi, üretilen 7 adet dizinin Tuple
 
 Demek ki basit bir Performans Test uygulaması yazarken dahi çok dikkali davranmalı ve özellikle Debug işlemlerine ağırlık vermeliyiz.
 
-Sonuçlar
+## Sonuçlar
 
 Artık uygulamamızı çalıştırabilir ve sonuçları irdeleyebiliriz. Dizilerimize ait değer aralıkları 100, 500, 1000, 5000, 10000, 50000 ve 100000' dir. Çok doğal olarak son değer aralıklarının büyüklüğü nedeni ile uygulama ilgili sıralama algoritmalarını oldukça zorlayacaktır ki bu istediklerimizden birisidir. Ben şahsen uygulamayı denediğimde bir kaç saat çalıştığına şahit oldum. Tabi burada işi yavaşlatan farklı faktörler ve etkenlerde var. Ancak sonuç olarak aşağıdaki test değerlerini elde ettim.
 
@@ -636,6 +634,16 @@ Artık uygulamamızı çalıştırabilir ve sonuçları irdeleyebiliriz. Diziler
 
 Görüldüğü üzere değer aralığı büyüdükçe en hızlı sonuçlar Quick Sort algoritmasından gelmektedir. Diğer yandan Bubble Sort algoritmasının çok fazla maliyet getirdiği ve uzun sürdüğü ortadadır. Heap ve Merge algoritmaları birbirlerine yakın süreler vermiştir. Insertion, Selection ve Shell algoritmaları tatmin edici hızlarda değildir. Tabi buradaki süreler Milisaniye cinsinden olup alsında çok fazla önemli görünmeyebilir. Ancak matematiksel hesaplamaların yoğun yapıldığı bilimsel uygulamalarda sıklıkla kullanıldıkları ve ihtiyaç duyuldukları da bilinmektedir.
 
-Elbette çok daha etkili ve faydalı bir test uygulaması yazılabilir. Mesela [http://www.sorting-algorithms.com](http://www.sorting-algorithms.com) adresinde bunun web tabanlı güzel bir örneği bulunmaktadır. Diğer yandan akılda oluşması gereken önemli sorulardan birisi de şudur. Acaba bu sıralamaların paralelize edilmiş versiyonları var mıdır? Olay sadece Parallel.ForEach veya Parallel.For metodlarını kullanmak kadar basit olabilir mi? Yoksa dikkat edilmesi gereken başka unsurlar da var mıdır? Bu soruların cevaplarını ilerleyen yazılarımızda bulmaya çalışıyor olacağız. Diğer yandan bu yazımızda sadece kullandığımız sıralama algoritmaları hakkında en iyi bilgilere wikipedia üzerinden ulaşabilirsiniz.([Bubble Sort](http://en.wikipedia.org/wiki/Bubble_sort), [Insertion Sort](http://en.wikipedia.org/wiki/Insertion_sort), [Selection Sort](http://en.wikipedia.org/wiki/Selection_sort), [Heap Sort](http://en.wikipedia.org/wiki/Heapsort), [Quick Sort](http://en.wikipedia.org/wiki/Quicksort), [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort), [Shell Sort](http://en.wikipedia.org/wiki/Shell_sort)) Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Elbette çok daha etkili ve faydalı bir test uygulaması yazılabilir. Mesela [http://www.sorting-algorithms.com](http://www.sorting-algorithms.com) adresinde bunun web tabanlı güzel bir örneği bulunmaktadır. Diğer yandan akılda oluşması gereken önemli sorulardan birisi de şudur. Acaba bu sıralamaların paralelize edilmiş versiyonları var mıdır? Olay sadece Parallel.ForEach veya Parallel.For metodlarını kullanmak kadar basit olabilir mi? Yoksa dikkat edilmesi gereken başka unsurlar da var mıdır? Bu soruların cevaplarını ilerleyen yazılarımızda bulmaya çalışıyor olacağız. Diğer yandan bu yazımızda sadece kullandığımız sıralama algoritmaları hakkında en iyi bilgilere wikipedia üzerinden ulaşabilirsiniz.
+
+- [Bubble Sort](http://en.wikipedia.org/wiki/Bubble_sort)
+- [Insertion Sort](http://en.wikipedia.org/wiki/Insertion_sort)
+- [Selection Sort](http://en.wikipedia.org/wiki/Selection_sort)
+- [Heap Sort](http://en.wikipedia.org/wiki/Heapsort)
+- [Quick Sort](http://en.wikipedia.org/wiki/Quicksort)
+- [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort)
+- [Shell Sort](http://en.wikipedia.org/wiki/Shell_sort)
+
+Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SortingAlgorithm.rar (40,36 kb)](/assets/files/2013/SortingAlgorithm.rar)

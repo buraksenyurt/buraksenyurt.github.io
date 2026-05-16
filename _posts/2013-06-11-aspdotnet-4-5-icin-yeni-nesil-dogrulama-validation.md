@@ -14,11 +14,9 @@ tags:
 categories:
   - Web Programlama
 ---
-Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredeyse tamamı bu efsane cümleyi bilir. **A long tim ago in a galaxy far, far away…** Hikaye hep yazılı bir anlatım ile başlar ve daha sonra ekran yukarıdaki yıldızlardan aşağıya doğru inerek devam eder. Sornasında ya bir uzay mekiğinin kaçıs sahnesi ya da imparatorluk güçleri ile isyancılar arasındaki savaşla karşı karşıya kalırız.
+Bilişim sektöründe yer alan ve özellikle 70li yıllarda doğanların neredeyse tamamı bu efsane cümleyi bilir. **A long tim ago in a galaxy far, far away…** Hikaye hep yazılı bir anlatım ile başlar ve daha sonra ekran yukarıdaki yıldızlardan aşağıya doğru inerek devam eder. Sornasında ya bir uzay mekiğinin kaçıs sahnesi ya da imparatorluk güçleri ile isyancılar arasındaki savaşla karşı karşıya kalırız. İşte geçen gün özlediğim [Star Wars](http://tr.wikipedia.org/wiki/Y%C4%B1ld%C4%B1z_Sava%C5%9Flar%C4%B1) serilerinden birisini izlerken birden kendimi bilgisayarımın başında ve başka bir hikayenin giriş noktasında buldum. Karşımdaki ekran da karalara bağlamış, alacalı bulacalı bir geliştirme penceresi duruyordu. İçerisinde ise HTML ve Asp.Net karışımı bir şeyler…
 
 ![300px-Opening_crawl](/assets/images/2013/300px-Opening_crawl.jpg)
-
-İşte geçen gün özlediğim [Star Wars](http://tr.wikipedia.org/wiki/Y%C4%B1ld%C4%B1z_Sava%C5%9Flar%C4%B1) serilerinden birisini izlerken birden kendimi bilgisayarımın başında ve başka bir hikayenin giriş noktasında buldum. Karşımdaki ekran da karalara bağlamış, alacalı bulacalı bir geliştirme penceresi duruyordu. İçerisinde ise HTML ve Asp.Net karışımı bir şeyler…
 
 ## Hikayenin Başladığı Yer
 
@@ -173,4 +171,3 @@ Yeni nesil doğrulama stratejisi için son teknoloji ürünüdür diyebilir miyi
 Hem HTML 5’ e hem de jQuery’ ye yatırım yapmış bir doğrulama süreci söz konusu. Üstelik yeni nesil çıktılar da, doğrulama operasyonları adına Javascript kullanımı (CDATA içerisindeki kısımlar) mevcut değil. Doğrulama bilgisi tamamen HTML 5 içerisine, nitelik-değer (key-value) bazlı olarak yıkılmış durumda. Elbette bunun en büyük artısı sayfa cevap boyutunun (Page Response Size) küçülmüş olması. (Elbette tarayıcı desteği de önem arz eden bir konu)
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

@@ -8,9 +8,9 @@ categories:
 ---
 Bazen geliştirme ortamımız ile yazılan uygulamanın taşınacağı ortamlar arasında ciddi ve keskin farklılıklar bulunur. İki resim arasındaki 9 farkı bulunuzdan öte, geliştirici ekiplerinin bu farkları bilerek kodlama yapmasında yarar vardır. Tabi bazı yazılım ekiplerinde Development sunucularının sanallaştırılmış versiyonları üzerinde geliştirme yapabilme imkanı da vardır.
 
-![production-bug](/assets/images/2014/production-bug.jpg)
-
 Bu tip bir yaklaşım ortak ortam standartlarının geliştirme de kullanılmasına olanak tanımaktadır. Ancak geliştiriciler uygulamanın host edileceği ortamlar hakkında fazla düşünceli davranmazsa (aynen benim gibi), özellikle kendi ortamında elinde yer alan her aracın orada sorunsuz çalışabileceğini düşünürse büyük hata yapar. İşte benim içine düştüğüm durum ve uyguladığım basit çözüm.
+
+![production-bug](/assets/images/2014/production-bug.jpg)
 
 ## Vaka
 
@@ -42,11 +42,15 @@ Bu noktada epeyce şanslı olduğumu ifade edebilirim. Nitekim sunucular üzerin
 
 Örneğin aşağıdaki ifade ile Excel 2007, 2010 ve 2013 sürümlerini açabiliriz.
 
+```text
 Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\GameBook.xlsx;Extended Properties="Excel 12.0 Xml;HDR=YES";
+```
 
 Daha önceki Excel sürümlerine göre de Provider'ı set edebiliriz. Tek yapılması gereken Extended Properties kısmında Excel 8.0 ifadesine yer vermektir. Bu sayede Excel 97, 2000, 2002 ve 2003 sürümlerine bağlantı sağlayabiliriz.
 
+```text
 Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\GameBook.xlsx;Extended Properties="Excel 8.0;HDR=YES";
+```
 
 Her iki bağlantı ifadesinde yer alan HDR ifadesi, Excel dosyası içerisindeki Sheet'ler ilk satırın başlık kolonları olduğunu ifade etmektedir. Extended Properties kısmında kullanılabilecek başka key-value değerleri de mevcuttur. Bunları araştırmanızı öneririm. Diğer yandan Excel için farklı Provider'larca kullanılabilecek bağlantı ifadeleri için [şu adrese bakabilirsiniz](http://www.connectionstrings.com/excel/).
 

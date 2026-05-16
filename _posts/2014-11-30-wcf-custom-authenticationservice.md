@@ -23,13 +23,13 @@ WCF (Windows Communication Foundation) ile servis yazan bir geliştiriciye, “e
 
 Her ne kadar WCF’ in konfigurasyon bazlı özellikleri ve getirdiği dekleratif yaklaşım bu işlemlerin mümkün mertebe kolay uygulanabilmesini öngörse de, çabuk unutulan konular olduklarından sık sık kitapları ve blogları tekrardan karıştırmak zorunda kalmaktayız.
 
-Asıl Mevzu
+## Asıl Mevzu
 
 Biz bugün kü yazımızda, WCF tarafında doğrulama ve yetkilendirme işlemlerine farklı bir bakış açısı getirmeye çalışıyor olacağız. WCF tarafında ASP.Net Membership Provider odaklı olarak kullanılabilen doğrulama ve yetkilendirme sistemi her ne kadar ideal bir çözüm olsa da, uygulanması için Membership API’ nin getirdiği bazı kısıtlara (SQL veritabanı bağımlılığı gibi) bağımlı bir çözümdür.
 
 Bununla birlikte.Net Framework içerisinde yer alan ve Authentication (doğrulama) için kullanılabilen hazır Built-In bir servis sınıfı da bulunmaktadır; System.Web.ApplicationServices isim alanı altında yer alan AuthenticationService sınıfı. Bu servis aslında özelleştirilerek herhangibir Membership Provider ile çalışabilecek hale getirilebilir. İşte bu yazımızdaki temel gayemiz söz konusu doğrulama servisini özelleştirip kullanabilmektir.
 
-Servis Uygulamasının Geliştirilmesi
+## Servis Uygulamasının Geliştirilmesi
 
 Bu amaçla ilk olarak bir WCF Service Application projesi oluşturarak yola koyulalım. Projemiz içerisinde SpecialAuthenticationService isimli bir WCF Servis öğesi yer alıyor olacak. Lakin söz konusu öğeye ait Code Behind ve sözleşmeyi (Service Contract) içeren cs dosyalarını sileceğiz. Nitekim servis dosyamızın aslında System.Web.ApplicationServices isim alanındaki ApplicationService tipini kullanmasını istiyoruz.
 
@@ -48,43 +48,43 @@ Authentication İşleminin Özelleştirilmesi
 Öncelikli olarak WCF Servis uygulamasına ait global.asax içeriğini aşağıdaki gibi düzenleyelim.
 
 ```csharp
-using System; 
-using System.Net; 
-using System.ServiceModel; 
-using System.ServiceModel.Channels; 
-using System.Web; 
-using System.Web.ApplicationServices; 
+using System;
+using System.Net;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.Web;
+using System.Web.ApplicationServices;
 using System.Web.Security;
 
-namespace AzonServices 
-{ 
-    public class Global 
-: System.Web.HttpApplication 
-    {
+namespace AzonServices
+{
+    public class Global
+   : System.Web.HttpApplication
+    {
 
-        protected void Application_Start(object sender, EventArgs e) 
-        { 
-            AuthenticationService.Authenticating +=new EventHandler<AuthenticatingEventArgs>(Authenticating); 
-        }
+        protected void Application_Start(object sender, EventArgs e)
+        {
+            AuthenticationService.Authenticating += new EventHandler<AuthenticatingEventArgs>(Authenticating);
+        }
 
-        private void Authenticating(object sender, AuthenticatingEventArgs e) 
-        { 
-            SpecialValidator validator = new SpecialValidator();
+        private void Authenticating(object sender, AuthenticatingEventArgs e)
+        {
+            SpecialValidator validator = new SpecialValidator();
 
-           e.Authenticated = validator.IsUserValid(e.UserName, e.Password); 
-            e.AuthenticationIsComplete = true;
+            e.Authenticated = validator.IsUserValid(e.UserName, e.Password);
+            e.AuthenticationIsComplete = true;
 
-            if (e.Authenticated) 
-            { 
-                HttpCookie newCookie = new HttpCookie(FormsAuthentication.FormsCookieName); 
-                newCookie.Value = e.UserName;
+            if (e.Authenticated)
+            {
+                HttpCookie newCookie = new HttpCookie(FormsAuthentication.FormsCookieName);
+                newCookie.Value = e.UserName;
 
-                HttpResponseMessageProperty response = new HttpResponseMessageProperty(); 
-                response.Headers[HttpResponseHeader.SetCookie] = newCookie.Name + "=" + newCookie.Value; 
-                OperationContext.Current.OutgoingMessageProperties[HttpResponseMessageProperty.Name] = response; 
-            } 
-        } 
-    } 
+                HttpResponseMessageProperty response = new HttpResponseMessageProperty();
+                response.Headers[HttpResponseHeader.SetCookie] = newCookie.Name + "=" + newCookie.Value;
+                OperationContext.Current.OutgoingMessageProperties[HttpResponseMessageProperty.Name] = response;
+            }
+        }
+    }
 }
 ```
 
@@ -141,7 +141,7 @@ Gelelim web.config dosyasının içeriğine.
 
 WCF servis ayarlarını zaten standart olarak bıraktığımız örnekteki tek özel nokta authenticationService kullanımının etkinleştirilmiş olmasıdır.
 
-İlk Testler
+## İlk Testler
 
 Bu noktadan sonra servis uygulamasını çalıştırıp ilk testlerimizi yapabiliriz. WCF Service Application şablonunu kullandığımız için devreye girecek olan WCF Test Client uygulaması başarılı bir şekilde çalıştığı takdirde, AuthenticationService’ in test edilebildiği görülecektir. Dikkat edileceği üzere AuthenticationService sınıfının dışarıya sunduğu tüm operasyonlar listelenmiştir. ValidateUser, Login, IsLoggedIn ve Logout…
 
@@ -153,7 +153,7 @@ Dikkat edileceği üzere Login metodunun dönüşü false olmuştur. Ancak, doğ
 
 ![sas_2](/assets/images/2014/sas_2.png)
 
-Authorization Kabiliyetlerinin Eklenmesi
+## Authorization Kabiliyetlerinin Eklenmesi
 
 Artık AuthenticationService hizmetini nasıl customize edebileceğimizi öğrendik. Öyleyse bu servisi yetkilendirme (Authorization) yeteneklerini de işin içerisine katarak örnek bir WCF Servisinde kullanmaya çalışalım. Bu amaçla aynı uygulamaya AlgebraService isimli bir WCF Service öğesi ekleyelim ve içeriğini aşağıdaki gibi düzenleyelim.
 
@@ -248,7 +248,7 @@ AlgebraService içerisinde çok basit bir dummy fonksiyon bulunmaktadır. Toplam
 - Servis içerisindeki Sum metodu senaryo gereği sadece burak isimli kullanıcı tarafından çalıştırılabilmektedir. Bu yetkilendirme bildirimi, dekleratif olarak PrincipalPermission niteliği ile sağlanmaktadır. (Normal şartlarda kullanıcı ad kontrolü yerine Role bazlı bir Permission kontrolüne gidilmesinde yarar vardır. Nitekim fonksiyonellikler ağırlık olarak Role bazlı olacak şekilde yetkilendirilmektedir)
 - Sınıfa ait yapıcı metod (Constructor) içerisinde bir dizi işlem yapıldığı görülmektedir. Buna göre, AuthenticationService’ inin istemciye gönderdiği Cookie yakalanmakta ve söz konusu servisin izleyen örneklerinin içerisinde yer alacağı Thread için ortak bir kimlik oluşturulmasında kullanılmaktadır. Bunun için güncel Thread’ in CurrentPrincipal özelliğine generic bir değişken atanmış ve içerisinde IIdentity arayüzü (Interface) türevli bir sınıf örneğine yer verilmiştir.
 
-Örnek İstemci Uygulamanın Geliştirilmesi
+## Örnek İstemci Uygulamanın Geliştirilmesi
 
 Artık örnek bir istemci uygulama geliştirerek özelleştirilen AuthenticationService hizmetinin çalışmasını denetleyebilir ve özellikle Sum fonksiyonu için konulan yetkilendirme sürecini kontrol edebiliriz.
 
@@ -282,90 +282,90 @@ Console Application olarak geliştireceğimiz istemci uygulamanın her iki servi
 Çok doğal olarak SpecialAuthenticationService yardımıyla, bir kullanıcı oturumu açılacak ve arından AlgebraService üzerinden Sum metodu çağırılacaktır. Önemli olan noktalardan birisi, oturum açıldıktan sonra istemci tarafına gönderilen Cookie’ nin varlığıdır. Bu Cookie istemci tarafında ele alınmalı ve sonraki operasyonel işlemde AlgebreService için de kullanılabilmelidir.
 
 ```csharp
-using ClientApp.MathSpace; 
-using ClientApp.MembershipSpace; 
-using System; 
-using System.Net; 
-using System.ServiceModel; 
+using ClientApp.MathSpace;
+using ClientApp.MembershipSpace;
+using System;
+using System.Net;
+using System.ServiceModel;
 using System.ServiceModel.Channels;
 
-namespace ClientApp 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            string cookie=string.Empty; 
-            // Önce login olmayı deniyoruz 
-            if (AuthenticateMember(ref cookie, "burak", "P@ssw0rd!")) 
-            { 
-                Console.WriteLine("{0}\n",cookie); 
-                try 
-                { 
-                    // Aynı member cookie için arka arkaya 3 test yapmaktayız. 
-                    CallSum(cookie, 4, 5); 
-                    CallSum(cookie, 6, 7); 
-                    CallSum(cookie, 1, -9); 
-                } 
-                catch (Exception exception) 
-                { 
-                    Console.WriteLine(exception.Message);                    
-                } 
-            } 
-            else 
-            { 
-                Console.WriteLine("Doğrulama işlemi başarısız olduğundan uygulama sonlanacaktır"); 
-                return; 
-            } 
-        }
+namespace ClientApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string cookie = string.Empty;
+            // Önce login olmayı deniyoruz 
+            if (AuthenticateMember(ref cookie, "burak", "P@ssw0rd!"))
+            {
+                Console.WriteLine("{0}\n", cookie);
+                try
+                {
+                    // Aynı member cookie için arka arkaya 3 test yapmaktayız. 
+                    CallSum(cookie, 4, 5);
+                    CallSum(cookie, 6, 7);
+                    CallSum(cookie, 1, -9);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Doğrulama işlemi başarısız olduğundan uygulama sonlanacaktır");
+                return;
+            }
+        }
 
         // Servis metod çağrısı 
-        private static void CallSum(string cookie,double x,double y) 
-        { 
-            // AlgebraService' e ait bir örnek oluşturulur 
-            AlgebraServiceClient einstein = new AlgebraServiceClient("BasicHttpBinding_IAlgebraService");
+        private static void CallSum(string cookie, double x, double y)
+        {
+            // AlgebraService' e ait bir örnek oluşturulur 
+            AlgebraServiceClient einstein = new AlgebraServiceClient("BasicHttpBinding_IAlgebraService");
 
             // Güncel kanal bilgisi üzerinden 
-            using (new OperationContextScope(einstein.InnerChannel)) 
-            { 
-                // Request için gidecek mesaj özelliğinin içerisine az önce doğrulama servisinin gönderdiği member cookie gömülür. 
-                HttpRequestMessageProperty request = new HttpRequestMessageProperty(); 
-                request.Headers[HttpResponseHeader.SetCookie] = cookie; 
-                OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = request;
+            using (new OperationContextScope(einstein.InnerChannel))
+            {
+                // Request için gidecek mesaj özelliğinin içerisine az önce doğrulama servisinin gönderdiği member cookie gömülür. 
+                HttpRequestMessageProperty request = new HttpRequestMessageProperty();
+                request.Headers[HttpResponseHeader.SetCookie] = cookie;
+                OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = request;
 
-               Console.WriteLine("{0}+{1}={2}", x, y, einstein.Sum(x, y).ToString()); 
-            } 
-        }
+                Console.WriteLine("{0}+{1}={2}", x, y, einstein.Sum(x, y).ToString());
+            }
+        }
 
         // Login işlemini üstlenen fonksiyon 
-        private static bool AuthenticateMember(ref string cookie,string username,string password) 
-        { 
-            // AuthenticationService proxy örneği üretilir 
-            AuthenticationServiceClient authenticator = new AuthenticationServiceClient("BasicHttpBinding_AuthenticationService"); 
-            bool result = false;
+        private static bool AuthenticateMember(ref string cookie, string username, string password)
+        {
+            // AuthenticationService proxy örneği üretilir 
+            AuthenticationServiceClient authenticator = new AuthenticationServiceClient("BasicHttpBinding_AuthenticationService");
+            bool result = false;
 
             // Güncel kanal bilgisi üzerinden 
-            using (new OperationContextScope(authenticator.InnerChannel)) 
-            { 
-                // ValidateUser ile kullanıcı doğrulanmaya çalışılır 
-                result=authenticator.ValidateUser(username,password, string.Empty); 
-                // Dönen mesajın içerisinden gelen Cookie bilgisi yakalanır 
-                var responseMessageProperty = (HttpResponseMessageProperty) 
-                             OperationContext 
-                             .Current 
-                             .IncomingMessageProperties[HttpResponseMessageProperty.Name]; 
-                if (result) 
-                { 
-                    cookie = responseMessageProperty.Headers.Get("Set-Cookie"); 
-                } 
-            } 
-            return result; 
-        } 
-    } 
+            using (new OperationContextScope(authenticator.InnerChannel))
+            {
+                // ValidateUser ile kullanıcı doğrulanmaya çalışılır 
+                result = authenticator.ValidateUser(username, password, string.Empty);
+                // Dönen mesajın içerisinden gelen Cookie bilgisi yakalanır 
+                var responseMessageProperty = (HttpResponseMessageProperty)
+ OperationContext
+ .Current
+ .IncomingMessageProperties[HttpResponseMessageProperty.Name];
+                if (result)
+                {
+                    cookie = responseMessageProperty.Headers.Get("Set-Cookie");
+                }
+            }
+            return result;
+        }
+    }
 }
 ```
 
-İstemci Tarafı Testleri
+## İstemci Tarafı Testleri
 
 Örneğimizi test edersek aşağıdaki sonuçları alıyor olmamız gerekir.
 
@@ -391,7 +391,7 @@ Bu durumda istemci tarafında aşağıdaki çıktı elde edilecektir.
 
 Access is denied almak istediğimiz bir hatadır.
 
-Role Bazlı Çalışma Yeteneklerinin Eklenmesi
+## Role Bazlı Çalışma Yeteneklerinin Eklenmesi
 
 Şimdi senaryomuzu biraz daha genişletelim ve Role bazlı çalışacak hale getirmeye çalışalım. Nitekim gerçek hayat senaryolarında, servis operasyonlarını kullanıcı adları ile yetkilendirmek her zaman uygun olmayabilir. Bazen bir servis operasyonu çağrısı, Membership API içerisindeki bir grubun yetkisinde olabilir. Hatta birden fazla Role dahi bağlanabilir. Ya da bir servis operasyonu belirli bir Role tarafından asla çalıştıramamalıdır. Bu gibi sebeplerden ötürür Role bazlı yetkilendirme (Role based Authorization) oldukça önemlidir. Peki nasıl uygulayabiliriz? İlk olarak SpecialValidator sınıfı içerisindeki IsUserValid metodunu geliştireceğiz.
 
@@ -516,7 +516,7 @@ Dikkat edileceği üzere yakalanan Cookie içerisindeki Username’ i takip eden
 
 Görüldüğü gibi PrinciplePermission niteliğinden Role özelliğine Contributor değeri verilmiştir. Böylece Sum operasyonunu sadece Contributor rolündekilerin gerçekleştirebileceği ifade edilmektedir. İstemci tarafında yapılması gereken bir değişiklik yoktur. Nitekim rol bilgisi zaten kullanıcı adına göre AuthenticationService tarafından yakalanmaktadır.
 
-Role Bazlı Yetkinlik Testleri
+## Role Bazlı Yetkinlik Testleri
 
 Eğer uygulamayı bu şekilde test edersek aşağıdaki çıktıları alırız.
 
@@ -528,7 +528,7 @@ Eğer uygulamayı bu şekilde test edersek aşağıdaki çıktıları alırız.
 
 Görüldüğü gibi burak kullanıcısı Administrator rolündedir ama Sum operasyonu sadece Contributor rolündekilere yetkilendirilmiştir. Dolayısıyla istemci tarafı bir Access is denied istisnası alacaktır.
 
-Cookie İçeriğinin Şifrelenmesi
+## Cookie İçeriğinin Şifrelenmesi
 
 Geliştirdiğimiz bu örnekte herşey iyi görünmesine rağmen eksik olan bazı kısımlar bulunmaktadır. Söz gelimi cookie bilgisi plain text olarak gitmektedir. Bu sebepten Cookie bilgisinin en azından şifrelenmesi önemlidir. Şimdi bu işlemi nasıl icra edebileceğimize bir bakalım. Başlangıçta Cookie’ nin üretildiği yere müdahalede bulunmalı ve bir encryption işlemini gerçekleştirmeliyiz. Buna göre global.asax.cs içerisindeki Authentication metodunu aşağıdaki kod parçasında olduğu gibi kurcalayabiliriz.
 
@@ -558,7 +558,7 @@ private void Authenticating(object sender, AuthenticatingEventArgs e)
 
 Dikkat edileceği üzere ilk olarak bir FormsAuthenticationTicket nesne örneği oluşturulmuştur. Bu nesne örneği içerisinde kullanıcı adı, role, cookie’ nin yaşam süresi gibi bilgiler yer almaktadır. Şifreleme işlemi için FormsAuthentication tipinin static Encrypt metodundan yararlanılmıştır. Bu metod varsayılan olarak machine.config içerisinde belirtilen şifreleme algoritmasına göre bir encrpytion işlemi uygulamaktadır.
 
-Şifrelenmiş Cookie İçeriğinin Çözümlenmesi
+## Şifrelenmiş Cookie İçeriğinin Çözümlenmesi
 
 Peki şifrelenen Cookie içeriğini nasıl çözümleyeceğiz? Tahmin edileceği üzere bunun için AlgebraService sınıfının yapıcı metodunda bazı işlemler yapmamız gerekiyor ve yine başrollerde FormsAuthenticationTicket ile FormsAuthentication tipleri yer alacak. Aşağıdaki kod değişiklikleri senaryomuz için yeterli olacaktır.
 
@@ -645,7 +645,7 @@ Gelen mesaj içeriğine ait Header kısmında SecuredCookie isimli bir name değ
 
 Dilerseniz bu kısımda şifreleme için kullanılan metodu ve gerekli diğer parametreleri belirleyebilirsiniz (decryptionkey, validationkey vb…)
 
-Şifreli Cookie için İstemci Testleri
+## Şifreli Cookie için İstemci Testleri
 
 Örneğimizi bu haliyle çalıştırdığımızda aşağıdaki sonuçları alırız.
 

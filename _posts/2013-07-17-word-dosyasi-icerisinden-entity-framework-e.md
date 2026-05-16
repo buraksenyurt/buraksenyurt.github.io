@@ -81,8 +81,6 @@ Tabiki ilk etapta Word projesinin, Entity Library kütüphanesini referans etmes
 
 > Burada dikkat edilmesi gereken noktalardan birisi de Target Framework seçimidir. Oluşturduğumuz Word Document projesi.Net Framework 4.0 odaklıdır. Bu sebeple Entity Framework tabanlı olan Class Library projesinin de.Net Framework 4.0 odaklı olması gerekmektedir. Aksi durumda Target Framework uyuşmazlığı oluşuacak ve Word Document tipi projeye eklenen referans için bir Warning alınacaktır.
 
-Kod yazımı işin eğlenceli taraflarından birisidir elbette
-
 Word projesindeki docx dosyası, bir de C# kod dosyası içermektedir. Burada Word’ ün Object Model’ ine this anahtar kelimesi üzerinden kolayca erişilebilinir. Daha da önemlisi bazı olaylar (Events) yüklenerek dokümanının davranışları fonksiyonel olarak değiştirilebilir. Örneğin bu Word dokümanı kayıt edilmeden önce veya sonra devreye girecek olay metodları (Event Handlers) dahil edilebilir. Dolayısıyla yapabileceklerimiz oldukça geniş bir yelpazeye yayılmaktadır. Biz örneğimizde oldukça basit ilerledik ve aşağıdaki kod yapısını oluşturduk.
 
 ```csharp
@@ -224,4 +222,3 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 [Dosya boyutunun küçülmesi için Packages ve Release klasörleri silinmiştir]
 
 (Orjinal Yazım Tarihi 03-15-2013)
-

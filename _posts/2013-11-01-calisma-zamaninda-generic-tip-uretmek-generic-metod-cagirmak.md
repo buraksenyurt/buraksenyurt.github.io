@@ -19,4 +19,6 @@ categories:
 ---
 Bu görsel dersimizde çalışma zamanında kullanılabilecek örnek senaryolardan birisine daha değinmekteyiz. İlk amacımız Generic olarak tanımlanmış bir tipin çalışma zamanında üretilmesini sağlamak (Örneğin List koleksiyonunun) Diğer amacımız ise generic bir metodun yine çalışma zamanında üretilip, yürütülmesi.
 
+[Youtube Link](https://youtu.be/uv_1owWpcj8?si=OK5NCTKjVTExgB_s)
+
 Her iki senaryo için de geçerli olan önemli nokta ise generic tip bilgisinin çalışma zamanında string bir değişken olarak gelmesi. Bir başka deyişle T, K gibi isimlendirilen generic bilginin, aslında çalışma zamanında her hangi bir kaynaktan (örneğin XML tabanlı bir map dosyasından) metinsel olarak gelmesi durumu söz konusu. Bu nedenle senaryo, geliştirme zamanında generic tip kullanımından farklılaşmakta. Haydi gelin nasıl yaptığımızı birlikte inceleyelim.

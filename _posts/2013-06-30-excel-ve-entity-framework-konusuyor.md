@@ -14,8 +14,6 @@ categories:
 ---
 Artık uygulamaların birbirleri ile konuşmaları çok ama çok kolay. Bu gerçekten önemli bir mesele. Özellikle farklı segmentlerden insanların bir araya geldiği bilişim toplumlarında. Kimi kullanıcı için Office Excel, Word veya Powerpoint çok şey ifade ederken, kimi kullanıcı içinde SQL Management Studio ortamında hazırlanan karmaşık bir sorguya bakmak daha anlamlı olabiliyor. Ya da bir Web sayfası üzerinden alınan raporlar şirketin Muhasebe Şefi için değerli iken, kimisi SSRS ile elde edilen raporları mobil cihazında görmeyi tercih edebiliyor.
 
-![handshake](/assets/images/2013/handshake.jpg)
-
 Ancak Developer gözüyle olaya bakıldığında, her segmenti memnun edecek şekilde geliştirme yapması beklendiği oldukça aşikar. Bu sebepten, farklı uygulamaların birbirleriyle rahatça konuşabilmeleri önemli bir mesele olarak karşımıza çıkıyor. Visual Studio 2012 tarafında olaya baktığımızda bir Office uygulamasının, önceki sürümlere göre.Net Framework ile daha yüksek seviyede etkileşime girerek tasarlanabilmesi/geliştirilebilmesi de pekala mümkün.
 
 Özellikle Sheet’ ler veya Workbook’ lar kodlanabilir birer C#(Vb.Net) dosyası olduğu için, uygulama bazında istediğimiz taklayı atma şansına sahibiz. İşte bu düşünceler ışığında yola çıktığımız ve okumakta olduğunuz yazımızda, Excel’ i, Entity Framework’ ü, C#’ ı işin içerisine katacak ve birbirleri ile konuşmalarını sağlamaya çalışacağız. Haydi hiç vakit kaybetmeden yola koyulalım. Ama önce örnek senaryomuz.
@@ -28,13 +26,8 @@ Amacımız, Northwind veritabanında bulunan 3 adet View nesne örneğinin Excel
 
 Dilerseniz senaryo içerisinde tarafların gözünden olaya bakalım.
 
-## Sheet Konuşuyor
-
-"Merhaba, benim adım Sheet1. Çalıştırıldığımda Sheet1Startup olay metoduna bir çağrıda bulunurum. Ey Startup metodu, haydi işini yap derim. O da kendi içinde Entity Framework tabanlı Context nesnesini kullanır ve 1997 yılına ait kategori bazlı satışların verilerini, sahip olduğum hücrelere teker teker aktarır. Onunla çok iyi anlaşırız.
-
-## Workbook Konuşuyor
-
-Merhaba, ben ThisWorkbook. Ben sahip olduğum tüm Sheet’ leri yönetebilirim. Örneğin kendi Startup metoduma, tüm Sheet’ leri çeşitli yerlerden topladığı veriler ile doldurmasını söyleyebilirim. He-Man ile aramdaki tek fark onun kılıcının olmasıdır.
+- **Sheet Konuşuyor:** Merhaba, benim adım Sheet1. Çalıştırıldığımda Sheet1Startup olay metoduna bir çağrıda bulunurum. Ey Startup metodu, haydi işini yap derim. O da kendi içinde Entity Framework tabanlı Context nesnesini kullanır ve 1997 yılına ait kategori bazlı satışların verilerini, sahip olduğum hücrelere teker teker aktarır. Onunla çok iyi anlaşırız.
+- **Workbook Konuşuyor:** Merhaba, ben ThisWorkbook. Ben sahip olduğum tüm Sheet’ leri yönetebilirim. Örneğin kendi Startup metoduma, tüm Sheet’ leri çeşitli yerlerden topladığı veriler ile doldurmasını söyleyebilirim. He-Man ile aramdaki tek fark onun kılıcının olmasıdır.
 
 ## Hazırlıklar
 

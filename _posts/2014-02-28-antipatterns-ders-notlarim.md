@@ -173,8 +173,7 @@ Bazen araştırma amaçlı olarak başlayan yazılımlar ürüne dönüşürler.
 
 Bu durumun oluşmasının pek çok nedeni vardır. Örneğin projede görevlendirilip tek başına kodlama yapan bir geliştirici sebepler arasında sayılabilir (Lone Wolf Developer veya Single Developer Written Code) ya da deneyimli olmayan veya yeteri kadar bilgisi bulunmayan bir yönetici/mimar bu duruma sebebiyet verebilir.
 
-> Günümüzde vuku bulan bir geliştirici tanımı da Monkey Developer’ dır. Professional Developer ve Monkey Developer arasındaki ayrımı değerlendiren [isabetli bir yazıyı bu adresten okuyabilirsiniz](http://blog.binarymist.net/2014/01/25/essentials-for-creating-and-maintaining-a-high-performance-development-team/).
-> Her ne kadar ürünlerin piyasadaki rekabet nedeniyle hızla çıkması gerekse de bu, hızlı development’ ın ortaya koyacağı istenmeyen sonuçların oluşmasını kabul etmek olarak da algılanmamalıdır.
+> Günümüzde vuku bulan bir geliştirici tanımı da Monkey Developer’ dır. Professional Developer ve Monkey Developer arasındaki ayrımı değerlendiren [isabetli bir yazıyı bu adresten okuyabilirsiniz](http://blog.binarymist.net/2014/01/25/essentials-for-creating-and-maintaining-a-high-performance-development-team/). Her ne kadar ürünlerin piyasadaki rekabet nedeniyle hızla çıkması gerekse de bu, hızlı development’ ın ortaya koyacağı istenmeyen sonuçların oluşmasını kabul etmek olarak da algılanmamalıdır.
 
 Sonuç olarak kod içeriğine ve projenin genel çatısına bakıldığında müdahale edilmesi zor, modası geçmiş ve kullanılmayan kod parçaları içeren, üstüne sürekli yeni özellikler eklenirken hata ayıklaması da oldukça zorlaşan bir ürünün ortaya çıktığı görülür. İçinde başka AntiPattern’ leri de barındırır diyebiliriz. Söz gelimi Boat Anchor, Spaghetti Code, Error Hiding vb…Kaynak kodun takibi de zorlaşır. Çözüm yollarından birisi Configuration Management’ tır.
 
@@ -204,9 +203,7 @@ Yazılım geliştirme projeleri arasında teknoloji transferi ve yeterli iletiş
 
 > Desen ve metodları ne/nasıl/niçin olduğunu anlamadan kullanmak.
 
-Bu aslında bir inanışı sorgusuz sualsiz kabul etmekten dolayı isimlendirilmiş bir desendir. Çoğu zaman geliştirici bir çözüm için kullandığı bileşenleri, prensip ile desenleri, kod parçalarının nasıl çalıştığını/niye kullanıldığını bilmeden uygular. Bu sıkı sıkıya bağlılık aynı felsefeleri başka çözümlerde de kullanmaya çalışmasına yol açar.
-
-Bunun doğal sonucu olarak geliştirici bir süre sonra problemi doğru şekilde algılayıp uygun teşhisi koyma noktasından da uzaklaşabilir.
+Bu aslında bir inanışı sorgusuz sualsiz kabul etmekten dolayı isimlendirilmiş bir desendir. Çoğu zaman geliştirici bir çözüm için kullandığı bileşenleri, prensip ile desenleri, kod parçalarının nasıl çalıştığını/niye kullanıldığını bilmeden uygular. Bu sıkı sıkıya bağlılık aynı felsefeleri başka çözümlerde de kullanmaya çalışmasına yol açar. Bunun doğal sonucu olarak geliştirici bir süre sonra problemi doğru şekilde algılayıp uygun teşhisi koyma noktasından da uzaklaşabilir.
 
 Bir nevi Copy-Paste Programming AntiPattern yaklaşımının bir sonucu olarak ortaya çıktığını da düşünebiliriz. Nitekim geliştirici çözüm için bir kod parçasının gerekli olup olmadığını ve nasıl çalıştığını anlamadan bir yerden bir yere taşıyarak uygulamaya çalışır.
 

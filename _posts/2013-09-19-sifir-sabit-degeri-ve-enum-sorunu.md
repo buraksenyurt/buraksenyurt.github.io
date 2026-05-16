@@ -9,14 +9,7 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-C# konulu yeni bir bilmece ile karşı karşıyayız. Bu sefer kolay kolay fark edemeyebileceğimiz, basit ama irdelenmesi gereken bir vakayı göz önüne alacağız.
-
-![1186819_puzzle_time_1](/assets/images/2013/1186819_puzzle_time_1.jpg)
-
-
-Bir uygulamayı geliştirirken, Developer olarak son derece dikkatli olmalı ve testlerimizi gerçekleştirirken de tüm senaryoları göz önüne almalıyız. Bu anlamda gerek dilin gerek.Net Framework alt yapısının tüm unsurlarına hakim olmak da son derece önemli.
-
-Nitekim bazı noktalarda profesyonel bir geliştiricinin dahi kestiremeyeceği sorunsallar yaşanabiliyor. Yazımızın ilerleyen kısımlarında bu perspektiften bakarak sorun olarak da görülebilecek bir konuyu masaya yatıracağız.
+C# konulu yeni bir bilmece ile karşı karşıyayız. Bu sefer kolay kolay fark edemeyebileceğimiz, basit ama irdelenmesi gereken bir vakayı göz önüne alacağız. Bir uygulamayı geliştirirken, Developer olarak son derece dikkatli olmalı ve testlerimizi gerçekleştirirken de tüm senaryoları göz önüne almalıyız. Bu anlamda gerek dilin gerek.Net Framework alt yapısının tüm unsurlarına hakim olmak da son derece önemli. Nitekim bazı noktalarda profesyonel bir geliştiricinin dahi kestiremeyeceği sorunsallar yaşanabiliyor. Yazımızın ilerleyen kısımlarında bu perspektiften bakarak sorun olarak da görülebilecek bir konuyu masaya yatıracağız.
 
 ## Senaryo
 
@@ -35,16 +28,16 @@ namespace EnumAndZeroConstant
         static void Main(string[] args) 
         { 
             List<Information> infos = new List<Information>() 
-                                          { 
-                                              new Information("Hata mesajı"), 
-                                              new Information(InformationType.Application), 
-                                                              new Information(InformationType.Member), 
-                                                              new Information(InformationType.System), 
-                                                              new Information(0), 
-                                                              new Information(1), 
-                                                              new Information(2), 
-                                                              new Information(3) 
-                                          };
+            { 
+                new Information("Hata mesajı"), 
+                new Information(InformationType.Application), 
+                                new Information(InformationType.Member), 
+                                new Information(InformationType.System), 
+                                new Information(0), 
+                                new Information(1), 
+                                new Information(2), 
+                                new Information(3) 
+            };
 
             foreach (Information info in infos) 
             { 
@@ -104,6 +97,7 @@ Main metodu içerisinde test amaçlı olaraktan, Information tipinden generic bi
 
 Bu sorulara cevap bulabilmek için öncelikli olarak kodun nasıl bir sonuç üreteceğini düşünmeye çalışalım. Aslında beklentimiz, uygulamanın çıktısının aşağıdaki temsilde olduğu gibi üretilmesidir.
 
+```text
 Hata mesajı
 Uygulama bilgisi
 Üyeden
@@ -112,6 +106,7 @@ Sistem bilgisi
 1
 2
 3
+```
 
 Ancak, yapıcı metoda gönderilen 0 değerinden pis kokular gelmektedir. Ne demek istediğimi daha net bir şekilde ifade edebilmek için uygulamanın çalışma zamanı (Runtime) ekran çıktısına bir bakalım dilerseniz.
 
@@ -164,15 +159,15 @@ Information infoZero6 = new Information(0.0);
 var infoZero7 = new Information(0);
 
 List<Information> infos = new List<Information>() 
-                              { 
-                                                  infoZero1, 
-                                                  infoZero2, 
-                                                  infoZero3, 
-                                                  infoZero4, 
-                                                  infoZero5, 
-                                                  infoZero6, 
-                                                  infoZero7 
-                              };
+{ 
+    infoZero1, 
+    infoZero2, 
+    infoZero3, 
+    infoZero4, 
+    infoZero5, 
+    infoZero6, 
+    infoZero7 
+};
 ```
 
 Burada farklı şekillerde 0 değerinin gönderilmesi söz konusu olmuştur. İlk olarak cast operatörü göz önüne alınarak 0 değerinin int tipinden ele alınması denenmiştir. İkinci olarak 0 değişkenini taşıyan bir var tanımlaması yapılmaktadır. Devam eden kısımda sırasıyla Object tipine atanarak yapıcı metoda gönderilme, Convert tipinin static Int32 metodundan yararlanma, double bir değişken atama, yapıcı metoda parametre olarak 0 gönderirken var kullanarak ilerleme seçenekleri de denenmiştir. Bu durumda uygulamanın ekran çıktısı aşağıdaki gibi olacaktır.

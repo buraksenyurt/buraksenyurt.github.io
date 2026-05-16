@@ -208,13 +208,13 @@ Arka planda ilk olarak Content ve FrontCover alanlarını içermeyen bir Select 
 
 ```sql
 SELECT TOP(1)
-[Extent1].[DocumentID] as [DocumentID],
-[Extent1].[Title] as [Title],
-[Extent1].[PageCount] as [PageCount],
-[Extent1].[Language] as [Language],
-[Extent1].[Genre] as [Genre],
-[Extent1].[Publisher] as [Publisher],
-[Extent1].[ISBN] as [ISBN]
+  [Extent1].[DocumentID] as [DocumentID],
+  [Extent1].[Title] as [Title],
+  [Extent1].[PageCount] as [PageCount],
+  [Extent1].[Language] as [Language],
+  [Extent1].[Genre] as [Genre],
+  [Extent1].[Publisher] as [Publisher],
+  [Extent1].[ISBN] as [ISBN]
 FROM [dbo].[Documents] as [Extent1]
 WHERE N'1234-3456-BOOK-1202'=[Extent1].[ISBN]
 ```
@@ -223,9 +223,9 @@ Bu son derece doğaldır nitekim gelmeyen alanlar kodun o anki satırına kadar 
 
 ```sql
 SELECT TOP(1)
-[Extent1].[DocumentID] as [DocumentID],
-[Extent1].[Content] as [Content],
-[Extent1].[FrontCover] as [FrontCover]
+  [Extent1].[DocumentID] as [DocumentID],
+  [Extent1].[Content] as [Content],
+  [Extent1].[FrontCover] as [FrontCover]
 FROM [dbo].[Documents] as [Extent1]
 WHERE [Extent1].[DocumentID]=@EntityKeyValue1
 ```
@@ -236,15 +236,15 @@ Gelelim ikinci ifadeye; Bu kez LINQ sorgusunda Include metodunun çağırıldı�
 
 ```sql
 SELECT TOP(1)
-[Extent1].[DocumentID] as [DocumentID],
-[Extent1].[Title] as [Title],
-[Extent1].[PageCount] as [PageCount],
-[Extent1].[Language] as [Language],
-[Extent1].[Genre] as [Genre],
-[Extent1].[Publisher] as [Publisher],
-[Extent1].[ISBN] as [ISBN],
-[Extent1].[Content] as [Content],
-[Extent1].[FrontCover] as [FrontCover]
+  [Extent1].[DocumentID] as [DocumentID],
+  [Extent1].[Title] as [Title],
+  [Extent1].[PageCount] as [PageCount],
+  [Extent1].[Language] as [Language],
+  [Extent1].[Genre] as [Genre],
+  [Extent1].[Publisher] as [Publisher],
+  [Extent1].[ISBN] as [ISBN],
+  [Extent1].[Content] as [Content],
+  [Extent1].[FrontCover] as [FrontCover]
 FROM [dbo].[Documents] as [Extent1]
 WHERE N'1234-3456-BOOK-1202'=[Extent1].[ISBN]
 ```

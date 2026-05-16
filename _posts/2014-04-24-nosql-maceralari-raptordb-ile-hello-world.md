@@ -7,11 +7,9 @@ tags:
 categories:
   - Veritabanı
 ---
-Yıllardır vaz geçemediğim bilgisayar oyunlarından birisidir [Command and Conquer Generals](http://tr.wikipedia.org/wiki/Command_%26_Conquer:_Generals). Özellikle Zero Hour setini çok ama çok severim. Bu set içerisinde en çok kullandığım GLA güçleridir ama zaman zaman China Tank General veya USA Air Force’ u da tercih ederim.
+Yıllardır vaz geçemediğim bilgisayar oyunlarından birisidir [Command and Conquer Generals](http://tr.wikipedia.org/wiki/Command_%26_Conquer:_Generals). Özellikle Zero Hour setini çok ama çok severim. Bu set içerisinde en çok kullandığım GLA güçleridir ama zaman zaman China Tank General veya USA Air Force’ u da tercih ederim. USA Air Force’ un en belirgin özelliği King Raptor olarak adlandırılan ve aslında günümüzde de [F22 Raptor olarak bilinen savaş uçaklarını](http://tr.wikipedia.org/wiki/F-22_Raptor) içermesidir. Bu uçaklar kendilerine fırlatılan füzeleri lazer ile vurabilir, ayrıca normal Raptor’ lara göre daha fazla güdümlü füze taşıyabilir.
 
 ![070401-F-6701P-005](/assets/images/2014/F-22_Raptor_-_070401-F-6701P-046.jpg)
-
-USA Air Force’ un en belirgin özelliği King Raptor olarak adlandırılan ve aslında günümüzde de [F22 Raptor olarak bilinen savaş uçaklarını](http://tr.wikipedia.org/wiki/F-22_Raptor) içermesidir. Bu uçaklar kendilerine fırlatılan füzeleri lazer ile vurabilir, ayrıca normal Raptor’ lara göre daha fazla güdümlü füze taşıyabilir.
 
 Araştırmasam da, Raptor isminin Dinazor çağındaki [Velociraptor](http://tr.wikipedia.org/wiki/Velociraptor) isimli yırtıcıdan geldiğini düşünmekteyim. Hızlı Hırsız anlamına gelen Velociraptor, 15Kg ağırlığında olan bir etoburdur. Yaklaşık 75 ila 71 milyon yıl önce yaşadığı bilinmektedir. Saatte 40km hızla koşabilen 2metre boyundaki canlı ölümcül bir yırtıcı olarak ifade edilmiştir. O kadar sivri ve güçlü pençelere sahipmiş ki, kurbanının damarlarına denk gelmesi halinde onu 3 ile 5 saniye içerisinde öldürürmüş. Günümüzde bir Hindi boyunda olan bu canlının en korkutucu yanı ise sürü halinde dolaşıyor olmalarıymış. Karada yürüyen Pirhanalara benzetebiliriz sanırım.
 

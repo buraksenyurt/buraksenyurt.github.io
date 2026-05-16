@@ -404,4 +404,4 @@ Böylece geldik bir yazımızın daha sonuna. Bu yazımızda veri bağlama (Data
 
 Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
-H[owTo_FundementalsOfBinding.zip (77,96 kb)](/assets/files/2014/HowTo_FundementalsOfBinding.zip)
+[HowTo_FundementalsOfBinding.zip (77,96 kb)](/assets/files/2014/HowTo_FundementalsOfBinding.zip)

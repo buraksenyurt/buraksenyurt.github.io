@@ -20,9 +20,7 @@ Dilerseniz önce sorunu ve ulaşmak istediğimiz hedefi bir örnek üzerinden if
 
 EnginarArpaKetenPaket
 
-Bu son derece doğal bir sonuç tabi
-
-Ancak amacımız bu metni mümkün olduğu kadar kısaltmak. Peki bunu nasıl yapabiliriz?
+Bu son derece doğal bir sonuç tabi ancak amacımız bu metni mümkün olduğu kadar kısaltmak. Peki bunu nasıl yapabiliriz?
 
 Aslına bakarsanız bir şekilde kelimeler arasındaki ilişkileri matematiksel olarak anlamlandırmak ve olabilecek en iyi kombinasyonları seçerek ilerlemeye çalışmak yerinde olacaktır. Bunu düşünerek Paket ile Keten kelimelerini göz önüne alalım.
 
@@ -345,7 +343,7 @@ Uygulama kodunu kavrayabilmek adına Debug ederek adım adım ilerlemenizi öner
 
 ![ko_10.png](/assets/images/2013/ko_10.png)
 
-Başarılı bir birleştirme işlemi yapılmış gibi görünüyor değil mi? Aslında biraz daha dikkat edersek, hiç bir kelime ile ortak notkası olmayan DEMİR sözcüğünün en sona veya en başa alınmasının daha doğru olduğunu görebiliriz. Çünkü bu durumda
+Başarılı bir birleştirme işlemi yapılmış gibi görünüyor değil mi? Aslında biraz daha dikkat edersek, hiç bir kelime ile ortak notkası olmayan DEMİR sözcüğünün en sona veya en başa alınmasının daha doğru olduğunu görebiliriz. Çünkü bu durumda,
 
 ```text
 EngiNarPAketENDEMİR veya DEMİREngiNarPAKetEN

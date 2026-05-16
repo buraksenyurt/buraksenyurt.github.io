@@ -13,11 +13,9 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalışmış ve yazılım geliştirmişseniz, eminimki hayatınızın bir döneminde büyük boyutlu Text dosyaları ile çalışmak zorunda kalmışsınızdır.
+Eğer sizde zamanında benim gibi bankaların teknoloji departmanlarında çalışmış ve yazılım geliştirmişseniz, eminimki hayatınızın bir döneminde büyük boyutlu Text dosyaları ile çalışmak zorunda kalmışsınızdır. Malum Bankaların sistemleri halen daha eski olabildiğinden, bölümler arası veya uygulamalar arası veri aktarmanın en popüler yollarından birisi olarak Text tabanlı dosya formatları göz önüne alınmaktadır. Bazen onlarca megabyte'ı aşan ve milyonlarca satırdan oluşabilen düzenli text dosyaları söz konusu olur ve bunların bir şekilde uygulamaların konuştuğu veritabanı ortamlarına işlenerek, ilişkisel veri bütünlüğü içerisinde yerlerini alması beklenir.
 
 ![1370555_lots_of_files_2](/assets/images/2013/1370555_lots_of_files_2.jpg)
-
-Malum Bankaların sistemleri halen daha eski olabildiğinden, bölümler arası veya uygulamalar arası veri aktarmanın en popüler yollarından birisi olarak Text tabanlı dosya formatları göz önüne alınmaktadır. Bazen onlarca megabyte'ı aşan ve milyonlarca satırdan oluşabilen düzenli text dosyaları söz konusu olur ve bunların bir şekilde uygulamaların konuştuğu veritabanı ortamlarına işlenerek, ilişkisel veri bütünlüğü içerisinde yerlerini alması beklenir.
 
 ## Vaka
 

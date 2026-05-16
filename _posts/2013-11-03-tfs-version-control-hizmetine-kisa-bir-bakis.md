@@ -255,4 +255,3 @@ ve benzerleri…
 Bu konuları örneğimizde ele almadık ancak VersionControlServer tipinin işaret ettiği servis metodlarını inceleyerek nasıl yapabileceğinizi araştırmaya başlayabilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_VersionControl.zip (218,31 kb)](/assets/files/2013/HowTo_VersionControl.zip)
-
