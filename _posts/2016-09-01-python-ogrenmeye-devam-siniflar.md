@@ -26,27 +26,29 @@ Pek tabii OOP denilince dilin bu amaçla desteklediği en temel tip (type) sın�
 
 ```python
 class Product:
-	def __init__(self,title,price,stockLevel):
-		self.title=title
-		self.price=price
-		self.stockLevel=stockLevel
-		
-	def writeToScreen(self):
-		info="{0} {1} {2}"
-		print(info.format(self.title,self.price,self.stockLevel))
-		
-	def discount(self,value):
-		self.price=self.price-value
-		
-meks=Product("Mexican",160,5)
+    def __init__(self, title, price, stockLevel):
+        self.title = title
+        self.price = price
+        self.stockLevel = stockLevel
+
+    def writeToScreen(self):
+        info = "{0} {1} {2}"
+        print(info.format(self.title, self.price, self.stockLevel))
+
+    def discount(self, value):
+        self.price = self.price - value
+
+
+meks = Product("Mexican", 160, 5)
 meks.writeToScreen()
 meks.discount(16)
 meks.writeToScreen()
 print(meks.title)
 print(meks.price)
 print(meks.stockLevel)
-meks.price=19
+meks.price = 19
 print(meks.price)
+
 ```
 
 ![pyhtonc_1n.gif](/assets/images/2016/pyhtonc_1n.gif)
@@ -67,18 +69,20 @@ Aslında hazır yeri gelmişken self, sınıf ve nesne örneği nitelikleri aras
 
 ```python
 class Product:
-	
-	isActive=True
-	
-	def __init__(self,title,price,stockLevel):
-		self.title=title
-		self.price=price
-		self.stockLevel=stockLevel
-		self.isActive=False
-		
-meks=Product("Mexican",160,5)
+
+    isActive = True
+
+    def __init__(self, title, price, stockLevel):
+        self.title = title
+        self.price = price
+        self.stockLevel = stockLevel
+        self.isActive = False
+
+
+meks = Product("Mexican", 160, 5)
 print(meks.isActive)
 print(Product.isActive)
+
 ```
 
 ![pyhtonc_2.gif](/assets/images/2016/pyhtonc_2.gif)
@@ -89,18 +93,20 @@ Ben her ne kadar sınıfları incelemeye çalışsam da özellikle sınıf ve ne
 
 ```python
 class GameZone:
-	
-	players=[]
-	
-	def __init__(self,name):
-		self.name=name
-	
-red=GameZone("Red Zone I")
-red.players.append("burki")
-print("Red Players ",red.players)
 
-blue=GameZone("Blue One")
-print("Blue players ",blue.players)
+    players = []
+
+    def __init__(self, name):
+        self.name = name
+
+
+red = GameZone("Red Zone I")
+red.players.append("burki")
+print("Red Players ", red.players)
+
+blue = GameZone("Blue One")
+print("Blue players ", blue.players)
+
 ```
 
 ![pyhtonc_4.gif](/assets/images/2016/pyhtonc_4.gif)
@@ -109,18 +115,18 @@ GameZone sınıfı içinde players isimli bir nitelik yer almaktadır. Bu niteli
 
 ```python
 class GameZone:
-	
-	def __init__(self,name):
-		self.players=[]
-		self.name=name
-		
-	
-red=GameZone("Red Zone I")
-red.players.append("burki")
-print("Red Players ",red.players)
+    def __init__(self, name):
+        self.players = []
+        self.name = name
 
-blue=GameZone("Blue One")
-print("Blue players ",blue.players)
+
+red = GameZone("Red Zone I")
+red.players.append("burki")
+print("Red Players ", red.players)
+
+blue = GameZone("Blue One")
+print("Blue players ", blue.players)
+
 ```
 
 ![pyhtonc_5.gif](/assets/images/2016/pyhtonc_5.gif)
@@ -135,27 +141,29 @@ Bu durumu anlamak için Product sınıfına ait kod içeriğini aşağıdaki gib
 
 ```python
 class Product:
-	def __init__(this,title,price,stockLevel):
-		this.title=title
-		this.price=price
-		this.stockLevel=stockLevel
-		
-	def writeToScreen(this):
-		info="{0} {1} {2}"
-		print(info.format(this.title,this.price,this.stockLevel))
-		
-	def discount(this,value):
-		this.price=this.price-value
+    def __init__(this, title, price, stockLevel):
+        this.title = title
+        this.price = price
+        this.stockLevel = stockLevel
 
-meks=Product("Mexican",160,5)
+    def writeToScreen(this):
+        info = "{0} {1} {2}"
+        print(info.format(this.title, this.price, this.stockLevel))
+
+    def discount(this, value):
+        this.price = this.price - value
+
+
+meks = Product("Mexican", 160, 5)
 meks.writeToScreen()
 meks.discount(16)
 meks.writeToScreen()
 print(meks.title)
 print(meks.price)
 print(meks.stockLevel)
-meks.price=19
+meks.price = 19
 print(meks.price)
+
 ```
 
 ![pyhtonc_3.gif](/assets/images/2016/pyhtonc_3.gif)
@@ -168,29 +176,30 @@ Dilerseniz ORM araçları kullanan bizler için bir örnek geliştirerek yazım�
 
 ```python
 class Category:
-	
-	def __init__(self,name,id):
-		self.name=name
-		self.id=id
-		
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+
+
 class Product:
-	
-	def __init__(self,title,listPrice,category):
-		self.title=title
-		self.listPrice=listPrice
-		self.Category=category
-		
-	def writeTo(self):
-		info="\'{}\' ({} TL) from {}"
-		print(info.format(self.title,self.listPrice,self.Category.name))
+    def __init__(self, title, listPrice, category):
+        self.title = title
+        self.listPrice = listPrice
+        self.Category = category
 
-books=Category("Computer Books",1)
+    def writeTo(self):
+        info = "'{}' ({} TL) from {}"
+        print(info.format(self.title, self.listPrice, self.Category.name))
 
-pythonBook=Product("Programming with Python",45,books)
+
+books = Category("Computer Books", 1)
+
+pythonBook = Product("Programming with Python", 45, books)
 pythonBook.writeTo()
 
-cBook=Product("C for Dummies",24.50,books)
+cBook = Product("C for Dummies", 24.50, books)
 cBook.writeTo()
+
 ```
 
 Örnek kodumuzda Category ve Product isimli iki sınıf yer almaktadır. Tahmin edeceğiniz üzere bir Product nesnesinin bir Category nesnesi ile ilişkilendirilmesi söz konusudur. Bunu yapmak oldukça basittir. Product sınıfına ait init metodunda yer alan self.Category=category ataması bu bağlantının kurulması için yeterli olmuştur. Böylece çalışma zamanındaki pythonBook ve cBook isimli Product nesne örnekleri, books isimli Category nesne örneği ile ilişkilendirilmiştir. Bir nevi nesneler arası bire-çok ilişki tanımladığımızı ifade edebiliriz. Çalışma zamanı çıktısı aşağıdaki gibidir.
@@ -201,40 +210,41 @@ cBook.writeTo()
 
 ```python
 class AzonContext:
-	
-	def __init__(self):
-		self.Categories=[]
-		self.Products=[]
-	
+    def __init__(self):
+        self.Categories = []
+        self.Products = []
+
+
 class Category:
-	
-	def __init__(self,name,id):
-		self.name=name
-		self.id=id
-		
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+
+
 class Product:
-	
-	def __init__(self,title,listPrice,category):
-		self.title=title
-		self.listPrice=listPrice
-		self.Category=category
-		
-	def writeTo(self):
-		info="\'{}\' ({} TL) from {}"
-		print(info.format(self.title,self.listPrice,self.Category.name))
+    def __init__(self, title, listPrice, category):
+        self.title = title
+        self.listPrice = listPrice
+        self.Category = category
 
-context=AzonContext()
+    def writeTo(self):
+        info = "'{}' ({} TL) from {}"
+        print(info.format(self.title, self.listPrice, self.Category.name))
 
-books=Category("Computer Books",1)
+
+context = AzonContext()
+
+books = Category("Computer Books", 1)
 context.Categories.append(books)
 
-pythonBook=Product("Programming with Python",45,books)
-cBook=Product("C for Dummies",24.50,books)
+pythonBook = Product("Programming with Python", 45, books)
+cBook = Product("C for Dummies", 24.50, books)
 context.Products.append(pythonBook)
 context.Products.append(cBook)
-		
+
 for b in context.Products:
-	b.writeTo()
+    b.writeTo()
+
 ```
 
 Dikkat edileceği üzere AzonContext sınıfına ait init metodu içerisinde Categories ve Products isimli listeler tanımlanmıştır. Listeler nesne örneği niteliği olduğundan context değişkeni üzerinden erişilip kullanılabilir. Bu şekilde kitaplar ve kategoriler ilgili listelere eklenebilir. Son satırda yer alan for döngüsü ile de eklemiş olduğumuz kitaplar ve bu kitaplara ait bilgiler ile dahil oldukları kategori verisi ekrana yazdırılmıştır.

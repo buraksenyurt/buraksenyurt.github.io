@@ -16,6 +16,4 @@ Nesne Yönelimli Programlama Dillerinin (Object Oriented Programming Languages) 
 
 ![tek fotoluk ipucu 118 fluent command line parser ile hello world 01](/assets/images/2015/tek-fotoluk-ipucu-118-fluent-command-line-parser-ile-hello-world-01.png)
 
-Lütfen örneğin saçmalığına aldırmayın. Bunun yerine metod zincirine odaklanın ve hatta bu tip bir API'yi nasıl yazabileceğinizi düşünün. Hatta sadece düşünmeyin, yazmaya çalışın.
-
-Bir başka ipucunda görüşmek dileğiyle.
+Lütfen örneğin saçmalığına aldırmayın. Bunun yerine metod zincirine odaklanın ve hatta bu tip bir API'yi nasıl yazabileceğinizi düşünün. Hatta sadece düşünmeyin, yazmaya çalışın. Bir başka ipucunda görüşmek dileğiyle.

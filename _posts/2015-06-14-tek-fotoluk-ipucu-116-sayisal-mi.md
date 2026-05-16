@@ -15,6 +15,4 @@ Gelen içeriğin sayısal olup olmadığını anlamanın bir kaç yolu olduğu k
 
 ![tek fotoluk ipucu 116 sayisal mi 01](/assets/images/2015/tek-fotoluk-ipucu-116-sayisal-mi-01.png)
 
-(Tabii ben sınıf kütüphanesini içerisine koymadım ama biliyorum ki sizin bu tip Extension metodları biriktirdiğiniz ve pek çok projede kullandığınız ortak bir kütüphaneniz vardır. Siz oraya koyuverirsiniz olma mı?)
-
-Bir başka ipucunda görüşmek dileğiyle.
+(Tabii ben sınıf kütüphanesini içerisine koymadım ama biliyorum ki sizin bu tip Extension metodları biriktirdiğiniz ve pek çok projede kullandığınız ortak bir kütüphaneniz vardır. Siz oraya koyuverirsiniz olma mı?) Bir başka ipucunda görüşmek dileğiyle.

@@ -41,11 +41,13 @@ Twitte API sini kullanmanın belli başlı prensipleri var. Bunlar aslında plat
 
 Burada ki sudo komutunu pi isimli varsayılan kullanıcının ilgili operasyonlar sırasında Permission Denied almaması için kullanılmakta. apt-get ile tahmin edeceğiniz üzere sistem güncellemesi ve yeni program yüklemeleri gibi işlemleri gerçekleştirmekteyiz. python tarafına ilgili kütüphaneyi yükleyecek asıl komut ise pip install. Son satır ile twython kütüphanesini sisteme yüklemiş bulunuyoruz.
 
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python-setuptools
 sudo easy_install pip
 sudo pip install twython
+```
 
 ## Azcık Kod
 
@@ -66,25 +68,18 @@ Tabii ki siz... yazan kısımlara Twitter'ın sizin için ürettiği değerleri 
 
 ```python
 from twython import Twython
-from auth import(
-consumer_key,
-consumer_secret,
-access_token,
-access_token_secret
-)
+from auth import consumer_key, consumer_secret, access_token, access_token_secret
+
 
 def send_tweet(message):
-	twitter=Twython(
-	consumer_key,
-	consumer_secret,
-	access_token,
-	access_token_secret
-	)
-	twitter.update_status(status=my_message)
-	print("\'%s\' seklinde mesaj gonderildi" % message)
+    twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
+    twitter.update_status(status=my_message)
+    print("'%s' seklinde mesaj gonderildi" % message)
 
-my_message="Bu mesaj Raspi'den python kodu ile gonderilmistir"
+
+my_message = "Bu mesaj Raspi'den python kodu ile gonderilmistir"
 send_tweet(my_message)
+
 ```
 
 İlk iki satırda koda enjekte ettiğimiz tip ve değişkenler olduğunu düşünebiliriz. Twython nesnesini oluşturabilmek için ilgili tipi az önce yüklediğimiz modül içinden import etmekteyiz. Buna ek olarak aynı klasörde yer alan auth.py dosyasından da consumerkey,consumersecret,accesstoken ve accesstokensecret isimli string değişkenleri koda alıyoruz.

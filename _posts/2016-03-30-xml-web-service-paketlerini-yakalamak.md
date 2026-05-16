@@ -150,28 +150,30 @@ Burada XML mesajlarını okumak biraz zahmetli olabilir ancak sonuç itibariyle 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<soap:Body>
-	<FindOptimalDuration xmlns="http://www.buraksenyurt.com/services/common/road/operations">
-		<locations>
-			<Location>
-				<X>10</X>
-				<Y>10</Y>
-				<Z>10</Z>
-			</Location>
-			<Location>
-				<X>20</X>
-				<Y>5</Y>
-				<Z>40</Z>
-			</Location>
-			<Location>
-				<X>30</X>
-				<Y>-10</Y>
-				<Z>50</Z>
-			</Location>
-		</locations>
-	</FindOptimalDuration>
-</soap:Body>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <FindOptimalDuration xmlns="http://www.buraksenyurt.com/services/common/road/operations">
+            <locations>
+                <Location>
+                    <X>10</X>
+                    <Y>10</Y>
+                    <Z>10</Z>
+                </Location>
+                <Location>
+                    <X>20</X>
+                    <Y>5</Y>
+                    <Z>40</Z>
+                </Location>
+                <Location>
+                    <X>30</X>
+                    <Y>-10</Y>
+                    <Z>50</Z>
+                </Location>
+            </locations>
+        </FindOptimalDuration>
+    </soap:Body>
 </soap:Envelope>
 ```
 
@@ -179,12 +181,15 @@ Servisten istemciye gelen SOAP içeriği ise aşağıdaki gibidir.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<soap:Body>
-		<FindOptimalDurationResponse xmlns="http://www.buraksenyurt.com/services/common/road/operations">
-			<FindOptimalDurationResult>52</FindOptimalDurationResult>
-		</FindOptimalDurationResponse>
-	</soap:Body>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <FindOptimalDurationResponse
+            xmlns="http://www.buraksenyurt.com/services/common/road/operations">
+            <FindOptimalDurationResult>52</FindOptimalDurationResult>
+        </FindOptimalDurationResponse>
+    </soap:Body>
 </soap:Envelope>
 ```
 

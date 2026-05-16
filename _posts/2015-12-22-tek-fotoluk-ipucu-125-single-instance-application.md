@@ -14,8 +14,6 @@ Bazı uygulamaların çalışma zamanında sadece tek bir örneğinin yaşaması
 
 ![tek fotoluk ipucu 125 single instance application 01](/assets/images/2015/tek-fotoluk-ipucu-125-single-instance-application-01.gif)
 
-ApplicationControl sınıfıdaki static Runnable metodu içerisinde Mutex sınıfı kullanılmaktadır.
-
-İşin sırrı Mutex'e verilen isimdir. Eğer aynı isimden bir Mutex nesnesi var ise yeni bir uygulamanın başlatılmasına izin vermemek adına Runnable fonksiyonu geriye false değer döndürür. Tersi durumda ise yeni bir Mutex nesnesi oluşturulacaktır (Örnekte Commander adı kullanılmıştır)
+ApplicationControl sınıfıdaki static Runnable metodu içerisinde Mutex sınıfı kullanılmaktadır. İşin sırrı Mutex'e verilen isimdir. Eğer aynı isimden bir Mutex nesnesi var ise yeni bir uygulamanın başlatılmasına izin vermemek adına Runnable fonksiyonu geriye false değer döndürür. Tersi durumda ise yeni bir Mutex nesnesi oluşturulacaktır (Örnekte Commander adı kullanılmıştır)
 
 Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

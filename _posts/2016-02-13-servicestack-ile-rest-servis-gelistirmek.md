@@ -169,7 +169,7 @@ namespace HowToServiceStack
 
 ## Kodda Neler Yaptık?
 
-İlk olarak AppHost sınıfına bir bakalım. AppSelfHostBase'den türetilmiş olan bu sınıf temel olarak Host uygulama görevini üstleniyor. Ayrıca ProductService isimli servisin hizmete alınması işlemlerini gerçekleştiriyor. Uygulama http://localhost:4568 adresi üzerinden yayın yapacak. Buna göre Main metodu içerisinde Init ().Start (hostAddress) formasyonunu kullanıyoruz (Burada Fluent stilde bir tasarım olduğu gözden kaçmamalıdır. Fleunt kod tasarımı için [bu yazıya](/2013/12/23/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-1nci-yari/) bakabilirsiniz)
+İlk olarak AppHost sınıfına bir bakalım. AppSelfHostBase'den türetilmiş olan bu sınıf temel olarak Host uygulama görevini üstleniyor. Ayrıca ProductService isimli servisin hizmete alınması işlemlerini gerçekleştiriyor. Uygulama `http://localhost:4568` adresi üzerinden yayın yapacak. Buna göre Main metodu içerisinde Init ().Start (hostAddress) formasyonunu kullanıyoruz *(Burada Fluent stilde bir tasarım olduğu gözden kaçmamalıdır. Fleunt kod tasarımı için [bu yazıya](/2013/12/23/fluent-interface-prensibi-ile-daha-okunabilir-kod-gelistirmek-1nci-yari/) bakabilirsiniz)*
 
 Yukarıda da bahsettiğimiz üzere ServiceStack DTO servis tasarım desenini kullanmaktadır. /products/ ve /products/{NameLike} şeklinde yapılacak HTTP Get talepleri için ProductSelectRequest isimli bir DTO tipi tanımlanmıştır. ProductSelectRequest sınıfı IReturn arayüzünü (Interface) uygulamaktadır. Buna göre çalışma zamanı /Products veya /Products/{NameLike} talepleri karşısında nasıl bir tip döndüreceğini de öğrenmektedir.
 
@@ -193,15 +193,15 @@ Aslında yaptıklarımızı aşağıdaki şekil ile kısaca özetleyebiliriz.
 
 Sonrasında istemci testlerine başlayabiliriz. Ben, Get ve Post talepleri için SoapUI ve Google Chrome tarayıcısından yararlandım. SoapUI üzerinden elde ettiğim sonuçlar ise şöyle.
 
-http://localhost:4568/products/ HTTP Get için
+`http://localhost:4568/products/` HTTP Get için
 
 ![sStack_1.gif](/assets/images/2016/sStack_1.gif)
 
-ServiceStack istemci tarafına özel bir HTML içeriği basar. İstenirse çıktılar json,xml,csv ve hatta jsv formatında alınabilir. Tek yapılması gereken URL sonuna?format=json benzeri bir ifade eklemektir. Örneğin ürün adı B harfi ile başlayanların listesini JSON formatında elde etmek istersek http://localhost:4568/Products/B?format=json şeklinde bir talep gönderilmesi yeterlidir.
+ServiceStack istemci tarafına özel bir HTML içeriği basar. İstenirse çıktılar json,xml,csv ve hatta jsv formatında alınabilir. Tek yapılması gereken URL sonuna?format=json benzeri bir ifade eklemektir. Örneğin ürün adı B harfi ile başlayanların listesini JSON formatında elde etmek istersek `http://localhost:4568/Products/B?format=json` şeklinde bir talep gönderilmesi yeterlidir.
 
 ![sstack_5.gif](/assets/images/2016/sstack_5.gif)
 
-ve http://localhost:4568/products/ HTTP Post içinde aşağıdaki şekilde talepte bulunabiliriz. Eğer Post paketi başarılı bir şekilde gönderilirse servisin yeni üretilen Product nesnesine ait değerleri geri gönderdiğini de görebilmeliyiz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
+ve `http://localhost:4568/products/` HTTP Post içinde aşağıdaki şekilde talepte bulunabiliriz. Eğer Post paketi başarılı bir şekilde gönderilirse servisin yeni üretilen Product nesnesine ait değerleri geri gönderdiğini de görebilmeliyiz. Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![sStack_2.gif](/assets/images/2016/sStack_2.gif)
 

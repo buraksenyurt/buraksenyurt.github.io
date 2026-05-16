@@ -22,10 +22,12 @@ Yazıyı yazalı epey zaman olduğundan konuyu tamamen unutmuştum. Şöyle arka
 
 Hamming Distance, Amerikalı Matematikçi [Richard Hamming](https://tr.wikipedia.org/wiki/Richard_Hamming) tarafından bulunmuş olan ve kodlama teorisinde geçen vektör bazlı bir karşılaştırma algoritmasıdır ([Bu adresten teori hakkında biraz bilgi alabiliriz](http://www.maths.manchester.ac.uk/~pas/code/notes/part2.pdf)) Programlama tarafından baktığımızda çoğunlukla eşit uzunluktaki içeriklerin benzerliklerine ilişkin bir mesafe ölçüsünün bulunmasında kullanılır. Bu sayede bir metnin diğerine dönüştürülebilmesi için kaç adımlık değişime ihitiyaç duyulduğu da hesaplanabilir. Ya da benzerliğin ne kadarlık bir değere denk geldiği anlaşılabilir. Hata tespiti ve düzeltilmesi, grafik dosyaları üzerinden şekil eşleştirmelerinin (Shape Recognation) yapılması gibi hesaplamalarda kullanılmaktadır. Aslında örnekler ile konuyu daha iyi anlayabiliriz. Basit düşünmeye çalışalım ve aşağıdaki gibi bir kaç kelime çiftini ele alalım.
 
+```text
 kuru - duru
 clone - drone
 patates - domates
 dolu - kedi
+```
 
 Öncelikle karşılaştırılan tüm kelimelerin birbirleri ile eşit uzunlukta olduklarını söylememiz lazım. Bu zaten algoritmanın şartlarından da birisi. kuru ve duru arasında sadece bir harflik fark var. Buna göre Hamming Distance değeri 1. Nitekim k ve d dışındaki harfler aynılar. clone ve drone karşılaştırmasına göre aradaki fark değeri ise 2dir. Yani iki harflik bir farklılık vardır. c,l ve d,r harfleri. patates ve domates'e gelince. Buradaki Hamming değeri 3tür. p,a,t ve d,o,m harfleri farklıdır. Son eşleşmeye baktığımızda ise bütün harflerin tamamen farklı olduğunu görebiliriz. Buna göre Hamming Distance değeri 4tür. Hatta bu değer kelimedeki harf sayısı kadar olduğundan her iki eşin birbirlerinden tamamen farklı olduğu sonucuna da varabiliriz. Aşağıdaki grafik ile olayı özetleyelim.
 
@@ -96,31 +98,29 @@ Kodda basitçe neler yaptığımıza bir bakalım. String tipi için yazılmış
 
 Ruby tarafında da oldukça benzer bir yaklaşım söz konusudur. Hatta metod adları neredeyse aynıdır diyebiliriz. İşte Ruby kod parçacığımız.
 
-```bash
+```ruby
 #Ruby icin Hamming Distance
 
 class StringOperations
-
-def calculateHammingDistance(source, target)
-raise "ERROR: Hamming: kaynak ve hedef icerikler esit uzunlukta degiller!" if source.length != target.length
-(source.chars.zip(target.chars)).count {|left, rigth| left != rigth}
+  def calculateHammingDistance(source, target)
+    raise "ERROR: Hamming: kaynak ve hedef icerikler esit uzunlukta degiller!" if source.length != target.length
+    (source.chars.zip(target.chars)).count { |left, rigth| left != rigth }
+  end
 end
 
-end
+words = Hash.new("Words")
+words["kuru"] = "duru"
+words["clone"] = "drone"
+words["patates"] = "domates"
+words["silindir"] = "bilindik"
+words["tabela"] = "tabela"
+words["sempatik"] = "sentetik"
+words["dolu"] = "kedi"
 
-words=Hash.new("Words")
-words["kuru"]="duru"
-words["clone"]="drone"
-words["patates"]="domates"
-words["silindir"]="bilindik"
-words["tabela"]="tabela"
-words["sempatik"]="sentetik"
-words["dolu"]="kedi"
-
-sOp=StringOperations.new
-words.each{
-|key,value| 
-puts "#{key} vs #{value} = #{sOp.calculateHammingDistance(key,value)}"
+sOp = StringOperations.new
+words.each {
+  |key, value|
+  puts "#{key} vs #{value} = #{sOp.calculateHammingDistance(key, value)}"
 }
 ```
 

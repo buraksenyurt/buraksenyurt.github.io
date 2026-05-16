@@ -16,13 +16,11 @@ categories:
 ---
 Vaktiyle üniversitedeki diferansiyel denklemler dersi hocamızın anlattığı bir efsane vardı (Sene 94 bu arada). Ne kadar gerçektir bilinmez ama beni oldukça etkilemişti. Hikayeye göre üniversite hocaları arasında belirli aralıklarla düzenlenen bir yarışma varmış. Bu yarışmada hocaların tahtaya kalkıp seçtikleri teoremlere ait geometrik şekilleri çizmeleri istenirmiş. En güzel çizim ise mükafatlandırılırmış.
 
-![PerfectCircle](/assets/images/2014/PerfectCircle.jpg)
-
-Bir gün hocalar ardı ardına kalkıp tahtada hünerlerini göstermeye başlamışlar. Hemen hepsi rengarenk tebeşirler kullanıyormuş. Sarmallar, hiperboller, spiraller, üç boyutlu grafikler vb…
-
-Derken sıra son yarışmacıya gelmiş. Hoca ayağa kalkmış yavaş adımlarla boş olan tahtalardan birine doğru yürümeye başlamış. Kısa bir süre durmuş ve diğer çizimlere imrenerek bakmış. Sonra önündeki boş tahtaya bir çember çizmiş ve ortasına da bir nokta yerleştirmiş.
+Bir gün hocalar ardı ardına kalkıp tahtada hünerlerini göstermeye başlamışlar. Hemen hepsi rengarenk tebeşirler kullanıyormuş. Sarmallar, hiperboller, spiraller, üç boyutlu grafikler vb… Derken sıra son yarışmacıya gelmiş. Hoca ayağa kalkmış yavaş adımlarla boş olan tahtalardan birine doğru yürümeye başlamış. Kısa bir süre durmuş ve diğer çizimlere imrenerek bakmış. Sonra önündeki boş tahtaya bir çember çizmiş ve ortasına da bir nokta yerleştirmiş.
 
 Jüri diğer tahtaları dolaşıp puanladıktan sonra bu çemberin başında toplanmış. Çemberi ve ortadaki noktayı ölçüp biçmişler. Nokta, çemberin tam merkezindeymiş ve çember mükemmelmiş. Bu hikayenin yazımızın konusu ile doğrudan bir alakası yok tabi. Şöyle şehir efsanesi tadında bir giriş yapayım istedim. Gelelim asıl sıkıcı olan mevzumuza.
+
+![PerfectCircle](/assets/images/2014/PerfectCircle.jpg)
 
 Bir WCF (Windows Communication Foundation) servisi ile onun tüketicisi olan istemci arasındaki iletişimde önem arz eden konulardan birisi de kanaldır (Channel). Bu kanalın oluşturulması görevini ChannelFactory tipi üstlenmektedir. İstemci açısından bakıldığında bir kanalın oluşturulması aslında servisin bir Proxy tipinin üretilmesi ve uzak metod çağrıları için gerekli iletişim ortamının sağlanması anlamına gelmektedir. Bir kanal esas itibariyle EndPoint odaklı üretilir. Dolayısıyla WCF'in ABC'si olarak nitelendirilen Address Binding Contract üçlemesi üzerine inşa olunur (ki bu da WCF Service EndPoint tanımıdır)
 
@@ -203,11 +201,11 @@ Bu sınıf açılımı nedeniyle CacheSetting özelliği proxy tipi üzerinden d
 
 CacheSetting özelliğine atanabilecek üç değer bulunmaktadır. AlwaysOn, Default ve AlwaysOff. Bu değerler ve aralarındaki farklılıklar aşağıdaki tabloda özetlenmeye çalışılmıştır.
 
-| CacheSetting Değeri | Anlamı |
+| **CacheSetting Değeri** | **Anlamı** |
 | ----------------- | --------------------- |
-| Default | Aynı Application Domain içerisinde olmak kaydıyla, konfigurasyon dosyasında tanımlanmış olan EndPoint bilgilerinden üretilmiş ClientBase örnekleri için Caching özelliği etkinleştirilir. |
-| AlwaysOn | Aynı Application Domain içerisinde yer alan tüm ClientBase türevli tipler için Caching özelliği etkinleştirilir. |
-| AlwaysOff | Application Domain içerisindeki ClientBase türevli tipler için Caching özelliği kapatılır. |
+| **Default** | Aynı Application Domain içerisinde olmak kaydıyla, konfigurasyon dosyasında tanımlanmış olan EndPoint bilgilerinden üretilmiş ClientBase örnekleri için Caching özelliği etkinleştirilir. |
+| **AlwaysOn** | Aynı Application Domain içerisinde yer alan tüm ClientBase türevli tipler için Caching özelliği etkinleştirilir. |
+| **AlwaysOff** | Application Domain içerisindeki ClientBase türevli tipler için Caching özelliği kapatılır. |
 
 Bu yeni kabiliyet küçük çaplı servis örnekleri göz önüne alındığında pek fark edilmese de, enterprise çözümlerde kullanılan ve üretim maliyetleri de yüksek olan versiyonlar düşünüldüğünde ciddi olarak dikkate alınması gerekmektedir. Tabi burada söz konusu olan modlar arasındaki farklılıklara da bakılmalıdır. Özellikle security-sensitive tanımlamalarda Default ve AlwaysOn modların farklı davranışlar gösterdiği unutulmamalıdır. Konu ile ilişkili daha detaylı bilgiyi [MSDN sayfasından](http://msdn.microsoft.com/tr-tr/library/hh314046.aspx) alabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 

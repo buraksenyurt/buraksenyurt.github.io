@@ -14,11 +14,9 @@ tags:
 categories:
   - Veritabanı
 ---
-Uzun süredir NoSQL ürünleri ile ilgilenmediğimi fark ettim ve bu haftanın araştırma konusu olarak kendime bir NoSQL sistemi seçmeye karar verdim. Aslında aklımda bir alan vardı. Özellikle Nancy Framework'ü incelediğim sırada karşıma çıkan IoT (Internet of Things) ve NoSQL ilişkisi dikkat çekiciydi. Burada geçerli olan ve kullanılan veritabanı sistemlerinden bağzılarına baktım.
+Uzun süredir NoSQL ürünleri ile ilgilenmediğimi fark ettim ve bu haftanın araştırma konusu olarak kendime bir NoSQL sistemi seçmeye karar verdim. Aslında aklımda bir alan vardı. Özellikle Nancy Framework'ü incelediğim sırada karşıma çıkan IoT (Internet of Things) ve NoSQL ilişkisi dikkat çekiciydi. Burada geçerli olan ve kullanılan veritabanı sistemlerinden bağzılarına baktım. En popülerleri arasında Couchbase yer alıyor. Özellike Mobile ve IoT ortamları için geliştirilen Native sürümü, verilerin Couchbase sunucusu ile senkronizasyonunun sağlanması noktasında önem arz ediyor. Pek tabi çok daha fazla özelliği olan bir ürün.
 
 ![nosql maceralari couchbase ile hello world 01](/assets/images/2015/nosql-maceralari-couchbase-ile-hello-world-01.gif)
-
-En popülerleri arasında Couchbase yer alıyor. Özellike Mobile ve IoT ortamları için geliştirilen Native sürümü, verilerin Couchbase sunucusu ile senkronizasyonunun sağlanması noktasında önem arz ediyor. Pek tabi çok daha fazla özelliği olan bir ürün.
 
 Bu yazımızda diğer [NoSQL](https://www.buraksenyurt.com/category/NoSQL) makalelerimizde olduğu gibi.Net dünyasından bir Hello World demeye çalışacağız. Dilerseniz ilk olarak Couchbase'in genel karakteristik özelliklerine bir bakalım.
 

@@ -23,12 +23,12 @@ Diyelim ki öyle bir gece ve orada [Dapper.Net](https://github.com/StackExchange
 
 Bu örnekte ilk dikkati çeken noktaları ise şu şekilde ifade edebiliriz.
 
-Aynen Ado.Net'te olduğu gibi SqlConnection nesnesi kullanıyoruz.
-Normal bir SQL sorgusu çalıştırıp sonuçlarını doğrudan POCO (Plain Old CLR Object) tipinden bir listeye atabiliyoruz.
-for döngüsünde dynamic kullanımı söz konusu (Debug edip bakın)
-Query metoduna yapılan çağrı sonucu elde edilen liste üzerinden LINQ (Language INtegrated Query) kabiliyetlerini kullanabiliyoruz.
-Dapper.Net'in tek bir dll olarak geldiğini görüyoruz.
-Epey zamandır var olan bu NuGet paketini yeni keşfettiğimiz için üzülüyoruz.
+- Aynen Ado.Net'te olduğu gibi SqlConnection nesnesi kullanıyoruz.
+- Normal bir SQL sorgusu çalıştırıp sonuçlarını doğrudan POCO (Plain Old CLR Object) tipinden bir listeye atabiliyoruz.
+- for döngüsünde dynamic kullanımı söz konusu (Debug edip bakın)
+- Query metoduna yapılan çağrı sonucu elde edilen liste üzerinden LINQ (Language INtegrated Query) kabiliyetlerini kullanabiliyoruz.
+- Dapper.Net'in tek bir dll olarak geldiğini görüyoruz.
+- Epey zamandır var olan bu NuGet paketini yeni keşfettiğimiz için üzülüyoruz.
 
 Dapper.Net benim çok hoşuma gitti. Özellikle işin içerisinde Stackoverflow geliştiricilerinin yer alması, basit ve anlaşılır olması ile Oracle desteği sunması beni onu araştırmaya itti diyebilirim.
 

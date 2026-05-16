@@ -14,9 +14,9 @@ categories:
 ---
 Çalışmakta olduğumuz projelerde zaman zaman bizi zorlayan vakalar ile karşılaşıyoruz. Bu gibi durumlarda Google abimiz en büyük yardımcımız olabiliyor. Hatta pek çoğumuz sorunların çözümünde Stackoverflow gibi kaynaklardan yararlanıyor ya da daha deneyimli birisinden yardım istiyor. Ne var ki bazı vakaları kendimiz çözmeye çalışsak çok daha yararlı olabilir.
 
-![bir tip agacindaki ayni isimli ozelliklere deger atamak 01](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-01.jpg)
-
 Sevdiğim çalışma arkadaşlarımdan birisi (ki kendisi ile aynı projeler üzerinde kodlama yapıyoruz) bu konuda gerçekten örnek aldığım insanlardan. Öncelikli olarak problemi kendisi çözmek için uğraşıyor. Sahip olduğu bilgi ile bunu yaparken Google'dan veya Stackoverflow gibi kaynaklardan yardım almakta ısrarcı olmuyor. Muhakkak kendi başına çözebilmek için çaba sarf ediyor. Pek tabi söz konusu iş olunca zaman sınırı da kısıtlayıcı bir rol üstleniyor. Problem ne zamanki zaman kaybına neden olacak noktaya geliyor, işte o zaman arkadaşım arama yöntemlerini tercih ediyor. Bence bu iş yapıp şekli kişisel gelişim açısından son derece kıymetli.
+
+![bir tip agacindaki ayni isimli ozelliklere deger atamak 01](/assets/images/2015/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak-01.jpg)
 
 Efendim sözü çok fazla uzatmadan ben makalenin konusuna geleyim. Vaktizamanında üzerinde çalıştığımız bir projede şöyle bir ihtiyaç doğdu; N seviyede derinliğe inen bir nesne örneğinin tamamında geçen aynı isimli özelliklerin aynı değere eşitlenmesi gerekti. Senaryoyu gözümüzde canlandırabilmek için aşağıdaki sınıf çizelgesine bir bakalım dilerseniz.
 

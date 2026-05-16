@@ -13,13 +13,9 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-> Hızzzzz!!! Ben Hızzımmm! Hızlıdan hızlı…
+Hızzzzz!!! Ben Hızzımmm! Hızlıdan hızlı…Bu repliği bu aralar haftada en az 7 kere seyretmek zorunda kaldığım Cars filminden hatırlıyorum *(Pixar’ ın efsane çizgi filmlerinden birisi olmakla birlikte serinin 2nci filmi de süperdir. 3ncü çekilir mi bilemem ama çekilse harika olur)* Şimşek McQueen filmin baş ve ana karakteri olarak çok hızlı bir arabadır ve tek derdi çok daha hızlı gitmektir. Hatta serinin ikinci bölümüne kapıştığı Formula 1 arabası dahil pek çok çeşitteki yarış otomobilini sürekli geride bırakır. Bunların arasında ralli araçlarından tutun, LeMans’ da yarışlanlara kadar pek çok çeşit vardır.
 
 ![70050](/assets/images/2015/70050.jpg)
-
-Bu repliği bu aralar haftada en az 7 kere seyretmek zorunda kaldığım Cars filminden hatırlıyorum (Pixar’ ın efsane çizgi filmlerinden birisi olmakla birlikte serinin 2nci filmi de süperdir. 3ncü çekilir mi bilemem ama çekilse harika olur)
-
-Şimşek McQueen filmin baş ve ana karakteri olarak çok hızlı bir arabadır ve tek derdi çok daha hızlı gitmektir. Hatta serinin ikinci bölümüne kapıştığı Formula 1 arabası dahil pek çok çeşitteki yarış otomobilini sürekli geride bırakır. Bunların arasında ralli araçlarından tutun, LeMans’ da yarışlanlara kadar pek çok çeşit vardır.
 
 Aslında network ortamında da ona benzer bir kahraman bulunmaktadır. Onun gibi biraz güvenlikten ödün verir ama çok da hızlıdır. İşte bu yazımızda McQueen’ in network üzerindeki en büyük rakibi olan UDP protokolünü ve onun WCF 4.5 tarafındaki kullanımını incelemeye çalışıyor olacağız.
 

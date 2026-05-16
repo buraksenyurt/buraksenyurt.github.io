@@ -19,10 +19,9 @@ categories:
 ---
 Günümüzde geliştirilen yazılım ürünleri çoğunlukla farklı uygulamalar ile de konuşmak durumunda. Sistemler sürekli birbirleri ile konuşan parçalar bütünü halinde genişlemeye devam ediyor. Akıllı cihazlar büyük ölçekli sistemlerin birer parçası olup çeşitli iş süreçlerinin işletilmesinde rol alıyor. Bu iletişimde servislerin de yeri var.
 
-![tcp bazli soket haberlesmesinde sertifika kullanimi 01](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-01.gif)
-
-
 Artık yeni nesil servisler daha popüler. REST tabanlı çalışan HTTP servisleri, SOAP protokolünü benimseyen servisler ve daha bir çoğu ön planda. MicroService mimarisi gibi yaklaşımlar reveçta. Ne varki daha alt seviye iletişimin kurulduğu miras sistemler de söz konusu. Öyleki bu sistemlerden bazıları TCP protokolü üzerinden socket haberleşmesi yaparak çalışmakta. Aslında TCP bazlı socket iletişimi gerek performans gerek güvenlik açısından düşünüldüğünde tercih edilen yöntemlerden birisi. Sadece bu tip uygulamaların geliştirilme ve bakım maliyetleri biraaz daha yüksek.
+
+![tcp bazli soket haberlesmesinde sertifika kullanimi 01](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-01.gif)
 
 Bir süre önce kurumumuz tarafında geliştirilen projede, özel iştirak bir sisteme bağlanmak için bu tip TCP bazlı haberleşme çözümüne ihtiyaç duyduk. Tabi kurumlar arası bir haberleşme söz konusu olduğu için işin içerisine yazılım ve ağ seviyesinde güvenlik de girdi. Servis dünyasını göz önüne aldığımızda.Net Framework gibi çatıların güvenlik ayarları son derece kolay bir şekilde yapılıyor. Örneğin WCF servisleri, W3C tarafından kabul gören ne kadar protokol varsa (WS-* standartları) desteklediğini biliyoruz. Ancak TCP bazlı soket haberleşmesi akla gelince işler biraz daha zorlaşabiliyor. İşte bu yazımızda sertifikalandırılmış, TCP bazlı bir client-server haberleşmesinin temelde nasıl yapılabileceğini incelemeye çalışacağız.
 
@@ -32,7 +31,9 @@ Bir süre önce kurumumuz tarafında geliştirilen projede, özel iştirak bir s
 
 Bu işlem için Visual Studio 2013 Developer Command Prompt üzerinden Makecert aracını aşağıdaki ekran görüntüsünde olduğu gibi kullanmamız gerekiyor. (Sertifika üretimleri konusunda elbette kurumlar farklı stratejiler izleyebilirler. Eğer benim gibi kurumsal çapta işler geliştiren bir şirkette çalışıyorsanız mutlaka bu tip sertifika üretimleri/kullanımları ile ilgilenen sistem yöneticisi çalışma arkadaşlarınız vardır. Konu hakkında onlardan da destek alabilirsiniz)
 
+```bash
 Makecert -r -pe -n "CN=SampleSslSocketCertificate" -b 06/06/2015 -e 06/06/2016 -sk exchange -ss my
+```
 
 ![tcp bazli soket haberlesmesinde sertifika kullanimi 02](/assets/images/2015/tcp-bazli-soket-haberlesmesinde-sertifika-kullanimi-02.gif)
 
@@ -70,7 +71,7 @@ namespace SecureSocket.Common
 }
 ```
 
-Kodda yapılan şey aslında yüklediğimiz X509 türevli sertifikayı o anki kullanıcıya ait depoda aramak. X509Store tipi üretilirken ilk parametre ile My deposunu ikinci parametre ile de hangi kullanıcı için baktığımızı belirtiyoruz. Açılan Store'da sadece sertifikaları dolaşarak metoda parametre olarak gelen isimdekini bulmaya çalışıyoruz. Bu yüzden sertifika deposunu sadece okunabilir modda açmamız yeterli. Aranan sertifikayı isimden yakalamak için CN={0} notasyonuna başvurduk.
+Kodda yapılan şey aslında yüklediğimiz X509 türevli sertifikayı o anki kullanıcıya ait depoda aramak. X509Store tipi üretilirken ilk parametre ile My deposunu ikinci parametre ile de hangi kullanıcı için baktığımızı belirtiyoruz. Açılan Store'da sadece sertifikaları dolaşarak metoda parametre olarak gelen isimdekini bulmaya çalışıyoruz. Bu yüzden sertifika deposunu sadece okunabilir modda açmamız yeterli. Aranan sertifikayı isimden yakalamak için `CN={0}` notasyonuna başvurduk.
 
 StringExtension sınıfı;
 

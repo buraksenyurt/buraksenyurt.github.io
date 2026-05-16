@@ -125,7 +125,7 @@ namespace HelloNancyFX
 
 Dilerseniz uygulamada neler yaptığımıza kısaca bakalım ve ardından testlerimize geçelim.
 
-Main metodu içerisinde http://127.0.0.1:5555 adresi üzerinden istekleri kabul edecek şekilde bir sunucu bağlantısı oluşturuyoruz. Bunun için NancyHost sınıfına ait bir nesne örneğinden yararlanılıyor. Sunucuyu açmak ve kapatmak son derece basit. Start ve Stop metodlarını bu iki iş için kullanmaktayız. Peki sunucuya gelecek olan HTTP isteklerini nasıl karşılayacağız? İşin gizemli tarafı da burada başlıyor.
+Main metodu içerisinde `http://127.0.0.1:5555` adresi üzerinden istekleri kabul edecek şekilde bir sunucu bağlantısı oluşturuyoruz. Bunun için NancyHost sınıfına ait bir nesne örneğinden yararlanılıyor. Sunucuyu açmak ve kapatmak son derece basit. Start ve Stop metodlarını bu iki iş için kullanmaktayız. Peki sunucuya gelecek olan HTTP isteklerini nasıl karşılayacağız? İşin gizemli tarafı da burada başlıyor.
 
 Çalışmakta olan Nancy sunucusu o anki uygulama örneğinde yer alan NancyModule türevlerini otomatik olarak değerlendirebilmekte (Sizce nasıl yapıyor olabilir?). Bu yüzden örnek HTTP taleplerine ait route tanımlamalarını içeren bir modül sınıfı söz konusu. NancyModule türevli olan Routes sınıfı içerisinde sembolik olarak bir ürün listesi bulunuyor. Product sınıfı tipinden olan bu ürün listesini static yapıcı metod (static constructor) içerisinde doldurmaktayız. Elbette gerçek hayat örneklerinde bu veri kümeleri farklı kaynaklardan da besleniyor olabilir. (Örneğin fiziki bir dosyadan, ilişkisel veritabanı sisteminden, NoSQL'den, hatta Cloud üzerinde duran bir Repository'den...)
 
@@ -133,12 +133,12 @@ Main metodu içerisinde http://127.0.0.1:5555 adresi üzerinden istekleri kabul 
 
 Gelelim Routes sınıfının varsayılan yapıcı metoduna (Default Constructor). Bu metod içerisinde iki farklı HTTP talebi ele alınmakta (Get ve Post). Kabaca aşağıdaki gibi bir durum söz konusu diyebiliriz.
 
-| HTTP Talebi | Açıklama |
+| **HTTP Talebi** | **Açıklama** |
 | --- | --- |
-| Get["/"] | http://localhost:1234/ adresi talep edildiğinde devreye giren metodu işaret eder. Bunu servisin varsayılan giriş sayfası olarak düşünebiliriz. Tamamen HTML içeriği söz konusudur ve hatta bir View ile ilişkilendirilebilir. |
-| Get["products"] | http://localhost:1234/products adresi talep edildiğinde devreye girecek olan AllProducts metodunu işaret eder. Tüm ürün listesini elde ederken kullanılabilecek harika bir url'dir. |
-| Get["product/{ID}"] | http://localhost:1234/product/1001 gibi bir talebe karşılık işletilecek olan FindByID metodunu işaret eder. Tahmin edileceği üzere {ID} parçası FindByID metodunda gelen dynamic değişken üzerinden elde edilir ve LINQ (Language INtegrated Query) sorgusunda kullanılır. |
-| Post["add] | http://localhost:1234/add gibi bir adrese karşılık gelecek metodu işaret eder. Tabi burada Post tipinden bir HTTP talebi söz konusu olduğundan yeni eklenecek ürünün değerleri servis tarafına bir şekilde gönderilmelidir. Bunu test ederken Fiddler gibi bir Web Debugger aracından yararlanabiliriz. Ya da Nancy'nin gelişmiş Test alt yapısındaki nesneleri kullanabiliriz. |
+| Get["/"] | `http://localhost:1234/` adresi talep edildiğinde devreye giren metodu işaret eder. Bunu servisin varsayılan giriş sayfası olarak düşünebiliriz. Tamamen HTML içeriği söz konusudur ve hatta bir View ile ilişkilendirilebilir. |
+| Get["products"] | `http://localhost:1234/products` adresi talep edildiğinde devreye girecek olan AllProducts metodunu işaret eder. Tüm ürün listesini elde ederken kullanılabilecek harika bir url'dir. |
+| Get["product/{ID}"] | `http://localhost:1234/product/1001` gibi bir talebe karşılık işletilecek olan FindByID metodunu işaret eder. Tahmin edileceği üzere {ID} parçası FindByID metodunda gelen dynamic değişken üzerinden elde edilir ve LINQ (Language INtegrated Query) sorgusunda kullanılır. |
+| Post["add] | `http://localhost:1234/add` gibi bir adrese karşılık gelecek metodu işaret eder. Tabi burada Post tipinden bir HTTP talebi söz konusu olduğundan yeni eklenecek ürünün değerleri servis tarafına bir şekilde gönderilmelidir. Bunu test ederken Fiddler gibi bir Web Debugger aracından yararlanabiliriz. Ya da Nancy'nin gelişmiş Test alt yapısındaki nesneleri kullanabiliriz. |
 
 Son üç bağlama operasyonunda birer metodun işaret edildiğinde dikkat edelim. Bu biz zorunluluk değil. Nitekim Get["/"] satırında doğrudan isimsiz metod (Anonymous Metod) kullanıyoruz. Diğer metodların en belirgin özelliği ise dönüş ve parametre tipi olarak dynamic anahtar kelimesini kullanıyor olmaları.
 

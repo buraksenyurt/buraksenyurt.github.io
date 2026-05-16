@@ -45,72 +45,81 @@ Kodları yazmaya başladığımda karşılaştığım ilk sorun aşağıya doğr
 ```python
 import math
 
+
 def get_players():
-	players=[
-		("burki",1000,True,"1234-PLY"),
-		("turp",9003,False,-1,"gold player","4445-PLY"),
-		("joiy",1004,True,-10,"silver player")
-		]
-	return players
-	
+    players = [
+        ("burki", 1000, True, "1234-PLY"),
+        ("turp", 9003, False, -1, "gold player", "4445-PLY"),
+        ("joiy", 1004, True, -10, "silver player"),
+    ]
+    return players
+
+
 def get_language(key):
-	languages={
-		"EN":"English",
-			"FR":"France",
-			"GE":"German",
-			"TR":"Turkish",
-			"US":"Unitad State English"
-		}
-	return languages[key]
+    languages = {
+        "EN": "English",
+        "FR": "France",
+        "GE": "German",
+        "TR": "Turkish",
+        "US": "Unitad State English",
+    }
+    return languages[key]
 
-def pythagoras(a,b):
-	value=math.sqrt(a*a+b*b)
-	return value
 
-#lucky number game
+def pythagoras(a, b):
+    value = math.sqrt(a * a + b * b)
+    return value
+
+
+# lucky number game
 def lucky_number_game():
-	lucky_num=0
-	while lucky_num!=7:
-		lucky_num=int(input("Guess a number:"))
-	
-		if lucky_num!=7:
-			print("Too bad,Sorry")
-		
-	print("Vuhuu")
+    lucky_num = 0
+    while lucky_num != 7:
+        lucky_num = int(input("Guess a number:"))
+
+        if lucky_num != 7:
+            print("Too bad,Sorry")
+
+    print("Vuhuu")
+
 
 def greetings():
-	print("hello python\'s world")
-	print("My name is\nBurak Selim Senyurt\n")
-	name=input("so...What\'s your name?")
-	print("Wellcome %s" %name)
-	age=int(input("How old are you?"))
-	print("Your age is %s" %age)
+    print("hello python's world")
+    print("My name is\nBurak Selim Senyurt\n")
+    name = input("so...What's your name?")
+    print("Wellcome %s" % name)
+    age = int(input("How old are you?"))
+    print("Your age is %s" % age)
+
 
 def a_little_bit_for_loops():
-	minValue=int(input("Please insert a minimum value"))
-	maxValue=int(input("Please insert a maximum value"))
+    minValue = int(input("Please insert a minimum value"))
+    maxValue = int(input("Please insert a maximum value"))
 
-	for n in range(minValue,maxValue+1):
-		print(n)
+    for n in range(minValue, maxValue + 1):
+        print(n)
 
-	for i in range(0,5):
-		for j in range(0,5):
-			print(i,' ',j)
-			
+    for i in range(0, 5):
+        for j in range(0, 5):
+            print(i, " ", j)
+
+
 def give_me_a_nickname():
-	yourNickName="none"
-	while len(yourNickName)<5 or len(yourNickName)>10:
-		yourNickName=str(input("Please select a nickname"))
-		if len(yourNickName)<5:
-			print("Your nickname too short")
-		elif len(yourNickName)>10:
-			print("Your nickname too long")
+    yourNickName = "none"
+    while len(yourNickName) < 5 or len(yourNickName) > 10:
+        yourNickName = str(input("Please select a nickname"))
+        if len(yourNickName) < 5:
+            print("Your nickname too short")
+        elif len(yourNickName) > 10:
+            print("Your nickname too long")
 
-	print("Your nick name '%s' is cool now" %yourNickName)
-	
+    print("Your nick name '%s' is cool now" % yourNickName)
+
+
 def using_list():
-	some_numbers=[1,3,4,2,6,7,2,2,9,12,14,10,5]
-	return some_numbers
+    some_numbers = [1, 3, 4, 2, 6, 7, 2, 2, 9, 12, 14, 10, 5]
+    return some_numbers
+
 ```
 
 Biraz karışık duruyorlar değil mi? Korkmayın. Hepsi üzerinden dikkatlice geçeceğiz.
@@ -127,7 +136,7 @@ Kod dosyasının en başında import anahtar kelimesi ile yapılan bir bildirim 
 
 Gelelim metodlarımızda neler yaptığımıza. Bunları aşağıdaki tabloda kısaca açıklamaya çalıştım.
 
-| Metod Adı | İçinde Neler Oluyor? |
+| **Metod Adı** | **İçinde Neler Oluyor?** |
 | --- | --- |
 | **get_players** | Bu metod içerisinde Tuple kullanımı söz konusudur. players isimli Tuple 3 elemandan oluşmaktadır. Dikkat edilmesi gereken nokta her bir elemanın farklı sayıda ve tipte niteliğe sahip olabileceğidir. Metod geriye oluşturduğu bu Tuple içeriğini döndürür. Tuple tipinin elemanlarına [] operatörü ile erişilebilir. main.py içerisinde örnek bir kullanım söz konusudur. Ancak siz daha fazlasını da keşfetmeye çalışın derim. |
 | **get_language** | Bu fonksiyonda ise Dictionary kullanımı örneklenmiştir. Basit anlamda key:value çiftlerinden oluşan Dictionary'ler sıklıkla kullanılabilecek veri yapılarındandır. Metod key isimli bir parametre almış ve bunu Dictionary içerisinde [] operatörü ile arama yapılmasında kullanmıştır. Yani [] operatörü key değerini alıp buna karşılık gelen değeri elde etmemizi sağlamaktadır. Metod eğer key içeriği bulunursa değerini döndürü. Bulamazsa none şeklinde bir dönüş yapacaktır. |
@@ -159,46 +168,47 @@ Listelerin, Tuple ve Dictionary'lerin kullanımı hakkında daha fazla detay iç
 Peki ilgili metodları nasıl test edeceğiz? Hemen main.py dosyamıza geliyor ve aşağıdaki kod satırlarını oluşturuyoruz.
 
 ```python
-#Some practices
+# Some practices
 
 import SomeFunctions as func
 
-#interesting code
-print(5*"Burki","\n")
+# interesting code
+print(5 * "Burki", "\n")
 
 # standart input output
 func.greetings()
 
 # simple tuples
-players=func.get_players()
-#print(players)
+players = func.get_players()
+# print(players)
 for player in players:
-	print(player)
+    print(player)
 
 # simple dictionary
-language_code=input("Please give me a country code")
-print("\nYour choice is %s\n" %func.get_language(language_code))
+language_code = input("Please give me a country code")
+print("\nYour choice is %s\n" % func.get_language(language_code))
 
 # simple list
-numbers=func.using_list()
+numbers = func.using_list()
 print("\n...and the number list are\n")
 for n in numbers:
-	print(n)
-print("Second element of numbers is %s" %numbers[1])
-print("The element count of numbers is %s" %len(numbers))
-	
+    print(n)
+print("Second element of numbers is %s" % numbers[1])
+print("The element count of numbers is %s" % len(numbers))
+
 # while, if elif else
 func.give_me_a_nickname()
 
 # simple method usage
-result=func.pythagoras(int(input("x value:")),int(input("y value:")))
-print("pythagoras result is %s" %result)
+result = func.pythagoras(int(input("x value:")), int(input("y value:")))
+print("pythagoras result is %s" % result)
 
 # while if elif
 func.lucky_number_game()
 
 # simple loops
 func.a_little_bit_for_loops()
+
 ```
 
 Yorumlamalı bir dilden bahsediyoruz. Dolayısıyla kod yukarıdan aşağıya doğru aktıkça çalışma zamanı tarafından yürütülecek. İlk olarak yine bir import tanımı söz konusu. Nitekim metodlarımızı biriktirdiğimiz SomeFunctions'ı bu kod dosyasında bir şekilde ele almalıyız. Dikkat edileceği üzere as anahtar kelimesi ile de bu dosya için bir takma ad (alias) oluşturduk. Bu sayede SomeFunctions içindeki metodlara erişebiliriz.
@@ -213,6 +223,7 @@ Sonrasında ise diğer metodların sırasıyla çağırıldığını görüyoruz
 
 Tam çıktı ise aşağıdaki gibi.
 
+```text
 Python 3.5.1 (default, Dec 2015, 13:05:11)
 [GCC 4.8.2] on linux
 
@@ -297,6 +308,7 @@ Please insert a maximum value 5
 4 2
 4 3
 4 4
+```
 
 Başka bir eksik kaldı mı diye düşünüyorum şu anda...Ah evet. # ile başlayan satırlar tahmin edeceğiniz üzere yorum satırlarıdır.
 

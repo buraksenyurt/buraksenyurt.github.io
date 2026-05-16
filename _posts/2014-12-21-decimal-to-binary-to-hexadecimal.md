@@ -13,11 +13,9 @@ tags:
 categories:
   - Algoritma
 ---
-Bundan bir kaç sene önce ünlü matematikçi Fermat’ nın son teoreminin nasıl ispat edildiğinin anlatıldığı bir kitabı okumuştum. 1670 yılında ortaya çıkan ve Fermat tarafından o zaman ispat edildiği öne sürülen ama bildiğim kadarı ile kanıt bulunamayan teorem ancak 1995 yılında Andrew Wiles tarafından kanıtlanabilmiştir.
+Bundan bir kaç sene önce ünlü matematikçi Fermat’ nın son teoreminin nasıl ispat edildiğinin anlatıldığı bir kitabı okumuştum. 1670 yılında ortaya çıkan ve Fermat tarafından o zaman ispat edildiği öne sürülen ama bildiğim kadarı ile kanıt bulunamayan teorem ancak 1995 yılında Andrew Wiles tarafından kanıtlanabilmiştir. Söz konusu teoremin ispatı sırasında ([bununla ilişkili olarak wikiden bilgi alabilirsiniz](http://tr.wikipedia.org/wiki/Fermat%27n%C4%B1n_son_teoremi)) arada ispat edilmek zorunda kalınan başka teoremler de ortaya çıkmıştı. Kitabın içerisinde altın orandan tutunda, Şimuya-Taniyama konjöktörünün çözümlenmesine kadar pek çok konuya yer verilmişti. Şimdi haklı olarak bunları niye söylüyorsun diyeceksiniz?
 
 ![Pierre_de_Fermat_Pul](/assets/images/2014/Pierre_de_Fermat_Pul.jpg)
-
-Söz konusu teoremin ispatı sırasında ([bununla ilişkili olarak wikiden bilgi alabilirsiniz](http://tr.wikipedia.org/wiki/Fermat%27n%C4%B1n_son_teoremi)) arada ispat edilmek zorunda kalınan başka teoremler de ortaya çıkmıştı. Kitabın içerisinde altın orandan tutunda, Şimuya-Taniyama konjöktörünün çözümlenmesine kadar pek çok konuya yer verilmişti. Şimdi haklı olarak bunları niye söylüyorsun diyeceksiniz?
 
 Görünen o ki evrenin hemen her alanında matematiğin izlerine rastlamaktayız. İşin gerçeği bildiğimiz tüm bilimler illaki bir ucundan da olsa matematiğe bulaşmak zorunda kalmıştır/kalmaktadır/kalacaktır. Söz gelimi bilgisayar bilimlerini göz önüne alalım. Bilgisayar bilimleri deyince işin içerisine elektronikten tutunda yazılıma kadar geniş bir alan girmektedir. Hatta kapalı ve açık devre ile başlayan ampüllerin zaman içerisinde 1 ve 0’ lar olarak anıldığı ve karşımıza anlamlı, işlenebilir veri olarak çıktığı bir durum da söz konusudur.
 
@@ -45,9 +43,7 @@ Peki 78 sayısının hexadecimal karşılığı nasıl bulunabilir? ve tabi hexa
 
 Görüldüğü üzere bir ondalıklı sayının ikili sisteme dönüştürülmesindeki felsefenin aynısı burada da geçerlidir. Tek yapılması gereken 16ya bölme ve kalanları değerlendirmedir. Tabi kalanarın 1 ve 0 değil, 0 ile 15 aralığında olması önemlidir. 9dan sonraki rakamlarda (10,11,12,13,14,15) sırasıyla A,B,C,D,E ve F harflerine yer verilmektedir. Bir hexadecimal ifadenin ondalıklı sayıya çevrilmesinde ise 16üzeri0 ile başlayan katlı sistem devreye girer. İlgili katlar sayının veya harfin karşılık geldiği (örneğin Enin karşılığı olan 12) değer ile çarpılır ve genel toplam alınarak ondalık sayı karşılığı bulunur.
 
-Teorem bu kadar basit olduğuna göre bir sayının ikili veya 16lı sayı sistemine çevrilmesi için gerekli kodları geliştirebilirsiniz. Bu iyi bir antrenman olacaktır
-
-Ama çok da şart değildir. Nitekim Convert tipinin ilgili static metodları base parametresi ile ilgili dönüşümlere izin vermektedir. Aşağıdaki örnek kod parçasını bu anlamda göz önüne alabiliriz.
+Teorem bu kadar basit olduğuna göre bir sayının ikili veya 16lı sayı sistemine çevrilmesi için gerekli kodları geliştirebilirsiniz. Bu iyi bir antrenman olacaktır. Ama çok da şart değildir. Nitekim Convert tipinin ilgili static metodları base parametresi ile ilgili dönüşümlere izin vermektedir. Aşağıdaki örnek kod parçasını bu anlamda göz önüne alabiliriz.
 
 ```csharp
 using System;
@@ -90,59 +86,59 @@ Convert tipinin static ToString ve ToInt32 metodlarına verilen ikinci parametre
 Şimdi olayı biraz daha ilginç bir hale getirelim ne dersiniz? Önce örnek kodumuz…
 
 ```csharp
-using System; 
-using System.Collections.Generic; 
-using System.IO; 
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
-namespace NumberSystems 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            string fileDecimal = Path.Combine(Environment.CurrentDirectory, "Decimal.txt"); 
-            string fileBinary = Path.Combine(Environment.CurrentDirectory, "Binary.txt"); 
-            string fileHexadecimal = Path.Combine(Environment.CurrentDirectory, "Hexadecimal.txt");
+namespace NumberSystems
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fileDecimal = Path.Combine(Environment.CurrentDirectory, "Decimal.txt");
+            string fileBinary = Path.Combine(Environment.CurrentDirectory, "Binary.txt");
+            string fileHexadecimal = Path.Combine(Environment.CurrentDirectory, "Hexadecimal.txt");
 
-            List<int> numbers = GetRandomNumbers(100000000, 900000000, 1000000);
+            List<int> numbers = GetRandomNumbers(100000000, 900000000, 1000000);
 
-            WriteToFile(fileDecimal, numbers, BaseType.Decimal); 
-            WriteToFile(fileBinary, numbers, BaseType.Binary); 
-            WriteToFile(fileHexadecimal, numbers, BaseType.Hexadecimal); 
-        }
+            WriteToFile(fileDecimal, numbers, BaseType.Decimal);
+            WriteToFile(fileBinary, numbers, BaseType.Binary);
+            WriteToFile(fileHexadecimal, numbers, BaseType.Hexadecimal);
+        }
 
-        private static List<int> GetRandomNumbers(int initialValue, int lastValue, int arrayLength) 
-        { 
-            List<int> numbers = new List<int>();
+        private static List<int> GetRandomNumbers(int initialValue, int lastValue, int arrayLength)
+        {
+            List<int> numbers = new List<int>();
 
-            Random random = new Random(); 
-            for (int i = 0; i < arrayLength; i++) 
-            { 
-                numbers.Add(random.Next(initialValue, lastValue)); 
-            }
+            Random random = new Random();
+            for (int i = 0; i < arrayLength; i++)
+            {
+                numbers.Add(random.Next(initialValue, lastValue));
+            }
 
-            return numbers; 
-        } 
-        private static void WriteToFile(string fileName, List<int> numbers, BaseType baseType) 
-        { 
-            StringBuilder builder = new StringBuilder();
+            return numbers;
+        }
+        private static void WriteToFile(string fileName, List<int> numbers, BaseType baseType)
+        {
+            StringBuilder builder = new StringBuilder();
 
-            for (int i = 0; i < numbers.Count; i++) 
-            { 
-                builder.AppendLine(Convert.ToString(numbers[i], (int)baseType)); 
-            }
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                builder.AppendLine(Convert.ToString(numbers[i], (int)baseType));
+            }
 
-            File.WriteAllText(fileName, builder.ToString()); 
-        } 
-    }
+            File.WriteAllText(fileName, builder.ToString());
+        }
+    }
 
-    public enum BaseType 
-    { 
-        Binary = 2, 
-        Decimal = 10, 
-        Hexadecimal = 16 
-    } 
+    public enum BaseType
+    {
+        Binary = 2,
+        Decimal = 10,
+        Hexadecimal = 16
+    }
 }
 ```
 
@@ -152,80 +148,78 @@ GetRandomNumbers isimli metodumuz belirtilen integer değer aralığında bizim 
 
 ![decbinhex3](/assets/images/2014/decbinhex3.png)
 
-Mutlaka dikkatinizi çekmiştir ki, Binary dosya boyutu 30 megabyte ile haklı bir liderliği üstlenmektedir
-
-Her ne kadar Decimal ile Hexadecimal arasında çok büyük bir fark olmadığı gözüksede, sayı dizisinin boyutunun arttırılması halinde durum biraz daha farklılık gösterebilmektedir. Bu amaçla test sonuçlarını biraz daha sağlıklı irdelemek adına kodumuzu biraz daha değiştirelim.
+Mutlaka dikkatinizi çekmiştir ki, Binary dosya boyutu 30 megabyte ile haklı bir liderliği üstlenmektedir. Her ne kadar Decimal ile Hexadecimal arasında çok büyük bir fark olmadığı gözüksede, sayı dizisinin boyutunun arttırılması halinde durum biraz daha farklılık gösterebilmektedir. Bu amaçla test sonuçlarını biraz daha sağlıklı irdelemek adına kodumuzu biraz daha değiştirelim.
 
 ```csharp
-using System; 
-using System.Collections.Generic; 
-using System.Diagnostics; 
-using System.IO; 
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 
-namespace NumberSystems 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            string fileDecimal = Path.Combine(Environment.CurrentDirectory, "Decimal.txt"); 
-            string fileBinary = Path.Combine(Environment.CurrentDirectory, "Binary.txt"); 
-            string fileHexadecimal = Path.Combine(Environment.CurrentDirectory, "Hexadecimal.txt");
+namespace NumberSystems
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fileDecimal = Path.Combine(Environment.CurrentDirectory, "Decimal.txt");
+            string fileBinary = Path.Combine(Environment.CurrentDirectory, "Binary.txt");
+            string fileHexadecimal = Path.Combine(Environment.CurrentDirectory, "Hexadecimal.txt");
 
-            for (int i = 5; i < 9; i++) 
-            { 
-                int length = (int)Math.Pow(10, i); 
-                Console.WriteLine(length); 
-                List<int> numbers = GetRandomNumbers(10000000, 90000000, length); 
-                WriteToFile(fileDecimal, numbers, BaseType.Decimal); 
-                WriteToFile(fileBinary, numbers, BaseType.Binary); 
-                WriteToFile(fileHexadecimal, numbers, BaseType.Hexadecimal); 
-                Console.WriteLine("---"); 
-            } 
-        }
+            for (int i = 5; i < 9; i++)
+            {
+                int length = (int)Math.Pow(10, i);
+                Console.WriteLine(length);
+                List<int> numbers = GetRandomNumbers(10000000, 90000000, length);
+                WriteToFile(fileDecimal, numbers, BaseType.Decimal);
+                WriteToFile(fileBinary, numbers, BaseType.Binary);
+                WriteToFile(fileHexadecimal, numbers, BaseType.Hexadecimal);
+                Console.WriteLine("---");
+            }
+        }
 
-        private static List<int> GetRandomNumbers(int initialValue, int lastValue, int arrayLength) 
-        { 
-            List<int> numbers = new List<int>();
+        private static List<int> GetRandomNumbers(int initialValue, int lastValue, int arrayLength)
+        {
+            List<int> numbers = new List<int>();
 
-            Random random = new Random(); 
-            for (int i = 0; i < arrayLength; i++) 
-            { 
-                numbers.Add(random.Next(initialValue, lastValue)); 
-            }
+            Random random = new Random();
+            for (int i = 0; i < arrayLength; i++)
+            {
+                numbers.Add(random.Next(initialValue, lastValue));
+            }
 
-            return numbers; 
-        } 
-        private static void WriteToFile(string fileName, List<int> numbers, BaseType baseType) 
-        { 
-            StringBuilder builder = new StringBuilder(); 
-            Stopwatch watcher = new Stopwatch();
+            return numbers;
+        }
+        private static void WriteToFile(string fileName, List<int> numbers, BaseType baseType)
+        {
+            StringBuilder builder = new StringBuilder();
+            Stopwatch watcher = new Stopwatch();
 
-            for (int i = 0; i < numbers.Count; i++) 
-            { 
-                builder.AppendLine(Convert.ToString(numbers[i], (int)baseType)); 
-            }
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                builder.AppendLine(Convert.ToString(numbers[i], (int)baseType));
+            }
 
-            watcher.Start(); 
-            File.WriteAllText(fileName, builder.ToString()); 
-            watcher.Stop(); 
-            FileInfo fi=new FileInfo(fileName); 
-            Console.WriteLine( 
-                "{0}\tSize:{1}\tProcess Time:{2}" 
-                ,Path.GetFileName(fileName) 
-                ,fi.Length.ToString() 
-                ,watcher.ElapsedMilliseconds.ToString() 
-                ); 
-        } 
-    }
+            watcher.Start();
+            File.WriteAllText(fileName, builder.ToString());
+            watcher.Stop();
+            FileInfo fi = new FileInfo(fileName);
+            Console.WriteLine(
+            "{0}\tSize:{1}\tProcess Time:{2}"
+            , Path.GetFileName(fileName)
+            , fi.Length.ToString()
+            , watcher.ElapsedMilliseconds.ToString()
+            );
+        }
+    }
 
-    public enum BaseType 
-    { 
-        Binary = 2, 
-        Decimal = 10, 
-        Hexadecimal = 16 
-    } 
+    public enum BaseType
+    {
+        Binary = 2,
+        Decimal = 10,
+        Hexadecimal = 16
+    }
 }
 ```
 

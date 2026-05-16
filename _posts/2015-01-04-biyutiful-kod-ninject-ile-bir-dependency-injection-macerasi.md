@@ -16,8 +16,6 @@ categories:
 ---
 Her yazılım geliştirici özellikle büyük bir projeye girdiğinde kodlarının kaliteli olması için uğraşır. Bu yönde adımlar atar. Çoğu zaman bu bir sanata dahi dönüşebilir. Okunabilir kodlar oluşturmanın dışında, mimari açıdan büyüleyici olan, yeniden kullanılabilirliğin üst seviyede olduğu, fazla uğraşılmadan genişleyebilen ürünler ortaya çıkartmak en büyük gayelerden birisi haline gelir. Martin Fowler'ın ilkeleri sıkı sıkıya takip edilir. Kurumsal çözüm içerisinde Fluent API'ler kullanılmaya, "Dependency Injection Container" gibi kavramlar konuşulmaya başlanır. Ne kadar başarılabilir bilinmez ama amaçlardan birisi de Biyütıful Kodu ortaya çıkartmaktır.
 
-![OLYMPUS DIGITAL CAMERA](/assets/images/2015/legoninjas.jpg)
-
 ## Dependency Injection Container Hakkında
 
 Nesne yönelimli programlama (Object Oriented Programming) dünyasından bakıldığında Dependency Injection, yazılımların (Software) harici bileşenlere (External Components) olan bağımlılıklarının kontrol altın alınmasında önem arz eden bir prensiptir. Amaç, yazılımların kullandıkları bileşenler ile (veya sınıfların birbirleri ile) gevşek bağlar (loose coupling) kurabilmesini sağlamaktır. Söz konusu prensibin kolayca uygulanabilmesi de önemlidir. Öyle ki, gevşek bağlanan bileşenler arasında kolayca ve zahmetsizce geçişler yapılabilmeli ya da sorumluluk zincirine yeni bağımlılıklar zahmetsizce eklenebilmelidir. Üstelik bu değişiklikler koda minimum seviyede dokunarak ve sadece gerekli olanlar yeniden Build edilerek yapılabilmelidir.

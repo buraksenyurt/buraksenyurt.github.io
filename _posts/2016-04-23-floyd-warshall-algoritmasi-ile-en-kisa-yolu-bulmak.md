@@ -12,11 +12,9 @@ tags:
 categories:
   - Algoritma
 ---
-Uzun zamandır algoritmalar üzerinde çalışmadığımı fark ettim. İşlerin biraz olsun hafiflediği şu vakitlerde de bir tanesini inceleyeyim dedim. Derken kendimi [Floyd-Warshall algoritmasını](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) anlamaya çalışırken buldum. Söz konusu algoritma Graph yapılarında boğumlar arasındaki en kısa yolların bulunmasında kullanılmaktadır.
+Uzun zamandır algoritmalar üzerinde çalışmadığımı fark ettim. İşlerin biraz olsun hafiflediği şu vakitlerde de bir tanesini inceleyeyim dedim. Derken kendimi [Floyd-Warshall algoritmasını](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) anlamaya çalışırken buldum. Söz konusu algoritma Graph yapılarında boğumlar arasındaki en kısa yolların bulunmasında kullanılmaktadır. Gerçek hayat örnekleri düşünüldüğünde Regular Expression, Network Routing, Dynamic Programming, yönsüz graph'ların iki parçalı graph'lar dönüştürülmesi ve daha bir çok alanda kullanıldığına şahit oluruz. Algoritmanın matematiksel çalışmasına bakıldığında boğumların birbirlerine olan yakınlıklarını ele alan matrisleri kullandığını görürüz.
 
 ![FWa_6.gif](/assets/images/2016/FWa_6.gif)
-
-Gerçek hayat örnekleri düşünüldüğünde Regular Expression, Network Routing, Dynamic Programming, yönsüz graph'ların iki parçalı graph'lar dönüştürülmesi ve daha bir çok alanda kullanıldığına şahit oluruz. Algoritmanın matematiksel çalışmasına bakıldığında boğumların birbirlerine olan yakınlıklarını ele alan matrisleri kullandığını görürüz.
 
 Aslında konuyu eğlenceli olabileceğini düşündüğüm bir senaryo üzerinden ele alırsak çok daha iyi olur. Bu anlamda aşağıdaki grafiği göz önüne alalım. (Grafiğin oluşmasında [Quora](https://www.quora.com/What-is-an-intuitive-explanation-of-the-Floyd-Warshall-algorithm)'nın bana çok güzel fikir verdiğini ifade etmek isterim)
 

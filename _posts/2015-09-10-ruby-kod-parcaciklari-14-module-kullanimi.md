@@ -20,59 +20,60 @@ Serializer.rb içeriği
 
 ```ruby
 module Serializer
-	def self.serialize(data)
-		puts "#{data} serilestiriliyor"
-	end
+  def self.serialize(data)
+    puts "#{data} serilestiriliyor"
+  end
 
-	def self.deserialize(data)
-		puts "#{data} ters serilestiriliyor"
-	end
+  def self.deserialize(data)
+    puts "#{data} ters serilestiriliyor"
+  end
 end
 ```
 
 UsingModules.rb içeriği
 
 ```ruby
-$LOAD_PATH << '.'
+$LOAD_PATH << "."
 require "Serializer"
+
 module Grid
-	DEFAULT_PROVIDER="MONGODB"
-	DEFAULT_TIMEOUT=1000
-	include Serializer
-	
-	def self.configure
-		puts "ortam #{DEFAULT_PROVIDER} icin set edildi"
-	end
+  DEFAULT_PROVIDER = "MONGODB"
+  DEFAULT_TIMEOUT = 1000
+  include Serializer
 
-	class Connection
-		def self.connect(conStr)
-			puts "#{conStr} icin baglanti saglaniyor"
-		end
-		
-		def self.disconnect(conStr)
-			puts "#{conStr} baglantisi kesiliyor"
-		end
-	end
+  def self.configure
+    puts "ortam #{DEFAULT_PROVIDER} icin set edildi"
+  end
 
-	module Cloud
-		def self.connectToService(url)
-			puts "#{url} adresine baglanti gerceklestirilecek"
-		end
+  class Connection
+    def self.connect(conStr)
+      puts "#{conStr} icin baglanti saglaniyor"
+    end
 
-		def self.send(someData)
-			puts Serializer::serialize(someData)
-			puts Serializer::deserialize(someData)
-		end
-	end
+    def self.disconnect(conStr)
+      puts "#{conStr} baglantisi kesiliyor"
+    end
+  end
+
+  module Cloud
+    def self.connectToService(url)
+      puts "#{url} adresine baglanti gerceklestirilecek"
+    end
+
+    def self.send(someData)
+      puts Serializer::serialize(someData)
+      puts Serializer::deserialize(someData)
+    end
+  end
 end
 
-if __FILE__==$0
-	puts Grid::DEFAULT_PROVIDER
-	Grid::configure
-	Grid::Cloud::connectToService("http://somedomain/someService.svc")
-	Grid::Cloud::send("Bir veri")
-	Grid::Connection.connect("myMongoDb connection")
-	Grid::Connection.disconnect("myMongoDb connection")
+if __FILE__ == $0
+  puts Grid::DEFAULT_PROVIDER
+  Grid::configure
+  Grid::Cloud::connectToService("http://somedomain/someService.svc")
+  Grid::Cloud::send("Bir veri")
+  Grid::Connection.connect("myMongoDb connection")
+  Grid::Connection.disconnect("myMongoDb connection")
 end
 ```
 

@@ -11,12 +11,7 @@ tags:
 categories:
   - Framework Tabanlı Programlama
 ---
-Yazılım dünyasında var olan mimari prensipler veya tasarım kalıpları tek başlarına belirli sorunları çözseler de, bazı kurumsal projelerde mutlak suretle bir arada düşünülmeleri gerekir. Söz gelimi Repository ve Unit of Work kalıpları, özellikle Domain Driven Design odaklı yapılarda bir arada değerlendirilmesi gerekenlerdendir.
-
-![thinking](/assets/images/2014/thinking.jpg)
-
-
-DDD denilince aklımıza daha çok veri odaklı uygulamalar gelir ve bu tip ürünlerde RDBMS (Relational Database Management System) lerin yeri hatırı sayılır ölçüde fazladır (Her ne kadar son yıllarda NoSQL cephesinde önemli gelişmeler ve kullanımda ciddi artışlar olsa da…)
+Yazılım dünyasında var olan mimari prensipler veya tasarım kalıpları tek başlarına belirli sorunları çözseler de, bazı kurumsal projelerde mutlak suretle bir arada düşünülmeleri gerekir. Söz gelimi Repository ve Unit of Work kalıpları, özellikle Domain Driven Design odaklı yapılarda bir arada değerlendirilmesi gerekenlerdendir. DDD denilince aklımıza daha çok veri odaklı uygulamalar gelir ve bu tip ürünlerde RDBMS (Relational Database Management System) lerin yeri hatırı sayılır ölçüde fazladır (Her ne kadar son yıllarda NoSQL cephesinde önemli gelişmeler ve kullanımda ciddi artışlar olsa da…)
 
 Hal böyle olunca O/RM (Object Relational Mapping) araçlarının kullanımı da önem kazanmaktadır. Yıllardır hayatımızda olan bu araçlar modellerin nesnel olarak inşasında da önemli bir yere sahiptirler. Lakin Object Oriented dünyasının kuralları içerisinde yaşarlar ve bu yüzden bazı kurumsal prensipleri uygulamaları gerekmektedir.
 
@@ -24,7 +19,7 @@ Benim gibi.Net üzerinde geliştirme yapanlar için O/RM araçları da az çok b
 
 > Hiç kimse bu deseneleri Martin Fowler kadar iyi açıklayamaz. Bu yüzden makalenin amacı ilgili desenelerin Entity Framework için örnek bir kullanımının anlatımından ibarettir.
 
-İşin Gerçeği
+## İşin Gerçeği
 
 Gerçek hayatta Entity Framework veya başka bir O/RM aracının kullanıldığı hallerde aşağıdaki grafikteki iki durumdan birisi söz konusu olur (Genellikle de en soldaki). Klasik olarak DbContext doğrudan iş katmanında değerlendirilir. Ancak Test Driven Development veya Domain Driven Design gibi yaklaşımların kullanıldığı geliştirme süreçlerinde, Repository ve Unit of Work desenelerinin icra edilmesi önemlidir. Nitekim bu sayede uygulamanın iş mantığının tutulduğu katman ile veri erişim katmanının izole edilmesi kolaylaşır. t anında farklı bir Repository ile çalışılabilmesi veya yenilerinin yazılarak sisteme dahil edilmesinin yolu açılır. Aynı kolaylık Unit of Work yapıları için de geçerlidir.
 
@@ -36,7 +31,7 @@ Unit Test’ lerin çalıştığı geliştirme ortamının hiç bir şekilde bir
 
 Gelin konuyu basit ve pek de işe yaramayacak örnek bir senaryo üzerinden ele alalım. Amacımız içinde iki Entity barındıran bir DbContext türevini, Repository ve Unit of Work desenleri çerçevesinde nasıl ele alabileceğimizi incelemektir.
 
-Code First ile Entity Modelin İnşası
+## Code First ile Entity Modelin İnşası
 
 Örnek uygulama her zaman ki gibi gösterişsiz bir Console projesidir. Amaç ilgili desenlerin sade bir uyarlamasını görebilmektir. Ama öncesinde NuGet üzerinden güncel Entity Framework’ ün son sürümü projeye indirilerek işe başlanabilir.
 
@@ -78,7 +73,7 @@ namespace RPandUOW.EntityModel
 
 Tipik olarak one-to-many ilişki içerisinde sayabileceğimiz iki POCO tipi bulunmaktadır. Bir kategori ve bu kategoriye bağlı olan ürünler. Gelelim Repository deseninin uygulanış biçimine.
 
-Repository Yapısının İnşası
+## Repository Yapısının İnşası
 
 Öyle bir yapı kurgulamalıyız ki, hem bir Repository için gerekli minimum fonksiyonelliklerin bir sözleşmesi hem de Context içerisinde yer alan her T tipi için çalışabilecek generic bir sınıf olsun. Ve pek tabi varsayılan kuralları istediği gibi işleyecek yeni Repository’ leri yazmanın da yolu açılabilsin. İlk olarak aşağıdaki sınıf diagramında görülen tiplerin tasarlanmasıyla işe başlanabilir.
 
@@ -162,7 +157,7 @@ ShopRepository sınıfı dikkat edileceği üzere IRepository arayüzünü uygul
 
 Repository’ nin kullandığı Context nesnesinin oluşturulması aslında yapıcı metod içerisinde icra edilmektedir. Burada da generic bir kullanım yolu düşünülebilir. Dikkat çekici noktalardan bir tanese bir Context için söz konusu olan Save işleminin bu tiplerde her angi bir biçimde ele alınmamış olmasıdır. Aslında bu, Unit of Work yapısının inşasında ele alınması gereken bir fonksiyonelliktir. Öyleyse Unit of Work yapısını tesis etmeye başlayabiliriz.
 
-Unit of Work Yapısının İnşası
+## Unit of Work Yapısının İnşası
 
 Entity Framework açısından bir birimlik işi; içerisinde konuya dahil olması gereken Repository örneklerinin oluşturulması ve Save işleminin icra edilmesi olarak düşünebiliriz (Hatta bu yapı içerisine Transaction açılıp kapatılması da dahil edilebilir) Pek tabi Unit of Work yapısınında bir sözleşme üzerinden değerlendirilmesi, farklı Unit of Work’ lerin de değerlendirilebilmesi açısından önemlidir. Bu düşünceler ışığında aşağıdaki yapıyı kurgulayabiliriz.
 
@@ -247,48 +242,48 @@ ShopContext için kullanılacak Unif of Work kurgusunda ise, işe dahil olacak R
 
 Bir başka deyişle örneğin Save işlemi sırasında tüm Repository nesnelerinin aynı DbContext örneği üzerinden işlemlerini gerçekleştirmesi ve tek bir Transaction bütünlüğü içerisinde çalışması sağlanmış olmaktadır. Zaten Unit of Work desenin temel amaçlarından birisi de bu işlem bütünlüğünü kurgulamaktr.
 
-Basit Bir Kullanım
+## Basit Bir Kullanım
 
 Yazılan Unit of Work uyarlamasının uygulanış biçimi oldukça kolaydır. Normal şartlarda bir BLL fonksiyonelliği içerisinde de değerlendirilebilir. Konunun basitçe ele alınması açısından Main metodu aşağıdaki kodları içerecek şekilde geliştirilmiştir.
 
 ```csharp
-using RPandUOW.EntityModel; 
-using RPandUOW.UnitOfWorks; 
-using System; 
+using RPandUOW.EntityModel;
+using RPandUOW.UnitOfWorks;
+using System;
 using System.Collections.Generic;
 
-namespace RPandUOW 
-{ 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            using (ShopUnitOfWork worker = new ShopUnitOfWork()) 
-            { 
-                Category computerBook = new Category { Title = "Computer Books" }; 
-                worker.CategoryRepository.Insert(computerBook); 
-                computerBook.Products = new List<Product> { 
-                    new Product { Title = "Advanced NoSQL", Quantity = 1, UnitPrice = 34.59M }, 
-                    new Product { Title = "NHibernate in Action", Quantity = 5, UnitPrice = 29.99M }, 
-                    new Product { Title = "Unleashed Delphi 2.0", Quantity = 3, UnitPrice = 9.99M } 
-                }; 
-                Category cookBook = new Category { Title = "Cook Books" }; 
-                worker.CategoryRepository.Insert(cookBook); 
-                cookBook.Products = new List<Product> { 
-                new Product() 
-                    { 
-                        Title = "Italian Kitchen", Quantity = 20, UnitPrice = 12 } 
-                    }; 
-                worker.CategoryRepository.Insert(cookBook); 
-                worker.Save(); 
-                var books = worker.ProductRepository.Select(p => p.CategoryID == computerBook.CategoryID); 
-                foreach (var book in books) 
-                { 
-                    Console.WriteLine("{0} {1} {2}", book.Title, book.UnitPrice, book.Quantity); 
-                } 
-            } 
-        } 
-    } 
+namespace RPandUOW
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (ShopUnitOfWork worker = new ShopUnitOfWork())
+            {
+                Category computerBook = new Category { Title = "Computer Books" };
+                worker.CategoryRepository.Insert(computerBook);
+                computerBook.Products = new List<Product> {
+ new Product { Title = "Advanced NoSQL", Quantity = 1, UnitPrice = 34.59M },
+ new Product { Title = "NHibernate in Action", Quantity = 5, UnitPrice = 29.99M },
+ new Product { Title = "Unleashed Delphi 2.0", Quantity = 3, UnitPrice = 9.99M }
+ };
+                Category cookBook = new Category { Title = "Cook Books" };
+                worker.CategoryRepository.Insert(cookBook);
+                cookBook.Products = new List<Product> {
+ new Product()
+ {
+ Title = "Italian Kitchen", Quantity = 20, UnitPrice = 12 }
+ };
+                worker.CategoryRepository.Insert(cookBook);
+                worker.Save();
+                var books = worker.ProductRepository.Select(p => p.CategoryID == computerBook.CategoryID);
+                foreach (var book in books)
+                {
+                    Console.WriteLine("{0} {1} {2}", book.Title, book.UnitPrice, book.Quantity);
+                }
+            }
+        }
+    }
 }
 ```
 

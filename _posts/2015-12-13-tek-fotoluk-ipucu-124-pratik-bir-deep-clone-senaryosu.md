@@ -26,40 +26,40 @@ Görüldüğü gibi çok genel bir fonksiyonellik söz konusu.
 Bu bilgilerden sonra şöyle bir ihtiyacımız olduğunu düşünelim; Uygulama Domain'i içerisinde yer alan belirli türdeki varlıklar için Deep Copy işlemini pratik olarak uygulamak istiyoruz (Aşağıdaki gibi çok basit bir domain yapımız olduğunu düşünelim)
 
 ```csharp
-interface IWebEntity{}
+interface IWebEntity { }
 
 [Serializable]
 class Category
-:IWebEntity
+: IWebEntity
 {
-	public int ID { get; set; }
-	public string Name { get; set; }
-	public override string ToString()
-	{
-		return string.Format("{0}-{1}",
-		ID.ToString(),
-		Name
-		);
-	}
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public override string ToString()
+    {
+        return string.Format("{0}-{1}",
+        ID.ToString(),
+        Name
+        );
+    }
 }
 
 [Serializable]
 class Product
 : IWebEntity
 {
-	public int ID { get; set; }
-	public string Name { get; set; }
-	public decimal ListPrice { get; set; }
-	public Category Category { get; set; }
-	public override string ToString()
-	{
-		return string.Format("{0},{1},{2}({3})",
-		ID.ToString(),
-		Name,
-		ListPrice.ToString(),
-		Category.ToString()
-		);
-	}
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public decimal ListPrice { get; set; }
+    public Category Category { get; set; }
+    public override string ToString()
+    {
+        return string.Format("{0},{1},{2}({3})",
+        ID.ToString(),
+        Name,
+        ListPrice.ToString(),
+        Category.ToString()
+        );
+    }
 }
 ```
 
@@ -71,6 +71,6 @@ Kodda dikkat edilmesi gereken nokta DeepCopier sınıfının generic olarak tasa
 
 Örnekteki bağlayıcı nokta Product ve Category tiplerinin binary serileştirilebilir olma zorunluluğudur. Bu yüzden Product ve Category sınıfları Serializable niteliği ile işaretlenmişlerdir. Elbette farklı bir yolda düşünülebilir. Nitekim Binary serileştirme özelliği olmayan nesneler söz konusu olduğunda bu teknik işe yaramayacaktır. Bu durumda reflection'dan yararlanabilir ve source isimli nesne örneğinin tüm seviyelerdeki özelliklerini dolaşarak yeni üretilecek nesne örneğine verebiliriz (Bu çözüm recursive'lik gerektirecek bir senaryodur çünkü tip ağacında ne kadar derine inilmesi gerektiği bilinmeyecektir) Sizin için iyi bir antrenman olabilir.
 
-> ![tek fotoluk ipucu 124 pratik bir deep clone senaryosu 03](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-03.gif)
+![tek fotoluk ipucu 124 pratik bir deep clone senaryosu 03](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-03.gif)
 
 Bir başka Tek Fotoluk İpucunda görüşünceye dek hepinize mutlu günler dilerim.

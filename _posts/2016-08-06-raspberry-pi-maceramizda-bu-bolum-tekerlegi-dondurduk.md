@@ -17,10 +17,8 @@ Uzun bir tatil molasının ardından tekrar birlikteyiz. Sevgili [Recep Duman](h
 
 Söyleşi sırasında bahsettiğimiz kaynaklar ise şöyle.
 
-[Monk Makes](https://www.monkmakes.com/rrb3/)
-
-[Simon Monk'a Ait RaspiRobot GitHub Adresi](https://github.com/simonmonk/raspirobotboard3)
-
-[Serve ve Step Motor arasındaki farklar ile ilişkili bir yazı](http://www.elektrikport.com/teknik-kutuphane/step-ve-servo-motorlar/14750#ad-image-0)
+- [Monk Makes](https://www.monkmakes.com/rrb3/)
+- [Simon Monk'a Ait RaspiRobot GitHub Adresi](https://github.com/simonmonk/raspirobotboard3)
+- [Serve ve Step Motor arasındaki farklar ile ilişkili bir yazı](http://www.elektrikport.com/teknik-kutuphane/step-ve-servo-motorlar/14750#ad-image-0)
 
 Bir sonraki söyleşimizde görüşmek dileğiyle hepinize mutlu günler dilerim.

@@ -16,43 +16,42 @@ Lambda nesneleri de aslında Proc'lara oldukça benziyor. Yine bir kod parçası
 
 ```ruby
 class Utility
+  def justDoIt(val1, val2, someLambda) #3
+    puts Time.now
+    someLambda.call val1, val2
+  end
 
-	def justDoIt(val1,val2,someLambda) #3
-		puts Time.now
-		someLambda.call val1,val2
-	end
+  def saySomethingWithLambda #6
+    lambdaZ = lambda {
+      return "Do something with Lambda"
+    }
+    lambdaZ.call
+    return "end of saySomethingWithLambda"
+  end
 
-	def saySomethingWithLambda #6
-		lambdaZ=lambda{
-			return "Do something with Lambda"
-		}
-		lambdaZ.call
-		return "end of saySomethingWithLambda"
-	end
-
-	def saySomethingWithProc #7
-		procZ=Proc.new{
-			return "Do something with Proc"
-		}
-		procZ.call
-		return "end of saySomethingWithProc" #8
-	end
+  def saySomethingWithProc #7
+    procZ = Proc.new {
+      return "Do something with Proc"
+    }
+    procZ.call
+    return "end of saySomethingWithProc" #8
+  end
 end
 
-if __FILE__==$0
-	einstein=Utility.new
-	lambdaX=lambda{|a,b| a+b} #0
-	result=lambdaX.call 5,6
-	puts result
-	lambdaY=->(motto){puts "Your motto is ' #{motto}'"} #1
-	lambdaY.call "It's a beautiful day"
-	puts "lambdaX -> #{lambdaX.class} class" #2
-	puts einstein.justDoIt 3,4,lambdaX #4
-	procX=Proc.new {|m| puts "Your message is '#{m}'"}
-	procX.call
-	#lambdaY.call #5
-	puts einstein.saySomethingWithLambda
-	puts einstein.saySomethingWithProc
+if __FILE__ == $0
+  einstein = Utility.new
+  lambdaX = lambda { |a, b| a + b } #0
+  result = lambdaX.call 5, 6
+  puts result
+  lambdaY = ->(motto) { puts "Your motto is ' #{motto}'" } #1
+  lambdaY.call "It's a beautiful day"
+  puts "lambdaX -> #{lambdaX.class} class" #2
+  puts einstein.justDoIt 3, 4, lambdaX #4
+  procX = Proc.new { |m| puts "Your message is '#{m}'" }
+  procX.call
+  #lambdaY.call #5
+  puts einstein.saySomethingWithLambda
+  puts einstein.saySomethingWithProc
 end
 ```
 
@@ -66,7 +65,9 @@ Kod parçamıza ait kısa notlarımıza gelince.
 - Lambda'lar aslında Proc sınıfın bir örneğidir. #2 numaları satırdaki kodun ekran çıktısına dikkat edin.
 - #3 numaralı kısımda başlayan justDoIt metodunun son parametresi bir Lambda değişkenidir ve #4 numaralı satırda lambdaX'in buraya gönderilmesi söz konusudur. Yine Proc kullanımındakine benzer olarak Lambda değişkeninin icrası justDoIt metodundaki call çağrısı ile gerçkleştirilmektedir.
 - Lambda ile Proc arasındaki farklardan birisi #5nci satırdaki kod parçacığının icra edilmesi halinde ortaya çıkmaktadır. Bir üst satırda procX.call çağrısında dikkat edileceği üzere m parametresi boş geçilmiştir. Benzer şekilde lambdaY.call çağrısında da parametreler gönderilmemiştir. Bu durumda çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+
 ![ruby kod parcaciklari 12 lambda 02](/assets/images/2015/ruby-kod-parcaciklari-12-lambda-02.jpg)
+
 - Bir başka deyişle Proc'lar için parametre göndermek zorunlu değilken, Lambda kullanımında bu mecburidir. Nitekim Lambda, Proc gibi kod bloğunu işaret eden bir değişken değil aslında kod bloğunu metod olarak kabul eden bir yaklaşımı kullanmaktadır. Bu nedenle çalışma zamanı hatası alınmıştır.
 - #6 ve #7 numaralı satırlarda Lambda ve Proc için iki ayrı kullanım söz konusudur. Burada Proc ve Lambda arasındaki bir fark daha görülmekte. lambdaZ ve procZ tanımlamalarında return kullanıldığı görülüyor. Lambda söz konusu olduğunda return sonucu Lambda değişkenin sarmalandığı metoda dönülmektedir. Tam tersine Proc kullanıldığı durumda ise Proc bloğunun içeriği saySomethingWithProc metodunun çağırıldığı yere döndürülmüş bu yüzden #8deki satır işletilmemiştir.
 

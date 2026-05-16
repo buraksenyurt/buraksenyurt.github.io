@@ -29,7 +29,7 @@ IIS üzerinde host edilen Asp.Net ile geliştirilmiş WorksTodo isimli bir web u
 
 `http://localhost/workstodo/main.aspx` talebi için sunucuya aşağıdaki paket gider.
 
-```http
+```text
 GET /workstodo/main.aspx HTTP/1.1
 Host: localhost
 Accept-Encoding: gzip, deflate, sdch
@@ -41,7 +41,7 @@ X-Client-Data: CKO2yQEIxLbJAQj9lcoB
 
 IIS deki Asp.Net çalışma zamanı ise şu cevabı döner.
 
-```http
+```text
 HTTP/1.1 200 OK
 Cache-Control: private
 Content-Length: 1022
@@ -65,27 +65,25 @@ Teorik olarak hikaye bu kadar basit aslında. Elbette IIS gibi gelişmiş web su
 
 require "socket" #TCPServer ve TCPSocket siniflari burada yer almakta
 
-server=TCPServer.new('localhost',8082)
+server = TCPServer.new("localhost", 8082)
 
 begin
+  while (session = server.accept)
+    request = session.gets #gelen talebin ilk satiri okunuyor
+    STDERR.puts request #log' lar console' a yazilacak
 
-while(session=server.accept)
-	request=session.gets #gelen talebin ilk satiri okunuyor
-	STDERR.puts request #log' lar console' a yazilacak
-	
-	response="<b1>Hello Rubyist!</b1><br/><i>This is xion control. Wellcome home</i>"
-	session.print "HTTP/1.1 200 OK\r\n" +
-				"Content-Type: text/html\r\n" +
-				"Content-Length: #{response.bytesize}\r\n" +
-				"Connection: close\r\n"
-	session.print "\r\n"	#HTTP protokolu geregi bir alt satira gecilmesi gerekiyor
-	session.print response #asil body mesaji yazdiriliyor
-	session.close #sokect baglantisi kapatiliyor
-end
-
+    response = "<b1>Hello Rubyist!</b1><br/><i>This is xion control. Wellcome home</i>"
+    session.print "HTTP/1.1 200 OK\r\n" +
+                    "Content-Type: text/html\r\n" +
+                    "Content-Length: #{response.bytesize}\r\n" +
+                    "Connection: close\r\n"
+    session.print "\r\n" #HTTP protokolu geregi bir alt satira gecilmesi gerekiyor
+    session.print response #asil body mesaji yazdiriliyor
+    session.close #sokect baglantisi kapatiliyor
+  end
 rescue Errno::EPIPE
   STDERR.puts "Connection broke!"
-  end
+end
 ```
 
 Öncelikli olarak uygulamamızı test edelim. Ruby kod dosyasını çalıştırdıktan sonra localhost:8082 adresine herhangi bir talepte bulunmamız yeterlidir.
@@ -101,45 +99,43 @@ Bir diğer önemli kısım ise istemciye döndürülecek olan cevap. HTTP respon
 Kodumuz ilgili adrese nasıl bir talep gelirse gelsin hep aynı cevabı verecektir aslında. Nitekim gelen HTTP Header bilgisini herhangi bir şekilde ayrıştırmış ve anlamaya çalışmış değiliz. Oysa ki gelen talebin hedef olarak gösterdiği adres bilgisine göre bir aksiyon alabiliriz. Söz gelimi bir pdf talebi geliyorsa buna uygun bir çıktı üretmeyi sağlayabiliriz. Dilerseniz bu durumu ele alaraktan örnek kodumuzu biraz daha geliştirelim ve aşağıdaki hale getirelim.
 
 ```ruby
-require 'socket'
-require 'uri'
+require "socket"
+require "uri"
 
-server=TCPServer.new('localhost',8082) #taleplerin dinlenecegi makine:port
+server = TCPServer.new("localhost", 8082) #taleplerin dinlenecegi makine:port
 
 begin
+  while (session = server.accept) #talep geldigi surece devam
+    request = session.gets #Header bilgisini al
+    STDERR.puts request	#ekrana bas
+    request_uri = request.split(" ")[1] #bosluklara gore ayirip talep edilen dosyayi bul
+    path = URI.unescape(URI(request_uri).path) #escape karakterleri cikart
+    File.join('c:\\docs', path) #Fiziki yolu belirle
+    ext = File.extname(path).split(".").last #dosya uzantisini al
 
-	while(session=server.accept) #talep geldigi surece devam
-		request=session.gets #Header bilgisini al
-		STDERR.puts request	#ekrana bas
-		request_uri  = request.split(" ")[1] #bosluklara gore ayirip talep edilen dosyayi bul
-		path         = URI.unescape(URI(request_uri).path) #escape karakterleri cikart
-		File.join('c:\\docs', path) #Fiziki yolu belirle
-		ext = File.extname(path).split(".").last #dosya uzantisini al
-		
-		if File.exist?(path) && ext=="jpg" && !File.directory?(path) #dosya varsa uzanti dogruysa
-			File.open(path, "rb") do |file| #dosyayi ac ve HTTP 200 OK paketini hazirla
-				session.print "HTTP/1.1 200 OK\r\n" +
-					   "Content-Type: image/jpeg\r\n" +
-					   "Content-Length: #{file.size}\r\n" +
-					   "Connection: close\r\n"
-				session.print "\r\n"
-				IO.copy_stream(file, session) #Resim icerigine ait byte array'i gonder
-			end
-		else #dosya bulunamadiysa HTTP 404 hatasini don
-			message = "File not found\n"		
-			session.print "HTTP/1.1 404 Not Found\r\n" +
-						 "Content-Type: text/plain\r\n" +
-						 "Content-Length: #{message.size}\r\n" +
-						 "Connection: close\r\n"
-			session.print "\r\n"
-			session.print message
-		end
-		session.close #oturumu kapat
-	end
-
+    if File.exist?(path) && ext == "jpg" && !File.directory?(path) #dosya varsa uzanti dogruysa
+      File.open(path, "rb") do |file| #dosyayi ac ve HTTP 200 OK paketini hazirla
+        session.print "HTTP/1.1 200 OK\r\n" +
+                        "Content-Type: image/jpeg\r\n" +
+                        "Content-Length: #{file.size}\r\n" +
+                        "Connection: close\r\n"
+        session.print "\r\n"
+        IO.copy_stream(file, session) #Resim icerigine ait byte array'i gonder
+      end
+    else #dosya bulunamadiysa HTTP 404 hatasini don
+      message = "File not found\n"
+      session.print "HTTP/1.1 404 Not Found\r\n" +
+                      "Content-Type: text/plain\r\n" +
+                      "Content-Length: #{message.size}\r\n" +
+                      "Connection: close\r\n"
+      session.print "\r\n"
+      session.print message
+    end
+    session.close #oturumu kapat
+  end
 rescue Errno::EPIPE
   STDERR.puts "Connection broke!"
-  end
+end
 ```
 
 Bu sefer localhost:8082 adresinde docs/[bir dosya adı].jpg ile gelen talepleri değerlendirdiğimiz bir web sunucusu geliştirdik. Yani localhost:8082/docs/resim1.jpg gibi talepleri ele alan ve dosya varsa ilgili resim içeriğini tarayıcıya basan bir kod söz konusu. Gelen talepler c:\\docs klasöründeki jpg uzantılı dosyalar ile ilişkilendirilmeye çalışılmakta. Çalışma zamanında aşağıdakine benzer sonuçlar elde edebiliriz.

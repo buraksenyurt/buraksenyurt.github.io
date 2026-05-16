@@ -57,8 +57,8 @@ end
 
 ve her zaman olduğu gibi kod parçacığımıza ait kısa notlarımızı paylaşalım.
 
-- harfler1 ve harfler2 isimli Range'lerin üretim biçimleri arasında sadece bir nokta farkı vardır. İki nokta kullanıldığında son yazılan değer de aralığa dahil edilir. Üç nokta kullanıldığında ise son değer aralığa dahil edilmez.
-- Range sınfına ait each metodundan yararlanarak tek bir ifade ile tüm aralık değerleri üzerinde işlem uygulanabilir. 1den 100e kadar (100 dahil) değerlerin toplamını bulmak için each metodundan yararlanılmıştır.
+- harfler1 ve harfler2 isimli Range nesnelerinin üretim biçimleri arasında sadece bir nokta farkı vardır. İki nokta kullanıldığında son yazılan değer de aralığa dahil edilir. Üç nokta kullanıldığında ise son değer aralığa dahil edilmez.
+- Range sınıfına ait each metodundan yararlanarak tek bir ifade ile tüm aralık değerleri üzerinde işlem uygulanabilir. 1den 100e kadar *(100 dahil)* değerlerin toplamını bulmak için each metodundan yararlanılmıştır.
 - Bir sonraki each metodu kullanımında ise -100den -1e kadar ki sayıları içeren bir değer aralığı oluşturulmuştur. Yani negatif sayılardan oluşan değer aralıkları da belirlenebilir. Pek tabi ondalıklı değer aralıkları da söz konusu olabilir. Bunu bir deneyin;)
 - Bir aralığın alt ve üst değerlerini öğrenmek için begin ve end metodlarından yararlanılır.
 - Eğer bir aralığın son n değeri elde edilmek istenirse last metodundan yararlanılabilir. Metodun parametresi en sağdan geriye doğru kaç eleman alınacağını belirtir.

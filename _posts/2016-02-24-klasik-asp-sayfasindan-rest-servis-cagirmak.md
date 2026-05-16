@@ -18,7 +18,9 @@ categories:
 
 ![asprest_0.gif](/assets/images/2016/asprest_0.gif)
 
-İşte geçtiğimiz günlerde yine bizim turuncu bankamızda buna benzer bir ihtiyaç doğdu. Klasik ASP ile yazılmış ve neredeyse 10 yaşından büyük olan bir ürünün yeni nesil bir teknoloji ile entegre olması gerekti. Söz konusu ASP uygulaması bunca yıl çalıştığı için üzerine eklenen kodlar sebebiyle tam bir [Lawa-Flow AntiPattern](https://sourcemaking.com/antipatterns/lava-flow) oluşmasına da sebebiyet vermişti. (İçine giren kayboluyor herhangibir yerine müdahale etmek gerçekten yürek istiyordu) Ancak kullanıcı alışkanlıkları, yenileme maliyetleri ve kaynak sıkıntısı nedeniyle tekrardan yazılamıyordu. Ürünün güncel sıkıntısı ise içerdiği C tabanlı API'nin yeni nesil 64bit sunucularda çalışmamasıydı. İlgili kütüphane yıllarca önce dış kaynak bir firma tarafından yazılmıştı. İlgili firmadan çözüm için destek alınabilirdi. Şayet firma hala var olsaydı. Var olan C kütüphanesi banka dışı kurum ile SNA isimli eski bir protokol üzerinden haberleşme yapan fonksiyonellikler içeriyordu. Ne var ki dış kurum yakın zamanda bu protokolü terk edip TCP/IP tabanlı bir alt yapıya geçeceğini duyurmuştu. Dolayısıyla C kütüphanesinin değiştirilmesi öncelikli bir gereksinim haline gelmişti. Çözüm olarak C kütüphanesinin gerçekleştirdiği bu haberleşmeyi üstlenen REST tipinden bir servisin devreye alınmasına karar verildi. Problem basitti;.Net ile geliştirilecek olan REST servisin, HTTP POST/GET gibi metodlar ile çalışacak operasyonları klasik ASP sayfasından nasıl tüketilebilirdi? (Senaryomuzu şekilsel olarak aşağıdaki gibi özetleyebiliriz. Aslında canlı halini görseniz sarı kağıt üzerinde kurşun kalemli olan bu çizim gayet renkli ve canlı duruyor)
+İşte geçtiğimiz günlerde yine bizim turuncu bankamızda buna benzer bir ihtiyaç doğdu. Klasik ASP ile yazılmış ve neredeyse 10 yaşından büyük olan bir ürünün yeni nesil bir teknoloji ile entegre olması gerekti. Söz konusu ASP uygulaması bunca yıl çalıştığı için üzerine eklenen kodlar sebebiyle tam bir [Lawa-Flow AntiPattern](https://sourcemaking.com/antipatterns/lava-flow) oluşmasına da sebebiyet vermişti. (İçine giren kayboluyor herhangibir yerine müdahale etmek gerçekten yürek istiyordu) Ancak kullanıcı alışkanlıkları, yenileme maliyetleri ve kaynak sıkıntısı nedeniyle tekrardan yazılamıyordu. Ürünün güncel sıkıntısı ise içerdiği C tabanlı API'nin yeni nesil 64bit sunucularda çalışmamasıydı. İlgili kütüphane yıllarca önce dış kaynak bir firma tarafından yazılmıştı.
+
+İlgili firmadan çözüm için destek alınabilirdi. Şayet firma hala var olsaydı. Var olan C kütüphanesi banka dışı kurum ile SNA isimli eski bir protokol üzerinden haberleşme yapan fonksiyonellikler içeriyordu. Ne var ki dış kurum yakın zamanda bu protokolü terk edip TCP/IP tabanlı bir alt yapıya geçeceğini duyurmuştu. Dolayısıyla C kütüphanesinin değiştirilmesi öncelikli bir gereksinim haline gelmişti. Çözüm olarak C kütüphanesinin gerçekleştirdiği bu haberleşmeyi üstlenen REST tipinden bir servisin devreye alınmasına karar verildi. Problem basitti;.Net ile geliştirilecek olan REST servisin, HTTP POST/GET gibi metodlar ile çalışacak operasyonları klasik ASP sayfasından nasıl tüketilebilirdi? (Senaryomuzu şekilsel olarak aşağıdaki gibi özetleyebiliriz. Aslında canlı halini görseniz sarı kağıt üzerinde kurşun kalemli olan bu çizim gayet renkli ve canlı duruyor)
 
 ![asprest_1.gif](/assets/images/2016/asprest_1.gif)
 
@@ -122,39 +124,40 @@ Servis uygulamasına ait konfigurasyon içeriğinde dikkat edilmesi gerekenler w
 
 Senaryo gereği doWork isimli metoda bir POST çağrısı gerçekleştirmek istiyoruz. Bu nedenle ASP tarafında XML paketi şeklinde oluşturacağımız içeriği göndermenin yolunu bulmamız gerekiyor. Bunun için MSXML2.ServerXMLHTTP nesnesinden yararlanacağız. Örnek olarak aşağıdaki default.asp içeriğini göz önüne alabiliriz.
 
-```text
+```html
 <html>
+
 <head>
-<title>REST Service Call Sample</title>
+    <title>REST Service Call Sample</title>
 </head>
+
 <body bgcolor="black" text="green">
-	<form method="post" action="default.asp">
-		Input : <input type="text" name="txtInput"/>
-		<p/>
-		<input type="submit" value="HTTP Post"/>
-	</form>
-	<%
-		Dim input
-		input=Request.Form("txtInput")
-		
-		set xmlhttp = CreateObject("MSXML2.ServerXMLHTTP")    
-		xmlhttp.open "POST", "http://localhost/ServiceSilo/CommonService.svc/doWork", false 
-		xmlhttp.setRequestHeader "Content-Type", "text/xml"    
-		xmlhttp.send "<string xmlns='http://schemas.microsoft.com/2003/10/Serialization/'>"&input&"</string>"
-		serviceResponse =  xmlhttp.responseText 
-		httpResponse = xmlhttp.status 
-		httpStatusText = xmlhttp.statustext
-		set xmlhttp = nothing 
-		
-		Response.Write("HTTP Status : " & httpResponse & "<p/>")
-		Response.Write("Response : " & httpStatusText& "<p/>")
-		Response.Write("Response text : " & serviceResponse& "<p/>")
-		
-	%>
+    <form method="post" action="default.asp">
+        Input : <input type="text" name="txtInput" />
+        <p />
+        <input type="submit" value="HTTP Post" />
+    </form>
+    <% Dim input input=Request.Form("txtInput") set xmlhttp=CreateObject("MSXML2.ServerXMLHTTP") xmlhttp.open "POST"
+        , "http://localhost/ServiceSilo/CommonService.svc/doWork" , false xmlhttp.setRequestHeader "Content-Type"
+        , "text/xml" xmlhttp.send "<string xmlns='http://schemas.microsoft.com/2003/10/Serialization/'>"
+        &input&"</string>"
+        serviceResponse = xmlhttp.responseText
+        httpResponse = xmlhttp.status
+        httpStatusText = xmlhttp.statustext
+        set xmlhttp = nothing
+
+        Response.Write("HTTP Status : " & httpResponse & "
+        <p />")
+        Response.Write("Response : " & httpStatusText& "
+        <p />")
+        Response.Write("Response text : " & serviceResponse& "
+        <p />")
+
+        %>
 </body>
 ```
 
-Aslında ASP formu oldukça basit. Submit işlemi gerçekleştirildiğinde yine kendi üzerine dönen bir sayfa söz konusu. txtInput içeriği Request.Form ile alındıktan sonraki kısım bizim için daha önemli. MSXML2.ServerXMLHTTP nesnesi örneklendikten sonra open metoduna üç parametre veriyoruz. İlki HTTP metodunun tipi, ikincisi talebin gönderileceği adres (ki sondaki doWork uzantısına dikkat edelim) sonuncusu ise işlemin asenkron olarak gerçekleştirilip gerçekleştirilmeyeceğidir. open çağrısı sonrası HTTP Header için içerik tipi (Content-Type) belirlenir. Paketler XML formatında gönderilecektir. Nitekim servis tarafının kabul ettiği format budur (WebInvoke niteliğini bir kontrol edin) İzleyen adımda send metodu ile paket gönderimi gerçekleştirilir. Burada içeriğin XML formatında olduğunda lüften dikkat edelim. XML içeriğinin nasıl olması gerektiği noktasında, REST servisin help sayfasından yardım alabiliriz (http://localhost/ServiceSilo/CommonService.svc/help)
+Aslında ASP formu oldukça basit. Submit işlemi gerçekleştirildiğinde yine kendi üzerine dönen bir sayfa söz konusu. txtInput içeriği Request.Form ile alındıktan sonraki kısım bizim için daha önemli. MSXML2.ServerXMLHTTP nesnesi örneklendikten sonra open metoduna üç parametre veriyoruz. İlki HTTP metodunun tipi, ikincisi talebin gönderileceği adres (ki sondaki doWork uzantısına dikkat edelim) sonuncusu ise işlemin asenkron olarak gerçekleştirilip gerçekleştirilmeyeceğidir. open çağrısı sonrası HTTP Header için içerik tipi (Content-Type) belirlenir. Paketler XML formatında gönderilecektir. Nitekim servis tarafının kabul ettiği format budur (WebInvoke niteliğini bir kontrol edin) İzleyen adımda send metodu ile paket gönderimi gerçekleştirilir. Burada içeriğin XML formatında olduğunda lüften dikkat edelim. XML içeriğinin nasıl olması gerektiği noktasında, REST servisin help sayfasından yardım alabiliriz (`http://localhost/ServiceSilo/CommonService.svc/help`)
 
 > Yazılan ASP sayfasının IIS 7.5 üzerinde host edildiğini belirteyim. Bu işlem sırasında Application Pool'un Classic modda çalıştırıldığında, IUSR kullanıcısı için Permission ayarlarının yapıldığını belirtmek isterim. IIS üzerinde klasik ASP kullanımı makale sınırlarımız dışında olduğundan derinlemesine detaylandırmıyorum.
 

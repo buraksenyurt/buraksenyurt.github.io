@@ -11,11 +11,9 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Bloğumu takip edenler bu yaz için Raspberry PI ve Python programlama diline merak saldığımı biliyordur. Bu merakımı boşa çıkarmamak için de vakit buldukça her iki konuya da çalışıyorum. İş yoğunluğu ve araya giren bayram tatili beni az da olsa geriye atmış durumda. Ama neyseki defterime aldığım renkli renkli notlarım var.
+Bloğumu takip edenler bu yaz için Raspberry PI ve Python programlama diline merak saldığımı biliyordur. Bu merakımı boşa çıkarmamak için de vakit buldukça her iki konuya da çalışıyorum. İş yoğunluğu ve araya giren bayram tatili beni az da olsa geriye atmış durumda. Ama neyseki defterime aldığım renkli renkli notlarım var. Bu yüzden notlarımın üstünden geçmem öğrendiklerimi hatırlamamda epey yardımcı oldu. Notları renklendirmiş olmam da onları okurken sıkılmamamı ve hatta yer yer kendi kendime tebessüm etmemi sağladı. Yazdıklarımın üzerinden geçerken bunları bloğuma da koyayım ve benim gibi temel seviyede bu işe başlayan, elektronik'ten, Linux'den ve Python'dan bihaber olanlarla bir şeyler paylaşayım istedim.
 
 ![RaspiCover.gif](/assets/images/2016/RaspiCover.gif)
-
-Bu yüzden notlarımın üstünden geçmem öğrendiklerimi hatırlamamda epey yardımcı oldu. Notları renklendirmiş olmam da onları okurken sıkılmamamı ve hatta yer yer kendi kendime tebessüm etmemi sağladı. Yazdıklarımın üzerinden geçerken bunları bloğuma da koyayım ve benim gibi temel seviyede bu işe başlayan, elektronik'ten, Linux'den ve Python'dan bihaber olanlarla bir şeyler paylaşayım istedim.
 
 Raspberry PI ve Python maceramda sevgili [Recep Duman](http://www.recepduman.net/) hocamın da yardımları var. Onun yol göstericiliğinde ilerlemeye çalışıyorum. Örneğin birlikte Karaköy'deki elektronikçilere gidip gerekli malzemeleri aldık. Ayrıca takip ettiğim iki kitap var.
 
@@ -119,27 +117,29 @@ print(someObjects)
 
 Belli tipte veya farklı türlerede elemanları tutmak için listelerden yararlanabiliriz. Listenin elemanlarına ulaşmak için [] operatörü kullanılır. Pop metodu ile son eklenen eleman listeden çekilir ve ayrıca silinir (ki burada denemeyi unutmuşum ama siz deneyebilirsiniz) Listeden eleman çıkartmak içinse remove fonksiyonu kullanılır. Faydalı fonksiyonlardan birisi de sort. Karışık bir listenin ascending veya descending sıralanmasını sağlar. Descending sırlama için reverse parametresine True değeri verilmesi yeterlidir. O gün hoşuma giden kullanımlardan birisi de, bir öğenin listede olup olmadığının bulunması olmuş. "good" in motto ifadesine göre good kelimesi motto değişkeni ile işaret edilen metinde geçiyorsa True geçmiyorsa False sonucu elde edilir.
 
-> Defterde reverse=true şeklinde yazdıktan sonra Python'un case-sensitive bir dil olduğunu not almışım.
-> ![notes_2.gif](/assets/images/2016/notes_2.gif)
+Defterde reverse=true şeklinde yazdıktan sonra Python'un case-sensitive bir dil olduğunu not almışım.
+
+![notes_2.gif](/assets/images/2016/notes_2.gif)
 
 Notlarım döngüler ve range kullanımı ile devam etmiş. Epey verimli bir haziran günü geçirmişim.
 
 ```python
-players=["burki","tubi","sharpi","reco","tusubasa"]
+players = ["burki", "tubi", "sharpi", "reco", "tusubasa"]
 
 for player in players:
-	print(player,"is online now")
-	
-numbers1=range(11) #0dan 10a kadar bir sayı aralığıdır
-total=0
+    print(player, "is online now")
+
+numbers1 = range(11)  # 0dan 10a kadar bir sayı aralığıdır
+total = 0
 for number in numbers1:
-	total+=number
-	
+    total += number
+
 print(total)
 
-numbers2=range(-25,0,5)
+numbers2 = range(-25, 0, 5)
 for number in numbers2:
-	print(number)
+    print(number)
+
 ```
 
 ![notes_4.gif](/assets/images/2016/notes_4.gif)
@@ -163,22 +163,26 @@ gibi.
 Kod çalışmasına metod tanımlamaları ile devam etmişim. E onlar olmadan olmaz tabii.
 
 ```python
-players=["burki","tubi","sharpi","reco","tusubasa"]
+players = ["burki", "tubi", "sharpi", "reco", "tusubasa"]
+
 
 def writeAllPlayers():
-	for player in players:
-		print(player,"is online now")
+    for player in players:
+        print(player, "is online now")
 
-def rangeSum(x,y):
-	numbers=range(x,y)
-	total=0
-	for n in numbers:
-		total+=n
-	return total
+
+def rangeSum(x, y):
+    numbers = range(x, y)
+    total = 0
+    for n in numbers:
+        total += n
+    return total
+
 
 writeAllPlayers()
-result=rangeSum(0,11)
+result = rangeSum(0, 11)
 print(result)
+
 ```
 
 ![notes_6.gif](/assets/images/2016/notes_6.gif)
@@ -210,21 +214,24 @@ print("shuffle içeriği",dir(random.shuffle),"\n")
 ```python
 import random
 
-def createTenRandoms(x=0,y=11,isInt=False):
-	numbers=[]
-	for i in range(11):
-		rnd=random.random() if isInt else random.randint(x,y)
-		numbers.append(rnd)
-	return numbers
 
-numbers1=createTenRandoms(False)
-print(numbers1,"\n")
+def createTenRandoms(x=0, y=11, isInt=False):
+    numbers = []
+    for i in range(11):
+        rnd = random.random() if isInt else random.randint(x, y)
+        numbers.append(rnd)
+    return numbers
 
-numbers2=createTenRandoms(0,11,True)
-print(numbers2,"\n")
 
-print("a random number is",random.choice(numbers1),"\n")
-print("and next random number is",random.choice(numbers1))
+numbers1 = createTenRandoms(False)
+print(numbers1, "\n")
+
+numbers2 = createTenRandoms(0, 11, True)
+print(numbers2, "\n")
+
+print("a random number is", random.choice(numbers1), "\n")
+print("and next random number is", random.choice(numbers1))
+
 ```
 
 ![notes_8.gif](/assets/images/2016/notes_8.gif)
@@ -273,8 +280,9 @@ Eğer sistemde yüklü olan paketleri görmek ve hatta bunları bir metin dosyas
 sudo pip freeze>modules.txt
 ```
 
-> Bu arada uzun modül adları söz konusu olursa import ve as ile bu modüle takma ad (alias) vererek kod içerisinde daha kolay kullanılmalarını sağlayabiliriz.
-> ![notes_9.gif](/assets/images/2016/notes_9.gif)
+Bu arada uzun modül adları söz konusu olursa import ve as ile bu modüle takma ad (alias) vererek kod içerisinde daha kolay kullanılmalarını sağlayabiliriz.
+
+![notes_9.gif](/assets/images/2016/notes_9.gif)
 
 Aslında kendi modüllerimizi geliştirmemiz oldukça kolay. Tek yapılması gereken aynı alana ait operasyonları içeren py uzantılı bir kod dosyası oluşturmak. Bu kod dosyasının adı aynı zamanda modülün adı olacaktır.
 
@@ -322,13 +330,16 @@ Apache kurulduktan sonra /var/www/html içerisine varsayılan bir index sayfası
 
 ```html
 <html>
-	<head>
-		<title>Burkinin Ahududu Bahcesi</title>
-	</head>
-	<body>
-		<h1>Burkinin ahududu bahcesine hosgeldiniz!</h1>
-		<p><a href="http://www.buraksenyurt.com">Blog</a></p>
-	</body>
+
+<head>
+    <title>Burkinin Ahududu Bahcesi</title>
+</head>
+
+<body>
+    <h1>Burkinin ahududu bahcesine hosgeldiniz!</h1>
+    <p><a href="http://www.buraksenyurt.com">Blog</a></p>
+</body>
+
 </html>
 ```
 
@@ -392,11 +403,18 @@ Bu işlemin ardından çok basit bir şekilde aşağıdaki kod parçasında oldu
 import requests
 import json
 
-def getWeatherData(city_id,ApiKey):
-	data=get("http://api.openweathermap.org/data/2.5/forecast?id={}&APPID={}".format(city_id,KEY))
-	return data.json()
-	
-print(getWeatherData("buraya sehir idsi gelmeli","buraya api key gelmeli"))
+
+def getWeatherData(city_id, ApiKey):
+    data = get(
+        "http://api.openweathermap.org/data/2.5/forecast?id={}&APPID={}".format(
+            city_id, KEY
+        )
+    )
+    return data.json()
+
+
+print(getWeatherData("buraya sehir idsi gelmeli", "buraya api key gelmeli"))
+
 ```
 
 get metodu dikkat edileceği üzere basit bir HTTP Get talebi göndermekte. Bunu yaparken de Open Weather Map'in gösterdiği kriterlere göre parametre alıyor. id ile şehir numarasını appid ile de servis kullanıcısına açılan uygulama anahtarını kullanıyor. Dönen içeriği JSON formatında ele almak için json () metodunun çağırılması yeterli. Sanıyorum o gün oldukça yorgun olmalıyım ki sadece örneği yapıp bilgisayarda kullanmışım. Deftere de fazla not almamışım. (Dolayısıyla python ile bir REST servis yazıp bunu kullandıracağım bir makaleyi yazılacaklar listesine almam lazım)
@@ -414,22 +432,26 @@ Kodlara gelirsek. Öncelikle one-time pad için gerekli sayı dizilerini içeren
 ```python
 import random
 
-alfa="abcdefghijklmnopqrstuvwxyz"
+alfa = "abcdefghijklmnopqrstuvwxyz"
 
-def generateOtpFiles(fileCount,length):
-	for sheet in range(fileCount):
-		with open("otpFile"+str(sheet)+".txt","w") as f:
-			for i in range(length):
-				f.write(str(random.randint(0,26))+"\n")
+
+def generateOtpFiles(fileCount, length):
+    for sheet in range(fileCount):
+        with open("otpFile" + str(sheet) + ".txt", "w") as f:
+            for i in range(length):
+                f.write(str(random.randint(0, 26)) + "\n")
+
 
 def loadOtpFile(filename):
-	with open(filename,"r") as f:
-		content=f.read().splitlines()
-		
-	return content
+    with open(filename, "r") as f:
+        content = f.read().splitlines()
 
-generateOtpFiles(3,100)
+    return content
+
+
+generateOtpFiles(3, 100)
 print(loadOtpFile("otpFile1.txt"))
+
 ```
 
 ![notes_13.gif](/assets/images/2016/notes_13.gif)
@@ -441,51 +463,57 @@ generateOtpFiles metodu iki parametre alır. İlk parametre one-time pad için �
 ```python
 import random
 
-letters="abcdefghijklmnopqrstuvwxyz"
+letters = "abcdefghijklmnopqrstuvwxyz"
 
-def generateOtpFiles(fileCount,length):
-	for sheet in range(fileCount):
-		with open("otpFile"+str(sheet)+".txt","w") as f:
-			for i in range(length):
-				f.write(str(random.randint(0,26))+"\n")
+
+def generateOtpFiles(fileCount, length):
+    for sheet in range(fileCount):
+        with open("otpFile" + str(sheet) + ".txt", "w") as f:
+            for i in range(length):
+                f.write(str(random.randint(0, 26)) + "\n")
+
 
 def loadOtpContent(filename):
-	with open(filename,"r") as f:
-		content=f.read().splitlines()
-		
-	return content
+    with open(filename, "r") as f:
+        content = f.read().splitlines()
 
-def encryptMessage(message,otp):
-	text=""
-	for position,character in enumerate(message):
-		if character not in letters:
-			text+=character
-		else:
-			idx=(letters.index(character)+int(otp[position])) % 26
-			text+=letters[idx]
-	
-	return text
+    return content
 
-def decryptMessage(message,otp):
-	text=""
-	for position,character in enumerate(message):
-		if character not in letters:
-			text+=character
-		else:
-			idx=(letters.index(character)-int(otp[position])) % 26
-			text+=letters[idx]
-	
-	return text
 
-generateOtpFiles(3,100)
-otpContent=loadOtpContent("otpFile1.txt")
+def encryptMessage(message, otp):
+    text = ""
+    for position, character in enumerate(message):
+        if character not in letters:
+            text += character
+        else:
+            idx = (letters.index(character) + int(otp[position])) % 26
+            text += letters[idx]
 
-yourMessage=input("Please type your secret message").lower()
+    return text
+
+
+def decryptMessage(message, otp):
+    text = ""
+    for position, character in enumerate(message):
+        if character not in letters:
+            text += character
+        else:
+            idx = (letters.index(character) - int(otp[position])) % 26
+            text += letters[idx]
+
+    return text
+
+
+generateOtpFiles(3, 100)
+otpContent = loadOtpContent("otpFile1.txt")
+
+yourMessage = input("Please type your secret message").lower()
 print("Your message is '{0}'".format(yourMessage))
-em=encryptMessage(yourMessage,otpContent)
+em = encryptMessage(yourMessage, otpContent)
 print("Encrypted message is '{0}'".format(em))
-dc=decryptMessage(em,otpContent)
+dc = decryptMessage(em, otpContent)
 print("Decrypted message is '{0}'".format(dc))
+
 ```
 
 ![notes_14.gif](/assets/images/2016/notes_14.gif)
@@ -528,35 +556,43 @@ Gelelim temel veri türleri ile ilgili diğer notlara.
 O gün örnek kod parçalarını deneyerek çalışmalarıma devam etmişim.
 
 ```python
-#En basit haliyle bir liste tanımı. Sondan bir önceki eleman küme son eleman bir Tuple'dır.
-someList=[100,-90,"burk",True,False,3.1415,
-			{"one","two","five","six"},
-			("burki",1195,"Math.Eng")]
+# En basit haliyle bir liste tanımı. Sondan bir önceki eleman küme son eleman bir Tuple'dır.
+someList = [
+    100,
+    -90,
+    "burk",
+    True,
+    False,
+    3.1415,
+    {"one", "two", "five", "six"},
+    ("burki", 1195, "Math.Eng"),
+]
 print(someList)
 
-#En basit haliyle bir Tuple tanımı
-person=(90001,"burak selim","şenyurt",1.78,"White")
+# En basit haliyle bir Tuple tanımı
+person = (90001, "burak selim", "şenyurt", 1.78, "White")
 print(person)
 
-#En basit haliyle küme tanımlaması. Çıktıya dikkat edilecek olursa tekrar eden elemanların teke indirildiği görülebilir.
-someSet={3,4,5,1,2,18,16,3,3,2,1,-1,91}
+# En basit haliyle küme tanımlaması. Çıktıya dikkat edilecek olursa tekrar eden elemanların teke indirildiği görülebilir.
+someSet = {3, 4, 5, 1, 2, 18, 16, 3, 3, 2, 1, -1, 91}
 print(someSet)
 print("3 küme içinde mi? {}".format("Evet" if 3 in someSet else "Hayır"))
-#Bir eleman listesinin tekilleştirilmesi istenirse en basit haliyle kümelerden yararlanılabilir. Örneğin aşağıdaki metinsel ifade içerisinde geçen harfleri tekil olarak elde etmek istersek
-motto="This is my last world"
-mottoSet=set(motto)
+# Bir eleman listesinin tekilleştirilmesi istenirse en basit haliyle kümelerden yararlanılabilir. Örneğin aşağıdaki metinsel ifade içerisinde geçen harfleri tekil olarak elde etmek istersek
+motto = "This is my last world"
+mottoSet = set(motto)
 print(mottoSet)
-#Kümelerle aynı matematikteki gibi küme işlemleri yapılabilir
-set1={1,2,3,4,6,8,10,12}
-set2={4,5,6,7,8,9,10}
-print("Çıkartma-> set1-set2 = ",set1-set2)
-print("Birleşim-> set1|set2 = ",set1|set2)
-print("Kesişim-> set1&set2 = ",set1&set2)
-print("Kesişim Dışında Kalanlar-> set1^set2 = ",set1^set2)
+# Kümelerle aynı matematikteki gibi küme işlemleri yapılabilir
+set1 = {1, 2, 3, 4, 6, 8, 10, 12}
+set2 = {4, 5, 6, 7, 8, 9, 10}
+print("Çıkartma-> set1-set2 = ", set1 - set2)
+print("Birleşim-> set1|set2 = ", set1 | set2)
+print("Kesişim-> set1&set2 = ", set1 & set2)
+print("Kesişim Dışında Kalanlar-> set1^set2 = ", set1 ^ set2)
 
-#En basit haliyle dictionary tanımlaması
-studentNotes={"klara":90,"norman":100,"burk":38,"tubi":85}
-print("Klara'nın notu",studentNotes["klara"])
+# En basit haliyle dictionary tanımlaması
+studentNotes = {"klara": 90, "norman": 100, "burk": 38, "tubi": 85}
+print("Klara'nın notu", studentNotes["klara"])
+
 ```
 
 ![notes_24.gif](/assets/images/2016/notes_24.gif)
@@ -566,49 +602,54 @@ print("Klara'nın notu",studentNotes["klara"])
 O gün metodlar ile ilgili bir şeyler yapmışım. Aslında 17 Hazirandaki ["Bu Yaz Macerasının Adı Python"](/2016/06/17/bu-yaz-macerasinin-adi-python/) isimli yazımda metodlara biraz da olsa değinmişim. Ancak kitabı takip etmeye devam ettiğim için tekrar mahiyetinde de olsa bazı notlar da almışım. Hatta yeni bilgiler de edinmişim. Örneğin değişken uzunluk parametre alan bir metod üzerinde çalışmışım (Yani C# tarafındaki params kullanımını işlemişim) pass kullanımı ile NotImplementedException deneyimi yaşamış, Default Method Arguments ile metod parametrelerinde varsayılan değer kullanımına bakmışım. Kısaca aşağıdaki kodları çalışmışım.
 
 ```python
-'''
+"""
 Aşağıdaki kod satırlarında metodlara ait şu kavramlara yer verilmektedir.
 pass
 varsayılan parametre değerleri
 değişken uzunluklu metod parametreleri
 lambda kullanımı
-'''
+"""
 
-#bir metodun içeriği sonradan tamamlanacaksa kullanılabilir. Biraz NotImplementedException vari bir kullanım
+# bir metodun içeriği sonradan tamamlanacaksa kullanılabilir. Biraz NotImplementedException vari bir kullanım
 def getPlayerStatistic(playerName):
-	pass
+    pass
 
-#metod argümanları isim verilerek kullanılabilir
-def doConnect(port,serverName):
-	#do something
-	print("Connection for {}:{} is ok".format(serverName,port))
-	return False
-	
-#metod parametrelerine varsayılan ilk değerler verebiliriz.
-def findLocation(playerName,city="Paris"):
-	#do something
-	print(city,"is scanning for",playerName)
+
+# metod argümanları isim verilerek kullanılabilir
+def doConnect(port, serverName):
+    # do something
+    print("Connection for {}:{} is ok".format(serverName, port))
+    return False
+
+
+# metod parametrelerine varsayılan ilk değerler verebiliriz.
+def findLocation(playerName, city="Paris"):
+    # do something
+    print(city, "is scanning for", playerName)
+
 
 # C# taki params kullanımı burada da var ki
-def createPlayer(name,city,*properties):
-	print("{} from {}\n".format(name,city))
-	prop=[]
-	for p in properties:
-		prop.append(p)
-		
-	print(prop)
-	print("*"*10)
+def createPlayer(name, city, *properties):
+    print("{} from {}\n".format(name, city))
+    prop = []
+    for p in properties:
+        prop.append(p)
+
+    print(prop)
+    print("*" * 10)
+
 
 # lambda kullanımı. Bunlar tek satırlık metodlar olarak düşünülebilirler. C# taki => ve anonymous metodları hemen aklınıza gelmiştir.
-sum=lambda x,y:x+y
-print(sum(4,5))
+sum = lambda x, y: x + y
+print(sum(4, 5))
 
 getPlayerStatistic("burk")
-result=doConnect(port="8080",serverName="192.168.1.107")
+result = doConnect(port="8080", serverName="192.168.1.107")
 print("Connection is {} success".format("" if result else "not"))
 findLocation("burk")
-findLocation("tubi","new york")
-createPlayer("burki","istanbul","black","master",True,1685)
+findLocation("tubi", "new york")
+createPlayer("burki", "istanbul", "black", "master", True, 1685)
+
 ```
 
 ve çalışma zamanı sonuçları.
@@ -647,7 +688,7 @@ print(motto.capitalize())
 #Boşluk karakterine göre metni kelimelere ayırma
 words=motto.split(" ")
 for w in words:
-	print(w)
+  print(w)
 
 #4üncüden 7nciye kadar
 print(motto[4:7])
@@ -680,39 +721,40 @@ O gün okuduğum kitapta çok enteresan kod parçalarına rastlamışım ve bunl
 ```python
 import random
 
-#rastgele sayı üretmenin uzun bir yolu
-numbers=[]
+# rastgele sayı üretmenin uzun bir yolu
+numbers = []
 for i in range(10):
-	numbers.append(random.randint(10,100))
+    numbers.append(random.randint(10, 100))
 print(numbers)
 
-#ve rastgele sayı üretmenin tek satırlık kısa yolu
-numbers=[random.randint(10,100) for i in range(10)]
+# ve rastgele sayı üretmenin tek satırlık kısa yolu
+numbers = [random.randint(10, 100) for i in range(10)]
 print(numbers)
 
-#0 ile 100 arasında 7 ile bölünebilen sayıları listeye almanın uzun yolu
-points=[]
+# 0 ile 100 arasında 7 ile bölünebilen sayıları listeye almanın uzun yolu
+points = []
 for i in range(101):
-	if  i%7==0:
-		points.append(i)
+    if i % 7 == 0:
+        points.append(i)
 print(points)
 
-#0 ile 100 arasındaki sayıları listeye almanın kısa yolu
-points=[i for i in range(101) if i%7==0]
+# 0 ile 100 arasındaki sayıları listeye almanın kısa yolu
+points = [i for i in range(101) if i % 7 == 0]
 print(points)
 
-#iki listenin iç içe iki döngü ile ele alınmasının uzun yolu
-colorList=["green","gray","red","blue"]
-players=["burki","tubi","tom"]
-combination=[]
+# iki listenin iç içe iki döngü ile ele alınmasının uzun yolu
+colorList = ["green", "gray", "red", "blue"]
+players = ["burki", "tubi", "tom"]
+combination = []
 for c in colorList:
-	for p in players:
-		combination.append(c+" "+p)
+    for p in players:
+        combination.append(c + " " + p)
 print(combination)
 
-#iki listenin iç içe iki döngü ile ele alınmasının kısa yolu
-combination=[c+" "+p for c in colorList for p in players]
+# iki listenin iç içe iki döngü ile ele alınmasının kısa yolu
+combination = [c + " " + p for c in colorList for p in players]
 print(combination)
+
 ```
 
 Örnekte 3 farklı operasyon söz konusu. İlk olarak 10 ile 100 arasında rastgele tamsayılar üretip bunları bir listeye alıyoruz. İkinci örnekte 0 ile 100 arasındaki sayılardan 7 ile bölünebilenlerini çekiyoruz. Üçüncü ve son örnekte ise iki farklı listenin tüm ikili kombinasyonlarını çıkartmaktayız. Örneklerin uzun ve kısa versiyonlar var. Kısa versiyonlarda köşeli parantezler içerisinde yazılan ifadeler beni oldukça etkiledi. Köşeli parantezler içerisindeki ifadeleri 3 ana parça halinde düşünebiliriz. İlk parçada eşitliğin sol tarafına atanacak değer ifade edilir. Sonrasında ise bir for döngüsü ve bunu takiben de eğer gerekliyse koşullu bir ifadeye yer alır. Bu sayede tek satırda bir sayı dizisini dolaşıp belirli kriterlere uyanlar için işlemleri kısaca yaptırabiliriz.

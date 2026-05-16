@@ -276,23 +276,23 @@ Her iki sınıf birer Get metoduna sahip. Örneğimizi çok basit bir şekilde e
 
 Herhangibir tarayıcıdan aşağıdaki komutları deneyerek örneğimizi test edebiliriz. Sonuçlar tahmin edileceği gibi JSON formatında görünecektir.
 
-http://localhost:61708/$metadata çağrısı ile aslında servisin metadata içeriğine ulaşabiliriz. Böylece servisin hangi entity'leri sunduğunu da görebiliriz.
+`http://localhost:61708/$metadata` çağrısı ile aslında servisin metadata içeriğine ulaşabiliriz. Böylece servisin hangi entity'leri sunduğunu da görebiliriz.
 
 ![ODataWebAPI_5.gif](/assets/images/2016/ODataWebAPI_5.gif)
 
-http://localhost:61708/Categories ile tüm kategorileri elde ederiz.
+`http://localhost:61708/Categories` ile tüm kategorileri elde ederiz.
 
 ![ODataWebAPI_7.gif](/assets/images/2016/ODataWebAPI_7.gif)
 
-http://localhost:61708/Categories?$expand=Products ile kategorileri ve bunlara bağlı ürünlerin listesini komple elde ederiz.
+`http://localhost:61708/Categories?$expand=Products` ile kategorileri ve bunlara bağlı ürünlerin listesini komple elde ederiz.
 
 ![ODataWebAPI_6.gif](/assets/images/2016/ODataWebAPI_6.gif)
 
-http://localhost:61708/Products?$select=Title,ListPrice ile tüm ürünlerin sadece Title ve ListPrice değerlerini elde ederiz.
+`http://localhost:61708/Products?$select=Title,ListPrice` ile tüm ürünlerin sadece Title ve ListPrice değerlerini elde ederiz.
 
 ![ODataWebAPI_8.gif](/assets/images/2016/ODataWebAPI_8.gif)
 
-http://localhost:61708/Products?$filter=startswith (Title,'A') ile A harfiyle başlayan ürün listesini elde ederiz.
+`http://localhost:61708/Products?$filter=startswith (Title,'A')` ile A harfiyle başlayan ürün listesini elde ederiz.
 
 ![WebAPI_9.gif](/assets/images/2016/WebAPI_9.gif)
 

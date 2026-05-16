@@ -139,19 +139,19 @@ Tabii dört farklı değer gelmesi eminim sizi şaşırtmıştır. Bu değerler 
 Aşağıdaki kod parçasını bu anlamda göz önüne alabiliriz.
 
 ```ruby
-require 'find'
-require 'benchmark'
+require "find"
+require "benchmark"
 
 def FindTotalSize()
-	totalSize=0
-	Find.find(Dir.pwd) { |p|
-		totalSize += FileTest.size(p)
-	}
-	puts totalSize
-	totalSize
+  totalSize = 0
+  Find.find(Dir.pwd) { |p|
+    totalSize += FileTest.size(p)
+  }
+  puts totalSize
+  totalSize
 end
 
-puts Benchmark.measure{FindTotalSize()}
+puts Benchmark.measure { FindTotalSize() }
 ```
 
 Bu kez FindTotalSize isimli metodun iş yapma hızı elde edilmiştir. Yeri gelmişken FindTotalSize metodu ne yapıyor bakalım. İçeride kullanılan Find modülüne ait olan find metodu ile o an çalışmakta olduğumuz klasördeki (Dir.pwd deki pwd=Present Working Directory anlamındadır) dosyaların toplam boyutu elde edilmeye çalışılır. Bunun için FileTest.size metodundan yararlanılır ve içerideki dosyaların boyutları üst üste eklenerek hesaplanır.
@@ -163,21 +163,19 @@ Bu kez FindTotalSize isimli metodun iş yapma hızı elde edilmiştir. Yeri gelm
 Veriyi text tabanlı olarak tutmak en eskiden beri bilinen yöntemlerdendir. Bu içeriği formatlı tutmak okunabilirlik ve verinin ayrıştırılarak kolayca anlaşılabilmesi açısından da önemlidir. Veriyi satırlar ve sütunlar halinde düşünüp çeşitli seperatörler ile ayrıştırmak gerekir. [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) (comma-seperated values) sık kullanılan dosya formatlarındandır. Ruby programlama dili CSV'ler ile kolay bir şekilde çalışabilmemizi sağlar. Yine en ilkel seviyede nasıl kullanıldığına bir bakalım dilerseniz. İşte örnek kod parçamız.
 
 ```ruby
-require 'csv'
+require "csv"
 
 puts "Once information.csv icine bir seyler yazalim"
-CSV.open("informations.csv","wb") do |file|
-
-	file<<["id","title","category","listPrice"]
-	file<<["1001","Locitek Fare","Bilgisayar Donanim","45 dolar"]
-	file<<["1002","Deli Bilgisayar","Bilgisayar","1045 dolar + Tabii ki KDV"]
-	file<<["1003","kespir tablet","Tablet","400 TL + KDV"]
-
+CSV.open("informations.csv", "wb") do |file|
+  file << ["id", "title", "category", "listPrice"]
+  file << ["1001", "Locitek Fare", "Bilgisayar Donanim", "45 dolar"]
+  file << ["1002", "Deli Bilgisayar", "Bilgisayar", "1045 dolar + Tabii ki KDV"]
+  file << ["1003", "kespir tablet", "Tablet", "400 TL + KDV"]
 end
 
 puts "ve simdi de satir satir okuyalim"
 CSV.foreach("informations.csv") do |line|
-	puts line.inspect
+  puts line.inspect
 end
 ```
 

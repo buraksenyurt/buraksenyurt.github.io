@@ -16,11 +16,11 @@ tags:
 categories:
   - Servis Tabanlı Geliştirme
 ---
-Bir zamanlar WCF servisleri ile ilişkili epeyce çalışma yapmış ve öğrendiklerimi kaleme almaya çalışmıştım. En çok zorlandığım konulardan birisi ise servislerin güvenliğini sağlamaktı. (Mesaj içeriklerinin korunmasından tutun, uç noktalar arası haberleşmenin güvenilik olmasına kadar dikkat edilmesi gereken pek çok nokta var)
-
-![Viking_minion.gif](/assets/images/2016/Viking_minion.gif)
+Bir zamanlar WCF servisleri ile ilişkili epeyce çalışma yapmış ve öğrendiklerimi kaleme almaya çalışmıştım. En çok zorlandığım konulardan birisi ise servislerin güvenliğini sağlamaktı.*(Mesaj içeriklerinin korunmasından tutun, uç noktalar arası haberleşmenin güvenilik olmasına kadar dikkat edilmesi gereken pek çok nokta var)*
 
 Ne yazık ki internet ortamında sürüsüne bereket saldırı biçimi var. Bunların önüne geçmek için WCF tarafında WS- standartlarına uygun kanal yapıları kullanmak tercih edilen yöntemlerden birisi. Örneğin popüler saldırı çeşitlerinden olan Replay Attack etkisini hafifletmek için Custom Binding'ler kullanılıp, Reliable oturumlar açılması ve iletişimin SSL üzerinden gerçekleştirilmesi uygulanan teknikler arasında. (Şu an okudukça sıkıldığım 2007 menşeeli o uzun makalede [bu konuya](/2007/11/07/wcf-replay-attack-etkisini-hafifletmek/) değinmişim)
+
+![Viking_minion.gif](/assets/images/2016/Viking_minion.gif)
 
 Replay Attack vakalarını önlemek için daha basit bir yol da mevcut aslında. Nonce Token adı verilen yöntemde GUID ve Timestamp bilgilerini kullanarak saldırıların önüne geçebiliyoruz. Tabii tek yol bu değil. Secure Shell, IPSec, Random TCP Sequence Number gibi teknikler ile de bu saldırıların önüne geçmek mümkün. Biz bu yazımızda Nonce Token kullanımına bakmaya çalışacağız.
 
@@ -214,7 +214,7 @@ Burada webHttp davranışının eklenmiş olması önemli. includeExceptionDetai
 
 Servis ile etkileşimde bulunacak olan web sayfası içeriğini ve kod tarafını aşağıdaki gibi geliştirebiliriz.
 
-```text
+```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Query.aspx.cs" Inherits="NonceTokenSample.Query" %>
 
 <!DOCTYPE html>

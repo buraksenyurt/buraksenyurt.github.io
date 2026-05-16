@@ -20,9 +20,9 @@ categories:
 ---
 Artık belli bir platforma bağlı kalmadan farklı uygulamaları bir araya getirip konuşturabiliyor, büyük ölçekli sistemleri uçtan uca bağlayarak süreçler işletebiliyoruz. Burada programlama dillerinin üzerine oturduğu çatıların (Frameworks) büyük avantajlar sağladığı ve işleri belirli ölçüde kolaylaştırdığı aşikar.
 
-![logo.png](/assets/images/2016/logo.png)
-
 Elbette işin en önemli kısmı yine de servislere düşüyor. Çözümler için düşünülen mimariler mutlak suretle servisleri ele alıyor. Hali hazırda SOA (Service Oriented Architecture) üzerine kurulu sayısız çözüm mevcut. Yeni geliştirilen kurumsal çözümler için de SOA mutlaka göz önüne alınıyor. Son yıllarda Micro Service yaklaşımı ile hafif siklet servislerin süreçlere dahil edilmesi de oldukça popüler. Herhangi bir programlama dili ile Lightweight servisler geliştirmek, bunları ucuz sunucular üzerinde organize ederek kolayca dağıtılabilir ve ölçeklenebilir şekilde sunmak oldukça pratik.
+
+![logo.png](/assets/images/2016/logo.png)
 
 İşte bu düşünceler ışığında camdan dışarı bakarken gönlümden Ruby tarafında bir servis geliştirmek ve bunu bir.Net uygulamasında kullanmak geçiyordu. Ruby tarafında hafif siklet ve REST-Representational State Transfer modelinde bir servis geliştirmek işin benim için en önemli kısmıydı..Net Client'ı yazmak nispeten daha kolaydı. Ve sonuç olarak gönlümdeki düşünceleri işte bu yazı ile kaleme almaya karar verdim.
 
@@ -50,71 +50,73 @@ SQLite ve Sinatra ile ilgili hazırlıklarımız tamamsa, aşağıdaki kod dosya
 
 ```ruby
 # Simple REST service
-require 'sinatra'
-require 'json'
-require 'sqlite3'
+require "sinatra"
+require "json"
+require "sqlite3"
 
 #list all products
-get '/products' do
-	begin
-		products=Array.new
-		db=SQLite3::Database.open "AdventureWorks.db"
-		db.results_as_hash=true;	 
-		rows=db.execute "Select product_id,title,list_price from Product"
-		rows.each do |row|
-			products << Product.new(row['product_id'],row['title'],row['list_price'])
-		end
-		products.to_json
-	rescue SQLite3::Exception => excp
-		excp
-	ensure
-		db.close if db
-	end
+get "/products" do
+  begin
+    products = Array.new
+    db = SQLite3::Database.open "AdventureWorks.db"
+    db.results_as_hash = true
+    rows = db.execute "Select product_id,title,list_price from Product"
+    rows.each do |row|
+      products << Product.new(row["product_id"], row["title"], row["list_price"])
+    end
+    products.to_json
+  rescue SQLite3::Exception => excp
+    excp
+  ensure
+    db.close if db
+  end
 end
 
 #get specific product
-get '/products/:id' do
-	begin
-		product=nil
-		db=SQLite3::Database.open "AdventureWorks.db"
-		db.results_as_hash=true;	 
-		row=db.get_first_row("Select product_id,title,list_price from Product where product_id=?",params[:id])
-		if row!=nil
-			product=Product.new(row['product_id'],row['title'],row['list_price'])	
-			product.to_json
-		else
-			"Not Found"
-		end
-	rescue SQLite3::Exception => excp
-		excp
-	ensure
-		db.close if db
-	end
+get "/products/:id" do
+  begin
+    product = nil
+    db = SQLite3::Database.open "AdventureWorks.db"
+    db.results_as_hash = true
+    row = db.get_first_row("Select product_id,title,list_price from Product where product_id=?", params[:id])
+    if row != nil
+      product = Product.new(row["product_id"], row["title"], row["list_price"])
+      product.to_json
+    else
+      "Not Found"
+    end
+  rescue SQLite3::Exception => excp
+    excp
+  ensure
+    db.close if db
+  end
 end
-	
+
 class Product
-	attr_accessor:id
-	attr_accessor:name
-	attr_accessor:list_price
-	
-	def initialize(id,name,list_price)
-		@id=id
-		@name=name
-		@list_price=list_price
-	end	
-	def to_json(*a)
-		{
-			"json_class" => self.class.name,
-			"data"       => {"id" => @id, "name" => @name, "list_price" => @list_price}
-		}.to_json(*a)
-	end 
-	def self.json_create(object) 
-		new(object["data"]["id"], object["data"]["name"],object["data"]["list_price"])
- 	end
-	
-	def to_s
-		"#{@id}-#{@name}-#{@list_price}"
-	end
+  attr_accessor :id
+  attr_accessor :name
+  attr_accessor :list_price
+
+  def initialize(id, name, list_price)
+    @id = id
+    @name = name
+    @list_price = list_price
+  end
+
+  def to_json(*a)
+    {
+      "json_class" => self.class.name,
+      "data" => { "id" => @id, "name" => @name, "list_price" => @list_price },
+    }.to_json(*a)
+  end
+
+  def self.json_create(object)
+    new(object["data"]["id"], object["data"]["name"], object["data"]["list_price"])
+  end
+
+  def to_s
+    "#{@id}-#{@name}-#{@list_price}"
+  end
 end
 ```
 

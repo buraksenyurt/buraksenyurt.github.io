@@ -16,22 +16,21 @@ Düzenli olarak teknik paylaşımlarda bulunan internet yazarlarının karşıla
 
 ![eskiici](/assets/images/2015/eskiici.jpg)
 
-
 Dolayısıyla yazdığımız yazılar bir süre sonra eskiyen gaz lambaları misali duvarın bir köşesine asılıp yavaş yavaş çürüyorlar. Elbette istisnai durumlar da söz konusu. Nitekim pek çok firma (örneğin finans kurumları) teknolojiyi bazen geriden takip etmekte. O nedenle yazılan içeriğin hala bir yerlerde birilerinin işine yarayacağını ümit edebiliriz.
 
 Pek tabi teknik yazıların bir yaşam ömrüne sahip olması, kalıcı olan içerik sayısının daha kıymetli olmasına neden olmaktadır. Söz gelimi bir programlama dilinin temel özellikleri, dilden bağımsız düşünülebilen matematik algoritmaları gibi mevzular kolay kolay eskimezler. Hatta eskimeyen konuların başında tasarım kalıpları (Design Patterns) gelir.
 
-Uzun bir süre önce [tasarım kalıpları konusundaki çalışmalara](https://www.buraksenyurt.com/?tag=/design+patterns) hem yazılı hem de görsel materyaller ile başlamıştım. Ancak geçtiğimiz gün yaşadığım bir olay nedeniyle bu köşeyi eksik bıraktığımı fark ettim. İşte bu yazımızda davranışsal tasarım kalıplarından (Behavioral Design Patterns) olan Template Method desenini incelemeye çalışacağız.
+Uzun bir süre önce tasarım kalıpları konusundaki çalışmalara hem yazılı hem de görsel materyaller ile başlamıştım. Ancak geçtiğimiz gün yaşadığım bir olay nedeniyle bu köşeyi eksik bıraktığımı fark ettim. İşte bu yazımızda davranışsal tasarım kalıplarından (Behavioral Design Patterns) olan Template Method desenini incelemeye çalışacağız.
 
 Aslında deseni ele almaya karar vermem de etkili olan faktor, bir süredir incelediğim Anti-Pattern konusudur. [Wikipedia](http://en.wikipedia.org/wiki/Anti-pattern) daki kaynaktan Object Oriented Programming başlığı altındaki Sequential Coupling konulu anti-pattern maddesini incelerken, çözüm yolu olarak Template Method deseninin önerildiğini fark etmiştim.
 
-Tanımlama
+## Tanımlama
 
 Template Method tasarım kalıbı daha çok sıralı operasyonları içeren fonksiyonellikleri ilgilendirmektedir. Öyleki bu fonksiyonellikler içeisine dahil olan operasyonların bazıları, duruma göre farklı şekillerde uygulanmak istenebilir (Diğer fonksiyonlarda aslında standart olarak hep aynı işi yaparlar) Dolayısıyla fonksiyonelliğin sahiplendiği ve çalışma biçimleri değişkenlik gösterebilecek olan operasyonların kolayca genişletilebilmesi, sahip oldukları kod parçalarının yeniden kullanılabilirliğinin arttırılması (Code Reusability) noktasında bir çözüm gerekliliği ortaya çıkmaktadır. Template Method tasarım kalıbı burada çözüm olarak kullanılabilir. Buna göre kalıbı şu şekilde tanımlayabiliriz,
 
 > Bir algoritmanın sıralı parçalarını oluşturan operasyonlardan değişime açık olanlarının alt sınıflarda (Sub Classes) implemente edilmek suretiyle ele alınmasını öngeren bir desendir.
 
-Sınıf Çizelgesi
+## Sınıf Çizelgesi
 
 Tasarım kalıbının sınıf çizelgesi aşağıdaki gibi düşünülebilir.
 
@@ -41,13 +40,13 @@ Dikkat edilmesi gereken operasyon TemplateMethod isimli fonksiyondur. Bu fonksiy
 
 N sayıda Concrete sınıf söz konusu olabilir. Çalışma zamanında, tercih edilen Concrete sınıf hangisi ise, TemplateMethod içerisindeki dizilim ilgili Concrete sınıfın OperationA ve OperationB metodlarını kullanacaktır. OperationA ve OperationB dışında kalan metodlar aslında sabit olan, bir başka deyişle çalışma şekillerinde her hangi bir değişiklik bulunmayacak fonksiyonellikleri temsil etmektedir.
 
-Örnek Senaryo
+## Örnek Senaryo
 
 Çok doğal olarak konuyu anlamanın en kolay yolu basit bir örnek ile mümkün olabilir. Bu amaçla şu senaryoyu göz önüne alabiliriz;
 
 Bir oyun programında kullanıcı istatistiklerinin özet olarak raporlandığını düşünelim. Bu raporlama işini üstlenen bir sınıf söz konusu olsun. Sınıfın Template Method olarak düşünülecek ilgili fonksiyonelliğinin ise çalıştırdığı bir metod zinciri bulunsun. Bu zincirde yer alan fonksiyonelliklerden oyuncu bilgisinin toplanması ve ayrıştırılması değişmez parçalar olmak üzere iki ayır metod şeklinde tasarlansın. Ancak en son olarak çağırılan ve toplanan içeriğinin bastırılacağı yeri ele alan fonksiyonellik genişletilebilir olsun.
 
-Sınıf Çizelgesi
+## Şimdiki Sınıf Çizelgesi
 
 Çok basit olarak aşağıdaki sınıf çizelgesinde yer alan örneği tasarlamamız yeterli olacaktır.
 
@@ -57,7 +56,7 @@ GameReporter abstract sınıfı içerisinde yer alan WriteSummary metodunu Templ
 
 > Pek tabi buradaki abstract sınıfın kendisi, uygulayıcıları ve tüketici olan program farklı katmanlarda (projelerde) duruyor olabilir.
 
-Kod ve Çalışma Zamanı
+## Kod ve Çalışma Zamanı
 
 Sınıf çizelgesinde yer alan tipleri aşağıdaki kod parçasında görüldüğü gibi yazabiliriz.
 
@@ -146,7 +145,7 @@ Uygulamanın çalışma zamanı çıktısı ise aşağıdaki gibidir.
 
 ![tmdp_3](/assets/images/2015/tmdp_3.png)
 
-Uygulamasaydık
+## Uygulamasaydık?
 
 Peki bu şekilde bir yola başvurmasaydık ve söz konusu GameReporter sınıfını örneğin aşağıdaki gibi tasarlasaydık!?(Muhtemelen diyelim)
 
@@ -223,7 +222,7 @@ Ancak Template Method desenini uyguladığımız örnekte GameReporter ve diğer
 
 Buna göre PDFReporter şeklinde yeni bir seçenek dahil edilmek istendiğinde LibraryC isimli kütüphaneye ilgili sınıfın eklenmesi yeterli olacaktır. LibraryA kütüphanesinde yer alan WriteResults içerisine müdahale edilmesine gerek yoktur. Consumer sınıf ise, sadece yeni eklenen sınıfı örnekleyip kullanmakla yükümlüdür.
 
-Ödev
+## Ödev
 
 Örnek bir ödev ile yazımızı sonlandıralım. Söz gelimi bir text içeriğinin analiz edilme sürecini göz önüne alalım. Dosyanın okunması, içeriğinin analiz edilerek bazı sonuçlar çıkartılması (Aggregation'lar olabilir) ve son olarak bir yerlere kayıt edilmesini süreç olarak değerlendirelim. Dosyayı okuma ve yazma işlemleri değişmez iken, analiz ve sonuç çıkartma kısımları farklılık gösterebilir. Okuma ve yazma işlemlerini birer operasyon olarak düşündüğümüzde, değişkenlik gösterebilecek fonksiyonellikler analiz ve sonuç üretme kısımlarında ortaya çıkar. Bu senaryoda Template tasarım kalıbını uygulamaya çalışınız. Eğer zorlanırsanız Visual Studio Magazine'de Eric Vogel tarafından yazılan [şu makaleden yardım alabilirsiniz](http://visualstudiomagazine.com/articles/2013/12/06/template--method-pattern-in-dot-net.aspx).
 
