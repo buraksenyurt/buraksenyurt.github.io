@@ -27,14 +27,14 @@ Peki Ruby tarafında bu tip bir veri yapısını nasıl oluşturabiliriz? Bunun 
 
 ```ruby
 class Code
-	attr_accessor :letter, :signal
-	def initialize(letter,signal)
-		@letter=letter
-		@signal=signal
-	end
-	def to_s
-		"#{@letter}-#{@signal}"
-	end
+attr_accessor: letter,: signal
+def initialize(letter, signal)
+@letter = letter
+@signal = signal
+end
+def to_s
+  "#{@letter}-#{@signal}"
+end
 end
 ```
 
@@ -42,29 +42,33 @@ Code sınıfı bir harf veya sayıya karşılık gelecek sinyali barındırmakta
 
 ```ruby
 class Node
-	include Enumerable
-	
-	attr_accessor :owner,:left,:right
-	
-	def initialize(letter,signal)
-		@owner=Code.new(letter,signal)
-	end
-	
-	def each(&block)
-		left.each(&block) if left
-		block.call(self)
-		right.each(&block) if right
-	end
-	
-	def translate(word)
-		newWord=""
-		word.split("").each{|c|newWord<<find{|n|n.owner.letter==c.upcase}.owner.signal}
-		newWord.chomp
-	end
-	
-	def to_s
-		@owner.to_s
-	end
+include Enumerable
+
+attr_accessor: owner,: left,: right
+
+def initialize(letter, signal)
+@owner = Code.new(letter, signal)
+end
+
+def each( & block)
+left.each( & block) if left
+block.call(self)
+right.each( & block) if right
+end
+
+def translate(word)
+newWord = ""
+word.split("").each {
+  | c | newWord << find {
+    | n | n.owner.letter == c.upcase
+  }.owner.signal
+}
+newWord.chomp
+end
+
+def to_s
+@owner.to_s
+end
 end
 ```
 

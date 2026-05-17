@@ -22,49 +22,49 @@ Doğruyu söylemek gerekirse yıllarca nesne yönelimli dillerle çalışmış b
 
 ## Composition
 
-```golang
+```go
 package main
 
 // Inheritance ve Composition'a baslangic kodu
 import (
-	"fmt"
-	)
+    "fmt"
+)
 
-func main(){
-	buentap:=new(Gorlog)
-	buentap.nick="buentap"
-	buentap.level=4857
-	buentap.color="red"
-	writeGorlog(buentap)
+func main() {
+    buentap: = new(Gorlog)
+    buentap.nick = "buentap"
+    buentap.level = 4857
+    buentap.color = "red"
+    writeGorlog(buentap)
 
-	zulu:=new(Molag)
-	zulu.nick="zulurak"
-	zulu.level=3450
-	writeMolag(zulu)
+    zulu: = new(Molag)
+    zulu.nick = "zulurak"
+    zulu.level = 3450
+    writeMolag(zulu)
 }
 
-type Player struct{
-	nick string
-	level int
+type Player struct {
+    nick string
+    level int
 }
 
 // Gorlog'lar insan irkindan gelir. Ten renkleri vardir.
-type Gorlog struct{
-	Player
-	color string
+type Gorlog struct {
+    Player
+    color string
 }
 
-func writeGorlog(g *Gorlog){
-	fmt.Printf("%s - %d('%s')\n",g.nick,g.level,g.color)
+func writeGorlog(g * Gorlog) {
+    fmt.Printf("%s - %d('%s')\n", g.nick, g.level, g.color)
 }
 
 // Molag'lar renksiz ruhlardir
-type Molag struct{
-	Player
+type Molag struct {
+    Player
 }
 
-func writeMolag(m *Molag){
-	fmt.Printf("%s - %d\n",m.nick,m.level)
+func writeMolag(m * Molag) {
+    fmt.Printf("%s - %d\n", m.nick, m.level)
 }
 ```
 
@@ -90,69 +90,69 @@ Gelelim bir diğer noktaya. Diyelim ki Gorlog ve Molag türleri için ortak bir 
 package main
 // Inheritance ve Composition'a baslangic kodu
 import (
-	"fmt"
-	)
-	
-func main(){
-	buentap:=new(Gorlog)
-	buentap.nick="buentap"
-	buentap.level=4857
-	buentap.color="red"	
-	writeGorlog(buentap)
-	
-	zulu:=new(Molag)
-	zulu.nick="zulurak"
-	zulu.level=3450
-	writeMolag(zulu)
-	
-	moveAndFire(buentap,"korusant","tatuyin")
-	moveAndFire(zulu,"tatuyin","korusant")
+    "fmt"
+)
+
+func main() {
+    buentap: = new(Gorlog)
+    buentap.nick = "buentap"
+    buentap.level = 4857
+    buentap.color = "red"
+    writeGorlog(buentap)
+
+    zulu: = new(Molag)
+    zulu.nick = "zulurak"
+    zulu.level = 3450
+    writeMolag(zulu)
+
+    moveAndFire(buentap, "korusant", "tatuyin")
+    moveAndFire(zulu, "tatuyin", "korusant")
 }
-func moveAndFire(p IPlayer,moveL string,fireL string){
-	p.move(moveL)
-	p.fire(fireL)
+func moveAndFire(p IPlayer, moveL string, fireL string) {
+    p.move(moveL)
+    p.fire(fireL)
 }
-type IPlayer interface{
-	move(location string) bool
-	fire(location string) bool
+type IPlayer interface {
+    move(location string) bool
+    fire(location string) bool
 }
 
-type Player struct{
-	nick string
-	level int
+type Player struct {
+    nick string
+    level int
 }
 
 // Gorlog'lar insan irkindan gelir. Ten renkleri vardir.
-type Gorlog struct{
-	Player	
-	color string
+type Gorlog struct {
+    Player
+    color string
 }
-func (g Gorlog) move(location string) bool{
-	fmt.Printf("%s:Move to %s\n",g.nick,location)
-	return true
+func(g Gorlog) move(location string) bool {
+    fmt.Printf("%s:Move to %s\n", g.nick, location)
+    return true
 }
-func (g Gorlog) fire(location string) bool{
-	fmt.Printf("%s:Fire to the %s\n",g.nick,location)
-	return true
+func(g Gorlog) fire(location string) bool {
+    fmt.Printf("%s:Fire to the %s\n", g.nick, location)
+    return true
 }
-func writeGorlog(g *Gorlog){
-	fmt.Printf("%s - %d('%s')\n",g.nick,g.level,g.color)
+func writeGorlog(g * Gorlog) {
+    fmt.Printf("%s - %d('%s')\n", g.nick, g.level, g.color)
 }
 
 // Molag'lar renksiz ruhlardir
-type Molag struct{
-	Player		
+type Molag struct {
+    Player
 }
-func (m Molag) move(location string) bool{
-	fmt.Printf("%s:Move to %s\n",m.nick,location)
-	return true
+func(m Molag) move(location string) bool {
+    fmt.Printf("%s:Move to %s\n", m.nick, location)
+    return true
 }
-func (m Molag) fire(location string) bool{
-	fmt.Printf("%s:Fire to the %s\n",m.nick,location)
-	return true
+func(m Molag) fire(location string) bool {
+    fmt.Printf("%s:Fire to the %s\n", m.nick, location)
+    return true
 }
-func writeMolag(m *Molag){
-	fmt.Printf("%s - %d\n",m.nick,m.level)
+func writeMolag(m * Molag) {
+    fmt.Printf("%s - %d\n", m.nick, m.level)
 }
 ```
 

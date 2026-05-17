@@ -20,9 +20,9 @@ Geçtiğimiz sene [Ruby](https://www.buraksenyurt.com/category/Ruby.aspx) diliye
 
 ![gopher.gif](/assets/images/2017/gopher.gif)
 
-![20170109_224829.gif](/assets/images/2017/20170109_224829.gif)
-
 Benim 2017 hedeflerim arasında Go dilini en azından orta seviyeye kadar öğrenmek var. Oldukça uzun bir sprint olacak ancak geçtiğimiz hafta kendimle yaptığım Sprint planlama toplantısında onu To Do listesine aldım. Bu hafta itibariyle de durumunu In Progress'e çektim.
+
+![20170109_224829.gif](/assets/images/2017/20170109_224829.gif)
 
 Gopher olabilir miyim bilemiyorum ama bir dili çok iyi seviyede öğrenmeden o dil hakkında ahkam kesmemek gerektiğine inanıyorum. Geçtiğimiz zaman içerisinde Go ile ilgili dil özelliklerini öğrenmeye devam ettim. Öğrendiklerimi not almaya başladım. Kısa bir Hello World uygulamasından sonra başka temel kavramları da incelemeye koyuldum. İşte en son baktığım konular
 
@@ -32,55 +32,78 @@ Belli tipteki elemanaları (herhangibir Go veri tipi olabilir) bir arada tutan (
 
 {% raw %}
 
-```cpp
+```go
 package main
 
 import (
-	"fmt"
-	"time"
-	)
+    "fmt"
+    "time"
+)
 
-func main(){
-	// Arrays
-	fmt.Printf("Today : %s\n\n",time.Now())
-	
-	var points=[]float32{10.45,-30.345,55.90,60.0123}
-	var names=[4]string{"sarlok","sumi","varlord","khan"}
-	var numbers [7]int
-	var matrix=[3][3]int{{1,2,3},{4,5,6},{7,8,9}}
-	
-	for i:=0;i<len(points);i++{
-		fmt.Printf("%d is %f\n",i,points[i])
-	}
-	
-	for i:=0;i<len(names);i++{
-		fmt.Printf("%s\n",names[i])
-	}
-	
-	var j int
-	for j=0;j<len(numbers);j++{
-		numbers[j]=j*j
-		fmt.Printf("%d\t",numbers[j])
-	}
-	
-	fmt.Printf("\nSum = %f\n",sum(points))
-	
-	for i:=0;i<3;i++{
-		for j:=0;j<3;j++{
-			fmt.Printf("%d\t",matrix[i][j])
-		}
-		fmt.Println("")
-	}
+func main() {
+    // Arrays
+    fmt.Printf("Today : %s\n\n", time.Now())
+
+    var points = [] float32 {
+        10.45, -30.345, 55.90, 60.0123
+    }
+    var names = [4] string {
+        "sarlok", "sumi", "varlord", "khan"
+    }
+    var numbers[7] int
+    var matrix = [3][3] int {
+        {
+            1, 2, 3
+        }, {
+            4, 5, 6
+        }, {
+            7, 8, 9
+        }
+    }
+
+    for i: = 0;
+    i < len(points);
+    i++{
+        fmt.Printf("%d is %f\n", i, points[i])
+    }
+
+    for i: = 0;
+    i < len(names);
+    i++{
+        fmt.Printf("%s\n", names[i])
+    }
+
+    var j int
+    for j = 0;
+    j < len(numbers);
+    j++{
+        numbers[j] = j * j
+        fmt.Printf("%d\t", numbers[j])
+    }
+
+    fmt.Printf("\nSum = %f\n", sum(points))
+
+    for i: = 0;
+    i < 3;
+    i++{
+        for j: = 0;
+        j < 3;
+        j++{
+            fmt.Printf("%d\t", matrix[i][j])
+        }
+        fmt.Println("")
+    }
 }
 
-func sum(nmbrs []float32) float32{
-	var toplam float32=0
-	for i:=0;i<len(nmbrs);i++{
-		toplam+=nmbrs[i]
-	}
-	return toplam
+func sum(nmbrs[] float32) float32 {
+    var toplam float32 = 0
+    for i: = 0;
+    i < len(nmbrs);
+    i++{
+        toplam += nmbrs[i]
+    }
+    return toplam
 }
-
 ```
 
 {% endraw %}
@@ -97,40 +120,19 @@ Sırf meraktan günün tarihini ve zamanı ekrana nasıl yazdırırım diye Goog
 
 Döngü kullanımları oldukça basit. matrix dizisini işlerken içiçe döngü kullanıyoruz. Döngülere konu olan dizilerin eleman sayısını len fonksiyonu yardımıyla anlayabiliriz. Dizi indisleri 0 tabanlı başladığından döngü sayaçları da 0dan başlatılmakta. fmt paketindeki Printf fonksiyonu Console penceresine çeşitli formatları uygulamak için kullanılıyor. %d'yi tam sayılar, %f'i kayan noktalı sayılar, %s'i de string tipindeki elemanlar için yer tutucu olarak kullanmaktayız. Pek tabii C#taki gibi {0} {1} gibi bir kullanım burada söz konusu değil. Printf'te ki parametre sırası konumlandırma açısından önemli. \n ve \t bildiğiniz üzere escape karakterlerimiz. Yeni satıra geçmek ve tab bırakmak için kullanılıyorlar. Başka escape karakterleri de var elbette.
 
-Karakter
-Kullanım Amacı
-
-\a
-alert
-
-\b
-backspace
-
-\f
-Form feed
-
-\r
-Carriage return
-
-\v
-Vertical tab
-
-\xhh
-Hexadecimal numbers
-
-\ooo
-Octal numbers
-
-\\
-\
-
-\'
-'
-
-\"
-"
-
-\??
+| Karakter | Kullanım Amacı |
+| --- | --- |
+| `\a` | alert |
+| `\b` | backspace |
+| `\f` | Form feed |
+| `\r` | Carriage return |
+| `\v` | Vertical tab |
+| `\xhh` | Hexadecimal numbers |
+| `\ooo` | Octal numbers |
+| `\\` | \ |
+| `\'` | ' |
+| `\"` | " |
+| `\?` | ? |
 
 Kod parçasında dikkat çekici noktalardan birisi de sum isimli fonksiyon. Parametre olarak float32 tipinden elemanlar içeren bir dizi almakta. Dizinin eleman sayısı belli değil (ki eleman sayısı belli olacak şekilde verebilirsiniz de) Fonksiyon gelen dizinin boyutuna bakarak elemanların toplamını bulmakta.
 
@@ -144,29 +146,29 @@ Aslında önceki yazımızda olsun bu yazımızda olsun main haricinde kendi yaz
 
 Bir fonksiyondan n sayıda değer döndürmemiz mümkün. Aşağıdaki kod parçasında bu durumu inceliyoruz.
 
-```cpp
+```go
 package main
 
 import (
-	"fmt"
-	)
+    "fmt"
+)
 
-func main(){
-	var a,b,c,d int
-	var x,y int
-	x=8
-	y=2
-	
-	a,b,c,d=calc(x,y)
-	
-	fmt.Printf("%d+%d=%d\n",x,y,a)
-	fmt.Printf("%d*%d=%d\n",x,y,b)
-	fmt.Printf("%d/%d=%d\n",x,y,c)
-	fmt.Printf("%d-%d=%d\n",x,y,d)
+func main() {
+    var a, b, c, d int
+    var x, y int
+    x = 8
+    y = 2
+
+    a, b, c, d = calc(x, y)
+
+    fmt.Printf("%d+%d=%d\n", x, y, a)
+    fmt.Printf("%d*%d=%d\n", x, y, b)
+    fmt.Printf("%d/%d=%d\n", x, y, c)
+    fmt.Printf("%d-%d=%d\n", x, y, d)
 }
 
-func calc(x,y int) (int,int,int,int){
-	return x+y,x*y,x/y,x-y
+func calc(x, y int)(int, int, int, int) {
+    return x + y, x * y, x / y, x - y
 }
 ```
 
@@ -180,23 +182,24 @@ calc isimli fonksiyon 4 değer döndürecek şekilde tanımlanmıştır. return 
 
 C#çılar bir metoda değişken sayıda parametre göndermenin yollarından birisinin params kullanımı olduğunu bilirler. Go dilinde de bu işlevsellik var. Hatta bu tip fonksiyonlar Variadic olarak ifade ediliyor. fmt paketindeki Println bu tip fonksiyonlara verilebilecek ilk örneklerden birisi. Aşağıdaki kod parçasında da geliştirici tanımlı bir Variadic fonksiyon örneği yer alıyor.
 
-```cpp
+```go
 package main
 
 import "fmt"
 
-func main(){
-	fmt.Println(sum(1,2,3,4))
-	fmt.Println(sum(4,6,77,-2,90,2))
-	fmt.Println(sum(0))
+func main() {
+    fmt.Println(sum(1, 2, 3, 4))
+    fmt.Println(sum(4, 6, 77, -2, 90, 2))
+    fmt.Println(sum(0))
 }
 
-func sum(numbers ...int)int{
-	total:=0
-	for _,n:=range numbers{
-		total+=n
-	}
-	return total
+func sum(numbers...int) int {
+    total: = 0
+    for _,
+    n: = range numbers {
+        total += n
+    }
+    return total
 }
 ```
 
@@ -208,29 +211,35 @@ sum isimli fonksiyon herhangibir sayıda int eleman alacak şekilde tanımlanmı
 
 Gopher olmaya çalışırken metod ile fonksiyon'un Go dilinde aynı anlamda kullanılmadığını fark ettim. Yılların C# programıcısı olarak parametre alıp geriye değer döndüren fonksiyonları metod olarak isimlendirdiğim çok oldu. Hatta Visual Basic'te metod ve procedure ayrımlarına da şahit oldum. Ancak fonksiyon ve metod arasında bir ayrım olabileceği pek aklıma gelmemişti. Peki o zaman Go dilinde metod neye denir bir bakalım.
 
-```cpp
+```go
 package main
 
 import "fmt"
 
-type Vehicle struct{
-	id int
-	name string
-	x,y,z int
+type Vehicle struct {
+    id int
+    name string
+    x, y, z int
 }
 
-func(v Vehicle) findLocation() string{
-	if v.x>10 && v.x<20 {
-		return "Germany"
-		}
-	return "France"
+func(v Vehicle) findLocation() string {
+    if v.x > 10 && v.x < 20 {
+        return "Germany"
+    }
+    return "France"
 }
 
-func main(){
-	tank:=Vehicle{id:1,name:"Leopard",x:12,y:1,z:-100}
-	fmt.Printf("%s\n",tank.findLocation())
-	tank.x=5
-	fmt.Printf("%s\n",tank.findLocation())
+func main() {
+    tank: = Vehicle {
+        id: 1,
+        name: "Leopard",
+        x: 12,
+        y: 1,
+        z: -100
+    }
+    fmt.Printf("%s\n", tank.findLocation())
+    tank.x = 5
+    fmt.Printf("%s\n", tank.findLocation())
 }
 ```
 
@@ -244,32 +253,32 @@ func main(){
 
 Go dilinde bir fonksiyonu değişkene atayabilir ve hatta bu değişkeni bir başka fonksiyona parametre olarak gönderebiliriz. Daha çok fonksiyon alan fonksiyonlarda işimize yarayabilecek bir durum olduğunu ifade edebiliriz. Go'nun hazır paketlerinde bu şekilde çalışan pek çok fonksiyon bulunur. Aşağıdaki kod parçası durumu daha iyi anlamamızı sağlayacaktır.
 
-```cpp
+```go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
-func main(){	
-	f1 := func(r rune) rune {
-		switch {
-			case r == ' ':
-				return '_'
-			case r == 'b':
-				return 'B'
-			}
-		return r
-	}
-	
-	fmt.Println(strings.Map(f1, "bugun guzel bir gun"))
-	fmt.Println(strings.Map(func(r rune) rune{
-		if r>=65 && r <= 90{
-			return r + 32
-			}
-		return r
-	},"buGUN de Guzel gAlIba"))
+func main() {
+    f1: = func(r rune) rune {
+        switch {
+            case r == ' ':
+                return '_'
+            case r == 'b':
+                return 'B'
+        }
+        return r
+    }
+
+        fmt.Println(strings.Map(f1, "bugun guzel bir gun"))
+    fmt.Println(strings.Map(func(r rune) rune {
+        if r >= 65 && r <= 90 {
+            return r + 32
+        }
+        return r
+    }, "buGUN de Guzel gAlIba"))
 }
 ```
 
@@ -291,30 +300,30 @@ f1 isimli değişken bu tanıma uyuyor. Dikkat edileceği üzere rune tipinden p
 
 Aslında yeri gelmişken bir fonksiyondan başka bir fonksiyon nasıl döndürülür ve hatta bu fonksiyon içeride isimsiz olarak tanımlandığında Closure adı verilen kapama işlevselliği nasıl vuku bulur, dilerseniz inceleyelim. Aşağıdaki kod parçasını göz önüne alabiliriz.
 
-```cpp
+```go
 package main
 
-import ( 
-	"fmt"
-	)
+import (
+    "fmt"
+)
 
 func add() func(int) int {
-    total:=0
-	return func(x int) int{
-		total+=x
+    total: = 0
+    return func(x int) int {
+        total += x
         return total
     }
 }
 
-func main(){
+func main() {
     var f1 = add()
     fmt.Println(f1(5))
-	fmt.Println(f1(5))
-	fmt.Println(f1(5))
-	
+    fmt.Println(f1(5))
+    fmt.Println(f1(5))
+
     var f2 = add()
     fmt.Println(f2(4))
-	fmt.Println(f2(4))
+    fmt.Println(f2(4))
 }
 ```
 
@@ -330,34 +339,40 @@ Kafalar yandı mı? Şahsen benim epey yanmış durumda. Ha bir de fonksiyonlar�
 
 Metod kavramını incelerken basit bir struct tipi kullandık. Orada çok fazla değinmedik ama Go dilinin önemli veri türlerinden birisi olarak karşımıza çıkıyor. Structure, kullanıcı tanımlı veri tiplerinden (user defined data type) birisi olarak düşünülebilir. Hani nesne yönelimi bir dil değil belki ama en azından kendi sınıflarımızı struct gibi tanımlayabiliriz düşüncesi güzel. Aslında çeşitli tipte elemanları barındıracak bir veri modelini tasarlayıp değişken olarak kullanıma sunuyoruz. Aşağıdaki örnek kod parçasında basit bir struct tanımı ve kullanımı söz konusu.
 
-```cpp
+```go
 package main
 
 import "fmt"
 
-func main(){
+func main() {
 
-	phone:=Product{productId:1001,title:"Samsung J5",listPrice:245.50}
-	var cpu Product
-	cpu.productId=2005
-	cpu.title="intel core i5 CPU"
-	cpu.listPrice=120.50
-	
-	var products=[]Product{phone,cpu}
-	
-	writeToConsole(products)
+    phone: = Product {
+        productId: 1001,
+        title: "Samsung J5",
+        listPrice: 245.50
+    }
+    var cpu Product
+    cpu.productId = 2005
+    cpu.title = "intel core i5 CPU"
+    cpu.listPrice = 120.50
+
+    var products = [] Product {
+        phone, cpu
+    }
+
+    writeToConsole(products)
 }
 
-func writeToConsole(prods []Product){
-	for _,p:=range prods{
-		fmt.Printf("(%d)-%s,%f\n",p.productId,p.title,p.listPrice)
-	}
+func writeToConsole(prods[] Product) {
+    for _, p: = range prods {
+        fmt.Printf("(%d)-%s,%f\n", p.productId, p.title, p.listPrice)
+    }
 }
 
-type Product struct{
-	productId int
-	title string
-	listPrice float32
+type Product struct {
+    productId int
+    title string
+    listPrice float32
 }
 ```
 
@@ -369,27 +384,31 @@ type Product struct{
 
 Yukarıda geliştirdiğimiz örneği baz alarak konuyu biraz değiştirelim. Önce aşağıdaki kod parçası ve sonucunu irdelememiz gerekiyor.
 
-```cpp
+```go
 package main
 
 import "fmt"
 
-func main(){
+func main() {
 
-	phone:=Product{productId:1001,title:"Samsung J5",listPrice:245.50}
-	fmt.Println(phone.listPrice)
-	discount(phone,10)
-	fmt.Println(phone.listPrice)
+    phone: = Product {
+        productId: 1001,
+        title: "Samsung J5",
+        listPrice: 245.50
+    }
+    fmt.Println(phone.listPrice)
+    discount(phone, 10)
+    fmt.Println(phone.listPrice)
 }
 
-func discount(p Product,value float32){
-	p.listPrice-=value
+func discount(p Product, value float32) {
+    p.listPrice -= value
 }
 
-type Product struct{
-	productId int
-	title string
-	listPrice float32
+type Product struct {
+    productId int
+    title string
+    listPrice float32
 }
 ```
 
@@ -397,28 +416,32 @@ type Product struct{
 
 discount fonksiyonu ile parametre olarak gelen ürünün liste fiyatını belli bir değerde azaltıyoruz. Fonksiyona phone isimli struct örneğini gönderiyoruz ve içerisinde listPrice değerini değiştiriyoruz. Ekran çıktısına baktığımızda fonksiyon çağrısından önceki liste fiyatı ile sonraki liste fiyatının aynı olduğunu görmekteyiz. Bu zaten beklediğimiz bir sonuç. Nitekim phone değişkeni, discount fonksiyonuna geçerken sahip olduğu değerleri ile birlikte kopyalanıyor ve blok içinde p isimli yeni bir değişken olarak muamele görüyor. Dolayısıyla fonksiyon içerisindeki değişikliker main içerisindeki değişkeni etkilemiyor. Peki etkilemesini istersek!? Yani phone değişkeninin liste fiyatını fonksiyon içerisinde değiştirebilmek istersek. İşte burada ilgili nesneyi fonksiyona referans olarak geçirmenin bir yolunu bulmamız gerekmekte. Bunun için onun bellek adresini taşımayı düşünebiliriz. Sadece iki karakter ile bu işi çözümleyebiliriz.
 
-```cpp
+```go
 package main
 
 import "fmt"
 
-func main(){
+func main() {
 
-	phone:=Product{productId:1001,title:"Samsung J5",listPrice:245.50}
-	fmt.Println(phone.listPrice)
-	discount(&phone,10)
-	fmt.Println(phone.listPrice)
+    phone: = Product {
+        productId: 1001,
+        title: "Samsung J5",
+        listPrice: 245.50
+    }
+    fmt.Println(phone.listPrice)
+    discount( & phone, 10)
+    fmt.Println(phone.listPrice)
 }
 
-func discount(p *Product,value float32){
-	fmt.Println("Address is ",&p)
-	p.listPrice-=value
+func discount(p * Product, value float32) {
+    fmt.Println("Address is ", & p)
+    p.listPrice -= value
 }
 
-type Product struct{
-	productId int
-	title string
-	listPrice float32
+type Product struct {
+    productId int
+    title string
+    listPrice float32
 }
 ```
 

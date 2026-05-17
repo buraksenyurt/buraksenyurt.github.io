@@ -24,32 +24,32 @@ Go dilini sistemimize yüklediğimizde zaten beraberinde pek çok paket geliyor 
 
 Buna göre kendi yazdığımız paketleri src klasörü altına atıp kullanmaya başlayabiliriz. Gelin bu vakayı basit bir örnekle incelemeye çalışalım. Tabii ilk olarak bir paket yazarak işe başlamamız gerekiyor:) Sözgelimi içerisinde bir kaç metrik dönüştürme işlemi barındıran mtrcvrt (Metric Converter diye isimlendirebiliriz) adlı bir paket geliştirdiğimizi düşünelim.
 
-```golang
+```go
 package mtrcvrt
 
 //Fahrenheit to Celsius
-func FahToCel(f float64) float64{
-	return (f-32)/1.8
+func FahToCel(f float64) float64 {
+    return (f - 32) / 1.8
 }
 
 // Celsius to Fahrenheit
-func CelToFah(c float64) float64{
-	return (c*1.8)+32
+func CelToFah(c float64) float64 {
+    return (c * 1.8) + 32
 }
 
 // Feet to Meter
-func FeetToMeter(feet float64) float64{
-	return feet/3.2808
+func FeetToMeter(feet float64) float64 {
+    return feet / 3.2808
 }
 
 // Kg to Pound
-func KgToPound(kg float64) float64{
-	return kg*2.2046
+func KgToPound(kg float64) float64 {
+    return kg * 2.2046
 }
 
 // Kilometers to Mile
-func KmToMiles(km float64) float64{
-	return km*0.621371192
+func KmToMiles(km float64) float64 {
+    return km * 0.621371192
 }
 ```
 
@@ -61,37 +61,33 @@ Yazdığımız paket içerisinde beş fonksiyon bulunuyor. Fahrenheit'dan Celsiu
 
 Şimdi örnek bir program dosyası oluşturup yazdığımız pakete ait fonksiyonellikleri test edelim.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	"mtrcvrt"
-	)
-	
-func main(){
-	var (
-		iFahrenheit=89.0
-		iCelsius=36.5
-		iFeet=100.0
-		iKg=83.50
-		iKm=450.0
-		)
-	
-	oCelcius:=mtrcvrt.FahToCel(iFahrenheit)
-	fmt.Printf("%f\n",oCelcius)
-	
-	oFahrenheit:=mtrcvrt.CelToFah(iCelsius)
-	fmt.Printf("%f\n",oFahrenheit)
-	
-	oMeter:=mtrcvrt.FeetToMeter(iFeet)
-	fmt.Printf("%f\n",oMeter)
-	
-	oPound:=mtrcvrt.KgToPound(iKg)
-	fmt.Printf("%f\n",oPound)
-	
-	oMiles:=mtrcvrt.KmToMiles(iKm)
-	fmt.Printf("%f\n",oMiles)
+    "fmt"
+    "mtrcvrt"
+)
+
+func main() {
+    var (
+        iFahrenheit = 89.0 iCelsius = 36.5 iFeet = 100.0 iKg = 83.50 iKm = 450.0
+    )
+
+    oCelcius: = mtrcvrt.FahToCel(iFahrenheit)
+    fmt.Printf("%f\n", oCelcius)
+
+    oFahrenheit: = mtrcvrt.CelToFah(iCelsius)
+    fmt.Printf("%f\n", oFahrenheit)
+
+    oMeter: = mtrcvrt.FeetToMeter(iFeet)
+    fmt.Printf("%f\n", oMeter)
+
+    oPound: = mtrcvrt.KgToPound(iKg)
+    fmt.Printf("%f\n", oPound)
+
+    oMiles: = mtrcvrt.KmToMiles(iKm)
+    fmt.Printf("%f\n", oMiles)
 }
 ```
 
@@ -113,13 +109,13 @@ Ardında mtrk.go kod dosyasının commit ederek github'a yüklenmesini sağladı
 
 Artık bilgisayarımdaki workspace ile github eşleşmiş durumda. Bu yeni yapıdaki paketi kullanmak için tek yapılması gereken import ifadesini uygun bir şekilde değiştirmek.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	"github.com/buraksenyurt/mtrk"
-	)
+    "fmt"
+    "github.com/buraksenyurt/mtrk"
+)
 ```
 
 ## Peki ya diğer kullanıcılar?

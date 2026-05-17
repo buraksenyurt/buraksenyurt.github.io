@@ -21,33 +21,33 @@ defer
 
 .Net kökenli yazılımcılar için finally operasyonları amacıyla kullanılır dersek sanırım yerinde olacaktır. defer ifadesi ile işaret edilen fonksiyon, program çalışması sırasında mutlak suretle devreye girmesi istenen operasyonlarda kullanılır. Üzerinde işlem yapılmış bir dosyanın, açılan bir veritabanı bağlantısının, haberleşilen bir soket ile olan iletişimin kapatılması veya belleğe alınan ama işleri biten nesnelerin serbest bırakılması gibi genelleyebileceğimiz işlemler bu operasyonlara örnek olarak verilebilir. Tabii burada dikkat çekici nokta defer ifadesinde bildirilen fonksiyonun kodun akışında bir hata olması halinde de devreye girmesidir. Bir başka deyişle runtime panic olarak isimlendirilen çalışma zamanı hatalarının oluştuğu durumlarda defer edilen fonksiyonların çalışması söz konusudur. Kaynaklarda sıklıkla geçen dosya işlemlerinden basit bir tanesini bu bağlamda ele alalım.
 
-```golang
+```go
 package main
 
 import (
-	"fmt" 
-	"os"
+    "fmt"
+    "os"
 )
 
-func main() { 
-	saveToFile("sometext.txt","this is gonna be the best day of my life")
+func main() {
+    saveToFile("sometext.txt", "this is gonna be the best day of my life")
 }
 
-func saveToFile(name string,content string) {
-	fmt.Println("creating...")
-	file,error:=os.Create(name)
-	if error==nil{
-		defer closeFile(file) // dogrudan defer file.Close() da denenmeli
-		fmt.Fprintln(file,content)
-	}else{
-		return
-	}
+func saveToFile(name string, content string) {
+    fmt.Println("creating...")
+    file, error: = os.Create(name)
+    if error == nil {
+        defer closeFile(file) // dogrudan defer file.Close() da denenmeli
+        fmt.Fprintln(file, content)
+    } else {
+        return
+    }
 }
 
-func closeFile(file *os.File){
-	fmt.Println("closing...")
-	file.Close()
-	fmt.Println("closed")
+func closeFile(file * os.File) {
+    fmt.Println("closing...")
+    file.Close()
+    fmt.Println("closed")
 }
 ```
 
@@ -61,7 +61,7 @@ saveToFile fonksiyonu sistem üzerinde bir dosya açıp bunun içerisinde belirt
 
 defer ifadesi son giren ilk çıkar mantığına göre çalışır (Last In First Out). Buna göre bir fonksiyon içerisinde kullanılan ne kadar defer ifadesi varsa son girenden ilk eklenene göre teker teker çalıştırılır. Bu durumu anlamak için aşağıdaki kod parçasını göz önüne alalım.
 
-```golang
+```go
 package main
 
 import(
@@ -98,12 +98,12 @@ Yazdığımız uygulama kodunda meydana gelebilecek bazı hatalar ortama panic o
 
 Şu ana kadar ki kodlarımızda zaman zaman da olsa panik havası esmedi değil aslında. Söz gelimi aşağıdaki kod parçası çalışma zamanında bir panik oluşmasına (panic: runtime error: index out of range) neden olur.
 
-```golang
+```go
 package main
 
-func main(){
-	numbers:=make([]int,5)
-	numbers[6]=10
+func main() {
+    numbers: = make([] int, 5)
+    numbers[6] = 10
 }
 ```
 
@@ -111,7 +111,7 @@ func main(){
 
 Az önce recover ile bu tip çalışma zamanı paniklerini yatıştırabileceğimize değinmiştik. Ben tabii konuyu öğrenirken balıklama şöyle bir kod parçasını denedim.
 
-```golang
+```go
 numbers:=make([]int,5)
 numbers[6]=10
 err:=recover()
@@ -121,22 +121,23 @@ fmt.Println(err)
 ama sonuç değişmedi. O anda recover'ın neden defer ile birlikte kullanıldığını daha iyi anlamaya başladım. Aynı kod parçasını aşağıdaki gibi düzenleyerek ilerleyelim.
 
 ```golang
-package main  
+package main
 import (
-    "fmt" 
-    )
+    "fmt"
+)
 
-func main() { 
-    numbers:=make([]int,5)
+func main() {
+    numbers: = make([] int, 5)
     defer easy(numbers)
-    numbers[6]=10
+    numbers[6] = 10
     fmt.Println("have fun")
 }
-func easy(n []int){    
-    if err := recover(); err != nil {
-        fmt.Printf("slice length is : %d\n",len(n))
-        fmt.Printf("don't panic it's just an error\n%s",err)
-	}
+func easy(n[] int) {
+    if err: = recover();
+    err != nil {
+        fmt.Printf("slice length is : %d\n", len(n))
+        fmt.Printf("don't panic it's just an error\n%s", err)
+    }
 }
 ```
 
@@ -144,7 +145,7 @@ func easy(n []int){
 
 Dikkat edileceği üzere defer ifadesi ile main fonksiyonunda olası bir panik durumunda gidilebilecek bir başka fonksiyonu işaret ediyoruz. easy içerisinde recovery fonksiyonundan yararlanarak oluşan hatayı yakalayıp (eğer varsa) program akışının kontrol altına alınmasını sağlıyoruz. easy fonskiyonuna main içerisinde defer tanımını yaparken parametre geçişi de yapmaktayız (Bunu sadece parametre geçirebileceğimizi göstermek için yazdık) Bu arada defer fonksiyonunu istersek closure olarak da yazabiliriz ki yaygın kullanım şekli budur. Aynen aşağıdaki kod parçasında görüldüğü gibi.
 
-```golang
+```go
 package main  
 import (
     "fmt" 
@@ -165,7 +166,7 @@ func main() {
 
 Ancak gözden kaçmaması gereken bir nokta daha var. numbers[6]=10 ataması sonrası oluşan hata yakalanmış olsa da devam eden kod satırı işletilmedi! Yani program cidden çakıldı ve biz paniği sessiz sedasız defer ettiğimiz fonksiyon üzerinden soğukkanlı bir şekilde yatıştırdık. Olay main'de ceyeran ettiği için programdan çıkılmış olması normal. Bir.Netçi olarak bildiğimiz try...catch...finally yapısından oldukça farklı bir çalışma şekli gibi duruyor. Sanki Go dili programıcının ciddi anlamda çalışma zamanı hatası yaptıracak kod yazmasını istemiyor gibi. Aşağıdaki kod parçasını göz önüne alarak bu durumu biraz daha açalım.
 
-```golang
+```go
 package main
 
 import(

@@ -18,38 +18,37 @@ Konu C# programlama diliydi. İyi hazırlanmam gerektiği ortadaydı. Kurumsal p
 Hal böyle olunca C# 6.0 ile ilgili yenilikleri gözden geçirme fırsatını da yeniden yakalamış oldum. Eğitime hazırlanırken okuduğum özelliklerden birisi de Collection Initializer olarak kullanılabilen Add metodunun istediğimiz bir başka metoda atanabilmesiydi. Bu, özellikle bir koleksiyonu sarmalladığımız IEnumerable türevli tiplerde işe yarayabilecek bir yetenek. Amacımız bir sınıf örneğini oluşturduğumuz yerde içerideki koleksiyona elemanlar atayabilmek. Bunu zaten var olan koleksiyonlar için aşağıdaki gibi yapabiliyoruz.
 
 ```csharp
-List<string> colors=new List<string>{
-			"red",
-			"blue",
-			"green"
-	   };
+List<string> colors = new List<string>{
+            "red",
+            "blue",
+            "green"
+       };
 ```
 
-Örneğin string tipte elemanlar barındıran colors isimli List nesnesini yukarıdaki kod parçasında olduğu gibi başlatabiliriz. Nesne oluşurken içerisindeki string dizisine ilk elemanlar atanıyor.
+Örneğin string tipte elemanlar barındıran colors isimli List nesnesini yukarıdaki kod parçasında olduğu gibi başlatabiliriz. Nesne oluşurken içerisindeki string dizisine ilk elemanlar atanıyor. Hatta C# 6.0 ile Dictionary tipinden koleksiyonları aşağıdaki gibi başlatabiliyoruz da (Kod Visual Studio 2015 de yazılmıştır)
 
-> Hatta C# 6.0 ile Dictionary tipinden koleksiyonları aşağıdaki gibi başlatabiliyoruz da (Kod Visual Studio 2015 de yazılmıştır)
-> ```csharp
-> var colors = new Dictionary<int, string>
-> {
-> 	[100] = "Black",
-> 	[101] = "Green",
-> 	[102] = "Red"
-> };
-> ```
+```csharp
+var colors = new Dictionary<int, string>
+{
+    [100] = "Black",
+    [101] = "Green",
+    [102] = "Red"
+};
+```
 
 Hedefimiz string yerine kendi tipimizi kullanıldığında benzer işlevselliği sunabilmek. Add metodunun olması bunun için yeterli ama bulunduğumuz domain gereği farklı isimli bir metoda atamak isteyebiliriz? İşte soru bu. Konuyu daha iyi anlamak için C# 6.0 öncesinden bir örnekle işe başlayalım. Elimizde aşağıdaki gibi bir sınıf olduğunu düşünelim (Bu örnek Visual Studio 2013 üzerinde geliştirildi)
 
 ```csharp
 public class Player
 {
-	public int PlayerId { get; set; }
-	public string Nickname { get; set; }
-	public double Level { get; set; }
+    public int PlayerId { get; set; }
+    public string Nickname { get; set; }
+    public double Level { get; set; }
 
-	public override string ToString()
-	{
-		return string.Format("{0} {1} {2}", PlayerId, Nickname, Level);
-	}
+    public override string ToString()
+    {
+        return string.Format("{0} {1} {2}", PlayerId, Nickname, Level);
+    }
 }
 ```
 
@@ -57,46 +56,46 @@ Kobay sınıflarımızdan birisi olan Player tipinden generic List koleksiyonu b
 
 ```csharp
 public class GameSchene
-	:IEnumerable<Player>
+    : IEnumerable<Player>
 {
-	private List<Player> players = new List<Player>();
+    private List<Player> players = new List<Player>();
 
-	public void Assign(Player player)
-	{
-		players.Add(player);
-	}
+    public void Assign(Player player)
+    {
+        players.Add(player);
+    }
 
-	public IEnumerator<Player> GetEnumerator()
-	{
-		return ((IEnumerable<Player>)players).GetEnumerator();
-	}
+    public IEnumerator<Player> GetEnumerator()
+    {
+        return ((IEnumerable<Player>)players).GetEnumerator();
+    }
 
-	IEnumerator IEnumerable.GetEnumerator()
-	{
-		return ((IEnumerable<Player>)players).GetEnumerator();
-	}
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return ((IEnumerable<Player>)players).GetEnumerator();
+    }
 }
 ```
 
 GameSchene sınıfı IEnumerable arayüzünü uygulamakta. Buna göre içerideki oyuncu listesi üzerinden for each döngüsü yardımıyla ilerleyebiliriz. Amacımız ise aşağıdaki gibi bir kod parçasını çalıştırabilmek.
 
-```text
+```csharp
 class Program
 {
-	static void Main(string[] args)
-	{
-		var zone = new GameSchene
-		{
-			new Player{ PlayerId=102, Nickname="Maykil Cordin", Level=1000},
-			new Player{ PlayerId=104, Nickname="a user", Level=800},
-			new Player{ PlayerId=89, Nickname="black window", Level=750}
-		};
+    static void Main(string[] args)
+    {
+        var zone = new GameSchene
+        {
+            new Player{ PlayerId=102, Nickname="Maykil Cordin", Level=1000},
+            new Player{ PlayerId=104, Nickname="a user", Level=800},
+            new Player{ PlayerId=89, Nickname="black window", Level=750}
+        };
 
-		foreach (var p in zone)
-		{
-			Console.WriteLine(p.ToString());
-		}
-	}
+        foreach (var p in zone)
+        {
+            Console.WriteLine(p.ToString());
+        }
+    }
 }
 ```
 
@@ -111,7 +110,7 @@ Pek tabii Assign metodunu Add olarak değiştirirsek kod başarılı bir şekild
 ```csharp
 public static class GameScheneExtensions
 {
-	public static void Add(this GameSchene e, Player p) => e.Assign(p);
+    public static void Add(this GameSchene e, Player p) => e.Assign(p);
 }
 ```
 

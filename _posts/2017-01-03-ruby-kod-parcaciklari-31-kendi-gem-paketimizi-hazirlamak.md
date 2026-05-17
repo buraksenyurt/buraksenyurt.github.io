@@ -29,21 +29,23 @@ Paketimizin adı Einstein. İçerisinde lib isimli bir klasör ve gemspec uzant�
 ```ruby
 #Einstein Gem
 module Algebra
-	class Common
-		def self.factorial(number)
-			if(number==0)
-				return 1
-			else
-				return number*factorial(number-1)
-			end
-		end
-		
-		def self.sum(*numbers)
-			total=0
-			numbers.each{|n|total+=n}
-			total
-		end
-	end
+class Common
+def self.factorial(number)
+if (number == 0)
+    return 1
+else
+    return number * factorial(number - 1)
+end
+end
+
+def self.sum( * numbers)
+total = 0
+numbers.each {
+    | n | total += n
+}
+total
+end
+end
 end
 ```
 

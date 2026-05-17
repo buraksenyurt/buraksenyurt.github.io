@@ -54,19 +54,19 @@ Bir Hello World desek iyi olmaz mı? E hadi o zaman. Öncesinde GO'nun derleyici
 package main
 
 import (
-	"fmt"
-	"math/rand"
+    "fmt"
+    "math/rand"
 )
 
 func main() {
-	fmt.Println("Hoş geldin öğrenci\nBugün ki şanslı sayın")
-	fmt.Println(GetRandomNumber(36))
+    fmt.Println("Hoş geldin öğrenci\nBugün ki şanslı sayın")
+    fmt.Println(GetRandomNumber(36))
 }
-func GetRandomNumber(seedValue int64) int{
-	rand.Seed(seedValue)
-	var luckyNumber int
-	luckyNumber=rand.Intn(100)
-	return luckyNumber
+func GetRandomNumber(seedValue int64) int {
+    rand.Seed(seedValue)
+    var luckyNumber int
+    luckyNumber = rand.Intn(100)
+    return luckyNumber
 }
 ```
 

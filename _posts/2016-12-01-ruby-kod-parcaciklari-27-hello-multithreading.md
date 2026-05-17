@@ -23,16 +23,16 @@ Pek çok programlama dilinde olduğu gibi Ruby'de de bir ana iş parçacığı v
 ```ruby
 puts "Main Thread #{Thread.current}\t#{Time.now}"
 
-t1=Thread.new{
-	puts "t1 #{Thread.current}\t#{Time.now}"
-	sleep 2
-	puts "t1 #{Thread.current}\t#{Time.now}"
+t1 = Thread.new {
+    puts "t1 #{Thread.current}\t#{Time.now}"
+    sleep 2
+    puts "t1 #{Thread.current}\t#{Time.now}"
 }
 
-t2=Thread.new do
-	puts "t2 #{Thread.current}\t#{Time.now}"
-	sleep 4
-	puts "t1 #{Thread.current}\t#{Time.now}"
+t2 = Thread.new do
+        puts "t2 #{Thread.current}\t#{Time.now}"
+    sleep 4
+puts "t1 #{Thread.current}\t#{Time.now}"
 end
 
 t1.join
@@ -51,19 +51,20 @@ Dikkat edileceği üzere kodun ilk ve son satırlarında elde edilen nesne örne
 Thread'ler de değişken kullanımları da oldukça kolaydır. Bazı hallerde farklı iş parçacıklarının aynı değişken değerleri ile çalışması gerekebilir. Ruby dilinde bunu sağlamak çokta zor değildir. Aşağıdaki basit kod parçasını göz önüne alalım.
 
 ```ruby
-total=0
-threads=[]
+total = 0
+threads = []
 
-5.times{
-	threads<<Thread.new{
-		sleep(rand(0.1)/10.0)		
-		total+=rand(10)
-		Thread.current["forThis"]=total
-	}
+5. times {
+    threads << Thread.new {
+        sleep(rand(0.1) / 10.0)
+        total += rand(10)
+        Thread.current["forThis"] = total
+    }
 }
-threads.each{|t|
-		t.join
-		puts t["forThis"]
+threads.each {
+    | t |
+        t.join
+    puts t["forThis"]
 }
 puts "Total = #{total}"
 ```
@@ -81,23 +82,23 @@ t["forThis"] kullanımı ile o anki iş parçacığının sahip olduğu total de
 Bir başka kod parçası ile yolumuza devam edelim. Bu kez iş parçacıklarının önceliklerini anlamaya çalışacağız. Normalde Main Thread varsayılan olarak 0 priority değeri ile başlatılır. İstersek diğer iş parçacıklarının önceliklerini değiştirebiliriz. Yüksek önceliğe sahip iş parçacıkları diğer düşük öncelikli iş parçacıklarına nazaran daha çok çalıştırılırlar. Bu durumu aşağıdaki kod parçası ile daha iyi anlayabiliriz.
 
 ```ruby
-for tryCount in 1..5
-	total1=total2=0
-	thread1=Thread.new{
-		while true
-			total1+=1
-		end
-	}
-	thread1.priority=5
-	thread2=Thread.new{
-		while true
-			total2+=1
-		end
-	}
-	thread2.priority=-5
-	sleep 1
-	puts "Total1=#{total1}\nTotal2=#{total2}"
-	puts "#{format("%.5f", (total1.to_f/total2.to_f))}\n\n"
+for tryCount in 1. .5
+total1 = total2 = 0
+thread1 = Thread.new {
+    while true
+    total1 += 1
+    end
+}
+thread1.priority = 5
+thread2 = Thread.new {
+    while true
+    total2 += 1
+    end
+}
+thread2.priority = -5
+sleep 1
+puts "Total1=#{total1}\nTotal2=#{total2}"
+puts "#{format(" % .5 f ", (total1.to_f/total2.to_f))}\n\n"
 end
 ```
 
@@ -114,25 +115,27 @@ end
 Multithreading ile ilgili bir diğer kritik konuda bloklar içerisinde oluşacak hatalarda sistemin nasıl davranış sergilediğidir. Yani bir iş parçacığı içerisinden ortama fırlayacak bir hata söz konusu olursa ne olur? Normal şartlarda bir iş parçacığında istisna oluşursa sadece bu iş parçacığı sonlanır ve kalanlar yaşamaya devam eder. Öncelikle bu vakayı ele alalım. İşte kod parçamız.
 
 ```ruby
-threads=[]
-threads<<Thread.new{
-	puts "thread 1 is running"
-	sleep 10
-	puts "end of thread 1"
+threads = []
+threads << Thread.new {
+    puts "thread 1 is running"
+    sleep 10
+    puts "end of thread 1"
 }
-threads<<Thread.new{
-	puts "thread 2 is running"
-	sleep 3
-	puts "end of thread 2"
-	}
-threads<<Thread.new{
-	puts "thread 3 is running"
-	sleep 1
-	raise ArgumentError,"Some argument error"
-	puts "end of thread 3"
+threads << Thread.new {
+    puts "thread 2 is running"
+    sleep 3
+    puts "end of thread 2"
+}
+threads << Thread.new {
+    puts "thread 3 is running"
+    sleep 1
+    raise ArgumentError, "Some argument error"
+    puts "end of thread 3"
 }
 puts "This is main thread"
-threads.each{|t|t.join}
+threads.each {
+    | t | t.join
+}
 puts "end of main thread"
 ```
 
@@ -145,26 +148,28 @@ Dikkat edileceği üzere thread 1 ve thread 2 başarılı bir şekilde işlemler
 Tabii bazı durumlarda bir iş parçacığı içerisinde oluşacak hatanın diğer bağımsız çalışan iş parçacıklarının işleyişini de kesmesi istenebilir. Bu durumda abort_on_exception değerine true atanması yeterlidir. Yukarıdaki kod parçasını aşağıdaki gibi düzenleyerek devam edelim.
 
 ```ruby
-threads=[]
-threads<<Thread.new{
-	puts "thread 1 is running"
-	sleep 10
-	puts "end of thread 1"
+threads = []
+threads << Thread.new {
+    puts "thread 1 is running"
+    sleep 10
+    puts "end of thread 1"
 }
-threads<<Thread.new{
-	puts "thread 2 is running"
-	sleep 3
-	puts "end of thread 2"
-	}
-threads<<Thread.new{
-	puts "thread 3 is running"
-	sleep 1
-	raise ArgumentError,"Some argument error"
-	puts "end of thread 3"
+threads << Thread.new {
+    puts "thread 2 is running"
+    sleep 3
+    puts "end of thread 2"
 }
-threads.last.abort_on_exception=true
+threads << Thread.new {
+    puts "thread 3 is running"
+    sleep 1
+    raise ArgumentError, "Some argument error"
+    puts "end of thread 3"
+}
+threads.last.abort_on_exception = true
 puts "This is main thread"
-threads.each{|t|t.join}
+threads.each {
+    | t | t.join
+}
 puts "end of main thread"
 ```
 

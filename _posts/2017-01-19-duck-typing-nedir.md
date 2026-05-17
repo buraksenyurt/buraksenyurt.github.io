@@ -99,7 +99,7 @@ Ne zararı var peki? Programcı zaten tipleri önceden tanımlayarak geliştirme
 
 Dinamik tip sistemli dillere gelindiğinde farklı bir bakış açısı daha var. Şimdi gelin bu farklılığı ortaya koyan Duck Typing ile aynı senaryonun bir benzerinin nasıl ele alınacağına bakalım. Ruby'de aşağıdaki örnek kod parçasını yazarak işe başlayabiliriz.
 
-```text
+```ruby
 class Car
   def drive
     puts "driver is driving"

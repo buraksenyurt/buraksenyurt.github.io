@@ -29,65 +29,85 @@ Dilerseniz vakit kaybetmeden örneğimize ait kodlara geçelim. Programımız ws
 
 wsrv.go dosya içeriği;
 
-```golang
+```go
 package main
 
 import (
     "fmt"
     "log"
     "net/http"
-	"time"
-	"strings"
-	"encoding/json"
+    "time"
+    "strings"
+    "encoding/json"
 )
 
-var products [4]Product
-	
-func homePage(writer http.ResponseWriter, request *http.Request){
-    fmt.Printf("[%s]\t%s:%s\n",request.Method,time.Now(),request.URL)
-	//gelen istege karsilik dosya varsa gosterir. yoksa http 404 verir
-	http.ServeFile(writer, request, request.URL.Path[1:]) 
+var products[4] Product
+
+func homePage(writer http.ResponseWriter, request * http.Request) {
+    fmt.Printf("[%s]\t%s:%s\n", request.Method, time.Now(), request.URL)
+        //gelen istege karsilik dosya varsa gosterir. yoksa http 404 verir
+    http.ServeFile(writer, request, request.URL.Path[1: ])
 }
 
-func getProduct(writer http.ResponseWriter, request *http.Request) {
-	fmt.Printf("[%s]\t%s:%s\n",request.Method,time.Now(),request.URL)
-	var url string=request.URL.Path
-	var result []Product
-	parts:=strings.Split(url,"/")
-	
-	for _, p := range products {
-		if(strings.EqualFold(p.Category,parts[2])) {
-			result=append(result,p)
-		}
-	}
-	if len(result)==0{
-		http.Error(writer, http.StatusText(404), 404)
-	}else{
-		json.NewEncoder(writer).Encode(result)
-	}
+func getProduct(writer http.ResponseWriter, request * http.Request) {
+    fmt.Printf("[%s]\t%s:%s\n", request.Method, time.Now(), request.URL)
+    var url string = request.URL.Path
+    var result[] Product
+    parts: = strings.Split(url, "/")
+
+    for _, p: = range products {
+        if (strings.EqualFold(p.Category, parts[2])) {
+            result = append(result, p)
+        }
+    }
+    if len(result) == 0 {
+        http.Error(writer, http.StatusText(404), 404)
+    } else {
+        json.NewEncoder(writer).Encode(result)
+    }
 }
 
-func getProducts(writer http.ResponseWriter, request *http.Request){ 	
-    fmt.Printf("[%s]\t%s:%s\n",request.Method,time.Now(),request.URL)
+func getProducts(writer http.ResponseWriter, request * http.Request) {
+    fmt.Printf("[%s]\t%s:%s\n", request.Method, time.Now(), request.URL)
     json.NewEncoder(writer).Encode(products)
 }
 
 func main() {
-	products[0]=Product{Id:9001,Title: "intel core i5", Category: "CPU", UnitPrice: 150.90}
-	products[1]=Product{Id:9021,Title: "intel core i7", Category: "CPU", UnitPrice: 200.35}
-	products[2]=Product{Id:7800,Title: "google mouse", Category: "OEM", UnitPrice: 44.35}
-	products[3]=Product{Id:1450,Title: "Logitech Wireless Keyboard", Category: "OEM", UnitPrice: 18.98}
-	
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/products/", getProduct)
-	http.HandleFunc("/products", getProducts)
-	log.Fatal(http.ListenAndServe(":8084", nil))
+    products[0] = Product {
+        Id: 9001,
+        Title: "intel core i5",
+        Category: "CPU",
+        UnitPrice: 150.90
+    }
+    products[1] = Product {
+        Id: 9021,
+        Title: "intel core i7",
+        Category: "CPU",
+        UnitPrice: 200.35
+    }
+    products[2] = Product {
+        Id: 7800,
+        Title: "google mouse",
+        Category: "OEM",
+        UnitPrice: 44.35
+    }
+    products[3] = Product {
+        Id: 1450,
+        Title: "Logitech Wireless Keyboard",
+        Category: "OEM",
+        UnitPrice: 18.98
+    }
+
+    http.HandleFunc("/", homePage)
+    http.HandleFunc("/products/", getProduct)
+    http.HandleFunc("/products", getProducts)
+    log.Fatal(http.ListenAndServe(":8084", nil))
 }
 
 type Product struct {
     Id int "json:\"ID\""
-	Title string "json:\"Title\""
-	Category string "json:\"Category\""
+    Title string "json:\"Title\""
+    Category string "json:\"Category\""
     UnitPrice float32 "json:\"UnitPrice\""
 }
 ```
@@ -97,16 +117,19 @@ type Product struct {
 ```html
 <html>
 <html>
-  <head>
-	  <title>AZON Tools and Products</title>
-  </head>
-  <body>
-	  <b>All Tools</b>
-	  <br/>
-	  <i>Whatever you want...We ara solution</i>
-	  <br/>
-	  <a href="http://localhost:8084/products">All Products</a>
-  </body>
+
+<head>
+    <title>AZON Tools and Products</title>
+</head>
+
+<body>
+    <b>All Tools</b>
+    <br />
+    <i>Whatever you want...We ara solution</i>
+    <br />
+    <a href="http://localhost:8084/products">All Products</a>
+</body>
+
 </html>
 ```
 
@@ -114,14 +137,14 @@ type Product struct {
 
 Tahmin edeceğiniz üzere main fonksiyonu içerisinde bazı yönlendirmeler mevcut. HTTP ile gelen Get taleplerini dinliyor ve basit bir route sistemi kullanıyoruz. Gerekli paketler import ile bildirilmiş durumda.
 
-| Paket Adı | Kullanım Amacı |
+| **Paket Adı** | **Kullanım Amacı** |
 | --- | --- |
-| encoding/json | Çıktıları JSON formatında verebilmek için gerekli fonksiyonellikleri içerir. |
-| http | En kilit paketimiz. HTTP taleplerini dinlemek ve çıktı üretmek için gerekli operasyonları içerir. |
-| strings | products/OEM şeklindeki kategori bazlı ürünleri çekmek için gelen URL bilgisini / işaretine göre ayrıştırmaya çalışıyoruz. Burada kullandığımız Split fonksiyonu Strings paketinde yer alıyor. Tabii strings paketinde bir sürü ama bir sürü işe yarar fonksiyon var. İnceleyin. |
-| log | Log basmak için kullandığımız paket. Filmimizde oldukça küçük bir role sahip. |
-| fmt | Gelen talebin ne olduğu, hangi zamanda yapıldığı ve HTTP Metodunun adını ekrana basarken standart Printf gibi fonksiyonlara başvuruyoruz. Bu fonksiyonu içeren paket. |
-| time | İşlem zamanını yakalamak için kullandığımız Now fonksiyonunu içeren paket. |
+| **encoding/json** | Çıktıları JSON formatında verebilmek için gerekli fonksiyonellikleri içerir. |
+| **http** | En kilit paketimiz. HTTP taleplerini dinlemek ve çıktı üretmek için gerekli operasyonları içerir. |
+| **strings** | products/OEM şeklindeki kategori bazlı ürünleri çekmek için gelen URL bilgisini / işaretine göre ayrıştırmaya çalışıyoruz. Burada kullandığımız Split fonksiyonu Strings paketinde yer alıyor. Tabii strings paketinde bir sürü ama bir sürü işe yarar fonksiyon var. İnceleyin. |
+| **log** | Log basmak için kullandığımız paket. Filmimizde oldukça küçük bir role sahip. |
+| **fmt** | Gelen talebin ne olduğu, hangi zamanda yapıldığı ve HTTP Metodunun adını ekrana basarken standart Printf gibi fonksiyonlara başvuruyoruz. Bu fonksiyonu içeren paket. |
+| **time** | İşlem zamanını yakalamak için kullandığımız Now fonksiyonunu içeren paket. |
 
 main fonksiyonu içerisinde kobay dizimiz olan products'a bir kaç Product nesne örneği ekliyoruz. Product tipi bir Struct. Sembolik olarak ürünün benzersiz numarasını (Id), adını (Title), liste fiyatını (UnitPrice) ve bulunduğu kategori (Category) bilgisini içeren değerler taşımakta. main içerisindeki diğer satırlar ise yazımızın kilit noktasını oluşturuyor. [HandleFunc](https://golang.org/pkg/net/http/#HandleFunc) iki parametre almakta. İlki ele alınacak talebe ait adres bilgisi. İkincisi ise bu tip bir talep geldiğinde çalıştırılacak olan fonksiyon. Örneğin / için homePage, /products/ için getProduct, /products için getProducts fonksiyonları çağırılacak.
 

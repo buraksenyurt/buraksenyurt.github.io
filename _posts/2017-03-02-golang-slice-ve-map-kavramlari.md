@@ -34,63 +34,69 @@ Bir slice'dan vereceğimiz değer aralığına göre başka bir slice da oluştu
 
 Şimdi basit bir kod parçası ile slice tipini nasıl kullanabileceğimize bakalım.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	"math"
-	)
-	
-func main(){
-	words:=[]string{"red","plane","colors","car"}
-	fmt.Println(words)
-	fmt.Println(words[1])
-	
-	var sumBytes []int // Slice tanimi
-	sumBytes=make([]int,4,10) // 4 eleman icerek sekilde slice'in kurgulanmasi
-	fmt.Printf("Length=%d,Capacity=%d\n",len(sumBytes),cap(sumBytes))
-	fmt.Println(sumBytes)
-	for i:=0;i<cap(sumBytes);i++{
-		if i>=len(sumBytes){
-			sumBytes=append(sumBytes,i*3)
-			}else{
-				sumBytes[i]=i*2
-				}
-	}
-	fmt.Println(sumBytes)
-	
-	// slice'dan slice alinmasi halinde ortak degiskenlerin durumu
-	subSumBytes:=sumBytes[3:6]
-	subSumBytes[0]=-1
-	subSumBytes[1]=-1
-	subSumBytes[2]=-1
-	fmt.Println(sumBytes)
-	fmt.Println(subSumBytes)
-	
-	// diziden slice cikartmalar
-	points:=[6]int{3,5,6,-4,-18,20}	 // 6 elemanli array alttaki birkac slice icin kullanilacak
-	subPoints1:=points[0:3]
-	fmt.Println(subPoints1)	
-	subPoints2:=points[3:len(points)]
-	fmt.Println(subPoints2)
-	subPoints3:=points[:]
-	fmt.Println(subPoints3)
-	subPoints4:=points[4:]
-	fmt.Println(subPoints4)
-	
-	// append
-	newSlice:=make([]float32,5,10) // 5 elemanli ve max 10 kapasiteli slice tanimi
-	newSlice[0]=1.32	
-	newSlice=append(newSlice,math.Pi,2.277) // Slice'in sonuna eleman ekledi
-	fmt.Println(newSlice)
-	
-	// Copy
-	newSlice1:=[]int{3,5,1,7,8} // 5 elemanli ve kapasiteli bir slice
-	newSlice2:=make([]int,3) // 3 elemanli ve kapasiteli bir slice
-	copy(newSlice2,newSlice1)
-	fmt.Println(newSlice1)
-	fmt.Println(newSlice2)
+    "fmt"
+    "math"
+)
+
+func main() {
+    words: = [] string {
+        "red", "plane", "colors", "car"
+    }
+    fmt.Println(words)
+    fmt.Println(words[1])
+
+    var sumBytes[] int // Slice tanimi
+    sumBytes = make([] int, 4, 10) // 4 eleman icerek sekilde slice'in kurgulanmasi
+    fmt.Printf("Length=%d,Capacity=%d\n", len(sumBytes), cap(sumBytes))
+    fmt.Println(sumBytes)
+    for i: = 0;i < cap(sumBytes);i++{
+        if i >= len(sumBytes) {
+            sumBytes = append(sumBytes, i * 3)
+        } else {
+            sumBytes[i] = i * 2
+        }
+    }
+    fmt.Println(sumBytes)
+
+    // slice'dan slice alinmasi halinde ortak degiskenlerin durumu
+    subSumBytes: = sumBytes[3: 6]
+    subSumBytes[0] = -1
+    subSumBytes[1] = -1
+    subSumBytes[2] = -1
+    fmt.Println(sumBytes)
+    fmt.Println(subSumBytes)
+
+    // diziden slice cikartmalar
+    points: = [6] int {
+            3, 5, 6, -4, -18, 20
+        } // 6 elemanli array alttaki birkac slice icin kullanilacak
+    subPoints1: = points[0: 3]
+    fmt.Println(subPoints1)
+    subPoints2: = points[3: len(points)]
+    fmt.Println(subPoints2)
+    subPoints3: = points[: ]
+    fmt.Println(subPoints3)
+    subPoints4: = points[4: ]
+    fmt.Println(subPoints4)
+
+    // append
+    newSlice: = make([] float32, 5, 10) // 5 elemanli ve max 10 kapasiteli slice tanimi
+    newSlice[0] = 1.32
+    newSlice = append(newSlice, math.Pi, 2.277) // Slice'in sonuna eleman ekledi
+    fmt.Println(newSlice)
+
+    // Copy
+    newSlice1: = [] int {
+            3, 5, 1, 7, 8
+        } // 5 elemanli ve kapasiteli bir slice
+    newSlice2: = make([] int, 3) // 3 elemanli ve kapasiteli bir slice
+    copy(newSlice2, newSlice1)
+    fmt.Println(newSlice1)
+    fmt.Println(newSlice2)
 }
 ```
 
@@ -126,50 +132,50 @@ key olarak tutulan veri türünün karşılaştırılabilir (comparable) olması
 package main
 
 import (
-	"fmt"
-	)
-	
-func main(){
-	var words map[string]string
-	words=make(map[string]string) // map'i kullanabilmek icin make ile olusturmamiz gerekir.Yoksa calisma zamaninda hata aliriz
-	
-	words["red"]="rot"
-	words["black"]="schwarz"
-	words["blue"]="blau"
-	words["green"]="grun"
-	
-	fmt.Println(words)
-	fmt.Println(words["blue"])
-	fmt.Println(words["empty"])
-	
-	// bir key degerinin map icinde olup olmadigini anlamak icin asagidaki ifadeyi kullanabiliriz
-	_, isExist:=words["empty"]
-	fmt.Println("words[empty] is exist = ",isExist)
-	
-	for key,value:=range words{
-		fmt.Printf("key:%s\tvalue:%s\n",key,value)
-	}
-	
-	// Bir map'i asagidaki gibi ayni ifadede tanimlayip elemanlarini belirleyebiliriz
-	levels:=map[int]string{
-		100 : "Beginners",
-		200 : "Intermediate",
-		300 : "Amateur",
-		400 : "Pro",
-		500 : "Master",
-		0 : "unknown",		
-	}
-	WriteMapToConsole(levels)
-	// map'ten eleman silmek icin delete kullanabiliriz
-	fmt.Println("deleting 0")
-	delete(levels,0)
-	WriteMapToConsole(levels)
+    "fmt"
+)
+
+func main() {
+    var words map[string] string
+    words = make(map[string] string) // map'i kullanabilmek icin make ile olusturmamiz gerekir.Yoksa calisma zamaninda hata aliriz
+
+    words["red"] = "rot"
+    words["black"] = "schwarz"
+    words["blue"] = "blau"
+    words["green"] = "grun"
+
+    fmt.Println(words)
+    fmt.Println(words["blue"])
+    fmt.Println(words["empty"])
+
+    // bir key degerinin map icinde olup olmadigini anlamak icin asagidaki ifadeyi kullanabiliriz
+    _, isExist: = words["empty"]
+    fmt.Println("words[empty] is exist = ", isExist)
+
+    for key, value: = range words {
+        fmt.Printf("key:%s\tvalue:%s\n", key, value)
+    }
+
+    // Bir map'i asagidaki gibi ayni ifadede tanimlayip elemanlarini belirleyebiliriz
+    levels: = map[int] string {
+        100: "Beginners",
+        200: "Intermediate",
+        300: "Amateur",
+        400: "Pro",
+        500: "Master",
+        0: "unknown",
+    }
+    WriteMapToConsole(levels)
+        // map'ten eleman silmek icin delete kullanabiliriz
+    fmt.Println("deleting 0")
+    delete(levels, 0)
+    WriteMapToConsole(levels)
 }
 
-func WriteMapToConsole(m map[int]string){
-	for k,v:=range m{
-		fmt.Printf("key:%d -> value:%s\n",k,v)
-	}
+func WriteMapToConsole(m map[int] string) {
+    for k, v: = range m {
+        fmt.Printf("key:%d -> value:%s\n", k, v)
+    }
 }
 ```
 
@@ -179,33 +185,34 @@ words isimli map değişkeni string tipinden key ve value değerleri taşıyacak
 
 map'ler ile ilgili enteresan konulardan birisi de value içerisinde de map'ler barındırılabileceği. Aşağıda bu durumu anlatan örnek bir kod parçasına yer veriliyor.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	)
-	
-func main(){
-	css:=map[string]map[string]string{
-		"table" : map[string]string{
-			"fontColor" : "white",
-			"backgrounColod" : "blue",
-		},
-		"button" : map[string]string{
-			"fontName" : "tahoma",
-			"fonsSize" : "24",
-			"fontColor" : "red",
-			"backColor" : "black",
-		},
-	}
-	
-	for k,v:=range css{
-		fmt.Println(k)
-		for sk,sv:=range v{
-			fmt.Printf("\t%s:%s\n",sk,sv)
-		}
-	}
+    "fmt"
+)
+
+func main() {
+    css: = map[string] map[string] string {
+        "table": map[string] string {
+            "fontColor": "white",
+            "backgrounColod": "blue",
+        },
+        "button": map[string] string {
+            "fontName": "tahoma",
+            "fonsSize": "24",
+            "fontColor": "red",
+            "backColor": "black",
+        },
+    }
+
+        for k,
+    v: = range css {
+        fmt.Println(k)
+        for sk, sv: = range v {
+            fmt.Printf("\t%s:%s\n", sk, sv)
+        }
+    }
 }
 ```
 

@@ -20,38 +20,39 @@ Amaç bir MP3 dosyası üzerinde eğer varsa kayıtlı Tag bilgilerini elde etme
 
 ```ruby
 class TagInfo
-	attr_accessor :track_name,:artist_name,:album_name,:year
-	
-	def initialize(track_name,artist_name,album_name,year)
-		@track_name,@artist_name,@album_name,@year=track_name,artist_name,album_name,year
-	end
-	
-	def to_s
-		"#{@artist_name}-#{@album_name}-#{@track_name} (#{@year})"
-	end
+attr_accessor: track_name,: artist_name,: album_name,: year
+
+def initialize(track_name, artist_name, album_name, year)
+@track_name, @artist_name, @album_name, @year = track_name, artist_name, album_name, year
+end
+
+def to_s
+    "#{@artist_name}-#{@album_name}-#{@track_name} (#{@year})"
+end
 end
 
 def get_tag_info(mp3)
-	info=nil
-	open(mp3) do |f|
-		f.seek(-128,File::SEEK_END)
-		if f.read(3)=="TAG"
-			info=TagInfo.new(
-				f.read(30),
-				f.read(30),
-				f.read(30),
-				f.read(4)
-			)
-		end
-	end
-	return info
+info = nil
+open(mp3) do | f |
+        f.seek(-128, File::SEEK_END)
+    if f.read(3) == "TAG"
+info = TagInfo.new(
+    f.read(30),
+    f.read(30),
+    f.read(30),
+    f.read(4)
+)
+end
+end
+return info
 end
 
-songs=Dir.glob("*.mp3")
-songs.each{
-	|s|
-	puts get_tag_info(s).to_s
-	}
+songs = Dir.glob("*.mp3")
+songs.each {
+    |
+    s |
+        puts get_tag_info(s).to_s
+}
 ```
 
 Kodumuz TagInfo isimli bir sınıf tasarımı ile başlıyor. Bana göre MP3 şarkısının tag yapısı sistem içerisinde bir varlık olarak ifade edilmeli (Hatta daha geniş kapsamlı düşünüsek MP3 dosya içeriğini ve ilgili Tag bilgilerini barındıran bir sınıf tasarımı da mümkün olabilir. Bu sınıfa ait nesne örnekleri NoSQL tabanlı bir yapıda saklanabilir. Alın size db tabanlı bir müzik seti) Ben çok daha yüzeysel basit bir sınıf tanımladım. İçerisinde dört nitelik yer alıyor. track, artist, album ve year bilgilerini tutmayı planlıyorum. Örnek çıktılarını ekrana bastırmak gibi bir amacım da olduğundan to_s metodunu eziyorum (Bu arada initialize metodu içerisinde çoklu atama işlemi gerçekleştirdiğimize dikkat edelim)

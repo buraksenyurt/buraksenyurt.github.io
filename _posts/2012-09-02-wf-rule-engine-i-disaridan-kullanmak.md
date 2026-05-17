@@ -30,7 +30,9 @@ Ancak nasıl ki Biztalk tarafında dışarıdan kullanabileceğimiz bir Rule Eng
 
 Test amaçlı olarak kullanacağımız bu Windows Form uygulamasında Product tipine ait basit kuralları tanımlayabileceğimiz, kayıt altına alabileceğimiz, tekrardan yükleyebileceğimiz ve çalıştırıp sonuçlarını görebileceğimiz işlevsellikler söz konusudur.
 
-> Pek tabi Workflow Foundation Rule Set Engine kullanılmak istendiğinden, projeye aşağıdaki.Net Assembly’ larının da referans edilmesi gerekmektedir.![wfrule_References](/assets/images/2012/wfrule_References.png)
+Pek tabii Workflow Foundation Rule Set Engine kullanılmak istendiğinden, projeye aşağıdaki.Net Assembly’ larının da referans edilmesi gerekmektedir.
+
+![wfrule_References](/assets/images/2012/wfrule_References.png)
 
 Şimdi arka planda gerekli olan kod üretimlerini gerçekleştirerek işlemlerimize devam edelim. Kural motoru için kullanacağımız Product tipi ve bir kuralın XAML (eXtensible Application Markup Language) olarak serileştirilmesi (Serialization) ile tekrardan geri yüklenmesi (DeSerialization) için gerekli fonksiyonellikleri içeren Utility sınıfının kod içerikleri aşağıdaki gibidir.
 
