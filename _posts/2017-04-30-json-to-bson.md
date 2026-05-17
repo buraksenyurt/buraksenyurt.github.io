@@ -16,14 +16,15 @@ categories:
 ---
 Sanıyorum her.Net programcısının takım çantasında yer alan paketlerden birisi de Newtonsoft'un JSON serileştirme kütüphanesidir. JSON (JavaScriptObjectNotation) formatı, XML (eXtensibleMarkupLanguage) şemasından sonra hafif ve az yer kaplama özellikleri nedeniyle çokça tercih edilen standartlardan birisi haline gelmiştir. Diğer yandan JSON içeriklerin Binary formatta serileştirilmiş versiyonu olarak adlandırılan BSON formatı da sıklıkla kullanılmaktadır.
 
-![bson.gif](/assets/images/2017/bson.gif)
-
 [BSON](http://bsonspec.org/#/specification), NoSQL camiasının liderlerinden MongoDB ile popülerlik kazanmış bir veri formatı. JSON içeriğinin binary formatta sunulması oldukça hızlı gerçekleşebilecek bir işlem. Bu nedenle NoSQL tabanlı sistemlerde yatay ölçeklenen veri kümeleri arasındaki iletişimde tercih edilebiliyor. Ağ üzerinde dolaşan bu küçültülmüş paketler içerisinde JSON tipinde veri bulunuyor. Zaten tasarım amaçlarından birisi de bu.
+
+![bson.gif](/assets/images/2017/bson.gif)
 
 Peki.Net tarafında kullanılan nesne örneklerini BSON formatına nasıl dönüştürebiliriz? Bunun bilinen pek çok yolu var tabii ki ancak uygulamanızda Newtonsoft ve JSON içerikleri ile çalışıyorsanız işi kolaylaştıracak tiplerde bu paketle birlikte geliyor. Newtonsoft.Json paketi, bir JSON içeriğinin binary olarak yazılması ve okunması için iki temel tip sunmakta. Bu tipleri kullanarak BSON dönüşüm işlemleri kolayca gerçekleştirilebilir. Basit bir örnekle konuyu özetleyelim.
 
-> Başlamadan önce Newtonsoft'un ilgili paketinin uygulamaya yüklenmiş olması gerektiğini hatırlatalım. Bunu NuGet Package Manager veya Console üzerinden gerçekleştirebiliriz.
-> ![bson_1.gif](/assets/images/2017/bson_1.gif)
+Başlamadan önce Newtonsoft'un ilgili paketinin uygulamaya yüklenmiş olması gerektiğini hatırlatalım. Bunu NuGet Package Manager veya Console üzerinden gerçekleştirebiliriz.
+
+![bson_1.gif](/assets/images/2017/bson_1.gif)
 
 Aşağıdaki sınıf diagramında ve kod parçasında görülen tipleri tasarladığımızı düşünelim.
 
@@ -32,28 +33,28 @@ Aşağıdaki sınıf diagramında ve kod parçasında görülen tipleri tasarlad
 ```csharp
 public class Person
 {
-	public int PersonId { get; set; }
-	public string Title { get; set; }
-	public decimal Salary { get; set; }
-	public Job[] Jobs { get; set; } // SOAPFormantter desteği için Array yapıldı
+    public int PersonId { get; set; }
+    public string Title { get; set; }
+    public decimal Salary { get; set; }
+    public Job[] Jobs { get; set; } // SOAPFormantter desteği için Array yapıldı
 
-	public override string ToString()
-	{
-		return string.Format("{0}-{1}-{2}"
-			, PersonId, Title, Salary.ToString("C2"));
-	}
+    public override string ToString()
+    {
+        return string.Format("{0}-{1}-{2}"
+            , PersonId, Title, Salary.ToString("C2"));
+    }
 }
 
 public class Job
 {
-	public int JobId { get; set; }
-	public string Description { get; set; }
-	public DateTime AddingTime { get; set; }
-	public override string ToString()
-	{
-		return string.Format("\t{0}-{1}-{2}"
-			, JobId, Description, AddingTime.ToShortDateString());
-	}
+    public int JobId { get; set; }
+    public string Description { get; set; }
+    public DateTime AddingTime { get; set; }
+    public override string ToString()
+    {
+        return string.Format("\t{0}-{1}-{2}"
+            , JobId, Description, AddingTime.ToShortDateString());
+    }
 }
 ```
 
@@ -62,59 +63,59 @@ Kişi bilgisini tuttuğumuz Person ve bu kişilerin önceden çalıştıkları i
 ```csharp
 public class Utility
 {
-	public List<Person> FillEmployees()
-	{
-		List<Person> employees = new List<Person>();
+    public List<Person> FillEmployees()
+    {
+        List<Person> employees = new List<Person>();
 
-		employees.Add(new Person
-		{
-			PersonId = 1,
-			Title = "Coni Minomic",
-			Salary = 1900,
-			Jobs = (new List<Job>
-			{
-				new Job{ 
-					JobId=1
-					, Description="Google's Master Computer Scientist"
-					, AddingTime= DateTime.Now
-				},
-				new Job{ 
-					JobId=2
-					, Description="Amazon Big Cloud System Manager"
-					, AddingTime= DateTime.Now
-				},
-			}).ToArray()
-		});
+        employees.Add(new Person
+        {
+            PersonId = 1,
+            Title = "Coni Minomic",
+            Salary = 1900,
+            Jobs = (new List<Job>
+            {
+                new Job{
+                    JobId=1
+                    , Description="Google's Master Computer Scientist"
+                    , AddingTime= DateTime.Now
+                },
+                new Job{
+                    JobId=2
+                    , Description="Amazon Big Cloud System Manager"
+                    , AddingTime= DateTime.Now
+                },
+            }).ToArray()
+        });
 
-		employees.Add(new Person
-		{
-			PersonId = 1,
-			Title = "Jon Carter",
-			Salary = 1780,
-			Jobs = (new List<Job>
-			{
-				new Job{ 
-					JobId=1
-					, Description="Microsoft Principle Developer"
-					, AddingTime= DateTime.Now
-				}
-			}).ToArray()
-		});
+        employees.Add(new Person
+        {
+            PersonId = 1,
+            Title = "Jon Carter",
+            Salary = 1780,
+            Jobs = (new List<Job>
+            {
+                new Job{
+                    JobId=1
+                    , Description="Microsoft Principle Developer"
+                    , AddingTime= DateTime.Now
+                }
+            }).ToArray()
+        });
 
-		return employees;
-	}
+        return employees;
+    }
 
-	public void WriteLine(List<Person> personOfInterest)
-	{
-		foreach (var person in personOfInterest)
-		{
-			Console.WriteLine(person.ToString());
-			foreach (var job in person.Jobs)
-			{
-				Console.WriteLine(job.ToString());
-			}
-		}
-	}
+    public void WriteLine(List<Person> personOfInterest)
+    {
+        foreach (var person in personOfInterest)
+        {
+            Console.WriteLine(person.ToString());
+            foreach (var job in person.Jobs)
+            {
+                Console.WriteLine(job.ToString());
+            }
+        }
+    }
 }
 ```
 
@@ -160,9 +161,7 @@ namespace BsonExample
             }
         }
     }
-	.
-	.
-	.
+    // Devam eden kodlar
 ```
 
 Koddaki başrol oyuncuları JsonSerializer, BsonWriter ve BsonReader sınıflarıdır. İlk using bloğunda MemoryStream ile belleğe açılan employees liste içeriğinin Base64 kodlamasından yararlanılarak dosyaya yazdırılması söz konusudur. İkinci using bloğunda ise bir kaç satır önce dosyaya yazılmış olan binary içeriğin Base64'ten byte[] haline getirilmesi ve ardından BsonReader kullanılarak generic Person listesine dönüştürülmesi işlemi yapılmaktadır. Kritik noktalardan birisi dePerson tipinden bir listenin (List) kullanılmasıdır. Eğer BsonReader nesne örneğinin ReadRootValueAsArray özelliğine true verilmezse bu listenin ters-serileştirilme aşamasında aşağıdaki ekran görüntüsünde yer alan JsonSerializationException oluşacaktır.

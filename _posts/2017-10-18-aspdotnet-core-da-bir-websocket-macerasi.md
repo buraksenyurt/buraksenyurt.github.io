@@ -30,7 +30,7 @@ Epey zamandır varlığından haberdar olduğumuz bu modelin Asp.Net tarafında 
 
 Neyse ki Asp.Net Core tarafında WebSockets desteği mevcut. Tabii SignalR bu işin nirvanası gibi duruyor ama ben Web Socket kullanımını merak etmekteyim. O zaman kolları sıvayalım ve yeni bir Asp.Net Core projesi oluşturarak işe koyulalım. Bakalım olayın özünü anlayabilecek miyim?
 
-Projenin Oluşturulması
+## Projenin Oluşturulması
 
 Örneği her zamanki gibi şirket bilgisayarında geliştirmekteyim. Dolayısıyla Windows 7 tabanlı bir işletim sisteminde.Net Core 2.0 ortamı olduğunu ifade edebilirim. Önceki yazıda kurdurttuğum ortam. Terminalden aşağıdaki komutu vererek HelloWebSockets isimli projeyi oluşturarak başlayalım.
 
@@ -48,7 +48,7 @@ dotnet add HelloWebSockets.csproj package Microsoft.AspNetCore.WebSockets
 
 ![websockets_2.gif](/assets/images/2017/websockets_2.gif)
 
-Kodlar
+## Kodlar
 
 Artık gerekli kodları yazarak ilerleyebiliriz. İlk olarak Startup sınıfındaki Configure metoduyla uğraşacağız. Burada çalışma zamanına WebSockets kullanacağımızı bildireceğiz ve istemci ile sunucu arasındaki iletişimi açıp hareket eden mesajların kontrolünü sağlayacağız. Amacımız istemciden gelen mesajı yakalamak ve ona bir şeyler söylemek. Örneğin bugünkü şanslı numarasının ne olduğunu...
 
@@ -162,44 +162,46 @@ namespace HelloWebSockets
 }
 ```
 
-Program.cs içeriğinde çok fazla müdahalemiz yok. Sadece kullanılacak port bilgisini ayarlıyoruz. Buna göre http://localhost:5556 adresinden yayın yapacağız ve istemciler ws://localhost:5556/nokya adresini kullanarak Web Sockets temelli iletişimi gerçekleştirebilecekler. Örnekte istemci olarak index.html sayfasını ele alacağız. wwwroot klasöründe konuşlandıracağımız sayfanın içeriğini aşağıdaki gibi yazabiliriz.
+Program.cs içeriğinde çok fazla müdahalemiz yok. Sadece kullanılacak port bilgisini ayarlıyoruz. Buna göre `http://localhost:5556` adresinden yayın yapacağız ve istemciler `ws://localhost:5556/nokya` adresini kullanarak Web Sockets temelli iletişimi gerçekleştirebilecekler. Örnekte istemci olarak index.html sayfasını ele alacağız. wwwroot klasöründe konuşlandıracağımız sayfanın içeriğini aşağıdaki gibi yazabiliriz.
 
 index.html
 
-```text
+```html
 <html>
+
 <head>
     <title>Asp.Net Core ile Web Sockets Kullanımı</title>
 </head>
+
 <body>
-<button id="btnConnect" type="submit">Connect</button><br/>
-Message : <input id="lblMessage" style="width:300;" /><br/>
-<button id="btnSendMessage" type="submit">Send Message</button><br/>
-<button id="btnDisconnect" type="submit">Disconnect</button><br/>
-<script>
-    var btnConnect = document.getElementById("btnConnect");
-    var btnSendMessage=document.getElementById("btnSendMessage");
-	var lblMessage=document.getElementById("lblMessage");
-	var btnDisconnect=document.getElementById("btnDisconnect");
-	var socket;
-	
-	btnConnect.onclick = function() {
+    <button id="btnConnect" type="submit">Connect</button><br />
+    Message : <input id="lblMessage" style="width:300;" /><br />
+    <button id="btnSendMessage" type="submit">Send Message</button><br />
+    <button id="btnDisconnect" type="submit">Disconnect</button><br />
+    <script>
+        var btnConnect = document.getElementById("btnConnect");
+        var btnSendMessage = document.getElementById("btnSendMessage");
+        var lblMessage = document.getElementById("lblMessage");
+        var btnDisconnect = document.getElementById("btnDisconnect");
+        var socket;
+
+        btnConnect.onclick = function () {
             socket = new WebSocket("ws://localhost:5556/nokya");
-            socket.onopen = function (e) {				
-                console.log("Connected",e);
+            socket.onopen = function (e) {
+                console.log("Connected", e);
             };
             socket.onclose = function (e) {
-                console.log("Disconnected",e);
+                console.log("Disconnected", e);
             };
-            socket.onerror = function(e){
-				console.error(e.data);
-			};
+            socket.onerror = function (e) {
+                console.error(e.data);
+            };
             socket.onmessage = function (e) {
                 console.log(e.data);
             };
-		}
-	
-	btnSendMessage.onclick = function () {
+        }
+
+        btnSendMessage.onclick = function () {
             if (!socket || socket.readyState != WebSocket.OPEN) {
                 console.error("Houston we have a problem! Socket not connected.");
             }
@@ -207,21 +209,21 @@ Message : <input id="lblMessage" style="width:300;" /><br/>
             socket.send(data);
             console.log(data);
         }
-		
-	btnDisconnect.onclick = function () {
-			if (!socket || socket.readyState != WebSocket.OPEN) {
-				console.error("Houston we have a problem! Socket not connected.");
-			}
-			socket.close(1000, "Closing from Apollo 13");			
+
+        btnDisconnect.onclick = function () {
+            if (!socket || socket.readyState != WebSocket.OPEN) {
+                console.error("Houston we have a problem! Socket not connected.");
+            }
+            socket.close(1000, "Closing from Apollo 13");
         }
-	
-</script>
+
+    </script>
 </body>
 ```
 
 Temel olarak bağlantıyı açmayı, text kutusuna yazılan içeriği karşı tarafa göndermeyi, aradaki iletişimi debug penceresinden izlemeyi ve son olarak da iletişimi başarılı şekilde sonlandırmayı hedefliyoruz. İçerikteki en değerli kodlarımız btnConnect butonuna basıldığında çalışıyor. Dikkat edileceği üzere bir WebSocket nesnesi üretilmekte. Adres olarak da ws://localhost:5556/nokya adresi kullanılıyor. Adresin ws ile başladığına dikkat edelim. Oluşturulan WebSockets nesnesi için bazı olaylar tanımlanıyor. Bağlantı açıldığında, kapatıldığında, sunucudan mesaj alındığında veya bir hata oluştuğunda. Sunucuya mesaj göndermek için WebSocket nesnesinin send fonksiyonundan yararlanılmakta.
 
-Sonuçlar
+## Sonuçlar
 
 Öncelikli olarak
 
@@ -229,7 +231,7 @@ Sonuçlar
 dotnet run
 ```
 
-komutuyla web sunucusunun çalıştırılması gerekiyor. Sonrasında herhangibir tarayıcıdan (Örnekte Google Chrome kullanılmıştır) http://localhost:5556/ adresine gidilmesi yeterli. Önce bağlanıp ardından mesaj gönderebiliriz. Sonrasında da iletişimi kapatmamız yeterli. İşte benim elde ettiğim sonuçlar.
+komutuyla web sunucusunun çalıştırılması gerekiyor. Sonrasında herhangibir tarayıcıdan (Örnekte Google Chrome kullanılmıştır) `http://localhost:5556/` adresine gidilmesi yeterli. Önce bağlanıp ardından mesaj gönderebiliriz. Sonrasında da iletişimi kapatmamız yeterli. İşte benim elde ettiğim sonuçlar.
 
 Tarayıcı tarafı;
 

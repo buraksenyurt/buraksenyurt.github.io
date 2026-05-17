@@ -23,29 +23,29 @@ Veri depolamanın en popüler yolu NoSQL veya RDBMS bazlı sistemler. 90lı yıl
 
 Geliştirici dostu olan fantastik bir ORM aracı olarak tanımlamış kendisini. Pek çok özelliği var. Eager Loading, Transaction, Auto-Migration, Callback fonksiyonları, genişletilebilirlik, tablolar arası ilişkilerin ifade edilmesi bu özelliklerden sadece bir kaçı ([github](https://github.com/jinzhu/gorm) adresinden kaynak kodlarına da bakabilirsiniz) Tabii benim amacım çok temel düzeyde aracı nasıl kullanabileceğimi öğrenmekti. Elimde SQLite gibi hafif ama bence inanılmaz yetenekli bir veritabanı bulunuyordu. GO dili ile ilgili bilgilerim artmaktaydı. Entity modelini baştan tasarlayabilirdim. Sonrasında Gorm'un modele ait tabloları benim için oluşturması, bir kaç satır verinin insert edilmesi, belki bir update veya delete operasyonunun gerçekleştirilmesi "Hello Gorm" demek adına yeterliydi.
 
-Modelin Kurgulanması
+## Modelin Kurgulanması
 
 İşe bir Entity paketi hazırmakla başladım. Daha önceden yaptığım gibi GOPATH'in belirttiği src klasörü altında konuşlandırıp tüm GO uygulamaları tarafından erişilebilecek bir paket yazmaya karar verdim. İçinde iki tane Entity olsa da Gorm'un model tarafındaki bir kaç yeteneğini anlamak için ideal bir seçimdi. İşte Southwind (Emektar Northwind gelir hep aklıma ki [şu adresten REST](http://northwind.servicestack.net/) tabanlı servislerine de erişebilirsiniz) paketinin basit içeriği.
 
-```golang
+```go
 package Southwind
 
 import (
-	"github.com/jinzhu/gorm"
+    "github.com/jinzhu/gorm"
 )
 
 type Employee struct {
-	gorm.Model
-	FirstName string `gorm:"not null;size:30"`
-	LastName  string `gorm:"not null;size:30"`
-	Emails    []Email
+    gorm.Model
+    FirstName string `gorm:"not null;size:30"`
+    LastName string `gorm:"not null;size:30"`
+    Emails[] Email
 }
 
 type Email struct {
-	gorm.Model
-	EmployeeID int    `gorm:"index"`
-	Mail       string `gorm:"type:varchar(50);unique_index"`
-	IsActive   bool
+    gorm.Model
+    EmployeeID int `gorm:"index"`
+    Mail string `gorm:"type:varchar(50);unique_index"`
+    IsActive bool
 }
 ```
 
@@ -55,70 +55,95 @@ Bire çok ilişkiyi nesne modelinde kurgulamak için Employee içerisinde Email 
 
 Paketi bu şekilde oluşturduktan sonra önce Build sonra da Install işlemlerini gerrçekeştirmek lazım. Böylece GOPATH'in belirttiği konumda yer alan pkg klasör altında a uzantılı derlenmiş hali üretilmiş olacaktır.
 
-Asıl Kod
+## Asıl Kod
 
 Artık asıl test kodları geliştirmeye başlanabilir.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"entity/southwind"
+    "entity/southwind"
 
-	"github.com/jinzhu/gorm"
-	_ "github.com/mattn/go-sqlite3"
+    "github.com/jinzhu/gorm"
+    _ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	db, err := gorm.Open("sqlite3", "db\\southwind.sdb")
-	db.LogMode(true)
-	defer db.Close()
-	if err == nil {
-		//db.SingularTable(true)
-		db.AutoMigrate(&Southwind.Employee{}, &Southwind.Email{})
-		db.Model(&Southwind.Employee{}).Related(&Southwind.Email{})
+    db, err: = gorm.Open("sqlite3", "db\\southwind.sdb")
+    db.LogMode(true)
+    defer db.Close()
+    if err == nil {
+        //db.SingularTable(true)
+        db.AutoMigrate( & Southwind.Employee {}, & Southwind.Email {})
+        db.Model( & Southwind.Employee {}).Related( & Southwind.Email {})
 
-		burakMails := []Southwind.Email{
-			Southwind.Email{Mail: "selim@buraksenyurt.com", IsActive: true},
-			Southwind.Email{Mail: "burak.senyurt@southwind.com", IsActive: false},
-			Southwind.Email{Mail: "burakselimsenyurt@gmail.com", IsActive: true},
-		}
+        burakMails: = [] Southwind.Email {
+            Southwind.Email {
+                    Mail: "selim@buraksenyurt.com",
+                    IsActive: true
+                },
+                Southwind.Email {
+                    Mail: "burak.senyurt@southwind.com",
+                    IsActive: false
+                },
+                Southwind.Email {
+                    Mail: "burakselimsenyurt@gmail.com",
+                    IsActive: true
+                },
+        }
 
-		burak := Southwind.Employee{FirstName: "burak", LastName: "senyurt", Emails: burakMails}
-		db.Create(&burak)
+        burak: = Southwind.Employee {
+            FirstName: "burak",
+            LastName: "senyurt",
+            Emails: burakMails
+        }
+        db.Create( & burak)
 
-		loraMails := []Southwind.Email{
-			Southwind.Email{Mail: "lora@kimbilll.moon", IsActive: true},
-			Southwind.Email{Mail: "kimbill.the.black.lora@southwind.com", IsActive: true},
-		}
-		lora := Southwind.Employee{FirstName: "Lora", LastName: "Kimbılll", Emails: loraMails}
-		db.Create(&lora)
+        loraMails: = [] Southwind.Email {
+            Southwind.Email {
+                    Mail: "lora@kimbilll.moon",
+                    IsActive: true
+                },
+                Southwind.Email {
+                    Mail: "kimbill.the.black.lora@southwind.com",
+                    IsActive: true
+                },
+        }
+        lora: = Southwind.Employee {
+            FirstName: "Lora",
+            LastName: "Kimbılll",
+            Emails: loraMails
+        }
+        db.Create( & lora)
 
-		WriteToScreen(burak)
-		WriteToScreen(lora)
+        WriteToScreen(burak)
+        WriteToScreen(lora)
 
-		var burki Southwind.Employee
-		db.Find(&burki, "ID=?", 1) //Önce
-		db.Model(&burki).Update("LastName", "Selim Senyurt")
-		WriteToScreen(burki)
+        var burki Southwind.Employee
+        db.Find( & burki, "ID=?", 1) //Önce
+        db.Model( & burki).Update("LastName", "Selim Senyurt")
+        WriteToScreen(burki)
 
-		var buffon Southwind.Employee
+        var buffon Southwind.Employee
 
-		db.Model(&buffon).Where("ID=?", 2).Updates(map[string]interface{}{"FirstName": "Cianluici", "LastName": "Buffon"})
-		db.First(&buffon, 2) //Direkt primary key üstünden(varsayılan olarak ID) arama yapar
-		WriteToScreen(buffon)
-	} else {
-		fmt.Println(err.Error())
-	}
+        db.Model( & buffon).Where("ID=?", 2).Updates(map[string] interface {} {
+            "FirstName": "Cianluici", "LastName": "Buffon"
+        })
+        db.First( & buffon, 2) //Direkt primary key üstünden(varsayılan olarak ID) arama yapar
+        WriteToScreen(buffon)
+    } else {
+        fmt.Println(err.Error())
+    }
 }
 
 func WriteToScreen(e Southwind.Employee) {
-	fmt.Printf("%d\t%s,%s,%s\n", e.ID, e.FirstName, e.LastName, e.CreatedAt)
-	for _, email := range e.Emails {
-		fmt.Printf("\t%d:%s\n", email.ID, email.Mail)
-	}
+    fmt.Printf("%d\t%s,%s,%s\n", e.ID, e.FirstName, e.LastName, e.CreatedAt)
+    for _, email: = range e.Emails {
+        fmt.Printf("\t%d:%s\n", email.ID, email.Mail)
+    }
 }
 ```
 
@@ -130,11 +155,11 @@ Kodun ilerleyen kısmında bu kez lora isimli bir çalışan üretip bir kaç em
 
 Kodun bir sonraki kısmında Find operasyonu ile ID alanının değeri 1 olan Employee satırını yakalayıp Model ve Update fonksiyonlarını peş peşe çağırarak bir güncelleme işlemi gerçekleştirmekteyiz. Find ile bulduğumuz nesneyi &burki değişkenine çıkıyoruz. Aynı değişkeni Model fonksiyonunda kullanıp arkadan gelen Update ile LastName alanının değerini değiştiriyoruz. Burada tipik bir Update sorgusu olduğunu ifade edebiliriz ve ilerleyen kod satırlarında farklı bir sürümü daha yer alıyor. Bu kez Model üzerinden Where operasyonu'na gidip ID değeri 2 olan Email satırını yakalıyoruz. Hemen arkasından Updates isimli bir fonksiyon çağrısı daha geliyor. Bu fonksiyon ile FirstName ve LastName alanlarını güncelliyoruz. First fonksiyonu ikinci parametre de aldığı değeri otomatik olarak ilgili Entity'nin ID alanı ile ilişkilendirmekte. Yani Employee tablosunda ID alanı 2 olan satırı yakalayıp içeriğini buffon değişkenine çekmekteyiz (Elbette farklı bir where kriteri de koyabilirsiniz) Sonrasında bulduğumuz sonuçları ekrana basıyoruz. Amacımız 2 numaralı çalışanın adının değiştiğini görmek.
 
-Sonuçlar
+## Sonuçlar
 
 Uygulamanın çalışma zamanı çıktısı aşağıdaki gibi olacaktır. Adım adım üretilen SQL sorgularını incelemenizi ve GO lang çıktılarına bakmanızı öneririm. DB tarafına en ufak bir SQL sorgusu göndermeden var olan Entity örnekleri üzerinde gerçekleştirdiğimiz Insert, Update, Select gibi işlemler otomatik olarak SQLite üzerinde çalıştırılmıştır. Programcının aşina olduğu kavramları veritabanı tarafına göndermiş durumdayız.
 
-```bash
+```text
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:21) 
 [2017-06-05 00:02:57]  [182.01ms]  CREATE TABLE "employees" ("id" integer primary key autoincrement,"created_at" datetime,"updated_at" datetime,"deleted_at" datetime,"first_name" varchar(30) NOT NULL,"last_name" varchar(30) NOT NULL )
 

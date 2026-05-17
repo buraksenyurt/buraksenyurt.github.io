@@ -21,7 +21,7 @@ Geçtiğimiz günlerde çalıştığım turuncu bankadaki bölümüm değişti. 
 
 Epey zamandır WCF ile çalışmadığımdan baya pas tuttuğumu itiraf etmek isterim. Yazının konusu, devam etmekte olan POC (Proof of Concept) çalışmasının tamamını anlatmak değil ancak dinamik olarak host edilen servislere gelen ve servisten dönen mesajları nasıl yakalayabiliriz bunun bir yolunu bulmaya çalışmak. Hatta bu konuda çok yakın bir zamanda sevdiğim bir dostumun da sorusu olmuştu. Entegre olunan bir servise gelip giden mesajları nasıl yakalayabiliriz. Normal şartlarda WCF'in Trace ve Logging mekanizmalarını kullanarak bu mümkün ve oldukça kolay ama hedef buradaki takibi kontrol atlına almak. Yani mesajları yakaladığımız yerlerde araya girerek başlangıç için sadece loglamak (örneğin Console'a yazdırmak)
 
-Çözümün Kısa Bir Özeti
+## Çözümün Kısa Bir Özeti
 
 Solution içeriği genel hatları ile aşağıdaki gibi.
 
@@ -66,7 +66,7 @@ namespace DAEXServiceLibrary
 
 TEST klasöründe tahmin edileceği üzere Unit Test ve benzeri Console uygulamaları yer almakta.
 
-JSON Bazlı Konfigurasyon
+## JSON Bazlı Konfigurasyon
 
 HOST isimli klasörde yer alan ServiceFabric projesinde bir Assembly içerisinde duran servislerin ayağa kaldırılması ile ilgili işlemler yer alıyor. Ama nasıl? Kısaca neler yapmaya çalıştığımı anlatayım.
 
@@ -112,7 +112,7 @@ Burada yine detaya girmeyeceğim ancak JSON içeriğini yönetimli kod tarafınd
 
 Konfigurasyon dosyasının içeriğinde tutulan bilgileri nasıl kullanmak istediğime gelince. Her şeyden önce çalışma zamanında yüklenecek olan servisleri bir klasördeki dll'lerden almak istiyorum. Yani Host uygulama kullanacağı servisleri projeye referans etmeye gerek duymadan ayağa kaldıracak. Bu nedenle içerde kullanılacak dll bilgisini ve başka çevresel değişkenleri tutan bir dosya bilgisini tutmayı düşündüm. Kullanacağım ServiceHost tipinin bir BaseAddress ihtiyacı da olacak. Bunların dışında host'un sunacağı servisleri de bir şekilde tanımlamam gerekiyor. Servisin tip adı dışında Address Binding Contract üçlemesini de burada tutuyorum. Her servis için Metadata paylaşımı olacak mı, çalışma zamanındaki Exception detayları basılacak mı gibi aşina olduğumuz bilgileri de ilgili alanlarda tutmaktayım. Bu içeriğe göre FraudCheckService WSHttpBinding ile host edilecek. Diğer yandan henüz sertifika tanımlamamalarını entegre edecek kodları yazamadığımdan BasicHttpsBinding kullanan servisi test edememekteyim.
 
-ServiceHost Türevli TowerHost
+## ServiceHost Türevli TowerHost
 
 Genel hatları ile konfigurasyon bilgisini tutmayı bu şekilde kurgulamaya çalıştım. ServiceHost türevli tipin içeriği ise aşağıdaki şekilde.
 
@@ -229,7 +229,7 @@ namespace ING.ServiceFabric
 
 Bu sınıfta yapılan bazı kritik işler var ama kod epey dağınık halde diyebilirim. List döndüren CreateTowerHost metodunun görevi oldukça basit. Parametre olarak gelen packFile bilgisini alıyor, JSON konfigurasyon içeriğini okuyor, tanımlı olan Assembly'ı yüklüyor ve konfigurasyon da belirtilen her bir servis tipi için birer TowerHost nesne örneği üretip listeye ekliyor. TowerHost tipini döndüren ikinci fonksiyon biraz daha karmaşık. Az biraz reflection ile parametre olarak gelen servis tipini örnekleyip, JSON dosyasından okunup ServiceInfo sınıfına alınan değerlere bakarak ayarlamalar yapmakta. Söz gelimi gerekli Binding tipini üretiyor, EndPoint oluşturuyor, Metadata Publishing değerlerini ve IncludeExceptionDetailsInFault bilgisini set ediyor. Metadata davranışının eklenmesi üzerine de halen çalışmaktayım. Nitekim NetTcpBinding söz konusu olduğunda IMetadataExchange arayüzünün kullanılarak bir publishing yapmak gerekiyor. Başka Binding tiplerinde farklı davranışlar sergilenmesi de gerekebilir. Her ne kadar if kullanmayı sevmesemde, POC olmasının verdiği rahatlıkla böyle bir kod parçası da eklemiş bulundum (:
 
-Mesajların Yakalanması
+## Mesajların Yakalanması
 
 Yazının ana konusu olan mesaj yakalama kısmı ise şu satırda gerçekleştiriliyor.
 
@@ -299,10 +299,11 @@ namespace ING.ServiceFabric.Dispatchers
 
 IDispatchMessageInspector arayüzünden türeyen MessageInspector sınıfının uyguladığı iki operasyon var. AfterReceiveRequest ve BeforeSendReply. AfterReceiveRequest ile servisin ilgili EndPoint'inden geçen mesajı yakalıyoruz. BeforeSendReply ise istemciye dönen mesaj gitmeden önce devreye girmekte. Ben sonuçları görmek için ilgili bilgileri Console'a basıyorum. Hedef pek tabii etkili bir Log mekanizması ile ilgili mesajları kayıt altına almak. Burada mesaj içeriğine bakılarak daha pek çok aksiyon da alınabilir gibime geliyor.
 
-> Aslında WCF'in çalışma zamanındaki işleyişini gösteren [Microsoft dokümanının](https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/VS.core-docs/live/articles/framework/wcf/extending.pdf) 19ncu sayfasındaki grafiğe bakınca olay daha kolay anlaşılıyor. Burada EndpointDispatcher'ın yaşamı boyunca enjekte edilebilecek bir çok enstrüman görülmekte.
-> ![wcf_message_4.gif](/assets/images/2017/wcf_message_4.gif)
+Aslında WCF'in çalışma zamanındaki işleyişini gösteren [Microsoft dokümanının](https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/VS.core-docs/live/articles/framework/wcf/extending.pdf) 19ncu sayfasındaki grafiğe bakınca olay daha kolay anlaşılıyor. Burada EndpointDispatcher'ın yaşamı boyunca enjekte edilebilecek bir çok enstrüman görülmekte.
 
-Çalışma Zamanı
+![wcf_message_4.gif](/assets/images/2017/wcf_message_4.gif)
+
+## Çalışma Zamanı
 
 Unit Test projesi içerisinde pek çok test metodu var tabii ama benim için en güzel test ortamı tabii ki sevimsiz Console penceresi. Bu Console projelerinden birisi JSON dosyasından okuduğu bilgileri kullanarak servisleri ayağa kaldırırken diğeri istemci rolünü üstlenmekte ve örnek bir servise mesaj atıp cevap almakta. Host uygulamayı şu şekilde geliştirdim.
 

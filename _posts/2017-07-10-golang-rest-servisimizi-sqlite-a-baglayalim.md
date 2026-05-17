@@ -60,112 +60,116 @@ Eğer SQLite kurulumunuzda bir sorun yoksa yukarıdaki komutların hatasız çal
 
 Önceki yazılarımızda olduğu gibi yönlendirme işlemlerimiz için Julien Schmidt'in (bu soyadını tek seferde asla yazamadım) httpRouter paketinden yararlanacağız. Diğer yandan SQLite veritabanını kullanacağımız için yardımcı bir kütüphaneyi daha işin içine katacağız. github.com/mattn/go-sqlite3 adresinde yer alan paket SQLite üzerinde gerçekleştireceğimiz işlemlerde bize kolaylıklar sağlayacak (Paketin yazarı Japon'ya Osaka'dan. Henüz ingilizceye çeviremediğim ama oldukça merak ettiğim [blog adresi de burada](http://mattn.kaoriya.net/)) Aynen httpRouter paketinin elde edilişinde olduğu gibi LiteIDE'nin Build->Get komutunu kullanarak ilgili kütüphanenin sisteme yüklenmesini sağlayabilirsiniz. (Ben yükleme işlemi sırasında 64Bit Windows'umdaki farklı MinGW ve GCC sürümleri nedeniyle hatalarla karşılatım ve güncel versiyonunu yükleyerek sorunu aştım. [Şu adrese](http://tdm-gcc.tdragon.net/download) uğramanız gerekebilir) Şimdi Server.go isimli dosyamızın içeriğini aşağıdaki gibi oluşturalım.
 
-```golang
+```go
 package main
 
 import (
-	"database/sql"
-	"encoding/json"
-	"entity/starwars"
-	"fmt"
-	"log"
-	"net/http"
-	"strconv"
+    "database/sql"
+    "encoding/json"
+    "entity/starwars"
+    "fmt"
+    "log"
+    "net/http"
+    "strconv"
 
-	"github.com/julienschmidt/httprouter"
-	_ "github.com/mattn/go-sqlite3"
+    "github.com/julienschmidt/httprouter"
+    _ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	router := httprouter.New()
+    router: = httprouter.New()
 
-	router.GET("/", home)
-	router.GET("/categories", getCategories)
-	router.GET("/categories/:categoryId", getModelsByCategoryId)
-	router.GET("/models/:firstLetter", getModelsByFirstLetter)
-	router.POST("/newCategory", createCategory)
+        router.GET("/", home)
+    router.GET("/categories", getCategories)
+    router.GET("/categories/:categoryId", getModelsByCategoryId)
+    router.GET("/models/:firstLetter", getModelsByFirstLetter)
+    router.POST("/newCategory", createCategory)
 
-	http.ListenAndServe(":4571", router)
+    http.ListenAndServe(":4571", router)
 }
 
-func createCategory(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	category := starwars.Category{}
-	json.NewDecoder(r.Body).Decode(&category)
-	log.Printf("Insert request. %d,%s\n", category.Id, category.Name)
-	conn, _ := sql.Open("sqlite3", "starwars.sdb")
-	defer conn.Close()
-	_, err := conn.Exec("Insert into Category values (?,?)", category.Id, category.Name)
-	if err == nil {
-		render(w, category)
-	} else {
-		log.Println(err.Error())
-		//404 basılabilir
-	}
+func createCategory(w http.ResponseWriter, r * http.Request, _ httprouter.Params) {
+    category: = starwars.Category {}
+    json.NewDecoder(r.Body).Decode( & category)
+    log.Printf("Insert request. %d,%s\n", category.Id, category.Name)
+    conn,
+    _: = sql.Open("sqlite3", "starwars.sdb")
+    defer conn.Close()
+    _,
+    err: = conn.Exec("Insert into Category values (?,?)", category.Id, category.Name)
+    if err == nil {
+        render(w, category)
+    } else {
+        log.Println(err.Error())
+            //404 basılabilir
+    }
 }
 
-func getCategories(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	conn, _ := sql.Open("sqlite3", "starwars.sdb")
-	defer conn.Close()
-	rows, _ := conn.Query("Select Id,Name from Category order by Name")
-	defer rows.Close()
-	categories := make([]*starwars.Category, 0)
-	for rows.Next() {
-		category := new(starwars.Category)
-		rows.Scan(&category.Id, &category.Name)
-		categories = append(categories, category)
-	}
-	render(w, categories)
+func getCategories(w http.ResponseWriter, r * http.Request, _ httprouter.Params) {
+    conn, _: = sql.Open("sqlite3", "starwars.sdb")
+    defer conn.Close()
+    rows, _: = conn.Query("Select Id,Name from Category order by Name")
+    defer rows.Close()
+    categories: = make([] * starwars.Category, 0)
+    for rows.Next() {
+        category: = new(starwars.Category)
+        rows.Scan( & category.Id, & category.Name)
+        categories = append(categories, category)
+    }
+    render(w, categories)
 }
 
-func getModelsByCategoryId(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	conn, _ := sql.Open("sqlite3", "starwars.sdb")
-	defer conn.Close()
-	id, _ := strconv.Atoi(params.ByName("categoryId"))
-	cRow := conn.QueryRow("Select * from Category Where Id=?", id)
-	ctgry := new(starwars.Category)
-	if cRow != nil {
-		cRow.Scan(&ctgry.Id, &ctgry.Name)
-		rows, _ := conn.Query("Select Id,Title,ListPrice from Model where CategoryId=?", id)
-		defer rows.Close()
-		models := make([]*starwars.Model, 0)
-		for rows.Next() {
-			model := new(starwars.Model)
-			model.Category = starwars.Category{Id: ctgry.Id, Name: ctgry.Name}
-			rows.Scan(&model.Id, &model.Title, &model.Price)
-			models = append(models, model)
-		}
-		render(w, models)
-	}
+func getModelsByCategoryId(w http.ResponseWriter, r * http.Request, params httprouter.Params) {
+    conn, _: = sql.Open("sqlite3", "starwars.sdb")
+    defer conn.Close()
+    id, _: = strconv.Atoi(params.ByName("categoryId"))
+    cRow: = conn.QueryRow("Select * from Category Where Id=?", id)
+    ctgry: = new(starwars.Category)
+    if cRow != nil {
+        cRow.Scan( & ctgry.Id, & ctgry.Name)
+        rows, _: = conn.Query("Select Id,Title,ListPrice from Model where CategoryId=?", id)
+        defer rows.Close()
+        models: = make([] * starwars.Model, 0)
+        for rows.Next() {
+            model: = new(starwars.Model)
+            model.Category = starwars.Category {
+                Id: ctgry.Id,
+                Name: ctgry.Name
+            }
+            rows.Scan( & model.Id, & model.Title, & model.Price)
+            models = append(models, model)
+        }
+        render(w, models)
+    }
 }
 
-func getModelsByFirstLetter(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	conn, _ := sql.Open("sqlite3", "starwars.sdb")
-	defer conn.Close()
-	statement := fmt.Sprintf("Select Id,Title,ListPrice from Model where Title like '%s%%'", params.ByName("firstLetter"))
-	rows, _ := conn.Query(statement)
-	defer rows.Close()
-	models := make([]*starwars.Model, 0)
-	for rows.Next() {
-		model := new(starwars.Model)
-		rows.Scan(&model.Id, &model.Title, &model.Price)
-		models = append(models, model)
-	}
-	render(w, models)
+func getModelsByFirstLetter(w http.ResponseWriter, r * http.Request, params httprouter.Params) {
+    conn, _: = sql.Open("sqlite3", "starwars.sdb")
+    defer conn.Close()
+    statement: = fmt.Sprintf("Select Id,Title,ListPrice from Model where Title like '%s%%'", params.ByName("firstLetter"))
+    rows, _: = conn.Query(statement)
+    defer rows.Close()
+    models: = make([] * starwars.Model, 0)
+    for rows.Next() {
+        model: = new(starwars.Model)
+        rows.Scan( & model.Id, & model.Title, & model.Price)
+        models = append(models, model)
+    }
+    render(w, models)
 }
 
-func home(rWriter http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	fmt.Fprintf(rWriter, "Star Wars universe!")
+func home(rWriter http.ResponseWriter, request * http.Request, _ httprouter.Params) {
+    fmt.Fprintf(rWriter, "Star Wars universe!")
 }
 
 func render(w http.ResponseWriter, d data) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(200)
-	jContent, _ := json.Marshal(d)
-	fmt.Fprintf(w, "%s", jContent)
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(200)
+    jContent, _: = json.Marshal(d)
+    fmt.Fprintf(w, "%s", jContent)
 }
 
-type data interface {
-}
+type data interface {}
 ```
 
 Bu kez kodlarımız biraz karmaşık gibi (Kendime not: Kod tekrarlarını azalt) Uygulamamız temel olarak aşağıdaki taleplere cevap verecek şekilde geliştirildi.

@@ -38,13 +38,11 @@ Aktif olarak kullanıldığından nasıl bir şeydir öğrenmem gerekiyordu. Ön
 
 Burada dikkat edilmesi gereken önemli noktalardan birisi de Kafka'nın kullanım amacı. Büyük veriyi tutmak için değil bunları toplayıp ilgili sistemelere hatasız ve hızlı biçimde aktarmak için kullanılan bir mesajlaşma hizmeti olarak değerlendirmek daha doğru gibi. Bu sebeple çoğunlukla tek başına ele alınmamakta. Kafka'yı kullanarak verinin ElasticSearch, Hadoop, Spark gibi sistemlere akıtılması söz konusu. Bunun belli başlı motivasyon kaynakları var. Her şeyden önce ilgili verinin aktarılacağı sistemler kapalı olsa bile bir süre Kafka'da tutma imkanı bulunmakta. Bu yetenek uç sistemlerden birinin çökmesi durumunda mesaj kaybını da engellemekte. Diğer bir motivasyon sebebi de verinin büyüklüğü. Büyük veriyi diğer sistemlere taşırken paralel çalışabilen ölçeklenebilir bir dağıtık sistemin arada olması önemlidir.
 
-> "Aslında Kafka'yı anlamak için Arthur Schopenhauer'i anlamak lazım" demek isterdim ama esasında diğer Message Oriented Middleware'lere bakmamız gerekmekte. Microsoft Message Queue, IBM MQ, Apache Qpid, RabbitMQ ve varsa diğerleri. Bunlar Publisher/Subscriber modelini başarılı şekilde uygulayan MOM ürünleridir ancak akan veri büyüdüğünde ve Publisher sayısı onbinler seviyesine çıktığında otoriterlerin de belirttiği üzere çuvallarlar.
-> Kafka'yı onlardan ayıran unsulardan birisi Subscriber'ların mesajları nasıl aldığı ile ilgili. Kafka'da Consumer'ın mesajı alabilmesi için belli bir konu başlığına abone olması gerekir. Diğer yandan Kafka düşük veri kaybını garanti etmektedir. Hem real-time veri akışını sağlayabilir hem de offline çalışma yeteneği sayesinde veriyi saklayabilir.
-> Tabii işin özünde O da diğer MOM ürünlerinde olduğu gibi mesajları farklı bileşenler arasında taşımayı esas amaç edinmiştir.
+> "Aslında Kafka'yı anlamak için Arthur Schopenhauer'i anlamak lazım" demek isterdim ama esasında diğer Message Oriented Middleware'lere bakmamız gerekmekte. Microsoft Message Queue, IBM MQ, Apache Qpid, RabbitMQ ve varsa diğerleri. Bunlar Publisher/Subscriber modelini başarılı şekilde uygulayan MOM ürünleridir ancak akan veri büyüdüğünde ve Publisher sayısı onbinler seviyesine çıktığında otoriterlerin de belirttiği üzere çuvallarlar.  Kafka'yı onlardan ayıran unsulardan birisi Subscriber'ların mesajları nasıl aldığı ile ilgili. Kafka'da Consumer'ın mesajı alabilmesi için belli bir konu başlığına abone olması gerekir. Diğer yandan Kafka düşük veri kaybını garanti etmektedir. Hem real-time veri akışını sağlayabilir hem de offline çalışma yeteneği sayesinde veriyi saklayabilir. Tabii işin özünde O da diğer MOM ürünlerinde olduğu gibi mesajları farklı bileşenler arasında taşımayı esas amaç edinmiştir.
 
 Kafka ile konuşmaya başlarken bazı temel anahtar kelimelerine aşina olmak gerekiyor. Yukarıdaki şekilde de bahsettiğimiz gibi temel terimlerimiz Producer, Topic, Consumer ve Broker. Makaleye hazırlanırken işin mimari boyutlarına az da olsa girmeye çalıştım ancak kısa sürede odak noktamı kaybettim. West-World'teki amacım Kafka'yı kurup.Net Core kullanarak kendisiyle haberleşebilmekti en nihayetinde. Belli bir Topic için mesaj gönderip okuyabilirsem benim için yeterli olacaktı.
 
-Önce Kurulum
+## Önce Kurulum
 
 Tabii işe ilk olarak Kafka'yı kurmakla başlamak lazım. Ben Kafka'yu doğrudan West-World üzerinde kuracağım ama dilersek Docker üzerinde de konuşlandırabiliriz (Bu aklımın bir köşesinde dursun) Sırasıyla aşağıdaki adımları takip ederek kurulum işlemini gerçekleştirebiliriz.
 
@@ -143,7 +141,7 @@ ToDoList isimli topic nesnesinin silinmek üzere işaretlendiğine dair bir mesa
 
 Kafka'yı terminalden az çok nasıl kullanacağımı öğrendim. Ancak terminalden uzun uzun o betikleri yazmaya çalışmak zevkli olsa da zorlayıcıydı. Her şeyden öte B12siz bir insanım. Çabuk unutuyorum. Şöyle işleri kolaylaştıracak kendi bildiğim dillerle kullanabileceğim bir API olsa hiç fena olmazdı. Hazır.Net Core dünyasında bir şeyler yapmaya çalışıyorken onunla ilerleyeyim dedim.
 
-.Net Core Uygulamalarının Yazılması
+## .Net Core Uygulamalarının Yazılması
 
 Senaryomuzda iki Console uygulaması olacak. Birisinden Producer yardımıyla Broker'a mesaj bırakacağız. Diğer Console uygulamasını ise Consumer olarak tasarlayacağız. Consumer uygulaması, Producer tarafından belli konu başlıklarında bırakılan mesajları okumak için kullanılacak. İlk olarak FabrikamProducer'ı tasarlayalım.
 

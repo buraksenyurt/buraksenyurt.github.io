@@ -242,7 +242,7 @@ Aslına bakarsanız kodlarımız hazır. Şimdi test sürüşüne çıkabiliriz.
 
 Testleri yapmak için bir istemci uygulama yazabileceğimiz gibi Chrome'da Postman veya Firefox'ta HttpRequester gibi araçları da kullanabiliriz. Ben Firefox'a kurduğum HttpRequester'dan yaralanacağım. İlk olarak geçerli kullanıcı adı ve şifre ile bir bilet almamız gerekiyor. Bunu alırken body kısmında JSON formatında username ve password bilgisinin gönderilmesi önemli. HTTP POST tipinden bir talep gerçekleştireceğiz.
 
-adres: [http://localhost:5000/token/new](http://localhost:5000/token/new)
+adres: `http://localhost:5000/token/new`
 
 method: HTTP POST
 

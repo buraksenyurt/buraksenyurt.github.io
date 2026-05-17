@@ -16,14 +16,14 @@ Bir süredir şirket içinde vereceğim Ruby eğitimine hazırlanmaktayım. İş
 Struct aslında Ruby'nin built-in sınıflarından birisi. Temel olarak bir sınıf hazırlamadan nitelik ve değer barındıran tip tanımlanmasına olanak sağlıyor. Konuyu basit bir şekilde incelemeye başlamak için aşağıdaki kod parçasını göz önüne alarak ilerleyebiliriz.
 
 ```ruby
-player=Struct.new :firstName,:lastName,:level
-dam=player.new()
-dam.firstName="jan kulod van"
-dam.lastName="dam"
-dam.level=900
+player = Struct.new: firstName,: lastName,: level
+dam = player.new()
+dam.firstName = "jan kulod van"
+dam.lastName = "dam"
+dam.level = 900
 puts "#{dam.lastName}, #{dam.firstName}-[#{dam.level}]"
 
-obiWan=player.new("kenobi","obi wan",850)
+obiWan = player.new("kenobi", "obi wan", 850)
 puts "#{obiWan.lastName}, #{obiWan.firstName}-[#{obiWan.level}]"
 ```
 
@@ -34,16 +34,15 @@ puts "#{obiWan.lastName}, #{obiWan.firstName}-[#{obiWan.level}]"
 Yapıları tanımlarken do...end bloklarını da işin içerisinde dahil edebilir ve bu sayede çeşitli fonksiyonlar içermesini de sağlayabiliriz. Aşağıdaki kod parçasında bu durum örneklenmektedir.
 
 ```ruby
-book=Struct.new :title,:price,:category,:author do
-  def getInfo
-    "#{title} from #{author}. #{price},#{category}"
-  end
+book = Struct.new: title,: price,: category,: author do
+        def getInfo "#{title} from #{author}. #{price},#{category}"
+    end
 end
-tehlikeliOyunlar=book.new
-tehlikeliOyunlar.title="Tehlikeli Oyunlar"
-tehlikeliOyunlar.price=50
-tehlikeliOyunlar.author="Oguz Atay"
-tehlikeliOyunlar.category="Turk Edebiyati"
+tehlikeliOyunlar = book.new
+tehlikeliOyunlar.title = "Tehlikeli Oyunlar"
+tehlikeliOyunlar.price = 50
+tehlikeliOyunlar.author = "Oguz Atay"
+tehlikeliOyunlar.category = "Turk Edebiyati"
 puts tehlikeliOyunlar.getInfo
 ```
 
@@ -55,15 +54,15 @@ Aslında bu ve bir önceki örnekleri göz önüne alırsak benzer veri yapılar
 
 ```ruby
 class Player
-  attr_accessor :firstName,:lastName,:price
+attr_accessor: firstName,: lastName,: price
 
-  def initialize(firstName,lastName,price)
-    @firstName,@lastName,@price=firstName,lastName,price
-  end  
-  
-  def getInfo
+def initialize(firstName, lastName, price)
+@firstName, @lastName, @price = firstName, lastName, price
+end
+
+def getInfo
     "#{@firstName},#{@lastName},#{@price}"
-  end
+end
 end
 ```
 
@@ -74,13 +73,13 @@ Yapılar ile ilgili dikkat çekici bir diğer nokta da OpenStruct tipinin kullan
 ```ruby
 require "ostruct"
 
-parameters=OpenStruct.new()
-parameters.connection="provider=mysql..."
-parameters.username="bsenyurt"
-parameters.password="****"
-parameters.timeout=6000
+parameters = OpenStruct.new()
+parameters.connection = "provider=mysql..."
+parameters.username = "bsenyurt"
+parameters.password = "****"
+parameters.timeout = 6000
 puts parameters.timeout
-parameters.ftpAddress="ftp://localhost/images/"
+parameters.ftpAddress = "ftp://localhost/images/"
 puts parameters.ftpAddress
 ```
 
@@ -91,19 +90,25 @@ Peki bir yapının bu örneklerde olduğu gibi n sayıda niteliğinin tamamına 
 ```ruby
 require "ostruct"
 
-parameters=OpenStruct.new()
-parameters.connection="provider=mysql..."
-parameters.username="bsenyurt"
-parameters.password="****"
-parameters.timeout=6000
-parameters.ftpAddress="ftp://localhost/fileServer"
-parameters.each_pair{|key,value| puts "#{key}->#{value}"}
+parameters = OpenStruct.new()
+parameters.connection = "provider=mysql..."
+parameters.username = "bsenyurt"
+parameters.password = "****"
+parameters.timeout = 6000
+parameters.ftpAddress = "ftp://localhost/fileServer"
+parameters.each_pair {
+    | key, value | puts "#{key}->#{value}"
+}
 
-player=Struct.new :firstName,:lastName,:level
-obiWan=player.new("kenobi","obi wan",850)
-obiWan.each{|o|puts o}
-obiWan.each_pair{|key,value| puts "#{key}->#{value}"}
-puts obiWan[:firstName]
+player = Struct.new: firstName,: lastName,: level
+obiWan = player.new("kenobi", "obi wan", 850)
+obiWan.each {
+    | o | puts o
+}
+obiWan.each_pair {
+    | key, value | puts "#{key}->#{value}"
+}
+puts obiWan[: firstName]
 ```
 
 ![ruby34_4.gif](/assets/images/2017/ruby34_4.gif)
@@ -114,21 +119,21 @@ Peki yapıların bu pratik kullanımları nedeniyle sınıflar yerine tercih edi
 
 ```ruby
 class Employee
-  attr_accessor :firstName,:lastName, :address
-  Address = Struct.new(:street, :city, :country, :postal_code)
+attr_accessor: firstName,: lastName,: address
+Address = Struct.new(: street,: city,: country,: postal_code)
 
-  def initialize(firstName,lastName, addressInfo)
-    @firstName,@lastName=firstName,lastName
-    @address = Address.new(addressInfo[:street], addressInfo[:city], addressInfo[:country], addressInfo[:postal_code])
-  end
+def initialize(firstName, lastName, addressInfo)
+@firstName, @lastName = firstName, lastName
+@address = Address.new(addressInfo[: street], addressInfo[: city], addressInfo[: country], addressInfo[: postal_code])
+end
 
 end
 
-sitiv = Employee.new("Sitiv","Jobs", {
-  street: "hevan street",
-  city: "Second Parallel New York",
-  country: "Beauty Country",
-  postal_code: "HVN-1001"
+sitiv = Employee.new("Sitiv", "Jobs", {
+    street: "hevan street",
+    city: "Second Parallel New York",
+    country: "Beauty Country",
+    postal_code: "HVN-1001"
 })
 
 puts sitiv.address.inspect

@@ -20,7 +20,7 @@ Bir önceki yazımızda web programlamada önemli bir yere sahip olan yönlendir
 
 Bu tip örneklerde işe yarar bir veri kümesi ile çalışmak her zaman için tercih ettiğim yöntemlerden birisi. Hatırlıyorum da Microsoft'un bu alanda oldukça başarılı veri kümeleri bulunuyordu. AdventureWorks ve Northwind veritabanları bize yıllarca yardımcı oldu. Eminim ki çoğumuzun kobay taboları vardır. Product ve Category gibi. Ben bu örneğimizde kendi hafif veri setimi bellekte konuşlandırdım. Pratik geldi:) Başrol oyuncusu olarak Star Wars dünyasından bir kaç modeli kullanmaya çalıştım. Kategori bazlı olacak şekilde bu evrendeki araçları basit nitelikleri ile ele aldım. Bu kez [şu adresten](http://www.blastr.com/2015-9-11/v-wing-millennium-falcon-50-best-star-wars-vehicles-ranked) yararlandım.
 
-Entity İçeriğini Paket Olarak Tutmak
+## Entity İçeriğini Paket Olarak Tutmak
 
 Önceki örnekten farklı olarak bu kez kullanacağımız entity tiplerini ayrı bir paket içerisinde toplamaya karar verdim. Sistemimde yüklü olan GOPATH bilgisine göre c:\go works\samples\src klasörü altında aşağıdaki hiyerarşiyi kurguladım.
 
@@ -30,19 +30,19 @@ Entity İçeriğini Paket Olarak Tutmak
 
 Bundan sonra sistemde kullanacağım başka entity tipleri olursa burada alt klasörler içerisinde toplamayı düşünüyorum. Bir paketi oluşturduğumuzda bunun GOPATH'in tanımladığı lokasyonlarda inşa edilmesi oldukça önemli. Aksi takdirde ilgili paket sistemde bulunamaz ve dolayısıyla kullanılamaz. starwars.go içeriğini aşağıdaki gibi oluşturabiliriz. Model ve Category isimli iki yapı barındırıyor.
 
-```golang
+```go
 package starwars
 
 type Model struct {
-	Id       int
-	Title    string
-	Price    float32
-	Category Category
+    Id int
+    Title string
+    Price float32
+    Category Category
 }
 
 type Category struct {
-	Id   int
-	Name string
+    Id int
+    Name string
 }
 ```
 
@@ -71,32 +71,34 @@ main.go içeriğine geçmeden önce static klasöründeki index.html ve common.c
 
 ```html
 <html>
+
 <head>
-	<title>Starwars Models</title>
-	<link rel="stylesheet" href="common.css">
+    <title>Starwars Models</title>
+    <link rel="stylesheet" href="common.css">
 </head>
+
 <body>
-	<h1>My Starwars Collection</h1>
-	<img src="cover.gif"/>
-	<p>This is a JSON based data service<br>Try this url : <a href="/category/fighter">category/fighter</a></p>
-	<a href="/category">All Categories</a>
+    <h1>My Starwars Collection</h1>
+    <img src="cover.gif" />
+    <p>This is a JSON based data service<br>Try this url : <a href="/category/fighter">category/fighter</a></p>
+    <a href="/category">All Categories</a>
 </body>
 ```
 
 ve common.css
 
 ```css
-body{
-	border:3px solid #BA4A00;
-	border-radius: 16px;
-	border-width: 10px;
-	text-align: center;
-	width: 420px;
-	height: 500px;
-	margin: auto;
-	font-family:Tahoma, sans-serif;
-	font-size:18px;
-	color:#212F3D;
+body {
+    border: 3px solid #BA4A00;
+    border-radius: 16px;
+    border-width: 10px;
+    text-align: center;
+    width: 420px;
+    height: 500px;
+    margin: auto;
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    color: #212F3D;
 }
 ```
 
@@ -110,75 +112,127 @@ main.go
 
 Nihayet yazımızın en önemli kısmına geldik. İşte main paketimize ait kodlarımız.
 
-```golang
+```go
 package main
 
 import (
-	"encoding/json"
-	"entity/starwars"
-	"fmt"
-	"net/http"
-	"strings"
+    "encoding/json"
+    "entity/starwars"
+    "fmt"
+    "net/http"
+    "strings"
 
-	"github.com/julienschmidt/httprouter"
+    "github.com/julienschmidt/httprouter"
 )
 
 func main() {
-	router := httprouter.New()
+    router: = httprouter.New()
 
-	router.ServeFiles("/static/*filepath", http.Dir("static"))
-	router.GET("/category", GetCategories)
-	router.GET("/category/:name", GetModelsByCategoryName)
+        router.ServeFiles("/static/*filepath", http.Dir("static"))
+    router.GET("/category", GetCategories)
+    router.GET("/category/:name", GetModelsByCategoryName)
 
-	http.ListenAndServe(":4569", router)
+    http.ListenAndServe(":4569", router)
 }
 
-func GetCategories(response http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	c, _ := loadDataSet()
-	cJson, _ := json.Marshal(c)
-	response.Header().Set("Content-Type", "application/json")
-	response.WriteHeader(200)
-	fmt.Fprintf(response, "%s", cJson)
+func GetCategories(response http.ResponseWriter, request * http.Request, params httprouter.Params) {
+    c, _: = loadDataSet()
+    cJson, _: = json.Marshal(c)
+    response.Header().Set("Content-Type", "application/json")
+    response.WriteHeader(200)
+    fmt.Fprintf(response, "%s", cJson)
 }
 
-func GetModelsByCategoryName(response http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	_, models := loadDataSet()
-	var result []starwars.Model
-	for _, m := range models {
-		if strings.ToLower(m.Category.Name) == strings.ToLower(params.ByName("name")) {
-			result = append(result, m)
-		}
-	}
-	cJson, _ := json.Marshal(result)
-	response.Header().Set("Content-Type", "application/json")
-	response.WriteHeader(200)
-	fmt.Fprintf(response, "%s", cJson)
+func GetModelsByCategoryName(response http.ResponseWriter, request * http.Request, params httprouter.Params) {
+    _, models: = loadDataSet()
+    var result[] starwars.Model
+    for _, m: = range models {
+        if strings.ToLower(m.Category.Name) == strings.ToLower(params.ByName("name")) {
+            result = append(result, m)
+        }
+    }
+    cJson, _: = json.Marshal(result)
+    response.Header().Set("Content-Type", "application/json")
+    response.WriteHeader(200)
+    fmt.Fprintf(response, "%s", cJson)
 }
 
-func loadDataSet() (categories []starwars.Category, models []starwars.Model) {
-	fighter := starwars.Category{Id: 1, Name: "Fighter"}
-	cruiser := starwars.Category{Id: 2, Name: "Cruiser"}
+func loadDataSet()(categories[] starwars.Category, models[] starwars.Model) {
+    fighter: = starwars.Category {
+        Id: 1,
+        Name: "Fighter"
+    }
+    cruiser: = starwars.Category {
+        Id: 2,
+        Name: "Cruiser"
+    }
 
-	vwing := starwars.Model{Id: 1, Title: "V-Wing Fighter", Price: 45.50, Category: fighter}
-	n1 := starwars.Model{Id: 2, Title: "Naboo N-1 Starfighter", Price: 250.45, Category: fighter}
-	republicCruiser := starwars.Model{Id: 3, Title: "Republic Cruiser", Price: 450.00, Category: cruiser}
-	attackCruiser := starwars.Model{Id: 4, Title: "Republic Attack Cruiser", Price: 950.00, Category: cruiser}
-	eta2 := starwars.Model{Id: 5, Title: "ETA-2 Jedi Starfighter", Price: 650.50, Category: fighter}
-	delta7 := starwars.Model{Id: 6, Title: "Delta-7 Jedi Starfighter", Price: 250.35, Category: fighter}
-	bwing := starwars.Model{Id: 7, Title: "B-Wing", Price: 195.50, Category: fighter}
-	ywing := starwars.Model{Id: 8, Title: "Y-Wing", Price: 45.50, Category: fighter}
-	monCalamari := starwars.Model{Id: 9, Title: "Mon Calamari Star Crusier", Price: 1500.00, Category: cruiser}
+        vwing: = starwars.Model {
+        Id: 1,
+        Title: "V-Wing Fighter",
+        Price: 45.50,
+        Category: fighter
+    }
+    n1: = starwars.Model {
+        Id: 2,
+        Title: "Naboo N-1 Starfighter",
+        Price: 250.45,
+        Category: fighter
+    }
+    republicCruiser: = starwars.Model {
+        Id: 3,
+        Title: "Republic Cruiser",
+        Price: 450.00,
+        Category: cruiser
+    }
+    attackCruiser: = starwars.Model {
+        Id: 4,
+        Title: "Republic Attack Cruiser",
+        Price: 950.00,
+        Category: cruiser
+    }
+    eta2: = starwars.Model {
+        Id: 5,
+        Title: "ETA-2 Jedi Starfighter",
+        Price: 650.50,
+        Category: fighter
+    }
+    delta7: = starwars.Model {
+        Id: 6,
+        Title: "Delta-7 Jedi Starfighter",
+        Price: 250.35,
+        Category: fighter
+    }
+    bwing: = starwars.Model {
+        Id: 7,
+        Title: "B-Wing",
+        Price: 195.50,
+        Category: fighter
+    }
+    ywing: = starwars.Model {
+        Id: 8,
+        Title: "Y-Wing",
+        Price: 45.50,
+        Category: fighter
+    }
+    monCalamari: = starwars.Model {
+        Id: 9,
+        Title: "Mon Calamari Star Crusier",
+        Price: 1500.00,
+        Category: cruiser
+    }
 
-	categories = append(categories, fighter, cruiser)
-	models = append(models, vwing, n1, republicCruiser, attackCruiser, eta2, delta7, bwing, ywing, monCalamari)
+        categories = append(categories, fighter, cruiser)
+    models = append(models, vwing, n1, republicCruiser, attackCruiser, eta2, delta7, bwing, ywing, monCalamari)
 
-	return categories, models
+    return categories,
+    models
 }
 ```
 
 JSON çıktısı üreteceğimiz için encoding/json, web sunucusu dinlemesi yapacağımız için net/http, yönlendirme işlemleri için github.com/julienschmidt/httprouter, küçük harfe çevirerek kıyaslama yapmak için strings, star wars tiplerini kullanmak için entity/starwars ve son olarak Fprintf fonksiyonlliği ile HTML çıktısını oluşturmak için fmt paketlerini kullandığımızı söyleyelim.
 
-En sonda yer alan loadDataSet fonksiyonu Category ve Model tipinden slice örnekleri oluşturup döndürüyor. Onunla ilgili olarak söyleyebileceğimiz en güzel şey n sayıda parametre döndüren fonksiyonlara bir örnek olması. append çağrıları ile n sayıda tipi ilave ettiğimiz de dikkatten kaçmamalı. main fonksiyonu içerisinde Router nesnesini örnekleyerek işe başıyoruz. Bu sefer bir önceki yazımızda ele aldığımız GET çağrıları dışında ServeFiles isimli bir kullanım da söz konusu. Bu fonksiyon ilk parametre olarak statik sayfalarımızı tuttuğumuz adreslemeyi alıyor. *filepath kullanımına dikkat etmek lazım. Case-Sensitive bir ifade olduğunu belirtelim. * işareti nedeniyle ikinci parametre ile bildirilen klasördeki her dosyanın ele alınacağını bildiriyoruz. Bu tanımlama ile static adresine gelecek taleplerin hangi fiziki adresten karşılanacağını belirtmiş olduk. ServeFiles bildiriminde daha geniş imkanlara da sahibiz. Nitekim statik dosyaların ele alınması sırasında araya girip HTTP paketine müdahale edebilir Header kısımlarını kurcalayabiliriz ([Şu adresteki tartışmayı](https://github.com/julienschmidt/httprouter/issues/40) incelemenizi öneririm. Statik sayfalarda Cache-Control header bilgisinin nasıl ilave edilebileceği incelenmiş)
+En sonda yer alan loadDataSet fonksiyonu Category ve Model tipinden slice örnekleri oluşturup döndürüyor. Onunla ilgili olarak söyleyebileceğimiz en güzel şey n sayıda parametre döndüren fonksiyonlara bir örnek olması. append çağrıları ile n sayıda tipi ilave ettiğimiz de dikkatten kaçmamalı. main fonksiyonu içerisinde Router nesnesini örnekleyerek işe başlıyoruz. Bu sefer bir önceki yazımızda ele aldığımız GET çağrıları dışında ServeFiles isimli bir kullanım da söz konusu. Bu fonksiyon ilk parametre olarak statik sayfalarımızı tuttuğumuz adreslemeyi alıyor. `*filepath` kullanımına dikkat etmek lazım. Case-Sensitive bir ifade olduğunu belirtelim. `*` işareti nedeniyle ikinci parametre ile bildirilen klasördeki her dosyanın ele alınacağını bildiriyoruz. Bu tanımlama ile static adresine gelecek taleplerin hangi fiziki adresten karşılanacağını belirtmiş olduk. ServeFiles bildiriminde daha geniş imkanlara da sahibiz. Nitekim statik dosyaların ele alınması sırasında araya girip HTTP paketine müdahale edebilir Header kısımlarını kurcalayabiliriz ([Şu adresteki tartışmayı](https://github.com/julienschmidt/httprouter/issues/40) incelemenizi öneririm. Statik sayfalarda Cache-Control header bilgisinin nasıl ilave edilebileceği incelenmiş)
 
 > Eğer /static/ *filepath bildirimi yerine /* filepath şeklinde bir tanımlama yaparsak kodun derlenmesi sırasında aşağıdaki hataları alırız.
 

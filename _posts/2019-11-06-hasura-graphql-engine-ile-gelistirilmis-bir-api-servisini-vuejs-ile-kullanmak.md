@@ -212,10 +212,11 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 
 Vue uygulaması tarafında yapacaklarımız kabaca şöyle (Kod dosyalarındaki yorum bloklarında daha detaylı bilgiler mevcut)
 
-Components klasörüne tek ürün için kullanılabilecek ProductItem isimli bir bileşen ekliyoruz. Anasayfa listelemesinde tekrarlanacak türden bir bileşen olacak bu. Bileşende product özelliği üzerinden içerideki elementlere veri bağlama işlemini gerçekleştirmekteyiz. &#123;&#123;nesne.özellik&#125;&#125; notasyonlarının nasıl kullanıldığına dikkat edelim.
+Components klasörüne tek ürün için kullanılabilecek ProductItem isimli bir bileşen ekliyoruz. Anasayfa listelemesinde tekrarlanacak türden bir bileşen olacak bu. Bileşende product özelliği üzerinden içerideki elementlere veri bağlama işlemini gerçekleştirmekteyiz. ``{{nesne.özellik}}`` notasyonlarının nasıl kullanıldığına dikkat edelim.
 
 {% raw %}
-```text
+
+```html
 <template>
   <div :key="product.productId" class="card w-75">
     <div class="card-header">
@@ -231,8 +232,6 @@ Components klasörüne tek ürün için kullanılabilecek ProductItem isimli bir
       <hr/>
   </div>
 </template>
-{% endraw %}
-
 <script>
 export default {
   name: "ProductItem",
@@ -241,9 +240,11 @@ export default {
 </script>
 ```
 
+{% endraw %}
+
 Ürünlerin listesini gösterebilmek içinse ProductList isimli bir bileşen kullanacağız. Bunu da components altında aşağıdaki gibi yazabiliriz.
 
-```text
+```html
 <template>
   <div>
     <!--
@@ -302,7 +303,7 @@ export default {
 
 Ürün ekleme işini ProductAdd isimli bileşen üstleniyor. Yine components sekmesinde konuşlandıracağımız tipin kod içeriği aşağıdaki gibi olmalı.
 
-```text
+```html
 <template>
   <!-- Veri girişi için basit bir formumuz var. Input değerlerini v-model niteliklerine verilen isimlerle bileşene bağlıyoruz -->
   <form @submit="submit">
@@ -416,7 +417,7 @@ export default {
 
 Uygulamanın ana bileşeni olan App.Vue'da product-add ve product-list isimli nesnelerimizi aşağıdaki gibi yerleştirebiliriz.
 
-```text
+```html
 <template>
   <div id="app">
     <h2 class="text-left">Yeni Ürün</h2>
@@ -491,8 +492,7 @@ new Vue({
 }).$mount('#app');
 ```
 
-> TODO (Benim tembelliğimden size düşen)
-> Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak Auth0'ın [şu dokümanına](https://auth0.com/docs/quickstart/spa/vuejs) bakılabilir. Ben şu an için sadece HASURA_GRAPHQL_ADMIN_SECRET kullanarak servis adresine erişimi kısıtlamış durumdayım. Zaten büyük ihtimalle yazıyı okuduğunuzda onun yerinde yeller estiğine şahit olacaksınız.
+> TODO (Benim tembelliğimden size düşen); Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak Auth0'ın [şu dokümanına](https://auth0.com/docs/quickstart/spa/vuejs) bakılabilir. Ben şu an için sadece HASURA_GRAPHQL_ADMIN_SECRET kullanarak servis adresine erişimi kısıtlamış durumdayım. Zaten büyük ihtimalle yazıyı okuduğunuzda onun yerinde yeller estiğine şahit olacaksınız.
 
 ## Çalışma Zamanı
 
@@ -502,7 +502,7 @@ Hasura servisimiz ve istemci taraftaki uygulamamız hazır. Artık çalışma za
 npm run serve
 ```
 
-terminal komutunu vermemiz yeterli. Sonrasında http://localhost:8080 adresine giderek ana sayfaya ulaşabiliriz. Aynen aşağıdakine benzer bir görüntü elde etmemiz gerekiyor.
+terminal komutunu vermemiz yeterli. Sonrasında `http://localhost:8080` adresine giderek ana sayfaya ulaşabiliriz. Aynen aşağıdakine benzer bir görüntü elde etmemiz gerekiyor.
 
 ![credit_24.png](/assets/images/2019/credit_24.png)
 

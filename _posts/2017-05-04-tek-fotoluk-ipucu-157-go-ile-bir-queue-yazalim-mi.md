@@ -29,6 +29,4 @@ Pek çoğunuzun MyQueue gibi generic bir struct tipi olsa elimizde de kullansak 
 
 ![tfi157_2.gif](/assets/images/2017/tfi157_2.gif)
 
-Bunu çözmeyi deneyin.
-
-Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
+Bunu çözmeyi deneyin. Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.

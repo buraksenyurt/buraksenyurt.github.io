@@ -20,17 +20,17 @@ Ruby tarafında da böyle bir yapı mevcut ama bunun dışında Fiber adı veril
 
 Çoğunlukla parçalı hesaplamaların yapıldığı, yapılan hesaplama sonuçlarının çağıran ortama geri döndürüldüğü ve tekrardan hesaplamayı yapan kod bloğuna yollanarak yeni sonuçların elde edildiği senaryolarda tercih ediliyorlar. Aslında Fiber kavramı benim yeni karşılaştığım bir konu..Net dünyasında çoğunlukla Task Parallel Library gibi işleri oldukça kolaylaştıran yapılarla çalışıyorum. Bakalım Fiber mevzusunu kıvırabilecek miyim? Dilerseniz vakit kaybetmeden Fiber kullanımına ait basit bir kod parçası ile yola devam edelim.
 
-Merhaba Fiber
+## Merhaba Fiber
 
 ```ruby
-=begin
+= begin
 Fiber konusuna bir bakalım
-=end
+    = end
 
-myFiber=Fiber.new do
-  puts "Fiber metoduna girdik"
-  Fiber.yield
-  puts "Fiber metodunun sonuna geldik"
+myFiber = Fiber.new do
+        puts "Fiber metoduna girdik"
+    Fiber.yield
+puts "Fiber metodunun sonuna geldik"
 end
 
 puts "Burası çağıran kod kısmı"
@@ -49,23 +49,23 @@ Peki ne oldu burada? Aşağıdaki grafik konuyu daha güzel özetleyebilir.
 
 Aslında ana uygulama kodu ve Fiber nesnesi ile açılan kod bloğu arasında resume ve yield fonksiyonlarından yararlanarak geçişler yapıldığını görüyoruz. Yardımcı rutin olarak çalışmasını istediğimiz kod bloğuna geçiş yapmak veya o blokta kaldığımız yerden işlemlere devam etmek için resume, bu kod bloğunu çağıran uygulama parçacığına geri dönmek içinse yield fonksiyonundan yararlanıyoruz. Bu bir çeşit rutinler arası geçisin planlanmasıdır (Scheduling)
 
-Çağıran ve Blok Arası Veri Alışverişi
+## Çağıran ve Blok Arası Veri Alışverişi
 
 Pek tabi Fiber blokları ve çağıran uygulama arasında veri alışverişi yapılması da gerekebilir. Yani Fiber içerisine argüman gönderilmesi ve bir takım işlemler sonucu elde edilen değerlerin döndürülmesi istenebilir. Aşağıdaki kod parçasında bu veri alışverişinin nasıl yapılabileceği basitçe örneklenmeye çalışılmıştır.
 
 ```ruby
-fiberX=Fiber.new do |input|
-  puts "#{input} bilgisi geldi.Şimdi bunla bir şeyler yapayım"
-  Fiber.yield(rand)
-  puts "{input} şeklinde yeni bir bilgi geldi. Bunu da hesaplayayım."
-  Fiber.yield(rand)
-  "Her şey tamamlandı"
+fiberX = Fiber.new do | input |
+        puts "#{input} bilgisi geldi.Şimdi bunla bir şeyler yapayım"
+    Fiber.yield(rand)
+puts "{input} şeklinde yeni bir bilgi geldi. Bunu da hesaplayayım."
+Fiber.yield(rand)
+"Her şey tamamlandı"
 end
 
 puts "Çağıran kod"
-output1=fiberX.resume(198)
+output1 = fiberX.resume(198)
 puts "Fiber içinden #{output1} cevabı döndü"
-output2=fiberX.resume(200)
+output2 = fiberX.resume(200)
 puts "Fiber içinden bu kez #{output2} cevabı döndü"
 puts(fiberX.resume)
 ```
@@ -74,26 +74,26 @@ Bu kez Fiber bloğuna input isimli tek bir değişken taşınıyor. Bu değişke
 
 ![rubyfiber_4.gif](/assets/images/2017/rubyfiber_4.gif)
 
-Fiber Blokları Arası Veri Transferi
+## Fiber Blokları Arası Veri Transferi
 
 Şu ana kadar ki örneklerimizde Fiber ile çağıran ana uygulama arasında geçişler yaptık. Çok doğal olarak n sayıdaki Fiber bloğu arasında da veri transferi gerçekleştirmek isteyebiliriz. Nitekim bir Fiber kod bloğu tarafında yapılan hesaplamalar sırasında farklı bir Fiber kod bloğunun bu sonuçlar ile başka işlemler yapıp diğer bloğa cevap vermesi gerekebilir. Tamamen senaryoya bağlı bir durum. Biz şimdilik bu geçişlerin nasıl yapılabileceğine basit bir örnekle bakalım. İşte kod parçamız.
 
 ```ruby
 require 'fiber'
 
-fiber1=fiber2=nil
+fiber1 = fiber2 = nil
 
-fiber1=Fiber.new do |input|
-  puts "Fiber 1 Başlangıç Input : #{input}"
-  newInput=fiber2.transfer(input*rand)
-  puts "Fiber 1e gelen yeni Input : #{newInput}"
-  fiber2.transfer("işlemleri bitir")
+fiber1 = Fiber.new do | input |
+        puts "Fiber 1 Başlangıç Input : #{input}"
+    newInput = fiber2.transfer(input * rand)
+puts "Fiber 1e gelen yeni Input : #{newInput}"
+fiber2.transfer("işlemleri bitir")
 end
 
-fiber2=Fiber.new do |input|
-  puts "Fiber 2ye gelen Input : #{input}"
-  newInput=fiber1.transfer(input*rand)
-  puts "Fiber1 diyor ki '#{newInput}'"
+fiber2 = Fiber.new do | input |
+        puts "Fiber 2ye gelen Input : #{input}"
+    newInput = fiber1.transfer(input * rand)
+puts "Fiber1 diyor ki '#{newInput}'"
 end
 
 puts "işlemler başlıyor"
@@ -105,7 +105,7 @@ puts "işlemler bitti"
 
 ![rubyfiber_5.gif](/assets/images/2017/rubyfiber_5.gif)
 
-Yaygın Örnek
+## Yaygın Örnek
 
 Ruby, Fiber blokları görüldüğü üzere eş zamanlı programlamada adına basit ve hafif bir kullanım sunmakta. Eş zamanlı çalışma planlamasının programcıya bırakıldığı bu hafif yapı yardımcı rutinlerin ele alındığı senaryolarda oldukça işe yarar görünüyor. En çok verilen başlangıç örneği ise Fibonacci sayılarının hesaplanması için Fiber bloğundan yararlanılması (Hep Recursive metodları kullanırdık ama yardımcı rutin olarak bu sayıları üretecek bir iş parçacığını geliştirmeyi pek düşünmemiştik)
 
@@ -115,18 +115,18 @@ Buna ait kod parçasını geliştirmeye çalışmanız, bir süre uğraşıp yap
 
 ```ruby
 def fibogen
-  Fiber.new do
-    x,y=0,1
-    loop do 
-      Fiber.yield(y)
-      x,y=y,x+y
-    end
-  end
+Fiber.new do
+        x, y = 0, 1
+    loop do
+        Fiber.yield(y)
+    x, y = y, x + y
+end
+end
 end
 
-generator=fibogen
-20.times do 
-  print generator.resume,","
+generator = fibogen
+20. times do
+    print generator.resume, ","
 end
 ```
 

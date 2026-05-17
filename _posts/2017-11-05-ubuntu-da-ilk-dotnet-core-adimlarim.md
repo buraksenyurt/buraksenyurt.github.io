@@ -18,9 +18,9 @@ categories:
 ---
 Üniversite yıllarımda internet yeni yeni yaygınlaşmaya başlayan bir ortamdı. 14400 kpbs hızındaki modemimi daha 3ncü sınıfta alabilmiştim. Bu sebepten okulun ilk yıllarında bilgisayar teknolojileri ile ilgili bilgileri öğrenebileceğim en güzel mecra aylık dergilerdi. Bazıları zaman içerisinde kapandı bazılarıysa internet üzerinden yayınlanmaya başladı. Ben ağırlıklı olarak PcWorld, PcNet, PcMagazine gibi dergileri okuduğumu hatta ay ay biriktirdiğimi hatırlıyorum.
 
-![coubuntu_1.gif](/assets/images/2017/coubuntu_1.gif)
-
 Byte severek takip ettiğim dergilerden birisiydi. Özellikle de Jerry Pournelle'in köşesi. Her ay farklı şeylerle uğraşır, yaptığı denemelerin sonuçları paylaşır, bilim kurgu üzerine konuşur, kitap önerilerinde bulunurdu. Yeni yazılımları dener ve deneyimlerini aktarırdı. The New York Times [ilgili yazısında](https://www.nytimes.com/2017/09/15/obituaries/jerry-pournelle-science-fiction-novelist-and-computer-guide-dies-at-84.html) onu bilim kurgu yazarı ve bilgisayar rehberi olarak tanımlamıştır. Araştırmayı ve bu araştırmaları sırasında öğrendiklerini paylaşan değerli bir bilim insanıydı benim için.
+
+![coubuntu_1.gif](/assets/images/2017/coubuntu_1.gif)
 
 Ne yazık ki 8 Eylül 2017 tarihinde aramızdan ayrılmış. Benim de bir şeyleri araştırıp bu araştırmalarla ilgili notlar almama vesile olan ve kendime göre bir gelişim metodolojisini alışkanlık haline getirmemi sağlayan insanlardan birisiydi.
 
@@ -28,7 +28,7 @@ Bu düşünceler eşlinde hafta sonu işlerime başladım. Evdeki yaklaşık 6 y
 
 Docker deneyimlerine geçmeden önce.Net Core 2.0 ile Ubuntu'da bir Hello World demeye karar verdim. Amacım bir Linux platformu üzerine.Net Core 2.0 SDK'yi yüklemek ve C# ile yazılmış bir Console uygulamasını kullanarak yeni bir ufka merhaba demekti. Benim için önemli bir başlangıç noktası. Nitekim önümüzdeki sene içerisinde işten arta kalan zamanlarda Linux üzerinde.Net Core 2.0 ile bir şeyler yapmaya gayret edeceğim.
 
-.Net Core'un Kurulumu
+## .Net Core'un Kurulumu
 
 Terminal penceresini ve Microsoft'un konu ile ilgili dokümantasyonunu açtıktan sonra kurulum adımlarını takip etmeye başladım. Okuduğum kadarıyla öncelikli olarak Microsoft Product Feed listesine kayıt olmak gerekiyor. Bunu iki adımda gerçekleştiriyoruz. Önce güvenli bir anahtar sonrasında da kayıt. Sadece bir kere yapmamız yeterli. Kayıt işlemini gerçekleştirirken kullandığımız Ubuntu sürümünü de dikkate almalıyız. Ben Ubuntu 16.04 Linux Mint versiyonunu yüklediğim için buna uygun bir bildirim yaptım (Xenial ifadesinin kullanılmas sebebi) Bu arada curl komutunun genellikle internetten içerik indirmek için kullanıldığını öğrendim (Linux tarafında çok acemiyim biliyorsunuz ki)
 
@@ -60,7 +60,7 @@ dotnet --info
 
 ![cobuntu_6.gif](/assets/images/2017/cobuntu_6.gif)
 
-Console Uygulamasının Oluşturulması
+## Console Uygulamasının Oluşturulması
 
 Bildiğiniz gibi dotnet new komutu ile önceden tanımlı şablonlardan yararlanarak projelerimizi oluşturabiliyoruz (Neler oluşturabileceğimizi görmek için dotnet new --help ifadesinden yararlanabilirsiniz) Benim ilk hedefim terminal pencersinde basit bir şeyler yazdırıp Hello World diyebilmek. Bu sebepten oluşturduğum Development klasörü üzerinde aşağıdaki ifadeyi kullanarak HelloWorld isimli bir Console projesi oluşturdum.
 
@@ -123,7 +123,7 @@ dotnet run
 
 Belki de pek çoğunuz için etkileyici bir sonuç değil ama benim oldukça hoşuma gitti. Vakti zamanında sadece Windows platformunda.Net ile kod yazabildiğimi düşününce, kurduğum Linux makinede bu ortamı kullanarak C# ile kod geliştirebilmek harika bir deneyim.
 
-Visual Studio Code Kurulumu
+## Visual Studio Code Kurulumu
 
 Bu arada kodları nasıl düzenlediğimi merak etmiş de olabilirsiniz. Tahmin edeceğiniz gibi Visual Studio Code'u kullandım. Bu uygulamayı da terminalden aşağıdaki komutları kullanarak yükleyebilirsiniz. Yükleme işleminden sonra HelloWorld uygulamasını açtığımızda C# için gerekli Extension'da öneri olarak sunulacaktır.
 
@@ -139,7 +139,7 @@ sudo apt-get install code
 
 Eğer komut satırından kurulum zor geliyorsa basit kurulum için [şu adresten de](https://code.visualstudio.com/Download?wt.mc_id=DotNet_Home&dotnetid=572034740.1488954905) yararlanabilirsiniz.
 
-Şimdi Ne Olacak?
+## Şimdi Ne Olacak?
 
 Artık emektar dizüstü bilgisayarımda Ubuntu 64bit sürümü yüklü. Tertemiz bir ortamım var. Bu ortamda şu an için.Net Core 2.0 ve Visual Studio Code bulunuyor. Ama yapmam gereken başka işler var. GitHub ile entegre olmalıyım. Diğer yandan Docker kurulumunu gerçekleştirip bir.Net Core 2.0 imajı üzerinde çalışmalar yapmalıyım. Ayrıca GoLang, Ruby ve Python için de ortamı hazırlamalıyım. Bu arada Linux terminal için biraz komut çalışsam hiç de fena olmaz. Python tarafında sudo, apt-get gibi ifadelere aşina olsam da curl gibi yeni karşılaştığım komutların farkında olmalıyım.
 

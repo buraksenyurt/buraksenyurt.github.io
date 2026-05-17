@@ -17,7 +17,7 @@ categories:
 
 ```xml
 <identity>
-	<dns value="AzonServer"/>
+  <dns value="AzonServer"/>
 </identity>
 ```
 
@@ -25,7 +25,7 @@ Bunun üzerine istemci tarafında belirtilmesi gereken sertifikanın base64 form
 
 ```xml
 <identity>
-	<certificate encodedValue=""/>
+  <certificate encodedValue=""/>
 </identity>
 ```
 

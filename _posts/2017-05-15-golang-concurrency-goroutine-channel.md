@@ -18,55 +18,59 @@ Yazılım ürünlerinde eş zamanlı çalışma modeli oldukça önemli. Uygulam
 
 Bir web sunucusu istemcilerden gelen talepleri (Request) ait oldukları uygulamalara yönlendirip işleten bir çalışma mekaniğine sahiptir. Hiç bir talep için bir diğerini bekleme söz konusu değil. Web sunucusu bu görevleri eş zamanlı olarak yürütüyor. Concurrency'deki temel amaç da bu zaten. Görevleri aynı anda işletebilmek. Go dilinde goroutine fonksiyonu ve channel yöntemi ile Concurrency işlemlerini gerçekleştirebiliriz. İlk olarak goroutine fonksiyonunu inceleyecek sonrasında channel kavramına değineceğiz.
 
-goroutine
+## goroutine
 
 goroutine bir fonksiyon aslında. Eş zamanlı çalışacak fonksiyonları çağırmak için kullanılıyor. Goroutine çalışma modeline göre belleğin stack adı verilen bölgesinde başlangıç için 2Kb kadar yer ayrıldığı ve bu alanın gerektiğinde büyüdüğü ifade ediliyor. Bir Thread için bu alan 1 Mb civarında. Thread oluşturma ve yönetmedeki pek çok karmaşık detay goroutine tasarımına dahil edilmemiş. Goroutine'ler işletim sistemi seviyesinde çoklu thread'de çalışabiliyor. Bu nedenle bir goroutine bloklansa bile diğeri (diğerleri) çalışmasına devam edebilir. Son olarak kullanım maliyeti düşük, hafif ve hızlı bir tasarıma sahip olduklarını belirtebiliriz (goroutine'lerin çalışma prensipleri ve Thread kavramı ile arasındaki farkları incelemek için [şu yazıya bakmanızı](http://blog.nindalf.com/how-goroutines-work/) şiddetle tavsiye ederim)
 
 Şimdi basit bir örnekle konuyu anlamaya çalışalım.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	"time"
-	"sort"
-	"math/rand"
-	)
-	
-func main(){
-	names:=[]string{"captain kirk","barbara","nik","jon calloway","rici ric","sem vitmor"}
-	go sort.Strings(names)
-	
-	go SaySomething("Hello Concurrency")
-	
-	//gorouting anonymous func sample
-	go func(value int){
-		fmt.Printf("%d part is going to go\n",value)
-		time.Sleep(time.Second*2)
-	}(1000)
-	
-	for i:=0;i<5;i++{
-		start:=rand.Intn(250)
-		go Calculate(start,start+1000,time.Second*1)
-	}
-	
-	var userInput string
-	fmt.Scanln(&userInput)
-	fmt.Println("All is well")
+    "fmt"
+    "time"
+    "sort"
+    "math/rand"
+)
+
+func main() {
+    names: = [] string {
+        "captain kirk", "barbara", "nik", "jon calloway", "rici ric", "sem vitmor"
+    }
+    go sort.Strings(names)
+
+    go SaySomething("Hello Concurrency")
+
+    //gorouting anonymous func sample
+    go func(value int) {
+        fmt.Printf("%d part is going to go\n", value)
+        time.Sleep(time.Second * 2)
+    }(1000)
+
+    for i: = 0;i < 5;i++{
+        start: = rand.Intn(250)
+        go Calculate(start, start + 1000, time.Second * 1)
+    }
+
+    var userInput string
+    fmt.Scanln( & userInput)
+    fmt.Println("All is well")
 }
 
-func Calculate(start int,stop int,sleep time.Duration){
-	for i:=start;i<=stop;i++{
-		time.Sleep(sleep)
-		fmt.Printf("%d...",i)
-	}
+func Calculate(start int, stop int, sleep time.Duration) {
+    for i: = start;
+    i <= stop;
+    i++{
+        time.Sleep(sleep)
+        fmt.Printf("%d...", i)
+    }
 }
 
-func SaySomething(message string){
-	fmt.Println("Saying...")
-	time.Sleep(time.Second*3)
-	fmt.Println(message)
+func SaySomething(message string) {
+    fmt.Println("Saying...")
+    time.Sleep(time.Second * 3)
+    fmt.Println(message)
 }
 ```
 
@@ -78,7 +82,7 @@ for döngüsündeki kullanım şekli de oldukça şıktır. 5 defa Calculate isi
 
 ![goroutines_1.gif](/assets/images/2017/goroutines_1.gif)
 
-channel
+## channel
 
 Aslında goroutine'ler pratik olsalar da tamamlandıklarında sinyal vermemeleri gibi bir sorunları da vardır. Sessizce işlerini tamamlayıp kaynaklarını iade ederler. İşte bu noktada channel yöntemi devreye girmektedir. Temel olarak bir channel ile goroutine'ler arasında iletişim kurabilir ve eş zamanlı çalışan iş parçaları arasında senkronizasyonu sağlayabiliriz. Channel konusu içerisinde bir çok alt konu da bulunuyor. Öğrenmeye çalışırken biraz zorlandığımı itiraf edebilirim ve konunun çok daha fazla derinliği var.
 
@@ -86,35 +90,35 @@ Aslında goroutine'ler pratik olsalar da tamamlandıklarında sinyal vermemeleri
 
 Basit bir kod parçası ile başlayalım ve kanallar nasıl kullanılıyor ele alalım.
 
-```golang
+```go
 package main
 
-import(
-	"fmt"
-	"time"
-	)
+import (
+    "fmt"
+    "time"
+)
 
-func main(){
-	payload:=make(chan string)
-	
-	go Foo(payload,"code:1234")
-	go Bar(payload)
-	
-	var userInput string
-	fmt.Scanln(&userInput)
-	fmt.Println("All is well")
+func main() {
+    payload: = make(chan string)
+
+        go Foo(payload, "code:1234")
+    go Bar(payload)
+
+    var userInput string
+    fmt.Scanln( & userInput)
+    fmt.Println("All is well")
 }
 
-func Foo(channel chan string,content string){
-	time.Sleep(time.Second*3)
-	fmt.Println("Foo...")
-	channel<-content
+func Foo(channel chan string, content string) {
+    time.Sleep(time.Second * 3)
+    fmt.Println("Foo...")
+    channel < -content
 }
 
-func Bar(channel chan string){
-	fmt.Println("Bar...")
-	ctx:=<-channel
-	fmt.Println(ctx)
+func Bar(channel chan string) {
+    fmt.Println("Bar...")
+    ctx: = < -channel
+    fmt.Println(ctx)
 }
 ```
 
@@ -128,26 +132,24 @@ Foo fonksiyonda belli bir süre duraksatma yapmaktayız (Olayı biraz daha drama
 
 Kanalları kullanarak eş zamanlı çalışan iş parçaları arasında senkronizasyon da yapılabilir. Bir başka deyişle goroutine olarak başlatılan bir işin sonunda kanala işaret bırakılıp (true veya 1 gibi bir değer örneğin) diğer goroutine'in ilgili işareti alana kadar bekletilmesi sağlanabilir. Örneğin ana fonksiyon içerisinden başlatılan ve uzun sürecek bir iş sonlanmadan uygulamanın kapanmasını engellemek istediğimi durumlarda bu tekniği kullanabiliriz. Aşağıdaki basit kod parçasında bu durum örneklenmektedir.
 
-```golang
+```go
 package main
 
-import
-(
-	"fmt" 
-	"time"
+import (
+    "fmt"
+    "time"
 )
 
-func main() {     
-    chnFlag:=make(chan int,1)    
-    go DoHeavyWork(chnFlag)    
-    <-chnFlag    
+func main() {
+    chnFlag: = make(chan int, 1)
+    go DoHeavyWork(chnFlag) < -chnFlag
 }
 
-func DoHeavyWork(flag chan int){
+func DoHeavyWork(flag chan int) {
     fmt.Println("Start...")
-    time.Sleep(time.Second*5)
+    time.Sleep(time.Second * 5)
     fmt.Println("Done...")
-    flag<-1
+    flag < -1
 }
 ```
 
@@ -163,7 +165,7 @@ Burada kritik nokta main fonksiyonundaki <-chnFlag ifadesidir. Bu satırı kald�
 
 Kanalları fonksiyon parametresi olarak kullanabiliyoruz. Bu durumda tip güvenliği adına kanalın çalışma yönünü de belirleyebiliriz. Yani fonksiyon parametresi olan bir kanalın sadece alıcı veya verici olması garanti edilebilir. Aşağıdaki kod parçasında bu kullanıma bir örnek verilmektedir.
 
-```golang
+```go
 package main
 
 import(
@@ -196,7 +198,7 @@ sender isimli fonksiyon sadece mesaj gönderme özelliğine sahip bir kanal ile 
 
 Kanallar normalde senrkon çalışırlar. Yani mesajı gönderen taraf ile mesajı alacak olan taraf birbirlerini beklerler. Buffer kullanan kanallar inşa ederek birbirleriyle asenkron çalışmalarını sağlayabiliriz (Varsayılan olarak buffer kullanılmamaktadır) Buffer kullanacak bir kanal ile kanal tipinden kaç adet göndereceğimizi de belirtiriz. Yani kanal üzerinden akacak içeriği sayı bazında sınırlandırabiliriz. Bu kısıtlama bir anlamda semaphore tekniği uygulamak olarak da düşünülebilir. Aşağıda buffer kullanmına ilişkin basit bir kod parçası yer almaktadır.
 
-```golang
+```go
 package main
 
 import "fmt"
@@ -224,7 +226,7 @@ Oluşturulan channel tipi 3 string içeriği taşıyacak kapasitede tanımlanmı
 
 n sayıda goroutine çalıştırdığımızda kanallar ve select ifadesini kullanarak işi bitenlerin sonuçlarını almayı başarabiliriz. Bir nevi wait any hali diyelim. Aşağıdaki kod parçasını ele alalım.
 
-```golang
+```go
 package main
 
 import 

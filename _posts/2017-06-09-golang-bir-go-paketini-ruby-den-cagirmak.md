@@ -14,15 +14,13 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Pek çok kaynak GO dilinin ileride C'nin yerini alabileceği yönünde görüşler belirtmekte. Özellikle IoT alanında bu dilin daha fazla ön plana çıkacağı vurgulanıyor. Bu düşüncenin haklı olabileceği yönünde bazı tespitlerim var.
+Pek çok kaynak GO dilinin ileride C'nin yerini alabileceği yönünde görüşler belirtmekte. Özellikle IoT alanında bu dilin daha fazla ön plana çıkacağı vurgulanıyor. Bu düşüncenin haklı olabileceği yönünde bazı tespitlerim var. Söz gelimi GO ile yazılmış paketleri başka dillere ait ortamlarda kullanabilmemiz mümkün. Bir başka deyişle bir GO paketini C, Python, Java ve Ruby gibi dillerde kullanabiliriz. Sonuçta yazılan GO kodları C-Style API şeklinde ifade edebileceğimiz derlenmiş kütüphanelere dönüştürülebilmekte.
 
 ![gofromruby_1.gif](/assets/images/2017/gofromruby_1.gif)
 
-Söz gelimi GO ile yazılmış paketleri başka dillere ait ortamlarda kullanabilmemiz mümkün. Bir başka deyişle bir GO paketini C, Python, Java ve Ruby gibi dillerde kullanabiliriz. Sonuçta yazılan GO kodları C-Style API şeklinde ifade edebileceğimiz derlenmiş kütüphanelere dönüştürülebilmekte.
-
 Yapılması gereken tek şey, yazılan GO kodlarının C Shared Library türünde derlenmesi. Bu modda yapılan derleme sonucu GO fonksiyonlarını dışarıya açabileceğimiz Shared Object Binary File içerikleri üretiliyor. İşte bu yazımızda basit bir GO kütüphanesini bahsettiğimiz formatta derleyip örnek olarak Ruby ile yazılmış bir kod üzerinden kullanmaya çalışacağız. Dilerseniz vakit kaybetmeden işe koyulalım.
 
-Sistem
+## Sistem
 
 Örneği Ubuntu platformu üzerinde denedim. Aslında ilk olarak Windows 7 yüklü makinemde denedim lakin Shared Library oluşturulmasında 64bitlik ortamım sorun çıkarttı. Hemen emektar Ubuntu'ya döndüm ve örneği orada yazmaya karar verdim. Ubuntu tarafında Ruby (2.1.5 i386) ve Go (1.8.3 i386) versiyonları yüklü. Yazıyı yazdığım tarihler itibariyle en son sürümler bunlardı. Ruby tarafı için ihtiyaç duyacağımız FFI isimli bir gem paketi var. Bu paket ile GO tarafında üretilecek olan derlenmiş kod dosyalarını ruby ortamına yükleyip, arayüzden sunulan fonksiyonları kullanabileceğiz. Sonuçta kodlar GO ile yazılmış C kütüphaneleri de olsa bir şekilde diğer çalışma zamanı ortamlarına yüklenerek değerlendirilebilirler. FFI isimli paketi yüklemek için terminalden gem install komutunu kullanabiliriz (Kullanıcım root haklarına sahip olmadığından sudo komutu ile yükleme işlemini gerçekleştirdim)
 
@@ -30,22 +28,22 @@ Sistem
 sudo gem install ffi
 ```
 
-GO Paketinin Yazılması
+## GO Paketinin Yazılması
 
 İşe aşağıdaki GO paketini yazarak başlayabiliriz.
 
-```golang
+```go
 package main
 
 import "C"
 
 import (
-	"math"
+    "math"
 )
 
 //export CircleSpace
 func CircleSpace(r float64) float64 {
-	return math.Pi * math.Pow(r, 2)
+    return math.Pi * math.Pow(r, 2)
 }
 
 func main() {}
@@ -53,7 +51,7 @@ func main() {}
 
 SomeMath.go ismiyle kaydedeceğimiz kod dosyasında daire alanı hesaplaması yapan tek bir fonksiyon bulunuyor. Siz örneğinizi geliştirirken farklı tipler ile çalışan fonksiyonları da işin içerisine katabilirsiniz. İçerikte dikkat edilmesi gereken bir kaç nokta var. Her şeyden önce C isimli bir GO paketini kullanmaktayız. Bunun haricinde yine bir main fonksiyonu (entry point) bildirimi söz konusu ancak içerisinde iş yapan hiçbir kod parçası bulunmuyor. //export şeklinde belirtilen yorum satırı ise önemli. Nitekim sadece export ile işaretlenmiş fonksiyonlar dış dünyaya açılabiliyorlar. Diğer yandan paylaşımlı olarak kullanılacak kütüphanenin mutlaka main paketi şeklinde düzenlenmesi gerekiyor.
 
-Derleme İşlemi
+## Derleme İşlemi
 
 GO uzantılı kaynak kod dosyası hazır. Bunu direkt go derleyicisi ile derlersek bildiğiniz üzere çalıştırılabilir bir exe üretilir. Oysaki ihtiyacımız olan diğer dillerin ele alabileceği paylaşılabilir bir nesne olmalı (Shared Object) Bu nedenle yazılan paketin komut satırından aşağıdaki gibi derlenmesi gerekiyor.
 
@@ -120,7 +118,7 @@ extern GoFloat64 CircleSpace(GoFloat64 p0);
 
 Bu dosya en baştaki yorum satırında da belirtildiği üzere değiştirilmememlidir. Kodun son kısmında CircleSpace fonksiyonuna ait bir bildirim olduğu da gözden kaçmamalıdır. typedef tanımlamalarına bakıldığında ilgili GoFloat64 tipi için double eşleştirilmesi yapıldığını da görebiliriz.
 
-Ruby Tarafından Çağırım
+## Ruby Tarafından Çağırım
 
 Yazılan GO paketini Ruby tarafından çağırmak için aşağıdaki basit kod parçasını kullanabiliriz.
 
@@ -128,9 +126,9 @@ Yazılan GO paketini Ruby tarafından çağırmak için aşağıdaki basit kod p
 require 'ffi'
 
 module ShapeMath
-	extend FFI::Library
-	ffi_lib './SomeMath.so'
-	attach_function :CircleSpace, [:double], :double
+extend FFI::Library
+ffi_lib './SomeMath.so'
+attach_function: CircleSpace, [: double],: double
 end
 
 puts ShapeMath.CircleSpace(10)

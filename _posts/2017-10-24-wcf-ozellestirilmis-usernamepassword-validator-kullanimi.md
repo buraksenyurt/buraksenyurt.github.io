@@ -45,7 +45,7 @@ Sertifika üretimleri geliştireceğimiz örnekte ilerlememiz için yeterli değ
 
 ![custa_2.gif](/assets/images/2017/custa_2.gif)
 
-Sunucu Tarafının Geliştirilmesi
+## Sunucu Tarafının Geliştirilmesi
 
 Sunucu tarafında basit bir servisimiz bulunacak. Bu servisi WsHttpBinding destekli olacak şekilde konuşlandıracağız. Kullanacağı güvenlik ayarlarını bu örnek özelinde programatik olarak düzenleyeceğiz. Tabii bir de özel kullanıcı doğrulama sınıfımızı ilave edeceğiz. Host uygulamasını Console tabanlı bir proje olarak geliştirebiliriz. System.ServiceModel ve System.IdentityModel kütüphanelerinin projeye referans edilmesi önemli. Önce servis sözleşmesini ve ilgili servis tipini yazalım.
 
@@ -148,7 +148,7 @@ namespace AzonHostApp
 }
 ```
 
-Şimdi neler yaptığımıza bir bakalım. ServiceHost nesnesini üretirken hangi tipi kullanacağımızı ve adres bilgisini veriyoruz. Buna göre servisimiz http://localhost:6002 adresinden yayınlanacak. WSDL ve Exception detayı paylaşımı için çalışma zamanına varsayılan olarak eklenen ServiceMetadataBehavior ve ServiceDebugBehavior niteliklerini yakalayıp gerekli özelliklerini true olarak belirliyoruz. Sonrasında ise istemci ve sunucu arasındaki sertifika doğrulama işlemlerinin hangi modda yapılacağını belirtmekteyiz. Örnekte PeerOrChainTrust kullandık. Aslında farklı Trust modları bulunuyor (Detaylar için [şu adrese](https://msdn.microsoft.com/en-us/library/system.servicemodel.security.x509certificatevalidationmode(v=vs.110).aspx) bakabilirsiniz) Devam eden kodda Comman Name değerini AzonServer olarak verdiğimiz sertifikanın bildirimi gerçekleştiriliyor. Sertifikanın CurrentUser deposunda SubjectName'e göre aranacağı belirtilmekte.
+Şimdi neler yaptığımıza bir bakalım. ServiceHost nesnesini üretirken hangi tipi kullanacağımızı ve adres bilgisini veriyoruz. Buna göre servisimiz `http://localhost:6002` adresinden yayınlanacak. WSDL ve Exception detayı paylaşımı için çalışma zamanına varsayılan olarak eklenen ServiceMetadataBehavior ve ServiceDebugBehavior niteliklerini yakalayıp gerekli özelliklerini true olarak belirliyoruz. Sonrasında ise istemci ve sunucu arasındaki sertifika doğrulama işlemlerinin hangi modda yapılacağını belirtmekteyiz. Örnekte PeerOrChainTrust kullandık. Aslında farklı Trust modları bulunuyor (Detaylar için [şu adrese](https://msdn.microsoft.com/en-us/library/system.servicemodel.security.x509certificatevalidationmode(v=vs.110).aspx) bakabilirsiniz) Devam eden kodda Comman Name değerini AzonServer olarak verdiğimiz sertifikanın bildirimi gerçekleştiriliyor. Sertifikanın CurrentUser deposunda SubjectName'e göre aranacağı belirtilmekte.
 
 Örnekte Ws standartlarını destekleyen bir binding tipi kullanılmakta. Bu tipin güvenlik modunu mesaj tabanlı olacak şekilde belirliyoruz. İstemcinin de kullanıcı adı ve şifre doğrulamasına tabi tutulacağını ClientCredentialType özelliğine atadığımız değerle işaret etmekteyiz. Bu ayarlamalardan sonra ilgili ServiceEndpoint tipinin eklenmesi söz konusu. Host tarafında kullanıcı doğrulama işlemi için AzonUsernamePasswordValidator isimli bir sınıf yazmıştık. Bu tipin kullanılacağını belirtmemiz lazım. Bu nedenle öncelikle UserNamePasswordValidationMode değerini Custom'a çekip CustomUserNamePasswordValidator özelliğine de kendi nesne örneğimizi ekliyoruz. Tabii burada işin sırrı bu atamanın gerçekleşmesi için AzonUsernamePasswordValidator tipinin System.IdentityModel.Selectors isim alanındaki UserNamePasswordValidator tipinden türemiş olması (İşte size bir çalışma zamanının basit genişletilebilirlik tasarımı)
 

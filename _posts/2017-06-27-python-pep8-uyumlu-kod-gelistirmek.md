@@ -31,7 +31,7 @@ py -3 -m pip install pytest-pep8
 
 > Windows tarafındaki yükleme sonrası py.test aracının bulunamadığına dair bir hata mesajı ile karşılaşabilirsiniz. Bu, Python'un script klasörüne ait Path bildiriminin olmayışından kaynaklanmaktadır. Script klasörünü Environment Variables-Path tanımına eklediğiniz takdirde sorun çözümlenecektir.
 
-Bir Test Kodu
+## Bir Test Kodu
 
 Pek tabii test için örnek bir kod parçasına ihtiyacımız var. İçeriğinin çok büyük bir önemi yok. Bizim için kobay olacak diyebiliriz.
 
@@ -75,7 +75,7 @@ Aslında üç basit fonksiyonumuz ve bir de sınıfımız var. sum isimli fonksi
 
 ![pythonpep_4.gif](/assets/images/2017/pythonpep_4.gif)
 
-Peki ya PEP8 Kontrolü
+## Peki ya PEP8 Kontrolü
 
 Kodlar güzel bir şekilde çalışıyor peki yazım tarzı Guido van Rossum, Barry Warsaw, Nick Coghlan abilerimizin istediği gibi mi? Nitekim PEP8 dokümantasyonunda onların imzası var. Haydi bir bakalım. Komut satırından py.test aracını kullanarak testi çalıştırdığımızda beklenmedik sonuçlarla karşılaşabiliriz.
 

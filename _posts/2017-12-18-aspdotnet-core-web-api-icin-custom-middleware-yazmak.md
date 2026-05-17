@@ -151,7 +151,7 @@ public static class WatsonExtensions
 
 ```csharp
 app.UseWatson(new WatsonOptions{
-	MaxSizeForPostContent=1024
+    MaxSizeForPostContent=1024
 });
 ```
 

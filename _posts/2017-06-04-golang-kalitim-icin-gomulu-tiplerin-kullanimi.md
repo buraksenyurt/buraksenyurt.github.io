@@ -24,7 +24,7 @@ Son olarak bugün gömülü tiplerin kullanımını öğrenmeye çalıştım. Bi
 
 Player ve Ability isimli yapılar FootballPlayer ve Boxer isimli diğer yapılarda gömülü tip olarak kullanılıyorlar. Buna göre her futbolcu ve boksör örneği id, nickName gibi temel bilgilere sahip olacak ve bir şeyler söyleyebilecek (saySomething metodu). Ayrıca her birisinin n sayıda kabiliyeti de bulunabilecek ve bu kabiliyetleri uygulayabilecek (useAbility metodu) Bunun için abilities niteliklerini kullanabiliriz. Gelelim bu fotoğrafın kod görüntüsüne.
 
-```golang
+```go
 /*
  Lesson 09
  Embedded type kullanımı
@@ -33,72 +33,87 @@ Player ve Ability isimli yapılar FootballPlayer ve Boxer isimli diğer yapılar
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	var zidane FootballPlayer
-	zidane.self = Player{id: 10, nickName: "Zinadine Zidane"}
-	zidane.position = "Midfield"
-	zidane.abilities = []Ability{
-		Ability{name: "shoot", power: 92},
-		Ability{name: "high pass", power: 84},
-	}
-	zidane.abilities[1].useAbility()
-	zidane.self.saySomething("What can I do sometimes. This is football.")
-	zidane.abilities[0].useAbility()
+    var zidane FootballPlayer
+    zidane.self = Player {
+        id: 10,
+        nickName: "Zinadine Zidane"
+    }
+    zidane.position = "Midfield"
+    zidane.abilities = [] Ability {
+        Ability {
+            name: "shoot",
+            power: 92
+        },
+        Ability {
+            name: "high pass",
+            power: 84
+        },
+    }
+    zidane.abilities[1].useAbility()
+    zidane.self.saySomething("What can I do sometimes. This is football.")
+    zidane.abilities[0].useAbility()
 
-	var tayson Boxer
-	tayson.self = Player{id: 88, nickName: "Bulldog"}
-	tayson.knockdownCount = 32
-	tayson.abilities = []Ability{
-		Ability{name: "defense", power: 76}, //virgül koymayınca derleme hatası verir ;)
-	}
-	tayson.self.saySomething("I will win this game")
-	tayson.abilities[0].useAbility()
+    var tayson Boxer
+    tayson.self = Player {
+        id: 88,
+        nickName: "Bulldog"
+    }
+    tayson.knockdownCount = 32
+    tayson.abilities = [] Ability {
+        Ability {
+            name: "defense",
+            power: 76
+        }, //virgül koymayınca derleme hatası verir ;)
+    }
+    tayson.self.saySomething("I will win this game")
+    tayson.abilities[0].useAbility()
 }
 
 // oyuncuların ortak niteliklerini barındıran bir struct
 type Player struct {
-	id       int
-	nickName string
+    id int
+    nickName string
 }
 
 // player yapısına monte edilmiş saySomething metodu
 // oyuncunun bir şeyler söylemesi için kullanılabilecek bir metod
-func (player *Player) saySomething(message string) {
-	fmt.Printf("%s says that '%s'\n", player.nickName, message)
+func(player * Player) saySomething(message string) {
+    fmt.Printf("%s says that '%s'\n", player.nickName, message)
 }
 
 // oyuncuların farklı yeteneklerini tanımlayacak olan Ability isimli yapı
 type Ability struct {
-	name  string
-	power int
+    name string
+    power int
 }
 
 // Ability yapısına monte edilmiş olan useAbility isimli bir metod
 // oyuncunun bir yeteneğini kullandırmak için
-func (ability *Ability) useAbility() {
-	fmt.Printf("[%s] yeteneği kullanılıyor. Güç %d\n", ability.name, ability.power)
+func(ability * Ability) useAbility() {
+    fmt.Printf("[%s] yeteneği kullanılıyor. Güç %d\n", ability.name, ability.power)
 }
 
 // Player ve Ability yapılarını gömülü tip olarak kullanan ve
 // futbolcuları tanımlayan yapı
 type FootballPlayer struct {
-	position  string
-	self      Player
-	abilities []Ability
+    position string
+    self Player
+    abilities[] Ability
 }
 
 // farklı bir oyuncu tipi
 type Boxer struct {
-	knockdownCount int
-	self           Player
-	abilities      []Ability
+    knockdownCount int
+    self Player
+    abilities[] Ability
 }
 ```
 
-main fonksiyonunda zidane (makale fotoğrafının sebebini de özetlemiş olduk) ve tayson isimli iki değişken kullanılmakta. zidane isimli değişken FootballPlayer yapısı tipinden. tayson ise Boxer tipinden. Kodun akışında her birisinin adını, numarasını belirliyor, bir şeyler söylemelerini sağlıyor ve farklı kabiliyetler ekleyerek bunları uygulayışlarını izliyoruz. Dikkat edilmesi gereken ve kendime söylediğim bir kaç nokta da var. Oyuncuların kabiliyetlerini tutan abilities isimli nitelikleri Ability türünden bir Slice olarak tanımladık. Bir oyuncunun belli bir yeteneğini uygulamak için ilgili Slice öğesine gitmeli ve sonrasında useAbility metodunu çağırmalıyız. Metodlar hatırlanacağı üzere yapılara fonksiyonellik kazandırmak üzere kullanılıyorlar. useAbility ve saySomething isimli metodlar sırasıyla Ability ve Player yapıları ile ilişkilendirilmiş durumdalar. Yazımları sırasında metod adından önceki parantezlerde hangi struct için kullanılacakları belirtilmekte. * işaretine yani pointer kullanıldığına dikkat de edilmeli.
+main fonksiyonunda zidane (makale fotoğrafının sebebini de özetlemiş olduk) ve tayson isimli iki değişken kullanılmakta. zidane isimli değişken FootballPlayer yapısı tipinden. tayson ise Boxer tipinden. Kodun akışında her birisinin adını, numarasını belirliyor, bir şeyler söylemelerini sağlıyor ve farklı kabiliyetler ekleyerek bunları uygulayışlarını izliyoruz. Dikkat edilmesi gereken ve kendime söylediğim bir kaç nokta da var. Oyuncuların kabiliyetlerini tutan abilities isimli nitelikleri Ability türünden bir Slice olarak tanımladık. Bir oyuncunun belli bir yeteneğini uygulamak için ilgili Slice öğesine gitmeli ve sonrasında useAbility metodunu çağırmalıyız. Metodlar hatırlanacağı üzere yapılara fonksiyonellik kazandırmak üzere kullanılıyorlar. useAbility ve saySomething isimli metodlar sırasıyla Ability ve Player yapıları ile ilişkilendirilmiş durumdalar. Yazımları sırasında metod adından önceki parantezlerde hangi struct için kullanılacakları belirtilmekte. `*` işaretine yani pointer kullanıldığına dikkat de edilmeli.
 
 Kodu çalıştırdığımızda aşağıdaki ekran görüntüsündekine benzer bir sonuçla karşılaşmamız gerekir.
 

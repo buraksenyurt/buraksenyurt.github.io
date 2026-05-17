@@ -28,7 +28,7 @@ Alınan sayısız çalışma zamanı hatası ve uykusuz bırakan birkaç saatin 
 
 SignalR, Asp.Net tarafında uzun zamandır beri var olan bir konu olmasına rağmen,.Net Core tarafında halen Alpha sürümü olarak yer alıyor (Yazıyı okuduğunuz tarih itibariyle kontrol etmenizi öneririm. Release versiyon çıkmış olabilir) Tabii son sürüm yayınlanmadan bir gerçek hayat projesinde kullanmak pek doğru olmayacaktır.
 
-HUB Sunucusu
+## HUB Sunucusu
 
 Sözü fazla uzatmadan örneğimize geçelim dilerseniz. Senaryomuz standartların biraz dışında. Konuyu kavrayabilmek açısında HUB örneğini sunan bir sunucumuz, buraya abone olup mesaj yayını yapacak ve dinleyecek olan istemcilerimiz birer Console uygulaması olacak. İşe ilk olarak sunucu tarafını yazarak başlayalım (Bu arada örneği Ubuntu üzerinde Visual Studio Code ile geliştirdiğimi belirtmek isterim)
 
@@ -110,7 +110,7 @@ namespace FabrikamServer
 
 Tipik olarak Kestrel çalışma zamanının ayağa kaldırıldığını ifade edebiliriz.
 
-Yayıncının Geliştirilmesi
+## Yayıncının Geliştirilmesi
 
 Gelelim mesaj yayını yapacak olan uygulamaya. Aslında bu da bir nevi istemci gibi düşünülebilir. Tek farkı sadece Send operasyonunu çağıracak ve GetQuote ile ilgili hiçbir şey yapmayacak olması. FabrikamPostman isimli Console projesinde Microsoft.AspNetCore.SignalR.Client paketinin 1.0.0-alpha2-final sürümünün kullanılması gerekiyor (Bu Client versiyonu dikkat edin) Bu nedenle ilgili paketi hem bu hem de biraz sonra yazacağımız Console projelerine aşağıdaki komutu kullanarak eklemeliyiz.
 
@@ -182,7 +182,7 @@ StartAsync operasyonu ile bağlantının açılmasını sağlıyoruz. On metodu 
 
 Bu 10 cümlelik görev tamamlandıktan sonra DisposeAsync çağrısı yapılarak bağlantının kesilmesi sağlanıyor.
 
-Tipik İstemci
+## Tipik İstemci
 
 Son olarak istemci tarafını yazabiliriz. İstemci Send metodu ile bir çağrı yapmayacak. Sadece GetQuote mesajlarını dinleyecek. Console olarak oluşturacağımız projeye Microsoft.AspNetCore.SignalR.Client paketini ekledikten sonra Program.cs içeriğini aşağıdaki gibi geliştirebiliriz.
 

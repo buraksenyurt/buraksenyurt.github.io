@@ -15,57 +15,64 @@ categories:
 ---
 Geçenlerde bilgisayarımın başında oturmuş sıkılmakla meşguldüm. Her ne kadar bloğumu zinde tutmaya çalışsam da arada sırada böyle durağan dönemlere de denk geliyorum. Küçük tatiller diyelim. Derken enteresan bir Tweet yakaladım. Apollo 11'in Command ve Lunar modüllerine ait Assembler kodları github üzerinden yayına açılmış. [Şu adresten bakabilirsiniz](https://github.com/chrislgarry/Apollo-11).
 
-![margaret_hamilton.gif](/assets/images/2017/margaret_hamilton.gif)
-
 Yandaki fotoğrafta yer alan kadınsa Apollo 11 programının yazılım mühendisliği direktörü Margaret Hamilton. Yanında durduğu print çıktısınsa sözü geçen Assembler kodlarına ait olduğu ifade ediliyor. MIT talebeleri bu print çıktılarını üşenmeyip github'da bakılabilir hale getirmişler. Konu hakkında detaylı bir makaleye de [şu adresten ulaşabilirsiniz](https://qz.com/726338/the-code-that-took-america-to-the-moon-was-just-published-to-github-and-its-like-a-1960s-time-capsule/).
+
+![margaret_hamilton.gif](/assets/images/2017/margaret_hamilton.gif)
 
 Yazıyı okuduktan ve Üniversitede ders olarak gördüğüm ve orada bıraktığım Assembler kodlarına baktıktan sonra gözünü seveyim senin C#, Ruby, Go ve Python dedim. Sonrasında bu senenin planında yer alan Gopher olma çalışmalarıma devam edeyim dedim. Haydi başlayalım.
 
 Interface metod şablonlarının koleksiyonunu tutmak için kullanılan bir veri türüdür. Burada iki önemli nokta vardır. Birincisi gövdesi olmayan metod tanımlamalarını içermesi, ikincisi ise kendisinin bir veri türü olmasıdır. Normalde.Net tarafındaki interface kavramını düşündüğümüzde nesne yönelimli programlama dillerinin temel özelliklerinden olan çok biçimlilik (Polymorphysm) ve kalıtımı (Inheritance) destekleyen bir tip olarak kullanıldığını görürüz. Bu açıdan bakıldığında bir arayüz içerisinde onu uygulayan diğer tiplerin sahip olması gereken özelliklerin ve yapması gereken aksiyonların tanımlanması söz konusudur. Ancak Go, nesne yönelimli bir dil değildir ve interface onun tip sisteminin önemli bir karakteristiğini yansıtmaktadır: Bir tipin hangi verilere sahip olması gerektiğinden ziyade hangi aksiyonları icra etmesi gerektiğinin soyutlanması. Bu yazımızda interface tipinin kullanımını basitçe ele almaya çalışacağız.
 
-Hello World
+## Hello World
 
 Aşağıdaki kod parçası ile işe başlayalım.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	)
-	
-func main(){
-	actors:=[]Actor{Tank{"T-80",100},Player{"Gun Ball"}}
-	for _,a:=range actors{
-		a.SaySomething("hello")
-		a.Move("left")
-	}
+    "fmt"
+)
+
+func main() {
+    actors: = [] Actor {
+        Tank {
+            "T-80", 100
+        }, Player {
+            "Gun Ball"
+        }
+    }
+    for _,
+    a: = range actors {
+        a.SaySomething("hello")
+        a.Move("left")
+    }
 }
 
-type Actor interface{
-	Move(direction string)
-	SaySomething(speach string)
+type Actor interface {
+    Move(direction string)
+    SaySomething(speach string)
 }
 
-type Tank struct{
-	model string
-	power int
+type Tank struct {
+    model string
+    power int
 }
-func(t Tank) SaySomething(s string){
-	fmt.Printf("'%s' says : %s\n",t.model,s)
+func(t Tank) SaySomething(s string) {
+    fmt.Printf("'%s' says : %s\n", t.model, s)
 }
-func(t Tank) Move(d string){
-	fmt.Printf("'%s' move to %s\n",t.model,d)
+func(t Tank) Move(d string) {
+    fmt.Printf("'%s' move to %s\n", t.model, d)
 }
 
-type Player struct{
-	name string
+type Player struct {
+    name string
 }
-func(p Player) Move(d string){
-	fmt.Printf("'%s' move to %s\n",p.name,d)
+func(p Player) Move(d string) {
+    fmt.Printf("'%s' move to %s\n", p.name, d)
 }
-func(p Player) SaySomething(s string){
-	fmt.Printf("'%s' says %s\n",p.name,s)
+func(p Player) SaySomething(s string) {
+    fmt.Printf("'%s' says %s\n", p.name, s)
 }
 ```
 
@@ -77,21 +84,44 @@ Kodun çalışma zamanı çıktısı aşağıdaki gibidir.
 
 > Aslında interface kullanımında Duck Typing söz konusudur. Nasıl bir şey olduğunu öğrenmek isterseniz [şu yazıya göz](/2017/01/19/duck-typing-nedir/)atabilirsiniz.
 
-interface{} Tipi
+## interface{} Tipi
 
 Go dilinde hiç bir fonksiyon tanımı bulundurmayan interface isimli bir tip de mevcuttur. Bu tip fonksiyon parametresi olarak kullanılabilir. Böyle bir durumda fonksiyona herhangibir tip atanabilir. Go çalışma zamanı burada bir dönüştürme işlemi gerçekleştirir. Gelen değişken interface tipine dönüştürülür. Şimdi aşağıdaki gibi bir kod yazdığımızı düşünelim.
 
-```golang
-func main(){
-	actors:=[]Actor{Tank{"T-80",100},Player{"Gun Ball"}}
-	DoIt(actors)
+```go
+func main() {
+    actors: = [] Actor {
+        Tank {
+            "T-80", 100
+        }, Player {
+            "Gun Ball"
+        }
+    }
+    DoIt(actors)
 }
 
-func DoIt(objects []interface{}){	
-	for _,obj:=range objects{		
-		obj.Move("Forward")
-		obj.SaySomething("kuniciva")		
-    }	
+func DoIt(objects[] interface {}) {
+    for _, obj: = range objects {
+        obj.Move("Forward")
+        obj.SaySomething("kuniciva")
+    }
+}
+func main() {
+    actors: = [] Actor {
+        Tank {
+            "T-80", 100
+        }, Player {
+            "Gun Ball"
+        }
+    }
+    DoIt(actors)
+}
+
+func DoIt(objects[] interface {}) {
+    for _, obj: = range objects {
+        obj.Move("Forward")
+        obj.SaySomething("kuniciva")
+    }
 }
 ```
 
@@ -101,20 +131,29 @@ Burada actors isimli slice içeriğini DoIt fonksiyonuna interface dizisi olarak
 
 Şimdi kodun doğru halini yazalım.
 
-```golang
-func main(){
-	actors:=[]Actor{Tank{"T-80",100},Player{"Gun Ball"}}
-	values:=[]interface{}{actors[0],actors[1]}
-	DoIt(values)
+```go
+func main() {
+    actors: = [] Actor {
+        Tank {
+            "T-80", 100
+        }, Player {
+            "Gun Ball"
+        }
+    }
+    values: = [] interface {} {
+        actors[0], actors[1]
+    }
+    DoIt(values)
 }
 
-func DoIt(objects []interface{}){	
-	for _,obj:=range objects{
-		if act, ok := obj.(Actor); ok {
-			act.Move("Forward")
-			act.SaySomething("kuniciva")
-		}
-    }	
+func DoIt(objects[] interface {}) {
+    for _, obj: = range objects {
+        if act, ok: = obj.(Actor);
+        ok {
+            act.Move("Forward")
+            act.SaySomething("kuniciva")
+        }
+    }
 }
 ```
 
@@ -124,43 +163,51 @@ func DoIt(objects []interface{}){
 
 Şimdi örneğimizi biraz daha geliştirelim. Actor tiplerinin yanına örneğin int tipinden bir değişken daha koyalım ve onun için geliştireceğimiz bir metodu kullanmaya çalışalım.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	)
-	
-func main(){
-	actors:=[]Actor{Tank{"T-80",100},Player{"Gun Ball"}}
-	no:=Number(100)
-	utl:=Utility(no)	
-	values:=[]interface{}{actors[0],actors[1],utl}
-	DoIt(values)
+    "fmt"
+)
+
+func main() {
+    actors: = [] Actor {
+        Tank {
+            "T-80", 100
+        }, Player {
+            "Gun Ball"
+        }
+    }
+    no: = Number(100)
+    utl: = Utility(no)
+    values: = [] interface {} {
+        actors[0], actors[1], utl
+    }
+    DoIt(values)
 }
 
-func DoIt(objects []interface{}){	
-	for _,obj:=range objects{		
-		switch t := obj.(type) {
-			case Actor:
-				t.Move("Forward")
-				t.SaySomething("kuniciva")
-			case Number:
-				fmt.Println(t.IsEven())
-		}		
-    }	
+func DoIt(objects[] interface {}) {
+    for _, obj: = range objects {
+        switch t: = obj.(type) {
+            case Actor:
+                t.Move("Forward")
+                t.SaySomething("kuniciva")
+            case Number:
+                fmt.Println(t.IsEven())
+        }
+    }
 }
-type Utility interface{
-	IsEven() bool
+type Utility interface {
+    IsEven() bool
 }
 type Number int32
 
-func(n Number) IsEven() bool{
-	if int(n)%2==0{
-		return true
-	}else{
-		return false
-	}
+func(n Number) IsEven() bool {
+    if int(n) % 2 == 0 {
+        return true
+    } else {
+        return false
+    }
 }
 ```
 
@@ -170,53 +217,59 @@ IsEven metodu geriye bool değer döndüren bir metoddur ve Utility interface ti
 
 interface veri tipi esasında iki parçadan oluşur. Parçalardan biri veriyi tutan değişkeni işaret eden bir pointer barındırır. Diğer parçaysa interface'in bu ilişkili tip üzerinden çağırabileceği fonksiyon bilgisini barındıran veri tablosunu işaret eder.
 
-Pointer Kullanımı
+## Pointer Kullanımı
 
 interface içinde tanımlı metodları ilgili tipler için yazarken parametrelerinde Pointer da kullanabiliriz. İlk yazdığımız örneği göz önüne alırsak metod parametrelerinde Tank ve Player tipleri için * operatörü ile bu struct'lara ait nesne örneklerini interface tipine dönüştürdüğümüz yerde & operatörünü kullanmamız yeterlidir ('ın & kullanımı halinde zorunlu olmadığını da biraz sonra göreceğiz) İlk örnek kodumuzu aşağıdaki hale getirerek ilerleyelim.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	)
-	
-func main(){
-	actors:=[]Actor{&Tank{"T-80",100},&Player{"Gun Ball"}}
-	for _,a:=range actors{
-		a.SaySomething("hello")
-		a.Move("left")
-	}
+    "fmt"
+)
+
+func main() {
+    actors: = [] Actor { & Tank {
+            "T-80", 100
+        }, & Player {
+            "Gun Ball"
+        }
+    }
+    for _,
+    a: = range actors {
+        a.SaySomething("hello")
+        a.Move("left")
+    }
 }
 
-type Actor interface{
-	Move(direction string)
-	SaySomething(speach string)
+type Actor interface {
+    Move(direction string)
+    SaySomething(speach string)
 }
 
-type Tank struct{
-	model string
-	power int
+type Tank struct {
+    model string
+    power int
 }
-func(t *Tank) SaySomething(s string){
-	fmt.Printf("'%s' says : %s\n",t.model,s)
+func(t * Tank) SaySomething(s string) {
+    fmt.Printf("'%s' says : %s\n", t.model, s)
 }
-func(t *Tank) Move(d string){
-	fmt.Printf("'%s' move to %s\n",t.model,d)
+func(t * Tank) Move(d string) {
+    fmt.Printf("'%s' move to %s\n", t.model, d)
 }
 
-type Player struct{
-	name string
+type Player struct {
+    name string
 }
-func(p *Player) Move(d string){
-	fmt.Printf("'%s' move to %s\n",p.name,d)
+func(p * Player) Move(d string) {
+    fmt.Printf("'%s' move to %s\n", p.name, d)
 }
-func(p *Player) SaySomething(s string){
-	fmt.Printf("'%s' says %s\n",p.name,s)
+func(p * Player) SaySomething(s string) {
+    fmt.Printf("'%s' says %s\n", p.name, s)
 }
 ```
 
-Move ve SaySomething metodlarında *Tank ve * Player şeklinde Pointer kabul eden parametreler kullanıyoruz. Ayrıca actors isimli slice içerisindeki atamalarda & operatöründe yararlandık. Bu sayede adres bilgisini metodlara göndermiş oluyoruz. Çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
+Move ve SaySomething metodlarında `*Tank` ve `*Player` şeklinde Pointer kabul eden parametreler kullanıyoruz. Ayrıca actors isimli slice içerisindeki atamalarda & operatöründe yararlandık. Bu sayede adres bilgisini metodlara göndermiş oluyoruz. Çalışma zamanı çıktısı aşağıdaki gibi olacaktır.
 
 ![gointerfaces_6.gif](/assets/images/2017/gointerfaces_6.gif)
 

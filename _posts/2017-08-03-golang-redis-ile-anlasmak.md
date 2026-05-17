@@ -19,7 +19,7 @@ Bu sefer elimde oldukça güzel de bir Türkçe kaynak vardı (Murat Özalp'in G
 
 Zaman hızla geçmiş bir çok şey de değişmişti tabii. Bir süredir gözde dillerimden birisi olan Go'da Redis'i nasıl kullanabileceğimi merak ediyordum. O gece Windows makinesinde çalışmaktaydım. Aradan geçen zamana rağmen Redis'in Windows sürümü halen çalışmaktaydı. Yeni Redis versiyonlarına göre yeni sürümleri de yayınlanıyordu. Dolayısıyla siz de Windows sürümündeyseniz [şu adresten](https://github.com/MSOpenTech/redis/releases) uygun MSI ile yüklemeyi yapabilir ve yazının kalanında bana eşlik edebilirsiniz.
 
-Komut Satırında Kısa Bir Tur
+## Komut Satırında Kısa Bir Tur
 
 Yükleme işlemi sonrası hemen komut satırına geçtim ve redis-server.exe'yi kurulumun yapıldığı lokasyondan çalıştırdım. Sonra bir kaç deneme yapmak için redis-client ile açılan kısma geçtim. Redis varsayılan olarak yerel makinede 6379 numaralı porttan hizmet veren bir servis. Tabii farklı node'lar söz konusu olursa farklı port'lar ile de haberleşebilmemiz mümkün. Örneğimiz şimdilik tek bir sunucu örneği üzerinden çalışıyor.
 
@@ -33,7 +33,7 @@ Sonrasında hmset ile bir hash üretmeye çalıştım. hmset ile bir key için n
 
 İlerleyen satırlarda basit bir liste oluşturup ona elemanlar eklemeyi ve tüm içeriği ekrana yazdırmayı denedim. Bu amaçla lpush ve lrange isimli komutlardan yararlandım. Bu şekilde komut satırından çalışmaya da devam edilebilirdi tabii ama hedefim bunu Go ile gerçekleştirmekti.
 
-GoLang Zamanı
+## GoLang Zamanı
 
 Diğer platformlarda olduğu gibi Redis'i GoLang ile kullanmak için harici bir paketten destek almam işleri kolaylaştırıyor. Aslında bu şart değil. Sonuçta servis bazlı bir veritabanı motoru söz konusu ama şimdilik paket ile ilerlemek benim için daha iyi. Bir kaç araştırma ve blog yazısından sonra [şu adresten yayınlanan bir go paketi](https://github.com/mediocregopher/radix.v2) buldum. LiteIDE'nin Get seçeneği ile ya da komut satırından ilgili paketi kolaylıkla sistemimize alabiliriz.
 
@@ -45,34 +45,34 @@ go get github.com/mediocregopher/radix.v2
 
 Gelelim örnek kod parçalarına. İlk olarak basit string türünden bir veri eklemeye çalıştım. Value olarak da JSON içeriği kullanmaya karar verdim.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/mediocregopher/radix.v2/redis"
+    "github.com/mediocregopher/radix.v2/redis"
 )
 
 func main() {
-	AddLudwig()
+    AddLudwig()
 }
 
 func AddLudwig() {
-	conn, err := redis.Dial("tcp", "localhost:6379")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		defer conn.Close()
-		pong := conn.Cmd("ping")
-		fmt.Println(pong.String())
+    conn, err: = redis.Dial("tcp", "localhost:6379")
+    if err != nil {
+        fmt.Println(err.Error())
+    } else {
+        defer conn.Close()
+        pong: = conn.Cmd("ping")
+        fmt.Println(pong.String())
 
-		response := conn.Cmd("set", "players:ludwig", "{\"nick\":ludwig,\"genre\":classic,\"SongCount\":98}")
-		if response.Err != nil {
-			fmt.Println(response.Err)
-		}
-		fmt.Println(response.String())
-	}
+        response: = conn.Cmd("set", "players:ludwig", "{\"nick\":ludwig,\"genre\":classic,\"SongCount\":98}")
+        if response.Err != nil {
+            fmt.Println(response.Err)
+        }
+        fmt.Println(response.String())
+    }
 }
 ```
 
@@ -84,23 +84,23 @@ Fonksiyon redis tipinin Dial metodu ile başlıyor. TCP protokolü ile localhost
 
 Kodları biraz daha ilerletmeye çalıştım. Acaba bir Hash nasıl üretilebilirdi ve hatta alanlarının değerlerini kod tarafından nasıl okuyabilirdim? Aşağıdaki gibi bir fonksiyon işime yarayacaktı.
 
-```golang
+```go
 func AddAndReadHash() {
-	conn, err := redis.Dial("tcp", "localhost:6379")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		defer conn.Close()
-		response := conn.Cmd("HMSET", "card:93", "nickName", "murlock", "greetings", "I'am ready, I'am not ready", "price", 5, "attack", 4, "defense", 4, "owner", "shammon")
-		if response.Err != nil {
-			fmt.Println(response.Err)
-		}
-		fmt.Println(response.String())
-		read, _ := conn.Cmd("HGETALL", "card:93").Map()
-		for k, v := range read {
-			fmt.Printf("%s\t%s\n", k, v)
-		}
-	}
+    conn, err: = redis.Dial("tcp", "localhost:6379")
+    if err != nil {
+        fmt.Println(err.Error())
+    } else {
+        defer conn.Close()
+        response: = conn.Cmd("HMSET", "card:93", "nickName", "murlock", "greetings", "I'am ready, I'am not ready", "price", 5, "attack", 4, "defense", 4, "owner", "shammon")
+        if response.Err != nil {
+            fmt.Println(response.Err)
+        }
+        fmt.Println(response.String())
+        read, _: = conn.Cmd("HGETALL", "card:93").Map()
+        for k, v: = range read {
+            fmt.Printf("%s\t%s\n", k, v)
+        }
+    }
 }
 ```
 
@@ -112,72 +112,80 @@ Bu kez HMSET komutunu kullanarak bir hash üretiliyor. card:93 olarak belirtilmi
 
 Lakin bir şeyler eksik gibi. Sakladığımız verinin kendisini belki de Go tarafından başka şekilde ifade edebiliriz. Örneğin oyun kartlarına ait bilgileri taşıyan bir yapı (struct) tasarlayıp onu bu senaryoda ele almamız daha doğru olabilir. O zaman kodları aşağıdaki hale getirerek yolumuza devam edelim.
 
-```golang
+```go
 package main
 
 import (
-	"fmt"
-	"strconv"
+    "fmt"
+    "strconv"
 
-	"github.com/mediocregopher/radix.v2/redis"
+    "github.com/mediocregopher/radix.v2/redis"
 )
 
 func main() {
-	aragorn := Card{NickName: "Aragorn", Greetings: "Well Met!", Price: 9, Attack: 10, Defense: 12, Owner: "Luktar"}
-	AddCard(aragorn, "card:45")
-	card := GetCard("card:45")
-	card.ToString()
+    aragorn: = Card {
+        NickName: "Aragorn",
+        Greetings: "Well Met!",
+        Price: 9,
+        Attack: 10,
+        Defense: 12,
+        Owner: "Luktar"
+    }
+    AddCard(aragorn, "card:45")
+    card: = GetCard("card:45")
+    card.ToString()
 }
 
 func AddCard(card Card, id string) {
-	conn, err := redis.Dial("tcp", "localhost:6379")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		defer conn.Close()
+    conn, err: = redis.Dial("tcp", "localhost:6379")
+    if err != nil {
+        fmt.Println(err.Error())
+    } else {
+        defer conn.Close()
 
-		response := conn.Cmd("HMSET", id, "nickName", card.NickName, "greetings", card.Greetings, "price", card.Price, "attack", card.Attack, "defense", card.Defense, "owner", card.Owner)
-		if response.Err != nil {
-			fmt.Println(response.Err)
-		}
-		fmt.Println(response.String())
-	}
+        response: = conn.Cmd("HMSET", id, "nickName", card.NickName, "greetings", card.Greetings, "price", card.Price, "attack", card.Attack, "defense", card.Defense, "owner", card.Owner)
+        if response.Err != nil {
+            fmt.Println(response.Err)
+        }
+        fmt.Println(response.String())
+    }
 }
 
-func GetCard(id string) *Card {
-	card := new(Card)
-	conn, err := redis.Dial("tcp", "localhost:6379")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		defer conn.Close()
-		response, _ := conn.Cmd("HGETALL", id).Map()
-		card.NickName = response["nickName"]
-		card.Greetings = response["greetings"]
-		card.Owner = response["owner"]
-		card.Attack, _ = strconv.Atoi(response["attack"])
-		card.Price, _ = strconv.Atoi(response["price"])
-		card.Defense, _ = strconv.Atoi(response["defense"])
-	}
-	return card
+func GetCard(id string) * Card {
+    card: = new(Card)
+    conn,
+    err: = redis.Dial("tcp", "localhost:6379")
+    if err != nil {
+        fmt.Println(err.Error())
+    } else {
+        defer conn.Close()
+        response, _: = conn.Cmd("HGETALL", id).Map()
+        card.NickName = response["nickName"]
+        card.Greetings = response["greetings"]
+        card.Owner = response["owner"]
+        card.Attack, _ = strconv.Atoi(response["attack"])
+        card.Price, _ = strconv.Atoi(response["price"])
+        card.Defense, _ = strconv.Atoi(response["defense"])
+    }
+    return card
 }
 
-func (card *Card) ToString() {
-	fmt.Printf("Nickname:%s\n", card.NickName)
-	fmt.Printf("Greetings:%s\n", card.Greetings)
-	fmt.Printf("Owner:%s\n", card.Owner)
-	fmt.Printf("Price:%d\n", card.Price)
-	fmt.Printf("Attack:%d\n", card.Price)
-	fmt.Printf("Defense:%d\n", card.Defense)
+func(card * Card) ToString() {
+    fmt.Printf("Nickname:%s\n", card.NickName)
+    fmt.Printf("Greetings:%s\n", card.Greetings)
+    fmt.Printf("Owner:%s\n", card.Owner)
+    fmt.Printf("Price:%d\n", card.Price)
+    fmt.Printf("Attack:%d\n", card.Price)
+    fmt.Printf("Defense:%d\n", card.Defense)
 }
 
 type Card struct {
-	NickName  string
-	Greetings string
-	Price     int
-	Attack    int
-	Defense   int
-	Owner     string
+    NickName string
+    Greetings string
+    Price int
+    Attack int
+    Defense int
+    Owner string
 }
 ```
 
@@ -189,6 +197,6 @@ Pek tabii olmayan bir key değerini almaya çalışırsak içeriği boş bir yap
 
 ![goredis_6.gif](/assets/images/2017/goredis_6.gif)
 
-Demek ki
+## Demek ki
 
 Teorimiz oldukça basit. Redis komutlarını çalıştırmak için paketin Cmd fonksiyonundan yararlanılabilir. Basit bir string kullanımından hash, list, set, sortedSet gibi veri yapılarına kadar gidilebilir. Dolayısıyla temel CRUD operasyonlarını basitçe ele alabiliriz. Bu noktada Redis'in komutlarını incelemekte ve detaylı bir şekilde öğrenmekte yarar olduğu kanısındayım. Go ile olan entegrasyonda işleri kolaylaştırmak ve programatik alanda veri türlerini tip bazında ifade etmek için yapılardan (struct) ve bu yapılara uygulanan yardımcı metodlardan yararlanılabilir. Yazımızda geçen örneği daha da geliştirmek elinizde. Söz gelimi Go'nun web programlama kabiliyetlerini baz alarak MVC (Model View Controller) yapısına uygun bir programı Redis ile çalışacak şekilde tasarlayabilirsiniz. Ya da arayüzle uğraşmak istemiyorsanız bir REST servis geliştirip temel veri operasyonlarının bu servis üzerinden gerçekleştirilmesini deneyebilirsiniz. Denemeye değer. Ben şimdilik dinlenmeye çekileceğim ama konuyu buradan alıp ileriye taşımak sizin elinizde. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.

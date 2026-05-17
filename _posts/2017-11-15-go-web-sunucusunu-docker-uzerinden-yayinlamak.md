@@ -10,15 +10,13 @@ tags:
 categories:
   - Programlama Dilleri
 ---
-Gondor'da bir şeyler araştırmak için harika bir zaman. Çünkü elimdeki işler bitti. Böyle vakitleri kendi araştırmalarıma ayırmak hoşuma gidiyor, kim ne derse desin. Yeni gözdem Linux makinem de (Gondor) önümde durduğuna göre kısa bir süre onun üzerinde çalışabileceğimi düşünüyorum.
+Gondor'da bir şeyler araştırmak için harika bir zaman. Çünkü elimdeki işler bitti. Böyle vakitleri kendi araştırmalarıma ayırmak hoşuma gidiyor, kim ne derse desin. Yeni gözdem Linux makinem de (Gondor) önümde durduğuna göre kısa bir süre onun üzerinde çalışabileceğimi düşünüyorum. Aklıma gelen ilk şey ise, Go diliyle yazılmış ilkel bir web sunucusunu Docker üzerinden kullanabilmek. Önce web sunucusunu geliştirmek, başarılı bir şekilde çalıştığından emin olmak, sonrasında bir Docker imajı hazırlamak lazım. Ardından oluşturulan imajdan yararlanarak bir Container başlatıp web sunucusunun bu taşıyıcı örneği üzerinden çalışıp çalışmadığını test etmek senaryonun tamamlanması açısından yeterli. Tahminlerime göre 15 dakikayı aşmayacak bir iş gibi duruyor. Haydi başlayalım.
 
 ![go_docker5.gif](/assets/images/2017/go_docker5.gif)
 
-Aklıma gelen ilk şey ise, Go diliyle yazılmış ilkel bir web sunucusunu Docker üzerinden kullanabilmek. Önce web sunucusunu geliştirmek, başarılı bir şekilde çalıştığından emin olmak, sonrasında bir Docker imajı hazırlamak lazım. Ardından oluşturulan imajdan yararlanarak bir Container başlatıp web sunucusunun bu taşıyıcı örneği üzerinden çalışıp çalışmadığını test etmek senaryonun tamamlanması açısından yeterli. Tahminlerime göre 15 dakikayı aşmayacak bir iş gibi duruyor. Haydi başlayalım.
+Gondor'da açtığım SimpleWebServer klasörüne aşağıdaki kod parçasını içeren main.go isimli bir dosya ekleyerek ilerliyorum. Tabii buradaki ortamda GOPATH tanımlamalarını değiştirmiştim. `$home\goprojects` altında konuşlandırıyorum (Geliştirici arabirimi olarak Visual Studio Code'tan faydalanıyorum. Her zaman ki gibi çok keyifli bir geliştirici deneyimi sunuyor. Size de tavsiye ederim)
 
-Gondor'da açtığım SimpleWebServer klasörüne aşağıdaki kod parçasını içeren main.go isimli bir dosya ekleyerek ilerliyorum. Tabii buradaki ortamda GOPATH tanımlamalarını değiştirmiştim. $home\goprojects altında konuşlandırıyorum (Geliştirici arabirimi olarak Visual Studio Code'tan faydalanıyorum. Her zaman ki gibi çok keyifli bir geliştirici deneyimi sunuyor. Size de tavsiye ederim)
-
-```cpp
+```go
 package main
 
 import(
@@ -56,7 +54,7 @@ komutunu vererek bu denemeyi yaşayabiliriz. Aşağıdaki ekran görüntüsünde
 
 Hedefimiz şu. Bu uygulamayı başlatıldığı zaman ayağa kaldıracak bir Docker imajı oluşturmak. Bunun yolu bildiğiniz gibi ilgili komutları içerecek bir Dockerfile oluşturmaktan geçiyor. main.go ile aynı lokasyona aşağıdaki içeriğe sahip docker dosyasını ekleyerek ilerleyebiliriz.
 
-```text
+```dockerfile
 FROM golang
 
 ADD . /go/src/GoWebServer
