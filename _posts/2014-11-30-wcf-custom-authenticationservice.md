@@ -93,14 +93,14 @@ Dikkat edileceği üzere ApplicationStart metodu içerisinde AuthenticationServi
 ```csharp
 namespace AzonServices 
 { 
-    public class SpecialValidator 
-    { 
-        public bool IsUserValid(string userName, string password) 
-        { 
-            // Burada pek tabi istenen herhangibir Membership Provider kullanımı sağlanabilir. Örneğin bir Oracle veritabanına veya NoSQL dosyasına gidilebilir. Ya da bir SSO hizmetine başvurulabilir. Hayal gücü sizin. Üretin 
-           return ((userName == "burak") && (password == "P@ssw0rd!")); 
-        } 
-    } 
+    public class SpecialValidator 
+    { 
+        public bool IsUserValid(string userName, string password) 
+        { 
+            // Burada pek tabi istenen herhangibir Membership Provider kullanımı sağlanabilir. Örneğin bir Oracle veritabanına veya NoSQL dosyasına gidilebilir. Ya da bir SSO hizmetine başvurulabilir. Hayal gücü sizin. Üretin 
+           return ((userName == "burak") && (password == "P@ssw0rd!")); 
+        } 
+    } 
 }
 ```
 
@@ -117,25 +117,25 @@ Gelelim web.config dosyasının içeriğine.
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-  <system.web.extensions> 
-    <scripting> 
-      <webServices> 
-        <authenticationService enabled="true"/> 
-      </webServices> 
-    </scripting> 
-  </system.web.extensions> 
-    <system.serviceModel> 
-        <behaviors> 
-            <serviceBehaviors> 
-                <behavior name=""> 
-                    <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" /> 
-                    <serviceDebug includeExceptionDetailInFaults="true" /> 
-                </behavior> 
-            </serviceBehaviors> 
-        </behaviors> 
-        <serviceHostingEnvironment aspNetCompatibilityEnabled="true" 
-            multipleSiteBindingsEnabled="true" /> 
-    </system.serviceModel> 
+  <system.web.extensions> 
+    <scripting> 
+      <webServices> 
+        <authenticationService enabled="true"/> 
+      </webServices> 
+    </scripting> 
+  </system.web.extensions> 
+    <system.serviceModel> 
+        <behaviors> 
+            <serviceBehaviors> 
+                <behavior name=""> 
+                    <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" /> 
+                    <serviceDebug includeExceptionDetailInFaults="true" /> 
+                </behavior> 
+            </serviceBehaviors> 
+        </behaviors> 
+        <serviceHostingEnvironment aspNetCompatibilityEnabled="true" 
+            multipleSiteBindingsEnabled="true" /> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -166,12 +166,12 @@ using System.ServiceModel;
 
 namespace AzonServices 
 { 
-    [ServiceContract] 
-    public interface IAlgebraService 
-    { 
-        [OperationContract] 
-        double Sum(double x, double y); 
-    } 
+    [ServiceContract] 
+    public interface IAlgebraService 
+    { 
+        [OperationContract] 
+        double Sum(double x, double y); 
+    } 
 }
 ```
 
@@ -187,41 +187,41 @@ using System.Threading;
 
 namespace AzonServices 
 { 
-    [AspNetCompatibilityRequirements(RequirementsMode =AspNetCompatibilityRequirementsMode.Allowed)] 
-    public class AlgebraService 
-        : IAlgebraService 
-    { 
-        public AlgebraService() 
-        { 
-            var messageProperty = (HttpRequestMessageProperty)OperationContext 
-                .Current 
-                .IncomingMessageProperties[HttpRequestMessageProperty.Name];
+    [AspNetCompatibilityRequirements(RequirementsMode =AspNetCompatibilityRequirementsMode.Allowed)] 
+    public class AlgebraService 
+        : IAlgebraService 
+    { 
+        public AlgebraService() 
+        { 
+            var messageProperty = (HttpRequestMessageProperty)OperationContext 
+                .Current 
+                .IncomingMessageProperties[HttpRequestMessageProperty.Name];
 
-            string cookie = messageProperty.Headers.Get("Set-Cookie"); 
-            string[] nameValue = cookie.Split(','); 
-            string userName = string.Empty; 
-            for(int i=0;i<nameValue.Length;i++) 
-            { 
-                if(nameValue[i].Contains(".ASPXAUTH")) 
-                { 
-                    userName = nameValue[i].Split('=')[1]; 
-                } 
-            } 
-           SpecialIdentity customIdentity = new SpecialIdentity 
-            { 
-                 Name=userName, 
-                 IsAuthenticated=true 
-            }; 
-            GenericPrincipal threadCurrentPrincipal = new GenericPrincipal(customIdentity, new string[] { }); 
-            Thread.CurrentPrincipal = threadCurrentPrincipal; 
-        }
+            string cookie = messageProperty.Headers.Get("Set-Cookie"); 
+            string[] nameValue = cookie.Split(','); 
+            string userName = string.Empty; 
+            for(int i=0;i<nameValue.Length;i++) 
+            { 
+                if(nameValue[i].Contains(".ASPXAUTH")) 
+                { 
+                    userName = nameValue[i].Split('=')[1]; 
+                } 
+            } 
+           SpecialIdentity customIdentity = new SpecialIdentity 
+            { 
+                 Name=userName, 
+                 IsAuthenticated=true 
+            }; 
+            GenericPrincipal threadCurrentPrincipal = new GenericPrincipal(customIdentity, new string[] { }); 
+            Thread.CurrentPrincipal = threadCurrentPrincipal; 
+        }
 
-        [PrincipalPermission(SecurityAction.Demand, Name = "burak")] 
-        public double Sum(double x, double y) 
-        { 
-            return x + y; 
-        } 
-    } 
+        [PrincipalPermission(SecurityAction.Demand, Name = "burak")] 
+        public double Sum(double x, double y) 
+        { 
+            return x + y; 
+        } 
+    } 
 }
 ```
 
@@ -232,13 +232,13 @@ using System.Security.Principal;
 
 namespace AzonServices 
 { 
-    public class SpecialIdentity 
-        :IIdentity 
-    { 
-        public string Name { get; set; } 
-        public bool IsAuthenticated { get; set; } 
-        public string AuthenticationType { get; set; } 
-    } 
+    public class SpecialIdentity 
+        :IIdentity 
+    { 
+        public string Name { get; set; } 
+        public bool IsAuthenticated { get; set; } 
+        public string AuthenticationType { get; set; } 
+    } 
 }
 ```
 
@@ -257,25 +257,25 @@ Console Application olarak geliştireceğimiz istemci uygulamanın her iki servi
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <startup> 
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /> 
-    </startup> 
-    <system.serviceModel> 
-        <bindings> 
-            <basicHttpBinding> 
-                <binding name="BasicHttpBinding_IAlgebraService" /> 
-                <binding name="BasicHttpBinding_AuthenticationService" /> 
-            </basicHttpBinding> 
-        </bindings> 
-        <client> 
-            <endpoint address="http://localhost:56478/AlgebraService.svc" 
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAlgebraService" 
-                contract="MathSpace.IAlgebraService" name="BasicHttpBinding_IAlgebraService" /> 
-            <endpoint address="http://localhost:56478/SpecialAuthenticationService.svc" 
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationService" 
-                contract="MembershipSpace.AuthenticationService" name="BasicHttpBinding_AuthenticationService" /> 
-        </client> 
-    </system.serviceModel> 
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /> 
+    </startup> 
+    <system.serviceModel> 
+        <bindings> 
+            <basicHttpBinding> 
+                <binding name="BasicHttpBinding_IAlgebraService" /> 
+                <binding name="BasicHttpBinding_AuthenticationService" /> 
+            </basicHttpBinding> 
+        </bindings> 
+        <client> 
+            <endpoint address="http://localhost:56478/AlgebraService.svc" 
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAlgebraService" 
+                contract="MathSpace.IAlgebraService" name="BasicHttpBinding_IAlgebraService" /> 
+            <endpoint address="http://localhost:56478/SpecialAuthenticationService.svc" 
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationService" 
+                contract="MembershipSpace.AuthenticationService" name="BasicHttpBinding_AuthenticationService" /> 
+        </client> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -319,14 +319,14 @@ namespace ClientApp
             }
         }
 
-        // Servis metod çağrısı 
-        private static void CallSum(string cookie, double x, double y)
+        // Servis metod çağrısı 
+        private static void CallSum(string cookie, double x, double y)
         {
             // AlgebraService' e ait bir örnek oluşturulur 
             AlgebraServiceClient einstein = new AlgebraServiceClient("BasicHttpBinding_IAlgebraService");
 
-            // Güncel kanal bilgisi üzerinden 
-            using (new OperationContextScope(einstein.InnerChannel))
+            // Güncel kanal bilgisi üzerinden 
+            using (new OperationContextScope(einstein.InnerChannel))
             {
                 // Request için gidecek mesaj özelliğinin içerisine az önce doğrulama servisinin gönderdiği member cookie gömülür. 
                 HttpRequestMessageProperty request = new HttpRequestMessageProperty();
@@ -337,15 +337,15 @@ namespace ClientApp
             }
         }
 
-        // Login işlemini üstlenen fonksiyon 
-        private static bool AuthenticateMember(ref string cookie, string username, string password)
+        // Login işlemini üstlenen fonksiyon 
+        private static bool AuthenticateMember(ref string cookie, string username, string password)
         {
             // AuthenticationService proxy örneği üretilir 
             AuthenticationServiceClient authenticator = new AuthenticationServiceClient("BasicHttpBinding_AuthenticationService");
             bool result = false;
 
-            // Güncel kanal bilgisi üzerinden 
-            using (new OperationContextScope(authenticator.InnerChannel))
+            // Güncel kanal bilgisi üzerinden 
+            using (new OperationContextScope(authenticator.InnerChannel))
             {
                 // ValidateUser ile kullanıcı doğrulanmaya çalışılır 
                 result = authenticator.ValidateUser(username, password, string.Empty);
@@ -381,7 +381,7 @@ Eğer kullanıcı doğrulanabilir olmasına karşın yetki verilen kullanıcıla
 [PrincipalPermission(SecurityAction.Demand, Name = "kim")] 
 public double Sum(double x, double y) 
 { 
-    return x + y; 
+    return x + y; 
 }
 ```
 
@@ -399,24 +399,24 @@ Access is denied almak istediğimiz bir hatadır.
 using System.Collections.Generic; 
 namespace AzonServices 
 { 
-    public class SpecialValidator 
-    { 
-        public bool IsUserValid(string userName, string password,out List<string> roles) 
-        { 
-            bool result = false; 
-            roles = new List<string>();
+    public class SpecialValidator 
+    { 
+        public bool IsUserValid(string userName, string password,out List<string> roles) 
+        { 
+            bool result = false; 
+            roles = new List<string>();
 
-            // Burada pek tabi istenen herhangibir Membership Provider kullanımı sağlanabilir. Örneğin bir Oracle veritabanına veya NoSQL dosyasına gidilebilir. Ya da bir SSO hizmetine başvurulabilir. Hayal gücü sizin. Üretin 
-            if(userName == "burak" && password == "P@ssw0rd!") 
-            { 
-                result=true; 
-                roles.Add("Contributor"); 
-                roles.Add("Administrator"); 
-            }
+            // Burada pek tabi istenen herhangibir Membership Provider kullanımı sağlanabilir. Örneğin bir Oracle veritabanına veya NoSQL dosyasına gidilebilir. Ya da bir SSO hizmetine başvurulabilir. Hayal gücü sizin. Üretin 
+            if(userName == "burak" && password == "P@ssw0rd!") 
+            { 
+                result=true; 
+                roles.Add("Contributor"); 
+                roles.Add("Administrator"); 
+            }
 
-            return result; 
-        } 
-    } 
+            return result; 
+        } 
+    } 
 }
 ```
 
@@ -425,33 +425,33 @@ Aslında yaptığımız tek şey, doğrulanan kullanıcının var olan rollerini
 ```csharp
 private void Authenticating(object sender, AuthenticatingEventArgs e) 
 { 
-    SpecialValidator validator = new SpecialValidator(); 
-    List<string> roles = null;
+    SpecialValidator validator = new SpecialValidator(); 
+    List<string> roles = null;
 
-    e.Authenticated = validator.IsUserValid(e.UserName, e.Password,out roles); 
-    e.AuthenticationIsComplete = true;
+    e.Authenticated = validator.IsUserValid(e.UserName, e.Password,out roles); 
+    e.AuthenticationIsComplete = true;
 
-    if (e.Authenticated) 
-    { 
-        HttpCookie newCookie = new HttpCookie(FormsAuthentication.FormsCookieName); 
-        newCookie.Value = e.UserName+"|"+CreateRolesString(roles);
+    if (e.Authenticated) 
+    { 
+        HttpCookie newCookie = new HttpCookie(FormsAuthentication.FormsCookieName); 
+        newCookie.Value = e.UserName+"|"+CreateRolesString(roles);
 
-        HttpResponseMessageProperty response = new HttpResponseMessageProperty(); 
-        response.Headers[HttpResponseHeader.SetCookie] = newCookie.Name + "=" + newCookie.Value; 
-        OperationContext.Current.OutgoingMessageProperties[HttpResponseMessageProperty.Name] = response; 
-    } 
+        HttpResponseMessageProperty response = new HttpResponseMessageProperty(); 
+        response.Headers[HttpResponseHeader.SetCookie] = newCookie.Name + "=" + newCookie.Value; 
+        OperationContext.Current.OutgoingMessageProperties[HttpResponseMessageProperty.Name] = response; 
+    } 
 }
 
 public string CreateRolesString(List<string> roles) 
 { 
-    string result = string.Empty;
+    string result = string.Empty;
 
-    foreach (string role in roles) 
-    { 
-        result += role + "|"; 
-    }
+    foreach (string role in roles) 
+    { 
+        result += role + "|"; 
+    }
 
-    return result.TrimEnd('|'); 
+    return result.TrimEnd('|'); 
 }
 ```
 
@@ -467,48 +467,48 @@ using System.Threading;
 
 namespace AzonServices 
 { 
-    [AspNetCompatibilityRequirements(RequirementsMode =AspNetCompatibilityRequirementsMode.Allowed)] 
-    public class AlgebraService 
-        : IAlgebraService 
-    { 
-        public AlgebraService() 
-        { 
-            var messageProperty = (HttpRequestMessageProperty)OperationContext 
-                .Current 
-                .IncomingMessageProperties[HttpRequestMessageProperty.Name];
+    [AspNetCompatibilityRequirements(RequirementsMode =AspNetCompatibilityRequirementsMode.Allowed)] 
+    public class AlgebraService 
+        : IAlgebraService 
+    { 
+        public AlgebraService() 
+        { 
+            var messageProperty = (HttpRequestMessageProperty)OperationContext 
+                .Current 
+                .IncomingMessageProperties[HttpRequestMessageProperty.Name];
 
-            string cookie = messageProperty.Headers.Get("Set-Cookie"); 
-            string[] roles=null; 
-            string[] nameValue = cookie.Split(','); 
-            string userName = string.Empty; 
-            for(int i=0;i<nameValue.Length;i++) 
-            { 
-                if(nameValue[i].Contains(".ASPXAUTH")) 
-                { 
-                    string[] content = nameValue[i].Split('=')[1].Split('|'); 
-                    userName=content[0]; 
-                    roles=new string[content.Length-1]; 
-                    for (int j = 1; j < content.Length; j++) 
-                   { 
-                        roles[j-1]= content[j]; 
-                    } 
-                } 
-            } 
-            SpecialIdentity customIdentity = new SpecialIdentity 
-            { 
-                 Name=userName, 
-                 IsAuthenticated=true 
-            }; 
-            GenericPrincipal threadCurrentPrincipal = new GenericPrincipal(customIdentity,roles); 
-            Thread.CurrentPrincipal = threadCurrentPrincipal; 
-        }
+            string cookie = messageProperty.Headers.Get("Set-Cookie"); 
+            string[] roles=null; 
+            string[] nameValue = cookie.Split(','); 
+            string userName = string.Empty; 
+            for(int i=0;i<nameValue.Length;i++) 
+            { 
+                if(nameValue[i].Contains(".ASPXAUTH")) 
+                { 
+                    string[] content = nameValue[i].Split('=')[1].Split('|'); 
+                    userName=content[0]; 
+                    roles=new string[content.Length-1]; 
+                    for (int j = 1; j < content.Length; j++) 
+                   { 
+                        roles[j-1]= content[j]; 
+                    } 
+                } 
+            } 
+            SpecialIdentity customIdentity = new SpecialIdentity 
+            { 
+                 Name=userName, 
+                 IsAuthenticated=true 
+            }; 
+            GenericPrincipal threadCurrentPrincipal = new GenericPrincipal(customIdentity,roles); 
+            Thread.CurrentPrincipal = threadCurrentPrincipal; 
+        }
 
-        [PrincipalPermission(SecurityAction.Demand,Role="Contributor")] 
-        public double Sum(double x, double y) 
-        { 
-            return x + y; 
-        } 
-    } 
+        [PrincipalPermission(SecurityAction.Demand,Role="Contributor")] 
+        public double Sum(double x, double y) 
+        { 
+            return x + y; 
+        } 
+    } 
 }
 ```
 
@@ -535,24 +535,24 @@ Geliştirdiğimiz bu örnekte herşey iyi görünmesine rağmen eksik olan bazı
 ```csharp
 private void Authenticating(object sender, AuthenticatingEventArgs e) 
 { 
-    SpecialValidator validator = new SpecialValidator(); 
-    List<string> roles = null;
+    SpecialValidator validator = new SpecialValidator(); 
+    List<string> roles = null;
 
-    e.Authenticated = validator.IsUserValid(e.UserName, e.Password,out roles); 
-    e.AuthenticationIsComplete = true;
+    e.Authenticated = validator.IsUserValid(e.UserName, e.Password,out roles); 
+    e.AuthenticationIsComplete = true;
 
-    if (e.Authenticated) 
-    { 
-        HttpCookie newCookie = new HttpCookie(FormsAuthentication.FormsCookieName); 
-        newCookie.Value = e.UserName+"|"+CreateRolesString(roles);
+    if (e.Authenticated) 
+    { 
+        HttpCookie newCookie = new HttpCookie(FormsAuthentication.FormsCookieName); 
+        newCookie.Value = e.UserName+"|"+CreateRolesString(roles);
 
-        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, e.UserName, DateTime.Now, DateTime.Now.AddHours(24), true, CreateRolesString(roles), FormsAuthentication.FormsCookiePath); 
-        string encryptedValue = FormsAuthentication.Encrypt(ticket);
+        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, e.UserName, DateTime.Now, DateTime.Now.AddHours(24), true, CreateRolesString(roles), FormsAuthentication.FormsCookiePath); 
+        string encryptedValue = FormsAuthentication.Encrypt(ticket);
 
-        HttpResponseMessageProperty response = new HttpResponseMessageProperty(); 
-        response.Headers[HttpResponseHeader.SetCookie] = FormsAuthentication.FormsCookieName + "=" + encryptedValue; 
-        OperationContext.Current.OutgoingMessageProperties[HttpResponseMessageProperty.Name] = response; 
-    } 
+        HttpResponseMessageProperty response = new HttpResponseMessageProperty(); 
+        response.Headers[HttpResponseHeader.SetCookie] = FormsAuthentication.FormsCookieName + "=" + encryptedValue; 
+        OperationContext.Current.OutgoingMessageProperties[HttpResponseMessageProperty.Name] = response; 
+    } 
 }
 ```
 
@@ -573,41 +573,41 @@ using System.Web.Security;
 
 namespace AzonServices 
 { 
-    [AspNetCompatibilityRequirements(RequirementsMode =AspNetCompatibilityRequirementsMode.Allowed)] 
-    public class AlgebraService 
-        : IAlgebraService 
-    { 
-        public AlgebraService() 
-        { 
-            var messageProperty = (HttpRequestMessageProperty)OperationContext 
-                .Current 
-                .IncomingMessageProperties[HttpRequestMessageProperty.Name];
+    [AspNetCompatibilityRequirements(RequirementsMode =AspNetCompatibilityRequirementsMode.Allowed)] 
+    public class AlgebraService 
+        : IAlgebraService 
+    { 
+        public AlgebraService() 
+        { 
+            var messageProperty = (HttpRequestMessageProperty)OperationContext 
+                .Current 
+                .IncomingMessageProperties[HttpRequestMessageProperty.Name];
 
-            string[] cookieParts=messageProperty.Headers.Get("Set-Cookie").Split(','); 
-            FormsAuthenticationTicket ticket = null; 
-            for (int i = 0; i < cookieParts.Length; i++) 
-            { 
-               if (cookieParts[i].Contains("SecuredCookie")) 
-                { 
-                    ticket = FormsAuthentication.Decrypt(cookieParts[i].Split('=')[1]); 
-               } 
-            }            
-            
-            SpecialIdentity customIdentity = new SpecialIdentity 
-            { 
-                Name = ticket.Name, 
-                 IsAuthenticated=true 
-            }; 
-            GenericPrincipal threadCurrentPrincipal = new GenericPrincipal(customIdentity,ticket.UserData.Split('|')); 
-            Thread.CurrentPrincipal = threadCurrentPrincipal; 
-        }
+            string[] cookieParts=messageProperty.Headers.Get("Set-Cookie").Split(','); 
+            FormsAuthenticationTicket ticket = null; 
+            for (int i = 0; i < cookieParts.Length; i++) 
+            { 
+               if (cookieParts[i].Contains("SecuredCookie")) 
+                { 
+                    ticket = FormsAuthentication.Decrypt(cookieParts[i].Split('=')[1]); 
+               } 
+            }            
+            
+            SpecialIdentity customIdentity = new SpecialIdentity 
+            { 
+                Name = ticket.Name, 
+                 IsAuthenticated=true 
+            }; 
+            GenericPrincipal threadCurrentPrincipal = new GenericPrincipal(customIdentity,ticket.UserData.Split('|')); 
+            Thread.CurrentPrincipal = threadCurrentPrincipal; 
+        }
 
-        [PrincipalPermission(SecurityAction.Demand,Role="Contributor")] 
-        public double Sum(double x, double y) 
-        { 
-            return x + y; 
-        } 
-    } 
+        [PrincipalPermission(SecurityAction.Demand,Role="Contributor")] 
+        public double Sum(double x, double y) 
+        { 
+            return x + y; 
+        } 
+    } 
 }
 ```
 
@@ -616,30 +616,30 @@ Gelen mesaj içeriğine ait Header kısmında SecuredCookie isimli bir name değ
 ```xml
 <?xml version="1.0"?> 
 <configuration> 
-  <system.web.extensions> 
-    <scripting> 
-      <webServices> 
-        <authenticationService enabled="true"/> 
-      </webServices> 
-    </scripting> 
-  </system.web.extensions>          
-  <system.serviceModel> 
-    <behaviors> 
-      <serviceBehaviors> 
-        <behavior name=""> 
-          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/> 
-          <serviceDebug includeExceptionDetailInFaults="true"/> 
-        </behavior> 
-      </serviceBehaviors> 
-    </behaviors> 
-    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true"/> 
-  </system.serviceModel> 
-  <system.web> 
-    <compilation debug="true"/> 
-  <authentication mode="Forms"> 
-            <forms slidingExpiration="true" name="SecuredCookie" protection="All"             timeout="20"/> 
-        </authentication> 
-  </system.web> 
+  <system.web.extensions> 
+    <scripting> 
+      <webServices> 
+        <authenticationService enabled="true"/> 
+      </webServices> 
+    </scripting> 
+  </system.web.extensions>          
+  <system.serviceModel> 
+    <behaviors> 
+      <serviceBehaviors> 
+        <behavior name=""> 
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/> 
+          <serviceDebug includeExceptionDetailInFaults="true"/> 
+        </behavior> 
+      </serviceBehaviors> 
+    </behaviors> 
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true"/> 
+  </system.serviceModel> 
+  <system.web> 
+    <compilation debug="true"/> 
+  <authentication mode="Forms"> 
+            <forms slidingExpiration="true" name="SecuredCookie" protection="All"             timeout="20"/> 
+        </authentication> 
+  </system.web> 
 </configuration>
 ```
 

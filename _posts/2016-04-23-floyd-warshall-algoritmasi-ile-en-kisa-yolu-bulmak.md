@@ -151,3 +151,4 @@ Buna göre bir noktadan bir noktaya gidilebilecek en kısa mesafeler bulunmuştu
 ![FWa_5.gif](/assets/images/2016/FWa_5.gif)
 
 Görüldüğü üzere Floyd-Warshal, Graph tabanlı veri kümelerinde boğumlar arası en kısa mesafelerin buluması için kullanılabilecek basit ve hızlı algoritmalardan birisidir. Konu hakkında internet üzerinden de ulaşabileceğiniz bir çok kaynak mevcut. Bunları inceleyerek algoritmayı çalışma sistematiğini anlamaya çalışmanızı öneririm. Gerçek hayat vakalarına bakılmasında da yarar olduğu kanısındayım. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

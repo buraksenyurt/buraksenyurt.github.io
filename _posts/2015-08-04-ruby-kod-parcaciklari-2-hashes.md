@@ -87,3 +87,4 @@ end
 - persons üzerinden inspect metodu çalıştırıldığında Person sınıf örnekleri için varsayılan inspect metodu çalıştırılmış ve bu nedenle nesnelerin hash, name ve age niteliklerinin değerleri farklı bir formatta elde edilip sonrasında ekrana basılmıştır.
 
 Böylece geldik bir kod parçacığının daha sonuna:) Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

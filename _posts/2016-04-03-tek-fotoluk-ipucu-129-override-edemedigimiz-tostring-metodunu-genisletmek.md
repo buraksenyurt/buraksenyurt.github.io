@@ -25,3 +25,4 @@ ToString metodu generic bir versiyon olarak geliştirildi. İlk parametre ToStri
 > Burada siz değerli okurlarıma da bir görev düşüyor. Tüm özellik değerlerinin string içeriklerinin döndürülmesini istersek bunu nasıl yapabiliriz? Haydi biraz düşünelim ve yapmaya çalışalım.
 
 Böylece geldik bir tek fotoluk ipucumuzun daha sonuna. Başka bir ipucunda görüşünceye dek hepinize mutlu günler dilerim.
+

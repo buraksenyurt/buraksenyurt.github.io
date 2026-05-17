@@ -54,71 +54,71 @@ Ninject ile bağımlılıkları enjekte etmeden önce aşağıdaki gibi bir kod 
 ```csharp
 namespace HowTo_UsingNinject 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            IEncryptor dv = new DaVinciEncryptor(); 
-           MessageProvider provider = new MessageProvider(dv); 
-            string encryptedMessage=provider.EncryptMessage("Bir not"); 
-            string decryptedMessage = provider.DecryptMessage(encryptedMessage); 
-        } 
-    }
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            IEncryptor dv = new DaVinciEncryptor(); 
+           MessageProvider provider = new MessageProvider(dv); 
+            string encryptedMessage=provider.EncryptMessage("Bir not"); 
+            string decryptedMessage = provider.DecryptMessage(encryptedMessage); 
+        } 
+    }
 
-    class MessageProvider 
-    { 
-        private IEncryptor _encryptor; 
-        public MessageProvider(IEncryptor Encryptor) 
-        { 
-            _encryptor = Encryptor; 
-        } 
-        public string EncryptMessage(string Message) 
-        { 
-            return _encryptor.Encrypt(Message); 
-        } 
-        public string DecryptMessage(string Message) 
-        { 
-            return _encryptor.Decrypt(Message); 
-        } 
-    }
+    class MessageProvider 
+    { 
+        private IEncryptor _encryptor; 
+        public MessageProvider(IEncryptor Encryptor) 
+        { 
+            _encryptor = Encryptor; 
+        } 
+        public string EncryptMessage(string Message) 
+        { 
+            return _encryptor.Encrypt(Message); 
+        } 
+        public string DecryptMessage(string Message) 
+        { 
+            return _encryptor.Decrypt(Message); 
+        } 
+    }
 
-    interface IEncryptor 
-    { 
-        string Encrypt(string Message); 
-        string Decrypt(string Message); 
-    }
+    interface IEncryptor 
+    { 
+        string Encrypt(string Message); 
+        string Decrypt(string Message); 
+    }
 
-    class MichalengeloEncryptor 
-        : IEncryptor 
-    { 
-        public string Decrypt(string Message) 
-        { 
-            // Bir takım işlemler yapıldığını düşünelim 
-            return Message; 
-        }
+    class MichalengeloEncryptor 
+        : IEncryptor 
+    { 
+        public string Decrypt(string Message) 
+        { 
+            // Bir takım işlemler yapıldığını düşünelim 
+            return Message; 
+        }
 
-        public string Encrypt(string Message) 
-        { 
-            // Bir takım işlemler yapıldığını düşünelim 
-            return Message; 
-        } 
-    }
+        public string Encrypt(string Message) 
+        { 
+            // Bir takım işlemler yapıldığını düşünelim 
+            return Message; 
+        } 
+    }
 
-    class DaVinciEncryptor 
-        : IEncryptor 
-    { 
-        public string Decrypt(string Message) 
-        { 
-            // Bir takım işlemler yapıldığını düşünelim 
-            return Message; 
-        }
+    class DaVinciEncryptor 
+        : IEncryptor 
+    { 
+        public string Decrypt(string Message) 
+        { 
+            // Bir takım işlemler yapıldığını düşünelim 
+            return Message; 
+        }
 
-        public string Encrypt(string Message) 
-        { 
-            // Bir takım işlemler yapıldığını düşünelim 
-            return Message; 
-        } 
-    } 
+        public string Encrypt(string Message) 
+        { 
+            // Bir takım işlemler yapıldığını düşünelim 
+            return Message; 
+        } 
+    } 
 }
 ```
 
@@ -144,34 +144,34 @@ using Ninject.Modules;
 
 namespace HowTo_UsingNinject 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            #region Ninject Kullanarak
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            #region Ninject Kullanarak
 
-            IKernel kernel = new StandardKernel(); 
-            kernel.Load(new MessageBindingModule()); 
-            IEncryptor dv = kernel.Get<IEncryptor>();
+            IKernel kernel = new StandardKernel(); 
+            kernel.Load(new MessageBindingModule()); 
+            IEncryptor dv = kernel.Get<IEncryptor>();
 
-            MessageProvider provider = new MessageProvider(dv); 
-            string encryptedMessage = provider.EncryptMessage("Bir not"); 
-            string decryptedMessage = provider.DecryptMessage(encryptedMessage);
+            MessageProvider provider = new MessageProvider(dv); 
+            string encryptedMessage = provider.EncryptMessage("Bir not"); 
+            string decryptedMessage = provider.DecryptMessage(encryptedMessage);
 
-            #endregion 
-        } 
-    }
+            #endregion 
+        } 
+    }
 
-    class MessageBindingModule 
-        :NinjectModule 
-    { 
-        public override void Load() 
-        { 
-            Bind<IEncryptor>().To<DaVinciEncryptor>(); 
-        } 
-    }
+    class MessageBindingModule 
+        :NinjectModule 
+    { 
+        public override void Load() 
+        { 
+            Bind<IEncryptor>().To<DaVinciEncryptor>(); 
+        } 
+    }
 
-    // Diğer kodlar 
+    // Diğer kodlar 
 }
 ```
 
@@ -192,39 +192,39 @@ Bu anlamda senaryoya şöyle bir ek yaptığımızı düşünelim.
 ```csharp
 interface IAlgorithmProcessor 
 { 
-    string Calculate(string Info); 
+    string Calculate(string Info); 
 }
 
 class IntelligenceProcessor 
-    : IAlgorithmProcessor 
+    : IAlgorithmProcessor 
 { 
-    public string Calculate(string Info) 
-    { 
-        // Bir algoritma kullanılıyor 
-        return Info; 
-    } 
+    public string Calculate(string Info) 
+    { 
+        // Bir algoritma kullanılıyor 
+        return Info; 
+    } 
 }
 
 class MichalengeloEncryptor 
-    : IEncryptor 
+    : IEncryptor 
 { 
-   private IAlgorithmProcessor _processor;
+   private IAlgorithmProcessor _processor;
 
-    public MichalengeloEncryptor(IAlgorithmProcessor Processor) 
-    { 
-        _processor = Processor; 
-    } 
-    public string Decrypt(string Message) 
-    {   
-        // Bir takım işlemler yapıldığını düşünelim 
-        return _processor.Calculate(Message); 
-    }
+    public MichalengeloEncryptor(IAlgorithmProcessor Processor) 
+    { 
+        _processor = Processor; 
+    } 
+    public string Decrypt(string Message) 
+    {   
+        // Bir takım işlemler yapıldığını düşünelim 
+        return _processor.Calculate(Message); 
+    }
 
-    public string Encrypt(string Message) 
-    { 
-        // Bir takım işlemler yapıldığını düşünelim 
-        return _processor.Calculate(Message); 
-    } 
+    public string Encrypt(string Message) 
+    { 
+        // Bir takım işlemler yapıldığını düşünelim 
+        return _processor.Calculate(Message); 
+    } 
 }
 ```
 
@@ -232,13 +232,13 @@ MichalengeloEncryptor içerisinde IAlgorithmProcessor arayüzünü uygulayan sı
 
 ```csharp
 class MessageBindingModule 
-    :NinjectModule 
+    :NinjectModule 
 { 
-    public override void Load() 
-    { 
-        Bind<IEncryptor>().To<MichalengeloEncryptor>(); 
-        Bind<IAlgorithmProcessor>().To<IntelligenceProcessor>(); 
-    } 
+    public override void Load() 
+    { 
+        Bind<IEncryptor>().To<MichalengeloEncryptor>(); 
+        Bind<IAlgorithmProcessor>().To<IntelligenceProcessor>(); 
+    } 
 }
 ```
 

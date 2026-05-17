@@ -20,3 +20,4 @@ Enumerable modülü içerisine getRandomLine isimli bir metod yerleştirdik. Met
 Örnek metin dosyasını açtıktan sonra getRandomLine metodunu üzerinde uygulayabiliriz çünkü satır bazında ileri yönlü itere edilebilir bir nesne örneği vermektedir. Dikkat edilmesi gereken nokta ise rewind çağrısıdır. Nitekim satır bulunurken mutlak olarak dosya sonuna gelinmektedir. Yani her satır okunur. Bu yüzden tekrar başa dönmezsek sadece ilk seferde şarkı seçimi gerçekleşir ve sonraki iterasyonlarda nil değerler alınır (Şarkıları rahatça görebilmek için program Thread'ini 2 saniye süreyle uyutuyoruz ki konumuzla çok alakalı değil)
 
 Bu tekniği içeriğinde farklı veriler tutan pek çok dosya için uygulayabilirsiniz. Örneğin kullanıcılara rastgele promosyon uygulanacağı durumlarda verinin fiziki dosyada saklanması söz konusu ise bu tip bir metod oldukça işe yarayacaktır. Böylece geldik bir ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

@@ -49,3 +49,4 @@ $proxy | Get-Member -MemberType method
 Görüldüğü gibi sanki.Net ortamında bir istemci kodundaymışız gibi ilgili servisi çağırabildik. Ancak çok daha karmaşık senaryolar olduğunu da ifade edebiliriz. Örneğin servis operasyonları primitive tipler yerine complex tipler ile çalışıyor olabilir. Örneğin kategori bazlı ürün listesini döndüren bir servis operasyonunu Windows PowerShell üzerinden çağırmayı deneyebilirsiniz. Bunu nasıl yapabileceğinizi araştırmanızı öneririm.
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+

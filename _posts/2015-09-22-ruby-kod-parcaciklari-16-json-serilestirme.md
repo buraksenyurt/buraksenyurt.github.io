@@ -101,3 +101,4 @@ Diğer dosya modlarını şu şekilde özetleyebiliriz.
 - JSON tipinden olan içeriğin ters serileştirilmesi sonucu elde edilen örnek Array sınıfına aittir. #10 daki çalışma zamanı çıktısı bunu göstermektedir.
 
 Böylece geldik bir kod parçacığımızın sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
+

@@ -108,3 +108,4 @@ private erişim sonrası alınan hata
 ![ruby kod parcaciklari 7 object method class method public private protected 03](/assets/images/2015/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected-03.jpg)
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

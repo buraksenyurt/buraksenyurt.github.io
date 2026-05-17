@@ -21,3 +21,4 @@ Geçici bir dosya oluşturmak için Tempfile sınıfına ait bir nesne örneği 
 Dosya içerisine bilgi atmak ise oldukça kolay. write metodunu veya << operatörünü bu iş için kullanabiliriz. Dosyanın başına gitmek için aynen kasetçalarlarda olduğu gibi rewind operasyonunu kullanıyoruz. Çalışma zamanında oluşan içeriği read metodu ile okuyabilir ve oluşturulduğu yeri görmek için path niteliğine başvurabiliriz. close metoduna yapılan çağrı sonrası ilgili dosya oluşturulduğu yerden otomatik olarak kaldırılacaktır. Gayet basit. Benzersiz, sadece o Thread içinde kullanılabilien geçici bir bilgi havuzu.
 
 Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
+

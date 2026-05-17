@@ -55,7 +55,7 @@ hostname -I
 komutunu çalıştırmanız yeterli (Bana 192.168.1.107 gibi bir adres dönmüş o gün) Sonrasında uzak bir bilgisayardan Secure Shell bağlantısı kurabiliriz. Bu bağlantı için yardımcı programlar kullanabileceğimiz gibi uzak bilgisayar terminalinden ssh komutu vererek de bağlanmayı deneyebiliriz.
 
 ```bash
-ssh pi@192.168.1.107 
+ssh pi@192.168.1.107 
 ```
 
 gibi. Burada pi raspberry pi bilgisayarına hangi kullanıcı ile bağlanmak istediğimizi berlitmektedir.
@@ -762,3 +762,4 @@ print(combination)
 ![notes_22.gif](/assets/images/2016/notes_22.gif)
 
 Çalışmalarım bu tarih itibariyle sonlanmış. Nitekim izin dönemi gelmiş. Şimdi kaldığımız yerden devam edebilirim. Bu uzun yazıda Python notlarımı elektronik ortama almaya çalıştım. Umarım python severler için yararlı bir yazı olmuştur. Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+

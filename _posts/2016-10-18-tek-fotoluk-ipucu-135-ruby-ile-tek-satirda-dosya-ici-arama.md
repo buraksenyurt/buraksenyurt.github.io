@@ -28,3 +28,4 @@ Olayın kahramanları File sınıfı, parametre olarak gelen dosyayı satır baz
 Bu teknik içerisinde Regex ifadesi de kullanabiliriz. Tabii çok büyük boyutlu dosyalarda bir şeyler aramak istediğimizde performans açısından daha farklı tekniklere yönelmemiz gerekebilir (Örneğin bir kaç gigabyte boyutundaki log dosyasında OutOfMemoryException geçen satırları aradığınızı düşünün) Büyük boyutlu dosyalar ile çalışmak başlı başına bir konu. [Şuradaki yazı size fikir verecektir kanaatindeyim](http://smyck.net/2011/02/12/parsing-large-logfiles-with-ruby/).
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+

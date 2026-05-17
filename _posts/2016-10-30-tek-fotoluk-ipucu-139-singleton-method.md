@@ -20,3 +20,4 @@ Player isimli bir sınıfımız var. Her bir oyuncunun adını ve oyundaki pozis
 Bir diğer enteresan durumda fonksiyon ezilmesi (overriding). Player sınıfı içerisinde tanımlı olan Move fonksiyonunu sadece sharp nesne örneği için ezdik ve çalışma şeklini değiştirdik. Singleton metodların özellikle Unit Test'ler de önemli bir yeri olduğu söyleniyor. Bir sınfın her Unit Test sırasında tekrarlayarak çalışan ama o anki vaka için gerekli olmayan fonksiyonlarını Override etme yeteneğini ile devre dışı bırakma şansımız var örneğin. Ayrıca çalışma zamanında belli bir nesne örneği için ek davranışların tasarlanmasında da Singleton metodlardan yararlanabiliriz.
 
 Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

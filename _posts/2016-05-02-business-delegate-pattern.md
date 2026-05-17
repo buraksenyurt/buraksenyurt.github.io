@@ -141,3 +141,4 @@ Caller sınıfı talepte bulunan arayüz nesnes kullanıcısı olarak düşünü
 Pek tabii gerçek hayat senaryolarında asıl iş birimi metodlarının string parametre yerine bir içerik tipi ile (örneğin Context isimli bir sınıf) çalışması ve geriye bir referans döndürmesi muhtemeldir. Hatta bu tipler genellikle sunum ve iş katmanı arasında hareket eden transfer nesneleri de olabilir.
 
 Bu yazımızda pek göz önünde olmayan tasarım kalıplarından birisine değinmeye çalıştık. Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+

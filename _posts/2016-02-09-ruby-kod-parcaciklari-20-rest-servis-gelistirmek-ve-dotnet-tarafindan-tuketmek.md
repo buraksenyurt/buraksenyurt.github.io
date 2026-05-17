@@ -241,3 +241,4 @@ Servis şu anda ayakta. Ancak bazı eksiklikleri var. Örneğin Post ve Delete g
 Geliştirmek istediğimiz senaryoyu biraz daha geniş çaplı düşünelim. Bulunduğumuz kurumda Ruby ve Ruby on Rails ile geliştirme yapan bir takım olduğunu düşünelim. Bu takımın şirket içerisinde geliştirilen bir başka ürüne sağlaması gereken hizmetler olduğunu varsayalım. Bu durumda ilgili ekipten bu fonksiyonellikleri sunacak servisleri hakim oldukları ortamda geliştirmek üzere bir talepte bulunabiliriz. Geliştirilen servis bir sunucuya dağıtıldıktan sonra kurum için herhangi bir uç nokta tarafından kolayca erişilip kullanılabilir. Servis tarafında Authentication/Authorization işlemleri veya güvenlik ile ilgili tedbirler alınarak kurum prosedürlerine uygun hale getirilmesi de sağlanabilir.
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

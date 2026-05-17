@@ -92,3 +92,4 @@ ve çalışma zamanı çıktısı
 - Math::PI deki PI nin Math sınıfı içinde tanımlı bir Constant olduğunu da son olarak belirtelim.
 
 Görüldüğü gibi dizilerle çalışmak son derece kolay. Teşekkürler Matz:) Bir başka Ruby Kod Parçacığında görüşmek üzere hepinize mutlu günler dilerim.
+

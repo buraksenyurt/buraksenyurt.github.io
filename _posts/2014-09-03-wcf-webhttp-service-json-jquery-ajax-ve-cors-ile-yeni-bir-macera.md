@@ -41,16 +41,16 @@ using System.ServiceModel.Web;
 
 namespace AzonServices 
 { 
-    [ServiceContract] 
-    public interface IProductService 
-    { 
-        [OperationContract] 
-        [WebInvoke(Method = "POST", 
-                   RequestFormat = WebMessageFormat.Json, 
-                   ResponseFormat = WebMessageFormat.Json, 
-                   UriTemplate = "AddProduct")] 
-        string PostProduct(Product NewProduct); 
-    } 
+    [ServiceContract] 
+    public interface IProductService 
+    { 
+        [OperationContract] 
+        [WebInvoke(Method = "POST", 
+                   RequestFormat = WebMessageFormat.Json, 
+                   ResponseFormat = WebMessageFormat.Json, 
+                   UriTemplate = "AddProduct")] 
+        string PostProduct(Product NewProduct); 
+    } 
 }
 ```
 
@@ -63,12 +63,12 @@ Servis metodu Product tipinden bir nesne örneğini alıp geriye string tipte i�
 ```csharp
 namespace AzonServices 
 { 
-    public class Product 
-    { 
-        public int ProductId { get; set; } 
-        public string Title { get; set; } 
-        public decimal ListPrice { get; set; } 
-    } 
+    public class Product 
+    { 
+        public int ProductId { get; set; } 
+        public string Title { get; set; } 
+        public decimal ListPrice { get; set; } 
+    } 
 }
 ```
 
@@ -80,17 +80,17 @@ using System.Collections.Generic;
 
 namespace AzonServices 
 { 
-    public class ProductService 
-        : IProductService 
-    { 
-        List<Product> productList = new List<Product>();
+    public class ProductService 
+        : IProductService 
+    { 
+        List<Product> productList = new List<Product>();
 
-        public string PostProduct(Product NewProduct) 
-        { 
-            productList.Add(NewProduct); 
-            return Guid.NewGuid().ToString(); 
-        } 
-    } 
+        public string PostProduct(Product NewProduct) 
+        { 
+            productList.Add(NewProduct); 
+            return Guid.NewGuid().ToString(); 
+        } 
+    } 
 }
 ```
 
@@ -103,23 +103,23 @@ Servis tarafı için önem arz eden konulardan birisi de EndPoint tanımlamasıd
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <system.serviceModel> 
-        <services> 
-            <service name="AzonServices.ProductService"> 
-                <endpoint address="" 
-                               binding="webHttpBinding" 
-                               contract="AzonServices.IProductService" behaviorConfiguration="webBehavior"></endpoint> 
-            </service> 
-        </services> 
-        <behaviors> 
-            <endpointBehaviors> 
-                <behavior name="webBehavior"> 
-                    <webHttp/> 
-                </behavior> 
-            </endpointBehaviors> 
-        </behaviors> 
-        <serviceHostingEnvironment multipleSiteBindingsEnabled="true" /> 
-    </system.serviceModel> 
+    <system.serviceModel> 
+        <services> 
+            <service name="AzonServices.ProductService"> 
+                <endpoint address="" 
+                               binding="webHttpBinding" 
+                               contract="AzonServices.IProductService" behaviorConfiguration="webBehavior"></endpoint> 
+            </service> 
+        </services> 
+        <behaviors> 
+            <endpointBehaviors> 
+                <behavior name="webBehavior"> 
+                    <webHttp/> 
+                </behavior> 
+            </endpointBehaviors> 
+        </behaviors> 
+        <serviceHostingEnvironment multipleSiteBindingsEnabled="true" /> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -142,42 +142,42 @@ Ben örnek projemizde jQuery-2.1.0.min.js sürümünü kullanmayı tercih ettim.
 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head runat="server"> 
-    <title>REST Service Test</title> 
-    <meta http-equiv="X-UA-Compatible" content="IE=10" /> 
+    <title>REST Service Test</title> 
+    <meta http-equiv="X-UA-Compatible" content="IE=10" /> 
 </head> 
 <body> 
-    <script type="text/javascript" src="Scripts/jquery-2.1.0.min.js">
+    <script type="text/javascript" src="Scripts/jquery-2.1.0.min.js">
 
-    </script> 
-    <script type="text/javascript"> 
-        function AddNewProduct() {
+    </script> 
+    <script type="text/javascript"> 
+        function AddNewProduct() {
 
-            var product = { 
-                "ProductId": 1220, 
-                "Title": "ElCiii 4580 Laptop", 
-                "ListPrice": "1499" 
-            }; 
-                        
-            $.ajax({ 
-                type: "POST", 
-                url: "http://localhost:61954/ProductService.svc/AddProduct", 
-                data: JSON.stringify(product), 
-                contentType: "application/json; charset=utf-8", 
-                dataType: "json", 
-                success: function (data, status, xmlRequest) { 
-                    alert("JSON içeriği "+JSON.stringify(product)+". "+data + " numaralı ürün eklenmiştir");  
-                }, 
-                error: function (xmlRequest,status,errorThrown) { 
-                    alert(xmlRequest.responseText); 
-                } 
-            }); 
-        } 
-    </script> 
-    <form id="form1" runat="server"> 
-    <div> 
-        <input type="button" value="Add New Product" onclick="AddNewProduct()" /> 
-    </div> 
-    </form> 
+            var product = { 
+                "ProductId": 1220, 
+                "Title": "ElCiii 4580 Laptop", 
+                "ListPrice": "1499" 
+            }; 
+                        
+            $.ajax({ 
+                type: "POST", 
+                url: "http://localhost:61954/ProductService.svc/AddProduct", 
+                data: JSON.stringify(product), 
+                contentType: "application/json; charset=utf-8", 
+                dataType: "json", 
+                success: function (data, status, xmlRequest) { 
+                    alert("JSON içeriği "+JSON.stringify(product)+". "+data + " numaralı ürün eklenmiştir");  
+                }, 
+                error: function (xmlRequest,status,errorThrown) { 
+                    alert(xmlRequest.responseText); 
+                } 
+            }); 
+        } 
+    </script> 
+    <form id="form1" runat="server"> 
+    <div> 
+        <input type="button" value="Add New Product" onclick="AddNewProduct()" /> 
+    </div> 
+    </form> 
 </body> 
 </html>
 ```
@@ -225,13 +225,13 @@ Görüldüğü üzere yeni bir mücade ile karşı karşıyayız. WCF servisini 
 ```csharp
 protected void Application_BeginRequest(object sender, EventArgs e) 
 { 
-    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*"); 
-    if (HttpContext.Current.Request.HttpMethod == "OPTIONS") 
-    { 
-        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST"); 
-        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type"); 
-        HttpContext.Current.Response.End(); 
-    } 
+    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*"); 
+    if (HttpContext.Current.Request.HttpMethod == "OPTIONS") 
+    { 
+        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST"); 
+        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type"); 
+        HttpContext.Current.Response.End(); 
+    } 
 }
 ```
 

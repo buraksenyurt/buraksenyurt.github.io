@@ -226,10 +226,10 @@ Kural son derece basittir. serviceConnectionGroup, serviceConnection ve definiti
                 <td><strong>Definition WSDL</strong> <strong>Address</strong></td> 
                 <td> 
                     <asp:TextBox ID="txtAddress" runat="server" Width="300px"></asp:TextBox> 
-  </td> 
+  </td> 
             </tr> 
             <tr> 
-                <td> </td> 
+                <td> </td> 
                 <td> 
                     <asp:Button ID="btnSave" runat="server" 
                         OnClick="btnSave_Click" Text="Save" Width="60px" /> 

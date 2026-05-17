@@ -22,3 +22,4 @@ Söyleşi sırasında bahsettiğimiz kaynaklar ise şöyle.
 - [Serve ve Step Motor arasındaki farklar ile ilişkili bir yazı](http://www.elektrikport.com/teknik-kutuphane/step-ve-servo-motorlar/14750#ad-image-0)
 
 Bir sonraki söyleşimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+

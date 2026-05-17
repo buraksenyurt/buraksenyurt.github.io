@@ -52,22 +52,22 @@ using System.Collections.Generic;
 
 namespace RoleServer 
 { 
-    public class MemberRole 
-    { 
-        public int MemberRoleId { get; set; } 
-        public string Description { get; set; } 
-        public List<RoleAction> ActionList{ get; set; } 
-    } 
+    public class MemberRole 
+    { 
+        public int MemberRoleId { get; set; } 
+        public string Description { get; set; } 
+        public List<RoleAction> ActionList{ get; set; } 
+    } 
 }
 
 namespace RoleServer 
 { 
-    public class RoleAction 
-    { 
-        public int RoleActionID { get; set; } 
-        public string Name { get; set; } 
-        public string Status { get; set; } 
-    } 
+    public class RoleAction 
+    { 
+        public int RoleActionID { get; set; } 
+        public string Name { get; set; } 
+        public string Status { get; set; } 
+    } 
 }
 ```
 
@@ -79,12 +79,12 @@ using System.ServiceModel;
 
 namespace RoleServer 
 { 
-    [ServiceContract] 
-    public interface IRoleLoader 
-    { 
-        [OperationContract] 
-        List<MemberRole> GetRoles(); 
-    } 
+    [ServiceContract] 
+    public interface IRoleLoader 
+    { 
+        [OperationContract] 
+        List<MemberRole> GetRoles(); 
+    } 
 }
 
 using System.Collections.Generic; 
@@ -93,40 +93,40 @@ using System.ServiceModel.Channels;
 
 namespace RoleServer 
 { 
-    public class RoleLoader 
-        : IRoleLoader 
-    { 
-        public List<MemberRole> GetRoles() 
-        { 
-            List<MemberRole> roles = new List<MemberRole>();
+    public class RoleLoader 
+        : IRoleLoader 
+    { 
+        public List<MemberRole> GetRoles() 
+        { 
+            List<MemberRole> roles = new List<MemberRole>();
 
-            OperationContext operationContext = OperationContext.Current; 
-            RequestContext requestContext = operationContext.RequestContext; 
-            MessageHeaders headers = requestContext.RequestMessage.Headers; 
-            int headerValue = headers.FindHeader("Username", string.Empty); 
-            string userName = (headerValue < 0) ? "Bulunamadı" : headers.GetHeader<string>(headerValue);
+            OperationContext operationContext = OperationContext.Current; 
+            RequestContext requestContext = operationContext.RequestContext; 
+            MessageHeaders headers = requestContext.RequestMessage.Headers; 
+            int headerValue = headers.FindHeader("Username", string.Empty); 
+            string userName = (headerValue < 0) ? "Bulunamadı" : headers.GetHeader<string>(headerValue);
 
-            // memberID bilgisine göre kullanıcının rolleri yüklenir. 
-            // Sembolik olarak bazı roller yüklenmiştir. 
-            // Gerçek hayat odaklı bir üründe userName bilgisi 
-            // bir Repository üzerinden sorgulanarak getirilir 
-            if(userName=="bsenyurt") 
-            { 
-                roles.Add(new MemberRole 
-                { 
-                    MemberRoleId = 1, 
-                    Description = "Geliştirici Rolleri", 
-                    ActionList = new List<RoleAction> 
-                    { 
-                        new RoleAction{ RoleActionID=8, Name="Download_From_NuGet", Status="Grant"}, 
-                        new RoleAction{ RoleActionID=8, Name="Access_To_Social",Status="Deny"}, 
-                    } 
-                }); 
-            }
+            // memberID bilgisine göre kullanıcının rolleri yüklenir. 
+            // Sembolik olarak bazı roller yüklenmiştir. 
+            // Gerçek hayat odaklı bir üründe userName bilgisi 
+            // bir Repository üzerinden sorgulanarak getirilir 
+            if(userName=="bsenyurt") 
+            { 
+                roles.Add(new MemberRole 
+                { 
+                    MemberRoleId = 1, 
+                    Description = "Geliştirici Rolleri", 
+                    ActionList = new List<RoleAction> 
+                    { 
+                        new RoleAction{ RoleActionID=8, Name="Download_From_NuGet", Status="Grant"}, 
+                        new RoleAction{ RoleActionID=8, Name="Access_To_Social",Status="Deny"}, 
+                    } 
+                }); 
+            }
 
-            return roles; 
-        } 
-    } 
+            return roles; 
+        } 
+    } 
 }
 ```
 
@@ -135,43 +135,43 @@ ve servis tarafındaki standart web.config içeriğimiz.
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <system.diagnostics> 
-        <sources> 
-            <source name="System.ServiceModel.MessageLogging" switchValue="Warning,ActivityTracing"> 
-                <listeners> 
-                    <add type="System.Diagnostics.DefaultTraceListener" name="Default"> 
-                        <filter type="" /> 
-                    </add> 
-                    <add name="ServiceModelMessageLoggingListener"> 
-                        <filter type="" /> 
-                    </add> 
-                </listeners> 
-            </source> 
-        </sources> 
-        <sharedListeners> 
-            <add initializeData="c:\web_messages.svclog" 
-                type="System.Diagnostics.XmlWriterTraceListener, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" 
-                name="ServiceModelMessageLoggingListener" traceOutputOptions="Timestamp"> 
-                <filter type="" /> 
-            </add> 
-        </sharedListeners> 
-    </system.diagnostics> 
-    <system.serviceModel>        
-        <diagnostics> 
-            <messageLogging logEntireMessage="true" logMalformedMessages="true" 
-                logMessagesAtServiceLevel="true" logMessagesAtTransportLevel="true" /> 
-        </diagnostics> 
-        <behaviors> 
-            <serviceBehaviors> 
-                <behavior name=""> 
-                    <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" /> 
-                    <serviceDebug includeExceptionDetailInFaults="true" /> 
-                </behavior> 
-            </serviceBehaviors> 
-        </behaviors> 
-        <serviceHostingEnvironment aspNetCompatibilityEnabled="false" 
-            multipleSiteBindingsEnabled="true" /> 
-    </system.serviceModel> 
+    <system.diagnostics> 
+        <sources> 
+            <source name="System.ServiceModel.MessageLogging" switchValue="Warning,ActivityTracing"> 
+                <listeners> 
+                    <add type="System.Diagnostics.DefaultTraceListener" name="Default"> 
+                        <filter type="" /> 
+                    </add> 
+                    <add name="ServiceModelMessageLoggingListener"> 
+                        <filter type="" /> 
+                    </add> 
+                </listeners> 
+            </source> 
+        </sources> 
+        <sharedListeners> 
+            <add initializeData="c:\web_messages.svclog" 
+                type="System.Diagnostics.XmlWriterTraceListener, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" 
+                name="ServiceModelMessageLoggingListener" traceOutputOptions="Timestamp"> 
+                <filter type="" /> 
+            </add> 
+        </sharedListeners> 
+    </system.diagnostics> 
+    <system.serviceModel>        
+        <diagnostics> 
+            <messageLogging logEntireMessage="true" logMalformedMessages="true" 
+                logMessagesAtServiceLevel="true" logMessagesAtTransportLevel="true" /> 
+        </diagnostics> 
+        <behaviors> 
+            <serviceBehaviors> 
+                <behavior name=""> 
+                    <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" /> 
+                    <serviceDebug includeExceptionDetailInFaults="true" /> 
+                </behavior> 
+            </serviceBehaviors> 
+        </behaviors> 
+        <serviceHostingEnvironment aspNetCompatibilityEnabled="false" 
+            multipleSiteBindingsEnabled="true" /> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -262,29 +262,29 @@ Header bilgisi göndermenin bir diğer yolu da konfigurasyon içerisinde bunu do
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <startup> 
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1" /> 
-    </startup> 
-    <system.serviceModel> 
-        <bindings> 
-            <basicHttpBinding> 
-                <binding name="BasicHttpBinding_IRoleLoader" /> 
-            </basicHttpBinding> 
-        </bindings> 
-        <client> 
-          <endpoint address="http://localhost:4718/RoleLoader.svc" binding="basicHttpBinding" 
-              bindingConfiguration="BasicHttpBinding_IRoleLoader" contract="Rolehost.IRoleLoader" 
-              name="BasicHttpBinding_IRoleLoader"> 
-            <!-- Alternatif bir yol olarak client header kısmına config dosyasından da bilgi eklenebilir. 
-                    Tabi hem bu yöntem hem de kod tarafından Header bilgisinin eklenmesi çalışma zamanında exception 
-                    oluşmasına neden olacaktır. İkisinden biri tercih edilmelidir. 
-                    --> 
-            <headers> 
-              <Username>bsenyurt</Username> 
-            </headers> 
-          </endpoint> 
-        </client>      
-    </system.serviceModel> 
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1" /> 
+    </startup> 
+    <system.serviceModel> 
+        <bindings> 
+            <basicHttpBinding> 
+                <binding name="BasicHttpBinding_IRoleLoader" /> 
+            </basicHttpBinding> 
+        </bindings> 
+        <client> 
+          <endpoint address="http://localhost:4718/RoleLoader.svc" binding="basicHttpBinding" 
+              bindingConfiguration="BasicHttpBinding_IRoleLoader" contract="Rolehost.IRoleLoader" 
+              name="BasicHttpBinding_IRoleLoader"> 
+            <!-- Alternatif bir yol olarak client header kısmına config dosyasından da bilgi eklenebilir. 
+                    Tabi hem bu yöntem hem de kod tarafından Header bilgisinin eklenmesi çalışma zamanında exception 
+                    oluşmasına neden olacaktır. İkisinden biri tercih edilmelidir. 
+                    --> 
+            <headers> 
+              <Username>bsenyurt</Username> 
+            </headers> 
+          </endpoint> 
+        </client>      
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -298,12 +298,12 @@ Tabi bu teknik seçildiğinde kod tarafındaki Header ekleme kısımlarının ku
 using System;
 
 namespace Consumer 
-{    
-    public class CustomMessageHeader 
-    { 
-        public string Text { get; set; } 
-        public DateTime Date { get; set; } 
-    } 
+{    
+    public class CustomMessageHeader 
+    { 
+        public string Text { get; set; } 
+        public DateTime Date { get; set; } 
+    } 
 }
 ```
 
@@ -312,15 +312,15 @@ namespace Consumer
 ```csharp
 XmlObjectSerializer serializer = new DataContractSerializer(typeof(CustomMessageHeader)); 
 addressBuilder.Headers.Add( 
-    AddressHeader.CreateAddressHeader("ConsumerMessage", 
-        "http://RoleServer/Header/ConsumerMessage", 
-        new CustomMessageHeader 
-        { 
-            Text = "Bu gün hava bir harika!" 
-            , Date = DateTime.Now 
-        } 
-        ,serializer) 
-    );
+    AddressHeader.CreateAddressHeader("ConsumerMessage", 
+        "http://RoleServer/Header/ConsumerMessage", 
+        new CustomMessageHeader 
+        { 
+            Text = "Bu gün hava bir harika!" 
+            , Date = DateTime.Now 
+        } 
+        ,serializer) 
+    );
 ```
 
 İlk olarak CustomMessageHeader tipi için XmlIObjectSerializer türevi bir nesne örneği oluşturulmlaktadır. Bu örnek CreateAddressHeader metodunun son parametresinde kullanılmakta olup, istemcinin servis tarafına mesaj gönderdiği noktada devreye girecek ve CustomMessageHeader nesne örneğini Xml formatında serileştirecektir.
@@ -335,18 +335,18 @@ SOAP zarf içeriğine bakıldığında durum daha net fark edilebilir.
 
 ```xml
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"> 
-    <s:Header> 
-        <Username xmlns="">bsenyurt</Username> 
-        <ConsumerMessage xmlns="http://RoleServer/Header/ConsumerMessage" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"> 
-            <Date xmlns="http://schemas.datacontract.org/2004/07/Consumer">2014-04-03T13:12:48.4474218+03:00</Date> 
-            <Text xmlns="http://schemas.datacontract.org/2004/07/Consumer">Bu gün hava bir harika!</Text> 
-        </ConsumerMessage> 
-        <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none"> http://localhost:4718/RoleLoader.svc</To> 
-        <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none"> http://tempuri.org/IRoleLoader/GetRoles</Action> 
-    </s:Header> 
-    <s:Body> 
-        <GetRoles xmlns="http://tempuri.org/"></GetRoles> 
-    </s:Body> 
+    <s:Header> 
+        <Username xmlns="">bsenyurt</Username> 
+        <ConsumerMessage xmlns="http://RoleServer/Header/ConsumerMessage" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"> 
+            <Date xmlns="http://schemas.datacontract.org/2004/07/Consumer">2014-04-03T13:12:48.4474218+03:00</Date> 
+            <Text xmlns="http://schemas.datacontract.org/2004/07/Consumer">Bu gün hava bir harika!</Text> 
+        </ConsumerMessage> 
+        <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none"> http://localhost:4718/RoleLoader.svc</To> 
+        <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none"> http://tempuri.org/IRoleLoader/GetRoles</Action> 
+    </s:Header> 
+    <s:Body> 
+        <GetRoles xmlns="http://tempuri.org/"></GetRoles> 
+    </s:Body> 
 </s:Envelope>
 ```
 
@@ -358,18 +358,18 @@ Servis tarafına istemcinin özel bir.Net nesne içeriğini Header bilgisi olara
 XElement root = XElement.Parse(requestContext.RequestMessage.ToString());
 
 var date= root 
-    .Descendants() 
-    .Where( 
-    n => n.Name == XName.Get("Date","http://schemas.datacontract.org/2004/07/Consumer")) 
-    .FirstOrDefault() 
-    .Value;
+    .Descendants() 
+    .Where( 
+    n => n.Name == XName.Get("Date","http://schemas.datacontract.org/2004/07/Consumer")) 
+    .FirstOrDefault() 
+    .Value;
 
 var text = root 
-    .Descendants() 
-    .Where( 
-    n => n.Name == XName.Get("Text", "http://schemas.datacontract.org/2004/07/Consumer")) 
-    .FirstOrDefault() 
-    .Value;
+    .Descendants() 
+    .Where( 
+    n => n.Name == XName.Get("Text", "http://schemas.datacontract.org/2004/07/Consumer")) 
+    .FirstOrDefault() 
+    .Value;
 ```
 
 Aslında tek yaptığımız gelen Request mesajının XML içeriği üzerinde Text ve Date isimli elementleri aramaktır. Eğer çalışma zamanı görünümüne bakarsak değişken değerlerini başarılı bir şekilde elde edebildiğimizi görürüz.

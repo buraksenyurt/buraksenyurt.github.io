@@ -20,3 +20,4 @@ Kodu kısaca incelediğinizde tahmin edeceğiniz üzere en kritik noktalardan bi
 Bu sayede sorgu koşulunu (örneğin sadece iki numaralı kategoriyi baz al, ya da her zaman doğru olacak bir kriteri göndererek tüm listeyi değerlendir) yine metoda gelen T türündeki IEnumerable arayüzü (Interface) türevli koleksiyon üzerinde uygulayabiliyoruz. Metod içerisinde ise aynı elemanları tekrar tekrar almamak için basit bir çözüm söz konusu. Çok daha iyi bir çözüm olabileceğinden eminim. Bazı hata ürtebilecek durumlar kontrol edilmeye çalışıldı. (Örneğin n değerinin koşula uygun elemanların toplam sayısının yarısından yüksek olmaması vb.)
 
 Kısacası uygulanan çözüm yolu için değerli yorumlarınızı eksik etmeyiniz ifinim. Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
+

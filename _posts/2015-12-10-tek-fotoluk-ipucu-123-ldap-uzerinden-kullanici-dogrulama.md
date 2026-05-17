@@ -21,3 +21,4 @@ Kodu gönül rahatlığı ile deneyebilirsiniz. Gerçek bir LDAP ortamında test
 DirectoryEntry ve DirectorySearcher sınıfları için System.DirectoryServices.dll Assembly'ının eklenmesi gerektiğini unutmayalım. DirectoryEntry nesnesi var olan kullanıcı bilgileri ile örneklendikten sonra bir arama nesnesi oluşturulur. Bu arama nesnesine arama filtresi ve yüklenmek istenen özellik (CN) bildirildikten sonra FindOne metodunun döndürdüğü sonuca bakılır. Sonuç null değilse belirtilen kriterlere uygun kullanıcı bulunmuş demektir.
 
 Size tavsiyem kullanıcının hangi grupta olduğunu nasıl bulabileceğinize ait kod parçasını geliştirmeye çalışmanızdır. Ayrıca bu ve benzer fonksiyonellikleri servisleştirmeyi de düşünebilirsiniz. Güzel bir antrenman olur. Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

@@ -313,3 +313,4 @@ Please insert a maximum value 5
 Başka bir eksik kaldı mı diye düşünüyorum şu anda...Ah evet. # ile başlayan satırlar tahmin edeceğiniz üzere yorum satırlarıdır.
 
 Bu yazıda merhaba dediğimiz pek çok kavram oldu aslına bakarsanız. if, while, for, Tuple, Dictionary, List, Range,def, metod ve değişken tanımlamaları, print, input, int, len, import, as ve unuttuğum diğerleri. Görüldüğü gibi Python dili oldukça esnek, söz dizimi yalın ve basit. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

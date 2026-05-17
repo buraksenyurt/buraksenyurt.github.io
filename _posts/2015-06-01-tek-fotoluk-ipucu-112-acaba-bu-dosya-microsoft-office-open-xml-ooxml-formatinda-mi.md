@@ -17,3 +17,4 @@ Aslında dosyaların byte içeriklerinin hexadecimal karşılıkları bizlere ti
 ![tek fotoluk ipucu 112 acaba bu dosya microsoft office open xml ooxml formatinda mi 01](/assets/images/2015/tek-fotoluk-ipucu-112-acaba-bu-dosya-microsoft-office-open-xml-ooxml-formatinda-mi-01.png)
 
 Tabii tek yol bu olmayabilir. Daha pratik ve efektif yolları bulup paylaşmak siz değerli okurlarıma görev olsun. Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.
+

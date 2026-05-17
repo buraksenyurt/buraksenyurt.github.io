@@ -81,9 +81,9 @@ namespace HowTo_Cryptography
         private static byte[] _des_Key = null;
         private static byte[] _des_IV = null;
 
-        #endregion
+        #endregion
 
-        static Utility()
+        static Utility()
         {
             _aesProvider = new AesCryptoServiceProvider();
             _aes_Key = _aesProvider.Key;
@@ -109,89 +109,89 @@ namespace HowTo_Cryptography
             _watcher = new Stopwatch();
         }
 
-        #region AES(Advanced Encyption Standard)
+        #region AES(Advanced Encyption Standard)
 
-        // Şifreleme metodu 
-        public static byte[] AES_Encrypt()
+        // Şifreleme metodu 
+        public static byte[] AES_Encrypt()
         {
             return Encypt<AesCryptoServiceProvider>(_aesProvider, _aes_Key, _aes_IV);
         }
 
-        // Çözümleme metodu 
-        public static string AES_Decrypt(byte[] source)
+        // Çözümleme metodu 
+        public static string AES_Decrypt(byte[] source)
         {
             return Decrypt<AesCryptoServiceProvider>(_aesProvider, source, _aes_Key, _aes_IV);
         }
 
-        #endregion
+        #endregion
 
-        #region TripleDES
+        #region TripleDES
 
-        // Şifreleme metodu 
-        public static byte[] TripleDES_Encrypt()
+        // Şifreleme metodu 
+        public static byte[] TripleDES_Encrypt()
         {
             return Encypt<TripleDESCryptoServiceProvider>(_tdesProvider, _tdes_Key, _tdes_IV);
         }
 
-        // Çözümleme metodu 
-        public static string TripleDES_Decrypt(byte[] source)
+        // Çözümleme metodu 
+        public static string TripleDES_Decrypt(byte[] source)
         {
             return Decrypt<TripleDESCryptoServiceProvider>(_tdesProvider, source, _tdes_Key, _tdes_IV);
         }
 
-        #endregion
+        #endregion
 
-        #region Rijndael
+        #region Rijndael
 
-        // Şifreleme metodu 
-        public static byte[] Rijndael_Encrypt()
+        // Şifreleme metodu 
+        public static byte[] Rijndael_Encrypt()
         {
             return Encypt<RijndaelManaged>(_rijndaelProvider, _rijndael_Key, _rijndael_IV);
         }
 
-        // Çözümleme metodu 
-        public static string Rijndael_Decrypt(byte[] source)
+        // Çözümleme metodu 
+        public static string Rijndael_Decrypt(byte[] source)
         {
             return Decrypt<RijndaelManaged>(_rijndaelProvider, source, _rijndael_Key, _rijndael_IV);
         }
 
-        #endregion
+        #endregion
 
-        #region RC2
+        #region RC2
 
-        // Şifreleme metodu 
-        public static byte[] RC2_Encrypt()
+        // Şifreleme metodu 
+        public static byte[] RC2_Encrypt()
         {
             return Encypt<RC2CryptoServiceProvider>(_rc2Provider, _rc2_Key, _rc2_IV);
         }
 
-        // Çözümleme metodu 
-        public static string RC2_Decrypt(byte[] source)
+        // Çözümleme metodu 
+        public static string RC2_Decrypt(byte[] source)
         {
             return Decrypt<RC2CryptoServiceProvider>(_rc2Provider, source, _rc2_Key, _rc2_IV);
         }
 
-        #endregion
+        #endregion
 
-        #region DES
+        #region DES
 
-        // Şifreleme metodu 
-        public static byte[] DES_Encrypt()
+        // Şifreleme metodu 
+        public static byte[] DES_Encrypt()
         {
             return Encypt<DESCryptoServiceProvider>(_desProvider, _des_Key, _des_IV);
         }
 
-        // Çözümleme metodu 
-        public static string DES_Decrypt(byte[] source)
+        // Çözümleme metodu 
+        public static string DES_Decrypt(byte[] source)
         {
             return Decrypt<DESCryptoServiceProvider>(_desProvider, source, _des_Key, _des_IV);
         }
 
-        #endregion
+        #endregion
 
-        #region Generic şifreleme ve çözümleme metodları
+        #region Generic şifreleme ve çözümleme metodları
 
-        static byte[] Encypt<T>(T provider, byte[] key, byte[] iv)
+        static byte[] Encypt<T>(T provider, byte[] key, byte[] iv)
  where T : SymmetricAlgorithm
         {
             byte[] result = null;
@@ -243,17 +243,17 @@ namespace HowTo_Cryptography
             return result;
         }
 
-        #endregion
+        #endregion
 
-        #region Yardımcı metodlar
+        #region Yardımcı metodlar
 
-        static string ReadContent()
+        static string ReadContent()
         {
             return File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "SampleDocument.txt"));
         }
 
-        #endregion 
-    }
+        #endregion 
+    }
 }
 ```
 
@@ -300,13 +300,13 @@ Okuma/çözümleme işleminde ise,
 ```csharp
 using (MemoryStream ms = new MemoryStream(source)) 
 { 
-    using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read)) 
-    { 
-        using (StreamReader sReader = new StreamReader(cs)) 
-        { 
-            result=sReader.ReadToEnd(); 
-        } 
-    } 
+    using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read)) 
+    { 
+        using (StreamReader sReader = new StreamReader(cs)) 
+        { 
+            result=sReader.ReadToEnd(); 
+        } 
+    } 
 }
 ```
 
@@ -321,38 +321,38 @@ using System;
 
 namespace HowTo_Cryptography 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            for (int i = 0; i < 5; i++) 
-            { 
-                Console.WriteLine("***Test Case Start***"); 
-                TestMethod(); 
-                Console.WriteLine("***Test Case End***"); 
-            } 
-        }
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            for (int i = 0; i < 5; i++) 
+            { 
+                Console.WriteLine("***Test Case Start***"); 
+                TestMethod(); 
+                Console.WriteLine("***Test Case End***"); 
+            } 
+        }
 
-        private static void TestMethod() 
-        { 
-            string content = String.Empty;
+        private static void TestMethod() 
+        { 
+            string content = String.Empty;
 
-            byte[] aesEncrypted = Utility.AES_Encrypt(); 
-           content = Utility.AES_Decrypt(aesEncrypted);
+            byte[] aesEncrypted = Utility.AES_Encrypt(); 
+           content = Utility.AES_Decrypt(aesEncrypted);
 
-            byte[] tdesEncrypted = Utility.TripleDES_Encrypt(); 
-            content = Utility.TripleDES_Decrypt(tdesEncrypted);
+            byte[] tdesEncrypted = Utility.TripleDES_Encrypt(); 
+            content = Utility.TripleDES_Decrypt(tdesEncrypted);
 
-            byte[] rijndaelEncrypted = Utility.Rijndael_Encrypt(); 
-            content = Utility.Rijndael_Decrypt(rijndaelEncrypted);
+            byte[] rijndaelEncrypted = Utility.Rijndael_Encrypt(); 
+            content = Utility.Rijndael_Decrypt(rijndaelEncrypted);
 
-            byte[] rc2Encrypted = Utility.RC2_Encrypt(); 
-            content = Utility.RC2_Decrypt(rc2Encrypted);
+            byte[] rc2Encrypted = Utility.RC2_Encrypt(); 
+            content = Utility.RC2_Decrypt(rc2Encrypted);
 
-            byte[] desEncrypted = Utility.DES_Encrypt(); 
-            content = Utility.DES_Decrypt(desEncrypted); 
-        } 
-    } 
+            byte[] desEncrypted = Utility.DES_Encrypt(); 
+            content = Utility.DES_Decrypt(desEncrypted); 
+        } 
+    } 
 }
 ```
 

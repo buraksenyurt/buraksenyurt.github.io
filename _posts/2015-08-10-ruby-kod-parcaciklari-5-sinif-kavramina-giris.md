@@ -100,3 +100,4 @@ end
 - name, level ve currentPlayerCount gibi metod bloklarında diğer dillerden aşina olduğumuz returnanahtar kelimesinin kullanılmadığına dikka edilmelidir.(Aslında kullanılabilir de)
 
 Böylece geldik bir Ruby Kod Parçacığı bölümün daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

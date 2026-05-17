@@ -97,3 +97,4 @@ loadedTweets.each{|t| puts "\n"+t.full_text}
 İçeriğin YAML formatında tutulması elbette şart değil. Pekala JSON veya XML gibi popüler formatları da kullanabiliriz. Diğer yandan twitter REST API fonksiyonları update ve usertimeline operasyonlarından da ibaret değil. Yapılabilecek pek çok şey var. Daha fazla detay için [twitter'ın ilgili sitesine](https://dev.twitter.com/rest/public) bakmanızda yarar olacağı kanısındayım. Örneğin tweet'ler üzerinde arama yaptırabilir, popüler hashtag konularını çekebilir, istediğiniz arkadaş listesinin favori tweet'lerini alabilir, aradığınız bir konuya istinaden otomatik tweet'ler atabilir ve hatta çeşitli SEO çalışmaları kapsamında robot görevi üstelenen uygulamalar da yazabilirsiniz.
 
 Böylece geldik bir Ruby kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

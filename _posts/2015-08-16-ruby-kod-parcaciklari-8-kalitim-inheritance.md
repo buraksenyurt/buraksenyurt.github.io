@@ -51,7 +51,7 @@ class Alien < Figure # 2
     @mask = mask
   end
 
-  def to_s # overriding 
+  def to_s # overriding 
     super + " Mask: #{@mask}" # 5
   end
 
@@ -71,7 +71,7 @@ class Zork < Alien # 9
   end
 
   def to_s
-    super + " #{@hire}" 
+    super + " #{@hire}" 
   end
 
   def getFigures # 11
@@ -115,3 +115,4 @@ Olan olayları aşağıdaki şema yardımıyla biraz daha net anlayabiliriz.(Acc
 ![9k=](/assets/images/2015/ruby-kod-parcaciklari-8-kalitim-inheritance-02.jpg)
 
 Bu kod parçacığı ile Ruby programlama dilinde kalıtım konusunun nasıl değerlendiriliği temel seviyede değerlendirmeye çalıştık. Elbette daha ileri seviye konular da var. Bunları ilerleyen zamanlarda değerlendireceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

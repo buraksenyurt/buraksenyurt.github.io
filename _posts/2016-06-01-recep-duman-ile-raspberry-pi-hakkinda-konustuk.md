@@ -32,3 +32,4 @@ Söyleşide değindiğimiz ve bakmanızın iyi olacağı linkler ise şu şekild
 - [Söyleşi sırasında bahsettiğimiz Pixel'leri elle tutabilme mevzusu](http://buragingunlugu.tumblr.com/post/144917293175/piksellere-ellerimizle-dokunmak)
 
 Bir başka söyleşide görüşünceye dek hepinize mutlu günler dilerim.
+

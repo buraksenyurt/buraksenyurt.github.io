@@ -87,3 +87,4 @@ Gelelim kod parçacığımız ile ilişkili notlarımıza.
 - Farklı bir dosyada konuşlandırılan Module'leri bir sınıf içerisinde ya da başka bir modülün tamamında kullanmak için include MODULE_ADI ifadesinden yararlanılır. UsingModules.rb kodunun ilk iki satırında ilgili modülün yer aldığı dosyanın aynı klasörde aranması gerektiği $LOAD_PATH ile belirtilmiştir. Bir sonraki satırda yer alan require ifadesi ile de Serializer dosyası işaret edilmiştir.
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
+

@@ -125,3 +125,4 @@ Her zaman olduğu gibi betik içerisinde neler yaptığımızı maddeler halinde
 - Son olarak 12nci bölümde unless kullanımı gerçekleştirilmiştir. matchPoint değişkeni 10dan büyük olmadığı sürece "Tam puan degil" yazılması söz konusudur.
 
 Böylece bir kod parçacığımızın daha sonuna geldik. Terkrardan görüşünceye dek hepinize mutlu günler dilerim.
+

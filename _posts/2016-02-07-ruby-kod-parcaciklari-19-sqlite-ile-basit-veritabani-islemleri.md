@@ -70,3 +70,4 @@ Kod parçasında bir hata kontrol mekanizmamızda bulunuyor. ensure bloğu içer
 ![sqlite2.gif](/assets/images/2016/sqlite2.gif)
 
 Eklediğimiz tüm ürünler Product tablosuna yazılmıştır. Görüldüğü üzere Ruby tarafında SQLite kullanımı oldukça basit. Elbette işleri daha da ileri götürmelisiniz. Söz gelimi Ruby tarafında popüler olan Sinatra isimli Web Framework'ü kullanarak AdventureWorks üzerinde yürütülebilecek temel CRUD (Create Read Update Delete) operasyonlarını basit bir REST servis üzerinden sunmayı deneyebilirsiniz. Antrenman yapmaya devam. Böylece geldik bir yazımızın daha sonuna. Bir başka kod parçasında görüşünceye dek hepinize mutlu günler dilerim.
+

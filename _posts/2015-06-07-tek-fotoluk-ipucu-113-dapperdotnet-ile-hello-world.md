@@ -33,3 +33,4 @@ Bu örnekte ilk dikkati çeken noktaları ise şu şekilde ifade edebiliriz.
 Dapper.Net benim çok hoşuma gitti. Özellikle işin içerisinde Stackoverflow geliştiricilerinin yer alması, basit ve anlaşılır olması ile Oracle desteği sunması beni onu araştırmaya itti diyebilirim.
 
 Başka bir ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.
+

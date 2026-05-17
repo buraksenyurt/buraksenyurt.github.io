@@ -185,3 +185,4 @@ public class CustomerSalarySpecification
 ```
 
 Tabii konunun en detaylı ve ilmi açıklaması [bu adresteki dokümanda](http://martinfowler.com/apsupp/spec.pdf) Martin Fowler tarafından yapılmıştır. Böylece geldik bir maceramızın daha sonuna. Her şey DB tarafından çekilen bir nesne topluluğu üzerinde bugün bilinen ama yarın çoğalabilecek farklı filtreleme kriterlerini nasıl ele alabileceğimi araştırmakla başlamıştı. Ben bir şeyler daha öğrendim, ufkum genişledi. Umarım sizler için de faydalı olmuştur. Bir başka makalede görüşünceye dek hepinize mutlu günler dilerim.
+

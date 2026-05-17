@@ -50,32 +50,32 @@ using System;
 
 namespace NumberSystems 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            int number1 = 78; 
-            string number1Binary = Convert.ToString(number1, 2); 
-            string number1Hexadecimal = Convert.ToString(number1, 16);
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            int number1 = 78; 
+            string number1Binary = Convert.ToString(number1, 2); 
+            string number1Hexadecimal = Convert.ToString(number1, 16);
 
-            Console.WriteLine("Decimal to Binary/Hexadecimal\n{0}\t=\t{1}\n{2}\t=\t{3}\n" 
-                ,number1 
-                ,number1Binary 
-                ,number1 
-                ,number1Hexadecimal 
-                );
+            Console.WriteLine("Decimal to Binary/Hexadecimal\n{0}\t=\t{1}\n{2}\t=\t{3}\n" 
+                ,number1 
+                ,number1Binary 
+                ,number1 
+                ,number1Hexadecimal 
+                );
 
-            int number2 = Convert.ToInt32(number1Binary, 2); 
-            int number3 = Convert.ToInt32(number1Hexadecimal, 16);
+            int number2 = Convert.ToInt32(number1Binary, 2); 
+            int number3 = Convert.ToInt32(number1Hexadecimal, 16);
 
-            Console.WriteLine("Binary/Hexadecimal to Decimal\n{0}\t=\t{1}\n{2}\t=\t{3}\n" 
-                , number1Binary 
-                , number2 
-                , number1Hexadecimal 
-                , number3 
-                ); 
-        } 
-    } 
+            Console.WriteLine("Binary/Hexadecimal to Decimal\n{0}\t=\t{1}\n{2}\t=\t{3}\n" 
+                , number1Binary 
+                , number2 
+                , number1Hexadecimal 
+                , number3 
+                ); 
+        } 
+    } 
 }
 ```
 

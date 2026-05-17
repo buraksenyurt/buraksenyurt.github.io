@@ -72,3 +72,4 @@ Kod parçamıza ait kısa notlarımıza gelince.
 - #6 ve #7 numaralı satırlarda Lambda ve Proc için iki ayrı kullanım söz konusudur. Burada Proc ve Lambda arasındaki bir fark daha görülmekte. lambdaZ ve procZ tanımlamalarında return kullanıldığı görülüyor. Lambda söz konusu olduğunda return sonucu Lambda değişkenin sarmalandığı metoda dönülmektedir. Tam tersine Proc kullanıldığı durumda ise Proc bloğunun içeriği saySomethingWithProc metodunun çağırıldığı yere döndürülmüş bu yüzden #8deki satır işletilmemiştir.
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Son üç yazıda Block, Proc ve Lambda kavramlarına değindik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

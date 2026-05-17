@@ -19,3 +19,4 @@ Gelelim ipucumuzun konusuna. Yukarıdaki gibi bir senaryo ile karşılaştığı
 ![tfi133n.gif](/assets/images/2016/tfi133n.gif)
 
 Aslında tek yapılan şey OleDbEnumerator sınıfının static GetRootEnumerator metodu ile dönen listede hareket etmek ve o anki öğenin tüm bilgilerini ekrana yazdırmak. Böylece geldik bir ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

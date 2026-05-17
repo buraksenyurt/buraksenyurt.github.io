@@ -194,3 +194,4 @@ Servisten istemciye gelen SOAP içeriği ise aşağıdaki gibidir.
 ```
 
 Bu adımdan sonra artık elimizde Oracle tarafı için gerekli örnek bir SOAP içeriğinin oluştuğunu ifade edebiliriz. Dilerseniz üretilen log dosyasının daha insancıl okunabilmesi amacıyla bir kod parçası geliştirmeyi deneyebilirsiniz. Bu mümkün. Araştırın ve deneyin. Böylece geldik bir yazımızın daha sonuna. Tekardan görüşünceye dek hepinize mutlu günler dilerim.
+

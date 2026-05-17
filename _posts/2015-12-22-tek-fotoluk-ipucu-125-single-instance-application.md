@@ -17,3 +17,4 @@ Bazı uygulamaların çalışma zamanında sadece tek bir örneğinin yaşaması
 ApplicationControl sınıfıdaki static Runnable metodu içerisinde Mutex sınıfı kullanılmaktadır. İşin sırrı Mutex'e verilen isimdir. Eğer aynı isimden bir Mutex nesnesi var ise yeni bir uygulamanın başlatılmasına izin vermemek adına Runnable fonksiyonu geriye false değer döndürür. Tersi durumda ise yeni bir Mutex nesnesi oluşturulacaktır (Örnekte Commander adı kullanılmıştır)
 
 Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

@@ -210,3 +210,4 @@ Bu işlem sonrasında ürün listesi yeniden talep edilirse 1000 numaralı parç
 Bu makalemizde ServiceStack paketini kullanarak Self-Hosted REST servislerini nasıl geliştirebileceğimizi basit bir örnek üzerinden incelemeye çalıştık. Anlamamız gereken önemli noktalardan birisi de DTO servis tasarım kalıbının nasıl kullanıldığıdır. Ayrıca Service türevli tiplerin çalışma zamanında servis şeklinde nasıl sunulabildiğinin, Route niteliklerinin görevlerini nasıl gerçekleştirdiğinin ve gelen talepler ile ilgili DTO nesnelerinin nasıl ele alındığının düşünülmesinde yarar vardır. Siz bu tip bir çatıyı tasarlamaya çalışsanız nasıl bir yol izler ve kodlama yapardınız? Bunu bir düşünün.
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

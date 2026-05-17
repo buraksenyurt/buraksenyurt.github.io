@@ -74,3 +74,4 @@ Kodda dikkat edilmesi gereken nokta DeepCopier sınıfının generic olarak tasa
 ![tek fotoluk ipucu 124 pratik bir deep clone senaryosu 03](/assets/images/2015/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu-03.gif)
 
 Bir başka Tek Fotoluk İpucunda görüşünceye dek hepinize mutlu günler dilerim.
+

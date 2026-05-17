@@ -80,3 +80,4 @@ Konuyu biraz daha iyi anlamak adına aşağıdaki grafiğin de işe yarayacağı
 ![2Q==](/assets/images/2015/ruby-kod-parcaciklari-10-yield-ve-block-kullanimi-03.jpg)
 
 Böylece geldik bir kod parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

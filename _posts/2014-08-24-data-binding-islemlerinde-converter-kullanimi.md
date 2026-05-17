@@ -21,12 +21,12 @@ Dilerseniz konuyu biraz daha iyi kavrayabilmek adına basit bir senaryo üzerind
 ```csharp
 namespace UsingConverters 
 { 
-    public class Vehicle 
-    { 
-        public int VehicleId { get; set; } 
-        public string Name { get; set; } 
-        public int FuelLevel { get; set; }        
-    } 
+    public class Vehicle 
+    { 
+        public int VehicleId { get; set; } 
+        public string Name { get; set; } 
+        public int FuelLevel { get; set; }        
+    } 
 }
 ```
 
@@ -36,31 +36,31 @@ Vehicle sınıfı içerisinde int tipinden VehicleId, FuelLevel ve string tipind
 
 ```xml
 <Window x:Class="UsingConverters.MainWindow" 
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-        Title="MainWindow" Height="350" Width="600" Loaded="Window_Loaded"> 
-    <Grid> 
-        <ListBox x:Name="lstVehicles"  ItemsSource="{Binding}"> 
-            <ListBox.ItemTemplate> 
-                <DataTemplate> 
-                    <StackPanel Orientation="Vertical"> 
-                        <Label  
-                               Content="{Binding Path=VehicleId}" 
-                               FontWeight="Bold" FontSize="16"/> 
-                        <Label   
-                               Content="{Binding Path=Name}"/> 
-                        <Label Height="24" 
-                               HorizontalAlignment="Left" 
-                               Background="CadetBlue" 
-                               Width="{Binding Path=FuelLevel}"                             
-                               Content="{Binding Path=FuelLevel}" 
-                               /> 
-                        <Separator Width="500"/> 
-                    </StackPanel> 
-                </DataTemplate> 
-            </ListBox.ItemTemplate> 
-        </ListBox> 
-    </Grid> 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="MainWindow" Height="350" Width="600" Loaded="Window_Loaded"> 
+    <Grid> 
+        <ListBox x:Name="lstVehicles"  ItemsSource="{Binding}"> 
+            <ListBox.ItemTemplate> 
+                <DataTemplate> 
+                    <StackPanel Orientation="Vertical"> 
+                        <Label  
+                               Content="{Binding Path=VehicleId}" 
+                               FontWeight="Bold" FontSize="16"/> 
+                        <Label   
+                               Content="{Binding Path=Name}"/> 
+                        <Label Height="24" 
+                               HorizontalAlignment="Left" 
+                               Background="CadetBlue" 
+                               Width="{Binding Path=FuelLevel}"                             
+                               Content="{Binding Path=FuelLevel}" 
+                               /> 
+                        <Separator Width="500"/> 
+                    </StackPanel> 
+                </DataTemplate> 
+            </ListBox.ItemTemplate> 
+        </ListBox> 
+    </Grid> 
 </Window>
 ```
 
@@ -76,32 +76,32 @@ using System.Windows;
 
 namespace UsingConverters 
 { 
-    public partial class MainWindow 
-        : Window 
-    { 
-        List<Vehicle> vehicles = null;
+    public partial class MainWindow 
+        : Window 
+    { 
+        List<Vehicle> vehicles = null;
 
-        public MainWindow() 
-        { 
-            InitializeComponent(); 
-        }
+        public MainWindow() 
+        { 
+            InitializeComponent(); 
+        }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e) 
-        { 
-            vehicles = new List<Vehicle> 
-           { 
-                new Vehicle{ VehicleId=1, Name="Su Todoroki", FuelLevel=75}, 
-                new Vehicle{ VehicleId=2, Name="Migel Kamino", FuelLevel=50}, 
-                new Vehicle{ VehicleId=3, Name="Francesco Bernulli", FuelLevel=45}, 
-                new Vehicle{ VehicleId=4, Name="Meytır", FuelLevel=60}, 
-                new Vehicle{ VehicleId=5, Name="Naycıl", FuelLevel=90}, 
-                new Vehicle{ VehicleId=6, Name="Şimşek", FuelLevel=23}, 
-                new Vehicle{ VehicleId=7, Name="Şolet", FuelLevel=85} 
-            };
+        private void Window_Loaded(object sender, RoutedEventArgs e) 
+        { 
+            vehicles = new List<Vehicle> 
+           { 
+                new Vehicle{ VehicleId=1, Name="Su Todoroki", FuelLevel=75}, 
+                new Vehicle{ VehicleId=2, Name="Migel Kamino", FuelLevel=50}, 
+                new Vehicle{ VehicleId=3, Name="Francesco Bernulli", FuelLevel=45}, 
+                new Vehicle{ VehicleId=4, Name="Meytır", FuelLevel=60}, 
+                new Vehicle{ VehicleId=5, Name="Naycıl", FuelLevel=90}, 
+                new Vehicle{ VehicleId=6, Name="Şimşek", FuelLevel=23}, 
+                new Vehicle{ VehicleId=7, Name="Şolet", FuelLevel=85} 
+            };
 
-            lstVehicles.DataContext = vehicles; 
-        } 
-    } 
+            lstVehicles.DataContext = vehicles; 
+        } 
+    } 
 }
 ```
 
@@ -133,36 +133,36 @@ using System.Windows.Media;
 
 namespace UsingConverters 
 { 
-    public class FuelLevelToSolidColorConverter 
-        :IValueConverter 
-    { 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) 
-        { 
-            int fuelLevel = (int)value; 
-            SolidColorBrush brush = null;
+    public class FuelLevelToSolidColorConverter 
+        :IValueConverter 
+    { 
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) 
+        { 
+            int fuelLevel = (int)value; 
+            SolidColorBrush brush = null;
 
-            if (fuelLevel <= 25) 
-                brush = new SolidColorBrush(Colors.Red); 
-            else if (fuelLevel > 25 
-                && fuelLevel <= 50) 
-                brush = new SolidColorBrush(Colors.Orange); 
-            else if (fuelLevel > 50 
-                && fuelLevel <= 75) 
-                brush = new SolidColorBrush(Colors.LightBlue); 
-            else if (fuelLevel > 75 
-                && fuelLevel <= 100) 
-                brush = new SolidColorBrush(Colors.DarkGreen); 
-            else 
-                brush = new SolidColorBrush(Colors.White);
+            if (fuelLevel <= 25) 
+                brush = new SolidColorBrush(Colors.Red); 
+            else if (fuelLevel > 25 
+                && fuelLevel <= 50) 
+                brush = new SolidColorBrush(Colors.Orange); 
+            else if (fuelLevel > 50 
+                && fuelLevel <= 75) 
+                brush = new SolidColorBrush(Colors.LightBlue); 
+            else if (fuelLevel > 75 
+                && fuelLevel <= 100) 
+                brush = new SolidColorBrush(Colors.DarkGreen); 
+            else 
+                brush = new SolidColorBrush(Colors.White);
 
-            return brush; 
-        } 
-        
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) 
-        { 
-            return value; 
-        } 
-    } 
+            return brush; 
+        } 
+        
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) 
+        { 
+            return value; 
+        } 
+    } 
 }
 ```
 
@@ -180,37 +180,37 @@ Kod tarafında gerekli düzenlemeleri yaptıktan sonra artık yeni Converter tip
 
 ```xml
 <Window x:Class="UsingConverters.MainWindow" 
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-        Title="MainWindow" Height="350" Width="600" Loaded="Window_Loaded" 
-        xmlns:local="clr-namespace:UsingConverters" 
-        > 
-    <Window.Resources> 
-        <local:FuelLevelToSolidColorConverter x:Key="FuelLevelToSolidColor"/> 
-    </Window.Resources> 
-    <Grid>     
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="MainWindow" Height="350" Width="600" Loaded="Window_Loaded" 
+        xmlns:local="clr-namespace:UsingConverters" 
+        > 
+    <Window.Resources> 
+        <local:FuelLevelToSolidColorConverter x:Key="FuelLevelToSolidColor"/> 
+    </Window.Resources> 
+    <Grid>     
 
-        <ListBox x:Name="lstVehicles"  ItemsSource="{Binding}"> 
-            <ListBox.ItemTemplate> 
-                <DataTemplate> 
-                    <StackPanel Orientation="Vertical"> 
-                        <Label 
-                               Content="{Binding Path=VehicleId}" 
-                               FontWeight="Bold" FontSize="16"/> 
-                        <Label 
-                               Content="{Binding Path=Name}"/> 
-                        <Label Height="24" 
-                               HorizontalAlignment="Left" 
-                               Background="{Binding Path=FuelLevel, Converter={StaticResource FuelLevelToSolidColor}}" 
-                               Width="{Binding Path=FuelLevel}"                             
-                               Content="{Binding Path=FuelLevel}" 
-                               /> 
-                        <Separator Width="500"/> 
-                    </StackPanel> 
-                </DataTemplate> 
-            </ListBox.ItemTemplate> 
-        </ListBox> 
-    </Grid> 
+        <ListBox x:Name="lstVehicles"  ItemsSource="{Binding}"> 
+            <ListBox.ItemTemplate> 
+                <DataTemplate> 
+                    <StackPanel Orientation="Vertical"> 
+                        <Label 
+                               Content="{Binding Path=VehicleId}" 
+                               FontWeight="Bold" FontSize="16"/> 
+                        <Label 
+                               Content="{Binding Path=Name}"/> 
+                        <Label Height="24" 
+                               HorizontalAlignment="Left" 
+                               Background="{Binding Path=FuelLevel, Converter={StaticResource FuelLevelToSolidColor}}" 
+                               Width="{Binding Path=FuelLevel}"                             
+                               Content="{Binding Path=FuelLevel}" 
+                               /> 
+                        <Separator Width="500"/> 
+                    </StackPanel> 
+                </DataTemplate> 
+            </ListBox.ItemTemplate> 
+        </ListBox> 
+    </Grid> 
 </Window>
 ```
 

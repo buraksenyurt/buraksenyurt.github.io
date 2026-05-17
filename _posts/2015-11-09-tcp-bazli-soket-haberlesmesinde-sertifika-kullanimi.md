@@ -274,3 +274,4 @@ Görüldüğü gibi TCP bazlı soket haberleşmesinde sertifika kullanımı oldu
 Ek olarak çalışma zamanında ortaya çıkması beklenen bir kaç istisna (Exception) da olabilir. Söz gelimi sunucu uygulama, istemciler açıkken kapatılırsa ne olur? Peki ya birden fazla sunucu uygulamayı aynı anda çalıştırabilir miyiz? Ya da sunucu açık ve bir istemciden mesaj bekler konumdayken kapatılırsa istemcilerin akibeti ne olur? Bu konuları da göz önünde bulundurarak uygulama içeriğini genişletmeye çalışmanızı öneririm. Kurumumuzda kullandığımız harici uygulamada sertifika bazlı bir haberleşme olduğunu ve istemci olarak gönderdiğimiz soket mesajlarına karşılık cevaplar aldığımızı ve bunları işlediğimizi vurgulamak da isterim.
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

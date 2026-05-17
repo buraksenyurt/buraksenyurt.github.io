@@ -34,3 +34,4 @@ Mutlaka yazılımcılık hayatınızın bir döneminde serileştirme (XML, SOAP,
 İpucundaki kodda sorun oluşturabilecek pek çok nokta var. Özellikle dönüştürülemeyen XML içeriklerinde kodun istisna (InvalidOperationException alınma ihtimali yüksek) vererek sonlanmasını engellemek gerekiyor. Hatta bir şema (Schema) kontrolü bile yapılabilir. Diğer yandan MemoryStream kullanımının yoğun XML-Object dönüşümlerinde performans sorununa neden olup olmayacağına bir bakmak gerekiyor. Ah unutmadan...Generic T tipi için bazı kısıtlamalar da konulabilir. Sadece belli domain tipleri için ilgili genişletme metodunun çalıştırılması garanti altına alınmaya çalışılabilir (Nasıl yapılabilir bir düşünün)
 
 Böylece geldik bir ipucu'nun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

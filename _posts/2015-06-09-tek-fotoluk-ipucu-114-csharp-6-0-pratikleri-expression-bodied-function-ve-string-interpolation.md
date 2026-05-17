@@ -17,3 +17,4 @@ Eric Vogel'e göre C# 6.0 ile birlikte dile kazandırılan yenilikler kodun daha
 ![tek fotoluk ipucu 114 csharp 6 0 pratikleri expression bodied function ve string interpolation 01](/assets/images/2015/tek-fotoluk-ipucu-114-csharp-6-0-pratikleri-expression-bodied-function-ve-string-interpolation-01.png)
 
 Kodun daha okunabilir olduğu konusunda hem fikir olmakla birlikte, yorumu yine de size bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

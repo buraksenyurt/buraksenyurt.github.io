@@ -15,3 +15,4 @@ Raspberry Pi'mize yeni parçalar alarak masraf yapmaya, python dilini öğrenmey
 [Youtube Link](https://www.youtube.com/watch?v=h3xfi1-SmQc)
 
 Raspi maceralarımız kaldığı yerden devam edecek. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

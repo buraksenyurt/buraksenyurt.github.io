@@ -65,73 +65,73 @@ using System;
 
 namespace ConsoleApplication9 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            GameReporter reporter = null;
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            GameReporter reporter = null;
 
-            reporter = new XmlReporter(); 
-            reporter.WriteSummary(); 
-            Console.WriteLine();
+            reporter = new XmlReporter(); 
+            reporter.WriteSummary(); 
+            Console.WriteLine();
 
-            reporter = new TextReporter(); 
-            reporter.WriteSummary(); 
-            Console.WriteLine();
+            reporter = new TextReporter(); 
+            reporter.WriteSummary(); 
+            Console.WriteLine();
 
-            reporter = new ConsoleReporter(); 
-            reporter.WriteSummary(); 
-        } 
-    }
+            reporter = new ConsoleReporter(); 
+            reporter.WriteSummary(); 
+        } 
+    }
 
-    abstract class GameReporter 
-    {        
-        public void GetResults() 
-        { 
-            Console.WriteLine("Oyuncuların istatistikleri toplanıyor"); 
-        }
+    abstract class GameReporter 
+    {        
+        public void GetResults() 
+        { 
+            Console.WriteLine("Oyuncuların istatistikleri toplanıyor"); 
+        }
 
-        public void ParseResults() 
-        { 
-            Console.WriteLine("İstatistikler ayrıştırılıyor"); 
-        }
+        public void ParseResults() 
+        { 
+            Console.WriteLine("İstatistikler ayrıştırılıyor"); 
+        }
 
-        public abstract void WriteResults();
+        public abstract void WriteResults();
 
-        public void WriteSummary() 
-        { 
-            GetResults(); 
-            ParseResults(); 
-            WriteResults(); 
-        } 
-    }
+        public void WriteSummary() 
+        { 
+            GetResults(); 
+            ParseResults(); 
+            WriteResults(); 
+        } 
+    }
 
-    class XmlReporter 
-        : GameReporter 
-    { 
-        public override void WriteResults() 
-        { 
-            Console.WriteLine("İstatistikler XML dosyasına yazılıyor."); 
-        } 
-    }
+    class XmlReporter 
+        : GameReporter 
+    { 
+        public override void WriteResults() 
+        { 
+            Console.WriteLine("İstatistikler XML dosyasına yazılıyor."); 
+        } 
+    }
 
-    class TextReporter 
-        : GameReporter 
-    { 
-        public override void WriteResults() 
-        { 
-            Console.WriteLine("İstatistikler TEXT dosyasına yazdırılıyor."); 
-        } 
-    }
+    class TextReporter 
+        : GameReporter 
+    { 
+        public override void WriteResults() 
+        { 
+            Console.WriteLine("İstatistikler TEXT dosyasına yazdırılıyor."); 
+        } 
+    }
 
-    class ConsoleReporter 
-        : GameReporter 
-    { 
-        public override void WriteResults() 
-        { 
-            Console.WriteLine("İstatistikler CONSOLE ekranına basılıyor."); 
-        } 
-    } 
+    class ConsoleReporter 
+        : GameReporter 
+    { 
+        public override void WriteResults() 
+        { 
+            Console.WriteLine("İstatistikler CONSOLE ekranına basılıyor."); 
+        } 
+    } 
 }
 ```
 
@@ -154,61 +154,61 @@ using System;
 
 namespace ConsoleApplication9 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            GameReporter reporter = new GameReporter(); 
-            reporter.WriteSummary(Target.Console); 
-            reporter.WriteSummary(Target.TextFile); 
-            reporter.WriteSummary(Target.XmlFile); 
-        } 
-    }
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            GameReporter reporter = new GameReporter(); 
+            reporter.WriteSummary(Target.Console); 
+            reporter.WriteSummary(Target.TextFile); 
+            reporter.WriteSummary(Target.XmlFile); 
+        } 
+    }
 
-    enum Target 
-    { 
-        Console, 
-        XmlFile, 
-        TextFile 
-    } 
+    enum Target 
+    { 
+        Console, 
+        XmlFile, 
+        TextFile 
+    } 
 
-    class GameReporter 
-    {        
-        void GetResults() 
-        { 
-            Console.WriteLine("Oyuncuların istatistikleri toplanıyor"); 
-        }
+    class GameReporter 
+    {        
+        void GetResults() 
+        { 
+            Console.WriteLine("Oyuncuların istatistikleri toplanıyor"); 
+        }
 
-        void ParseResults() 
-        { 
-            Console.WriteLine("İstatistikler ayrıştırılıyor"); 
-        }
+        void ParseResults() 
+        { 
+            Console.WriteLine("İstatistikler ayrıştırılıyor"); 
+        }
 
-       void WriteResults(Target target) 
-        { 
-           switch (target) 
-            { 
-                case Target.Console: 
-                    Console.WriteLine("Console a yaz"); 
-                    break; 
-                case Target.XmlFile: 
-                    Console.WriteLine("Xml dosyasına yaz"); 
-                    break; 
-                case Target.TextFile: 
-                    Console.WriteLine("Text dosyasına yaz"); 
-                    break; 
-                default: 
-                    break; 
-            } 
-        }
+       void WriteResults(Target target) 
+        { 
+           switch (target) 
+            { 
+                case Target.Console: 
+                    Console.WriteLine("Console a yaz"); 
+                    break; 
+                case Target.XmlFile: 
+                    Console.WriteLine("Xml dosyasına yaz"); 
+                    break; 
+                case Target.TextFile: 
+                    Console.WriteLine("Text dosyasına yaz"); 
+                    break; 
+                default: 
+                    break; 
+            } 
+        }
 
-        public void WriteSummary(Target target) 
-        { 
-            GetResults(); 
-            ParseResults(); 
-            WriteResults(target); 
-        } 
-    } 
+        public void WriteSummary(Target target) 
+        { 
+            GetResults(); 
+            ParseResults(); 
+            WriteResults(target); 
+        } 
+    } 
 }
 ```
 
@@ -229,3 +229,4 @@ Buna göre PDFReporter şeklinde yeni bir seçenek dahil edilmek istendiğinde L
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde davranışsal tasarım kalıplarından birisi olan Template Method desenini incelemeye çalıştık. Uygulanışı oldukça basit olan desenin özellikle Sequential Coupling isimli anti-pattern’ in refactor edilmesi noktasında önemli bir yere sahip olduğunu öğrendik. Bir diğer makalemizden görüşünceye dek hepinize mutlu günler dilerim.
 
 [ConsoleApplication9.zip (73,18 kb)](/assets/files/2015/ConsoleApplication9.zip)
+

@@ -55,12 +55,12 @@ using System.ServiceModel;
 
 namespace HighwayServiceLibrary 
 { 
-    [ServiceContract] 
-    public interface IEchoService 
-    { 
-        [OperationContract(IsOneWay=true)] 
-        void SendEcho(string content); 
-    } 
+    [ServiceContract] 
+    public interface IEchoService 
+    { 
+        [OperationContract(IsOneWay=true)] 
+        void SendEcho(string content); 
+    } 
 }
 ```
 
@@ -73,14 +73,14 @@ Servis sözleşmesine ait implementasyon ise aşağıdaki gibidir.
 ```csharp
 namespace HighwayServiceLibrary 
 { 
-    public class EchoService 
-        :IEchoService 
-    { 
-        public void SendEcho(string content) 
-        { 
-            //Do Something 
-        } 
-    } 
+    public class EchoService 
+        :IEchoService 
+    { 
+        public void SendEcho(string content) 
+        { 
+            //Do Something 
+        } 
+    } 
 }
 ```
 
@@ -93,25 +93,25 @@ Servis tarafını yazarak ilerleyelim. Console uygulaması olarak tasarlayacağ�
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-  <system.serviceModel> 
-    <behaviors> 
-      <serviceBehaviors> 
-        <behavior name="StandartBehavior"> 
-          <serviceMetadata/> 
-          <serviceDebug includeExceptionDetailInFaults="true" /> 
-        </behavior> 
-      </serviceBehaviors>      
-    </behaviors> 
-    <services>      
-      <service name="HighwayServiceLibrary.EchoService" behaviorConfiguration="StandartBehavior"> 
-        <endpoint address="http://localhost:54160/basic/EchoService" binding="basicHttpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
-        <endpoint address="http://localhost:54160/ws/EchoService" binding="wsHttpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
-        <endpoint address="http://localhost:54160/EchoService/mex" binding="mexHttpBinding" contract="IMetadataExchange"/> 
-        <endpoint address="soap.udp://localhost:54162/EchoService" binding="udpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
-        <endpoint address="net.tcp://localhost:54161/EchoService" binding="netTcpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
-      </service>      
-    </services> 
-  </system.serviceModel> 
+  <system.serviceModel> 
+    <behaviors> 
+      <serviceBehaviors> 
+        <behavior name="StandartBehavior"> 
+          <serviceMetadata/> 
+          <serviceDebug includeExceptionDetailInFaults="true" /> 
+        </behavior> 
+      </serviceBehaviors>      
+    </behaviors> 
+    <services>      
+      <service name="HighwayServiceLibrary.EchoService" behaviorConfiguration="StandartBehavior"> 
+        <endpoint address="http://localhost:54160/basic/EchoService" binding="basicHttpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
+        <endpoint address="http://localhost:54160/ws/EchoService" binding="wsHttpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
+        <endpoint address="http://localhost:54160/EchoService/mex" binding="mexHttpBinding" contract="IMetadataExchange"/> 
+        <endpoint address="soap.udp://localhost:54162/EchoService" binding="udpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
+        <endpoint address="net.tcp://localhost:54161/EchoService" binding="netTcpBinding" contract="HighwayServiceLibrary.IEchoService"/> 
+      </service>      
+    </services> 
+  </system.serviceModel> 
 </configuration>
 ```
 
@@ -128,20 +128,20 @@ using System.ServiceModel;
 
 namespace ServerApp 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            using(ServiceHost host=new ServiceHost(typeof(EchoService))) 
-            { 
-                host.Open(); 
-                Console.WriteLine(@"Uygulama sunucusunu durumu: ""{0}"" ",host.State); 
-                Console.WriteLine("Uygulama sunucusunu kapatmak için bir tuşa basınız."); 
-                Console.ReadLine(); 
-                host.Close(); 
-            } 
-        } 
-    } 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            using(ServiceHost host=new ServiceHost(typeof(EchoService))) 
+            { 
+                host.Open(); 
+                Console.WriteLine(@"Uygulama sunucusunu durumu: ""{0}"" ",host.State); 
+                Console.WriteLine("Uygulama sunucusunu kapatmak için bir tuşa basınız."); 
+                Console.ReadLine(); 
+                host.Close(); 
+            } 
+        } 
+    } 
 }
 ```
 
@@ -156,40 +156,40 @@ Gelelim istemci tarafına. Servis referansını ekledikten sonra istemci tarafı
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <startup> 
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /> 
-    </startup> 
-    <system.serviceModel> 
-        <bindings> 
-            <basicHttpBinding> 
-                <binding name="BasicHttpBinding_IEchoService" /> 
-            </basicHttpBinding> 
-            <netTcpBinding> 
-                <binding name="NetTcpBinding_IEchoService" /> 
-            </netTcpBinding> 
-            <wsHttpBinding> 
-                <binding name="WSHttpBinding_IEchoService" /> 
-            </wsHttpBinding> 
-            <udpBinding> 
-                <binding name="UdpBinding_IEchoService" /> 
-            </udpBinding> 
-        </bindings> 
-        <client> 
-            <endpoint address="http://localhost:54160/basic/EchoService" 
-               binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IEchoService" 
-                contract="EchoSpace.IEchoService" name="BasicHttpBinding_IEchoService" /> 
-            <endpoint address="http://localhost:54160/ws/EchoService" binding="wsHttpBinding" 
-                bindingConfiguration="WSHttpBinding_IEchoService" contract="EchoSpace.IEchoService" 
-                name="WSHttpBinding_IEchoService" /> 
-            <endpoint address="soap.udp://localhost:54162/UdpServiceHost" 
-                binding="udpBinding" bindingConfiguration="UdpBinding_IEchoService" 
-                contract="EchoSpace.IEchoService" name="UdpBinding_IEchoService" /> 
-            <endpoint address="net.tcp://localhost:54161/EchoService" binding="netTcpBinding" 
-                bindingConfiguration="NetTcpBinding_IEchoService" contract="EchoSpace.IEchoService" 
-                name="NetTcpBinding_IEchoService">   
-            </endpoint> 
-        </client> 
-    </system.serviceModel> 
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /> 
+    </startup> 
+    <system.serviceModel> 
+        <bindings> 
+            <basicHttpBinding> 
+                <binding name="BasicHttpBinding_IEchoService" /> 
+            </basicHttpBinding> 
+            <netTcpBinding> 
+                <binding name="NetTcpBinding_IEchoService" /> 
+            </netTcpBinding> 
+            <wsHttpBinding> 
+                <binding name="WSHttpBinding_IEchoService" /> 
+            </wsHttpBinding> 
+            <udpBinding> 
+                <binding name="UdpBinding_IEchoService" /> 
+            </udpBinding> 
+        </bindings> 
+        <client> 
+            <endpoint address="http://localhost:54160/basic/EchoService" 
+               binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IEchoService" 
+                contract="EchoSpace.IEchoService" name="BasicHttpBinding_IEchoService" /> 
+            <endpoint address="http://localhost:54160/ws/EchoService" binding="wsHttpBinding" 
+                bindingConfiguration="WSHttpBinding_IEchoService" contract="EchoSpace.IEchoService" 
+                name="WSHttpBinding_IEchoService" /> 
+            <endpoint address="soap.udp://localhost:54162/UdpServiceHost" 
+                binding="udpBinding" bindingConfiguration="UdpBinding_IEchoService" 
+                contract="EchoSpace.IEchoService" name="UdpBinding_IEchoService" /> 
+            <endpoint address="net.tcp://localhost:54161/EchoService" binding="netTcpBinding" 
+                bindingConfiguration="NetTcpBinding_IEchoService" contract="EchoSpace.IEchoService" 
+                name="NetTcpBinding_IEchoService">   
+            </endpoint> 
+        </client> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -203,58 +203,58 @@ using System.Diagnostics;
 
 namespace Highway.ClientApp 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            Console.WriteLine("Başlamak için bir tuşa basınız"); 
-            Console.ReadLine();
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Console.WriteLine("Başlamak için bir tuşa basınız"); 
+            Console.ReadLine();
 
-            string testData = CreateRandomString();
+            string testData = CreateRandomString();
 
-            Dictionary<EchoServiceClient,string> proxies = new Dictionary<EchoServiceClient,string> 
-            { 
-               {new EchoServiceClient("UdpBinding_IEchoService"),"UDP"}, 
-                {new EchoServiceClient("BasicHttpBinding_IEchoService"),"BASIC HTTP"}, 
-                {new EchoServiceClient("WSHttpBinding_IEchoService"),"WS HTTP"}, 
-                {new EchoServiceClient("NetTcpBinding_IEchoService"),"NET TCP"}, 
-            };
+            Dictionary<EchoServiceClient,string> proxies = new Dictionary<EchoServiceClient,string> 
+            { 
+               {new EchoServiceClient("UdpBinding_IEchoService"),"UDP"}, 
+                {new EchoServiceClient("BasicHttpBinding_IEchoService"),"BASIC HTTP"}, 
+                {new EchoServiceClient("WSHttpBinding_IEchoService"),"WS HTTP"}, 
+                {new EchoServiceClient("NetTcpBinding_IEchoService"),"NET TCP"}, 
+            };
 
-            foreach (var proxy in proxies) 
-            { 
-               for (int i = 1; i < 5; i++) 
-                { 
-                    Executer(proxy.Key, proxy.Value, i * 10000, testData); 
-                } 
-                proxy.Key.Close(); 
-            } 
-        }
+            foreach (var proxy in proxies) 
+            { 
+               for (int i = 1; i < 5; i++) 
+                { 
+                    Executer(proxy.Key, proxy.Value, i * 10000, testData); 
+                } 
+                proxy.Key.Close(); 
+            } 
+        }
 
-        static void Executer(EchoServiceClient proxy,string title,int tryCount,string testData) 
-        { 
-            Stopwatch watcher = new Stopwatch();
+        static void Executer(EchoServiceClient proxy,string title,int tryCount,string testData) 
+        { 
+            Stopwatch watcher = new Stopwatch();
 
-            watcher.Start();
+            watcher.Start();
 
-            for (int i = 0; i < tryCount; i++) 
-            { 
-                proxy.SendEcho(testData); 
-           }
+            for (int i = 0; i < tryCount; i++) 
+            { 
+                proxy.SendEcho(testData); 
+           }
 
-            watcher.Stop(); 
-            Console.WriteLine("{0} Total Milliseconds {1}",title, watcher.ElapsedMilliseconds.ToString()); 
-        }
+            watcher.Stop(); 
+            Console.WriteLine("{0} Total Milliseconds {1}",title, watcher.ElapsedMilliseconds.ToString()); 
+        }
 
-        static string CreateRandomString() 
-        { 
-            char[] charachters = new char[4096]; 
-            for (int i = 0; i < charachters.Length; i++) 
-            { 
-                charachters[i] = 'S'; 
-            } 
-            return new string(charachters); 
-        } 
-    } 
+        static string CreateRandomString() 
+        { 
+            char[] charachters = new char[4096]; 
+            for (int i = 0; i < charachters.Length; i++) 
+            { 
+                charachters[i] = 'S'; 
+            } 
+            return new string(charachters); 
+        } 
+    } 
 }
 ```
 
@@ -287,15 +287,15 @@ using System.ServiceModel;
 
 namespace HighwayServiceLibrary 
 { 
-    [ServiceContract] 
-    public interface IEchoService 
-    { 
-        [OperationContract(IsOneWay=true)] 
-        void SendEcho(string content);
+    [ServiceContract] 
+    public interface IEchoService 
+    { 
+        [OperationContract(IsOneWay=true)] 
+        void SendEcho(string content);
 
-        [OperationContract] 
-        string GetEcho(int length); 
-    } 
+        [OperationContract] 
+        string GetEcho(int length); 
+    } 
 }
 ```
 
@@ -308,17 +308,17 @@ Bu basit operasyonun implementasyonu çok da önemli değil aslında. Geriye tek
 ```csharp
 static void Executer(EchoServiceClient proxy,string title,int tryCount,string testData) 
 { 
-    . 
-    . 
-    . 
-    for (int i = 0; i < tryCount; i++) 
-    { 
-        //proxy.SendEcho(testData); 
-        proxy.GetEcho(1); 
-    } 
-    . 
-    . 
-    . 
+    . 
+    . 
+    . 
+    for (int i = 0; i < tryCount; i++) 
+    { 
+        //proxy.SendEcho(testData); 
+        proxy.GetEcho(1); 
+    } 
+    . 
+    . 
+    . 
 }
 ```
 

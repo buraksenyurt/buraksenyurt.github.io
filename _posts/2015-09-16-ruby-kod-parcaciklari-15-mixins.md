@@ -98,3 +98,4 @@ CaseFile içinde include ile bir enjekte söz konusu iken Message sınıfında e
 Mixin esas itibariyle ortak fonksiyonelliklerin farklı sınıflar arasında paylaştırılmasında rol oynamaktadır. Aynı operasyonları ve kod parçalarını tekrarlamak yerine gruplandırıp bir modül içerisine almak ve Context bazında ayrıştırarak ihtiyaç duyan sınıflar içerisine yerleştirmek için tercih edilen bir kullanım şeklidir.
 
 Böylece geldik bir Ruby Kod Parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
+

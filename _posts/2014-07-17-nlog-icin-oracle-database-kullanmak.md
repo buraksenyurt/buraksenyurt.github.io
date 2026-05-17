@@ -41,27 +41,27 @@ Oracle tarafında aşağıdaki şema yapısına sahip bir tablo ve trigger kulla
 
 ```sql
 CREATE TABLE ApplicationLogs 
-    (TraceTime                  TIMESTAMP (7), 
-    LogLevel                    VARCHAR2(50 BYTE), 
-    Logger                      VARCHAR2(250 BYTE), 
-    Message                     VARCHAR2(1000 BYTE), 
-    MachineName                 VARCHAR2(20 BYTE), 
-    UserName                    VARCHAR2(30 BYTE), 
-    CallSite                    VARCHAR2(1000 BYTE), 
-    ThreadId                    VARCHAR2(10 BYTE), 
-    ExceptionMessage            VARCHAR2(1000 BYTE), 
-    StackTrace                  VARCHAR2(1000 BYTE), 
-    SessionID                   VARCHAR2(50 BYTE) 
-    );
+    (TraceTime                  TIMESTAMP (7), 
+    LogLevel                    VARCHAR2(50 BYTE), 
+    Logger                      VARCHAR2(250 BYTE), 
+    Message                     VARCHAR2(1000 BYTE), 
+    MachineName                 VARCHAR2(20 BYTE), 
+    UserName                    VARCHAR2(30 BYTE), 
+    CallSite                    VARCHAR2(1000 BYTE), 
+    ThreadId                    VARCHAR2(10 BYTE), 
+    ExceptionMessage            VARCHAR2(1000 BYTE), 
+    StackTrace                  VARCHAR2(1000 BYTE), 
+    SessionID                   VARCHAR2(50 BYTE) 
+    );
 
 CREATE OR REPLACE TRIGGER ApplicationLogsTrigger 
 BEFORE 
-  INSERT 
+  INSERT 
 ON ApplicationLogs 
 REFERENCING NEW AS NEW OLD AS OLD 
 FOR EACH ROW 
 BEGIN 
-    :new.TraceTime:= SYSTIMESTAMP; 
+    :new.TraceTime:= SYSTIMESTAMP; 
 END;
 ```
 
@@ -76,27 +76,27 @@ Gelelim NLog konfigurasyon ayarlarına. Dosya içeriğinin aşağıdaki gibi olu
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
-         
+         
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          internalLogLevel="Debug"      
-          
+          internalLogLevel="Debug"      
+          
     internalLogFile="c:\InteralLogs.txt"
-         >   <extensions>     <add assembly="NLog.Extended" />   </extensions>
-      <targets>        <target name="database" xsi:type="Database" keepConnection="false"
+         >   <extensions>     <add assembly="NLog.Extended" />   </extensions>
+      <targets>        <target name="database" xsi:type="Database" keepConnection="false"
             useTransactions="true"
-                      connectionStringName="ConStr"
-                     
+                      connectionStringName="ConStr"
+                     
             commandText="INSERT INTO APPLICATIONLOGS (LOGLEVEL,LOGGER,MESSAGE,MACHINENAME,USERNAME,CALLSITE, THREADID,EXCEPTIONMESSAGE,STACKTRACE,SESSIONID) 
-              VALUES (:pLEVEL,:pLOGGER,:pMESSAGE,:pMACHINENAME,:pUSERNAME, :pCALLSITE,:pTHREADID,:pEXCEPTIONMESSAGE,:pSTACKTRACE,:pSESSIONID)">
-          <parameter name="pLEVEL" layout="${level}" />       <parameter name="pLOGGER"
-                layout="${logger}" />       <parameter name="pMESSAGE" layout="${message}" />       <parameter
-                name="pMACHINENAME" layout="${machinename}" />       <parameter name="pUSERNAME"
-                layout="${windows-identity:domain=true}" />       <parameter name="pCALLSITE"
-                layout="${callsite:filename=true}" />       <parameter name="pTHREADID"
-                layout="${threadid}" />       <parameter name="pEXCEPTIONMESSAGE"
-                layout="${exception}" />       <parameter name="pSTACKTRACE" layout="${stacktrace}" />
-          <parameter name="pSESSIONID" layout="${aspnet-sessionid}" />     </target>   </targets>   <rules>
-        <logger name="*" minlevel="Trace" writeTo="database" />   </rules>
+              VALUES (:pLEVEL,:pLOGGER,:pMESSAGE,:pMACHINENAME,:pUSERNAME, :pCALLSITE,:pTHREADID,:pEXCEPTIONMESSAGE,:pSTACKTRACE,:pSESSIONID)">
+          <parameter name="pLEVEL" layout="${level}" />       <parameter name="pLOGGER"
+                layout="${logger}" />       <parameter name="pMESSAGE" layout="${message}" />       <parameter
+                name="pMACHINENAME" layout="${machinename}" />       <parameter name="pUSERNAME"
+                layout="${windows-identity:domain=true}" />       <parameter name="pCALLSITE"
+                layout="${callsite:filename=true}" />       <parameter name="pTHREADID"
+                layout="${threadid}" />       <parameter name="pEXCEPTIONMESSAGE"
+                layout="${exception}" />       <parameter name="pSTACKTRACE" layout="${stacktrace}" />
+          <parameter name="pSESSIONID" layout="${aspnet-sessionid}" />     </target>   </targets>   <rules>
+        <logger name="*" minlevel="Trace" writeTo="database" />   </rules>
 </nlog>
 ```
 
@@ -136,20 +136,20 @@ Asp.Net uygulaması içerisinde tamamen senaryonun amacına hizmet eden sembolik
 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head runat="server"> 
-    <title></title> 
+    <title></title> 
 </head> 
 <body> 
-    <form id="form1" runat="server"> 
-    <div> 
-        <asp:Label ID="lblEmail" runat="server" Text="Email" /> 
-        <asp:TextBox ID="txtEmail" runat="server" /> 
-        <br /> 
-        <asp:Label ID="lblRecipeName" runat="server" Text="Recipe Name" /> 
-        <asp:TextBox ID="txtRecipeName" runat="server" /> 
-        <br /> 
-        <asp:Button ID="btnGetRecipe" runat="server" Text="GetRecipe" OnClick="btnGetRecipe_Click" /> 
-    </div> 
-    </form> 
+    <form id="form1" runat="server"> 
+    <div> 
+        <asp:Label ID="lblEmail" runat="server" Text="Email" /> 
+        <asp:TextBox ID="txtEmail" runat="server" /> 
+        <br /> 
+        <asp:Label ID="lblRecipeName" runat="server" Text="Recipe Name" /> 
+        <asp:TextBox ID="txtRecipeName" runat="server" /> 
+        <br /> 
+        <asp:Button ID="btnGetRecipe" runat="server" Text="GetRecipe" OnClick="btnGetRecipe_Click" /> 
+    </div> 
+    </form> 
 </body> 
 </html>
 ```
@@ -180,8 +180,8 @@ namespace CookShop
                     SendRecipeToUser(txtEmail.Text);
                 }
 
-                // Sembolik olarak bir Exception fırlatıldı 
-                throw new OutOfMemoryException();
+                // Sembolik olarak bir Exception fırlatıldı 
+                throw new OutOfMemoryException();
             }
             catch (Exception excp)
             {
@@ -202,7 +202,7 @@ namespace CookShop
             Stopwatch watcher = new Stopwatch();
             watcher.Start();
             Thread.Sleep(3250); // Sembolik olarak bir gecikme uygulattık 
-            watcher.Stop();
+            watcher.Stop();
             nemo.Info(string.Format("{0}:{1} yemek reçetesinin bulunması için geçen toplam süre.", watcher.Elapsed.TotalSeconds, RecipeName));
         }
 

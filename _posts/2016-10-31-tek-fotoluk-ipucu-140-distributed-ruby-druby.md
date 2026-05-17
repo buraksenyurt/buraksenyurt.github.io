@@ -38,3 +38,4 @@ Aslında örnek son derece basit. Sunucu uygulama üzerinde bir dizi tanımlıyo
 İstemci tarafındaki kod parçasında ise 8890 nolu porta bağlanıyor ve new_with_uri metodu ile uzak nesneyi yakalıyoruz. Uzak nesne serileştirilebilir formatta olan bir dizi aslında. Dolayısıyla istemci tarafında << gibi operatörleri kullanarak sunucu tarafındaki sürece ait olan diziye yeni elemanlar ekleyebilir veya dizi bazlı çeşitli işlemler gerçekleştirebiliriz. Dahası bu dizi içeriğindeki nesneleri 8890 nolu porttan hizmet eden sunucuya bağlanan tüm istemciler için kullanabiliriz. İşte en yalın haliyle Distributed Ruby'ye merhaba demiş olduk (Bu arada dRuby konusu ile ilgili olarak [Amazon'daki şu kitabı](https://www.amazon.com/dRuby-Book-Distributed-Parallel-Computing/dp/193435693X/ref=sr_1_1?ie=UTF8&qid=1478002259&sr=8-1&keywords=distributed+ruby) tavsiye ederim)
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+

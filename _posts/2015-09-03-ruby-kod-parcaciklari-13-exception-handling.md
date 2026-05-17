@@ -111,3 +111,4 @@ Görüldüğü üzere çok fazla hata sınıfı yoktur ancak detay seviyede kull
 Bu kod parçacığında temel seviyede hata yönetimi ve kontrol mekanizmalarını incelemeye çalıştık. Elbette atladığım ve henüz değinemediğim ileri seviye konular söz konusu olabilir. Örneğin Ruby tarafında try, catch kullanımı söz konusudur ancak biraz daha farklı anlamda ele alınmaktadır. [Şu adresi](http://www.tutorialspoint.com/ruby/ruby_exceptions.htm) incelemenizi önerebilirim.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
+

@@ -38,13 +38,13 @@ Servis sözleşmesi;
 using System.ServiceModel;
 
 namespace Calculus 
-{     
-    [ServiceContract] 
-    public interface IMathService 
-    { 
-        [OperationContract] 
-        double Sum(int x,int y); 
-    } 
+{     
+    [ServiceContract] 
+    public interface IMathService 
+    { 
+        [OperationContract] 
+        double Sum(int x,int y); 
+    } 
 }
 
 Uygulayıcı tip;
@@ -53,14 +53,14 @@ using System;
 
 namespace Calculus 
 { 
-    public class MathService 
-        : IMathService 
-    { 
-        public double Sum(int x, int y) 
-        { 
-            return x + y; 
-        } 
-    } 
+    public class MathService 
+        : IMathService 
+    { 
+        public double Sum(int x, int y) 
+        { 
+            return x + y; 
+        } 
+    } 
 }
 ```
 
@@ -69,21 +69,21 @@ web.config dosyası içeriğini ise standart ayarları ile bırakabiliriz. İste
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <configuration> 
-    <startup> 
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1" /> 
-    </startup> 
-    <system.serviceModel> 
-        <bindings> 
-            <basicHttpBinding> 
-                <binding name="BasicHttpBinding_IMathService" /> 
-            </basicHttpBinding> 
-        </bindings> 
-        <client> 
-            <endpoint address="http://localhost:54837/MathService.svc" binding="basicHttpBinding" 
-                bindingConfiguration="BasicHttpBinding_IMathService" contract="clcls.IMathService" 
-                name="BasicHttpBinding_IMathService" /> 
-        </client> 
-    </system.serviceModel> 
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1" /> 
+    </startup> 
+    <system.serviceModel> 
+        <bindings> 
+            <basicHttpBinding> 
+                <binding name="BasicHttpBinding_IMathService" /> 
+            </basicHttpBinding> 
+        </bindings> 
+        <client> 
+            <endpoint address="http://localhost:54837/MathService.svc" binding="basicHttpBinding" 
+                bindingConfiguration="BasicHttpBinding_IMathService" contract="clcls.IMathService" 
+                name="BasicHttpBinding_IMathService" /> 
+        </client> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -97,16 +97,16 @@ using System;
 
 namespace Student 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            MathServiceClient proxy = new MathServiceClient("BasicHttpBinding_IMathService"); 
-            double result=proxy.Sum(3, 4); 
-            Console.WriteLine(result.ToString()); 
-            proxy.Close(); 
-        } 
-    } 
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            MathServiceClient proxy = new MathServiceClient("BasicHttpBinding_IMathService"); 
+            double result=proxy.Sum(3, 4); 
+            Console.WriteLine(result.ToString()); 
+            proxy.Close(); 
+        } 
+    } 
 }
 ```
 
@@ -128,21 +128,21 @@ using System.ServiceModel;
 
 namespace Student 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            #region Channel Factory kullanımı
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            #region Channel Factory kullanımı
 
-            ChannelFactory<IMathService> factory= new ChannelFactory<IMathService>("BasicHttpBinding_IMathService"); 
-            IMathService channel = factory.CreateChannel(); 
-            double result = channel.Sum(3, 4); 
-            Console.WriteLine(result.ToString()); 
-            ((IClientChannel)channel).Close();
+            ChannelFactory<IMathService> factory= new ChannelFactory<IMathService>("BasicHttpBinding_IMathService"); 
+            IMathService channel = factory.CreateChannel(); 
+            double result = channel.Sum(3, 4); 
+            Console.WriteLine(result.ToString()); 
+            ((IClientChannel)channel).Close();
 
-            #endregion 
-        } 
-    } 
+            #endregion 
+        } 
+    } 
 }
 ```
 
@@ -163,27 +163,27 @@ using System.ServiceModel;
 
 namespace Student 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            #region Caching Kullanımı
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            #region Caching Kullanımı
 
-            ClientBase<IMathServiceChannel>.CacheSetting = CacheSetting.AlwaysOn; 
-            for (int i = 0; i < 5; i++) 
-            { 
-                MathServiceClient client = new MathServiceClient( 
-                    new BasicHttpBinding() 
-                    , new EndpointAddress("http://localhost:54837/MathService.svc") 
-                    ); 
-                double result = client.Sum(i, 5); 
-                // İlk kullanımda kanal bilgisi cache' lenmiş durumda. Dolayısıyla sonraki çağrıda maliyet minimuma indirgenmiş olacak. 
-                Console.WriteLine("{0}", result.ToString()); 
-            }
+            ClientBase<IMathServiceChannel>.CacheSetting = CacheSetting.AlwaysOn; 
+            for (int i = 0; i < 5; i++) 
+            { 
+                MathServiceClient client = new MathServiceClient( 
+                    new BasicHttpBinding() 
+                    , new EndpointAddress("http://localhost:54837/MathService.svc") 
+                    ); 
+                double result = client.Sum(i, 5); 
+                // İlk kullanımda kanal bilgisi cache' lenmiş durumda. Dolayısıyla sonraki çağrıda maliyet minimuma indirgenmiş olacak. 
+                Console.WriteLine("{0}", result.ToString()); 
+            }
 
-            #endregion 
-        } 
-    } 
+            #endregion 
+        } 
+    } 
 }
 ```
 

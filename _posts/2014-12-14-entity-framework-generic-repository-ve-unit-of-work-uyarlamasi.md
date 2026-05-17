@@ -47,27 +47,27 @@ using System.Data.Entity;
 
 namespace RPandUOW.EntityModel 
 { 
-    public class ShopContext 
-        : DbContext 
-    { 
-        public DbSet<Category> Categories { get; set; } 
-        public DbSet<Product> Products { get; set; } 
-    } 
-    public class Category 
-    { 
-        public int CategoryID { get; set; } 
-        public string Title { get; set; } 
-        public virtual ICollection<Product> Products { get; set; } 
-    } 
-    public class Product 
-    { 
-        public int ProductID { get; set; } 
-        public string Title { get; set; } 
-        public decimal UnitPrice { get; set; } 
-        public int Quantity { get; set; } 
-        public int CategoryID { get; set; } 
-        public virtual Category Category { get; set; } 
-    } 
+    public class ShopContext 
+        : DbContext 
+    { 
+        public DbSet<Category> Categories { get; set; } 
+        public DbSet<Product> Products { get; set; } 
+    } 
+    public class Category 
+    { 
+        public int CategoryID { get; set; } 
+        public string Title { get; set; } 
+        public virtual ICollection<Product> Products { get; set; } 
+    } 
+    public class Product 
+    { 
+        public int ProductID { get; set; } 
+        public string Title { get; set; } 
+        public decimal UnitPrice { get; set; } 
+        public int Quantity { get; set; } 
+        public int CategoryID { get; set; } 
+        public virtual Category Category { get; set; } 
+    } 
 }
 ```
 
@@ -91,63 +91,63 @@ using System.Linq.Expressions;
 
 namespace RPandUOW.Repositories 
 { 
-    public interface IGenericRepository<T> 
-        where T:class 
-    { 
-        T FindById(object EntityId); 
-        IEnumerable<T> Select(Expression<Func<T, bool>> Filter = null); 
-        void Insert(T Entity); 
-        void Update(T Entity); 
-        void Delete(object EntityId); 
-        void Delete(T Entity); 
-    }
+    public interface IGenericRepository<T> 
+        where T:class 
+    { 
+        T FindById(object EntityId); 
+        IEnumerable<T> Select(Expression<Func<T, bool>> Filter = null); 
+        void Insert(T Entity); 
+        void Update(T Entity); 
+        void Delete(object EntityId); 
+        void Delete(T Entity); 
+    }
 
-    public class ShopRepository<T> 
-        :IGenericRepository<T> 
-        where T:class 
-    { 
-        private ShopContext _context; 
-        private DbSet<T> _dbSet; 
-        public ShopRepository(ShopContext Context) 
-        { 
-            _context = Context; 
-           _dbSet = _context.Set<T>(); 
-        } 
-        public virtual T FindById(object EntityId) 
-        { 
-            return _dbSet.Find(EntityId); 
-        } 
-        public virtual IEnumerable<T> Select(Expression<Func<T, bool>> Filter = null) 
-        { 
-            if (Filter != null) 
-            { 
-                return _dbSet.Where(Filter); 
-            } 
-            return _dbSet; 
-        } 
-        public virtual void Insert(T entity) 
-        { 
-            _dbSet.Add(entity); 
-        } 
-        public virtual void Update(T entityToUpdate) 
-        { 
-            _dbSet.Attach(entityToUpdate); 
-            _context.Entry(entityToUpdate).State = EntityState.Modified; 
-        } 
-        public virtual void Delete(object EntityId) 
-        { 
-            T entityToDelete = _dbSet.Find(EntityId); 
-           Delete(entityToDelete); 
-        } 
-        public virtual void Delete(T Entity) 
-        { 
-            if (_context.Entry(Entity).State == EntityState.Detached) //Concurrency için 
-            { 
-                _dbSet.Attach(Entity); 
-            } 
-            _dbSet.Remove(Entity); 
-        } 
-    } 
+    public class ShopRepository<T> 
+        :IGenericRepository<T> 
+        where T:class 
+    { 
+        private ShopContext _context; 
+        private DbSet<T> _dbSet; 
+        public ShopRepository(ShopContext Context) 
+        { 
+            _context = Context; 
+           _dbSet = _context.Set<T>(); 
+        } 
+        public virtual T FindById(object EntityId) 
+        { 
+            return _dbSet.Find(EntityId); 
+        } 
+        public virtual IEnumerable<T> Select(Expression<Func<T, bool>> Filter = null) 
+        { 
+            if (Filter != null) 
+            { 
+                return _dbSet.Where(Filter); 
+            } 
+            return _dbSet; 
+        } 
+        public virtual void Insert(T entity) 
+        { 
+            _dbSet.Add(entity); 
+        } 
+        public virtual void Update(T entityToUpdate) 
+        { 
+            _dbSet.Attach(entityToUpdate); 
+            _context.Entry(entityToUpdate).State = EntityState.Modified; 
+        } 
+        public virtual void Delete(object EntityId) 
+        { 
+            T entityToDelete = _dbSet.Find(EntityId); 
+           Delete(entityToDelete); 
+        } 
+        public virtual void Delete(T Entity) 
+        { 
+            if (_context.Entry(Entity).State == EntityState.Detached) //Concurrency için 
+            { 
+                _dbSet.Attach(Entity); 
+            } 
+            _dbSet.Remove(Entity); 
+        } 
+    } 
 }
 ```
 
@@ -173,66 +173,66 @@ using System.Transactions;
 
 namespace RPandUOW.UnitOfWorks 
 { 
-    public interface IUnitOfWork 
-        :IDisposable 
-    {   
-        void Save(); 
-        // Başka operasyonlar da tanımlanabilir. 
-        // void OpenTransaction(); 
-        // void CloseTransaction(); 
-        // gibi 
-    }
+    public interface IUnitOfWork 
+        :IDisposable 
+    {   
+        void Save(); 
+        // Başka operasyonlar da tanımlanabilir. 
+        // void OpenTransaction(); 
+        // void CloseTransaction(); 
+        // gibi 
+    }
 
-    public class ShopUnitOfWork 
-        :IUnitOfWork 
-    { 
-        private ShopContext _context = new ShopContext(); 
-        private ShopRepository<Category> _categoryRepository; 
-        private ShopRepository<Product> _productRepository; 
-        private bool _disposed = false; 
-        public ShopRepository<Category> CategoryRepository 
-        { 
-            get 
-            { 
-                if (_categoryRepository == null) 
-                   _categoryRepository = new ShopRepository<Category>(_context); 
-                return _categoryRepository; 
-            } 
-        } 
-        public ShopRepository<Product> ProductRepository 
-        { 
-            get 
-            { 
-                if (_productRepository == null) 
-                    _productRepository = new ShopRepository<Product>(_context); 
-                return _productRepository; 
-            } 
-        } 
-        public void Save() 
-        { 
-            using (TransactionScope tScope = new TransactionScope()) 
-           { 
-                _context.SaveChanges(); 
-                tScope.Complete(); 
-            } 
-        } 
-        protected virtual void Dispose(bool disposing) 
-        { 
-            if (!this._disposed) 
-            { 
-                if (disposing) 
-                { 
-                    _context.Dispose(); 
-                } 
-            } 
-            this._disposed = true; 
-        } 
-        public void Dispose() 
-        { 
-            Dispose(true); 
-            GC.SuppressFinalize(this); 
-        } 
-    } 
+    public class ShopUnitOfWork 
+        :IUnitOfWork 
+    { 
+        private ShopContext _context = new ShopContext(); 
+        private ShopRepository<Category> _categoryRepository; 
+        private ShopRepository<Product> _productRepository; 
+        private bool _disposed = false; 
+        public ShopRepository<Category> CategoryRepository 
+        { 
+            get 
+            { 
+                if (_categoryRepository == null) 
+                   _categoryRepository = new ShopRepository<Category>(_context); 
+                return _categoryRepository; 
+            } 
+        } 
+        public ShopRepository<Product> ProductRepository 
+        { 
+            get 
+            { 
+                if (_productRepository == null) 
+                    _productRepository = new ShopRepository<Product>(_context); 
+                return _productRepository; 
+            } 
+        } 
+        public void Save() 
+        { 
+            using (TransactionScope tScope = new TransactionScope()) 
+           { 
+                _context.SaveChanges(); 
+                tScope.Complete(); 
+            } 
+        } 
+        protected virtual void Dispose(bool disposing) 
+        { 
+            if (!this._disposed) 
+            { 
+                if (disposing) 
+                { 
+                    _context.Dispose(); 
+                } 
+            } 
+            this._disposed = true; 
+        } 
+        public void Dispose() 
+        { 
+            Dispose(true); 
+            GC.SuppressFinalize(this); 
+        } 
+    } 
 }
 ```
 

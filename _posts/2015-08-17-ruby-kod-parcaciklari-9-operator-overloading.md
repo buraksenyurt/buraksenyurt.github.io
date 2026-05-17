@@ -105,3 +105,4 @@ ve kısa notlarımız...
 - <=> dışındaki operatörlerde geriye yeni bir Location örneği döndürüldüğü görülebilir. Ancak <=> bir karşılaştırma operatörüdür. Normal şartlarda iki operand birbirine eşitse 0, ilk operand ikincisinden büyükse 1, ilk operand ikincisinden küçükse -1 döndürmektedir. Biz örneğimizde iki Location nesne örneğinin x,y,z değerlerini birbirleri ile kıyaslayarak karar verdik lakin buradaki mantık böyle olmak zorunda değil.
 
 Görüldüğü üzere kullanıcı tanımlı tipler için var olan Ruby operatörlerinin yeniden yüklenmesi mümkün ve oldukça basittir. Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

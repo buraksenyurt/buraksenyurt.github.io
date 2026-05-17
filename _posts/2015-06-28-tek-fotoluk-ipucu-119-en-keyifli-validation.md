@@ -16,3 +16,4 @@ Hani şu NuGet paketlerine bakıyoruz ya bir süredir. Hatta bazılarını alıp
 ![tek fotoluk ipucu 119 en keyifli validation 01](/assets/images/2015/tek-fotoluk-ipucu-119-en-keyifli-validation-01.png)
 
 Size düşen ise bu paketi gerekli gördüğünüz yerlerde kullanmak dışında, birde kaynak kodlarına bakmak olmalı. Hatta bakmadan önce siz bu tip bir Fluent API yazmak isteseniz nasıl hareket ederdiniz bir düşünün derim. Bir başka ipucunda görüşmek üzere.
+

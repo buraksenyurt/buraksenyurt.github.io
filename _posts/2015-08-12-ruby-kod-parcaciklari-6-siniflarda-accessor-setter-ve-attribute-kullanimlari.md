@@ -41,8 +41,8 @@ end
 
 class ZoneV2
   attr_reader :title #5
-  attr_writer :color   #6
-  attr_accessor :capacity   #7
+  attr_writer :color   #6
+  attr_accessor :capacity   #7
 
   def initialize(title, color)
     @title = title
@@ -79,3 +79,4 @@ end
 - Tabi her iki sınıf arasındaki en önemli fark ilkinde Accessor ve Setter metodlarının kullanılması ikincisinde ise sadece niteliklerden (attributes) yararlanılmasıdır. Neden? attribute'lar içsel olarak Instance Variable'ları otomatik olarak kullanır ve işaret ederler. Ancak özellik değerlerine veri atanması veya okunması işlemleri sırasında başka işlemlerin de icra edilmesi isteniyorsa metod blokları ile ele alınmaları gerekir.
 
 Böylece geldik bir kod parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

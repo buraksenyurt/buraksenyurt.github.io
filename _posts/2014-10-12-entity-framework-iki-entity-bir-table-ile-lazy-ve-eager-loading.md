@@ -38,44 +38,44 @@ using System.Data.Entity;
 
 namespace HowTo_EFTable 
 { 
-    public class CompanyBookContext 
-        :DbContext 
-    { 
-        public DbSet<Document> Document { get; set; }
+    public class CompanyBookContext 
+        :DbContext 
+    { 
+        public DbSet<Document> Document { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
-        { 
-            base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
+        { 
+            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Document>().ToTable("Documents"); 
-            modelBuilder.Entity<DocumentContent>().ToTable("Documents");
+            modelBuilder.Entity<Document>().ToTable("Documents"); 
+            modelBuilder.Entity<DocumentContent>().ToTable("Documents");
 
-            modelBuilder.Entity<Document>() 
-                .HasRequired(c => c.Content) 
-                .WithRequiredPrincipal(); 
-        } 
-    }
+            modelBuilder.Entity<Document>() 
+                .HasRequired(c => c.Content) 
+                .WithRequiredPrincipal(); 
+        } 
+    }
 
-    public class Document 
-    {   
-        [Key] 
-        public int DocumentID { get; set; } 
-        public string Title { get; set; } 
-        public int PageCount { get; set; } 
-        public string Language { get; set; } 
-        public string Genre { get; internal set; } 
-        public string Publisher { get; set; } 
-        public virtual DocumentContent Content { get; set; } 
-        public string ISBN { get; internal set; } 
-    }
+    public class Document 
+    {   
+        [Key] 
+        public int DocumentID { get; set; } 
+        public string Title { get; set; } 
+        public int PageCount { get; set; } 
+        public string Language { get; set; } 
+        public string Genre { get; internal set; } 
+        public string Publisher { get; set; } 
+        public virtual DocumentContent Content { get; set; } 
+        public string ISBN { get; internal set; } 
+    }
 
-    public class DocumentContent 
-    { 
-        [Key] 
-        public int DocumentID { get; set; } 
-        public byte[] Content { get; set; } 
-        public byte[] FrontCover { get;set; } 
-    } 
+    public class DocumentContent 
+    { 
+        [Key] 
+        public int DocumentID { get; set; } 
+        public byte[] Content { get; set; } 
+        public byte[] FrontCover { get;set; } 
+    } 
 }
 ```
 
@@ -96,25 +96,25 @@ Uygulamada SQL Server kullanılmaktadır. Bu nedenle config dosyası içerisinde
 ```xml
 <?xml version="1.0" encoding="utf-8"?> 
 <configuration> 
-  <configSections> 
-    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" /> 
-  </configSections> 
-  <startup> 
-    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /> 
-  </startup> 
-  <connectionStrings> 
-    <add name="CompanyBookContext" connectionString="data source=.;database=Azon;integrated security=SSPI;" providerName="System.Data.SqlClient"/> 
-  </connectionStrings> 
-  <entityFramework> 
-    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework"> 
-      <parameters> 
-        <parameter value="v11.0" /> 
-      </parameters> 
-    </defaultConnectionFactory> 
-    <providers> 
-      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" /> 
-    </providers> 
-  </entityFramework> 
+  <configSections> 
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" /> 
+  </configSections> 
+  <startup> 
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /> 
+  </startup> 
+  <connectionStrings> 
+    <add name="CompanyBookContext" connectionString="data source=.;database=Azon;integrated security=SSPI;" providerName="System.Data.SqlClient"/> 
+  </connectionStrings> 
+  <entityFramework> 
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework"> 
+      <parameters> 
+        <parameter value="v11.0" /> 
+      </parameters> 
+    </defaultConnectionFactory> 
+    <providers> 
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" /> 
+    </providers> 
+  </entityFramework> 
 </configuration>
 ```
 
@@ -131,62 +131,62 @@ using System.Linq;
 
 namespace HowTo_EFTable 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
-        { 
-            byte[] samplePDF = File.ReadAllBytes(@"c:\DomainDrivenDesignQuicklyOnline.pdf"); 
-            byte[] sampleCover= File.ReadAllBytes(@"c:\SampleCover.png");
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            byte[] samplePDF = File.ReadAllBytes(@"c:\DomainDrivenDesignQuicklyOnline.pdf"); 
+            byte[] sampleCover= File.ReadAllBytes(@"c:\SampleCover.png");
 
-            using (CompanyBookContext context=new CompanyBookContext()) 
-            { 
-                context.Database.Log = Console.Write; // SQL Script' lerini izlemek için Log çıktısını Console olarak set ettik.
+            using (CompanyBookContext context=new CompanyBookContext()) 
+            { 
+                context.Database.Log = Console.Write; // SQL Script' lerini izlemek için Log çıktısını Console olarak set ettik.
 
-                Document someBook = new Document 
-                { 
-                    Language = "TR", 
-                    ISBN="1234-3456-BOOK-1202", 
-                    Title = "Domain Driven Design Quickly - Online Edition", 
-                    Genre="Computer Books", 
-                    PageCount = 348, 
-                    Publisher="Your Best Publisher", 
-                    Content = new DocumentContent 
-                    { 
-                        FrontCover =sampleCover, 
-                        Content =samplePDF 
-                    } 
-                };
+                Document someBook = new Document 
+                { 
+                    Language = "TR", 
+                    ISBN="1234-3456-BOOK-1202", 
+                    Title = "Domain Driven Design Quickly - Online Edition", 
+                    Genre="Computer Books", 
+                    PageCount = 348, 
+                    Publisher="Your Best Publisher", 
+                    Content = new DocumentContent 
+                    { 
+                        FrontCover =sampleCover, 
+                        Content =samplePDF 
+                    } 
+                };
 
-                context.Document.Add(someBook); 
-                context.SaveChanges();
+                context.Document.Add(someBook); 
+                context.SaveChanges();
 
-                #region Lazy Loading
+                #region Lazy Loading
 
-                var dcmnt = (from d in context.Document 
-                             where d.ISBN == "1234-3456-BOOK-1202" 
-                             select d).FirstOrDefault(); 
-                if (dcmnt != null) 
-                { 
-                    byte[] bookContent = dcmnt.Content.Content; 
-                    Console.WriteLine(bookContent.Length.ToString()); // bookContent' i her hangibir şekilde kullanmassak ikinci Select işlemi gerçekleşmez. 
-                }
+                var dcmnt = (from d in context.Document 
+                             where d.ISBN == "1234-3456-BOOK-1202" 
+                             select d).FirstOrDefault(); 
+                if (dcmnt != null) 
+                { 
+                    byte[] bookContent = dcmnt.Content.Content; 
+                    Console.WriteLine(bookContent.Length.ToString()); // bookContent' i her hangibir şekilde kullanmassak ikinci Select işlemi gerçekleşmez. 
+                }
 
-                #endregion
+                #endregion
 
-                #region Eager Loading
+                #region Eager Loading
 
-                dcmnt = (from d in context.Document.Include("Content") 
-                         where d.ISBN == "1234-3456-BOOK-1202" 
-                         select d).FirstOrDefault(); 
-                if (dcmnt != null) 
-                { 
-                    byte[] bookContent = dcmnt.Content.Content; 
-                }
+                dcmnt = (from d in context.Document.Include("Content") 
+                         where d.ISBN == "1234-3456-BOOK-1202" 
+                         select d).FirstOrDefault(); 
+                if (dcmnt != null) 
+                { 
+                    byte[] bookContent = dcmnt.Content.Content; 
+                }
 
-                #endregion 
-            } 
-        } 
-    }    
+                #endregion 
+            } 
+        } 
+    }    
 }
 ```
 

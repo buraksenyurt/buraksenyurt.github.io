@@ -24,3 +24,4 @@ O zaman Players isimli Sheet'de yer alan oyunculardan Mustafar sisteminde olanla
 Küçük bir not; Örneği ilk kez denediğinizde büyük ihtimalle "The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine." şeklinde bir hata mesajı alabilirsiniz. Nitekim LINQtoExcel çalışabilmesi için gerekli Access Database Engine'e ihtiyaç duymaktadır. Bu yüzden [şu adresteki](http://uzmanim.net/soru/the-microsoft-ace-oledb-12-0-provider-is-not-registered-on-the-local-machine/1822) çözümü uygulayarak sorunu ortadan kaldırmanız gerekebilir.
 
 Bir başka ipucunda görüşmek dileğiyle.
+

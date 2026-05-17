@@ -20,3 +20,4 @@ Tabi bu fotoğraftaki kod parçasını uygularken dikkat edilmesi gereken nokta 
 Olur ya üşenmez kodu yazarsınız, bu durumda ILDASM (ki umarım unutmamışsınızdır) aracı ile her iki Dictionary tipinin Main metodu içerisinde nasıl örneklendiğine bir bakın derim. Bakalım bir fark görebilecek misiniz?
 
 Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
+
