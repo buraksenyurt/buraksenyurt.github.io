@@ -14,7 +14,9 @@ Takdir edersiniz ki o yıllarda bilgisayar kullanılıyor olmasına rağmen, kom
 
 Hal böyle olunca elimize aldık çıktıları başladık tek tek karşılaştırmaya. Bir ara ben durup bunu daha kolay nasıl yapabiliriz diye düşünmeye başladığımı hatırlıyorum. Hatta o anlarda arkamda beliren Yarbay’ ımın da sert bir ses tonu ile beni rüyamdan uyandırdığını…”Asteğmenimmmm!!!…”
 
-Doğruyu söylemek gerekirse ne ben ne de komutanım tüm listeyi dolaşmak istemiyorduk. Kafa kafaya vererek güzel bir yol bulduk elbette. Yol derken elimizde cetvel, kalem vesaire vardı. Ne bilgisayar ne de başka bir akıllı cihaz. O zaman anladım ki bazı işlerde kişiye büyük sabır gerekebiliyor. Örneğin TFS (Team Foundation Server) üzerinde kullanılan XML Web Service örneklerinin teker teker bulunup çıkartılması gibi
+Doğruyu söylemek gerekirse ne ben ne de komutanım tüm listeyi dolaşmak istemiyorduk. Kafa kafaya vererek güzel bir yol bulduk elbette. Yol derken elimizde cetvel, kalem vesaire vardı. Ne bilgisayar ne de başka bir akıllı cihaz. O zaman anladım ki bazı işlerde kişiye büyük sabır gerekebiliyor. Örneğin TFS (Team Foundation Server) üzerinde kullanılan XML Web Service örneklerinin teker teker bulunup çıkartılması gibi.
+
+## TFS Web Service’ lerine genel bakış
 
 TFS mimari alt yapısı ve çevre etkileşimini incelediğimiz [şu yazımızda](/2013/03/15/tfs-client-object-model-icin-hello-world/) Client Object Model’ i kısaca anlamaya çalışmıştık. O makalede yer alan mimari çizime dikkatlice bakarsak eğer, Client Object Model’ in aslında TFS Web Service’ ler ile haberleştiğini görebiliriz. Aslına bakarsanız Team Foundation Server tarafında epeyce fazla sayıda XML Web Service yer almaktadır. Bu servisleri ana hatları ile değerlendirdiğimizde ise sunucu ve koleksiyon seviyesinde olmak üzere iki ana dala bölündüklerini görürüz.
 

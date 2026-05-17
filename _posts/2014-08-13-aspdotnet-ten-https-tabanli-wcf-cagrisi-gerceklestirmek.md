@@ -37,14 +37,14 @@ Servis sözleşmesi;
 ```csharp
 using System.ServiceModel;
 
-namespace EmployeeService 
-{ 
-   [ServiceContract] 
-    public interface IEntryService 
-    { 
-        [OperationContract] 
-       Employee InsertEmployee(Employee newEmployee); 
-    } 
+namespace EmployeeService
+{
+    [ServiceContract]
+    public interface IEntryService
+    {
+        [OperationContract]
+        Employee InsertEmployee(Employee newEmployee);
+    }
 }
 ```
 
@@ -55,34 +55,34 @@ Sözleşme uygulayıcısı;
 ```csharp
 using System;
 
-namespace EmployeeService 
-{ 
-    public class EntryService 
-       : IEntryService 
-    { 
-        public Employee InsertEmployee(Employee newEmployee) 
-        { 
-            newEmployee.EmployeeId = 1903; 
-            return newEmployee; 
-        } 
-    } 
+namespace EmployeeService
+{
+    public class EntryService
+    : IEntryService
+    {
+        public Employee InsertEmployee(Employee newEmployee)
+        {
+            newEmployee.EmployeeId = 1903;
+            return newEmployee;
+        }
+    }
 }
 ```
 
 Employee tipi
 
 ```csharp
-namespace EmployeeService 
-{ 
-    public class Employee 
-    { 
-        public int EmployeeId { get; set; } 
-        public string Title { get; set; } 
-        public string FirstName { get; set; } 
-        public string MiddleName { get; set; } 
-        public string LastName { get; set; } 
-        public int Level { get; set; } 
-    } 
+namespace EmployeeService
+{
+    public class Employee
+    {
+        public int EmployeeId { get; set; }
+        public string Title { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public int Level { get; set; }
+    }
 }
 ```
 
@@ -91,50 +91,50 @@ ve en önemli kısım, servis tarafındaki konfigurasyon içeriği
 ```xml
 <?xml version="1.0"?> 
 <configuration> 
-  <system.serviceModel> 
-    <bindings> 
-      <wsHttpBinding> 
-        <binding name="TransportSecurity"> 
-          <security mode="Transport"> 
-            <transport clientCredentialType="None"/> 
-          </security> 
-        </binding> 
-      </wsHttpBinding> 
-    </bindings> 
-    <behaviors> 
-      <serviceBehaviors> 
-        <behavior name="EntryServiceBehavior"> 
-          <serviceMetadata httpsGetEnabled="true"/> 
-          <serviceDebug includeExceptionDetailInFaults="true"/> 
-        </behavior> 
-      </serviceBehaviors> 
-    </behaviors> 
-    <services> 
-      <service 
-        name="EmployeeService.EntryService" 
-        behaviorConfiguration="EntryServiceBehavior"> 
-        <host> 
-          <baseAddresses> 
-            <add baseAddress="https://localhost/EmployeeService/"/> 
-          </baseAddresses> 
-        </host> 
-        <endpoint 
-          address="EntryService.svc" 
-          binding="wsHttpBinding" 
-          bindingConfiguration="TransportSecurity" 
-          contract="EmployeeService.IEntryService" 
-        /> 
-        <endpoint 
-          address="mex" 
-          binding="mexHttpsBinding" 
-          contract="IMetadataExchange" 
-      /> 
-      </service> 
-    </services> 
-  </system.serviceModel> 
-  <system.web> 
-    <compilation debug="true"/> 
-  </system.web> 
+  <system.serviceModel> 
+    <bindings> 
+      <wsHttpBinding> 
+        <binding name="TransportSecurity"> 
+          <security mode="Transport"> 
+            <transport clientCredentialType="None"/> 
+          </security> 
+        </binding> 
+      </wsHttpBinding> 
+    </bindings> 
+    <behaviors> 
+      <serviceBehaviors> 
+        <behavior name="EntryServiceBehavior"> 
+          <serviceMetadata httpsGetEnabled="true"/> 
+          <serviceDebug includeExceptionDetailInFaults="true"/> 
+        </behavior> 
+      </serviceBehaviors> 
+    </behaviors> 
+    <services> 
+      <service 
+        name="EmployeeService.EntryService" 
+        behaviorConfiguration="EntryServiceBehavior"> 
+        <host> 
+          <baseAddresses> 
+            <add baseAddress="https://localhost/EmployeeService/"/> 
+          </baseAddresses> 
+        </host> 
+        <endpoint 
+          address="EntryService.svc" 
+          binding="wsHttpBinding" 
+          bindingConfiguration="TransportSecurity" 
+          contract="EmployeeService.IEntryService" 
+        /> 
+        <endpoint 
+          address="mex" 
+          binding="mexHttpsBinding" 
+          contract="IMetadataExchange" 
+      /> 
+      </service> 
+    </services> 
+  </system.serviceModel> 
+  <system.web> 
+    <compilation debug="true"/> 
+  </system.web> 
 </configuration>
 ```
 
@@ -197,30 +197,30 @@ Bu iletişim penceresinde Yes seçeneğini işaretleyerek ilerleyelim. Sonuç ol
 ```xml
 <?xml version="1.0"?> 
 <configuration> 
-    <system.web> 
-      <compilation debug="true" targetFramework="4.5" /> 
-      <httpRuntime targetFramework="4.5" /> 
-    </system.web> 
-    <system.serviceModel> 
-        <bindings> 
-            <wsHttpBinding> 
-                <binding name="WSHttpBinding_IEntryService"> 
-                    <security mode="Transport"> 
-                        <transport clientCredentialType="None" /> 
-                    </security> 
-                </binding> 
-            </wsHttpBinding> 
-        </bindings> 
-        <client> 
-            <endpoint 
-                address=https://domainName.com.tr/EmployeeService/EntryService.svc/EntryService.svc 
-                binding="wsHttpBinding" 
-                bindingConfiguration="WSHttpBinding_IEntryService" 
-                contract="EmployeeRef.IEntryService" 
-                name="WSHttpBinding_IEntryService" 
-                /> 
-        </client> 
-    </system.serviceModel> 
+    <system.web> 
+      <compilation debug="true" targetFramework="4.5" /> 
+      <httpRuntime targetFramework="4.5" /> 
+    </system.web> 
+    <system.serviceModel> 
+        <bindings> 
+            <wsHttpBinding> 
+                <binding name="WSHttpBinding_IEntryService"> 
+                    <security mode="Transport"> 
+                        <transport clientCredentialType="None" /> 
+                    </security> 
+                </binding> 
+            </wsHttpBinding> 
+        </bindings> 
+        <client> 
+            <endpoint 
+                address=https://domainName.com.tr/EmployeeService/EntryService.svc/EntryService.svc 
+                binding="wsHttpBinding" 
+                bindingConfiguration="WSHttpBinding_IEntryService" 
+                contract="EmployeeRef.IEntryService" 
+                name="WSHttpBinding_IEntryService" 
+                /> 
+        </client> 
+    </system.serviceModel> 
 </configuration>
 ```
 
@@ -239,68 +239,68 @@ Bu amaçla aşağıdaki basit Web formunu hazırladığımızı düşünelim.
 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head runat="server"> 
-    <title></title> 
+    <title></title> 
 </head> 
 <body> 
-    <form id="form1" runat="server"> 
-    <div> 
-    <table> 
-        <tr> 
-            <td> 
-                Title : 
-            </td> 
-            <td> 
-                <asp:TextBox ID="txtTitle" runat="server" /> 
-            </td> 
-        </tr> 
-                <tr> 
-            <td> 
-                First Name : 
-            </td> 
-            <td> 
-                <asp:TextBox ID="txtFirstName" runat="server" /> 
-            </td> 
-        </tr> 
-                <tr> 
-            <td> 
-                Middle Name : 
-            </td> 
-            <td> 
-                <asp:TextBox ID="txtMiddleName" runat="server" /> 
-            </td> 
-        </tr> 
-                <tr> 
-            <td> 
-                Last Name : 
-            </td> 
-            <td> 
-                <asp:TextBox ID="txtLastName" runat="server" /> 
-            </td> 
-        </tr> 
-                <tr> 
-            <td> 
-                Level : 
-            </td> 
-            <td> 
-                <asp:TextBox ID="txtLevel" runat="server" /> 
-            </td> 
-        </tr> 
-                <tr> 
-            <td> 
-                
-            </td> 
-            <td> 
-                <asp:Button ID="btnSend" runat="server" Text="Insert new Employee" OnClick="btnSend_Click" /> 
-            </td> 
-        </tr> 
-                <tr> 
-            <td colspan="2"> 
-                <asp:Label ID="lblResult" runat="server" /> 
-            </td> 
-        </tr> 
-    </table> 
-    </div> 
-    </form> 
+    <form id="form1" runat="server"> 
+    <div> 
+    <table> 
+        <tr> 
+            <td> 
+                Title : 
+            </td> 
+            <td> 
+                <asp:TextBox ID="txtTitle" runat="server" /> 
+            </td> 
+        </tr> 
+                <tr> 
+            <td> 
+                First Name : 
+            </td> 
+            <td> 
+                <asp:TextBox ID="txtFirstName" runat="server" /> 
+            </td> 
+        </tr> 
+                <tr> 
+            <td> 
+                Middle Name : 
+            </td> 
+            <td> 
+                <asp:TextBox ID="txtMiddleName" runat="server" /> 
+            </td> 
+        </tr> 
+                <tr> 
+            <td> 
+                Last Name : 
+            </td> 
+            <td> 
+                <asp:TextBox ID="txtLastName" runat="server" /> 
+            </td> 
+        </tr> 
+                <tr> 
+            <td> 
+                Level : 
+            </td> 
+            <td> 
+                <asp:TextBox ID="txtLevel" runat="server" /> 
+            </td> 
+        </tr> 
+                <tr> 
+            <td> 
+                
+            </td> 
+            <td> 
+                <asp:Button ID="btnSend" runat="server" Text="Insert new Employee" OnClick="btnSend_Click" /> 
+            </td> 
+        </tr> 
+                <tr> 
+            <td colspan="2"> 
+                <asp:Label ID="lblResult" runat="server" /> 
+            </td> 
+        </tr> 
+    </table> 
+    </div> 
+    </form> 
 </body> 
 </html>
 ```
@@ -316,39 +316,39 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ClientApp 
 { 
-    public partial class NewEmployee 
-        : System.Web.UI.Page 
-    { 
-        protected void Page_Load(object sender, EventArgs e) 
-        { 
-            
-        }
+    public partial class NewEmployee 
+        : System.Web.UI.Page 
+    { 
+        protected void Page_Load(object sender, EventArgs e) 
+        { 
+            
+        }
 
-        protected void btnSend_Click(object sender, EventArgs e) 
-        { 
-            ServicePointManager.ServerCertificateValidationCallback = 
-                new RemoteCertificateValidationCallback(IgnoreCertificationError);
+        protected void btnSend_Click(object sender, EventArgs e) 
+        { 
+            ServicePointManager.ServerCertificateValidationCallback = 
+                new RemoteCertificateValidationCallback(IgnoreCertificationError);
 
-            EntryServiceClient proxy = new EntryServiceClient("WSHttpBinding_IEntryService"); 
-            Employee newEmployee=proxy.InsertEmployee(new Employee 
-            { 
-                FirstName = txtFirstName.Text, 
-                MiddleName = txtMiddleName.Text, 
-                LastName = txtLastName.Text, 
-                Level = Convert.ToInt32(txtLevel.Text), 
-                Title = txtTitle.Text 
-            } 
-            ); 
-            lblResult.Text = newEmployee.EmployeeId.ToString(); 
-            proxy.Close(); 
-        }
+            EntryServiceClient proxy = new EntryServiceClient("WSHttpBinding_IEntryService"); 
+            Employee newEmployee=proxy.InsertEmployee(new Employee 
+            { 
+                FirstName = txtFirstName.Text, 
+                MiddleName = txtMiddleName.Text, 
+                LastName = txtLastName.Text, 
+                Level = Convert.ToInt32(txtLevel.Text), 
+                Title = txtTitle.Text 
+            } 
+            ); 
+            lblResult.Text = newEmployee.EmployeeId.ToString(); 
+            proxy.Close(); 
+        }
 
-        public static bool IgnoreCertificationError(object sender, 
-      X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) 
-        { 
-            return true; 
-        } 
-    } 
+        public static bool IgnoreCertificationError(object sender, 
+      X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) 
+        { 
+            return true; 
+        } 
+    } 
 }
 ```
 

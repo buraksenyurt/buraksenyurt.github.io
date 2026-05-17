@@ -74,35 +74,29 @@ ApplicationLogs tablosu içerisinde log için kullanılabilecek bir kaç alan bu
 Gelelim NLog konfigurasyon ayarlarına. Dosya içeriğinin aşağıdaki gibi oluşturulması gerekmektedir.
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?> 
-<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd" 
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      internalLogLevel="Debug"      
-       internalLogFile="c:\InteralLogs.txt" 
-      > 
-  <extensions> 
-    <add assembly="NLog.Extended" /> 
-  </extensions> 
-  <targets>    
-    <target name="database" xsi:type="Database" keepConnection="false" useTransactions="true" 
-          connectionStringName="ConStr" 
-          commandText="INSERT INTO APPLICATIONLOGS (LOGLEVEL,LOGGER,MESSAGE,MACHINENAME,USERNAME,CALLSITE, THREADID,EXCEPTIONMESSAGE,STACKTRACE,SESSIONID) 
-              VALUES (:pLEVEL,:pLOGGER,:pMESSAGE,:pMACHINENAME,:pUSERNAME, :pCALLSITE,:pTHREADID,:pEXCEPTIONMESSAGE,:pSTACKTRACE,:pSESSIONID)"> 
-      <parameter name="pLEVEL" layout="${level}"/> 
-      <parameter name="pLOGGER" layout="${logger}"/> 
-      <parameter name="pMESSAGE" layout="${message}"/> 
-      <parameter name="pMACHINENAME" layout="${machinename}"/> 
-      <parameter name="pUSERNAME" layout="${windows-identity:domain=true}"/> 
-      <parameter name="pCALLSITE" layout="${callsite:filename=true}"/> 
-      <parameter name="pTHREADID" layout="${threadid}"/> 
-      <parameter name="pEXCEPTIONMESSAGE" layout="${exception}"/> 
-      <parameter name="pSTACKTRACE" layout="${stacktrace}"/> 
-      <parameter name="pSESSIONID" layout="${aspnet-sessionid}"/> 
-    </target> 
-  </targets> 
-  <rules> 
-    <logger name="*" minlevel="Trace" writeTo="database" /> 
-  </rules> 
+<?xml version="1.0" encoding="utf-8"?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+         
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          internalLogLevel="Debug"      
+          
+    internalLogFile="c:\InteralLogs.txt"
+         >   <extensions>     <add assembly="NLog.Extended" />   </extensions>
+      <targets>        <target name="database" xsi:type="Database" keepConnection="false"
+            useTransactions="true"
+                      connectionStringName="ConStr"
+                     
+            commandText="INSERT INTO APPLICATIONLOGS (LOGLEVEL,LOGGER,MESSAGE,MACHINENAME,USERNAME,CALLSITE, THREADID,EXCEPTIONMESSAGE,STACKTRACE,SESSIONID) 
+              VALUES (:pLEVEL,:pLOGGER,:pMESSAGE,:pMACHINENAME,:pUSERNAME, :pCALLSITE,:pTHREADID,:pEXCEPTIONMESSAGE,:pSTACKTRACE,:pSESSIONID)">
+          <parameter name="pLEVEL" layout="${level}" />       <parameter name="pLOGGER"
+                layout="${logger}" />       <parameter name="pMESSAGE" layout="${message}" />       <parameter
+                name="pMACHINENAME" layout="${machinename}" />       <parameter name="pUSERNAME"
+                layout="${windows-identity:domain=true}" />       <parameter name="pCALLSITE"
+                layout="${callsite:filename=true}" />       <parameter name="pTHREADID"
+                layout="${threadid}" />       <parameter name="pEXCEPTIONMESSAGE"
+                layout="${exception}" />       <parameter name="pSTACKTRACE" layout="${stacktrace}" />
+          <parameter name="pSESSIONID" layout="${aspnet-sessionid}" />     </target>   </targets>   <rules>
+        <logger name="*" minlevel="Trace" writeTo="database" />   </rules>
 </nlog>
 ```
 
@@ -163,70 +157,70 @@ Asp.Net uygulaması içerisinde tamamen senaryonun amacına hizmet eden sembolik
 Kod içeriği ise aşağıdaki gibi yazılabilir.
 
 ```csharp
-using System; 
-using System.Diagnostics; 
-using System.Threading; 
+using System;
+using System.Diagnostics;
+using System.Threading;
 using NLog;
 
-namespace CookShop 
-{ 
-    public partial class Default 
-: System.Web.UI.Page 
-    { 
-        Logger nemo = LogManager.GetCurrentClassLogger(); 
+namespace CookShop
+{
+    public partial class Default
+   : System.Web.UI.Page
+    {
+        Logger nemo = LogManager.GetCurrentClassLogger();
 
-        protected void btnGetRecipe_Click(object sender, EventArgs e) 
-        { 
-            try 
-            { 
-                nemo.Info("Yemek reçetisi tedarik süreci başladı"); 
-                if (ValidateRecipe(txtRecipeName.Text)) 
-                { 
-                    FindRecipe(txtRecipeName.Text); 
-                    SendRecipeToUser(txtEmail.Text); 
-                }
+        protected void btnGetRecipe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                nemo.Info("Yemek reçetisi tedarik süreci başladı");
+                if (ValidateRecipe(txtRecipeName.Text))
+                {
+                    FindRecipe(txtRecipeName.Text);
+                    SendRecipeToUser(txtEmail.Text);
+                }
 
                 // Sembolik olarak bir Exception fırlatıldı 
-                throw new OutOfMemoryException(); 
-            } 
-            catch (Exception excp) 
-            { 
-               nemo.ErrorException("Reçetenin elde edilmesi sürecinde hata oluştu.", excp);       
-            }
+                throw new OutOfMemoryException();
+            }
+            catch (Exception excp)
+            {
+                nemo.ErrorException("Reçetenin elde edilmesi sürecinde hata oluştu.", excp);
+            }
 
-            nemo.Info("İşlemler tamamlandı"); 
-        }
+            nemo.Info("İşlemler tamamlandı");
+        }
 
-        private void SendRecipeToUser(string EmailAddress) 
-        {   
-            nemo.Info(string.Format("{0} adresine yemek tarifi gönderilecek." 
-                , string.IsNullOrEmpty(EmailAddress)?"sendWithSMS" :EmailAddress)); 
-        }
+        private void SendRecipeToUser(string EmailAddress)
+        {
+            nemo.Info(string.Format("{0} adresine yemek tarifi gönderilecek."
+            , string.IsNullOrEmpty(EmailAddress) ? "sendWithSMS" : EmailAddress));
+        }
 
-        private void FindRecipe(string RecipeName) 
-        { 
-            Stopwatch watcher = new Stopwatch(); 
-            watcher.Start(); 
-            Thread.Sleep(3250); // Sembolik olarak bir gecikme uygulattık 
-            watcher.Stop(); 
-            nemo.Info(string.Format("{0}:{1} yemek reçetesinin bulunması için geçen toplam süre.",watcher.Elapsed.TotalSeconds,RecipeName)); 
-        }
+        private void FindRecipe(string RecipeName)
+        {
+            Stopwatch watcher = new Stopwatch();
+            watcher.Start();
+            Thread.Sleep(3250); // Sembolik olarak bir gecikme uygulattık 
+            watcher.Stop();
+            nemo.Info(string.Format("{0}:{1} yemek reçetesinin bulunması için geçen toplam süre.", watcher.Elapsed.TotalSeconds, RecipeName));
+        }
 
-        private bool ValidateRecipe(string RecipeName) 
-        { 
-            // Sembolik olarak RecipeName' in boş geçilmesini 
-            if (string.IsNullOrEmpty(RecipeName)) 
-            { 
-                nemo.Warn("Yemeğin adı boş geçilmiş"); 
-                return false; 
-            } 
-            else 
-            { 
-                nemo.Info(string.Format("{0} doğrulandı.", RecipeName)); 
-                return true; 
-            } 
-        } 
-    } 
+        private bool ValidateRecipe(string RecipeName)
+        {
+            // Sembolik olarak RecipeName' in boş geçilmesini 
+            if (string.IsNullOrEmpty(RecipeName))
+            {
+                nemo.Warn("Yemeğin adı boş geçilmiş");
+                return false;
+            }
+            else
+            {
+                nemo.Info(string.Format("{0} doğrulandı.", RecipeName));
+                return true;
+            }
+        }
+    }
 }
 ```
 

@@ -149,8 +149,6 @@ Görüldüğü üzere Detail sınıfının özellikleri, Book tablosu içerisind
 
 Bu noktada aslında Connection String Convention kural seti devreye girmektedir. Bu kural setinin veritabanı şemasını oluştururken baktığı yerlerden birisi, config dosyasındaki connectionStrings elementi içeriğidir. Eğer name özelliğinin değeri ile DbContext türevli Context tipinin adı eşlenirse, o elemente ait Connection bilgisi kullanılaraktan bir şema üretimi gerçekleştirilecektir.
 
-## Ötesi
-
 Buraya kadar anlatmaya çalıştığımız Convention kural setlerinin daha pek çok özelliği bulunmaktadır. Data Annotations ve Fluent API kullanımı gibi durumlarda ilgili Convention kural kümelerinin ezilmesi vb mümkündür. İstenirse bir Convention kural seti devre dışı bırakılabilir de. Bunun için DbContext üzerinden gelen OnModelCreating metodunun ezilmesi ve içerisinde aşağıdakine benzer bir kodun kullanılması yeterlidir.
 
 ```csharp

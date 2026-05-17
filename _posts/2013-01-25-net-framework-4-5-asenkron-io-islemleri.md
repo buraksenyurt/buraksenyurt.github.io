@@ -31,7 +31,7 @@ Bu alanlardan birisi de tahmin edileceği üzere dosya giriş çıkış işlemle
 
 Bu yeni metodlar sayesinden dosyalara asenkron olarak yazmak veya kaynakta yine asenkron olarak okuma yapmak mümkün. Yine de ortada geliştiriciler için bir sıkıntı var. O da kodun karmaşıklığı ve yazım zorluğu.
 
-IO işlemlerinde neden asenkron çalışmaya ihtiyaç duyarız?
+## IO işlemlerinde neden asenkron çalışmaya ihtiyaç duyarız?
 
 Bu soruyu da cevaplamak önemli. İlk etapta kullanıcıların ele aldıkları ekranların cevap verebilirliği (Responsivable) yer almakta. Kullanıcılar sabırsız kişilikte insanlar. O nedenle özellikle bir IO işlemi sırasına ekranın kitlenmesini (kitlenmiş gibi gözükmesini) istemezler. Diğer yandan ikinci bir sebep te tamamen performans ile alakalıdır. Bazı hallerde IO işlemi gerçekten çok zaman alan ve sistem kaynaklarını önemli ölçüde tüketen hareketliliklere gebedir. Dolayısıya bu yükü asenkron olarak dağıtabilmek önemlidir.
 
