@@ -110,7 +110,7 @@ namespace ServiceSensor.House
 }
 ```
 
-Aslında root klasörün kullanılacağını (sonradan index.html ekleyeceğiz) ekledik ve web uygulamamızın http://localhost:7001 adresinden yayın yapacağını ifade ettik. Startup.cs içeriğini de aşağıdaki gibi tasarlamamız gerekiyor.
+Aslında root klasörün kullanılacağını (sonradan index.html ekleyeceğiz) ekledik ve web uygulamamızın `http://localhost:7001` adresinden yayın yapacağını ifade ettik. Startup.cs içeriğini de aşağıdaki gibi tasarlamamız gerekiyor.
 
 ```csharp
 using System;
@@ -224,7 +224,7 @@ namespace ServiceSensor.Publisher
 }
 ```
 
-Programın temel görevi kullanıcı kesene kadar asenkron bir işin yürütülmesini sağlamak. SendInformationAsync içerisinde ise önemli işler icra ediliyor. Öncelikle http://localhost:7001/healthSensor adresini kullanan bir HubConnecton nesnesi örnekleniyor. StartAsync metodu ile iletişim başlatılıyor. Kurulan sonsuz döngü içerisinde 1 saniyelik aralıklarla rastgele HealthInformation nesneleri örneklenmekte. Bu nesneler InvokeAsync metodundan yararlanılarak Hub'a bağlı olan istemcilere dağıtılıyor. Kullanıcı SendInformationAsync fonksiyonunu kesene kadar bu gönderim işlemi devam edecek.
+Programın temel görevi kullanıcı kesene kadar asenkron bir işin yürütülmesini sağlamak. SendInformationAsync içerisinde ise önemli işler icra ediliyor. Öncelikle `http://localhost:7001/healthSensor` adresini kullanan bir HubConnecton nesnesi örnekleniyor. StartAsync metodu ile iletişim başlatılıyor. Kurulan sonsuz döngü içerisinde 1 saniyelik aralıklarla rastgele HealthInformation nesneleri örneklenmekte. Bu nesneler InvokeAsync metodundan yararlanılarak Hub'a bağlı olan istemcilere dağıtılıyor. Kullanıcı SendInformationAsync fonksiyonunu kesene kadar bu gönderim işlemi devam edecek.
 
 Artık ServiceSensor.House isimli Web uygulamamıza yeniden dönebiliriz. Öncelikle grafik için chart.js ve SignalR tarafı ile konuşmak için de aspnet/signalr paketlerini yüklememiz lazım. Bu yüklemeler içn npm aracından yararlanabiliriz.
 
@@ -235,7 +235,7 @@ npm install @aspnet/signalr --save
 
 Paketler varsayılan olarak tüm içerikleri ile birlikte inerler. Ancak ihtiyacımız olan dosyalar sadece chart.js ve signalr.js. Bu dosyaları alıp wwwroot altında açacağımız scripts klasörü içerisine kopyalayabiliriz. Gelelim eğlenceyi oluşturacak kısıma. wwwroot altındaki index.html dosyasını aşağıdaki gibi kodlayarak devam edelim.
 
-```text
+```html
 <html>
 
 <head>
@@ -333,7 +333,7 @@ Publisher uygulamasına ait bir ekran görüntüsü de şu. Görüldüğü üzer
 
 ![funnys_2.gif](/assets/images/2018/funnys_2.gif)
 
-Artık tarayıcıdan http://localhost:7001/index.html adresine gidebiliriz. Grafik sağdan sola doğru gelen değerlere göre akmaya başlayacaktır. Bunu canlı canlı izlemek çok zevkliydi benim için. Hatta video kaydını alıp paylaşmak da istedim ama onu görmek için örneği tamamlamaya gayret etmenizin daha faydalı olabileceğini düşündüm. Sizde görmek istiyorsanız örneği tamamlamalısınız:D Şimdilik iki ekran görüntüsü paylaşarak az biraz heyecan yaratayım.
+Artık tarayıcıdan `http://localhost:7001/index.html` adresine gidebiliriz. Grafik sağdan sola doğru gelen değerlere göre akmaya başlayacaktır. Bunu canlı canlı izlemek çok zevkliydi benim için. Hatta video kaydını alıp paylaşmak da istedim ama onu görmek için örneği tamamlamaya gayret etmenizin daha faydalı olabileceğini düşündüm. Sizde görmek istiyorsanız örneği tamamlamalısınız:D Şimdilik iki ekran görüntüsü paylaşarak az biraz heyecan yaratayım.
 
 ![funnyS_3.gif](/assets/images/2018/funnyS_3.gif)
 

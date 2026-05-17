@@ -32,7 +32,7 @@ Adres satırından da göreceğiniz gibi her şey Amazon'un doğu Amerika bölge
 
 O zaman maceramıza başlayalım. Yapacaklarımız özetle oldukça basit. West-world üzerinde (ki artık 64bit çalışan Ubuntu 16.04 sistemi olduğunu biliyorsunuz) sanal bir çalışma ortamı hazırlayacağız. Ardından bu ortamda Django çatısını kullanarak hazır bir web şablonu üreteceğiz. Elastic Beanstalk için gerekli olan çevre değişkenlerini ayarladıktan sonra bir Local Repository üretip taşıma adımlarını işleteceğiz.
 
-VirtualEnv Gerekli
+## VirtualEnv Gerekli
 
 VirtualEnv ile linux üzerinde sanal bir ortam hazırlamamız mümkün. Bunu daha çok sistemde var olan paketlerden daha eski veya yeni sürümlerini kullanmak istediğimiz uygulamalarda ele alabiliriz.
 
@@ -42,7 +42,7 @@ sudo apt-get install virtualenv
 
 ![ebpython_1.gif](/assets/images/2018/ebpython_1.gif)
 
-Sanal Ortamın Kurulumu
+## Sanal Ortamın Kurulumu
 
 VirtualEnv aracı hazır olduğuna göre artık sanal ortamın kurulmasına başlanabilir.
 
@@ -60,7 +60,7 @@ source ~/beanstalk-virt/bin/activate
 
 Artık West-World'ün üzerinde tamamen izole bir çalışma sahası var.
 
-Sahne Django'nun
+## Sahne Django'nun
 
 Python tarafında web uygulaması geliştirmek için kullanılan en popüler çatılardan birisi Django. Sanal ortama pip paket yöneticisi yardımıyla ilgili çatıyı kurmak gerekiyor.
 
@@ -88,7 +88,7 @@ Eğer işler yolunda gittiyse varsayılan olarak localhost'un 8000 numaralı por
 
 ![ebpython_4.gif](/assets/images/2018/ebpython_4.gif)
 
-Uygulamanın Elastic Beanstalk'a Taşınması
+## Uygulamanın Elastic Beanstalk'a Taşınması
 
 Buraya kadarki işlemlerimizi şöyle bir hatırlayalım. İlk olarak West-World üzerinde sanal bir ortam açtık. Sanal ortam üzerinde Python yüklü olarak geliyordu. Oluşturulan ortamı etkinleştirdikten sonra basit bir Web uygulamasını ayağa kaldırmak için Django Framework'ü kurduk. Hiçbir kod değişikliği yapmadan manage.py dosyasından yararlanarak bu standart şablonun 127.0.0.1:8000 adresinden ayağa kaldırıldığını gördük. Sırada bu uygulamanın Elastic Beanstalk'a taşınması var. Önce bir kaç hazırlık yapmamız gerekiyor. İlk olarak ortam gereksinimlerin text dosyaya alıyoruz.
 

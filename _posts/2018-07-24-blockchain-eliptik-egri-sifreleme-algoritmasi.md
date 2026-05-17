@@ -25,7 +25,7 @@ Geçtiğimiz iki hafta boyunca neredeyse her gün yarım saatimi ayırdığım v
 Örneğin Bitcoin, secp256k1 isimli ve aşağıdaki eşitlikle ifade edilen eliptik eğri denklemini kullanmakta. secp256k1' deki sec, Standards for Efficent Cryptography anlamına gelirken 256 değeri asal sayının kaç bit olduğunu ifade etmektedir. Sonlara doğru bu kavramları anlayacağım/anlatabileceğim diye umut ediyorum.
 
 ```text
-y2=x3+7
+y2 = x3 + 7
 ```
 
 Gerçek sayılar için olan gösterimi şöyle;
@@ -56,7 +56,7 @@ y=ax3+bx2+cx+d, 3ncü dereceden denklem
 
 ve tabii konumuz olan eliptik eğri denklemi.
 
-y2=x3+ax+b
+y2 = x3 + ax + b
 
 ![ecc_7.gif](/assets/images/2018/ecc_7.gif)
 
@@ -409,9 +409,14 @@ Eliptik Eğri denklemi Blockchain ve ondan türeyen pek çok yapı tarafından a
 
 ## Kaynaklar
 
-[Blockchain 101 - Foundational Math](https://eng.paxos.com/blockchain-101-foundational-math)
-[Blockchain 101 - Elliptic Curve Cryptography](https://eng.paxos.com/blockchain-101-elliptic-curve-cryptography)
-[Modulo Denklik](https://tr.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/congruence-modulo)[MathWorl - Elliptic Curve](http://mathworld.wolfram.com/EllipticCurve.html)
-[Learn Cryptography - CryptoCurrency (51 Attack)](https://learncryptography.com/cryptocurrency/51-attack)
-[Johannes Bauer - ECC](https://www.johannes-bauer.com/compsci/ecc/)
-[Andrea Corbellini - Elliptic Cure Cryptography - A Gentle Introduction](http://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/)[Andrea Corbellini - Elliptic Cure Cryptography - Finite Fields and Discrete Logarithms](http://andrea.corbellini.name/2015/05/23/elliptic-curve-cryptography-finite-fields-and-discrete-logarithms/)[Implementation of Elliptic Curve Digital Signature Algorithm](http://scialert.net/fulltext/?doi=jse.2007.1.12)[Elliptic Curve Scalar Multiplaction Calculator](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/modk-mul.html)[BitcounWiki](https://en.bitcoin.it/wiki/Secp256k1)
+- [Blockchain 101 - Foundational Math](https://eng.paxos.com/blockchain-101-foundational-math)
+- [Blockchain 101 - Elliptic Curve Cryptography](https://eng.paxos.com/blockchain-101-elliptic-curve-cryptography)
+- [Modulo Denklik](https://tr.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/congruence-modulo)
+- [MathWorl - Elliptic Curve](http://mathworld.wolfram.com/EllipticCurve.html)
+- [Learn Cryptography - CryptoCurrency (51 Attack)](https://learncryptography.com/cryptocurrency/51-attack)
+- [Johannes Bauer - ECC](https://www.johannes-bauer.com/compsci/ecc/)
+- [Andrea Corbellini - Elliptic Cure Cryptography - A Gentle Introduction](http://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/)
+- [Andrea Corbellini - Elliptic Cure Cryptography - Finite Fields and Discrete Logarithms](http://andrea.corbellini.name/2015/05/23/elliptic-curve-cryptography-finite-fields-and-discrete-logarithms/)
+- [Implementation of Elliptic Curve Digital Signature Algorithm](http://scialert.net/fulltext/?doi=jse.2007.1.12)
+- [Elliptic Curve Scalar Multiplaction Calculator](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/modk-mul.html)
+- [BitcoinWiki](https://en.bitcoin.it/wiki/Secp256k1)

@@ -28,13 +28,13 @@ Aynı ortamda geliştirme yapmaktayız. Sunucu ve istemcinin birbirlerini doğru
 İlk olarak sunucu sertifikasını oluşturalım.
 
 ```bash
-C:\C\Certificates>makecert -sr CurrentUser -ss My -a sha1 -n "CN=AzonServer" -sky exchange -pe
+makecert -sr CurrentUser -ss My -a sha1 -n "CN=AzonServer" -sky exchange -pe
 ```
 
 Benzer şekilde istemci sertifikasını...
 
 ```bash
-C:\C\Certificates>makecert -sr CurrentUser -ss My -a sha1 -n "CN=AzonServer" -sky exchange -pe
+makecert -sr CurrentUser -ss My -a sha1 -n "CN=AzonClient" -sky exchange -pe
 ```
 
 Komutlarda kullanılan anahtarların belli anlamları var. Örneğin -sr ile kayıt lokasyonunu (Registry Location), -ss ile sertifika deposunu (Certificate Store), -a ile hangi kriptografi algoritmasını kullanacağımızı (MD5, SHA1 gibi), -n ile üreteceğimiz sertifikanın genel adını (Common Name), -sky ile anahtar tipini (Exchange, Signature gibi), -pe ile ilgili anahtarın ihraç edilip edilemeyeceğini (Exportable) belirtmekteyiz. Oluşturulan sertifikalar o anki kullanıcı için Personal - Certificates deposuna eklenecektir. Bunu Microsoft Management Console (MMC) aracı ile görebiliriz. Komut satırından MMC aracını açıp File - Add Remove/Snap-in ile Certificates sekmesini ekleyelim. Bu durumda AzonServer ve AzonClient sertifikalarının aşağıdaki ekran görüntüsünde olduğu gibi ilgili depoya dahil edildiklerini görebiliriz.

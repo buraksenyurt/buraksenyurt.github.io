@@ -21,7 +21,7 @@ Geçtiğimiz hafta içerisinde.Net Core tarafında nelere bakabilirim diye inter
 
 [MariaDB](https://mariadb.org/) GNU lisansı ile sunulan, MySQL’in yaratıcısı Monty Widenius‘un kodlarını çatallayarak (fork işlemi) aynı komutları, arayüzleri ve API’leri destekleyecek şekilde geliştirmeye başlanmış bir ilişkisel veritabanı yönetim sistemi (Relational Database Management System) Her ne kadar sevimsiz bir tanımlama gibi dursa da logosu en az MySQL'in sevimli yunusu kadar dikkat çekici. Nihayetinde neden böyle bir oluşma gidildiğine dair internette pek çok tartışma var. Onları araştırmanızı öneririm. Benim dikkatimi çeken işin içerisine Oracle girdikten sonra inanılmaz derecede artan destek ücretleri (Sun'ın 2010 da satın alınması ve MySQL'in Oracle'e geçmesi sonrası destek ücretinin %600 arttığı söyleniyor) Bu düşünceler ışığında geçtim evdeki Ubuntu'nun başına.
 
-MariaDb kurulumu
+## MariaDb kurulumu
 
 Tabii ilk olarak West-World'e MariaDb'yi kurmam lazım. Son zamanlarda bu dünya üzerinde çok fazla şey yüklenip kaldırıldı ama bana mısın demedi. Sanırım o da bu yeni deneyimlerden keyif alıyor. Kendisine sırasıyla aşağıdaki komutları gönderek MariaDb'yi yüklemesini ve gerekli servisleri çalıştırmasını söyledim.
 
@@ -37,9 +37,9 @@ sudo mysql -u root -p
 
 ![mariacore_1.gif](/assets/images/2018/mariacore_1.gif)
 
-Yukarıdaki ekran görüntüsünde show databases; komutu kullanılarak yüklü olan veritabanlarının listesinin elde edilmesi sağlanmışıtır. Burada basit SQL sorgu ifadeleri kullanarak bir takım işlemler yapabiliriz. Bir deneyin derim.
+Yukarıdaki ekran görüntüsünde `show databases;` komutu kullanılarak yüklü olan veritabanlarının listesinin elde edilmesi sağlanmışıtır. Burada basit SQL sorgu ifadeleri kullanarak bir takım işlemler yapabiliriz. Bir deneyin derim.
 
-Bu arada eğer sudo kullanmadan giriş yapmak istersek yada ERROR 1698 (28000): Access denied for user 'burakselyum'@'localhost'benzeri bir hata alırsak, root user'ın mysql_native_password plug-in'inini kullanabilmesini söyleyerek çözüm üretebiliriz.
+Bu arada eğer sudo kullanmadan giriş yapmak istersek yada `ERROR 1698 (28000): Access denied for user 'burakselyum'@'localhost'` benzeri bir hata alırsak, root user'ın `mysql_native_password` plug-in'ini kullanabilmesini söyleyerek çözüm üretebiliriz.
 
 ```sql
 use mysql;
@@ -56,7 +56,7 @@ service mysql restart
 
 ile mysql hizmetini yeniden başlatmak gerekir.
 
-Console Uygulamasının Yazılması
+## Console Uygulamasının Yazılması
 
 Gelelim MariaDb ile konuşacak uygulama kodlarının yazımına. Konuya basit bir girizgah yapmak istediğim için her zaman ki gibi tercihim Console uygulaması geliştirmek. Ancak siz örneği denerken bir Web API servisi arkasınada da kullanmayı tercih edebilirsiniz.
 
@@ -243,25 +243,25 @@ select * from Category;
 
 ![mariacore_3.gif](/assets/images/2018/mariacore_3.gif)
 
-Log Eklemeyi Unutunca Ben
+## Log Eklemeyi Unutunca Ben
 
 Aslında arka planda MariaDb üzerinde ne gibi SQL ifadelerinin çalıştırıldığını görebilsem hiç de fena olmazdı. Ben tabii bunu unuttum ve makaleyi tekrardan düzenlediğim bir ara fark ettim. Hemen Microsoft dokümanlarını kurcalayarak en azından Console'a log'ları nasıl atabilirimi araştırdım. Sonrasında BeautyBookContext içeriğini aşağıdaki hale getirdim.
 
 ```csharp
 public partial class BeautyBooksContext : DbContext
-    {
-        public static readonly LoggerFactory EFLoggerFactory
-            = new LoggerFactory(new[] {new ConsoleLoggerProvider((cat, level) =>
-            cat== DbLoggerCategory.Database.Command.Name && level==LogLevel.Information,true)});
+{
+    public static readonly LoggerFactory EFLoggerFactory
+        = new LoggerFactory(new[] {new ConsoleLoggerProvider((cat, level) =>
+        cat== DbLoggerCategory.Database.Command.Name && level==LogLevel.Information,true)});
 
-        public DbSet<Book> Books { get; set; }
-        public DbSet<BookCategory> BookCategories { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseLoggerFactory(EFLoggerFactory);
-            optionsBuilder.UseMySql(@"uid=root;pwd=rootşifre;Host=localhost;Database=BeautyBooks;");
-        }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<BookCategory> BookCategories { get; set; }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLoggerFactory(EFLoggerFactory);
+        optionsBuilder.UseMySql(@"uid=root;pwd=rootşifre;Host=localhost;Database=BeautyBooks;");
     }
+}
 ```
 
 Aslında bu kod parçasında çok güzel bir ders var. Bir Log mekanizmasını EF çalışma motoruna enjekte ediyoruz. EFLoggerFactory, LoggerFactory türünden üretilirken ilk parametrede ConsoleLoggerProvider örneği verilmekte. Farklı LoggerProvider'lar da var ve hatta biz de kendi LoggerProvider tipimizi buraya ekleyebiliriz. Yapıcı metodda verilen parametrelerle bir filtreleme yaparak hangi bilgilerin hangi seviyede kayıt altına alınacağını belirtiyoruz. İlgili LoggerFactory'nin kullanılabilmesi içinse UseLoggerFactory operasyonunu devreye alıyoruz. Sonuçta kodu çalıştırdığımızda arka planda hareket eden SQL ifadelerinin Console penceresine basıldığını görebiliriz.

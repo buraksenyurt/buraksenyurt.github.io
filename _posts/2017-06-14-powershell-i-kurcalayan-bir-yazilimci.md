@@ -111,7 +111,7 @@ Get-Service * | Where-Object {$_.DisplayName -like "*Service*" -and $_.Status -e
 
 ![Powershell_5.gif](/assets/images/2017/Powershell_5.gif)
 
-Bu komutu anlamak oldukça kolaydı. * ile Get-Service'in döndüreceği tüm servis listesi üzerinde işlem yapacağımızı belirmiştik. | arkasından bir where koşulu geliyordu. Süslü parantezler belli ki bu komutun alacağı kod bloğunu taşıyacaktı. $_. ile başlayan değişkenler ile DisplayName ve az önce alamadığımız Status alanlarına ulaşabiliyorduk. -like benzer, -and mantıksal ve, -eq ise eşitlik anlamında kullanılan komut parametreleriydi (Bu durumda büyüktür veya küçüktürü hatta veyayı nasıl ifade edebileceğimizi de çözmüş oluyoruz)
+Bu komutu anlamak oldukça kolaydı. `*` ile Get-Service'in döndüreceği tüm servis listesi üzerinde işlem yapacağımızı belirmiştik. `|` arkasından bir where koşulu geliyordu. Süslü parantezler belli ki bu komutun alacağı kod bloğunu taşıyacaktı. `$_.` ile başlayan değişkenler ile DisplayName ve az önce alamadığımız Status alanlarına ulaşabiliyorduk. -like benzer, -and mantıksal ve, -eq ise eşitlik anlamında kullanılan komut parametreleriydi (Bu durumda büyüktür veya küçüktürü hatta veyayı nasıl ifade edebileceğimizi de çözmüş oluyoruz)
 
 ## Döngü Kullanımını Merak Edince
 
@@ -123,7 +123,7 @@ Get-Process| ForEach-Object{[string]::Format("{0} - {1}",$_.id,$_.name)}
 
 ![Powershell_6.gif](/assets/images/2017/Powershell_6.gif)
 
-Burada dikkat çekici noktalardan birisi de.Net kütüphanesinden bir fonksiyona erişilmesiydi. String sınıfının Format metodunu kullandığımız gözünüzden kaçmamış olmalı. [Sınıf Adı]::[Metod Adı] notasyonu ile static tanımlanmış üyelere erişmek mümkün. ForEach-Object komutu ise Get-Process'in ürettiği her bir process nesnesini dolaşmakta. Döngü içerisinde o anki Process'in id ve name bilgilerine nasıl eriştiğimize dikkat edelim.
+Burada dikkat çekici noktalardan birisi de.Net kütüphanesinden bir fonksiyona erişilmesiydi. String sınıfının Format metodunu kullandığımız gözünüzden kaçmamış olmalı. `[Sınıf Adı]::[Metod Adı]` notasyonu ile static tanımlanmış üyelere erişmek mümkün. ForEach-Object komutu ise Get-Process'in ürettiği her bir process nesnesini dolaşmakta. Döngü içerisinde o anki Process'in id ve name bilgilerine nasıl eriştiğimize dikkat edelim.
 
 ## Çıktıları Dosyaya Basalım
 

@@ -31,11 +31,9 @@ tags:
 categories:
   - Veritabanı
 ---
-Renkler ve zevkler tartışılmaz. Hatta dünya öylesine renkli bir yerdir ki insanlar bazen neyi seçeceklerine karar veremeyebilir. Tabii ki işin içerisinde yazılım olunca bu renkler siyah ve beyaz gibi sadece iki seçeneğe de indirgenebilmişdir.
+Renkler ve zevkler tartışılmaz. Hatta dünya öylesine renkli bir yerdir ki insanlar bazen neyi seçeceklerine karar veremeyebilir. Tabii ki işin içerisinde yazılım olunca bu renkler siyah ve beyaz gibi sadece iki seçeneğe de indirgenebilmişdir. Hatta bu sadece yazılım için değil donanım için de söz konusu olmuştur. Hep bir kıyaslama vardır. PC'mi Mac'mi, RISC tabanlı mı CISC olanı mı, Intel'mi AMD'mi... Diğer yandan hepinizin bildiği üzere ben yaşlanmakta olan bir yazılımcıyım. Eski kuşak bir programcı olarak (bir başka deyişle 70li yılların ürünü bir birey olarak) benim neslin uzun yıllar içinde yer aldığı çatışmaların canlı şahitlerindenim. Hala süregelir ya bu sonu gelmez tartışmalar. Sizde içinde yer almışsınızdır mutlaka. Java'mı,.Net mi, SQL'mi Oracle'mı, OOP'mi Functional'mı, SOA'mı Microservices'mı vb diye sürer gider.
 
 ![sqlonlinux_0.jpg](/assets/images/2018/sqlonlinux_0.jpg)
-
-Hatta bu sadece yazılım için değil donanım için de söz konusu olmuştur. Hep bir kıyaslama vardır. PC'mi Mac'mi, RISC tabanlı mı CISC olanı mı, Intel'mi AMD'mi... Diğer yandan hepinizin bildiği üzere ben yaşlanmakta olan bir yazılımcıyım. Eski kuşak bir programcı olarak (bir başka deyişle 70li yılların ürünü bir birey olarak) benim neslin uzun yıllar içinde yer aldığı çatışmaların canlı şahitlerindenim. Hala süregelir ya bu sonu gelmez tartışmalar. Sizde içinde yer almışsınızdır mutlaka. Java'mı,.Net mi, SQL'mi Oracle'mı, OOP'mi Functional'mı, SOA'mı Microservices'mı vb diye sürer gider.
 
 Bu ve benzeri tartışmalar daha da sürecek mi diye düşünürken şartlar uzun süre önce değişmeye başladı. Bugün bir Mac alıp üzerindeki Intel tabanlı işlemcide Windows koşturabiliyoruz. Hatta Microsoft açık kaynak dünyası ile çoktan el sıkıştı; ortaya.Net Core'u çıkardı. Yanılıyor muyum? Hatta Java Developers Day'a altın ortak bile oluverdi (Yaşıyorsa evet [şu adrese girip Gold Sponsor kısmına](https://javaday.istanbul/) bir bakın derim)
 
@@ -350,6 +348,4 @@ go
 
 Bu makalede konu West-World açısından heyecan vericiydi. Uzun yıllar birbirlerini görmeyen iki taraf buluşmuştu. Uygulamaya sizde bir şeyler katabilirsiniz. Söz gelimi SQL Server'ı Linux ortamınıza kurmak istemediğimizi düşünelim. Ne yapabiliriz? Acaba Docker bir çözüm olabilir mi?;) Belki de Docker üzerinde konuşladıracağımız bir SQL Server hizmetini kullanabiliriz. API servisine de eklenecek bir çok şey olabilir. Bir Data Query servisi haline getirilebilir pekala. Hatta çalıştığınız yerde eğer SQL Server kullanıyorsanız ve deneysel amaçlı çalışmalar yapabileceğiniz bir ortamınız varsa SQL'in Linux üzerinde.Net Core ile yazılımış servislerle çalışması halindeki performans durumlarını da gözlemleyebilirsiniz. Her şey sizin elinizde. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-## Kaynaklar
-
-[Microsoft'un Resmi Dokümanı](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu)
+**Kaynak:** [Microsoft'un Resmi Dokümanı](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu)

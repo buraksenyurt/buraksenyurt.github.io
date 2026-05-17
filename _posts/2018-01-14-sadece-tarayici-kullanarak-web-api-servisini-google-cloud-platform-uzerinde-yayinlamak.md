@@ -23,7 +23,7 @@ Not: Talep sayısının artma ve Free Trial için verilen paranın bitmesi ihtim
 
 ![gconsole.gif](/assets/images/2018/gconsole.gif)
 
-Peki ne yaptık?
+**Peki ne yaptık?**
 
 - Chrome ortamını terk etmeden Google Cloud Platform üzerinde proje oluşturduk.
 - Bu proje üzerinde Cloud Shell'i kullanarak basit bir.Net Core Web API uygulması açtık.
@@ -32,11 +32,9 @@ Peki ne yaptık?
 - gCloud aracını kullanaraktan deploy işlemini
 - Son aşamada yayınlana servis adresinne giderek sonuçları gördük.
 
-Komutlar
-
 Çalışma sırasında kullandığım komutları ise şu şekilde özetleyebilirim.
 
-- dotnet --version (dotnet sürümünü öğrendik ki 2.1.3 olmuştu. Restore işleminde biraz sorun oluşturdu)
+- dotnet --version (dotnet sürümünü öğrendik ki 2.1.3 olmuştu. Restore işleminde biraz sorun oluşturdu)s
 - dotnet new webapi -o PlanetAPI (webapi şablon projesini oluşturduk)
 - dotnet publish -c Release (uygulamayı publish etmek için kullandık)
 - gcloud app deploy --version v1 (uygulamamızın App Engine'taşınmasını sağladık. Bunu publish edilen paketin olduğu yerde çalıştırdık.)

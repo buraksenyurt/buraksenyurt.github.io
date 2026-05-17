@@ -100,15 +100,15 @@ dotnet add package Hellang.Middleware.ProblemDetails --version 1.0.0
 
 Paketi yükledikten sonra bu servisin kullanılacağını kod tarafında belirtmeliyiz. Bir başka deyişle yeni Middleware'i çalışma zamanına bildirmeliyiz. Bunun için Startup.cs dosyasındaki Configure metoduna aşağıdaki ilaveyi yapmamız yeterli.
 
-```text
+```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-	if (env.IsDevelopment())
-	{
-		app.UseDeveloperExceptionPage();
-	}
-	app.UseProblemDetails();
-	app.UseMvc();
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    app.UseProblemDetails();
+    app.UseMvc();
 }
 ```
 
@@ -137,22 +137,22 @@ Ek olarak IncomingTokenId ve Date isimli iki özellik ekledik. Şimdi BrandContr
 [HttpGet("{tokenid}")]
 public IActionResult GetBrands(string tokenid)
 {
-	string[] brands = { "abibas", "nayk", "niüv balanse" };
-	if (Validate(tokenid))
-		return Ok(brands);
-	else
-	{
-		var problemDetail=new UnauthorizedTokenProblemDetails()
-		{
-			Type = "http://fabrikam.com/dummydataapi/",
-			Title = "Token bilgisi hatalı.",
-			Detail = "Gönderilen token ile marka bilgileri çekilemiyor.",
-			Instance = $"/brand/{tokenid}",
-			Status = 401,
-			IncomingTokenId = tokenid
-		};
-		return BadRequest(problemDetail);
-	}
+    string[] brands = { "abibas", "nayk", "niüv balanse" };
+    if (Validate(tokenid))
+        return Ok(brands);
+    else
+    {
+        var problemDetail = new UnauthorizedTokenProblemDetails()
+        {
+            Type = "http://fabrikam.com/dummydataapi/",
+            Title = "Token bilgisi hatalı.",
+            Detail = "Gönderilen token ile marka bilgileri çekilemiyor.",
+            Instance = $"/brand/{tokenid}",
+            Status = 401,
+            IncomingTokenId = tokenid
+        };
+        return BadRequest(problemDetail);
+    }
 }
 ```
 

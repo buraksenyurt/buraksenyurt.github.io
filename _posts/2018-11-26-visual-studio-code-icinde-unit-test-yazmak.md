@@ -27,7 +27,7 @@ Geçtiğimiz günlerde şirketimizin düzenlediği kişisel gelişim eğitimleri
 
 Ekibin bize verdiği yönergeleri takip ederek uygulamalara ait.Net çözümlerini kendi makinemde ayağa kaldırırken hem öğrendiğim hem de merak ettiğim şeyler oluyor. Pek çok şeyi Code'un terminalinden hallediyoruz. Özellikle git ile yakın temastayız. Pek tabii bir çok kullanışlı uzantıdan (extensions) da yararlanıyoruz. Benim en son baktığım konu ise Unit Test'lerin yazılması üzerineydi. Visual Studio Code'da bir.Net çözümü için klasör yapısı nasıl kurgulanır, test projesi nasıl oluşturulur, hangi test kütüphanesi kullanılabilir vb...Sonunda Microsoft dokümanlarını kurcalayarak bu işin en basit (ve birazda ilkel) haliyle nasıl yapılabildiğini öğrendim. Bir kaç deneme sonra evdeki West-World'un başına geçtim ve öğrendiklerimi uygulamaya koyuldum. Haydi başlayalım.
 
-Solution Ağacının Oluşturulması
+## Solution Ağacının Oluşturulması
 
 Amacımız bir kütüphane özelinde test projesi ve bağıntılarının nasıl kurgulanabileceğini görmek. Normalde Visual Studio gibi çok gelişmiş arabirimlerde bu oldukça kolay. Bir metoda sağ tıklayarak hızlı bir şekilde Unit Test projesini ve içeriğini oluşturabilirsiniz. Peki ya Code tarafında! Öncelikle bir dizi komut ile çözümün klasör ağacını ve içerisinde yer alacak projelerini oluşturacağız. Visual Studio Code terminalini kullanarak aşağıdaki komutları sırasıyla çalıştıralım.
 
@@ -55,7 +55,7 @@ cd TextService.Tests
 
 Hemen şu notu da belirtelim; MSTest kullanmak zorunda değiliz. Pek çok bağımsız test kütüphanesi var. Örneğin Microsoft dokümanlarına baktığımızda NUnit ve xUnit örneklerinin olduğunu da görebiliriz.
 
-Esas Sınıf
+## Esas Sınıf
 
 Şimdi TextService projesinde basit bir sınıf kullanalım. Stringer isimli örnek sınıf bir metin ile ilgili değişik işlemlere ev sahipliği yapacak (güya) Bir fonksiyonu da metin içerisinde belli bir karakterden kaç tane olduğunun hesaplanması. Sınıfın ilk halini aşağıdaki gibi tasarlayabiliriz. Şimdilik metoda ait bir implemantasyonumuz bulunmuyor. Yani kasıtlı olarak NotImplementedException fırlatan bir metodumuz var.
 
@@ -73,7 +73,7 @@ namespace TextService
 }
 ```
 
-Test Sınıfı
+## Test Sınıfı
 
 Stringer sınıfının ilgili Test sınıfını da malumunuz TextService.Tests projesi altında yazmalıyız. StringerTest sınıfının ilk hali de aşağıdaki gibi olsun.
 
@@ -110,7 +110,7 @@ dotnet test
 
 ![core_test_3.gif](/assets/images/2018/core_test_3.gif)
 
-Revize
+## Revize
 
 İlk test sonucu tahmin edileceği üzere bir Exception ile sonlanmış durumda. O halde gelin FindCharCount metodunu bir kaç vakayı karşılayabilecek şekilde tekrardan yazalım.
 

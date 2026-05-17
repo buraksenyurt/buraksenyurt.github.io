@@ -22,7 +22,9 @@ Geliştiriciler olarak bizlerin TDD'ye yatkın olması bu açıdan önemlidir. Y
 
 Açtım Spotify'ı başladım Toto'dan Africa ile kodlamaya. OBS ile ekran kaydı da almayı ihmal ettim. FizzBuzz katası temel olarak aşağıdaki sayı dizilimini içeren kod parçasının geliştirmek için kullanılıyor.
 
+```text
 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,17,Fizz,19,Buzz,...
+```
 
 Algoritma oldukça basit. 3 ile tam bölünebilen sayılar için Fizz, 5 ile tam bölünebilen sayılar için Buzz, hem 3 hem 5 ile tam bölünebilen sayılar için FizzBuzz yazılması isteniyor. Dizideki diğer sayılar içinse sayının kendisi yazılmalı. Pek tabii bu pratiği TDD felsefesi ile geliştirmemiz bekleniyor. Önce hata aldıracak şekilde testlere başlayıp, sonrasında bunları çalışır hale getirip en sonunda kodu refactor etmeyi öğreniyoruz. Temel olarak Red Green Blue ilkelerini kullanmaya çalışıyoruz. Hatta Fake değer ve çok basit anlamda Triangulation'e yer veriyoruz.
 

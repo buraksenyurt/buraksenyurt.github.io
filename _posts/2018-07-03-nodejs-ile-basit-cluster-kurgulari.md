@@ -23,7 +23,7 @@ Programcılıkla uğraşan bizim gibi organizmalar sükunetle kod yazmaya bayıl
 
 Ancak son yıllarda kendime güzel bir tedavi yöntemi bulduğumu söyleyebilirim. Öyle ki üzerimdeki tüm negatif enerjiyi alıp götürmeye yetiyor (En azından 2003ten beri işe yaradığını söyleyebilirim) Geçtiğimiz hafta içersinde de böyle hafiften gerginleşen sinirlerimi yatıştırmak için atladım Red Enterprise'ın akşamki ilk trenine, düştüm West-World yollarına. Gün batarken Node oteldeki odama çoktan yerleşmiş taze demlenmiş çayımı yudumluyordum bile. Kulaklarımda Freddie Hultana'dan Le Practicante'si tınlarken açtım özet notlarımı ve başladım yazmaya.
 
-Ölçeklenebilirlik (Scalability) ve Node.js
+## Ölçeklenebilirlik (Scalability) ve Node.js
 
 Node.js ile yazdığımız uygulamaları genel olarak node [application_name.js] şeklinde çalıştırıyoruz/çalıştırıyordum. Aslında bu durumda söz konusu uygulama tekil bir iş parçacığı olarak (Single Thread) çalışmakta. Dolayısıyla birden fazla iş parçacığını çalıştırıp tüm işlemci/çekirdek gücünü almaktan yoksun kalıyoruz. Aslında özellikle web sunucuları/servisleri geliştirebileceğimiz etkili bir ortam söz konusu iken bu tip bir avantajdan faydalanamamak yazık olurdu. NodeJS ile birlikte gelen cluster isimli modül bu konuda bize önemli fonksiyonellikler sunuyor.
 
@@ -35,7 +35,7 @@ cluster modülünü kullanarak yazacağımız mekanizma oldukça basit. Tek bir 
 
 Pek tabii oluşan bu alt iş parçacıkları ve ana iş parçacığının aralarında haberleşmesi gerekebilir. Bu noktada her iş parçacığının kendi örneğine sahip olduğunu (hatta kendi V8 tabanlı örneğini çalıştırdığını) ve belleği ortaklaşa paylaşmadıklarını belirtmemiz gerekiyor. Ancak birbirlerine mesaj gönderebilirler. Bu mesajlaşma trafiği de [şu adreste](https://www.geeksforgeeks.org/inter-process-communication-ipc/) detaylarını bulabileceğiniz Inter Process Communication standardı ile sağlanmakta. Kısaca ana iş parçacığı alt iş parçacıklarına veya alt iş parçacıkları da ana iş parçacığına mesaj gönderebilir. Örneğe geçmeden önce son olarak ana iş parçacığının çeşitli olaylar ile alt iş parçacıklarını takip edebildiğini de belirtelim (fork, online, listening, exit)
 
-Hello Clustering
+## Hello Clustering
 
 Dilerseniz çok basit bir örnek ile konuyu anlamaya çalışalım. Alışılageldiği üzere kodları Ubuntu sisteminde Visual Studio Code ile geliştiriyorum.
 
@@ -75,7 +75,7 @@ if (cluster.isMaster) {
 
 Neler oldu bir bakalım? Kodu ilk çalıştırdığımızda isMaster kontrolüne girdik ve o anda ana iş parçacığı söz konusuydu. Dört tane alt iş parçacığı oluşturduk. Bunun için fork metodundan yararlanıyoruz. Sonrasında bazı olayları ele almak için fonksiyonellikler dahil ettik. Bir alt iş parçacığı oluştuğunda fork, yaşamaya başladığında online ve yok edildiğinde exit olayları çalışır. Başka olaylar da var. İlerleyen kodlarda göreceğiz. fork fonksiyonunun etkisi aynı kodun tekrar çalıştırılmasıdır. Bu durumda else bloğuna gireceğiz çünkü ilk alt iş parçacığı oluştuğu andan tamamı sonlanıncaya kadar isMaster false dönecektir. else bloğunda bu koda özel sadece destroy işlemini uyguluyoruz. Kısacası alt iş parçacıkları oluşuyor ve yok ediliyorlar. Ana ve alt iş parçacıklarını iyi izeyebilmek için Process ID değerlerini kullandık. Tüm olaylar dikkat edileceği üzere bir callback fonksiyonu içermekte.
 
-İş Parçacıkları Arası Mesajlaşma
+## İş Parçacıkları Arası Mesajlaşma
 
 Şimdi bir de master ve child iş parçacıklarının nasıl haberleşebileceğine bakalım. Aslında birbirlerine JSON formatında mesajlar gönderecekler. Örnek kod parçacığını aşağıdaki gibi geliştirebiliriz.
 
@@ -115,7 +115,7 @@ Bu sefer ana ve alt iş parçacıkları arasında mesajlaşma yapmaya çalışı
 
 ![clustering_2.gif](/assets/images/2018/clustering_2.gif)
 
-Web Server Örneği
+## Web Server Örneği
 
 Yazımızın başında da belirttiğimiz üzere bir web sunucusunun birinci seviyede ölçeklendirilmesi mümkün. Aslında aynı adres:port'a doğru gelen taleplerin birden fazla iş parçacığı tarafından ele alınmaya çalışıldığını ve bunun için arka planda çalışan basit bir load balancing mekanizması olduğunu ifade edebiliriz. Örnek kod parçamıza bakıp konuyu daha iyi anlamaya çalışalım.
 

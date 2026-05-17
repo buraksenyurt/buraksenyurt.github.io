@@ -277,6 +277,6 @@ Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepin
 
 ### Kaynaklar
 
-[Node-js Getting Started](https://github.com/heroku/node-js-getting-started)
-[Getting started with node.js (Introduction)](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
-[Dynos](https://www.heroku.com/dynos/)
+- [Node-js Getting Started](https://github.com/heroku/node-js-getting-started)
+- [Getting started with node.js (Introduction)](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+- [Dynos](https://www.heroku.com/dynos/)

@@ -101,7 +101,7 @@ sudo bin/kafka-server-start.sh config/server.properties
 
 ![kafka_core_4.gif](/assets/images/2017/kafka_core_4.gif)
 
-Terminal Penceresinde Eğlence Zamanı
+## Terminal Penceresinde Eğlence Zamanı
 
 Ne durumdayız? Koordinatör servisimiz etkin ve bir tane Kafka Broker örneği de çalışır vaziyette. Kafka sunucusu çalıştırırken config altındaki server.properites dosyasından yararlanılmakta. İstersek bunları çoğaltabilir içeriklerindeki port numaralarını farklılaştırarak aynı anda birden fazla Broker'ın çalışmasını da sağlayabiliriz. Bu tam anlamıyla bir gerçek hayat senaryosu olur. Benim amacım bu kadar uzun boylu değil. Tek broker nesnesi üzerinden birer Producer (Publisher oluyor) ve Consumer (Subscriber oluyor) arasında mesaj dolaştırsam yeterli. Bunu yapmak içinse öncelikle bir konu başlığı (topic) açmamız gerekiyor. Yeni bir terminal penceresi açalım ve Producer rolünde bir topic açıp içerisine bir kaç bilgi atalım.
 
@@ -270,3 +270,4 @@ ve Consumer çalışmasından bir görüntü
 ![kafka_core_9.gif](/assets/images/2017/kafka_core_9.gif)
 
 Böylece amacıma ulaşmış oluyorum. West-World artık Kafka'nın felsefesine biraz daha aşina gibi. Tabii merak edilesi bir konu daha var. Acaba buraya elasticsearch nasıl bağlanıyor. Bakalım buna vakit ayırabilecek miyim. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+

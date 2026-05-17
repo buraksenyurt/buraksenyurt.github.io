@@ -171,7 +171,7 @@ namespace AdventureJobs.Controllers
 
 JobsController sınıfı temel CRUD operasyonlarını barındırmakta. Tüm iş listesinin çekilmesi, veritabanına yeni bir işin eklenmesi, var olan bir işin güncellenmesi veya silinmesi operasyonlarını yürütmekten sorumlu. Artık tek yapılması gereken Startup.cs içerisinde docker üzerinden servis veren SQL server için gerekli bağlantı (Connection) bilgisini bildirmek. Bunun için aşağıdaki yolu izledim (SQL Sunucusu, kullanıcı adı ve şifre bilgilerini koddan değil de bir çevre değişkeninden almak daha doğru olacaktır. Siz öyle yapın.)
 
-```text
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc().
@@ -181,7 +181,7 @@ SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 }
 ```
 
-Testlere başlama zamanı gelmişti. Uygulamayı "dotnet run" terminal komutu ile başlattıktan sonra Postman'den bir kaç talep göndererek denemeler yaptım. İlk olarak http://localhost:5001/api/jobs adresine bir HTTP Get talebinde bulundum. Bu ilk çalıştırılma ve AdventureJobsDb veritabanı ortada yok. Terminal satırına düşen log bilgilerine baktığımda veritabanı ve ilgili tabloların oluşturulması için gerekli komutların başarılı bir şekilde işletildiğini gördüm.
+Testlere başlama zamanı gelmişti. Uygulamayı "dotnet run" terminal komutu ile başlattıktan sonra Postman'den bir kaç talep göndererek denemeler yaptım. İlk olarak `http://localhost:5001/api/jobs` adresine bir HTTP Get talebinde bulundum. Bu ilk çalıştırılma ve AdventureJobsDb veritabanı ortada yok. Terminal satırına düşen log bilgilerine baktığımda veritabanı ve ilgili tabloların oluşturulması için gerekli komutların başarılı bir şekilde işletildiğini gördüm.
 
 ![sqldocker_3.gif](/assets/images/2018/sqldocker_3.gif)
 

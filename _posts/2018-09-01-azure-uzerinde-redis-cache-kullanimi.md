@@ -38,7 +38,7 @@ Bu açılardan düşünüldüğünde bulut bilişim hizmetlerinin de olmazsa olm
 
 Artık kurulumundan, duruma göre ölçeklendirme planlarının oluşturulmasına kadar pek çok yönetsel işlevin bulut sistemleri tarafından sağlanıyor olduğunu da görüyoruz. Microsoft Azure platformu bu anlamda bizlere önemli bir imkan sunuyor. Azure üzerindeki Redis Cache hizmetini kullanarak bu tip bir tesisatı oluşturmak son derece kolay. Nasıl mı? Haydi gelin bir "Nasıl Yapılır?" macerasına daha başlayalım.
 
-Redis Cache Kaynağını Oluşturmak
+## Redis Cache Kaynağını Oluşturmak
 
 İşe azure portal üzerinden redis cache araması yaparak başlayabiliriz (Bu aşamada Microsoft Azure aboneliğinizin olduğunu varsayıyorum)
 
@@ -62,7 +62,7 @@ Burası bir veri kaynağı olduğu için doğal olarak Connection String bilgisi
 
 Primary Connection string içerisindeki bilgi.Net Core tarafnda StackExchange.Redis paketi için ele alınabilir formattadır.
 
-İstemci Uygulamanın Geliştirilmesi
+## İstemci Uygulamanın Geliştirilmesi
 
 Aslında portal tarafındaki hazırlıklarımız tamamlanmış durumda. Şimdi basit bir istemci geliştirerek Redis Cache ile konuşmaya çalışalım. Her zaman ki gibi bir Console uygulaması üzerinden ilerleyeceğiz. Öncesinde terminal üzerinden yapmamız gereken bir kaç hazırlık var. Console projesinin oluşturulması, Redis ile konuşmamızı sağlayacak StackExchange.Redis ve JSON serileştirme işlemlerini kolaylaştıracak Newtonsoft.json paketlerinin eklenmesi. Bunun için terminalden aşağıdaki komutları işletebiliriz.
 

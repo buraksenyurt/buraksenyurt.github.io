@@ -124,7 +124,7 @@ puts "AfterLoad"
 puts mngr_backup.get_default_host
 ```
 
-_dump metodu içerisinde sınıf örneğinin o anki durumu ile ilişkili olarak tutmak istediğimiz ne kadar nitelik varsa ardışıl olarak aralarına pipe işareti koyarar dizdik. Bunu okuduğumuz yerde çözümlüyor ve instance ile eriştiğimiz nesne örneğinin ilgili niteliklerine atıyoruz. Okuma işlemini kolaylaştırmak için | işaretinden faydalandık. Aslında ConfigurationManager içerisindeki `_dump` ve `_load` metodları işleyişlerini gerçekleştirirken Marshal modülünün ilgili fonskiyonları kullanılmaktalar. Marshal modülü nesne içeriğinin byte stream olarak serileştirlmesi ve ters okunması noktasında görev alıyor.
+_dump metodu içerisinde sınıf örneğinin o anki durumu ile ilişkili olarak tutmak istediğimiz ne kadar nitelik varsa ardışıl olarak aralarına pipe işareti koyarar dizdik. Bunu okuduğumuz yerde çözümlüyor ve instance ile eriştiğimiz nesne örneğinin ilgili niteliklerine atıyoruz. Okuma işlemini kolaylaştırmak için `|` işaretinden faydalandık. Aslında ConfigurationManager içerisindeki `_dump` ve `_load` metodları işleyişlerini gerçekleştirirken Marshal modülünün ilgili fonskiyonları kullanılmaktalar. Marshal modülü nesne içeriğinin byte stream olarak serileştirlmesi ve ters okunması noktasında görev alıyor.
 
 Kodu denediğimiz akışta mngr isimli ConfigurationManager sınıf örneğinin anlık durumunu kayıt altına alıyoruz (Bellekte) Ardından niteliklerinde bir takım değişiklikler yapıyoruz. Bu sadece test amaçlı bir işlem. Sonrasında nesne örneğini ilk kayıt ettiğimiz durumuna döndürüyoruz. Farklı bir değişken ile dönmüş olsa da Singleton kalıbı gereği mngr ve mngr_backup aynı nesnelerdir. İşte çalışma zamanı çıktısı.
 

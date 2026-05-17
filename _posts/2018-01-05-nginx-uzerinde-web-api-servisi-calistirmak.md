@@ -25,13 +25,13 @@ Bir zamanlar üzerinde çalıştığım bir vakada, WCF ile yazılmış bir REST
 
 Kendi kendime "ben bunu West-World ya da Gondor üzerinde deneyeyim" diyordum. Her ikisi de Ubuntu 16.04 versiyonlarına sahip bilgisayarlardı. Kolları sıvadım ve bir Web API servisi oluşturmak üzere terminalin başına geçtim. Ne var ki ortada önemli bir sorun vardı. Linux ve IIS. Ovv yooo...Tabiki böyle bir birliktelik olamazdı. Eldeki alternatiflerse belliydi. Apache Server, Lighttpd ve Nginx. Gözüme kestirdiğimse Nginx oldu. Konu bir anda bambaşka bir yere geldi tabii. Şimdiki amacım, West-World'de kuracağım NGinX ortamı üzerinde örnek bir Asp.Net Core Web API servisini host ettirmekti.
 
-Nginx
+## Nginx
 
 [Nginx](https://nginx.org/en/) (Engine X olarak telafuz ediliyor) Kazakistan Almatı doğumlu bilgisayar programcısı Igor Sysoev (soyisminde sys var) tarafından 2002 yılında geliştirilmeye başlanmış ve 2004 yılında ürünleşmiş açık kaynak bir web sunucusudur. İlk olarak mail.ru için mail sunucusu olarak geliştirilmiş ama sonrasında çok daha geniş yetenekler kazanarak web siteleri için Apache'den çok daha hızlı çalışabilen bir ürün haline gelmiştir. Henüz doğrulayamadığım ama genel kabul görmüş bazı performans testlerine göre muadili olan Apache ve Lighttpd gibi ürünlere göre çok yüksek cevap süreleri ve minimum bellek tüketimi sağlamaktadır. Bu açılardan oldukça popüler olduğunu ifade edebiliriz. Yük dengeleme (Load Balancing), Sanal sunucu (Virtual Host), Otomatik indeksleme ve ters vekil sunucu (Reverse Proxy) gibi temel özellikleri vardır.
 
 > Nginx'in geliştirilme hikayesinin detaylarını okumaya devam ediyorum. Aslında C10K sorunu olarak adlandırılan bir vakaya istinaden geliştirilmiş. C10K, bir web sunucusunun eş zamanlı onbin talep üstünü kaldıramaması olarak ifade ediliyor ([Şu adresten](http://www.kegel.com/c10k.html) Kegel'in konu ile ilgili dokümanına ulaşabilirsiniz) Diğer yandan Nginx, ağırlıklı olarak Apache ile karşılaştırılmakta. Dikkatimi çeken en önemli fark ise Apache'nin Multi-Thread çalışırken Nginx'in talepleri karşılama noktasında Single-Thread çalışma prensibini kullanması.
 
-Kurulum
+## Kurulum
 
 Bu düşünceler ile birlikte her zamanki gibi çalışma odamın yolunu tuttum. Amacım basit bir Web API hizmetini (standart şablonda üretilecek olan) nginx üzerinde host etmek. Öncesinde West-World'e NGinx'i kurmam gerekiyor. Terminal'den aşağıdaki komutları kullanarak kurulum adımlarını gerçekleştirdim.
 
@@ -45,7 +45,7 @@ sudo service nginx status
 
 install komutu ile kurulum yapıldıktan sonra start ile nginx servisini başlatıyoruz. status ile de güncel durumunu görüyoruz. Yeşil renkteki active (running) yazısını görmek güzel.
 
-Yönlendirme Ayarları
+## Yönlendirme Ayarları
 
 Nginx kurulduktan sonra Reverse Proxy Server olarak çalışması için bir ayar yapmam gerekiyor. Bu sayede Nginx sunucusuna gelen talepler Web API'nin ayağa kalktığı Kestrel sunucusunun ilgili adresine yönlendirilecekler. Pek tabii tam tersi istikamette söz konusu. Aslında istemciler hiçbir şeyin farkında olmayacaklar. Web API'ye tarayıcıdan yapılan HTTP çağrıları aslında Nginx sunucusu tarafından karşılanıp arka taraftaki asıl Kestrel çalışma zamanına akıtılacak. Bunun üzerine /etc/nginx/sites-available/default dosyasını gedit ile açıp içeriğinde aşağıdaki düzenlemeyi yaptım.
 
@@ -65,7 +65,7 @@ server
 }
 ```
 
-Normalde localhost:80 şeklinde 80 portunun dinlenmesi söz konusu ama makinede 80 portunu kullanan Apache sunucusunu bozmak istemedim doğruyu söylemek gerekirse. Bu yüzden deneme olması açısından 81 nolu portu ele alıyorum. proxy_pass bildirimine göre http://localhost:81 adresine gelecek olan istekler http://localhost:5000 'e yönlendirilecek ki bu da Web API uygulamasının varsayılan olarak çalıştığı adres (biliyorsunuz bu adresleri senaryoya göre değiştirebiliriz)
+Normalde localhost:80 şeklinde 80 portunun dinlenmesi söz konusu ama makinede 80 portunu kullanan Apache sunucusunu bozmak istemedim doğruyu söylemek gerekirse. Bu yüzden deneme olması açısından 81 nolu portu ele alıyorum. proxy_pass bildirimine göre `http://localhost:81` adresine gelecek olan istekler `http://localhost:5000` 'e yönlendirilecek ki bu da Web API uygulamasının varsayılan olarak çalıştığı adres (biliyorsunuz bu adresleri senaryoya göre değiştirebiliriz)
 
 Yapılan değişiklikleri devreye alabilmek için terminalden bir kaç işlem daha yapmak gerekiyor.
 
@@ -78,7 +78,7 @@ sudo nginx -s reload
 
 İlk komut ile konfigurasyon için yapılan değişiklikler test edilip bir sorun olup olmadığına bakılıyor. reload komutu da yeni değişikliklerin çalışma zamanına yeniden yüklenmesi için kullanılmakta.
 
-Service Definition Dosyasının Oluşturulması
+## Service Definition Dosyasının Oluşturulması
 
 Şimdi biraz düşünelim. Nginx platform bağımsız bir web sunucusu. Yazacağım Asp.Net Web API uygulaması ise normal şartlarda kendi web sunucusunu (Kestrel) kullanıyor. Her ikisi de farklı Process'ler anlamına gelebilir. Dolayısıyla Nginx'in yazılacak WebAPI servisi özelinde ilgili Kestrel Process'ini ayağa kaldıracağını bilmesi gerekiyor. IIS'in Worker Process çalışma modeline benzer bir yaklaşım olarak düşünelim. Bunun için service uzantılı bir dosya yazmak lazım. Senaryomda bunu kestrel-baseapi.service şeklinde isimlendirdim (Dosyanın oluşturulduğu yer önemli. etc altındaki systemd altındaki system atlında olsun lütfen)
 
@@ -108,7 +108,7 @@ WantedBy=multi-user.target
 
 Dosya içerisinde neler var şöyle bir bakmakta yarar var. Unit, Service ve Install isimli üç parçadan oluşan bir içerik söz konusu. Eminim çok daha fazla detay yazılabiliyordur ama Nginx kaynaklarından öğrendiğim kadarıyla bu içerik yeterli. En önemli bölüm service kısmı. WorkingDirectory ile WebAPI projesinin olduğu yer işaret ediliyor (ki henüz oluşturmadım) ExecStart komutu iki parametre alıyor. İlki dotnet programının yerini işaret etmekte. İkinci parametre ise Web API uygulamasının publish edilen dll dosyasını. Bir başka deyişle Nginx'in talep sonrası dotnet run BaseWebAPI işlemini uygulaması sağlanıyor. Restart ve Restartsec özelliklerine atanan değerler, ilgili web uygulamasının başı belaya girerse 30 saniye sonra tekrardan restart edilmesini belirtmekte. SyslogIdentifier ile de uygulamanın Nginx tarafında izlenirken kullanılacak olan takma ad olarak düşünülmeli. Diğer Environment değerleri ne anlama geliyor henüz bilmiyorum ama öğrenmek için epey zamanım var.
 
-Web API Hizmetinin Yazılması
+## Web API Hizmetinin Yazılması
 
 Standart web api şablonundan bir proje oluşturup bunu uygun klasöre publish etmem gerekiyor. Komut satırından her zaman yaptığım gibi projeyi oluşturuyorum.
 
@@ -165,7 +165,7 @@ Söz konusu dönüşümler için Middleware katmanına müdahale edilmesi lazım
 sudo dotnet publish -o /var/www/core/BaseWebAPI
 ```
 
-Toparlayabilirim
+## Toparlayabilirim
 
 kestrel-baseapi.service ve Web API uygulaması hazır olduğuna göre systemctl (linux tabanlı sistemler için kullanılan servis yöneticisidir. Aslında systemd'nin organizasyonundaki çeşitli servislerin yönetilmesinde kullanılır. Buradaki senaryoda Nginx hizmetleri mevzubahistir) ile service dosyasını çalıştırabilir ve son durumu izleyebilirim. Terminalin başına geçiyorum ve aşağıdaki komutları sırasıyla çalıştırıyorum.
 
@@ -177,7 +177,7 @@ sudo systemctl status kestrel-baseapi.service
 
 ![nginxcore_6.gif](/assets/images/2018/nginxcore_6.gif)
 
-İlk komut ile yazılan service dosyası devreye alınmakta (disable ile devre dışı kalacağını da belirtelim) İkinci komut ile servis başlatılmakta ve son komutla da anlık durum hakkında bilgi alınabilmekte. Aslında hepsi bu kadar. Tarayıcımdan http://localhost:81/api/values şeklinde talepte bulunduğumda aşağıdaki gibi Web API servisinin çalıştırıldığını görüyorum. İşte bir mutluluk anı daha.
+İlk komut ile yazılan service dosyası devreye alınmakta (disable ile devre dışı kalacağını da belirtelim) İkinci komut ile servis başlatılmakta ve son komutla da anlık durum hakkında bilgi alınabilmekte. Aslında hepsi bu kadar. Tarayıcımdan `http://localhost:81/api/values` şeklinde talepte bulunduğumda aşağıdaki gibi Web API servisinin çalıştırıldığını görüyorum. İşte bir mutluluk anı daha.
 
 ![nginxcore_7.gif](/assets/images/2018/nginxcore_7.gif)
 

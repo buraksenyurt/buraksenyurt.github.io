@@ -51,7 +51,7 @@ Düşünün...Boyut ve içerik olarak sürekli şişmekte olan verileriniz var v
 
 Liste kabarık. Finansal hizmet verenler, sosyal ağlar, yemek işinde olanlar, telekominikasyondakilar vs...
 
-Elasticsearch Hakkında
+## Elasticsearch Hakkında
 
 Aslında basit anlatımıyla ele alırsak veri üzerinde gerçek zamanlı aramaları veya analizleri hızlı yapabileceğimiz dağıtılabilir (Distributed) bir sistemden bahsediyoruz. Kullanımı oldukça kolay olan RESTful yaklaşımına uygun geliştirici dostu API desteği veren, platform bağımsız çalışan ve etkili bir şekilde ölçeklenebilen bir ürün bu. Tabii bu özelliklerine bakarak onu birincil veri saklama ürünü olarak düşünebilirsiniz ama bu bir hata olur. Çünkü tasarım amacı veriyi tutmaktan ziyade hızla arayabilmesi ve sonuç (aggregation diyelim) üretebilmesidir. Bu nedenle onu bir veritabanının indeksine benzetebiliriz.
 
@@ -97,7 +97,7 @@ sudo systemctl status elasticsearch.service
 
 ## Testler
 
-Servis yeni ayaları ile birlikte aktif durumda. Buna göre http://localhost:9205 adresine talepte bulunursak Elasticsearch'ün güncel durumu ile ilgili bilgi alıyor olmamız gerekir. JSON formatında dönen içerikte node ve cluster adları, lucene algortimasının kullanılan güncel versiyonu gibi bilgiler yer alır.
+Servis yeni ayaları ile birlikte aktif durumda. Buna göre `http://localhost:9205` adresine talepte bulunursak Elasticsearch'ün güncel durumu ile ilgili bilgi alıyor olmamız gerekir. JSON formatında dönen içerikte node ve cluster adları, lucene algortimasının kullanılan güncel versiyonu gibi bilgiler yer alır.
 
 ![elasticsearch u west world e kurdum 03](/assets/images/2018/elasticsearch-u-west-world-e-kurdum-03.png)
 

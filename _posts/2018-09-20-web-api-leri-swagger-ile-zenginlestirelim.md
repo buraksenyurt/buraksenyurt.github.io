@@ -259,7 +259,7 @@ Uygulamayı
 dotnet run
 ```
 
-komutuyla çalıştırdıktan sonra artık Swagger arayüzüne ulaşabiliriz. Tek yapmamız gereken herhangibir tarayıcıyı kullanarak http://localhost:5554/swagger/ adresine gitmek (5000 nolu Port Apache hegamonyasında olduğundan UseUrls ile değiştirdim) Karşılama sayfası aşağıdaki gibi açılır. Gayet şık ve göz alıcı gördüğünüz üzere:)
+komutuyla çalıştırdıktan sonra artık Swagger arayüzüne ulaşabiliriz. Tek yapmamız gereken herhangibir tarayıcıyı kullanarak `http://localhost:5554/swagger/` adresine gitmek (5000 nolu Port Apache hegamonyasında olduğundan UseUrls ile değiştirdim) Karşılama sayfası aşağıdaki gibi açılır. Gayet şık ve göz alıcı gördüğünüz üzere:)
 
 ![swagger_1.gif](/assets/images/2018/swagger_1.gif)
 

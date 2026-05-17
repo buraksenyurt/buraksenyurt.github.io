@@ -20,13 +20,13 @@ Amazon DynamoDb şemasız (schema-less) olarak kullanılabilen bir NoSQL veritab
 
 Elastic MapReduce ile entegre olabilen, otomatik olarak ölçeklenebilen, Backup sürecinde S3 hizmetlerini kullanan DynamoDb ile ilgili Bahadır Akın'un [şu adreste](http://www.bahadirakin.com/aws-dynamodb-nedir/) oldukça güzel ve detaylı bir yazısı da bulunuyor. Okumanızı tavsiye ederim. Onunla ilgili çalışmalara [bu adresten](https://aws.amazon.com/dynamodb/getting-started/) hızlıca başlayabiliriz.
 
-Amazon Console Üzerinden Basit Bir Giriş
+## Amazon Console Üzerinden Basit Bir Giriş
 
 Amazon Console web arayüzü üzerinden DynamoDb ile ilgili pek çok işlem gerçekleştirilebilir. Bir kaç dakika içerisinde tablolar oluşturabilir, insert, update, delete gibi temel veri işlemlerini gerçekleştirebiliriz. Söz gelimi sevdiğimiz oyun karakterlerine ait sözleri tutan bir tablo tasarlayabiliriz. Bunun için Create Table bağlantısından hareket etmemiz ve sayfadaki ilgili alanları doldurmamız yeterli.
 
 ![dynamocore_1.gif](/assets/images/2018/dynamocore_1.gif)
 
-BEn bu deneme sonucunda aşağıdaki gibi bir ekranla karşılaştım.
+Ben bu deneme sonucunda aşağıdaki gibi bir ekranla karşılaştım.
 
 ![dynamocore_2.gif](/assets/images/2018/dynamocore_2.gif)
 
@@ -60,11 +60,13 @@ Ardından Halo 2 oyununda karakterin adı G harfi ile başlayanların sözlerini
 
 Tabii benim yaptığım sadece arabirimi tanımaya çalışmak. Tablo tasarımı aslına bakarsanız yanlış. Söz gelimi bir oyuna bir karakter için n sayıda söz ekleyemeyiz. Dolayısıyla tasarımı bir oyunun birbirinden farklı karakterlerine ait en iyi sözlerin tutulduğu bir depo gibi düşünebiliriz. Eğer aynı oyuna aynı karakterden bir söz daha girmeye çalışırsak şu uzun ifadeye benzer hata mesajı ile karşılaşmanız muhtemel.
 
+```text
 "The conditional request failed (Service: AmazonDynamoDBv2; Status Code: 400; Error Code: ConditionalCheckFailedException; Request ID: KP8D9MU06E36D9AH50IF9AV99RVV4KQNSO5AEMVJF66Q9ASUAAJG)
+```
 
 Tablo oluşturma, içine veri atma, veriyi sorgulama gibi basit işlemlerin Amazon Console arabirimi ile nasıl yapılabileceğini gördük. Ancak amacımız başta da belirttiğimiz gibi bir.Net Core uygulaması üzerinden Amazon DynamoDb'yi kullanmak.
 
-.Net Core Tarafını Geliştiriyoruz
+## .Net Core Tarafını Geliştiriyoruz
 
 En büyük yardımcımız [şu adresten sunulan DynamoDbv2 isimli NuGet](https://www.nuget.org/packages/AWSSDK.DynamoDBv2/) paketimiz olacak. Tabii birde Amazon servisine erişirken kullanacağımız geçerli bir kimlik bilgimizin (Credential) olması lazım. Dolayısıyla [IAM adresine giderek](https://console.aws.amazon.com/iam/home#/home) bu uygulama için bir kullanıcı oluşturabilirsiniz. Ben daha önceden oluşturduğum AdministratorAccess rolündeki westworld-buraksenyurt kullanıcısına ait Access Key ID ve Secret Access Key değerlerini kullanacağım. Bu değerler bildiğiniz üzere IAM üzerinden kullanıcı oluşturduğunuzda size verilmekte.
 
@@ -299,7 +301,7 @@ Console.WriteLine($"{findingQuote.QuoteInfo.Character}\n{findingQuote.QuoteInfo.
 
 Siz farklı arama ifadelerini bir araya getirerek değişik denemeler de yapabilirsiniz. Örneğin eklediğiniz n sayıda Quote içerisinden, belli bir oyuna ait olup beğeni değerleri 1000 ve üzerinde olanları çekmeyi deneyebilirsiniz.
 
-Daha neler neler yapılabilir?
+## Daha neler neler yapılabilir?
 
 Örneğin oluşturduğumuz tabloların silinmesi, alan içeriklerinin güncellenmesi vb standart operasyonları deneyimleyebilirsiniz. Biraz fonksiyonellikleri araştırmanızda yarar var. NuGet paketinde gelen fonksiyonellikler Amazon DynamoDB'nin sunduğu imkanlara göre inşa edilmiş durumdalar. NuGet paketi üzerinden gelen operayonları asenkron olarak çalıştırmayı denemenizi öneririm. Benim örnek tamamen senkron çalışıyor (Rezalet!) Görsel arayüzü olan bir uygulamada awaitable operayonları dikkate alarak arayüzün donmasını engelleyecek şekilde değişiklikler yapmanız yerinde olur. Ah bir de tabii benim gibi God Object anti-pattern'inin yolunu açan, Single Responsibility ilkesini ihlal etmiş kirli bir Utility sınıfı kullanmayın:)
 

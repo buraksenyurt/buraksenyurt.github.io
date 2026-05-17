@@ -90,11 +90,11 @@ Derleme sonrasında Southwind.pd.go isimli bir dosya oluşacaktır. Bu dosyanın
 Package Southwind is a generated protocol buffer package.
 
 It is generated from these files:
-	Southwind.proto
+   Southwind.proto
 
 It has these top-level messages:
-	Player
-	Game
+   Player
+   Game
 */
 package Southwind
 
@@ -272,7 +272,9 @@ var fileDescriptor0 = [] byte {
 }
 ```
 
-Aslında kod okunmaya ve yorumlanmaya değer. (Bir GO paketi söz konusu ve bu tip kodları okuyup anlamaya çalışmak GO öğrenenler için önemli bir mevzu) Yazılan proto uzantılı dosyadaki tanımlamalara göre bir üretim gerçekleştirilmiştir. Yorum satırlarında dosyanın neyle üretildiği, değiştirilmemesi gerektiği, hangi mesajları sunduğu gibi bilgiler belirtilir. proto, fmt ve math gibi GO paketlerini kullanır. PlayerType ismiyle tanımlanan enum sabitinin koda bir değişmez (Constant) olarak aktarıldığında dikkat edelim. Aslında GO için bu enum sabiti int32 tipinden bir değişkendir. Bununla birlikte enum sabitinin içeriğine isimle (name) veya değerle (value) ulaşabilmek için bir map değişkeni (PlayerTypename,PlayerTypevalue) tanımlandığı görülür. Kodda enum sabiti olmak üzere diğer mesajlar için metodlar yazıldığına da dikkat edelim. Player ve Game birer yapı (struct) olarak oluşturulmuşlardır. Alanların değerlerini okumak için Get kelimesi ile başlayan metodlar vardır. Oyuncunun sahip olabileceği silahlar için Player tipinden bir slice değişkeni yer almaktadır. Oyun sahasındaki oyuncular için de benzer şekilde Game yapısı içinde Player tipinden bir slice değişkenini işaret eden pointer'a yer verilmiştir. Bu bir GO uygulamasına ilave edilerek kullanılacak bir paket olduğundan pek tabii main fonksiyonu içermez. Ancak başlangıçta ilgili mesaj tiplerinin proto katmanına enjekte edilmesi için bir takım fonksiyon çağrıları gerçekleşir.
+Aslında kod okunmaya ve yorumlanmaya değer. (Bir GO paketi söz konusu ve bu tip kodları okuyup anlamaya çalışmak GO öğrenenler için önemli bir mevzu) Yazılan proto uzantılı dosyadaki tanımlamalara göre bir üretim gerçekleştirilmiştir. Yorum satırlarında dosyanın neyle üretildiği, değiştirilmemesi gerektiği, hangi mesajları sunduğu gibi bilgiler belirtilir. proto, fmt ve math gibi GO paketlerini kullanır. PlayerType ismiyle tanımlanan enum sabitinin koda bir değişmez (Constant) olarak aktarıldığında dikkat edelim. Aslında GO için bu enum sabiti int32 tipinden bir değişkendir. Bununla birlikte enum sabitinin içeriğine isimle (name) veya değerle (value) ulaşabilmek için bir map değişkeni (PlayerTypename,PlayerTypevalue) tanımlandığı görülür.
+
+Kodda enum sabiti olmak üzere diğer mesajlar için metodlar yazıldığına da dikkat edelim. Player ve Game birer yapı (struct) olarak oluşturulmuşlardır. Alanların değerlerini okumak için Get kelimesi ile başlayan metodlar vardır. Oyuncunun sahip olabileceği silahlar için Player tipinden bir slice değişkeni yer almaktadır. Oyun sahasındaki oyuncular için de benzer şekilde Game yapısı içinde Player tipinden bir slice değişkenini işaret eden pointer'a yer verilmiştir. Bu bir GO uygulamasına ilave edilerek kullanılacak bir paket olduğundan pek tabii main fonksiyonu içermez. Ancak başlangıçta ilgili mesaj tiplerinin proto katmanına enjekte edilmesi için bir takım fonksiyon çağrıları gerçekleşir.
 
 ## Ana Uygulama
 

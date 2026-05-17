@@ -63,13 +63,13 @@ namespace CodeKata.Services{
 
 CalculationService isimli sınıfın GetInvoices metoduna odaklanalım. UserService sınıfına ait nesne örneğinin CheckRequest fonksiyonu kullanılarak bir işlem gerçekleştirilmekte. Açıkça CalculationService sınıfı için bir bağımlılık bulunduğunu görebiliyoruz. Buna ilaveten UserService'in bir web servisi olduğunu düşünelim.
 
-Sorun şu; "GetInvoices için yazılan testler çalışırken ya UserService çalışır durumda değilse?"
+**Sorun şu;** "GetInvoices için yazılan testler çalışırken ya UserService çalışır durumda değilse?"
 
 Bu Continuous Integration sırasında test aşamasının geçilmesine de engel teşkil edebilecek bir durum olabilir. İşte burada söz konusu servisin CheckRequest fonksiyonunun aslında istediğimiz tipte veriyi döndürecek şekilde kullanılması sorunu çözümleyebilir. Yani bağımlılığı test tarafında istediğimiz gibi enjekte edersek asıl testin çalışıp çalışmadığına odaklanabiliriz. Bunu yapmak için Dependency Injection'a uygun bir tasarıma geçmemiz gerekiyor.
 
 Bildiğiniz üzere Dependency Injection mekanizması ile bu tip nesne bağımlılıklarının soyutlaştırılması mümkün. Temelde bunu üç farklı şekilde yapabiliriz. Yapıcı metod (Constructor) üzerinden, özelliğe (Property) kullanarak ve arayüz (Interface) tipinden yararlanarak. Yukarıdaki örneği düşünerek bu üç tekniğini nasıl kullanabileceğimizi incelemeye çalışalım.
 
-Yapıcı Metod Kullanımı
+## Yapıcı Metod Kullanımı
 
 Burada bağımlılığın nesne içerisine yapıcı metod üzerinden aktarımı söz konusudur. Öncelikle aşağıdaki gibi bir arayüze ihtiyacımız var.
 
@@ -151,7 +151,7 @@ Should_Return_Current_Invoice_List_Is_Ok test metodunun içerisinde CalculationS
 
 ![tdd_di_1.gif](/assets/images/2018/tdd_di_1.gif)
 
-Property Setter Kullanımı
+## Property Setter Kullanımı
 
 Şimdi enjekte mekanizmasını property üzerinden kuralım. Tek yapmamız gereken CalculationService sınıfını aşağıdaki gibi değiştirmek olacak.
 
@@ -204,7 +204,7 @@ Test bu durumda da beklediğimiz gibi çalışacak ve asıl servisi hiç kullanm
 
 ![tdd_di_2.gif](/assets/images/2018/tdd_di_2.gif)
 
-Interface Kullanımı
+## Interface Kullanımı
 
 Son olarak daha çok tercih edilen interface üzerinden nasıl bağımlılık enjekte edebileceğimize bir bakalım. Bu yöntem aslında property tabanlı bağımlılık tanımlamanın genişletilmiş bir versiyonu olarak düşünülebilir ve daha çok birden fazla bağımlılığın olduğu durumlarda ele alınır. Bizim örneğimizde bu tekniği aşağıdaki gibi icra etmemiz mümkün.
 
@@ -252,7 +252,7 @@ Test güdümlü geliştirme kapsamında Dependency Injection tekniğini bağıml
 
 Örneklerde kullandığımız FakeUserService sınıfı terminolojide "Test Double" tipi olarak geçmekte (Hatta Stub türünden bir nesne olduğunu ifade edebiliriz) Test Double, basitçe bir üretim nesnesinin test amaçlı olarak değiştirilerek kullanılması olarak ifade ediliyor. Hatta kullanım şekline göre Dummy, Fake, Stubs, Spies ve Mocks gibi farklı türleri de bulunuyor. En çok kullanılan versiyonlar Mocks ve Stubs nesneleri. "Test Double" türlerini uygulamalarımızda daha kolay kullanabilmek de mümkün. Bu işe özel kütüphaneler bulunmakta.
 
-Mock Nesne Kullanımı
+## Mock Nesne Kullanımı
 
 Şimdi [Moq Nuget paketini kullanarak](https://github.com/moq/moq4) Stub yerine mock nesne kullanımını nasıl yapabileceğimize bir bakalım. Bu sayede mock kullanımını daha sade bir şekilde öğrenebiliriz. İlk olarak test projesine Moq4 paketini eklememiz gerekiyor. Bunun için Visual Studio Code terminalinden aşağıdaki komutu vermemiz yeterli.
 

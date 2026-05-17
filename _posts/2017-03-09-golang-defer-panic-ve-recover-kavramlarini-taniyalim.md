@@ -17,7 +17,7 @@ Gopher'ın Go diline kattığı sevimlilik ortada. Sadece maskotu değil bazı k
 
 Geçtiğimiz günlerde panic fonksiyonunu incelerken aslında recover ve defer kavramları ile birlikte kullanımının daha anlamlı olduğunu öğrendim. Aslında amacım ortama bir istisnanın nasıl fırlatılabileceğini görmek ve hata yönetimini incelemekti. Derken kendimi defer ifadesi ile panic ve recover fonksiyonlarını araştırırken buldum. İlk etapta bu üç kavramın kod akışını kontrol etmek için kullanıldığını söyleyebiliriz. Şimdi bu kavramları örneklendirerek kısaca incelemeye çalışalım.
 
-defer
+## defer Kavramı
 
 .Net kökenli yazılımcılar için finally operasyonları amacıyla kullanılır dersek sanırım yerinde olacaktır. defer ifadesi ile işaret edilen fonksiyon, program çalışması sırasında mutlak suretle devreye girmesi istenen operasyonlarda kullanılır. Üzerinde işlem yapılmış bir dosyanın, açılan bir veritabanı bağlantısının, haberleşilen bir soket ile olan iletişimin kapatılması veya belleğe alınan ama işleri biten nesnelerin serbest bırakılması gibi genelleyebileceğimiz işlemler bu operasyonlara örnek olarak verilebilir. Tabii burada dikkat çekici nokta defer ifadesinde bildirilen fonksiyonun kodun akışında bir hata olması halinde de devreye girmesidir. Bir başka deyişle runtime panic olarak isimlendirilen çalışma zamanı hatalarının oluştuğu durumlarda defer edilen fonksiyonların çalışması söz konusudur. Kaynaklarda sıklıkla geçen dosya işlemlerinden basit bir tanesini bu bağlamda ele alalım.
 
@@ -92,7 +92,7 @@ func subProc(i int){
 
 doSomething içerisinde defer ifadeleri haricinde bir slice içerisindeki elemanlarda dolaşılmaktadır. subProc içinse 3 defer ifadesi tanımlanmıştır. doSomething normal işleyişini tamamladıktan sonra içerisinde defer edilen fonksiyonlar ters sırada çalışmıştır.
 
-panic ve recover
+## panic ve recover Kavramları
 
 Yazdığımız uygulama kodunda meydana gelebilecek bazı hatalar ortama panic olarak yansır. Bir dizinin olmayan elemanına erişilmeye çalışılması, açılmak istenen dosyanın ilgili klasörde olmaması, başaltılmadan (initialize edilmeden) bir slice içeriğinin kullanılmaya çalışılması gibi durumlar bu hatalara örnek olarak verilebilir. Geliştirici isterse çalışma zamanı için bilinçli olarak panik havası da estirebilir. Her iki durumda da paniğin oluştuğu fonksiyonun çalışması durdurulur, varsa defer edilmiş fonksiyonlar çalıştırılır ve ardından fonksiyonun sahibi olan konuma (function caller) dönülür ama devam eden kod satırları işletilmez. Oluşan panikten sakin bir şekilde çıkılması için recover fonksiyonundan yararlanılır. Ne var ki recover çağrımlarının anlamlı olması için defer iile kullanımı gerekir.
 

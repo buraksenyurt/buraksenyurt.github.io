@@ -29,18 +29,18 @@ Herhalde nereye varmak istediğimi az çok anladınız. Bir şekilde Linkedin ba
 
 Temel olarak yapılması gereken adımlar belliydi. Basitçe örnek bir servisi denerken OAuth 2.0 standardındaki işleyişi de daha iyi anladığımı fark ettim. Bugünün sosyal ağları ya da API sağlaycıları kendi operasyonlarını kullandırtırken güvenliğin ne kadar önemli olduğunun bilincinde hareket etmekte. Çoğunlukla güncel ve güçlü bir doğrulama (Authentication) standardı olan OAuth 2.0 kullanılıyor. Konumuza tekrar dönecek olursak; Linkedin açısından düşündüğümüzde bir REST çağrısı yapabilmenin adımlarını şöyle özetlememiz mümkün;
 
-Amaç: Uygulamaya giriş yapmış bir Linkedin kullanıcısının temel bilgilerini elde etmek (adı, soyadı, ünvanı,id'si gibi)
+**Amaç:** Uygulamaya giriş yapmış bir Linkedin kullanıcısının temel bilgilerini elde etmek (adı, soyadı, ünvanı,id'si gibi)
 
-Öncelikle Linkedin üzerinde bir uygulama (Application) oluşturmamız gerekiyor. Bu uygulamayı tanımlandığında Linkedin bize bir Client Id ve Client Secret verecek. Ayrca bizim, OAuth 2.0 için bir Callback URL bilgisi de vermemiz lazım.
-Uygulama hazır olduğunda işlemlere devam edebilmek için Linkedin'den bir Authorization Code almalıyız. Bu kod Linkedin'e giriş yapan ve söz konusu uygulamanın client id bilgisi ile gelen kişi için üretilecek. Talep sonrası akış, uygulamayı tanımlarken belirtilen Callback URL adresine doğru devam edecek ve bir Authorization Code dönecek (Querystring içerisinde code ismiyle)
-Bu noktada Linkedin'in herhangibir API hizmetini kullanabilmek için gerekli Access Token bilgisini almaya çalışacağız. Az önce verilen Authorization Key bilgisi işte bu aşamada devreye giriyor. Az önce kendimizi Linkedin'e doğrulatıp bir anahtar almıştık. Şimdi bu anahtarı kullanarak Linkedin'den bir Bearer Token isteyeceğiz. Token'ı alırken sadece anahtar değil, Client ID ve Client Secret bilgilerini de Linkedin'in ilgili token servisine göndereceğiz.
-Son adım için gerekli talep yapıldığında Linkedin bize belli bir periyot boyunca geçerli olacak Access Token bilgisini döndürecek. Biz de bu token bilgisini alıp Linkedin'in ilgili API servislerini kullanacağız.
+1. Öncelikle Linkedin üzerinde bir uygulama (Application) oluşturmamız gerekiyor. Bu uygulamayı tanımlandığında Linkedin bize bir Client Id ve Client Secret verecek. Ayrca bizim, OAuth 2.0 için bir Callback URL bilgisi de vermemiz lazım.
+2. Uygulama hazır olduğunda işlemlere devam edebilmek için Linkedin'den bir Authorization Code almalıyız. Bu kod Linkedin'e giriş yapan ve söz konusu uygulamanın client id bilgisi ile gelen kişi için üretilecek. Talep sonrası akış, uygulamayı tanımlarken belirtilen Callback URL adresine doğru devam edecek ve bir Authorization Code dönecek (Querystring içerisinde code ismiyle)
+3. Bu noktada Linkedin'in herhangibir API hizmetini kullanabilmek için gerekli Access Token bilgisini almaya çalışacağız. Az önce verilen Authorization Key bilgisi işte bu aşamada devreye giriyor. Az önce kendimizi Linkedin'e doğrulatıp bir anahtar almıştık. Şimdi bu anahtarı kullanarak Linkedin'den bir Bearer Token isteyeceğiz. Token'ı alırken sadece anahtar değil, Client ID ve Client Secret bilgilerini de Linkedin'in ilgili token servisine göndereceğiz.
+4. Son adım için gerekli talep yapıldığında Linkedin bize belli bir periyot boyunca geçerli olacak Access Token bilgisini döndürecek. Biz de bu token bilgisini alıp Linkedin'in ilgili API servislerini kullanacağız.
 
 ![linkedin_13.gif](/assets/images/2018/linkedin_13.gif)
 
 Kabaca adımlarımız bu şekilde. Şimdi gerçek zamanlı örneğimizi yapmaya çalışalım.
 
-Callback Sayfasının Oluşturulması
+## Callback Sayfasının Oluşturulması
 
 Authorization Key bilgisinin döndürüleceği sırada talebin yeniden yönlendirileceği bir adres olduğundan bahsetmiştik. Burası üzerinde Linkedin için Javascript SDK'sı kullanılan basit bir HTML sayfası da olabilir, Apple SDK'sı kullanan bir mobil uygulamada. Ben boş bir Asp.Net Core uygulaması oluşturup belli bir porttan yayın yapmasını tercih ettim. Önce komut satırından boş bir proje şablonu açtım.
 
@@ -71,7 +71,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-Tek yaptığım QueryString ile gelebilecek bir code değeri varsa bunu ekrana bastırmak. Birde uygulamanın 8144 portundan çalışacağını belirtmek için launchSettings.json'da aşağıdaki değişikliği yaptım (http://localhost:8144 buradaki çalışma özelinde oluşturulmuş bir adres. Pek tabii Linkedin hizmetlerini kullanacak uygulama nerede host ediliyorsa o makine üzerindeki bir konum da olabilir)
+Tek yaptığım QueryString ile gelebilecek bir code değeri varsa bunu ekrana bastırmak. Birde uygulamanın 8144 portundan çalışacağını belirtmek için launchSettings.json'da aşağıdaki değişikliği yaptım *(`http://localhost:8144` buradaki çalışma özelinde oluşturulmuş bir adres. Pek tabii Linkedin hizmetlerini kullanacak uygulama nerede host ediliyorsa o makine üzerindeki bir konum da olabilir)*
 
 ```xml
 "LinkedinCb": {
@@ -84,7 +84,7 @@ Tek yaptığım QueryString ile gelebilecek bir code değeri varsa bunu ekrana b
     }
 ```
 
-Linkedin Uygulamasının Oluşturulması
+## Linkedin Uygulamasının Oluşturulması
 
 Linkedin'de [şu sayfaya giderek](https://www.linkedin.com/developer/apps) bir uygulama oluşturmamız gerekiyor. Ben aşağıdaki ekran görüntüsünde yer alan bilgileri kullandım ama bir şirket olsaydım ve örneğin pazarlama amaçlı bir çalışma yapsaydım pek tabii gerçek firma bilgileri ile hareket edebilirdim.
 
@@ -96,7 +96,7 @@ Pek çok alan zorunlu. Web sitesi adresi, elektronik posta hesabı, telefon numa
 
 Burada verilen Client Id ve Client Secret değerleri önemli. Hatta onları çok iyi korumanız gerekiyor. OAuth 2.0 tarafında Callback URL bilgisi, biraz önce yazdığımız.Net Core uygulamasının yayınlandığı ve adres yönlendirmenin yapılacağı adres. Uygulama için varsayılan olarak r_basicprofile yetkilendirmesi söz konusu ki bu login olan kullanıcının temel bilgilerini görmek için yeterli. Ancak farklı izin seviyeleri de söz konusu (Hatta okuduğum kadarıyla çok daha geniş yetkilere sahip olabiliyoruz ama bunun için Linkedin ile partner olarak anlaşmak gerekiyor olabilir. Emin değilim araştırmak lazım)
 
-Authorization Kodunun Çekilmesi
+## Authorization Kodunun Çekilmesi
 
 Artık doğrulama kodunu alabilirdim. Bunun için tarayıcıdan aşağıdaki talebi göndermem yeterliydi.
 
@@ -119,7 +119,7 @@ Tahmin edileceği üzere uygulamaya kullanıcının bir izin vermesi gerekiyor. 
 
 ![linkedin_5.gif](/assets/images/2018/linkedin_5.gif)
 
-Access Token Değerinin Alınması
+## Access Token Değerinin Alınması
 
 Authorization Key değeri artık elimdeydi. Postman'i kullanarak aşağıdaki POST talebini oluşturdum.
 
@@ -142,7 +142,7 @@ Görüldüğü üzere Linkedin'in accesstoken adresine bir talep gidecek. Talep 
 
 ![linkedin_6.gif](/assets/images/2018/linkedin_6.gif)
 
-Linkedin Üye Bilgisinin Çekilmesi
+## Linkedin Üye Bilgisinin Çekilmesi
 
 Artık elimde REST servislerini yaşam süresi dolana kadar kullanabileceğim bir Bearer Token var. Postman'den aşağıdaki talebi kullanarak kendi bilgilerime ulaşmayı başardım.
 
@@ -156,10 +156,9 @@ Authorization: Bearer AQUmIOSKG0UoLxN-NnoNGqJYvgIQ6QU9.................
 
 Aslında buraya kadar ki kurgu, geliştirdiğimiz herhangi bir uygulamaya Linkedin ile Login olan kullanıcının temel bilgilerini okuyup ekrana basmak için de yeterli.
 
-> Authorization Adımı Şart mı?
-> Aslında Linkedin API servislerini kullanırken Authorization adımına ille de uğramak gerekmeyebilir. Client ID ve Client Secret değerlerini kullanarak accessToken hizmetine doğrudan ulaşmakta mümkün. Ancak bu akış için [Linkedin'in ile iletişime geçmek gerekiyor](https://developer.linkedin.com/docs/v2/oauth2-client-credentials-flow).
+> **Authorization Adımı Şart mı?** Aslında Linkedin API servislerini kullanırken Authorization adımına ille de uğramak gerekmeyebilir. Client ID ve Client Secret değerlerini kullanarak accessToken hizmetine doğrudan ulaşmakta mümkün. Ancak bu akış için [Linkedin'in ile iletişime geçmek gerekiyor](https://developer.linkedin.com/docs/v2/oauth2-client-credentials-flow).
 
-Tam Olarak İstediğimi Elde Edemedim
+## Tam Olarak İstediğimi Elde Edemedim
 
 Aslında istediğim şeyi tam olarak elde edebilmiş değilim. Ben bağlantıda olduğum kişilerin bilgilerine de ulaşabilmek istiyordum. Bununla ilgili olarak Linkedin dokümantasyonundan yararlanarak aşağıdaki talebi denedim.
 
@@ -192,4 +191,4 @@ O zaman v1 de çalışan people talebini v2 ile yapayım dedim;) Tahmin ettiğim
 
 Sonrasında google amcaya giderek beni mutlu edecek bir şeyler söylemesini istedim ve [Stackoverflow'un şu adresteki girdisinde bir bilgi](https://stackoverflow.com/questions/46960458/any-queries-to-the-api-linkedin-com-v2-return-not-enough-permissions-to-access) buldum. Uzun bir Linkedin formunda onları amacımla ilgili ikna etmeye çalıştım. 30 iş günü içerisinde bana döneceklerini söylediler. Muhtemelen tekrardan token alacağım tabii ama önemli değil. Servis kurgusunun değişmeyeceği ortada. Ancak Linkedin'in bildirimine göre eğer beni anlarlarsa yeni bir client id ve client secret bilgisi paylaşacaklar. Bu sebeptendir ki makalem şu an itibariyle yarım kaldı. Baştaki "To Be Continued" un anlamı da bu işte:|
 
-## To Be Continued (maybe)
+## To Be Continued *(maybe)*

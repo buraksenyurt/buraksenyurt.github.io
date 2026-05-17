@@ -12,11 +12,9 @@ tags:
 categories:
   - Bulut Bilişim
 ---
-Çok yeni bir dünyanın içerisindeyiz uzun zamandır. Cloud Computing ile başladı. C#'ın Linux, MacOSX üzerinde çalıştığına şahit olurken, React Native'ın dünyayı sarsan yükselişine tanık olduk. Oysa ki daha bir süre öncesine kadar Scrum metodolojilerine alışmaya çalışıyor, TFS'e nasıl plug-in yazarıza bakıyorduk. Üniversite yıllarımızda internet bağlantısı bile olmayan bilgisayarlarda yazdığımız faktöryel hesaplama fonksiyonlarını, doğrudan sahibi olmadığımız Quantum bilgisayarlara yaptırmak için Serverless sistemlerden yararlanabileceğimiz bir dünya söz konusu artık. Şirketin hantallaşan iş alanlarını birer microservice haline getirip docker üzerinden host ettiğimiz gezegenler var artık. Çok hızlı dediğimiz Apache sunucularının yerini alan NGinx'e bakarken IIS'i unutup gidiyoruz belki de. Gelişiyoruz, değişiyoruz...Ve bu ikisini sürekli yapıyoruz. Adapte olmak zorundayız.
+Çok yeni bir dünyanın içerisindeyiz uzun zamandır. Cloud Computing ile başladı. C#'ın Linux, MacOSX üzerinde çalıştığına şahit olurken, React Native'ın dünyayı sarsan yükselişine tanık olduk. Oysa ki daha bir süre öncesine kadar Scrum metodolojilerine alışmaya çalışıyor, TFS'e nasıl plug-in yazarıza bakıyorduk. Üniversite yıllarımızda internet bağlantısı bile olmayan bilgisayarlarda yazdığımız faktöryel hesaplama fonksiyonlarını, doğrudan sahibi olmadığımız Quantum bilgisayarlara yaptırmak için Serverless sistemlerden yararlanabileceğimiz bir dünya söz konusu artık. Şirketin hantallaşan iş alanlarını birer microservice haline getirip docker üzerinden host ettiğimiz gezegenler var artık. Çok hızlı dediğimiz Apache sunucularının yerini alan NGinx'e bakarken IIS'i unutup gidiyoruz belki de. Gelişiyoruz, değişiyoruz...Ve bu ikisini sürekli yapıyoruz. Adapte olmak zorundayız. Konumuz Serverless, AWS Lambda ve .Net Core...
 
 ![awscore_11.gif](/assets/images/2018/awscore_11.gif)
-
-Konumuz Serverless, AWS Lambda ve.Net Core.
 
 Günümüz bulut sistemleri göz önüne alındığında Microsoft Azure, Amazon Web Services ve Google Cloud Platform ilk aklımıza gelen ürünler oluyorlar sanıyorum ki. Neredeyse tamamının serverless olarak bildiğimiz yetenekleri de bulunuyor ki son yılın belki de en moda kavramlarından birisi bu. Kısaca Backend As A Services (BaaS) ya da Function As A Services (FaaS) şeklinde anılan Serverless teknolojisini halen daha anlamaya çalışıyorum. İşin aslı bu yeni yaklaşımdaki amaç, elimizdeki iş fonksiyonelliklerini sunucuların bakım, ölçekleme gibi ihtiyaçlarını düşünmeden sürekli dağıtım çarkının içerisine kolayca dahil edebilmek, hizmette oldukları süre boyunca parasını ödemek, böylece maliyetlerimizi mümkün olduğunca azaltmak.
 
@@ -160,7 +158,7 @@ namespace AwsDotnetCsharp
 
 SampleHandler sınıfı içerisinde iki fonksiyon yer almakta. Yaptıkları çok önemsiz. Ancak parametreleri ve dönüş tiplerine dikkat etmek lazım. Her ikisi de HTTP Get taleplerine cevap verip JSON formatında içerik döndürmekteler. Tabii eklenen bu iki fonksiyon için dağıtım kanalına da bilgi vermemiz gerekiyor. Bunun için de yml içeriğini aşağıdaki gibi düzenledim (service: bssdemo aslında benim AWS üzerinden oluşturduğum bucket'a verdiğim ad. Geliştireceğimiz.Net uygulamasını bu hizmetin olduğu yerde konuşlandıracağız)
 
-```xml
+```yml
 service: bssdemo
 
 provider:

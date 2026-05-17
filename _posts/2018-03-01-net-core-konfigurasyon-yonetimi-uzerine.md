@@ -22,7 +22,7 @@ West-World üzerinde bir şeyler araştırmak için vaktim olan bir haftayı ger
 dotnet new console -o CustomConfig
 ```
 
-Kendi JSON İçeriğimiz İle Çalışmak
+## Kendi JSON İçeriğimiz İle Çalışmak
 
 İlk örnek için aşağıdaki içeriğe sahip olan aws.json isimli bir dosyadan yararlanacağız.
 
@@ -112,7 +112,7 @@ Bu notasyona göre services olarak isimlendirilmiş array içerisindeki bir elem
 
 ![customconfig_1.gif](/assets/images/2018/customconfig_1.gif)
 
-JSON İçeriğini Sınıflar ile İlişkilendirmek
+## JSON İçeriğini Sınıflar ile İlişkilendirmek
 
 Peki JSON dosyasının içeriğinde yer alan sekmeleri birer tiple ilişkilendirmek istersek? Ki zaten ezelden beridir konfigurasyon içerikleri.Net dünyasında sınıflarla ilişkilendirilip yönetimli kod tarafında kullanılabiliyorlar. Bunu.Net Core ortamında JSON içeriklerimiz için gerçekleştirmemiz de mümkün. İlk olarak aşağıdaki json içeriğini barındıracak gamesettings.json dosyasını projemize ekleyelim.
 
@@ -209,7 +209,7 @@ public void ExecuteObjectGraphSample()
 
 ![customconfig_2.gif](/assets/images/2018/customconfig_2.gif)
 
-Bellekte Konuşlandırılmış Konfigurasyon İçeriği ile Çalışmak
+## Bellekte Konuşlandırılmış Konfigurasyon İçeriği ile Çalışmak
 
 MSDN dokümanlarından öğrendiğim ilginç örneklerden birisi de konfigurasyon bilgilerinin in-memory olarak tutulup yönetilebilmesi. Yeni fonksiyonumuz ExecuteInMemorySample'ı aşağıdaki gibi yazalım.
 
@@ -258,7 +258,7 @@ GetSection ("Artifact:Service").Bind (service) çağrımı ile Artifact altında
 
 ![customconfig_3.gif](/assets/images/2018/customconfig_3.gif)
 
-Konfigurasyon Parametrelerini Komut Satırından Göndermek
+## Konfigurasyon Parametrelerini Komut Satırından Göndermek
 
 Bir önceki örnekte kullandığımız In-memory çözümünde, parametre değerlerinin komut satırından gönderilmesi de mümkündür. Bu güzel ve ilginç bir kullanım şekli olsa de pek çok durumda işimize yarayabilir. Peki nasıl yapabiliriz? Aşağıdaki metodu ConfigSupervisor sınıfımıza ekleyerek devam edelim (Başta eklediğimiz Microsoft.Extensions.Configuration.CommandLine paketi bu örnek için gerekli)
 

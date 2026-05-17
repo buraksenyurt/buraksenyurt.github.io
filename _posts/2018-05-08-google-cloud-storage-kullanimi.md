@@ -31,7 +31,7 @@ Storage API'sini kullanmak oldukça kolay. Komut satırından gsutil aracı (Goo
 
 Ben tahmin edileceği üzere öncelikle komut satırından ve sonrasında da.Net Core tarafından söz konusu servisi kullanmaya çalışacağım. Senaryom oldukça basit. Bir bucket oluştur, buraya fotoğraf at, attığın fotoğrafı oku, bucket'ı sil vb...Şunu unutmamak lazım ki, bu servis diğer Google servisleri gibi ücretlendirmeye tabii olabilir. O nedenle denemelerden sonra oluşturulan bucket veya içeriği silmek gerekiyor.
 
-gsUtil ile Storage İşlemleri
+## gsUtil ile Storage İşlemleri
 
 İlk olarak gsutil ile söz konusu işlemleri nasıl yapabileceğimize bir bakalım. Tabii işe başlamadan önce Google Cloud Platform üzerinde bir proje oluşturmamız ve özellikle Storage API'yi kullanacak geçerli bir servis kullanıcısı üreterek bu kullanıcıya ait Credential bilgilerini taşıyan json formatlı içeriği kendi ortamımızda işaret etmemiz gerekiyor.
 
@@ -61,7 +61,7 @@ ls parametresi ile bucket içerisindeki dosyaları görmek mümkün. Eğer bu do
 
 rm kullanılan komutlar ile bucket içerisinden öğe veya bucket'ın kendisini silebiliriz. Ben fiyatlandırma korkusu nedeniyle, denememi yapar yapmaz ilgili içerikleri sildim:)
 
-Credential Mevzusu
+## Credential Mevzusu
 
 Bir Google Cloud servisini kullanacağımız zaman, bu servis özelinde çalışacak bir servis kullanıcısı oluşturulması ve üretilen json dosyasının kullanılması öneriliyor. Bunu API Services -> Credentials kısmından New Service Account ile yapabiliriz. Önemli olan oluşturulan veya var olan kullanıcı için Storage servisi (ya da hangi servisi kullandırtmak istiyorsak onun için) bir role belirlenmesidir.
 
@@ -75,7 +75,7 @@ Bu dosyayı kod tarafındaki servise ait Credential bilgilerini yüklemek için 
 
 > Aslında Credentials vakasına baktığımızda kullanılabilecek bir çok yol mevcut. Sistemin Google_Application_Credentials anahtar değerine sahip path bilgisini bu dosya ile eşleştirebileceğimiz gibi kod tarafında farklı şekillerde Credential bilgisini yüklememiz de mümkün. Detaylar için [buradaki yazıya bakmanızı](https://cloud.google.com/docs/authentication/production) öneririm.
 
-.Net Core Tarafı
+## .Net Core Tarafı
 
 Görüldüğü üzere komut satırında gsutil aracını kullanarak Storage API ile konuşmak oldukça basit ve pratik. Neler yapabileceğimizi az çok anladık. Şimdi kod yoluyla Storage API'sini nasıl kullanabileceğimizi incelemeye çalışalım. Her zaman ki gibi konuyu basit şekilde ele almak adına bir Console uygulaması oluşturarak işe başlayabiliriz. Sonrasında Google.Cloud.Storage.V1 paketini uygulamaya dahil etmek gerekiyor. Bu paket REST modelli Storage servisi ile konuşmamızı kolaylaştıracak (Düşündüm de günümüzde her yer RESTful servis sanki) Dolayısıyla ilk terminal komutlarımız şunlar...
 
@@ -178,6 +178,8 @@ namespace howtostorage
 }
 ```
 
+## Neler Yaptık?
+
 Neler yaptığımıza bir bakalım. Kodun akışı Credential bilgilerini içeren dosyanın okunması ve elde edilen güvenlik kriterleri ile StorageClient nesnesinin örneklenmesi ile başlıyor. Sonrasında projeId bilgisi ve örnek bir bucket adı kullanılarak işlemlere başlanıyor. Bucket'ın oluşturulması, güncel bucket listesine bakılması, iki resim dosyasının yüklenmesi, bucket içerisindeki nesnelerin çekilmesi, bir resim dosyasının Google'dan West-World'e getirilmesi ve son olarak da tüm nesnelerin platformdan silinmesi işlemleri gerçekleştiriliyor.
 
 Aslında tüm operasyon StorageClient nesnesinin metodları ile icra edilmekte. Google'ın diğer API servisleri için geliştirilmiş Client kütüphanelerinde de benzer standartlar mevcut. Bu nedenle birisini öğrendikten sonra diğerlerini kullanmak da kolay olacaktır diye düşünüyorum.
@@ -185,6 +187,8 @@ Aslında tüm operasyon StorageClient nesnesinin metodları ile icra edilmekte. 
 CreateBucket metodu ile plaform üzerinde bir bucket oluşturulması sağlanıyor. Parametre olarak hangi projeyi kullanacaksak onun ID bilgisi ve bir de bucket adı veriliyor. Pek tabii oluşturulmak istenen bucket zaten varsa 409 kodlu bir Exception alınmakta. Platform üzerinde oluşturulan bucket listesini ListBuckets metodu ile çekebiliriz. Parametre olarak projeID bilgisini vermek yeterli.
 
 Bucket içerisine nesne atma işi aslında Stream temelli. Nitekim yükleyeceğimiz içerikler en nihayetinde bir byte dizisine tekabül etmekte. UploadObject fonksiyonunun son parametresi de bu stream nesnesi. Bucket içerisindeki nesneleri ListObjects fonksiyonu yardımıyla yakalamamız mümkün. Örnek kod parçasında bu nesnelerin isim ve boyutlarını alıp ekrana yazdırmaktayız. Nesne silme işlemi de oldukça kolay. DeleteObject ve DeleteBucket fonksiyonlarından yararlanarak bir bucket nesnesini veya içerisindeki bir öğeyi silmek mümkün.
+
+## Sonuçlar
 
 Programı çalıştırdıktan sonra iki aşamalı olarak elde ettiğim sonuçlara baktım. Öncelikle oluşturulan bucket'a iki resim dosyasının da yüklendiğini gözlemledim.
 

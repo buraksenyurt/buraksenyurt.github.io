@@ -97,13 +97,13 @@ namespace ConfigSample.Controllers
 }
 ```
 
-ValuesController sınıfının yapıcı metoduna (Constructor) müdahale ettik. IConfiguration ve ILogger arayüzleri parametre olarak geliyor. Aslında çalışma zamanına enjekte edilen nesnelerin içeriye alındığını ifade edebiliriz. Sonrasında _config ve _logger değişkenlerini diğer metodlarda kullanmamız mümkün. _logger nesnesini log bilgisi vermek için kullanıyoruz. DefaultSettings içerisindeki değerleri okumak için {SectionName}:{KeyName} notasyonundan yararlandağımıza dikkat edelim. Değerleri GetValue metodu ile almaktayız. Eğer uygulamayı
+ValuesController sınıfının yapıcı metoduna (Constructor) müdahale ettik. IConfiguration ve ILogger arayüzleri parametre olarak geliyor. Aslında çalışma zamanına enjekte edilen nesnelerin içeriye alındığını ifade edebiliriz. Sonrasında _config ve `_logger` değişkenlerini diğer metodlarda kullanmamız mümkün. `_logger` nesnesini log bilgisi vermek için kullanıyoruz. DefaultSettings içerisindeki değerleri okumak için {SectionName}:{KeyName} notasyonundan yararlandağımıza dikkat edelim. Değerleri GetValue metodu ile almaktayız. Eğer uygulamayı
 
 ```bash
 dotnet run
 ```
 
-terminal komutu ile çalıştırıp http://localhost:5000/api/values adresine HTTP Get talebinde bulunursak appSettings içerisindeki ilgili değerlere erişebildiğimizi görürüz.
+terminal komutu ile çalıştırıp `http://localhost:5000/api/values` adresine HTTP Get talebinde bulunursak appSettings içerisindeki ilgili değerlere erişebildiğimizi görürüz.
 
 ![easy_config_1.gif](/assets/images/2018/easy_config_1.gif)
 

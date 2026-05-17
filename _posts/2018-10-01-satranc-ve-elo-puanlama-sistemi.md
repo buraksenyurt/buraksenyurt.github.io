@@ -43,8 +43,9 @@ Satranç federasyonunun bu 4 haneli puan hesabı için bir katsayı belirlediği
 
 Formülasyondaki 24 değeri satranç federasyonu tarafından belirlenmiş bir katsayı. İyi bir hesaplama için bu katsayının 10 ile 32 aralığında olması öneriliyor. Maçı kazanma durumunda 1, kaybetme durumunda da 0 sayıları kullanılmakta (Beraberlik şu an için hesaba kattığımız bir kriter değil) Ayrıca yarışmacıların güncel puanları ve buna göre hesaplanmış kazanma olasılıkları da eşitliğin içerisinde yer alıyor.
 
-> İtiraf ediyorum işlemleri kolayca yapabilmek için hesap makinesi yerine node.js komut satırından yararlandım:)
-> ![elorating_1.gif](/assets/images/2018/elorating_1.gif)
+İtiraf ediyorum işlemleri kolayca yapabilmek için hesap makinesi yerine node.js komut satırından yararlandım:)
+
+![elorating_1.gif](/assets/images/2018/elorating_1.gif)
 
 Magnus ve Fabiano ilk iki sırada yer alan oyuncular ve ELO rating değerleri birbirlerine oldukça yakın. Lakin puan farkının daha fazla olduğu bir durum söz konusu olursa maç sonucundan oyuncuların çok daha farklı etkileneceklerini söyleyebiliriz. Kazanma oranı çok yüksek olan bir oyuncunun puanında önemli bir artış olmayacak ama kazanma ihtimali düşük olan oyuncunun galip gelmesi halinde kendi puanındaki artış yüksek olacaktır.
 

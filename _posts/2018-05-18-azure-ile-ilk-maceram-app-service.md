@@ -45,7 +45,9 @@ az webapp deployment user set --user-name abi-wan-kenobi --password <<buraya okk
 
 Bir deployment kullanıcısı oluşturduk. Bu kullanıcı yerel makinedeki kodları Azure platformuna git üzerinden aktarırken gerekli olacak. Ancak tek yol git kullanmak da değil. FTP bağlantısı yaparak da uygulamamızı taşımamız mümkün ki bu senaryoda da yukarıda oluşturulan kullanıcıya ihtiyacımız olacaktır. Diğer platformlardakine benzer olarak kullanıcılar ve kullanıcıların yetkileri önemli. Gerçekten belli işler için sadece yapacaklarına ait yetkileri taşıyan kullanıcılar oluşturma alışkanlığını kazanmak gerekiyor. Kısacası her şeyi yapabilen tek bir süper kullanıcı kullanmamalıyız. İşte bu yüzden senaryomuza sadece dağıtım işinden sorumlu olacak bir kullanıcı tanımı ile başladık.
 
-Sıradaki adımda bir Resource Group oluşturacağız. Bunu n sayıda kaynağı barındıran bir taşıyıcı (container) olarak düşünebiliriz. Azure üzerindeki enstrümanlar birer kaynak (resource) olarak tanımlanmakta. Sanal makine (Virtual Machine), veri tabanı (database), dağıtım yapan kullanıcı (deployment user), depolama alanı (disk storage), bu örnekteki web uygulaması (web app) vs. Senaryoya göre bir kaynak grubunun tanımlanmasının yönetimsel açıdan avantajları bulunuyor. Kaynak gruplarını tanımlarken önemli kriterlerden birisi da lokasyon. Aslında kaynaklar Microsoft'un dünya üzerindeki farklı lokasyonlarında konuşlandırılmış da olabilirler. Dolayısıyla bir Resource Group farklı lokasyonlarda duran kaynakları içerebilir. Aslında içermekten kasıt sadece metadata'sında bu kaynakların bilgilerini tutmasıdır. Sonuçta Resource Group'un sahip olduğu metadata'nın da bir yerlerde duruyor olması gerekir. Kullanılabilecek lokasyonların listesini Cloud Shell'den öğrenmek de mümkün. Örneğin aşağıdaki terminal komutunun çıktısı olarak Linux tabanlı ve App Service desteği sunan lokasyonları görebiliriz.
+Sıradaki adımda bir Resource Group oluşturacağız. Bunu n sayıda kaynağı barındıran bir taşıyıcı (container) olarak düşünebiliriz. Azure üzerindeki enstrümanlar birer kaynak (resource) olarak tanımlanmakta. Sanal makine (Virtual Machine), veri tabanı (database), dağıtım yapan kullanıcı (deployment user), depolama alanı (disk storage), bu örnekteki web uygulaması (web app) vs. Senaryoya göre bir kaynak grubunun tanımlanmasının yönetimsel açıdan avantajları bulunuyor. Kaynak gruplarını tanımlarken önemli kriterlerden birisi de lokasyon. 
+
+Aslında kaynaklar Microsoft'un dünya üzerindeki farklı lokasyonlarında konuşlandırılmış da olabilirler. Dolayısıyla bir Resource Group farklı lokasyonlarda duran kaynakları içerebilir. Aslında içermekten kasıt sadece metadata'sında bu kaynakların bilgilerini tutmasıdır. Sonuçta Resource Group'un sahip olduğu metadata'nın da bir yerlerde duruyor olması gerekir. Kullanılabilecek lokasyonların listesini Cloud Shell'den öğrenmek de mümkün. Örneğin aşağıdaki terminal komutunun çıktısı olarak Linux tabanlı ve App Service desteği sunan lokasyonları görebiliriz.
 
 ```bash
 az appservice list-locations --sku S1 --linux-workers-enabled
@@ -69,10 +71,13 @@ az group create --name milano-rg --location "East US 2"
 az appservice plan create --name milano-app-plan --resource-group milano-rg --sku S1 --is-linux
 ```
 
---sku S1 ile S1 kodlu fiyatlandırma modelini kullanacağımızı, --is-linux ile de Linux Container üzerinde çalışacağımızı belirtmiş olduk. Özellikle planları oluştururken gereken ücretlendirme modellerine bakmakta yarar var. [Şu adresten](https://azure.microsoft.com/en-us/pricing/details/app-service/) gerekli bilgilere ulaşabilirsiniz. Bir çok plan söz konusudur. Planlarda belirtilen sku'larda makinenin çekirdek sayısı, günlük yedek alma miktarı, kaç Gb Ram'e sahip olacağı, disk kapasitesi, hangi diğer uygulama servislerini sunacağı (SQL, Biztalk vs), eş zamanlı instance değerleri gibi özellikler tanımlıdır. App Service ile App Service Plan arasında kritik bir ilişki de vardır. Birden fazla App Service'in aynı App Service Plan'a bağlanması mümkündür. Yani farklı uygulamaları barındıran farklı App Service örneklerini aynı servis planı ile ilişkilendirebiliriz. Bunun ölçeklemelerde önemli bir artısı vardır. Tek bir planı yukarı (Scale Up) veya aşağı (Scale Down) çekerek kendisine bağlı olan tüm uygulamaların bu ölçeklemeden aynı anda yararlanmasını sağlayabiliriz. Burada ister yukarı ister aşağı yönlü ölçekleme olsun, ilgili App Service Plan'a ait makine örneklerinin sayısının arttırılması veya azaltılması durumu söz konusudur.
+--sku S1 ile S1 kodlu fiyatlandırma modelini kullanacağımızı, --is-linux ile de Linux Container üzerinde çalışacağımızı belirtmiş olduk. Özellikle planları oluştururken gereken ücretlendirme modellerine bakmakta yarar var. [Şu adresten](https://azure.microsoft.com/en-us/pricing/details/app-service/) gerekli bilgilere ulaşabilirsiniz. Bir çok plan söz konusudur. Planlarda belirtilen sku'larda makinenin çekirdek sayısı, günlük yedek alma miktarı, kaç Gb Ram'e sahip olacağı, disk kapasitesi, hangi diğer uygulama servislerini sunacağı (SQL, Biztalk vs), eş zamanlı instance değerleri gibi özellikler tanımlıdır. App Service ile App Service Plan arasında kritik bir ilişki de vardır. 
 
-> Araya bir ekran görüntüsü koyarsam sanırım daha anlaşılır olabilir. Node.js Starter Kit tipinden bir App Service ve buna bağlı bir plan seçerken Azure...
-> ![nonazure_13.gif](/assets/images/2018/nonazure_13.gif)
+Birden fazla App Service'in aynı App Service Plan'a bağlanması mümkündür. Yani farklı uygulamaları barındıran farklı App Service örneklerini aynı servis planı ile ilişkilendirebiliriz. Bunun ölçeklemelerde önemli bir artısı vardır. Tek bir planı yukarı (Scale Up) veya aşağı (Scale Down) çekerek kendisine bağlı olan tüm uygulamaların bu ölçeklemeden aynı anda yararlanmasını sağlayabiliriz. Burada ister yukarı ister aşağı yönlü ölçekleme olsun, ilgili App Service Plan'a ait makine örneklerinin sayısının arttırılması veya azaltılması durumu söz konusudur.
+
+Araya bir ekran görüntüsü koyarsam sanırım daha anlaşılır olabilir. Node.js Starter Kit tipinden bir App Service ve buna bağlı bir plan seçerken Azure...
+
+![nonazure_13.gif](/assets/images/2018/nonazure_13.gif)
 
 Planımızı komut satırından oluşturarak devam edelim.
 
@@ -120,7 +125,7 @@ console.log("Server is online http://localhost:%d", port);
 
 Ekrana çok düz bir HTML içeriği basılıyor. Bunun için createServer metoduna alınan callback fonksiyonundan yararlanılmakta. writeHead ile istemciye HTTP 200 bilgisini döndürüyoruz. Yani her şey yolunda. end fonksiyonunun içerisindeyse tahmin edeceğiniz üzere HTML içeriğimiz yer alıyor. Oluşturulan server nesnesinin listen fonksiyonu ile de 4454 numaralı porttan yayın hizmet vereceğimizi ifade ediyoruz. Tabii bu lokal makine için geçerli. Uygulamayı Azure ortamına taşıdığımızda port bilgisi process.env.PORT üzerinden otomatik olarak elde edilecek. Bu arada kodun olduğu klasörde
 
-```text
+```bash
 npm init
 ```
 
@@ -143,7 +148,7 @@ ile package.json dosyasını oluşturup içeriğini aşağıdaki gibi düzenleye
 
 start elementini elle eklememiz gerekiyor. Bildiğiniz gibi bu sayede söz konusu uygulamayı terminalde
 
-```text
+```bash
 npm start
 ```
 

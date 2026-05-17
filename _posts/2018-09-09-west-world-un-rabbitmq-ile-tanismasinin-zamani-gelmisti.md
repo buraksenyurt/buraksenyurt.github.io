@@ -26,7 +26,7 @@ Küçük bir çocukken, soğuk bir kış gününde ablamın elini tutmuş Kadık
 
 Bir postane uzun zamandır Message Broker sistemlerine benzetiliyor aslında. Mükemmel çalışan asenkron kuyruk sistemlerinin bir kısmının sırf bu işle uğraştığı söyleniyor. Apache Kafka, MSMQ ve başkaları. Ama tabii bir de pek çok platform tarafından desteklenen meşhur RabbitMQ var. RabbitMQ aslında bir posta ofisi olarak göz önüne alınıyor. Mektuplar yerine binary large objects (BLOB) gibi nesneleri taşıyabiliyor. Bu nesnelerin mutlaka göndericisi ve alıcısı (alıcıları) oluyor. Üstelik bu gönderim FIFO (First In First Out) mantığına göre yapılıyor. İlk giren mesaj ilk çıkar mantalitesinde.
 
-Anladığım Kadarıyla
+## Anladığım Kadarıyla
 
 İşin teknik boyutuna girerek konuyu biraz daha açmaya çalışalım. Belli amaçlar için üretilen mesajlar olduğunu ve bu mesajların alıcılarının bulunduğunu düşünelim. Günümüzde kullandığımız herhangi bir sistemi düşünebiliriz. Özellikle mikroservislerin olduğu sistemler göz önüne alınabilir. Onlarca mikroservisin mesaj ürettiğini ve bu mesajların alıcılarının olduğunu düşünelim. Birisinin bu mesaj trafiğini yönetebilmesi gerekiyor. Hatta bir kuyruk sistemi ile ele alınması hiç fena olmaz. İşte bu tip ihtiyaçlarda genellikle Messaging Queue sistemlerinden yararlanılır ki RabbitMQ, Avanced Message Queueing Protocol'ünü baz alan gelişmiş versiyonlardan birisidir. Anladığım haliyle RabbitMQ aşağıdaki gibi bir mesajlaşma sistemini baz alır.
 
@@ -34,17 +34,25 @@ Anladığım Kadarıyla
 
 Producer rolünü üstlenen taraf kuyruğa (belki de kuyruklara) atılmak üzere bir mesaj göderir. Mesaj, Exchange arabirimi tarafından karşılanır ve çeşitli kurallara göre bir veya daha fazla kuyruğa yönlendirmede bulunur. Exchange modellerinin herbirisi için ortak olan özellikler vardır. Name, Durability, Auto-Delete ve Arguments. Exchange'ler genellikle adlandırılırlar. Durability özelliğinin değerine göre mesajların disk üzerinde kalıcı olarak tutulup tutulmayacağı belirlenir. Varsayılan olarak bellek kullanılır. Auto-Delete ile işi biten mesajın kuyruktan otomatik olarak düşürülüp düşülmeyeceği ayarlanır. Arguments kısmında ise mesaja ait ek niteliklere yer verilir. Aslında Exchange türlerini aşağıdaki grafiklerle daha iyi anladığımı itiraf edebilirim (Teşekkürler Pluralsight)
 
-Direct Exchanges. Genelde tek bir kuyruk kullanımı söz konusu ile ele alınıyor.
+### Direct Exchanges
+
+Genelde tek bir kuyruk kullanımı söz konusu ile ele alınıyor.
 
 ![rabonww_b.gif](/assets/images/2018/rabonww_b.gif)
 
-Fanout Exchanges modelinde, mesaj birden fazla kuyruğa kopyalanmakta. Broadcasting sistemlerinde anlamlı. Örneğin güncel oyun sonuçlarının tüm oyunculara bildirilmesi veya hava durumunun haber kanallarına yayınlanması.
+### Fanout Exchanges
+
+Modelinde, mesaj birden fazla kuyruğa kopyalanmakta. Broadcasting sistemlerinde anlamlı. Örneğin güncel oyun sonuçlarının tüm oyunculara bildirilmesi veya hava durumunun haber kanallarına yayınlanması.
 
 ![rabonww_c.gif](/assets/images/2018/rabonww_c.gif)
+
+### Topic Exchanges
 
 Topic Exchanges'de mesajlar konularına göre farklı kuyruklara dağılabilmekte. Buna göre tüketiciler ilgili oldukları konuya ait kuyruğa düşen mesajları okuyorlar. Bir nevi sınıflandırma yapılığını ifade edebiliriz.
 
 ![rabonww_d.gif](/assets/images/2018/rabonww_d.gif)
+
+### Header Exchanges
 
 Header Exchanges modelinde mesaj ile ilgili birden fazla niteliğin kullanılması ve buna göre uygun kuyruğa atılması söz konusu Burada önceki modellerde kullanılan Routing-Key ele alınmamakta. Bunun yerine mesajın başlığına eklenen nitelikler öne çıkmakta. Routing-Key'lerin sadece string olabileceği düşünülürse bu model kullanılarak farklı türlere göre sınıflandırma yapılmasına da mümkün hale geliyor.
 
@@ -58,7 +66,7 @@ Consumer rolünü üstlenen taraf tahmin edileceği üzere kuyruktan ilgilendiğ
 
 Benim bu Cumartesi gecesindeki tek amacım ise RabbitMQ'yu West-World üzerinde konuşlandırmak ve.Net Core ile geliştirilmiş örneklerden yararlanarak basit mesaj alış verişi için kullanmak. Sevgili dostum Bora Kaşmer konuyu uzun zaman önce [şuradaki yazısında](http://www.borakasmer.com/rabbitmq-nedir) zaten ele almıştı. Ben hem bu yazıdan hem de internetteki diğer kaynaklardan yararlanarak RabbitMQ'yu Linux platformu üzerinde deneyimlemek istedim. Haydi gelin West-World'de bunun için neler yaptım sizlere kısaca anlatayım.
 
-Başlıyorum
+## Başlıyorum
 
 İlk önce West-World'e RabbitMQ'yu kurmam gerekiyordu. Uzun zamandır güncellemediğimi fark ettiğimden çalıştırılacak ilk iki terminal komut belliydi.
 
@@ -133,11 +141,11 @@ sudo rabbitmqctl set_permissions -p / Jerry ".*" ".*" ".*"
 
 ![rabonww_2.gif](/assets/images/2018/rabonww_2.gif)
 
-Artık tarayıcıdan http://localhost:15672 adresine gidip az önce oluşturduğum Jerry kullanıcısı ile giriş yapabilirim. İlk kez karşılaştığım bir arabirim. Ama RabbitMQ'nun artık West-World üzerinde olduğundan eminim.
+Artık tarayıcıdan `http://localhost:15672` adresine gidip az önce oluşturduğum Jerry kullanıcısı ile giriş yapabilirim. İlk kez karşılaştığım bir arabirim. Ama RabbitMQ'nun artık West-World üzerinde olduğundan eminim.
 
 ![rabonww_3.gif](/assets/images/2018/rabonww_3.gif)
 
-Producer Tarafını Yazmak
+## Producer Tarafını Yazmak
 
 Ortada bir kuyruk sistemi artık var. Sırada mesaj yayınlayacak tarafı yazmak vardı. Klasik olarak Visual Studio Code'u açtım ve terminal penceresini kullanarak bir Console uygulaması oluşturdum. TurboNecati isimli uygulama mesaj gönderen program rolünü üstlenecek. RabbitMQ ile el sıkıştıktan sonrada AfacanMurat için kuyruğa bir kaç mesaj bırakacak. RabbitMQ ile kolayca konuşabilmek için RabbitMQ.Client isimli NuGet paketinden yararlanılabilir (Ben örneği.Net Core tabanlı olarak geliştirdiğim için bu paketi kullanıyorum. Ancak RabbitMQ için dil desteği çok geniş. Python, PHP, Java, Ruby, Go, Objective-C, Swift, Javascript gibi dillerle de rahatlıkla kullanabiliyor)
 
@@ -210,7 +218,7 @@ Hatta Queues kısmına girdiğimde commands isimli kuyruğun oluşturulduğunu d
 
 TurboNecati sevgili yeğeni AfacanMurat için anlamlı yaz tatili mesajlarını bırakmıştı bile. Peki AfacanMurat bu mesajları nasıl okuyacak?
 
-Consumer Tarafını Yazmak
+## Consumer Tarafını Yazmak
 
 Birileri mesajları yazıyorsa atılan bu mesajları okumak isteyen tarafları da vardır mutlaka. Şimdi de onu yazmam gerekiyordu. AfacanMurat uygulamasını benzer şekilde oluşturdum.
 
@@ -274,6 +282,4 @@ Mesajlar AfacanMurat tarafından okunduğu için kuyruktan silinmişlerdi. Rabbi
 
 Bir şeyleri deneyimleyebildiğim güzel bir Cumartesi gecesi daha sonlanmak üzere. Sevgili CoderBora'nın güzel yazısı West-World üzerinde RabbitMQ'yu deneyimlemek için çok destekleyici oldu. Sonuçta kuyruk modelli bir mesajlaşma sistemini kurup üzerine bilgi yazıp okuyabildim. RabbitMQ bu kadarla sınırlı kalabilecek bir konu değil elbette. Ben kendim için kendi deneyimimi yazıp aktardım sadece. Gerisi sizin elinizde. Okuyun, araştırın, deneyin, ilerleyin. Örneğin ben Work Queues konusunu incelemeyi düşünüyorum. Web uygulamaları düşünüldüğünde bu kritiktir. RabbitMQ'da bu yapı nasıl uygulanır, öğrenir öğrenmez yazıya dökmek istiyorum. Böylece geldik bir maceranın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-### Kaynaklar:
-
-RabbitMQ'nun güzide [Tutorial serisinin başlangıç noktası](https://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html).
+**Kaynak:** RabbitMQ'nun güzide [Tutorial serisinin başlangıç noktası](https://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html)

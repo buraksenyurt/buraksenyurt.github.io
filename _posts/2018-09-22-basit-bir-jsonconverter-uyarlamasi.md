@@ -22,10 +22,10 @@ Ben izninle kafama takılan bir konuyu seninle paylaşmak istiyorum. Firmamız b
 
 ```json
 {
-	'operation_name':'Dosya transfer işlemi',
-	'state':'Tamamlandı',
-	'additional_info':'her şey yolunda',
-	'time':'20180404195865'
+   'operation_name':'Dosya transfer işlemi',
+   'state':'Tamamlandı',
+   'additional_info':'her şey yolunda',
+   'time':'20180404195865'
 }
 ```
 
@@ -33,16 +33,16 @@ bazıları da aşağıdaki gibi bir içerik döndürüyor.
 
 ```json
 {
-	'function_name':'Batch çalıştırma işlemi',
-	'status':'hata aldı',
-	'description':'batch yerinde bulunamamış',
-	'time':'20180404190001'
+   'function_name':'Batch çalıştırma işlemi',
+   'status':'hata aldı',
+   'description':'batch yerinde bulunamamış',
+   'time':'20180404190001'
 }
 ```
 
 Senin de göreceğin gibi servislerin bazıları output tipinin farklı bir versiyonunu kullanmakta. Bu sorunu çözmek üzere bir takım geliştirmelere başladık. Ancak bu sorun merak ettiğim başka bir konuyu daha doğurdu. Servisleri test ettiğim tarafta bu iki farklı çıktı için iki farklı sınıf yazmak zorunda kaldım. Bir şekilde mesajlar için araya girip JSON'ların key değerlerine göre tek bir nesne örneğine Deserialize işlemi uygulayabilir miyim? Uygulayabilirsek eğer bir örnek ile nasıl yapabileceğimizi bana anlatabilir misin? En kısa sürede görüşmek ümidiyle sevgili dostum. S (h) arp'a bol bol selamlar:)
 
-### Sevgili Nazım,
+## Sevgili Nazım
 
 Sendeki tatlı yoğunluğun bir benzeri bizde de var. Henüz ikinci sprint'teyiz. Taşlar yeni yeni oturmaya başladı. Sanırım bir sonraki sprint'te kapasitemiz ve ne kadarlık iş çıkartabildiğimize dair istatistiki değerler oturmaya başlayacak. Takım olarak hareket etmek oldukça güzel (benim gibi insanları sevmeye birisi için bile). Buradaki çevik takımların isimleri, karakterleri, logoları, duvar kağıtları da var. Oyunlaştırılmış bir deneyimi yaşadığımızı ifade edebilirim. Benim eşleştiğim karakter Ghostbusters'dan Peter Venkman:) Gelelim senin merak ettiğin problemin çözümüne...
 
@@ -58,44 +58,44 @@ Sonrasında ServiceResponseConverter isimli şu sınıfı geliştirmeye başlad�
 
 ```csharp
 public class ServiceResponseConverter
-	: JsonConverter
+    : JsonConverter
 {
-	private readonly Dictionary<string, string> mappings = new Dictionary<string, string>
-	{
-		{"operation_name", "function_name"},
-		{"state", "status"},
-		{"additional_info", "description"},
-		{"time","time"}
-	};
+    private readonly Dictionary<string, string> mappings = new Dictionary<string, string>
+    {
+        {"operation_name", "function_name"},
+        {"state", "status"},
+        {"additional_info", "description"},
+        {"time","time"}
+    };
 
-	public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-	{
-		var instance = Activator.CreateInstance(objectType);
-		var properties = objectType.GetTypeInfo().DeclaredProperties.ToList();
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        var instance = Activator.CreateInstance(objectType);
+        var properties = objectType.GetTypeInfo().DeclaredProperties.ToList();
 
-		var payload = JObject.Load(reader);
-		foreach (var property in payload.Properties())
-		{
-			if (!mappings.TryGetValue(property.Name, out var name))
-				name = property.Name;
+        var payload = JObject.Load(reader);
+        foreach (var property in payload.Properties())
+        {
+            if (!mappings.TryGetValue(property.Name, out var name))
+                name = property.Name;
 
-			var instanceProperty = properties.FirstOrDefault(p => p.CanWrite && p.GetCustomAttribute<JsonPropertyAttribute>().PropertyName == name);
-			instanceProperty?.SetValue(instance, property.Value.ToObject(instanceProperty.PropertyType, serializer));
-		}
+            var instanceProperty = properties.FirstOrDefault(p => p.CanWrite && p.GetCustomAttribute<JsonPropertyAttribute>().PropertyName == name);
+            instanceProperty?.SetValue(instance, property.Value.ToObject(instanceProperty.PropertyType, serializer));
+        }
 
-		return instance;
-	}
+        return instance;
+    }
 
-	public override bool CanWrite => false;
+    public override bool CanWrite => false;
 
-	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-	{
-		throw new NotImplementedException();
-	}
-	public override bool CanConvert(Type objectType)
-	{
-		return objectType.GetTypeInfo().IsClass;
-	}
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        throw new NotImplementedException();
+    }
+    public override bool CanConvert(Type objectType)
+    {
+        return objectType.GetTypeInfo().IsClass;
+    }
 }
 ```
 
@@ -105,19 +105,19 @@ Gördüğün üzere senin örnek JSON içeriklerindeki key değerlerinin eşleş
 [JsonConverter(typeof(ServiceResponseConverter))]
 public class ServiceResponse
 {
-	[JsonProperty("function_name")]
-	public string Operation { get; set; }
-	[JsonProperty("status")]
-	public string State { get; set; }
-	[JsonProperty("description")]
-	public string Info { get; set; }
-	[JsonProperty("time")]
-	public string ProcessingTime { get; set; }
+    [JsonProperty("function_name")]
+    public string Operation { get; set; }
+    [JsonProperty("status")]
+    public string State { get; set; }
+    [JsonProperty("description")]
+    public string Info { get; set; }
+    [JsonProperty("time")]
+    public string ProcessingTime { get; set; }
 
-	public override string ToString()
-	{
-		return $"Operation : {Operation}\nState : {State}\nInfo : {Info}\nProcessing Time : {ProcessingTime}\n";
-	}
+    public override string ToString()
+    {
+        return $"Operation : {Operation}\nState : {State}\nInfo : {Info}\nProcessing Time : {ProcessingTime}\n";
+    }
 }
 ```
 
@@ -126,29 +126,29 @@ Dikkat edersen JsonProperty niteliklerinde mappings listesindeki value adları k
 ```csharp
 static void Main(string[] args)
 {
-	string sample_1 = @"
-					{
-						'operation_name':'Dosya transfer işlemi',
-						'state':'Tamamlandı',
-						'additional_info':'her şey yolunda',
-						'time':'20180404195865'
-					}";
-	string sample_2 = @"
-					{
-						'function_name':'Batch çalıştırma işlemi',
-						'status':'hata aldı',
-						'description':'batch yerinde bulunamamış',
-						'time':'20180404190001'
-					}";
+    string sample_1 = @"
+    {
+        'operation_name':'Dosya transfer işlemi',
+        'state':'Tamamlandı',
+        'additional_info':'her şey yolunda',
+        'time':'20180404195865'
+    }";
+    string sample_2 = @"
+    {
+        'function_name':'Batch çalıştırma işlemi',
+        'status':'hata aldı',
+        'description':'batch yerinde bulunamamış',
+        'time':'20180404190001'
+    }";
 
-	Convert(sample_1);
-	Convert(sample_2);
+    Convert(sample_1);
+    Convert(sample_2);
 }
 
 static void Convert(string payload)
 {
-	var result = JsonConvert.DeserializeObject<ServiceResponse>(payload);
-	Console.WriteLine(result.ToString());
+    var result = JsonConvert.DeserializeObject<ServiceResponse>(payload);
+    Console.WriteLine(result.ToString());
 }
 ```
 

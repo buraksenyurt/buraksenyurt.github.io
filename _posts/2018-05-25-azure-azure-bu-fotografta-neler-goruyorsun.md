@@ -26,12 +26,13 @@ Ancak oyunun kuralları bildiğiniz gibi uzun süre önce değişmeye başladı.
 
 Bugünün gelecek teknolojilerini belirleyen büyük aktörlerin çoğu, bu tip tanıma/tanımlama operasyonlarını sunan servislere sahipler. Google, Amazon, Microsoft, IBM, Facebook ve diğerlerinin başı çektiği bir dünya var artık. Özellikle bulut hesaplamaları alanında hizmet verenlerin sahip olduğu avantajlar yukarıdaki gibi bir senaryonun saniyeler içerisinde gerçeklenmesine de olanak sağlamakta. Bende bu merakla bir şeyler araştırmayı başladım geçenlerde. Pluralsight sağolsun Azure konusundaki çalışmalarıma devam ediyorum. Ufak ufak öğretilerin üzerinden geçerken de neyin nasıl yapıldığını adım adım öğrenmeye çalışıyorum. Bu yazımızda ise uzun zamandır hepimizin varlığından haberdar olduğu Cognitive Services özelliklerinden birisine bakacağız. Azure'un yapay zeka destekli makine öğrenme hizmetlerinden olan Compture Vision enstrümanını kullanarak bir fotoğrafı bizim için nasıl yorumlayableceğini işleyeceğiz.
 
-> Microsoft Cognitive Services temel olarak 5 ana kategoriye ayrılmıştır. Vision, Speech, Language, Knowledge ve Search. Her bir kategori başlığı altında bu alana özgü farklı fonksiyonellikler sunulmaktadır. İlgili listeye [şu adresten](https://azure.microsoft.com/en-us/services/cognitive-services/directory/?v=18.05) bir bakmanızı öneririm.
-> ![comvision_ex.gif](/assets/images/2018/comvision_ex.gif)
+Microsoft Cognitive Services temel olarak 5 ana kategoriye ayrılmıştır. Vision, Speech, Language, Knowledge ve Search. Her bir kategori başlığı altında bu alana özgü farklı fonksiyonellikler sunulmaktadır. İlgili listeye [şu adresten](https://azure.microsoft.com/en-us/services/cognitive-services/directory/?v=18.05) bir bakmanızı öneririm.
+
+![comvision_ex.gif](/assets/images/2018/comvision_ex.gif)
 
 İlk olarak Azure platformunda bu hizmeti kullanabilmek için gerekli hazırlıkları yapıp sonrasında örnek bir kod parçası ile bir kaç fotoğrafı yorumlatacağız. Bir nevi basit How To yazısı olduğunu belirtebilirim.
 
-Azure Plaforumundaki Hazırlıklar
+## Azure Plaforumundaki Hazırlıklar
 
 İşe Azure Platformu üzerindeki hazırlıklarla başlamamız gerekiyor. Bu aşamada sizlerin Azure hesaplarınız olduğunu kabul ediyorum. Yapmamız gereken arabirimi kullanarak Cognitive Services kısmına ulaşmak. All services penceresinden aratma usulü ile bulabiliriz.
 
@@ -59,7 +60,7 @@ F0 seçiminden sonra kaynağı oluşturabiliriz.
 
 İstemci tarafından servise gelirken KEY 1 değerine ihtiyacımız olacak.
 
-İstemci Tarafının Geliştirilmesi
+## İstemci Tarafının Geliştirilmesi
 
 Portal tarafındaki kaynak hazırlıklarımız artık tamamlanmış durumda. Şimdi basit bir istemci uygulaması ile söz konusu servisi deneyimleyebiliriz. Ben örnek kod parçasını Visual Studio Code üzerinde C# kullanarak yazacağım. Console tipinden bir program yeterli olacaktır. Ancak farklı programlama dillerini kullanmamız da mümkün. Ruby, Java, PHP ve diğer desteklenen dillerle geliştirme yapabiliriz. Öncelikle işe aşağıdaki komut satırı ile başlayalım.
 
@@ -125,7 +126,7 @@ Aslında Computer Vision bir REST API servisi. Dolayısıyla uygun HTTP çağrı
 
 Kodun takip eden kısmında fotoğrafın byte tipinden içeriğine ihtiyacımız var. Nitekim servise bu içeriği göndermemiz gerekiyor. FileStream ve BinaryReader sınıflarından yararlanarak içeriği yakaladıktan sonra bir ByteArrayContent nesnesi örnekliyoruz. Bu nesnenin içerik tipini belirtmek önemli. Örnekte application/octet-stream türünden bir içerik kullanıldığı belirtilmekte. Talebi awaitable PostAsync metodu ile yolluyoruz. İlk parametre EndPoint ve ikinci parametrede fotoğraf içeriğini taşımakta. Sonuçlar response nesne örneği üzerinden ReadAsStringAsync fonksiyonu ile yakalanıp ekrana basılmakta. Analyze foksiyonu asnekron çalışan bir metod. Bu nedenle çalışma zamanında fotoğraflardan hangisi için cevap döndüyse ona ait JSON içeriği basılıyor. İşlemeye çalıştığımız sırada değil de bittikçe JSON çıktılarını alacağımızı ifade edebiliriz.
 
-Sonuçlar
+## Sonuçlar
 
 Hemen örnek fotoğrafların sonuçlarna bir bakalım. Çok heyecanlı değil mi?:) Öncelikli olarak bize deneme için bir kaç fotoğraf gerekiyor. Internetten test amaçlı farklı tiplerde fotoğraflar buldum. İlk sırada turuncu sakallı bir Lego manyağı var:P İkinci sırada masa başında bir çok insanın bulunduğu bir tartışma ortamı yer alıyor. Üçüncü sırada son Star Wars filminden sevdiğim bir kare var. Özellikle Computer Vision servisinin Yoda'yı nasıl yorumlayacağını çok merak ediyorum. Acaba ona usta yoda'yı öğretmişler midir? Devam eden fotoğraftaki beklentim ise park yapan araca yaslanmış bir şekilde ayakta duran kadının bulunup bulunamayacağı. 5nci fotoğrafı bilhassa koydum. Gerçek dünayadan olmayan bir çizgi. Bakalım karşı tarafın tepkisi ne olacak? Son fotoğrafımız ise başta konuştuğumuz içeriğe sahip.
 
@@ -255,14 +256,13 @@ Servisin kullanımına ilişkin bir takım çalışma zamanı bilgilerini portal
 
 ![comvision_7n.gif](/assets/images/2018/comvision_7n.gif)
 
-Görüldüğü üzere Azure'un Cognitive servislerinden olan Computer Vision'ı kullanarak fotoğraflar ile ilgili bir takım bilgileri hesaplatmak oldukça kolay. Söz gelimi yoğun fotoğraf kullanan bir katalog sisteminde fotoğrafların tag bilgilerinin otomatik olarak çıkartılmasında bu hizmet pekala işe yarayabilir. Arka plandaki AI+ML işbirlikteliği daha da güçlendikçe fotoğrafların yorumlanması daha da iyileşecektir. Örneğin bir kamera görüntüsündeki olası saldırganın otomatik olarak tespit edildiğini bir düşünsenize (Aslında ben bu cümleyi yazarken böyle bir şeyin yapılmadığından emin değilim. Yapılıyor da olabilir. Araştırmam lazım) Azure tarafında Computer Vision servisinin pek çok gelişmiş fonksiyonu bulunuyor. Bu fonksiyonlarla resimlerin sınıflandırılması, tanımlanması, thumbnail formatlarının oluşturulması, taxonomy (SEO tarafında önem arz eden bir konudur ve yazının hazırlandığı tarih itibariyle Microsoft 86 kategori başlığından bahsediyordu) veya domain bazında kategorilendirilmesi, clip-art statüsünde olup olmadıklarının berlilenmesi, elle çizilip çizilmediklerinin anlaşılması, cinsel içerik içermediğinin tespit edilmesi ve daha bir çok şey mümkün. İlerleyen zamanlarda elbette yeni fonksiyonellikler de eklenecektir. Dilerseniz siz bu örnekten yararlanarak kendi fotoğraf albümlerinizden seçtiğiniz görüntüleri Computer Vision'a yorumlatmayı deneyebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Görüldüğü üzere Azure'un Cognitive servislerinden olan Computer Vision'ı kullanarak fotoğraflar ile ilgili bir takım bilgileri hesaplatmak oldukça kolay. Söz gelimi yoğun fotoğraf kullanan bir katalog sisteminde fotoğrafların tag bilgilerinin otomatik olarak çıkartılmasında bu hizmet pekala işe yarayabilir. Arka plandaki AI+ML işbirlikteliği daha da güçlendikçe fotoğrafların yorumlanması daha da iyileşecektir. Örneğin bir kamera görüntüsündeki olası saldırganın otomatik olarak tespit edildiğini bir düşünsenize (Aslında ben bu cümleyi yazarken böyle bir şeyin yapılmadığından emin değilim. Yapılıyor da olabilir. Araştırmam lazım) 
 
-### Kaynaklar:
+Azure tarafında Computer Vision servisinin pek çok gelişmiş fonksiyonu bulunuyor. Bu fonksiyonlarla resimlerin sınıflandırılması, tanımlanması, thumbnail formatlarının oluşturulması, taxonomy (SEO tarafında önem arz eden bir konudur ve yazının hazırlandığı tarih itibariyle Microsoft 86 kategori başlığından bahsediyordu) veya domain bazında kategorilendirilmesi, clip-art statüsünde olup olmadıklarının berlilenmesi, elle çizilip çizilmediklerinin anlaşılması, cinsel içerik içermediğinin tespit edilmesi ve daha bir çok şey mümkün. İlerleyen zamanlarda elbette yeni fonksiyonellikler de eklenecektir. Dilerseniz siz bu örnekten yararlanarak kendi fotoğraf albümlerinizden seçtiğiniz görüntüleri Computer Vision'a yorumlatmayı deneyebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-[Cognitive Services (DevNot'tan)](http://devnot.com/2017/microsoft-cognitive-services-computer-vision-api/)
+## Kaynaklar
 
-[Microsoft'un Quickstart Dokümanı](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts/csharp)
-
-[Microsoft'un How To Call Vision Api Dokümanı](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi)
-
-[Computer Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)
+- [Cognitive Services (DevNot'tan)](http://devnot.com/2017/microsoft-cognitive-services-computer-vision-api/)
+- [Microsoft'un Quickstart Dokümanı](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts/csharp)
+- [Microsoft'un How To Call Vision Api Dokümanı](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi)
+- [Computer Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)

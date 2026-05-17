@@ -264,7 +264,7 @@ Yazıyı sonlandırmadan önce aşağıdaki ekran görüntüsüne bir bakalım i
 
 Dikkatinizi çeken bir şeyler mutlaka var değil mi? Her şeynde önce orada küçük bir uçak figürü var. Ayrıca "1 pending" şeklinde bir ifade de bulunuyor. İşin aslı mocha paketi içerisine testi eğlenceli hale getirmek için konulmuş bir düzeneğin sonucu olarak bir uçak figürü var. Hatta uçak figürünün olduğu yer uçak pistimiz:) Peki bu nasıl mümkün oldu? Peki uçağın rengi neden kırmızı. Acaba tüm testler yeşil ışık yakarsa rengi değişecek mi? İşte size güzel biraz araştırma konusu. Uçağın nasıl çıktığna dair bir ipucu fotoğrafta var. Onu nereye yazacağınızı da bulmanız gerekiyor tabii. "1 pending" ise geçici süreliğine atlanan bir test durumu için oluştu. Bunun için de it metodunun arkasından gelebilecek fonksiyonellikleri araştırmakta yarar var. Haydi kolay gelsin.
 
-Test Sonuçlarını Tarayıcıda Göstermek
+## Test Sonuçlarını Tarayıcıda Göstermek
 
 Şimdi aşağıdaki ekran görüntüsüne bakmanızı rica ediyorum.
 
@@ -365,6 +365,5 @@ Pek tabii mevzu benim burada anlattığım kadar yalın değil. Yapılabilecek b
 
 ### Kaynaklar
 
-[https://github.com/shouldjs/should.js/](https://github.com/shouldjs/should.js/)
-
-[https://mochajs.org/](https://mochajs.org/)
+- [https://github.com/shouldjs/should.js/](https://github.com/shouldjs/should.js/)
+- [https://mochajs.org/](https://mochajs.org/)

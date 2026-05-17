@@ -26,7 +26,7 @@ Neyse ki sonunda doğru yolu buldum ve bu tip bir araştırma senaryosunda termi
 
 Node.js tarafında anlaşılması en zor konulardan birisinin akımlar (stream olarak telafüz edelim) olduğu söyleniyor. Özellikle event ve multi-process gibi kavramlarla yakın temas içerisinde. Okuduğum kaynaklar ve izlediğim Pluralsight eğitimlerine göre performans konusunda dikkat edilmesi gereken ve önemli özellikler barındıran bir mevzu. Özellikle büyük veri ile çalışan bir web sunucusu söz konusu ise stream nesnelerinin pipe mekanizması ile birlikte kullanılması tercih edilmeli. Gelin ne demek istediğimi benden daha iyi özetleyecek basit bir örnek ile konuya giriş yapalım.
 
-Örnek Dosyanın Oluşturulması
+## Örnek Dosyanın Oluşturulması
 
 Yapmak istediğim aynen kaynaklarda tariflendiği üzere dosya hizmeti veren bir web sunucusu oluşturmaktı. Performans farklılıklarını canlı görebilmek için en az bir dosyaya ve bunun farklı boyutlardaki hallerini ele alan senaryolara ihtiyacım vardı. Büyük boyutlu bir dosya bulmakla neden uğraşayım ki? Pekala içi anlamsız verilerle dolu bir dosyayı kendim oluşturabildim. İşe aşağıdaki kodlarla başladım.
 
@@ -45,7 +45,7 @@ fs (Temel IO işlemleri için kullanıyoruz diyebilirim) modülünün kullanıld
 
 ![piping_0.gif](/assets/images/2018/piping_0.gif)
 
-Problem Çıkartalım
+## Problem Çıkartalım
 
 İlk hedef bu dosyayı bir web sunucusu üzerinden sunmak. Yani istemcilerin göndereceği bir HTTP talebine göre kendilerine bu dosya içeriğini göndereceğimiz anlamısız bir senaryomuz var. Aslında kodun yapacağı iş oldukça basit. Sunucuya gelen talep sonrası ilgili dosyayı okumak ve istemciye paslamak. Aşağıdaki kod parçası bu işi görebilir.
 
@@ -76,7 +76,7 @@ Aynen kaynaklarda bahsedildiği gibi olmuştu. Sunucu açık ve istemci curl kom
 
 Burada gözle görülür bir performans sıkıntısı olduğu ortada. Sadece tek bir dosya için gönderilmiş bir talep var ancak n sayıda talebin gelmesi ve küçük boyutlarda olsalar bile onlarca, yüzlerce dosyanın sunulacağı bir sistem için çok daha büyük sorunlar oluşması pekala mümkün.
 
-Pipe Kullanımı
+## Pipe Kullanımı
 
 İşte bu noktada pipe fonksiyonu ile karşılaşılıyor. Çok temel olarak kaynak ve hedef arasında tek veya çift yönlü bir boru hattının oluşturulmasına yarayan ama enteresan avantajlar sunan bir fonksiyondan bahsediyoruz aslında. Bu fonksiyon, açılan kanal üzerinden verilerin akışını sağlıyor ancak bi farkla; kendisi stream nesne örneklerine uygulanabiliyor ve verinin tamamının belleğe alınması yerine belli boyutlarda parçalanarak kullanılmasına olanak sağlıyor. Örneğin 1.2 Gb'lık devasa bir dosyanın tamamen belleğe alınıp işlenmesi yerine küçük parçalar haline (chunk) bölünerek ele alınmasını sağlıyor (Bunu nasıl yapabileceğini bir düşünün derim. Yani siz böyle bir fonksiyon yazmaya çalışsanız nasıl yazardınız?) pipe için şöyle bir ifade doğru olacaktır.
 
@@ -104,7 +104,7 @@ Testi tekrar yaptığımda West-World'te ortam gayet sakin görünmekteydi. Önc
 
 Veriler yine okunuyordu ancak sunucunun bellek tüketiminde gözle görülür önemli bir artış olmamıştı. Hatta neredeyse hiç olmamıştı.
 
-Pipe Yerine Event Kullanımı
+## Pipe Yerine Event Kullanımı
 
 Bir önceki örnekte yer alan pipe fonksiyonu yerine olay bazlı kurgulama ile de aynı senaryo çalıştırılabilir. Hatta bu durumda olay fonksiyonlarındaki parametrelerin gücünden de yararlanılabilir. Kodları aşağıdaki gibi düzenleyerek testlere devam ettim. Ancak öncesinde üzerinde çalışacağım dosya boyutunu epeyce küçülttüm. Nitekim buffer kullanacağım için bu veri kümelerini (chunk) izleyebilmek istiyordum (Burada böyle yazıyorum çünkü önce bir kaç deneme yaptım. Baktım terminalden parçaları göremiyorum, üzerinde çalışacağım dosya boyutunu küçülttüm)
 
@@ -142,7 +142,7 @@ Dikkat edileceği üzere source nesnesi yine okunabilir stream örneği olarak b
 
 Dikkat edileceği üzere bellek kullanımında yine önemli bir sıkıntı görülmüyor.
 
-Limitleri Zorlayalım
+## Limitleri Zorlayalım
 
 Peki ya dosya boyutu baya baya büyük olsaydı. Kaynaklarda bahsedilen 2Gb sınırını merak ediyordum aslında. Özellikle bu değer için readFile'ın cevap vermediği ifade ediliyordu. Bu nedenle saçma veriler içeren dosya boyutunu 2Gb'ın üstüne çıkarttım.
 
@@ -156,7 +156,7 @@ Görüldüğü üzere dosya boyutu olası Buffer boyutunun üzerindeydi. Bu sebe
 
 ![piping_7.gif](/assets/images/2018/piping_7.gif)
 
-Diğer Kullanışlı Bilgiler
+## Diğer Kullanışlı Bilgiler
 
 Bitirmeden önce bir kaç teknik bilgi daha vermeye çalışayım (Anladığım kadarıya tabii) Node.js ile birlikte gelen bir çok standart stream enstrümanı söz konusu. Bunları iki ana kategoriye ayırmak mümkün. Okuma amaçlı kullanılanlar (readable streams) ve yazma amaçlı (writable streams) kullanılanlar. Sonuç itibariyle bir kaynaktan veri okuma veya bir hedefe veri yazma işleri bu kapsamlara giriyor. Bazı node.js türleri ise her iki rolü birden üstlenebiliyor. TCP soketleri, sıkıştırma kütüphanesi (zlib) ve şifreleme nesneleri her iki rolü üstlenen aktörlerden.
 
@@ -172,8 +172,9 @@ veli.pipe(ayşe).pipe(hakan).pipe(levent) 
 
 ## Kaynaklar
 
-[Basic of Node.js Streams](https://www.sitepoint.com/basics-node-js-streams/)
-[Node.js Offical Documentation](https://nodejs.org/api/stream.html)[The Definitive Guide of Object Streams in Node.js](https://community.risingstack.com/the-definitive-guide-to-object-streams-in-node-js/)
-[Free Code Camp](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93)
-[W3School](https://www.w3schools.com/nodejs/ref_stream.asp)
-[Events and Streams in Node.js](https://codeburst.io/basics-of-events-streams-and-pipe-in-node-js-b84578c2f1be)
+- [Basic of Node.js Streams](https://www.sitepoint.com/basics-node-js-streams/)
+- [Node.js Offical Documentation](https://nodejs.org/api/stream.html)
+- [The Definitive Guide of Object Streams in Node.js](https://community.risingstack.com/the-definitive-guide-to-object-streams-in-node-js/)
+- [Free Code Camp](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93)
+- [W3School](https://www.w3schools.com/nodejs/ref_stream.asp)
+- [Events and Streams in Node.js](https://codeburst.io/basics-of-events-streams-and-pipe-in-node-js-b84578c2f1be)

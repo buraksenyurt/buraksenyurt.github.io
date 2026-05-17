@@ -104,7 +104,7 @@ Kodun son kısmında yer alan ve ipcMain nesnesi üzerinden çağırılan btncli
 
 Gelelim index.html ve index.js içeriklerine.
 
-```text
+```html
 <!DOCTYPE html>
 <html>
 
@@ -201,4 +201,7 @@ Mutluluk!!!
 
 West-World üzerinde electron kullanarak geliştirilen Chromium tabanlı bir masaüstü uygulamasını, hem Windows hem de MacOS'da sorunsuz şekilde çalıştırabildim. Üstelik çok az eforla. Cross-Platform adına Xamarin sonrası gördüğüm önemli çatılardan birisi oldu electron. Özellikle işin arkasında GitHub'ın olması, açık kaynak topluluk desteği, versiyonlardaki sürekli kararlılık, node.js'in gücü, HTML ve CSS kullanarak aynen web uygulaması geliştiriyormuşçasına ilerleyebilme imkanı cezbedici unsurlar diye düşünüyorum. Evdeki Linux, şirketteki Windows, komşudaki MacOS. Hepsinde github reposundan çekip çalıştırdığım aynı arayüze sahip masaüstü uygulamaları koşuyor. Eğer bunu paketleyerek dağıtmayı da öğrenirsem pek şukela olacak diye düşünüyorum. Ben bunu araştırıyorken siz de boş durmayın öğrenin. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-[Ayrıca electron ile ilgili Tutorial tadındaki örnek kodlara github'dan ulaşabilirsiniz](https://github.com/buraksenyurt/electron)[Bu uygulama kodlarını da buradan klonlayabilirsiniz (Day09)](https://github.com/buraksenyurt/nodejs-tutorials)[Electron Github projesi](https://github.com/electron)[Eğer bir sonraki adım ne olmalı derseniz ben şuradaki yazıyı takip edeceğim derim](https://codeburst.io/build-a-todo-app-with-electron-d6c61f58b55a)
+- [Ayrıca electron ile ilgili Tutorial tadındaki örnek kodlara github'dan ulaşabilirsiniz](https://github.com/buraksenyurt/electron)
+- [Bu uygulama kodlarını da buradan klonlayabilirsiniz (Day09)](https://github.com/buraksenyurt/nodejs-tutorials)
+- [Electron Github projesi](https://github.com/electron)
+- [Eğer bir sonraki adım ne olmalı derseniz ben şuradaki yazıyı takip edeceğim derim](https://codeburst.io/build-a-todo-app-with-electron-d6c61f58b55a)

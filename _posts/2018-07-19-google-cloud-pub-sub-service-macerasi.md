@@ -38,7 +38,7 @@ Temel olarak bu hizmeti şu şekilde ifade edebiliriz; Uygulamalar arasında gü
 
 Bu teorik bilgiyi pekiştirmek ve özellikle bunu West-World gibi Ubuntu tabanlı bir dünyada,.Net Core,Go,Ruby, Python, Node.js gibi dilleri kullanarak deneyimlemek benim için önemliydi. Ana amacım Google Cloud Platform'da Pub/Sub servisini belli bir proje için etkinleştirmek ve sonrasında.Net Core tarafında belli bir topic için mesaj yayınlayıp bu mesajı okuyabilmek. Zaten Google Cloud Platform açısından amaç da bu. Uygulamalar arasında güvenilir bir hat üzerinden mesaj akışına izin veren yüksek performanslı tamamen asenkron çalışan bir boru hattı (pipeline) Öyleyse gelin adım adım ilerleyerek konuyu anlamaya çalışalım.
 
-gCloud ile İlk Deneyim
+## gCloud ile İlk Deneyim
 
 Google bu konu ile ilişkili oldukça zengin ve basit öğreti dökümanları sunmakta (Diğer bulut bilişim sistemlerinde olduğu gibi) Bende ilgili dokümanları takip ettim ve ilk olarak gCloud aracını kullanarak var olan bir Google projemde Publisher/Subscriber modelini deneyimlemeye çalıştım. my-starwars-game-project isimli projemi seçtikten sonra Google Console-> API sekmesinden Enable APIS and Services linkine tıklayarak ilerledim. Big Data kısmında yer alan Google Cloud Pub/Sub API hizmetini seçip
 
@@ -97,7 +97,7 @@ gcloud pubsub topics delete codeTopic
 gcloud pubsub subscriptions delete westworldSubscription
 ```
 
-.Net Core Tarafı
+## .Net Core Tarafı
 
 Gelelim kod tarafına. Komut satırından çalışırken West-World üzerinden gCloud aracılığıyla topic oluşturabileceğimi, bu topic için bir abonelik kullanabileceğimi ve mesaj gönderip okuyabileceğimi öğrenmiştim. Pek tabii bunu bir program kodu ile nasıl yapabileceğimi de keşfetmem gerekiyordu. İlk olarak West-World'ün en sevilen sakinlerinden olan Visual Studio Code'un kapısını çaldım. Ondan bana basit bir Console projesi açmasını istedim.
 

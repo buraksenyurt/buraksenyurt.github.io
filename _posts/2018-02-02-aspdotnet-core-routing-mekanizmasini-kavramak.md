@@ -37,7 +37,7 @@ dotnet add package Microsoft.AspNetCore.All
 dotnet restore
 ```
 
-MapGet Örnekleri
+## MapGet Örnekleri
 
 İlk kod parçasında path bilgisine özel olarak gelen HTTP Get taleplerini nasıl ele alabileceğimize bakacağız. Programımıza aşağıdaki kod parçalarını ekleyerek devam edelim.
 
@@ -103,9 +103,9 @@ namespace RouterSamples
 }
 ```
 
-Aslında web, web api veya mvc projesi açsak da benzer kurgu ile karşılaşacağız. Sonuçta belli bir adrese gelen HTTP taleplerini dinleyip bunlara karşılık cevap verecek olan bir web sunucusu yazıyoruz. Dolayısıyla işin başlangıç noktası WebHostBuilder sınıfı. Fluent yapısı sayesinde bir metod zinciri ile belirli özelliklerini etkinleştiriyoruz. Kestrel web motorunun kullanılacağını, localhost:4001 adresinden dinlemede kalınacağını, başlangıç ayarları için Booster sınıfına bakılacağını vs...En nihayetinde de Build ve Run çağrıları ile sunucunun ayağa kaldırılması. Gayet sade, yalın, anlaşılır. Çok sevdiğim bir yapı.
+Aslında web, web api veya mvc projesi açsak da benzer kurgu ile karşılaşacağız. Sonuçta belli bir adrese gelen HTTP taleplerini dinleyip bunlara karşılık cevap verecek olan bir web sunucusu yazıyoruz. Dolayısıyla işin başlangıç noktası WebHostBuilder sınıfı. Fluent yapısı sayesinde bir metod zinciri ile belirli özelliklerini etkinleştiriyoruz. Kestrel web motorunun kullanılacağını, `localhost:4001` adresinden dinlemede kalınacağını, başlangıç ayarları için Booster sınıfına bakılacağını vs...En nihayetinde de Build ve Run çağrıları ile sunucunun ayağa kaldırılması. Gayet sade, yalın, anlaşılır. Çok sevdiğim bir yapı.
 
-Tabii bizim odak noktamız daha çok Booster sınıfının içeriği. ConfigureServices metodunda route tanımlamaları ile ilgilenecek servisi devreye alıyoruz. Configure fonkisyonunda ise yazımıza konu olan route mekanizmalarının ilk üç örneği bulunuyor. MapGet operasyonunun ilk kullanımında doğrudan http://localhost:4001 talebine karşılık vermekteyiz. İçerik tipinin HTML olacağını Header bilgisine eklerken takip eden WriteAsync çağrısında da örnek bir içerik basıyoruz. Bir sonraki MapGet kullanımında ise http://localhost:4001/green/mile adresine gelen talebi ele almaktayız. Bu sefer bir öncekinden farklı olarak ilk parametrede path bilgisi verildiğine dikkat edelim. Yine bir HTML içeriği basıyoruz. Son çağrıda ise * karakterinin kullanıldığı görülmekte. Yani ilk iki path bilgisinden farklı bir adresle talep gelirse ne yapılacağı ele alınıyor. Örneğin http://localhost:4001/nowhere adresine ait talep bu fonksiyonla karşılanacak.
+Tabii bizim odak noktamız daha çok Booster sınıfının içeriği. ConfigureServices metodunda route tanımlamaları ile ilgilenecek servisi devreye alıyoruz. Configure fonkisyonunda ise yazımıza konu olan route mekanizmalarının ilk üç örneği bulunuyor. MapGet operasyonunun ilk kullanımında doğrudan `http://localhost:4001` talebine karşılık vermekteyiz. İçerik tipinin HTML olacağını Header bilgisine eklerken takip eden WriteAsync çağrısında da örnek bir içerik basıyoruz. Bir sonraki MapGet kullanımında ise `http://localhost:4001/green/mile` adresine gelen talebi ele almaktayız. Bu sefer bir öncekinden farklı olarak ilk parametrede path bilgisi verildiğine dikkat edelim. Yine bir HTML içeriği basıyoruz. Son çağrıda ise * karakterinin kullanıldığı görülmekte. Yani ilk iki path bilgisinden farklı bir adresle talep gelirse ne yapılacağı ele alınıyor. Örneğin `http://localhost:4001/nowhere` adresine ait talep bu fonksiyonla karşılanacak.
 
 MapGet fonksiyonunun ilk parametresi path bilgisini kullanırken ikinci parametre RequestDelegate tipinden bir temsilci. Bu temsilcinin aldığı parametreden yararlanarak Request ve Response nesnelerine müdahale etmemiz mümkün. Header bilgisine ilaveler yapmak/okumak, url parametrelerini değerlendirmek, içeriği değiştirmek bunlara örnek olarak verilebilir. Temel olarak Request, Response bloklarını HTTP Path bazında değerlendirdiğimizi ifade edebiliriz.
 
@@ -126,13 +126,13 @@ MapGet çağrılarında varsayılan değerleri ele almakta mümkün. Aynı kodun
 ```csharp
 rootBuilder.MapGet("whatyouwant/{wanted=1 Bitcoin please}", (context) =>
 {
-	var values = context.GetRouteData().Values;
-	context.Response.Headers.Add("Content-Type", "text/html; charset=utf-8");
-	return context.Response.WriteAsync($"İstediğin şey bu.<h2>{values["wanted"]}</h2>OLDU BİL :)");
+    var values = context.GetRouteData().Values;
+    context.Response.Headers.Add("Content-Type", "text/html; charset=utf-8");
+    return context.Response.WriteAsync($"İstediğin şey bu.<h2>{values["wanted"]}</h2>OLDU BİL :)");
 });
 ```
 
-Bu kez http://localhost:4001/whatyouwant/something benzeri talepleri karşılıyoruz. Dikkat edilmesi gereken husus {} içeriği. Burada wanted isimli bir değişken tanımladık. Aslında bu değişken içeriği GetRouteData ().Values ile elde edilen listede yer alıyor. Bu nedenle HTML çıktısını üretirken ["wanted"] şeklinde erişerek kullanıcının path'e yazdığı değişken bilgisini yakalayabiliyoruz. = sonrası yapılan 1 Bitcoin please ataması ise varsayılan değer oluyor. Buna göre aşağıdaki iki farklı kullanım da geçerli. İlkinde kullanıcının path içerisine koyduğu örnek bir wanted değişkeni var.
+Bu kez `http://localhost:4001/whatyouwant/something` benzeri talepleri karşılıyoruz. Dikkat edilmesi gereken husus {} içeriği. Burada wanted isimli bir değişken tanımladık. Aslında bu değişken içeriği GetRouteData ().Values ile elde edilen listede yer alıyor. Bu nedenle HTML çıktısını üretirken ["wanted"] şeklinde erişerek kullanıcının path'e yazdığı değişken bilgisini yakalayabiliyoruz. = sonrası yapılan 1 Bitcoin please ataması ise varsayılan değer oluyor. Buna göre aşağıdaki iki farklı kullanım da geçerli. İlkinde kullanıcının path içerisine koyduğu örnek bir wanted değişkeni var.
 
 ![coreRouting_4.gif](/assets/images/2018/coreRouting_4.gif)
 
@@ -140,7 +140,7 @@ Eğer parametre girmessek de aşağıdaki sonuçla karşılaşırız.
 
 ![corerouting_5.gif](/assets/images/2018/corerouting_5.gif)
 
-Varsayılan Handler'ı Kurcalamak
+## Varsayılan Handler'ı Kurcalamak
 
 Şimdi ikinci örneğimize geçelim. Bu kez varsayılan HTTP Handler davranışına müdahale edeceğiz. Örnek olarak /products/books path'ine gelen taleplere karşılık çeşitli kitap bilgileri içeren bir JSON içeriği basacağız (Alın size REST bazlı Data Service yolu) Bunun dışındaki talepler içinde sıradan bir HTML sayfası göstereceğiz. İlk senaryo bir nevi Web API simülasyonu gibi olacak. Gelin vakit kaybetmeden kodlarımızı yazalım.
 
@@ -220,7 +220,7 @@ ve kitaplarımız.
 
 ![CoreRouting_7.gif](/assets/images/2018/CoreRouting_7.gif)
 
-URL Dizilimini Kodla İnşa Etmek
+## URL Dizilimini Kodla İnşa Etmek
 
 Gelelim bu yazımızda ele alacağımız son örneğe. Bu kez URL dizilimini kod tarafında oluşturmaya çalışacağız. BoosterV3 sınıfının kodlarını programa aşağıdaki gibi entegre edebiliriz.
 
@@ -299,19 +299,19 @@ namespace RouterSamples
 }
 ```
 
-Configure metodu içerisinde bu kez farklı şeyler söz konusu. İlk olarak apiSegment ve serviceNameSegment isimli iki TemplateSegment örneği oluşturuluyor. İlki Literal tipindeyken ikincisi parametre türünden. Yani http://localhost:4001/api/collateral gibi bir path için api ifadesinin Literal olduğunu, collateral parçasının ise değişken türde parametre olduğunu ifade edebiliriz. serviceName isimli bu parametre'den sonra başka bir path içeriğinin geçerli olmayacağını isCatchAll'a atanan false değeri ile belirtiyoruz (true atayarak takip edecek path bildirimlerini uzatabilirsiniz) Ayrıca api ifadesinden sonra böyle bir değişken gelmek zorunda değil (isOptional=true nedeniyle) Varsayılan bir değeri de bulunmuyor.
+Configure metodu içerisinde bu kez farklı şeyler söz konusu. İlk olarak apiSegment ve serviceNameSegment isimli iki TemplateSegment örneği oluşturuluyor. İlki Literal tipindeyken ikincisi parametre türünden. Yani `http://localhost:4001/api/collateral` gibi bir path için api ifadesinin Literal olduğunu, collateral parçasının ise değişken türde parametre olduğunu ifade edebiliriz. serviceName isimli bu parametre'den sonra başka bir path içeriğinin geçerli olmayacağını isCatchAll'a atanan false değeri ile belirtiyoruz (true atayarak takip edecek path bildirimlerini uzatabilirsiniz) Ayrıca api ifadesinden sonra böyle bir değişken gelmek zorunda değil (isOptional=true nedeniyle) Varsayılan bir değeri de bulunmuyor.
 
 Tanımlanan bu iki segmentin ardışıl olarak işe yaraması için bir dizide konuşlandırılması da gerekiyor. segments değişkeni burada devreye girmekte. Talebin karşılandığı yer Use fonksiyonu. Aslında UseMvc metodundan tanıdık gelmiş olabilir. Generic Func temisilcilerini ve Task tipini kullanan bu fonksiyon awaitable operasyonlar içerebilir. Bu nedenle istemciye cevaplar gönderilirken ve Middleware'deki bir sonraki bloğa geçilirken await anahtar kelimesi kullanılmakta. İçeride TemplateMatcher nesne örneği kullanılarak talep olarak gelen adresin geçerli bir segment bileşimi olup olmadığına bakılıyor. Dolayısıyla burada gelen bilginin istenen şablona uygunluğuna göre bir içerik üretimi sağlanabilir. Biz örneğimizde sadece talebin şablona uygun olup olmadığına bakıyoruz. Çalışma zamanı sonuçları aşağıdaki gibi olacaktır.
 
-http://localhost:4001/api adresine yapılan çağrı sonrası
+`http://localhost:4001/api` adresine yapılan çağrı sonrası
 
 ![coreRouting_8.gif](/assets/images/2018/coreRouting_8.gif)
 
-Dikkat edileceği üzere karşılaştırma true dönmüştür. http://localhost:4001/api/wather gibi bir çağrı da geçerlidir. Nitekim belirtilen şablona uygundur. Ki bu sefer serviceName değişkeni de yakalanabilmiştir.
+Dikkat edileceği üzere karşılaştırma true dönmüştür. `http://localhost:4001/api/wather` gibi bir çağrı da geçerlidir. Nitekim belirtilen şablona uygundur. Ki bu sefer serviceName değişkeni de yakalanabilmiştir.
 
 ![CoreRouting_9.gif](/assets/images/2018/CoreRouting_9.gif)
 
-Ama tabii şablona uymayan bir path bilgisi için eşleşme false değer dönecektir. Söz gelimi http://localhost:4001/api/weather/v2/soap11 veya http://localhost:4001/rest/collateral için...
+Ama tabii şablona uymayan bir path bilgisi için eşleşme false değer dönecektir. Söz gelimi `http://localhost:4001/api/weather/v2/soap11` veya `http://localhost:4001/rest/collateral` için...
 
 ![CoreRouting_10.gif](/assets/images/2018/CoreRouting_10.gif)
 

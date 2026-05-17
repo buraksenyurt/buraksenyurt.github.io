@@ -16,11 +16,9 @@ tags:
 categories:
   - Web Programlama
 ---
-Kısa bir süre önce çalışmakta olduğum şirkette epey eğlenceli bir mevzunun içerisinde kaldım. Daha önceden de bahsettiğim gibi kurumumuzun bize sunduğu güzel bir hizmet var...[Pluralsight](https://www.pluralsight.com/). Ne var ki benim gibi dikkatsiz kullanıcılar için enteresan şeyler olabiliyor. İzin verin hikayeyi size anlatayım; İlk hedefim oldukça hoşuma giden Node.js tarafında ilerlemekti.
+Kısa bir süre önce çalışmakta olduğum şirkette epey eğlenceli bir mevzunun içerisinde kaldım. Daha önceden de bahsettiğim gibi kurumumuzun bize sunduğu güzel bir hizmet var...[Pluralsight](https://www.pluralsight.com/). Ne var ki benim gibi dikkatsiz kullanıcılar için enteresan şeyler olabiliyor. İzin verin hikayeyi size anlatayım; İlk hedefim oldukça hoşuma giden Node.js tarafında ilerlemekti. Bu amaçla kendime çizdiğim kariyer yolunda (aslında Pluralsight Path demek daha doğru olur) bir takım Node.js eğitimlerini izlemeye başladım. Hatam bu eğitimlerin tarihlerine pek dikkat etmiyor oluşumdu. Öyle ki eğitimde sözü geçen bir npm modülü pekala eskimiş olabilirdi.
 
 ![node_with_pug_3.jpg](/assets/images/2018/node_with_pug_3.jpg)
-
-Bu amaçla kendime çizdiğim kariyer yolunda (aslında Pluralsight Path demek daha doğru olur) bir takım Node.js eğitimlerini izlemeye başladım. Hatam bu eğitimlerin tarihlerine pek dikkat etmiyor oluşumdu. Öyle ki eğitimde sözü geçen bir npm modülü pekala eskimiş olabilirdi.
 
 O hafta izlediğim eğitim serisi Node.js ile web programlama üzerineydi. Express ile işin içerisine girdikten sonra bir takım yardımcı çatılardan daha bahsedilmeye başlandı. Derken HTML'in sıkıcı olan o açısal ayraçlarından bizi kurtaran Jade isimli bir paketle karşılaştım. İnanılmaz hoşuma gitti. Nerden bilebilirdim aslında onun adının sonradan Pug olarak değiştirildiğinden ve hatta çalıştığım kurumun yeni nesil.Net projelerinde bu ürünü kullandığından:)
 
