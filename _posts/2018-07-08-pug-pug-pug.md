@@ -69,7 +69,7 @@ html
 
 Şimdi işler biraz değişti değil mi? En azından bir farkındalık oluştu. Normalde yukarıdaki içeriğin görüntülenmesi için klasik ve bilinen yöntemlerle aşağıdakine benzer bir HTML dosyası hazırlanır.
 
-```text
+```html
 <html>
 
 <head>
