@@ -44,6 +44,7 @@ Bu kitapları da şiddetle tavsiye ederim. Orta seviyeye kadar Raspberry PI ve P
 - --help - Bir komutun kullanımı hakkında bilgi verir.
 - man [Komut Adı] - Bu ise ilgili komut hakkındaki yardım dokümanına ulaşmamızı sağlar.
 - apt-get - Bu komutu sistemi güncellemek ve uygulama yüklemek için kullanabiliriz. Örnek olarak VLC isimli bir media player yüklemişim ama bunu yapmadan önce sistemi de güncellemişim (sudo komutunu var olan kullanıcı bir takım operasyonları yerine getirirken Permision Denied hatası almasın diye kullanmaktayız)
+
 ![firstDay.gif](/assets/images/2016/firstDay.gif)
 
 Bu komutları terminal ekranında biraz denemişim. Hatta Raspberry PI'ye uzaktan bağlanmak için de bir şeyler yapmışım. Siz de bunu yapmak isterseniz öncelikle Raspberry PI'yi Internete bağlayıp yerel ağ için verilen IP adresini öğrenmeniz gerekir. Bunun için terminalden

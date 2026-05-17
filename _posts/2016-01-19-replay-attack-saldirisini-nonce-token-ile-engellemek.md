@@ -289,9 +289,8 @@ namespace NonceTokenSample
 }
 ```
 
-Dikkat edileceği üzere şifrelenen GUID bilgisi SecureToken ismiyle Cookie olarak yazılır. GUID ile birleştirilen Timestamp içeriği ise (Nonce Token) yine şifrelenerek hdnTokenField isimli Hidden Field içerisine alınır. Dolayısıyla servis çağrısı gerçekleştirildiğinde metod parametresi olarak GUID|Timestamp içeriğinin şifrelenmiş hali yollanır. Karşılaştırma için kullanılacak GUID içeriği ise yine şifrelenmiş halde Cookie üzerinde taşınır. Sonuç olarak servis metodu içerisinde Cookie bilgisinden ve gelen parametreden yararlanarak benzersiz bir ID değeri ve zaman kontrolü ile Replay Attack durumu oluşup oluşmadığı kontrol edilir. Eğer her şey yolundaysa en azından aşağıdaki sonucun alınmış olması gerekir.
+Dikkat edileceği üzere şifrelenen GUID bilgisi SecureToken ismiyle Cookie olarak yazılır. GUID ile birleştirilen Timestamp içeriği ise (Nonce Token) yine şifrelenerek hdnTokenField isimli Hidden Field içerisine alınır. Dolayısıyla servis çağrısı gerçekleştirildiğinde metod parametresi olarak `GUID|Timestamp` içeriğinin şifrelenmiş hali yollanır. Karşılaştırma için kullanılacak GUID içeriği ise yine şifrelenmiş halde Cookie üzerinde taşınır. Sonuç olarak servis metodu içerisinde Cookie bilgisinden ve gelen parametreden yararlanarak benzersiz bir ID değeri ve zaman kontrolü ile Replay Attack durumu oluşup oluşmadığı kontrol edilir. Eğer her şey yolundaysa en azından aşağıdaki sonucun alınmış olması gerekir.
 
 ![noncetoken_1.gif](/assets/images/2016/noncetoken_1.gif)
 
 Biraz uzun ve yorucu bir makale oldu gibi. Özellikle servisin tesis edilmesi ve jQuery içeriğinin oluşturulması sırasında pek çok problemle karşılaştığımı ifade etmek isterim. Konfigurasyon ayarlarının eksiksiz olması, servisin Web HTTP bazlı geliştirilmesi, jQuery betiğinde # karakterinin unutulmaması vb bir çok kritere dikkat etmek gerekiyor. Kodun çalışma prensibini daha iyi anlayabilmek için mutlaka breakpoint'ler koyarak debug işlemleri gerçekleştirmenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

@@ -522,7 +522,7 @@ Eğer uygulamayı bu şekilde test edersek aşağıdaki çıktıları alırız.
 
 ![sas_8](/assets/images/2014/sas_8.png)
 
-.ASPXAUTH cookie içeriğine dikkat edin. KullanıcıAdı|Role1|Role2 formatındadır. Şimdi tam tersi durumu da test edelim. Örneğin burak kullanıcısını Contributor rolünden çıkartıp Administrator rolünde bırakalım. (Ben Hard Coded yaptım rol ve kullanıcı bilgilerini ama siz öyle yapmayın tabi) Bu durumda aşağıdaki çalışma zamanı çıktısını alırız.
+`.ASPXAUTH` cookie içeriğine dikkat edin. `KullanıcıAdı|Role1|Role2` formatındadır. Şimdi tam tersi durumu da test edelim. Örneğin burak kullanıcısını Contributor rolünden çıkartıp Administrator rolünde bırakalım. (Ben Hard Coded yaptım rol ve kullanıcı bilgilerini ama siz öyle yapmayın tabi) Bu durumda aşağıdaki çalışma zamanı çıktısını alırız.
 
 ![sas_9](/assets/images/2014/sas_9.png)
 
@@ -637,7 +637,7 @@ Gelen mesaj içeriğine ait Header kısmında SecuredCookie isimli bir name değ
   <system.web> 
     <compilation debug="true"/> 
   <authentication mode="Forms"> 
-            <forms slidingExpiration="true" name="SecuredCookie" protection="All"             timeout="20"/> 
+            <forms slidingExpiration="true" name="SecuredCookie" protection="All" timeout="20"/> 
         </authentication> 
   </system.web> 
 </configuration>

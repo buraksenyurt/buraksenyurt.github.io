@@ -18,13 +18,13 @@ categories:
 Typed DataSet/DataTable üretimi Visual Studio ortamında çok da zor değil. (Hatta komut satırından da kolayca yapılabilir. [Şu adresten bilgi](https://msdn.microsoft.com/en-us/library/wha85tzb(v=vs.110).aspx) alabilirsiniz) Ancak yapılan üretim sonrası bizim için çok kalabalık kod parçaları oluştuğunu ifade etmek isterim. Oysaki tek ihtiyacımız olan View'ların karşılığı olacak ve Lookup Table gibi kullanılıp sadece veriyi gösterme amaçlı kullanılacak DataTable tipleri idi. Araştırmalarımız sonucu aşağıdaki gibi bir yapının Typed DataTable kullanımı için yeterli olduğunu gördük.
 
 ```csharp
-    public class ProductTable
-        :DataTable
-    {
-        public DataColumn ID { get; set; }
-        public DataColumn URUN_ADI { get; set; }
-        public DataColumn URUN_FIYATI { get; set; }
-    }
+public class ProductTable
+    :DataTable
+{
+    public DataColumn ID { get; set; }
+    public DataColumn URUN_ADI { get; set; }
+    public DataColumn URUN_FIYATI { get; set; }
+}
 ```
 
 Dikkat edilmesi gereken ilk nokta ProductTable tipinin DataTable sınıfından türemiş olmasıdır. Diğer önemli bir nokta ise özelliklerin DataColumn tipinden tanımlanmasıdır. Özellik adları aslında Oracle tarafındaki nesnenin (Table veya View olabilir) kolon adları ile birebir aynıdır.
