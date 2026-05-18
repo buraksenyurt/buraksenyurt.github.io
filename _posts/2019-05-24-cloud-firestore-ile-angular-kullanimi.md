@@ -102,7 +102,7 @@ export class ProductsComponent implements OnInit {
 
 products.component.html
 
-```text
+```html
 <form [formGroup]="this.productsService.productForm">
   <div class="form-group">
     <label for="lblTitle">Tanıtım başlığı</label>
@@ -181,7 +181,8 @@ export class ProductListComponent implements OnInit {
 product-list.component.html
 
 {% raw %}
-```text
+
+```html
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -223,6 +224,7 @@ product-list.component.html
   servis tarafındaki versiyonunu çağırmış oluyoruz.
 -->
 ```
+
 {% endraw %}
 
 CRUD operasyonları her iki bileşen içinde ortaklaşa kullanılabilecek fonksiyonellikler. Bu nedenle Shared klasörü altında konuşlandırdığımız products.service.ts isimli bir tip mevcut.
@@ -338,7 +340,7 @@ export class AppModule { }
 
 ve app.component.html
 
-```text
+```html
 <!-- 
   Uygulama hizmete alındığında render edilecek olan ana bileşenimiz.
   ng g c komutları ile oluşturduğumuz products ve product-list bileşenlerini bootstrap grid sistemini kullanarak ekrana yerleştiriyoruz.

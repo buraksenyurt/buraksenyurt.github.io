@@ -36,6 +36,7 @@ Günümüzde pek çok web sitesi HTTP/2 protokolüne destek veriyor ve bir kayna
 
 Peki biz kendi sunucularımızda HTTP/2 protokolünü ve Server Push özelliğini nasıl kullanabiliriz? Bunu node.js kullanarak gerçekleştirmek mümkün kaynaklardaki örnekler oldukça açıklayıcı. Bir benzerini yapmaya çalışalım. Örneğimizde ilk olarak HTTP 1.1 tabanlı standart bir sunucu kodunu ele alacağız. İkinci aşamada ise HTTP/2 tabanlı çalışan versiyona bakacağız. Ben referanstakine benzer olarak aşağıdaki gibi bir yapı hazırladım.
 
+```text
 sample
 --- images
 ------ sample_1.jpg
@@ -50,6 +51,7 @@ appv2.js
 package.json
 simpleCert.pem
 simpleKey.pem
+```
 
 images, scripts ve style klasörü içerisinde yer alan içerikleri (javascript betikleri, medya ve css gibi materyaller) index.html'e gelen isteğe ait oturumda henüz istemci talep etmeden karşı tarafa gönderildiklerini görmeyi umut ediyorum. Her iki örnek içinde test amaçlı sertifikalara ihtiyaç var. Self-Signed sertifikaları West-World (Ubuntu olduğunu ezberldiniz artık) ortamında openssl ile aşağıdaki şekilde üretebildim. 2048 bit RSA baz alarak hareket ediyoruz.
 
@@ -61,7 +63,7 @@ openssl req -x509 -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' -keyout 
 
 index.html içeriği çok önemli değil ancak beraberinde gitmesini beklediğimiz kaynakları taşıması gerekiyor.
 
-```text
+```html
 <!DOCTYPE html>
 <html>
 
@@ -223,8 +225,8 @@ Pek tabii bu çalışma mantığını daha otomatize etmenin bir yolu var mıdı
 
 Internet üzerinde hareket eden içeriklerin kalitesi, boyutu ve çeşitliliği arttıkça daha hızlı protokollere ihtiyacamız olacak gibi görünüyor. Etkileyici görünen bir web sayfasının ağ tarafındaki hareketlilik çoğu zaman inanılmaz boyutlarda. HTTP/2 şu anda iyi bir çözüm olarak görünse de SPDY ile birlikte neler olacağını da göreceğiz. Nitekim ihtiyaç olunmuş ki Google bunun üzerinde çalışmalara başlamış. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-Örnek kodunu [github'dan](https://github.com/buraksenyurt/nodejs-tutorials/tree/master/Day11) indirebilirsiniz
-[Kaynak 1](https://medium.com/@noobj/exploring-http2-part-2-with-node-http2-core-and-hapijs-74e3df14249)
-[Kaynak 2](https://medium.com/@noobj/exploring-http2-part-1-overview-dc3e9b53968f)
-[Kaynak 3](https://medium.com/the-node-js-collection/node-js-can-http-2-push-b491894e1bb1)
-[Kaynak 4](https://medium.com/@sibu.it13/an-example-of-server-push-with-http-2-in-node-js-22757256f0b3) (Asıl izlediğim kaynak)
+- Örnek kodunu [github'dan](https://github.com/buraksenyurt/nodejs-tutorials/tree/master/Day11) indirebilirsiniz
+- [Kaynak 1](https://medium.com/@noobj/exploring-http2-part-2-with-node-http2-core-and-hapijs-74e3df14249)
+- [Kaynak 2](https://medium.com/@noobj/exploring-http2-part-1-overview-dc3e9b53968f)
+- [Kaynak 3](https://medium.com/the-node-js-collection/node-js-can-http-2-push-b491894e1bb1)
+- [Kaynak 4](https://medium.com/@sibu.it13/an-example-of-server-push-with-http-2-in-node-js-22757256f0b3) (Asıl izlediğim kaynak)

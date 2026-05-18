@@ -51,7 +51,7 @@ dotnet new web -o ProjectManagerOZ
 
 Index.html
 
-```text
+```html
 <!DOCTYPE html>
 <html>
 <head>

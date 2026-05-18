@@ -46,7 +46,7 @@ dotnet new blazor -o HelloWorld
 
 Oluşturulan ilk örneği didiklemekte fayda var. Index, Counter ve FetchData (Dependency Injection kullanılan örnek) yönlendirmeleri sonrası çalışan aynı isimli cshtml içeriklerine odaklanmak gerekiyor. Söz gelimi Counter sayfasında düğmeye bastıkça sayaç değeri artmakta. Ancak bu gerçekleşirken sayfa yeniden yüklenmiyor ki bunun için normalde Client-Side Javascript kodunun yazılması gerekir. Olaya Blazor açısından baktığımızda, kodlamanın Javascript değil de C# ile yapıldığını fark etmemiz lazım. İlgili sayfada oynayarak farklı sonuçlar elde etmeye çalışabiliriz. Ben Counter sayfasını biraz kurcalayıp kod tarafını aşağıdaki gibi ele almaya çalışmıştım
 
-```text
+```html
 @page "/counter"
 
 <h1>Rastgele Toplamlar</h1>
@@ -100,7 +100,7 @@ public class Book
 
 Kitaplar ile ilgili işlemler için Pages klasörüne Book.cshtml isimli bir dosya ekleyip aşağıdaki şekilde kodlayabiliriz. Çok basit olarak kitap listesinin gösterilmesi ve yeni bir kitabın eklenebilmesi için gerekli fonksiyonelliklerin sunulduğu bir arayüzümüz var. HTML tarafı ile kod bir arada kullanılmakta.
 
-```text
+```html
 @page "/bookList"
 
 <h1>Okuduğum Kitaplar (Toplam @books.Count() kitabım var) </h1> 
@@ -142,7 +142,7 @@ Kitaplar ile ilgili işlemler için Pages klasörüne Book.cshtml isimli bir dos
 
 Ekleyeceğimiz bir diğer örnek Dependency Injection kullanımı ile ilgili. Built-in olarak gelen HttpClient servisini cshtml tarafında nasıl kullanabileceğimizi görebilmek için WorldPopulation.cshtml isimli bir dosya geliştiriyoruz. Yine Pages klasörüne konuşlandıracağımız dosya içeriği aşağıdaki gibi yazılabilir. @page direktifine göre /population adresine gelen taleplere karşılık bu sayfa işletilecektir. @inject kısmında httpClient servisinin koda enjekte edilmesi söz konusudur.
 
-```text
+```html
 @page "/population"
 @inject HttpClient httpClient
 <!-- built-in servislerden olan HttpClient servisini buraya enjekte ettik. 
@@ -212,7 +212,7 @@ Bu sayfa sembolik olarak üç günlük dünya nüfusu bilgilerini paylaşıyor. 
 
 Pek tabii boilerplate etkisi ile üretilen projenin menüsü hazır şablona göre tesis edilmiş durumda. Burayı yeni eklediğimiz kendi sayfalarımıza göre düzenleyebiliriz. Tek yapmamız gereken NavMenu.cshtml dosyasını kurcalayarak aşağıdaki kıvama getirmektir. NavLink elementlerinde yeni eklediğimiz bileşenlerdeki @page direktiflerinde belirtilen URL adresleri kullanılmaktadır.
 
-```text
+```html
 <div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">HelloWorld</a>
     <button class="navbar-toggler" onclick=@ToggleNavMenu>

@@ -54,7 +54,8 @@ ng new sonrası oluşan proje içerisinde çok fazla dosya bulunacaktır. Şu ha
 app.component.html
 
 {% raw %}
-```text
+
+```html
 <div class="container">
   <form>
     <div class="form-group">
@@ -91,6 +92,7 @@ app.component.html
 </div>
 <!-- addJob, removeJob metodları ile jos dizisi app.component.ts dosyası içerisinde yer alıyor -->
 ```
+
 {% endraw %}
 
 component içerisinde basit bir form grubu var. İçinde iki adet bileşen gövdesi bulunuyor. Üst taraf yeni görev girmek için kullanılan kısım. Ekle başlıklı düğmeye basıldığındaysa Typescript tarafındaki addJob metodu çağırılıyor. Parametre olarak job isimli text kontrolünün içeriği gönderilmekte.
@@ -134,7 +136,7 @@ export class AppComponent {
 
 Bileşenin Typescript tabanlı arka tarafı görev ekleme ve silme operasyonlarını içermekte. app-root ile ilişkilendirilmiş durumda (Bu, index.html sayfasındaki yerleşim için önemli bir bilgi) Örneğin basit olması amacıyla görev listesi uygulama çalıştığı sürece bellekte duran bir diziyi kullanıyor. Elbette bunu farklı bir veri kaynağına bağlayabiliriz. Mesela Azure Cosmos DB veya SQLite gibi veri kaynaklarının kullanılması tercih edilebilir. Son olarak ilgili bileşenin gösterildiği index.html içeriği de aşağıdaki gibi değiştirilebilir.
 
-```text
+```html
 <!doctype html>
 <html>
 

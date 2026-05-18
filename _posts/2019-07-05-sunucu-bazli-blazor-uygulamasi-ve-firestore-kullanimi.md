@@ -358,7 +358,7 @@ Gelelim istemci rolünü üstlenen NBAWorld.Client projesine. Öncelikle proje o
 
 PlayerData.cshtml
 
-```text
+```html
 <!--
     Razor sayfamızın adı playerspage. Navigasyonda bu ismi kullanıyoruz.
     Kullandığı model PlayerDataModel isimli BlazorComponent türevli bileşen.
@@ -557,7 +557,7 @@ namespace NBAWorld.Client.Pages
 
 NewPlayer.cshtml
 
-```text
+```html
 <!--Razor sayfamızın adı newplayer. Navigasyonda bu ismi kullanıyoruz.
     Kullandığı model NewPlayerModel isimli BlazorComponent türevli bileşen.
     Kontrolleri, bileşendeki player isimli değişkene player.Özellike Adı 
@@ -639,7 +639,7 @@ namespace NBAWorld.Client.Pages
 
 Piuvvvv:) Çok kod yazdık belki ama sıkın dişinizi az kaldı! Son değişikliklerimiz ana sayfa ve navigasyon çubuğu ile ilgili. Ön yüz tarafında bootstrap kullandığımız dikkatinizi çekmiştir. Bunun tüm bileşenler için etkin olmasını wwwroot klasöründeki index.cshtml içerisindeki gerekli js kütüphane bildirimleri ile sağlayabiliriz. Diğer kısımlarda çok ufak tefek değişiklikler var.
 
-```text
+```html
 <!DOCTYPE html>
 <html>
 
@@ -668,7 +668,7 @@ Piuvvvv:) Çok kod yazdık belki ama sıkın dişinizi az kaldı! Son değişikl
 
 NavMenu.cshtml dosyasına da yeni razor sayfaları için gerekli linkleri eklemeliyiz.
 
-```text
+```html
 <div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">NBA World</a>
     <button class="navbar-toggler" onclick=@ToggleNavMenu>

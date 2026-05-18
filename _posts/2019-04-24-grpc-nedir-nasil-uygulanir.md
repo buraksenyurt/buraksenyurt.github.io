@@ -32,6 +32,7 @@ Peki bu çatıyı sahada nasıl kullanabiliriz?
 
 Öncelikle her iki taraf için ortak olan bir Proto dosyasına ihtiyacımız var (.Net Remoting zamanlarındaki Marshall By Value günlerimiz geldi aklıma) Bu dosya aslında bir servis sözleşmesi ve kullanılacak tiplere ait bilgileri içerecek. Buradaki sözleşme sunucu tarafında uygulanırken, istemci tarafından sadece uzak fonksiyon çağrısı yapabilmek amacıyla ele alınıyor. Gelin basit bir örnek ile konuyu anlamaya çalışalım. Kurgumuzda klasör yapısını aşağıdaki gibi oluşturabiliriz. Aynı makine üzerinden test yapacağız ancak rahatlıkla dağıtık senaryoları deneyebilirsiniz.
 
+```text
 client (Folder)
 index.js
 product.proto
@@ -41,6 +42,7 @@ Product.js
 product.proto
 package.json
 nodemodules (Folder)
+```
 
 Bu arada node.js tarafında gRPC kullanımını kolaylaştırabilmek için grpc modülünün npm ile sisteme yüklenmesi lazım. İstemcinin tipine göre tabii farklı bir paket kullanmak gerekebilir. Örneğin.Net Core tarafında Grpc.Core isimli nuget paketini kullanmak gerekiyor. Gerekli modülü kurduktan sonra proto uzantılı servis sözleşmesini hazırlayarak devam edebiliriz.
 

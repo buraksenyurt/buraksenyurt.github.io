@@ -390,6 +390,7 @@ export default {
 contacts.vue bileşenimiz
 
 {% raw %}
+
 ```html
 <template>
   <div>
@@ -448,6 +449,7 @@ export default {
 };
 </script>
 ```
+
 {% endraw %}
 
 > Özellikle yukarıdaki iki bileşenin kullandığı bus isimli modüle dikkat etmek lazım. Vue tarafında bileşenler arasında olay bazlı çalışan bir eventbus modeli ile iletişim sağlanabilir. Bu sayede bir bileşende yapılan değişiklikleri başka birisine göndermek mümkündür. Örneğimizdeki newContact bileşeninde refresh isimli bir olay tetiklenir (Yeni bir kontak eklendiğinde çalıştırıyoruz) Contacts bileşeni de refresh isimli olayı dinlemektedir. Dolayısıyla yeni bir kontak bilgisi eklediğimizde diğer bileşen otomatik olarak güncel kontak listesini çekecektir.
@@ -538,7 +540,7 @@ npm run build
 
 Eğer sorunsuz bir şekilde (sorunsuz diyorum çünkü webpack.config.js dosyasını ayarlarken epey problem yaşadım) build işlemi gerçekleşirse dist/public/build/mypackage.js şeklinde bir dosya oluşur. Bu bohçayı index.html public klasörüne alıp aşağıdaki gibi kullanıma açabiliriz.
 
-```text
+```html
 <!DOCTYPE html>
 <html>
 
