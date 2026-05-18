@@ -75,3 +75,4 @@ Kodda dikkat edilmesi gereken nokta DeepCopier sınıfının generic olarak tasa
 
 Bir başka Tek Fotoluk İpucunda görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-124-pratik-bir-deep-clone-senaryosu)

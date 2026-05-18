@@ -22,3 +22,5 @@ categories:
 Her zaman olduğu gibi sevgili Bahtiyar Dilek arkadaşımız bu webinerimizi de kayıt altına alarak bizlere ulaştırdı. Kendisine tekrardan bu emeği için çok teşekkür ediyorum.
 
 Önümüzdeki ayki webinerimizde WCF Web API'yi (ya da artık yeni ismi ile ASP.NET Web API'yi) anlatmaya gayret ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Code-First-Migration-Webineri-Yayc4b1nda)

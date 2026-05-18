@@ -108,3 +108,5 @@ WCF 4.5 tarafında gelmiş olan bir kaç yenilik daha bulunmaktadır. Genelde ç
 ![wcfnf_7](/assets/images/2012/wcfnf_7.png)
 
 [ContosoService.zip (23,61 kb)](/assets/files/2012/ContosoService.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-4-Dot-5-SingleWSDL)

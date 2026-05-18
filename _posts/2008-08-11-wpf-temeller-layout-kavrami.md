@@ -253,3 +253,5 @@ Buraya kadar geliştirilen basit örnekler ile WPF uygulamalarında kullanılabi
 Elbetteki Layout bileşenlerinin dinamik olarak kod içerisinde ele alınmasıda mümkündür. Senaryonun karmaşıklığına göre Visual Studio 2008 IDE'si kullanılarak Layout'ların ve içeriklerinin tasarlanmasında çok daha iyi sonuçlar alınabilir. Hatta Expression ailesindeki ürünlerden yararlanılarak bu görsel bileşenlerin profesyonel görünümlere sahip olarak ürünsel nitelikte olmasıda daha rahat bir şekilde sağlanabilir. Ancak bunların öncesinde XAML tarafında ilgili bileşenlerin bu makalede olduğu gibi nasıl kullanılabileceğinin bilinmesinde yarar vardır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/Layouts.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Temeller-Layout-Kavramc4b1-bsenyurt-com-dan)

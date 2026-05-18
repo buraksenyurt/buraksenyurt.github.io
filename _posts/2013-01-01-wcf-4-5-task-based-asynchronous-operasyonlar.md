@@ -208,3 +208,5 @@ Oysaki eskiden, Dispatcher’ lardan ve hatta daha eskiden de Method Invoker’ 
 Görüldüğü üzere async ve await anahtar kelimelerinden de yararlandığımız bu senaryoda, kod daha az karmaşık olmakla beraber, istemci arayüzünün de asenkron işleyiş sırasında cevap verebilir olması sağlanmıştır. WCF operasyonlarının Windows Phone 8 ([Şu adresteki](http://stackoverflow.com/questions/13173614/async-await-in-windows-phone-web-access-apis) tartışmaya da bir kulak verin) gibi cevap verebilir arayüz ihtiyaçları yüksek olan uygulama çeşitlerinde de kullanıldığı düşünüldüğünde, kazanılan kabiliyetin önemli olduğu aşikardır. Böylece geldik kısa bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_TaskBasedAsyncOperations.zip (167,69 kb)](/assets/files/2013/HowTo_TaskBasedAsyncOperations.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-4-5-Task-Based-Asynchronous-Operasyonlar)

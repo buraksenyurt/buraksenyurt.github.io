@@ -173,3 +173,5 @@ Servis lokasyonu intranet olduğundan, zincirin ilk halkasındaki handlerLocal i
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ChainOfResponsibilityPattern.rar (25,32 kb)](/assets/files/2009/ChainOfResponsibilityPattern.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Chain-of-Responsibility)

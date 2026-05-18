@@ -15,3 +15,5 @@ Diyelim ki Windows Forms programlama ile ilgileniyorsunuz. Çalışma zamanında
 ![PhotoIpucu45](/assets/images/2012/PhotoIpucu45.png)
 
 [Numpad.rar (38,02 kb)](/assets/files/2012/Numpad.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-45(NumPad-Yapalim))))

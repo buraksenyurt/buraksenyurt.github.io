@@ -294,3 +294,4 @@ Ele alınması gereken bir kaç durum söz konusu ki bunlardan birisi de iptal i
 
 [ParentChildTasksExceptionHandling.rar (25,96 kb)](/assets/files/2010/ParentChildTasksExceptionHandling.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Parent-Child-Task-Exception-Durumlari)

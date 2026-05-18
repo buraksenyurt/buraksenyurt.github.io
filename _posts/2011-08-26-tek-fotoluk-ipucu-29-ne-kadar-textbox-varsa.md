@@ -15,3 +15,5 @@ Kaliteli kod yazmak için aslında biraz titiz düşünmek gerekir. Söz gelimi 
 ![PhotoTrick29](/assets/images/2011/PhotoTrick29.png)
 
 [WindowsFormsApplication1.rar (40,37 kb)](/assets/files/2011/WindowsFormsApplication1.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-29-(Ne-Kadar-TextBox-Varsa))))

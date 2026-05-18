@@ -287,3 +287,5 @@ Elbette Debug işlemleri sonrasında hataları bertaraf edilen servis kodunun so
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [FileControllerService.rar (51,95 kb)](/assets/files/2011/FileControllerService.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Debug-Edilebilir-Windows-Service-Gelistirmek)

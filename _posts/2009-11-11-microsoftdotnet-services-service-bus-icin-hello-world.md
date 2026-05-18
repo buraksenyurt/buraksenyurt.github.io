@@ -254,3 +254,5 @@ Lakin bu durumda aşağıdaki sonuç ile karşılaşırız (EndpointNotFoundExce
 Böylece Azure Service Platformu üzerindeki ilk atılımımızı gerçekleştirmiş olduk arkadaşlar. Umarım birşeyler aktarabilmişimdir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AlgebraHost.rar (47,27 kb)](/assets/files/2009/AlgebraHost.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Microsoft-DotNet-Services-Service-Bus-Hello-World)

@@ -15,3 +15,5 @@ LINQ sorgularını pek çoğumuz etkin bir şekilde kullanıyoruzdur. Ama belki 
 ![PhotoTrick41](/assets/images/2011/PhotoTrick41.png)
 
 [LetKeyword.rar (194,69 kb)](/assets/files/2011/LetKeyword.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-41(Let-Keyword))))

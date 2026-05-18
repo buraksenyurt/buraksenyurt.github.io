@@ -222,3 +222,5 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 [Dosya boyutunun küçülmesi için Packages ve Release klasörleri silinmiştir]
 
 (Orjinal Yazım Tarihi 03-15-2013)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Word-Dosyasi-Icerisinden-Entity-Frameworke)

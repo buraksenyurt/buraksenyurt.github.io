@@ -217,3 +217,5 @@ Yukarıdaki örneğimizi C# 2.0 ile derlediğimizde ise her hangi bir sorun olma
 ![mk127_2.gif](/assets/images/2005/mk127_2.gif)
 
 Parametrelerin arasındaki kalıtımsal ilişki, çalışma zamanında temsilciler oluşturulurken de değerlendirilecek ve nesneler arasındaki tür dönüşümü başarılı bir şekilde parametrelere de yansıyacaktır. Bu, covariance probleminde olduğu gibi bize yine büyük bir esneklik sağlar: Aralarında kalıtımsal ilişki olan n sayıda sınıf nesne örneğini kullanan metotları tek bir temsilci nesnesi ile çalışma zamanında işaret edebilme yeteneği. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-Covariance-ve-Contravariance-Delegates-bsenyurt-com-dan)

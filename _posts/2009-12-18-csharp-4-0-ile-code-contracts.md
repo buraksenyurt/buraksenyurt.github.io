@@ -144,3 +144,4 @@ Elbette Code Contracts konusu burada anlatıldığı kadar yalın ve sade değil
 
 [CodeContracts.rar (25,40 kb)](/assets/files/2009/CodeContracts.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-40-ile-Code-Contracts)

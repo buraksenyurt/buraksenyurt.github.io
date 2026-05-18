@@ -17,3 +17,5 @@ Peki aynı felsefeyi Web uygulamalarınız için tasarlayabilir misiniz? Hatta r
 ![tfi_110.png](/assets/images/2014/tfi_110.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFI-110-Control-Tipini-Extend-Edip-Basit-Bind-Islemleri-Gerceklestirmek)

@@ -164,3 +164,5 @@ Görüldüğü gibi API içerisinde yer alan tipler,.Net programı içerisine bi
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda sizlere C# 4.0 ile birlikte gelen bir kaç yeniliği aktarmaya çalıştım. Sonuç olarak bu yeniliklerin özellikle dynamic tiplerin kullanımı kolaylaştırmak üzere getirildiğini söyleyebiliriz.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-40-Secilebilen-Isimlendirilebilen-Parametreler(Named-and-Optional-Parameters)-ref-i-Gormezden-Gelmek(Ommit-Ref)-ve-PIA-icin-Yenilikler)-ref-i-Gormezden-Gelmek(Ommit-Ref)-ve-PIA-icin-Yenilikler)-ref-i-Gormezden-Gelmek(Ommit-Ref)-ve-PIA-icin-Yenilikler)

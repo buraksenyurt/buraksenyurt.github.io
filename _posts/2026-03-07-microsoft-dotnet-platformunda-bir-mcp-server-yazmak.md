@@ -541,3 +541,5 @@ Ekran görüntüsünden de görüldüğü üzere yeni MCP sunucusundan sunulan a
 Böylece geldik bir çalışmamızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MCP Server uygulamasına ait kodlara buradan erişebilirsiniz](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/TodoMCPServer).
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/microsoft-dotnet-platformunda-bir-mcp-server-yazmak)

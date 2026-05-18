@@ -157,3 +157,5 @@ Persistence işlemi bu örneğimizde WorkflowApplication nesnesi tarafından ele
 > Kişisel Not: Kalıcı olarak saklama işlemini yazımızın başında belirttiğimiz üzere, Persist aktivitesi ilede kolayca gerçekleştirebiliriz. Bu konu ile ilişkili bir görsel dersi ilerleyen tarihlerde yayınlamaya çalışıyor olacağım.
 
 [WFPersistence.rar (37,63 kb)](/assets/files/2009/WFPersistence.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Persistence)

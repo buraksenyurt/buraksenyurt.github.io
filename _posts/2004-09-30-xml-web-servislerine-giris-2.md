@@ -167,3 +167,5 @@ Burada kullanılan web servisinin, global seviyedeki bir ağda yer aldığını 
 Şekil 10. Web servisinin çalıştırılması sonucu.
 
 Artık web servisimizi kullanan bir istemci uygulamamız var. Peki gerçekte, kamera arkasında olanlar nelerdir? Nasıl oluyor da, web servisini kullanmak istediğimizde, bu servis dünyanın başka ucundaki bir makinede olsa bile, bu servise ait bir nesne örneğini istemci uygulamada oluşturabiliyoruz? Hatta bu nesne nasıl oluyor da, web servisindeki metotları biliyor ve onları parametreleri ile birlikte çağırabiliyor? İşte tüm bu soruların cevabı için öncelikle mimariye daha derinlemesine bakmamız gerekiyor. Web servislerinin mimarisini ilerleyen makalelerimizde incelemeye çalışacağız. Tekrar görüşünceye dek hepinize mutlu günler.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Xml-Web-Servislerine-Giris-2-bsenyurt-com-dan)

@@ -90,3 +90,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WebFriendlyFeed.rar (35,28 kb)](/assets/files/2009/WebFriendlyFeed.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Data-Services-15-CTP2-Web-Friendly-Feeds)

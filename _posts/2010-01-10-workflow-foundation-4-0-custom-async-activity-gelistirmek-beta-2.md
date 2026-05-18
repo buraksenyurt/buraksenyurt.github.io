@@ -115,3 +115,5 @@ Tabiki bu örnekte sadece async tipinden bir code activity bileşeninin nasıl g
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ActivityLibrary2Async.rar (54,25 kb)](/assets/files/2010/ActivityLibrary2Async.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Custom-Async-Activity)

@@ -23,3 +23,5 @@ Bu görsel dersimizde önce basit bir.Net uygulamasını, CIL (Common Intermedia
 [Youtube Link](https://www.youtube.com/watch?v=gk_IN5_lsRc)
 
 Ara sıra gelen o gıcık öksürük ritmimi bozduğundan sürçü lisan etmişimdir mutlaka. O yüzden affola. Bir başka görsel dersimizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-Uygulama-Guvenligie28093Hacking-ve-Tedbirleri)

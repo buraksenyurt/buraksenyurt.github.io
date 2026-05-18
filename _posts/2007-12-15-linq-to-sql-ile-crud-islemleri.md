@@ -419,3 +419,5 @@ Dikkat edileceği üzere DataContext tipinin Transaction özelliğine değer ata
 LINQ To SQL mimarisin şu ana kadar işlenen temel CRUD işlemlerinde ele alınması gereken başka hususlarda vardır. Söz gelimi eş zamanlı çalışan programların aynı veriler üzerinde işlemler yaptığı durumlarda oluşan çakışmaların (Conflict) ele alınması gibi. Bu ve benzeri konuları ilerleyen makalelerimizde ve görsel derslerimizde incelemeye çalışıyor olacağız. Bu makalemizde çok basit ve temel seviyede ekleme (Insert), Silme (Delete) ve Güncelleme (Update) işlemlerini nasıl yapabileceğimizi incelemeye çalıştık. Ayrıca bu işlemleri yaparken Transaction'ların nasıl kullanılabildiğinide gördük. Varsayılan olarak bilinçsiz şekilde başlatılan Transaction'ları TransactionScope ile veya Local Transaction teknikleri nasıl kontrol edebileceğimiz gördük. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/LinqToSqlCRUD.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/LINQ-to-SQL-ile-CRUD-Islemleri-bsenyurt-com-dan)

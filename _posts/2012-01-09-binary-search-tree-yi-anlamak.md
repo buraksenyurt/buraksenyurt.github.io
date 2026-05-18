@@ -384,3 +384,5 @@ Temel olarak koleksiyonumuza eklediğimiz temel operasyonlardan bazılarını ku
 Tabi kodda gözden kaçırdığım bazı noktalar olabilir. Ben elimden geldiğince test etsem de farklı gözlerin bakmasında yarar var. Ancak temel olarak Binary Tree veri yapısını, C# ile nasıl kodlanabileceğini kavradığınızı düşünüyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
 [BinarySearchTree.zip (42,36 kb)](/assets/files/2012/BinarySearchTree.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Binary-Search-Tree-yi-Anlamak)

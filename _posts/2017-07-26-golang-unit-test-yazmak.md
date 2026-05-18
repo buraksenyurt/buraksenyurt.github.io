@@ -94,3 +94,5 @@ Görüldüğü gibi elde edilen sonuçlar istenen sonuçlar olmamış ve Fail bi
 ![gotesting_2.gif](/assets/images/2017/gotesting_2.gif)
 
 Dikkat edileceği üzere GO tarafında birim testler yazmak oldukça kolay. O zaman bundan sonraki ilk geliştirmenizde elinizdeki atomikleri önce TDD ilkelerine uyarak yazmaya gayret edin. Hatta FizzBuzz kod katasını baz alıp GO ile yazmayı deneyebilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-unit-test-yazmak)

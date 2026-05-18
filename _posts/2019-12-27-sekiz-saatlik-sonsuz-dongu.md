@@ -211,3 +211,5 @@ Yazı boyunca aşağıdaki listede yer alan terimlerden bahsettim. Eminim ki bir
 ```text
 #agile #scrum #sprint #storyPoint #safe #workItem #dotNet #dotNetCore #nodeJs #typescript #vue #angular #erp #monolithic #legacySystem #nTier #SOA #SOAP #REST #WCF #sonarQube #codeCoverage #technichalDepth #qualityAssurance #mssqlServer #postgreSql #gitFlow #vsts #tfs #azureDevOps #branch #fortify #owasp #roslyn #CI/CD #continuousIntegration #continuousDelivery #continuousDeployment #dockerize #container #microService #kong #riverBed #ITIL #CAB #antiPattern #godObject #boundedContext #dataAccessLayer #chromeDevTools #thoughtWorks #microService #hypeTech #techRadar #SSIS #IoT #yapayZeka #robotik #postman #soapUI #rpa
 ```
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/sekiz-saatlik-sonsuz-dongu)

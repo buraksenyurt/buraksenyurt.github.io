@@ -285,3 +285,5 @@ Doğruyu söylemek gerekirse böyle hazır Cognitive servislerle eğlencesine de
 - Bir klasördeki dosyaları nasıl dolaşabileceğimi
 
 Böylece geldik [26 numaralı saturday-night-works derlemesi](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2026%20-%20Custom%20Vision%20Service%20with%20Python)nin sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/microsoft-custom-vision-servisini-python-ile-kullanmak)

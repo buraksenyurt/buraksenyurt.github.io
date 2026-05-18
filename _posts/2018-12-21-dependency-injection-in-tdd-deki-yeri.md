@@ -294,3 +294,5 @@ Mock nesne örneğini oluştururken generic bir parametre kullanıyoruz. Burada 
 Pek tabii TDD tarafında Dependency Injection kullanımı bu örnek kodlarda olduğu kadar kolay olmayabilir. Özellikle legacy olarak anılan eski projleri sonradan Continuous Integration hattına soktuğumuzda test yazmak gerçekten başa bela olabilir. Çok fazla sayıda özellik barındıran Entity sınıfları ile yürüyen ve iş akışı karmaşık fonksiyonar için entegrasyon testleri yazmak istediğinizi düşünün. Mock nesne kullanımı biraz can acıtıcı olabilir ama uzun vadede rahat edileceği kesindir.
 
 Böylece geldik bir makalemizin daha sonuna. Bu yazımızda Dependency Injection kavramını entegrasyon testlerinde değerlendirerek daha iyi anlamaya çalıştık. Size tavsiyem var olan entegrasyon testlerinizde belli başlı bağımlılıkları mock nesneler kullanarak ortadan kaldırmaya çalışmanız olacaktır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/dependency-injection-in-tdd-deki-yeri)

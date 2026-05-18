@@ -72,3 +72,5 @@ Böylece MethodName özelliğinde belirtilen fonskiyonun çalışma zamanında h
 Görüldüğü üzere akış başarılı bir şekilde işletilmiştir. Bu kısa yazımızda Workflow yapısının kod tarafında Object Initializers yardımıyla ele alınışını incelemeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WorkflowStructure.rar (19,38 kb)](/assets/files/2009/WorkflowStructure.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-40-Workflow-ve-Object-Initialization)

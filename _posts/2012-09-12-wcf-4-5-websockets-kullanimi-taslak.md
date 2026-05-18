@@ -275,3 +275,5 @@ Bunu deneme şansını ilerleyen zamanlarda umarım bulurum ki o vakit sonuçlar
 Not: Bu arada.Net 4.5 deki WebSockets ler için Windows 8 dışında bir platform desteği olmayacağı söylenmekte. [http://forums.asp.net/t/1732788.aspx/1](http://forums.asp.net/t/1732788.aspx/1) adresindeki tartışma oldukça taze ve bu konu üzerine yapılmış. Tabi burada dikkat edilecek olursa Kaazing WebSockets Gateway aracından yararlanılabileceği söylenmekte. Ben şu an için bunu denemedim ama siz deneyebilirsiniz
 
 [HowTo_WCFandWebSockets_.zip (107,55 kb)](/assets/files/2012/HowTo_WCFandWebSockets_.zip) [Her ihtimale karşın oynayabilmeniz için örneği ilave ettim]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-45-WebSockets-Kullanc4b1mc4b1-Taslak)

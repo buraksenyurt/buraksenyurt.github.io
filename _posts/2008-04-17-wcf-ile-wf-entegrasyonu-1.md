@@ -318,3 +318,5 @@ private void UrunuGetir(object sender, EventArgs e)
 Görüldüğü gibi SendActivity bileşeni sayesinde bir iş akışı nesnesi içerisinden WCF tabanlı servis çağırılması, bu servisten sunulan operasyonların icra edilmesi, varsa operasyon sonuçlarının alınması gibi aksiyonlar kolay bir şekilde gerçekleştirilebilmektedir. Bu yazıda bir WCF servisinin, WF içerisinden nasıl çağırılabileceğinin temelleri üzerinde durulmuş ve basit bir örnek adım adım işlenmeye çalışılmıştır. Bir sonraki makalede ise bir WF uygulamasının servis olarak nasıl sunulacağı konularına değinilmeye çalışılacaktır. Böylece geldik bir makalemizin daha sonunda. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WFileWCF.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-ile-WF-Entegrasyonu-1-bsenyurt-com-dan)

@@ -105,3 +105,5 @@ private void btnKayıtEkle_Click(object sender, System.EventArgs e)
 Şekil 1. Programın çalışmasının sonucu.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde, DataRelation nesnesi yardımı ile birbirleri ilişkili tabloların nasıl oluşturulacağını göreceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataTable-Sc4b1nc4b1fc4b1nc4b1-Kullanarak-Programatik-Olarak-Tablolar-Olusturmak-2c2a0-bsenyurt-com-dan)

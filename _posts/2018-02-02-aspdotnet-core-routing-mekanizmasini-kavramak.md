@@ -316,3 +316,5 @@ Ama tabii şablona uymayan bir path bilgisi için eşleşme false değer dönece
 ![CoreRouting_10.gif](/assets/images/2018/CoreRouting_10.gif)
 
 Bu yazımızda Asp.Net Core tarafındaki Routing mekanizmasının farklı kullanımlarını incelemeye çalıştık. Elbette daha fazlası vardır diye düşünüyorum. Şimdilik öğrenebildiklerim bunlar. Siz örnekleri geliştirmeye çalışarak ilerleyebilirsiniz. Özellikle ikinci örnek koddaki belli kategorideki ürünler mantığını ele alarak bir rest servisinin yazılmasında MapGet operasyonlarını ele alabilirsiniz. Gelen talebe göre çalışma zamanında dinamik web sayfası içeriklerini üretecek bir varsayılan handler da geliştirebilirsiniz. Hatta bir fotoğraf web sunucusu geliştirmeyi deneyebilirsiniz. Basılacak Content-Type bilgisini değiştirebildiğimize göre bu da mümkün. Elinizin altında tüm imkanlar mevcut. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Core-Routing-Mekanizmasını-Kavramak)

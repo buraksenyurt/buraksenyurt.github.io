@@ -213,3 +213,5 @@ http://localhost/Geometri/GeoMat.asmx?WSDL
 ```
 
 Bir Web Servisini Visual Studio.NET ortamında geliştirmek, şu ana kadar yaptıklarımızdan pek farklı değildir. Ancak Visual Studio.NET ortamının sağladığı avantajlar nedeniyle çok daha kolaydır. Bir sonraki makalemizde bir web servisinin Visual Studio.NET ortamında nasıl geliştirileceğini ve bu web servisine erişecek bir istemcinin nasıl yazılacağını incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Xml-Web-Servislerine-Giris-1-bsenyurt-com-dan)

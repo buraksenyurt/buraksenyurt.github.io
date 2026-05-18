@@ -395,3 +395,5 @@ Bu durumda servis ve istemci çalıştırıldığında aşağıdaki ekran görü
 Bu makalemizde basit olarak intranet tabanlı sistemlerde basicHttpBinding bağlayıcı tipini kullanarak Windows tabanlı doğrulama ve yetkilendirmelerin (Windows Based Authentication and Authorization) nasıl ele alınabileceğini incelemeye çalıştık. netTcpBinding veya wsHttpBinding bağlayıcı tipleri için iletişim seviyesinde güvenlik modunun varsayılan değeri Windows'dur. Dolayısıyla bu tipleri kullanırken config dosyası içerisinde ekstra bir işlem yapılmasına gerek yoktur. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/WindowsDogrulama.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Windows-Tabanlc4b1-Dogrulama-ve-Yetkilendirme-bsenyurt-com-dan)

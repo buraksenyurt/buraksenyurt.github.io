@@ -165,3 +165,6 @@ Yeni düzenlemeler ile uygulamamızı çalıştırdığımızda aşağıdaki ekr
 Şekil 9. Bir Mühendisin çalıştığı projeler ve projelerdeki takım arkadaşlarının elde edilmesi.
 
 Burada yaptıklarımızı değerlendirirsek kafa karıştırıcı tek unsurun foreach döngüsü içerisindeki yaklaşımlar olduğunu görürüz. Bunun yanında, ara tablomuz olan MuhendisProje tablosunun nasıl oluşturulduğu, verileri nasıl tuttuğu ve diğer tablolar arasındaki ilişkilerin .NET ortamında bağlantısız katman üzerinde nasıl simüle edildiği önemlidir. Bu olgulara dikkat etmenizi ve iyice incelemenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde buluşmak dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataRelation-Sc4b1nc4b1fc4b1-ve-Coga-Cok-(Many-to-many)-Iliskiler-bsenyurt-com-dan)-Iliskiler-bsenyurt-com-dan)-Iliskiler-bseny
+yurt-com-dan)

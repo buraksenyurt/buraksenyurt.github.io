@@ -299,3 +299,5 @@ Eğer aynı örnek güvenlik ayarları yapılmadan test edilirse ve yine Service
 Bu makalemizde özellikle mesaj seviyesinde güvenliği nasıl sağlayabileceğimizi incelemeye çalıştık. İlerleyen makalelerimizde windows tabanlı ve iletişim seviyesinde güvenlik işlemlerini nasıl yapabileceğimizi incelemeye devam edeceğiz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/MesajSeviyesiGuvenlikTcp.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Mesaj-Seviyesinde-Guvenlik-bsenyurt-com-dan)

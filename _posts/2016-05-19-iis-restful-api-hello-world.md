@@ -112,3 +112,5 @@ Kolaylık olması açısından bir kaç HTTP çağrısını metodlaştırdık. G
 Söz konusu API halen daha geliştirilme aşamasında. Bu API'nin kendi IIS sunucularımızda nasıl kullanılacağına dair henüz bir bilgi edinebilmiş değilim ancak şirketlerin bu API ile kendilerine hoş yönetim araçları yazabileceği kanısındayım. Özellikle yönetsel fonksiyonellikleri mobilize olarak sunabilmek büyük bir nimettir diye düşünüyorum. DevOps kültüründe de kendine güzel bir yer edinecektir kanımca. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Kaynak: [https://blogs.msdn.microsoft.com/webdev/2016/05/09/introducing-the-iis-administration-api/](https://blogs.msdn.microsoft.com/webdev/2016/05/09/introducing-the-iis-administration-api/)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-132-iis-restful-api-denemesi)

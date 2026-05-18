@@ -150,3 +150,5 @@ Sonuç itibariyle aşağıdaki renkli ve iç ısıtan çıktıyı alabilmemiz ge
 ![logging_1.png](/assets/images/2022/logging_1.png)
 
 Görüldüğü üzere log ve env_logger küfelerini kullanarak terminale log bırakmak oldukça pratik. Bir başka rust pratiğinde görüşmek dileğiyle, sağlıklı günler.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-loglama)

@@ -263,3 +263,5 @@ Dolayısıyla readonly olarak tanımlanan referans türleri açıkça belirtilme
 C# 1.1 versiyonunda olmayan özelliklerden birisi bir sınıfın static olarak tanımlanamayışıydı. Oysaki C# 2.0 ile static sınıflar tanımlayabilmekteyiz. Static sınıfların belkide en önemli özelliği sadece static üyeler içerebiliyor olmalarıdır.
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde static kavramının C# dilindeki yerini incelemeye çalıştık. Temel olarak static üyelerin metod ve alan bazında kullanılışını, static yapıcı metodu, sabit olarak tanımlanan değer veya referans türlerindeki yerini incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-Temelleri-Static-Olmak-bsenyurt-com-dan)

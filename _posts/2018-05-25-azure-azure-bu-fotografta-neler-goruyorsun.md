@@ -266,3 +266,5 @@ Azure tarafında Computer Vision servisinin pek çok gelişmiş fonksiyonu bulun
 - [Microsoft'un Quickstart Dokümanı](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts/csharp)
 - [Microsoft'un How To Call Vision Api Dokümanı](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi)
 - [Computer Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/azure-azure-bu-fotografta-ne-goruyorsun)

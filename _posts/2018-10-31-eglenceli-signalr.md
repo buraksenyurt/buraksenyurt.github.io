@@ -346,3 +346,5 @@ ve
 Bu yazımızda SignalR'ı kullanarak gerçek zamanlı basılan verilerin, dinlemede olan istemcilerde grafiksel gösteriminin nasıl yapılabileceğini incelemeye çalıştık. Ve böylece adım adım yaparken bir kek kadar lezzetli olmasa da çok keyif alacağınızı düşündüğüm bir makalemizin daha sonuna geldik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örneğe [github üzerinden](https://github.com/buraksenyurt/dotnetcore/tree/master/FunnySignalR) de ulaşabilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Eglenceli-SignalR)

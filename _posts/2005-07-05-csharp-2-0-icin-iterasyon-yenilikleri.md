@@ -285,3 +285,5 @@ foreach (IsBilgisi i in isListesi)
 ![mk128_2.gif](/assets/images/2005/mk128_2.gif)
 
 Gördüğünüz gibi C# 2.0 ile iteratif işlemlerin alt yapısının oluşuturlması C# 1.1 ' e göre daha az kod yazarak kolayca gerçekleştirilebiliyor. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-Icin-Iterasyon-Yenilikleri-bsenyurt-com-dan)

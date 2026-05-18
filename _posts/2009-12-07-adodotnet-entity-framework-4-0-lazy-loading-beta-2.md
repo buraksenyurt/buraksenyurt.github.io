@@ -210,3 +210,5 @@ Sanırım yazımızın başladığı noktadaki sonuçlara döndük ne dersiniz?
 [Before.rar (41,07 kb)](/assets/files/2009/Before.rar)
 
 [ReallyLazy.rar (98,20 kb)](/assets/files/2009/ReallyLazy.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Entity-Framework-40-Lazy-Loading)

@@ -195,3 +195,5 @@ Diğer yandan `http://localhost:10860/Calculations/Discount/120,45` şeklinde bi
 Sonuç olarak UriTemplate'lerin ilgili servis operasyonları ile eşleştirilmesi çok daha kolaylaştırılmıştır. Öncelikle olarak gelen talebin hangi servis ile ilişkili olduğu noktasında Route Table devreye girmektedir. Ardından talep servise gelir. Servis ise URI içeriğine bakara uygun operasyonun çağırılması ile ilgilenir. Böylece geldik bir konumuzun daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson5_RC.rar (24,11 kb)](/assets/files/2010/Lesson5_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Services-Routing)

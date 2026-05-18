@@ -284,3 +284,5 @@ Böylece geldik bir yazımızın daha sonuna. Bu yazımızda sadece 5 çeşit T-
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EglencelikSQL_2.sql (11,65 kb)](/assets/files/2012/EglencelikSQL_2.sql)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/T-SQL-ile-Eglenmeye-Devam(Ikinci-Devre))))

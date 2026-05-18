@@ -167,3 +167,4 @@ Yapılan çağrıya ait sonuçlar xmlhttp değişkeni üzerinden yakalanbilirler
 
 Özetleyecek olursak eski nesil bir ASP sayfasından, yeni nesil REST tipinden bir servisi çağırmayı başarabildiğimizi ifade edebiliriz. Tabii ki bu benim nasıl yapılır sorusu için uğraştığım ilk kod parçası. Asıl ihtiyacımızda bu servis entegrasyonunun var olan miras uygulamasının hangi ASP sayfalarında yapılacağının bulunması, gelen içeriklerin kodda kullanılabilir kıvama getirilmesi gibi gereksinimler söz konusu. Bize kolay gelsin. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/klasik-asp-sayfasindan-rest-servis-cagirmak)

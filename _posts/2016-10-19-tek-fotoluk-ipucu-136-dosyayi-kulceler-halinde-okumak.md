@@ -25,3 +25,4 @@ readChunk metodunu Monkey Patching tekniğini kullanarak eklemiş bulunuyoruz. A
 
 Pek tabii bu teknik bir servis metodunun parçası olabilir. Söz konusu servis büyük boyutlu binary içerikleri karşı tarafa parçalar halinde verebilir. Büyük boyutlu binary içeriklerde yapmak istediğimiz işlemlerde ele alabileceğimiz basit bir kod. Tekrar görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-136-dosyayi-kulceler-halinde-okumak)

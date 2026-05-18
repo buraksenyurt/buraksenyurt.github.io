@@ -166,3 +166,5 @@ Uygulamamızı bu haliyle çalıştırdığımızda yeni eklenen satır için, v
 Gelelim bu iki seçenekten hangisinin tercih edileceğine. Microsoft'un bu konuda yaptığı testlere göre, Stored Procedure yardımıyla Identity değerlerinin elde edilmesi, RowUpdated olayının kullanıldığı tekniğe nazaran daha performanslı ve verimli. Dolayısıyla SP kullanımını tercih etmek daha doğru bir seçenek gibi gözükmektedir. Bir başka konu ise, Access tipi tablolar için aynı senaryonun nasıl işleyeceğidir. Access tipi tablolarda, Output parametresi desteklenmediğinden, SP kullanımı ile identity değerinin elde edilmesi gerçekleşmeyecektir. Bu nedenle tek seçenek, RowUpdated olayında @@IDENTITY değerinin elde edilmesidir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın](/assets/files/2004/Identity.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Identity-Degerlerinin-Calc4b1sma-Zamanc4b1nda-Elde-Edilmesi-bsenyurt-com-dan)

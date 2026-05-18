@@ -106,3 +106,5 @@ Bu noktada akla şöyle bir soru gelebilir. Extensions klasöründe MEF ile Impo
 Bir uygulamayı MEF alt yapısını kullanarak modüler hale getirmek son derece kolaydır. İlerleyen zamanlarda MEF'i daha geniş açıdan inceleyebiliriz. [Ancak o zamana adar sevgili Arda Çetinkaya hocamızın ilgili yazılarını takip etmenizi önerebilirim.](http://www.minepla.net/tag/mef/) Ben kendime not düşmek amacıyla Hello World demek istedim. Umarım sizler için de yararlı olmuştur. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MEFHelloWorldV2.zip (1MB)](https://www.buraksenyurt.com/file.axd?file=%2f2015%2f01%2fMEFHelloWorldV2.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/managed-extensibility-framework-hello-world)

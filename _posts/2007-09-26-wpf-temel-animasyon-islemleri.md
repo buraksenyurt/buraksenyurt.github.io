@@ -362,3 +362,5 @@ WPF içerisinde kullanılan temel animasyon tipleri (Basic Animation Types) sade
 Görüldüğü gibi kontrollerin pek çok farklı tipteki özelliği için yazılmış temel animasyon tipleri vardır. Animasyon ile ilgili işlemler bu makalede ele aldıklarımız ile sınırlı değildir elbeteki. 3 boyutlu (3D) animasyon, KeyFrame'lerin kullanımı ve dahası da var. Animasyon işlemleri ile ilgili bu ilk yazımızda temel animasyon tiplerinin tanımaya ve onları anlamaya çalıştık. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/AnimasyonIslemleri.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Temel-Animasyon-Islemleri-bsenyurt-com-dan)

@@ -18,3 +18,5 @@ Tabi bu ip ucunda da geliştirilebilecek noktalar var.
 - Peki ya bazı özellikler IEnumerable türevli koleksiyonlardan veya dizilerden oluşuyorsa. Peki onların çalışma zamanı içeriklerini çıktıya nasıl katabiliriz?
 
 Bu iki konuyu da çözüme kavuşturmaya çalışarak kendinizi daha da geliştirebilirsiniz. Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-108e28093Property-Value-Dump)

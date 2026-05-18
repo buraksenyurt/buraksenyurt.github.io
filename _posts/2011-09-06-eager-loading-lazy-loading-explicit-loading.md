@@ -170,3 +170,5 @@ namespace ConsoleApplication5
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Chinook veritabanını [bu adresten](http://chinookdatabase.codeplex.com/) indirebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Eager-Loading-Lazy-Loading-Explicit-Loading)

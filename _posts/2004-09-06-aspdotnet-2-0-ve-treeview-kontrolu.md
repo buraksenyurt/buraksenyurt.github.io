@@ -147,3 +147,5 @@ TreeView kontrolünün CheckedNodes özelliği TreeNodeCollections koleksiyonu t
 Şekil 9. Sayfamız çalıştığında.
 
 Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ve-TreeView-Kontrolu-bsenyurt-com-dan)

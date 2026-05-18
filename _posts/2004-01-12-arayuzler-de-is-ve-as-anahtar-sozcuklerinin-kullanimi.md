@@ -118,3 +118,5 @@ Burada a nesnemiz ASinifi sınıfının örneğidir. As ile bu örneği IKullani
 Şekil 2: as Anahtar Kelimesinin Kullanımı
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Arayuzlerde-is-ve-as-Anahtar-Sozcuklerinin-Kullanımı-bsenyurt-com-dan)

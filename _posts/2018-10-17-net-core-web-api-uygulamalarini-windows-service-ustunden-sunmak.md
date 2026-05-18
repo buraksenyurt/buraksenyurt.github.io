@@ -138,3 +138,5 @@ sc delete HouseAPIService
 Artık bu servis hayatta değil. Hepsi bu:)
 
 Böylece bir Web API servisini Windows Service üzerinde nasıl yayınlayabileceğimizi öğrenmiş olduk. Artık Asp.Net Core uygulamaları için elimizde alternatif bir host seçeneği daha var. Asp.Net Core 2.1 ile birlikte gelen diğer özellikleri de zaman içerisinde incelemeye çalışacağım. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-Core-Web-API-Uygulamalarını-Windows-Service-Ustunden-Sunmak)

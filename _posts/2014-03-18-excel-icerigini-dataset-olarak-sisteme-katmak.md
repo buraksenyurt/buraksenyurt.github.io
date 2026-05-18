@@ -162,3 +162,5 @@ Uygulamayı test etmek için ben aşağıdaki içeriklere sahip basit bir Excel 
 ## Sonuç
 
 Sonuç olarak bir Excel içeriğini sisteme almanın birden fazla yolu olduğunu ifade edebiliriz. Ancak bunu etkileyen bazı faktörler olduğunu da bilmeliyiz. En önemlisi de içeriğin alınacağı ortama ait sistemsel parametrelerdir. Çok doğal olarak bu tip bir senaryoda SSIS paketlerinin kullanılmasını da düşünebilirsiniz. Hatta daha önceden çalıştığım bir finans kurumunda tam da bu işler için SSIS (SQL Server Integration Services) paketleri hazırlamakta olduğumu ifade edebilirim. Ama işte gün geliyor SSIS paketi yazacak ortam veya ürün bulamayabiliyorsunuz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Excel-Icerigini-DataSet-Olarak-Sisteme-Katmak)

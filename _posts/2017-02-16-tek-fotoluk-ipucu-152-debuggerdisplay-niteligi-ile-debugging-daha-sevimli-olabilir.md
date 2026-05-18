@@ -27,3 +27,5 @@ Tek yaptığımız Product sınıfının başına System.Diagnostics alanında b
 > Aynı işi aslında ToString metodunu override ederek yapma şansına da sahibiz. Diğer yandan DebuggerDisplay niteliği üzerinden çalışma zamanında bazı özel işvelsellikle gönderme şansına da sahibiz. Söz gelimi nq=No Quatos şeklinde bir bilgi gönderebiliriz. Bir diğer tercih sebebi de az önce bahsettiğimiz gibi ToString'in private bir metod olmayışıdır. Tipin ToString metodunu dışarıya açmak istemediğimiz durumlarda DebuggerDisplay kullanımı ve bu sorumluluğun private bir metoda devredilmesi mantıklıdır.
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-152-debuggerdisplay-attribute)

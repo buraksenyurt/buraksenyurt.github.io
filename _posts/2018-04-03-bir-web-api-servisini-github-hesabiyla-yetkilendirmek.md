@@ -258,3 +258,5 @@ Servisimiz için Github tarafından sağlanan Token bilgisinin bir son kullanma 
 Böylece geldik bir makalemizin daha sonuna. Bu yazımızda bir Web API servisinin yetkilendirme sürecinde Github'ın OAuth hizmetinden nasıl yararlanabileceğimizi incelemeye çalıştık. Umarım faydalı olur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örneğe [github adresi üzerinden](https://github.com/buraksenyurt/dotnetcore/tree/master/MyQuoteService) erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-web-api-servisini-github-hesabiyla-yetkilendirmek)

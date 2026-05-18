@@ -209,3 +209,5 @@ Sonuç olarak ekran görüntümüz aşağıdaki gibi olacaktır.
 Şekil 6. SequentialAccess davranışı.
 
 Evet değerli Okurlarım. Geldik bir makalemizin daha sonuna. Umarım sizi, SqlDataReader sınıfı ile ilgili bilgilerle donatabilmişimdir. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SqlDataReader-Sc4b1nc4b1fc4b1-2-bsenyurt-com-dan)

@@ -262,3 +262,5 @@ Bu kez Ado.Net 1.1' in mimarisi bu tarz bir işleme izin vermeyecek ve while dö
 Şekil 5. Ado.Net 1.1'deki durum.
 
 Görüldüğü gibi, MARS yapısı var olan sınıfların kabiliyetlerini artırarak aynı açık bağlantı üzerinden birden fazla sayıda kayıt kümesine erişebilme imkânına sahip olmamızı sağlamıştır. İşin güzel yanı, MARS etkisini uygulamalarımıza yansıtabilmek için, sınıflarımıza has çeşitli ayarlamalar yapmamıza gerek olmayışıdır. Aynen ADO.NET 1.1 uygulamaları yazar gibi kodlarımızı yazabiliriz. Elbette ki bu mimari değişiklikler sayesinde ADO.NET sınıflarının imkân ve kabiliyetleri önemli derecede artmıştır. ADO.NET 2.0 ile gelen tek yenilik MARS değildir. Bunun yanında, aynı anda birden fazla SQL komutunu çalıştırmamıza yarayan asenkron komut yürütme teknikleri de eklenmiştir. Bu konuyu da bir sonraki makalemizde incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ile-Mars-a-Ayak-Basc4b1yoruz-bsenyurt-com-dan)

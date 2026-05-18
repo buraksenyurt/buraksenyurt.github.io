@@ -348,3 +348,5 @@ Buna göre örneğin Stuttgart’ a yapılan sevkiyatları aşağıdaki gibi eld
 Görüldüğü üzere URL eşleştirme işlemleri klasik sunucu tabanlı Asp.Net uygulamalarında da etkili bir şekilde kullanılabilir. Hatta bu felsefeden yola çıkarak OData sorgularının daha fazla gelişmişlerini destekleyecek web uygulamaları yazılması da pekala olasıdır. Yazımıza konu olan basit örneklerimizde ki anahtar noktalar, RouteTable sınıfı, RouteData.Values özelliği ve GetRouteUrl metodudur. Örneği geliştirmek tamamen sizin elinizde. İşe /siparisler/stuttgart/10301/ şeklinde bir sorguyu ele alıp, 10301 numaralı siparişe ait detay bilgileri göstereceğiniz bir sayfayı üretmeyi deneyerek başlayabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_EasyRouting.zip (605,23 kb)](/assets/files/2013/HowTo_EasyRouting.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Routing-Hatirlamak)

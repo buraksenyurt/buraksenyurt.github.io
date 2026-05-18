@@ -165,3 +165,5 @@ Belirli bir Sprint içindeki Work Item bilgilerinin çekilmesi,
 Görüldüğü üzere söz konusu OData sorgularını kullanarak farklı platformlar üzerinde çalışacak istemci uygulamaların geliştirilmesinin önü son derece açıktır. Şu anda halen geliştirilmekte olan [TFS OData servislerinin kullanımına ilişkin detaylı bilgileri bu adresten takip edebilirsiniz](https://tfsodata.visualstudio.com/). Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Orjinal Yazım Tarihi 3/20/2013.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFS-OData-Destegi)

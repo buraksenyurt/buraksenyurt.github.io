@@ -814,3 +814,5 @@ Buraya kadar öğrenciler başarılı bir şekilde gelebiliyse harika! Eğlencel
 Görüldüğü üzere çok sık yazılan, anlatılan, öğretilen bir konu için hazırlık yapmak önemli bir efor ve çaba gerektiriyor. üstelik varılan sonuçların tutarlı olması ve ortak stadartlar üzerinde durması da önemli.
 
 Faydalı olması ve ilham vermesi dileğiyle…
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/effective-engine-bir-uzay-macerasi)

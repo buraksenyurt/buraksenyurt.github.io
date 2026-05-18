@@ -230,3 +230,4 @@ Böylece geldik bir makalemizin daha sonuna. Bu makalemizde davranışsal tasar�
 
 [ConsoleApplication9.zip (73,18 kb)](/assets/files/2015/ConsoleApplication9.zip)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Design-Patterns-Template-Method)

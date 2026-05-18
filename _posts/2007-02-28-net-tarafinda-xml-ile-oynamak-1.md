@@ -389,3 +389,5 @@ Eğer uygulamamızı çalıştıracak olursak aşağıdaki flash animasyonundaki
 Elbette bu proje içinde söz konusu olan bir sürü bug vardır. Örneğin, kullanıcılar herhangibir veri içeriğini taşıyan Xml dosyalarınıda açabilmektedir. Böyle bir durumda Sahne isimli windows formu oluşturulmakta ama içerisine hiç bir çizgi doğal olarak gelmemektedir. Pekala okuma sırasında SelectNodes metodunun dönüş değerine göre bir takım kontrol mekanizmaları geliştirilebilir. Nitekim elde edilen XmlNodeList tipinin eleman sayısı 0 ise bu durumda kalan işlemleri yapmaya gerek yoktur. Ancak daha güvenli bir yol tercih edilebilir. Bir başka deyişle kullanıcıyı daha detaylı bir şekilde bilgilendirmek amacıyla açılacak olan Xml dökümanının bizim standart veri şablonumuza uygun olup olmadığı bir Xml Schema dosyası yardımıyla kontrol edilebilir.
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde XmlDocument tipini farklı bir şekilde kullanmaya çalıştık. Umarım sizler için yararlı bir deneyim olmuştur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-Net-Tarafında-Xml-ile-Oynamak-1-bsenyurt-com-dan)

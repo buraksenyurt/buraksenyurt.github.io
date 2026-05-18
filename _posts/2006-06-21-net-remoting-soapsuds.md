@@ -303,3 +303,5 @@ RemoteObjects#Toplam")]
 Dolayısıyla istemci tarafından oluşan bu isim alanı ve içeriğini doğrudan kullanabilir yada bu kaynak kod dosyasında bir assembly üretip onu kullanmayı tercih edebiliriz. Tabi böyle bir durumda aynen Non-Wrapped Proxy modelinde olduğu gibi istemci tarafı için gerekli konfigurasyon ayarlarının bildirilmesi gerekmektedir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/Sample_13_SoapSuds.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-Net-Remoting-SoapSuds-bsenyurt-com-dan)

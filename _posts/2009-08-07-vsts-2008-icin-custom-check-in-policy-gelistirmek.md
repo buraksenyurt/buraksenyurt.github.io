@@ -181,3 +181,4 @@ Elbette buradaki ilkeleri ezip geçebiliyoruz bildiğiniz üzere ama izleri kal�
 
 [TimeoutPolicy.rar (30,07 kb)](/assets/files/2009/TimeoutPolicy.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/VSTS-2008-icin-Custom-Check-In-Policy-Gelistirmek)

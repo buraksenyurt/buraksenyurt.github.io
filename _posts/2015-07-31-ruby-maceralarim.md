@@ -146,3 +146,4 @@ Görüldüğü üzere Ruby ile programlama oldukça eğlenceli. Dilin gerçekten
 
 Bu yazımızda Ruby dilini kısaca tanımlamaya çalıştık. Kod parçaları biraz dağınık olsalar da size fikir verebilmişimdir diye ümit ediyorum. Henüz benim de yeni yeni öğrenmeye çalıştığım bu dil ile ilgili maceralarımız devam edecek. Bir başka yazımızda görüşmek dileğiyle, hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-maceralarim)

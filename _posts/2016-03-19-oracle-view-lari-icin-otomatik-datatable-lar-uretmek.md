@@ -86,3 +86,4 @@ Kısaca kodda neler yaptığımıza bir bakalım dilerseniz. En önemli nokta ku
 
 Yine hatırlatmak gerekirse bu tipler veriyi Oracle tarafından çektikten sonra tutmak ve arayüzlerde göstermek amacıyla geliştirilmiş durumda. Normal şartlarda araçlar ile üretilen Typed DataSet/DataTable'ler çok daha fazla fonksiyonellik (önreğin Insert, Update, Delete işlemleri için) içeriyor. Eğer bu fonksiyonellikere de ihtiyaç varsa ilgili kod üretim parçasını buna göre düzenlemekte yarar var. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/oracle-view-lari-icin-otomatik-datatable-lar-uretmek)

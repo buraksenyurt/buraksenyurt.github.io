@@ -120,3 +120,5 @@ Burada ilk parametre, Resource dosyalarının ana adını işaret etmektedir. An
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın](/assets/files/2004/Languages.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Localization-(Yerellestirme)-2-Dil-Destegi-bsenyurt-com-dan)-2-Dil-Destegi-bsenyurt-com-dan)-2-Dil-Destegi-bsenyurt-com-dan)

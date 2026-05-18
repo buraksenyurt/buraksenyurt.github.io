@@ -175,3 +175,4 @@ curl komutunu çalıştırdıktan sonra ilgili ürünün bellekteki listeye ekle
 
 Pek tabii istemci olarak curl veya Firefox gibi bir tarayıcıyı kullanmak zorunda değiliz. Elimizde REST tabanlı çalışan bir servis var. Dolayısıyla istemci tarafı Java,.Net, Ruby vb bir dille yazılmış herhangi bir uygulama olabilir. Diğer yandan örneğimizde eksik bıraktığımız bir operasyon da mutlaka dikkatinizi çekmiştir; HTTP Put. Yani Update işlemimiz henüz operasyonel olarak etkin değil. Operasyon tahmin edeceğiniz üzere paket içerisinde gelecek olan bilgileri var olan bir ürününkü ile değiştirmeli. Peki ama nasıl? Makaleme son verirken bu kutsal görevi de siz değerli okurlarıma bırakıyorum. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/python-ile-rest-tabanli-servis-gelistirmek)

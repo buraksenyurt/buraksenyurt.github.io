@@ -19,3 +19,5 @@ Bu amaçla kullanabileceğiniz etkili yöntemlerden birisi de bildiğiniz üzere
 ![tfi_92](/assets/images/2013/tfi_92.png)
 
 Örneğin benim sistemimde 2 adet Samsung marka 2Gb RAM varmış. Tipleri Unknown gelse de biraz fikir sahibi oldum diyebilirim. Bir başka ipucundan görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-92-WMI-ile-RAM-Bilgilerini-Almak)

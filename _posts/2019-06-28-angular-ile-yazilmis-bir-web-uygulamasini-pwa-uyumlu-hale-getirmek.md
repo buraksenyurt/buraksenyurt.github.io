@@ -302,3 +302,5 @@ Peki ya kalan HTTPS ihlalini development ortamında nasıl aşabiliriz? Aşabili
 - PWA ihlallerinin kısaca ne anlama geldiklerini ve tespitinde Lighthouse'un nasıl kullanılabileceğini
 
 Böylece geldik bir maceramızın daha sonuna. Bu yazıda basit bir Angular uygulaması geliştirip bunu Progressive Web App modelinde yayınlanabilecek kıvama getirmeye çalıştık. Umarım sizler için de faydalı bir çalışma olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/angular-ile-yazilmis-bir-web-uygulamasini-pwa-uyumlu-hale-getirmek)

@@ -175,3 +175,5 @@ fn do_something(input:i32) {
 ![moved_14.png](/assets/images/2022/moved_14.png)
 
 Bu yeni kodun bellekteki çalışma modelini çizmeye çalışarak konuyu daha da iyi bir şekilde pekiştirmeye çalışabilirsiniz;) Yazıyı sonlandırmadan önce ikinci senaryomuza geri dönmek istiyorum. Sizce String türdeki player_name isimli değişkeni print_with_me isimli fonksiyonda kullanıp something üstünden döndürmek yerine farklı bir şekilde yollayıp main fonksiyonunda oluşan taşıma hatasının önünce geçebilir miyiz?;) Bunu bir düşünün, araştırın ve çözümünüz olursa lütfen yorum kısmında paylaşın. Böylece geldik bir Rust pratiğimizin daha sonuna. Bu örnek kısa olduğu için github üzerinde bir örneğini oluşturmadım ancak Rust dili ile ilgili çalışmalarıma [rust-farm](https://github.com/buraksenyurt/rust-farm) üzerinden ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-value-moved-here)

@@ -375,3 +375,5 @@ namespace CaseObjectInitializers
 Her iki örnek kod parçasında da Book tipinden nesne örnekleri taşıyan birer List koleksiyonu oluşturulmakta ve doldurulmaktadır. Book tipi içerisinde Author tipinden de bir koleksiyon da yer almaktadır. Tabi Book ve Author sınıfları için aşırı yüklenmiş yapıcı metodlar (Overloaded Constructors) olmadığını varsayıyoruz bu senaryo da. Kodun daha da kısalması, performans yönündeki minik fark göz önüne alındığında biraz daha önemsiz gibi duruyor. Yine de çok fazla sayıda kod parçası içeren projelerde kodun okunurluğunun da geliştiricinin psikolojisi üzerinde doğrudan etkili olduğunu ifade etmek isterim. Böylece geldik bir yazımızın daha sonuna. Netspecter’ ın bir sonraki macerasında görüşünceye dek hepinize mutlu günler dilerim.
 
 [CaseObjectInitializers.rar (23,71 kb)](/assets/files/2011/CaseObjectInitializers.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Object-Initializer-Deyip-Gecmemek-Lazc4b1m)

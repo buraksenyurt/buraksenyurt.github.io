@@ -197,3 +197,5 @@ Sırada, RepeatableRead değeri var. Bu değeri de ReadCommitted ile kıyaslayar
 | | | Yeni bir satır eklenmeye çalışılır. Ancak buna izin verilmez. Çünkü satırlar, Serializable değeri nedeniyle diğer Transaction tarafından kilitlenmiştir. |
 
 Dolayısıyla Serializable değerinin eşzamanlı Transaction'lar için sadece veri bakmaya izin verdiğini söyleyebiliriz. Başka bir deyişle, aynı anda çalışan iki Transaction'dan herhangi biri, Transaction'lardan diğeri açık olduğu sürece veri girişi, düzenlemesi veya silme işlemlerini yapamaz. Böylece SQL Server üzerinde çalışan eşzamanlı Transaction'lar için var olabilecek sorunları değerlendiren izolasyon seviyelerini kısaca görmüş olduk. İlerleyen makalelerimizde, SQL Server kilitlerinin ADO.NET içindeki yerini incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Transaction-larda-Izolasyon-Seviyeleri-2-(IsolationLevel-Numaralandc4b1rc4b1cc4b1sc4b1)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

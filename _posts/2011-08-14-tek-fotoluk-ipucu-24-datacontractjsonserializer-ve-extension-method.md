@@ -15,3 +15,5 @@ Extension metodlar çok ama çok işimize yarayabiliyor. Örneğin serileştiril
 ![PhotoTrick24](/assets/images/2011/PhotoTrick24.png)
 
 [JsonExtensions.rar (23,64 kb)](/assets/files/2011/JsonExtensions.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-24(DataContractJsonSerializer-ve-Extension-Method))))

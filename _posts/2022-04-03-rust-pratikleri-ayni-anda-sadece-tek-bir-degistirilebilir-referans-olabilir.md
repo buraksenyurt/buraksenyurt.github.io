@@ -203,3 +203,5 @@ Program kodumuzu tekrar çalıştırdığımızda istediğimiz sonuca ulaşırı
 ![only_you_4.png](/assets/images/2022/only_you_4.png)
 
 Hem birden fazla thread'in aynı veri üzerinde iş yapmasını sağladık hem de bunu thread safe olarak data races sorununa neden olmayacak şekilde gerçekleştirdik. Böylece geldik bir rust pratiğimizin daha sonuna. Örneğe her zaman olduğu gibi [github reposundan](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/only_you) ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ayni-anda-sadece-tek-bir-degistirilebilir-referans-olabilir)

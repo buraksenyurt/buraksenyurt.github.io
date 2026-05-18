@@ -314,3 +314,5 @@ Bu yoğun çalışmada deneyimlediğim bir çok yeni şey oldu. WebSocket kavram
 - ReactSpeedometer'ın temel kullanımını
 
 Böylece geldik [40 numaralı cumartesi gecesi derlemesi](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2040%20-%20SocketIO%20with%20React)nin sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/react-uzerinde-socket-io-kullanimi)

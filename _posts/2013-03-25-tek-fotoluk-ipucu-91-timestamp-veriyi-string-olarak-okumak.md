@@ -17,3 +17,5 @@ Diyelim ki SQL Server üzerinde duran tablolarda timestamp veri tipinden alanlar
 ![tfi_91](/assets/images/2013/tfi_91.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-91-Timestamp-Veriyi-String-Olarak-Okumak)

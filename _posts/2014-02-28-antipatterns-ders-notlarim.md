@@ -334,3 +334,5 @@ Doğal olarak iş mantıkları soyutlanmamış olacağından arayüz ile sıkı 
 Yazılım sektöründe 10 yıl ve üzerinde yer alan bireylerin yukarıdaki maddeleri okuduğunda benzer senaryolar ile karşılaşmış ve hatta içerisinde aktif olarak rol oynamış olabileceklerini düşünüyorum. Yazılım geliştirme süreçleri, teknikleri, mimarileri ve daha pek çok enstürman inanılmaz bir hızla geliştiğinden AntiPattern vakalarına da kolayca düşülebilmekte. Bu yüzden bilinçlenmekte yarar var. Daha pek çok AntiPattern olduğunu da belirtmek isterim. Bunları mutlaka ilgili kaynaklardan okumalı ve örnek vakalarına göz atarak kaçınmaya çalışmalısınız. Aslında AntiPatterns konusunun Üniversiteler de müfredata dahil edilmesi gerektiğine inananlardanım. Özellikle de Yüksek Lisans programlarında.
 
 Bir başka etkinlikte görüşmek üzere hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AntiPatterns-Ders-Notlarc4b1m)

@@ -183,3 +183,5 @@ Dikkat edileceği üzere Text dosyamız içerisinde yer alan tüm içerik XML fo
 Görüldüğü gibi WCF Data Service'lerde Reflection Provider'larını kullanarak Entity Framework dışındaki kaynakları kullanmak son derece kolaydır. Bu yazıda geliştirdiğimiz örnekte, POST, PUT ve DELETE sorguları için gerekli destek yoktur. Bunun için IUpdatable arayüzünün ve onunla birlikte tanımlanan üyelerin ezilmesi (override) gerekmektedir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
 [ReflectionProvider.rar (36,11 kb)](/assets/files/2012/ReflectionProvider.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Data-Services-Reflection-Provider)

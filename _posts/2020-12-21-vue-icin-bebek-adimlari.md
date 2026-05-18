@@ -876,3 +876,5 @@ Sekizinci örnekle birlikte Vue'nun en temel parçalarını bebek adımları ile
 
 Örnek kodlara [github reposu üzerinden](https://github.com/buraksenyurt/skynet/tree/master/No%2041%20-%20Vueeeee) erişebilirsiniz. Böylece geldik bir SkyNet derlememizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 {% endraw %}
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/vue-icin-bebek-adimlari)

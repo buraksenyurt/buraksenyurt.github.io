@@ -30,3 +30,5 @@ Bir süre önce çalıştığım firmada ufak bir web uygulaması ihtiyacı ile 
 - Tüm hücre içeriklerini aynı taraftan hizalamak.
 
 Afiyetle izleyin. Eski günlerimizi yaad edelim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Temellerie28093Eglenceli-GridView)

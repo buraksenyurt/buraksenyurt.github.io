@@ -263,3 +263,5 @@ ORDER BY [Project1].[UnitPrice] DESC
 ```
 
 Yinede TOP 40 oluşumu söz konusudur. Ancak istediğimiz sonuç alınmıştır. Sayfalama işlemide başarılı bir şekilde gerçekleştirilmiştir. Böylece geldik bir blog yazımızın daha sonuna. Şimdi müsadenizle biraz dinlenmeye çekileceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-RIA-Servisleri-DomainDataSource-Kulanc4b1mc4b1)

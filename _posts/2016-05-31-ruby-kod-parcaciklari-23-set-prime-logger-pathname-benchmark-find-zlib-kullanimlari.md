@@ -185,3 +185,4 @@ Bir CSV dosyasını oluşturmak gayet kolaydır. Bunun için open metoduna uygun
 
 Görüldüğü üzere standart kütüphane içerisinde bir çok işe yarar fonksiyonellik bulunmaktadır. Makalemizde değindiğimiz tiplerin daha pek çok özelliği bulunuyor. [Bunlar için mutlaka Ruby Dokümantasyonlarına bakmanızı öneririm](http://ruby-doc.org/stdlib-2.3.1/). Zaten Ruby dilini etkin kullanmak istiyorsak ilgili dokümanda belirtilen tipleri ele alıp gözümüze kestirdiklerimizi önceliklendirmek suretiyle çalışmamızda yarar olduğu kanısındayım. Nitekim çok fazla kütüphane bulunuyor. Böylece geldik bir Ruby Kod Parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-23-bir-kac-kirinti-daha)

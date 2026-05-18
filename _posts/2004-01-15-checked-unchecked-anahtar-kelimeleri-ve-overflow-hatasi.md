@@ -154,3 +154,5 @@ Uygulamamızı çalıştırdığımızda, degisken3 isimli byte türünden deği
 Şekil 5. Unchecked anahtar kelimesinin uygulanmasının sonucu.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Checked-Unchecked-Anahtar-Kelimeleri-ve-OverFlow-Hatası-bsenyurt-com-dan)

@@ -172,3 +172,5 @@ Sonrasında uygulamanın sorunsuz çalıştığı gözlemlenebilir.
 ![hellomvc_6.png](/assets/images/2021/hellomvc_6.png)
 
 Bu ve önceki yazıyla birlikte Asp.Net 5'in temel Dependency Injection uygulama tekniklerini görmüş olduk. Tabii Dependency Injection konusu bunlarla bitmiyor. ConfigureServices metodunda servisleri kayıt altına alırken hep AddTransient metodunu kullandığımızı fark etmiş olmalısınız. Oysa ki AddScope ve AddSingleton metotları da var. Yani kayıt altına alınan bir DI servisinin hangi anda örnekleneceğini ve yaşam ömrünün ne olacağını da belirleyebiliyoruz. Bu konu ile ilgili fırsatım olursa bir şeyler karalamaya çalışacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize sağlıklı günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/asp-net-core-dependency-injection-turleri)

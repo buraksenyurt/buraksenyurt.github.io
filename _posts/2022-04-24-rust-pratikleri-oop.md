@@ -669,3 +669,5 @@ fn main() {
 ```
 
 Böylece geldik bir Rust pratiğinin daha sonuna. Bu pratikte nesne yönelimli dillerin önemli kabiliyetleri arasında yer alan kalıtım ve çok biçimli olma hallerine hem C# hem de Rust cephesinden bakmaya çalıştık. Örnek kodlara her zaman olduğu gibi [github reposu üzerinden erişebilirsiniz](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/oop). Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Rust-Pratikleri-Object-Oriented-Programming)

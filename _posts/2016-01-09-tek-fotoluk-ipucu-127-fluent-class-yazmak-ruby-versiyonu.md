@@ -19,3 +19,4 @@ Dikkat edileceği üzere foo isimli Soldier sınıfı kullanılırken bağımsı
 
 Örnek çok basittir ve sadece puts ile ekrana bilgi yazılmaktadır. Daha da geliştirilebilir. Örneğin askerin silahı veya zırhı başka birer sınıf olarak tasarlansa daha iyi olur. Diğer yandan askerin birden fazla silaha sahip olması da muhtemeldir. Dolayısıyla n sayıda silahı temsil edecek şekilde bir tip dizisi kullanılması düşünülebilir. Bunları siz değerli okurlarımdan Ruby ile uğraşanlara bırakıyorum. Artık Verbal Expressions kütüphanesini daha iyi anayabileceğinize inanıyorum. Hatta Ruby ile nasıl kullanıldığına bakabilir ve böyle bir sınıfı geliştirmeyi deneyebilirsiniz. Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-127-fluent-class-yazmak-ruby-versiyonu)

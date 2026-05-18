@@ -143,3 +143,5 @@ Bu kez Product.xml dosyası içerisinde serileştirme işlemini yaptıktan sonra
 ![blg85_SecondRun.gif](/assets/images/2009/blg85_SecondRun.gif)
 
 WCF 4.0 son sürümü ile gelmesi muhtemel olan bu yenilik sayesinde, Known Type durumlarının çalışma zamanında dinamik olarak değerlendirilmesi sağlanmaktadır. Bu özelliğin geliştiricilere daha büyük bir esneklik sunduğuda ortadadır. Böylece geldik WCF 4.0 ile ilgili bir yeniliğin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-DataContractResolver-ile-Dynamic-Type-Resoluiton)

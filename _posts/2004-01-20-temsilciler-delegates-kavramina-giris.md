@@ -175,3 +175,5 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
 Şekil 4. Multi-Cast temsilciler.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde temsilcilerin kullanılıdığı olaylar (events) kavramına gireceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Temsilciler-(Delegates)-Kavramına-Giris-bsenyurt-com-dan)-Kavramına-Giris-bsenyurt-com-dan)-Kavramına-Giris-bsenyurt-com-dan)

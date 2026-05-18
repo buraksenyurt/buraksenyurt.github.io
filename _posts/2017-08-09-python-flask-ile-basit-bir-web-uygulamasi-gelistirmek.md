@@ -162,3 +162,5 @@ Yazdığımız uygulamayı IDLE üzerinden değil de komut satırından çalış
 ![flaskweb_2.gif](/assets/images/2017/flaskweb_2.gif)
 
 Görüldüğü üzere Flask paketini kullanarak Python tarafında bir web uygulaması geliştirmek ve şablon HTML sayfalarını kullanmak oldukça basit. Pek tabii şablon kullanımında `{{` ile `}}` arasına alınabilecek çok farklı teknikler de söz konusudur. Bunları kitabın ilerleyen kısımlarında bulabileceğimi düşünüyorum. Öğrendikçe sizlerle paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Flask-ile-Basit-Bir-Web-Uygulaması-Gelistirmek)

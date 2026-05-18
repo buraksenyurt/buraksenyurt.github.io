@@ -416,3 +416,5 @@ Uygulama tekrar denendiğinde sorunsuz olarak çalıştığı hatta WF örneği 
 Görüldüğü üzere Workflow örneklerinin, çalışma zamanında belirli koşulların sağlanması şartıyla bir depolama alanında saklanması ve sonradan tekrardan ayağa kaldırılıp yürütülmesi SQL Persistence Service yardımıyla son derece kolay bir şekilde gerçekleştirilebilmektedir. Elbetteki gerçek hayat koşullarında SQL dışı kaynakların kullanılmasıda istenebilir. Bu gibi vakalarda söz konusu hizmet için özel bir geliştirme yapılması gerekmektedir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği İndirmek İçin Tıklayın](/assets/files/2009/PersistenceInceleme.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SQL-Persistence-Hizmeti-bsenyurt-com-dan)

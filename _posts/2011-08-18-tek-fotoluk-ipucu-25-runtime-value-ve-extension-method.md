@@ -15,3 +15,5 @@ categories:
 ![PhotoTrick25New.png](/assets/images/2011/PhotoTrick25New.png)
 
 [RuntimeValues.rar (23,48 kb)](/assets/files/2011/RuntimeValues.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-25-(Runtime-Value-ve-Extension-Method))))

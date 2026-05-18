@@ -245,3 +245,5 @@ class MessageBindingModule
 Dolayısıyla bir Dependency Injection Container bileşeni, uygulamada kullanılan sınıflar arası bağımlılıklar arttıkça etkisini gösterecektir. Ninject Container aracını kullanmak görüldüğü üzere son derece kolaydır. Diğer yandan aracın çok daha farklı yetenekleri bulunmaktadır. Ninject popüler olanlarından sadece birisidir. Diğerleri de benzer ilkeler ile çalışmakta ve temel olarak IoC (Inversion of Control) prensibini baz almaktadır.
 
 Bu yazımızda Ninject aracının çok basit seviyede bağımlılıkları enjekte etme notkasında nasıl kullanılabileceği ele alınmıştır. [Detaylı bilgi için Dojo'ya](http://www.ninject.org/learn.html) uğramanız gerekmektedir. İlerleyen günlerde Ninject ile bağımlılıkların farklı seviyelerde nasıl oluşturulabileceğini de incelemeye çalışacağız. Yani yapıcı metod haricindeki metodlarda veya özellik (Property) seviyesinde bu bağımlılıkları nasıl tanımlayabileceğimize bakacağız. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Biyutiful-Kod-Ninject-ile-Bir-Dependency-Injection-Macerasi)

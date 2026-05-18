@@ -16,3 +16,5 @@ Diyelim ki elinizde kendi tipinize ait generic bir liste ve bu liste içerisinde
 ![tfi56.png](/assets/images/2012/tfi56.png)
 
 Bir diğer ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-55-Distinct-IEqualityComparer)

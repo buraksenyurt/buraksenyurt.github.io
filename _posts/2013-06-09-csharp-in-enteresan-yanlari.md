@@ -334,3 +334,5 @@ Bu yazımızda şöyle kıyıda köşede kalmış olabilecek bir kaç dil kabili
 [HowTo_CSharp_Myths.zip (42,82 kb)](/assets/files/2013/HowTo_CSharp_Myths.zip)
 
 [İlk yazım tarihi 31 ekim 2012]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/CSharp-Enteresan-Yanlari)

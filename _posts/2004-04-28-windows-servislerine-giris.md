@@ -237,3 +237,5 @@ Eğer servisin otomatik olarak başlatılmasını istiyorsak, ServiceInstaller n
 Şekil 16. Servisin çalışmasının sonucu.
 
 Burada görüldüğü gibi Log Deneme ismi ile belirttiğimiz Event Log oluşturulmuş, Source olarak belirttiğimiz Kaynak nesnesi oluşturulmuş ve OnStart metoduna yazdığımız kodlar yardımıyla, mesaj bilgimiz information (bilgi) olarak yazılmıştır. Buraya kadar anlattıklarımız ile bir Windows servisinin nasıl yazıldığını ve sisteme yüklendiğini en temel hatları ile görmüş olduk. İlerleyen makalelerimizde, Windows servisleri ile ilgili daha farklı uygulamalar geliştirmeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Windows-Servislerine-Giris-bsenyurt-com-dan)

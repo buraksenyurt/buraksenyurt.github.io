@@ -327,3 +327,5 @@ Ancak istemci tarafından, Personel rolündeki bir kullanıcı ile servise ulaş
 Böylece geldik bir makalemizin daha sonuna. Bu tamamlayıcı makalemizde internet üzerinden https ile erişilebilen bir servis üzerinde, Asp.Net rol ve üyelik yönetimini (Role and Membership Management) kullanarak doğrulama (authentication) ve yetkilendirme (authorization) işlemlerinin nasıl yapılabileceğini incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [SSLClient.zip (25,30 kb)](https://www.buraksenyurt.com/makale/images/SSLClient.zip) (Dosya boyutunun küçük olması için veritabanı çıkartılmıştır. Örneği denerken sertifika eklemeyi ve veritabanını oluşturup örnek kullanıcılar dahit etmeyi unutmayınız.)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Internet-Uzerinden-Guvenligi-Saglamak-2)

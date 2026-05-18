@@ -383,3 +383,6 @@ Bu metodun çalışması sırasında bazı hatalar oluşabilir. Söz gelimi Save
 Bu testin sonrasında sunucu tarafındaki aspnetdb.mdf veritabanında yer alan aspnetProfile tablosu içeriğine bakıldığında her iki kullanıcı içinde ilgili satırların oluşturulduğu görülebilir.
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde İstemci Uygulama Servislerini (Client Application Service), Visual Studio 2008 ortamı üzerinde basit bir şekilde ele alarak, Windows tabanlı istemcilerde Authentication,Roles ve Profile hizmetlerinin nasıl ele alınabileceğini basit bir şekilde incelemeye çalıştık. Söz konusu kriterlerin birer servis olarak.Net Framework içerisine dahil edilmesi sonrasında herhangibir.Net istemcisinin bunları kullanabileceğini anladık. Burada.Net tabanlı istemcilerin JSON formatında mesajlaşma yaptığını ancak.Net dışı uygulamalarında SOAP 1.1 formatını kullanarak bu servisleri ele alabileceklerine değindik ki bunu ilerleyen makalelerimizde ele almaya çalışacağız.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Client-Application-Services-(Istemci-Uygulama-Servisleri)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-
+-dan)

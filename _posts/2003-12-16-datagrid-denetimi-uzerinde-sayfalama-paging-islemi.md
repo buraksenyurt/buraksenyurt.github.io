@@ -100,3 +100,5 @@ Public void Sayfa_Guncelle(object sender , DataGridPageChangedEventArgs e)
 ```
 
 Şimdi uygulamamızı çalıştırısak eğer, sayfalar arasında rahatça gezebildiğimizi görürüz. Geldik bir makalemizin daha sonuna, bir sonraki makalemizde, yine DataGrid kontrolünü inceleyeğiz. Bu defa, kolonlar üzerinden sıralama işlemlerinin nasıl yapıldığını incelemeye çalışacağız. Umuyorumki hepiniz için faydalı bir makale olmuştur. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataGrid-Denetimi-Uzerinde-Sayfalama(Paging)-Islemi-bsenyurt-com-dan)-Islemi-bsenyurt-com-dan)-Islemi-bsenyurt-com-dan)

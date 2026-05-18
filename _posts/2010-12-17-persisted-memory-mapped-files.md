@@ -146,3 +146,5 @@ Geliştirdiğimiz örnekte bellek üzerine açtığımız dosya içeriğinde bir
 Biraz dinlenmeye ne dersiniz. Takip eden yazımızda Non-Persisted modele göre Memory-Mapped File kavramını ele almaya çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MemoryMappedFileKavrami.rar (40,21 kb)](/assets/files/2010/MemoryMappedFileKavrami.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Persisted-Memory-Mapped-Files)

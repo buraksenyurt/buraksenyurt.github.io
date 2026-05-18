@@ -374,3 +374,5 @@ Olaylar ile ilgili olarak bilmemiz gereken bir diğer noktada; += ile yüklenen 
 Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/Olaylar.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-Temelleri-Olayları(Events)-Kavramak-bsenyurt-com-dan)-Kavramak-bsenyurt-com-dan)-Kavramak-bsenyurt-com-dan)

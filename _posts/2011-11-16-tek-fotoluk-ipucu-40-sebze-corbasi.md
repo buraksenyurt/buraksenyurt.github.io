@@ -16,3 +16,5 @@ Hani böyle annemiz zamanında içinde yok yok dedirtecek türden çorbalar yapm
 ![PhotoTrick40](/assets/images/2011/PhotoTrick40.png)
 
 [CreateGenericType.rar (24,98 kb)](/assets/files/2011/CreateGenericType.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-40(Sebze-Corbasi))))

@@ -504,3 +504,5 @@ Mesaj bazlı kesici tip, Endpoint seviyesinde bir davranış olarak tanımlandı
 Görüldüğü üzere parametre ve mesaj seviyesinde kesme işlemlerini uygulamak çok zor olmadığı gibi dikkat gerektiren bir işlemler bütününden oluşmaktadır. Bu yazımızda Parametre ve Mesaj bazlı kesici tiplerin WCF tarafında nasıl yazılabileceğini incelemeye çalıştık. Bu kesicilerin bir diğer implementasyonu da WCF Data Service tarafındadır. Bu konuyu da incelemenizi tavsiye ederim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_WCF_Interceptors.zip (86,34 kb)](/assets/files/2012/HowTo_WCF_Interceptors.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Interceptors)

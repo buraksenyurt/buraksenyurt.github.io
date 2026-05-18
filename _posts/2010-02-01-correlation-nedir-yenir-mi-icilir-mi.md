@@ -29,3 +29,4 @@ Bu giriş yazımızda özellikle Content-Based Correlation üzerinde durabiliriz
 
 Sanırım şu ana kadar anlattıklarımız ile kafamızda Correlation'ın ne olduğuna dair bir fikir oluşmuştur. Tabi konuyu kavramak tek başına yeterli değildir. Pratiğe dökmemizde yarar vardır. Ancak şu an için bu konudaki araştırmaya ara verip tatile çıkmak niyetindeyim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Correlation-Nedir-Beta-2)

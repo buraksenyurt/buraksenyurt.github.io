@@ -119,3 +119,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 
 [CustomActivityValidation.rar (50,30 kb)](/assets/files/2010/CustomActivityValidation.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Dogrulama(Validation))))

@@ -113,3 +113,5 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 [ProofOfConcept_RC.rar (4,33 mb)](/assets/files/2010/ProofOfConcept_RC.rar)
 
 Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Paralel-Programlamada-Performans-Hiz-Verimlilik-ve-Olceklenebilirlik-Olcumleri)

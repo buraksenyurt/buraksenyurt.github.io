@@ -435,3 +435,5 @@ Doğruyu söylemek gerekirse [Saturday-Night-Works](https://github.com/burakseny
 - Docker Container içine açılan uygulamaların asıl IP adreslerini nasıl görebileceğimi
 
 Bu macerada API Gateway olarak kullanılabilen KONG isimli ürünü bir Linux platformunda docker imajları üzerinde deneyimlemeye çalıştık. Böylece geldik bir maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Peki-ya-Kong-Kim)

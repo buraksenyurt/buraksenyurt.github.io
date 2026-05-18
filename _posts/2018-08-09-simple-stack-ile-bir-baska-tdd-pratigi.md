@@ -20,3 +20,5 @@ Code Kata pratiklerine ara vermeden devam etmekte yarar var. Bu videomuzda da Te
 [Youtube Link](https://www.youtube.com/watch?v=JvR1LNYb9rY)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/simple-stack-ile-tdd-pratigi)

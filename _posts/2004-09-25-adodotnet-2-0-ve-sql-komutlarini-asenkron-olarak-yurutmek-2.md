@@ -122,3 +122,5 @@ Bu modeli, bir önceki makalemizde incelediğimiz polling modeli ile karşılaş
 Şekil 2. CallBack modelinin anatomisi.
 
 Görüldüğü gibi aslında, asenkron olarak çalışacak sql sorguları tamamlandığında devreye giren CallBack metodları, uygulama ortamındaki satırlardan tamamen bağımsız olarak çalışan yapılardır. Sql komutları sonlandığında anında devreye girerek sonuçların elde edilebilmesini sağlayan ve hatta başka işlemlerin gerçekleştirilebileceği kod bloklarını kapsüllememize imkan vermektedirler. CallBack yapısının biraz daha gelişmiş bir versiyonu olan Wait modelide asenkron sql komutları yürütülmesinde kullanılan tekniklerdendir. Bir sonraki makalemizde bu konuya değinmeye çalışacağız. Tekrar görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ve-Sql-Komutlarc4b1nc4b1-Asenkron-Olarak-Yurutmek-2-bsenyurt-com-dan)

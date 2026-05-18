@@ -478,3 +478,5 @@ Bu değeri SelectedIndexChanged metodu içerisinden alarak sorgu cümlesinde par
 Bu makalemizde Asp.Net uygulamalarında Download ve Upload işlemlerini detayları ile incelemeye çalıştık. İlk olarak bir dosyanın indirilme işleminin nasıl yapılabileceğine baktık. Sonrasında ise basit olarak bir Upload işlemi ile sunucuya dosya gönderme olayını ele aldık. Upload işleminin farklı yönlerini ele almak adına, anında sunucu tarafında işleme ve tabloya satır olarak ekleme işlemlerini inceledikten sonra, tablodaki bir binary içeriği indirme sürecine göz attık. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/AspNetIOIslemleri.zip) (Dosyanın çok yer tutmaması açısından mdf dosyası çıkartılmıştır)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-Temelleri-Derinlemesine-DownloadUpload-Islemleri-bsenyurt-com-dan)

@@ -332,3 +332,5 @@ public void Guncelle(int ID)
 Şekil 4. Güncelleme işleminin sonucu.
 
 Programımız elbette gelişmeye çok, ama çok açık. Örneğin kodumuzda hata denetimi yapmadığımız bir çok ölü nokta var. Bunların geliştirilmesini siz değerli okurlarımıza bırakıyorum. Bu makalemizde özetle, bir arayüzü bir sınıfa nasıl uyguladığımızı, bu arayüzü nasıl yazdığımızı hatırlamaya çalıştık. Ayrıca, sınıfımıza ait bir nesne örneğine, bir tablodaki belli bir veri satırına ait verileri nasıl alabileceğimizi, bu nesne özelliklerinde yaptığımız değişiklikleri tekrar nasıl veri tablosuna gönderebileceğimizi inceledik. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Bir-Arayuz-Bir-Sınıf-ve-Bir-Tablo-bsenyurt-com-dan)

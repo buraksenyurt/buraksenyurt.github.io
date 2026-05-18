@@ -403,3 +403,5 @@ public class Personel3<G> : ISerializable
 Görüldüğü gibi özel serileştirmeye ihtiyacımız olduğunda ele alabileceğimiz teknikler ortadadır. Şifreleme işlemleri gibi, verinin doğrudan değiştirilmesi gerektiği durumlarda ISerializable arayüzüne ait üyelerin kullanılması çok daha doğru olacaktır. Nitekim böyle bir ihtiyaçta doğrudan süreç içerisinde yer alan nesne değerlerini yakalayabilmek adına ele alınabilecek en uygun yol budur. Bununla birlikte serileştirme süreci içerisinde farklı kaynaklara yönelik işlemler yapılması düşünülüyorsa Framework 2.0 ile birlikte gelen attribute'lardan yararlanılabilir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kod için tıklayınız.](/assets/files/2006/UsingRijnadel.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Custom-Serialization-bsenyurt-com-dan)

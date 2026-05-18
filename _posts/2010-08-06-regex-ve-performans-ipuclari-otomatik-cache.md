@@ -104,3 +104,5 @@ Peki bu korkunç sayılabilecek süre farkı neden oluşmuştur. Yazımızın gi
 Regex tipinin performanslı kullanımına ilişkin farklı ip uçları da mevcuttur. Ancak sucuk gibi terldiğimden bu sıcakta ancak bu kadar yazabildim. Söz konusu ipuçlarını ilereyen yazılarımızda ele almaya çalışıyor olacağız. Umarım havalar buna müsade eder. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RegExPerformanceTips.rar (33,72 kb)](/assets/files/2010/RegExPerformanceTips.rar) [Örnek Visual Studio 2010 Ultimate Ortamında Geliştirilmiş ve Test Edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Regex-ve-Performans-Ipuclari-Otomatik-Cache)

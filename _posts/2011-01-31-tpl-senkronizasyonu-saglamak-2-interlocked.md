@@ -216,3 +216,5 @@ Burada karşılaştırma ve veri değiş tokuşu fonksiyonellikleri söz konusud
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TPLSynchronization_Interlocked.rar (23,07 kb)](/assets/files/2011/TPLSynchronization_Interlocked.rar) [Örnek Visual Studio 2010 Ultimate Sürümünde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TPL-Senkronizasyonu-Saglamak-2-(Interlocked))))

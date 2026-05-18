@@ -249,3 +249,5 @@ Buna göre şu sonuca varabiliriz;
 Static olarak tanımlanmış sınıfların sadece static üyeler içereceği kesin olmasına rağmen, üyelerinin static anahtar sözcüğü ile tanımlanıyor olması biraz tuhaf bir durum olarak görülebilir. Öyleki izlediğim bir iki blog sitesinde bu durum biraz alaycı ifadeler ile komik olarak ele alınmış. Tabi şu anda test ettiğimiz static class'ların beta 2 sürümüne ait olduğu düşünülecek olursa piyasaya çıkacak olan sürümde bu durum üzerinde iyileştirmeler yapılabilir.
 
 Durumu özetleyecek olursak, sadece static üyeler içermesini düşündüğümüz, örneklenmesini ve türetilmesini kesinlikle istemediğimiz sınıfların tanımlanabilmesi için static anahtar sözcüğünü sınıflar için kullanabiliriz. Bu düşündüğümüz tasarım modelinin uygulamamız için yeterli olacaktır. Geldik bir makalemizin daha sonuna. Bu makalemizde C# 2.0' a gelen yeni özelliklerden brisi olan static sınıfları incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-ve-Static-Sınıflar-bsenyurt-com-dan)

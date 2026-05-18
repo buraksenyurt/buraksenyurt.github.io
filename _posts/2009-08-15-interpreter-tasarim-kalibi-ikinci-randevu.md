@@ -265,3 +265,4 @@ Maddeler elbetteki çoğaltılabilir. Ancak sonuçta ulaştığımız noktalarda
 
 [InterpreterV2.rar (26,55 kb)](/assets/files/2009/InterpreterV2.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarim-Kaliplari-Intpreter-ile-ikinci-randevu)

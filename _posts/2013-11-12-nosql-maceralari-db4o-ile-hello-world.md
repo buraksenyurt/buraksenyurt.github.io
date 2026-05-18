@@ -312,3 +312,5 @@ Bu makalemizde Java ve.Net desteği bulanan nesne veritabanlarından db4o ürün
 [Örnek kodlar Visual Studio 2012’ de geliştirilmiş ancak ObjectManager Enterprise için Visual Studio 2010 sürümünden yararlanılmıştır. Üründeki güncelleştirmeleri takip etmenizi öneririm.]
 
 [HelloDb4o.zip (459,81 kb)](/assets/files/2013/HelloDb4o.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/db4o-Hello-World)

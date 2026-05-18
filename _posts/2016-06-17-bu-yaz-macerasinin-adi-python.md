@@ -314,3 +314,4 @@ Başka bir eksik kaldı mı diye düşünüyorum şu anda...Ah evet. # ile başl
 
 Bu yazıda merhaba dediğimiz pek çok kavram oldu aslına bakarsanız. if, while, for, Tuple, Dictionary, List, Range,def, metod ve değişken tanımlamaları, print, input, int, len, import, as ve unuttuğum diğerleri. Görüldüğü gibi Python dili oldukça esnek, söz dizimi yalın ve basit. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bu-yaz-macerasinin-adi-python)

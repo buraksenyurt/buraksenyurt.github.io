@@ -132,3 +132,5 @@ Son olarak sql tablomuzda bu alanların nasıl göründüğüne bir bakalım.
 Şekil 5. Tablonun görünümü.
 
 Gördüğünüz gibi, tablomuzda Resim adlı image tipindeki alanımızda yazmaktadır. Acaba gerçekten resmimiz bu alana düzgün bir şekilde kaydedildi mi? Bir sonraki makalemizde, bu kez var olan image alanlarını, tablodan nasıl okuyacağımızı ve bir dosyaya nasıl kaydedebileceğimizi incelemeye çalışacağız. Umuyorumki hepiniz için yararlı bir makale olmuştur. Bir sonraki makalemizde görüşmek dileğiyle mutlu günler, iyi çalışmalar dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sql-Tablolarc4b1na-Resim-Eklemek-bsenyurt-com-dan)

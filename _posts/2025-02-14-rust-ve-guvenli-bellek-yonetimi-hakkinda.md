@@ -398,3 +398,5 @@ Bu örnekler aslında Rust'ın daha güvenli bellek yönetimine ihtiyaç duyan v
 Son olarak bu özetin amacının C++ veya C gibi tarihe damga vurmuş ve halen daha geçerliliklerini koruyan dilleri kötülemek olmadığını belirtmek isterim. Esas amaç bu hatalara karşı Rust'ın nasıl bir tutum sergilediğini ve programcıyı korumakla kalmayıp runtime maliyetlerini en aza indirgediğini vurgulamaktır.
 
 Böylece geldik bir maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Örneklere [github reposundan da erişebilirsiniz](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src). Biraz dağınık haldeler ama idare ediverin:D
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-ve-guvenli-bellek-yonetimi-hakkinda)

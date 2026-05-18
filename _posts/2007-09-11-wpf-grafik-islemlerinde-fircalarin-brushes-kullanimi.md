@@ -379,3 +379,6 @@ Uygulama test edildiğinde aşağıdaki Flash videosunda görüldüğü gibi dü
 Video efektlerini ilerleyen yazılarımızda incelemeye devam ediyor olacağız. Şimdilik yazımızın sonuna geldik. Bu yazımızda temel olarak grafik işlemlerinde şekillerin fırçalar (Brushes) yardımıyla nasıl doldurulabileceğinin belirlenmesinde kullanılan tipleri, ağırlıklı olarak XAML içerisinde ele almaya çalıştık. Bir sonraki makalemizde grafik işlemlerinde kullanılabilecek şekilleri (Shapes) incelemeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/GrafiklerleCalismak.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Grafik-Islemlerinde-Fc4b1rcalarc4b1n(Brushes)-Kullanc4b1mc4b1-bsenyurt-com-dan)-Kullanc4b1mc4b1-bsenyurt-com-dan)-Kullanc4b1mc4b1-bseny
+yurt-com-dan)

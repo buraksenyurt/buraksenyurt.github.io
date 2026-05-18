@@ -182,3 +182,5 @@ Görüldüğü üzere Ado.Net Data Services v1.5 CTP2 ile gelen Projection özel
 Bakalım Ado.Net Data Services 1.5 CTP2 tarafında bizleri başka ne gibi sürprizler beklemekte. Bu konularıda ilerleyen yazılarımızda değerlendirmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Projections.rar (53,71 kb)](/assets/files/2009/Projections.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Data-Services-15-Projections)

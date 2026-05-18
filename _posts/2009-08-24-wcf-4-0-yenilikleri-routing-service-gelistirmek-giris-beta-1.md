@@ -48,3 +48,5 @@ Yönlendirme servisi çok doğal olarak istemciden gelen talepleri belirli kural
 Buna göre yönlendirme servisi, istemciden gelen ve filtreden geçen mesajları uygun alt servislere iletmesi gerektiğinden aynı zamanda bir istemci olarak düşünülmelidir. Dolayısıyla şekildende görüleceği gibi üzerinde her alt servis için en az bir Endpoint bulunmaktadır. Alt servisler istemcinin asıl işini yapmakla yükümlü olmakla birlikte, aynı sunucuda veya farklı sunucular üzerinde konuşlandırılmış olabilirler. Bu nedenle, yönlendirme servisi arkasında Web Farm gibi yapılara sıklıkla rastlandığını söyleyebiliriz.
 
 Peki yönlendirme servisinin içerisinde yer aldığı basit bir sistemi nasıl tasarlayabiliriz? Burada belkide en kritik konu filtrelemelerdir. Özellikle filtrelerde gelen mesaj içeriği üzerinde XPath ile sorgular atılması önemli olan ve zor noktalardandır. Bu gibi konuları bir sonraki yazımızda ele almaya çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service)

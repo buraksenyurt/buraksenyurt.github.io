@@ -220,3 +220,5 @@ GET
 Görüldüğü üzere Spring Boot kullanarak MongoDB ile konuşan bir REST servisini temel CRUD ve bizim ekleyeceğimiz ilave fonksiyonlar ile ayağa kaldırmak oldukça basit, zahmetsiz ve kolay;) Veri odaklı servisleri kolaylıkla üretim ortamlarına alabiliriz diye düşünüyorum. Spring Boot konusunda deneyimleriniz varsa bu konu özelinde yorumlarınız olursa lütfen yazının altına bırakmaya çekinmeyin. Bu arada örneği geliştirmek elbette elinizde. Söz gelimi MongoDb yerine PostgreSQL kullanmayı deneyebilirsiniz. Hatta oyuncuların katıldıkları maçlara ait skor, başarı, madalya, seviyle vb bilgilerin tutulduğu yeni bir POJO hazırlayıp Player ile ilişkilendirerek servis üzerinden sunmayı düşünebilirsiniz;)
 
 Böylece geldik bir Skynet derlememizin daha sonuna. Örneğe ait kodlara [github reposu üzerinden](https://github.com/buraksenyurt/skynet/tree/master/No%2027%20-%20REST%20with%20Spring%20and%20MongoDb) erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/spring-boot-ile-mongodb-kullanan-bir-rest-servisinin-gelistirilmesi)

@@ -150,3 +150,5 @@ Senaryomuz sadece yayın evinin logosunu ve yayın evi numaralarını döndürec
 - ve benim aklıma gelmeyen ama sizin ele alacağınız başka bir senaryo da söz konusu olabilir.
 
 Görüldüğü üzere bir Asp.Net Web API servisini resim içeriklerinin elde edilmesini konu alan bir senaryo da kullanabildik. Örneğimizi yeni göz bebeğimiz Visual Studio 2013 Preview üzerinde geliştirmeye çalıştık ve böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Web-API-Uzerinden-Resim-Dondurmek)

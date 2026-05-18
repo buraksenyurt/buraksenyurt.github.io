@@ -180,3 +180,5 @@ foreach (DataRow dr in ds.Tables[0].Rows)
 Eğer istemci uygulama doğru şifre ve kullanıcı bilgisini gönderemez ise HTTP 401: Access Denied istisnasını alırız. Ancak doğru güvenlik bilgilerinin gönderilmesi sonucunda web metodu başarılı bir şekilde çalıştırılacaktır.
 
 Bu makalemizde kısaca web servislerini kullanırken dikkate alabileceğimiz bir kaç noktaya değindik. Aynı isimli aşırı yüklenmiş metodların kullanılma tarzını, web metodlardan geriye dönen kompleks tiplerin içerisinde kalıtım ilişkisi olduğu takdirde bunu Xml tarafınada bildirmemiz gerektiğini, performans için caching'i kullanabileceğimizi ve sunucu tarafında bir authentication olması halinde istemci için gerekli username ve password bilgilerinin nasıl hazırlanıp gönderilebileceğini incelemeye çalıştık. Elbetteki web servisleri ile ilgili dikkate değer daha pek çok nokta var. Örneğin SoapExtension yardımıyla soap mesajlarının şifrelenmesi gibi. Bu ve benzer diğer konulara ilerki makalelerimizde değinmeye çalışacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Servisleri-Icin-Dort-Puf-Nokta-bsenyurt-com-dan)

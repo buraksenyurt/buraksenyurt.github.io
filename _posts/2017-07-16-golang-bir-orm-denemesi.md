@@ -234,3 +234,5 @@ Mutlaka dikkatinizi çekmiştir ki FirstName first_name, LastName last_name, Emp
 ![gogorm_3.gif](/assets/images/2017/gogorm_3.gif)
 
 Tabii Gorm aracının dokümantasyonu oldukça geniş ve zengin. Özelleştirilebilecek, ince ayarlar yapılabilecek bir çok konu var. Ben "Hello Gorm" demeye çalıştım ve istediğim bilgileri aldım sayılır. Bundan sonrasında daha önceki web sunucusu ve REST servis örneklerini Gorm paketi ile çalışacak hale getirmeyi planlıyorum. Siz bu yazıyı Gorm dokümanını inceleyerek daha da ileriye götürebilirsiniz. İşe eksik olan Delete operasyonunu ekleyerek başlayabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-bir-orm-denemesi)

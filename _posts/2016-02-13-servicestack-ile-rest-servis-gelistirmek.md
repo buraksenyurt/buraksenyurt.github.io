@@ -211,3 +211,4 @@ Bu makalemizde ServiceStack paketini kullanarak Self-Hosted REST servislerini na
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/servicestack-ile-rest-servis-gelistirmek)

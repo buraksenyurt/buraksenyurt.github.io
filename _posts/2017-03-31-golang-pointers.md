@@ -170,3 +170,5 @@ ve sonuç.
 ![gopointer_5.gif](/assets/images/2017/gopointer_5.gif)
 
 Görüldüğü gibi Pointer tipinin tanımlanması ve kullanımı oldukça basittir. Böylece geldik bir Gopher olma çalışmamızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-pointers)

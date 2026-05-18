@@ -343,3 +343,5 @@ Bu makalemizde WCF için istemci taraflı asenkron çağırma modelini incelemey
 Böylece geldik bir makalemizin daha sonuna. Yazımızın başındada belirttiğimiz gibi bir sonraki Windows Communication Foundation makalemizde servis tarafında asenkron uyarlamanın (Service Side Asynchronous Implementation) nasıl yapılabileceğini incelemeye çalışacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/AsenkronErisimler.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Istemci-Taraflc4b1-Asenkron-Cagc4b1rma-(Client-Side-Asynchronous-Invoking)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

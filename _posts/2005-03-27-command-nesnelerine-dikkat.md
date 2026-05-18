@@ -200,3 +200,5 @@ Console.WriteLine("Satır sayısı " + cmd.ExecuteScalar().ToString());
 ```
 
 Bu makalemizde, Command nesnelerini kullanırken bize performans, hız, güvenlik kod okunurluğu açısından avantajlar sağlayacak teknikleri incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Command-Nesnelerine-Dikkat!-bsenyurt-com-dan)

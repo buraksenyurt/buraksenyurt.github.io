@@ -22,3 +22,5 @@ Bu görsel dersimizde Team Foundation Server 2012 ürününe kısaca göz atmaya
 [Youtube Link](https://www.youtube.com/watch?v=OSY_TkUrgPk)
 
 İkinci bölümde ise Team Foundation Server'a bir Hello World demeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Team-Foundation-Server-2012-ile-Duzenli-Proje-Gelistirme)

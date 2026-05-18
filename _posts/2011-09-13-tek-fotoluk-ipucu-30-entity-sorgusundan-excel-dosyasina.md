@@ -17,3 +17,5 @@ categories:
 ![PhotoTrick30](/assets/images/2011/PhotoTrick30.png)
 
 [EntityToExcel.rar (57,44 kb)](/assets/files/2011/EntityToExcel.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-30-(Entity-Sorgusundan-Excel-Dosyasina))))

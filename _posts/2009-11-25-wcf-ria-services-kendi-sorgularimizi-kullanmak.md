@@ -171,3 +171,5 @@ hatta Background özelliğine Picture ekleyebileceğimizi ve bu sayede daha hoş
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SilverlightApplication5.rar (5,28 mb)](/assets/files/2009/SilverlightApplication5.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Kendi-Sorgularimizi-Kullanmak)

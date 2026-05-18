@@ -21,3 +21,4 @@ Bir diğer enteresan durumda fonksiyon ezilmesi (overriding). Player sınıfı i
 
 Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-139-singleton-method)

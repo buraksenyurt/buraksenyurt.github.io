@@ -258,3 +258,5 @@ Uygulamamızı çalıştırdığımızda ekran görüntümüz aşağıdaki gibi 
 Şekil 2. Uygulamanın çalışmasının sonucu.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kalıtım-(Inheritance)-Kavramına-Kısa-Bir-Bakıs-bsenyurt-com-dan)-Kavramına-Kısa-Bir-Bakıs-bsenyurt-com-dan)-Kavramına-Kısa-Bir-Bakıs-bsenyurt-com-dan)

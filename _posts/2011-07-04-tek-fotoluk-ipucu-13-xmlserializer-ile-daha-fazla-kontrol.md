@@ -16,3 +16,5 @@ Bazen SOAP Bazlı WCF servisimizdeki veri türlerinin,.Net tabanlı olmayan plat
 ![PhotoTrick13](/assets/images/2011/PhotoTrick13.png)
 
 [UseXmlSerializer.rar (18,30 kb)](/assets/files/2011/UseXmlSerializer.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-13(XmlSerializer-ile-Daha-Fazla-Kontrol))))

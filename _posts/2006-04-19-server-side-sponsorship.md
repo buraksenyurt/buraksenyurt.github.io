@@ -259,3 +259,5 @@ Gördüğünüz gibi, uzak nesne örneğine ait kiralama süreleri sona erdikçe
 Bu sefer, uzak nesne örneğimize ait tek bir referans tüm uygulama boyunca yaşamaktadır. Çünkü uzak sponsorumuz kiralama sürelerini otomatik olarak yenilemektedir. Sunucu taraflı destek kontrolü uygulanış açısından zor görünsede istemci taraflı destek modelinin bazı dezavantajlarını ortadan kaldırmaktadır. Örneğin FireWall engellerini. Bu yüzdende remoting uygulamalarında sıkça tercih edilen bir yöntemdir. Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kod için tıklayınız.](/assets/files/2006/ServerSideSponsors.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Server-Side-SponsorShip-bsenyurt-com-dan)

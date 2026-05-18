@@ -510,3 +510,6 @@ Kullanıcı Slider kontrollerindeki çubuğu hareket ettirdikçe ekran üzerinde
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde WPF (Windows Presentation Foundation) uygulamalarında iki boyutlu grafik (2D Graphics) işlemlerinde kullanılabilecek şekilleri ele almaya çalıştık. Son olarak basit bir transform işleminin örnek bir dörtgen üzerinde nasıl gerçekleştirileceğine değindik. Buradaki bilgilerden yola çıkarak çok daha kolay grafik işlemleri gerçekleştirebileceğimizi ve eski Windows programlamadaki GDI+ ile zorlandığımız vakkaları daha etkin bir biçimde yapabileceğimizi görmüş bulunuyoruz. İlerleyen makalelerimizde WPF ile ilişkili başka konularada değiniyor olacağız.Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/GrafiklerleCalismak.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Grafik-Islemlerinde-Sekillerin(Shapes)-Kullanc4b1mc4b1-bsenyurt-com-dan)-Kullanc4b1mc4b1-bsenyurt-com-dan)-Kullanc4b1mc4b1-bsenyurt-com
+m-dan)

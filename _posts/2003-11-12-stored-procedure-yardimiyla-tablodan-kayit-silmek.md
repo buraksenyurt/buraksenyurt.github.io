@@ -177,3 +177,5 @@ private void btnDelete_Click(object sender, System.EventArgs e)
 Şekil 9. Sonuç.
 
 Görüldüğü gibi CategoryID=17 olan satır veritabanındaki tablodanda silinmiştir. Bir sonraki makalemizde görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Stored-Procedure-Yardc4b1mc4b1yla-Tablodan-Kayc4b1t-Silmekc2a0-bsenyurt-com-dan)

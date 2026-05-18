@@ -389,3 +389,5 @@ Geliştirilen örnekte Stream kullanımı için tek yapılması gereken servis v
 Buraya kadar anlatılanlar göz önüne alındığında MTOM (Message Transmision Optimization Mechanism) sayesinde mesajların içeriklerinin encoding/decoding işlemlerine tabi tutulmadan karşı tarafa aktarılabilmesi sağlanmaktadır. Bu aynı zamanda WCF (Windows Communication Foundation) dışındaki platformlar ile haberleşmedede (Interoperability Desteği) önemli bir yere sahiptir. Diğer taraftan MTOM'un bazı dezavantajlarını ortadan kaldırmak adına Stream kullanımı tercih edilebilir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/MTOMKullanimi.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-MTOM-ve-Stream-Kullanarak-Veri-Aktarc4b1mc4b1-bsenyurt-com-dan)

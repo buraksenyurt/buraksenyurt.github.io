@@ -14,3 +14,5 @@ Elinizde iki adet nesne koleksiyonu olduğunu ve bunların veri satırı bazınd
 ![TPP_58.png](/assets/images/2012/TPP_58.png)
 
 Görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-ipucu-57-LINQ-Tarafc4b1nda-Cross-Join)

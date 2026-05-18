@@ -261,3 +261,5 @@ Elbetteki bu testler, henüz relase edilmemiş olan beta 1 sürümü üzerinden 
 Concurrent koleksiyonlar ile ilişkili araştırmalarım devam etmekte. Örneğin şu sıralar göz kestirdiklerimden birisi olan ve aslında bu yazıda incelemek isteyipte, performans ve hız kriterine takıldığım için araştıramadığım BlockingCollection. Bunuda bir sonraki yazımda ele almaya gayret ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ConcurrentCollectionTest.rar (23,87 kb)](/assets/files/2009/ConcurrentCollectionTest.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Concurrent-Collections-(Es-Zamanli-Koleksiyonlar))))

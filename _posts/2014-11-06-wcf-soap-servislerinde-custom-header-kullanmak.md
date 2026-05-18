@@ -385,3 +385,5 @@ Bu senaryo haricinde Header kullanımları için WCF tarafında farklı bir kavr
 > Aslında SOAP zarflarının içeriklerinin kesinleştirilmek istendiği, mesajların interoperability noktasında XSD yerine farklı kurallara göre oluşması gerektiği durumlarda Message Contract kullanımı tercih edilebilir. Mesaj sözleşmeleri ile ilişkili olarak eski bir yazıya [bu adresten ulaşabilirsiniz](/2008/02/09/mesaj-sozlesmeleri-message-contracts/).
 
 Görüldüğü üzere istemciler Header kısımlarını kullanarak da kendilerini servis tarafına tanıtabilir ve operasyonların istemci bazında özelleştirilmesi sağlanabilir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-SOAP-Servislerinde-Custom-Header-Kullanmak)

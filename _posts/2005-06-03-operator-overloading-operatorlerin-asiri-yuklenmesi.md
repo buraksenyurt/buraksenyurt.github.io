@@ -432,3 +432,5 @@ Elbette aşırı yükleme yapamayacağımız operatörler de vardır.
 > =,.,?:, ->, new, is, as, sizeof,&&, ||, () operatörlerini aşırı yüklememiz yasaklanmıştır.
 
 Görüldüğü gibi nesnelerimiz için, C# dilinde var olan operatörleri aşırı yüklemek son derece kolaydır. Dikkat etmemiz gereken bir takım kurallar vardır ki bunlar zamanla öğrenilebilir. Operatörlerin özellikle aşırı yüklenmesine ihtiyaç duyulacağı durumları göz önüne aldığımızda, grafik ve matematik uygulamalarının üst sıralarda yer aldığını görürüz. Örneğin sevgili Sefer ALGAN, Her Yönüyle C# Kitabında operatörlerin aşırı yüklenmesi ile ilgili olaraktan Kompleks sayıları incelemiştir. Özetle operatörleri aşırı yüklemek özellikle kendi oluşturduğumuz nesnelerin esnekliği açısından önemlidir. Bu makalemizde işlediğimiz [örnekte](/assets/files/2005/OperOver.rar) bahsedilen aşırı yükleme işlemleri sadece Dortgen sınıfı için yapılmıştır. Size tavsiyem Elips sınıfı içinde benzer yüklemeleri yapmaya çalışmanızdır.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Operator-Overloading-(Operatorlerin-Asırı-Yuklenmesi)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

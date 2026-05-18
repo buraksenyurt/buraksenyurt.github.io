@@ -166,3 +166,5 @@ Görüldüğü üzere 401 Unauthorized hatasını aldık. Bir başka deyişle Cr
 Bu hızlı örnek ile Service Bus hizmetinden REST bazlı olarakta nasıl yararlanabileceğimizi görmüş olduk. Bir önceki yazımızda kullandığımız örnekte geliştirdiğimiz istemci uygulamada hatırlayacağınız üzere, sözleşme tanımlamış, kanal oluşturmuş ve TCP bazlı olan iletişim üzerinden kanal bazlı metod çağrısı ile isteğimizi Service Bus tarafına göndermiştik. REST modelinde ise bir istemci geliştirmediğimizi sadece bir URL kullandığımızı hatırlatmak isterim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RestBased.rar (25,30 kb)](/assets/files/2009/RestBased.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/MicrosoftNet-Services-Service-Bus-icin-REST-Tabanli-Hello-World)

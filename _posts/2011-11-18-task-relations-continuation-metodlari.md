@@ -289,3 +289,5 @@ Uygulama kodunda yer alan TaskA ve TaskB nesne örneklerine ait kod bloklarında
 Böylece geldik bir yazımızın daha sonra. Bir sonraki yazıda büyük bir olasılıkla Task’ ler arası ilişkiler konusuna devam ediyor olacağım. Ama araya başka bir konu da girebilir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TaskContinuation.rar (22,47 kb)](/assets/files/2011/TaskContinuation.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Task-Relations-ve-Continuation-Metodlari)

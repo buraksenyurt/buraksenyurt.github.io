@@ -340,3 +340,5 @@ ve son olarak tüm kitap alıntılarını çektiğimiz HTTP Get talebine ait gö
 ![skynet_25_Screenshot_6.png](/assets/images/2020/skynet_25_Screenshot_6.png)
 
 Örnek servisimiz MongoDb'yi gin-gonic çatısı üstünden kullanan bir Go uyglaması. Swagger desteği de bulunmakta. Eğer Update ve Delete operasyonlarını da işin içerisine katarsak, çalıştığımız kurumlar için hafif/orta siklet sayılabilecek REST Api'leri kolaylıkla geliştirebiliriz. Böylece geldik bir SkyNet derlemesinin daha sonuna. Örnek uygulama kodlarına [github reposu üzerinden](https://github.com/buraksenyurt/skynet/tree/master/No%2025%20-%20Hello%20Gin-Gonic) erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/go-ortaminda-minik-bir-crud-servisini-gin-gonic-ile-gelistirmek)

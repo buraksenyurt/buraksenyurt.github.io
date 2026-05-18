@@ -14,3 +14,5 @@ categories:
 SQL tarafındaki sistemsel nesneleri göz önüne aldığımızda inanılma faydalı ve bilgilendirici sorgular yazabildiğimizi eminim ki hepiniz biliyorsunuzdur. Söz gelimi bir veritabanı içerisinde yer alan tablo adlarını, şema adları ile birlikte ve güncel satır sayılarını da içerek şekilde elde etmek istediğinizi düşünelim. Ne yaparsınız
 
 ![tfi_53.png](/assets/images/2012/tfi_53.png)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-45-Schema-Table-Name-Row-Count)

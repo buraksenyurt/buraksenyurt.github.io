@@ -97,3 +97,5 @@ private void btnTumu_Click(object sender, System.EventArgs e)
 ![mk22_2.gif](/assets/images/2003/mk22_2.gif)
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/HashTable-Koleksiyon-Sınıfı-bsenyurt-com-dan)

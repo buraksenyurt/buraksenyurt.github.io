@@ -114,3 +114,5 @@ Siparis Detaylarının tutulduğu Sepet tablosunda ise görünüm şöyledir.
 Şekil 5. DeleteRule=Rule.None
 
 Doğal olaraktanda, ne Siparis tablosundan ne de Sepet tablosundan satır silinmeyecektir. Bu kısa bilgilerden sonra umuyorumki kısıtlamalar ile ilgili kavramlarkafanızda daha net bir şekilde canlanmaya başlamıştır. Geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Iliskili-Tablolarc4b1-DataSet-Ile-Kullanmak-2c2a0-bsenyurt-com-dan)

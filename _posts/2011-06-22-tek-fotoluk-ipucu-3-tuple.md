@@ -16,3 +16,5 @@ categories:
 ![PhotoTip3](/assets/images/2011/PhotoTip3.png)
 
 [MethodParameters.rar (21,90 kb)](/assets/files/2011/MethodParameters.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-3)

@@ -284,3 +284,5 @@ dotnet watch run
 Örneği geliştirirken içinden pek de çıkamadığım bir sorunla da karşılaştım. Birden fazla kullanıcı kendi tarayıcısını kullanarak sayfayı açtı ve oylamaya başladı. Herhangi birisi sayfayı tazelerse ondaki değerler sıfırlanıyor ama diğerleri kaldığı yerden devam ediyor. Yani herkes aynı oylama sonucunu göremiyor. Çünkü votemngr.js başındaki toplam değerleri tutan değişkenler sayfa tazelenip istemciye tekrar gönderildiklerinde sıfır değerine düşüyor. Peki bu problemi nasıl çözebiliriz? Lütfen yazının altındaki yorum kısmını kullanarak bana akıl verin.
 
 Örnek uygulamanın kodlarına [skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2015%20-%20Funny%20SignalR)ndan ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/eglenceli-sayilabilecek-bir-signalr-uygulamasi)

@@ -324,3 +324,5 @@ Herbert'in adımlarını takip ederken hem var olan Rust bilgimi tekrar ettim he
 - for_each fonksiyonu ile metnin karakterlerini ya da vector elemanlarını dolaşırken tuple türünden yararlanarak indis ve değer çiftlerine ulaşabiliriz.
 
 Böylece geldik bir rust pratiğimizin daha sonuna. Oyunu daha da geliştirmek elinizde. Örneğin daha önceden de belirttiğim üzere mesleki terimlerden oluşan sözlükleri kullanabiliriz. Öğrencilere ders çalışmalarında onlara yardımcı olacak veri depolarını da kullanabiliriz. Beş kelime sınırını kaldırıp farklı sayıda harf seçeneklerini belki bir giriş menüsü ile sunacağımız ayarlar kısmında oyuncuya seçtirebiliriz vs Tamamen sizin hayal gücünüze kalmış. Herbert'e sonsuz teşekkürler:) Yine harika bir iş çıkarmış. Kitabını da şiddetle tavsiye ederim. Yazıdaki örneğe ait kodlara her zaman olduğu gibi [github hesabımdan erişebilirsiniz](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/wordle). Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-wordle-oyunu)

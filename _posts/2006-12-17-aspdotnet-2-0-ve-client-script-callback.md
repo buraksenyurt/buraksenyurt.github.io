@@ -144,3 +144,5 @@ Client Script Callback mimarisi derinlemesine incelendiğinde sayfanın istemcid
 Client Script Callback ile ilgili dikkat edilmesi gereken bazı kısıtlamalarda vardır. Günümüzde hemen her tarayıcı programın JavaScript desteği vardır. Ancak bazı tarayıcıların Client Callback desteği olmayabilir. Hatta internet explorer bu sistemi gerçekleştirmek için ActiveX kullanır ve tarayıcının ActiveX ayarları güvenlik nedeniyle bilerek kapatılmış olabilir. Bu gibi sebeplerden dolayı Client Callback mimarisi doğru bir şekilde çalışmayacaktır. İstemcilerin kullandıkları tarayıcı programların ClientCallback desteğinin olup olmadığını öğrenmek ve uygulamanın işleyişini buna göre değiştirmek için Request.Browser.SupportsCallback özelliğini kullanabiliriz. Bu makalemizde kısaca istemci taraflı callback modelinin,.Net üzerinde nasıl gerçekleştirilebileceğini incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2006/ClientCallback.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ve-Client-Script-Callback-bsenyurt-com-dan)

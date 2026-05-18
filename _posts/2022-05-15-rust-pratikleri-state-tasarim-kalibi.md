@@ -237,3 +237,5 @@ Uygulamanın işe yarayıp yaramadığını anlamak için basit testler koştura
 ![state_pattern_1.png](/assets/images/2022/state_pattern_1.png)
 
 Bence uygulamayı daha da geliştirmek ve başka pratikler yapmak da mümkün. Örneğin bir terminal oyunundaki ana nesnenin durumlarını yönetmek adına bu kalıbı kullanmayı deneyebilirsiniz. Game olarak adlandırabileceğiniz oyun nesnesinin program akışı içerisindeki olası durumları MENU, INIT, PLAYING, END_GAME ve PLAY_AGAIN şeklinde tanımlanabilir. Yukarıdaki örnekte yaptıklarımızı göz önüne alarak bu senaryoyu Rust ile yazmayı deneyebilir, yazılmış bir halini görmek içinse [şuraya](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/re_state_pattern) uğrayabilirsiniz. Bu örnekteki kodlara ise her zaman olduğu gibi [github reposu](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/state_pattern) üzerinden ulaşabilirsiniz. Böylece geldik bir Rust pratiğinin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-state-tasarim-kalibi)

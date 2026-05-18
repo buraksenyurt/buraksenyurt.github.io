@@ -29,3 +29,5 @@ categories:
 [Youtube Linki](https://youtu.be/9CpHrD7rEUw?si=95TnunF4idCxdewA)
 
 [DynamicAssembly.rar (31,37 kb)](/assets/files/2013/DynamicAssembly.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Calc4b1sma-Zamanc4b1nda-ClassProperty-Module-ve-Assembly-Uretmek)

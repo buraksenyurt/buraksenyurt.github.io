@@ -99,3 +99,5 @@ sudo docker stop fb3936d9f595
 ```
 
 Böylece geldik kısa süreli faydası olan bir öğle arasının daha sonuna. Artık işin sırrı öğrenildi diyebilirim. Hakim olduğunuz bir dille basit bir Web sunucusu veya REST servisi yazıp Docker ile sunmayı deneyebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/go-web-sunucusunu-docker-uzerinden-yayinlamak)

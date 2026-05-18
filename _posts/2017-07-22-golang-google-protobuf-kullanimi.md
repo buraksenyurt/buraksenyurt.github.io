@@ -362,3 +362,5 @@ func main() {
 Tabii ki serileştirilen içerik fiziki bir dosyaya çıkılabilir veya ağ üzerinden bir kanala yazdırılabilir. Daha az yer kapladığı ortada. Yine de gerçek benchmark testleri ve farklı serileştirme formatları ile karşılaştırılması için interneti dolaşmakta yarar var. Üretilen serileştirilmiş içeriğe bakıldığında ise sadece verinin tutulduğu görülmektedir. Tahmin edeceğiniz üzere verinin şeması paket olarak eklediğimiz Southwind.pd.go içerisinde yer alıyor. Dolayısıyla Marshal ve Unmarsal işlemlerinde bu paketten yararlanılmakta.
 
 Böylece geldik bir GoLang maceramızın daha sonuna. Bu yazımızda Google'ın geliştirdiği serileştirme protokolü Proto Buffer'ın bir Go uygulamasında nasıl kullanılabileceğini incelemeye çalıştık. Size tavsiyem diğer dil paketlerini de işin içine katarak geliştirme yapmaya çalışmanız olacaktır. Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-google-protobuf-kullanimi)

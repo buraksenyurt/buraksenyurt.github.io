@@ -17,3 +17,5 @@ Aradan yıllar geçti. Geçtiğimiz günlerde şirket bilgisayarımda da aynı s
 Geçmişe kısa bir yolculuk yapmak ister misiniz? Haydi buyrun öyleyse.
 
 Bu arada sanırım RecordSet’ i kapatmayı unutmuşum.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Visual-Basic-60-ile-Nostalji-Ruzgarc4b1)

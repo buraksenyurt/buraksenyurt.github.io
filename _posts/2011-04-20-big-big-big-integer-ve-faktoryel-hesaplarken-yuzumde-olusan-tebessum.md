@@ -164,3 +164,5 @@ Kod parçasında BigInterger türü ile ilişkili çeşitli örnek kullanımlar 
 BigInteger türü özellikle yüksek değerli sayıların ele alındığı matematiksel hesaplamaların olduğu senaryolarda, görüntü işleme programlarında, finansal analiz yapan uygulamalarda vb… bizlere önemli kolaylıklar ve avantajlar sunmaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HugeInteger.rar (22,79 kb)](/assets/files/2011/HugeInteger.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/System-dot-Numerics-and-BigInteger)

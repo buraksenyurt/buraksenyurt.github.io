@@ -275,3 +275,5 @@ Görüldüğü üzere RavenDB’ yi kullanmak oldukça basittir. Özellikle.Net 
 Size tavsiyem söz konusu örnekte yer alan kodlardan yola çıkarak, örneği Web/Windows platformuna taşımanız olacaktır. Hatta hali hazırda kullanmakta olduğunuz minik ve veritabanı odaklı çalışan bir uygulamanız var ise, bunu RavenDB ile çalışacak şekilde yeniden kurgulamayı deneyebilirsiniz. Farklı NoSQL veritabanlarını inceledikçe kullanımlarını sizlerle paylaşmaya çalışıyor olacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloWorldRavenDB.zip (1,08 mb)](/assets/files/2013/HelloWorldRavenDB.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/RavenDB-ile-Hello-World)

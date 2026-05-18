@@ -294,3 +294,5 @@ Dikkat edileceği üzere şifrelenen GUID bilgisi SecureToken ismiyle Cookie ola
 ![noncetoken_1.gif](/assets/images/2016/noncetoken_1.gif)
 
 Biraz uzun ve yorucu bir makale oldu gibi. Özellikle servisin tesis edilmesi ve jQuery içeriğinin oluşturulması sırasında pek çok problemle karşılaştığımı ifade etmek isterim. Konfigurasyon ayarlarının eksiksiz olması, servisin Web HTTP bazlı geliştirilmesi, jQuery betiğinde # karakterinin unutulmaması vb bir çok kritere dikkat etmek gerekiyor. Kodun çalışma prensibini daha iyi anlayabilmek için mutlaka breakpoint'ler koyarak debug işlemleri gerçekleştirmenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/replay-attack-saldirisini-nonce-token-ile-engellemek)

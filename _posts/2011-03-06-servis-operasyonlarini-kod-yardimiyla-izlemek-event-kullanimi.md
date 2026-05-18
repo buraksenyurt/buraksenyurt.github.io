@@ -355,3 +355,5 @@ Görüldüğü gibi olay metodları başarılı bir şekilde devreye girmiş ve 
 Biraz uzun bir anlatım oldu sanırım. Ama umuyorum ki işinize yarayacaktır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [OperationCallTracingV2.rar (181,95 kb)](/assets/files/2011/OperationCallTracingV2.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Servis-Operasyonlarini-Kod-Yardimiyla-Izlemek-Event-Kullanimi)

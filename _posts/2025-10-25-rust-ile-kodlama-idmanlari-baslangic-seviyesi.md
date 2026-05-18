@@ -675,3 +675,5 @@ Kaynaklar:
 - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
 
 Bir başka yazıda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-ile-kodlama-idmanlari-baslangic-seviyesi)

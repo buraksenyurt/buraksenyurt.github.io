@@ -186,3 +186,5 @@ CustomValidator kontrolümüzün aspx tarafındaki kodları ise aşağıdaki gib
 ```
 
 İstemcilerin doğası gereği, her zaman client tarafında çalışacak script'lere izin verilmez. İstemci tarafında çalışan doğrulama script'leri, sunucuya doğru yapılan gidiş-geliş işlemlerinin sayısını azaltan bir etkendir; ki buda ağ üzerindeki gereksiz yükü azaltır. Ancak bazı istemcilerin, script çalıştırma izni olmadığını için, sunucu tarafında doğrulama işlemi yapılması gerekliliği söz konusudur. Biz örneğimizde CustomValidator kontrolü için hem istemci tarafında hem de server tarafında doğrulama işlemini uygulayabileceğimiz iki metod kullandık. Böylece istemci izin veriyorsa doğrulamayaı o tarafta yapıp gereksiz ağ yükünü azaltmış olduk. Özel algoritmalar içeren veya birden fazla doğrulama işlemini bir kontrol üzerinde birleştirmek istediğimiz durumlarda CustomValidator kontrolü oldukça işimize yaramaktadır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Uygulamalarc4b1nda-Ozel-Dogrulama-Islemleri-bsenyurt-com-dan)

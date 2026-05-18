@@ -132,3 +132,4 @@ Ruby kod örneğimizde StringOperations sınıfı içerisinde yazdığımız cal
 
 Bu yazımızda eşit uzunluklu içeriklerin karşılaştırılarak birbirlerinden olan farklarının hesaplanmasında kullanılan Hamming Distance algoritmasını incelemeye çalıştık. Kullanım alanlarını keşfederek kendiniz için farklı örnekler yapmaya çalışmanızı öneririm. Hatta yatkın olduğunuz dilde bu algoritmayı kullanmayı denemeniz iyi bir pratik olacaktır. Diğer yandan algoritma geliştirmeye yeni başlayan arkadaşlarımızın LINQ ifadelerinden yararlanmadan bu hesaplamayı nasıl yaptırabileceklerine odaklanmalarını şiddetle tavsiye ederim. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/hamming-distance-algoritmasinin-basit-kullanimi)

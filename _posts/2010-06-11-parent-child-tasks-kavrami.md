@@ -176,3 +176,5 @@ Dikkat edilmesi gereken 3 önemli nokta vardır. Parent Task nesne örneği Faul
 Son olarak Parent-Child ilişki ile ilgili olarak şu notu düşebiliriz; Parent Task nesne örnekleri, kaç adet Child Task örneği içerdiğini bilmektedir. Bir başka deyişle kendisine eklenen Child Task'lerin sayısını tutar. Dolayısıyla Child Task nesne örneklerinin, dahil oldukları Parent Task örneğine bir referans bildiriminde bulunduğunu ve hatta tamamlanma durumlarını ilettiklerini ifade edebiliriz. Parent-Child Task'ler arasındaki ilişkiyi fırsat buldukça incelemeye devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StructuredTasking_RTM.rar (23,32 kb)](/assets/files/2010/StructuredTasking_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM Sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Parent-Child-Tasks-Kavrami)

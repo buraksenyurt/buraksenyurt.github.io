@@ -160,3 +160,5 @@ Gelelim çalışma zamanı çıktılarına.
 ![fellowship_1.png](/assets/images/2022/fellowship_1.png)
 
 Örnekte move, channels gibi kullanmadığımız önemli kavramlar da var elbette ancak Rust öğrenmeye çalışanlar için eğlenceli bir pratik olduğunu düşünüyorum. Örneği genişletmek elbette sizin elinizde. Bir başka rust pratiğinde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-multithreading)

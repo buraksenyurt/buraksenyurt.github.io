@@ -567,3 +567,6 @@ Round-Trip vakasında örnektende görüldüğü üzere IExtensibleDataObject ar
 Versiyonlama farklılıkları dışında serileştirme ile ilişkili olaraktan dikkat edilmesi gereken farklı konularda vardır. Söz gelimi servis tarafından yayınlanan bir veri sözleşmesi içerisinde serileştirilemeyen (NonSerializable) ve geliştirici tarafından doğrudan müdahalede bulunulamayan sonradan tanımlı tipler var olabilir. Bu durumda vekil veri sözleşmeleri (Surrogate DataContract) kullanılarak veri sözleşmesinin serileştirilmesi yoluna gidilebilir. Bu konu bir sonraki makalede çözümleyiciler (Encoding) ile birlikte ele alınmaya çalışılacaktır. Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca serileştirme işlemlerinde ortaya çıkabilecek olan versiyonalama vakaları analiz edilmeye çalışmıştır. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WCFSerializationAndEncoding.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Serilestirme-Islemlerinde-Versiyonlama(Versioning)-Vakalarc4b1-bsenyurt-com-dan)-Vakalarc4b1-bsenyurt-com-dan)-Vakalarc4b1-bsenyurt
+t-com-dan)

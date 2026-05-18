@@ -282,3 +282,5 @@ Bu çalışmanın yarattığı eğlenceli dakikaları geride bırakırken aşağ
 - Dockerfile, deployment.yaml ve services.yaml içeriklerindeki kavramların ne anlama geldiklerini
 
 Böylece geldik bir cumartesi gecesi macerasının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-net-core-web-api-servisini-minikube-uzerinden-calistirmak)

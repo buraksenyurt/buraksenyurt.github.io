@@ -22,3 +22,5 @@ findSomething metodu içerisinde bir çok ders var. Örneğin bu metoda bir kod 
 << operatörü ile result isimli diziye eleman ataması gerçekleştirmekteyiz. Kodun findSomething operasyonunu test ettiğimiz satırında 10dan 28e kadar olan değer aralığındaki sayıların 3 ile tam bölünebilenlerini çekip r isimli bir değişkende topluyoruz. findSomething metodu, parametre olarak gelen kod bloğuna göre elde ettiği sonuçları geriye döndüren bir fonksiyon görevi üstleniyor burada. find_all metodunun tıpkısını aynısı gibi değil mi?
 
 Aynı felsefeyi kullanarak örneğin reject isimli built-in fonksiyonu da siz yazmaya çalışabilirsiniz. Aslında Ruby ile birlikte gelen ve kod bloğu alarak çalışan fonksiyonları kendiniz yazmayı deneyerek block kavramına olan aşinalığınızı arttırabilir konuyu pek güzelce pekiştirebilirsiniz. Ruby, sevimli yetenekleri ile beni kendisine hayran bırakmaya devam ediyor. Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-156-sevimli-ruby-block-lari)

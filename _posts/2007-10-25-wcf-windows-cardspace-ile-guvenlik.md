@@ -368,3 +368,5 @@ Görüldüğü gibi Windows CardSpace kullanılarak, WCF uygulamalarında hak ta
 Bu konu ile ilişkili detaylı bilgiyi benimde yakından takip ettiğim ve faydalandığım John Sharp imzalı MsPress yayınlarına ait [Microsoft Communication Foundation Step by Step](http://www.microsoft.com/MSPress/books/10022.aspx) kitabından da bulabilirsiniz. Sanılanın aksine Step by Step olarak belirtilmesine rağmen konu WCF olunca oldukça zor ve sıkı çalışılması gereken bir kitap olduğunuda vurgulamak isterim. Böylece geldik uzun bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/WCFCardSpace.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Windows-CardSpace-ile-Guvenlik-bsenyurt-com-dan)

@@ -98,3 +98,4 @@ loadedTweets.each{|t| puts "\n"+t.full_text}
 
 Böylece geldik bir Ruby kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-ile-twitter-api-sinin-basit-kullanimi)

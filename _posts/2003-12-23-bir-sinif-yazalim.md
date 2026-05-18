@@ -223,3 +223,5 @@ private void btnKapat_Click(object sender, System.EventArgs e)
 Şekil 6. Bağlantıyı kapatmamız halinde.
 
 Değerli okurlarım, ben bu sınıfın geliştirilmesini size bırakıyorum. Umarım sınıf kavramı ile ilgili bilgilerimizi hatırlamış ve yeni ufuklara yelken açmaya hazır hale gelmişsinizdir. Bir sonraki makalemizde sınıflar arasında kalıtım kavramına bakıcak ve böylece nesneye dayalı programlama terminolojisinin en önemli kavramlarından birini incelemeye çalışsacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Bir-Sınıf-Yazalım-bsenyurt-com-dan)

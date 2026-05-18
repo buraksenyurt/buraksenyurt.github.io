@@ -142,3 +142,5 @@ Son olarak ArtistId değer aralığına göre Artist listesini elde etmek istedi
 Oldukça basit ve etkili değil mi? WCF WebHttp Service'ler ile ilişkili incelemelerimize devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloWebHttp.rar (31,23 kb)](/assets/files/2010/HelloWebHttp.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Services-Tanisma)

@@ -155,3 +155,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 
 [MementoPattern.rar (23,01 kb)](/assets/files/2009/MementoPattern.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Memento)

@@ -351,3 +351,5 @@ namespace HowTo_Validation
 Özetle Entity Framework tarafındaki doğrulama işlemlerini Entity seviyesinde nitelikler (Attribute) ve IValidatableObject arayüzü sayesinde gerçekleştirebilirken, Context tipi seviyesinde de ezilebilen (overridable) ValidateEntity metodu içerisinde yapabiliriz. Bu makalemizde çok basit seviyede de olsa, Code-First Entity Framework tabanlı doğrulama işlemlerini ele almaya çalıştık. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_Validation.zip (2,59 mb)](/assets/files/2012/HowTo_Validation.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Code-First-icin-Dogrulama(Validation)-Stratejileri)-Stratejileri)-Stratejileri)

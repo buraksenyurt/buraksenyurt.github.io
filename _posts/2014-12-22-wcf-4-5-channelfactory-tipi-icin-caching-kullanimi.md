@@ -210,3 +210,5 @@ CacheSetting özelliğine atanabilecek üç değer bulunmaktadır. AlwaysOn, Def
 Bu yeni kabiliyet küçük çaplı servis örnekleri göz önüne alındığında pek fark edilmese de, enterprise çözümlerde kullanılan ve üretim maliyetleri de yüksek olan versiyonlar düşünüldüğünde ciddi olarak dikkate alınması gerekmektedir. Tabi burada söz konusu olan modlar arasındaki farklılıklara da bakılmalıdır. Özellikle security-sensitive tanımlamalarda Default ve AlwaysOn modların farklı davranışlar gösterdiği unutulmamalıdır. Konu ile ilişkili daha detaylı bilgiyi [MSDN sayfasından](http://msdn.microsoft.com/tr-tr/library/hh314046.aspx) alabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ChannelFactoryCaching.zip (66,14 kb)](/assets/files/2014/ChannelFactoryCaching.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-ChannelFactory-Tipi-icin-Caching-Kullanimi)

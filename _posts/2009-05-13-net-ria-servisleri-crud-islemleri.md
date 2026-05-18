@@ -246,3 +246,5 @@ Sorguda dikkat çeken en önemli nokta Where kriterine, Image tipinden olan Pict
 Böylece geldik bir yazımızın daha sonuna. Bu kısa yazıda,.Net RIA Servislerinde Insert,Update ve Delete işlemlerini basit bir biçimde ele almaya ve arka planda hareket eden SQL cümleciklerine bakıldığında gözümüze çarpan önemli noktaları vurgulamaya çalıştım..Net RIA Servisleri ile ilişkiki araştırmalarıma devam ettikçe sizlerle paylaşıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Editing.rar (1,14 mb)](/assets/files/2009/Editing.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-RIA-Servisleri-CRUD-Islemleri)

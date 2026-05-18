@@ -16,3 +16,5 @@ Uygulamalarımıza ait pek çok parametrik bilgiyi zaman zaman config uzantılı
 ![tfi153.gif](/assets/images/2017/tfi153.gif)
 
 Burada önemli olan app.config dosyası içerisindeki appSettings elementinde kullanılan configSource niteliğidir. Bu nitelikte ilgili segmentin hangi dosyadan okunacağı belirtilir. Örnekte kullanılan ApplicationParameters.config için dikkat edilmesi gereken bir kaç nokta vardır. Bunlardan birisi sadece yerine geçecek segment içeriğini taşımasıdır. Yani sadece elementini bulundurmalıdır (Console.WriteLine'daki {0} yerine bir içerik geldiğini hayal edelim) Diğer yandan dosyanın mutlaka asıl konfigurasyon dosyası ile aynı yerde olması beklenir (Bu örnekte app.config ile) Dolayısıyla "Copy to Output Directory" özelliğinin "Copy if Newer" veya "Copy Always" olması gerekmektedir. Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotolu-ipucu-153-config-sekmesini-harici-dosyadan-okumak)

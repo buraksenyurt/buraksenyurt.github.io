@@ -81,3 +81,5 @@ Tataaaa!!!
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ValidationSystem2.rar (1,86 mb)](/assets/files/2009/ValidationSystem2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-RIA-Servisleri-Ozel-Dogrulama(Custom-Validation))))

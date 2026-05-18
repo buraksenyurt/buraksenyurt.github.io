@@ -647,3 +647,5 @@ Elbette çok daha etkili ve faydalı bir test uygulaması yazılabilir. Mesela [
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SortingAlgorithm.rar (40,36 kb)](/assets/files/2013/SortingAlgorithm.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sorting-Algorithm-Speeds)

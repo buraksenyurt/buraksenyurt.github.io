@@ -21,3 +21,5 @@ Keşfedilmesi, anlaşılması ve okunması kolay kod geliştirmek, özellikle d�
 [Youtube Link](https://www.youtube.com/watch?v=lVgz-DeTJhM)
 
 Bir başka görsel dersimizde görüşmek üzere.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Fluent-Interface-Prensibi-ile-Daha-Okunabilir-Kod-Gelistirmek)

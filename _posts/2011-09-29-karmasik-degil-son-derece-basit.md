@@ -201,3 +201,5 @@ Generate Dependency Graph’ ı seviyorummm. Peki bu çözümde neleri kullandı
 Görüldüğü üzere sahip olduğumuz.Net bilgi ve materyallerini bazı durumlarda bir araya getirip gerçek hayat senaryoları için icra ettirebiliyoruz. Tabi söz konusu senaryoya eklenebilecek daha pek çok fonksiyonellik söz konusu olabilir. İlerleyen zamanlarda başka gerçek hayat örneklerini de sizlerle paylaşmaya çalışıyor olacağım. Özellikle bu yazıda katılımcı arkadaşlarımızın oldukça büyük emeği var. Kendilerine de çok teşekkür ediyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [GercekHayatOrnekleri.rar (58,66 kb)](/assets/files/2011/GercekHayatOrnekleri.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Karmasik-Degil-Son-Derece-Basit)

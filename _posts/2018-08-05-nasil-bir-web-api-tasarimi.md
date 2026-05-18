@@ -45,3 +45,5 @@ Resource isimlendirmelerinde de çoğul ifadelerin kullanılması öneriliyor. Y
 ![rest_table.png](/assets/images/2018/rest_table.png)
 
 Artık elimde/elinizde RESTful API tasarlamak için güzel bir kılavuz var. Bir başka yazıda görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/nasil-bir-web-api-tasarimi)

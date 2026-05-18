@@ -164,3 +164,4 @@ Prototype tip görevini üstlenen GameScenePrototype abstract sınıfı içerisi
 
 [Prototype.rar (22,60 kb)](/assets/files/2009/Prototype.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Prototype)

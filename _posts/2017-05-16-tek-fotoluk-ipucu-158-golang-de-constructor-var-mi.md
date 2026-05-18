@@ -16,3 +16,5 @@ GO tam anlamıyla nesne yönelimli (Object Oriented) bir dil değildir. Hatta ob
 ![tfi158.gif](/assets/images/2017/tfi158.gif)
 
 Az da olsa birazcık hile var gibi değil mi? Product isimli struct tipinin built-in constructor ile nasıl üretildiğini 10ncu satırda görebiliriz. car isimli değişken dinamik olarak türlendirilmiş ve:= operatörü sonrasında gelen ifade içerisinde tip niteliklerine ilk değerleri verilmiştir. Bu zaten GO'nun sunduğu varsayılan yapıcıdır. Biz hafiften abstract factory design pattern benzeri bir çözüm uyguladık. NewProduct metodu parametre olarak aldığı bilgilere göre GO'nun built-in yapıcı metod özelliğini kullanarak yeni bir ürün tipini geriye döndürmektedir. Bir nevi kendi yapıcı metodumuzu yazmış olduğumuzu ifade edebiliriz. Basit ama bir Object Oriented programcısı için tuhaf. Bir başka ipucunda görüşmek üzere hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-158-golang-de-constructor-var-mi)

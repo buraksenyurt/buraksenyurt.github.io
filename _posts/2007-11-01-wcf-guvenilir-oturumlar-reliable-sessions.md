@@ -607,3 +607,5 @@ Güvenilir oturumlarda mesajlar için benzersiz ve tekrar etmeyen tanımlayıcı
 Böylece geldik uzun bir makalemizin daha sonuna. Bu makalemizde istemci ve servis arasında güvenilir bir oturumun nasıl sağlanabileceğini ele alırken arada hareket eden mesajlarıda analiz etmeye gayret ettik. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/ReliableMessagingAndWCF.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Guvenilir-Oturumlar(Reliable-Sessions)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

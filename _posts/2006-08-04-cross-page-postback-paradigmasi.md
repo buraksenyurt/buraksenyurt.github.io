@@ -343,3 +343,5 @@ Kod şu şekilde çalışmaktadır. Kullanıcı kaynak sayfada hatalı bir veri 
 Yukarıdaki videodan gördüğünüz gibi, client side validation script'ler kapalıda olsa, Cross-Page postback olduktan sonra kaynak sayfaya dönüldüğünde hem kontrolün eski içeriği hemde validator bileşenin hata mesajı gösterilebilmektedir. Bu her ne kadar iyi bir çözüm gibi görünsede, sayfadaki kontrol sayısının ve içerik uzunluklarının çok daha fazla olduğu hallerde bizi QueryString yerine başka nesnelerden yararlanmaya zorlayacaktır. Bu anlamda örneğin Session nesnesi ele alınabilir. Böylece geldik bir makalemizin daha sonuna. Bu makalemizde Cross-Page Postback kullanırken dikkat etmemiz gereken noktaları incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/CPPB.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Cross-Page-Postback-Paradigmasc4b1-bsenyurt-com-dan)

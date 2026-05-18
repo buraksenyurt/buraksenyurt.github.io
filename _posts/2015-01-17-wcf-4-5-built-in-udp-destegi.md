@@ -333,3 +333,5 @@ Her zamanki gibi sonuçları Excel Chart üzerinden değerlendirirsek çok daha 
 Liderlik dikkat edileceği üzere TCP bazlı iletişime geçti. İşte başta belirttiğimiz sürpriz durumlardan birisi. Aradaki farklar çok da az olsa UDP iletişiminden daha hızlı sonuçlar elde edildiğini görmekteyiz. Bu sonuçlara göre özellikle tek yönlü (OneWay) olarak tasarlanabilen, ses ile video gibi veri aktarımlarının söz konusu olduğu, güvenli olması gerekmeyen ve hatta içeriğin Streaming şeklinde değil de paketler halinde gönderilip n sayıda istemciye ulaştırılacağı düşünülen senaryolarda UDP tabanlı iletişimi tercih edebiliriz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HighwayLast.zip (101,38 kb)](/assets/files/2015/HighwayLast.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-4-5-Built-In-UDP-Destegi)

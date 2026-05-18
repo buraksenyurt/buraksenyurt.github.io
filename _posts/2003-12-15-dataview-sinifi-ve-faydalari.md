@@ -152,3 +152,5 @@ private void btnFilter_Click(object sender, System.EventArgs e)
 Şekil 3. Programın Çalışması
 
 Örneğin ben, Fiyatı 10 milyon TL’ sının üstünde olan kitapların listesini Adlarına göre z den a ya sıralanmış bir şekilde elde ettim.Değerli okurlarım geldik bir makalemizin daha sonuna. DataView nesnesinin özellikle RowFilter tekniğine ilişkin olarak yazdığımız bu makale ile inanıyorum ki yeni fikirler ile donanmışsınızdır. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataView-Sc4b1nc4b1fc4b1-ve-Faydalarc4b1-bsenyurt-com-dan)

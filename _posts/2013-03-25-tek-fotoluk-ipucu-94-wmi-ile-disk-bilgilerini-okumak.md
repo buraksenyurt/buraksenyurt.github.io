@@ -16,3 +16,5 @@ WMI (Windows Management Instrumentation) maceralarımıza devam etmeye ne dersin
 ![tfi_94](/assets/images/2013/tfi_94.png)
 
 Tabi Win32LogicalDisk tipinin kullanılabilecek farklı özellikleri de mevcut. Bu özelliklere de [şu adresten](http://msdn.microsoft.com/en-us/library/windows/desktop/aa394173(v=vs.85).aspx) bakabilirsiniz. Bir başka ipucundan görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-94-WMI-ile-Disk-Bilgilerini-Okumak)

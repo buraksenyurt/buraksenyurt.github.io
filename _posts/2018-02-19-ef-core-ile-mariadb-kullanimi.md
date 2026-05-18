@@ -269,3 +269,5 @@ Aslında bu kod parçasında çok güzel bir ders var. Bir Log mekanizmasını E
 ![mariacore_4.gif](/assets/images/2018/mariacore_4.gif)
 
 Görüldüğü üzere Entity Framework ile MySQL türevli MariaDb'yi kullanmak oldukça basit. Elbette önemli olan konulardan birisi EF çalışma zamanına MariaDb provider'ının enjekte edilmesi. Yani DbContext türevli sınıfın ezilen OnConfiguring fonksiyonu içerisinde yapılan UseMySql çağrısı. Bu sebepten github'taki kod içeriğini incelemekte de oldukça büyük yarar olduğu kanısındayım. Nitekim kendi veritabanı sistemimizin Entity Framework Core tarafında kullanılmasını istediğimiz durumlarda benzer kod çalışmasını yapmamız gerekecektir. Böylece bir cumartesi gecesini daha eğlenceli şekilde bitiriyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ef-core-ile-mariadb-kullanimi)

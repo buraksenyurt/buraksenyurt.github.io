@@ -266,3 +266,6 @@ formunuda kullanabiliriz. Yine aynı istisna mesajlarını yakalayacağızdır.
 Görüldüğü gibi, uygulamalarımızda düşündüğümüz istisnai durumları yakalayabilmemizi sağlayacak sınıfları tasarlamak son derece kolaydır. Önemli olan nokta, istisna nesnemizin gerçekten gerekli olup olmadığıdır. Eğer böyle bir gereklilik var ise ve kendi istisna sınıflarımızı oluşturduysak bunlara ait nesne örneklerini uygun yerlerde ortama fırlatmalıyız. Son olarak fırlattığımız istisna nesnelerimizi catch blokları ile yakalayarak uygulamaya yön vermeliyiz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2005/Kitap.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kendi-Istina-Nesnelerimizi-Kullanmak-(ApplicationException)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-co
+om-dan)

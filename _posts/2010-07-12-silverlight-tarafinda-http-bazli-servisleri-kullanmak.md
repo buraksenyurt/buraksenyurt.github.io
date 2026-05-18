@@ -255,3 +255,5 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 [ConsumingHTTPBasedServices_RTM.rar (273,75 kb)](/assets/files/2010/ConsumingHTTPBasedServices_RTM.rar)
 
 Örnek Visual Studio 2010 Ultimate RC Sürümü üzerinde geliştirişmiş ve RTM sürümü üzerinde test edilmiştir.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Silverlight-Tarafinda-HTTP-Bazli-Servisleri-Kullanmak)

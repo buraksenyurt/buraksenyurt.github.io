@@ -397,3 +397,5 @@ Kendi HttpHandler tiplerimizi tasarlamak için ele aldığımız örnek senaryo 
 Bu makalemizde daha önceden ele aldığımız ancak geçerli bir ihtiyaç veya senaryo üzerine oturtamadığımız HttpHandler kavramını bir örnek üzerinde adım adım incelemeye çalıştık. Sizlerde farklı senaryoları göz önüne alarak ve makalede yer alan örneği dahada geliştirirek son derece etkili sonuçlara varabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/OzelHandler.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Nasc4b1l-Yapc4b1lc4b1r-Adc4b1m-Adc4b1m-Ozel-HttpHandler-bsenyurt-com-dan)

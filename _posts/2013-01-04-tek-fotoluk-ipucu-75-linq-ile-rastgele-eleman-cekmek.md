@@ -16,3 +16,5 @@ Pek çoğumuz Random tipini kullanır ve bir listeden rastgele elemenalar üretm
 ![tfi_75](/assets/images/2013/tfi_75.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-75-LINQ-ile-Rastgele-Eleman-Cekmek)

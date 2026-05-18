@@ -21,3 +21,4 @@ Enumerable modülü içerisine getRandomLine isimli bir metod yerleştirdik. Met
 
 Bu tekniği içeriğinde farklı veriler tutan pek çok dosya için uygulayabilirsiniz. Örneğin kullanıcılara rastgele promosyon uygulanacağı durumlarda verinin fiziki dosyada saklanması söz konusu ise bu tip bir metod oldukça işe yarayacaktır. Böylece geldik bir ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-141-dosyadan-rastgele-satir-cekmek)

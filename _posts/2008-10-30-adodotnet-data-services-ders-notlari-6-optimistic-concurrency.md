@@ -185,3 +185,6 @@ where ([KitapId] = @4)
 Dikkat edileceği üzere sadece Primary Key alanı hesaba katılmıştır. Yine Fiddler aracı ile istemci ve servis arasındaki HTTP trafiği incelendiğinde If-Match yada ETag gibi bilgilerin Request veya Response Header'ları içerisinde yer almadığı görülür. Görüldüğü üzere senaryonun gerektirdiklerine göre servis tarafında Optimistic Concurrency modeli tercih edilebilir veya edilmez. Eğer bu model tercih edilirse istemci tarafındaki uygulamalarda mutlaka Exception kontrolünün yapılması gerekmektedir. Böylece geldik bir yazımızın daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği indirmek için tıklayın](/assets/files/2008/Concurrency.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-Data-Services-Ders-Notlarc4b1-6-(Optimistic-Concurrency)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyu
+urt-com-dan)

@@ -279,3 +279,5 @@ Tabi buraya kadar bahsettiklerimizi göz önüne aldığımızda Regular Express
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RegExPerformanceTipsV2.rar (246,51 kb)](/assets/files/2011/RegExPerformanceTipsV2.rar) [Örnek Visual Studio 2010 Ultimate Sürümü Üzerinde Geliştirilmiş ve Test Edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Regex-ve-Performans-Ipuclari-Interpreted-ve-Compiled-Farki-Bir-de-Surpriz)

@@ -205,3 +205,5 @@ Dikkat edilmesi gereken noktalardan birisi de newWorkItem metoduna parametre ola
 Görüldüğü üzere Team Foundation Server Client Object Model’ in, Java tarafında kullanılması da son derece kolaydır. Örnek, tahmin edeceğiniz üzere Hello World formatındadır. Ancak daha önceki yazılarımızı baz alarak,.Net tarafındaki Client Object Model kodlarını, Java tarafına taşımayı deneyebilirsiniz. Kim demiş Java, Microsoft’ u, Microsoft’ ta Java’ yı umursamıyor diye
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Java-ile-TFS-Client-Object-Model-Konusuyor)

@@ -452,3 +452,5 @@ Dikkat edileceği üzere phone değişkeninin fonksiyon çağrısı öncesindeki
 Yazdığımız kod aynı zamanda bir fonksiyona parametreleri referansları ile aktırmanın da örneğidir (Call by Reference konusu) Normalde fonksiyonlara iki tür parametre geçişi söz konusu. Call by Value ve Call by Reference şeklinde anılıyorlar. Go dilinde fonksiyonlar varsayılan olarak Call by Value yaklaşımını kullanıyor. Referans taşımaları için az önceki örnekte olduğu gibi Pointer'lardan yararlanabiliyoruz. Bir dizi söz konusu olduğunda ise Slice öneriliyor (Bu da benim için yeni bir kavram. İlerleyen zamanlarda öğreneceğim)
 
 Şimdilik Gopher olma çalışmalarım ile ilgili aktaracaklarım bu kadar sevgili arkadaşlar. Bu yazıda dizilere, döngülere, yapılara, fonksiyonlara ve metodlara değinme fırsatımız oldu. Ucundan bir kuple de olsa Pointer dedik. Epeyce yorulduk. Şimdi kısa bir ara verme zamanı. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/gopher-olma-calismalari)

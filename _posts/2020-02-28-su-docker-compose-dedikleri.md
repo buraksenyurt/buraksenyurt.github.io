@@ -250,3 +250,5 @@ curl http://localhost:5000/book 
 ```
 
 Ekran görüntüsünden de görüleceği üzere up komutu ile servisler ayağa kalktıktan sonra curl aracı ile birkaç talep gönderiyoruz. Sizin de benzer şekilde servis çağrılarınızdan cevaplar alabilmeniz gerekiyor. Antrenman bitince kompozisyona dahil olan container'ları kaldırmak için sudo docker-compose down komutunu kullanabiliriz. Size tavsiyem örnekteki servisleri başta da belirttiğim üzere kendi veritabanı sistemleri ile çalışır hale getirmeye çalışmanız. Hatta bu veritabanlarını da docker-compose içerisinde planlayabilirsiniz diye düşünüyorum. Örnek kodlara [skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2013%20-%20What%20is%20Docker%20Compose)ndan ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/su-docker-compose-dedikleri)

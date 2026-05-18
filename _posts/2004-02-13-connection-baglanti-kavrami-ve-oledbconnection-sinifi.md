@@ -286,3 +286,6 @@ private void con_DurumDegisti(object sender, StateChangeEventArgs e)
 Şekil 14. StateChange olayı.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Connection-(Baglantc4b1)-Kavramc4b1-ve-OleDbConnection-Sc4b1nc4b1fc4b1-bsenyurt-com-dan)-Kavramc4b1-ve-OleDbConnection-Sc4b1nc4b1fc4b1-bsenyurt-com-dan)-Kavramc4b1-ve-OleDbConnection-Sc4b1nc4b1fc4b1-
+-bsenyurt-com-dan)

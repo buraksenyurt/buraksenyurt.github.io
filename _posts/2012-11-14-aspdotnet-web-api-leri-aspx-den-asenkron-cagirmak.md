@@ -244,3 +244,5 @@ Eğer sayfanın Trace modunu açarsak aşağıdaki Trace Information sonuçları
 Görüldüğü üzere sayfanın render edilme süresi yine 11 saniyeler civarındadır. Yaklaşık 5 saniyelik servis çağrı süresi + 5 saniyelik DoSomething süresi. Peki biz neyi başarmış olduk? Başarılan, servis çağrısının sayfanın yaşam döngüsü içerisinde asenkron olarak gerçekleştirilebilmesidir
 
 Böylece geldik bir yazımızın daha sonuna. Bu makalemizde bir ASP.Net Web API servisinin, bir Web uygulaması içerisinden asenkron olarak nasıl çağırılabileceğini,.Net Framework 4.5 ile birlikte gelen async ve await keyword'lerini de işin içerisine katarak değerlendirmeye çalıştık. Benim için de oldukça yeni ve halen daha öğrenmeye çalıştığımı bir konu. Özellikle MVC (Model View Controller) tabanlı Asp.Net uygulamalarında bu asenkron çağırımları nasıl değerlendirebileceğimizi de incelemeye çalışıyorum. Elde ettiğim bulguları ve öğrendiklerimi her zaman ki gibi bloğumda sizlerle paylaşıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Web-APIleri-ASPXden-Asenkron-Cagirmak)

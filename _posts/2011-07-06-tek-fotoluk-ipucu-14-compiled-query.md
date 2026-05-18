@@ -15,3 +15,5 @@ Entity Framework ile Compiled Query'ler hazırlayabileceğinizi ve daha performa
 ![PhotoTrick14](/assets/images/2011/PhotoTrick14.png)
 
 [QueryPerformance.rar (75,31 kb)](/assets/files/2011/QueryPerformance.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-14-(Compiled-Query))))

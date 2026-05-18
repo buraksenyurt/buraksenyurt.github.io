@@ -15,3 +15,5 @@ Hız kesmeden NedirTv?com liderliğinde sürdürdüğümüz WCF Öğreniyorum We
 - [Youtube Link](https://www.youtube.com/watch?v=blSFVrVr3y4)
 - Sunum Dosyası: [WCF 4.0 - Ders 3 - Bindings.pptx (318,15 kb)](/assets/files/2010/WCF40Ders3Bindings.pptx)
 - Solution Son Hali: [WCF_Ogreniyorum8_12_2010.rar (434,12 kb)](/assets/files/2010/WCF_Ogreniyorum8_12_2010.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Ogreniyorum-Ders-3-Binding-Types)

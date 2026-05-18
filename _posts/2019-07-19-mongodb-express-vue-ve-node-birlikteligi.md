@@ -585,3 +585,5 @@ Olayın başlangıç noktası olan index.html son derece sadedir. İçinde boots
 - Bootstrap Card'ları nasıl kullanılır
 
 Böylece geldik bir [cumartesi gecesi çalışması](https://github.com/buraksenyurt/saturday-night-works)na ait derlemenin daha sonuna. [13 numaralı örnek](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2013%20-%20MEVN%20Sample)le geçmişe bir yolculuk daha yaptım. Tekrardan okuyunca unuttuğum bir çok noktayı yeniden hatırladığım bir yazı olduğu için kendi adıma kardayım. Umarım sizler için de faydalı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/mongodb-express-vue-ve-node-birlikteligi)

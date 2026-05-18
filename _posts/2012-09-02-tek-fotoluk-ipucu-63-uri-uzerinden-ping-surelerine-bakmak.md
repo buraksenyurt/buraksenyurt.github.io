@@ -21,3 +21,5 @@ Hani bazen komut satırından bir URL adresine talep gönderip cevap sürelerine
 > NetworkCredential parametreleri sırasıya Username, Password ve Domain olarak set edilir. Eğer proxy kullanılıyorsa.
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-63e28093Uri-Uzerinden-Ping-Surelerine-Bakmak)

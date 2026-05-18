@@ -367,3 +367,5 @@ Pek tabii mevzu benim burada anlattığım kadar yalın değil. Yapılabilecek b
 
 - [https://github.com/shouldjs/should.js/](https://github.com/shouldjs/should.js/)
 - [https://mochajs.org/](https://mochajs.org/)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Mochanızı-Nodejs-ile-Alır-mısınız)

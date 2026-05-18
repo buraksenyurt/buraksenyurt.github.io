@@ -224,3 +224,5 @@ Uygulamamızı çalıştırdığımızd aşağıdaki sonuçlar ile karşılaşı
 Görüldüğü gibi, ikinci talep sonrasında istemci tarafına HTTP 304 Not Modified bilgisi ve 0 Byte uzunluğunda içerik gönderilmiştir. Böylece WCF WebHttp Service'leri ile ilişkili bir yazımızın daha sonuna geldik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson9_RC.rar (175,04 kb)](/assets/files/2010/Lesson9_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Web-Http-Services-ETags)

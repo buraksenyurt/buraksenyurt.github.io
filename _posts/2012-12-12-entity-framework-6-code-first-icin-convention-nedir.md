@@ -315,3 +315,5 @@ Code First yaklaşımında Convention kullanımı ile ilişkili olarak daha iler
 [Makalede yazılanlar Entity Framework 6 Alpha 2 sürümünü baz almaktadır]
 
 [HowTo_EFCodeFirstConvetions.zip (2,14 mb)](/assets/files/2012/HowTo_EFCodeFirstConvetions.zip) (Dosya boyutunun büyümemesi için Packages klasörü çıkartılmıştır. EF'in 6ncı sürümünü projeye indirmeniz gerekebilir)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-6-Code-First-Convention)

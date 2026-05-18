@@ -409,3 +409,5 @@ Bu örnek çalışma ile Angular bilgilerimi biraz daha pekiştirmiş ama daha d
 - Firestore paketinin temel CRUD (Create Read Update Delete) komutlarını
 
 Böylece geldik bir maceranın daha sonuna. [32 numaralı Saturday-Night-Works çalışmasının kodlarına buradan ulaşabilirsiniz](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2032%20-%20Angular%20with%20Firebase). Yeni bir gözden geçirme yazısında buluşuncaya dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/cloud-firestore-ile-angular-kullanimi)

@@ -58,3 +58,5 @@ Son olarak bir if bloğu içerisinde out şeklinde belirtilen değişkeni blok d
 ![tfi154_6.gif](/assets/images/2017/tfi154_6.gif)
 
 Böylece geldik bir ipucumuzun daha sonuna. Diğer C# 7.0 özelliklerini de öğrendikçe paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-154-c-7-0-out-iyilestirmesi)

@@ -16,3 +16,5 @@ categories:
 ![PhotoTrick18](/assets/images/2011/PhotoTrick18.png)
 
 [StructForParameters.rar (22,91 kb)](/assets/files/2011/StructForParameters.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-18-(5-Parametreden-Fazlasi-icin-Struct))))

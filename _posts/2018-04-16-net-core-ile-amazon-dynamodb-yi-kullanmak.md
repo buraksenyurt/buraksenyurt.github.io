@@ -308,3 +308,5 @@ Siz farklı arama ifadelerini bir araya getirerek değişik denemeler de yapabil
 Böylece geldik bir makalemizin daha sonuna. Bu yazımızda Amazon'un NoSQL veritabanlarından olan key-value türevli DynamoDB'sini bir.Net Core uygulamasından nasıl kullanabileceğimizi incelemeye çalıştık. Fiyatlandırma kritlerini göz önüne alarak kendi ürünleriniz için kullanabileceğinizi düşünüyorum. Ben her ihtimale karşı onları sildim:) Geliştirmesi oldukça kolay. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Yazıdaki kodlara github adresimden de erişebilirsiniz.](https://github.com/buraksenyurt/dotnetcore/tree/master/HowToDynamoDb)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/net-core-ile-amazon-dynamodb-yi-kullanmak)

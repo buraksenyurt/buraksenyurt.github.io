@@ -366,3 +366,5 @@ Sayfamızı tasarım modunda (Design Mode) düzenleyemeyeceğimizi daha önceden
 ![mk195_16.gif](/assets/images/2007/mk195_16.gif)
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde, Master Page kavramını daha detaylı bir şekilde öğrenmeye çalıştık. Master Page'lerin sadece görsel bir yenilik olmadığını, kod tarafındada işimizi kolaylaştıracak, kod optimizasyonu ve bakımını etkileyecek özelliklere sahip olduğunu gördük. Master Page'lerin asıl yararını görmek açısından, Master Page olmadan bilinen nesne yönelimli programlama kurallarından faydalanarak aynı işlemler yapılmaya çalışılabilir. Bu durumda Master Page'lerin işlemlerimizi gerçektenden kolaylaştırdığını daha iyi anlayabiliriz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Profesyonelce-Master-Pages-bsenyurt-com-dan)

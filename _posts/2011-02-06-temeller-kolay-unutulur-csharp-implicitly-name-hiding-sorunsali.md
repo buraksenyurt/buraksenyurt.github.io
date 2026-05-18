@@ -182,3 +182,5 @@ sealed class FileManager
 Elbette bu durumda üst tipte yer alan Dispose metodunun virtual olmasına da gerek yoktur. new operatörünün kullanılması, bir anlamda geliştiricinin de ne yaptığının farkında olması demektir. Yazımızda değerlendirdiğimiz bu örnek vakanın aslında kulağımıza bir cümleyi küpe yaptığı da gerçektir: “Siz siz olun Warning mesajlarını dikkate alın” Böylece geldik bir yazımızın daha sonuna. Tekrardan örüşünceye dek hepinize mutlu günler dilerim.
 
 [ImplicitHiding.rar (22,03 kb)](/assets/files/2011/ImplicitHiding.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Temeller-Kolay-Unutulur-(CSharp-Implicitly-Name-Hiding-Sorunsali))))

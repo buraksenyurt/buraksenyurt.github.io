@@ -238,3 +238,5 @@ Tabi söz konusu istatistikleri Excel üzerine grafik haline getirdiğimizde dur
 Aslında en hızlı üretim biçimi decimal içerikli dosyalarda söz konusudur. Ancak hız ve boyut kriterlerine baktığımızda Hexadecimal olarak veriyi saklamanın daha uygun olduğu sonucuna varılabilir. Tabi şu durum da gözden kaçırılmamlıdır. Decimal içerikleri Hexadecimal olarak saklamak ve bu saklanan içeriği tekrardan decimal olarak göstermek istediğimizde yazma ve okuma işlemleri yapılması gerektiği ve bunlar için uygulamaya ek süreler yükleneceği de ortadadır. Yine de bazı bilimsel ve matematiksel uygulamalarda, çok büyük boyutlu decimal içeriklerin fiziki olarak saklanması gerektiği durumda Hexadecimal çevirmeler düşünülebilir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [NumberSystems.zip (25,96 kb)](/assets/files/2014/NumberSystems.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Decimal-to-Binary-to-Hexadecimal)

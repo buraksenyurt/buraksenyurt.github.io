@@ -28,3 +28,5 @@ Webinerimizin ekran görüntüsüne, örnek kod ve Powerpoint dosyalarına aşa�
 - [Youtube Link](https://www.youtube.com/watch?v=MPQ3In0n308)
 - [WCF 4.0 - Introduction - Microsoft.pptx (399,90 kb)](/assets/files/2010/WCF40IntroductionMicrosoft.pptx)
 - [WCF Ogreniyorum.rar (64,13 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Ogreniyorum-Lesson-Zero-Fundementals)

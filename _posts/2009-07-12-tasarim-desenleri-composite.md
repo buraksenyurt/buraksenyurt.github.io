@@ -190,3 +190,4 @@ Not: Desene ait görsel anlatım en yakın zamanda eklenecektir.
 
 [CompositePattern.rar (13,44 kb)](/assets/files/2009/CompositePattern.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Composite)

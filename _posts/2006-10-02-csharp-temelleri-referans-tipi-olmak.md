@@ -420,3 +420,5 @@ Bu kez gelen parametreyi içeride bizzat örneklemekteyiz.(new ile yeni bir örn
 Bu makalemizde referans tiplerini daha yakından incelemeye çalıştık. Referans tipleri arası atamaların sonucundan yola çıkarak, struct lar içerisinde referans türlerini kullanmamız halinde neler olabileceğine baktık. Ayrıca bir referans tipinin tam bir kopyasının nasıl çıkarılabileceğini ve bunu yaparkende ICloneable arayüzünün nasıl kullanılabileceğini incelemeye çalıştık. Son olarakta bir referans tipini herhangibir metoda bir değer türü olarak nasıl alabileceğimizi gördük. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/UsingReferenceTypes.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-Temelleri-Referans-Tipi-Olmak-bsenyurt-com-dan)

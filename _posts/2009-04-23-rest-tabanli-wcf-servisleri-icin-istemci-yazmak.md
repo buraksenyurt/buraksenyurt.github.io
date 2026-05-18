@@ -120,3 +120,5 @@ kodu ile sadece ProductID, ProductName, CategoryID ve UnitsInStock alanlarını 
 Gayet kolay gördüğünüz gibi. Artık hedefimiz Post, Put ve Delete metodlarını istemci tarafından gönderip ele alabilmek. Yazıyı sonlandırmadan önce aslında bu modelin ne gibi bir farkı olduğuna bakmakta yarar var. Dikkat edileceği üzere istemci tarafı için ürettiğimiz herhangibir Proxy tipi bulunmamaktadır. (Hiç Add Service Reference dediğimi duydunuz mu?)
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Rest-Tabanlı-WCF-Servisleri-icin-Istemci-Yazmak)

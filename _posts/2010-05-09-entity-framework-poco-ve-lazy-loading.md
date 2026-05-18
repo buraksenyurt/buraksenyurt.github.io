@@ -174,3 +174,5 @@ Navigation Property'nin virtual olarak tanımlanmaması derleme veya çalışma 
 Eğer öyleyse de ilerleyen yazılarımızda ele almaya çalışacağız. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [POCOandLazyLoading_RTM.rar (90,73 kb)](/assets/files/2010/POCOandLazyLoading_RTM.rar) [Örnek uygulama Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-POCO-ve-Lazy-Loading)

@@ -436,3 +436,5 @@ namespace Istemci
 Buraya kadar işlenenler göz önüne alındığında, istemcilerin HTTP üzerinden GET,POST, PUT, DELETE gibi metodları kullanarak WCF operasyonlarını talep (Request) edebileceği görülmüştür. Host uygulama test olması açısından Console olarak tasarlanmış olmakla birlikte IIS (Internet Information Service) üzerindede konuşlandırılabilir. Bu tip bir durumda svc uzantılı servis dosyasında yer alan Service direktifinde Factory isimli niteliği (attribute) kullanmak ve System.ServiceModel.Activation.WebServiceFactory değerini atamak yeterlidir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WebStyleServices.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Bazlc4b1-Programlama-Modeli-bsenyurt-com-dan)

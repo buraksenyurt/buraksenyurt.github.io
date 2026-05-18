@@ -70,3 +70,5 @@ Kodun bu şekilde çalıştırılması sonucu aşağıdaki ekran çıktısı ile
 ![blg99_SecondRun.gif](/assets/images/2009/blg99_SecondRun.gif)
 
 AttachedToParent değeri nedeni ile task2, task1' e bağlı hale getirilmiştir. Yani task1, task2' nin parent Task'i olarak belirlenmiştir. Bu durumda task1.Wait çağrısının yapıldığı noktada Attach edilmiş tüm Task referansları değerlendirileceğinden task1' inde tamamlanması beklenilmiştir. Bu durum her iki çalışmadaki Program Sonu sürelerinden anlaşılabilmektedir. Nitekim ilk çalışmada task2 içerisindeki 6 saniyelik Sleep çağrısı hesaba katılmazken, ikinci örnekte katılmıştır. Task Parallel Library ile ilişkili olarak Beta 2' de gelen diğer değişiklikleri ele aldığımız başka bir yazımızda görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Task-Parallel-Library(TPL)-Detached-Tasks-Beta-2)-Detached-Tasks-Beta-2)-Detached-Tasks-Beta-2)

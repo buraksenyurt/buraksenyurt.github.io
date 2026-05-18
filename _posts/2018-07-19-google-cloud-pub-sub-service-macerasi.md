@@ -234,3 +234,5 @@ export GOOGLE_APPLICATION_CREDENTIALS="my-starwars-game-project-d977a50a19f5.jso
 şeklinde bir terminal komutu ile gerekli credential bilgilerini işlemiştim. Eğer yazdığımız ürünü bir sunucuya atacak ve oradan Google Pub/Sub hizmetini kullandırmak isteyeceksek bu tip Credential bilgilerini de kod tarafında yüklememiz gerekebilir. Bunun nasıl yapılabileceği ile ilgili olarak Google'ın [şu adresindeki yazıya](https://cloud.google.com/docs/authentication/production) bakabilirsiniz.
 
 Benim için sıradaki aşama bir Google fonksiyonunu Pub/Sub API üzerinden tetikletmek. Yani yazının başında bahsettiğim vakadaki çalışmanın minik bir hattını canlandırmaya çalışmak. Bakalım yolda karşıma öğrenmem gereken daha neler neler çıkacak. Siz buradaki kullanım şekillerini geliştirerek ilerlemeye devam edebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Google-Cloud-PubSub-Service-Macerası)

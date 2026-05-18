@@ -449,3 +449,5 @@ Tabi örneğimizin pek çok noktasında hata bulunmaktadır. (Biraz acele ile ya
 Artık Worldbank verilerinin ASP.NET Web API (ve tabi WCF Web API) ile gelen HttpClient tipi yardımıyla ve özellikle JSON formatında nasıl ele alabileceğinizi öğrendiniz. Bunun geliştirmek tamamen sizlerin elinde. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WorldBank.zip (88,93 kb)](/assets/files/2012/WorldBank.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WorldBank-OData-ve-ASPNet-Web-API-HttpClient)

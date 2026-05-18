@@ -39,3 +39,4 @@ Aslında örnek son derece basit. Sunucu uygulama üzerinde bir dizi tanımlıyo
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-140-distributed-ruby)

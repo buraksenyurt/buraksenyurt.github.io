@@ -49,3 +49,5 @@ Hatta WSDL içeriğide aynı adresleme formatı üzerinden elde edilebilmektedir
 Sırada Discovery, RESTFul ve Routing gibi yeniliklerin incelenmesi var. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SimpleAspNetHosting2.rar (13,94 kb)](/assets/files/2009/SimpleAspNetHosting2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-No-Svc-(File-less))))

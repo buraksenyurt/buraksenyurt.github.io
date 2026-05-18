@@ -138,3 +138,6 @@ Görüldüğü gibi bu yoğun sorgu çalışırken TextBox kontrolüne bir takı
 Şekil 4. Programın Çalışmasının Sonucu.
 
 Geldik bir makalemizin daha sonuna. İlerliyen makalelerimizde Thred'leri daha derinlemesine incelemeye devam edeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ise-Yarar-Bir-MultiThreading(Cok-Kanallı)-Uygulama-Ornegi-bsenyurt-com-dan)-Uygulama-Ornegi-bsenyurt-com-dan)-Uygulama-Ornegi-bsenyurt-com-
+-dan)

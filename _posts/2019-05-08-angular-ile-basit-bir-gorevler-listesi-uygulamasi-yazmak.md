@@ -179,3 +179,5 @@ Buna göre `http://localhost:4200` adresine talep gönderirsek uygulamamıza ula
 - Temel ng terminal komutlarını
 
 Böylece geldik bir maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/angular-ile-basit-bir-gorevler-listesi-uygulamasi-yazmak)

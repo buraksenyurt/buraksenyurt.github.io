@@ -303,3 +303,5 @@ Tabii bu parametreyi vermeden uygulamayı çalıştırırsak varsayılan Connect
 Konfigurasyon yönetimi ile ilgili daha pek çok şey var (Ben MSDN'in [şu adresteki](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration) oldukça doyurucu dokümanını izleyerek öğrenmeye çalışıyorum) Örneğin özel bir Entity Framework provider'ının oluşturulması, komut satırı argümanlarında switch mapping tekniğinin kullanılması gibi konulara bu adresten bakılabilir. Şimdilik benden bu kadar. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kodlara Git üzerinden de erişebilirsiniz.](https://github.com/buraksenyurt/dotnetcore/tree/master/CustomConfig)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/net-core-configuration-management-uzerine)

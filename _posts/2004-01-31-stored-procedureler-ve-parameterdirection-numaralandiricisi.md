@@ -172,3 +172,5 @@ private void button1_Click(object sender, System.EventArgs e)
 Şekil 6. Makalemizin Konu isimli alanının değeri döndürüldü.
 
 Değerli okurlarım. Geldik bir makalemizin daha sonuna. Umarım yararlı bir makale olmuştur. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Stored-Procedureler-ve-ParameterDirection-Numaralandc4b1rc4b1cc4b1sc4b1-bsenyurt-com-dan)

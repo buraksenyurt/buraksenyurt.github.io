@@ -224,3 +224,5 @@ Sonuç itibariyle basit bir One Way Ticket şarkısından oldukça farklı nokta
 Bu makalemizde asenkron programlama çeşitlerinden birisi olan One Way metod çağırım tekniğini incelemeye çalıştık. Asenkron programlamaya ilişkin başka örnekleri ilerleyen makalelerimizde incelemeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/OneWayInceleme.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-One-Way-Ticket-bsenyurt-com-dan)

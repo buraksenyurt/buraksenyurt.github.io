@@ -16,3 +16,5 @@ Bu kez de WCF ile ilişkili bir fotoğraf paylaşalım istedim. Aslına bakarsan
 ![PhotoTrick10_2](/assets/images/2011/PhotoTrick10_2.png)
 
 [WcfService2.rar (16,58 kb)](/assets/files/2011/WcfService2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-10-(MessageContract-Yardimiyla-SoapHeader-a-Bilgi-Eklemek))))

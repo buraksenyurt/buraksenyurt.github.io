@@ -86,3 +86,5 @@ Bu durumda, Kitaplar.xml dosyamızın içeriğine bakıcak olursak schema bilgil
 ![mkx2.gif](/assets/images/2003/mkx2.gif)
 
 Bir sonraki makalemizde görüşmek dileğiyle hepinizi mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataSet-ve-WriteXml-Metodunun-Kullanc4b1mc4b1-bsenyurt-com-dan)

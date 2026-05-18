@@ -377,3 +377,5 @@ Dikkat ederseniz tek yaptığımız orderby anahtar kelimesinden sonra prd örne
 ![mk192_14.gif](/assets/images/2007/mk192_14.gif)
 
 Bu makalemizde 11 değişik sorguda LINQ'yu daha yakından tanımaya çalıştık. Makalemizin başında belirttiğimiz gibi LINQ içerisinde oldukça fazla sayıda operatör yer almaktadır. Anders Hejlsberg, LINQ teknolojilsini özellikle veritabanı programcılığı yapanların dil içerisindede aynı felsefeyi kullanabilmeleri için geliştirildiğini belirtmiştir. Gerçektende yukarıdaki dil içi sorgular buna verilebilecek örneklerden sadece bir kaçıdır. İlerleyen makalelerimizin birisinde diğer operatörleride ele almaya çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/LINQ-Daha-Fazla-Sorgu-bsenyurt-com-dan)

@@ -196,3 +196,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SRP.rar (109,33 kb)](/assets/files/2009/SRP.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarim-Prensipleri-Single-Responsibility)

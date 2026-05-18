@@ -300,3 +300,5 @@ Peki AutoEventWireup niteliğine false değerinin atanabilmesinin nasıl bir kat
 Bu kod parçasına göre InitOncesi isimli olay metodumuz sayfanın PreInit olayı gerçekleştiği zaman çalıştırılacak metod olacaktır. AutoEventWireup niteliği Asp.Net 1.1 versiyonunda varsayılan olaran false değerine sahip olan bir niteliktir. Sayfa olaylarını kendi isimlendirdiğimiz metodlar ile ilişkilendirmekten başka bir avantaj sağladığını düşünmemiz ne yazıkki pek mümkün değildir.
 
 Gördüğünüz gibi herhangibir tasarımı olmayan hatta önemli bir iş yapmayan bir web sayfası üzerinde konuşulabilecek oldukça fazla konu vardır. Bu makalemizde bir web sayfasının anatomisini ve göze çarpan noktalarını incelemeye çalıştık. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-Temelleri-Bir-Web-Sayfasc4b1nc4b1n-Anatomisi-bsenyurt-com-dan)

@@ -94,3 +94,5 @@ WebClient sınıfını oluşturduktan sonra Content-Type ve SOAPAction bilgileri
 ![wsresult.gif](/assets/images/2017/wsresult.gif)
 
 Gördülüğü gibi başarılı bir sonuç aldık. WebClient sınıfını ağırlıklı olarak REST tabanlı servisleri çağırmak için kullansak da örnekte görüldüğü gibi SOAP tabanlı servisler için de ele alabiliriz. Tekrar hatırlatmakta fayda var ki referans eklemeden bunu yapmamız mümkün. Eğer servis JSON içerik dönüyorsa sonuçları NewtonSoft'un JsonConvert sınıfından yararlanarak JObject olarak deserialize edebilir, servisin ihtiyaçlarına göre ekstra Header bilgilerini (OAuth Token vb) kolaylıkla gönderebiliriz. Böylece geldik ihtiyaç sonrası ortaya çıkan bir yazının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-soap-web-servisini-proxy-olmadan-webclient-ile-cagirmak)

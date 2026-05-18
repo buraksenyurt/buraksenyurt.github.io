@@ -222,3 +222,5 @@ Görüdüğü üzere sadece CategoryName ve sub query ile birlikte ürün sayıl
 Böylece geldik bir günlük yazımızın daha sonuna. Bu yazımızda LINQ to SQL ve Ado.Net Entity Framework tarafında Lazy ve Eager Loading kavramlarını değerlendirmeye çalıştık. Umarım yararlı olmuştur.
 
 Görüşmek dileğiyle...
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Entity-Framework-de-Lazy-ve-Eager-Loading)

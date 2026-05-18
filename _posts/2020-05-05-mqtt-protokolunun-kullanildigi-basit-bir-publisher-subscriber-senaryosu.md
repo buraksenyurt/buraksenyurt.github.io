@@ -150,3 +150,5 @@ benzeri farklı türde ve sayıda talepler göndererek abone olan diğer istemci
 ![skynet_17_Screenshot_3.png](/assets/images/2020/skynet_17_Screenshot_3.png)
 
 Hepsi bu kadar sevgili dostlar:) Elbette bu örnek çalışma üstünden yapabileceğiniz birçok şey olduğunu da ifade etmek isterim. Örneğin subscriber uygulamasından birden fazla örnek çalıştırıp her bir dinleyiciye aynı mesajlar ulaşıyor mu kontrol edebilirsiniz. Diğer yandan subscriber olarak NodeJs'ten farklı dillerde program geliştirip broker ile çalışmayı deneyebilirsiniz. Ben üşendim ama siz üşenmezseniz eğer bir Raspberry PI'ye ısı sensörü bağlayıp sensörden okuduğunuz bilgiyi REST servisine veya doğrudan Mosquitto broker'ına göndermeyi düşünebilirsiniz. Böylece geldik bir SkyNet derlemesinin daha sonuna. Örneğe ait tüm kodlara [github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2017%20-%20MQTT%20on%20Simple%20Scenario) üzerinden erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/mqtt-protokolunun-kullanildigi-basit-bir-publisher-subscriber-senaryosu)

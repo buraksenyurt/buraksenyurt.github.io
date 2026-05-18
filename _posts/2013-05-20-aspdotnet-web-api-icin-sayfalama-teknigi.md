@@ -296,3 +296,5 @@ Dikkat edileceği üzere rownumber komutundan yararlanılarak gerçek anlamda sa
 ## Sonuç
 
 Görüldüğü üzere OData sorgu desteği sunan Asp.Net Web API servislerini kullanarak sayfalama işlemlerini gerçekleştirmek oldukça kolaydır. Bu iş de başrol oyuncu olan top, skip ve orderby anahtar kelimeleri bir OData standardı olduğundan, istemci tarafı Microsoft dışı bir platform da olabilir. Tabi burada tek bağlayıcı nokta SQL veritabanı ve Entity Framework kullanımıdır. Farklı veri kaynaklarında rownumber gibi bir kullanım şekli söz konusu olmayabilir. Böyle bir vaka da tahmin edileceği üzere Web API Controller içerisindeki ilgili operasyon noktalarında müdahale de bulunmak gerekebilir (Araştırmadım benim yerime siz bu işi yapın) Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Web-API-Paging)

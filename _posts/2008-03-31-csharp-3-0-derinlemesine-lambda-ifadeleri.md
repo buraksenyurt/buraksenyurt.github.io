@@ -779,3 +779,5 @@ Son olarak lambda ifadeleri kullanılırken dikkat edilmesi gereken bazı duruml
 Bu yazımızda lambda ifadelerinin genel kullanımı üzerinde durulmaya çalışmıştır. Lambda ifadelerinin getirdiği kolaylığı görmek amacıyla C# 1.0 tarafından C# 3.0 tarafına doğru ilerlenmeye çalışılmıştır. Lambda ifadeleri ile ilişkili bir diğer önemli konuda ifade ağaçlarıdır (Expression Trees). Bu konuyu ilerleyen yazılarımızda incelemeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/LambdayiAnlamak.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-3-0-Derinlemesine-Lambda-Ifadeleri-bsenyurt-com-dan)

@@ -644,3 +644,5 @@ Buraya kadar yaptıklarımıza baktığımızda, istemci ve sunucu arasındaki M
 Buda yapıldığı takdirde mesajın daha güvenilir bir şekilde ele alınması ve korunması mümkün hale gelmektedir. Diğer taraftan istemci ve servis arasındaki mesajların türlendirilmemiş olmaları halindede ele alınabildikleri ve içeriklerinin yönetilebildikleride ortadadır. Mesaj Sözleşmeleri ile ilişkili olarak daha detayı bilgi almak için, [MSDN](http://msdn.microsoft.com/en-us/library/ms730255(printer).aspx)' de yayınlanan içeriği takip etmenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim
 
 [Örneği İndirmek İçin Tıklayın](/assets/files/2008/UsingMessageContracts.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Mesaj-Sozlesmeleri(Message-Contracts)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

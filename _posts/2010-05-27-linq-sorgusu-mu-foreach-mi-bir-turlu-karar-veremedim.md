@@ -89,3 +89,4 @@ Ama bildiğiniz üzere LINQ daha karmaşık sorgular yazılması noktasında elb
 
 [LINQForEachPerformance.rar (23,30 kb)](/assets/files/2010/LINQForEachPerformance.rar) [Örnek Visual Studio 2010 Ultimate ile geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/LINQ-Sorgusumu-ForEach-Mi-Bir-Turlu-Karar-Veremedim)

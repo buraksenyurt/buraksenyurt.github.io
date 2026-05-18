@@ -240,3 +240,5 @@ Görüldüğü gibi sabit bir bekleme süresi söz konusu olmamıştır. Bazen 3
 Bu yazımızda Task işleyişlerinin duraksatılması için kullanabileceğimiz teknikleri incelemeye çalıştık. Bir sonraki yazımızda duraksatma işlemleri için kullanılabilecek diğer teknikleri de öğrenmeye çalışıyor olacağız. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WaitingScenarios.rar (23,76 kb)](/assets/files/2010/WaitingScenarios.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Task-Sureclerinde-Bilincli-Olarak-Duraksatma)

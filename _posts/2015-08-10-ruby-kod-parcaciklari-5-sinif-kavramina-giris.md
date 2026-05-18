@@ -101,3 +101,4 @@ end
 
 Böylece geldik bir Ruby Kod Parçacığı bölümün daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-5-sinif-kavramina-giris)

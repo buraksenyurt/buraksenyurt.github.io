@@ -187,3 +187,5 @@ Uygulamamızı çalıştıralım ve deneyelim. Aşağıdaki ekran görüntüsün
 Şekil 2. Uygulamanın Çalışmasının Sonucu.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Indeksleyiciler-(Indexers)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

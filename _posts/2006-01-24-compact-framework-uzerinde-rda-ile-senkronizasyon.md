@@ -239,3 +239,5 @@ Buraya kadar anlatıklarımızdan yola çıkaraktan RDA mimarisinin belirli avan
 | RDA icin gerekli sistem entegrasyonunun yapilmasi kolaydir. | Istemci tarafina alinacak her bir tablo icin ayri ayri Pulling islemi gerektirir. |
 
 Böylece geldik bir makalemizin daha sonuna. İzleyen makalelerimizde, Merge Replication mimarisini incelemeye çalışacağız. Uygulanması ve hazırlığı RDA mimarisine göre biraz daha zor olan Merge Replication mimarisinin avantajlarını ve dezavantjlarını göreceğiz. Bu makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Compact-Framework-Uzerinde-RDA-ile-Senkronizasyon-bsenyurt-com-dan)

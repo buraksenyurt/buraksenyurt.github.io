@@ -19,3 +19,5 @@ Bu görsel dersimizde, SOLID ilkelerinden birisi olup Yazılım Tasarım Presinp
 [Youtube Link](https://www.youtube.com/watch?v=zQvkzzwElXs)
 
 Bir başka görsel dersimizde görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Dependency-Inversion-Principle-Kavramak)

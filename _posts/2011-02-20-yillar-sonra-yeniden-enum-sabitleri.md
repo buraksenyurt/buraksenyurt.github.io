@@ -238,3 +238,5 @@ Görüldüğü üzere ilk 3 deneme de başarılı çevirmeler yapılmıştır. S
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda yıllar sonrasında Enum sabiti kavramına tekrardan dönüş yaparak farklı açılardan ele almaya çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloAgainEnums.rar (44,39 kb)](/assets/files/2011/HelloAgainEnums.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Yillar-Sonra-Yeniden-Enum-Sabitleri)

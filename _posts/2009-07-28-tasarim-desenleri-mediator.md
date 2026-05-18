@@ -184,3 +184,5 @@ Bu bilgilendirmenin yapılabilmesi için tahmin edileceği üzere, Concrete Medi
 Özet olarak herhangibir havayoluna ait bir uçak, İstanbul kulesine yaklaştığında kendisine yeni bir rota talep ederken diğer uçaklar ile haberleşmek ve onların konumlarına göre hesaplamalar yaparak bir yön tayin etmek zorunda değildir. Tüm uçaklar bir birlerinden ayrıştırılmış ve yönlerini belirlemek üzere kullanılması gereken algoritmalar Mediator tipi içerisine kapsüllenmiştir. Biraz karışık bir desen implemantasyonu olmasına rağmen faydalı olduğunu umuyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MediatorPattern.rar (24,85 kb)](/assets/files/2009/MediatorPattern.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Mediator)

@@ -204,3 +204,5 @@ Table Spool maliyetleri biraz yüksek görüldüğü üzere. Merge çalışma pl
 ![sqlmerge_2.gif](/assets/images/2019/sqlmerge_2.gif)
 
 İşin aslı konuyu SQL performans yönetimi konusunda uzman birisinin incelemesi daha doğru olabilir. Genellikle şirketlerin veritabanı operasyon ekipleri perfomans arttırımı gerektiren sorgular için destek oluyorlar. Yine de iş oraya gelmeden önce gerekli ön tedbirleri alıp performans iyileştirmelerini yapmak da biz geliştiricilere düşen önemli bir görevdir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bilmiyordum-ogrendim-sql-merge)

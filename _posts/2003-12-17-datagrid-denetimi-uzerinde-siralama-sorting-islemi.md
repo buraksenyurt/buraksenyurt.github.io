@@ -75,3 +75,6 @@ private void Page_Load(object sender, System.EventArgs e)
 Şekil 3. Yazar adına göre sıralanmış hâli.
 
 Geldik bir makalemizin daha sonuna, bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataGrid-Denetimi-Uzerinde-Sc4b1ralama(Sorting)-Islemi-bsenyurt-com-dan)-Islemi-bsenyurt-com-dan)-Islemi-bsenyurt-com-dan
+n)

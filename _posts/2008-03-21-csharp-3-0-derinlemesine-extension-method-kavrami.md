@@ -420,3 +420,5 @@ Buraya kadar bahsedilenler kısaca değerlendirilirse, genişletme metodlarını
 Yinede genişletme metodlarının nesne yönelimli programlama modeli nosyonunun bir parçası olmadığını düşünmekte yarar vardır. Öyleki nesne yönelimli programlama nosyonu göz önüne alındığında, tip genişletmesi aslında türetme ile gerçeklenmektedir. Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca genişletme metodlarını (Extension Methods) derinlemesine incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/DerinlemesinExtensionMethods.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-3-0-Derinlemesine-Extension-Method-Kavramc4b1-bsenyurt-com-dan)

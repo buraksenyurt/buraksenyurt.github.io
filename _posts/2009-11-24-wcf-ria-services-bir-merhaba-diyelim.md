@@ -135,3 +135,4 @@ Tabi daha ne kolaylıklar bar Visual Studio tarafında bir bilseniz.
 
 [SilverlightApplication3.rar (1,28 mb)](/assets/files/2009/SilverlightApplication3.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Bir-Merhaba-Diyelim)

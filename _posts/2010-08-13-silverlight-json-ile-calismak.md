@@ -170,3 +170,5 @@ Bu metoda ait kod parçasındaki en büyük yardımıcı JsonArray tipi ve Load 
 Görüldüğü gibi JSON formatındaki içerik Silverlight tarafında başarılı bir şekilde ele alınmış ve veri bağlı bir kontrol (DataGrid) ile ilişkilendirilebilmiştir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [JsonConsumer.rar (1,92 mb)](/assets/files/2010/JsonConsumer.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Silverlight-JSON-ile-Calismak)

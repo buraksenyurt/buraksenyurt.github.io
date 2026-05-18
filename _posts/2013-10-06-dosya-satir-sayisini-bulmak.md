@@ -241,3 +241,5 @@ Dikkat edileceği üzere ReadAllLines metodu aslında içeride başka bir metodu
 Tabi satır sayısını bulmak için alternatif yollarda düşünebilir ve mutlaka vardır. Söz gelimi Pointer kullanımı daha hızlı sonuçlar alabilmemizi sağlayabilir. Ya da paralel programlama desenlerinden yararlanarak özellikle çok büyük boyutlu bir dosyanın parçalara bölünmek suretiyle satır sayısının hesaplanması ve [Reduction](/2011/12/02/parallel-programming-reduction/) ile kümülatif toplamın ortaya konulması düşünülebilir. Ancak önerilen yol çok büyük boyutlu dosyalarda File.ReadAllLines metodunun kullanılmasıdır. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [FindLineCountsApp.zip (32,62 kb)](/assets/files/2013/FindLineCountsApp.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Dosya-Satir-Sayisi-Bulmak)

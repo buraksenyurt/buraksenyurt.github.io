@@ -200,3 +200,5 @@ Görüldüğü gibi Task 1 ve 2 için Status değerleri Canceled olarak set edil
 Böylece geldik bir yazımızın daha sonuna. Paralel programlama ile ilişkili konuları incelemeye devam ediyor olacağız. Bundan sonraki yazımızda Task'lerin belirli süreler boyunca bekletilmesi amacıyla kullanabileceğimiz teknikleri araştırıyor ve örnekliyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [CancellationScenarios2.rar (21,79 kb)](/assets/files/2011/CancellationScenarios2.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Composite-Cancellations)

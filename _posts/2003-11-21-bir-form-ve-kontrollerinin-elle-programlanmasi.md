@@ -202,3 +202,5 @@ protected void btnOK_Tiklandi(object sender, System.EventArgs e)
 Şekil 4. Event-Handler sonucu.
 
 Evet geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu ve huzurlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Bir-Form-ve-Kontrollerinin-Elle-Programlanmasc4b1c2a0-bsenyurt-com-dan)

@@ -395,3 +395,5 @@ Bu gibi durumları iyice irdeleyerek ilerlemekte yarar vardır. İşte size çal
 Bu arada örnek Solution içerisinde ikinci bir servis daha yer almaktadır. Bu serviside devreye alarak operasyon izleme işlemlerini birden fazla servis için gerçeklemeye çalışabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [OperationCallTracing.rar (155,62 kb)](/assets/files/2011/OperationCallTracing.rar) [Örnek Visual Studio 2010 Ultimate Sürümünde Geliştirilmiş ve Test Edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Servis-Operasyonlarini-Kod-Yardimiyla-Izlemek)

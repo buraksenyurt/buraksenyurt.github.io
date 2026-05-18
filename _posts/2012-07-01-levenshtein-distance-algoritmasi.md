@@ -129,3 +129,5 @@ Artık bundan sonrasında yapılması gereken, bir text kutucuğuna girilen metn
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingLevenshtein.zip (15,85 kb)](/assets/files/2012/UsingLevenshtein.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Levenshtein-Distance-Algoritmasi)

@@ -206,3 +206,5 @@ Yönetemediğimiz sistemi kontrol edemeyiz. ITIL, kaliteli hizmet verebilmek, bu
 Aldığım bu eğitim sonrası Service Now ürününe ve iş yapış şeklimize olan bakışım daha da değişmiş oldu. Hizmeti sahiplenmenin önemli bir unsur olduğunu bir kere daha fark ettim. Elbette ITIL’ı bir şirkete kurgulayacak derecede bilgiye sahip olmamız gerek ve şart değil. Ancak içinde ServiceNow ve benzeri ürünlerin koştuğu, SLA zaman aşımı maillerinin geldiği ve CAB toplantılarının yapıldığı firmalarda bunların neden var olduğunun farkına varılması açısından yazıldığı kadarını bilmek önemli.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/itil-in-farkina-vardim)

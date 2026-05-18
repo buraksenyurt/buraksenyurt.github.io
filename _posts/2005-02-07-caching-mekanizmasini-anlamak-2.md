@@ -238,3 +238,5 @@ Eğer 10 saniye süresi dolduktan sonra Çıkart başlıklı butona basarsak Rem
 CallBack tekniğinin uygulanışını daha iyi kavrayabilmek için, örnekleri debug modunda çalıştırıp breakpoint’ ler vasıtısayıla kodları izlemenizi öneririm. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2005/Caching2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Caching-Mekanizmasc4b1nc4b1-Anlamak-2-bsenyurt-com-dan)

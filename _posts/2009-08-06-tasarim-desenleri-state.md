@@ -234,3 +234,5 @@ Ben geliştirdiğimiz örnekte pek çok durumuda göz ardı ettim.
 Tabiki yukarıdaki gibi bir deseni uygulamak yerine her şeyi if veya switch gibi kontrol deyimleri ile ele almaya çalışabiliriz. Tabi bu durumda hem kodun karmaşıklaşmasına neden olur hemde genişletilebilirliğini zorlaştırmış oluruz. Nitekim şu anda uygulanan desene göre, makine için yeni bir davranış eklemek aslında State arayüzünden türüyen bir tip ekleyip bunu ilgili yerlerde değerlendirmekten başka bir işlem değildir. Bunu daha iyi anlamak için aynı örneği if ve switch yapıları ile geliştirmeye çalışmalısınız. Böylece geldik bir tasarım deseninin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StatePattern.rar (26,49 kb)](/assets/files/2009/StatePattern.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-State)

@@ -364,3 +364,5 @@ Burada, SqlBulkCopy nesnemize SqlRowsCopied olayını ekledikten sonra bu olayı
 Şekil 9. SqlRowsCopied olayının işlenmesi sonucu.
 
 Bu makalemizde, Ado.Net 2.0 ile gelen yeni kabiliyetlerden birisine değinmeye çalıştık. İlerleyen makalelerimizde Ado.Net 2.0' ın yeni özelliklerini incelemeye devam edeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ve-Bulk-Data-Kopyalama-Mekanizmasc4b1-bsenyurt-com-dan)

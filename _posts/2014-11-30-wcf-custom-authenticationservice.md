@@ -656,3 +656,5 @@ Dikkat edileceği üzere çerez içeriği şifrelelidir diyerek yazıyı kestirm
 Bu uzun makalemizde.Net Framework ile gelen Built-In AuthenticationService’ inin değiştirilip özel bir Membership alt yapısı ile nasıl çalışabileceğini incelemeye çalıştık. Adım adım ilerlediğimiz senaryomuzda kullanıcı ve role bazlı yetkilendirmelere değindik. Son olarak da çerez bilgisinin şifrelenerek gönderilmesinin nasıl yapılabileceğini gördük. Bir diğer yazımızda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [HowTo_CustomAuthentication.zip (96,45 kb)](/assets/files/2014/HowTo_CustomAuthentication.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Custom-AuthenticationService)

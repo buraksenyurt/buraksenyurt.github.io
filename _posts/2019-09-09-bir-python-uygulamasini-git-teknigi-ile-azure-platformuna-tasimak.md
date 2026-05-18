@@ -166,3 +166,5 @@ Yazılım ürünlerinin resmi sitelerinde yer alan bu tip adım adım serileri k
 - requirements.txt dosya içeriğinin ne işe yaradığını
 
 Böylece geldik bir maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-python-uygulamasini-git-teknigi-ile-azure-platformuna-tasimak)

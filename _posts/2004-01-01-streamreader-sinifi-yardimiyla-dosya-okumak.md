@@ -75,3 +75,5 @@ private void btnDosyaAc_Click(object sender, System.EventArgs e)
 Şekil 3. Dosyamızın içeriği.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/StreamReader-Sınıfı-Yardımıyla-Dosya-Okumak-bsenyurt-com-dan)

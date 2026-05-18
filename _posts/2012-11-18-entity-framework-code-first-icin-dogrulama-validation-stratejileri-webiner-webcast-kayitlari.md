@@ -26,3 +26,5 @@ Webinere ilişkin [konu anlatımı ve örnekleri içeren makaleye de bu adresten
 [Youtube Link](https://www.youtube.com/watch?v=X5Dy8Ap81AU)
 
 Önümüzdeki ay gerçekleştirmeyi planladığımız yeni bir Webinerde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Code-First-icin-Dogrulama(Validation)-Stratejileri-Webiner(Webcast)-Kayc4b1tlarc4b1)-Stratejileri-Webiner(Webcast)-Kayc4b1tlarc4b1)-Stratejileri-Webiner(Webcast)-Kayc4b1tlarc4b1)

@@ -133,3 +133,4 @@ Output Cache özelliği REST tabanlı WCF servislerinde, perfomansı arttırıc�
 
 [RESTSupport.rar (37,47 kb)](/assets/files/2009/RESTSupport.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-HTTP-Cache-Destegi)

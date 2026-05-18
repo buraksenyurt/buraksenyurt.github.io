@@ -30,3 +30,5 @@ Bilindiği üzere Asp.Net Web API’ den yararlanılarak Open Data Protocol dest
 [Youtube Link](https://www.youtube.com/watch?v=EbyKro23GQk)
 
 Bir başka görsel dersimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Web-API-OData-Service-CRUD-operations)

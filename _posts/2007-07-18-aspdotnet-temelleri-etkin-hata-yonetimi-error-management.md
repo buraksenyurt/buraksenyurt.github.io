@@ -319,3 +319,6 @@ Son olarak Application_Error;
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde Asp.Net uygulamalarında etkin hata yönetimi adına metod, sayfa ve uygulama seviyesinde neler yapabileceğimizi incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/HataYonetimi.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-Temelleri-Etkin-Hata-Yonetimi-(Error-Management)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-d
+dan)

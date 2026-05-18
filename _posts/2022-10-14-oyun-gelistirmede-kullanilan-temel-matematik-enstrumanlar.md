@@ -131,3 +131,5 @@ Tabii tüm bu teroik bilgileri bir şekilde denemek de gerekiyor. Ben biraz daha
 - 3D Math Primer for Graphics and Game Development, Fletcher Dunn
 - Foundations of Game Engine Development, Volume 1: Mathematics, Eric Lengyel
 - [Math for Game Devs [2022, part 1]](https://youtu.be/fjOdtSu4Lm4) - Numbers, Vectors & Dot Product (Freya Holmér)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/oyun-gelistirmede-kullanilan-temel-matematik-enstrumanlar)

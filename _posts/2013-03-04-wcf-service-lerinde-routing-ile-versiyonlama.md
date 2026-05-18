@@ -304,3 +304,5 @@ Pek tabi geçerli olmayan bir değerin girilmesi halinde istemci tarafında Exce
 Örnek senaryo istenirse daha da zorlaştırılabilir. Söz gelimi servislerin sözleşmelerinde yapılacak kritik değişiklikler sonucu istemcinin bilmesi gereken contract bilgisinin de güncellenmesi şarttır. Bu konuyu bir düşünmenizi ve böyle bir senaryo oluşması halinde istemcinin istediği versiyonlara nasıl gidebileceğini araştırmanızı ve bir çözüm yolu bulmaya çalışmanızı öneririm. Bu iyi bir ev ödevi gibi geldi bana. Versiyonlama her zaman için zor ve karmaşık bir konudur. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RoutingAndVersioning.zip (117,79 kb)](/assets/files/2013/RoutingAndVersioning.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Service-lerinde-Routing-ile-Versiyonlama)

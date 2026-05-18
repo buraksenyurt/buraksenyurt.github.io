@@ -420,3 +420,5 @@ Eliptik Eğri denklemi Blockchain ve ondan türeyen pek çok yapı tarafından a
 - [Implementation of Elliptic Curve Digital Signature Algorithm](http://scialert.net/fulltext/?doi=jse.2007.1.12)
 - [Elliptic Curve Scalar Multiplaction Calculator](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/modk-mul.html)
 - [BitcoinWiki](https://en.bitcoin.it/wiki/Secp256k1)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Blockchain-Eliptik-Egri-Sifreleme-Algoritması)

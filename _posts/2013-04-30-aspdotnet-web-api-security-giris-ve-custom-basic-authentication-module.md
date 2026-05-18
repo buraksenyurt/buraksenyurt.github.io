@@ -21,3 +21,5 @@ Bu görsel dersimiz ile birlikte Asp.Net Web API Security konusunu incelemeye ba
 [Youtube Link](https://www.youtube.com/watch?v=1DhOjWJvE4M)
 
 Bir diğer görsel dersimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Web-API-Security-Giris-ve-Custom-Basic-Authentication-Module)

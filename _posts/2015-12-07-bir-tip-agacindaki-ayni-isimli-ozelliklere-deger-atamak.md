@@ -136,3 +136,4 @@ Pek tabi kodun siz değerli okurlarımca gözden geçirilmesinde yarar var. Hatt
 
 Görüldüğü üzere ne kadar alt seviyeye indiğini bilmediğimiz bir tip ağacında Reflection ve Recursive kavramlarını işin içerisine katarak istediğimiz sonucu elde etmeyi başardık. Kısa bir yazı oldu ama elimizin altında bulunsun. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-tip-agacindaki-ayni-isimli-ozelliklere-deger-atamak)

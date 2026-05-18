@@ -158,3 +158,6 @@ Uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsünü eld
 Bu makalemizde kendi satırlarını işaret eden satırların var olduğu ilişkileri taşıyan tablolarda, satır arasındaki hiyerarşik yapının Recursive (Yinelemeli) metodlar ile uygulama ortamına nasıl aktarılabileceğini incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kodlar için tıklayın.](/assets/files/2005/SelfRefOrn.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Self-Referencing-Relations-ve-Recursive(Yinelemeli)-Metodlar-bsenyurt-com-dan)-Metodlar-bsenyurt-com-dan)-Metodlar-bsenyurt-c
+com-dan)

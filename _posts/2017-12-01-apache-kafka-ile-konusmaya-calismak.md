@@ -271,3 +271,4 @@ ve Consumer çalışmasından bir görüntü
 
 Böylece amacıma ulaşmış oluyorum. West-World artık Kafka'nın felsefesine biraz daha aşina gibi. Tabii merak edilesi bir konu daha var. Acaba buraya elasticsearch nasıl bağlanıyor. Bakalım buna vakit ayırabilecek miyim. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/apache-kafka-ile-konusmaya-calismak)

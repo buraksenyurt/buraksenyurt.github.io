@@ -237,3 +237,5 @@ Pek tabii Google Cloud Platform bu kadar basit değil. Computation, Big Data, St
 ![rubyongcp_8.gif](/assets/images/2018/rubyongcp_8.gif)
 
 Bu mimarileri anlamaya çalışmamız önemli. Ama biraz dinlendikten sonra. Çünkü, West-World'de güneş çoktan battı. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-ruby-uygulamasini-google-cloud-platform-uzerine-tasimak)

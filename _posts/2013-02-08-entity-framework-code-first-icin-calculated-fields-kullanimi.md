@@ -214,3 +214,5 @@ namespace HowTo_CalculatedFields
 Böylece geldik bir yazımızın daha sonuna. Bu makalemizde Code-First yaklaşımının kullanıldığı senaryolarda, biraz da veritabanı tarafına özgü olan Calculated Field’ ların nasıl etkin hale getirilebileceğini bir kaç küçük hile ile incelemeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_CalculatedFields.zip (2,60 mb)](/assets/files/2013/HowTo_CalculatedFields.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Code-First-icin-Calculated-Fields-Kullanimi)

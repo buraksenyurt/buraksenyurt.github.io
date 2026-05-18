@@ -106,3 +106,5 @@ Model diagramda yer alan Entity özellikleri varsayılan olarak veritabanındaki
 ![vsef_11](/assets/images/2013/vsef_11.png)
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda özellikle Visual Studio 2012 ile Entity Framework tarafına gelen yenilikleri incelemeye çalıştık. Çok doğal olarak çeşitli Extension’ lar yardımıyla Visual Studio 2012 ortamındaki Entity Framework niteliklerini arttırmak mümkündür. Bu yazımızda, varsayılan olarak gelen kabiliyetlere bakmaya çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Visual-Studio-2012-icin-Entity-Framework-Yenilikleri)

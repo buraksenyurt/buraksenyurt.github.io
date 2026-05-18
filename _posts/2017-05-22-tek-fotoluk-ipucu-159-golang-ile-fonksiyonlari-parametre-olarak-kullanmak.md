@@ -24,3 +24,5 @@ func FieldsFunc(s string, f func(rune) bool) []string
 > Bir.Net geliştiricisi için Predicate, Func, Action temsilcileri (delegate) benzeri imkanlar sunan fonksiyonellikleri yazdığımızı düşünebiliriz.
 
 Tabii kodu daha iyi hale getirmek gerekiyor. Örneğin bu kod parçasındaki Select fonksiyonu sadece string tipinden slice'lar ile çalışmakta. Halbuki bu Select fonksiyonunu daha generic hale getirebiliriz. Bu noktada Interface tiplerini ve reflection konusunu devreye almak gerekiyor. Tabii reflection ve generic bir yapının kullanımı performans üzerine negatif etkilere de sahip olabilir. Bu sevimli araştırmayı siz değerli okurlarıma bırakıyorum. Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-159-golang-ile-fonksiyonlari-parametre-olarak-kullanmak)

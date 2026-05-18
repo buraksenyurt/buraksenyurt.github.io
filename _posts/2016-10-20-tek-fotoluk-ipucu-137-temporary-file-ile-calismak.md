@@ -22,3 +22,4 @@ Dosya içerisine bilgi atmak ise oldukça kolay. write metodunu veya << operatö
 
 Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-137-temporary-file-ile-calismak)

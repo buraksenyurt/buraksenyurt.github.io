@@ -230,3 +230,5 @@ Internet üzerinde hareket eden içeriklerin kalitesi, boyutu ve çeşitliliği 
 - [Kaynak 2](https://medium.com/@noobj/exploring-http2-part-1-overview-dc3e9b53968f)
 - [Kaynak 3](https://medium.com/the-node-js-collection/node-js-can-http-2-push-b491894e1bb1)
 - [Kaynak 4](https://medium.com/@sibu.it13/an-example-of-server-push-with-http-2-in-node-js-22757256f0b3) (Asıl izlediğim kaynak)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/http-2-server-push-nasil-bir-seydir)

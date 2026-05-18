@@ -528,3 +528,5 @@ Bu çalışmanın da bana kattığı bir çok şey oldu elbette. Özellikle bir 
 - Web uygulaması ve Functions'ın Google Cloud tarafından bakıldığında farklılıklarını
 
 Bu arada proje büyük ihtimalle Google platformundan kaldırılmıştır. Malum istenmeyen bir yüklenme sonrası yüklü bir fatura ile karşılaşmamak adına küçük bir tedbir olduğunu ifade edebilirim. O nedenle kendiniz başarmaya çalışırsanız daha kıymetli olacaktır. Konseptin basketbol olması önemli değil. Abonelerinize bildirimlerde bulunacağınız herhangi bir senaryo olması yeterli olur. Bildirim yapan servisi de planlanmış bir düzeneğe bağlayabiliriz. Söz gelimi günün belirli anlarında bir konu ile ilgili bildirimlerin yönlendirilmesi işini üstlenebilir. Böylece geldik bir [saturday-night-works](https://github.com/buraksenyurt/saturday-night-works) macerasının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/firebase-cloud-messaging-ile-abonelere-bildirim-yollamak)

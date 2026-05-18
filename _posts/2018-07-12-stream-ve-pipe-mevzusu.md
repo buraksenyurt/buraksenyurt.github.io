@@ -178,3 +178,5 @@ veli.pipe(ayşe).pipe(hakan).pipe(levent) 
 - [Free Code Camp](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93)
 - [W3School](https://www.w3schools.com/nodejs/ref_stream.asp)
 - [Events and Streams in Node.js](https://codeburst.io/basics-of-events-streams-and-pipe-in-node-js-b84578c2f1be)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Stream-ve-Pipe-Mevzusu)

@@ -329,3 +329,5 @@ private void btnDoldur_Click(object sender, System.EventArgs e)
 ```
 
 Burada dikkat edilmesi gereken bir nokta vardır. SqlDataAdapter nesneleri için bu çağırım {EXEC Makaleler} şeklindedir. Buraya kadar anlattıklarımızla OleDbDataAdapter sınıfı ile ilgili olarak bayağı bir yol katettiğimizi düşünüyorum. Bir sonraki makalemizde, OleDbDataAdapter sınıfını incelemeye devam edeceğiz. Öncelikle OleDbDataAdapter nesnelerinin Visual Studio.Net ortamında kolayca nasıl oluşturulduklarını inceleyeceğiz. Böylece OleDbDataAdapter sınıfı için gereken SelectCommand, InsertCommand, DeleteCommand, UpdateCommand özelliklerinin nasıl otomatik olarak oluşturulduğunu anlayacağız. Daha sonra aynı iş için CommandBuilder sınıfının nasıl kullanıldığını inceleyeceğiz. Bir sonraki makelemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataAdapter-Kavramc4b1-ve-OleDbDataAdapter-Sc4b1nc4b1fc4b1na-Giris-bsenyurt-com-dan)

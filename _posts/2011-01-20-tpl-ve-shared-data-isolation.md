@@ -293,3 +293,5 @@ Herşeyden önce 10 denemenin çoğu kendi aralarında farklı sonuçlar vermiş
 Bu yazımızda biraz karmaşık ve anlaşılması zor olan bir konuyu gündeme getirmeye çalıştık. Aslında bu noktada ele alacağımız daha bir sürü vaka var. Fakat paralel programlamanın, Yönetimli Kodda (Managed Code) bile olsa çok dikkatli uygulanması gerektiğini bir kere daha gördük. Özellikle son örneğimize göre ThreadLocal kullanımı sırasında çok dikkatli olunması ve testlerin mutlaka iyi bir şekilde yapılması gerektiğini ortaya koyduk. Her an biz tuzağa düşebiliriz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SharedDataScenarios_.rar (25,91 kb)](/assets/files/2011/SharedDataScenarios_.rar)[Örnek Visual Studio 2010 Ultimate Sürümünde Geliştirilmiş ve Test Edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TPL-ve-Shared-Data-Isolation)

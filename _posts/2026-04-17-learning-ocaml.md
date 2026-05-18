@@ -1415,3 +1415,5 @@ Bağımlılıkların derleme zamanında çözülmesi, çalışma zamanındaki ma
 Bir merakla başladığım **OCaml** yolculuğumdaki hedefim bir programlama dili geliştirmek için gerekli becerileri öğrenmekti. Henüz bu noktanın çok uzağında olmakla birlikte, severek kullandığım **Rust**'ın genlerini aldığı bu dille uğraşmak bir başka meydan okumaydı ama değdi. Öğrenmeye devam; umarım sizlere de yeni bir şeyler öğrenmek için ilham veren bir çalışma olmuştur. Bir başka çalışmada görüşmek üzere, hoşça kalın.
 
 [Bu çalışmadaki örneklere ve biraz daha fazlasına github reposundan ulaşabilirsiniz](https://github.com/buraksenyurt/learning-ocaml)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/birlikte-ocaml-ogrenelim)

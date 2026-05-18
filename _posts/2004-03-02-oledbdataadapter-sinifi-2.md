@@ -248,3 +248,5 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
 Şekil 17. Uygulamanın çalışmasının sonucu.
 
 Burada yaptığımız işlem ile, OleDbDataAdapter nesnesi ile bağlantısız katmandaki veriler üzerindeki değişiklikleri, veri kaynağına gönderirken Update metodunun kullanacağı UpdateCommand, DeleteCommand, InsertCommand gibi özelliklerin sql ifadelerini otomatik olarak oluşturulmasını sağlamış olduk. Diğer yandan aynı işlevselliği kazanmak için CommandBuilder nesnesinide kullanabiliriz. Bu nesnenin kullanılmasını ve OleDbDataAdapter sınıfına ait Update metodunu bir sonraki makalemizde incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/OleDbDataAdapter-Sc4b1nc4b1fc4b1-2-bsenyurt-com-dan)

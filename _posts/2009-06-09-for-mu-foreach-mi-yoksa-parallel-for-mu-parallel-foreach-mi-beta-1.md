@@ -140,3 +140,5 @@ Bir diğer önemli noktada aslında, Parallel.For, Parallel.ForEach, Task, Paral
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ForForEachPerformance.rar (21,64 kb)](/assets/files/2009/ForForEachPerformance.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/for-mu-foreach-mi-Yoksa-ParallelFor-mu-ParallelForEach-mi)

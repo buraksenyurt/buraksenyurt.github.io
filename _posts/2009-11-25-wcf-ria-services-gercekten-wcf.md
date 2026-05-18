@@ -226,3 +226,5 @@ Test olarak Van Halen isimli grub için Benim Şarkılarım isimli yeni bir alb�
 [ChinookMusicStoreApp.rar (590,82 kb)](/assets/files/2009/ChinookMusicStoreApp.rar)
 
 ![blg107_Override.gif](/assets/images/2009/blg107_Override.gif)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Gercekten-WCF)

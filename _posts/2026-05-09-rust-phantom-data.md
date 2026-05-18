@@ -318,3 +318,5 @@ Rust'ın bazı kuralları gerçekten çok zorlayıcı, itiraf ediyorum :D Bu tab
 Bunu şöyle yorumlayabiliriz; **Iter** aslında `&'a T` saklamaz, **raw pointer** saklar ve kod derleyiciye "Bu yapı, 'a boyunca yaşayan T referansları üretir" demesi gerekir. İşte bunun için `PhantomData<&'a T>` kullanılır. Böylece derleyici, `Iter`'in `T` türüne sahip olduğunu ve `'a` boyunca geçerli olduğunu bilir. Benzer örgüleri birçok yerde görebilirsiniz. Görünce şaşırmayın, bir sebepleri var :D Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kodlara github üzerinden ulaşmak için tıklayınız.](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/what-is-phantom-data)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-dilinde-phantom-type-kullanimi-phantomdata)

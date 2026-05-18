@@ -274,3 +274,5 @@ Benden buraya kadar. Bir süre dinlenmeye çalışacağım. Tekrardan görüşü
 [RSSReaderim_RTM.rar (1,48 mb)](/assets/files/2010/RSSReaderim_RTM.rar)
 
 > Örnek Visual Studio 2010 Ultimate RTM sürümünde geliştirilmiş ve test edilmiştir.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Silverlight-Tarafindan-Feed-Okumak)

@@ -320,3 +320,5 @@ Gördüğünüz gibi parametre adları artık kolon adlarından oluşturulmaktad
 SqlCommandBuilder nesnesi Framework 2.0 daki ek fonksiyonellikleri ve özellikleri sayesinde artık daha kullanışlı hale gelmiştir. Diğer CommandBuilder nesneleride benzer işlevsellikleri sağlamakla birlikte, kullanılan veritabanı sisteminin sahip olduğu imkanlarda önemlidir. Örneğin OleDbCommandBuilder sınıfınında DeriveParameters metodu vardır ve bir OleDb kaynaklarından sp desteği olmayan veritabanlarına bağlanabilmemiz de mümkündür. Sp desteği olmadığı için böyle bir durumda OleDbCommandBuilder'ın DeriveParameters fonksiyonu bir işe yaramayacaktır. Diğer yandan özellikle bağlantısız katman nesneleri ile çalışırken çeşitli çakışma kritlerlerine göre otomatik olarak sorguların oluşturulabilmesi önemli bir özellik olarak karşımıza çıkmaktadır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kod için tıklayın.](/assets/files/2006/CommandBuilder.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SqlCommandBuilder-icin-4-Tavsiye-bsenyurt-com-dan)

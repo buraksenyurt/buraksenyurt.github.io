@@ -184,3 +184,5 @@ Uygulamanın başarılı bir şekilde çalışabilmesi için tahmin edeceğiniz 
 Bu ilk örnekte BiGFootCompany key space’ ine bağlanıp ModelDesigner isimli yeni bir Column Family oluşturmaktayız. Bu Column Family içerisinde de, Title, Nickname, Level ve Outsource gibi kolonlar bulunmakta. Örnek olarak iki adet satır oluşturulmakta ve veritabanına ilave edilerek bir sonuç listesinin ekrana bastırılması sağlanmaktadır. Dikkat edileceği üzere SQL ifadelerine çok benzeyen bazı sorgular da kullandık. Bunlar CQL (Cassandra Query Language) olarak adlandırılmaktadır. Ayrıca işlerimizi biraz daha kolaylaştırmak adına dynamic anahtar kelimesinden faydalanmaya çalıştık. Bu sayede Row Key’ lerin kolonlarına, birer özellikmiş gibi erişebilmemiz mümkün oldu. Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim
 
 [HowTo_HelloApacheCassandra.zip (457,46 kb)](/assets/files/2012/HowTo_HelloApacheCassandra.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Apache-Cassandra-ve-Net)

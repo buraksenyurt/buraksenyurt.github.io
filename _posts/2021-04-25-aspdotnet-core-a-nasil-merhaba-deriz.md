@@ -283,3 +283,5 @@ Tamam tamam. Seni rahat bırakacağım artık. Lütfen son olarak aşağıdaki m
 Eğer Constructor Injection dışındaki method, property ve view (Asp.Net MVC 6 sonrası geldi) türevli tekniklerin basit uygulamasına bakmak istersen [github'a eklediğim hands-on-aspnetcore-di reposu](https://github.com/buraksenyurt/hands-on-aspnetcore-di)na uğramanı tavsiye edebilirim. Bu repoda varsayılan main haricinde initial, constructor-injection, method-injection, property-injection ve view-injection isimli ayrı branch'ler var. İşe yarayan bir örnek değil ama temiz bir biçimde bu farklı teknikleri nasıl uygulayabileceğini gösteriyor;)
 
 Eğitimde görüşmek üzere;) Sağlıklı günler.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/asp-net-core-a-nasil-merhaba-deriz)

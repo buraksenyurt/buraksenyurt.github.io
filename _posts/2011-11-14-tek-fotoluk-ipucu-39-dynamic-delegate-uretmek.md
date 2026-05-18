@@ -15,3 +15,5 @@ Bazen çalışma zamanına ilişkin yapmamız gereken atraksiyonlar olur. Söz g
 ![PhotoTrick39](/assets/images/2011/PhotoTrick39.png)
 
 [DynamicDelegateCreation.rar (23,25 kb)](/assets/files/2011/DynamicDelegateCreation.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-39(Dynamic-Delegate-Uretmek))))

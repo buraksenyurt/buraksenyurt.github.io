@@ -106,3 +106,4 @@ ve kısa notlarımız...
 
 Görüldüğü üzere kullanıcı tanımlı tipler için var olan Ruby operatörlerinin yeniden yüklenmesi mümkün ve oldukça basittir. Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-9-operator-overloading)

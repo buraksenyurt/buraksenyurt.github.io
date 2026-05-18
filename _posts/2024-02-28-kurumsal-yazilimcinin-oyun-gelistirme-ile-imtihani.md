@@ -46,3 +46,5 @@ Ayrıca oyun geliştirme macerasında bana yardımcı olan, referans olarak kull
 - [The Big Book of Small Python Projects: 81 Easy Practice Programs](https://www.amazon.com/Big-Book-Small-Python-Programming-ebook/dp/B08FH9FV7M/)
 - [Essential Mathematics for Games and Interactive Applications: A Programmer's Guide](https://www.amazon.com/Essential-Mathematics-Games-Interactive-Applications/dp/B01K0U7RKU/)
 - [Beginning.NET Game Programming in C#](https://www.amazon.com/Beginning-NET-Game-Programming-C/dp/1590593197/)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/kurumsal-yazilimcinin-oyun-gelistirme-ile-imtihani)

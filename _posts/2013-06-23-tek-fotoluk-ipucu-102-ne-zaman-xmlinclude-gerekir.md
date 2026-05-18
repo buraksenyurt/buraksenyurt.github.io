@@ -18,3 +18,5 @@ Diyelim ki elinizde Role isimli bir sınıf var. Hatta bu sınıftan türemiş M
 ![tfi_102](/assets/images/2013/tfi_102.png)
 
 Aslında yapılan işlem gayet basittir. Role tipinin Manager ve Worker isimli sınıflara ait nesne örneklerini içerebileceği XmlInclude niteliği (Attribute) yardımıyla ifade edilmiştir. Hepsi bu. Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-102e28093Ne-Zaman-XmlInclude-Gerekir)

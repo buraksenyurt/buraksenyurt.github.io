@@ -167,3 +167,5 @@ Görüldüğü gibi Task örnekleri kendilerine atanan i değerlerini ekrana bas
 Elbette farklı vakalar ve felaket senaryoları da söz konusudur. Bu gibi durumları ilerleyen yazılarımızda ele almaya çalışıyor olacağız. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Disasters.rar (22,06 kb)](/assets/files/2010/Disasters.rar) [Örnek Visual Studio 2010 Ultimate Sürümünde Geliştirilmiş ve Test Edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TPL-Deadlock-Local-For-Variable-Evaluations)

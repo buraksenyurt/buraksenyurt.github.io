@@ -50,3 +50,4 @@ Görüldüğü gibi sanki.Net ortamında bir istemci kodundaymışız gibi ilgil
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-134-powershell-den-soap-based-web-service-cagirmak)

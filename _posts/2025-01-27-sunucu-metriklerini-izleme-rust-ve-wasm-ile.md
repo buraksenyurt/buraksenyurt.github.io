@@ -417,3 +417,5 @@ Aslında geliştirme adımları itibariyle biraz karışık görünüyor değil 
 Umarım bilgi verici olmuştur. Bir başka yazıda görüşünceye dek hepinize mutlu günler dilerim.
 
 Proje kodlarına [github reposundan](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src) ulaşabilirsiniz (cpu-mem-service ve mach-dash-app isimli klasörler)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/sunucu-metriklerini-izleme-rust-ve-wasm-ile)

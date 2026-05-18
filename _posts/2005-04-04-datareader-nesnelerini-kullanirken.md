@@ -294,3 +294,5 @@ while (drText.Read())
 Bu makalemizde DataReader nesnelerini kullanırken dikkat edeceğimiz ve bize avantaj sağlayacak teknikleri incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek için tıklayın.](/assets/files/2005/DataReaderDikkat.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataReader-Nesnelerini-Kullanc4b1rkene280a6-bsenyurt-com-dan)

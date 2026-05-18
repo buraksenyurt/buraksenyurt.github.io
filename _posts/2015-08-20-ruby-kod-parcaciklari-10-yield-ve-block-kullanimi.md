@@ -81,3 +81,4 @@ Konuyu biraz daha iyi anlamak adına aşağıdaki grafiğin de işe yarayacağı
 
 Böylece geldik bir kod parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-10-yield-ve-block-kullanimi)

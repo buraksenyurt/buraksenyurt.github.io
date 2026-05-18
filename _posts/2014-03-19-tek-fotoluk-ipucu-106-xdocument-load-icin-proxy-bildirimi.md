@@ -11,3 +11,5 @@ categories:
 ![tfi_106.png](/assets/images/2014/tfi_106.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-106-XDocumentLoad-icin-Proxy-Bildirimi)

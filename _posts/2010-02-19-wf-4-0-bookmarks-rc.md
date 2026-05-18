@@ -249,3 +249,5 @@ Ve işte çalışma zamanı sonuçları;
 Görüldüğü gibi bir aktivitenin Bookmark'lanması aslında isimlendirilmiş duraksama noktalarına (Named Pause Points) sahip olması anlamına gelmektedir. Öyleki, ResumeBookmark metodu sayesinde Pause edilen noktadan tekrar yürütülmeleri sağlanabilir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloBookmarks.rar (54,52 kb)](/assets/files/2010/HelloBookmarks.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-40-Bookmarks)

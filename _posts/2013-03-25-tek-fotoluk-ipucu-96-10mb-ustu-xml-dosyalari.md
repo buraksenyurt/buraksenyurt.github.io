@@ -15,3 +15,5 @@ Geçtiğimiz günlerde bloğumdaki içeriği yedeklemek için dışarı aktardı
 ![tfi96](/assets/images/2013/tfi96.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-96-10Mb-Ustu-XML-Dosyalari)

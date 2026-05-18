@@ -519,3 +519,5 @@ Süreler milisaniye cinsindendir ve toplamda 10 çalıştırma üzerinden ortala
 - [C# Kod Örneği](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/CalculatePi)
 - [Rust Kod Örneği](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/calculate-pi-rust)
 - [Zig Kod Örneği](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/calculate-pi-zig)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/pi-sayisini-hesaplama-yolunda)

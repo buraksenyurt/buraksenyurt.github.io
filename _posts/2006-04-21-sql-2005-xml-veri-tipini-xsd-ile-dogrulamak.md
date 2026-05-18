@@ -164,3 +164,5 @@ END;
 ```
 
 Görüldüğü gibi, Sql Server 2005 üzerinde yer alan XML tipindeki alanların bir şema yardımıyla kontrolü son derece kolay ve etkilidir. Çalışma zamanında sağlanan performansın yanı sıra, XML içeriğinin bizim belirleyeceğimiz şema kurallarına uygun bir biçimde doğrulanması oldukça önemlidir. Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sql-2005-XML-Veri-Tipini-XSD-ile-Dogrulamak-bsenyurt-com-dan)

@@ -256,3 +256,5 @@ Uzun süre sonra derlemek üzere ele aldığım bu çalışmada Heroku üzerine 
 - Deployment sırasında veya çalışma zamanındaki hatalara ait loglara nasıl bakıldığını
 
 Böylece geldik bir [cumartesi gecesi derlemesi](https://github.com/buraksenyurt/saturday-night-works)nin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bu-sefer-bir-react-uygulamasini-heroku-uzerine-alalim)

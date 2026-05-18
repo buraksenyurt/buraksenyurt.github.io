@@ -126,3 +126,4 @@ Her zaman olduğu gibi betik içerisinde neler yaptığımızı maddeler halinde
 
 Böylece bir kod parçacığımızın daha sonuna geldik. Terkrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-4-control-statements-loops-statement-modifiers)

@@ -21,3 +21,5 @@ Peki ya sonrasında...Müşteri uygulamaya tekrardan giriş yapıp Anne Kızlık
 > Tabii ekranda bu bilgilerin girildiği kutucukların ve ağ üzerinde bu bilgilerin aktığı hattın güvenliği bambaşka bir konu. Burada servis mesaj içeriklerinin şifrelenerek kullanılması ya da https gibi protokollerin tercih edilmesi doğru bir yaklaşım olabilir. Nitekim hattın güvenli olması ve dinleyen yabancı uygulamaların bu içerikleri görememesi çok önemlidir.
 
 Tabii örnek sadece nasıl kullanılırı gösteriyor. İlgili fonksiyonelliğin kütüphaneleştirilmesi çok daha doğru olacaktır. Bu görevi siz değerli okurlarıma bırakıyorum. Bir başka tek fotoluk ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-148-anne-kizlik-soyadini-hash-leyerek-saklayalim)

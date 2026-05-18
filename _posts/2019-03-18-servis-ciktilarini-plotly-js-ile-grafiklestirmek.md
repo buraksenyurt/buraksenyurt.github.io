@@ -156,3 +156,5 @@ Plotly ve jQuery kütüphanelerini dokümanın başındaki script bloklarında r
 Kütüphanenin kullanım alanı tabii ki çok daha geniş. Söz gelimi CSV içerikleri ile de kolayca çalışılabiliyor. Sadece veri serilerini doğru şekilde eşleştirmek gerekiyor. Aslında bu konuda [şu adresteki](https://raw.githubusercontent.com/plotly/datasets/master/stockdata.csv) veri kümesini kullanarak grafik örnekleri deneyebilirsiniz. [Resmi kaynakta](https://plot.ly/javascript/) konu ile ilgili detaylı bilgiler mevcut. Bir bakmakta yarar var ancak başlangıç basit senaryolarda okuduğunuz örnek yeterli olacaktır. Böylece geldik West-World'deki çılgın bir partinin daha sonuna. Sabah ışıklarını çok şükür bugün de gördük. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örneğe [GitHub adresinden](https://github.com/buraksenyurt/nodejs-tutorials/tree/master/Day12) ulaşabilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/servis-ciktilarini-plotly-js-ile-grafiklestirmek)

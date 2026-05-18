@@ -306,3 +306,5 @@ Vuuuvvvv!!! Şu anda masamdaki şekerlerin oranına bakıyorum da...Baya bir tü
 Artık dinlenmeye çekilmenin vakti geldi sanırım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson8_RC.rar (181,52 kb)](/assets/files/2010/Lesson8_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Services-Using-Custom-Message)

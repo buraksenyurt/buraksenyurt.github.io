@@ -26,3 +26,4 @@ ToString metodu generic bir versiyon olarak geliştirildi. İlk parametre ToStri
 
 Böylece geldik bir tek fotoluk ipucumuzun daha sonuna. Başka bir ipucunda görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-129-override-edemedigimiz-tostring-metodunu-genisletmek)

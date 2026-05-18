@@ -45,3 +45,5 @@ Bu işlemin ardından, deneme isimli klasöre bakıldığında, GeoMat ve PerSor
 ![mk102_4.gif](/assets/images/2004/mk102_4.gif)
 Şekil 4. İndirilen disco ve WSDL dokümanları.
 Artık bu noktadan sonra yapmamız gerekenler sadece WSDL dokümanları yardımıyla proxy sınıfımızı oluşturmak ve kullanmak olacaktır. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Xml-Web-Servisleri-5-(Mimarinin-Temelleri-DISCO)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

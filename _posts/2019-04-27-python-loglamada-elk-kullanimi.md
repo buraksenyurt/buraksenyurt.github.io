@@ -169,3 +169,5 @@ Cumartesi gecesi çalışmalarının [20nci bölümünü de bu şekilde tamamlam
 - logstash config dosyasında ne gibi tanımlamalara yer verildiğini
 
 Böylece geldik bir maceramızın daha sonuna. Sizde merak ettiklerinizi öğrenmek için kendinize vakit ayırın. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Python-Loglamada-ELK-Kullanımı)

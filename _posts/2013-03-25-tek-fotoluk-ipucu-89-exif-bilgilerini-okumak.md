@@ -23,3 +23,5 @@ Takip edenler amatör düzeye yaklaşmaya çalışan/çabalayan fotoğrafçılı
 ![tfii_89](/assets/images/2013/tfii_89.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-89-Exif-Bilgilerini-Okumak)

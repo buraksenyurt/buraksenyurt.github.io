@@ -299,3 +299,5 @@ Herhangibir tarayıcıdan aşağıdaki komutları deneyerek örneğimizi test ed
 Pek tabi OData sorgularında kullanabileceğimiz pek çok anahtar kelime var. Bu kabiliyetlere [http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html) adresinden detaylı bir şekilde bakabilirsiniz.
 
 Bu makalemizde bir Web API hizmetini OData sorgularını destekleyecek hale nasıl getirebileceğimizi incelemeye çalıştık. Bir diğer makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/asp-net-web-api-ile-odata-kullanimi1)

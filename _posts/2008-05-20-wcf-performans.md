@@ -231,3 +231,5 @@ Tüm bunları bir arada değerlendirildiğinde, saniye başına düşen operasyo
 Buraya kadar anlatılanlar göz önüne alındığında sadece bağlayıcı tipler arasındaki farklılıkları analiz etmek için basit olarak nasıl bir yol izlenebileceği ele alınmıştır. Bunun dışında WCF ile geliştirilen servislerin Xml Web Serviceleri,.Net Remoting veya COM+ ile geliştirilen modellere göre belirgin performans farklılıkları olduğu bilinmektedir. Bu konu ile ilişkili daha detaylı bilgiye [http://msdn.microsoft.com/en-us/library/bb310550.aspx](http://msdn.microsoft.com/en-us/library/bb310550.aspx) ulaşabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/Performance.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Performans-bsenyurt-com-dan)

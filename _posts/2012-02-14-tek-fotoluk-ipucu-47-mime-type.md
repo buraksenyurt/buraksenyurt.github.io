@@ -13,3 +13,4 @@ Hani olurda web tarafında istemciden gelen talebe göre, döndürmek istediğin
 
 ![TekFotolukIpucu47](/assets/images/2012/TekFotolukIpucu47.png)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucue2809347-(Mime-Type))))

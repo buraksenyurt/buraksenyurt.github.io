@@ -21,3 +21,4 @@ Bu sayede sorgu koşulunu (örneğin sadece iki numaralı kategoriyi baz al, ya 
 
 Kısacası uygulanan çözüm yolu için değerli yorumlarınızı eksik etmeyiniz ifinim. Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-120-bir-listeden-n-sayida-benzersiz-nesne-cekmek)

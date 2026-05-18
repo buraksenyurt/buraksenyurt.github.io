@@ -24,3 +24,5 @@ Elbette SecureString ile koruma altına aldığımız içerikleri çalışma zam
 ![tfi149_2.gif](/assets/images/2017/tfi149_2.gif)
 
 Hafiften StringExtensions sınıfımızı ve Protect metodumuzu bozduk. Marshal tipine ait fonksiyonellikleri kullanarak da Unmanaged Code tarafına geçerek CLR dışı alanlara bulaştık. Sadece işin sağlaması için yaptığımızı tekrar belirtelim. Böylece geldik bir ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-149-securestring-ile-caydiricilik)

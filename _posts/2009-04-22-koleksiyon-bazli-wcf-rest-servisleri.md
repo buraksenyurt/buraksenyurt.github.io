@@ -361,3 +361,5 @@ Resmi tamamlamak için son olarak delete işlemini test etmem gerekiyordu. Bu se
 Örnek Uygulama; [NorthwindV2.rar (322,50 kb)](/assets/files/2009/NorthwindV2.rar)
 
 Sp ler için script dosyası: [script.sql (4,65 kb)](/assets/files/2009/script.sql)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Koleksiyon-Bazlı-WCF-Rest-Servisleri)

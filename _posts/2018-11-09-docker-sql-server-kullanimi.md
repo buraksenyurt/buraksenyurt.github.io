@@ -244,3 +244,5 @@ go
 ![sqldocker_7.gif](/assets/images/2018/sqldocker_7.gif)
 
 Bir Cumartesi gecesi çalışmasının daha sonuna gelmiş bulunuyorum. Docker ile zahmetsizce ulaştığım SQL imajında güzel işler yapılabileceğini görmüş oldum. Bundan sonra West-World'e bir şey kurarken iki kere düşüneceğim. İlk olarak Docker imajı var mı ona bakacağım. Böylece geldik kısa bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Docker-SQL-Server-Kullanımı)

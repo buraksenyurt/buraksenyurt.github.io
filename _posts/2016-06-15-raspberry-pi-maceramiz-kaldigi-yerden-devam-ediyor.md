@@ -16,3 +16,4 @@ Raspberry Pi'mize yeni parçalar alarak masraf yapmaya, python dilini öğrenmey
 
 Raspi maceralarımız kaldığı yerden devam edecek. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/raspberry-pi-maceramiz-kaldigi-yerden-devam-ediyor)

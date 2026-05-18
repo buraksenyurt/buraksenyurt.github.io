@@ -82,3 +82,5 @@ Beta 2 ile gelen iptal modelinde CancellationTokenSource, CancellationToken isim
 İptal işlemi ile ilişkili üyelerin tamamı Task tipinden çıkartılmıştır(Cancel,AcknowledgeCancellation,IsCancellationRequested,CurrentTask vb) Cancel çağrısı için CancellationTokenSource, ThrowIfCancellationRequested çağrısı ile iptal kontrolü ve operasyonun kesilmesi için CancellationToken referanslarının kullanıldığına dikkat edelim. Buna göre bir iptal işlemi, aynı CancellationToken referansını kullanan birden fazla Task'ede uygulanabilir. Zaten bu amaçla, StartNew gibi bazı metodların yeni aşırı yüklenmiş versiyonlarına CancellationToken referansının taşınabiliyor olması sağlanmıştır.
 
 Bakalım Beta 2 sürümüne göre paralel programlama alt yapısında başka ne gibi yenilikler bulunmaktadır. Bunları ilerleyen yazılarımızda incelemeye devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Task-Parallel-Library(TPL)-Iptal-Islemi-Beta-2)-Iptal-Islemi-Beta-2)-Iptal-Islemi-Beta-2)

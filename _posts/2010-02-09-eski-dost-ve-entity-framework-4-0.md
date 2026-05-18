@@ -282,3 +282,5 @@ ORDER BY [Extent1].[Name] DESC
 Görüldüğü üzere Ado.Net Entity Framework 4.0 sürümünde özellikle SQL sorgularına dönüştürme işlemlerinde, motor üzerinde bazı yenilemelerin yapıldığı ve gereksiz işlemlerin önüne geçilmeye çalışıldığı gözlemlenebilmektedir. Açıkçası bu konu ile ilişkili olaraktan çıkacak kitapları merakla bekliyorum. Özellikle Julia Lerman'ın daha önceki [Programming Entity Framework](http://www.amazon.co.uk/Programming-Entity-Framework-Julia-Lerman/dp/059652028X/ref=sr_1_2?ie=UTF8&s=books&qid=1263557453&sr=8-2)kitabını okuyanlar eminim 4.0 için olan versiyonuda sabırsızlıkla ve merakla bekliyordur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Differences.rar (183,69 kb)](/assets/files/2010/Differences.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 üzerinde geliştirilmiştir. Yarın public olarak yayınlanacak RC sürümü için test edilmemiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Eski-Dost-ve-Entity-Framework-40)

@@ -243,3 +243,5 @@ static void Main(string[] args)
 ![mk129_7.gif](/assets/images/2005/mk129_7.gif)
 
 Bu kez süreler biraz daha uzamış görünüyor. Özellikle ikinci iç içe döngüde. Burada en büyük etkenlerden birisi x-y sırası yerine y-x sırasını tercih edişimizdir. Bunu yapmamızın sebebi tahmin edeceğiniz gibi IndexOutOfRangeException istisnasından kurtulmaktır. Bu küçük hileye rağmen dizi boyutlarına ters sırada erişilmeye çalışılması, performansı olumsuz yönde etkiler. Elbette geliştirdiğimiz uygulamalarda çoğu zaman bu tip çok boyutlu döngüleri kullanmayabiliriz. O sebepten her iki kullanım da derleme zamanı hatası vermeyeceği gibi düzgün bir biçimde çalışacaktır. Özellikle küçük boyutlu dizilerde bu farklar çok ama çok azdır. Yine de siz siz olun ve profesyonel bir yazılım geliştirici olarak bu öneriyi ve daha öncekileri dikkate alın. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Dizilere(Arrays)-Iliskin-Uc-Basit-Oneri-bsenyurt-com-dan)-Iliskin-Uc-Basit-Oneri-bsenyurt-com-dan)-Iliskin-Uc-Basit-Oneri-bsenyurt-com-dan)

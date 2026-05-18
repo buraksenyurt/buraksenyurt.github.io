@@ -78,3 +78,5 @@ Burada olanları kısaca özetlemek gerekirse; öncelikle XML Rapor Web Servisim
 Şekil 8. Raporun Elde Edilmesi.
 
 Bu makalemizde en basit haliyle, XML Rapor Web Servislerinin nasıl oluşturulduğunu ve kullanıldığını incelemeye çalıştık. Görüldüğü gibi kilit nokta, raporun web servisi olarak yayınlanmasıdır. (Publish As Web Service) Diğer taraftan geri kalan bütün işlemler web servislerinin istemcilerde kullanılmasındaki teknikler ile aynıdır. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/XML-Rapor-Web-Servisleri-bsenyurt-com-dan)

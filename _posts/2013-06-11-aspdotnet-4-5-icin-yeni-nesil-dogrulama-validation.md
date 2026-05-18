@@ -171,3 +171,5 @@ Yeni nesil doğrulama stratejisi için son teknoloji ürünüdür diyebilir miyi
 Hem HTML 5’ e hem de jQuery’ ye yatırım yapmış bir doğrulama süreci söz konusu. Üstelik yeni nesil çıktılar da, doğrulama operasyonları adına Javascript kullanımı (CDATA içerisindeki kısımlar) mevcut değil. Doğrulama bilgisi tamamen HTML 5 içerisine, nitelik-değer (key-value) bazlı olarak yıkılmış durumda. Elbette bunun en büyük artısı sayfa cevap boyutunun (Page Response Size) küçülmüş olması. (Elbette tarayıcı desteği de önem arz eden bir konu)
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Yeni-Nesil-Dogrulama(Validation))))

@@ -184,3 +184,5 @@ Store fonksiyonu ile belleğe nesne atabilir veya güncelleyebiliriz. Get, Get, 
 Bu yazımızda MemCached ürününe,.Net dünyasından Hello World demeye çalıştık. In-Memory modelinde performansı yüksek bir Distributed-Caching mekanizmasına ihtiyacımız olduğunda değerlendirebileceğimiz NoSQL ürünlerinden birisini inceleme fırsatı bulduk. Size tavsiyem söz konusu örneği web tabanlı bir veya daha fazla projede denemeniz yönünde olacaktır. Eğer lab ortamınız varsa, birden fazla MemCached servisinin bir arada çalışmasını da (farklı sunucularda olacak şekilde) test edebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_Memcached.zip (573,00 kb)](/assets/files/2013/HowTo_Memcached.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/MemCached-ile-Hello-World)

@@ -359,3 +359,6 @@ Buraya kadar yaptıklarımızı kısaca özetlersek eğer veri ekleme, güncelle
 Diğer taraftan ilişkisel nesnelerin bağlanması içinse AddLink fonksiyonelliğinin ele alınması gerektiğini öğrendik. Nihayetinde bir ders notumuzun sonunda daha geldik. Ancak akıllarda (en azından benim aklımda ve biraz sonra sizin aklınızda) şöyle bir soru oluşabilir. Eğer servis tarafında özel bir LINQ Provider ve buna bağlı tipler kullanılıyorsa Insert,Update ve Delete işlemleri nasıl gerçekleştirilebilir? Nitekim EDM modelinde veri kaynağında SQL olduğundan bu işlemler için SQL sorgu ifadeleri kullanılmaktadır. İşte bu analizi bir sonraki ders notlarımızda inceliyor olacağız. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği indirmek için tıklayın](/assets/files/2008/InsertUpdateDelete.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-Data-Services-Ders-Notlarc4b1-4-(CUD-Operasyonlarc4b1)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt
+t-com-dan)

@@ -157,3 +157,5 @@ Görüldüğü gibi, Insert_1 SavePoint'ine kadar olan işlemler (ki burada sade
 Şekil 6. Delete işlemindeki istisna sonrası Commit uygulandığında, tablonun son hali.
 
 Bu makalemizde, SQL SavePoint'lerinin ADO.NET içindeki transaction'larda nasıl kullanıldığını incelemeye çalıştık. Geliştirdiğimiz örnek, sadece SavePoint'lerin kullanımını inceleme amacında olduğundan, farklı türden hatalara açıktır. Ancak önemli olan, SavePoint'lerin bir transaction nesnesi için nasıl kayıt edildikleri ve RollBack işlemleri sonucu bu noktalara nasıl dönülebildiğidir. Ayrıca, bu tip RollBack işlemleri sonrasında verilen Commit emirlerinin verileri gerçek anlamda nasıl etkilediğine de dikkat etmek gerekir. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Transaction-larda-SavePoint-Kullanc4b1mc4b1-bsenyurt-com-dan)

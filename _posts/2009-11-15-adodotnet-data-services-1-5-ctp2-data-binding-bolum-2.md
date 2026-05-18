@@ -259,3 +259,5 @@ where @@ROWCOUNT > 0 and [BookId] = scope_identity()',N'@0 nvarchar(28),@1 decim
 Silme operasyonunu uygularken debug işlemlerini yapmayı ve çalışma zamanını analiz edip SQL tarafında neler olup bittiğini incelemeyi unutmayın. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [BindingV2.rar (93,31 kb)](/assets/files/2009/BindingV2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Data-Services-15-CTP2-Data-Binding-Bolum-2)

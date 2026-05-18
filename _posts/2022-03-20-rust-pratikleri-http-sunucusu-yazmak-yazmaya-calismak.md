@@ -501,3 +501,5 @@ pub fn run(self) {
 ![crayz_server_last.png](/assets/images/2022/crayz_server_last.png)
 
 Dönüş bilgisini iyileştirmek, Header bilgisi eklemek ve daha da önemlisi gelen talebe göre bir çıktı üretmek sizlere ev ödevi olsun;) Örneğin GET ile gelen taleplerde yer alan path bilgisini kullanarak sunucunun olduğu fiziki diskte yer alan static HTML sayfalarını çıktı olarak dönmeyi deneyebilirsiniz. HTTP talebinde gelen path bilgisi elimizde olduğundan bu tip bir yönlendirme (routing) nispeten kolay olacaktır. Ancak path bilgisine göre bir veri kaynağından JSON çıktı alıp göndermek farklı bir çözüm gerektirebilir. Bende pil bittiği için buraya kadar getirebildim. Gerisi sizde:) Böylece geldik bir rust pratiğimizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-http-sunucusu-yazmak)

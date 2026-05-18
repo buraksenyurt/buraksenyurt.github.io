@@ -17,3 +17,5 @@ Bu görsel dersimizde eğlenceli Matematik oyunlarından birisi olan [Hanoi Kule
 [Youtube Link](https://www.youtube.com/watch?v=Gqgy_lD5rrc)
 
 Faydalı olması dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Hanoi-Towers-Probleminin-Recursive-Cozumu)

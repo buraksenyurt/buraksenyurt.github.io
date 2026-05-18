@@ -76,3 +76,5 @@ Product içerisinde yer alan tüm test metodları sırasıyla çalıştırılmı
 ![utest_2.gif](/assets/images/2016/utest_2.gif)
 
 Bu kez sadece testForTitle isimli test vakası çalıştırılmıştır. Görüldüğü gibi Unit Test'ler oluşturmak oldukça pratik ve kolay. İşin önemli olan kısmı test vakalarını oluşturabilmek ve Test Driven Development yaklaşımının benimsediği şekilde kodları geliştirebilmek. Böylece geldik bir kod parçamızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-25-unit-test-yazmak)

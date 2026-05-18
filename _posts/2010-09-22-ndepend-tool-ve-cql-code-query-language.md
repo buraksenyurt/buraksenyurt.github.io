@@ -55,3 +55,5 @@ NDepend aracının bu yazıya sığmayacak kadar fazla sayıda özelliği var. S
 Hani projeyi analiz etmeye, dökümantasyon çıkartmaya üşenenlerin yardımına koşan araçlardan birisi olduğunu açıkça ifade etmek isterim. Mesajım umuyorum ki gerekli yerlere gider
 
 NDepend uygulaması ile ilişkili [detaylı bilgiye buradan](http://www.ndepend.com/Features.aspx) ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/NDepend-Tool-ve-CQL(Code-Query-Language))))

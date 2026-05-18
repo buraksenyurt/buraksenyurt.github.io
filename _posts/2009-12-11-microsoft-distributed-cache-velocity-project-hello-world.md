@@ -186,3 +186,4 @@ CTP3 sürümünü [Download](http://www.microsoft.com/downloads/details.aspx?Fam
 
 [HelloVelocity.rar (285,93 kb)](/assets/files/2009/HelloVelocity.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Microsoft-Distributed-Cache(Velocity-Project)-Hello-World)-Hello-World)-Hello-World)

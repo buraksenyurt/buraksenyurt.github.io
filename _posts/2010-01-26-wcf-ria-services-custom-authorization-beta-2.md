@@ -92,3 +92,5 @@ Görüldüğü üzere Access Denied kelimeleri hata mesajı içerisinde yer alma
 Sonuç olarak eklediğimiz özel authorization niteliği yardımıyla, Domain Service üzerinden çağırılacak bir operasyon için, sisteme giriş yapan kullanıcının rolüne bakmatan farklı bir yetkilendirme kontrolü gerçekleştirebildiğimizi görmüş olduk. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [CustomAuthorization.rar (1,29 mb)](/assets/files/2010/CustomAuthorization.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Custom-Authorization)

@@ -322,3 +322,5 @@ Gördüğünüz gibi artık aynı içeriğe sahip olan Urun nesne örneklerimiz 
 - Son olarak Equals, GetHashCode ve == operatörleri exception döndürmemelidir.
 
 Bu kurallara dikkat edildiği takdirde eşitlik ilkelerinin sağlanması daha kolay olacak ve Hashtable yada Dictionary<> gibi hash kod tabanlı çalışan algoritmaların düzeni bozulmamış olacaktır. Bir başka deyişle eşitlikler üzerinde tutarlılığı sağlamış oluruz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-Temelleri-1!=1-Esitsizliginden-GetHashCode-a-Uzun-Ince-Bir-Yol-bsenyurt-com-dan)

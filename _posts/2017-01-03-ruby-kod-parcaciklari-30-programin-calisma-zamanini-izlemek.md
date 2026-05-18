@@ -96,3 +96,5 @@ D:/Users/bsenyurt/rubyWorkSpace/Ruby101/TraceMeSample.rb Line :  32 Event : b_re
 ```
 
 Dikkat edileceği üzere takip etmek istediğimiz olayların çalışma zamanına ait bilgileri ekrana basılmıştır. Bunu daha düzgün bir formatta yazarsak okunabilir bir Trace çıktısı elde etmemiz içten bile değil. Bu taktiği daha karmaşık Ruby kodlarında uyguladığımızda çalışma zamanında ceyran eden olayları izleyerek işleyiş hakkında detaylı bilgilere sahip olmamız mümkün. Hatta süre bilgisini de ekleyerek metod geçişleri arasındaki farkları izleyebilir ve uygulamanın yavaş işleyen parçalarını tespit edebiliriz. [TracePoint sınıfına ait detaylı bilgilere şu adresten ulaşabilirsiniz.](http://ruby-doc.org/core-2.0.0/TracePoint.html) Böylece geldik bir ruby kod parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-30-programin-calisma-zamanini-izlemek)

@@ -155,3 +155,5 @@ Uygulamadaki en önemli nokta Compute metodunun kullanım şeklidir. Burada kull
 Şekil 3. Compute metodu ile Aggregate fonksiyonlarının çalıştırılması.
 
 Bu kısa makalemizde DataTable sınıfına ait Compute metodu yardımıyla bağlantısız katman verileri üzerinde Aggregate Fonksiyonlarını kolayca nasıl kullanabileceğimizi incelemeye çalıştık. Umarım siz değerli okurlarım için yararlı bir makale olmuştur. Bir sonraki makalemizde görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataTable-Compute-Metodu-bsenyurt-com-dan)

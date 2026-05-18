@@ -40,3 +40,5 @@ Not: Talep sayısının artma ve Free Trial için verilen paranın bitmesi ihtim
 - gcloud app deploy --version v1 (uygulamamızın App Engine'taşınmasını sağladık. Bunu publish edilen paketin olduğu yerde çalıştırdık.)
 
 Google Cloud Platform tarafı epey hoş. AWS'den sonra burada da farklı bir deneyim yaşadığımı ifade edebilirim. İlerleyen zamanlarda GCP tarafı ile ilgili bir şeyler de yazmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/sadece-tarayici-kullanarak-web-api-servisini-google-cloud-platform-uzerinde-yayinlamak)

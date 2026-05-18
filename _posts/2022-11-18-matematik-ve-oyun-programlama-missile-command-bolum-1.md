@@ -25,3 +25,5 @@ Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Gi
 [Youtube Link](https://www.youtube.com/watch?v=I5AonLlBizo)
 
 İkinci bölümde savunma sistemini ve mouse ile tıklanan yere ateş etmeyi ele almaya çalışacağım. Tabii buna patlama efektini de eklemem gerekiyor. İçerden dışa doğru çapı genişleyen ve sonra ortadan kaybolan bir çember pekala işimi görebilir. Bakalım yol boyunca nelerle karşılaşacağım (karşılaşacağız). Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/matematik-ve-oyun-programlama-missile-command-bolum-1)

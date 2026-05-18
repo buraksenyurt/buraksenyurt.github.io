@@ -56,3 +56,5 @@ C# 7.0 da Tuple ile ismi anılan bir diğer kavram da Deconstruct metodudur. Bu 
 Product sınıfında Deconstruct isimli bir metod tanımlanmıştır. Metodda out ile belirtilen parametrelere sınıfın ProductId ve Title özelliklerinin değerleri atanmıştır. Main metodunda box isimli değişken de bu parametre yapısına uygun bir Tuple'a atanmıştır. Yani bir sınıf örneğinin Tuple türüne nasıl atanabileceğini belirtebiliriz.
 
 Böylece geldik bir ipucumuzun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-155-c-7-0-tuple-iyilestirmeleri)

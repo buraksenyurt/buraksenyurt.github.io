@@ -173,3 +173,5 @@ CebirServisi için yapılması gereken bir diğer işlem ise, Secure Communicati
 Son olarak yine Directory Security kısmından Anonymous Access and Authentication Control içerisinde yer alan Edit düğmesine tıklanıp açılan pencerede, Integrated Windows Authentication seçeneği kaldırılmalı ve Basic Authentication işaretlenmelidir.
 
 Yazı dizisinin bu ilk bölümünde WCF Servisi için IIS üzerinde gerekli sertifika bildirimlerinin nasıl yapılabileceğini incelemeye çalışırken hayali bir sertifika için Makecert ve Httpcfg araçlarını nasıl kullanabileceğimizide görmeye çalıştık. Bunların dışında iletişim seviyesinde güvenlik söz konusu olduğunda bağlayıcı tiplerin ve doğrulama modlarının nasıl ele alınması gerektiği üzerinde durduk. Böylece geldik bir makalemizin daha sonuna. Sonraki makalemizde geliştirilen örneği tamamlamaya çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Internet-Uzerinden-Guvenligi-Saglamak-1-bsenyurt-com-dan)

@@ -143,3 +143,5 @@ for (int i = 0; i < testCount; i++)
 Böylece geldik bir yazımızın daha sonuna. Umarım ThreadPool konusunda biraz fikir sahibi olabilmişizdir. Tekraradan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WhatIsThreadPool.rar (23,73 kb)](/assets/files/2009/WhatIsThreadPool.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DotNet-4-Oncesi-ThreadPool-Kullanimi)

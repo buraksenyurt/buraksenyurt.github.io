@@ -18,3 +18,5 @@ Malum hepimizin devasaaa/kocaman boyutlarda MP3 arşivleri var ve genelde müzik
 ![tfi_76](/assets/images/2013/tfi_76.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-76e28093Bir-Listeyi-Shufflee28099-lamak)

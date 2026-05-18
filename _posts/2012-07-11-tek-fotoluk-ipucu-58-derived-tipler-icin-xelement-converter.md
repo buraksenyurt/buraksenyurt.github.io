@@ -21,3 +21,5 @@ Debug time görüntüsü ise,
 ![TPI_59_2.png](/assets/images/2012/TPI_59_2.png)
 
 Başka bir ipucundan görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-ipucu-58-Derived-Types-XElement-Converter)

@@ -129,3 +129,5 @@ python3 app.py
 Esasında örnekte protobuf olarak tasarlanmış bir nesnenin python ile serileştirme işlemlerinde nasıl kullanıldığını incelemiş olduk. Gerçek hayat örneği için bu kurguyu bir servisin arkasına taşımak çok daha doğru olur. Örneğin Flask ile bir servis geliştirip istemci ile haberleşilen veriler için JSON yerine protobuf kullanımı örneklenebilir. Bu pekala sizin için güzel bir ödev de olabilir:) O halde ne duruyorsunuz!? Haydi başlayın.
 
 Örneğin tüm kodlarına ve ilk notlarına [Skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2010%20-%20Protocol%20Buffers%20with%20Python/src)ndan erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/python-tarafinda-protobuf-protocol-buffers-serilestirme)

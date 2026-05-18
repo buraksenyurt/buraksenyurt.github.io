@@ -193,3 +193,5 @@ SortExpression="ID"></asp:BoundField>
 ```
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-GridView-Kontrolunde-UpdateDelete-Islemleri-bsenyurt-com-dan)

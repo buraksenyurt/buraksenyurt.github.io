@@ -156,3 +156,5 @@ static void Main(string[] args)
 ![mk150_5.gif](/assets/images/2006/mk150_5.gif)
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde XPath dili ile geliştirdiğimiz sorguları.Net sınıfları ile nasıl kullanabileceğimizi inceledik. Özetlemek gerekirse, XPath modelinin sunduğu imkanları kullanabileceğimiz yerler XPathDocument sınıfı ve XmlDocument sınıflarıdır. Her iki sınıf ile XPath ifadelerini etkin bir şekilde kullanabiliyoruz. Bunlara ek olaraktan ileridede göreceğimiz gibi XPath ifadelerini XQuery veya XSLT içerisinde de aktif olarak kullanmaktayız. Bu modelleri daha sonraki yazılarımızda incelemeye çalışacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/XPath-ve-Net-bsenyurt-com-dan)

@@ -223,3 +223,5 @@ Bu çalışma kapsamında daha çok GCP üzerinde bulut fonksiyon barındırma v
 - Realtime veri tabanı modelinin kabaca ne olduğunu
 
 Böylece geldik bir [cumartesi gecesi macerası](https://github.com/buraksenyurt/saturday-night-works)nın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/google-cloud-fonksiyonlarini-firebase-ile-birlikte-kullanmak)

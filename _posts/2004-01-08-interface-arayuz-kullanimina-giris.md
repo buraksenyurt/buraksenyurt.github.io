@@ -211,3 +211,5 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
 Şekil 1. Uygulamanın Çalışması Sonucu.
 
 Geldik bir makalemizin daha sonuna. Bu makalemizde arayüzlere kısa bir giriş yaptık. Bir sonraki makalemizde, bir sınıfa birden fazla arayüzün nasıl uygulanacağını incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Interface-(Arayuz)-Kullanımına-Giris-bsenyurt-com-dan)-Kullanımına-Giris-bsenyurt-com-dan)-Kullanımına-Giris-bsenyurt-com-dan)

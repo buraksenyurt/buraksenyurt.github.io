@@ -166,3 +166,5 @@ Bu durumda kodumuz sorunsuz çalışacaktır. Çünkü yığında yer alan veri 
 Şekil 6. Unboxing İşlemi
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Boxing-(Kutulamak)-ve-Unboxing-(Kutuyu-Kaldırmak)-bsenyurt-com-dan)-ve-Unboxing-(Kutuyu-Kaldırmak)-bsenyurt-com-dan)-ve-Unboxing-(Kutuyu-Kaldırmak)-bsenyurt-com-dan)

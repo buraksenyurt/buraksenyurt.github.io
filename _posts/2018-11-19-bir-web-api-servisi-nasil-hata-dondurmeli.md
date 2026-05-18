@@ -161,3 +161,5 @@ Tek sıkıntı Unauthorized yerine BadRequest kullanmış olmamız. Nitekim obje
 ![rfc7807_3.gif](/assets/images/2018/rfc7807_3.gif)
 
 En azından Bad Request için uç noktaya daha anlamlı bir mesaj ilettiğimizi ve IETF standartlarına uyduğumuzu ifade edebiliriz. Bu arada paket kodlarını [github](https://github.com/khellang/Middleware/blob/master/samples/ProblemDetails.Sample/Program.cs) üzerinden incelemenizi öneririm. Güzel bir Middeware uyarlaması bulacaksınız. Hatta paketi kullanmak yerine kodlara bakarak kendi ara modülünüzü geliştirmeyi de deneyebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-web-api-servisi-nasil-hata-dondurmeli)

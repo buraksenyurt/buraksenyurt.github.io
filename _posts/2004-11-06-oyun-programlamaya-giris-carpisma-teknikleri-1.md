@@ -158,3 +158,5 @@ else
 Bu teknik en basit çarpışma modelidir. Nesnelerin dörtgenler içerisinde düşünülmesi araba şeklinde olduğu gibi, boşluğa denk düşen alanlarında hesaba katılmasına neden olmaktadır. Ancak iş dairesel nesnelerin çarpışmasına geldiğinde (örneğin tenis toplarının raketler çarpması) hatta, daire ve karesel nesnelerin çarpışmasına geldiğinde dahada karmaşıklaşmaktadır.
 
 Artık ilerleyen zamanlarda bu teoremleri incelemeye çalışacağım. Öğrendikçede siz değerli okurlarıma aktaracağım. Artık 24 bölümmü sürer bir tetris oyunu yazmamız, 24 ay mı sürer bilemiyorum. En azından daha önceden bildiğim hatta mutlaka bildiğim ama farkına varamadığım algoritmaları öğrenmek beni oldukça memnun etti. Umuyorum ki sizlerde bu yazı dizisinden hoşnut kalırsınız. Tekrar görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Oyun-Programlamaya-Giris-(Carpısma-Teknikleri-1)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

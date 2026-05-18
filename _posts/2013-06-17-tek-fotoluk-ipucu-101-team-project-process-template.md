@@ -17,3 +17,5 @@ Bazı komut satırı araçları oldukça işlevseldir ve çoğunlukla tercih edi
 ![tfi_101](/assets/images/2013/tfi_101.png)
 
 Bu örnek farklı fikirlerinde doğmasına yol açabilir. Örneğin TFS sunucusunda ne kadar Team Project varsa, her birinin Process Template bilgisini gösteren bir Windows uygulaması (hatta Web’ de olur) geliştirmeyi deneyebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-101-Team-Project-Process-Template)

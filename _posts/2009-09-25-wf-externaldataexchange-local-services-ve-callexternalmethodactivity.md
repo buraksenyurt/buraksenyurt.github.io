@@ -227,3 +227,5 @@ Evet...Önce belirli oranda arttırım yapıp sonra azaltım yapmak son derece s
 Ancak yakalamamız gereken nokta elbetteki bu değildir. Önemli olan, bir aktivite'nin kendi sınırları dışındaki fonksiyonellikleri kullanabilmek için yerel servislerden nasıl yararlanıldığı ve bunun için ExternalDataExchange niteliğinin nasıl değerlendirildiğidir. Üstelik bu değerlendirme, WF tasarım zamanı içinde önem arz eder. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingExternalCode.rar (50,98 kb)](/assets/files/2009/UsingExternalCode.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-ExternalDataExchange-Local-Services-ve-CallExternalMethodActivity)

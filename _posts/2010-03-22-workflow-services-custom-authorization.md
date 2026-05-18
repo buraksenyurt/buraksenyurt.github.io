@@ -157,3 +157,4 @@ Yapmış olduğumuz bu çalışmaya göre bir Workflow Service'ini host ettiğim
 
 [UsingCustomAuthorization_RC.rar (17,67 kb)](/assets/files/2010/UsingCustomAuthorization_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Services-Custom-Authorization)

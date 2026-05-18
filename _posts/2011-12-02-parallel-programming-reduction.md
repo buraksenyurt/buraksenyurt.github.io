@@ -184,3 +184,5 @@ Görüldüğü gibi Reduction tekniğine göre yapılan hesaplama sonuçları il
 Özetle Reduction tekniğini kullandığımızda, paralel olarak işletilen Thread’ lerin kendi yerel değişkenleri ile çalışmaları sağlanabilmekte ve bunlar sonuç olarak tek bir değişkene indirgenerek bu tip senaryolarda göz önüne alınabilmektedir. Yazımızın başında belirttiğimiz üzere Reduction tekniği aslında MapReduce deseninin temelini oluşturan önemli bir kavramdır. Bu deseni ilerleyen yazılarımızda sizlere örnek bir senaryo üzerinden aktarmaya çalışıyor olacağım. Eğer bu ve bunun gibi diğer paralel programlama desenlerini merak ediyorsanız Microsoft’ un ücretsiz olarak indirebileceğiniz [Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with.Net Framework 4.0](http://www.microsoft.com/download/en/details.aspx?id=19222) dökümanını okuyabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ReductionSample.rar (24,88 kb)](/assets/files/2011/ReductionSample.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Parallel-Programming-Reduction)

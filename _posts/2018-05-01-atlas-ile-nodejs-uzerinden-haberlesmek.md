@@ -252,3 +252,5 @@ Bu sefer bir JSON nesne dizisini parametre olarak kullanmaktayız. Her birisi ay
 Örnekler çoğaltılabilir. Doküman sorgulanması, veritabanı üretilmesi, çeşitli kriterlere göre sorgulamalar yapılması gibi temel pek çok operasyon kolaylıkla gerçekleştirilebilir. Söz konusu kodlar birer WebAPI servisi gibi tasarlanabilir de. Siz görevinizi anladınız değil mi?
 
 Eğer konusunda veri kullanılması gereken bir startup denemesi veya bir proje ya da tez ödevi olsa sanırım Atlas gibi platformların Free Plan statüsündeki versiyonlarını kullanmayı tercih edebiliriz. Maliyeti sadece internet ücreti ile sınırlı olacaktır. Üstelik istemci tarafını geliştirmekte oldukça basit. Senaryolar çokça çeşitlendirilebilir. Node.js uygulamasının yine bulut üzerinde bir yerlde servisleştirilmesi ve bu servisin Atlas ile konuşarak MongoDB tabanlı veri yapılarını kullanması pekala mümkün. Günümüzde birbirine bağlanamayan sistem neredeyse kalmadı gibi ne dersiniz:) Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/atlas-ile-node-js-uzerinden-haberlesmek)

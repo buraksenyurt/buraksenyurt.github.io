@@ -365,3 +365,6 @@ Atom talebi;
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde basit olarak.Net Framework 3.5 ile gelen tipler sayesinde bir WCF (Windows Communication Foundation) servisi üzerinden RSS 2.0 veya Atom 1.0 formatında içerik paylaşımının nasıl yapılabileceğini incelemeye çalıştık. İlerleyen makalelerimizde WCF in.Net Framework 3.5 ile gelen yeniliklerini incelemeye devam edeceğiz. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WCFSyndication.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/RSS-Atom-Formatlc4b1-Icerik-Paylasc4b1mc4b1(Syndication)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-d
+dan)

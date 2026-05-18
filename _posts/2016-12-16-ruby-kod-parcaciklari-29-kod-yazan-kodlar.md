@@ -215,3 +215,5 @@ puts "#{logan.name}-(#{logan.salary})"
 Yine self.class.send metodunun kullanıldığına dikkat edelim. Bunun dışında createAttr metoduna:name ve:salary isimli iki symbol göndermekteyiz.
 
 Görüldüğü gibi metinsel olarak gelen bir kod parçasını çalışma zamanında işletmemiz mümkün. Bir sınıfa çalışma zamanında gelecek bilgiler ve yönergeler doğrultusunda yeni fonksiyonellikler katmamız da söz konusu. Bir sınıfı adından yola çıkarak örneklememiz veya içerisindeki değişmez değeri yakalamamız da mümkün. Daha yapılabilecek pek çok şey olduğu da ortada. Bunları ilerleyen bölümlerimizde incelemeye gayret edeceğim. Böylece geldik bir kod parçasının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-29-kod-yazan-kodlar)

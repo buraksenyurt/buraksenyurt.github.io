@@ -390,3 +390,5 @@ Her ne kadar sadece iki çalışma zamanı testi yapılmış olsada, örneğin i
 ![blg70_Son.jpg](/assets/images/2009/blg70_Son.jpg)
 
 Nihayet, uzun saatlerin, gidilen kilometrelerce yolun sonunda gece bastırmış ve şehrin ışıkları görünmüştür. Hepimiz zaman zaman yazılım alanında bir konuyu öğrenirken bu tip zorlu yollardan geçmek zorunda kalabiliriz. Ancak sabırlı olanlarımız, yolun sonuna kadar gitmekten çekinmeyecek ve ödül olarak şehrin parlak ışıkları ile karşılanacaktır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Managed-WS-Discovery)

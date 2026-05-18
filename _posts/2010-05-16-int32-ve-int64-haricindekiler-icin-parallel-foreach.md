@@ -142,3 +142,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 
 [ParallelForNonIntegralRanges_RTM.rar (27,05 kb)](/assets/files/2010/ParallelForNonIntegralRanges_RTM.rar) [Örnek uygulama Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Int32-ve-Int64-Haricindekiler-icin-ParallelForEach)

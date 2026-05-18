@@ -170,3 +170,5 @@ app.UseCors(bldr=>bldr
 Böylece geldik bir makalemizin daha sonuna. Bu yazımızda Cross Origin Resource Sharing konusunun.Net Core WebAPI servislerinde nasıl etkinleştirilebileceğini çok basit bir örnekle incelemeye çalıştık. Sanırım SignalR çalışmalarıma geri dönebilirim. Görüşmek ümidiyle hepinize mutlu günler dilerim.
 
 [.Net Core ile ilgili diğer örnekleri GitHub adresinden çekebilirsiniz.](https://github.com/buraksenyurt/dotnetcore)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/cors-cross-origin-resource-sharing)

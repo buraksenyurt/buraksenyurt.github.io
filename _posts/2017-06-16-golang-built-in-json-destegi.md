@@ -88,3 +88,5 @@ Uygulamanın ekrana bastığı JSON içeriğini Chorme gibi bir tarayıcıda gö
 ![tfi159_2.gif](/assets/images/2017/tfi159_2.gif)
 
 Pek tabii size düşen bir kaç görev var. Örneğin bu çıktıyı fiziki bir dosyaya kaydetmeyi deneyebilirsiniz. Sonrasında ise kaydedilen dosya içeriğinden ilgili içerikleri canlandırmaya çalışabilirsiniz. Bu işi biraz daha ileri götürüp JSON formatında veriler ile çalışan basit bir NoSQL veritabanı sistemi yazabilir hatta fonksiyonelliklerini (ekleme,çıkartma,arama vb) REST API olarak dış dünyaya sunabilirsiniz. Bence bunu bir deneyin. Böylece geldik kısa bir kod parçasının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-built-in-json-destegi)

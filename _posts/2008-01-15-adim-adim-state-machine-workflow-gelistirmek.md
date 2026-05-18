@@ -457,3 +457,5 @@ Böylece geldik bir uzun makalemizin daha sonuna. Bu makalemizde State Machine W
 Örnek senaryo olarak APress yayınlarından olan ve Bruce Bukovics tarafından yazılan Pro WF kitabında yer alan CarService iş akışının daha basit bir versiyonunu adım adım açıklamalı olarak örneklemeye çalıştık. Özel olarak host uygulamayı WPF üzerinde geliştirdik. Böylece Window uygulamalarında kullandığımız method invoker kavramının burada Dispatcher özelliği üzerinden ele alınabileceğini görme fırsatını elde ettik.(Dispatcher kavramına ilerleyen makalelerimizde değinmeye çalışıyor olacağım) State Machine Workflow tipinden iş akışlarının, bu senaryo dışında gerçek.Net nesneleri içerisindeki kullanımını araştırmanızı ve örneklemeye çalışmanızı şiddetle tavsiye ederim. İlerleyen makalalerimizde Windows Workflow Foundation ile ilgili farklı konulara değinmeye devam ediyor olacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/StateMachineOrnegi.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Adc4b1m-Adc4b1m-State-Machine-Workflow-Gelistirmek-bsenyurt-com-dan)

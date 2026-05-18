@@ -134,3 +134,5 @@ foreach (DataRow dr in tblTabloListesi.Rows)
 Şekil 4. Şemadaki diğer bilgiler.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/GetOleDbSchemaTable-Metodu-Ile-Veritabanc4b1mc4b1zda-Ne-Var-Ne-Yok-bsenyurt-com-dan)

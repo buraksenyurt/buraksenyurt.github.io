@@ -333,3 +333,6 @@ Diğer yandan, eğer Packo bir Muz üzerinden geçerse, bu Muz nesnesini temsil 
 Şekil 3. Packo Muzları Yiyebiliyor.
 
 Görüldüğü gibi, matris tekniği ile eşit karelere bölünmüş sahalardaki nesnelerin birbirleri ile olan çarpışmalarını kontrol edebilmek son derece basit. Bu minik program elbette ki başlangıç aşamasında. Örneğin, her muz yiyişinden sonra puanlama sistemi olması, duvarların seri olacak şekilde ekrana dizilmesi, Packo dışında hareket eden ve Packo'yu yemeye çalışan böceklerin farklı hareketleri vs... Bu kısımların geliştirilmesini de siz değerli okurlarıma bırakıyorum. Uygulamaya kaldığı yerden devam edebilirsiniz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Oyun-Programlamaya-Giris-(Matrisler-Yardımıyla-Carpısma-Kontrolu)-bsenyurt-com-dan)-bsenyurt-com-dan)-bseny
+yurt-com-dan)

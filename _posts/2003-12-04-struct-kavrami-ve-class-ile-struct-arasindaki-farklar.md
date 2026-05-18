@@ -226,3 +226,5 @@ int saniyeFark=Bitis.Saniye-Baslangic.Saniye;
 ```
 
 Bir sonraki makalemizde görüşmek dileğiyle. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/struct-kavrami-ve-class-ile-struct-arasindaki-farklar)

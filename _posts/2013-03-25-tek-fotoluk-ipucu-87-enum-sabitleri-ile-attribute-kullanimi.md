@@ -16,3 +16,5 @@ Bazen uygulamalarımızda kullandığımız Enum sabitlerinin içerikleri anlaş
 ![tfii_87](/assets/images/2013/tfii_87.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-87-Enum-Sabitleri-ile-Attribute-Kullanimi)

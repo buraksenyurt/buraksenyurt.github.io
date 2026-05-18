@@ -349,3 +349,5 @@ go
 Bu makalede konu West-World açısından heyecan vericiydi. Uzun yıllar birbirlerini görmeyen iki taraf buluşmuştu. Uygulamaya sizde bir şeyler katabilirsiniz. Söz gelimi SQL Server'ı Linux ortamınıza kurmak istemediğimizi düşünelim. Ne yapabiliriz? Acaba Docker bir çözüm olabilir mi?;) Belki de Docker üzerinde konuşladıracağımız bir SQL Server hizmetini kullanabiliriz. API servisine de eklenecek bir çok şey olabilir. Bir Data Query servisi haline getirilebilir pekala. Hatta çalıştığınız yerde eğer SQL Server kullanıyorsanız ve deneysel amaçlı çalışmalar yapabileceğiniz bir ortamınız varsa SQL'in Linux üzerinde.Net Core ile yazılımış servislerle çalışması halindeki performans durumlarını da gözlemleyebilirsiniz. Her şey sizin elinizde. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 **Kaynak:** [Microsoft'un Resmi Dokümanı](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/West-Worldun-Uzaydan-Gelen-SQL-Server-ile-Tanısması)

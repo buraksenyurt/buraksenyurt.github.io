@@ -126,3 +126,5 @@ burak.Name== null için False değer dönmüştür ve bu beklediğimiz sonuçtur
 Sonuç olarak bu yazıda bahsettiğimiz şekliyle gerçekleştirilen atamalarda, eşitliğin en sağındaki değerin sola doğru taşındığı efsanesinin tam olarak doğru olmadığı ispatlanmış bulunmaktadır. Nitekim ilk vakada eşitliğin en sağından soluna aynı değer başarılı bir şekilde atanmaktadır. Ancak ikinci vakaya göre aslında en soldaki değişkenin bir sağındakinin tipine büründüğü de görülmektedir. Üstelik Vaka 3' e göre en soldaki değişken en sağdan atanan değere bürünmüş ve bir sağındakini kaale bile almamıştır...Kafanız karıştı mı? Bakalım başka ne gibi efsaneler var. İlerleyen yazılarda değinmeye çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AssignMyth_RC.rar (20,03 kb)](/assets/files/2010/AssignMyth_RC.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Degisken-Atamalarinda-Bir-Efsane)

@@ -200,3 +200,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Transactions.rar (54,45 kb)](/assets/files/2010/Transactions.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Transaction-Flow-Beta-2)

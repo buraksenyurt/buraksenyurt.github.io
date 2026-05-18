@@ -558,3 +558,5 @@ namespace OleDbCmd1
 OleDbCommand sınıfının kullanıldığı diğer önemli bir yerde OleDbDataAdapter sınıfıdır. Nitekim bu sınıfın içerdiği SelectCommand, UpdateCommand, DeleteCommand, InsertCommand özellikleri, OleDbCommand sınıfı türünden nesneleri değer olarak alırlar. Bu konuyu ilerliyen makalelerimizde OleDbDataAdapter sınıfını işlerken incelemeye çalışacağız.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Command-Kavramc4b1-ve-OleDbCommand-Sc4b1nc4b1fc4b1-bsenyurt-com-dan)

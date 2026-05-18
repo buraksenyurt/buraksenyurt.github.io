@@ -171,3 +171,5 @@ c
 Sanıyorum ki aktif olarak kullanmakta olduğunuz programlama dilinde değişken verilerini fonksiyonlara atarken bir kere daha düşüneceksiniz:) Çoğu yüksek seviyeli dilde bu tip ayrımlara hiç takılmadan geliştirme yapmaktayız. Bu geliştirme hızımızı elbette yükseltiyor ancak güvenli bellek sahaları ve performans öne çıktığında sistemin daha da yavaşlamasına sebebiyet veriyor. Tabii bu noktada aklımıza bir soru takılıyor olabilir. Rust varsayılan olarak neden bir değişkenin tek bir sahibi olmasını istiyor? İşte hem size hem de bana güzel bir soru:D
 
 Böylece geldik bir Rust pratiğimizin daha sonuna. Her zaman olduğu gibi [örneğe ait kodlara github reposundan erişebilirsiniz](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/by_val_by_ref). Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-degiskenleri-kopyalayarak-veya-referans-olarak-tasimak)

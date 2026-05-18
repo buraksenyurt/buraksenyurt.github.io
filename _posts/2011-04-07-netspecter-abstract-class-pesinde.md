@@ -144,3 +144,5 @@ Volaaaa… Evet evet biliyorum interface tipi kullanımından vazgeçtik ve abst
 Bu vaka çalışmasında her zaman karşımıza çıkmayacak ama hangi durumlarda abstract sınıf kullanımını tercih etmemizi belirleyebilecek bir konuyu ele almaya çalıştık. Sanıyorum artık bir interface tipini implemente ederken Explicitly olan versiyonuna daha bir anlamlı bakıyor olacağız
 
 Tekrardan görüşünceye ve Netspecter’ ın farklı bir macerasında buluşuncaya dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Netspecter-Abstract-Class-Pesinde)

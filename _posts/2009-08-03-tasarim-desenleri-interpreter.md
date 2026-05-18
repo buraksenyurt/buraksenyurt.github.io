@@ -184,3 +184,4 @@ Yaptığımız bu basit yorumlayıcı sadece metinsel bir ifade bütününü yor
 
 [Interpreter.rar (253,31 kb)](/assets/files/2009/Interpreter.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Interpreter)

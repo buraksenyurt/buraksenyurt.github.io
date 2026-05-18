@@ -246,3 +246,5 @@ Uygulamamızı çalıştıralım, sistemdeki servisleri elde edelim ve örneğin
 Şekil 5. Alerter servisi çalıştırıldı ve bağlı olan servis elde edildi.
 
 Geliştirmiş olduğumuz uygulamada oluşabilecek pek çok hata var. Örneğin listede hiçbir servis seçili değilken oluşabilecek istisnalar gibi. Bu tarz istisnaların ele alınmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Windows-Servislerinin-Kontrolu-2-(-Sistemdeki-Servislerin-Kontrol-Edilmesi-)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

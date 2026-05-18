@@ -27,3 +27,5 @@ Hala böylemidir bilemiyorum ama vardığımda beni sorguya çektiler. Girebilme
 | Performansı etkileyebilecek daha çok faktör olması... | Performansı arttırma maliyetinin daha ucuz olması... |
 
 Başarmıştım. Farkettiğim farkları, bilinen farkları söylemiştim. Peki ne oldu? Tokyo'ya girebildim mi? Hayır...Çalar saatin sesi ile uyanıp işe koyuluverdim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SOA-vs-OOP)

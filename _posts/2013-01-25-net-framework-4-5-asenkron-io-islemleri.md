@@ -331,3 +331,5 @@ Senaryolarımız ile Console üzerinden basit pratiklerimizi yapmış olduk. Şi
 Böylece geldik bir yazmızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [NewIOFunctions.zip (48,16 kb)](/assets/files/2013/NewIOFunctions.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-Framework-45-Asenkron-IO-Islemleri)

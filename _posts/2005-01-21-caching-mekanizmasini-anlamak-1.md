@@ -141,3 +141,5 @@ Görüldüğü gibi VaryByParam özelliği ile, bir sayfanın kendisine QeuryStr
 Her ne kadar bir sayfanın Output Cache tekniği ile ara belleğe alınması avantajlı görünse de, özellikle olay kodlamalı sayfaların işleyişinde bu kullanım sorunlara yol açabilir. Her şeyden önce sayfa içinde postback'e neden olan kodlamalar var ise, sayfa ilk çağrıldıktan sonra ara belleğe alınacağından bu kod satırları duration süresi sonlanana kadar yürütülmeyecektir. Diğer yandan zaman zaman, sayfalarımızın içeriği dinamik olarak değişmek zorunda kalabilir. Bu gibi durumlarda da sayfanın tamamının ara belleğe alınması iyi bir yöntem değildir. Çözüm, sayfanın belirli parçalarının veya sayfadaki herhangi bir veri kümesinin ara belleğe alınmasıdır. Data Caching ve Fragment Caching tekniklerini bir sonraki makalemizde inceleyeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2005/Caching1.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Caching-Mekanizmasc4b1nc4b1-Anlamak-1-bsenyurt-com-dan)

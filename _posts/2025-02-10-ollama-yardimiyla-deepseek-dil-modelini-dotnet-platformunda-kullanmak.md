@@ -434,3 +434,5 @@ Notes: The code as provided seems complete. It's a simple example without any mi
 Bu kadar şeyden sonra artık daha ne desem bilemedim:D Biz programcılara halen daha çok ihtiyaç var ve bu düşüncemin sonuna kadar arkasındayım. Önemli olan noktalardan birisi ise onların bize söylediklerini yorumlamak. Örneğin kod kalitesi ile ilgili yorumları değerlendirip kafamıza yatmayan kısımların veya eksiklerin farkında olacak kadar programlamaya hakim olmamız önemli. Yazıma burada son vermeden önce örnek uygulamaları Internet bağlantısı kapalı iken denemenizi de öneririm. Zira Ollama ile local ortama indirdiğimiz dil modeli offline çalışabilme özelliğine sahip. Bunu bir deneyin derim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örnek kodlar için [github reposuna](https://github.com/buraksenyurt/friday-night-programmer/tree/develop/src/HelloOllama) bakabilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ollama-yardimiyla-deepseek-dil-modelini-net-platformunda-kullanmak)

@@ -20,3 +20,5 @@ Ben Compress'I yazdım. Kalanı da size ait olsun
 ![PhotoTrick21](/assets/images/2011/PhotoTrick21.png)
 
 [GZipExtension.rar (24,43 kb)](/assets/files/2011/GZipExtension.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-21(FileInfoGZipStream-ve-Extension))))

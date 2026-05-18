@@ -125,3 +125,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ActivityLibrary2.rar (47,00 kb)](/assets/files/2010/ActivityLibrary2.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Custom-Activity-Gelistirmek-Beta-2)

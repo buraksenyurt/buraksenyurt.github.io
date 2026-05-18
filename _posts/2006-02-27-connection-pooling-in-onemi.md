@@ -180,3 +180,5 @@ catch (SqlException err)
 ```
 
 Uygulamamızı bu haliyle çalıştırırsak çalışma zamanında herhangibir istisna almayız. Az önce değindiğimiz gibi bu sorunun daha zor olan ama daha güçlü olan bir çözümü daha vardır. Bu Failover Partner adı verilen gene bir çözümdür. Kısaca, sql sunucusunun yanında ayna (Mirror) görevi gören bir sunucu ve birde tanık (Witness) görevi gören başka bir sunucu vardır. Bu sistemin konusu makalemizin sınırlarını aşmaktadır. Bu konuya ilerleyen zamanlarda ayrıca vakit ayırmayı düşünüyorum. Görüldüğü gibi bağlantı havuzlarını kullanırken başımıza gelebilecek iki önemli tehlike üzerinde durmaya çalıştık. İlki kesin olarak kapatılmayan bağlantı nesnelerinin yol açtığı sorundu. Bunun çözümü için en etkili yöntem olarak using bloklarına başvurduk. Diğer sorunumuz ise, çalışma zamanında veritabanı sunucusunun herhangibir neden ile sıfırlanmasıyıdı. Bu sorunu ise, hata kodunu ele alıp bağlanyı havuzlarını boşaltarak çözdük. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Connection-Pooling-in-Onemi-bsenyurt-com-dan)

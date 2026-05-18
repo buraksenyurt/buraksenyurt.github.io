@@ -278,3 +278,5 @@ Burada dikkat edileceği üzere son parametrede yine bir Tuple nesnesi örneklen
 Sanıyorum ki Tuple tipi ve kullanım alanları hakkında az da olsa fikir sahibi olduk..Net Framework 4.0 ile gelen yenilikleri incelemeye devam ediyor olacğaız. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [TupleKavrami.rar (25,36 kb)](/assets/files/2010/TupleKavrami.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tuple-Nedir-Anlamak-Bilmek-Istiyorum)

@@ -277,3 +277,6 @@ Lütfen sizlerde değişik sorgulamaları deneyerek konuyu özümsemeye ve başk
 Görüldüğü gibi EDM'den bağımsız olarak Ado.Net Data Services üzerinden geliştirme yapmak oldukça kolaydır. Yazımızın başlarındada belirttiğimiz gibi, farklı LINQ Provider geliştirmeleri yapabilir ve bunları Ado.Net Data Services üzerinden REST modeline göre sunabiliriz. Biz makalemizde ele aldığımız örnekte bellek üzerinde tutulan (Memory Based) nesne koleksiyonlarını kullandık. Burada verinin kaynağı XML tabanlı dosyalarda olabilirdi. Size tavsiyem XML üzerinde tutulan verileri özel LINQ Provider yardımıyla bir Ado.Net Data Service üzerinden dışarıya sunmaya çalışmanızdır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği indirmek için tıklayın](/assets/files/2008/CustomLinqProvider.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-Data-Services-Ders-Notlarc4b1-2-(Custom-LINQ-Providers)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyur
+rt-com-dan)

@@ -23,3 +23,4 @@ Dikkat edileceği üzere IEqualityComparer uyarlaması sonucu Equals ve GetHashC
 
 Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-130-distinct-fonksiyonunu-iequalitycomparer-t-ile-ozellestirmek)

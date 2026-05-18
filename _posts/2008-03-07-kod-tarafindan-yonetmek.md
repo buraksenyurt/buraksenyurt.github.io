@@ -359,3 +359,5 @@ namespace Istemci
 WCF mimarisinde istenirse istemci tarafından servise gönderilecek olan mesajların manuel olarak hazırlanmasıda mümkündür. Bu Web servislerinde SOAP bazlı mesajların içeriklerinin hazırlanıp gönderilmesi ile benzer bir durumdur. Özellikle WCF istemcilerinin, WCF harici servisler ile haberleşmesi gerektiği durumlarda mesajların manuel olarak hazırlanması söz konusu olabilir. Böyle bir durumda istemci tarafında herhangibir proxy nesnesi olmadan operasyon çağrıları yapılabilmektedir. Bu konuya ilerleyen yazılarda değinmeye çalışacağım. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/ProgramatikYaklasim.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kod-Tarafc4b1ndan-Yonetmek-bsenyurt-com-dan)

@@ -253,3 +253,4 @@ Ne kadar muhteşem değil mi? Tekrardan görüşünceye dek hepinize mutlu günl
 
 > Kişisel Not: Örnekler bildiğiniz üzere Visual Studio 2010 Beta 1 sürümünde ve.Net Framework Beta 1 üzerinde geliştirilmektedir. Beta 2 ile arasında farklılıklar olabilir. Hatta Relase sürümde çok daha fazla farklılık görülebilir.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-40-Kod-Yoluyla-Workflow-Service-Olusturmak-Kullanmak)

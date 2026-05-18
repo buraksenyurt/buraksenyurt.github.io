@@ -1481,3 +1481,5 @@ namespace Einstein.Rabbit
     }
 }
 ```
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tie-fighter-degil-project-tye)

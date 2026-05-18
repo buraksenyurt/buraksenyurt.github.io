@@ -323,3 +323,5 @@ Aslında karar vermek için Struct ve Class arasındaki farklılıklar dışınd
 Aradan geçen 7 yıldan sonra bir önceki yazıya bakıyorum da... Aslında bazı kuralların hiç değişmediği apaçık ortada..Net Framework’ ün içerisinde pek çok noktada kullanılan Struct veri tipi, halen daha projelerde göz önüne alınabilir, alınmalıdır. Özellikle bu ihtiyacı farkediyor olmakta bir yazılımcı için ve hatta proje için son derece önemlidir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StructvsClass.rar (24,56 kb)](/assets/files/2011/StructvsClass.rar) [Örnek Visual Studio 2010 Ultimate Sürümü Üzerinde Geliştirilmiş ve Test Edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Bana-Bir-Struct-Yaz-Yok-Yok-Bana-Bir-Class-Yaz)

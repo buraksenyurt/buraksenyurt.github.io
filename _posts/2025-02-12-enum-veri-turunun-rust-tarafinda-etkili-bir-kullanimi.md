@@ -110,3 +110,5 @@ fn main() {
 Service enum türü tanımlanırken sadece iki duruma sahip olabileceği ifade edilmiştir. Online veya Offline. Her iki durumun sahip olması gereken veriler farklıdır. Online modda olan bir nesnenin url, aktivasyon zamanı gibi bilgilere sahip olması anlamlı iken, Offline modda sadece hangi servisin offline olduğunu belirten bir name özelliğinin tutulması yeterlidir. Bu veri yapısının enum olarak tasarlanması kullanıldığı yerlerde ele alınırken pattern matching veya if let Ok gibi ifadelerle ele alınmasını şart koşar. Bu daha güçlü bir tür (strong type) kullanımını da garanti eder.
 
 Böylece bu kısa bilgilendirici yazımızın sonuna geldik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/enum-veri-turunun-rust-tarafinda-etkili-bir-kullanimi)

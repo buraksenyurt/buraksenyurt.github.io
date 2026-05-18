@@ -771,3 +771,5 @@ PathGeometry nitelikleri tahmin edileceği üzere rota bilgisini içeren pencere
 Görüldüğü gibi WPF mimarisinde gerek XAML tarafında gerekse kod tarafında animasyon işlemleri için son derece etkili yollar kullanılabilmektedir. Bence burada önemli olan noktalardan biriside işaretleme dili içerisinde bu tip gelişmiş fonksiyonelliklerin geliştirilebilmesidir. İlerleyen makalelerimizde WPF ile ilgili farklı konularada değinmeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/AnimasyonIslemleri.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Temel-Animasyon-Islemleri-2-bsenyurt-com-dan)

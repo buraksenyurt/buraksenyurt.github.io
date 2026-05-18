@@ -29,3 +29,4 @@ Bu teknik içerisinde Regex ifadesi de kullanabiliriz. Tabii çok büyük boyutl
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-135-ruby-ile-tek-satirda-dosya-ici-arama)

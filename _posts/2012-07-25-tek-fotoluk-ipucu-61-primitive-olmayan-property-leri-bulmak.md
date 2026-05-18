@@ -19,3 +19,5 @@ Diyelim ki bir değişkenin tipinin içerisinde yer aldığı Assembly’ daki d
 ![spt_61New2](/assets/images/2012/spt_61New2.png)
 
 Hazır primitive tip demişken. String ve Decimal’ in primitive olmadıklarını biliyor muydunuz?
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-61-Primitive-Olmayan-Propertyleri-Bulmak)

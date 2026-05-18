@@ -119,3 +119,5 @@ GameSchene tipi için Add isimli bir genişletme metodu söz konusudur. Expressi
 ![c6extension_2.gif](/assets/images/2017/c6extension_2.gif)
 
 Basit ve ince bir özellik bilgimiz olsun mutlaka işimize yarayacaktır. Böylece geldik bir yazımızın daha sonuna. Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/c-6-0-collection-initializers-ve-add-extension-metodu)

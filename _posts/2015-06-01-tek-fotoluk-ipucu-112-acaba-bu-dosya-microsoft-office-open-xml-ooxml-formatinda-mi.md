@@ -18,3 +18,4 @@ Aslında dosyaların byte içeriklerinin hexadecimal karşılıkları bizlere ti
 
 Tabii tek yol bu olmayabilir. Daha pratik ve efektif yolları bulup paylaşmak siz değerli okurlarıma görev olsun. Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-112-acaba-bu-dosya-microsoft-office-open-xml-ooxml-formatinda-mi)

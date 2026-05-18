@@ -186,3 +186,5 @@ Http Get ile tüm listeyi de aşağıdaki gibi çekebiliyoruz.
 ![screenshot_3.png](/assets/images/2020/screenshot_3.png)
 
 Chuck Norris artık mutlu diyebilirim. Ancak yapılması gereken birçok şey var. Örneğin verinin devasallaşacağını düşünerek servisin sayfalamalı bir şekilde cevap döndürmesini sağlayabiliriz. Bunlara ek olarak güncelleme ve silme gibi operasyonları da işin içerisine katmak iyi bir pratik olabilir. Bunları Deno'nun güncel sürümleri üzerinden denemenizi öneririm. Kodun son haline [github](https://github.com/buraksenyurt/skynet/tree/master/No%2007%20-%20What%20is%20Deno) SkyNet reposu üzerinden ulaşabilirsiniz. Tekrarda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/sikca-duydugum-deno-ya-hello-dedim)

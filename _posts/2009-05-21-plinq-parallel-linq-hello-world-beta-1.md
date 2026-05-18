@@ -160,3 +160,5 @@ Aslında bu sonuç son derece doğaldır. PLINQ motoru çalışma zamanında, ç
 Böylece geldik bir yazımızın daha sonuna. Tatil dönüşü sonrası üzerimdeki adaptasyon bıkkınlığını hafifleten bu yazımda sizlere,.Net Framework 4.0 içerisinde artık standart olarak yer alan ve Parallel Extension mimarisinin bir parçası olan PLINQ konusunu anlatmaya çalıştım. Elbetteki PLINQ içerisindede çok daha fazlası var. Bunlarıda ilerleyen yazılarımda aktarmaya çalışıyor olacağım. Sizlerde [bu](http://blogs.msdn.com/pfxteam/default.aspx)adresten Parallel Extension ile ilişkili son bilgileri alabilirsiniz. Hatta şu saatlerde VS 2010 ile gelen yeniliklerde anlatılmakta. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloWorld.rar (21,81 kb)](/assets/files/2009/HelloWorld.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/PLINQ-(Parallel-LINQ)-Hello-World)-Hello-World)-Hello-World)

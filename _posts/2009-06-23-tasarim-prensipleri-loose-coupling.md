@@ -212,3 +212,5 @@ Böylece Temel Tasarım Prensiplerinden birisi ve bana kalırsa belkide en basit
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [LooseCoupling.rar (39,67 kb)](/assets/files/2009/LooseCoupling.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarim-Prensipleri-Loose-Coupling)

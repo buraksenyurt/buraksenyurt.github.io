@@ -184,3 +184,5 @@ signs.each{|w| puts "#{w} = #{root.translate(w)}"}
 ![morse_6.gif](/assets/images/2016/morse_6.gif)
 
 Görüldüğü gibi yazılan metinlerin Morse kodlarına göre karşılıklarını elde ettik. Aslında bir harfin karşılığı olan morse kodunun key-value çiftleri şeklinde tutulması da mümkün. Bizim buradaki amacımız ikili ağaç veri yapısında bu serinin nasıl oluşturulabileceğini görmekti. Diğer yandan kodda dikkat çekici başka noktalar da bulunmakta. Enumerable modülünün dahil edilmesi, each metoduna block geçirilmesi ve find operasyonunun ezilmesi bunlar arasında sayılabilir. Bir antrenman kodu olarak değerlendirebilirsiniz. Tabii kodda bir çok sıkıntı var. Söz gelimi ikili ağaç resminde görünün sırada elde edemiyoruz. Buna bir bakmak lazım. Böylece geldik bir Ruby maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/binary-tree-ve-morse-kodlari)

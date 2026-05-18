@@ -160,3 +160,5 @@ Görüldüğü üzere ilk iki uygulama söz konusu Memory-Mapped File üzerine b
 Non-Persisted dosyalar fiziki disk üzerinde bir dosyayı işaret etmediklerinden, örnekte üretilen Memory Mapped-File içerikleri, programların kapanması sonrasında doğal olarak yok olacaktır. Bu yok olma işleminde Garbage Collector devreye girmekte ve gerekli çok toplaması işlemlerini üstlenmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [NonPersistedMemoryMappedFiles.rar (80,65 kb)](/assets/files/2011/NonPersistedMemoryMappedFiles.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Non-Persisted-Memory-Mapped-Files)

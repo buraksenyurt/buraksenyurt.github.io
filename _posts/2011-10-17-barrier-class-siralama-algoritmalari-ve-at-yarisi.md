@@ -248,3 +248,5 @@ Parallel programlama ile ilişkili olarak bir kaç yazı yazmayı daha planlamak
 İnce bir kitap ve sizlere de şiddetle tavsiye ederim. Gerçi ince olduğuna aldanmayın lütfen. Yeteri kadar doyurucu bilgi ve kod örneğini barındırmakta. Eğer paralel programlamaya ilgi duyuyorsanız tabi. Buraya kadar sabırla okuduğunuz için teşekkür ederken tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SortingTest.rar (29,66 kb)](/assets/files/2011/SortingTest.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Barrier-Class)

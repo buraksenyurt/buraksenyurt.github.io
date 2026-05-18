@@ -174,3 +174,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 
 [NewIOFeatures.rar (21,53 kb)](/assets/files/2010/NewIOFeatures.rar) [Örnek Visual Studio 2010 Ultimate sürümünde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SystemIOFile-Tarafindaki-Yenilikler)

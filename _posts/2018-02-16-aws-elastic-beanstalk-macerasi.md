@@ -172,3 +172,5 @@ Nihayet! Uygulama Elastic Beanstalk üzerine başarılı bir şekilde taşınmı
 ![ebpython_12.gif](/assets/images/2018/ebpython_12.gif)
 
 Biraz yorucu bir çalışma olduğunu ifade edebilirim ancak West-World üzerinde kurgulanan senaryonun Amazon Elastic Beanstalk üzerinde konuşlanması tatmin ediciydi de diyebilirim. Bu çalışma bana bir çok şey kattı. Bir PaaS'in tam olarak ne işe yarayabileceğini görme fırsatı buldum. Amazon Console penceresini kullanırken her deployment denemesi sonrası web panelindeki anlık hareketleri inceleyip başarılı bir log sisteminin nasıl olabileceğini ve monitoring'in ne kadar önemli olduğunu anladım. Belki Django ile oluşturulan web uygulaması için hiç kod yazmadım ama taşıma öncesinde platformun hangi gereksinimlere ihtiyacı olduğunun nasıl söylenebileceğini gördüm. Her anlamda yararlı bir çalışma olduğunu ifade edebilirim. Umarım sizler için de bilgilendirici olmuştur. AWS tarafını incelemeye devam ediyorum. Yeni bir şeyler öğrendikçe paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-aws-elastic-beanstalk-macerasi)

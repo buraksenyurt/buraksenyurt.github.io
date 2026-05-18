@@ -180,3 +180,5 @@ Where anahtar sözcüğünün imkanlarından faydalanarak temsilci tiplerine ait
 Çalışma zamanında farklı parametre tiplerini kullanan uygun metodlar için ayrı ayrı temsilci tipleri tanımlamak zorunda kalmayız.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-ile-Generic-Delegates-bsenyurt-com-dan)

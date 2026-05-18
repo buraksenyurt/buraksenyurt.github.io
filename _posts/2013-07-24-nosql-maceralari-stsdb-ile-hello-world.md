@@ -228,3 +228,5 @@ Bu yazımızda kısaca STSdb ürününü incelemeye çalıştık. Bir Hello Worl
 [HelloSTSdb.zip (249,52 kb)](/assets/files/2013/HelloSTSdb.zip)
 
 [İlk Yazım Tarihi 2013-01-15]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/STSdb-ile-Hello-World)

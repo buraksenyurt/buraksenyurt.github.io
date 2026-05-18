@@ -192,3 +192,5 @@ O zaman v1 de çalışan people talebini v2 ile yapayım dedim;) Tahmin ettiğim
 Sonrasında google amcaya giderek beni mutlu edecek bir şeyler söylemesini istedim ve [Stackoverflow'un şu adresteki girdisinde bir bilgi](https://stackoverflow.com/questions/46960458/any-queries-to-the-api-linkedin-com-v2-return-not-enough-permissions-to-access) buldum. Uzun bir Linkedin formunda onları amacımla ilgili ikna etmeye çalıştım. 30 iş günü içerisinde bana döneceklerini söylediler. Muhtemelen tekrardan token alacağım tabii ama önemli değil. Servis kurgusunun değişmeyeceği ortada. Ancak Linkedin'in bildirimine göre eğer beni anlarlarsa yeni bir client id ve client secret bilgisi paylaşacaklar. Bu sebeptendir ki makalem şu an itibariyle yarım kaldı. Baştaki "To Be Continued" un anlamı da bu işte:|
 
 ## To Be Continued *(maybe)*
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Linkedin-Baglantılarını-Elde-Etmek)

@@ -295,3 +295,5 @@ private void button1_Click(object sender, System.EventArgs e)
 Şekil 10. Sonuç.
 
 Evet geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinizze mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Basit-Bir-Web-Service-Uygulamasc4b1-bsenyurt-com-dan)

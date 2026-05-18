@@ -219,3 +219,5 @@ Eğer transaction kullanmasaydık ilk SqlCommand çalışır ve Personel tablosu
 Şekil 11. Bir etki olmadı.
 
 Tekrar önemli bir noktayı vurgulamak isterim. Bu Transaction tek bir veritabanı üzerinde çalışmaktadır. Eğer birden fazla veritabanı söz konusu olursa, Distributed Transaction tekniklerini kullanmamız gerekiyor. Bunu ilerleyen makalelerimizde incelemeye çalışacağım. Umarım buraya kadar anlattıklarımla Transaction’lar hakkında bilgi sahibi olmuşsunuzdur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Transaction-Kavramc4b1c2a0-bsenyurt-com-dan)

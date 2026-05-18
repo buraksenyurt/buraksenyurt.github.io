@@ -217,3 +217,5 @@ Uygulamamızı tekrardan çalıştırırsak, dışarıda yapılan değişikliği
 ![mk147_6.gif](/assets/images/2006/mk147_6.gif)
 
 Görüldüğü gibi bu kez uygulama kodu içerisinde zmn isimli dizideki değişikliğimiz, SporcuListesi örneğindeki zamanlar isimli diziyi etkilememiştir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sabit-Deger-Tipleri-(Immutable-Value-Types)-Analizi-bsenyurt-com-dan)-Analizi-bsenyurt-com-dan)-Analizi-bsenyurt-com-dan)

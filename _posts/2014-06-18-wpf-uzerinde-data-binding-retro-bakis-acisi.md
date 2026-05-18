@@ -405,3 +405,5 @@ Böylece geldik bir yazımızın daha sonuna. Bu yazımızda veri bağlama (Data
 Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_FundementalsOfBinding.zip (77,96 kb)](/assets/files/2014/HowTo_FundementalsOfBinding.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Uzerinde-Data-Bindinge28093-Retro-Bakc4b1s-Acc4b1sc4b1)

@@ -118,3 +118,5 @@ private void btnInsert_Click(object sender, System.EventArgs e)
 Şekil 6. Saklı Yordam'ün işlemesinin Sonucu.
 
 Görüldüğü gibi Saklı Yordamlar yardımıyla tablolarımıza veri eklemek son derece kolay, hızlı ve etkili. Bununla birlikte Saklı Yordamlar sağladıkları güvenlik kazanımları nedeni ilede tercih edilirler. Saklı Yordamları geliştirmek son derece kolaydır. İstediğini sql işlemini gerçekleştirebilirisiniz. Satır silmek, satır aramak gibi. Saklı Yordamlar ile ilgili bir sonraki makalemizde, tablolardan nasıl satır silebileceğimizi incelemeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Stored-Procedure-Yardc4b1mc4b1yla-Yeni-Bir-Kayc4b1t-Eklemek-bsenyurt-com-dan)

@@ -150,3 +150,6 @@ trans = con.BeginTransaction(IsolationLevel.ReadUncommitted);
 Şekil 8. Transaction1 verileri tekrardan çekiyor ve değişiklikleri görüyor.
 
 Şimdi Transaction2'de yaptığımız güncelleme işlemini geri alalım. İşte bu durumda, Transaction1 içinde, Transaction2 tarafından satırın güncellenmiş fakat onaylanmamış, daha da önemlisi geri alınmış hâli kalır. İşte bu durum Dirty Read olarak adlandırılmaktadır. Bu üç durum ile ilgili olarak alınabilecek tedbirler, IsolationLevel numaralandırıcısı ile belirlenir. Bu numaralandırıcıyı ve kullanım şekillerini bir sonraki makalemizde incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Transaction-larda-Izolasyon-Seviyeleri-(Isolation-Level)-1-bsenyurt-com-dan)-1-bsenyurt-com-dan)-1-bsenyurt-com
+m-dan)

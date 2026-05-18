@@ -350,3 +350,5 @@ Ve çalışma zamanı çıktısı;
 Bu anlamsız karşılaştırma bir yana dursun asıl vurgulamam gereken şey şu; Kurumsal ölçekte bir yazılımda **domain driven design** pratiklerini ele alacaksak ürünü **Rust** ile yazmayız. Zira, bağımlılık yönetimi *(dependency injection)* gibi kritik konularda nesne yönelimli bir dilde kalmak kodu yazmak ve bakımı açısından daha kolay olabilir. Lakin bu sistemin ihtiyaç duyduğu yüksek performans isteyen ve görev kritik olan birçok senaryoda **Rust** ile ilerleyebiliriz. Bu tamamen kendimce yapmış olduğum bir yorum ;)
 
 Bu çalışmada ele aldığımız örneklere [github reposundan](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/SmartEnums) erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/smart-enums)

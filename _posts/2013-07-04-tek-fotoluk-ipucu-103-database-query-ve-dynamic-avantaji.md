@@ -24,3 +24,5 @@ Söz gelimi Northwind veritabanındaki ürünlerin kategori bazlı sayılarını
 dynamic türü nedeniyle sorgu sonucu elde edilen liste elemanları üzerinden doğrudan CategoryName ve ProductCount alanlarına gidilmesi mümkün olmuştur
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-103e28093DatabaseQuery-ve-dynamic-Avantajc4b1)

@@ -283,3 +283,5 @@ Mesajlar AfacanMurat tarafından okunduğu için kuyruktan silinmişlerdi. Rabbi
 Bir şeyleri deneyimleyebildiğim güzel bir Cumartesi gecesi daha sonlanmak üzere. Sevgili CoderBora'nın güzel yazısı West-World üzerinde RabbitMQ'yu deneyimlemek için çok destekleyici oldu. Sonuçta kuyruk modelli bir mesajlaşma sistemini kurup üzerine bilgi yazıp okuyabildim. RabbitMQ bu kadarla sınırlı kalabilecek bir konu değil elbette. Ben kendim için kendi deneyimimi yazıp aktardım sadece. Gerisi sizin elinizde. Okuyun, araştırın, deneyin, ilerleyin. Örneğin ben Work Queues konusunu incelemeyi düşünüyorum. Web uygulamaları düşünüldüğünde bu kritiktir. RabbitMQ'da bu yapı nasıl uygulanır, öğrenir öğrenmez yazıya dökmek istiyorum. Böylece geldik bir maceranın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 **Kaynak:** RabbitMQ'nun güzide [Tutorial serisinin başlangıç noktası](https://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/west-world-un-rabbitmq-ile-tanismasinin-zamani-gelmisti)

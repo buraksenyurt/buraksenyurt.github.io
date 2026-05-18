@@ -283,3 +283,5 @@ Bu yazıda ele aldığımız PDC servisinin OData formatında veri içeriği sun
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [PDC2010.rar (200,14 kb)](/assets/files/2010/PDC2010.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Microsoft-PDC-Icerigini-OData-Servisi-Uzerinden-Elde-Etmek)

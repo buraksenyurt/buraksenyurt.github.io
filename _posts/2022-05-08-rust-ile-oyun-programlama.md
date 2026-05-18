@@ -24,3 +24,5 @@ Buyrunuz efenim:)
 [Youtube Link](https://www.youtube.com/watch?v=SzRhwliRXIU)
 
 Bir başka Rust çalışmasında görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-ile-oyun-programlama)

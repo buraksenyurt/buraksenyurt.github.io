@@ -295,3 +295,5 @@ Uygulamanın çalışma zamanı çıktısına baktığımızda aşağıdaki ekra
 Görüldüğü üzere Graph teorisine bağlı kalaraktan, DEX API’ sinden de yararlanarak tüm Euroelague takımları ve oyuncuları için (hatta bunların içerisine başka nesneleri de katabiliriz) kocaman bir veri içeriğini oluşturmamız mümkündür. Tabi böyle bir içerik kuvvetle muhtemel 1milyon nesneyi aşabilir ve dolayısıyla lisans satın alınması gerekebilir. DEX gibi başka pek çok Graph veritabanı mevcuttur. Örneğin Trinity, BigData vb…Bunları da fırsatım olursa incelemeye çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
 [HowTo_DEX.zip (785,18 kb)](/assets/files/2013/HowTo_DEX.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Graph-Database-DEX)

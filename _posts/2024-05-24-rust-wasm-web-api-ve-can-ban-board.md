@@ -21,3 +21,5 @@ Bu [youtube videosunda](https://youtu.be/a6KVjYGon1c) Rust programlama dilini ku
 [Youtube Link](https://www.youtube.com/watch?v=a6KVjYGon1c)
 
 Uygulama kullanıcısının aynı anda en fazla beş görev ile çalışılmasına izin veriyor. Bu durumda yeni bir tane eklemek için ya tamamlananları arşive göndermek ya da diğerlerinden feragat etmek lazım. Elbette birçok yeni özellik eklenebilir, kod tekrardan gözden geçirilip iyileştirilebilir. Anlatımda yer alan uygulamanın program kodlarına [github reposundan](https://github.com/buraksenyurt/can-ban-board) bakabilirsiniz. Readme dosyasında WASM derleme işlemleri ile programın nasıl çalıştığına dair detaylı bilgiler de yer alıyor. Bir başka çalışmada görüşmek dileğiyle, hepinize mutlu günler.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-wasm-web-api-ve-can-ban-board)

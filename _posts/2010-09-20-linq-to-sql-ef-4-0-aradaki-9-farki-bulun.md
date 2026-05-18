@@ -43,3 +43,5 @@ Dikkat edileceği üzere IDbConnection interface tipini kullanan iki yapıcı me
 Dikkat edeceğiniz üzere OdbcConnection, OleDbConnection ve SqlConnection tipleri söz konusudur. Buradan DataContext türevli olan NorthwindDataContext tipinin üretimi sırasında mutlaka SQL tarafına bir bağımlılığın olduğunu en azından.Net içerisinde var olan provider yapısının ele alındığını görebiliriz.
 
 Bu ve diğer farklılıkları aslında ilerleyen yazılarımızda incelemeye çalışıyor olacağım. Siz şimdilik yukarıdaki klavuzu gözünüze kestirin. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/LINQ-to-SQL-e28093-EF-40-(Aradaki-9-Farkc4b1-Bulun))))

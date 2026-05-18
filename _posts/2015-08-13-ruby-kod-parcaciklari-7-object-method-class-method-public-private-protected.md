@@ -109,3 +109,4 @@ private erişim sonrası alınan hata
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-7-object-method-class-method-public-private-protected)

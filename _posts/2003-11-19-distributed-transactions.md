@@ -278,3 +278,5 @@ Görüldüğü gibi, metodumuz başarılı bir şekilde çalıştırıldı. Heme
 Şekil 14. Componet Services.
 
 Bir sonraki makalemizde aynı örneği Manuel yöntemelerle ve dolayısıyla ContextUtil sınıfının metodları ile gerçekleştireceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Distributed-Transactionsc2a0-bsenyurt-com-dan)

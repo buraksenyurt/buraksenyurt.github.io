@@ -242,3 +242,4 @@ Geliştirmek istediğimiz senaryoyu biraz daha geniş çaplı düşünelim. Bulu
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-20-rest-servis-gelistirmek)

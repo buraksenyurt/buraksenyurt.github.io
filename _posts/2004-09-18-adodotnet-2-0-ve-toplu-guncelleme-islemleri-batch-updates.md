@@ -99,3 +99,6 @@ da.UpdateBatchSize = 7;
 Örneklerden de görüldüğü gibi, ADO.NET 2.0 toplu komut güncelleme işlemlerine daha fazla fonksiyonellik katmak amacıyla kullanışlı bir özellik kazanmıştır. Bazı durumlarda, güncelleme işlemlerinin bağlantısız katmandan veritabanına doğru olan hareketlerinde toplu olarak yapılması, network trafiğini olumlu yönde etkileyecek bir gelişmedir. Çünkü, tüm güncelleme hareketleri için veritabanına doğru sadece tek bir tur atılacaktır. Elbette ki devasa boyutlara sahip olan veri kaynakları üzerinde yapılacak büyük çaplı güncelleme işlemlerinde, toplu komut kümelerini belirli sayılarda komut içerecek şekilde ayarlamak da performans açısından olumlu bir etki yaratacaktır.
 
 Bu makalemizde, kısaca toplu güncelleştirme (Batch-Update) işlemlerine değinmeye çalıştık. İlerleyen makalelerimizde, ADO.NET 2.0'ın yeni özelliklerine bakmaya devam edeceğiz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ve-Toplu-Guncelleme-Islemleri-(Batch-Updates)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-
+-dan)

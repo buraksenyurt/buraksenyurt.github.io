@@ -227,3 +227,5 @@ Sunuma [bu adresten](https://www.slideshare.net/BurakSelimSenyurt1/monolitik-uyg
 - [TechnicalDebt, Martin Fowler](https://martinfowler.com/bliki/TechnicalDebt.html),
 - [Fundamentals of Software Architecture](https://www.amazon.com/Fundamentals-Software-Architecture-Comprehensive-Characteristics/dp/1492043451), Richards & Ford, O’Reilly
 - [Technical Debt A Complete Guide — 2021 Edition](https://www.amazon.com.tr/gp/product/1867433923/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1), The Art of Service
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/monolitik-uygulamalarda-teknik-borclanma-ile-mucadele-teori)

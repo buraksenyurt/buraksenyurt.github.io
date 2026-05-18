@@ -303,3 +303,5 @@ Blazor benim yeni yeni keşfetmeye, öğrenmeye ve anlamaya çalıştığım kon
 - Blazor uygulamasının canlı ortamlar için publish edilmesini
 
 Ve böylece geldik bir [Saturday-Night-Works](https://github.com/buraksenyurt/saturday-night-works) derlemesinin daha sonuna. Bir başka macerada görüşmek üzere hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/blazor-ile-hello-world-uygulamasi-gelistirmek)

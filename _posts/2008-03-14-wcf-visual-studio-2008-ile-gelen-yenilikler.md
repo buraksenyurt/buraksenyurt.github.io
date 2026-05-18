@@ -343,3 +343,5 @@ Buraya kadar anlatılanlara göre Visual Studio 2008 ile birlikte gelen WCF yeni
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde yakın zamanda son haliyle yayınlanan Visual Studio 2008 ürününün Windows Communication Foundation için getirdiği yenilikleri basit seviyede ele almaya çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/VS2008Yenilikler.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Visual-Studio-2008-ile-Gelen-Yenilikler-bsenyurt-com-dan)

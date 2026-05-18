@@ -162,3 +162,5 @@ Açıkçası ben bu tip bir tablonun eğer maliyet kaybı yoksa ısrarla eklenme
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [RelationEntityCreation_RC.rar (52,15 kb)](/assets/files/2010/RelationEntityCreation_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Many-To-Many-Relations-Link-Tablosunda-Israrci-Olmak)

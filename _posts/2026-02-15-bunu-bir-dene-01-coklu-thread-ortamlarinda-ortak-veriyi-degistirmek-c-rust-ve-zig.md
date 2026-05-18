@@ -477,3 +477,5 @@ Ne yazık ki hayat böylesine toz pembe değil. Özellikle değiştirilebilir (m
 Örnek kodların tamamına [github adresinden](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/try-this-01) ulaşabilirsiniz.
 
 Şimdilik bu kadar. Böylece geldik bir denememizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bunu-bir-dene-01-coklu-thread-ortamlarinda-ortak-veriyi-degistirmek-c-rust-ve-zig)

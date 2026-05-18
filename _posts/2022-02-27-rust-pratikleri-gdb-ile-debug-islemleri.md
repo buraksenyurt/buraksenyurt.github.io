@@ -190,3 +190,5 @@ x /d 0x5555555a5af0
 ![debugging_4.png](/assets/images/2022/debugging_4.png)
 
 Dikkat edileceği üzere fonksiyon dışına çıkıldığında ilgili adres değeri 0 olarak elde edilmiştir. Smart Pointer'ın çalıştığının bir nevi ispatı olarak düşünebiliriz. Tabii büyük projelerde ve kalabalık kod parçalarında GDB ile debug işlemleri çok kolay olmayabilir. Hatta sağlıklı loglar daha çok işe yarayabilir. Yine de iç dinamikleri öğrenme aşamasındayken bu debugger'ı kullanmak bence oldukça önemli. Böylece geldik Rust Pratiklerinde bir bölümün daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-gdb-ile-debug-islemleri)

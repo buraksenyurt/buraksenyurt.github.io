@@ -205,3 +205,5 @@ Ardından utility/weather için bir talep daha.
 ![awscore_8.gif](/assets/images/2018/awscore_8.gif)
 
 Sonuçlar tatmin ediciydi. Daha önceden yazdığımız bir çok Web API'yi buraya entegre edebiliriz diye düşünüyorum. Pek tabii fonksiyonlar tamamen deneme amaçlı geliştirilmiş durumdalar. Siz içeriklerini istediğiniz gibi genişletebilirsiniz. AWS dünyası oldukça kapsamlı. Henüz MSDN rahatlığını bulabilmiş değilim dökümantasyonlarında. Bazen kayboluyorum ama ilgi çekici olduğunu da ifade edebilirim. Kavramlar yeni yeni oturmaya başladılar. [Codefiction](http://www.codefiction.tech/) gibi web sitenizi AWS üzerine alabilirisiniz ya da şirketinizin elektronik ticaret alt yapısına ait fonksiyonellikleri burada barındırabilirsiniz. Bunları bir düşünün:) Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AWS-Lambda-Uzerinde-Net-Core-Kosturmak)

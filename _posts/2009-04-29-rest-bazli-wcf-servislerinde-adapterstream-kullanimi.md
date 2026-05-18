@@ -142,3 +142,5 @@ Hemen arka planda çalışan Fiddler aracına baktığımdaysa, gelen talebe kar
 Görüldüğü gibi AdapterStream kullanımı son derece kolay. Özellikle REST bazlı WCF servislerini tüketen web uygulamalarında göz önüne alınabilir. Umarım size faydalı bir bilgi daha aktarabilmişimdir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Streaming.rar (5,62 mb)](/assets/files/2009/Streaming.rar) (Dosya içerisinde bir TODO var. Bu kısmı gözden kaçırmayın)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/REST-Bazlc4b1-WCF-Servislerinde-AdapterStream-Kullanc4b1mc4b1)

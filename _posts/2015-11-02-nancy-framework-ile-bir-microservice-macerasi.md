@@ -187,3 +187,4 @@ Bu arada sizin için bu Framework içerisine gizlenmiş ve keşfedilmeyi bekleye
 > Bu sorulara cevap bulmaya çalışmanızı öneririm. Gerekirse [github üzerinde konuşandırılmış](https://github.com/NancyFx)açık kaynak kodara da bakabilirsiniz. Hatta bakınız.
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse...
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/nancy-framework-ile-bir-microservice-macerasi)

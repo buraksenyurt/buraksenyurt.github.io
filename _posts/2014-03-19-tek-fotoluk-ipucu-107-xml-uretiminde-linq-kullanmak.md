@@ -11,3 +11,5 @@ Diyelim ki elinizde bir biri ile ilişkili tiplere ait nesne örneklerini içere
 ![tfi_107](/assets/images/2014/tfi_107.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-107-XML-Uretiminde-LINQ-Kullanmak)

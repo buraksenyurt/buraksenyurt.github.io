@@ -136,3 +136,5 @@ void btnHesapla_Click(object sender, EventArgs e)
 Şekil 10. Farklı dil ile yazılmış sınıflar bir arada çalışıyor.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ve-Code-Klasoru-bsenyurt-com-dan)

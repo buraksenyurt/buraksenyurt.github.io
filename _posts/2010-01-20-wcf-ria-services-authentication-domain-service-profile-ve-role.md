@@ -258,3 +258,4 @@ Böylece geldik bir yazımızın daha sonuna. Bu yazımızda WCF RIA Service - A
 
 [SilverlightApplication7RoleAndProfile.rar (780,46 kb)](/assets/files/2010/SilverlightApplication7RoleAndProfile.rar) [Dosya boyutunun küçük olması için ASPNETDB.mdf içeriği çıkartılmıştır]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Authentication-Domain-Service-Profile-ve-Role)

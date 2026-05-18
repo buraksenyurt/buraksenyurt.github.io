@@ -144,3 +144,5 @@ private void btDurumaGoreDegisiklikler_Click(object sender, System.EventArgs e)
 Şekil 6. DataRowState.Added Sonrası.
 
 Bu noktadan sonra artık bir veri tablosunu güncellerken, GetChanges yaklaşımını kullanarak, örneğin sadece yeni eklenen satırların veri kaynağına gönderilmesini sağlamış oluruz. Buda bize daha hızlı ve rahat bir ağ trafiği sağlayacaktır. Bu durum özellikle web servisleri için çok idealdir. Uzak sunuculardan ilgili verileri bilgisayarına bağlantısız olarak işlemek için alan bir istemci uygulama, veri kümesinin tamamını geri göndermek yerine, sadece yeni eklenen veya güncellenen satırları temsil eden bir veri kümesini (dataTable veya DataSet) geri göndererek sınırlı internet kapasitesi için en uygun başarımı elde edebilir. Geldik bir makalemizin daha sonuna. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tablo-Degisikliklerini-GetChanges-ile-Izlemek-bsenyurt-com-dan)

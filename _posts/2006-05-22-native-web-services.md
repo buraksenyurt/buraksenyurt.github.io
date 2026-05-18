@@ -123,3 +123,5 @@ Dolayısıyla kodumuz içerisinde object dizisinin elemanları arasında dolaş�
 ![mk162_7.gif](/assets/images/2006/mk162_7.gif)
 
 Görüldüğü gibi artık Sql Server 2005 üzerinde saklı yordam (stored procedure) yada kullanıcı tanımlı fonksiyonları (user defined functions), http istemcilerine hizmet verecek şekilde web servisi olarak sunmak oldukça kolaydır. Tek yapmamız gereken EndPoint nesnelerini hazırlamak ve istemcilerde tüketmek olacaktır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Native-Web-Services-bsenyurt-com-dan)

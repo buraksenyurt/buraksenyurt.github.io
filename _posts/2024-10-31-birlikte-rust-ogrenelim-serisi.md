@@ -49,3 +49,5 @@ Konu Başlıklarımız
 - 27 - File I/O İşlemleri
 - 28 - Stream İşlemleri (stdin, stdout, TcpStream)
 - 29 - Unsafe Kodlama
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/birlikte-rust-ogrenelim-serisi)

@@ -135,3 +135,5 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 [SampleSSIS.rar (25,47 kb)](/assets/files/2011/SampleSSIS.rar)
 
 [SSISExecuter.rar (25,64 kb)](/assets/files/2011/SSISExecuter.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SSIS-Programatik-Olarak-Variable-Degeri-Set-Etmek)

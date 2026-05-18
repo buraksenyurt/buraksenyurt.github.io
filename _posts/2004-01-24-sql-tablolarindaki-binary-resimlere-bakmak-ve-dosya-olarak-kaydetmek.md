@@ -171,3 +171,5 @@ private void btnBak_Click(object sender, System.EventArgs e)
 Şekil 3. Fiziki dosyamız oluşturuldu.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sql-Tablolarc4b1ndaki-Binary-Resimlere-Bakmak-ve-Dosya-Olarak-Kaydetmek-bsenyurt-com-dan)

@@ -271,3 +271,5 @@ s.Baslat();
 Şekil 2. Programın Çalışmasının Sonucu.
 
 Geldik bir makalemizin daha sonuna ilerleyen makalelerimizde arayüzleri incelemeye devam edeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Arayuz(Interface)-Sınıf(Class)-ve-Coklu-Kalıtım-bsenyurt-com-dan)-Sınıf(Class)-ve-Coklu-Kalıtım-bsenyurt-com-dan)-Sınıf(Class)-ve-Coklu-Kalıtım-bsenyurt-com-dan)

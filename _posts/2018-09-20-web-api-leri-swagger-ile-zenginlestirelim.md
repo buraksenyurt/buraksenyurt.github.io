@@ -290,3 +290,5 @@ ve son olarak silme işlemleri için kullanılan Delete operasyonu (Kırmızı r
 ![swagger_6.gif](/assets/images/2018/swagger_6.gif)
 
 Görüldüğü üzere APIyi kullanacak olan geliştirici ve hatta API hizmetini tarayan robot için gerekli tüm bilgiler burada yer alıyor. Operasyon adları, açıklamaları, dönüş durum kodları, ne tür içeriklerle çalıştıkları, örnek mesaj gövdeleri ve tabii test edilmelerini sağlayan "Try It Out" düğmeleri. Bu standartlaştırılmış yardım sayfalarını basit bir kaç hareket ile uygulamak da oldukça kolay. Bize düşen bu standart yardım dokümanlarını hazırlamak için gerekli XML Comment ve nitelikleri doğru bir şekilde uygulamak. Bundan sonra yazacağımız her Web API için biraz vakit ayırıp bu dokümanları hazırlamakta yarar var. Gelecek sadece insanların değil, belli standartları takip eden robotların kullanacağı servislerle dolu olacak. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/web-api-leri-swagger-ile-zenginlestirelim)

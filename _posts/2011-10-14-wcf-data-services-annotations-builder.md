@@ -142,3 +142,5 @@ ve özellikle örnek bir Product nesne örneğinin ListPrice özelliğinin değe
 Yine de buraya kadar yazdıklarımız ile aslında WCF Data Service tarafındaki Annotations bildirimlerinin, yeni CTP sürümü ile gelen Vocabularies namespace’ i ile ilişkilendirildiğini düşünebiliriz. Amaç ise Entity, Property, Navigation Property gibi bazı yapılarda doğrulama kurallarını uygulatabilmektir. Bu konu ile ilişkili olarak ben de [şu adresteki](http://blogs.msdn.com/b/astoriateam/archive/2011/10/13/vocabularies-in-wcf-data-services.aspx) girdiye ait yorumları takip etmeye çalışıyor olacağım. Malum istemci tarafı için gerekli bir testi gerçekleştiremedik/gerçekleştiremedim. Dolayısıyla şimdilik yazımızı sonlandırmak durumundayız. Buruk bir son oldu ama ne yapalım.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Data-Servicese28093-Annotations-Builder)

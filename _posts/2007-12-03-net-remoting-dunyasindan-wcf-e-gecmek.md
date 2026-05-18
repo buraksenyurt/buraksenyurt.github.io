@@ -455,3 +455,5 @@ Sonuç olarak her ne kadar.Net Remoting'den Windows Communication Foundation tar
 Bu noktalarda vakayı doğru değerlendirip karar vermekte ve gerekirse cevap için profesyonel destek almakta yarar olabilir.Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/FromRemotingToWCF.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-Net-Remoting-Dunyasc4b1ndan-WCFe-Gecmek-bsenyurt-com-dan)

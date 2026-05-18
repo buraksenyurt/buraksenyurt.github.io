@@ -227,3 +227,5 @@ DataGrid kontrolü, bu kategoriye bağlı ürünler ile doldurulacaktır. İşte
 Böylece geldik bir yazımızın daha sonuna..Net RIA Servisleri ile ilişkili araştırmalarıma devam ettikçe, öğrendiklerimi sizlerle paylaşmaya devam ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloRIAServices.rar (1,60 mb)](/assets/files/2009/HelloRIAServices.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-RIA-Servisleri-Hello-World)

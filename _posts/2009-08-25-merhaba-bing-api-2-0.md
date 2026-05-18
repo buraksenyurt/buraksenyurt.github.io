@@ -197,3 +197,5 @@ Bu arada Bing API ile ilişkili dökümanı indirdiğinizde içerisinde JSON, XM
 - Asenkron arama metodu uygulanabilir ama bu durumda Illegal Cross Thread Exception hatasından kaçınmak gerekir.
 
 Bunlarda size görev olsun. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Merhaba-Bing-API-20)

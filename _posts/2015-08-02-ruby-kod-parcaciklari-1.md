@@ -93,3 +93,4 @@ ve çalışma zamanı çıktısı
 
 Görüldüğü gibi dizilerle çalışmak son derece kolay. Teşekkürler Matz:) Bir başka Ruby Kod Parçacığında görüşmek üzere hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-1)

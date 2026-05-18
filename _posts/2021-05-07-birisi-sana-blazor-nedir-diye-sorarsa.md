@@ -150,3 +150,5 @@ Sözlerime burada son verirken önümüzdeki yılların sana ve tüm sevdiklerin
 [Software Architecture with C# 9.0 and.NET 5](https://www.amazon.com.tr/Software-Architecture-NET-Architecting-microservices/dp/1800566042/ref=sr_1_1?__mk_tr_TR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Software+Architecture+with+C%23+9.0+and+.NET+5&qid=1620331734&sr=8-1), Gabriel Baptista, Fancesco Abbruzzese, Packt Publishing
 
 [An Atypical ASP.NET Core 5 Design Patterns Guide](https://www.amazon.com.tr/Atypical-ASP-NET-Design-Patterns-Guide/dp/1789346096/ref=sr_1_2?__mk_tr_TR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Software+Architecture+with+C%23+9.0+and+.NET+5&qid=1620331754&sr=8-2), Carl-Hugo Marcotte, Packt Publishing
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/birisi-sana-blazor-nedir-diye-sorarsa)

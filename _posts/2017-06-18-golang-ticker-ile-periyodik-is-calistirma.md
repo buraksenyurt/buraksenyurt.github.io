@@ -117,3 +117,5 @@ Kod 10 saniyede bir çalışacak bir Ticker tanımlaması ile başlıyor. Sonras
 ![gotimer_3.gif](/assets/images/2017/gotimer_3.gif)
 
 Bu örnekle NewTicker ve time paketinin kullanımı kafamda biraz daha anlamlı bir yer edindi diyebilirim. Bazı konuları öğrenmeye çalışırken gerçek hayat örneklerini kullanmak çok ama çok faydalı. Senaryo daha da zenginleştirilebilir. Söz gelimi bir klasördeki dosya değişimleri gözlemlenebilir ve loglama amaçlı bir işlevsellik sağlanabilir. Aynı stratejiyi kullanarak belirli zaman aralıklarında gerçekleşmesini istediğimiz işlemler için planlamaları basitçe yapabiliriz. Böylece geldik bir GoLang maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-ticker-ile-periyodik-is-calistirma)

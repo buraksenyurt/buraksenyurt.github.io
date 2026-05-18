@@ -27,3 +27,5 @@ Aslında kritik nokta Reflection ile Assembly özelliklerinin tutulduğu nitelik
 ![tfi151_3.gif](/assets/images/2017/tfi151_3.gif)
 
 Görüldüğü üzere projeyi derlemeden önce girdiğimiz temel bilgileri çalışma zamanında yakaladık. Elbette bir Console uygulamasında assembly bilgilerini almak çok mantıklı değil. Windows Forms, WPF, Mobile ve benzeri platformlarda bu fonskiyonellik daha çok işinize yarayabilir. Daha da önemlisi envanterde yer alan ne kadar.Net uygulaması varsa onlar hakkında bilgiler alabilir ve belki de bir portal geliştirebiliriz. Hatta geliştirilen uygulamalar için Assembly seviyesinde eksik nitelik bilgilerini de yakalayabilirsiniz. Gerisi sizde. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-151-c-reflection-ve-about-info)

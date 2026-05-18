@@ -149,3 +149,5 @@ Bu andan sonra tekrar Devam button kontrolüne tıklarsak thread nesnelerimiz Re
 Şekil 3. İş Parçacıkları henüz sonlanmamış ise.
 
 Evet geldik Threading ile ilgili makale dizimizin ilk bölümünün sonuna. Bir sonraki makalemizde Threading kavramını dahada derinlemesine incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Cok-Kanallı(Multithread)-Uygulamalar-bsenyurt-com-dan)-Uygulamalar-bsenyurt-com-dan)-Uygulamalar-bsenyurt-com-dan)

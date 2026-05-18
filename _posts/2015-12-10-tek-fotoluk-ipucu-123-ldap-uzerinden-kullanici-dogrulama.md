@@ -22,3 +22,4 @@ DirectoryEntry ve DirectorySearcher sınıfları için System.DirectoryServices.
 
 Size tavsiyem kullanıcının hangi grupta olduğunu nasıl bulabileceğinize ait kod parçasını geliştirmeye çalışmanızdır. Ayrıca bu ve benzer fonksiyonellikleri servisleştirmeyi de düşünebilirsiniz. Güzel bir antrenman olur. Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-123-ldap-uzerinden-kullanici-dogrulama)

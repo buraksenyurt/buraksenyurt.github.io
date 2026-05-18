@@ -123,3 +123,5 @@ announcementEndpoint, discoveryEndpoint, udpAnnouncementEndpoint, udpDiscoveryEn
 WCF 4.0 tarafında basitleştirilmiş konfigurasyon (Simplified Configuration) özellikleri ile ilişkili yenilikleri incelemeye devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StandardEndpoints.rar (48,35 kb)](/assets/files/2009/StandardEndpoints.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Standard-Endpoints)

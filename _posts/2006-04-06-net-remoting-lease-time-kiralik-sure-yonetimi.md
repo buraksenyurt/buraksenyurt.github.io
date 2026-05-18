@@ -141,3 +141,5 @@ Kiralama sürelerine ait bilgiler eğer aksi belirtilmesse her zaman saniye cins
 Özetlemek gerekirse, bir uzak nesnenin varsayılan kiralama süresini (lease time) değiştirebilir ve referansların yaşam sürelerini etkilyebiliriz. Bu makalemizde bunu gerçekleştirmek için programatik olarak ve konfigurasyon bazında kullanabileceğimiz yolları inceledik. Bir sonraki makalemizde, Sponsor tekniğini incelemeye çalışacağız. Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kod için tıklayınız.](/assets/files/2006/LeaseManagement.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-Net-Remoting-Lease-Time-(Kiralc4b1k-Sure)-Yonetimi-bsenyurt-com-dan)-Yonetimi-bsenyurt-com-dan)-Yonetimi-bsenyurt-com-dan)

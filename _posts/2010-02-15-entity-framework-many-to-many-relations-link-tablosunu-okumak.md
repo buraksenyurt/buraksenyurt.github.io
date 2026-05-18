@@ -62,3 +62,5 @@ WHERE [Extent1].[Name] LIKE N'Ab%'
 Görüldüğü üzere Anonymous Type kullanımı nedeniyle sadece istediğimiz TrackId ve PlaylistId alanları Select sorgusuna dahil edilmiştir. Buda arka planda çalışan SQL sorgusunda, tüm tablo alanlarının hesaba katılmaması anlamına gelmektedir ki bizim için bir avantajdır ve istediğimizde zaten budur
 
 Bir nevi veritabanında yer alan ama Entity olarak kod tarafına aktarılmayan ara tablo içeriğini, LINQ tarafında elde etmiş olduk. Entity Framework tarafında ipucu tadındaki başka konularlar devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Many-To-Many-Relations-Link-Tablosunu-Okumak)

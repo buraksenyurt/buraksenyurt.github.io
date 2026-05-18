@@ -276,3 +276,5 @@ Bu işlemlerin ardından img kontrolünün elde edilmesi sağlanır. Bunun için
 Bu makalemizde tablolarda binary olarak tutulan resim alanlarını web sayfalarında küçük bir hile ile nasıl işleyebileceğimizi incelemeye çalıştık. Görsellik hemen hemen tüm uygulamalarda önemli bir faktör olduğundan resim alanlarının bu şekilde ele alınıyor olmasını bilmek önemli bir avantaj sağlamaktadır. Kullanılan teknikte önemli olan nokta binary alanın içeriğini tek başına ele alıp resim formatında çıktı veren bir sayfanın var olmasıdır. Ayrıca resmi gösteren kontrolün basit bir img bileşeni olduğuna ve src niteliğinin önemine dikkat edilmelidir. Bu sayfanın çıktısı örneklerden de görüldüğü gibi pek çok farklı biçimde kullanılabilir ve son kullanıcıya görsel olarak daha doyurucu bir içerik sağlanabilir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/ImageKullanimi.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-Temelleri-Tablo-Bazlc4b1-Resimleri-Ele-Almak-bsenyurt-com-dan)

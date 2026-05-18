@@ -149,3 +149,4 @@ Görüldüğü üzere derinlerde, dynamic ve object kullanımları arasında bel
 
 [DynamicVsObject_RC.rar (20,73 kb)](/assets/files/2010/DynamicVsObject_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Object-vs-Dynamic)

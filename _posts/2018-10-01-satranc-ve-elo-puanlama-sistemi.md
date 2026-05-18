@@ -66,3 +66,5 @@ Söz gelimi iki yarışmacının güncel ELO puanları arasındaki fark 300 olsu
 ELO oranı bugün League of Legends gibi çok oyunculu platformlarda dahil olmak üzere bir çok oyunda kullanılıyor. Eğer hoşunuza gittiyse tenis oyuncularının rating değerlerini ele alıp aralarında maçlar yaptırarak güncel puanlamalarını öğrenebilirsiniz. Hatta bu formülasyonu koda dökerek, geliştireceğiniz farklı ürünlerde değerlendirebilirsiniz (Zuckerberg’in Harvard’da Facemash için ELO rating algoritmasını kullandığı söylentisi bile var örneğin. Bu tartışma için [Quora'ya bakılabilir](https://www.quora.com/Did-Facemash-use-Elo-ratings-as-portrayed-in-The-Social-Network))
 
 Profesör Arpad Elo’nun 95 yıllık yaşamında insanlığa kattığı önemli değerlerden birisi olan bu hesaplama tekniği, yarışmacıları övmek veya yargılamak yerine adil bir puantaj sistemi ile sıralanmasında büyük rol oynamakta. Üstelik bu formül sistemi 1950den beri hayatımızda…
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/satranc-ve-elo-puanlama-sistemi)

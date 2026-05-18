@@ -213,3 +213,4 @@ Modelde dikkat edilmesi gereken noktalardan biriside, Subject ve Observer tipler
 
 [Observer.rar (29,47 kb)](/assets/files/2009/Observer.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Observer)

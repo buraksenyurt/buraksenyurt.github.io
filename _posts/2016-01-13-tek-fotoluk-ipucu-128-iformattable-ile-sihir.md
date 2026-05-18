@@ -24,3 +24,4 @@ Kodun çalışma prensibi oldukça basit. Product sınıfı IFormattable arayüz
 
 Tabii kod içerisinde dikkat edilmesi gereken bir takım hususlar var. Örneğin Object tipinden gelen ToString metodu kullanılmak istendiğinde çalışma zamanı nasıl bir çıktı üretir. Yani product nesne örneği üzerinden ToString () çağırırsak ne olur? Bir şey olmazsa olması için ne yapılabilir? case "XML": sonrasında bir XML serileştirme yapılabilir. Tabii geriye string olarak dönülmelidir. `{0:` sonrası için farklı ifadeler de ele alınabilir. Bu kutsal görevi de siz değerli okurlarıma bırakıyorum. Böylece geldik bir ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-128-iformattable-ile-sihir)

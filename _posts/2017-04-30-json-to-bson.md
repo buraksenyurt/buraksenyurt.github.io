@@ -179,3 +179,5 @@ Yapılan ters serileştirme işlemi sonrası elde edilen ekran çıktısı da ş
 Görüldüğü gibi BSON içeriği başarılı bir şekilde ters-serileştirilerek nesne haline getirilebilmiştir.
 
 Örnekteki kod parçalarını biraz daha düzenlemeye çalışmanızı önerebilirim. Nitekim BSON dönüşüm operasyonları birer genişletme metodu (extension method) haline de getirilerek kullanımları daha kolay hele getirilebilir. Ayrıca Newtonsoft'un kütüphanelerine başvurmadan da JSON içeriği oluşturabilir ve Base64 kodlamasından yararlanarak BSON içerikleri üretebilirsiniz. Sonuçta JSON standartları belli. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/json-to-bson)

@@ -168,3 +168,6 @@ Burada atama işlemleri sadece bu sınıf içerisinden erişilebilen (private) b
 ![mk138_5.gif](/assets/images/2005/mk138_5.gif)
 
 Elbette bu şartlar göz önüne alındığında seçim yapmak zorlaşmaktadır. Hangisi olursa olsun çalışacaktır. Ancak ben performans açısından kayba neden olsa da, merkezileştirme, bakım ve onarım kolaylığı sağladığı düşünüldüğünde yapıcı başlatıcılarını (constructor initializers) kullanmayı tercih ediyorum. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Constructor-Initializers-(Yapıcı-Metod-Baslatıcıları)-Deyip-Gecmeyin-bsenyurt-com-dan)-Deyip-Gecmeyin-bsenyurt-com-dan)-Deyip-Gecmeyin-bs
+senyurt-com-dan)

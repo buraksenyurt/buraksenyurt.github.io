@@ -142,3 +142,5 @@ Bu Master Page'i başka bir sayfaya kolayca uygulayabiliriz. Örneğin Kitap.asp
 Şekil 11. Bir uygulamada farklı Master Page'lerin kullanılması.
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca, Master Page'lerin, uygulandıkları aspx sayfaları ile kombine bir şekilde nasıl çalıştıklarını incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ve-Master-Page-Kavramc4b1-bsenyurt-com-dan)

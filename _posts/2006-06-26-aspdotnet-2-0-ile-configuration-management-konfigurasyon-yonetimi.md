@@ -275,3 +275,6 @@ Bu konsol sayesinde aşağıdaki resimden de görülebileceği gibi hemen hemen 
 Bu makalemizde temel olarak Asp.Net 2.0 ile gelen yeni konfigurasyon alt yapısını (Configuration API) incelemeye çalıştık. Eğer bu API içerisindeki tipleri ve üyelerini inceleyecek olursanız, aslında bir sistemin tüm konfigurasyon ayarlarını çok kolay ve etkin bir şekilde programatik olarak yapabileceğimizi görürsünüz. Özellikle xml tabanlı konfigurasyon içeriklerini her hangi bir ayrıştırma (parsing) işlemine gerek duymadan yönetebilecek tiplerle sahip olmak son derece etkili ve verimli bir geliştirme ortamı sağlayacaktır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/ConfigMngAPI.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ile-Configuration-Management-(Konfigurasyon-Yonetimi)-bsenyurt-com-dan)-bsenyurt-com-dan)-bseny
+yurt-com-dan)

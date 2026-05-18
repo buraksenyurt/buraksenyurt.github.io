@@ -418,3 +418,5 @@ Dikkat ederseniz Faulted olay metodu içerisinde önce servis Abort metodu ile i
 Bu makalemizde WCF uygulamalarında hata yönetimini farklı şekillerde ele almaya çalıştık. Özellikle hata yönetiminin basit bir istisna yönetiminden çok daha farklı olmamakla birlikte farklı platformların söz konusu olduğu dağıtık bir ortamda daha titiz bir biçimde ele alınması gerektiğini öğrendik. Bunların dışında istemci tarafında oluşacak hataların sunucuya gönderilmesi istenebilir. Ancak istemcilerinin Java gibi farklı platformlar olabileceği göz önüne alınırsa istemcinin sunucuya göndereceği mesajların Soap Fault'a uygun olması gerekecektir. Bu konuyu inceleyip ilerleyen makalelerimizde ele almaya çalışacağız. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde WCF mimarisinin detaylarını incelemeye devam ediyor olacağız. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/FaultControl.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Hata-Yonetimi-(Fault-Management)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

@@ -33,3 +33,4 @@ Söyleşide değindiğimiz ve bakmanızın iyi olacağı linkler ise şu şekild
 
 Bir başka söyleşide görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/recep-duman-ile-raspberry-pi-hakkinda-konustuk)

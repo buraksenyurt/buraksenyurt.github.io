@@ -291,3 +291,5 @@ Görüldüğü gibi B isimli katılımcı Mesh ağına dahil olduktan sonra sist
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde WCF mimarisi üzerinde P2P (Peer-to-Peer) programlamaya giriş yapmaya çalıştık ve örnek olarak basit bir IRC senaryosu geliştirdik. Senaryoda, var olan PNRP (Peer Name Resolution Protocol) servisi yerine.Net Framework ile birlikte gelen CustomPeerResolverService sınıfını kullandık. İlerleyen makalelerimizde P2P tabanlı senaryolarda, geliştirici tarafından yazılmış özel bir peer çözümleyici servisin nasıl ele alınabileceğini ve güvenliği nasıl sağlayabileceğimizi incelemeye çalışacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/PeerToPeerProgramming.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-P2P(Peer-to-peer)-Programlamaya-Giris-bsenyurt-com-dan)-Programlamaya-Giris-bsenyurt-com-dan)-Programlamaya-Giris-bsenyurt-com-dan)

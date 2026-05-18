@@ -714,3 +714,5 @@ Nitekim TakeWhile metodunun SQL tarafında bir karşılığı yoktur. TakeWhile 
 Sonuç olarak programatik tarafta varlık katmanı (Entity Layer) üzerinde işlemlerimizi oldukça kolaylaştıran ve nesneler üzerinde sorgular çalıştırabilmemizi sağlayan LINQ to SQL'in gücü ortadadır. Ne varki performansın öne geçmesi gereken durumlarda, yazılan LINQ ifadelerinin arka planda oluşturduğu SQL çıktıları değerlendirilmeli ve en doğru şekilde kullanılmalarına gayret edilmelidir. Zaten zaman içerisinde benzer vakalar için en uygun LINQ söz dizimlerinin ne olacağı daha net bir şekilde ortaya çıkacaktır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/DahaFazlaLINQSorgusu2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Linq-To-Sql-Arka-Planda-Neler-Oluyor-bsenyurt-com-dan)

@@ -93,3 +93,5 @@ Geliştirici olarak SonarQube sunucusuna gelmeden önce de bir takım tedbirler 
 Pek tabii static kod analizi için geliştirme ortamı ile birlikte gelen ürünler de kullanılabilir. SonarQube, CI hattı ile entegre olabilen merkezi bir statik kod analiz aracı olduğu için local araçlara göre daha fazla tercih edilmekte. Aslında muadil olan ürünler de mutlaka var. Çok fazla araç bağımlısı olmamak da gerekiyor belki ama kod kalitesini arttırmak ve teknik borç yükünü azaltmak için farkındalık yaratacak araçlar bulunduğunu söyleyebiliriz. Biz yazılım geliştiricilerin de bu çerçevede düşünmesi gerekiyor. Eğer yeni bir ürün geliştirmeye başlıyorsanız boyutuna göre mutlaka statik kod analizine tabii olun derim.
 
 Farkında olalım, farkında kalalım.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/teknik-borclari-azaltmak)

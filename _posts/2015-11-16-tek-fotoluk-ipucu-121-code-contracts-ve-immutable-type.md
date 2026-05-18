@@ -30,3 +30,4 @@ Proje Özellikleri -> Code Contracts -> Perform Runtime Contract Checking aktifk
 
 Görüldüğü gibi ön koşullandırma (Precondition) özelliklerini kullanarak Immutable bir tipin ilk değerlerinin çeşitli kriterleri sağlamasını garanti etmemiz oldukça kolay. Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-121-code-contracts-ve-immutable-type)

@@ -295,3 +295,5 @@ Görüldüğü üzere RaptorDB, kullanımı ve felsefesi ile dikkat çekicidir. 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_RaptorDB.zip (162,25 kb)](/assets/files/2014/HowTo_RaptorDB.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/NoSQL-Maceralarc4b1-RaptorDB-ile-Hello-World)

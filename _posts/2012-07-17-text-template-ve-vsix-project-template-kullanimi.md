@@ -342,3 +342,5 @@ Görüldüğü üzere bir TT projesi VSIX ile bir arada değerlendirildiğinde V
 [Aşağıdaki örnek Visual Studio 2012 RC sürümü üzerinde ele alınmıştır]
 
 [DbClassGenerator.zip (105,75 kb)](/assets/files/2012/DbClassGenerator.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Text-Template-and-VSIX-Project-Template)

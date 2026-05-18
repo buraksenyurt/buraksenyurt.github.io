@@ -73,3 +73,4 @@ Kod parçamıza ait kısa notlarımıza gelince.
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Son üç yazıda Block, Proc ve Lambda kavramlarına değindik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-12-lambda)

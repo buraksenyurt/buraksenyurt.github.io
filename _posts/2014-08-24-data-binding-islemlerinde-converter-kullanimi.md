@@ -243,3 +243,5 @@ Sanırım Şimşeğin en kısa sürede pit alanına girmesi ve benzin alması gr
 Görüldüğü üzere söz konusu kontroller yakıt seviyesine göre arka plan renklerini değiştirmiş ve görsel açıdan kullanıcı deneyimi biraz daha iyi olan bir sonuç ortaya çıkmıştır. Siz de farklı senaryolarda farklı Converter tiplerini geliştirmeyi deneyerek antrenmanlar yapabilirsiniz. IValueConverter arayüzü sayesinde epey bir esnekliğimiz olduğunu fark etmişsinizdir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingConverters.zip (65,26 kb)](/assets/files/2014/UsingConverters.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Data-Binding-Islemlerinde-Converter-Kullanc4b1mc4b1)

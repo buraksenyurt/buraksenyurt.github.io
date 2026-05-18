@@ -285,3 +285,5 @@ Dikkat edileceği üzere dosyadan koleksiyona ekleme işlemleri gerçekleşmeden
 BlockingCollection tipinin farklı özellikleride bulunmakta. Bunlarıda yeri geldikçe incelemeye gayret edeceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ConcurrentCollections2.rar (27,67 kb)](/assets/files/2009/ConcurrentCollections2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Concurrent-Collections-(Es-Zamanlc4b1-Koleksiyonlar)-Macera-Devam-Ediyor)

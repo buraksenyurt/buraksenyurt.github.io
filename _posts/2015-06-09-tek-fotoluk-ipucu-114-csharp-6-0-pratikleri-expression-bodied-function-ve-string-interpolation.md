@@ -18,3 +18,4 @@ Eric Vogel'e göre C# 6.0 ile birlikte dile kazandırılan yenilikler kodun daha
 
 Kodun daha okunabilir olduğu konusunda hem fikir olmakla birlikte, yorumu yine de size bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-114-c-6-0-pratikleri-expression-bodied-function1)

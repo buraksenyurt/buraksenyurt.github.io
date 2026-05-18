@@ -151,3 +151,5 @@ public Atom10FeedFormatter GetFeed(short stockSize)
 Evettt..Böylece geldik bir blog yazımızın daha sonuna. Bu kısa yazımızda WCF REST Starter Kit'i kullanarak bir Atom Feed WCF Service'in nasıl geliştirilebileceğini gördük. Ama dahada önemlisi, WebGet niteliği yardımıyla ön bellekleme işlemlerinin nasıl yapılabileceğine bakmaya çalıştık. Görüşmek dileğiyle...
 
 Örnek Dosya; [Caching.rar (107,66 kb)](/assets/files/2009/Caching.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Rest-Servislerinde-Onbellekleme(Caching))))

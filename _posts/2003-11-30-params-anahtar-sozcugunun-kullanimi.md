@@ -183,3 +183,5 @@ Bu durumda ekran görüntümüz Şekil 5 teki gibi olur.
 Şekil 5. Bu kez 3 tablo gönderdik.
 
 Umuyorumki params anahtar sözcüğü ile ilgili yeterince bilgi sahibi olmuşsunuzdur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Params-Anahtar-Sozcugunun-Kullanımı-bsenyurt-com-dan)

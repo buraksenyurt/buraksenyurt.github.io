@@ -310,3 +310,4 @@ Böylece geldik bir tasarım kalıbının daha sonuna. Tekrardan görüşünceye
 
 [IteratorPattern.rar (30,73 kb)](/assets/files/2009/IteratorPattern.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Iterator)

@@ -280,3 +280,5 @@ func main() {
 ![cselect.gif](/assets/images/2017/cselect.gif)
 
 Böylece geldik bir gopher olma çalışmamızın daha sonuna. Bu yazımızda Concurrency konusunun iki önemli kavramına değinmeye çalıştık. Go dili ile ilgili bir şeyler öğrendikçe yazmaya devam edeceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/GoLang-Concurrency-goroutine-channel)

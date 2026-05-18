@@ -216,3 +216,5 @@ namespace HelloTFSCOM
 Bu yazımızda TFS Client Object Model ile basit de olsa el sıkışmaya çalıştık. Elbetteki örneği devam ettirip ilerletmek sizin elinizde. Söz gelimi iyi bir antrenman olarak Visual Studio Team Explorer penceresinin bir benzerini ve hatta Windows Phone 8 veya Windows 8 üzerinde çalışacak şekilde zengin kullanıcı deneyimi sunacak olan bir türevini geliştirebilirsiniz. Dokunmatikliği işin içerisine katın. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloTFSCOM.zip (181,68 kb)](/assets/files/2013/HelloTFSCOM.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFS-2012-Client-Object-Model-icin-Hello-World)

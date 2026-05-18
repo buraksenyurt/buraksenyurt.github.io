@@ -139,3 +139,5 @@ magic.rb isimli dosya ffi gem paketini kullanıyor. ShapeMath isimli bir module 
 ![gowithruby_2.gif](/assets/images/2017/gowithruby_2.gif)
 
 Elbette işler her zaman bu kadar basit olmayabilir. GO'da var olan bir takım türlerin çağırılmak istenen programlama dilinde karşılığı olmayabilir. Örneğin bir Slice ya da map kulladığımız fonksiyonlar ya da bizim tarafımızdan tanımlanmış yapılar (struct) nasıl eşleştirilmelidir. Ruby'de, Pyhton'da, C# tarafında bu tipler nasıl ele alınmalıdır. Doğru dönüşümleri yapabilmek bu açıdan önemli. Bu "Hello World" tadındaki örnek sadece bu işin yapılabildiğini gösterir niteliktedir. Daha fazlası için Google:) Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-bir-go-paketini-ruby-den-cagirmak)

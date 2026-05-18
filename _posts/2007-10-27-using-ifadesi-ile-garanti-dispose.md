@@ -235,3 +235,5 @@ Bu desendeki yaklaşım kısaca şudur; nesnemizi eğer Dispose metodunu kullana
 Nesnemizin illede açıkça Dispose edilmesi gibi biri durum söz konusu değildir. Pekala, nesne doğal yollardan scope dışına çıktığında GC tarafından serbest bırakılabilir. İşte bu serbest bırakma anından hemen önce desctructor metodu devreye girmektedir. Desctructor metodumuzdan yine overload ettiğimi virtual Dispose metodumuzu çağırırız. Ancak bu kez managed kaynaklar zaten GC tarafından serbest bırakılacağından durumu müdahale etmeyiz. Bu yüzden metoda parametre false olarak gönderilir. Ancak yine de unmanaged kaynaklar bizim tarafımızdan serbest bırakılacaktır. Son olarak Dipose metodumuzda kullandığımız GC.SuppressFinalize metod çağırımı ile o anki nesneye ait sonlandırma kuyruğundaki kaynaklarıda serbest bırakmış oluruz.
 
 Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Using-Ifadesi-ile-Garanti-Dispose)

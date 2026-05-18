@@ -737,3 +737,5 @@ Hepsi bu kadar. Çok temel seviyede basit CRUD operasyonlarını gerçekleştire
 - Bir Bootstrap Modal Popup bileşeninin nasıl tasarlanabileceğini (jquery.min.js ve bootstrap.min.js ler olmadan işletemediğimi)
 
 Böylece geldik birinci faza ait [35nci bölüm](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2035%20-%20Server%20Side%20Blazor%20with%20Firestore) derlemesinin sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/sunucu-bazli-blazor-uygulamasi-ve-firestore-kullanimi)

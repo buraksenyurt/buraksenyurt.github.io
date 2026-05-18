@@ -166,3 +166,5 @@ Bu adımdan sonra 30 saniyelik süre dolmadan tekrar Get düğmesine basarsanız
 Tüm bunlar bir yana en iyi test yöntemlerinden biriside uygulmayı Debug ederek incelemeniz olacaktır ki bunu yapmanızı şiddetle tavsiye ederim. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingObjectCache.rar (42,82 kb)](/assets/files/2009/UsingObjectCache.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-40-Heryerde-Cache)

@@ -139,3 +139,5 @@ REST modeli öylesine tutuldu ki WCF 4.0 içerisinde zaten gömülü olarak daha
 [NorthwindServices.rar (16,34 kb)](/assets/files/2009/NorthwindServices.rar)
 
 Artık dinlenmeye çekilebilir miyim acaba?
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Soap-Bazlı-WCF-Servislerini-REST-Modeline-Tasımak)

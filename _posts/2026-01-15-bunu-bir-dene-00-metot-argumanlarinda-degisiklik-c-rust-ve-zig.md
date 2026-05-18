@@ -390,3 +390,5 @@ Peki ya tüm bunlar bana neler öğretti (neleri hatırlattı?) Şöyle özetley
 Böylece küçük bir merakla başlayan deneysel çalışmamın bir bölümünü tamamlamış oldum. Umarım faydalı olmuştur. Diğer yandan buradaki uygulama pratiklerinde single-thread çalışan bir ortamda çok sorun yaşamadan ilerledik. Ancak birden fazla iş parçacığının (multi-thread) aynı veri yapısına ait nesne örneğinde değişiklik yapmaya çalıştığı durumlarda işin rengi değişecektir. Bu tip senaryoları da ilerleyen zamanlarda ele almak istiyorum. Sonraki yazımızda görüşmek dileğiyle, hepinize mutlu günler dilerim.
 
 Kaynak kodlara [github reposundan](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/try-this-00) ulaşabilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bunu-bir-dene-00-metot-argumanlarinda-degisiklik-c-rust-ve-zig)

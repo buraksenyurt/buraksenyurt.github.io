@@ -18,3 +18,5 @@ Elimizde bir Uri nesne örneği olduğunu varsayalım. Bu Uri adres bilgisinden 
 ![tfi_66](/assets/images/2012/tfi_66.png)
 
 Bir başka tek fotoluk ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-66-Protokol-ve-Port-Numarasini-Bulmak)

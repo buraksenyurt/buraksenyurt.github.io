@@ -77,3 +77,5 @@ public static ParallelLoopResult ForEach (IEnumerable source, ActionParallelLoop
 Bu sınıf içerisinde Stop, Break gibi paralel döngünün durdurulması veya dışına çıkılması için gerekli metodlar yer almaktadır. Örneğimizde Action temsilcisinin kullanıdığı ikinci generic parametre, çalışma zamanındaki ParallelLoopState nesne örneğine denk gelmektedir. Ve sonuç...
 
 Tekrardan görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TPL-Iptal-Islemi)

@@ -19,3 +19,5 @@ Hiç bir zaman kullanıcılarımıza ait şifreleri açık formatta saklamamamı
 ![PhotoTrick31](/assets/images/2011/PhotoTrick31.png)
 
 [Hashing.rar (21,76 kb)](/assets/files/2011/Hashing.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-31(Hashing))))

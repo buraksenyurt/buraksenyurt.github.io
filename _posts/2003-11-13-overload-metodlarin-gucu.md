@@ -192,3 +192,5 @@ Peki ya yanlış kullanıcı adı veya parola girersek.
 Şekil 8. Yanlık kullanıcı adı veya parolası sonrası.
 
 Evet değerli MsAkademik okuyucuları bu seferlikte bu kadar. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler, yarınlar dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/overload-metodlarin-gucu)

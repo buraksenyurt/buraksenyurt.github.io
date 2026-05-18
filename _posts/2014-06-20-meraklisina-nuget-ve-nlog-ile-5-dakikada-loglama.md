@@ -13,3 +13,5 @@ Loglama kodlamanın vazgeçilmez unsurlarından birisidir. Ayrıca Enterprise se
 Günümüzde loglama özelliği taşımayan bir Enterprise çözüm görmemiz neredeyse imkansızdır. Ar-Ge ve taşıdığı yazılım prensiplerinin uygulanma şekillerini öğrenmek gibi amaçlar dışında kimse sıfırdan bir Loglama mekanizması geliştirmemektedir. Bunun yerine hazır olarak sunulan açık kaynak kütüphanaler kullanılmaktadır. Hatta elinizin altında NuGet gibi bir paket yönetim aracı varsa, üzerinde çalıştığınız projeye birkaç adımda loglama kabiliyeti kazandırmak oldukça kolaydır. Nasıl mı? Haydi gelin 5 dakikada loglama yapalım.
 
 Not: Güncel NLog sürümünü kontrol edin. Metodların kullanım şekillerinde farklılıklar olabilir ama teori aynıdır.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Meraklc4b1sc4b1na-NuGet-ve-NLog-ile-5-Dakikada-Loglama)

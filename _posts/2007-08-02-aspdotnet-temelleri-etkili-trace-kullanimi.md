@@ -499,3 +499,5 @@ Trace çıktısı ise aşağıdaki gibi olacaktır.
 Trace mimarisi ile ilgili olaraktan, ele alınabilecek başka konularda bulunmaktadır. Örneğin Trace bilgilerini başka ortamlara aktarmak, mail gönderimi gerçekleştirilmesi gibi. Tatile çıktığım şu günlerde bu kadar bilginin yeterli olacağı kanısındayım. Dönüşte Trace mimarisinin ikinci makalesi ile devam edeceğiz. Böylece geldik bir makalemizin daha sonuna. Bu makalemizde trace mimarisini tanımaya, gerekliliklerini vurgulamaya çalıştık. Sayfa seviyesinde ve uygulama seviyesinde trace işlemlerinin nasıl yapılacağını, sadece istisna oluştuğunda yanlız yerel makineye trace bilgisinin nasıl verileceğini, bileşen bazında trace'lerin kullanılmasını ve bileşenin web ortamından bağımsız olabilecek şekilde ele alınabilmesini incelemeye çalıştık. Nihayetinde bu uzun makaleyi buraya kadar sabırla okuduğunuz için teşekkür eder bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/EtkiliTraceveDebug.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-Temelleri-Etkili-Trace-Kullanc4b1mc4b1-bsenyurt-com-dan)

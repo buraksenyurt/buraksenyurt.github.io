@@ -94,3 +94,5 @@ namespace SPAndComplexType
 Böylece geldik bir yazımızın daha sonuna. Ado.Net Entity Framework 4.0 ile ilişkili yenilikleri öğrendikçe sizlerede aktarmaya çalışıyor olacağım. Bu konuda ilk elden bilgi almak isteyen arkadaşlarımızın[Ado.Net Team Blog'](http://blogs.msdn.com/adonet/default.aspx)unu mutlaka takip etmesini öneririm. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SPAndComplexType.rar (36,40 kb)](/assets/files/2009/SPAndComplexType.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Entity-Framework-40-Stored-Procedures-ve-Complex-Types)

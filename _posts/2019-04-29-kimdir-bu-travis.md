@@ -237,3 +237,5 @@ Pek tabii bu çalışma sırasında da öğrendiğim bir çok şey oldu. Kabaca 
 - git push sonrası işletilen Build sürecinin izlenmesini
 
 Böylece geldik bir maceranın daha sonuna. Sanırım Startup tadında bir projeye başlayacak olsak, takımın geliştirme sürecinde CI aracı olarak Travis'i alternatif olarak düşünebiliriz. Kullanımının kolay olması, github ile entegre çalışabilmesi ve bu nedenle push işlemleri sonrası build işlemlerinin otomatik olarak başlaması cezbedici özelliklerden. Tekrardan görüşünceye dek hepinize mutu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kimdir-Bu-Travis)

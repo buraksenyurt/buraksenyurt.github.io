@@ -166,3 +166,6 @@ ORDER BY A.RANK DESC
 ```
 
 sorgusu yardımıyla Datarela ile başlayan sözcükleri içeren alanların olduğu veri kümesini elde edebiliriz. CONTAINS ve CONTAINSTABLE aramalarında kullanabileceğimiz diğer operatörler için Sql Help'e bakabilirsiniz. Bu makalemizde Full-Text Searching (Tüm Metinde Arama) işlemlerinin nasıl yapıldığını incelemeye çalıştık. Umuyorum ki yararlı bir makale olmuştur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-ile-Sql-Server-Full-Text-Searching-(Tum-Metinde-Arama)-Kullanc4b1mc4b1-bsenyurt-com-dan)-Kullanc4b1mc4b1-bsenyurt-com-dan)-Kullanc4
+4b1mc4b1-bsenyurt-com-dan)

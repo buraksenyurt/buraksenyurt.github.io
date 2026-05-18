@@ -482,3 +482,5 @@ Burada istemci tarafında veri sözleşmesinin yeni üyeler içeren bir versiyon
 Böylece geldik WCF mimarisinde serileştirme, versiyonlama ve çözümleme ile ilgili ilk makalemizin sonuna. Devam eden makalemizde versiyonlama koşullarını örnekler üzerinden incelemeye çalışacağız. Özellikle Round-Trip hallerinde IExtensibleDataObject arayüzü kullanımını, IsRequired özelliğinin değerinin Missing Members vakasına olan etkisini, serileştirilen tipler için vekil (Surrogate) tip kullanımını ve çözümleyiciler (Encoders) arasında karar vermede dikkat edilmesi gereken hususları irdeliyor olacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WCFSerializationAndEncoding.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Serilestirme(Serialization)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

@@ -199,3 +199,5 @@ West-World şimdi biraz daha mutlu. Çünkü.Net Core 2.0 ile yazılmış bir pr
 ![core_docker_11.gif](/assets/images/2017/core_docker_11.gif)
 
 Docker,.Net Core gibi konular önümüzdeki yıllarda geliştiricilerin iyi şekilde hakim olması gereken konular arasında yer alıyor. Vakit ayırıp planlı bir şekilde çalışmak lazım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/docker-uzerinde-net-core-uygulamasi-calistirmak)

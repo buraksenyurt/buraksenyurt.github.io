@@ -123,3 +123,5 @@ Bu durumda, sunucu kontrolümüz aşağıdaki gibi görünecektir.
 Şekil 10. PathDirection özelliği CurrentToRoot yapıldığında.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde, TreeView kontrolü yardımıyla navigasyon işlemlerinin nasıl yapıldığını incelemeye çalışacağız. Şimdilik hoşçakalın.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-icin-Site-Map-Kullanc4b1mc4b1-bsenyurt-com-dan)

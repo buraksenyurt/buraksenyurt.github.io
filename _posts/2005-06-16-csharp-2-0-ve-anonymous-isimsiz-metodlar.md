@@ -230,3 +230,5 @@ private void InitializeComponent()
 ```
 
 İsimsiz metodlar uygulanışları açısından biraz karışık görülebilir. En azından alışıncaya kadar. Ancak kavrandıklarında çok faydalı olduklarını söyleyebiliriz. Nitekim temsilci nesnelerimizin tanımlaması gereken yerlerde direkt olarak kod bloklarını kullanmak oldukça kullanışlı bir teknik olarak karşımıza çıkmaktadır. Bu makalemizde C# 2.0 ile birlikte gelen isimsiz metod kavarmını, her zaman için içiçe olduğu temsilciler ile birlikte incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-ve-Anonymous-(Isimsiz)-Metodlar-bsenyurt-com-dan)-Metodlar-bsenyurt-com-dan)-Metodlar-bsenyurt-com-dan)

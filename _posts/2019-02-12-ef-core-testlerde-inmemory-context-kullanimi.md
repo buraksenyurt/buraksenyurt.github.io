@@ -299,3 +299,5 @@ SqliteConnection tipinden bir nesne oluşturuyor ve parametre olarak verdiğimiz
 Kuvvetle muhtemel ilerleyen dönemlerde özellikle kolay test yapabilmek için farklı opsiyonlarda karşımıza çıkabilir. Şu an için genel amaçlı kullanılan ve belli başlı CRUD operasyonlarını içeren Entity Framework tabanlı servislere ait test senaryolarında değerlendirebileceğimiz iki önemli seçenek var. InMemory veya ilişkisel modele biraz daha yakın durabilen SQLite'ın InMemory versiyonu. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kodlara github üzerinden erişebilirsiniz](https://github.com/buraksenyurt/dotnetcore/tree/master/EF/Testing)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/EF-Core-Testlerde-InMemory-Context-Kullanımı)

@@ -131,3 +131,5 @@ Kodu denediğimiz akışta mngr isimli ConfigurationManager sınıf örneğinin 
 ![rsingleton_3.gif](/assets/images/2017/rsingleton_3.gif)
 
 Böylece geldik bir Ruby kod parçacığımızın daha sonuna. Bu yazıda Ruby dilinde Singleton tasarımın kalıbının ne kadar kolay uygulanabildiğini ve nesne durumlarının saklanması için Marshal modülünden nasıl faydalanabileceğimizi gördük. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-32-singleton)

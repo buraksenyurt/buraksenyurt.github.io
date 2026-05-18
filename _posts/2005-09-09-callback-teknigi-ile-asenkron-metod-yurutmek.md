@@ -219,3 +219,5 @@ Callback modeli yardımıyla asenkron işlemlerin gerçekleştirilmesi özellikl
 Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Kodlar İçin Tıklayınız.](/assets/files/2005/AsyncCallback.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/CallBack-Teknigi-ile-Asenkron-Metod-Yurutmek-bsenyurt-com-dan)

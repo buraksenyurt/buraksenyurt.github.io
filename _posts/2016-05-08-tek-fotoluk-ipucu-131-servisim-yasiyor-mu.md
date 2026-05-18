@@ -21,3 +21,4 @@ Check isimli genişletme metodunu Uri tipine uygulayabiliyoruz. Metod geriye Htt
 
 Pek tabii fonksiyonun bağzı eksikleri var. Örneğin sadece servislerin yaşayıp yaşamadığını kontrol etmek istiyorsak asmx, html gibi içerikleri bu işin dışında tutmalıyız. Ya da servisin geçerli bir adres olup olmadığını denetlemeliyiz. Bizim metodumuz biraz genel bir metod oldu diyebiliriz. Yani herhangibir Uri'nin yaşayıp yaşamadığını öğreniyoruz. Ancak amaca özel hale getirmek daha mantıklı olabilir. Sadece WCF Servisleri için kontrol yapsın, sadece ASMX ler için yapsın, sadece REST tabanlı olanlar için yapsın ve benzerleri. Bu kararı da metoda biz söyleyebiliriz belki de. Bu kutsal görevleri siz değerli okurlarıma bırakıyorum. Canınız mı sıkılıyor? Buyrun düzeltilecek, uğraşılacak bir şeyler. Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-131-servisim-yasiyor-mu)

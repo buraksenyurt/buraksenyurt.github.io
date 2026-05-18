@@ -34,3 +34,4 @@ Dapper.Net benim çok hoşuma gitti. Özellikle işin içerisinde Stackoverflow 
 
 Başka bir ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-113-dapper-net-ile-hello-world)

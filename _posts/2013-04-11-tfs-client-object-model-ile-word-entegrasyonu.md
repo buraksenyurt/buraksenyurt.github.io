@@ -187,3 +187,5 @@ Bu nokta da örneğimizin aslında sadece bir Hello World olduğunu ifade etmem 
 ve benzeri pek çok eksik bulunabilir. Ancak amacımıza ulaştığımızı ve her zaman ki gibi kapıyı sadece araladığımızı, ardına kadar açmak için sizin çaba sarf etmeniz gerektiğini hatırlatmak isterim. Böylece geldik bir yazımızın daha sonuna. Team Foundation Server ile ilişkili araştırmalarıma fırsat buldukça devam ediyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_TFSandWord.zip (208,21 kb)](/assets/files/2013/HowTo_TFSandWord.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFS-Client-Object-Model-ile-Word-Entegrasyonu)

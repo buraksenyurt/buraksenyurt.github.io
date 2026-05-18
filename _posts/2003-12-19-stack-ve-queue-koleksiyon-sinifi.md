@@ -127,3 +127,5 @@ namespace QueueSample1
 Şekil 4. Queue ile ilgili programın çalışmasının sonucu.
 
 Geldik bir makalemizin daha sonuna. Umuyorumki sizlere faydalı olabilecek bilgiler sunabilmişimdir. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Stack-ve-Queue-Koleksiyon-Sınıfı-bsenyurt-com-dan)

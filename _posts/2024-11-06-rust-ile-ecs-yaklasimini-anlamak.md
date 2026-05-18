@@ -22,3 +22,5 @@ Bu bölümde önce klasik, sonrasında Composition over Inheritance yaklaşımla
 [Youtube Link](https://www.youtube.com/watch?v=KaxEnExhNrk)
 
 Bir başka bölümde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-ile-ecs-yaklasimini-anlamak)

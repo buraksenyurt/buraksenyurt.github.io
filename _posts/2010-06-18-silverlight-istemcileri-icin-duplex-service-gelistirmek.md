@@ -196,3 +196,5 @@ Bu içeriğe sahip olan ClientAccessPolicy.xml dosyasının ise WCF Servisimizi 
 Artık farklı bir domainde yer alan herhangibir Silverlight istemcisi WorldWeatherService'ini kullanabilecektir. Artık geride istemci tarafının yazılması ve test edilmesinden başka bir şey kalmamıştır. Ancak biraz nefes alalım ve bunu bir sonraki yazımıza bırakalım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WorldWeatherService.rar (157,92 kb)](/assets/files/2010/WorldWeatherService.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir.]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Silverlight-Istemcileri-icin-Duplex-Service-Gelistirmek)

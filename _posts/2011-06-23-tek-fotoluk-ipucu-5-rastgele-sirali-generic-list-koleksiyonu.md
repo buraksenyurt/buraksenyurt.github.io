@@ -16,3 +16,5 @@ Elinizde List tipinden bir koleksiyon var ve içerisindeki nesnelerden rastgele 
 ![PhotoTip5](/assets/images/2011/PhotoTip5.png)
 
 [RandomList.rar (22,53 kb)](/assets/files/2011/RandomList.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-5)

@@ -277,3 +277,5 @@ Görüldüğü üzere yapılan yeni güncelleme build işlemi sonrasında istemc
 Bu senaryoda dikkat edilmesi gereken nokta, Add Service Reference veya Update Service Reference gibi seçeneklerin kullanılmamış olmasıdır. Diğer yandan size düşen görev neden bu senaryo için Asp.Net Web Site şablonunun tercih edildiğinin bulunmasıdır? Aynı durum Asp.Net Web Application tipleri için söz konusu olamaz mı? Söz konusu olamazsa, iki uygulama şekli arasındaki farklılıklar nelerdir? Yani Web Site’ ın Web Application’ dan farkı nedir? Peki ya bu senaryo Visual Studio 2013 ile gelen yeni nesil web projesi şablonlarında nasıl ele alınabilir? Elbette bu soruları da araştırmak gerekmektedir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Karma.zip (48,65 kb)](/assets/files/2014/Karma.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Referans-Guncellemeden-Guncelleme-Yapmak)

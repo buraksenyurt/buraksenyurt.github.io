@@ -13,3 +13,5 @@ Bazen web sayfalarının yüklenmesi sırasında senkron olarak çalışan ve uz
 .Net dünyasında bu tip asenkron işleri kolaylaştıran async, await keyword’ leri artık yaygın olarak kullanılmakta. Lakin Web dünyasında biraz daha dikkatli olmak gerekir. Nitekim bir web sayfasının yaşam döngüsü (Page Life-Cycle), async geri bildirimlerini sorunsuz şekilde ele alan Windows UI Thread’ lerinden biraz daha farklı çalışmaktadır. Güvenilir ve stabil bir ortam söz konusu değildir. Dahası HTTP 503 hatasının alınmasına neden olabilecek vakalar vardır. İşte bu görsel dersimizde bir sayfanın yüklenmesi esnasında asenkron hale getirilmesi istenen işlemlerde uygulanabilecek doğru ve tavsiye edilen bir pratiği incelemeye çalışacağız.
 
 Bir başka görsel dersimizde görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNete28093Dogru-async-await-Kullanc4b1mc4b1)

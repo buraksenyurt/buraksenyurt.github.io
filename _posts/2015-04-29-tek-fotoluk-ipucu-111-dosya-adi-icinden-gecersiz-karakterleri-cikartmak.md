@@ -15,3 +15,5 @@ Diyelim ki elinizde bir takım dosya adları var. Bu dosya adları herhangi bir 
 ![tek fotoluk ipucu 111 dosya adi icinden gecersiz karakterleri cikartmak 01](/assets/images/2015/tek-fotoluk-ipucu-111-dosya-adi-icinden-gecersiz-karakterleri-cikartmak-01.png)
 
 Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tfi-111-dosya-adi-icinden-gecersiz-karakterleri-cikartmak)

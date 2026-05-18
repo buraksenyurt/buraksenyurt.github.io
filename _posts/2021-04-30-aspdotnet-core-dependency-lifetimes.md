@@ -218,3 +218,5 @@ Bu örnekle bağımlı bileşenlerin nesne ömürlerinin nasıl şekillendiği k
 - Çalışma zamanının herhangi bir noktasında DI Container'a kayıt edilmiş servisleri tek tek veya toplu olarak silebilir miyiz?
 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize sağlıklı, huzur dolu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/asp-net-core-dependency-lifetimes)

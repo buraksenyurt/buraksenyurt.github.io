@@ -87,3 +87,5 @@ Peki ya çözüm?
 En ideal çözüm istemci tarafında kullanıcının rolüne göre ilgili alanının gizlenmesi olarak düşünülebilir. Ancak buda optimal bir çözüm olmayacaktır. Nitekim sunucu tarafında ele alınması gereken güvenlik konulu bir iş mantığını istemeden istemci tarafına taşımak zorunda kalmış oluruz. Tabi en büyük sıkıntılardan birisi şudur. Sunucu tarafında bu rol kontrolünü başarabilsek dahi, istemci tarafında gönderilecek entity örneklerinin dinamik olarak değişebiliyor olması gerekecektir. Oldukça zor bir işlem aslında...
 
 Anlaşılan bu konuda WCF RIA Services tarafında bir eksiklik var. Bende en ideal çözüm için araştırmalarıma devam ediyorum. Bakalım lambanın üzerine koyduğumuz şapkadaki deliği kapatabilecek miyiz? Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Alan-Bazli(Field-Based)-Rol-Kontrolu)-Rol-Kontrolu)-Rol-Kontrolu)

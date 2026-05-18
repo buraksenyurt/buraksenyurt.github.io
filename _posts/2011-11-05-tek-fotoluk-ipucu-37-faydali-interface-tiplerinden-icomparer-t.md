@@ -16,3 +16,5 @@ categories:
 ![PhotoTrick37](/assets/images/2011/PhotoTrick37.png)
 
 [Sorting.rar (24,13 kb)](/assets/files/2011/Sorting.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-37(Faydali-Interface-Tiplerinden-IComparer3cT3e))

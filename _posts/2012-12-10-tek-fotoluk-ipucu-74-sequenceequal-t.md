@@ -20,3 +20,5 @@ Diyelim ki uygulamanızda zaman zaman da olsa farklı referanslar da duran ve ay
 Bu kadar basit. Bir başka ip ucunda görüşmek dileğiyle.
 
 **Not:** SequenceEqual metodu kaynak ve hedef koleksiyonların sıralı olduğunu varsayar. Yani yukarıdaki örnekte koleksiyonların içeriklerini farklı sırada tutarsak sonuç False dönecektir.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-SequenceEqual-ile-Collection-Karsilastirma)

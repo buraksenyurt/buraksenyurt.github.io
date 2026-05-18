@@ -352,3 +352,6 @@ Silme işleminde istemci tarafında sırasıyla DeleteObject ve SaveChanges meto
 Görüldüğü üzere kendi geliştirdiğimiz Custom LINQ Provider'ların kullanıldığı senaryolarda en kritik nokta IUpdatable arayüzünün kullanılmasıdır. Bu arayüzün yazımızda kullanılan örnek implemantasyonu ile basit CUD işlemleri gerçekeştirilebilir. Böylece geldik Ado.Net Data Service'ler ile ilişkili bir ders notumuzun daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği indirmek için tıklayın](/assets/files/2008/UsingIUpdatable.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-Data-Services-Ders-Notlarc4b1-5-(Custom-LINQ-Provider-CUD)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsen
+nyurt-com-dan)

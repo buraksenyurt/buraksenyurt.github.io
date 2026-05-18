@@ -609,3 +609,5 @@ Elbette burada gözden kaçırılmaması gereken bazı noktalar vardır. Önceli
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca WCF servis uygulamalarının AJAX destekli olacak şekilde nasıl geliştirilebildiklerini incelemeye çalıştık. Burada önemli olan JSON veri formatı ile ilişkin olaraktanda.Net Framework 3.5 ile gelen DataContractJsonSerializer tipini inceleme fırsatı bulduk. Son olarakta JSON formatında içerik sunan bir WCF servisinin AJAX tabanlı bir istemci ile nasıl çağırılabileceğini inceledik. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/AjaxDestegi.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AJAX-ve-JSON-Destegi-bsenyurt-com-dan)

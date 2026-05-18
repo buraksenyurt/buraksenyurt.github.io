@@ -202,3 +202,5 @@ ki buda tam anlamıyla JSON çıktısıdır.
 Çıktının JSON veya XML harici formatlarda olması da söz konusudur aslında. Bu formatların nasıl ele alınacağını ise ilerleyen yazılarımızda değerlendirmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson3_RC.rar (173,29 kb)](/assets/files/2010/Lesson3_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Services-JSON-Formatli-Response-Uretmek)

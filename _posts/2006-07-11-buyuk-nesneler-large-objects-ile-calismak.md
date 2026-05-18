@@ -167,3 +167,5 @@ InsertCity metodunu inceleyecek olursak jpg uzantılı resim dosyalarını varbi
 Görüldüğü gibi yeni gelen metodlar, büyük nesneler ile çalışırken oldukça büyük kolaylıklar getirmiştir. Buna rağmen 8000 byte sınırını bizim için önemli bir çizgidir. Genellikle bu değeri aşan kaynakları saklarken parça parça okuma ve yazma yöntemleri tercih edilmelidir. Bu yöntemlerden biriside Sql Server üzerinde UpdateText ve TextPtr anahtar sözcüklerinin kullanıldığı tekniktir. Bu tekniği ilerleyen yazılarımızda (yada bir görsel dersimizde) incelemeye çalışacağız. Son olarak, büyük nesnelerin veritabanında saklanmasının güvenlik, kontrol edilebilirlik ve taşınabilirlik açısından büyük avantajlar sağladığını ancak optimum performans için ekstra çaba gerektirdiğinide göz ardı etmemekte fayda olacağını söyleyelim. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/LOBs.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Buyuk-Nesneler(Large-Objects)-ile-Calısmak-bsenyurt-com-dan)-ile-Calısmak-bsenyurt-com-dan)-ile-Calısmak-bsenyurt-com-dan)

@@ -117,3 +117,5 @@ private void lstKitaplar_SelectedIndexChanged(object sender, System.EventArgs e)
 Şekil 8. Sonuç.
 
 Geldik bir makalemizin daha sonuna. Yeni makalelerimizde görüşmek dileğiyle, hepinizi mutlu günler.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Sayfalarc4b1nda-Stored-Procedure-Kullanc4b1mc4b1c2a0-bsenyurt-com-dan)

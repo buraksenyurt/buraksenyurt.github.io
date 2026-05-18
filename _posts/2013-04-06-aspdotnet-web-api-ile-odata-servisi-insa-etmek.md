@@ -18,3 +18,5 @@ Bu görsel dersimizde, Asp.Net Web API’ den yararlanarak OData (Open Data) pro
 [Youtube Link](https://www.youtube.com/watch?v=0UZ1R24iDHI)
 
 Görsel derste bahsettiğimiz Scott Guthrie’ nin Announcing Release of Asp.Net and Web Tools 2012.2 Update isimli yazısına da [bu adresten](http://weblogs.asp.net/scottgu/archive/2013/02/18/announcing-release-of-asp-net-and-web-tools-2012-2-update.aspx) erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-Web-API-ile-OData-Servisi-Insa-Etmek)

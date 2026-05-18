@@ -22,3 +22,5 @@ Hatırlayacağınız üzere Ocak ayı içerisinde [Nedirtv?com](http://www.nedir
 Ayrıca Webinerdeki örnek kodlarımızı da aşağıdaki bağlantıdan tedarik edebilirsiniz. Şubat ayı içerisindeki Webiner planımıza göre bir aksilik olmassa yine Entity Framework tarafında Migration konusunu irdelemeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Değerli kardeşim Bahtiyar'a Webineri kayıt edip bize ulaştırdığı için canı gönülden teşekkür ediyorum.
 
 [EFCodeFirst.rar (1,02 mb)](/assets/files/2012/EFCodeFirst.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Code-First-Development-Webiner-Kayidi)

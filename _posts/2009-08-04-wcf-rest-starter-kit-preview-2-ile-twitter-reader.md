@@ -160,3 +160,5 @@ Her şeyden önce asenkron bir erişim söz konusu değildir. Bu nedenle veriler
 Bunları deneyin ve çok daha iyisini yapmaya çalışın. Umarım yararlı bir yazı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TwitterReader.rar (187,66 kb)](/assets/files/2009/TwitterReader.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Rest-Starter-Kit-Preview-2-ile-Twitter-Reader)

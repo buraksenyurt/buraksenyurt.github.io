@@ -251,3 +251,5 @@ Görüldüğü gibi web metoda gönderdiğimiz dizi elemanları double XML veri 
 ```
 
 Sonuçlar yine double XML veri tipi elemanı olarak geri döndürülmüştür. Şu ana kadar yaptığımız örneklerde, istemci uygulamanın web servisindeki sınıf ve metodları bir proxy nesnesi yardımıyla nasıl kullandığına şahit olduk. Peki istemci bir uygulama, kendisine web referansı olarak eklediği web servisine dair bir proxy nesnesini nasıl oluşturabildi? Bu sorunun cevabını Web Servislerinin SOAP’ tan sonra olmassa olmaz materyali olan WSDL verebilir. WSDL konusunu bir sonraki makalemizde incelemeye çalışacağız. Tekrarda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Xml-Web-Servisleri-3-(-Mimarinin-Temelleri-SOAP)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

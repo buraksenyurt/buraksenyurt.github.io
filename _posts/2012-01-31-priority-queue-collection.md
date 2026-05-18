@@ -220,3 +220,5 @@ Burada dikkat edilmesi gereken nokta Dequeue metodunun her zaman için öncelik 
 Görüldüğü gibi biraz uğraşarak öncelikli derecelendirmeli bir kuyruk koleksiyonu tipini yazabildik. Sizde denemelerinizde IComparer implementasyonu yapan bir kritere göre söz konusu koleksiyonu Max-Heap mantığında çalıştırmay deneyebilirisiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [PQueue.rar (31,33 kb)](/assets/files/2012/PQueue.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Priority-Queue-Collection)

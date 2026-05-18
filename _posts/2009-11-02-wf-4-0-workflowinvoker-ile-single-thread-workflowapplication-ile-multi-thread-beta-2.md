@@ -169,3 +169,5 @@ Görüldüğü üzere Workflow2 örneği çalıştırıldıktan sonra ana uygula
 Kişisel Not: Tabiki halen Beta 2 sürümünde olduğumuzu hatırlatmak isterim. Yani bu özelliklerde değişiklikler olabilir, bazıları kaldırılabilir veya tekrardan geriye dönüşler yapılabilir.
 
 [WorkflowConsoleApplication5.rar (43,99 kb)](/assets/files/2009/WorkflowConsoleApplication5.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-40-WorkflowInvoker-ile-Single-Thread-WorkflowApplication-ile-Multi-Thread-Beta-2)

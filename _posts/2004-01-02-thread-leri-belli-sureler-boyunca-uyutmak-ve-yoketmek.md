@@ -195,3 +195,5 @@ Uygulamamızı deneyelim.
 Şekil 4. Uygulamanın çalışması sonucu.
 
 Değerli okurlarım geldik bir makalemizin daha sonuna. Bir sonraki makalemizde Threading konusunu işlemeye devam edeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Threadleri-Belli-Sureler-Boyunca-Uyutmak-ve-Yoketmek-bsenyurt-com-dan)

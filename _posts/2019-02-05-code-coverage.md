@@ -189,3 +189,5 @@ Tek kelime ile A kalite bir ürün söz konusu:P Ama tabii gerçek hayat pek de 
 ![code coverage 01](/assets/images/2019/code-coverage-01.png)
 
 Kaliteli kod geliştirmek elimizde. Bunun için test odaklı düşünmeli ve kodun tepeden tırnağa her parçasının çalışır olduğundan emin olmalıyız. Statik kod analizi yapan araçlara güvenmeli ve uyarılarını dikkate almalıyız. CI/CD (Continuous Integration/Continuous Delivery,Continuous Deployment) hatlarını doğru kurgulayıp sağlam ve emin adımlarla ilerlemeliyiz. En başında birey olarak temellerimizi sağlam atmalıyız. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/code-coverage)

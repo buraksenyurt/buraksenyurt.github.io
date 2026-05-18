@@ -202,3 +202,5 @@ Sponsor sınıfımıza ait nesne örneğini çalışma zamanında, istemci taraf
 Tüm metodlar çalıştırılmasını tamamladıktan sonra, finally bloğu içerisinde sponsor sınıfımıza ait nesne örneğide unregister edilerek Lease Manager ile olan işbirliğine son verilmektedir. Görüldüğü gibi istemci taraflı destek modeli ile, kiralama süreleri sona ermiş olan referansların yol açacağı kayıp metod çağırımlarının önüne geçebilir ve uygulamanın devamlılığını sağlayabiliriz. İstemci taraflı bu modelin dışında bir de sunucu taraflı bir destek modeli olduğundan bahsetmiştik. (Server Side Sponsorship) Bu modelide bir sonraki makalemizde incelemeye çalışacağız. Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kod için tıklayınız.](/assets/files/2006/ClientSponsor.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Client-Side-SponshorShip-bsenyurt-com-dan)

@@ -209,3 +209,5 @@ Bu makalemizde bir web sunucu kontrolünü geliştirmek için gereken ilk adıml
 - Geliştirilen web sunucu kontrolünün, tasarım veya çalışma zamanında değiştirilebilecek üyeleri var ise bunları birer özellik olarak tasarlamak gerekir.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Server-Control-Yazmak-1-bsenyurt-com-dan)

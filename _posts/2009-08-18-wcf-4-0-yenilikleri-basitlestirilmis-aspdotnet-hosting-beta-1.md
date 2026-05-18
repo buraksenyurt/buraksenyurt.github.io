@@ -86,3 +86,4 @@ Xml Web Servislerini hatırlayın. Sadece WebService ve WebMethod nitelikleri (a
 
 [SimpleAspNetHosting.rar (12,40 kb)](/assets/files/2009/SimpleAspNetHosting.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/wcf40-Yenilikleri-Basitlestirilmis-AspNet-Hosting)

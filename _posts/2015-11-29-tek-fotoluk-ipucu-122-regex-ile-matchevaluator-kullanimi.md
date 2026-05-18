@@ -24,3 +24,4 @@ Burada dikkat edilmesi gereken en önemli husus, Regex örneği oluşturulurken 
 
 Pek tabi içerik boyutunun yükseldiği durumlarda bu teknik, içeriğin açılması işini yavaşlatabilir mi bakmak ve belki de alternatif yolları araştırmak lazım. Yine uyguladığımız tekniğin pratik bir yol sunduğunu ifade edebiliriz. (Kodu Refactor etmek sizde) Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-122-regex-ile-matchevaluator-kullanimi)

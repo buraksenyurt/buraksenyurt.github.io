@@ -144,3 +144,5 @@ Ancak burada dikkat etmemiz gereken önemli bir nokta vardır. Linkler arasında
 Görüldüğü gibi default.aspx sayfasını açtığımızda oluşan ASP.NET_SessionId değeri ile, buradan Sayfa2.aspx'e gittiğimizde URL bilgisine eklenen ASP.NET_SessionId değeri farklıdır. Dahası burada, Sayfa2.aspx için yeni bir oturum söz konusu olduğundan, default.aspx içinde oluşturulan Session["Kimlik"] bilgisine buradan erişilemeyecektir. Bunun sonucu da var olmayan bir nesneye erişmek istediğimizden hata almaktayız.
 
 Bu makalemizde Session nesnesine kısaca değinmeye çalıştık. İzleyen makalemizde, Session nesnesi ile ilgili daha farklı konulara göz atmaya çalışacağız. Bu konular arasında ASP.NET_SessionId değerlerinin bir SQL sunucusunda veya StateServer servisinde tutulması da yer almaktadır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Derinlemesine-Session-Kullanc4b1mc4b1-1-bsenyurt-com-dan)

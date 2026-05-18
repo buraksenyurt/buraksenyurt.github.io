@@ -414,3 +414,5 @@ Görüldüğü gibi LINQ sorguları.Net Framework içerisinde pek çok farklı a
 Öyleki LINQ sorgularıda özünde,.Net Framework 3.5 ile gelen genişletme metodlarını (Extension Methods) yoğun bir şekilde ele almaktadır. Bir başka deyişle LINQ olmadanda metodlar yardımıyla bu istekler karşılanabilir. Diğer taraftan LINQ sorgularının getirdiği dil esnekliği, kullanım kolaylığı, anlaşılabilirlik göz ardı edilmemelidir. Her geliştirici kullandığı programlama dili yardımıyla nesneler üzerinden SQL benzeri sorgu ifadeleri yazabilmek ister. LINQ bu imkanı sağlayarak önemli bir açığı kapatmaktadır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/LINQveReflectionArastirma.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/LINQ-Maceralarc4b1m-bsenyurt-com-dan)

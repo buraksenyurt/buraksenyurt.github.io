@@ -602,3 +602,5 @@ Bu çalışmanın da bana kattığı bir sürü şey oldu elbette. Üstünden te
 - InMemory veri tabanında SQLite kullanımına geçince yapılması gereken değişiklikleri ve Migration'ın ne işe yaradığını
 
 Böylece [Saturday-Night-Works](https://github.com/buraksenyurt/saturday-night-works) çalışmalarının 21 numaralı örneğine ait derlemenin sonuna gelmiş olduk. Diğer çalışmalardan da gözüme kestirdiklerimi ele alıp bloğuma not olarak düşeceğim. Fark ettim ki Saturday-Night-Works çalışmaları kendimi kişisel olarak geliştirmek adına yeterli ama tamamlayıcılık açısından eksik. Yapılan her uygulamanın üstünden bir kere daha geçmek, kodları okumak ve notları daha derli toplu olarak bloguma koymak tamamlayıcı bir motivasyon olarak karşıma çıkıyor. Bir başka macera derlemesinde görüşmek ümidiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/razor-dunyasindaki-ilk-adimlarim)

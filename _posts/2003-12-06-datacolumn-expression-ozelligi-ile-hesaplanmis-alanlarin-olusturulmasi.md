@@ -69,3 +69,5 @@ Uygulamamızı çalıştırdığımızda aşağıdaki ekran görüntüsü ile ka
 Şekil 3. Hesaplanmış Alan
 
 Görüldüğü gibi %10'luk artışın uygulandığı yeni alanımız dataGrid’imiz içinde görülmektedir. Unutmayalım ki bu oluşturduğumuz DataColumn nesnesi sadece bellekteki tablomuza eklenmiş bir görüntüdür. Veritabanımızdaki tablomuza doğrudan bir etkisi yoktur. Tabii ki performans açısından çok yüksek kapasiteli tablolarda çalışırken böyle bir işlemin yapılması özellikle ağ ortamlarında performans kaybına da yol açabilir. Bunun önüne geçmek için kullanabileceğimiz yöntemlerden birisi, sql sunucusunda bu hesaplamaların yaptırılması ve sonuçların view nesneleri olarak alınmasıdır. Ancak küçük boyutlu veya süzülmüş veriler üzerinde, Expression özelliğinin kullanımı sizin de gördüğünüz gibi son derece kolay ve faydalıdır. Geldik bir makalemizin sonuna daha, tekrar görüşünceye kadar hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataColumn-Expression-Ozelligi-Ile-Hesaplanmc4b1s-Alanlarc4b1n-Olusturulmasc4b1c2a0-bsenyurt-com-dan)

@@ -312,3 +312,5 @@ Bu sebepten ayarlarımız örneğin aşağıdaki gibi olmalıdır.
 Bu makalemizde Windows Communication Foundation çatısı altında, servislerimizi IIS üzerinden nasıl yayınlayıp kullanabileceğimizi incelemeye çalıştık. Bunu yaparken bir servis sözleşmesini (Service Contract) nasıl tanımlayabileceğimizi, bu sözleşmeyi uygulayan asıl uzak nesne sınıfının geriye kullanıcı tanımlı bir tip döndürmesi halide veri sözleşmesini (data contract) nasıl geliştirmemiz gerektiğini gördük. Bunlara ek olarak özellikle IIS Hosting için svc uzantılı dosyaların rolünü inceledik ve konfigurasyon dosyalarını daha kolay oluşturabilmemizi sağlayan Edit WCF Configuration seçeneğini ele aldık. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/UrunKutuphanesi.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Adc4b1m-Adc4b1m-IIS-Hosting-bsenyurt-com-dan)

@@ -90,3 +90,5 @@ Bu isimler birer link içermektedir. Bu linklerden birine tıkladığımızda bu
 Şekil 6.
 
 Bir sonraki makalemizde tablolar arasındaki veri bütünlüğünü sağlayan Constraint kurallarının nasıl DataSet’e aktarıldığını inceleyeceğiz. Geldik bir makalemizin daha sonuna. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Iliskili-Tablolarc4b1-DataSet-Ile-Kullanmak-1c2a0-bsenyurt-com-dan)

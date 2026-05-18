@@ -15,3 +15,5 @@ Diyelim ki elimizde içeriklerini karşılaştırmak istediiğimiz iki dosya var
 ![tfi_105](/assets/images/2013/tfi_105.png)
 
 Bu işin bir de Merge kısmı var. Haydi durmayın araştırıp deneyin. Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-105-WsDiffMerge-ile-Dosya-Karsilastirma)

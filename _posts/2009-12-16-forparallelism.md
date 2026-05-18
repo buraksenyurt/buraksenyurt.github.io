@@ -240,3 +240,5 @@ Tabiki bu test sonuçları, uygulamanın çalıştığı sistemin donanımsal ö
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TaskParallelLibrary.rar (89,38 kb)](/assets/files/2009/TaskParallelLibrary.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Parallelism)

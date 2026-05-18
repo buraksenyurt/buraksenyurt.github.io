@@ -15,3 +15,5 @@ categories:
 ![tfi61.png](/assets/images/2012/tfi61.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-60-string-Kokenli-JSON-Icerigi-Ters-Serilestirmek)

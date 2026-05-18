@@ -515,3 +515,5 @@ Yazının şu an için geldiğim bu noktasında dillerin aşırı yüklenmiş me
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Çalışmada ele aldığımız örnek kodlara GitHub reposundan ulaşabilirsiniz](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/MethodOverloading)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/method-overloading-uzerine-dusunceler)

@@ -24,3 +24,5 @@ Diyelim ki buna benzer bir senaryo da bir A tipini, nispeten daha az sayıda öz
 ![tfi_99](/assets/images/2013/tfi_99.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-99-Tipler-Arasi-Property-Eslestirme)

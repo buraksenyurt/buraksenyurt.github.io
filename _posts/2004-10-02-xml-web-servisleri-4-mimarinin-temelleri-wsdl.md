@@ -432,3 +432,5 @@ Wsdl /language:VB http://localhost/geowebservis/geomat.asmx
 ```
 
 Bir proxy sınıfını, web servisine ait bir disco dokümanı yardımıyla da oluşturabiliriz. Peki disco adı verilen discovery (keşif) dosyalarının web servisleri-istemci sistemindeki yeri nedir? Bu konuyu da bir sonraki makalemizde incelemeye çalışacağız. Tekrardan görüşünceye dek, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Xml-Web-Servisleri-4-(-Mimarinin-Temelleri-WSDL)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

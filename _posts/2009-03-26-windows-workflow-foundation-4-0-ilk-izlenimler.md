@@ -237,3 +237,5 @@ Buraya kadar anlattıklarımız ile aslında Workflow Foundation 4.0 ile gelen y
 - XAML tabanlı WF yapıları, Oslo gibi modellerin sağladığı depolama alanlarında (Repositories) saklanabilir, başka uygulamalar tarafından (Quadrant gibi) yönetilip değiştirilebilir, diğer WF çalışma zamanı motorlarına aktarılabilmeleri (Import) için bulundukları ortamlardan çıktı (Export) olarak verilebilirler.
 
 Elbette bahsettiğimiz konuların tamamında değişiklikler olabilir, olması muhtemeldir. Kesinlik ancak son sürümler ile ortaya çıkacaktır. Böylece geldik bir makalemizin daha sonuna. Bu makalemizde ilk bakışta WF 4.0 ile gelen yeniliklerin bir kısmına değinmeye çalıştık ve konuyu pekiştirmek amacıyla bir örnek geliştirdik. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Windows-Workflow-Foundation-4-0-Ilk-Izlenimler-bsenyurt-com-dan)

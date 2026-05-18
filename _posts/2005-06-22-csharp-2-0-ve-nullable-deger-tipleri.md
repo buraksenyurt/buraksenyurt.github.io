@@ -323,3 +323,5 @@ namespace UsingNullableValues
 ![mk125_6.gif](/assets/images/2005/mk125_6.gif)
 
 Uygulamamızı bu haliyele çalıştırdığımızda tablodaki tüm satırların ekrana yazdırıldığını görürüz. C# 1.1 de geliştirdiğimiz uygulama ile bu versiyon arasındaki en önemli fark, nullable değer türlerinin kullanılarak null verilerin uygulama içerisinde kullanılabilmesidir. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-ve-Nullable-Deger-Tipleri-bsenyurt-com-dan)

@@ -175,3 +175,5 @@ Böylece geldik zevkli bir konunun daha sonuna. Umarım sizler içinde yararlı 
 [HelloBRE.rar (37,09 kb)](/assets/files/2009/HelloBRE.rar)
 
 [Meraklısı için Business Rule Engine kavramı ile ilişkili detaylı bilgi](http://en.wikipedia.org/wiki/Business_rules_engine)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Business-Rule-Engine-ile-Programlama(Biztalk-Server-2006))))

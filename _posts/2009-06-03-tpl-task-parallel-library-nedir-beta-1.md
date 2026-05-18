@@ -178,3 +178,5 @@ NOT: TPL tarafında geliştiricinin alt-seviye (Low-Level) işlemlerle uğraşma
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda TPL alt yapısını en basit ve yalın haliyle tanımaya çalıştık. Elbetteki işimiz bitmedi. Bi dünya işimi var aslında.Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloTPL.rar (25,96 kb)](/assets/files/2009/HelloTPL.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TPL(Task-Parallel-Library)-Nedir)-Nedir)-Nedir)

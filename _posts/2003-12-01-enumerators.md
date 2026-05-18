@@ -144,3 +144,5 @@ private void Form1_Load(object sender, System.EventArgs e)
 Şekil 5. Sonuç.
 
 Aslında bu comboBox kontrolünü başka şekillerde de alan kodları ile yükleyebiliriz. Bunu yapmanın sayısız yolu var. Burada asıl dikkat etmemiz gereken nokta numaralandırıcı sayesinde bu sayısal kodlarla kafamızı karıştırmak yerine daha bilinen isimler ile aynı sonuca ulaşmamızdır. Geldik bir makalemizin daha sonuna. İlerliyen makalelerimizde bu kez yine kendi değer tiplerimizi nasıl yaratabileceğimize struct kavramı ile devam edeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Enumerators-bsenyurt-com-dan)

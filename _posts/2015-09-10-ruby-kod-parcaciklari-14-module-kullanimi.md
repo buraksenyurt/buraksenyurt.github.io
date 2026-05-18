@@ -88,3 +88,4 @@ Gelelim kod parçacığımız ile ilişkili notlarımıza.
 
 Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-14-module-kullanimi)

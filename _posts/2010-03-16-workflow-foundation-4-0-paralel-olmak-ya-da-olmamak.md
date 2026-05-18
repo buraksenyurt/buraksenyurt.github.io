@@ -163,3 +163,4 @@ Görüldüğü üzere farklı yönetimli Thread Id değerleri üretilmiş, üste
 
 [ToBeOrNotToBe_RC.rar (48,75 kb)](/assets/files/2010/ToBeOrNotToBe_RC.rar) [Örnek uygulama Visual Studio 2010 Ultimate RC Sürümü Üzerinde Geliştirilmiştir ve Test Edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-40-Paralel-Olmak-ya-da-Olmamak)

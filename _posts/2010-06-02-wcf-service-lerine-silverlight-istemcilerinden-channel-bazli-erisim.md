@@ -212,3 +212,4 @@ Dikkat edileceği üzere istemci tarafında bir konfigurasyon dosyası içeriği
 
 [WithChannelBased_RTM.rar (72,10 kb)](/assets/files/2010/WithChannelBased_RTM.rar) [Örnek Visual Studio 2010 RC sürümü üzerinde geliştirilmiş ve RTM sürümü üzerinden de test edilmiştir. Son sürümle birlikte test etmenizde yarar bulunmaktadır.]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Servicelerine-Silverlight-Istemcilerinden-Channel-Bazli-Erisim)

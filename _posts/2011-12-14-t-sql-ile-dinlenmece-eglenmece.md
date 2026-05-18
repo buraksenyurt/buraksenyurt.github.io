@@ -287,3 +287,5 @@ Buraya kadar yazılmış olan sorguları eğlence amaçlı olarak veya ciddi man
 Peki ya bundan sonrasında ne olacak? Aslında bakarsanız burada yazılmış olan pek çok SQL ifadesi birer View haline dönüştürülüp sunucu üzerindeki farklı bir veritabanında saklanabilirler. Hatta bu veritabanının karşılığı olan bir Entity Framework kütüphanesi üretilip ilgili raporların örneğin bir WCF Data Service yardımıyla dış ortama sunulması da sağlanabilir. Tabi hassas veriler söz konusu olduğundan bu pek de iyi bir fikir değildir. Ama dilerseniz basit bir WCF (Windows Communication Foundation) Servisini güvenli hale getirerek ilgili içerikleri dış dünyaya servis bazlı olarak sunabilirsiniz. Sanırım bir sonraki makalemde hangi konuyu/senaryoyu ele alacağımı anlamışsınızdır. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EglencelikSQL.sql (5,39 kb)](/assets/files/2011/EglencelikSQL.sql)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/T-SQL-ile-Dinlenmece-Eglenmece)

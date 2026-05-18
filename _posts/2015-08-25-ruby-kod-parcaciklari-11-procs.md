@@ -68,3 +68,4 @@ Proc'un örnekteki kullanımını daha iyi görebilmek için aşağıdaki grafik
 
 Böylece geldik bir kod parçacığının daha sonuna. Bir sonraki kod parçacığında Lambda kullanımına değinmeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-11-procs)

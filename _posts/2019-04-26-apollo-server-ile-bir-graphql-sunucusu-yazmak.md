@@ -431,3 +431,5 @@ Saturday-Night-Works çalışmalarım kapsamında denediğim bu örnekte de bir 
 Böylece geldik bir maceramızın daha sonuna. Bu yazımızda Linux platformunda PostgreSQL kullanan stand alone çalışan bir Apollo GraphQL sunucusu yazmayı denedik. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örnek kodlarına [Saturday-Night-Works 38 Numaradan](https://github.com/buraksenyurt/saturday-night-works) erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Apollo-Server-ile-Bir-GraphQL-Sunucusu-Yazmak)

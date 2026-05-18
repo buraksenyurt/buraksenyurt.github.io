@@ -143,3 +143,5 @@ Bu işlemi gerçekleştirdiğimiz anda, uygulamamıza bir bildiri mesajı iletil
 Şekil 4. Notification mesajı uygulamaya gönderildi.
 
 Dolayısıyla biz, veri çekme işlemimizi bu olay içerisine alarak istemci uygulamanın daima güncel veriler ile konuşmasını sağlayabiliriz. SqlDependency sınıfının pek çok üyesi ve önemli özelliği vardır. Bir sonraki makalemizde, bu sınıfı daha detaylı bir şekilde incelemeye çalışırken, gerçekleşen değişikliğin tipine göre nasıl hareket edebileceğimizide göreceğiz. Tekrardan görüşünceye dek sağlıcakla kalın.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ve-SqlDependency-Sc4b1nc4b1fc4b1-Yardc4b1mc4b1yla-Query-Notification-bsenyurt-com-dan)

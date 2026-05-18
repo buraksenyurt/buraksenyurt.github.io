@@ -278,3 +278,5 @@ Pek tabii olmayan kategori için slice içeriği boş olacağından null bir JSO
 ![gorouting_13.gif](/assets/images/2017/gorouting_13.gif)
 
 Bu noktada belki de çok daha şık bir HTML hata sayfasına yönlendirme yaptırabiliriz ne dersiniz? Görüldüğü gibi Router nesne örnekleri üzerinden ServeFiles, GET gibi fonksiyonları bir arada kullanarak static içerik sunabilen ve REST davranış gösterip HTTP taleplerine JSON çıktılarla cevap veren bir web uygulaması geliştirmek oldukça kolay. Bu tekniği kullanarak veri içeriği sunan basit REST servisleri help sayfaları ile birlikte geliştirmeniz mümkün. Yine de kaçırdığım çok şey olduğundan adım gibi eminim. Şu konuda HTTP Post, Put, Delete, Patch gibi fonksiyonellikleri bir deneyimlemek lazım. Bunları da ilerleyen zamanlarda incelemeye çalışacağım. Şimdilik bu kadar. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golange-static-web-icerigi-ve-json-uretimi)

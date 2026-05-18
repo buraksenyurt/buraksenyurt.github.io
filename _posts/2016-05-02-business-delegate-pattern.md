@@ -142,3 +142,4 @@ Pek tabii gerçek hayat senaryolarında asıl iş birimi metodlarının string p
 
 Bu yazımızda pek göz önünde olmayan tasarım kalıplarından birisine değinmeye çalıştık. Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/business-delegate-pattern)

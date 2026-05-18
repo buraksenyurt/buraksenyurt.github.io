@@ -169,3 +169,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [StrategyPattern.rar (22,61 kb)](/assets/files/2009/StrategyPattern.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Strategy)

@@ -261,3 +261,5 @@ StateServer modunda, State Server olarak kullanılacak sunucunun tcpip adresi ve
 Bu değişikliklerden sonra Session nesnelerini ASP.NET State Service'ın kontrolü altında tutulmak üzere kullanabiliriz. Bu servis yardımıyla tuttuğumuz Session nesneleri için de serileştirilebilme şartı aranmaktadır, bunu da hatırlatalım.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Derinlemesine-Session-Kullanc4b1mc4b1-2-bsenyurt-com-dan)

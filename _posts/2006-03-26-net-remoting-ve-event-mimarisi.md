@@ -227,3 +227,5 @@ Peki uygulamada neler oldu şöyle bir analiz etmeye çalışalım. Öncelikle s
 Gördüğünüz gibi remoting uygulamalarında istemci tarafından olay tetiklemek ve bu olay karşılığında sunucunun kendisine bağlı olan istemciler üzerinde var olan olay metodlarını çalıştırabilmesini sağlamak mümkün. Böylece geldik bir makalemizin daha sonuna bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulamalı indirmek için tıklayın.](/assets/files/2006/EventHandling.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-Net-Remoting-ve-Event-Mimarisi-bsenyurt-com-dan)

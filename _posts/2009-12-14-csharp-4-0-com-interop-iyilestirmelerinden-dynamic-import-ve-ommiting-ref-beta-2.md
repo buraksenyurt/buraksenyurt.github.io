@@ -125,3 +125,4 @@ Dikkat edileceği üzere doğrudan değer ataması yapılmış, herhangibir değ
 
 İşte sizlere bir kaç dakika içerisinde çerez niyetine okuyup öğrenebileceğiniz bir yazı. Umarım faydalı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-40-Dynamic-Import-ve-Ommiting-Ref)

@@ -23,3 +23,5 @@ Peki elinizde Actor tipinden bir liste varsa ve bir an gelipte içinden sadece S
 ![tfi95](/assets/images/2013/tfi95.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-95-OfType)

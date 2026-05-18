@@ -30,3 +30,5 @@ Oldukça kolay bir biçimde; herhangibir algoritmaya bağımlı kalmadan, vector
 ![tfi_85](/assets/images/2013/tfi_85.png)
 
 Burada ki ipucundan Data Protection kullanımı söz konusudur. Aslında aynı API’ yi kullanarak bir de Memory Protection yapabiliriz. Buna da bir sonraki ipucumuzda bakalım.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-85-Zahmetsizce-Encryption)

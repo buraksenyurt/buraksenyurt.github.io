@@ -211,3 +211,5 @@ Görüldüğü gibi yeni eklenen bileşende başarılı bir şekilde çalıştı
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingXAML.rar (43,63 kb)](/assets/files/2009/UsingXAML.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-XAML-Bazlc4b1-Workflow-Ornekleri)

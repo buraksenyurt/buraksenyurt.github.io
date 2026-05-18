@@ -294,3 +294,5 @@ IDisposable arayüzü implementasyonu nedeniyle ShopUnitOfWork sınıfı using b
 Görüldüğü üzere Repository ve Unit of Work desenelerini Entity Framework tarafında uygulamak oldukça kolaydır. Kaynaklarda bu desenlerin daha etkili uygulanış biçimlerini de görebilirsiniz. Örneğin [Codeplex’ in şu adresindeki](http://genericunitofworkandrepositories.codeplex.com/) uygulanış tarzı beni etkileyenler arasındadır. Hatta Unit of Work uyarlamasının daha generic ve Context’ lere gevşek bağlı (Loosely Coupled) olan bir versiyonu da yazılabilir (İşin içine Dependency Injection da katılıp olay daha bir renkli hale getirilebilir) Bunlara biraz kafa yormakta fayda vardır.
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Generic-Repository-ve-Unit-of-Work-Uyarlamasi)

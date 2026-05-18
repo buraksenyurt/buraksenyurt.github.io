@@ -144,3 +144,5 @@ puts sitiv.address.inspect
 Bu örnekte Employee sınıfı içerisinde Address isimli bir yapı tanımlanmıştır. Employee sınıfına ait bir nesne örneklenirken initialize metoduna gelen son parametre bu yapıya ait bir değişken içeriğidir. Indeksleyici operatörü ile değerler alınıp Address yapısına ait değişken nitelikleri doldurulmuştur.
 
 Görüldüğü gibi yapılar oldukça pratik kullanıma sahip bir veri tipi olarak karşımıza çıkmaktadır. Built-In olarak sınıf kökenli olan bu tipin kullanışlı fonksiyonları bulunmaktadır. Böylece geldik bir Ruby Kod Parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-34-struct-ve-openstruct)

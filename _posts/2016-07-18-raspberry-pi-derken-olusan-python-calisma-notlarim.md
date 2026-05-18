@@ -764,3 +764,4 @@ print(combination)
 
 Çalışmalarım bu tarih itibariyle sonlanmış. Nitekim izin dönemi gelmiş. Şimdi kaldığımız yerden devam edebilirim. Bu uzun yazıda Python notlarımı elektronik ortama almaya çalıştım. Umarım python severler için yararlı bir yazı olmuştur. Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/raspberry-pi-ve-python-calisma-notlarim)

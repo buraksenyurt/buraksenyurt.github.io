@@ -274,3 +274,5 @@ where ([TrackId] = @0)',N'@0 int',@0=3503
 Insert ve Update işlemlerinin incelenmesini de siz değerli okurlarıma bırakıyorum. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ManyToMany_RC.rar (47,16 kb)](/assets/files/2010/ManyToMany_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/EF-Many-To-Many-Relations)

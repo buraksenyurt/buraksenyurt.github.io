@@ -222,3 +222,5 @@ Dikkat edileceği üzere int ve double tiplerini parametre olarak alan iki ek ya
 İstediğimiz sonuca ulaştık. Görüldüğü üzere Enum sabitlerini yapıcı metodlara parametre olarak geçirdiğimizde, göndereceğimiz 0 sabit değeri otomatik olarak bir enum sabiti tipine dönüştürülmektedir. Dolayısıyla söz konusu sınıf içerisinde object tipini kullanan başka bir yapıcı metod varsa, tedbir almadığımız durumda fark etmeyeceğimiz bir çalışma zamanı sonucu üretilebilir. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EnumAndZeroConstant.zip (1,97 mb)](/assets/files/2013/EnumAndZeroConstant.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sifir-Sabit-Degeri-ve-Enum-Sorunsali)

@@ -424,3 +424,5 @@ public int UpdateProducts(int productID, string name, double standardCost, doubl
 Gördüğünüz gibi enum sabitlerini kullanarak kod geliştirmek daha da kolaylaşmaktadır. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Kodlar İçin Tıklayınız.](https://www.buraksenyurt.com/makale/images/UsingEnumerators.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Numaralandırıcıları-Kullanmak-Icin-Bir-Sebep-bsenyurt-com-dan)

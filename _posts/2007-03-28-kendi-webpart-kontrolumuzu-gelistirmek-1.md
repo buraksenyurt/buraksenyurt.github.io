@@ -226,3 +226,5 @@ Kendi Web Part bileşenlerimizi geliştirirken başka üst sınıf özelliklerin
 öğrendik. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/CustomWebParts.rar) *(Dosya boyutunun küçülmesi için, AppData klasörüne atılan Aspnetdb.mdf dosyası silinmiştir. Test ederken burada bir AspNetdb.mdf dosyası oluşturmanı gerekecektir. Bunun için Asp.Net Web Site Administration Tool'dan faydalanabilirsiniz)*
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kendi-WebPart-Kontrolumuzu-Gelistirmek-1)

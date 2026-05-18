@@ -26,3 +26,5 @@ Ders 1 kod adlı webinerimizde ise Veri Sözleşmeleri (Data Contracts) kavramı
 - [Youtube Link](https://www.youtube.com/watch?v=uwo82zNlhdA)
 - Sunum [WCF 4.0 - Ders 1 - Data Contracts.pptx (314,15 kb)](/assets/files/2010/WCF40Ders1DataContracts.pptx)
 - Solution Dosyası Son Hali [WCF Ogreniyorum.rar (81,74 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Ogreniyorum-Ders-1-Data-Contracts)

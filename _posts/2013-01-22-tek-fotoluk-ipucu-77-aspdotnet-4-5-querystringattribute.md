@@ -18,3 +18,5 @@ Asp.Net 4.5 tarafında gelen yeniliklerden birisi de System.Web.ModelBinding isi
 ![tfi_77](/assets/images/2013/tfi_77.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-77-Asp-Net-4-5-QueryStringAttribute)

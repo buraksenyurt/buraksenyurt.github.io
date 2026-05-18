@@ -248,3 +248,5 @@ Görüldüğü gibi servisimiz bu yeni ayarlamadan sonra, kendi oluşturduğumuz
 Görüldüğü gibi, servisimizin alt sınıra göre Event Log'ların simgesini belirleyen davranışını değiştirmeyi başardık. Bu işlemi ExecuteCommand metodu ile servisimizdeki OnCustomCommand'a gönderdiğimiz parametrenin değerini ele alarak gerçekleştirdik.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde sistemimizde yer alan servisleri, ServiceController sınıfındaki metod ve özellikler ile nasıl kontrol edebileceğimizi incelemeye çalışacağız. Bu makalede görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Windows-Servislerinin-Kontrolu-1-bsenyurt-com-dan)

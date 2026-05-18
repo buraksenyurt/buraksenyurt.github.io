@@ -296,3 +296,5 @@ private void btnKapat_Click(object sender, System.EventArgs e)
 Şekil 4. Önceliklerin etkisi.
 
 Görüldüğü gibi öncelikler iş parçacıklarının çalışmasını oldukça etkilemektedir. Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde iş parçacıkları hakkında ilerlemeye devam edeceğiz. Görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Threadlerde-Oncelik(Priority)-Durumları-bsenyurt-com-dan)-Durumları-bsenyurt-com-dan)-Durumları-bsenyurt-com-dan)

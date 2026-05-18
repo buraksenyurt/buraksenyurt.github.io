@@ -329,3 +329,5 @@ Kolayca gözden kaçabilecek bir durum olduğu için tehlikeli bir vaka olduğun
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [DefaultAndOptionalParametersCase.rar (25,52 kb)](/assets/files/2011/DefaultAndOptionalParametersCase.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-40-Default-Parameter-Kullanimina-Dikkat!)

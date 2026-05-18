@@ -101,3 +101,5 @@ Yine Workflow seyivesinde tip güvenli (Type Safe) özelliklerin tanımlanabilme
 Bunlar ve daha pek çok farklılığı veya yeniliği ilerleyen yazılarımızda veya görsel derslerimizde ele almaya çalışıyor olacağız. Tabiki Release sürüme yaklaştıkça çok şeyin değiştiğini de görebiliriz. Bu nedenle buradaki mimari modellerinde kalıcı olduğunu garanti etmemiz yanlış olacaktır. Ancak tüm bu yenilenmeler ve çalışmalar geliştiric olarak bizlerin iyiliği içindir.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-40-Beta-1-den-Beta-2-ye)

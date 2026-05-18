@@ -18,3 +18,4 @@ Nesne Yönelimli Programlama Dillerinin (Object Oriented Programming Languages) 
 
 Lütfen örneğin saçmalığına aldırmayın. Bunun yerine metod zincirine odaklanın ve hatta bu tip bir API'yi nasıl yazabileceğinizi düşünün. Hatta sadece düşünmeyin, yazmaya çalışın. Bir başka ipucunda görüşmek dileğiyle.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-118-fluent-command-line-parser-ile-hello-world)

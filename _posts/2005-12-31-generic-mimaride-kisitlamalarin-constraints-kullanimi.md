@@ -401,3 +401,6 @@ Uygulamada CDKoleksiyon sınıfına ait bir nesne örneğini Cd tipini kullanaca
 > Dilersek generic kısıtlamaların birkaçını bir arada kullanabiliriz. Örneğin bir generic türün hem belli bir tipten gelmesini hem de struct olmasını sağlayabiliriz. Bu kombinasyonları artırmamız mümkündür. Buradaki tek şart, eğer varsayılan yapıcı kısıtlaması da var ise new anahtarının her zaman için en sonda belirtilmesi gerekliliğidir.
 
 Bu sayede, zorlamaları kullanarak tip güvenliğini daha belirleyici şekilde sağlamış oluyoruz. Bu makalemizde generic mimarinin önemli özelliklerinden birisi olan kısıtlamaları incelemeye çalıştık. Kısıtlamalar yardımıyla tür bağımsızlığını kullanırken belirli şartların sağlanmasını zorunlu hale getirebileceğimizi gördük. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Generic-Mimaride-Kısıtlamaların(Constraints)-Kullanımı-bsenyurt-com-dan)-Kullanımı-bsenyurt-com-dan)-Kullanımı-bsenyurt-com-dan
+n)

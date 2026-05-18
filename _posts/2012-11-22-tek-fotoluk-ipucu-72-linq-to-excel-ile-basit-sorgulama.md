@@ -19,3 +19,5 @@ Belki siz de LINQtoEXCEL provider'ını duymuşsunuzdur. NuGet paket yönetim ar
 Başka bir ipucunda görüşmek dileğiyle.
 
 **Not:** Provider'da değişiklik yapılmış olabilir ve yukarıdaki kod parçasının son sürümde daha farklı bir şekilde ele alınması gerekebilir. Buna dikkat edelim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-LINQ-to-Excel-ile-Basit-Sorgulama)

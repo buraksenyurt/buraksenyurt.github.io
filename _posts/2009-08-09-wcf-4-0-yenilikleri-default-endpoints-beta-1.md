@@ -164,3 +164,5 @@ Görüldüğü üzere hem bizim bilinçli olarak eklediğimiz hemde AddDefaultEn
 Bu kısa yazımızda WCF 4.0 tarafında, basitleştirilmiş konfigurasyon (Simplified Configuration) ayarlamalarının özelliklerinden birisi olan Default EndPoints kavramına değinmeye çalıştık. İlerleyen yazılarımızda diğer WCF 4.0 yeniliklerinede değinmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [DefaultEndPoints.rar (40,08 kb)](/assets/files/2009/DefaultEndPoints.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Default-EndPoints)

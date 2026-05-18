@@ -462,3 +462,5 @@ Tabii gerçek hayat senaryolarında durum biraz daha farklı. Bir firmanın dı�
 - [Product.cs (161,00 bytes)](https://www.buraksenyurt.com/file.axd?file=/2017/10/Product.cs)
 - [Program.cs (665,00 bytes)](https://www.buraksenyurt.com/file.axd?file=/2017/10/Program.cs)
 - [Startup.cs (1,31 kb)](https://www.buraksenyurt.com/file.axd?file=/2017/10/Startup.cs)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/net-core-2-0-ile-basit-bir-web-api-gelistirmek)

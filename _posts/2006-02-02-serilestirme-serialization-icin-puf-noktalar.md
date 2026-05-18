@@ -346,3 +346,5 @@ Uygulamamız bu haliyle başarılı bir şekilde çalışacak ve hem Serialize h
 ![mk146_12.gif](/assets/images/2006/mk146_12.gif)
 
 Böylece geldik bir makalemizin daha sonuna. Makalemiz boyunca geliştirdiğimiz örnek uygulamamızın son halini bu linkten [indirebilirsiniz](/assets/files/2006/Serilestirme.rar). Bir sonraki makalemizde görüşünceye dek, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Serilestirme-(Serialization)-Icin-Puf-Noktalar-bsenyurt-com-dan)-Icin-Puf-Noktalar-bsenyurt-com-dan)-Icin-Puf-Noktalar-bsenyurt-com-dan)

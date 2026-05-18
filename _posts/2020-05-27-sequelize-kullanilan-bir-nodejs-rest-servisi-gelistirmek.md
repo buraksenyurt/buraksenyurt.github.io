@@ -445,3 +445,5 @@ http://localhost:5555/game/api/hero/2/cards
 ![skynet_12_Screenshot_4.png](/assets/images/2020/skynet_12_Screenshot_4.png)
 
 Yazması biraz zahmetli ama sonuçları açısından anlaşılır bir öğreti olduğunu düşünüyorum. Umarım sizler için de faydalı olur. Kodların tamamına [skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2012%20-%20REST%20with%20Sequelize)ndan ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/sequelize-kullanilan-bir-nodejs-rest-servisi-gelistirmek)

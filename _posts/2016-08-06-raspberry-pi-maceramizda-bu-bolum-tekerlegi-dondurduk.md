@@ -23,3 +23,4 @@ Söyleşi sırasında bahsettiğimiz kaynaklar ise şöyle.
 
 Bir sonraki söyleşimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/raspberry-pi-maceramizda-bu-bolum-tekerlegi-dondurduk)

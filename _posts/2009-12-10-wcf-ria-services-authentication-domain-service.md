@@ -256,3 +256,4 @@ Görüldüğü üzere WCF RIA Service'ler ile birlikte gelen Authentication Doma
 
 [SilverlightApplication7.rar (626,55 kb)](/assets/files/2009/SilverlightApplication7.rar) [Dosya Boyutunun küçük olması amacıyla, Memberhip için kullanılan ASPNETDB veritabanı silinmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Authentication-Domain-Service)

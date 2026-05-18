@@ -205,3 +205,5 @@ West-World üzerinde electron kullanarak geliştirilen Chromium tabanlı bir mas
 - [Bu uygulama kodlarını da buradan klonlayabilirsiniz (Day09)](https://github.com/buraksenyurt/nodejs-tutorials)
 - [Electron Github projesi](https://github.com/electron)
 - [Eğer bir sonraki adım ne olmalı derseniz ben şuradaki yazıyı takip edeceğim derim](https://codeburst.io/build-a-todo-app-with-electron-d6c61f58b55a)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/electron-ile-cross-platform-uygulama-gelistirmek)

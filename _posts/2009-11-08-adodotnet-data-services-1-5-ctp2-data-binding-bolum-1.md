@@ -168,3 +168,5 @@ Başka bir alt kategori seçtiğimizde ise (örneğin Bottom Brackets) buna bağ
 Tabiki burada sadece entity içeriklerinin doldurulması ve veri kontrollerine tek yönlü (One-Way) bağlanması söz konusudur. Ancak tahmin edileceği üzere birde kontroller üzerinden verilerde yapılan değişiklikler sonrası bunların Entity içeriklerine yansıtılması ve sonrasında SaveChanges metodu ile tüm değişikliklerin servis tarafına gönderilmesi söz konusu olabilir ki buda iki yönlü (Two Way) bağlamanın tesis edilmesi ile kolayca gerçekleştirilebilir. Nitekim two-way binding metoduna göre, kolekisyonda olacak değişimler, SaveChanges metoduna yapılan çağrı sonucu servis tarafına ve dolayısıyla sunucu üzerindeki veri kaynağına da iletilecekteir. Bu konuyu bir sonraki yazımızda ele alıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [DataBinding.rar (116,66 kb)](/assets/files/2009/DataBinding.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AdoNet-Data-Services-15-CTP2-Data-Binding-Bolum-1)

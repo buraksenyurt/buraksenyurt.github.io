@@ -425,3 +425,6 @@ Bu makalemizde WPF (Windows Presentation Foundation) ile birlikte hayatımıza g
 Böylece geldik uzun bir makalemizin daha sonuna. Bu cümleye kadar sabırla okuduğunu için son teşekkür ederim. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/PageKullanimi.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Sayfa(Page)-Kavramc4b1-Navigasyon-Islemleri-ve-XBAP-bsenyurt-com-dan)-Kavramc4b1-Navigasyon-Islemleri-ve-XBAP-bsenyurt-com-dan)-Kavramc4b1-Navigasyon-Islemleri-ve-XBAP-bsenyurt-com-da
+an)

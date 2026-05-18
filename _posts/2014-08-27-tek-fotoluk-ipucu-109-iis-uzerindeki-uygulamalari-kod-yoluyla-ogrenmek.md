@@ -13,3 +13,5 @@ Aslında hep elinizin altında olan (Windows\System32\inetsrv\Microsoft.Web.Admi
 ![tfi109.png](/assets/images/2014/tfi109.png)
 
 Başka neler mi yapabilirsiniz? Örneğin bir Application Pool'u Recylce edebilirsiniz. Ya da bir Web Site'ı Stop-Start. Hatta yeni bir Web Site bile açabilirsiniz. Araştırmaya değer değil mi? Başka bir ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFI-109-IIS-Uzerindeki-Uygulamalarc4b1-Kod-Yoluyla-Ogrenmek)

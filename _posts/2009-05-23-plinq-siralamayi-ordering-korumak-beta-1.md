@@ -136,3 +136,5 @@ Tabi burada önemli bir nokta daha vardır. AsOrdered çok doğal olarak PLINQ s
 Bu yazımda sizlere önemsiz gibi görünen fakat dikkat edilmesi gereken bir konuyu aktarmaya çalıştım. Bir sonraki yazımızda görüşünceye dek mutlu günler dilerim.
 
 [Ordering.rar (22,74 kb)](/assets/files/2009/Ordering.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/PLINQ-Siralamayi(Ordering)-Korumak)-Korumak)-Korumak)

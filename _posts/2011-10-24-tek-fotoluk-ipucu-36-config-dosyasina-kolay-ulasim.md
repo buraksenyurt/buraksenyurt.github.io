@@ -16,3 +16,5 @@ categories:
 ![PhotoTrick36](/assets/images/2011/PhotoTrick36.png)
 
 [ConfigHelper.rar (24,02 kb)](/assets/files/2011/ConfigHelper.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-36(Config-Dosyasina-Kolay-Ulasim))))

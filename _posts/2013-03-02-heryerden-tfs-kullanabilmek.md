@@ -154,3 +154,5 @@ Sanırım adı siz de bir çağırışım yapmıştır. Git ile Team Foundation 
 Red Hat Linux’ testi gelecek[Henüz yazılmadı] *(2026'dan not, yazılamamış :D)*
 
 Bu makalemizde Team Foundation Server’ ın çevre IDE’ ler ile olan entegrasyonunu incelemeye çalıştık ve bu konuda başarılı olduğunu gördük. Ancak pek tabiki proje geliştirmek ve özellikle ALM akışlarının doğru ve sorunsuz bir şekilde yürütülmesini sağlamak, sadece kullanılan araçların entegre edilmesi ile olacak bir iş değildir. Dolayısıyla olayın farklı bir boyutu olduğunu da gözden kaçırmamak gerekir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Heryerden-TFS-Kullanabilmek)

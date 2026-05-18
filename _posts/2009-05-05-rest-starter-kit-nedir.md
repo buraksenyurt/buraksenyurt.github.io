@@ -47,3 +47,5 @@ Bu iki ayrım haricinde, Starter Kit ile birlikte gelip göze çarpan bir kaç n
 Tabiki daha pek çok detay bulunmaktadır. Ancak sanıyorumki bu kısa bilgiler sizlerde WCF Rest Starter Kit hakkında bir fikir oluşturmuştur.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/REST-Starter-Kit-Nedir)

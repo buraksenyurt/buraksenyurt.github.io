@@ -376,3 +376,5 @@ Gördüğünüz gibi, geliştireceğimiz kontrollerin tasarım zamanındaki davr
 - Tasarım zamanı davranışlarını belirleyen nitelikleri Assembly, Class ve Property olmak üzere toplam üç seviyede belirleyebiliriz.
 
 Böylece geldik bir makalemizin daha sonuna. Sonraki makalemizde Render metodu ile ilişkili başka düzenlemer yapacak ve PostBack olaylarını nasıl ele alabileceğimizi araştırmaya çalışacağız. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Server-Control-Yazmak-2-bsenyurt-com-dan)

@@ -83,3 +83,5 @@ Yaptığımız ilk şey mtx isimli bir Mutex nesnesi örneklemek. Sonrasında at
 ![mutex_2.gif](/assets/images/2016/mutex_2.gif)
 
 Görüldüğü gibi tüm denemelerde points dizisi elemanları beklediğimiz gibi aynı toplam değerini üretmiştir. İş parçacıklarını senkronize olarak çalıştırmak bazı durumlarda işlemlerin daha yavaş tamamlanmasına da neden olabilir ancak verinin tutarlılığı oldukça önemli bir konudur. Böylece geldik bir kod parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-28-multithreading-ve-mutex-kullanimi)

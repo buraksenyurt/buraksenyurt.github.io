@@ -120,3 +120,5 @@ Startup sınıfının yapıcı metodunda ConfigurationBuilder nesnesini kullanı
 ![easy_config_3.gif](/assets/images/2018/easy_config_3.gif)
 
 Konfigurasyon yönetimi her zaman için önemli konulardan birisi. Veritabanı bağlantı bilgileri, loglama kriterleri, çeşitli ortam parametrelerinin varsayılan değerleri, şifrelenmiş token bilgileri çoğunlukla bu dosyalar içerisine konuluyor. Bu nedenle kod tarafında nasıl yönetebileceğimizi bilmekte yarar var. Bu kısa yazımızda konfigurasyon içerisine alacağımız özel sekmeleri nasıl kullanabileceğimizi ve içerikleri ayrı dosyalar halinde nasıl ele alabileceğimizi incelemeye çalıştık. Umarım faydalı olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-Core-Daha-Verimli-Konfigurasyon-Yonetimi)

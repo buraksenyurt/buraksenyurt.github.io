@@ -24,3 +24,5 @@ Diyelim ki elinizde çeşitli tipte ve sayıda fonksiyon var ve bunların çalı
 ![tfi_98](/assets/images/2013/tfi_98.png)
 
 Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-98-Stopwatch-ile-Performans-Olcumu)

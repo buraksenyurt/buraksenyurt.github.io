@@ -16,3 +16,5 @@ Kısa bir aradan sonra.Net Tv görsel derslerimize devam ediyorum. Bu görsel de
 - [Factory Method Tsaarım Kalıbı](https://www.youtube.com/watch?v=ajiT4d2mPzM)
 - [Façade Tasarım Kalıbı](https://www.youtube.com/watch?v=fzyCu5I1Ghc)
 - [Singleton Tasarım Kalıbı](https://www.youtube.com/watch?v=Wo9c3DURMtk)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-Tv-Design-Patterns-Proxy)

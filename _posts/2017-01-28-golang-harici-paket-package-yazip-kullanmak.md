@@ -133,3 +133,5 @@ Uygulama kodunu tekrar çalıştırdığımda mtrk paketi ve fonksiyonelliklerin
 ![gopckg_8.gif](/assets/images/2017/gopckg_8.gif)
 
 Görüldüğü üzere Go dilinde paketler ile çalışmak oldukça basit. Atladığım pek çok konu olabilir. Örneğin paketler yüklenirken yapılmasını istediğiniz işlemler varsa bunları init fonksiyonu içerisinde gerçekleştirebilirsiniz ki örneğimizde buna değinmedik. Paket yönetimi için github'ı uzak repository olarak kullanabileceğimizi ve local workspace ile eşleştirerek ilerleyebileceğimizi gördük. Bunlara ek olarak bin,src ve pkg klasör hiyerarşisinden azda olsa bahsettik. Böylece geldik bir Gopher olma maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/harici-paket-yazip-kullanmak)

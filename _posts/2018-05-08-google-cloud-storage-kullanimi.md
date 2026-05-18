@@ -199,3 +199,5 @@ Tuşa basıp ilerlediğimdeyse hem yüklediğim dosyaların hem de bucket'ın ke
 ![gcpstorage_8.gif](/assets/images/2018/gcpstorage_8.gif)
 
 Görüldüğü üzere Google Cloud Platform'un kullanışlı API hizmetlerinden birisi olan Storage servisini kullanmak oldukça kolay. Artık kendi ortamınızdaki nesneleri Storage'a taşıyabilir buradan tetikleteceğiniz olaylar ile başka süreçlerin devreye girmesini sağlayabilirsiniz (diye düşünüyorum) Böylece geldik bir araştırmamızın daha sonuna. Doğruyu söylemek gerekirse Google Cloud Platform'un sunduğu API'lerle oynamak epey keyifli. Azure, AWS tarafından sunulan fonksiyonellikler için de aynı durumun söz konusu olduğunu belirtmek isterim. Bu tip fonksiyonellikleri deneyimleyerek bulut platformların imkanlarını daha iyi kavrayabilir ve çözüm üretme noktasında daha rahat hareket edebiliriz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Google-Cloud-Storage-Kullanımı)

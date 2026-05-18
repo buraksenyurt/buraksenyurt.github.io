@@ -16,3 +16,5 @@ Bazı durumlarda Asp.Net sayfasının çıktısına basacağımız içeriğin HT
 ![tfi_78](/assets/images/2013/tfi_78.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-78-Asp-Net-4-5-ile-HtmlEncode)

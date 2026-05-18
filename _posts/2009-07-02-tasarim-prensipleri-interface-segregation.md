@@ -202,3 +202,5 @@ Ancak ilk etapta tasarlanan herşeyi içinde barındıran şişman arayüz (Fat 
 Böylece geldik bir ilkenin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ISP.rar (31,41 kb)](/assets/files/2009/ISP.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Prensipleri-Interface-Segregation)

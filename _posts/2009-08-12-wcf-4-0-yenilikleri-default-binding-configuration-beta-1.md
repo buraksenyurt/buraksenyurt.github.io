@@ -140,3 +140,5 @@ Dikkat edileceği üzere binding elementinde name veya endpoint elementinde bind
 Evet. Son derece basit bir yenilik. Ancak konfigurasyon içeriğini daha okunur hale getirdiği ve basitleştirdiği ortada. Bu tekniği dilersek machine.config içerisindede kullanabiliriz. Yani machine.config içerisindeki bağlayıcı tipe özgü ayarlamalarda name niteliğini kullanmayabilir ve o makinedeki tüm uygulamaların da, bindingConfiguration niteliğini düşünmeden ilgili ayarları otomatik olarak almalarını sağlayabiliriz. WCF 4.0 ile birlikte gelen temel yeniliklere devam ediyor olacağız. Bu arada örneğimizi.Net Framework 4.0 Beta 1 ve Visual Studio 2010 Beta 1 üzerinde geliştirdiğimizi hatırlatalım. Dolayısıyla relase sürünmde bazı farklılıklar olabilir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [DefaultBindingConfiguration.rar (47,83 kb)](/assets/files/2009/DefaultBindingConfiguration.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Default-Binding-Configuration)

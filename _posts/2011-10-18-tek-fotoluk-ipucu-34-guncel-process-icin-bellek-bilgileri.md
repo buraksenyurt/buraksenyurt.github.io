@@ -16,3 +16,5 @@ categories:
 ![PhotoTrick34](/assets/images/2011/PhotoTrick34.png)
 
 [MemoryMeasurement.rar (22,15 kb)](/assets/files/2011/MemoryMeasurement.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-34(Guncel-Process-icin-Bellek-Bilgileri))))

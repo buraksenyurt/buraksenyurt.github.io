@@ -20,3 +20,5 @@ categories:
 Bir başka ip ucunda görüşünceye dek hepinize mutlu günler dilerim.
 
 **Not:** Provider'da değişiklik yapılmış olabilir ve yukarıdaki kod parçasının son sürümde daha farklı bir şekilde ele alınması gerekebilir. Buna dikkat edelim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-73-LINQ-to-Excel-icin-Strongly-Typed-Tip-Kullanmak)

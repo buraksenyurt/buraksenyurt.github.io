@@ -333,3 +333,5 @@ Update ifadesinde aynen Delete ifadesinde olduğu gibi ProductID isimli Primary 
 Dikkat edileceği üzere CUD operasyonlarının icrası noktasında araya girerek bir takım iş kurallarının işletilmesi mümkündür. Hatta örnek senaryoda görüldüğü gibi Log’ lamanın daha kural bazlı işlenmesi için bu kesmeler ideal olabilir. Diğer yandan CUD operasyonlarının Stored Procedure olarak inşa edilebilmesi, ilgili fonksiyonelliklerin veritabanı tarafında birer yordam nesnesi olarak değerlendirilebilmesi anlamına gelmektedir. Ayrıca parametre yapıları doğru ise DB tarafında var olan SP’ lerin map edilmesi de mümkündür. Bu durumda Db tarafındaki SP’ ler içerisinde yer alan ve DB’ ye özgü bir takım ifadelerin bu basit CUD operasyonları sırasında değerlendirilebilmesi de söz konusudur.
 
 Entity Framework tarafında geliştirmeler devam etmektedir. Codeplex üzerinden izlemeye devam ediyor olacağız. Bakalım baharın geldiği şu günlerde daha ne gibi esintilerle karşılacaşacağız. Böylece geldik bir makalemizin daha sonunda. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-6-e28093Yeni-Esintiler)

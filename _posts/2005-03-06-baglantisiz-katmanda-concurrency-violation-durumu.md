@@ -237,3 +237,5 @@ private void VeriGuncelle()
 ```
 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde kısaca bağlantısız katmanda meydana gelebilecek eş zamanlı çakışmaları nasıl ele alabileceğimizi incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hoşçakalın.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Baglantc4b1sc4b1z-Katmanda-Concurrency-Violation-Durumu-bsenyurt-com-dan)

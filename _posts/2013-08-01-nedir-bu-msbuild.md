@@ -270,3 +270,5 @@ Microsoft’ un Visual Studio ailesi ve geliştirme platformu oldukça geniş bi
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda kısada olsa, MSBuild platformunu ve XML tarafındaki betikleri (Scripts) anlamaya çalıştık. Ağırlıklı olarak bir inşa sürecine müdahale edebildiğimizi, bunun için platformun sunduğu bazı standart element ve niteliklerin olduğunu gördük. Devamı sizde artık. Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim. [Orjinal Yazım Tarihi – 25/02/2013]
 
 [Güncel bilgi –> MS Build is now part of Visual Studio!](http://blogs.msdn.com/b/visualstudio/archive/2013/07/24/msbuild-is-now-part-of-visual-studio.aspx)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Nedir-Bu-MSBuild)

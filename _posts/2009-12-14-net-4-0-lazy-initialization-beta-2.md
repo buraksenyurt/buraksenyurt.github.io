@@ -397,3 +397,4 @@ Umarım faydalı bir yazı olmuştur. Tekrardan görüşünceye dek hepinize mut
 
 [BeLazy.rar (28,31 kb)](/assets/files/2009/BeLazy.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-40-Lazy-Initialization)

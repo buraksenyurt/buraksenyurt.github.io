@@ -151,3 +151,4 @@ Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepi
 
 [HelloAdoNetActivityPack.rar (73,63 kb)](/assets/files/2010/HelloAdoNetActivityPack.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-AdoNet-Entity-Pack-Hello-World)

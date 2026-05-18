@@ -253,3 +253,5 @@ Böylece geldik bir makalemizin daha sonuna. Bu makalemizde Workflow çalışma 
 İlerleyen makalalerimizde Windows Workflow Foundation ile ilgili farklı konulara değinmeye devam ediyor olacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WorkflowRuntimeInceleme.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WWF-Calc4b1sma-Zamanc4b1-Motoru-Singleton-ve-Factory-Desenleri-bsenyurt-com-dan)

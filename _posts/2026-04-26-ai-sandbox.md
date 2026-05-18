@@ -280,3 +280,5 @@ Diğer yandan ajanların sisteme zarar vermesini engellemek için **sandbox** ye
 Belki de ilk alınması gereken tedbir bu projede bir yapay zeka modelinin kendi inisiyatifi ile **python** kodu yazıp çalıştırması yetkisinin sorgulanması olabilir :D Doğrusu yapay zeka modelleri ile çalışırken düşünülmesi gereken birçok güvenlik kriteri olduğunu söylemek isterim. İlk gözüme kestirdiğim mevzu izole ortamın ele alındığı bir deneydi. Zamanla diğer kavramları daha detaylı incelemeye çalaşacağım. Böylece geldik bir çalışmamızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek proje kodlarına GitHub üzerinden ulaşabilirsiniz.](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/SandboxDemo)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/yapay-zeka-uygulamalarinda-sandbox-kullanimi)

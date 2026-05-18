@@ -136,3 +136,5 @@ Burada do while döngümüz bizim anahtar noktamızdır. While do döngüsü iç
 Şekil 3. Toplu sorgunun çalıştırılması sonucu.
 
 Böylece, SqlDataReader nesnesi ile, toplu sorguların çalıştırılması sonucu elde edilen kayıt kümeleri üzerinden nasıl veri okuyabileceğimizi incelemiş olduk. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Batch-Queries-(Toplu-Sorgular)-ve-SqlDataReader-bsenyurt-com-dan)-ve-SqlDataReader-bsenyurt-com-dan)-ve-SqlDataReader-bsenyurt-com-dan)

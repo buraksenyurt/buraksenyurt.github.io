@@ -160,3 +160,5 @@ Volaaa!!! Açıkçası bu yaklaşım çok hoşuma gitti diyebilirim. Bir interfa
 ![custom_mw3.gif](/assets/images/2017/custom_mw3.gif)
 
 Tabii burada gelen geçen tüm mesajları boyutu ne olursa olsun işlettik. Belki de boyut kontrolünün başka bir yolu da vardır ama amacımız özel bir ara katman modülünü nasıl entegre edebileceğimizi görmekti. Hayal gücünüzü zorlayın ve nasıl ara katman ekleyebilirsiniz bir düşünün. Bu yapıyı sadece Web API tarafında değil Kestrel kullanılan tüm.Net Core projelerinde ele alabiliriz. Dilerseniz benzer örneği farklı bir senaryo ile bir MVC projesinde deneyerek bilgilerinizi pekiştirebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/web-api-icin-custom-middleware-yazmak)

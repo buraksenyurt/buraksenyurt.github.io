@@ -161,3 +161,5 @@ Son olarak suncumuzda yer alan veritabanlarının ve Deneme veritabanu altındak
 Şekil 7. Program ekranını son görüntüsü
 
 Evet geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SQL_DMO-Islemleric2a0-bsenyurt-com-dan)

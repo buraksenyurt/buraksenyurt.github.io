@@ -23,3 +23,5 @@ Malumunuz bazen Web adreslerine ait URL satırları epeyce uzun olabiliyorlar ve
 Örnekten de görüleceği üzere [https://www.googleapis.com/urlshortener/v1/url](https://www.googleapis.com/urlshortener/v1/url) adresine JSON formatında bir talep gönderilmekte olup, gelen cevap içerisinden id niteliğinin değeri yakalanmaktadır. Üstelik bu işlem sırasında NewtonSoft’ un ilgili NuGet paketinden yararlanılmış olup söz konusu fonksiyonellik, Uri sınıfı için bir Extension Method olarak tanımlanmıştır. (NewtonSoft ile ilişkili olarak [şuradaki](/2012/11/04/tek-fotoluk-ipucu-69-newtonsoft-jsondotnet-ve-dynamic-keyword/) ve [buradaki](/2012/11/12/tek-fotoluk-ipucu-70-yine-newtonsoft-jsondotnet-ve-dynamic/) ipuçlarına bakabilirsiniz) Bir başka ip ucunda görüşmek dileğiyle
 
 [Örneği denerken Google’ ın Shortener servisinin web adresini kontrol etmenizi öneririm. Yazının yazıldığı tarihe rağmen, yayınlandığı tarihte değişmiş, hatta kaldırılmış dahi olabilir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-97-Google-Shortener-URL-Hizmetini-CSharp-ile-Kullanmak)

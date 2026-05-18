@@ -341,3 +341,5 @@ Bu çalışmaya tekrardan dönmek benim için faydalı oldu. Sonuçta sürekli g
 - Postman ile basit REST testlerinin yapılmasını
 
 Böylece geldik bir [Saturday Night Works](https://github.com/buraksenyurt/saturday-night-works) macerasının daha sonuna. Bu sefer [eski maceralardan birisini](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2007%20-%20NoMoFaS) bloguma not olarak düşmeye çalıştım. Birkaç ay öncesinden kalma bir çalışma olsa da örneğin üstünden bir kere daha geçmek, kodları yeniden çalıştırmayı denemek ve yazılanları incelemek unuttuklarımı hatırlamama yardımcı oldu. Sonuç olarak bu çalışma kapsamında node.js ile MongoDB bazlı bir CRUD API servisi geliştirmeye çalıştığımızı özetleyebiliriz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/node-js-mongodb-fastify-ve-swagger-kullanilan-web-api-servisi-gelistirmek)

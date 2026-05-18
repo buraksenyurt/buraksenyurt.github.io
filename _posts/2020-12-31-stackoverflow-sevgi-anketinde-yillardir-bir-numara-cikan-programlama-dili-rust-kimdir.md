@@ -4274,3 +4274,5 @@ Rust dilinde şimdilik buraya kadar gelebildim. Gerçek saha tecrübem olmadığ
 - _ ve.. operatörlerinin kullanım alanları nerelerdir, araştırıp deneyiniz.
 
 Böylece geldik bir [SkyNet](https://github.com/buraksenyurt/skynet) derlememizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/stackoverflow-sevgi-anketinde-yillardir-bir-numara-cikan-programlama-dili-rust-kimdir)

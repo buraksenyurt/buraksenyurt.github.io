@@ -309,3 +309,5 @@ Bunun sebebi gelen talep sonrasında sunucu tarafında ilgili istemci için üre
 Böylece geldik bir makalemizin daha sonuna. Bu makalede basit olarak Workflow örneklerinin birer servis olarak nasıl yayımlanabileceğini adım adım incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WFServisleri.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-ile-WF-Entegrasyonu-2-bsenyurt-com-dan)

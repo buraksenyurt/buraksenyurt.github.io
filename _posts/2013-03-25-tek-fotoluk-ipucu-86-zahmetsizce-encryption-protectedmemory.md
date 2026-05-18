@@ -24,3 +24,5 @@ categories:
 ![tfi_86](/assets/images/2013/tfi_86.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-86-Zahmetsizce-Encryption-(ProtectedMemory))))

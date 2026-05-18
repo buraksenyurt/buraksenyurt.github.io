@@ -278,3 +278,5 @@ Burada hayal gücünüzü kullanmadan önce, bir Excel uygulamasının aslında 
 [HowTo_ExcelWithEF.zip (1,20 mb)](/assets/files/2013/HowTo_ExcelWithEF.zip)
 
 (Orjinal Yazım Tarihi 03-05-2013)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Excel-ve-Entity-Framework-Konusuyor)

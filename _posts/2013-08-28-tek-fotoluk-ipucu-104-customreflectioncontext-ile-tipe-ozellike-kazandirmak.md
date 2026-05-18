@@ -17,3 +17,5 @@ Bir tipin çalışma zamanında Reflection ile yakalanabilen özelliklerine ilav
 ![tfi_104n](/assets/images/2013/tfi_104n.png)
 
 Bir başka ipucunda görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-104-CustomReflectionContext-ile-Tipe-Ozellike-Kazandc4b1rmak)

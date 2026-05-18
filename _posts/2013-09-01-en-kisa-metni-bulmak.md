@@ -354,3 +354,5 @@ sonuçlarını elde edebiliriz. Yani PA hecesinin teke indirgenmesi söz konusud
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [EnKisaCumle.zip (59,15 kb)](/assets/files/2013/EnKisaCumle.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/En-Kisa-Metni-Bulmak)

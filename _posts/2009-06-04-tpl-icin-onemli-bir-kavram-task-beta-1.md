@@ -159,3 +159,5 @@ Tabiki konuyu daha derinlere genişletmek mümkündür. Örneğin bazı görevle
 Tabi başımıza dert açacak daha pek çok konuda var. Söz gelimi, TPL alt yapısını WinForms yada WPF gibi uygulamalarda ele aldığımızda neler olacaktır kimbilir. Malum WinForms yada WPF ekranlarında, Main Thread bencillik edip ekran üzerindeki kontrolleri başka Thread'ler ile paylaşmak istemez. Bu bencilliğe ortak olduğumuzda WinForms tarafında Illegal Cross Thread istisnalarına düştüğümüzü gayet iyi biliyoruz. Bu ve benzeri diğer konuları ilerleyen zamanlarda irdelemeye devam ediyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloTasks.rar (23,71 kb)](/assets/files/2009/HelloTasks.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TPL-icin-Onemli-Bir-Kavram-Task)

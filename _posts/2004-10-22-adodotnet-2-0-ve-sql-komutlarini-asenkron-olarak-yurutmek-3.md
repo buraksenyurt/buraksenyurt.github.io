@@ -165,3 +165,5 @@ satırı ile, dizi içindeki WaitHandle nesnelerinden herhangi birinin ilgili ko
 Daha sonra ise, döngü ikinci iterasyondan işleyişine devam eder. Bu kez hâlen daha çalışmakta olan diğer SQL komutlarına ait WaitHandle nesnelerinin bir sinyal alıp almadığına bakılır. Yine, ilk iterasyonda olduğu gibi önce tamamlanan komuta ait WaitHandle nesnesi gerekli sinyali alır ve geriye dizi içindeki indeks değerini döndürür. Ardından tekrar if koşulları uygulanır ve gerekli sonuçlar elde edilir. Bu işleyiş, döngü içindeki tüm WaitHandle nesneleri ilişkili oldukları komutların tamamlandığına dair sinyaller alıncaya, dolayısıyla komutlar işleyişini bitirinceye kadar devam eder.
 
 Görüldüğü gibi Wait modeli içerdiği teknikler itibariyle biraz karışıktır. Ancak ilerleyen zamanlarda, ADO.NET 2.0'ın son sürümünde bu tekniklerin çok daha kullanışlı hâle geleceğine inanıyorum. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ve-Sql-Komutlarc4b1nc4b1-Asenkron-Olarak-Yurutmek-3-bsenyurt-com-dan)

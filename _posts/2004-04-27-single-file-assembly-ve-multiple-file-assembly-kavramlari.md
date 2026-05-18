@@ -228,3 +228,5 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
 Şekil 10. Uygulamanın çalışmasının sonucu.
 
 Böylece geldik bir makalemizin daha sonuna. Umuyorum ki assembly'ları bu yönleri ile incelemek siz değerli okurlarımızın işine yarıyordur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Single-File-Assembly-ve-Multiple-File-Assembly-Kavramları-bsenyurt-com-dan)

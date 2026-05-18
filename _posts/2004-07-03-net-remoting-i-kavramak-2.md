@@ -84,3 +84,5 @@ Burada dikkat edilecek olursa, uzaknesne.dll dosyası assembly'a referans olarak
 Bu işlemin ardından istemci uygulamamızı da çalıştıralım. Sonuçlar aşağıdaki gibi olacak ve SQL sunucusunda yer alan Northwind veritabanındaki Customers tablosundaki CustomerID değeri ALFKI olan satır bilgileri elde edilecektir.
 ![mk76_7.gif](/assets/images/2004/mk76_7.gif)
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/NET-Remoting-i-Kavramak-2-bsenyurt-com-dan)

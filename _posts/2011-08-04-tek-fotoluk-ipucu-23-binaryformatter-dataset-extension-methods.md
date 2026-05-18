@@ -16,3 +16,5 @@ Bu kez elimde bir DataSet, Binary serileştirme için BinaryFormatter ve tabiki 
 ![PhotoTrick23](/assets/images/2011/PhotoTrick23.png)
 
 [BinaryDataSet.rar (49,42 kb)](/assets/files/2011/BinaryDataSet.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-23-BinaryFormatter-DataSet)

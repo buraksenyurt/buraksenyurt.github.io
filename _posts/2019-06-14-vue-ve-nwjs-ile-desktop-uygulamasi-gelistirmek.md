@@ -333,3 +333,5 @@ Elbette aptal kutunun başında saatlerimi geçirdiğim Perfect Strangers dizisi
 - CORS ne işe yarar
 
 Ne yazık ki Vue konusunda uzman değilim. Aslında onu şirketteki yeni nesil projelerde kullanıyoruz lakin iyi bir başlangıcım yok. Belki de ahch-to (macOS High Sierra) üzerinde yapacağım ikinci faz çalışmaları kapsamında ona daha fazla zaman ayırabilirim. Böylece geldik neşeli [bir cumartesi gecesinin 16ncı bölümüne ait derlemeler](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2016%20-%20Build%20Desktop%20App%20with%20Vue%20and%20NWjs)in de sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/vue-ve-nw-js-ile-desktop-uygulamasi-gelistirmek)

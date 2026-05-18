@@ -172,3 +172,4 @@ Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ServiceBasedExcel_RTM.rar (213,11 kb)](/assets/files/2010/ServiceBasedExcel_RTM.rar) [Örnek Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Data-Services-C-40-Excel-ve-Komple-Bir-Uygulama)

@@ -351,3 +351,5 @@ Görüldüğü üzere Visual Studio IDE’ sinin bir parçası olarak sunulan ve
 
 [ReHostedWFDesigner.zip (75,05 kb)](/assets/files/2012/ReHostedWFDesigner.zip)
 (Örnek Visual Studio 2012 RC sürümünde geliştirilmiştir ancak kodlar Visual Studio 2010 üzerinde de çalışmaktadır)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Developing-Re-Hosted-Workflow-Designer)

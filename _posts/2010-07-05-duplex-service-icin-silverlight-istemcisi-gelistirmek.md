@@ -98,3 +98,5 @@ Tüm bu çalışma sırasında dikkat edilmesi gereken bir husus da, önceki yaz
 Oysaki geliştirdiğimiz örnek Asp.Net Development Server üzerinden yayınlanmaktadır (`http://localhost:22334/WeatherClientAppTestPage.aspx`) ve sorunsuz bir şekilde IIS üzerindeki WorldWeatherService uygulamasına erişebilmektedir. Dolayısıyla Silverlight uygulamalarında sıkça rastladığımız Cross Domain sorunu yaşanmamaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WeatherClientApp.rar (540,12 kb)](/assets/files/2010/WeatherClientApp.rar) [Örnek Visual Studio 2010 RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Duplex-Service-icin-Silverlight-Istemcisi-Gelistirmek)

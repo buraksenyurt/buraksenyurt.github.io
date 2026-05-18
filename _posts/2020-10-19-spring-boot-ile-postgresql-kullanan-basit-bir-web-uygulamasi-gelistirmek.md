@@ -396,3 +396,5 @@ Yanlış bir kategori mi eklediniz? Var olanı silmek mi istiyorsunuz? Vay halin
 - CategoryController sınıfındaki newCategory metodunda model nesnesinin attribute'larına yeni bir Category nesnesi eklememizin sebebi nedir? Eklemezsek ne olur?
 
 Bu sorulara ek olarak uygulamaya yeni bir Entity nesnesini (örneğin kategorilere bağlı kitap alıntlarını tutan sınıfı) dahil edebilir, PostgreSQL yerine MongoDB kullanmayı deneyebilirsiniz. Hoş bir tasarıma da kavuşturduktan sonra aslında çok temel ihtiyaçları sağlayan veri odaklı bir MVC uygulaması yazmış oluyorsunuz. Bence güzel;) Böylece geldik bir SkyNet derlememizin daha sonuna. Kodların tamamına [github reposu üzerinden](https://github.com/buraksenyurt/skynet/tree/master/No%2031%20-%20Web%20App%20with%20Spring%20and%20PostgreSQL) ulaşabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/spring-boot-ile-postgresql-kullanan-basit-bir-web-uygulamasi-gelistirmek)

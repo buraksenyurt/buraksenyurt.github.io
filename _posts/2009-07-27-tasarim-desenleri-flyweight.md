@@ -183,3 +183,5 @@ Bu noktada for döngüsü içerisinde MoveTo operasyonundan önce (Extrinsic Sta
 Bu desen ile ilişkili görsel dersi hazırlayana dek size tavsiyem, istemci tarafındaki for döngüsünde adım adım debug ederek ilerlemeniz olacaktır. Bununla birlikte mutlaka oodesing.com, dofactory.com ve sourcemaking.com/designpatterns sitelerindeki örnekleri incelemenizi öneririm. Böylece geldik bir desenin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [FlyWeightPattern.rar (23,15 kb)](/assets/files/2009/FlyWeightPattern.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-FlyWeight)

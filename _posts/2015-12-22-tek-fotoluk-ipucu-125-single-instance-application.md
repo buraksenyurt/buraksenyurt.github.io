@@ -18,3 +18,4 @@ ApplicationControl sınıfıdaki static Runnable metodu içerisinde Mutex sını
 
 Böylece geldik bir tek fotoluk ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-125-single-instance-application)

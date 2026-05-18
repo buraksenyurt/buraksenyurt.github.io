@@ -243,3 +243,5 @@ dotnet run
 ![skynet_38_Screenshot_03.png](/assets/images/2020/skynet_38_Screenshot_03.png)
 
 Dikkat edileceği üzere Console uygulamasından gönderdiğimiz JSON mesaj içeriği, Java uygulamasına ait terminal ekranına da düşmüştür. Bu arada uygulama kodlarına [skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2038%20-%20Spring%20RabbitMQ%20and%20DotNetCore) üzerinden erişebilirsiniz. Kodlara eriştiğinizde şu soruya cevap aramanızı öneririm; Varsayılan halde Java uygulaması localhost sunucusuna ve standart RabbitMQ portuna gideceğini nereden biliyor? Bu sorulara ek olarak kurguyu biraz daha öteye taşıyabilirsiniz. Örneğin Java uygulamasını birden fazla kuyruğu dinleyecek şekilde organize etmeyi deneyebilir ve hatta kullandığınız kuyruğa başka platformda yazılmış programlardan mesaj gönderip kimden geldiğini anlamaya çalışabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/net-core-tarafindan-rabbitmq-ya-mesaj-gondermek-ve-java-tarafindan-dinlemek)

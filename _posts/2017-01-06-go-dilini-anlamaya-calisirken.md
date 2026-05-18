@@ -115,3 +115,5 @@ Go katı yazım kurallarına sahip bir dil gibi görünüyor. Burada katılıkta
 Ha haa...Şaka yaptım. Öyle bir şey yok neyse ki.
 
 Go bende merak uyandıran bir dil. Dokümanları taramaya devam ediyorum. Merak ettiğim pek çok yanı var. Başka dillerle olan benzerlikleri veya farklılıkları söz konusu. İlerleyen zamanlarda farklı Go yazıları ile görüşmek üzere hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/go-dilini-anlamaya-calisirken)

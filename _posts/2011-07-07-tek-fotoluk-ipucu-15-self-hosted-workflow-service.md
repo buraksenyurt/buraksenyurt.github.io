@@ -15,3 +15,5 @@ Elinizde bir Workflow Service kütüphanesi ve XAMLX uzantılı Workflow Service
 ![PhotoTrick15](/assets/images/2011/PhotoTrick15.png)
 
 [ProductsWorkflowHost.rar (38,48 kb)](/assets/files/2011/ProductsWorkflowHost.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-15)

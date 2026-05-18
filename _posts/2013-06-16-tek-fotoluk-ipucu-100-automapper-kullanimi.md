@@ -17,3 +17,5 @@ Bildiğiniz üzere [şu yazımızda](/2013/03/25/tek-fotoluk-ipucu-99-tipler-ara
 ![tfi_100](/assets/images/2013/tfi_100.png)
 
 Denemeden önce en azından install-package AutoMapper komutunu Package Manager Console’ dan çalıştırıp ilgili kütüphaneyi yüklemeyi unutmayınız.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-100-AutoMapper-Kullanimi)

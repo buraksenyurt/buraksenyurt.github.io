@@ -130,3 +130,5 @@ EnableTheming özelliği, sunucu kontrolleri içinde geçerlidir. Dolayısıyla,
 Şekil 11. Bir kontrol için temanın geçersiz kılınması.
 
 Böylece ASP.NET 2.0 ile gelen tema tekniğinin nasıl kullanıldığını kısaca incelemiş olduk. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ve-Temalar-(Themes)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

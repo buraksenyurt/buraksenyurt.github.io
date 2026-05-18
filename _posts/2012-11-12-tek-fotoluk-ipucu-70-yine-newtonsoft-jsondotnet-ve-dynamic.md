@@ -48,3 +48,5 @@ ve hatta NuGet ile eklediğimiz Newtonsoft'un JSON.net kütüphanesi. Ha bir de 
 ![tfi_70](/assets/images/2012/tfi_70.png)
 
 Başka bir ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-70-Newtonsoft-Jsonnet-and-dynamic-and-parsing)

@@ -103,3 +103,5 @@ Bu sonuçlara ve diğerlerine baktığımda 1000 adımlık iterasyonun, Thread'l
 Görüldüğü gibi 10ncu Thread çalışmaya başlayıp 1 eleman ekledikten sonra gelen Stop metodu nedeniyle hem kendisi hemde diğer Thread'ler mümkün olan en kısa sürede durdurulmuştur. Sanıyorumki artık Stop ve Break arasındaki farkı daha iyi görebiliyoruz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ParallelForStopBreak.rar (21,27 kb)](/assets/files/2009/ParallelForStopBreak.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ParallelFor-Metodu-icin-Stop-Break-Kullanc4b1mc4b1)

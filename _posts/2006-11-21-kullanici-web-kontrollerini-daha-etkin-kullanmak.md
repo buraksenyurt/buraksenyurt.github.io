@@ -386,3 +386,5 @@ protected void Secilenler(object sender, KontrolBilgileri kb)
 Bu makalemizde kullanıcı web kontrollerini daha etkin şekilde nasıl kullanabileceğimizi incelemeye çalıştık. Aslında çıkış noktamız bir web kullanıcı kontrolünü normal bir web sunucu kontrolüne benzer bir sınıf olarak düşünmekti. Bu sayede kullanıcı web kontrollerine özellik, olay ekleyebileceğimizi ve dinamik olarak çalışma zamanında oluşturabileceğimizi gördük. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek kod için tıklayın.](/assets/files/2006/UsingWebUserControls.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kullanıcı-Web-Kontrollerini-Daha-Etkin-Kullanmak-bsenyurt-com-dan)

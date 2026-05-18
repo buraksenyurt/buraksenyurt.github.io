@@ -17,3 +17,4 @@ Hani şu NuGet paketlerine bakıyoruz ya bir süredir. Hatta bazılarını alıp
 
 Size düşen ise bu paketi gerekli gördüğünüz yerlerde kullanmak dışında, birde kaynak kodlarına bakmak olmalı. Hatta bakmadan önce siz bu tip bir Fluent API yazmak isteseniz nasıl hareket ederdiniz bir düşünün derim. Bir başka ipucunda görüşmek üzere.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-119-en-keyifli-validation)

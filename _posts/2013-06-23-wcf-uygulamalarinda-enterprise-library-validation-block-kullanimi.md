@@ -305,3 +305,5 @@ Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepin
 [WCFandValidationBlock.zip (1,92 mb)](/assets/files/2013/WCFandValidationBlock.zip)
 
 [Orjinal Yazım Tarihi 10.09.2012]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Uygulamalarinda-Enterprise-Library-Validation-Block-Kullanimi)

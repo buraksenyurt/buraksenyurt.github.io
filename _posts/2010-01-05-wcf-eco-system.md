@@ -32,3 +32,5 @@ Tabi buradaki bilgiler dışında aşağıdaki çizelgeyide göz önüne almamı
 Aslında WCF alt yapısı üzerinde duran servis programlama modelleri, geliştiricilerin vakaya göre WCF alt yapı detaylarından uzaklaşmasını sağlamaktadır. Bu, özellikle Data Services ve RIA Services modellerinde ön plana çıkmaktadır. Yine de istenildiğinde bu modelleri esnetebileceğimizi bilmeliyiz. Hatta bana kalırsa WCF alt yapısı üzerine oturan kendi programlama modellerimizi de geliştirebiliriz. Ancak buna gerek olup olmadığını tartışmalıyız.
 
 Umarım WCF Eco System hakkında biraz fikir sahibi olabilmişizdir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Eco-System)

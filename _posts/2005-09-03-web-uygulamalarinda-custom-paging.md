@@ -171,3 +171,5 @@ Uygulamamızı çalıştıracak olursak sayfalar arasında başarılı bir şeki
 Bizim kullandığımız teknikte de dikkat ederseniz buna benzer bir yaklaşım söz konusudur. Çünkü biz de SP'miz içerisinde tüm veri setini çekip bir temp tablo içerisine alıyoruz. Yalnız biz bu işlemi SQL sunucusu üzerinde gerçekleştiriyoruz. Oysaki normal sayfalamada hakikaten tüm veri kümesi bağlantısız katman nesnesine doldurulmaktadır. Bizim tekniğimizde ise sadece ilgili sayfadaki belirtilen satır sayısı kadarlık bir veri seti bağlantısız katman nesnesine doldurulmaktadır. İşte aradaki en büyük fark budur. Ki bu fark bize performans sağlamaktadır. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Kodlar İçin Tıklayınız.](/assets/files/2005/UsingCustomPaging.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Uygulamalarc4b1nda-Custom-Paging-bsenyurt-com-dan)

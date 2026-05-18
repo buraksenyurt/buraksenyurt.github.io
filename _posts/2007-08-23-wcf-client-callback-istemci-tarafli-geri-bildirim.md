@@ -475,3 +475,6 @@ Elbette bu senaryoda dikkat edilmesi gereken durumlar vardır. Söz gelimi, iste
 Bu makalemizde, WCF uygulamalarında servislerin istemciler üzerinde nasıl metod çağırabileceğini Client Callback tekniği ile incelemeye çalıştık. Bu çağırım işlemini abone bazlı hale getirerek, herhangibir istemcinin bir olay gerçekleştirmesi sonrası servisin diğer istemcileride uyarabilmesini sağladık. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/ClientCallback.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Client-Callback-(Istemci-Taraflc4b1-Geri-Bildirim)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan
+n)

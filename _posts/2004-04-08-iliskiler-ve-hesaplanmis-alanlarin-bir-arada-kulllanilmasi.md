@@ -79,3 +79,5 @@ Uygulamamızda Child isimli nesneyi nasıl kullandığımıza ve bu sayede, iki 
 Şekil 3. Uygulamanın Çalışmasının Sonucu.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Iliskiler-ve-Hesaplanmc4b1s-Alanlarc4b1n-Bir-Arada-Kulllanc4b1lmasc4b1-bsenyurt-com-dan)

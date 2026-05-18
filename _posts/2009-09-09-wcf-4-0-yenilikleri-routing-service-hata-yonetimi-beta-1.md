@@ -199,3 +199,4 @@ Görüldüğü gibi, UserService'in kapalı olması ve Exception üretmesi durum
 
 [Router Project 2.rar (128,25 kb)](https://www.buraksenyurt.com/pics/2009%2f8%2fRouter+Project+2.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-Hata-Yonetimi)

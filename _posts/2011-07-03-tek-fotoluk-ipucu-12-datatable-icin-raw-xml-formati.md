@@ -16,3 +16,5 @@ Not: WcfTestClient istemcisine güvenmeyin. XElement tipinin geriye döndürelem
 ![PhotoTrick12](/assets/images/2011/PhotoTrick12.png)
 
 [DataTableFormats.rar (18,32 kb)](/assets/files/2011/DataTableFormats.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-12-(DataTable-icin-Raw-XML-Formati))))

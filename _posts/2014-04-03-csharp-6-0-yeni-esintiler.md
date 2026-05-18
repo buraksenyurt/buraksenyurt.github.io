@@ -380,3 +380,5 @@ Doğruyu söylemek gerekirse yeni gelen dil özelliklerinin daha yalın ve sade 
 Önemli olan noktalardan bir diğeri aslında CLR’ ın ve IL tarafının oldukça iyi tasarlanmış olduğu gerçeği. (Sanki 80li yıllardaki Lego parçalarının üstüne günümüz modellerini sorunsuz ve kolayca entegre edebilmek gibi) Dikkat edileceği üzere incelediğimiz yeni yeteneklerin çoğu syntax açısından kolaylıklar gösterse de IL tarafında beklediğimiz şekillere dönüşmekte. Dolayısıyla syntax tarafında planlanan bir kabiliyetin aslında IL tarafında karşılığı olmasının, bu yeni yeteneğin ortaya konulmasının sırrı olduğunu ifade edebiliriz.
 
 İlerleyen dönemlerde söz konusu özelliklerin endüstüriyel anlamda faydalarını göreceğimizi umuyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-60e28093Yeni-Esintiler)

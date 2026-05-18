@@ -282,3 +282,5 @@ Ayrıca listViewPlayer ListView kontrolünün ItemType özelliğine de SDTCNew.P
 Görüldüğü gibi iç içe iki ListView bileşeni Master-Detail formasyonda oyun sahalarını ve bu sahalardaki oyuncuları gösterecek şekilde üretilebilmiştir. Böylece geldik bir yazımızın daha sonuna. Bu kısa çerez tadındaki yazı ile Asp.Net 4.5 ile gelen yeni kabiliyetlerden birisine değinmiş olduk. Bir başka yazımızda görüşmek dileğiyle, hepinize mutlu günler dilerim.
 
 [ASPNET45_NewFeatures.zip (44,72 kb)](/assets/files/2012/ASPNET45_NewFeatures.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-45-Strongly-Typed-Data-Control)

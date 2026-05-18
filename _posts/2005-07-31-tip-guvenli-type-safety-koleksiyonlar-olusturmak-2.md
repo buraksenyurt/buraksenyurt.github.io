@@ -204,3 +204,5 @@ Görüldüğü gibi KitapKoleksiyon isimli koleksiyonumuza eleman eklemek istedi
 ![mk131_5.gif](/assets/images/2005/mk131_5.gif)
 
 İşte bu bizim için tip güvenliğini sağlamaktadır. Çünkü KitapKoleksiyon tipinden nesne örneğimize int-Kitap tipi dışında bir anahtar-değer çifti ekleyemiz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tip-Guvenli-(Type-Safety-)-Koleksiyonlar-Olusturmak-2-bsenyurt-com-dan)-Koleksiyonlar-Olusturmak-2-bsenyurt-com-dan)-Koleksiyonlar-Olusturmak-2-bsenyurt-com-dan)

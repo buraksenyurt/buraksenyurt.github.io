@@ -218,3 +218,5 @@ private void cm_PositionChanged(object sender, EventArgs e)
 Bu makalemiz ile, CurrencyManager sınıfının temel metodlarını ve özelliklerini inceleyerek, veri kümeleri üzerinde navigasyon, ekleme, güncelleme ve silme işlemlerinin nasıl yapıldığını öğrenmeye çalıştık. Umuyorum ki faydalı bilgiler verebilmişimdir. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın](/assets/files/2004/Currency.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/CurrencyManager-ile-Navigasyon-ve-Temel-Satc4b1r-Islemleri-bsenyurt-com-dan)

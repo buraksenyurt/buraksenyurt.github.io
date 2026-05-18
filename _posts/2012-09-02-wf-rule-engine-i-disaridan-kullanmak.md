@@ -316,3 +316,5 @@ Bu yazımızda çok basit olarak Workfow Rule Engine alt yapısına bir Merhaba 
 [Örnek her nedense halen RC sürümünde olan Visual Studio 2012 ile geliştirilmiştir. Ancak Visual Studio 2010 ile de çalışmaktadır]
 
 [WFRuleSetHowTo.zip (60,57 kb)](/assets/files/2012/WFRuleSetHowTo.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-Rule-Engine-How-To)

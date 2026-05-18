@@ -254,3 +254,5 @@ Burada ki gibi bir kullanım tamamen geçerlidir. Derleme zamanında her hangi b
 ![mk126_9.gif](/assets/images/2005/mk126_9.gif)
 
 Görüldüğü gibi sınıflarımızı, arayüzlerimizi veya yapılarımızı partial olarak tanımlamak son derece kolaydır. Tek yapmanız gereken partial anahtar sözcüğünü kullanmaktır. Asıl zor olan, bu tipleri bölme ihtiyacını tespit edebilmek ve ne şekilde parçalara ayırabileceğimize karar vermektir. Yani bir sınıfı gelişigüzel parçalara bölmektense bunun için geçerli bir sebep aramak son derece önemlidir. Ayrıca mantıksal bölümlemeyi çok iyi analiz etmemiz gerekir. Bu analizin en iyi çözümü sunabilmesi ise sizlerin proje tecrübesine, planlama ve öngörü yeteneklerine bağlıdır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-2-0-ile-Partial-Types-(Kısmi-Tipler)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

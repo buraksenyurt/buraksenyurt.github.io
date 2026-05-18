@@ -405,3 +405,5 @@ yarar vardır
 Peki başka ip uçları olabilir mi? Elbette olabilir. Bunları da ilerleyen yazılarımızda incelemeye devam edeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [OldTimes.rar (25,69 kb)](/assets/files/2011/OldTimes.rar) [Örnek Visual Studio 2010 Ultimate ile geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Daha-iyi-Kodlama-icin-Basit-Oneriler)

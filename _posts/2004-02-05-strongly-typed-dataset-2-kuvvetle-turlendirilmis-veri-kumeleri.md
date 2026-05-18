@@ -153,3 +153,6 @@ private void btnSil_Click(object sender, System.EventArgs e)
 Bu metod parametre olarak aldığı satırı tablodan çıkartır.
 
 Böylece Kuvvetle Türlendirilmiş Veri Kümeleri üzerinden satır ekleme, arama, düzenleme ve silme işlemlerinin nasıl yapılacağını incelemiş olduk. Umuyorumki hepiniz için faydalı bir makale olmuştur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Strongly-Typed-DataSet-2-(Kuvvetle-Turlendirilmis-Veri-Kumeleri)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyu
+urt-com-dan)

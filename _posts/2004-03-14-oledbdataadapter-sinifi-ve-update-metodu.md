@@ -195,3 +195,5 @@ Buradaki parametreleri kısaca açıklayacak olursak; ilk parametremiz, komutumu
 Şekil 8. Değişikliklerimiz veritabanına yansıtıldı.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde, OleDbDataAdapter sınıfına ait olayları incelemeye çalışacağız. Şimdilik görüşmek dileğiyle, hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/OleDbDataAdapter-Sc4b1nc4b1fc4b1-ve-Update-Metodu-bsenyurt-com-dan)

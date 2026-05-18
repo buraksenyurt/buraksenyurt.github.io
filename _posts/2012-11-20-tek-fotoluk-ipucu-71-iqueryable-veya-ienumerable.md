@@ -58,3 +58,5 @@ ORDER BY [Extent1].[LastName] ASC, [Extent1].[FirstName] ASC
 Uppsss!!! Benzer bir sorgu derken!
 
 IQueryable üzerinden yapılan Take (10) çağrısı dikkat edileceği üzere TOP 10 ifadesini kullanmıştır. Peki ya IEnumerable üzerinden yapılan Take (10) çağrısı ne yapmıştır? Aslında tüm liste çekilmiş sonrasında Take metodu, belleğe aldığı koleksiyon seti üzerinden ilk 10luk parçayı almıştır. Sanırım artık IQueryable mı olsun, IEnumerable mı olsun çıktı sonucu ya da var anahtar kelimesini kullanırsak hangisini göz önüne alır, hangisi daha avantajlıdır diye bir kuşku oluşturmuş bulunmaktayım içinizde. E hadi hayırlısı diyelim. Başka bir ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucue-71-IQueryable-veya-IEnumerable)

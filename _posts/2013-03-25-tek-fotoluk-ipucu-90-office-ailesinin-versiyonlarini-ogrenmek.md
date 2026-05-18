@@ -19,3 +19,5 @@ Diyelim ki yazmış olduğunuz ürünü kuracağınız/kurduğunuz Windows platf
 ![tfi_90](/assets/images/2013/tfi_90.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-90-Office-Ailesinin-Versiyonlarini-Ogrenmek)

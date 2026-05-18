@@ -20,3 +20,5 @@ Nedirtv?com liderdliğinde sürdürdüğümüz WCF Öğreniyorum Webiner serisin
 - [Youtube Link](https://www.youtube.com/watch?v=S8oiWgIcZUM)
 - Sunum Dosyası: [WCF 4.0 - Ders 2 - Veri Sozlesmeleri II.pptx (314,90 kb)](/assets/files/2010/WCF40Ders2Veri%20SozlesmeleriII.pptx)
 - Solution Son Hali: [WCF Ogreniyorum.rar (336,05 kb)](/assets/files/2010/WCF%20Ogreniyorum.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Ogreniyorum-Ders-2-Veri-Sozlesmeleri-II)

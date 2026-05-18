@@ -22,3 +22,5 @@ Ancak bunun daha pratik olan bir yolu da vardır. O da Parallel sınıfı üzeri
 ![tfii_88](/assets/images/2013/tfii_88.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotolok-Ipucu-88-TaskWaitAll-out-ParallelInvoke-in)

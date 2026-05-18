@@ -155,3 +155,5 @@ Bu değişiklikle, AddSingleton metodunun generic versiyonunu kullanarak IHosted
 ![hostedsrv_2.gif](/assets/images/2018/hostedsrv_2.gif)
 
 10 saniyede bir Chuck Norris'e ait servise bir çağrı ve 30 saniyede bir ortam verilerini toplama işlemi gerçekleşmektedir. Bu sırada Web API servisinin normal hizmetini sürdürdüğünü de ifade edelim. Yani gelen talepleri karşılar haldedir. Görüldüğü üzere arkaplan görevlerinin Web tabanlı uygulamalarda konuşlandırılması oldukça kolay..Net Core tarafının Dependency Injection mekanizması da bu işi basitleştirmekte. Microservice odaklı çözümlerde bu teknikten yararlanılarak arka plan görevlerinin tesis edilmesi kolaylıkla sağlanabilir. Hosted Service tipleri Task'ların yürütüldüğü noktalarda asenkron çalışan dış sistemlerle entegre olabilirler (RabbitMQ, Kafka, MSMQ. Azure Service Bus, WSO2 vb) Benim için yine keşfedilmesi, çalışılması, uygulanması ve öğrenilmesi keyifli bir konuydu. Bir başka makalede görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/core-web-api-icin-planlanmis-gorevler)

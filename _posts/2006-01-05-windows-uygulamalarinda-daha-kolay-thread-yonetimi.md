@@ -141,3 +141,5 @@ Uygulamamızı bu haliyle çalıştırdığımızda aşağıdaki Flash videosund
 Gördüğünüz gibi, Windows uygulamalarında arka planda çalışacak işlemleri yönetmek için BackgroundWorker bileşeni oldukça büyük kolaylıklar sağlamaktadır. Aslında şu bir gerçektir ki, aynı işlevselliği Thread nesnelerini kullanaraktanda yapabilmekteyiz.
 
 Aslında Windows uygulamalarını hedef alan bu gelişmenin, thread yönetimini kolaylaştırıcı bir yenilik olduğunu düşünebiliriz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Windows-Uygulamalarc4b1nda-Daha-Kolay-Thread-Yonetimi-bsenyurt-com-dan)

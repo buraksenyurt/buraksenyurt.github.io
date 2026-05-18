@@ -159,3 +159,5 @@ namespace ClientApp
 Görüldüğü üzere servis operasyonu içerisinde üretilen ErrorInformation bilgisi istemci tarafına XML formatlı olacak şekilde aktarılmıştır. Sonuç olarak olası veya beklenen hatalar karşısında istemci tarafına uygun bir bildirim yapılması HTTP durum kodları bazında mümkündür. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson4_RC.rar (174,57 kb)](/assets/files/2010/Lesson4_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Services-Error-Handling)

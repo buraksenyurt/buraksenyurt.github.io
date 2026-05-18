@@ -221,3 +221,5 @@ css isimli map'in value değerleri birer map olarak tanımlanmıştır. Buna gö
 ![gomaps_2.gif](/assets/images/2017/gomaps_2.gif)
 
 Gopher olma çalışmalarımızla ilgili olarak bu yazımızda slice ve map kavramlarına değinmeye çalıştık. Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-slice-ve-maps-kavramlari)

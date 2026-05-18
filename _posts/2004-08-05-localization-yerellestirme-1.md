@@ -145,3 +145,5 @@ Bu kod satırı ile, çalışan proses için kültür değeri, seçilen kültür
 Şekil 6. Arabistan'da durum daha da karışık.
 
 Böylece bir uygulamanın, belirli bir kültüre göre yerelleştirilmesini görmüş olduk. Diğer taraftan, uygulamamızın farklı dillere göre destek vermesini de isteyebiliriz. İşte bu noktada devreye Resource Files (Kaynak Dosyalar) girmektedir. Bu konuyu ise bir sonraki makalemizde incelemeye çalışacağız. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Localization-(Yerellestirme)-1-bsenyurt-com-dan)-1-bsenyurt-com-dan)-1-bsenyurt-com-dan)

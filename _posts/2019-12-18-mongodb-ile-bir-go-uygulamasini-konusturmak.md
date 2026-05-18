@@ -619,3 +619,5 @@ Ve tabii kabul ederseniz sizin için iki güzel görevim var:)
 - Güncelleme fonksiyonunu tamamlayın.
 
 Böylece geldik SkyNet'te bir günün daha sonuna. Sonraki çalışmada Wails paketini kullanarak Go ile yazılmış bir masaüstü programı geliştirmek niyetindeyim. O zaman dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/mongodb-ile-bir-go-uygulamasini-konusturmak)

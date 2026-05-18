@@ -298,3 +298,5 @@ Bazen sıfırdan başlanacak bir ürün için ya da lisans maliyetleri ve diğer
 - refs özelliği ile kontrollerin metotlarda nasıl ele alınabildiğini
 
 Böylece geldik bir [saturday-night-works](https://github.com/buraksenyurt/saturday-night-works) notu derlemesinin daha sonuna. Yolun açık olsun Skipper:) Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-react-uygulamasinda-en-ala-sql-veritabanini-kullanmak)

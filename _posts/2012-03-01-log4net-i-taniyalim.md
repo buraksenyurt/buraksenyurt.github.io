@@ -231,3 +231,5 @@ Test dosyasının içeriği de aşağıdaki gibi olacaktır.
 Görüldüğü üzere log4Net kullanılarak çok basit bir şekilde loglama işlemleri yapılabilmekte ve uygulamanın herhangibir noktasından feedback’ ler verilebilmektedir. Siz siz olun uygulamalarınızda loglama konusunu ihmal etmeyin. Nitekim hataları ayıklama, kullanıcı ve sistem gibi genel aktörlerin hareketliliklerini izleme ve backlog oluşturma noktasında hayati öneme sahip bir mevzudur. İlerleyen makalelerimizde Log4Net’ in farklı kullanımlarına da değinmeye çalışıyor olacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelloLog4Net.zip (2,28 mb)](/assets/files/2012/HelloLog4Net.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Log4Nete28099-i-Tanc4b1yalc4b1m)

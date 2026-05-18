@@ -99,3 +99,4 @@ Mixin esas itibariyle ortak fonksiyonelliklerin farklı sınıflar arasında pay
 
 Böylece geldik bir Ruby Kod Parçacığının daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-15-mixins)

@@ -171,3 +171,5 @@ Hata mesajında yer alan Access Denied kelimeleri olayı tüm çıplaklığıyla
 ![blg115_AuthorizationOk.gif](/assets/images/2010/blg115_AuthorizationOk.gif)
 
 Tabi bu yazımızda yetkilendirme nedeniyle oluşan istisna durumu ele kontrol altına alınmamıştır. Uygulama bu istisna ile karşılaştığında sonlandırılmaktadır ve hata mesajı script error olarak tarayıcı uygulama üzerinden yakalanmaktadır. Ancak en basit haliyle attribute bazlı olaraktan yetkilendirme işlemi sunucu tarafında yer alan servisler kanalıyla gerçekleştirilebilmiştir. Bu noktada vurgulanması gereken durumlardan biriside kendi Authorization niteliklerimizi (Attribute) yazabileceğimizdir. Söz gelimi role göre değil ama başka bir kritere göre yetkilendirme yapmak isteyebiliriz. Bu durumu ilerleyen yazılarımızda ele almaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-RIA-Services-Authentication-Domain-Service-Attribute-Bazli-Yetkilendirme-(Attribute-Based-Authorization))))

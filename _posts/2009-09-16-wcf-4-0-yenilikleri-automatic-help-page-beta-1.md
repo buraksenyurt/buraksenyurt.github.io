@@ -150,3 +150,5 @@ URL: `http://localhost:2166/LocationService.svc/help/Insert/request/example?form
 İşte bu kadar. Son derece basit bir özellik olmakla birlikte otomatik yardım sayfaları aslında tüketiciyi yazan geliştiriciler için bulunmaz bir nimettir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HelpSupport.rar (18,55 kb)](/assets/files/2009/HelpSupport.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Automatic-Help-Page)

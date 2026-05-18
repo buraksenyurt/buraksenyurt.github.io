@@ -252,3 +252,6 @@ Uygulamamızı çalıştırdığımızda aşağıdaki sonucu elde ederiz.
 Şekil 10. Uygulamanın Sonucu.
 
 Bu makalemizde, Kuvvetle Türlendirilmiş Veri Kümelerinin ne olduğunu, nasıl oluşturulacağını ve nasıl kullanılacağını gördük. İzleyen makalemizde bu konuya devam edecek ve Satır Ekleme, Satır Düzenleme, Satır Silme gibi işlemlerin nasıl yapılacağını inceleyeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Strongly-Typed-DataSet-1-(Kuvvetle-Turlendirilmis-Veri-Kumeleri)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyu
+urt-com-dan)

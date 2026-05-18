@@ -19,3 +19,5 @@ Diyelim ki her hangibir Uri tipinin işaret ettiği Web içeriğinde yer alan a 
 ![tfi_65last](/assets/images/2012/tfi_65last.png)
 
 Sanırım Regex ifadesini farklı desenler (Pattern) ile denediğiniz de çok daha fazla bilgiye sahip olabildiğinizi görebilirsiniz
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-65-Bir-Web-Sayfasinin-External-Linklerini-Yakalamak)

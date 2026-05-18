@@ -460,3 +460,5 @@ O'Reilly yayınlarındaki favori yazarım Juval Lowy'ye ait bir kitap olmasada (
 Application nesnesi ile ilgili olarak değinmediğimiz pek çok nokta var. Söz gelimi bu nesneden yararlanarak uygulamadaki tüm pencere yada formları elde edebiliriz. Application'dan türetilen App sınıfı içerisine, tüm uyguladaki nesnelerin erişebileceği üyeler (Metodlar veya Özellikler) koyabiliriz vb. Bu tip konuların ve dahasının araştırılmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/UsingApplicationObjects.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WPF-Uygulama-Nesnesi-(Application-Object)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

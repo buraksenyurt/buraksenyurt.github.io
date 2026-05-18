@@ -179,3 +179,5 @@ public partial class Diger_aspx
 Böylece, eğer kullanıcılar direkt olarak Diger.aspx sayfasını çalıştırırlarsa, önceden gelen bir Cross-Page Posting işlemi olmadığından, else bloğundaki kod satırı çalışacak ve default.aspx sayfasına gidilecektir.
 
 Bu makalemizde, ASP.NET 2.0 ile gelen yeniliklerden birisine değinmeye çalıştık. Elbette şu an için, ASP.NET 2.0 henüz beta aşamasında. Yani yazılan kodlar ve kullanılan teknikler değişebilir, hatta bazen kaynakların aksine çalışmayabilir. Bunlardan da haberdar oldukça sizleri bilgilendirmeye çalışacağız. Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ile-Cross-Page-Posting-bsenyurt-com-dan)

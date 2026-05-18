@@ -158,3 +158,5 @@ Ve bende tebessüm bırakan ekran görüntüsü:-)
 Bu örnek için andorid klasörü tüm bağımlılıkları ile birlikte 500 megabyte'tan fazla yer tuttu. APK dosyası ise yaklaşık 50 Mb civarındaydı. Böylesine basit bir kobay uygulama için oldukça fazla yer harcandığını ifade edebilirim. Zaten genel olarak bu tip cross-platform çözümlerinin (Xamarin, Electron vb) özellikle mobil taraftaki en büyük sorunu da sanırım bu optimizasyo konusundaki sıkıntıları.
 
 Peki örnekle ilgili daha neler yapabilirsiniz? Söz gelimi verileri SQLite gibi bir fiziki bir depolama alanında saklamayı deneyebilirsiniz (Uzak bir REST servis üstünden de olabilir tabi) Ayrıca elinizin altında bir macOS varsa iOS sürümü için bir dağıtım paketi üretip o platformda kullanmayı da düşünebilirsiniz. Uygulamamızın örnek kodlarına SkyNet [github reposu üzerinden](https://github.com/buraksenyurt/skynet/tree/master/No%2029%20-%20What%20is%20BeeWare) erişebilirsiniz. Tekrardan görüşünceye dek hepinize iyi günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/beeware-ile-linux-platformunda-desktop-uygulamasi-gelistirmek-ve-android-surumunu-olusturmak)

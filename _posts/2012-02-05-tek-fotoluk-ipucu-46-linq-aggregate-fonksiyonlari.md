@@ -14,3 +14,5 @@ LINQ tarafında Sum,Max,Min,Average gibi bazı hesaplama fonksiyonları vardır.
 ![PhotoIpucu46](/assets/images/2012/PhotoIpucu46.png)
 
 [Aggregation.rar (22,75 kb)](/assets/files/2012/Aggregation.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-46(LINQ-Aggregate-Fonksiyonlari))))

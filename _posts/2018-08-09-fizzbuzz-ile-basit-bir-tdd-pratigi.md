@@ -31,3 +31,5 @@ Algoritma oldukça basit. 3 ile tam bölünebilen sayılar için Fizz, 5 ile tam
 [Youtube Link](https://www.youtube.com/watch?v=eyeSAFc4N3I)
 
 Bu katayı siz de yapmaya çalışın. Daha önceden yapmadığınız bir kata ise adım adım bakarak ilerlemeli sonrasında ise bakmadan yapmaya çalışmalısınız. Umarım yazılım tarafında TDD ile ilk kez tanışan ve Code Kata'sı yapmak isteyen arkadaşlarımız için yararlı olur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/fizzbuzz-ile-basit-bir-tdd-pratigi)

@@ -20,3 +20,4 @@ Gelelim ipucumuzun konusuna. Yukarıdaki gibi bir senaryo ile karşılaştığı
 
 Aslında tek yapılan şey OleDbEnumerator sınıfının static GetRootEnumerator metodu ile dönen listede hareket etmek ve o anki öğenin tüm bilgilerini ekrana yazdırmak. Böylece geldik bir ipucunun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-133-yuklu-oledb-provider-listesinin-bulunmasi)

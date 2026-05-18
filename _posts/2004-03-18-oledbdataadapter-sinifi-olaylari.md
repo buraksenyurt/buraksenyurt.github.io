@@ -207,3 +207,5 @@ Tablo 3. FillErrorEventArgs Sınıfının Özellikleri
 FillError olayının devreye girmesine örnek olarak, veri kaynağındaki veri tiplerinin,.net framework'tekiler ile aynı olmaması durumunu gösterebiliriz.
 
 Böylece geldik bir makalemizin daha sonuna. İlerleyen makalelerimizde Ado.net'in temel kavramlarını incelemeye devam edeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/OleDbDataAdapter-Sc4b1nc4b1fc4b1-Olaylarc4b1-bsenyurt-com-dan)

@@ -102,3 +102,4 @@ Diğer dosya modlarını şu şekilde özetleyebiliriz.
 
 Böylece geldik bir kod parçacığımızın sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-16-json-serilestirme)

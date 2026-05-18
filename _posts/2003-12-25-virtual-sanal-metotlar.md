@@ -172,3 +172,5 @@ Burada önemli olan nokta, Temel sınıfaki metodun virtual anahtar kelimesi ile
 | 6 | Sadece virtual olarak tanımlanmış metodları override edebiliriz. Herhangibir base class yöntemini tureyen sınıfta override edemeyiz. |
 
 Bu noktalara dikkat etmemiz gerekmektedir. Değerli Okurlarım, geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Virtual(Sanal)-Metodlar-bsenyurt-com-dan)-Metodlar-bsenyurt-com-dan)-Metodlar-bsenyurt-com-dan)

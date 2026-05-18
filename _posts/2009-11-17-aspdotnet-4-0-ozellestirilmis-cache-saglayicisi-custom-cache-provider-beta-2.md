@@ -274,3 +274,5 @@ Görüldüğü üzere iki farklı talep gönderilmiş ve özellikle ikince talep
 Hemen bir noktayı aydınlığa kavuşturalım. Geliştirdiğimiz örnekte Web User Control'ün üretimi özel Cache sağlayıcısı içerisindeki serileştirme ve ters serileştirme gibi işlemlerin çıkarttığı maliyetten daha az olabilir. Yani aslında bu örneğe göre bir Cache sistemi kullanılmasına gerek duyulmaz. Bizim amacımız sadece özel bir Cache sağlayıcısının nasıl yazılabileceğini Asp.Net 4.0 Beta 2 cephesinden incelemektir. Tabiki genişletilebilir Cache sisteminin daha esnek imkanlar sunacağıda belirtilmektedir. Aslında bu konu ile ilişkili özet bir bilgiyi [asp.net](http://www.asp.net/LEARN/whitepapers/aspnet4/default.aspx)sitesinden indireceğiniz dökümanda bulabilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tabiki buradaki eksikleri ve gereksinimleri en iyi değerlendirecek kişi sevgili arkadaşım [Uğur Umutluoğlu'dur (Asp.Net MVP)](http://www.umutluoglu.com/). Tekrardan görüşünceye dek hepinze mutlu günler dilerim.
 
 [CustomCaching.rar (26,21 kb)](/assets/files/2009/CustomCaching.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-40-Custom-Cache-Provider)

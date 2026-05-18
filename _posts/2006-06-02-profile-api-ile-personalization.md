@@ -231,3 +231,5 @@ Buradaki örnekte cookieless özelliğine AutoDetect değeri atanmıştır. Yani
 Görüldüğü gibi Asp.Net 2.0 kişiselleştirme adına Framework Class Library içerisine oldukça güçlü bir tip atmıştır. Profile tipinin yukarıda değindiğimiz özellikleri dışında daha pek çok kabiliyetide elbette vardır. Bunların araştırılmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/UsingProfilesAPI.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Profile-API-ile-Personalization-bsenyurt-com-dan)

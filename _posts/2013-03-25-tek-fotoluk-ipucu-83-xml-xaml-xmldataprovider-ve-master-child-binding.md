@@ -45,3 +45,5 @@ ve sizde örneğin WPF-XAML tarafında buradaki Master-Detail ilişkiyi kullanma
 ![tfi_83](/assets/images/2013/tfi_83.png)
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-83-Xml-XAML-XmlDataProvider-ve-Master-Child-Binding)

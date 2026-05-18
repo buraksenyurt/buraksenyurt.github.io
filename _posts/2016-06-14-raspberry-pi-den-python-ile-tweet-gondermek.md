@@ -95,3 +95,5 @@ Burada % kullanımını bir türlü beceremediğimi fark etmişsinizdir:D O yüz
 Pek tabii modül içerisinde bir çok fonksiyonellik bulunmakta. Örneğin timeline'ı, kendi tweet'lerimizi görebilir, resim gönderebilir ve daha pek çok işlemi gerçekleştirebiliriz. Sonuçta Twitter API'sini kullanabileceğiniz kütüphane elinizin altında. Bunları nasıl yapabileceğinizi görmek için [şu adresteki tutorial](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/)'ı aynen benim gibi adım adım yapmanızı öneririm. Ben biraz farklı olarak metod kullandım.
 
 Böylece geldik bir makalemizin daha sonuna. Umarım eğlenceli bir yazı olmuştur. Raspi maceralarımıza devam edeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/raspberry-pi-den-python-ile-tweet-gondermek)

@@ -326,3 +326,5 @@ Burada dikkat edilmesi gereken nokta, üç Task nesne örneğinden ilk olarak ha
 Böylece geldik bir yazımızın daha sonuna. Bu yazımızda Task örneklerinin sahibi olan çalıştırıcıların (Ana uygulama Thread’ i gibi) nasıl bekletilebileceklerini inclemeye çalıştık. Tabi bu örneklerde istisna fırlatılmasına yönelik vakaları değerlendirmedik. Ancak bu tip durumlarında incelenmesi gerekmektedir. İşte size güzel bir araştırma konusu. Task Parallel Library ile ilişkili kavramları incelemeye devam ediyor olacağız. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [WaitingScenarios2.rar (23,05 kb)](/assets/files/2011/WaitingScenarios2.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Task-Wait-WaitAll-WaitAny)

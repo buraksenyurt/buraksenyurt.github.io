@@ -17,3 +17,5 @@ LINQ tarafında isimsiz tipleri (Anonymous Types) oldukça sık kullanmaktayız.
 ![PhotoTrick16New](/assets/images/2011/PhotoTrick16New.png)
 
 [DynamicVar.rar (26,49 kb)](/assets/files/2011/DynamicVar.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-16-(Dynamic-Var))))

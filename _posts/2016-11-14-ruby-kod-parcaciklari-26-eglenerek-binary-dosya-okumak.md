@@ -66,3 +66,5 @@ Tabii kodu uygulamak için MP3 şarkılarının olduğu bir konumda çalıştır
 ![mp3read_1.gif](/assets/images/2016/mp3read_1.gif)
 
 Görüldüğü gibi Binary dosya içeriklerini iler yönlü okumak ve içlerinden bilgi almak son derece kolay. open fonksiyonu haricinde seek ve read metodlarının kullanımı da önemli. Örneğimizde sınıf oluşturulması ve Dir tipine ait globe metodunun kullanılmasını da öğrenmiş bulunuyoruz. Bilgilerimiz çoğaldıkça Ruby ile kodlama daha da eğlenceli hale gelmeye başlıyor. Bir başka kod parçasında görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-26-eglenerek-binary-dosya-okumak)

@@ -283,3 +283,5 @@ Birden çok iş parçacığının yer aldığı ve bu işler arasında haberleş
 Böylece geldik bir rust pratiğimizin daha sonuna. Tekrardan görüşünce dek hepinize mutlu günler dilerim.
 
 Örnek kodlara [Rust Pratikleri github reposu](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/vorcraft)ndan erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-channels)

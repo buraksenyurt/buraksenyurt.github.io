@@ -177,3 +177,5 @@ Umarım sizler içinde faydalı bir anlatım olmuştur. Her zamanki gibi bu dese
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Builder.rar (23,15 kb)](/assets/files/2009/Builder.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Builder)

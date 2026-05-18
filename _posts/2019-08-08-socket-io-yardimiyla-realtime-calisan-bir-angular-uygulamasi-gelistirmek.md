@@ -479,3 +479,5 @@ Tasarım gerçekten çok kötü ancak amaç Socket.IO'nun Angular tarafında nas
 - Bileşenlerin HTML tabanlı ön yüzünden, Typescript tarafındaki enstrümanlara (metod, property vb) nasıl ulaşılabileceğini
 
 Böylece geldik bir cumartesi gecesi çalışmasına ait derlemenin daha sonuna. Bu derlememizde Angular ile yazılmış istemcilerin Web Socket üzerinden bir birleriyle nasıl haberleşebileceğini incelemeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/socket-io-yardimiyla-realtime-calisan-bir-angular-uygulamasi-gelistirmek)

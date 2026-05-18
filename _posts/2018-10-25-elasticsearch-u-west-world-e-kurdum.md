@@ -301,3 +301,5 @@ sudo docker stop 3402e6aaced3
 ```
 
 kullanabilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/elasticsearch-u-west-world-e-kurdum)

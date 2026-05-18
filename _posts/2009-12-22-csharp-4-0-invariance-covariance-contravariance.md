@@ -347,3 +347,4 @@ Ben en azından biraz olsun anlamış durumdayım. Umarım sizlerede en iyi şek
 
 [CoContraVariance.rar (38,87 kb)](/assets/files/2009/CoContraVariance.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-40-Invariance-Covariance-Contravariance)

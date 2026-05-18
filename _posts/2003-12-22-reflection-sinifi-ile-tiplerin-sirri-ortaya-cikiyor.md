@@ -278,3 +278,5 @@ private void btnDoldur_Click(object sender, System.EventArgs e)
 Şekil 4. Programın Çalışmasının Sonucu
 
 Görüldüğü gibi tablomuzdaki iki alana ait veriler yazdığımız KitapKoleksiyonu sınıfı yardımıyla, her biri Kitap tipinde bir nesne alan koleksiyonumuza eklenmiş ve bu sonuçlar da dataGrid kontrolümüze bağlanmıştır. Siz bu örneği daha da iyi bir şekilde geliştirebilirsiniz. Umuyorum ki bu örnekte yapmak istediğimizi anlamışsınızdır. Yansıma tekniğini bu kod içinde kısa bir yerde kullandık. Sınıfın özelliklerinin isminin, tablodaki alanların ismi ile aynı olup olmadığını ve aynı iseler yazılabilir olup olmadıklarını öğrenmekte kullandık. Değerli Okurlarım, geldik bir makalemizin daha sonuna. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Reflection-Sınıfı-Ile-Tiplerin-Sırrı-Ortaya-Cıkıyor-bsenyurt-com-dan)

@@ -11,3 +11,5 @@ Bazen geliştirdiğimiz web uygulamaları farklı ortamlar için farklı paramet
 [Youtube Link](https://youtu.be/fulrSt5rwk4?si=BC1OqPz1rr9Mumhi)
 
 Bir başka görsel dersimizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNete28093Farklc4b1-Ortam-Farklc4b1-Config-Farklc4b1-Deploy)

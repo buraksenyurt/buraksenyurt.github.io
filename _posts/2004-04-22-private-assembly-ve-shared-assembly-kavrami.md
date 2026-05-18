@@ -156,3 +156,5 @@ namespace ConsoleApplication3
 ```
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Private-Assembly-ve-Shared-Assembly-Kavramı-bsenyurt-com-dan)

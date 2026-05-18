@@ -901,3 +901,5 @@ Kopyala yapıştır yasağım nedeniyle yazılması uzun süren bir örnekti ama
 - Gantt Chart için kullanılan API Controller'larda HTTP Post için tid'nin önemini
 
 Bu uzun ve komplike örnekte ele almaya çalıştığımız Gantt Chart kütüphanesini eminim ki kullanmayacaksınız. Malum bir çoğumuz artık VSTS gibi ortamların bize sunduğu Scrum panolarında işlerimizi yürütüyor ve iterasyon bazlı planlamalar yaptığımızdan bu tip Waterfall'a dönük tabloları çok fazla ele almıyoruz. Yine de örneğe uçtan uca yazılan bir uygulama gözüyle bakmanızı tavsiye edebilirim. Böylece geldik bir maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bir-web-uygulamasinda-gantt-chart-kullanimi)

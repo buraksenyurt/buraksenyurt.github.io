@@ -21,3 +21,4 @@ Olur ya üşenmez kodu yazarsınız, bu durumda ILDASM (ki umarım unutmamışs�
 
 Bir başka ipucunda görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-115-c-6-0-pratikleri-dictionary-initializer)

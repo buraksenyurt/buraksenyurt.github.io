@@ -207,3 +207,5 @@ Bir Process'in içerisinde çalışan Thread'leri elde edebilmek için Process s
 Görüldüğü gibi.Net uygulamaları çalıştırıldıklarında işletim sistemi tarafından açılan Process'ler söz konusudur. Biz bu Process'leri managed (yönetimli) taraftan kontrol edebiliriz. Gerekli Process bilgilerinin çalışma zamanında elde edilebilmesi, istendiğinde başka Process'lerin parametrik olarak başlatılabilmesi (ya da sonlandırılabilmesi) gibi imkanlara sahibiz. Hatta çok basit seviyede de olsa Process'ler arası veri transferide yapabilmekteyiz. Bu makalemizde çok kısada olsa Process'lerin ne olduğunu ve managed (yönetimli) tarafta nasıl ele alınabileceklerini incelemeye çalıştık ve böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/ProcessTest.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ilk-Bakısta-Net-Process-Yonetimi-bsenyurt-com-dan)

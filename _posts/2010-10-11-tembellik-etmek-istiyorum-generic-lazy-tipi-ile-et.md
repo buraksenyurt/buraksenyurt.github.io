@@ -117,3 +117,4 @@ Görüldüğü gibi "Product Listesi Oluşturulacak" ifadesi sadece bir kere ça
 
 [LazyInitializations_.rar (27,13 kb)](/assets/files/2010/LazyInitializations_.rar) [Örnek Visual Studio 2010 Ultimate sürümü ile geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tembellik-Etmek-Istiyorum-(Generic-Lazy-Tipi-ile-Et))))

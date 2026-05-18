@@ -260,3 +260,5 @@ Yukarıdaki listede eksikliker olabilir. Gelen Update’ ler, Service Pack’ le
 Demek ki, istemci tarafında çalışarak hayatımızı kolaylaştırmakta olan pek çok.Net tabanlı uygulama (Örneğin Power Tools veya Team Explorer gibi) söz konusu nesne modellerini ve ilgili XML Web Service’ lerini kullanmaktadır. Elbette Team Foundation Server tarafında çok fazla sayıda XML Web Service metodu ve hatta versiyonu bulunmaktadır. TFS üzerindeki tecrübelerinizden yararlanarak bu servislerin efektif olarak kullanımlarını irdeleyebilirsiniz. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_TFSServices.zip (213,36 kb)](/assets/files/2013/HowTo_TFSServices.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFS-Web-Services-ve-Kullanimi)

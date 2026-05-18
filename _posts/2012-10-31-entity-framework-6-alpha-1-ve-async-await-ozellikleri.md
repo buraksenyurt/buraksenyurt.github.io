@@ -173,3 +173,5 @@ Görüldüğü üzere Entity Framework tarafında asenkron programlama desteği 
 [EF6_Alpha_AsyncAwait.zip (2,25 mb)](/assets/files/2012/EF6_Alpha_AsyncAwait.zip)
 
 Örnekte Entity Framework 6.0 Alpha 1 sürümü kullanılmıştır zip boyutunu küçültmek için içerideki nuget bazlı package klasörü çıkartılmıştır.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-6(Alpha)-ve-async-await-Ozellikleri)-ve-async-await-Ozellikleri)-ve-async-await-Ozellikleri)

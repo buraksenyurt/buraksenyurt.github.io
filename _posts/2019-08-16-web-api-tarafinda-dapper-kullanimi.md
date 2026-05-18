@@ -322,3 +322,5 @@ Testler tamamlandı. Eğer buraya kadar geldiyseniz neler öğrendiğinizi düş
 - IActionResult/ActionResult ile Web API metodlarından nasıl sonuçlar dönebileceğimizi ve bu sayede REST standartlarına nasıl uyacağımızı
 
 [22 numaralı örnek](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2022%20-%20Dapper%20with%20Web%20API)te mikro ORM araçlarının gözlerinden olan Dapper'ı, SQLite tabanlı olacak şekilde.Net Core 2 ile yazılmış bir Web API projesinde deneyimlemeye çalıştık. Üstüne fazlasını katmak sizin elinizde. Hoş bir arabirimin bu servisi kullanması sağlanabilir. Örneğin progressive tarzda bir web uygulaması denenebilir. SQLite tarafı bir bulut hizmetine devredilebilir. Belki de servis dockerize edilerek aynı bulut sistemi üzerinde konuşlandırılabilir. Senaryoları çeşitlendirmek mümkün. Günümüz mini mikro servis uyarlamaların çoğunda bu tip ORM araçlarının kullanıldığı da ortada diyerek son mesajımı vereyim. Böylece geldik pratik kazandıran bir cumartesi gecesi derlemesinin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/web-api-tarafinda-dapper-kullanimi)

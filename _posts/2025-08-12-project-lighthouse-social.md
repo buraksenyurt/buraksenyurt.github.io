@@ -65,3 +65,5 @@ Sık gelen sorulardan birisi de bu seriden yararlanmak isteyenlerin neleri bilme
   - Doğrudan uygulamak yerine, sorgular, araştırır, ikna olur ve sonra uygular.
 
 Umarım izleyenler ve repoyu takip edenler için hem motivasyon artırıcı hem de ilham verici bir çalışma olur. Başka bir çalışma tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/project-lighthouse-social)

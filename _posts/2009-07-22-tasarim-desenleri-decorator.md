@@ -143,3 +143,4 @@ Ancak bununla birlikte Decorator kalıbının bileşene ek sorumlulukla yükledi
 
 [Decorator.rar (22,98 kb)](/assets/files/2009/Decorator.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Decorator)

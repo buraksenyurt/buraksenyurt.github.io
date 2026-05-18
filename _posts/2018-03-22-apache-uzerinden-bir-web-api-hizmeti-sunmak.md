@@ -218,3 +218,5 @@ sudo systemctl stop kestrel-apacheler.service
 ![apachecore_11.gif](/assets/images/2018/apachecore_11.gif)
 
 Bu çok sevindirici bir gelişmeydi (İnsanın Service Unavailable yazısını görünce sevinçten gözleri yaşarı mı?) West-World'de Apache'ler ile barış sağlandığına göre artık dinlenmeye çekilebilirdim. Tabii siz bu yazıdan ilham alarak konuyu geliştirmeyi deneyebilirsiniz. Söz gelimi 000-default.conf yerine aynı klasörde farklı bir conf dosyasını kullanarak ilgili yönlendirmenin nasıl yapılabileceğini araştırabilirsiniz. Özellikle 80 yerine farklı bir Apache portu kullandırtmayı deneyebilirsiniz. Böylece geldik bir makalemizin daha sonuna. Bu yazımızda Ubuntu 16.04 üzerinde kurduğumuz apache sunucusuna gelen talepleri, Kestrel tarafında host edilen bir Web API hizmetine yönlendirmeye çalıştık. Umarım yararlı bir makale olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/apache-uzerinden-bir-web-api-hizmeti-sunmak)

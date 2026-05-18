@@ -197,3 +197,5 @@ Tabiki bu kısım ve detaylarını daha iyi kavramak için belki biraz daha zama
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 NOT: Örnekler 2008 PDC'de yayımlanmış olan Visual Studio 2010 PreBeta sürümü üzerinden geliştirilmiştir.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/C-40-Dynamic-Olmak)

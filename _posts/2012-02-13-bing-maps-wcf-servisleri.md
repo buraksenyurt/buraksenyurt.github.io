@@ -393,3 +393,5 @@ Dönüş verisi tabi XML formatındadır. Bu sebepten bu içeriği parse ederek 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [BingMapSamples.zip (734,34 kb)](/assets/files/2012/BingMapSamples.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Bing-Maps-WCF-Servisleri)

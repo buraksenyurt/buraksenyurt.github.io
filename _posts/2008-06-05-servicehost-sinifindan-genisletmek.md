@@ -517,3 +517,5 @@ Söz konusu servislerin kullandığı EndPoint bilgilerinin tablolardaki ilgili 
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde ServiceHost türevli bir sınıfın nasıl geliştirilip kullanılabileceği iki örnek senaryo üzerinden incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/OzelServiceHost.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ServiceHost-Sc4b1nc4b1fc4b1ndan-Genisletmek-bsenyurt-com-dan)

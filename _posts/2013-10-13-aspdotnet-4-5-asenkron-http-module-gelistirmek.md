@@ -196,3 +196,5 @@ WebForm içerisinde bir TextBox ve Button kontrolü bulunmaktadır. Kullanıcı 
 Dikkat edileceği üzere geliştirici tanımlı bir HttpModule tipinin işleyişinin asenkron hale getirilmesi mümkündür. Aynı prensiplerden yola çıkarak bir HttpHandler tipinin de asenkron çalışacak hale getirilmesi söz konusu olabilir elbette. Lakin Asp.Net 4.5, HttpHandler tiplerinin asenkron yazılabilmesi için daha güçlü bir yol sunmaktadır. Bu yolun başında HttpTaskAsyncHandler isimli soyut sınıf (Abstract Class) yer almaktadır. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_AsyncModules.zip (25,83 kb)](/assets/files/2013/HowTo_AsyncModules.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNet-4-5-Asenkron-HTTP-Module-Gelistirmek)

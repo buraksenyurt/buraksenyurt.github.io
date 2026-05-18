@@ -201,3 +201,4 @@ Internet ve basılı kaynaklarda LSP ilkesini araştırdığınızda Rectangle v
 
 [LSP.rar (23,83 kb)](/assets/files/2009/LSP.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarim-Prensipleri-Liskov-Substitution)

@@ -260,3 +260,5 @@ Kodda herhangi bir derleme zamanı hatası alınmaz. Çalışma zamanında da bi
 ![mk130_7.gif](/assets/images/2005/mk130_7.gif)
 
 İşte bu tip bir durumla karşılaştığımızda geliştirici olarak tip güvenliğini ve uygulamanın mantıksal bütünlüğünü korumak amacıyla kendi koleksiyon sınıflarımızı kullanmayı tercih ederiz. Yazımızın başında hatırlarsanız kendi yazacağımız koleksiyon sınıflarını CollectionBase yoluyla veya DictionaryBase yoluyla geliştirebildiğimizi söylemiştik. Bu makalemizde CollectionBase sınıfı ile bu işi nasıl yapacağımızı gördük. Bir sonraki makalemizde ise DictionaryBase sınıfını inceleyemeye çalışacağız. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tip-Guvenli-(Type-Safety-)-Koleksiyonlar-Olusturmak-1-bsenyurt-com-dan)-Koleksiyonlar-Olusturmak-1-bsenyurt-com-dan)-Koleksiyonlar-Olusturmak-1-bsenyurt-com-dan)

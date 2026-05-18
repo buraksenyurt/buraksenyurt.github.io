@@ -429,3 +429,5 @@ Söz gelimi Main metodu içerisindeki kod parçalarına dikkat edildiğinde aTea
 Sanıyorum ki Fluent Interface kullanımı şimdi daha da bir anlam kazanmış oldu. İlerleyen zamanlarda bu tip uç prensipleri incelemeye devam etmeye çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingFluentInterface.rar (30,94 kb)](/assets/files/2011/UsingFluentInterface.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Fluent-Interface-Nedir)

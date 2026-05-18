@@ -24,3 +24,5 @@ Gribal sorunlar nedeniyle zaman zaman konuşmakta zorlandığım ve sık sık ö
 [Youtube Link](https://www.youtube.com/watch?v=1epxQJqc6Ao)
 
 Bir başka görsel dersimizde görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCFe28093Concurrency)

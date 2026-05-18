@@ -271,3 +271,5 @@ Bu sefer bir Stream kullanmak durumundayız. Nitekim URL olarak talep ettiğimiz
 Artık çorabı yırttık diye düşünüyorum. Bir başka deyişle gerisinin çorap söküğü gibi gelmesi lazım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
 [BingRestClient.rar (1,20 mb)](/assets/files/2012/BingRestClient.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/BING-Maps-WCF-Rest-Servislerini-Kullanmak)

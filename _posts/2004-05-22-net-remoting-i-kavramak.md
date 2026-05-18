@@ -102,3 +102,5 @@ Kanalların kullanımında dikkat edilmesi gereken en önemli nokta, uzak nesnel
 | 3 | Http kanal nesneleri için serileştirme xml tabanlı yapılırken, Tcp kanal nesneleri için serileştirme binary formatta yapılır. |
 
 Bu makalemiz ile .NET remoting sisteminin temel yapıtaşlarını tanımaya çalıştık. Bir sonraki makalemizde, en basit anlamda bir remoting uygulamasının nasıl yapıldığını incelemeye çalışacak ve teoride anlattıklarımızın programatik olarak nasıl yazılacağını göreceğiz. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-NET-Remotingi-Kavramak-bsenyurt-com-dan)

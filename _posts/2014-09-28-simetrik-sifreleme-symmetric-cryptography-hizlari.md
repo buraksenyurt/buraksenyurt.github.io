@@ -379,3 +379,5 @@ Bu yazımızda en bilinen ve popüler olan simetrik şifreleme algoritmalarını
 [HowTo_Cryptography.zip (45,00 kb)](/assets/files/2014/HowTo_Cryptography.zip)
 
 > Text dosyasının içeriği bilinçli olarak boşaltılıp 1Kb seviyesine indirilmiştir. Test etmeden önce dosya içeriğini copy-paste ile çoğaltarak boyut arttırımı yapmanızı ve 50mb seviyelerine getirdikten sonra kodu çalıştırmanızı öneririm.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Simetrik-Sifreleme(Symmetric-Cryptography)-Hc4b1zlarc4b1)-Hc4b1zlarc4b1)-Hc4b1zlarc4b1)

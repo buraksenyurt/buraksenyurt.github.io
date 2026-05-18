@@ -133,3 +133,4 @@ einstein.calculate
 
 Bu kod parçacığında Ruby'nin benim için incelemeyi unuttuğum kıyıda köşede kalmış ama önemli bazı yeteneklerini incelemeye çalıştık. Umarım sizler için de bilgilendirici ve faydalı olmuştur. Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-18-cesitli-kirintilar)

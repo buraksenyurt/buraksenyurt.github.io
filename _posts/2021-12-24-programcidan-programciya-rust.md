@@ -932,3 +932,5 @@ Pek tabii buraya kadar öğrendiklerimiz oldukça az. Girizgâh olarak yeterli g
 - [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
 
 Böylece geldik bir maceramızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/programcidan-programciya-rust)

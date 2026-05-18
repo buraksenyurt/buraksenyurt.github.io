@@ -101,3 +101,5 @@ gibi...
 Şimdi de seçtiğimiz bir alanı primary key olarak belirleyelim. Unique (benzersiz) integer değerler alıcak bir alan olsun bu ve 1000 den başlayarak 1’er 1’er otomatik olarak artsın. Bildiğini ID alanlarından bahsediyorum. Bunu kullanıcıya sormadan otomatik olarak biz yaratalım ve konudan fazlaca uzaklaşmayalım. Sadece btnTabloOlustur’un kodlarına ekleme yapıyoruz.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde oluşturduğumuz bu tabloya nasıl veri ekleneceğini göreceğimiz çok kısa bir uygulama yazacağız. Hepinizi mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/DataTable-Sc4b1nc4b1fc4b1nc4b1-Kullanarak-Programatik-Olarak-Tablolar-Olusturmak-1-bsenyurt-com-dan)

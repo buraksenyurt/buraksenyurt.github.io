@@ -365,3 +365,5 @@ Aslında hepsi bu. Temel bir kurgu ile Azure tarafındaki SignalR servisimizi ku
 - Benzer şekilde SignalR Hubname olarak notifications kullanılması gerektiğini (Farklı bir isimlendirme kullanınca oluşan bilgilerin SignalR servisi tarafından yorumlandığını ama abonelere akmadığına şahit oldum)
 
 Böylece geldik doğduğum, yaşadığım ve asla kopamayacağım [İstanbul plakalı cumartesi gecesi derlemesinin sonuna](https://github.com/buraksenyurt/saturday-night-works/tree/master/No%2034%20-%20Using%20Azure%20SignalR). Umarım sizler için de yararlı bir çalışma olmuştur. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/azure-signalr-servisini-kullanmak)

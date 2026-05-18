@@ -128,3 +128,4 @@ Görüldüğü gibi tüm DownStream servisleri, istemciden gelen Product tipini 
 
 [Router Project 3.rar (249,84 kb)](https://www.buraksenyurt.com/pics/2009%2f8%2fRouter+Project+3.rar)
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Routing-Service-MatchAll-Filtresi)

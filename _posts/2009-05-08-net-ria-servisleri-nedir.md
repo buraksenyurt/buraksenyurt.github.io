@@ -39,3 +39,5 @@ DataService sınıfı aslında, temel CRUD (CreateRetrieveUpdateDelete) işlemle
 İkinci bölümde yer alan DataContext sınıfı ise, servislerin istemciye sunduğu verilerin, tip bazındaki karşılıklarını içermektedir. Bu nedenle istemci tarafında, verilerin yüklenmesi, üzerinde yapılan değişikliklerin tekrardan sunucu tarafına gönderilmesi için gerekli kodlamaları ve metodlarıda hazır olarak içermektedir. Tahmin edeceğiniz üzere,.Net RIA Servislerinin Visual Studio 2008 ortamında geliştirilmesi son derece kolay ve basittir.
 
 Böylece geldik bir yazımızın daha sonuna. Bu yazımda sizlere.Net RIA Servislerini, anladığım kadarıyla anlatmaya çalıştım. Bir sonraki yazımızda basit bir örnek geliştirerek Merhaba.Net RIA Servisi diyeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-RIA-Servisleri-Nedir)

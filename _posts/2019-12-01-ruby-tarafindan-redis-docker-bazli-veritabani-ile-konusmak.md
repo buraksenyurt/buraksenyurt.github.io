@@ -327,3 +327,5 @@ SkyNet'in ilk gününden kalan ve merak ettiğim şeyler de var. Bunlar siz değ
 - Peki pub/sub senaryosunu Ruby on Rails tabanlı bir web projesinde nasıl kullanırım?
 
 Böylece geldik bir SkyNet gününün sonuna. Zaman farkından dolayı tekrar Dünya'ya dönmek zorundayım. Bir sonraki gidişimde bakalım bizleri ne tür maceralar karşılayacak. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-tarafindan-redis-docker-bazli-veritabani-ile-konusmak)

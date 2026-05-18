@@ -120,3 +120,5 @@ Kodu çalıştırdığımızda aşağıdaki ekran görüntüsündekine benzer bi
 ![golng_et_2.gif](/assets/images/2017/golng_et_2.gif)
 
 Gömülü tipleri kullandığımız bu örnek kod parçasında bir yapının başka yapıları kullanarak çoklu kalıtımı nasıl ele alabileceğini incelemeye çalıştık. Anahtar nokta struct tiplerini içerme şeklinde değerlendirmekten ibaret. Felsefe olarak, genişletmek istediğimiz türün içereceği nitelikleri yapılar içerisinde toplamak gerekiyor. Eğer gömülü tip üzerinden uygulanması beklenen ortak fonksiyonellikler de söz konusu ise bunların metod şeklinde tanımlanması türeyen tip için yeterli. Böylece geldik kısa bir GO turumuzun daha sonuna. Bir başka makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/golang-kalitim-icin-gomulu-tiplerin-kullanimi)

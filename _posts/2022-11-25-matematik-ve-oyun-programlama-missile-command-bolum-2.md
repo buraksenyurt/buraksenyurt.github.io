@@ -19,3 +19,5 @@ Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Gi
 [Youtube Link](https://www.youtube.com/watch?v=Mu8xDsfI2Po)
 
 Sonraki bölümde amacımız, merminin kendi varış noktasına geldiğinde belli bir yarıçap değerine kadar büyüyen bir çember çizdirmek ve bu çember ile temas eden roketlerin yok edilmesini sağlamak. Tabii bunun arkasındaki matematik enstrümanlara odaklanacağız. Üçüncü bölümde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/matematik-ve-oyun-programlama-missile-command-bolum-2)

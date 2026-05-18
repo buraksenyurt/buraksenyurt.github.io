@@ -219,3 +219,5 @@ Bu hata durumu IntelliJ Ide'si üstünde de rahatlıkla görülebilir.
 Fatura nesnesine ilk olarak title bileşeni eklenmiştir. Bu sebepten sonraki add operasyonlarında rust derleyicisi yine title türünden nesnelerin eklenmesini beklemektedir. Nitekim rust dilinin bir diğer kuralına göre generic bir parametre t anında sadece tek bir gerçek tiple (concrete type) çalışabilir. Dolayısıyla LineItems ve Bottom nesne örneklerinin eklenmeye çalışması bu kuralın ihlali anlamına gelmiştir.
 
 Trait nesneleri oldukça önemli bir konu ve ben bu çalışmada sadece ufak bir kısmını ele aldım. Sanıyorum ki Nesne yönelimli dil pratiklerini Rust tarafında uygulamaya çalışmak sanıldığı kadar kolay değil. Böylece geldik Rust Pratiklerinden bir bölümün daha sonuna. Örnek kodlara her zaman olduğu gibi [github reposu](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/doc_builder) üzerinden erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-trait-objects)

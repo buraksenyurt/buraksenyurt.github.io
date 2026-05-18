@@ -291,3 +291,5 @@ Uygulamamızı yeniden çalıştırdığımızda ve Isolated Storage Explorer pe
 Böylece geldik kısa bir maceramızın daha sonuna. Görüldüğü üzere LINQ to SQL’ i çok basit anlamda ele alarak özel depolama alanında bir veritabanının tutulmasını sağlayabildik. Yukarıda belirtiğim gibi aslında örneği MVVM veya MVC çerçvesinde göz önüne alarak arayüz ile daha güçlü entegre olacak şekilde geliştirmeye çalışmanızı öneririm. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [MobileCustomerHouse.zip (133,80 kb)](/assets/files/2012/MobileCustomerHouse.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Windows-Phone-7-Cihazlarda-LINQ-to-SQL-Kokenli-Veritabani-ile-Calismak)

@@ -174,3 +174,5 @@ Görüldüğü gibi XmlContent ve JsonContent isimli tiplerimiz IContent arayüz
 Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [DIP.rar (40,27 kb)](/assets/files/2009/DIP.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarc4b1m-Prensipleri-Dependency-Inversion)

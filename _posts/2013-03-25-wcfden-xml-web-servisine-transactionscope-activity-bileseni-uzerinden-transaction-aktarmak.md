@@ -396,3 +396,5 @@ Görüldüğü üzere biraz kodlama yardımıyla WCF ve XML Web Servislerini, Tr
 [HowTo_AtomicTransactions.zip (117,25 kb)](/assets/files/2013/HowTo_AtomicTransactions.zip)
 
 Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCFden-XML-Web-Servisine-TransactionScope-Activity-Atomic-Transaction)

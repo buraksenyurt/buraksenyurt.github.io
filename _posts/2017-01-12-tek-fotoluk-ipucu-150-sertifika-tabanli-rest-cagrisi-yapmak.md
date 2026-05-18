@@ -22,3 +22,5 @@ InternalWebClient, WebClient tipinden türetilmiş bir sınıf. Bu nedenle REST 
 > Senaryomuzda WebClient türevli bir sınıf kullanmamızın sebebi, DownloadString DownloadData ve DownloadFile gibi REST servisine yapacağımız çağrı sonrası gelecek içerikleri kolayca almamızı sağlayan metodlar sunmasıydı. Ama sertifika senaryosunda yaşadığımız sorunu aşmak için minik bir takla atıp WebClient sınıfından gelen ve talebin (Request) hazırlandığı sırada devreye giren bir metodun davranışını değiştirmemiz gerekti.
 
 Böylece geldik bir ipucumuzun daha sonuna. Başka bir ipucunda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-150-sertifika-tabanli-rest-cagrisi-yapmak)

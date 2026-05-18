@@ -699,3 +699,5 @@ Bu tamamen uygulamanın veya sürecin ihtiyaçları doğrultusunda verilebilecek
 Böylece geldik uzun bir makalemizin daha sonuna. Bu makalemizde profile yönetimini biraz daha güçlü ve esnek hale getirmek için neler yapabileceğimizi incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/ProfileManagement.rar) (Dosya boyutunun küçük olması amacıyla Aspnetdb veritabanları ve log dosyaları çıkartılmıştır)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Daha-Etkili-Profil(Profile)-Yonetimi-bsenyurt-com-dan)-Yonetimi-bsenyurt-com-dan)-Yonetimi-bsenyurt-com-dan)

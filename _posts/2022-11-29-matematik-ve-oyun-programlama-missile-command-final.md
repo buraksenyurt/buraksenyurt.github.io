@@ -31,3 +31,5 @@ Lafı fazla uzatmadan son bölümün anlatımını buraya bırakayım. Bu bölü
 Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Github hesabımdan ilgili kaynak kodlara ulaşabilirsiniz](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/missile-commander). Oyun motoru olarak hafifsiklet olanlardan [Macroquad](https://macroquad.rs/examples/)'ı tercih ettim.
 
 Bir sonraki hedefim Commodore 64 ile çokça oynadığım 1942 oyunu arkasındaki matematiği keşfetmek. Ama iş bununla bitmiyor. Takip ettiğim pek çok kaynak bazı efsane oyunların klonlarını yazmaya çalışmamızı öğütler nitelikte. Karakterinizi farklı yapay zeka dinamikleri ile takip eden hayaletlerin yer aldığı Pacman, zıplama ve yerçekimi gibi etkenleri hesaba kattığınız Super Mario, vektör ve açıları etkin şekilde kullandığınız Missile Command ve benzerleri. Yine de bunlardan hangisi olursa olsun yazmaya başlamadan önce belli başlı matematik konuları çalışmak/hatırlamak gerekiyor. Böylece geldik bir programın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/matematik-ve-oyun-programlama-missile-command-final)

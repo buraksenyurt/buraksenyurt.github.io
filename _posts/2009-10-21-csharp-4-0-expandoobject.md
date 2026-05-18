@@ -174,3 +174,5 @@ Aslında söz konusu yeniliği tanımak, kavramak ve gerçek hayat senaryoların
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ConsoleApplication1.rar (25,51 kb)](/assets/files/2009/ConsoleApplication1.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/CSharp-40-ExpandoObject)

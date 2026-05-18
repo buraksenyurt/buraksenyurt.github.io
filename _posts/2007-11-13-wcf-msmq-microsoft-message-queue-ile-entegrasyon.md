@@ -274,3 +274,5 @@ Bu tip en iyi çözümler için [http://msdn2.microsoft.com/en-us/library/ms7310
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde özet olarak MSMQ teknolojisini WCF içerisinde ele aldık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/MSMQKullanimi.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-MSMQ(MicroSoft-Message-Queue)-ile-Entegrasyon-bsenyurt-com-dan)-ile-Entegrasyon-bsenyurt-com-dan)-ile-Entegrasyon-bsenyurt-com-dan)

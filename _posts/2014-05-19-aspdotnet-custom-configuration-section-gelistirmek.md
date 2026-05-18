@@ -310,3 +310,5 @@ Görüldüğü gibi varsayılan olarak belirtilen değerler çekilebilmiştir. E
 Tabi bu senaryoda çok basit bir section içeriği ele alınmış ve yönetilmiştir. Size tavsiyem connectionStrings gibi bir den fazla aynı tipden element içerebilen bir bölüm geliştirmeye çalışmanız olacaktır. Böyle bir senaryoda devreye ConfigurationElementCollection tipi girecektir. Bu örnek senaryoyu geliştirmeye çalışarak kendinizi bu yönde daha ileri bir noktaya taşıyabilirsiniz. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_WritingCustomConfigSection.zip (25,98 kb)](/assets/files/2014/HowTo_WritingCustomConfigSection.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNete28093Custom-Configuration-Section-Gelistirmek)

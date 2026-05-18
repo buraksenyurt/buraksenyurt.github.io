@@ -17,3 +17,4 @@ Kod oldukça basit. NetHttp kütüphanesini kullanarak bir web sayfası içeriğ
 
 Pek tabii HTTP üzerinden içerik okumanın farklı yolları da mevcut. nethttp kütüphanesi oldukça geniş imkanlara sahip ve sizin bu kod üzerine yapabileceğiniz pek çok şey var. Büyük boyutlu içerikleri parça parça indirmek, HTTP Post talepleri göndermek, proxy üzerinden geçiş yapıyorsanız proxy ayarları ile talep yollayabilmek, https için sertifika etkinleştirmek vb...Bu değerli araştırma konularını da size bırakıyorum. Bir başka ipucunda görüşmek dileğiyle hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-138-bir-web-sayfa-icerigini-indirmek)

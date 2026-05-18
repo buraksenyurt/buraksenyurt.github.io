@@ -18,3 +18,5 @@ SOLID basit bir kelime gibi görünse de, her harfinin ifade ettiği yazılım p
 [Youtube Video](https://youtu.be/2AJ_trQ1LWc?si=qsRf5ZmPkjer9Nvr)
 
 Not: Şu ana kadar anlatmakta en çok zorlandığım görsel dersti. Konunun soyutluğu, örneğin yeteri kadar doyurucu olmayışı, üst kattaki iki kardeşin gecenin o vakti koşuşturması vb nedenlerden ötürü...Dolayısıyla sürçü lisan ettiysem affola.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SOLIDe28093Adc4b1m-Adc4b1m-Tanc4b1mak)

@@ -261,3 +261,5 @@ Görüldüğü gibi jQuery kütüphanesi içerisinden bir WCF servis çağrısı
 Bunu da ilerleyen yazılarımızdan birisinde ele almaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [JQueryAndWCF.rar (47,04 kb)](/assets/files/2011/JQueryAndWCF.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/jQuery-Icerisinden-Bir-WCF-Servisini-Kullanmak)

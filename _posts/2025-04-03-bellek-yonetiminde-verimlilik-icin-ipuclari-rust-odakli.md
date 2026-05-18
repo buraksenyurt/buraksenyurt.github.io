@@ -796,3 +796,5 @@ ret
 Ancak sahip olduğum kıt assembly bilgim ile bir sonuca varamadım diyebilirim (Henüz) Diğer yandan cargo ile üretilmiş projelerde [şöyle bir crate](https://crates.io/crates/cargo-show-asm) kullanabileceğimiz de belirtiliyor. Bu aracı kullanarak kodun assembly çıktılarına bakmak ve okumak daha kolay diyebilirim.
 
 Bellek yönetimi programlama dili fark etmeksizin önemli bir mesele. Çok yüksek kapasite RAM 'lerimiz var diye bol keseden savurmamak, kaynakları optimize ederek kullanmak sürdürülebilirlik açısından da önemli. Tabii bu konuda daha iyi bilgi seviyesine sahip olmak için C, C++ taraflarında biraz dolaşmış olmak gerektiğini açıkça gözlemleyebiliyorum. Daha nice farklı optimizasyon tekniği var zira. Ancak şimdilik bu araştırmada edindiğim bilgileri dahi benim için kıymetli. Umarım sizler için de faydalı olur. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/bellek-yonetiminde-verimlilik-icin-ipuclari-rust-odakli)

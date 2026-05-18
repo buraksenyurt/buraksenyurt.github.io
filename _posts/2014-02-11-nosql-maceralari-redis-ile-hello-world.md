@@ -249,3 +249,5 @@ Redis ürününü ServiceStack ile kullanmamız oldukça kolaydır. Nevar ki, ü
 Örneği zenginleştirmek ve daha da ileriye götürmek tabiki sizin elinizde. Bu yazımızda.Net Framework tarafından basitçe Redis’ e Merhaba demeye çalıştık. Böylece geldik bir yazımızın daha sonuna. Bir başka makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [HowTo_Redis.zip (1,83 mb)](/assets/files/2014/HowTo_Redis.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/NoSQL-Maceralarc4b1e28093Redis-ile-Hello-World)

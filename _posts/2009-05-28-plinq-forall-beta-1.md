@@ -163,3 +163,5 @@ Aslında foreach döngüsünü daha çok sorgu sonuçlarının sırasını (orde
 Böylece geldik kısa bir yazımızın daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingForAll.rar (22,17 kb)](/assets/files/2009/UsingForAll.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/PLINQ-ForAll)

@@ -263,3 +263,5 @@ dotnet test --help
 ```
 
 Bu yazımızda Test Driven Development odaklı yazılım geliştiren ekipler için Visual Studio Code tarafında basitçe nasıl ilerleyebileceğimizi gördüğümüzü düşünüyorum. Hatta hali hazırda var olan projelerinizdeki test senaryoları için Code tarafında denemeler yaparak el alışkanlığı kazanabilirsiniz. Biliyorsunuz ki test edilmemiş kod kaliteden uzaklaşmamız ve teknik borç bırakmamız için gerek ve yeter sebeplerden birisidir.Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Visual-Studio-Code-Icinde-Unit-Test-Yazmak)

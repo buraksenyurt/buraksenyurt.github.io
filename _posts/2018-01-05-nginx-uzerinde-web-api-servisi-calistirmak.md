@@ -198,3 +198,5 @@ Benim için araştırması, öğrenmesi ve yazılması keyifli bir makalenin dah
 Örnekte Uber benzeri bir taksi çağırma ürününün geliştirilmesi konu alınmış. Önce mimari bildiğimiz Monolithic yaklaşım üzerine kurgulanıyor. Her şey güllük gülistanlık giderken iş birimlerinden gelen yeni talepler, devreye alınan parçlar ve kalabalıklaşan kodlar sebebiyle sistem büyüdükçe büyümeye başlıyor. Performans düşüyor, yönetim ve ölçeklenebilirlik zorlaşıyor, bakım maliyetleri artıyor. Sonrasında aynı senaryonun micoservice mimari yaklaşımı ile nasıl ele alınabileceği masaya yatırılıyor. Her iki yaklaşımın artı ve eksilerini görebilmek açısından oldukça güzel ve doyurucu bir yazı olduğunu ifade etmek isterim.
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/nginx-uzerinde-web-api-servisi-calistirmak)

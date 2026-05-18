@@ -156,3 +156,5 @@ Kodlarımız son derece açık ve kolay. Uygulamamızı çalıştırdığımızd
 Şekil 7. Çarpışma durumu.
 
 Görüldüğü gibi artık oyun programlamada önemli noktalardan birisi olan çarpışma teorilerinde bayağı bir yol aldık. Ancak her zaman bu teknikleri kullanmayacağız. Örneğin zaman zaman, ekranın eşit karelere bölündüğünü (aynı kareli defterler gibi) ve nesnelerin bu kareler üzerindeki konumlarına göre çarpışıp çarpışmadıklarının belirlendiğini öğrendim. Önümüzdeki hafta büyük bir ihtimalle bu konuyu incelemeye çalışacağım. Kaynaklardan incelediğim kadarı ile bu karelere bölme tekniği tam anlamıyla PackMan tarzı oyunlara yönelik geliştirilmiş bir model. İşin içine bu kez matris dizileri girecek. Bakalım başımıza neler gelicek. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Oyun-Programlamaya-Giris-(Carpısma-Teknikleri-3)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

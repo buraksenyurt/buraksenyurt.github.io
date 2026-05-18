@@ -17,3 +17,5 @@ Hani olurda çalışma zamanında (Runtime) o anda yürütülmekte olan metodun 
 ![PhotoTrick2](/assets/images/2011/PhotoTrick2.png)
 
 [SmartLogger.rar (21,41 kb)](/assets/files/2011/SmartLogger.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-2)

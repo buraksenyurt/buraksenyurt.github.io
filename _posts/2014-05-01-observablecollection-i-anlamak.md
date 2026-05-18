@@ -192,3 +192,5 @@ Bu tip soruları da ben size sormuş olayım.
 Böylece geldik bir yazımızın daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [HowTo_ObservableCollection.zip (71,13 kb)](/assets/files/2014/HowTo_ObservableCollection.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ObservableCollectione28099-c4b1-Anlamak)

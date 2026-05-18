@@ -144,3 +144,5 @@ ve aynı örneği yeniden test edersek aşağıdaki sonuçlar ile karşılaşır
 WCF WebHttp Service'ler ile ilişkili serimizde yer alan bir yazımızın daha sonuna geldik. Bu yazımızda istemci bazlı ön bellekleme işlemleri için ne gibi hazırlıklar yapılması gerektiğini gördük. En önemli noktanın web.config dosyası içerisinde belirtilen location niteliği olduğunu özetleyebiliriz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson7_RC.rar (192,46 kb)](/assets/files/2010/Lesson7_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Services-Client-Based-Caching)

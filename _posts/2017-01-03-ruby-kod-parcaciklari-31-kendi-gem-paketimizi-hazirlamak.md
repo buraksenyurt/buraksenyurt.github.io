@@ -93,3 +93,5 @@ Pek tabii bu gem'in de kullanılıp kullanılmadığını denememiz lazım. Bu y
 Görüldüğü gibi yazdığımız bir gem paketini RubyGems.org sitesine yükleyebildik. Ruby ile geliştirdiğimiz paketleri bu şekilde ekleyebilir ve başka geliştiricilerin kullanımına açarak diğer Rubyist'leri sevindirebiliriz. Elbette işe yarar paketler yazmamı önemli. Buradaki tek eksi sanıyorum ki gem içeriklerinin kontrol edilemeyişi. Yani kötü amaçlı gem paketleri de bu sunuculara atılabilir mi bilemiyorum. Böylece geldik bir makalemizin daha sonuna. Bir başka kod parçacığında görüşünceye dek hepinize mutlu günler dilerim.
 
 Kaynak: [http://guides.rubygems.org/make-your-own-gem/](http://guides.rubygems.org/make-your-own-gem/)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-31-kendi-gem-paketimizi-hazirlamak)

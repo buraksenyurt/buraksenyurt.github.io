@@ -1023,3 +1023,5 @@ Diğer yandan kod içerisinde birer **Gauge** olarak tanımladığımız özel m
 Böylece geldik bir çalışmamızın daha sonuna. Benim için uzun ama epey eğitici oldu. En azından bir test düzeneğini örnek bir senaryo ile ele alma şansı buldum. Umarım sizler için de faydalı olmuştur. Tekrardan görüşünceye dek hepinizi mutlu günler dilerim.
 
 [Çalışmaya ait örnek kodlara GitHub üzerinden ulaşabilirsiniz.](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/LocalizationChallenge)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/hangi-localization-teknigi)

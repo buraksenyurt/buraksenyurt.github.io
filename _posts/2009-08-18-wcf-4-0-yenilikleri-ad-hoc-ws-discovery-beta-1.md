@@ -243,3 +243,5 @@ Görüldüğü üzere FindAsync çağrısından sonra hemen alt satıra geçiler
 Bu konularıda ilerleyen yazılarımızda ele almaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AdHocDiscovery.rar (51,72 kb)](/assets/files/2009/AdHocDiscovery.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/wcf40-Yenilikleri-Ad-Hoc-WS-Discovery)

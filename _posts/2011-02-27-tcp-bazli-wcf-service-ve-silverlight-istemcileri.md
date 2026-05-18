@@ -369,3 +369,5 @@ Tabi yapılan örneğe göre kafalarda hale soru işaretleri oluşabilir. Söz g
 Bu sorunun araştırılmasını siz değerli okurlarıma bırakıyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [TCPandSilverlight.rar (1,80 mb)](/assets/files/2011/TCPandSilverlight.rar) [Örnek Visual Studio 2010 Ultimate üzerinde ve Silverlight 4.0 odaklı olarak geliştirilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TCP-Bazlc4b1-WCF-Service-ve-Silverlight-Istemcileri)

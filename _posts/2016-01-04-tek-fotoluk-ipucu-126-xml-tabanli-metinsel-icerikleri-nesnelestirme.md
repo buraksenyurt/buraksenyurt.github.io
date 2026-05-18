@@ -35,3 +35,4 @@ Mutlaka yazılımcılık hayatınızın bir döneminde serileştirme (XML, SOAP,
 
 Böylece geldik bir ipucu'nun daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-126-xml-tabanli-metinsel-icerikleri-nesnelestirme)

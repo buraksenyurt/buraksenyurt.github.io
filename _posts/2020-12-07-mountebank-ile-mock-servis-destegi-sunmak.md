@@ -396,3 +396,5 @@ Temel olarak Mountebank'ın nasıl kullanıldığını az çok anladık diye dü
 - Eklenen bir imposter'ı nasıl silebiliriz?
 
 Böylece geldik bir skynet derlememizin daha sonuna. Örneğin tamamına [github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2034%20-%20Mountebank) üzerinden erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/mountebank-ile-mock-servis-destegi-sunmak)

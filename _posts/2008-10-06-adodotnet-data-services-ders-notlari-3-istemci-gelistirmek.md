@@ -247,3 +247,6 @@ Artık sizde farklı sorgulama örnekleri deniyerek istemci tarafında neler yap
 Böylece bugünkü ders notlarımızında sonuna gelmiş bulunuyoruz. Bu ders notlarımızda basit bir istemcinin nasıl geliştirilebileceğini incelemeye çalıştık. Bir sonraki ders notlarımızda istemci tarafında CRUD (CreateReadUpdateDelete) operasyonlarının nasıl ele alınabileceğini analiz etmeye çalışacağız; ve eğer mümkün olursa özel LINQ Provider kullanılması halinde, servis tarafında Insert, Update, Delete oparasyonlarına olanak sağlamak için neler yapılması gerektiğine değiniyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği indirmek için tıklayın](/assets/files/2008/DevelopingAstoriaClient.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-Data-Services-Ders-Notlarc4b1-3-(Istemci-Gelistirmek)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-
+-com-dan)

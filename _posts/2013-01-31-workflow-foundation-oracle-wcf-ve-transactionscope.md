@@ -500,3 +500,5 @@ Görüldüğü üzere bir Workflow içerisinden başlatılan Transaction’ ın,
 [HowToTransaction.zip (457,18 kb)](https://www.buraksenyurt.com/pics/2012%2f8%2fHowToTransaction.zip)
 
 [Örnek Visual Studio 2010,.Net Framework 4.0 tabanlıdır]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Workflow-Foundation-Oracle-WCF-ve-TransactionScope)

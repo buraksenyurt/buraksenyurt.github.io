@@ -267,3 +267,5 @@ Bazı durumlarda PostBack verilerini ele almak istemiyor olabiliriz. Yani amaç 
 - Sadece olay tetikletmek amacıyla, IPostBackEventHandler arayüzünün ilgili kontrole uygulanmasıda düşünülebilir. Elbetteki hem IPostBackDataHandler hemde IPostBackEventHandler arayüzlerinin bir arada uygulanması daha güçlü bir web kontrolü oluşturulmasına neden olacaktır.
 
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Web-Server-Control-Yazmak-3-bsenyurt-com-dan)

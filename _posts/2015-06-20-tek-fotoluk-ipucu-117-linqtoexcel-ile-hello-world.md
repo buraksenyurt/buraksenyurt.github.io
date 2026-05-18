@@ -25,3 +25,4 @@ Küçük bir not; Örneği ilk kez denediğinizde büyük ihtimalle "The 'Micros
 
 Bir başka ipucunda görüşmek dileğiyle.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-117-linqtoexcel-hello-world)

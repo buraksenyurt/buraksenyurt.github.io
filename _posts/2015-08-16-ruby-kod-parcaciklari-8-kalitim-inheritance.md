@@ -116,3 +116,4 @@ Olan olayları aşağıdaki şema yardımıyla biraz daha net anlayabiliriz.(Acc
 
 Bu kod parçacığı ile Ruby programlama dilinde kalıtım konusunun nasıl değerlendiriliği temel seviyede değerlendirmeye çalıştık. Elbette daha ileri seviye konular da var. Bunları ilerleyen zamanlarda değerlendireceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-8-kalitim-inheritance)

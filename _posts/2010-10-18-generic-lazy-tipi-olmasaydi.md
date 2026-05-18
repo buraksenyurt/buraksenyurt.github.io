@@ -322,3 +322,4 @@ Vuuvvv!!! Baya bir karışık oldu yauv. Tekrardan görüşünceye dek hepinize 
 
 [LazyPart2.rar (21,80 kb)](/assets/files/2010/LazyPart2.rar) [Örnek Visual Studio 2010 Ultimate üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Generic-Lazy-Tipi-Olmasaydc4b1)

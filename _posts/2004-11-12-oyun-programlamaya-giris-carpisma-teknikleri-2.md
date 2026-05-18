@@ -143,3 +143,5 @@ Uygulamamızı çalıştırdığımızda, Top2 isimli nesneyi herhangi bir yönd
 Şekil 4. Çarpışmanın çalışma zamanında tespit edilmesi.
 
 Çarpışmalar ile ilgili bir diğer önemli durumda, dörtgenler ile dairelerin çarpışmalarının nasıl tespit edilebileceğidir. Bu kez, daire merkez nesne olarak düşünülür ve dörtgenin daireye olan en yakın ve en uzak noktaları değerlendirilerek çarpışmanın olup olmadığına bakılır. Bu teoriyide bir sonraki makalemizde incelemeye çalışacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Oyun-Programlamaya-Giris-(Carpısma-Teknikleri-2)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-com-dan)

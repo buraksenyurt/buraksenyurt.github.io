@@ -192,3 +192,5 @@ sudo apt-get -y install skopeo
 Şimdilik bu kadar. Gelelim bu çalışma haricinde daha neler yapabileceğinize. Örneğin pod_a ve pod_b şeklinde iki ayrı pod oluşturup içlerindeki container'ların birbirlerini kullanmasını deneyebilirsiniz. Yani pod_a'da ki bir.net web api, pod_b'deki MongoDb container'ını kullanmaya çalışabilir mi sorusunun cevabını arayabilirsiniz. Diğer yandan Podman benzeri OCI standartlarına uyan başka container teknolojileri var mı araştırmakta ve hatta aralarındaki kıyaslamalara bakmakta yarar var.
 
 Böylece geldik bir SkyNet derlememizin daha sonuna. Bu çalışmamızda kobay bir NodeJs servisini Poderize (Dockerize yerine bunu kullanayım dedim) etmeyi ve Podman'in genel kullanımını öğrendik. Örnek kodlara [github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2040%20-%20This%20is%20Podman) üzerinden erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/docker-yerine-podman-pod-manager-kullanmak)

@@ -239,3 +239,5 @@ Görüldüğü üzere NLog mekanizmasında loglama yönünü Oracle tarafına ç
 Diğer bir husus da, uygulamanın hangi noktasından, hangi seviyede ne çeşit bilgilerin Log olarak yazdırılacağıdır. Log’ un içeriğini belirlemek bu makalenin konusu olmamakla birlikte ileride devasa şekilde büyüyecek veri kümesinin araştırılabilir olarak tasarlanması gerektiği de akıldan çıkartılmamalıdır.
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/NLog-icin-Oracle-Database-Kullanmak)

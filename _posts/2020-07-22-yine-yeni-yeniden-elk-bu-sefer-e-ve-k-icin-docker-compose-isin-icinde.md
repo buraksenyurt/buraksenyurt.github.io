@@ -229,3 +229,5 @@ level : "Error" or message : "zamanı"
 Görüldüğü üzere ELK için docker-compose'dan yararlanarak ideal loglama senaryosunu kurgulamak oldukça basit. Gerçek hayat senaryosuna baktığımızda docker-compose pekala ayrık ve dağıtık suncularda hizmet edecek şekilde konuşlandırılabilir. Mikroservisler veya başka türden uygulamalar docker-compose ile ayağa kalkan Elastichsearch servisine erişebildiği sürece Kibana ile logları izlemek ve belki de alarm sistemleri kurarak sistemi kontrol altında tutmak pekala mümkündür.
 
 Konuya ait örnek kodların tamamını [skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2008%20-%20ELK%20Again)nda bulabilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/yine-yeni-yeniden-elk-bu-sefer-e-ve-k-icin-docker-compose-isin-icinde)

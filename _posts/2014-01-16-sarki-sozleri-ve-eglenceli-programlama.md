@@ -440,3 +440,5 @@ ve işte sonuç
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim
 
 [LyricsDotCom.rar (75,84 kb)](/assets/files/2014/LyricsDotCom.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Sarki-Sozleri-ve-Eglenceli-Programlama)

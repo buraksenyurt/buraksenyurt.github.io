@@ -14,3 +14,5 @@ Arada sırada temelleri de hatırlamak gerekir değil mi? Söz gelimi bir delega
 ![PhotoTrick38](/assets/images/2011/PhotoTrick38.png)
 
 [DelegateChain.rar (22,77 kb)](/assets/files/2011/DelegateChain.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-38(Delegate-Chain))))

@@ -221,3 +221,6 @@ Yeni kayıt ekleme ve güncelleme işlemleri dışında istemci tarafında birde
 Bir açıdan bakıldığında, yapılan işlemler verilerin normal yollarla karşılıklı olarak uç kaynaklara gönderilmesinden pek farklı değildir. Özellikle bağlantısız katman modelinde geliştirme yapıldığında benzer işlevsellikleri sağlayabiliriz. Ne varki Sync Services for Ado.Net alt yapısı sunucu ve istemci tarafındaki senkronizasyonun sağlanması adına geliştiriciye daha güçlü ve yönetilebilir tipler sunmaktadır. Ayrıca senkronize işlemlerinin yapılması sırasında sunucu veri kaynağının sabit bir SQL veritabanı olması şartı bulunmamakla birlikte, N-Tier yada SOA tabanlı geliştirme yapmakta mümkündür. Bu açılardan bakıldığında avantajlar ortadadır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örneği İndirmek İçin Tıklayın](/assets/files/2009/AzonSync.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-Senkronizasyon-Servisleri(Sync-Services-for-Ado-Net)-bsenyurt-com-dan)-bsenyurt-com-dan)-bsenyurt-c
+com-dan)

@@ -119,3 +119,5 @@ PUT, request nesnesinin uzak sunucuya veri göndereceğini belirtmiş oluyor. Ve
 Bu makalemizde basit olarak mobil cihazlarda Http protokolünü kullanarak uzak makineler üzerindeki kaynaklara erişimin nasıl yapılabileceğini incelemeye çalıştık. Binary (ikili) formatta, request/response modeline uygun işlemler gerçekleştirebileceğimizi gördük. Örnek olarak gif formatındaki resim dosyalarını ele aldık. Ancak siz binary formatı kullandığınız sürece herhangibir tipteki dosyayıda bu işlem için kullanabilirsiniz. Buna göre görüntülü bir ses dosyasından tutunda şifrelenmiş bir text dosyasını dahi çift yönlü olarak taşıyabilirisiniz. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2006/UsingHttp.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Mobil-Uygulamalarda-Http-Uzerinden-Download-ve-Upload-bsenyurt-com-dan)

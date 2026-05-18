@@ -235,3 +235,5 @@ Artık bir kaç test yapabiliriz. İlk olarak HUB sunucusunu sonra yayın yapan 
 ![signalr_3.gif](/assets/images/2017/signalr_3.gif)
 
 Ekran görüntüsünden de görüldüğü üzere ben iki istemci (FabrikamSomeClient) çalıştırarak sonuçları değerlendirdim. FabrikamPostman üzerinden yayınlanan sözler, bağlı olan tüm istemcilere ulaştırıldı. Ayrıca FabrikamServer üzerindeki log izlerine bakıldığında bağlanan herbir uygulama için benzersiz Guid üretildiği de gözlemlendi. SignalR'ın WebSocket modelini baz alan eş zamanlı haberleşebilme yeteneklerini kolaylaştıran yanlarını az çok bu örnekle anlamış bulundum. Umarım sizler için de anlaşılır olmuştur. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/net-core-tarafinda-signalr-kullanimi)

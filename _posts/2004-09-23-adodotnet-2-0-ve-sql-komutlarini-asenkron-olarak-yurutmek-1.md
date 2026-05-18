@@ -191,3 +191,5 @@ Bu örnekte, iki sql komutunu asenkron olarak çalıştırmaktayız. Yürütüle
 Şekil 5. Uygulamanın çalışması sonucu.
 
 Bu makalemizde Asenkron Sql Komutların Yürütülmesi konusuna kısaca değinerek kullanabileceğimiz tekniklerden birisi olan Pooling Modelini inceledik. Pooling modeli aslında, çok büyük boyutlu sorgular içeren sql komutlarının asenkron olarak yürütülmesinde çok faydalı bir teknik değildir. Bunun yerine daha gelişmiş olan diğer modellerden CallBack Modeli veya Wait Modeli yararlanılabilir. Bir sonraki makalemizde, CallBack modelini incelemeye çalışacağız. Tekrar görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0-ve-Sql-Komutlarc4b1nc4b1-Asenkron-Olarak-Yurutmek-1-bsenyurt-com-dan)

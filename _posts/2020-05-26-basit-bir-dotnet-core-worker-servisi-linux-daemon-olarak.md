@@ -211,3 +211,5 @@ sudo rm WeatherCollector.service
 Tabii örneği ben vakti zamanında.Net Core 3.1 ile geliştirmiştim. Bunu.Net 5.0 ile de kurgulamak gerekli. Hatta servisin gerçekten de gerçek bir dış servisten bilgi alıp Redis'e atmasını da sağlarsanız pek bir güzel olur. Ya da biraz daha uç örnekler göz önüne alınabilir. Söz gelimi sistemin durumu hakkında bir takım bilgileri çeşitli periyotlarda toplayıp uzak sunucudaki bir Elasticsearch servisine loglayan bir Dameon kurgulanabilir;)
 
 Örneğe ait kodlara [skynet github reposu](https://github.com/buraksenyurt/skynet/tree/master/No%2011%20-%20.Net%20Core%20Worker%20Services) üzerinden erişebilirsiniz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/basit-bir-net-core-worker-servisi-linux-daemon-olarak)

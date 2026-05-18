@@ -170,3 +170,5 @@ Uygulamayı en az iki farklı tarayıcı ile denememizde yarar var. Nitekim [şu
 Bu yazımızda cluster modülünü kullanarak ana iş parçacığından farklı iş parçacıklarının nasıl dallandırılabileceğini incelemeye çalıştık. Aslında konunun özelinde Node.js'in child-Process adı verilen bir konsepti bulunuyor. Child Process kavramı göz önüne alındığında spawn, execFile, exec, fork gibi çeşitli operasyonlar var. cluster, fork işlemini basitleştiriyor diyebiliriz. Bu yapıları özümsemek içinde Node.js'in stream ve event-driven konularını da iyi bilmek gerekiyor. Ben halen bu konulara bakmaktayım. Bir şeyler pekişince yazmak istiyorum. Şimdilik benden bu kadar. Gün hafif hafif ağırmaya başladı. Yola düşsem iyi olacak. Enterprise hava yollarının ilk seferi ile tekrardan eve dönme vakti gelmiş bile. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örneklere [github'dan](https://github.com/buraksenyurt/nodejs-tutorials) erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/clustered-node-js)

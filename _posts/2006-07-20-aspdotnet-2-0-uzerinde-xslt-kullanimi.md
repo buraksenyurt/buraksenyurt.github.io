@@ -292,3 +292,5 @@ Dikkat ederseniz value-of elemanı içerisinde yer alan select niteliğinde meto
 Bu makalemizde kısaca Xslt'nin ne olduğunu, ne işe yaradığını,.Net Framework içerisinden nasıl kullanılabileceğini kısaca incelemeye çalıştık. Aslında Xslt başlı başına bir konudur ve ayrıca zaman ayrılması gerekmektedir. Xml, Xslt, Xpath gibi popüler konuların.Net ile olan ilişkilerini daha iyi anlayabilmek için size Wrox'un [Professional ASP.NET 2.0 XML (Programmer to Programmer)](http://www.amazon.com/gp/product/0764596772/sr=8-5/qid=1153400205/ref=sr_1_5/103-4704336-3222215?ie=UTF8) kitabını tavsiye ederim. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayın.](/assets/files/2006/UsingXSLT.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-Uzerinde-Xslt-Kullanc4b1mc4b1-bsenyurt-com-dan)

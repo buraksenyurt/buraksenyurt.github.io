@@ -252,3 +252,5 @@ Elbette senaryomuzda önemli eksiklikler bulunmaktadır. Örneğin,
 Bu soruların çözümünü, araştırmasını ve uygulanmasını siz değerli okurlarıma bırakıyorum. Bu mücadeleler inanın size önemli saha tecrübeleri kazandıracaktır. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_RestPostJQuery.rar (111,76 kb)](/assets/files/2014/HowTo_RestPostJQuery.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-WebHttp-Service-JSON-jQuery-Ajax-ve-CORS-ile-Yeni-Bir-Macera)

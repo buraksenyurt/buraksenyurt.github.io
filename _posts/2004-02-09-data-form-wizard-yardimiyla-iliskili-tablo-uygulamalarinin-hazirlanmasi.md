@@ -212,3 +212,5 @@ Bu durumda aşağıdaki uyarıyı alırsınız.
 Şekil 16. ForeignKeyConstraint durumu.
 
 Bu durumda Yes derseniz buradaki değer otomatik olarak 1000 yapılır. İşte bu olay DataRelation nesnemizin becerisidir. Değerli okurlarım uzun ama bir okadarda faydalı olduğuna inandığım bir makalemizin daha sonuna geldik. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Data-Form-Wizard-Yardc4b1mc4b1yla-Iliskili-Tablo-Uygulamalarc4b1nc4b1n-Hazc4b1rlanmasc4b1-bsenyurt-com-dan)

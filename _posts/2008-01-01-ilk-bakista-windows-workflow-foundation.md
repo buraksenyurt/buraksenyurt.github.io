@@ -513,3 +513,5 @@ Buraya kadar yazdıklarımız ile iş akışı (Workflow) kavramını, Windows W
 Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2008/WWFGiris.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ilk-Bakc4b1sta-Windows-Workflow-Foundation-bsenyurt-com-dan)

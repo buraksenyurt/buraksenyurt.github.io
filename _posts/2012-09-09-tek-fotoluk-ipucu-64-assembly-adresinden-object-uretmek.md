@@ -15,3 +15,5 @@ Bazen reflection tekniklerini kullanarak harici assembly’ lar içerisinden bul
 ![spt_64](/assets/images/2012/spt_64.png)
 
 Bir başka ip ucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-64-Create-Object-From-String)

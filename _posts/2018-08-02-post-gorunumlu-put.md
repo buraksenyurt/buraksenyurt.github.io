@@ -314,3 +314,5 @@ Adres: localhost:5555/smarty/api/books
 Volaaa:)
 
 Görüldüğü gibi küçük bir hile hatta pek çok kaynakta hacking olarak da ifade ediliyor gibi ancak bizim için önemli olan, istemciden gelen Header bilgisini yakalayan ve duruma göre askiyon alan middleware sınıfının yazmış olmamız. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Post-Gorunumlu-Put)

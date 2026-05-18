@@ -129,3 +129,5 @@ Ne olduğuna kısaca bakalım. Car, Plane sınıfları içerisinde yine drive is
 ![ducktype_3.gif](/assets/images/2017/ducktype_3.gif)
 
 Sanıyorum siz de benim gibi Duck Typing yaklaşımını biraz daha iyi anladınız. Bakalım Ruby, Python gibi dilleri inceledikçe daha farklı nelerle karşılacağız!? Bir başka yazımızda görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/duck-typing-nedir)

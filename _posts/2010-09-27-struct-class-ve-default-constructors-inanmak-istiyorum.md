@@ -250,3 +250,4 @@ Başka bir macerada görüşünceye dek hepinize mutlu günler dilerim.
 
 [ClassStructAndConstructors.rar (21,32 kb)](/assets/files/2010/ClassStructAndConstructors.rar) [Örnek Visual Studio 2010 Ultimate RTM sürümü üzerinde geliştirilmiş ve test edilmiştir]
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Struct-Class-ve-Default-Constructors-Inanmak-Istiyorum)

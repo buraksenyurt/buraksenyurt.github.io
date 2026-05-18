@@ -969,3 +969,5 @@ Solution içeriğinde birçok proje ve harici nuget bağımlılıkları var. Gel
 ![GeneralOverview.png](/assets/images/2026/GeneralOverview.png)
 
 Yazının bu kısmına kadar geldiyseniz size canı gönülden teşekkür ederim. Umarım bilgilendirici ve denediğinize değer bir makale olmuştur. Burada ele aldığımız [uygulama kodlarına elbette github reposu üzerinden erişebilirsiniz](https://github.com/buraksenyurt/HexagonalArchitecture_101). Hatta DDD'ye özgü bir takım yenilikler de eklemeye çalışacağım. Event'ler gibi. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/hexagonal-architecture-101)

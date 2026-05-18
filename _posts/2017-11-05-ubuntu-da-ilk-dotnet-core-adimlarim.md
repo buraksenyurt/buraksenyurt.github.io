@@ -144,3 +144,5 @@ Eğer komut satırından kurulum zor geliyorsa basit kurulum için [şu adresten
 Artık emektar dizüstü bilgisayarımda Ubuntu 64bit sürümü yüklü. Tertemiz bir ortamım var. Bu ortamda şu an için.Net Core 2.0 ve Visual Studio Code bulunuyor. Ama yapmam gereken başka işler var. GitHub ile entegre olmalıyım. Diğer yandan Docker kurulumunu gerçekleştirip bir.Net Core 2.0 imajı üzerinde çalışmalar yapmalıyım. Ayrıca GoLang, Ruby ve Python için de ortamı hazırlamalıyım. Bu arada Linux terminal için biraz komut çalışsam hiç de fena olmaz. Python tarafında sudo, apt-get gibi ifadelere aşina olsam da curl gibi yeni karşılaştığım komutların farkında olmalıyım.
 
 Görüldüğü gibi evinizdeki bilgisayarımıza Linux kurup üzerinde.Net Core 2.0 ile Hello World dememiz oldukça basit. Daha kolayı sanıyorum ki Docker Container kullanımı. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ubuntu-da-ilk-net-core-adimlarim)

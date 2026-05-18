@@ -269,3 +269,5 @@ DataTable ve DataSet'ler üzerinde ToQueryable, ToDataTable, Field metodları d�
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde, LINQ'yu DataTable gibi bağlantısız katman nesneleri üzerinde nasıl kullanabileceğimizi incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız.](/assets/files/2007/LINQonDataSets.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Baglantısız-Katmanda-LINQ-bsenyurt-com-dan)

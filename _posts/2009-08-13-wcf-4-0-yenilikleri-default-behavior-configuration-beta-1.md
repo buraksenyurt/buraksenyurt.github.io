@@ -128,3 +128,5 @@ ve örneğimizi yeniden çalıştırırsak bir önceki ile aynı sonuçları eld
 Tabi son örneğimizin.Net Framework 4.0 Beta 1 tabanlı olarak Visual Studio 2010 Beta 1 üzerinde geliştirildiğini hatırlatalım. Basit çok basit bir özellik ama merak etmeyin. WCF 4.0 ile ilişkili daha baba yeniliklerde bulunmakta. İlerleyen yazılarımızda bunlarada değiniyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [DefaultBehaviorConfiguration.rar (43,75 kb)](/assets/files/2009/DefaultBehaviorConfiguration.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Default-Behavior-Configuration)

@@ -514,3 +514,5 @@ Gelelim bu SkyNet derlemesinin bomba sorularına:)
 Soruları düşünerkene örneği geliştirmeye de devam edebilirsiniz. Mesela en az iki servisi daha farklı programlama dilleri ile senaryoya dahil edebilir (NodeJs, Java, Rust, GO) ya da RewardService'in geriye döndürdüğü bedava ödüller listesindeki tekrar eden bilgileri tekleştirmek için gerekli kod düzenlemesini yapabilirsiniz. Bunlara ek olarak ürünü şirketinizde bir POC (Proof of Concept) çalışması olarak değerlendirip yük testi altında nasıl davranış sergileyeceğini araştırabilirsiniz.
 
 Böylece geldik bir [SkyNet](https://github.com/buraksenyurt/skynet) çalışmamızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/ocelot-net-core-tarafinda-bir-api-gateway-denemesi)

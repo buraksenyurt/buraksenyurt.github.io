@@ -14,3 +14,5 @@ Bazen yazdığımız kod parçalarının işlem sürelerini hesaplama ihtiyacı 
 ![PhotoTrick9](/assets/images/2011/PhotoTrick9.png)
 
 [ProcessDuration.rar (22,01 kb)](/assets/files/2011/ProcessDuration.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucue280939-(Stopwatch-ile-sure-olcumu))))

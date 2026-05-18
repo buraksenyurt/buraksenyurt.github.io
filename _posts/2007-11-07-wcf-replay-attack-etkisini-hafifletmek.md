@@ -259,3 +259,5 @@ namespace Istemci
 Gelinen bu noktadan sonra sistem test edilebilir. Söz konusu sistem cevaplama saldırılarına karşı önlem alan özel bir bağlayıcı tipi kullanmaktadır. Örnek uygulamalarda yine logların izlenmesi işlemi gerçekleştirilirse mesajların içeriğinde yazının başındada belirtilen tanımlama değerlerinin yer aldığı (timestamp gibi...), bununla birlikte mesajların boyutlarının dahada arttığı görülür. Mesaj boyutlarındaki bu artış çok doğal olarak paketlerin büyümesi anlamınada gelmektedir. Ancak vaka içerisinde Replay Attack olasılığı var ise bu göz ardı edilmeli ve gereken tedbirler alınmalıdır. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek Uygulama için Tıklayın](/assets/files/2007/ReplayAttacks.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Replay-Attack-Etkisini-Hafifletmek-bsenyurt-com-dan)

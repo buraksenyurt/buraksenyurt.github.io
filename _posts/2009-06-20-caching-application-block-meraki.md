@@ -260,3 +260,5 @@ Buna göre istemci aynı resimleri talep ettiği ve servis uygulamasıda ayakta 
 Asenkron erişim ile ilişkili istemci tarafında hiç bir şey yapılmamıştır. Diğer yandan resmin değişmesi halinde cache içeriğinin güncellenmesi ile ilgili bir çalışmada yapılmamıştır ki yapmaya çalışmanızı öneririm. Şimdilik benden bu kadar. Yeni bir western filmi sonrasında tekrardan Enterprise Library konulu bir örnek ile görüşmek üzere...
 
 [HelloCachingBlock.rar (5,35 mb)](/assets/files/2009/HelloCachingBlock.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Caching-Application-Block-Merakc4b1)

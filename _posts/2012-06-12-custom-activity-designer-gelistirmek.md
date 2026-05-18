@@ -440,3 +440,5 @@ Olay metodu içerisindeki felsefe oldukça basittir. Button kontrolü aslında b
 Görüldüğü üzere Custom Activity geliştirmek kolay olsa da, bu bileşeni Designer desteğine sahip olacak şekilde genişletmek bir kaç ipucu içeren ve dikkat edilmesi gereken bir süreci gerektirmektedir. Geliştirmiş olduğumuz örnekte bazı eksik kısımlar da bulunmaktadır. Örneğin XAML tarafında dekleratif olarak Event bazlı etkileşimler çok fazla ele alınmamıştır.(Bir veritabanı bağlantısını seçtiren ve hatta design tarafında bir SQL sorgusunu çalıştırtıp sonuçları bir DataGrid kontrolüne basan bir Activity Designer yazmaya çalıştığınızı hayal edin. Üstelik Connection'ı tanımladığınızda Test'de edebilmelisiniz vs) Bu konuda detaylı ve derinlemesine araştırmalarıma devam ediyorum. Yeni bilgiler edindikçe sizinle paylaşmaya gayret ediyor olacağım. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [WritingDesignerActivityV2.zip (155,91 kb)](/assets/files/2012/WritingDesignerActivityV2.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Custom-Activity-Designer-Gelistirmek)

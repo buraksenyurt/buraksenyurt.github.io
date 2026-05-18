@@ -18,3 +18,5 @@ Malum bildiğiniz üzere get ve set bloklarından oluşan özellikler (Propertie
 ![tfi_84](/assets/images/2013/tfi_84.png)
 
 Gördüğünüz gibi ReadOnly olarak tanımlanmış bir Property, OperationContract niteliği ile işaretlenen get metodunu dışarıya operasyon olarak sunabilmekte. Bir başka ipucundan görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-84-WCF-icerisinde-Property-Kullanimi)

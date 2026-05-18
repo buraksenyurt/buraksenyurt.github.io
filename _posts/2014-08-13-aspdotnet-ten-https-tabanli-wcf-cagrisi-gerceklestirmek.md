@@ -363,3 +363,5 @@ Bir başka deyişle oluşacak olan hata sürkülase edilmiştir. Malum developme
 WCF tarafında HTTPS tabanlı geliştirme ortamının hazırlanması daha önceki yıllarda biraz daha zorluydu. Ancak yeni nesil ortamlarımızda bu işlemleri gerçekleştirmek, adımlarımızda da görüldüğü üzere daha kolay. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [HowTo_WCFandHTTPS.zip (63,74 kb)](/assets/files/2014/HowTo_WCFandHTTPS.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/AspNete28099-ten-HTTPS-Tabanlc4b1-WCF-Cagrc4b1sc4b1-Gerceklestirmek)

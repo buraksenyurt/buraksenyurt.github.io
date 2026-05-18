@@ -22,3 +22,5 @@ categories:
 Aslında bu yol belki de ilk akla gelen yoldur. Eğer bir internet sitesine ulaşabiliyorsak zaten internete bağlıyız diye düşünebiliriz. Lakin bir önceki ipucunda kullandığımız ve daha çok donanımsal talep ile çalışan tekniğe nazaran daha yavaş ve hatta daha az bilgi veren bir çözümdür.
 
 Bir başka ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-82-Internete-Baglmiyiz-(Round-II))))

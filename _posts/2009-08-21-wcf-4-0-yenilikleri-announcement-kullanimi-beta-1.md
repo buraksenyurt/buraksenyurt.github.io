@@ -113,3 +113,5 @@ Bir sonraki yazımızda Ad Hoc modelini terkedip, Managed Discovery modelini inc
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AdHocDiscoveryForAnnouncement.rar (82,45 kb)](/assets/files/2009/AdHocDiscoveryForAnnouncement.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-40-Yenilikleri-Announcement-Kullanimi)

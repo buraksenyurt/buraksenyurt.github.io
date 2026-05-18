@@ -228,3 +228,5 @@ Kendi Web Part bileşenlerimizi geliştirirken başka üst sınıf özelliklerin
 öğrendik. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
 
 [Örnek Uygulama İçin Tıklayınız](/assets/files/2007/CustomWebParts.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Kendi-Web-Part-Bilesenlerimizi-Gelistirmek-bsenyurt-com-dan)

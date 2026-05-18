@@ -20,3 +20,5 @@ Aslında bu soruya cevap vermek özellikle web developer'lar için son derece ko
 [PerfectEmailing.rar (21,55 kb)](/assets/files/2012/PerfectEmailing.rar)
 
 ve isteyenler için VS Schema Settings dosyası:) [BurakSenyurtVsColorSchema.vssettings (280,59 kb)](/assets/files/2012/BurakSenyurtVsColorSchema.vssettings)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-44-(Mail-Adresi-Dogru-mu))))

@@ -226,3 +226,5 @@ Bu arada kod ve resimlerin bazı yerlerinde Tif bazı yerlerinde Gif formatları
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [OCP.rar (42,53 kb)](/assets/files/2009/OCP.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tasarim-Prensipleri-Open-Closed)

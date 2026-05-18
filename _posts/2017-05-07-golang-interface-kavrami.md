@@ -284,3 +284,5 @@ Bu son derece doğaldır nitekim Move ve SaySomething metodları birer Pointer b
 Bu son iki örnekteki farkları anlamak önemlidir. Go dilinde varsayılan olarak fonksiyon parametreleri veri kopyalama yöntemi ile kullanılırlar. Yani çağrım yapılan yerden gönderilen parametre verisi, fonksiyon içinde kullanılmak için kopyalanır. Bu nedenle Pointer parametre alan fonksiyona değer türü şeklinde atama yaptığımızda hata alırız. Çünkü beklenen Tank veya Player tipinden bir değişken adresidir. Diğer yandan Pointer tipinden parametre almayan fonksiyona & operatörü ile veri gönderdiğimizde adres kopyalaması söz konusu olacağından, interface tipinin tanımlı üyelerine (Move ve SaySomething) erişebiliriz.
 
 Görüldüğü gibi interface kavramı basit görünen ama detayına inildikçe dikkat edilmesi gereken özellikler taşıyan bir kavramdır. Go dili ile ilgili kavramları çalıştıktça paylaşmaya devam edeceğim. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/GoLang-Interfaces)

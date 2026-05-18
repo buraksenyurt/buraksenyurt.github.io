@@ -34,3 +34,5 @@ Yakın zamanda yazılımcılardan oluşan bir ekibe Rust programlama dili ile il
 - Ownership, Borrowing (Azıcık)
 
 [Youtube Link](https://www.youtube.com/watch?v=qbiAfQFNrUk)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-programlama-dili-icin-hello-world)

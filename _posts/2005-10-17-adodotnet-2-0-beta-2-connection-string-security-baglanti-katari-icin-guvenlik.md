@@ -189,3 +189,6 @@ using (SqlConnection con = new SqlConnection(conStr))
 ```
 
 Yapmış olduklarımızı özetlersek; .NET 2.0, Configuration isim alanı altında yeni özelliklere sahip pek çok tip sunmaktadır. Buradaki sınıfları ve konfigürasyon dosyaları için geliştirilen yeni nitelikleri kullanarak, config dosyalarında tutulan bağlantı katarı bilgilerini yabancı gözlerden saklayabiliriz. Elbette, kod içerisinde ConfigurationManager üzerinde ilgili bağlantı katarı bilgisini okuyabilirsiniz. Ancak herkesin görebildiği config dosyalarından bağlantı katarı bilgisini okuyamazsınız. Tabii ne yaparsanız yapın yine de güvenliği tam olarak sağlamak söz konusu olamaz. Her zaman için en azından %1 ihtimal ile tüm sistemler güvensizdir. Böylece geldik bir makalemizin daha sonuna. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ado-Net-2-0(Beta-2)-Connection-String-Security-(Baglantc4b1-Katarc4b1-icin-Guvenlik)-bsenyurt-com-dan)-Connection-String-Security-(Baglantc4b1-Katarc4b1-icin-Guvenlik)-bsenyurt-com-dan)-Connection-String-Security-(Baglantc4b1-Katarc4b1-i
+icin-Guvenlik)-bsenyurt-com-dan)

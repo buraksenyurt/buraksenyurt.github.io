@@ -529,3 +529,5 @@ Doğruyu söylemek gerekirse bu çalışma benim için oldukça keyifliydi. Hero
 - Vue tarafından bir Mutation sorgusunun nasıl gönderilebileceğini ve schema veri tiplerine dikkat etmem gerektiğini
 
 Böylece geldik bir [cumartesi gecesi derlemesi](https://github.com/buraksenyurt/saturday-night-works)nin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/hasura-graphql-engine-ile-gelistirilmis-bir-api-servisini-vue-js-ile-kullanmak)

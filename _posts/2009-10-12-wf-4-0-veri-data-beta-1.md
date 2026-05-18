@@ -147,3 +147,5 @@ Bu nedenle şimdilik kod tarafı ile idare etmeniz gerekiyor.
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [UsingVariablesV2.rar (26,44 kb)](/assets/files/2009/UsingVariablesV2.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WF-40-Veri(Data))))

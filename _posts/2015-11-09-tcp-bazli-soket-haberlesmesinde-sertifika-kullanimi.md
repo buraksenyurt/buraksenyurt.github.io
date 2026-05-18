@@ -275,3 +275,4 @@ Ek olarak çalışma zamanında ortaya çıkması beklenen bir kaç istisna (Exc
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tcp-bazli-socket-haberlesmesinde-sertifika-kullanimi)

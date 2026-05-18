@@ -14,3 +14,5 @@ LINQ sorgularını sadece sorgulamak için kullandığımızı da nereden çıka
 ![PhotoTrick17](/assets/images/2011/PhotoTrick17.png)
 
 [ShortCodes.rar (22,69 kb)](/assets/files/2011/ShortCodes.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-17-(Query-ile-Daha-iyi-Kodlama))))

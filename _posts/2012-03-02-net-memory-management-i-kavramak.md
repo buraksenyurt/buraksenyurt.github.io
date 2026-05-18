@@ -116,3 +116,5 @@ Bu arada CLR’ ın çalışma şeklini daha iyi ve derinlemesine öğrenmek ist
 ![memmng_5](/assets/images/2012/memmng_5.png)
 
 896 sayfalık bu kitap içerisinde elbetteki bulacağınız tek şek bellek yönetimi (Memory Managemet) değil. Ama yazdığımız temel C# kod parçalarının CLR (Common Language Runtime) tarafından nasıl ele alındığını görmek, CIL (Common Intermediate Language) seviyesine kadar inebilmek mümkün. Fiyatı biraz yüksek görünebilir ama bence elinizin altında olması gereken bir kaynaktır diye düşünüyor ve hatta bu konuda ısrar ediyorum.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Net-Memory-Management-Kavramak)

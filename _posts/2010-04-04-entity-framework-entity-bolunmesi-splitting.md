@@ -96,3 +96,5 @@ Dolayısıyla bu çalışma şekli dikkate alınarak gerçekten gereksinim var i
 Sonuç olarak Splitting özelliği yardımıyla bir Entity içerisinde yer alan özelliklerin (Property), veritabanı tarafında birden fazla Tablo'nun alanlarına (Fields) ait olması sağlanabilmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Splitting_RC.rar (49,90 kb)](/assets/files/2010/Splitting_RC.rar) [Örnek Visual Studio 2010 Ultimate RC sürümü üzerinde geliştirilmiş ve test edilmiştir]
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Entity-Framework-Entity-Splitting)

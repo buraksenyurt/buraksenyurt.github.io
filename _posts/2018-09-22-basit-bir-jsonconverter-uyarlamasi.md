@@ -155,3 +155,5 @@ JsonConvert sınıfının DeserializeObject fonksiyonuna generic ServiceResponse
 ![jsonconverter_1.gif](/assets/images/2018/jsonconverter_1.gif)
 
 Sanıyorum ki senin istediğin de buna benzer bir şeylerdi. Elbette daha iyi şekilde geliştirilebilir bu kod parçası. Hatta hem sayı hem de isimlendirme olarak birbirlerinden tamamen farklı mesajları tek bir tip içerisinde toplamaya çalışmayı da deneyebilirsin. Umarım az da olsa fikir sahibi olmuşssundur. Ben epey şey öğrendim diyebilirim. En kısa sürede görüşmek dileğiyle. Ufaklığa bol bol selamlar:)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/basit-bir-jsonconverter-uyarlamasi)

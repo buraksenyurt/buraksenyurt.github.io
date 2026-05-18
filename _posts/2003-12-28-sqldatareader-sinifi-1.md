@@ -113,3 +113,5 @@ private void lstKitaplar_SelectedIndexChanged(object sender, System.EventArgs e)
 Şekil 3. Programın çalışmasının sonucu.
 
 Geldik bir makalemizin daha sonuna. Bir sonraki makalemizde SqlDataReader sınıfını incelemeye devam edeceğiz. Özellikle SqlCommand sınıfının ExecuteReader metodunun aldığı parameter değerlerine göre nasıl sonuçlar elde edebileceğimizi incelemeye çalışacağız. Bunun yanında SqlDataReader sınıfının diğer özelliklerini de inceleyeceğiz. Hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/SqlDataReader-Sc4b1nc4b1fc4b1-1-bsenyurt-com-dan)

@@ -236,3 +236,5 @@ Hatta istersek IIS 7.0 üzerindeki ayarları kullanarak (bir sonrak yazımda ele
 Böylece geldik bir blog yazımın daha sonuna. Bu yazımızda WebGet niteliğinin UriTemplate özelliğini kullanarak, istemciden servis tarafına gelecek olan URL bilgilerinin nasıl özelleştirilebileceğini, WCF Resf modeli için değerlendirmeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim...
 
 [Northwind.rar (234,38 kb)](/assets/files/2009/Northwind.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Rest-Modelinde-UriTemplate-Kullanımı)

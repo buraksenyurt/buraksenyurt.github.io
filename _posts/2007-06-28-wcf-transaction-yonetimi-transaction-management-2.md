@@ -305,3 +305,5 @@ Dikkat etmemiz gereken noktalardan biriside transactionFlow elementinin değerid
 Böylece geldik bir makalemizin daha sonuna. Bu makalemizde WCF için transaction yönetimini biraz daha derinlemesine incelemeye çalıştık. Bir sonraki makalemizde görüşünceye dek hepinize mutlu günler dilerim.
 
 [Örnek uygulama için tıklayın.](/assets/files/2007/TransactionKullanimi.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Transaction-Yonetimi-(Transaction-Management)-2-bsenyurt-com-dan)-2-bsenyurt-com-dan)-2-bsenyurt-com-dan)

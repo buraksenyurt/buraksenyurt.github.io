@@ -151,3 +151,5 @@ void btnEkle_Click(object sender, EventArgs e)
 ```
 
 Delete ve Update işlevleride Insert işlevine benzer şekilde gerçekleştirilir. Bu kez, ObjectDataSource bileşeni için DeleteCommand ve UpdateCommand özellikleri bildirilir ve ilgili parametre koleksiyonları eklenir. Bu makalemizde kısaca ObjectDataSource bileşenini incelemeye çalıştık. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Asp-Net-2-0-ve-ObjectDataSource-Kontrolu-bsenyurt-com-dan)

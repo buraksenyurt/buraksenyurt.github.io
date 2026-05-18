@@ -28,3 +28,5 @@ WHERE ([Extent1].[Name] LIKE 'M%') AND ([Extent1].[ListPrice] >= 3000)
 ```
 
 Bir diğer ipucunda görüşmek dileğiyle.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Tek-Fotoluk-Ipucu-56-LINQ-Methods-String-Queries)

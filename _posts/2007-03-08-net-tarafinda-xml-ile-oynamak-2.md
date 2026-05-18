@@ -670,3 +670,5 @@ Programın elbetteki bazı bugları vardır, olmalıdır. Örneğin, kullanıcı
 - Ağaç üzerinde gerçekleştirilen değişikliklerin fiziki bir Xml dosyasına nasıl kaydedilebileceğini,
 
 örnek bir uygulama üzerinden ele almaya çalıştık. Umarım sizler için yararlı bir deneyim olmuştur. Bir sonraki makalemizde görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/-Net-Tarafında-Xml-ile-Oynamak-2-bsenyurt-com-dan)

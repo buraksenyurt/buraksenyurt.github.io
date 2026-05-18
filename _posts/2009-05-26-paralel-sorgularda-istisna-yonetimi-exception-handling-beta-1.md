@@ -169,3 +169,5 @@ Bu durumda uygulama başarılı bir şekilde çalışacak ve aşağıdaki ekran 
 Görüldüğü gibi istisnaya neden olan ürünler kontrollü bir şekilde elenmiş ve sorgunun paralel olarak yürütülmesine devam edilebilmiştir. Böylece geldik bir yazımızın daha sonuna. Bu yazımızda PLINQ sorgularında, istisna yönetiminde nelere dikkat etmemiz gerektiğine değinmeye çalıştık. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [ExceptionHandling.rar (27,33 kb)](/assets/files/2009/ExceptionHandling.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Paralel-Sorgularda-Istisna-Yonetimi(Exception-Handling))))

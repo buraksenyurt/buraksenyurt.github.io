@@ -228,3 +228,5 @@ Kullandığım IntelliJ IDEA'da apply_discount üstüne gelince aşağıdaki gib
 Görüldüğü üzere Rust kod dokümantasyonu konusunda pek çok dil veya çatıda olduğu gibi bir standart sunmaktadır. Avantajlı noktalardan birisi bu dokümantasyonun markdown formatını kullanmasıdır. Diğer yandan yorumlara serpiştirilen örnek kod parçaları varsa bunların çalışır hatta testten geçmiş olmasını da garanti edebilir. Elbette dokümantasyonun içeriği, en önemli kısımdır. Enstrümanları kafaları fazla karaştırmadan basit ve kaliteli bir şekilde anlatmak mühimdir. Pek tabii dokümantasyon oluşturmada nasıl bir yol izleneceğine dair en güzel kaynak Rust'ın var olan yardım dokümanlarıdır. Böylece geldik Rust Pratikleri serisinden bir bölümün daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 Örneğe ait kodlara [rust-farm github reposundan](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/doc_sample) erişebilirsiniz.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/rust-pratikleri-dokumantasyon)

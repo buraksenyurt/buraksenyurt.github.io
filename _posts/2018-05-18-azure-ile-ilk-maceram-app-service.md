@@ -191,3 +191,5 @@ Ve tabii Fishing Services isimli balıkçı malzemeleri hizmeti veren firmanın 
 Hepsi bu kadar:)
 
 Bu yazımızda kendi bilgisayarımızdaki bir Node.js uygulamasının Azure App Service üzerine nasıl dağıtılabileceğini incelemeye çalıştık. Ağırlıklı olarak (hatta tamamen) terminal komutlarından yararlandık. Önce dağıtım işlemini üstlenen bir kullanıcı oluşturduk. Kaynaklara ait bilgileri içeren bir Resource Group tanımlaması ile devam ettik. App Service için gerekli planımızı belirledik ve bir Web App oluşturulmasını sağladık. Son olarak yazdığımız basit Node.js uygulamasını taşımak için git aracından faydalandık. Pekala aynı işlemleri Azure Portal üzerinden görsel olarak da gerçekleştirebiliriz. Sizler örneği çok daha uç noktalara taşıyabilirsiniz. Eğer kendi bilgisayarınızda geliştirdiğiniz güzel bir web uygulamanız varsa (hatta bloğunuz) bunu Azure üzerinde konuşlandırmanız son derece kolay. Ama bunu yaparken kiralama modellerine (planlara) bakmayı da ihmal etmeyin. Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/azure-ile-ilk-maceram-app-service-ve-nodejs)

@@ -36,3 +36,5 @@ Hay değiştirmez olaydım. Artık servis çalışıyordu bunu görebiliyordum a
 Bir anda ortalık karıştı tabi. Telefonlar ardı ardına geliyor, ter damlaları heryerden boşalıyordu. TFS ile çalışan çok fazla ekip vardı. Ürün lisanslıydı. Bunu biliyorduk. Emin olmak için IT departmanımız ile görüştük. Doğruladılar. Lisans numaralarını kontrol ettik vs…
 
 Sonunda oluşan hatanın sebebinin Enable 32-Bit Applications değerinin true olması olduğunu anladık. Nitekim 64bit işletim sistemi üzerinde kurulmuş olan TFS, her nedense bu değişikliği lisans ihlali gibi algılamıştı (Öyle tahmin ediyorum) O yüzden siz siz olun, mutlaka servislerinizi test etmek için ayrı bir IIS sunucusunun tahsis edilmesini isteyin. Başıma gelen başka bir garip olayda görüşmek dileğiyle hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/TFS-32Bit-Uygulama-Hatasc4b1)

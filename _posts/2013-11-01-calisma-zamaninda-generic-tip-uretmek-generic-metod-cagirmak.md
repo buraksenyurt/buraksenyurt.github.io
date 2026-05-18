@@ -22,3 +22,5 @@ Bu görsel dersimizde çalışma zamanında kullanılabilecek örnek senaryolard
 [Youtube Link](https://youtu.be/uv_1owWpcj8?si=OK5NCTKjVTExgB_s)
 
 Her iki senaryo için de geçerli olan önemli nokta ise generic tip bilgisinin çalışma zamanında string bir değişken olarak gelmesi. Bir başka deyişle T, K gibi isimlendirilen generic bilginin, aslında çalışma zamanında her hangi bir kaynaktan (örneğin XML tabanlı bir map dosyasından) metinsel olarak gelmesi durumu söz konusu. Bu nedenle senaryo, geliştirme zamanında generic tip kullanımından farklılaşmakta. Haydi gelin nasıl yaptığımızı birlikte inceleyelim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Calc4b1sma-Zamanc4b1nda-Generic-Tip-Uretmek-Kullanmak)

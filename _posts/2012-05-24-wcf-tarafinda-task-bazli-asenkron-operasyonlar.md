@@ -260,3 +260,5 @@ Biraz karmaşık gözüken bir desen olduğunun farkındayım ancak kalıp olara
 Böylece geldik bir yazımızın daha sonuna. Bir sonraki yazımızda görüşünceye dek hepinize mutlu günler dilerim.
 
 [AzonServices.zip (67,73 kb)](/assets/files/2012/AzonServices.zip)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Task-Bazli-Asenkron-Operasyonlar)

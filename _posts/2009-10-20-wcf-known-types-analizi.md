@@ -204,3 +204,5 @@ Known Type sorunsalının bir sorunsal olarak değerlendirilmesinin ise iki sebe
 Birincisi, SOA düşünce tarzına aykırı olduğu görüşününün yaygın olmasıdır. Nitekim Shared Contract'ların söz konusu olduğu senaryolarda Interoperability sağlanırken, XML içerisindeki tipin karşı tarafça anlaşılabilir olması gerekmektedir. İkinci olarak serileştirme ve ters serileştirme işlemleri sırasında Known Type'a göre Reflection mekanizmasının devreye girmesi, XML üzerinde tip ile ilişkili bilgi edinme ve yazma gibi operasyonların söz konusu olmasından kaynaklanan performans kayıpları değerlendirilmektedir. Bu iki sebep nedeniyle zorunlu kalınmadıkça Known Type kullanımından kaçınılması önerilmektedir. Peki neden böyle bir konuya değindik? Aslında bir sonraki yazımıza zemin hazırlamaya çalışıyoruz. Nitekim WCF 4.0 tarafında bu konu ile ilişkili bir yenilik gelmesi muhtemeldir. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [KnownTypes.rar (22,64 kb)](/assets/files/2009/KnownTypes.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/WCF-Known-Types-Analizi)

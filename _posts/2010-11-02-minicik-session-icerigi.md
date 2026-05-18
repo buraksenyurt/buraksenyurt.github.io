@@ -217,3 +217,5 @@ Kod parçasından görüldüğü üzere ilk olarak Binary formatta bir DataSet i
 Dikkat edileceği üzere serileştirilmiş içerik ile serileştirilmiş içeriğin sıkıştırılmış versiyonları arasında boyut olarak pek bir fark yoktur. Bu da DataSet tipinin ve özellikle ProductionPhoto içerisindeki binary alanlarının iyi bir şekilde sıkıştırılamıyor olmalarından kaynaklanmaktadır. Son geliştirdiğimiz örnek tamamen ve tamamen GZipStream ile sıkıştırma tekniğinin her zaman işe yaramayacağını ve veri boyutunda daima önemli ölçüde bir değişikliğe neden olmayacağını göstermek üzere ele alınmıştır bunu unutmayalım. Sanıyorum ki iyi kullanıldığı takdirde Session sıkıştırması özellikle çok fazla oturumun açıldığı web uygulamalarında, SQL Server veya State Server mod kullanılması halinde önemli yer kazancı sağlayacak şekilde fayda getirmektedir. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [OldStyleSession.rar (137,04 kb)](/assets/files/2010/OldStyleSession.rar)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/Ufak-Session-Icerikleri)

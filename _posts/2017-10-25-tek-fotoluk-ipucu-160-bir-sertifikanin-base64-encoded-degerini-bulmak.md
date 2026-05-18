@@ -36,3 +36,5 @@ Tabii bir sertifikanın base64 bazlı halini nasıl elde edeceğimizi bilmiyordu
 Koddaki AzonServer isimli sertifika CurrentUser->My deposu altında yer alıyor. Bu depoya ulaşmak için bir X509Store nesnesi örnekliyoruz. Sonrasında Certificates koleksiyonuna gidiyor ve SubjectName değerine göre (ki bu Comman Name'e denk gelecektir) arama yapıyoruz. Tabii ilgili sertifikanın olduğunu varsayıyoruz. Yoksa array için çalışma zamanı hatası alacağımız aşikar. Sertifikayı elde ettikten sonra bunu ihraç ediyor ve ToBase64String fonksiyonundan yararlanarak base64 encode edilmiş halini elde ediyoruz. Elde ettiğimiz içeriği de Clipboard'a (System.Windows.Forms kütüphanesini referans etmeli ve STAThread niteliğini kullanmalıyız) kopyalamayı ihmal etmiyoruz ki sonrasında tek yapacağımz şey Ctrl+V olsun. Bu hızlı ve ani çözümü uygulamak için Powershell'den de yararlanabilirsiniz bunu da belirteyim. Araştırın derim.
 
 Bir başka ipucunda görüşmek üzere hepinize mutlu günler dilerim.
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/tek-fotoluk-ipucu-160-bir-sertifikanin-base64-encoded-degerini-bulmak)
