@@ -93,7 +93,7 @@ Bu işlemlerin tamamlanması ile birlikte servis herhangibir tarayıcı penceres
 
 ![mk212_2.gif](/assets/images/2007/mk212_2.gif)
 
-Bu çıktının elde edilmesi için adres alanına https://localhost/CebirServisi/CebirService.svc yazılması gerekmektedir. Dikkat edilecek olursa http yerine https kullanılmaktadır.
+Bu çıktının elde edilmesi için adres alanına `https://localhost/CebirServisi/CebirService.svc` yazılması gerekmektedir. Dikkat edilecek olursa http yerine https kullanılmaktadır.
 
 Servis tarafında yapılması gereken işlemlerden biriside kullanıcı hesaplarının saklanması için gerekli Asp.Net üyelik veritabanının oluşturulmasıdır. Bu amaçla Web Site Administraton Tool aracından yararlanılabilir. Öncelikli olarak Security kısmından doğrulama işlemlerinin internet üzerinde yapılacağının bildirilmesi gerekmektedir. Bu nedenle From the Internet seçeneği işaretlenir.
 

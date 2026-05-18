@@ -72,7 +72,6 @@ namespace Delegates1
             Calistir c = new Calistir();
             /* Kullanıcının Console penceresinden girdiği değer göre, Calistir sınıfının a isimli integer tipteki değerini 10 ile karşılaştırılıyor. 10 dan büyükse, karar verici metodumuza t1 temsilcisi gönderiliyor. Bu durumda Metod1 isimli karar verici metodumuz, kendi kod bloğu içinde t1 delegate nesnesinin temsil ettiği IkıKat metodunu, Calistir.a değişkeni ile çağırıyor. Aynı işlem tarzı t2 delegate nesnesi içinde geçerli.*/
 
-
             if (Calistir.a >= 10)
             {
                 c.Metod1(t1);
@@ -111,7 +110,6 @@ namespace Delegates2
         /* Temsilcimiz tanımlanıyor. Geri dönüş değeri olmayan ve parametre almayan metodları temsil edebilir. */
 
         /* Metod1, Metod2 ve Metod3 temsilcilerimizin işaret etmesini istediğimiz metodlar olucaktır.*/
-
 
         public static void Metod1()
         {

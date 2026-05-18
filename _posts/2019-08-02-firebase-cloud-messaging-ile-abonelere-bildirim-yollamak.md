@@ -98,7 +98,7 @@ Testler için PWA ve servis tarafını ayrı ayrı çalıştırmalıyız.
 
 terminal komutu ile web uygulamasını
 
-ile de REST servisini başlatabiliriz. Aboneliği başlattıktan sonra http://localhost:8080/news/push adresine talepte bulunursak bir bildirim mesajı ile karşılaşırız (sworker daki push olayı tetiklenir) Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
+ile de REST servisini başlatabiliriz. Aboneliği başlattıktan sonra `http://localhost:8080/news/push` adresine talepte bulunursak bir bildirim mesajı ile karşılaşırız (sworker daki push olayı tetiklenir) Aynen aşağıdaki ekran görüntüsünde olduğu gibi.
 
 ![07_31_credit_4.png](/assets/images/2019/07_31_credit_4.png)
 
@@ -132,7 +132,7 @@ Devam eden adımda functions klasöründeki index dosyasının içeriğini Pushe
 Yapmamız gereken bir şey daha var. Web uygulamasının kullandığı main dosyasının içeriğini, yeni eklediğimiz google functions ile uyumlu hale getirmek. Tahmin edileceği üzere gidilen servis adreslerini, oluşturulan firebase proje adresleri ile değiştirmemiz lazım (dist/public/main.js içeriğini kontrol edin) Web uygulamasındaki bu değişikliği Cloud ortamına taşımak içinse public klasöründeyken yeniden bir deploy işlemi başlatmamız yeterli olacaktır.
 
 Çalışma Zamanı (Production Ortamı)
-Uygulama artık https://basketin-cepte-project.firebaseapp.com/ adresinden yayında (En azından bir süre için yayındaydı ki aşağıdaki ekran görüntüsü de bunun kanıtıdır)
+Uygulama artık `https://basketin-cepte-project.firebaseapp.com/` adresinden yayında (En azından bir süre için yayındaydı ki aşağıdaki ekran görüntüsü de bunun kanıtıdır)
 
 ![07_31_credit_8.png](/assets/images/2019/07_31_credit_8.png)
 Ben Neler Öğrendim?

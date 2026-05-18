@@ -21,8 +21,10 @@ Bir zamanlar sıkı bir Formula 1 izleyicisiydim. O dönemde dünyanın bir numa
 Kullandığı McLaren Honda MP4/4 marka aracın 1987'de 950 beygir güç üreten bir canavar olduğunu düşününce o hızlarda o yağmurlu havalardaki sürüş tekniği ile gelmiş geçmiş en iyi yarışçı olduğunu adeta ispat ediyordu. İlk başarılarını Lotus ile eden Senna'nın en büyük rakiplerinden birisi Williams takımından Alain Prost'tu (ki bir dönem McLaren'de takım arkadaşı da oldular) Lise yıllarıma denk gelen bu iki kahramanın özellikle kullandıkları canavarların dev posterleri oda duvarlarımı süslerdi. Yarışçı olmak gibi bir hayalim yoktu ama onların meydan okuyuşları, takımlarının otomobil dünyasındaki öncülükleri ilgimi çekiyordu.
 
 > I'll be honest with you; I was never a Senna fan. I always thought Gilles Villeneuve was the greatest racing driver of them all. But, to make this film, I've watched hours and hours and hours of footage. And the thing is, Villeneuve was spectacular on a number of occasions. Senna...He was spectacular every single time he got in a car.
-> Size karşı dürüst olacağım; Asla bir Senna hayranı olmadım. Her zaman Gilles Villeneuve'un hepsinin en iyi yarış pilotu olduğunu düşündüm. Ancak, bu filmi yapmak için saatlerce, saatlerce ve saatlerce çekimleri izledim. Mesele şu ki, Villeneuve birkaç kez muhteşemdi. Senna...Arabasında geçerdiği her anda muhteşemdi.
-> Jeremy Clarkson, 2010, Top Gear, Series 15, Episode 5
+
+Yani;
+
+> Size karşı dürüst olacağım; Asla bir Senna hayranı olmadım. Her zaman Gilles Villeneuve'un hepsinin en iyi yarış pilotu olduğunu düşündüm. Ancak, bu filmi yapmak için saatlerce, saatlerce ve saatlerce çekimleri izledim. Mesele şu ki, Villeneuve birkaç kez muhteşemdi. Senna...Arabasında geçerdiği her anda muhteşemdi. - Jeremy Clarkson, 2010, Top Gear, Series 15, Episode 5
 
 Senna, ne yazık ki 1 mayıs 1994 günü henüz 34 yaşındayken San Marino grand prixinde İmola pistinde geçirdiği kaza sonucu hayatını kaybetmişti. Sonraki yıllarda Formula 1 yarışlarına olan ilgim epeyce azaldı. Şimdilerde televizyondaki canlı yayınlarını bile izlemiyorum desem yeridir. Ama arada bir baktığımda en çok dikkatimi çeken şey bilgisayar oyunlarındakine benzer ekranlar oluyor. Aracın iç kamerasından gelen sürüş görüntüleri üzerine eklenen anlık hız, ivme, vites vb bilgilerin sunulduğu grafikler gerçekten müthiş. Üstelik bu verilerin neredeyse hiç gecikme yaşanmadan ekrana ulaşması da bende hayranlık uyandıran başka bir konu. Bu grafikler tekrar nasıl mı gündeme geldi? İzin verin anlatayım.
 
@@ -283,7 +285,7 @@ React uygulaması içinse şu komutu kullanabiliriz.
 npm run start
 ```
 
-> React uygulaması başlatıldığında http://localhost:3000 adresi tarayıcıda açılır ve app.js'den render edilen html içeriği buraya basılır.
+> React uygulaması başlatıldığında `http://localhost:3000` adresi tarayıcıda açılır ve app.js'den render edilen html içeriği buraya basılır.
 
 WestWorld üzerinde yakaladığım çalışma zamanına ait iki ekran görüntüsü aşağıda bulabilirsiniz. Aslında göstergeler canlı ortamda hareket ettiklerinden çok daha hoş ve etkileyici bir sonuç ortaya çıkıyor. Veri her 5 saniyede bir yenilenmekte.
 

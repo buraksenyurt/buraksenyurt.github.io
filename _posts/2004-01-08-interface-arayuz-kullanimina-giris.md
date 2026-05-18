@@ -151,7 +151,6 @@ public class Kisiler : IArayuz /* Sınıfın kullanacağı arayüz burada belirt
 
     /* Dikkat ederseniz özelliğin herşeyi, arayüzdeki ile aynı olmalıdır. Veri tipi, ismi vb... Bu tüm diğer arayüz üyelerinin, sınıf içerisinde uygulanmasında da geçerlidir. */
 
-
     public Kisiler(string ad, int yas)
     {
         y = yas;

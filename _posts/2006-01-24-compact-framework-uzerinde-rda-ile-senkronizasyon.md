@@ -26,7 +26,7 @@ RDA mimarisinde istemci tarafına veri çekmek için Pull metodu, sunucu tarafı
 | LookUp tabloların mobil tarafa aktarılmasında kullanılır.(Sadece LookUp tablolar kullanılacağı zaman Pull metodu ile güncelleme işlemi gerekmez.) | Mobil tarafından sunucuya veri gönderilmesinde bir başka deyişle var olan mobil bilgilerin sunucuda güncellenmesinde kullanılır. | Doğrudan sunucu üzerinde sql cümlesi çalıştırabilir. |
 | Pull işleminden önce mobil tarafta yer alan ilgili tablo silinmelidir. Aksi durumda istisna(Exception) alınır. | Pull metodu ile çekilen veriller için Tracking özelliği aktif ise sadece değişiklikleri göndererek kaynak kullanımını azaltır. | Insert, Update, Delete işlemleri dışında geriye sonuç kümesi döndürmeyen sp' leride çalıştırabilir. |
 | Eğer Pull ile alınan tabloda güncelleme yapılacak ve Push ile geri gönderiecek ise Tracking özelliği aktif hale getirilmelidir. | Sunucu tarafında tracking işlemi yapılmayacağından, güncelleme işleminden sonra verilerin son hali için tekrardan Pull metodunu uygulamak gerekebilir | Veri değişiklikleri doğrudan sunucu tarafında yapılır. |
-| Mobil tarafa alınacak her bir tablo için ayrı ayrı Pull metodları çağırılmalıdır. |  |  |
+| Mobil tarafa alınacak her bir tablo için ayrı ayrı Pull metodları çağırılmalıdır. | | |
 
 Şimdi RDA işlemlerini basit örnekler ile incelemeye çalışalım. Öncelikle tüm işlemlerimiz için SqlCERemoteDataAccess sınıfına ait nesne örneğinin oluşturulması gerekmektedir. Bu nesne örneğinin InternetURL özelliği ile, uzak sunucu üzerinde sscesa20.dll dosyasını hizmete sunan http adresi belirtilir. Bir başka deyişle Sql Server CE Server Agent'a hangi adres ile erişileceği belirtilmektedir. Bu mutlaka yapılmalıdır.
 

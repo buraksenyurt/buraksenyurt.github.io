@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Front-End Service Geliştirmek"
 date: 2008-01-30 12:00:00
@@ -289,7 +289,7 @@ namespace RouterService
 }
 ```
 
-Bu işlemin arkasından tek yapılması gereken istemci uygulamalardaki konfigurasyon dosyalarında yer alan adres bilgisini http://localhost:50003/Matematik/Cebir.svc olacak şekilde değiştirmektir. Test aşamasında önce Back-End Service'lerin çalıştırılması, sonrasında Front-End Service'in yürütülmesi gerekmektedir. Bu servislerin tamamı çalıştığı sürece istemciler hizmet alabilirler. Uygulama eğer debug edilerek çalıştırılırsa MesajIsle metodu içerisinde aşağıdaki Flash görselinde yer alan durumun oluştuğu görülür.
+Bu işlemin arkasından tek yapılması gereken istemci uygulamalardaki konfigurasyon dosyalarında yer alan adres bilgisini `http://localhost:50003/Matematik/Cebir.svc` olacak şekilde değiştirmektir. Test aşamasında önce Back-End Service'lerin çalıştırılması, sonrasında Front-End Service'in yürütülmesi gerekmektedir. Bu servislerin tamamı çalıştığı sürece istemciler hizmet alabilirler. Uygulama eğer debug edilerek çalıştırılırsa MesajIsle metodu içerisinde aşağıdaki Flash görselinde yer alan durumun oluştuğu görülür.
 
 Burada dikkat edileceği üzere istemcilerden gelen iki talep sonrasında, if döngüsü farklı arka servis erişimleri gerçekleştirmektedir. Buda zaten kurulan Load-Balancing algoritmasının bir sonucudur. Sonuç olarak Front-End Service'in eklenmesi ile birlikte sistem aşağıdaki şekilde görülen hale gelmiştir.
 

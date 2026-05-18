@@ -179,7 +179,7 @@ Dağıtım işlemi sonrasında somedata ve ping referans adresli endpoint bilgil
 
 Şimdi somedata fonksiyonunun Post metodunu kullanarak bir kaç örnek veri girişi yapalım. Postman gibi bir araçtan yararlanarak bu işlemleri kolayca gerçekleştirebiliriz.
 
-> Hızlıca bir test yapmak için ping fonksiyonunu da çağırabilirsiniz. https://us-central1-project-new-hope.cloudfunctions.net/ping adresine talep göndermeniz yeterlidir.
+> Hızlıca bir test yapmak için ping fonksiyonunu da çağırabilirsiniz. `https://us-central1-project-new-hope.cloudfunctions.net/ping` adresine talep göndermeniz yeterlidir.
 
 ```text
 Adres : https://us-central1-project-new-hope.cloudfunctions.net/somedata/

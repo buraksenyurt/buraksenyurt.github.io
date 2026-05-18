@@ -214,7 +214,6 @@ InvoiceModel.GetInvoices= function ()
   var rowSize = $("#txtRowSize").val(); 
   var rowIndex = $("#txtRowIndex").val();
 
-  
   var url = "/api/Invoices?$top=" + rowSize + '&$skip=' + (rowIndex * rowSize) + '&$orderby=InvoiceId'; 
   
   $.ajax({ 

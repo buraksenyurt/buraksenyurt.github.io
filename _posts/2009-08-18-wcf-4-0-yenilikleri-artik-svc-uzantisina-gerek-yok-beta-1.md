@@ -13,9 +13,9 @@ Bir önceki blog yazımızdan hatırlayacağınız üzere Asp.Net tabanlı olara
 
 ![blg65_RuntimeMetadata.gif](/assets/images/2009/blg65_RuntimeMetadata.gif)
 
-Burada görüldüğü gibi servisin adresi http://localhost:53513/AdventureService.svc şeklindedir. Bir başka deyişle tipik bir dosya uzantısı talebi (svc file request) ifade edilmektedir. Ancak istenirse servise olan talebin,
+Burada görüldüğü gibi servisin adresi `http://localhost:53513/AdventureService.svc` şeklindedir. Bir başka deyişle tipik bir dosya uzantısı talebi (svc file request) ifade edilmektedir. Ancak istenirse servise olan talebin,
 
-http://localhost:53513/Companies/Adventure/ProductInformations
+`http://localhost:53513/Companies/Adventure/ProductInformations`
 
 şeklindeki bir URL tanımlaması ile olmasıda sağlanabilir. Bu yazım, okunaklığı ve herşeyden önemlisi servis amacını çok daha net ifade edebilecek bir model sunmaktadır. Peki bu tanımlamanın WCF tarafındaki geçerliliği özel kod yazmadan veya IIS'e bulaşmadan nasıl sağlanabilir?
 
@@ -49,4 +49,3 @@ Hatta WSDL içeriğide aynı adresleme formatı üzerinden elde edilebilmektedir
 Sırada Discovery, RESTFul ve Routing gibi yeniliklerin incelenmesi var. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [SimpleAspNetHosting2.rar (13,94 kb)](/assets/files/2009/SimpleAspNetHosting2.rar)
-

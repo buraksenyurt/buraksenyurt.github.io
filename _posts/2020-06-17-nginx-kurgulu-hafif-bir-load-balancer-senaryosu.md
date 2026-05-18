@@ -160,7 +160,7 @@ Konfigurasyon tanımlamalarına göre NGinx sunumuz 80 portuna gelen talepleri [
 sudo docker container attach judge-dredd
 ```
 
-Ben yukarıdaki terminal komutu ile çalışan container'a log açıp http://localhost:8080/ adresine talep gönderdim. Bu sayede nginx.conf içerisinde kullanılan dış IP adresinin ne olduğunu görmeyi başardım. Servislere docker container'ı içinden gidilip gidilmediğinden emin olmak içinse, container içerisindeki terminale girip curl ile talep göndermeyi ihmal etmedim.
+Ben yukarıdaki terminal komutu ile çalışan container'a log açıp `http://localhost:8080/` adresine talep gönderdim. Bu sayede nginx.conf içerisinde kullanılan dış IP adresinin ne olduğunu görmeyi başardım. Servislere docker container'ı içinden gidilip gidilmediğinden emin olmak içinse, container içerisindeki terminale girip curl ile talep göndermeyi ihmal etmedim.
 
 ```bash
 sudo docker exec -it judge-dredd /bin/bash

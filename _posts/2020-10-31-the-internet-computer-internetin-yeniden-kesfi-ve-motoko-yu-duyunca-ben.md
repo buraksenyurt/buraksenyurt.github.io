@@ -184,7 +184,7 @@ dfx canister call algebra gauss_sum '(1,100)'
 
 ![skynet_33_Screenshot_07.png](/assets/images/2020/skynet_33_Screenshot_07.png)
 
-CanisterId'yi kullanarak aynı uygulamayı otomatik olarak üretilen web sayfasıyla da test edebiliriz. Benim örneğimde bu adres http://127.0.0.1:8000/candid?canisterId=75hes-oqbaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q şeklindeydi.
+CanisterId'yi kullanarak aynı uygulamayı otomatik olarak üretilen web sayfasıyla da test edebiliriz. Benim örneğimde bu adres `http://127.0.0.1:8000/candid?canisterId=75hes-oqbaa-aaaaa-aaaaa-aaaaa-aaaaa-aaaaa-q` şeklindeydi.
 
 ![skynet_33_Screenshot_08.png](/assets/images/2020/skynet_33_Screenshot_08.png)
 

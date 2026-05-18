@@ -193,7 +193,7 @@ namespace Lesson3
 }
 ```
 
-İlk dikkat edilmesi gereken nokta, WebGet niteliğinde belirtilen format isimli parametre ile istemciden hangi formatta çıktı almak istendiğinin sorulmasıdır. Eğer json kelimesi yazılmışsa WebOperationContext üzerinden güncel çalışma zamanı içeriğine geçilerek cevap formatının JSON olacağı belirtilir ki buda dikkat edilmesi gereken ikinci noktadır. Tahmin edileceği üzere json dışında bir kelime girildiği takdirde varsayılan XML çıktısının üretilmesi söz konusu olacaktır. Servis operasyonumuzun bu son haline göre Internet Explorer üzerinden http://localhost:2360/AllPersons?whichFormat=json şeklinde bir talepte bulunursak, içeriği kaydetmemiz için bir iletişim penceresi ile karşılaşırız. İçeriği kaydettikten sonra Notepad programı ile açacak olursa aşağıdaki içeriğin üretildiğini görebiliriz.
+İlk dikkat edilmesi gereken nokta, WebGet niteliğinde belirtilen format isimli parametre ile istemciden hangi formatta çıktı almak istendiğinin sorulmasıdır. Eğer json kelimesi yazılmışsa WebOperationContext üzerinden güncel çalışma zamanı içeriğine geçilerek cevap formatının JSON olacağı belirtilir ki buda dikkat edilmesi gereken ikinci noktadır. Tahmin edileceği üzere json dışında bir kelime girildiği takdirde varsayılan XML çıktısının üretilmesi söz konusu olacaktır. Servis operasyonumuzun bu son haline göre Internet Explorer üzerinden `http://localhost:2360/AllPersons?whichFormat=json` şeklinde bir talepte bulunursak, içeriği kaydetmemiz için bir iletişim penceresi ile karşılaşırız. İçeriği kaydettikten sonra Notepad programı ile açacak olursa aşağıdaki içeriğin üretildiğini görebiliriz.
 
 ![blg133_RuntimeJsonText.gif](/assets/images/2010/blg133_RuntimeJsonText.gif)
 
@@ -202,4 +202,3 @@ ki buda tam anlamıyla JSON çıktısıdır.
 Çıktının JSON veya XML harici formatlarda olması da söz konusudur aslında. Bu formatların nasıl ele alınacağını ise ilerleyen yazılarımızda değerlendirmeye çalışıyor olacağız. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Lesson3_RC.rar (173,29 kb)](/assets/files/2010/Lesson3_RC.rar) [Örnek Visual Studio 2010 Ultimate Beta 2 Sürümünde geliştirilmiş ancak RC sürümü üzerinde de test edilmiştir]
-

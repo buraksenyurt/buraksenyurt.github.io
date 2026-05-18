@@ -127,7 +127,7 @@ Operasyonalrın uygulanışında herhangibir özel durum söz konusu değildir a
 
 Bağlayıcı tip (Binding Type) olarak webHttpBinding kullanmamızın sebebi elbetteki servisimizin RESTful özelliklerine göre hizmet vermesinin sağlanmasıdır. Diğer yandan endPoint noktasına eklenen webHttp isimli davranışın enableHelp özelliğine true değeri atanmıştır. Buna göre çalışma zamanında help takısı ile servis talep edildiğinde aşağıdaki çıktı ile karşılaşılır.
 
-URL: http://localhost:2166/LocationService.svc/help
+URL: `http://localhost:2166/LocationService.svc/help`
 
 ![blg76_Runtime.gif](/assets/images/2009/blg76_Runtime.gif)
 
@@ -137,13 +137,13 @@ Görüldüğü üzere tüm operasyonlar için nasıl çağırılacaklarına, ne 
 
 Hemen hatırlalatım örneğimizde WebServiceHostFactory kullanmadığımızdan, yardım sayfaları enableHelp niteliğine true değerini atamadığımız sürece çalışmayacaktır. GET metodlarının çağrıları dikkat edileceği üzere doğal olarak bir URL formatındadır. Diğer taraftan örneğin Insert operasyonunu çağırmak istediğimizi göz önüne alalım. Bu durumda geliştirici olarak tek yapmamız gereken Request ve örnek talep formatı için Example isimli bağlantılardan elde edilen sonuçlara bakmak olacaktır. Insert operasyonu için üretilen şema aşağıdaki gibidir.
 
-URL: http://localhost:2166/LocationService.svc/help/request/schema
+URL: `http://localhost:2166/LocationService.svc/help/request/schema`
 
 ![blg76_InsertSchema.gif](/assets/images/2009/blg76_InsertSchema.gif)
 
 Dikkat edileceği üzere şema bilgisinden yararlanılarak operasyona parametre olarak nasıl bir tip gönderilmesi gerektiği, üyelerinin ne olacağı açık bir şekilde görülmektedir. Insert operasyonu için Example linkine tıkladığımızda ise örnek bir POST çağrısının içeriğinin nasıl olması gerektiğinin örneklendiği görülecektir.
 
-URL: http://localhost:2166/LocationService.svc/help/Insert/request/example?format=Xml
+URL: `http://localhost:2166/LocationService.svc/help/Insert/request/example?format=Xml`
 
 ![blg76_InsertExample.gif](/assets/images/2009/blg76_InsertExample.gif)
 

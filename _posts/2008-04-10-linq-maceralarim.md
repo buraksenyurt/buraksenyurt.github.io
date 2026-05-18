@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "LINQ Maceralarım"
 date: 2008-04-10 06:00:00

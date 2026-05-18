@@ -551,7 +551,7 @@ Buraya kadar geldiysek artık çalışma zamanı sonuçlarına bakabiliriz.
 dotnet run
 ```
 
-terminal komutu ile web uygulamasını çalıştırdıktan sonra [https://localhost:5001] adresine gidebiliriz. İlk olarak veri setleri oluşturulur, sonrasında model eğitilir ve sepete ürünler eklenip önerilerin ne olduğuna bakılır. Kahvelerimizi yudumlarken:D
+terminal komutu ile web uygulamasını çalıştırdıktan sonra `https://localhost:5001` adresine gidebiliriz. İlk olarak veri setleri oluşturulur, sonrasında model eğitilir ve sepete ürünler eklenip önerilerin ne olduğuna bakılır. Kahvelerimizi yudumlarken:D
 
 Ana sayfamız aşağıdaki gibi görünecektir.
 

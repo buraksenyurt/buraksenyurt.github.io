@@ -70,12 +70,10 @@ Tabii ki siz... yazan kısımlara Twitter'ın sizin için ürettiği değerleri 
 from twython import Twython
 from auth import consumer_key, consumer_secret, access_token, access_token_secret
 
-
 def send_tweet(message):
     twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
     twitter.update_status(status=my_message)
     print("'%s' seklinde mesaj gonderildi" % message)
-
 
 my_message = "Bu mesaj Raspi'den python kodu ile gonderilmistir"
 send_tweet(my_message)
@@ -97,4 +95,3 @@ Burada % kullanımını bir türlü beceremediğimi fark etmişsinizdir:D O yüz
 Pek tabii modül içerisinde bir çok fonksiyonellik bulunmakta. Örneğin timeline'ı, kendi tweet'lerimizi görebilir, resim gönderebilir ve daha pek çok işlemi gerçekleştirebiliriz. Sonuçta Twitter API'sini kullanabileceğiniz kütüphane elinizin altında. Bunları nasıl yapabileceğinizi görmek için [şu adresteki tutorial](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/)'ı aynen benim gibi adım adım yapmanızı öneririm. Ben biraz farklı olarak metod kullandım.
 
 Böylece geldik bir makalemizin daha sonuna. Umarım eğlenceli bir yazı olmuştur. Raspi maceralarımıza devam edeceğiz. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
-

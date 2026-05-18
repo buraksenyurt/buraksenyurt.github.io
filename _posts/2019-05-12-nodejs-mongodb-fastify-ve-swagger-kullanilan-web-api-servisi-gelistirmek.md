@@ -310,7 +310,7 @@ Dikkat edileceği üzere ekrana gayet hoş log'lar da düşüyor. Testler için 
 
 Örneğimize yeniden odaklanırsak;
 
-Yeni bir minion eklemek için http://localhost:4005/api/minions adresine gövdesinde JSON formatında içeriğe sahip bir talep göndermek yeterli.
+Yeni bir minion eklemek için `http://localhost:4005/api/minions` adresine gövdesinde JSON formatında içeriğe sahip bir talep göndermek yeterli.
 
 ```json
 {
@@ -324,7 +324,7 @@ Eklenen kayıtlara ait benzersiz ID değerleri tahmin edileceği üzere MongoDB 
 
 ![04_07_credit_3.png](/assets/images/2019/04_07_credit_3.png)
 
-Bir kaç minion daha ekledikten sonra bunların güncel listesini elde etmek için http://localhost:4005/api/minions adresine HTTP Get talebini yollamak yeterli. Belli bir minion'u elde etmek içinse MongoDb'nin verdiği ID bilgisini kullanabiliriz. Örneğin, http://localhost:4005/api/minions/5c1581e579140d6969b5951f talebi için şöyle bir sonuç dönebilir.
+Bir kaç minion daha ekledikten sonra bunların güncel listesini elde etmek için `http://localhost:4005/api/minions` adresine HTTP Get talebini yollamak yeterli. Belli bir minion'u elde etmek içinse MongoDb'nin verdiği ID bilgisini kullanabiliriz. Örneğin, `http://localhost:4005/api/minions/5c1581e579140d6969b5951f` talebi için şöyle bir sonuç dönebilir.
 
 ![04_07_credit_4.png](/assets/images/2019/04_07_credit_4.png)
 

@@ -289,7 +289,6 @@ namespace AttachedToParentCases
                     Console.WriteLine("Child Task 7");
                 }, TaskCreationOptions.AttachedToParent);
 
-                
                 #endregion
 
                 Thread.Sleep(30000); //Debug modda Parallel Task' leri izlemek için konulmuştur
@@ -313,4 +312,3 @@ Beklediğimiz gibi detachedTask3 nesne örneği, Parent Task örneğinin yaşam 
 Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AttachedToParentCases.rar (26,72 kb)](/assets/files/2010/AttachedToParentCases.rar) [Örnek Visual Studio 2010 Ultimate sürümü üzerinde geliştirilmiş ve test edilmiştir]
-

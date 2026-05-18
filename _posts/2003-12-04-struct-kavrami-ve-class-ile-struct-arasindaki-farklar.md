@@ -212,7 +212,6 @@ namespace StructSample1
                Zaman Baslangic= new Zaman("Burak",1,15,23);
                Zaman Bitis=new Zaman("Burak",2,20,25); 
               
-
 /* Zaman yapısı içinde tanımladığımız özelliklere erişip işlem yapıyoruz. Burada elbette zamanları birbirinden bu şekilde çıkarmak matematiksel olarak bir cinayet. Ancak amacımız yapıların kullanımını anlamak. Bu satırlarda yapı içindeki özelliklerimizin değerlerine erişiyor ve bunların değerleri ile sembolik işlemler yapıyoruz */             
 
 int saatFark=Bitis.Saat-Baslangic.Saat;

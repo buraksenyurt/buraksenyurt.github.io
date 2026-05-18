@@ -14,7 +14,6 @@ Bugün bir redis, rabbitmq, kafka sunucusu başlattığımızda ya da docker con
 
 ![voyager.jpg](/assets/images/2022/voyager.jpg)
 
-
 Normalde bir kütüphane geliştiriyorsak sadece log paketini kullanmak yeterlidir. Ancak çalıştırılabilir bir uygulamadan log basmak istersek onu implemente eden crate'leri kullanmamız gerekir. Façade görevi üstlenen bu tetikleyiciler farklı ortamlara log basma kabiliyetlerine de sahiptir. İzleyen örnekte minimal olanlardan env_logger kullanılıyor. Ancak daha karmaşık sistemler için log4rs (log4net gibi düşünün), web assembly'lar için console_log, android, windows, unix gibi ortamlar için de android_log, win_dbg_logger, syslog vb kütüphaneler de var.
 
 > Örneğe ait kodlara [rust-farm github reposundan](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/logging) ulaşabilirsiniz.

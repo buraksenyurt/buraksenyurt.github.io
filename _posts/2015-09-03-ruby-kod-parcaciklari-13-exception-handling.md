@@ -103,7 +103,9 @@ Temel olarak hata yönetimi kontrolu altına alınmak istenen kod bloklarının 
 - Ruby dilinde kalıtsal olarak türeyen hata sınıfları söz konusudur. Bu built-in tipler doğrudan kullanılabileceği gibi kendi hata sınıflarımızı da yazabiliriz. sampleThree isimli metod içerisinde sembolik olarak bir kullanıcı doğrulama operasyonu örneklenmeye çalışılmaktadır. Kodun önemli olan kısmı ise else bloğundaki raise ifadesidir. Bu satırda StandardError tipinden türettiğimiz CredentialError hata nesnesi örneklenmektedir. Tahmin edileceği üzere bu hata örneğinin bir rescue bloğu tarafında yakalanması beklenmektedir ki #1 numaralı satırda bu işlem gerçekleşir.
 - CredentialError sınıfı StandardError tipinden türetilmiştir. userName ve attemptTime isimli iki niteliğe sahiptir. Yapıcı metod (Constructor) içerisinde bu nitelikler set edilir. Ayrıca üst sınıftan gelen message metodunun ezildiğine de dikkat edelim.
 - Ruby dilindeki istsina mekanizmasına ait hiyerarşi genel olarak aşağıdaki şekilde görüldüğü gibidir (Sürümler ilerledikçe değişiklikler olabilir bu yüzden en güncel tip ağacına bakmanızda yarar var)
-![9k=](/assets/images/2015/ruby-kod-parcaciklari-13-exception-handling-02.jpg)
+
+![Exception Handling](/assets/images/2015/ruby-kod-parcaciklari-13-exception-handling-02.jpg)
+
 Kaynak: [http://ruby-doc.org/core-2.2.2/Exception.html](http://ruby-doc.org/core-2.2.2/Exception.html)
 
 Görüldüğü üzere çok fazla hata sınıfı yoktur ancak detay seviyede kullanıcı tarafından oluşturulacak yeni sınıflar ile bu hiyerarşi genişletilebilir.
@@ -111,4 +113,3 @@ Görüldüğü üzere çok fazla hata sınıfı yoktur ancak detay seviyede kull
 Bu kod parçacığında temel seviyede hata yönetimi ve kontrol mekanizmalarını incelemeye çalıştık. Elbette atladığım ve henüz değinemediğim ileri seviye konular söz konusu olabilir. Örneğin Ruby tarafında try, catch kullanımı söz konusudur ancak biraz daha farklı anlamda ele alınmaktadır. [Şu adresi](http://www.tutorialspoint.com/ruby/ruby_exceptions.htm) incelemenizi önerebilirim.
 
 Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümkünse.
-

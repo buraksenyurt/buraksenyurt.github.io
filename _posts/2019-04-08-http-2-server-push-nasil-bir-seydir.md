@@ -133,7 +133,7 @@ https modülünü kullanarak 5047 portundan dinleme yapacak bir nesne oluşturul
 node appv1.js
 ```
 
-ile çalıştırılıp, https://localhost:5047/ adresine gidilirse aşağıdaki ekran görüntüsünde yer alan hareketlilikleri görmemiz muhtemel.
+ile çalıştırılıp, `https://localhost:5047/` adresine gidilirse aşağıdaki ekran görüntüsünde yer alan hareketlilikleri görmemiz muhtemel.
 
 ![http2_spush_4.gif](/assets/images/2019/http2_spush_4.gif)
 
@@ -211,7 +211,7 @@ Kodlar bir önceki kod parçasına göre biraz daha karışık ancak temel ilkel
 node appv2.js
 ```
 
-ile sunucu çalıştırılıp https://localhost:5048/index.html adresine gidilirse bu kez bir öncekinden farklı olarak tek bir ağ çizgisinin oluştuğu görülebilir.
+ile sunucu çalıştırılıp `https://localhost:5048/index.html` adresine gidilirse bu kez bir öncekinden farklı olarak tek bir ağ çizgisinin oluştuğu görülebilir.
 
 ![http2_spush_5.gif](/assets/images/2019/http2_spush_5.gif)
 

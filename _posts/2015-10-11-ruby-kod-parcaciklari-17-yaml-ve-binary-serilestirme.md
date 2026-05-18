@@ -95,4 +95,3 @@ Son iki yazıda ele aldığımız serileştirme teknikleri büyük çaplı proje
 Üstelik JSON ve YAML gibi formatlar kürsel standartlardandır. Ön yüzlerde, servisler arası iletişimlerde, RESTFull modeldeki web sayfalarında ve pek çok noSql sisteminde JSON'un yeri vardır. Burada unutulan noktalardan birisi de XML serileştirmedir. Acaba Ruby ile bir nesne içeriğinin XML formatında serileştirilmesi mümkün müdür? Şu anda merak ettiğim bu konuyu ilerleyen zamanlarda araştırıyor olacağım. Böylece geldik bir kod parçacığımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim. Tabii eğer böyle bir şey mümküse.
 
 [https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML) ve [http://www.yaml.org/](http://www.yaml.org/) adreslerinden YAML hakkında daha fazla bilgi edinebilirsiniz.
-

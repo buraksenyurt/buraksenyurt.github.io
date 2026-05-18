@@ -132,7 +132,7 @@ SvcUtil aracını bu şekilde kullandığımızda library içerisinde yer alan s
 
 ![mk202_5.gif](/assets/images/2007/mk202_5.gif)
 
-Çok basit olarak düşünecek olursak, bu dosyaların istemciler için gereken proxy sınıflarını üretmek amacıyla kullanılabileceğini düşünebiliriz. Sonuç itibariyle IIS üzerinden yapılan Host işlemlerindede bir WSDL dökümanı gerekmektedir ki burada bu işi www.bsenyurt.com.CebirciServisi.wsdl isimli dosya üstlenmektedir. Bu işlemin ardından yine svcutil aracını aşağıdaki gibi kullanarak istemciler için gerekli proxy sınıfı ve konfigurasyon dosyasını üretebiliriz. (Buradaki dosya isimlerinin tesadüf olmadığını söyleyelim. Hatırlarsanız ServiceContract niteliğimizin Namespace özelliğine http://www.bsenyurt.com/CebirciServisi değerini vermiştik.)
+Çok basit olarak düşünecek olursak, bu dosyaların istemciler için gereken proxy sınıflarını üretmek amacıyla kullanılabileceğini düşünebiliriz. Sonuç itibariyle IIS üzerinden yapılan Host işlemlerindede bir WSDL dökümanı gerekmektedir ki burada bu işi `www.bsenyurt.com.CebirciServisi.wsdl` isimli dosya üstlenmektedir. Bu işlemin ardından yine svcutil aracını aşağıdaki gibi kullanarak istemciler için gerekli proxy sınıfı ve konfigurasyon dosyasını üretebiliriz. (Buradaki dosya isimlerinin tesadüf olmadığını söyleyelim. Hatırlarsanız ServiceContract niteliğimizin Namespace özelliğine `http://www.bsenyurt.com/CebirciServisi` değerini vermiştik.)
 
 ```bash
 svcutil www.bsenyurt.com.CebirciServisi.wsdl *.xsd /out:AritmetikClient.cs

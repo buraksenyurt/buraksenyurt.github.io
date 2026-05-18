@@ -164,7 +164,7 @@ Bu ilk sürümü ve sonradan yazacağımız yeni versiyonu çalıştırmak için
 npm run serve
 ```
 
-koutunu yazmamız yeterli (Tahmin edileceği gibi package.json içerisine eklediğimiz bir run komutu var) Bunun sonucu olarak http://localhost:4444 adresine gidebilir ve otomatik olarak açılan Playground arabirimi üzerinden denemelerimizi yapabiliriz. Array kullanan bu ilk sürümün çalışma zamanına ait örnek sorguları ile ekran görüntülerini aşağıdaki bulabilirsiniz.
+koutunu yazmamız yeterli (Tahmin edileceği gibi package.json içerisine eklediğimiz bir run komutu var) Bunun sonucu olarak `http://localhost:4444` adresine gidebilir ve otomatik olarak açılan Playground arabirimi üzerinden denemelerimizi yapabiliriz. Array kullanan bu ilk sürümün çalışma zamanına ait örnek sorguları ile ekran görüntülerini aşağıdaki bulabilirsiniz.
 
 ```bash
 # Yeni bir görev eklemek

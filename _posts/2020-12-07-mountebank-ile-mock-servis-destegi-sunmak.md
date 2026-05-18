@@ -251,7 +251,7 @@ module.exports = { register };
 
 ## Çalışma Zamanı
 
-Uygulamanın çalışma zamanı için aşağıdaki adımları takip etmemiz yeterli. Mountebank server'ını ayağa kaldırmak için asgard klasörü altında aşağıdaki komutu vermek yeterli. Bunun işletilmesi içinse package.json'a start komutunu ekledik. Normal olarak src klasörü altındaki index.js dosyasını çalıştırıyor. Çalıştırılan komut sonrası sunucunun ayakta olup olmadığını anlamak için pekala http://localhost:5500 adresine gidebiliriz (Bir JSON içeriği görmemiz lazım) Hatta gelen json'da belirtilen adreslere giderek yüklenen imposter'ları, servis hareketlerine ait log içeriklerini ve konfigurasyonu da görebiliriz.
+Uygulamanın çalışma zamanı için aşağıdaki adımları takip etmemiz yeterli. Mountebank server'ını ayağa kaldırmak için asgard klasörü altında aşağıdaki komutu vermek yeterli. Bunun işletilmesi içinse package.json'a start komutunu ekledik. Normal olarak src klasörü altındaki index.js dosyasını çalıştırıyor. Çalıştırılan komut sonrası sunucunun ayakta olup olmadığını anlamak için pekala `http://localhost:5500` adresine gidebiliriz (Bir JSON içeriği görmemiz lazım) Hatta gelen json'da belirtilen adreslere giderek yüklenen imposter'ları, servis hareketlerine ait log içeriklerini ve konfigurasyonu da görebiliriz.
 
 ```bash
 npm start
@@ -261,11 +261,11 @@ Mountebank server'ı npm start ile ayağa kaldırdığımızda 5500 portundan ge
 
 ![skynet_34_Screenshot_01.png](/assets/images/2020/skynet_34_Screenshot_01.png)
 
-Mock Servis örneklerini ekledikçe, imposter sözleşmelerinde belirtilen route tanımlarına gidilerek kayıt edilen servislerin çalışıp çalışmadığı kontrol edilmelidir. Örneğin ping-service'i Mountebank'a ekledikten sonra http://localhost:5501/ping adresine talete bulunup, stub->response kısmında belirtiğimiz pong cevabını almamız gerekir.
+Mock Servis örneklerini ekledikçe, imposter sözleşmelerinde belirtilen route tanımlarına gidilerek kayıt edilen servislerin çalışıp çalışmadığı kontrol edilmelidir. Örneğin ping-service'i Mountebank'a ekledikten sonra `http://localhost:5501/ping` adresine talete bulunup, stub->response kısmında belirtiğimiz pong cevabını almamız gerekir.
 
 ![skynet_34_Screenshot_02.png](/assets/images/2020/skynet_34_Screenshot_02.png)
 
-Ayrıca birden fazla servisi Mountebank'a ekledikten sonra (ister kod yoluyla ister Postman gibi araçlarla Post ederek olsun) http://localhost:5500/imposters gibi adresten bunları izleyebilir ve gelen talep sayılarına bakabiliriz. Ben ikinci servisi de ekledikten sonra aşağıdaki ekran görüntüsünde olduğu gibi bu durumu gözlemleyebildim.
+Ayrıca birden fazla servisi Mountebank'a ekledikten sonra (ister kod yoluyla ister Postman gibi araçlarla Post ederek olsun) `http://localhost:5500/imposters` gibi adresten bunları izleyebilir ve gelen talep sayılarına bakabiliriz. Ben ikinci servisi de ekledikten sonra aşağıdaki ekran görüntüsünde olduğu gibi bu durumu gözlemleyebildim.
 
 ![skynet_34_Screenshot_03.png](/assets/images/2020/skynet_34_Screenshot_03.png)
 

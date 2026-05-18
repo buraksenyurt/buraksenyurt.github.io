@@ -94,7 +94,6 @@ private void btnKaydet_Click(object sender, System.EventArgs e)
     cmdResimKaydet.Parameters.Add("@res", SqlDbType.Image, resim.Length).Value = resim;
     /* Seçtigimiz resim dosyasinin byte'larini, tablodaki ilgili alana tasiyacak parametremizi belirtiyoruz. Deger olarak, resim isimli byte dizimizi aktariyoruz. Parametre tipinin, image olduguna dikkat edelim. */
 
-
     /* Günveli blogumuzda, Sql baglantimizi açiyoruz. Ardindan, sql komutumuzu ExecuteNonQuery metodu ile çalistiriyoruz. Son olarakta herhangibir hata olsada, olmasada, finally blogunda sql baglantimizi kapatiyoruz.*/
 
     try

@@ -163,7 +163,7 @@ Uygulamayı çalıştırmak için aşağıdaki terminal komutunu vermek yeterli.
 ng server
 ```
 
-Buna göre http://localhost:4200 adresine talep gönderirsek uygulamamıza ulaşabiliriz (URL bilgisi javascript dosyalarından birisinde de parametrik olarak bulunuyor. Geliştirme ortamı için değiştirmek isteyebilirsiniz diye söylüyorum;)) Uygulamanın çalışma zamanına ait örnek bir görüntüde şöyle.
+Buna göre `http://localhost:4200` adresine talep gönderirsek uygulamamıza ulaşabiliriz (URL bilgisi javascript dosyalarından birisinde de parametrik olarak bulunuyor. Geliştirme ortamı için değiştirmek isteyebilirsiniz diye söylüyorum;)) Uygulamanın çalışma zamanına ait örnek bir görüntüde şöyle.
 
 ![04_09_credit_1.png](/assets/images/2019/04_09_credit_1.png)
 

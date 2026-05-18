@@ -408,7 +408,7 @@ JSON
 
 ![skynet_12_Screenshot_2.png](/assets/images/2020/skynet_12_Screenshot_2.png)
 
-Tüm kahramanların listesinin çekilmesi içinde şu komut işe yarar. (http://localhost:5555/game/api/heros daha iyi durabilir)
+Tüm kahramanların listesinin çekilmesi içinde şu komut işe yarar. (`http://localhost:5555/game/api/heros` daha iyi durabilir)
 
 ```bash
 HTTP Get

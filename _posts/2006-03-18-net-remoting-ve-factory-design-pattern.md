@@ -109,7 +109,7 @@ public class Factory : FactoryBase
 
 Kısaca sınıflarımızın çalışma şekline bakalım. Factory sınıfımız FactoryBase abstract sınıfından türemiştir. Bu nedenle CreateProduct isimli metodu override etmek zorundadır. CreateProduct metodumuz dikkat ederseniz, ProductBase sınıfından türettiğimiz Product tipinden bir nesne örneğini geriye döndürmektedir. Burada elbeteki devreye Product sınıfı içerisinde yazdığımız yapıcı metod (constructor) girer.
 
-Bu metod içerisinde kısaca veritabanı bağlantı işlemlerimizi yapıp, Contact tablosundan ContactID, FirstName, MiddleName ve LastName alanlarının değerlerini okuyup stringBuilder yardımıyla sınıf içerisinde yer alan _ContactInfo isimli string'e aktarmaktayız. Son olarak Factory tipimizin override ettiği GetContactInfo isimli metodumuzda _ContactInfo değişkenimizin içeriğini geriye döndürmekte. Sıra geldi, server tarafında remoting için yapmamız gereken işlemlere. Bunun için server tarafımızdaki console uygulamamızın main metodunun kodlarını aşağıdaki gibi değiştirmemiz gerekiyor.
+Bu metod içerisinde kısaca veritabanı bağlantı işlemlerimizi yapıp, Contact tablosundan ContactID, FirstName, MiddleName ve LastName alanlarının değerlerini okuyup stringBuilder yardımıyla sınıf içerisinde yer alan _ContactInfo isimli string'e aktarmaktayız. Son olarak Factory tipimizin override ettiği GetContactInfo isimli metodumuzda `_ContactInfo` değişkenimizin içeriğini geriye döndürmekte. Sıra geldi, server tarafında remoting için yapmamız gereken işlemlere. Bunun için server tarafımızdaki console uygulamamızın main metodunun kodlarını aşağıdaki gibi değiştirmemiz gerekiyor.
 
 ```csharp
 static void Main(string[] args)

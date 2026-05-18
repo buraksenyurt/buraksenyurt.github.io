@@ -239,8 +239,8 @@ terminal komutu ile çalıştırdıktan ve tarayıcı üzerinden `http://localho
 Dikkat edileceği üzere Github login sayfasına yönlendirildik. Eğer Network hareketliliklerini izlersek aşağıdaki geçişlerin olduğunu fark edebiliriz.
 
 - `http://localhost:5005/api/quotes` HTTP Get talebi HTTP 302 koduna çevrilerek Location header bilgisindeki github adresine yönlendirilir.
-- Yönlendirildiğimiz `https://github.com/login/oauth/authorize? client_id={client id bilgisi}&scope=&response_type=code&redirect_uri= http://localhost:5005/signin-github&state= {uzuuunnn bir state bilgisi var}` adresinde Authorize kontrolünden geçeriz ki önceden login olmamışsak yeni bir adrese yönleniriz.
-- HTTP Get ile `https://github.com/login?client_id= {client id bilgisi}&return_to=/login/oauth/authorize?client_id= {client id bilgisi}&redirect_uri= http%3A%2F%2Flocalhost%3A5005%2Fsignin-github&response_type=code&scope=&state= {uzuuuuun state bilgisi}` geldiğimiz bu adreste ise Login olmamız yeterli olacaktır.
+- Yönlendirildiğimiz `https://github.com/login/oauth/authorize?client_id={client id bilgisi}&scope=&response_type=code&redirect_uri= http://localhost:5005/signin-github&state={uzuuunnn bir state bilgisi var}` adresinde Authorize kontrolünden geçeriz ki önceden login olmamışsak yeni bir adrese yönleniriz.
+- HTTP Get ile `https://github.com/login?client_id={client id bilgisi}&return_to=/login/oauth/authorize?client_id= {client id bilgisi}&redirect_uri= http%3A%2F%2Flocalhost%3A5005%2Fsignin-github&response_type=code&scope=&state= {uzuuuuun state bilgisi}` geldiğimiz bu adreste ise Login olmamız yeterli olacaktır.
 - Sonrasında Github kullanıcısının söz konusu uygulama için yetki vermesini bekleyen bir onayı penceresi ile karşılaşabiliriz.
 
 ![githuboauth_4.gif](/assets/images/2018/githuboauth_4.gif)

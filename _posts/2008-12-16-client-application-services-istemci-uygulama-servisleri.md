@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Client Application Services (İstemci Uygulama Servisleri)"
 date: 2008-12-16 12:00:00

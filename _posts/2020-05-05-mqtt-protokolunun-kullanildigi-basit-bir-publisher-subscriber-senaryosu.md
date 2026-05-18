@@ -136,7 +136,7 @@ app.listen(4445, function () {
 
 ## Çalışma Zamanı
 
-Artık sonuçları görmek için kolları sıvayabiliriz. Her iki node uygulamasını npm run start terminal komutu ile kendi klasörlerinde çalıştırdıktan sonra http://localhost:4444/input adresine
+Artık sonuçları görmek için kolları sıvayabiliriz. Her iki node uygulamasını npm run start terminal komutu ile kendi klasörlerinde çalıştırdıktan sonra `http://localhost:4444/input` adresine
 
 ```json
 {

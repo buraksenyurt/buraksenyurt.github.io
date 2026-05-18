@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Kod Tarafından Yönetmek"
 date: 2008-03-07 12:00:00
@@ -317,7 +317,7 @@ namespace Istemci
 }
 ```
 
-Bu arayüz tipinin görevi çalışma zamanı için gerekli proxy nesnesi üretildiğinde, ilgili nesne referansını taşıyabilmektir. Ayrıca, DaireAlan metoduna ait operasyonel bilgilerin, OperationContract niteliği içerisinde Action ve ReplyAction özellikleri ile nasıl tanımlandığına dikkat edilmelidir. Servis tarafındaki sözleşme içerisinde herhangibir namespace tanımlanmamış olduğundan, varsayılan olarak http://tempuri.org ön ifadesi tüm operasyon bilgilerinin başında yer almaktadır. İstemci tarafındaki kodlarda dikkat edilmesi gereken en önemli nokta CustomBinding tipinin servis tarafındakine uygun olacak şekilde tasarlanmasıdır. Bu amaçlar istemci tarafındaki kodların aşağıdaki gibi revize edilmesi yeterlidir.
+Bu arayüz tipinin görevi çalışma zamanı için gerekli proxy nesnesi üretildiğinde, ilgili nesne referansını taşıyabilmektir. Ayrıca, DaireAlan metoduna ait operasyonel bilgilerin, OperationContract niteliği içerisinde Action ve ReplyAction özellikleri ile nasıl tanımlandığına dikkat edilmelidir. Servis tarafındaki sözleşme içerisinde herhangibir namespace tanımlanmamış olduğundan, varsayılan olarak `http://tempuri.org` ön ifadesi tüm operasyon bilgilerinin başında yer almaktadır. İstemci tarafındaki kodlarda dikkat edilmesi gereken en önemli nokta CustomBinding tipinin servis tarafındakine uygun olacak şekilde tasarlanmasıdır. Bu amaçlar istemci tarafındaki kodların aşağıdaki gibi revize edilmesi yeterlidir.
 
 ```csharp
 using System;

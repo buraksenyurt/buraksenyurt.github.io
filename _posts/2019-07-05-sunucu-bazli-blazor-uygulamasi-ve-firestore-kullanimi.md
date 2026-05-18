@@ -705,7 +705,7 @@ NavMenu.cshtml dosyasına da yeni razor sayfaları için gerekli linkleri ekleme
 
 ## Çalışma Zamanı
 
-Artık yazdığımız ürünü test etmeye hazırız. Uygulamayı Visual Studio Code ile geliştirdik ve önümüzde bir Solution var. Visual Studio Code'da NBAWorld klasörünü ayrıca açıp F5 tuşuna bastığımızda bize çözümü hangi derleyici ile debug etmek istediğimiz sorulacaktır..Net Core seçeneğini işaretlersek ilgili Debug ayarları JSON dosyasına eklenir ve Build işlemi başlar. Ardından uygulama ayağa kalkıp (ki oraya gelene kadar aldığım hataları düzelttim) http://localhost:5888/ adresinden yayına başlar. Sizin de aşağıdakine benzer bir görüntü elde etmeniz gerekiyor.
+Artık yazdığımız ürünü test etmeye hazırız. Uygulamayı Visual Studio Code ile geliştirdik ve önümüzde bir Solution var. Visual Studio Code'da NBAWorld klasörünü ayrıca açıp F5 tuşuna bastığımızda bize çözümü hangi derleyici ile debug etmek istediğimiz sorulacaktır..Net Core seçeneğini işaretlersek ilgili Debug ayarları JSON dosyasına eklenir ve Build işlemi başlar. Ardından uygulama ayağa kalkıp (ki oraya gelene kadar aldığım hataları düzelttim) `http://localhost:5888/` adresinden yayına başlar. Sizin de aşağıdakine benzer bir görüntü elde etmeniz gerekiyor.
 
 ![09_35_credit_11.png](/assets/images/2019/09_35_credit_11.png)
 

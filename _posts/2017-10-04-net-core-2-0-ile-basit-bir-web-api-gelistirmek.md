@@ -191,7 +191,6 @@ namespace Fabrika.Controllers
             return _context.Products.ToList();
         }
 
-
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {

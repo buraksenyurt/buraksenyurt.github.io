@@ -43,7 +43,6 @@ namespace SequentialPLINQ
                     product.Color
                 };
 
-
             foreach (var r in result1)
             {
                 Console.WriteLine(r.Id + " \t" + r.ProductId + " " + r.Name + " " + r.Color);

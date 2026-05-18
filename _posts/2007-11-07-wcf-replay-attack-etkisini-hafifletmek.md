@@ -146,7 +146,7 @@ security elementi içerisinde ise AuthenticationMode özelliğinin değeri aşa�
 
 ![mk230_8.gif](/assets/images/2007/mk230_8.gif)
 
-SecureConversation, Organization for the Advancement of Structured Information Standards (OASIS - [http://www.oasis-open.org/home/index.php](http://www.oasis-open.org/home/index.php)) tarafından kabul edilmiş olan WS-SecureConversation şartnamelerine uygun olacak şekilde güvenli bir oturumun sağlanması garanti etmektedir.
+SecureConversation, Organization for the Advancement of Structured Information Standards ([OASIS](http://www.oasis-open.org/home/index.php)) tarafından kabul edilmiş olan WS-SecureConversation şartnamelerine uygun olacak şekilde güvenli bir oturumun sağlanması garanti etmektedir.
 
 Özet olarak WS-SecureConversation, iki katılımcı arasındaki (örnek senaryoya göre istemci ve servis) mesajlaşmada ehliyet bilgilerinin tamamının gönderilmesini gerektirmeyecek bir ortam sağlamaktadır. Bunun sağlanabilmesi için oturumun en başında, istemci ve servis arasında ehliyet (Credential) bilgileri değiş tokuş edilir ve doğrulanır. Geri kalan mesajlaşmalarda başlangıçtaki ehliyet bilgilerinden türeyen güvenlik fişleri (security tokens) kullanılır. Bir başka deyişle oturum başında zaten taraflar ehliyet bilgileri ile birbirlerini doğruladıklarından, kalan mesajlaşmalarda aynı bilgiler tekrardan kontrol edilmez. Buda çok doğal olarak mesajlaşmanın daha hızlı gerçekleştirilmesini sağlamaktadır.
 

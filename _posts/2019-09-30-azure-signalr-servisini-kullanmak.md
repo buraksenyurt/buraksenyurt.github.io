@@ -342,7 +342,7 @@ npm run dev
 
 Alt ekran görüntüsünde dikkat edileceği üzere Negotiation başarıyla sağlandıktan sonra bir id ve token bilgisinin üretildiği görülmekte. Buradaki çıktı, Azure Function uygulamasındaki negotiate sonrası döndürdüğümüz connection bilgisine ait. Dikkat çekici noktalardan birisi de Web Socket adresi. Görebildiniz mi?
 
-İkinci ekran görüntüsünde http://localhost:4503/api/Scorer adresine HTTP Post talebi ile örnek bir olay bilgisi gönderilmekte. Bu talep sonrası uygulamalardaki log hareketliliklerine dikkat etmek lazım. Oluşan içerik bağlı olan istemciye yansımış olmalıdır. Bu yılın flaş takımı Anadolu Efes'ten 4 ve 5 numara pozisyonlarında oynayabilen ve üçlük yüzdesi de fena olmayan Moaerman epey ribaund toplamış sanki.
+İkinci ekran görüntüsünde `http://localhost:4503/api/Scorer` adresine HTTP Post talebi ile örnek bir olay bilgisi gönderilmekte. Bu talep sonrası uygulamalardaki log hareketliliklerine dikkat etmek lazım. Oluşan içerik bağlı olan istemciye yansımış olmalıdır. Bu yılın flaş takımı Anadolu Efes'ten 4 ve 5 numara pozisyonlarında oynayabilen ve üçlük yüzdesi de fena olmayan Moaerman epey ribaund toplamış sanki.
 
 ![09_34_credit_9.png](/assets/images/2019/09_34_credit_9.png)
 

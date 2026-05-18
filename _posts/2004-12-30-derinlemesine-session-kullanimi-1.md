@@ -137,7 +137,7 @@ Eğer bu sayfadan diğer sayfalara geçiş yapar isek, oluşturulan ASP.NET_Sess
 
 ![mk111_6.gif](/assets/images/2004/mk111_6.gif)
 
-Ancak burada dikkat etmemiz gereken önemli bir nokta vardır. Linkler arasında ASP.NET_SessionId değerinin url bilgisi ile aktarılabilmesini istiyorsak relative linkleri kullanmak zorundayız. Yani Sayfa2 başlıklı LinkLabel nesnesinin NavigateUrl özelliğinin değerine, sayfa2.aspx (default.aspx ile aynı lokasyonda olduğu için) değerini vermemiz gerekir. Eğer buraya http://localhost/SessionSample1/Sayfa2.aspx gibi bir tam yol linki verirsek; bu linke tıkladığımızda default.aspx'teki oturum yok sayılacak ve yeni bir oturum açılmaya çalışılacaktır.
+Ancak burada dikkat etmemiz gereken önemli bir nokta vardır. Linkler arasında ASP.NET_SessionId değerinin url bilgisi ile aktarılabilmesini istiyorsak relative linkleri kullanmak zorundayız. Yani Sayfa2 başlıklı LinkLabel nesnesinin NavigateUrl özelliğinin değerine, sayfa2.aspx (default.aspx ile aynı lokasyonda olduğu için) değerini vermemiz gerekir. Eğer buraya `http://localhost/SessionSample1/Sayfa2.aspx` gibi bir tam yol linki verirsek; bu linke tıkladığımızda default.aspx'teki oturum yok sayılacak ve yeni bir oturum açılmaya çalışılacaktır.
 
 ![mk111_7.gif](/assets/images/2004/mk111_7.gif)
 

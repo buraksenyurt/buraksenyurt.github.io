@@ -24,7 +24,7 @@ Bugünkü makalemde sizlere bir Web Sayfası üzerinde, bir tablonun belli bir s
 
 Şekil 3. Stored Procedure nesnemiz ve Sql ifadesi.
 
-Sıra geldi uygulamamızda yer alan WebForm’umuzu oluşturmaya. Uygulamamızı C# dili ile oluşturmayı tercih ettiğimden New Project kısmında Visual C# Project bölümünü seçtim. Dikkat edecek olursanız, uygulamamız bir Web Application'dır. Oluşturulduğu yer http://localhost/kitap adlı adrestir.
+Sıra geldi uygulamamızda yer alan WebForm’umuzu oluşturmaya. Uygulamamızı C# dili ile oluşturmayı tercih ettiğimden New Project kısmında Visual C# Project bölümünü seçtim. Dikkat edecek olursanız, uygulamamız bir Web Application'dır. Oluşturulduğu yer `http://localhost/kitap` adlı adrestir.
 
 ![mk3_4.gif](/assets/images/2003/mk3_4.gif)
 

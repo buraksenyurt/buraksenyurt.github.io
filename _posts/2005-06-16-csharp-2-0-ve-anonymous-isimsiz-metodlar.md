@@ -188,18 +188,15 @@ public class Form1 : System.Windows.Forms.Form
 {
     private System.Windows.Forms.Button btnAksiyon;
 
-
     // Diğer kodlar
 
     private void InitializeComponent()
     {
 
-
         // Diğer Kodlar
 
         this.btnAksiyon.Click += new System.EventHandler(this.btnAksiyon_Click);
     }
-
 
     // Diğer Kodlar
 

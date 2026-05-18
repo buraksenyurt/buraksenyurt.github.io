@@ -70,7 +70,7 @@ Terminalden çalıştırdığım komutlar başarılı olunca aşağıdaki sonuç
 
 ![08_41_credit_3.png](/assets/images/2019/08_41_credit_3.png)
 
-Uygulamanın web adresi todosherowebapp.azurewebsites.net olarak belirlenirken, github repository adresi de https://dply-usr-buraks@todosherowebapp.scm.azurewebsites.net/todosherowebapp.git şeklinde oluştu. Görüldüğü üzere varsayılan bir hoş geldin sayfamız bile var. Hatta doğrudan dokümantasyonlarına ulaşıp ilk geliştirmelerimizi yapabiliriz de (Şu an aktif değil. Malum kullanılmayacak bir servis olacağından sildim)
+Uygulamanın web adresi todosherowebapp.azurewebsites.net olarak belirlenirken, github repository adresi de `https://dply-usr-buraks@todosherowebapp.scm.azurewebsites.net/todosherowebapp.git` şeklinde oluştu. Görüldüğü üzere varsayılan bir hoş geldin sayfamız bile var. Hatta doğrudan dokümantasyonlarına ulaşıp ilk geliştirmelerimizi yapabiliriz de (Şu an aktif değil. Malum kullanılmayacak bir servis olacağından sildim)
 
 ![08_41_credit_4.png](/assets/images/2019/08_41_credit_4.png)
 
@@ -112,10 +112,11 @@ Requirements.txt, Azure platformunun Python ortamlı deploy işlemi için kullan
 Flask==1.0.2
 ```
 
-> Bu arada ahch-to üzerindeki denemeler için flask paketini geliştirme ortamına da yüklememiz gerekiyor.
-> ```bash
-> pip3 install flask
-> ```
+Bu arada ahch-to üzerindeki denemeler için flask paketini geliştirme ortamına da yüklememiz gerekiyor.
+
+```bash
+pip3 install flask
+```
 
 ## Çalışma Zamanı (Local ortamda)
 

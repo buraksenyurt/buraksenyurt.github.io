@@ -86,7 +86,6 @@ namespace HelloWorld
         }
     }
 
-
     class Product
     {
         public long Id

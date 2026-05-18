@@ -109,7 +109,7 @@ Kısaca SOAP protokolü, mutlaka iletişimsel mesajların SOAP Zarf kurallarına
 
 SOAP Zarfları bir SOAP mesajının başlık ve gövde olmak üzere iki ana kısımdan oluşması gerektiğini belirtir. En önemli kısım gövdedir. Burada, yapılan metod çağırımlarına ilişkin bilgiler ile çağrı sonucu istemcilere gönderilecek cevaplara ait xml tabanlı bilgiler yer alır.
 
-SOAP mesajlarını anlamanın en iyi yolu, onları gerçek bir uygulamada takip etmektir. Bu amaçla, geliştirmiş olduğumuz Web servisini ve istemci uygulamamızı kullanacağız. İstemci ve web servisi arasında hareket eden SOAP mesajlarını takip edebilmek amacıyla Microsoft firmasının sunduğu SOAP Tookit aracını kullanabiliriz. Bu aracı bugün itibariyle [http://download.microsoft.com/download/2/e/0/2e068a11-9ef7-45f5-820f-89573d7c4939/soapsdk.exe](http://download.microsoft.com/download/2/e/0/2e068a11-9ef7-45f5-820f-89573d7c4939/soapsdk.exe) adresinden temin edebilirsiniz. SOAP mesajlarını takip edebilmek amacıyla istemci uygulamamızda ufak bir değişiklik yapmamız gerekiyor. Bunun için istemci uygulamda, web servisine ait proxy nesnesinin sınıf dosyası içerisinde (reference.cs) yer alan,
+SOAP mesajlarını anlamanın en iyi yolu, onları gerçek bir uygulamada takip etmektir. Bu amaçla, geliştirmiş olduğumuz Web servisini ve istemci uygulamamızı kullanacağız. İstemci ve web servisi arasında hareket eden SOAP mesajlarını takip edebilmek amacıyla Microsoft firmasının sunduğu SOAP Tookit aracını kullanabiliriz. Bu aracı bugün itibariyle [SOAP SDK](http://download.microsoft.com/download/2/e/0/2e068a11-9ef7-45f5-820f-89573d7c4939/soapsdk.exe) adresinden temin edebilirsiniz. SOAP mesajlarını takip edebilmek amacıyla istemci uygulamamızda ufak bir değişiklik yapmamız gerekiyor. Bunun için istemci uygulamda, web servisine ait proxy nesnesinin sınıf dosyası içerisinde (reference.cs) yer alan,
 
 ```csharp
 this.Url = "http://localhost/GeoWebServis/GeoMat.asmx";
@@ -171,7 +171,7 @@ Soapaction tagı, kullanılan web servisinde belirtmiş olduğumuz xml isim alan
   </soap:Envelope>
 ```
 
-Görüldüğü gibi, web servisinden istemciye dönen Soap mesajında en dikkat çekici nokta Response ve Result anahtar kelimeleridir. İstemci tarafından çözlülecek olan bu Soap mesajı, istemci tarafından metodun çağırıldığı satıra dönecek geri dönüş değerlerini içerir. Yine buradaki gövdede yer alan metod tanımında kullanılan isim alanı ile (xmlns="http://ilk/servis/), istemciye ait proxy nesnesini oluşturan sınıf içerisindeki WebService niteliğinde kullanılan isim alanının aynı olduğuna dikkat edelim.
+Görüldüğü gibi, web servisinden istemciye dönen Soap mesajında en dikkat çekici nokta Response ve Result anahtar kelimeleridir. İstemci tarafından çözlülecek olan bu Soap mesajı, istemci tarafından metodun çağırıldığı satıra dönecek geri dönüş değerlerini içerir. Yine buradaki gövdede yer alan metod tanımında kullanılan isim alanı ile (`xmlns="http://ilk/servis/"`), istemciye ait proxy nesnesini oluşturan sınıf içerisindeki WebService niteliğinde kullanılan isim alanının aynı olduğuna dikkat edelim.
 
 ```csharp
 [System.Web.Services.WebServiceBindingAttribute(Name="Geometrik HesaplamalarSoap", Namespace="http://ilk/servis/")]

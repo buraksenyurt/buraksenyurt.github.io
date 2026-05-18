@@ -159,7 +159,7 @@ Bundan sonraki kısım ise son derece tanıdıktır. Tek yapılması gereken pro
 
 Nevarki istemci tarafında sonuç elde edilinceye kadar belirli bir süre beklendiği hemen fark edilebilir. Bu son derece doğaldır. Nitekim istemcinin kriterine uygun olan servisin arama süresi söz konusudur. Ancak şunu belirtelim, istenirse söz konusu arama kısmı asenkron olarak değerlendirilebilir. Şu aşamada bizim için önemli olan nokta, istemcinin yayın yapılan servis adresini bulabilmiş olmasıdır. Hatta bu noktada testimize şu şekilde devam etmemizde yarar vardır. Tüm uygulamaları kapattıktan sonra servisin adresini aşağıdaki gibi değiştirdiğimizi düşünelim.
 
-http://localhost:6002/CalculusService
+`http://localhost:6002/CalculusService`
 
 Servis uygulamasını ve sonrasında istemci uygulamayı tekrardan çalıştırırsak bu kez aşağıdaki ekran görüntüsünü elde ederiz.
 
@@ -243,4 +243,3 @@ Görüldüğü üzere FindAsync çağrısından sonra hemen alt satıra geçiler
 Bu konularıda ilerleyen yazılarımızda ele almaya çalışıyor olacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [AdHocDiscovery.rar (51,72 kb)](/assets/files/2009/AdHocDiscovery.rar)
-

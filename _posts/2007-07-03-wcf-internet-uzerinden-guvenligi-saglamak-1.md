@@ -72,7 +72,7 @@ Dikkat edilmesi gereken noktalardan birisi WSFederationHttpBinding ve WSDualHttp
 
 İletişim seviyesinde güvenlik söz konusu olduğundan WCF servisinin IIS üzerinde barındırılması ve HTTPS protokolünü baz alarak hizmet verebilmesinin sağlanması gerekmektedir. Ancak öncesinde güvenli iletişim kanalı kullanımı için (bir başka deyişle https üzerinden hizmet vermek için) hayali bir sertifika oluşturulmalıdır. Hayali sertifikaları oluşturmak için Makecert.exe aracı kullanılabilir. Bu araç tamamen test amaçlı X509 sertifikalarının üretilmesini sağlamaktadır.
 
-> MakeCert.exe aracı ile ilgili detaylı bilgi için [http://msdn2.microsoft.com/en-us/library/bfsktky3 (VS.80).aspx](http://msdn2.microsoft.com/en-us/library/bfsktky3(VS.80).aspx) adresinden bilgi alınabilir.
+> MakeCert.exe aracı ile ilgili detaylı bilgi için [bu sayfadan](http://msdn2.microsoft.com/en-us/library/bfsktky3(VS.80).aspx) detaylı bilgi alınabilir.
 
 Test sertifikası oluşturmak için Visual Studio 2005 command prompt üzerinden aşağıdaki komutun yazılması yeterlidir.
 
