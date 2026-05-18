@@ -34,12 +34,12 @@ Peki bu çatıyı sahada nasıl kullanabiliriz?
 
 ```text
 client (Folder)
-index.js
-product.proto
+  index.js
+  product.proto
 server (Folder)
-index.js
-Product.js
-product.proto
+  index.js
+  Product.js
+  product.proto
 package.json
 nodemodules (Folder)
 ```

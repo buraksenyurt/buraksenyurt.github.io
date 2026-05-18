@@ -124,13 +124,13 @@ services.AddDbContext<StoreDataContext>(options=>options.UseInMemoryDatabase("St
 
 SQLite kullanımına geçildiğindeyse buradaki servis entegrasyonu şöyle olmalıdır.
 
-> ```csharp
-> // appsettings'den SQLite için gerekli connection string bilgisini aldık
-> var conStr=Configuration.GetConnectionString("StoreDataContext");
-> // ardından SQLite için gerekli DB Context'i servislere ekledik
-> // Artık modellerimiz SQLite veritabanı ile çalışacak
-> services.AddDbContext<StoreDataContext>(options=>options.UseSqlite(conStr));
-> ```
+```csharp
+// appsettings'den SQLite için gerekli connection string bilgisini aldık
+var conStr=Configuration.GetConnectionString("StoreDataContext");
+// ardından SQLite için gerekli DB Context'i servislere ekledik
+// Artık modellerimiz SQLite veritabanı ile çalışacak
+services.AddDbContext<StoreDataContext>(options=>options.UseSqlite(conStr));
+```
 
 Kitap ekleme fonksiyonelliği için Pages klasörüne ekleyeceğimiz AddBook.cshtml ve AddBook.cshtml.cs tipleri kullanılmaktadır. Bunlar Razor Page ve Model nesnelerimiz.
 
