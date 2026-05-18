@@ -47,7 +47,7 @@ install komutu ile kurulum yapıldıktan sonra start ile nginx servisini başlat
 
 ## Yönlendirme Ayarları
 
-Nginx kurulduktan sonra Reverse Proxy Server olarak çalışması için bir ayar yapmam gerekiyor. Bu sayede Nginx sunucusuna gelen talepler Web API'nin ayağa kalktığı Kestrel sunucusunun ilgili adresine yönlendirilecekler. Pek tabii tam tersi istikamette söz konusu. Aslında istemciler hiçbir şeyin farkında olmayacaklar. Web API'ye tarayıcıdan yapılan HTTP çağrıları aslında Nginx sunucusu tarafından karşılanıp arka taraftaki asıl Kestrel çalışma zamanına akıtılacak. Bunun üzerine /etc/nginx/sites-available/default dosyasını gedit ile açıp içeriğinde aşağıdaki düzenlemeyi yaptım.
+Nginx kurulduktan sonra Reverse Proxy Server olarak çalışması için bir ayar yapmam gerekiyor. Bu sayede Nginx sunucusuna gelen talepler Web API'nin ayağa kalktığı Kestrel sunucusunun ilgili adresine yönlendirilecekler. Pek tabii tam tersi istikamette söz konusu. Aslında istemciler hiçbir şeyin farkında olmayacaklar. Web API'ye tarayıcıdan yapılan HTTP çağrıları aslında Nginx sunucusu tarafından karşılanıp arka taraftaki asıl Kestrel çalışma zamanına akıtılacak. Bunun üzerine `/etc/nginx/sites-available/default` dosyasını gedit ile açıp içeriğinde aşağıdaki düzenlemeyi yaptım.
 
 ```text
 server 
