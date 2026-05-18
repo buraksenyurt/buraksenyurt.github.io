@@ -346,22 +346,22 @@ Artık Bosphorus uygulamasını çalıştırıp localhost:5000/19 şeklinde bir 
 
 ![skynet_37_Screenshot_02.png](/assets/images/2020/skynet_37_Screenshot_02.png)
 
-İlk örnekteki UpstreamPathTemplate tanımlarına göre http://localhost:5000/eagames/player/23 adresine yapılan çağrı esasında http://localhost:6501/player/23 adresine yönlendirilir.
+İlk örnekteki UpstreamPathTemplate tanımlarına göre `http://localhost:5000/eagames/player/23` adresine yapılan çağrı esasında `http://localhost:6501/player/23` adresine yönlendirilir.
 
 ![skynet_37_Screenshot_01.png](/assets/images/2020/skynet_37_Screenshot_01.png)
 
-Benzer şekilde http://localhost:5000/eagames/product/23 şeklinde yapılacak çağrıda http://localhost:7501/api/product/suggestions/23 adresine yönlendirilir.
+Benzer şekilde `http://localhost:5000/eagames/product/23` şeklinde yapılacak çağrıda `http://localhost:7501/api/product/suggestions/23` adresine yönlendirilir.
 
 ![skynet_37_Screenshot_03.png](/assets/images/2020/skynet_37_Screenshot_03.png)
 
-PromotionService içerisinde bir de POST metodumuz var. Ocelot.JSON için yaptığımız tanıma göre http://localhost:5000/eagames/applypromo adresine gelen talebi, http://localhost:8501/applier adresine yönlendiriyor olmalı. İşte örnek POST içeriği ve sonuç...
+PromotionService içerisinde bir de POST metodumuz var. Ocelot.JSON için yaptığımız tanıma göre `http://localhost:5000/eagames/applypromo` adresine gelen talebi, `http://localhost:8501/applier` adresine yönlendiriyor olmalı. İşte örnek POST içeriği ve sonuç...
 
 ```json
 {
-	"No":"PROMO-12345",
-	"Duration":30,
-	"GameId":102935,
-	"PlayerId":1
+    "No":"PROMO-12345",
+    "Duration":30,
+    "GameId":102935,
+    "PlayerId":1
 }
 ```
 
@@ -463,7 +463,7 @@ COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "RewardService.dll"]
 ```
 
-Bu sefer http://localhost:5555/Calculator, http://localhost:5556/Calculator ve http://localhost:5557/Calculator adreslerinden talep alan bir Web API servisimiz var. Load Balancer ayarlarını ocelot.json'a aşağıdaki gibi ekleyelim ve denemelerimize geçelim.
+Bu sefer `http://localhost:5555/Calculator`, `http://localhost:5556/Calculator` ve `http://localhost:5557/Calculator` adreslerinden talep alan bir Web API servisimiz var. Load Balancer ayarlarını ocelot.json'a aşağıdaki gibi ekleyelim ve denemelerimize geçelim.
 
 ```json
 {
@@ -493,7 +493,7 @@ Bu sefer http://localhost:5555/Calculator, http://localhost:5556/Calculator ve h
 }
 ```
 
-Artık http://localhost:5000/eagames/rewards adresine geldiğimizde
+Artık `http://localhost:5000/eagames/rewards` adresine geldiğimizde
 
 ![skynet_37_Screenshot_05.png](/assets/images/2020/skynet_37_Screenshot_05.png)
 

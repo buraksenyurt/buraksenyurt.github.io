@@ -260,7 +260,7 @@ Tekrar tye tarafına dönelim. Çözüm içerisindeki servislerle ilgili çevre 
 tye init
 ```
 
-Tye.yaml içeriği aşağıdaki gibi oluşur. Buna göre iki servis söz konusudur. Tye,.net odaklı bir enstrüman olduğundan solution içindeki proje dosyalarını otomatik olarak algılayıp gerekli servis bildirimlerini yapar.
+Tye.yaml içeriği aşağıdaki gibi oluşur. Buna göre iki servis söz konusudur. Tye, .net odaklı bir enstrüman olduğundan solution içindeki proje dosyalarını otomatik olarak algılayıp gerekli servis bildirimlerini yapar.
 
 ```text
 name: starcups
@@ -277,8 +277,9 @@ Bu aşamada çözüm çalıştırılır ve tarayıcı ile HeadOffice uygulaması
 tye run
 ```
 
-## ![screenshot_3.png](/assets/images/2021/screenshot_3.png)
-StarCups için Redis Desteğinin Eklenmesi
+![screenshot_3.png](/assets/images/2021/screenshot_3.png)
+
+## StarCups için Redis Desteğinin Eklenmesi
 
 Dağıtık mimariler söz konusu olduğunda Redis, RabbitMQ gibi hizmetler eğer single node üstünde çalışılıyorsa genellikle Sidecar Container olarak ele alınabilirler. Tye bu konuda bize bazı kolaylıklar sağlar. Ne demek istediğimi anlatamabilmek için backend servisine Redis desteğini ekleyerek devam edelim. Redis desteği'ni de yaml dosyaları ile yöneteceğiz. Öncelikle backend uygulamasında Redis kullanabilmek için gerekli Nuget paketini ilave ediyoruz.
 
@@ -294,28 +295,28 @@ Sonrasında OrderController sınıfındaki Get metodunu Redis'i kullanacak hale 
 [HttpGet]
 public async Task<string> Get([FromServices] IDistributedCache cache)
 {
-	var keyOrder = await cache.GetStringAsync("keyOrder");
-	if (keyOrder == null)
-	{
-		_logger.LogInformation("Redis Key boştu");
-		var rng = new Random();
-		var orders = Enumerable.Range(1, 10).Select(index => new OrderData
-		{
-			ItemName = Items[rng.Next(Items.Length)],
-			Quantity = rng.Next(1, 10),
-			ShopName = ShopNames[rng.Next(ShopNames.Length)],
-			Time = DateTime.Now
-		}).ToArray();
+    var keyOrder = await cache.GetStringAsync("keyOrder");
+    if (keyOrder == null)
+    {
+        _logger.LogInformation("Redis Key boştu");
+        var rng = new Random();
+        var orders = Enumerable.Range(1, 10).Select(index => new OrderData
+        {
+            ItemName = Items[rng.Next(Items.Length)],
+            Quantity = rng.Next(1, 10),
+            ShopName = ShopNames[rng.Next(ShopNames.Length)],
+            Time = DateTime.Now
+        }).ToArray();
 
-		keyOrder = JsonSerializer.Serialize(orders);
-		_logger.LogInformation($"Veri serileştirildi {keyOrder}");
+        keyOrder = JsonSerializer.Serialize(orders);
+        _logger.LogInformation($"Veri serileştirildi {keyOrder}");
 
-		await cache.SetStringAsync("keyOrder", keyOrder, new DistributedCacheEntryOptions
-		{
-			AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10)
-		});
-	}
-	return keyOrder;
+        await cache.SetStringAsync("keyOrder", keyOrder, new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10)
+        });
+    }
+    return keyOrder;
 }
 ```
 
@@ -324,19 +325,19 @@ ve Redis için Startup.cs içerisindeki ConfigureService metodunda gerekli düze
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-	services.AddControllers();
+    services.AddControllers();
 
-	// Redis için aşağıdaki satır eklendi
-	// Bağlantı bilgisi yaml üstünden gelecek
-	services.AddStackExchangeRedisCache(o =>
-	{
-		o.Configuration = Configuration.GetConnectionString("redis");
-	});
+    // Redis için aşağıdaki satır eklendi
+    // Bağlantı bilgisi yaml üstünden gelecek
+    services.AddStackExchangeRedisCache(o =>
+    {
+        o.Configuration = Configuration.GetConnectionString("redis");
+    });
 
-	services.AddSwaggerGen(c =>
-	{
-		c.SwaggerDoc("v1", new OpenApiInfo { Title = "StockCollector", Version = "v1" });
-	});
+    services.AddSwaggerGen(c =>
+    {
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "StockCollector", Version = "v1" });
+    });
 }
 ```
 
@@ -718,8 +719,9 @@ tye run
 
 ![Nisan_screenshot_2.png](/assets/images/2021/Nisan_screenshot_2.png)
 
-## ![Nisan_screenshot_1.png](/assets/images/2021/Nisan_screenshot_1.png)
-Redis ve RabbitMQ Desteğinin Eklenmesi
+![Nisan_screenshot_1.png](/assets/images/2021/Nisan_screenshot_1.png)
+
+## Redis ve RabbitMQ Desteğinin Eklenmesi
 
 İlk Hello World örneğinde Redis desteğini eklemiştik. Aynı adımları burada da uygulayacağız. Ayrıca rabbitmq hizmetini de dahil edeceğiz. Özellikle dağıtık mimarinin event-based modelinde uygulamalar arası haberleşmede mesaj bazlı kuyruk sistemleri sıklıkla karşımıza çıkıyor. Kafka ve RabbitMQ sanıyorum ki en çok başvurduklarımız. Dolayısıyla RabbitMQ için aranan Sidecar container'lardan birisi olduğunu ifade etsek yeridir. Şimdi gelin bu iki aktörü sisteme dahil ederek Kubernetes hazırlıklarına geçelim.
 
@@ -899,7 +901,7 @@ namespace Einstein
        // Diğer kısımlar
 ```
 
-Kod tarafında RabbitMQ kullanımı için gerekli tipler, GoldenHammer isimli sınıfta yer alıyor. Bunu baştan yazmak biraz zahmetli ama yine de üşenmeyin yazın derim. Yazarken düşünecek ve neden böyle kullanılmış ki diyeceksiniz. Kitabın yönlendirmesi ile ben bu [adrese](https://github.com/PacktPublishing/Adopting-.NET-5--Architecture-Migration-Best-Practices-and-New-Features/tree/master/Chapter04/microservicesapp) gittim ama kendimde teknik borç riskini göze alarak bir [GodObject oluşturdum.](https://github.com/buraksenyurt/tye_sample_v2/tree/main/SchoolOfMath) Eğer sayfadan ayrılmadan kodu kullanmak isterseniz notların sonundaki Yardımcı Kodlar kısmından yararlanabilirsiniz. Bu noktada yine tye run ile ilerlemek önemli. Redis'in çalıştığından ve http://localhost:15672 adresine gittiğimizde RabbitMQ tarafının işler olduğundan emin olmakta fayda var.
+Kod tarafında RabbitMQ kullanımı için gerekli tipler, GoldenHammer isimli sınıfta yer alıyor. Bunu baştan yazmak biraz zahmetli ama yine de üşenmeyin yazın derim. Yazarken düşünecek ve neden böyle kullanılmış ki diyeceksiniz. Kitabın yönlendirmesi ile ben bu [adrese](https://github.com/PacktPublishing/Adopting-.NET-5--Architecture-Migration-Best-Practices-and-New-Features/tree/master/Chapter04/microservicesapp) gittim ama kendimde teknik borç riskini göze alarak bir [GodObject oluşturdum.](https://github.com/buraksenyurt/tye_sample_v2/tree/main/SchoolOfMath) Eğer sayfadan ayrılmadan kodu kullanmak isterseniz notların sonundaki Yardımcı Kodlar kısmından yararlanabilirsiniz. Bu noktada yine tye run ile ilerlemek önemli. Redis'in çalıştığından ve `http://localhost:15672` adresine gittiğimizde RabbitMQ tarafının işler olduğundan emin olmakta fayda var.
 
 ![Nisan_screenshot_4.png](/assets/images/2021/Nisan_screenshot_4.png)
 

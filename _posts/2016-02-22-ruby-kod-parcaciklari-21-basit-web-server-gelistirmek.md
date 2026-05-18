@@ -107,7 +107,7 @@ server = TCPServer.new("localhost", 8082) #taleplerin dinlenecegi makine:port
 begin
   while (session = server.accept) #talep geldigi surece devam
     request = session.gets #Header bilgisini al
-    STDERR.puts request	#ekrana bas
+    STDERR.puts request    #ekrana bas
     request_uri = request.split(" ")[1] #bosluklara gore ayirip talep edilen dosyayi bul
     path = URI.unescape(URI(request_uri).path) #escape karakterleri cikart
     File.join('c:\\docs', path) #Fiziki yolu belirle
@@ -153,4 +153,5 @@ jpg dışı bir uzantının talep edilmesi sonucu
 ![rubywebserver_4.gif](/assets/images/2016/rubywebserver_4.gif)
 
 Örnek biraz daha geliştirilebilir. Söz gelimi sadece jpg uzantılı değil normal bir web sunucusu gibi farklı tipte içerikleri ele alacak hale de getirilebilir (Bu noktada farklı content-type'ların nasıl ele alınması gerektiğine bakılabilir) Ayrıca sadece Get değil Post gibi taleplerin ele alınması da söz konusu olabilir. Sunucu servis bazlı içerikleri de barındırıp buna uygun çalışabilir vb... Tahmin edileceği üzere bu güzel araştırma konularını siz değerli okurlarıma bırakıyorum. Böylece geldik bir yazımızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+
 

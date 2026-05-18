@@ -201,27 +201,27 @@ Uygulamanın çalışma zamanı çıktısı aşağıdaki gibi olacaktır. Adım 
 
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:38) 
 [2017-06-05 00:02:58]  [0.00ms]  INSERT INTO "emails" ("created_at","updated_at","deleted_at","employee_id","mail","is_active") VALUES ('2017-06-05 00:02:58','2017-06-05 00:02:58',NULL,'2','kimbill.the.black.lora@southwind.com','true')
-1	burak,senyurt,2017-06-05 00:02:58.6894696 +0300 EEST
-	1:selim@buraksenyurt.com
-	2:burak.senyurt@southwind.com
-	3:burakselimsenyurt@gmail.com
-2	Lora,Kimbılll,2017-06-05 00:02:58.8994816 +0300 EEST
-	4:lora@kimbilll.moon
-	5:kimbill.the.black.lora@southwind.com
+1    burak,senyurt,2017-06-05 00:02:58.6894696 +0300 EEST
+    1:selim@buraksenyurt.com
+    2:burak.senyurt@southwind.com
+    3:burakselimsenyurt@gmail.com
+2    Lora,Kimbılll,2017-06-05 00:02:58.8994816 +0300 EEST
+    4:lora@kimbilll.moon
+    5:kimbill.the.black.lora@southwind.com
 
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:44) 
 [2017-06-05 00:02:59]  [3.00ms]  SELECT * FROM "employees"  WHERE "employees"."deleted_at" IS NULL AND ((ID='1'))
 
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:45) 
 [2017-06-05 00:02:59]  [2.00ms]  UPDATE "employees" SET "last_name" = 'Selim Senyurt', "updated_at" = '2017-06-05 00:02:59'  WHERE "employees"."deleted_at" IS NULL AND "employees"."id" = '1'
-1	burak,Selim Senyurt,2017-06-05 00:02:58.6894696 +0300 +0300
+1    burak,Selim Senyurt,2017-06-05 00:02:58.6894696 +0300 +0300
 
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:50) 
 [2017-06-05 00:02:59]  [4.00ms]  UPDATE "employees" SET "first_name" = 'Cianluici', "last_name" = 'Buffon', "updated_at" = '2017-06-05 00:02:59'  WHERE "employees"."deleted_at" IS NULL AND ((ID='2'))
 
 (C:/Go Works/Samples/book/Web Programming/Lesson_28/server.go:51) 
 [2017-06-05 00:02:59]  [3.00ms]  SELECT * FROM "employees"  WHERE "employees"."deleted_at" IS NULL AND (("employees"."id" = '2')) ORDER BY "employees"."id" ASC LIMIT 1
-2	Cianluici,Buffon,2017-06-05 00:02:58.8994816 +0300 +0300
+2    Cianluici,Buffon,2017-06-05 00:02:58.8994816 +0300 +0300
 Success: process exited with code 0.
 ```
 

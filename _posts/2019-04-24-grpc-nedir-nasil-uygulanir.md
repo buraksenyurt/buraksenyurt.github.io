@@ -81,29 +81,29 @@ Sunucu tarafında bir ürünü bulunduğu programlama ortamında ifade edebilmek
 
 ```javascript
 let product = class Product {
-	constructor(id, name, listPrice) {
-		this._id = id;
-		this._name = name;
-		this._listPrice = listPrice;
-	}
-	get ProductId() {
-		return this._id;
-	}
-	get Name() {
-		return this._name;
-	}
-	get ListPrice() {
-		return this._listPrice;
-	}
-	set Id(value) {
-		this._Id = value;
-	}
-	set Name(value) {
-		this._name = value;
-	}
-	set ListPrice(value) {
-		this._listPrice = value;
-	}
+    constructor(id, name, listPrice) {
+        this._id = id;
+        this._name = name;
+        this._listPrice = listPrice;
+    }
+    get ProductId() {
+        return this._id;
+    }
+    get Name() {
+        return this._name;
+    }
+    get ListPrice() {
+        return this._listPrice;
+    }
+    set Id(value) {
+        this._Id = value;
+    }
+    set Name(value) {
+        this._name = value;
+    }
+    set ListPrice(value) {
+        this._listPrice = value;
+    }
 }
 
 module.exports = product;
@@ -118,52 +118,52 @@ const server = new grpc.Server();
 const product = require('./Product');
 
 function allProducts() {
-	console.log('[Server]:List all product');
+    console.log('[Server]:List all product');
 
-	var products = [
-		{ id: 1009, name: "lego mind storm", listPrice: 1499 },
-		{ id: 1010, name: "star wars bardak altığı", listPrice: 35 },
-		{ id: 1011, name: "ışıldak 40w", listPrice: 85.50 },
-		{ id: 1012, name: "A4 X 100 adet", listPrice: 5 }
-	];
-	return products;
+    var products = [
+        { id: 1009, name: "lego mind storm", listPrice: 1499 },
+        { id: 1010, name: "star wars bardak altığı", listPrice: 35 },
+        { id: 1011, name: "ışıldak 40w", listPrice: 85.50 },
+        { id: 1012, name: "A4 X 100 adet", listPrice: 5 }
+    ];
+    return products;
 }
 function singleProduct(productId) {
-	console.log('[Server]:Get single product');
-	console.log('[Server]:Incoming product id ' + productId);
+    console.log('[Server]:Get single product');
+    console.log('[Server]:Incoming product id ' + productId);
 
-	var product = {
-		id: 1009,
-		name: "lego mind storm",
-		listPrice: 55
-	};
-	return product;
+    var product = {
+        id: 1009,
+        name: "lego mind storm",
+        listPrice: 55
+    };
+    return product;
 }
 function addProduct(call) {
-	console.log('[Server]:Insert new product');
+    console.log('[Server]:Insert new product');
 
-	let p = new product(
-		call.request.id,
-		call.request.name,
-		call.request.listPrice,
-	);
-	console.log(p);
+    let p = new product(
+        call.request.id,
+        call.request.name,
+        call.request.listPrice,
+    );
+    console.log(p);
 }
 function list(call, callback) {
-	callback(null, allProducts());
+    callback(null, allProducts());
 }
 function single(call, callback) {
-	callback(null, singleProduct(call.request.id));
+    callback(null, singleProduct(call.request.id));
 }
 
 function insert(call, callback) {
-	callback(null, addProduct(call));
+    callback(null, addProduct(call));
 }
 
 server.addService(proto.products.ProductService.service, {
-	List: list,
-	Insert: insert,
-	Get: single
+    List: list,
+    Insert: insert,
+    Get: single
 });
 
 server.bind('0.0.0.0:7500', grpc.ServerCredentials.createInsecure());
@@ -183,30 +183,30 @@ const proto = grpc.load('./product.proto');
 const client = new proto.products.ProductService('localhost:7500', grpc.credentials.createInsecure());
 
 client.List({}, (error, response) => {
-	if (!error) {
-		console.log("Response : ", response)
-	}
-	else {
-		console.log("Error:", error.message);
-	}
+    if (!error) {
+        console.log("Response : ", response)
+    }
+    else {
+        console.log("Error:", error.message);
+    }
 });
 
 client.get({ id: 1001 }, (error, response) => {
-	if (!error) {
-		console.log("Response : ", response)
-	}
-	else {
-		console.log("Error:", error.message);
-	}
+    if (!error) {
+        console.log("Response : ", response)
+    }
+    else {
+        console.log("Error:", error.message);
+    }
 });
 
 client.Insert({ id: 1001, name: "Scrum Post-It Kağıdı", listPrice: 5 }, (error, response) => {
-	if (!error) {
-		console.log("Response : ", response)
-	}
-	else {
-		console.log("Error:", error.message);
-	}
+    if (!error) {
+        console.log("Response : ", response)
+    }
+    else {
+        console.log("Error:", error.message);
+    }
 });
 ```
 

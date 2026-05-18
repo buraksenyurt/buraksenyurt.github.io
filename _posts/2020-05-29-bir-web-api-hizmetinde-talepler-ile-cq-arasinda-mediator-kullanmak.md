@@ -514,16 +514,16 @@ Startup.cs tarafında Entity Framework ve MediatR için gerekli Middelware bildi
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-	// DbContext nesnesini middelware'e ekliyoruz ve appsettings dosyasındaki bağlantı bilgisi doğrultusunda Sqlite kullanacak şekilde ayağa kaldırıyoruz.
-	services.AddDbContext<MarvilDbContext>(opt =>
-	{
-		opt.UseSqlite(Configuration.GetConnectionString("MarvilDbConnection"));
-	});
+    // DbContext nesnesini middelware'e ekliyoruz ve appsettings dosyasındaki bağlantı bilgisi doğrultusunda Sqlite kullanacak şekilde ayağa kaldırıyoruz.
+    services.AddDbContext<MarvilDbContext>(opt =>
+    {
+        opt.UseSqlite(Configuration.GetConnectionString("MarvilDbConnection"));
+    });
 
-	// Mediator nesnesini servis olarak çalışma zamanına ekliyoruz            
-	services.AddMediatR(typeof(List.Handler).Assembly);
+    // Mediator nesnesini servis olarak çalışma zamanına ekliyoruz            
+    services.AddMediatR(typeof(List.Handler).Assembly);
 
-	services.AddControllers();
+    services.AddControllers();
 }
 ```
 

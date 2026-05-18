@@ -439,9 +439,9 @@ Metod: HTTP Post
 Body: json
 Örnek İçerik:
 {
-	"CategoryId":10,
-	"Name": "Kitap",
-	"Description": "Kitap konulu ürünler"
+    "CategoryId":10,
+    "Name": "Kitap",
+    "Description": "Kitap konulu ürünler"
 }
 ```
 

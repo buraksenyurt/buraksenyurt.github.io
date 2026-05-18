@@ -171,28 +171,30 @@ namespace C64Portal.Controllers
 
 GameRepository'dekine benzer bir durum burada da söz konusu. Sadece fazladan PerformanceCounter ve ILogger bağımlılıkları da var. Lakin fazladan dediğimiz PerformanceCounter kullanımı önemli. Web uygulaması çalıştığında GameController tipi her ne zaman çağırılırsa yapıcı metodu sebebiyle DI Container'dan IGameRepository, IShopRepository, IPartRepository ve PerformanceCounter referansları isteyecek. Bu da asıl sınıfların örneklendiği (Constructor'ların tetiklenmesi) ya da örneklenmeyip örneklenmiş olanların verildiği bir operasyon anlamına geliyor. Diğer yandan PerformanceCounter'ın çağırılması halinde onun da istediği IGameRepository, IPartRepository ve IShopRepository referansları var. PerformanceCounter sınıfı bunları da DI Container'dan isteyecek (Hatta onu bilerek AddTransient olarak kayıt edeceğiz ki her örneklendiğinde DI'dan diğer arayüz referanslarını istesin) İşte bu ikinci isteklerde söz konusu servislerin hangi yaşam döngüsü seçeneğine göre kaydedildiği önem kazanıyor. Diğer yandan ufak bir detay ama Index isimli Action içerisinde bir Log yayınladığımızı da fark etmiş olmalısınız. Loglamayı, Controller'a gelindiğinde ve Index fonksiyonu çağırıldığında oluşan bağımlı bileşenlerin güncel Guid değerlerini kaydetmek için kullanıyoruz. Bu arada tüm bileşenlerin Constructor Injection tekniği ile çözümlendiğine dikkat edin ve başka hangi tekniklerden bahsetmiştik hatırlayın.
 
-> Bu arada loglamayı dilerseniz fiziki olarak bir Text dosyasına da yapabilirsiniz. Ben bunun için Serilog.Extensions.Logging.File isimli Nuget paketini projeye ekledim ve Startup sınıfındaki Configure metodunu da aşağıdaki gibi değiştirdim.
-> ```csharp
-> public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
->  ILoggerFactory loggerFactory)
-> {
-> 	var path = Directory.GetCurrentDirectory();
-> 	loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
-> ```
+Bu arada loglamayı dilerseniz fiziki olarak bir Text dosyasına da yapabilirsiniz. Ben bunun için Serilog.Extensions.Logging.File isimli Nuget paketini projeye ekledim ve Startup sınıfındaki Configure metodunu da aşağıdaki gibi değiştirdim.
+
+```csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+   ILoggerFactory loggerFactory)
+{
+    var path = Directory.GetCurrentDirectory();
+    loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
+}
+```
 
 Gelelim bileşenlerin DI Servis kataloğuna kayıt edilmesine ki burası yazımızın dönüm noktası. Bunun için Startup sınıfındaki ConfigureServices metodunu aşağıdaki gibi kullanabiliriz.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-	services.AddControllersWithViews();
+    services.AddControllersWithViews();
 
-	services.AddTransient<IGameRepository, GameRepository>();
-	services.AddScoped<IPartRepository, PartRepository>();
-	services.AddSingleton<IShopRepository, ShopRepository>();
-	services.AddTransient<PerformanceCounter>();
+    services.AddTransient<IGameRepository, GameRepository>();
+    services.AddScoped<IPartRepository, PartRepository>();
+    services.AddSingleton<IShopRepository, ShopRepository>();
+    services.AddTransient<PerformanceCounter>();
 
-	services.AddTransient<DataCollectorService>();
+    services.AddTransient<DataCollectorService>();
 }
 ```
 

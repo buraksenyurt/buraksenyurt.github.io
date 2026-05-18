@@ -31,7 +31,7 @@ Oyun portaline yenilerini eklemek için bir fonksiyon yazacağımızı düşüne
 ```csharp
 public interface IPublisher
 {
-	void Send(string message);
+    void Send(string message);
 }
 ```
 
@@ -39,12 +39,12 @@ IPublisher arayüzü senaryomuz için oldukça ilkel bir sözleşme sunuyor. Ger
 
 ```csharp
 public class RabbitPublisher
-	: IPublisher
+    : IPublisher
 {
-	public void Send(string message)
-	{
-	   //todo something
-	}
+    public void Send(string message)
+    {
+       //todo something
+    }
 }
 ```
 
@@ -53,8 +53,8 @@ Biliyorum, fonksiyon içerisinde bir şey yapmıyoruz ama unutmayın; amacımız
 ```csharp
 public Game Create(Game game, IPublisher publisher)
 {
-	publisher.Send("A new game has been added to inventory");
-	return game;
+    publisher.Send("A new game has been added to inventory");
+    return game;
 }
 ```
 
@@ -64,8 +64,8 @@ Metodun belki de en önemli kısmı ikinci parametresidir ve IPublisher arayüz 
 [HttpPost]
 public IActionResult Create(Game game)
 {
-	_gameRepository.Create(game, new RabbitPublisher());
-	return RedirectToAction("Index");
+    _gameRepository.Create(game, new RabbitPublisher());
+    return RedirectToAction("Index");
 }
 ```
 
@@ -78,9 +78,9 @@ Yukarıdaki senaryoyu düşündüğümüzde aklımıza şöyle bir soru da geleb
 ```csharp
 public interface IGameRepository
 {
-	IEnumerable<Game> GetAllGames();
-	IPublisher Publisher { get; set; }
-	Game Create(Game game);
+    IEnumerable<Game> GetAllGames();
+    IPublisher Publisher { get; set; }
+    Game Create(Game game);
 }
 ```
 
@@ -88,25 +88,25 @@ Dikkat edileceği üzere Create metodunun parametresi olarak kullandığımız I
 
 ```csharp
 public class GameRepository
-	: IGameRepository
+    : IGameRepository
 {
-	public IPublisher Publisher { get; set; }
-	public IEnumerable<Game> GetAllGames()
-	{
-		return new List<Game>
-		{
-			new Game{ Id=1, Title="Commandos II",ListPrice=10.5M },
-			new Game{ Id=2, Title="Prince of Persia",ListPrice=9.45M },
-			new Game{ Id=3, Title="Prince of Persia",ListPrice=9.45M }
-		};
-	}
+    public IPublisher Publisher { get; set; }
+    public IEnumerable<Game> GetAllGames()
+    {
+        return new List<Game>
+        {
+            new Game{ Id=1, Title="Commandos II",ListPrice=10.5M },
+            new Game{ Id=2, Title="Prince of Persia",ListPrice=9.45M },
+            new Game{ Id=3, Title="Prince of Persia",ListPrice=9.45M }
+        };
+    }
 
-	public Game Create(Game game)
-	{
-		if (Publisher != default)
-			Publisher.Send("A new game has been added to inventory");
-		return game;
-	}
+    public Game Create(Game game)
+    {
+        if (Publisher != default)
+            Publisher.Send("A new game has been added to inventory");
+        return game;
+    }
 }
 ```
 
@@ -116,9 +116,9 @@ Lütfen Create metodunun içerisindeki if kullanımına dikkat edelim. Eğer IPu
 [HttpPost]
 public IActionResult Create(Game game)
 {
-	_gameRepository.Publisher = new RabbitPublisher();
-	_gameRepository.Create(game);
-	return RedirectToAction("Index");
+    _gameRepository.Publisher = new RabbitPublisher();
+    _gameRepository.Create(game);
+    return RedirectToAction("Index");
 }
 ```
 
@@ -131,16 +131,16 @@ Aslında Asp.Net tarafına MVC 6 ile birlikte gelen ve genel Dependency Injectio
 ```csharp
 public class DataCollectorService
 {
-	public async Task<int> GetActiveUserCount()
-	{
-		return await Task.FromResult(new Random().Next(10,50));
-	}
+    public async Task<int> GetActiveUserCount()
+    {
+        return await Task.FromResult(new Random().Next(10,50));
+    }
 }
 ```
 
 DataCollectorService içerisindeki GetActiveUserCount metodunun ne iş yaptığının çok önemi yok ama bu metodu bir View bileşeninde aşağıdaki gibi doğrudan kullanmamız mümkün.
 
-```text
+```html
 @inject C64Portal.Agent.DataCollectorService dataCollectorService
 
 <div>
@@ -160,10 +160,10 @@ View nesnesi bir nesne çözümlemek istemektedir ancak bu nesne dahili DI Conta
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-	services.AddControllersWithViews();
+    services.AddControllersWithViews();
 
-	services.AddTransient<IGameRepository, GameRepository>();
-	services.AddTransient<DataCollectorService>();
+    services.AddTransient<IGameRepository, GameRepository>();
+    services.AddTransient<DataCollectorService>();
 }
 ```
 

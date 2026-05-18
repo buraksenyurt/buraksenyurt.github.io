@@ -146,9 +146,9 @@ http://localhost:8080/player
 POST
 JSON Body
 {
-	"nickName": "bamble bee",
-	"level": 55,
-	"isActive": true
+    "nickName": "bamble bee",
+    "level": 55,
+    "isActive": true
 }
 ```
 
@@ -191,9 +191,9 @@ PUT
 JSON Body
 
 {
-	"level": 46,
-	"nickName": "Sala Mura Jack",
-	"isActive": false
+    "level": 46,
+    "nickName": "Sala Mura Jack",
+    "isActive": false
 }
 ```
 

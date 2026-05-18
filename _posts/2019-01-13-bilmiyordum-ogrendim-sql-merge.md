@@ -56,78 +56,104 @@ Book ve Store tablolarını göz önüne aldığımızda Store tablosundan silin
 Normal şartlarda yukarıdaki içerikleri eşleştirmek adına pekala aşağıdaki gibi sorgular yazılabilir (Bildiğim kadarı ile yazdım. Bu konuda alternatifler için aydınlatılmaya ihtiyacım var)
 
 ```sql
-Update Book 
-Set 
-	Title=S.Title,
-	ListPrice=S.ListPrice,
-	StockLevel=S.StockLevel
-from Store S
-	inner join Book B
-	on B.BookID=S.BookID
-where 
-	B.ListPrice<>S.ListPrice or B.Title<>S.Title or B.StockLevel <> S.StockLevel;
+UPDATE Book
+SET
+    Title = S.Title,
+    ListPrice = S.ListPrice,
+    StockLevel = S.StockLevel
+FROM Store S
+INNER JOIN Book B
+    ON B.BookID = S.BookID
+WHERE
+    B.ListPrice <> S.ListPrice
+    OR B.Title <> S.Title
+    OR B.StockLevel <> S.StockLevel;
 
-Delete from Book Where BookID not in 
-	(Select S.BookID from Store S where S.BookID in (Select BookID from Book));
+DELETE FROM Book
+WHERE BookID NOT IN
+(
+    SELECT S.BookID
+    FROM Store S
+    WHERE S.BookID IN (SELECT BookID FROM Book)
+);
 ```
 
 İlk olarak farklılıkları bulup gerçekleştirdiğimiz bir Insert işlemi var. Burada alt sorgu kullandığımızı görebilirsiniz. Güncelleme işleminde ise bir inner join kullanımına gittik. En beter sorgu da silme operasyonu için yazdığım olmalı sanıyorum ki. Bu sorguları işlettiğimizde Book ve Store tabloları eşlenecektir. Lakin bir taşla üç kuş vurabiliriz de. Şimdi konuyu merge ifadesini baz alarak ele alalım. Aşağıdaki uçtan uca sorgu işimizi görür (Ben diğer veritabanlarını kirletmemek adına LearningDb isimli ayrı bir veritabanında çalıştım)
 
 ```sql
-Create database LearningDb;
-Use LearningDb;
+CREATE DATABASE LearningDb;
+USE LearningDb;
 
-Create Table Book
+CREATE TABLE Book
 (
-	BookID int primary key,
-	Title varchar(50),
-	ListPrice money,
-	StockLevel smallint
-)
-Go
-insert into Book
-Values
-(1,'Clean Architecture',34.55,5),
-(2,'Clean Code',20.00,5),
-(3,'Anti-patterns explained',15.99,10),
-(4,'Programming C#',50.40,20)
-Go
+    BookID int PRIMARY KEY,
+    Title varchar(50),
+    ListPrice money,
+    StockLevel smallint
+);
+GO
 
-Create Table Store
+INSERT INTO Book
+VALUES
+    (1, 'Clean Architecture', 34.55, 5),
+    (2, 'Clean Code', 20.00, 5),
+    (3, 'Anti-patterns explained', 15.99, 10),
+    (4, 'Programming C#', 50.40, 20);
+GO
+
+CREATE TABLE Store
 (
-	BookID int primary key,
-	Title varchar(50),
-	ListPrice money,
-	StockLevel smallint
-)
-Go
-insert into Store
-Values
-(1,'Clean Architecture',34.55,5), --Değişiklik yok
-(2,'Clean Code',10.00,5), -- Fiyat değişti
-(3,'Anti-patterns explained',15.99,8), --Stok seviyesi değişti
-(6,'Cloud for dummies',44.44,3) -- Yeni geldi
---(4,'Programming C#',50.40,20) -- Silindi
-Go
+    BookID int PRIMARY KEY,
+    Title varchar(50),
+    ListPrice money,
+    StockLevel smallint
+);
+GO
 
-Select * from Book;
-Select * from Store;
+INSERT INTO Store
+VALUES
+    (1, 'Clean Architecture', 34.55, 5), -- Değişiklik yok
+    (2, 'Clean Code', 10.00, 5), -- Fiyat değişti
+    (3, 'Anti-patterns explained', 15.99, 8), -- Stok seviyesi değişti
+    (6, 'Cloud for dummies', 44.44, 3); -- Yeni geldi
+--  (4, 'Programming C#', 50.40, 20) -- Silindi
+GO
 
-Merge Book AS T
-Using Store As S
-on (T.BookID=S.BookID)
-When Matched and T.Title <> S.Title Or T.ListPrice<>S.ListPrice Or T.StockLevel<>S.StockLevel Then --Herhangibir güncelleme varsa
-Update Set T.Title=S.Title,T.ListPrice=S.ListPrice,T.StockLevel=S.StockLevel
-When Not Matched By Target Then -- Yeni eklenmiş kitaplar varsa
-Insert (BookID,Title,ListPrice,StockLevel)
-Values (S.BookID,S.Title,S.ListPrice,S.StockLevel)
-When Not Matched By Source Then -- Silinmiş kitaplar varsa
-DELETE
-OUTPUT $action [Event], DELETED.BookID as [Target BookID],DELETED.Title as [Target Title],DELETED.ListPrice as [Target ListPrice],DELETED.StockLevel as [Target StockLevel],
-INSERTED.BookID as [Source BookID],INSERTED.Title as [Source Title],INSERTED.ListPrice as [Source ListPrice],INSERTED.StockLevel as [Source StockLevel];
+SELECT * FROM Book;
+SELECT * FROM Store;
 
-Select * from Book;
-Select * from Store;
+MERGE Book AS T
+USING Store AS S
+    ON T.BookID = S.BookID
+WHEN MATCHED
+    AND (
+        T.Title <> S.Title
+        OR T.ListPrice <> S.ListPrice
+        OR T.StockLevel <> S.StockLevel
+    ) THEN -- Herhangibir güncelleme varsa
+    UPDATE
+    SET
+        T.Title = S.Title,
+        T.ListPrice = S.ListPrice,
+        T.StockLevel = S.StockLevel
+WHEN NOT MATCHED BY TARGET THEN -- Yeni eklenmiş kitaplar varsa
+    INSERT (BookID, Title, ListPrice, StockLevel)
+    VALUES (S.BookID, S.Title, S.ListPrice, S.StockLevel)
+WHEN NOT MATCHED BY SOURCE THEN -- Silinmiş kitaplar varsa
+    DELETE
+OUTPUT
+    $action AS [Event],
+    DELETED.BookID AS [Target BookID],
+    DELETED.Title AS [Target Title],
+    DELETED.ListPrice AS [Target ListPrice],
+    DELETED.StockLevel AS [Target StockLevel],
+    INSERTED.BookID AS [Source BookID],
+    INSERTED.Title AS [Source Title],
+    INSERTED.ListPrice AS [Source ListPrice],
+    INSERTED.StockLevel AS [Source StockLevel];
+
+SELECT * FROM Book;
+SELECT * FROM Store;
 ```
 
 Merge kısmına kadar yapılan hazırlıklarda örnek bir veritabanı oluşturup içerisine Book ve Store isimli tablolarımızı açıyoruz (Buralarda if exist kullanımına gitmekte yarar olabilir ya da başlarda drop table kullanılabilir) Sonrasında ise Merge ifademiz başlıyor. Book ve Store tablolarını BookID alanı üzerinden birleştirdikten sonra When kelimesi ile başlayan üç ayrı kısım yer alıyor.

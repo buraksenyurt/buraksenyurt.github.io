@@ -344,9 +344,9 @@ Metot : Post
 Type : JSON
 Body :
 {
-	"id": "11",
-	"title": "Cheese - Le Cru Du Clocher",
-	"price": "€9,01"
+    "id": "11",
+    "title": "Cheese - Le Cru Du Clocher",
+    "price": "€9,01"
 }
 ```
 

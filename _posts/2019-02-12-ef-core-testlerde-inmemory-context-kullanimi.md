@@ -291,7 +291,7 @@ public void Create_Single_Customer_In_Memory()
     {
         context.Database.EnsureCreated();
         var service = new AddingService(context);
-	// Diğer kod satırları aynen devam ediyor
+    // Diğer kod satırları aynen devam ediyor
 ```
 
 SqliteConnection tipinden bir nesne oluşturuyor ve parametre olarak verdiğimiz değerle bellekte çalışacağını belirtmiş oluyoruz. UseSqlite fonksiyonuna yapılan çağrıya bu connection bilgisini verdiğimiz için CustomerContext değişkeni artık Sqlite tipinden bir veritabanını kullanacak (Hemde bellekte çalışan sürümünü) Bir ihtimal ilgili veritabanının oluşmaması ihtimaline karşılık context üzerinden EnsureCreated metodunu çağırmamız da gerekebilir. Testleri bu şekilde çalıştırdığımızda bir öncekiler ile aynı sonuçları elde edeceğimizi görebilirsiniz.

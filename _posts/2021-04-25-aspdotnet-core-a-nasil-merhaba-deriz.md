@@ -254,8 +254,8 @@ GameController sınıfına tekrar dön. Yapıcı metot parametre olarak IGameRep
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-	services.AddControllersWithViews(); //Burası zaten var
-	services.AddTransient<IGameRepository, GameRepository>();
+    services.AddControllersWithViews(); //Burası zaten var
+    services.AddTransient<IGameRepository, GameRepository>();
 }
 ```
 

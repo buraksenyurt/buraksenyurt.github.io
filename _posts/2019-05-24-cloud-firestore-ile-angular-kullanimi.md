@@ -66,7 +66,7 @@ Gelelim kod tarafında yaptığımız değişikliklere. Arayüz tarafını daha 
 
 ```xml
 "styles": [
-	"node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
         "src/styles.css"
         ],
 ```

@@ -157,11 +157,11 @@ Types kısmında, web servisi ile ilişkili SOAP mesajlarında taşınacak param
 
 ```xml
 <s:element name="DaireAlan">
-	<s:complexType>
-		<s:sequence>
-			<s:element minOccurs="1" maxOccurs="1" name="r" type="s:double" />
-		</s:sequence>
-	</s:complexType>
+    <s:complexType>
+        <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="r" type="s:double" />
+        </s:sequence>
+    </s:complexType>
 </s:element>
 ```
 
@@ -169,10 +169,10 @@ elamanında, DaireAlan isimli parametrenin double tipinden ve r isminde olduğu 
 
 ```xml
 <s:element name="DaireAlanResponse"> - <s:complexType>
-		<s:sequence>
-			<s:element minOccurs="1" maxOccurs="1" name="DaireAlanResult" type="s:double" />
-		</s:sequence>
-	</s:complexType>
+        <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DaireAlanResult" type="s:double" />
+        </s:sequence>
+    </s:complexType>
 </s:element>
 ```
 
@@ -180,20 +180,20 @@ Message kısmında, web servisinin kabul edeceği ve geri döndüreceği mesajla
 
 ```xml
 <message name="DaireAlanSoapIn">
-	<part name="parameters" element="s0:DaireAlan" />
-	</message>
-	<message name="DaireAlanSoapOut">
-	<part name="parameters" element="s0:DaireAlanResponse" />
-	</message>
-	<message name="DaireCevreSoapIn">
-	<part name="parameters" element="s0:DaireCevre" />
-	</message>
-	<message name="DaireCevreSoapOut">
-	<part name="parameters" element="s0:DaireCevreResponse" />
-	</message>
-	<message name="DaireCevreDiziSoapIn">
-	<part name="parameters" element="s0:DaireCevreDizi" />
-	</message>
+    <part name="parameters" element="s0:DaireAlan" />
+    </message>
+    <message name="DaireAlanSoapOut">
+    <part name="parameters" element="s0:DaireAlanResponse" />
+    </message>
+    <message name="DaireCevreSoapIn">
+    <part name="parameters" element="s0:DaireCevre" />
+    </message>
+    <message name="DaireCevreSoapOut">
+    <part name="parameters" element="s0:DaireCevreResponse" />
+    </message>
+    <message name="DaireCevreDiziSoapIn">
+    <part name="parameters" element="s0:DaireCevreDizi" />
+    </message>
 <message name="DaireCevreDiziSoapOut">
 ```
 
@@ -201,10 +201,10 @@ Görüldüğü gibi, her SOAP mesajı için In ve Out takılı mesaj elemanları
 
 ```xml
 <message name="DaireAlanSoapIn">
-	<part name="parameters" element="s0:DaireAlan" />
-	</message>
-	<message name="DaireAlanSoapOut">
-	<part name="parameters" element="s0:DaireAlanResponse" />
+    <part name="parameters" element="s0:DaireAlan" />
+    </message>
+    <message name="DaireAlanSoapOut">
+    <part name="parameters" element="s0:DaireAlanResponse" />
 </message>
 ```
 
@@ -214,21 +214,21 @@ PortType kısmında ise, her bir web servisi metodu için birer operasyon tanım
 
 ```xml
 <portType name="Geometrik_x0020_HesaplamalarSoap">
-	<operation name="DaireAlan">
-		<documentation>Daire Alan Hesabi Yapar</documentation>
-		<input message="s0:DaireAlanSoapIn" />
-		<output message="s0:DaireAlanSoapOut" />
-	</operation>
-	<operation name="DaireCevre">
-		<documentation>>Daire Çevre Hesabi Yapar.</documentation>
-		<input message="s0:DaireCevreSoapIn" />
-		<output message="s0:DaireCevreSoapOut" />
-	</operation>
-	<operation name="DaireCevreDizi">
-		<documentation>Daire Cevre Hesabini Dizi Elamanlarina Uygular.</documentation>
-		<input message="s0:DaireCevreDiziSoapIn" />
-		<output message="s0:DaireCevreDiziSoapOut" />
-	</operation>
+    <operation name="DaireAlan">
+        <documentation>Daire Alan Hesabi Yapar</documentation>
+        <input message="s0:DaireAlanSoapIn" />
+        <output message="s0:DaireAlanSoapOut" />
+    </operation>
+    <operation name="DaireCevre">
+        <documentation>>Daire Çevre Hesabi Yapar.</documentation>
+        <input message="s0:DaireCevreSoapIn" />
+        <output message="s0:DaireCevreSoapOut" />
+    </operation>
+    <operation name="DaireCevreDizi">
+        <documentation>Daire Cevre Hesabini Dizi Elamanlarina Uygular.</documentation>
+        <input message="s0:DaireCevreDiziSoapIn" />
+        <output message="s0:DaireCevreDiziSoapOut" />
+    </operation>
 </portType>
 ```
 
@@ -241,12 +241,12 @@ Binding kısmında, WSDL dokümanındaki her bir operasyon için, bu operasyona 
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
 <operation name="DaireAlan">
 <soap:operation soapAction="http://ilk/servis/DaireAlan" style="document" />
-	<input>
-		<soap:body use="literal" />
-	</input> 
-	<output>
-		<soap:body use="literal" />
-	</output>
+    <input>
+        <soap:body use="literal" />
+    </input> 
+    <output>
+        <soap:body use="literal" />
+    </output>
 </operation>
 ```
 
@@ -255,9 +255,9 @@ Binding kısmında, WSDL dokümanındaki her bir operasyon için, bu operasyona 
 ```xml
 <service name="Geometrik_x0020_Hesaplamalar">
 <documentation>Geometrik Hesaplamalar Üzerine Metodlar Içerir. Ucgen, Dortgen gibi sekillere yönelik alan ve çevre hesaplamalari.</documentation>
-	<port name="Geometrik_x0020_HesaplamalarSoap" binding="s0:Geometrik_x0020_HesaplamalarSoap">
-		<soap:address location="http://localhost/geowebservis/geomat.asmx" />
-	</port>
+    <port name="Geometrik_x0020_HesaplamalarSoap" binding="s0:Geometrik_x0020_HesaplamalarSoap">
+        <soap:address location="http://localhost/geowebservis/geomat.asmx" />
+    </port>
 </service>
 ```
 

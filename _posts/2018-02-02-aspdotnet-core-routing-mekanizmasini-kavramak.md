@@ -193,15 +193,15 @@ namespace RouterSamples
                 return context.Response.WriteAsync(
                     $@" 
                     <html>
-					<body>
+                    <body>
                     <h2>Selam Patron! Bugün nasılsın?</h2>
-					{DateTime.Now.ToString()}
+                    {DateTime.Now.ToString()}
                     <ul>
                         <li><a href='/products/books'>Senin için bir kaç kitabım var. Haydi tıkla.</a></li>
-						<li><a href='https://github.com/buraksenyurt'>Bu ve diğer .Net Core örneklerine bakmak istersen Git!</a></li>
+                        <li><a href='https://github.com/buraksenyurt'>Bu ve diğer .Net Core örneklerine bakmak istersen Git!</a></li>
                     </ul>                     
                     </body>
-					</html>
+                    </html>
                     ");
             });
             app.UseRouter(handler);

@@ -75,16 +75,16 @@ func GetPlanets(response http.ResponseWriter, request * http.Request, params htt
 
 func Index(response http.ResponseWriter, request * http.Request, params httprouter.Params) {
     fmt.Fprintf(response, `<html>
-		<body>
-		<head>
-			<title>Star Wars Planets</title>
-		</head>
-		<body>
-			<h1>Star Wars Planets</h1>
-			<a href="/planets">Planets</a><br/>
-			<p>Planet list updates every morning with new planets</p>
-		</body>
-		</html>`)
+        <body>
+        <head>
+            <title>Star Wars Planets</title>
+        </head>
+        <body>
+            <h1>Star Wars Planets</h1>
+            <a href="/planets">Planets</a><br/>
+            <p>Planet list updates every morning with new planets</p>
+        </body>
+        </html>`)
 }
 
 func LoadSomeData()[] Planet {

@@ -96,19 +96,19 @@ app.listen(6701, () => {
 });
 ```
 
-express modülüne ait değişkenimiz 6701 nolu yerel porttan dinleme yapacak şekilde kullanılıyor. /report adresine gelen talepler için devreye giren fonksiyonumuzda aslında index.html içerisindeki plotly için önem arz edem bir JSON içeriği döndürülmekte. Burada gün bazlı olacak şekilde bir takım rastsal sayılar bulunduran üç farklı seri söz konusu. Her biri sembolik olarak bir sunucuyu belirtmekte. Ayrıca grafiklerin tipine ilişkin bir takım bilgiler de yolluyoruz. Burada bir kararsızlık yaşadığımı ifade edebilirim. Acaba servisten, plotly ile alakalı özellik bilgilerini göndermekle servisi ve görsel kütüphaneyi çok mu bağımlı hale getirdik? Peki sadece veriyi göndersek de bunun ayrıştırma ve gösterme kısmını HTML içerisine bıraksak nasıl olur du? Doğruyu söylemek gerekirse grafiğin ihtiyaç duyduğu veriyi aynı web site içerisinde çalıştığım için bu şekilde göndermek daha kolayıma geldi:| Servisi yazdıktan sonra küçük bir test yaptım. Önce
+express modülüne ait değişkenimiz 6701 nolu yerel porttan dinleme yapacak şekilde kullanılıyor. `/report` adresine gelen talepler için devreye giren fonksiyonumuzda aslında index.html içerisindeki plotly için önem arz edem bir JSON içeriği döndürülmekte. Burada gün bazlı olacak şekilde bir takım rastsal sayılar bulunduran üç farklı seri söz konusu. Her biri sembolik olarak bir sunucuyu belirtmekte. Ayrıca grafiklerin tipine ilişkin bir takım bilgiler de yolluyoruz. Burada bir kararsızlık yaşadığımı ifade edebilirim. Acaba servisten, plotly ile alakalı özellik bilgilerini göndermekle servisi ve görsel kütüphaneyi çok mu bağımlı hale getirdik? Peki sadece veriyi göndersek de bunun ayrıştırma ve gösterme kısmını HTML içerisine bıraksak nasıl olur du? Doğruyu söylemek gerekirse grafiğin ihtiyaç duyduğu veriyi aynı web site içerisinde çalıştığım için bu şekilde göndermek daha kolayıma geldi. Servisi yazdıktan sonra küçük bir test yaptım. Önce
 
 ```bash
 npm start
 ```
 
-ile sunucuyu başlattım ve ardından http://localhost:6701/report adresine Postman'den HTTP Get talebi gönderdim. Sonuçlar başarılıydı.
+ile sunucuyu başlattım ve ardından `http://localhost:6701/report` adresine Postman'den HTTP Get talebi gönderdim. Sonuçlar başarılıydı.
 
 ![plotly_03.gif](/assets/images/2019/plotly_03.gif)
 
 Sunucuya göre kök adrese gelen talepler doğrudan index.html sayfasının istemciye gönderilmesi ile sonuçlanmakta. Grafiğin çizildiği asıl yer index.html dosyasındaki script bloğu. Onu da aşağıdaki gibi tasarladım.
 
-```text
+```html
 <head>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

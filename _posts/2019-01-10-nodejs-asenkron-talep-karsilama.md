@@ -33,6 +33,7 @@ Testlerimiz sırasında arkadaki servislerin standart get operasyonlarında dura
 
 Öncelikle West-World (Ubuntu 16.04 - 64bit) üzerinde çalıştığımı ve MongoDB'nin Compass Community Edition'ının yüklü olduğunu ifade edeyim. Bunlara ek olarak tabii ki node.js'de sistemde yüklü durumda. Biz üç servisimizi de aynı makine üzerinde ama farklı portlardan sunacağız. Bu şekilde grafikteki senaryoyu taklit etmeye çalışacağız. Çözümümüze ait temel klasör yapısını aşağıdaki gibi kurgulayarak işe başlayalım.
 
+```text
 models
 ---player.js
 ---team.js
@@ -40,6 +41,7 @@ server
 ---MainServer.js
 ---PlayerServer.js
 ---TeamServer.js
+```
 
 Örneklerde kullanacağımız bir takım npm paketleri var. İşlerimizi kolaylaştırması açısından. MongoDb ORM eşlemesi için mongoose, REST servis tarafı için express, asenkron işlemleri kolaylaştırmak için async ve son olarak JSON parsing için body-parser... Terminalden aşağıdaki komutları kullanarak gerekli kurulum işlemlerini yapabiliriz.
 

@@ -442,7 +442,7 @@ namespace SmartWind.Controllers
 
 Ürün kartının gösterildiği View aşağıdaki gibi programlanabilir.
 
-```text
+```html
 @model HomeCartViewModel
 @{
     ViewData["Title"] = "Alışveriş Sepeti";
@@ -464,33 +464,33 @@ namespace SmartWind.Controllers
 }
 else
 {
-	<table class="table table-bordered">
-		<tr>
-			<th></th>
-			<th>İlişkili Ürün</th>
-			<th>Puanı</th>
-		</tr>
-		@foreach (EnrichedRecommendation rec in Model.Recommendations)
-		{
-			<tr>
-			<td>
-				<a asp-controller="Home" asp-action="Cart" asp-route-id="@rec.RelatedProductID" class="btn btn-primary">Sepete At</a>
-			</td>
-			<td>
-				@rec.ProductName
-			</td>
-			<td>
-				@rec.Score
-			</td>
-			</tr>
-		}
-	</table>
+    <table class="table table-bordered">
+        <tr>
+            <th></th>
+            <th>İlişkili Ürün</th>
+            <th>Puanı</th>
+        </tr>
+        @foreach (EnrichedRecommendation rec in Model.Recommendations)
+        {
+            <tr>
+            <td>
+                <a asp-controller="Home" asp-action="Cart" asp-route-id="@rec.RelatedProductID" class="btn btn-primary">Sepete At</a>
+            </td>
+            <td>
+                @rec.ProductName
+            </td>
+            <td>
+                @rec.Score
+            </td>
+            </tr>
+        }
+    </table>
 }
 ```
 
 Giriş (Index) sayfasında aslında veri setinin oluşturulması, modelin eğitilmesi ve ürün kartına ulaşmak için gerekli bağlantılar yer alır. Tabii bu bir öğreti olduğu için bu işleri kullanıcının yapması istenmektedir. Gerçek hayat senaryosunda modelin harici bir ortamda eğitilip web uygulamasına servis edilmesi daha doğru bir yaklaşım olacaktır.
 
-```text
+```html
 @model HomeIndexViewModel
 @{
   ViewData["Title"] = "Ürün Listesi";
