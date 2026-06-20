@@ -11,34 +11,38 @@ tags:
     - software-architecture
     - clean-code
     - enterprise-applications
+    - sonarqube
+    - docker-compose
+    - postgresql
+    - maven
 categories:
     - Programlama Dilleri
 ---
-Kendimi bildim bileli C# programlama dili ile geliştirme yapıyorum. Hobi amaçlı ilgilendiğim Rust, Zig ve OCaml dillerini saymazsak profesyonel iş hayatım .NET ekosistemi üzerinde geçti. Çok uzun yıllar önce ise Java programlama dilini öğrenmeye çalışmış ve bu vesile ile `[Java ile 24 Kahve Molası` isimli bir seri yazmıştım. 2004 yılında yadığım makaleleri derleyip bir doküman haline de getirmiştim ki [buradan](https://www.buraksenyurt.com/post/Java-ile-24-Kahve-Molasc4b1-Dokumanc4b1) erişebilirsiniz. Tabii aradan yıllar yıllar geçti. Yazılım geliştirme dünyası sürekli olarak değişti ama bazı temel kavramlar ve ilkeler hala aynı. Nesne yönelimli dil prensipleri, SOLID ilkeleri, tasarım kalıpları, yazılım mimarileri halen programlama dilleri ve platformlara referans oluyor. Sözü fazla uzatmadan bu yazıda nelerden bahsedeceğimize gelelim dilerseniz.
+Kendimi bildim bileli **C#** programlama dili ile geliştirme yapıyorum. Hobi amaçlı ilgilendiğim **Rust**, **Zig** ve **OCaml** dillerini saymazsak profesyonel iş hayatım **.NET** ekosistemi üzerinde geçti. Çok uzun yıllar önce ise Java programlama dilini öğrenmeye çalışmış ve bu vesile ile `Java ile 24 Kahve Molası` isimli bir seri yazmıştım. 2004 yılında yazdığım makaleleri derleyip bir doküman haline de getirmiştim ki [buradan](https://www.buraksenyurt.com/post/Java-ile-24-Kahve-Molasc4b1-Dokumanc4b1) erişebilirsiniz. Tabii aradan yıllar yıllar geçti. Yazılım geliştirme dünyası sürekli değişti ama bazı temel kavramlar ve ilkeler hala aynı. Nesne yönelimli dil prensipleri, SOLID ilkeleri, tasarım kalıpları, yazılım mimarileri halen daha programlama dilleri ve platformlara referans oluyor. İş dünyası çözümleri ve kurumsal projeler bu felsefeler üzerine inşa ediliyor. Sözü fazla uzatmadan bu yazıda nelerden bahsedeceğimize gelelim.
 
-Amacım Domain Driven Design *(DDD)* yaklaşımını yine hafifsiklet bir senaryo ile olabildiğince basitçe ele almak *(CQRS, Event Sourcing, Message Bus gibi konuları sonraya bırakıyorum)* ancak bu sefer Java programlama dilini ve Spring Boot framework'ünü kullanacağım. Başlarken Java konusunda duayen arkadaşlarımdan affımı istiyorum zira bir C# geliştiricisi personasıyla olaylara yaklaşacağım. Dolayısıyla Java'nın ve Spring Boot'un bazı niş yeteneklerini atlayabilirim. Bu konuda yorumlarla bana ve okurlarımıza destek olabilirsiniz. Öyleyse başlayalım.
+Amacım Domain Driven Design *(DDD)* yaklaşımını yine hafifsiklet bir senaryo ile olabildiğince basit bir şekilde ele almak *(CQRS, Event Sourcing, Message Bus gibi konuları sonraya bırakıyorum)* ancak bu sefer **Java** programlama dilini ve **Spring Boot Framework** kullanacağım. Başlarken **Java** dilinde duayen olan arkadaşlarımın affına sığınıyorum zira bir C# geliştiricisi personasıyla olaylara yaklaşacağım. Dolayısıyla Java'nın ve Spring Boot'un bazı niş yeteneklerini atlayabilirim. Bu konuda yorumlarla bana ve okurlarımıza destek olabilirsiniz. Öyleyse başlayalım.
 
 ## Senaryo
 
-Bilgisayar oyunu kiralayabildiğimiz bir sistemin backend tarafını geliştireceğiz. En basit haliyle Ubiquitous Language'ı tanımlayarak başlayalım:
+Bilgisayar oyunu kiralayabildiğimiz bir sistem üzerinde duracağız. Artık böyle bir devri yaşamıyoruz tabii ki ama zamanında **Commodore 64** oyunları kiraladığımızı ve hatta bildiğiniz ya da bilmediğiniz doksanlık müzik kasetlerine oyunlar yüklettiğimizi hatırlıyorum. Öğrenme amaçlı kullanabileceğimiz keyifli bir senaryo olabilir. Tabii **Domain Driven Design** denince işin içerisine giren bazı önemli unsurlar var. Bunlardan birisi herkesin söz konusu çözüm için kullandığı ortak dil. Denizcilik alanında bir şeyler yazıyorsak kullanacağımız jargon ile oyun geliştirme sahasındaki jargon tamamen farklı olacaktır. Bu jargon genellikle **Ubiquitous Language** olarak anılır ve program kodu içerisindeki enstrümanların isimlendirilmesinde hayati önem arz eder. Tabii bunu oluşturmak için aslında kullanıcı hikayelerini detaylıca dinlemek ve senaryolaştırmak gerekir. Biz çok basit birkaç cümleyi baz alalım.
 
-- Oyuunlar kataloğumuzda birer isim *(Pacman, Super Mario,...)* gibi. Mağazamızda oyun kutularından n adet olabilir.
-- Abonelerimiz var. Bu demoda aboneleri sadece bir ID olarak tanımlayacağız.
-- Abonelerimiz oyun kiralayabilirler. Kiralanan oyunlar belli bir sürede geri getirilir yani kiralama süreleri vardır.
-- Abone kiraladığı oyunu geri getirdiğinde kiralama sona erer ve oyun tekrar mağazada kiralanabilir hale gelir. Ama gecikme olursa bu gecikme süresi kadar ekstra ücret ödenir. Örneğin gecikilen gün başına 1 TL gibi.
+- Oyunların her biri kataloğumuzda birer isim *(Pacman, Super Mario,...)* olarak varlığını sürdürür. Mağazamızda oyun kutularından n adet olabilir.
+- Sistemde abonelerimiz vardır *(Bu demoda aboneleri sadece bir ID olarak tanımlayacağız)*
+- Abonelerimiz oyun kiralayabilirler ancak bir kiralama süresi vardır. Kiralanan oyunlar belli bir sürede geri getirilir.
+- Abone, kiraladığı oyunu geri getirdiğinde kiralama sona erer ve oyun tekrar mağazada kiralanabilir hale gelir. Ama gecikme olursa bu gecikme süresi kadar ekstra ücret ödenir. Örneğin gecikilen gün başına 2.5 TL ceza ödemek gibi.
 
-İş kuralarımız ile bazı şeyleri güvence altına alalım:
+Bu cümlelerden aslında belli başlı iş kuralları da ortaya çıkar. Örneğin;
 
 - Mağaza stoğunda olmayan bir oyun kiralanamaz.
 - Oyun kiralandığında kullanılabilir oyun sayısı 1 azalır, geri getirildiğinde 1 artar.
 - Bir kiralama iki kez geri getirilemez.
-- Gecikme ücreti için şu formül geçerlidir: `gecikme ücreti = gecikilen gün sayısı * 1 TL`
+- Gecikme ücreti için şu formül geçerlidir: `gecikme ücreti = gecikilen gün sayısı * 2.5 TL`
 
-Buradaki basit iş kuralları Domain model içerisinde yaşayacak ve asla atlanamayacaktır *(No Bypass)*. Bu sayede iş kurallarımızın her zaman geçerli olduğunu garanti altına alacağız.
+Buradaki basit iş kuralları domain model içerisinde yaşar ve asla atlanamaz *(No Bypass)*. Böylece iş kurallarımızın her zaman geçerli olmasını garanti edebiliriz. DDD yaklaşımında domain'i dış etkenlerden izole etmek çok önemlidir. Bana göre domain modelimiz first citizen' dir.
 
 ## DDD Özeti
 
-DDD daha çok iş modelini kodun tam merkezine yerleştirme yaklaşımıdır. Bu sayede iş kuralları ve mantığı, uygulamanın her yerinde tutarlı bir şekilde uygulanabilir. Ayrıca framework, veritabanı gibi altyapı detaylarını dışarıda tutarak, iş modelinin bağımsız ve test edilebilir olmasını sağlar. Bu örnek özelinde ele alacağımız kavramları aşağıdaki tablo ile özetleyebiliriz...
+DDD daha çok iş modelini kodun tam merkezine yerleştirmeye odaklanmış bir yaklaşımdır. Bu sayede iş kuralları ve mantığı, programın her yerinde tutarlı bir şekilde uygulanabilir. Ayrıca framework, veritabanı ve benzeri altyapı detaylarını dışarıda tutarak iş modelinin bağımsız ve test edilebilir olmasını hedefler. Bu örnek özelinde ele alacağımız kavramları aşağıdaki tablo ile özetleyebiliriz...
 
 | **Kavram** | **Ne anlama gelir?** | **Bizim örneğimizde neye karşılık gelir?** |
 | --- | --- | --- |
@@ -48,22 +52,24 @@ DDD daha çok iş modelini kodun tam merkezine yerleştirme yaklaşımıdır. Bu
 | **Aggregate** | Birbirleriyle ilişkili Entity ve Value Object'lerin bir araya gelerek oluşturduğu tutarlı bir bütün. | RentalAggregate, GameAggregate gibi |
 | **Aggregate Root** | Aggregate'in dış dünya ile olan tek giriş noktasıdır. | RentalAggregate'in root'u Rental, GameAggregate'in root'u Game gibi |
 | **Repository** | Aggregate'lerin saklanması ve erişilmesi için kullanılan koleksiyon benzeri aggregate yapıları. | RentalRepository, GameRepository gibi |
-| **Domain Service** | Birden fazla Entity veya Value Object'in etkileşimde bulunduğu karmaşık iş mantığını içeren servisler. | Bu örnekte ele almayacağız |
-| **Application Service** | Bir transaction *(Use Case)* orkestrasyonunu yöneten servis. | RentGameService |
+| **Domain Service** | Birden fazla Entity veya Value Object'in etkileşimde bulunduğu karmaşık iş mantığını içeren servisler. | Bu örnekte ele almayacağız. |
+| **Application Service** | Bir transaction *(Use Case)* orkestrasyonunu yöneten servis. | RentGameService, GameCatalogService gibi |
 
 ## Proje Mimarisi
 
-Projede oldukça yalın katmanlı *(layered)* mimari kullanacağız. Yapıyı hexagonal mimari türünde inşa edeceğiz. Burada altın kural bağımlılıkların yönünün *(Dependency Direction)* doğru uygulanması. Örneğin domain paketi sıfır framework bağımlılığına sahip olmalı ki domain modelindeki iş kurallarını çok kısa sürelerde hiçbir dış framework bağımlılığı olmadan test edebilelim. Bu sayede domain modelimizi daha esnek ve sürdürülebilir hale getireceğiz. Mimari kurguyu kabaca aşağıdaki şekilde olduğu gibi özetleyebiliriz.
+Projede oldukça yalın düşünerek hareket edebiliriz ve katmanlı *(layered)* bir mimari modeli kullanabiliriz. Biraz ucundan da olsa **hexagonal mimari** ilkelerine göre inşa edebiliriz. Altın kural bağımlılıkların yönünün *(Dependency Direction)* doğru uygulanması. Örneğin domain paketi sıfır framework bağımlılığına sahip olmalı ki domain modelindeki iş kurallarını çok kısa sürelerde hiçbir dış framework bağımlılığı olmadan değiştirebilelim veya test edebilelim. Bu sayede domain modelimizi daha esnek ve sürdürülebilir bir hale getirebiliriz. Mimari kurguyu kabaca aşağıdaki şekilde olduğu gibi özetleyebiliriz.
 
 ![DDD Basic](/assets/images/2026/JDDDBasic.png)
 
+> **Küçük bir not:** Ben bu projeyi bir **Linux** platformunda *(Ubuntu 26.04)* geliştiriyorum ancak aynı prensipler diğer platformlar için de geçerlidir.
+
 ## Proje İskeletinin Oluşturulması
 
-Spring Boot proje oluşturma aracı olan [Spring Initializr](https://start.spring.io/) adresini kullanarak projemizi oluşturabiliriz. İster web sitesinden ister **curl** komutu ile oluşturabiliriz.
+Bir .NET geliştiricisi olarak normalde bir **solution** açıp projeleri tek tek içerisinde oluştururuz. İhtiyacımız olan bağımlılıkları ise projelere göre ekleriz. Java dünyasında bu tür işlemler ve özellikle bağımlılıkların en ideal şekilde tesis edilmesi uzun zamandır **Spring Framework** gibi araçlarla etkili bir şekilde yapılmakta. Benzer şekilde hareket edeceğiz. **Spring Boot** proje oluşturma aracı olan [Spring Initializr](https://start.spring.io/) adresini kullanarak uygulama iskeletini ve tüm gereklilikleri hazırlayabiliriz. Ama aynı işlemleri **curl** komutu ile terminalden de yapabiliriz.
 
 ![Spring Boot Initializr](/assets/images/2026/JDDDSpringBootInit.png)
 
-Özellikle kendi sistemimizde hangi Java ve Maven versiyonları olduğuna dikkat etmekte yarar var. Aynı işlemi terminal üzerinden de yapabiliriz.
+Özellikle kendi sistemimizde hangi **Java** ve **Maven** versiyonları olduğuna dikkat etmekte yarar var. Zira versiyon parametleri uyumlu olmalı. Resimde görülen işlemleri **curl** komutu ile terminalden yapmak istersek de aşağıdaki gibi hareket edebiliriz.
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -82,23 +88,87 @@ unzip game-rental.zip -d game-rental
 cd game-rental
 ```
 
-Dikkat edileceği üzere proje oluşturulurken bazı bağımlılıklar eklenmiş durumda *(dependencies)*. Bunları şöyle özetleyebiliriz.
+Dikkat edileceği üzere proje oluşturulurken bazı bağımlılıklar *(dependencies)* da ekledik. Hangisini ne için kullandığımızı özetleyelim.
 
-| **Bağımlılık** | **Ne işe yarar?** |
+| **Paket** | **Ne işe yarar?** |
 | --- | --- |
 | **Spring Web** | REST API geliştirmek için gerekli olan Spring MVC altyapısını sağlar. Tomcat gibi gömülü bir web sunucusu içerir. |
-| **Spring Data JPA** | ORM *(Object-Relational Mapping)* işlemleri için gerekli altyapıyı sağlar. JPA standartlarını kullanarak veritabanı işlemlerini kolaylaştırır. |
+| **Spring Data JPA** | ORM *(Object-Relational Mapping)* işlemleri için gerekli altyapıyı sağlar. JPA *(Java Persistence API)* standartlarını kullanarak veritabanı işlemlerini kolaylaştırır. |
 | **PostgreSQL Driver** | PostgreSQL veritabanına bağlanmak için gerekli sürücüyü sağlar. |
 | **Spring Validation** | Bean Validation API'sini kullanarak veri doğrulama işlemlerini kolaylaştırır. |
 | **Flyway** | Veritabanı şemasını yönetmek ve sürüm kontrolü sağlamak için kullanılan bir araçtır. Migrations işlemlerini kolaylaştırır. |
 
-Örnekte postgresql veritabanı kullanılmakta olup **docker-compose** ile ayağa kaldırılmaktadır.
+## Proje Oluşturulduktan Sonra Bazı Ayarlamalar
 
-```bash
-sudo docker-compose up -d
+Proje oluşturulduktan sonra **PostgreSQL** desteği için yeni bir **flyway** bağımlılığı *(dependency)* eklememiz de gerekebilir. Bunun için tüm proje ayarlarını içeren `pom.xml` dosyasına aşağıdaki bağımlılığı eklemek yeterli olacaktır. Daha önceden eklediğimiz bağımlılıklar da bu dosyada yer alır.
+
+```xml
+<dependency>
+    <groupId>org.flywaydb</groupId>
+    <artifactId>flyway-database-postgresql</artifactId>
+</dependency>
 ```
 
-İlerleyen kısımlarda Sonarqube ile kod taraması da yapacağız. Dolayısıyla şimdiden `docker-compose.yml` içeriğini paylaşalım.
+Eğer projeyi komut satırından oluşturduysak konfigurasyon dosyası *(application.properties)* **YAML** formatında oluşmamış olabilir. Bu dosyayı silip `application.yml` isimli yeni bir dosya oluşturup içeriğini aşağıdaki şekilde düzenleyebiliriz. *(Dosya `src/main/resources` dizininde olmalıdır.)* Bu şart değil ancak yml formatında daha okunabilir ve hiyerarşik bir yapı sağladığı için tercih ediyorum. Tabii ki bu tamamen kişisel bir tercih.
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gamerental
+    username: gamerental
+    password: secret
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+```
+
+Dikkat edileceği üzere veritabanı bağlantı bilgisi, hibernate ve flyway ayarları yapılıyor. Bu ayarlara göre JPA *(Java Persistence API)* nesneleri ORM tarafında **hibernate** kullanacak ve veritabanı şeması **flyway** ile yönetilecek. Ayrıca loglama seviyesini debug olarak ayarladık ki SQL sorgularını loglarda görebilelim *(Bunu sadece development aşamasında açmak ama üretim ortamında kapatmak iyi bir pratiktir.)*. Son olarak `ddl-auto` değerini **validate** olarak ayarladık. Bu sayede JPA, uygulama başlatıldığında veritabanı şemasını kontrol edecek ve eğer tablolar eksikse veya hatalıysa uygulama başlatılmayacaktır. Bu sayede veritabanı şemasının her zaman güncel ve doğru olmasını garanti edebiliriz.
+
+## Migration Hazırlıkları
+
+Migration işlemleri için `src/main/resources/db/migration` klasöründe `V1__init.sql` isimli bir dosya oluşturalım ve içeriğini aşağıdaki gibi hazırlayalım. Bu basit çalışma için çoğul eki *(plural)* formatında isimlendirilmiş **games** ve **rentals** tabloları yeterli olacaktır.
+
+```sql
+CREATE TABLE games (
+    id               UUID         PRIMARY KEY,
+    title            VARCHAR(100) NOT NULL,
+    platform         VARCHAR(50)  NOT NULL,
+    total_copies     INT          NOT NULL,
+    available_copies INT          NOT NULL
+);
+
+CREATE TABLE rentals (
+    id                 UUID          PRIMARY KEY,
+    game_id            UUID          NOT NULL,
+    member_id          UUID          NOT NULL,
+    rented_on          DATE          NOT NULL,
+    due_on             DATE          NOT NULL,
+    returned_on        DATE,
+    status             VARCHAR(20)   NOT NULL,
+    late_fee_amount    NUMERIC(10,2) NOT NULL,
+    late_fee_currency  VARCHAR(3)    NOT NULL
+);
+
+CREATE INDEX idx_rentals_game_id ON rentals (game_id);
+```
+
+DDD tasarımında her aggregate kendi tutarlı bütünlüğünü korumaktan sorumludur. Genellikle bir aggregate diğer aggregate'lere ID ile referans verir. Bu nedenle herhangi bir **foreign key constraint** kullanmamıza gerek yok. Böylece aggregate'ler birbirlerinden bağımsız olur ve aggregate root'lar kendi aggregate'lerini yönetebilirler. Zaten **foreign key constraint** kullandığımızda aggregate'ler DB seviyesinde birbirlerinin yaşam döngüsüne bağımlı hale gelir ve bu DDD tasarımına aykırıdır.
+
+## Docker-Compose Olmadan Asla
+
+Pek çok kişisel ve uzun soluklu çalışmamdan alışılageldiği üzere burada da bir **docker-compose** dosyası ile **PostgreSQL** veritabanını ve varsa başka gereklilikleri ayağa kaldırmayı tercih ediyorum. İşte `docker-compose.yml` içeriğimiz;
 
 ```yaml
 services:
@@ -155,83 +225,35 @@ networks:
     driver: bridge
 ```
 
-## Proje Oluşturulduktan Sonra Bazı Ayarlamalar
+Haftasonu yapabileceğiniz türden olan bu tip çalışmalarda ideal bir pratik olduğunu düşünüyorum. İşiniz bitince konteynerleri kapatır veya silersiniz. Tavsiye edeceğim bir diğer alışkanlıksa temiz kod prensiplerine uymak ve teknik borcu en başından itibaren kontrol altına almak. Bu nedenle **Sonarqube** servisini de **docker-compose** içerisine ekledim. Sizden sonraki yazılımcıyı düşünerek kod yazın lütfen :D Konteynerleri ayağa kaldırmak için terminalden aşağıdaki komutu kullanabiliriz.
 
-Proje oluşturulduktan sonra postgresql desteği için yeni bir flyway bağımlılığı *(dependency)* eklememiz gerekebilir. Bunun için tüm proje ayarlarını içeren `pom.xml` dosyasına aşağıdaki bağımlılığı eklemek yeterli olacaktır.
-
-```xml
-<dependency>
-    <groupId>org.flywaydb</groupId>
-    <artifactId>flyway-database-postgresql</artifactId>
-</dependency>
+```bash
+sudo docker-compose up -d
 ```
 
-Eğer projeyi komut satırından oluşturduysak konfigurasyon dosyası *(application.properties)* YAML formatında oluşmamış olabilir. Bu dosyayı silip `application.yml` isimli yeni bir dosya oluşturup içeriğini aşağıdaki şekilde düzenleyebiliriz. *(Dosya `src/main/resources` dizininde olmalıdır.)*
+## Uygulama Kodlarımız
 
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/gamerental
-    username: gamerental
-    password: secret
+Artık sırasıyla uygulama içerisindeki gerekli enstrümanları yazmaya başlayabiliriz. Tabii artık Java dünyasındayız. Efsane paket sistemi URL benzeri bir yapıya sahip. Bu proje açısından baktığımızda root paketimiz `com.example.gamerental` şeklinde. Diğer tüm alt modülleri bu paket altına açacağız. Kabaca aşağıdaki gibi bir dizin yapısı oluşturmamız gerektiğini ifade edebiliriz.
 
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    open-in-view: false
-    properties:
-      hibernate:
-        format_sql: true
+![Project Skeleton](/assets/images/2026/JDDDSkeleton_00.png)
 
-  flyway:
-    enabled: true
-
-logging:
-  level:
-    org.hibernate.SQL: debug
-```
-
-## Migration Hazırlıkları
-
-Migration işlemleri için `src/main/resources/db/migration` klasöründe `V1__init.sql` isimli bir dosya oluşturacağız. Projemiz için aşağıdaki içeriği kullanabiliriz.
-
-```sql
-CREATE TABLE games (
-    id               UUID         PRIMARY KEY,
-    title            VARCHAR(100) NOT NULL,
-    platform         VARCHAR(50)  NOT NULL,
-    total_copies     INT          NOT NULL,
-    available_copies INT          NOT NULL
-);
-
-CREATE TABLE rentals (
-    id                 UUID          PRIMARY KEY,
-    game_id            UUID          NOT NULL,
-    member_id          UUID          NOT NULL,
-    rented_on          DATE          NOT NULL,
-    due_on             DATE          NOT NULL,
-    returned_on        DATE,
-    status             VARCHAR(20)   NOT NULL,
-    late_fee_amount    NUMERIC(10,2) NOT NULL,
-    late_fee_currency  VARCHAR(3)    NOT NULL
-);
-
-CREATE INDEX idx_rentals_game_id ON rentals (game_id);
-```
-
-DDD tasarımında her aggregate kendi tutarlı bütünlüğünü korumakla sorumludur. Ayrıca, aggregate diğer aggregate'ere ID ile referans verir. Bu nedenle herhangi bir **foreign key constraint** kullanmayacağız. Bu sayede aggregate'ler birbirlerinden bağımsız olacak ve aggregate root'lar kendi aggregate'lerini yönetebilecekler. Zaten **foreign key constraint* kullandığımızda aggregate'ler DB seviyesinde birbirlerinin yaşam döngüsüne bağımlı hale gelirler ve bu DDD tasarımına aykırıdır.
+Yazıyı çok fazla uzatmaması için kod dosyalarının içeriklerini buraya eklemedim. Dolayısıyla sizi güzel bir mücadele bekliyor. Kodları ve projeyi [buradan](https://github.com/buraksenyurt/enterprise-patterns-with-java/tree/main/src/DDD) çekip inceleyebilir veya sıfırdan kendi senaryonuzla yazabilirsiniz. Kod dosyalarına olabildiğince yorum satırı ekledim umarım anlaşılır olur.
 
 ## Çalışma Zamanı
 
-Uygulama kodları tamamlandıktan sonra aşağıdaki **maven** komutu ile çalıştırabiliriz. Tabii **postgresql** konteynerinin çalışır durumda olduğundan emin olalım. Komutu projenin kök dizininde işletebiliriz.
+En azından projeyi tamamladıktan sonraki sonuçları paylaşayım. Beni en çok düşündüren şeylerden birisi nasıl **build** alacağım veya çalıştıracağım idi. .NET tarafında **dotnet**, rust dünyasında **cargo** gibi tekil araçlara alıştığım için Java tarafındaki **maven**, **gradle** gibi araç çokluğu biraz kafa karıştırıcı olabiliyor. Ancak ne nihyatetinde hedefim projeyi çalıştırmak olduğundan detaylarda çok fazla boğulmadan ilerledim ve aşağıdaki **maven** komutu ile projeyi başlattım. Tabii **postgresql** konteynerinin çalışır durumda olduğundan emin olmalıyız ve söz konusu komutu projenin kök dizininde işletmeliyiz.
 
 ```bash
+# Derleme için
+./mvnw compile
+
+# Doğrudan çalıştırmak için
 ./mvnw spring-boot:run
 ```
 
-Başlangıçta `V1__init.sql` dosyasındaki SQL scriptleri çalışacak ve veritabanında gerekli tablolar oluşturulacaktır. Daha sonra API endpoint'lerine istekler atarak uygulamanın çalıştığını doğrulayabiliriz.
+Başlangıçta `V1__init.sql` dosyasındaki SQL scriptleri çalışacak ve veritabanında gerekli tablolar oluşturulacaktır. Daha sonra API endpoint'lerine *(interfaces katmanındaki Controller sınıflarımız)* aşina olduğumuz HTTP isteklerini göndererek uygulama çıktılarını sorgulayabiliriz. İşte birkaç deneme;
 
-Efsane oyunlardan Super Mario'yu kataloğumuza ekleyelim.
+Tabii işin gereği kiralanacak oyunlar lazım. Efsanelerden Super Mario'yu kataloğumuza ekleyerek testlere başlayabiliriz.
 
 ```bash
 curl -X POST http://localhost:8080/api/games \
@@ -245,7 +267,7 @@ curl -X POST http://localhost:8080/api/games \
 
 ![Runtime 00](/assets/images/2026/JDDDRuntime_00.png)
 
-ve şimdi de bir oyun kiralayalım. Tabii şimdilik tam bir abonelik sistemimiz olmadığı için abone ID bilgisini kendimiz veriyoruz. Game ID değeri içinse bir önceki denemede eklediğimiz ID değerini kullanabiliriz.
+ve şimdi de bir oyun kiralayalım. Tabii tam bir abonelik sistemimiz olmadığı için abone ID bilgisini kendimiz veriyoruz. Game ID değeri içinse bir önceki denemede eklediğimiz ID değerini kullanabiliriz.
 
 ```bash
 curl -s -X POST http://localhost:8080/api/rentals \
@@ -253,7 +275,7 @@ curl -s -X POST http://localhost:8080/api/rentals \
   -d "{\"gameId\":\"3c23c76e-3902-40c6-8424-366196f669ca\",\"memberId\":\"de4b0278-b1fd-4dc1-a05b-2509107fd49b\",\"rentalDays\":10}"
 ```
 
-Tabii bunun üzerine kullanbilecek oyun kopya sayısını da kontrol edebiliriz.
+Şimdide kullanılabilecek oyun kopya sayısını kontrol edebiliriz.
 
 ```bash
 curl -s http://localhost:8080/api/games/3c23c76e-3902-40c6-8424-366196f669ca
@@ -261,7 +283,7 @@ curl -s http://localhost:8080/api/games/3c23c76e-3902-40c6-8424-366196f669ca
 
 ![Runtime 01](/assets/images/2026/JDDDRuntime_01.png)
 
-Şimdi abonemizin oyunu çok sevdiğini ve birkaç gün geç iade ettiğini düşünelim. Bunu simüle etmek için aşağıdaki gibi ilerleyebiriz.
+Abonemizin oyunu çok sevdiğini ve birkaç gün geç iade ettiğini düşünelim. Bunu simüle etmek için aşağıdaki gibi ilerleyebiriz.
 
 ```bash
 # Önce iade tarihini bugünden 15 sonraya ayarlayalım ki gecikme ücreti oluşsun.
@@ -289,7 +311,7 @@ curl -i -s -X POST http://localhost:8080/api/rentals/040cf074-9fc2-4480-9cc5-10a
 
 ## Testler
 
-Kurumsal çapta bir projenin olmazsa olmazlarından birisi de elbetteki birim testlerdir *(Unit Tests)*. Projedeki testler `test/java/com/example/gamerental` dizininde yer almakta. Bunları çalıştırmak için kök dizindeyken aşağıdaki komutu kullanabiliriz.
+API noktaları sorunsuz çalışıyor gibi ama kurumsal çapta bir projenin olmazsa olmazlarından birisi de elbetteki birim testler *(Unit Tests)*. Birim testler **Code Coverage** açısından önemlidir. Bu sayede kodun hangi parçalarının test edildiği yani üzerinden geçilerek sağlamasının yapıldığı yüzdesel olarak ölçülebilir ki bu kodun güvenilirliğinin bir garantisidir. Projemizdeki testler `test/java/com/example/gamerental` dizininde yer almaktadır. Örnek olması açısından **Game** ve **Rental** nesnelerinin domain bazlı iş kurallarını test ediyoruz. Projedeki tüm testleri çalıştırmak için kök dizindeyken aşağıdaki komutu kullanmamız yeterli.
 
 ```bash
 ./mvnw test
@@ -299,15 +321,15 @@ Kurumsal çapta bir projenin olmazsa olmazlarından birisi de elbetteki birim te
 
 ## Sonarqube ile Kod Taraması
 
-Öncelikle docker-compose içerisinde yer alan Sonarqube servisinin çalıştığından emin olalım. `localhost:9000` adresine gidip Sonarqube arayüzüne ulaşabiliyorsak her şey yolunda demektir. Sonrasında aşağıdaki adımları takip edebiliriz.
+Dilerseniz birde yazdığımız kod tabanının röntgenini çekip projenin sağlık durumunu kontrol edelim. Öncelikle `docker-compose.yml` içerisinde tanımladığımız **Sonarqube** servisinin çalıştığından emin olalım. Ayarlarımıza göre `localhost:9000` adresine gidip Sonarqube arayüzüne ulaşabiliyorsak her şey yolunda demektir. Sonrasında aşağıdaki adımları takip edebilirz.
 
-- `Create a local project` ile ilerleyelim: Project display name ve project key değerlerini **game-rental** olarak belirleyebiliriz. Bir değişiklik yoksa Main branch name değerini **main** olarak bırakabiliriz.
+- `Create a local project` ile ilerleyelim: **Project display name** ve **Project key** değerlerini **game-rental** olarak belirleyebiliriz. Bir değişiklik yoksa **Main branch name** değerini **main** olarak bırakabiliriz.
 - `Set up new code for project` adımında **Follows the instance's default** seçeneğini işaretleyip **Create Project** butonuna tıklayalım.
-- `Analysis Method` adımında birkaç seçenek görebiliriz. Bunlar genellikle uzak kod repolarına bağlanabileceğimi alternatiflerdir. Biz local ortamda ilerlediğimiz için **Locally** seçimi ile devam edelim.
-- `Analyze your project` kısmında öncelikle bir proje token'ı üretmemiz gerekiyor. Gerçek hayat senarylarında belirli sürelerde token'ın değiştirilmesi istenir ancak bu eğitim projesinde **Expires in** seçeneğini **No expiration** olarak bırakabiliriz. Token'ı oluşturduktan sonra bir **Continue** butonu ile ilerleyelim.
-- `Run analysis on your project' adımında projemizin Java tabanlı olduğunu belirtmemiz gerekiyor. Örneğimizde build tool olarak Maven kullanıldığı için **Maven** seçeneğini işaretleyelim.
+- `Analysis Method` adımında birkaç seçenek görebiliriz. Bunlar genellikle uzak kod repolarına bağlanabileceğimiz alternatiflerdir. Biz local ortamda ilerlediğimiz için **Locally** seçimi ile devam edelim.
+- `Analyze your project` kısmında öncelikle bir **token** üretmemiz gerekiyor. Gerçek hayat senarylarında belirli sürelerde token değerinin değiştirilmesi istenir ancak bu eğitim projesinde **Expires in** seçeneğini **No expiration** olarak bırakabiliriz. Token değerini oluşturduktan sonra **Continue** tuşuna basarak devam edelim.
+- `Run analysis on your project` adımında projemizin **Java** tabanlı olduğunu belirtmemiz gerekiyor. Örneğimizde **build tool** olarak **Maven** kullanıldığı için onu işaretleyebiliriz.
 
-Tüm bu adımları tamamladığımızda elimizde terminal çalıştıracağımız bir komut olacaktır. Bunu yine projenin root klasöründe işletmemiz gerekiyor. *(Token bilgisi az önce üretilen bilgidir ve siz denerken farklı bir token olacaktır.)*
+Tüm bu adımları tamamladığımızda terminalden çalıştıracağımız bir komutumuz olacaktır. Bunu yine projenin root klasöründe işletmemiz gerekiyor. *(Token bilgisi az önce üretilen bilgidir ve siz denerken farklı bir token olacaktır.)*
 
 ```bash
 mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
@@ -317,15 +339,19 @@ mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
   -Dsonar.token=sqp_859e5004eaccc5c0bb1b2a7f3ada6b5b0c26ce54
 ```
 
+İşte projenin teknik değerlendirmesine dair ilk MR raporu. Her ne kadar **Passed** olarak işaretlense de birçok uyarı var.
+
 ![Sonar Runtime 00](/assets/images/2026/JDDDSonarqube_00.png)
 
-## Planlar
+## Ya Sonrası?
 
-Peki bu çalışma üzerine başka neler neler yapabiliriz?
+Buraya kadar sabırla geldiyseniz ve benzer çıktılara ulaştıysanız sizi tebrik ederim. En azından bu haftasonunu iyi bir şekilde değerlendirmiş olduğunuzu düşünüyorum. Tabii ki bu çalışma benim gibi C# programcıları için başlangıç seviyesinde bir pratik. Dil bağımsız konuşmak gerekirse, DDD yaklaşımının gerçek hayat senaryolarında uygulanması sanıldığı kadar kolay da değil. Özellikle domain büyüdükçe, farklı domain'ler işin içerisine dahil oldukça, iş kuralları karmaşıklaştıkça kurgu giderek zorlaşabiliyor. Örneğin kim aggregate olmalı veya aggregate root olarak düşünülmeli, kim Value Object olmalı, kim Entity olmalı, hangi iş kuralları aggregate içerisinde yaşamalı, hangileri Domain Service içerisinde konuşlanmalı gibi sorulara cevap bulmak kolay değil. Bu nedenle DDD yaklaşımını öğrenmek için bolca pratik yapmak veya uygulandığı açık kaynak projeleri incelemek gerekiyor. Peki bu çalışma üzerine başka neler neler yapabiliriz?
 
-- [ ] Üye nesnesini gerçek bir aggregate' e dönüştürmek. ÖRneğin bir üye en fazla 3 kiralama yapabilir gibi bir senaryoyu ele almak.
-- [ ] Domain bazlı event'ler eklemek. GameRented, GameReturned gibi event'ler kurgulayıp örneğin bildirim göndermek veya iki aggregate üzerinden transactional bir senaryo kurgulamak.
-- [ ] İkinci bir bounded context' i işin içerisine katmak. Ödeme *(Billing)* olabilir mesela. Renting diye farklı bir bounded context ile de event'ler yardımıyla haberleşebiliriz. DDD'nin stratejik tasarımını sahada deneyimleriz.
-- [ ] Mapping operasyonları için **MapStruct** gibi bir enstrümanı işin içerisine katabiliriz.
+- **Üye nesnesini gerçek bir aggregate' e dönüştürmek.** Örneğin bir üye en fazla 3 kiralama yapabilir gibi bir senaryoyu ele almak.
+- **Domain bazlı event'ler eklemek.** GameRented, GameReturned gibi event'ler kurgulayıp örneğin bildirim göndermek veya iki aggregate üzerinden transactional bir senaryo kurgulamak.
+- **İkinci bir bounded context ile çalışmak.** Ödeme *(Billing)* olabilir mesela. Renting diye farklı bir bounded context ile de event'ler yardımıyla haberleşebiliriz. DDD'nin stratejik tasarımını sahada deneyimleriz.
+- **Mapping operasyonları için farklı alternatifler aramak.** Örneğin **MapStruct** gibi bir enstrümanı işin içerisine katabiliriz.
+
+Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Orjinal repoya ve kodlara github üzerinden erişebilirsiniz](https://github.com/buraksenyurt/enterprise-patterns-with-java/tree/main/src/DDD)
