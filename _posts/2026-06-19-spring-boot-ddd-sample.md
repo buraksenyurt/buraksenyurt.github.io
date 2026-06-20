@@ -239,9 +239,50 @@ Artık sırasıyla uygulama içerisindeki gerekli enstrümanları yazmaya başla
 
 Yazıyı çok fazla uzatmaması için kod dosyalarının içeriklerini buraya eklemedim. Dolayısıyla sizi güzel bir mücadele bekliyor. Kodları ve projeyi [buradan](https://github.com/buraksenyurt/enterprise-patterns-with-java/tree/main/src/DDD) çekip inceleyebilir veya sıfırdan kendi senaryonuzla yazabilirsiniz. Kod dosyalarına olabildiğince yorum satırı ekledim umarım anlaşılır olur.
 
+## C# Geliştiricileri Açısından
+
+Bu çalışma özelinde bir karşılaştırma tablosu da eklemek isterim. Kodları yazarken veya yazdıktan sonra işinize yarayabilir. En azından Java tarafında kullandığımız enstrüman veya kavramlar C# tarafında neye karşlık geliyor özetleyebiliriz.
+
+| **Mesele** | **.NET/C#** | **Java/Spring Boot** |
+| --- | --- | --- |
+| **Proje oluşturma** | dotnet new CLI | Spring Initializr veya curl |
+| **Bağımlılık yönetimi** | .csproj içinde NuGet | pom.xml içinde Maven |
+| **ORM** | Entity Framework Core | Spring Data JPA + Hibernate |
+| **Migration** | EF Core Migrations | Flyway |
+| **Value Object** | record | record |
+| **Entity kimliği** | Dahili Guid desteği | UUID sınıfı |
+| **Çalıştırma** | dotnet run | mvnw spring-boot:run |
+| **Test Framework** | xUnit, NUnit, MSTest | JUnit 5 |
+| **Inheritance** | `:` operatörü | `extends` |
+| **Interface uygulama** | `:` operatörü | `implements` |
+| **Paket kavramı** | GameRental şeklinde namespace | com.example.gamerental şeklinde package |
+| **Class Yerleşimi** | Bir dosya içinde birden fazla class olabilir | Her class kendi java dosyasında olmalı |
+| **Opsiyonel değerler** | Nullable reference types, `?` operatörü | `Optional<T>` sınıfı |
+
+Bununla birlikte kodlarda Spring Boot dünyasından gelen birçok anotasyon *(annotation)* kullanımı var. Bunlarla ilgili bir eşleştirmeyi de aşağıdaki tabloda bulabilirsiniz.
+
+| **Konu** | **Spring/Java** | **.NET/C#** |
+| --- | --- | --- |
+| Bir şeyin Entity olduğunu belirtmek | `@Entity` | Genelde bir Entity sınıfından türetmek |
+| DB tarafındaki tabloyu belirtmek | `@Table` | `[Table]` |
+| Bir entity alanının identity olduğunu belirtmek | `@Id` | `[Key]` |
+| Bir entity alanının enum olduğunu belirtmek | `@Enumerated` | `[EnumDataType]` |
+| Repository olarak kullanılacağını belirtmek | `@Repository` | Repository deseni ve DbContext |
+| Service olduğunu belirtmek | `@Service` | Tam karşılığı yok sanırım |
+| Transaction yönetimine dahil olduğunu söylemek | `@Transactional` | TransactionScope veya DbContext üzerinden Transaction yönetimi |
+| Doğrulama (Validation) | `@Valid` | `[Required]`, `[Range]` gibi Data Annotation'lar |
+| Üst tür metodunu ezmek | `@Override` | `override` anahtar kelimesi |
+| REST türünden bir controller | `@RestController` | `[ApiController]` |
+| Request mapping | `@RequestMapping` | `[Route]` |
+| Request body | `@RequestBody` | `[FromBody]` |
+| Path variable | `@PathVariable` | `[FromRoute]` |
+| HTTP Post, Get, Put, Delete gibi aksiyonlar | `@PostMapping`, `@GetMapping`, `@PutMapping`, `@DeleteMapping` | `[HttpPost]`, `[HttpGet]`, `[HttpPut]`, `[HttpDelete]` |
+
+Arada kaçırdıklarım olabilir ancak **Spring Boot** çatısının birçok anotasyon ile işimizi kolaylaştırdığını söyleyebilirim. Sanıyorum ki boilerplate kod yazmak zorunda kalmıyoruz.
+
 ## Çalışma Zamanı
 
-En azından projeyi tamamladıktan sonraki sonuçları paylaşayım. Beni en çok düşündüren şeylerden birisi nasıl **build** alacağım veya çalıştıracağım idi. .NET tarafında **dotnet**, rust dünyasında **cargo** gibi tekil araçlara alıştığım için Java tarafındaki **maven**, **gradle** gibi araç çokluğu biraz kafa karıştırıcı olabiliyor. Ancak ne nihyatetinde hedefim projeyi çalıştırmak olduğundan detaylarda çok fazla boğulmadan ilerledim ve aşağıdaki **maven** komutu ile projeyi başlattım. Tabii **postgresql** konteynerinin çalışır durumda olduğundan emin olmalıyız ve söz konusu komutu projenin kök dizininde işletmeliyiz.
+Projeyi tamamladıktan sonraki olası sonuçlarımı paylaşarak devam edelim. Beni en çok düşündüren şeylerden birisi nasıl **build** alacağım veya çalıştıracağım idi. .NET tarafında **dotnet**, rust dünyasında **cargo** gibi tekil araçlara alıştığım için Java tarafındaki **maven**, **gradle** gibi araç çokluğu biraz kafa karıştırıcı olabiliyor. Ancak ne nihyatetinde hedefim projeyi çalıştırmak olduğundan detaylarda çok fazla boğulmadan ilerledim ve aşağıdaki **maven** komutu ile projeyi başlattım. Tabii **postgresql** konteynerinin çalışır durumda olduğundan emin olmalıyız ve söz konusu komutu projenin kök dizininde işletmeliyiz.
 
 ```bash
 # Derleme için
