@@ -661,7 +661,7 @@ fn main() {
 
 Şimdilik bu kadar...
 
-Bu pratik kod örneklerini deneyerek temel rust bilgilerimizden bazılarını yeniden hatırlayabiliriz. İlerleyen yazılarda farklı seviyelerden örneklere de yer vermeye çalışacağım. [Bu bölümde yer alan kod parçalarına github reposu üzerinden de erişebilirsiniz](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/rust-exercises). Ayrıca [Ferris logosunu sevdiyseniz Maria Letta'nın reposunda daha fazlasını da bulabilirsiniz](https://github.com/MariaLetta/free-ferris-pack);)
+Bu pratik kod örneklerini deneyerek temel rust bilgilerimizden bazılarını yeniden hatırlayabiliriz. İlerleyen yazılarda farklı seviyelerden örneklere de yer vermeye çalışacağım. [Bu bölümde yer alan kod parçalarına github reposu üzerinden de erişebilirsiniz](https://github.com/buraksenyurt/rust-coding-workouts). Ayrıca [Ferris logosunu sevdiyseniz Maria Letta'nın reposunda daha fazlasını da bulabilirsiniz](https://github.com/MariaLetta/free-ferris-pack);)
 
 Kaynaklar:
 

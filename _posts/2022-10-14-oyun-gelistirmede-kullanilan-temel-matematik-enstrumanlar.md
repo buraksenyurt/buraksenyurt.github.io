@@ -35,7 +35,7 @@ Oyuncunun roketi iki boyutlu sahada ilerlerken etrafını saran düşman gemiler
 
 ![math_101_01.png](/assets/images/2022/math_101_01.png)
 
-Aslında oyun karakterlerinin (sprite olarak ifade edebiliriz) merkez x,y değerlerini biliyorsak, bir dik üçgenden yararlanarak hipotenüs hesabından hareketle yakınlık değerini bulabiliriz. Bunun nasıl çalıştığını basitçe görmek isterseniz Rust ile yazılmış [math101 örneğine bakabilirsiniz](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/math101). Aşağıda gördülüğü gibi daire, kareye 50 pixel mesafeden daha fazla yaklaştığında ekrana bir uyarı mesajı geliyor.
+Aslında oyun karakterlerinin (sprite olarak ifade edebiliriz) merkez x,y değerlerini biliyorsak, bir dik üçgenden yararlanarak hipotenüs hesabından hareketle yakınlık değerini bulabiliriz. Bunun nasıl çalıştığını basitçe görmek isterseniz Rust ile yazılmış [math101 örneğine bakabilirsiniz](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/macroquad/math101). Aşağıda gördülüğü gibi daire, kareye 50 pixel mesafeden daha fazla yaklaştığında ekrana bir uyarı mesajı geliyor.
 
 ![pisagor.gif](/assets/images/2022/pisagor.gif)
 

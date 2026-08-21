@@ -26,11 +26,11 @@ Rust ile yaklaşık üç yıldır hararetli bir şekilde uğraşmaktayım ve ban
 
 Sunumda üzerinde durduğum oyunlara ait kodlara aşağıdaki github adreslerinden ulaşabilirsiniz.
 
-- [Lunar Landing](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/lunar_landing): SDL2 (Simple DirectMedia Library) kütüphanesi kullanılarak, 1969 yapımı Lunar Landing oyunundan esinlenilerek geliştirilmiştir.
-- [Slam Dunk Manager](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/slam-dunk-manager): Herhangi bir oyun motoru kullanmayan, sadece terminalden çalışmak üzere planlanmış bir basketbol menejerlik oyunudur. İlk kez kurcaladığım Game Design Document örneğini de içermektedir.
-- [Tetra Pong](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/tetra-pong): Tetra framework kullanılarak geliştirilmiş bir oyundur.
-- [Wing Pilot 2024](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/wing-pilot-2042): Macroquad motoru kullanılarak Commodor 64 için yazılmış 1942 oyunundan esinlenilerek geliştirilmiştir.
-- [On My Way](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/on-my-way): Bevy oyun motoru ile geliştirilmiş ECS (Entity Component System) altyapısı kullanılan bir oyundur.
+- [Lunar Landing](https://github.com/buraksenyurt/lunar-landing-2024): SDL2 (Simple DirectMedia Library) kütüphanesi kullanılarak, 1969 yapımı Lunar Landing oyunundan esinlenilerek geliştirilmiştir.
+- [Slam Dunk Manager](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/misc/slam-dunk-manager): Herhangi bir oyun motoru kullanmayan, sadece terminalden çalışmak üzere planlanmış bir basketbol menejerlik oyunudur. İlk kez kurcaladığım Game Design Document örneğini de içermektedir.
+- [Tetra Pong](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/tetra/tetra-pong): Tetra framework kullanılarak geliştirilmiş bir oyundur.
+- [Wing Pilot 2024](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/macroquad/wing-pilot-2042): Macroquad motoru kullanılarak Commodor 64 için yazılmış 1942 oyunundan esinlenilerek geliştirilmiştir.
+- [On My Way](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/bevy/on-my-way): Bevy oyun motoru ile geliştirilmiş ECS (Entity Component System) altyapısı kullanılan bir oyundur.
 - [Packyman](https://github.com/buraksenyurt/rust-farm/tree/main/Practices/packman): Hands-on Rust: Effective Learning through 2D Game Development and Play isimli kitabın yazarı Herbert Wolverson tarafından geliştirilmiş Bracket-Lib kütüphanesi kullanılarak yazılmış bir oyundur.
 - [Missile Command](https://github.com/buraksenyurt/missile-command): Macroquad ile geliştirilmiş efsanevi Atari Missile Command oyununun ilkel bir klonudur.
 - [Unity Learning](https://github.com/buraksenyurt/learning_unity): Linux üzerinde Unity ile ilgili öğrendiklerime yer verdiğim repodur.
