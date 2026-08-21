@@ -20,7 +20,7 @@ Kaynaklara göre seksenli yılların en kült oyunlarından birisi olarak ifade 
 
 İlk etapta ekranın üst tarafındaki rastgele konumlardan, belli gecikmelerle (bazen de aynı anda) farklı ya da sabit açılarda hareket eden füzelerin nasıl olup da bu şekilde ilerlediğini keşfetmek istiyorum. Ekranın genişliğini düşünerek x ekseni üstünde rastgele konumlar üretmek oldukça kolay esasında. Peki açıyı nasıl ayarlayacağız? Hatta açıyı öyle bir belirlemeliyiz ki füzeler ekranın solundan veya sağından dışarıya çıkmasınlar. Füzeleri hallettikten sonra pek tabii oyuncunun da ekran üzerinde mouse ile tıkladığı noktalara yine belli bir açıda ve hızda ateş etmemiz gerekiyor. Konuyu araştırırken vektörler arasındaki açı hesaplamasından yararlanabileceğimi anladım. Tabii aynı sonuca ulaşmak için farklı matematik yöntemler de kullanılabilir pekala. Bunlar yoruma açık ve sizlerin desteği ile hep birlikte daha da iyi öğrenebiliriz.
 
-Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Github hesabımdan ilgili kaynak kodlara ulaşabilirsiniz](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/macroquad/missile-commander). Oyun motoru olarak hafifsiklet olanlardan [Macroquad](https://macroquad.rs/examples/)'ı tercih ettim. Örneği iki bölüm halinde incelemeyi planlıyorum ve işte ilki. Keyifli seyirler.
+Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Github hesabımdan ilgili kaynak kodlara ulaşabilirsiniz](https://github.com/buraksenyurt/missile-command). Oyun motoru olarak hafifsiklet olanlardan [Macroquad](https://macroquad.rs/examples/)'ı tercih ettim. Örneği iki bölüm halinde incelemeyi planlıyorum ve işte ilki. Keyifli seyirler.
 
 [Youtube Link](https://www.youtube.com/watch?v=I5AonLlBizo)
 

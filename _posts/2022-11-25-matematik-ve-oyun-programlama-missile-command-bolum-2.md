@@ -14,7 +14,7 @@ Bir önceki programımızda Atari'nin efsane oyunlardan Missile Command'in arkas
 
 ![miscmd2.png](/assets/images/2022/miscmd2.png)
 
-Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Github hesabımdan ilgili kaynak kodlara ulaşabilirsiniz](https://github.com/buraksenyurt/game-dev-with-rust/tree/main/missile-commander). Oyun motoru olarak hafifsiklet olanlardan [Macroquad](https://macroquad.rs/examples/)'ı tercih ettim. Bu arada ders çekimi sırasında birkaç kez dilim sürçtü ama kusurlarıyla birlikte yararlı bir anlatım oldu diye düşünüyorum.
+Konu ile ilgili örneği Rust programlama dilini kullanarak geliştiriyorum. [Github hesabımdan ilgili kaynak kodlara ulaşabilirsiniz](https://github.com/buraksenyurt/missile-command). Oyun motoru olarak hafifsiklet olanlardan [Macroquad](https://macroquad.rs/examples/)'ı tercih ettim. Bu arada ders çekimi sırasında birkaç kez dilim sürçtü ama kusurlarıyla birlikte yararlı bir anlatım oldu diye düşünüyorum.
 
 [Youtube Link](https://www.youtube.com/watch?v=Mu8xDsfI2Po)
 
