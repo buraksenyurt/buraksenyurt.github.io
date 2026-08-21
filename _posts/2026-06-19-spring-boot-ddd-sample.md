@@ -395,4 +395,4 @@ Buraya kadar sabırla geldiyseniz ve benzer çıktılara ulaştıysanız sizi te
 
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-[Orjinal repoya ve kodlara github üzerinden erişebilirsiniz](https://github.com/buraksenyurt/enterprise-patterns-with-java/tree/main/src/DDD)
+[Orjinal repoya ve kodlara github üzerinden erişebilirsiniz](https://github.com/buraksenyurt/farm-java-ddd)
