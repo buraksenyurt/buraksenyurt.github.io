@@ -39,7 +39,7 @@ hello_flask isimli python sayfamızda http taleplerini yönledirme işlemlerini 
 
 ## Template Sayfaları
 
-Web uygulamamızda [Jinja2](http://jinja.pocoo.org/docs/2.9/) standartlarında içerik sunacak HTML sayfaları bulunuyor. Bu HTML sayfaları Flask tarafı ile iletişim halinde olacak. Aslında olay `{{` ve `}}` arasındaki kısımlarda gerçekleşmekte. Burada kullanılan değişken adları python tarafında da değerlendirilebiliyor. Bir başka deyişe python kod tarafı ile statik HTML sayfaları arasındaki veri alışverişinde bu söz dizimi değer bulacak.
+Web uygulamamızda [Jinja2](http://jinja.pocoo.org/docs/2.9/) standartlarında içerik sunacak HTML sayfaları bulunuyor. Bu HTML sayfaları Flask tarafı ile iletişim halinde olacak. Aslında olay {% raw %}{{ ve }}{% endraw %} arasındaki kısımlarda gerçekleşmekte. Burada kullanılan değişken adları python tarafında da değerlendirilebiliyor. Bir başka deyişe python kod tarafı ile statik HTML sayfaları arasındaki veri alışverişinde bu söz dizimi değer bulacak.
 
 ## basepage.html
 
@@ -63,7 +63,7 @@ BasePage.html.Net tarafında Web uygulaması geliştiren arkadaşlarımızca Mas
 
 {% endraw %}
 
-Dikkat edileceği üzere title elementinde page_title, body kısmında ise block body ve endblock isimli tanımlamalar mevcut. Bu tanımlamaların `{{` ve `}}` arasında olduklarına dikkat edelim. Alt sayfaların block body ve endblock isimli kısımlar içerisine yerleşeceğini de söyleyebiliriz.
+Dikkat edileceği üzere title elementinde page_title, body kısmında ise block body ve endblock isimli tanımlamalar mevcut. Bu tanımlamaların {% raw %}{{ ve }}{% endraw %} arasında olduklarına dikkat edelim. Alt sayfaların block body ve endblock isimli kısımlar içerisine yerleşeceğini de söyleyebiliriz.
 
 ## einstein.html
 
@@ -118,7 +118,7 @@ Toplama işleminin sonucunu göstereceğimiz HTML şablonu ise aşağıdaki içe
 
 {% endraw %}
 
-Yine basepage sayfasından yapılan bir genişletme olduğunu ifade edebiliriz. Gövde bu kez sonuçları göstereceğimiz HTML elementlerini barındırıyor. table elementi içerisinde first_value, second_value ve sonrasında gelen sum_result isimli değişklenlerle toplama işlemine ait detayları ve sonucu gösteriyoruz. Tüm değişkenlerin Jinja'nın istediği şekilde `{{` ve `}}` arasında yazıldığına dikkat edelim. Benzer yaklaşım GoLang tarafında da mevcuttu.
+Yine basepage sayfasından yapılan bir genişletme olduğunu ifade edebiliriz. Gövde bu kez sonuçları göstereceğimiz HTML elementlerini barındırıyor. table elementi içerisinde first_value, second_value ve sonrasında gelen sum_result isimli değişklenlerle toplama işlemine ait detayları ve sonucu gösteriyoruz. Tüm değişkenlerin Jinja'nın istediği şekilde {% raw %}{{ ve }}{% endraw %} arasında yazıldığına dikkat edelim. Benzer yaklaşım GoLang tarafında da mevcuttu.
 
 ## hello_plask.py
 
@@ -161,6 +161,6 @@ Yazdığımız uygulamayı IDLE üzerinden değil de komut satırından çalış
 
 ![flaskweb_2.gif](/assets/images/2017/flaskweb_2.gif)
 
-Görüldüğü üzere Flask paketini kullanarak Python tarafında bir web uygulaması geliştirmek ve şablon HTML sayfalarını kullanmak oldukça basit. Pek tabii şablon kullanımında `{{` ile `}}` arasına alınabilecek çok farklı teknikler de söz konusudur. Bunları kitabın ilerleyen kısımlarında bulabileceğimi düşünüyorum. Öğrendikçe sizlerle paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
+Görüldüğü üzere Flask paketini kullanarak Python tarafında bir web uygulaması geliştirmek ve şablon HTML sayfalarını kullanmak oldukça basit. Pek tabii şablon kullanımında {% raw %}{{ ile }}{% endraw %} arasına alınabilecek çok farklı teknikler de söz konusudur. Bunları kitabın ilerleyen kısımlarında bulabileceğimi düşünüyorum. Öğrendikçe sizlerle paylaşmaya çalışacağım. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Orijinal Kaynak](https://www.buraksenyurt.com/post/Flask-ile-Basit-Bir-Web-Uygulaması-Gelistirmek)
