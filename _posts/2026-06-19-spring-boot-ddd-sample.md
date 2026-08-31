@@ -396,3 +396,5 @@ Buraya kadar sabırla geldiyseniz ve benzer çıktılara ulaştıysanız sizi te
 Böylece geldik bir makalemizin daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
 [Orjinal repoya ve kodlara github üzerinden erişebilirsiniz](https://github.com/buraksenyurt/farm-java-ddd)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/spring-boot-ile-basit-bir-ddd-projesi)

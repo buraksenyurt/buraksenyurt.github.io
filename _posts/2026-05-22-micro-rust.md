@@ -2348,3 +2348,5 @@ Bu çalışma sırasında birde mini sözlük oluşturmuştum.
 - [MonkMakes Çevre Sensörü için Bilgiler](https://monkmakes.com/mb_2a)
 
 [Orjinal repoya ve kodlara github üzerinden erişebilirsiniz](https://github.com/buraksenyurt/microrust)
+
+[Orijinal Kaynak](https://www.buraksenyurt.com/post/micro-bit-uzerinde-rust-ile-program-gelistirme)
