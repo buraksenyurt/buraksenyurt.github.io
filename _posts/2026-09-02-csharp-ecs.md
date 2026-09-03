@@ -450,6 +450,7 @@ Görüldüğü üzere, birkaç arayüz ve reflection tabanlı bir Scheduler ile 
 
 Bir sonraki adımda yapmayı uzun süredir ertelediğim birkaç şey var. **Query** sınıfını çoklu bileşen destekleyecek şekilde genişletmek, **Command** deseni ile sistemler içinde güvenli biçimde varlık oluşturmak, silmek ve **reflection** yükünü bir Source Generator ile derleme zamanına taşımak. Belki bunları da ayrı bir yazıda ele alırım. Böylece geldik bir çalışmamızın daha sonuna. Tekrardan görüşünceye dek hepinize mutlu günler dilerim.
 
-Kod örneklerine [github](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/NetBevy) reposundan ulaşabilirsiniz.
+- Kod örneklerinin ilk haline [github](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/NetBevy) reposundan ulaşabilirsiniz.
+- Ancak devam eden serüvene dahil olmak isterseniz *(Örneğin Source Code Generator eklenmiş bir versiyonu görmek)* [buradaki](https://github.com/buraksenyurt/friday-night-programmer/tree/main/src/BevyDotNet) örneğe de bakabilirsiniz.
 
 [Orijinal Kaynak](https://www.buraksenyurt.com/post/c-ile-basit-bir-ecs-denemesi)
